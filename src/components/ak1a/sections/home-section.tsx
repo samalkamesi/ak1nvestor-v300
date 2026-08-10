@@ -45,25 +45,24 @@ export function HomeSection() {
           <div className="max-w-3xl">
             <Eyebrow>AK1A Research Lab</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Sluta lita på banker.
-              <br />
-              <span className="text-gold">Lär dig metoden.</span>
+              Vi ger dig metoden{" "}
+              <span className="text-gold">institutionerna använder.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Sveriges enda institutionella metodik, byggd för dig. 99-sidiga analyser
-              du kan verifiera själv — inga åsikter, bara metod.
+              Institutionell metodik, öppet redovisad. För dig. 99-sidiga analyser du
+              kan verifiera själv — 20 variabler, 25 våg-celler, varje siffra spårbar.
             </p>
 
-            {/* Strategisk DNA-stapel — Zero to One + Positioning */}
+            {/* Strategisk DNA-stapel — Blue Ocean purity */}
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <Badge variant="outline" className="border-gold/40 text-gold uppercase tracking-wider text-[10px]">
-                Vi skapade kategorin
-              </Badge>
-              <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
                 Verifierbarhet
               </Badge>
               <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
                 Kognitiv suveränitet
+              </Badge>
+              <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
+                Metod du kan återskapa
               </Badge>
             </div>
 
@@ -79,7 +78,7 @@ export function HomeSection() {
                 <GraduationCap className="mr-1 h-4 w-4" /> Lär dig metoden
               </Button>
               <Button size="lg" variant="ghost" onClick={() => setSection("strategi")}>
-                Vår strategi för #1
+                Vår strategi
               </Button>
             </div>
           </div>
@@ -276,7 +275,7 @@ export function HomeSection() {
             <HonestyCard kind="matt" value="200+" label="KURSER PUBLICERADE" sub="19 grundläggande AKM1 + 80 fördjupande + valfria tillägg." />
             <HonestyCard kind="matt" value="99" label="SIDOR PER ANALYS" sub="Institutionsdjup. Varje siffra hyperlänkad till källa." />
             <HonestyCard kind="metodmal" value="5 / 8" label="AI-ORGAN I DRIFT" sub="Vi siktar på 8 synkrona organ. Idag är 5 live." />
-            <HonestyCard kind="matt" value="0" label="PUSH-NOTISER OM PRISER" sub="Anti-casino. Du bestämmer när du tittar." />
+            <HonestyCard kind="matt" value="0" label="PUSH-NOTISER OM PRISER" sub="Pro-metod. Du bestämmer när du tittar." />
           </div>
         </div>
       </section>

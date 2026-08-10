@@ -144,14 +144,14 @@ export function StrategiSection() {
             </div>
 
             <h1 className="mt-5 font-serif text-3xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Vi skapade kategorin.{" "}
-              <span className="text-gold">Andra kopierar.</span>
+              Vi bygger metodik.{" "}
+              <span className="text-gold">Öppen för dig.</span>
             </h1>
 
             <p className="mt-5 max-w-3xl text-base text-muted-foreground leading-relaxed sm:text-lg">
-              AK1A äger ordet <strong className="text-foreground">verifierbarhet</strong> i en
-              marknad där banker säljer åsikter, bloggare säljer tips och robo-rådgivare säljer
-              automation. Vi säljer den enda metodiken som låter dig återskapa varje rekommendation själv.
+              AK1A äger ordet <strong className="text-foreground">verifierbarhet</strong>. Vi
+              säljer den metodiken som låter dig återskapa varje rekommendation själv —
+              20 variabler, 25 våg-celler, varje siffra spårbar till offentlig källa.
             </p>
 
             <div className="mt-6 flex flex-wrap items-center gap-2">
@@ -160,7 +160,7 @@ export function StrategiSection() {
                 Kognitiv suveränitet
               </Badge>
               <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
-                Anti-bank · Anti-casino
+                Pro-metod
               </Badge>
             </div>
 
@@ -193,18 +193,17 @@ export function StrategiSection() {
             <div>
               <Eyebrow>Zero to One · Peter Thiel</Eyebrow>
               <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
-                Vilken sanning vet vi som banker inte håller med om?
+                Vilken sanning vet vi som få håller med om?
               </h2>
               <blockquote className="mt-5 border-l-2 border-gold pl-4 font-serif text-lg italic leading-relaxed text-foreground/90 sm:text-xl">
                 &ldquo;En investerares värsta fiende är inte marknaden — det är bristen på
-                reproducerbarhet i sina egna beslut. Banker och bloggare har kommersiella skäl
-                att dölja detta; vi har kommersiella skäl att avslöja det.&rdquo;
+                reproducerbarhet i sina egna beslut. Vi har kommersiella skäl att avslöja detta:
+                vår metodik låter dig återskapa varje rekommendation själv.&rdquo;
               </blockquote>
               <p className="mt-5 text-sm text-muted-foreground leading-relaxed sm:text-base">
-                Privatpersoner lämnar inte banker för att de är dumma — de lämnar för att de
-                känner sig löjliga när de inte kan återskapa resonemanget. Den viktigaste sanningen
-                i svensk privatplacering 2026 är: <strong className="text-foreground">&ldquo;Jag vill inte
-                bli tillsagd — jag vill kunna säga det till mig själv.&rdquo;</strong>
+                Den viktigaste sanningen i svensk privatplacering 2026 är:
+                <strong className="text-foreground">&ldquo;Jag vill kunna säga det till mig själv.&rdquo;</strong>
+                Vi ger dig metoden — du verifierar, du beslutar, du behåller kognitiv suveränitet.
               </p>
             </div>
 
@@ -245,9 +244,9 @@ export function StrategiSection() {
             Marknaden vi skapade — som inte fanns
           </h2>
           <p className="mt-3 max-w-3xl text-sm text-muted-foreground leading-relaxed sm:text-base">
-            Innan AK1A fanns två alternativ: banker (med intressekonflikt) eller bloggare (med
-            klick-jakt). Vi skapade en tredje kategori: <strong className="text-foreground">Verifierbar
-            Privatplacering</strong> — institutionell metodik, reproducerbar, utan intressekonflikt.
+            Vi skapade en ny kategori: <strong className="text-foreground">Verifierbar
+            Privatplacering</strong> — institutionell metodik, reproducerbar, öppen för dig.
+            Ett blått hav där metodiken står i centrum, inte åsikterna.
           </p>
 
           {/* ERRC Grid */}
@@ -255,14 +254,14 @@ export function StrategiSection() {
             <ErrcCard
               action="ELIMINATE"
               tone="bear"
-              title="Intressekonflikt"
+              title="Dolda ägarintressen"
               body="Inga egna fonder. Inga provisioner. Inga dolda ägarintressen. Vi äger inga aktier vi rekommenderar."
             />
             <ErrcCard
               action="REDUCE"
               tone="gold"
-              title="Jargong & komplexitet"
-              body="Bank-ord ('våra experter', 'din rådgivare') reduceras till noll. Pedagogisk svenska i 'du'-form."
+              title="Komplexitet"
+              body="Pedagogisk svenska i 'du'-form. Varje begrepp förklarat första gången det dyker upp. Öppet för alla."
             />
             <ErrcCard
               action="RAISE"
@@ -294,9 +293,9 @@ export function StrategiSection() {
                 AK1A äger <strong className="text-gold">verifierbarhet</strong>.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed sm:text-base">
-                Banker kan inte låna ordet utan att spränga sin affärsmodell — deras rekommendationer
-                är inte reproducerbara. Bloggare kan inte låna det — deras tips är inte spårbara.
-                Robo-rådgivare kan inte låna det — deras algoritmer är svarta lådor.
+                Verifierbarhet är svårt att äga. Det kräver att varje siffra är spårbar,
+                att varje rekommendation är reproducerbar, att metoden är öppen.
+                Det är vad vi bygger — varje dag, på varje analys.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed sm:text-base">
                 <strong className="text-foreground">Känsloladdat ord:</strong> kognitiv suveränitet.
@@ -429,7 +428,7 @@ export function StrategiSection() {
               icon={<Target className="h-5 w-5" />}
               section="HEM"
               claim="Sveriges enda institutionella metodik"
-              dna="Vi skapade kategorin · Verifierbarhet · Kognitiv suveränitet"
+              dna="Verifierbarhet · Kognitiv suveränitet · Metod du kan återskapa"
               framework="Zero to One + Positioning"
             />
             <ManifestCard
@@ -485,7 +484,7 @@ export function StrategiSection() {
               icon={<Globe className="h-5 w-5" />}
               section="OM OSS"
               claim="Ak1 Apex Nexus · svensk · oberoende"
-              dna="Anti-bank · Anti-casino · pro-metod"
+              dna="Verifierbarhet · Reproducerbarhet · Pro-metod"
               framework="Purple Cow (remarkability)"
             />
           </div>
@@ -495,14 +494,14 @@ export function StrategiSection() {
             <div className="text-center">
               <Eyebrow>Slutmanifest</Eyebrow>
               <p className="mt-4 font-serif text-xl font-bold leading-snug sm:text-2xl">
-                &ldquo;Vi säljer inte åsikter. Vi säljer inte tips. Vi säljer inte automation.
+                &ldquo;Vi ger dig metoden institutionerna använder.
                 <br className="hidden sm:block" />
-                Vi säljer den enda metodiken som låter dig återskapa varje rekommendation själv.&rdquo;
+                Du verifierar själv. Du behåller kognitiv suveränitet.&rdquo;
               </p>
               <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
                 <HonestyTag kind="matt" />
                 <span className="text-xs text-muted-foreground">
-                  Detta är AK1A:s DNA · Verifierbarhet · Kognitiv suveränitet · #1 i världen
+                  Detta är AK1A:s DNA · Verifierbarhet · Kognitiv suveränitet · Metod du kan återskapa
                 </span>
               </div>
             </div>
@@ -675,8 +674,8 @@ const FRAMEWORKS: Framework[] = [
     name: "Innovator's Dilemma",
     author: "Clayton Christensen",
     icon: "Shield",
-    question: "Varför kan inte banker kopiera oss?",
-    answer: "Deras affärsmodell kräver intressekonflikt. Reproducerbarhet dödar deras marginal.",
+    question: "Varför är reproducerbarhet svårt att kopiera?",
+    answer: "Det kräver att metodiken är öppen, att varje siffra är spårbar, att rekommendationer går att återskapa. Det är en kultur, inte en funktion.",
   },
 ];
 

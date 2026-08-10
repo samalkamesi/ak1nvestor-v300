@@ -664,7 +664,7 @@ export function LabbSection() {
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
               Öppna AKM1-calculatorn och poängsätt ett bolag själv.
-              Samma verktyg, samma metodik — inga svarta lådor.
+              Samma verktyg, samma metodik — allt öppet, allt reproducerbart.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -710,7 +710,7 @@ export function LabbSection() {
             />
             <ConsoleStat
               value="0"
-              label="Push-notiser — anti-casino"
+              label="Push-notiser — pro-metod"
               caption="Du bestämmer när du tittar. Vi buffrar inte din uppmärksamhet med priser."
             />
           </div>

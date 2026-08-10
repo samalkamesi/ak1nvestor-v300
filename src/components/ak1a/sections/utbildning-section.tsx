@@ -173,7 +173,7 @@ const FAQS: Faq[] = [
   },
   {
     q: "Fungerar detta för nybörjare?",
-    a: "Ja. Steg 1 börjar med ‘vad är en aktie?’ och bygger stegvis. Level-väljaren (Nybörjare / Intermediär / Avancerad) anpassar språket i analyserna — du kan sänka tröskeln och höja den när du mognar. Anti-casino: inga push-notiser, inga snabba knappar.",
+    a: "Ja. Steg 1 börjar med ‘vad är en aktie?’ och bygger stegvis. Level-väljaren (Nybörjare / Intermediär / Avancerad) anpassar språket i analyserna — du kan sänka tröskeln och höja den när du mognar. Pro-metod: inga push-notiser, inga snabba knappar.",
   },
   {
     q: "Är detta finansiell rådgivning?",
@@ -783,7 +783,7 @@ export function UtbildningSection() {
             </div>
           </div>
 
-          {/* Anti-casino footer note */}
+          {/* Pro-metod footer note */}
           <div className="mt-14 max-w-3xl mx-auto rounded-md border border-border bg-card p-5 text-center">
             <p className="text-xs text-muted-foreground leading-relaxed">
               Pedagogisk finansanalys — inte investeringsråd.{" "}

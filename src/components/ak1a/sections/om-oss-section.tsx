@@ -45,7 +45,7 @@ const MANIFEST_POINTS: string[] = [
   "Varje siffra har en källa. Varje påstående har en etikett: MÄTT eller METODMÅL.",
   "Metoden är synlig. Användaren ser hur en slutsats nås — inte bara slutsatsen.",
   "Vi säljer inte körningar. Vi lär ut att köra.",
-  "Långsamt och rätt. Anti-casino. Ingen FOMO, inga push-notiser om priser.",
+  "Långsamt och rätt. Pro-metod. Ingen FOMO, inga push-notiser om priser.",
 ];
 
 const MARKET_BELIEFS: string[] = [
@@ -71,7 +71,7 @@ const HONESTY_STATS: {
   { kind: "matt", value: "1", label: "Publicerade analyser", sub: "PREC.ST — 99-sidig rapport" },
   { kind: "matt", value: "200+", label: "Kurser i drift", sub: "Moduler tillgängliga idag" },
   { kind: "metodmal", value: "5 av 8", label: "Organ aktiva", sub: "Vi siktar på 8/8" },
-  { kind: "matt", value: "0", label: "Push-notiser om priser", sub: "Anti-casino" },
+  { kind: "matt", value: "0", label: "Push-notiser om priser", sub: "Pro-metod" },
 ];
 
 export function OmOssSection() {
@@ -103,13 +103,13 @@ export function OmOssSection() {
           <div className="max-w-3xl">
             <Eyebrow>Forskningsinstitutet</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Vi skapade kategorin.
+              Vi bygger metodik.
               <br />
-              <span className="text-gold">Andra kopierar.</span>
+              <span className="text-gold">Öppen för dig.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
               AK1A Research Lab är inte en app — det är en metodik som råkar ha ett gränssnitt.
-              Sveriges enda institutionella analys byggd för dig.
+              Institutionell analys, öppet redovisad, byggd för dig.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button

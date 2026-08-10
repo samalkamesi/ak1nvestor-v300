@@ -310,12 +310,12 @@ export function AnalyserSection() {
           <div className="max-w-3xl">
             <Eyebrow>ANALYSER</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Analyser du kan{" "}
-              <span className="text-gold">verifiera själv.</span>
+              Varje analys:{" "}
+              <span className="text-gold">99 sidor. 20 variabler.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              En analys per månad. 99 sidor. Varje siffra spårbar till offentlig källa.
-              Du behöver inte lita på oss — du kan återskapa det.
+              Du kan återskapa allt. Varje siffra spårbar till offentlig källa.
+              En analys per månad — metodiken öppen, resultatet reproducerbart.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -566,7 +566,7 @@ export function AnalyserSection() {
 
           <p className="mt-6 text-xs text-muted-foreground">
             Fler analyser publiceras månadsvis. Prenumerera på min sida för
-            notiser. Inga push-notiser om priser — anti-casino.
+            notiser. Inga push-notiser om priser — pro-metod.
           </p>
         </div>
       </section>

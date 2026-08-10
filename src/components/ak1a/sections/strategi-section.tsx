@@ -462,9 +462,9 @@ export function StrategiSection() {
             />
             <ManifestCard
               icon={<Brain className="h-5 w-5" />}
-              section="STYRELSE"
-              claim="8 AI-organ tar beslut öppet"
-              dna="Offentliga protokoll — inga svarta lådor"
+              section="ADMIN (backend)"
+              claim="8 AI-organ styr i bakgrunden"
+              dna="Besluten styrs av AI-organ — syns bara för admin"
               framework="Transparency = Positioning"
             />
             <ManifestCard
@@ -520,12 +520,6 @@ export function StrategiSection() {
           <GoldRule className="mt-6 max-w-md" />
 
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <GoCard
-              icon={<Eye className="h-5 w-5" />}
-              title="AI-organ styrelse"
-              sub="Se besluten live"
-              onClick={() => setSection("styrelse")}
-            />
             <GoCard
               icon={<BookOpen className="h-5 w-5" />}
               title="Alla kurser"

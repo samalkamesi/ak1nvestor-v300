@@ -23,14 +23,12 @@ export const FOOTER_NAV = [
   { label: "Kurser (200+ moduler · 4 flikar)", section: "kurser" as const },
   { label: "Labb (case + faror + historia)", section: "labb" as const },
   { label: "Meta-system (organ + visioner)", section: "om-oss" as const },
-  { label: "AI-organ styrelse (möten)", section: "styrelse" as const },
   { label: "Utbildning & Medlemskap", section: "utbildning" as const },
   { label: "AKM1 Verktyg", section: "labb" as const },
   { label: "Webinarier", section: "kurser" as const },
   { label: "Logga in / Registrera", section: "portal" as const },
   { label: "Min portal · Portföljoptimering", section: "portal" as const },
   { label: "Om oss", section: "om-oss" as const },
-  { label: "Admin Dashboard", section: "admin" as const },
 ];
 
 export const LEVELS: { id: Level; label: string; subtitle: string }[] = [

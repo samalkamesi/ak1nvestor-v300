@@ -1520,3 +1520,40 @@ Stage Summary:
 - Slutmanifest: "Vi säljer inte åsikter. Vi säljer inte tips. Vi säljer inte automation."
 - Kundupplevelse: kunden ser på HEM att vi skapade kategorin, på ANALYSER att de kan verifiera själva, på STRATEGI hela vägen till #1
 - Harmoni: alla sidor pratar samma språk — verifierbarhet, kognitiv suveränitet, anti-bank
+
+---
+Task ID: 51-ADMIN-SPLIT
+Agent: main (Z.ai Code)
+Task: STYROLSEN ska ej synas för privatperson — bara för admin. Allt kund-synligt ska vara till nytta.
+
+Work Log:
+- Användaren ville: STYRELSE backend-only (admin), allt kunden ser ska vara till deras nytta
+- Lagt till `isAdmin: boolean` + `setIsAdmin` i Zustand store (default: false)
+- Persistar isAdmin i localStorage (admin förblir inloggad mellan sessioner)
+- Uppdaterade header.tsx: filtrerar NAV_SECTIONS — STYRELSE dold om !isAdmin
+  • `visibleNavSections = NAV_SECTIONS.filter((s) => s.id !== "styrelse" || isAdmin)`
+  • Båda nav-renderingar (desktop + mobile) använder visibleNavSections
+- Uppdaterade FOOTER_NAV: tog bort "AI-organ styrelse (möten)" och "Admin Dashboard" — inte för kunder
+- Uppdaterade page.tsx: `{section === "styrelse" && isAdmin && <StyrelseSection />}`
+  • Även om besökare manipulerar localStorage, renderas inte STYROLSEN om !isAdmin
+- Uppdaterade admin/page.tsx:
+  • Login sätter både `setAuthed(true)` och `setIsAdmin(true)`
+  • Ny "Logga ut"-knapp som sätter `setIsAdmin(false)` + navigerar hem
+  • Ny tab "AI-organ styrelse" med beskrivning + "Öppna AI-organ styrelse"-knapp
+- Uppdaterade strategi-section.tsx:
+  • Tog bort "AI-organ styrelse"-kort från Gå vidare (ej för kunder)
+  • ManifestCard för STYROLSE → "ADMIN (backend)" med text "8 AI-organ styr i bakgrunden — syns bara för admin"
+- Agent Browser verifierat:
+  • Vanlig besökare: STYROLSE finns EJ i nav (HEM, PREC, ANALYSER, AKTIER, KURSER, LABB, STRATEGI, OM OSS, PORTAL) ✓
+  • Även om man manipulerar localStorage till section="styrelse" — renderas ej (isAdmin=false) ✓
+  • Admin inloggad: STYROLSE syns i nav (mellan LABB och STRATEGI) ✓
+  • Admin dashboard har ny "AI-organ styrelse"-tab med "Öppna AI-organ styrelse"-knapp ✓
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- KUND-SYNLIGA SIDOR (till deras nytta): HEM, PREC-ANALYS, ANALYSER, AKTIER, KURSER, LABB, STRATEGI, OM OSS, PORTAL
+- ADMIN-ONLY (backend): STYRELSE, Admin Dashboard
+- AI-organ-systemet fortsätter i bakgrunden — besluten styrs av 8 organ (Σ α Δ Ω Φ Θ Μ Ψ)
+- Admin kommer åt STYROLSEN via: admin dashboard → AI-organ tab → "Öppna AI-organ styrelse"
+- Kundupplevelse: kunden ser bara sidor som är till deras nytta — ingen backend-förvirring
+- Harmoni: strategin visas öppet (STRATEGI), men AI-organ-mötena är backend (STYRELSE)

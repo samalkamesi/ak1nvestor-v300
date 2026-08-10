@@ -39,7 +39,11 @@ export function Header() {
     setSummaryOpen,
     setShareOpen,
     progress,
+    isAdmin,
   } = useAk1aStore();
+
+  // Filter nav sections — STYRELSE only visible to admin
+  const visibleNavSections = NAV_SECTIONS.filter((s) => s.id !== "styrelse" || isAdmin);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
   const [moreOpen, setMoreOpen] = React.useState(false);
@@ -65,7 +69,7 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="ml-4 hidden items-center gap-0.5 lg:flex" aria-label="Huvudnavigation">
-          {NAV_SECTIONS.map((s) => (
+          {visibleNavSections.map((s) => (
             <button
               key={s.id}
               onClick={() => setSection(s.id)}
@@ -205,7 +209,7 @@ export function Header() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-border bg-background px-4 py-3">
           <nav className="flex flex-col gap-1">
-            {NAV_SECTIONS.map((s) => (
+            {visibleNavSections.map((s) => (
               <button
                 key={s.id}
                 onClick={() => {

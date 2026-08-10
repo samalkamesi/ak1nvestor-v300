@@ -19,7 +19,7 @@ import { PortalSection } from "@/components/ak1a/sections/portal-section";
 import { StrategiSection } from "@/components/ak1a/sections/strategi-section";
 
 export default function Page() {
-  const { section } = useAk1aStore();
+  const { section, isAdmin } = useAk1aStore();
   // Auto-log client activity for admin dashboard
   useAutoLogger();
 
@@ -33,7 +33,8 @@ export default function Page() {
         {section === "aktier" && <AktierSection />}
         {section === "kurser" && <KurserSection />}
         {section === "labb" && <LabbSection />}
-        {section === "styrelse" && <StyrelseSection />}
+        {/* STYRELSE only for admin — backend system, not customer-facing */}
+        {section === "styrelse" && isAdmin && <StyrelseSection />}
         {section === "utbildning" && <UtbildningSection />}
         {section === "strategi" && <StrategiSection />}
         {section === "om-oss" && <OmOssSection />}

@@ -23,6 +23,10 @@ interface Ak1aState {
   level: Level;
   setLevel: (l: Level) => void;
 
+  // admin mode — controls visibility of backend sections (STYRELSE, admin)
+  isAdmin: boolean;
+  setIsAdmin: (v: boolean) => void;
+
   // search modal
   searchOpen: boolean;
   setSearchOpen: (open: boolean) => void;
@@ -78,6 +82,10 @@ export const useAk1aStore = create<Ak1aState>()(
 
       level: "nyborjare",
       setLevel: (l) => set({ level: l }),
+
+      // Admin mode is OFF by default — STYRELSE & admin hidden from regular visitors
+      isAdmin: false,
+      setIsAdmin: (v) => set({ isAdmin: v }),
 
       searchOpen: false,
       setSearchOpen: (open) => set({ searchOpen: open }),
@@ -152,7 +160,7 @@ export const useAk1aStore = create<Ak1aState>()(
     }),
     {
       name: "ak1a-store",
-      partialize: (st) => ({ level: st.level, progress: st.progress }),
+      partialize: (st) => ({ level: st.level, progress: st.progress, isAdmin: st.isAdmin }),
     }
   )
 );

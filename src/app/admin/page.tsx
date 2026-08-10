@@ -123,7 +123,7 @@ function timeAgo(iso: string): string {
 }
 
 export default function AdminDashboard() {
-  const { setSection } = useAk1aStore();
+  const { setSection, setIsAdmin } = useAk1aStore();
   const [authed, setAuthed] = React.useState(false);
   const [password, setPassword] = React.useState("");
   const [stats, setStats] = React.useState<Stats | null>(null);
@@ -195,12 +195,20 @@ export default function AdminDashboard() {
             placeholder="Lösenord"
             className="mt-4"
             onKeyDown={(e) => {
-              if (e.key === "Enter" && password) setAuthed(true);
+              if (e.key === "Enter" && password) {
+                setAuthed(true);
+                setIsAdmin(true);
+              }
             }}
           />
           <Button
             className="mt-3 w-full bg-gold text-background hover:bg-gold/90"
-            onClick={() => password && setAuthed(true)}
+            onClick={() => {
+              if (password) {
+                setAuthed(true);
+                setIsAdmin(true);
+              }
+            }}
           >
             Logga in
           </Button>
@@ -230,6 +238,18 @@ export default function AdminDashboard() {
             </Button>
             <Button variant="outline" size="sm" onClick={() => { fetchStats(); fetchActivities(); }}>
               <RefreshCw className="mr-1 h-3.5 w-3.5" /> Uppdatera
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                setAuthed(false);
+                setIsAdmin(false);
+                setPassword("");
+                setSection("hem");
+              }}
+            >
+              Logga ut
             </Button>
           </div>
         </div>
@@ -291,6 +311,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="analysis-upload" className="px-3 py-1.5 text-xs sm:text-sm">Analys-uppladdning</TabsTrigger>
             <TabsTrigger value="system" className="px-3 py-1.5 text-xs sm:text-sm">Systemevents</TabsTrigger>
             <TabsTrigger value="breakdown" className="px-3 py-1.5 text-xs sm:text-sm">Statistik</TabsTrigger>
+            <TabsTrigger value="ai-organ" className="px-3 py-1.5 text-xs sm:text-sm">AI-organ styrelse</TabsTrigger>
           </TabsList>
 
           {/* Overview */}
@@ -590,6 +611,35 @@ export default function AdminDashboard() {
                 </div>
               </Card>
             </div>
+          </TabsContent>
+
+          {/* AI-organ styrelse — admin only */}
+          <TabsContent value="ai-organ" className="mt-6">
+            <Card className="p-5">
+              <div className="flex items-center gap-2">
+                <Brain className="h-5 w-5 text-gold" />
+                <h3 className="font-serif text-lg font-bold">AI-organ styrelse (backend)</h3>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                8 AI-organ (Σ α Δ Ω Φ Θ Μ Ψ) tar beslut om strategi, analys, data, vision,
+                innovation, kvalitet, marknad och utbildning. Denna sektion är endast för admin —
+                inte synlig för vanliga besökare.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Button
+                  className="bg-gold text-background hover:bg-gold/90"
+                  onClick={() => setSection("styrelse")}
+                >
+                  Öppna AI-organ styrelse
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => setSection("strategi")}
+                >
+                  Se 48 mega-uppgifter
+                </Button>
+              </div>
+            </Card>
           </TabsContent>
         </Tabs>
 

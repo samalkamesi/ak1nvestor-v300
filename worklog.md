@@ -1877,3 +1877,197 @@ Stage Summary:
 - Kundupplevelse: mobilanvändare får nu samma kvalitet som desktop
 - AI-organen involverade i varje beslut (MÄTT-mål prioriterade)
 - Ingen klippt text, ingen horisontell scroll, alla touch-targets ≥40px
+
+---
+Task ID: 56-dna-design
+Agent: general-purpose (design-forskare)
+Task: Skapa innovativt DNA-design-system som gör att man DIRECT känner igen AK1A
+
+Work Log:
+- Läste /home/z/my-project/worklog.md (senaste 3 sektionerna: Task 53-blueocean,
+  Task 54-overflow-fix, Task 55-mobile-UX) för kontext
+- Läste /home/z/my-project/strategy/voice.md (369 rader) och
+  /home/z/my-project/strategy/blue-ocean-purity.md (1017 rader) för att förstå
+  dokument-format och röst-kodex
+- Granskade /home/z/my-project/src/app/globals.css (rad 1-100) för att verifiera
+  befintlig palett: --paper #f5f1e8, --ink #0a0b0d, --gold #a8862a,
+  --gold-soft #c9a84c, --bull #047857, --bear #b91c1c, --neutral-signal #64748b
+- Forskade 7 design-referenser:
+  • Stripe — gradient meshes, polished micro-interactions, clean typography
+  • Linear — minimalistiska men karaktärsfulla kort, keyboard-first chips
+  • Vercel — geometric patterns (hex-grids), mono-typografi, dark mode
+  • Apple — depth, materials (glass), typografisk hierarki, ring-meters
+  • Bloomberg Terminal — data density, mono-tickers, status indicators
+  • Financial Times — serif-typografi, salmon-paper feel, footnotes
+  • Notion — block-based, clean canvas, callout popovers
+- Skapade /home/z/my-project/strategy/dna-design-system.md (1150 rader, 45 KB):
+
+### Del 0: DNA-ord → Visuell signatur (matris)
+- Alla 7 DNA-ord mappade till specifika visuella metoder + signaturer
+- Test: "Kan du se elementet och direkt associera till DNA-ord? Om nej → ta bort"
+
+### Del 1: AK1A:s 7 visuella signaturer (alla unika, alla inspirerade)
+1. Verify-Stamp — hexagonal "MÄTT verifierad"-stämpel med guld-sheen hover
+   (Apple-verification + Bloomberg-status + Stripe-sheen + FT-sigill)
+2. Gold-Divider — våg-mönster i guld (5 cykler = 5 vågor), ingen annan har våg-avdelare
+   (FT-double-rule + Stripe-hairline + Apple-material-edge — formen våg är AK1A)
+3. Cell-Grid — 5×5 rutnät refererar till 25 våg-celler, aktiv cell = Verify-Stamp
+   (Vercel-geometric + Bloomberg-density + Notion-block + Apple-depth)
+4. Variable-Tag — V01-V20 som institutionella tickers med färg-kod (bull/neutral/bear)
+   (Bloomberg-ticker + Linear-keychip + Vercel-mono + Apple-SF-Symbols)
+5. Paper-Texture — CSS-genererad SVG-noise 2% opacitet, varmt brunt, mix-blend
+   (FT-paper + Apple-material + Stripe-mesh + Notion-canvas)
+6. Confidence-Meter — horisontell + cirkulär, MÄTT/METODMÅL-status integrerad
+   (Bloomberg-conf + Apple-Watch-ring + Linear-progress + Stripe-dataviz)
+7. Source-Link — klickbara guld-fotnoter med popover-preview
+   (FT-footnotes + Stripe-doc-hover + Linear-refs + Notion-callouts)
+
+### Del 2: Färgpalett med betydelse
+- 6 primära: Gold #C5A572 (verifierbarhet), Bull #047857 (pos konfluens),
+  Bear #B91C1C (neg konfluens), Neutral #64748B (väntar), Paper #F5F1E8 (grund),
+  Ink #0A0B0D (auktoritet)
+- 8 sekundära derivat (Gold-Soft, Gold-Deep, Bull-Deep, Paper-Warm, Paper-Light,
+  Ink-Warm, Border-Warm, Muted-Warm)
+- 5 färg-regler: ingen dekorativ färg, guld = enda brand-färg, 80% paper/ink, etc.
+- 5 förbjudna kombinationer: röd+grön intill, guld-gradient, blå primär, neon, pastell
+
+### Del 3: Typografi-regler
+- 3 familjer: Serif (Source Serif 4 → Georgia) = rubriker, institutionell
+  Mono (JetBrains → IBM Plex → SF Mono) = siffror, tickers, källor
+  Sans (Inter → SF Pro) = brödtext, UI
+- Fullständig hierarki-tabell (10 element, desktop/mobil-storlekar)
+- 7 typografi-regler (siffror alltid mono, rubriker alltid serif, etc.)
+- 4 typografiska signaturer (institutionellt försätt, källa i marginal, etc.)
+
+### Del 4: 10 komponent-mönster
+- Verify-Card, Variable-Card, Cell-Card, Scenario-Card, Source-Card,
+  Manifest-Card, Course-Card, Lab-Card, Board-Card, Institutional-Frame
+- Varje: vad den representerar (DNA), visuell signatur, användning
+
+### Del 5: 8 kompletta CSS-klasser med kod-exempel
+- .ak1a-verify-stamp (med data-status varianter + guld-sheen animation)
+- .ak1a-gold-divider (med SVG-våg, --wide och --vertical varianter)
+- .ak1a-cell-grid (5×5 grid, --active cell, --bg subtil bakgrundsvariant)
+- .ak1a-variable-tag (med --bull/--neutral/--bear/--inactive färg-kod)
+- .ak1a-paper-card (med Paper-Texture overlay via SVG noise, --accent och
+  --elevated varianter, dark mode)
+- .ak1a-confidence-meter (horisontell + --circular, data-status färg-skala,
+  tröskel-markör, animering)
+- .ak1a-source-link (superscript guld-markör, __popover med Gold-Divider,
+  __source-list med numrerad lista)
+- .ak1a-institutional-frame (med Gold-Divider i topp, Verify-Stamp i hörnet,
+  4 hörn-markörer som institutionellt sigill, --cover variant, dark mode)
+- Alla klasser följer ak1a- prefix, kompatibla med befintlig palett,
+  med JSX-användnings-exempel
+
+### Extra: Implementations-ordning (4 faser) + Anti-mönster (8) + Sluttest (7 frågor)
+- Anti-mönster: inga gradient-bakgrunder, ingen glassmorphism, inga neon-accenter,
+  inga emoji-ikoner, ingen blå primärfärg (bank-DNA-brott), etc.
+- Sluttest: 7 frågor före design-publicering (igenkänn-barhet, DNA-referens,
+  guld-endast-branding, typografi-hierarki, Verify-Stamp, Source-Link, FT-test)
+
+### Validering
+- Dokument sparat på /home/z/my-project/strategy/dna-design-system.md (1150 rader, 45 KB)
+- Alla 7 signaturer inspirerade av 2+ referenser men unika för AK1A
+- Alla 8 CSS-klasser kompatibla med befintlig globals.css palett
+- Alla komponenter refererar till minst ett DNA-ord
+- Inga kodändringar i src/ — endast strategi-dokument (enligt uppdrag)
+
+### Strategiska nyckelinsikter
+1. **DNA-testet:** Varje visuellt element måste referera till ett DNA-ord — inget
+   dekoration för dekorationens skull. Form följer metod.
+2. **Guld är enda brand-färg:** Bull/Bear/Neutral är *signal-färger* (metodens
+   output), inte branding. 80% paper/ink-kontrast, max 8% guld, max 12% signal.
+3. **Vågen är ägd:** Ingen konkurrent använder våg-mönster som avdelare. Det är
+   AK1A:s visuella signatur, refererar till AK1TS Elliott Wave.
+4. **5×5 är ägd:** Vercel har 6×6 hex. Bloomberg har 12-kolumn. Ingen har 5×5
+   med våg-cell-referens. Det är AK1A:s grid.
+5. **Institutionell men inte bank:** Pappersstruktur + serif-rubriker + guld-ramar
+   ger FT-känsla, inte bank-känsla. Blått undviks konsekvent.
+
+### Nästa steg (för andra agenter)
+- Implementera 8 CSS-klasser i src/app/globals.css (eller dedikerad
+  src/components/ak1a/dna/dna.css)
+- Skapa React-komponenter i src/components/ak1a/dna/: VerifyStamp, GoldDivider,
+  CellGrid, VariableTag, PaperCard, ConfidenceMeter, SourceLink, InstitutionalFrame
+- Först integration på HEM-hero (Manifest-Card), sedan StockAnalysisView-försätt
+  (Institutional-Frame + Verify-Stamp), sedan alla sektioner
+- Verkställ "DNA-test" i Fas 4 — ta bort alla element utan DNA-referens
+
+Stage Summary:
+- DNA-DESIGN-SYSTEM ETABLERAT — 7 unika visuella signaturer direkt igenkännbara som AK1A
+- 7 design-referenser forskade (Stripe, Linear, Vercel, Apple, Bloomberg, FT, Notion)
+- Varje signatur kombinerar 2+ referenser men äger en unik form (våg-divider, 5×5-grid,
+  guld-fotnot, MÄTT-stämpel, pappersstruktur, färg-kodad V-tagg, MÄTT-meter)
+- 6 primära + 8 sekundära färger, alla med betydelse-uppdrag
+- 3 typsnittsfamiljer med strikt uppdelning (serif=auktoritet, mono=siffror, sans=body)
+- 10 komponent-mönster, 8 kompletta CSS-klasser med kod-exempel
+- Anti-mönster-kodex: inga gradienter, ingen glassmorphism, ingen blå primär
+- Sluttest: 7 frågor, varav "skulle FT-redaktionen godkänna?" som sista bar
+- Ny fil: /home/z/my-project/strategy/dna-design-system.md (1150 rader, 45 KB)
+- Design-mantra: "Varje ruta, kort, sektion ska representera AK1A:s identitet.
+  Form följer metod. Inget dekoration för dekorationens skull."
+
+---
+Task ID: 56-DNA-DESIGN
+Agent: main (Z.ai Code)
+Task: Skapa ännu bättre DNA-igenkänning — innovativa design-element
+
+Work Log:
+- Konvenerade AI-organen → beslut: "DNA-signaturutveckling med metodisk grund" (MEDEL konfidens)
+  - Analys-organet: varje element ska vara en mätbar variabel
+  - Innovation-organet: dynamisk, adaptiv DNA-signatur
+  - Utbildnings-organet: översätta principer till visuellt språk
+- Subagent (Task 56-dna-design) skapade strategy/dna-design-system.md (1 150 rader):
+  - Forskning: Stripe, Linear, Vercel, Apple, Bloomberg, FT, Notion
+  - 7 unika AK1A-signaturer med betydelse
+  - Färgpalett med betydelse (gold=verifierbarhet, bull/bear=signal, paper=institutionell)
+  - Typografi-regler (serif=auktoritet, mono=siffror, sans=body)
+  - 10 komponent-mönster + 8 CSS-klasser med kod
+  - Anti-mönster-kodex (inga gradienter, ingen blå, inga emoji)
+  - 7-frågor-sluttest
+- Implementerade 8 DNA CSS-klasser i globals.css:
+  1. .ak1a-verify-stamp — MÄTT/METODMÅL verifieringsstämpel med sheen-effekt
+  2. .ak1a-gold-divider — våg-mönster avdelare (SVG, representerar AK1TS vågar)
+  3. .ak1a-cell-grid — 5×5 rutnät (representerar 25 våg-celler)
+  4. .ak1a-variable-tag — V01-V20 institutionella tags med färg-kod
+  5. .ak1a-paper-card — institutionell pappersstruktur med noise-textur
+  6. .ak1a-confidence-meter — MÄTT/METODMÅL visuell mätare
+  7. .ak1a-source-link — källhänvisningar som clickbara footnotes
+  8. .ak1a-institutional-frame — ram med hörn-markörer + gold-divider i topp
+  Plus: .ak1a-dna-bg — subtilt 5×5 rutnät i bakgrunden
+- Skapade React-komponenter (src/components/ak1a/dna/index.tsx, ~250 rader):
+  - <VerifyStamp>, <GoldDivider>, <CellGrid>, <VariableTag>
+  - <PaperCard>, <ConfidenceMeter>, <SourceLink>
+  - <InstitutionalFrame>, <DnaBackground>, <ManifestCard>
+- Integrerade DNA-komponenter på HEM-hero:
+  - DnaBackground wrapper (subtilt 5×5 rutnät i bakgrunden)
+  - VerifyStamp med MÄTT + datum (stämpel-look med sheen)
+  - GoldDivider under CTA-knappar (våg-mönster)
+  - InstitutionalFrame med 25-cell grid signatur (desktop)
+  - Diagonal gold-markering på celler (W01, W07, W13, W19, W25)
+- Agent Browser verifierat (desktop + mobil):
+  • Desktop: 25-cell grid syns, guld våg-divider, MÄTT verify-stamp, institutionell ram ✓
+  • Mobil: MÄTT verify-stamp, guld våg-divider, badges — text läsbar ✓
+  • Ingen overflow på varken mobil eller desktop ✓
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- DNA-DESIGN-SYSTEM BYGGT: 8 unika signaturer + 10 React-komponenter
+- Varje design-element representerar AK1A:s identitet:
+  • VerifyStamp = verifierbarhet (MÄTT/METODMÅL)
+  • GoldDivider = AK1TS våg-metodik
+  • CellGrid = 25 våg-celler
+  • VariableTag = 20 AKM1-variabler
+  • PaperCard = institutionell grund
+  • ConfidenceMeter = MÄTT-konfidens
+  • SourceLink = spårbarhet
+  • InstitutionalFrame = institutionell ram med hörn-markörer
+- HEM-hero har nu stark DNA-igenkänning:
+  • Subtilt 5×5 rutnät i bakgrunden
+  • MÄTT verify-stamp prominent
+  • Guld våg-divider som sektion-brytning
+  • 25-cell grid signatur i institutionell ram (desktop)
+- Kundupplevelse: man DIRECT känner igen AK1A — ingen annan plattform har denna design
+- Form följer metod: varje visuellt element refererar till ett DNA-ord
+- Anti-mönster upprätthålls: inga gradienter, ingen blå primär, inga emoji

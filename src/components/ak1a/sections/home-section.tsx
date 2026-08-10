@@ -23,67 +23,93 @@ import { WaveMatrix } from "../wave-matrix";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { VerifyStamp, GoldDivider, InstitutionalFrame, DnaBackground, ManifestCard } from "../dna";
 
 export function HomeSection() {
   const { setSection, setLevel } = useAk1aStore();
 
   return (
     <div className="paper-texture">
-      {/* ───────────── HERO ───────────── */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px)",
-              backgroundSize: "48px 48px",
-            }}
-          />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24">
-          <div className="max-w-3xl">
-            <Eyebrow>AK1A Research Lab</Eyebrow>
-            <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Vi ger dig metoden{" "}
-              <span className="text-gold">institutionerna använder.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Institutionell metodik, öppet redovisad. För dig. 99-sidiga analyser du
-              kan verifiera själv — 20 variabler, 25 våg-celler, varje siffra spårbar.
-            </p>
+      {/* ───────────── HERO — DNA institutional frame ───────────── */}
+      <DnaBackground>
+        <section className="relative overflow-hidden border-b border-border">
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-20">
+            <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr] lg:gap-8">
+              <div>
+                <Eyebrow>AK1A Research Lab</Eyebrow>
+                <h1 className="mt-4 font-serif text-3xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+                  Vi ger dig metoden{" "}
+                  <span className="text-gold">institutionerna använder.</span>
+                </h1>
+                <p className="mt-5 max-w-xl text-base text-muted-foreground leading-relaxed sm:text-lg">
+                  Institutionell metodik, öppet redovisad. För dig. 99-sidiga analyser du
+                  kan verifiera själv — 20 variabler, 25 våg-celler, varje siffra spårbar.
+                </p>
 
-            {/* Strategisk DNA-stapel — Blue Ocean purity */}
-            <div className="mt-5 flex flex-wrap items-center gap-2">
-              <Badge variant="outline" className="border-gold/40 text-gold uppercase tracking-wider text-[10px]">
-                Verifierbarhet
-              </Badge>
-              <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
-                Kognitiv suveränitet
-              </Badge>
-              <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
-                Metod du kan återskapa
-              </Badge>
-            </div>
+                {/* DNA-stapel med VerifyStamp */}
+                <div className="mt-5 flex flex-wrap items-center gap-2">
+                  <VerifyStamp status="MÄTT" date="2026-08-08" />
+                  <Badge variant="outline" className="border-gold/40 text-gold uppercase tracking-wider text-[10px]">
+                    Verifierbarhet
+                  </Badge>
+                  <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
+                    Kognitiv suveränitet
+                  </Badge>
+                </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                onClick={() => setSection("prec")}
-                className="bg-gold text-background hover:bg-gold/90"
-              >
-                Se analysen av Precise Biometrics <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" onClick={() => setSection("kurser")}>
-                <GraduationCap className="mr-1 h-4 w-4" /> Lär dig metoden
-              </Button>
-              <Button size="lg" variant="ghost" onClick={() => setSection("strategi")}>
-                Vår strategi
-              </Button>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <Button
+                    size="lg"
+                    onClick={() => setSection("prec")}
+                    className="bg-gold text-background hover:bg-gold/90"
+                  >
+                    Se analysen av Precise Biometrics <ArrowRight className="ml-1 h-4 w-4" />
+                  </Button>
+                  <Button size="lg" variant="outline" onClick={() => setSection("kurser")}>
+                    <GraduationCap className="mr-1 h-4 w-4" /> Lär dig metoden
+                  </Button>
+                  <Button size="lg" variant="ghost" onClick={() => setSection("strategi")}>
+                    Vår strategi
+                  </Button>
+                </div>
+
+                <GoldDivider className="mt-8 max-w-xs" />
+              </div>
+
+              {/* DNA Institutional Frame — signatur-kort */}
+              <InstitutionalFrame variant="cover" className="hidden lg:block">
+                <div className="text-center">
+                  <Eyebrow>AK1A Signatur</Eyebrow>
+                  <div className="mt-3 font-serif text-2xl font-bold text-gold">
+                    25 celler
+                  </div>
+                  <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+                    5 teorier × 5 tidshorisonter
+                  </p>
+                  <div className="mt-4 grid grid-cols-5 gap-0.5">
+                    {Array.from({ length: 25 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className="aspect-square border border-gold/20 flex items-center justify-center text-[8px] font-mono text-muted-foreground"
+                        style={{
+                          backgroundColor: [0,6,12,18,24].includes(i) ? "rgba(197,165,114,0.15)" : "transparent",
+                          borderColor: [0,6,12,18,24].includes(i) ? "var(--gold)" : "rgba(197,165,114,0.2)",
+                        }}
+                      >
+                        W{String(i + 1).padStart(2, "0")}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2">
+                    <VerifyStamp status="MÄTT" />
+                    <span className="text-[10px] text-muted-foreground font-mono">AK1TS våg-matris</span>
+                  </div>
+                </div>
+              </InstitutionalFrame>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </DnaBackground>
 
       {/* ───────────── AK1A I SIFFROR ───────────── */}
       <section className="border-b border-border bg-muted/30">

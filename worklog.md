@@ -2345,3 +2345,35 @@ Stage Summary:
 - Status API: /api/supabase/status (visar konfiguration)
 - Sandbox-begränsning: kan inte nå Supabase direkt — användaren kör migrering lokalt
 - Arkitektur: Prisma+SQLite (primär) → Supabase (cloud backup + framtid)
+
+---
+Task ID: 60-LIVE
+Agent: main (Z.ai Code)
+Task: Säkerställ sidan är live och stabil
+
+Work Log:
+- Servern hade problem med minne vid Turbopack-kompilering av 12k+ rader kod
+- Identifierade att next-server dog vid snabba requester (OOM vid kompilering)
+- Lösning: NODE_OPTIONS="--max-old-space-size=3072" (3GB minne)
+- Startade keepalive-v2.sh watchdog som automatiskt startar om servern om den dör
+- Verifierade alla endpoints med curl:
+  • / (home): HTTP 200 ✓
+  • /api/supabase/status: HTTP 200 ✓ (configured, 13 tables)
+  • /api/mega/tasks: HTTP 200 ✓ (198 tasks)
+  • /api/analysis/PREC.ST: HTTP 200 ✓ (Precise Biometrics)
+  • /api/analysis/VOLCAR-B: HTTP 200 ✓ (Volvo Cars)
+- Agent Browser verifierade live rendering:
+  • HEM: "Vi ger dig metoden institutionerna använder." ✓
+  • ANALYSER: "Varje analys: 99 sidor. 20 variabler." ✓
+  • FAS 3 AI: "AI analyserar vågor. Du förstår metoden." ✓
+- Keepalive watchdog körs (PID 5455) — startar om servern automatiskt
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- SIDAN ÄR LIVE: http://localhost:3000
+- Alla 5 API-endpoints fungerar (HTTP 200)
+- 3 sektioner verifierade med Agent Browser (HEM, ANALYSER, FAS 3)
+- Keepalive watchdog säkerställer 24/7 tillgänglighet
+- Minneskonfiguration: 3GB (NODE_OPTIONS)
+- Servern använder ~1.1GB minne vid drift
+- Kundupplevelse: sidan är tillgänglig för förhandsgranskning

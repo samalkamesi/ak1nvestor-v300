@@ -1,17 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFileSync } from "fs";
+import { readFileSync, statSync } from "fs";
 import { join } from "path";
 
 export const runtime = "nodejs";
 
 let cache: Record<string, any> | null = null;
+let cacheMtime = 0;
 
 function loadCourses(): Record<string, any> {
-  if (cache) return cache;
   try {
     const filePath = join(process.cwd(), "public", "deep-courses.json");
+    const mtime = statSync(filePath).mtimeMs;
+    // Invalidate cache if file changed
+    if (cache && mtime === cacheMtime) return cache;
     const raw = readFileSync(filePath, "utf-8");
     cache = JSON.parse(raw);
+    cacheMtime = mtime;
     return cache!;
   } catch {
     return {};

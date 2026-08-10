@@ -33,6 +33,9 @@ export interface DeepCourse {
     evolution: string;
     modern: string;
   };
+  lynchSection?: string;
+  grahamSection?: string;
+  ak1Section?: string;
   chapters: DeepChapter[];
 }
 

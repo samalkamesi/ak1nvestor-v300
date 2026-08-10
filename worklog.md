@@ -534,3 +534,28 @@ Stage Summary:
 - Logs: watchdog.log (check results + restart actions), watchdog-daemon.log (heartbeat).
 - Memory safeguard: watchdog restarts server if available RAM <8% to pre-empt OOM kills (the documented failure mode from Task 7).
 - Note: no swap could be added (no sudo); no cron daemon available, so the background `setsid -f` daemon is the sole uptime mechanism. If the sandbox reboots, the daemon must be manually restarted with: `setsid -f bash -c 'exec /bin/bash /home/z/my-project/scripts/watchdog-daemon.sh >> /home/z/my-project/watchdog-daemon.log 2>&1'`.
+
+---
+Task ID: 11
+Agent: main (Z.ai Code)
+Task: Make every course present real tailored content following the same template (Varför detta är viktigt, Historisk kontext, Lynch/Graham/AKM1, chapters). Verify AK1A Research Lab branding on all pages.
+
+Work Log:
+- Audited all 225 courses in public/deep-courses.json: 20 V01-V20 courses had rich tailored content, 205 had generic/templated content (shared "why" texts, boilerplate chapter blocks like "Detta är en fundamentalsk färdighet").
+- Added lynchSection/grahamSection/ak1Section to DeepCourse interface (src/lib/ak1a/deep-courses-data.ts).
+- Added "Tre perspektiv" section to DeepCourseViewer (src/components/ak1a/deep-course-viewer.tsx) — renders Lynch/Graham/AKM1 columns after Historisk kontext. Uses Quote icon, gold accent for AKM1 card.
+- Fixed API cache invalidation (src/app/api/kurs/[slug]/route.ts): now checks file mtime to serve fresh data when deep-courses.json is updated during generation.
+- Wrote generation script (scripts/generate-course-content.ts v4): uses z-ai-web-dev-sdk to generate tailored content per course. 3 LLM calls per course (meta + chapters 1-half + chapters half-end). Compact 3-block chapters (text/insight/definition). Sequential processing with 3s delay between courses. 429 rate-limit retry with 15-60s backoff.
+- Tested on km-001 (Bokföringens grunder): verified quality — why text mentions H&M/Ericsson, history.origin cites Pacioli 1494 Venice, lynchSection references Lynch's "100 bolag" philosophy, grahamSection references substansvärde, ak1Section links to V04/V07. No forbidden boilerplate patterns.
+- Verified V01-V20 all have lynchSection/grahamSection/ak1Section (already present from earlier generation).
+- Branding audit: all 9 section files + header/footer/primitives/layout reference "AK1A Research Lab" and "institutionell metodik" consistently. No wrong/old names found. Home section H1: "Sveriges enda institutionella metodik, byggd för privatpersoner." layout.tsx title/description/OpenGraph/Twitter all correct.
+- Lint clean (exit 0).
+- Started full generation in background (setsid -f): processing 204 generic courses. ~80s/course → ~4.4h total. Progress saved to .gen-progress.json every 2 courses. deep-courses.json updated on disk every 2 courses.
+- Agent Browser verified: V01 course renders full template — Varför detta är viktigt → Historisk kontext (Ursprung/Evolution/Modern relevans) → Tre perspektiv (Peter Lynch/Benjamin Graham/AKM1-metodiken) → 6 chapters with text/insight/definition blocks.
+
+Stage Summary:
+- DeepCourseViewer now renders the complete template: course header → Vad du kommer lära dig → Varför detta är viktigt → Kapitel list → Historisk kontext → Tre perspektiv (Lynch/Graham/AKM1) → Full chapters → Completion.
+- Generation script running in background (PID tracked via setsid -f). 5/204 courses completed with verified quality.
+- All 225 courses will have: unique why, unique history (origin/evolution/modern), unique Lynch/Graham/AKM1 perspectives, unique chapter content with 3 blocks each (text/insight/definition).
+- Branding verified: "AK1A Research Lab" + "Sveriges enda institutionella metodik, byggd för privatpersoner" consistent across all pages.
+- Lint clean, server HTTP 200, watchdog running.

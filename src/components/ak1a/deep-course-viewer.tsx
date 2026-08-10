@@ -19,6 +19,7 @@ import {
   Circle,
   History,
   Loader2,
+  Quote,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -213,6 +214,45 @@ export function DeepCourseViewer({ slug }: { slug: string }) {
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-gold">Modern relevans</p>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{course.history.modern}</p>
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* Tre perspektiv: Lynch, Graham, AKM1 */}
+        {(course.lynchSection || course.grahamSection || course.ak1Section) && (
+          <section className="border-b border-border py-6">
+            <Eyebrow>Tre perspektiv</Eyebrow>
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+              {course.lynchSection && (
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-gold">
+                    <Quote className="h-3.5 w-3.5" /> Peter Lynch
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {course.lynchSection}
+                  </p>
+                </div>
+              )}
+              {course.grahamSection && (
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-gold">
+                    <Quote className="h-3.5 w-3.5" /> Benjamin Graham
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {course.grahamSection}
+                  </p>
+                </div>
+              )}
+              {course.ak1Section && (
+                <div className="rounded-lg border border-gold/30 bg-gold/[0.04] p-4">
+                  <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-gold">
+                    <BookOpen className="h-3.5 w-3.5" /> AKM1-metodiken
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {course.ak1Section}
+                  </p>
+                </div>
+              )}
             </div>
           </section>
         )}

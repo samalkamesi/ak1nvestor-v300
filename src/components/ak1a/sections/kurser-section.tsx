@@ -56,6 +56,7 @@ import {
 import { cn } from "@/lib/utils";
 import { DeepCourseViewer } from "@/components/ak1a/deep-course-viewer";
 import { allCourseSlugs, slugToVariableId } from "@/lib/ak1a/deep-courses-data";
+import { DYNAMIC_CATALOG, CATALOG_CATEGORIES, TOTAL_CATALOG_COURSES, type CatalogCourse } from "@/lib/ak1a/dynamic-catalog";
 
 /** Map a variable id (e.g. "V01") to its deep course slug. */
 function variableIdToSlug(vid: string): string | null {
@@ -1369,15 +1370,14 @@ function PathCard({ path }: { path: (typeof LEARNING_PATHS)[number] }) {
 /* ------------------------------------------------------------------ */
 
 function KunskapsmarknadBlock() {
-  const { progress, completeCourse, addXp, level } = useAk1aStore();
-  const [filter, setFilter] = React.useState<KmCategory | "ALLA">("ALLA");
+  const { progress, completeCourse, addXp, level, setKurserDeepSlug } = useAk1aStore();
+  const [filter, setFilter] = React.useState<string>("ALLA");
   const [query, setQuery] = React.useState("");
-  const [active, setActive] = React.useState<KmCourse | null>(null);
 
   const completedKmIds = React.useMemo(
     () =>
       new Set(
-        KUNSKAPSMARKNAD_COURSES.filter((c) =>
+        DYNAMIC_CATALOG.filter((c) =>
           progress.completedCourses.includes(c.id)
         ).map((c) => c.id)
       ),
@@ -1386,7 +1386,7 @@ function KunskapsmarknadBlock() {
 
   const filtered = React.useMemo(() => {
     const q = query.trim().toLowerCase();
-    return KUNSKAPSMARKNAD_COURSES.filter((c) => {
+    return DYNAMIC_CATALOG.filter((c) => {
       if (filter !== "ALLA" && c.category !== filter) return false;
       if (
         q &&
@@ -1410,15 +1410,15 @@ function KunskapsmarknadBlock() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <Eyebrow>Kunskapsmarknaden — utanför AKM1</Eyebrow>
+            <Eyebrow>Kunskapsmarknaden — alla kurser utanför AKM1</Eyebrow>
             <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
               KUNSKAPSMARKNADEN
             </h2>
             <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
-              251 kurser utanför AKM1-kärnan. Bokföring, värderingsmetoder,
-              riskhantering, beteendefinans, svensk bolagsskatt — allt en svensk
-              retail-investerare behöver. Nedan visas en browsbar sample av 68
-              kurser i 13 kategorier.
+              {TOTAL_CATALOG_COURSES} djupa kurser utanför AKM1-kärnan — alla med
+              6 kapitel, Lynch/Graham/AKM1-perspektiv och historisk kontext.
+              Bokföring, värderingsmetoder, riskhantering, beteendefinans,
+              sektoranalys, teknisk analys, portföljhantering och mer.
             </p>
           </div>
           <div className="min-w-[200px] rounded-lg border border-gold/30 bg-gold/[0.04] p-4">
@@ -1426,14 +1426,14 @@ function KunskapsmarknadBlock() {
               <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
                 Din progress
               </span>
-              <HonestyTag kind="metodmal" />
+              <HonestyTag kind="matt" />
             </div>
             <p className="mt-2 font-serif text-3xl font-bold leading-none">
               {completedCount}
-              <span className="text-xl text-muted-foreground">/68</span>
+              <span className="text-xl text-muted-foreground">/{TOTAL_CATALOG_COURSES}</span>
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              Av browsebar sample · mål 251
+              Av alla djupa kurser · MÄTT
             </p>
           </div>
         </div>
@@ -1465,7 +1465,7 @@ function KunskapsmarknadBlock() {
         {/* Category filter tabs */}
         <Tabs
           value={filter}
-          onValueChange={(v) => setFilter(v as KmCategory | "ALLA")}
+          onValueChange={(v) => setFilter(v)}
           className="mt-4"
         >
           <div className="-mx-4 overflow-x-auto pb-1 sm:mx-0">
@@ -1474,10 +1474,10 @@ function KunskapsmarknadBlock() {
                 value="ALLA"
                 className="rounded-md border border-transparent px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground data-[state=active]:border-gold data-[state=active]:bg-gold data-[state=active]:text-background data-[state=active]:shadow-none whitespace-nowrap"
               >
-                ALLA ({KUNSKAPSMARKNAD_COURSES.length})
+                ALLA ({TOTAL_CATALOG_COURSES})
               </TabsTrigger>
-              {KM_CATEGORIES.map((cat) => {
-                const count = KUNSKAPSMARKNAD_COURSES.filter(
+              {CATALOG_CATEGORIES.map((cat) => {
+                const count = DYNAMIC_CATALOG.filter(
                   (c) => c.category === cat
                 ).length;
                 return (
@@ -1496,21 +1496,18 @@ function KunskapsmarknadBlock() {
 
         {/* Course grid */}
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((c) => {
+          {filtered.slice(0, 60).map((c) => {
             const isCompleted = completedKmIds.has(c.id);
-            const isLocked = isLockedFor(c.level, level);
+            const isLocked = isLockedFor(c.level as Level, level);
             return (
-              <KmCourseCard
-                key={c.id}
+              <DynamicCourseCard
+                key={c.slug}
                 course={c}
                 isCompleted={isCompleted}
                 isLocked={isLocked}
                 onStart={() => {
-                  const slug = kmCourseIdToSlug(c.id, c.title);
-                  if (slug) {
-                    setKurserDeepSlug(slug);
-                  } else {
-                    setActive(c);
+                  if (c.slug && allCourseSlugs.includes(c.slug)) {
+                    setKurserDeepSlug(c.slug);
                   }
                 }}
               />
@@ -1518,28 +1515,113 @@ function KunskapsmarknadBlock() {
           })}
         </div>
 
+        {filtered.length > 60 && (
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Visar 60 av {filtered.length} kurser. Förfina sökningen för att se fler.
+          </p>
+        )}
+
         {filtered.length === 0 && (
           <p className="mt-8 text-center text-sm text-muted-foreground">
             Inga kurser matchade din sökning.
           </p>
         )}
       </div>
-
-      <KmCourseDialog
-        course={active}
-        isCompleted={active ? completedKmIds.has(active.id) : false}
-        isLocked={active ? isLockedFor(active.level, level) : false}
-        onClose={() => setActive(null)}
-        onComplete={() => {
-          if (active) {
-            completeCourse(active.id);
-            addXp(50);
-          }
-        }}
-      />
     </section>
   );
 }
+
+function DynamicCourseCard({
+  course,
+  isCompleted,
+  isLocked,
+  onStart,
+}: {
+  course: CatalogCourse;
+  isCompleted: boolean;
+  isLocked: boolean;
+  onStart: () => void;
+}) {
+  const levelMap: Record<string, string> = {
+    nyborjare: "Nybörjare",
+    intermediar: "Intermediär",
+    avancerad: "Avancerad",
+  };
+  return (
+    <Card
+      className={cn(
+        "gap-0 overflow-hidden p-0 py-0 transition-all",
+        isLocked && !isCompleted && "opacity-70",
+        isCompleted ? "border-bull/40" : "hover:border-gold/40"
+      )}
+    >
+      <div className="p-4">
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-gold">
+            {course.category}
+          </span>
+          <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+            <Clock className="h-3 w-3" /> {course.minutes} min
+          </span>
+        </div>
+        <div className="mt-3 flex items-baseline gap-2">
+          <span className="font-mono text-xs font-semibold text-muted-foreground">
+            {course.id}
+          </span>
+        </div>
+        <h3 className="mt-1 font-serif text-sm font-bold leading-tight">
+          {course.title}
+        </h3>
+        <p className="mt-1 text-xs leading-relaxed text-muted-foreground line-clamp-2">
+          {course.summary}
+        </p>
+        <div className="mt-3 flex flex-wrap items-center gap-1.5">
+          <Badge variant="outline" className="text-[10px] text-muted-foreground">
+            {levelMap[course.level] || course.level}
+          </Badge>
+          <HonestyTag kind="matt" />
+          {course.hasLynch && course.hasGraham && course.hasAk1 && (
+            <Badge variant="outline" className="text-[9px] border-gold/30 text-gold">
+              L/G/AK1
+            </Badge>
+          )}
+          {isCompleted && (
+            <Badge className="border border-bull/30 bg-bull/15 text-bull text-[10px]">
+              <Check className="h-3 w-3" /> Klar
+            </Badge>
+          )}
+          {isLocked && !isCompleted && (
+            <Badge variant="outline" className="text-[10px] text-muted-foreground">
+              <Lock className="h-3 w-3" /> {course.level === "avancerad" ? "Avancerad" : ""}
+            </Badge>
+          )}
+        </div>
+        <Button
+          className="mt-3 w-full"
+          size="sm"
+          variant={isCompleted ? "outline" : "default"}
+          disabled={isLocked && !isCompleted}
+          onClick={onStart}
+        >
+          {isLocked && !isCompleted ? (
+            <>
+              <Lock className="h-3 w-3" /> Låst
+            </>
+          ) : isCompleted ? (
+            <>
+              <Check className="h-3 w-3" /> Repetera
+            </>
+          ) : (
+            <>
+              Starta <ArrowRight className="ml-1 h-3 w-3" />
+            </>
+          )}
+        </Button>
+      </div>
+    </Card>
+  );
+}
+
 
 function KmCourseCard({
   course,

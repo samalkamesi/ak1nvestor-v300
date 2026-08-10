@@ -1163,3 +1163,61 @@ Stage Summary:
 - Files created: stock-analysis-view.tsx, api/analysis/[ticker]/route.ts, data/analyses/PREC-ST.json, data/analyses/VOLCAR-B.json
 - Files modified: analyser-section.tsx (removed AnalyserReportsBlock + added activeTicker), prec-section.tsx (thin wrapper), ak1a-store.ts (removed "rapporter"), data.ts (removed "rapporter" from nav), page.tsx (removed RapporterSection)
 - Dead code: rapporter-section.tsx, report-viewer.tsx (orphaned, not imported anywhere)
+
+---
+Task ID: 46-CHECKPOINT
+Agent: main (Z.ai Code)
+Task: Kapacitets-checkpoint — spara fortsättningsinfo för ny konversation
+
+## ⚡ FORTSÄTT HÄR (ny konversation: läs bara detta block)
+
+### Projekt: AK1A Research Lab (ak1nvestor.com)
+Next.js 16 + TypeScript + Tailwind + shadcn/ui + Prisma/SQLite. Dev server kör på port 3000. `bun run dev` i bakgrunden.
+
+### Senaste klara arbete (Task 45)
+- **Eliminerat analysis-duplikation**: RAPPORTER-sektion borttagen helt. AnalyserReportsBlock (iframe) borttagen.
+- **Enhetlig StockAnalysisView** skapad: `src/components/ak1a/stock-analysis-view.tsx` — datadriven, 11 sektioner, level-aware, inga iframes/PDFs/downloads.
+- **PREC-sektion** är nu en tunn wrapper runt StockAnalysisView (från 1934 rader → 20 rader).
+- **Analysdata** i JSON-filer: `data/analyses/PREC-ST.json`, `data/analyses/VOLCAR-B.json`. API: `/api/analysis/[ticker]`.
+- **Agent Browser verifierat**: PREC.ST (FÖRSIKTIGT KÖP, 0,86 SEK, 38/100), VOLCAR-B (HÅLL, 285 SEK, 62/100). Mobil OK, ingen horisontell scroll. Lint rent.
+
+### VIKTIGA FILER (för nästa session)
+- `src/components/ak1a/stock-analysis-view.tsx` — enhetlig analysvy (~900 rader)
+- `src/components/ak1a/sections/analyser-section.tsx` — arkiv + featured, öppnar StockAnalysisView
+- `src/components/ak1a/sections/prec-section.tsx` — tunn wrapper
+- `data/analyses/*.json` — analysdata per ticker (lägg till ny = ny JSON-fil)
+- `src/app/api/analysis/[ticker]/route.ts` — serverar JSON (force-dynamic)
+- `prisma/schema.prisma` — databas-schema (Member, ClientPortfolio, ClientHolding, ClientAnalysis, Booking, UserActivity, SystemEvent, etc.)
+- `src/lib/ak1a-store.ts` — Zustand store (section navigation + level + progress)
+- `src/lib/ak1a/data.ts` — NAV_SECTIONS + FOOTER_NAV (nav har ej "rapporter" längre)
+
+### ÖPPNA UPPGIFTER (användaren vill ha dessa)
+1. **Supabase-integration**: Användaren nämner "spara allt i supabase". Projektet använder Prisma/SQLite. `src/lib/supabase.ts` har `isSupabaseConfigured = false`. Behöver: Supabase-credentials i .env, uppdatera supabase.ts, migrera data. ANALYSDATA (data/analyses/*.json) bör sparas i databasen för skalbarhet.
+2. **AI organ styrelse beslut**: Användaren vill att AI-organen tar beslut om optimering. API finns: `/api/styrelse/mote`, `/api/styrelse/djup`. Komponent: `src/features/styrelse/ui/StyrelseSection.tsx`.
+3. **Fler bolagsanalyser**: Arkivet visar 8 bolag men bara 2 har data (PREC.ST, VOLCAR-B). Saknas: ATCO-A, AZN, VOLV-B, HM-B, SINCH, SWED-A, ERIC-B.
+4. **Död kod att städa**: `src/components/ak1a/sections/rapporter-section.tsx` och `src/components/ak1a/report-viewer.tsx` är orphaned (ej importerade) — kan tas bort.
+
+### TEKNISK SKULD
+- `src/features/*` och `src/shared/*` mappar har föråldrade kopiopr av komponenter (huvudkoden lever i `src/components/ak1a/`). Ej kritiskt.
+- TypeScript-fel i `src/features/*`, `scripts/*`, `examples/*` — föråldrade, ej blockerande.
+
+### KÖRA PROJEKTET
+```bash
+cd /home/z/my-project
+bun run dev          # dev server port 3000
+bun run lint         # eslint
+bun run db:push      # prisma schema → sqlite
+```
+
+### DATABAS
+Prisma + SQLite (`db/custom.db`). Modeller: Ak1Indicator, CaseStudy, IndicatorCombination, MeetingProtocol, MegaTask, DeepCourse, UserActivity, Portfolio, PortfolioHolding, AnalysisSession, OrganConsultation, SystemEvent, Member, ClientPortfolio, ClientHolding, ClientAnalysis, Booking.
+
+### ANVÄNDARENS KRAV (sammanfattat från konversation)
+- Institutionell svensk aktieanalys-plattform
+- 99-sidiga analyser, pedagogiska, reproducerbara
+- "Kognitiv suveränitet" — anti-bank, anti-casino
+- Fas 1 (gratis), Fas 2 (9999 kr), Fas 3 (9999 kr) medlemskap
+- AI-organ styrelse (8 organ: Σ α Δ Ω Φ Θ Μ Ψ) tar beslut
+- Antinedladdningsskydd på rapporter
+- Level-aware (nyborjare/intermediar/avancerad) personalisering
+- Mobil-först design

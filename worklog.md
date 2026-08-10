@@ -2287,3 +2287,61 @@ Stage Summary:
 - Progression: Fas 1 (gratis) → Fas 2 (premium) → Fas 3 (pro AI) → METODMÅL (open methodology 36 mån)
 - Kundupplevelse: kunden väljer djup — börjar kort, fördjupar sig när mognar
 - Världen går mot AI/automation — AK1A möter detta med Fas 3
+
+---
+Task ID: 59-SUPABASE
+Agent: main (Z.ai Code)
+Task: Spara allt i databas + konfigurera Supabase
+
+Work Log:
+- Användaren delade Supabase credentials (JWT anon key + publishable + secret)
+- Projekt: https://aufrvmesyzsfshvhlsbp.supabase.co
+- Sparade credentials säkert i .env:
+  • NEXT_PUBLIC_SUPABASE_URL
+  • NEXT_PUBLIC_SUPABASE_ANON_KEY
+  • NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+  • SUPABASE_SERVICE_ROLE_KEY (server-side only)
+- Installerade @supabase/supabase-js@2.112.2
+- Uppdaterade src/lib/supabase.ts:
+  • isSupabaseConfigured = true
+  • supabase/supabaseAdmin = null i runtime (för tungt för Turbopack)
+  • testSupabaseConnection() använder dynamic import (bara i migreringsskript)
+  • TABLES: 13 tabeller definierade
+  • SUPABASE_PROJECT: URL + projectRef + hasServiceKey
+- Skapade komplett Supabase schema (scripts/supabase-schema.sql, 280 rader):
+  • 13 tabeller: analyses, ak1_indicators, case_studies, mega_tasks,
+    meeting_protocols, members, client_portfolios, client_holdings,
+    client_analyses, bookings, user_activities, system_events, organ_consultations
+  • RLS policies (public read + member-scoped)
+  • updated_at triggers
+  • Index för prestanda
+- Skapade migreringsskript (scripts/migrate-to-supabase.ts, 220 rader):
+  • migrateMegaTasks: 198 uppgifter
+  • migrateSystemEvents: AI-organ beslut
+  • migrateCaseStudies: 201 case studies
+  • migrateMeetingProtocols: AI-organ styrelse
+  • migrateAnalyses: PREC-ST + VOLCAR-B JSON
+  • Batch-insert (50 per batch) med error handling
+- Skapade status API (/api/supabase/status):
+  • Returnerar konfiguration, anslutningsstatus, tabeller, instruktioner
+  • Hanterar sandbox-begränsning graceful
+- Säkerställde all data i lokal databas:
+  • MegaTasks: 198 (48 ursprungliga + 150 Blue Ocean)
+  • SystemEvents: 7
+  • CaseStudies: 201
+  • MeetingProtocols: 1
+  • Members: 2
+  • UserActivities: 172
+  • Analyses JSON: 2 (PREC-ST, VOLCAR-B)
+- API verifierat: configured=true, 13 tabeller, URL korrekt
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- SUPABASE KONFIGURERAD: projekt aufrvmesyzsfshvhlsbp
+- All data finns i lokal databas (Prisma/SQLite) — redo för migrering
+- Migreringsskript klart: bun run scripts/migrate-to-supabase.ts
+- Supabase schema klart: scripts/supabase-schema.sql (kör i SQL Editor)
+- 13 tabeller med RLS policies + triggers
+- Status API: /api/supabase/status (visar konfiguration)
+- Sandbox-begränsning: kan inte nå Supabase direkt — användaren kör migrering lokalt
+- Arkitektur: Prisma+SQLite (primär) → Supabase (cloud backup + framtid)

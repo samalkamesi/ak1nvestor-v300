@@ -96,40 +96,77 @@ export function WaveMatrix() {
           </div>
         </div>
 
-        {/* Matrix */}
-        <div className="mt-8 overflow-x-auto scrollbar-ak1a">
-          <div className="min-w-[640px]">
-            {/* header row */}
-            <div className="grid grid-cols-[120px_repeat(5,1fr)] gap-1">
-              <div />
-              {WAVE_HORIZONS.map((h) => (
-                <div
-                  key={h}
-                  className="text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground pb-2"
-                >
-                  {h}
+        {/* Matrix — responsive: grid on desktop, stacked cards on mobile */}
+        <div className="mt-8">
+          {/* Desktop grid (sm and up) */}
+          <div className="hidden sm:block overflow-x-auto scrollbar-ak1a">
+            <div className="min-w-[560px]">
+              {/* header row */}
+              <div className="grid grid-cols-[100px_repeat(5,1fr)] gap-1">
+                <div />
+                {WAVE_HORIZONS.map((h) => (
+                  <div
+                    key={h}
+                    className="text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground pb-2"
+                  >
+                    {h}
+                  </div>
+                ))}
+              </div>
+
+              {WAVE_THEORIES.map((theory) => (
+                <div key={theory} className="grid grid-cols-[100px_repeat(5,1fr)] gap-1">
+                  <div className="flex items-center pr-2 text-right justify-end">
+                    <span className="font-serif text-sm font-bold">{theory}</span>
+                  </div>
+                  {WAVE_HORIZONS.map((horizon) => {
+                    const key = `${theory}-${horizon}`;
+                    const cell = MATRIX[key];
+                    return (
+                      <WaveCellButton
+                        key={key}
+                        cell={cell}
+                        theory={theory}
+                        horizon={horizon}
+                        onClick={() => setActive(key)}
+                      />
+                    );
+                  })}
                 </div>
               ))}
             </div>
+          </div>
 
+          {/* Mobile stacked cards (below sm) */}
+          <div className="sm:hidden space-y-3">
             {WAVE_THEORIES.map((theory) => (
-              <div key={theory} className="grid grid-cols-[120px_repeat(5,1fr)] gap-1">
-                <div className="flex items-center pr-2 text-right justify-end">
-                  <span className="font-serif text-sm font-bold">{theory}</span>
+              <div key={theory} className="rounded-lg border border-border bg-card p-3">
+                <h3 className="font-serif text-sm font-bold mb-2">{theory}</h3>
+                <div className="grid grid-cols-5 gap-1">
+                  {WAVE_HORIZONS.map((horizon) => {
+                    const key = `${theory}-${horizon}`;
+                    const cell = MATRIX[key];
+                    return (
+                      <button
+                        key={key}
+                        onClick={() => setActive(key)}
+                        className={cn(
+                          "flex flex-col items-center justify-center rounded-md border p-1.5 min-h-[44px] transition-all active:scale-95",
+                          cell.signal === "bull" && "border-bull/40 bg-bull/10 text-bull",
+                          cell.signal === "bear" && "border-bear/40 bg-bear/10 text-bear",
+                          cell.signal === "neutral" && "border-neutral-signal/40 bg-neutral-signal/10 text-neutral-signal"
+                        )}
+                      >
+                        <span className="text-base font-bold leading-none">
+                          {cell.signal === "bull" ? "▲" : cell.signal === "bear" ? "▼" : "—"}
+                        </span>
+                        <span className="text-[8px] uppercase tracking-wider mt-0.5 opacity-70">
+                          {horizon.slice(0, 4)}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
-                {WAVE_HORIZONS.map((horizon) => {
-                  const key = `${theory}-${horizon}`;
-                  const cell = MATRIX[key];
-                  return (
-                    <WaveCellButton
-                      key={key}
-                      cell={cell}
-                      theory={theory}
-                      horizon={horizon}
-                      onClick={() => setActive(key)}
-                    />
-                  );
-                })}
               </div>
             ))}
           </div>

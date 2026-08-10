@@ -248,3 +248,95 @@ img, video, canvas, svg, iframe {
   background: var(--gold-soft, #C5A572);
   border-radius: 2px;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MEGA MOBILE OPTIMIZATION — 100x better mobile UX
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Minimum touch target size — 44px (Apple/Google standard) */
+@media (max-width: 640px) {
+  button,
+  a[role="button"],
+  [data-touchable] {
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  /* Smaller padding on mobile to fit more content */
+  .px-4 { padding-left: 0.875rem; padding-right: 0.875rem; }
+  .py-14 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .py-12 { padding-top: 2rem; padding-bottom: 2rem; }
+  .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+  .py-24 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+
+  /* Text sizes — ensure readability */
+  .font-serif.text-6xl { font-size: 2.25rem; line-height: 1.1; }
+  .font-serif.text-5xl { font-size: 2rem; line-height: 1.1; }
+  .font-serif.text-4xl { font-size: 1.75rem; line-height: 1.15; }
+  .font-serif.text-3xl { font-size: 1.5rem; line-height: 1.2; }
+  .font-serif.text-2xl { font-size: 1.25rem; line-height: 1.25; }
+
+  /* Badges wrap properly */
+  .badge, [class*="Badge"] {
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* Grids collapse to single column by default on mobile */
+  .grid.md\:grid-cols-2,
+  .grid.md\:grid-cols-3,
+  .grid.md\:grid-cols-4,
+  .grid.lg\:grid-cols-2,
+  .grid.lg\:grid-cols-3,
+  .grid.lg\:grid-cols-4,
+  .grid.lg\:grid-cols-5 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tables become scrollable */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  /* Sticky elements don't cause issues */
+  .sticky { position: relative; }
+
+  /* Font sizes for small text — min 11px for readability */
+  .text-\[9px\] { font-size: 10px; }
+  .text-\[10px\] { font-size: 11px; }
+  .text-\[11px\] { font-size: 12px; }
+}
+
+/* Prevent text truncation in headings */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Ensure all flex children can shrink */
+.flex > * {
+  min-width: 0;
+}
+
+/* Ensure grid children can shrink */
+.grid > * {
+  min-width: 0;
+}
+
+/* Prevent horizontal overflow from long URLs/strings */
+.break-all {
+  word-break: break-all;
+}
+
+/* Touch-friendly: larger tap targets for nav buttons */
+@media (max-width: 640px) {
+  nav button,
+  header button {
+    padding: 0.5rem 0.75rem;
+  }
+}

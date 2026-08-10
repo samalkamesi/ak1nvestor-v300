@@ -1778,16 +1778,16 @@ function PrincipSection({
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <HonestyTag kind="matt" />
-              <Badge variant="outline" className="border-border">
+              <Badge variant="outline" className="border-border whitespace-nowrap">
                 Verifierad {data.verified}
               </Badge>
-              <Badge variant="outline" className="border-border">
+              <Badge variant="outline" className="border-border whitespace-nowrap">
                 99 sidor
               </Badge>
-              <Badge variant="outline" className="border-border">
-                Datakälla: {data.source}
-              </Badge>
             </div>
+            <p className="mt-2 text-[10px] text-muted-foreground break-words">
+              Datakälla: {data.source}
+            </p>
           </div>
 
           <Card className="border-gold/40 bg-card p-5 sm:p-6">
@@ -1800,10 +1800,12 @@ function PrincipSection({
               {p.principleBody}
             </p>
             <Separator className="my-4 bg-border" />
-            <p className="text-xs leading-relaxed text-muted-foreground">
+            <p className="text-xs leading-relaxed text-muted-foreground break-words">
               {p.footer}
               <br />
-              Ägare: Ak1 Apex Nexus via AK1nvestor.com · Kontakt: info@ak1nvestor.com
+              Ägare: Ak1 Apex Nexus via AK1nvestor.com
+              <br />
+              Kontakt: info@ak1nvestor.com
             </p>
           </Card>
         </div>

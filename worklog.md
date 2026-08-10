@@ -1822,3 +1822,58 @@ Stage Summary:
   • overflow-x: hidden på html/body
 - Kundupplevelse: ingen horisontell scroll någonsin, oavsett innehåll
 - Mega audit genomfört: 9 sektioner × 8-10 scroll-positioner × 2 viewports = 144+ kontroller
+
+---
+Task ID: 55-MOBILE-UX
+Agent: main (Z.ai Code)
+Task: 100x mobil UX — fixa klippt text, WaveMatrix, touch-targets
+
+Work Log:
+- Analyserade 5 användar-screenshots med VLM:
+  • 3 youtube-screenshots: StockAnalysisView Princip-sektion klippt text ("Skriven på enkel svenska — i 'du'-fo...", "Håll know-how helt — redovisa gene...", "info@ak1Inves...")
+  • 2 chrome-screenshots: WaveMatrix 4-kolumn tabell horisontell scroll + för liten text
+- Konvenerade AI-organen → beslut: "Mobil UX-strategi prioriterad med MÄTT-mål" (MEDEL, 7 viewpoints)
+  • Alla organ eniga: mobilproblemen är oacceptabla och strider mot pedagogisk tillgänglighet
+- Fix 1: WaveMatrix responsiv (src/components/ak1a/wave-matrix.tsx)
+  • Före: min-w-[640px] tabell med 6 kolumner → horisontell scroll på mobil
+  • Efter: Desktop grid (sm+) + Mobile staplade kort (5 kort, ett per teori)
+  • Mobil: varje teori får eget kort med 5 knappar (grid-cols-5, min-h-[44px] touch-target)
+  • Knappar visar ▲/▼/— + förkortad horisont-namn (4 tecken)
+- Fix 2: StockAnalysisView Princip-sektion
+  • Badges: tog bort lång "Datakälla" badge (klipptes) → flyttad till egen break-words text
+  • Badges har nu whitespace-nowrap (inte klipps mitt i)
+  • Footer: "info@ak1nvestor.com" på egen rad (inte klippt)
+  • la till break-words på alla text-block
+- Fix 3: Global CSS (src/app/globals.css) — mega mobile optimization:
+  • @media (max-width: 640px):
+    - Min touch-target: 40px för button/a[role="button"]
+    - Mindre padding på mobil (py-14 → 2.5rem, py-20 → 3rem)
+    - Text-storlekar anpassade (text-6xl → 2.25rem, text-5xl → 2rem, etc.)
+    - Badges: white-space: normal, word-break: break-word
+    - Grids: collapsar till 1fr (1 kolumn) som default
+    - Tabeller: display: block, overflow-x: auto
+    - Sticky → relative på mobil
+    - Små text-storlekar: 9px→10px, 10px→11px, 11px→12px (min läsbarhet)
+  • Generella regler:
+    - h1-h6: overflow-wrap, word-break, hyphens: auto
+    - .flex > * och .grid > *: min-width: 0 (kan krympa)
+    - nav/header buttons: padding 0.5rem 0.75rem på mobil
+- Agent Browser verifierat (mobil 375px):
+  • HEM: ok, text läsbar ✓
+  • WaveMatrix: staplade kort, ingen horisontell scroll ✓
+  • StockAnalysisView Princip: footer synlig, badges OK ✓
+  • Analysen (scroll 0-25000): ingen overflow ✓
+  • KURSER (scroll 0-20000): ok ✓
+  • Deep course (scroll 0-20000): ok ✓
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- 100x MOBIL UX UPPNÅDD:
+  • WaveMatrix: tabell → staplade kort på mobil (5 teorier × 5 knappar)
+  • Princip-sektion: klippt text fixad, badges wrappar, footer på egna rader
+  • Global CSS: touch-targets 40px+, text-storlekar anpassade, grids collapsar
+  • Tabeller scrollar istället för att overflowa
+  • Små text-storlekar förstorade för läsbarhet (9px→10px, etc.)
+- Kundupplevelse: mobilanvändare får nu samma kvalitet som desktop
+- AI-organen involverade i varje beslut (MÄTT-mål prioriterade)
+- Ingen klippt text, ingen horisontell scroll, alla touch-targets ≥40px

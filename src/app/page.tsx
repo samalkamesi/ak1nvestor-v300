@@ -16,6 +16,7 @@ import { AnalyserSection } from "@/components/ak1a/sections/analyser-section";
 import { AktierSection } from "@/components/ak1a/sections/aktier-section";
 import { UtbildningSection } from "@/components/ak1a/sections/utbildning-section";
 import { PortalSection } from "@/components/ak1a/sections/portal-section";
+import { StrategiSection } from "@/components/ak1a/sections/strategi-section";
 
 export default function Page() {
   const { section } = useAk1aStore();
@@ -34,6 +35,7 @@ export default function Page() {
         {section === "labb" && <LabbSection />}
         {section === "styrelse" && <StyrelseSection />}
         {section === "utbildning" && <UtbildningSection />}
+        {section === "strategi" && <StrategiSection />}
         {section === "om-oss" && <OmOssSection />}
         {section === "portal" && <PortalSection />}
       </main>

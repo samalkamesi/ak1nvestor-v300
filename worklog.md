@@ -1315,3 +1315,173 @@ Stage Summary:
 - Kundupplevelse: från analys → klicka V07 → djupkurs → tillbaka → fortsätt lära sig
 - Ny fil: src/lib/ak1a/course-links.ts (central kurslänknings-helper)
 - Uppdaterade: ak1a-store.ts (openCourse), stock-analysis-view.tsx (klickbara AKM1 + Relaterade kurser), utbildning-section.tsx (läroplan länkad)
+
+---
+Task ID: 49-research
+Agent: general-purpose (strategisk forskare)
+Task: Djup strategisk forskning för #1 i världen i kategorin — 10 ramverk + 4 strategy-filer
+
+Work Log:
+- Läste /home/z/my-project/worklog.md (de senaste 10 sektionerna, Task 40-48) för kontext
+- Skapade mapp /home/z/my-project/strategy/
+- Producerade 4 strategifiler genom 10 strategiska ramverk (Zero to One, Blue Ocean,
+  Crossing the Chasm, Positioning, Purple Cow, Innovator's Dilemma, Start With Why,
+  Made to Stick, Contagious, Hooked)
+
+### Fil 1: /home/z/my-project/strategy/research.md (≈16 KB, 13 sektioner)
+Strategisk Analys — Del 1
+- **Zero to One-sanning**: "En investerares värsta fiende är inte marknaden — det är
+  bristen på reproducerbarhet i sina egna beslut." Kontrarisk sanning som banker/bloggare
+  inte håller med om.
+- **Blue Ocean**: "Verifierbar Privatplacering" — ny marknad vi skapade. ERRC-grid visar
+  hur vi eliminerar intressekonflikt/tips-kultur, reducerar jargong, höjer djup/pedagogik/
+  reproducerbarhet, skapar AI-styrelse + ekosystem-loop + kognitiv suveränitet.
+- **Positioning**: Vi ska äga ordet "VERIFIERBARHET" (tekniskt) + "KOGNITIV SUVERÄNITET"
+  (känsloladdat). 24-månaders laddnings-sekvens definierad.
+- **Purple Cow**: Tre signaturer — (1) 99-sidiga analyser, (2) offentlig AI-styrelse, (3)
+  paradoxen "håll know-how, redovisa generöst".
+- **Why**: "Vi existerar för att ge varje person samma beslutsunderlag som institutionerna
+  har — och metoden att förstå det." Celery Test definierat.
+- **Crossing the Chasm**: Beachhead = "Skeptiska DIY-sparare 35-55, 500k-5M SEK, trötta
+  på bank men inte tips-kunder". Tre broar: head-to-head-verifikation, whole-product-
+  ekosystem, "Verifiera själv"-knapp.
+
+### Fil 2: /home/z/my-project/strategy/personas.md (≈13 KB, 9 sektioner)
+Målgrupp & Persona — Del 2
+- 3 exakta personas:
+  1. **Mats, 52, civilingenjör** — BEACHHEAD. Smärta: brist på disciplin/struktur.
+     Språk: teknisk men rak, metodisk, numerisk precision.
+  2. **Robin, 34, sjuksköterska** — secondary. Smärta: bank pratar över hennes huvud.
+     Språk: varm pedagogisk, konkreta exempel, ingen jargong.
+  3. **Astrid, 41, företagare** — tertiary. Smärta: skeptisk mot alla rådgivare.
+     Språk: auktoritär, korthuggen, bevisdriven.
+- Språkdräkt-jämförelsetabell per persona per situation.
+- Katalog över ord att UNDVIKA (Casino-ord 12, Bank-ord 8, Blogg-jargong 10) med
+  ersättningar.
+- Katalog över 20 egna termer att ANVÄNDA (MÄTT, METODMÅL, AKM1, kognitiv suveränitet,
+  verifierbarhet, ekosystem-loop, etc.).
+- Code-switching-regler per AI-organ (Σ α Δ Ω Φ Θ Μ Ψ).
+
+### Fil 3: /home/z/my-project/strategy/mega-tasks.json (48 uppgifter, valid JSON)
+40+ Strategiska Uppgifter för AI-Organen — Del 3
+- **48 uppgifter** (krav: 40+), var och en med: num, title, description, category,
+  priority, organOwner, rationale, successMetric, frameworkSource.
+- **9 kategorier** (krav: 8+AI-organ):
+  - strategi: 7 (5-7 ✓)
+  - branding: 7 (5-7 ✓)
+  - kundupplevelse: 6 (5-7 ✓)
+  - innehåll: 6 (5-7 ✓)
+  - marknadsföring: 5 + tillväxt: 1 = 6 (5-7 ✓)
+  - teknik: 6 (5-7 ✓)
+  - kvalitet: 6 (5-7 ✓)
+  - ai-organ: 4 (3-5 ✓)
+- **Prioriteringar**: KRITISK 18, HÖG 22, MEDEL 8.
+- **Alla 8 AI-organ representerade**: Σ 6, α 7, Δ 6, Ω 4, Φ 6, Θ 6, Μ 8, Ψ 5.
+- **Alla 10 ramverk representerade** i frameworkSource.
+- Topptrioriterade KRITISKA uppgifter: #1 (äg ordet verifierbarhet), #2 (Zero to One
+  manifest), #4 (Why-ekvation), #8 (SUCCESs-test mantra), #10 (Hooked onboarding),
+  #11 (99-sidigt standard), #15 (kundresa-mappning), #16 (ekosystem-loop harmoni),
+  #18 (Verifiera själv-knapp), #21 (99-sidig mall), #24 (reproducerbarhets-faktaruta),
+  #27 (Jämför din bank-kampanj), #33 (Reproducerbarhets-API), #36 (Reproducerbarhets-CI),
+  #39 (källa-regel), #41 (årlig fel-erkännande), #44 (källförteckning-krav),
+  #45 (AI-organ decision log).
+
+### Fil 4: /home/z/my-project/strategy/voice.md (≈15 KB, 9 sektioner)
+Språkdräkt & Ordval — Del 4
+- **Tonality-regler**: Formell men varm, auktoritär men tillgänglig, pedagogisk men inte
+  barnslig, vetenskaplig men inte akademisk. 7 ton-fällor att undvika.
+- **20 ord att ANVÄNDA** med definition + exempel (verifierbarhet, kognitiv suveränitet,
+  AKM1, MÄTT, METODMÅL, vägt målpris, våglängd, reproducerbarhets-faktaruta, verification
+  notes, ekosystem-loop, AI-organ styrelse, styrelseprotokoll, level-aware, tro inget/
+  verifiera allt, klarare än blogg/ärligare än bank, håll know-how/redovisa generöst,
+  Fas 1/2/3, djupkurs, V01-V20, scenarioark).
+- **20 ord att UNDVIKA** med ersättning (tips, hot stock, multibagger, garanterad,
+  magkänsla, experterna, rådgivning, private banking, marknaden säger, hemlig strategi,
+  fantastisk/revolutionerande, etc.).
+- **Meningsstruktur-regler**: kort före långt, aktivt före passivt, specifikt före
+  abstrakt, SVO-ordning, max 25 ord/mening (signatur), lista före löptext.
+- Stycke- och sektions-struktur (max 4 meningar/stycke webben).
+- Skriv-regler per yta (99-sidig analys, nyborjare-kurs, styrelseprotokoll, email,
+  startsida hero).
+- Skriv-process för AI-organ (3-steg före/under/efter).
+- Exempel: samma budskap ("HÅLL Volvo, vägt 315") skrivet i 3 persona-toner.
+- Sluttest: 7 frågor före publicering.
+
+### Validering
+- mega-tasks.json validerad med Python json.load — giltig, 48 tasks, alla kategorier och
+  organ representerade.
+- Alla 4 filer sparade i /home/z/my-project/strategy/.
+- Inga kodändringar — endast strategiforskning (enligt uppdrag).
+
+### Strategiska nyckelinsikter
+1. **Vårt ägda ord**: VERIFIERBARHET. Banker kan inte låna det utan att spränga sin
+   affärsmodell. Detta är #1-strategisk position.
+2. **Vår Zero to One-sanning**: "Användaren behöver inte åsikter — hen behöver en metod
+   som reproducerar beslut."
+3. **Vår Blue Ocean**: "Verifierbar Privatplacering" — institutionell metodik +
+   pedagogisk redovisning + reproducerbarhet + kognitiv suveränitet. Ingen konkurrent
+   kombinerar alla fyra.
+4. **Vår Purple Cow**: 99-sidiga analyser för privatpersoner + offentlig AI-styrelse +
+   håll-know-how/redovisa-generöst-paradoxen.
+5. **Vår chasm-bro**: "Verifiera själv"-knapp + head-to-head-verifikation med banker +
+   hel ekosystem-loop (analys → kurs → labb → beslut).
+6. **Vår Why**: "Ge varje person samma beslutsunderlag som institutionerna har — och
+   metoden att förstå det."
+
+### Nästa steg (för andra agenter)
+- Ladda 48 uppgifter i mega-tasks.json till databasen (via POST /api/mega/tasks).
+- Implementera uppgift #18 ("Verifiera själv"-knapp) först — det är den konkreta
+  chasm-bro som Early Majority behöver.
+- Implementera uppgift #33 (Reproducerbarhets-API) — tekniskt hjärta av positionen.
+- Implementera uppgift #45 (AI-organ public decision log) — andra Purple Cow.
+
+Stage Summary:
+- 4 strategiska forskningsdokument skapade i /home/z/my-project/strategy/
+- research.md (~16 KB): strategisk analys genom 10 ramverk
+- personas.md (~13 KB): 3 exakta personas + språkdräkt + ordlista
+- mega-tasks.json (~30 KB): 48 AI-organ-uppgifter, giltig JSON, alla kategorier/organ
+- voice.md (~15 KB): språkdräkt med 20 använda + 20 undvikna ord + tonalitet + struktur
+- Sammanfattning tillagd i worklog.md (Task 49-research)
+- Strategin är nu dokumenterad och redo för implementation av AI-organen
+
+---
+Task ID: 49-STRATEGI
+Agent: main (Z.ai Code)
+Task: Forska djupt om #1-positionering — Zero to One, Blue Ocean, 48 uppgifter för AI-organen
+
+Work Log:
+- Användaren ville forska super djupt om kategori nr 1, använda böcker (Zero to One, Blue Ocean Strategy, etc.) och skapa system med 40+ uppgifter för AI-organen
+- AI-organ styrelse samlades (/api/styrelse/mote) → beslut: "Fokuserad strategi med 5-10 prioriterade initiativ" (MEDEL konfidens, 7 viewpoints)
+- Subagent (Task 49-research) skapade 4 strategiska dokument i /home/z/my-project/strategy/:
+  • research.md (483 rader) — 10 ramverk-analys: Zero to One, Blue Ocean, Positioning, Purple Cow, Start With Why, Crossing the Chasm, Made to Stick, Contagious, Hooked, Innovator's Dilemma
+  • personas.md (394 rader) — 3 personas (Mats 52 beachhead, Robin 34, Astrid 41) + 30 förbjudna ord + 20 egna termer
+  • mega-tasks.json (552 rader, 48 uppgifter) — 9 kategorier: strategi 7, branding 7, kundupplevelse 6, innehåll 6, marknadsföring 5, teknik 6, kvalitet 6, tillväxt 1, ai-organ 4. Prioriteringar: 18 KRITISK, 22 HÖG, 8 MEDEL. Alla 8 organ (Σ α Δ Ω Φ Θ Μ Ψ)
+  • voice.md (368 rader) — språkdräkt: 4 grundtoner, 20 ord att använda, 20 att undvika, meningsstruktur-regler
+- Sparade 48 uppgifter i databasen (scripts/save-mega-tasks.ts → db.megaTask) — 6 skapade, 42 uppdaterade
+- Skapade ny STRATEGI-sektion (src/components/ak1a/sections/strategi-section.tsx, ~600 rader):
+  • HERO: "Vi skapade kategorin. Andra kopierar." + Zero to One/Blue Ocean/Positioning referenser
+  • ZERO TO ONE-sektion: kontrarisk sanning + Thiel-monopol 4 egenskaper
+  • BLUE OCEAN-sektion: ERRC-grid (Eliminate/Reduce/Raise/Create)
+  • POSITIONING-sektion: "VERIFIERBARHET" som ägt ord + "Kognitiv suveränitet"
+  • 10 STRATEGISKA RAMVERK: kort med fråga + AK1A:s svar
+  • 48 MEGA-UPPGIFTER: kategorifilter (9 kategorier), prioriterings-badge, organ-ägare, status
+  • Gå vidare: AI-organ styrelse, kurser, analyser, om oss
+- Lade till "strategi" i NAV_SECTIONS, FOOTER_NAV, SectionId, page.tsx
+- Agent Browser verifierat:
+  • STRATEGI-sektion öppnas med hero "Vi skapade kategorin. Andra kopierar." ✓
+  • Zero to One + Blue Ocean + Positioning alla synliga ✓
+  • 48 uppgifter laddas från API ✓
+  • Kategorifilter fungerar (ALLA 48, STRATEGI 7, BRANDING 7, etc.) ✓
+  • Task cards visar organ-ägare (Σ α Δ Ω Φ Θ Μ Ψ) och prioritet (KRITISK/HÖG/MEDEL) ✓
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- STRATEGISK SYSTEM BYGGD: 10 ramverk → 48 uppgifter → 8 AI-organ → databas → sajt
+- #1-positionering formulerad: "Vi skapade kategorin. Andra kopierar."
+- Ägt ord: VERIFIERBARHET (tekniskt) + KOGNITIV SUVERÄNITET (känsloladdat)
+- Zero to One-sanning: användaren behöver metod, inte åsikter
+- Blue Ocean: Verifierbar Privatplacering — ny marknad vi skapade
+- 48 uppgifter fördelade över 9 kategorier, ägda av 8 AI-organ
+- Ny sektion: STRATEGI — visar hela strategin öppet för kunden
+- Kundupplevelse: kunden kan se exakt hur vi ska nå #1 och vilka uppgifter AI-organen följer
+- Harmoni: alla sektioner pratar samma strategiska språk (verifierbarhet, kognitiv suveränitet, anti-bank)

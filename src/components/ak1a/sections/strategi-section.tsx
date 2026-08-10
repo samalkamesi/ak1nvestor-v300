@@ -21,6 +21,8 @@ import {
   Microscope,
   Globe,
   Scale,
+  GraduationCap,
+  ShieldCheck,
 } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
@@ -410,6 +412,104 @@ export function StrategiSection() {
         </div>
       </section>
 
+      {/* ───────────── VAD VI ÄR NU — Manifest ───────────── */}
+      <section className="border-b border-border bg-gradient-to-b from-gold/[0.04] to-transparent">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
+          <Eyebrow>Vad vi är nu — tack vare forskningen</Eyebrow>
+          <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+            10 ramverk. 48 uppgifter. 1 kategori vi äger.
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm text-muted-foreground leading-relaxed sm:text-base">
+            Allt på denna sajt bygger på strategisk forskning. Här är vad varje sida nu är —
+            bevisat med handling, inte bara ord.
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <ManifestCard
+              icon={<Target className="h-5 w-5" />}
+              section="HEM"
+              claim="Sveriges enda institutionella metodik"
+              dna="Vi skapade kategorin · Verifierbarhet · Kognitiv suveränitet"
+              framework="Zero to One + Positioning"
+            />
+            <ManifestCard
+              icon={<Microscope className="h-5 w-5" />}
+              section="ANALYSER"
+              claim="99 sidor. Reproducerbar. 'Verifiera själv'-knapp."
+              dna="Du behöver inte lita på oss — du kan återskapa det"
+              framework="Zero to One (handling)"
+            />
+            <ManifestCard
+              icon={<Layers className="h-5 w-5" />}
+              section="AKTIER"
+              claim="8 bolag med AKM1-poäng och öppen metodik"
+              dna="Inga hemliga formler — allt spårbart"
+              framework="Innovator's Dilemma"
+            />
+            <ManifestCard
+              icon={<BookOpen className="h-5 w-5" />}
+              section="KURSER"
+              claim="225 djupa moduler · 1352 kapitel · Lynch + Graham + AK1"
+              dna="Pedagogisk finansanalys — inte tips"
+              framework="Made to Stick + Hooked"
+            />
+            <ManifestCard
+              icon={<Sparkles className="h-5 w-5" />}
+              section="LABB"
+              claim="AKM1-calculatorn öppen — gör det själv"
+              dna="Reproducerbarhet = MÄTT"
+              framework="Zero to One (bevis)"
+            />
+            <ManifestCard
+              icon={<Brain className="h-5 w-5" />}
+              section="STYRELSE"
+              claim="8 AI-organ tar beslut öppet"
+              dna="Offentliga protokoll — inga svarta lådor"
+              framework="Transparency = Positioning"
+            />
+            <ManifestCard
+              icon={<Compass className="h-5 w-5" />}
+              section="STRATEGI"
+              claim="48 uppgifter för #1 i världen"
+              dna="10 ramverk · 8 organ · öppen väg"
+              framework="Blue Ocean + Crossing the Chasm"
+            />
+            <ManifestCard
+              icon={<GraduationCap className="h-5 w-5" />}
+              section="UTBILDNING"
+              claim="Läroplan: 3 steg · 19 länkade kurser"
+              dna="En väg — inte en katalog"
+              framework="Start With Why"
+            />
+            <ManifestCard
+              icon={<Globe className="h-5 w-5" />}
+              section="OM OSS"
+              claim="Ak1 Apex Nexus · svensk · oberoende"
+              dna="Anti-bank · Anti-casino · pro-metod"
+              framework="Purple Cow (remarkability)"
+            />
+          </div>
+
+          {/* Slutmanifest */}
+          <Card className="mt-8 border-gold/40 bg-gradient-to-br from-gold/[0.08] to-transparent p-6 sm:p-8">
+            <div className="text-center">
+              <Eyebrow>Slutmanifest</Eyebrow>
+              <p className="mt-4 font-serif text-xl font-bold leading-snug sm:text-2xl">
+                &ldquo;Vi säljer inte åsikter. Vi säljer inte tips. Vi säljer inte automation.
+                <br className="hidden sm:block" />
+                Vi säljer den enda metodiken som låter dig återskapa varje rekommendation själv.&rdquo;
+              </p>
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+                <HonestyTag kind="matt" />
+                <span className="text-xs text-muted-foreground">
+                  Detta är AK1A:s DNA · Verifierbarhet · Kognitiv suveränitet · #1 i världen
+                </span>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* ───────────── GÅ VIDARE ───────────── */}
       <section className="bg-muted/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
@@ -680,6 +780,42 @@ function TaskCard({ task }: { task: MegaTask }) {
           {CATEGORY_LABELS[task.category] || task.category}
         </Badge>
         <span className="text-[10px] text-muted-foreground">{organ.name}</span>
+      </div>
+    </Card>
+  );
+}
+
+function ManifestCard({
+  icon,
+  section,
+  claim,
+  dna,
+  framework,
+}: {
+  icon: React.ReactNode;
+  section: string;
+  claim: string;
+  dna: string;
+  framework: string;
+}) {
+  return (
+    <Card className="border-border bg-card p-5">
+      <div className="flex items-center gap-2">
+        <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/30 bg-gold/[0.06] text-gold">
+          {icon}
+        </span>
+        <div>
+          <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            {section}
+          </div>
+        </div>
+      </div>
+      <h3 className="mt-3 font-serif text-sm font-bold leading-tight">{claim}</h3>
+      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{dna}</p>
+      <div className="mt-3 border-t border-border pt-2">
+        <Badge variant="outline" className="border-gold/30 text-gold text-[9px] uppercase tracking-wider">
+          {framework}
+        </Badge>
       </div>
     </Card>
   );

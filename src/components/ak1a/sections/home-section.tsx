@@ -22,6 +22,7 @@ import {
 import { WaveMatrix } from "../wave-matrix";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export function HomeSection() {
   const { setSection, setLevel } = useAk1aStore();
@@ -50,6 +51,20 @@ export function HomeSection() {
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
               Djupare än en blogg. Ärligare än en bank. Snabbare än en utbildning.
             </p>
+
+            {/* Strategisk DNA-stapel — Zero to One + Positioning */}
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              <Badge variant="outline" className="border-gold/40 text-gold uppercase tracking-wider text-[10px]">
+                Vi skapade kategorin
+              </Badge>
+              <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
+                Verifierbarhet
+              </Badge>
+              <Badge variant="outline" className="border-border uppercase tracking-wider text-[10px]">
+                Kognitiv suveränitet
+              </Badge>
+            </div>
+
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
                 size="lg"
@@ -60,6 +75,9 @@ export function HomeSection() {
               </Button>
               <Button size="lg" variant="outline" onClick={() => setSection("kurser")}>
                 <GraduationCap className="mr-1 h-4 w-4" /> Lär dig metoden
+              </Button>
+              <Button size="lg" variant="ghost" onClick={() => setSection("strategi")}>
+                Vår strategi för #1
               </Button>
             </div>
           </div>

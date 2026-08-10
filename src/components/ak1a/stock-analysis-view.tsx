@@ -813,6 +813,39 @@ function RecommendationSection({
             ))}
           </div>
         </div>
+
+        {/* Verifiera själv — Zero to One handling */}
+        <div className="mt-8 rounded-lg border-2 border-gold/40 bg-gradient-to-br from-gold/[0.06] to-transparent p-5 sm:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-5 w-5 text-gold" />
+                <Eyebrow>Verifiera själv</Eyebrow>
+              </div>
+              <h3 className="mt-2 font-serif text-xl font-bold leading-tight">
+                Du behöver inte lita på oss. Du kan återskapa detta.
+              </h3>
+              <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                Alla 20 AKM1-variabler, alla 25 våg-celler, alla källor — offentliga.
+                Öppna Labbet och poängsätt {data.company} själv med samma verktyg.
+              </p>
+            </div>
+            <Button
+              size="lg"
+              className="shrink-0 bg-gold text-background hover:bg-gold/90"
+              onClick={() => setSection("labb")}
+            >
+              Öppna AKM1-calculatorn
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-gold/20 pt-3">
+            <HonestyTag kind="matt" />
+            <span className="text-[10px] text-muted-foreground">
+              Detta är vår Zero to One-sanning: vi säljer metod, inte åsikter.
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

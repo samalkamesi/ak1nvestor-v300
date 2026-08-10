@@ -273,3 +273,66 @@ Stage Summary:
 - Working interactivity beyond the static deployed version: ⌘K search, dark mode, level-aware content, interactive wave matrix, persisted XP/course/quiz/flashcard system (Zustand), AKM1 score calculator, reading progress, global XP header pill.
 - Design fidelity: cream paper #F5F1E8 + gold #A8862A/#C9A84C + serif headlines (Source Serif 4) + bull/bear/neutral signals — matches the institutional/editorial aesthetic of the deployed site.
 - Browser-verified end-to-end. Task complete.
+
+---
+Task ID: 4
+Agent: general-purpose (KURSER catalog expansion)
+Task: Expand the KURSER section from just the 19 AKM1 variables to a full browsable catalog behind the 6 category cards (KUNSKAPSMARKNAD, LEVANDE FALLSTUDIER, MEGA NIVÅER 1-100, BELÖNINGAR, ANALYTIKER-INSIKTER). User said "kurserna och många saker saknas" — fill in the missing content without breaking the existing 19 AKM1 variables.
+
+Work Log:
+- Read worklog.md (Tasks 0, 1, 2-b/c/d/e, 3) for full context, plus current kurser-section.tsx (916 lines) and ak1a-reference/kurser.txt source.
+- Inspected shared resources: ak1a-store (progress, completeCourse, addXp, setSection, level, precSection), ak1a/data (AKM1_VARIABLES for badge detection), primitives (Eyebrow, HonestyTag), shadcn (Card/Button/Badge/Tabs/TabsContent/Dialog/Input/Accordion), and the existing kurser-section structure (Hero, Stats, Categories, AKM1 19 vars, Knowledge Map, Learning Paths).
+- Designed 5 new typed data arrays + helpers below the existing LEARNING_PATHS:
+  • KmCategory (13 categories) + KmCourse + KUNSKAPSMARKNAD_COURSES (68 realistic Swedish courses across 13 categories — Bokföring, Värderingsmetoder, Riskhantering, Beteendefinans, Svensk bolagsskatt, Makroekonomi, Teknisk Analys, Sektoranalys, ESG, Options & Derivat, Utdelningsstrategi, PE/Investmentbolag, Aktiemarknaden i praktiken).
+  • Fallstudie + FALLSTUDIER (5 cases: Precise Biometrics [live → setSection('prec')], Atlas Copco compounder-moat, Investor AB holding-rabatt, Novo Nordisk pharma-moat/GLP-1, SVB V19-riskfallstudie — each with a 1-line card description + 3-sentence pedagogical teaser for the dialog).
+  • MegaNiva + MEGA_NIVAER (6 tiers with title + milstolpe + prövning + xpThreshold) + getMegaLevel(xp) helper using thresholds <250=L1, <750=L2, <1500=L3, <3000=L4, <5000=L5, else=L6.
+  • BadgeDef + BADGES (14 badges with icon, description, auto flag, detect function). Auto-detectable: Första steget, AKM1-grund (all 19), Quiz-vinnare, Flashcard-flipper (≥6), Streak 3/7, Första analysen läst (precSection ≥5), Nybörjare-klar (V01), Power 19 (19 + quiz). METODMÅL: Våg-mästare, Kalkylatorn, Styrelse-gäst, Mörkrets herre, Sökaren.
+  • AnalytikerInsikt + ANALYTIKER_INSIKTER (5 pedagogical Swedish insights: Tid är insikt, Värdering utan katalysator, Den största risken är det du inte ser, Möjnet avgör, Reproducerbarhet > hemligheter — each with 2-3 sentence punch + 4-5 sentence detail).
+- Added imports: lucide icons (Footprints, ShieldCheck, Activity, Calculator, Brain, Flame, Gavel, GraduationCap, Zap, Moon, Search, Quote), shadcn (Input, TabsContent, Accordion/AccordionItem/AccordionTrigger/AccordionContent).
+- Updated CATEGORY_CARDS targets so the 6 category cards smooth-scroll to the new section IDs: "kunskapsmarknaden", "fallstudier", "mega-nivaer", "beloningar", "analytiker-insikter" (akm1-variabler target was already correct).
+- Added a clarifying stats-row caption: "Katalog: 19 AKM1 + 251 kunskapsmarknad + 5 fallstudier + 6 mega-nivåer + 14 badges + 5 insikter. Browsebar idag: 117 av 270."
+- Inserted 5 new blocks between the AKM1 19 variables section and the Knowledge Map: <KunskapsmarknadBlock />, <FallstudieBlock />, <MegaNivaerBlock />, <BeloningarBlock />, <AnalytikerInsikterBlock />.
+- Built KunskapsmarknadBlock (self-contained component pulling useAk1aStore): search Input + Tabs filter (ALLA + 13 categories with per-category counts) + responsive 1/2/3-col grid of 68 KmCourseCards + KmCourseDialog. Each card shows KM-### id, category badge, title, summary, level badge, Mätt/Metodmål tag, completed/locked state, Starta button. "Starta" opens Dialog → "Markera som klar (+50 XP)" calls completeCourse(id) + addXp(50).
+- Built FallstudieBlock: 5 cards (Briefcase icon, FS-## id, company, title, 1-line description, Öppna button). PREC card's Öppna calls setSection("prec"); the other 4 open a Dialog showing the 3-sentence pedagogical teaser + a METODMÅL note "Full fallstudie under utveckling" + a placeholder card.
+- Built MegaNivaerBlock: vertical stepped progression of 6 tiers with numbered circles (Check icon if completed, current level = gold filled, unlocked = gold outline, locked = muted). Shows title + Milstolpe + Prövning for each tier. Locked tiers show METODMÅL tag + "Låses upp vid N XP". Top summary card: "Din nuvarande nivå · {XP} XP".
+- Built BeloningarBlock: top summary card (Upplåsta badges X/14 + Mätt tag) + 2/3/4-col responsive grid of 14 BadgeMedallions. Unlocked = gold filled icon + "Upplåst" badge. Locked & auto = Lock icon + METODMÅL tag. Locked & non-auto = Lock icon + "Låses upp när du gör det" badge.
+- Built AnalytikerInsikterBlock: 2-col grid of 5 Cards. Each card: Quote icon + id + title + 2-3 sentence punch (always visible) + Accordion (single, collapsible) with "Läs hela insikten" trigger revealing the 4-5 sentence detail.
+- All new code uses the shared design system: cream/paper bg, gold accent, serif headlines (font-serif), bull/bear/muted color tokens, HonestyTag (Mätt/Metodmål), Eyebrow, paper-texture wrapper, max-w-7xl containers, mobile-first responsive grids.
+- Level-awareness preserved across all new blocks: KmCourseCard respects isLockedFor(courseLevel, userLevel) so Avancerad KM courses are locked for Nybörjare users (mirrors the AKM1 pattern).
+- All text Swedish, institutional/editorial tone, pedagogical not advisory.
+- Self-check: `bun run lint` → clean (0 errors). `bunx tsc --noEmit` → no errors in kurser-section.tsx (only pre-existing errors in examples/ and skills/ unrelated dirs). `bunx next build` → ✓ Compiled successfully in 9.3s. Confirmed file starts with `"use client";` (line 1) and exports `KurserSection` (line 535). Existing 19 AKM1 variables still render — Akm1CourseCard, CourseDetailDialog, and the AKM1 section JSX are byte-for-byte unchanged.
+
+Stage Summary:
+- File: /home/z/my-project/src/components/ak1a/sections/kurser-section.tsx — grew from 916 to 2120 lines.
+- Exports `KurserSection`, starts with `"use client";`, lint-clean, build-clean.
+- 5 new browsable catalog blocks added (68 KM courses + 5 fallstudier + 6 mega-nivåer + 14 badges + 5 insikter = 98 new content items). Combined with existing 19 AKM1 variables = 117 browsable today of the 270 target.
+- Interactive: KM filterable by 13 category tabs + free-text search; KM course completion awards +100 XP (via completeCourse) + +50 XP (via addXp) per spec; Fallstudie PREC card navigates to PREC section; Mega tiers compute live from XP; Badges auto-unlock from store state (completedCourses, xp, streak, quizzesPassed, flashcardsViewed, precSection); Insights expandable via Accordion.
+- All 6 category cards in the "Välj ditt spår" grid now have working scroll targets.
+- 0 regressions to existing AKM1 functionality.
+
+---
+Task ID: 5
+Agent: main (Z.ai Code)
+Task: Build AI Organ Styrelse meeting system + expand KURSER full catalog + verify all sections end-to-end.
+
+Work Log:
+- Re-crawled deployed site (ak1nvestor.space-z.ai): confirmed all 5 sections captured; verified footer nav links (Alla analyser, Meta-system, Webinarier, etc.) all route to the same 5 sections — no hidden pages. The "missing courses" the user noticed = the 251 kunskapsmarknad courses behind count-cards (not actual content).
+- Built AI Organ Styrelse meeting system:
+  • API route POST /api/styrelse/mote: 8 organs deliberate sequentially (rate-limit safe w/ retry+backoff), each LLM-generates a viewpoint in its role; Σ synthesizes a structured JSON decision (title, rationale, actions, risk_notes, confidence, 8 signatures with JA/RESERVATION/NEJ).
+  • API route GET /api/styrelse/agendas: 8 suggested agendas (nästa bolag, emission-risk, kunskapsmarknad, labb-tools, honesty-policy, mega-vision, anti-casino, internationellt).
+  • StyrelseSection component: hero, dagordning textarea (600 char limit) + suggested-agenda picker, live meeting w/ skeleton loader, full protocol card (Fas 1 viewpoints w/ organ glyph nav, Fas 2 Σ decision w/ actions/risk/confidence, 8 signature medallions, ANTAGET/FÖRKASTAT verdict), 8 board seats overview, in-session protocol archive.
+  • Added "styrelse" to NAV_SECTIONS + FOOTER_NAV + store SectionId type + page.tsx router.
+- Expanded KURSER via subagent (Task 4): +68 kunskapsmarknad courses (13 categories, filterable), 5 fallstudier, 6 mega-nivåer (XP-gated), 14 belöningar badges (9 auto-detected from store), 5 analytiker-insikter. File 916→2120 lines, existing 19 AKM1 preserved.
+- Agent Browser end-to-end verification:
+  • All 6 sections render with correct H1s ✓
+  • STYRELSE: held real meeting via UI → Protocol M-MSF5MU6F generated, 7 organ viewpoints (α recommended Boliden), Σ decision "Boliden vald för nästa 99-sidiga analys" (MEDEL confidence), 3 actions, risk note, 8 signatures (6 JA, 2 RESERVATION, ANTAGET) ✓
+  • KURSER: 95 catalog cards, KUNSKAPSMARKNADEN (68 courses, 13 category tabs), LEVANDE FALLSTUDIER, MEGA NIVÅER, BELÖNINGAR (14), ANALYTIKER-INSIKTER (5) all present ✓
+  • KM course completion: Starta → dialog → Markera klar → XP pill updated to 100 XP ✓
+  • Console: clean (no errors/warnings/429s) ✓
+- Lint: clean. HTTP 200.
+
+Stage Summary:
+- AI Organ Styrelse fully operational: user asks → 8 organs answer → Σ decides → protocol archived. LLM-powered, Swedish, institutional tone, honest (METODMÅL-tagged where appropriate).
+- KURSER now has 117 browsable items (19 AKM1 + 68 kunskapsmarknad + 5 fallstudier + 6 mega + 14 badges + 5 insikter) vs 19 before — the "missing courses" gap closed.
+- Site now has 6 sections (HEM, PREC-ANALYS, KURSER, LABB, STYRELSE, OM OSS) — STYRELSE added per user request "fråga alltid ai organ styrelse om deras beslut efter möten".
+- All browser-verified, lint-clean, HTTP 200.

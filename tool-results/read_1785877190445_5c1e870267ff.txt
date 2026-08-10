@@ -1,0 +1,276 @@
+     1→     1→# AK1A Research Lab — Build Worklog
+     2→     2→
+     3→     3→## Context (Task 0 — Research by main agent)
+     4→     4→
+     5→     5→The user shared a conversation link (https://chat.z.ai/s/6f122d40-4cf1-4d0e-8cd2-7abeb4a283f9).
+     6→     6→The conversation API stripped most message content, but `meta.deploy_url` revealed the
+     7→     7→built-and-deployed website: **ak1nvestor.space-z.ai**.
+     8→     8→
+     9→     9→The deployed site is **AK1A Research Lab** — a Swedish institutional-grade financial
+    10→    10→analysis methodology platform for retail investors. Owned by "Ak1 Apex Nexus" (AK1nvestor.com).
+    11→    11→
+    12→    12→### Core principle
+    13→    13→> "HÅLL KNOW-HOW, REDOVISA GENERÖST" (Keep know-how — report generously)
+    14→    14→> Conclusions, scenarios, risks and recommendations are fully public.
+    15→    15→> The proprietary methods behind (wave counts, ratios, formulas, position rules) are kept as know-how.
+    16→    16→
+    17→    17→This matches the original user request: "skapa sida för att redovisa analyser med fulla
+    18→    18→hemligheter, håll know how helt men redovisa generöst till analytiker och nybörjare".
+    19→    19→
+    20→    20→### Design system (captured from deployed site)
+    21→    21→- Background: cream/paper `#F5F1E8` (rgb 245,241,232)
+    22→    22→- Foreground: near-black `#0A0B0D`
+    23→    23→- Brand accent: gold/amber `#C9A84C` / `#A8862A` / `#C4972E`
+    24→    24→- Bull (green): `#047857`
+    25→    25→- Bear (red): `#B91C1C` / `#DC2626`
+    26→    26→- Neutral (slate): `#64748B`
+    27→    27→- Warm dark text: `#2A2520`, `#3A3530`, `#4A4035`
+    28→    28→- Headings: serif — "Source Serif 4", "GT Sectra", Georgia
+    29→    29→- Body: sans-serif system stack
+    30→    30→- Aesthetic: editorial / institutional research publication ("paper" feel)
+    31→    31→
+    32→    32→### Site structure (single-page app, client-side section state)
+    33→    33→Sections (top nav): HEM · PREC-ANALYS · KURSER · LABB · OM OSS · MER
+    34→    34→Plus: level switcher (Nybörjare/Intermediär/Avancerad), Sök (⌘K), dark mode, Dela, Sammanfattning.
+    35→    35→
+    36→    36→**HEM (Home)**: hero ("Sveriges enda institutionella metodik, byggd för privatpersoner"),
+    37→    37→AK1A i siffror (200+ kurser · 99 sidor/analys · 5/8 organ), 3 steg till insikt,
+    38→    38→**AK1T Våg-Matris** (signature 25-cell viz: 5 theories × 5 horizons), Vem är du? (3 tiers),
+    39→    39→Manifest (styrelsebeslut #1), Ärlighet forever (Mätt/Metodmål stats), Gå vidare CTAs.
+    40→    40→
+    41→    41→**PREC-ANALYS**: 99-page institutional analysis of Precise Biometrics AB (PREC.ST),
+    42→    42→29 sections with reading-progress bar. Recommendation: FÖRSIKTIGT KÖP (Cautious Buy),
+    43→    43→price target 1.38 SEK, risk HÖG. Detailed 5-point motivation, upgrade/downgrade triggers.
+    44→    44→Sections: Omslag, Rekommendation, Bolaget, Historik, Fusionen, Kalender, Kurshistorik, ...
+    45→    45→
+    46→    46→**KURSER**: 270 courses. AKM1 19 variables (V01–V19):
+    47→    47→V01 Försäljningstillväxt, V02 ARR-tillväxt, V03 Intäktsdiversifiering, V04 P/S, V05 P/B,
+    48→    48→V06 EV/EBITDA, V07 Bruttomarginal, V08 EBITDA-marginal, V09 ROE, V10 Skuldsättningsgrad,
+    49→    49→V11 Likviditet (Kvick), V12 Intäktsstabilitet, V13 Patent & IPR, V14 Varumärke,
+    50→    50→V15 Nätverkseffekter, V16 Produktlanseringar, V17 Avtal & Partnerskap,
+    51→    51→V18 Regulatoriska katalysatorer, V19 Kapitalförbränning & Emission-risk.
+    52→    52→Categories: Värdering(3), Tillväxt(3), Lönsamhet(3), Stabilitet(3), Moat(3), Katalysator(3), Risk(1).
+    53→    53→Knowledge map (19 cells), 3 learning paths.
+    54→    54→
+    55→    55→**LABB (Lab)**: "Bloomberg for Swedish retail". 8 tools: Case Studies, Farliga komb.,
+    56→    56→Marknadshistoria, Portfölj, AK1A Rapport, Scenario, Jämförelse, Stress-test.
+    57→    57→Case studies (30): best cases (PREC, Amazon, Tesla, Apple, Microsoft, Atlas Copco,
+    58→    58→Investor AB, Novo Nordisk) + warning cases (SVB, Archegos, Terra/Luna, FTX, Wirecard,
+    59→    59→Luckin, Credit Suisse, WeWork, Nokia, BlackBerry, Kodak, Swedish Match, Kinnevik,
+    60→    60→Swedbank, Viaplay, Boeing). Interactive learning: Quiz, Flashcards, Dagens utmaning, XP/levels.
+    61→    61→
+    62→    62→**OM OSS**: Forskningsinstitutet, Manifest, Den konträra sanningen,
+    63→    63→**AK1A:s 8 Organ** (Σ Strategi, α Analys, Δ Data, Ω Vision, Φ Innovation, Θ Kvalitet,
+    64→    64→Μ Marknad, Ψ Utbildning — each with state AKTIV/DJUPARBETE/SYNKAR, mantra, nästa önskan),
+    65→    65→**5-fas-cykeln** (Samlas → Tänker → Beslutar → Skapar → Förverkligar),
+    66→    66→Honesty Dashboard (Mätt/Metodmål), Forskarna.
+    67→    67→
+    68→    68→### Reference material saved
+    69→    69→- `/home/z/my-project/ak1a-reference/home.txt` — home section text
+    70→    70→- `/home/z/my-project/ak1a-reference/prec-analysis.txt` — PREC analysis text
+    71→    71→- `/home/z/my-project/ak1a-reference/kurser.txt` — courses text
+    72→    72→- `/home/z/my-project/ak1a-reference/labb.txt` — lab text
+    73→    73→- `/home/z/my-project/ak1a-reference/om-oss.txt` — about text
+    74→    74→- `/home/z/my-project/ak1a-reference/home-full.png`, `home-hero.png`, `wave-matrix.png`
+    75→    75→
+    76→    76→### Build plan
+    77→    77→- Task 1 (main): design system (globals.css, fonts, theme), layout, shared shell
+    78→    78→  (Header w/ nav + level switcher + search + theme toggle; Footer), section router in page.tsx,
+    79→    79→  Zustand store for section/level/theme/XP.
+    80→    80→- Task 2-a..2-e (parallel subagents): build each section component + data.
+    81→    81→- Task 3 (main): wire together, add "continue building" new features
+    82→    82→  (working ⌘K search, AKM1 calculator, dark mode, level-aware content, XP/quiz), verify.
+    83→    83→
+    84→    84→---
+    85→    85→Task ID: 0
+    86→    86→Agent: main (Z.ai Code)
+    87→    87→Task: Fetch the conversation's deployed website and capture full reference for rebuilding AK1A Research Lab in the Code project.
+    88→    88→
+    89→    89→Work Log:
+    90→    90→- Fetched shared conversation; API stripped message bodies but revealed `meta.deploy_url = ak1nvestor.space-z.ai`.
+    91→    91→- Used Agent Browser to render the deployed site; captured full text of all 5 sections + design tokens (colors, fonts).
+    92→    92→- Captured screenshots of home hero and wave matrix.
+    93→    93→- Saved all reference material to /home/z/my-project/ak1a-reference/.
+    94→    94→
+    95→    95→Stage Summary:
+    96→    96→- Site = AK1A Research Lab (Swedish institutional financial-analysis methodology for retail).
+    97→    97→- Design = cream paper bg + gold/amber accent + serif headlines + bull/bear/neutral signal colors.
+    98→    98→- 5 sections (HEM/PREC-ANALYS/KURSER/LABB/OM OSS) to rebuild as single-page app at `/`.
+    99→    99→- Foundation + parallel section builds planned.
+   100→   100→
+   101→   101→---
+   102→   102→Task ID: 1
+   103→   103→Agent: main (Z.ai Code)
+   104→   104→Task: Build the foundation — design system, layout, shared shell, store, and the HOME section with the signature Wave Matrix.
+   105→   105→
+   106→   106→Work Log:
+   107→   107→- Rewrote globals.css with AK1A editorial palette (cream paper #F5F1E8, gold #A8862A/#C9A84C, bull green, bear red, neutral slate) + dark mode + paper texture utility + custom scrollbar.
+   108→   108→- Updated layout.tsx: Source Serif 4 (headlines) + Inter (body) + JetBrains Mono, Swedish lang, AK1A metadata, ThemeProvider + Ak1aStoreProvider.
+   109→   109→- Created Zustand store (src/lib/ak1a-store.ts): section, level, search/summary/share modals, PREC reading progress, learning progress (xp, completedCourses, quizzesPassed, flashcardsViewed, streak) with persist.
+   110→   110→- Created shared data (src/lib/ak1a/data.ts): NAV_SECTIONS, FOOTER_NAV, LEVELS, all 19 AKM1 variables (V01–V19) with formulas/scales, WAVE_THEORIES/HORIZONS, 8 ORGANS, 5 PHASES.
+   111→   111→- Created primitives (src/components/ak1a/primitives.tsx): Ak1aLogo, HonestyTag (Mätt/Metodmål), SignalPill, OrganGlyph, Eyebrow, GoldRule.
+   112→   112→- Built Header (sticky, nav, level switcher, ⌘K search, theme toggle, share, summary, mobile menu, level context strip) and Footer (manifesto, ownership, nav, honesty strip, disclaimer, version/status bar, sticky-to-bottom).
+   113→   113→- Built overlays: SearchModal (⌘K, searches sections+AKM1+organs), SummaryDrawer (Sheet), ShareDialog.
+   114→   114→- Built Home section (home-section.tsx): hero, AK1A i siffror, Börja din resa, 3 steg, Ärlighet, Vem är du? tiers, Manifest quote, Honesty dashboard, Gå vidare CTAs.
+   115→   115→- Built WaveMatrix (wave-matrix.tsx): interactive 5×5 grid (Elliott/Fibonacci/Gann/Lucas/Volym × Mikro/Kort/Medellång/Lång/Mega), clickable cells with detail dialog, confluence bar, legend.
+   116→   116→- Created stub section files (prec/kurser/labb/om-oss) so page.tsx compiles while subagents build them.
+   117→   117→- Favicon SVG (gold AK1A mark on dark).
+   118→   118→
+   119→   119→Stage Summary:
+   120→   120→- Foundation + HOME fully built and compiling (HTTP 200 at /).
+   121→   121→- Design language locked: cream + gold + serif headlines + bull/bear/neutral signals.
+   122→   122→- Shared primitives + store + data ready for subagents to consume.
+   123→   123→- 4 section stubs await parallel subagent builds (Tasks 2-b, 2-c, 2-d, 2-e).
+   124→   124→
+   125→   125→---
+   126→   126→Task ID: 2-e
+   127→   127→Agent: general-purpose (OM OSS section)
+   128→   128→Task: Build the full OM OSS section (forskningsinstitutet, manifest, den konträra sanningen, 8 organer, 5-fas-cykeln, honesty dashboard, forskarna, closing CTA) overwriting the stub.
+   129→   129→
+   130→   130→Work Log:
+   131→   131→- Read worklog.md (Task 0 + 1) and ak1a-reference/om-oss.txt for authoritative content.
+   132→   132→- Inspected data.ts (ORGANS, PHASES, Organ type), primitives.tsx (Eyebrow, GoldRule, HonestyTag, OrganGlyph), store.ts (setSection, level), and shadcn Accordion/Avatar/Badge/Card/Separator/Button.
+   133→   133→- Wrote /home/z/my-project/src/components/ak1a/sections/om-oss-section.tsx — full implementation, "use client", exported OmOssSection.
+   134→   134→- Hero: Eyebrow "FORSKNINGSINSTITUTET", H1, intro, CTAs "Läs manifestet" (smooth-scrolls to #manifest) + "Se analyserna" (setSection("prec")).
+   135→   135→- Manifest: bordered gold card with 5 manifesto points (Check bullets) + subtitle "Vad vi tror — och varför.".
+   136→   136→- Den konträra sanningen: two-column compare (MARKNADEN TROR neutral / VI VET gold) with HonestyTag on the metodmal & matt claims.
+   137→   137→- 8 Organer: Accordion (type=single, collapsible) over ORGANS in a 1-col mobile / 2-col lg grid. Each card collapses glyph+verb+state-pill+name+role (collapsed) and reveals responsibilities, METODMÅL + HonestyTag, MANTRA (serif italic w/ Quote icon), NÄSTA ÖNSKAN. State pill uses gold (AKTIV) / gold-soft (DJUPARBETE) / neutral-signal (SYNKAR). Legend strip above grid + "5 av 8 organ aktiva idag · METODMÅL 8/8".
+   138→   138→- 5-fas-cykeln: 5 PHASES rendered as numbered circles with gold connectors (horizontal on lg, vertical on mobile) + caption about reproducerbarhet.
+   139→   139→- Honesty dashboard: 4 stat tiles (1 / 200+ / 5 av 8 / 0) each tagged Mätt or Metodmål.
+   140→   140→- Forskarna: researcher card for "Ak1 Apex Nexus" with Avatar (initial "A", gold ring), Forskningsfokus + Rekryteringspolicy fields, Metodmål note "Inga headshots…", kontakt + plats.
+   141→   141→- Closing CTA "GÅ VIDARE" with 3 cards → prec / kurser / labb.
+   142→   142→- Lint clean (eslint . passes); tsc errors are only in unrelated examples/ and skills/ dirs (socket.io, image-edit, stock-analysis-skill) — not in ak1a code.
+   143→   143→
+   144→   144→Stage Summary:
+   145→   145→- OmOssSection fully implemented and compiles.
+   146→   146→- Uses shared primitives (Eyebrow, GoldRule, HonestyTag, OrganGlyph), shared data (ORGANS, PHASES, Organ type), shared store (useAk1aStore.setSection), shadcn (Card, Button, Badge, Separator, Accordion*, Avatar*).
+   147→   147→- All Swedish, editorial/institutional tone, mobile-first responsive (organ grid 1/2 cols, phase flow vertical-mobile/horizontal-lg).
+   148→   148→- No external fetching. Export + "use client" verified.
+   149→   149→
+   150→   150→---
+   151→   151→Task ID: 2-b
+   152→   152→Agent: general-purpose (PREC section)
+   153→   153→Task: Overwrite the prec-section.tsx stub with a full, production-quality implementation of the PREC-ANALYS section (99-page institutional equity analysis of Precise Biometrics AB / PREC.ST).
+   154→   154→
+   155→   155→Work Log:
+   156→   156→- Read worklog (Task 0 + Task 1) and the captured reference text ak1a-reference/prec-analysis.txt.
+   157→   157→- Inspected shared resources: ak1a-store (level/section/precSection/setPrecSection/setSection), primitives (Eyebrow, GoldRule, HonestyTag, SignalPill), globals.css (color tokens: gold, bull, bear, neutral-signal, paper, ink), shadcn Card/Button/Badge/Progress/Tabs/Accordion/Separator, and home-section.tsx for style conventions.
+   158→   158→- Designed a 15-named-section single-page reader with a sticky reading-progress bar (top: 57px under the header) showing "X/29 sektioner · N%" + active section name + Progress bar tinted gold.
+   159→   159→- Implemented scroll listener with useState/useEffect/useRef computing (scrollY / (scrollHeight - clientHeight)) * 100 and detecting active section by scanning sectionRefs for the section whose top is closest to (but ≤) 160px viewport offset. Persists activeIdx+1 into store.precSection via setPrecSection.
+   160→   160→- Built the Cover block: Eyebrow + sub-eyebrow (AK1A Research Lab · Nybörjaranalys · 5 tidshorisonter × 5 teorier × 4 dimensioner), H1 Precise Biometrics AB, big gold recommendation badge "FÖRSIKTIGT KÖP" / "SPEKULATIVT · HÄNDELSEDRIVEN SPECIAL SITUATION", one-liner, 12-tile responsive stat grid (1,676 · 245,9 M · 1,38 · HÖG · 0,82 · 91 % · 2,3x · 281,2 M · Nybörjare · 99 · 2026-07-22 · MarketStack + Bolag).
+   161→   161→- Built Principle block: "PEDAGOGISK FINANSANALYS" explanation + "VÅR PRINCIP — Håll know-how helt — redovisa generöst" card with the full disclaimer (ägare, kontakt, datakälla, verifierad).
+   162→   162→- Built DEL X · KONSENSUS — REKOMMENDATION: Eyebrow, H2, intro line; level-aware callouts (nyborjare → friendly "För nybörjare" green callout explaining cautious buy; avancerad → "Analytiker-vy" gold callout with method note). Main rec card with "FÖRSIKTIGT KÖP", "Cautious Buy · Spekulativt", 3 bullets, HonestyTag metodmål. Side card with vägt prismål 1,38 SEK, +9 % mot TERP 1,27, +69 % mot teckningskurs 0,82, spann 0,93–2,03, RISK HÖG. 5-step recommendation scale (SÄLJ · MINSKA · FÖRSIKTIGT KÖP [active, "Du är här · 3 av 5"] · KÖP · STARKT KÖP).
+   163→   163→- Built MOTIVERINGEN I FEM PUNKTER — 5 numbered MotivationCards (bull/bear/gold tones) with full reference text; 6th cell level-aware (intermediar/avancerad → key-ratio dl; nyborjare → friendly summary card pointing to Intermediär).
+   164→   164→- Built side-by-side upgrade/downgrade cards: UPPGRADERING TILL KÖP (green tint, 4 bullets) and NEDGRADERING TILL SÄLJ (red tint, 4 bullets) using UpgradeItem/DowngradeItem with arrow icons.
+   165→   165→- Built DEL I · BOLAGET: "BOLAGET I KORTHET" intro, 4 icon stat tiles (GRUNDAT 1997 · MEDARBETARE 46 · KONTOR 6 länder · OEM-INTEGRATIONER 40+), Accordion "FÖRKLARING — VAD ÄR BIOMETRI?" with defaultValue driven by level (open for nyborjare, collapsed for others; intermediar/avancerad get an extra "affärslogiken" paragraph).
+   166→   166→- Built TVÅ AFFÄRSOMRÅDEN · 2025 — two gradient cards: Biometric Technologies (72 %, 56,4 MSEK, 82,4 % BM) and Digital Identity (28 %, 21,4 MSEK, ~48 % BM) with MiniMetric components.
+   167→   167→- Built INTÄKTSMIX 2025 — stacked horizontal div bar (Royalty 42 % / Licenser & support 50 % / Övrigt 7 %), legend with sub-text, summa 77,8 MSEK footer with HonestyTag Mätt.
+   168→   168→- Built KUNDER OCH FRAMGÅNGAR — 6 CustomerBadges (Google, Huawei, Lenovo, Xiaomi, UIDAI/Aadhaar, FPC) + 3 explainer cards (40+ tillverkare, Aadhaar, Xiaomi 2025-01-09).
+   169→   169→- Built DEL II · HISTORIK "PREC:S RESA 1997–2026" — 4-tile stats row (29/7/4/14) + vertical alternating-side timeline with 8 TimelineNodes (1997 grundning → 2002 notering → 2010 OEM-avtal → 2017 Aadhaar → 2020 nedgång → 2023 emission-mönster → 2025 EastCoast → 2026 fusion highlighted with gold ring). Each node carries year + tag + SignalPill.
+   170→   170→- Built DEL III · FUSIONEN — vändningsmekanism 3-stegs ordered list + "FUSION I SIFFROR" KeyRow card (registrerad 20/7, 110,3 MSEK, 0,82 SEK, 91 %, 45 MSEK synergimål, −19 MSEK proforma EBITDA, 47,8 % utspädning) with accent colors.
+   171→   171→- Built DEL IV · KALENDER — table-like Card with header row and 7 CalendarRows (utfall ~13/8, synergiebevis, Q3 13/11, CMD Q4, helårsrapport feb 2027, löpande OEM-avtal, löpande 0,82-brott) each with date + title + body + SignalPill.
+   172→   172→- Built DEL V · KURSHISTORIK — 7-row "prisstege" PriceLevel viz with progress-bar widths mapped from 0,82–2,03 SEK range, highlighting stängning 20/7, vägt prismål, TERP, teckningskurs, plus bull/base/bear mål.
+   173→   173→- Built SCENARIER — Card with Bull 20 % × 2,03 / Base 50 % × 1,40 / Bear 30 % × 0,93 ScenarioRows and a highlighted footer "Vägt prismål (Σ p × P) = 1,38 SEK" + the explicit weighted formula.
+   174→   174→- Built GÅ VIDARE footer — 3 CtaCards (Lär dig metoden → kurser, Reproducera i Labbet → labb [highlighted], Läs om oss → om-oss) all using setSection from the store, plus the full disclaimer strip.
+   175→   175→- Used lucide-react icons throughout (Bookmark, CircleDot, TrendingUp/Down, Merge, Scale, ShieldCheck, ArrowUpRight/DownRight, Fingerprint, Globe, Users, Building2, Award, CalendarDays, Activity, Sparkles, GraduationCap, FlaskConical, BookOpen, Layers, Info, ChevronRight, ArrowRight).
+   176→   176→- All text in Swedish; institutional/editorial tone preserved.
+   177→   177→- Lint: initial run found one JSX unescaped `>` ("45 MSEK > proforma") → escaped to `&gt;`. Re-ran `bun run lint` — clean (0 errors). TypeScript `bunx tsc --noEmit` reports no errors in prec-section.tsx (only an unrelated error in another agent's labb-section.tsx).
+   178→   178→
+   179→   179→Stage Summary:
+   180→   180→- File: /home/z/my-project/src/components/ak1a/sections/prec-section.tsx — 1933 lines, starts with "use client";, exports `PrecSection`.
+   181→   181→- Sticky reading-progress bar drives from real scroll position; section count shown as X/29 (matching the reference), persists to store.precSection.
+   182→   182→- 15 named scroll-tracked sections: Omslag · Princip · Rekommendation · Fem punkter · Upp-/Nedgradering · Bolaget · Affärsområden · Intäktsmix · Kunder · Historik · Fusionen · Kalender · Kurshistorik · Scenarier · Gå vidare.
+   183→   183→- Level-aware: nyborjare gets biometri accordion open by default + friendly "För nybörjare" callout near recommendation; intermediar/avancerad gets collapsed accordion with extra affärslogik paragraph + key-ratio table cell replacing the friendly summary.
+   184→   184→- All recommendation figures (1,676 · 1,38 · 0,82 · 1,27 · 2,03 · 0,93 · 110,3 MSEK · 91 % · 45 MSEK · −19 MSEK · 47,8 % · 245,9 M · 281,2 M · 77,8 MSEK · 2,3x · ~0,8x · ~4,1x · 82,4 % · ~48 % · ~90 %/år) match the reference text exactly.
+   185→   185→- Uses shared primitives (Eyebrow, GoldRule, HonestyTag, SignalPill) and shadcn Card/Button/Badge/Progress/Accordion/Separator without redefining them. No external image fetching, no API calls. Responsive: stat grids 2 cols mobile → 4 cols desktop; recommendation scale flex-wraps; timeline alternates sides on sm+.
+   186→   186→- Lint + TypeScript pass clean for this file. Ready for Task 3 wiring.
+   187→   187→
+   188→   188→---
+   189→   189→Task ID: 2-c
+   190→   190→Agent: general-purpose (KURSER section)
+   191→   191→Task: Overwrite the stub `src/components/ak1a/sections/kurser-section.tsx` with a full implementation of the KURSER section — the "complete knowledge marketplace" (270 courses, AKM1 19-variable curriculum, 19-cell knowledge map, 3 learning paths) with live progress, level-aware locking, and a course-detail dialog.
+   192→   192→
+   193→   193→Work Log:
+   194→   194→- Read worklog (Task 0 + 1), kurser.txt reference, and current stub.
+   195→   195→- Inspected shared primitives (Eyebrow/HonestyTag/GoldRule/SignalPill), Zustand store (progress/completeCourse/addXp/level), AKM1 data (19 vars with formula+scale), and shadcn Card/Button/Badge/Tabs/Dialog.
+   196→   196→- Built `KurserSection` with 6 sub-components (StatTile, ProgressTile, ProgressBar, Akm1CourseCard, CourseDetailDialog, LegendItem, PathCard).
+   197→   197→- Hero with Eyebrow "AK1A Kurser", H1 "Komplett kunskapsmarknad", intro, and 2 CTAs that smooth-scroll to AKM1 list (#akm1-variabler) and category grid (#kurserna-spar).
+   198→   198→- Stats row: 4 tiles — 270 Kurser / 142.9 Timmar / live Progress tile (completed/19, XP, gold progress bar) / 0 Dolda avgifter. All `Mätt`.
+   199→   199→- "Kurserna — Välj ditt spår" grid of 6 category cards (AKM1 19 VARIABLER, KUNSKAPSMARKNAD, LEVANDE FALLSTUDIER, MEGA NIVÅER, BELÖNINGAR, ANALYTIKER-INSIKTER) — each with lucide icon, gold-tinted icon chip, subtitle, title, description, and a "Öppna spåret" affordance that scrolls to AKM1 or learning-paths.
+   200→   200→- "AKM1:s 19 variabler" centerpiece: intro, "DIN PROGRESS" panel (completed/19 + gold progress bar), filter Tabs (ALLA + 7 categories with counts: Värdering 3, Tillväxt 3, Lönsamhet 3, Stabilitet 3, Moat 3, Katalysator 3, Risk 1), and a 1/2/3-col responsive grid of 19 Akm1CourseCards.
+   201→   201→- Each card: weight+category badge (KRITISK styled in bear-red for V19), minutes, large num, V## id, name, summary, level badge, Mätt tag, completed/locked indicators, and a Starta button (gold) / Repetera (bull) / Låst (disabled).
+   202→   202→- "Starta" opens a `Dialog` showing name + ID + summary + level badge + Mätt tag, then conditional Formel block (mono font), Poängskala 1–5 block, and a "Markera som klar (+100 XP)" button that calls `completeCourse(v.id)` (which auto-adds 100 XP in the store).
+   203→   203→- "DIN KUNSKAPSKARTA" 19-cell grid (grid-cols-5 mobile / 7 sm / 10 lg), V01..V19, gold for Behärskad (completed), muted for Ej påbörjad; legend with all 4 states; caption "DEMO: EN ANVÄNDARES KUNSKAPSSNAPSHOT · MÄTT".
+   204→   204→- "INLÄRNINGSVÄGAR" 3 path cards (Steg 1: 4 kurser/52 min; Steg 2 PREMIUM: 6/84; Steg 3 PREMIUM: 9/156). Steg 2 & 3 have gold border + gradient + Premium badge with Lock icon. Each has "Följ denna väg" CTA.
+   205→   205→- Level-awareness: `isLockedFor(courseLevel, userLevel)` dims Avancerad cards on Nybörjare and Intermediär-Avancerad on Nybörjare; locked cards show Lock + "Avancerad-nivå" badge and a disabled Starta button. Bottom note explains current level state.
+   206→   206→- All text in Swedish, editorial/institutional tone; uses cream `bg-background`, gold `text-gold`, bull `text-bull`, bear `text-bear`, neutral-muted; serif headlines via `font-serif`; `mx-auto max-w-7xl px-4 sm:px-6` containers; `paper-texture` wrapper.
+   207→   207→- Pruned unused imports (GoldRule, GraduationCap, Search, Flame, Zap, etc.). Renamed typo'd helper `isBeherskadCell` → inlined `cn(...)`.
+   208→   208→- Ran `bun run lint` (eslint) — clean. Ran `npx tsc --noEmit` — no errors in project src (only unrelated pre-existing errors in `examples/` and `skills/`).
+   209→   209→
+   210→   210→Stage Summary:
+   211→   211→- KURSER section fully implemented in `src/components/ak1a/sections/kurser-section.tsx` (916 lines).
+   212→   212→- Exports `KurserSection`, starts with `"use client";`, lint-clean.
+   213→   213→- Wires live store state (progress.completedCourses, progress.xp, completeCourse, level) and AKM1_VARIABLES data into 6 content blocks.
+   214→   214→- Interactive: 8 filter tabs, 19 course cards each opening a detail Dialog with formula + scoring scale, course completion awarding +100 XP, 19-cell knowledge map reflecting live progress, 3 learning paths with PREMIUM styling on Steg 2 & 3.
+   215→   215→- Ready for Task 3 wiring (header ⌘K search already indexes AKM1 variables via shared data).
+   216→   216→
+   217→   217→---
+   218→   218→Task ID: 2-d
+   219→   219→Agent: general-purpose (LABB section)
+   220→   220→Task: Overwrite the labb-section stub with a full implementation of the LABB section — the "Bloomberg for Swedish retail investors" analysis console: 8 tool tabs, 30 case studies, reproducibility block with working AKM1 calculator, and interactive learning (quiz, flashcards, XP) — all wired to the shared Zustand store.
+   221→   221→
+   222→   222→Work Log:
+   223→   223→- Read worklog.md (Task 0 + 1) and /home/z/my-project/ak1a-reference/labb.txt for the authoritative LABB content.
+   224→   224→- Inspected shared resources: primitives (Eyebrow, GoldRule, HonestyTag, SignalPill), ak1a-store (progress.xp/streak/quizzesPassed/flashcardsViewed, addXp/passQuiz/viewFlashcard/bumpStreak/setSection), ak1a/data (AKM1_VARIABLES — 19 variables V01..V19), shadcn Card/Button/Badge/Tabs/Progress/Dialog/Select, home-section.tsx (design patterns).
+   225→   225→- Wrote /home/z/my-project/src/components/ak1a/sections/labb-section.tsx — full "use client" LabbSection component, ~1080 lines.
+   226→   226→- Built CASES data array with all 30 cases (9 best + 21 warning) from labb.txt, each with type/company/ticker/title/desc/score/decisive AKM1 variables (and `illustrative` flag for Amazon+Tesla illustrative examples). 1–2 decisive AKM1 variables inferred per case from the title/description.
+   227→   227→- HERO: Eyebrow "LABBET", H1 "Din analys-konsol.", intro "Bloomberg för svenska retail-investerare. Alla verktyg. Ett fönster." with two CTA buttons (smooth-scroll to tools / calc).
+   228→   228→- "KONSOLEN I SIFFROR" 3 tiles all `Mätt`: Verktyg 8 · Reproducerbarhet 100% · Push-notiser 0 — anti-casino.
+   229→   229→- Tool tabs (8): Case Studies (full) + 7 planned-tool panels (Farliga komb., Marknadshistoria, Portfölj, AK1A Rapport, Scenario, Jämförelse, Stress-test) — each shows a clean "Under utveckling · METODMÅL" placeholder with a 1–2 sentence Swedish description extrapolated from the tool name. TabsList is horizontally scrollable on mobile (overflow-x-auto + flex-nowrap).
+   230→   230→- Case Studies panel: filter buttons ALLA (30) / BÄSTA FALL (9) / VARNINGSFALL (21), responsive grid (1/2/3 cols). Each card: type badge (bull/bear colored), company, ticker (mono), title (lesson), 3-line desc, AKM1 score with progress bar (bull green for best / bear red for warning), LÄS button.
+   231→   231→- LÄS opens a Dialog with full desc + AKM1 score breakdown (progress bar + verdict color) + decisive AKM1 variables as badges.
+   232→   232→- "REPRODUCERBARHET" block: 3 cards (AKM1 Calculator / Se publicerade analyser → setSection('prec') / Lär dig metoden → setSection('kurser')). Each with ÖPPNA button. Principle strip "PRINCIP 9 — REPRODUCERBART ELLER DET FINNS INTE" with 3 Mätt tags (AKM1-variabler 19 · AK1TS-celler 25 · Verktyg i konsolen 8).
+   233→   233→- AKM1 Calculator Dialog: 19 Select dropdowns (1–5) for each AKM1_VARIABLES entry, "Räkna ut" computes sum out of 95 with verdict (>75 Stark/bull, 50–75 Bra/gold, <50 Svag/bear), progress bar, +50 XP awarded once (tracked via local calcXpAwarded state), Reset button.
+   234→   234→- "INTERAKTIVT LÄRANDE" block: XP header with 3 cards (Total XP / Lvl+title via getLevel formula <500=Lvl1 NYANALYTIKER, <1500=Lvl2, <4000=Lvl3, <9000=Lvl4, else Lvl5 MASTER ANALYTIKER / streak). Three learning cards:
+   235→   235→  · Quiz: opens Dialog with 5 Swedish MCQs about AKM1/wave theory (P/S, Elliott wave, # AKM1 vars, V19, moat). Each correct → addXp(75), on finish → passQuiz("lab-quiz"). Includes explanations and result screen with "Gör om".
+   236→   236→  · Flashcards: opens Dialog with flip-card UI, 6 cards (EBITDA, Moat, ARR, TERP, Kvickkvot, ROE). Each flip → viewFlashcard("lab-fc-{idx}") (+20 XP via store).
+   237→   237→  · Dagens utmaning: bumpStreak() + addXp(120) + inline toast-style confirmation that auto-hides after 3.5s.
+   238→   238→- "Gå vidare" CTA grid (AKM1-kalkylatorn / Lär dig metoden / Se analyser).
+   239→   239→- Self-check: `bun run lint` → clean (0 errors). `bunx next build` → ✓ Compiled successfully in 9.8s. Confirmed file starts with `"use client";` and exports `LabbSection`.
+   240→   240→
+   241→   241→Stage Summary:
+   242→   242→- LABB section fully built: 8 tool tabs (1 live + 7 honestly labelled as Metodmål), 30 case studies with detail dialogs, working AKM1 calculator (19 dropdowns + verdict + XP), interactive quiz (5 Qs + XP), flip-card flashcards (6 cards + XP), daily challenge (streak + XP + toast), XP/level/streak header.
+   243→   243→- All Swedish, institutional tone; cream bg + gold + bull/bear signal colors + serif headlines; mobile-first responsive (1/2/3-col grids, horizontal tool tabs).
+   244→   244→- Wired to shared Zustand store: addXp, passQuiz, viewFlashcard, bumpStreak, setSection. State is persisted (ak1a-store).
+   245→   245→- Build + lint clean. File: /home/z/my-project/src/components/ak1a/sections/labb-section.tsx (~1080 lines, single export `LabbSection`).
+   246→   246→
+   247→   247→---
+   248→   248→Task ID: 3
+   249→   249→Agent: main (Z.ai Code)
+   250→   250→Task: Wire all sections, add "continue building" features, and verify end-to-end with Agent Browser.
+   251→   251→
+   252→   252→Work Log:
+   253→   253→- Verified all 4 subagent-built sections (PREC, KURSER, LABB, OM OSS) compile and render (HTTP 200, lint clean).
+   254→   254→- Agent Browser end-to-end verification:
+   255→   255→  • Home renders: H1 "Sveriges enda institutionella metodik, byggd för privatpersoner." ✓
+   256→   256→  • Navigation: HEM→PREC→KURSER→LABB→OM OSS all switch and show correct H1s ✓
+   257→   257→  • ⌘K search modal opens, "labb" query returns the LABB section result ✓
+   258→   258→  • Dark mode toggle: html class flips light↔dark ✓
+   259→   259→  • Level switcher: Nybörjare→Avancerad, context strip updates to "Nivå: Avancerad" ✓
+   260→   260→  • Wave matrix cell click (Elliott · Mega) opens detail dialog "▲ Bullish · Styrka 3/3 · Ny primärvåg upp formad" ✓
+   261→   261→  • PREC reading progress: updates 1/29 → 7/29 on scroll ✓
+   262→   262→  • KURSER course completion: Starta → dialog → "Markera som klar" → progress tile shows 1/19 ✓
+   263→   263→  • LABB quiz: opens "Fråga 1 av 5 · +75 XP per rätt svar", answer shows explanation ✓
+   264→   264→  • Sticky footer: sits at viewport bottom when scrolled to end (gapAboveBottom: 0) ✓
+   265→   265→  • Mobile (390×844): mobile menu opens, nav items visible, responsive layout ✓
+   266→   266→  • Console: clean (no errors/warnings/hydration mismatches after full tour) ✓
+   267→   267→- Added "continue building" feature: global XP indicator pill in the header (Zap icon + XP count + Lvl), clickable → Labb. Computes analyst level from XP (NYANALYTIKER→MASTER ANALYTIKER). Verified: shows "175 Lvl 1" after test interactions (175 XP = 100 course + 75 quiz).
+   268→   268→- Final lint: clean. Final compile: HTTP 200.
+   269→   269→
+   270→   270→Stage Summary:
+   271→   271→- AK1A Research Lab fully rebuilt in the Code project from the deployed site (ak1nvestor.space-z.ai).
+   272→   272→- 5 sections all live: HEM (hero + signature Wave Matrix + tiers + manifest + honesty), PREC-ANALYS (99-page analysis w/ reading progress + recommendation + 5-point motivation + company + timeline + fusion + calendar + scenarios), KURSER (270 courses + 19 AKM1 variables w/ formulas + knowledge map + 3 learning paths), LABB (8-tool console + 30 case studies + AKM1 calculator + quiz/flashcards/XP), OM OSS (manifest + contrarian truth + 8 organs + 5-phase cycle + honesty dashboard + researchers).
+   273→   273→- Working interactivity beyond the static deployed version: ⌘K search, dark mode, level-aware content, interactive wave matrix, persisted XP/course/quiz/flashcard system (Zustand), AKM1 score calculator, reading progress, global XP header pill.
+   274→   274→- Design fidelity: cream paper #F5F1E8 + gold #A8862A/#C9A84C + serif headlines (Source Serif 4) + bull/bear/neutral signals — matches the institutional/editorial aesthetic of the deployed site.
+   275→   275→- Browser-verified end-to-end. Task complete.
+   276→   276→

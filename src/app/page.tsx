@@ -10,6 +10,7 @@ import { PrecSection } from "@/components/ak1a/sections/prec-section";
 import { KurserSection } from "@/components/ak1a/sections/kurser-section";
 import { LabbSection } from "@/components/ak1a/sections/labb-section";
 import { OmOssSection } from "@/components/ak1a/sections/om-oss-section";
+import { StyrelseSection } from "@/components/ak1a/sections/styrelse-section";
 
 export default function Page() {
   const { section } = useAk1aStore();
@@ -22,6 +23,7 @@ export default function Page() {
         {section === "prec" && <PrecSection />}
         {section === "kurser" && <KurserSection />}
         {section === "labb" && <LabbSection />}
+        {section === "styrelse" && <StyrelseSection />}
         {section === "om-oss" && <OmOssSection />}
       </main>
       <Footer />

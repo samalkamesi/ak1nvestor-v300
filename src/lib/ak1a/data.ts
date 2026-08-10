@@ -6,6 +6,7 @@ export const NAV_SECTIONS = [
   { id: "prec", label: "PREC-ANALYS" },
   { id: "kurser", label: "KURSER" },
   { id: "labb", label: "LABB" },
+  { id: "styrelse", label: "STYRELSE" },
   { id: "om-oss", label: "OM OSS" },
 ] as const;
 
@@ -17,6 +18,7 @@ export const FOOTER_NAV = [
   { label: "Kurser (200+ moduler · 4 flikar)", section: "kurser" as const },
   { label: "Labb (case + faror + historia)", section: "labb" as const },
   { label: "Meta-system (organ + visioner)", section: "om-oss" as const },
+  { label: "AI-organ styrelse (möten)", section: "styrelse" as const },
   { label: "Utbildning & Medlemskap", section: "kurser" as const },
   { label: "AKM1 Verktyg", section: "labb" as const },
   { label: "Webinarier", section: "kurser" as const },

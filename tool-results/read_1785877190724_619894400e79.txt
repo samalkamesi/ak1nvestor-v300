@@ -1,0 +1,917 @@
+     1→     1→"use client";
+     2→     2→
+     3→     3→import * as React from "react";
+     4→     4→import {
+     5→     5→  ArrowRight,
+     6→     6→  Clock,
+     7→     7→  TrendingUp,
+     8→     8→  Award,
+     9→     9→  Lock,
+    10→    10→  Check,
+    11→    11→  ChevronRight,
+    12→    12→  BookOpen,
+    13→    13→  Library,
+    14→    14→  Briefcase,
+    15→    15→  Layers,
+    16→    16→  Lightbulb,
+    17→    17→} from "lucide-react";
+    18→    18→import { useAk1aStore, type Level } from "@/lib/ak1a-store";
+    19→    19→import {
+    20→    20→  AKM1_VARIABLES,
+    21→    21→  type Akm1Category,
+    22→    22→  type Akm1Variable,
+    23→    23→} from "@/lib/ak1a/data";
+    24→    24→import { Eyebrow, HonestyTag } from "@/components/ak1a/primitives";
+    25→    25→import { Card } from "@/components/ui/card";
+    26→    26→import { Button } from "@/components/ui/button";
+    27→    27→import { Badge } from "@/components/ui/badge";
+    28→    28→import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+    29→    29→import {
+    30→    30→  Dialog,
+    31→    31→  DialogContent,
+    32→    32→  DialogHeader,
+    33→    33→  DialogTitle,
+    34→    34→  DialogDescription,
+    35→    35→  DialogFooter,
+    36→    36→} from "@/components/ui/dialog";
+    37→    37→import { cn } from "@/lib/utils";
+    38→    38→
+    39→    39→/* ------------------------------------------------------------------ */
+    40→    40→/* Static data                                                         */
+    41→    41→/* ------------------------------------------------------------------ */
+    42→    42→
+    43→    43→const LEVEL_LABEL: Record<Level, string> = {
+    44→    44→  nyborjare: "Nybörjare",
+    45→    45→  intermediar: "Intermediär",
+    46→    46→  avancerad: "Avancerad",
+    47→    47→};
+    48→    48→
+    49→    49→const LEVEL_ORDER: Record<Level, number> = {
+    50→    50→  nyborjare: 0,
+    51→    51→  intermediar: 1,
+    52→    52→  avancerad: 2,
+    53→    53→};
+    54→    54→
+    55→    55→function isLockedFor(courseLevel: Level, userLevel: Level): boolean {
+    56→    56→  return LEVEL_ORDER[courseLevel] > LEVEL_ORDER[userLevel];
+    57→    57→}
+    58→    58→
+    59→    59→const CATEGORY_FILTERS: { id: Akm1Category | "ALLA"; label: string; count: number }[] = [
+    60→    60→  { id: "ALLA", label: "ALLA", count: 19 },
+    61→    61→  { id: "Värdering", label: "VÄRDERING", count: 3 },
+    62→    62→  { id: "Tillväxt", label: "TILLVÄXT", count: 3 },
+    63→    63→  { id: "Lönsamhet", label: "LÖNSAMHET", count: 3 },
+    64→    64→  { id: "Stabilitet", label: "STABILITET", count: 3 },
+    65→    65→  { id: "Moat", label: "MOAT", count: 3 },
+    66→    66→  { id: "Katalysator", label: "KATALYSATOR", count: 3 },
+    67→    67→  { id: "Risk", label: "RISK", count: 1 },
+    68→    68→];
+    69→    69→
+    70→    70→const CATEGORY_CARDS = [
+    71→    71→  {
+    72→    72→    id: "akm1-19",
+    73→    73→    title: "AKM1 19 VARIABLER",
+    74→    74→    subtitle: "19 KURSER",
+    75→    75→    icon: Layers,
+    76→    76→    description: "Grunden allt annat vilar på. Variabel för variabel.",
+    77→    77→    target: "akm1-variabler",
+    78→    78→  },
+    79→    79→  {
+    80→    80→    id: "marknad-full",
+    81→    81→    title: "KUNSKAPSMARKNAD",
+    82→    82→    subtitle: "251 KURSER",
+    83→    83→    icon: Library,
+    84→    84→    description: "Bred bibliotek — nyckeltal, branscher, historik, strategier.",
+    85→    85→    target: "akm1-variabler",
+    86→    86→  },
+    87→    87→  {
+    88→    88→    id: "case-studies",
+    89→    89→    title: "LEVANDE FALLSTUDIER",
+    90→    90→    subtitle: "5 FALL",
+    91→    91→    icon: Briefcase,
+    92→    92→    description: "Levande historiska fall. Lär av andras segrar och misstag.",
+    93→    93→    target: "inlarningsvagar",
+    94→    94→  },
+    95→    95→  {
+    96→    96→    id: "mega-levels",
+    97→    97→    title: "MEGA NIVÅER 1-100",
+    98→    98→    subtitle: "6 TIERS",
+    99→    99→    icon: TrendingUp,
+   100→   100→    description: "Sex nivåer av mästerskap — från nyfiken till expert.",
+   101→   101→    target: "inlarningsvagar",
+   102→   102→  },
+   103→   103→  {
+   104→   104→    id: "rewards",
+   105→   105→    title: "BELÖNINGAR",
+   106→   106→    subtitle: "14 BADGES",
+   107→   107→    icon: Award,
+   108→   108→    description: "Tjäna badges, XP och streaks. Spelet är kunskap.",
+   109→   109→    target: "inlarningsvagar",
+   110→   110→  },
+   111→   111→  {
+   112→   112→    id: "insights",
+   113→   113→    title: "ANALYTIKER-INSIKTER",
+   114→   114→    subtitle: "5 INSIKTER",
+   115→   115→    icon: Lightbulb,
+   116→   116→    description: "Korta insikter från institutionella analytiker.",
+   117→   117→    target: "inlarningsvagar",
+   118→   118→  },
+   119→   119→];
+   120→   120→
+   121→   121→const LEARNING_PATHS = [
+   122→   122→  {
+   123→   123→    num: 1,
+   124→   124→    eyebrow: "STEG 1 I LÄROPLANEN",
+   125→   125→    title: "Nybörjare → Förstå ett bolag",
+   126→   126→    body: "Aktie vs bolag vs fond. Läs en årsredovisning. Introduktion till AKM1. Första variabeln (V1 — försäljningstillväxt).",
+   127→   127→    courses: 4,
+   128→   128→    minutes: 52,
+   129→   129→    premium: false,
+   130→   130→  },
+   131→   131→  {
+   132→   132→    num: 2,
+   133→   133→    eyebrow: "STEG 2 I LÄROPLANEN",
+   134→   134→    title: "Aktiv → Räkna på det",
+   135→   135→    body: "Bokföringens grunder. Nyckeltal. Scenario-analys. Kassaflödesmodellering. Värderingsmetoder. Risk-koncept.",
+   136→   136→    courses: 6,
+   137→   137→    minutes: 84,
+   138→   138→    premium: true,
+   139→   139→  },
+   140→   140→  {
+   141→   141→    num: 3,
+   142→   142→    eyebrow: "STEG 3 I LÄROPLANEN",
+   143→   143→    title: "Ambitiös → Bedöm det (Power 19)",
+   144→   144→    body: "Alla 19 AKM1-variabler. Integration mot Labbet. Reproducera institutionella analyser självständigt.",
+   145→   145→    courses: 9,
+   146→   146→    minutes: 156,
+   147→   147→    premium: true,
+   148→   148→  },
+   149→   149→];
+   150→   150→
+   151→   151→/* ------------------------------------------------------------------ */
+   152→   152→/* Main section                                                        */
+   153→   153→/* ------------------------------------------------------------------ */
+   154→   154→
+   155→   155→export function KurserSection() {
+   156→   156→  const { progress, completeCourse, level } = useAk1aStore();
+   157→   157→  const [categoryFilter, setCategoryFilter] = React.useState<string>("ALLA");
+   158→   158→  const [activeCourseId, setActiveCourseId] = React.useState<string | null>(null);
+   159→   159→
+   160→   160→  const visibleVariables = React.useMemo(() => {
+   161→   161→    if (categoryFilter === "ALLA") return AKM1_VARIABLES;
+   162→   162→    return AKM1_VARIABLES.filter((v) => v.category === categoryFilter);
+   163→   163→  }, [categoryFilter]);
+   164→   164→
+   165→   165→  const completedAkm1Ids = React.useMemo(
+   166→   166→    () =>
+   167→   167→      new Set(
+   168→   168→        AKM1_VARIABLES.filter((v) =>
+   169→   169→          progress.completedCourses.includes(v.id)
+   170→   170→        ).map((v) => v.id)
+   171→   171→      ),
+   172→   172→    [progress.completedCourses]
+   173→   173→  );
+   174→   174→
+   175→   175→  const completedCount = completedAkm1Ids.size;
+   176→   176→  const akm1ProgressPct = Math.round((completedCount / 19) * 100);
+   177→   177→
+   178→   178→  const activeCourse = React.useMemo(
+   179→   179→    () => AKM1_VARIABLES.find((v) => v.id === activeCourseId) ?? null,
+   180→   180→    [activeCourseId]
+   181→   181→  );
+   182→   182→
+   183→   183→  const scrollToId = (id: string) => {
+   184→   184→    if (typeof document !== "undefined") {
+   185→   185→      document
+   186→   186→        .getElementById(id)
+   187→   187→        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+   188→   188→    }
+   189→   189→  };
+   190→   190→
+   191→   191→  return (
+   192→   192→    <div className="paper-texture">
+   193→   193→      {/* ───────────── HERO ───────────── */}
+   194→   194→      <section className="relative overflow-hidden border-b border-border">
+   195→   195→        <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
+   196→   196→          <div
+   197→   197→            className="absolute inset-0"
+   198→   198→            style={{
+   199→   199→              backgroundImage:
+   200→   200→                "linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px)",
+   201→   201→              backgroundSize: "48px 48px",
+   202→   202→            }}
+   203→   203→          />
+   204→   204→        </div>
+   205→   205→        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
+   206→   206→          <div className="max-w-3xl">
+   207→   207→            <Eyebrow>AK1A Kurser</Eyebrow>
+   208→   208→            <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+   209→   209→              Komplett kunskapsmarknad
+   210→   210→            </h1>
+   211→   211→            <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+   212→   212→              270 kurser totalt. AKM1:s 19 variabler, kunskapsmarknad,
+   213→   213→              mega-nivåer, belöningar och analytiker-insikter — allt på ett
+   214→   214→              ställe.
+   215→   215→            </p>
+   216→   216→            <div className="mt-8 flex flex-wrap gap-3">
+   217→   217→              <Button
+   218→   218→                size="lg"
+   219→   219→                className="bg-gold text-background hover:bg-gold/90"
+   220→   220→                onClick={() => scrollToId("akm1-variabler")}
+   221→   221→              >
+   222→   222→                Börja med AKM1 <ArrowRight className="ml-1 h-4 w-4" />
+   223→   223→              </Button>
+   224→   224→              <Button
+   225→   225→                size="lg"
+   226→   226→                variant="outline"
+   227→   227→                onClick={() => scrollToId("kurserna-spar")}
+   228→   228→              >
+   229→   229→                Utforska marknaden
+   230→   230→              </Button>
+   231→   231→            </div>
+   232→   232→          </div>
+   233→   233→        </div>
+   234→   234→      </section>
+   235→   235→
+   236→   236→      {/* ───────────── STATS ROW ───────────── */}
+   237→   237→      <section className="border-b border-border bg-muted/30">
+   238→   238→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+   239→   239→          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+   240→   240→            <StatTile
+   241→   241→              kind="matt"
+   242→   242→              value="270"
+   243→   243→              label="Kurser"
+   244→   244→              caption="↑ KONTINUERLIG TILLVÄXT"
+   245→   245→            />
+   246→   246→            <StatTile
+   247→   247→              kind="matt"
+   248→   248→              value="142.9"
+   249→   249→              label="Timmar"
+   250→   250→              caption="↑ 142.9H TOTAL"
+   251→   251→            />
+   252→   252→            <ProgressTile
+   253→   253→              completed={completedCount}
+   254→   254→              total={19}
+   255→   255→              pct={akm1ProgressPct}
+   256→   256→              xp={progress.xp}
+   257→   257→            />
+   258→   258→            <StatTile
+   259→   259→              kind="matt"
+   260→   260→              value="0"
+   261→   261→              label="Dolda avgifter"
+   262→   262→              caption="ALLTID GRATIS ATT LÄRA"
+   263→   263→            />
+   264→   264→          </div>
+   265→   265→        </div>
+   266→   266→      </section>
+   267→   267→
+   268→   268→      {/* ───────────── CATEGORIES ───────────── */}
+   269→   269→      <section id="kurserna-spar" className="border-b border-border">
+   270→   270→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   271→   271→          <Eyebrow>Kurserna</Eyebrow>
+   272→   272→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   273→   273→            Välj ditt spår.
+   274→   274→          </h2>
+   275→   275→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   276→   276→            Sex sätt att utforska kunskap. Börja med AKM1:s 19 variabler —
+   277→   277→            grunden allt annat vilar på.
+   278→   278→          </p>
+   279→   279→          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+   280→   280→            {CATEGORY_CARDS.map((cat) => {
+   281→   281→              const Icon = cat.icon;
+   282→   282→              return (
+   283→   283→                <button
+   284→   284→                  key={cat.id}
+   285→   285→                  onClick={() => scrollToId(cat.target)}
+   286→   286→                  className="group flex flex-col items-start rounded-lg border border-border bg-card p-6 text-left transition-all hover:border-gold/50 hover:shadow-md"
+   287→   287→                >
+   288→   288→                  <div className="flex items-center gap-3">
+   289→   289→                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gold/30 bg-gold/10 text-gold">
+   290→   290→                      <Icon className="h-5 w-5" />
+   291→   291→                    </span>
+   292→   292→                    <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   293→   293→                      {cat.subtitle}
+   294→   294→                    </span>
+   295→   295→                  </div>
+   296→   296→                  <h3 className="mt-4 font-serif text-xl font-bold leading-tight">
+   297→   297→                    {cat.title}
+   298→   298→                  </h3>
+   299→   299→                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+   300→   300→                    {cat.description}
+   301→   301→                  </p>
+   302→   302→                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gold group-hover:underline">
+   303→   303→                    Öppna spåret
+   304→   304→                    <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+   305→   305→                  </span>
+   306→   306→                </button>
+   307→   307→              );
+   308→   308→            })}
+   309→   309→          </div>
+   310→   310→        </div>
+   311→   311→      </section>
+   312→   312→
+   313→   313→      {/* ───────────── AKM1 19 VARIABLES ───────────── */}
+   314→   314→      <section id="akm1-variabler" className="border-b border-border bg-muted/20">
+   315→   315→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   316→   316→          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+   317→   317→            <div className="max-w-2xl">
+   318→   318→              <Eyebrow>AKM1 — grunden</Eyebrow>
+   319→   319→              <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   320→   320→                AKM1:s 19 variabler
+   321→   321→              </h2>
+   322→   322→              <p className="mt-3 leading-relaxed text-muted-foreground">
+   323→   323→                Lär dig varje indikator i AKM1-modellen. Varje kurs har teori,
+   324→   324→                räkneexempel, övning och analytiker-insikt.
+   325→   325→              </p>
+   326→   326→            </div>
+   327→   327→            <div className="min-w-[240px] rounded-lg border border-gold/30 bg-gold/[0.04] p-5">
+   328→   328→              <div className="flex items-center justify-between">
+   329→   329→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   330→   330→                  Din progress
+   331→   331→                </span>
+   332→   332→                <HonestyTag kind="matt" />
+   333→   333→              </div>
+   334→   334→              <p className="mt-2 font-serif text-4xl font-bold leading-none">
+   335→   335→                {completedCount}
+   336→   336→                <span className="text-2xl text-muted-foreground">/19</span>
+   337→   337→              </p>
+   338→   338→              <ProgressBar pct={akm1ProgressPct} className="mt-3" />
+   339→   339→              <p className="mt-2 text-xs text-muted-foreground">
+   340→   340→                {akm1ProgressPct}% av AKM1 fullt behärskat
+   341→   341→              </p>
+   342→   342→            </div>
+   343→   343→          </div>
+   344→   344→
+   345→   345→          {/* Filter tabs */}
+   346→   346→          <Tabs
+   347→   347→            value={categoryFilter}
+   348→   348→            onValueChange={setCategoryFilter}
+   349→   349→            className="mt-8"
+   350→   350→          >
+   351→   351→            <div className="-mx-4 overflow-x-auto pb-1 sm:mx-0">
+   352→   352→              <TabsList className="h-auto w-max gap-1.5 rounded-lg border border-border bg-transparent p-1">
+   353→   353→                {CATEGORY_FILTERS.map((f) => (
+   354→   354→                  <TabsTrigger
+   355→   355→                    key={f.id}
+   356→   356→                    value={f.id}
+   357→   357→                    className="rounded-md border border-transparent px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground data-[state=active]:border-gold data-[state=active]:bg-gold data-[state=active]:text-background data-[state=active]:shadow-none whitespace-nowrap"
+   358→   358→                  >
+   359→   359→                    {f.label}
+   360→   360→                    <span className="ml-1 text-[10px] opacity-70">
+   361→   361→                      ({f.count})
+   362→   362→                    </span>
+   363→   363→                  </TabsTrigger>
+   364→   364→                ))}
+   365→   365→              </TabsList>
+   366→   366→            </div>
+   367→   367→          </Tabs>
+   368→   368→
+   369→   369→          {/* Course grid */}
+   370→   370→          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+   371→   371→            {visibleVariables.map((v) => {
+   372→   372→              const isCompleted = completedAkm1Ids.has(v.id);
+   373→   373→              const isLocked = isLockedFor(v.level, level);
+   374→   374→              return (
+   375→   375→                <Akm1CourseCard
+   376→   376→                  key={v.id}
+   377→   377→                  variable={v}
+   378→   378→                  isCompleted={isCompleted}
+   379→   379→                  isLocked={isLocked}
+   380→   380→                  onStart={() => setActiveCourseId(v.id)}
+   381→   381→                />
+   382→   382→              );
+   383→   383→            })}
+   384→   384→          </div>
+   385→   385→
+   386→   386→          {/* Level-aware note */}
+   387→   387→          <p className="mt-6 text-xs text-muted-foreground">
+   388→   388→            <span className="font-semibold uppercase tracking-wider text-gold">
+   389→   389→              Din nivå:
+   390→   390→            </span>{" "}
+   391→   391→            {LEVEL_LABEL[level]}.{" "}
+   392→   392→            {level === "nyborjare" &&
+   393→   393→              "Avancerade kurser är låsta — växla till Intermediär eller Avancerad i toppen för att låsa upp."}
+   394→   394→            {level === "intermediar" &&
+   395→   395→              "Nybörjare- och Intermediär-kurser är upplåsta. Avancerade kurser kräver Avancerad-nivå."}
+   396→   396→            {level === "avancerad" &&
+   397→   397→              "Alla 19 variabler är upplåsta. Du kan påbörja vilken kurs som helst."}
+   398→   398→          </p>
+   399→   399→        </div>
+   400→   400→      </section>
+   401→   401→
+   402→   402→      {/* ───────────── KNOWLEDGE MAP ───────────── */}
+   403→   403→      <section className="border-b border-border">
+   404→   404→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   405→   405→          <Eyebrow>19 celler · 19 variabler</Eyebrow>
+   406→   406→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   407→   407→            Din kunskapskarta
+   408→   408→          </h2>
+   409→   409→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   410→   410→            Så här ser din AKM1-kunskap ut som en struktur — inte en
+   411→   411→            procentsats.
+   412→   412→          </p>
+   413→   413→
+   414→   414→          <Card className="mt-8 gap-0 p-6">
+   415→   415→            {/* 19-cell grid */}
+   416→   416→            <div className="grid grid-cols-5 gap-2 sm:grid-cols-7 lg:grid-cols-10">
+   417→   417→              {AKM1_VARIABLES.map((v) => {
+   418→   418→                const isMastered = completedAkm1Ids.has(v.id);
+   419→   419→                return (
+   420→   420→                  <div
+   421→   421→                    key={v.id}
+   422→   422→                    title={`${v.id} — ${v.name}${
+   423→   423→                      isMastered ? " · Behärskad" : " · Ej påbörjad"
+   424→   424→                    }`}
+   425→   425→                    className={cn(
+   426→   426→                      "flex aspect-square flex-col items-center justify-center rounded-md border text-center transition-colors",
+   427→   427→                      isMastered
+   428→   428→                        ? "border-gold/60 bg-gold/15 text-gold"
+   429→   429→                        : "border-border bg-muted/50 text-muted-foreground"
+   430→   430→                    )}
+   431→   431→                  >
+   432→   432→                    <span className="font-serif text-sm font-bold">
+   433→   433→                      {v.id}
+   434→   434→                    </span>
+   435→   435→                    <span className="text-[9px] uppercase tracking-wider opacity-70">
+   436→   436→                      {isMastered ? "Klar" : "—"}
+   437→   437→                    </span>
+   438→   438→                  </div>
+   439→   439→                );
+   440→   440→              })}
+   441→   441→            </div>
+   442→   442→
+   443→   443→            {/* Legend */}
+   444→   444→            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 border-t border-border pt-5">
+   445→   445→              <LegendItem
+   446→   446→                swatch="bg-gold/20 border-gold/60"
+   447→   447→                label="Behärskad"
+   448→   448→                sub="Kurs slutförd + scenario + quiz godkänd"
+   449→   449→              />
+   450→   450→              <LegendItem
+   451→   451→                swatch="bg-blue-400/30 border-blue-400/50"
+   452→   452→                label="Pågår"
+   453→   453→                sub="Kurs påbörjad, ej slutförd"
+   454→   454→              />
+   455→   455→              <LegendItem
+   456→   456→                swatch="bg-amber-400/30 border-amber-400/50"
+   457→   457→                label="Påbörjad"
+   458→   458→                sub="Första lektionen öppnad"
+   459→   459→              />
+   460→   460→              <LegendItem
+   461→   461→                swatch="bg-muted border-border"
+   462→   462→                label="Ej påbörjad"
+   463→   463→                sub="Nästa inlärningsmål"
+   464→   464→              />
+   465→   465→            </div>
+   466→   466→
+   467→   467→            <div className="mt-4 flex flex-wrap items-center gap-2">
+   468→   468→              <HonestyTag kind="matt" />
+   469→   469→              <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   470→   470→                Demo: En användares kunskapssnapshot
+   471→   471→              </span>
+   472→   472→            </div>
+   473→   473→          </Card>
+   474→   474→        </div>
+   475→   475→      </section>
+   476→   476→
+   477→   477→      {/* ───────────── LEARNING PATHS ───────────── */}
+   478→   478→      <section
+   479→   479→        id="inlarningsvagar"
+   480→   480→        className="border-b border-border bg-muted/30"
+   481→   481→      >
+   482→   482→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   483→   483→          <Eyebrow>Inlärningsvägar</Eyebrow>
+   484→   484→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   485→   485→            Följ en väg, inte en lista.
+   486→   486→          </h2>
+   487→   487→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   488→   488→            Tre steg. Börja där du är. Varje steg bygger på det förra.
+   489→   489→          </p>
+   490→   490→          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+   491→   491→            {LEARNING_PATHS.map((p) => (
+   492→   492→              <PathCard key={p.num} path={p} />
+   493→   493→            ))}
+   494→   494→          </div>
+   495→   495→        </div>
+   496→   496→      </section>
+   497→   497→
+   498→   498→      {/* ───────────── COURSE DETAIL DIALOG ───────────── */}
+   499→   499→      <CourseDetailDialog
+   500→   500→        course={activeCourse}
+   501→   501→        isCompleted={
+   502→   502→          activeCourse ? completedAkm1Ids.has(activeCourse.id) : false
+   503→   503→        }
+   504→   504→        isLocked={
+   505→   505→          activeCourse ? isLockedFor(activeCourse.level, level) : false
+   506→   506→        }
+   507→   507→        onClose={() => setActiveCourseId(null)}
+   508→   508→        onComplete={() => {
+   509→   509→          if (activeCourse) completeCourse(activeCourse.id);
+   510→   510→        }}
+   511→   511→      />
+   512→   512→    </div>
+   513→   513→  );
+   514→   514→}
+   515→   515→
+   516→   516→/* ------------------------------------------------------------------ */
+   517→   517→/* Sub-components                                                      */
+   518→   518→/* ------------------------------------------------------------------ */
+   519→   519→
+   520→   520→function StatTile({
+   521→   521→  kind,
+   522→   522→  value,
+   523→   523→  label,
+   524→   524→  caption,
+   525→   525→}: {
+   526→   526→  kind: "matt" | "metodmal";
+   527→   527→  value: string;
+   528→   528→  label: string;
+   529→   529→  caption: string;
+   530→   530→}) {
+   531→   531→  return (
+   532→   532→    <div className="rounded-lg border border-border bg-card p-5">
+   533→   533→      <HonestyTag kind={kind} />
+   534→   534→      <p className="mt-3 font-serif text-4xl font-bold leading-none">
+   535→   535→        {value}
+   536→   536→      </p>
+   537→   537→      <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+   538→   538→        {label}
+   539→   539→      </p>
+   540→   540→      <p className="mt-2 text-[11px] uppercase tracking-wider text-muted-foreground/70">
+   541→   541→        {caption}
+   542→   542→      </p>
+   543→   543→    </div>
+   544→   544→  );
+   545→   545→}
+   546→   546→
+   547→   547→function ProgressTile({
+   548→   548→  completed,
+   549→   549→  total,
+   550→   550→  pct,
+   551→   551→  xp,
+   552→   552→}: {
+   553→   553→  completed: number;
+   554→   554→  total: number;
+   555→   555→  pct: number;
+   556→   556→  xp: number;
+   557→   557→}) {
+   558→   558→  return (
+   559→   559→    <div className="rounded-lg border border-gold/30 bg-gradient-to-br from-card to-gold/[0.04] p-5">
+   560→   560→      <div className="flex items-center justify-between">
+   561→   561→        <HonestyTag kind="matt" />
+   562→   562→        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   563→   563→          XP {xp}
+   564→   564→        </span>
+   565→   565→      </div>
+   566→   566→      <p className="mt-3 font-serif text-4xl font-bold leading-none">
+   567→   567→        {completed}
+   568→   568→        <span className="text-2xl text-muted-foreground">/{total}</span>
+   569→   569→      </p>
+   570→   570→      <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+   571→   571→        Klara · Din personliga utveckling
+   572→   572→      </p>
+   573→   573→      <ProgressBar pct={pct} className="mt-3" />
+   574→   574→    </div>
+   575→   575→  );
+   576→   576→}
+   577→   577→
+   578→   578→function ProgressBar({
+   579→   579→  pct,
+   580→   580→  className,
+   581→   581→}: {
+   582→   582→  pct: number;
+   583→   583→  className?: string;
+   584→   584→}) {
+   585→   585→  return (
+   586→   586→    <div
+   587→   587→      className={cn(
+   588→   588→        "h-1.5 w-full overflow-hidden rounded-full bg-muted",
+   589→   589→        className
+   590→   590→      )}
+   591→   591→    >
+   592→   592→      <div
+   593→   593→        className="h-full bg-gold transition-all duration-500"
+   594→   594→        style={{ width: `${pct}%` }}
+   595→   595→      />
+   596→   596→    </div>
+   597→   597→  );
+   598→   598→}
+   599→   599→
+   600→   600→function Akm1CourseCard({
+   601→   601→  variable,
+   602→   602→  isCompleted,
+   603→   603→  isLocked,
+   604→   604→  onStart,
+   605→   605→}: {
+   606→   606→  variable: Akm1Variable;
+   607→   607→  isCompleted: boolean;
+   608→   608→  isLocked: boolean;
+   609→   609→  onStart: () => void;
+   610→   610→}) {
+   611→   611→  const weightLabel =
+   612→   612→    variable.weight === "KRITISK"
+   613→   613→      ? `${variable.category.toUpperCase()} · KRITISK`
+   614→   614→      : `${variable.category.toUpperCase()} · ${variable.weight}`;
+   615→   615→
+   616→   616→  return (
+   617→   617→    <Card
+   618→   618→      className={cn(
+   619→   619→        "gap-0 overflow-hidden p-0 py-0 transition-all",
+   620→   620→        isLocked && !isCompleted && "opacity-70",
+   621→   621→        isCompleted
+   622→   622→          ? "border-bull/40"
+   623→   623→          : "hover:border-gold/40 hover:shadow-md"
+   624→   624→      )}
+   625→   625→    >
+   626→   626→      <div className="p-5">
+   627→   627→        {/* Top row: weight + minutes */}
+   628→   628→        <div className="flex items-center justify-between gap-2">
+   629→   629→          <Badge
+   630→   630→            variant="outline"
+   631→   631→            className={cn(
+   632→   632→              "border-gold/40 bg-gold/5 text-gold",
+   633→   633→              variable.weight === "KRITISK" && "border-bear/40 bg-bear/5 text-bear"
+   634→   634→            )}
+   635→   635→          >
+   636→   636→            {weightLabel}
+   637→   637→          </Badge>
+   638→   638→          <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+   639→   639→            <Clock className="h-3 w-3" /> {variable.minutes} min
+   640→   640→          </span>
+   641→   641→        </div>
+   642→   642→
+   643→   643→        {/* Number + ID */}
+   644→   644→        <div className="mt-4 flex items-baseline gap-3">
+   645→   645→          <span className="font-serif text-5xl font-bold leading-none text-ink dark:text-foreground">
+   646→   646→            {variable.num}
+   647→   647→          </span>
+   648→   648→          <span className="font-mono text-sm font-semibold text-muted-foreground">
+   649→   649→            {variable.id}
+   650→   650→          </span>
+   651→   651→        </div>
+   652→   652→
+   653→   653→        {/* Title */}
+   654→   654→        <h3 className="mt-3 font-serif text-lg font-bold leading-tight">
+   655→   655→          {variable.name}
+   656→   656→        </h3>
+   657→   657→        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+   658→   658→          {variable.summary}
+   659→   659→        </p>
+   660→   660→
+   661→   661→        {/* Bottom row: level + tags */}
+   662→   662→        <div className="mt-4 flex flex-wrap items-center gap-2">
+   663→   663→          <Badge variant="outline" className="text-muted-foreground">
+   664→   664→            {LEVEL_LABEL[variable.level]}
+   665→   665→          </Badge>
+   666→   666→          <HonestyTag kind="matt" />
+   667→   667→          {isCompleted && (
+   668→   668→            <Badge className="border border-bull/30 bg-bull/15 text-bull">
+   669→   669→              <Check className="h-3 w-3" /> Klar
+   670→   670→            </Badge>
+   671→   671→          )}
+   672→   672→          {isLocked && !isCompleted && (
+   673→   673→            <Badge
+   674→   674→              variant="outline"
+   675→   675→              className="border-muted-foreground/30 text-muted-foreground"
+   676→   676→            >
+   677→   677→              <Lock className="h-3 w-3" /> Avancerad-nivå
+   678→   678→            </Badge>
+   679→   679→          )}
+   680→   680→        </div>
+   681→   681→      </div>
+   682→   682→
+   683→   683→      <div className="border-t border-border bg-muted/30 p-4">
+   684→   684→        <Button
+   685→   685→          className={cn(
+   686→   686→            "w-full",
+   687→   687→            isCompleted
+   688→   688→              ? "bg-bull text-background hover:bg-bull/90"
+   689→   689→              : "bg-gold text-background hover:bg-gold/90"
+   690→   690→          )}
+   691→   691→          onClick={onStart}
+   692→   692→          disabled={isLocked && !isCompleted}
+   693→   693→        >
+   694→   694→          {isLocked && !isCompleted ? (
+   695→   695→            <>
+   696→   696→              <Lock className="h-4 w-4" /> Låst — kräver Avancerad-nivå
+   697→   697→            </>
+   698→   698→          ) : isCompleted ? (
+   699→   699→            <>
+   700→   700→              <Check className="h-4 w-4" /> Repetera kursen
+   701→   701→            </>
+   702→   702→          ) : (
+   703→   703→            <>
+   704→   704→              Starta <ArrowRight className="ml-1 h-4 w-4" />
+   705→   705→            </>
+   706→   706→          )}
+   707→   707→        </Button>
+   708→   708→      </div>
+   709→   709→    </Card>
+   710→   710→  );
+   711→   711→}
+   712→   712→
+   713→   713→function CourseDetailDialog({
+   714→   714→  course,
+   715→   715→  isCompleted,
+   716→   716→  isLocked,
+   717→   717→  onClose,
+   718→   718→  onComplete,
+   719→   719→}: {
+   720→   720→  course: Akm1Variable | null;
+   721→   721→  isCompleted: boolean;
+   722→   722→  isLocked: boolean;
+   723→   723→  onClose: () => void;
+   724→   724→  onComplete: () => void;
+   725→   725→}) {
+   726→   726→  const weightLabel = course
+   727→   727→    ? course.weight === "KRITISK"
+   728→   728→      ? `${course.category.toUpperCase()} · KRITISK`
+   729→   729→      : `${course.category.toUpperCase()} · ${course.weight}`
+   730→   730→    : "";
+   731→   731→
+   732→   732→  return (
+   733→   733→    <Dialog open={!!course} onOpenChange={(open) => !open && onClose()}>
+   734→   734→      <DialogContent className="sm:max-w-lg">
+   735→   735→        {course && (
+   736→   736→          <>
+   737→   737→            <DialogHeader>
+   738→   738→              <div className="flex items-center gap-2">
+   739→   739→                <Badge
+   740→   740→                  variant="outline"
+   741→   741→                  className={cn(
+   742→   742→                    "border-gold/40 bg-gold/5 text-gold",
+   743→   743→                    course.weight === "KRITISK" &&
+   744→   744→                      "border-bear/40 bg-bear/5 text-bear"
+   745→   745→                  )}
+   746→   746→                >
+   747→   747→                  {weightLabel}
+   748→   748→                </Badge>
+   749→   749→                <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+   750→   750→                  <Clock className="h-3 w-3" /> {course.minutes} min
+   751→   751→                </span>
+   752→   752→              </div>
+   753→   753→              <DialogTitle className="mt-2 font-serif text-2xl leading-tight">
+   754→   754→                <span className="mr-2 font-mono text-base font-semibold text-gold">
+   755→   755→                  {course.id}
+   756→   756→                </span>
+   757→   757→                {course.name}
+   758→   758→              </DialogTitle>
+   759→   759→              <DialogDescription className="text-sm leading-relaxed">
+   760→   760→                {course.summary}
+   761→   761→              </DialogDescription>
+   762→   762→            </DialogHeader>
+   763→   763→
+   764→   764→            <div className="space-y-4">
+   765→   765→              <div className="flex flex-wrap items-center gap-2">
+   766→   766→                <Badge variant="outline">{LEVEL_LABEL[course.level]}</Badge>
+   767→   767→                <HonestyTag kind="matt" />
+   768→   768→                {isCompleted && (
+   769→   769→                  <Badge className="border border-bull/30 bg-bull/15 text-bull">
+   770→   770→                    <Check className="h-3 w-3" /> Redan klar
+   771→   771→                  </Badge>
+   772→   772→                )}
+   773→   773→              </div>
+   774→   774→
+   775→   775→              {course.formula && (
+   776→   776→                <div className="rounded-md border border-border bg-muted/40 p-4">
+   777→   777→                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   778→   778→                    Formel
+   779→   779→                  </p>
+   780→   780→                  <p className="mt-2 font-mono text-sm leading-relaxed text-foreground">
+   781→   781→                    {course.formula}
+   782→   782→                  </p>
+   783→   783→                </div>
+   784→   784→              )}
+   785→   785→
+   786→   786→              {course.scale && (
+   787→   787→                <div className="rounded-md border border-border bg-muted/40 p-4">
+   788→   788→                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   789→   789→                    Poängskala 1–5
+   790→   790→                  </p>
+   791→   791→                  <p className="mt-2 text-sm leading-relaxed text-foreground">
+   792→   792→                    {course.scale}
+   793→   793→                  </p>
+   794→   794→                </div>
+   795→   795→              )}
+   796→   796→
+   797→   797→              {!course.formula && !course.scale && (
+   798→   798→                <div className="rounded-md border border-dashed border-border bg-muted/20 p-4 text-center">
+   799→   799→                  <p className="text-xs text-muted-foreground">
+   800→   800→                    Kursen har teori, räkneexempel och övning — öppnas i
+   801→   801→                    inlärningsvägen.
+   802→   802→                  </p>
+   803→   803→                </div>
+   804→   804→              )}
+   805→   805→            </div>
+   806→   806→
+   807→   807→            <DialogFooter>
+   808→   808→              {isLocked && !isCompleted ? (
+   809→   809→                <Button variant="outline" disabled className="w-full">
+   810→   810→                  <Lock className="h-4 w-4" /> Låst — kräver Avancerad-nivå
+   811→   811→                </Button>
+   812→   812→              ) : isCompleted ? (
+   813→   813→                <Button
+   814→   814→                  variant="outline"
+   815→   815→                  onClick={onClose}
+   816→   816→                  className="w-full"
+   817→   817→                >
+   818→   818→                  <Check className="h-4 w-4" /> Kursen redan klar (+100 XP)
+   819→   819→                </Button>
+   820→   820→              ) : (
+   821→   821→                <Button
+   822→   822→                  className="w-full bg-gold text-background hover:bg-gold/90"
+   823→   823→                  onClick={() => {
+   824→   824→                    onComplete();
+   825→   825→                    onClose();
+   826→   826→                  }}
+   827→   827→                >
+   828→   828→                  <Check className="h-4 w-4" /> Markera som klar (+100 XP)
+   829→   829→                </Button>
+   830→   830→              )}
+   831→   831→            </DialogFooter>
+   832→   832→          </>
+   833→   833→        )}
+   834→   834→      </DialogContent>
+   835→   835→    </Dialog>
+   836→   836→  );
+   837→   837→}
+   838→   838→
+   839→   839→function LegendItem({
+   840→   840→  swatch,
+   841→   841→  label,
+   842→   842→  sub,
+   843→   843→}: {
+   844→   844→  swatch: string;
+   845→   845→  label: string;
+   846→   846→  sub: string;
+   847→   847→}) {
+   848→   848→  return (
+   849→   849→    <div className="flex items-start gap-2">
+   850→   850→      <span
+   851→   851→        className={cn(
+   852→   852→          "mt-0.5 inline-block h-3 w-3 shrink-0 rounded-sm border",
+   853→   853→          swatch
+   854→   854→        )}
+   855→   855→      />
+   856→   856→      <div>
+   857→   857→        <p className="text-xs font-semibold text-foreground">{label}</p>
+   858→   858→        <p className="text-[11px] text-muted-foreground">{sub}</p>
+   859→   859→      </div>
+   860→   860→    </div>
+   861→   861→  );
+   862→   862→}
+   863→   863→
+   864→   864→function PathCard({ path }: { path: (typeof LEARNING_PATHS)[number] }) {
+   865→   865→  return (
+   866→   866→    <Card
+   867→   867→      className={cn(
+   868→   868→        "gap-0 p-6",
+   869→   869→        path.premium &&
+   870→   870→          "border-gold/60 bg-gradient-to-br from-card to-gold/[0.04]"
+   871→   871→      )}
+   872→   872→    >
+   873→   873→      <div className="flex items-center justify-between">
+   874→   874→        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-serif text-lg font-bold text-gold">
+   875→   875→          {path.num}
+   876→   876→        </span>
+   877→   877→        {path.premium && (
+   878→   878→          <Badge className="border border-gold/30 bg-gold/15 text-gold">
+   879→   879→            <Lock className="h-3 w-3" /> Premium
+   880→   880→          </Badge>
+   881→   881→        )}
+   882→   882→      </div>
+   883→   883→      <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   884→   884→        {path.eyebrow}
+   885→   885→      </p>
+   886→   886→      <h3 className="mt-2 font-serif text-xl font-bold leading-tight">
+   887→   887→        {path.title}
+   888→   888→      </h3>
+   889→   889→      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+   890→   890→        {path.body}
+   891→   891→      </p>
+   892→   892→      <div className="mt-4 flex items-center gap-4 border-t border-border pt-4">
+   893→   893→        <span className="inline-flex items-center gap-1 text-sm font-semibold text-foreground">
+   894→   894→          <BookOpen className="h-4 w-4 text-gold" />
+   895→   895→          {path.courses}
+   896→   896→          <span className="font-normal text-muted-foreground">kurser</span>
+   897→   897→        </span>
+   898→   898→        <span className="inline-flex items-center gap-1 text-sm font-semibold text-foreground">
+   899→   899→          <Clock className="h-4 w-4 text-gold" />
+   900→   900→          {path.minutes}
+   901→   901→          <span className="font-normal text-muted-foreground">min total</span>
+   902→   902→        </span>
+   903→   903→      </div>
+   904→   904→      <Button
+   905→   905→        className={cn(
+   906→   906→          "mt-4 w-full",
+   907→   907→          path.premium
+   908→   908→            ? "bg-gold text-background hover:bg-gold/90"
+   909→   909→            : "bg-foreground text-background hover:bg-foreground/90"
+   910→   910→        )}
+   911→   911→      >
+   912→   912→        Följ denna väg <ArrowRight className="ml-1 h-4 w-4" />
+   913→   913→      </Button>
+   914→   914→    </Card>
+   915→   915→  );
+   916→   916→}
+   917→   917→

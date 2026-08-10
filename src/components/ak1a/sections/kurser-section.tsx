@@ -54,6 +54,15 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
+import { DeepCourseViewer } from "@/components/ak1a/deep-course-viewer";
+import { allCourseSlugs, slugToVariableId } from "@/lib/ak1a/deep-courses-data";
+
+/** Map a variable id (e.g. "V01") to its deep course slug. */
+function variableIdToSlug(vid: string): string | null {
+  const vNum = vid.toLowerCase().replace("v", "");
+  const slug = allCourseSlugs.find((s) => s.startsWith(`v${vNum}-`));
+  return slug || null;
+}
 
 /* ------------------------------------------------------------------ */
 /* Static data — AKM1 existing                                         */
@@ -533,7 +542,7 @@ export const ANALYTIKER_INSIKTER: AnalytikerInsikt[] = [
 /* ------------------------------------------------------------------ */
 
 export function KurserSection() {
-  const { progress, completeCourse, level } = useAk1aStore();
+  const { progress, completeCourse, level, kurserDeepSlug, setKurserDeepSlug } = useAk1aStore();
   const [categoryFilter, setCategoryFilter] = React.useState<string>("ALLA");
   const [activeCourseId, setActiveCourseId] = React.useState<string | null>(null);
 
@@ -559,6 +568,12 @@ export function KurserSection() {
     () => AKM1_VARIABLES.find((v) => v.id === activeCourseId) ?? null,
     [activeCourseId]
   );
+
+  // If a deep course slug is set, render the full-page deep viewer instead.
+  // (Must be after all hooks — rules-of-hooks.)
+  if (kurserDeepSlug) {
+    return <DeepCourseViewer slug={kurserDeepSlug} />;
+  }
 
   const scrollToId = (id: string) => {
     if (typeof document !== "undefined") {
@@ -764,7 +779,14 @@ export function KurserSection() {
                   variable={v}
                   isCompleted={isCompleted}
                   isLocked={isLocked}
-                  onStart={() => setActiveCourseId(v.id)}
+                  onStart={() => {
+                    const slug = variableIdToSlug(v.id);
+                    if (slug) {
+                      setKurserDeepSlug(slug);
+                    } else {
+                      setActiveCourseId(v.id);
+                    }
+                  }}
                 />
               );
             })}

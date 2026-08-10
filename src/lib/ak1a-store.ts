@@ -3,7 +3,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export type SectionId = "hem" | "prec" | "kurser" | "labb" | "om-oss" | "styrelse";
+export type SectionId = "hem" | "prec" | "kurser" | "labb" | "styrelse" | "analyser" | "aktier" | "utbildning" | "om-oss";
 export type Level = "nyborjare" | "intermediar" | "avancerad";
 
 export interface QuizProgress {
@@ -38,6 +38,10 @@ interface Ak1aState {
   // PREC analysis reading progress (0..29 sections)
   precSection: number;
   setPrecSection: (i: number) => void;
+
+  // Deep course viewer — when set, KURSER shows this course full-page
+  kurserDeepSlug: string | null;
+  setKurserDeepSlug: (slug: string | null) => void;
 
   // learning progress (XP / courses / quizzes)
   progress: QuizProgress;
@@ -83,6 +87,14 @@ export const useAk1aStore = create<Ak1aState>()(
 
       precSection: 0,
       setPrecSection: (i) => set({ precSection: i }),
+
+      kurserDeepSlug: null,
+      setKurserDeepSlug: (slug) => {
+        set({ kurserDeepSlug: slug });
+        if (typeof window !== "undefined") {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }
+      },
 
       progress: {
         completedCourses: [],

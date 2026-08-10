@@ -11,6 +11,9 @@ import { KurserSection } from "@/components/ak1a/sections/kurser-section";
 import { LabbSection } from "@/components/ak1a/sections/labb-section";
 import { OmOssSection } from "@/components/ak1a/sections/om-oss-section";
 import { StyrelseSection } from "@/components/ak1a/sections/styrelse-section";
+import { AnalyserSection } from "@/components/ak1a/sections/analyser-section";
+import { AktierSection } from "@/components/ak1a/sections/aktier-section";
+import { UtbildningSection } from "@/components/ak1a/sections/utbildning-section";
 
 export default function Page() {
   const { section } = useAk1aStore();
@@ -21,9 +24,12 @@ export default function Page() {
       <main className="flex-1">
         {section === "hem" && <HomeSection />}
         {section === "prec" && <PrecSection />}
+        {section === "analyser" && <AnalyserSection />}
+        {section === "aktier" && <AktierSection />}
         {section === "kurser" && <KurserSection />}
         {section === "labb" && <LabbSection />}
         {section === "styrelse" && <StyrelseSection />}
+        {section === "utbildning" && <UtbildningSection />}
         {section === "om-oss" && <OmOssSection />}
       </main>
       <Footer />

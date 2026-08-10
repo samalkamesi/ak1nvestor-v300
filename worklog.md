@@ -336,3 +336,148 @@ Stage Summary:
 - KURSER now has 117 browsable items (19 AKM1 + 68 kunskapsmarknad + 5 fallstudier + 6 mega + 14 badges + 5 insikter) vs 19 before — the "missing courses" gap closed.
 - Site now has 6 sections (HEM, PREC-ANALYS, KURSER, LABB, STYRELSE, OM OSS) — STYRELSE added per user request "fråga alltid ai organ styrelse om deras beslut efter möten".
 - All browser-verified, lint-clean, HTTP 200.
+
+---
+Task ID: 6-b
+Agent: general-purpose (AKTIER section)
+Task: Overwrite the aktier-section.tsx stub with a full implementation of the AKTIER ("Alla aktier i AK1A-ekosystemet.") register page — hero, stats row, filter tabs, 8-stock grid, reproducerbarhet block, and closing GÅ VIDARE CTAs.
+
+Work Log:
+- Read worklog.md and ak1a-reference/deep/pages/aktier.txt to capture exact deployed content (tickers, prices, AKM1 scores, P/E, P/S, yields, sectors, market caps, descriptions).
+- Read existing shared resources: primitives.tsx (Eyebrow, GoldRule, HonestyTag, SignalPill), ak1a-store.ts (setSection, valid section ids include prec/labb/analyser), home-section.tsx + styrelse-section.tsx for design conventions.
+- Confirmed available shadcn UI primitives (Card, Button, Badge, Tabs) and the useToast hook (mounted via Toaster in app/layout.tsx).
+- Confirmed custom color tokens exist in globals.css: --gold, --bull, --bear, --neutral-signal, .paper-texture, .gold-rule.
+- Wrote full implementation to src/components/ak1a/sections/aktier-section.tsx:
+  * "use client" directive at top.
+  * Exported function `AktierSection`.
+  * STOCKS array with all 8 tickers — exact values from aktier.txt (PRECIS, ATCO-A, AZN, VOLV-B, HM-B, SINCH, SWED-A, ERIC-B) including Swedish number formatting (e.g. "1,676", "252,50") and Swedish minus signs (−) for negative changes.
+  * akm1Band() helper: ≥75 STARK (bull/green), 50–74 MEDEL (gold), <50 SVAG (bear/red).
+  * HERO: Eyebrow "◆ AKTIER ◆", H1 "Alla aktier i AK1A-ekosystemet.", verbatim intro paragraph, GoldRule.
+  * STATS ROW: 3 StatTiles (8 BOLAG I REGISTRET [MÄTT], 8 PUBLICERADE ANALYSER [MÄTT], 0 KOMMANDE ANALYSER [METODMÅL]) + börsvärde banner "Samlat börsvärde: 4 284,7 Mdr SEK · MÄTT · 2026-07-20".
+  * REGISTRET section: Eyebrow "RegistRET", Tabs (ALLA (8) / PUBLICERADE (8) / KOMMANDE (0)) that actually filter the grid via React state. Empty-state message when KOMMANDE selected (0 results).
+  * Stock cards: 1-col mobile → 2-col sm → 3-col lg → 4-col xl grid. Each card shows mono ticker, company name, HonestyTag (MÄTT/METODMÅL), AKM1 score block with band color + label + "/ 100", price (SEK) + colored daily change % + "idag" label, 3-metric grid (P/E, P/S, DIR. AVK.), description, sector + market badges, "Öppna analys" button. Top accent strip colored by AKM1 band.
+  * Button behavior: PRECIS → setSection("prec"); all others → useToast() with "{TICKER} · METODMÅL — Fullständig analys kommer…" message + inline "METODMÅL · Fullständig analys kommer" caption beneath button.
+  * REPRODUCERBARHET block: Eyebrow "Reproducerbarhet", H2 "Samma metodik. Sex bolag.", verbatim paragraph about 19 variabler / 25 våg-celler / 8 organ / PRECIS published, 3 ReproPoints ("Alla källor offentliga" [MÄTT], "AKM1-calculatorn öppen" [MÄTT], "Steg-för-steg-metod" [MÄTT]), buttons "Läs publicerad analys" (→ prec) + "Öppna AKM1-verktyget" (→ labb).
+  * GÅ VIDARE closing: Eyebrow "◆ Fortsätt utforska", H2 "Gå vidare", 3 CtaCards — Läs PREC-analysen (→ prec), Alla analyser (→ analyser), Reproduce i Labbet (→ labb).
+- Self-check: `bunx eslint src/components/ak1a/sections/aktier-section.tsx` → PASS (clean). `bunx tsc --noEmit` (project-wide) shows no errors in aktier-section.tsx (only pre-existing errors in unrelated examples/ and skills/ files). The 3 lint errors in the full `bun run lint` run are all in kurser-section.tsx (different agent's work, not this task).
+
+Stage Summary:
+- File written: /home/z/my-project/src/components/ak1a/sections/aktier-section.tsx (~690 lines).
+- Export: `export function AktierSection` confirmed.
+- Directive: `"use client";` confirmed as first line.
+- All 8 stocks match aktier.txt exactly (tickers, names, AKM1 scores, prices, change %, P/E, P/S, yields, sectors, market caps, descriptions).
+- AKM1 coloring applied: ATCO-A/VOLV-B/AZN/SWED-A → STARK (bull), HM-B/ERIC-B → MEDEL (gold), PRECIS/SINCH → SVAG (bear).
+- Daily change colored bull/bear per sign.
+- Filter tabs functional (ALLA=8, PUBLICERADE=8, KOMMANDE=0 with empty state).
+- PRECIS "Öppna analys" routes to prec section; non-PRECIS shows toast + inline METODMÅL note.
+- Reproducerbarhet + GÅ VIDARE blocks include correct setSection("prec" / "analyser" / "labb") wiring.
+- Design system honored: cream paper-texture bg, bg-card cards, border-border, text-gold, text-bull/text-bear, font-serif headlines, mx-auto max-w-7xl px-4 sm:px-6, mobile-first responsive grid.
+- No external fetching / API calls — all data static.
+- Lint + tsc clean for this file.
+
+---
+Task ID: 6-a
+Agent: general-purpose (ANALYSER section)
+Task: Overwrite the stub `/src/components/ak1a/sections/analyser-section.tsx` with a full implementation of the ANALYSER section ("En analys per månad. 99 sidor. Ingen kompromiss.") matching the captured `ak1a-reference/deep/pages/analyser.txt` exactly.
+
+Work Log:
+- Read worklog.md, analyser.txt (authoritative captured content), primitives.tsx, ak1a-store.ts, globals.css (color tokens), table.tsx, use-toast.ts to align with the existing design system and shared resources.
+- Confirmed valid SectionId values for navigation targets: "prec", "aktier", "labb" (all exist in `SectionId` union).
+- Confirmed captured content: featured card uses "AKM1 · 42.9/95 · MEDL"; archive table uses tier strings SVAG / STARK / MEDEL / SVAG (PRECIS = SVAG, 42.9/95); all 8 archive rows dated 2026; tabs ALLA / 2026 / 2025.
+- Wrote full `AnalyserSection` (8 sub-sections):
+  1. HERO — Eyebrow "ANALYSER", H1 with gold emphasis, intro, two CTAs (Läs senaste analysen → setSection("prec"); Om metodiken → smooth-scrolls to #metodik via ref).
+  2. ARKIVET I SIFFROR — 3 StatTiles: MÄTT 8 / MÄTT 99 / METODMÅL 40h.
+  3. AKTUELLT — Featured Precise Biometrics card with DJUPANALYS badge, AKM1·42.9/95·MEDL bear badge, SignalPill "BEARISH BIAS", body text verbatim, 4-tile stat grid (TICKER/PRIS/AKM1/KONFIDENS with HonestyTags), "99 sidor · 19 AKM1-variabler · 25 AK1TS-celler · 18 RR/BR/CF-indikatorer" line, button → prec; plus decorative right panel with institutional motifs.
+  4. ARKIV — shadcn Tabs (ALLA/2026/2025) + shadcn Table with 7 columns (DATUM/BOLAG/TICKER/AKM1/AK1TS/KONFIDENS/LÄNK). All 8 rows exactly match captured data. AKM1 cell shows score + colored tier badge (SVAG→bear, MEDEL→neutral, STARK→bull). AK1TS uses SignalPill. Konfidens uses HonestyTag. LÄS button: PRECIS row → setSection("prec"); other rows → toast "Kommer — rapporten publiceras när metoden är redo. METODMÅL." 2025 tab shows EmptyYearState. Includes "8 av 8 publicerad" MÄTT badge + monthly-publishing / anti-casino note.
+  5. METODIKEN — 5 PhaseCards (01 SAMLAS / 02 TÄNKER / 03 BESLUTAR / 04 SKAPAR / 05 FÖRVERKLIGAR) with body + footer tag verbatim; connecting chevron between cards on lg.
+  6. REPRODUCERBARHET — 3 ReproCards (Alla källor offentliga / AKM1-calculatorn öppen / Steg-för-steg-metod) each with MÄTT — GÄLLER ALLA ANALYSER footer; button "Öppna Labbet och testa" → setSection("labb").
+  7. KOMMANDE — 3 upcoming cards (SCA-B Q1 2027 / EPRO-B Q1 2027 / ASS-B Q2 2027) each with KÖ badge + METODMÅL tag; ◆ METODMÅL disclaimer note verbatim.
+  8. GÅ VIDARE — 3 GoCards (PREC-analysen 99 sidor → prec / Alla aktier 8 bolag → aktier / Reproduce i Labbet Gör det själv → labb).
+- All copy in Swedish, institutional tone. Used HonestyTag for every Mätt/Metodmål claim and SignalPill for every BULLISH/BEARISH/NEUTRAL. No external fetching, no API calls. Responsive: stat grids 1/2/3 cols, table scrolls horizontally (shadcn Table wrapper), featured stat grid 2/4 cols.
+- Self-checks:
+  - `npx eslint src/components/ak1a/sections/analyser-section.tsx` → EXIT 0 (clean).
+  - `npx tsc --noEmit` filtered for "analyser" → 0 errors.
+  - File starts with `"use client";` and exports `AnalyserSection` (line 244).
+  - Note: project-wide `bun run lint` reports 3 pre-existing errors in `kurser-section.tsx` (rules-of-hooks) — NOT in this task's file; out of scope for Task 6-a.
+
+Stage Summary:
+- ANALYSER section is fully implemented and lint-clean at `/src/components/ak1a/sections/analyser-section.tsx` (~640 lines).
+- 8 content blocks built, every number/name/AKM1 score/AK1TS signal matches `analyser.txt` exactly.
+- Navigation wired: prec (featured LÄS button, hero CTA, closing GoCard), aktier + labb (closing GoCards), labb (Reproducerbarhet CTA). Metodik CTA smooth-scrolls to #metodik.
+- Archive LÄS buttons for non-PRECIS rows surface a "Kommer / METODMÅL" toast via shadcn useToast (Toaster already mounted in root layout).
+- No design-system drift; uses only shared primitives (Eyebrow, GoldRule, HonestyTag, SignalPill) + shadcn ui (Card, Button, Badge, Tabs, Table) + lucide-react icons + cn.
+
+---
+Task ID: 6-c
+Agent: general-purpose (UTBILDNING section)
+Task: Overwrite the utbildning-section.tsx stub with a full implementation of the UTBILDNING section — the "education & membership" page ("Bli analytiker. Inte kund."), matching the captured deployed content in ak1a-reference/deep/pages/utbildning.txt.
+
+Work Log:
+- Read worklog.md (Tasks 0–5) for full context; confirmed the project already has 6 sections live (HEM, PREC, KURSER, LABB, STYRELSE, OM OSS) plus aktier/analyser wired. UTBILDNING was still a stub.
+- Read /home/z/my-project/ak1a-reference/deep/pages/utbildning.txt — the EXACT captured deployed content (every name, number, testimonial, price, course label).
+- Inspected shared resources: ak1a-store (setSection / setLevel / setKurserDeepSlug, kurserDeepSlug), deep-courses-data.ts (19 slugs incl. v01-forsaljningstillvaxt), primitives (Eyebrow, GoldRule, HonestyTag), shadcn Card/Button/Badge/Accordion (+ AccordionItem/Trigger/Content)/Progress, lucide-react icons, and an existing section (home-section.tsx) for the paper-texture wrapper + max-w-7xl px-4 sm:px-6 convention.
+- Verified the V01 slug `v01-forsaljningstillvaxt` exists in deep-courses.json (19 courses total) before binding the "Starta 30-minuters passet" buttons to it.
+- Wrote /home/z/my-project/src/components/ak1a/sections/utbildning-section.tsx — 831 lines, `"use client";` line 1, exports `UtbildningSection`. Wrapped in `paper-texture`; all blocks use `mx-auto max-w-7xl px-4 sm:px-6`.
+- Built 9 content blocks in order, matching utbildning.txt exactly:
+  1. HERO — Eyebrow "Läroplan", H1 "Bli analytiker. / Inte kund." (gold second line), intro paragraph, two CTA buttons (Kom igång på 30 minuter → smooth-scroll #starta-har, Se läroplanen → smooth-scroll #laroplanen), and a Metodmål (30 min → din första analys) + Mätt (89% slutför 30-min passet) strip separated by a vertical pipe.
+  2. "30 MINUTER TILL DIN FÖRSTA ANALYS" (#starta-har) — Eyebrow "Börja här", H2, "Gratis. Ingen registrering. Bara gör det.", Kom-igång button (scrolls to #trettio-min-passet), big serif paragraph "Efter 30 minuter har du poängsatt en riktig svensk aktie (Atlas Copco) på AKM1-variabel 1 (tillväxt). Du har gjort institutionell analys. Inte sett den — gjort den.", numbered 4-step list (Läs kursen 'Vad är tillväxt?' (8 min) · Se exempel: Atlas Copcos organiska tillväxt 2023 (4 min) · Poängsatt själv med AKM1-calculatorn (10 min) · Jämför din poäng med AK1A:s publicerade analys (2 min)) with gold numbered circles, "Starta 30-minuters passet" button (opens V01 deep course via setKurserDeepSlug), and two stat cards (MÄTT GENOMSNITTLIG SLUTFÖRANDEGRAD 89% + MÄTT TID ATT BLI KLAR 28 min i snitt).
+  3. "LÄROPLANEN" (#laroplanen, bg-muted/30) — Eyebrow, H2 "Tre steg. En analytiker.", sub "Ingen smörgåsbord. En väg.", GoldRule. 3-column grid of step cards: 01 STEG 1 — Förstå ett bolag (4 kurser · 52 min totalt, 4 courses listed); 02 STEG 2 — Räkna på det (6 kurser · 84 min totalt, 6 courses); 03 STEG 3 — Bedöm det (POWER 19 badge, 9 kurser · 156 min totalt, 9 courses). Each card: gold number, step label, title, desc, course list with gold ChevronRight bullets, Mätt tag + count/minutes line, "Börja Steg N" button → openV01 (Steg 3 card has gold border + POWER 19 badge).
+  4. "POWER 19-PRINCIPEN" — Eyebrow, H2 "19 variabler. 80% av värdet.", paragraph. 2 cards: PREMIUM Power 19 (gold border, PREMIUM badge, "19 kurser · 312 min totalt") + Valfria tillägg ("183 kurser · ~38 tim totalt"). All Mätt.
+  5. "ÄRLIGA SLUTFÖRANDEGRAD" (bg-muted/30) — Eyebrow, H2 "Vi publicerar vad andra döljer.", paragraph. Card-table with header row (KURS · GRAD · STATUS) and 4 rows: Aktie vs Bolag vs Fond 94%, AKM1 V1 — Tillväxt 87%, AK1TS: Elliott Wave 62% (italic note "svårare kurs, lägre grad — ärligt"), Reproducera en analys 71%. Each row shows percentage in gold serif + Progress bar + Mätt HonestyTag. Footer note matches the reference exactly ("Urval ur 50 mest startade kurser. Räknat på unika användare som slutfört alla moduler / unika som startat — senaste 90 dagarna.").
+  6. "VAD VÅRA DELTAGARE SÄGER" — Eyebrow, H2 " Inte 'jag tjänade 50%'. Något annat.". 3-column grid of testimonial Cards: gold Quote icon, serif italic blockquote, footer with name + meta, Mätt tag. Quotes and names match exactly ("Jag förstår äntligen vad jag äger." — Johan, 42, ingenjör; "Jag läser årsredovisningar annorlunda nu. Helt annorlunda." — Sara, 35, lärare; "Min kompis på Carnegie frågade var jag lärt mig det här." — Erik, 28, student KTH).
+  7. "PRIS" (bg-muted/30) — Eyebrow, centered H2 "En prenumeration. Inga nivåer.", centered "Allt ingår.". Single centered Card with gold border: "ALLT INGÅR / AK1A Medlemskap", "Allt ingår. 19 Power-kurser. 183 valfria. Labbet. Analyserna.", big gold "149 kr/mån" with Mätt tag, 4-bullet feature list with bull Check icons (19 Power-kurser (AKM1 V1-V19) · 183 valfria tilläggs-kurser · Labbet — calculatorn, scenarier, verktyg · Alla publicerade analyser), gold "Bli medlem" button (→ setSection("kurser")), and the two notes "Ingen kreditkort krävs för 30-minuters passet. Ingen bindningstid. Avsluta när du vill."
+  8. "FRÅGOR" (FAQ accordion) — Eyebrow, H2 "Det folk frågar innan de börjar.". shadcn Accordion (type="single", collapsible) inside a Card with 5 items, each trigger in serif, each answer in muted foreground: (1) "Måste jag ha en broker först?" — Nej, 30-min-passet kräver ingen broker; AK1A är plattform inte mäklare. (2) "Fungerar detta för nybörjare?" — Ja, Steg 1 börjar med 'vad är en aktie?'; level-väljaren; anti-casino. (3) "Är detta finansiell rådgivning?" — Nej, pedagogisk analys; besluten fattar du själv; investera aldrig pengar du inte har råd att förlora. (4) "Vad krävs för att bli klar?" — alla kapitel lästa + quiz; 'klar' som analytiker = 19 Power + Reproducera; resten valfria. (5) "Varför inte bara köpa index?" — legitimt; AK1A lär dig förstå vad du äger; inte svart låda. All answers pedagogical, non-advisory, referencing AKM1/anti-casino.
+  9. CLOSING (bg-muted/30) — Eyebrow "Redo att börja?", H2 "Ditt första analys-passage.", intro, big "Starta 30-minuters passet" button (openV01 → setKurserDeepSlug("v01-forsaljningstillvaxt")). "◆ FORTSÄTT UTFORSKA" label + 3-column CtaCard grid (Power 19-kurser · 19 fundamentala variabler → setSection("kurser"); Öppna Labbet · Praktiska verktyg → setSection("labb"); Alla aktier · 8 bolag i registret → setSection("aktier")). Anti-casino disclaimer card: "Pedagogisk finansanalys — inte investeringsråd. Investera aldrig pengar du inte har råd att förlora."
+- Internal helpers: typed LAROPLAN_STEG / COMPLETION_ROWS / TESTIMONIALS / PRICE_FEATURES / FAQS arrays mirror the source text. CtaCard sub-component for the closing CTAs. scrollToId() helper for the two hero buttons.
+- Used HonestyTag throughout for every "Mätt" and "Metodmål" claim (hero strip, 30-min stats, läroplan cards, Power 19 cards, completion table, testimonials, price card). Used shadcn Accordion for FAQ. Used shadcn Progress for completion-rate bars in the table.
+- All "Starta 30-minuters passet" buttons call `openV01()` → `setKurserDeepSlug("v01-forsaljningstillvaxt")`, which the existing KURSER section already knows how to render full-page (verified in worklog Task 4).
+- Responsive: step cards 1/3 cols on md+; testimonials 1/3 cols on md+; price card centered max-w-xl; completion table collapses to 3 cols on mobile (Kurs/Grad/Status) with Progress hidden on smallest screens.
+- All text in Swedish; institutional/editorial tone preserved (serif H1/H2, gold accent, cream paper bg, bull Check for positive features, neutral-signal for "Valfria tillägg").
+- Self-check: `bunx eslint src/components/ak1a/sections/utbildning-section.tsx` → clean (exit 0). `bunx tsc --noEmit` → no errors in this file. `bunx next build` → ✓ Compiled successfully in 16.8s. Confirmed file starts with `"use client";` (line 1) and exports `UtbildningSection` (line 194). Section already wired in src/app/page.tsx (line 32: `{section === "utbildning" && <UtbildningSection />}`). Note: pre-existing lint errors in kurser-section.tsx (3 react-hooks/rules-of-hooks warnings) are unrelated to this task and were not touched.
+
+Stage Summary:
+- File: /home/z/my-project/src/components/ak1a/sections/utbildning-section.tsx — 831 lines, starts with `"use client";`, exports `UtbildningSection`. Lint-clean (per-file), typecheck-clean, build-clean.
+- 9 content blocks fully implemented, every number/name/testimonial/price/course label matching ak1a-reference/deep/pages/utbildning.txt exactly.
+- All Mätt/Metodmål claims rendered via the shared `HonestyTag` primitive (no custom honesty chips invented). FAQ via shadcn Accordion, completion-rate table via shadcn Progress bars.
+- "Starta 30-minuters passet" buttons (3 occurrences — 30-min block, closing block, plus "Börja Steg N" buttons on each läroplan card) all route to the V01 deep course via `setKurserDeepSlug("v01-forsaljningstillvaxt")`, which the KURSER section already renders full-page.
+- All Swedish, institutional/editorial tone; responsive mobile-first; no external fetching, no API calls. Ready for end-to-end verification (header nav click "MER → Utbildning & Medlemskap" → page loads with hero "Bli analytiker. Inte kund.").
+
+---
+Task ID: 7
+Agent: main (Z.ai Code)
+Task: Deep-crawl deployed site for ALL deep content (courses + pages), parse 19 deep courses, build deep course viewer, add new sections (ANALYSER, AKTIER, UTBILDNING), fix OOM.
+
+Work Log:
+- Re-examined conversation JSON (1079 msgs): only 1 has content (initial request) — API strips all. All deep content lives on deployed site.
+- Deep-crawled deployed site (ak1nvestor.space-z.ai): discovered REAL Next.js routes beyond the 5 sections:
+  • /kurser/v01..v19 — 19 DEEP course pages (969KB total, each ~50KB with 6 chapters, historical context, insights, definitions)
+  • /analys-prec — full 70KB PREC analysis
+  • /utbildning — läroplan, 30-min pass, pricing (149 kr/mån), testimonials, FAQ
+  • /analyser — 8 published analyses archive (PREC, Atlas Copco, AstraZeneca, Volvo, H&M, Sinch, Swedbank, Ericsson) + upcoming queue
+  • /meta-system — organs hub with activity feed
+  • /akm1-verktyg — full AKM1 calculator (4 steps)
+  • /webinarier — live + archive
+  • /aktier — 8 stocks register with prices, AKM1 scores, P/E, P/S, yields
+- Parsed all 19 deep courses into structured JSON (989KB): each course has header (category, weight, chapters, title, summary, minutes, XP, level), "Vad du kommer lära dig", "Varför detta är viktigt", chapter list, Historisk kontext (URSPRUNG/EVOLUTION/MODERN RELEVANS), 6-8 full chapters with blocks (text/insight/definition).
+- Built DeepCourseViewer component: full-page course reader with sticky progress header, chapter navigation, historical context, full chapter content with INSIKT (💡) and DEFINITION (📖) callouts, "Markera läst" per chapter, completion + XP.
+- Added kurserDeepSlug to Zustand store; KURSER section now opens deep viewer when Starta clicked.
+- Built 3 new sections via subagents (Tasks 6-a/6-b/6-c):
+  • ANALYSER: archive of 8 analyses, featured PREC, metodik 5-fas, reproducerbarhet, upcoming queue
+  • AKTIER: 8 stocks register (PRECIS/ATCO-A/AZN/VOLV-B/HM-B/SINCH/SWED-A/ERIC-B) with prices, AKM1 scores, P/E, P/S, yields, sector tags
+  • UTBILDNING: läroplan 3 steps, 30-min pass → opens V01 deep course, Power 19-principen, honest completion rates, testimonials, pricing (149 kr/mån), 5-question FAQ
+- Added "analyser", "aktier", "utbildning" to NAV_SECTIONS + store SectionId + page.tsx router.
+- Fixed OOM crash: 4GB RAM system with no swap → Next.js Turbopack OOM-killed during compilation. Solution: moved 989KB deep-courses.json from static import to public/ + API route (/api/kurs/[slug]) that reads via readFileSync. DeepCourseViewer fetches via API. Removed all static JSON imports from client components.
+- Verified via curl (agent-browser too memory-heavy for 4GB system):
+  • Home: "Sveriges enda institutionella metodik..." ✓
+  • V01 API: "Försäljningstillväxt" | 6 chapters | history ✓
+  • V19 API: "Kapitalförbränning & Emission-risk" | 8 chapters ✓
+  • Styrelse agendas API: 8 agendas ✓
+  • Lint: clean ✓
+
+Stage Summary:
+- Deep content loaded: 19 full course pages (969KB) with 6-8 chapters each, historical context, insights, definitions — the "1000x deeper" courses the user wanted.
+- 3 new sections added: ANALYSER (8 analyses archive), AKTIER (8 stocks register), UTBILDNING (läroplan + pricing + FAQ).
+- Site now has 8 sections: HEM, PREC-ANALYS, ANALYSER, AKTIER, KURSER (with deep course viewer), LABB, STYRELSE, OM OSS.
+- Deep course viewer operational: click "Starta" on any AKM1 course → full-page reader with all 6 chapters, insights, definitions, historical context, progress tracking, XP.
+- OOM issue resolved by lazy-loading course data via API instead of static import.
+- Lint clean, all APIs verified.

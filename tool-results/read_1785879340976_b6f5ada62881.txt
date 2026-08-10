@@ -1,0 +1,2002 @@
+     1→"use client";
+     2→
+     3→import * as React from "react";
+     4→import {
+     5→  ArrowRight,
+     6→  Clock,
+     7→  TrendingUp,
+     8→  Award,
+     9→  Lock,
+    10→  Check,
+    11→  ChevronRight,
+    12→  BookOpen,
+    13→  Library,
+    14→  Briefcase,
+    15→  Layers,
+    16→  Lightbulb,
+    17→  Footprints,
+    18→  ShieldCheck,
+    19→  Activity,
+    20→  Calculator,
+    21→  Brain,
+    22→  Flame,
+    23→  Gavel,
+    24→  GraduationCap,
+    25→  Zap,
+    26→  Moon,
+    27→  Search,
+    28→  Quote,
+    29→} from "lucide-react";
+    30→import { useAk1aStore, type Level } from "@/lib/ak1a-store";
+    31→import {
+    32→  AKM1_VARIABLES,
+    33→  type Akm1Category,
+    34→  type Akm1Variable,
+    35→} from "@/lib/ak1a/data";
+    36→import { Eyebrow, HonestyTag } from "@/components/ak1a/primitives";
+    37→import { Card } from "@/components/ui/card";
+    38→import { Button } from "@/components/ui/button";
+    39→import { Badge } from "@/components/ui/badge";
+    40→import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+    41→import {
+    42→  Dialog,
+    43→  DialogContent,
+    44→  DialogHeader,
+    45→  DialogTitle,
+    46→  DialogDescription,
+    47→  DialogFooter,
+    48→} from "@/components/ui/dialog";
+    49→import { Input } from "@/components/ui/input";
+    50→import {
+    51→  Accordion,
+    52→  AccordionItem,
+    53→  AccordionTrigger,
+    54→  AccordionContent,
+    55→} from "@/components/ui/accordion";
+    56→import { cn } from "@/lib/utils";
+    57→import { DeepCourseViewer } from "@/components/ak1a/deep-course-viewer";
+    58→import { deepCourses } from "@/lib/ak1a/deep-courses-data";
+    59→
+    60→/** Map a variable id (e.g. "V01") to its deep course slug. */
+    61→function variableIdToSlug(vid: string): string | null {
+    62→  const slug = Object.keys(deepCourses).find((s) =>
+    63→    s.startsWith(vid.toLowerCase().replace("v", "v").substring(0, 3))
+    64→  );
+    65→  return slug || null;
+    66→}
+    67→
+    68→/* ------------------------------------------------------------------ */
+    69→/* Static data — AKM1 existing                                         */
+    70→/* ------------------------------------------------------------------ */
+    71→
+    72→const LEVEL_LABEL: Record<Level, string> = {
+    73→  nyborjare: "Nybörjare",
+    74→  intermediar: "Intermediär",
+    75→  avancerad: "Avancerad",
+    76→};
+    77→
+    78→const LEVEL_ORDER: Record<Level, number> = {
+    79→  nyborjare: 0,
+    80→  intermediar: 1,
+    81→  avancerad: 2,
+    82→};
+    83→
+    84→function isLockedFor(courseLevel: Level, userLevel: Level): boolean {
+    85→  return LEVEL_ORDER[courseLevel] > LEVEL_ORDER[userLevel];
+    86→}
+    87→
+    88→const CATEGORY_FILTERS: { id: Akm1Category | "ALLA"; label: string; count: number }[] = [
+    89→  { id: "ALLA", label: "ALLA", count: 19 },
+    90→  { id: "Värdering", label: "VÄRDERING", count: 3 },
+    91→  { id: "Tillväxt", label: "TILLVÄXT", count: 3 },
+    92→  { id: "Lönsamhet", label: "LÖNSAMHET", count: 3 },
+    93→  { id: "Stabilitet", label: "STABILITET", count: 3 },
+    94→  { id: "Moat", label: "MOAT", count: 3 },
+    95→  { id: "Katalysator", label: "KATALYSATOR", count: 3 },
+    96→  { id: "Risk", label: "RISK", count: 1 },
+    97→];
+    98→
+    99→const CATEGORY_CARDS = [
+   100→  {
+   101→    id: "akm1-19",
+   102→    title: "AKM1 19 VARIABLER",
+   103→    subtitle: "19 KURSER",
+   104→    icon: Layers,
+   105→    description: "Grunden allt annat vilar på. Variabel för variabel.",
+   106→    target: "akm1-variabler",
+   107→  },
+   108→  {
+   109→    id: "marknad-full",
+   110→    title: "KUNSKAPSMARKNAD",
+   111→    subtitle: "251 KURSER",
+   112→    icon: Library,
+   113→    description: "Bred bibliotek — nyckeltal, branscher, historik, strategier.",
+   114→    target: "kunskapsmarknaden",
+   115→  },
+   116→  {
+   117→    id: "case-studies",
+   118→    title: "LEVANDE FALLSTUDIER",
+   119→    subtitle: "5 FALL",
+   120→    icon: Briefcase,
+   121→    description: "Levande historiska fall. Lär av andras segrar och misstag.",
+   122→    target: "fallstudier",
+   123→  },
+   124→  {
+   125→    id: "mega-levels",
+   126→    title: "MEGA NIVÅER 1-100",
+   127→    subtitle: "6 TIERS",
+   128→    icon: TrendingUp,
+   129→    description: "Sex nivåer av mästerskap — från nyfiken till expert.",
+   130→    target: "mega-nivaer",
+   131→  },
+   132→  {
+   133→    id: "rewards",
+   134→    title: "BELÖNINGAR",
+   135→    subtitle: "14 BADGES",
+   136→    icon: Award,
+   137→    description: "Tjäna badges, XP och streaks. Spelet är kunskap.",
+   138→    target: "beloningar",
+   139→  },
+   140→  {
+   141→    id: "insights",
+   142→    title: "ANALYTIKER-INSIKTER",
+   143→    subtitle: "5 INSIKTER",
+   144→    icon: Lightbulb,
+   145→    description: "Korta insikter från institutionella analytiker.",
+   146→    target: "analytiker-insikter",
+   147→  },
+   148→];
+   149→
+   150→const LEARNING_PATHS = [
+   151→  {
+   152→    num: 1,
+   153→    eyebrow: "STEG 1 I LÄROPLANEN",
+   154→    title: "Nybörjare → Förstå ett bolag",
+   155→    body: "Aktie vs bolag vs fond. Läs en årsredovisning. Introduktion till AKM1. Första variabeln (V1 — försäljningstillväxt).",
+   156→    courses: 4,
+   157→    minutes: 52,
+   158→    premium: false,
+   159→  },
+   160→  {
+   161→    num: 2,
+   162→    eyebrow: "STEG 2 I LÄROPLANEN",
+   163→    title: "Aktiv → Räkna på det",
+   164→    body: "Bokföringens grunder. Nyckeltal. Scenario-analys. Kassaflödesmodellering. Värderingsmetoder. Risk-koncept.",
+   165→    courses: 6,
+   166→    minutes: 84,
+   167→    premium: true,
+   168→  },
+   169→  {
+   170→    num: 3,
+   171→    eyebrow: "STEG 3 I LÄROPLANEN",
+   172→    title: "Ambitiös → Bedöm det (Power 19)",
+   173→    body: "Alla 19 AKM1-variabler. Integration mot Labbet. Reproducera institutionella analyser självständigt.",
+   174→    courses: 9,
+   175→    minutes: 156,
+   176→    premium: true,
+   177→  },
+   178→];
+   179→
+   180→/* ------------------------------------------------------------------ */
+   181→/* KUNSKAPSMARKNAD — 68-course browsable sample of 251                 */
+   182→/* ------------------------------------------------------------------ */
+   183→
+   184→export type KmCategory =
+   185→  | "Bokföring & Årsredovisning"
+   186→  | "Värderingsmetoder"
+   187→  | "Riskhantering & Portföljteori"
+   188→  | "Beteendefinans"
+   189→  | "Svensk bolagsskatt & Juridik"
+   190→  | "Makroekonomi & Ränta"
+   191→  | "Teknisk Analys"
+   192→  | "Sektoranalys"
+   193→  | "ESG & Hållbarhet"
+   194→  | "Options & Derivat"
+   195→  | "Utdelningsstrategi"
+   196→  | "Private Equity & Investmentbolag"
+   197→  | "Aktiemarknaden i praktiken";
+   198→
+   199→export interface KmCourse {
+   200→  id: string;
+   201→  category: KmCategory;
+   202→  title: string;
+   203→  level: Level;
+   204→  minutes: number;
+   205→  summary: string;
+   206→}
+   207→
+   208→export const KM_CATEGORIES: KmCategory[] = [
+   209→  "Bokföring & Årsredovisning",
+   210→  "Värderingsmetoder",
+   211→  "Riskhantering & Portföljteori",
+   212→  "Beteendefinans",
+   213→  "Svensk bolagsskatt & Juridik",
+   214→  "Makroekonomi & Ränta",
+   215→  "Teknisk Analys",
+   216→  "Sektoranalys",
+   217→  "ESG & Hållbarhet",
+   218→  "Options & Derivat",
+   219→  "Utdelningsstrategi",
+   220→  "Private Equity & Investmentbolag",
+   221→  "Aktiemarknaden i praktiken",
+   222→];
+   223→
+   224→export const KUNSKAPSMARKNAD_COURSES: KmCourse[] = [
+   225→  // Bokföring & Årsredovisning (6)
+   226→  { id: "KM-001", category: "Bokföring & Årsredovisning", title: "Bokföringens grunder — resultaträkning & balansräkning", level: "nyborjare", minutes: 22, summary: "Dubbel italiensk bokföring, debet/kredit, och hur resultaträkningen knyter till balansräkningen via eget kapital." },
+   227→  { id: "KM-002", category: "Bokföring & Årsredovisning", title: "Förvaltningsberättelsen — vad styrelsen berättar", level: "intermediar", minutes: 18, summary: "Årets händelser, risker och framtid i textform — och det styrelsen väljer att inte nämna." },
+   228→  { id: "KM-003", category: "Bokföring & Årsredovisning", title: "Kassaflödesanalysen — varför kassa ≠ resultat", level: "intermediar", minutes: 24, summary: "Kassaflödet visar pengarna som rör sig — obrukbara resultat visar sig här först." },
+   229→  { id: "KM-004", category: "Bokföring & Årsredovisning", title: "Noter — den dolda informationen", level: "avancerad", minutes: 28, summary: "Avskrivningsprinciper, pensionsåtaganden, relaterade parter — noterna bär halva sanningen." },
+   230→  { id: "KM-005", category: "Bokföring & Årsredovisning", title: "Eget kapital & utdelningar", level: "nyborjare", minutes: 16, summary: "Vart vinsten tar vägen: utdelning, återinvestering eller aktieåterköp — och hur det bokförs." },
+   231→  { id: "KM-006", category: "Bokföring & Årsredovisning", title: "Kvartalsrapporten — säsongsfällor", level: "intermediar", minutes: 20, summary: "Q1–Q4-rapporterna och varför säsongseffekter och engångsposter lurar den som bara läser årsredovisningen." },
+   232→
+   233→  // Värderingsmetoder (6)
+   234→  { id: "KM-007", category: "Värderingsmetoder", title: "DCF — diskonterade kassaflöden", level: "avancerad", minutes: 35, summary: "Framtida kassaflöden diskonterade till idag — den mest teoretiskt rena värderingsmetoden." },
+   235→  { id: "KM-008", category: "Värderingsmetoder", title: "WACC — vägd kapitalkostnad", level: "avancerad", minutes: 30, summary: "Beräkna avkastningskrav med hänsyn till både skuld- och equity-kostnad — DCF-motorns bränsle." },
+   236→  { id: "KM-009", category: "Värderingsmetoder", title: "P/E — Price-to-Earnings djupdykning", level: "nyborjare", minutes: 14, summary: "Den mest citerade multiplen — dess styrkor, fällor och varför den varierar mellan sektorer." },
+   237→  { id: "KM-010", category: "Värderingsmetoder", title: "EV/EBIT — renare än P/E", level: "intermediar", minutes: 18, summary: "Företagsvärde över driftsresultat — ignorerar kapitalstruktur och ger jämförbarhet över bolag." },
+   238→  { id: "KM-011", category: "Värderingsmetoder", title: "Relativ värdering — peer comps", level: "intermediar", minutes: 22, summary: "Jämför bolagets multiplar mot direkta konkurrenter — och varför 'billig' inte alltid betyder 'köpvärd'." },
+   239→  { id: "KM-012", category: "Värderingsmetoder", title: "Sum-of-the-Parts (SOTP)", level: "avancerad", minutes: 26, summary: "Värdera konglomerat och investmentbolag som summan av sina delar — och förstå varför rabatten uppstår." },
+   240→
+   241→  // Riskhantering & Portföljteori (5)
+   242→  { id: "KM-013", category: "Riskhantering & Portföljteori", title: "Volatilitet & standardavvikelse", level: "intermediar", minutes: 18, summary: "Den vanligaste mätaren på prisförändringars storlek — och varför den fångar bara halva bilden." },
+   243→  { id: "KM-014", category: "Riskhantering & Portföljteori", title: "Korrelation & diversifiering", level: "intermediar", minutes: 20, summary: "Varför orelaterade tillgångar stabiliserar portföljen — och varför 'diversifiering' är missförstått." },
+   244→  { id: "KM-015", category: "Riskhantering & Portföljteori", title: "Beta & CAPM", level: "avancerad", minutes: 24, summary: "Mät systematisk risk mot marknaden — och varför CAPM är en förenkling som ändå används." },
+   245→  { id: "KM-016", category: "Riskhantering & Portföljteori", title: "Sharpe-kvot — avkastning per enhet risk", level: "intermediar", minutes: 16, summary: "Två portföljer kan ha samma avkastning — Sharpe-kvoten skiljer den bättre från den sämre." },
+   246→  { id: "KM-017", category: "Riskhantering & Portföljteori", title: "Position sizing & Kelly-kriteriet", level: "avancerad", minutes: 28, summary: "Hur stor del av kapitalet ska du satsa på en position? Kelly ger ett matematiskt svar — och dess varning." },
+   247→
+   248→  // Beteendefinans (5)
+   249→  { id: "KM-018", category: "Beteendefinans", title: "Förlustaversion — 1 kr förlust gör mer ont", level: "nyborjare", minutes: 15, summary: "Kahneman & Tverskys prospect theory — och varför vi klamrar oss fast vid förlorare." },
+   250→  { id: "KM-019", category: "Beteendefinans", title: "Bekräftelsefälla — vi söker det vi vill höra", level: "nyborjare", minutes: 14, summary: "Konfirmationsbias: vi noterar bevis som stöder vår tes och ignorerar det som talar emot." },
+   251→  { id: "KM-020", category: "Beteendefinans", title: "Ankareffekt — första intrycket sätter priset", level: "intermediar", minutes: 16, summary: "Det första priset vi ser på en aktie blir en referenspunkt — även när det borde göra det inte." },
+   252→  { id: "KM-021", category: "Beteendefinans", title: "Flockbeteende & herding", level: "intermediar", minutes: 18, summary: "Bubblor och kapitulation ur ett kognitivt perspektiv — varför vi springer med flocken." },
+   253→  { id: "KM-022", category: "Beteendefinans", title: "Överconfidens & Dunning-Kruger", level: "nyborjare", minutes: 13, summary: "Nybörjare överskattar sig mest — erfarna vet vad de inte vet. Hur du känner igen din egen bias." },
+   254→
+   255→  // Svensk bolagsskatt & Juridik (5)
+   256→  { id: "KM-023", category: "Svensk bolagsskatt & Juridik", title: "Bolagsskatt i Sverige — 20,6 %", level: "intermediar", minutes: 18, summary: "Svensk bolagsskattesats och hur den påverkar utdelningar, återinvestering och värdering." },
+   257→  { id: "KM-024", category: "Svensk bolagsskatt & Juridik", title: "ISK vs AF vs depå", level: "nyborjare", minutes: 16, summary: "Skatteeffektiva konton för svensk retail — schablonbeskattning vs kupongskatt vs avanza-prenumeration." },
+   258→  { id: "KM-025", category: "Svensk bolagsskatt & Juridik", title: "Kupongskatt & 3:12-reglerna", level: "intermediar", minutes: 20, summary: "30 % kupongskatt på utdelning — och 3:12-reglerna som sänker skatten för fåmansbolagsägare." },
+   259→  { id: "KM-026", category: "Svensk bolagsskatt & Juridik", title: "Avyttringsregler & förlustavdrag", level: "avancerad", minutes: 22, summary: "Kvotering, neutraliseringsregler och wash-sale — hur Skatteverket begränsar förlustavdrag." },
+   260→  { id: "KM-027", category: "Svensk bolagsskatt & Juridik", title: "Aktiebolagslagen (ABL) i korthet", level: "intermediar", minutes: 24, summary: "Styrelseansvar, utdelningsregler, likvidationsregler — ABL sätter spelreglerna för svenska AB." },
+   261→
+   262→  // Makroekonomi & Ränta (5)
+   263→  { id: "KM-028", category: "Makroekonomi & Ränta", title: "Räntans roll för värdering", level: "intermediar", minutes: 20, summary: "Låg ränta = högre multiplar — och varför DCF-värderingar är extra känsliga för avkastningskravet." },
+   264→  { id: "KM-029", category: "Makroekonomi & Ränta", title: "Inflation — KPI vs KPIF", level: "nyborjare", minutes: 15, summary: "Hur Riksbanken mäter inflation — och varför KPIF ger en stabilare bild än KPI." },
+   265→  { id: "KM-030", category: "Makroekonomi & Ränta", title: "Reporäntan & transmission", level: "intermediar", minutes: 18, summary: "Riksbankens styrränta och vägen ut till bolåneräntor, företagslån och aktiemarknad." },
+   266→  { id: "KM-031", category: "Makroekonomi & Ränta", title: "Valutor & FX-effekter", level: "avancerad", minutes: 22, summary: "Hur en stark krona påverkar exportbolag — och varför svensk retail ska förstå valutarisk." },
+   267→  { id: "KM-032", category: "Makroekonomi & Ränta", title: "Konjunkturcykler — tidiga, mid-, sentids-bolag", level: "intermediar", minutes: 24, summary: "Olika sektorer rör sig olika i cykeln — vissa leder, vissa lagg-ar, vissa är cykel-motståndskraftiga." },
+   268→
+   269→  // Teknisk Analys (5)
+   270→  { id: "KM-033", category: "Teknisk Analys", title: "Stöd & motstånd — de grundläggande nivåerna", level: "nyborjare", minutes: 14, summary: "Den mest använda tekniska indikatorn — varför vissa priser fungerar som magnet och golv." },
+   271→  { id: "KM-034", category: "Teknisk Analys", title: "Rörliga medelvärden — SMA vs EMA", level: "nyborjare", minutes: 16, summary: "Trendföljarens arbetshäst — och varför valet mellan SMA och EMA spelar roll." },
+   272→  { id: "KM-035", category: "Teknisk Analys", title: "RSI — Relative Strength Index", level: "intermediar", minutes: 18, summary: "Översåld/överköpt och divergenser — RSI:s styrka och dess mest missbrukade signaler." },
+   273→  { id: "KM-036", category: "Teknisk Analys", title: "MACD — trend & momentum", level: "intermediar", minutes: 20, summary: "Signalkors och histogram — MACD kombinerar två EMAs för att fånga trendskiften." },
+   274→  { id: "KM-037", category: "Teknisk Analys", title: "Volume profile — volym till pris", level: "avancerad", minutes: 22, summary: "Volym fördelad på priser, inte tid — visar var marknaden faktiskt har handlat." },
+   275→
+   276→  // Sektoranalys (6)
+   277→  { id: "KM-038", category: "Sektoranalys", title: "Tech — SaaS, ARR & molntjänster", level: "intermediar", minutes: 22, summary: "Varför tech-multiplar är annorlunda — ARR, NRR, churn och recurring-revenue-logiken." },
+   278→  { id: "KM-039", category: "Sektoranalys", title: "Industri — cyklisk analys", level: "intermediar", minutes: 20, summary: "Kapacitetsutnyttjande, orderstock och cykelrisk — industri-bolagens sårbarhet och styrka." },
+   279→  { id: "KM-040", category: "Sektoranalys", title: "Fastighet — NAV & direktavkastning", level: "avancerad", minutes: 24, summary: "Värdera byggnader, inte bolag — NAV, direktavkastning, hyresintäkter och finansieringsrisk." },
+   280→  { id: "KM-041", category: "Sektoranalys", title: "Pharma — pipeline & patentslut", level: "avancerad", minutes: 26, summary: "Läkemedelsprocessen, kliniska studier och patentklockan som driver värde i pharma-bolag." },
+   281→  { id: "KM-042", category: "Sektoranalys", title: "Banker — K/I, kreditförluster & kapitalbas", level: "intermediar", minutes: 22, summary: "Svensk bankanalys i praktiken — intjäningskraft, risk och regelverk i en sektor med hög hävstång." },
+   282→  { id: "KM-043", category: "Sektoranalys", title: "Konsument & retail — varumärke & kanal", level: "intermediar", minutes: 18, summary: "Hur varumärkesstyrka och distributionskanal avgör marginalerna i retail-bolag." },
+   283→
+   284→  // ESG & Hållbarhet (5)
+   285→  { id: "KM-044", category: "ESG & Hållbarhet", title: "CSRD — vad det betyder för bolagen", level: "intermediar", minutes: 22, summary: "EU:s nya krav på hållbarhetsrapportering — dubbel väsentlighet och vad investerare får se." },
+   286→  { id: "KM-045", category: "ESG & Hållbarhet", title: "SFDR — artikel 6, 8, 9-fonder", level: "intermediar", minutes: 18, summary: "Hur fonder klassas efter hållbarhetsambition — och varför 'artikel 8' inte betyder grön." },
+   287→  { id: "KM-046", category: "ESG & Hållbarhet", title: "Scope 1, 2, 3 — utsläppskategorier", level: "nyborjare", minutes: 16, summary: "Väsentliga vs rent bokförda utsläpp — Scope 3 är ofta 80 % av fotavtrycket och svårast att mäta." },
+   288→  { id: "KM-047", category: "ESG & Hållbarhet", title: "Greenwashing — att skilja falskt från verkligt", level: "avancerad", minutes: 20, summary: "Hur du identifierar ekologisk moat vs PR-täckta utsläpp — en checklista för kritisk läsning." },
+   289→  { id: "KM-048", category: "ESG & Hållbarhet", title: "Governance — styrelse-mångfald & ägarstruktur", level: "intermediar", minutes: 18, summary: "Bortom kvotering — vad som egentligen driver bättre styrelsebeslut och långsiktigt ägande." },
+   290→
+   291→  // Options & Derivat (5)
+   292→  { id: "KM-049", category: "Options & Derivat", title: "Optionens grunder — köp, sälj, premie, strike", level: "intermediar", minutes: 22, summary: "Vad en option är, vad premien betalar för, och varför 80 % av optioner löper ut värdelösa." },
+   293→  { id: "KM-050", category: "Options & Derivat", title: "Black-Scholes i praktiken", level: "avancerad", minutes: 28, summary: "Den klassiska värderingsmodellen, dess antaganden och varför den bryter i kriser." },
+   294→  { id: "KM-051", category: "Options & Derivat", title: "Covered calls — täcka med premie", level: "avancerad", minutes: 24, summary: "Sälja köpoptioner på aktier du redan äger — inkomstgenerering med avkastningstak." },
+   295→  { id: "KM-052", category: "Options & Derivat", title: "Cash-secured puts — generera inkomst", level: "avancerad", minutes: 22, summary: "Sälja säljoptioner och vänta på inlägg — en strategi för att komma in lägre." },
+   296→  { id: "KM-053", category: "Options & Derivat", title: "Grekerna — delta, gamma, theta, vega", level: "avancerad", minutes: 26, summary: "Vad grekerna betyder för din position — risk mot pris, tid, volatilitet och ränta." },
+   297→
+   298→  // Utdelningsstrategi (5)
+   299→  { id: "KM-054", category: "Utdelningsstrategi", title: "Utdelningsyield — ränta på aktie", level: "nyborjare", minutes: 14, summary: "Bruttoutdelning / aktiekurs — den enklaste utdelningsnyckeltalet och dess fällor." },
+   300→  { id: "KM-055", category: "Utdelningsstrategi", title: "Utdelningshistorik & tillväxt", level: "intermediar", minutes: 18, summary: "Kontinuitet är viktigare än nivå — bolag som höjt utdelningen i 10+ år utmärker sig." },
+   301→  { id: "KM-056", category: "Utdelningsstrategi", title: "Payout ratio — hur mycket går till ägarna", level: "intermediar", minutes: 16, summary: "Utdelning / vinst — för högt betyder risk för nedskärning, för lågt betyder marginal till tillväxt." },
+   302→  { id: "KM-057", category: "Utdelningsstrategi", title: "Aristokrater & Challengers — 25+ eller 10+ år", level: "intermediar", minutes: 20, summary: "Amerikanska Dividend Aristocrats och europeiska motsvarigheter — vad kontinuiteten betyder." },
+   303→  { id: "KM-058", category: "Utdelningsstrategi", title: "Skatt på utdelning — ISK vs KF-depå", level: "intermediar", minutes: 18, summary: "Hur kontovalet avgör din netto-utdelning — och varför ISK-schablon slagit KF-depå på 5 år." },
+   304→
+   305→  // Private Equity & Investmentbolag (5)
+   306→  { id: "KM-059", category: "Private Equity & Investmentbolag", title: "Investmentbolag-rabatt — varför Investor handlas under NAV", level: "intermediar", minutes: 20, summary: "Investor, Industrivärden, Latour — varför marknaden nästan alltid prissätter dem under NAV." },
+   307→  { id: "KM-060", category: "Private Equity & Investmentbolag", title: "Holdingstruktur & skatteeffekter", level: "avancerad", minutes: 22, summary: "Varför konglomeratstrukturer kan vara ineffektiva — dubbelbeskattning och driftssynergier." },
+   308→  { id: "KM-061", category: "Private Equity & Investmentbolag", title: "Private equity i praktiken", level: "avancerad", minutes: 24, summary: "Buyout, leverage, exit — och varför retail oftast inte kan delta förrän börsnoteringen." },
+   309→  { id: "KM-062", category: "Private Equity & Investmentbolag", title: "Ägarstyrning & röststrukturer (A/B-aktier)", level: "intermediar", minutes: 18, summary: "Varför vissa aktier har 10x röster — och vad det betyder för minoritetsaktieägaren." },
+   310→  { id: "KM-063", category: "Private Equity & Investmentbolag", title: "Buyback vs utdelning — när och varför", level: "avancerad", minutes: 22, summary: "När aktieåterköp skapar värde (låg värdering) och när det förstör (övervärderat bolag)." },
+   311→
+   312→  // Aktiemarknaden i praktiken (5)
+   313→  { id: "KM-064", category: "Aktiemarknaden i praktiken", title: "Avanza vs Nordnet — nätmäklare jämfört", level: "nyborjare", minutes: 15, summary: "Avgifter, verktyg, utbud — och varför valet mellan de två svenska storheterna spelar roll." },
+   314→  { id: "KM-065", category: "Aktiemarknaden i praktiken", title: "Orderboken — köp- & säljsidor", level: "intermediar", minutes: 18, summary: "Likviditet, spread och market impact — läs orderboken så förstår du prisförändringar." },
+   315→  { id: "KM-066", category: "Aktiemarknaden i praktiken", title: "Marknadsordrar vs limitordrar", level: "nyborjare", minutes: 14, summary: "När du ska använda vilken — och varför marknadsordrar i illikvida aktier kan bli dyra." },
+   316→  { id: "KM-067", category: "Aktiemarknaden i praktiken", title: "OMXS30 & OMXSPI — index i korthet", level: "nyborjare", minutes: 16, summary: "Vad svenska index faktiskt innehåller — och varför OMXS30 inte är hela marknaden." },
+   317→  { id: "KM-068", category: "Aktiemarknaden i praktiken", title: "Euronext Stockholm — segment & listor", level: "intermediar", minutes: 18, summary: "Large/Mid/Small Cap och First North — noteringsskillnader, rapportkrav och risknivå." },
+   318→];
+   319→
+   320→/* ------------------------------------------------------------------ */
+   321→/* LEVANDE FALLSTUDIER — 5 cases                                       */
+   322→/* ------------------------------------------------------------------ */
+   323→
+   324→export interface Fallstudie {
+   325→  id: string;
+   326→  company: string;
+   327→  title: string;
+   328→  shortDesc: string;
+   329→  teaser: string;
+   330→  isPrec: boolean;
+   331→}
+   332→
+   333→export const FALLSTUDIER: Fallstudie[] = [
+   334→  {
+   335→    id: "FS-01",
+   336→    company: "Precise Biometrics (PREC.ST)",
+   337→    title: "Special situation — fusion & riktad nyemission",
+   338→    shortDesc: "V19 (kapitalförbränning & emission-risk) applicerad på en riktad nyemission på 0,82 SEK.",
+   339→    teaser: "",
+   340→    isPrec: true,
+   341→  },
+   342→  {
+   343→    id: "FS-02",
+   344→    company: "Atlas Copco (ATCO-A)",
+   345→    title: "Compounder-moat — 100 års återinvestering",
+   346→    shortDesc: "En moat byggd på teknik, service och distribution som tillåtit 100+ år av organisk tillväxt.",
+   347→    teaser:
+   348→      "Atlas Copco är ett fallstudie i long-term compounding: en moat byggd på teknik, service och distribution som tillåtit 100+ år av organisk tillväxt. Vi bryter ner hur de återinvesterar kapital i nya produktlinjer och geografier, och varför ROIC fortsatt överstiger 25 %. Slutsatsen: compounder-bolag prissätts ofta rätt — felet är att sälja för tidigt.",
+   349→    isPrec: false,
+   350→  },
+   351→  {
+   352→    id: "FS-03",
+   353→    company: "Investor AB (INVE-B)",
+   354→    title: "Holding-rabatt — 30 % under NAV i 20 år",
+   355→    shortDesc: "Varför marknaden straffar holdingstrukturer — och när rabatten är en möjlighet vs en fälla.",
+   356→    teaser:
+   357→      "Investor AB handlas strukturellt 20–35 % under NAV. Vi analyserar varför marknaden straffar holdingstrukturer — och när rabatten är en möjlighet vs en fälla. Fallstudien visar hur Patel-utdelning, inlåst kapital och corporation-within-corporation-struktur försvårar värdering. Slutsatsen: holding-rabatten är inte gratis — den är en prislapp på låst kapital.",
+   358→    isPrec: false,
+   359→  },
+   360→  {
+   361→    id: "FS-04",
+   362→    company: "Novo Nordisk (NOVO-B)",
+   363→    title: "Pharma-moat & GLP-1 — patentskyddad tillväxt",
+   364→    shortDesc: "Patenträtt, pipeline, produktionskapacitet och läkarrelationer i en ovanligt stark kombination.",
+   365→    teaser:
+   366→      "Novo Nordisk och GLP-1-revolutionen (Ozempic, Wegovy) är ett textbook-fall av pharma-moat: patenträtt, produkt-pipeline, produktionskapacitet och läkarrelationer i en ovanligt stark kombination. Vi bryter ner varför Novo Nordisks moat är bredare än patent ensamt — och vad som hotar den. Slutsatsen: pharma-moat är tidsbestämd; patentslut är den största katalysatorn.",
+   367→    isPrec: false,
+   368→  },
+   369→  {
+   370→    id: "FS-05",
+   371→    company: "Silicon Valley Bank (SVB) — V19 fallstudie",
+   372→    title: "Riskfallstudie — kapitalförbränning & durationsfälla",
+   373→    shortDesc: "V19 applicerad på en bank som brände kapital genom durations-risk finansierad med korta insättningar.",
+   374→    teaser:
+   375→      "SVB:s kollaps mars 2023 är den renaste V19-fallstudien på decennier: en bank som brände kapital genom durations-risk (långa statsobligationer) finansierad med korta insättningar. Vi applicerar AKM1:s V19 (kapitalförbränning & emission-risk) på en bank och ser varför traditionella nyckeltal missade fallet. Slutsatsen: V19 är inte bara för startup-bolag — det är för allt med duration-mismatch.",
+   376→    isPrec: false,
+   377→  },
+   378→];
+   379→
+   380→/* ------------------------------------------------------------------ */
+   381→/* MEGA NIVÅER 1-100 — 6 tiers                                        */
+   382→/* ------------------------------------------------------------------ */
+   383→
+   384→export interface MegaNiva {
+   385→  num: number;
+   386→  title: string;
+   387→  milstolpe: string;
+   388→  xpThreshold: number;
+   389→  provning: string;
+   390→}
+   391→
+   392→export const MEGA_NIVAER: MegaNiva[] = [
+   393→  {
+   394→    num: 1,
+   395→    title: "Första aktien",
+   396→    milstolpe: "Köp din första aktie på Avanza eller Nordnet.",
+   397→    xpThreshold: 250,
+   398→    provning: "Hitta ett svenskt stort bolag (Investor, Atlas Copco, Volvo) och köp för 500 kr.",
+   399→  },
+   400→  {
+   401→    num: 2,
+   402→    title: "Första årsredovisningen",
+   403→    milstolpe: "Läs en hel årsredovisning från pärm till pärm.",
+   404→    xpThreshold: 750,
+   405→    provning: "Läs H&M:s eller Ericssons senaste årsredovisning och svara på 10 frågor.",
+   406→  },
+   407→  {
+   408→    num: 3,
+   409→    title: "AKM1-grunden",
+   410→    milstolpe: "Fyll i alla 19 variabler för ett bolag du valt.",
+   411→    xpThreshold: 1500,
+   412→    provning: "Välj ett Mid Cap-bolag och fyll i alla 19 AKM1-variabler med egna siffror.",
+   413→  },
+   414→  {
+   415→    num: 4,
+   416→    title: "AK1TS-vågor",
+   417→    milstolpe: "Bygg en 25-cells våg-matris i Labbet.",
+   418→    xpThreshold: 3000,
+   419→    provning: "Klicka igenom alla 25 celler i våg-matrisen och skriv en slutsats om konfluens.",
+   420→  },
+   421→  {
+   422→    num: 5,
+   423→    title: "Egen analys",
+   424→    milstolpe: "Skriv en 99-sidig analys enligt AK1A-metoden.",
+   425→    xpThreshold: 5000,
+   426→    provning: "Skriv en fullständig analys (rekommendation, bolaget, historik, värdering, scenarier).",
+   427→  },
+   428→  {
+   429→    num: 6,
+   430→    title: "Master",
+   431→    milstolpe: "Publicera och försvara din analys offentligt.",
+   432→    xpThreshold: Number.POSITIVE_INFINITY,
+   433→    provning: "Publicera analysen på en blogg eller i ett forum och försvara dina slutsatser mot kritik.",
+   434→  },
+   435→];
+   436→
+   437→function getMegaLevel(xp: number): number {
+   438→  if (xp < 250) return 1;
+   439→  if (xp < 750) return 2;
+   440→  if (xp < 1500) return 3;
+   441→  if (xp < 3000) return 4;
+   442→  if (xp < 5000) return 5;
+   443→  return 6;
+   444→}
+   445→
+   446→/* ------------------------------------------------------------------ */
+   447→/* BELÖNINGAR — 14 badges                                             */
+   448→/* ------------------------------------------------------------------ */
+   449→
+   450→type LucideIcon = React.ComponentType<{ className?: string }>;
+   451→
+   452→export interface BadgeDef {
+   453→  id: string;
+   454→  name: string;
+   455→  description: string;
+   456→  icon: LucideIcon;
+   457→  auto: boolean;
+   458→  detect: (p: {
+   459→    completedCourses: string[];
+   460→    xp: number;
+   461→    streak: number;
+   462→    quizzesPassed: string[];
+   463→    flashcardsViewed: string[];
+   464→    precSection: number;
+   465→  }) => boolean;
+   466→}
+   467→
+   468→const AKM1_IDS = AKM1_VARIABLES.map((v) => v.id);
+   469→
+   470→export const BADGES: BadgeDef[] = [
+   471→  { id: "BD-01", name: "Första steget", description: "Första kursen klar.", icon: Footprints, auto: true, detect: (p) => p.completedCourses.length >= 1 },
+   472→  { id: "BD-02", name: "AKM1-grund", description: "Alla 19 AKM1-variabler klara.", icon: ShieldCheck, auto: true, detect: (p) => AKM1_IDS.every((id) => p.completedCourses.includes(id)) },
+   473→  { id: "BD-03", name: "Våg-mästare", description: "Våg-matris cell klickad i Labbet.", icon: Activity, auto: false, detect: () => false },
+   474→  { id: "BD-04", name: "Kalkylatorn", description: "AKM1-kalkylatorn använd i Labbet.", icon: Calculator, auto: false, detect: () => false },
+   475→  { id: "BD-05", name: "Quiz-vinnare", description: "Quiz godkänt i Labbet.", icon: Brain, auto: true, detect: (p) => p.quizzesPassed.length >= 1 },
+   476→  { id: "BD-06", name: "Flashcard-flipper", description: "Alla flashcards vända i Labbet.", icon: Layers, auto: true, detect: (p) => p.flashcardsViewed.length >= 6 },
+   477→  { id: "BD-07", name: "Streak 3", description: "3 dagars streak.", icon: Flame, auto: true, detect: (p) => p.streak >= 3 },
+   478→  { id: "BD-08", name: "Streak 7", description: "7 dagars streak.", icon: Flame, auto: true, detect: (p) => p.streak >= 7 },
+   479→  { id: "BD-09", name: "Första analysen läst", description: "PREC-analysen påbörjad.", icon: BookOpen, auto: true, detect: (p) => p.precSection >= 5 },
+   480→  { id: "BD-10", name: "Styrelse-gäst", description: "Deltagit i ett styrelsemöte.", icon: Gavel, auto: false, detect: () => false },
+   481→  { id: "BD-11", name: "Nybörjare-klar", description: "Steg 1 läroplan — V01 klar.", icon: GraduationCap, auto: true, detect: (p) => p.completedCourses.includes("V01") },
+   482→  { id: "BD-12", name: "Power 19", description: "Alla 19 variabler + quiz godkänt.", icon: Zap, auto: true, detect: (p) => AKM1_IDS.every((id) => p.completedCourses.includes(id)) && p.quizzesPassed.length >= 1 },
+   483→  { id: "BD-13", name: "Mörkrets herre", description: "Använt dark mode.", icon: Moon, auto: false, detect: () => false },
+   484→  { id: "BD-14", name: "Sökaren", description: "Använt ⌘K-sök.", icon: Search, auto: false, detect: () => false },
+   485→];
+   486→
+   487→/* ------------------------------------------------------------------ */
+   488→/* ANALYTIKER-INSIKTER — 5 expandable insight cards                    */
+   489→/* ------------------------------------------------------------------ */
+   490→
+   491→export interface AnalytikerInsikt {
+   492→  id: string;
+   493→  title: string;
+   494→  punch: string;
+   495→  detail: string;
+   496→}
+   497→
+   498→export const ANALYTIKER_INSIKTER: AnalytikerInsikt[] = [
+   499→  {
+   500→    id: "AI-01",
+   501→    title: "Tid är insikt, inte risk",
+   502→    punch:
+   503→      "Det vi kallar 'risk' på kort sikt är ofta bara volatilitet — brus. På lång sikt är tid din fördel, inte din fiende. Institutionella analytiker betalar för tålamod; retail får det gratis.",
+   504→    detail:
+   505→      "I en 1-månaders horisont dominerar brus — makro, sentiment, kortsiktig nyhet. I en 5-årig horisont dominerar fundamental utveckling — intjäning, moat, kapitalallokering. Warren Buffett citeras ofta för att hans favorithorisont är 'för evigt' — inte för romantik utan för att det är där signal överröstar brus. Som svensk retail-investerare har du en fördel som institutioner saknar: du behöver inte redovisa kvartalsprestation. Använd den. Risken med att blanda 'tid som insikt' och 'tid som risk' är att du börjar agera som en kortsiktig trader och förlorar den enda verkliga edge du har.",
+   506→  },
+   507→  {
+   508→    id: "AI-02",
+   509→    title: "Värdering utan katalysator är en åsikt",
+   510→    punch:
+   511→      "En aktie kan vara 'undervärderad' i åratal innan marknaden rättar till. Skillnaden mellan att ha rätt och att tjäna pengar heter katalysator.",
+   512→    detail:
+   513→      "Värdering säger vad något är värt; katalysatorn säger när marknaden kommer inse det. En katalysator kan vara en kvartalsrapport, en fusion, en produktlansering, en ledningsförändring, en regulatorisk förändring, eller bara en långsiktig omtagning i sentiment. Utan katalysator kan du sitta med en 'undervärderad' aktie i 3 år och ge upp precis innan rörelsen kommer. Institutionella analytiker letar alltid efter både: 'undervärdering + katalysator'. Att köpa bara på undervärdering är att be marknaden om ursäkt — och marknaden ber inte om ursäkt.",
+   514→  },
+   515→  {
+   516→    id: "AI-03",
+   517→    title: "Den största risken är det du inte ser",
+   518→    punch:
+   519→      "Risk i en portfölj kommer sällan från det du identifierat och kvantifierat. Den kommer från det du inte ens ritat in i din analys.",
+   520→    detail:
+   521→      "Alla modeller — även AKM1:s 19 variabler — beskriver en känd okänd-värld. Kriser föds ur okända okända: durations-mismatch du inte sett (SVB), geopolitiska händelser (2022), pandemier (2020), valutarörelser ingen modellerat. Två strategier hanterar detta: (1) position sizing som är liten nog att överleva 80 % kapitalförlust på en position, och (2) diversifiering över orelaterade risker. Många retail-investerare brister i båda — de koncentrerar 50 % i ett bolag de 'känner' och kallar det conviction. Egentligen är det brist på fantasi om vad som kan gå fel.",
+   522→  },
+   523→  {
+   524→    id: "AI-04",
+   525→    title: "Möjnet avgör — inte tillväxten",
+   526→    punch:
+   527→      "Ett bolag kan växa 30 % om året i 10 år och ändå vara en dålig investering om mönet är svagt. Möjnet bestämmer hur mycket av tillväxten som stannar hos aktieägarna.",
+   528→    detail:
+   529→      "Möjnet (moat, varaktig konkurrensfördel) är det som hindrar konkurrenter från att äta upp tillväxten. Utan möjn blir hög tillväxt en kapitaltävling — kapital in, kapital ut, lite kvar till aktieägarna. Flygindustrin växte 6 % om året i 50 år och gav totalt sett negativ avkastning; Moody's växte 8 % om året och gav 15 % årligen. Skillnaden var möjn: Moody's har nätverkseffekter och varumärke; airline har råvarutjänst och fackföreningsmakt. Som analytiker ska du alltid fråga: 'varför kan inte någon annan göra det här och ta marginalen?' Svaret är möjn. Saknas det är tillväxten en illusion av värdeskapande.",
+   530→  },
+   531→  {
+   532→    id: "AI-05",
+   533→    title: "Reproducerbarhet > hemligheter",
+   534→    punch:
+   535→      "En analys du inte kan reproducera är en åsikt du inte kan lita på. Det du kan skriva ner i steg kan granskas, förbättras och skalas.",
+   536→    detail:
+   537→      "AK1A:s kärnprincip 'håll know-how, redovisa generöst' bygger på insikten att hemligheter är spröda och reproducerbarhet är robust. En analytiker som bara har 'känsla' kan inte granskas — och kan inte förbättras. En analytiker som har 19 variabler + formel + skala + scenarier kan granskas punkt för punkt, utmanas och revideras. I institutionell förvaltning kallas detta 'investment process' — och det är det som skiljer en bra förvaltare från en bra period. Som retail-investerare har du inte fördelen av att ha 50 kollegor som granskar varandra — då blir din egen struktur din enda försvarslinje mot överconfidence. Skriv ner din metod. Följ den. Revidera den öppet.",
+   538→  },
+   539→];
+   540→
+   541→/* ------------------------------------------------------------------ */
+   542→/* Main section                                                        */
+   543→/* ------------------------------------------------------------------ */
+   544→
+   545→export function KurserSection() {
+   546→  const { progress, completeCourse, level, kurserDeepSlug, setKurserDeepSlug } = useAk1aStore();
+   547→  const [categoryFilter, setCategoryFilter] = React.useState<string>("ALLA");
+   548→  const [activeCourseId, setActiveCourseId] = React.useState<string | null>(null);
+   549→
+   550→  // If a deep course slug is set, render the full-page deep viewer instead
+   551→  if (kurserDeepSlug) {
+   552→    return <DeepCourseViewer slug={kurserDeepSlug} />;
+   553→  }
+   554→
+   555→  const visibleVariables = React.useMemo(() => {
+   556→    if (categoryFilter === "ALLA") return AKM1_VARIABLES;
+   557→    return AKM1_VARIABLES.filter((v) => v.category === categoryFilter);
+   558→  }, [categoryFilter]);
+   559→
+   560→  const completedAkm1Ids = React.useMemo(
+   561→    () =>
+   562→      new Set(
+   563→        AKM1_VARIABLES.filter((v) =>
+   564→          progress.completedCourses.includes(v.id)
+   565→        ).map((v) => v.id)
+   566→      ),
+   567→    [progress.completedCourses]
+   568→  );
+   569→
+   570→  const completedCount = completedAkm1Ids.size;
+   571→  const akm1ProgressPct = Math.round((completedCount / 19) * 100);
+   572→
+   573→  const activeCourse = React.useMemo(
+   574→    () => AKM1_VARIABLES.find((v) => v.id === activeCourseId) ?? null,
+   575→    [activeCourseId]
+   576→  );
+   577→
+   578→  const scrollToId = (id: string) => {
+   579→    if (typeof document !== "undefined") {
+   580→      document
+   581→        .getElementById(id)
+   582→        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+   583→    }
+   584→  };
+   585→
+   586→  return (
+   587→    <div className="paper-texture">
+   588→      {/* ───────────── HERO ───────────── */}
+   589→      <section className="relative overflow-hidden border-b border-border">
+   590→        <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
+   591→          <div
+   592→            className="absolute inset-0"
+   593→            style={{
+   594→              backgroundImage:
+   595→                "linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px)",
+   596→              backgroundSize: "48px 48px",
+   597→            }}
+   598→          />
+   599→        </div>
+   600→        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20">
+   601→          <div className="max-w-3xl">
+   602→            <Eyebrow>AK1A Kurser</Eyebrow>
+   603→            <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+   604→              Komplett kunskapsmarknad
+   605→            </h1>
+   606→            <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+   607→              270 kurser totalt. AKM1:s 19 variabler, kunskapsmarknad,
+   608→              mega-nivåer, belöningar och analytiker-insikter — allt på ett
+   609→              ställe.
+   610→            </p>
+   611→            <div className="mt-8 flex flex-wrap gap-3">
+   612→              <Button
+   613→                size="lg"
+   614→                className="bg-gold text-background hover:bg-gold/90"
+   615→                onClick={() => scrollToId("akm1-variabler")}
+   616→              >
+   617→                Börja med AKM1 <ArrowRight className="ml-1 h-4 w-4" />
+   618→              </Button>
+   619→              <Button
+   620→                size="lg"
+   621→                variant="outline"
+   622→                onClick={() => scrollToId("kurserna-spar")}
+   623→              >
+   624→                Utforska marknaden
+   625→              </Button>
+   626→            </div>
+   627→          </div>
+   628→        </div>
+   629→      </section>
+   630→
+   631→      {/* ───────────── STATS ROW ───────────── */}
+   632→      <section className="border-b border-border bg-muted/30">
+   633→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+   634→          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+   635→            <StatTile
+   636→              kind="matt"
+   637→              value="270"
+   638→              label="Kurser"
+   639→              caption="↑ KONTINUERLIG TILLVÄXT"
+   640→            />
+   641→            <StatTile
+   642→              kind="matt"
+   643→              value="142.9"
+   644→              label="Timmar"
+   645→              caption="↑ 142.9H TOTAL"
+   646→            />
+   647→            <ProgressTile
+   648→              completed={completedCount}
+   649→              total={19}
+   650→              pct={akm1ProgressPct}
+   651→              xp={progress.xp}
+   652→            />
+   653→            <StatTile
+   654→              kind="matt"
+   655→              value="0"
+   656→              label="Dolda avgifter"
+   657→              caption="ALLTID GRATIS ATT LÄRA"
+   658→            />
+   659→          </div>
+   660→          <p className="mt-4 text-[11px] text-muted-foreground">
+   661→            <span className="font-semibold uppercase tracking-wider">
+   662→              Katalog:
+   663→            </span>{" "}
+   664→            19 AKM1 + 251 kunskapsmarknad + 5 fallstudier + 6 mega-nivåer + 14
+   665→            badges + 5 insikter. Browsebar idag: {19 + 68 + 5 + 6 + 14 + 5} av 270.
+   666→          </p>
+   667→        </div>
+   668→      </section>
+   669→
+   670→      {/* ───────────── CATEGORIES ───────────── */}
+   671→      <section id="kurserna-spar" className="border-b border-border">
+   672→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   673→          <Eyebrow>Kurserna</Eyebrow>
+   674→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   675→            Välj ditt spår.
+   676→          </h2>
+   677→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   678→            Sex sätt att utforska kunskap. Börja med AKM1:s 19 variabler —
+   679→            grunden allt annat vilar på.
+   680→          </p>
+   681→          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+   682→            {CATEGORY_CARDS.map((cat) => {
+   683→              const Icon = cat.icon;
+   684→              return (
+   685→                <button
+   686→                  key={cat.id}
+   687→                  onClick={() => scrollToId(cat.target)}
+   688→                  className="group flex flex-col items-start rounded-lg border border-border bg-card p-6 text-left transition-all hover:border-gold/50 hover:shadow-md"
+   689→                >
+   690→                  <div className="flex items-center gap-3">
+   691→                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gold/30 bg-gold/10 text-gold">
+   692→                      <Icon className="h-5 w-5" />
+   693→                    </span>
+   694→                    <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   695→                      {cat.subtitle}
+   696→                    </span>
+   697→                  </div>
+   698→                  <h3 className="mt-4 font-serif text-xl font-bold leading-tight">
+   699→                    {cat.title}
+   700→                  </h3>
+   701→                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+   702→                    {cat.description}
+   703→                  </p>
+   704→                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-gold group-hover:underline">
+   705→                    Öppna spåret
+   706→                    <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
+   707→                  </span>
+   708→                </button>
+   709→              );
+   710→            })}
+   711→          </div>
+   712→        </div>
+   713→      </section>
+   714→
+   715→      {/* ───────────── AKM1 19 VARIABLES ───────────── */}
+   716→      <section id="akm1-variabler" className="border-b border-border bg-muted/20">
+   717→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   718→          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+   719→            <div className="max-w-2xl">
+   720→              <Eyebrow>AKM1 — grunden</Eyebrow>
+   721→              <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   722→                AKM1:s 19 variabler
+   723→              </h2>
+   724→              <p className="mt-3 leading-relaxed text-muted-foreground">
+   725→                Lär dig varje indikator i AKM1-modellen. Varje kurs har teori,
+   726→                räkneexempel, övning och analytiker-insikt.
+   727→              </p>
+   728→            </div>
+   729→            <div className="min-w-[240px] rounded-lg border border-gold/30 bg-gold/[0.04] p-5">
+   730→              <div className="flex items-center justify-between">
+   731→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   732→                  Din progress
+   733→                </span>
+   734→                <HonestyTag kind="matt" />
+   735→              </div>
+   736→              <p className="mt-2 font-serif text-4xl font-bold leading-none">
+   737→                {completedCount}
+   738→                <span className="text-2xl text-muted-foreground">/19</span>
+   739→              </p>
+   740→              <ProgressBar pct={akm1ProgressPct} className="mt-3" />
+   741→              <p className="mt-2 text-xs text-muted-foreground">
+   742→                {akm1ProgressPct}% av AKM1 fullt behärskat
+   743→              </p>
+   744→            </div>
+   745→          </div>
+   746→
+   747→          {/* Filter tabs */}
+   748→          <Tabs
+   749→            value={categoryFilter}
+   750→            onValueChange={setCategoryFilter}
+   751→            className="mt-8"
+   752→          >
+   753→            <div className="-mx-4 overflow-x-auto pb-1 sm:mx-0">
+   754→              <TabsList className="h-auto w-max gap-1.5 rounded-lg border border-border bg-transparent p-1">
+   755→                {CATEGORY_FILTERS.map((f) => (
+   756→                  <TabsTrigger
+   757→                    key={f.id}
+   758→                    value={f.id}
+   759→                    className="rounded-md border border-transparent px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground data-[state=active]:border-gold data-[state=active]:bg-gold data-[state=active]:text-background data-[state=active]:shadow-none whitespace-nowrap"
+   760→                  >
+   761→                    {f.label}
+   762→                    <span className="ml-1 text-[10px] opacity-70">
+   763→                      ({f.count})
+   764→                    </span>
+   765→                  </TabsTrigger>
+   766→                ))}
+   767→              </TabsList>
+   768→            </div>
+   769→          </Tabs>
+   770→
+   771→          {/* Course grid */}
+   772→          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+   773→            {visibleVariables.map((v) => {
+   774→              const isCompleted = completedAkm1Ids.has(v.id);
+   775→              const isLocked = isLockedFor(v.level, level);
+   776→              return (
+   777→                <Akm1CourseCard
+   778→                  key={v.id}
+   779→                  variable={v}
+   780→                  isCompleted={isCompleted}
+   781→                  isLocked={isLocked}
+   782→                  onStart={() => {
+   783→                    const slug = variableIdToSlug(v.id);
+   784→                    if (slug) {
+   785→                      setKurserDeepSlug(slug);
+   786→                    } else {
+   787→                      setActiveCourseId(v.id);
+   788→                    }
+   789→                  }}
+   790→                />
+   791→              );
+   792→            })}
+   793→          </div>
+   794→
+   795→          {/* Level-aware note */}
+   796→          <p className="mt-6 text-xs text-muted-foreground">
+   797→            <span className="font-semibold uppercase tracking-wider text-gold">
+   798→              Din nivå:
+   799→            </span>{" "}
+   800→            {LEVEL_LABEL[level]}.{" "}
+   801→            {level === "nyborjare" &&
+   802→              "Avancerade kurser är låsta — växla till Intermediär eller Avancerad i toppen för att låsa upp."}
+   803→            {level === "intermediar" &&
+   804→              "Nybörjare- och Intermediär-kurser är upplåsta. Avancerade kurser kräver Avancerad-nivå."}
+   805→            {level === "avancerad" &&
+   806→              "Alla 19 variabler är upplåsta. Du kan påbörja vilken kurs som helst."}
+   807→          </p>
+   808→        </div>
+   809→      </section>
+   810→
+   811→      {/* ───────────── KUNSKAPSMARKNADEN ───────────── */}
+   812→      <KunskapsmarknadBlock />
+   813→
+   814→      {/* ───────────── LEVANDE FALLSTUDIER ───────────── */}
+   815→      <FallstudieBlock />
+   816→
+   817→      {/* ───────────── MEGA NIVÅER 1-100 ───────────── */}
+   818→      <MegaNivaerBlock />
+   819→
+   820→      {/* ───────────── BELÖNINGAR ───────────── */}
+   821→      <BeloningarBlock />
+   822→
+   823→      {/* ───────────── ANALYTIKER-INSIKTER ───────────── */}
+   824→      <AnalytikerInsikterBlock />
+   825→
+   826→      {/* ───────────── KNOWLEDGE MAP ───────────── */}
+   827→      <section className="border-b border-border">
+   828→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   829→          <Eyebrow>19 celler · 19 variabler</Eyebrow>
+   830→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   831→            Din kunskapskarta
+   832→          </h2>
+   833→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   834→            Så här ser din AKM1-kunskap ut som en struktur — inte en
+   835→            procentsats.
+   836→          </p>
+   837→
+   838→          <Card className="mt-8 gap-0 p-6">
+   839→            {/* 19-cell grid */}
+   840→            <div className="grid grid-cols-5 gap-2 sm:grid-cols-7 lg:grid-cols-10">
+   841→              {AKM1_VARIABLES.map((v) => {
+   842→                const isMastered = completedAkm1Ids.has(v.id);
+   843→                return (
+   844→                  <div
+   845→                    key={v.id}
+   846→                    title={`${v.id} — ${v.name}${
+   847→                      isMastered ? " · Behärskad" : " · Ej påbörjad"
+   848→                    }`}
+   849→                    className={cn(
+   850→                      "flex aspect-square flex-col items-center justify-center rounded-md border text-center transition-colors",
+   851→                      isMastered
+   852→                        ? "border-gold/60 bg-gold/15 text-gold"
+   853→                        : "border-border bg-muted/50 text-muted-foreground"
+   854→                    )}
+   855→                  >
+   856→                    <span className="font-serif text-sm font-bold">
+   857→                      {v.id}
+   858→                    </span>
+   859→                    <span className="text-[9px] uppercase tracking-wider opacity-70">
+   860→                      {isMastered ? "Klar" : "—"}
+   861→                    </span>
+   862→                  </div>
+   863→                );
+   864→              })}
+   865→            </div>
+   866→
+   867→            {/* Legend */}
+   868→            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 border-t border-border pt-5">
+   869→              <LegendItem
+   870→                swatch="bg-gold/20 border-gold/60"
+   871→                label="Behärskad"
+   872→                sub="Kurs slutförd + scenario + quiz godkänd"
+   873→              />
+   874→              <LegendItem
+   875→                swatch="bg-blue-400/30 border-blue-400/50"
+   876→                label="Pågår"
+   877→                sub="Kurs påbörjad, ej slutförd"
+   878→              />
+   879→              <LegendItem
+   880→                swatch="bg-amber-400/30 border-amber-400/50"
+   881→                label="Påbörjad"
+   882→                sub="Första lektionen öppnad"
+   883→              />
+   884→              <LegendItem
+   885→                swatch="bg-muted border-border"
+   886→                label="Ej påbörjad"
+   887→                sub="Nästa inlärningsmål"
+   888→              />
+   889→            </div>
+   890→
+   891→            <div className="mt-4 flex flex-wrap items-center gap-2">
+   892→              <HonestyTag kind="matt" />
+   893→              <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   894→                Demo: En användares kunskapssnapshot
+   895→              </span>
+   896→            </div>
+   897→          </Card>
+   898→        </div>
+   899→      </section>
+   900→
+   901→      {/* ───────────── LEARNING PATHS ───────────── */}
+   902→      <section
+   903→        id="inlarningsvagar"
+   904→        className="border-b border-border bg-muted/30"
+   905→      >
+   906→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   907→          <Eyebrow>Inlärningsvägar</Eyebrow>
+   908→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   909→            Följ en väg, inte en lista.
+   910→          </h2>
+   911→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   912→            Tre steg. Börja där du är. Varje steg bygger på det förra.
+   913→          </p>
+   914→          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+   915→            {LEARNING_PATHS.map((p) => (
+   916→              <PathCard key={p.num} path={p} />
+   917→            ))}
+   918→          </div>
+   919→        </div>
+   920→      </section>
+   921→
+   922→      {/* ───────────── COURSE DETAIL DIALOG ───────────── */}
+   923→      <CourseDetailDialog
+   924→        course={activeCourse}
+   925→        isCompleted={
+   926→          activeCourse ? completedAkm1Ids.has(activeCourse.id) : false
+   927→        }
+   928→        isLocked={
+   929→          activeCourse ? isLockedFor(activeCourse.level, level) : false
+   930→        }
+   931→        onClose={() => setActiveCourseId(null)}
+   932→        onComplete={() => {
+   933→          if (activeCourse) completeCourse(activeCourse.id);
+   934→        }}
+   935→      />
+   936→    </div>
+   937→  );
+   938→}
+   939→
+   940→/* ------------------------------------------------------------------ */
+   941→/* Sub-components — existing AKM1                                     */
+   942→/* ------------------------------------------------------------------ */
+   943→
+   944→function StatTile({
+   945→  kind,
+   946→  value,
+   947→  label,
+   948→  caption,
+   949→}: {
+   950→  kind: "matt" | "metodmal";
+   951→  value: string;
+   952→  label: string;
+   953→  caption: string;
+   954→}) {
+   955→  return (
+   956→    <div className="rounded-lg border border-border bg-card p-5">
+   957→      <HonestyTag kind={kind} />
+   958→      <p className="mt-3 font-serif text-4xl font-bold leading-none">
+   959→        {value}
+   960→      </p>
+   961→      <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+   962→        {label}
+   963→      </p>
+   964→      <p className="mt-2 text-[11px] uppercase tracking-wider text-muted-foreground/70">
+   965→        {caption}
+   966→      </p>
+   967→    </div>
+   968→  );
+   969→}
+   970→
+   971→function ProgressTile({
+   972→  completed,
+   973→  total,
+   974→  pct,
+   975→  xp,
+   976→}: {
+   977→  completed: number;
+   978→  total: number;
+   979→  pct: number;
+   980→  xp: number;
+   981→}) {
+   982→  return (
+   983→    <div className="rounded-lg border border-gold/30 bg-gradient-to-br from-card to-gold/[0.04] p-5">
+   984→      <div className="flex items-center justify-between">
+   985→        <HonestyTag kind="matt" />
+   986→        <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   987→          XP {xp}
+   988→        </span>
+   989→      </div>
+   990→      <p className="mt-3 font-serif text-4xl font-bold leading-none">
+   991→        {completed}
+   992→        <span className="text-2xl text-muted-foreground">/{total}</span>
+   993→      </p>
+   994→      <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+   995→        Klara · Din personliga utveckling
+   996→      </p>
+   997→      <ProgressBar pct={pct} className="mt-3" />
+   998→    </div>
+   999→  );
+  1000→}
+  1001→
+  1002→function ProgressBar({
+  1003→  pct,
+  1004→  className,
+  1005→}: {
+  1006→  pct: number;
+  1007→  className?: string;
+  1008→}) {
+  1009→  return (
+  1010→    <div
+  1011→      className={cn(
+  1012→        "h-1.5 w-full overflow-hidden rounded-full bg-muted",
+  1013→        className
+  1014→      )}
+  1015→    >
+  1016→      <div
+  1017→        className="h-full bg-gold transition-all duration-500"
+  1018→        style={{ width: `${pct}%` }}
+  1019→      />
+  1020→    </div>
+  1021→  );
+  1022→}
+  1023→
+  1024→function Akm1CourseCard({
+  1025→  variable,
+  1026→  isCompleted,
+  1027→  isLocked,
+  1028→  onStart,
+  1029→}: {
+  1030→  variable: Akm1Variable;
+  1031→  isCompleted: boolean;
+  1032→  isLocked: boolean;
+  1033→  onStart: () => void;
+  1034→}) {
+  1035→  const weightLabel =
+  1036→    variable.weight === "KRITISK"
+  1037→      ? `${variable.category.toUpperCase()} · KRITISK`
+  1038→      : `${variable.category.toUpperCase()} · ${variable.weight}`;
+  1039→
+  1040→  return (
+  1041→    <Card
+  1042→      className={cn(
+  1043→        "gap-0 overflow-hidden p-0 py-0 transition-all",
+  1044→        isLocked && !isCompleted && "opacity-70",
+  1045→        isCompleted
+  1046→          ? "border-bull/40"
+  1047→          : "hover:border-gold/40 hover:shadow-md"
+  1048→      )}
+  1049→    >
+  1050→      <div className="p-5">
+  1051→        {/* Top row: weight + minutes */}
+  1052→        <div className="flex items-center justify-between gap-2">
+  1053→          <Badge
+  1054→            variant="outline"
+  1055→            className={cn(
+  1056→              "border-gold/40 bg-gold/5 text-gold",
+  1057→              variable.weight === "KRITISK" && "border-bear/40 bg-bear/5 text-bear"
+  1058→            )}
+  1059→          >
+  1060→            {weightLabel}
+  1061→          </Badge>
+  1062→          <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+  1063→            <Clock className="h-3 w-3" /> {variable.minutes} min
+  1064→          </span>
+  1065→        </div>
+  1066→
+  1067→        {/* Number + ID */}
+  1068→        <div className="mt-4 flex items-baseline gap-3">
+  1069→          <span className="font-serif text-5xl font-bold leading-none text-ink dark:text-foreground">
+  1070→            {variable.num}
+  1071→          </span>
+  1072→          <span className="font-mono text-sm font-semibold text-muted-foreground">
+  1073→            {variable.id}
+  1074→          </span>
+  1075→        </div>
+  1076→
+  1077→        {/* Title */}
+  1078→        <h3 className="mt-3 font-serif text-lg font-bold leading-tight">
+  1079→          {variable.name}
+  1080→        </h3>
+  1081→        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+  1082→          {variable.summary}
+  1083→        </p>
+  1084→
+  1085→        {/* Bottom row: level + tags */}
+  1086→        <div className="mt-4 flex flex-wrap items-center gap-2">
+  1087→          <Badge variant="outline" className="text-muted-foreground">
+  1088→            {LEVEL_LABEL[variable.level]}
+  1089→          </Badge>
+  1090→          <HonestyTag kind="matt" />
+  1091→          {isCompleted && (
+  1092→            <Badge className="border border-bull/30 bg-bull/15 text-bull">
+  1093→              <Check className="h-3 w-3" /> Klar
+  1094→            </Badge>
+  1095→          )}
+  1096→          {isLocked && !isCompleted && (
+  1097→            <Badge
+  1098→              variant="outline"
+  1099→              className="border-muted-foreground/30 text-muted-foreground"
+  1100→            >
+  1101→              <Lock className="h-3 w-3" /> Avancerad-nivå
+  1102→            </Badge>
+  1103→          )}
+  1104→        </div>
+  1105→      </div>
+  1106→
+  1107→      <div className="border-t border-border bg-muted/30 p-4">
+  1108→        <Button
+  1109→          className={cn(
+  1110→            "w-full",
+  1111→            isCompleted
+  1112→              ? "bg-bull text-background hover:bg-bull/90"
+  1113→              : "bg-gold text-background hover:bg-gold/90"
+  1114→          )}
+  1115→          onClick={onStart}
+  1116→          disabled={isLocked && !isCompleted}
+  1117→        >
+  1118→          {isLocked && !isCompleted ? (
+  1119→            <>
+  1120→              <Lock className="h-4 w-4" /> Låst — kräver Avancerad-nivå
+  1121→            </>
+  1122→          ) : isCompleted ? (
+  1123→            <>
+  1124→              <Check className="h-4 w-4" /> Repetera kursen
+  1125→            </>
+  1126→          ) : (
+  1127→            <>
+  1128→              Starta <ArrowRight className="ml-1 h-4 w-4" />
+  1129→            </>
+  1130→          )}
+  1131→        </Button>
+  1132→      </div>
+  1133→    </Card>
+  1134→  );
+  1135→}
+  1136→
+  1137→function CourseDetailDialog({
+  1138→  course,
+  1139→  isCompleted,
+  1140→  isLocked,
+  1141→  onClose,
+  1142→  onComplete,
+  1143→}: {
+  1144→  course: Akm1Variable | null;
+  1145→  isCompleted: boolean;
+  1146→  isLocked: boolean;
+  1147→  onClose: () => void;
+  1148→  onComplete: () => void;
+  1149→}) {
+  1150→  const weightLabel = course
+  1151→    ? course.weight === "KRITISK"
+  1152→      ? `${course.category.toUpperCase()} · KRITISK`
+  1153→      : `${course.category.toUpperCase()} · ${course.weight}`
+  1154→    : "";
+  1155→
+  1156→  return (
+  1157→    <Dialog open={!!course} onOpenChange={(open) => !open && onClose()}>
+  1158→      <DialogContent className="sm:max-w-lg">
+  1159→        {course && (
+  1160→          <>
+  1161→            <DialogHeader>
+  1162→              <div className="flex items-center gap-2">
+  1163→                <Badge
+  1164→                  variant="outline"
+  1165→                  className={cn(
+  1166→                    "border-gold/40 bg-gold/5 text-gold",
+  1167→                    course.weight === "KRITISK" &&
+  1168→                      "border-bear/40 bg-bear/5 text-bear"
+  1169→                  )}
+  1170→                >
+  1171→                  {weightLabel}
+  1172→                </Badge>
+  1173→                <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+  1174→                  <Clock className="h-3 w-3" /> {course.minutes} min
+  1175→                </span>
+  1176→              </div>
+  1177→              <DialogTitle className="mt-2 font-serif text-2xl leading-tight">
+  1178→                <span className="mr-2 font-mono text-base font-semibold text-gold">
+  1179→                  {course.id}
+  1180→                </span>
+  1181→                {course.name}
+  1182→              </DialogTitle>
+  1183→              <DialogDescription className="text-sm leading-relaxed">
+  1184→                {course.summary}
+  1185→              </DialogDescription>
+  1186→            </DialogHeader>
+  1187→
+  1188→            <div className="space-y-4">
+  1189→              <div className="flex flex-wrap items-center gap-2">
+  1190→                <Badge variant="outline">{LEVEL_LABEL[course.level]}</Badge>
+  1191→                <HonestyTag kind="matt" />
+  1192→                {isCompleted && (
+  1193→                  <Badge className="border border-bull/30 bg-bull/15 text-bull">
+  1194→                    <Check className="h-3 w-3" /> Redan klar
+  1195→                  </Badge>
+  1196→                )}
+  1197→              </div>
+  1198→
+  1199→              {course.formula && (
+  1200→                <div className="rounded-md border border-border bg-muted/40 p-4">
+  1201→                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1202→                    Formel
+  1203→                  </p>
+  1204→                  <p className="mt-2 font-mono text-sm leading-relaxed text-foreground">
+  1205→                    {course.formula}
+  1206→                  </p>
+  1207→                </div>
+  1208→              )}
+  1209→
+  1210→              {course.scale && (
+  1211→                <div className="rounded-md border border-border bg-muted/40 p-4">
+  1212→                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1213→                    Poängskala 1–5
+  1214→                  </p>
+  1215→                  <p className="mt-2 text-sm leading-relaxed text-foreground">
+  1216→                    {course.scale}
+  1217→                  </p>
+  1218→                </div>
+  1219→              )}
+  1220→
+  1221→              {!course.formula && !course.scale && (
+  1222→                <div className="rounded-md border border-dashed border-border bg-muted/20 p-4 text-center">
+  1223→                  <p className="text-xs text-muted-foreground">
+  1224→                    Kursen har teori, räkneexempel och övning — öppnas i
+  1225→                    inlärningsvägen.
+  1226→                  </p>
+  1227→                </div>
+  1228→              )}
+  1229→            </div>
+  1230→
+  1231→            <DialogFooter>
+  1232→              {isLocked && !isCompleted ? (
+  1233→                <Button variant="outline" disabled className="w-full">
+  1234→                  <Lock className="h-4 w-4" /> Låst — kräver Avancerad-nivå
+  1235→                </Button>
+  1236→              ) : isCompleted ? (
+  1237→                <Button
+  1238→                  variant="outline"
+  1239→                  onClick={onClose}
+  1240→                  className="w-full"
+  1241→                >
+  1242→                  <Check className="h-4 w-4" /> Kursen redan klar (+100 XP)
+  1243→                </Button>
+  1244→              ) : (
+  1245→                <Button
+  1246→                  className="w-full bg-gold text-background hover:bg-gold/90"
+  1247→                  onClick={() => {
+  1248→                    onComplete();
+  1249→                    onClose();
+  1250→                  }}
+  1251→                >
+  1252→                  <Check className="h-4 w-4" /> Markera som klar (+100 XP)
+  1253→                </Button>
+  1254→              )}
+  1255→            </DialogFooter>
+  1256→          </>
+  1257→        )}
+  1258→      </DialogContent>
+  1259→    </Dialog>
+  1260→  );
+  1261→}
+  1262→
+  1263→function LegendItem({
+  1264→  swatch,
+  1265→  label,
+  1266→  sub,
+  1267→}: {
+  1268→  swatch: string;
+  1269→  label: string;
+  1270→  sub: string;
+  1271→}) {
+  1272→  return (
+  1273→    <div className="flex items-start gap-2">
+  1274→      <span
+  1275→        className={cn(
+  1276→          "mt-0.5 inline-block h-3 w-3 shrink-0 rounded-sm border",
+  1277→          swatch
+  1278→        )}
+  1279→      />
+  1280→      <div>
+  1281→        <p className="text-xs font-semibold text-foreground">{label}</p>
+  1282→        <p className="text-[11px] text-muted-foreground">{sub}</p>
+  1283→      </div>
+  1284→    </div>
+  1285→  );
+  1286→}
+  1287→
+  1288→function PathCard({ path }: { path: (typeof LEARNING_PATHS)[number] }) {
+  1289→  return (
+  1290→    <Card
+  1291→      className={cn(
+  1292→        "gap-0 p-6",
+  1293→        path.premium &&
+  1294→          "border-gold/60 bg-gradient-to-br from-card to-gold/[0.04]"
+  1295→      )}
+  1296→    >
+  1297→      <div className="flex items-center justify-between">
+  1298→        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-gold/10 font-serif text-lg font-bold text-gold">
+  1299→          {path.num}
+  1300→        </span>
+  1301→        {path.premium && (
+  1302→          <Badge className="border border-gold/30 bg-gold/15 text-gold">
+  1303→            <Lock className="h-3 w-3" /> Premium
+  1304→          </Badge>
+  1305→        )}
+  1306→      </div>
+  1307→      <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1308→        {path.eyebrow}
+  1309→      </p>
+  1310→      <h3 className="mt-2 font-serif text-xl font-bold leading-tight">
+  1311→        {path.title}
+  1312→      </h3>
+  1313→      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+  1314→        {path.body}
+  1315→      </p>
+  1316→      <div className="mt-4 flex items-center gap-4 border-t border-border pt-4">
+  1317→        <span className="inline-flex items-center gap-1 text-sm font-semibold text-foreground">
+  1318→          <BookOpen className="h-4 w-4 text-gold" />
+  1319→          {path.courses}
+  1320→          <span className="font-normal text-muted-foreground">kurser</span>
+  1321→        </span>
+  1322→        <span className="inline-flex items-center gap-1 text-sm font-semibold text-foreground">
+  1323→          <Clock className="h-4 w-4 text-gold" />
+  1324→          {path.minutes}
+  1325→          <span className="font-normal text-muted-foreground">min total</span>
+  1326→        </span>
+  1327→      </div>
+  1328→      <Button
+  1329→        className={cn(
+  1330→          "mt-4 w-full",
+  1331→          path.premium
+  1332→            ? "bg-gold text-background hover:bg-gold/90"
+  1333→            : "bg-foreground text-background hover:bg-foreground/90"
+  1334→        )}
+  1335→      >
+  1336→        Följ denna väg <ArrowRight className="ml-1 h-4 w-4" />
+  1337→      </Button>
+  1338→    </Card>
+  1339→  );
+  1340→}
+  1341→
+  1342→/* ------------------------------------------------------------------ */
+  1343→/* Sub-components — KUNSKAPSMARKNAD                                   */
+  1344→/* ------------------------------------------------------------------ */
+  1345→
+  1346→function KunskapsmarknadBlock() {
+  1347→  const { progress, completeCourse, addXp, level } = useAk1aStore();
+  1348→  const [filter, setFilter] = React.useState<KmCategory | "ALLA">("ALLA");
+  1349→  const [query, setQuery] = React.useState("");
+  1350→  const [active, setActive] = React.useState<KmCourse | null>(null);
+  1351→
+  1352→  const completedKmIds = React.useMemo(
+  1353→    () =>
+  1354→      new Set(
+  1355→        KUNSKAPSMARKNAD_COURSES.filter((c) =>
+  1356→          progress.completedCourses.includes(c.id)
+  1357→        ).map((c) => c.id)
+  1358→      ),
+  1359→    [progress.completedCourses]
+  1360→  );
+  1361→
+  1362→  const filtered = React.useMemo(() => {
+  1363→    const q = query.trim().toLowerCase();
+  1364→    return KUNSKAPSMARKNAD_COURSES.filter((c) => {
+  1365→      if (filter !== "ALLA" && c.category !== filter) return false;
+  1366→      if (
+  1367→        q &&
+  1368→        !`${c.id} ${c.title} ${c.summary} ${c.category}`
+  1369→          .toLowerCase()
+  1370→          .includes(q)
+  1371→      ) {
+  1372→        return false;
+  1373→      }
+  1374→      return true;
+  1375→    });
+  1376→  }, [filter, query]);
+  1377→
+  1378→  const completedCount = completedKmIds.size;
+  1379→
+  1380→  return (
+  1381→    <section
+  1382→      id="kunskapsmarknaden"
+  1383→      className="border-b border-border bg-muted/20"
+  1384→    >
+  1385→      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+  1386→        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+  1387→          <div className="max-w-2xl">
+  1388→            <Eyebrow>Kunskapsmarknaden — utanför AKM1</Eyebrow>
+  1389→            <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+  1390→              KUNSKAPSMARKNADEN
+  1391→            </h2>
+  1392→            <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
+  1393→              251 kurser utanför AKM1-kärnan. Bokföring, värderingsmetoder,
+  1394→              riskhantering, beteendefinans, svensk bolagsskatt — allt en svensk
+  1395→              retail-investerare behöver. Nedan visas en browsbar sample av 68
+  1396→              kurser i 13 kategorier.
+  1397→            </p>
+  1398→          </div>
+  1399→          <div className="min-w-[200px] rounded-lg border border-gold/30 bg-gold/[0.04] p-4">
+  1400→            <div className="flex items-center justify-between">
+  1401→              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1402→                Din progress
+  1403→              </span>
+  1404→              <HonestyTag kind="metodmal" />
+  1405→            </div>
+  1406→            <p className="mt-2 font-serif text-3xl font-bold leading-none">
+  1407→              {completedCount}
+  1408→              <span className="text-xl text-muted-foreground">/68</span>
+  1409→            </p>
+  1410→            <p className="mt-1 text-xs text-muted-foreground">
+  1411→              Av browsebar sample · mål 251
+  1412→            </p>
+  1413→          </div>
+  1414→        </div>
+  1415→
+  1416→        {/* Search input */}
+  1417→        <div className="mt-8">
+  1418→          <div className="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2">
+  1419→            <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
+  1420→            <Input
+  1421→              type="text"
+  1422→              value={query}
+  1423→              onChange={(e) => setQuery(e.target.value)}
+  1424→              placeholder="Sök kurs, kategori eller nyckelord…"
+  1425→              className="h-7 border-0 bg-transparent px-0 shadow-none focus-visible:ring-0 focus-visible:border-0"
+  1426→            />
+  1427→            {query && (
+  1428→              <button
+  1429→                type="button"
+  1430→                onClick={() => setQuery("")}
+  1431→                className="shrink-0 text-xs text-muted-foreground hover:text-foreground"
+  1432→                aria-label="Rensa sökning"
+  1433→              >
+  1434→                Rensa
+  1435→              </button>
+  1436→            )}
+  1437→          </div>
+  1438→        </div>
+  1439→
+  1440→        {/* Category filter tabs */}
+  1441→        <Tabs
+  1442→          value={filter}
+  1443→          onValueChange={(v) => setFilter(v as KmCategory | "ALLA")}
+  1444→          className="mt-4"
+  1445→        >
+  1446→          <div className="-mx-4 overflow-x-auto pb-1 sm:mx-0">
+  1447→            <TabsList className="h-auto w-max gap-1 rounded-lg border border-border bg-transparent p-1">
+  1448→              <TabsTrigger
+  1449→                value="ALLA"
+  1450→                className="rounded-md border border-transparent px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground data-[state=active]:border-gold data-[state=active]:bg-gold data-[state=active]:text-background data-[state=active]:shadow-none whitespace-nowrap"
+  1451→              >
+  1452→                ALLA ({KUNSKAPSMARKNAD_COURSES.length})
+  1453→              </TabsTrigger>
+  1454→              {KM_CATEGORIES.map((cat) => {
+  1455→                const count = KUNSKAPSMARKNAD_COURSES.filter(
+  1456→                  (c) => c.category === cat
+  1457→                ).length;
+  1458→                return (
+  1459→                  <TabsTrigger
+  1460→                    key={cat}
+  1461→                    value={cat}
+  1462→                    className="rounded-md border border-transparent px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground data-[state=active]:border-gold data-[state=active]:bg-gold data-[state=active]:text-background data-[state=active]:shadow-none whitespace-nowrap"
+  1463→                  >
+  1464→                    {cat.toUpperCase()} ({count})
+  1465→                  </TabsTrigger>
+  1466→                );
+  1467→              })}
+  1468→            </TabsList>
+  1469→          </div>
+  1470→        </Tabs>
+  1471→
+  1472→        {/* Course grid */}
+  1473→        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  1474→          {filtered.map((c) => {
+  1475→            const isCompleted = completedKmIds.has(c.id);
+  1476→            const isLocked = isLockedFor(c.level, level);
+  1477→            return (
+  1478→              <KmCourseCard
+  1479→                key={c.id}
+  1480→                course={c}
+  1481→                isCompleted={isCompleted}
+  1482→                isLocked={isLocked}
+  1483→                onStart={() => setActive(c)}
+  1484→              />
+  1485→            );
+  1486→          })}
+  1487→        </div>
+  1488→
+  1489→        {filtered.length === 0 && (
+  1490→          <p className="mt-8 text-center text-sm text-muted-foreground">
+  1491→            Inga kurser matchade din sökning.
+  1492→          </p>
+  1493→        )}
+  1494→      </div>
+  1495→
+  1496→      <KmCourseDialog
+  1497→        course={active}
+  1498→        isCompleted={active ? completedKmIds.has(active.id) : false}
+  1499→        isLocked={active ? isLockedFor(active.level, level) : false}
+  1500→        onClose={() => setActive(null)}
+  1501→        onComplete={() => {
+  1502→          if (active) {
+  1503→            completeCourse(active.id);
+  1504→            addXp(50);
+  1505→          }
+  1506→        }}
+  1507→      />
+  1508→    </section>
+  1509→  );
+  1510→}
+  1511→
+  1512→function KmCourseCard({
+  1513→  course,
+  1514→  isCompleted,
+  1515→  isLocked,
+  1516→  onStart,
+  1517→}: {
+  1518→  course: KmCourse;
+  1519→  isCompleted: boolean;
+  1520→  isLocked: boolean;
+  1521→  onStart: () => void;
+  1522→}) {
+  1523→  return (
+  1524→    <Card
+  1525→      className={cn(
+  1526→        "gap-0 overflow-hidden p-0 py-0 transition-all",
+  1527→        isLocked && !isCompleted && "opacity-70",
+  1528→        isCompleted
+  1529→          ? "border-bull/40"
+  1530→          : "hover:border-gold/40 hover:shadow-md"
+  1531→      )}
+  1532→    >
+  1533→      <div className="p-5">
+  1534→        <div className="flex items-center justify-between gap-2">
+  1535→          <Badge
+  1536→            variant="outline"
+  1537→            className="border-gold/40 bg-gold/5 text-gold"
+  1538→          >
+  1539→            {course.category}
+  1540→          </Badge>
+  1541→          <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+  1542→            <Clock className="h-3 w-3" /> {course.minutes} min
+  1543→          </span>
+  1544→        </div>
+  1545→
+  1546→        <div className="mt-4">
+  1547→          <span className="font-mono text-sm font-semibold text-muted-foreground">
+  1548→            {course.id}
+  1549→          </span>
+  1550→        </div>
+  1551→
+  1552→        <h3 className="mt-1 font-serif text-lg font-bold leading-tight">
+  1553→          {course.title}
+  1554→        </h3>
+  1555→        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+  1556→          {course.summary}
+  1557→        </p>
+  1558→
+  1559→        <div className="mt-4 flex flex-wrap items-center gap-2">
+  1560→          <Badge variant="outline" className="text-muted-foreground">
+  1561→            {LEVEL_LABEL[course.level]}
+  1562→          </Badge>
+  1563→          <HonestyTag kind="metodmal" />
+  1564→          {isCompleted && (
+  1565→            <Badge className="border border-bull/30 bg-bull/15 text-bull">
+  1566→              <Check className="h-3 w-3" /> Klar
+  1567→            </Badge>
+  1568→          )}
+  1569→          {isLocked && !isCompleted && (
+  1570→            <Badge
+  1571→              variant="outline"
+  1572→              className="border-muted-foreground/30 text-muted-foreground"
+  1573→            >
+  1574→              <Lock className="h-3 w-3" /> Kräver {LEVEL_LABEL[course.level]}
+  1575→            </Badge>
+  1576→          )}
+  1577→        </div>
+  1578→      </div>
+  1579→
+  1580→      <div className="border-t border-border bg-muted/30 p-4">
+  1581→        <Button
+  1582→          className={cn(
+  1583→            "w-full",
+  1584→            isCompleted
+  1585→              ? "bg-bull text-background hover:bg-bull/90"
+  1586→              : "bg-gold text-background hover:bg-gold/90"
+  1587→          )}
+  1588→          onClick={onStart}
+  1589→          disabled={isLocked && !isCompleted}
+  1590→        >
+  1591→          {isLocked && !isCompleted ? (
+  1592→            <>
+  1593→              <Lock className="h-4 w-4" /> Låst — kräver{" "}
+  1594→              {LEVEL_LABEL[course.level]}
+  1595→            </>
+  1596→          ) : isCompleted ? (
+  1597→            <>
+  1598→              <Check className="h-4 w-4" /> Repetera kursen
+  1599→            </>
+  1600→          ) : (
+  1601→            <>
+  1602→              Starta <ArrowRight className="ml-1 h-4 w-4" />
+  1603→            </>
+  1604→          )}
+  1605→        </Button>
+  1606→      </div>
+  1607→    </Card>
+  1608→  );
+  1609→}
+  1610→
+  1611→function KmCourseDialog({
+  1612→  course,
+  1613→  isCompleted,
+  1614→  isLocked,
+  1615→  onClose,
+  1616→  onComplete,
+  1617→}: {
+  1618→  course: KmCourse | null;
+  1619→  isCompleted: boolean;
+  1620→  isLocked: boolean;
+  1621→  onClose: () => void;
+  1622→  onComplete: () => void;
+  1623→}) {
+  1624→  return (
+  1625→    <Dialog open={!!course} onOpenChange={(open) => !open && onClose()}>
+  1626→      <DialogContent className="sm:max-w-lg">
+  1627→        {course && (
+  1628→          <>
+  1629→            <DialogHeader>
+  1630→              <div className="flex items-center gap-2">
+  1631→                <Badge
+  1632→                  variant="outline"
+  1633→                  className="border-gold/40 bg-gold/5 text-gold"
+  1634→                >
+  1635→                  {course.category}
+  1636→                </Badge>
+  1637→                <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+  1638→                  <Clock className="h-3 w-3" /> {course.minutes} min
+  1639→                </span>
+  1640→              </div>
+  1641→              <DialogTitle className="mt-2 font-serif text-2xl leading-tight">
+  1642→                <span className="mr-2 font-mono text-base font-semibold text-gold">
+  1643→                  {course.id}
+  1644→                </span>
+  1645→                {course.title}
+  1646→              </DialogTitle>
+  1647→              <DialogDescription className="text-sm leading-relaxed">
+  1648→                {course.summary}
+  1649→              </DialogDescription>
+  1650→            </DialogHeader>
+  1651→
+  1652→            <div className="space-y-4">
+  1653→              <div className="flex flex-wrap items-center gap-2">
+  1654→                <Badge variant="outline">{LEVEL_LABEL[course.level]}</Badge>
+  1655→                <HonestyTag kind="metodmal" />
+  1656→                {isCompleted && (
+  1657→                  <Badge className="border border-bull/30 bg-bull/15 text-bull">
+  1658→                    <Check className="h-3 w-3" /> Redan klar
+  1659→                  </Badge>
+  1660→                )}
+  1661→              </div>
+  1662→
+  1663→              <div className="rounded-md border border-dashed border-border bg-muted/20 p-4 text-center">
+  1664→                <p className="text-xs text-muted-foreground">
+  1665→                  Full kurs öppnas i inlärningsvägen — teori, räkneexempel och
+  1666→                  övning.
+  1667→                </p>
+  1668→              </div>
+  1669→            </div>
+  1670→
+  1671→            <DialogFooter>
+  1672→              {isLocked && !isCompleted ? (
+  1673→                <Button variant="outline" disabled className="w-full">
+  1674→                  <Lock className="h-4 w-4" /> Låst — kräver{" "}
+  1675→                  {LEVEL_LABEL[course.level]}
+  1676→                </Button>
+  1677→              ) : isCompleted ? (
+  1678→                <Button
+  1679→                  variant="outline"
+  1680→                  onClick={onClose}
+  1681→                  className="w-full"
+  1682→                >
+  1683→                  <Check className="h-4 w-4" /> Kursen redan klar
+  1684→                </Button>
+  1685→              ) : (
+  1686→                <Button
+  1687→                  className="w-full bg-gold text-background hover:bg-gold/90"
+  1688→                  onClick={() => {
+  1689→                    onComplete();
+  1690→                    onClose();
+  1691→                  }}
+  1692→                >
+  1693→                  <Check className="h-4 w-4" /> Markera som klar (+50 XP)
+  1694→                </Button>
+  1695→              )}
+  1696→            </DialogFooter>
+  1697→          </>
+  1698→        )}
+  1699→      </DialogContent>
+  1700→    </Dialog>
+  1701→  );
+  1702→}
+  1703→
+  1704→/* ------------------------------------------------------------------ */
+  1705→/* Sub-components — LEVANDE FALLSTUDIER                               */
+  1706→/* ------------------------------------------------------------------ */
+  1707→
+  1708→function FallstudieBlock() {
+  1709→  const { setSection } = useAk1aStore();
+  1710→  const [active, setActive] = React.useState<Fallstudie | null>(null);
+  1711→
+  1712→  return (
+  1713→    <section id="fallstudier" className="border-b border-border">
+  1714→      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+  1715→        <Eyebrow>Levande fallstudier</Eyebrow>
+  1716→        <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+  1717→          LEVANDE FALLSTUDIER
+  1718→        </h2>
+  1719→        <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
+  1720→          5 fall där AKM1-metoden applicerats steg för steg. Samma 19
+  1721→          variabler, olika bolag.
+  1722→        </p>
+  1723→
+  1724→        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  1725→          {FALLSTUDIER.map((f) => (
+  1726→            <Card
+  1727→              key={f.id}
+  1728→              className="flex flex-col gap-0 p-6"
+  1729→            >
+  1730→              <div className="flex items-center gap-3">
+  1731→                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-gold/30 bg-gold/10 text-gold">
+  1732→                  <Briefcase className="h-5 w-5" />
+  1733→                </span>
+  1734→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1735→                  {f.id}
+  1736→                </span>
+  1737→                {f.isPrec ? (
+  1738→                  <Badge className="ml-auto border border-bull/30 bg-bull/15 text-bull">
+  1739→                    <Check className="h-3 w-3" /> Live
+  1740→                  </Badge>
+  1741→                ) : (
+  1742→                  <HonestyTag kind="metodmal" className="ml-auto" />
+  1743→                )}
+  1744→              </div>
+  1745→              <p className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+  1746→                {f.company}
+  1747→              </p>
+  1748→              <h3 className="mt-1 font-serif text-lg font-bold leading-tight">
+  1749→                {f.title}
+  1750→              </h3>
+  1751→              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+  1752→                {f.shortDesc}
+  1753→              </p>
+  1754→              <div className="mt-4">
+  1755→                <Button
+  1756→                  className="w-full bg-gold text-background hover:bg-gold/90"
+  1757→                  onClick={() => {
+  1758→                    if (f.isPrec) {
+  1759→                      setSection("prec");
+  1760→                    } else {
+  1761→                      setActive(f);
+  1762→                    }
+  1763→                  }}
+  1764→                >
+  1765→                  Öppna <ArrowRight className="ml-1 h-4 w-4" />
+  1766→                </Button>
+  1767→              </div>
+  1768→            </Card>
+  1769→          ))}
+  1770→        </div>
+  1771→      </div>
+  1772→
+  1773→      <Dialog open={!!active} onOpenChange={(open) => !open && setActive(null)}>
+  1774→        <DialogContent className="sm:max-w-lg">
+  1775→          {active && (
+  1776→            <>
+  1777→              <DialogHeader>
+  1778→                <Badge
+  1779→                  variant="outline"
+  1780→                  className="border-gold/40 bg-gold/5 text-gold w-fit"
+  1781→                >
+  1782→                  {active.id}
+  1783→                </Badge>
+  1784→                <DialogTitle className="mt-2 font-serif text-2xl leading-tight">
+  1785→                  {active.company}
+  1786→                </DialogTitle>
+  1787→                <DialogDescription className="text-sm font-semibold text-foreground">
+  1788→                  {active.title}
+  1789→                </DialogDescription>
+  1790→              </DialogHeader>
+  1791→              <div className="space-y-4">
+  1792→                <div className="flex items-center gap-2">
+  1793→                  <HonestyTag kind="metodmal" />
+  1794→                  <span className="text-[11px] uppercase tracking-wider text-muted-foreground">
+  1795→                    Full fallstudie under utveckling
+  1796→                  </span>
+  1797→                </div>
+  1798→                <p className="text-sm leading-relaxed text-foreground">
+  1799→                  {active.teaser}
+  1800→                </p>
+  1801→                <div className="rounded-md border border-dashed border-border bg-muted/20 p-4 text-center">
+  1802→                  <p className="text-xs text-muted-foreground">
+  1803→                    Full 99-sidig fallstudie publiceras framöver. Prenumerera på
+  1804→                    AK1A-nyhetsbrevet för meddelande när den öppnar.
+  1805→                  </p>
+  1806→                </div>
+  1807→              </div>
+  1808→              <DialogFooter>
+  1809→                <Button
+  1810→                  variant="outline"
+  1811→                  onClick={() => setActive(null)}
+  1812→                  className="w-full"
+  1813→                >
+  1814→                  Stäng
+  1815→                </Button>
+  1816→              </DialogFooter>
+  1817→            </>
+  1818→          )}
+  1819→        </DialogContent>
+  1820→      </Dialog>
+  1821→    </section>
+  1822→  );
+  1823→}
+  1824→
+  1825→/* ------------------------------------------------------------------ */
+  1826→/* Sub-components — MEGA NIVÅER 1-100                                 */
+  1827→/* ------------------------------------------------------------------ */
+  1828→
+  1829→function MegaNivaerBlock() {
+  1830→  const { progress } = useAk1aStore();
+  1831→  const currentLevel = getMegaLevel(progress.xp);
+  1832→
+  1833→  return (
+  1834→    <section id="mega-nivaer" className="border-b border-border bg-muted/20">
+  1835→      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+  1836→        <Eyebrow>Mega nivåer 1–100</Eyebrow>
+  1837→        <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+  1838→          MEGA NIVÅER 1–100
+  1839→        </h2>
+  1840→        <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
+  1841→          6 nivåer från första aktien till master-analytiker. Varje nivå har
+  1842→          en milstolpe och en prövning.
+  1843→        </p>
+  1844→
+  1845→        <div className="mt-6 flex flex-wrap items-center gap-3 rounded-lg border border-gold/30 bg-gold/[0.04] p-4">
+  1846→          <TrendingUp className="h-5 w-5 shrink-0 text-gold" />
+  1847→          <div>
+  1848→            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1849→              Din nuvarande nivå
+  1850→            </p>
+  1851→            <p className="font-serif text-2xl font-bold leading-none">
+  1852→              Nivå {currentLevel}
+  1853→              <span className="ml-2 text-sm font-normal text-muted-foreground">
+  1854→                · {progress.xp.toLocaleString("sv-SE")} XP
+  1855→              </span>
+  1856→            </p>
+  1857→          </div>
+  1858→          <HonestyTag kind="matt" className="ml-auto" />
+  1859→        </div>
+  1860→
+  1861→        {/* Vertical stepped progression */}
+  1862→        <div className="mt-10 space-y-4">
+  1863→          {MEGA_NIVAER.map((niva) => {
+  1864→            const isUnlocked = currentLevel >= niva.num;
+  1865→            const isCurrent = currentLevel === niva.num;
+  1866→            const isCompleted = currentLevel > niva.num;
+  1867→            return (
+  1868→              <div
+  1869→                key={niva.num}
+  1870→                className={cn(
+  1871→                  "flex flex-col gap-4 rounded-lg border p-5 sm:flex-row sm:items-start sm:gap-6",
+  1872→                  isUnlocked
+  1873→                    ? "border-gold/40 bg-card"
+  1874→                    : "border-border bg-muted/30 opacity-75"
+  1875→                )}
+  1876→              >
+  1877→                {/* Numbered circle */}
+  1878→                <div className="flex items-center gap-3 sm:flex-col sm:items-center sm:gap-1">
+  1879→                  <span
+  1880→                    className={cn(
+  1881→                      "inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 font-serif text-xl font-bold",
+  1882→                      isCompleted
+  1883→                        ? "border-bull bg-bull/15 text-bull"
+  1884→                        : isCurrent
+  1885→                        ? "border-gold bg-gold text-background"
+  1886→                        : isUnlocked
+  1887→                        ? "border-gold/40 bg-gold/10 text-gold"
+  1888→                        : "border-border bg-muted text-muted-foreground"
+  1889→                    )}
+  1890→                  >
+  1891→                    {isCompleted ? <Check className="h-6 w-6" /> : niva.num}
+  1892→                  </span>
+  1893→                  <span
+  1894→                    className={cn(
+  1895→                      "text-[10px] font-semibold uppercase tracking-[0.18em]",
+  1896→                      isUnlocked ? "text-gold" : "text-muted-foreground"
+  1897→                    )}
+  1898→                  >
+  1899→                    Nivå {niva.num}
+  1900→                  </span>
+  1901→                </div>
+  1902→
+  1903→                {/* Content */}
+  1904→                <div className="flex-1">
+  1905→                  <div className="flex flex-wrap items-center gap-2">
+  1906→                    <h3 className="font-serif text-xl font-bold leading-tight">
+  1907→                      {niva.title}
+  1908→                    </h3>
+  1909→                    {isCurrent && (
+  1910→                      <Badge className="border border-gold/30 bg-gold/15 text-gold">
+  1911→                        Du är här
+  1912→                      </Badge>
+  1913→                    )}
+  1914→                    {isCompleted && (
+  1915→                      <Badge className="border border-bull/30 bg-bull/15 text-bull">
+  1916→                        <Check className="h-3 w-3" /> Klar
+  1917→                      </Badge>
+  1918→                    )}
+  1919→                    {!isUnlocked && (
+  1920→                      <Badge
+  1921→                        variant="outline"
+  1922→                        className="border-muted-foreground/30 text-muted-foreground"
+  1923→                      >
+  1924→                        <Lock className="h-3 w-3" /> Låst
+  1925→                      </Badge>
+  1926→                    )}
+  1927→                  </div>
+  1928→                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+  1929→                    <span className="font-semibold uppercase tracking-wider text-foreground/80">
+  1930→                      Milstolpe:
+  1931→                    </span>{" "}
+  1932→                    {niva.milstolpe}
+  1933→                  </p>
+  1934→                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+  1935→                    <span className="font-semibold uppercase tracking-wider text-foreground/80">
+  1936→                      Prövning:
+  1937→                    </span>{" "}
+  1938→                    {niva.provning}
+  1939→                  </p>
+  1940→                  {!isUnlocked && (
+  1941→                    <div className="mt-3 flex items-center gap-2">
+  1942→                      <HonestyTag kind="metodmal" />
+  1943→                      <span className="text-[11px] text-muted-foreground">
+  1944→                        Låses upp vid{" "}
+  1945→                        {niva.xpThreshold === Number.POSITIVE_INFINITY
+  1946→                          ? "max XP"
+  1947→                          : `${niva.xpThreshold.toLocaleString("sv-SE")} XP`}
+  1948→                      </span>
+  1949→                    </div>
+  1950→                  )}
+  1951→                </div>
+  1952→              </div>
+  1953→            );
+  1954→          })}
+  1955→        </div>
+  1956→      </div>
+  1957→    </section>
+  1958→  );
+  1959→}
+  1960→
+  1961→/* ------------------------------------------------------------------ */
+  1962→/* Sub-components — BELÖNINGAR                                        */
+  1963→/* ------------------------------------------------------------------ */
+  1964→
+  1965→function BeloningarBlock() {
+  1966→  const { progress, precSection } = useAk1aStore();
+  1967→
+  1968→  const detectCtx = {
+  1969→    completedCourses: progress.completedCourses,
+  1970→    xp: progress.xp,
+  1971→    streak: progress.streak,
+  1972→    quizzesPassed: progress.quizzesPassed,
+  1973→    flashcardsViewed: progress.flashcardsViewed,
+  1974→    precSection,
+  1975→  };
+  1976→
+  1977→  const unlockedCount = BADGES.filter(
+  1978→    (b) => b.auto && b.detect(detectCtx)
+  1979→  ).length;
+  1980→
+  1981→  return (
+  1982→    <section id="beloningar" className="border-b border-border">
+  1983→      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+  1984→        <Eyebrow>Belöningar</Eyebrow>
+  1985→        <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+  1986→          BELÖNINGAR
+  1987→        </h2>
+  1988→        <p className="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
+  1989→          14 badges. Inte för att visa upp — för att minnas vad du lärt dig.
+  1990→        </p>
+  1991→
+  1992→        <div className="mt-6 flex flex-wrap items-center gap-3 rounded-lg border border-gold/30 bg-gold/[0.04] p-4">
+  1993→          <Award className="h-5 w-5 shrink-0 text-gold" />
+  1994→          <div>
+  1995→            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1996→              Upplåsta badges
+  1997→            </p>
+  1998→            <p className="font-serif text-2xl font-bold leading-none">
+  1999→              {unlockedCount}
+  2000→              <span className="text-sm font-normal text-muted-foreground">
+
+[showing lines 1-2000 of 2143; use offset=2001 with limit to continue reading]

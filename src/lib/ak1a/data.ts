@@ -4,6 +4,8 @@ import type { Level } from "@/lib/ak1a-store";
 export const NAV_SECTIONS = [
   { id: "hem", label: "HEM" },
   { id: "prec", label: "PREC-ANALYS" },
+  { id: "analyser", label: "ANALYSER" },
+  { id: "aktier", label: "AKTIER" },
   { id: "kurser", label: "KURSER" },
   { id: "labb", label: "LABB" },
   { id: "styrelse", label: "STYRELSE" },
@@ -19,7 +21,7 @@ export const FOOTER_NAV = [
   { label: "Labb (case + faror + historia)", section: "labb" as const },
   { label: "Meta-system (organ + visioner)", section: "om-oss" as const },
   { label: "AI-organ styrelse (möten)", section: "styrelse" as const },
-  { label: "Utbildning & Medlemskap", section: "kurser" as const },
+  { label: "Utbildning & Medlemskap", section: "utbildning" as const },
   { label: "AKM1 Verktyg", section: "labb" as const },
   { label: "Webinarier", section: "kurser" as const },
   { label: "Logga in / Registrera", section: "om-oss" as const },

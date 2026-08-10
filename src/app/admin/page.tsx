@@ -23,6 +23,7 @@ import {
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { Ak1aLogo, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
 import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
+import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -615,7 +616,7 @@ export default function AdminDashboard() {
 
           {/* AI-organ styrelse — admin only */}
           <TabsContent value="ai-organ" className="mt-6">
-            <Card className="p-5">
+            <Card className="p-5 mb-4">
               <div className="flex items-center gap-2">
                 <Brain className="h-5 w-5 text-gold" />
                 <h3 className="font-serif text-lg font-bold">AI-organ styrelse (backend)</h3>
@@ -640,6 +641,9 @@ export default function AdminDashboard() {
                 </Button>
               </div>
             </Card>
+
+            {/* Autonomt system — AI-organen bygger vidare kontinuerligt */}
+            <AutonomOrganPanel />
           </TabsContent>
         </Tabs>
 

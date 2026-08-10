@@ -1557,3 +1557,65 @@ Stage Summary:
 - Admin kommer åt STYROLSEN via: admin dashboard → AI-organ tab → "Öppna AI-organ styrelse"
 - Kundupplevelse: kunden ser bara sidor som är till deras nytta — ingen backend-förvirring
 - Harmoni: strategin visas öppet (STRATEGI), men AI-organ-mötena är backend (STYRELSE)
+
+---
+Task ID: 52-AUTONOM
+Agent: main (Z.ai Code)
+Task: Autonomt AI-organ-system + omskrivning av ord för attrahera kunder
+
+Work Log:
+- Konvenerade AI-organen (/api/styrelse/mote) → beslut: "Datadriven kommunikationsstrategi med autonom förbättring" (MEDEL konfidens, 7 viewpoints)
+- AI-organens feedback: datadrivet, MÄTT-baserat, ej bara omskrivning
+- Skapade 3 nya API:er för AI-organ-systemet:
+  1. POST /api/styrelse/autonom — AI-organen analyserar kundaktivitet + föreslår förbättringar
+  2. POST /api/styrelse/kommunikation — AI-organen skriver om text med DNA-bevarande
+  3. POST /api/styrelse/marknadsforing — AI-organen skapar kampanjer baserat på Zero to One etc.
+- Varje API:
+  • Använder z-ai-web-dev-sdk (LLM) för AI-organ-beslut
+  • Sparar som SystemEvent i databasen (spårbart, MÄTT)
+  • Returnerar JSON med rationale + successMetric
+- Skapade autonom-loop.sh (cron-skript, körs var 6:e timme):
+  • 00:00 — kundupplevelse
+  • 06:00 — branding
+  • 12:00 — marketing
+  • 18:00 — innehåll
+- Skapade AutonomOrganPanel-komponent (~450 rader):
+  • Admin-UI med 3 tabs: Autonoma förslag, Kampanjer, Omskrivningar
+  • Knappar för att manuellt köra autonomt (Kundupplevelse/Branding/Marketing/Innehåll)
+  • Knappar för att skapa kampanjer (hero/email/social)
+  • ScrollArea med proposals/campaigns/rewrites
+  • Visar organ, data-snapshot, prioritet, rationale, success metric
+- Integrerade AutonomOrganPanel i admin dashboard (AI-organ tab)
+- Testade alla 3 API:er med curl:
+  • /api/styrelse/autonom → Σ-organet föreslog 3 förbättringar (10 sessioner, 70 aktiviteter analyserade)
+  • /api/styrelse/marknadsforing → hero-kampanj "Verifierbarhet som metod" (Zero to One, HÖG confidence)
+  • /api/styrelse/kommunikation → omskrivning med 5 changes, HÖG confidence
+- Omskrev hero-texter på alla kund-synliga sidor för attrahera fler kunder:
+  • HOME: "Sluta lita på banker. Lär dig metoden." (tidigare: "Sveriges enda institutionella metodik")
+  • ANALYSER: "Analyser du kan verifiera själv." (tidigare: "En analys per månad. 99 sidor.")
+  • AKTIER: "Aktier med öppen metodik." (tidigare: "Alla aktier i AK1A-ekosystemet")
+  • KURSER: "Lär dig tänka som en analytiker." (tidigare: "Komplett kunskapsmarknad")
+  • LABB: "Verifiera själv." (tidigare: "Din analys-konsol")
+  • OM OSS: "Vi skapade kategorin. Andra kopierar." (tidigare: "Vi bygger Sveriges enda...")
+- Agent Browser verifierat:
+  • Vanlig besökare: STYROLSE ej i nav, nya hero-texter syns ✓
+  • Admin inloggad: AI-organ tab → AutonomOrganPanel syns med 3 tabs ✓
+  • Autonom proposal syns (1 förslag från Σ-organet om hem-sidan) ✓
+  • Knappar för Kundupplevelse/Branding/Marketing/Innehåll syns ✓
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- AUTONOMT AI-ORGAN-SYSTEM BYGGT: 3 API:er + cron-skript + admin-panel
+- AI-organen arbetar kontinuerligt (var 6:e timme) med att:
+  1. Analysera kundaktivitet (data-driven, MÄTT)
+  2. Föreslå förbättringar av kundupplevelsen
+  3. Skapa strategiska kampanjer (Zero to One, Blue Ocean, Positioning)
+  4. Skriva om text med DNA-bevarande tonality
+- Alla beslut sparas i databasen (SystemEvent) — fullt spårbart
+- HERO-TEXTER OMSKRIVNA på 6 sidor för attrahera fler kunder:
+  • Mer kundcentrerat ("du", "själv", "verifiera")
+  • Bevarar DNA (verifierbarhet, kognitiv suveränitet, anti-bank)
+  • Aktivt före passivt, konkret före abstrakt
+- Kundupplevelse: kunden ser bara sidor till deras nytta (9 sektioner)
+- Admin ser: AI-organ styrelse + autonom panel med proposals/campaigns/rewrites
+- Systemet bygger vidare autonomt — AI-organen lär och förbättrar kontinuerligt

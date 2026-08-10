@@ -627,12 +627,12 @@ export function KurserSection() {
           <div className="max-w-3xl">
             <Eyebrow>AK1A Kurser</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Komplett kunskapsmarknad
+              Lär dig tänka som{" "}
+              <span className="text-gold">en analytiker.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              270 kurser totalt. AKM1:s 20 variabler, kunskapsmarknad,
-              mega-nivåer, belöningar och analytiker-insikter — allt på ett
-              ställe.
+              225 djupa kurser. AKM1:s 20 variabler, teknisk analys, riskhantering —
+              allt du behöver för att förstå en aktie från grunden.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button

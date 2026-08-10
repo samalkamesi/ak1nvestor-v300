@@ -659,10 +659,12 @@ export function LabbSection() {
           <div className="max-w-3xl">
             <Eyebrow>LABBET</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Din analys-konsol.
+              Verifiera{" "}
+              <span className="text-gold">själv.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Bloomberg för svenska retail-investerare. Alla verktyg. Ett fönster.
+              Öppna AKM1-calculatorn och poängsätt ett bolag själv.
+              Samma verktyg, samma metodik — inga svarta lådor.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button

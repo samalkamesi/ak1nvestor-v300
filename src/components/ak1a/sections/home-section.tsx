@@ -45,11 +45,13 @@ export function HomeSection() {
           <div className="max-w-3xl">
             <Eyebrow>AK1A Research Lab</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Sveriges enda institutionella metodik,
-              <span className="text-gold"> byggd för privatpersoner.</span>
+              Sluta lita på banker.
+              <br />
+              <span className="text-gold">Lär dig metoden.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Djupare än en blogg. Ärligare än en bank. Snabbare än en utbildning.
+              Sveriges enda institutionella metodik, byggd för dig. 99-sidiga analyser
+              du kan verifiera själv — inga åsikter, bara metod.
             </p>
 
             {/* Strategisk DNA-stapel — Zero to One + Positioning */}

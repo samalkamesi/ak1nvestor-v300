@@ -103,12 +103,13 @@ export function OmOssSection() {
           <div className="max-w-3xl">
             <Eyebrow>Forskningsinstitutet</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Vi bygger Sveriges enda institutionella metodik
-              <span className="text-gold"> för privatpersoner.</span>
+              Vi skapade kategorin.
+              <br />
+              <span className="text-gold">Andra kopierar.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              AK1A Research Lab är inte en app. Det är en metodik som råkar ha
-              ett gränssnitt.
+              AK1A Research Lab är inte en app — det är en metodik som råkar ha ett gränssnitt.
+              Sveriges enda institutionella analys byggd för dig.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button

@@ -310,14 +310,12 @@ export function AnalyserSection() {
           <div className="max-w-3xl">
             <Eyebrow>ANALYSER</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              En analys per månad.{" "}
-              <span className="text-gold">99 sidor.</span>{" "}
-              Ingen kompromiss.
+              Analyser du kan{" "}
+              <span className="text-gold">verifiera själv.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              Vi publicerar inte många analyser — vi publicerar djupa. Varje
-              99-sidig rapport är en institutionell granskning i svensk
-              språkdräkt.
+              En analys per månad. 99 sidor. Varje siffra spårbar till offentlig källa.
+              Du behöver inte lita på oss — du kan återskapa det.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button

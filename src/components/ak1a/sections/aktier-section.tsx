@@ -246,7 +246,8 @@ export function AktierSection() {
           <div className="max-w-3xl">
             <Eyebrow>◆ AKTIER ◆</Eyebrow>
             <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
-              Alla aktier i AK1A-ekosystemet.
+              Aktier med{" "}
+              <span className="text-gold">öppen metodik.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
               Sex svenska bolag. En gemensam metodik. Här ser du snabbt

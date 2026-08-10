@@ -8,6 +8,7 @@ export const NAV_SECTIONS = [
   { id: "aktier", label: "AKTIER" },
   { id: "kurser", label: "KURSER" },
   { id: "labb", label: "LABB" },
+  { id: "fas3", label: "FAS 3 AI" },
   { id: "styrelse", label: "STYRELSE" },
   { id: "strategi", label: "STRATEGI" },
   { id: "om-oss", label: "OM OSS" },

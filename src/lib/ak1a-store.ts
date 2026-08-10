@@ -3,7 +3,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export type SectionId = "hem" | "prec" | "kurser" | "labb" | "styrelse" | "analyser" | "aktier" | "utbildning" | "om-oss" | "portal" | "strategi";
+export type SectionId = "hem" | "prec" | "kurser" | "labb" | "styrelse" | "analyser" | "aktier" | "utbildning" | "om-oss" | "portal" | "strategi" | "fas3";
 export type Level = "nyborjare" | "intermediar" | "avancerad";
 
 export interface QuizProgress {

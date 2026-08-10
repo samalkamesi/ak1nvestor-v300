@@ -1,0 +1,68 @@
+{
+  "ticker": "PREC.ST",
+  "analysisDate": "2026-08-08",
+  "akm1Score": 38,
+  "akm1Level": "SVAG-MEDL",
+  "recommendation": "FÖRSIKTIGT KÖP (spekulativt)",
+  "recommendationScale": 2,
+  "priceTarget": "Base: 1,40 SEK (+63%) post-emission",
+  "source": "3 PDF-analyser (nybörjar/intermediär/avancerad) — verifierad 2026-08-08",
+  "indicators": {
+    "V01": {"name": "Försäljningstillväxt", "score": 2, "signal": "bear", "note": "77,8 MSEK (Precise). Proforma 156 MSEK med FPC. Q1 svagt (-14,5%). Fusion förändrar allt."},
+    "V02": {"name": "ARR-tillväxt", "score": 3, "signal": "neutral", "note": "Licensavgift + royalty per såld enhet. BioMatch BioEnhance + EastCoast moln."},
+    "V03": {"name": "Intäktsdiversifiering", "score": 3, "signal": "neutral", "note": "2 affärsområden: BioMatch 72% + EastCoast 28%. Kunder: Google, Huawei, Lenovo, Xiaomi."},
+    "V04": {"name": "P/S", "score": 3, "signal": "neutral", "note": "P/S ~1,6 (post-emission). Rimligt för tech med 82,4% bruttomarginal."},
+    "V05": {"name": "P/B", "score": 2, "signal": "bear", "note": "Emissionen späder ut ~47,8%. Post-emission P/B ~2,2."},
+    "V06": {"name": "EV/EBITDA", "score": 2, "signal": "bear", "note": "EBITDA negativ (~-19 MSEK proforma). Synergier 45 MSEK/år målsätts."},
+    "V07": {"name": "Bruttomarginal", "score": 5, "signal": "bull", "note": "82,4% (BioMatch)! EastCoast ~48%. Vägd ~72%. Stark mjukvarumarginal."},
+    "V08": {"name": "EBITDA-marginal", "score": 2, "signal": "bear", "note": "Negativ men synergimål 45 MSEK/år kan vända till positiv inom 12 mån."},
+    "V09": {"name": "ROE", "score": 1, "signal": "bear", "note": "Negativ. -98,9% från topp 2015. Men fusion + synergier kan vända."},
+    "V10": {"name": "Skuldsättningsgrad", "score": 5, "signal": "bull", "note": "Låg skuldsättning. Emission 110 MSEK stärker balansräkningen."},
+    "V11": {"name": "Likviditet", "score": 4, "signal": "bull", "note": "Post-emission: ~110 MSEK nytt kapital + befintlig kassa. Stark likviditet."},
+    "V12": {"name": "Intäktsstabilitet", "score": 2, "signal": "bear", "note": "Q4 toppar årligen. Lågprisaktie med ±8% daglig svängning. -55,7% sedan 20/7."},
+    "V13": {"name": "Patent/IP", "score": 4, "signal": "bull", "note": "BioMatch-algoritmer + FPC:s sensorpatent. Kombinerad IP-portfölj stark."},
+    "V14": {"name": "Varumärke", "score": 3, "signal": "neutral", "note": "Känt i nischen (biometri). Inte bland allmänhet. 'Penny stock' image."},
+    "V15": {"name": "Nätverkseffekter", "score": 3, "signal": "neutral", "note": "800+ kunder. Aadhaar/UIDAI (1,3 miljarder användare). Viss plattformseffekt."},
+    "V16": {"name": "Produktlanseringar", "score": 4, "signal": "bull", "note": "Palm Access Pro (2026-03-25). Xiaomis kassaskåp (2025-01-09). Kontinuerlig innovation."},
+    "V17": {"name": "Avtal/Partnerskap", "score": 4, "signal": "bull", "note": "Fusion med FPC (ärkerivalen!). Google, Huawei, Lenovo, Xiaomi, Aadhaar/UIDAI."},
+    "V18": {"name": "Regulatoriska", "score": 4, "signal": "bull", "note": "Biometri ersätter lösenord: mobiler, bilar, betalkort, nationella ID. Bransch växer ~12%/år."},
+    "V19": {"name": "Kapitalförbränning", "score": 3, "signal": "neutral", "note": "Emission 110 MSEK säkrar drift. EBITDA -19 MSEK proforma, men synergier 45 MSEK/år målsätts."},
+    "V20": {"name": "Återköp", "score": 1, "signal": "bear", "note": "Inga återköp — emission istället. Kapital behövs för fusion + integration."}
+  },
+  "waveSummary": {
+    "impulse": ["V07", "V10", "V11", "V13", "V16", "V17", "V18"],
+    "correction": ["V01", "V05", "V06", "V08", "V09", "V12", "V20"],
+    "base": ["V02", "V03", "V04", "V14", "V15", "V19"],
+    "overallBias": "BEARISH med BULLISH kärna — Special Situation",
+    "megaTrend": "Binär utgång: antingen konsoliderar PREC+FPC till nordisk biometri-ledare med 45 MSEK synergier, eller urholkad av konkurrens och utspädning. 2015→2023 föll aktien 98,9%. Fusion 2026 är strukturhändelse som kan starta ny cykel. ATL 0,908 (nov 2023) är sista tekniska fästningen."
+  },
+  "scenarios": {
+    "bull": {"probability": "10%", "target": "2,03 SEK (+136%)", "description": "Synergier levererar 45+ MSEK, EBITDA vänder positivt, branschtillväxt 12%/år driver intäkter"},
+    "base": {"probability": "45%", "target": "1,40 SEK (+63%)", "description": "Emission genomförs (91% garanterad), integration pågår, första synergier syns Q4 2026"},
+    "bear": {"probability": "45%", "target": "0,93 SEK (+8%)", "description": "Emissionsdynamik pressar mot 0,82-ankaret, integration försenas, utspädning värderas"}
+  },
+  "priceLevels": {
+    "teckningskurs_ankare": "0,82 SEK",
+    "nu": "0,86 SEK (2026-08-07)",
+    "ATL": "0,908 SEK (nov 2023)",
+    "TERP": "1,27 SEK",
+    "motstand_1": "1,40 SEK",
+    "motstand_2": "1,66-1,75 SEK (ex-rätt-justerat)",
+    "bull_target": "2,03 SEK"
+  },
+  "keyEvents": [
+    {"date": "2026-07-20", "event": "Fusion FPC registrerad + emissionsvillkor fastställda"},
+    {"date": "2026-07-24", "event": "Ex-rätt avverkad"},
+    {"date": "2026-08-07", "event": "Sista handelsdag TR (teckningsrätter)"},
+    {"date": "2026-08-12", "event": "Teckningsslut emission"},
+    {"date": "2026-08-13", "event": "Emissionsutfall"},
+    {"date": "2026-08-18", "event": "BTA-handel avslutas"},
+    {"date": "2026-08-26", "event": "Q2-rapport 2026"},
+    {"date": "2026-09-11", "event": "Ersättningsoptioner teckning start"},
+    {"date": "2026-10-02", "event": "Ersättningsoptioner teckning slut"}
+  ],
+  "businessAreas": [
+    {"name": "BioMatch BioEnhance", "revenue": "56,4 MSEK (72%)", "margin": "82,4%", "description": "Algoritmer för fingeravtryck + bildförbättring + experttjänster + syntetisk data"},
+    {"name": "EastCoast", "revenue": "21,4 MSEK (28%)", "margin": "~48%", "description": "Moln-besökshantering, marknadsledande i Norden"}
+  ]
+}

@@ -16,17 +16,61 @@
       "exchange": "Nasdaq Stockholm (Large Cap)",
       "sector": "Tillverkning / Personbilar",
       "sections": [
-        { "del": "0", "title": "Pärm & Innehåll", "pages": "1-3" },
-        { "del": "I", "title": "Ekosystem-meddelande & Ramverk", "pages": "4-12" },
-        { "del": "II", "title": "Teknisk: Mikro-horizont", "pages": "13-19" },
-        { "del": "III", "title": "Teknisk: Kort-horizont", "pages": "20-26" },
-        { "del": "IV", "title": "Teknisk: Medellångsikt-horizont", "pages": "27-33" },
-        { "del": "V", "title": "Teknisk: Långsikt-horizont", "pages": "34-40" },
-        { "del": "VI", "title": "Teknisk: Mega-horizont", "pages": "41-47" },
-        { "del": "VII", "title": "Fundamental våganalys", "pages": "48-59" },
-        { "del": "VIII", "title": "Scenarier: Bull / Base / Bear", "pages": "60-67" },
-        { "del": "IX", "title": "Risker", "pages": "68-74" },
-        { "del": "X", "title": "Rekommendation & Strategi", "pages": "75-82" }
+        {
+          "del": "0",
+          "title": "Pärm & Innehåll",
+          "pages": "1-3"
+        },
+        {
+          "del": "I",
+          "title": "Ekosystem-meddelande & Ramverk",
+          "pages": "4-12"
+        },
+        {
+          "del": "II",
+          "title": "Teknisk: Mikro-horizont",
+          "pages": "13-19"
+        },
+        {
+          "del": "III",
+          "title": "Teknisk: Kort-horizont",
+          "pages": "20-26"
+        },
+        {
+          "del": "IV",
+          "title": "Teknisk: Medellångsikt-horizont",
+          "pages": "27-33"
+        },
+        {
+          "del": "V",
+          "title": "Teknisk: Långsikt-horizont",
+          "pages": "34-40"
+        },
+        {
+          "del": "VI",
+          "title": "Teknisk: Mega-horizont",
+          "pages": "41-47"
+        },
+        {
+          "del": "VII",
+          "title": "Fundamental våganalys",
+          "pages": "48-59"
+        },
+        {
+          "del": "VIII",
+          "title": "Scenarier: Bull / Base / Bear",
+          "pages": "60-67"
+        },
+        {
+          "del": "IX",
+          "title": "Risker",
+          "pages": "68-74"
+        },
+        {
+          "del": "X",
+          "title": "Rekommendation & Strategi",
+          "pages": "75-82"
+        }
       ]
     },
     {
@@ -45,17 +89,61 @@
       "exchange": "Nasdaq Stockholm (Large Cap)",
       "sector": "Tillverkning / Personbilar",
       "sections": [
-        { "del": "0", "title": "Pärm & Innehåll", "pages": "1-3" },
-        { "del": "I", "title": "Ekosystem-meddelande & Ramverk", "pages": "4-12" },
-        { "del": "II", "title": "Teknisk: Mikro-horizont", "pages": "13-19" },
-        { "del": "III", "title": "Teknisk: Kort-horizont", "pages": "20-26" },
-        { "del": "IV", "title": "Teknisk: Medellångsikt-horizont", "pages": "27-33" },
-        { "del": "V", "title": "Teknisk: Långsikt-horizont", "pages": "34-40" },
-        { "del": "VI", "title": "Teknisk: Mega-horizont", "pages": "41-47" },
-        { "del": "VII", "title": "Fundamental våganalys", "pages": "48-59" },
-        { "del": "VIII", "title": "Scenarier: Bull / Base / Bear", "pages": "60-67" },
-        { "del": "IX", "title": "Risker", "pages": "68-74" },
-        { "del": "X", "title": "Rekommendation & Strategi", "pages": "75-82" }
+        {
+          "del": "0",
+          "title": "Pärm & Innehåll",
+          "pages": "1-3"
+        },
+        {
+          "del": "I",
+          "title": "Ekosystem-meddelande & Ramverk",
+          "pages": "4-12"
+        },
+        {
+          "del": "II",
+          "title": "Teknisk: Mikro-horizont",
+          "pages": "13-19"
+        },
+        {
+          "del": "III",
+          "title": "Teknisk: Kort-horizont",
+          "pages": "20-26"
+        },
+        {
+          "del": "IV",
+          "title": "Teknisk: Medellångsikt-horizont",
+          "pages": "27-33"
+        },
+        {
+          "del": "V",
+          "title": "Teknisk: Långsikt-horizont",
+          "pages": "34-40"
+        },
+        {
+          "del": "VI",
+          "title": "Teknisk: Mega-horizont",
+          "pages": "41-47"
+        },
+        {
+          "del": "VII",
+          "title": "Fundamental våganalys",
+          "pages": "48-59"
+        },
+        {
+          "del": "VIII",
+          "title": "Scenarier: Bull / Base / Bear",
+          "pages": "60-67"
+        },
+        {
+          "del": "IX",
+          "title": "Risker",
+          "pages": "68-74"
+        },
+        {
+          "del": "X",
+          "title": "Rekommendation & Strategi",
+          "pages": "75-82"
+        }
       ]
     },
     {
@@ -74,47 +162,166 @@
       "exchange": "Nasdaq Stockholm (Large Cap)",
       "sector": "Tillverkning / Personbilar",
       "sections": [
-        { "del": "0", "title": "Pärm & Innehåll", "pages": "1-3" },
-        { "del": "I", "title": "Ekosystem-meddelande & Ramverk", "pages": "4-12" },
-        { "del": "II", "title": "Teknisk: Mikro-horizont", "pages": "13-19" },
-        { "del": "III", "title": "Teknisk: Kort-horizont", "pages": "20-26" },
-        { "del": "IV", "title": "Teknisk: Medellångsikt-horizont", "pages": "27-33" },
-        { "del": "V", "title": "Teknisk: Långsikt-horizont", "pages": "34-40" },
-        { "del": "VI", "title": "Teknisk: Mega-horizont", "pages": "41-47" },
-        { "del": "VII", "title": "Fundamental våganalys", "pages": "48-59" },
-        { "del": "VIII", "title": "Scenarier: Bull / Base / Bear", "pages": "60-67" },
-        { "del": "IX", "title": "Risker", "pages": "68-74" },
-        { "del": "X", "title": "Rekommendation & Strategi", "pages": "75-82" }
+        {
+          "del": "0",
+          "title": "Pärm & Innehåll",
+          "pages": "1-3"
+        },
+        {
+          "del": "I",
+          "title": "Ekosystem-meddelande & Ramverk",
+          "pages": "4-12"
+        },
+        {
+          "del": "II",
+          "title": "Teknisk: Mikro-horizont",
+          "pages": "13-19"
+        },
+        {
+          "del": "III",
+          "title": "Teknisk: Kort-horizont",
+          "pages": "20-26"
+        },
+        {
+          "del": "IV",
+          "title": "Teknisk: Medellångsikt-horizont",
+          "pages": "27-33"
+        },
+        {
+          "del": "V",
+          "title": "Teknisk: Långsikt-horizont",
+          "pages": "34-40"
+        },
+        {
+          "del": "VI",
+          "title": "Teknisk: Mega-horizont",
+          "pages": "41-47"
+        },
+        {
+          "del": "VII",
+          "title": "Fundamental våganalys",
+          "pages": "48-59"
+        },
+        {
+          "del": "VIII",
+          "title": "Scenarier: Bull / Base / Bear",
+          "pages": "60-67"
+        },
+        {
+          "del": "IX",
+          "title": "Risker",
+          "pages": "68-74"
+        },
+        {
+          "del": "X",
+          "title": "Rekommendation & Strategi",
+          "pages": "75-82"
+        }
       ]
+    },
+    {
+      "slug": "precise-biometrics-nyborjar",
+      "company": "Precise Biometrics",
+      "ticker": "PREC.ST",
+      "level": "nyborjare",
+      "levelLabel": "Nybörjare",
+      "title": "Precise Biometrics (PREC.ST) — Nybörjaranalys",
+      "description": "99 sidor för nybörjare. Fusion med FPC, emission 110 MSEK. FÖRSIKTIGT KÖP (spekulativt). Pris 0,86 SEK (2026-08-07).",
+      "pages": 99,
+      "file": "/api/report/precise-biometrics-nyborjar",
+      "fileType": "pdf",
+      "verified": "2026-08-08",
+      "exchange": "Nasdaq Stockholm (Small Cap)",
+      "sector": "Informationsteknologi · Biometri",
+      "sections": [
+        {
+          "del": "0",
+          "title": "Pärm & Innehåll",
+          "pages": "1-3"
+        },
+        {
+          "del": "I",
+          "title": "Ekosystem & Ramverk",
+          "pages": "4-6"
+        },
+        {
+          "del": "II",
+          "title": "Mikro-horizont",
+          "pages": "7-12"
+        },
+        {
+          "del": "III",
+          "title": "Kort-horizont",
+          "pages": "13-18"
+        },
+        {
+          "del": "IV",
+          "title": "Medellångsikt-horizont",
+          "pages": "19-24"
+        },
+        {
+          "del": "V",
+          "title": "Långsikt-horizont",
+          "pages": "25-30"
+        },
+        {
+          "del": "VI",
+          "title": "Mega-horizont",
+          "pages": "31-36"
+        },
+        {
+          "del": "VII",
+          "title": "Fundamental våganalys",
+          "pages": "37-48"
+        },
+        {
+          "del": "VIII",
+          "title": "Scenarier: Bull / Base / Bear",
+          "pages": "49-56"
+        },
+        {
+          "del": "IX",
+          "title": "Risker",
+          "pages": "57-63"
+        },
+        {
+          "del": "X",
+          "title": "Rekommendation & Strategi",
+          "pages": "64-99"
+        }
+      ]
+    },
+    {
+      "slug": "precise-biometrics-intermediar",
+      "company": "Precise Biometrics",
+      "ticker": "PREC.ST",
+      "level": "intermediar",
+      "levelLabel": "Intermediär",
+      "title": "Precise Biometrics (PREC.ST) — Intermediäranalys",
+      "description": "99 sidor för intermediär. Fibonacci, Gann, Lucas djupare. FÖRSIKTIGT KÖP (spekulativt).",
+      "pages": 99,
+      "file": "/api/report/precise-biometrics-intermediar",
+      "fileType": "pdf",
+      "verified": "2026-08-08",
+      "exchange": "Nasdaq Stockholm (Small Cap)",
+      "sector": "Informationsteknologi · Biometri",
+      "sections": []
     },
     {
       "slug": "precise-biometrics-avancerad",
       "company": "Precise Biometrics",
-      "ticker": "PREC-B",
+      "ticker": "PREC.ST",
       "level": "avancerad",
       "levelLabel": "Avancerad",
-      "title": "Precise Biometrics (PREC-B) — Avanceradanalys",
-      "description": "99 sidor fullständig institutionell analys av Precise Biometrics. UTANFUNGISKT — referensexempel för AK1A-ekosystemet.",
-      "pages": 97,
-      "file": "/reports/precise-biometrics-avancerad.html",
-      "verified": "2026-07-19",
-      "ticker2": "PREC-B",
-      "isin": "SE0007271056",
+      "title": "Precise Biometrics (PREC.ST) — Avanceradanalys",
+      "description": "99 sidor för avancerad. Monte Carlo, Bayesian, Kelly, DCF-känslighet. FÖRSIKTIGT KÖP (spekulativt).",
+      "pages": 99,
+      "file": "/api/report/precise-biometrics-avancerad",
+      "fileType": "pdf",
+      "verified": "2026-08-08",
       "exchange": "Nasdaq Stockholm (Small Cap)",
-      "sector": "Teknologi / Biometri",
-      "sections": [
-        { "del": "0", "title": "Pärm & Innehåll", "pages": "1-3" },
-        { "del": "I", "title": "Ekosystem-meddelande & Ramverk", "pages": "4-12" },
-        { "del": "II", "title": "Teknisk: Mikro-horizont", "pages": "13-19" },
-        { "del": "III", "title": "Teknisk: Kort-horizont", "pages": "20-26" },
-        { "del": "IV", "title": "Teknisk: Medellångsikt-horizont", "pages": "27-33" },
-        { "del": "V", "title": "Teknisk: Långsikt-horizont", "pages": "34-40" },
-        { "del": "VI", "title": "Teknisk: Mega-horizont", "pages": "41-47" },
-        { "del": "VII", "title": "Fundamental våganalys", "pages": "48-59" },
-        { "del": "VIII", "title": "Scenarier: Bull / Base / Bear", "pages": "60-67" },
-        { "del": "IX", "title": "Risker", "pages": "68-74" },
-        { "del": "X", "title": "Rekommendation & Strategi", "pages": "75-82" }
-      ]
+      "sector": "Informationsteknologi · Biometri",
+      "sections": []
     }
   ],
   "levels": {

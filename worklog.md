@@ -996,3 +996,69 @@ Stage Summary:
 - Report Viewer (/rapporter): 3 depth levels (15/35/99 sidor) from same 99-page HTML. CSS injection hides pages beyond depth. Section navigation. Print/PDF.
 - 4 new Prisma models, 6 new API routes, 3 new components (~4600 lines total).
 - Lint clean, server HTTP 200, watchdog running.
+
+---
+Task ID: 43
+Agent: main (Z.ai Code)
+Task: Update ALL Precise Biometrics data from 3 PDF analyses, fix consistency, save to database.
+
+Work Log:
+- User uploaded 3 PDF analyses (nybörjar/intermediär/avancerad ekosystem) verified 2026-08-08
+- Extracted key data from PDFs using pdfplumber:
+  • Ticker: PREC.ST (not PRECIS B or PREC-B)
+  • Price: 0,86 SEK (2026-08-07) — NOT 0,005 SEK or 0,39 SEK
+  • Status: Aktivt noterad — Special Situation (fusion + emission)
+  • Recommendation: FÖRSIKTIGT KÖP (spekulativt)
+  • AKM1: 38/100 (SVAG-MEDL)
+  • Fusion with Fingerprint Cards (FPC) registered 20/7 2026
+  • Emission: 110,3 MSEK at 0,82 SEK/share, 91% guaranteed
+  • Proforma revenue: 156 MSEK (Precise 77,8 + FPC 78,2)
+  • Bruttomarginal: 82,4% (BioMatch)
+  • EBITDA: ~-19 MSEK proforma (before synergies)
+  • Synergy target: 45 MSEK/year
+  • Employees: ~46
+  • Customers: Google, Huawei, Lenovo, Xiaomi
+  • Offices: Lund, Stockholm, Potsdam, Seoul, Taipei, Shanghai
+  • Scenarios: Bull 2,03 (10%), Base 1,40 (45%), Bear 0,93 (45%)
+  • Key events: Teckning 12/8, Emissionsutfall 13/8, Q2 rapport 26/8
+- Moved 3 PDFs to data/reports/ (protected, not downloadable)
+- Updated manifest.json: 6 reports (3 Volvo + 3 Precise Biometrics)
+- Created /api/report/[slug] API route: serves PDF + HTML with anti-download protection
+- Updated analyser-section.tsx:
+  • Featured analysis: PRECIS → PREC.ST, 1,25 SEK → 0,86 SEK, 42.9/95 → 38/100
+  • Archive: PRECIS → PREC.ST, 42.9/95 → 38/100
+  • Added AnalyserReportsBlock: report gallery with 6 reports (3 Volvo + 3 Precise)
+  • PDF reports open in new tab with inline viewing
+  • HTML reports show in iframe with anti-download
+- Updated data files in data/stocks/PREC-ST/:
+  • metadata.json: PREC.ST, 0,86 SEK, fusion FPC, emission 110 MSEK
+  • fundamentals.json: AKM1 38/100, 7 impulse indicators, 7 correction, 6 base
+- Saved to database (Prisma/SQLite):
+  • SystemEvent: analysis_updated with full PREC.ST data
+  • CaseStudy: Special Situation fusion FPC + emission
+- Fixed lint errors:
+  • Added missing imports (ArrowLeft, Lock, X, Loader2)
+  • Fixed React Hook order (useMemo before conditional return)
+  • Fixed Akm1Tier type ("SVAG-MEDL" → "SVAG")
+  • Fixed reserved keyword "protected" → "protectedHtml" in API route
+- Agent Browser verified on mobile (375×812):
+  • PREC.ST ticker visible ✓
+  • 0,86 SEK price visible ✓
+  • 38/100 AKM1 visible ✓
+  • Reports section with 6 reports ✓
+  • Precise Biometrics + Volvo Cars in reports ✓
+  • No horizontal scroll (375px) ✓
+- Lint clean (exit 0), server HTTP 200, PDF API HTTP 200.
+
+Stage Summary:
+- ALL Precise Biometrics data updated with REAL PDF-verified data (2026-08-08)
+- Ticker: PREC.ST (not PRECIS B or PREC-B or AVLISTAD)
+- Price: 0,86 SEK (2026-08-07) — company is ACTIVELY TRADED
+- Recommendation: FÖRSIKTIGT KÖP (spekulativt) — NOT SÄLJ or AVLISTAD
+- Special Situation: fusion with FPC + emission 110,3 MSEK
+- 3 PDF analyses (nybörjar/intermediär/avancerad) saved in data/reports/
+- 6 reports total in manifest (3 Volvo + 3 Precise Biometrics)
+- PDF API serves both PDF and HTML with anti-download protection
+- Data saved to database (SystemEvent + CaseStudy)
+- Files separated: data/stocks/PREC-ST/ (metadata + fundamentals), data/reports/ (PDFs)
+- Lint clean, server HTTP 200, all verified on mobile.

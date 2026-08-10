@@ -3,6 +3,7 @@
 import * as React from "react";
 import {
   ArrowRight,
+  ArrowLeft,
   Calendar,
   Clock,
   FileText,
@@ -15,6 +16,9 @@ import {
   Sparkles,
   Hourglass,
   ChevronRight,
+  Lock,
+  X,
+  Loader2,
 } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
 import {
@@ -67,8 +71,8 @@ const ARCHIVE: ArchiveRow[] = [
   {
     date: "2026-07-19",
     company: "Precise Biometrics",
-    ticker: "PRECIS",
-    akm1Score: "42.9/95",
+    ticker: "PREC.ST",
+    akm1Score: "38/100",
     akm1Tier: "SVAG",
     ak1ts: "BEARISH",
     confidence: "MÄTT",
@@ -363,7 +367,7 @@ export function AnalyserSection() {
                 </div>
 
                 <h3 className="mt-4 font-serif text-2xl font-bold sm:text-3xl">
-                  Precise Biometrics (PRECIS)
+                  Precise Biometrics (PREC.ST)
                 </h3>
 
                 <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
@@ -379,13 +383,13 @@ export function AnalyserSection() {
                     variant="outline"
                     className="border-bear/30 text-bear bg-bear/5"
                   >
-                    AKM1 · 42.9/95 · MEDL
+                    AKM1 · 38/100 · SVAG-MEDL
                   </Badge>
                   <SignalPill signal="bear" label="BEARISH BIAS" />
                 </div>
 
                 <p className="mt-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
-                  Precise Biometrics handlas kring 1,25 SEK. Q2-rapporten
+                  Precise Biometrics vid 0,86 SEK (2026-08-07). Fusion FPC + emission 110 MSEK.
                   visar botten-zonen med vändning förväntad Q3–Q4 2026.
                   Teknisk bild: 8 av 25 celler bullish, 12 bearish — bearish
                   bias men med stark medellångsiktig konfluens mot uppgång.
@@ -393,7 +397,7 @@ export function AnalyserSection() {
 
                 {/* Stat grid */}
                 <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                  <FeaturedStat label="TICKER" value="PRECIS" />
+                  <FeaturedStat label="TICKER" value="PREC.ST" />
                   <FeaturedStat
                     label="PRIS"
                     value="1,25 SEK"
@@ -657,6 +661,9 @@ export function AnalyserSection() {
           </p>
         </div>
       </section>
+
+      {/* ───────────── INSTITUTIONELLA RAPPORTER ───────────── */}
+      <AnalyserReportsBlock />
 
       {/* ───────────── GÅ VIDARE ───────────── */}
       <section className="bg-muted/30">
@@ -953,5 +960,178 @@ function GoCard({
         <p className="mt-1 text-sm text-muted-foreground">{sub}</p>
       </div>
     </button>
+  );
+}
+
+// ============================================================
+// INSTITUTIONELLA RAPPORTER — 3 djupnivåer (PDF + HTML)
+// ============================================================
+
+interface ReportMeta {
+  slug: string;
+  company: string;
+  ticker: string;
+  level: string;
+  levelLabel: string;
+  title: string;
+  description: string;
+  pages: number;
+  file: string;
+  fileType?: string;
+  verified: string;
+  exchange: string;
+  sector: string;
+}
+
+function AnalyserReportsBlock() {
+  const [manifest, setManifest] = React.useState<{reports: ReportMeta[]} | null>(null);
+  const [activeSlug, setActiveSlug] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    fetch("/reports/manifest.json").then(r => r.json()).then(setManifest).catch(() => {});
+  }, []);
+
+  const activeReport = manifest?.reports.find((r) => r.slug === activeSlug);
+
+  // Group reports by company — must be before conditional return
+  const byCompany = React.useMemo(() => {
+    if (!manifest) return [];
+    const groups: Record<string, ReportMeta[]> = {};
+    for (const r of manifest.reports) {
+      if (!groups[r.company]) groups[r.company] = [];
+      groups[r.company].push(r);
+    }
+    return Object.entries(groups);
+  }, [manifest]);
+
+  if (activeReport) {
+    return (
+      <section className="border-b border-border">
+        <div className="sticky top-14 z-30 border-b border-border bg-background/95 backdrop-blur">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 py-2.5">
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="sm" onClick={() => setActiveSlug(null)}>
+                <ArrowLeft className="h-4 w-4" />
+                <span className="hidden sm:inline">Tillbaka till arkivet</span>
+                <span className="sm:hidden">Tillbaka</span>
+              </Button>
+              <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
+                <span className="truncate font-serif text-sm font-semibold">{activeReport.title}</span>
+                <Badge variant="outline" className="shrink-0 uppercase tracking-wider text-[9px] border-gold/40 text-gold">
+                  {activeReport.levelLabel}
+                </Badge>
+              </div>
+              <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => setActiveSlug(null)}>
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6">
+          <div className="mb-4 flex items-center gap-2 rounded-md border border-gold/30 bg-gold/[0.04] px-3 py-1.5">
+            <Lock className="h-3.5 w-3.5 shrink-0 text-gold" />
+            <p className="text-[10px] leading-tight text-muted-foreground">
+              <span className="font-semibold text-gold">Skyddad rapport.</span> Läs på plats — nedladdning blockerat.
+            </p>
+          </div>
+
+          {/* PDF viewer — opens in new tab for PDFs, inline for HTML */}
+          {activeReport.fileType === "pdf" ? (
+            <div className="rounded-md border border-border bg-muted/40 p-4 text-center">
+              <FileText className="mx-auto h-12 w-12 text-gold" />
+              <p className="mt-3 font-serif text-lg font-bold">{activeReport.title}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{activeReport.pages} sidor · {activeReport.levelLabel}nivå</p>
+              <p className="mt-1 text-xs text-muted-foreground">Verifierad {activeReport.verified}</p>
+              <Button
+                className="mt-4 bg-gold text-background hover:bg-gold/90"
+                onClick={() => window.open(activeReport.file, "_blank")}
+              >
+                Öppna rapporten <ArrowRight className="ml-1 h-4 w-4" />
+              </Button>
+              <p className="mt-2 text-[10px] text-muted-foreground">
+                Rapporten öppnas i en ny flik. Nedladdning är blockerat.
+              </p>
+            </div>
+          ) : (
+            <div className="rounded-md border border-border bg-white overflow-hidden">
+              <iframe
+                src={activeReport.file}
+                title={activeReport.title}
+                className="block w-full"
+                style={{ height: "85vh", minHeight: "600px", border: "0" }}
+                onContextMenu={(e) => { e.preventDefault(); return false; }}
+              />
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="border-b border-border bg-gradient-to-b from-gold/[0.04] to-transparent">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14 sm:py-20">
+        <div className="max-w-3xl">
+          <Eyebrow>Institutionella rapporter — 3 djupnivåer</Eyebrow>
+          <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-3xl">
+            99-sidiga rapporter. Läs på plats.
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            Samma AK1A-ekosystem-ramverk i tre längder: nybörjare, intermediär, avancerad.
+            Varje rapport är verifierad med dagsfärsk data.
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <HonestyTag kind="matt" />
+            <span className="text-xs text-muted-foreground">99,9% säkerhet · 100% rådata-garanti</span>
+          </div>
+        </div>
+
+        <div className="mt-10 space-y-8">
+          {byCompany.map(([company, reports]) => (
+            <div key={company}>
+              <div className="mb-3 flex items-baseline gap-3">
+                <h3 className="font-serif text-xl font-bold">{company}</h3>
+                <span className="text-xs text-muted-foreground">{reports[0].exchange}</span>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {reports.map((r) => (
+                  <button
+                    key={r.slug}
+                    onClick={() => setActiveSlug(r.slug)}
+                    className="rounded-lg border border-border bg-card p-4 text-left transition-all hover:border-gold/50 hover:bg-gold/[0.02]"
+                  >
+                    <div className="flex items-center justify-between">
+                      <Badge variant="outline" className={cn(
+                        "uppercase tracking-wider text-[9px]",
+                        r.level === "nyborjare" && "border-bull/40 text-bull",
+                        r.level === "intermediar" && "border-gold/40 text-gold",
+                        r.level === "avancerad" && "border-purple-400/40 text-purple-500 dark:text-purple-300"
+                      )}>
+                        {r.levelLabel}
+                      </Badge>
+                      <span className="text-[10px] text-muted-foreground">{r.pages} sid</span>
+                    </div>
+                    <h4 className="mt-2 font-serif text-sm font-bold leading-tight">{r.title}</h4>
+                    <p className="mt-1 text-xs text-muted-foreground leading-relaxed line-clamp-2">{r.description}</p>
+                    <div className="mt-3 flex items-center gap-2 text-[10px] text-muted-foreground">
+                      <Lock className="h-3 w-3 text-gold" />
+                      <span>Läs på plats</span>
+                      <span>·</span>
+                      <span>Verifierad {r.verified}</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
+          {!manifest && (
+            <div className="flex items-center justify-center py-12">
+              <Loader2 className="h-6 w-6 animate-spin text-gold" />
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }

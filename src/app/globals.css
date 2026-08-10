@@ -1,0 +1,192 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-bull: var(--bull);
+  --color-bear: var(--bear);
+  --color-neutral-signal: var(--neutral-signal);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.5rem;
+  /* AK1A Research Lab — editorial / institutional research palette */
+  --paper: #f5f1e8;            /* cream paper background */
+  --ink: #0a0b0d;              /* near-black ink */
+  --gold: #a8862a;             /* primary brand gold/amber */
+  --gold-soft: #c9a84c;        /* lighter gold for accents/lines */
+  --bull: #047857;             /* bullish green */
+  --bear: #b91c1c;             /* bearish red */
+  --neutral-signal: #64748b;   /* neutral slate */
+
+  --background: #f5f1e8;
+  --foreground: #0a0b0d;
+  --card: #fffdf7;             /* slightly lighter than paper for cards */
+  --card-foreground: #0a0b0d;
+  --popover: #fffdf7;
+  --popover-foreground: #0a0b0d;
+  --primary: #0a0b0d;
+  --primary-foreground: #f5f1e8;
+  --secondary: #efe9da;        /* darker cream for secondary surfaces */
+  --secondary-foreground: #2a2520;
+  --muted: #efe9da;
+  --muted-foreground: #5a5045; /* warm muted text */
+  --accent: #a8862a;
+  --accent-foreground: #fffdf7;
+  --destructive: #b91c1c;
+  --border: #e0d8c4;           /* warm border */
+  --input: #e0d8c4;
+  --ring: #c9a84c;
+  --chart-1: #a8862a;
+  --chart-2: #047857;
+  --chart-3: #b91c1c;
+  --chart-4: #64748b;
+  --chart-5: #c4972e;
+  --sidebar: #f5f1e8;
+  --sidebar-foreground: #0a0b0d;
+  --sidebar-primary: #a8862a;
+  --sidebar-primary-foreground: #fffdf7;
+  --sidebar-accent: #efe9da;
+  --sidebar-accent-foreground: #0a0b0d;
+  --sidebar-border: #e0d8c4;
+  --sidebar-ring: #c9a84c;
+}
+
+.dark {
+  --paper: #0c0b09;
+  --ink: #f5f1e8;
+  --gold: #c9a84c;
+  --gold-soft: #d8b85e;
+  --bull: #34d399;
+  --bear: #f87171;
+  --neutral-signal: #94a3b8;
+
+  --background: #0c0b09;
+  --foreground: #f5f1e8;
+  --card: #15130f;
+  --card-foreground: #f5f1e8;
+  --popover: #15130f;
+  --popover-foreground: #f5f1e8;
+  --primary: #f5f1e8;
+  --primary-foreground: #0c0b09;
+  --secondary: #1c1915;
+  --secondary-foreground: #f5f1e8;
+  --muted: #1c1915;
+  --muted-foreground: #a89a82;
+  --accent: #c9a84c;
+  --accent-foreground: #0c0b09;
+  --destructive: #f87171;
+  --border: #2a261f;
+  --input: #2a261f;
+  --ring: #c9a84c;
+  --chart-1: #c9a84c;
+  --chart-2: #34d399;
+  --chart-3: #f87171;
+  --chart-4: #94a3b8;
+  --chart-5: #d8b85e;
+  --sidebar: #0c0b09;
+  --sidebar-foreground: #f5f1e8;
+  --sidebar-primary: #c9a84c;
+  --sidebar-primary-foreground: #0c0b09;
+  --sidebar-accent: #1c1915;
+  --sidebar-accent-foreground: #f5f1e8;
+  --sidebar-border: #2a261f;
+  --sidebar-ring: #c9a84c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv01", "cv02";
+  }
+  /* Serif headlines */
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  }
+}
+
+/* Custom scrollbar for the institutional feel */
+@layer utilities {
+  .scrollbar-ak1a::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-ak1a::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-ak1a::-webkit-scrollbar-thumb {
+    background: var(--gold-soft);
+    border-radius: 4px;
+    opacity: 0.5;
+  }
+  .scrollbar-ak1a::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .gold-rule {
+    background-image: linear-gradient(to right, transparent, var(--gold-soft), transparent);
+  }
+  /* Subtle paper texture via radial gradients */
+  .paper-texture {
+    background-color: var(--background);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(168, 134, 42, 0.03), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(168, 134, 42, 0.03), transparent 40%);
+  }
+  .dark .paper-texture {
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(201, 168, 76, 0.05), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(201, 168, 76, 0.04), transparent 40%);
+  }
+}

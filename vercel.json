@@ -1,13 +1,6 @@
 {
   "framework": "nextjs",
-  "buildCommand": "npm install --legacy-peer-deps && next build",
-  "devCommand": "next dev",
+  "buildCommand": "next build",
   "installCommand": "npm install --legacy-peer-deps",
-  "outputDirectory": ".next",
-  "regions": ["arn1"],
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "maxDuration": 60
-    }
-  }
+  "outputDirectory": ".next"
 }

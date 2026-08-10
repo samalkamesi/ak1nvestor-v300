@@ -607,3 +607,26 @@ Stage Summary:
 - DeepCourseViewer renders all 11 template sections (verified via Agent Browser).
 - Lint clean, branding verified, server live and monitored.
 - API rate limit is the only blocker — temporary, will reset.
+
+---
+Task ID: 14
+Agent: main (Z.ai Code)
+Task: Continue course generation after sandbox restart. Fix incomplete courses. Handle persistent API rate limit.
+
+Work Log:
+- Sandbox restarted again (uptime 0 min). All services killed but progress preserved (127/204).
+- Restarted server (HTTP 200), watchdog (running), and scheduled generator restart.
+- API (z-ai-web-dev-sdk) still returns 429 "Too many requests" — persistent rate limit from ~381 API calls across previous sessions. Even simple test calls fail.
+- Killed generator to avoid futile retries. Scheduled auto-restart in 1 hour via `setsid -f bash -c 'sleep 3600 && ...'`.
+- Manually fixed the 2 incomplete courses (were missing 1 section each due to partial generation):
+  • km-068-wallenbergsfaren: added ak1Section (Wallenberg-sfären analysis via V14/V12/V17)
+  • pc-08-case-precise-biometrics: added grahamSection (Graham's warning about irregular revenues/losses)
+- Verified both now have all template fields complete.
+- Lint clean (exit 0).
+
+Stage Summary:
+- 148/225 courses (66%) now FULLY COMPLETE with all template fields (why, history, Lynch, Graham, AKM1, 6 chapters).
+- 77 courses still need generation — blocked by API rate limit.
+- Generator scheduled to auto-restart in 1 hour; improved retry logic (5 retries, 30-150s backoff) will handle continued rate limiting.
+- Server live (HTTP 200), watchdog running, lint clean, branding verified.
+- API rate limit is temporary and external — will reset. Generator will resume automatically.

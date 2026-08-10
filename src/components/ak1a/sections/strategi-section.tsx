@@ -150,7 +150,7 @@ export function StrategiSection() {
 
             <p className="mt-5 max-w-3xl text-base text-muted-foreground leading-relaxed sm:text-lg">
               AK1A äger ordet <strong className="text-foreground">verifierbarhet</strong>. Vi
-              säljer den metodiken som låter dig återskapa varje rekommendation själv —
+              säljer en metodik där varje slutsats är spårbar och approximativt reproducerbar —
               20 variabler, 25 våg-celler, varje siffra spårbar till offentlig källa.
             </p>
 
@@ -198,7 +198,7 @@ export function StrategiSection() {
               <blockquote className="mt-5 border-l-2 border-gold pl-4 font-serif text-lg italic leading-relaxed text-foreground/90 sm:text-xl">
                 &ldquo;En investerares värsta fiende är inte marknaden — det är bristen på
                 reproducerbarhet i sina egna beslut. Vi har kommersiella skäl att avslöja detta:
-                vår metodik låter dig återskapa varje rekommendation själv.&rdquo;
+                vår metodik gör varje slutsats spårbar och approximativt reproducerbar.&rdquo;
               </blockquote>
               <p className="mt-5 text-sm text-muted-foreground leading-relaxed sm:text-base">
                 Den viktigaste sanningen i svensk privatplacering 2026 är:
@@ -294,7 +294,7 @@ export function StrategiSection() {
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed sm:text-base">
                 Verifierbarhet är svårt att äga. Det kräver att varje siffra är spårbar,
-                att varje rekommendation är reproducerbar, att metoden är öppen.
+                att varje rekommendation är approximativt reproducerbar, att metoden är öppen där det är ärligt.
                 Det är vad vi bygger — varje dag, på varje analys.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed sm:text-base">
@@ -428,14 +428,14 @@ export function StrategiSection() {
               icon={<Target className="h-5 w-5" />}
               section="HEM"
               claim="Sveriges enda institutionella metodik"
-              dna="Verifierbarhet · Kognitiv suveränitet · Metod du kan återskapa"
+              dna="Verifierbarhet · Kognitiv suveränitet · Approximativt reproducerbar"
               framework="Zero to One + Positioning"
             />
             <ManifestCard
               icon={<Microscope className="h-5 w-5" />}
               section="ANALYSER"
               claim="99 sidor. Reproducerbar. 'Verifiera själv'-knapp."
-              dna="Du behöver inte lita på oss — du kan återskapa det"
+              dna="Du behöver inte lita på oss — du kan verifiera allt"
               framework="Zero to One (handling)"
             />
             <ManifestCard
@@ -501,7 +501,7 @@ export function StrategiSection() {
               <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
                 <HonestyTag kind="matt" />
                 <span className="text-xs text-muted-foreground">
-                  Detta är AK1A:s DNA · Verifierbarhet · Kognitiv suveränitet · Metod du kan återskapa
+                  Detta är AK1A:s DNA · Verifierbarhet · Kognitiv suveränitet · Approximativt reproducerbar
                 </span>
               </div>
             </div>

@@ -664,7 +664,7 @@ export function LabbSection() {
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
               Öppna AKM1-calculatorn och poängsätt ett bolag själv.
-              Samma verktyg, samma metodik — allt öppet, allt reproducerbart.
+              Samma verktyg, samma metodik — data öppen, slutsatser verifierbara.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -704,7 +704,7 @@ export function LabbSection() {
               caption="Case Studies, Farliga komb., Marknadshistoria, Portfölj, AK1A Rapport, Scenario, Jämförelse, Stress-test."
             />
             <ConsoleStat
-              value="100%"
+              value="METODMÅL"
               label="Reproducerbarhet"
               caption="Varje verktyg bygger på publicerad metodik — samma 20 AKM1-variabler och 25 AK1TS-celler som i rapportsidorna."
             />
@@ -826,8 +826,8 @@ export function LabbSection() {
                 Se publicerade analyser
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Jämför dina resultat med våra. Varje analys är reproducerbar
-                steg för steg.
+                Jämför dina resultat med våra. Varje analys är approximativt reproducerbar
+                steg för steg — metoden är vår know-how, men data och slutsatser är öppna.
               </p>
               <Button
                 variant="outline"

@@ -42,8 +42,8 @@ export function HomeSection() {
                   <span className="text-gold">institutionerna använder.</span>
                 </h1>
                 <p className="mt-5 max-w-xl text-base text-muted-foreground leading-relaxed sm:text-lg">
-                  Institutionell metodik, öppet redovisad. För dig. 99-sidiga analyser du
-                  kan verifiera själv — 20 variabler, 25 våg-celler, varje siffra spårbar.
+                  Institutionell metodik, öppet redovisad. För dig. 99-sidiga analyser där
+                  varje siffra är spårbar — 20 variabler, 25 våg-celler, slutsatser verifierbara.
                 </p>
 
                 {/* DNA-stapel med VerifyStamp */}

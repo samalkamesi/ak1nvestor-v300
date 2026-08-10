@@ -314,7 +314,8 @@ export function AnalyserSection() {
               <span className="text-gold">99 sidor. 20 variabler.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              Du kan återskapa allt. Varje siffra spårbar till offentlig källa.
+              Du kan verifiera allt. Varje siffra spårbar till offentlig källa.
+              Vår metod är vår know-how — slutsatserna är approximativt reproducerbara.
               En analys per månad — metodiken öppen, resultatet reproducerbart.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

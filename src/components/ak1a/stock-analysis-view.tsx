@@ -825,7 +825,7 @@ function RecommendationSection({
                 <Eyebrow>Verifiera själv</Eyebrow>
               </div>
               <h3 className="mt-2 font-serif text-xl font-bold leading-tight">
-                Du behöver inte lita på oss. Du kan återskapa detta.
+                Du behöver inte lita på oss. Du kan verifiera allt.
               </h3>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Alla 20 AKM1-variabler, alla 25 våg-celler, alla källor — offentliga.

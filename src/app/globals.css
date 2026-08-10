@@ -190,3 +190,61 @@
       radial-gradient(circle at 80% 90%, rgba(201, 168, 76, 0.04), transparent 40%);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MEGA OPTIMIZATION — prevent horizontal scroll on ALL pages
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Hard lock — html and body never scroll horizontally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* All tables scroll horizontally instead of overflowing page */
+.table-wrap, .data-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent long words/URLs from causing overflow */
+p, li, span, td, th, blockquote, dd, dt {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Code blocks and pre never overflow */
+pre, code {
+  white-space: pre-wrap !important;
+  word-break: break-all;
+  max-width: 100%;
+}
+
+/* Grids never exceed container */
+.grid {
+  max-width: 100%;
+}
+
+/* Flex containers with potential overflow get scroll */
+.flex-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Images and media never overflow */
+img, video, canvas, svg, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Custom scrollbar for horizontal scroll areas */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 4px;
+}
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: var(--gold-soft, #C5A572);
+  border-radius: 2px;
+}

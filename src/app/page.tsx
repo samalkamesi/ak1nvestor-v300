@@ -24,7 +24,7 @@ export default function Page() {
   useAutoLogger();
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col max-w-full overflow-x-hidden">
       <Header />
       <main className="flex-1">
         {section === "hem" && <HomeSection />}

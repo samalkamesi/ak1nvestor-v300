@@ -1770,3 +1770,55 @@ Stage Summary:
 - 150 nya mega-uppgifter i databasen (totalt 198)
 - Kundupplevelse: kunden ser bara positiv, metod-fokuserad kommunikation
 - Purity-mantra: "Vi är inte mot banken. Vi är inte mot bloggen. Vi är för verifierbarhet."
+
+---
+Task ID: 54-OVERFLOW-FIX
+Agent: main (Z.ai Code)
+Task: Mega optimering — fixa horisontell scroll på alla sidor
+
+Work Log:
+- Användaren: "Titta igenom alla sidor vissa sidor måste vi scrolla till höger, minska storleken eller förbättra strukturen, 100x Mega sökningar och optimeringar"
+- Agent Browser systematisk audit (mobil 375px + desktop 1280px):
+  • HEM, ANALYSER, AKTIER, KURSER, LABB, STRATEGI, OM OSS, UTBILDNING, PORTAL
+  • Scrollade varje sida vid 0, 800, 2000, 4000, 7000, 10000, 15000, 20000, 25000px
+  • Öppnade analys (StockAnalysisView) + deep course viewer separat
+- Hittade: StockAnalysisView hade 349px overflow på mobil
+  • Orsak: SECTION_DEFS-navigation (19 knappar) i en flex-rad utan overflow-control
+  • Knapparna gick utanför viewport (right=429, 512, 597, 738, 844, 923, 984, 1087px)
+- Fix 1: StockAnalysisView section navigation
+  • La till overflow-hidden på yttre sticky div
+  • La till overflow-x-auto på inre container
+  • La till whitespace-nowrap + min-w-min på flex-rad
+  • Resultat: 349px overflow → 0px (knapparna scrollar horisontellt inuti containern)
+- Fix 2: Global CSS (src/app/globals.css) — mega anti-overflow regler:
+  • html, body: overflow-x: hidden, max-width: 100vw
+  • p, li, span, td, th, blockquote: overflow-wrap: break-word, word-break: break-word
+  • pre, code: white-space: pre-wrap, word-break: break-all
+  • img, video, canvas, svg, iframe: max-width: 100%
+  • .grid: max-width: 100%
+  • Custom scrollbar för overflow-x-auto (4px height, gold-soft color)
+- Fix 3: page.tsx root wrapper
+  • La till max-w-full overflow-x-hidden på root div
+- Agent Browser verification (mobil 375px + desktop 1280px):
+  • HEM: ok ✓
+  • ANALYSER: ok ✓
+  • AKTIER: ok ✓
+  • KURSER: ok ✓
+  • LABB: ok ✓ (scroll 0-25000)
+  • STRATEGI: ok ✓
+  • OM OSS: ok ✓ (scroll 0-15000)
+  • PORTAL: ok ✓ (scroll 0-20000)
+  • StockAnalysisView: ok ✓ (scroll 0-25000, alla 19 sektioner)
+  • Deep course viewer: ok ✓ (scroll 0-20000)
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- HORIZONTELL SCROLL ELIMINERAD på alla sidor (mobil + desktop)
+- 3 lager av skydd: global CSS + page wrapper + komponent-specifika fixes
+- StockAnalysisView fixad: 349px overflow → 0px
+- Globala regler förhindrar framtida overflow:
+  • break-word på all text
+  • max-width: 100% på all media
+  • overflow-x: hidden på html/body
+- Kundupplevelse: ingen horisontell scroll någonsin, oavsett innehåll
+- Mega audit genomfört: 9 sektioner × 8-10 scroll-positioner × 2 viewports = 144+ kontroller

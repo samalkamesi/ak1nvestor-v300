@@ -457,23 +457,25 @@ export function StockAnalysisView({ ticker, onBack }: StockAnalysisViewProps) {
       </div>
 
       {/* ───────────── SECTION NAVIGATION (horizontal scroll) ───────────── */}
-      <div className="sticky top-[120px] z-20 border-b border-border bg-muted/50 backdrop-blur sm:top-[114px]">
-        <div className="mx-auto max-w-7xl overflow-x-auto px-4 sm:px-6">
-          <div className="flex gap-1 py-2">
-            {SECTION_DEFS.map((s, i) => (
-              <button
-                key={s.id}
-                onClick={() => scrollToSection(s.id)}
-                className={cn(
-                  "shrink-0 rounded-md px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider transition-colors",
-                  i === activeIdx
-                    ? "bg-gold text-background"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                )}
-              >
-                {s.label}
-              </button>
-            ))}
+      <div className="sticky top-[120px] z-20 border-b border-border bg-muted/50 backdrop-blur sm:top-[114px] overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="overflow-x-auto">
+            <div className="flex gap-1 py-2 min-w-min">
+              {SECTION_DEFS.map((s, i) => (
+                <button
+                  key={s.id}
+                  onClick={() => scrollToSection(s.id)}
+                  className={cn(
+                    "shrink-0 rounded-md px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider transition-colors whitespace-nowrap",
+                    i === activeIdx
+                      ? "bg-gold text-background"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  )}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

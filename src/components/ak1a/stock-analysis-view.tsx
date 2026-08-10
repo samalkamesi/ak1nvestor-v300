@@ -5,16 +5,19 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
+  ArrowUpRight,
+  ArrowDownRight,
   TrendingUp,
   TrendingDown,
   Scale,
   ShieldCheck,
+  Fingerprint,
+  Globe,
+  Award,
   Merge,
   Building2,
   Users,
-  Globe,
   Calendar,
-  Award,
   Bookmark,
   Info,
   Layers,
@@ -197,6 +200,46 @@ interface AnalysisData {
     bottom: string;
     current: string;
     declineFromPeak: string;
+    stats?: { value: string; label: string; sub: string; accent?: string }[];
+    timeline?: { year: string; title: string; tag: string; signal: string; body: string; highlight?: boolean }[];
+  };
+
+  upgradeDowngrade?: {
+    title: string;
+    body: string;
+    upgrades: string[];
+    downgrades: string[];
+  };
+
+  revenueMix?: {
+    title: string;
+    body: string;
+    total: string;
+    segments: { label: string; percentage: number; sub: string; tone: string }[];
+  };
+
+  customersShowcase?: {
+    title: string;
+    badges: string[];
+    highlights: { icon: string; eyebrow: string; body: string }[];
+  };
+
+  fusionDetails?: {
+    title: string;
+    body: string;
+    mechanismTitle: string;
+    mechanismBody: string;
+    mechanismSteps: { n: number; title: string; body: string }[];
+    keyNumbers: { k: string; v: string; accent?: string }[];
+  };
+
+  priceLadder?: {
+    title: string;
+    body: string;
+    levels: { label: string; value: string; pct: number; tone: string; hint: string; strong?: boolean }[];
+    scaleMin: string;
+    scaleMax: string;
+    scaleNote: string;
   };
 }
 
@@ -206,15 +249,22 @@ interface AnalysisData {
 
 const SECTION_DEFS = [
   { id: "omslag", label: "Omslag" },
+  { id: "princip", label: "Princip" },
   { id: "rekommendation", label: "Rekommendation" },
   { id: "motivation", label: "Motivering" },
+  { id: "upp-ned", label: "Upp/Ned" },
   { id: "bolaget", label: "Bolaget" },
+  { id: "affarsomraden", label: "Affärsområden" },
+  { id: "intaktsmix", label: "Intäktsmix" },
+  { id: "kunder", label: "Kunder" },
   { id: "akm1", label: "AKM1" },
   { id: "vagor", label: "Våganalys" },
   { id: "scenarier", label: "Scenarier" },
   { id: "prisnivaer", label: "Prisnivåer" },
   { id: "kalender", label: "Kalender" },
+  { id: "kurshistorik", label: "Kurshistorik" },
   { id: "historik", label: "Historik" },
+  { id: "fusionen", label: "Fusionen" },
   { id: "ga-vidare", label: "Gå vidare" },
 ] as const;
 
@@ -228,6 +278,11 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Scale,
   ShieldCheck,
   Merge,
+  Fingerprint,
+  Globe,
+  Award,
+  ArrowUpRight,
+  ArrowDownRight,
 };
 
 /* ────────────────────────────────────────────────────────────────────────── */
@@ -423,14 +478,37 @@ export function StockAnalysisView({ ticker, onBack }: StockAnalysisViewProps) {
       {/* ───────────── OMSLAG (cover) ───────────── */}
       <CoverSection data={data} registerRef={registerRef} />
 
+      {/* ───────────── PRINCIP ───────────── */}
+      <PrincipSection data={data} registerRef={registerRef} />
+
       {/* ───────────── REKOMMENDATION ───────────── */}
       <RecommendationSection data={data} level={level} registerRef={registerRef} />
 
       {/* ───────────── MOTIVERING ───────────── */}
       <MotivationSection data={data} level={level} registerRef={registerRef} />
 
+      {/* ───────────── UPP-/NEDGRADERING ───────────── */}
+      {data.upgradeDowngrade && (
+        <UpgradeDowngradeSection data={data} registerRef={registerRef} />
+      )}
+
       {/* ───────────── BOLAGET ───────────── */}
       <CompanySection data={data} registerRef={registerRef} />
+
+      {/* ───────────── AFFÄRSOMRÅDEN ───────────── */}
+      {data.businessAreas.length > 0 && (
+        <BusinessAreasSection data={data} registerRef={registerRef} />
+      )}
+
+      {/* ───────────── INTÄKTSMIX ───────────── */}
+      {data.revenueMix && (
+        <RevenueMixSection data={data} registerRef={registerRef} />
+      )}
+
+      {/* ───────────── KUNDER ───────────── */}
+      {data.customersShowcase && (
+        <CustomersSection data={data} registerRef={registerRef} />
+      )}
 
       {/* ───────────── AKM1 ───────────── */}
       <Akm1Section data={data} level={level} registerRef={registerRef} />
@@ -447,8 +525,18 @@ export function StockAnalysisView({ ticker, onBack }: StockAnalysisViewProps) {
       {/* ───────────── KALENDER ───────────── */}
       <CalendarSection data={data} registerRef={registerRef} />
 
+      {/* ───────────── KURSHISTORIK ───────────── */}
+      {data.priceLadder && (
+        <PriceLadderSection data={data} registerRef={registerRef} />
+      )}
+
       {/* ───────────── HISTORIK ───────────── */}
       <HistorySection data={data} registerRef={registerRef} />
+
+      {/* ───────────── FUSIONEN ───────────── */}
+      {data.fusionDetails && (
+        <FusionSection data={data} registerRef={registerRef} />
+      )}
 
       {/* ───────────── GÅ VIDARE ───────────── */}
       <GoFurtherSection data={data} registerRef={registerRef} setSection={setSection} onBack={onBack} />
@@ -1297,10 +1385,10 @@ function HistorySection({
     <section
       id="historik"
       ref={registerRef("historik")}
-      className="border-b border-border"
+      className="border-b border-border bg-muted/30"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
-        <Eyebrow>{h.title}</Eyebrow>
+        <Eyebrow>Del II · Historik</Eyebrow>
         <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
           {h.title}
         </h2>
@@ -1308,6 +1396,83 @@ function HistorySection({
           {h.body}
         </p>
 
+        {/* Stats row */}
+        {h.stats && h.stats.length > 0 && (
+          <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-4">
+            {h.stats.map((s, i) => {
+              const accentClass =
+                s.accent === "bull"
+                  ? "text-bull"
+                  : s.accent === "bear"
+                  ? "text-bear"
+                  : s.accent === "gold"
+                  ? "text-gold"
+                  : "text-foreground";
+              return (
+                <div key={i} className="bg-background p-3 sm:p-4">
+                  <div className={cn("font-serif text-xl font-bold tabular-nums sm:text-2xl", accentClass)}>
+                    {s.value}
+                  </div>
+                  <div className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    {s.label}
+                  </div>
+                  <div className="text-[10px] text-muted-foreground">{s.sub}</div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Timeline */}
+        {h.timeline && h.timeline.length > 0 && (
+          <div className="mt-8 relative sm:mt-10">
+            <div className="absolute left-[15px] sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/60 via-border to-gold/30 sm:-translate-x-1/2" />
+            <ol className="space-y-6 sm:space-y-8">
+              {h.timeline.map((node, i) => {
+                const side = i % 2 === 0 ? "left" : "right";
+                const signalBorder =
+                  node.signal === "bull"
+                    ? "border-bull/40"
+                    : node.signal === "bear"
+                    ? "border-bear/40"
+                    : "border-border";
+                const signalDot =
+                  node.signal === "bull"
+                    ? "bg-bull"
+                    : node.signal === "bear"
+                    ? "bg-bear"
+                    : "bg-gold";
+                return (
+                  <li key={i} className={cn("relative", side === "right" && "sm:pl-[calc(50%+2rem)]", side === "left" && "sm:pr-[calc(50%+2rem)]")}>
+                    <div className={cn("pl-10 sm:pl-0", side === "right" && "sm:pl-[calc(50%+2rem)] sm:pr-0", side === "left" && "sm:pr-[calc(50%+2rem)] sm:pl-0")}>
+                      {/* Dot on timeline */}
+                      <span
+                        className={cn(
+                          "absolute left-[11px] sm:left-1/2 top-1 h-3 w-3 -translate-x-1/2 rounded-full ring-4 ring-background",
+                          signalDot,
+                          node.highlight && "h-4 w-4 ring-gold/20"
+                        )}
+                      />
+                      <Card className={cn("border p-4 sm:p-5", signalBorder, node.highlight && "ring-2 ring-gold/40 border-gold/40")}>
+                        <div className="flex items-center gap-2">
+                          <span className="font-serif text-lg font-bold text-gold">{node.year}</span>
+                          {node.highlight && <Badge variant="outline" className="border-gold/40 text-gold text-[9px]">★ HÖJDPUNKT</Badge>}
+                        </div>
+                        <h3 className="mt-1 font-serif text-base font-bold">{node.title}</h3>
+                        <div className="mt-1">
+                          <Badge variant="outline" className="border-border text-[9px] uppercase tracking-wider">{node.tag}</Badge>
+                        </div>
+                        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{node.body}</p>
+                      </Card>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        )}
+
+        {/* Summary cards */}
         <div className="mt-6 grid gap-4 sm:grid-cols-4">
           <Card className="border-border p-4 text-center">
             <Eyebrow>Peak</Eyebrow>
@@ -1327,7 +1492,7 @@ function HistorySection({
           </Card>
         </div>
 
-        {/* Fusion / transformation section */}
+        {/* Fusion / transformation summary (kept for backward compat) */}
         <Card className="mt-6 border-gold/30 bg-gold/[0.02] p-5 sm:p-6">
           <Eyebrow>{f.title}</Eyebrow>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{f.body}</p>
@@ -1444,5 +1609,493 @@ function GoCard({
         <p className="mt-1 text-sm text-muted-foreground">{sub}</p>
       </div>
     </button>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RESTORED SECTIONS — from old PREC section (1934 lines)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+function PrincipSection({
+  data,
+  registerRef,
+}: {
+  data: AnalysisData;
+  registerRef: (id: string) => (el: HTMLElement | null) => void;
+}) {
+  const p = data.princip;
+  return (
+    <section
+      id="princip"
+      ref={registerRef("princip")}
+      className="border-b border-border bg-muted/30"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
+        <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-10">
+          <div>
+            <Eyebrow>Pedagogisk finansanalys</Eyebrow>
+            <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+              {p.title}
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm text-muted-foreground leading-relaxed sm:text-base">
+              {p.body}
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              <HonestyTag kind="matt" />
+              <Badge variant="outline" className="border-border">
+                Verifierad {data.verified}
+              </Badge>
+              <Badge variant="outline" className="border-border">
+                99 sidor
+              </Badge>
+              <Badge variant="outline" className="border-border">
+                Datakälla: {data.source}
+              </Badge>
+            </div>
+          </div>
+
+          <Card className="border-gold/40 bg-card p-5 sm:p-6">
+            <Eyebrow>Vår princip</Eyebrow>
+            <GoldRule className="my-3 max-w-[6rem]" />
+            <p className="font-serif text-xl font-bold leading-snug sm:text-2xl">
+              {p.principleTitle}
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              {p.principleBody}
+            </p>
+            <Separator className="my-4 bg-border" />
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              {p.footer}
+              <br />
+              Ägare: Ak1 Apex Nexus via AK1nvestor.com · Kontakt: info@ak1nvestor.com
+            </p>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function UpgradeDowngradeSection({
+  data,
+  registerRef,
+}: {
+  data: AnalysisData;
+  registerRef: (id: string) => (el: HTMLElement | null) => void;
+}) {
+  const u = data.upgradeDowngrade!;
+  return (
+    <section
+      id="upp-ned"
+      ref={registerRef("upp-ned")}
+      className="border-b border-border"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
+        <Eyebrow>Triggeröversikt</Eyebrow>
+        <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+          {u.title}
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm text-muted-foreground sm:text-base">
+          {u.body}
+        </p>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-2 sm:gap-6">
+          <Card className="border-bull/40 bg-bull/[0.05] p-5 sm:p-6">
+            <div className="flex items-center gap-2">
+              <ArrowUpRight className="h-5 w-5 text-bull" />
+              <h3 className="font-serif text-lg font-bold text-bull sm:text-xl">
+                Uppgradering till KÖP
+              </h3>
+            </div>
+            <ul className="mt-4 space-y-2 text-sm">
+              {u.upgrades.map((item, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bull" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Card>
+
+          <Card className="border-bear/40 bg-bear/[0.05] p-5 sm:p-6">
+            <div className="flex items-center gap-2">
+              <ArrowDownRight className="h-5 w-5 text-bear" />
+              <h3 className="font-serif text-lg font-bold text-bear sm:text-xl">
+                Nedgradering till SÄLJ
+              </h3>
+            </div>
+            <ul className="mt-4 space-y-2 text-sm">
+              {u.downgrades.map((item, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-bear" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BusinessAreasSection({
+  data,
+  registerRef,
+}: {
+  data: AnalysisData;
+  registerRef: (id: string) => (el: HTMLElement | null) => void;
+}) {
+  const areas = data.businessAreas;
+  return (
+    <section
+      id="affarsomraden"
+      ref={registerRef("affarsomraden")}
+      className="border-b border-border"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
+        <Eyebrow>Del I · Bolaget</Eyebrow>
+        <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+          {areas.length} affärsområden · 2025
+        </h2>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-2 sm:gap-6">
+          {areas.map((ba, i) => (
+            <Card key={i} className="overflow-hidden border-border">
+              <div className="bg-gradient-to-br from-gold/[0.08] to-transparent p-5 sm:p-6">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <Eyebrow>Affärsområde {i + 1}</Eyebrow>
+                    <h3 className="mt-2 font-serif text-xl font-bold sm:text-2xl">
+                      {ba.name}
+                    </h3>
+                  </div>
+                  <span className="font-serif text-3xl font-bold text-gold sm:text-4xl">
+                    {ba.revenue.match(/(\d+%)/)?.[1] || ba.revenue}
+                  </span>
+                </div>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  {ba.description}
+                </p>
+                <Separator className="my-4 bg-border" />
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                      Omsättning 2025
+                    </div>
+                    <div className="mt-1 font-mono text-sm font-bold">{ba.revenue}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                      Bruttomarginal
+                    </div>
+                    <div className="mt-1 font-mono text-sm font-bold text-bull">{ba.margin}</div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function RevenueMixSection({
+  data,
+  registerRef,
+}: {
+  data: AnalysisData;
+  registerRef: (id: string) => (el: HTMLElement | null) => void;
+}) {
+  const r = data.revenueMix!;
+  return (
+    <section
+      id="intaktsmix"
+      ref={registerRef("intaktsmix")}
+      className="border-b border-border bg-muted/30"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
+        <Eyebrow>Del I · Bolaget</Eyebrow>
+        <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+          {r.title}
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm text-muted-foreground sm:text-base">
+          {r.body}
+        </p>
+
+        <Card className="mt-6 border-border bg-card p-5 sm:p-6">
+          {/* Stacked horizontal bar */}
+          <div className="flex h-12 w-full overflow-hidden rounded-md border border-border">
+            {r.segments.map((seg, i) => {
+              const bgClass =
+                seg.tone === "gold-strong"
+                  ? "bg-gold/80 text-background"
+                  : seg.tone === "gold"
+                  ? "bg-gold text-background"
+                  : "bg-gold/40 text-foreground";
+              return (
+                <div
+                  key={i}
+                  className={cn(
+                    "flex items-center justify-center text-xs font-semibold",
+                    bgClass
+                  )}
+                  style={{ width: `${seg.percentage}%` }}
+                  title={`${seg.label} ${seg.percentage} %`}
+                >
+                  {seg.percentage >= 10 ? `${seg.label} · ${seg.percentage} %` : `${seg.percentage} %`}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Legend */}
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            {r.segments.map((seg, i) => {
+              const dotClass =
+                seg.tone === "gold-strong"
+                  ? "bg-gold/80"
+                  : seg.tone === "gold"
+                  ? "bg-gold"
+                  : "bg-gold/40";
+              return (
+                <div key={i} className="flex items-center gap-2">
+                  <span className={cn("h-3 w-3 rounded-sm", dotClass)} />
+                  <div>
+                    <div className="font-semibold">{seg.label}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {seg.percentage} % · {seg.sub}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <Separator className="my-5 bg-border" />
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <HonestyTag kind="matt" />
+              <span className="text-sm text-muted-foreground">
+                Intäkter enligt bolagsrapport
+              </span>
+            </div>
+            <div className="font-mono text-sm font-semibold tabular-nums">
+              Summa: {r.total}
+            </div>
+          </div>
+        </Card>
+      </div>
+    </section>
+  );
+}
+
+function CustomersSection({
+  data,
+  registerRef,
+}: {
+  data: AnalysisData;
+  registerRef: (id: string) => (el: HTMLElement | null) => void;
+}) {
+  const c = data.customersShowcase!;
+  return (
+    <section
+      id="kunder"
+      ref={registerRef("kunder")}
+      className="border-b border-border"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
+        <Eyebrow>Del I · Bolaget</Eyebrow>
+        <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+          {c.title}
+        </h2>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {c.badges.map((b, i) => (
+            <Badge
+              key={i}
+              variant="outline"
+              className="border-gold/30 bg-gold/[0.04] px-3 py-1.5 text-sm"
+            >
+              <Award className="mr-1.5 h-3.5 w-3.5 text-gold" /> {b}
+            </Badge>
+          ))}
+        </div>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {c.highlights.map((h, i) => {
+            const Icon = iconMap[h.icon] || Award;
+            return (
+              <Card key={i} className="border-border bg-card p-5">
+                <div className="flex items-center gap-2">
+                  <Icon className="h-5 w-5 text-gold" />
+                  <Eyebrow>{h.eyebrow}</Eyebrow>
+                </div>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  {h.body}
+                </p>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PriceLadderSection({
+  data,
+  registerRef,
+}: {
+  data: AnalysisData;
+  registerRef: (id: string) => (el: HTMLElement | null) => void;
+}) {
+  const pl = data.priceLadder!;
+  return (
+    <section
+      id="kurshistorik"
+      ref={registerRef("kurshistorik")}
+      className="border-b border-border"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
+        <Eyebrow>Del V · Kurshistorik</Eyebrow>
+        <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+          {pl.title}
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm text-muted-foreground leading-relaxed sm:text-base">
+          {pl.body}
+        </p>
+
+        <Card className="mt-6 border-border bg-card p-5 sm:p-6">
+          <Eyebrow>Prisstege — viktiga nivåer</Eyebrow>
+          <div className="mt-5 space-y-3">
+            {pl.levels.map((lvl, i) => {
+              const toneClass =
+                lvl.tone === "bull"
+                  ? "bg-bull/60"
+                  : lvl.tone === "bear"
+                  ? "bg-bear/60"
+                  : lvl.tone === "gold"
+                  ? "bg-gold/60"
+                  : "bg-muted-foreground/40";
+              const textTone =
+                lvl.tone === "bull"
+                  ? "text-bull"
+                  : lvl.tone === "bear"
+                  ? "text-bear"
+                  : lvl.tone === "gold"
+                  ? "text-gold"
+                  : "text-foreground";
+              return (
+                <div key={i} className={cn("rounded-md", lvl.strong && "ring-1 ring-gold/40")}>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">
+                      {lvl.label}
+                      {lvl.strong && <span className="ml-2 text-gold font-semibold">★</span>}
+                    </span>
+                    <span className="text-xs text-muted-foreground">{lvl.hint}</span>
+                  </div>
+                  <div className="mt-1 flex items-center gap-3">
+                    <div className="relative h-8 flex-1 overflow-hidden rounded-sm bg-muted/40">
+                      <div
+                        className={cn("absolute inset-y-0 left-0 rounded-sm", toneClass)}
+                        style={{ width: `${lvl.pct}%` }}
+                      />
+                    </div>
+                    <span className={cn("font-mono text-sm font-bold tabular-nums w-20 text-right", textTone)}>
+                      {lvl.value}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
+            <span>{pl.scaleMin}</span>
+            <span>{pl.scaleNote}</span>
+            <span>{pl.scaleMax}</span>
+          </div>
+        </Card>
+      </div>
+    </section>
+  );
+}
+
+function FusionSection({
+  data,
+  registerRef,
+}: {
+  data: AnalysisData;
+  registerRef: (id: string) => (el: HTMLElement | null) => void;
+}) {
+  const f = data.fusionDetails!;
+  return (
+    <section
+      id="fusionen"
+      ref={registerRef("fusionen")}
+      className="border-b border-border"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
+        <Eyebrow>Del III · Fusionen</Eyebrow>
+        <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+          {f.title}
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm text-muted-foreground leading-relaxed sm:text-base">
+          {f.body}
+        </p>
+
+        <div className="mt-6 grid gap-4 lg:grid-cols-[1.4fr_1fr] sm:gap-6">
+          <Card className="border-border bg-card p-5 sm:p-6">
+            <Eyebrow>{f.mechanismTitle}</Eyebrow>
+            <GoldRule className="my-3 max-w-[5rem]" />
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {f.mechanismBody}
+            </p>
+            <ol className="mt-4 space-y-3 text-sm">
+              {f.mechanismSteps.map((s) => (
+                <li key={s.n} className="flex gap-3">
+                  <span className="font-serif text-xl font-bold text-gold">
+                    {s.n}.
+                  </span>
+                  <span>
+                    <strong>{s.title}</strong> {s.body}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </Card>
+
+          <Card className="border-gold/30 bg-gradient-to-br from-card to-gold/[0.04] p-5 sm:p-6">
+            <Eyebrow>Fusion i siffror</Eyebrow>
+            <dl className="mt-4 space-y-3 text-sm">
+              {f.keyNumbers.map((kn, i) => {
+                const accentClass =
+                  kn.accent === "gold"
+                    ? "text-gold"
+                    : kn.accent === "bull"
+                    ? "text-bull"
+                    : kn.accent === "bear"
+                    ? "text-bear"
+                    : "text-foreground";
+                return (
+                  <div key={i} className="flex items-center justify-between">
+                    <dt className="text-muted-foreground">{kn.k}</dt>
+                    <dd className={cn("font-mono font-semibold", accentClass)}>{kn.v}</dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </Card>
+        </div>
+
+        <div className="mt-5 flex flex-wrap items-center gap-2">
+          <HonestyTag kind="matt" />
+          <span className="text-xs text-muted-foreground">
+            Siffror från fusionsdokument och bolagsrapport. Verifierad {data.verified}.
+          </span>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -1221,3 +1221,52 @@ Prisma + SQLite (`db/custom.db`). Modeller: Ak1Indicator, CaseStudy, IndicatorCo
 - Antinedladdningsskydd på rapporter
 - Level-aware (nyborjare/intermediar/avancerad) personalisering
 - Mobil-först design
+
+---
+Task ID: 47-RESTORE
+Agent: main (Z.ai Code)
+Task: Återställ saknade sektioner som råkade tas bort i Task 45
+
+Work Log:
+- Användaren upptäckte att viktigt innehåll saknades efter Task 45 (enhetlig StockAnalysisView)
+- Återställde gamla PREC-sektionen (1934 rader) från git commit 8185675 till /tmp/old-prec-section.tsx
+- Jämförde sektioner: gamla hade 15, nya hade bara 11 — 7 sektioner saknades!
+- Saknade sektioner identifierade:
+  1. Princip (Pedagogisk finansanalys — "Skriven på enkel svenska")
+  2. Upp-/Nedgradering (Triggeröversikt — när vi höjer/sänker)
+  3. Affärsområden (BioMatch 72% + Digital Identity 28% med marginaler)
+  4. Intäktsmix (staplad stapel: Royalty 42%, Licenser 50%, Övrigt 7%)
+  5. Kunder (kundbadges + 3 framgångskort)
+  6. Fusionen (Vändningsmekanismen + Fusion i siffror)
+  7. Kurshistorik (prisstege-visualisering med 7 nivåer)
+  8. Historik tidslinje (1997-2026, 9 noder)
+- Uppdaterade data/analyses/PREC-ST.json med all saknad data:
+  • history.stats (4 stat-rutor)
+  • history.timeline (9 noder: 1997, 2002, 2010, 2015, 2017, 2020, 2023, 2025, 2026)
+  • upgradeDowngrade (4 upgrades + 4 downgrades)
+  • revenueMix (3 segments med percentages)
+  • customersShowcase (6 badges + 3 highlights)
+  • fusionDetails (3 mechanism steps + 7 key numbers)
+  • priceLadder (7 nivåer med pct, tone, hint, strong)
+- Lade till 7 nya sektionskomponenter i stock-analysis-view.tsx:
+  • PrincipSection, UpgradeDowngradeSection, BusinessAreasSection
+  • RevenueMixSection, CustomersSection, PriceLadderSection, FusionSection
+- Uppdaterade HistorySection med tidslinje-visualisering (alternerande vänster/höger)
+- Uppdaterade SECTION_DEFS från 11 till 18 sektioner
+- Fixade imports: ArrowUpRight, ArrowDownRight, Fingerprint, Globe, Award
+- Agent Browser verifierat:
+  • 18 sektioner i navigationen ✓
+  • Princip: "Skriven på enkel svenska" + "Håll know-how helt" ✓
+  • Intäktsmix: staplad stapel Royalty 42% / Licenser 50% / Övrigt 7%, summa 77,8 MSEK ✓
+  • Kurshistorik: prisstege med Bull 2,03 / Stängning 1,676 / Vägt 1,38 / TERP 1,27 / Teckningskurs 0,82 ✓
+  • Fusionen: Vändningsmekanismen 3 steg + Fusion i siffror 110,3 MSEK / 91% / 45 MSEK ✓
+  • Historik: tidslinje 1997-2026 med 9 noder + stats 29 år / 7 positiva / 4 negativa ✓
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- ALLA 15 ursprungliga sektioner återställda i enhetlig StockAnalysisView
+- 7 sektioner som saknades är nu tillbaka med fullt innehåll
+- Data ligger i JSON (data/analyses/PREC-ST.json) — datadrivet, inte hårdkodat
+- Rikare visualiseringar: tidslinje, staplad stapel, prisstege, mekanism-steg
+- Komponenten är nu ~2100 rader (från ~900) men datadriven för alla bolag
+- Ingen data förlorad — allt från gamla PREC-sektionen är återställt

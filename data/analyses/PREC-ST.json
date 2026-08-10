@@ -250,11 +250,104 @@
   },
 
   "history": {
-    "title": "Historik — Från 8,88 SEK till 0,86 SEK",
-    "body": "Precise Biometrics hade sin storhetstid under 2015 när biometri var hett — aktien nådde 8,88 SEK. Sedan dess har det varit en lång nedgång: -98,9% från toppen. November 2023 noterades ATL på 0,908 SEK. Fusionen med FPC 2026 är den största strukturhändelsen sedan 2015 och kan markera början på en ny cykel — om synergierna levererar.",
+    "title": "Prec:s resa 1997–2026",
+    "body": "Från Lund-startup till Nordens största biometribolag. 29 år av innovation, kriser och vändningar — visualiserade som en tidslinje.",
     "peak": "8,88 SEK (2015)",
     "bottom": "0,908 SEK (nov 2023)",
     "current": "0,86 SEK (2026-08-07)",
-    "declineFromPeak": "-98,9%"
+    "declineFromPeak": "-98,9%",
+    "stats": [
+      {"value": "29", "label": "År sedan grundning", "sub": "1997 → 2026"},
+      {"value": "7", "label": "Positiva milstolpar", "sub": "bull", "accent": "bull"},
+      {"value": "4", "label": "Negativa milstolpar", "sub": "bear", "accent": "bear"},
+      {"value": "14", "label": "Totalt händelser", "sub": "katalogiserade"}
+    ],
+    "timeline": [
+      {"year": "1997", "title": "Precise Biometrics grundas", "tag": "Grundning", "signal": "neutral", "body": "Bolaget grundas i Lund med visionen att utveckla mjukvara för biometrisk identifiering."},
+      {"year": "2002", "title": "Notering på Nasdaq Stockholm", "tag": "Finansiell", "signal": "bull", "body": "PREC noteras på Small Cap-listan och får tillgång till kapitalmarknaden."},
+      {"year": "2010", "title": "Första stora OEM-avtalet", "tag": "Affär", "signal": "bull", "body": "Fingeravtrycksalgoritmen integreras hos en stor mobiltillverkare — affärsmodellen med royalty föds."},
+      {"year": "2015", "title": "Peak 8,88 SEK", "tag": "Kurs", "signal": "bull", "body": "Biometri-hypen driver kursen till all-time high 8,88 SEK."},
+      {"year": "2017", "title": "BioLive godkänt av UIDAI / Aadhaar", "tag": "Produkt", "signal": "bull", "body": "Anti-spoofing-tekniken blir en del av världens största biometriska ID-program (1,3 mdr människor)."},
+      {"year": "2020", "title": "Omsättningsnedgång & omstrukturering", "tag": "Finansiell", "signal": "bear", "body": "Pandemin sänker OEM-volymen; bolaget stramar upp och prioriterar lönsamhet framför volym."},
+      {"year": "2023", "title": "Botten 0,908 SEK — ATL", "tag": "Kurs", "signal": "bear", "body": "Ny emission — kursfall sedan rekyl. En erfarenhet som präglar årets rekommendation: fall in i emissionen, rekyl efter utfallet."},
+      {"year": "2025", "title": "Precise Visit by EastCoast lanseras", "tag": "Produkt", "signal": "bull", "body": "Moln-besökshantering blir marknadsledande i Norden och breddar Digital Identity-affären."},
+      {"year": "2026", "title": "Fusion med FPC registrerad 20/7", "tag": "Fusion", "signal": "bull", "highlight": true, "body": "FPC blir dotterbolag. Synergimål 45 MSEK > proforma EBITDA-hål −19 MSEK. Emission till 91 % garanterad."}
+    ]
+  },
+
+  "upgradeDowngrade": {
+    "title": "När vi höjer — och när vi sänker.",
+    "body": "Rekommendationen är inte statisk. Här är de konkreta händelser som skulle flytta oss ett steg på skalan.",
+    "upgrades": [
+      "Emission övertecknad utöver 91 %",
+      "Stängning över 1,75 SEK på veckobasis",
+      "Första kvartalet med bevisad synergieffekt",
+      "Q3-rapport 13/11 visar positivt konsoliderat EBITDA"
+    ],
+    "downgrades": [
+      "Emissionsutfall under 91 % med stor garantifördelning",
+      "Brott under 0,82 SEK på veckobasis",
+      "Synergiebesked beskuret (< 30 MSEK)",
+      "Goodwill-nedskrivning i FPC-förvärvsanalysen"
+    ]
+  },
+
+  "revenueMix": {
+    "title": "Intäktsmix 2025",
+    "body": "Summa 2025: 77,8 MSEK. Royalty är den mest volymkänsliga delen (42 %) — den stiger snabbt med enhetsförsäljning hos OEM-kunder.",
+    "total": "77,8 MSEK",
+    "segments": [
+      {"label": "Royalty", "percentage": 42, "sub": "mest volymkänslig", "tone": "gold-strong"},
+      {"label": "Licenser & support", "percentage": 50, "sub": "återkommande", "tone": "gold"},
+      {"label": "Övrigt", "percentage": 7, "sub": "experttjänster m.m.", "tone": "gold-light"}
+    ]
+  },
+
+  "customersShowcase": {
+    "title": "Kunder och framgångar du känner igen",
+    "badges": ["Google", "Huawei", "Lenovo", "Xiaomi", "UIDAI / Aadhaar (Indien · 1,3 mdr människor)", "FPC (numera dotterbolag efter fusion)"],
+    "highlights": [
+      {"icon": "Fingerprint", "eyebrow": "40+ tillverkare", "body": "Fingeravtrycksmjukvaran är integrerad i mobiler från över 40 tillverkare globalt — varje såld enhet genererar royalty."},
+      {"icon": "Globe", "eyebrow": "Aadhaar · UIDAI", "body": "BioLive godkänt av Indiens UIDAI för Aadhaar — världens största biometriska ID-program (1,3 miljarder människor)."},
+      {"icon": "Award", "eyebrow": "Xiaomi · 2025-01-09", "body": "Xiaomis smarta kassaskåp lanserades 9 januari 2025 med PREC-teknik — ett tidigt exempel på nya royalty-kategorier utanför mobil."}
+    ]
+  },
+
+  "fusionDetails": {
+    "title": "Fusionen med FPC",
+    "body": "Den 20 juli 2026 registrerades fusionen med Fingerprint Cards (FPC). FPC blir dotterbolag i Precise-koncernen. Syftet: bygga Nordens starkaste biometri-hus under ett tak — mjukvara, algoritmer och sensorer i samma bolag.",
+    "mechanismTitle": "Vändningsmekanismen",
+    "mechanismBody": "Tre konkreta pusselbitar på plats samtidigt:",
+    "mechanismSteps": [
+      {"n": 1, "title": "Fusionen är genomförd", "body": "(registrerad 20/7) — osäkerheten om huruvida den blir av är borta."},
+      {"n": 2, "title": "Emissionen är till 91 % garanterad", "body": "(100 av 110,3 MSEK) — kapitalet finns säkrat."},
+      {"n": 3, "title": "Synergimålet (45 MSEK) är större än hela proforma EBITDA-hålet (−19 MSEK)", "body": "— det finns en verklig väg till lönsamhet, inte bara hopp."}
+    ],
+    "keyNumbers": [
+      {"k": "Registrerad", "v": "20 juli 2026"},
+      {"k": "Emissionslikvid", "v": "110,3 MSEK"},
+      {"k": "Teckningskurs", "v": "0,82 SEK"},
+      {"k": "Garanterad", "v": "91 % (100 MSEK)", "accent": "gold"},
+      {"k": "Synergimål", "v": "45 MSEK/år", "accent": "bull"},
+      {"k": "Proforma EBITDA", "v": "−19 MSEK", "accent": "bear"},
+      {"k": "Utspädning (passiva)", "v": "47,8 %"}
+    ]
+  },
+
+  "priceLadder": {
+    "title": "Prisbild & läge",
+    "body": "Stängning 1,676 SEK den 20/7 2026 — dagen fusionen registrerades. Emissionskursen 0,82 SEK sätter ett tekniskt ankare, och TERP (teoretisk ex-rätt-pris) 1,27 SEK är referenspunkten för rekommendationen.",
+    "levels": [
+      {"label": "Bull-mål 12 mån", "value": "2,03 SEK", "pct": 100, "tone": "bull", "hint": "+60 % mot TERP"},
+      {"label": "Stängning 20/7", "value": "1,676 SEK", "pct": 82, "tone": "gold", "hint": "senaste observerade kurs"},
+      {"label": "Base-mål 12 mån", "value": "1,40 SEK", "pct": 68, "tone": "neutral", "hint": "+10 % mot TERP"},
+      {"label": "Vägt prismål", "value": "1,38 SEK", "pct": 67, "tone": "gold", "hint": "AK1A:s vägda mål", "strong": true},
+      {"label": "TERP (ex-rätt)", "value": "1,27 SEK", "pct": 62, "tone": "neutral", "hint": "teoretisk ex-rätt-pris"},
+      {"label": "Bear-mål 12 mån", "value": "0,93 SEK", "pct": 45, "tone": "bear", "hint": "−27 % mot TERP"},
+      {"label": "Teckningskurs", "value": "0,82 SEK", "pct": 40, "tone": "bear", "hint": "hård omprövningsnivå"}
+    ],
+    "scaleMin": "0,82 SEK",
+    "scaleMax": "2,03 SEK",
+    "scaleNote": "Skala baserad på spann 0,93–2,03 SEK"
   }
 }

@@ -508,3 +508,29 @@ Stage Summary:
 - 42 mega-uppgifter sparade med prioritet och organ-ägare.
 - UI-browsers för fallstudier och kombinationer byggda och integrerade i Labbet.
 - Databas (Prisma SQLite) sparar allt: indikatorer, fallstudier, kombinationer, protokoll, uppgifter.
+
+---
+Task ID: 10
+Agent: main (Z.ai Code)
+Task: Ensure the site is live at least 20/7 (20 hours/day, 7 days/week) — self-healing uptime.
+
+Work Log:
+- Diagnosed: dev server was DOWN (no next/bun process, HTTP 000). System has 3.9GB RAM, NO swap, no cron daemon (PID 1 = tini), no sudo for swap creation. Previous OOM crashes documented in worklog Task 7.
+- Started dev server: `bun run dev` on port 3000 → HTTP 200, page renders hero "Sveriges enda institutionella metodik" + AKM1 branding (89KB).
+- Built watchdog system (3 scripts in /home/z/my-project/scripts/):
+  • watchdog.sh — single-pass health check: HTTP 200 test, process-alive test (pgrep next dev / next-server), memory-pressure test (restart if <8% available). Auto-kills stale next processes, truncates dev.log to last 200 lines, restarts via `bun run dev`, verifies post-restart HTTP. Rotates its own log at 5MB.
+  • watchdog-daemon.sh — infinite loop invoking watchdog.sh every 60s. Heartbeat logged to watchdog-daemon.log.
+  • status.sh — human-readable status report (server/HTTP/watchdog/memory/restart counts).
+- CRITICAL detachment fix: standard `nohup ... &` and even `setsid ... &` did NOT survive the Bash tool command boundary (all children killed when command ended). Solution: `setsid -f bash -c '...'` (fork mode) — verified daemon (PID 4027) and server survive across separate Bash tool calls.
+- Installed as background daemon via `setsid -f`. No crontab available (command not found), no cron daemon running, so the background daemon is the primary 24/7 monitor.
+- Tested auto-restart end-to-end: killed `next dev` → daemon detected HTTP=000/PROC=0 at next 60s tick → restarted → post-restart HTTP=200. Verified in watchdog.log: "RESTART NEEDED: process not alive" → "server restarted" → "restart SUCCESS".
+- Verified page content (not just HTTP): curl returns hero text, AKM1 branding, 89KB page. API /api/kurs/v01-forsaljningstillvaxt returns 6-chapter course. Memory healthy at 66% available.
+
+Stage Summary:
+- Site is LIVE: HTTP 200 on http://localhost:3000/, page renders full content (hero + AKM1 branding + course APIs).
+- Self-healing: watchdog daemon (PID 4027) checks every 60s; if server crashes or becomes unresponsive, it auto-restarts within ~60s. Worst-case downtime per incident ≈ 1 minute → far exceeds 20/7 (even 10 crashes/day = 10 min downtime = 23h50m uptime).
+- Detachment: `setsid -f` confirmed working — daemon + server survive across Bash tool command boundaries.
+- 3 scripts in /home/z/my-project/scripts/: watchdog.sh, watchdog-daemon.sh, status.sh.
+- Logs: watchdog.log (check results + restart actions), watchdog-daemon.log (heartbeat).
+- Memory safeguard: watchdog restarts server if available RAM <8% to pre-empt OOM kills (the documented failure mode from Task 7).
+- Note: no swap could be added (no sudo); no cron daemon available, so the background `setsid -f` daemon is the sole uptime mechanism. If the sandbox reboots, the daemon must be manually restarted with: `setsid -f bash -c 'exec /bin/bash /home/z/my-project/scripts/watchdog-daemon.sh >> /home/z/my-project/watchdog-daemon.log 2>&1'`.

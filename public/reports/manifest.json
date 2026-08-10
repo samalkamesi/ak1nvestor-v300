@@ -1,0 +1,140 @@
+{
+  "reports": [
+    {
+      "slug": "volvo-cars-nyborjare",
+      "company": "Volvo Cars",
+      "ticker": "VOLCAR-B",
+      "level": "nyborjare",
+      "levelLabel": "Nybörjare",
+      "title": "Volvo Cars (VOLCAR-B) — Nybörjareanalys",
+      "description": "99 sidor för den som möter Aktieanalys för första gången. Fokus på att förstå bolaget, branschen och de viktigaste indikatorerna utan djup matematik.",
+      "pages": 97,
+      "file": "/reports/volvo-cars-nyborjare.html",
+      "verified": "2026-07-19",
+      "ticker2": "VOLCAR-B",
+      "isin": "SE0021628898",
+      "exchange": "Nasdaq Stockholm (Large Cap)",
+      "sector": "Tillverkning / Personbilar",
+      "sections": [
+        { "del": "0", "title": "Pärm & Innehåll", "pages": "1-3" },
+        { "del": "I", "title": "Ekosystem-meddelande & Ramverk", "pages": "4-12" },
+        { "del": "II", "title": "Teknisk: Mikro-horizont", "pages": "13-19" },
+        { "del": "III", "title": "Teknisk: Kort-horizont", "pages": "20-26" },
+        { "del": "IV", "title": "Teknisk: Medellångsikt-horizont", "pages": "27-33" },
+        { "del": "V", "title": "Teknisk: Långsikt-horizont", "pages": "34-40" },
+        { "del": "VI", "title": "Teknisk: Mega-horizont", "pages": "41-47" },
+        { "del": "VII", "title": "Fundamental våganalys", "pages": "48-59" },
+        { "del": "VIII", "title": "Scenarier: Bull / Base / Bear", "pages": "60-67" },
+        { "del": "IX", "title": "Risker", "pages": "68-74" },
+        { "del": "X", "title": "Rekommendation & Strategi", "pages": "75-82" }
+      ]
+    },
+    {
+      "slug": "volvo-cars-intermediar",
+      "company": "Volvo Cars",
+      "ticker": "VOLCAR-B",
+      "level": "intermediar",
+      "levelLabel": "Intermediär",
+      "title": "Volvo Cars (VOLCAR-B) — Intermediäranalys",
+      "description": "99 sidor för den som kan läsa nyckeltal och vill förstå hur AKM1-variablerna beräknas. Inkluderar Fibonacci-beräkningar, Gann-cykler och Elliott Wave-strukturer.",
+      "pages": 97,
+      "file": "/reports/volvo-cars-intermediar.html",
+      "verified": "2026-07-19",
+      "ticker2": "VOLCAR-B",
+      "isin": "SE0021628898",
+      "exchange": "Nasdaq Stockholm (Large Cap)",
+      "sector": "Tillverkning / Personbilar",
+      "sections": [
+        { "del": "0", "title": "Pärm & Innehåll", "pages": "1-3" },
+        { "del": "I", "title": "Ekosystem-meddelande & Ramverk", "pages": "4-12" },
+        { "del": "II", "title": "Teknisk: Mikro-horizont", "pages": "13-19" },
+        { "del": "III", "title": "Teknisk: Kort-horizont", "pages": "20-26" },
+        { "del": "IV", "title": "Teknisk: Medellångsikt-horizont", "pages": "27-33" },
+        { "del": "V", "title": "Teknisk: Långsikt-horizont", "pages": "34-40" },
+        { "del": "VI", "title": "Teknisk: Mega-horizont", "pages": "41-47" },
+        { "del": "VII", "title": "Fundamental våganalys", "pages": "48-59" },
+        { "del": "VIII", "title": "Scenarier: Bull / Base / Bear", "pages": "60-67" },
+        { "del": "IX", "title": "Risker", "pages": "68-74" },
+        { "del": "X", "title": "Rekommendation & Strategi", "pages": "75-82" }
+      ]
+    },
+    {
+      "slug": "volvo-cars-avancerad",
+      "company": "Volvo Cars",
+      "ticker": "VOLCAR-B",
+      "level": "avancerad",
+      "levelLabel": "Avancerad",
+      "title": "Volvo Cars (VOLCAR-B) — Avanceradanalys",
+      "description": "99 sidor för den som vill förstå allt i djupet. Full teknisk + fundamental våganalys, alla 20 AKM1-variabler beräknade, scenarier och risker i detalj.",
+      "pages": 97,
+      "file": "/reports/volvo-cars-avancerad.html",
+      "verified": "2026-07-19",
+      "ticker2": "VOLCAR-B",
+      "isin": "SE0021628898",
+      "exchange": "Nasdaq Stockholm (Large Cap)",
+      "sector": "Tillverkning / Personbilar",
+      "sections": [
+        { "del": "0", "title": "Pärm & Innehåll", "pages": "1-3" },
+        { "del": "I", "title": "Ekosystem-meddelande & Ramverk", "pages": "4-12" },
+        { "del": "II", "title": "Teknisk: Mikro-horizont", "pages": "13-19" },
+        { "del": "III", "title": "Teknisk: Kort-horizont", "pages": "20-26" },
+        { "del": "IV", "title": "Teknisk: Medellångsikt-horizont", "pages": "27-33" },
+        { "del": "V", "title": "Teknisk: Långsikt-horizont", "pages": "34-40" },
+        { "del": "VI", "title": "Teknisk: Mega-horizont", "pages": "41-47" },
+        { "del": "VII", "title": "Fundamental våganalys", "pages": "48-59" },
+        { "del": "VIII", "title": "Scenarier: Bull / Base / Bear", "pages": "60-67" },
+        { "del": "IX", "title": "Risker", "pages": "68-74" },
+        { "del": "X", "title": "Rekommendation & Strategi", "pages": "75-82" }
+      ]
+    },
+    {
+      "slug": "precise-biometrics-avancerad",
+      "company": "Precise Biometrics",
+      "ticker": "PREC-B",
+      "level": "avancerad",
+      "levelLabel": "Avancerad",
+      "title": "Precise Biometrics (PREC-B) — Avanceradanalys",
+      "description": "99 sidor fullständig institutionell analys av Precise Biometrics. UTANFUNGISKT — referensexempel för AK1A-ekosystemet.",
+      "pages": 97,
+      "file": "/reports/precise-biometrics-avancerad.html",
+      "verified": "2026-07-19",
+      "ticker2": "PREC-B",
+      "isin": "SE0007271056",
+      "exchange": "Nasdaq Stockholm (Small Cap)",
+      "sector": "Teknologi / Biometri",
+      "sections": [
+        { "del": "0", "title": "Pärm & Innehåll", "pages": "1-3" },
+        { "del": "I", "title": "Ekosystem-meddelande & Ramverk", "pages": "4-12" },
+        { "del": "II", "title": "Teknisk: Mikro-horizont", "pages": "13-19" },
+        { "del": "III", "title": "Teknisk: Kort-horizont", "pages": "20-26" },
+        { "del": "IV", "title": "Teknisk: Medellångsikt-horizont", "pages": "27-33" },
+        { "del": "V", "title": "Teknisk: Långsikt-horizont", "pages": "34-40" },
+        { "del": "VI", "title": "Teknisk: Mega-horizont", "pages": "41-47" },
+        { "del": "VII", "title": "Fundamental våganalys", "pages": "48-59" },
+        { "del": "VIII", "title": "Scenarier: Bull / Base / Bear", "pages": "60-67" },
+        { "del": "IX", "title": "Risker", "pages": "68-74" },
+        { "del": "X", "title": "Rekommendation & Strategi", "pages": "75-82" }
+      ]
+    }
+  ],
+  "levels": {
+    "nyborjare": {
+      "label": "Nybörjare — 15 sidor sammanfattning",
+      "description": "Kort introduktion: bolaget, branschen, de 5 viktigaste indikatorerna och rekommendation. Perfekt för den som vill förstå på 15 minuter.",
+      "pages": 15,
+      "icon": "Sparkles"
+    },
+    "intermediar": {
+      "label": "Intermediär — 25-35 sidor detaljerat",
+      "description": "Mer djupgående: alla AKM1-variabler förklarade, teknisk analys med Fibonacci, och scenarier. För den som kan läsa nyckeltal.",
+      "pages": 35,
+      "icon": "BarChart3"
+    },
+    "avancerad": {
+      "label": "Avancerad — 99 sidor fullständig",
+      "description": "Fullständig institutionell analys: alla tidshorisonter (Mikro, Kort, Medellångsikt, Långsikt, Mega), fundamental våganalys, risker och strategi. För den som vill förstå allt.",
+      "pages": 99,
+      "icon": "Microscope"
+    }
+  }
+}

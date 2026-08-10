@@ -112,7 +112,7 @@ export function DeepCourseViewer({ slug }: { slug: string }) {
         {/* Course header */}
         <header className="border-b border-border pb-6">
           <div className="flex flex-wrap items-center gap-2">
-            <Badge className="bg-gold text-background hover:bg-gold">POWER 19</Badge>
+            <Badge className="bg-gold text-background hover:bg-gold">POWER 20</Badge>
             <Badge variant="outline" className="border-gold/40 text-gold">
               {course.category}
             </Badge>

@@ -401,7 +401,7 @@ const TOOLS: {
     id: "jamforelse",
     label: "Jämförelse",
     planned: true,
-    desc: "Jämför två bolag sida vid sida — alla 19 AKM1-variabler och 25 AK1TS-celler i en matris.",
+    desc: "Jämför två bolag sida vid sida — alla 20 AKM1-variabler och 25 AK1TS-celler i en matris.",
   },
   {
     id: "stress-test",
@@ -447,7 +447,7 @@ const QUIZ: QuizQuestion[] = [
     options: ["12", "19", "25", "8"],
     answer: 1,
     explanation:
-      "AKM1 = 19 variabler i 7 kategorier (Tillväxt, Värdering, Lönsamhet, Stabilitet, Moat, Katalysator, Risk).",
+      "AKM1 = 20 variabler i 7 kategorier (Tillväxt, Värdering, Lönsamhet, Stabilitet, Moat, Katalysator, Risk).",
   },
   {
     q: "Vilken AKM1-variabel mäter kapitalförbränning och emission-risk?",
@@ -704,7 +704,7 @@ export function LabbSection() {
             <ConsoleStat
               value="100%"
               label="Reproducerbarhet"
-              caption="Varje verktyg bygger på publicerad metodik — samma 19 AKM1-variabler och 25 AK1TS-celler som i rapportsidorna."
+              caption="Varje verktyg bygger på publicerad metodik — samma 20 AKM1-variabler och 25 AK1TS-celler som i rapportsidorna."
             />
             <ConsoleStat
               value="0"
@@ -784,7 +784,7 @@ export function LabbSection() {
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground">
             Du kan reproducera varje analys steg för steg. Inga hemliga
-            källor, inga dolda formler — samma 19 AKM1-variabler och samma 25
+            källor, inga dolda formler — samma 20 AKM1-variabler och samma 25
             AK1TS-celler som i de publicerade rapportsidorna.
           </p>
 
@@ -801,7 +801,7 @@ export function LabbSection() {
                 AKM1 Calculator
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Samma 19 variabler som i analyserna. Samma vikter, samma
+                Samma 20 variabler som i analyserna. Samma vikter, samma
                 skala 1–5. Räkna ut din egen poäng.
               </p>
               <Button
@@ -848,7 +848,7 @@ export function LabbSection() {
                 Lär dig metoden
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Förstå varje variabel i en kurs. Power 19-kursen ger dig
+                Förstå varje variabel i en kurs. Power 20-kursen ger dig
                 grunden.
               </p>
               <Button
@@ -1062,12 +1062,12 @@ export function LabbSection() {
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               <CtaCard
                 title="AKM1-kalkylatorn"
-                sub="19 variabler — räkna ut din poäng"
+                sub="20 variabler — räkna ut din poäng"
                 onClick={() => setCalcOpen(true)}
               />
               <CtaCard
                 title="Lär dig metoden"
-                sub="Power 19-kurser"
+                sub="Power 20-kurser"
                 onClick={() => setSection("kurser")}
               />
               <CtaCard
@@ -1185,7 +1185,7 @@ export function LabbSection() {
               AKM1 Calculator
             </DialogTitle>
             <DialogDescription>
-              Sätt poäng 1–5 på var och en av de 19 variablerna. Räkna ut
+              Sätt poäng 1–5 på var och en av de 20 variablerna. Räkna ut
               din totala AKM1-poäng (max 95).
             </DialogDescription>
           </DialogHeader>

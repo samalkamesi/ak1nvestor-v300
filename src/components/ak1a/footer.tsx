@@ -84,7 +84,7 @@ export function Footer() {
           <div>
             <span className="font-semibold text-foreground">METOD</span>
             <br />
-            AKM1 (19 variabler) + AK1TS (teknisk)
+            AKM1 (20 variabler) + AK1TS (teknisk)
           </div>
           <div>
             <span className="font-semibold text-foreground">KURSER</span>

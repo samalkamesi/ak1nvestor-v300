@@ -273,3 +273,138 @@ model SystemEvent {
   @@index([severity])
   @@index([createdAt])
 }
+
+// ============================================================
+// MEDLEMSPORTAL — klientportföljer, analytikaruppladdningar, bokningar
+// ============================================================
+
+/// Medlemmar — klienter som registrerat sig för portföljanalys
+model Member {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  phone        String?
+  memberType   String   @default("free") // free | premium | pro
+  sessionId    String?  // anonym session-id koppling
+  createdAt    DateTime @default(now())
+  lastLoginAt  DateTime?
+
+  portfolios   ClientPortfolio[]
+  analyses     ClientAnalysis[]
+  bookings     Booking[]
+
+  @@index([email])
+  @@index([memberType])
+}
+
+/// Klientportföljer — den portfölj klienten anger för analys
+model ClientPortfolio {
+  id           String   @id @default(cuid())
+  memberId     String
+  name         String   @default("Min portfölj")
+  description  String?
+  totalValue   Float    @default(0)
+  cashPosition Float    @default(0)
+  riskTolerance String  @default("medium") // low | medium | high
+  // Aggregerad våg-analys för hela portföljen
+  avgWaveMicro String?  // t.ex. "Impuls 3"
+  avgWaveShort String?
+  avgWaveMedium String?
+  avgWaveLong  String?
+  avgWaveMega  String?
+  avgWaveScore Float?   // 0-100, högre = mer bullish
+  riskScore    Float?
+  // Status för analys
+  analysisStatus String @default("pending") // pending | in_review | completed | needs_update
+  submittedAt  DateTime?
+  analyzedAt   DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  member       Member   @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  holdings     ClientHolding[]
+
+  @@index([memberId])
+  @@index([analysisStatus])
+}
+
+/// Innehav i klientportfölj — enskilda aktiepositioner
+model ClientHolding {
+  id           String   @id @default(cuid())
+  portfolioId  String
+  ticker       String   // t.ex. "VOLCAR-B"
+  company      String
+  sector       String?
+  shares       Float
+  avgCost      Float?
+  currentPrice Float?
+  weight       Float    // procent av portfölj
+  // Per-aktie våganalys (fyra tidshorisonter)
+  waveMicro    String?  // "Impuls 1".."Korrektion E"
+  waveShort    String?
+  waveMedium   String?
+  waveLong     String?
+  waveMega     String?
+  waveConfidence Float? // 0-100
+  waveScore    Float?   // 0-100, högre = mer bullish
+  // Används cached data från data/stocks/[ticker]?
+  usedCache    Boolean  @default(false)
+  cacheDate    DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  portfolio    ClientPortfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+
+  @@index([portfolioId])
+  @@index([ticker])
+}
+
+/// Analytikaruppladdning — analytikerns manuella analys av en portfölj
+model ClientAnalysis {
+  id           String   @id @default(cuid())
+  memberId     String
+  portfolioId  String?
+  type         String   // full_portfolio | single_stock | sector_review | strategy_review
+  title        String
+  summary      String   // kort pedagogisk sammanfattning (100-300 ord)
+  body         String   // full analys-text (kan vara markdown)
+  // Pedagogiska sektioner (för portal-visning)
+  portfolioOverview String? // "Din portfölj består av..."
+  riskAssessment String?    // "Risknivån är..."
+  waveAnalysis String?      // JSON: vågor per tidshorizont
+  recommendations String?   // konkreta rekommendationer
+  nextSteps    String?      // "Boka 15-30 min genomgång..."
+  // Metadata
+  analyzedBy   String?  // analytiker-id/namn
+  confidence   String?  // LÅG | MEDEL | HÖG
+  isPublished  Boolean  @default(false) // syns för klienten?
+  publishedAt  DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  member       Member   @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@index([memberId])
+  @@index([portfolioId])
+  @@index([isPublished])
+}
+
+/// Bokningar — 15-30 min genomgång (ingår i premium)
+model Booking {
+  id           String   @id @default(cuid())
+  memberId     String
+  analysisId   String?
+  type         String   // review_15 | review_30 | strategy_session
+  requestedTime DateTime?
+  confirmedTime DateTime?
+  status       String   @default("requested") // requested | confirmed | completed | cancelled
+  notes        String?
+  meetingLink  String?  // Zoom/Teams-länk
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  member       Member   @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@index([memberId])
+  @@index([status])
+}

@@ -149,7 +149,7 @@ export function SummaryDrawer() {
               Läs PREC-analysen (99 sidor)
             </Button>
             <Button variant="outline" size="sm" onClick={() => { setSection("kurser"); setSummaryOpen(false); }}>
-              Börja med Power 19
+              Börja med Power 20
             </Button>
             <Button size="sm" onClick={() => { setSection("labb"); setSummaryOpen(false); }}>
               Öppna Labbet

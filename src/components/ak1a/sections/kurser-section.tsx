@@ -194,8 +194,8 @@ const LEARNING_PATHS = [
   {
     num: 3,
     eyebrow: "STEG 3 I LÄROPLANEN",
-    title: "Ambitiös → Bedöm det (Power 19)",
-    body: "Alla 19 AKM1-variabler. Integration mot Labbet. Reproducera institutionella analyser självständigt.",
+    title: "Ambitiös → Bedöm det (Power 20)",
+    body: "Alla 20 AKM1-variabler. Integration mot Labbet. Reproducera institutionella analyser självständigt.",
     courses: 9,
     minutes: 156,
     premium: true,
@@ -432,9 +432,9 @@ export const MEGA_NIVAER: MegaNiva[] = [
   {
     num: 3,
     title: "AKM1-grunden",
-    milstolpe: "Fyll i alla 19 variabler för ett bolag du valt.",
+    milstolpe: "Fyll i alla 20 variabler för ett bolag du valt.",
     xpThreshold: 1500,
-    provning: "Välj ett Mid Cap-bolag och fyll i alla 19 AKM1-variabler med egna siffror.",
+    provning: "Välj ett Mid Cap-bolag och fyll i alla 20 AKM1-variabler med egna siffror.",
   },
   {
     num: 4,
@@ -494,7 +494,7 @@ const AKM1_IDS = AKM1_VARIABLES.map((v) => v.id);
 
 export const BADGES: BadgeDef[] = [
   { id: "BD-01", name: "Första steget", description: "Första kursen klar.", icon: Footprints, auto: true, detect: (p) => p.completedCourses.length >= 1 },
-  { id: "BD-02", name: "AKM1-grund", description: "Alla 19 AKM1-variabler klara.", icon: ShieldCheck, auto: true, detect: (p) => AKM1_IDS.every((id) => p.completedCourses.includes(id)) },
+  { id: "BD-02", name: "AKM1-grund", description: "Alla 20 AKM1-variabler klara.", icon: ShieldCheck, auto: true, detect: (p) => AKM1_IDS.every((id) => p.completedCourses.includes(id)) },
   { id: "BD-03", name: "Våg-mästare", description: "Våg-matris cell klickad i Labbet.", icon: Activity, auto: false, detect: () => false },
   { id: "BD-04", name: "Kalkylatorn", description: "AKM1-kalkylatorn använd i Labbet.", icon: Calculator, auto: false, detect: () => false },
   { id: "BD-05", name: "Quiz-vinnare", description: "Quiz godkänt i Labbet.", icon: Brain, auto: true, detect: (p) => p.quizzesPassed.length >= 1 },
@@ -504,7 +504,7 @@ export const BADGES: BadgeDef[] = [
   { id: "BD-09", name: "Första analysen läst", description: "PREC-analysen påbörjad.", icon: BookOpen, auto: true, detect: (p) => p.precSection >= 5 },
   { id: "BD-10", name: "Styrelse-gäst", description: "Deltagit i ett styrelsemöte.", icon: Gavel, auto: false, detect: () => false },
   { id: "BD-11", name: "Nybörjare-klar", description: "Steg 1 läroplan — V01 klar.", icon: GraduationCap, auto: true, detect: (p) => p.completedCourses.includes("V01") },
-  { id: "BD-12", name: "Power 19", description: "Alla 19 variabler + quiz godkänt.", icon: Zap, auto: true, detect: (p) => AKM1_IDS.every((id) => p.completedCourses.includes(id)) && p.quizzesPassed.length >= 1 },
+  { id: "BD-12", name: "Power 20", description: "Alla 20 variabler + quiz godkänt.", icon: Zap, auto: true, detect: (p) => AKM1_IDS.every((id) => p.completedCourses.includes(id)) && p.quizzesPassed.length >= 1 },
   { id: "BD-13", name: "Mörkrets herre", description: "Använt dark mode.", icon: Moon, auto: false, detect: () => false },
   { id: "BD-14", name: "Sökaren", description: "Använt ⌘K-sök.", icon: Search, auto: false, detect: () => false },
 ];
@@ -543,7 +543,7 @@ export const ANALYTIKER_INSIKTER: AnalytikerInsikt[] = [
     punch:
       "Risk i en portfölj kommer sällan från det du identifierat och kvantifierat. Den kommer från det du inte ens ritat in i din analys.",
     detail:
-      "Alla modeller — även AKM1:s 19 variabler — beskriver en känd okänd-värld. Kriser föds ur okända okända: durations-mismatch du inte sett (SVB), geopolitiska händelser (2022), pandemier (2020), valutarörelser ingen modellerat. Två strategier hanterar detta: (1) position sizing som är liten nog att överleva 80 % kapitalförlust på en position, och (2) diversifiering över orelaterade risker. Många retail-investerare brister i båda — de koncentrerar 50 % i ett bolag de 'känner' och kallar det conviction. Egentligen är det brist på fantasi om vad som kan gå fel.",
+      "Alla modeller — även AKM1:s 20 variabler — beskriver en känd okänd-värld. Kriser föds ur okända okända: durations-mismatch du inte sett (SVB), geopolitiska händelser (2022), pandemier (2020), valutarörelser ingen modellerat. Två strategier hanterar detta: (1) position sizing som är liten nog att överleva 80 % kapitalförlust på en position, och (2) diversifiering över orelaterade risker. Många retail-investerare brister i båda — de koncentrerar 50 % i ett bolag de 'känner' och kallar det conviction. Egentligen är det brist på fantasi om vad som kan gå fel.",
   },
   {
     id: "AI-04",
@@ -559,7 +559,7 @@ export const ANALYTIKER_INSIKTER: AnalytikerInsikt[] = [
     punch:
       "En analys du inte kan reproducera är en åsikt du inte kan lita på. Det du kan skriva ner i steg kan granskas, förbättras och skalas.",
     detail:
-      "AK1A:s kärnprincip 'håll know-how, redovisa generöst' bygger på insikten att hemligheter är spröda och reproducerbarhet är robust. En analytiker som bara har 'känsla' kan inte granskas — och kan inte förbättras. En analytiker som har 19 variabler + formel + skala + scenarier kan granskas punkt för punkt, utmanas och revideras. I institutionell förvaltning kallas detta 'investment process' — och det är det som skiljer en bra förvaltare från en bra period. Som retail-investerare har du inte fördelen av att ha 50 kollegor som granskar varandra — då blir din egen struktur din enda försvarslinje mot överconfidence. Skriv ner din metod. Följ den. Revidera den öppet.",
+      "AK1A:s kärnprincip 'håll know-how, redovisa generöst' bygger på insikten att hemligheter är spröda och reproducerbarhet är robust. En analytiker som bara har 'känsla' kan inte granskas — och kan inte förbättras. En analytiker som har 20 variabler + formel + skala + scenarier kan granskas punkt för punkt, utmanas och revideras. I institutionell förvaltning kallas detta 'investment process' — och det är det som skiljer en bra förvaltare från en bra period. Som retail-investerare har du inte fördelen av att ha 50 kollegor som granskar varandra — då blir din egen struktur din enda försvarslinje mot överconfidence. Skriv ner din metod. Följ den. Revidera den öppet.",
   },
 ];
 
@@ -630,7 +630,7 @@ export function KurserSection() {
               Komplett kunskapsmarknad
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              270 kurser totalt. AKM1:s 19 variabler, kunskapsmarknad,
+              270 kurser totalt. AKM1:s 20 variabler, kunskapsmarknad,
               mega-nivåer, belöningar och analytiker-insikter — allt på ett
               ställe.
             </p>
@@ -687,7 +687,7 @@ export function KurserSection() {
             <span className="font-semibold uppercase tracking-wider">
               Katalog:
             </span>{" "}
-            19 AKM1 + 251 kunskapsmarknad + 5 fallstudier + 6 mega-nivåer + 14
+            20 AKM1 + 251 kunskapsmarknad + 5 fallstudier + 6 mega-nivåer + 14
             badges + 5 insikter. Browsebar idag: {19 + 68 + 5 + 6 + 14 + 5} av 270.
           </p>
         </div>
@@ -701,7 +701,7 @@ export function KurserSection() {
             Välj ditt spår.
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Sex sätt att utforska kunskap. Börja med AKM1:s 19 variabler —
+            Sex sätt att utforska kunskap. Börja med AKM1:s 20 variabler —
             grunden allt annat vilar på.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -738,14 +738,14 @@ export function KurserSection() {
         </div>
       </section>
 
-      {/* ───────────── AKM1 19 VARIABLES ───────────── */}
+      {/* ───────────── AKM1 20 VARIABLES ───────────── */}
       <section id="akm1-variabler" className="border-b border-border bg-muted/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <Eyebrow>AKM1 — grunden</Eyebrow>
               <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
-                AKM1:s 19 variabler
+                AKM1:s 20 variabler
               </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 Lär dig varje indikator i AKM1-modellen. Varje kurs har teori,
@@ -829,7 +829,7 @@ export function KurserSection() {
             {level === "intermediar" &&
               "Nybörjare- och Intermediär-kurser är upplåsta. Avancerade kurser kräver Avancerad-nivå."}
             {level === "avancerad" &&
-              "Alla 19 variabler är upplåsta. Du kan påbörja vilken kurs som helst."}
+              "Alla 20 variabler är upplåsta. Du kan påbörja vilken kurs som helst."}
           </p>
         </div>
       </section>
@@ -852,7 +852,7 @@ export function KurserSection() {
       {/* ───────────── KNOWLEDGE MAP ───────────── */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
-          <Eyebrow>19 celler · 19 variabler</Eyebrow>
+          <Eyebrow>19 celler · 20 variabler</Eyebrow>
           <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
             Din kunskapskarta
           </h2>

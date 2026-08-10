@@ -6,10 +6,12 @@ export const NAV_SECTIONS = [
   { id: "prec", label: "PREC-ANALYS" },
   { id: "analyser", label: "ANALYSER" },
   { id: "aktier", label: "AKTIER" },
+  { id: "rapporter", label: "RAPPORTER" },
   { id: "kurser", label: "KURSER" },
   { id: "labb", label: "LABB" },
   { id: "styrelse", label: "STYRELSE" },
   { id: "om-oss", label: "OM OSS" },
+  { id: "portal", label: "PORTAL" },
 ] as const;
 
 /** Footer "MER" navigation list. */
@@ -17,6 +19,7 @@ export const FOOTER_NAV = [
   { label: "Hem · Huvudsida", section: "hem" as const },
   { label: "PREC-analysen (23 sektioner)", section: "prec" as const },
   { label: "Alla analyser", section: "prec" as const },
+  { label: "Rapporter (99-sidors analyser)", section: "rapporter" as const },
   { label: "Kurser (200+ moduler · 4 flikar)", section: "kurser" as const },
   { label: "Labb (case + faror + historia)", section: "labb" as const },
   { label: "Meta-system (organ + visioner)", section: "om-oss" as const },
@@ -24,7 +27,8 @@ export const FOOTER_NAV = [
   { label: "Utbildning & Medlemskap", section: "utbildning" as const },
   { label: "AKM1 Verktyg", section: "labb" as const },
   { label: "Webinarier", section: "kurser" as const },
-  { label: "Logga in / Registrera", section: "om-oss" as const },
+  { label: "Logga in / Registrera", section: "portal" as const },
+  { label: "Min portal · Portföljoptimering", section: "portal" as const },
   { label: "Om oss", section: "om-oss" as const },
   { label: "Admin Dashboard", section: "admin" as const },
 ];
@@ -126,7 +130,7 @@ export const ORGANS: Organ[] = [
   {
     symbol: "α", name: "Analys-organet", verb: "TÄNKER", state: "DJUPARBETE", active: true,
     role: "Fundamental och teknisk nedbrytning — AKM1 + AK1TS",
-    responsibilities: ["AKM1 19-variabel fundamental analys", "AK1TS Elliott + Fibonacci + Gann + Lucas", "Vågräkningar i fundamentalen"],
+    responsibilities: ["AKM1 20-variabel fundamental analys", "AK1TS Elliott + Fibonacci + Gann + Lucas", "Vågräkningar i fundamentalen"],
     goal: "Full AKM1 + AK1TS per bolag, systematiskt", goalKind: "metodmal",
     mantra: "Data talar — vi översätter.",
     nextWish: "En forsknings-pipeline som visar vilka bolag som väntar på analys, vilken fas varje bolag befinner sig i, och vilka variabler som saknas.",
@@ -158,7 +162,7 @@ export const ORGANS: Organ[] = [
   {
     symbol: "Θ", name: "Kvalitets-organet", verb: "BESLUTAR", state: "AKTIV", active: true,
     role: "Kvalitetsgranskning — granskar, validerar, nekar",
-    responsibilities: ["Validering av analys-kvalitet (19/19 variabler)", "Know-how-valv skydd", "Ärlighets-filter (inga falska påståenden)"],
+    responsibilities: ["Validering av analys-kvalitet (19/20 variabler)", "Know-how-valv skydd", "Ärlighets-filter (inga falska påståenden)"],
     goal: "Varje publicerad analys når 9/10 kvalitet", goalKind: "metodmal",
     mantra: "Bevisa det — annars stannar det.",
     nextWish: "Ett ärlighets-dashbord som visar vilka påståenden som är verifierade, vilka som är visioner, och vilka som har tagits bort — så att besökaren kan lita på allt som står.",
@@ -177,7 +181,7 @@ export const ORGANS: Organ[] = [
     responsibilities: ["Fas 1 & Fas 2 utbildningsmaterial", "Rapportguider och nybörjarhjälp", "Pedagogisk berättelse (AKM1 calculator)"],
     goal: "Varje modul testad på nybörjare innan publicering", goalKind: "metodmal",
     mantra: "Förståelse först — vinst sedan.",
-    nextWish: "En inlärningsväg som visar exakt vad en nybörjare ska göra steg-för-steg, från 'öppna en årsredovisning' till 'fyll i alla 19 variabler' — konkret och ärligt.",
+    nextWish: "En inlärningsväg som visar exakt vad en nybörjare ska göra steg-för-steg, från 'öppna en årsredovisning' till 'fyll i alla 20 variabler' — konkret och ärligt.",
   },
 ];
 

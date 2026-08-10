@@ -397,7 +397,7 @@ export function UtbildningSection() {
                     className="absolute -top-2 right-4 bg-gold text-background hover:bg-gold/90"
                     variant="default"
                   >
-                    <Zap className="mr-1 h-3 w-3" /> POWER 19
+                    <Zap className="mr-1 h-3 w-3" /> POWER 20
                   </Badge>
                 )}
 
@@ -456,13 +456,13 @@ export function UtbildningSection() {
         </div>
       </section>
 
-      {/* ───────────── POWER 19-PRINCIPEN ───────────── */}
+      {/* ───────────── POWER 20-PRINCIPEN ───────────── */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14 sm:py-20">
           <div className="max-w-3xl">
-            <Eyebrow>Power 19-principen</Eyebrow>
+            <Eyebrow>Power 20-principen</Eyebrow>
             <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight sm:text-4xl">
-              19 variabler. 80% av värdet.
+              20 variabler. 80% av värdet.
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Av 200+ kurser driver 19 grundläggande AKM1-variabler 80% av
@@ -472,7 +472,7 @@ export function UtbildningSection() {
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {/* Premium Power 19 */}
+            {/* Premium Power 20 */}
             <Card className="relative border-gold/40 bg-card p-6 shadow-sm">
               <Badge
                 className="absolute -top-2 right-4 bg-gold text-background hover:bg-gold/90"
@@ -483,7 +483,7 @@ export function UtbildningSection() {
               <div className="flex items-center gap-2">
                 <Zap className="h-5 w-5 text-gold" />
                 <h3 className="font-serif text-2xl font-bold tracking-tight">
-                  Power 19
+                  Power 20
                 </h3>
               </div>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -753,7 +753,7 @@ export function UtbildningSection() {
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
               <CtaCard
                 icon={<GraduationCap className="h-5 w-5 text-gold" />}
-                title="Power 19-kurser"
+                title="Power 20-kurser"
                 sub="19 fundamentala variabler"
                 onClick={() => setSection("kurser")}
               />

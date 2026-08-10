@@ -1415,7 +1415,7 @@ export function PrecSection() {
               icon={<GraduationCap className="h-5 w-5" />}
               tier="Nästa steg · 1"
               title="Lär dig metoden"
-              body="AKM1:s 19 variabler — den struktur som ligger bakom den här analysen."
+              body="AKM1:s 20 variabler — den struktur som ligger bakom den här analysen."
               cta="GÅ TILL KURSER"
               onClick={() => setSection("kurser")}
             />

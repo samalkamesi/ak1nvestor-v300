@@ -171,7 +171,7 @@ const PHASES: Phase[] = [
   {
     num: "02",
     name: "TÄNKER",
-    body: "AKM1 19 variabler + AK1TS 5×5 matris + RR/BR/CF 18 indikatorer bearbetas.",
+    body: "AKM1 20 variabler + AK1TS 5×5 matris + RR/BR/CF 18 indikatorer bearbetas.",
     tag: "19 + 25 + 18 CELLER",
   },
   {
@@ -412,7 +412,7 @@ export function AnalyserSection() {
                 </div>
 
                 <p className="mt-5 text-xs text-muted-foreground">
-                  Fullständig rapport: 99 sidor · 19 AKM1-variabler · 25
+                  Fullständig rapport: 99 sidor · 20 AKM1-variabler · 25
                   AK1TS-celler · 18 RR/BR/CF-indikatorer.
                 </p>
 
@@ -586,7 +586,7 @@ export function AnalyserSection() {
             <ReproCard
               icon={<Microscope className="h-5 w-5" />}
               title="AKM1-calculatorn öppen"
-              body="Du kan poängsatta samma bolag med samma verktyg. 19 variabler, samma vikter, samma skala. Inga dolda formler."
+              body="Du kan poängsatta samma bolag med samma verktyg. 20 variabler, samma vikter, samma skala. Inga dolda formler."
               footer="MÄTT — GÄLLER ALLA ANALYSER"
               tagKind="matt"
             />

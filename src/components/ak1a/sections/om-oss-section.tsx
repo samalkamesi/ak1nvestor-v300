@@ -57,7 +57,7 @@ const MARKET_BELIEFS: string[] = [
 
 const WE_KNOW: { text: string; tag?: "matt" | "metodmal" }[] = [
   { text: "Djup metodik slår diversifiering för den som orkar lära", tag: "metodmal" },
-  { text: "Med 19 variabler kan vem som helst göra institutionell analys", tag: "matt" },
+  { text: "Med 20 variabler kan vem som helst göra institutionell analys", tag: "matt" },
   { text: "Tid är insikt, inte risk" },
   { text: "Djup är värde — hastighet är kasino" },
 ];
@@ -415,7 +415,7 @@ export function OmOssSection() {
             />
             <CtaCard
               icon={<GraduationCap className="h-5 w-5" />}
-              title="Börja med Power 19"
+              title="Börja med Power 20"
               sub="19 fundamentala variabler"
               onClick={() => setSection("kurser")}
             />

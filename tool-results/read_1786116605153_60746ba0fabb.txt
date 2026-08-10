@@ -1,0 +1,669 @@
+     1→     1→"use client";
+     2→     2→
+     3→     3→import * as React from "react";
+     4→     4→import {
+     5→     5→  Activity,
+     6→     6→  Users,
+     7→     7→  FolderKanban,
+     8→     8→  Brain,
+     9→     9→  AlertTriangle,
+    10→    10→  Database,
+    11→    11→  TrendingUp,
+    12→    12→  Clock,
+    13→    13→  RefreshCw,
+    14→    14→  Eye,
+    15→    15→  ChevronRight,
+    16→    16→  Server,
+    17→    17→  Zap,
+    18→    18→  CheckCircle2,
+    19→    19→  XCircle,
+    20→    20→  Filter,
+    21→    21→  Download,
+    22→    22→} from "lucide-react";
+    23→    23→import { useAk1aStore } from "@/lib/ak1a-store";
+    24→    24→import { Ak1aLogo, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+    25→    25→import { Card } from "@/components/ui/card";
+    26→    26→import { Button } from "@/components/ui/button";
+    27→    27→import { Badge } from "@/components/ui/badge";
+    28→    28→import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+    29→    29→import { ScrollArea } from "@/components/ui/scroll-area";
+    30→    30→import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+    31→    31→import { Input } from "@/components/ui/input";
+    32→    32→import { cn } from "@/lib/utils";
+    33→    33→
+    34→    34→interface ActivityLog {
+    35→    35→  id: string;
+    36→    36→  sessionId: string;
+    37→    37→  action: string;
+    38→    38→  section: string | null;
+    39→    39→  targetType: string | null;
+    40→    40→  targetId: string | null;
+    41→    41→  metadata: string | null;
+    42→    42→  userAgent: string | null;
+    43→    43→  ipHash: string | null;
+    44→    44→  createdAt: string;
+    45→    45→}
+    46→    46→
+    47→    47→interface SystemEventLog {
+    48→    48→  id: string;
+    49→    49→  type: string;
+    50→    50→  severity: string;
+    51→    51→  message: string;
+    52→    52→  details: string | null;
+    53→    53→  source: string | null;
+    54→    54→  createdAt: string;
+    55→    55→}
+    56→    56→
+    57→    57→interface PortfolioLog {
+    58→    58→  id: string;
+    59→    59→  sessionId: string;
+    60→    60→  name: string;
+    61→    61→  description: string | null;
+    62→    62→  totalValue: number;
+    63→    63→  riskScore: number | null;
+    64→    64→  holdings: { id: string; ticker: string; company: string; weight: number; akm1Total: number | null }[];
+    65→    65→  createdAt: string;
+    66→    66→  updatedAt: string;
+    67→    67→}
+    68→    68→
+    69→    69→interface Stats {
+    70→    70→  totals: {
+    71→    71→    activities: number;
+    72→    72→    activities24h: number;
+    73→    73→    activities7d: number;
+    74→    74→    uniqueSessions24h: number;
+    75→    75→    uniqueSessions7d: number;
+    76→    76→    portfolios: number;
+    77→    77→    analysisSessions: number;
+    78→    78→    organConsultations: number;
+    79→    79→    systemEvents: number;
+    80→    80→    criticalEvents24h: number;
+    81→    81→  };
+    82→    82→  breakdowns: {
+    83→    83→    byAction: { action: string; count: number }[];
+    84→    84→    bySection: { section: string; count: number }[];
+    85→    85→  };
+    86→    86→  recent: {
+    87→    87→    activities: ActivityLog[];
+    88→    88→    events: SystemEventLog[];
+    89→    89→    portfolios: PortfolioLog[];
+    90→    90→  };
+    91→    91→}
+    92→    92→
+    93→    93→const ACTION_LABELS: Record<string, string> = {
+    94→    94→  section_visit: "Sektion besök",
+    95→    95→  course_open: "Kurs öppnad",
+    96→    96→  course_complete: "Kurs slutförd",
+    97→    97→  portfolio_create: "Portfölj skapad",
+    98→    98→  portfolio_update: "Portfölj uppdaterad",
+    99→    99→  analysis_run: "Analys körd",
+   100→   100→  search: "Sökning",
+   101→   101→  meeting_convened: "Styrelsemöte",
+   102→   102→  organ_consulted: "Organ konsulterat",
+   103→   103→};
+   104→   104→
+   105→   105→const SEVERITY_COLORS: Record<string, string> = {
+   106→   106→  info: "text-muted-foreground",
+   107→   107→  warning: "text-yellow-600 dark:text-yellow-400",
+   108→   108→  error: "text-orange-600 dark:text-orange-400",
+   109→   109→  critical: "text-red-600 dark:text-red-400",
+   110→   110→};
+   111→   111→
+   112→   112→function timeAgo(iso: string): string {
+   113→   113→  const diff = Date.now() - new Date(iso).getTime();
+   114→   114→  const sec = Math.floor(diff / 1000);
+   115→   115→  if (sec < 60) return `${sec}s sedan`;
+   116→   116→  const min = Math.floor(sec / 60);
+   117→   117→  if (min < 60) return `${min}m sedan`;
+   118→   118→  const hr = Math.floor(min / 60);
+   119→   119→  if (hr < 24) return `${hr}h sedan`;
+   120→   120→  const day = Math.floor(hr / 24);
+   121→   121→  return `${day}d sedan`;
+   122→   122→}
+   123→   123→
+   124→   124→export default function AdminDashboard() {
+   125→   125→  const { setSection } = useAk1aStore();
+   126→   126→  const [authed, setAuthed] = React.useState(false);
+   127→   127→  const [password, setPassword] = React.useState("");
+   128→   128→  const [stats, setStats] = React.useState<Stats | null>(null);
+   129→   129→  const [loading, setLoading] = React.useState(false);
+   130→   130→  const [activities, setActivities] = React.useState<ActivityLog[]>([]);
+   131→   131→  const [actionFilter, setActionFilter] = React.useState<string>("all");
+   132→   132→  const [sectionFilter, setSectionFilter] = React.useState<string>("all");
+   133→   133→  const [autoRefresh, setAutoRefresh] = React.useState(true);
+   134→   134→  const [activeTab, setActiveTab] = React.useState("overview");
+   135→   135→
+   136→   136→  const fetchStats = React.useCallback(async () => {
+   137→   137→    try {
+   138→   138→      const res = await fetch("/api/admin/stats");
+   139→   139→      if (res.ok) {
+   140→   140→        const data = await res.json();
+   141→   141→        setStats(data);
+   142→   142→      }
+   143→   143→    } catch (err) {
+   144→   144→      // silent fail
+   145→   145→    }
+   146→   146→  }, []);
+   147→   147→
+   148→   148→  const fetchActivities = React.useCallback(async () => {
+   149→   149→    try {
+   150→   150→      const params = new URLSearchParams({ limit: "200" });
+   151→   151→      if (actionFilter !== "all") params.set("action", actionFilter);
+   152→   152→      if (sectionFilter !== "all") params.set("section", sectionFilter);
+   153→   153→      const res = await fetch(`/api/admin/activity?${params}`);
+   154→   154→      if (res.ok) {
+   155→   155→        const data = await res.json();
+   156→   156→        setActivities(data.activities || []);
+   157→   157→      }
+   158→   158→    } catch (err) {
+   159→   159→      // silent fail
+   160→   160→    }
+   161→   161→  }, [actionFilter, sectionFilter]);
+   162→   162→
+   163→   163→  React.useEffect(() => {
+   164→   164→    if (!authed) return;
+   165→   165→    fetchStats();
+   166→   166→    fetchActivities();
+   167→   167→  }, [authed, fetchStats, fetchActivities]);
+   168→   168→
+   169→   169→  React.useEffect(() => {
+   170→   170→    if (!authed || !autoRefresh) return;
+   171→   171→    const interval = setInterval(() => {
+   172→   172→      fetchStats();
+   173→   173→      if (activeTab === "activity") fetchActivities();
+   174→   174→    }, 10000); // refresh var 10s
+   175→   175→    return () => clearInterval(interval);
+   176→   176→  }, [authed, autoRefresh, activeTab, fetchStats, fetchActivities]);
+   177→   177→
+   178→   178→  if (!authed) {
+   179→   179→    return (
+   180→   180→      <div className="paper-texture flex min-h-screen items-center justify-center px-4">
+   181→   181→        <Card className="w-full max-w-sm border-gold/30 p-6">
+   182→   182→          <Ak1aLogo size="md" onClick={() => setSection("hem")} />
+   183→   183→          <div className="mt-6 flex items-center gap-2">
+   184→   184→            <Server className="h-5 w-5 text-gold" />
+   185→   185→            <h1 className="font-serif text-xl font-bold">Admin Dashboard</h1>
+   186→   186→          </div>
+   187→   187→          <p className="mt-2 text-xs text-muted-foreground">
+   188→   188→            AK1A Research Lab — administrativ översikt. Endast för behörig personal.
+   189→   189→          </p>
+   190→   190→          <Input
+   191→   191→            type="password"
+   192→   192→            value={password}
+   193→   193→            onChange={(e) => setPassword(e.target.value)}
+   194→   194→            placeholder="Lösenord"
+   195→   195→            className="mt-4"
+   196→   196→            onKeyDown={(e) => {
+   197→   197→              if (e.key === "Enter" && password) setAuthed(true);
+   198→   198→            }}
+   199→   199→          />
+   200→   200→          <Button
+   201→   201→            className="mt-3 w-full bg-gold text-background hover:bg-gold/90"
+   202→   202→            onClick={() => password && setAuthed(true)}
+   203→   203→          >
+   204→   204→            Logga in
+   205→   205→          </Button>
+   206→   206→          <Button variant="ghost" className="mt-2 w-full text-xs" onClick={() => setSection("hem")}>
+   207→   207→            Tillbaka till startsidan
+   208→   208→          </Button>
+   209→   209→        </Card>
+   210→   210→      </div>
+   211→   211→    );
+   212→   212→  }
+   213→   213→
+   214→   214→  return (
+   215→   215→    <div className="paper-texture min-h-screen">
+   216→   216→      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+   217→   217→        {/* Header */}
+   218→   218→        <div className="flex items-center justify-between">
+   219→   219→          <Ak1aLogo size="md" onClick={() => setSection("hem")} />
+   220→   220→          <div className="flex items-center gap-2">
+   221→   221→            <Badge className="bg-gold text-background">ADMIN</Badge>
+   222→   222→            <Button
+   223→   223→              variant="outline"
+   224→   224→              size="sm"
+   225→   225→              onClick={() => setAutoRefresh((v) => !v)}
+   226→   226→            >
+   227→   227→              <RefreshCw className={cn("mr-1 h-3.5 w-3.5", autoRefresh && "animate-spin")} />
+   228→   228→              {autoRefresh ? "Auto-uppdaterar" : "Pausad"}
+   229→   229→            </Button>
+   230→   230→            <Button variant="outline" size="sm" onClick={() => { fetchStats(); fetchActivities(); }}>
+   231→   231→              <RefreshCw className="mr-1 h-3.5 w-3.5" /> Uppdatera
+   232→   232→            </Button>
+   233→   233→          </div>
+   234→   234→        </div>
+   235→   235→
+   236→   236→        <div className="mt-6">
+   237→   237→          <Eyebrow>AK1A Research Lab</Eyebrow>
+   238→   238→          <h1 className="mt-2 font-serif text-3xl font-bold">Admin Dashboard</h1>
+   239→   239→          <p className="mt-1 text-sm text-muted-foreground">
+   240→   240→            Realtidsöversikt över klientaktivitet, portföljer, AI-organ-möten och systemhälsa.
+   241→   241→            <HonestyTag kind="matt" className="ml-2" /> — all data är anonymiserad per session.
+   242→   242→          </p>
+   243→   243→        </div>
+   244→   244→
+   245→   245→        <GoldRule className="my-6" />
+   246→   246→
+   247→   247→        {/* KPI Cards */}
+   248→   248→        {stats && (
+   249→   249→          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+   250→   250→            <KpiCard
+   251→   251→              icon={<Activity className="h-5 w-5 text-gold" />}
+   252→   252→              label="Aktiviteter totalt"
+   253→   253→              value={stats.totals.activities}
+   254→   254→              sub={`${stats.totals.activities24h} senaste 24h`}
+   255→   255→            />
+   256→   256→            <KpiCard
+   257→   257→              icon={<Users className="h-5 w-5 text-gold" />}
+   258→   258→              label="Unika sessioner 24h"
+   259→   259→              value={stats.totals.uniqueSessions24h}
+   260→   260→              sub={`${stats.totals.uniqueSessions7d} senaste 7d`}
+   261→   261→            />
+   262→   262→            <KpiCard
+   263→   263→              icon={<FolderKanban className="h-5 w-5 text-gold" />}
+   264→   264→              label="Klientportföljer"
+   265→   265→              value={stats.totals.portfolios}
+   266→   266→              sub={`${stats.totals.analysisSessions} analyssessioner`}
+   267→   267→            />
+   268→   268→            <KpiCard
+   269→   269→              icon={<Brain className="h-5 w-5 text-gold" />}
+   270→   270→              label="AI-organ konsultationer"
+   271→   271→              value={stats.totals.organConsultations}
+   272→   272→              sub="Σ α Δ Ω Φ Θ Μ Ψ"
+   273→   273→            />
+   274→   274→            <KpiCard
+   275→   275→              icon={<AlertTriangle className="h-5 w-5 text-gold" />}
+   276→   276→              label="Kritiska events 24h"
+   277→   277→              value={stats.totals.criticalEvents24h}
+   278→   278→              sub={`${stats.totals.systemEvents} totalt events`}
+   279→   279→              alert={stats.totals.criticalEvents24h > 0}
+   280→   280→            />
+   281→   281→          </div>
+   282→   282→        )}
+   283→   283→
+   284→   284→        {/* Tabs */}
+   285→   285→        <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-8">
+   286→   286→          <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
+   287→   287→            <TabsTrigger value="overview" className="px-3 py-1.5 text-xs sm:text-sm">Översikt</TabsTrigger>
+   288→   288→            <TabsTrigger value="activity" className="px-3 py-1.5 text-xs sm:text-sm">Aktivitetslogg</TabsTrigger>
+   289→   289→            <TabsTrigger value="portfolios" className="px-3 py-1.5 text-xs sm:text-sm">Klientportföljer</TabsTrigger>
+   290→   290→            <TabsTrigger value="system" className="px-3 py-1.5 text-xs sm:text-sm">Systemevents</TabsTrigger>
+   291→   291→            <TabsTrigger value="breakdown" className="px-3 py-1.5 text-xs sm:text-sm">Statistik</TabsTrigger>
+   292→   292→          </TabsList>
+   293→   293→
+   294→   294→          {/* Overview */}
+   295→   295→          <TabsContent value="overview" className="mt-6 space-y-6">
+   296→   296→            <div className="grid gap-4 lg:grid-cols-2">
+   297→   297→              <Card className="p-5">
+   298→   298→                <div className="flex items-center justify-between">
+   299→   299→                  <div className="flex items-center gap-2">
+   300→   300→                    <Activity className="h-4 w-4 text-gold" />
+   301→   301→                    <h3 className="font-serif text-lg font-bold">Senaste aktivitet</h3>
+   302→   302→                  </div>
+   303→   303→                  <Button variant="ghost" size="sm" onClick={() => setActiveTab("activity")}>
+   304→   304→                    Visa alla <ChevronRight className="ml-1 h-3 w-3" />
+   305→   305→                  </Button>
+   306→   306→                </div>
+   307→   307→                <ScrollArea className="mt-3 h-[300px]">
+   308→   308→                  <div className="space-y-2">
+   309→   309→                    {stats?.recent.activities.map((a) => (
+   310→   310→                      <ActivityRow key={a.id} activity={a} compact />
+   311→   311→                    ))}
+   312→   312→                    {stats?.recent.activities.length === 0 && (
+   313→   313→                      <p className="py-8 text-center text-sm text-muted-foreground">Inga aktiviteter än.</p>
+   314→   314→                    )}
+   315→   315→                  </div>
+   316→   316→                </ScrollArea>
+   317→   317→              </Card>
+   318→   318→
+   319→   319→              <Card className="p-5">
+   320→   320→                <div className="flex items-center justify-between">
+   321→   321→                  <div className="flex items-center gap-2">
+   322→   322→                    <Server className="h-4 w-4 text-gold" />
+   323→   323→                    <h3 className="font-serif text-lg font-bold">Systemevents</h3>
+   324→   324→                  </div>
+   325→   325→                  <Button variant="ghost" size="sm" onClick={() => setActiveTab("system")}>
+   326→   326→                    Visa alla <ChevronRight className="ml-1 h-3 w-3" />
+   327→   327→                  </Button>
+   328→   328→                </div>
+   329→   329→                <ScrollArea className="mt-3 h-[300px]">
+   330→   330→                  <div className="space-y-2">
+   331→   331→                    {stats?.recent.events.map((e) => (
+   332→   332→                      <div key={e.id} className="rounded-md border border-border bg-card p-2.5 text-xs">
+   333→   333→                        <div className="flex items-center justify-between">
+   334→   334→                          <span className={cn("font-semibold uppercase", SEVERITY_COLORS[e.severity])}>
+   335→   335→                            {e.severity}
+   336→   336→                          </span>
+   337→   337→                          <span className="text-muted-foreground">{timeAgo(e.createdAt)}</span>
+   338→   338→                        </div>
+   339→   339→                        <p className="mt-1 font-medium">{e.message}</p>
+   340→   340→                        {e.source && (
+   341→   341→                          <p className="mt-0.5 text-muted-foreground">källa: {e.source}</p>
+   342→   342→                        )}
+   343→   343→                      </div>
+   344→   344→                    ))}
+   345→   345→                    {stats?.recent.events.length === 0 && (
+   346→   346→                      <p className="py-8 text-center text-sm text-muted-foreground">Inga systemevents.</p>
+   347→   347→                    )}
+   348→   348→                  </div>
+   349→   349→                </ScrollArea>
+   350→   350→              </Card>
+   351→   351→            </div>
+   352→   352→
+   353→   353→            {/* Mest populära sektioner */}
+   354→   354→            {stats && (
+   355→   355→              <Card className="p-5">
+   356→   356→                <div className="flex items-center gap-2">
+   357→   357→                  <TrendingUp className="h-4 w-4 text-gold" />
+   358→   358→                  <h3 className="font-serif text-lg font-bold">Mest besökta sektioner</h3>
+   359→   359→                </div>
+   360→   360→                <div className="mt-3 space-y-2">
+   361→   361→                  {stats.breakdowns.bySection.slice(0, 8).map((s) => {
+   362→   362→                    const max = stats.breakdowns.bySection[0]?.count || 1;
+   363→   363→                    return (
+   364→   364→                      <div key={s.section} className="flex items-center gap-3">
+   365→   365→                        <span className="w-24 text-xs font-medium uppercase text-muted-foreground">
+   366→   366→                          {s.section || "okänd"}
+   367→   367→                        </span>
+   368→   368→                        <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
+   369→   369→                          <div
+   370→   370→                            className="h-full bg-gold"
+   371→   371→                            style={{ width: `${(s.count / max) * 100}%` }}
+   372→   372→                          />
+   373→   373→                        </div>
+   374→   374→                        <span className="w-12 text-right text-xs font-semibold">{s.count}</span>
+   375→   375→                      </div>
+   376→   376→                    );
+   377→   377→                  })}
+   378→   378→                </div>
+   379→   379→              </Card>
+   380→   380→            )}
+   381→   381→          </TabsContent>
+   382→   382→
+   383→   383→          {/* Activity Log */}
+   384→   384→          <TabsContent value="activity" className="mt-6">
+   385→   385→            <Card className="p-5">
+   386→   386→              <div className="flex flex-wrap items-center justify-between gap-3">
+   387→   387→                <h3 className="font-serif text-lg font-bold">Aktivitetslogg</h3>
+   388→   388→                <div className="flex flex-wrap items-center gap-2">
+   389→   389→                  <Select value={actionFilter} onValueChange={setActionFilter}>
+   390→   390→                    <SelectTrigger className="h-8 w-40 text-xs">
+   391→   391→                      <SelectValue placeholder="Alla actions" />
+   392→   392→                    </SelectTrigger>
+   393→   393→                    <SelectContent>
+   394→   394→                      <SelectItem value="all">Alla actions</SelectItem>
+   395→   395→                      {Object.entries(ACTION_LABELS).map(([k, v]) => (
+   396→   396→                        <SelectItem key={k} value={k}>{v}</SelectItem>
+   397→   397→                      ))}
+   398→   398→                    </SelectContent>
+   399→   399→                  </Select>
+   400→   400→                  <Select value={sectionFilter} onValueChange={setSectionFilter}>
+   401→   401→                    <SelectTrigger className="h-8 w-40 text-xs">
+   402→   402→                      <SelectValue placeholder="Alla sektioner" />
+   403→   403→                    </SelectTrigger>
+   404→   404→                    <SelectContent>
+   405→   405→                      <SelectItem value="all">Alla sektioner</SelectItem>
+   406→   406→                      <SelectItem value="hem">Hem</SelectItem>
+   407→   407→                      <SelectItem value="kurser">Kurser</SelectItem>
+   408→   408→                      <SelectItem value="labb">Labbet</SelectItem>
+   409→   409→                      <SelectItem value="styrelse">Styrelse</SelectItem>
+   410→   410→                      <SelectItem value="analyser">Analyser</SelectItem>
+   411→   411→                      <SelectItem value="aktier">Aktier</SelectItem>
+   412→   412→                      <SelectItem value="utbildning">Utbildning</SelectItem>
+   413→   413→                    </SelectContent>
+   414→   414→                  </Select>
+   415→   415→                  <Button variant="outline" size="sm" onClick={fetchActivities}>
+   416→   416→                    <RefreshCw className="mr-1 h-3 w-3" /> Ladda om
+   417→   417→                  </Button>
+   418→   418→                </div>
+   419→   419→              </div>
+   420→   420→
+   421→   421→              <ScrollArea className="mt-4 h-[500px]">
+   422→   422→                <div className="space-y-1.5">
+   423→   423→                  {activities.map((a) => (
+   424→   424→                    <ActivityRow key={a.id} activity={a} />
+   425→   425→                  ))}
+   426→   426→                  {activities.length === 0 && (
+   427→   427→                    <p className="py-12 text-center text-sm text-muted-foreground">
+   428→   428→                      Inga aktiviteter matchar filtren.
+   429→   429→                    </p>
+   430→   430→                  )}
+   431→   431→                </div>
+   432→   432→              </ScrollArea>
+   433→   433→            </Card>
+   434→   434→          </TabsContent>
+   435→   435→
+   436→   436→          {/* Portfolios */}
+   437→   437→          <TabsContent value="portfolios" className="mt-6">
+   438→   438→            <Card className="p-5">
+   439→   439→              <h3 className="font-serif text-lg font-bold">Klientportföljer</h3>
+   440→   440→              <p className="mt-1 text-xs text-muted-foreground">
+   441→   441→                Fiktiva portföljer byggda av klienter i Labbet. Varje portfölj innehåller AKM1-analys,
+   442→   442→                teknisk analys och Elliott Wave-position per innehav.
+   443→   443→              </p>
+   444→   444→              <ScrollArea className="mt-4 h-[500px]">
+   445→   445→                <div className="space-y-3">
+   446→   446→                  {stats?.recent.portfolios.map((p) => (
+   447→   447→                    <div key={p.id} className="rounded-lg border border-border bg-card p-4">
+   448→   448→                      <div className="flex items-start justify-between">
+   449→   449→                        <div>
+   450→   450→                          <h4 className="font-serif font-bold">{p.name}</h4>
+   451→   451→                          {p.description && (
+   452→   452→                            <p className="mt-0.5 text-xs text-muted-foreground">{p.description}</p>
+   453→   453→                          )}
+   454→   454→                          <p className="mt-1 text-[10px] text-muted-foreground">
+   455→   455→                            session: {p.sessionId.slice(0, 16)}... · {timeAgo(p.createdAt)}
+   456→   456→                          </p>
+   457→   457→                        </div>
+   458→   458→                        <div className="text-right">
+   459→   459→                          {p.riskScore !== null && (
+   460→   460→                            <Badge variant="outline" className="border-gold/40 text-gold">
+   461→   461→                              AKM1: {p.riskScore.toFixed(1)}
+   462→   462→                            </Badge>
+   463→   463→                          )}
+   464→   464→                          <p className="mt-1 text-xs text-muted-foreground">
+   465→   465→                            {p.holdings.length} innehav
+   466→   466→                          </p>
+   467→   467→                        </div>
+   468→   468→                      </div>
+   469→   469→                      {p.holdings.length > 0 && (
+   470→   470→                        <div className="mt-3 flex flex-wrap gap-1.5">
+   471→   471→                          {p.holdings.map((h) => (
+   472→   472→                            <Badge key={h.id} variant="secondary" className="text-[10px]">
+   473→   473→                              {h.ticker} ({h.weight.toFixed(1)}%)
+   474→   474→                              {h.akm1Total !== null && ` · ${h.akm1Total}/100`}
+   475→   475→                            </Badge>
+   476→   476→                          ))}
+   477→   477→                        </div>
+   478→   478→                      )}
+   479→   479→                    </div>
+   480→   480→                  ))}
+   481→   481→                  {stats?.recent.portfolios.length === 0 && (
+   482→   482→                    <p className="py-12 text-center text-sm text-muted-foreground">
+   483→   483→                      Inga portföljer skapade än. Klienter kan bygga portföljer i Labbet → Portfölj-tab.
+   484→   484→                    </p>
+   485→   485→                  )}
+   486→   486→                </div>
+   487→   487→              </ScrollArea>
+   488→   488→            </Card>
+   489→   489→          </TabsContent>
+   490→   490→
+   491→   491→          {/* System Events */}
+   492→   492→          <TabsContent value="system" className="mt-6">
+   493→   493→            <Card className="p-5">
+   494→   494→              <h3 className="font-serif text-lg font-bold">Systemevents</h3>
+   495→   495→              <p className="mt-1 text-xs text-muted-foreground">
+   496→   496→                Tekniska händelser: API-fel, rate-limits, generation-körningar, watchdog-events.
+   497→   497→              </p>
+   498→   498→              <ScrollArea className="mt-4 h-[500px]">
+   499→   499→                <div className="space-y-2">
+   500→   500→                  {stats?.recent.events.map((e) => (
+   501→   501→                    <div key={e.id} className="rounded-md border border-border bg-card p-3 text-xs">
+   502→   502→                      <div className="flex items-center justify-between">
+   503→   503→                        <div className="flex items-center gap-2">
+   504→   504→                          {e.severity === "critical" || e.severity === "error" ? (
+   505→   505→                            <XCircle className={cn("h-4 w-4", SEVERITY_COLORS[e.severity])} />
+   506→   506→                          ) : (
+   507→   507→                            <CheckCircle2 className={cn("h-4 w-4", SEVERITY_COLORS[e.severity])} />
+   508→   508→                          )}
+   509→   509→                          <span className={cn("font-semibold uppercase", SEVERITY_COLORS[e.severity])}>
+   510→   510→                            {e.severity}
+   511→   511→                          </span>
+   512→   512→                          <Badge variant="outline" className="text-[10px]">{e.type}</Badge>
+   513→   513→                        </div>
+   514→   514→                        <span className="text-muted-foreground">{timeAgo(e.createdAt)}</span>
+   515→   515→                      </div>
+   516→   516→                      <p className="mt-1.5 font-medium">{e.message}</p>
+   517→   517→                      {e.source && (
+   518→   518→                        <p className="mt-0.5 text-muted-foreground">källa: {e.source}</p>
+   519→   519→                      )}
+   520→   520→                      {e.details && (
+   521→   521→                        <pre className="mt-1 max-h-24 overflow-auto rounded bg-muted p-1.5 text-[10px]">
+   522→   522→                          {e.details}
+   523→   523→                        </pre>
+   524→   524→                      )}
+   525→   525→                    </div>
+   526→   526→                  ))}
+   527→   527→                  {stats?.recent.events.length === 0 && (
+   528→   528→                    <p className="py-12 text-center text-sm text-muted-foreground">
+   529→   529→                      Inga systemevents loggade.
+   530→   530→                    </p>
+   531→   531→                  )}
+   532→   532→                </div>
+   533→   533→              </ScrollArea>
+   534→   534→            </Card>
+   535→   535→          </TabsContent>
+   536→   536→
+   537→   537→          {/* Breakdown */}
+   538→   538→          <TabsContent value="breakdown" className="mt-6">
+   539→   539→            <div className="grid gap-4 lg:grid-cols-2">
+   540→   540→              <Card className="p-5">
+   541→   541→                <h3 className="font-serif text-lg font-bold">Aktivitet per action-typ</h3>
+   542→   542→                <div className="mt-3 space-y-2">
+   543→   543→                  {stats?.breakdowns.byAction.map((a) => {
+   544→   544→                    const max = stats.breakdowns.byAction[0]?.count || 1;
+   545→   545→                    return (
+   546→   546→                      <div key={a.action} className="flex items-center gap-3">
+   547→   547→                        <span className="w-32 text-xs font-medium">
+   548→   548→                          {ACTION_LABELS[a.action] || a.action}
+   549→   549→                        </span>
+   550→   550→                        <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
+   551→   551→                          <div
+   552→   552→                            className="h-full bg-gold"
+   553→   553→                            style={{ width: `${(a.count / max) * 100}%` }}
+   554→   554→                          />
+   555→   555→                        </div>
+   556→   556→                        <span className="w-12 text-right text-xs font-semibold">{a.count}</span>
+   557→   557→                      </div>
+   558→   558→                    );
+   559→   559→                  })}
+   560→   560→                </div>
+   561→   561→              </Card>
+   562→   562→
+   563→   563→              <Card className="p-5">
+   564→   564→                <h3 className="font-serif text-lg font-bold">Aktivitet per sektion</h3>
+   565→   565→                <div className="mt-3 space-y-2">
+   566→   566→                  {stats?.breakdowns.bySection.map((s) => {
+   567→   567→                    const max = stats.breakdowns.bySection[0]?.count || 1;
+   568→   568→                    return (
+   569→   569→                      <div key={s.section} className="flex items-center gap-3">
+   570→   570→                        <span className="w-24 text-xs font-medium uppercase text-muted-foreground">
+   571→   571→                          {s.section || "okänd"}
+   572→   572→                        </span>
+   573→   573→                        <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
+   574→   574→                          <div
+   575→   575→                            className="h-full bg-gold"
+   576→   576→                            style={{ width: `${(s.count / max) * 100}%` }}
+   577→   577→                          />
+   578→   578→                        </div>
+   579→   579→                        <span className="w-12 text-right text-xs font-semibold">{s.count}</span>
+   580→   580→                      </div>
+   581→   581→                    );
+   582→   582→                  })}
+   583→   583→                </div>
+   584→   584→              </Card>
+   585→   585→            </div>
+   586→   586→          </TabsContent>
+   587→   587→        </Tabs>
+   588→   588→
+   589→   589→        <div className="mt-8 flex flex-wrap gap-2">
+   590→   590→          <Button variant="outline" onClick={() => setSection("hem")}>
+   591→   591→            Till huvudsidan
+   592→   592→          </Button>
+   593→   593→          <Button variant="outline" onClick={() => setSection("labb")}>
+   594→   594→            Öppna Labbet
+   595→   595→          </Button>
+   596→   596→          <Button variant="outline" onClick={() => setSection("styrelse")}>
+   597→   597→            AI-organ Styrelse
+   598→   598→          </Button>
+   599→   599→        </div>
+   600→   600→      </div>
+   601→   601→    </div>
+   602→   602→  );
+   603→   603→}
+   604→   604→
+   605→   605→function KpiCard({
+   606→   606→  icon,
+   607→   607→  label,
+   608→   608→  value,
+   609→   609→  sub,
+   610→   610→  alert,
+   611→   611→}: {
+   612→   612→  icon: React.ReactNode;
+   613→   613→  label: string;
+   614→   614→  value: number;
+   615→   615→  sub: string;
+   616→   616→  alert?: boolean;
+   617→   617→}) {
+   618→   618→  return (
+   619→   619→    <Card className={cn("p-4", alert && "border-red-500/40 bg-red-500/[0.03]")}>
+   620→   620→      <div className="flex items-center gap-2">
+   621→   621→        {icon}
+   622→   622→        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+   623→   623→          {label}
+   624→   624→        </span>
+   625→   625→      </div>
+   626→   626→      <p className={cn("mt-2 font-serif text-3xl font-bold", alert && "text-red-600 dark:text-red-400")}>
+   627→   627→        {value.toLocaleString("sv-SE")}
+   628→   628→      </p>
+   629→   629→      <p className="mt-0.5 text-[10px] text-muted-foreground">{sub}</p>
+   630→   630→    </Card>
+   631→   631→  );
+   632→   632→}
+   633→   633→
+   634→   634→function ActivityRow({ activity, compact }: { activity: ActivityLog; compact?: boolean }) {
+   635→   635→  return (
+   636→   636→    <div className={cn(
+   637→   637→      "rounded-md border border-border bg-card",
+   638→   638→      compact ? "p-2 text-[11px]" : "p-2.5 text-xs"
+   639→   639→    )}>
+   640→   640→      <div className="flex items-center justify-between gap-2">
+   641→   641→        <div className="flex min-w-0 flex-1 items-center gap-2">
+   642→   642→          <Badge variant="secondary" className="shrink-0 text-[10px]">
+   643→   643→            {ACTION_LABELS[activity.action] || activity.action}
+   644→   644→          </Badge>
+   645→   645→          {activity.section && (
+   646→   646→            <span className="shrink-0 text-muted-foreground">/{activity.section}</span>
+   647→   647→          )}
+   648→   648→          {activity.targetId && (
+   649→   649→            <span className="truncate font-mono text-[10px] text-muted-foreground">
+   650→   650→              {activity.targetId}
+   651→   651→            </span>
+   652→   652→          )}
+   653→   653→        </div>
+   654→   654→        <span className="shrink-0 text-[10px] text-muted-foreground">
+   655→   655→          {timeAgo(activity.createdAt)}
+   656→   656→        </span>
+   657→   657→      </div>
+   658→   658→      {!compact && (
+   659→   659→        <div className="mt-1 flex items-center gap-3 text-[10px] text-muted-foreground">
+   660→   660→          <span>session: {activity.sessionId.slice(0, 12)}...</span>
+   661→   661→          {activity.metadata && (
+   662→   662→            <span className="truncate font-mono">{activity.metadata.slice(0, 80)}</span>
+   663→   663→          )}
+   664→   664→        </div>
+   665→   665→      )}
+   666→   666→    </div>
+   667→   667→  );
+   668→   668→}
+   669→   669→

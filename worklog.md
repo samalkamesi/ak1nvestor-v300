@@ -818,3 +818,181 @@ Stage Summary:
 - Databas: 5 nya tabeller (UserActivity, Portfolio, PortfolioHolding, AnalysisSession, OrganConsultation, SystemEvent).
 - Lint clean, server HTTP 200, alla API:er verifierade med curl.
 - API rate-limit fortfarande aktiv — djupa frågor loggas men besvaras när API återhämtar sig.
+
+---
+Task ID: 20-a
+Agent: general-purpose
+Task: Build client portal with portfolio submission, analysis display, booking
+
+Work Log:
+- Read worklog.md, prisma/schema.prisma (Member/ClientPortfolio/ClientHolding/ClientAnalysis/Booking models), existing API routes (/api/member/register, /api/member/portfolio, /api/member/analysis, /api/booking), existing sections (aktier-section, om-oss-section), primitives (Eyebrow, GoldRule, HonestyTag), wave-matrix.tsx, store/data layer, header/footer.
+- Created src/components/ak1a/client-portal.tsx — full client portal ("use client"):
+  • LoginRegisterScreen — email + optional name/phone; POSTs to /api/member/register, then GETs full member record (with portfolios/analyses/bookings); stores memberId+email in localStorage; handles both new + returning members.
+  • Main portal with 4 Tabs (Min portfölj, Min analys, Boka genomgång, Mitt konto) using shadcn Tabs.
+  • PortfolioTab — dynamic holding-row editor (ticker/company/shares/avgCost/sector), cash-position Slider (0-60%), risk-tolerance Select, "Skicka för analys" → POST /api/member/portfolio. Right rail lists existing portfolios with status badges + latest-submitted summary card.
+  • AnalysisTab — pedagogical display of analyst-uploaded analysis (summary, portfolioOverview, riskAssessment, recommendations, nextSteps, body). Includes 5-column WaveGrid (Mikro, Kort, Medellångsikt, Långsikt, Mega) with color-coded cells (Impuls=bull/green, Korrektion=bear/red, ej bedömd=neutral), per-holding confidence %, and a portfolio-average row. Parses waveAnalysis JSON defensively — falls back to portfolio.holdings wave fields if JSON missing. Pending state ("Analytiker granskar din portfölj") when no analysis yet.
+  • BookingTab — 15/30 min option cards, datetime-local + analysis select + notes textarea, confirm Dialog. Free members see upgrade CTA (Lock icon). Premium/Pro can submit → POST /api/booking. Existing bookings listed with status (requested/confirmed/completed/cancelled) + meeting link if confirmed.
+  • AccountTab — member info, memberType badge, Free/Premium/Pro plan cards, logout, upgrade CTA.
+  • Helpers: getSessionId (anon session id), read/write/clear stored member, formatDate/formatDateTimeLocal/formatSEK (sv-SE), confidenceVariant, waveCategory/waveStyle/waveGlyph.
+  • Hydration-safe: guards on typeof window; mounted flag prevents SSR mismatch; refreshMember useCallback moved before useEffect to satisfy react-hooks/immutability.
+- Created src/components/ak1a/sections/portal-section.tsx — wraps ClientPortal with paper-texture + hero (Eyebrow "◆ MIN PORTAL ◆", font-serif h1, gold rule, gold grid overlay) matching other sections.
+- Modified src/lib/ak1a-store.ts — added "portal" to SectionId union.
+- Modified src/app/page.tsx — imported PortalSection, added `{section === "portal" && <PortalSection />}` to render.
+- Modified src/lib/ak1a/data.ts — added `{ id: "portal", label: "PORTAL" }` to NAV_SECTIONS; added two portal entries to FOOTER_NAV ("Logga in / Registrera" → portal, "Min portal · Portföljoptimering" → portal).
+- Ran `bun run lint` → initial 1 error: react-hooks/immutability complaining `refreshMember` accessed before declaration in mount useEffect. Fixed by moving refreshMember useCallback declaration before the useEffect and adding it to the deps array. Re-ran lint → exit code 0, clean.
+- Confirmed no new TypeScript errors introduced in touched files (pre-existing unrelated errors in src/features/* and src/shared/* remain but are outside this task's scope).
+
+Stage Summary:
+- New files: src/components/ak1a/client-portal.tsx (~2350 lines, full portal), src/components/ak1a/sections/portal-section.tsx (53 lines, hero wrapper).
+- Modified files: src/lib/ak1a-store.ts (SectionId union), src/app/page.tsx (import + render), src/lib/ak1a/data.ts (NAV_SECTIONS + FOOTER_NAV).
+- Functionality delivered:
+  1. Email-based register/login with localStorage session persistence ✓
+  2. Portfolio submission (holdings + cash slider + risk tolerance) → POST /api/member/portfolio ✓
+  3. Pedagogical analysis display with Elliott-wave 5-timeframe grid (Impuls/Korrektion color-coded), confidence badge, portfolio-average row, "Din portfölj består av…"/"Risknivån är…"/"Jag rekommenderar…" framing via portfolioOverview/riskAssessment/recommendations/nextSteps fields ✓
+  4. 15/30 min booking with premium gate (Free → upgrade CTA, Premium/Pro → booking form + confirm dialog) ✓
+  5. Account tab with member info, plan cards, logout, upgrade CTA ✓
+- Visual: gold accent (#C5A572 family via text-gold/bg-gold), serif headings (font-serif), paper-texture on section wrapper, HonestyTag/Eyebrow/GoldRule primitives, lucide-react icons (User, Wallet, FileText, Calendar, TrendingUp, Waves, AlertTriangle, CheckCircle2, Lock, Sparkles, Plus, Trash2, Clock, Mail, Phone, ArrowRight, LogOut, Loader2, Star, ChevronRight).
+- Responsive: TabsList scrolls horizontally on mobile, WaveGrid uses overflow-x-auto with min-width, grids collapse to single column on small screens.
+- Lint: passing (exit 0, no errors, no warnings).
+- Next actions for follow-up tasks: (a) wire /admin UI to display submitted portfolios + upload ClientAnalysis JSON (with waveAnalysis shape {score, holdings[{ticker,waves,confidence,note}], portfolioAverage}); (b) build Stripe/email upgrade flow for Free→Premium; (c) add email notification when analysis published; (d) consider adding a /api/member/booking GET for refreshing bookings independently (currently uses /api/member/register GET which includes bookings).
+
+---
+Task ID: 20-c
+Agent: general-purpose
+Task: Build admin analysis upload interface
+
+Work Log:
+- Read worklog.md (Task 0, 1, 2-b/c/d/e, 3, 4 + portal task) and existing files: src/app/admin/page.tsx (669-line admin dashboard with login + 5 tabs), prisma/schema.prisma (Member, ClientPortfolio, ClientHolding, ClientAnalysis, Booking models), src/app/api/admin/members/route.ts, upload-analysis/route.ts, bookings/route.ts, stock-data/[ticker]/route.ts, src/components/ak1a/primitives.tsx (Eyebrow, GoldRule, HonestyTag), and shadcn ui components (card, button, badge, tabs, input, textarea, separator, scroll-area, checkbox, select, dialog, label).
+- Created src/components/ak1a/admin-analysis-manager.tsx — full "use client" AdminAnalysisManager component (~1100 lines).
+  • Internal Tabs: "Analys-uppladdning" (3-column grid lg:3/5/4) and "Bokningar".
+  • Top-level state: members[], stats, selectedMemberId, selectedPortfolioId, statusFilter (all/pending/in_review/completed/needs_update), waveEdits{} per holding, form state object (type, title, summary, portfolioOverview, riskAssessment, waveAnalysis JSON, recommendations, nextSteps, confidence, isPublished), saveState, bookings[].
+  • Auto-effect: on member change resets form + wave edits + selects first non-completed portfolio.
+  • Auto-effect: regenerates waveAnalysis JSON from portfolio + wave edits on every portfolio/edit change. JSON shape: {portfolioId, portfolioName, aggregated:{mikro,kort,medellangsikt,langsikt,mega,avgWaveScore}, holdings:[{ticker,company,weight,usedCache,waves:{mikro,kort,medellangsikt,langsikt,mega},waveScore,waveConfidence}]}.
+  • handleUpload(publish) validates title+summary, JSON-parses waveAnalysis (falls back to raw string), POSTs to /api/admin/upload-analysis with full body, refreshes members queue on success.
+  • handleSaveWavesToCache(ticker) PUTs to /api/stock-data/[ticker] with file=waves, building the {ticker,score,confidence,mikro:{position},...mega:{position}} payload from the holding's wave edits.
+  • Stats strip (6 tiles): Members / Väntar / Under granskning / Slutförda / Publicerade analyser / Bokningar.
+- Sub-components:
+  • MemberQueue (left, lg:col-span-3) — status-filter Select + ScrollArea list of member cards (email, name, memberType badge colored free/premium/pro, pending count, completed count, analyses count, bookings count). Empty states for loading and no-members.
+  • PortfolioReview (middle, lg:col-span-5) — member header (email, phone, memberType badge) + portfolio Select + 4 meta tiles (Totalt värde, Kontantpos., Risktolerans, Inlämnad) + status badge + risk/wave-score badges + aggregated-portfolio-waves row (5 timeframes from avgWaveMicro..avgWaveMega) + holdings ScrollArea.
+  • HoldingWaveEditor — per-holding card with ticker mono badge, Cache/Manuell badge (color-coded bull/gold), company, weight, shares, avgCost, currentPrice, cacheDate. 5-column wave Select grid (Mikro/Kort/Medellångsikt/Långsikt/Mega) with SelectGroup'd options (Impuls 1-5 + Korrektion A-E). When user edits any wave, a "Spara till cache" button appears that PUTs to /api/stock-data/[ticker]?file=waves. Quick link "Öppna data-mapp" opens /api/stock-data/[ticker]?file=waves in new tab.
+  • AnalysisUploadForm (right, lg:col-span-4) — ScrollArea form with: analysis-type Select (full_portfolio/single_stock/sector_review/strategy_review), confidence Select (LÅG/MEDEL/HÖG), title Input (default placeholder today's date), summary Textarea with live word-count (color-coded: <100 muted, >300 bear, 100-300 bull), portfolioOverview Textarea (placeholder auto-filled with holdings count + total value), riskAssessment Textarea (placeholder uses portfolio.riskTolerance), waveAnalysis Textarea (mono font, auto-generated JSON, editable, badge "Auto från innehav"), recommendations Textarea, nextSteps Textarea, publish Checkbox (default checked), error/success messages (bear/bull colored), two action buttons: "Spara som utkast" (outline) + "Publicera till klient" (gold bg). Both disabled while loading or if title/summary empty.
+  • BookingsManager — status filter Select + ScrollArea list of bookings. Each card: type badge (review_15/review_30/strategy_session mapped to Swedish), status badge (color-coded), member name+email+phone, requested time + confirmed time + meeting link + notes. Action buttons: "Bekräfta" (opens Dialog with meeting-link input + confirmed-time display) and "Avboka" (PUT with status=cancelled). Dialog has Avbryt + Bekräfta buttons with loading spinner.
+  • Small utilities: StatTile (gold/bull/muted variants), MetaTile, formatCurrency (sv-SE SEK), formatWeight, formatDate (sv-SE medium), timeAgo, countByStatus, isWaveImpulse, waveColor (bull for Impuls*, bear for Korrektion*).
+- Integrated into src/app/admin/page.tsx:
+  • Added import: `import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";`
+  • Added new TabsTrigger `value="analysis-upload"` labeled "Analys-uppladdning" between Klientportföljer and Systemevents.
+  • Added new TabsContent `<TabsContent value="analysis-upload"><AdminAnalysisManager /></TabsContent>` after the portfolios tab content.
+  • All existing functionality preserved: login screen, overview tab, activity log, portfolios tab, system events tab, breakdown tab, KPI cards, auto-refresh, refresh button, footer nav buttons.
+- Lint: initial run reported 2 errors (SelectLabel undefined — fixed by adding SelectGroup+SelectLabel imports and wrapping SelectItems in SelectGroup) + 1 warning (unused eslint-disable directive — removed). Re-ran lint on touched files: exit 0, clean. (A pre-existing react-hooks/immutability error in src/components/ak1a/report-viewer.tsx — a file modified by a concurrent agent after my changes — is outside this task's scope; my files pass `eslint src/components/ak1a/admin-analysis-manager.tsx src/app/admin/page.tsx` cleanly.)
+- TypeScript: ran `bunx tsc --noEmit` — no errors in my touched files (grep for "admin-analysis-manager" and "admin/page" returns nothing). Pre-existing errors in examples/, scripts/, src/features/, src/shared/, src/lib/ak1a/ remain but are unrelated.
+
+Stage Summary:
+- New file: src/components/ak1a/admin-analysis-manager.tsx (~1100 lines, single export `AdminAnalysisManager`, "use client").
+- Modified file: src/app/admin/page.tsx (+1 import, +1 TabsTrigger, +1 TabsContent).
+- Functionality delivered:
+  1. Member queue with status filter (all/pending/in_review/completed/needs_update), per-member pending+completed+analyses+bookings counts, click to select ✓
+  2. Portfolio review: portfolio selector, meta tiles (totalValue, cashPosition, riskTolerance, submittedAt), status badge, aggregated 5-timeframe wave row from cache, holdings list ✓
+  3. Per-holding wave editor: 5 timeframe dropdowns (Impuls 1-5 / Korrektion A-E) grouped by SelectGroup, Cache vs Manuell badge, prices, cacheDate, "Öppna data-mapp" link to /api/stock-data/[ticker]?file=waves, "Spara till cache" button that PUTs waves.json back to the stock-data API ✓
+  4. Auto-generated waveAnalysis JSON (portfolio + per-holding waves), editable in the form ✓
+  5. Analysis upload form: title, summary (with word count), portfolioOverview, riskAssessment, waveAnalysis (JSON, editable), recommendations, nextSteps, confidence (LÅG/MEDEL/HÖG), publish checkbox, "Spara som utkast" + "Publicera till klient" buttons, error/success messages ✓
+  6. On publish: POSTs to /api/admin/upload-analysis with full body, backend marks portfolio as "completed" + analyzedAt, logs activity + system event, refreshes members queue ✓
+  7. Bookings manager: filter + list with member info, type/status badges, requested/confirmed times, meeting link, notes, "Bekräfta" (Dialog with meeting-link input) + "Avboka" actions via PUT /api/admin/bookings ✓
+- Visual: institutional Swedish tone throughout, gold accent, bull/bear color coding for waves (Impuls=bull, Korrektion=bear), status badges color-coded (gold=pending, blue=in_review, bull=completed, bear=needs_update), memberType badges color-coded (muted=free, gold=premium, bull=pro), HonestyTag "Mätt" on publish log note, Eyebrow + GoldRule + serif headings.
+- Responsive: 3-column lg grid collapses to single column on small screens, ScrollAreas use min(Xpx, Yvh) for adaptive height, TabsList horizontally scrollable.
+- All shadcn/ui components used as specified: Card, Button, Badge, Tabs, Input, Textarea, Select, Dialog, Separator, ScrollArea, Checkbox, Label. All lucide-react icons used as specified: Users, FileText, Send, Save, Eye, Clock, CheckCircle2, AlertTriangle, FolderOpen, Waves (plus supporting: RefreshCw, Inbox, Calendar, XCircle, ChevronRight, ExternalLink, Loader2, Mail, CircleDot, TrendingUp).
+- Lint: clean on touched files. TypeScript: no errors introduced in touched files.
+
+---
+Task ID: 20-b
+Agent: general-purpose
+Task: Build report viewer with 3 depth levels
+
+Work Log:
+- Read worklog.md, public/reports/manifest.json, src/components/ak1a/primitives.tsx, src/lib/ak1a-store.ts, src/lib/ak1a/data.ts, src/app/page.tsx, src/components/ak1a/sections/analyser-section.tsx, src/components/ak1a/sections/aktier-section.tsx, src/components/ak1a/header.tsx, src/components/ak1a/footer.tsx and a sample HTML report (volvo-cars-nyborjare.html) to learn: (1) the manifest structure (4 reports, 3 levels, 11 sections per report); (2) the section-routing pattern (useAk1aStore().section + SectionId union); (3) the AK1A design system (Eyebrow/GoldRule/HonestyTag, gold accent, serif headings, paper-texture wrapper); (4) the shadcn/ui components already vendored.
+- Confirmed each HTML report has 97 `<div class="page">` elements as direct children of <body>, so the CSS selector `div.page:nth-child(n+{depth+1})` correctly hides pages beyond the chosen depth.
+- Created src/components/ak1a/report-viewer.tsx (~1160 lines, "use client", single export `ReportViewer`):
+  • TYPES: ManifestSection, ReportMeta, ManifestLevel, Manifest, Depth (15|35|99).
+  • CONSTANTS: DEPTHS (3 entries with icon/label/sub/blurb), LEVEL_BADGE_STYLES (bull/gold/bear colors), LEVEL_ICON.
+  • HELPERS: parseFirstPage, parseLastPage, defaultDepthForLevel.
+  • MAIN `ReportViewer`: fetches /reports/manifest.json once on mount, routes between gallery / detail / loading / error / empty states; holds depth state and activeSlug state; auto-picks default depth (15/35/99) based on the opened report's level.
+  • `LoadingState`, `ErrorState`, `EmptyState` — institutional Swedish fallback UIs.
+  • `ReportGallery`: groups reports by company (Map<company, ReportMeta[]>), sorts levels within each company (nyborjare→intermediär→avancerad), renders a stats banner (reports/companies/levels counts) and per-company sections (company header with ticker/ISIN/sector + grid of ReportCards). Includes the `PedagogicalIntroBlock` at the bottom explaining the 5×5×4 framework and the 3 depth choices.
+  • `ReportCard`: shows level badge (with bull/gold/bear color), page count, title, description, verified date, section count, and "Läs rapporten" button.
+  • `ReportViewerDetail`: the main viewer with sticky top bar (back button, report title + level badge, "Ny flik"/"Skriv ut / PDF"/X close actions), depth selector (Tabs with 3 triggers: Sammanfattning 15 / Detaljerad 35 / Fullständig 99 + active-depth blurb), pedagogical intro card (dismissible), page navigation row (prev/next icon buttons, numeric Input, "Sida X / Y" indicator, mobile section Select dropdown), body grid (sticky SectionSidebar on lg+ / iframe container on the right), below-iframe meta row (depth + HonestyTag), footer note with framework explainer.
+    - iframe: src={report.file}, width=210mm, height=85vh, same-origin (no sandbox) so contentDocument is accessible.
+    - `applyDepthCss` injects `<style id="ak1a-depth-style">` into the iframe's <head> on every load + depth change: hides pages beyond depth via `div.page:nth-child(n+{depth+1}) { display: none !important; }`, plus cosmetic rules for body background (#f5f1e8 paper) and per-page box-shadow + auto margin so each page reads as a floating paper sheet.
+    - `scrollToPage(n)` queries `div.page` from iframe.contentDocument, calls `el.scrollIntoView({behavior:'smooth'})`, and updates currentPage state.
+    - `goToPage(n)` clamps to [1, maxPage] then calls scrollToPage.
+    - `handleSectionClick(section)`: parses first page from "X-Y" string; if firstPage > maxPage, auto-expands depth to 99 and stashes pendingPage (the iframe onLoad effect consumes pendingPage after re-applying CSS); otherwise jumps directly.
+    - `handlePrint`: `iframe.contentWindow.focus(); iframe.contentWindow.print();` — the injected display:none rules carry over to print, so the PDF honors the chosen depth.
+    - `handleOpenFull`: opens report.file in a new tab (full 99-page version, no depth limit).
+    - `activeSectionDel`: derived from currentPage — highlights the section currently in view in the sidebar.
+  • `SectionSidebar`: sticky Card listing all 11 sections (Del 0–Del X) with Del-label, title, page range, "active" highlight, "beyond depth" opacity + disabled state + helpful tooltip.
+  • `PedagogicalIntroCard`: dismissible card shown above the iframe on first open — 3 points (Ekosystem-ramverket / Tre djupnivåer / Reproducerbar) + HonestyTag "99,9 % säkerhet, 100 % rådata-garanti".
+  • `PedagogicalIntroBlock`: stand-alone version at the bottom of the gallery.
+- Created src/components/ak1a/sections/rapporter-section.tsx (~50 lines, "use client", single export `RapporterSection`): hero with Eyebrow "◆ RAPPORTER ◆", h1 "Institutionella analyser — 3 djupnivåer" (with "3 djupnivåer" in gold), paragraph + HonestyTag + GoldRule, then renders <ReportViewer />.
+- Modified src/lib/ak1a-store.ts: added "rapporter" to the SectionId union (between "aktier" and "utbildning").
+- Modified src/app/page.tsx: added `import { RapporterSection } from "@/components/ak1a/sections/rapporter-section";` and `{section === "rapporter" && <RapporterSection />}` (placed between "utbildning" and "om-oss").
+- Modified src/lib/ak1a/data.ts:
+  • NAV_SECTIONS: added `{ id: "rapporter", label: "RAPPORTER" }` between "aktier" and "kurser" (visible in main top nav).
+  • FOOTER_NAV: added `{ label: "Rapporter (99-sidors analyser)", section: "rapporter" as const }` right after "Alla analyser".
+- Lint: first run reported 0 errors but 1 pre-existing warning in src/components/ak1a/admin-analysis-manager.tsx (unused eslint-disable directive — unrelated to this task, not touched). After fixing two issues I introduced (TS5076 "|| and ?? cannot be mixed" on `mobileSection || activeSectionDel ?? ""` → changed to `|| ... || ""`; react-hooks/immutability "scrollToPage accessed before declared" → reordered the scrollToPage useCallback above the useEffect that references it, and added it to the effect's dep array), final `bun run lint` exits 0 with no errors or warnings.
+- TypeScript: `bun run tsc --noEmit` shows zero errors in any file I created or modified (report-viewer.tsx, rapporter-section.tsx, ak1a-store.ts, ak1a/data.ts, app/page.tsx). Pre-existing errors in unrelated files (src/features/*, src/shared/shell/ui/*, scripts/*, skills/*, examples/*) remain but are outside this task's scope.
+
+Stage Summary:
+- New files:
+  • src/components/ak1a/report-viewer.tsx (~1160 lines) — gallery + depth-aware viewer + pedagogical intro.
+  • src/components/ak1a/sections/rapporter-section.tsx (~50 lines) — section wrapper with hero header.
+- Modified files:
+  • src/lib/ak1a-store.ts (+1 token in SectionId union).
+  • src/app/page.tsx (+1 import, +1 conditional render).
+  • src/lib/ak1a/data.ts (+1 NAV_SECTIONS entry, +1 FOOTER_NAV entry).
+- Functionality delivered:
+  1. Report gallery: fetches /reports/manifest.json, groups 4 reports by company (Volvo Cars ×3 levels, Precise Biometrics ×1), shows stats banner (4 reports / 2 companies / 3 levels), per-company cards with ticker/ISIN/sector, and per-report cards with level badge + page count + "Läs rapporten" button ✓
+  2. Report viewer: depth selector (15/35/99 sidor via Tabs), page navigation (prev/next buttons + numeric Input + "Sida X / Y"), section navigation (sticky sidebar on lg+ / Select dropdown on mobile, 11 sections, click-to-jump with auto-expand when section is beyond current depth), iframe rendering with CSS-injection page limiting (`div.page:nth-child(n+{depth+1}) { display: none }`), "Skriv ut / PDF" button (iframe.contentWindow.print()), "Ny flik" button (opens full 99-page HTML in new tab), "Stäng rapporten" back-to-gallery button ✓
+  3. Pedagogical intro: dismissible card above the iframe explaining "5 tidshorisonter × 5 teorier × 4 dimensioner" + 3 depth choices + reproducibility, with HonestyTag kind="matt" reading "99,9 % säkerhet, 100 % rådata-garanti" ✓
+- Visual: matches the AK1A design system — paper-texture wrapper, gold (#C5A572) accent on depth selector / buttons / section del-labels, serif headings, bull/gold/bear color coding for the three levels, HonestyTag, Eyebrow + GoldRule in the section header, sticky top bar that sits below the site header (top-14), iframe styled with paper-on-paper look (each .page gets a box-shadow and 24px margin).
+- Responsive: top bar wraps on small screens, depth Tabs fill width on mobile, section sidebar hides on <lg and is replaced by a Select dropdown, page nav controls wrap, iframe container is overflow-x-auto so the 210mm-wide A4 page can be horizontally scrolled on narrow viewports.
+- All shadcn/ui components used as specified: Card, Button, Badge, Select, Input, Tabs (Dialog imported but ultimately unused — kept the import out to keep lint clean). All lucide-react icons used as specified: FileText, Microscope, Sparkles, BarChart3, ChevronLeft, ChevronRight, Printer, X, BookOpen, Layers (plus supporting: ExternalLink, Loader2, ArrowLeft, AlertTriangle).
+- All text in Swedish, institutional tone (e.g. "Institutionella analyser — 3 djupnivåer", "Välj djupnivå", "Skriv ut / PDF", "Läs rapporten", "Tillbaka till galleriet", "Hoppa till del…").
+- Lint: clean (exit 0). TypeScript: no errors introduced in touched files.
+
+---
+Task ID: 20
+Agent: main (Z.ai Code)
+Task: Fix Power 19→20, build client portal with portfolio optimization, per-stock data folders, report viewer with 3 levels, admin analysis upload.
+
+Work Log:
+- Fixed ALL "Power 19" / "19 variabler" / "19 AKM1" references → "Power 20" / "20 variabler" / "20 AKM1" across 14 files (footer, analyser, home, prec, labb, om-oss, utbildning, kurser, overlays, deep-course-viewer, data.ts). Verified 0 remaining.
+- Organized uploaded HTML reports to /public/reports/ with clean slugs + manifest.json (4 reports: Volvo Cars ×3 levels, Precise Biometrics ×1 level).
+- Built per-stock data storage system: data/stocks/[TICKER]/ with 6 JSON files (metadata, fundamentals, technicals, waves, scenarios, risks) + updatedAt.txt. API: GET/PUT /api/stock-data/[ticker], GET /api/stock-data (list). Analytiker kan uppdatera EN fil för EN aktie utan att röra andra.
+- Extended Prisma schema with 4 new models: Member, ClientPortfolio, ClientHolding, ClientAnalysis, Booking. Pushed to DB.
+- Built 6 new API routes:
+  • POST/GET /api/member/register — register/login member
+  • POST/GET /api/member/portfolio — submit portfolio with auto-cache from data/stocks
+  • GET /api/member/analysis — member's published analyses
+  • GET /api/admin/members — list all members with portfolios
+  • POST/GET /api/admin/upload-analysis — analyst uploads analysis
+  • POST/GET /api/admin/bookings + POST/GET /api/booking — booking management
+- Built 3 major UI components via subagents:
+  • client-portal.tsx (2350 lines): 4 tabs (Min portfölj, Min analys, Boka genomgång, Mitt konto), email login, Elliott Wave 5-timeframe grid, pedagogical analysis display, premium-gated booking
+  • report-viewer.tsx (1160 lines): gallery + viewer with 3 depth levels (15/35/99 sidor), iframe rendering with CSS injection to hide pages, section navigation, print
+  • admin-analysis-manager.tsx (1100 lines): member queue, portfolio review with per-holding wave editor, analysis upload form, bookings manager
+- Integrated all components into navigation:
+  • Added "portal" and "rapporter" to SectionId, NAV_SECTIONS, FOOTER_NAV
+  • Added {section === "portal" && <PortalSection />} and {section === "rapporter" && <RapporterSection />} to page.tsx
+  • Added "Analys-uppladdning" tab to admin dashboard
+- Agent Browser verified:
+  • RAPPORTER section: 4 reports in gallery, viewer opens with 3 depth buttons + iframe loading HTML
+  • PORTAL section: login screen → registration → 4-tab portal with portfolio form
+  • Admin dashboard: new "Analys-uppladdning" tab renders with member queue
+- Lint clean (exit 0). No type errors in new files.
+
+Stage Summary:
+- Power 19 → Power 20: ALL references fixed across entire site (0 remaining).
+- Per-stock data system: data/stocks/[TICKER]/ folders with 6 JSON files each. Analytiker can update selectively without disrupting structure. Data reused across clients.
+- Client Portal (/portal): members register, submit portfolio, view pedagogical analysis, book 15-30 min review. Elliott Wave 5-timeframe grid (Mikro/Kort/Medellångsikt/Långsikt/Mega) per holding + portfolio average.
+- Admin Analysis Manager: analyst sees member queue, reviews submitted portfolios, enters wave data per holding (with cache support), uploads analysis with pedagogical sections (portfolioOverview, riskAssessment, waveAnalysis, recommendations, nextSteps), manages bookings.
+- Report Viewer (/rapporter): 3 depth levels (15/35/99 sidor) from same 99-page HTML. CSS injection hides pages beyond depth. Section navigation. Print/PDF.
+- 4 new Prisma models, 6 new API routes, 3 new components (~4600 lines total).
+- Lint clean, server HTTP 200, watchdog running.

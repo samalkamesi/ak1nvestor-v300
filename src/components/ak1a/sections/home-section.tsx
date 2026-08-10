@@ -151,7 +151,7 @@ export function HomeSection() {
             <StepCard
               num="2"
               title="Lär dig metoden"
-              body="AKM1:s 19 variabler. Inte gissning — struktur."
+              body="AKM1:s 20 variabler. Inte gissning — struktur."
               cta="BÖRJA MED VARIABEL 1 →"
               icon={<GraduationCap className="h-5 w-5" />}
               onClick={() => setSection("kurser")}
@@ -273,7 +273,7 @@ export function HomeSection() {
               onClick={() => setSection("prec")}
             />
             <CtaCard
-              title="Börja med Power 19"
+              title="Börja med Power 20"
               sub="19 fundamentala variabler"
               onClick={() => setSection("kurser")}
             />

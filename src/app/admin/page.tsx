@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { Ak1aLogo, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -287,6 +288,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="overview" className="px-3 py-1.5 text-xs sm:text-sm">Översikt</TabsTrigger>
             <TabsTrigger value="activity" className="px-3 py-1.5 text-xs sm:text-sm">Aktivitetslogg</TabsTrigger>
             <TabsTrigger value="portfolios" className="px-3 py-1.5 text-xs sm:text-sm">Klientportföljer</TabsTrigger>
+            <TabsTrigger value="analysis-upload" className="px-3 py-1.5 text-xs sm:text-sm">Analys-uppladdning</TabsTrigger>
             <TabsTrigger value="system" className="px-3 py-1.5 text-xs sm:text-sm">Systemevents</TabsTrigger>
             <TabsTrigger value="breakdown" className="px-3 py-1.5 text-xs sm:text-sm">Statistik</TabsTrigger>
           </TabsList>
@@ -486,6 +488,11 @@ export default function AdminDashboard() {
                 </div>
               </ScrollArea>
             </Card>
+          </TabsContent>
+
+          {/* Analysis Upload */}
+          <TabsContent value="analysis-upload" className="mt-6">
+            <AdminAnalysisManager />
           </TabsContent>
 
           {/* System Events */}

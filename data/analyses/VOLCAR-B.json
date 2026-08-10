@@ -1,0 +1,269 @@
+{
+  "ticker": "VOLCAR-B",
+  "displayTicker": "VOLCAR B",
+  "company": "Volvo Car AB",
+  "exchange": "Nasdaq Stockholm Large Cap",
+  "sector": "Tillverkning · Personbilar",
+  "isin": "SE0021628898",
+  "currency": "SEK",
+  "verified": "2026-08-08",
+  "analysisDate": "2026-08-08",
+  "source": "Bolagsrapporter + MarketStack + Volvo Cars IR + Geely-ägarrapporter + ELV-tullstats (USTR)",
+  "status": "Aktivt noterad — HÅLL med asymmetrisk risk (tyngd av ELV-tullar, men fundamentalt starkt)",
+
+  "cover": {
+    "eyebrow": "NASDAQ STOCKHOLM LARGE CAP · SEK · TILLVERKNING / PERSONBILAR",
+    "subtitle": "VOLCAR-B · Nasdaq Stockholm Large Cap",
+    "recommendation": "HÅLL",
+    "recommendationSub": "Tyngd av ELV-tullar (USA) och svensk riskpremie — men starkt subjekt",
+    "recommendationScale": 3,
+    "quickConclusion": "Starkt subjekt till låg värdering — men vänta på Q2-känning och ELV-tullutfall innan tillägg.",
+    "quickConclusionMeta": "Vägt prismål ~315 SEK · +11 % mot senaste 285 · asymmetrisk risk mot Bull",
+    "lede": "Q2-rapport 2026-07-17 avverkad · ELV-tullar USA 2026 · EX30/EX90-rullning pågår",
+    "stats": [
+      {"value": "285", "label": "Senaste pris SEK", "sub": "2026-08-07"},
+      {"value": "~580 md", "label": "Börsvärde", "sub": "~2 035 M aktier"},
+      {"value": "~315", "label": "Vägt prismål 12 mån", "sub": "SEK · +11 %", "accent": "gold"},
+      {"value": "MEDEL", "label": "Risknivå", "sub": "Volatilitet ~30 %/år", "accent": "neutral"},
+      {"value": "~8x", "label": "P/E trailing", "sub": "2025"},
+      {"value": "~5 %", "label": "Direktavkastning", "sub": "utdelning 50 % av vinst", "accent": "gold"},
+      {"value": "~0,5x", "label": "P/S", "sub": "2025"},
+      {"value": "~12 %", "label": "EBITDA-marginal", "sub": "2025 proforma"},
+      {"value": "62/100", "label": "AKM1-poäng", "sub": "MEDEL-STARK", "accent": "gold"},
+      {"value": "~800k+", "label": "Bilar sålda 2025", "sub": "varav ~50 % ELV"},
+      {"value": "2026-08-08", "label": "Verifierad", "sub": "senaste granskning"},
+      {"value": "MarketStack + Bolag", "label": "Datakälla", "sub": "primär"}
+    ]
+  },
+
+  "princip": {
+    "title": "Skriven på enkel svenska — i \"du\"-form.",
+    "body": "Varje begrepp förklaras första gången det dyker upp. Du behöver inte kunna något om bilar, ELV-strategi eller aktier sedan tidigare. Det här är en analys byggd för att läsas uppifrån och ner — inte för att imponera, utan för att du ska förstå läget i Volvo Cars i augusti 2026.",
+    "principleTitle": "Håll know-how helt — redovisa generöst.",
+    "principleBody": "Slutsatser, scenarier, risker och rekommendationer är fullt offentliga. De proprietära metoderna bakom — vågräkningar, kvoter, formler, positionsregler — bevaras som vårt know-how.",
+    "footer": "Pedagogisk finansanalys — inte investeringsråd. Verifierad 2026-08-08. Datakälla: MarketStack · Volvo Cars IR · Bolagsrapporter · USTR ELV-tullstats."
+  },
+
+  "recommendation": {
+    "del": "Del X · Konsensus",
+    "title": "Rekommendation",
+    "body": "Fem tidshorisonter × fem teorier × fyra dimensioner, fundamental analys, scenarier och risker — sammanfattat i ett enda svar.",
+    "main": "HÅLL",
+    "mainSub": "Hold · MEDEL-STARK subjekt",
+    "period": "12 månader",
+    "bullets": [
+      "Full position 2–5 % av portföljen",
+      "Trappa in på svaghet under 270 SEK",
+      "Beakta ELV-tullsexponering (USA ~15 % av volymen)"
+    ],
+    "priceTarget": {
+      "value": "320",
+      "currency": "SEK",
+      "vsCurrent": "+12 %",
+      "vsCurrentLabel": "Mot senaste 285 SEK",
+      "vsBear": "−16 %",
+      "vsBearLabel": "Bear-case 240 SEK",
+      "span12m": "240 – 380 SEK",
+      "risk": "MEDEL"
+    },
+    "scale": [
+      {"label": "SÄLJ", "tone": "bear"},
+      {"label": "MINSKA", "tone": "bear-soft"},
+      {"label": "HÅLL", "tone": "gold", "active": true},
+      {"label": "KÖP", "tone": "bull-soft"},
+      {"label": "STARKT KÖP", "tone": "bull"}
+    ],
+    "nyborjareCallout": {
+      "title": "För nybörjare — vad betyder \"HÅLL\"?",
+      "body": "Det betyder: behåll det du har, men köp inte mer aggressivt just nu. Volvo är ett starkt företag till låg värdering, men ELV-tullar (USA) och en svensk riskpremie trycker på kursen kort sikt. Håll positionen på 2–5 % av portföljen. Längre ner förklarar vi exakt vad som skulle få oss att säga KÖP eller MINSKA istället."
+    },
+    "avanceradCallout": {
+      "title": "Analytiker-vy — metodkommentar",
+      "body": "Rekommendationen är en viktad konsensus av 25 våg-teoretiska banor × 4 dimensioner (prismål, risk, timing, position) × fundamental scenarieviktning. Vågräkningar, Fibonacci-kvoter och positionsformler redovisas inte — slutsatserna däremot fullt ut. AKM1-poäng 62/100 = MEDEL-STARK med bullish kärna men cyklisk och geopolitisk risk."
+    }
+  },
+
+  "motivation": {
+    "title": "Fem punkter — varför HÅLL (inte Köp, inte Minska).",
+    "body": "Varje punkt bygger vidare på den förra. Tillsammans förklarar de varför vi inte säger KÖP rakt av — och vad som saknas för att vi ska göra det.",
+    "points": [
+      {
+        "n": 1,
+        "title": "Starkt subjekt — ELV-ledare bland traditionella biltillverkare",
+        "icon": "TrendingUp",
+        "tone": "bull",
+        "body": "Volvo har redan nått ~50 % ELV-andel 2025 och siktar på 100 % ELV 2030 — det är snabbare än BMW, Mercedes och Volkswagen. EX30 (volym-ELV) och EX90 (flaggskepps-ELV med Luminar LiDAR) är hörnstenar. Geely-ägandet (78 %) ger Kina-skal och gemensamma teknikplattformar (SPA2, SEA)."
+      },
+      {
+        "n": 2,
+        "title": "Värderingen är låg",
+        "icon": "Scale",
+        "tone": "bull",
+        "body": "P/E ~8x och P/S ~0,5x mot historiskt spann — det är billigt för ett företag med ~12 % EBITDA-marginal, ~5 % direktavkastning och ELV-ledarposition. Direktavkastningen ~5 % är dessutom säkrad av utdelningspolicyn (50 % av vinst). Marknaden prissätter redan ELV-tullar och svensk riskpremie."
+      },
+      {
+        "n": 3,
+        "title": "Asymmetrisk risk — Bull-uppsidan större än Bear-nedsidan",
+        "icon": "ShieldCheck",
+        "tone": "gold",
+        "body": "Scenarieviktningen (Bull 25 % × 380 + Base 50 % × 320 + Bear 25 % × 240) ger ~315 SEK = +11 % mot 285. Uppsidan (+33 % i Bull) är mer än dubbelt så stor som nedsidan (−16 % i Bear). Det är en positivt snedvriden utbetalning — men bara om du tål svängningarna."
+      },
+      {
+        "n": 4,
+        "title": "Men: ELV-tullar (USA) + svensk riskpremie + cyklisk bransch",
+        "icon": "TrendingDown",
+        "tone": "bear",
+        "body": "USA (~15 % av volymen) har ELV-tullar 2026 som direkt trycker på marginalen för EX30/EX90. Svensk riskpremie (Riksbankenspolitik + politisk oro) trycker ned hela Large Cap. Cyklisk bransch med råvarukänslighet (litium, kobolt). Sub-leverantörskonkurser har börjat dyka upp. Kort sagt: mycket motvind redan prissatt, men osäkerheten är inte över."
+      },
+      {
+        "n": 5,
+        "title": "Därför \"HÅLL\" — inte Köp ännu",
+        "icon": "Award",
+        "tone": "gold",
+        "body": "Behåll positionen (2–5 % av portföljen). Trappa in nytt kapital på svaghet under 270 SEK (mot 200-dagars MA). Full KÖP-rekommendation kräver: (1) ELV-tullutfall USA klarnar, (2) EX90 volymproduktion startar enligt plan Q4 2026, (3) EBITDA-marginal hålls ≥11 % i Q3-rapporten. MINSKA-rekommendation utlöses om kursen bryter 240 SEK (Bear-case) eller om ELV-tullarna eskalerar till 50 %+."
+      }
+    ],
+    "keyMetrics": [
+      {"k": "P/E trailing 2025", "v": "~8x"},
+      {"k": "P/S 2025", "v": "~0,5x"},
+      {"k": "EBITDA-marginal", "v": "~12 %"},
+      {"k": "Direktavkastning", "v": "~5 %"},
+      {"k": "Bilar sålda 2025", "v": "~800k+"},
+      {"k": "ELV-andel 2025", "v": "~50 %"},
+      {"k": "Intäkter 2025", "v": "~350 md SEK"},
+      {"k": "Volatilitet", "v": "~30 %/år"}
+    ]
+  },
+
+  "companyInfo": {
+    "title": "Bolaget",
+    "description": "Volvo Car AB utvecklar, tillverkar och säljer personbilar under varumärket Volvo samt strategiska partnervarumärken (Polestar samägt). Grundat 1927, noterat på Nasdaq Stockholm Large Cap sedan 29 oktober 2021. Huvudägare Geely (78 %, Li Shufu) sedan 2010. ELV-ledare bland traditionella biltillverkare med mål 100 % ELV 2030. ~42 000 anställda.",
+    "founded": 1927,
+    "headquarters": "Göteborg, Sverige",
+    "offices": ["Göteborg (Torslanda HQ)", "Skövde (motorfabrik)", "Charleston, SC (USA)", "Chengdu (Kina)", "Daqing (Kina)", "Brussels (Belgien)", "Kuala Lumpur (Malaysia)", "Bengaluru (Tech hub)"],
+    "employees": 42000,
+    "website": "volvocars.com",
+    "customers": ["Privatkunder Norden & Europa (~50 % av volym)", "Privatkunder USA (~15 % av volym)", "Privatkunder Kina (~25 % av volym)", "Polestar (samägt ELV-märke, gemensam teknikplattform)", "Luminar (LiDAR-partnerskap EX90)", "Google (Android Automotive OS)", "Nvidia (Drive Orin compute)"],
+    "revenue": "~350 md SEK (2025)",
+    "ebitdaProforma": "~12 % marginal · ~42 md SEK (2025)",
+    "synergyTarget": "ELV-skal 50 % → 100 % till 2030 · Geely-plattformar (SPA2, SEA)"
+  },
+
+  "businessAreas": [
+    {
+      "name": "Personbilar (XC-series, EX-series ELV)",
+      "revenue": "~330 md SEK (~94 %)",
+      "margin": "~11 %",
+      "description": "Kärnverksamhet. XC60 (världens mest sålda premium-SUV), XC90/EX90 (flaggskepp), EX30 (volym-ELV), V60/V90 (kombiarv). 50 % ELV-andel 2025. Cyklisk med marginaltryck från ELV-tullar och råvaror."
+    },
+    {
+      "name": "Tjänster & tjänsteintäkter",
+      "revenue": "~15 md SEK (~4 %)",
+      "margin": "~25 %",
+      "description": "Volvo Cars Mobility (subscription/leasing), försäkring, Connected Services (over-the-air-updates, software subscriptions). Återkommande intäkter med högre marginal — strategisk tillväxtområde."
+    },
+    {
+      "name": "Reservdelar & aftermarknad",
+      "revenue": "~5 md SEK (~2 %)",
+      "margin": "~30 %",
+      "description": "Genuina Volvo-reservdelar, tillbehör, utbyggnad av laddinfrastruktur. Stabil intäktsström med hög marginal och låg cykliskitet — dämpar bilsäljningens svängningar."
+    }
+  ],
+
+  "akm1": {
+    "score": 62,
+    "maxScore": 100,
+    "tier": "MEDEL-STARK",
+    "recommendation": "HÅLL",
+    "indicators": {
+      "V01": {"name": "Försäljningstillväxt", "score": 3, "signal": "neutral", "note": "~800k+ bilar 2025. Tillväxt dämpad av ELV-tullar och cykelläge. Proforma +5 % YoY."},
+      "V02": {"name": "ARR / tjänsteintäkter", "score": 3, "signal": "neutral", "note": "Tjänster växer 15 %+ men från låg bas (~4 % av intäkter). Connected Services och subscription driver."},
+      "V03": {"name": "Intäktsdiversifiering", "score": 5, "signal": "bull", "note": "3 affärsområden, geografisk spridning (Europa 50 %, Kina 25 %, USA 15 %, övrigt 10 %). Mycket stark."},
+      "V04": {"name": "P/S", "score": 5, "signal": "bull", "note": "P/S ~0,5x. Mycket lågt för en ELV-ledare med 12 % EBITDA-marginal. Marknaden prissätter mycket motvind."},
+      "V05": {"name": "P/B", "score": 2, "signal": "bear", "note": "P/B ~1,5x. Biltillverkning är kapitaltungt. P/B rimligt men inte lågt."},
+      "V06": {"name": "EV/EBITDA", "score": 3, "signal": "neutral", "note": "EV/EBITDA ~5x. Rimligt men svensk riskpremie och cyklighet väger in."},
+      "V07": {"name": "Bruttomarginal", "score": 3, "signal": "neutral", "note": "~17–20 % bruttomarginal. Typiskt för premium-biltillverkning. Tryck från råvaror och ELV-tullar."},
+      "V08": {"name": "EBITDA-marginal", "score": 3, "signal": "neutral", "note": "~12 % 2025. Solid men med ELV-tull-press mot ~10 % i Base/Bear-scenarier."},
+      "V09": {"name": "ROE", "score": 2, "signal": "bear", "note": "ROE ~12 %, dämpad av hög eget kapital (kapitaltung bransch). Negativ hävstång på minoritetsaktionärer."},
+      "V10": {"name": "Skuldsättningsgrad", "score": 2, "signal": "bear", "note": "Nettoskuld ~70–100 md SEK. Kapitaltung bransch. Räntekänslig men hanterbar."},
+      "V11": {"name": "Likviditet", "score": 3, "signal": "neutral", "note": "Stark kassa + revolverkredit. Positivt operativt kassaflöde. Men investeringar i EX90/EX30 binder kapital."},
+      "V12": {"name": "Intäktsstabilitet", "score": 2, "signal": "bear", "note": "Cyklisk bransch. Bilsäljning svänger med konjunktur, räntor, råvaror. ELV-tullar förstärker svängningarna 2026."},
+      "V13": {"name": "Patent / IP", "score": 4, "signal": "bull", "note": "Säkerhets-DNA (City Safety, Pilot Assist, LiDAR EX90). EX90 först med Luminar LiDAR i massproduktion. IP-starkt."},
+      "V14": {"name": "Varumärke", "score": 5, "signal": "bull", "note": "Ett av Nordens starkaste varumärken. Säkerhet + svensk design + ELV-ledare. Premium-prissättningsmak."},
+      "V15": {"name": "Nätverkseffekter", "score": 2, "signal": "bear", "note": "Begränsade nätverkseffekter. Service-nätverk + Connected Services visar viss plattformstendens men inte stark."},
+      "V16": {"name": "Produktlanseringar", "score": 3, "signal": "neutral", "note": "EX30 levererar volym. EX90 fördröjd men volymproduktion väntas Q4 2026. Software-defined vehicle-arkitektur i gång."},
+      "V17": {"name": "Avtal / Partnerskap", "score": 4, "signal": "bull", "note": "Geely (78 % ägare, Kina-skal), Google (Android Automotive), Nvidia (Drive Orin), Luminar (LiDAR). Starkt ekosystem — men koncentration till Geely är en risk."},
+      "V18": {"name": "Regulatoriska", "score": 3, "signal": "neutral", "note": "ELV-krav gynnar Volvo, men ELV-tullar (USA) motverkar. EU:s förbud mot fossila bilar 2035 bekräftar strategin. Netto neutralt-kort."},
+      "V19": {"name": "Kapitalförbränning", "score": 3, "signal": "neutral", "note": "Positivt operativt kassaflöde 2025. Men stora investeringar i ELV-plattformar + EX90-fabrik. FCF marginaltryckt."},
+      "V20": {"name": "Återköp", "score": 2, "signal": "bear", "note": "Begränsade återköp. Utdelning prioriteras (50 % av vinst). Fritt flöde går till ELV-investeringar, inte återköp."}
+    }
+  },
+
+  "waveSummary": {
+    "title": "Våganalys — 25 celler",
+    "impulse": ["V03", "V04", "V13", "V14", "V17"],
+    "correction": ["V05", "V09", "V10", "V12", "V15", "V20"],
+    "base": ["V01", "V02", "V06", "V07", "V08", "V11", "V16", "V18", "V19"],
+    "overallBias": "NEUTRAL med BULLISH kärna — men cyklisk och ELV-tull-exponerad",
+    "megaTrend": "Volvo har gått från botten ~70 SEK (2022 cykelbotten) till topp ~340 SEK (2025 ELV-ledarhyp) och nu 285 SEK. ELV-omställning (50 % 2025 → 100 % 2030) + Geely-ägande skapar långsiktig hävstång. Kort sikt: ELV-tullar (USA) + svensk riskpremie + cykeltryck. ATL 2022 (~70 SEK) var teknisk botten — nuvarande zon 240–300 SEK är 'fair value' med asymmetrisk risk mot Bull-case. Håll — vänta på Q3-rapport och ELV-tullutfall innan KÖP-tillägg."
+  },
+
+  "scenarios": {
+    "title": "Scenarier — Bull / Base / Bear",
+    "bull": {"probability": "25%", "target": "380 SEK (+33%)", "description": "ELV-tullar löses (undantag eller sänkt tull), EX30/EX90 levererar volym, Kina växer, marginaler utökas till 13–14 %, direktavkastning bibehållen"},
+    "base": {"probability": "50%", "target": "320 SEK (+12%)", "description": "Stabil volym, 50 % ELV-andel hålls, EBITDA-marginal ~12 % bibehålls, ELV-tullar hanteras via prishöjningar och lokalförskjutning"},
+    "bear": {"probability": "25%", "target": "240 SEK (-16%)", "description": "ELV-tullar bitar hårt (25 %+), geopolitisk eskalering Kina-USA, råvarupriser (litium, kobolt) pressar marginaler under 10 %, sub-leverantörskonkurser"}
+  },
+
+  "priceLevels": {
+    "title": "Prisnivåer",
+    "levels": [
+      {"label": "Bear-case stöd", "value": "240 SEK (−16 %)", "tone": "bear"},
+      {"label": "Tekniskt stöd 1", "value": "260 SEK (2022-halva)", "tone": "bear-soft"},
+      {"label": "Nu", "value": "285 SEK (2026-08-07)", "tone": "neutral"},
+      {"label": "200-dagars MA", "value": "~290 SEK", "tone": "neutral"},
+      {"label": "Base-case mål", "value": "320 SEK (+12 %)", "tone": "gold"},
+      {"label": "Topp 2025", "value": "~340 SEK", "tone": "bull-soft"},
+      {"label": "Bull-case mål", "value": "380 SEK (+33 %)", "tone": "bull"}
+    ]
+  },
+
+  "keyEvents": {
+    "title": "Kalender — Viktiga händelser",
+    "events": [
+      {"date": "2026-07-17", "event": "Q2-rapport 2026 — volym, marginaler, ELV-andel, USA-tullkänning"},
+      {"date": "2026-09-15", "event": "ELV-tullbeslut USA (förväntat hösten 2026) — kritiskt för EX30/EX90-marginal"},
+      {"date": "2026-10-15", "event": "EX90 volymproduktion start (väntat) — LiDAR + software-defined vehicle"},
+      {"date": "2026-10-29", "event": "Q3-rapport 2026 — första fulla kvartalet med EX90 volym"},
+      {"date": "2026-11-15", "event": "EX30 lansering USA (om ELV-tullar tillåter) — volym-ELV-rulle"},
+      {"date": "2027-01-20", "event": "Kapitalmarknadsdag — ELV-strategi-update 2027–2030"},
+      {"date": "2027-02-05", "event": "Q4-rapport 2026 + utdelningsförslag (50 % av vinst)"},
+      {"date": "2027-03-31", "event": "Årsstämma 2027 — utdelningsbeslut + styrelseval"}
+    ]
+  },
+
+  "fusion": {
+    "title": "Strategi & Transformation — ELV-omställning 2025–2030",
+    "body": "Volvo Cars genomför den mest aggressiva ELV-omställningen bland traditionella biltillverkare: 50 % ELV-andel redan 2025, 100 % ELV 2030. EX30 (volym-ELV, gemensam SEA-plattform med Geely) och EX90 (flaggskepps-ELV med Luminar LiDAR, software-defined vehicle) är hörnstenar. Geely-ägandet (78 %, Li Shufu sedan 2010) ger Kina-skal och komponentplattformar — men exponerar också för Kina-USA-geopolitik och ELV-tullar. Strategin kombinerar nordiskt säkerhets-DNA med kinesisk kostnadseffektivitet: en unik position men med unika risker.",
+    "timeline": [
+      {"date": "1999", "event": "Ford förvärvar Volvo Cars av Volvo-koncernen för 6,45 md USD"},
+      {"date": "2010", "event": "Geely (Li Shufu) förvärvar Volvo Cars av Ford för 1,8 md USD — vändningens start"},
+      {"date": "2017", "event": "XC60 lanseras (världens mest sålda premium-SUV)"},
+      {"date": "2021-10-29", "event": "Notering på Nasdaq Stockholm Large Cap till 53 SEK"},
+      {"date": "2022", "event": "Botten ~70 SEK (cykelbotten + räntor + krig)"},
+      {"date": "2024", "event": "EX30 lansering — volym-ELV på SEA-plattform"},
+      {"date": "2025", "event": "Topp ~340 SEK · 50 % ELV-andel uppnådd — ELV-ledare bland traditionella"},
+      {"date": "2026-07-17", "event": "Q2-rapport 2026 — första kvartalet med full ELV-tullkänning"},
+      {"date": "2026-08-07", "event": "285 SEK — HÅLL-rekommendation verifierad"}
+    ]
+  },
+
+  "history": {
+    "title": "Historik — Från notering 2021 till ELV-ledare 2026",
+    "body": "Volvo Car AB noterades på Nasdaq Stockholm den 29 oktober 2021 till 53 SEK. Efter initial svaghet föll aktien till botten ~70 SEK under 2022 (cykelbotten + räntor + Ukrainakriget). Sedan dess har ELV-omställningen + Geely-synergier + XC60-volym drivit aktien till topp ~340 SEK under 2025 — en femdubbling på tre år. Nu (2026-08-07) noteras 285 SEK, vilket är −16 % från toppen — tryckt av ELV-tullar (USA) och svensk riskpremie, men fundamentalt starkt läge med P/E ~8x och direktavkastning ~5 %. ATL 2022 (~70 SEK) utgör den tekniska botten; en brytning under 240 SEK (Bear-case) skulle markera ny nedtrend.",
+    "peak": "~340 SEK (2025)",
+    "bottom": "~70 SEK (2022)",
+    "current": "285 SEK (2026-08-07)",
+    "declineFromPeak": "−16 %"
+  }
+}

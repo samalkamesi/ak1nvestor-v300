@@ -6,7 +6,6 @@ export const NAV_SECTIONS = [
   { id: "prec", label: "PREC-ANALYS" },
   { id: "analyser", label: "ANALYSER" },
   { id: "aktier", label: "AKTIER" },
-  { id: "rapporter", label: "RAPPORTER" },
   { id: "kurser", label: "KURSER" },
   { id: "labb", label: "LABB" },
   { id: "styrelse", label: "STYRELSE" },
@@ -17,9 +16,8 @@ export const NAV_SECTIONS = [
 /** Footer "MER" navigation list. */
 export const FOOTER_NAV = [
   { label: "Hem · Huvudsida", section: "hem" as const },
-  { label: "PREC-analysen (23 sektioner)", section: "prec" as const },
-  { label: "Alla analyser", section: "prec" as const },
-  { label: "Rapporter (99-sidors analyser)", section: "rapporter" as const },
+  { label: "PREC-analysen (alla sektioner)", section: "prec" as const },
+  { label: "Alla analyser", section: "analyser" as const },
   { label: "Kurser (200+ moduler · 4 flikar)", section: "kurser" as const },
   { label: "Labb (case + faror + historia)", section: "labb" as const },
   { label: "Meta-system (organ + visioner)", section: "om-oss" as const },

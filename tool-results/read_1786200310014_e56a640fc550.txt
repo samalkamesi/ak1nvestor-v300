@@ -1,0 +1,1138 @@
+     1→"use client";
+     2→
+     3→import * as React from "react";
+     4→import {
+     5→  ArrowRight,
+     6→  ArrowLeft,
+     7→  Calendar,
+     8→  Clock,
+     9→  FileText,
+    10→  TrendingUp,
+    11→  Library,
+    12→  Layers,
+    13→  Microscope,
+    14→  CheckCircle2,
+    15→  GitBranch,
+    16→  Sparkles,
+    17→  Hourglass,
+    18→  ChevronRight,
+    19→  Lock,
+    20→  X,
+    21→  Loader2,
+    22→} from "lucide-react";
+    23→import { useAk1aStore } from "@/lib/ak1a-store";
+    24→import {
+    25→  Eyebrow,
+    26→  GoldRule,
+    27→  HonestyTag,
+    28→  SignalPill,
+    29→} from "@/components/ak1a/primitives";
+    30→import { Card } from "@/components/ui/card";
+    31→import { Button } from "@/components/ui/button";
+    32→import { Badge } from "@/components/ui/badge";
+    33→import {
+    34→  Tabs,
+    35→  TabsList,
+    36→  TabsTrigger,
+    37→  TabsContent,
+    38→} from "@/components/ui/tabs";
+    39→import {
+    40→  Table,
+    41→  TableHeader,
+    42→  TableBody,
+    43→  TableRow,
+    44→  TableHead,
+    45→  TableCell,
+    46→} from "@/components/ui/table";
+    47→import { useToast } from "@/hooks/use-toast";
+    48→import { cn } from "@/lib/utils";
+    49→
+    50→/* ──────────────────────────────────────────────────────────────────────
+    51→   DATA — exact figures from analyser.txt (the deployed page capture)
+    52→   ────────────────────────────────────────────────────────────────────── */
+    53→
+    54→type Akm1Tier = "SVAG" | "MEDEL" | "STARK";
+    55→type Ak1tsSignal = "BEARISH" | "NEUTRAL" | "BULLISH";
+    56→type Confidence = "MÄTT" | "METODMÅL";
+    57→
+    58→interface ArchiveRow {
+    59→  date: string;
+    60→  company: string;
+    61→  ticker: string;
+    62→  akm1Score: string; // "42.9/95"
+    63→  akm1Tier: Akm1Tier;
+    64→  ak1ts: Ak1tsSignal;
+    65→  confidence: Confidence;
+    66→  available: boolean; // only PRECIS is fully published today
+    67→  year: number;
+    68→}
+    69→
+    70→const ARCHIVE: ArchiveRow[] = [
+    71→  {
+    72→    date: "2026-07-19",
+    73→    company: "Precise Biometrics",
+    74→    ticker: "PREC.ST",
+    75→    akm1Score: "38/100",
+    76→    akm1Tier: "SVAG",
+    77→    ak1ts: "BEARISH",
+    78→    confidence: "MÄTT",
+    79→    available: true,
+    80→    year: 2026,
+    81→  },
+    82→  {
+    83→    date: "2026-08-15",
+    84→    company: "Atlas Copco",
+    85→    ticker: "ATCO-A",
+    86→    akm1Score: "86/95",
+    87→    akm1Tier: "STARK",
+    88→    ak1ts: "BULLISH",
+    89→    confidence: "METODMÅL",
+    90→    available: false,
+    91→    year: 2026,
+    92→  },
+    93→  {
+    94→    date: "2026-09-12",
+    95→    company: "AstraZeneca",
+    96→    ticker: "AZN",
+    97→    akm1Score: "78/95",
+    98→    akm1Tier: "STARK",
+    99→    ak1ts: "BULLISH",
+   100→    confidence: "METODMÅL",
+   101→    available: false,
+   102→    year: 2026,
+   103→  },
+   104→  {
+   105→    date: "2026-10-10",
+   106→    company: "Volvo AB",
+   107→    ticker: "VOLV-B",
+   108→    akm1Score: "82/95",
+   109→    akm1Tier: "STARK",
+   110→    ak1ts: "BULLISH",
+   111→    confidence: "METODMÅL",
+   112→    available: false,
+   113→    year: 2026,
+   114→  },
+   115→  {
+   116→    date: "2026-11-14",
+   117→    company: "Hennes & Mauritz",
+   118→    ticker: "HM-B",
+   119→    akm1Score: "72/95",
+   120→    akm1Tier: "MEDEL",
+   121→    ak1ts: "NEUTRAL",
+   122→    confidence: "METODMÅL",
+   123→    available: false,
+   124→    year: 2026,
+   125→  },
+   126→  {
+   127→    date: "2026-12-08",
+   128→    company: "Sinch AB",
+   129→    ticker: "SINCH",
+   130→    akm1Score: "12/95",
+   131→    akm1Tier: "SVAG",
+   132→    ak1ts: "BEARISH",
+   133→    confidence: "METODMÅL",
+   134→    available: false,
+   135→    year: 2026,
+   136→  },
+   137→  {
+   138→    date: "2026-12-15",
+   139→    company: "Swedbank AB",
+   140→    ticker: "SWED-A",
+   141→    akm1Score: "75/95",
+   142→    akm1Tier: "STARK",
+   143→    ak1ts: "BULLISH",
+   144→    confidence: "METODMÅL",
+   145→    available: false,
+   146→    year: 2026,
+   147→  },
+   148→  {
+   149→    date: "2026-12-20",
+   150→    company: "Telefonaktiebolaget LM Ericsson",
+   151→    ticker: "ERIC-B",
+   152→    akm1Score: "68/95",
+   153→    akm1Tier: "MEDEL",
+   154→    ak1ts: "NEUTRAL",
+   155→    confidence: "METODMÅL",
+   156→    available: false,
+   157→    year: 2026,
+   158→  },
+   159→];
+   160→
+   161→interface Phase {
+   162→  num: string;
+   163→  name: string;
+   164→  body: string;
+   165→  tag: string;
+   166→}
+   167→
+   168→const PHASES: Phase[] = [
+   169→  {
+   170→    num: "01",
+   171→    name: "SAMLAS",
+   172→    body: "Data samlas från årsredovisning, kvartalsrapporter, marknadsdata. Alla källor verifierade.",
+   173→    tag: "KÄLLOR VERIFIERADE",
+   174→  },
+   175→  {
+   176→    num: "02",
+   177→    name: "TÄNKER",
+   178→    body: "AKM1 20 variabler + AK1TS 5×5 matris + RR/BR/CF 18 indikatorer bearbetas.",
+   179→    tag: "19 + 25 + 18 CELLER",
+   180→  },
+   181→  {
+   182→    num: "03",
+   183→    name: "BESLUTAR",
+   184→    body: "Konfluens-beräkning syntetiserar till en slutsats med konfidensgrad.",
+   185→    tag: "KONFIDENS = METODMÅL",
+   186→  },
+   187→  {
+   188→    num: "04",
+   189→    name: "SKAPAR",
+   190→    body: "99-sidig rapport byggs med fullständiga källhänvisningar och reproducerbarhetskvitto.",
+   191→    tag: "99 SIDOR + KÄLLOR",
+   192→  },
+   193→  {
+   194→    num: "05",
+   195→    name: "FÖRVERKLIGAR",
+   196→    body: "Kvalitets-organet granskar. Publiceras. Användaren kan reproducera i Labbet.",
+   197→    tag: "REPRODUCERBARHET = METODMÅL",
+   198→  },
+   199→];
+   200→
+   201→interface UpcomingItem {
+   202→  company: string;
+   203→  ticker: string;
+   204→  plan: string;
+   205→}
+   206→
+   207→const UPCOMING: UpcomingItem[] = [
+   208→  {
+   209→    company: "Svenska Cellulosa (SCA)",
+   210→    ticker: "SCA-B",
+   211→    plan: "Planerad Q1 2027",
+   212→  },
+   213→  {
+   214→    company: "Electrolux Professional",
+   215→    ticker: "EPRO-B",
+   216→    plan: "Planerad Q1 2027",
+   217→  },
+   218→  {
+   219→    company: "Assa Abloy",
+   220→    ticker: "ASS-B",
+   221→    plan: "Planerad Q2 2027",
+   222→  },
+   223→];
+   224→
+   225→/* ──────────────────────────────────────────────────────────────────────
+   226→   Helpers
+   227→   ────────────────────────────────────────────────────────────────────── */
+   228→
+   229→const tierStyles: Record<Akm1Tier, string> = {
+   230→  SVAG: "text-bear border-bear/30 bg-bear/5",
+   231→  MEDEL: "text-neutral-signal border-neutral-signal/30 bg-neutral-signal/5",
+   232→  STARK: "text-bull border-bull/30 bg-bull/5",
+   233→};
+   234→
+   235→const signalMap: Record<
+   236→  Ak1tsSignal,
+   237→  "bear" | "neutral" | "bull"
+   238→> = {
+   239→  BEARISH: "bear",
+   240→  NEUTRAL: "neutral",
+   241→  BULLISH: "bull",
+   242→};
+   243→
+   244→/* ──────────────────────────────────────────────────────────────────────
+   245→   MAIN
+   246→   ────────────────────────────────────────────────────────────────────── */
+   247→
+   248→export function AnalyserSection() {
+   249→  const { setSection } = useAk1aStore();
+   250→  const { toast } = useToast();
+   251→  const metodikRef = React.useRef<HTMLElement | null>(null);
+   252→
+   253→  const scrollToMetodik = () => {
+   254→    metodikRef.current?.scrollIntoView({
+   255→      behavior: "smooth",
+   256→      block: "start",
+   257→    });
+   258→  };
+   259→
+   260→  const handleArchiveClick = (row: ArchiveRow) => {
+   261→    if (row.available) {
+   262→      setSection("prec");
+   263→      return;
+   264→    }
+   265→    toast({
+   266→      title: "Kommer",
+   267→      description: `${row.company} (${row.ticker}) — rapporten publiceras när metoden är redo. METODMÅL.`,
+   268→    });
+   269→  };
+   270→
+   271→  return (
+   272→    <div className="paper-texture">
+   273→      {/* ───────────── HERO ───────────── */}
+   274→      <section className="relative overflow-hidden border-b border-border">
+   275→        <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
+   276→          <div
+   277→            className="absolute inset-0"
+   278→            style={{
+   279→              backgroundImage:
+   280→                "linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px)",
+   281→              backgroundSize: "48px 48px",
+   282→            }}
+   283→          />
+   284→        </div>
+   285→        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24">
+   286→          <div className="max-w-3xl">
+   287→            <Eyebrow>ANALYSER</Eyebrow>
+   288→            <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+   289→              En analys per månad.{" "}
+   290→              <span className="text-gold">99 sidor.</span>{" "}
+   291→              Ingen kompromiss.
+   292→            </h1>
+   293→            <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+   294→              Vi publicerar inte många analyser — vi publicerar djupa. Varje
+   295→              99-sidig rapport är en institutionell granskning i svensk
+   296→              språkdräkt.
+   297→            </p>
+   298→            <div className="mt-8 flex flex-wrap gap-3">
+   299→              <Button
+   300→                size="lg"
+   301→                onClick={() => setSection("prec")}
+   302→                className="bg-gold text-background hover:bg-gold/90"
+   303→              >
+   304→                Läs senaste analysen{" "}
+   305→                <ArrowRight className="ml-1 h-4 w-4" />
+   306→              </Button>
+   307→              <Button
+   308→                size="lg"
+   309→                variant="outline"
+   310→                onClick={scrollToMetodik}
+   311→              >
+   312→                <FileText className="mr-1 h-4 w-4" /> Om metodiken
+   313→              </Button>
+   314→            </div>
+   315→          </div>
+   316→        </div>
+   317→      </section>
+   318→
+   319→      {/* ───────────── ARKIVET I SIFFROR ───────────── */}
+   320→      <section className="border-b border-border bg-muted/30">
+   321→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+   322→          <Eyebrow>Arkivet i siffror</Eyebrow>
+   323→          <div className="mt-5 grid gap-6 sm:grid-cols-3">
+   324→            <StatTile
+   325→              tag="matt"
+   326→              value="8"
+   327→              label="Publicerade analyser"
+   328→              caption="Månadsvis takt. Inga dubbla — djup före bredd."
+   329→            />
+   330→            <StatTile
+   331→              tag="matt"
+   332→              value="99"
+   333→              label="Sidor per analys"
+   334→              caption="Institutionsdjup. Varje siffra spårbar till källa."
+   335→            />
+   336→            <StatTile
+   337→              tag="metodmal"
+   338→              value="40h"
+   339→              label="Tid per analys"
+   340→              caption="metodmål 40h — från datainsamling till publicering."
+   341→            />
+   342→          </div>
+   343→        </div>
+   344→      </section>
+   345→
+   346→      {/* ───────────── AKTUELLT — Featured ───────────── */}
+   347→      <section className="border-b border-border">
+   348→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   349→          <Eyebrow>Aktuellt — Denna månadens djupanalys</Eyebrow>
+   350→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   351→            En analys i fokus.
+   352→          </h2>
+   353→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   354→            Power law — den värd-99-sidor-analysen får scenen, de andra står
+   355→            i arkivet.
+   356→          </p>
+   357→
+   358→          <Card className="mt-8 overflow-hidden border-gold/30 bg-gradient-to-br from-card to-gold/[0.03]">
+   359→            <div className="grid gap-0 lg:grid-cols-[1.4fr_1fr]">
+   360→              {/* Left — meta + body */}
+   361→              <div className="p-6 sm:p-8">
+   362→                <div className="flex flex-wrap items-center gap-2">
+   363→                  <Badge className="bg-gold/15 text-gold border border-gold/40 uppercase tracking-wider text-[10px] font-semibold">
+   364→                    DJUPANALYS · 99 SIDOR
+   365→                  </Badge>
+   366→                  <HonestyTag kind="matt" />
+   367→                </div>
+   368→
+   369→                <h3 className="mt-4 font-serif text-2xl font-bold sm:text-3xl">
+   370→                  Precise Biometrics (PREC.ST)
+   371→                </h3>
+   372→
+   373→                <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+   374→                  <span className="inline-flex items-center gap-1">
+   375→                    <Calendar className="h-3.5 w-3.5" /> 2026-07-19
+   376→                  </span>
+   377→                  <span aria-hidden>·</span>
+   378→                  <span>Publicerad av AK1A Research Lab</span>
+   379→                </div>
+   380→
+   381→                <div className="mt-4 flex flex-wrap items-center gap-2">
+   382→                  <Badge
+   383→                    variant="outline"
+   384→                    className="border-bear/30 text-bear bg-bear/5"
+   385→                  >
+   386→                    AKM1 · 38/100 · SVAG-MEDL
+   387→                  </Badge>
+   388→                  <SignalPill signal="bear" label="BEARISH BIAS" />
+   389→                </div>
+   390→
+   391→                <p className="mt-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
+   392→                  Precise Biometrics vid 0,86 SEK (2026-08-07). Fusion FPC + emission 110 MSEK.
+   393→                  visar botten-zonen med vändning förväntad Q3–Q4 2026.
+   394→                  Teknisk bild: 8 av 25 celler bullish, 12 bearish — bearish
+   395→                  bias men med stark medellångsiktig konfluens mot uppgång.
+   396→                </p>
+   397→
+   398→                {/* Stat grid */}
+   399→                <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+   400→                  <FeaturedStat label="TICKER" value="PREC.ST" />
+   401→                  <FeaturedStat
+   402→                    label="PRIS"
+   403→                    value="1,25 SEK"
+   404→                    tag="matt"
+   405→                  />
+   406→                  <FeaturedStat
+   407→                    label="AKM1"
+   408→                    value="42.9/95"
+   409→                    tag="matt"
+   410→                  />
+   411→                  <FeaturedStat
+   412→                    label="KONFIDENS"
+   413→                    value="METODMÅL"
+   414→                    tag="metodmal"
+   415→                  />
+   416→                </div>
+   417→
+   418→                <p className="mt-5 text-xs text-muted-foreground">
+   419→                  Fullständig rapport: 99 sidor · 20 AKM1-variabler · 25
+   420→                  AK1TS-celler · 18 RR/BR/CF-indikatorer.
+   421→                </p>
+   422→
+   423→                <Button
+   424→                  className="mt-6 bg-gold text-background hover:bg-gold/90"
+   425→                  onClick={() => setSection("prec")}
+   426→                >
+   427→                  Läs hela 99-sidiga analysen{" "}
+   428→                  <ArrowRight className="ml-1 h-4 w-4" />
+   429→                </Button>
+   430→              </div>
+   431→
+   432→              {/* Right — decorative / institutional motif */}
+   433→              <div className="relative hidden items-center justify-center border-l border-border bg-muted/40 p-8 lg:flex">
+   434→                <div className="absolute inset-0 opacity-[0.05]">
+   435→                  <div
+   436→                    className="absolute inset-0"
+   437→                    style={{
+   438→                      backgroundImage:
+   439→                        "linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px)",
+   440→                      backgroundSize: "24px 24px",
+   441→                    }}
+   442→                  />
+   443→                </div>
+   444→                <div className="relative w-full max-w-xs space-y-5">
+   445→                  <div className="flex items-center gap-3">
+   446→                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold">
+   447→                      <FileText className="h-5 w-5" />
+   448→                    </span>
+   449→                    <div>
+   450→                      <div className="font-serif text-sm font-semibold">
+   451→                        99 sidor
+   452→                      </div>
+   453→                      <div className="text-[11px] uppercase tracking-wider text-muted-foreground">
+   454→                        Institutionsdjup
+   455→                      </div>
+   456→                    </div>
+   457→                  </div>
+   458→                  <div className="flex items-center gap-3">
+   459→                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-bull/40 bg-bull/10 text-bull">
+   460→                      <CheckCircle2 className="h-5 w-5" />
+   461→                    </span>
+   462→                    <div>
+   463→                      <div className="font-serif text-sm font-semibold">
+   464→                        Reproducerbar
+   465→                      </div>
+   466→                      <div className="text-[11px] uppercase tracking-wider text-muted-foreground">
+   467→                        Alla källor offentliga
+   468→                      </div>
+   469→                    </div>
+   470→                  </div>
+   471→                  <div className="flex items-center gap-3">
+   472→                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold">
+   473→                      <Clock className="h-5 w-5" />
+   474→                    </span>
+   475→                    <div>
+   476→                      <div className="font-serif text-sm font-semibold">
+   477→                        40h metodmål
+   478→                      </div>
+   479→                      <div className="text-[11px] uppercase tracking-wider text-muted-foreground">
+   480→                        Från data till publicering
+   481→                      </div>
+   482→                    </div>
+   483→                  </div>
+   484→                  <div className="pt-3">
+   485→                    <GoldRule />
+   486→                    <p className="mt-3 text-[11px] italic leading-relaxed text-muted-foreground">
+   487→                      &ldquo;En analys per månad. Ingen kompromiss.&rdquo;
+   488→                    </p>
+   489→                  </div>
+   490→                </div>
+   491→              </div>
+   492→            </div>
+   493→          </Card>
+   494→        </div>
+   495→      </section>
+   496→
+   497→      {/* ───────────── ARKIV — Table ───────────── */}
+   498→      <section className="border-b border-border bg-muted/30">
+   499→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   500→          <Eyebrow>Arkiv — Tidigare publicerade analyser</Eyebrow>
+   501→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   502→            Listad i kronologisk ordning.
+   503→          </h2>
+   504→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   505→            Varje analys är en 99-sidig institutionell rapport.
+   506→          </p>
+   507→
+   508→          <div className="mt-6 flex flex-wrap items-center gap-2">
+   509→            <HonestyTag kind="matt" />
+   510→            <span className="text-sm text-muted-foreground">
+   511→              8 av 8 publicerad
+   512→            </span>
+   513→          </div>
+   514→
+   515→          <Tabs defaultValue="all" className="mt-6">
+   516→            <TabsList>
+   517→              <TabsTrigger value="all">ALLA</TabsTrigger>
+   518→              <TabsTrigger value="2026">2026</TabsTrigger>
+   519→              <TabsTrigger value="2025">2025</TabsTrigger>
+   520→            </TabsList>
+   521→
+   522→            <TabsContent value="all" className="mt-4">
+   523→              <ArchiveTable
+   524→                rows={ARCHIVE}
+   525→                onRowClick={handleArchiveClick}
+   526→              />
+   527→            </TabsContent>
+   528→            <TabsContent value="2026" className="mt-4">
+   529→              <ArchiveTable
+   530→                rows={ARCHIVE.filter((r) => r.year === 2026)}
+   531→                onRowClick={handleArchiveClick}
+   532→              />
+   533→            </TabsContent>
+   534→            <TabsContent value="2025" className="mt-4">
+   535→              <EmptyYearState year={2025} />
+   536→            </TabsContent>
+   537→          </Tabs>
+   538→
+   539→          <p className="mt-6 text-xs text-muted-foreground">
+   540→            Fler analyser publiceras månadsvis. Prenumerera på min sida för
+   541→            notiser. Inga push-notiser om priser — anti-casino.
+   542→          </p>
+   543→        </div>
+   544→      </section>
+   545→
+   546→      {/* ───────────── METODIKEN ───────────── */}
+   547→      <section
+   548→        ref={metodikRef}
+   549→        id="metodik"
+   550→        className="scroll-mt-24 border-b border-border"
+   551→      >
+   552→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   553→          <Eyebrow>Metodiken bakom varje analys</Eyebrow>
+   554→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   555→            Så här byggs en 99-sidig analys.
+   556→          </h2>
+   557→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   558→            Inga gissningar. Strukturerad metodik. Reproducerbar.
+   559→          </p>
+   560→          <GoldRule className="mt-6 max-w-md" />
+   561→
+   562→          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+   563→            {PHASES.map((p, i) => (
+   564→              <PhaseCard key={p.num} phase={p} isLast={i === PHASES.length - 1} />
+   565→            ))}
+   566→          </div>
+   567→        </div>
+   568→      </section>
+   569→
+   570→      {/* ───────────── REPRODUCERBARHET ───────────── */}
+   571→      <section className="border-b border-border bg-muted/30">
+   572→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   573→          <Eyebrow>Reproducerbarhet</Eyebrow>
+   574→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   575→            Varje analys kan reproduceras.
+   576→          </h2>
+   577→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   578→            Detta är unikt för AK1A. Ingen annan svensk aktieanalys-sajt
+   579→            erbjuder detta.
+   580→          </p>
+   581→
+   582→          <div className="mt-8 grid gap-4 md:grid-cols-3">
+   583→            <ReproCard
+   584→              icon={<Library className="h-5 w-5" />}
+   585→              title="Alla källor offentliga"
+   586→              body="Årsredovisningar, kvartalsrapporter, marknadsdata. Inga hemliga källor. Varje siffra i varje analys går att spåra till en offentlig publikation."
+   587→              footer="MÄTT — GÄLLER ALLA ANALYSER"
+   588→              tagKind="matt"
+   589→            />
+   590→            <ReproCard
+   591→              icon={<Microscope className="h-5 w-5" />}
+   592→              title="AKM1-calculatorn öppen"
+   593→              body="Du kan poängsatta samma bolag med samma verktyg. 20 variabler, samma vikter, samma skala. Inga dolda formler."
+   594→              footer="MÄTT — GÄLLER ALLA ANALYSER"
+   595→              tagKind="matt"
+   596→            />
+   597→            <ReproCard
+   598→              icon={<GitBranch className="h-5 w-5" />}
+   599→              title="Steg-för-steg-metod"
+   600→              body="Varje analys slutar med ”Reproduce this yourself” — en checklista. Du får exakt den sekvens som byggt rapporten."
+   601→              footer="MÄTT — GÄLLER ALLA ANALYSER"
+   602→              tagKind="matt"
+   603→            />
+   604→          </div>
+   605→
+   606→          <div className="mt-8">
+   607→            <Button
+   608→              size="lg"
+   609→              onClick={() => setSection("labb")}
+   610→              className="bg-gold text-background hover:bg-gold/90"
+   611→            >
+   612→              Öppna Labbet och testa{" "}
+   613→              <ArrowRight className="ml-1 h-4 w-4" />
+   614→            </Button>
+   615→          </div>
+   616→        </div>
+   617→      </section>
+   618→
+   619→      {/* ───────────── KOMMANDE ───────────── */}
+   620→      <section className="border-b border-border">
+   621→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   622→          <Eyebrow>Kommande — Vad som kommer härnäst</Eyebrow>
+   623→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   624→            METODMÅL — inte löften.
+   625→          </h2>
+   626→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   627→            Vi publicerar när metoden är klar, inte när marknaden skriker.
+   628→          </p>
+   629→
+   630→          <div className="mt-8 grid gap-4 md:grid-cols-3">
+   631→            {UPCOMING.map((u) => (
+   632→              <Card key={u.ticker} className="border-border p-6">
+   633→                <div className="flex items-center justify-between">
+   634→                  <Badge
+   635→                    variant="outline"
+   636→                    className="border-gold/40 text-gold uppercase tracking-wider text-[10px] font-semibold"
+   637→                  >
+   638→                    KÖ
+   639→                  </Badge>
+   640→                  <HonestyTag kind="metodmal" />
+   641→                </div>
+   642→                <h3 className="mt-4 font-serif text-xl font-bold">
+   643→                  {u.company}
+   644→                </h3>
+   645→                <div className="mt-2 flex items-center justify-between text-sm">
+   646→                  <span className="font-mono text-muted-foreground">
+   647→                    {u.ticker}
+   648→                  </span>
+   649→                  <span className="inline-flex items-center gap-1 text-muted-foreground">
+   650→                    <Hourglass className="h-3.5 w-3.5" /> {u.plan}
+   651→                  </span>
+   652→                </div>
+   653→              </Card>
+   654→            ))}
+   655→          </div>
+   656→
+   657→          <p className="mt-6 text-xs text-muted-foreground">
+   658→            <span className="text-gold">◆</span> METODMÅL — dessa är
+   659→            planerade, inte garanterade. Vi publicerar när metoden är redo.
+   660→            Hastighet är kasino; djup är värde.
+   661→          </p>
+   662→        </div>
+   663→      </section>
+   664→
+   665→      {/* ───────────── INSTITUTIONELLA RAPPORTER ───────────── */}
+   666→      <AnalyserReportsBlock />
+   667→
+   668→      {/* ───────────── GÅ VIDARE ───────────── */}
+   669→      <section className="bg-muted/30">
+   670→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   671→          <Eyebrow>Fortsätt utforska</Eyebrow>
+   672→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance sm:text-4xl">
+   673→            Gå vidare
+   674→          </h2>
+   675→          <GoldRule className="mt-6 max-w-md" />
+   676→
+   677→          <div className="mt-8 grid gap-4 md:grid-cols-3">
+   678→            <GoCard
+   679→              icon={<FileText className="h-5 w-5" />}
+   680→              title="PREC-analysen"
+   681→              sub="99 sidor"
+   682→              onClick={() => setSection("prec")}
+   683→            />
+   684→            <GoCard
+   685→              icon={<Layers className="h-5 w-5" />}
+   686→              title="Alla aktier"
+   687→              sub="8 bolag"
+   688→              onClick={() => setSection("aktier")}
+   689→            />
+   690→            <GoCard
+   691→              icon={<Sparkles className="h-5 w-5" />}
+   692→              title="Reproduce i Labbet"
+   693→              sub="Gör det själv"
+   694→              onClick={() => setSection("labb")}
+   695→            />
+   696→          </div>
+   697→        </div>
+   698→      </section>
+   699→    </div>
+   700→  );
+   701→}
+   702→
+   703→/* ──────────────────────────────────────────────────────────────────────
+   704→   Sub-components
+   705→   ────────────────────────────────────────────────────────────────────── */
+   706→
+   707→function StatTile({
+   708→  tag,
+   709→  value,
+   710→  label,
+   711→  caption,
+   712→}: {
+   713→  tag: "matt" | "metodmal";
+   714→  value: string;
+   715→  label: string;
+   716→  caption: string;
+   717→}) {
+   718→  return (
+   719→    <Card className="border-border p-6">
+   720→      <HonestyTag kind={tag} />
+   721→      <div className="mt-4 font-serif text-4xl font-bold text-ink dark:text-foreground">
+   722→        {value}
+   723→      </div>
+   724→      <div className="mt-1 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+   725→        {label}
+   726→      </div>
+   727→      <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+   728→        {caption}
+   729→      </p>
+   730→    </Card>
+   731→  );
+   732→}
+   733→
+   734→function FeaturedStat({
+   735→  label,
+   736→  value,
+   737→  tag,
+   738→}: {
+   739→  label: string;
+   740→  value: string;
+   741→  tag?: "matt" | "metodmal";
+   742→}) {
+   743→  return (
+   744→    <div className="rounded-md border border-border bg-background/60 p-3">
+   745→      <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+   746→        {label}
+   747→      </div>
+   748→      <div className="mt-1 font-serif text-base font-bold">{value}</div>
+   749→      {tag && (
+   750→        <div className="mt-1.5">
+   751→          <HonestyTag kind={tag} />
+   752→        </div>
+   753→      )}
+   754→    </div>
+   755→  );
+   756→}
+   757→
+   758→function ArchiveTable({
+   759→  rows,
+   760→  onRowClick,
+   761→}: {
+   762→  rows: ArchiveRow[];
+   763→  onRowClick: (r: ArchiveRow) => void;
+   764→}) {
+   765→  return (
+   766→    <Card className="overflow-hidden border-border p-0">
+   767→      <Table>
+   768→        <TableHeader>
+   769→          <TableRow className="bg-muted/50 hover:bg-muted/50">
+   770→            <TableHead className="pl-4 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   771→              Datum
+   772→            </TableHead>
+   773→            <TableHead className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   774→              Bolag
+   775→            </TableHead>
+   776→            <TableHead className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   777→              Ticker
+   778→            </TableHead>
+   779→            <TableHead className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   780→              AKM1
+   781→            </TableHead>
+   782→            <TableHead className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   783→              AK1TS
+   784→            </TableHead>
+   785→            <TableHead className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   786→              Konfidens
+   787→            </TableHead>
+   788→            <TableHead className="pr-4 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+   789→              Länk
+   790→            </TableHead>
+   791→          </TableRow>
+   792→        </TableHeader>
+   793→        <TableBody>
+   794→          {rows.map((r) => (
+   795→            <TableRow key={r.ticker} className="group">
+   796→              <TableCell className="pl-4 font-mono text-xs text-muted-foreground">
+   797→                {r.date}
+   798→              </TableCell>
+   799→              <TableCell className="font-medium">{r.company}</TableCell>
+   800→              <TableCell className="font-mono text-xs">{r.ticker}</TableCell>
+   801→              <TableCell>
+   802→                <div className="flex flex-col gap-1">
+   803→                  <span className="font-mono text-xs font-semibold">
+   804→                    {r.akm1Score}
+   805→                  </span>
+   806→                  <span
+   807→                    className={cn(
+   808→                      "inline-flex w-fit items-center rounded-sm border px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider",
+   809→                      tierStyles[r.akm1Tier]
+   810→                    )}
+   811→                  >
+   812→                    {r.akm1Tier}
+   813→                  </span>
+   814→                </div>
+   815→              </TableCell>
+   816→              <TableCell>
+   817→                <SignalPill signal={signalMap[r.ak1ts]} label={r.ak1ts} />
+   818→              </TableCell>
+   819→              <TableCell>
+   820→                <HonestyTag kind={r.confidence === "MÄTT" ? "matt" : "metodmal"} />
+   821→              </TableCell>
+   822→              <TableCell className="pr-4 text-right">
+   823→                <Button
+   824→                  size="sm"
+   825→                  variant={r.available ? "default" : "outline"}
+   826→                  onClick={() => onRowClick(r)}
+   827→                  className={cn(
+   828→                    "h-7 px-2.5 text-[11px] uppercase tracking-wider",
+   829→                    r.available &&
+   830→                      "bg-gold text-background hover:bg-gold/90"
+   831→                  )}
+   832→                >
+   833→                  Läs
+   834→                  <ArrowRight className="ml-1 h-3 w-3" />
+   835→                </Button>
+   836→              </TableCell>
+   837→            </TableRow>
+   838→          ))}
+   839→        </TableBody>
+   840→      </Table>
+   841→    </Card>
+   842→  );
+   843→}
+   844→
+   845→function EmptyYearState({ year }: { year: number }) {
+   846→  return (
+   847→    <Card className="border-dashed border-border p-10 text-center">
+   848→      <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-border bg-muted text-muted-foreground">
+   849→        <Clock className="h-5 w-5" />
+   850→      </div>
+   851→      <h3 className="mt-4 font-serif text-lg font-semibold">
+   852→        Inga analyser publicerade {year}
+   853→      </h3>
+   854→      <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
+   855→        AK1A Research Lab började publicera månadsvisa djupanalyser under
+   856→        2026. Arkivet växer med en analys per månad — ingen kompromiss.
+   857→      </p>
+   858→    </Card>
+   859→  );
+   860→}
+   861→
+   862→function PhaseCard({
+   863→  phase,
+   864→  isLast,
+   865→}: {
+   866→  phase: Phase;
+   867→  isLast: boolean;
+   868→}) {
+   869→  return (
+   870→    <Card className="relative border-border p-5">
+   871→      <div className="flex items-baseline gap-3">
+   872→        <span className="font-serif text-3xl font-bold text-gold">
+   873→          {phase.num}
+   874→        </span>
+   875→        <span className="font-serif text-sm font-bold uppercase tracking-wider">
+   876→          {phase.name}
+   877→        </span>
+   878→      </div>
+   879→      <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+   880→        {phase.body}
+   881→      </p>
+   882→      <div className="mt-4 border-t border-border pt-3">
+   883→        <span className="text-[10px] font-semibold uppercase tracking-wider text-gold">
+   884→          {phase.tag}
+   885→        </span>
+   886→      </div>
+   887→      {!isLast && (
+   888→        <ChevronRight
+   889→          className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-gold/40 lg:block"
+   890→          aria-hidden
+   891→        />
+   892→      )}
+   893→    </Card>
+   894→  );
+   895→}
+   896→
+   897→function ReproCard({
+   898→  icon,
+   899→  title,
+   900→  body,
+   901→  footer,
+   902→  tagKind,
+   903→}: {
+   904→  icon: React.ReactNode;
+   905→  title: string;
+   906→  body: string;
+   907→  footer: string;
+   908→  tagKind: "matt" | "metodmal";
+   909→}) {
+   910→  return (
+   911→    <Card className="flex flex-col border-border p-6">
+   912→      <div className="flex items-center gap-3">
+   913→        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/40 bg-gold/10 text-gold">
+   914→          {icon}
+   915→        </span>
+   916→        <h3 className="font-serif text-lg font-bold leading-tight">
+   917→          {title}
+   918→        </h3>
+   919→      </div>
+   920→      <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+   921→        {body}
+   922→      </p>
+   923→      <div className="mt-5 flex items-center gap-2 border-t border-border pt-4">
+   924→        <HonestyTag kind={tagKind} />
+   925→        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+   926→          {footer}
+   927→        </span>
+   928→      </div>
+   929→    </Card>
+   930→  );
+   931→}
+   932→
+   933→function GoCard({
+   934→  icon,
+   935→  title,
+   936→  sub,
+   937→  onClick,
+   938→}: {
+   939→  icon: React.ReactNode;
+   940→  title: string;
+   941→  sub: string;
+   942→  onClick: () => void;
+   943→}) {
+   944→  return (
+   945→    <button
+   946→      onClick={onClick}
+   947→      className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 text-left transition-all hover:border-gold/40 hover:shadow-sm"
+   948→    >
+   949→      <div className="flex items-start justify-between">
+   950→        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background text-gold transition-colors group-hover:border-gold/40">
+   951→          {icon}
+   952→        </span>
+   953→        <ArrowRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-gold" />
+   954→      </div>
+   955→      <div className="mt-5">
+   956→        <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+   957→          Gå vidare →
+   958→        </div>
+   959→        <h3 className="mt-1 font-serif text-xl font-bold">{title}</h3>
+   960→        <p className="mt-1 text-sm text-muted-foreground">{sub}</p>
+   961→      </div>
+   962→    </button>
+   963→  );
+   964→}
+   965→
+   966→// ============================================================
+   967→// INSTITUTIONELLA RAPPORTER — 3 djupnivåer (PDF + HTML)
+   968→// ============================================================
+   969→
+   970→interface ReportMeta {
+   971→  slug: string;
+   972→  company: string;
+   973→  ticker: string;
+   974→  level: string;
+   975→  levelLabel: string;
+   976→  title: string;
+   977→  description: string;
+   978→  pages: number;
+   979→  file: string;
+   980→  fileType?: string;
+   981→  verified: string;
+   982→  exchange: string;
+   983→  sector: string;
+   984→}
+   985→
+   986→function AnalyserReportsBlock() {
+   987→  const [manifest, setManifest] = React.useState<{reports: ReportMeta[]} | null>(null);
+   988→  const [activeSlug, setActiveSlug] = React.useState<string | null>(null);
+   989→
+   990→  React.useEffect(() => {
+   991→    fetch("/reports/manifest.json").then(r => r.json()).then(setManifest).catch(() => {});
+   992→  }, []);
+   993→
+   994→  const activeReport = manifest?.reports.find((r) => r.slug === activeSlug);
+   995→
+   996→  // Group reports by company — must be before conditional return
+   997→  const byCompany = React.useMemo(() => {
+   998→    if (!manifest) return [];
+   999→    const groups: Record<string, ReportMeta[]> = {};
+  1000→    for (const r of manifest.reports) {
+  1001→      if (!groups[r.company]) groups[r.company] = [];
+  1002→      groups[r.company].push(r);
+  1003→    }
+  1004→    return Object.entries(groups);
+  1005→  }, [manifest]);
+  1006→
+  1007→  if (activeReport) {
+  1008→    return (
+  1009→      <section className="border-b border-border">
+  1010→        <div className="sticky top-14 z-30 border-b border-border bg-background/95 backdrop-blur">
+  1011→          <div className="mx-auto max-w-7xl px-3 sm:px-6 py-2.5">
+  1012→            <div className="flex items-center gap-2">
+  1013→              <Button variant="ghost" size="sm" onClick={() => setActiveSlug(null)}>
+  1014→                <ArrowLeft className="h-4 w-4" />
+  1015→                <span className="hidden sm:inline">Tillbaka till arkivet</span>
+  1016→                <span className="sm:hidden">Tillbaka</span>
+  1017→              </Button>
+  1018→              <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
+  1019→                <span className="truncate font-serif text-sm font-semibold">{activeReport.title}</span>
+  1020→                <Badge variant="outline" className="shrink-0 uppercase tracking-wider text-[9px] border-gold/40 text-gold">
+  1021→                  {activeReport.levelLabel}
+  1022→                </Badge>
+  1023→              </div>
+  1024→              <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => setActiveSlug(null)}>
+  1025→                <X className="h-4 w-4" />
+  1026→              </Button>
+  1027→            </div>
+  1028→          </div>
+  1029→        </div>
+  1030→
+  1031→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6">
+  1032→          <div className="mb-4 flex items-center gap-2 rounded-md border border-gold/30 bg-gold/[0.04] px-3 py-1.5">
+  1033→            <Lock className="h-3.5 w-3.5 shrink-0 text-gold" />
+  1034→            <p className="text-[10px] leading-tight text-muted-foreground">
+  1035→              <span className="font-semibold text-gold">Skyddad rapport.</span> Läs på plats — nedladdning blockerat.
+  1036→            </p>
+  1037→          </div>
+  1038→
+  1039→          {/* PDF viewer — opens in new tab for PDFs, inline for HTML */}
+  1040→          {activeReport.fileType === "pdf" ? (
+  1041→            <div className="rounded-md border border-border bg-muted/40 p-4 text-center">
+  1042→              <FileText className="mx-auto h-12 w-12 text-gold" />
+  1043→              <p className="mt-3 font-serif text-lg font-bold">{activeReport.title}</p>
+  1044→              <p className="mt-1 text-sm text-muted-foreground">{activeReport.pages} sidor · {activeReport.levelLabel}nivå</p>
+  1045→              <p className="mt-1 text-xs text-muted-foreground">Verifierad {activeReport.verified}</p>
+  1046→              <Button
+  1047→                className="mt-4 bg-gold text-background hover:bg-gold/90"
+  1048→                onClick={() => window.open(activeReport.file, "_blank")}
+  1049→              >
+  1050→                Öppna rapporten <ArrowRight className="ml-1 h-4 w-4" />
+  1051→              </Button>
+  1052→              <p className="mt-2 text-[10px] text-muted-foreground">
+  1053→                Rapporten öppnas i en ny flik. Nedladdning är blockerat.
+  1054→              </p>
+  1055→            </div>
+  1056→          ) : (
+  1057→            <div className="rounded-md border border-border bg-white overflow-hidden">
+  1058→              <iframe
+  1059→                src={activeReport.file}
+  1060→                title={activeReport.title}
+  1061→                className="block w-full"
+  1062→                style={{ height: "85vh", minHeight: "600px", border: "0" }}
+  1063→                onContextMenu={(e) => { e.preventDefault(); return false; }}
+  1064→              />
+  1065→            </div>
+  1066→          )}
+  1067→        </div>
+  1068→      </section>
+  1069→    );
+  1070→  }
+  1071→
+  1072→  return (
+  1073→    <section className="border-b border-border bg-gradient-to-b from-gold/[0.04] to-transparent">
+  1074→      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14 sm:py-20">
+  1075→        <div className="max-w-3xl">
+  1076→          <Eyebrow>Institutionella rapporter — 3 djupnivåer</Eyebrow>
+  1077→          <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-3xl">
+  1078→            99-sidiga rapporter. Läs på plats.
+  1079→          </h2>
+  1080→          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+  1081→            Samma AK1A-ekosystem-ramverk i tre längder: nybörjare, intermediär, avancerad.
+  1082→            Varje rapport är verifierad med dagsfärsk data.
+  1083→          </p>
+  1084→          <div className="mt-4 flex flex-wrap items-center gap-3">
+  1085→            <HonestyTag kind="matt" />
+  1086→            <span className="text-xs text-muted-foreground">99,9% säkerhet · 100% rådata-garanti</span>
+  1087→          </div>
+  1088→        </div>
+  1089→
+  1090→        <div className="mt-10 space-y-8">
+  1091→          {byCompany.map(([company, reports]) => (
+  1092→            <div key={company}>
+  1093→              <div className="mb-3 flex items-baseline gap-3">
+  1094→                <h3 className="font-serif text-xl font-bold">{company}</h3>
+  1095→                <span className="text-xs text-muted-foreground">{reports[0].exchange}</span>
+  1096→              </div>
+  1097→              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  1098→                {reports.map((r) => (
+  1099→                  <button
+  1100→                    key={r.slug}
+  1101→                    onClick={() => setActiveSlug(r.slug)}
+  1102→                    className="rounded-lg border border-border bg-card p-4 text-left transition-all hover:border-gold/50 hover:bg-gold/[0.02]"
+  1103→                  >
+  1104→                    <div className="flex items-center justify-between">
+  1105→                      <Badge variant="outline" className={cn(
+  1106→                        "uppercase tracking-wider text-[9px]",
+  1107→                        r.level === "nyborjare" && "border-bull/40 text-bull",
+  1108→                        r.level === "intermediar" && "border-gold/40 text-gold",
+  1109→                        r.level === "avancerad" && "border-purple-400/40 text-purple-500 dark:text-purple-300"
+  1110→                      )}>
+  1111→                        {r.levelLabel}
+  1112→                      </Badge>
+  1113→                      <span className="text-[10px] text-muted-foreground">{r.pages} sid</span>
+  1114→                    </div>
+  1115→                    <h4 className="mt-2 font-serif text-sm font-bold leading-tight">{r.title}</h4>
+  1116→                    <p className="mt-1 text-xs text-muted-foreground leading-relaxed line-clamp-2">{r.description}</p>
+  1117→                    <div className="mt-3 flex items-center gap-2 text-[10px] text-muted-foreground">
+  1118→                      <Lock className="h-3 w-3 text-gold" />
+  1119→                      <span>Läs på plats</span>
+  1120→                      <span>·</span>
+  1121→                      <span>Verifierad {r.verified}</span>
+  1122→                    </div>
+  1123→                  </button>
+  1124→                ))}
+  1125→              </div>
+  1126→            </div>
+  1127→          ))}
+  1128→          {!manifest && (
+  1129→            <div className="flex items-center justify-center py-12">
+  1130→              <Loader2 className="h-6 w-6 animate-spin text-gold" />
+  1131→            </div>
+  1132→          )}
+  1133→        </div>
+  1134→      </div>
+  1135→    </section>
+  1136→  );
+  1137→}
+  1138→

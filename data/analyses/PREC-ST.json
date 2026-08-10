@@ -1,0 +1,260 @@
+{
+  "ticker": "PREC.ST",
+  "displayTicker": "PREC",
+  "company": "Precise Biometrics AB",
+  "exchange": "Nasdaq Stockholm Small Cap",
+  "sector": "Informationsteknologi · Biometri",
+  "isin": "SE0000687050",
+  "currency": "SEK",
+  "verified": "2026-08-08",
+  "analysisDate": "2026-08-08",
+  "source": "3 PDF-analyser (nybörjar/intermediär/avancerad) + MarketStack + Bolagsrapporter + Fusionsdokument",
+  "status": "Aktivt noterad — Special Situation (fusion + emission)",
+
+  "cover": {
+    "eyebrow": "NASDAQ STOCKHOLM SMALL CAP · SEK · INFORMATIONSTEKNOLOGI / PROGRAMVARA",
+    "subtitle": "PREC.ST · Nasdaq Stockholm Small Cap",
+    "recommendation": "FÖRSIKTIGT KÖP",
+    "recommendationSub": "Spekulativt · Händelsedriven special situation",
+    "recommendationScale": 3,
+    "quickConclusion": "Ett verkligt vändningsläge — men köp det försiktigt och i trappor.",
+    "quickConclusionMeta": "Vägt prismål 1,38 SEK · +9 % mot TERP · +69 % mot teckningskurs",
+    "lede": "Fusion genomförd 20/7 · Emission 0,82 SEK (91 % garanterad).",
+    "stats": [
+      {"value": "0,86", "label": "Senaste pris SEK", "sub": "2026-08-07"},
+      {"value": "245,9 M", "label": "Börsvärde", "sub": "146,7 M aktier"},
+      {"value": "1,38", "label": "Vägt prismål 12 mån", "sub": "SEK", "accent": "gold"},
+      {"value": "HÖG", "label": "Risknivå", "sub": "Volatilitet ~90 %/år", "accent": "bear"},
+      {"value": "0,82", "label": "Teckningskurs", "sub": "SEK"},
+      {"value": "91 %", "label": "Garanterad emission", "sub": "av 110,3 MSEK", "accent": "gold"},
+      {"value": "2,3x", "label": "P/S post-emission", "sub": "vid TERP"},
+      {"value": "281,2 M", "label": "Aktier efter emission", "sub": "vid full teckning"},
+      {"value": "38/100", "label": "AKM1-poäng", "sub": "SVAG-MEDL", "accent": "gold"},
+      {"value": "99", "label": "Antal sidor", "sub": "institutionsdjup"},
+      {"value": "2026-08-08", "label": "Verifierad", "sub": "senaste granskning"},
+      {"value": "MarketStack + Bolag", "label": "Datakälla", "sub": "primär"}
+    ]
+  },
+
+  "princip": {
+    "title": "Skriven på enkel svenska — i \"du\"-form.",
+    "body": "Varje begrepp förklaras första gången det dyker upp. Du behöver inte kunna något om aktier eller teknik sedan tidigare. Det här är en analys byggd för att läsas uppifrån och ner — inte för att imponera, utan för att du ska förstå.",
+    "principleTitle": "Håll know-how helt — redovisa generöst.",
+    "principleBody": "Slutsatser, scenarier, risker och rekommendationer är fullt offentliga. De proprietära metoderna bakom — vågräkningar, kvoter, formler, positionsregler — bevaras som vårt know-how.",
+    "footer": "Pedagogisk finansanalys — inte investeringsråd. Verifierad 2026-08-08. Datakälla: MarketStack · Bolagsrapporter · Fusionsdokument."
+  },
+
+  "recommendation": {
+    "del": "Del X · Konsensus",
+    "title": "Rekommendation",
+    "body": "Fem tidshorisonter × fem teorier × fyra dimensioner, fundamental analys, scenarier och risker — sammanfattat i ett enda svar.",
+    "main": "FÖRSIKTIGT KÖP",
+    "mainSub": "Cautious Buy · Spekulativt",
+    "period": "12 månader",
+    "bullets": [
+      "Endast spekulativt kapital",
+      "Position 0,5–2 % av portföljen",
+      "Trappad ingång"
+    ],
+    "priceTarget": {
+      "value": "1,38",
+      "currency": "SEK",
+      "vsTerp": "+9 %",
+      "vsTerpLabel": "Mot TERP 1,27",
+      "vsTeckning": "+69 %",
+      "vsTeckningLabel": "Mot teckningskurs 0,82",
+      "span12m": "0,93 – 2,03 SEK",
+      "risk": "HÖG"
+    },
+    "scale": [
+      {"label": "SÄLJ", "tone": "bear"},
+      {"label": "MINSKA", "tone": "bear-soft"},
+      {"label": "FÖRSIKTIGT KÖP", "tone": "gold", "active": true},
+      {"label": "KÖP", "tone": "bull-soft"},
+      {"label": "STARKT KÖP", "tone": "bull"}
+    ],
+    "nyborjareCallout": {
+      "title": "För nybörjare — vad betyder \"försiktigt köp\"?",
+      "body": "Det betyder: köp, men bara med pengar du kan tänka dig att förlora, och sprid köpen över tid (\"trappa in\"). Vi rekommenderar 0,5–2 % av din portfölj. Längre ner förklarar vi exakt vad som skulle få oss att säga köp eller sälj istället."
+    },
+    "avanceradCallout": {
+      "title": "Analytiker-vy — metodkommentar",
+      "body": "Rekommendationen är en viktad konsensus av 25 våg-teoretiska banor × 4 dimensioner (prismål, risk, timing, position) × fundamental scenarieviktning. Vågräkningar, Fibonacci-kvoter och positionsformler redovisas inte — slutsatserna däremot fullt ut."
+    }
+  },
+
+  "motivation": {
+    "title": "Fem punkter — varför försiktigt köp.",
+    "body": "Varje punkt bygger vidare på den förra. Tillsammans förklarar de varför vi inte säger köp rakt av — och vad som saknas för att vi ska göra det.",
+    "points": [
+      {
+        "n": 1,
+        "title": "Positivt väntevärde",
+        "icon": "TrendingUp",
+        "tone": "bull",
+        "body": "Scenarieviktningen (Bull 10 % × 2,03 + Base 45 % × 1,40 + Bear 45 % × 0,93) ger 1,38 SEK = +9 % mot TERP 1,27 (och +69 % mot teckningskursen 0,82). Uppsidan (+136 % i Bull) är betydligt större än nedsidan (+8 % i Bear)."
+      },
+      {
+        "n": 2,
+        "title": "Strukturell katalysator på plats",
+        "icon": "Merge",
+        "tone": "bull",
+        "body": "Fusionen är genomförd (registrerad 20/7), emissionen är till 91 % garanterad (100/110,3 MSEK), och synergimålet (45 MSEK) är större än hela proforma EBITDA-hålet (−19 MSEK). Det finns en verklig vändningsmekanism — inte bara hopp."
+      },
+      {
+        "n": 3,
+        "title": "Värderingen är låg",
+        "icon": "Scale",
+        "tone": "bull",
+        "body": "P/S 2,3x och P/B ~0,8x post-emission (vid TERP) mot historiskt spann på 0,5x–30x+; EV/(EBITDA+synergier) ~4,1x. Marknaden prissätter redan mycket motvind — det är när uppsidan är störst."
+      },
+      {
+        "n": 4,
+        "title": "Men: tekniskt svagt läge + emission pågår",
+        "icon": "TrendingDown",
+        "tone": "bear",
+        "body": "Kursen ligger under alla medelvärden i bearish ordning, och 110,3 MSEK hämtas till 0,82 SEK på 245,9 MSEK börsvärde — 47,8 % utspädning för passiva. Historien (2023) säger: fall in i emissionen, rekyl efter. Att köpa allt före ex-rätt är att köpa osäkerheten på topp."
+      },
+      {
+        "n": 5,
+        "title": "Därför \"försiktigt\"",
+        "icon": "ShieldCheck",
+        "tone": "gold",
+        "body": "Trappa in (rätter nu / TERP-zonen 1,26–1,30 / styrka över 1,40 efter utfallet ~13/8), håll positionen på 0,5–2 %, och respektera 0,82-ankaret som hård omprövningsnivå. Full KÖP-rekommendation kräver: emission klar ≥91 % + stängning över 1,75 + första synergiebeviset."
+      }
+    ],
+    "keyMetrics": [
+      {"k": "P/S post-emission", "v": "2,3x"},
+      {"k": "P/B post-emission", "v": "~0,8x"},
+      {"k": "EV / (EBITDA+syn)", "v": "~4,1x"},
+      {"k": "Utspädning passiva", "v": "47,8 %"},
+      {"k": "TERP", "v": "1,27 SEK"},
+      {"k": "Proforma EBITDA", "v": "−19 MSEK"},
+      {"k": "Synergimål", "v": "45 MSEK"},
+      {"k": "Volatilitet", "v": "~90 %/år"}
+    ]
+  },
+
+  "companyInfo": {
+    "title": "Bolaget",
+    "description": "Utvecklar och licensierar biometriska algoritmer (BioMatch) för fingeravtryck, handflata och ansikte. Absorberar ärkerivalen Fingerprint Cards (FPC) genom fusion (registrerad 20 juli 2026). Nyemission 110,3 MSEK pågår. ~46 anställda.",
+    "founded": 1997,
+    "headquarters": "Lund, Sverige",
+    "offices": ["Lund", "Stockholm", "Potsdam (NY)", "Seoul", "Taipei", "Shanghai"],
+    "employees": 46,
+    "website": "precisebiometrics.com",
+    "customers": ["Google", "Huawei", "Lenovo", "Xiaomi", "Aadhaar/UIDAI", "Genetec", "Avigilon"],
+    "revenue": "77,8 MSEK (Precise) + 78,2 MSEK (FPC) = 156 MSEK proforma",
+    "ebitdaProforma": "~-19 MSEK (före synergier)",
+    "synergyTarget": "45 MSEK/år"
+  },
+
+  "businessAreas": [
+    {
+      "name": "BioMatch BioEnhance",
+      "revenue": "56,4 MSEK (72%)",
+      "margin": "82,4%",
+      "description": "Algoritmer för fingeravtryck + bildförbättring + experttjänster + syntetisk data. Kärnverksamhet med starka marginaler."
+    },
+    {
+      "name": "EastCoast",
+      "revenue": "21,4 MSEK (28%)",
+      "margin": "~48%",
+      "description": "Moln-besökshantering, marknadsledande i Norden. Tillväxtområde med återkommande intäkter."
+    }
+  ],
+
+  "akm1": {
+    "score": 38,
+    "maxScore": 100,
+    "tier": "SVAG-MEDL",
+    "recommendation": "FÖRSIKTIGT KÖP (spekulativt)",
+    "indicators": {
+      "V01": {"name": "Försäljningstillväxt", "score": 2, "signal": "bear", "note": "77,8 MSEK (Precise). Proforma 156 MSEK med FPC. Q1 svagt (-14,5%). Fusion förändrar allt."},
+      "V02": {"name": "ARR-tillväxt", "score": 3, "signal": "neutral", "note": "Licensavgift + royalty per såld enhet. BioMatch BioEnhance + EastCoast moln."},
+      "V03": {"name": "Intäktsdiversifiering", "score": 3, "signal": "neutral", "note": "2 affärsområden: BioMatch 72% + EastCoast 28%. Kunder: Google, Huawei, Lenovo, Xiaomi."},
+      "V04": {"name": "P/S", "score": 3, "signal": "neutral", "note": "P/S ~1,6 (post-emission). Rimligt för tech med 82,4% bruttomarginal."},
+      "V05": {"name": "P/B", "score": 2, "signal": "bear", "note": "Emissionen späder ut ~47,8%. Post-emission P/B ~2,2."},
+      "V06": {"name": "EV/EBITDA", "score": 2, "signal": "bear", "note": "EBITDA negativ (~-19 MSEK proforma). Synergier 45 MSEK/år målsätts."},
+      "V07": {"name": "Bruttomarginal", "score": 5, "signal": "bull", "note": "82,4% (BioMatch)! EastCoast ~48%. Vägd ~72%. Stark mjukvarumarginal."},
+      "V08": {"name": "EBITDA-marginal", "score": 2, "signal": "bear", "note": "Negativ men synergimål 45 MSEK/år kan vända till positiv inom 12 mån."},
+      "V09": {"name": "ROE", "score": 1, "signal": "bear", "note": "Negativ. -98,9% från topp 2015. Men fusion + synergier kan vända."},
+      "V10": {"name": "Skuldsättningsgrad", "score": 5, "signal": "bull", "note": "Låg skuldsättning. Emission 110 MSEK stärker balansräkningen."},
+      "V11": {"name": "Likviditet", "score": 4, "signal": "bull", "note": "Post-emission: ~110 MSEK nytt kapital + befintlig kassa. Stark likviditet."},
+      "V12": {"name": "Intäktsstabilitet", "score": 2, "signal": "bear", "note": "Q4 toppar årligen. Lågprisaktie med ±8% daglig svängning. -55,7% sedan 20/7."},
+      "V13": {"name": "Patent/IP", "score": 4, "signal": "bull", "note": "BioMatch-algoritmer + FPC:s sensorpatent. Kombinerad IP-portfölj stark."},
+      "V14": {"name": "Varumärke", "score": 3, "signal": "neutral", "note": "Känt i nischen (biometri). Inte bland allmänhet. 'Penny stock' image."},
+      "V15": {"name": "Nätverkseffekter", "score": 3, "signal": "neutral", "note": "800+ kunder. Aadhaar/UIDAI (1,3 miljarder användare). Viss plattformseffekt."},
+      "V16": {"name": "Produktlanseringar", "score": 4, "signal": "bull", "note": "Palm Access Pro (2026-03-25). Xiaomis kassaskåp (2025-01-09). Kontinuerlig innovation."},
+      "V17": {"name": "Avtal/Partnerskap", "score": 4, "signal": "bull", "note": "Fusion med FPC (ärkerivalen!). Google, Huawei, Lenovo, Xiaomi, Aadhaar/UIDAI."},
+      "V18": {"name": "Regulatoriska", "score": 4, "signal": "bull", "note": "Biometri ersätter lösenord: mobiler, bilar, betalkort, nationella ID. Bransch växer ~12%/år."},
+      "V19": {"name": "Kapitalförbränning", "score": 3, "signal": "neutral", "note": "Emission 110 MSEK säkrar drift. EBITDA -19 MSEK proforma, men synergier 45 MSEK/år målsätts."},
+      "V20": {"name": "Återköp", "score": 1, "signal": "bear", "note": "Inga återköp — emission istället. Kapital behövs för fusion + integration."}
+    }
+  },
+
+  "waveSummary": {
+    "title": "Våganalys — 25 celler",
+    "impulse": ["V07", "V10", "V11", "V13", "V16", "V17", "V18"],
+    "correction": ["V01", "V05", "V06", "V08", "V09", "V12", "V20"],
+    "base": ["V02", "V03", "V04", "V14", "V15", "V19"],
+    "overallBias": "BEARISH med BULLISH kärna — Special Situation",
+    "megaTrend": "Binär utgång: antingen konsoliderar PREC+FPC till nordisk biometri-ledare med 45 MSEK synergier, eller urholkad av konkurrens och utspädning. 2015→2023 föll aktien 98,9%. Fusion 2026 är strukturhändelse som kan starta ny cykel. ATL 0,908 (nov 2023) är sista tekniska fästningen."
+  },
+
+  "scenarios": {
+    "title": "Scenarier — Bull / Base / Bear",
+    "bull": {"probability": "10%", "target": "2,03 SEK (+136%)", "description": "Synergier levererar 45+ MSEK, EBITDA vänder positivt, branschtillväxt 12%/år driver intäkter"},
+    "base": {"probability": "45%", "target": "1,40 SEK (+63%)", "description": "Emission genomförs (91% garanterad), integration pågår, första synergier syns Q4 2026"},
+    "bear": {"probability": "45%", "target": "0,93 SEK (+8%)", "description": "Emissionsdynamik pressar mot 0,82-ankaret, integration försenas, utspädning värderas"}
+  },
+
+  "priceLevels": {
+    "title": "Prisnivåer",
+    "levels": [
+      {"label": "Teckningskurs (ankare)", "value": "0,82 SEK", "tone": "bear"},
+      {"label": "Nu", "value": "0,86 SEK (2026-08-07)", "tone": "neutral"},
+      {"label": "ATL", "value": "0,908 SEK (nov 2023)", "tone": "neutral"},
+      {"label": "TERP", "value": "1,27 SEK", "tone": "gold"},
+      {"label": "Motstånd 1", "value": "1,40 SEK", "tone": "bull"},
+      {"label": "Motstånd 2", "value": "1,66–1,75 SEK (ex-rätt-justerat)", "tone": "bull"},
+      {"label": "Bull-case mål", "value": "2,03 SEK", "tone": "bull"}
+    ]
+  },
+
+  "keyEvents": {
+    "title": "Kalender — Viktiga händelser",
+    "events": [
+      {"date": "2026-07-20", "event": "Fusion FPC registrerad + emissionsvillkor fastställda"},
+      {"date": "2026-07-24", "event": "Ex-rätt avverkad"},
+      {"date": "2026-08-07", "event": "Sista handelsdag TR (teckningsrätter)"},
+      {"date": "2026-08-12", "event": "Teckningsslut emission"},
+      {"date": "2026-08-13", "event": "Emissionsutfall"},
+      {"date": "2026-08-18", "event": "BTA-handel avslutas"},
+      {"date": "2026-08-26", "event": "Q2-rapport 2026"},
+      {"date": "2026-09-11", "event": "Ersättningsoptioner teckning start"},
+      {"date": "2026-10-02", "event": "Ersättningsoptioner teckning slut"}
+    ]
+  },
+
+  "fusion": {
+    "title": "Fusionen — Precise + Fingerprint Cards",
+    "body": "Den 20 juli 2026 registrerades fusionen mellan Precise Biometrics och ärkerivalen Fingerprint Cards (FPC). Detta skapar en nordisk biometri-jätte med kombinerad proforma-omsättning på 156 MSEK. Synergimålet är 45 MSEK/år — större än hela proforma EBITDA-hålet på -19 MSEK. Emission på 110,3 MSEK (91% garanterad) finansierar integrationen.",
+    "timeline": [
+      {"date": "2015", "event": "PREC peak ~8,88 SEK (toppen av biometri-hypen)"},
+      {"date": "2023", "event": "PREC botten 0,908 SEK (nov) — ATL"},
+      {"date": "2026-07-20", "event": "Fusion FPC registrerad"},
+      {"date": "2026-08-12", "event": "Teckningsslut emission (110,3 MSEK)"},
+      {"date": "2026-08-26", "event": "Q2-rapport — första proforma-siffrorna"}
+    ]
+  },
+
+  "history": {
+    "title": "Historik — Från 8,88 SEK till 0,86 SEK",
+    "body": "Precise Biometrics hade sin storhetstid under 2015 när biometri var hett — aktien nådde 8,88 SEK. Sedan dess har det varit en lång nedgång: -98,9% från toppen. November 2023 noterades ATL på 0,908 SEK. Fusionen med FPC 2026 är den största strukturhändelsen sedan 2015 och kan markera början på en ny cykel — om synergierna levererar.",
+    "peak": "8,88 SEK (2015)",
+    "bottom": "0,908 SEK (nov 2023)",
+    "current": "0,86 SEK (2026-08-07)",
+    "declineFromPeak": "-98,9%"
+  }
+}

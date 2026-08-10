@@ -16,9 +16,6 @@ import {
   Sparkles,
   Hourglass,
   ChevronRight,
-  Lock,
-  X,
-  Loader2,
 } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
 import {
@@ -46,6 +43,7 @@ import {
 } from "@/components/ui/table";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { StockAnalysisView } from "@/components/ak1a/stock-analysis-view";
 
 /* ──────────────────────────────────────────────────────────────────────
    DATA — exact figures from analyser.txt (the deployed page capture)
@@ -69,7 +67,7 @@ interface ArchiveRow {
 
 const ARCHIVE: ArchiveRow[] = [
   {
-    date: "2026-07-19",
+    date: "2026-08-08",
     company: "Precise Biometrics",
     ticker: "PREC.ST",
     akm1Score: "38/100",
@@ -80,10 +78,21 @@ const ARCHIVE: ArchiveRow[] = [
     year: 2026,
   },
   {
+    date: "2026-08-08",
+    company: "Volvo Cars",
+    ticker: "VOLCAR-B",
+    akm1Score: "62/100",
+    akm1Tier: "MEDEL",
+    ak1ts: "NEUTRAL",
+    confidence: "MÄTT",
+    available: true,
+    year: 2026,
+  },
+  {
     date: "2026-08-15",
     company: "Atlas Copco",
     ticker: "ATCO-A",
-    akm1Score: "86/95",
+    akm1Score: "86/100",
     akm1Tier: "STARK",
     ak1ts: "BULLISH",
     confidence: "METODMÅL",
@@ -94,7 +103,7 @@ const ARCHIVE: ArchiveRow[] = [
     date: "2026-09-12",
     company: "AstraZeneca",
     ticker: "AZN",
-    akm1Score: "78/95",
+    akm1Score: "78/100",
     akm1Tier: "STARK",
     ak1ts: "BULLISH",
     confidence: "METODMÅL",
@@ -105,7 +114,7 @@ const ARCHIVE: ArchiveRow[] = [
     date: "2026-10-10",
     company: "Volvo AB",
     ticker: "VOLV-B",
-    akm1Score: "82/95",
+    akm1Score: "82/100",
     akm1Tier: "STARK",
     ak1ts: "BULLISH",
     confidence: "METODMÅL",
@@ -116,7 +125,7 @@ const ARCHIVE: ArchiveRow[] = [
     date: "2026-11-14",
     company: "Hennes & Mauritz",
     ticker: "HM-B",
-    akm1Score: "72/95",
+    akm1Score: "72/100",
     akm1Tier: "MEDEL",
     ak1ts: "NEUTRAL",
     confidence: "METODMÅL",
@@ -127,7 +136,7 @@ const ARCHIVE: ArchiveRow[] = [
     date: "2026-12-08",
     company: "Sinch AB",
     ticker: "SINCH",
-    akm1Score: "12/95",
+    akm1Score: "12/100",
     akm1Tier: "SVAG",
     ak1ts: "BEARISH",
     confidence: "METODMÅL",
@@ -138,7 +147,7 @@ const ARCHIVE: ArchiveRow[] = [
     date: "2026-12-15",
     company: "Swedbank AB",
     ticker: "SWED-A",
-    akm1Score: "75/95",
+    akm1Score: "75/100",
     akm1Tier: "STARK",
     ak1ts: "BULLISH",
     confidence: "METODMÅL",
@@ -149,7 +158,7 @@ const ARCHIVE: ArchiveRow[] = [
     date: "2026-12-20",
     company: "Telefonaktiebolaget LM Ericsson",
     ticker: "ERIC-B",
-    akm1Score: "68/95",
+    akm1Score: "68/100",
     akm1Tier: "MEDEL",
     ak1ts: "NEUTRAL",
     confidence: "METODMÅL",
@@ -249,6 +258,7 @@ export function AnalyserSection() {
   const { setSection } = useAk1aStore();
   const { toast } = useToast();
   const metodikRef = React.useRef<HTMLElement | null>(null);
+  const [activeTicker, setActiveTicker] = React.useState<string | null>(null);
 
   const scrollToMetodik = () => {
     metodikRef.current?.scrollIntoView({
@@ -259,7 +269,8 @@ export function AnalyserSection() {
 
   const handleArchiveClick = (row: ArchiveRow) => {
     if (row.available) {
-      setSection("prec");
+      setActiveTicker(row.ticker);
+      window.scrollTo({ top: 0, behavior: "auto" });
       return;
     }
     toast({
@@ -267,6 +278,19 @@ export function AnalyserSection() {
       description: `${row.company} (${row.ticker}) — rapporten publiceras när metoden är redo. METODMÅL.`,
     });
   };
+
+  // When an analysis is selected, render the unified StockAnalysisView
+  if (activeTicker) {
+    return (
+      <StockAnalysisView
+        ticker={activeTicker}
+        onBack={() => {
+          setActiveTicker(null);
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }}
+      />
+    );
+  }
 
   return (
     <div className="paper-texture">
@@ -298,7 +322,10 @@ export function AnalyserSection() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
                 size="lg"
-                onClick={() => setSection("prec")}
+                onClick={() => {
+                  setActiveTicker("PREC.ST");
+                  window.scrollTo({ top: 0, behavior: "auto" });
+                }}
                 className="bg-gold text-background hover:bg-gold/90"
               >
                 Läs senaste analysen{" "}
@@ -372,7 +399,7 @@ export function AnalyserSection() {
 
                 <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
                   <span className="inline-flex items-center gap-1">
-                    <Calendar className="h-3.5 w-3.5" /> 2026-07-19
+                    <Calendar className="h-3.5 w-3.5" /> 2026-08-08
                   </span>
                   <span aria-hidden>·</span>
                   <span>Publicerad av AK1A Research Lab</span>
@@ -390,9 +417,9 @@ export function AnalyserSection() {
 
                 <p className="mt-5 text-sm leading-relaxed text-foreground/90 sm:text-base">
                   Precise Biometrics vid 0,86 SEK (2026-08-07). Fusion FPC + emission 110 MSEK.
-                  visar botten-zonen med vändning förväntad Q3–Q4 2026.
-                  Teknisk bild: 8 av 25 celler bullish, 12 bearish — bearish
-                  bias men med stark medellångsiktig konfluens mot uppgång.
+                  Vägt prismål 1,38 SEK (+69% mot teckningskurs). FÖRSIKTIGT KÖP (spekulativt).
+                  Special Situation: binär utgång — antingen vändning med 45 MSEK synergier eller
+                  utspädning och integrationssvårigheter.
                 </p>
 
                 {/* Stat grid */}
@@ -400,17 +427,17 @@ export function AnalyserSection() {
                   <FeaturedStat label="TICKER" value="PREC.ST" />
                   <FeaturedStat
                     label="PRIS"
-                    value="1,25 SEK"
+                    value="0,86 SEK"
                     tag="matt"
                   />
                   <FeaturedStat
                     label="AKM1"
-                    value="42.9/95"
+                    value="38/100"
                     tag="matt"
                   />
                   <FeaturedStat
-                    label="KONFIDENS"
-                    value="METODMÅL"
+                    label="REK"
+                    value="FÖRSIKTIGT KÖP"
                     tag="metodmal"
                   />
                 </div>
@@ -422,9 +449,12 @@ export function AnalyserSection() {
 
                 <Button
                   className="mt-6 bg-gold text-background hover:bg-gold/90"
-                  onClick={() => setSection("prec")}
+                  onClick={() => {
+                    setActiveTicker("PREC.ST");
+                    window.scrollTo({ top: 0, behavior: "auto" });
+                  }}
                 >
-                  Läs hela 99-sidiga analysen{" "}
+                  Läs hela analysen — alla sektioner{" "}
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>
               </div>
@@ -662,9 +692,6 @@ export function AnalyserSection() {
         </div>
       </section>
 
-      {/* ───────────── INSTITUTIONELLA RAPPORTER ───────────── */}
-      <AnalyserReportsBlock />
-
       {/* ───────────── GÅ VIDARE ───────────── */}
       <section className="bg-muted/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
@@ -678,8 +705,11 @@ export function AnalyserSection() {
             <GoCard
               icon={<FileText className="h-5 w-5" />}
               title="PREC-analysen"
-              sub="99 sidor"
-              onClick={() => setSection("prec")}
+              sub="Alla sektioner"
+              onClick={() => {
+                setActiveTicker("PREC.ST");
+                window.scrollTo({ top: 0, behavior: "auto" });
+              }}
             />
             <GoCard
               icon={<Layers className="h-5 w-5" />}
@@ -960,178 +990,5 @@ function GoCard({
         <p className="mt-1 text-sm text-muted-foreground">{sub}</p>
       </div>
     </button>
-  );
-}
-
-// ============================================================
-// INSTITUTIONELLA RAPPORTER — 3 djupnivåer (PDF + HTML)
-// ============================================================
-
-interface ReportMeta {
-  slug: string;
-  company: string;
-  ticker: string;
-  level: string;
-  levelLabel: string;
-  title: string;
-  description: string;
-  pages: number;
-  file: string;
-  fileType?: string;
-  verified: string;
-  exchange: string;
-  sector: string;
-}
-
-function AnalyserReportsBlock() {
-  const [manifest, setManifest] = React.useState<{reports: ReportMeta[]} | null>(null);
-  const [activeSlug, setActiveSlug] = React.useState<string | null>(null);
-
-  React.useEffect(() => {
-    fetch("/reports/manifest.json").then(r => r.json()).then(setManifest).catch(() => {});
-  }, []);
-
-  const activeReport = manifest?.reports.find((r) => r.slug === activeSlug);
-
-  // Group reports by company — must be before conditional return
-  const byCompany = React.useMemo(() => {
-    if (!manifest) return [];
-    const groups: Record<string, ReportMeta[]> = {};
-    for (const r of manifest.reports) {
-      if (!groups[r.company]) groups[r.company] = [];
-      groups[r.company].push(r);
-    }
-    return Object.entries(groups);
-  }, [manifest]);
-
-  if (activeReport) {
-    return (
-      <section className="border-b border-border">
-        <div className="sticky top-14 z-30 border-b border-border bg-background/95 backdrop-blur">
-          <div className="mx-auto max-w-7xl px-3 sm:px-6 py-2.5">
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="sm" onClick={() => setActiveSlug(null)}>
-                <ArrowLeft className="h-4 w-4" />
-                <span className="hidden sm:inline">Tillbaka till arkivet</span>
-                <span className="sm:hidden">Tillbaka</span>
-              </Button>
-              <div className="hidden min-w-0 flex-1 items-center gap-2 md:flex">
-                <span className="truncate font-serif text-sm font-semibold">{activeReport.title}</span>
-                <Badge variant="outline" className="shrink-0 uppercase tracking-wider text-[9px] border-gold/40 text-gold">
-                  {activeReport.levelLabel}
-                </Badge>
-              </div>
-              <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => setActiveSlug(null)}>
-                <X className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6">
-          <div className="mb-4 flex items-center gap-2 rounded-md border border-gold/30 bg-gold/[0.04] px-3 py-1.5">
-            <Lock className="h-3.5 w-3.5 shrink-0 text-gold" />
-            <p className="text-[10px] leading-tight text-muted-foreground">
-              <span className="font-semibold text-gold">Skyddad rapport.</span> Läs på plats — nedladdning blockerat.
-            </p>
-          </div>
-
-          {/* PDF viewer — opens in new tab for PDFs, inline for HTML */}
-          {activeReport.fileType === "pdf" ? (
-            <div className="rounded-md border border-border bg-muted/40 p-4 text-center">
-              <FileText className="mx-auto h-12 w-12 text-gold" />
-              <p className="mt-3 font-serif text-lg font-bold">{activeReport.title}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{activeReport.pages} sidor · {activeReport.levelLabel}nivå</p>
-              <p className="mt-1 text-xs text-muted-foreground">Verifierad {activeReport.verified}</p>
-              <Button
-                className="mt-4 bg-gold text-background hover:bg-gold/90"
-                onClick={() => window.open(activeReport.file, "_blank")}
-              >
-                Öppna rapporten <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
-              <p className="mt-2 text-[10px] text-muted-foreground">
-                Rapporten öppnas i en ny flik. Nedladdning är blockerat.
-              </p>
-            </div>
-          ) : (
-            <div className="rounded-md border border-border bg-white overflow-hidden">
-              <iframe
-                src={activeReport.file}
-                title={activeReport.title}
-                className="block w-full"
-                style={{ height: "85vh", minHeight: "600px", border: "0" }}
-                onContextMenu={(e) => { e.preventDefault(); return false; }}
-              />
-            </div>
-          )}
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <section className="border-b border-border bg-gradient-to-b from-gold/[0.04] to-transparent">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14 sm:py-20">
-        <div className="max-w-3xl">
-          <Eyebrow>Institutionella rapporter — 3 djupnivåer</Eyebrow>
-          <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-3xl">
-            99-sidiga rapporter. Läs på plats.
-          </h2>
-          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            Samma AK1A-ekosystem-ramverk i tre längder: nybörjare, intermediär, avancerad.
-            Varje rapport är verifierad med dagsfärsk data.
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <HonestyTag kind="matt" />
-            <span className="text-xs text-muted-foreground">99,9% säkerhet · 100% rådata-garanti</span>
-          </div>
-        </div>
-
-        <div className="mt-10 space-y-8">
-          {byCompany.map(([company, reports]) => (
-            <div key={company}>
-              <div className="mb-3 flex items-baseline gap-3">
-                <h3 className="font-serif text-xl font-bold">{company}</h3>
-                <span className="text-xs text-muted-foreground">{reports[0].exchange}</span>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {reports.map((r) => (
-                  <button
-                    key={r.slug}
-                    onClick={() => setActiveSlug(r.slug)}
-                    className="rounded-lg border border-border bg-card p-4 text-left transition-all hover:border-gold/50 hover:bg-gold/[0.02]"
-                  >
-                    <div className="flex items-center justify-between">
-                      <Badge variant="outline" className={cn(
-                        "uppercase tracking-wider text-[9px]",
-                        r.level === "nyborjare" && "border-bull/40 text-bull",
-                        r.level === "intermediar" && "border-gold/40 text-gold",
-                        r.level === "avancerad" && "border-purple-400/40 text-purple-500 dark:text-purple-300"
-                      )}>
-                        {r.levelLabel}
-                      </Badge>
-                      <span className="text-[10px] text-muted-foreground">{r.pages} sid</span>
-                    </div>
-                    <h4 className="mt-2 font-serif text-sm font-bold leading-tight">{r.title}</h4>
-                    <p className="mt-1 text-xs text-muted-foreground leading-relaxed line-clamp-2">{r.description}</p>
-                    <div className="mt-3 flex items-center gap-2 text-[10px] text-muted-foreground">
-                      <Lock className="h-3 w-3 text-gold" />
-                      <span>Läs på plats</span>
-                      <span>·</span>
-                      <span>Verifierad {r.verified}</span>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          ))}
-          {!manifest && (
-            <div className="flex items-center justify-center py-12">
-              <Loader2 className="h-6 w-6 animate-spin text-gold" />
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
   );
 }

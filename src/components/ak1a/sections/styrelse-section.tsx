@@ -19,6 +19,7 @@ import {
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { ORGANS } from "@/lib/ak1a/data";
 import { Eyebrow, GoldRule, HonestyTag, OrganGlyph } from "../primitives";
+import { DeepConsultationPanel } from "../deep-consultation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -384,6 +385,23 @@ export function StyrelseSection() {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* ───────────── DJUP KONSULTATION ───────────── */}
+      <section className="border-b border-border bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+          <Eyebrow>Djup konsultation · 1-till-1 med organen</Eyebrow>
+          <h2 className="mt-3 font-serif text-3xl font-bold text-balance">
+            Ställ strategiska frågor direkt till ett organ.
+          </h2>
+          <p className="mt-2 max-w-2xl text-muted-foreground">
+            Utöver styrelsemöten (som kräver alla 8 organ) kan du konsultera ett enskilt organ
+            djupt om specifika frågor. Varje fråga och svar sparas i kunskapsarkivet.
+          </p>
+          <div className="mt-6">
+            <DeepConsultationPanel />
+          </div>
         </div>
       </section>
 

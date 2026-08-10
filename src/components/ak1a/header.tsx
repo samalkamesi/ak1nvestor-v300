@@ -91,13 +91,23 @@ export function Header() {
             {moreOpen && (
               <div className="absolute left-0 top-full mt-1 w-64 rounded-md border border-border bg-popover p-1 shadow-lg">
                 {FOOTER_NAV.slice(0, 6).map((item) => (
-                  <button
-                    key={item.label}
-                    onMouseDown={() => setSection(item.section)}
-                    className="block w-full text-left px-2 py-1.5 text-xs hover:bg-muted rounded-sm"
-                  >
-                    {item.label}
-                  </button>
+                  item.section === "admin" as any ? (
+                    <a
+                      key={item.label}
+                      href="/admin"
+                      className="block w-full text-left px-2 py-1.5 text-xs hover:bg-muted rounded-sm"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <button
+                      key={item.label}
+                      onMouseDown={() => setSection(item.section as any)}
+                      className="block w-full text-left px-2 py-1.5 text-xs hover:bg-muted rounded-sm"
+                    >
+                      {item.label}
+                    </button>
+                  )
                 ))}
               </div>
             )}

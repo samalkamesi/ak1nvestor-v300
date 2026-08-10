@@ -58,13 +58,23 @@ export function Footer() {
               Navigation
             </h4>
             {FOOTER_NAV.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => setSection(item.section)}
-                className="text-left text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
-              >
-                {item.label}
-              </button>
+              item.section === "admin" as any ? (
+                <a
+                  key={item.label}
+                  href="/admin"
+                  className="text-left text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => setSection(item.section as any)}
+                  className="text-left text-xs text-muted-foreground hover:text-gold transition-colors py-0.5"
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </nav>
         </div>

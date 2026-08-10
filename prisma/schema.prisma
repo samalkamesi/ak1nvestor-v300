@@ -130,3 +130,146 @@ model DeepCourse {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
+
+// ============================================================
+// ADMIN & LOGGING — klientaktivitet, portföljer, analyssessioner
+// ============================================================
+
+/// Användaraktivitet — loggar alla klientinteraktioner för admin-insyn
+model UserActivity {
+  id           String   @id @default(cuid())
+  sessionId    String   // anonym session-id (localStorage)
+  action       String   // section_visit | course_open | course_complete | portfolio_create | portfolio_update | analysis_run | search | meeting_convened | organ_consulted
+  section      String?  // hem | kurser | labb | styrelse | analyser | etc
+  targetType   String?  // course | portfolio | analysis | case | combination | meeting
+  targetId     String?  // slug/id för objektet
+  metadata     String?  // JSON med extra data (XP, score, etc)
+  userAgent    String?
+  ipHash       String?  // hashat IP för anonym statistik
+  createdAt    DateTime @default(now())
+
+  @@index([sessionId])
+  @@index([action])
+  @@index([createdAt])
+  @@index([section])
+}
+
+/// Klientportföljer — fiktiva portföljer byggda av användare i Labbet
+model Portfolio {
+  id           String   @id @default(cuid())
+  sessionId    String   // ägare (anonym session-id)
+  name         String
+  description  String?
+  totalValue   Float    @default(0)
+  cashPosition Float    @default(0)
+  riskScore    Float?   // genomsnittlig AKM1-riskpoäng 0-100
+  moatScore    Float?   // genomsnittlig moat-poäng
+  growthScore  Float?   // genomsnittlig tillväxtpoäng
+  valueScore   Float?   // genomsnittlig värderingspoäng
+  waveAnalysis String?  // JSON: Elliott Wave position per innehav
+  technicalScore Float? // genomsnittlig teknisk poäng
+  fundamentalScore Float? // genomsnittlig fundamental poäng
+  scenarioBull Float?   // scenario-analys
+  scenarioBase Float?
+  scenarioBear Float?
+  isPublic     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  holdings     PortfolioHolding[]
+
+  @@index([sessionId])
+  @@index([createdAt])
+}
+
+/// Innehav i portfölj — enskilda aktiepositioner med djup analys
+model PortfolioHolding {
+  id           String   @id @default(cuid())
+  portfolioId  String
+  ticker       String   // t.ex. "ATCO-A.ST"
+  company      String
+  sector       String?
+  weight       Float    // procent av portfölj
+  shares       Float?
+  entryPrice   Float?
+  currentPrice Float?
+  costBasis   Float?
+  // AKM1-poäng per variabel (V01-V20) som JSON
+  akm1Scores   String?  // {"V01": 4, "V02": 3, ...}
+  akm1Total    Int?     // total poäng /95 eller /100
+  // Teknisk analys
+  technicalAnalysis String? // JSON: trend, RSI, MACD, MA50, MA200, volume, support, resistance
+  technicalScore Float?
+  // Fundamental analys
+  fundamentalAnalysis String? // JSON: PE, PB, PS, EV/EBITDA, ROE, marginaler, skuldsättning
+  fundamentalScore Float?
+  // Elliott Wave analys
+  wavePosition String?  // "impulse 3 of 5" | "corrective A-B-C" | etc
+  waveTimeframe String? // "vecka" | "månad" | "kvartal"
+  waveConfidence Float?
+  // Insikter och anteckningar
+  thesis       String?  // investeringsberättelse
+  risks        String?  // nyckelrisker
+  catalysts    String?  // kommande katalysatorer
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  portfolio    Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+
+  @@index([portfolioId])
+  @@index([ticker])
+}
+
+/// Analyssessioner — djupa analys-sessioner som klienter kör
+model AnalysisSession {
+  id           String   @id @default(cuid())
+  sessionId    String   // ägare
+  portfolioId  String?
+  type         String   // full_diagnostic | technical_deep | fundamental_deep | wave_analysis | scenario | stress_test
+  ticker       String?
+  status       String   @default("running") // running | completed | failed
+  input        String?  // JSON: inmatade parametrar
+  output       String?  // JSON: resultat
+  score        Float?   // total poäng om applicable
+  duration     Int?     // millisekunder
+  error        String?
+  createdAt    DateTime @default(now())
+  completedAt  DateTime?
+
+  @@index([sessionId])
+  @@index([type])
+  @@index([createdAt])
+}
+
+/// AI-organ konsultationer — loggar djupare frågor till AI-organen
+model OrganConsultation {
+  id           String   @id @default(cuid())
+  sessionId    String
+  organ        String   // Σ | α | Δ | Ω | Φ | Θ | Μ | Ψ
+  question     String
+  context      String?  // JSON: bakgrundsinformation
+  response     String?  // JSON: organets svar
+  meetingId    String?  // koppling till MeetingProtocol
+  depth        String   @default("standard") // standard | deep | mega
+  confidence   String?  // LÅG | MEDEL | HÖG
+  createdAt    DateTime @default(now())
+
+  @@index([sessionId])
+  @@index([organ])
+  @@index([createdAt])
+}
+
+/// System events — admin-relevanta händelser
+model SystemEvent {
+  id           String   @id @default(cuid())
+  type         String   // api_error | rate_limit | generation_complete | db_migration | server_restart | watchdog
+  severity     String   @default("info") // info | warning | error | critical
+  message      String
+  details      String?  // JSON
+  source       String?  // watchdog | generator | api | admin
+  createdAt    DateTime @default(now())
+
+  @@index([type])
+  @@index([severity])
+  @@index([createdAt])
+}

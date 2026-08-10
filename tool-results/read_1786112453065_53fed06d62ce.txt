@@ -1,0 +1,1728 @@
+     1→"use client";
+     2→
+     3→import * as React from "react";
+     4→import {
+     5→  FlaskConical,
+     6→  AlertTriangle,
+     7→  History,
+     8→  Wallet,
+     9→  FileText,
+    10→  GitCompare,
+    11→  Activity,
+    12→  Gauge,
+    13→  Trophy,
+    14→  Zap,
+    15→  Flame,
+    16→  Brain,
+    17→  RotateCcw,
+    18→  Check,
+    19→  X,
+    20→  ChevronRight,
+    21→  ArrowRight,
+    22→  Lock,
+    23→  Calculator,
+    24→  Crown,
+    25→  Lightbulb,
+    26→  RefreshCw,
+    27→} from "lucide-react";
+    28→import { useAk1aStore } from "@/lib/ak1a-store";
+    29→import { Eyebrow, GoldRule, HonestyTag } from "../primitives";
+    30→import { AKM1_VARIABLES } from "@/lib/ak1a/data";
+    31→import { Card } from "@/components/ui/card";
+    32→import { Button } from "@/components/ui/button";
+    33→import { Badge } from "@/components/ui/badge";
+    34→import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+    35→import {
+    36→  Dialog,
+    37→  DialogContent,
+    38→  DialogHeader,
+    39→  DialogTitle,
+    40→  DialogDescription,
+    41→  DialogFooter,
+    42→} from "@/components/ui/dialog";
+    43→import {
+    44→  Select,
+    45→  SelectContent,
+    46→  SelectItem,
+    47→  SelectTrigger,
+    48→  SelectValue,
+    49→} from "@/components/ui/select";
+    50→import { cn } from "@/lib/utils";
+    51→import { CombinationsBrowser } from "@/components/ak1a/cases-combinations-browsers";
+    52→
+    53→// ============================================================
+    54→// TYPES
+    55→// ============================================================
+    56→
+    57→type CaseType = "best" | "warning";
+    58→type CaseFilter = "all" | "best" | "warning";
+    59→
+    60→interface CaseStudy {
+    61→  type: CaseType;
+    62→  company: string;
+    63→  ticker: string;
+    64→  title: string;
+    65→  desc: string;
+    66→  score: number; // out of 95
+    67→  decisive: string[]; // AKM1 variables that decided the case
+    68→  illustrative?: boolean;
+    69→}
+    70→
+    71→// ============================================================
+    72→// DATA — 30 case studies (9 best + 21 warning) from labb.txt
+    73→// ============================================================
+    74→
+    75→const CASES: CaseStudy[] = [
+    76→  // ----- BÄSTA FALL (9) -----
+    77→  {
+    78→    type: "best",
+    79→    company: "PRECISE BIOMETRICS",
+    80→    ticker: "PREC.ST",
+    81→    title: "Värde-upptäckt med fusionskatalysator",
+    82→    desc: "PREC hade låg värdering (P/S ~2), stark bruttomarginal (~70 % typisk mjukvara), och en katalysator: fusion med FPC. AKM1 hade gett poäng 3–4 på flera variabler.",
+    83→    score: 58,
+    84→    decisive: ["V04 P/S", "V07 Bruttomarginal", "V17 Avtal & Partnerskap"],
+    85→  },
+    86→  {
+    87→    type: "best",
+    88→    company: "AMAZON (ILLUSTRATIVT EXEMPEL)",
+    89→    ticker: "AMZN",
+    90→    title: "Tillväxtfasens paradox — negativt EPS i 7 år",
+    91→    desc: "Amazon hade negativt resultat 2001–2008 men växte omsättningen från 3 MUSD till 19 MMD. AKM1 hade gett poäng 1 på lönsamhet men poäng 5 på tillväxt och nätverkseffekter.",
+    92→    score: 62,
+    93→    illustrative: true,
+    94→    decisive: ["V01 Försäljningstillväxt", "V15 Nätverkseffekter"],
+    95→  },
+    96→  {
+    97→    type: "best",
+    98→    company: "TESLA (ILLUSTRATIVT EXEMPEL)",
+    99→    ticker: "TSLA",
+   100→    title: "Katalysator-stackning — flera händelser som bygger på varandra",
+   101→    desc: "Tesla hade flera katalysatorer över tid: Model S lansering (2012), Model 3 (2017), Shanghai-fabrik (2019), inklusion i S&P 500 (2020). Varje katalysator byggde på den föregående.",
+   102→    score: 68,
+   103→    illustrative: true,
+   104→    decisive: ["V16 Produktlanseringar", "V18 Regulatoriska katalysatorer"],
+   105→  },
+   106→  {
+   107→    type: "best",
+   108→    company: "APPLE",
+   109→    ticker: "AAPL",
+   110→    title: "Moat-stack — varumärke + ekosystem + services",
+   111→    desc: "Apple kombinerar tre moats: (1) varumärke (premium-pris, kundlojalitet), (2) ekosystem (iPhone → Mac → iPad → Watch — lås-in-effekt), (3) services (App Store 30 % take rate, iCloud, Apple Pay). AKM1: hög på nästan alla variabler.",
+   112→    score: 82,
+   113→    decisive: ["V14 Varumärke", "V15 Nätverkseffekter"],
+   114→  },
+   115→  {
+   116→    type: "best",
+   117→    company: "MICROSOFT",
+   118→    ticker: "MSFT",
+   119→    title: "Cloud-transformation under Satya Nadella",
+   120→    desc: "Microsoft 2014: 'Windows-essential', stagnerande, värd 300 Mdr USD. Satya Nadella blir VD → satsar på Azure (cloud), Office 365, GitHub. 2024: värd 3,1 biljoner USD. Cloud-intäkter 100+ Mdr USD/år. AKM1 visar att ledning (V13) betyder allt.",
+   121→    score: 78,
+   122→    decisive: ["V13 Patent & IPR", "V16 Produktlanseringar"],
+   123→  },
+   124→  {
+   125→    type: "best",
+   126→    company: "AMAZON",
+   127→    ticker: "AMZN",
+   128→    title: "Långsiktig tänkande — Jeff Bezos brev till aktieägare",
+   129→    desc: "Amazon 1997–2024: Bezos skrev 'det är dag 1' i varje årsbrev. Brände pengar i 7 år, växte 30 % per år. AWS lanserades 2006 = moln-industrin skapades. Long-term thinking + reinvestment. AKM1: V1 (tillväxt) 5, V19 (burn) 1, men 'bra bränning'.",
+   130→    score: 75,
+   131→    decisive: ["V01 Försäljningstillväxt", "V19 Kapitalförbränning & Emission-risk"],
+   132→  },
+   133→  {
+   134→    type: "best",
+   135→    company: "ATLAS COPCO",
+   136→    ticker: "ATCO-A.ST",
+   137→    title: "Industri-moat — premium-pris i 40+ år",
+   138→    desc: "Atlas Copco = svensk industri-moat. Verktyg, kompressorer, vacuum. Premium-pris (40 % över snitt) genom kvalitet + service-nätverk. ROE >20 % i 30+ år. Utdelning höjd 40+ år i rad. AKM1 klassisk 'compounder'.",
+   139→    score: 80,
+   140→    decisive: ["V09 ROE", "V14 Varumärke"],
+   141→  },
+   142→  {
+   143→    type: "best",
+   144→    company: "INVESTOR AB",
+   145→    ticker: "INVE-B.ST",
+   146→    title: "Holding-bolag — Wallenberg-familjens 100-åriga compounder",
+   147→    desc: "Investor AB = Wallenberg-familjens investmentbolag. Huvudinnehav: AstraZeneca, Ericsson, Atlas Copco, SEB, Saab. Handlas 25–30 % under NAV. Långsiktig strategi, aktivt ägande, 'fjärde generationen'. AKM1: moat = nätverk + tid.",
+   148→    score: 78,
+   149→    decisive: ["V14 Varumärke", "V12 Intäktsstabilitet"],
+   150→  },
+   151→  {
+   152→    type: "best",
+   153→    company: "NOVO NORDISK",
+   154→    ticker: "NOVO-B.CO",
+   155→    title: "Pharma-moat — GLP-1 revolutionen (Ozempic, Wegovy)",
+   156→    desc: "Novo Nordisk = dansk läkemedels-jätte. Dominerar diabetes-marknaden (insulin). 2017: lanserar Ozempic (semaglutide). 2021: Wegovy (viktnedgång). GLP-1 revolutionerar vikt-marknaden = 100+ Mdr USD potentiell marknad. AKM1: extrem moat.",
+   157→    score: 85,
+   158→    decisive: ["V13 Patent & IPR", "V18 Regulatoriska katalysatorer"],
+   159→  },
+   160→
+   161→  // ----- VARNINGSFALL (21) -----
+   162→  {
+   163→    type: "warning",
+   164→    company: "SVENSKT SMÅBOLAG (ANONYMISERAT)",
+   165→    ticker: "EX-SE-1",
+   166→    title: "Hög tillväxt + hög kapitalförbränning = emission-fälla",
+   167→    desc: "Bolaget visade +35 % tillväxt (poäng 5 på variabel 1) men brände 8 MSEK/månad med bara 24 MSEK kassa. Såg 'bra' ut på ytan — tillväxt döljde risken.",
+   168→    score: 42,
+   169→    decisive: ["V01 Försäljningstillväxt", "V19 Kapitalförbränning & Emission-risk"],
+   170→  },
+   171→  {
+   172→    type: "warning",
+   173→    company: "VALUE TRAP-EXEMPEL (ANONYMISERAT)",
+   174→    ticker: "EX-SE-2",
+   175→    title: "Låg P/S + fallande omsättning = value trap",
+   176→    desc: "P/S 0,8 (poäng 5 på variabel 4) men omsättningen föll 15 % årligen. Nybörjare köpte för 'billig värdering' — utan att se trenden.",
+   177→    score: 28,
+   178→    decisive: ["V04 P/S", "V12 Intäktsstabilitet"],
+   179→  },
+   180→  {
+   181→    type: "warning",
+   182→    company: "BOKFÖRINGSSKANDAL-EXEMPEL (ANONYMISERAT)",
+   183→    ticker: "EX-SE-3",
+   184→    title: "Hög ROE + hög skuldsättning = dold risk",
+   185→    desc: "ROE 28 % (poäng 5 på variabel 9) men skuldsättningsgrad 180 % (poäng 1 på variabel 10). Hög ROE uppnåddes genom extrem finansiell hävstång — inte genom operationell kvalitet.",
+   186→    score: 35,
+   187→    decisive: ["V09 ROE", "V10 Skuldsättningsgrad"],
+   188→  },
+   189→  {
+   190→    type: "warning",
+   191→    company: "PATENT-FÖRLUST-EXEMPEL (ANONYMISERAT)",
+   192→    ticker: "EX-SE-4",
+   193→    title: "Stark moat — tills patentet löper ut",
+   194→    desc: "Bolaget hade 5 starka patent (poäng 5 på variabel 13) men alla löpte ut inom 3 år. Moat var 'på papper' men tiden tog den.",
+   195→    score: 45,
+   196→    decisive: ["V13 Patent & IPR", "V12 Intäktsstabilitet"],
+   197→  },
+   198→  {
+   199→    type: "warning",
+   200→    company: "SILICON VALLEY BANK (SVB)",
+   201→    ticker: "SIVB",
+   202→    title: "Räntekänslighet + koncentrerad kundbas = bankkollaps på 36 timmar",
+   203→    desc: "SVB investerade kundinlåning i långa statsobligationer vid 0 % ränta. När Fed höjde till 5 % föll obligationspriserna 20 %. Tech-kunder (koncentrerad bas) tog ut kassa. -1,8 MUSD förlust + bank run 42 MUSD/dag = kollaps.",
+   204→    score: 30,
+   205→    decisive: ["V11 Likviditet (Kvick)", "V03 Intäktsdiversifiering"],
+   206→  },
+   207→  {
+   208→    type: "warning",
+   209→    company: "ARCHEGOS CAPITAL MANAGEMENT",
+   210→    ticker: "PRIVAT (EJ BÖRSNOTERAD)",
+   211→    title: "Total return swaps — osynlig hävstång + koncentration",
+   212→    desc: "Archegos (Bill Hwang) hade 36 MUSD exponering via TRS — banker (Credit Suisse, Nomura, Morgan Stanley) köpte aktier för hans räkning. Ingen såg total exponering. När pris föll + margin call → banker sålde simultant → priskrasch → spiral. 10 MUSD raderat på en vecka.",
+   213→    score: 25,
+   214→    decisive: ["V10 Skuldsättningsgrad", "V03 Intäktsdiversifiering"],
+   215→  },
+   216→  {
+   217→    type: "warning",
+   218→    company: "TERRA / LUNA (DO KWON)",
+   219→    ticker: "LUNA",
+   220→    title: "Algorithmic stablecoin — Ponzi-liknande death spiral",
+   221→    desc: "Terra (UST) skulle hållas vid 1 USD via LUNA-minting/burning. Anchor Protocol erbjöd 20 % 'risk-free' avkastning. I maj 2022 bröt peggen — UST föll till 0,10, LUNA från 120 USD till 0,00001. 60 MUSD raderat på en vecka.",
+   222→    score: 20,
+   223→    decisive: ["V19 Kapitalförbränning & Emission-risk", "V15 Nätverkseffekter"],
+   224→  },
+   225→  {
+   226→    type: "warning",
+   227→    company: "FTX (SAM BANKMAN-FRIED)",
+   228→    ticker: "PRIVAT (EJ BÖRSNOTERAD)",
+   229→    title: "Kundmedel utlånade till systerkoncern = fraud",
+   230→    desc: "FTX (SBF) tog emot kund-krypto. Alameda Research (SBF:s hedgefond) handlade med dessa tillgångar — utan kundernas vetskap. CoinDesk avslöjade balansräkning nov 2022 → bank run → konkurs på 10 dagar. 8 MUSD kunders pengar borta.",
+   231→    score: 15,
+   232→    decisive: ["V19 Kapitalförbränning & Emission-risk", "V12 Intäktsstabilitet"],
+   233→  },
+   234→  {
+   235→    type: "warning",
+   236→    company: "LEHMAN BROTHERS",
+   237→    ticker: "LEHMQ (GAMLA)",
+   238→    title: "Subprime-exponering + hög hävstång = 158-årig bank faller",
+   239→    desc: "Lehman Brothers (158 år gammal) hade 30x hävstång + 80 MUSD subprime-obligationer. När property-marknaden kraschade 2007–2008 → nedskrivningar → inget kapital → konkurs 15 sep 2008. Startskottet till finanskrisen.",
+   240→    score: 25,
+   241→    decisive: ["V10 Skuldsättningsgrad", "V19 Kapitalförbränning & Emission-risk"],
+   242→  },
+   243→  {
+   244→    type: "warning",
+   245→    company: "WIRECARD",
+   246→    ticker: "WDI.DE",
+   247→    title: "Tysk Enron — 1,9 M€ 'falsk kassa' i Filippinerna",
+   248→    desc: "Wirecard = tysk fintech-jätte, DAX-30 medlem. Värderad till 24 M€ 2018. Kassa 1,9 M€ på balansräkningen — fanns inte. Financial Times reporter skrev om granskningar i 2 år. Juni 2020: VD erkände kassa saknas → konkurs.",
+   249→    score: 30,
+   250→    decisive: ["V12 Intäktsstabilitet", "V11 Likviditet (Kvick)"],
+   251→  },
+   252→  {
+   253→    type: "warning",
+   254→    company: "LUCKIN COFFEE",
+   255→    ticker: "LK (DELISTED)",
+   256→    title: "Kinesisk fraud — fingerade 2,2 MUSD intäkter",
+   257→    desc: "Luckin Coffee = 'kinesisk Starbucks', IPO maj 2019. Värderad till 12 MUSD. Muddy Waters (short-seller) rapport jan 2020: fingerade 2,2 MUSD intäkter. Luckin erkände april 2020. Delisted juni 2020. Aktien -75 % på en dag.",
+   258→    score: 25,
+   259→    decisive: ["V12 Intäktsstabilitet", "V03 Intäktsdiversifiering"],
+   260→  },
+   261→  {
+   262→    type: "warning",
+   263→    company: "CREDIT SUISSE",
+   264→    ticker: "CS (GAMLA)",
+   265→    title: "Förtroende-kollaps — flera skandaler + Archegos + Greensill",
+   266→    desc: "Credit Suisse (167-årig bank) träffades av: (1) Archegos-förlust 5,5 MUSD mars 2021, (2) Greensill-fond kollaps mars 2021, (3) Mozambique 'tuna bonds' skandal, (4) spying-skandal med Iqbal Khan. Saud-al-Rajhi vägrade kapitaltillskott → kollaps mars 2023.",
+   267→    score: 28,
+   268→    decisive: ["V12 Intäktsstabilitet", "V14 Varumärke"],
+   269→  },
+   270→  {
+   271→    type: "warning",
+   272→    company: "WEWORK",
+   273→    ticker: "WE (DELISTED)",
+   274→    title: "Värderings-galenskap — 47 MUSD för en fastighets-mäklare",
+   275→    desc: "WeWork värderad till 47 MUSD januari 2019. Adam Neumann (VD) levde lyxigt, sålde 'We'-varumärke till bolaget för 5,8 MUSD. IPO-försök aug 2019 avslöjade galen corporate governance. IPO inställd. VD sparkad. Värdering kraschade till 8 MUSD.",
+   276→    score: 22,
+   277→    decisive: ["V14 Varumärke", "V10 Skuldsättningsgrad"],
+   278→  },
+   279→  {
+   280→    type: "warning",
+   281→    company: "NOKIA",
+   282→    ticker: "NOK",
+   283→    title: "Disruption — när iPhone dödade Symbian",
+   284→    desc: "Nokia 2007: 40 % av mobil-marknaden, största europeiska tech-bolaget (värd 150 M€). Steve Jobs lanserade iPhone januari 2007. Nokia vägrade anpassa — höll fast vid Symbian-OS. 2011: partner med Microsoft (Windows Phone). 2013: sålde mobil-verksamhet till Microsoft.",
+   285→    score: 28,
+   286→    decisive: ["V16 Produktlanseringar", "V15 Nätverkseffekter"],
+   287→  },
+   288→  {
+   289→    type: "warning",
+   290→    company: "BLACKBERRY",
+   291→    ticker: "BB",
+   292→    title: "Disruption — när touchscreens dödade QWERTY-tangentbord",
+   293→    desc: "BlackBerry 2010: 20 % av mobil-marknaden, värd 80 MUSD. Särskilt populär bland 'business' — QWERTY-tangentbord + säker e-post. iPhone + Android (touchskärm) erövrade marknaden. BB10 lanserades 2013 — för sent. 2016: lämnade hårdvaru-marknaden.",
+   294→    score: 24,
+   295→    decisive: ["V16 Produktlanseringar", "V14 Varumärke"],
+   296→  },
+   297→  {
+   298→    type: "warning",
+   299→    company: "KODAK",
+   300→    ticker: "KODK",
+   301→    title: "Disruption — uppfunnen digitalkameran, dödades av den",
+   302→    desc: "Kodak 1975: uppfann digitalkameran. 2000: 90 % av USA-film-marknaden, värd 30 MUSD. Vägrade pivotera till digital (film var mer profitabelt). 2012: konkurs. Digitalkameror från Canon, Nikon + smartphones dödade film-marknaden.",
+   303→    score: 26,
+   304→    decisive: ["V16 Produktlanseringar", "V13 Patent & IPR"],
+   305→  },
+   306→  {
+   307→    type: "warning",
+   308→    company: "SWEDISH MATCH",
+   309→    ticker: "SWMA.ST",
+   310→    title: "Philip Morris bud 106 SEK — aktien föll när budet föll",
+   311→    desc: "Philip Morris (PM) budade på Swedish Match maj 2022 — 106 SEK/aktie. SWMA steg till 105 SEK. Oktober 2022: PM höjde ej budet. SWMA föll till 75 SEK. Många arbitrage-investerare köpt vid 100+ SEK = förlust.",
+   312→    score: 60,
+   313→    decisive: ["V17 Avtal & Partnerskap", "V18 Regulatoriska katalysatorer"],
+   314→  },
+   315→  {
+   316→    type: "warning",
+   317→    company: "KINNEVIK",
+   318→    ticker: "KINV-B.ST",
+   319→    title: "Value trap — tech-portfölj värderad lågt, ingen katalysator",
+   320→    desc: "Kinnevik 2017: tech-investeringsbolag, innehav Zalando, Rocket Internet, Global Fashion Group. Handlades 30 % under NAV. Köpte vid 250 SEK. 2021: strategi-skifte → mogna bolag. 2022: under NAV 40 %. Värderades inte rättvist — väntade på katalysator som aldrig kom.",
+   321→    score: 38,
+   322→    decisive: ["V04 P/S", "V16 Produktlanseringar"],
+   323→  },
+   324→  {
+   325→    type: "warning",
+   326→    company: "SWEDBANK",
+   327→    ticker: "SWED-A.ST",
+   328→    title: "Penningtvätt-skandal — Baltic AML-incident",
+   329→    desc: "SVT's 'Uppdrag Granskning' februari 2019 avslöjade att Swedbank (och SEB) hjälpte kunder i Baltikum att tvätta ryska pengar 2006–2015. Swedbank förlorade 50 % av sitt värde på 6 mån. USA-utredning. 4 Mdr SEK böter från svenska + estniska tillsynsmyndigheter.",
+   330→    score: 50,
+   331→    decisive: ["V18 Regulatoriska katalysatorer", "V14 Varumärke"],
+   332→  },
+   333→  {
+   334→    type: "warning",
+   335→    company: "NENT / VIAPLAY",
+   336→    ticker: "VPLAY-B.ST",
+   337→    title: "'Growth story' kraschar — expansion utan profit",
+   338→    desc: "NENT (knoppat från MTG 2018) lanserade Viaplay. 2022: 'offensive expansion' till 12 länder (Nederländerna, Polen, Baltikum). Q2 2023 resultat katastrofalt: kostnader exploderade, annons-intäkter föll. VD Anders Jensen sparkad. -90 % på 6 mån.",
+   339→    score: 22,
+   340→    decisive: ["V01 Försäljningstillväxt", "V19 Kapitalförbränning & Emission-risk"],
+   341→  },
+   342→  {
+   343→    type: "warning",
+   344→    company: "BOEING",
+   345→    ticker: "BA",
+   346→    title: "737 MAX-krisen — säkerhet åsidosatt för vinst",
+   347→    desc: "Boeing 737 MAX krävde 2 krascher (Lion Air okt 2018, Ethiopian Airlines mars 2019) — 346 döda. MCAS-systemet dolt för piloter. FDA-granskning avslöjade 'profit över säkerhet'-kultur. COVID-19 förvärrade. 2024: dörr-plugg flög av i flygning (Alaska Airlines).",
+   348→    score: 28,
+   349→    decisive: ["V19 Kapitalförbränning & Emission-risk", "V14 Varumärke"],
+   350→  },
+   351→];
+   352→
+   353→// ============================================================
+   354→// TOOL TABS DEFINITION
+   355→// ============================================================
+   356→
+   357→const TOOLS: {
+   358→  id: string;
+   359→  label: string;
+   360→  planned: boolean;
+   361→  desc: string;
+   362→}[] = [
+   363→  {
+   364→    id: "case-studies",
+   365→    label: "Case Studies",
+   366→    planned: false,
+   367→    desc: "Hur AKM1 fungerar i verkligheten — när indikatorer samverkar rätt och fel.",
+   368→  },
+   369→  {
+   370→    id: "farliga-komb",
+   371→    label: "Farliga komb.",
+   372→    planned: false,
+   373→    desc: "Identifiera kombinationer av AKM1-variabler som historiskt lett till kursras. T.ex. V01 + V19 = hög tillväxt + hög kapitalförbränning = emission-fälla.",
+   374→  },
+   375→  {
+   376→    id: "marknadshistoria",
+   377→    label: "Marknadshistoria",
+   378→    planned: true,
+   379→    desc: "Tidslinje över svenska och globala marknadshändelser med AKM1-signaler och våg-position vid varje vändpunkt.",
+   380→  },
+   381→  {
+   382→    id: "portfolj",
+   383→    label: "Portfölj",
+   384→    planned: true,
+   385→    desc: "Bygg en fiktiv portfölj och se hur din genomsnittliga AKM1-poäng fördelar sig över innehaven — moat, risk och katalysator i en vy.",
+   386→  },
+   387→  {
+   388→    id: "ak1a-rapport",
+   389→    label: "AK1A Rapport",
+   390→    planned: true,
+   391→    desc: "Generera ett utkast till institutionell rapport (sektioner, slutsats, risk) baserat på dina egna AKM1-inmatningar.",
+   392→  },
+   393→  {
+   394→    id: "scenario",
+   395→    label: "Scenario",
+   396→    planned: true,
+   397→    desc: "Skapa tre framtidsscenarier (bull, base, bear) och se hur bolagets AKM1-poäng och värdering rör sig i varje",
+   398→  },
+   399→  {
+   400→    id: "jamforelse",
+   401→    label: "Jämförelse",
+   402→    planned: true,
+   403→    desc: "Jämför två bolag sida vid sida — alla 19 AKM1-variabler och 25 AK1TS-celler i en matris.",
+   404→  },
+   405→  {
+   406→    id: "stress-test",
+   407→    label: "Stress-test",
+   408→    planned: true,
+   409→    desc: "Simulera kriser (räntehöjning, recession, branschchock) och se vilka bolag som historiskt överlevt liknande chocker.",
+   410→  },
+   411→];
+   412→
+   413→// ============================================================
+   414→// QUIZ QUESTIONS
+   415→// ============================================================
+   416→
+   417→interface QuizQuestion {
+   418→  q: string;
+   419→  options: string[];
+   420→  answer: number; // index
+   421→  explanation: string;
+   422→}
+   423→
+   424→const QUIZ: QuizQuestion[] = [
+   425→  {
+   426→    q: "Vad mäter P/S (Price-to-Sales)?",
+   427→    options: [
+   428→      "Pris-till-omsättning — börsvärde / omsättning",
+   429→      "Pris-till-vinst — börsvärde / vinst",
+   430→      "Pris-till-bokfört — börsvärde / eget kapital",
+   431→      "Pris-till-EBITDA — EV / EBITDA",
+   432→    ],
+   433→    answer: 0,
+   434→    explanation:
+   435→      "P/S = börsvärde / omsättning. Används för bolag som inte går med vinst. AKM1 variabel V04.",
+   436→  },
+   437→  {
+   438→    q: "Vilken vågteori bygger på 5 vågor upp / 3 vågor ner?",
+   439→    options: ["Fibonacci", "Elliott", "Gann", "Lucas"],
+   440→    answer: 1,
+   441→    explanation:
+   442→      "Elliott Wave Theory (Ralph Nelson Elliott, 1938) — 5 impulsvågor upp, 3 korrektivvågor ner. En av AK1TS 5 vågteorier.",
+   443→  },
+   444→  {
+   445→    q: "Hur många fundamentala variabler har AKM1?",
+   446→    options: ["12", "19", "25", "8"],
+   447→    answer: 1,
+   448→    explanation:
+   449→      "AKM1 = 19 variabler i 7 kategorier (Tillväxt, Värdering, Lönsamhet, Stabilitet, Moat, Katalysator, Risk).",
+   450→  },
+   451→  {
+   452→    q: "Vilken AKM1-variabel mäter kapitalförbränning och emission-risk?",
+   453→    options: ["V01 Försäljningstillväxt", "V09 ROE", "V13 Patent & IPR", "V19 Kapitalförbränning"],
+   454→    answer: 3,
+   455→    explanation:
+   456→      "V19 är den 'kritiska' risk-variabeln — hur snabbt bolaget bränner pengar och risken för nyemission som utspäddar aktierna.",
+   457→  },
+   458→  {
+   459→    q: "Vad betyder 'moat' i en finansanalys?",
+   460→    options: [
+   461→      "Bolagets skuldsättningsgrad",
+   462→      "Ett konkurrensskydd som hindrar andra att erövra marknaden",
+   463→      "Utdelningspolicy för aktieägare",
+   464→      "Valuta-risk mot utländska marknader",
+   465→    ],
+   466→    answer: 1,
+   467→    explanation:
+   468→      "Moat = konkurrensskydd (varumärke, nätverkseffekter, patent). AKM1-variablerna V13–V15 mäter detta.",
+   469→  },
+   470→];
+   471→
+   472→// ============================================================
+   473→// FLASHCARDS
+   474→// ============================================================
+   475→
+   476→const FLASHCARDS: { term: string; def: string }[] = [
+   477→  {
+   478→    term: "EBITDA",
+   479→    def: "Resultat före ränta, skatt, avskrivningar och amortering. Mäter operativ lönsamhet utan hänsyn till kapitalstruktur. AKM1 variabel V08.",
+   480→  },
+   481→  {
+   482→    term: "Moat",
+   483→    def: "Konkurrensskydd som hindrar andra bolag att erövra marknaden. Typer: varumärke, nätverkseffekter, patent, switching costs. AKM1 V13–V15.",
+   484→  },
+   485→  {
+   486→    term: "ARR",
+   487→    def: "Annual Recurring Revenue. Intäkter som kommer tillbaka automatiskt varje år — prenumerationer, licenser, serviceavtal. AKM1 V02.",
+   488→  },
+   489→  {
+   490→    term: "TERP",
+   491→    def: "Theoretical Ex-Rights Price. Teoretiskt pris per aktie efter nyemission med teckningsrätter. Används för att värdera rättigheter.",
+   492→  },
+   493→  {
+   494→    term: "Kvickkvot",
+   495→    def: "(Omsättningstillgångar − varulager) / kortfristiga skulder. Mäter kortfristig betalningsförmåga. AKM1 V11. Stark >1,5.",
+   496→  },
+   497→  {
+   498→    term: "ROE",
+   499→    def: "Return on Equity = resultat / eget kapital. Hur mycket vinst bolaget skapar per krona eget kapital. AKM1 V09. Stark >20 %.",
+   500→  },
+   501→];
+   502→
+   503→// ============================================================
+   504→// HELPERS
+   505→// ============================================================
+   506→
+   507→function getLevel(xp: number): { level: number; title: string; nextAt: number } {
+   508→  if (xp < 500) return { level: 1, title: "NYANALYTIKER", nextAt: 500 };
+   509→  if (xp < 1500) return { level: 2, title: "ANALYTIKER-ELEV", nextAt: 1500 };
+   510→  if (xp < 4000) return { level: 3, title: "ANALYTIKER", nextAt: 4000 };
+   511→  if (xp < 9000) return { level: 4, title: "SENIOR ANALYTIKER", nextAt: 9000 };
+   512→  return { level: 5, title: "MASTER ANALYTIKER", nextAt: -1 };
+   513→}
+   514→
+   515→function verdict(score: number): { label: string; color: string } {
+   516→  if (score > 75) return { label: "Stark", color: "text-bull" };
+   517→  if (score >= 50) return { label: "Bra", color: "text-gold" };
+   518→  return { label: "Svag", color: "text-bear" };
+   519→}
+   520→
+   521→// ============================================================
+   522→// MAIN COMPONENT
+   523→// ============================================================
+   524→
+   525→export function LabbSection() {
+   526→  const { progress, addXp, passQuiz, viewFlashcard, bumpStreak, setSection } =
+   527→    useAk1aStore();
+   528→
+   529→  const [caseFilter, setCaseFilter] = React.useState<CaseFilter>("all");
+   530→  const [activeCase, setActiveCase] = React.useState<CaseStudy | null>(null);
+   531→
+   532→  // AKM1 calculator dialog state
+   533→  const [calcOpen, setCalcOpen] = React.useState(false);
+   534→  const [calcScores, setCalcScores] = React.useState<number[]>(
+   535→    () => Array(19).fill(3)
+   536→  );
+   537→  const [calcResult, setCalcResult] = React.useState<number | null>(null);
+   538→  const [calcXpAwarded, setCalcXpAwarded] = React.useState(false);
+   539→
+   540→  // Quiz dialog state
+   541→  const [quizOpen, setQuizOpen] = React.useState(false);
+   542→  const [quizIdx, setQuizIdx] = React.useState(0);
+   543→  const [quizPicked, setQuizPicked] = React.useState<number | null>(null);
+   544→  const [quizCorrect, setQuizCorrect] = React.useState(0);
+   545→  const [quizDone, setQuizDone] = React.useState(false);
+   546→
+   547→  // Flashcard dialog state
+   548→  const [fcOpen, setFcOpen] = React.useState(false);
+   549→  const [fcIdx, setFcIdx] = React.useState(0);
+   550→  const [fcFlipped, setFcFlipped] = React.useState(false);
+   551→
+   552→  // Dagens utmaning — toast
+   553→  const [challengeToast, setChallengeToast] = React.useState<string | null>(
+   554→    null
+   555→  );
+   556→
+   557→  const bestCount = CASES.filter((c) => c.type === "best").length;
+   558→  const warnCount = CASES.filter((c) => c.type === "warning").length;
+   559→
+   560→  const filteredCases =
+   561→    caseFilter === "all"
+   562→      ? CASES
+   563→      : CASES.filter((c) => c.type === caseFilter);
+   564→
+   565→  const levelInfo = getLevel(progress.xp);
+   566→
+   567→  // ----- AKM1 calculator handlers -----
+   568→  function handleCalcRun() {
+   569→    const total = calcScores.reduce((a, b) => a + b, 0); // max 95
+   570→    setCalcResult(total);
+   571→    if (!calcXpAwarded) {
+   572→      addXp(50);
+   573→      setCalcXpAwarded(true);
+   574→    }
+   575→  }
+   576→
+   577→  function handleCalcReset() {
+   578→    setCalcScores(Array(19).fill(3));
+   579→    setCalcResult(null);
+   580→  }
+   581→
+   582→  // ----- Quiz handlers -----
+   583→  function startQuiz() {
+   584→    setQuizIdx(0);
+   585→    setQuizPicked(null);
+   586→    setQuizCorrect(0);
+   587→    setQuizDone(false);
+   588→    setQuizOpen(true);
+   589→  }
+   590→
+   591→  function pickAnswer(i: number) {
+   592→    if (quizPicked !== null) return;
+   593→    setQuizPicked(i);
+   594→    if (i === QUIZ[quizIdx].answer) {
+   595→      setQuizCorrect((c) => c + 1);
+   596→      addXp(75);
+   597→    }
+   598→  }
+   599→
+   600→  function nextQuestion() {
+   601→    if (quizIdx + 1 < QUIZ.length) {
+   602→      setQuizIdx((i) => i + 1);
+   603→      setQuizPicked(null);
+   604→    } else {
+   605→      setQuizDone(true);
+   606→      passQuiz("lab-quiz");
+   607→    }
+   608→  }
+   609→
+   610→  // ----- Flashcard handlers -----
+   611→  function startFlashcards() {
+   612→    setFcIdx(0);
+   613→    setFcFlipped(false);
+   614→    setFcOpen(true);
+   615→  }
+   616→
+   617→  function flipCard() {
+   618→    if (!fcFlipped) {
+   619→      viewFlashcard(`lab-fc-${fcIdx}`);
+   620→    }
+   621→    setFcFlipped((f) => !f);
+   622→  }
+   623→
+   624→  function nextCard() {
+   625→    if (fcIdx + 1 < FLASHCARDS.length) {
+   626→      setFcIdx((i) => i + 1);
+   627→      setFcFlipped(false);
+   628→    } else {
+   629→      setFcOpen(false);
+   630→    }
+   631→  }
+   632→
+   633→  // ----- Dagens utmaning handler -----
+   634→  function doDailyChallenge() {
+   635→    bumpStreak();
+   636→    addXp(120);
+   637→    setChallengeToast(
+   638→      `Streak ${progress.streak + 1} övningar · +120 XP tillagd`
+   639→    );
+   640→    window.setTimeout(() => setChallengeToast(null), 3500);
+   641→  }
+   642→
+   643→  return (
+   644→    <div className="paper-texture">
+   645→      {/* ───────────── HERO ───────────── */}
+   646→      <section className="relative overflow-hidden border-b border-border">
+   647→        <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
+   648→          <div
+   649→            className="absolute inset-0"
+   650→            style={{
+   651→              backgroundImage:
+   652→                "linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px)",
+   653→              backgroundSize: "48px 48px",
+   654→            }}
+   655→          />
+   656→        </div>
+   657→        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24">
+   658→          <div className="max-w-3xl">
+   659→            <Eyebrow>LABBET</Eyebrow>
+   660→            <h1 className="mt-4 font-serif text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-5xl lg:text-6xl">
+   661→              Din analys-konsol.
+   662→            </h1>
+   663→            <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
+   664→              Bloomberg för svenska retail-investerare. Alla verktyg. Ett fönster.
+   665→            </p>
+   666→            <div className="mt-8 flex flex-wrap gap-3">
+   667→              <Button
+   668→                size="lg"
+   669→                className="bg-gold text-background hover:bg-gold/90"
+   670→                onClick={() =>
+   671→                  document
+   672→                    .getElementById("lab-tools")
+   673→                    ?.scrollIntoView({ behavior: "smooth" })
+   674→                }
+   675→              >
+   676→                Öppna konsolen <ArrowRight className="ml-1 h-4 w-4" />
+   677→              </Button>
+   678→              <Button
+   679→                size="lg"
+   680→                variant="outline"
+   681→                onClick={() =>
+   682→                  document
+   683→                    .getElementById("lab-calc")
+   684→                    ?.scrollIntoView({ behavior: "smooth" })
+   685→                }
+   686→              >
+   687→                <Calculator className="mr-1 h-4 w-4" /> AKM1-kalkylatorn
+   688→              </Button>
+   689→            </div>
+   690→          </div>
+   691→        </div>
+   692→      </section>
+   693→
+   694→      {/* ───────────── KONSOLEN I SIFFROR ───────────── */}
+   695→      <section className="border-b border-border bg-muted/30">
+   696→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+   697→          <div className="grid gap-6 sm:grid-cols-3">
+   698→            <ConsoleStat
+   699→              value="8"
+   700→              label="Verktyg i konsolen"
+   701→              caption="Case Studies, Farliga komb., Marknadshistoria, Portfölj, AK1A Rapport, Scenario, Jämförelse, Stress-test."
+   702→            />
+   703→            <ConsoleStat
+   704→              value="100%"
+   705→              label="Reproducerbarhet"
+   706→              caption="Varje verktyg bygger på publicerad metodik — samma 19 AKM1-variabler och 25 AK1TS-celler som i rapportsidorna."
+   707→            />
+   708→            <ConsoleStat
+   709→              value="0"
+   710→              label="Push-notiser — anti-casino"
+   711→              caption="Du bestämmer när du tittar. Vi buffrar inte din uppmärksamhet med priser."
+   712→            />
+   713→          </div>
+   714→        </div>
+   715→      </section>
+   716→
+   717→      {/* ───────────── TOOL TABS ───────────── */}
+   718→      <section id="lab-tools" className="border-b border-border">
+   719→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   720→          <Eyebrow>Konsolen</Eyebrow>
+   721→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance">
+   722→            Åtta verktyg — ett fönster mot marknaden.
+   723→          </h2>
+   724→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   725→            Endast Case Studies är fullt utbyggt idag. De övriga sju är
+   726→            metodmål — vi visar dem ärligt som{" "}
+   727→            <HonestyTag kind="metodmal" /> istället för att låtsas att de
+   728→            redan finns.
+   729→          </p>
+   730→
+   731→          <Tabs defaultValue="case-studies" className="mt-8">
+   732→            <div className="overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+   733→              <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
+   734→                {TOOLS.map((t) => (
+   735→                  <TabsTrigger
+   736→                    key={t.id}
+   737→                    value={t.id}
+   738→                    className="flex-1 whitespace-nowrap px-3 py-1.5 text-xs sm:text-sm"
+   739→                  >
+   740→                    {t.label}
+   741→                  </TabsTrigger>
+   742→                ))}
+   743→              </TabsList>
+   744→            </div>
+   745→
+   746→            {/* Case Studies — full implementation */}
+   747→            <TabsContent value="case-studies" className="mt-6">
+   748→              <CaseStudiesPanel
+   749→                filter={caseFilter}
+   750→                setFilter={setCaseFilter}
+   751→                cases={filteredCases}
+   752→                counts={{ all: CASES.length, best: bestCount, warning: warnCount }}
+   753→                onOpenCase={setActiveCase}
+   754→              />
+   755→            </TabsContent>
+   756→
+   757→            {/* Farliga komb. — now a real combinations browser from DB */}
+   758→            <TabsContent value="farliga-komb" className="mt-6">
+   759→              <CombinationsBrowser />
+   760→            </TabsContent>
+   761→
+   762→            {/* Placeholder panels for the 6 remaining planned tools */}
+   763→            {TOOLS.filter((t) => t.planned && t.id !== "farliga-komb").map((t) => (
+   764→              <TabsContent key={t.id} value={t.id} className="mt-6">
+   765→                <PlannedToolPanel label={t.label} desc={t.desc} />
+   766→              </TabsContent>
+   767→            ))}
+   768→          </Tabs>
+   769→        </div>
+   770→      </section>
+   771→
+   772→      {/* ───────────── REPRODUCERBARHET ───────────── */}
+   773→      <section id="lab-calc" className="border-b border-border bg-muted/30">
+   774→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   775→          <Eyebrow>Reproducerbarhet</Eyebrow>
+   776→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance">
+   777→            Varje verktyg bygger på publicerad metodik.
+   778→          </h2>
+   779→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   780→            Du kan reproducera varje analys steg för steg. Inga hemliga
+   781→            källor, inga dolda formler — samma 19 AKM1-variabler och samma 25
+   782→            AK1TS-celler som i de publicerade rapportsidorna.
+   783→          </p>
+   784→
+   785→          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+   786→            {/* AKM1 Calculator card */}
+   787→            <Card className="border-gold/30 bg-gradient-to-br from-card to-gold/[0.03] p-5">
+   788→              <div className="flex items-center gap-2">
+   789→                <Calculator className="h-5 w-5 text-gold" />
+   790→                <span className="text-xs font-semibold uppercase tracking-wider text-gold">
+   791→                  Verktyg 1
+   792→                </span>
+   793→              </div>
+   794→              <h3 className="mt-3 font-serif text-xl font-bold">
+   795→                AKM1 Calculator
+   796→              </h3>
+   797→              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+   798→                Samma 19 variabler som i analyserna. Samma vikter, samma
+   799→                skala 1–5. Räkna ut din egen poäng.
+   800→              </p>
+   801→              <Button
+   802→                className="mt-4 bg-gold text-background hover:bg-gold/90"
+   803→                onClick={() => setCalcOpen(true)}
+   804→              >
+   805→                ÖPPNA <ArrowRight className="ml-1 h-4 w-4" />
+   806→              </Button>
+   807→            </Card>
+   808→
+   809→            {/* Se publicerade analyser */}
+   810→            <Card className="p-5">
+   811→              <div className="flex items-center gap-2">
+   812→                <FileText className="h-5 w-5 text-ink dark:text-foreground" />
+   813→                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+   814→                  Verktyg 2
+   815→                </span>
+   816→              </div>
+   817→              <h3 className="mt-3 font-serif text-xl font-bold">
+   818→                Se publicerade analyser
+   819→              </h3>
+   820→              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+   821→                Jämför dina resultat med våra. Varje analys är reproducerbar
+   822→                steg för steg.
+   823→              </p>
+   824→              <Button
+   825→                variant="outline"
+   826→                className="mt-4"
+   827→                onClick={() => setSection("prec")}
+   828→              >
+   829→                ÖPPNA <ArrowRight className="ml-1 h-4 w-4" />
+   830→              </Button>
+   831→            </Card>
+   832→
+   833→            {/* Lär dig metoden */}
+   834→            <Card className="p-5">
+   835→              <div className="flex items-center gap-2">
+   836→                <Brain className="h-5 w-5 text-ink dark:text-foreground" />
+   837→                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+   838→                  Verktyg 3
+   839→                </span>
+   840→              </div>
+   841→              <h3 className="mt-3 font-serif text-xl font-bold">
+   842→                Lär dig metoden
+   843→              </h3>
+   844→              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+   845→                Förstå varje variabel i en kurs. Power 19-kursen ger dig
+   846→                grunden.
+   847→              </p>
+   848→              <Button
+   849→                variant="outline"
+   850→                className="mt-4"
+   851→                onClick={() => setSection("kurser")}
+   852→              >
+   853→                ÖPPNA <ArrowRight className="ml-1 h-4 w-4" />
+   854→              </Button>
+   855→            </Card>
+   856→          </div>
+   857→
+   858→          {/* Principle strip */}
+   859→          <div className="mt-10 rounded-lg border border-gold/30 bg-card p-5">
+   860→            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+   861→              <div className="flex items-center gap-2">
+   862→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   863→                  Princip 9
+   864→                </span>
+   865→                <span className="font-serif text-base font-bold sm:text-lg">
+   866→                  Reproducerbart — eller det finns inte.
+   867→                </span>
+   868→              </div>
+   869→              <div className="flex flex-wrap items-center gap-2">
+   870→                <HonestyTag kind="matt" />
+   871→                <span className="text-xs text-muted-foreground">
+   872→                  AKM1-variabler: 19
+   873→                </span>
+   874→                <span className="hidden text-muted-foreground sm:inline">·</span>
+   875→                <span className="text-xs text-muted-foreground">
+   876→                  AK1TS-celler: 25
+   877→                </span>
+   878→                <span className="hidden text-muted-foreground sm:inline">·</span>
+   879→                <span className="text-xs text-muted-foreground">
+   880→                  Verktyg i konsolen: 8
+   881→                </span>
+   882→              </div>
+   883→            </div>
+   884→          </div>
+   885→        </div>
+   886→      </section>
+   887→
+   888→      {/* ───────────── INTERAKTIVT LÄRANDE ───────────── */}
+   889→      <section className="border-b border-border">
+   890→        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-14">
+   891→          <Eyebrow>Interaktivt lärande</Eyebrow>
+   892→          <h2 className="mt-3 font-serif text-3xl font-bold text-balance">
+   893→            Gör lärandet roligt.
+   894→          </h2>
+   895→          <p className="mt-2 max-w-2xl text-muted-foreground">
+   896→            Quiz, flashcards och dagliga utmaningar — tjäna XP och klättra i
+   897→            nivåer.
+   898→          </p>
+   899→
+   900→          {/* XP header */}
+   901→          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+   902→            <Card className="p-5">
+   903→              <div className="flex items-center gap-2 text-muted-foreground">
+   904→                <Zap className="h-4 w-4 text-gold" />
+   905→                <span className="text-[10px] font-semibold uppercase tracking-wider">
+   906→                  Total XP
+   907→                </span>
+   908→              </div>
+   909→              <p className="mt-2 font-serif text-4xl font-bold tabular-nums">
+   910→                {progress.xp}
+   911→              </p>
+   912→              <p className="mt-1 text-xs text-muted-foreground">
+   913→                {levelInfo.nextAt > 0
+   914→                  ? `Nästa nivå vid ${levelInfo.nextAt} XP`
+   915→                  : "Högsta nivån nådd"}
+   916→              </p>
+   917→            </Card>
+   918→
+   919→            <Card className="p-5">
+   920→              <div className="flex items-center gap-2 text-muted-foreground">
+   921→                <Crown className="h-4 w-4 text-gold" />
+   922→                <span className="text-[10px] font-semibold uppercase tracking-wider">
+   923→                  Nivå
+   924→                </span>
+   925→              </div>
+   926→              <p className="mt-2 font-serif text-4xl font-bold tabular-nums">
+   927→                Lvl {levelInfo.level}
+   928→              </p>
+   929→              <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-gold">
+   930→                {levelInfo.title}
+   931→              </p>
+   932→            </Card>
+   933→
+   934→            <Card className="p-5">
+   935→              <div className="flex items-center gap-2 text-muted-foreground">
+   936→                <Flame className="h-4 w-4 text-gold" />
+   937→                <span className="text-[10px] font-semibold uppercase tracking-wider">
+   938→                  Övningar (streak)
+   939→                </span>
+   940→              </div>
+   941→              <p className="mt-2 font-serif text-4xl font-bold tabular-nums">
+   942→                {progress.streak}
+   943→              </p>
+   944→              <p className="mt-1 text-xs text-muted-foreground">
+   945→                Klara dagens utmaning för att bygga streaken
+   946→              </p>
+   947→            </Card>
+   948→          </div>
+   949→
+   950→          {/* Three learning cards */}
+   951→          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+   952→            {/* Quiz */}
+   953→            <Card className="flex flex-col p-6">
+   954→              <div className="flex items-center gap-2">
+   955→                <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/10 border border-gold/40 text-gold">
+   956→                  <Trophy className="h-4 w-4" />
+   957→                </div>
+   958→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   959→                  Quiz
+   960→                </span>
+   961→              </div>
+   962→              <h3 className="mt-3 font-serif text-xl font-bold">Quiz</h3>
+   963→              <p className="mt-1 flex-1 text-sm text-muted-foreground">
+   964→                12 frågor om AKM1, risk och vågteori. Testa vad du kan.
+   965→              </p>
+   966→              <div className="mt-3">
+   967→                <Badge
+   968→                  variant="outline"
+   969→                  className="border-gold/40 text-gold"
+   970→                >
+   971→                  50–100 XP PER FRÅGA
+   972→                </Badge>
+   973→              </div>
+   974→              <Button
+   975→                className="mt-4 bg-gold text-background hover:bg-gold/90"
+   976→                onClick={startQuiz}
+   977→              >
+   978→                Starta quiz <ArrowRight className="ml-1 h-4 w-4" />
+   979→              </Button>
+   980→            </Card>
+   981→
+   982→            {/* Flashcards */}
+   983→            <Card className="flex flex-col p-6">
+   984→              <div className="flex items-center gap-2">
+   985→                <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/10 border border-gold/40 text-gold">
+   986→                  <Lightbulb className="h-4 w-4" />
+   987→                </div>
+   988→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+   989→                  Flashcards
+   990→                </span>
+   991→              </div>
+   992→              <h3 className="mt-3 font-serif text-xl font-bold">Flashcards</h3>
+   993→              <p className="mt-1 flex-1 text-sm text-muted-foreground">
+   994→                12 kort för snabb inlärning av alla nyckeltermer.
+   995→              </p>
+   996→              <div className="mt-3">
+   997→                <Badge
+   998→                  variant="outline"
+   999→                  className="border-gold/40 text-gold"
+  1000→                >
+  1001→                  20 XP PER KORT
+  1002→                </Badge>
+  1003→              </div>
+  1004→              <Button
+  1005→                className="mt-4 bg-gold text-background hover:bg-gold/90"
+  1006→                onClick={startFlashcards}
+  1007→              >
+  1008→                Börja bläddra <ArrowRight className="ml-1 h-4 w-4" />
+  1009→              </Button>
+  1010→            </Card>
+  1011→
+  1012→            {/* Dagens utmaning */}
+  1013→            <Card className="flex flex-col p-6">
+  1014→              <div className="flex items-center gap-2">
+  1015→                <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/10 border border-gold/40 text-gold">
+  1016→                  <Flame className="h-4 w-4" />
+  1017→                </div>
+  1018→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1019→                  Dagens utmaning
+  1020→                </span>
+  1021→              </div>
+  1022→              <h3 className="mt-3 font-serif text-xl font-bold">
+  1023→                Dagens utmaning
+  1024→              </h3>
+  1025→              <p className="mt-1 flex-1 text-sm text-muted-foreground">
+  1026→                3 utmaningar — öva din streak. Kom tillbaka varje dag.
+  1027→              </p>
+  1028→              <div className="mt-3">
+  1029→                <Badge
+  1030→                  variant="outline"
+  1031→                  className="border-gold/40 text-gold"
+  1032→                >
+  1033→                  100–150 XP PER UTMANING
+  1034→                </Badge>
+  1035→              </div>
+  1036→              <Button
+  1037→                className="mt-4 bg-gold text-background hover:bg-gold/90"
+  1038→                onClick={doDailyChallenge}
+  1039→              >
+  1040→                Klara utmaning <ArrowRight className="ml-1 h-4 w-4" />
+  1041→              </Button>
+  1042→            </Card>
+  1043→          </div>
+  1044→
+  1045→          {/* Toast */}
+  1046→          {challengeToast && (
+  1047→            <div className="mt-4 rounded-lg border border-bull/40 bg-bull/10 px-4 py-3 text-sm font-medium text-bull">
+  1048→              <Check className="mr-1 inline h-4 w-4" /> {challengeToast}
+  1049→            </div>
+  1050→          )}
+  1051→
+  1052→          {/* Continue exploring */}
+  1053→          <div className="mt-12">
+  1054→            <Eyebrow>◆ Fortsätt utforska</Eyebrow>
+  1055→            <h3 className="mt-2 font-serif text-2xl font-bold">Gå vidare</h3>
+  1056→            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+  1057→              <CtaCard
+  1058→                title="AKM1-kalkylatorn"
+  1059→                sub="19 variabler — räkna ut din poäng"
+  1060→                onClick={() => setCalcOpen(true)}
+  1061→              />
+  1062→              <CtaCard
+  1063→                title="Lär dig metoden"
+  1064→                sub="Power 19-kurser"
+  1065→                onClick={() => setSection("kurser")}
+  1066→              />
+  1067→              <CtaCard
+  1068→                title="Se analyser"
+  1069→                sub="Jämför dina resultat"
+  1070→                onClick={() => setSection("prec")}
+  1071→              />
+  1072→            </div>
+  1073→          </div>
+  1074→        </div>
+  1075→      </section>
+  1076→
+  1077→      {/* ═══════════════════════════════════════════ */}
+  1078→      {/*               DIALOGS                       */}
+  1079→      {/* ═══════════════════════════════════════════ */}
+  1080→
+  1081→      {/* Case detail dialog */}
+  1082→      <Dialog
+  1083→        open={activeCase !== null}
+  1084→        onOpenChange={(o) => !o && setActiveCase(null)}
+  1085→      >
+  1086→        <DialogContent className="sm:max-w-2xl">
+  1087→          {activeCase && (
+  1088→            <>
+  1089→              <DialogHeader>
+  1090→                <div className="flex flex-wrap items-center gap-2">
+  1091→                  <CaseTypeBadge type={activeCase.type} />
+  1092→                  {activeCase.illustrative && (
+  1093→                    <Badge variant="outline" className="text-[10px] uppercase tracking-wider">
+  1094→                      Illustrativt
+  1095→                    </Badge>
+  1096→                  )}
+  1097→                </div>
+  1098→                <DialogTitle className="mt-2 font-serif text-2xl">
+  1099→                  {activeCase.company}
+  1100→                </DialogTitle>
+  1101→                <DialogDescription className="text-xs font-mono uppercase tracking-wider">
+  1102→                  {activeCase.ticker}
+  1103→                </DialogDescription>
+  1104→              </DialogHeader>
+  1105→
+  1106→              <div>
+  1107→                <p className="font-serif text-lg font-semibold leading-snug">
+  1108→                  {activeCase.title}
+  1109→                </p>
+  1110→                <p className="mt-3 text-sm leading-relaxed text-foreground/90">
+  1111→                  {activeCase.desc}
+  1112→                </p>
+  1113→              </div>
+  1114→
+  1115→              {/* AKM1 score breakdown */}
+  1116→              <div className="rounded-lg border border-border bg-muted/40 p-4">
+  1117→                <div className="flex items-center justify-between gap-2">
+  1118→                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+  1119→                    AKM1-poäng
+  1120→                  </span>
+  1121→                  <span
+  1122→                    className={cn(
+  1123→                      "font-serif text-2xl font-bold tabular-nums",
+  1124→                      verdict(activeCase.score).color
+  1125→                    )}
+  1126→                  >
+  1127→                    {activeCase.score}
+  1128→                    <span className="text-base text-muted-foreground">/95</span>
+  1129→                  </span>
+  1130→                </div>
+  1131→                <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-muted">
+  1132→                  <div
+  1133→                    className={cn(
+  1134→                      "h-full transition-all",
+  1135→                      activeCase.type === "best" ? "bg-bull" : "bg-bear"
+  1136→                    )}
+  1137→                    style={{ width: `${(activeCase.score / 95) * 100}%` }}
+  1138→                  />
+  1139→                </div>
+  1140→
+  1141→                <div className="mt-4">
+  1142→                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+  1143→                    Avgörande AKM1-variabler
+  1144→                  </span>
+  1145→                  <div className="mt-2 flex flex-wrap gap-1.5">
+  1146→                    {activeCase.decisive.map((v) => (
+  1147→                      <Badge
+  1148→                        key={v}
+  1149→                        variant="outline"
+  1150→                        className={cn(
+  1151→                          "text-[10px]",
+  1152→                          activeCase.type === "best"
+  1153→                            ? "border-bull/40 text-bull"
+  1154→                            : "border-bear/40 text-bear"
+  1155→                        )}
+  1156→                      >
+  1157→                        {v}
+  1158→                      </Badge>
+  1159→                    ))}
+  1160→                  </div>
+  1161→                </div>
+  1162→              </div>
+  1163→
+  1164→              <DialogFooter>
+  1165→                <Button variant="outline" onClick={() => setActiveCase(null)}>
+  1166→                  Stäng
+  1167→                </Button>
+  1168→              </DialogFooter>
+  1169→            </>
+  1170→          )}
+  1171→        </DialogContent>
+  1172→      </Dialog>
+  1173→
+  1174→      {/* AKM1 Calculator dialog */}
+  1175→      <Dialog open={calcOpen} onOpenChange={setCalcOpen}>
+  1176→        <DialogContent className="sm:max-w-3xl">
+  1177→          <DialogHeader>
+  1178→            <DialogTitle className="font-serif text-2xl">
+  1179→              AKM1 Calculator
+  1180→            </DialogTitle>
+  1181→            <DialogDescription>
+  1182→              Sätt poäng 1–5 på var och en av de 19 variablerna. Räkna ut
+  1183→              din totala AKM1-poäng (max 95).
+  1184→            </DialogDescription>
+  1185→          </DialogHeader>
+  1186→
+  1187→          <div className="grid max-h-[55vh] gap-3 overflow-y-auto pr-1 sm:grid-cols-2 lg:grid-cols-3">
+  1188→            {AKM1_VARIABLES.map((v, i) => (
+  1189→              <div
+  1190→                key={v.id}
+  1191→                className="rounded-md border border-border bg-card p-3"
+  1192→              >
+  1193→                <div className="flex items-baseline justify-between gap-2">
+  1194→                  <span className="font-mono text-[10px] font-semibold uppercase text-gold">
+  1195→                    {v.id}
+  1196→                  </span>
+  1197→                  <span className="text-[10px] text-muted-foreground">
+  1198→                    {v.category}
+  1199→                  </span>
+  1200→                </div>
+  1201→                <p className="mt-1 text-xs font-medium leading-snug">
+  1202→                  {v.name}
+  1203→                </p>
+  1204→                <Select
+  1205→                  value={String(calcScores[i])}
+  1206→                  onValueChange={(val) =>
+  1207→                    setCalcScores((prev) => {
+  1208→                      const next = [...prev];
+  1209→                      next[i] = Number(val);
+  1210→                      return next;
+  1211→                    })
+  1212→                  }
+  1213→                >
+  1214→                  <SelectTrigger
+  1215→                    size="sm"
+  1216→                    className="mt-2 h-8 w-full text-xs"
+  1217→                  >
+  1218→                    <SelectValue />
+  1219→                  </SelectTrigger>
+  1220→                  <SelectContent>
+  1221→                    {[1, 2, 3, 4, 5].map((n) => (
+  1222→                      <SelectItem key={n} value={String(n)}>
+  1223→                        {n}
+  1224→                      </SelectItem>
+  1225→                    ))}
+  1226→                  </SelectContent>
+  1227→                </Select>
+  1228→              </div>
+  1229→            ))}
+  1230→          </div>
+  1231→
+  1232→          {/* Result */}
+  1233→          {calcResult !== null && (
+  1234→            <div className="rounded-lg border border-gold/30 bg-gold/[0.04] p-4">
+  1235→              <div className="flex items-end justify-between gap-2">
+  1236→                <div>
+  1237→                  <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+  1238→                    Resultat
+  1239→                  </span>
+  1240→                  <p
+  1241→                    className={cn(
+  1242→                      "font-serif text-3xl font-bold tabular-nums",
+  1243→                      verdict(calcResult).color
+  1244→                    )}
+  1245→                  >
+  1246→                    {calcResult}
+  1247→                    <span className="text-base text-muted-foreground">/95</span>
+  1248→                  </p>
+  1249→                </div>
+  1250→                <Badge
+  1251→                  variant="outline"
+  1252→                  className={cn(
+  1253→                    "border-current text-sm",
+  1254→                    verdict(calcResult).color
+  1255→                  )}
+  1256→                >
+  1257→                  {verdict(calcResult).label}
+  1258→                </Badge>
+  1259→              </div>
+  1260→              <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-muted">
+  1261→                <div
+  1262→                  className="h-full bg-gold transition-all"
+  1263→                  style={{ width: `${(calcResult / 95) * 100}%` }}
+  1264→                />
+  1265→              </div>
+  1266→              <p className="mt-2 text-xs text-muted-foreground">
+  1267→                {">"}75 = Stark · 50–75 = Bra · &lt;50 = Svag
+  1268→                {calcXpAwarded && (
+  1269→                  <span className="ml-1 text-bull">· +50 XP tillagd</span>
+  1270→                )}
+  1271→              </p>
+  1272→            </div>
+  1273→          )}
+  1274→
+  1275→          <DialogFooter>
+  1276→            <Button variant="outline" onClick={handleCalcReset}>
+  1277→              <RotateCcw className="mr-1 h-4 w-4" /> Återställ
+  1278→            </Button>
+  1279→            <Button
+  1280→              className="bg-gold text-background hover:bg-gold/90"
+  1281→              onClick={handleCalcRun}
+  1282→            >
+  1283→              <Calculator className="mr-1 h-4 w-4" /> Räkna ut
+  1284→            </Button>
+  1285→          </DialogFooter>
+  1286→        </DialogContent>
+  1287→      </Dialog>
+  1288→
+  1289→      {/* Quiz dialog */}
+  1290→      <Dialog open={quizOpen} onOpenChange={setQuizOpen}>
+  1291→        <DialogContent className="sm:max-w-xl">
+  1292→          <DialogHeader>
+  1293→            <DialogTitle className="font-serif text-2xl">
+  1294→              AKM1 Quiz
+  1295→            </DialogTitle>
+  1296→            <DialogDescription>
+  1297→              {quizDone
+  1298→                ? `Du svarade rätt på ${quizCorrect} av ${QUIZ.length} frågor.`
+  1299→                : `Fråga ${quizIdx + 1} av ${QUIZ.length} · +75 XP per rätt svar`}
+  1300→            </DialogDescription>
+  1301→          </DialogHeader>
+  1302→
+  1303→          {!quizDone ? (
+  1304→            <div>
+  1305→              <p className="font-serif text-lg font-semibold leading-snug">
+  1306→                {QUIZ[quizIdx].q}
+  1307→              </p>
+  1308→              <div className="mt-4 grid gap-2">
+  1309→                {QUIZ[quizIdx].options.map((opt, i) => {
+  1310→                  const isCorrect = i === QUIZ[quizIdx].answer;
+  1311→                  const isPicked = i === quizPicked;
+  1312→                  const showResult = quizPicked !== null;
+  1313→                  return (
+  1314→                    <button
+  1315→                      key={i}
+  1316→                      onClick={() => pickAnswer(i)}
+  1317→                      disabled={showResult}
+  1318→                      className={cn(
+  1319→                        "flex items-center justify-between rounded-md border px-4 py-3 text-left text-sm transition-all",
+  1320→                        !showResult &&
+  1321→                          "border-border bg-card hover:border-gold/50",
+  1322→                        showResult && isCorrect && "border-bull/50 bg-bull/10",
+  1323→                        showResult &&
+  1324→                          isPicked &&
+  1325→                          !isCorrect &&
+  1326→                          "border-bear/50 bg-bear/10",
+  1327→                        showResult &&
+  1328→                          !isCorrect &&
+  1329→                          !isPicked &&
+  1330→                          "border-border bg-card opacity-60"
+  1331→                      )}
+  1332→                    >
+  1333→                      <span>{opt}</span>
+  1334→                      {showResult && isCorrect && (
+  1335→                        <Check className="h-4 w-4 text-bull" />
+  1336→                      )}
+  1337→                      {showResult && isPicked && !isCorrect && (
+  1338→                        <X className="h-4 w-4 text-bear" />
+  1339→                      )}
+  1340→                    </button>
+  1341→                  );
+  1342→                })}
+  1343→              </div>
+  1344→
+  1345→              {quizPicked !== null && (
+  1346→                <div className="mt-4 rounded-md border border-border bg-muted/40 p-3 text-xs leading-relaxed">
+  1347→                  <span className="font-semibold text-gold">Förklaring: </span>
+  1348→                  {QUIZ[quizIdx].explanation}
+  1349→                </div>
+  1350→              )}
+  1351→
+  1352→              <DialogFooter>
+  1353→                <Button
+  1354→                  variant="outline"
+  1355→                  onClick={() => setQuizOpen(false)}
+  1356→                >
+  1357→                  Avsluta
+  1358→                </Button>
+  1359→                <Button
+  1360→                  className="bg-gold text-background hover:bg-gold/90"
+  1361→                  onClick={nextQuestion}
+  1362→                  disabled={quizPicked === null}
+  1363→                >
+  1364→                  {quizIdx + 1 < QUIZ.length
+  1365→                    ? "Nästa fråga"
+  1366→                    : "Avsluta quiz"}
+  1367→                  <ChevronRight className="ml-1 h-4 w-4" />
+  1368→                </Button>
+  1369→              </DialogFooter>
+  1370→            </div>
+  1371→          ) : (
+  1372→            <div className="text-center">
+  1373→              <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-gold/10 border border-gold/40 text-gold">
+  1374→                <Trophy className="h-6 w-6" />
+  1375→              </div>
+  1376→              <p className="mt-3 font-serif text-3xl font-bold">
+  1377→                {quizCorrect} / {QUIZ.length}
+  1378→              </p>
+  1379→              <p className="mt-1 text-sm text-muted-foreground">
+  1380→                {quizCorrect === QUIZ.length
+  1381→                  ? "Perfekt — du har behärskning."
+  1382→                  : quizCorrect >= 3
+  1383→                    ? "Bra jobbat. Fortsätt öva."
+  1384→                    : "Läs om AKM1 och försök igen."}
+  1385→              </p>
+  1386→              <p className="mt-2 text-xs text-bull">
+  1387→                +{quizCorrect * 75} XP tillagd · Quiz markerat som klarat
+  1388→              </p>
+  1389→              <DialogFooter className="mt-4">
+  1390→                <Button
+  1391→                  variant="outline"
+  1392→                  onClick={() => {
+  1393→                    setQuizIdx(0);
+  1394→                    setQuizPicked(null);
+  1395→                    setQuizCorrect(0);
+  1396→                    setQuizDone(false);
+  1397→                  }}
+  1398→                >
+  1399→                  <RefreshCw className="mr-1 h-4 w-4" /> Gör om
+  1400→                </Button>
+  1401→                <Button
+  1402→                  className="bg-gold text-background hover:bg-gold/90"
+  1403→                  onClick={() => setQuizOpen(false)}
+  1404→                >
+  1405→                  Stäng
+  1406→                </Button>
+  1407→              </DialogFooter>
+  1408→            </div>
+  1409→          )}
+  1410→        </DialogContent>
+  1411→      </Dialog>
+  1412→
+  1413→      {/* Flashcards dialog */}
+  1414→      <Dialog open={fcOpen} onOpenChange={setFcOpen}>
+  1415→        <DialogContent className="sm:max-w-xl">
+  1416→          <DialogHeader>
+  1417→            <DialogTitle className="font-serif text-2xl">
+  1418→              Flashcards
+  1419→            </DialogTitle>
+  1420→            <DialogDescription>
+  1421→              Kort {fcIdx + 1} av {FLASHCARDS.length} · Vänd kortet för
+  1422→              definitionen · +20 XP per vändning
+  1423→            </DialogDescription>
+  1424→          </DialogHeader>
+  1425→
+  1426→          <button
+  1427→            onClick={flipCard}
+  1428→            className="relative flex min-h-[180px] w-full items-center justify-center rounded-lg border-2 border-gold/30 bg-gradient-to-br from-card to-gold/[0.04] p-8 text-center transition-all hover:border-gold/60"
+  1429→          >
+  1430→            {!fcFlipped ? (
+  1431→              <div>
+  1432→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1433→                  Term
+  1434→                </span>
+  1435→                <p className="mt-2 font-serif text-3xl font-bold">
+  1436→                  {FLASHCARDS[fcIdx].term}
+  1437→                </p>
+  1438→                <p className="mt-4 text-xs text-muted-foreground">
+  1439→                  Klicka för att vända →
+  1440→                </p>
+  1441→              </div>
+  1442→            ) : (
+  1443→              <div>
+  1444→                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1445→                  Definition
+  1446→                </span>
+  1447→                <p className="mt-2 text-base leading-relaxed">
+  1448→                  {FLASHCARDS[fcIdx].def}
+  1449→                </p>
+  1450→                <p className="mt-4 text-xs text-muted-foreground">
+  1451→                  Klicka för att vända tillbaka ↺
+  1452→                </p>
+  1453→              </div>
+  1454→            )}
+  1455→          </button>
+  1456→
+  1457→          <DialogFooter>
+  1458→            <Button variant="outline" onClick={() => setFcOpen(false)}>
+  1459→              Avsluta
+  1460→            </Button>
+  1461→            <Button
+  1462→              className="bg-gold text-background hover:bg-gold/90"
+  1463→              onClick={nextCard}
+  1464→            >
+  1465→              {fcIdx + 1 < FLASHCARDS.length ? "Nästa kort" : "Klart"}
+  1466→              <ChevronRight className="ml-1 h-4 w-4" />
+  1467→            </Button>
+  1468→          </DialogFooter>
+  1469→        </DialogContent>
+  1470→      </Dialog>
+  1471→    </div>
+  1472→  );
+  1473→}
+  1474→
+  1475→// ============================================================
+  1476→// SUB-COMPONENTS
+  1477→// ============================================================
+  1478→
+  1479→function ConsoleStat({
+  1480→  value,
+  1481→  label,
+  1482→  caption,
+  1483→}: {
+  1484→  value: string;
+  1485→  label: string;
+  1486→  caption: string;
+  1487→}) {
+  1488→  return (
+  1489→    <div className="text-center sm:text-left">
+  1490→      <div className="flex items-center justify-center gap-2 sm:justify-start">
+  1491→        <HonestyTag kind="matt" />
+  1492→      </div>
+  1493→      <p className="mt-2 font-serif text-5xl font-bold leading-none tabular-nums">
+  1494→        {value}
+  1495→      </p>
+  1496→      <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+  1497→        {label}
+  1498→      </p>
+  1499→      <p className="mt-2 text-xs text-muted-foreground leading-relaxed max-w-xs mx-auto sm:mx-0">
+  1500→        {caption}
+  1501→      </p>
+  1502→    </div>
+  1503→  );
+  1504→}
+  1505→
+  1506→function CaseTypeBadge({ type }: { type: CaseType }) {
+  1507→  if (type === "best") {
+  1508→    return (
+  1509→      <Badge className="border-bull/40 bg-bull/10 text-bull">
+  1510→        <Check className="h-3 w-3" /> BÄSTA FALL
+  1511→      </Badge>
+  1512→    );
+  1513→  }
+  1514→  return (
+  1515→    <Badge className="border-bear/40 bg-bear/10 text-bear">
+  1516→      <AlertTriangle className="h-3 w-3" /> VARNINGSFALL
+  1517→    </Badge>
+  1518→  );
+  1519→}
+  1520→
+  1521→function CaseStudiesPanel({
+  1522→  filter,
+  1523→  setFilter,
+  1524→  cases,
+  1525→  counts,
+  1526→  onOpenCase,
+  1527→}: {
+  1528→  filter: CaseFilter;
+  1529→  setFilter: (f: CaseFilter) => void;
+  1530→  cases: CaseStudy[];
+  1531→  counts: { all: number; best: number; warning: number };
+  1532→  onOpenCase: (c: CaseStudy) => void;
+  1533→}) {
+  1534→  return (
+  1535→    <div>
+  1536→      <div className="rounded-lg border border-border bg-card p-5">
+  1537→        <div className="flex items-center gap-2">
+  1538→          <FlaskConical className="h-4 w-4 text-gold" />
+  1539→          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+  1540→            Verkliga fall · Case Studies
+  1541→          </span>
+  1542→        </div>
+  1543→        <p className="mt-2 text-sm text-muted-foreground">
+  1544→          Hur AKM1 fungerar i verkligheten — när indikatorer samverkar rätt
+  1545→          och fel.
+  1546→        </p>
+  1547→        <div className="mt-2 flex flex-wrap items-center gap-2">
+  1548→          <HonestyTag kind="matt" />
+  1549→          <span className="text-xs text-muted-foreground">
+  1550→            Verktyg i konsolen: 8
+  1551→          </span>
+  1552→        </div>
+  1553→      </div>
+  1554→
+  1555→      {/* Filter tabs */}
+  1556→      <div className="mt-6 flex flex-wrap items-center gap-2">
+  1557→        {(
+  1558→          [
+  1559→            { id: "all", label: "ALLA", n: counts.all },
+  1560→            { id: "best", label: "BÄSTA FALL", n: counts.best },
+  1561→            { id: "warning", label: "VARNINGSFALL", n: counts.warning },
+  1562→          ] as { id: CaseFilter; label: string; n: number }[]
+  1563→        ).map((f) => (
+  1564→          <button
+  1565→            key={f.id}
+  1566→            onClick={() => setFilter(f.id)}
+  1567→            className={cn(
+  1568→              "inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all",
+  1569→              filter === f.id
+  1570→                ? "border-gold bg-gold text-background"
+  1571→                : "border-border bg-card text-muted-foreground hover:border-gold/40"
+  1572→            )}
+  1573→          >
+  1574→            {f.label}
+  1575→            <span
+  1576→              className={cn(
+  1577→                "tabular-nums",
+  1578→                filter === f.id
+  1579→                  ? "text-background/80"
+  1580→                  : "text-muted-foreground/80"
+  1581→              )}
+  1582→            >
+  1583→              ({f.n})
+  1584→            </span>
+  1585→          </button>
+  1586→        ))}
+  1587→      </div>
+  1588→
+  1589→      {/* Case grid */}
+  1590→      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  1591→        {cases.map((c, i) => (
+  1592→          <CaseCard key={`${c.ticker}-${i}`} c={c} onOpen={() => onOpenCase(c)} />
+  1593→        ))}
+  1594→      </div>
+  1595→
+  1596→      {cases.length === 0 && (
+  1597→        <p className="mt-8 text-center text-sm text-muted-foreground">
+  1598→          Inga fall i denna kategori.
+  1599→        </p>
+  1600→      )}
+  1601→    </div>
+  1602→  );
+  1603→}
+  1604→
+  1605→function CaseCard({ c, onOpen }: { c: CaseStudy; onOpen: () => void }) {
+  1606→  const isBest = c.type === "best";
+  1607→  const scorePct = (c.score / 95) * 100;
+  1608→  return (
+  1609→    <Card
+  1610→      className={cn(
+  1611→        "group flex flex-col p-5 transition-all hover:shadow-md",
+  1612→        isBest ? "border-bull/25" : "border-bear/25"
+  1613→      )}
+  1614→    >
+  1615→      <div className="flex items-start justify-between gap-2">
+  1616→        <CaseTypeBadge type={c.type} />
+  1617→        {c.illustrative && (
+  1618→          <Badge variant="outline" className="text-[9px] uppercase tracking-wider">
+  1619→            Illustrativt
+  1620→          </Badge>
+  1621→        )}
+  1622→      </div>
+  1623→
+  1624→      <div className="mt-3">
+  1625→        <p className="font-serif text-base font-bold leading-tight">
+  1626→          {c.company}
+  1627→        </p>
+  1628→        <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+  1629→          {c.ticker}
+  1630→        </p>
+  1631→      </div>
+  1632→
+  1633→      <p className="mt-2 text-sm font-medium leading-snug">{c.title}</p>
+  1634→      <p className="mt-2 line-clamp-3 text-xs text-muted-foreground leading-relaxed">
+  1635→        {c.desc}
+  1636→      </p>
+  1637→
+  1638→      {/* Score */}
+  1639→      <div className="mt-4">
+  1640→        <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+  1641→          <span>AKM1</span>
+  1642→          <span
+  1643→            className={cn(
+  1644→              "tabular-nums",
+  1645→              isBest ? "text-bull" : "text-bear"
+  1646→            )}
+  1647→          >
+  1648→            {c.score}/95
+  1649→          </span>
+  1650→        </div>
+  1651→        <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-muted">
+  1652→          <div
+  1653→            className={cn(
+  1654→              "h-full transition-all",
+  1655→              isBest ? "bg-bull" : "bg-bear"
+  1656→            )}
+  1657→            style={{ width: `${scorePct}%` }}
+  1658→          />
+  1659→        </div>
+  1660→      </div>
+  1661→
+  1662→      <Button
+  1663→        variant="outline"
+  1664→        size="sm"
+  1665→        className="mt-4 w-full"
+  1666→        onClick={onOpen}
+  1667→      >
+  1668→        LÄS <ChevronRight className="ml-1 h-3.5 w-3.5" />
+  1669→      </Button>
+  1670→    </Card>
+  1671→  );
+  1672→}
+  1673→
+  1674→function PlannedToolPanel({
+  1675→  label,
+  1676→  desc,
+  1677→}: {
+  1678→  label: string;
+  1679→  desc: string;
+  1680→}) {
+  1681→  return (
+  1682→    <div className="rounded-lg border border-dashed border-gold/40 bg-card p-8 text-center">
+  1683→      <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/10 border border-gold/40 text-gold">
+  1684→        <Lock className="h-5 w-5" />
+  1685→      </div>
+  1686→      <div className="mt-4 flex items-center justify-center gap-2">
+  1687→        <span className="font-serif text-xl font-bold">{label}</span>
+  1688→        <HonestyTag kind="metodmal" />
+  1689→      </div>
+  1690→      <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+  1691→        Under utveckling · METODMÅL
+  1692→      </p>
+  1693→      <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground leading-relaxed">
+  1694→        {desc}
+  1695→      </p>
+  1696→      <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+  1697→        <HonestyTag kind="matt" />
+  1698→        <span className="text-xs text-muted-foreground">
+  1699→          Verktyg i konsolen: 8
+  1700→        </span>
+  1701→      </div>
+  1702→    </div>
+  1703→  );
+  1704→}
+  1705→
+  1706→function CtaCard({
+  1707→  title,
+  1708→  sub,
+  1709→  onClick,
+  1710→}: {
+  1711→  title: string;
+  1712→  sub: string;
+  1713→  onClick: () => void;
+  1714→}) {
+  1715→  return (
+  1716→    <button
+  1717→      onClick={onClick}
+  1718→      className="group flex items-center justify-between rounded-lg border border-border bg-card p-5 text-left transition-all hover:border-gold/50 hover:shadow-md"
+  1719→    >
+  1720→      <span>
+  1721→        <span className="block font-serif text-lg font-bold">{title}</span>
+  1722→        <span className="block text-xs text-muted-foreground">{sub}</span>
+  1723→      </span>
+  1724→      <ChevronRight className="h-5 w-5 text-gold transition-transform group-hover:translate-x-1" />
+  1725→    </button>
+  1726→  );
+  1727→}
+  1728→

@@ -26,6 +26,7 @@ export const FOOTER_NAV = [
   { label: "Webinarier", section: "kurser" as const },
   { label: "Logga in / Registrera", section: "om-oss" as const },
   { label: "Om oss", section: "om-oss" as const },
+  { label: "Admin Dashboard", section: "admin" as const },
 ];
 
 export const LEVELS: { id: Level; label: string; subtitle: string }[] = [

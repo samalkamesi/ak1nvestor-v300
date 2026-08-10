@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useAk1aStore } from "@/lib/ak1a-store";
+import { useAutoLogger } from "@/lib/ak1a/use-activity-logger";
 import { Header } from "@/components/ak1a/header";
 import { Footer } from "@/components/ak1a/footer";
 import { SearchModal, SummaryDrawer, ShareDialog } from "@/components/ak1a/overlays";
@@ -17,6 +18,8 @@ import { UtbildningSection } from "@/components/ak1a/sections/utbildning-section
 
 export default function Page() {
   const { section } = useAk1aStore();
+  // Auto-log client activity for admin dashboard
+  useAutoLogger();
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -717,3 +717,104 @@ Stage Summary:
 - Branding verified: "AK1A Research Lab" + "Sveriges enda institutionella metodik, byggd för privatpersoner" on all pages.
 - Lint clean, server HTTP 200, watchdog running.
 - API rate limit bypassed by using template-based generation instead of LLM calls.
+
+---
+Task ID: 19-a
+Agent: general-purpose
+Task: Build deep portfolio builder with fundamental/technical/wave analysis
+
+Work Log:
+- Läs /home/z/my-project/worklog.md (Tasks 0–18) för full kontext. Projektet är Next.js 16 + TypeScript + Tailwind + shadcn/ui. Labbet har 8 verktyg, varav Case Studies och Farliga komb. är byggda; resterande 6 är metodmål. Prisma-modellerna Portfolio och PortfolioHolding existerar, API-routes /api/portfolio (GET/POST) och /api/portfolio/[id] (GET/PUT/DELETE) existerar, med fält för AKM1-scores, teknisk analys, fundamental analys och Elliott Wave-data.
+- Inspicerade src/components/ak1a/sections/labb-section.tsx: TOOLS-array med 8 flikar, "portfolj" markerad planned: true. Existerande mönster: TabsList med TabsContent per verktyg, PlannedToolPanel som placeholder. Styling: paper-texture wrapper, Eyebrow + HonestyTag + GoldRule från primitives, gold accent (#C5A572-liknande via text-gold), font-serif rubriker, max-w-7xl px-4 sm:px-6 containrar.
+- Inspicerade src/lib/ak1a/data.ts för att bekräfta AKM1_VARIABLER (V01–V20) med kategorier (Tillväxt, Värdering, Lönsamhet, Stabilitet, Moat, Katalysator, Risk, Kapitalstruktur). Bekräftade att V19 tillhör Risk och V20 tillhör Kapitalstruktur — 8 kategorier totalt.
+- Inspicerade src/lib/ak1a/use-activity-logger.ts för session-id-mönstret: localStorage.getItem("ak1a-session-id"), skapa med `s-${Date.now()}-${random}` om saknad.
+- Inspicerade src/app/api/portfolio/route.ts (POST) och /api/portfolio/[id]/route.ts (GET/PUT/DELETE) för att bekräfta body-schema: { sessionId, name, description, cashPosition, holdings[] } där varje holding har ticker, company, sector, weight, entryPrice, akm1Scores (JSON), akm1Total, technicalAnalysis (JSON), technicalScore, fundamentalAnalysis (JSON), fundamentalScore, wavePosition, waveTimeframe, waveConfidence, thesis, risks, catalysts.
+- Skapade src/components/ak1a/portfolio-builder.tsx (~1892 rader). Komponenten innehåller:
+  • KONSTANTER: AKM1_VARS (V01–V20 med id/num/name/category), AKM1_CATEGORIES (8 st), WAVE_POSITIONS (Impuls 1–5 + Korrektion A–E = 10), WAVE_TIMEFRAMES (vecka/månad/kvartal/år), FIB_LEVELS (0/23.6/38.2/50/61.8/78.6/100%), SECTORS (10 branscher), SCENARIOS (bull +25%, base +5%, bear −20% med beskrivningar).
+  • TYPER: TechnicalAnalysis, WaveAnalysis, Holding, SavedPortfolio.
+  • HJÄLPFUNKTIONER: getOrCreateSessionId (localStorage-mönster), emptyAkm1Scores, defaultTechnical, defaultWave, newHolding (med unikt id), calcAkm1Total (sum 0–5 × 20 = max 100), calcAkm1ByCategory (per-kategori sum/max), calcTechnicalScore (trend 25 + rsi 20 + macd 20 + maCross 20 + volume 15 = max 100), scoreColor (bull/gold/bear), scoreBg, fmtPct.
+  • SUB-KOMPONENTER:
+    - ScoreDots: 0–5-poängsväljare med 6 klickbara cirklar (färgkodade: bear 0–2, gold 3, bull 4–5).
+    - FundamentalLayer: visar totalpoäng /100 + samtliga 20 variabler grupperade i 8 kategorier med ScoreDots. Live-beräkning av per-kategori-snitt.
+    - TechnicalLayer: 8 fält i 2-kolumners grid — Trend (Select: stigande/sidled/fallande), RSI (Slider 0–100), MACD (Select: positiv/negativ), MA50 vs MA200 (Select: golden/death/ingen), Volym (Select: ökande/svagande), Candlestick (Input text), Support (Input number), Resistance (Input number). Live teknisk poäng /100.
+    - WaveLayer: Select för vågposition (10 alternativ), Select för tidshorisont (4), Slider för konfidens (0–100%), Select för Fibonacci (7 nivåer). IMPULS/KORREKTION-badge dynamiskt.
+    - HoldingCard: expanderbart kort per innehav. Rubrikrad med #, bolagsnamn, ticker-badge, sektor, vikt, inköpskurs, AKM1-poäng, teknisk poäng, vågposition. Expanderad kropp: grundläggande fält (ticker, bolag, sektor, vikt, inköpskurs) + 3-flikars Tabs (Fundamental/Teknisk/Våg).
+    - AggregatePanel: 3 kort med AKM1-snitt, Fundamental-snitt, Teknisk-snitt (med Progress-bar färgkodad). Vågfördelning-grid över alla 10 positioner med impuls/korrektion-räknare.
+    - ScenarioPanel: 3 klickbara scenario-kort (Bull/Base/Bear). När aktiv: lista med varje innehavs baseRet (multiplikator × vågposition-förstärkning) och weightedRet (viktad mot portföljens totalvikt). Summerad portfölj-avkastning med färgkodning (bull/bear).
+    - LoadPortfolioMenu: dropdown med sparade portföljer (hämtas via GET /api/portfolio?sessionId=xxx). Varje post visar namn, datum, antal innehav, kassaposition.
+  • HUVUDKOMPONENT PortfolioBuilder: state för name, description, cashPosition (slider 0–100%), holdings (max 15), expandedId, activeScenario, savedPortfolios, saving, toast. useEffect för session-id och toast auto-dismiss. Handlers: patchHolding, removeHolding, addHolding, handleSave (POST /api/portfolio med full body), refreshSaved, handleLoad (parsar JSON-strängar från DB och återskapar state), handleReset. Renderar: rubrik med Eyebrow + HonestyTag, portfölj-metadata-kort (namn/beskrivning/kassa-slider + vikt-validering med AlertTriangle), aggregerad översikt, innehavslista med HoldingCard, scenario-panel, metodnot-footer.
+- Modifierade src/components/ak1a/sections/labb-section.tsx:
+  1. La till import: `import { PortfolioBuilder } from "@/components/ak1a/portfolio-builder";`
+  2. Ändrade "portfolj"-verktyget från `planned: true` till `planned: false` i TOOLS-arrayen.
+  3. La till ny TabsContent `<TabsContent value="portfolj" className="mt-6"><PortfolioBuilder /></TabsContent>` mellan farliga-komb och placeholder-listan.
+  4. Uppdaterade copy från "Endast Case Studies är fullt utbyggt idag" till "Tre verktyg är fullt utbyggda idag — Case Studies, Farliga komb. och Portfölj."
+- Körde `bun run lint`: initialt 1 varning (oanvänd eslint-disable-directive på grund av att `react-hooks/exhaustive-deps` är avstängt i projektets eslint-config). Tog bort direktivet — lint nu rent (0 fel, 0 varningar).
+- Körde `bunx tsc --noEmit`: hittade 1 fel i min fil — `Wave` finns inte som export i lucide-react (felstavning). Bytte till `Waves` (4 användningsställen + import). Tsc nu rent för min fil (övriga fel är pre-existing i andra filer som src/features/* och examples/*).
+- Verifierade API:et svarar: `curl http://localhost:3000/api/portfolio?sessionId=test-19a-verify` → `{"portfolios":[]}` (HTTP 200). Bekräftade att session-id-mönstret fungerar.
+- Verifierade att `paper-texture`, `text-gold`, `text-bull`, `text-bear`, `font-serif`, `bg-card`, `border-border` alla är etablerade tokens i projektet (src/app/globals.css).
+
+Stage Summary:
+- Ny fil skapad: src/components/ak1a/portfolio-builder.tsx (~1892 rader, "use client", fullt self-contained med egen state och useEffect). Innehåller tre analyslager per innehav:
+  1. Fundamental (AKM1 20 variabler V01–V20 på 0–5-skala, total /100, per-kategori-breakdowns över 8 kategorier: Tillväxt/Värdering/Lönsamhet/Stabilitet/Moat/Katalysator/Risk/Kapitalstruktur).
+  2. Teknisk (trend, RSI 0–100, MACD, MA50/MA200-kors, volym, support/resistance, candlestick-mönster; teknisk poäng 0–100 beräknas live).
+  3. Elliott Wave (AK1TS): vågposition (10 alternativ Impuls 1–5 + Korrektion A–E), tidshorisont (vecka/månad/kvartal/år), konfidens-slider 0–100%, Fibonacci-retracement (7 nivåer).
+- Portfölj-nivå-funktioner: namn + beskrivning, kassaposition-slider (0–100%), add/remove holdings (max 15), per-holding ticker/company/sector/weight/entry-price, aggregerade poäng (AKM1-snitt, fundamental-snitt, teknisk-snitt, vågfördelning över 10 positioner med impuls/korrektion-räknare).
+- Scenario-analys: 3 klickbara kort (Bull +25% / Base +5% / Bear −20%) som justerar varje innehavs projicerade avkastning med vågpositions-förstärkning (impuls förstärks i bull, korrektion i bear). Live summerad portfölj-avkastning med färgkodning.
+- Save/Load: "Spara portfölj"-knapp POSTar till /api/portfolio med full body (sessionId från localStorage, alla holdings med AKM1/teknisk/wave-data). "Ladda portfölj"-dropdown hämtar GET /api/portfolio?sessionId=xxx och låter användare välja sparad portfölj — parsar JSON-strängar (akm1Scores, technicalAnalysis) och återskapar state.
+- UI: använder shadcn/ui (Card, Button, Badge, Tabs, Select, Slider, Input, Textarea, Progress, Separator) + AK1A-styling (paper-texture, text-gold, font-serif, Eyebrow, HonestyTag, GoldRule från primitives) + lucide-react-ikoner (Wallet, Plus, X, Save, RefreshCw, TrendingUp/Down, BarChart3, Calculator, Waves, Layers, Target, AlertTriangle, CheckCircle2, Circle, ChevronDown/Right, PieChart, Activity, CircleDollarSign, Sparkles). Responsiv: grid breakpoints sm:/lg:, mobile-first.
+- All text på svenska med institutionell/editorial ton. Metodnot-footer belyser reproducerbarhet.
+- Integration i labb-section.tsx: "portfolj"-fliken är nu `planned: false` och renderar <PortfolioBuilder /> istället för PlannedToolPanel. Copy uppdaterad till "Tre verktyg är fullt utbyggda idag — Case Studies, Farliga komb. och Portfölj."
+- Lint rent (`bun run lint` exit 0, 0 fel, 0 varningar). TypeScript-rent för båda modifierade filerna (inga fel introducerade i portfolio-builder.tsx eller labb-section.tsx).
+- API verifierat: /api/portfolio svarar HTTP 200 med `{"portfolios":[]}`.
+
+---
+Task ID: 19
+Agent: main (Z.ai Code)
+Task: Build deep portfolio builder, admin dashboard with logging, deep AI-organ consultation.
+
+Work Log:
+- Extended Prisma schema with 5 new models: UserActivity, Portfolio, PortfolioHolding, AnalysisSession, OrganConsultation, SystemEvent. Pushed to DB successfully.
+- Built 4 new API routes:
+  • POST/GET /api/admin/activity — log & fetch klientaktivitet
+  • GET /api/admin/stats — dashboard statistics (totals, breakdowns, recent)
+  • POST/GET /api/portfolio + GET/PUT/DELETE /api/portfolio/[id] — full CRUD for portfolios
+  • POST/GET /api/styrelse/djup — deep AI-organ consultation with LLM integration + DB logging
+- Built useActivityLogger hook (src/lib/ak1a/use-activity-logger.ts) — generates anonymous session-id, logs section_visits automatically via useAutoLogger.
+- Integrated useAutoLogger in src/app/page.tsx — all klientnavigation loggas to DB.
+- Built Deep Portfolio Builder (src/components/ak1a/portfolio-builder.tsx, 1892 lines) via subagent Task 19-a:
+  • Layer 1: Fundamental (AKM1 20 variabler, V01-V20 scored 0-5, total /100, 8 category breakdowns)
+  • Layer 2: Technical (trend, RSI slider, MACD, MA50/MA200 cross, volume, support/resistance, candlestick) — technical score 0-100
+  • Layer 3: Elliott Wave (10 wave positions, timeframe, confidence slider, Fibonacci retracement)
+  • Portfolio-level: name, cash slider, max 15 holdings, aggregate scores, Bull/Base/Bear scenarios, Save/Load via API
+- Rebuilt admin dashboard (src/app/admin/page.tsx, ~450 lines) with:
+  • KPI cards (activities, sessions, portfolios, consultations, critical events)
+  • 5 tabs: Översikt, Aktivitetslogg, Klientportföljer, Systemevents, Statistik
+  • Auto-refresh every 10s
+  • Filter by action and section
+  • Real-time activity stream
+- Built Deep Consultation Panel (src/components/ak1a/deep-consultation.tsx) with:
+  • 6 pre-defined deep questions for different organs
+  • Organ selector (Σ α Δ Ω Φ Θ Μ Ψ)
+  • Depth selector (standard/deep/mega)
+  • Question textarea
+  • Response display with confidence badge
+  • History panel
+  • Graceful rate-limit handling (logs question even if API fails)
+- Integrated DeepConsultationPanel into StyrelseSection.
+- Added "Admin Dashboard" link to FOOTER_NAV and header MER menu.
+- Lint clean (exit 0). All type errors in our files resolved.
+- Agent Browser verified:
+  • /admin renders login → dashboard with 4 activities logged, 3 unique sessions
+  • /labb → Portfölj tab renders full builder with 3 analysis layers
+  • /styrelse → Deep consultation panel renders with 6 suggested questions
+  • Submitted deep question to α-organet — rate-limited gracefully, question saved to DB
+
+Stage Summary:
+- Deep Portfolio Builder: klienter kan bygga fiktiva portföljer med 3 analyslager (AKM1 fundamental + teknisk + Elliott Wave), spara till DB, ladda senare. Max 15 innehav, scenario-analys (Bull/Base/Bear).
+- Admin Dashboard: realtidsöversikt över klientaktivitet, portföljer, systemevents. Auto-refresh 10s. Filterbara loggar.
+- Klient-loggning: alla section_visits loggas automatiskt till DB via useAutoLogger. Anonym session-id från localStorage.
+- Djup AI-organ-konsultation: ställ strategiska frågor direkt till specifikt organ. 6 föreslagna djupa frågor om expansion, risk, integration, nya kurser, metodik, beteende. Frågor sparas även vid API-fel.
+- API:er: 4 nya routes (admin/activity, admin/stats, portfolio CRUD, styrelse/djup).
+- Databas: 5 nya tabeller (UserActivity, Portfolio, PortfolioHolding, AnalysisSession, OrganConsultation, SystemEvent).
+- Lint clean, server HTTP 200, alla API:er verifierade med curl.
+- API rate-limit fortfarande aktiv — djupa frågor loggas men besvaras när API återhämtar sig.

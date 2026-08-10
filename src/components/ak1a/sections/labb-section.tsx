@@ -49,6 +49,7 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { CombinationsBrowser } from "@/components/ak1a/cases-combinations-browsers";
+import { PortfolioBuilder } from "@/components/ak1a/portfolio-builder";
 
 // ============================================================
 // TYPES
@@ -381,7 +382,7 @@ const TOOLS: {
   {
     id: "portfolj",
     label: "Portfölj",
-    planned: true,
+    planned: false,
     desc: "Bygg en fiktiv portfölj och se hur din genomsnittliga AKM1-poäng fördelar sig över innehaven — moat, risk och katalysator i en vy.",
   },
   {
@@ -722,10 +723,10 @@ export function LabbSection() {
             Åtta verktyg — ett fönster mot marknaden.
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Endast Case Studies är fullt utbyggt idag. De övriga sju är
-            metodmål — vi visar dem ärligt som{" "}
-            <HonestyTag kind="metodmal" /> istället för att låtsas att de
-            redan finns.
+            Tre verktyg är fullt utbyggda idag — Case Studies, Farliga
+            komb. och Portfölj. De övriga fem är metodmål — vi visar dem
+            ärligt som <HonestyTag kind="metodmal" /> istället för att
+            låtsas att de redan finns.
           </p>
 
           <Tabs defaultValue="case-studies" className="mt-8">
@@ -757,6 +758,11 @@ export function LabbSection() {
             {/* Farliga komb. — now a real combinations browser from DB */}
             <TabsContent value="farliga-komb" className="mt-6">
               <CombinationsBrowser />
+            </TabsContent>
+
+            {/* Portfölj — djup portföljbyggare med AKM1 + teknisk + AK1TS */}
+            <TabsContent value="portfolj" className="mt-6">
+              <PortfolioBuilder />
             </TabsContent>
 
             {/* Placeholder panels for the 6 remaining planned tools */}

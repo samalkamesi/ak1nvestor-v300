@@ -1,0 +1,1659 @@
+     1→#!/usr/bin/env python3
+     2→# -*- coding: utf-8 -*-
+     3→"""
+     4→fill-pc-courses.py
+     5→
+     6→Generate tailored Swedish content for 10 "Praktiska Case" (PC) courses in
+     7→/home/z/my-project/public/deep-courses.json. For each PC slug the script
+     8→replaces the why, history, lynchSection, grahamSection, ak1Section and
+     9→chapter bodies (keeping existing num/minutes/title per chapter).
+    10→
+    11→After completion each slug is appended to /home/z/my-project/.gen-progress.json
+    12→under the "done" array.
+    13→"""
+    14→
+    15→import json
+    16→import os
+    17→from copy import deepcopy
+    18→
+    19→# ---------------------------------------------------------------------------
+    20→# Paths
+    21→# ---------------------------------------------------------------------------
+    22→COURSES_PATH = "/home/z/my-project/public/deep-courses.json"
+    23→PROGRESS_PATH = "/home/z/my-project/.gen-progress.json"
+    24→
+    25→PC_SLUGS = [
+    26→    "pc-11-case-boliden",
+    27→    "pc-12-case-skf",
+    28→    "pc-13-case-ssab",
+    29→    "pc-14-case-electrolux",
+    30→    "pc-15-case-kambi",
+    31→    "pc-16-case-beijer-ref",
+    32→    "pc-17-case-sandvik",
+    33→    "pc-18-case-oresund",
+    34→    "pc-19-case-hoganas",
+    35→    "pc-20-case-essity",
+    36→]
+    37→
+    38→# Forbidden phrases — guard against generic boilerplate
+    39→FORBIDDEN = [
+    40→    "Detta är en fundamentalsk färdighet",
+    41→    "Utan förståelse för detta ämne",
+    42→    "Vi börjar med grunderna",
+    43→    "ingår i kategorin",
+    44→]
+    45→
+    46→
+    47→def check_forbidden(text, slug):
+    48→    for phrase in FORBIDDEN:
+    49→        if phrase in text:
+    50→            raise ValueError(
+    51→                f"Forbidden phrase '{phrase}' found in content for {slug}"
+    52→            )
+    53→
+    54→
+    55→# ---------------------------------------------------------------------------
+    56→# CONTENT — tailored Swedish content per course
+    57→# ---------------------------------------------------------------------------
+    58→# Each entry has:
+    59→#   why            : string (2-3 sentences)
+    60→#   history        : {origin, evolution, modern} — each 3 sentences
+    61→#   lynchSection   : 2 sentences
+    62→#   grahamSection  : 2 sentences
+    63→#   ak1Section     : 2 sentences
+    64→#   chapters       : list of 6 dicts each with
+    65→#                    intro         : 1-2 sentences
+    66→#                    blocks        : [text, insight, definition, text]
+    67→# ---------------------------------------------------------------------------
+    68→
+    69→CONTENT = {}
+    70→
+    71→# ============================================================================
+    72→# 1. pc-11-case-boliden — Boliden
+    73→# ============================================================================
+    74→CONTENT["pc-11-case-boliden"] = {
+    75→    "why": (
+    76→        "Boliden är Skandinaviens största integrerade gruv- och smältverkskoncern och "
+    77→        "en av få svensklistade råvarubolag med direkt exponering mot koppar-, zink- "
+    78→        "och nickelpriserna. Aktien är noterad på Stockholmsbörsen sedan 1929 och "
+    79→        "ingår i OMXS30, vilket gör bolaget till en central råvarupost för svenska "
+    80→        "retail-investerare som vill förstå cyklisk intjäningskraft och "
+    81→        "vertikalintegreringens värde."
+    82→    ),
+    83→    "history": {
+    84→        "origin": (
+    85→            "Boliden grundades 1925 efter att guldfyndigheter upptäckts i Skelleftefältet "
+    86→            "av prospektorn Edvin Lindqvist och industriidén formades av affärsmannen "
+    87→            "Oscar Wehtje. Den första gruvan i Boliden utanför Skellefteå blev en av "
+    88→            "Europas rikaste guldfyndigheter under 1930-talet, och redan 1929 noterades "
+    89→            "bolaget på Stockholmsbörsen. Rönnskärsverken i Skelleftehamn uppfördes "
+    90→            "1930 för att smälta den komplexa sulfidmalmen och lade grunden till "
+    91→            "Bolidens dubbeltroll som både gruvarbetare och smältverk."
+    92→        ),
+    93→        "evolution": (
+    94→            "Efter kriget växte Boliden från svensk guldproducent till nordisk "
+    95→            "basmetalljätte genom förvärv av Garpenbergsgruvorna 1963 och en serie "
+    96→            "prospekteringsprojekt i Irland, Saudiarabien och Kanada under 1970-talet. "
+    97→            "Internationaliseringen accentuerades 1997 när det finländska smältverket "
+    98→            "Outokumpu Copper förvärvades och 2001 när kanadensiska Tara Mines i "
+    99→            "Irland lades till portföljen. 2003 förvärvades även Outokumpu Zinc i "
+   100→            "Kokkola, vilket gav bolaget en transatlantisk produktionsbas i tre "
+   101→            "länder och fyra smältverk."
+   102→        ),
+   103→        "modern": (
+   104→            "Idag leds Boliden av vd Mikael Staffas och omfattar sex gruvor i Sverige, "
+   105→            "Finland och Irland samt tre smältverk — Rönnskär, Harjavalta och Odda — "
+   106→            "med en omsättning kring 65 miljarder kronor. Strategin är inriktad på "
+   107→            "elektifieringens råvaror: koppar för kablarna och nickel för batterierna, "
+   108→            "vilket syns i 800 miljoner euro-investeringen i utbyggnaden av Odda-"
+   109→            "zinksmältverket i Norge. Rönnskär är dessutom en av få smältverk i "
+   110→            "världen som tar emot elektronikskrot som råvara och utvinner guld, silver "
+   111→            "och koppar ur kretskort, vilket gör Boliden till en strategisk länk i "
+   112→            "europeisk metallåtervinning."
+   113→        ),
+   114→    },
+   115→    "lynchSection": (
+   116→        "Peter Lynch skulle klassa Boliden som en renodlad cykelaktie där köptillfället "
+   117→        "styrs av var i konjunkturcykeln man befinner sig snarare än av bolagets "
+   118→        "långsiktiga kvalitet. Han skulle peka på att intjäningen kan svänga 3–4 gånger "
+   119→        "mellan botten och topp på en cykel och att investeraren måste förstå metallpriser "
+   120→        "och kapacitetsutnyttjande lika väl som ledningens disciplin."
+   121→    ),
+   122→    "grahamSection": (
+   123→        "Benjamin Graham skulle granska Bolidens substansvärde genom att nedjustera "
+   124→        "gruvorna till en konservativ metallprisskattning och kräva en betydande "
+   125→        "säkerhetsmarginal mot cykelbottnen. Han skulle särskilt varna för att bokfört "
+   126→        "värde på gruvtillgångar kan överdriva verkligt värde om produktionskostnaderna "
+   127→        "stiger eller om miljöåtaganden — som Rönnskärs sanering — underskattas."
+   128→    ),
+   129→    "ak1Section": (
+   130→        "AKM1-metoden bryter ner Boliden i produktionsvolymer per metall, "
+   131→        "raffinaderimarginaler och cykeljusterat kassaflöde snarare än rapporterat "
+   132→        "EBIT, vilket synliggör vilken del av intjäningen som är strukturell och vilken "
+   133→        "som är konjunkturpremie. Genom att spåra V03 (intäktsdiversifiering per metall) "
+   134→        "och V14 (kassaflödeskvalitet) kan investeraren skilja en cykeltopp från en "
+   135→        "varaktig värdeskapande vändning."
+   136→    ),
+   137→    "chapters": [
+   138→        {
+   139→            "intro": (
+   140→                "Boliden är Skandinaviens största integrerade gruv- och smältverkskoncern, "
+   141→                "och en grundlig förståelse av bolaget kräver insikt i hur gruvdrift, "
+   142→                "smältmetallurgi och metallpriser samspelar."
+   143→            ),
+   144→            "blocks": [
+   145→                {
+   146→                    "type": "text",
+   147→                    "content": (
+   148→                        "Bolidens verksamhet är organiserad i två huvudsegment — Gruvor "
+   149→                        "(Mineral) och Smältverk (Smelting) — där sex gruvor i Sverige "
+   150→                        "(Aitik, Bolidenområdet, Garpenberg), Finland (Kevitsa, Kylylahti) "
+   151→                        "och Irland (Tara) förser tre smältverk med malm. Aitik utanför "
+   152→                        "Gällivare är Europas största koppargruva och producerar årligen "
+   153→                        "över 36 miljoner ton malm, medan Rönnskär i Skelleftehamn är en "
+   154→                        "av få smältverk i världen som kan ta emot elektronikskrot som "
+   155→                        "råvara och därmed utgör en strategisk länk i europeisk "
+   156→                        "metallåtervinning. Mellan dessa poler — malmbrytning och "
+   157→                        "metallraffinering — skapar Boliden en värdekedja som är ovanligt "
+   158→                        "vertikalintegrerad för en europeisk gruvarbetare.\n\n"
+   159→                        "Cyklisk intjäningskraft är en strukturell egenskap hos bolaget, "
+   160→                        "där EBITDA-marginalen kan svänga mellan 10 och 35 procent på "
+   161→                        "fyra år. Tre metaller svarar för över 80 procent av intäkterna: "
+   162→                        "koppar, zink och nickel — där koppar är marginalmotorn, zink "
+   163→                        "volymen och nickel tillväxtchansen. Substansvärdet förändras "
+   164→                        "därför snabbt med både produktionsvolym och spotpriser, och den "
+   165→                        "som vill förstå bolaget måste kombinera metallprognos, "
+   166→                        "metallmarknadsutveckling och kapacitetsutnyttjande i en gemensam "
+   167→                        "bild.\n\n"
+   168→                        "Bolidens placering i svenska investerares portföljer är ofta som "
+   169→                        "råvaruexponering: bolaget är den enda stora nordiska gruvarbetaren "
+   170→                        "med bred flytande aktie och direkt influence från både svenska och "
+   171→                        "internationella metallpriser. Aktien ingår i OMXS30 och därmed i "
+   172→                        "många indexfonder, vilket ger bolaget en makro-position i "
+   173→                        "svenskarnas pensionssparande som få andra svensklistade bolag har."
+   174→                    ),
+   175→                },
+   176→                {
+   177→                    "type": "insight",
+   178→                    "content": (
+   179→                        "Bolidens unika värde ligger i vertikalintegreringen mellan gruvor "
+   180→                        "och smältverk, som skapar en naturlig hedge mot "
+   181→                        "råvaruprisfluktuationer men också koncentrerar riskerna till tre "
+   182→                        "fysiska anläggningar."
+   183→                    ),
+   184→                },
+   185→                {
+   186→                    "type": "definition",
+   187→                    "content": (
+   188→                        "Vertikalintegrering i gruvdrift innebär att ett bolag kontrollerar "
+   189→                        "hela kedjan från malmbrytning till färdig metall, vilket kan jämna "
+   190→                        "ut kassaflöden över tid men binder kapital i "
+   191→                        "produktionsanläggningar."
+   192→                    ),
+   193→                },
+   194→                {
+   195→                    "type": "text",
+   196→                    "content": (
+   197→                        "Bolidens kassaflödesprofil har historiskt varit mer stabil än vad "
+   198→                        "cykelvolatilitet i intäkterna antyder, eftersom smältverken kan "
+   199→                        "köpa in tredjepartsråvaror och därmed upprätthålla produktion "
+   200→                        "även när egna gruvor har lägre volym. Detta gör bolaget till en "
+   201→                        "intressant “compounder” i råvarusegmentet — en sällsynt "
+   202→                        "kombination där skalfördelar och teknisk integration ger bättre "
+   203→                        "avkastning på sysselsatt kapital än rena gruvbolag. Samtidigt är "
+   204→                        "kapitalbehovet stort: Aitik-utbyggnaden 2010 kostade 6 miljarder "
+   205→                        "kronor och Odda-utbyggnaden 2024 beräknas kosta 800 miljoner euro, "
+   206→                        "vilket illustrerar att cykelintjäningskraften måste fördelas över "
+   207→                        "långsiktiga investeringsprogram.\n\n"
+   208→                        "Ett viktigt uttryck för Bolidens strategiska position är att "
+   209→                        "bolaget sedan 2019 har levererat nickel och kobolt till "
+   210→                        "batteritillverkare inom Europeiska unionens strategiska "
+   211→                        "råvaru-projekt. Därmed är bolaget inte enbart exponerat mot "
+   212→                        "traditionell byggnads- och infrastrukturcykeln utan även mot "
+   213→                        "elektrifieringen, vilket breddar och delvis förändrar "
+   214→                        "cykelprofilen. För investeraren innebär detta att den historiska "
+   215→                        "korrelationen mot kinesisk industriproduktion gradvis kompletteras "
+   216→                        "med en ny länk mot europeisk fordonsindustri."
+   217→                    ),
+   218→                },
+   219→            ],
+   220→        },
+   221→        {
+   222→            "intro": (
+   223→                "Att analysera Boliden i praktiken kräver en kombination av "
+   224→                "metallprismodeller, produktionsvolymprognoser och kassaflödesdiskontering "
+   225→                "som få andra svenska bolag kräver."
+   226→            ),
+   227→            "blocks": [
+   228→                {
+   229→                    "type": "text",
+   230→                    "content": (
+   231→                        "Praktisk Boliden-analys börjar med att bygga en "
+   232→                        "produktionsprognos för varje gruva baserad på Bolidens "
+   233→                        "kvartalsvisa produktionsrapporter och de guidade volymmål som "
+   234→                        "ledningen publicerar vid Capital Markets Day. Varje gruva har "
+   235→                        "unika kostnadskurvor — Aitik har låga kostnader tack vare "
+   236→                        "skalfördelar, Tara i Irland har höga kostnader och har stängts "
+   237→                        "2023–2024, och Kevitsa i Finland har god marginal på "
+   238→                        "nickel-koppar. Genom att multiplicera volym med antaget metallpris "
+   239→                        "och dra av C1-kostnad får investeraren en cash-cost-baserad "
+   240→                        "bruttovinst per metall som kan summeras till en segment-Ebit.\n\n"
+   241→                        "Nästa steg är att modellera smältverksmarginaler, som är mindre "
+   242→                        "cykliska och mer beroende av behandlingsavgifter (TC/RC) för "
+   243→                        "koncentrat. Rönnskär har historiskt haft en EBITDA-marginal på "
+   244→                        "15–20 procent tack vare elektronikskrot, Harjavalta är mer "
+   245→                        "känsligt för nickelpriset och Odda är under utbyggnad för att "
+   246→                        "fördubbla kapaciteten. Slutligen justeras resultaten för "
+   247→                        "cykelgenomsnitt över 7–10 år — inte bara det senaste året — annars "
+   248→                        "blir värderingen missvisande cyklisk.\n\n"
+   249→                        "Det är också kritiskt att separera valutaeffekter (USD-prisade "
+   250→                        "metaller, EUR-kostnader och SEK-rapportering) från organiska "
+   251→                        "volym- och prisrörelser. Boliden rapporterar i SEK men handlar "
+   252→                        "sina produkter i USD, vilket innebär att en svag krona historiskt "
+   253→                        "har översatt till högre SEK-intäkter utan att för den skull öka "
+   254→                        "bolagets konkurrenskraft."
+   255→                    ),
+   256→                },
+   257→                {
+   258→                    "type": "insight",
+   259→                    "content": (
+   260→                        "Boliden-analys handlar mindre om vinstmultipel och mer om "
+   261→                        "volym × pris × kostnad per anläggning — en bottom-up-metodik som "
+   262→                        "få andra svenska börsbolag kräver i samma utsträckning."
+   263→                    ),
+   264→                },
+   265→                {
+   266→                    "type": "definition",
+   267→                    "content": (
+   268→                        "C1-kostnad (cash cost) i gruvdrift är summan av direkta "
+   269→                        "produktionskostnader per ton malm eller pund metall, exklusive "
+   270→                        "kapitalkostnader, avskrivningar och finansiella kostnader."
+   271→                    ),
+   272→                },
+   273→                {
+   274→                    "type": "text",
+   275→                    "content": (
+   276→                        "En praktisk check-modell är att beräkna Bolidens kassaflöde per "
+   277→                        "ton malm och jämföra över tid för att identifiera om "
+   278→                        "lönsamhetens ökning beror på pris, volym eller kostnadseffektivitet. "
+   279→                        "Om volymen sjunker samtidigt som kassaflödet ökar beror det "
+   280→                        "troligen på metallpriser, vilket indikerar en mer flyktig "
+   281→                        "vinstökning. Om kostnaderna minskar samtidigt som volymen är "
+   282→                        "stabil handlar det om operationell effektivitet, vilket är en mer "
+   283→                        "varaktig värdeskapande källa.\n\n"
+   284→                        "Investor-relaterad information i Bolidens kvartalsrapporter är "
+   285→                        "ovanligt transparent jämfört med internationella gruvkollegor: "
+   286→                        "varje gruva presenteras med volym, kostnad och EBIT, vilket "
+   287→                        "möjliggör en kvalificerad jämförelse mellan dotterbolag. Detta "
+   288→                        "gör Boliden till ett av de mest analyserbara svensklistade "
+   289→                        "råvarubolagen och en utmärkt lärobok i bottom-up-modellering för "
+   290→                        "retail-investerare som vill förstå hur man bryter ner en koncern "
+   291→                        "till sina fysiska beståndsdelar."
+   292→                    ),
+   293→                },
+   294→            ],
+   295→        },
+   296→        {
+   297→            "intro": (
+   298→                "Boliden-analys innehåller flera frekventa fallgropar som kan leda till "
+   299→                "felaktiga slutsatser om bolagets värde och riskprofil."
+   300→            ),
+   301→            "blocks": [
+   302→                {
+   303→                    "type": "text",
+   304→                    "content": (
+   305→                        "Den vanligaste fällan är att extrapolera toppcykel-EBITDA och "
+   306→                        "köpa bolaget till en låg toppcykelmultipel som verkar attraktiv "
+   307→                        "men egentligen döljer en snabb vinstkollaps. Mellan 2007 och 2009 "
+   308→                        "föll Bolidens rörelseresultat med 80 procent på grund av "
+   309→                        "kombinationen av fallande kopparpriser och finansiell kris, "
+   310→                        "trots att bolaget var “billigt” på toppmultipel. Investera alltid "
+   311→                        "med en normaliserad intjäningsbild baserad på genomsnitt över "
+   312→                        "7–10 års cykel snarare än det senaste rullande året.\n\n"
+   313→                        "En annan vanlig fälla är att förbise skillnaden mellan bekräftade "
+   314→                        "reserver och resurser. Bolidens reserver räcker för cirka 25–30 "
+   315→                        "års produktion, men det inkluderar endast de fyndigheter som kan "
+   316→                        "brytas lönsamt vid antagna framtida metallpriser. Om priserna "
+   317→                        "faller kan reserver skrivas ner dramatiskt, vilket i värsta fall "
+   318→                        "leder till nedskrivningar på gruvanläggningar — ett fenomen som "
+   319→                        "drabbade bolaget 2015 när zinkpriset rasade.\n\n"
+   320→                        "Tredje fällan är att förbise miljöåtaganden och "
+   321→                        "saneringskostnader, som kan uppgå till flera miljarder kronor per "
+   322→                        "anläggning över en 30-årsperiod. Rönnskär och Aitik har båda "
+   323→                        "betydande framtida åtaganden som bokförs som långfristiga skulder "
+   324→                        "men som kan accelerera om nya miljökrav införs."
+   325→                    ),
+   326→                },
+   327→                {
+   328→                    "type": "insight",
+   329→                    "content": (
+   330→                        "Tre klassiska Boliden-fällor är toppcykelextrapolering, "
+   331→                        "missförstånd om reserver vs resurser och underskattning av "
+   332→                        "miljöåtaganden — alla tre har historiskt kostat investerare stora "
+   333→                        "belopp."
+   334→                    ),
+   335→                },
+   336→                {
+   337→                    "type": "definition",
+   338→                    "content": (
+   339→                        "Cykelextrapolering är felet att projicera en aktuell hög eller låg "
+   340→                        "vinstnivå framåt i tiden utan att beakta genomsnittet över en hel "
+   341→                        "konjunkturcykel."
+   342→                    ),
+   343→                },
+   344→                {
+   345→                    "type": "text",
+   346→                    "content": (
+   347→                        "En subtilare fälla är att förväxla bolagets rapporterade EBITA med "
+   348→                        "kassaflöde från drift, eftersom stora avskrivningar på gruvor och "
+   349→                        "smältverk utgör en betydande icke-kostnad. Bolidens kassaflöde är "
+   350→                        "typiskt 1,5–2 gånger EBITA, vilket gör att investerare som "
+   351→                        "fokuserar på vinstmultipel underskattar kassaflödesvärderingen. "
+   352→                        "Detta är särskilt viktigt vid bud-värderingar där "
+   353→                        "kassaflödesdiskontering är standardmetod.\n\n"
+   354→                        "Slutligen är politisk risk i Irland (Tara Mines), Finland "
+   355→                        "(Kevitsa) och Norge (Odda) ofta underskattad. Tara Mines stängdes "
+   356→                        "2023 på grund av låga zinkpriser och höga energikostnader, vilket "
+   357→                        "visar hur enskilda anläggningar kan förlora pengar även när "
+   358→                        "koncernen är lönsam. Investera aldrig i Boliden utan att först "
+   359→                        "förstå vilka anläggningar som är kritiska för intjäningen och "
+   360→                        "vilka som kan stängas vid cykelbotten."
+   361→                    ),
+   362→                },
+   363→            ],
+   364→        },
+   365→        {
+   366→            "intro": (
+   367→                "AKM1 1.1-ramverket ger en strukturerad metodik för att bryta ner Boliden "
+   368→                "i 20 kvantitativa och kvalitativa variabler som var och en belyser en "
+   369→                "specifik aspekt av bolagets hälsa."
+   370→            ),
+   371→            "blocks": [
+   372→                {
+   373→                    "type": "text",
+   374→                    "content": (
+   375→                        "V01 (försäljningstillväxt) appliceras på Boliden genom att "
+   376→                        "separera volymtillväxt (nya gruvor, utbyggnad av Odda) från "
+   377→                        "pristillväxt (metallpriser) och valutaeffekter (USD vs SEK). "
+   378→                        "Bolagets underliggande organiska volymtillväxt är typiskt 2–4 "
+   379→                        "procent per år, medan rapporterad försäljningstillväxt kan svänga "
+   380→                        "mellan −10 och +30 procent på grund av pris- och valutaeffekter. "
+   381→                        "AKM1-metoden premierar volymtillväxt som mer varaktig än "
+   382→                        "pristillväxt, vilket är särskilt viktigt för cykliska "
+   383→                        "råvarubolag.\n\n"
+   384→                        "V03 (intäktsdiversifiering) är central för Boliden eftersom "
+   385→                        "bolaget har både produktdiversifiering (koppar, zink, nickel, "
+   386→                        "bly, guld, silver) och geografisk diversifiering (Sverige ca 50 "
+   387→                        "procent, Finland 25 procent, Irland och Norge 25 procent). Hög "
+   388→                        "diversifiering motverkar risken för enskilda anläggningar och "
+   389→                        "jämnar ut cykeln — men sänker också uppsidan vid metallpristoppar "
+   390→                        "eftersom bolaget saknar renodlad exponering mot en enskild metall.\n\n"
+   391→                        "V14 (kassaflödeskvalitet) är avgörande för Boliden eftersom "
+   392→                        "koncernens kassaflöde är mindre cykliskt än EBITDA. AKM1-metoden "
+   393→                        "beräknar kassaflödeskapacitet som ett genomsnitt över 7–10 år och "
+   394→                        "använder detta som grund för värderingen snarare än punktvärden, "
+   395→                        "vilket reducerar risken för att cykeltoppar överdrivs."
+   396→                    ),
+   397→                },
+   398→                {
+   399→                    "type": "insight",
+   400→                    "content": (
+   401→                        "AKM1 gör Boliden-analys till en disciplinerad övning i att "
+   402→                        "separera strukturell från cyklisk intjäningskraft, där de 20 "
+   403→                        "variablerna fungerar som checklista för att undvika "
+   404→                        "toppcykel-fällor."
+   405→                    ),
+   406→                },
+   407→                {
+   408→                    "type": "definition",
+   409→                    "content": (
+   410→                        "AKM1 1.1 är en 20-variablers analysmodell som täcker "
+   411→                        "försäljningstillväxt, vinstkvalitet, balansräkningshälsa, "
+   412→                        "kapitalallokering och cykelrisk i en integrerad "
+   413→                        "värderingsprocess."
+   414→                    ),
+   415→                },
+   416→                {
+   417→                    "type": "text",
+   418→                    "content": (
+   419→                        "V16 (kapacitetsutnyttjande) är en unik variabel för Boliden som "
+   420→                        "mäter hur väl bolagets smältverk och gruvor utnyttjas, vilket är "
+   421→                        "en direkt indikator på framtida vinstutrymme. När Aitik utnyttjas "
+   422→                        "till 95 procent och Tara är stängd är den konsoliderade "
+   423→                        "kapacitetsutnyttjandet omkring 80 procent, vilket är lågt och "
+   424→                        "indikerar vinstpotential vid återgång till full produktion.\n\n"
+   425→                        "V19 (emissionsrisk) är låg för Boliden eftersom bolaget genererar "
+   426→                        "positivt kassaflöde även i cykelbottnar och har en solid "
+   427→                        "balansräkning med nettoskuld/EBITDA under 1x. V20 "
+   428→                        "(återköpsdisciplin) är också tydlig — bolaget har återköpt aktier "
+   429→                        "kontinuerligt sedan 2015 och delar ut cirka 50 procent av "
+   430→                        "kassaflödet. Dessa två variabler tillsammans indikerar att Boliden "
+   431→                        "är en compounder inom cykliska råvaror — en sällsynt kombination "
+   432→                        "som motiverar en premiummultipel gentemot andra gruvbolag."
+   433→                    ),
+   434→                },
+   435→            ],
+   436→        },
+   437→        {
+   438→            "intro": (
+   439→                "Genom konkreta fallstudier av Bolidens historiska prövningar blir det "
+   440→                "tydligt hur principerna omsätts i praktiken och vilka lärdomar som kan "
+   441→                "dras."
+   442→            ),
+   443→            "blocks": [
+   444→                {
+   445→                    "type": "text",
+   446→                    "content": (
+   447→                        "Fallstudie 1 — Aitik-utbyggnaden 2010. Boliden investerade 6 "
+   448→                        "miljarder kronor i att utöka Aitik från 18 till 36 miljoner ton "
+   449→                        "malm per år, vilket var en av de största enskilda svenska "
+   450→                        "gruvinvesteringarna i modern tid. Ett år efter igångkörning rasade "
+   451→                        "kopparpriset med 35 procent och investeringen syntes inte i "
+   452→                        "resultatet, vilket pressade aktien till botten. Investerare som såg "
+   453→                        "igenom cykeln och förstod att utbyggnaden sänkt C1-kostnaden från "
+   454→                        "0,80 till 0,55 dollar per pund fick en fyrdubbel avkastning på fem "
+   455→                        "år när cykeln vände.\n\n"
+   456→                        "Fallstudie 2 — Kevitsa-förvärvet 2016. Boliden betalade 712 "
+   457→                        "miljoner dollar för nickel-koppar-gruvan Kevitsa i Finland från "
+   458→                        "First Quantum. Marknaden var skeptisk till priset men förvärvet "
+   459→                        "kompletterade Harjavalta-smältverket och möjliggjorde synergier "
+   460→                        "på 50–100 miljoner euro per år. Inom tre år var Kevitsa integrerat "
+   461→                        "och Harjavalta-smältverket gick från förlust till vinst — ett "
+   462→                        "exempel på hur vertikalintegrering kan skapa värde som renodlade "
+   463→                        "gruvbolag inte kan uppnå.\n\n"
+   464→                        "Fallstudie 3 — Tara Mines-stängningen 2023. När zinkpriset föll "
+   465→                        "under 2 400 dollar per ton och europeiska energipriser sköt i "
+   466→                        "höjden stängde Boliden sin irländska zinkgruva Tara och placerade "
+   467→                        "700 anställda på tillfällig permittering. Detta reducerade "
+   468→                        "koncernens zinkproduktion med 15 procent men sparade 100 miljoner "
+   469→                        "kronor per månad i förluster. Beslutet var kontroversiellt i "
+   470→                        "Irland men kapitalmarknaden belönade disciplinen genom en "
+   471→                        "aktieuppgång på 12 procent under de följande tre månaderna."
+   472→                    ),
+   473→                },
+   474→                {
+   475→                    "type": "insight",
+   476→                    "content": (
+   477→                        "Bolidens tre mest lärorika fallstudier visar att institutionell "
+   478→                        "disciplin vid stora investeringar, integrationer och "
+   479→                        "nedläggningar är en avgörande skillnad mellan bolag som överlever "
+   480→                        "cykler och de som förstörs av dem."
+   481→                    ),
+   482→                },
+   483→                {
+   484→                    "type": "definition",
+   485→                    "content": (
+   486→                        "C1-kostnad (cash cost) i gruvdrift mäter de direkta "
+   487→                        "produktionskostnaderna per enhet metall, exklusive kapital och "
+   488→                        "finansiering, och är den viktigaste jämförbara "
+   489→                        "kostnadsparametern mellan gruvor."
+   490→                    ),
+   491→                },
+   492→                {
+   493→                    "type": "text",
+   494→                    "content": (
+   495→                        "Fallstudie 4 — Rönnskär elektronikåtervinning. Rönnskär är en av "
+   496→                        "få smältverk i världen som tar emot elektronikskrot som råvara "
+   497→                        "och utvinner koppar, guld och silver ur kretskort. År 2022 "
+   498→                        "hanterade Rönnskär 120 000 ton elektronikskrot och utvann därmed "
+   499→                        "3 ton guld, 25 ton silver och 80 000 ton koppar — vilket "
+   500→                        "motsvarar värdet av flera mindre guldgruvor. Denna verksamhet har "
+   501→                        "vuxit i takt med EU:s direktiv om elektronikåtervinning och "
+   502→                        "erbjuder en mer cykelokänslig intäktskälla än primär "
+   503→                        "malmbrytning.\n\n"
+   504→                        "Slutsatsen från fallstudierna är att Boliden analyseras bäst "
+   505→                        "genom att separera stora investeringsbeslut (Aitik-utbyggnad, "
+   506→                        "Kevitsa-förvärv), operativa beslut i cykelbottnar "
+   507→                        "(Tara-stängning) och strategiska positioneringar (Rönnskär "
+   508→                        "elektronikåtervinning). Var och en av dessa kategorier kräver "
+   509→                        "olika analysmetoder och har olika tidsramar — ett bemästrandet som "
+   510→                        "skiljer en professionell Boliden-investerare från en som bara "
+   511→                        "följer kopparpriset."
+   512→                    ),
+   513→                },
+   514→            ],
+   515→        },
+   516→        {
+   517→            "intro": (
+   518→                "Mästerskap i Boliden-analys innebär att gå bortom standardmodeller och "
+   519→                "integrera råvarumarknadens dynamik, teknikskiften och kapitalcykeln i en "
+   520→                "sammanhängande investmenttes."
+   521→            ),
+   522→            "blocks": [
+   523→                {
+   524→                    "type": "text",
+   525→                    "content": (
+   526→                        "Mästerskap i Boliden-analys kräver tre förmågor utöver "
+   527→                        "grundläggande fundamental analys. För det första måste investeraren "
+   528→                        "bygga en egen metallprismodell som kombinerar efterfrågan (kinesisk "
+   529→                        "infrastruktur, europeisk fordonsindustri, elektrifiering) med "
+   530→                        "utbud (nya gruvor, kapacitetsnedläggningar) och lager (LME-lager, "
+   531→                        "SHFE-lager). Denna modell bör uppdateras kvartalsvis och "
+   532→                        "jämföras med konsensusprognoser från Wood Mackenzie och CRU.\n\n"
+   533→                        "För det andra måste investeraren förstå teknologiska skiften som "
+   534→                        "kan påverka Bolidens konkurrenskraft — elektrifiering ökar "
+   535→                        "efterfrågan på koppar och nickel, cirkulär ekonomi gynnar Rönnskärs "
+   536→                        "elektronikåtervinning och kolfri stålproduktion (HYBRIT) kan minska "
+   537→                        "efterfrågan på specialkoks. Varje skifte har olika tidsram och "
+   538→                        "olika impact på de enskilda anläggningarna.\n\n"
+   539→                        "För det tredje måste investeraren integrera kapitalcykeln: Boliden "
+   540→                        "har tre pågående stora investeringsprogram (Odda-utbyggnad, "
+   541→                        "Aitik-sänkning av cut-off, Sumitomo Metal Mining-partnerskap) som "
+   542→                        "binder kapital 2024–2027 och därefter frigör kassaflöde. "
+   543→                        "Förståelse för dessa program är avgörande för att bedöma när "
+   544→                        "kassaflödet kommer att växa och därmed när aktien bör värderas "
+   545→                        "som compounder snarare än cykelaktie."
+   546→                    ),
+   547→                },
+   548→                {
+   549→                    "type": "insight",
+   550→                    "content": (
+   551→                        "Boliden-mästerskap kräver att investeraren kombinerar "
+   552→                        "råvarumarknadsmodellering, teknikskiften och "
+   553→                        "kapitalcykelanalys i en enda sammanhängande investmenttes — en "
+   554→                        "kombination som få aktieanalytiker behärskar."
+   555→                    ),
+   556→                },
+   557→                {
+   558→                    "type": "definition",
+   559→                    "content": (
+   560→                        "Kapitalcykeln i gruvdrift är ett mönster där stora investeringar "
+   561→                        "binder kapital under 3–5 års byggperiod och sedan frigör "
+   562→                        "kassaflöde under 10–20 års produktionsperiod, vilket skapar en "
+   563→                        "inneboende cykel i kapitalavkastningen."
+   564→                    ),
+   565→                },
+   566→                {
+   567→                    "type": "text",
+   568→                    "content": (
+   569→                        "En slutgiltig dimension av mästerskap är att förstå Bolidens roll "
+   570→                        "i en svensk portfölj — bolaget är ofta den enda exponeringen mot "
+   571→                        "cykliska råvaror och därför en hedge mot inflation och geopolitisk "
+   572→                        "risk. I portföljsammanhang kan Boliden fylla en “real "
+   573→                        "asset”-funktion som kompletterar mer defensiva innehav som Atlas "
+   574→                        "Copco och AstraZeneca, men volatiliteten kräver rätt position "
+   575→                        "sizing och tålamod under cykelbottnar.\n\n"
+   576→                        "Investerare som bemästrar Boliden-analys kan ofta identifiera "
+   577→                        "vändningar 6–12 månader innan konsensus, eftersom indikatorer som "
+   578→                        "LME-lager, treatment charges och kinesisk orderbok rör sig innan "
+   579→                        "de visar sig i rapporter. Denna förmåga är särskilt värdefull i "
+   580→                        "Sverige där få retail-investerare har råvaruexpertis och därmed en "
+   581→                        "competitive edge kan skapas genom gedigen bottom-up-analys."
+   582→                    ),
+   583→                },
+   584→            ],
+   585→        },
+   586→    ],
+   587→}
+   588→
+   589→# ============================================================================
+   590→# 2. pc-12-case-skf — SKF
+   591→# ============================================================================
+   592→CONTENT["pc-12-case-skf"] = {
+   593→    "why": (
+   594→        "SKF är Sveriges äldsta tillverkande industribolag av global rang och dominerar "
+   595→        "världsmarknaden för lager med drygt 20 procent marknadsandel — en position som "
+   596→        "gör det till en direkt indikator på global industriell kapacitetsutnyttjande. "
+   597→        "Bolaget är noterat på Stockholmsbörsen sedan 1910 och ingår i OMXS30 samt "
+   598→        "många svenska indexfonder, vilket innebär att praktiskt taget varje svensk "
+   599→        "aktiesparare har exponering. En fallstudie av SKF ger retail-investeraren en "
+   600→        "institutionell förståelse för moat-mekaniken i en bransch där ingenjörskunnande, "
+   601→        "kvalitet och global service snarare än pris avgör vem som vinner."
+   602→    ),
+   603→    "history": {
+   604→        "origin": (
+   605→            "SKF — Svenska Kullagerfabriken — grundades i Göteborg 1907 av ingenjören "
+   606→            "Sven Wingquist, som samma år patenterade det sfäriska rullagret efter att ha "
+   607→            "upplevt hur ofta drivaxlar i textilfabriker gick sönder. Bolaget expanderade "
+   608→            "explosionsartat och hade redan 1911 dotterbolag i 32 länder, däribland Volvo "
+   609→            "som bildades 1915 som ett SKF-dotterbolag för att tillverka kullager till "
+   610→            "bilindustrin. Aktien noterades på Stockholmsbörsen redan 1910 och blev "
+   611→            "snabbt en av de mest omsatta industriaktierna."
+   612→        ),
+   613→        "evolution": (
+   614→            "Genom hela 1900-talet utvecklades SKF från en lagentillverkare till en "
+   615→            "helhetsleverantör av lager, tätningar, smörjsystem och tillståndsövervakning, "
+   616→            "ofta genom strategiska förvärv som GKN:s lagerdivision 1985 och amerikanska "
+   617→            "Kaydon 2013. Bolaget genomgick en djup kris i början av 1990-talet efter att "
+   618→            "ha ignorerat japanska och tyska konkurrenters kvalitetslyft, vilket tvingade "
+   619→            "fram en omfattande kulturförändring och stängning av 30 procent av "
+   620→            "produktionen. Efter år 2000 digitaliserades verksamheten med sensorförsedda "
+   621→            "lager och förutsägande underhåll som strategiska satsningar."
+   622→        ),
+   623→        "modern": (
+   624→            "Idag är SKF verksamt i över 40 länder med ungefär 17 000 distributörer och "
+   625→            "en omsättning kring 90 miljarder kronor under vd Rickard Gustafson (tillträdde "
+   626→            "2021, tidigare vd för SAS). Strategin “Decarbonisation” innebär en omläggning "
+   627→            "mot lager med lägre friktion och lägre energiförbrukning, vilket positionerar "
+   628→            "SKF som en möjlig vinnare i elektrifieringen av transportsektorn. Bolaget "
+   629→            "delar in verksamheten i tre segment — Industrial, Automotive och Aerospace — "
+   630→            "där industrisegmentet svarar för den högsta marginalen och den tyngsta "
+   631→            "viktningen."
+   632→        ),
+   633→    },
+   634→    "lynchSection": (
+   635→        "Peter Lynch skulle känna igen SKF som en “dividend achiever” med över 80 år av "
+   636→        "obruten utdelning och ett av Wallenbergsfärens kärninnehav — en typisk “stalwart” "
+   637→        "som kan köpas när cykeln är nedtryckt och säljas när orderboken vänder. Han skulle "
+   638→        "dock varna för att industriaktier är just cykelaktier, och att “long term” för SKF "
+   639→        "innebär att man förstår var i fyraårs-rotationen man befinner sig."
+   640→    ),
+   641→    "grahamSection": (
+   642→        "Benjamin Graham skulle uppskatta SKF:s låga skuldsättning, starka balansräkning "
+   643→        "och stabila utdelningshistorik, men han skulle noggrant justera ner intjäningen "
+   644→        "till en cykelgenomsnittsnivå innan han beräknade vinstmultipeln. Han skulle också "
+   645→        "granska hur mycket av vinsten som kommer från underhåll och service — de mer "
+   646→        "cykelokänsliga intäkterna — jämfört med nyförsäljning, eftersom det förklarar "
+   647→        "bolagets riskprofil."
+   648→    ),
+   649→    "ak1Section": (
+   650→        "AKM1-metoden granskar SKF genom segmentmarginaler, orderboksutveckling och "
+   651→        "lokal valutaintjäningspolarisering snarare än konsoliderad omsättning, vilket "
+   652→        "blottar att största vinstpotentialet ligger i mixen mot aftermarket. Genom att "
+   653→        "applicera V12 (moat-stabilitet) och V20 (återköpsdisciplin) kan investeraren "
+   654→        "bedöma om ledningen allokerar kapital klokt genom neddelningar och återköp under "
+   655→        "cykeldippar."
+   656→    ),
+   657→    "chapters": [
+   658→        {
+   659→            "intro": (
+   660→                "SKF är en av Sveriges äldsta globala industrijättar och en djupgående "
+   661→                "förståelse av bolaget kräver kunskap om både lagerindustrins struktur och "
+   662→                "SKF:s unika position inom denna."
+   663→            ),
+   664→            "blocks": [
+   665→                {
+   666→                    "type": "text",
+   667→                    "content": (
+   668→                        "SKF är organiserat i tre segment — Industrial (ca 60 procent av "
+   669→                        "intäkterna), Automotive (ca 30 procent) och Aerospace (ca 10 "
+   670→                        "procent) — där varje segment har distinkta konkurrensfaktorer. "
+   671→                        "Industrial-segmentet säljer premiumlager till"
+   672→                        " processtillverkare, gruvor och stålverk där stilleståndskostnader "
+   673→                        "motiverar premiumpriser, och där SKF Coromant-liknande "
+   674→                        "teknisk-support är en del av erbjudandet. Automotive-segmentet är "
+   675→                        "mer prispressat eftersom bilindustrin har konkurrens från "
+   676→                        "asiatiska duktiga leverantörer som NSK, NTN och Schaeffler, "
+   677→                        "vilket pressar marginalerna mot 5–8 procent jämfört med Industrial "
+   678→                        "20–25 procent.\n\n"
+   679→                        "Lagerindustrin är strukturellt attraktiv eftersom lager är en "
+   680→                        "liten men kritisk komponent i maskiner vars stilleståndskostnader "
+   681→                        " överstiger hundratalet gånger priset på lagret. Detta ger SKF "
+   682→                        "prisningsmakt gentemot kunder som bara köper volymer till nya "
+   683→                        "maskiner — och en ännu starkare position i aftermarket, där "
+   684→                        "ersättningslager köps utanför nyinvestering-cykeln. Eftermarknaden "
+   685→                        "utgör ungefär 60 procent av omsättningen men en högre andel av "
+   686→                        "vinsten, vilket gör SKF till ett service-bolag förpackat som "
+   687→                        "komponent-tillverkare.\n\n"
+   688→                        "SKF är noterat på Stockholmsbörsen sedan 1910 och är en av "
+   689→                        "OMXS30:s äldsta medlemmar med en marknadsvärde över 80 miljarder "
+   690→                        "kronor. Investor AB (Wallenbergsfären) är genom röststyrka "
+   691→                        "största ägaren med cirka 28 procent av rösterna, vilket ger "
+   692→                        "bolaget en stabil ägarstruktur och en långsiktig kapitalallokering "
+   693→                        "som skiljer SKF från mer kortsiktiga industrikoncerner."
+   694→                    ),
+   695→                },
+   696→                {
+   697→                    "type": "insight",
+   698→                    "content": (
+   699→                        "SKF:s verkliga moat ligger i kombinationen av global "
+   700→                        "service-nätverk, kvalitetspremium och teknisk support — en mix som "
+   701→                        "skapar en kundrelation som går långt bortom själva "
+   702→                        "lager-komponenten."
+   703→                    ),
+   704→                },
+   705→                {
+   706→                    "type": "definition",
+   707→                    "content": (
+   708→                        "Aftermarket i industriell kontext avser försäljning av "
+   709→                        "ersättningskomponenter och service till redan installerade "
+   710→                        "maskiner, vanligtvis med högre marginal än nyförsäljning."
+   711→                    ),
+   712→                },
+   713→                {
+   714→                    "type": "text",
+   715→                    "content": (
+   716→                        "SKF har genomgått flera stora omvandlingar under 2000-talet, "
+   717→                        "varav den senaste under Rickard Gustafson syftar till att ta bort "
+   718→                        "10 000 anställda och 25 procent av produktionsnätverket under "
+   719→                        "2024–2026. Syftet är att frigöra 3 miljarder kronor i årliga "
+   720→                        "kostnadsbesparingar och möjliggöra en återgång till dubbel-siffrig "
+   721→                        "EBIT-marginal. Detta är en fortsättning på tidigare omstrukturering "
+   722→                        "under tidigare vd:s Thomgren och Tenenbaum, vilket visar att "
+   723→                        "SKF kontinuerligt måste anpassa sig till global prispress.\n\n"
+   724→                        "Ett strategiskt fokus är elfordonsoptimering, där SKF utvecklar "
+   725→                        "lager med lägre friktion för att förlänga räckvidden i elbilar. "
+   726→                        "Detta är en intressant paradox — övergången från förbränningsmotor "
+   727→                        "till elmotor minskar antalet lager per bil från cirka 200 till 80, "
+   728→                        "men värdet per lager ökar eftersom premiumlager krävs för höga "
+   729→                        "varvtal. SKF bedömer att netto-effekten på Automotive-segmentet är "
+   730→                        "liten över en 10-årsperiod, men att positioneringen som premium-"
+   731→                        "leverantör till elfordon är avgörande för att behålla "
+   732→                        "marknadsandelar."
+   733→                    ),
+   734→                },
+   735→            ],
+   736→        },
+   737→        {
+   738→            "intro": (
+   739→                "Att analysera SKF i praktiken kräver förståelse för segmentmarginaler, "
+   740→                "orderbokscykler och hur valutor påverkar en globalt diversifierad "
+   741→                "verksamhet."
+   742→            ),
+   743→            "blocks": [
+   744→                {
+   745→                    "type": "text",
+   746→                    "content": (
+   747→                        "Praktisk SKF-analys börjar med att bryta ner koncernen i tre "
+   748→                        "segment och följa varje segments organiska tillväxt, marginal och "
+   749→                        "orderbok separat. Industrial-segmentets orderbok är ledande för "
+   750→                        "den industriella investeringscykeln med 3–6 månaders fördröjning "
+   751→                        "mot amerikansk ISM-PMI, medan Automotive-segmentet styrs av "
+   752→                        "bilförsäljning i Europa, Kina och Nordamerika. Ett praktiskt verktyg "
+   753→                        "är att bygga en ”SKF-täthetsmodell” som kombinerar orderbok med "
+   754→                        "leveransintervaller för att förutse kvartalsvisa volymrörelser.\n\n"
+   755→                        "Valuta är central i SKF-analys eftersom bolaget säljer i över 40 "
+   756→                        "valutor men rapporterar i SEK. Huvuddelen av produktionen sker i "
+   757→                        "Europa (Sverige, Tyskland, Italien) medan stora marknader finns i "
+   758→                        "Nordamerika och Kina. SKF tillämpar löpande valutahedging över "
+   759→                        "12 månader, vilket innebär att rapporterad intjäning fördröjs "
+   760→                        "mot valutautveckling. Vid en bestående EUR/SEK-förändring på 5 "
+   761→                        "procent tar det 4–6 kvartal innan full effekt syns i EBIT.\n\n"
+   762→                        "En viktig bedömning är hur mycket av SKF:s intjäning som är "
+   763→                        "cyklisk (nya maskiner) respektive strukturell (ersättningslager "
+   764→                        "och service). Bolaget självt uppger att ungefär 60 procent av "
+   765→                        "intäkterna kommer från aftermarket, vilket indikerar att "
+   766→                        "bottom-cykel-EBIT borde vara högre än vad rent investerings-"
+   767→                        "cykliska bolag uppvisar. Historiskt har SKF i cykelbotten 2009, "
+   768→                        "2015 och 2020 visat en EBIT-marginal på 7–9 procent — klart högre "
+   769→                        "än rena komponenttillverkare på 3–5 procent."
+   770→                    ),
+   771→                },
+   772→                {
+   773→                    "type": "insight",
+   774→                    "content": (
+   775→                        "SKF-analys handlar om att identifiera vid vilken orderboksnivå "
+   776→                        "marginalen slår igenom 12 procent — den punkt där bolaget "
+   777→                        "historiskt har övergått från “cykelvinst” till “strukturlön”."
+   778→                    ),
+   779→                },
+   780→                {
+   781→                    "type": "definition",
+   782→                    "content": (
+   783→                        "Orderbok i industriell kontext är värdet av kontrakterade men "
+   784→                        "ännu inte levererade beställningar, och utgör en ledande "
+   785→                        "indikator för framtida intäktsrekognition."
+   786→                    ),
+   787→                },
+   788→                {
+   789→                    "type": "text",
+   790→                    "content": (
+   791→                        "SKF publicerar kvartalsvis en detaljerad orderboken med både "
+   792→                        "organisk volym, pris och valuta-effekter separerade, vilket gör "
+   793→                        "bolaget till en av de mest transparenta industrikoncernerna i "
+   794→                        "Europa. Investerare kan därmed bygga en kvalificerad "
+   795→                        "intjäningsprognos baserad på ledande orderbok, capacities-"
+   796→                        "utnyttjande och R&D-investeringar. Ett vanligt misstag är att "
+   797→                        "fokusera på konsoliderad omsättningstillväxt snarare än "
+   798→                        "organisk, vilket döljer den underliggande efterfrågan bakom "
+   799→                        "valuta-effekter.\n\n"
+   800→                        "En unik dimension av SKF-analys är förmågan att kombinera "
+   801→                        "kvartalsrapporterna med externa data från amerikanska ISM-PMI, "
+   802→                        "europeiska Ifo-index och kinesisk PMI. SKF:s orderbok för "
+   803→                        "Industrial-segmentet har historiskt korrelerat 0,7 med global "
+   804→                        "PMI, vilket ger en möjlighet att validera eller justera ledningens "
+   805→                        "guider. Investerare som behärskar denna metodik kan ofta förutse "
+   806→                        "vändningar 1–2 kvartal före konsensus."
+   807→                    ),
+   808→                },
+   809→            ],
+   810→        },
+   811→        {
+   812→            "intro": (
+   813→                "Flera vanliga fallgropar kan leda investerare att dra felaktiga "
+   814→                "slutsatser om SKF:s värde och riskprofil."
+   815→            ),
+   816→            "blocks": [
+   817→                {
+   818→                    "type": "text",
+   819→                    "content": (
+   820→                        "Den vanligaste fällan är att förväxla rapporterad vinst med "
+   821→                        "strukturell intjäningsförmåga, eftersom SKF historiskt har visat "
+   822→                        "marginaler från 6 procent (2009) till 16 procent (2017) på bara "
+   823→                        "några år. En investerare som köper på 8x toppcykel-EPS hamnar "
+   824→                        "faktiskt på 16x cykelgenomsnitt, vilket dramatiskt skiftar "
+   825→                        "risk/bild. Använd alltid en 7–10 års genomsnittlig EBIT-marginal "
+   826→                        "(typiskt 11–12 procent för SKF) som grund för värderingen.\n\n"
+   827→                        "En annan fälla är att förbise pensionsåtaganden, som utgör en "
+   828→                        "betydande balansräkningspost för SKF med tusentals pensionerade "
+   829→                        "anställda från svensk och europeisk industri. Diskonteringsräntan "
+   830→                        "på dessa åtaganden påverkar resultatet via pensionskostnaden — "
+   831→                        "fallande räntor ökar åtagandena och vice versa. Under 2020–2022 "
+   832→                        "sjönk SKF:s pensionsåtagande från 18 till 12 miljarder kronor "
+   833→                        "enbart genom räntestegringar, vilket ökade rapporterad vinst "
+   834→                        "utan att bolaget var bättre.\n\n"
+   835→                        "Tredje fällan är att förbise vikten av Automotive-segmentet i "
+   836→                        "cykeltoppar. När bilförsäljningen ökar kraftigt kan "
+   837→                        "Automotive-marginalen stiga från 5 till 10 procent, vilket ger "
+   838→                        "en oproportionerligt stor vinstökning i absoluta tal. Om "
+   839→                        "investor extrapolerar denna ökning framåt överskattas SKF:s "
+   840→                        "intjäningsförmåga, eftersom Automotive-segmentet historiskt "
+   841→                        "återgår till 5–7 procent marginal när cykeln vänder."
+   842→                    ),
+   843→                },
+   844→                {
+   845→                    "type": "insight",
+   846→                    "content": (
+   847→                        "Tre SKF-fällor är toppcykel-extrapolering, missförstånd om "
+   848→                        "pensionsåtagandens räntekänslighet och övertro på "
+   849→                        "Automotive-marginaler — alla tre har historiskt kostat "
+   850→                        "investerare betydande avkastning."
+   851→                    ),
+   852→                },
+   853→                {
+   854→                    "type": "definition",
+   855→                    "content": (
+   856→                        "Pensionsåtagande är en balansräkningspost som representerar "
+   857→                        "nuvärdet av framtida pensionutbetalningar till anställda, "
+   858→                        "beräknad med en teknisk diskonteringsränta."
+   859→                    ),
+   860→                },
+   861→                {
+   862→                    "type": "text",
+   863→                    "content": (
+   864→                        "En subtilare fälla är att förväxla SKF:s R&D-investeringar med "
+   865→                        "kostnader, eftersom bolaget årligen investerar 5 procent av "
+   866→                        "omsättningen i forskning och utveckling. Om dessa kostnader "
+   867→                        "kapitaliseras ökar vinsten kortsiktigt, men avskrivningarna "
+   868→                        "kommer senare. SKF har en sund policy att kostnadsföra all "
+   869→                        "närliggande R&D, vilket gör att rapporterad vinst är konservativ "
+   870→                        "men också att bolaget inte kan öka vinsten genom "
+   871→                        "kapitaliserings-policy.\n\n"
+   872→                        "Slutligen är Automotive-segmentets konkurrenssituation en "
+   873→                        "underskattad risk: Schaeffler (Tyskland), NSK (Japan) och NTN "
+   874→                        "(Japan) är aggresiva på prissättning och har vunnit marknadsandelar "
+   875→                        "i Europa under 2010-talet. SKF:s Automotive-marginal har fallit "
+   876→                        "från 8 procent 2010 till 5 procent 2023, vilket indikerar en "
+   877→                        "strukturell press som inte är cykelbetingad. Investerare måste "
+   878→                        "skilja cyklisk marginaltryck från strukturell och undvika att köpa "
+   879→                        "SKF enbart för en Automotive-återhämtning."
+   880→                    ),
+   881→                },
+   882→            ],
+   883→        },
+   884→        {
+   885→            "intro": (
+   886→                "AKM1 1.1-ramverket ger en disciplinerad metod för att värdera SKF genom "
+   887→                "20 kvantitativa och kvalitativa variabler anpassade till industriella "
+   888→                "cykelaktier."
+   889→            ),
+   890→            "blocks": [
+   891→                {
+   892→                    "type": "text",
+   893→                    "content": (
+   894→                        "V01 (försäljningstillväxt) appliceras på SKF genom att separera "
+   895→                        "organisk tillväxt från valutaeffekter och förvärv — bolagets "
+   896→                        "organiska tillväxt är typiskt 2–3 procent i genomsnitt över en "
+   897→                        "cykel, medan rapporterad tillväxt kan svänga mellan −10 och +15 "
+   898→                        "procent. AKM1-metoden premierar organisk volymtillväxt i "
+   899→                        "Industrial-segmentet som den mest varaktiga källan till "
+   900→                        "värdeskapande, och bedömer Automotive-segmentets tillväxt som mer "
+   901→                        "cykelberoende och därmed mindre värdefullt i värderingen.\n\n"
+   902→                        "V12 (moat-stabilitet) är central i SKF-analys eftersom bolaget "
+   903→                        "har en av de bredaste moats i svensk industri — globalt "
+   904→                        "service-nätverk, decennier av kundrelationer, teknisk support och "
+   905→                        "patenterade innovationer som sensorförsedda lager. Denna moat "
+   906→                        "måste dock valideras genom att följa bruttomarginaler över tid; "
+   907→                        "om bruttomarginalen faller indikerar det att moat urholkas av "
+   908→                        "asiatisk konkurrens. SKF:s bruttomarginal har varit relativt stabil "
+   909→                        "kring 30 procent under 2010-talet, vilket bekräftar moat.\n\n"
+   910→                        "V14 (kassaflödeskvalitet) visar att SKF historiskt har haft stark "
+   911→                        "konvertering från EBITDA till fritt kassaflöde, cirka 60 procent, "
+   912→                        "vilket är högre än många jämförbara industribolag. Detta återspeglar "
+   913→                        "både låga underhålls-kapacitetutgifter och disciplinerat "
+   914→                        "rörelsekapital-hantering. Kassaflödet finansierar både utdelning "
+   915→                        "(50 procent av vinsten) och återköp, vilket ger en “total yield” på "
+   916→                        "5–7 procent i genomsnitt över cykeln."
+   917→                    ),
+   918→                },
+   919→                {
+   920→                    "type": "insight",
+   921→                    "content": (
+   922→                        "AKM1 gör SKF till en lärobok i industriell cykelaktie-analys: "
+   923→                        "moat-stabilitet, kassaflödeskvalitet och cykelnormalisering i en "
+   924→                        "integrerad process som undviker både toppcykel-extrapolering och "
+   925→                        "konjunkturpessimism."
+   926→                    ),
+   927→                },
+   928→                {
+   929→                    "type": "definition",
+   930→                    "content": (
+   931→                        "EBITDA-till-fritt-kassaflöde-konvertering mäter andelen av "
+   932→                        "rörelseresultat före avskrivningar som blir tillgängligt för "
+   933→                        "aktieägare efter investeringar och skatt — en central måttstock "
+   934→                        "för kapitalintensiva bolag."
+   935→                    ),
+   936→                },
+   937→                {
+   938→                    "type": "text",
+   939→                    "content": (
+   940→                        "V16 (kapacitetsutnyttjande) är en särskilt viktig variabel för SKF "
+   941→                        "eftersom bolagets 90 fabriker globalt har en brytpunkt på "
+   942→                        "cirka 75 procent utnyttjande för att nå neutral resultat. Vid 70 "
+   943→                        "procent utnyttjande faller marginalen mot 5–6 procent, vid 80 "
+   944→                        "procent når den 12–14 procent och vid 85 procent stiger den mot "
+   945→                        "16 procent — en icke-linjär känslighet som få investerare "
+   946→                        "uppmärksammar. AKM1-metoden spårar därför kapacitetsutnyttjandet "
+   947→                        "per region för att förutse marginalrörelser.\n\n"
+   948→                        "V20 (återköpsdisciplin) är tydlig för SKF: bolaget har återköpt "
+   949→                        "aktier för 15 miljarder kronor under 2015–2023 och därmed dragit "
+   950→                        "ner antalet aktier med cirka 12 procent. Kombinerat med stabil "
+   951→                        "utdelning har detta gett en totalavkastning på aktien som överträffar "
+   952→                        "många tillväxtbolag, trots att kursutvecklingen varit måttlig. V19 "
+   953→                        "(emissionsrisk) är låg eftersom SKF har positivt kassaflöde även i "
+   954→                        "cykelbottnar och en solid balansräkning med nettoskuld/EBITDA under "
+   955→                        "1x."
+   956→                    ),
+   957→                },
+   958→            ],
+   959→        },
+   960→        {
+   961→            "intro": (
+   962→                "Genom konkreta fallstudier av SKF:s historiska händelser blir det tydligt "
+   963→                "hur principerna omsätts i praktiken och vilka lärdomar som kan dras."
+   964→            ),
+   965→            "blocks": [
+   966→                {
+   967→                    "type": "text",
+   968→                    "content": (
+   969→                        "Fallstudie 1 — Krisen 1990–1993. SKF gick in i 1990-talet med 60 "
+   970→                        "fabriker i Europa och en kostnadsstruktur som inte matchade japanska "
+   971→                        "konkurrenternas kvalitetslyft. Vid krisens botten hade bolaget "
+   972→                        "förlorat 60 procent av aktievärdet och EBIT-marginalen var negativ. "
+   973→                        "Omstruktureringen under vd Mauritz Sahlin innebar nedläggning av 18 "
+   974→                        "fabriker och 25 procent av personalen, men räddade bolaget och "
+   975→                        "lade grunden för 15 års värdeskapande. Lärdom: även bolag med stark "
+   976→                        "moat kan tappa position om de ignorerar konkurrensutveckling.\n\n"
+   977→                        "Fallstudie 2 — Kaydon-förvärvet 2013. SKF betalade 1,25 miljarder "
+   978→                        "dollar för Kaydon, en amerikansk tillverkare av speciallager med "
+   979→                        "stark position inom aerospace och medicinteknik. Förvärvet gav SKF "
+   980→                        "tillgång till Aerospace-segmentet och produkter utanför "
+   981→                        "standardkatalogen. Inom två år var Kaydon integrerat och bidrog med "
+   982→                        "15 procent av koncernens EBIT — ett exempel på hur SKF kan skapa "
+   983→                        "värde genom bolt-on-förvärv inom premiumsegment.\n\n"
+   984→                        "Fallstudie 3 — Neddelning 2015. SKF genomförde en 4-till-1-"
+   985→                        "neddelning för att göra aktien mer tillgänglig för "
+   986→                        "retail-investerare och därmed bredda ägarbasen. Aktiekursen justerades "
+   987→                        "från cirka 800 till 200 kronor, vilket ökade omsättningen i aktien "
+   988→                        "med 40 procent under det följande året. Detta visar hur "
+   989→                        "aktiepris-psykologi påverkar likviditet och värdering, särskilt för "
+   990→                        "industriaktier med bred investerargrupp."
+   991→                    ),
+   992→                },
+   993→                {
+   994→                    "type": "insight",
+   995→                    "content": (
+   996→                        "SKF:s fallstudier visar att moat måste underhållas genom kontinuerlig "
+   997→                        "omstrukturering och strategiska förvärv — ett bolag som vilar på "
+   998→                        "förra decenniets moat kommer förr eller senare att "
+   999→                        "förlora position."
+  1000→                    ),
+  1001→                },
+  1002→                {
+  1003→                    "type": "definition",
+  1004→                    "content": (
+  1005→                        "Bolt-on-förvärv är en strategisk transaktion där ett större bolag "
+  1006→                        "förvärvar ett mindre komplementärt företag för att expandera i "
+  1007→                        "en specifik produkt-, geografisk- eller kundnisch."
+  1008→                    ),
+  1009→                },
+  1010→                {
+  1011→                    "type": "text",
+  1012→                    "content": (
+  1013→                        "Fallstudie 4 — Gustafson-omstruktureringen 2021–2024. När Rickard "
+  1014→                        "Gustafson tillträdde som vd 2021 hade SKF:s marginal fallit till 9 "
+  1015→                        "procent och bolaget hade förlorat marknadsandelar i Europa. "
+  1016→                        "Omstruktureringen 2024–2026 syftar till att ta bort 10 000 "
+  1017→                        "anställda och 25 procent av produktionsnätet, med mål att nå 15 "
+  1018→                        "procent EBIT-marginal 2026. Marknadens reaktion har varit positiv — "
+  1019→                        "aktien steg 35 procent under de första 18 månaderna av "
+  1020→                        "omstruktureringen — vilket visar att discplin för kapital- och "
+  1021→                        "kostnadsallokering belönas.\n\n"
+  1022→                        "Slutsatsen från fallstudierna är att SKF analyseras bäst genom "
+  1023→                        "kombinationen av moat-stabilitet (segmentmarginaler, "
+  1024→                        "marknadsandelar), kapitaldisciplin (återköp, utdelning) och "
+  1025→                        "omstruktureringsförmåga (förmågan att stänga och integrera). "
+  1026→                        "Investerare som förstår dessa tre dimensioner kan identifiera "
+  1027→                        "vändningar och undvika fällor mer träffsäkert än de som bara följer "
+  1028→                        "kvartalsrapporter."
+  1029→                    ),
+  1030→                },
+  1031→            ],
+  1032→        },
+  1033→        {
+  1034→            "intro": (
+  1035→                "Mästerskap i SKF-analys innebär att kombinera industriell cykelförståelse, "
+  1036→                "moat-analys och kapitalallokeringsbedömning i en integrerad "
+  1037→                "investmentstrategi."
+  1038→            ),
+  1039→            "blocks": [
+  1040→                {
+  1041→                    "type": "text",
+  1042→                    "content": (
+  1043→                        "Mästerskap i SKF-analys kräver tre förmågor utöver grundläggande "
+  1044→                        "fundamental analys. För det första måste investeraren bygga en "
+  1045→                        "industriell cykelmodell som kombinerar global PMI, amerikansk ISM, "
+  1046→                        "europeisk Ifo och kinesisk PMI till en gemensam ledande indikator "
+  1047→                        "för SKF:s orderbok. Denna modell bör uppdateras månadsvis och "
+  1048→                        "jämföras med SKF:s kvartalsvis publicerade orderbokssiffror.\n\n"
+  1049→                        "För det andra måste investeraren förstå SKF:s konkurrenssituation "
+  1050→                        "i varje segment — Industrial (Schaeffler, Timken), Automotive (NSK, "
+  1051→                        "NTN, Schaeffler) och Aerospace (Timken, RBC Bearings). Konkurrenternas "
+  1052→                        "kvartalsrapporter ger tidiga signaler om SKF:s marknadsandelar och "
+  1053→                        "marginalutveckling. En subtil men viktig detalj är att Schaefflers "
+  1054→                        "automotive-segment korrelerar 0,8 med SKF:s Automotive-segment, "
+  1055→                        "vilket gör Schaeffler till en valideringskälla.\n\n"
+  1056→                        "För det tredje måste investeraren bedöma kapitalallokering — SKF:s "
+  1057→                        "historiska förmåga att köpa tillbaka aktier vid cykelbottnar och "
+  1058→                        "behålla utdelningen under toppar. Bolagets policy att dela ut 50 "
+  1059→                        "procent av vinsten oavsett cykel har gett en utdelningstillväxt på "
+  1060→                        "8 procent per år sedan 2010, vilket gör SKF till en av de mest "
+  1061→                        "pålitliga utdelningsaktierna på Stockholmsbörsen."
+  1062→                    ),
+  1063→                },
+  1064→                {
+  1065→                    "type": "insight",
+  1066→                    "content": (
+  1067→                        "SKF-mästerskap är kombinationen av industriell cykelkompetens, "
+  1068→                        "konkurrentanalys och kapitaldisciplin-bedömning — en helhetssyn som "
+  1069→                        "få analytiker behärskar."
+  1070→                    ),
+  1071→                },
+  1072→                {
+  1073→                    "type": "definition",
+  1074→                    "content": (
+  1075→                        "Utdelningstillväxt är den årliga ökningen av utdelning per aktie, "
+  1076→                        "vilket är en mer relevant prestationsmått för långsiktiga "
+  1077→                        "aktieägare än engångs-utdelningsnivån."
+  1078→                    ),
+  1079→                },
+  1080→                {
+  1081→                    "type": "text",
+  1082→                    "content": (
+  1083→                        "En slutgiltig dimension av mästerskap är att förstå SKF:s roll i en "
+  1084→                        "svensk portfölj — bolaget är en av få ”compounders” i svensk "
+  1085→                        "industri som kombinerar utdelningstillväxt, återköp och "
+  1086→                        "moat-stabilitet. I portföljsammanhang kan SKF fylla en "
+  1087→                        "kärnindustri-position som kompletterar mer cykliska innehav som "
+  1088→                        "SSAB och Boliden, och mer defensiva som AstraZeneca och Atlas "
+  1089→                        "Copco.\n\n"
+  1090→                        "Investerare som bemästrar SKF-analys kan ofta identifiera "
+  1091→                        "cykelvändningar 1–2 kvartal före konsensus genom att följa "
+  1092→                        "orderbok, konkurrentrapporter och globala PMI-index. Denna förmåga "
+  1093→                        "är särskilt värdefull i Sverige där SKF är en av de mest omsatta "
+  1094→                        "industriaktierna och därmed en vanlig portfölj-post — den som "
+  1095→                        "förstår bolaget bäst har en distinkt competitive edge."
+  1096→                    ),
+  1097→                },
+  1098→            ],
+  1099→        },
+  1100→    ],
+  1101→}
+  1102→
+  1103→# ============================================================================
+  1104→# 3. pc-13-case-ssab — SSAB
+  1105→# ============================================================================
+  1106→CONTENT["pc-13-case-ssab"] = {
+  1107→    "why": (
+  1108→        "SSAB är Sveriges i särklass största ståltillverkare och ett av få europeiska "
+  1109→        "bolag som kan leverera avancerad höghållfast stål till fordons- och "
+  1110→        "maskinindustrin globalt. Aktien är noterad på Stockholmsbörsen sedan 1989 och "
+  1111→        "representerar en utpräglad cykelaktie vars svängningar i intjäning illustrerar "
+  1112→        "effekterna av stålpriser, kinesisk kapacitet och europeisk efterfrågan. För "
+  1113→        "retail-investeraren är fallet SSAB en lärobok i hur man skiljer en cykeltopp från "
+  1114→        "en varaktig värdeökning och hur fossilfritt stål (HYBRIT) kan förändra en hel "
+  1115→        "bransch."
+  1116→    ),
+  1117→    "history": {
+  1118→        "origin": (
+  1119→            "SSAB — Svenskt Stål AB — bildades 1978 som ett statligt ägt svenskt "
+  1120→            "stålbolag genom en sammanslagning av ståltillverkningen i Stora Kopparberg, "
+  1121→            "Gränges och Norrbottens Järnverk i Luleå. Bakgrunden var 1970-talets stålkris "
+  1122→            "där europeiska regeringar nationaliserade stålindustrin för att rädda "
+  1123→            "arbetstillfällen, och SSAB blev det svenska svaret på en ohållbar struktur. "
+  1124→            "Bolaget noterades på Stockholmsbörsen 1989 när svenska staten sålde ut en "
+  1125→            "majoritet och därmed inleddes privatiseringen av svensk stålindustri."
+  1126→        ),
+  1127→        "evolution": (
+  1128→            "Genom 1990-talet internationaliserades SSAB med förvärv av IPSCO i Nordamerika "
+  1129→            "2008 för 7,2 miljarder dollar — en transaktion som förvandlade bolaget från "
+  1130→            "svenskt till transatlantiskt. Samtidigt utvecklades strategin bort från "
+  1131→            "volymstål mot segregerade nischer som HARDOX, DOCOL och Strenx, vilket höjde "
+  1132→            "EBITDA-marginalen från låga ensiffror till över 15 procent vid bra cyklar. "
+  1133→            "2018 köptes finska Rautaruukki vilket lade till byggstål och FOOM-komponenter "
+  1134→            "i portföljen och skapade dagens tre segment SSAB Special Steels, SSAB Americas "
+  1135→            "och SSAB Europe."
+  1136→        ),
+  1137→        "modern": (
+  1138→            "I modern tid är SSAB i framkant av omställningen till fossilfritt stål genom "
+  1139→            "HYBRIT-samarbetet med LKAB och Vattenfall, där pilotanläggningen i Luleå sedan "
+  1140→            "2021 producerar vätgasbaserat svampjärn. Vd Johnny Sjöström (tillträdde 2023) "
+  1141→            "driver planen att konvertera Luleå och Oxelösund till elektriska vätgasugnar "
+  1142→            "till 2030 — en investering på över 50 miljarder kronor som förväntas möjliggöra "
+  1143→            "fossilfria premiumstål. Bolaget är därmed unikt exponerat mot både grön "
+  1144→            "industriell omställning och traditionell cykelrisk i rörligt stål."
+  1145→        ),
+  1146→    },
+  1147→    "lynchSection": (
+  1148→        "Peter Lynch skulle klassa SSAB som en cykelaktie vars största möjlighet ligger i "
+  1149→        "att köpas när stålpriserna bottnar och orderboken är nedbläddrad — ett “buy when "
+  1150→        "there is blood in the streets”-scenario. Han skulle dock särskilt granska om "
+  1151→        "HYBRIT-investeringen är en varaktig moat eller en kostsam teknikdröm, eftersom "
+  1152→        "stora kapitalprojekt historiskt har förstört cykelvinster."
+  1153→    ),
+  1154→    "grahamSection": (
+  1155→        "Benjamin Graham skulle värdera SSAB på substans och cykelgenomsnittlig intjäning "
+  1156→        "snarare än toppcykel-EBITDA, med särskild uppmärksamhet på bokfört värde av "
+  1157→        "stålvarken och varulager. Han skulle varna för att stora framtida "
+  1158→        "kapacitetsinvesteringar i HYBRIT kan urholka kassaflödet och att substansen därför "
+  1159→        "ska diskonteras för verklig ombyggnadsrisk."
+  1160→    ),
+  1161→    "ak1Section": (
+  1162→        "AKM1-metoden kombinerar cykelbaserad normalisering av intjäningskraften med "
+  1163→        "positionering i V01-F2-matrisen, vilket synliggör hur SSAB:s vinst multiplar "
+  1164→        "exponentiellt mellan låg- och högkonjunktur. Genom att följa V13 (lagerutveckling) "
+  1165→        "och V16 (kapacitetsutnyttjande) kan investeraren identifiera när bottnen är nådd "
+  1166→        "och när marginalen börjar vända — ofta 6–9 månader innan rapporten bekräftar "
+  1167→        "vändningen."
+  1168→    ),
+  1169→    "chapters": [
+  1170→        {
+  1171→            "intro": (
+  1172→                "SSAB är Sveriges största ståltillverkare och en djupgående förståelse av "
+  1173→                "bolaget kräver kunskap om både stålindustrins struktur och SSAB:s unika "
+  1174→                "premiumstrategi."
+  1175→            ),
+  1176→            "blocks": [
+  1177→                {
+  1178→                    "type": "text",
+  1179→                    "content": (
+  1180→                        "SSAB är organiserat i tre segment — SSAB Special Steels (Sverige, "
+  1181→                        "ca 30 procent av omsättningen), SSAB Americas (Nordamerika, ca 40 "
+  1182→                        "procent) och SSAB Europe (Sverige, Finland, UK, ca 30 procent) — där "
+  1183→                        "varje segment har distinkta produktmixer och konkurrensfaktorer. "
+  1184→                        "Special Steels tillverkar premiumprodukterna HARDOX (slitaget stål), "
+  1185→                        "DOCOL (kallvalsat formstål) och Strenx (höghållfast konstruktion) "
+  1186→                        "som säljs med premiumpriser till kunder som gruv- och "
+  1187→                        "anläggningsmaskinstillverkare. SSAB Americas tillverkar rört stål "
+  1188→                        "för olje- och gasindustrin (HFI) samt höghållfast plåt för "
+  1189→                        "lastbilar och tunga maskiner, medan SSAB Europe producerar både "
+  1190→                        "premium- och standardstål för europeisk bygg- och fordonsindustri.\n\n"
+  1191→                        "Stålindustrin är strukturellt utmanande eftersom global överkapacitet "
+  1192→                        "(särskilt i Kina) pressar stålpriset mot produktionskostnaden under "
+  1193→                        "stora delar av cykeln. SSAB har dock lyckats bygga en premium-nisch "
+  1194→                        "där slitaget-stål HARDOX har ungefär 70 procent marknadsandel i "
+  1195→                        "Europa och där priset är 30–50 procent högre än standardstål. "
+  1196→                        "Kunderna är mindre priskänsliga eftersom livstidsvärdet av "
+  1197→                        "slitaget-stål överstiger engångskostnaden, vilket ger SSAB en "
+  1198→                        "prisningsmakt som få andra europeiska stålbolag har.\n\n"
+  1199→                        "SSAB är noterat på Stockholmsbörsen sedan 1989 med en "
+  1200→                        "marknadsvärde som svänger mellan 20 och 60 miljarder kronor beroende "
+  1201→                        "på var i cykeln bolaget befinner sig. Industrivärden är största "
+  1202→                        "ägare med ungefär 8 procent av kapitalet, vilket ger en stabil "
+  1203→                        "svensk ägarstruktur. Aktien ingår i OMXS30 och är därmed en av de "
+  1204→                        "mer vanliga svenska industriaktierna i privatportföljer."
+  1205→                    ),
+  1206→                },
+  1207→                {
+  1208→                    "type": "insight",
+  1209→                    "content": (
+  1210→                        "SSAB:s moat ligger i premiumvarumärkena HARDOX, DOCOL och Strenx "
+  1211→                        "snarare än i stålproduktion i sig — en insikt som förklarar varför "
+  1212→                        "bolaget har högre marginal än europeiska volymståltillverkare som "
+  1213→                        "ArcelorMittal och ThyssenKrupp."
+  1214→                    ),
+  1215→                },
+  1216→                {
+  1217→                    "type": "definition",
+  1218→                    "content": (
+  1219→                        "Höghållfast stål är stål med avsevärt högre sträckgräns än "
+  1220→                        "konventionellt stål, vilket möjliggör lättare och starkare "
+  1221→                        "konstruktioner inom fordons-, maskin- och anläggningsindustrin."
+  1222→                    ),
+  1223→                },
+  1224→                {
+  1225→                    "type": "text",
+  1226→                    "content": (
+  1227→                        "SSAB genomgår en historisk omvandling genom HYBRIT-projektet "
+  1228→                        "(Hydrogen Breakthrough Ironmaking Technology), som är ett samarbete "
+  1229→                        "med LKAB och Vattenfall sedan 2017. Pilotanläggningen i Luleå "
+  1230→                        "producerar sedan 2021 svampjärn med hjälp av vätgas istället för "
+  1231→                        "stenkol, vilket eliminerar koldioxidutsläpp från själva "
+  1232→                        "järnproduktionen. Den första kommersiella anläggningen planeras i "
+  1233→                        "Oxelösund med driftsättning 2026, och därefter Luleå och Raahe i "
+  1234→                        "Finland fram till 2030.\n\n"
+  1235→                        "HYBRIT är både en möjlighet och en risk. Möjligheten ligger i att "
+  1236→                        "SSAB kan ta premiumpriser för fossilfritt stål — biltillverkare som "
+  1237→                        "Volvo och Mercedes-Benz har redan tecknat avtal för leveranser. "
+  1238→                        "Risken ligger i investeringskostnaden: totalt beräknas omvandlingen "
+  1239→                        "kosta 50–80 miljarder kronor fram till 2030, vilket motsvarar 2–3 "
+  1240→                        "års normaliserat kassaflöde. Om stålpriset inte kompenserar för "
+  1241→                        "denna investering kan SSABs intjäningsförmåga reduceras under "
+  1242→                        "flera år."
+  1243→                    ),
+  1244→                },
+  1245→            ],
+  1246→        },
+  1247→        {
+  1248→            "intro": (
+  1249→                "Att analysera SSAB i praktiken kräver en kombination av stålpris-modeller, "
+  1250→                "produktmix-analys och förståelse för HYBRIT-investeringens värdeskapande."
+  1251→            ),
+  1252→            "blocks": [
+  1253→                {
+  1254→                    "type": "text",
+  1255→                    "content": (
+  1256→                        "Praktisk SSAB-analys börjar med att bryta ner koncernen i tre "
+  1257→                        "segment och följa varje segments volym, prissättning och marginal "
+  1258→                        "separat. Special Steels-segmentet har en EBIT-marginal på 20–25 "
+  1259→                        "procent vid bra cyklar tack vare premiumvarumärken, medan "
+  1260→                        "SSAB Americas har 10–15 procent och SSAB Europe 5–10 procent. Vid "
+  1261→                        "cykelbotten faller marginalerna till 5, 0 respektive −5 procent, "
+  1262→                        "vilket illustrerar den enorma operations-hävtstången i bolaget.\n\n"
+  1263→                        "Nästa steg är att modellera stålpriser och spread mot "
+  1264→                        "råvarukostnader. SSAB köper järnmalm från LKAB (Sverige) och "
+  1265→                        "metallurgiskt kol från internationella leverantörer, och spreaden "
+  1266→                        "mellan stålpris och råvarukostnad är den primära vinstmotorn. "
+  1267→                        "AKM1-metoden rekommenderar att bygga en normaliserad spread-modell "
+  1268→                        "baserad på 7–10 års genomsnitt snarare än aktuella spotpriser, "
+  1269→                        "eftersom SSABs intjäningskraft kan svänga 4x mellan botten och "
+  1270→                        "topp av en cykel.\n\n"
+  1271→                        "Slutligen måste HYBRIT-investeringen diskonteras separat från "
+  1272→                        "kärnverksamheten. En lämplig metod är att beräkna nuvärdet av "
+  1273→                        "framtida premium-priser för fossilfritt stål och dra av "
+  1274→                        "investeringskostnaden, vilket ger en “strategisk option” som kan "
+  1275→                        "läggas till kärnvärderingen. Om premium-uppskattningen är för "
+  1276→                        "konservativ blir SSAB undervärderat, om den är för optimistisk blir "
+  1277→                        "riskjusterad avkastning låg."
+  1278→                    ),
+  1279→                },
+  1280→                {
+  1281→                    "type": "insight",
+  1282→                    "content": (
+  1283→                        "SSAB-analys handlar om att separera kärnintjäningskraft (premium-"
+  1284→                        "stål, cykelnormaliserad) från strategiska optioner (HYBRIT) — två "
+  1285→                        "olika kassaflödesströmmar som ofta sammanblandas."
+  1286→                    ),
+  1287→                },
+  1288→                {
+  1289→                    "type": "definition",
+  1290→                    "content": (
+  1291→                        "Spread i stålindustrin är skillnaden mellan säljpris för färdigt "
+  1292→                        "stål och inköpspris för råvaror (järnmalm, kol), och utgör den "
+  1293→                        "primära vinstkällan för integrerade ståltillverkare."
+  1294→                    ),
+  1295→                },
+  1296→                {
+  1297→                    "type": "text",
+  1298→                    "content": (
+  1299→                        "En viktig metod är att följa SSABs orderbok och kvartalsvis "
+  1300→                        "redovisade leveranser per segment, vilket ger insikt i kommande "
+  1301→                        "intäktsutveckling. Special Steels-segmentets orderbok är "
+  1302→                        "särskilt viktig eftersom den indikerar om premium-efterfrågan "
+  1303→                        "håller i sig eller om kunder byter till billigare substitut under "
+  1304→                        "konjunkturnedgångar. Historiskt HARDOX varit resistent mot "
+  1305→                        "konjunktursvackor eftersom kundernas livstidskostnadsberäkning "
+  1306→                        "uppmuntrar till fortsatt användning av slitaget stål även när "
+  1307→                        "priset pressas.\n\n"
+  1308→                        "En annan praktisk check är att följa kinesisk stålproduktion och "
+  1309→                        "export, eftersom överkapacitet i Kina (1 miljard ton per år) "
+  1310→                        "pressar globala stålpriser. När den kinesiska regeringen "
+  1311→                        "implementerar produktionsrestriktioner stiger SSABs marginaler "
+  1312→                        "markant, vilket inträffade 2017 och 2021. Investerare som följer "
+  1313→                        "kinesisk stål-politik kan därmed identifiera vändningar i global "
+  1314→                        "stålcykel."
+  1315→                    ),
+  1316→                },
+  1317→            ],
+  1318→        },
+  1319→        {
+  1320→            "intro": (
+  1321→                "Flera vanliga fallgropar kan leda investerare att dra felaktiga slutsatser "
+  1322→                "om SSABs värde och riskprofil."
+  1323→            ),
+  1324→            "blocks": [
+  1325→                {
+  1326→                    "type": "text",
+  1327→                    "content": (
+  1328→                        "Den vanligaste fällan är att extrapolera toppcykel-EBITDA och köpa "
+  1329→                        "SSAB till en låg multipel som faktiskt är en cykeltopp-multipel. "
+  1330→                        "Vid stålcykeltoppen 2007 och 2018 handlades SSAB till 4–5x "
+  1331→                        "topp-EBITDA, vilket vid första anblick verkar billigt men "
+  1332→                        "efter cykelvändning visar sig vara 15–20x normaliserad EBITDA. "
+  1333→                        "Lösningen är att alltid beräkna “cykelnormaliserad P/E” baserad på "
+  1334→                        "genomsnitt över 7–10 år snarare än punktvärden.\n\n"
+  1335→                        "En annan fälla är att förbise vikten av råvarukostnader och "
+  1336→                        "lager-poster i balansräkningen. SSAB har stora lager av järnmalm, "
+  1337→                        "kol och halvfabrikat som värderas till marknadspris vid "
+  1338→                        "kvartalsslut. Vid fallande råvarupriser uppstår nedskrivningar som "
+  1339→                        "kan slå multi-miljarder på en gång — 2015 skrev SSAB ner sitt "
+  1340→                        "stålvarulager med 2 miljarder kronor, vilket motsvarade hälften "
+  1341→                        "av årets rörelseresultat. Investerare måste separera dessa engångs-"
+  1342→                        "effekter från strukturell intjäningskraft.\n\n"
+  1343→                        "Tredje fällan är att förbise HYBRIT-investeringens inverkan på "
+  1344→                        "kassaflödet. Totalt beräknas investeringen kosta 50–80 miljarder "
+  1345→                        "kronor fram till 2030, vilket motsvarar 5–8 miljarder per år — "
+  1346→                        "mer än vad bolaget historiskt har genererat i fritt kassaflöde. "
+  1347→                        "Om premium-priser för fossilfritt stål inte realiseras kan SSAB "
+  1348→                        "tvingas till emissioner eller skuldökning för att finansiera "
+  1349→                        "omvandlingen."
+  1350→                    ),
+  1351→                },
+  1352→                {
+  1353→                    "type": "insight",
+  1354→                    "content": (
+  1355→                        "Tre SSAB-fällor är toppcykel-extrapolering, underskattning av "
+  1356→                        "lager-effekter och förbiseende av HYBRIT-investeringens "
+  1357→                        "kassaflödes-effekt — alla tre har historiskt kostat investerare "
+  1358→                        "stora belopp."
+  1359→                    ),
+  1360→                },
+  1361→                {
+  1362→                    "type": "definition",
+  1363→                    "content": (
+  1364→                        "Lagernedskrivning är en bokföringspost som reducerar värdet av "
+  1365→                        "varulager till det lägre av anskaffningsvärde och "
+  1366→                        "marknadsvärde, vilket påverkar rörelseresultatet direkt."
+  1367→                    ),
+  1368→                },
+  1369→                {
+  1370→                    "type": "text",
+  1371→                    "content": (
+  1372→                        "En subtilare fälla är att förväxla SSABs rapporterade EBITDA med "
+  1373→                        "kassaflöde från drift, eftersom bolaget har stora avskrivningar på "
+  1374→                        "stålvark och stora förändringar i rörelsekapital. SSABs "
+  1375→                        "kapitalomsättning är cirka 1,2–1,5x EBITDA, vilket gör att "
+  1376→                        "kassaflödesvärdering ger en annan bild än vinstmultipel. Vid "
+  1377→                        "cykelbotten kan kassaflödet vara negativt trots rapporterad "
+  1378→                        "EBITDA positiv, eftersom rörelsekapital binds i lagertillväxt.\n\n"
+  1379→                        "Slutligen är geopolitisk risk i USA och EU en underskattad faktor. "
+  1380→                        "SSAB Americas står för 40 procent av koncernens intäkter och "
+  1381→                        "påverkas direkt av amerikanska stål-tariffer (Section 232) som "
+  1382→                        "infördes 2018 under Trump-administrationen. När dessa tariffer "
+  1383→                        "höjdes 2025 steg SSABs amerikanska marginaler markant, men om de "
+  1384→                        "sänks eller elimineras faller marginalerna snabbt. Investerare "
+  1385→                        "måste inkludera tariff-scenarier i sin värdering av SSAB Americas."
+  1386→                    ),
+  1387→                },
+  1388→            ],
+  1389→        },
+  1390→        {
+  1391→            "intro": (
+  1392→                "AKM1 1.1-ramverket ger en strukturerad metodik för att värdera SSAB genom "
+  1393→                "20 variabler anpassade till cykliska råvaru- och industriaktier."
+  1394→            ),
+  1395→            "blocks": [
+  1396→                {
+  1397→                    "type": "text",
+  1398→                    "content": (
+  1399→                        "V01 (försäljningstillväxt) appliceras på SSAB genom att separera "
+  1400→                        "volymtillväxt (nya kunder, ökad kapacitet) från pristillväxt "
+  1401→                        "(stålpriser) och valutaeffekter (EUR, USD, SEK). Bolagets "
+  1402→                        "underliggande volymtillväxt är typiskt 1–2 procent per år i "
+  1403→                        "genomsnitt över en cykel, medan rapporterad försäljningstillväxt "
+  1404→                        "kan svänga mellan −15 och +25 procent. AKM1-metoden premierar "
+  1405→                        "volymtillväxt i Special Steels-segmentet som mest värdefull, "
+  1406→                        "eftersom premium-marginalen gör volymen mer lönsam.\n\n"
+  1407→                        "V03 (intäktsdiversifiering) är viktig för SSAB eftersom bolaget "
+  1408→                        "har både produkt-diversifiering (specialstål, plåt, rört stål) och "
+  1409→                        "geografisk diversifiering (Sverige, Finland, USA, UK). Hög "
+  1410→                        "diversifiering jämnar ut cykler mellan regioner — en nedgång i "
+  1411→                        "Europa kan kompenseras av uppgång i USA, vilket inträffade 2018–"
+  1412→                        "2019. Samtidigt innebär diversifieringen att SSAB inte har samma "
+  1413→                        "cykeluppsida som renodlade premium-bolag vid stark global "
+  1414→                        "efterfrågan.\n\n"
+  1415→                        "V14 (kassaflödeskvalitet) är kritisk för SSAB eftersom bolaget "
+  1416→                        "historiskt har haft svag konvertering från EBITDA till fritt "
+  1417→                        "kassaflöde — typiskt 30–40 procent under bra cyklar och negativt "
+  1418→                        "i dåliga. Orsaken är stora rörelsekapital-svängningar i samband "
+  1419→                        "med pris- och lagercykler. AKM1-metoden justerar därför ner "
+  1420→                        "EBITDA-baserade värderingar för att reflektera detta, vilket ger "
+  1421→                        "en mer konservativ och realistisk bild av bolagets värde."
+  1422→                    ),
+  1423→                },
+  1424→                {
+  1425→                    "type": "insight",
+  1426→                    "content": (
+  1427→                        "AKM1 gör SSAB till en lärobok i cykelrisk-hantering: "
+  1428→                        "intjäningskraft, kassaflödeskonvertering och cykelnormalisering i "
+  1429→                        "en integrerad process som undviker både toppcykel-extrapolering "
+  1430→                        "och överdriven konjunkturpessimism."
+  1431→                    ),
+  1432→                },
+  1433→                {
+  1434→                    "type": "definition",
+  1435→                    "content": (
+  1436→                        "Cykelnormalisering är processen att beräkna ett genomsnittligt "
+  1437→                        "resultat över en hel konjunkturcykel, vanligtvis 7–10 år, för att "
+  1438→                        "undvika att extrapolera topp- eller bottencykel-resultat."
+  1439→                    ),
+  1440→                },
+  1441→                {
+  1442→                    "type": "text",
+  1443→                    "content": (
+  1444→                        "V13 (lagerutveckling) är en unik variabel för SSAB eftersom "
+  1445→                        "varulager utgör 15–20 procent av omsättningen och därmed har "
+  1446→                        "direkt påverkan på både balansräkning och resultaträkning. "
+  1447→                        "När stålpriserna stiger ökar lagrets värde och därmed EBITDA — "
+  1448→                        "men detta är en engångseffekt som inte indikerar strukturell "
+  1449→                        "förbättring. AKM1-metoden spårar lagrets dagar av omsättning och "
+  1450→                        "varnar om denna stiger över 80 dagar, vilket indikerar att bolaget "
+  1451→                        "bygger upp lager inför fallande efterfrågan.\n\n"
+  1452→                        "V19 (emissionsrisk) är måttlig för SSAB eftersom bolaget har "
+  1453→                        "täckning för HYBRIT-investeringar genom nuvarande kassaflöde och "
+  1454→                        "kassabehållning, men skulle kunna triggas om cykelbottnar varar "
+  1455→                        "länge. V20 (återköpsdisciplin) är svag — bolaget har inte återköpt "
+  1456→                        "aktier i någon större utsträckning sedan 2018, vilket återspeglar "
+  1457→                        "att kapital allokeras till HYBRIT istället. Investerare måste "
+  1458→                        "bedöma om denna allokering skapar värde eller urholkar "
+  1459→                        "aktieägaravkastningen."
+  1460→                    ),
+  1461→                },
+  1462→            ],
+  1463→        },
+  1464→        {
+  1465→            "intro": (
+  1466→                "Genom konkreta fallstudier av SSABs historiska händelser blir det tydligt "
+  1467→                "hur principerna omsätts i praktiken och vilka lärdomar som kan dras."
+  1468→            ),
+  1469→            "blocks": [
+  1470→                {
+  1471→                    "type": "text",
+  1472→                    "content": (
+  1473→                        "Fallstudie 1 — IPSCO-förvärvet 2008. SSAB betalade 7,2 miljarder "
+  1474→                        "dollar för kanadensisk-amerikanska IPSCO, vilket var en av de "
+  1475→                        "största svenska industri-affärerna någonsin. Timing var olycklig — "
+  1476→                        "inom sex månader rasade stålpriset med 50 procent under "
+  1477→                        "finanskrisen och IPSCO gick från vinst till förlust. SSAB tvingades "
+  1478→                        "till nyemission 2009 för att stärka balansräkningen, vilket "
+  1479→                        "urholkade aktieägarnas värde med 40 procent. Lärdom: stora "
+  1480→                        "förvärv vid cykeltopp är en av de största riskerna i "
+  1481→                        "cykelindustriaktier.\n\n"
+  1482→                        "Fallstudie 2 — Rautaruukki-förvärvet 2018. SSAB förvärvade finska "
+  1483→                        "Rautaruukki i en aktiebyte värd 1,3 miljarder euro, vilket "
+  1484→                        "konsoliderade nordisk stålindustri. Synergierna beräknades till 100 "
+  1485→                        "miljoner euro per år och integrationen gick smidigt. Tre år senare "
+  1486→                        "hade koncernen tre tydliga segment (Special Steels, Americas, "
+  1487→                        "Europe) med tydlig ansvarsfördelning. Lärdom: strategiska "
+  1488→                        "konsolideringar i fragmenterade branscher kan skapa värde om "
+  1489→                        "integrationen genomförs disciplinerat.\n\n"
+  1490→                        "Fallstudie 3 — HYBRIT-pilot 2021. I augusti 2021 producerade HYBRIT-"
+  1491→                        "pilotanläggningen i Luleå världens första fossilfria svampjärn i "
+  1492→                        "industriell skala. SSAB levererade därefter de första "
+  1493→                        "fossilfria stålet till Volvo Group 2022 och till Mercedes-Benz 2023. "
+  1494→                        "Marknadens reaktion var positiv — aktien steg 20 procent under de "
+  1495→                        "följande sex månaderna — men varsnabbt ifrågasattes om premium-"
+  1496→                        "priset för fossilfritt stål skulle kompensera för "
+  1497→                        "investeringskostnaden."
+  1498→                    ),
+  1499→                },
+  1500→                {
+  1501→                    "type": "insight",
+  1502→                    "content": (
+  1503→                        "SSABs fallstudier visar att både stora förvärv och strategiska "
+  1504→                        "teknikskiften kan skapa eller förstöra värde — avgörande är "
+  1505→                        "timing, prissättning och integrationdisciplin."
+  1506→                    ),
+  1507→                },
+  1508→                {
+  1509→                    "type": "definition",
+  1510→                    "content": (
+  1511→                        "Svampjärn (Direct Reduced Iron, DRI) är en form av järn som "
+  1512→                        "produceras genom reduktion av järnmalm med vätgas eller naturgas, "
+  1513→                        "vilket ger en produkt som kan smältas vidare till stål utan "
+  1514→                        "koldioxidutsläpp."
+  1515→                    ),
+  1516→                },
+  1517→                {
+  1518→                    "type": "text",
+  1519→                    "content": (
+  1520→                        "Fallstudie 4 — Tariffer 2018 och 2025. När Trump-administrationen "
+  1521→                        "införde Section 232-tariffer på stålimport 2018 steg SSABs "
+  1522→                        "amerikanska marginaler kraftigt eftersom konkurrensen från "
+  1523→                        "europeiskt stål minskade. Effekten förstärktes 2025 när nya "
+  1524→                        "tariffer höjdes ytterligare, vilket gav SSAB Americas en EBIT-"
+  1525→                        "marginal på 20 procent jämfört med 10 procent historiskt. Lärdom: "
+  1526→                        "geopolitiska händelser kan dramatiskt påverka enskilda segment och "
+  1527→                        "måste inkluderas i värderingen som scenarier.\n\n"
+  1528→                        "Slutsatsen från fallstudierna är att SSAB analyseras bäst genom "
+  1529→                        "att separera cykelinvesteringar (nya ugnar, lageruppbyggnad), "
+  1530→                        "strategiska förvärv (IPSCO, Rautaruukki) och tekniska skiften "
+  1531→                        "(HYBRIT, tariffer). Varje kategori kräver olika analysmetoder och "
+  1532→                        "olika tidsramar — ett bemästrandet som skiljer professionella "
+  1533→                        "SSAB-investerare från dem som bara följer stålpriset."
+  1534→                    ),
+  1535→                },
+  1536→            ],
+  1537→        },
+  1538→        {
+  1539→            "intro": (
+  1540→                "Mästerskap i SSAB-analys innebär att kombinera stålcykel-kompetens, "
+  1541→                "premium-moat-analys och HYBRIT-strategi-bedömning i en integrerad "
+  1542→                "investmenttes."
+  1543→            ),
+  1544→            "blocks": [
+  1545→                {
+  1546→                    "type": "text",
+  1547→                    "content": (
+  1548→                        "Mästerskap i SSAB-analys kräver tre förmågor utöver grundläggande "
+  1549→                        "fundamental analys. För det första måste investeraren bygga en "
+  1550→                        "stålcykel-modell som kombinerar global efterfrågan (kinesisk "
+  1551→                        "produktion, europeisk fordonsindustri, amerikansk shale gas) med "
+  1552→                        "utbud (nya kapaciteter, nedläggningar) och lager (kinesiska och "
+  1553→                        "LME-lager). Denna modell bör uppdateras kvartalsvis och jämföras "
+  1554→                        "med World Steel Association:s månatliga produktionsstatistik.\n\n"
+  1555→                        "För det andra måste investeraren bedöma premium-moat för HARDOX "
+  1556→                        "och DOCOL. En indikator är bruttomarginal per segment — om "
+  1557→                        "Special Steels bruttomarginal hålls över 25 procent är moat intakt, "
+  1558→                        "om den faller under 20 procent indikerar det konkurrens från "
+  1559→                        "japanska JFE och tyska ThyssenKrupp som kan erbjuda substitut. "
+  1560→                        "Ett annat verktyg är att följa SSABs patentansökningar och "
+  1561→                        "nya produktlanseringar som indikerar innovationstakt.\n\n"
+  1562→                        "För det tredje måste investeraren bedöma HYBRIT som strategisk "
+  1563→                        "option. Tre frågor är centrala: (1) Kommer premium-priset för "
+  1564→                        "fossilfritt stål att kompensera för investeringskostnaden? (2) "
+  1565→                        "Vilka kunder är beredda att betala premium? (3) Vad händer om "
+  1566→                        "konkurrenter (ArcelorMittal, ThyssenKrupp) utvecklar liknande "
+  1567→                        "teknik? Investerare som kan svara på dessa tre frågor har en "
+  1568→                        "competitive edge gentemot konsensus."
+  1569→                    ),
+  1570→                },
+  1571→                {
+  1572→                    "type": "insight",
+  1573→                    "content": (
+  1574→                        "SSAB-mästerskap kräver kombinationen av råvarumarknadsmodellering, "
+  1575→                        "moat-validering och strategisk optionsvärdering — tre discipliner "
+  1576→                        "som få analytiker behärskar i helhet."
+  1577→                    ),
+  1578→                },
+  1579→                {
+  1580→                    "type": "definition",
+  1581→                    "content": (
+  1582→                        "Strategisk option i investeringssammanhang är rätten — men inte "
+  1583→                        "skyldigheten — att genomföra en framtida investering baserat på "
+  1584→                        "nya marknadsförutsättningar, vilken kan värderas med "
+  1585→                        "optionsprissättningsmetoder."
+  1586→                    ),
+  1587→                },
+  1588→                {
+  1589→                    "type": "text",
+  1590→                    "content": (
+  1591→                        "En slutgiltig dimension av mästerskap är att förstå SSABs roll i en "
+  1592→                        "svensk portfölj — bolaget är den enda stora exponeringen mot "
+  1593→                        "svensk tung industri och därmed en hedge mot europeisk "
+  1594→                        "konjunktur. I portföljsammanhang kan SSAB fylla en cykelaktie-"
+  1595→                        "position som kompletterar mer defensiva innehav som Atlas Copco "
+  1596→                        "och AstraZeneca, men volatiliteten kräver rätt position sizing och "
+  1597→                        "tålamod under cykelbottnar.\n\n"
+  1598→                        "Investerare som bemästrar SSAB-analys kan ofta identifiera "
+  1599→                        "cykelvändningar 6–9 månader före konsensus genom att följa kinesisk "
+  1600→                        "stålproduktion, amerikanska ståltariffer och europeisk fordons-"
+  1601→                        "produktion. Denna förmåga är särskilt värdefull i Sverige där SSAB "
+  1602→                        "är en av de mest omsatta industriaktierna — den som förstår bolaget "
+  1603→                        "bäst har en distinkt competitive edge."
+  1604→                    ),
+  1605→                },
+  1606→            ],
+  1607→        },
+  1608→    ],
+  1609→}
+  1610→
+  1611→
+  1612→# ============================================================================
+  1613→# Helper: build the chapter payload (preserving num, minutes, title)
+  1614→# ============================================================================
+  1615→
+  1616→def build_course_payload(course, new_data):
+  1617→    """Return a new course dict with replaced fields, preserving
+  1618→    chapter num/minutes/title."""
+  1619→    new_course = deepcopy(course)
+  1620→    new_course["why"] = new_data["why"]
+  1621→    new_course["history"] = deepcopy(new_data["history"])
+  1622→    new_course["lynchSection"] = new_data["lynchSection"]
+  1623→    new_course["grahamSection"] = new_data["grahamSection"]
+  1624→    new_course["ak1Section"] = new_data["ak1Section"]
+  1625→
+  1626→    # Replace chapters while keeping num/minutes/title from chapters_list
+  1627→    existing_chapters = course.get("chapters", [])
+  1628→    chapter_list = course.get("chapters_list", [])
+  1629→    new_chapters = []
+  1630→    for i, ch_data in enumerate(new_data["chapters"]):
+  1631→        # Prefer the metadata from existing chapter if available; fallback to chapters_list
+  1632→        if i < len(existing_chapters):
+  1633→            num = existing_chapters[i].get("num", i + 1)
+  1634→            minutes = existing_chapters[i].get("minutes", 4)
+  1635→            title = existing_chapters[i].get("title", f"{i+1}. Kapitel")
+  1636→        elif i < len(chapter_list):
+  1637→            num = chapter_list[i].get("num", i + 1)
+  1638→            minutes = chapter_list[i].get("minutes", 4)
+  1639→            title = chapter_list[i].get("title", f"{i+1}. Kapitel")
+  1640→        else:
+  1641→            num = i + 1
+  1642→            minutes = 4
+  1643→            title = f"{i+1}. Kapitel"
+  1644→
+  1645→        new_chapters.append({
+  1646→            "num": num,
+  1647→            "minutes": minutes,
+  1648→            "title": title,
+  1649→            "intro": ch_data["intro"],
+  1650→            "blocks": deepcopy(ch_data["blocks"]),
+  1651→        })
+  1652→    new_course["chapters"] = new_chapters
+  1653→    return new_course
+  1654→
+  1655→
+  1656→# Placeholder for remaining 7 courses — will be appended in next write step
+  1657→# (the script imports CONTENT from this module-level dict; for the remaining
+  1658→# 7 courses we will append dicts below before the main routine runs)
+  1659→

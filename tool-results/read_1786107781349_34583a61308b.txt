@@ -1,0 +1,2002 @@
+     1→#!/usr/bin/env python3
+     2→# -*- coding: utf-8 -*-
+     3→"""
+     4→fill-mk-courses.py
+     5→
+     6→Fyller 11 "Makroekonomi"-kurser (slug-prefix `mk-`) i
+     7→/home/z/my-project/public/deep-courses.json med skräddarsytt svenskt innehåll:
+     8→
+     9→  - why              (2-3 meningar)
+    10→  - history          { origin, evolution, modern }  (3 meningar per del)
+    11→  - lynchSection     (2 meningar)
+    12→  - grahamSection    (2 meningar)
+    13→  - ak1Section       (2 meningar)
+    14→  - chapters         6 kapitel — befintliga num/minutes/title bevaras,
+    15→                     intro + blocks skrivs om till formatet
+    16→                     [text(2-3 paragrafer), insight(1-2 meningar),
+    17→                      definition(1 mening), text(2 paragrafer)]
+    18→
+    19→Varje slug markeras som klar i /home/z/my-project/.gen-progress.json
+    20→(dvs läggs till i `done`-arrayen).
+    21→
+    22→Körs:  python3 /home/z/my-project/scripts/fill-mk-courses.py
+    23→"""
+    24→
+    25→from __future__ import annotations
+    26→
+    27→import json
+    28→import os
+    29→import sys
+    30→
+    31→# ---------------------------------------------------------------------------
+    32→# Sökvägar
+    33→# ---------------------------------------------------------------------------
+    34→PROJECT_ROOT   = "/home/z/my-project"
+    35→COURSES_PATH   = os.path.join(PROJECT_ROOT, "public", "deep-courses.json")
+    36→PROGRESS_PATH  = os.path.join(PROJECT_ROOT, ".gen-progress.json")
+    37→
+    38→# ---------------------------------------------------------------------------
+    39→# Kursdata — skräddarsytt svenskt innehåll för alla 11 mk-kurser
+    40→# ---------------------------------------------------------------------------
+    41→# Varje kurs har:
+    42→#   why:           str
+    43→#   history:       { origin, evolution, modern }  (str, 3 meningar var)
+    44→#   lynchSection:  str (2 meningar)
+    45→#   grahamSection: str (2 meningar)
+    46→#   ak1Section:    str (2 meningar)
+    47→#   chapters:      list med 6 dict, en per kapitel — varje dict har:
+    48→#                    intro:  str (1-2 meningar)
+    49→#                    blocks: list med exakt 4 dicts:
+    50→#                      { type: "text",       content: 2-3 paragrafer }
+    51→#                      { type: "insight",    content: 1-2 meningar }
+    52→#                      { type: "definition", content: 1 mening }
+    53→#                      { type: "text",       content: 2 paragrafer }
+    54→#
+    55→# `num`, `minutes` och `title` hämtas från kursens befintliga `chapters_list`
+    56→# i deep-courses.json och bevaras oförändrade.
+    57→# ---------------------------------------------------------------------------
+    58→
+    59→COURSES = {}
+    60→
+    61→# ===========================================================================
+    62→# mk-01 — BNP och tillväxt
+    63→# ===========================================================================
+    64→COURSES["mk-01-bnp-och-tillvaxt"] = {
+    65→    "why": (
+    66→        "BNP-tillväxten är den övergripande tidvattenströmmen som lyfter eller "
+    67→        "sänker svenska bolags intjäning — svensk export uppgick till cirka 45 "
+    68→        "procent av BNP 2023 och därmed präglas Ericsson, Atlas Copco och Volvo "
+    69→        "direkt av global konjunktur. Riksbankens räntebeslut utgår explicit "
+    70→        "från BNP-gapet och resursutnyttjandet, vilket gör SCB:s kvartals-BNP "
+    71→        "till den enskilt mest bevakade makrovariabeln på Stockholmsbörsen."
+    72→    ),
+    73→    "history": {
+    74→        "origin": (
+    75→            "Simon Kuznets redovisade 1934 det första nationella BNP-kontot för "
+    76→            "USA som ett svar på den stora depressionens statistiska mörker och "
+    77→            "visade att produktionen hade fallit mer än man dittills trott. "
+    78→            "Richard Stone och James Meade utvecklade parallellt det brittiska "
+    79→            "nationalräkenskapssystemet under andra världskriget, vilket lade "
+    80→            "grunden till FN:s System of National Accounts 1953. Keynes verk "
+    81→            "”How to Pay for the War” (1940) formaliserade makro-aggregaten som "
+    82→            "statsbudgetens grundval och etablerade BNP som centralbudgetens "
+    83→            "styrverktyg."
+    84→        ),
+    85→        "evolution": (
+    86→            "John Hicks och Paul Samuelson förfinade på 1940- och 50-talen "
+    87→            "keynesianska modeller som splittrade BNP i konsumtion, investeringar, "
+    88→            "statlig utgift och nettoexport. Robert Mundell och Marcus Fleming "
+    89→            "lade 1963 till öppen ekonomi, ränteparitet och växelkurs — avgörande "
+    90→            "för ett exportberoende Sverige där SCB började publicera kvartals-BNP "
+    91→            "1970. Robert Solows tillväxteori från 1957 införde den s.k. Solow-"
+    92→            "resten för att bryta ut teknisk produktivitetstillväxt från "
+    93→            "insatsökning, en metod som fortfarande används i produktivitets-"
+    94→            "statistiken."
+    95→        ),
+    96→        "modern": (
+    97→            "Idag publicerar SCB kvartals-BNP med 60 respektive 90 dagars "
+    98→            "fördröjning och revideringarna kan vara stora — BNP-kontraktionen "
+    99→            "Q2 2020 reviderades från −8,6 till −2,8 procent när importjusteringar "
+   100→            "kom på plats. Riksbankens penningpolitik 2022–2023 utgick direkt "
+   101→            "från BNP-gapet när styrräntan höjdes från 0 till 4 procent på ett "
+   102→            "år, och ECB gör på samma sätt med Eurostats flash-BNP. BNP-tillväxt "
+   103→            "är därmed inte en teoretisk variabel utan en direkt prissatt "
+   104→            "signal i både obligations- och aktiemarknaden."
+   105→        ),
+   106→    },
+   107→    "lynchSection": (
+   108→        "Lynch påminde i ”One Up on Wall Street” (1989) att om man inte kan "
+   109→        "förutse marknaden ska man i stället förutse bolaget — men han "
+   110→        "kontrollerade ändå BNP-prognoser eftersom banker, detaljhandel och "
+   111→        "cykliska industriaktier rör sig med konjunkturen. I hans erfarenhet gav "
+   112→        "företag med stark balansräkning överlägsna resultat i "
+   113→        "recessionsvändningar, medan renodlat cykliska aktier var lömska att "
+   114→        "tajma."
+   115→    ),
+   116→    "grahamSection": (
+   117→        "Graham varnade i ”The Intelligent Investor” (1949) för att "
+   118→        "makroprognoser var den vanligaste källan till investerarfel och menade "
+   119→        "att portföljen ska isoleras från BNP-svängar genom margin of safety "
+   120→        "snarare än genom tajming. Hans defensiva investerare utgick från "
+   121→        "företagets resultatcykel snarare än från BNP-cykeln och accepterade "
+   122→        "att konjunkturförutsägelser ofta slår fel."
+   123→    ),
+   124→    "ak1Section": (
+   125→        "I AKM1-metodiken hanteras BNP-tillväxt som en förklaringsvariabel till "
+   126→        "V01 (försäljningstillväxt) och V19 (kapitalförbränning) — när SCB:s "
+   127→        "BNP-gap indikerar recession kapas auto-tillägg av cykliska aktier och "
+   128→        "viktas utdelningsvariabeln V17 högre. AKM1 1.1-integrationen prövar "
+   129→        "varje aktie mot en makrokänslighetsmatris och markerar cykliska bolag "
+   130→        "med extra riskpremie i lågkonjunktur."
+   131→    ),
+   132→    "chapters": [
+   133→        {
+   134→            "intro": (
+   135→                "BNP är den mest centrala makrovariabeln eftersom den "
+   136→                "sammanfattar allt som produceras i en ekonomi under en period "
+   137→                "och därmed utgör grundvalen för räntor, valutor och vinster."
+   138→            ),
+   139→            "blocks": [
+   140→                {
+   141→                    "type": "text",
+   142→                    "content": (
+   143→                        "BNP definieras som marknadsvärdet av alla färdiga varor "
+   144→                        "och tjänster som produceras inom ett lands gränser under "
+   145→                        "en viss period. Mätningen sker tre sätt: produktions-"
+   146→                        "metoden, utgiftsmetoden och inkomstmetoden — de ska alla "
+   147→                        "ge samma resultat enligt nationalräkenskapernas "
+   148→                        "identitet. I Sverige ställer SCB upp utgiftssidan som "
+   149→                        "C + I + G + (X − M), där nettoexporten (X − M) blev "
+   150→                        "särskilt viktig när svensk export 2023 uppgick till cirka "
+   151→                        "45 procent av BNP.\n\n"
+   152→                        "Det är skillnaden mellan nominell och real BNP som "
+   153→                        "avgör om tillväxten är äkta eller bara en "
+   154→                        "prisillusion. Nominell BNP mäts i löpande priser, "
+   155→                        "medan real BNP justeras med en BNP-deflator som fångar "
+   156→                        "prisökningar. Sverige hade 2022 en nominell "
+   157→                        "BNP-tillväxt på 6,9 procent samtidigt som real "
+   158→                        "tillväxt var −0,7 procent — skillnaden var alltså "
+   159→                        "ren inflation.\n\n"
+   160→                        "BNP-tillväxt delas upp i bidrag från arbetskraft, "
+   161→                        "kapital och total faktorproduktivitet (TFP). Solow-"
+   162→                        "modellen från 1957 visar att långsiktig tillväxt i ett "
+   163→                        "moget land som Sverige drivs av TFP snarare än av "
+   164→                        "kapackumulering, vilket är varför Riksbanken noggrant "
+   165→                        "följer produktivitetssiffrorna."
+   166→                    ),
+   167→                },
+   168→                {
+   169→                    "type": "insight",
+   170→                    "content": (
+   171→                        "Real BNP-tillväxt är det enda mått som visar om "
+   172→                        "ekonomin faktiskt växer — nominell BNP kan stiga enbart "
+   173→                        "p.g.a. inflation, vilket lurar investerare som inte "
+   174→                        "justerar för prisnivån."
+   175→                    ),
+   176→                },
+   177→                {
+   178→                    "type": "definition",
+   179→                    "content": (
+   180→                        "BNP-gap: skillnaden mellan faktisk och potentiell BNP, "
+   181→                        "uttryckt i procent av potentiell BNP — positivt gap "
+   182→                        "indikerar överhettning, negativt gap indikerar "
+   183→                        "resursslöseri."
+   184→                    ),
+   185→                },
+   186→                {
+   187→                    "type": "text",
+   188→                    "content": (
+   189→                        "BNP-gapet är det koncept Riksbanken använder för att "
+   190→                        "avgöra om ekonomin är över- eller underhettad. Ett "
+   191→                        "negativt gap 2020–2021 motiverade en expansiv "
+   192→                        "penningpolitik med negativ styrränta, medan ett "
+   193→                        "stigande positivt gap 2022 lade grunden för de "
+   194→                        "kraftiga räntehöjningarna. Samma gap används av IMF "
+   195→                        "i sina land-rapporter för att jämföra konjunkturlägen "
+   196→                        "mellan länder.\n\n"
+   197→                        "För en svensk investerare betyder BNP-gapet att "
+   198→                        "cykliska sektorer — industri, bank och fastighet — "
+   199→                        "rör sig extra mycket i konjunktursvängningar. När BNP "
+   200→                        "kontraherar faller沃尔沃 och Atlas Copco mer än "
+   201→                        "marknaden, och när BNP vänder upp igen slår dessa "
+   202→                        "aktier ofta tillbaka snabbare än defensiva bolag som "
+   203→                        "AstraZeneca."
+   204→                    ),
+   205→                },
+   206→            ],
+   207→        },
+   208→        {
+   209→            "intro": (
+   210→                "Praktisk BNP-analys för en svensk investerare handlar om att "
+   211→                "läsa SCB:s kvartalsrapport och förstå vilka sektorer som "
+   212→                "driver svängningarna."
+   213→            ),
+   214→            "blocks": [
+   215→                {
+   216→                    "type": "text",
+   217→                    "content": (
+   218→                        "SCB publicerar BNP enligt en fast tidslinje: en "
+   219→                        "kvartalsvisa flash-BNP cirka 60 dagar efter "
+   220→                        "kvartalslut, en reviderad siffra vid dag 90 och "
+   221→                        "årliga revideringar i november. Flash-siffran bygger "
+   222→                        "på delvis preliminär data och kan revideras med en "
+   223→                        "hel procentenhet, vilketinvesterare måste veta för "
+   224→                        "att inte överreagera. Det är de reviderade "
+   225→                        "kvartalssiffrorna som Riksbanken använder i sina "
+   226→                        "monetary policy reports.\n\n"
+   227→                        "BNP-komponenterna avslöjar mer än huvudtalet. Om "
+   228→                        "tillväxten drivs av hushållens konsumtion är den "
+   229→                        "mer hållbar än om den drivs av lageruppbyggnad som "
+   230→                        "kan vända nästa kvartal. Om investeringarna (I) "
+   231→                        "faller samtidigt som konsumtionen stiger, är det en "
+   232→                        "varning om företagsskepsis inför framtiden — "
+   233→                        "exakt det mönstret syntes i SCB:s Q4 2022-rapport.\n\n"
+   234→                        "Nettoexportens bidrag är särskilt viktigt för Sverige. "
+   235→                        "När Ericsson, AstraZeneca eller Volvo rapporterar "
+   236→                        "stark orderstock brukar det slå igenom i nästa "
+   237→                        "kvartals BNP som positivt nettoexportbidrag. "
+   238→                        "Investerares edge ligger i att koppla bolagens "
+   239→                        "kvartalsrapporter till SCB:s nationalräkenskaper."
+   240→                    ),
+   241→                },
+   242→                {
+   243→                    "type": "insight",
+   244→                    "content": (
+   245→                        "SCB:s flash-BNP kan revideras med en hel "
+   246→                        "procentenhet — basera aldrig ett stort beslut på "
+   247→                        "första siffran, utan vänta på den reviderade "
+   248→                        "90-dagarsrapporten och jämför med Riksbankens "
+   249→                        "egen prognos."
+   250→                    ),
+   251→                },
+   252→                {
+   253→                    "type": "definition",
+   254→                    "content": (
+   255→                        "Teknisk recession: två på varandra följande kvartal "
+   256→                        "med negativ real BNP-tillväxt — en tumregel som "
+   257→                        "infördes av Julius Shiskin i New York Times 1974."
+   258→                    ),
+   259→                },
+   260→                {
+   261→                    "type": "text",
+   262→                    "content": (
+   263→                        "Riksbankens penningpolitiska rapport (MPR) publiceras "
+   264→                        "tre gånger om året och innehåller en detaljerad "
+   265→                        "BNP-prognos medel treårsperiod. Reporäntans bana "
+   266→                        "styrs direkt av BNP-gapet — när SCB:s utfall "
+   267→                        "underträffar MPR-prognosen brukar marknaden "
+   268→                        "omedelbart prissätta en sänkt räntebana och "
+   269→                        "obligationsräntan faller.\n\n"
+   270→                        "För aktieinvesterare innebär detta att en svagare BNP "
+   271→                        "inte nödvändigtvis är dåligt för börsen om den "
+   272→                        "leder till lägre räntor — en dynamik som syntes "
+   273→                        "under 2019 då svag global tillväxt kombinerades med "
+   274→                        "stigande börsvärderingar. Den svenska björnen 2022 "
+   275→                        "blev tvärtom djup just för att BNP-svagheten "
+   276→                        "kom samtidigt som Riksbanken höjde räntan."
+   277→                    ),
+   278→                },
+   279→            ],
+   280→        },
+   281→        {
+   282→            "intro": (
+   283→                "De vanligaste BNP-fällorna handlar om att läsa fel siffra, "
+   284→                "missförstå revideringar och förväxla nominella och reala "
+   285→                "förändringar."
+   286→            ),
+   287→            "blocks": [
+   288→                {
+   289→                    "type": "text",
+   290→                    "content": (
+   291→                        "Den vanligaste fällan är att läsa nominell BNP-tillväxt "
+   292→                        "och tolka den som verklig tillväxt. Ett land kan "
+   293→                        "ha 10 procent nominell BNP-tillväxt och samtidigt "
+   294→                        "få fattigare om inflationen är 12 procent — exakt "
+   295→                        "vad som hände i Argentina 2022. I Sverige hade vi "
+   296→                        "en liknande, om än mindre, illusion under 2022 när "
+   297→                        "nominell BNP steg med 6,9 procent medan real BNP "
+   298→                        "kontraherade.\n\n"
+   299→                        "En annan fälla är att övervikt flash-BNP. SCB:s "
+   300→                        "preliminära siffra bygger på 60–70 procent "
+   301→                        "underlag och revideras i genomsnitt med 0,5 "
+   302→                        "procentenheter. Investerare som sålde svenska "
+   303→                        "aktier på Q2 2020 flash-BNP på −8,6 procent "
+   304→                        "missade att den slutliga siffran blev −2,8 procent "
+   305→                        "— en enorm skillnad i prissättning.\n\n"
+   306→                        "En tredje fälla är att tolka BNP-tillväxt som "
+   307→                        "bolagsvinststillväxt. Vinster är en andel av BNP "
+   308→                        "och kan både stiga och falla oberoende av "
+   309→                        "huvudtalet — lönekostnader, råvarupriser och "
+   310→                        "räntor avgör hur stor andel av BNP som hamnar "
+   311→                        "som vinster hos noterade bolag."
+   312→                    ),
+   313→                },
+   314→                {
+   315→                    "type": "insight",
+   316→                    "content": (
+   317→                        "BNP-tillväxt är inte samma sak som vinsttillväxt — "
+   318→                        "löner, räntor och råvarupriser avgör hur stor andel "
+   319→                        "av produktionen som blir bolagsvinster, vilket "
+   320→                        "förklarar varför börsen kan falla i en växande "
+   321→                        "ekonomi."
+   322→                    ),
+   323→                },
+   324→                {
+   325→                    "type": "definition",
+   326→                    "content": (
+   327→                        "BNP-deflator: implicita prisindex för BNP, beräknas "
+   328→                        "som kvoten mellan nominell och real BNP multiplicerat "
+   329→                        "med 100 — ett bredare inflationstal än KPI eftersom "
+   330→                        "det täcker alla varor och tjänster, inte bara "
+   331→                        "hushållens konsumtion."
+   332→                    ),
+   333→                },
+   334→                {
+   335→                    "type": "text",
+   336→                    "content": (
+   337→                        "En ytterligare fälla är att missförstå "
+   338→                        "lagerbidraget. En BNP-tillväxt som till 80 procent "
+   339→                        "består av oönskad lageruppbyggnad är en varning, "
+   340→                        "inte en framgång — företagen har producerat mer än "
+   341→                        "de sålt och kommer att dra ner nästa kvartal. "
+   342→                        "SCB:s kvartalsrapport anger uttryckligen "
+   343→                        "lagerbidraget och investerare bör läsa det "
+   344→                        "separat från underliggande tillväxt.\n\n"
+   345→                        "Slutligen är det en fälla att använda BNP som "
+   346→                        "kortsiktig marknadsindikator. Aktiemarknaden är "
+   347→                        "en ledande indikator och vänder oftast 6–9 månader "
+   348→                        "innan BNP vänder, vilket innebär att den som "
+   349→                        "investerar baserat på bekräftad BNP-vändning "
+   350→                        "missar större delen av uppgången."
+   351→                    ),
+   352→                },
+   353→            ],
+   354→        },
+   355→        {
+   356→            "intro": (
+   357→                "I AKM1 1.1 integreras BNP-tillväxt som en makrofilter som "
+   358→                "modifierar V01, V17 och V19 innan slutlig portföljvikter "
+   359→                "sätts."
+   360→            ),
+   361→            "blocks": [
+   362→                {
+   363→                    "type": "text",
+   364→                    "content": (
+   365→                        "AKM1 1.1-modellen utgår från en makrokänslighets-"
+   366→                        "matris där varje bolag klassas efter hur starkt "
+   367→                        "dess intjäning korrelerar med BNP-gapet. Cykliska "
+   368→                        "aktier som Volvo, SKF och Atlas Copco har "
+   369→                        "hög BNP-beta och får därför en extra riskpremie "
+   370→                        "i lågkonjunkturer. Defensiva aktier som AstraZeneca "
+   371→                        "och ICA får låg BNP-beta och fungerar som "
+   372→                        "stabilisatorer i portföljen.\n\n"
+   373→                        "När SCB publicerar en BNP-siffra som underträffar "
+   374→                        "Riksbankens prognos med mer än 0,5 procentenhet "
+   375→                        "triggar AKM1 1.1 automatiskt en omvikning: cykliska "
+   376→                        "aktier får 10–15 procent lägre portföljvikt och "
+   377→                        "utdelningsaktier (V17) får motsvarande högre vikt. "
+   378→                        "Detta simulerar det institutionella tillvägagångssätt "
+   379→                        "som stora pensionsfonder tillämpar men sällan "
+   380→                        "kommunicerar öppet.\n\n"
+   381→                        "V01 (försäljningstillväxt) prövas mot BNP-tillväxt "
+   382→                        "i en regressionsmodell — ett bolag vars "
+   383→                        "försäljningstillväxt avviker mer än två "
+   384→                        "standardavvikelser från vad BNP-tillväxten "
+   385→                        "motiverar flaggas för manuell granskning."
+   386→                    ),
+   387→                },
+   388→                {
+   389→                    "type": "insight",
+   390→                    "content": (
+   391→                        "AKM1 1.1 omvandlar BNP-tillväxt från en passiv "
+   392→                        "bakgrundsfaktor till en aktiv portföljviktsvariabel "
+   393→                        "— makrofiltret triggas av faktiska SCB-utfall, inte "
+   394→                        "av framtidsprognoser, vilket eliminerar "
+   395→                        "förutsägelserisken."
+   396→                    ),
+   397→                },
+   398→                {
+   399→                    "type": "definition",
+   400→                    "content": (
+   401→                        "BNP-beta: ett mått på hur starkt ett bolags "
+   402→                        "resultat变动 samvarierar med BNP-gapet, beräknad "
+   403→                        "med 20 kvartals rullande regression mot SCB:s "
+   404→                        "kvartals-BNP."
+   405→                    ),
+   406→                },
+   407→                {
+   408→                    "type": "text",
+   409→                    "content": (
+   410→                        "I praktiken innebär AKM1 1.1-integrationen att "
+   411→                        "portföljen får en inbyggd konjunkturförsäkring. "
+   412→                        "När BNP-gapet är negativt flyttas kapital från "
+   413→                        "cykliska sektorer (industri, bank, fastighet) till "
+   414→                        "defensiva (läkemedel, livsmedel, utility). När "
+   415→                        "gapet vänder positivt sker återgången gradvis över "
+   416→                        "två kvartal för att undvika falska signaler.\n\n"
+   417→                        "V19 (kapitalförbränning) kopplas också till BNP — "
+   418→                        "i recessioner har historiskt 30 procent fler "
+   419→                        "bolag positiv kapitalförbränning, vilket gör "
+   420→                        "V19-filtret extra viktigt när BNP-gapet är "
+   421→                        "negativt. AKM1-systemet känner av detta och "
+   422→                        "höjer automatiskt V19-tröskeln i lågkonjunktur."
+   423→                    ),
+   424→                },
+   425→            ],
+   426→        },
+   427→        {
+   428→            "intro": (
+   429→                "Tre fallstudier visar hur BNP-tillväxt har prissatts på "
+   430→                "svensk börs under olika konjunkturregimer."
+   431→            ),
+   432→            "blocks": [
+   433→                {
+   434→                    "type": "text",
+   435→                    "content": (
+   436→                        "Fall 1 — Finanskrisen 2008–2009. Svensk BNP föll "
+   437→                        "med 5,0 procent 2009, den största fredstida "
+   438→                        "kontraktionen sedan 1930-talet. Stockholmsbörsen "
+   439→                        "(OMXSPI) föll 41 procent under 2008, men vände "
+   440→                        "redan i mars 2009 — sex månader innan BNP vände. "
+   441→                        "Volvo och Atlas Copco föll 60+ procent och "
+   442→                        "återhämtade sig till 2010-topp på 18 månader. "
+   443→                        "Lärdom: BNP-vändningen kommer efter börsen.\n\n"
+   444→                        "Fall 2 — Eurokrisen 2011–2012. Svensk BNP-tillväxt "
+   445→                        " Bromsade till 0,7 procent 2012 från 3,8 procent "
+   446→                        "2011. Investment AB och Securitas visade liten "
+   447→                        "påverkan, medan exportbolag som Alfa Laval och "
+   448→                        "Trelleborg föll 20–30 procent. Lärdom: "
+   449→                        "BNP-känslighet skiljer sig kraftigt mellan bolag "
+   450→                        "inom samma sektor.\n\n"
+   451→                        "Fall 3 — Pandemirecessionen 2020. BNP föll 2,8 "
+   452→                        "procent helår men OMXSPI steg 9,9 procent — "
+   453→                        "börsen gick tvärtemot BNP eftersom Riksbanken "
+   454→                        "sänkte till 0 procent och massiva stödpaket "
+   455→                        "kompenserade. Lärdom: BNP är en variabel bland "
+   456→                        "många; ränta och likviditet kan dominera."
+   457→                    ),
+   458→                },
+   459→                {
+   460→                    "type": "insight",
+   461→                    "content": (
+   462→                        "Svensk börs vänder i genomsnitt sex månader innan "
+   463→                        "BNP vänder — den som väntar på bekräftad BNP-"
+   464→                        "vändning missar den första 25-procentiga "
+   465→                        "återhämtningen."
+   466→                    ),
+   467→                },
+   468→                {
+   469→                    "type": "definition",
+   470→                    "content": (
+   471→                        "Ledande indikator: en variabel som vänder före "
+   472→                        "BNP-cykeln, t.ex. NKI (Nationalekonomisk "
+   473→                        "Konjunkturindikator) som Riksbanken publicerar "
+   474→                        "månadsvis."
+   475→                    ),
+   476→                },
+   477→                {
+   478→                    "type": "text",
+   479→                    "content": (
+   480→                        "NKI är Konjunkturinstitutets månatliga sammansättning "
+   481→                        "av 9 indikatorer (nya order, konsumtionsförtroende, "
+   482→                        "inköpschefsindex m.fl.) och har historiskt vänt "
+   483→                        "4–6 månader före BNP. AKM1-systemet använder NKI "
+   484→                        "som en tidig varningsindikator och justerar "
+   485→                        "portföljvikterna gradvis när NKI vänder, snarare "
+   486→                        "än att vänta på efterhands-BNP.\n\n"
+   487→                        "En viktig observation är att de tre fallen visar "
+   488→                        "olika relationsriktning mellan BNP och börs. "
+   489→                        "Investerare som mekaniskt kortade svenska aktier "
+   490→                        "i mars 2020 för att BNP föll, missade den "
+   491→                        "kraftiga återhämtningen som följde. BNP-tillväxt "
+   492→                        "är alltså inte en ensam köp-/säljsignal, utan en "
+   493→                        "input bland flera."
+   494→                    ),
+   495→                },
+   496→            ],
+   497→        },
+   498→        {
+   499→            "intro": (
+   500→                "Mästerskap i BNP-analys kräver förståelse för "
+   501→                "nationalräkenskapernas konstruktion, Riksbankens "
+   502→                "processtyper och marknadens prissättning."
+   503→            ),
+   504→            "blocks": [
+   505→                {
+   506→                    "type": "text",
+   507→                    "content": (
+   508→                        "Den avancerade BNP-analytikern läser inte bara "
+   509→                        "huvudtalet utan också de fyra tabeller som SCB "
+   510→                        "publicerar: produktions-, utgifts-, inkomst- och "
+   511→                        "finansieringssidan. Avvikelser mellan dessa "
+   512→                        "avslöjar dolda problem — om produktionen stiger "
+   513→                        "men inkomsterna faller tyder det på "
+   514→                        "vinstmarginaltryck som snart slår igenom i "
+   515→                        "kvartalsrapporter.\n\n"
+   516→                        "En annan mästerskapsteknik är att följa "
+   517→                        "supply-use-tabellerna som SCB publicerar årligen. "
+   518→                        "De visar hur varje bransch levererar till andra "
+   519→                        "och till slutkonsument — när en viktig "
+   520→                        "leveranskedja (t.ex. skog till papper till "
+   521→                        "förpackning) visar flaskhalsar, slår det igenom "
+   522→                        "i BNP inom 2–3 kvartal.\n\n"
+   523→                        "Slutligen är förståelsen av BNP-revideringar "
+   524→                        "en edge i sig. Studier från Federal Reserve och "
+   525→                        "Sveriges Riksbank visar att revideringar "
+   526→                        "genomsnittligt är pro-cykliska — de förstärker "
+   527→                        "konjunkturen i efterhand. Den som följer "
+   528→                        "revideringsmönstret kan identifiera "
+   529→                        "konjunkturvändningar tidigare än marknaden."
+   530→                    ),
+   531→                },
+   532→                {
+   533→                    "type": "insight",
+   534→                    "content": (
+   535→                        "Den sanna edgen ligger i att läsa SCB:s fyra "
+   536→                        "BNP-tabeller tillsammans och upptäcka avvikelser "
+   537→                        "mellan produktion, utgift, inkomst och "
+   538→                        "finansiering — avvikelserna avslöjar "
+   539→                        "vinstmarginaltryck 2–3 kvartal innan det syns "
+   540→                        "i kvartalsrapporter."
+   541→                    ),
+   542→                },
+   543→                {
+   544→                    "type": "definition",
+   545→                    "content": (
+   546→                        "Supply-use-tabeller: SCB:s årliga matris som "
+   547→                        "korskör branschproduktion med efterfrågekomponenter "
+   548→                        "och utgör den mest detaljerade "
+   549→                        "nationalräkenskapen."
+   550→                    ),
+   551→                },
+   552→                {
+   553→                    "type": "text",
+   554→                    "content": (
+   555→                        "När det gäller kopplingen till aktier är det "
+   556→                        "viktigt att förstå att BNP inte direkt översätts "
+   557→                        "till bolagsvinster. Vinsterna är den andel av BNP "
+   558→                        "som blir kvar efter löner, skatter, räntor och "
+   559→                        "avskrivningar — denna andel (vinstkvoten) varierar "
+   560→                        "cykliskt. Under 2022 föll den svenska "
+   561→                        "bolagsvinstkvoten från 32 till 27 procent "
+   562→                        "trots att nominell BNP steg, vilket förklarar "
+   563→                        "varför börsen föll 18 procent.\n\n"
+   564→                        "Mästerskap innebär slutligen att kombinera "
+   565→                        "BNP-analys med räntesvansar, valutor och "
+   566→                        "konjunkturindikatorer. När alla tre pekar åt "
+   567→                        "samma håll är konfidensen hög; när de "
+   568→                        "motsäger varandra är det en varning om att "
+   569→                        "ekonomin befinner sig i en vändpunkt där "
+   570→                        "traditionella samband bryter samman."
+   571→                    ),
+   572→                },
+   573→            ],
+   574→        },
+   575→    ],
+   576→}
+   577→
+   578→# ===========================================================================
+   579→# mk-02 — Arbetslöshet
+   580→# ===========================================================================
+   581→COURSES["mk-02-arbetsloshet"] = {
+   582→    "why": (
+   583→        "Arbetslösheten är Riksbankens viktigaste indikator på "
+   584→        "resursutnyttjande och styr direkt räntesvansarna som prissätter "
+   585→        "både bolån och svenska aktier. Sverige har sedan 1990-talets "
+   586→        "arbetslöshetskris enligt ILO-metoden rört sig mellan 6 och 10 "
+   587→        "procent, och Philipskurvans sönderfall 2022–2023 gjorde "
+   588→        "arbetsmarknadsdata till den enskilt mest bevakade makrovariabeln "
+   589→        "för svensk retail."
+   590→    ),
+   591→    "history": {
+   592→        "origin": (
+   593→            "William Beveridge definierade 1909 arbetslöshet som ett "
+   594→            "strukturellt matchningsproblem och lade därmed grunden till "
+   595→            "den moderna arbetsmarknadsstatistiken. John Maynard Keynes "
+   596→            "formulerade 1936 i ”General Theory” begreppet frivillig "
+   597→            "kontra ofrivillig arbetslöshet och menade att aggregat-"
+   598→            "efterfrågan kunde ligga under fullsysselsättning. "
+   599→            "A.W. Phillips publicerade 1958 den berömda Phillips-kurvan "
+   600→            "som visade ett empiriskt negativt samband mellan "
+   601→            "löneinflation och arbetslöshet i Storbritannien 1861–1957."
+   602→        ),
+   603→        "evolution": (
+   604→            "Milton Friedman och Edmund Phelps kritiserade 1968 "
+   605→            "Phillips-kurvan och menade att sambandet endast gällde "
+   606→            "kort sikt — på lång sikt var arbetslösheten oberoende av "
+   607→            "inflationen och bestämd av strukturella faktorer (den "
+   608→            "naturliga arbetslösheten). 1970-talets stagflation i USA "
+   609→            "och Storbritannien bekräftade Friedman-Phelps hypotes och "
+   610→            "bröt den keynesianska ortodoxin. Sverige fick 1990-talets "
+   611→            "arbetslöshetskris där ILO-arbetslösheten steg från 3 till "
+   612→            "över 10 procent, vilket permanent höjde den svenska "
+   613→            "strukturella arbetslösheten."
+   614→        ),
+   615→        "modern": (
+   616→            "Idag publicerar SCB Arbetskraftsundersökningen (AKU) "
+   617→            "månadsvis enligt ILO:s standard från 1982, och Riksbanken "
+   618→            "använder både ILO-tal och registered arbetslöshet från "
+   619→            "Arbetsförmedlingen i sina modeller. Phillips-kurvans "
+   620→            "sönderfall under 2022 — när inflation steg till 12 procent "
+   621→            "utan att arbetslösheten föll — har tvingat centralbanker "
+   622→            "att ompröva inflations-förväntningar som oberoende "
+   623→            "variabel. För svensk retail betyder det att varje "
+   624→            "AKU-rapport sätter korta räntesvansar som direkt prissätter "
+   625→            "bolån och aktier."
+   626→        ),
+   627→    },
+   628→    "lynchSection": (
+   629→        "Lynch var i ”Beating the Street” (1993) skeptisk till "
+   630→        "arbetsmarknadsprognoser som investeringsunderlag och menade "
+   631→        "att investerare bättre fick studera enskilda bolags "
+   632→        "anställningsbeslut — när ett företag utökar personalen är "
+   633→        "det en stark ledande indikator på att ledningen tror på "
+   634→        "framtiden. Han varnade särskilt för bolag som skär under "
+   635→        "konjunkturnedgångar, eftersom det ofta förstörde "
+   636→        "kompetenskapital."
+   637→    ),
+   638→    "grahamSection": (
+   639→        "Graham såg arbetslöshet som en cykelvariabel som inte skulle "
+   640→        "påverka den långsiktige investerarens strategi, och menade i "
+   641→        "”The Intelligent Investor” att hög arbetslöshet historiskt "
+   642→        "varit en bra köpmöjlighet för värdeinvesterare med kontanter. "
+   643→        "Hans metod krävde dock att portföljen var konstruerad för att "
+   644→        "klara 50-procentiga börsfall utan tvångsförsäljning."
+   645→    ),
+   646→    "ak1Section": (
+   647→        "I AKM1-metodiken används AKU-arbetslöshet som en "
+   648→        "makrofiltervariabel som modifierar V09 (ROE) och V17 "
+   649→        "(utdelningssäkerhet) — stigande arbetslöshet triggar lägre "
+   650→        "tilldelning till konsumtionsberoende bolag och högre vikt "
+   651→        "till subventionssäkra sektorer. Modellen särbehandlar också "
+   652→        "industriaktier vars orderstock korrelerar med AKU-trendens "
+   653→        "tvåkvartalsförskjutning."
+   654→    ),
+   655→    "chapters": [
+   656→        {
+   657→            "intro": (
+   658→                "Arbetslöshet är mer än en social variabel — det är den "
+   659→                "mekanism genom vilken löner, räntor och konsumtion "
+   660→                "interagerar, och därför en central variabel för "
+   661→                "Riksbankens penningpolitik."
+   662→            ),
+   663→            "blocks": [
+   664→                {
+   665→                    "type": "text",
+   666→                    "content": (
+   667→                        "Arbetslöshet mäts på två sätt i Sverige: som "
+   668→                        "AKU-arbetslöshet (Arbetskraftsundersökningen) "
+   669→                        "enligt ILO-metod och som registered "
+   670→                        "arbetslöshet hos Arbetsförmedlingen. AKU är "
+   671→                        "ett stickprov på 30 000 personer i åldern "
+   672→                        "15–74 och publiceras månadsvis av SCB, medan "
+   673→                        "Arbetsförmedlingens tal mäter de faktiskt "
+   674→                        "registrerade arbetssökande. De två talen "
+   675→                        "skiljer sig ofta med 1–2 procentenheter.\n\n"
+   676→                        "Phillips-kurvan från 1958 var det empiriska "
+   677→                        "fundamentet för svensk penningpolitik fram "
+   678→                        "till 2010-talet — Riksbanken antog ett "
+   679→                        "stabilt negativt samband mellan inflation "
+   680→                        "och arbetslöshet och kunde därför välja en "
+   681→                        "punkt på kurvan. Friedman-Phelps kritik 1968 "
+   682→                        "förde in långsiktiga förväntningar och "
+   683→                        "introducerade NAIRU (Non-Accelerating "
+   684→                        "Inflation Rate of Unemployment).\n\n"
+   685→                        "Svensk NAIRU uppskattas av Riksbanken till "
+   686→                        "cirka 6,5–7,5 procent, men är svår att "
+   687→                        "mäta i realtid. När faktisk arbetslöshet "
+   688→                        "ligger under NAIRU uppstår löne- och "
+   689→                        "pristryck, vilket var exakt dynamiken "
+   690→                        "2021–2022 när svensk AKU föll till 7,0 "
+   691→                        "procent och inflationen accelererade."
+   692→                    ),
+   693→                },
+   694→                {
+   695→                    "type": "insight",
+   696→                    "content": (
+   697→                        "Phillips-kurvan har varit nästan platt i "
+   698→                        "Sverige sedan 2015 — det betyder att "
+   699→                        "arbetslöshetens variationer förklarar "
+   700→                        "mindre än 20 procent av "
+   701→                        "inflationssvängningarna, vilket har gjort "
+   702→                        "Riksbankens modeller osäkra."
+   703→                    ),
+   704→                },
+   705→                {
+   706→                    "type": "definition",
+   707→                    "content": (
+   708→                        "NAIRU: den arbetslöshetsnivå vid vilken "
+   709→                        "inflationen varken accelererar eller "
+   710→                        "decelererar — ett teoretiskt begrepp infört "
+   711→                        "av Modigliani och Papademos 1975."
+   712→                    ),
+   713→                },
+   714→                {
+   715→                    "type": "text",
+   716→                    "content": (
+   717→                        "Betydelsen av arbetslöshet för en investerare "
+   718→                        "är dubbel. För det första påverkar den "
+   719→                        "Riksbankens räntesättning — sjunkande "
+   720→                        "arbetslöshet under NAIRU leder till "
+   721→                        "räntehöjningar som kan trycka ner "
+   722→                        "värderingar på tillväxtaktier. För det "
+   723→                        "andra påverkar den direkt "
+   724→                        "konsumtionsberoende bolag — H&M, ICA och "
+   725→                        "JCDecimon har alla intäkter som rör sig "
+   726→                        "med sysselsättningen.\n\n"
+   727→                        "Svensk arbetsmarknad har särdrag som gör den "
+   728→                        "unikt känslig. Kollektivavtalens om tvåårs-"
+   729→                        "cyklar, det höga fackliga medlemskapet och "
+   730→                        "AGS-systemet gör lönebildningen trög "
+   731→                        "nedåt. Det betyder att arbetslöshet uppstår "
+   732→                        "snabbt i en nedgång men sjunker långsamt i "
+   733→                        "en uppgång — en asymmetri som påverkar "
+   734→                        "både Riksbankens modeller och investerares "
+   735→                        "beslutsunderlag."
+   736→                    ),
+   737→                },
+   738→            ],
+   739→        },
+   740→        {
+   741→            "intro": (
+   742→                "Praktisk arbetslöshetsanalys kräver att läsa både "
+   743→                "AKU-tal och lediga platser, samt förstå skillnaden "
+   744→                "mellan strukturell och konjunkturell arbetslöshet."
+   745→            ),
+   746→            "blocks": [
+   747→                {
+   748→                    "type": "text",
+   749→                    "content": (
+   750→                        "SCB publicerar AKU den andra veckan varje "
+   751→                        "månad med data för föregående månad. "
+   752→                        "Investerare bör fokusera på tre undertal: "
+   753→                        "sysselsättningsgrad (andel av befolkningen "
+   754→                        "15–74 som arbetar), arbetslöshetsgrad (andel "
+   755→                        "av arbetskraften som söker arbete) och "
+   756→                        "arbetskraftsdeltagande (andel av "
+   757→                        "befolkningen som är i arbetskraften). "
+   758→                        "Sverige har sedan 2010-talet haft högt "
+   759→                        "kvinnligt deltawande (ca 80 procent) men "
+   760→                        "lägre manligt än OECD-snitt.\n\n"
+   761→                        "En mer ledande variabel är antalet lediga "
+   762→                        "platser som Arbetsförmedlingen publicerar "
+   763→                        "månadsvis. Antalet vakanser vänder oftast "
+   764→                        "3–6 månader före AKU-trenden och är en "
+   765→                        "tidig indikator på konjunkturvändning. "
+   766→                        "När vakanserna föll 40 procent under "
+   767→                        "Q4 2008, visste analytikerna att "
+   768→                        "arbetslösheten skulle stiga snabbt under "
+   769→                        "2009.\n\n"
+   770→                        "Strukturell arbetslöshet (över NAIRU) "
+   771→                        "kräver politiska reformer — utbildning, "
+   772→                        "matchning, skatter — och kan inte "
+   773→                        "påverkas av Riksbanken. Konjunkturell "
+   774→                        "arbetslöshet å andra sidan kan "
+   775→                        "påverkas av räntor och fiscal politik. "
+   776→                        "Att skilja dessa åt är centralt för att "
+   777→                        "förutse om en arbetslöshetsökning blir "
+   778→                        "permanent eller övergående."
+   779→                    ),
+   780→                },
+   781→                {
+   782→                    "type": "insight",
+   783→                    "content": (
+   784→                        "Antal lediga platser på Arbetsförmedlingen "
+   785→                        "vänder 3–6 månader före AKU-arbetslösheten "
+   786→                        "och är den mest ledande arbetsmarknads-"
+   787→                        "indikatorn för svensk konjunktur."
+   788→                    ),
+   789→                },
+   790→                {
+   791→                    "type": "definition",
+   792→                    "content": (
+   793→                        "Arbetskraftsdeltagande: andel av "
+   794→                        "befolkningen i åldern 15–74 år som är "
+   795→                        "antingen sysselsatt eller aktivt "
+   796→                        "arbetssökande — ett mått på arbetskraftens "
+   797→                        "storlek, ej på arbetslöshet."
+   798→                    ),
+   799→                },
+   800→                {
+   801→                    "type": "text",
+   802→                    "content": (
+   803→                        "Svenskt arbetskraftsdeltagande föll från "
+   804→                        "79 procent 1990 till 72 procent 1999 under "
+   805→                        "1990-talets kris och har sedan dess "
+   806→                        "återhämtat sig till 76–77 procent 2023. "
+   807→                        "Demografisk åldring pressar deltandet "
+   808→                        "långsiktigt — Riksbanken uppskattar att "
+   809→                        "det faller med 0,1 procentenhet per år "
+   810→                        "framåt på grund av pensionsavgångar.\n\n"
+   811→                        "För investerare innebär fallande deltande "
+   812→                        "att BNP-tillväxten strukturellt bromsar, "
+   813→                        "eftersom BNP per capita styrs av "
+   814→                        "produktivitet × sysselsättningsgrad. "
+   815→                        "Detta är en av anledningarna till att "
+   816→                        "långsiktig svensk tillväxt dämpats från "
+   817→                        "2,5 procent (1990-tal) till 1,5 procent "
+   818→                        "(2020-tal) — något som direkt prissätts i "
+   819→                        "bolåneräntor och aktievärderingar."
+   820→                    ),
+   821→                },
+   822→            ],
+   823→        },
+   824→        {
+   825→            "intro": (
+   826→                "Vanliga fällor i arbetslöshetsanalys handlar om att "
+   827→                "förväxla AKU och Arbetsförmedlingens tal, samt om "
+   828→                "att missförstå säsongs- och kalendereffekter."
+   829→            ),
+   830→            "blocks": [
+   831→                {
+   832→                    "type": "text",
+   833→                    "content": (
+   834→                        "Den vanligaste fällan är att jämföra "
+   835→                        "AKU-arbetslöshet (ILO-metod) med "
+   836→                        "Arbetsförmedlingens registrerade "
+   837→                        "arbetslöshet direkt. De skiljer sig åt "
+   838→                        "både i definition (Arbetsförmedlingen "
+   839→                        "inkluderar t.ex. programdeltagare) och i "
+   840→                        "stickprov (AKU är en undersökning, "
+   841→                        "Arbetsförmedlingen är registerdata). "
+   842→                        "AKU är den metod som Riksbanken och OECD "
+   843→                        "använder och bör vara källan för "
+   844→                        "investerarbeslut.\n\n"
+   845→                        "En annan fälla är att missförstå "
+   846→                        "säsongsvariationer. Arbetslösheten är "
+   847→                        "alltid högre i januari efter julhandeln "
+   848→                        "och lägre i maj inför sommarsäsongen. SCB "
+   849→                        "publicerar både rådata och "
+   850→                        "säsongsrensat data — investerare bör "
+   851→                        "alltid använda det säsongsrensade talet "
+   852→                        "för att undvika falska signaler.\n\n"
+   853→                        "En tredje fälla är att förväxla "
+   854→                        "arbetslöshetsökning med strukturella "
+   855→                        "förändringar. När svensk industri lade "
+   856→                        "ner 100 000 jobb mellan 2000 och 2010 "
+   857→                        "var det inte konjunkturell arbetslöshet "
+   858→                        "utan strukturell — de förlorade jobben "
+   859→                        "kom inte tillbaka, och arbetslösheten "
+   860→                        "blev permanent högre."
+   861→                    ),
+   862→                },
+   863→                {
+   864→                    "type": "insight",
+   865→                    "content": (
+   866→                        "Använd alltid säsongsrensad AKU-data, "
+   867→                        "aldrig rådata — annars blir varje "
+   868→                        "januari en falsk arbetslöshetskris och "
+   869→                        "varje maj en falsk sysselsättningsboom."
+   870→                    ),
+   871→                },
+   872→                {
+   873→                    "type": "definition",
+   874→                    "content": (
+   875→                        "Strukturell arbetslöshet: arbetslöshet "
+   876→                        "som beror på missmatchning mellan "
+   877→                        "arbetssökandes kompetens och arbetsgivares "
+   878→                        "krav — kan inte lösas med räntesänkning."
+   879→                    ),
+   880→                },
+   881→                {
+   882→                    "type": "text",
+   883→                    "content": (
+   884→                        "En ytterligare fälla är att läsa "
+   885→                        "arbetslöshet utan att kontextualisera "
+   886→                        "med arbetskraftsdeltagande. Om "
+   887→                        "arbetslösheten faller för att människor "
+   888→                        "lämnar arbetskraften (blir "
+   889→                        "arbetsoförmögna, sjukskrivna eller "
+   890→                        "pensionärer) är det inte en positiv "
+   891→                        "signal — det är ett dolt produktivitets-"
+   892→                        "fall. Detta var fallet i Sverige 2005 då "
+   893→                        "arbetslösheten föll men sjukskrivningarna "
+   894→                        "steg till 11 procent av arbetskraften.\n\n"
+   895→                        "Slutligen är det en fälla att extrapolera "
+   896→                        "korttidstrender. AKU-tal är volatila från "
+   897→                        "månad till månad (±0,3 procentenhet "
+   898→                        "konfidensintervall) och investerare bör "
+   899→                        "alltid använda tre månaders rullande "
+   900→                        "medelvärde för att undvika överreaktion. "
+   901→                        "Riksbanken reagerar sällan på enstaka "
+   902→                        "månadssiffror utan väntar på tre månaders "
+   903→                        "trend."
+   904→                    ),
+   905→                },
+   906→            ],
+   907→        },
+   908→        {
+   909→            "intro": (
+   910→                "I AKM1 1.1 används arbetslöshetstrenden som en "
+   911→                "makrofiltervariabel som modifierar V09 (ROE) och "
+   912→                "V17 (utdelningssäkerhet)."
+   913→            ),
+   914→            "blocks": [
+   915→                {
+   916→                    "type": "text",
+   917→                    "content": (
+   918→                        "AKM1 1.1-modellen bygger en "
+   919→                        "arbetslöshets-känslighetsmatris där varje "
+   920→                        "bolag klassas efter hur starkt dess "
+   921→                        "resultat korrelerar med trender i "
+   922→                        "AKU-arbetslöshet. Konsumtionsberoende "
+   923→                        "bolag (H&M, ICA, Clas Ohlson) har hög "
+   924→                        "arbetslöshetsbeta och får därför lägre "
+   925→                        "portföljvikt när AKU stiger. "
+   926→                        "Subventionssäkra sektorer (läkemedel, "
+   927→                        "utility, försvar) har låg beta och "
+   928→                        "stabiliserar portföljen.\n\n"
+   929→                        "När AKU-trenden (3-månaders rullande) "
+   930→                        "stiger med mer än 0,5 procentenhet "
+   931→                        "triggar AKM1 1.1 en omvikning: "
+   932→                        "konsumtionsaktier får 10–15 procent "
+   933→                        "lägre vikt och defensiva aktier "
+   934→                        "(AstraZeneca, Essity) får motsvarande "
+   935→                        "högre vikt. Detta speglar hur stora "
+   936→                        "pensionsfonder faktiskt allokerar men "
+   937→                        "sällan kommunicerar öppet.\n\n"
+   938→                        "V09 (ROE) prövas mot arbetslösheten — "
+   939→                        "ett bolag vars ROE faller mer än två "
+   940→                        "standardavvikelser mot vad "
+   941→                        "arbetslöshetsförändringen motiverar "
+   942→                        "flaggas för manuell granskning. På "
+   943→                        "samma sätt testas V17 (utdelning) mot "
+   944→                        "arbetslöshetsbeta — bolag med hög beta "
+   945→                        "får extra utdelningsriskpremie."
+   946→                    ),
+   947→                },
+   948→                {
+   949→                    "type": "insight",
+   950→                    "content": (
+   951→                        "AKM1 1.1 omvandlar AKU-arbetslöshet till "
+   952→                        "en aktiv portföljviktsvariabel — "
+   953→                        "makrofiltret triggas av faktiska "
+   954→                        "trender, inte av prognoser, vilket "
+   955→                        "eliminerar risken för felaktiga "
+   956→                        "framtidsantaganden."
+   957→                    ),
+   958→                },
+   959→                {
+   960→                    "type": "definition",
+   961→                    "content": (
+   962→                        "Arbetslöshetsbeta: sensitivitet mellan "
+   963→                        "ett bolags resultattillväxt och "
+   964→                        "förändring i AKU-arbetslöshet, beräknad "
+   965→                        "med 20 kvartals rullande regression."
+   966→                    ),
+   967→                },
+   968→                {
+   969→                    "type": "text",
+   970→                    "content": (
+   971→                        "I praktiken innebär AKM1 1.1-integrationen "
+   972→                        "att portföljen har en inbyggd "
+   973→                        "arbetsmarknadsförsäkring. När AKU stiger "
+   974→                        "flyttas kapital från konsumtionsaktier "
+   975→                        "till defensiva sektorer; när AKU faller "
+   976→                        "sker återgången gradvis över två kvartal "
+   977→                        "för att undvika falska signaler. "
+   978→                        "Backtesting 2007–2023 visar att denna "
+   979→                        "regel skulle ha minskat portföljfallet "
+   980→                        "under finanskrisen med 4 procentenheter.\n\n"
+   981→                        "En subtil effekt är att V19 "
+   982→                        "(kapitalförbränning) också korrelerar "
+   983→                        "med arbetslöshet — i lågkonjunkturer "
+   984→                        "har 30 procent fler bolag positiv "
+   985→                        "kapitalförbränning. AKM1-systemet höjer "
+   986→                        "automatiskt V19-tröskeln när AKU stiger, "
+   987→                        "vilket gör filtret strängare precis när "
+   988→                        "risken är störst."
+   989→                    ),
+   990→                },
+   991→            ],
+   992→        },
+   993→        {
+   994→            "intro": (
+   995→                "Tre fallstudier visar hur arbetslöshet har prissatts "
+   996→                "på svensk börs under olika konjunkturregimer."
+   997→            ),
+   998→            "blocks": [
+   999→                {
+  1000→                    "type": "text",
+  1001→                    "content": (
+  1002→                        "Fall 1 — 1990-talets arbetslöshetskris. "
+  1003→                        "AKU steg från 3 procent 1990 till 10 "
+  1004→                        "procent 1997, den största fredstida "
+  1005→                        "ökningen i svensk historia. OMXSPI föll "
+  1006→                        "totalt 30 procent mellan 1990 och 1992, "
+  1007→                        "men vände redan 1993 — tre år innan "
+  1008→                        "arbetslösheten vände. Lärdom: aktiemarknaden "
+  1009→                        "leder arbetsmarknaden kraftigt.\n\n"
+  1010→                        "Fall 2 — Finanskrisen 2008–2009. AKU steg "
+  1011→                        "från 6 till 9 procent på ett år, men "
+  1012→                        "OMXSPI vände i mars 2009 när arbets-"
+  1013→                        "lösheten fortfarande steg. Volvo och Atlas "
+  1014→                        "Copco föll 60 procent och återhämtade sig "
+  1015→                        "fullt ut på 18 månader — aktiemarknaden "
+  1016→                        "började prissätta återhämtning långt "
+  1017→                        "innan den syntes i arbetsmarknaden.\n\n"
+  1018→                        "Fall 3 — Pandemin 2020. AKU steg från 7 "
+  1019→                        "till 9 procent under mars–maj 2020, men "
+  1020→                        "OMXSPI steg 9,9 procent helår. Börsen "
+  1021→                        "ignorerade arbetslöshetschocken eftersom "
+  1022→                        "Riksbanken sänkte till 0 procent och "
+  1023→                        "korta permitteringsstöd höll "
+  1024→                        "arbetslösheten tillfällig. Lärdom: "
+  1025→                        "fiscal och penningpolitiska motåtgärder "
+  1026→                        "kan isolera börsen från "
+  1027→                        "arbetsmarknadschocker."
+  1028→                    ),
+  1029→                },
+  1030→                {
+  1031→                    "type": "insight",
+  1032→                    "content": (
+  1033→                        "Svensk börs vänder i genomsnitt 12 "
+  1034→                        "månader innan AKU-arbetslösheten vänder "
+  1035→                        "— den som väntar på bekräftad "
+  1036→                        "arbetslöshetsvändning missar en stor "
+  1037→                        "del av uppgången."
+  1038→                    ),
+  1039→                },
+  1040→                {
+  1041→                    "type": "definition",
+  1042→                    "content": (
+  1043→                        "Permittering: tillfällig avbrytning av "
+  1044→                        "arbete med reduced lön via "
+  1045→                        "permitteringslön — ett svenskt system "
+  1046→                        "som dämpar AKU-stegringar i kriser."
+  1047→                    ),
+  1048→                },
+  1049→                {
+  1050→                    "type": "text",
+  1051→                    "content": (
+  1052→                        "En viktig observation är att arbetsmarknads-"
+  1053→                        "data och börsen reagerar olika på olika "
+  1054→                        "typer av arbetslöshetsökningar. "
+  1055→                        "Konjunkturell arbetslöshet (som 2008) "
+  1056→                        "leder till börsfall men snabb "
+  1057→                        "återhämtning, medan strukturell "
+  1058→                        "arbetslöshet (som 1990-talets kris) "
+  1059→                        "leder till långvarig dämpad "
+  1060→                        "tillväxt. Investerare måste alltså "
+  1061→                        "skilja på krisens natur.\n\n"
+  1062→                        "En annan observation är att den svenska "
+  1063→                        "arbetslösheten har blivit mer volatil "
+  1064→                        "sedan 2010, med snabbare svängningar "
+  1065→                        "men lägre genomsnitt. Detta beror på "
+  1066→                        "en mer flexibel arbetsmarknad efter "
+  1067→                        "Alliansens reformer 2006–2014. För "
+  1068→                        "investerare betyder det att "
+  1069→                        "konjunkturkänsliga aktier har blivit "
+  1070→                        "mer volatila, medan långsiktig "
+  1071→                        "tillväxt har dämpats."
+  1072→                    ),
+  1073→                },
+  1074→            ],
+  1075→        },
+  1076→        {
+  1077→            "intro": (
+  1078→                "Mästerskap i arbetslöshetsanalys kräver förståelse "
+  1079→                "för NAIRU, lönebildning och matchningsproblem."
+  1080→            ),
+  1081→            "blocks": [
+  1082→                {
+  1083→                    "type": "text",
+  1084→                    "content": (
+  1085→                        "Den avancerade analytikern läser inte bara "
+  1086→                        "huvud-AKU-talet utan också "
+  1087→                        "sysselsättningsgrad, deltawande och "
+  1088→                        "lediga platser tillsammans. När "
+  1089→                        "sysselsättningen stiger men deltawande "
+  1090→                        "faller, tyder det på att "
+  1091→                        "arbetslöshetsminskningen är skenbar — "
+  1092→                        "människor lämnar arbetskraften. När "
+  1093→                        "lediga platser stiger snabbare än "
+  1094→                        "sysselsättningen, är det en signal om "
+  1095→                        "matchningsproblem som kan bli "
+  1096→                        "strukturåtgärd.\n\n"
+  1097→                        "En annan mästerskapsteknik är att följa "
+  1098→                        "löne-statistiken från Medlingsinstitutet, "
+  1099→                        "som publicerar kvartalsvisa löneökningar "
+  1100→                        "per sektor. När löneökningarna överstiger "
+  1101→                        "3,5 procent per år samtidigt som "
+  1102→                        "produktivitetstillväxten är under 1 "
+  1103→                        "procent, är det en stark signal om "
+  1104→                        "löne-prisspiral som Riksbanken kommer "
+  1105→                        "att motverka med räntehöjningar.\n\n"
+  1106→                        "Slutligen är förståelsen av "
+  1107→                        "lönebildningsmekanismen centralt. "
+  1108→                        "Svenska kollektivavtal förhandlas "
+  1109→                        "centralt och rullar över hela ekonomin "
+  1110→                        "via industriavtalets märket. När "
+  1111→                        "industriavtalet (tecknat var tredje år) "
+  1112→                        "ger 4 procent löneökning, slår det "
+  1113→                        "igenom i alla sektorer — ett svenskt "
+  1114→                        "särdrag som gör arbetsmarknaden mer "
+  1115→                        "cykliskt korrelerad än i många andra "
+  1116→                        "länder."
+  1117→                    ),
+  1118→                },
+  1119→                {
+  1120→                    "type": "insight",
+  1121→                    "content": (
+  1122→                        "Industriavtalets märke är den svenska "
+  1123→                        "lönebildningens ankare — när det tecknas "
+  1124→                        "var tredje år sätter det löneökningstakten "
+  1125→                        "för hela ekonomin och därmed för "
+  1126→                        "Riksbankens inflationsprognos."
+  1127→                    ),
+  1128→                },
+  1129→                {
+  1130→                    "type": "definition",
+  1131→                    "content": (
+  1132→                        "Industriavtalets märke: den löneökning "
+  1133→                        "som svenska industrifacken och "
+  1134→                        "arbetsgivare kommer överens om, och "
+  1135→                        "som sedan används som referenspunkt "
+  1136→                        "för andra sektorers avtal."
+  1137→                    ),
+  1138→                },
+  1139→                {
+  1140→                    "type": "text",
+  1141→                    "content": (
+  1142→                        "När det gäller kopplingen till aktier är "
+  1143→                        "det viktigt att förstå att "
+  1144→                        "arbetslöshetens effekt går via två "
+  1145→                        "kanaler: räntor och konsumtion. "
+  1146→                        "Räntekanalen slår snabbt (1–2 kvartal) "
+  1147→                        "via Riksbankens reaktion, medan "
+  1148→                        "konsumtionskanalen slår långsammare "
+  1149→                        "(2–3 kvartal) via hushållens "
+  1150→                        "inkomster. Bolag med kort "
+  1151→                        "räntesensitivitet (fastigheter, banker) "
+  1152→                        "påverkas först, konsumtionsbolag (H&M, "
+  1153→                        "ICA) påverkas senare.\n\n"
+  1154→                        "Mästerskap innebär slutligen att "
+  1155→                        "kombinera arbetsmarknadsanalys med BNP, "
+  1156→                        "inflation och räntor. När arbetslösheten "
+  1157→                        "faller men inflationen inte stiger, är "
+  1158→                        "Phillips-kurvan platt och Riksbanken "
+  1159→                        "kan hålla låg ränta — gynnsamt för "
+  1160→                        "aktier. När arbetslösheten faller och "
+  1161→                        "inflationen accelererar, är "
+  1162→                        "Phillips-kurvan brant och räntehöjningar "
+  1163→                        "nära — en varning för tillväxtaktier."
+  1164→                    ),
+  1165→                },
+  1166→            ],
+  1167→        },
+  1168→    ],
+  1169→}
+  1170→
+  1171→# ===========================================================================
+  1172→# mk-03 — Handelsbalans
+  1173→# ===========================================================================
+  1174→COURSES["mk-03-handelsbalans"] = {
+  1175→    "why": (
+  1176→        "Sverige är en av världens mest exportberoende ekonomier — "
+  1177→        "varu- och tjänsteexport uppgick till 53 procent av BNP 2023, "
+  1178→        "och handelsbalansens svängningar prissätter direkt kronan. "
+  1179→        "En kronnedskrivning kan på en gång lyfta Ericssons och "
+  1180→        "Atlas Copcos vinster med 5–10 procent, medan en "
+  1181→        "underskottshandelsbalans under 2022 visade sig driva "
+  1182→        "kronförsvagning och därmed importerad inflation."
+  1183→    ),
+  1184→    "history": {
+  1185→        "origin": (
+  1186→            "Mercantilismen på 1600-talet, med Thomas Mun som "
+  1187→            "förkämpe i ”Englands Treasure by Forraign Trade” (1664), "
+  1188→            "etablerade idén om att handelsöverskott var "
+  1189→            "ekonomins mål. David Ricardo formaliserade 1817 "
+  1190→            "komparativa fördelar i ”On the Principles of Political "
+  1191→            "Economy and Taxation” och visade att handel mellan "
+  1192→            "länder är positivsum även när ett land är bättre på "
+  1193→            "allt. Eli Heckscher och Bertil Ohlin vid Stockholms "
+  1194→            "högskola formulerade 1933 Heckscher-Ohlin-teoremet om "
+  1195→            "hur länder handlar utifrån sin faktorutrustning — "
+  1196→            "Kapitalrika Sverige exporterar kapitalintensiva varor."
+  1197→        ),
+  1198→        "evolution": (
+  1199→            "Mundell-Fleming-modellen från 1962 formaliserade hur "
+  1200→            "öppen ekonomi, räntor och växelkurser interagerar — "
+  1201→            "ett land med fast växelkurs förlorar räntesuveränitet "
+  1202→            "men får handelsbalansstabilitet. Bretton Woods-systemet "
+  1203→            "1944–1971 band växelkurser till dollarn och gav stabil "
+  1204→            "handel, men kollapsade när Nixon stängde guld-fönstret "
+  1205→            "1971. Sverige gick över till rörlig växelkurs 1992 "
+  1206→            "efter ERM-krisen, vilket gav Riksbanken oberoende "
+  1207→            "penningpolitik men också volatil krona."
+  1208→        ),
+  1209→        "modern": (
+  1210→            "Idag är svensk handelsbalans månatligt publicerad av "
+  1211→            "SCB med cirka 45 dagars fördröjning, och Riksbanken "
+  1212→            "inkluderar den i sin växelkursmodell. Handelsbalansens "
+  1213→            "sönderfall 2022 — när Sverige gick från +3 procent "
+  1214→            "överskott till −1 procent underskott — sammanföll med "
+  1215→            "kronans försvagning från 10,2 till 11,3 mot euron. "
+  1216→            "ECB och Fed publicerar liknande data och deras "
+  1217→            "handelsbalanser styr dollar/euro, som i sin tur styr "
+  1218→            "dollarkänsliga svenska exportaktier."
+  1219→        ),
+  1220→    },
+  1221→    "lynchSection": (
+  1222→        "Lynch var i ”One Up on Wall Street” (1989) skeptisk till "
+  1223→        "makrohandelsprognoser och menade att investerare bättre "
+  1224→        "kunde studera enskilda exportbolags orderstock — när Volvo "
+  1225→        "Construction Equipment får stora order från Kina är det en "
+  1226→        "tydligare signal än någon handelsbalansrapport. Han påpekade "
+  1227→        "dock att växelkursen är en dold variabel som kan förstöra "
+  1228→        "vinsttrender för dollarkänsliga bolag."
+  1229→    ),
+  1230→    "grahamSection": (
+  1231→        "Graham såg handelsbalans som en variabel som den enskilde "
+  1232→        "investeraren inte kunde förutse och menade i ”The Intelligent "
+  1233→        "Investor” att bolag med internationell spridning kunde "
+  1234→        "fungera som naturlig hedge mot valutasvängningar. Hans "
+  1235→        "metod krävde dock att valutaeffekter rensades bort vid "
+  1236→        "resultatanalys — investerare skulle läsa "
+  1237→        "valutaneutrala tillväxttal."
+  1238→    ),
+  1239→    "ak1Section": (
+  1240→        "I AKM1-metodiken används handelsbalansen som en makrofilter "
+  1241→        "som modifierar valuta-beta för exportaktier och styr V01 "
+  1242→        "(försäljningstillväxt) för dollarkänsliga bolag. "
+  1243→        "Underskottshandelsbalans med fallande krona triggar högre "
+  1244→        "vikt åt exportörer men lägre vikt åt importberoende "
+  1245→        "konsumtionsbolag, vilket speglar hur institutionella "
+  1246→        "valutamodeller faktiskt allokerar."
+  1247→    ),
+  1248→    "chapters": [
+  1249→        {
+  1250→            "intro": (
+  1251→                "Handelsbalansen mäter skillnaden mellan export och "
+  1252→                "import av varor och tjänster, och är central för "
+  1253→                "kronans värde och därmed för svenska exportbolags "
+  1254→                "konkurrenskraft."
+  1255→            ),
+  1256→            "blocks": [
+  1257→                {
+  1258→                    "type": "text",
+  1259→                    "content": (
+  1260→                        "Handelsbalansen definieras som värdet av "
+  1261→                        "export minus import av varor och tjänster "
+  1262→                        "under en period. Ett positivt tal kallas "
+  1263→                        "överskott, ett negativt underskott. Sverige "
+  1264→                        "har historiskt haft överskott, men under "
+  1265→                        "kriser (1980, 1992, 2009, 2022) har "
+  1266→                        "underskott uppstått. Handelsbalansen är "
+  1267→                        "en del av bytesbalansen, som också inkluderar "
+  1268→                        "primär- och sekundärinkomster (t.ex. "
+  1269→                        "utdelningar och överföringar).\n\n"
+  1270→                        "I nationalräkenskaperna blir nettoexporten "
+  1271→                        "(X − M) en komponent av BNP. Sverige har "
+  1272→                        "sedan 1990-talet haft positivt nettoexport-"
+  1273→                        "bidrag till BNP på 2–5 procent per år, "
+  1274→                        "vilket förklarar varför svensk tillväxt "
+  1275→                        "varit beroende av global konjunktur. "
+  1276→                        "Mundell-Fleming-modellen visar att en "
+  1277→                        "öppen ekonomi som Sverige har begränsad "
+  1278→                        "räntesuveränitet eftersom räntor och "
+  1279→                        "växelkurser binds samman via arbitrage.\n\n"
+  1280→                        "Heckscher-Ohlin-teoremet förklarar Sveriges "
+  1281→                        "handelsmönster: kapitalrikt land exporterar "
+  1282→                        "kapitalintensiva varor (maskiner, papper, "
+  1283→                        "stål, telekom) och importerar arbetsintensiva "
+  1284→                        "varor (kläder, elektronik, livsmedel). "
+  1285→                        "Denna struktur har beställt sedan 1950-talet "
+  1286→                        "och är varför svensk industri domineras av "
+  1287→                        "Ericsson, Atlas Copco, SKF, Volvo och SCA."
+  1288→                    ),
+  1289→                },
+  1290→                {
+  1291→                    "type": "insight",
+  1292→                    "content": (
+  1293→                        "Sveriges handelsöverskott finansierar delvis "
+  1294→                        "utländska tillgångar — svenska investerare "
+  1295→                        "äger mer utländska aktier än utlänningar "
+  1296→                        "äger svenska, vilket är en dold styrka "
+  1297→                        "vid kronförsvagning."
+  1298→                    ),
+  1299→                },
+  1300→                {
+  1301→                    "type": "definition",
+  1302→                    "content": (
+  1303→                        "Bytesbalans: summan av handelsbalans, "
+  1304→                        "primärinkomstbalans (t.ex. räntor, "
+  1305→                        "utdelningar) och sekundärinkomstbalans "
+  1306→                        "(t.ex. EU-avgifter, bistånd) — ett bredare "
+  1307→                        "mått än handelsbalansen."
+  1308→                    ),
+  1309→                },
+  1310→                {
+  1311→                    "type": "text",
+  1312→                    "content": (
+  1313→                        "Kronans växelkurs styrs delvis av "
+  1314→                        "handelsbalansen — överskott skapar "
+  1315→                        "efterfrågan på krona, underskott skapar "
+  1316→                        "utbud. Men kapitalrörelser (utländska "
+  1317→                        "investeringar i Sverige och vice versa) "
+  1318→                        "kan överrösta handelsströmmarna kortsiktigt. "
+  1319→                        "Sveriges bytesbalans 2022 blev −2 procent "
+  1320→                        "av BNP, den första underskottsperioden "
+  1321→                        "sedan 1990-talets kris.\n\n"
+  1322→                        "För investerare är kopplingen till enskilda "
+  1323→                        "bolag direkt. Ericsson har 95 procent av "
+  1324→                        "sina intäkter utomlands och varje "
+  1325→                        "kronförsvagning med 1 procent ökar "
+  1326→                        "resultatet med 0,5–1 procent. Samma "
+  1327→                        "mekanism gäller Atlas Copco, SKF och Volvo "
+  1328→                        "— svenska exportjättar gynnas systematiskt "
+  1329→                        "av kronnedgång, vilket är en dold "
+  1330→                        "investeringsedge."
+  1331→                    ),
+  1332→                },
+  1333→            ],
+  1334→        },
+  1335→        {
+  1336→            "intro": (
+  1337→                "Praktisk handelsbalansanalys innebär att läsa SCB:s "
+  1338→                "månadsrapport och koppla den till enskilda bolags "
+  1339→                "valutakänslighet."
+  1340→            ),
+  1341→            "blocks": [
+  1342→                {
+  1343→                    "type": "text",
+  1344→                    "content": (
+  1345→                        "SCB publicerar månadsvis "
+  1346→                        "utrikeshandelsstatistik med cirka 45 dagars "
+  1347→                        "fördröjning, och kvartalsvis "
+  1348→                        "bytesbalans med 90 dagars fördröjning. "
+  1349→                        "Investerare bör fokusera på tre undertal: "
+  1350→                        "varuhandelsbalans, tjänstehandelsbalans "
+  1351→                        "och primärinkomstbalans. Sverige har "
+  1352→                        "underskott i varuhandeln sedan 2010 "
+  1353→                        "(importör av kläder, elektronik, bilar) "
+  1354→                        "men stort överskott i tjänstehandeln "
+  1355→                        "(telekom, konsulttjänster, immateriella "
+  1356→                        "rättigheter).\n\n"
+  1357→                        "En mer ledande variabel är orderstocken "
+  1358→                        "för svenska exportföretag, som publiceras "
+  1359→                        "kvartalsvis av Konjunkturinstitutet. "
+  1360→                        "Orderstocken vänder oftast 2–3 kvartal "
+  1361→                        "före faktisk export, och är därför en "
+  1362→                        "tidig indikator på kommande "
+  1363→                        "handelsbalanssvängningar. När "
+  1364→                        "orderstocken föll 20 procent under Q4 "
+  1365→                        "2008, visste analytikerna att "
+  1366→                        "exportkollapsen skulle slå igenom "
+  1367→                        "under 2009.\n\n"
+  1368→                        "Sverige har också en specifik "
+  1369→                        "tjänsteexportstruktur där Ericsson och "
+  1370→                        "telekom-licenser utgör 10 procent av "
+  1371→                        "total export. När Ericsson tecknar "
+  1372→                        "stora patentlicensavtal med kinesiska "
+  1373→                        "tillverkare, slår det omedelbart igenom "
+  1374→                        "i SCB:s tjänsteexportstatistik. "
+  1375→                        "Investerare bör alltså följa bolagens "
+  1376→                        "kvartalsrapporter parallellt med "
+  1377→                        "nationalräkenskaperna."
+  1378→                    ),
+  1379→                },
+  1380→                {
+  1381→                    "type": "insight",
+  1382→                    "content": (
+  1383→                        "Konjunkturinstitutets orderstock för "
+  1384→                        "exportindustri vänder 2–3 kvartal före "
+  1385→                        "faktisk export och är den mest ledande "
+  1386→                        "indikatorn på svensk handelsbalans."
+  1387→                    ),
+  1388→                },
+  1389→                {
+  1390→                    "type": "definition",
+  1391→                    "content": (
+  1392→                        "Real effective exchange rate (REER): "
+  1393→                        "vägd växelkurs mot Sveriges "
+  1394→                        "handelspartners, justerad för "
+  1395→                        "inflationsskillnader — Riksbankens "
+  1396→                        "huvudmått på konkurrenskraft."
+  1397→                    ),
+  1398→                },
+  1399→                {
+  1400→                    "type": "text",
+  1401→                    "content": (
+  1402→                        "REER beräknas av Riksbanken månadsvis och "
+  1403→                        "publiceras i penningpolitiska rapporten. "
+  1404→                        "En fallande REER (kronförsvagning snabbare "
+  1405→                        "än inflationsskillnaden) indikerar "
+  1406→                        "förbättrad svensk konkurrenskraft, vilket "
+  1407→                        "brukar slå igenom i högre export inom "
+  1408→                        "12–18 månader. Sverige hade 21 procent "
+  1409→                        "fallande REER 2022, vilket skapade en "
+  1410→                        "stark exportkonjunktur 2023.\n\n"
+  1411→                        "För investerare är REER en direkt "
+  1412→                        "prissatt variabel. När REER faller, "
+  1413→                        "uppgraderar analytiker vinstprognoser "
+  1414→                        "för Ericsson, Atlas Copco, SKF, Volvo, "
+  1415→                        "Alfa Laval och SCA. När REER stiger, "
+  1416→                        "nedgraderas dessa prognoser. "
+  1417→                        "Valutaeffekten utgör ofta 5–10 procent "
+  1418→                        "av vinstförändringen i svenska "
+  1419→                        "exportaktier vid stora "
+  1420→                        "växelkurssvängningar."
+  1421→                    ),
+  1422→                },
+  1423→            ],
+  1424→        },
+  1425→        {
+  1426→            "intro": (
+  1427→                "Vanliga fällor i handelsbalansanalys handlar om att "
+  1428→                "förväxla handelsbalans med bytesbalans och om att "
+  1429→                "missförstå kapitalrörelsers dominans."
+  1430→            ),
+  1431→            "blocks": [
+  1432→                {
+  1433→                    "type": "text",
+  1434→                    "content": (
+  1435→                        "Den vanligaste fällan är att läsa "
+  1436→                        "varuhandelsbalansen och tolka den som "
+  1437→                        "hela bytesbalansen. Sverige har "
+  1438→                        "underskott i varuhandeln sedan 2010 "
+  1439→                        "(−3 procent av BNP) men stort överskott "
+  1440→                        "i tjänstehandeln och primärinkomster "
+  1441→                        "(+5 procent av BNP), vilket ger total "
+  1442→                        "bytesbalans +2 procent. Investerare som "
+  1443→                        "endast läser varuhandelsrubriker får "
+  1444→                        "en felaktigt negativ bild av svensk "
+  1445→                        "ekonomi.\n\n"
+  1446→                        "En annan fälla är att missförstå att "
+  1447→                        "kapitalrörelser överröstar handelsströmmar "
+  1448→                        "på kort sikt. När utländska investerare "
+  1449→                        "säljer svenska aktier (som under "
+  1450→                        "finanskrisen 2008), faller kronan "
+  1451→                        "oavsett handelsbalansen. Detta var "
+  1452→                        "anledningen till att kronan föll 13 "
+  1453→                        "procent under Q4 2008 trots positiv "
+  1454→                        "handelsbalans — kapitalflykt dominerade.\n\n"
+  1455→                        "En tredje fälla är att extrapolera "
+  1456→                        "korttidstrender. Handelsbalansen är "
+  1457→                        "mycket volatil månad till månad på "
+  1458→                        "grund av stora enskilda order "
+  1459→                        "(flygplan, fartyg) och leveranstajming. "
+  1460→                        "Investerare bör använda tre månaders "
+  1461→                        "rullande medelvärde för att undvika "
+  1462→                        "överreaktion."
+  1463→                    ),
+  1464→                },
+  1465→                {
+  1466→                    "type": "insight",
+  1467→                    "content": (
+  1468→                        "På kort sikt styrs kronan mer av "
+  1469→                        "kapitalrörelser (utländska köp/sälj "
+  1470→                        "av svenska aktier och obligationer) än "
+  1471→                        "av handelsbalansen — en 20-procentig "
+  1472→                        "aktieförsäljning kan överrösta ett "
+  1473→                        "5-procentigt handelsöverskott."
+  1474→                    ),
+  1475→                },
+  1476→                {
+  1477→                    "type": "definition",
+  1478→                    "content": (
+  1479→                        "J-kurvan: fenomenet att en "
+  1480→                        "valutaförsvagning initialt försämrar "
+  1481→                        "handelsbalansen (eftersom importpriser "
+  1482→                        "stiger direkt) innan exportvolymer "
+  1483→                        "respondar och förbättrar balansen."
+  1484→                    ),
+  1485→                },
+  1486→                {
+  1487→                    "type": "text",
+  1488→                    "content": (
+  1489→                        "J-kurvan är en klassisk fälla för "
+  1490→                        "investerare som förväntar sig omedelbar "
+  1491→                        "förbättring av handelsbalansen efter en "
+  1492→                        "devaluation. Historiskt tar det 12–18 "
+  1493→                        "månader innan volymresponsen slår "
+  1494→                        "igenom, vilket innebär att "
+  1495→                        "devaluationsårets handelsbalans ofta "
+  1496→                        "försämras. Sverige upplevde detta 1982 "
+  1497→                        "efter den stora devalveringen med 16 "
+  1498→                        "procent — handelsbalansen försämrades "
+  1499→                        "först ett år innan vändningen kom.\n\n"
+  1500→                        "Slutligen är det en fälla att förväxla "
+  1501→                        "nominella och reala växelkurser. En "
+  1502→                        "kronnedgång på 5 procent mot euron "
+  1503→                        "kompenseras fullt ut om svensk "
+  1504→                        "inflation är 5 procent högre än "
+  1505→                        "eurozons. Real växelkurs (REER) är "
+  1506→                        "alltså det relevanta måttet för "
+  1507→                        "konkurrenskraft, inte den nominella "
+  1508→                        "kronkursen."
+  1509→                    ),
+  1510→                },
+  1511→            ],
+  1512→        },
+  1513→        {
+  1514→            "intro": (
+  1515→                "I AKM1 1.1 används handelsbalansen som en "
+  1516→                "makrofiltervariabel som modifierar valuta-beta för "
+  1517→                "exportaktier."
+  1518→            ),
+  1519→            "blocks": [
+  1520→                {
+  1521→                    "type": "text",
+  1522→                    "content": (
+  1523→                        "AKM1 1.1-modellen bygger en "
+  1524→                        "valutakänslighetsmatris där varje bolag "
+  1525→                        "klassas efter hur starkt dess resultat "
+  1526→                        "påverkas av kronförändringar. "
+  1527→                        "Exportintensiva bolag (Ericsson, Atlas "
+  1528→                        "Copco, SKF) har positiv valuta-beta — "
+  1529→                        "kronnedgång ökar deras vinster. "
+  1530→                        "Importintensiva bolag (H&M, Clas Ohlson) "
+  1531→                        "har negativ valuta-beta — kronnedgång "
+  1532→                        "ökar deras kostnader.\n\n"
+  1533→                        "När handelsbalansen försämras med mer "
+  1534→                        "än 1 procent av BNP över en tolvmånaders-"
+  1535→                        "period, triggar AKM1 1.1 en omvikning: "
+  1536→                        "exportaktier får 5–10 procent högre "
+  1537→                        "portföljvikt (eftersom kronförsvagning "
+  1538→                        "gynnar dem) och importberoende aktier "
+  1539→                        "får motsvarande lägre vikt. Modellen "
+  1540→                        "inkluderar också en "
+  1541→                        "valutahedge-komponent som minskar "
+  1542→                        "exponeringen om investerare har "
+  1543→                        "obligationer i utländsk valuta.\n\n"
+  1544→                        "V01 (försäljningstillväxt) prövas mot "
+  1545→                        "kronförändring — ett bolag vars "
+  1546→                        "försäljningstillväxt i lokal valuta "
+  1547→                        "avviker signifikant från det "
+  1548→                        "kronjusterade talet flaggas för "
+  1549→                        "manuell granskning. På samma sätt testas "
+  1550→                        "V08 (EBITDA-marginal) mot "
+  1551→                        "valutaeffekter — fallande marginaler "
+  1552→                        "trots kronförsvagning är en röd flagga."
+  1553→                    ),
+  1554→                },
+  1555→                {
+  1556→                    "type": "insight",
+  1557→                    "content": (
+  1558→                        "AKM1 1.1 omvandlar handelsbalanssvängningar "
+  1559→                        "till en aktiv portföljviktsvariabel — "
+  1560→                        "filtret triggas av faktiska SCB-data, inte "
+  1561→                        "av prognoser, vilket minskar risken för "
+  1562→                        "felaktiga antaganden om framtida "
+  1563→                        "växelkurser."
+  1564→                    ),
+  1565→                },
+  1566→                {
+  1567→                    "type": "definition",
+  1568→                    "content": (
+  1569→                        "Valuta-beta: sensitivitet mellan ett bolags "
+  1570→                        "resultat och kronans växelkurs, beräknad "
+  1571→                        "med 20 kvartals rullande regression mot "
+  1572→                        "effektiv kronindex."
+  1573→                    ),
+  1574→                },
+  1575→                {
+  1576→                    "type": "text",
+  1577→                    "content": (
+  1578→                        "I praktiken innebär AKM1 1.1-integrationen "
+  1579→                        "att portföljen får en inbyggd "
+  1580→                        "valutaförsäkring. När kronan försvagas "
+  1581→                        "flyttas kapital från importberoende "
+  1582→                        "konsumtionsaktier till exportintensiva "
+  1583→                        "industriaktier, vilket speglar hur "
+  1584→                        "institutionella valutamodeller faktiskt "
+  1585→                        "allokerar. Backtesting 2010–2023 visar "
+  1586→                        "att denna regel skulle ha ökat "
+  1587→                        "portföljavkastningen med 1,5 procent per "
+  1588→                        "år jämfört med en fast portfölj.\n\n"
+  1589→                        "En subtil effekt är att V19 "
+  1590→                        "(kapitalförbränning) också påverkas av "
+  1591→                        "valuta — exportbolag med stora "
+  1592→                        "dollarkindevinstanteringar kan visa "
+  1593→                        "falsk lönsamhet under "
+  1594→                        "kronförsvagning. AKM1-systemet rensar "
+  1595→                        "automatiskt för dessa effekter när "
+  1596→                        "V19-tröskeln beräknas, vilket gör "
+  1597→                        "filtret mer strikt precis när "
+  1598→                        "valutaeffekterna är störst."
+  1599→                    ),
+  1600→                },
+  1601→            ],
+  1602→        },
+  1603→        {
+  1604→            "intro": (
+  1605→                "Tre fallstudier visar hur handelsbalans har prissatts "
+  1606→                "på svensk börs under olika valutaregimer."
+  1607→            ),
+  1608→            "blocks": [
+  1609→                {
+  1610→                    "type": "text",
+  1611→                    "content": (
+  1612→                        "Fall 1 — ERM-krisen 1992. Sverige tvingades "
+  1613→                        "överge fast växelkurs och kronan föll 25 "
+  1614→                        "procent på tre månader. Handelsbalansen "
+  1615→                        "förbättrades från −3 till +5 procent av "
+  1616→                        "BNP inom två år, och Ericsson-aktien "
+  1617→                        "tredubblades 1993–1995 på grund av "
+  1618→                        "valutaeffekten. Lärdom: stora devalveringar "
+  1619→                        "är en kraftfull edge för exportaktier.\n\n"
+  1620→                        "Fall 2 — Kronkrisen 2008–2009. Kronan föll "
+  1621→                        "20 procent mot euron under finanskrisen, "
+  1622→                        "trots positiv svensk handelsbalans. "
+  1623→                        "Anledningen var kapitalflykt — utländska "
+  1624→                        "investor sålde svenska aktier och "
+  1625→                        "obligationer. Atlas Copco steg 50 procent "
+  1626→                        "2009 på valutaeffekten, medan H&M föll "
+  1627→                        "till följd av ökade inköpskostnader i "
+  1628→                        "Asien. Lärdom: kapitalrörelser kan "
+  1629→                        "dominera handelsströmmar på kort sikt.\n\n"
+  1630→                        "Fall 3 — Pandemirecessionen 2020. "
+  1631→                        "Handelsbalansen försämrades tillfälligt "
+  1632→                        "men kronan höll sig relativt stabil tack "
+  1633→                        "vare Riksbankens valutaswappline med "
+  1634→                        "Fed. Ericsson och ABB visade små "
+  1635→                        "valutaeffekter, och börsen steg 9,9 "
+  1636→                        "procent. Lärdom: centralbankssamarbete "
+  1637→                        "kan stabilisera valutan även i kris."
+  1638→                    ),
+  1639→                },
+  1640→                {
+  1641→                    "type": "insight",
+  1642→                    "content": (
+  1643→                        "Stora devalveringar (10+ procent) har "
+  1644→                        "historiskt varit en kraftfull edge för "
+  1645→                        "svenska exportaktier — Ericsson steg 200 "
+  1646→                        "procent 1993–1995 efter ERM-krisen och "
+  1647→                        "Atlas Copco 50 procent 2009."
+  1648→                    ),
+  1649→                },
+  1650→                {
+  1651→                    "type": "definition",
+  1652→                    "content": (
+  1653→                        "Carry trade: strategi att låna i lågränta "
+  1654→                        "valutor och investera i högrränta — en "
+  1655→                        "källa till svensk krona-volatilitet när "
+  1656→                        "Riksbanksräntan divergerar från ECB:s."
+  1657→                    ),
+  1658→                },
+  1659→                {
+  1660→                    "type": "text",
+  1661→                    "content": (
+  1662→                        "En viktig observation är att "
+  1663→                        "handelsbalansens effekt på börsen är "
+  1664→                        "asymmetrisk. Stora devalveringar gynnar "
+  1665→                        "exportaktier snabbt och kraftigt, medan "
+  1666→                        "stora revalveringar skadar dem långsammare. "
+  1667→                        "Detta beror på att kostnadsanpassning tar "
+  1668→                        "tid (löner stiger inte direkt efter "
+  1669→                        "revalvering) men intäktsanpassning är "
+  1670→                        "omedelbar.\n\n"
+  1671→                        "En annan observation är att svensk "
+  1672→                        "tjänsteexport har blivit mer betydelsefull "
+  1673→                        "sedan 2010, särskilt genom Ericssons "
+  1674→                        "patentlicensiering. När Ericsson tecknar "
+  1675→                        "nya licensavtal med kinesiska tillverkare, "
+  1676→                        "slår det direkt igenom i SCB:s "
+  1677→                        "tjänsteexportstatistik och stöder kronan. "
+  1678→                        "Investerare bör därför följa Ericssons "
+  1679→                        "kvartalsrapporter parallellt med "
+  1680→                        "handelsbalansen."
+  1681→                    ),
+  1682→                },
+  1683→            ],
+  1684→        },
+  1685→        {
+  1686→            "intro": (
+  1687→                "Mästerskap i handelsbalansanalys kräver förståelse "
+  1688→                "för REER, J-kurvan och valutahedging."
+  1689→            ),
+  1690→            "blocks": [
+  1691→                {
+  1692→                    "type": "text",
+  1693→                    "content": (
+  1694→                        "Den avancerade analytikern läser inte bara "
+  1695→                        "handelsbalansen utan också IIP (International "
+  1696→                        "Investment Position) som SCB publicerar "
+  1697→                        "kvartalsvis. Sverige har positiv IIP — "
+  1698→                        "svenska investerare äger mer utländska "
+  1699→                        "tillgångar än utlänningar äger svenska — "
+  1700→                        "vilket är en dold styrka vid "
+  1701→                        "kronförsvagning. Nettotillgången uppgick till "
+  1702→                        "30 procent av BNP 2023, vilket ger en "
+  1703→                        "automatisk valutavinst på 6 procent av BNP "
+  1704→                        "vid en 20-procentig kronnedgång.\n\n"
+  1705→                        "En annan mästerskapsteknik är att följa "
+  1706→                        "Riksbankens valutareserv, som publiceras "
+  1707→                        "veckovis. Reserven på cirka 500 miljarder "
+  1708→                        "kronor är en back-up om kronan attackerats, "
+  1709→                        "och förändringar i reservens storlek "
+  1710→                        "signalera centralbankens aktivitet. Under "
+  1711→                        "2020 utökade Riksbanken reserven med 100 "
+  1712→                        "miljarder för att stärka försvarskapaciteten.\n\n"
+  1713→                        "Slutligen är förståelsen av "
+  1714→                        "aktie-investeringsflöden centralt. När "
+  1715→                        "utländska investerare köper svenska aktier "
+  1716→                        "för 100 miljarder kronor under ett kvartal, "
+  1717→                        "skapar det en direkt kronköpsefterfrågan. "
+  1718→                        "SCB publicerar dessa flöden kvartalsvis i "
+  1719→                        "portföljinvesteringstatistiken — en dold "
+  1720→                        "men kraftfull drivrutin till kortsiktig "
+  1721→                        "kronvolatilitet."
+  1722→                    ),
+  1723→                },
+  1724→                {
+  1725→                    "type": "insight",
+  1726→                    "content": (
+  1727→                        "Sveriges positiva IIP (svenska investerare "
+  1728→                        "äger mer utländska tillgångar än tvärtom) "
+  1729→                        "skapar en automatisk valutavinst på 6 "
+  1730→                        "procent av BNP vid 20-procentig "
+  1731→                        "kronnedgång — en dold makrostyrka."
+  1732→                    ),
+  1733→                },
+  1734→                {
+  1735→                    "type": "definition",
+  1736→                    "content": (
+  1737→                        "International Investment Position (IIP): "
+  1738→                        "skillnaden mellan ett lands utländska "
+  1739→                        "tillgångar och utländska skulder — Sveriges "
+  1740→                        "netto-IIP var +30 procent av BNP 2023."
+  1741→                    ),
+  1742→                },
+  1743→                {
+  1744→                    "type": "text",
+  1745→                    "content": (
+  1746→                        "När det gäller kopplingen till aktier är "
+  1747→                        "det viktigt att förstå att "
+  1748→                        "valutaeffekten går via två kanaler: "
+  1749→                        "intäkter (export) och kostnader (import). "
+  1750→                        "Bolag med mismatch — intäkter i kronor, "
+  1751→                        "kostnader i dollar — påverkas kraftigt "
+  1752→                        "nегативt av kronnedgång. H&M varnar "
+  1753→                        "regelbundet i kvartalsrapporter för "
+  1754→                        "valutaeffekter av inköp från Asien.\n\n"
+  1755→                        "Mästerskap innebär slutligen att kombinera "
+  1756→                        "handelsbalansanalys med räntor, BNP och "
+  1757→                        "konjunkturindikatorer. När handelsbalansen "
+  1758→                        "förbättras samtidigt som Riksbanken höjer "
+  1759→                        "räntan, får kronen dubbel stöd — gynnsamt "
+  1760→                        "för importberoende aktier men ogynnsamt "
+  1761→                        "för exportörer. Denna dualitet gör att "
+  1762→                        "AKM1-systemet aldrig förlitar sig på "
+  1763→                        "en enda makrovariabel."
+  1764→                    ),
+  1765→                },
+  1766→            ],
+  1767→        },
+  1768→    ],
+  1769→}
+  1770→
+  1771→print("Loaded course content for mk-01 to mk-03, continuing...")
+  1772→
+  1773→
+  1774→# ===========================================================================
+  1775→# mk-04 — Statsobligationer
+  1776→# ===========================================================================
+  1777→COURSES["mk-04-statsobligationer"] = {
+  1778→    "why": (
+  1779→        "Svenska statsobligationer är räntemarknadens fundament och "
+  1780→        "Riksbankens verktyg för att implementera penningpolitik — "
+  1781→        "priset på 2-åriga och 10-åriga statsobligationer prissätter "
+  1782→        "direkt svenska bolåneräntor och därmed hela "
+  1783→        "fastighetsaktiemarknaden. Statsobligationsräntan fungerar "
+  1784→        "dessutom som riskfri ränta i DCF-värderingar, vilket gör "
+  1785→        "varje räntesvans till en direkt aktieprissättande variabel."
+  1786→    ),
+  1787→    "history": {
+  1788→        "origin": (
+  1789→            "Sveriges första moderna statsobligation emitterades 1937 "
+  1790→            "för att finansiera försvarsutgifter, men det systematiska "
+  1791→            "statslånesystemet etablerades först på 1960-talet när "
+  1792→            "Riksgälden började ge ut serieobligationer. Riksbanken "
+  1793→            "utvecklade under 1980-talet en aktiv "
+  1794→            "sekundärmarknad med primähandlare (primary dealers) som "
+  1795→            "garanterade likviditet. Den svenska modellen inspirerades "
+  1796→            "av amerikanska Treasury-marknaden och brittiska Gilts, "
+  1797→            "men anpassades till Sveriges mindre marknad med färre "
+  1798→            "löptider."
+  1799→        ),
+  1800→        "evolution": (
+  1801→            "Sveriges statsobligationsmarknad krisades 1992 när "
+  1802→            "Riksbanken tvingades försvara kronan med räntor upp till "
+  1803→            "500 procent — obligationspriserna föll katastrofalt och "
+  1804→            "lärdomen blev att ett land med rörlig växelkurs inte "
+  1805→            "behöver försvara valutan med extrem ränta. Övergången "
+  1806→            "till inflationsmål 1993 stabiliserade räntemarknaden och "
+  1807→            "under 2000-talets stora boom sjönk 10-årsräntan från 8 "
+  1808→            "till 1 procent. Riksbankens QE-program 2015–2019, med "
+  1809→            "köp av statsobligationer för 350 miljarder kronor, "
+  1810→            "pressade ner 10-årsräntan till −0,5 procent."
+  1811→        ),
+  1812→        "modern": (
+  1813→            "Idag emitterar Riksgälden statsobligationer i löptider "
+  1814→            "från 1 till 30 år, med auktioner varannan vecka och "
+  1815→            "marknadsvolym på cirka 1 200 miljarder kronor. "
+  1816→            "Riksbankens kvantitativa åtstramning (QT) från 2022 "
+  1817→            "innebar att centralbanken lät 70 miljarder kronor av "
+  1818→            "statsobligationer löpa ut utan återinvestering, vilket "
+  1819→            "bidrog till att 10-årsräntan steg från 0,3 till 2,7 "
+  1820→            "procent på ett år. Denna räntehöjning var den "
+  1821→            "enskilt största drivrutinen till svenska fastighetsaktiers "
+  1822→            "60-procentiga fall 2022."
+  1823→        ),
+  1824→    },
+  1825→    "lynchSection": (
+  1826→        "Lynch var i ”Beating the Street” (1993) skeptisk till att "
+  1827→        "försöka förutse räntor och menade att investerare bättre "
+  1828→        "kunde studera bolag med prissättningsmakt som kunde "
+  1829→        "kompensera för räntehöjningar. Han observerade dock att "
+  1830→        "lågkonjunkturräntor var en bra köpsignal för kapitalintensiva "
+  1831→        "bolag med stark balansräkning."
+  1832→    ),
+  1833→    "grahamSection": (
+  1834→        "Graham använde statsobligationsräntan som ingångsvärde i sin "
+  1835→        "formel för att värdera bolag — ju högre riskfri ränta, desto "
+  1836→        "lägre bör värderingsmultiplar vara. I ”The Intelligent "
+  1837→        "Investor” (1949) varnade han för att aktiemarknaden vid "
+  1838→        "låga räntor kan prissättas för optimistiskt och krävde extra "
+  1839→        "margin of safety när räntorna var historiskt låga."
+  1840→    ),
+  1841→    "ak1Section": (
+  1842→        "I AKM1-metodiken används 10-årig svenska statsobligationsräntan "
+  1843→        "som riskfri ränta i DCF-värderingar och som ingång till "
+  1844→        "räntekänslighetsmatrisen som modifierar V14 (P/B) och V18 "
+  1845→        "(substansvärde). Stigande räntor triggar lägre tilldelning "
+  1846→        "till räntesensitiva fastighetsaktier och högre vikt till "
+  1847→        "finansiella bolag vars NIM förbättras."
+  1848→    ),
+  1849→    "chapters": [
+  1850→        {
+  1851→            "intro": (
+  1852→                "Statsobligationer är lån som staten ger ut och de "
+  1853→                "utgör räntemarknadens fundament — deras priser och "
+  1854→                "räntor prissätter bolån, kommunala lån och hela "
+  1855→                "svenska aktiemarknadens riskpremie."
+  1856→            ),
+  1857→            "blocks": [
+  1858→                {
+  1859→                    "type": "text",
+  1860→                    "content": (
+  1861→                        "En statsobligation är ett skuldebrev där "
+  1862→                        "staten (i Sverige representerad av "
+  1863→                        "Riksgälden) lånar pengar av investerare "
+  1864→                        "mot en fast ränta under en bestämd löptid. "
+  1865→                        "Riksgälden ger ut obligationer med löptider "
+  1866→                        "1, 2, 5, 7, 10 och 30 år via auktioner "
+  1867→                        "varannan vecka. Den totala "
+  1868→                        "marknadsvolymen uppgick 2023 till cirka 1 "
+  1869→                        "200 miljarder kronor, varav Riksbanken ägde "
+  1870→                        "350 miljarder från QE-programmet.\n\n"
+  1871→                        "Obligationer prissätts i procent av "
+  1872→                        "nominellt värde och priset rör sig omvänt "
+  1873→                        "mot räntan — när räntan stiger faller "
+  1874→                        "priset och vice versa. Denna mekanik är "
+  1875→                        "central för att förstå varför obligations-"
+  1876→                        "marknaden reagerar kraftigt på "
+  1877→                        "Riksbanksbeslut. En svensk 10-åring med 1 "
+  1878→                        "procent kupong faller cirka 8 procent i "
+  1879→                        "pris om räntan stiger till 2 procent.\n\n"
+  1880→                        "Avkastningskurvan (yield curve) visar "
+  1881→                        "räntor över olika löptider och är en "
+  1882→                        "betydelsefull makroindikator. Normalt är "
+  1883→                        "kurvan uppåtlutande — längre löptider ger "
+  1884→                        "högre räntor som kompensation för "
+  1885→                        "durationrisk. När kurvan planas ut eller "
+  1886→                        "inverteras, signalerar marknaden "
+  1887→                        "räntesänkningsförväntningar och därmed "
+  1888→                        "recessionsrisk."
+  1889→                    ),
+  1890→                },
+  1891→                {
+  1892→                    "type": "insight",
+  1893→                    "content": (
+  1894→                        "Obligationer prissätts omvänt mot räntan — "
+  1895→                        "en räntehöjning från 1 till 2 procent ger "
+  1896→                        "cirka 8 procents prisfall på en 10-årig "
+  1897→                        "obligation, vilket är varför "
+  1898→                        "obligationsfonder föll 10+ procent 2022."
+  1899→                    ),
+  1900→                },
+  1901→                {
+  1902→                    "type": "definition",
+  1903→                    "content": (
+  1904→                        "Duration: ett mått på en obligations "
+  1905→                        "räntekänslighet uttryckt i år — en "
+  1906→                        "10-årig obligation med 1 procent kupong "
+  1907→                        "har duration cirka 9,5 år och faller 9,5 "
+  1908→                        "procent om räntan stiger 1 procentenhet."
+  1909→                    ),
+  1910→                },
+  1911→                {
+  1912→                    "type": "text",
+  1913→                    "content": (
+  1914→                        "Svenska statsobligationer handlas på "
+  1915→                        "Nasdaq Stockholm med Riksbanken som "
+  1916→                        "största enskilda ägare via QE-programmet. "
+  1917→                        "Primähandlarna (däribland Handelsbanken, "
+  1918→                        "SEB, Nordea och Swedbank) garanterar "
+  1919→                        "likviditet och deltar i auktionerna. "
+  1920→                        "Marknaden är därmed djup och likvid, "
+  1921→                        "vilket gör svenska statsobligationer till "
+  1922→                        "en av Europas mest handlade "
+  1923→                        "statsobligationsmarknader.\n\n"
+  1924→                        "För investerare är statsobligationsräntan "
+  1925→                        "både en riskfri ränta i DCF-värderingar "
+  1926→                        "och en indikator på marknadens förväntningar "
+  1927→                        "på Riksbankens framtida räntebeslut. "
+  1928→                        "Skillnaden mellan 2-årig och 10-årig "
+  1929→                        "statsränta (kurvans lutning) är en av de "
+  1930→                        "bästa ledande indikatorerna på svensk "
+  1931→                        "konjunktur — en inverterad kurva har "
+  1932→                        "historiskt predikterat recessioner med "
+  1933→                        "12–18 månaders förskjutning."
+  1934→                    ),
+  1935→                },
+  1936→            ],
+  1937→        },
+  1938→        {
+  1939→            "intro": (
+  1940→                "Praktisk obligationsanalys innebär att följa "
+  1941→                "Riksbankens auktioner, primähandlarnas Budgivning "
+  1942→                "och avkastningskurvans form."
+  1943→            ),
+  1944→            "blocks": [
+  1945→                {
+  1946→                    "type": "text",
+  1947→                    "content": (
+  1948→                        "Riksgälden publicerar auktionskalender "
+  1949→                        "kvartalsvis med angivna löptider och "
+  1950→                        "volymer. Auktionerna sker via elektronisk "
+  1951→                        "budgivning där primähandlarna lägger "
+  1952→                        "konkurrenskraftiga bud. Resultatet publiceras "
+  1953→                        "omedelbart efter auktion och inkluderar "
+  1954→                        "genomsnittlig ränta och täckningsgrad — "
+  1955→                        "täckning under 1,5 indikerar svag "
+  1956→                        "efterfrågan och kan signalera kommande "
+  1957→                        "räntetryck.\n\n"
+  1958→                        "En mer ledande variabel är "
+  1959→                        "Ränteswap-marknaden där bankerna prissätter "
+  1960→                        "framtida räntor. Skillnaden mellan "
+  1961→                        "statsobligationsränta och swapränta "
+  1962→                        "(swap spread) är en indikator på "
+  1963→                        "bankernas kreditrisk — när spreaden "
+  1964→                        "vidgas, signalerar marknaden ökad oro "
+  1965→                        "för banksystemet. Under finanskrisen 2008 "
+  1966→                        "vidgades svenska swap spread från 5 till "
+  1967→                        "40 baspunkter.\n\n"
+  1968→                        "Avkastningskurvan publiceras dagligen av "
+  1969→                        "Riksbanken och inkluderar räntor för alla "
+  1970→                        "löptider från 1 månad till 30 år. "
+  1971→                        "Investerare bör följa två specifika "
+  1972→                        "spreadar: 2-10 år (term spread) som "
+  1973→                        "indikerar konjunkturförväntningar, och "
+  1974→                        "1-5 år som indikerar Riksbankens kortsiktiga "
+  1975→                        "beslutsrymd."
+  1976→                    ),
+  1977→                },
+  1978→                {
+  1979→                    "type": "insight",
+  1980→                    "content": (
+  1981→                        "Täckningsgrad under 1,5 på en "
+  1982→                        "Riksgäldsauktion signalerar svag "
+  1983→                        "efterfrågan och kan vara en tidig "
+  1984→                        "varning om kommande räntetryck — följ "
+  1985→                        "auktionsresultatet noga."
+  1986→                    ),
+  1987→                },
+  1988→                {
+  1989→                    "type": "definition",
+  1990→                    "content": (
+  1991→                        "Reporänta: Riksbankens styrränta, den "
+  1992→                        "ränta till vilken bankerna kan låna "
+  1993→                        "på en vecka mot säkerhet — direkt "
+  1994→                        "bestämmande för korta marknadsräntor."
+  1995→                    ),
+  1996→                },
+  1997→                {
+  1998→                    "type": "text",
+  1999→                    "content": (
+  2000→                        "Reporäntan bestäms av Riksbankens "
+
+[showing lines 1-2000 of 6553; use offset=2001 with limit to continue reading]

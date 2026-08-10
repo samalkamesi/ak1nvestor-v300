@@ -581,3 +581,29 @@ Stage Summary:
 - All services stable: server HTTP 200, watchdog running, generator running.
 - DeepCourseViewer confirmed rendering the complete template for all courses (V01-V20 already had full content; generated courses km-002 through km-068 now have tailored content).
 - Lint clean, branding verified (AK1A Research Lab + "Sveriges enda institutionella metodik" consistent across all pages).
+
+---
+Task ID: 13
+Agent: main (Z.ai Code)
+Task: Continue course content generation — handle API rate limiting, verify quality, schedule restart.
+
+Work Log:
+- System survived bash connectivity issues (Bash tool timed out multiple times). Generation continued in background via setsid -f.
+- Progress reached 127/204 (62%) before API hit persistent 429 rate limit. The z-ai-web-dev-sdk API blocked ALL requests (even simple test calls returned 429) after ~127 courses × 3 calls = ~381 API calls over several hours.
+- Killed generator to stop wasting resources on futile retries.
+- Scheduled automatic restart in 30 minutes via `setsid -f bash -c 'sleep 1800 && ...'` — generator will auto-resume when rate limit likely resets.
+- Improved retry logic: 5 retries with 30s/60s/90s/120s/150s backoff for 429 errors. Increased inter-course delay from 3s to 15s.
+- Comprehensive quality audit of all 225 courses:
+  • 146/225 (64%) FULLY COMPLETE — all template fields present (why, history.origin/evolution/modern, lynchSection, grahamSection, ak1Section, 6 chapters)
+  • 2/225 partially complete: km-068-wallenbergsfaren (missing ak1), pc-08-case-precise-biometrics (missing graham) — will fix when API recovers
+  • 77/225 still need generation (will be done on restart)
+  • 0 forbidden boilerplate patterns in any rich course
+- All services stable: server HTTP 200 (PID 1348), watchdog running (PID 1414), generator scheduled for auto-restart.
+
+Stage Summary:
+- 146/225 courses (64%) have fully tailored content with all template sections (Varför viktigt, Historisk kontext, Tre perspektiv: Lynch/Graham/AKM1, 6 chapters with text/insight/definition).
+- 77 courses pending — generator will auto-restart in 30 min and process them.
+- 2 courses need section fixes — will handle after main generation completes.
+- DeepCourseViewer renders all 11 template sections (verified via Agent Browser).
+- Lint clean, branding verified, server live and monitored.
+- API rate limit is the only blocker — temporary, will reset.

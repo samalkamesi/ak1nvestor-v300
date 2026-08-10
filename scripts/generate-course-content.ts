@@ -118,7 +118,7 @@ chapters måste ha ${indices.length} element. Allt på svenska.`;
 async function callLLM(
   zai: Awaited<ReturnType<typeof ZAI.create>>,
   prompt: string,
-  maxRetries = 4
+  maxRetries = 5
 ): Promise<any | null> {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
@@ -134,9 +134,9 @@ async function callLLM(
       return extractJSON(response);
     } catch (err: any) {
       const isRateLimit = err?.message?.includes("429") || err?.message?.includes("Too many requests");
-      // Rate limit: wait much longer (15s, 30s, 60s, 120s)
-      // Other errors: shorter backoff (2s, 4s, 6s, 8s)
-      const wait = isRateLimit ? 15000 * attempt : 2000 * attempt;
+      // Rate limit: wait much longer (30s, 60s, 90s, 120s, 150s)
+      // Other errors: shorter backoff (2s, 4s, 6s, 8s, 10s)
+      const wait = isRateLimit ? 30000 * attempt : 2000 * attempt;
       if (attempt < maxRetries) {
         console.error(`    [attempt ${attempt}] ${isRateLimit ? "429 rate-limit" : "error"}, waiting ${wait}ms`);
         await new Promise((r) => setTimeout(r, wait));
@@ -247,8 +247,8 @@ async function main() {
     fs.writeFileSync(JSON_PATH, JSON.stringify(allCourses, null, 2), "utf-8");
     saveProgress(done);
 
-    // Delay between batches to avoid rate limiting
-    await new Promise((r) => setTimeout(r, 3000));
+    // Longer delay between batches to avoid rate limiting
+    await new Promise((r) => setTimeout(r, 15000));
   }
 
   const t = ((Date.now() - startTime) / 1000).toFixed(0);

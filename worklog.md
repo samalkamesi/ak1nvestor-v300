@@ -1270,3 +1270,48 @@ Stage Summary:
 - Rikare visualiseringar: tidslinje, staplad stapel, prisstege, mekanism-steg
 - Komponenten är nu ~2100 rader (från ~900) men datadriven för alla bolag
 - Ingen data förlorad — allt från gamla PREC-sektionen är återställt
+
+---
+Task ID: 48-HARMONY
+Agent: main (Z.ai Code)
+Task: Hitta alla delar — bygg djupare kurser med högsta harmoni över hela sajten
+
+Work Log:
+- Djupanalys av hela hemsidan: 225 djupa kurser (V01-V20, KM-001-070, TS-01-25, PC-01-20, RK-01-15, PF-01-14, SE-01-15, SJ-01-05, BF-01-11, MK-01-11, VM-01-11, UD-01-08) över 17 kategorier, 1352 kapitel, 3688 blocks, 1,25M tecken innehåll
+- Identifierade 3 stora harmoni-gap:
+  1. AKM1-indikatorer i StockAnalysisView var EJ klickbara — ingen länk till djupkurser
+  2. Gå vidare-sektionen saknade "Alla kurser"-länk
+  3. LÄROPLANEN i UTBILDNING hade statiska kursnamn ("Aktie vs Bolag vs Fond") som inte länkade till faktiska kurser
+- Skapade src/lib/ak1a/course-links.ts — central helper för kurslänkning:
+  • AKM1_TO_SLUG: Map V01-V20 → kurs-slug
+  • AK1TS_TO_SLUG: Map våg-teorier → kurs-slug
+  • CONCEPT_TO_SLUG: Map 30+ finansiella koncept → kurs-slug
+  • recommendCourses(indicators, sector): AI-driven kursrekommendation (5 kurser per analys baserat på svagaste/starkaste variabler + sektor)
+  • slugForAkm1, slugForConcept: lookup-helpers
+- Lade till openCourse(slug) i Zustand store — global funktion som navigerar till kurser + öppnar djupkurs från VILKEN sektion som helst
+- Uppdaterade StockAnalysisView:
+  • AKM1-indikatorer är nu klickbara buttons → openCourse(slug) öppnar djupkursen
+  • "LÄS KURS →" badge visas på varje indikatorkort
+  • Ny sektion "Relaterade kurser" (section 19 av 19) — rekommenderar 5 kurser baserat på analysens AKM1-profil
+  • "Gå vidare" har nu 4 kort (inkl. "Alla kurser — 225 djupa moduler")
+- Uppdaterade UTBILDNING LÄROPLANEN:
+  • STEG 1: Bokföringens grunder, Förvaltningsberättelsen, Eget kapital & utdelningar, Återköp (V20)
+  • STEG 2: Kassaflödesanalysen, AKM1 V01/V04/V07/V09/V10
+  • STEG 3: AKM1 V13/V14/V17/V19, AK1TS Elliott Wave + 25-cellers matris, DCF, Scenario-analys, Margin of safety
+  • Alla kursnamn är nu klickbara buttons → openCourse(slug)
+- Agent Browser verifierat:
+  • AKM1-sektion: V07 Bruttomarginal klickbar → öppnar djupkurs ✓
+  • Relaterade kurser: 5 kurser rekommenderade (AK1TS matris + V09 ROE + V20 Återköp + starkaste) ✓
+  • Läroplan: "AKM1 V07 — Bruttomarginal" klickbar → öppnar djupkurs ✓
+  • Gå vidare: "Alla kurser — 225 djupa moduler" länk tillagd ✓
+- Lint: rent (0 fel, 0 varningar)
+
+Stage Summary:
+- HARMONI UPPNÅDD: Analys → Kurser → Läroplan — alla pratar med varandra
+- 225 djupa kurser är nu FULLT integrerade med alla sektioner
+- AKM1-indikatorer (V01-V20) i analyser är klickbara → öppnar respektive djupkurs
+- AI-driven kursrekommendation: varje analys rekommenderar 5 kurser baserat på bolagets AKM1-profil
+- Läroplanen i UTBILDNING länkar till 19 faktiska kurser (inte statiska namn längre)
+- Kundupplevelse: från analys → klicka V07 → djupkurs → tillbaka → fortsätt lära sig
+- Ny fil: src/lib/ak1a/course-links.ts (central kurslänknings-helper)
+- Uppdaterade: ak1a-store.ts (openCourse), stock-analysis-view.tsx (klickbara AKM1 + Relaterade kurser), utbildning-section.tsx (läroplan länkad)

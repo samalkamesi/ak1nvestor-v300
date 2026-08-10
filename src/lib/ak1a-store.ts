@@ -43,6 +43,9 @@ interface Ak1aState {
   kurserDeepSlug: string | null;
   setKurserDeepSlug: (slug: string | null) => void;
 
+  // Open a deep course from ANY section (navigates to kurser + sets slug)
+  openCourse: (slug: string) => void;
+
   // learning progress (XP / courses / quizzes)
   progress: QuizProgress;
   addXp: (amount: number) => void;
@@ -91,6 +94,14 @@ export const useAk1aStore = create<Ak1aState>()(
       kurserDeepSlug: null,
       setKurserDeepSlug: (slug) => {
         set({ kurserDeepSlug: slug });
+        if (typeof window !== "undefined") {
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }
+      },
+
+      // Open a deep course from ANY section — navigates to kurser + sets slug
+      openCourse: (slug) => {
+        set({ section: "kurser", kurserDeepSlug: slug });
         if (typeof window !== "undefined") {
           window.scrollTo({ top: 0, behavior: "auto" });
         }

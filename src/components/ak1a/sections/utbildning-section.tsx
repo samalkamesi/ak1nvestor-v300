@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { isDeepCourseSlug } from "@/lib/ak1a/deep-courses-data";
+import { AKM1_TO_SLUG, CONCEPT_TO_SLUG, AK1TS_TO_SLUG } from "@/lib/ak1a/course-links";
 import { Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -49,6 +50,7 @@ function scrollToId(id: string) {
 
 interface StepCourse {
   label: string;
+  slug?: string;
 }
 
 interface LaroPlanSteg {
@@ -69,10 +71,10 @@ const LAROPLAN_STEG: LaroPlanSteg[] = [
     title: "Förstå ett bolag",
     desc: "Vad är en aktie? Vad är ett bolag? Vad äger du egentligen?",
     courses: [
-      { label: "Aktie vs Bolag vs Fond" },
-      { label: "Aktieslag A/B/C" },
-      { label: "Utdelning" },
-      { label: "Återköp" },
+      { label: "Bokföringens grunder", slug: "km-001-bokforingens-grunder" },
+      { label: "Förvaltningsberättelsen", slug: "km-002-forvaltningsberattelsen" },
+      { label: "Eget kapital & utdelningar", slug: "km-005-eget-kapital-utdelningar" },
+      { label: "Återköp av egna aktier", slug: "v20-aterekop-egna-aktier" },
     ],
     count: 4,
     minutes: 52,
@@ -83,12 +85,12 @@ const LAROPLAN_STEG: LaroPlanSteg[] = [
     title: "Räkna på det",
     desc: "Intäkter, marginaler, skuld, kassaflöde. Santen bakom siffrorna.",
     courses: [
-      { label: "Resultaträkning" },
-      { label: "Balansräkning" },
-      { label: "Kassaflöde" },
-      { label: "AKM1 V1-V5 (Tillväxt)" },
-      { label: "AKM1 V6-V9 (Värdering)" },
-      { label: "AKM1 V10-V12 (Lönsamhet)" },
+      { label: "Kassaflödesanalysen", slug: "km-003-kassaflodesanalysen" },
+      { label: "AKM1 V01 — Försäljningstillväxt", slug: "v01-forsaljningstillvaxt" },
+      { label: "AKM1 V04 — P/S", slug: "v04-ps" },
+      { label: "AKM1 V07 — Bruttomarginal", slug: "v07-bruttomarginal" },
+      { label: "AKM1 V09 — ROE", slug: "v09-roe" },
+      { label: "AKM1 V10 — Skuldsättningsgrad", slug: "v10-skuldsattningsgrad" },
     ],
     count: 6,
     minutes: 84,
@@ -97,17 +99,17 @@ const LAROPLAN_STEG: LaroPlanSteg[] = [
     num: "03",
     stepLabel: "STEG 3",
     title: "Bedöm det",
-    desc: "De 19 fundamentala variablerna. Moat, katalysatorer, risk. Detta är Carnegie-nivå.",
+    desc: "De 20 fundamentala variablerna. Moat, katalysatorer, risk. Detta är Carnegie-nivå.",
     courses: [
-      { label: "AKM1 V13-V15 (Stabilitet)" },
-      { label: "AKM1 V16-V17 (Moat)" },
-      { label: "AKM1 V18 (Katalysator)" },
-      { label: "AKM1 V19 (Risk)" },
-      { label: "Farliga kombinationer" },
-      { label: "AK1TS: Elliott Wave" },
-      { label: "AK1TS: Fibonacci" },
-      { label: "AK1TS: 5 horisonter" },
-      { label: "Reproducera en analys" },
+      { label: "AKM1 V13 — Patent & IP", slug: "v13-patent-ip" },
+      { label: "AKM1 V14 — Varumärke", slug: "v14-varumarke" },
+      { label: "AKM1 V17 — Avtal & Partnerskap", slug: "v17-avtal-partnerskap" },
+      { label: "AKM1 V19 — Kapitalförbränning", slug: "v19-kapitalforbranning" },
+      { label: "AK1TS: Elliott Wave", slug: "ts-01-elliott-wave" },
+      { label: "AK1TS: 25-cellers matris", slug: "ts-10-ak1ts-25cellers-matris" },
+      { label: "DCF — diskonterade kassaflöden", slug: "km-007-dcf" },
+      { label: "Scenario-analys", slug: "km-029-scenarioanalys" },
+      { label: "Margin of safety", slug: "km-030-margin-of-safety" },
     ],
     count: 9,
     minutes: 156,
@@ -192,7 +194,7 @@ const FAQS: Faq[] = [
 /* ------------------------------------------------------------------ */
 
 export function UtbildningSection() {
-  const { setSection, setKurserDeepSlug } = useAk1aStore();
+  const { setSection, setKurserDeepSlug, openCourse } = useAk1aStore();
 
   // Sanity link: ensures the V01 slug is a valid deep course.
   const v01Exists = React.useMemo(
@@ -423,12 +425,21 @@ export function UtbildningSection() {
                   </div>
                   <ul className="mt-3 space-y-1.5">
                     {steg.courses.map((c, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-2 text-sm text-ink/90 dark:text-foreground/90"
-                      >
-                        <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                        <span>{c.label}</span>
+                      <li key={i}>
+                        {c.slug ? (
+                          <button
+                            onClick={() => openCourse(c.slug!)}
+                            className="group flex w-full items-start gap-2 rounded-md px-1.5 py-1 text-left text-sm text-ink/90 transition-colors hover:bg-gold/[0.06] dark:text-foreground/90"
+                          >
+                            <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-gold transition-transform group-hover:translate-x-0.5" />
+                            <span className="group-hover:text-gold">{c.label}</span>
+                          </button>
+                        ) : (
+                          <div className="flex items-start gap-2 px-1.5 py-1 text-sm text-ink/90 dark:text-foreground/90">
+                            <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                            <span>{c.label}</span>
+                          </div>
+                        )}
                       </li>
                     ))}
                   </ul>

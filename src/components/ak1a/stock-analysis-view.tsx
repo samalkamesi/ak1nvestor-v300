@@ -25,6 +25,7 @@ import {
   FileText,
   MapPin,
   Briefcase,
+  BookOpen,
   Loader2,
   AlertTriangle,
   CheckCircle2,
@@ -38,6 +39,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { slugForAkm1, recommendCourses } from "@/lib/ak1a/course-links";
 
 /* ────────────────────────────────────────────────────────────────────────── */
 /*  Types                                                                     */
@@ -265,6 +267,7 @@ const SECTION_DEFS = [
   { id: "kurshistorik", label: "Kurshistorik" },
   { id: "historik", label: "Historik" },
   { id: "fusionen", label: "Fusionen" },
+  { id: "relaterade-kurser", label: "Kurser" },
   { id: "ga-vidare", label: "Gå vidare" },
 ] as const;
 
@@ -537,6 +540,9 @@ export function StockAnalysisView({ ticker, onBack }: StockAnalysisViewProps) {
       {data.fusionDetails && (
         <FusionSection data={data} registerRef={registerRef} />
       )}
+
+      {/* ───────────── RELATERADE KURSER ───────────── */}
+      <RelatedCoursesSection data={data} registerRef={registerRef} />
 
       {/* ───────────── GÅ VIDARE ───────────── */}
       <GoFurtherSection data={data} registerRef={registerRef} setSection={setSection} onBack={onBack} />
@@ -1115,6 +1121,8 @@ function Akm1Section({
 }
 
 function Akm1IndicatorCard({ id, indicator }: { id: string; indicator: Akm1Indicator }) {
+  const { openCourse } = useAk1aStore();
+  const slug = slugForAkm1(id);
   const signalColor =
     indicator.signal === "bull"
       ? "text-bull border-bull/30 bg-bull/[0.04]"
@@ -1126,15 +1134,29 @@ function Akm1IndicatorCard({ id, indicator }: { id: string; indicator: Akm1Indic
     indicator.score >= 4 ? "text-bull" : indicator.score <= 2 ? "text-bear" : "text-gold";
 
   return (
-    <Card className={cn("border p-4", signalColor)}>
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="font-mono text-xs font-bold text-gold">{id}</span>
-          <span className="text-sm font-semibold">{indicator.name}</span>
+    <Card className={cn("border p-4 transition-all", signalColor, slug && "cursor-pointer hover:ring-2 hover:ring-gold/30")}>
+      <button
+        type="button"
+        disabled={!slug}
+        onClick={() => slug && openCourse(slug)}
+        className="block w-full text-left disabled:cursor-default"
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs font-bold text-gold">{id}</span>
+            <span className="text-sm font-semibold">{indicator.name}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            {slug && (
+              <span className="text-[9px] font-semibold uppercase tracking-wider text-gold/70 hidden sm:inline">
+                Läs kurs →
+              </span>
+            )}
+            <span className={cn("font-serif text-xl font-bold", scoreColor)}>{indicator.score}/5</span>
+          </div>
         </div>
-        <span className={cn("font-serif text-xl font-bold", scoreColor)}>{indicator.score}/5</span>
-      </div>
-      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{indicator.note}</p>
+        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{indicator.note}</p>
+      </button>
     </Card>
   );
 }
@@ -1517,6 +1539,79 @@ function HistorySection({
   );
 }
 
+function RelatedCoursesSection({
+  data,
+  registerRef,
+}: {
+  data: AnalysisData;
+  registerRef: (id: string) => (el: HTMLElement | null) => void;
+}) {
+  const { openCourse } = useAk1aStore();
+  const courses = recommendCourses(data.akm1.indicators, data.sector);
+
+  if (courses.length === 0) return null;
+
+  return (
+    <section
+      id="relaterade-kurser"
+      ref={registerRef("relaterade-kurser")}
+      className="border-b border-border"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14">
+        <div className="flex items-center justify-between">
+          <div>
+            <Eyebrow>Läroplan — 5 rekommenderade kurser</Eyebrow>
+            <h2 className="mt-3 font-serif text-2xl font-bold tracking-tight sm:text-4xl">
+              Fördjupa dig i analysen
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+              Baserat på {data.company}s AKM1-profil — dina svagaste och starkaste variabler,
+              plus sektorkunskap. Klicka för att öppna djupkursen.
+            </p>
+          </div>
+          <Badge variant="outline" className="border-gold/40 text-gold uppercase tracking-wider text-[10px] hidden sm:flex">
+            {courses.length} kurser
+          </Badge>
+        </div>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {courses.map((c, i) => (
+            <button
+              key={c.slug}
+              onClick={() => openCourse(c.slug)}
+              className="group relative overflow-hidden rounded-lg border border-border bg-card p-5 text-left transition-all hover:border-gold/40 hover:shadow-sm"
+            >
+              <div className="flex items-start justify-between">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 bg-gold/[0.06] font-serif text-sm font-bold text-gold">
+                  {i + 1}
+                </span>
+                <ArrowRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-gold" />
+              </div>
+              <div className="mt-4">
+                <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  {c.reason}
+                </div>
+                <h3 className="mt-1 font-serif text-base font-bold leading-tight">{c.title}</h3>
+                <div className="mt-2 flex items-center gap-1.5">
+                  <FileText className="h-3 w-3 text-gold" />
+                  <span className="text-[10px] text-muted-foreground font-mono">{c.slug}</span>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-6 flex items-center gap-2">
+          <HonestyTag kind="matt" />
+          <span className="text-xs text-muted-foreground">
+            Varje kurs är 6 kapitel · 15-25 min · Lynch + Graham + AK1 perspektiv
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function GoFurtherSection({
   data,
   registerRef,
@@ -1541,7 +1636,7 @@ function GoFurtherSection({
         </h2>
         <GoldRule className="mt-6 max-w-md" />
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <GoCard
             icon={<FileText className="h-5 w-5" />}
             title="Alla analyser"
@@ -1553,6 +1648,12 @@ function GoFurtherSection({
             title="Alla aktier"
             sub="Aktieuniversum"
             onClick={() => setSection("aktier")}
+          />
+          <GoCard
+            icon={<BookOpen className="h-5 w-5" />}
+            title="Alla kurser"
+            sub="225 djupa moduler"
+            onClick={() => setSection("kurser")}
           />
           <GoCard
             icon={<TrendingUp className="h-5 w-5" />}

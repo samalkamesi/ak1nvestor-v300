@@ -85,7 +85,7 @@ function isLockedFor(courseLevel: Level, userLevel: Level): boolean {
 }
 
 const CATEGORY_FILTERS: { id: Akm1Category | "ALLA"; label: string; count: number }[] = [
-  { id: "ALLA", label: "ALLA", count: 19 },
+  { id: "ALLA", label: "ALLA", count: 20 },
   { id: "Värdering", label: "VÄRDERING", count: 3 },
   { id: "Tillväxt", label: "TILLVÄXT", count: 3 },
   { id: "Lönsamhet", label: "LÖNSAMHET", count: 3 },
@@ -97,9 +97,9 @@ const CATEGORY_FILTERS: { id: Akm1Category | "ALLA"; label: string; count: numbe
 
 const CATEGORY_CARDS = [
   {
-    id: "akm1-19",
-    title: "AKM1 19 VARIABLER",
-    subtitle: "19 KURSER",
+    id: "akm1-20",
+    title: "AKM1 20 VARIABLER",
+    subtitle: "20 KURSER (V01-V20)",
     icon: Layers,
     description: "Grunden allt annat vilar på. Variabel för variabel.",
     target: "akm1-variabler",
@@ -562,7 +562,7 @@ export function KurserSection() {
   );
 
   const completedCount = completedAkm1Ids.size;
-  const akm1ProgressPct = Math.round((completedCount / 19) * 100);
+  const akm1ProgressPct = Math.round((completedCount / 20) * 100);
 
   const activeCourse = React.useMemo(
     () => AKM1_VARIABLES.find((v) => v.id === activeCourseId) ?? null,
@@ -646,7 +646,7 @@ export function KurserSection() {
             />
             <ProgressTile
               completed={completedCount}
-              total={19}
+              total={20}
               pct={akm1ProgressPct}
               xp={progress.xp}
             />

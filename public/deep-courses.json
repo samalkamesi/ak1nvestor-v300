@@ -2117,5 +2117,194 @@
         ]
       }
     ]
+  },
+  "v20-aterekop-egna-aktier": {
+    "slug": "v20-aterekop-egna-aktier",
+    "category": "KAPITALSTRUKTUR",
+    "weight": "5%",
+    "chapterCount": 6,
+    "totalMinutes": 32,
+    "title": "Återköp av egna aktier",
+    "summary": "Buybacks = bolaget köper tillbaka egna aktier. Signal: ledning tror aktien är undervärderad. Minskar antal aktier → höjer EPS. AKM1:s 20:e indikator — tillagd i mega-projektet 2026.",
+    "minutes": 20,
+    "xp": 100,
+    "level": "Intermediär",
+    "learn": "Hur du bedömer om återköp av egna aktier skapar värde eller förstör det — och varför V20 är AKM1:s 20:e indikator.",
+    "why": "Återköp är den mest missförstådda kapitalallokeringsmekanismen. Rätt använd = kraftfull värdeskapande signal. Fel använd = EPS-manipulation med skuld. Denna variabel skiljer äkta compounders från bolag som döljer svag tillväxt med buybacks.",
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Vad är återköp — och varför det finns",
+        "minutes": 5
+      },
+      {
+        "num": 2,
+        "title": "Den goda signalen — buybacks vid rätt pris",
+        "minutes": 5
+      },
+      {
+        "num": 3,
+        "title": "Den farliga illusionen — EPS-manipulation",
+        "minutes": 6
+      },
+      {
+        "num": 4,
+        "title": "Buybacks vs utdelning — skatt och signal",
+        "minutes": 5
+      },
+      {
+        "num": 5,
+        "title": "Att beräkna buyback-avkastning i praktiken",
+        "minutes": 6
+      },
+      {
+        "num": 6,
+        "title": "Mästerskap — buybacks som system",
+        "minutes": 5
+      }
+    ],
+    "history": {
+      "origin": "Återköp av egna aktier legaliserades i USA 1982 (SEC Rule 10b-18) efter att tidigare ha betraktats som marknadsmanipulation. I Sverige blev buybacks vanliga först på 2000-talet efter ändringar i aktiebolagslagen. Tidiga pionjärer: IBM och Exxon på 1980-talet.",
+      "evolution": "Under 1990-talet blev buybacks mainstream. Warren Buffett (Berkshire Hathaway) varnade tidigt för 'value-destructive buybacks' gjorda över intrinsic value. Under 2010-talet exploderade buyback-volymen — S&P 500-bolag köpte tillbaka för över 5 biljoner USD på 10 år. Kritiken växte: 'buybacks dödar R&D-investeringar'. Post-COVID (2021-) vände pendeln något — ESG-tryck och regeringens kritik (Biden 2022) kylde marknaden.",
+      "modern": "I dagens marknad är buybacks en dubbeleggad svärd. Apple ($90Mdr/år), Alphabet och Microsoft visar 'goda' buybacks (fritt kassaflöde, under intrinsic value). Boeing och GE visar 'dåliga' buybacks (skuldfinansierade, precis före kriser). Modernd analyst kräver bedömning av: finansieringskälla, pris vs intrinsic value, och om buybacks ersätter nödvändig R&D. AKM1 V20 väger alla tre."
+    },
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 5,
+        "title": "Vad är återköp — och varför det finns",
+        "intro": "Förstå mekaniken bakom buybacks och varför bolag gör dem",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Återköp av egna aktier (share buyback / share repurchase) innebär att ett bolag köper tillbaka sina egna utestående aktier från marknaden. De inköpta aktierna dras in (retireras) eller sparas som treasury stock. Effekten: antalet utestående aktier minskar, vilket höjer vinst per aktie (EPS) även om totalvinsten är oförändrad.\n\nMekaniken är enkel men konsekvenserna djupa. Ett bolag med 100 miljoner aktier och 100 MSEK i vinst har EPS = 1,00 SEK. Om bolaget köper tillbaka 10 miljoner aktier (nu 90 M utestående) stiger EPS till 1,11 SEK — en 11% 'tillväxt' i EPS utan att bolaget tjänade en krona mer. Detta är buybacks kraft — och dess fara."
+          },
+          {
+            "type": "insight",
+            "content": "Buybacks är inte en utdelning — men de har samma ekonomiska effekt för aktieägaren. Båda är sätt att returnera kapital. Skillnaden: utdelning ger kontanter nu; buyback ger (förhoppningsvis) högre aktiekurs senare via färre aktier."
+          },
+          {
+            "type": "definition",
+            "content": "Buyback-avkastning = (Antal aktier retirerade / Utestående aktier före buyback) × 100. Exempel: 10M återköpta av 100M utestående = 10% buyback-avkastning. Detta motsvarar en 10% 'utdelning' räknat på börsvärdet, men realiseras via EPS-tillväxt istället för kontanter."
+          },
+          {
+            "type": "text",
+            "content": "Varför existerar buybacks? Tre huvudskäl: (1) Kapitalallokering — bolag med mer kassa än de kan reinvestera lönsamt returnerar överskottet till ägarna. (2) Signal — ledning köper tillbaka när de tror aktien är undervärderad; marknaden tolkar detta som 'insider confidence'. (3) EPS-optimering — färre aktier höjer EPS, vilket (teoretiskt) höjer aktiekursen om P/E är oförändrad.\n\nDet tredje skälet är det farliga. Om buybacks görs för att manipulera EPS snarare än för att returnera reellt överkapital, skapas en illusion av tillväxt som kollapsar när buyback-programmet slutar."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 5,
+        "title": "Den goda signalen — buybacks vid rätt pris",
+        "intro": "När skapar buybacks äkta värde för aktieägaren",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett 'gott' buyback har tre kännetecken. Första: det finansieras med fritt kassaflöde, inte med skuld. Bolag som tar lån för att köpa tillbaka aktier ökar sin skuldsättning (V10) och riskerar kriser. Andra: det sker till ett pris under bolagets intrinsic value. Om aktien handlas över intrinsic value förstör buybacks värde — bolaget betalar 100 för något värt 80. Tredje: det ersätter inte nödvändig R&D eller kapitalinvestering. Ett bolag som skippar R&D för att finansiera buybacks äter sin framtid.\n\nApple är det klassiska exemplet på 'goda' buybacks. Sedan 2012 har Apple återköpt för över 600 Mdr USD — finansierat med enormt fritt kassaflöde, till priser under intrinsic value, och samtidigt som R&D-budgeten har vuxit. Resultat: EPS har vuxit snabbare än vinsten, och aktien har mångdubblats."
+          },
+          {
+            "type": "insight",
+            "content": "Buffetts regel: 'Ett buyback skapar värde endast om (a) bolaget har kapital över efter alla nödvändiga investeringar, OCH (b) aktien handlas under intrinsic value.' Saknas något av dessa två, förstör buybacks värde."
+          },
+          {
+            "type": "text",
+            "content": "AKM1 V20 poängsätter buybacks enligt dessa tre kriterier. Poäng 4-5: buybacks finansierade med fritt kassaflöde, till pris under intrinsic value, utan att urholka R&D. Poäng 3: buybacks finansierade med skuld men till rätt pris — acceptabelt men inte optimalt. Poäng 1-2: buybacks finansierade med skuld, till pris över intrinsic value, eller som ersätter nödvändig investering — värdeförstörande.\n\nI Sverige visar Investor AB och Atlas Copco exempel på goda buyback-program. Båda har minskat antalet aktier över tid samtidigt som de investerat i verksamheten — äkta värdeskapande."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 6,
+        "title": "Den farliga illusionen — EPS-manipulation",
+        "intro": "Hur buybacks kan dölja svag tillväxt",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den farligaste användningen av buybacks är EPS-manipulation. Mekanismen: ett bolag med 0% organisk tillväxt kan visa 10% EPS-tillväxt genom att retirera 10% av aktierna. Aktieägarna ser 'tillväxt' som inte existerar i verksamheten. När buyback-programmet slutar (ofta vid en kris när skulden är för hög) kollapsar EPS-tillväxten och aktien faller.\n\nBoeing är det extremaste exemplet. Mellan 2010 och 2019 återköpte Boeing för 43 Mdr USD — finansierat med skuld. Samtidigt underinvesterade de i 737 MAX-utveckling. EPS växte, aktien steg, ledningen fick bonusar. Sedan kom 737 MAX-krascherna (2018-2019) och COVID (2020). Skulden var enorm, kassaflödet var negativt, och buyback-programmet hade tömt kassan. Boeing föll 75%. Buybacks hade maskerat en rörelse i förfall."
+          },
+          {
+            "type": "insight",
+            "content": "En varningssignal: om EPS-tillväxten överstiger vinst-tillväxten konsekvent över 3+ år, drivs EPS-tillväxten av buybacks, inte av verksamheten. Detta är hållbart endast om buybacks görs från överskottskassa — inte från skuld."
+          },
+          {
+            "type": "definition",
+            "content": "EPS-tillväxt vs Vinst-tillväxt: Om nettoresultatet växer 5% men EPS växer 12%, kommer 7 procentenheter från buybacks (färre aktier). Detta är inte äkta tillväxt — det är finansiell engineering. AKM1 V01 (försäljningstillväxt) mäter äkta tillväxt; V20 (buybacks) mäter kapitalstruktur. Om V01 är låg men EPS växer, kontrollera V20."
+          },
+          {
+            "type": "text",
+            "content": "General Electric (GE) är ett annat exempel. Under Jeffrey Immelt (2001-2017) återköpte GE för över 100 Mdr USD — finansierat med skuld och försäljning av tillgångar. EPS växte, men verksamheten förföll. När sanningen kom (2017-2018) kollapsade GE från 30 Mdr USD till under 10 Mdr USD. Buybacks hade dolt att kärnverksamheten inte längre var lönsam.\n\nLärdomen: buybacks är ett verktyg, inte en strategi. Ett bolag som förlitar sig på buybacks för EPS-tillväxt har inget verkligt värde att bygga på."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 5,
+        "title": "Buybacks vs utdelning — skatt och signal",
+        "intro": "Två sätt att returnera kapital — vilken är bäst",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Buybacks och utdelningar är de två huvudsakliga sätten för ett bolag att returnera kapital till aktieägarna. Båda har samma ekonomiska effekt (pengar lämnar bolaget och går till ägarna) men olika skattekonsekvenser och signaler.\n\nUtdelning: kontant betalning per aktie, vanligen kvartalsvis eller årsvis. Beskattas som kapitalinkomst (i Sverige: 30% på utdelning). Fördel: förutsägbar inkomst för ägaren. Nackdel: beskattas årligen även om du inte säljer.\n\nBuyback: bolaget köper aktier på öppen marknad. Ägaren 'tjänar' genom att aktien (förhoppningsvis) stiger pga färre aktier. Beskattas först vid försäljning (i Sverige: 30% på realiserad vinst). Fördel: skatteuppskov — du betalar inte skatt förrän du säljer. Nackdel: osäker — du måste sälja aktien för att realisera värdet."
+          },
+          {
+            "type": "insight",
+            "content": "Lynch föredrog buybacks ur skattesynpunkt: 'Varför betala 30% skatt varje år på utdelning när du kan låta pengarna växa skattefritt i aktien?' Graham föredrog utdelning: 'En utdelning är en check du kan banka; ett buyback är ett löfte.'"
+          },
+          {
+            "type": "text",
+            "content": "Signal-teorin skiljer dem ytterligare. Utdelning sänkningar är en starkt negativ signal — bolag undviker att sänka utdelning tills de måste, så en sänkning betyder kris. Buybacks kan stoppas utan samma stigma — bolag kan pausa buyback-program utan att marknaden reagerar lika negativt. Detta gör buybacks mer flexibla men också mindre 'trovärdiga' som signal.\n\nI Sverige har utdelning en starkare kultur än buybacks. Wallenberg-bolag (Investor, Atlas Copco, AstraZeneca) har lång tradition av stabil eller växande utdelning. Buybacks används mer opportunistiskt. AKM1 V20 bedömer buybacks separat från V12 (intäktsstabilitet) — de är olika signaler."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 6,
+        "title": "Att beräkna buyback-avkastning i praktiken",
+        "intro": "Räkna på om buybacks skapar eller förstör värde",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "För att bedöma V20 i praktiken behöver du tre siffror från årsredovisningen: (1) Totalt buyback-belopp (finns i kassaflödesanalysen under 'återköp av egna aktier'). (2) Genomsnittligt pris vid återköp (finns ofta i noterna eller i bolagets buyback-rapporter). (3) Utestående aktier före och efter buyback-perioden.\n\nMed dessa räknar du ut: Buyback-avkastning = (Aktier retirerade / Utestående före) × 100. En buyback-avkastning på 5% per år över 5 år motsvarar en ackumulerad 'utdelning' på ~28% (ej compounding). Jämför detta med direktavkastningen (utdelning / aktiekurs) — om buyback-avkastningen är högre än direktavkastningen, returnerar bolag mer via buybacks än via utdelning."
+          },
+          {
+            "type": "insight",
+            "content": "Det viktigaste måttet: jämför buyback-priset med bolagets P/B (V05). Om bolaget köper tillbaka aktier till P/B > 2, förstör de bokfört värde. Om P/B < 1, skapar de bokfört värde. Enkel regel: buybacks under P/B 1 = bra; över P/B 2 = dåligt."
+          },
+          {
+            "type": "definition",
+            "content": "Buyback ROI = (EPS-före - EPS-efter) / Buyback-belopp. Om bolaget spenderar 100 MSEK på buybacks och EPS stiger från 1,00 till 1,10, är buyback-ROI = 0,10 / 100 = 0,1% per år — dåligt. Om samma 100 MSEK hade investerats i R&D med 15% avkastning, hade det varit bättre. Buyback-ROI bör jämföras med bolagets avkastningskrav (WACC)."
+          },
+          {
+            "type": "text",
+            "content": "AKM1 V20 poängskala:\n• Poäng 5: Buybacks finansierade med fritt kassaflöde, till P/B < 1, utan att urholka R&D. Exempel: Investor AB, Atlas Copco.\n• Poäng 4: Buybacks finansierade med fritt kassaflöde, till P/B 1-2. Bra men inte optimalt.\n• Poäng 3: Buybacks finansierade med skuld men till rätt pris. Acceptabelt.\n• Poäng 2: Buybacks finansierade med skuld, till P/B > 2, eller som ersätter R&D. Värdeförstörande.\n• Poäng 1: Aggressiva buybacks finansierade med skuld, till extrema värderingar, medan verksamheten förfaller. Exempel: Boeing 2010-2019, GE under Immelt.\n\nFör att kontrollera: leta i årsredovisningen efter 'share repurchase program' i kassaflödesanalysen och 'treasury shares' i balansräkningen."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 5,
+        "title": "Mästerskap — buybacks som system",
+        "intro": "Integrera V20 med de andra 19 variablerna",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "V20 ska aldrig bedömas isolerat. Det är en del av AKM1:s 20-variabelsystem och samverkar särskilt med: V01 (tillväxt) — om tillväxten är låg och buybacks hög, misstänk EPS-manipulation. V05 (P/B) — om P/B är hög och buybacks görs, förstörs bokfört värde. V10 (skuldsättning) — om skuldsättningen ökar samtidigt som buybacks, är de skuldfinansierade. V11 (likviditet) — om likviditeten sjunker för att finansiera buybacks, är det en varning. V19 (kapitalförbränning) — om bolaget bränner pengar OCH gör buybacks, är det extremt värdeförstörande.\n\nDen farligaste kombinationen: hög V01 (tillväxt) + låg V07 (bruttomarginal) + hög V20 (buybacks) = bolag som döljer svag lönsamhet med buybacks. Detta var GE:s mönster under Immelt."
+          },
+          {
+            "type": "insight",
+            "content": "AKM1-systemet: V20 är poäng 5 endast om V01 (tillväxt) ≥ 3, V05 (P/B) ≤ 2, V10 (skuldsättning) ≤ 2 och V19 (kapitalförbränning) ≥ 3. Buybacks är aldrig bra om kärnverksamheten är svag."
+          },
+          {
+            "type": "text",
+            "content": "I Labbet kan du kombinera V20 med andra variabler i indikator-kombinationsverktyget. De mest intressanta kombinationerna:\n\n• V20 + V01: Buybacks + tillväxt = compounder. Höga poäng på båda = äkta värdeskapande.\n• V20 + V19: Buybacks + kapitalförbränning = extremt varning. Bolag som bränner pengar OCH köper tillbaka aktier manipulerar EPS aktivt.\n• V20 + V10: Buybacks + hög skuldsättning = skuldfinansierade buybacks. Riskabelt i kriser.\n• V20 + V05: Buybacks + hög P/B = värdeförstörande. Bolaget betalar över intrinsic value.\n\nNär du har poängsatt alla 20 variabler för ett bolag, summera till en total AKM1-poäng (nu /100 istället för /95). V20 har vikt 5%, vilket gör totalvikten 100%. Detta är AKM1:s nya standard från och med mega-projektet 2026."
+          },
+          {
+            "type": "insight",
+            "content": "Lynch sammanfattade V20 bäst: 'När ett bolag köper tillbaka aktier med egna pengar, inte med lånade, så vet de något du inte vet — och de delar vinsten med dig.' Graham varnade: 'Ett buyback är ett löfte, inte en check.' AKM1 kombinerar båda: buybacks är bra om de är finansierade rätt och priset är rätt — annars är de en illusion."
+          }
+        ]
+      }
+    ]
   }
 }

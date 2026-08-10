@@ -42,7 +42,8 @@ export type Akm1Category =
   | "Stabilitet"
   | "Moat"
   | "Katalysator"
-  | "Risk";
+  | "Risk"
+  | "Kapitalstruktur";
 
 export interface Akm1Variable {
   id: string; // V01..V19
@@ -78,6 +79,7 @@ export const AKM1_VARIABLES: Akm1Variable[] = [
   { id: "V17", num: 17, name: "Avtal & Partnerskap", category: "Katalysator", level: "intermediar", weight: "7%", minutes: 12, tag: "Mätt", summary: "Stora kundavtal, partner-avtal, distribution-deals som kan driva intäkter." },
   { id: "V18", num: 18, name: "Regulatoriska katalysatorer", category: "Katalysator", level: "avancerad", weight: "7%", minutes: 12, tag: "Mätt", summary: "Kommande lagändringar, godkännanden, eller regleringar som påverkar bolaget positivt eller negativt." },
   { id: "V19", num: 19, name: "Kapitalförbränning & Emission-risk", category: "Risk", level: "avancerad", weight: "KRITISK", minutes: 20, tag: "Mätt", summary: "Hur snabbt bolaget bränner pengar — och risken för nyemission som utspäddar dina aktier." },
+  { id: "V20", num: 20, name: "Återköp av egna aktier", category: "Kapitalstruktur", level: "intermediar", weight: "5%", minutes: 20, tag: "Mätt", summary: "Buybacks = bolaget köper tillbaka egna aktier. Signal: ledning tror aktien är undervärderad. Minskar antal aktier → höjer EPS. AKM1:s 20:e indikator — tillagd i mega-projektet 2026.", formula: "Buyback-avkastning = (Aktier retirerade / Utestående före) × 100", scale: "1 = skuldfinansierade, över P/B 2 · 3 = skuldfinansierade, rätt pris · 5 = fritt kassaflöde, under P/B 1" },
 ];
 
 export const AKM1_CATEGORIES: Akm1Category[] = [
@@ -88,6 +90,7 @@ export const AKM1_CATEGORIES: Akm1Category[] = [
   "Moat",
   "Katalysator",
   "Risk",
+  "Kapitalstruktur",
 ];
 
 /** AK1TS wave-theory theories × horizons. */

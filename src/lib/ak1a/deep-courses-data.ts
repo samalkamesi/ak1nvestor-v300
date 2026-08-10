@@ -42,7 +42,7 @@ export function slugToVariableId(slug: string): string {
   return match ? `V${match[1].padStart(2, "0")}` : slug.toUpperCase();
 }
 
-/** All 19 course slugs (lightweight — no data import). */
+/** All 20 course slugs (lightweight — no data import). */
 export const allCourseSlugs = [
   "v01-forsaljningstillvaxt",
   "v02-arr-tillvaxt",
@@ -63,6 +63,7 @@ export const allCourseSlugs = [
   "v17-avtal-partnerskap",
   "v18-regulatoriska",
   "v19-kapitalforbranning",
+  "v20-aterekop-egna-aktier",
 ];
 
 /** Check if a slug is a valid deep course slug. */

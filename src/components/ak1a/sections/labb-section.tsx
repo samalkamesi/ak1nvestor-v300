@@ -48,6 +48,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { CombinationsBrowser } from "@/components/ak1a/cases-combinations-browsers";
 
 // ============================================================
 // TYPES
@@ -368,7 +369,7 @@ const TOOLS: {
   {
     id: "farliga-komb",
     label: "Farliga komb.",
-    planned: true,
+    planned: false,
     desc: "Identifiera kombinationer av AKM1-variabler som historiskt lett till kursras. T.ex. V01 + V19 = hög tillväxt + hög kapitalförbränning = emission-fälla.",
   },
   {
@@ -753,8 +754,13 @@ export function LabbSection() {
               />
             </TabsContent>
 
-            {/* Placeholder panels for the 7 planned tools */}
-            {TOOLS.filter((t) => t.planned).map((t) => (
+            {/* Farliga komb. — now a real combinations browser from DB */}
+            <TabsContent value="farliga-komb" className="mt-6">
+              <CombinationsBrowser />
+            </TabsContent>
+
+            {/* Placeholder panels for the 6 remaining planned tools */}
+            {TOOLS.filter((t) => t.planned && t.id !== "farliga-komb").map((t) => (
               <TabsContent key={t.id} value={t.id} className="mt-6">
                 <PlannedToolPanel label={t.label} desc={t.desc} />
               </TabsContent>

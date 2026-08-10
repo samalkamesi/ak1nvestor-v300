@@ -1,8 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// AK1A Research Lab — Mega-projekt databas-schema
+// Sparar: indikatorer (V01-V20), djupa kurser, fallstudier (200+ success/failure),
+// indikator-kombinationer (200+), styrelseprotokoll, mega-uppgifter.
 
 generator client {
   provider = "prisma-client-js"
@@ -13,20 +11,122 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+/// AK1A:s indikatorer — V01..V20 (V20 = återköp av egna aktier, tillagd i mega-projektet)
+model Ak1Indicator {
+  id          String   @id // "V01".."V20"
+  num         Int      @unique
+  name        String
+  category    String   // Tillväxt, Värdering, Lönsamhet, Stabilitet, Moat, Katalysator, Risk, Kapitalstruktur
+  weight      String   // "8%" eller "KRITISK"
+  level       String   // nyborjare | intermediar | avancerad
+  summary     String
+  formula     String?
+  scale       String?
+  lynchView   String?  // Peter Lynchs perspektiv
+  grahamView  String?  // Benjamin Grahams perspektiv
+  ak1View     String?  // AKM1:s perspektiv
+  slug        String?  // deep course slug
+  createdAt   DateTime @default(now())
+
+  combinationsA IndicatorCombination[] @relation("IndicatorA")
+  combinationsB IndicatorCombination[] @relation("IndicatorB")
 }
 
-model Post {
-  id        String   @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  authorId  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+/// Fallstudier — 200+ lyckade, 200+ misslyckade
+model CaseStudy {
+  id           String   @id @default(cuid())
+  type         String   // "success" | "failure"
+  company      String
+  ticker       String
+  title        String   // one-line lesson
+  description  String   // full description
+  akm1Score    Int?     // /95 (or /100 with V20)
+  decisiveVars String   // comma-separated V01,V10 etc
+  sector       String?
+  year         Int?
+  outcome      String?  // "150% gain", "-90% loss", etc
+  lesson       String?  // pedagogical takeaway
+  isIllustrative Boolean @default(false)
+  createdAt    DateTime @default(now())
+
+  @@index([type])
+  @@index([sector])
+}
+
+/// Indikator-kombinationer — 200+ kurser om vad händer när två indikatorer samverkar
+model IndicatorCombination {
+  id           String   @id @default(cuid())
+  indicatorAId String
+  indicatorBId String
+  pattern      String   // t.ex. "hög tillväxt + hög kapitalförbränning"
+  outcome      String   // "emission-fälla" | "compounder" | "value trap" etc
+  verdict      String   // "bull" | "bear" | "neutral" | "warning"
+  title        String
+  description  String
+  example      String?  // bolagsexempel
+  courseBody   String?  // full kurs-text
+  createdAt    DateTime @default(now())
+
+  indicatorA   Ak1Indicator @relation("IndicatorA", fields: [indicatorAId], references: [id])
+  indicatorB   Ak1Indicator @relation("IndicatorB", fields: [indicatorBId], references: [id])
+
+  @@index([indicatorAId, indicatorBId])
+  @@index([verdict])
+}
+
+/// Styrelseprotokoll — sparar alla AI-organ möten
+model MeetingProtocol {
+  id           String   @id @default(cuid())
+  meetingId    String   @unique // "M-XXXXX"
+  agenda       String
+  timestamp    DateTime @default(now())
+  viewpoints   String   // JSON array of viewpoints
+  decision     String   // JSON decision object
+  decisionTitle String?
+  confidence   String?  // LÅG | MEDEL | HÖG
+  passed       Boolean?
+  signatures   String?  // JSON array
+}
+
+/// Mega-uppgifter — 42+ tasks för projektet
+model MegaTask {
+  id           String   @id @default(cuid())
+  num          Int      @unique
+  title        String
+  description  String
+  category     String   // indikator | kurs | fallstudie | kombination | integration | databas
+  priority     String   // HÖG | MEDEL | LÅG
+  status       String   @default("pending") // pending | in_progress | completed | metodmal
+  organOwner   String?  // vilket organ äger uppgiften (Σ α Δ Ω Φ Θ Μ Ψ)
+  estimatedXp  Int?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([priority])
+  @@index([status])
+}
+
+/// Djupa kurser — sparar kursdata i databasen (från JSON till DB)
+model DeepCourse {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  variableId   String   // "V01".."V20"
+  title        String
+  category     String
+  weight       String
+  chapterCount Int
+  totalMinutes Int
+  summary      String
+  minutes      Int
+  xp           Int
+  level        String
+  learn        String
+  why          String
+  history      String?  // JSON
+  chapters     String   // JSON array of chapters
+  lynchSection String?  // Lynch-perspektiv sektion
+  grahamSection String? // Graham-perspektiv sektion
+  ak1Section   String?  // AKM1-perspektiv sektion
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

@@ -1,0 +1,558 @@
+HTTP: 000
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.18.87:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 771ms
+⨯ ./src/components/ak1a/sections/aktier-section.tsx:16:1
+Export Ak1aLogoMark doesn't exist in target module
+  14 | } from "lucide-react";
+  15 | import { useAk1aStore } from "@/lib/ak1a-store";
+> 16 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Card } from "@/components/ui/card";
+  18 | import { Button } from "@/components/ui/button";
+  19 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/aktier-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/aktier-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/aktier-section.tsx:16:1
+Export Ak1aLogoMark doesn't exist in target module
+  14 | } from "lucide-react";
+  15 | import { useAk1aStore } from "@/lib/ak1a-store";
+> 16 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Card } from "@/components/ui/card";
+  18 | import { Button } from "@/components/ui/button";
+  19 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/aktier-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/aktier-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/kurser-section.tsx:36:1
+Export Ak1aLogoMark doesn't exist in target module
+  34 |   type Akm1Variable,
+  35 | } from "@/lib/ak1a/data";
+> 36 | import { Ak1aLogoMark, Eyebrow, HonestyTag } from "@/components/ak1a/primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  37 | import { Card } from "@/components/ui/card";
+  38 | import { Button } from "@/components/ui/button";
+  39 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/kurser-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/kurser-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/kurser-section.tsx:36:1
+Export Ak1aLogoMark doesn't exist in target module
+  34 |   type Akm1Variable,
+  35 | } from "@/lib/ak1a/data";
+> 36 | import { Ak1aLogoMark, Eyebrow, HonestyTag } from "@/components/ak1a/primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  37 | import { Card } from "@/components/ui/card";
+  38 | import { Button } from "@/components/ui/button";
+  39 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/kurser-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/kurser-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/labb-section.tsx:29:1
+Export Ak1aLogoMark doesn't exist in target module
+  27 | } from "lucide-react";
+  28 | import { useAk1aStore } from "@/lib/ak1a-store";
+> 29 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 | import { AKM1_VARIABLES } from "@/lib/ak1a/data";
+  31 | import { Card } from "@/components/ui/card";
+  32 | import { Button } from "@/components/ui/button";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/labb-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/labb-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/labb-section.tsx:29:1
+Export Ak1aLogoMark doesn't exist in target module
+  27 | } from "lucide-react";
+  28 | import { useAk1aStore } from "@/lib/ak1a-store";
+> 29 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 | import { AKM1_VARIABLES } from "@/lib/ak1a/data";
+  31 | import { Card } from "@/components/ui/card";
+  32 | import { Button } from "@/components/ui/button";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/labb-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/labb-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/styrelse-section.tsx:21:1
+Export Ak1aLogoMark doesn't exist in target module
+  19 | import { useAk1aStore } from "@/lib/ak1a-store";
+  20 | import { ORGANS } from "@/lib/ak1a/data";
+> 21 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag, OrganGlyph } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Card } from "@/components/ui/card";
+  23 | import { Button } from "@/components/ui/button";
+  24 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/styrelse-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/styrelse-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/styrelse-section.tsx:21:1
+Export Ak1aLogoMark doesn't exist in target module
+  19 | import { useAk1aStore } from "@/lib/ak1a-store";
+  20 | import { ORGANS } from "@/lib/ak1a/data";
+> 21 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag, OrganGlyph } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Card } from "@/components/ui/card";
+  23 | import { Button } from "@/components/ui/button";
+  24 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/styrelse-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/styrelse-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/utbildning-section.tsx:19:1
+Export Ak1aLogoMark doesn't exist in target module
+  17 | import { useAk1aStore } from "@/lib/ak1a-store";
+  18 | import { isDeepCourseSlug } from "@/lib/ak1a/deep-courses-data";
+> 19 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { Card } from "@/components/ui/card";
+  21 | import { Button } from "@/components/ui/button";
+  22 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/utbildning-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/utbildning-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/utbildning-section.tsx:19:1
+Export Ak1aLogoMark doesn't exist in target module
+  17 | import { useAk1aStore } from "@/lib/ak1a-store";
+  18 | import { isDeepCourseSlug } from "@/lib/ak1a/deep-courses-data";
+> 19 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { Card } from "@/components/ui/card";
+  21 | import { Button } from "@/components/ui/button";
+  22 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/utbildning-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/utbildning-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+ GET / 500 in 2.9s (compile: 2.7s, render: 143ms)
+⨯ ./src/components/ak1a/sections/aktier-section.tsx:16:1
+Export Ak1aLogoMark doesn't exist in target module
+  14 | } from "lucide-react";
+  15 | import { useAk1aStore } from "@/lib/ak1a-store";
+> 16 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Card } from "@/components/ui/card";
+  18 | import { Button } from "@/components/ui/button";
+  19 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/aktier-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/aktier-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/aktier-section.tsx:16:1
+Export Ak1aLogoMark doesn't exist in target module
+  14 | } from "lucide-react";
+  15 | import { useAk1aStore } from "@/lib/ak1a-store";
+> 16 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  17 | import { Card } from "@/components/ui/card";
+  18 | import { Button } from "@/components/ui/button";
+  19 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/aktier-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/aktier-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/kurser-section.tsx:36:1
+Export Ak1aLogoMark doesn't exist in target module
+  34 |   type Akm1Variable,
+  35 | } from "@/lib/ak1a/data";
+> 36 | import { Ak1aLogoMark, Eyebrow, HonestyTag } from "@/components/ak1a/primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  37 | import { Card } from "@/components/ui/card";
+  38 | import { Button } from "@/components/ui/button";
+  39 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/kurser-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/kurser-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/kurser-section.tsx:36:1
+Export Ak1aLogoMark doesn't exist in target module
+  34 |   type Akm1Variable,
+  35 | } from "@/lib/ak1a/data";
+> 36 | import { Ak1aLogoMark, Eyebrow, HonestyTag } from "@/components/ak1a/primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  37 | import { Card } from "@/components/ui/card";
+  38 | import { Button } from "@/components/ui/button";
+  39 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/kurser-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/kurser-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/labb-section.tsx:29:1
+Export Ak1aLogoMark doesn't exist in target module
+  27 | } from "lucide-react";
+  28 | import { useAk1aStore } from "@/lib/ak1a-store";
+> 29 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 | import { AKM1_VARIABLES } from "@/lib/ak1a/data";
+  31 | import { Card } from "@/components/ui/card";
+  32 | import { Button } from "@/components/ui/button";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/labb-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/labb-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/labb-section.tsx:29:1
+Export Ak1aLogoMark doesn't exist in target module
+  27 | } from "lucide-react";
+  28 | import { useAk1aStore } from "@/lib/ak1a-store";
+> 29 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 | import { AKM1_VARIABLES } from "@/lib/ak1a/data";
+  31 | import { Card } from "@/components/ui/card";
+  32 | import { Button } from "@/components/ui/button";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/labb-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/labb-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/styrelse-section.tsx:21:1
+Export Ak1aLogoMark doesn't exist in target module
+  19 | import { useAk1aStore } from "@/lib/ak1a-store";
+  20 | import { ORGANS } from "@/lib/ak1a/data";
+> 21 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag, OrganGlyph } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Card } from "@/components/ui/card";
+  23 | import { Button } from "@/components/ui/button";
+  24 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/styrelse-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/styrelse-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/styrelse-section.tsx:21:1
+Export Ak1aLogoMark doesn't exist in target module
+  19 | import { useAk1aStore } from "@/lib/ak1a-store";
+  20 | import { ORGANS } from "@/lib/ak1a/data";
+> 21 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag, OrganGlyph } from "../primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 | import { Card } from "@/components/ui/card";
+  23 | import { Button } from "@/components/ui/button";
+  24 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/styrelse-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/styrelse-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/utbildning-section.tsx:19:1
+Export Ak1aLogoMark doesn't exist in target module
+  17 | import { useAk1aStore } from "@/lib/ak1a-store";
+  18 | import { isDeepCourseSlug } from "@/lib/ak1a/deep-courses-data";
+> 19 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { Card } from "@/components/ui/card";
+  21 | import { Button } from "@/components/ui/button";
+  22 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-client] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/utbildning-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/utbildning-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/ak1a/sections/utbildning-section.tsx:19:1
+Export Ak1aLogoMark doesn't exist in target module
+  17 | import { useAk1aStore } from "@/lib/ak1a-store";
+  18 | import { isDeepCourseSlug } from "@/lib/ak1a/deep-courses-data";
+> 19 | import { Ak1aLogoMark, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { Card } from "@/components/ui/card";
+  21 | import { Button } from "@/components/ui/button";
+  22 | import { Badge } from "@/components/ui/badge";
+
+The export Ak1aLogoMark was not found in module [project]/src/components/ak1a/primitives.tsx [app-ssr] (ecmascript).
+Did you mean to import Ak1aLogo?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ak1a/sections/utbildning-section.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ak1a/sections/utbildning-section.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+ GET / 500 in 164ms (compile: 155ms, render: 9ms)
+HTTP: 500
+ GET /api/kurs/km-001-bokforingens-grunder 500 in 185ms (compile: 178ms, render: 7ms)
+KM-001: 
+ GET /api/kurs/v01-forsaljningstillvaxt 500 in 147ms (compile: 141ms, render: 6ms)
+V01: 
+ GET /api/kurs/ts-01-elliott-wave-5-vags-impuls-djupanalys 500 in 142ms (compile: 136ms, render: 6ms)
+TS-01: 
+
+stderr:
+$ next dev -p 3000 2>&1 | tee dev.log

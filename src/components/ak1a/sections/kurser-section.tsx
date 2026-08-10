@@ -64,6 +64,31 @@ function variableIdToSlug(vid: string): string | null {
   return slug || null;
 }
 
+/** Map a KM course id + title to its deep course slug. */
+function kmCourseIdToSlug(id: string, title: string): string | null {
+  const slugify = (text: string) =>
+    text
+      .toLowerCase()
+      .replace(/[åä]/g, "a")
+      .replace(/[ö]/g, "o")
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .substring(0, 40)
+      .replace(/-$/, "");
+  const titlePart = slugify(title.split("—")[0] || title);
+  const candidateSlug = `${id.toLowerCase()}-${titlePart}`;
+  return allCourseSlugs.includes(candidateSlug) ? candidateSlug : null;
+}
+
+/** Map any course id (V01, KM-001, TS-01, etc.) to deep course slug. */
+function courseIdToSlug(id: string, title: string): string | null {
+  if (id.startsWith("V")) {
+    return variableIdToSlug(id);
+  }
+  return kmCourseIdToSlug(id, title);
+}
+
 /* ------------------------------------------------------------------ */
 /* Static data — AKM1 existing                                         */
 /* ------------------------------------------------------------------ */
@@ -1480,7 +1505,14 @@ function KunskapsmarknadBlock() {
                 course={c}
                 isCompleted={isCompleted}
                 isLocked={isLocked}
-                onStart={() => setActive(c)}
+                onStart={() => {
+                  const slug = kmCourseIdToSlug(c.id, c.title);
+                  if (slug) {
+                    setKurserDeepSlug(slug);
+                  } else {
+                    setActive(c);
+                  }
+                }}
               />
             );
           })}

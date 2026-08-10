@@ -2,7 +2,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-/** The AK1A Research Lab wordmark — stacked, serif, gold rule beneath. */
+/** The AK1A Research Lab logo — geometric figure + wordmark. */
 export function Ak1aLogo({
   className,
   onClick,
@@ -13,29 +13,36 @@ export function Ak1aLogo({
   size?: "sm" | "md" | "lg";
 }) {
   const dims = {
-    sm: { ak: "text-base", sub: "text-[8px]", rule: "w-10" },
-    md: { ak: "text-xl", sub: "text-[9px]", rule: "w-14" },
-    lg: { ak: "text-3xl", sub: "text-xs", rule: "w-20" },
+    sm: { logo: "h-7 w-7", ak: "text-base", sub: "text-[8px]", rule: "w-10" },
+    md: { logo: "h-9 w-9", ak: "text-xl", sub: "text-[9px]", rule: "w-14" },
+    lg: { logo: "h-14 w-14", ak: "text-3xl", sub: "text-xs", rule: "w-20" },
   }[size];
 
   return (
     <button
       onClick={onClick}
       className={cn(
-        "group flex flex-col items-start leading-none select-none",
+        "group flex items-center gap-2 leading-none select-none",
         className
       )}
       aria-label="AK1A Research Lab — till startsidan"
     >
-      <span className="font-serif font-bold tracking-tight text-ink dark:text-foreground">
-        <span className="text-gold">AK1</span>A
+      <img
+        src="/ak1a/logo-transparent.png"
+        alt="AK1A Research Lab logo"
+        className={cn(dims.logo, "object-contain shrink-0")}
+      />
+      <span className="flex flex-col items-start">
+        <span className="font-serif font-bold tracking-tight text-ink dark:text-foreground">
+          <span className="text-gold">AK1</span>A
+        </span>
+        <span
+          className={cn("font-sans uppercase tracking-[0.2em] text-muted-foreground", dims.sub)}
+        >
+          Research Lab
+        </span>
+        <span className={cn("h-px mt-1 bg-gradient-to-r from-gold to-transparent", dims.rule)} />
       </span>
-      <span
-        className={cn("font-sans uppercase tracking-[0.2em] text-muted-foreground", dims.sub)}
-      >
-        Research Lab
-      </span>
-      <span className={cn("h-px mt-1 bg-gradient-to-r from-gold to-transparent", dims.rule)} />
     </button>
   );
 }

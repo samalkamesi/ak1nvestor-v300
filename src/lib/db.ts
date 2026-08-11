@@ -1,23 +1,25 @@
 // AK1A Research Lab — Database client
-// Vercel: null (APIs use Supabase REST or JSON)
+// Vercel: null — APIs use Supabase REST or JSON files
 // Sandbox: Prisma + SQLite
 
-import { PrismaClient } from "@prisma/client";
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 let db: any = null;
 
-// Only create PrismaClient on local sandbox (not Vercel)
-// Vercel sets VERCEL env var automatically
-const isVercel = Boolean(process.env.VERCEL || process.env.NOW_REGION);
+const isVercel = Boolean(
+  typeof process !== "undefined" &&
+    (process.env.VERCEL || process.env.NOW_REGION)
+);
 
-try {
-  if (!isVercel && process.env.DATABASE_URL?.startsWith("file:")) {
+if (!isVercel) {
+  try {
+    const { PrismaClient } = require("@prisma/client");
     const globalForPrisma = globalThis as unknown as { prisma: any };
     db = globalForPrisma.prisma ?? new PrismaClient({ log: ["query"] });
     if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = db;
+  } catch {
+    // db stays null on Vercel or if Prisma not available
   }
-} catch {
-  // db stays null on Vercel
 }
 
 export { db };

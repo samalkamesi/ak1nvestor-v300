@@ -2,5 +2,15 @@
   "framework": "nextjs",
   "buildCommand": "next build",
   "installCommand": "npm install --legacy-peer-deps",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "crons": [
+    {
+      "path": "/api/cron/autonom",
+      "schedule": "0 */6 * * *"
+    },
+    {
+      "path": "/api/cron/expand-courses",
+      "schedule": "0 */12 * * *"
+    }
+  ]
 }

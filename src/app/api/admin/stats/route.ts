@@ -1,102 +1,91 @@
-import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { NextResponse } from "next/server";
+import { readFileSync } from "fs";
+import path from "path";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-/** GET /api/admin/stats — dashboard-statistik för admin. */
-export async function GET(req: NextRequest) {
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+const HEADERS = () => ({
+  apikey: SUPABASE_KEY,
+  Authorization: `Bearer ${SUPABASE_KEY}`,
+});
+
+/** GET /api/admin/stats — dashboard statistik */
+export async function GET() {
+  const stats: any = {
+    members: { total: 0, free: 0, premium: 0, pro: 0 },
+    portfolios: { total: 0, pending: 0, in_review: 0, completed: 0 },
+    bookings: { total: 0, requested: 0, confirmed: 0, completed: 0 },
+    megaTasks: { total: 0, completed: 0 },
+    courses: { total: 0, deep: 0, shallow: 0 },
+    systemEvents: { total: 0 },
+  };
+
+  // Mega tasks from JSON
   try {
-    const since24h = new Date(Date.now() - 24 * 60 * 60 * 1000);
-    const since7d = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const raw = readFileSync(path.join(process.cwd(), "data/export/mega-tasks.json"), "utf-8");
+    const tasks = JSON.parse(raw);
+    stats.megaTasks = {
+      total: tasks.length,
+      completed: tasks.filter((t: any) => t.status === "completed").length,
+    };
+  } catch {}
 
-    const [
-      totalActivities,
-      activities24h,
-      activities7d,
-      uniqueSessions24h,
-      uniqueSessions7d,
-      totalPortfolios,
-      totalAnalysisSessions,
-      totalOrganConsultations,
-      totalSystemEvents,
-      criticalEvents24h,
-      actionBreakdown,
-      sectionBreakdown,
-      recentActivities,
-      recentEvents,
-      recentPortfolios,
-    ] = await Promise.all([
-      db.userActivity.count(),
-      db.userActivity.count({ where: { createdAt: { gte: since24h } } }),
-      db.userActivity.count({ where: { createdAt: { gte: since7d } } }),
-      db.userActivity.findMany({
-        where: { createdAt: { gte: since24h } },
-        select: { sessionId: true },
-        distinct: ["sessionId"],
-      }),
-      db.userActivity.findMany({
-        where: { createdAt: { gte: since7d } },
-        select: { sessionId: true },
-        distinct: ["sessionId"],
-      }),
-      db.portfolio.count(),
-      db.analysisSession.count(),
-      db.organConsultation.count(),
-      db.systemEvent.count(),
-      db.systemEvent.count({
-        where: { severity: "critical", createdAt: { gte: since24h } },
-      }),
-      db.userActivity.groupBy({
-        by: ["action"],
-        _count: true,
-        orderBy: { _count: { action: "desc" } },
-        take: 20,
-      }),
-      db.userActivity.groupBy({
-        by: ["section"],
-        _count: true,
-        orderBy: { _count: { section: "desc" } },
-        take: 20,
-      }),
-      db.userActivity.findMany({
-        orderBy: { createdAt: "desc" },
-        take: 20,
-      }),
-      db.systemEvent.findMany({
-        orderBy: { createdAt: "desc" },
-        take: 10,
-      }),
-      db.portfolio.findMany({
-        orderBy: { createdAt: "desc" },
-        take: 10,
-        include: { holdings: true },
-      }),
-    ]);
+  // Courses from JSON
+  try {
+    const raw = readFileSync(path.join(process.cwd(), "src/features/deep-courses/data/deep-courses.json"), "utf-8");
+    const courses = JSON.parse(raw);
+    let deep = 0, shallow = 0;
+    for (const [slug, course] of Object.entries(courses) as [string, any][]) {
+      const total = course.chapters?.reduce((s: number, ch: any) =>
+        s + ch.blocks?.reduce((s2: number, b: any) => s2 + (b.content?.length || 0), 0) || 0, 0) || 0;
+      if (total > 5000) deep++; else shallow++;
+    }
+    stats.courses = { total: Object.keys(courses).length, deep, shallow };
+  } catch {}
 
-    return NextResponse.json({
-      totals: {
-        activities: totalActivities,
-        activities24h: activities24h,
-        activities7d: activities7d,
-        uniqueSessions24h: uniqueSessions24h.length,
-        uniqueSessions7d: uniqueSessions7d.length,
-        portfolios: totalPortfolios,
-        analysisSessions: totalAnalysisSessions,
-        organConsultations: totalOrganConsultations,
-        systemEvents: totalSystemEvents,
-        criticalEvents24h: criticalEvents24h,
-      },
-      breakdowns: {
-        byAction: actionBreakdown.map((a) => ({ action: a.action, count: a._count })),
-        bySection: sectionBreakdown.map((s) => ({ section: s.section, count: s._count })),
-      },
-      recent: {
-        activities: recentActivities,
-        events: recentEvents,
-        portfolios: recentPortfolios,
-      },
-    });
-  } catch (err: any) {
-    return NextResponse.json({ error: "Kunde inte hämta stats", detail: err.message }, { status: 500 });
+  // Supabase stats
+  if (SUPABASE_URL && SUPABASE_KEY) {
+    try {
+      // Members
+      const membersRes = await fetch(`${SUPABASE_URL}/rest/v1/members?select=member_type`, { headers: HEADERS() });
+      const members = await membersRes.json();
+      stats.members = {
+        total: members?.length || 0,
+        free: members?.filter((m: any) => m.member_type === "free").length || 0,
+        premium: members?.filter((m: any) => m.member_type === "premium").length || 0,
+        pro: members?.filter((m: any) => m.member_type === "pro").length || 0,
+      };
+
+      // Portfolios
+      const portfolioRes = await fetch(`${SUPABASE_URL}/rest/v1/client_portfolios?select=analysis_status`, { headers: HEADERS() });
+      const portfolios = await portfolioRes.json();
+      stats.portfolios = {
+        total: portfolios?.length || 0,
+        pending: portfolios?.filter((p: any) => p.analysis_status === "pending").length || 0,
+        in_review: portfolios?.filter((p: any) => p.analysis_status === "in_review").length || 0,
+        completed: portfolios?.filter((p: any) => p.analysis_status === "completed").length || 0,
+      };
+
+      // Bookings
+      const bookingsRes = await fetch(`${SUPABASE_URL}/rest/v1/bookings?select=status`, { headers: HEADERS() });
+      const bookings = await bookingsRes.json();
+      stats.bookings = {
+        total: bookings?.length || 0,
+        requested: bookings?.filter((b: any) => b.status === "requested").length || 0,
+        confirmed: bookings?.filter((b: any) => b.status === "confirmed").length || 0,
+        completed: bookings?.filter((b: any) => b.status === "completed").length || 0,
+      };
+
+      // System events count
+      const eventsRes = await fetch(`${SUPABASE_URL}/rest/v1/system_events?select=id&limit=100`, { headers: HEADERS() });
+      const events = await eventsRes.json();
+      stats.systemEvents = { total: events?.length || 0 };
+    } catch {}
   }
+
+  return NextResponse.json(stats);
 }

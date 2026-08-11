@@ -1,78 +1,97 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-/** POST /api/booking — klient bokar 15-30 min genomgång. */
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+const HEADERS = () => ({
+  apikey: SUPABASE_KEY,
+  Authorization: `Bearer ${SUPABASE_KEY}`,
+  "Content-Type": "application/json",
+});
+
+/** POST /api/booking — skapa bokning */
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { memberId, analysisId, type = "review_30", requestedTime, notes } = body;
+    const { memberId, type, requestedTime, notes } = body;
 
-    if (!memberId) {
-      return NextResponse.json({ error: "memberId krävs" }, { status: 400 });
+    if (!memberId || !type) {
+      return NextResponse.json({ error: "memberId och type krävs" }, { status: 400 });
     }
 
-    const member = await db.member.findUnique({ where: { id: memberId } });
-    if (!member) {
-      return NextResponse.json({ error: "Medlem hittades inte" }, { status: 404 });
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      return NextResponse.json({ error: "Supabase inte konfigurerad" }, { status: 500 });
     }
 
-    // Verify member has premium/pro
-    if (member.memberType === "free") {
-      return NextResponse.json({
-        error: "Bokning kräver premium-medlemskap. Uppgradera för att boka 15-30 min genomgång.",
-        upgradeRequired: true,
-      }, { status: 403 });
-    }
-
-    const booking = await db.booking.create({
-      data: {
-        memberId,
-        analysisId: analysisId || null,
-        type,
-        requestedTime: requestedTime ? new Date(requestedTime) : null,
-        notes: notes || null,
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/bookings`, {
+      method: "POST",
+      headers: { ...HEADERS(), Prefer: "return=representation" },
+      body: JSON.stringify({
+        member_id: memberId,
+        booking_type: type,
+        requested_time: requestedTime || null,
         status: "requested",
-      },
+        notes: notes || null,
+      }),
     });
-
-    // Log system event for admin
-    try {
-      await db.systemEvent.create({
-        data: {
-          type: "booking_requested",
-          severity: "info",
-          message: `Ny bokningsförfrågan: ${member.email} — ${type}`,
-          details: JSON.stringify({ bookingId: booking.id, memberId }),
-          source: "member",
-        },
-      });
-    } catch {}
-
-    return NextResponse.json({ booking, member });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    const booking = await res.json();
+    return NextResponse.json({ booking: booking[0] || booking });
+  } catch (e: any) {
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
 
-/** GET /api/booking?memberId=xxx — hämta medlemmens bokningar. */
+/** GET /api/booking?memberId=xxx — hämta bokningar */
 export async function GET(req: NextRequest) {
   try {
-    const url = new URL(req.url);
-    const memberId = url.searchParams.get("memberId");
+    const memberId = new URL(req.url).searchParams.get("memberId");
 
-    if (!memberId) {
-      return NextResponse.json({ error: "memberId krävs" }, { status: 400 });
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      return NextResponse.json({ bookings: [] });
     }
 
-    const bookings = await db.booking.findMany({
-      where: { memberId },
-      orderBy: { createdAt: "desc" },
+    let url = `${SUPABASE_URL}/rest/v1/bookings?select=*&order=created_at.desc`;
+    if (memberId) {
+      url += `&member_id=eq.${memberId}`;
+    }
+
+    const res = await fetch(url, { headers: HEADERS() });
+    const bookings = await res.json();
+    return NextResponse.json({ bookings: bookings || [] });
+  } catch (e: any) {
+    return NextResponse.json({ error: e.message, bookings: [] }, { status: 500 });
+  }
+}
+
+/** PATCH /api/booking — uppdatera bokning (confirm/cancel) */
+export async function PATCH(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const { id, status, confirmedTime, meetingLink } = body;
+
+    if (!id || !status) {
+      return NextResponse.json({ error: "id och status krävs" }, { status: 400 });
+    }
+
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      return NextResponse.json({ error: "Supabase inte konfigurerad" }, { status: 500 });
+    }
+
+    const updateBody: any = { status };
+    if (confirmedTime) updateBody.confirmed_time = confirmedTime;
+    if (meetingLink) updateBody.meeting_link = meetingLink;
+
+    await fetch(`${SUPABASE_URL}/rest/v1/bookings?id=eq.${id}`, {
+      method: "PATCH",
+      headers: HEADERS(),
+      body: JSON.stringify(updateBody),
     });
 
-    return NextResponse.json({ bookings });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ success: true });
+  } catch (e: any) {
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }

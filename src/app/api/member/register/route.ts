@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-/** POST /api/member/register — registrera ny medlem (eller logga in om email finns). */
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+/** POST /api/member/register — registrera eller logga in medlem via Supabase */
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -13,79 +16,84 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "email krävs" }, { status: 400 });
     }
 
-    // Check if member exists
-    let member = await db.member.findUnique({ where: { email } });
+    // Try Supabase
+    if (SUPABASE_URL && SUPABASE_KEY) {
+      // Check if member exists
+      const checkRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/members?email=eq.${encodeURIComponent(email)}&select=*`,
+        { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
+      );
+      const existing = await checkRes.json();
 
-    if (member) {
-      // Update lastLogin
-      member = await db.member.update({
-        where: { id: member.id },
-        data: {
-          lastLoginAt: new Date(),
-          ...(sessionId && { sessionId }),
-          ...(name && { name }),
-          ...(phone && { phone }),
+      if (existing && existing.length > 0) {
+        // Update lastLogin
+        const member = existing[0];
+        await fetch(`${SUPABASE_URL}/rest/v1/members?id=eq.${member.id}`, {
+          method: "PATCH",
+          headers: {
+            apikey: SUPABASE_KEY,
+            Authorization: `Bearer ${SUPABASE_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            last_login_at: new Date().toISOString(),
+            ...(name && { name }),
+            ...(phone && { phone }),
+            ...(sessionId && { session_id: sessionId }),
+          }),
+        });
+        return NextResponse.json({ member: { ...member, last_login_at: new Date().toISOString() }, isNew: false });
+      }
+
+      // Create new member
+      const createRes = await fetch(`${SUPABASE_URL}/rest/v1/members`, {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+          "Content-Type": "application/json",
+          Prefer: "return=representation",
         },
+        body: JSON.stringify({
+          email,
+          name: name || null,
+          phone: phone || null,
+          member_type: memberType,
+          session_id: sessionId || null,
+        }),
       });
-      return NextResponse.json({ member, isNew: false });
+      const newMember = await createRes.json();
+      return NextResponse.json({ member: newMember[0] || newMember, isNew: true });
     }
 
-    // Create new member
-    member = await db.member.create({
-      data: {
-        email,
-        name: name || null,
-        phone: phone || null,
-        memberType,
-        sessionId: sessionId || null,
-        lastLoginAt: new Date(),
-      },
-    });
-
-    // Log activity
-    try {
-      await db.userActivity.create({
-        data: {
-          sessionId: sessionId || email,
-          action: "member_registered",
-          section: "member",
-          targetType: "member",
-          targetId: member.id,
-          metadata: JSON.stringify({ email, memberType }),
-        },
-      });
-    } catch {}
-
-    return NextResponse.json({ member, isNew: true });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ error: "Supabase inte konfigurerad" }, { status: 500 });
+  } catch (e: any) {
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
 
-/** GET /api/member/register?email=xxx — hämta medlem. */
+/** GET /api/member/register?email=xxx — hämta medlem */
 export async function GET(req: NextRequest) {
   try {
-    const url = new URL(req.url);
-    const email = url.searchParams.get("email");
+    const email = new URL(req.url).searchParams.get("email");
     if (!email) {
       return NextResponse.json({ error: "email krävs" }, { status: 400 });
     }
 
-    const member = await db.member.findUnique({
-      where: { email },
-      include: {
-        portfolios: { include: { holdings: true }, orderBy: { createdAt: "desc" } },
-        analyses: { where: { isPublished: true }, orderBy: { createdAt: "desc" } },
-        bookings: { orderBy: { createdAt: "desc" } },
-      },
-    });
-
-    if (!member) {
-      return NextResponse.json({ error: "Medlem hittades inte" }, { status: 404 });
+    if (SUPABASE_URL && SUPABASE_KEY) {
+      const res = await fetch(
+        `${SUPABASE_URL}/rest/v1/members?email=eq.${encodeURIComponent(email)}&select=*&limit=1`,
+        { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } }
+      );
+      const data = await res.json();
+      if (data && data.length > 0) {
+        return NextResponse.json({ member: data[0] });
+      }
+      return NextResponse.json({ member: null });
     }
 
-    return NextResponse.json({ member });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ error: "Supabase inte konfigurerad" }, { status: 500 });
+  } catch (e: any) {
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }

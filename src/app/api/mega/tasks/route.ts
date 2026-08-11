@@ -1,121 +1,47 @@
-import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
-import { supabaseAdmin, isSupabaseConfigured, TABLES } from "@/lib/supabase";
+import { NextResponse } from "next/server";
+import { readFileSync } from "fs";
+import path from "path";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-/** GET /api/mega/tasks — list all mega-project tasks (from Supabase or local DB) */
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+/** GET /api/mega/tasks — list all tasks (from Supabase REST or local JSON) */
 export async function GET() {
-  // Try Supabase first (works on Vercel)
-  if (isSupabaseConfigured && supabaseAdmin) {
+  // Try Supabase first
+  if (SUPABASE_URL && SUPABASE_KEY) {
     try {
-      const { data, error } = await supabaseAdmin
-        .from(TABLES.TASKS)
-        .select("*")
-        .order("num", { ascending: true });
-
-      if (!error && data && data.length > 0) {
-        // Transform Supabase format to app format
-        const tasks = data.map((t: any) => ({
-          id: t.id,
-          num: t.num,
-          title: t.title,
-          description: t.description,
-          category: t.category,
-          priority: t.priority,
-          status: t.status,
-          organOwner: t.organ_owner,
-          estimatedXp: t.estimated_xp,
-          createdAt: t.created_at,
-          updatedAt: t.updated_at,
-        }));
-        return NextResponse.json({ tasks });
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/mega_tasks?select=*&order=num.asc`, {
+        headers: {
+          "apikey": SUPABASE_KEY,
+          "Authorization": `Bearer ${SUPABASE_KEY}`,
+        },
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.length > 0) {
+          const tasks = data.map((t: any) => ({
+            id: t.id, num: t.num, title: t.title, description: t.description,
+            category: t.category, priority: t.priority, status: t.status,
+            organOwner: t.organ_owner, estimatedXp: t.estimated_xp,
+            createdAt: t.created_at, updatedAt: t.updated_at,
+          }));
+          return NextResponse.json({ tasks });
+        }
       }
     } catch {
-      // Fall through to local DB
+      // Fall through to JSON file
     }
   }
 
-  // Fall back to local DB (works on sandbox)
+  // Fall back to JSON file (works everywhere)
   try {
-    const tasks = await db.megaTask.findMany({ orderBy: { num: "asc" } });
+    const raw = readFileSync(path.join(process.cwd(), "data/export/mega-tasks.json"), "utf-8");
+    const tasks = JSON.parse(raw);
     return NextResponse.json({ tasks });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message }, { status: 500 });
-  }
-}
-
-/** POST /api/mega/tasks — create or update a task */
-export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json();
-    const { num, title, description, category, priority, status, organOwner, estimatedXp } = body;
-    if (!num || !title) {
-      return NextResponse.json({ error: "num, title required" }, { status: 400 });
-    }
-
-    // Try Supabase first
-    if (isSupabaseConfigured && supabaseAdmin) {
-      const { data, error } = await supabaseAdmin
-        .from(TABLES.TASKS)
-        .upsert({
-          num,
-          title,
-          description,
-          category,
-          priority: priority || "MEDEL",
-          status: status || "pending",
-          organ_owner: organOwner,
-          estimated_xp: estimatedXp,
-        }, { onConflict: "num" })
-        .select()
-        .single();
-
-      if (!error) {
-        return NextResponse.json({ task: data });
-      }
-    }
-
-    // Fall back to local DB
-    const task = await db.megaTask.upsert({
-      where: { num },
-      create: { num, title, description, category, priority: priority || "MEDEL", status: status || "pending", organOwner, estimatedXp },
-      update: { title, description, category, priority, status, organOwner, estimatedXp },
-    });
-    return NextResponse.json({ task });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message }, { status: 500 });
-  }
-}
-
-/** PATCH /api/mega/tasks — update task status */
-export async function PATCH(req: NextRequest) {
-  try {
-    const body = await req.json();
-    const { num, status } = body;
-    if (!num || !status) {
-      return NextResponse.json({ error: "num, status required" }, { status: 400 });
-    }
-
-    // Try Supabase first
-    if (isSupabaseConfigured && supabaseAdmin) {
-      const { error } = await supabaseAdmin
-        .from(TABLES.TASKS)
-        .update({ status })
-        .eq("num", num);
-
-      if (!error) {
-        return NextResponse.json({ success: true });
-      }
-    }
-
-    // Fall back to local DB
-    const task = await db.megaTask.update({
-      where: { num },
-      data: { status },
-    });
-    return NextResponse.json({ task });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message }, { status: 500 });
+  } catch {
+    return NextResponse.json({ tasks: [], error: "No task data found" }, { status: 500 });
   }
 }

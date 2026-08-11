@@ -12,6 +12,12 @@ export const maxDuration = 60;
  * Migrerar ALL lokal data till Supabase.
  * Körs från Vercel (som har nätverksåtkomst till Supabase).
  */
+export async function GET() {
+  return POST(new NextRequest("https://lab.ak1nvestor.com/api/migrate-to-supabase", {
+    method: "POST",
+  }));
+}
+
 export async function POST(req: NextRequest) {
   if (!isSupabaseConfigured || !supabaseAdmin) {
     return NextResponse.json(

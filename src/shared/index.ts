@@ -6,7 +6,6 @@ export * from "./store/ak1a-store";
 export * from "./store/StoreProvider";
 export * from "./providers/ThemeProvider";
 export * from "./lib/utils";
-export * from "./lib/db";
 export * from "./lib/supabase";
 export * from "./lib/data-access";
 export * from "./hooks/use-mobile";

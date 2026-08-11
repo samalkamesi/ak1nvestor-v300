@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import { join } from "path";
-import { db } from "@/lib/db";
+
 
 export const runtime = "nodejs";
 

@@ -1,70 +1,63 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
-import { headers } from "next/headers";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-/** GET /api/admin/activity — hämta klientaktivitet för admin-dashboard. */
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+const HEADERS = () => ({
+  apikey: SUPABASE_KEY,
+  Authorization: `Bearer ${SUPABASE_KEY}`,
+  "Content-Type": "application/json",
+});
+
+/** GET /api/admin/activity — hämta aktivitetslogg */
 export async function GET(req: NextRequest) {
+  if (!SUPABASE_URL || !SUPABASE_KEY) {
+    return NextResponse.json({ activities: [] });
+  }
+
   try {
-    const url = new URL(req.url);
-    const limit = Math.min(Number(url.searchParams.get("limit") || "100"), 500);
-    const action = url.searchParams.get("action");
-    const section = url.searchParams.get("section");
-    const since = url.searchParams.get("since");
-
-    const where: any = {};
-    if (action) where.action = action;
-    if (section) where.section = section;
-    if (since) where.createdAt = { gte: new Date(since) };
-
-    const activities = await db.userActivity.findMany({
-      where,
-      orderBy: { createdAt: "desc" },
-      take: limit,
-    });
-
-    return NextResponse.json({ activities, count: activities.length });
-  } catch (err: any) {
-    return NextResponse.json({ error: "Kunde inte hämta aktivitet", detail: err.message }, { status: 500 });
+    const limit = new URL(req.url).searchParams.get("limit") || "50";
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/user_activities?select=*&order=created_at.desc&limit=${limit}`,
+      { headers: HEADERS() }
+    );
+    const activities = await res.json();
+    return NextResponse.json({ activities: activities || [] });
+  } catch (e: any) {
+    return NextResponse.json({ activities: [], error: e.message }, { status: 500 });
   }
 }
 
-/** POST /api/admin/activity — logga klientaktivitet (anropas från klienten). */
+/** POST /api/admin/activity — logga aktivitet */
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { sessionId, action, section, targetType, targetId, metadata } = body;
+    const { sessionId, action, section, targetType, targetId, metadata, userAgent, ipHash } = body;
 
-    if (!sessionId || !action) {
-      return NextResponse.json({ error: "sessionId och action krävs" }, { status: 400 });
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+      return NextResponse.json({ success: true }); // Silent fail — don't block user
     }
 
-    const h = await headers();
-    const userAgent = h.get("user-agent") || undefined;
-
-    const forwarded = h.get("x-forwarded-for");
-    let ipHash: string | undefined;
-    if (forwarded) {
-      const crypto = await import("crypto");
-      ipHash = crypto.createHash("sha256").update(forwarded).digest("hex").slice(0, 16);
-    }
-
-    const activity = await db.userActivity.create({
-      data: {
-        sessionId,
-        action,
+    await fetch(`${SUPABASE_URL}/rest/v1/user_activities`, {
+      method: "POST",
+      headers: { ...HEADERS(), Prefer: "return=minimal" },
+      body: JSON.stringify({
+        session_id: sessionId || "unknown",
+        activity_type: action || "unknown",
         section: section || null,
-        targetType: targetType || null,
-        targetId: targetId || null,
+        target_type: targetType || null,
+        target_id: targetId || null,
         metadata: metadata ? JSON.stringify(metadata) : null,
-        userAgent,
-        ipHash,
-      },
+        user_agent: userAgent || null,
+        ip_hash: ipHash || null,
+      }),
     });
 
-    return NextResponse.json({ ok: true, id: activity.id });
-  } catch (err: any) {
-    return NextResponse.json({ error: "Kunde inte logga", detail: err.message }, { status: 500 });
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json({ success: true }); // Silent fail
   }
 }

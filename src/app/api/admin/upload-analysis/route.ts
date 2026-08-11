@@ -1,132 +1,76 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-/**
- * POST /api/admin/upload-analysis — analytiker laddar upp analys för en klient.
- * 
- * Body: {
- *   memberId, portfolioId?, type, title, summary, body,
- *   portfolioOverview?, riskAssessment?, waveAnalysis?, recommendations?, nextSteps?,
- *   confidence?, isPublished?
- * }
- * 
- * Om isPublished = true, sätts publishedAt och analysen syns för klienten i portalen.
- */
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+const HEADERS = () => ({
+  apikey: SUPABASE_KEY,
+  Authorization: `Bearer ${SUPABASE_KEY}`,
+  "Content-Type": "application/json",
+});
+
+/** POST /api/admin/upload-analysis — analytiker laddar upp analys */
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const {
-      memberId,
-      portfolioId,
-      type = "full_portfolio",
-      title,
-      summary,
-      body: analysisBody,
-      portfolioOverview,
-      riskAssessment,
-      waveAnalysis,
-      recommendations,
-      nextSteps,
-      analyzedBy,
-      confidence = "MEDEL",
-      isPublished = true,
-    } = body;
+    const { memberId, portfolioId, type, title, summary, body: analysisBody, portfolioOverview, riskAssessment, waveAnalysis, recommendations, nextSteps, confidence, isPublished } = body;
 
-    if (!memberId || !title || !summary) {
-      return NextResponse.json(
-        { error: "memberId, title och summary krävs" },
-        { status: 400 }
-      );
+    if (!memberId || !title || !SUPABASE_URL || !SUPABASE_KEY) {
+      return NextResponse.json({ error: "memberId, title krävs + Supabase" }, { status: 400 });
     }
 
-    const member = await db.member.findUnique({ where: { id: memberId } });
-    if (!member) {
-      return NextResponse.json({ error: "Medlem hittades inte" }, { status: 404 });
-    }
-
-    const analysis = await db.clientAnalysis.create({
-      data: {
-        memberId,
-        portfolioId: portfolioId || null,
-        type,
+    // Create analysis
+    const createRes = await fetch(`${SUPABASE_URL}/rest/v1/client_analyses`, {
+      method: "POST",
+      headers: { ...HEADERS(), Prefer: "return=representation" },
+      body: JSON.stringify({
+        member_id: memberId,
+        portfolio_id: portfolioId || null,
+        analysis_type: type || "full_portfolio",
         title,
-        summary,
-        body: analysisBody || summary,
-        portfolioOverview: portfolioOverview || null,
-        riskAssessment: riskAssessment || null,
-        waveAnalysis: waveAnalysis ? JSON.stringify(waveAnalysis) : null,
+        summary: summary || null,
+        body: analysisBody || null,
+        portfolio_overview: portfolioOverview || null,
+        risk_assessment: riskAssessment || null,
+        wave_analysis: waveAnalysis || null,
         recommendations: recommendations || null,
-        nextSteps: nextSteps || null,
-        analyzedBy: analyzedBy || "AK1A Analytiker",
-        confidence,
-        isPublished,
-        publishedAt: isPublished ? new Date() : null,
-      },
+        next_steps: nextSteps || null,
+        confidence: confidence || "MEDEL",
+        is_published: isPublished ?? false,
+        published_at: isPublished ? new Date().toISOString() : null,
+      }),
     });
+    const analysis = await createRes.json();
 
-    // Update portfolio status if portfolioId provided
+    // Update portfolio status if portfolioId
     if (portfolioId) {
-      await db.clientPortfolio.update({
-        where: { id: portfolioId },
-        data: {
-          analysisStatus: "completed",
-          analyzedAt: new Date(),
-        },
+      await fetch(`${SUPABASE_URL}/rest/v1/client_portfolios?id=eq.${portfolioId}`, {
+        method: "PATCH",
+        headers: HEADERS(),
+        body: JSON.stringify({
+          analysis_status: "completed",
+          analyzed_at: new Date().toISOString(),
+        }),
       });
     }
-
-    // Log activity
-    try {
-      await db.userActivity.create({
-        data: {
-          sessionId: member.sessionId || member.email,
-          action: "analysis_published",
-          section: "member",
-          targetType: "analysis",
-          targetId: analysis.id,
-          metadata: JSON.stringify({ memberId, portfolioId, title }),
-        },
-      });
-    } catch {}
 
     // Log system event
-    try {
-      await db.systemEvent.create({
-        data: {
-          type: "analysis_uploaded",
-          severity: "info",
-          message: `Analys uppladdad för ${member.email}: ${title}`,
-          details: JSON.stringify({ analysisId: analysis.id, memberId, portfolioId }),
-          source: "admin",
-        },
-      });
-    } catch {}
-
-    return NextResponse.json({ analysis, member });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
-  }
-}
-
-/** GET /api/admin/upload-analysis?memberId=xxx — hämta alla analyser (även opublicerade). */
-export async function GET(req: NextRequest) {
-  try {
-    const url = new URL(req.url);
-    const memberId = url.searchParams.get("memberId");
-
-    const where: any = {};
-    if (memberId) where.memberId = memberId;
-
-    const analyses = await db.clientAnalysis.findMany({
-      where,
-      include: { member: true },
-      orderBy: { createdAt: "desc" },
+    await fetch(`${SUPABASE_URL}/rest/v1/system_events`, {
+      method: "POST",
+      headers: { ...HEADERS(), Prefer: "return=minimal" },
+      body: JSON.stringify({
+        event_type: "analysis_uploaded",
+        severity: "info",
+        message: `Analys uppladdad: ${title} (medlem: ${memberId})`,
+        source: "admin-upload-analysis",
+      }),
     });
 
-    return NextResponse.json({ analyses });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json({ analysis: analysis[0] || analysis });
+  } catch (e: any) {
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }

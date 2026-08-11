@@ -1,0 +1,65 @@
+[
+  {
+    "id": "cmsl65r1n0017ovov260stngj",
+    "type": "kommunikation_omskrivning",
+    "severity": "info",
+    "message": "AI-organ skrev om hem (attrahera) — confidence: HÖG",
+    "details": "{\"page\":\"hem\",\"target\":\"attrahera\",\"currentTextLength\":106,\"rewrittenTextLength\":190,\"changesMade\":[\"Bytte till mer aktiv och direkt språk\",\"Lade till specifika termer som 'pedagogisk finansanalys' och 'kognitiv suveränitet'\",\"Strukturerade texten i korta, slagkraftiga meningar\",\"Lade till AK1A:s DNA-ord och undvikte förbjudna termer\",\"Framhöll 'anti-bank, anti-casino, pro-metod' tydligare\"],\"rationale\":\"Den nya texten är mer konkret och aktiv, med direkt kundfokus. Den lyfter fram AK1A:s unika position och värdeerbjudande tydligare, vilket skapar förtroende och nyfikenhet hos nya besökare.\",\"successMetric\":\"CTR (klickfrekvens) på startsidan, tid på sida (time-on-page), och konverteringsgrad till prenumeration eller demo\"}",
+    "source": "kommunikation-api",
+    "createdAt": "2026-08-09T02:14:11.243Z"
+  },
+  {
+    "id": "cmsl65byl0016ovovzv9g58wf",
+    "type": "marknadsforing_kampanj",
+    "severity": "info",
+    "message": "AI-organ skapade branding-kampanj för hero (diy-sparare) — confidence: HÖG",
+    "details": "{\"campaign\":\"branding\",\"channel\":\"hero\",\"audience\":\"diy-sparare\",\"campaignData\":{\"campaignText\":\"Vi skapade kategorin. Andra kopierar. Verifierbarhet från institutionell metodik, för din kognitiva suveränitet.\",\"subject\":\"Verifierbarhet som metod\",\"body\":\"Sluta gissa. Börja verifiera. Vi ger dig samma beslutsunderlag som institutionerna, med en 99-sidig analys som du själv kan granska. MÄTT. METODMÅL. Reproducerbar. För den som vill förstå.\",\"cta\":\"Verifiera allt\",\"rationale\":\"Kampanjen talar direkt till Mats tekniska och metodiska sinne genom att erbjuda en bevisbar och pedagogisk process. Genom att positionera AK1A som den ursprungliga kategoriskaparen, och inte en kopian, etableras omedelbart auktoritet och trovärdighet.\",\"framework\":\"Zero to One\",\"successMetric\":\"time-on-page\",\"organConfidence\":\"HÖG\",\"tonality\":\"auktoritär-tillgänglig\"}}",
+    "source": "marknadsforing-api",
+    "createdAt": "2026-08-09T02:13:51.694Z"
+  },
+  {
+    "id": "cmsl651pz0015ovovridrpswh",
+    "type": "ai_organ_autonom_proposal",
+    "severity": "info",
+    "message": "AI-organ Σ|α|Δ|Ω|Φ|Θ|Μ|Ψ föreslog 3 förbättringar (fokus: kundupplevelse)",
+    "details": "{\"focus\":\"kundupplevelse\",\"dataSnapshot\":{\"totalSessions\":10,\"totalActivities\":70,\"topSections\":[[\"hem\",38],[\"analyser\",15],[\"kurser\",8],[\"utbildning\",3],[\"prec\",3]],\"actionCounts\":{\"section_visit\":70}},\"proposal\":{\"organ\":\"Σ|α|Δ|Ω|Φ|Θ|Μ|Ψ\",\"analysis\":\"Datan visar att 38/70 sessioner startar på hem-sidan, vilket indikerar att den är avgörande för första intrycket. Analys-sektionen har 15 sessioner, men bara 3 i 'prec' (precisionsanalys), vilket tyder på att användare söker djupare insikter men kanske inte hittar dem. Fokus på kundupplevelsen kräver tydligare språk och struktur utan att offra AK1A:s DNA.\",\"proposals\":[{\"title\":\"Förtydliga hem-sidans primära värdeerbjudande\",\"page\":\"hem\",\"currentText\":\"Välkommen till AK1A Research Lab. Vi erbjuder analyser och utbildning för att stärka din kognitiva suveränitet.\",\"proposedText\":\"AK1A Research Lab: Verifierbar kunskap för kognitiv suveränitet. Upptäck analyser och kurser som ger dig kontroll – inte spel.\",\"rationale\":\"Nuvarande text är generisk och lyfter inte fram unikt värde. Föreslagen text använder tydligare språk ('kontroll – inte spel') som respekterar DNA:et (anti-casino) och attraherar kunder som söker seriöst, verifierat innehåll.\",\"successMetric\":\"Ökning av hem-sidans sessioner med 20% och minskning av studiebortfall (bounce rate) med 15%.\",\"priority\":\"KRITISK\"},{\"title\":\"Lägg till en tydlig 'Djupgående analyser'-länk på hem-sidan\",\"page\":\"hem\",\"currentText\":\"Kurser och analyser finns tillgängliga via menyn.\",\"proposedText\":\"Utforska våra djupgående analyser: Öppna 'AK1A Prec' för verifierade insikter i realtid.\",\"rationale\":\"Datan visar låg användning av 'prec'-sektionen trots hög aktivitet i analys-sektionen. Genom att direkt länka till 'AK1A Prec' med ett tydligt värdeerbjudande ('verifierade insikter i realtid') kan vi öka engagemanget för vårt mest unika innehåll.\",\"successMetric\":\"Ökning av 'prec'-sessioner med 50% och klickfrekvens på länken över 25%.\",\"priority\":\"HÖG\"},{\"title\":\"Optimera analyser-sidans språk för tydlighet\",\"page\":\"analyser\",\"currentText\":\"Här hittar du våra senaste marknadsanalyser och strategiska rapporter.\",\"proposedText\":\"Djupdyk i marknaden: Verifierade analyser med strategisk insikt – inga gissningar.\",\"rationale\":\"Nuvarande text är passiv och lyftar inte fram AK1A:s styrka (verifierbarhet). Föreslagen text är mer aktiv och betonar vår unika position ('inga gissningar'), vilket attraherar kunder som söker pålitlig information.\",\"successMetric\":\"Ökning av analyser-sidans sessioner med 30% och längre genomsnittlig tid på sidan (+25%).\",\"priority\":\"MEDEL\"}]},\"rawContent\":\"```json\\n{\\n  \\\"organ\\\": \\\"Σ|α|Δ|Ω|Φ|Θ|Μ|Ψ\\\",\\n  \\\"analysis\\\": \\\"Datan visar att 38/70 sessioner startar på hem-sidan, vilket indikerar att den är avgörande för första intrycket. Analys-sektionen har 15 sessioner, men bara 3 i 'prec' (precisionsanalys), vilket tyder på att användare söker djupare insikter men kanske inte hittar dem. Fokus på kundupplevelsen kräver tydligare språk och struktur utan att offra AK1A:s DNA.\\\",\\n  \\\"proposals\\\": [\\n    {\\n      \\\"title\\\": \\\"Förtydliga hem-sidans primära värdeerbjudande\\\",\\n      \\\"page\\\": \\\"hem\\\",\\n      \\\"currentText\\\": \\\"Välkommen till AK1A Research Lab. Vi erbjuder analyser och utbildning för att stärka din kognitiva suveränitet.\\\",\\n      \\\"proposedText\\\": \\\"AK1A Research Lab: Verifierbar kunskap för kognitiv suveränitet. Upptäck analyser och kurser som ger dig kontroll – inte spel.\\\",\\n      \\\"rationale\\\": \\\"Nuvarande text är generisk och lyfter inte fram unikt värde. Föreslagen text använder tydligare språk ('kontroll – inte spel') som respekterar DNA:et (anti-casino) och attraherar kunder som söker seriöst, verifierat innehåll.\\\",\\n      \\\"successMetric\\\": \\\"Ökning av hem-sidans sessioner med 20% och minskning av studiebortfall (bounce rate) med 15%.\\\",\\n      \\\"priority\\\": \\\"KRITISK\\\"\\n    },\\n    {\\n      \\\"title\\\": \\\"Lägg till en tydlig 'Djupgående analyser'-länk på hem-sidan\\\",\\n      \\\"page\\\": \\\"hem\\\",\\n      \\\"currentText\\\": \\\"Kurser och analyser finns tillgängliga via menyn.\\\",\\n      \\\"proposedText\\\": \\\"Utforska våra djupgående analyser: Öppna 'AK1A Prec' för verifierade insikter i realtid.\\\",\\n      \\\"rationale\\\": \\\"Datan visar låg användning av 'prec'-sektionen trots hög aktivitet i analys-sektionen. Genom att direkt länka till 'AK1A Prec' med ett tydligt värdeerbjudande ('verifierade insikter i realtid') kan vi öka engagemanget för vårt mest unika innehåll.\\\",\\n      \\\"successMetric\\\": \\\"Ökning av 'prec'-sessioner med 50% och klickfrekvens på länken över 25%.\\\",\\n      \\\"priority\\\": \\\"HÖG\\\"\\n    },\\n    {\\n      \\\"title\\\": \\\"Optimera analyser-sidans språk för tydlighet\\\",\\n      \\\"page\\\": \\\"analyser\\\"\"}",
+    "source": "autonom-loop",
+    "createdAt": "2026-08-09T02:13:38.424Z"
+  },
+  {
+    "id": "cmsl1hqfi0002ov2s7garezu4",
+    "type": "analysis_saved",
+    "severity": "info",
+    "message": "Analys sparad: Volvo Car AB (VOLCAR-B) — HÅLL",
+    "details": "{\"ticker\":\"VOLCAR-B\",\"company\":\"Volvo Car AB\",\"akm1Score\":62,\"akm1Tier\":\"MEDEL-STARK\",\"recommendation\":\"HÅLL\",\"verified\":\"2026-08-08\",\"analysisDate\":\"2026-08-08\"}",
+    "source": "save-analyses-script",
+    "createdAt": "2026-08-09T00:03:32.239Z"
+  },
+  {
+    "id": "cmsl1hqfe0000ov2so3i94fxs",
+    "type": "analysis_saved",
+    "severity": "info",
+    "message": "Analys sparad: Precise Biometrics AB (PREC-ST) — FÖRSIKTIGT KÖP",
+    "details": "{\"ticker\":\"PREC-ST\",\"company\":\"Precise Biometrics AB\",\"akm1Score\":38,\"akm1Tier\":\"SVAG-MEDL\",\"recommendation\":\"FÖRSIKTIGT KÖP\",\"verified\":\"2026-08-08\",\"analysisDate\":\"2026-08-08\"}",
+    "source": "save-analyses-script",
+    "createdAt": "2026-08-09T00:03:32.234Z"
+  },
+  {
+    "id": "cmskfjfmf0000tdfbm8fw32sk",
+    "type": "analysis_updated",
+    "severity": "info",
+    "message": "Precise Biometrics updated: PREC.ST 0,86 SEK. Fusion FPC + emission 110 MSEK. FÖRSIKTIGT KÖP.",
+    "details": "{\"ticker\":\"PREC.ST\",\"price\":\"0,86 SEK\",\"date\":\"2026-08-07\",\"verified\":\"2026-08-08\",\"recommendation\":\"FÖRSIKTIGT KÖP\",\"akm1Score\":\"38/100\",\"source\":\"3 PDF-analyser\",\"scenarios\":{\"bull\":\"2,03 (10%)\",\"base\":\"1,40 (45%)\",\"bear\":\"0,93 (45%)\"}}",
+    "source": "pdf-analysis",
+    "createdAt": "2026-08-08T13:48:59.991Z"
+  },
+  {
+    "id": "cmsj1w6610007rjpcm6g44wbh",
+    "type": "api_error",
+    "severity": "warning",
+    "message": "AI-organ α kunde inte svara: API request failed with status 429: {\"error\":\"Too many requests, please try again later\"}",
+    "details": "{\"consultationId\":\"cmsj1w5xv0006rjpcuyufkgcm\",\"question\":\"Hur ska AK1A expandera portföljbyggaren för att ge klienter institutionell djupanalys? Vilka funktio\"}",
+    "source": "api",
+    "createdAt": "2026-08-07T14:39:13.466Z"
+  }
+]

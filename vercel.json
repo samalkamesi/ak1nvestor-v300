@@ -6,11 +6,11 @@
   "crons": [
     {
       "path": "/api/cron/autonom",
-      "schedule": "0 */6 * * *"
+      "schedule": "0 0 * * *"
     },
     {
       "path": "/api/cron/expand-courses",
-      "schedule": "0 */12 * * *"
+      "schedule": "0 12 * * *"
     }
   ]
 }

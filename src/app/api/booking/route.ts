@@ -3,14 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-
-const HEADERS = () => ({
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-  "Content-Type": "application/json",
-});
+import { getSupabaseRest } from "@/lib/supabase-rest";
 
 /** POST /api/booking — skapa bokning */
 export async function POST(req: NextRequest) {
@@ -22,16 +15,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "memberId och type krävs" }, { status: 400 });
     }
 
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
+    const rest = getSupabaseRest();
+    if (!rest) {
       return NextResponse.json({ error: "Supabase inte konfigurerad" }, { status: 500 });
     }
 
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/bookings`, {
+    const res = await fetch(`${rest.origin}/rest/v1/bookings`, {
       method: "POST",
-      headers: { ...HEADERS(), Prefer: "return=representation" },
+      headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=representation" },
       body: JSON.stringify({
         member_id: memberId,
-        booking_type: type,
+        type: type,
         requested_time: requestedTime || null,
         status: "requested",
         notes: notes || null,
@@ -49,16 +43,17 @@ export async function GET(req: NextRequest) {
   try {
     const memberId = new URL(req.url).searchParams.get("memberId");
 
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
+    const rest = getSupabaseRest();
+    if (!rest) {
       return NextResponse.json({ bookings: [] });
     }
 
-    let url = `${SUPABASE_URL}/rest/v1/bookings?select=*&order=created_at.desc`;
+    let url = `${rest.origin}/rest/v1/bookings?select=*&order=created_at.desc`;
     if (memberId) {
       url += `&member_id=eq.${memberId}`;
     }
 
-    const res = await fetch(url, { headers: HEADERS() });
+    const res = await fetch(url, { headers: rest.headers });
     const bookings = await res.json();
     return NextResponse.json({ bookings: bookings || [] });
   } catch (e: any) {
@@ -76,7 +71,8 @@ export async function PATCH(req: NextRequest) {
       return NextResponse.json({ error: "id och status krävs" }, { status: 400 });
     }
 
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
+    const rest = getSupabaseRest();
+    if (!rest) {
       return NextResponse.json({ error: "Supabase inte konfigurerad" }, { status: 500 });
     }
 
@@ -84,9 +80,9 @@ export async function PATCH(req: NextRequest) {
     if (confirmedTime) updateBody.confirmed_time = confirmedTime;
     if (meetingLink) updateBody.meeting_link = meetingLink;
 
-    await fetch(`${SUPABASE_URL}/rest/v1/bookings?id=eq.${id}`, {
+    await fetch(`${rest.origin}/rest/v1/bookings?id=eq.${id}`, {
       method: "PATCH",
-      headers: HEADERS(),
+      headers: rest.headers,
       body: JSON.stringify(updateBody),
     });
 

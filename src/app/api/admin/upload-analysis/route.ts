@@ -3,14 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-
-const HEADERS = () => ({
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-  "Content-Type": "application/json",
-});
+import { getSupabaseRest } from "@/lib/supabase-rest";
 
 /** POST /api/admin/upload-analysis — analytiker laddar upp analys */
 export async function POST(req: NextRequest) {
@@ -18,18 +11,19 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { memberId, portfolioId, type, title, summary, body: analysisBody, portfolioOverview, riskAssessment, waveAnalysis, recommendations, nextSteps, confidence, isPublished } = body;
 
-    if (!memberId || !title || !SUPABASE_URL || !SUPABASE_KEY) {
+    const rest = getSupabaseRest();
+    if (!memberId || !title || !rest) {
       return NextResponse.json({ error: "memberId, title krävs + Supabase" }, { status: 400 });
     }
 
     // Create analysis
-    const createRes = await fetch(`${SUPABASE_URL}/rest/v1/client_analyses`, {
+    const createRes = await fetch(`${rest.origin}/rest/v1/client_analyses`, {
       method: "POST",
-      headers: { ...HEADERS(), Prefer: "return=representation" },
+      headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=representation" },
       body: JSON.stringify({
         member_id: memberId,
         portfolio_id: portfolioId || null,
-        analysis_type: type || "full_portfolio",
+        type: type || "full_portfolio",
         title,
         summary: summary || null,
         body: analysisBody || null,
@@ -47,9 +41,9 @@ export async function POST(req: NextRequest) {
 
     // Update portfolio status if portfolioId
     if (portfolioId) {
-      await fetch(`${SUPABASE_URL}/rest/v1/client_portfolios?id=eq.${portfolioId}`, {
+      await fetch(`${rest.origin}/rest/v1/client_portfolios?id=eq.${portfolioId}`, {
         method: "PATCH",
-        headers: HEADERS(),
+        headers: { ...rest.headers, "Content-Type": "application/json" },
         body: JSON.stringify({
           analysis_status: "completed",
           analyzed_at: new Date().toISOString(),
@@ -58,11 +52,11 @@ export async function POST(req: NextRequest) {
     }
 
     // Log system event
-    await fetch(`${SUPABASE_URL}/rest/v1/system_events`, {
+    await fetch(`${rest.origin}/rest/v1/system_events`, {
       method: "POST",
-      headers: { ...HEADERS(), Prefer: "return=minimal" },
+      headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
       body: JSON.stringify({
-        event_type: "analysis_uploaded",
+        type: "analysis_uploaded",
         severity: "info",
         message: `Analys uppladdad: ${title} (medlem: ${memberId})`,
         source: "admin-upload-analysis",

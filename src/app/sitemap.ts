@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/analyser`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/labb`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
     { url: `${baseUrl}/blogg`, changeFrequency: "daily", priority: 0.9, lastModified: now },
+    { url: `${baseUrl}/kalkylator`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${baseUrl}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${baseUrl}/terms`, changeFrequency: "yearly", priority: 0.2 },
@@ -29,14 +30,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Analyser (PREC.ST, VOLCAR-B, …)
+  // Analyser (PREC.ST, VOLCAR-B, …) + variabel-landningssidor per analys
+  const vslugs = Object.keys(getCourses()).filter((s) => /^v\d{2}-/.test(s));
   for (const a of getAnalyses()) {
+    const t = a.ticker.toLowerCase().replace(/\.st$/, "-st");
     entries.push({
       url: `${baseUrl}/analyser/${encodeURIComponent(a.ticker)}`,
       changeFrequency: "monthly",
       priority: 0.8,
       lastModified: now,
     });
+    for (const v of vslugs) {
+      entries.push({
+        url: `${baseUrl}/analyser/${t}/${v}`,
+        changeFrequency: "monthly",
+        priority: 0.6,
+        lastModified: now,
+      });
+    }
   }
 
   // 201 case studies

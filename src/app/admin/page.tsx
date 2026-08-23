@@ -23,6 +23,7 @@ import {
 import { useAk1aStore } from "@/lib/ak1a-store";
 import { Ak1aLogo, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
 import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
+import { MembersManager } from "@/components/ak1a/admin/members-manager";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -307,6 +308,7 @@ export default function AdminDashboard() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-8">
           <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
             <TabsTrigger value="overview" className="px-3 py-1.5 text-xs sm:text-sm">Översikt</TabsTrigger>
+            <TabsTrigger value="members" className="px-3 py-1.5 text-xs sm:text-sm">Medlemmar</TabsTrigger>
             <TabsTrigger value="activity" className="px-3 py-1.5 text-xs sm:text-sm">Aktivitetslogg</TabsTrigger>
             <TabsTrigger value="portfolios" className="px-3 py-1.5 text-xs sm:text-sm">Klientportföljer</TabsTrigger>
             <TabsTrigger value="analysis-upload" className="px-3 py-1.5 text-xs sm:text-sm">Analys-uppladdning</TabsTrigger>
@@ -405,6 +407,12 @@ export default function AdminDashboard() {
           </TabsContent>
 
           {/* Activity Log */}
+          <TabsContent value="members" className="mt-6">
+            <Card className="p-5">
+              <MembersManager />
+            </Card>
+          </TabsContent>
+
           <TabsContent value="activity" className="mt-6">
             <Card className="p-5">
               <div className="flex flex-wrap items-center justify-between gap-3">

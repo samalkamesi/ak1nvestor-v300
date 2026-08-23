@@ -41,3 +41,33 @@ export async function GET() {
     return NextResponse.json({ error: e.message, members: [] }, { status: 500 });
   }
 }
+
+/** PATCH /api/admin/members — ändra medlems nivå { id, memberType } */
+export async function PATCH(req: NextRequest) {
+  const rest = getSupabaseRest();
+  if (!rest) {
+    return NextResponse.json({ error: "Supabase ej konfigurerad" }, { status: 500 });
+  }
+  try {
+    const body = await req.json();
+    const { id, memberType } = body;
+    const allowed = ["free", "premium", "pro"];
+    if (!id || !allowed.includes(memberType)) {
+      return NextResponse.json(
+        { error: "id krävs och memberType måste vara free|premium|pro" },
+        { status: 400 }
+      );
+    }
+    const res = await fetch(`${rest.origin}/rest/v1/members?id=eq.${encodeURIComponent(id)}`, {
+      method: "PATCH",
+      headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify({ member_type: memberType }),
+    });
+    if (!res.ok) {
+      return NextResponse.json({ error: `Supabase ${res.status}` }, { status: 500 });
+    }
+    return NextResponse.json({ ok: true });
+  } catch (e: any) {
+    return NextResponse.json({ error: e.message }, { status: 500 });
+  }
+}

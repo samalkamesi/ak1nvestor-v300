@@ -2706,3 +2706,28 @@ Work Log:
 Stage Summary:
 - Kundgaranti på plats: A rörs bara via granskad merge från B; akut rollback till
   vilken tidigare version som helst med en knapptryckning i Vercel
+---
+Task ID: 81-AUTONOM-LEVERANS-1
+Agent: main (Z.ai Code)
+Task: Första helt autonoma leveransen — kalkylator + admin + 40 SEO-sidor + blogg
+
+Work Log:
+- ADMIN: Medlemmar-flik (flik 9 av 12 enligt 100x-planen) — sök, nivåfilter,
+  ändra free/premium/pro direkt (PATCH /api/admin/members, validerad nivålista)
+- KALKYLATOR: /kalkylator — 20 reglage (0–5) grupperade per kategori, live-rekommendation
+  (SÄLJ→STARKT KÖP), kategorisnitt, presets med riktiga poäng från PREC.ST/VOLCAR-B,
+  länk till respektive kurs per variabel. Kalibrerad mot riktiga analyser (naiv summa
+  = VOLC:s officiella 62/100; PREC noteras som förenkling pga officiell nedvägning)
+- PROGRAMMATISK SEO: /analyser/[ticker]/[variabel] — 40 landningssidor (2×20),
+  unik H1 per kombination, analytikerns kommentar + variabelexplanation + CTA-kedja
+- BLOGG: 'Vad är institutionell aktieanalys' (Pelare 2, 1000+ ord) + veckans marknad
+  v34 (TERP/fusion-tema, körig internlänkning) — totalt 25 inlägg
+- SITEMAP: 502 URL:er · BYGG: 513 statiska sidor, grönt · lint rent på nya filer
+- VERIFIERING: alla nya routes 200 lokalt + på PRODUKTION efter merge
+- PIPELINE: auto-deploy GitHub→Vercel verifierad fungerande (push till main = live <4 min)
+
+Stage Summary:
+- A/B-arbetsflödet bevisat i praktiken: byggt på develop, verifierat, mergat till main
+- 100x-planen: §8.3 kalkylator ✓, §5.2 flik 9 ✓, §2.4 programmatisk SEO ✓, §4 pelare 2 ✓
+- Nästa autonom runda: admin-flikar 10-11 (bokningar, e-post), paywall-middleware,
+  PWA, e-post nurture

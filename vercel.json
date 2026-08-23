@@ -1,7 +1,7 @@
 {
   "framework": "nextjs",
-  "buildCommand": "rm -rf .next node_modules/@prisma node_modules/.prisma && next build",
-  "installCommand": "npm install --legacy-peer-deps --no-optional",
+  "buildCommand": "next build",
+  "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": ".next",
   "crons": [
     {

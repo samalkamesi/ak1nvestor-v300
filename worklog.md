@@ -2667,3 +2667,24 @@ Task ID: 78-DEPLOY-TRIGGER
 2026-08-23T15:10:20Z — tom trigger-commit för Vercel auto-deploy av 705cda5
 
 2026-08-23T21:47:03Z — post-reconnect deploy-test (git hook verifiering)
+---
+Task ID: 79-PRODUCTION-LIVE
+Agent: main (Z.ai Code)
+Task: HELA LEVERANSEN LIVE på lab.ak1nvestor.com
+
+Work Log:
+- ROTORSAK till alla deploy-fel hittad: vercel.json cron "0 */6 * * *" (seo-refresh)
+  bröt Hobby-gränsen (max 1 körning/dag) → ändrad till daglig 03:00 (723f495)
+- Direkt-deploy via Vercel CLI + engångstoken (1h, user-skapad): Production Ready 2m,
+  aliasat till lab.ak1nvestor.com
+- SLUTVERIFIERING (allt HTTP 200): /, /kurser, /kurser/v09-roe, /analyser,
+  /analyser/PREC.ST, /labb, /blogg, bloggartikel, /medlemskap, robots, sitemap
+- Sitemap: 459 URL:er (startade natten med 1) · JSON-LD: 8 block på kurssida
+- AI-organ-motor live: /api/autonom/status visar gränser (500 rader tak, 30d retention)
+- Register API live på produktion: medlem skapad + verifierad, testmedlem raderad
+
+Stage Summary:
+- Nattens hela leverans LIVE: 470 statiska sidor, 23 blogginlägg, medlemskapssida,
+  bounded AI-organ-plattform, SSRF-härdade routes, Supabase med all data
+- Kvar (valfritt): token tas bort automatisk om 1h, Search Console-registrering av
+  sitemap, rotering av service-nyckel, newak1a-projektet kan raderas

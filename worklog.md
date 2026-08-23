@@ -2731,3 +2731,38 @@ Stage Summary:
 - 100x-planen: §8.3 kalkylator ✓, §5.2 flik 9 ✓, §2.4 programmatisk SEO ✓, §4 pelare 2 ✓
 - Nästa autonom runda: admin-flikar 10-11 (bokningar, e-post), paywall-middleware,
   PWA, e-post nurture
+---
+Task ID: 82-KUNDVARD-LEVERANS
+Agent: main (Z.ai Code)
+Task: Kalkylator v2 + ny medlemskapsmodell + AI-styrelse + admin-auth — allt LIVE
+
+Work Log:
+- ADMIN-AUTH: tidigare 'lösenord' tog emot VAD SOM HELST (rent kosmetiskt!) →
+  sidan wiread till /api/admin/auth (rate-limit 5/min, timing-safe jämförelse).
+  Default-lösenord AK1A-2026 gäller tills ADMIN_PASSWORD sätts i Vercel.
+  Verifierat: fel=401, rätt=200, lokalt + produktion
+- KALKYLATOR v2 (/kalkylator): tre flikar:
+  1) 'Räkna med egna siffror' — 9 beräknare (V01, V04-V10, V19) med inmatningsfält,
+     formler, pedagogiska trösklar → auto-poäng + överför till totalen
+  2) 'Poängsätt manuellt' — befintliga reglage (V20 nu 'Återköp & insiderköp VD/styrelse/bolag')
+  3) 'Var hittar jag siffrorna?' — kartlagd svensk årsredovisning (resultat/balans/
+     kassaflöde/förvaltningsberättelse/noter), kvartals-vs-års-guide, gengånget
+     ROE-exempel i 5 steg
+  Varje beräknare har expanderbar 'Var hittar jag siffrorna?' + exempel
+- MEDLEMSKAP: komplett omskrivning enligt grundarens vision — Fas 1 ALLTID GRATIS
+  ('fundamentalanalys är en rättighet som luft och vatten'), Fas 2 ansökan+möte
+  medgrundaren 9 999kr (90 dagar nöjdhetsgaranti, cohort, representantmål,
+  avbryt-vid-policybrott, bolagstips, framtida tjänster), Fas 3 teaser 13 999kr
+- AI-ORGAN-STYRELSE: src/lib/autonom/styrelse.ts + /api/styrelse/beslut —
+  deterministisk prioriteringsmotor (strategisk vikt × kundnytta × lägessignal,
+  insatsstraff). Top-3 nu: (1) Nya aktieanalyser 33.8p (2) Bloggtakt 32p
+  (3) Fas 2-ansökningsflöde 25.2p. Tillståndslös, inga skrivningar
+- DOMÄNSTRATEGI: docs/DOMANSTRATEGI.md — rekommenderar 'två roller': ak1nvestor.com
+  = front (vision/ansökan), lab = plattform; interim: redirect front→lab
+
+Stage Summary:
+- Byggt på develop (B), mergat till main (A), auto-deploy verifierad: kalkylator,
+  medlemskap, styrelse-endpoint och admin-login alla 200 på lab.ak1nvestor.com
+- Kvar till grundaren: sätt ADMIN_PASSWORD i Vercel (byt från AK1A-2026),
+  DNS-beslut för ak1nvestor.com enligt DOMANSTRATEGI.md, ev SMTP-nyckel för e-post
+- Styrelsens prioritering #1 inför nästa sprint: nya aktieanalyser (mål ≥5 bolag)

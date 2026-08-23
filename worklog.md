@@ -2642,3 +2642,22 @@ Work Log:
 Stage Summary:
 - Hela nattens leverans säkrad i lokal commit; INTE pushad (väntar på användare)
 - Säkerhetshärdat på vägen: SSRF + path traversal åtgärdade, död kod borta
+---
+Task ID: 77-DATA-MIGRERAD
+Agent: main (Z.ai Code)
+Task: AK1A-schema skapat + all data migrerad + Register API verifierad LIVE
+
+Work Log:
+- Användaren körde setup-SQL (scripts/supabase-setup-ak1a.sql): 13/13 tabeller skapade
+  (ärvda analyses/case_studies med fel struktur droppades först — 5 skräprader)
+- Fix på vägen: 3 routes skrev felaktiga kolumnnamn (analysis_type/event_type/
+  booking_type/activity_type) → korrigerade till schema (type/action) i commit 9b88ded
+- Migrering körd och verifierad: mega_tasks=198, case_studies=201, analyses=2
+  (PREC.ST+VOLCAR-B), meeting_protocols=1, system_events=7
+- REGISTER API VERIFIERAT END-TO-END: POST /api/member/register → HTTP 200,
+  medlem skapad i Supabase med UUID + member_type=free; testmedlem raderad efteråt
+
+Stage Summary:
+- HELA KEDJAN LIVE LOKALT: statiskt innehåll → Supabase → Register API
+- Återstår (användaren): Vercel env-variabler (3 st + MIGRATE_SECRET) + redeploy
+  med cache-clear → då fungerar registrering på lab.ak1nvestor.com

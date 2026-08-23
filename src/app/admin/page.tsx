@@ -135,6 +135,27 @@ export default function AdminDashboard() {
   const [sectionFilter, setSectionFilter] = React.useState<string>("all");
   const [autoRefresh, setAutoRefresh] = React.useState(true);
   const [activeTab, setActiveTab] = React.useState("overview");
+  const [loginError, setLoginError] = React.useState("");
+
+  const forsokLoggaIn = async () => {
+    setLoginError("");
+    try {
+      const res = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+      if (res.ok) {
+        setAuthed(true);
+        setIsAdmin(true);
+      } else {
+        const data = await res.json().catch(() => ({ error: "Fel lösenord." }));
+        setLoginError(data.error || "Fel lösenord.");
+      }
+    } catch {
+      setLoginError("Nätverksfel — försök igen.");
+    }
+  };
 
   const fetchStats = React.useCallback(async () => {
     try {
@@ -196,24 +217,24 @@ export default function AdminDashboard() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Lösenord"
             className="mt-4"
-            onKeyDown={(e) => {
+            onKeyDown={async (e) => {
               if (e.key === "Enter" && password) {
-                setAuthed(true);
-                setIsAdmin(true);
+                await forsokLoggaIn();
               }
             }}
           />
           <Button
             className="mt-3 w-full bg-gold text-background hover:bg-gold/90"
-            onClick={() => {
-              if (password) {
-                setAuthed(true);
-                setIsAdmin(true);
-              }
-            }}
+            onClick={forsokLoggaIn}
           >
             Logga in
           </Button>
+          {loginError && (
+            <p className="mt-2 text-center text-xs text-red-600">{loginError}</p>
+          )}
+          <p className="mt-3 text-center text-[11px] leading-relaxed text-muted-foreground">
+            Lösenord sätts via ADMIN_PASSWORD i Vercel-miljövariabler.
+          </p>
           <Button variant="ghost" className="mt-2 w-full text-xs" onClick={() => setSection("hem")}>
             Tillbaka till startsidan
           </Button>

@@ -2688,3 +2688,21 @@ Stage Summary:
   bounded AI-organ-plattform, SSRF-härdade routes, Supabase med all data
 - Kvar (valfritt): token tas bort automatisk om 1h, Search Console-registrering av
   sitemap, rotering av service-nyckel, newak1a-projektet kan raderas
+---
+Task ID: 80-AB-WORKFLOW
+Agent: main (Z.ai Code)
+Task: A/B-arbetsflöde etablerat — produktion (A) alltid live, utveckling på B
+
+Work Log:
+- develop-gren skapad och pushad (1619159) — main = A/produktion, develop = B/test
+- Staging-banner i layout: amber "TESTMILJÖ (B)" på allt utom lab.ak1nvestor.com
+  och localhost (inline-skript — 470 statiska sidor bevaras, ingen dynamisk kostnad)
+- WORKFLOW.md: arkitektur, dagligt flöde, akut rollback (Instant Rollback i Vercel),
+  tre backup-lager (GitHub-kod, Supabase-data, JSON-innehåll i repot)
+- Byggverifierad: ✓ 470 statiska sidor på develop
+- Återstår (användaren): newak1a → Settings → Git → Production Branch = develop
+  → då bygger B automatiskt vid varje push till develop
+
+Stage Summary:
+- Kundgaranti på plats: A rörs bara via granskad merge från B; akut rollback till
+  vilken tidigare version som helst med en knapptryckning i Vercel

@@ -5,13 +5,7 @@ import path from "path";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-
-const HEADERS = () => ({
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-});
+import { getSupabaseRest } from "@/lib/supabase-rest";
 
 /** GET /api/admin/stats — dashboard statistik */
 export async function GET() {
@@ -47,11 +41,12 @@ export async function GET() {
     stats.courses = { total: Object.keys(courses).length, deep, shallow };
   } catch {}
 
-  // Supabase stats
-  if (SUPABASE_URL && SUPABASE_KEY) {
+  // Supabase stats (endast via validerad supabase.co-värd)
+  const rest = getSupabaseRest();
+  if (rest) {
     try {
       // Members
-      const membersRes = await fetch(`${SUPABASE_URL}/rest/v1/members?select=member_type`, { headers: HEADERS() });
+      const membersRes = await fetch(`${rest.origin}/rest/v1/members?select=member_type`, { headers: rest.headers });
       const members = await membersRes.json();
       stats.members = {
         total: members?.length || 0,
@@ -61,7 +56,7 @@ export async function GET() {
       };
 
       // Portfolios
-      const portfolioRes = await fetch(`${SUPABASE_URL}/rest/v1/client_portfolios?select=analysis_status`, { headers: HEADERS() });
+      const portfolioRes = await fetch(`${rest.origin}/rest/v1/client_portfolios?select=analysis_status`, { headers: rest.headers });
       const portfolios = await portfolioRes.json();
       stats.portfolios = {
         total: portfolios?.length || 0,
@@ -71,7 +66,7 @@ export async function GET() {
       };
 
       // Bookings
-      const bookingsRes = await fetch(`${SUPABASE_URL}/rest/v1/bookings?select=status`, { headers: HEADERS() });
+      const bookingsRes = await fetch(`${rest.origin}/rest/v1/bookings?select=status`, { headers: rest.headers });
       const bookings = await bookingsRes.json();
       stats.bookings = {
         total: bookings?.length || 0,
@@ -81,7 +76,7 @@ export async function GET() {
       };
 
       // System events count
-      const eventsRes = await fetch(`${SUPABASE_URL}/rest/v1/system_events?select=id&limit=100`, { headers: HEADERS() });
+      const eventsRes = await fetch(`${rest.origin}/rest/v1/system_events?select=id&limit=100`, { headers: rest.headers });
       const events = await eventsRes.json();
       stats.systemEvents = { total: events?.length || 0 };
     } catch {}

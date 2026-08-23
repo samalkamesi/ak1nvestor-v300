@@ -3,25 +3,19 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-
-const HEADERS = () => ({
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-  "Content-Type": "application/json",
-});
+import { getSupabaseRest } from "@/lib/supabase-rest";
 
 /** GET /api/admin/bookings — hämta alla bokningar */
 export async function GET() {
-  if (!SUPABASE_URL || !SUPABASE_KEY) {
+  const rest = getSupabaseRest();
+  if (!rest) {
     return NextResponse.json({ bookings: [] });
   }
 
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/bookings?select=*,members(id,email,name,phone,member_type)&order=created_at.desc`,
-      { headers: HEADERS() }
+      `${rest.origin}/rest/v1/bookings?select=*,members(id,email,name,phone,member_type)&order=created_at.desc`,
+      { headers: rest.headers }
     );
     const bookings = await res.json();
     return NextResponse.json({ bookings: bookings || [] });
@@ -44,9 +38,9 @@ export async function PATCH(req: NextRequest) {
     if (confirmedTime) updateBody.confirmed_time = confirmedTime;
     if (meetingLink) updateBody.meeting_link = meetingLink;
 
-    await fetch(`${SUPABASE_URL}/rest/v1/bookings?id=eq.${id}`, {
+    await fetch(`${rest.origin}/rest/v1/bookings?id=eq.${id}`, {
       method: "PATCH",
-      headers: HEADERS(),
+      headers: rest.headers,
       body: JSON.stringify(updateBody),
     });
 

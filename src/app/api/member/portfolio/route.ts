@@ -3,14 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-
-const HEADERS = () => ({
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-  "Content-Type": "application/json",
-});
+import { getSupabaseRest } from "@/lib/supabase-rest";
 
 /** POST /api/member/portfolio — skicka in portfölj */
 export async function POST(req: NextRequest) {
@@ -22,14 +15,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "memberId krävs" }, { status: 400 });
     }
 
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
+    const rest = getSupabaseRest();
+    if (!rest) {
       return NextResponse.json({ error: "Supabase inte konfigurerad" }, { status: 500 });
     }
 
     // Create portfolio
-    const portfolioRes = await fetch(`${SUPABASE_URL}/rest/v1/client_portfolios`, {
+    const portfolioRes = await fetch(`${rest.origin}/rest/v1/client_portfolios`, {
       method: "POST",
-      headers: { ...HEADERS(), Prefer: "return=representation" },
+      headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=representation" },
       body: JSON.stringify({
         member_id: memberId,
         name: name || "Min portfölj",
@@ -62,9 +56,9 @@ export async function POST(req: NextRequest) {
         weight: h.weight || 0,
       }));
 
-      await fetch(`${SUPABASE_URL}/rest/v1/client_holdings`, {
+      await fetch(`${rest.origin}/rest/v1/client_holdings`, {
         method: "POST",
-        headers: { ...HEADERS(), Prefer: "return=minimal" },
+        headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
         body: JSON.stringify(holdingsData),
       });
     }
@@ -83,13 +77,14 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "memberId krävs" }, { status: 400 });
     }
 
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
+    const rest = getSupabaseRest();
+    if (!rest) {
       return NextResponse.json({ portfolios: [] });
     }
 
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/client_portfolios?member_id=eq.${memberId}&select=*&order=created_at.desc`,
-      { headers: HEADERS() }
+      `${rest.origin}/rest/v1/client_portfolios?member_id=eq.${memberId}&select=*&order=created_at.desc`,
+      { headers: rest.headers }
     );
     const portfolios = await res.json();
 
@@ -97,8 +92,8 @@ export async function GET(req: NextRequest) {
     const portfoliosWithHoldings = await Promise.all(
       (portfolios || []).map(async (p: any) => {
         const holdingsRes = await fetch(
-          `${SUPABASE_URL}/rest/v1/client_holdings?portfolio_id=eq.${p.id}&select=*`,
-          { headers: HEADERS() }
+          `${rest.origin}/rest/v1/client_holdings?portfolio_id=eq.${p.id}&select=*`,
+          { headers: rest.headers }
         );
         const holdings = await holdingsRes.json();
         return { ...p, holdings: holdings || [] };

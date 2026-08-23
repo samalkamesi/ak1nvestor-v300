@@ -3,14 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-
-const HEADERS = () => ({
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-  "Content-Type": "application/json",
-});
+import { getSupabaseRest } from "@/lib/supabase-rest";
 
 export async function POST(req: NextRequest) {
   try {
@@ -21,23 +14,24 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "email krävs" }, { status: 400 });
     }
 
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
+    const rest = getSupabaseRest();
+    if (!rest) {
       return NextResponse.json({ error: "Supabase inte konfigurerad. Lägg till NEXT_PUBLIC_SUPABASE_URL och SUPABASE_SERVICE_ROLE_KEY i Vercel Environment Variables." }, { status: 500 });
     }
 
     // Check if member exists in Supabase
     const checkRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/members?email=eq.${encodeURIComponent(email)}&select=*`,
-      { headers: HEADERS() }
+      `${rest.origin}/rest/v1/members?email=eq.${encodeURIComponent(email)}&select=*`,
+      { headers: rest.headers }
     );
     const existing = await checkRes.json();
 
     if (existing && existing.length > 0) {
       // Update lastLogin
       const member = existing[0];
-      await fetch(`${SUPABASE_URL}/rest/v1/members?id=eq.${member.id}`, {
+      await fetch(`${rest.origin}/rest/v1/members?id=eq.${member.id}`, {
         method: "PATCH",
-        headers: HEADERS(),
+        headers: rest.headers,
         body: JSON.stringify({
           last_login_at: new Date().toISOString(),
           ...(name && { name }),
@@ -48,9 +42,9 @@ export async function POST(req: NextRequest) {
     }
 
     // Create new member in Supabase
-    const createRes = await fetch(`${SUPABASE_URL}/rest/v1/members`, {
+    const createRes = await fetch(`${rest.origin}/rest/v1/members`, {
       method: "POST",
-      headers: { ...HEADERS(), Prefer: "return=representation" },
+      headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=representation" },
       body: JSON.stringify({
         email,
         name: name || null,
@@ -77,13 +71,14 @@ export async function GET(req: NextRequest) {
     const email = new URL(req.url).searchParams.get("email");
     if (!email) return NextResponse.json({ error: "email krävs" }, { status: 400 });
 
-    if (!SUPABASE_URL || !SUPABASE_KEY) {
+    const rest = getSupabaseRest();
+    if (!rest) {
       return NextResponse.json({ member: null });
     }
 
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/members?email=eq.${encodeURIComponent(email)}&select=*&limit=1`,
-      { headers: HEADERS() }
+      `${rest.origin}/rest/v1/members?email=eq.${encodeURIComponent(email)}&select=*&limit=1`,
+      { headers: rest.headers }
     );
     const data = await res.json();
     return NextResponse.json({ member: data?.[0] || null });

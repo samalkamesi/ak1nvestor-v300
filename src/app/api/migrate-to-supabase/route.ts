@@ -6,15 +6,15 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+import { getSupabaseRest } from "@/lib/supabase-rest";
 
 async function supabaseInsert(table: string, rows: any[]) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+  const rest = getSupabaseRest();
+  if (!rest) throw new Error("Supabase ej validerad");
+  const res = await fetch(`${rest.origin}/rest/v1/${table}`, {
     method: "POST",
     headers: {
-      "apikey": SUPABASE_KEY,
-      "Authorization": `Bearer ${SUPABASE_KEY}`,
+      ...rest.headers,
       "Content-Type": "application/json",
       "Prefer": "return=minimal",
     },
@@ -27,21 +27,21 @@ async function supabaseInsert(table: string, rows: any[]) {
 }
 
 async function supabaseDeleteAll(table: string) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=neq.00000000-0000-0000-0000-000000000000`, {
+  const rest = getSupabaseRest();
+  if (!rest) throw new Error("Supabase ej validerad");
+  const res = await fetch(`${rest.origin}/rest/v1/${table}?id=neq.00000000-0000-0000-0000-000000000000`, {
     method: "DELETE",
-    headers: {
-      "apikey": SUPABASE_KEY,
-      "Authorization": `Bearer ${SUPABASE_KEY}`,
-    },
+    headers: rest.headers,
   });
 }
 
 async function supabaseUpsert(table: string, row: any, onConflict: string) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+  const rest = getSupabaseRest();
+  if (!rest) throw new Error("Supabase ej validerad");
+  const res = await fetch(`${rest.origin}/rest/v1/${table}?on_conflict=${onConflict}`, {
     method: "POST",
     headers: {
-      "apikey": SUPABASE_KEY,
-      "Authorization": `Bearer ${SUPABASE_KEY}`,
+      ...rest.headers,
       "Content-Type": "application/json",
       "Prefer": `return=minimal,resolution=merge-duplicates`,
     },
@@ -69,8 +69,9 @@ export async function GET(req: Request) {
     );
   }
 
-  if (!SUPABASE_URL || !SUPABASE_KEY) {
-    return NextResponse.json({ error: "Supabase env vars missing" }, { status: 500 });
+  const rest = getSupabaseRest();
+  if (!rest) {
+    return NextResponse.json({ error: "Supabase env vars missing eller ogiltig värd" }, { status: 500 });
   }
 
   const results: any = {

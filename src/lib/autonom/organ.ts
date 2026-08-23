@@ -13,6 +13,8 @@
  * 6. FAIL-SAFE     — Supabase är VALFRITT: utan konfig körs organen ändå (ren rapport).
  */
 
+import { getSupabaseRest } from "@/lib/supabase-rest";
+
 export type OrganFinding = {
   organ: string;
   status: "ok" | "warning" | "error";
@@ -32,25 +34,6 @@ export type OrganReport = {
 const MAX_LOG_ROWS = 500;
 const MAX_LOG_AGE_DAYS = 30;
 const LOG_TABLE = "system_events";
-
-function env(name: string): string {
-  return process.env[name] || "";
-}
-
-function supabaseRestConfig() {
-  const url = env("NEXT_PUBLIC_SUPABASE_URL");
-  const key = env("SUPABASE_SERVICE_ROLE_KEY");
-  if (!url || !key) return null;
-  let origin: string;
-  try {
-    const u = new URL(url);
-    if (u.protocol !== "https:") return null;
-    origin = u.origin;
-  } catch {
-    return null;
-  }
-  return { origin, headers: { apikey: key, Authorization: `Bearer ${key}` } };
-}
 
 // ── Organ 1: HÄLSA — integritet i statiskt innehåll ────────────────────────
 
@@ -270,7 +253,7 @@ export async function runOrgans(io: {
   }
   if (decisions.length === 0) decisions.push("Systemet optimalt — ingen åtgärd krävs");
 
-  const sb = supabaseRestConfig();
+  const sb = getSupabaseRest();
   const retention = await organRetention(sb);
 
   // EN loggrad per körning — bounded write (endast om Supabase + tabell finns)
@@ -295,7 +278,7 @@ export async function runOrgans(io: {
 
 /** Läser senaste loggraderna (för /api/autonom/status). */
 export async function recentOrganLogs(limit = 20) {
-  const sb = supabaseRestConfig();
+  const sb = getSupabaseRest();
   if (!sb) return [];
   try {
     const res = await fetch(

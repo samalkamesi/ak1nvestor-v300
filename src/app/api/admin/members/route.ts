@@ -3,25 +3,19 @@ import { NextRequest, NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-
-const HEADERS = () => ({
-  apikey: SUPABASE_KEY,
-  Authorization: `Bearer ${SUPABASE_KEY}`,
-  "Content-Type": "application/json",
-});
+import { getSupabaseRest } from "@/lib/supabase-rest";
 
 /** GET /api/admin/members — lista alla medlemmar */
 export async function GET() {
-  if (!SUPABASE_URL || !SUPABASE_KEY) {
+  const rest = getSupabaseRest();
+  if (!rest) {
     return NextResponse.json({ members: [] });
   }
 
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/members?select=*&order=created_at.desc`,
-      { headers: HEADERS() }
+      `${rest.origin}/rest/v1/members?select=*&order=created_at.desc`,
+      { headers: rest.headers }
     );
     const members = await res.json();
 
@@ -29,8 +23,8 @@ export async function GET() {
     const membersWithCounts = await Promise.all(
       (members || []).map(async (m: any) => {
         const portfolioRes = await fetch(
-          `${SUPABASE_URL}/rest/v1/client_portfolios?member_id=eq.${m.id}&select=id,analysis_status`,
-          { headers: HEADERS() }
+          `${rest.origin}/rest/v1/client_portfolios?member_id=eq.${m.id}&select=id,analysis_status`,
+          { headers: rest.headers }
         );
         const portfolios = await portfolioRes.json();
         return {

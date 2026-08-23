@@ -61,6 +61,27 @@ export const metadata: Metadata = {
   },
 };
 
+/** Amber markering på allt utom produktion — omöjligt att förväxla miljöer. */
+function StagingBanner() {
+  return (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `(${(function () {
+          var host = location.hostname;
+          if (host === "lab.ak1nvestor.com" || host === "localhost" || host === "127.0.0.1") return;
+          var b = document.createElement("div");
+          b.textContent = "⚠ TESTMILJÖ (B) — inte produktion · " + host;
+          b.style.cssText =
+            "background:#b45309;color:#fffdf7;text-align:center;padding:6px 12px;font-size:12px;font-weight:600;letter-spacing:.08em";
+          document.body && document.body.prepend
+            ? document.body.prepend(b)
+            : document.addEventListener("DOMContentLoaded", function () { document.body.prepend(b); });
+        }).toString()})();`,
+      }}
+    />
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -71,6 +92,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground paper-texture`}
       >
+        <StagingBanner />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

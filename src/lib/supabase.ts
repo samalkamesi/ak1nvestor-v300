@@ -25,8 +25,7 @@ export const supabaseAdmin: SupabaseClient | null =
 
 export const dbConfig = {
   isSupabase: isSupabaseConfigured,
-  isPrisma: true,
-  backend: isSupabaseConfigured ? "supabase+prisma" : "prisma-sqlite",
+  backend: isSupabaseConfigured ? "supabase" : "json-files",
 };
 
 export const TABLES = {

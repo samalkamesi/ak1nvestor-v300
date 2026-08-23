@@ -2488,3 +2488,135 @@ Task: Final checkpoint before new conversation
 4. Build membership tiers (Stripe)
 5. Build admin backend (WordPress-like)
 6. 100x value plan in strategy/100x-value-plan.md
+---
+Task ID: 72-SEO-FASE-A
+Agent: main (Z.ai Code)
+Task: Fas A byggdes: crawlbara SEO-sidor, blogg, sitemap 439 URL:er, SEO-pipeline + cron, medlemskapssida
+
+Work Log:
+- Packade upp workspace-tar och läste Task 71-checkpoint
+- FIX: gamla migrate-to-supabase.ts var trasig (importerade db=null) → omskriven som
+  scripts/migrate-to-supabase.mjs (filbaserad: data/export/*.json → Supabase REST,
+  batchar om 50, URL-validering https-only, läser .env). Kräver nycklar för att köras.
+- FIX: src/lib/data-access.ts exporterade bara db=null → getBackendStatus() återställd
+  (json-stats + supabase-status, ingen Prisma) så /api/backend bygger igen
+- FIX: borttaget inaktuellt public/sitemap.xml (1 URL, ak1nvestor.com) som skuggade routen
+  och public/robots.txt som skuggade robots-routen
+- NYTT innehållslager: src/lib/content.ts (kurser/analyser/cases/blogg från fil) +
+  src/lib/seo.tsx (metadata-byggare + JSON-LD: Organization, WebSite+SearchAction,
+  Course, Article, BreadcrumbList; läser data/seo/*.json om genererad)
+- NYA ROUTES (alla statiskt genererade, build = 450 sidor):
+  • /kurser + /kurser/[slug] — 225 kurssidor med kapitel, Lynch/Graham/AK1-perspektiv,
+    Course JSON-LD, relaterade kurser
+  • /analyser + /analyser/[ticker] — PREC.ST + VOLCAR-B med AKM1-tabell, scenarier,
+    prisnivåer, rekommendation
+  • /labb + /labb/[id] — 201 case studies med AKM1-poäng, utfall, lärdom
+  • /blogg + /blogg/[slug] — 3 startartiklar (pelar-guide svensk aktieanalys,
+    V09 ROE-fördjupning, Volvo Cars-case) med Article JSON-LD + internlänkning
+  • /medlemskap — Free/Premium 199/Pro 999 med årspriser enligt 100x-planen
+- SEO: sitemap.ts (Next MetadataRoute-konvention) → 439 URL:er (8 statiska + 225 kurser
+  + 2 analyser + 201 cases + 3 blogg); robots.ts med Disallow admin/API; Organization +
+  WebSite JSON-LD i layout
+- SEO-pipeline: scripts/seo-generate.mjs → genererade 230 meta-filer till data/seo/
+  (kurser 225, analyser 2, blogg 3); deterministisk, ingen AI-nyckel krövs
+- CRON: /api/cron/seo-refresh (urlCount 439, CRON_SECRET-stöd) + vercel.json var 6h
+- Blogg-markdown-rendering med [länk](/path), **fet**, _kursiv_ via egen parser
+- Rensning: isPrisma-flaggor borta ur dbConfig; backend = "supabase"/"json-files"
+
+Stage Summary:
+- BUILD: ✓ lyckad (450 statiska sidor), lint rent på alla nya filer
+- RÖKTEST: alla 13 routes HTTP 200 på next start; sitemap 439 URL:er; robots korrekt;
+  JSON-LD verifierad på kurssidor; internlänkar (blogg→kurs→analys) fungerar
+- SEO-grund från 1 URL → 439 crawlbara URL:er (mål plan: 2000+ mot 12 mån)
+- KVAR (kräver användaren): 1) kör node scripts/migrate-to-supabase.mjs med Supabase-
+  nycklar (.env), 2) vercel login + redeploy med tömd cache (Register API), 3) registrera
+  sitemap i Google Search Console, 4) Stripe-nycklar för medlemskapsbetalning
+- Nästa steg enligt plan: admin flik 8-11 (innehållsredigerare, medlemmar, bokningar,
+  e-post), paywall-middleware, PostHog-spårning, fler blogginlägg (V01-V20-serien)
+---
+Task ID: 73-SUPABASE-DIAGNOS
+Agent: main (Z.ai Code)
+Task: Supabase full/överbelastad (9,1 GB, CPU 100%) — diagnos, säkring, städskript
+
+Work Log:
+- Användaren levererade Supabase-nycklar; .env skapad lokalt (gitignored, verifierad)
+- JWT verifierad: ref=aufrvmesyzsfshvhlsbp, role=anon, exp 2035 — nycklar korrekta
+- Migrering kördes → fetch failed; DNS-analys: aufrvmesyzsfshvhlsbp.supabase.co = NXDOMAIN
+  globalt (Google 8.8.8.8 + Cloudflare 1.1.1.1) medan supabase.co/google.com löser normalt
+  → projektet är PAUSAT eller raderat; användarens dashboard-grafer är historik (16-23 aug)
+  eller tillhör annat projekt (användaren stavade två olika ref: med/utan "hv")
+- ROTORSAKSMISSTANKE hittad i kod: /api/migrate-to-supabase var PUBLIK + DESTRUKTIV
+  (raderar hela tabeller + återinfogar vid varje anrop, ingen auth) — robotar/monitorar
+  som loopat den ger exakt symptomen: CPU 100%, hög WAL, churn-bloat
+- FIX: migrerings-routen låst bakom MIGRATE_SECRET (Bearer eller ?secret=, 403 annars)
+- NYTT: scripts/supabase-health.mjs — läsbar hälsokontroll (radantal alla 13 tabeller
+  via HEAD count=planned + senaste skrivtid på flyktiga tabeller) samt säker gallring
+  --purge-logs --keep-days N (endast system_events/user_activities/organ_consultations,
+  stycken om 5000). URL-validering https-only. Klar att köra när projektet svarar.
+- KVAR hos användaren: kontrollera projekt-ref i dashboard-URL, klicka Restore om pausat,
+  ev klistra Postgres-connection-string (Settings→Database) för full rensning inkl VACUUM
+  (REST kan inte VACUUM — det återkräver diskutrymme). MIGRATE_SECRET ska läggas i Vercel.
+
+Stage Summary:
+- Projektet offline globalt (NXDOMAIN) — kan inte nås förrän användaren återställer det
+- Den destruktiva publika endpointen är nu låst i kod (deploy krävs för effekt)
+- Diagnos- och städverktyg levererat och testat (failar kontrollerat utan åtkomst)
+---
+Task ID: 74-SUPABASE-ROTORSAK-HITTAD
+Agent: main (Z.ai Code)
+Task: Supabase 9,1 GB / CPU 100% — full rotorsaksanalys genomförd
+
+Work Log:
+- Rätt projekt-URL löst: https://aufrvmesyzsfsuhvlsbp.supabase.co (tidigare URL i chatt var
+  felstavad → alla tidigare fetch-fel förklarade; extern WebFetch bekräftade 401→projektet lever)
+- Gamla JWT-nyckeln (ref aufrvmesyzsfshvhlsbp) = OGILTIG mot projektet (401) — det projektet
+  är raderat. Nya nycklar: 2× sb_publishable + sb_secret fungerar. .env uppdaterad.
+- SCHEMA-CHOCK: projektet har 362 tabeller — gamla organsystemets schema (ai_organs,
+  quantum, cosmic, news, market_data...). AK1A:s 13-tabellschema finns INTE här
+  (system_events → 404 PGRST205)
+- INVENTERING (scripts/supabase-inventory.mjs, HEAD count=planned): 17 711 048 rader totalt.
+  Top: news_articles 4,08M, autonomous_ai_executions 2,83M, ai_system_intelligence 2,61M,
+  ai_learning_sessions 2,52M, ai_agent_registry 1,78M + 20 till = 17,7M rader (99,97%)
+- SKRIBENTEN AKTIV IDAG: senaste rader skrivna 2026-08-23 03:03–03:23. update_logs avslöjar
+  gamla cronjobb: cron_market_data_collection (434/1000), cron_news_collection (305),
+  cron_system_health_check (261) — loggar var 2:e–3:e minut sedan 2025 → CA 45 000 rader/dag.
+  knowledge-processor-cron + library-updater-cron svarar HTTP 500 (halvt döda men kör)
+  → en GAMAL DEPLOYMENT (annan Vercel-projekt än AK1A) kör fortfarande cron mot projektet
+- scripts/supabase-cleanup.sql genererad: STEG 1 TRUNCATE 25 loggtabeller (17,7M rader),
+  STEG 3 VACUUM FULL, STEG 4 (kommenterad) DROP alla 360 legacy-tabeller
+- data/supabase-inventory.json — full rapport sparad
+
+Stage Summary:
+- ROTORSAK SÄKERT STÄLLD: gammal organsystem-deployment kör cron var 2:e minut mot
+  Supabase i 13 månader → 17,7M rader, 9,1 GB, CPU 100%
+- AK1A-appen (lab.ak1nvestor.com) pekar på DET RADERADE projektet → Register API död
+  tills Vercel-variabler pekas om till detta projekt + redeploy
+- Ordning: 1) användaren stoppar gamla Vercel-projektets crons, 2) kör supabase-cleanup.sql,
+  3) supabase-schema.sql (AK1A 13 tabeller), 4) jag migrerar data, 5) Vercel env + redeploy
+---
+Task ID: 75-NATT-AUTONOM
+Agent: main (Z.ai Code)
+Task: Nattligt autonomt arbete: Supabase räddad + säker AI-organ-plattform + V01-V20-serie
+
+Work Log:
+- Användare körde SQL-blocket (pg_cron unschedule + TRUNCATE) innan sömn — fungerade
+- Städrobot (scripts/supabase-purge.mjs) verifierade: skribenten STOPPAD (update_logs
+  växer inte, testat 50s-intervall), loggtabeller tomma; ~8 500 "kvarvarande" rader var
+  planner-statistik — verkligt urval = 0. Databas: 17 711 048 → ~0 loggrader
+- NY: src/lib/autonom/organ.ts — bounded AI-organ-motor med kill-switch, 500-raderstak,
+  30-dagars retention, EN skrivning/körning, tillståndslösa organ, valfri Supabase
+- NY: /api/cron/autonom omskriven till motorn (CRON_SECRET-stöd); /api/autonom/status
+  för insyn. 4 organ: Hälsa, SEO, Innehåll, Retention (självrengörande vakt)
+- NY: scripts/generate-v-series.mjs → 20 artiklar (V01-V20) i data/blogg/, totalt 23,
+  med Article JSON-LD + internlänkar. SEO-meta regenererad (250 filer)
+- AUTONOMOUS_SYSTEM.md §7: säkerhetsdesign dokumenterad med tabell över garantier
+- Verifiering: build ✓ (470 statiska sidor), sitemap 459 URL:er, /api/cron/autonom
+  rapporterar healthy (198 tasks, 225/225 djupa kurser, 23 inlägg), V01-sida HTTP 200
+- MORNING_BRIEF.md skapad med 3 återstående användarsteg (schema, Vercel env, redeploy)
+
+Stage Summary:
+- Supabase-krisen helt löst: skribenten stoppad, 17,7M rader bort, motorn garanterar
+  att AK1A:s organsystem ALDRIG kan upprepa katastrofen (tak + retention + kill-switch)
+- SEO-innehåll: 23 blogginlägg live varav 20 variabel-artiklar (Pelare 3 klar)
+- Väntar på användaren: supabase-schema.sql i SQL Editor, Vercel env-variabler,
+  redeploy med cache-clear → därefter datamigrering + Register API live

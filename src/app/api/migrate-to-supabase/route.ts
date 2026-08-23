@@ -53,7 +53,22 @@ async function supabaseUpsert(table: string, row: any, onConflict: string) {
   }
 }
 
-export async function GET() {
+export async function GET(req: Request) {
+  // DESTRUKTIV endpoint (raderar + skriver om tabeller) — kräver delad hemlighet.
+  // Tillåt Bearer-token eller ?secret=, aldrig öppet anropbar.
+  const secret = process.env.MIGRATE_SECRET;
+  const url = new URL(req.url);
+  const provided =
+    req.headers.get("authorization")?.replace(/^Bearer\s+/i, "") ||
+    url.searchParams.get("secret") ||
+    "";
+  if (!secret || provided !== secret) {
+    return NextResponse.json(
+      { error: "Skyddad endpoint. Kräver MIGRATE_SECRET (Authorization: Bearer … eller ?secret=…)." },
+      { status: 403 }
+    );
+  }
+
   if (!SUPABASE_URL || !SUPABASE_KEY) {
     return NextResponse.json({ error: "Supabase env vars missing" }, { status: 500 });
   }

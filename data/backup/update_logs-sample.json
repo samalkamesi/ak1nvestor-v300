@@ -1,0 +1,12 @@
+[
+ {
+  "id": 170937,
+  "operation_type": "cron_system_health_check",
+  "table_name": "health_monitoring",
+  "records_updated": 1,
+  "execution_time_ms": 50927,
+  "status": "warning",
+  "error_message": "knowledge-processor-cron: HTTP 500; library-updater-cron: HTTP 500",
+  "created_at": "2026-08-23T03:50:54.304+00:00"
+ }
+]

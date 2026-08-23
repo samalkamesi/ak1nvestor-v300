@@ -1,0 +1,20 @@
+[
+ {
+  "health_id": 453062,
+  "timestamp": "2026-08-23T03:50:53.977+00:00",
+  "total_agents": 0,
+  "active_agents": 0,
+  "idle_agents": 0,
+  "failed_agents": 0,
+  "avg_agent_performance": 0,
+  "total_organs": 0,
+  "evolving_organs": 0,
+  "total_services": 0,
+  "system_load": 0,
+  "processing_capacity": 100,
+  "error_rate": 0,
+  "self_improvement_rate": 0,
+  "ecosystem_health_score": 100,
+  "metadata": {}
+ }
+]

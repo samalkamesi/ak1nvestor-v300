@@ -11,6 +11,10 @@
     {
       "path": "/api/cron/expand-courses",
       "schedule": "0 12 * * *"
+    },
+    {
+      "path": "/api/cron/seo-refresh",
+      "schedule": "0 */6 * * *"
     }
   ]
 }

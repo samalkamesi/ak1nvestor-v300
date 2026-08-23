@@ -150,3 +150,31 @@ Nästa deploy inkluderar förbättringarna
 - Mer än 100GB bandwidth/månad
 - Mer än 100h serverless function execution/månad
 - Flera team-medlemmar
+
+---
+
+## 7. Säkerhetsdesign — lärd av 2026-08-kollapsen
+
+> 2026-08-23 upptäcktes att ett ÄLDRE organsystem ("AK1A Gold", dec 2025) under 13 månader
+> skrivit 17 711 048 rader via pg_cron till Supabase: CPU 100%, 9,1 GB disk, hela projektet
+> avstängt. Systemet saknade tak, retention och avstängning. Det nya systemet bygger på
+> motsatsen:
+
+| Princip | Implementering | Garanti |
+|---|---|---|
+| **Kill switch** | `AUTONOM_DISABLED=1` i Vercel env | Hela motorn → no-op omedelbart |
+| **Hårt tak** | `MAX_LOG_ROWS = 500` i `src/lib/autonom/organ.ts` | Aldrig mer än 500 loggrader, någonsin |
+| **Ålderstakt** | `MAX_LOG_AGE_DAYS = 30` | Retention-organet raderar äldre vid varje körning |
+| **En skrivning/körning** | Daglig cron ⇒ ≤ 365 rader/år | Obegränsad tillväxt omöjlig |
+| **Tillståndslösa organ** | Varje körning räknar från grunden | Inga ackumulerande loopar |
+| **Valfri Supabase** | Utan env: ren rapport, noll skrivningar | Beroendefri drift |
+| **Insyn** | `/api/autonom/status` visar gränser + logg | Verifierbar utåt |
+
+### Organ i drift
+1. **HÄLSA** — integritet: mega tasks (198), kurser (225), djupanalys per kurs
+2. **SEO** — bloggfärskhet, föråldrade analyser (>6 mån)
+3. **INNEHÅLL** — identifierar grundaste kursen (nästa expansion)
+4. **RETENTION** — självrengörande vakt: raderar egen gammal logg + överskott över taket
+
+Cron-schema (vercel.json): autonom dagligen 00:00 UTC, expand-courses 12:00 UTC,
+seo-refresh var 6:e timme. Alla tre respekterar CRON_SECRET om det är satt.

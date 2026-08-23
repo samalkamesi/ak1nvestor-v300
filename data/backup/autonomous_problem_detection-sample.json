@@ -1,0 +1,266 @@
+[
+ {
+  "id": "1ce28bca-99af-4378-bc0f-51281354ce5b",
+  "problem_type": "unknown",
+  "severity_level": "high",
+  "component_affected": "autonomous-ai-orchestrator",
+  "problem_description": "HTTP 400: Bad Request",
+  "technical_details": {
+   "details": {
+    "status": 400,
+    "statusText": "Bad Request"
+   },
+   "endpoint": "https://aufrvmesyzsfsuhvlsbp.supabase.co/functions/v1/autonomous-ai-orchestrator",
+   "responseTime": 97,
+   "componentType": "edge-function"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Attempted edge function health check",
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:39.266959+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:39.266959+00:00",
+  "updated_at": "2026-08-23T03:51:39.266959+00:00"
+ },
+ {
+  "id": "065f6a6f-05f7-4620-8d8d-760f97e078f3",
+  "problem_type": "unknown",
+  "severity_level": "low",
+  "component_affected": "minimax-ai-m1",
+  "problem_description": "HTTP 400: Bad Request",
+  "technical_details": {
+   "details": {
+    "status": 400,
+    "statusText": "Bad Request"
+   },
+   "endpoint": "https://aufrvmesyzsfsuhvlsbp.supabase.co/functions/v1/minimax-ai-m1",
+   "responseTime": 108,
+   "componentType": "edge-function"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Attempted edge function health check",
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:39.638916+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:39.638916+00:00",
+  "updated_at": "2026-08-23T03:51:39.638916+00:00"
+ },
+ {
+  "id": "787758a4-0a55-4f8f-ad04-2461b05756d3",
+  "problem_type": "unknown",
+  "severity_level": "low",
+  "component_affected": "education-ai",
+  "problem_description": "HTTP 400: Bad Request",
+  "technical_details": {
+   "details": {
+    "status": 400,
+    "statusText": "Bad Request"
+   },
+   "endpoint": "https://aufrvmesyzsfsuhvlsbp.supabase.co/functions/v1/education-ai",
+   "responseTime": 98,
+   "componentType": "edge-function"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Attempted edge function health check",
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:40.00098+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:40.00098+00:00",
+  "updated_at": "2026-08-23T03:51:40.00098+00:00"
+ },
+ {
+  "id": "d2c84598-8000-4983-9635-291b42bfc943",
+  "problem_type": "unknown",
+  "severity_level": "low",
+  "component_affected": "user-analytics",
+  "problem_description": "HTTP 401: Unauthorized",
+  "technical_details": {
+   "details": {
+    "status": 401,
+    "statusText": "Unauthorized"
+   },
+   "endpoint": "https://aufrvmesyzsfsuhvlsbp.supabase.co/functions/v1/user-analytics",
+   "responseTime": 170,
+   "componentType": "edge-function"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Attempted edge function health check",
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:40.554334+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:40.554334+00:00",
+  "updated_at": "2026-08-23T03:51:40.554334+00:00"
+ },
+ {
+  "id": "6ebad85a-8fb1-4951-a777-816a1c044e58",
+  "problem_type": "not_found",
+  "severity_level": "critical",
+  "component_affected": "frontend-/dashboard",
+  "problem_description": "HTTP 404: Not Found",
+  "technical_details": {
+   "details": {
+    "status": 404,
+    "statusText": "Not Found"
+   },
+   "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/dashboard",
+   "responseTime": 90,
+   "componentType": "frontend-route"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:48.842415+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:48.842415+00:00",
+  "updated_at": "2026-08-23T03:51:48.842415+00:00"
+ },
+ {
+  "id": "2ed2bafa-9efc-4b8a-b703-3361a14dd9fa",
+  "problem_type": "not_found",
+  "severity_level": "critical",
+  "component_affected": "frontend-/market",
+  "problem_description": "HTTP 404: Not Found",
+  "technical_details": {
+   "details": {
+    "status": 404,
+    "statusText": "Not Found"
+   },
+   "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/market",
+   "responseTime": 18,
+   "componentType": "frontend-route"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:48.985451+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:48.985451+00:00",
+  "updated_at": "2026-08-23T03:51:48.985451+00:00"
+ },
+ {
+  "id": "9c1c6b35-6c6c-45c5-a307-153410547732",
+  "problem_type": "not_found",
+  "severity_level": "critical",
+  "component_affected": "frontend-/ecosystem",
+  "problem_description": "HTTP 404: Not Found",
+  "technical_details": {
+   "details": {
+    "status": 404,
+    "statusText": "Not Found"
+   },
+   "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/ecosystem",
+   "responseTime": 14,
+   "componentType": "frontend-route"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:49.158544+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:49.158544+00:00",
+  "updated_at": "2026-08-23T03:51:49.158544+00:00"
+ },
+ {
+  "id": "cce5d7e2-edfd-41b2-b239-45d5d51a2592",
+  "problem_type": "not_found",
+  "severity_level": "high",
+  "component_affected": "frontend-/ai-control",
+  "problem_description": "HTTP 404: Not Found",
+  "technical_details": {
+   "details": {
+    "status": 404,
+    "statusText": "Not Found"
+   },
+   "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/ai-control",
+   "responseTime": 14,
+   "componentType": "frontend-route"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:49.30709+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:49.30709+00:00",
+  "updated_at": "2026-08-23T03:51:49.30709+00:00"
+ },
+ {
+  "id": "4d8f0b11-0dcb-472b-96f2-1649520cf9c8",
+  "problem_type": "not_found",
+  "severity_level": "high",
+  "component_affected": "frontend-/portfolio",
+  "problem_description": "HTTP 404: Not Found",
+  "technical_details": {
+   "details": {
+    "status": 404,
+    "statusText": "Not Found"
+   },
+   "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/portfolio",
+   "responseTime": 13,
+   "componentType": "frontend-route"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:49.446939+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:49.446939+00:00",
+  "updated_at": "2026-08-23T03:51:49.446939+00:00"
+ },
+ {
+  "id": "86c24168-3ec8-44cf-b2ef-4020fcbc5856",
+  "problem_type": "not_found",
+  "severity_level": "low",
+  "component_affected": "frontend-/education-center",
+  "problem_description": "HTTP 404: Not Found",
+  "technical_details": {
+   "details": {
+    "status": 404,
+    "statusText": "Not Found"
+   },
+   "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/education-center",
+   "responseTime": 13,
+   "componentType": "frontend-route"
+  },
+  "auto_fix_attempted": true,
+  "auto_fix_success": false,
+  "fix_actions": [
+   "Auto-fix attempted but component still reporting issues"
+  ],
+  "status": "detected",
+  "detected_at": "2026-08-23T03:51:49.597144+00:00",
+  "resolved_at": null,
+  "created_at": "2026-08-23T03:51:49.597144+00:00",
+  "updated_at": "2026-08-23T03:51:49.597144+00:00"
+ }
+]

@@ -1,82 +1,63 @@
-import { NextResponse } from "next/server";
+import type { MetadataRoute } from "next";
+import { getCourses, getAnalyses, getCaseStudies, getBlogPosts } from "@/lib/content";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
-/** GET /sitemap.xml — dynamic sitemap from all content */
-export async function GET() {
+/** /sitemap.xml — alla crawlbara sidor genererade från statiskt innehåll */
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://lab.ak1nvestor.com";
+  const now = new Date();
 
-  // Static pages
-  const staticPages = [
-    "",
-    "/#analyser",
-    "/#aktier",
-    "/#kurser",
-    "/#labb",
-    "/#fas3",
-    "/#strategi",
-    "/#om-oss",
-    "/#portal",
+  const entries: MetadataRoute.Sitemap = [
+    { url: baseUrl, changeFrequency: "weekly", priority: 1, lastModified: now },
+    { url: `${baseUrl}/kurser`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
+    { url: `${baseUrl}/analyser`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
+    { url: `${baseUrl}/labb`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
+    { url: `${baseUrl}/blogg`, changeFrequency: "daily", priority: 0.9, lastModified: now },
+    { url: `${baseUrl}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${baseUrl}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${baseUrl}/terms`, changeFrequency: "yearly", priority: 0.2 },
   ];
 
-  // Stock analyses
-  const analyses = ["PREC.ST", "VOLCAR-B"];
-
-  // AKM1 indicators (V01-V20)
-  const indicators = Array.from({ length: 20 }, (_, i) => `V${String(i + 1).padStart(2, "0")}`);
-
-  // Course categories
-  const courseCategories = [
-    "AKM1 20 VARIABLER",
-    "KUNSKAPSMARKNAD",
-    "TEKNISK ANALYS",
-    "PRAKTISKA CASE",
-    "RISKHANTERING",
-    "PORTFOLJHANTERING",
-    "SEKTORANALYS",
-    "BETEENDEFINANS",
-    "MAKROEKONOMI",
-    "UTDELNINGSSTRATEGI",
-  ];
-
-  let urls = "";
-
-  // Static pages
-  for (const page of staticPages) {
-    urls += `
-  <url>
-    <loc>${baseUrl}${page}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`;
+  // 225 kurser
+  for (const slug of Object.keys(getCourses())) {
+    entries.push({
+      url: `${baseUrl}/kurser/${slug}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      lastModified: now,
+    });
   }
 
-  // Analyses
-  for (const ticker of analyses) {
-    urls += `
-  <url>
-    <loc>${baseUrl}/api/analysis/${ticker}</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>`;
+  // Analyser (PREC.ST, VOLCAR-B, …)
+  for (const a of getAnalyses()) {
+    entries.push({
+      url: `${baseUrl}/analyser/${encodeURIComponent(a.ticker)}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      lastModified: now,
+    });
   }
 
-  // Mega tasks API
-  urls += `
-  <url>
-    <loc>${baseUrl}/api/mega/tasks</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>`;
+  // 201 case studies
+  for (const c of getCaseStudies()) {
+    entries.push({
+      url: `${baseUrl}/labb/${c.id}`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      lastModified: now,
+    });
+  }
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}
-</urlset>`;
+  // Blogginlägg
+  for (const p of getBlogPosts()) {
+    entries.push({
+      url: `${baseUrl}/blogg/${p.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      lastModified: new Date(p.updatedAt || p.publishedAt),
+    });
+  }
 
-  return new NextResponse(sitemap, {
-    headers: {
-      "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=3600",
-    },
-  });
+  return entries;
 }

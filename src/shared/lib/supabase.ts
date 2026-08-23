@@ -1,7 +1,7 @@
 export const isSupabaseConfigured = false;
 export const supabase = null;
 export const supabaseAdmin = null;
-export const dbConfig = { isSupabase: false, isPrisma: true, backend: "prisma-sqlite" };
+export const dbConfig = { isSupabase: false, backend: "json-files" };
 export const TABLES = {
   INDICATORS: "ak1_indicators",
   CASES: "case_studies",

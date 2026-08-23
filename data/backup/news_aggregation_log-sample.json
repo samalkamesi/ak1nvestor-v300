@@ -1,0 +1,13 @@
+[
+ {
+  "id": "fab6418a-9a35-491c-933a-5afc0d3940d4",
+  "source_id": "9e2cbcfa-e419-411b-a641-4b508514dc75",
+  "articles_fetched": 40,
+  "articles_processed": 40,
+  "articles_stored": 40,
+  "processing_time_ms": 100,
+  "errors": null,
+  "status": "success",
+  "created_at": "2026-08-23T03:51:43.375812+00:00"
+ }
+]

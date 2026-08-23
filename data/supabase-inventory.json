@@ -1,0 +1,1455 @@
+{
+  "generatedAt": "2026-08-23T03:21:32.370Z",
+  "totalTables": 362,
+  "totalRows": 17711048,
+  "counts": [
+    {
+      "t": "news_articles",
+      "n": 4083844
+    },
+    {
+      "t": "autonomous_ai_executions",
+      "n": 2830197
+    },
+    {
+      "t": "ai_system_intelligence",
+      "n": 2612737
+    },
+    {
+      "t": "ai_learning_sessions",
+      "n": 2516311
+    },
+    {
+      "t": "ai_agent_registry",
+      "n": 1777701
+    },
+    {
+      "t": "autonomous_problem_detection",
+      "n": 943766
+    },
+    {
+      "t": "market_data",
+      "n": 660148
+    },
+    {
+      "t": "ai_self_improvement_logs",
+      "n": 454721
+    },
+    {
+      "t": "ai_ecosystem_health",
+      "n": 452571
+    },
+    {
+      "t": "ai_prediction_metrics",
+      "n": 371309
+    },
+    {
+      "t": "news_aggregation_log",
+      "n": 311304
+    },
+    {
+      "t": "update_logs",
+      "n": 171772
+    },
+    {
+      "t": "ai_organ_evolution_history",
+      "n": 93097
+    },
+    {
+      "t": "ai_service_generation_log",
+      "n": 92899
+    },
+    {
+      "t": "ai_organ_registry",
+      "n": 92886
+    },
+    {
+      "t": "ai_email_reports",
+      "n": 78552
+    },
+    {
+      "t": "ai_error_tracking",
+      "n": 74481
+    },
+    {
+      "t": "ai_user_interactions",
+      "n": 38269
+    },
+    {
+      "t": "ai_quality_metrics",
+      "n": 23294
+    },
+    {
+      "t": "neural_cache_stats",
+      "n": 5998
+    },
+    {
+      "t": "collection_jobs",
+      "n": 5581
+    },
+    {
+      "t": "ai_hourly_metrics",
+      "n": 4979
+    },
+    {
+      "t": "analysis_history",
+      "n": 3902
+    },
+    {
+      "t": "swarm_coordination",
+      "n": 3272
+    },
+    {
+      "t": "ai_organs",
+      "n": 1605
+    },
+    {
+      "t": "autonomous_system_evolution",
+      "n": 1359
+    },
+    {
+      "t": "agent_swarm",
+      "n": 1000
+    },
+    {
+      "t": "learning_feedback_loops",
+      "n": 714
+    },
+    {
+      "t": "ai_performance_metrics",
+      "n": 437
+    },
+    {
+      "t": "autonomous_ai_learning",
+      "n": 332
+    },
+    {
+      "t": "ai_daily_summary",
+      "n": 294
+    },
+    {
+      "t": "ai_generated_courses",
+      "n": 154
+    },
+    {
+      "t": "education_personalized_content",
+      "n": 141
+    },
+    {
+      "t": "stock_analyses",
+      "n": 120
+    },
+    {
+      "t": "autonomous_learning_steps",
+      "n": 100
+    },
+    {
+      "t": "live_stock_data",
+      "n": 84
+    },
+    {
+      "t": "board_decisions",
+      "n": 77
+    },
+    {
+      "t": "news_course_mappings",
+      "n": 75
+    },
+    {
+      "t": "board_meetings",
+      "n": 58
+    },
+    {
+      "t": "knowledge_cache",
+      "n": 46
+    },
+    {
+      "t": "ai_messages",
+      "n": 35
+    },
+    {
+      "t": "analysis_quotas",
+      "n": 33
+    },
+    {
+      "t": "ai_context",
+      "n": 33
+    },
+    {
+      "t": "learning_rewards",
+      "n": 32
+    },
+    {
+      "t": "system_health_monitoring",
+      "n": 31
+    },
+    {
+      "t": "user_learning_profile",
+      "n": 31
+    },
+    {
+      "t": "user_portfolios",
+      "n": 27
+    },
+    {
+      "t": "ai_system_health",
+      "n": 23
+    },
+    {
+      "t": "global_news_sources",
+      "n": 20
+    },
+    {
+      "t": "ai_conversations",
+      "n": 18
+    },
+    {
+      "t": "response_performance",
+      "n": 18
+    },
+    {
+      "t": "analysis_requests",
+      "n": 16
+    },
+    {
+      "t": "system_status",
+      "n": 15
+    },
+    {
+      "t": "build_guides",
+      "n": 13
+    },
+    {
+      "t": "educational_modules",
+      "n": 13
+    },
+    {
+      "t": "profiles",
+      "n": 11
+    },
+    {
+      "t": "education_user_progress",
+      "n": 11
+    },
+    {
+      "t": "investments",
+      "n": 10
+    },
+    {
+      "t": "ai_organ_performance_metrics",
+      "n": 9
+    },
+    {
+      "t": "quality_metrics",
+      "n": 8
+    },
+    {
+      "t": "conversation_context",
+      "n": 8
+    },
+    {
+      "t": "master_subjects",
+      "n": 8
+    },
+    {
+      "t": "reality_parameters",
+      "n": 8
+    },
+    {
+      "t": "education_ai_organs",
+      "n": 8
+    },
+    {
+      "t": "system_components",
+      "n": 7
+    },
+    {
+      "t": "ecosystem_roles",
+      "n": 7
+    },
+    {
+      "t": "generated_content",
+      "n": 7
+    },
+    {
+      "t": "education_courses",
+      "n": 6
+    },
+    {
+      "t": "trend_analysis",
+      "n": 6
+    },
+    {
+      "t": "knowledge_sources",
+      "n": 6
+    },
+    {
+      "t": "data_sources",
+      "n": 6
+    },
+    {
+      "t": "swedish_stock_prices",
+      "n": 5
+    },
+    {
+      "t": "knowledge_extracts",
+      "n": 5
+    },
+    {
+      "t": "market_history",
+      "n": 5
+    },
+    {
+      "t": "governance_policies",
+      "n": 5
+    },
+    {
+      "t": "agent_activities",
+      "n": 5
+    },
+    {
+      "t": "edu_learning_progress",
+      "n": 5
+    },
+    {
+      "t": "safety_protocols",
+      "n": 5
+    },
+    {
+      "t": "edu_learning_paths",
+      "n": 5
+    },
+    {
+      "t": "user_credits",
+      "n": 4
+    },
+    {
+      "t": "investment_strategies",
+      "n": 4
+    },
+    {
+      "t": "news_sources_config",
+      "n": 4
+    },
+    {
+      "t": "autonomous_learning_paths",
+      "n": 4
+    },
+    {
+      "t": "case_studies",
+      "n": 4
+    },
+    {
+      "t": "webinars",
+      "n": 4
+    },
+    {
+      "t": "user_step_progress",
+      "n": 4
+    },
+    {
+      "t": "strategic_goals",
+      "n": 3
+    },
+    {
+      "t": "subscription_tiers",
+      "n": 3
+    },
+    {
+      "t": "ai_decisions",
+      "n": 3
+    },
+    {
+      "t": "subject_expansion_log",
+      "n": 3
+    },
+    {
+      "t": "ai_orchestration_cells",
+      "n": 3
+    },
+    {
+      "t": "course_updates",
+      "n": 3
+    },
+    {
+      "t": "ai_slo_definitions",
+      "n": 3
+    },
+    {
+      "t": "user_profiles",
+      "n": 3
+    },
+    {
+      "t": "portfolios",
+      "n": 3
+    },
+    {
+      "t": "ai_improvement_recommendations",
+      "n": 3
+    },
+    {
+      "t": "courses",
+      "n": 3
+    },
+    {
+      "t": "validation_logs",
+      "n": 2
+    },
+    {
+      "t": "financial_research",
+      "n": 2
+    },
+    {
+      "t": "quantum_state",
+      "n": 2
+    },
+    {
+      "t": "leadership_interface_logs",
+      "n": 2
+    },
+    {
+      "t": "ai_lifecycle_policies",
+      "n": 2
+    },
+    {
+      "t": "ai_model_training_log",
+      "n": 2
+    },
+    {
+      "t": "user_roles",
+      "n": 2
+    },
+    {
+      "t": "ai_coach_sessions",
+      "n": 2
+    },
+    {
+      "t": "governance_decisions",
+      "n": 2
+    },
+    {
+      "t": "system_health_metrics",
+      "n": 2
+    },
+    {
+      "t": "ai_deployed_models",
+      "n": 2
+    },
+    {
+      "t": "post_comments",
+      "n": 1
+    },
+    {
+      "t": "system_alerts",
+      "n": 1
+    },
+    {
+      "t": "glm_analysis_results",
+      "n": 1
+    },
+    {
+      "t": "predictive_insights",
+      "n": 1
+    },
+    {
+      "t": "collection_metrics",
+      "n": 1
+    },
+    {
+      "t": "backtest_configurations",
+      "n": 1
+    },
+    {
+      "t": "backup_jobs",
+      "n": 1
+    },
+    {
+      "t": "learned_neural_patterns",
+      "n": 1
+    },
+    {
+      "t": "quiz_results",
+      "n": 1
+    },
+    {
+      "t": "ai_performance_logs",
+      "n": 1
+    },
+    {
+      "t": "system_health_predictions",
+      "n": 1
+    },
+    {
+      "t": "ai_assessments",
+      "n": 1
+    },
+    {
+      "t": "dna_profiles",
+      "n": 1
+    },
+    {
+      "t": "cosmic_network_connections",
+      "n": 1
+    },
+    {
+      "t": "autonomous_military_organs",
+      "n": 1
+    },
+    {
+      "t": "ai_eval_gates",
+      "n": 1
+    },
+    {
+      "t": "ai_lifecycle_audit_logs",
+      "n": 1
+    },
+    {
+      "t": "autonomous_organ_status",
+      "n": 1
+    },
+    {
+      "t": "quantum_states",
+      "n": 1
+    },
+    {
+      "t": "content_relevance_optimization",
+      "n": 1
+    },
+    {
+      "t": "neural_interface_metrics",
+      "n": 1
+    },
+    {
+      "t": "market_data_cache",
+      "n": 1
+    },
+    {
+      "t": "oauth_applications",
+      "n": 1
+    },
+    {
+      "t": "quality_analysis_results",
+      "n": 1
+    },
+    {
+      "t": "liver_analysis",
+      "n": 1
+    },
+    {
+      "t": "cosmic_network_nodes",
+      "n": 1
+    },
+    {
+      "t": "glm_instruments",
+      "n": 1
+    },
+    {
+      "t": "ai_improvement_history",
+      "n": 1
+    },
+    {
+      "t": "backtest_trades",
+      "n": 1
+    },
+    {
+      "t": "ai_performance_analytics",
+      "n": 1
+    },
+    {
+      "t": "organ_status",
+      "n": 1
+    },
+    {
+      "t": "quantum_metrics",
+      "n": 1
+    },
+    {
+      "t": "notification_settings",
+      "n": 1
+    },
+    {
+      "t": "ai_improvement_alerts",
+      "n": 1
+    },
+    {
+      "t": "financial_data_storage",
+      "n": 1
+    },
+    {
+      "t": "embedding_jobs",
+      "n": 1
+    },
+    {
+      "t": "user_profiles_extended",
+      "n": 1
+    },
+    {
+      "t": "consciousness_metrics_log",
+      "n": 1
+    },
+    {
+      "t": "retention_policies",
+      "n": 1
+    },
+    {
+      "t": "scheduled_data_validation",
+      "n": 1
+    },
+    {
+      "t": "ai_kpi_metrics",
+      "n": 1
+    },
+    {
+      "t": "ai_model_cache",
+      "n": 1
+    },
+    {
+      "t": "ai_marketing_campaigns",
+      "n": 1
+    },
+    {
+      "t": "ai_feature_suggestions",
+      "n": 1
+    },
+    {
+      "t": "glm_alert_preferences",
+      "n": 1
+    },
+    {
+      "t": "organ_collaboration_logs",
+      "n": 1
+    },
+    {
+      "t": "ai_edge_inference_logs",
+      "n": 1
+    },
+    {
+      "t": "subject_progress",
+      "n": 1
+    },
+    {
+      "t": "competitive_advantage_metrics",
+      "n": 1
+    },
+    {
+      "t": "muscle_simulations",
+      "n": 1
+    },
+    {
+      "t": "webinar_registrations",
+      "n": 1
+    },
+    {
+      "t": "resource_usage",
+      "n": 1
+    },
+    {
+      "t": "ai_self_healing_events",
+      "n": 1
+    },
+    {
+      "t": "edu_user_learning_profiles",
+      "n": 1
+    },
+    {
+      "t": "ai_data_lineage",
+      "n": 1
+    },
+    {
+      "t": "user_preferences",
+      "n": 1
+    },
+    {
+      "t": "backtest_equity_curves",
+      "n": 1
+    },
+    {
+      "t": "course_adaptations",
+      "n": 1
+    },
+    {
+      "t": "user_achievements",
+      "n": 1
+    },
+    {
+      "t": "ai_learning_events",
+      "n": 1
+    },
+    {
+      "t": "ai_divisions",
+      "n": 1
+    },
+    {
+      "t": "liver_risk_scores",
+      "n": 1
+    },
+    {
+      "t": "edu_adaptive_recommendations",
+      "n": 1
+    },
+    {
+      "t": "ai_agent_traces",
+      "n": 1
+    },
+    {
+      "t": "api_usage_logs",
+      "n": 1
+    },
+    {
+      "t": "predictive_recommendations",
+      "n": 1
+    },
+    {
+      "t": "market_analyses",
+      "n": 1
+    },
+    {
+      "t": "ai_agent_realtime_metrics",
+      "n": 1
+    },
+    {
+      "t": "post_reactions",
+      "n": 1
+    },
+    {
+      "t": "market_sentiment",
+      "n": 1
+    },
+    {
+      "t": "analysis_library",
+      "n": 1
+    },
+    {
+      "t": "immune_security_events",
+      "n": 1
+    },
+    {
+      "t": "ai_pdf_documents",
+      "n": 1
+    },
+    {
+      "t": "safety_violations",
+      "n": 1
+    },
+    {
+      "t": "credit_system",
+      "n": 1
+    },
+    {
+      "t": "quantum_processing_logs",
+      "n": 1
+    },
+    {
+      "t": "cross_cultural_sync_metrics",
+      "n": 1
+    },
+    {
+      "t": "user_reading_behavior",
+      "n": 1
+    },
+    {
+      "t": "ai_access_policies",
+      "n": 1
+    },
+    {
+      "t": "analysis_bookmarks",
+      "n": 1
+    },
+    {
+      "t": "ai_compliance_audits",
+      "n": 1
+    },
+    {
+      "t": "cosmic_monitoring_records",
+      "n": 1
+    },
+    {
+      "t": "autonomous_organ_communications",
+      "n": 1
+    },
+    {
+      "t": "ceo_interventions",
+      "n": 1
+    },
+    {
+      "t": "lungs_sync_status",
+      "n": 1
+    },
+    {
+      "t": "ai_board_meetings",
+      "n": 1
+    },
+    {
+      "t": "autonomous_course_evolution",
+      "n": 1
+    },
+    {
+      "t": "consciousness_network_nodes",
+      "n": 1
+    },
+    {
+      "t": "analytiska sidan",
+      "n": 1
+    },
+    {
+      "t": "achievements",
+      "n": 1
+    },
+    {
+      "t": "user_role_assignments",
+      "n": 1
+    },
+    {
+      "t": "glm_portfolio_health",
+      "n": 1
+    },
+    {
+      "t": "ai_content_repository",
+      "n": 1
+    },
+    {
+      "t": "portfolio_positions",
+      "n": 1
+    },
+    {
+      "t": "stock_price_quality_checks",
+      "n": 1
+    },
+    {
+      "t": "mentor_interactions",
+      "n": 1
+    },
+    {
+      "t": "universal_influence_metrics",
+      "n": 1
+    },
+    {
+      "t": "intelligent_routing",
+      "n": 1
+    },
+    {
+      "t": "predictive_ux_analytics",
+      "n": 1
+    },
+    {
+      "t": "admin_users",
+      "n": 1
+    },
+    {
+      "t": "user_knowledge_graph",
+      "n": 1
+    },
+    {
+      "t": "deployment_history",
+      "n": 1
+    },
+    {
+      "t": "glm_alerts",
+      "n": 1
+    },
+    {
+      "t": "nerve_alerts",
+      "n": 1
+    },
+    {
+      "t": "course_progress",
+      "n": 1
+    },
+    {
+      "t": "user_feedback",
+      "n": 1
+    },
+    {
+      "t": "stomach_etl_jobs",
+      "n": 1
+    },
+    {
+      "t": "daily_development_reports",
+      "n": 1
+    },
+    {
+      "t": "brain_audit_log",
+      "n": 1
+    },
+    {
+      "t": "market_heartbeats",
+      "n": 1
+    },
+    {
+      "t": "feedback_loops",
+      "n": 1
+    },
+    {
+      "t": "performance_optimization_logs",
+      "n": 1
+    },
+    {
+      "t": "manipulation_benchmarks",
+      "n": 1
+    },
+    {
+      "t": "mentor_chats",
+      "n": 1
+    },
+    {
+      "t": "user_course_progress",
+      "n": 1
+    },
+    {
+      "t": "ai_agent_cell_assignments",
+      "n": 1
+    },
+    {
+      "t": "stomach_raw_data",
+      "n": 1
+    },
+    {
+      "t": "ai_edge_nodes",
+      "n": 1
+    },
+    {
+      "t": "dynamic_content_generation",
+      "n": 1
+    },
+    {
+      "t": "data_source_reliability",
+      "n": 1
+    },
+    {
+      "t": "neural_flow_sessions",
+      "n": 1
+    },
+    {
+      "t": "portfolio_analysis_results",
+      "n": 1
+    },
+    {
+      "t": "data_processing_logs",
+      "n": 1
+    },
+    {
+      "t": "ai_division_tasks",
+      "n": 1
+    },
+    {
+      "t": "educational_paradigm_shifts",
+      "n": 1
+    },
+    {
+      "t": "ai_industry_benchmarks",
+      "n": 1
+    },
+    {
+      "t": "ai_training_runs",
+      "n": 1
+    },
+    {
+      "t": "cosmic_analytics_records",
+      "n": 1
+    },
+    {
+      "t": "tenant_chat_messages",
+      "n": 1
+    },
+    {
+      "t": "service_health_status",
+      "n": 1
+    },
+    {
+      "t": "tenant_users",
+      "n": 1
+    },
+    {
+      "t": "edu_course_adaptations",
+      "n": 1
+    },
+    {
+      "t": "brain_agents",
+      "n": 1
+    },
+    {
+      "t": "cached_news",
+      "n": 1
+    },
+    {
+      "t": "ai_model_performance_metrics",
+      "n": 1
+    },
+    {
+      "t": "reality_state_snapshots",
+      "n": 1
+    },
+    {
+      "t": "glm_sector_analyses",
+      "n": 1
+    },
+    {
+      "t": "portfolio_holdings",
+      "n": 1
+    },
+    {
+      "t": "ai_orchestration_tasks",
+      "n": 1
+    },
+    {
+      "t": "kidney_quality_checks",
+      "n": 1
+    },
+    {
+      "t": "ai_board_decisions",
+      "n": 1
+    },
+    {
+      "t": "cosmic_tracking_metrics",
+      "n": 1
+    },
+    {
+      "t": "glm_market_data",
+      "n": 1
+    },
+    {
+      "t": "portfolio_holdings_v2",
+      "n": 1
+    },
+    {
+      "t": "course_ecosystem_data",
+      "n": 1
+    },
+    {
+      "t": "quality_assessments",
+      "n": 1
+    },
+    {
+      "t": "ai_feature_cache",
+      "n": 1
+    },
+    {
+      "t": "portfolio_update_requests",
+      "n": 1
+    },
+    {
+      "t": "reality_analytics",
+      "n": 1
+    },
+    {
+      "t": "edge_function_performance",
+      "n": 1
+    },
+    {
+      "t": "community_posts",
+      "n": 1
+    },
+    {
+      "t": "cosmic_amplification_records",
+      "n": 1
+    },
+    {
+      "t": "market_config",
+      "n": 1
+    },
+    {
+      "t": "ai_analyses",
+      "n": 1
+    },
+    {
+      "t": "credit_conversions",
+      "n": 1
+    },
+    {
+      "t": "recovery_operations",
+      "n": 1
+    },
+    {
+      "t": "ai_coach_messages",
+      "n": 1
+    },
+    {
+      "t": "neural_profiles",
+      "n": 1
+    },
+    {
+      "t": "tenant_chat_sessions",
+      "n": 1
+    },
+    {
+      "t": "dna_recommendations",
+      "n": 1
+    },
+    {
+      "t": "user_analysis_access",
+      "n": 1
+    },
+    {
+      "t": "credit_transactions",
+      "n": 1
+    },
+    {
+      "t": "news_interactions",
+      "n": 1
+    },
+    {
+      "t": "knowledge_graph_nodes",
+      "n": 1
+    },
+    {
+      "t": "consciousness_backups",
+      "n": 1
+    },
+    {
+      "t": "autonomous_data_corrections",
+      "n": 1
+    },
+    {
+      "t": "quality_issues",
+      "n": 1
+    },
+    {
+      "t": "ai_risk_assessments",
+      "n": 1
+    },
+    {
+      "t": "ai_organ_logs",
+      "n": 1
+    },
+    {
+      "t": "ai_trend_predictions",
+      "n": 1
+    },
+    {
+      "t": "leadership_dashboard_cache",
+      "n": 1
+    },
+    {
+      "t": "system_state",
+      "n": 1
+    },
+    {
+      "t": "gdpr_data_requests",
+      "n": 1
+    },
+    {
+      "t": "component_configurations",
+      "n": 1
+    },
+    {
+      "t": "edu_organ_collaboration_logs",
+      "n": 1
+    },
+    {
+      "t": "watchlists",
+      "n": 1
+    },
+    {
+      "t": "autonomous_course_triggers",
+      "n": 1
+    },
+    {
+      "t": "watchlist",
+      "n": 1
+    },
+    {
+      "t": "backtest_results",
+      "n": 1
+    },
+    {
+      "t": "health_metrics",
+      "n": 1
+    },
+    {
+      "t": "user_behavior_patterns",
+      "n": 1
+    },
+    {
+      "t": "cosmic_synchronization_records",
+      "n": 1
+    },
+    {
+      "t": "market_cache",
+      "n": 1
+    },
+    {
+      "t": "neural_api_logs",
+      "n": 1
+    },
+    {
+      "t": "network_monitoring_metrics",
+      "n": 1
+    },
+    {
+      "t": "ecosystem_flow_monitoring",
+      "n": 1
+    },
+    {
+      "t": "system_intelligence_coordination",
+      "n": 1
+    },
+    {
+      "t": "reality_configurations",
+      "n": 1
+    },
+    {
+      "t": "hot_swap_sessions",
+      "n": 1
+    },
+    {
+      "t": "cache_performance_metrics",
+      "n": 1
+    },
+    {
+      "t": "cosmic_optimization_records",
+      "n": 1
+    },
+    {
+      "t": "cosmic_integration_records",
+      "n": 1
+    },
+    {
+      "t": "personalized_content",
+      "n": 1
+    },
+    {
+      "t": "user_access_control",
+      "n": 1
+    },
+    {
+      "t": "glm_watchlist",
+      "n": 1
+    },
+    {
+      "t": "end_of_day_analysis_validation",
+      "n": 1
+    },
+    {
+      "t": "ai_slo_violations",
+      "n": 1
+    },
+    {
+      "t": "ai_training_data_sources",
+      "n": 1
+    },
+    {
+      "t": "autonomous_learning_feedback",
+      "n": 1
+    },
+    {
+      "t": "customer_feedback",
+      "n": 1
+    },
+    {
+      "t": "portfolio_update_quotas",
+      "n": 1
+    },
+    {
+      "t": "ai_agent_spawning_queue",
+      "n": 1
+    },
+    {
+      "t": "ai_streaming_data",
+      "n": 1
+    },
+    {
+      "t": "user_learning_profiles",
+      "n": 1
+    },
+    {
+      "t": "edu_mentor_interactions",
+      "n": 1
+    },
+    {
+      "t": "database_performance_metrics",
+      "n": 1
+    },
+    {
+      "t": "emotional_intelligence_analysis",
+      "n": 1
+    },
+    {
+      "t": "tenants",
+      "n": 1
+    },
+    {
+      "t": "knowledge_transfer_metrics",
+      "n": 1
+    },
+    {
+      "t": "muscle_executions",
+      "n": 1
+    },
+    {
+      "t": "api_optimization_metrics",
+      "n": 1
+    },
+    {
+      "t": "learning_progress",
+      "n": 1
+    },
+    {
+      "t": "realtime_performance_optimization",
+      "n": 1
+    },
+    {
+      "t": "adaptive_learning_optimization",
+      "n": 1
+    },
+    {
+      "t": "news_feed",
+      "n": 1
+    },
+    {
+      "t": "adaptive_recommendations",
+      "n": 1
+    },
+    {
+      "t": "glm_alert_history",
+      "n": 1
+    },
+    {
+      "t": "audit_events",
+      "n": 1
+    },
+    {
+      "t": "feedback_credit_rewards",
+      "n": 1
+    },
+    {
+      "t": "users",
+      "n": 1
+    },
+    {
+      "t": "ai_board_members",
+      "n": 1
+    },
+    {
+      "t": "akm1_analysis_results",
+      "n": 1
+    },
+    {
+      "t": "api_keys",
+      "n": 1
+    },
+    {
+      "t": "ai_training_pipelines",
+      "n": 1
+    },
+    {
+      "t": "ai_anomaly_detections",
+      "n": 1
+    },
+    {
+      "t": "economic_events",
+      "n": 1
+    },
+    {
+      "t": "backup_history",
+      "n": 1
+    },
+    {
+      "t": "ai_agent_deployments",
+      "n": 1
+    },
+    {
+      "t": "consciousness_leadership_metrics",
+      "n": 1
+    },
+    {
+      "t": "user_news_preferences",
+      "n": 1
+    },
+    {
+      "t": "ai_pdf_entity_index",
+      "n": 1
+    },
+    {
+      "t": "brain_decisions",
+      "n": 1
+    },
+    {
+      "t": "learning_paths",
+      "n": 1
+    },
+    {
+      "t": "cross_system_communications",
+      "n": 1
+    },
+    {
+      "t": "ai_generated_tasks",
+      "n": 1
+    },
+    {
+      "t": "glm_portfolio_recommendations",
+      "n": 1
+    },
+    {
+      "t": "pattern_scans",
+      "n": 1
+    },
+    {
+      "t": "analyses",
+      "n": 1
+    },
+    {
+      "t": "ai_model_lineage",
+      "n": 1
+    },
+    {
+      "t": "data_corrections",
+      "n": 1
+    },
+    {
+      "t": "data_classification",
+      "n": 1
+    },
+    {
+      "t": "oauth_tokens",
+      "n": 1
+    },
+    {
+      "t": "ai_mentor_conversations",
+      "n": 1
+    },
+    {
+      "t": "security_audit_log",
+      "n": 1
+    },
+    {
+      "t": "notifications",
+      "n": 1
+    },
+    {
+      "t": "ai_feature_store",
+      "n": 1
+    },
+    {
+      "t": "glm_comparison_sessions",
+      "n": 1
+    },
+    {
+      "t": "market_leadership_metrics",
+      "n": 1
+    },
+    {
+      "t": "failover_events",
+      "n": 1
+    },
+    {
+      "t": "tenant_learning_paths",
+      "n": 1
+    },
+    {
+      "t": "ai_agent_lifecycle",
+      "n": 1
+    },
+    {
+      "t": "content_recommendations",
+      "n": 1
+    },
+    {
+      "t": "encryption_keys",
+      "n": 1
+    },
+    {
+      "t": "reality_manipulation_sessions",
+      "n": 1
+    }
+  ]
+}

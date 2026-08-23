@@ -1,0 +1,244 @@
+[
+ {
+  "id": "53b06bd3-2ce2-4098-8ce4-9ffa92ced637",
+  "execution_type": "data_scheduler",
+  "started_at": "2026-08-23T03:51:47.833342+00:00",
+  "completed_at": "2026-08-23T03:51:47.774+00:00",
+  "status": "completed",
+  "results": {
+   "timestamp": "2026-08-23T03:51:40.667Z",
+   "news_update": {
+    "error": null,
+    "success": true
+   },
+   "stock_update": {
+    "error": null,
+    "success": true
+   }
+  },
+  "error_message": null,
+  "created_at": "2026-08-23T03:51:47.833342+00:00"
+ },
+ {
+  "id": "8b744cb5-5672-408c-a498-3fb7037d4953",
+  "execution_type": "problem_detection",
+  "started_at": "2026-08-23T03:51:49.659073+00:00",
+  "completed_at": "2026-08-23T03:51:49.659073+00:00",
+  "status": "completed",
+  "results": {
+   "problems": [
+    {
+     "severity": "high",
+     "component": "autonomous-ai-orchestrator",
+     "fixActions": [
+      "Attempted edge function health check",
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 400: Bad Request",
+     "problemType": "unknown",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 400,
+       "statusText": "Bad Request"
+      },
+      "endpoint": "https://aufrvmesyzsfsuhvlsbp.supabase.co/functions/v1/autonomous-ai-orchestrator",
+      "responseTime": 97,
+      "componentType": "edge-function"
+     }
+    },
+    {
+     "severity": "low",
+     "component": "minimax-ai-m1",
+     "fixActions": [
+      "Attempted edge function health check",
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 400: Bad Request",
+     "problemType": "unknown",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 400,
+       "statusText": "Bad Request"
+      },
+      "endpoint": "https://aufrvmesyzsfsuhvlsbp.supabase.co/functions/v1/minimax-ai-m1",
+      "responseTime": 108,
+      "componentType": "edge-function"
+     }
+    },
+    {
+     "severity": "low",
+     "component": "education-ai",
+     "fixActions": [
+      "Attempted edge function health check",
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 400: Bad Request",
+     "problemType": "unknown",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 400,
+       "statusText": "Bad Request"
+      },
+      "endpoint": "https://aufrvmesyzsfsuhvlsbp.supabase.co/functions/v1/education-ai",
+      "responseTime": 98,
+      "componentType": "edge-function"
+     }
+    },
+    {
+     "severity": "low",
+     "component": "user-analytics",
+     "fixActions": [
+      "Attempted edge function health check",
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 401: Unauthorized",
+     "problemType": "unknown",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 401,
+       "statusText": "Unauthorized"
+      },
+      "endpoint": "https://aufrvmesyzsfsuhvlsbp.supabase.co/functions/v1/user-analytics",
+      "responseTime": 170,
+      "componentType": "edge-function"
+     }
+    },
+    {
+     "severity": "critical",
+     "component": "frontend-/dashboard",
+     "fixActions": [
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 404: Not Found",
+     "problemType": "not_found",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 404,
+       "statusText": "Not Found"
+      },
+      "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/dashboard",
+      "responseTime": 90,
+      "componentType": "frontend-route"
+     }
+    },
+    {
+     "severity": "critical",
+     "component": "frontend-/market",
+     "fixActions": [
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 404: Not Found",
+     "problemType": "not_found",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 404,
+       "statusText": "Not Found"
+      },
+      "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/market",
+      "responseTime": 18,
+      "componentType": "frontend-route"
+     }
+    },
+    {
+     "severity": "critical",
+     "component": "frontend-/ecosystem",
+     "fixActions": [
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 404: Not Found",
+     "problemType": "not_found",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 404,
+       "statusText": "Not Found"
+      },
+      "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/ecosystem",
+      "responseTime": 14,
+      "componentType": "frontend-route"
+     }
+    },
+    {
+     "severity": "high",
+     "component": "frontend-/ai-control",
+     "fixActions": [
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 404: Not Found",
+     "problemType": "not_found",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 404,
+       "statusText": "Not Found"
+      },
+      "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/ai-control",
+      "responseTime": 14,
+      "componentType": "frontend-route"
+     }
+    },
+    {
+     "severity": "high",
+     "component": "frontend-/portfolio",
+     "fixActions": [
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 404: Not Found",
+     "problemType": "not_found",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 404,
+       "statusText": "Not Found"
+      },
+      "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/portfolio",
+      "responseTime": 13,
+      "componentType": "frontend-route"
+     }
+    },
+    {
+     "severity": "low",
+     "component": "frontend-/education-center",
+     "fixActions": [
+      "Auto-fix attempted but component still reporting issues"
+     ],
+     "description": "HTTP 404: Not Found",
+     "problemType": "not_found",
+     "autoFixSuccess": false,
+     "autoFixAttempted": true,
+     "technicalDetails": {
+      "details": {
+       "status": 404,
+       "statusText": "Not Found"
+      },
+      "endpoint": "https://preview--ak1nvestor-insight-engine.lovable.app/education-center",
+      "responseTime": 13,
+      "componentType": "frontend-route"
+     }
+    }
+   ],
+   "autoFixSuccess": 0,
+   "autoFixAttempts": 10,
+   "totalComponents": 19,
+   "problemsDetected": 10,
+   "healthyComponents": 9
+  },
+  "error_message": null,
+  "created_at": "2026-08-23T03:51:49.659073+00:00"
+ }
+]

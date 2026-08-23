@@ -113,6 +113,22 @@ const KANDIDATER: Array<{
     motiv: "Nurture-flödet (dag 0/2/4/7/10) behöver e-postinfrastruktur — vänta på SMTP-nyckel från grundaren.",
   },
   {
+    titel: "Våg-självskattning per innehav (portföljsystemet v2)",
+    vikt: 8,
+    insats: "LÅG",
+    kundnytta: 5,
+    planRef: "§8.3 + portföljsystem",
+    motiv: "Portföljsystemet finns — vågprofilen behöver medlemmens skattningar per innehav (mikro/kort/medel/lång) för att bli komplett pedagogiskt.",
+  },
+  {
+    titel: "Front-sida på ak1nvestor.com (vision + Fas 2-ansökan)",
+    vikt: 7,
+    insats: "MEDEL",
+    kundnytta: 4,
+    planRef: "DOMANSTRATEGI.md steg 2",
+    motiv: "Varumärkesdomänen är tom/parkerad — front som samlar vision, Fas 2-ansökan och 'boka möte' stärker både varumärke och konvertering.",
+  },
+  {
     titel: "PWA + offline-läge för kurser",
     vikt: 4,
     insats: "MEDEL",

@@ -34,6 +34,7 @@ export type OrganReport = {
 const MAX_LOG_ROWS = 500;
 const MAX_LOG_AGE_DAYS = 30;
 const LOG_TABLE = "system_events";
+const ACTIVITY_MAX_AGE_DAYS = 90;
 
 // ── Organ 1: HÄLSA — integritet i statiskt innehåll ────────────────────────
 
@@ -167,6 +168,25 @@ async function organRetention(
       clearTimeout(t);
     }
   };
+
+  // 0. Sidvisningsloggen: radera äldre än 90 dagar (bounded tracking)
+  try {
+    const cut90 = new Date(Date.now() - ACTIVITY_MAX_AGE_DAYS * 86400_000).toISOString();
+    await tryFetch(`${sb.origin}/rest/v1/user_activities?created_at=lt.${cut90}&select=id`, {
+      headers: { ...sb.headers, Prefer: "return=representation" },
+    }).then(async (res) => {
+      if (res.ok) {
+        const rows = await res.json();
+        if (rows?.length) {
+          const ids = rows.map((r: any) => r.id).join(",");
+          await tryFetch(`${sb.origin}/rest/v1/user_activities?id=in.(${ids})`, {
+            method: "DELETE",
+            headers: { ...sb.headers, Prefer: "return=minimal" },
+          });
+        }
+      }
+    });
+  } catch {}
 
   // 1. Radera äldre än åldertaket (ignorera fel — tabellen kanske inte finns ännu)
   try {

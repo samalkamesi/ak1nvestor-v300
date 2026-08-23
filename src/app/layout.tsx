@@ -61,6 +61,36 @@ export const metadata: Metadata = {
   },
 };
 
+/** Sidvisnings-beacon: en fire-and-forget per sidladdning (alla sidor inkl SPA). */
+function PageViewBeacon() {
+  return (
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `(${(function () {
+          try {
+            var k = "ak1a-session";
+            var sid = localStorage.getItem(k);
+            if (!sid) {
+              sid = "s-" + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+              localStorage.setItem(k, sid);
+            }
+            var payload = JSON.stringify({
+              path: location.pathname,
+              sessionId: sid,
+              ref: document.referrer ? new URL(document.referrer).pathname : null,
+            });
+            if (navigator.sendBeacon) {
+              navigator.sendBeacon("/api/track", new Blob([payload], { type: "application/json" }));
+            } else {
+              fetch("/api/track", { method: "POST", keepalive: true, headers: { "Content-Type": "application/json" }, body: payload }).catch(function () {});
+            }
+          } catch (e) {}
+        }).toString()})();`,
+      }}
+    />
+  );
+}
+
 /** Amber markering på allt utom produktion — omöjligt att förväxla miljöer. */
 function StagingBanner() {
   return (
@@ -93,6 +123,7 @@ export default function RootLayout({
         className={`${inter.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground paper-texture`}
       >
         <StagingBanner />
+        <PageViewBeacon />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

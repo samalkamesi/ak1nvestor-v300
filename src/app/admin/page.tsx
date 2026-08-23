@@ -24,6 +24,8 @@ import { useAk1aStore } from "@/lib/ak1a-store";
 import { Ak1aLogo, Eyebrow, GoldRule, HonestyTag } from "@/components/ak1a/primitives";
 import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
 import { MembersManager } from "@/components/ak1a/admin/members-manager";
+import { TrafficStatsPanel } from "@/components/ak1a/admin/traffic-stats-panel";
+import { CustomerEcosystem } from "@/components/ak1a/admin/customer-ecosystem";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -330,11 +332,12 @@ export default function AdminDashboard() {
           <TabsList className="inline-flex h-auto w-max flex-nowrap gap-1 rounded-lg bg-muted p-1">
             <TabsTrigger value="overview" className="px-3 py-1.5 text-xs sm:text-sm">Översikt</TabsTrigger>
             <TabsTrigger value="members" className="px-3 py-1.5 text-xs sm:text-sm">Medlemmar</TabsTrigger>
+            <TabsTrigger value="kundekosystem" className="px-3 py-1.5 text-xs sm:text-sm">Kundekosystem</TabsTrigger>
             <TabsTrigger value="activity" className="px-3 py-1.5 text-xs sm:text-sm">Aktivitetslogg</TabsTrigger>
             <TabsTrigger value="portfolios" className="px-3 py-1.5 text-xs sm:text-sm">Klientportföljer</TabsTrigger>
             <TabsTrigger value="analysis-upload" className="px-3 py-1.5 text-xs sm:text-sm">Analys-uppladdning</TabsTrigger>
             <TabsTrigger value="system" className="px-3 py-1.5 text-xs sm:text-sm">Systemevents</TabsTrigger>
-            <TabsTrigger value="breakdown" className="px-3 py-1.5 text-xs sm:text-sm">Statistik</TabsTrigger>
+            <TabsTrigger value="traffic" className="px-3 py-1.5 text-xs sm:text-sm">Statistik & SEO</TabsTrigger>
             <TabsTrigger value="ai-organ" className="px-3 py-1.5 text-xs sm:text-sm">AI-organ styrelse</TabsTrigger>
           </TabsList>
 
@@ -431,6 +434,12 @@ export default function AdminDashboard() {
           <TabsContent value="members" className="mt-6">
             <Card className="p-5">
               <MembersManager />
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="kundekosystem" className="mt-6">
+            <Card className="p-5">
+              <CustomerEcosystem />
             </Card>
           </TabsContent>
 
@@ -593,6 +602,12 @@ export default function AdminDashboard() {
           </TabsContent>
 
           {/* Breakdown */}
+          <TabsContent value="traffic" className="mt-6">
+            <Card className="p-5">
+              <TrafficStatsPanel />
+            </Card>
+          </TabsContent>
+
           <TabsContent value="breakdown" className="mt-6">
             <div className="grid gap-4 lg:grid-cols-2">
               <Card className="p-5">

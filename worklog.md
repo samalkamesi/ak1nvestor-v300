@@ -2665,3 +2665,5 @@ Stage Summary:
 ---
 Task ID: 78-DEPLOY-TRIGGER
 2026-08-23T15:10:20Z — tom trigger-commit för Vercel auto-deploy av 705cda5
+
+2026-08-23T21:47:03Z — post-reconnect deploy-test (git hook verifiering)

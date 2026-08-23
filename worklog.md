@@ -2661,3 +2661,7 @@ Stage Summary:
 - HELA KEDJAN LIVE LOKALT: statiskt innehåll → Supabase → Register API
 - Återstår (användaren): Vercel env-variabler (3 st + MIGRATE_SECRET) + redeploy
   med cache-clear → då fungerar registrering på lab.ak1nvestor.com
+
+---
+Task ID: 78-DEPLOY-TRIGGER
+2026-08-23T15:10:20Z — tom trigger-commit för Vercel auto-deploy av 705cda5

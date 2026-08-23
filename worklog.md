@@ -2766,3 +2766,39 @@ Stage Summary:
 - Kvar till grundaren: sätt ADMIN_PASSWORD i Vercel (byt från AK1A-2026),
   DNS-beslut för ak1nvestor.com enligt DOMANSTRATEGI.md, ev SMTP-nyckel för e-post
 - Styrelsens prioritering #1 inför nästa sprint: nya aktieanalyser (mål ≥5 bolag)
+---
+Task ID: 83-NATT-2-KUNDPLATTFORM
+Agent: main (Z.ai Code)
+Task: Natt 2 — statistik, kundekosystem, portföljsystem, klientanalyser (ALLT LIVE)
+
+Work Log:
+- HOTFIX först: admin-krasch efter inloggning (stats-API saknade totals/breakdowns/
+  recent som sidan läser — krasch i error boundary). Nya stats-API:t beräknar allt
+  från user_activities/system_events/portföljer + behåller gamla nycklar
+- BESÖKSSTATISTIK: page-view-beacon i root-layout (sendBeacon, dedup-session i
+  localStorage) → /api/track (validerad sökväg, bounded) → retention 90 dagar i
+  organ-motorn → /api/admin/analytics + admin-tab 'Statistik & SEO': besökare
+  24h/7d/30d, sidvisningar, top-sidor med staplar, sektionstopplista, konvertering
+  besökare→medlem. E2E-verifierad: track→analytics-pipeline
+- KUNDEKOSYSTEM A-Ö: /api/admin/kundbild?memberId — intressen från faktiskt
+  beteende, Härledda önskemolen (redovisade som härledning, ej gissning),
+  engagemang, portföljer. Admin-tab med A-Ö-sökbara medlemskort
+- PORTFÖLJSYSTEMET (/min-portfolj): e-postidentifiering → portföljbyggare (rader:
+  ticker/bolag/antal/kurs/sektor + kassa) → /api/member/portfolio/analys beräknar:
+  viktat AKM1 (matchning mot riktiga analyser — PREC.ST 38 FÖRSIKTIGT KÖP i test),
+  analys-täckning %, koncentration, sektorspridning, vågprofil per horisont
+  (impuls/bas/korrigering/osatt, viktad), regelbaserade tips, harmoniskt narrativ
+  + 'Fråga portföljen' (deterministisk Q&A på risk/vågor/AKM1/spridning).
+  E2E-test: viktat AKM1 51, täckning 100 %, 2 tips, narrativ korrekt
+- /mina-analyser: klientens vy av publicerade client_analyses (analytiker laddar
+  upp via befintlig 'Analys-uppladdning'-fliken i admin)
+- Styrelsen: +2 kandidater (våg-självskattning, ak1nvestor.com-front)
+- docs/BRAND.md: varumärkesystem (värdeordning, röst per kanal, färgtokens,
+  signaturfraser, förbjudna fraser, fas-språk)
+
+Stage Summary:
+- Byggt på develop, mergat till main, auto-deployad och verifierad på produktion:
+  /min-portfolj 200, /mina-analyser 200, styrelsen levererar nya topp-3
+- Nästa enligt styrelsen: (1) nya aktieanalyser (2) bloggtakt (3) våg-självskattning
+- Grundaren bör sätta: ADMIN_PASSWORD i Vercel (default AK1A-2026 aktiv), eventuellt
+  DNS för ak1nvestor.com enligt docs/DOMANSTRATEGI.md

@@ -51,6 +51,10 @@ export function SeoPageShell({
             ·{" "}
             <Link href="/blogg" className="underline hover:text-foreground">
               Blogg
+            </Link>{" "}
+            ·{" "}
+            <Link href="/finansiell-policy" className="underline hover:text-foreground">
+              Finansiell policy
             </Link>
           </p>
         </footer>

@@ -18,8 +18,20 @@ export async function GET(req: NextRequest) {
       `${rest.origin}/rest/v1/user_activities?select=*&order=created_at.desc&limit=${limit}`,
       { headers: rest.headers }
     );
-    const activities = await res.json();
-    return NextResponse.json({ activities: activities || [] });
+    const rows = (await res.json()) || [];
+    const activities = rows.map((r: any) => ({
+      id: r.id,
+      sessionId: r.session_id || "okänd",
+      action: r.action,
+      section: r.section || null,
+      targetType: r.target_type || null,
+      targetId: r.target_id || null,
+      metadata: r.metadata ? (typeof r.metadata === "string" ? r.metadata : JSON.stringify(r.metadata)) : null,
+      userAgent: r.user_agent || null,
+      ipHash: r.ip_hash || null,
+      createdAt: r.created_at,
+    }));
+    return NextResponse.json({ activities });
   } catch (e: any) {
     return NextResponse.json({ activities: [], error: e.message }, { status: 500 });
   }

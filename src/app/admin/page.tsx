@@ -114,8 +114,11 @@ const SEVERITY_COLORS: Record<string, string> = {
   critical: "text-red-600 dark:text-red-400",
 };
 
-function timeAgo(iso: string): string {
-  const diff = Date.now() - new Date(iso).getTime();
+function timeAgo(iso: string | null | undefined): string {
+  if (!iso) return "—";
+  const t = new Date(iso).getTime();
+  if (!Number.isFinite(t)) return "—";
+  const diff = Date.now() - t;
   const sec = Math.floor(diff / 1000);
   if (sec < 60) return `${sec}s sedan`;
   const min = Math.floor(sec / 60);
@@ -514,7 +517,7 @@ export default function AdminDashboard() {
                             <p className="mt-0.5 text-xs text-muted-foreground">{p.description}</p>
                           )}
                           <p className="mt-1 text-[10px] text-muted-foreground">
-                            session: {p.sessionId.slice(0, 16)}... · {timeAgo(p.createdAt)}
+                            session: {(p.sessionId || "—").toString().slice(0, 16)} · {timeAgo(p.createdAt)}
                           </p>
                         </div>
                         <div className="text-right">
@@ -762,7 +765,7 @@ function ActivityRow({ activity, compact }: { activity: ActivityLog; compact?: b
       </div>
       {!compact && (
         <div className="mt-1 flex items-center gap-3 text-[10px] text-muted-foreground">
-          <span>session: {activity.sessionId.slice(0, 12)}...</span>
+          <span>session: {(activity.sessionId || "—").toString().slice(0, 12)}...</span>
           {activity.metadata && (
             <span className="truncate font-mono">{activity.metadata.slice(0, 80)}</span>
           )}

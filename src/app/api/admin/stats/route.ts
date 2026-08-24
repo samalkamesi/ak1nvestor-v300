@@ -171,14 +171,69 @@ export async function GET() {
       stats.totals.criticalEvents24h = events.filter(
         (e: any) => e.created_at >= cutoff24 && (e.severity === "error" || e.severity === "critical")
       ).length;
-      stats.recent.events = events.slice(0, 20);
+      stats.recent.events = events.slice(0, 20).map((e: any) => ({
+        id: e.id,
+        type: e.type,
+        severity: e.severity || "info",
+        message: e.message,
+        details: e.details ?? null,
+        source: e.source || null,
+        createdAt: e.created_at,
+      }));
     }
 
     stats.totals.portfolios = stats.portfolios.total;
     stats.totals.organConsultations = consultationsRes;
     if (recentPortfoliosRes.ok) {
-      stats.recent.portfolios = (await recentPortfoliosRes.json()) || [];
+      const rader = (await recentPortfoliosRes.json()) || [];
+      // Portföljer med holdings — normaliserade till panelens form
+      stats.recent.portfolios = await Promise.all(
+        rader.map(async (pf: any) => {
+          const hRes = await fetch(
+            `${rest.origin}/rest/v1/client_holdings?portfolio_id=eq.${pf.id}&select=id,ticker,company,weight&order=created_at.asc`,
+            { headers: rest.headers, signal: AbortSignal.timeout(8000) }
+          );
+          const holdings = hRes.ok ? (await hRes.json()) || [] : [];
+          return {
+            id: pf.id,
+            sessionId: pf.member_id || "medlem",
+            name: pf.name || "Portfölj",
+            description: pf.description || null,
+            totalValue: pf.total_value || 0,
+            riskScore: typeof pf.risk_score === "number" ? pf.risk_score : null,
+            holdings: holdings.map((h: any) => ({
+              id: h.id,
+              ticker: h.ticker,
+              company: h.company || h.ticker,
+              weight: h.weight || 0,
+              akm1Total: null,
+            })),
+            createdAt: pf.created_at,
+          };
+        })
+      );
     }
+    // Senaste aktiviteter till översikten
+    try {
+      const aRes2 = await fetch(
+        `${rest.origin}/rest/v1/user_activities?select=*&order=created_at.desc&limit=10`,
+        { headers: rest.headers, signal: AbortSignal.timeout(8000) }
+      );
+      if (aRes2.ok) {
+        stats.recent.activities = ((await aRes2.json()) || []).map((r: any) => ({
+          id: r.id,
+          sessionId: r.session_id || "okänd",
+          action: r.action,
+          section: r.section || null,
+          targetType: r.target_type || null,
+          targetId: r.target_id || null,
+          metadata: r.metadata ? (typeof r.metadata === "string" ? r.metadata : JSON.stringify(r.metadata)) : null,
+          userAgent: r.user_agent || null,
+          ipHash: r.ip_hash || null,
+          createdAt: r.created_at,
+        }));
+      }
+    } catch {}
   } catch {}
 
   return NextResponse.json(stats);

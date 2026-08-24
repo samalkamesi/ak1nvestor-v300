@@ -19,7 +19,7 @@ const VARIABLER: Var[] = [
   { id: "V07", name: "Bruttomarginal", category: "Lönsamhet", slug: "v07-bruttomarginal", weight: "KRITISK", kalla: "Resultaträkning: (Nettoomsättning − Rörelsens kostnader exkl. personalkostnader)" },
   { id: "V08", name: "EBITDA-marginal", category: "Lönsamhet", slug: "v08-ebitda-marginal", weight: "8%", kalla: "Resultaträkning: Rörelseresultat + Avskrivningar ÷ Nettoomsättning" },
   { id: "V09", name: "ROE", category: "Lönsamhet", slug: "v09-roe", weight: "8%", kalla: "Resultat efter skatt ÷ snitt Eget kapital (balansräkning, årets början + slut)" },
-  { id: "V10", name: "Skuldsättningsgrad", category: "Kapitalstruktur", slug: "v10-skuldsattningsgrad", weight: "6%", kalla: "Balansräkning: Skulder och övriga förpliktelser ÷ Eget kapital" },
+  { id: "V10", name: "Skuldsättningsgrad", category: "Stabilitet", slug: "v10-skuldsattningsgrad", weight: "6%", kalla: "Balansräkning: Skulder och övriga förpliktelser ÷ Eget kapital" },
   { id: "V11", name: "Likviditet", category: "Stabilitet", slug: "v11-likviditet", weight: "6%", kalla: "Balansräkning: Omsättningstillgångar ÷ Kortfristiga skulder (kvick) — både åren" },
   { id: "V12", name: "Intäktsstabilitet", category: "Stabilitet", slug: "v12-intaktsstabilitet", weight: "6%", kalla: "5 års nettoomsättning i årsredovisningen — hur jämn kurvan?" },
   { id: "V13", name: "Patent & IP", category: "Moat", slug: "v13-patent-ip", weight: "6%", kalla: "Not om immateriella tillgångar; förvaltningsberättelsen" },
@@ -32,7 +32,7 @@ const VARIABLER: Var[] = [
   { id: "V20", name: "Återköp & insiderköp (VD/styrelse/bolag)", category: "Kapitalstruktur", slug: "v20-aterekop-egna-aktier", weight: "6%", kalla: "Aktieägar-/insiderdata (Finansinspektionen, börsen); not om återköp" },
 ];
 
-const KATEGORIER = ["Tillväxt", "Värdering", "Lönsamhet", "Kapitalstruktur", "Stabilitet", "Moat", "Katalysator", "Risk"];
+const KATEGORIER = ["Tillväxt", "Värdering", "Lönsamhet", "Stabilitet", "Moat", "Katalysator", "Risk", "Kapitalstruktur"];
 
 /** Riktiga poäng från AK1A-analyser — pedagogiska exempel. */
 const EXEMPEL: Record<string, { label: string; poang: Record<string, number>; not: string }> = {

@@ -49,6 +49,8 @@ export function PortfolioSystem() {
   const [busy, setBusy] = useState(false);
   const [fraga, setFraga] = useState("");
   const [begaran, setBegaran] = useState("");
+  const [djup, setDjup] = useState<any | null>(null);
+  const [djupBusy, setDjupBusy] = useState(false);
   const [begaranStatus, setBegaranStatus] = useState("");
 
   const hittaMedlem = async () => {
@@ -86,6 +88,21 @@ export function PortfolioSystem() {
       const res = await fetch(`/api/member/portfolio/analys?portfolioId=${portfolioId}`);
       if (res.ok) setRapport(await res.json());
     } catch {}
+  };
+
+  const korDjupanalys = async () => {
+    if (!aktiv) return;
+    setDjupBusy(true);
+    setDjup(null);
+    try {
+      const res = await fetch(`/api/member/portfolio/djupanalys?portfolioId=${aktiv.id}`);
+      if (res.ok) setDjup(await res.json());
+      else setDjup({ fel: (await res.json().catch(() => ({}))).error || `HTTP ${res.status}` });
+    } catch {
+      setDjup({ fel: "Nätverksfel" });
+    } finally {
+      setDjupBusy(false);
+    }
   };
 
   const sparaVag = async (holdingId: string, horisont: "mikro" | "kort" | "medel" | "lang", varde: string) => {
@@ -359,6 +376,138 @@ export function PortfolioSystem() {
             <div className="mt-3 flex flex-wrap gap-3 text-[10px] text-muted-foreground">
               <span>🟩 impulsvåg</span><span>🟨 basbygge</span><span>🧧 korrigering</span><span>⬜ osatt</span>
             </div>
+          </section>
+
+          {/* DJUPANALYS */}
+          <section className="rounded-xl border border-gold/40 bg-card p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h3 className="font-serif text-xl font-bold">Djupanalys — 5×5×4-ekosystemet</h3>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Live pris/volymdata via oberoende källor → Python-motor → 5 horisonter ×
+                  5 teorier per aktie → viktad portföljbild.
+                </p>
+              </div>
+              <Button onClick={korDjupanalys} disabled={djupBusy} className="bg-gold text-background hover:bg-gold/90">
+                {djupBusy ? "Analyserar (upp till 45 s)…" : "Kör djupanalys"}
+              </Button>
+            </div>
+
+            {djup?.fel && <p className="mt-3 text-sm text-red-600">{djup.fel}</p>}
+
+            {djup && !djup.fel && (
+              <div className="mt-5 space-y-6">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    Portföljens 25-cellers-matris (viktad) · täckning {djup.analysTackning}%
+                  </p>
+                  <div className="mt-2 overflow-x-auto">
+                    <table className="text-[11px]">
+                      <thead>
+                        <tr>
+                          <th className="p-1"></th>
+                          {(djup.horisonter as string[]).map((h) => (
+                            <th key={h} className="p-1 capitalize text-muted-foreground">
+                              {h.replace("medellang", "medellång")}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {(djup.teorier as string[]).map((t) => (
+                          <tr key={t}>
+                            <td className="p-1 pr-2 font-semibold capitalize">{t}</td>
+                            {(djup.horisonter as string[]).map((h) => {
+                              const v = djup.portfolj.matris25[`${t}.${h}`] || 0;
+                              const styl =
+                                v > 0.15
+                                  ? "bg-green-100 text-green-800"
+                                  : v < -0.15
+                                    ? "bg-red-100 text-red-800"
+                                    : "bg-muted text-muted-foreground";
+                              return (
+                                <td key={h} className={`p-1.5 text-center font-mono ${styl}`} title={`${t} · ${h}: ${v}`}>
+                                  {v > 0.15 ? "▲" : v < -0.15 ? "▼" : "—"}
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    {djup.portfolj.celler.bull} ▲ · {djup.portfolj.celler.bear} ▼ · {djup.portfolj.celler.neutral} — →{" "}
+                    <strong className="text-gold">{djup.portfolj.celler.bias}</strong>
+                    {djup.portfolj.viktadSigma != null && (
+                      <> · viktad σ {Math.round(djup.portfolj.viktadSigma * 100)} %/år</>
+                    )}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    Vågprofil per horisont (motorns klassificering, viktad)
+                  </p>
+                  <div className="mt-2 space-y-2">
+                    {(djup.horisonter as string[]).map((hz) => {
+                      const pr = djup.portfolj.vagProfil[hz];
+                      return (
+                        <div key={hz}>
+                          <p className="text-[11px] capitalize">{hz.replace("medellang", "medellång")}</p>
+                          <div className="mt-0.5 flex h-3.5 overflow-hidden rounded-full bg-muted text-[8px] leading-[14px] text-white">
+                            {pr["impulsvåg"] > 0 && (
+                              <div className="bg-green-600" style={{ width: `${pr["impulsvåg"]}%` }} title={`impulsvåg ${pr["impulsvåg"]}%`} />
+                            )}
+                            {pr.basbygge > 0 && (
+                              <div className="bg-gold" style={{ width: `${pr.basbygge}%` }} title={`bas ${pr.basbygge}%`} />
+                            )}
+                            {pr.korrigering > 0 && (
+                              <div className="bg-orange-600" style={{ width: `${pr.korrigering}%` }} title={`korrigering ${pr.korrigering}%`} />
+                            )}
+                            {pr.osatt > 0 && (
+                              <div className="bg-muted-foreground/40" style={{ width: `${pr.osatt}%` }} title={`osatt ${pr.osatt}%`} />
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Per aktie</p>
+                  <div className="mt-2 space-y-3">
+                    {djup.innehav.map((ih: any) => (
+                      <details key={ih.ticker} className="rounded-lg border border-gold/20 p-3">
+                        <summary className="cursor-pointer text-sm">
+                          <strong>{ih.bolag}</strong>{" "}
+                          <span className="text-xs text-muted-foreground">
+                            {ih.viktProcent} %{" "}
+                            {ih.analys.data
+                              ? `· pris ${ih.analys.data.pris} · σ ${Math.round((ih.analys.data.sigma_ar || 0) * 100)} % · ${ih.analys.sammanfattning.bull}▲/${ih.analys.sammanfattning.bear}▼`
+                              : ""}
+                          </span>
+                        </summary>
+                        {ih.analys.data ? (
+                          <div className="mt-2 text-xs text-muted-foreground">
+                            <p>
+                              52v: {ih.analys.data.lag52}–{ih.analys.data.hojd52} (position{" "}
+                              {Math.round(ih.analys.data.pos52 * 100)} %) · källor: {ih.analys.kallor}
+                            </p>
+                            <p className="mt-1">Vågor: {Object.values(ih.analys.vager).join(" → ")}</p>
+                            <p className="mt-1 italic">{ih.analys.notering}</p>
+                          </div>
+                        ) : (
+                          <p className="mt-2 text-xs text-red-600">{ih.analys.fel}</p>
+                        )}
+                      </details>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-[11px] italic leading-relaxed text-muted-foreground">{djup.notering}</p>
+              </div>
+            )}
           </section>
 
           {/* Tips */}

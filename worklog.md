@@ -2895,3 +2895,23 @@ Stage Summary:
 - Utbildningskedjan komplett: portföljsystem → djupanalys → kurs → guide-artikel
 - Commit d57f6fc live; MEGA_PLAN_NATT.md styr kommande faser (P4 fundamentaldel
   + P6 styrelsegranskning nästa)
+---
+Task ID: 87-MEGASYSTEM-F1
+Agent: main (Z.ai Code)
+Task: OrganBus + koordineringsrunda + finansiell policy — organsystemen pratar
+
+Work Log:
+- PLAN_MEGASYSTEM.md: styrelsens arkitektur (makro↔mikro via OrganBus; F1-F5 mot
+  instansierbara 'tusen system'; kadens: triggbar + daglig på Hobby, Pro=tätare)
+- organ-bus.ts: bounded meddelandeprotokoll (system_events, type=organ_msg);
+  mikro-rapporter deterministiska; makro-rond: fråga→rapport→prioritera→delegera
+- /api/organ/runda E2E: 5 organ rapporterade (kurser 226 ✓, blogg 28, analyser 11,
+  besökare 7d=10, medlemmar 0), beslutsko till byggagent, 7 meddelanden loggade
+- /finansiell-policy live: teoriernas status, anti-casino, reproducerbarhet,
+  organens tak, ansvar — länkad i global footer + sitemap (507 URL:er)
+
+Stage Summary:
+- Grundarens vision implementerad fas 1: organen kommunicerar autonomt via bus med
+  hårda tak; beslut delegeras till byggagent-kön (stora penningbeslut = grundaren)
+- Nästa enligt rondens kö: (1) fortsättnings-lista per medlem (2) kursövningar
+  (3) bloggplanering — F2: mikro-organ per domän + kundcache + retention-mätning

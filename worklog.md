@@ -2802,3 +2802,35 @@ Stage Summary:
 - Nästa enligt styrelsen: (1) nya aktieanalyser (2) bloggtakt (3) våg-självskattning
 - Grundaren bör sätta: ADMIN_PASSWORD i Vercel (default AK1A-2026 aktiv), eventuellt
   DNS för ak1nvestor.com enligt docs/DOMANSTRATEGI.md
+---
+Task ID: 84-ADMIN-FIX-STYRELSE-SPRINT
+Agent: main (Z.ai Code)
+Task: Admin-krascher fixade (webbläsarverifierade) + styrelsens topp-3 levererad
+
+Work Log:
+- ADMIN-ROOT-CAUSE (riktig den här gången): sidan förväntar rik camelCase-form
+  (sessionId/createdAt/holdings) men API:erna returnerade råa Supabase-rader
+  (snake_case) → dolda krascher (p.holdings.length på undefined, .slice på null,
+  NaNd-sedan). Fixat genom normalisering i /api/admin/activity + /api/admin/stats
+  (recent.events/portfolios/activities mappade, portföljer hämtar holdings)
+  + guards i timeAgo/slice
+- VERIFIERAT I RIKTIG WEBBLÄSARE (browser-use): inloggning AK1A-2026 + klick
+  genom ALLA 9 flikar — lokalt 9/9 ✓ och PÅ PRODUKTION 9/9 ✓, noll krascher
+- STYRELSENS #3 VÅG-SJÄLVVÄRDERING: PATCH /api/member/holding (validerade värden
+  impulsvåg/korrigering/basbygge) + vågval per innehav (mikro/kort/medel/lång)
+  direkt i portföljrapporten → vågprofilen bygger nu på medlemmens egna skattningar
+- STYRELSENS #1 (infrastruktur): analys-efterfrågan — medlemmar begär bolag via
+  POST /api/member/analys-efterfragad → syns i admin/Systemevents som kö till
+  grundaren (ärligt: riktiga nya analyser kräver riktiga marknadsdata — inte
+  fabricerade; därför byggdes efterfrågeflödet istället)
+- STYRELSENS #2 BLOGG: 'Så läser du en svensk årsredovisning steg för steg'
+  (20-minutersrutt → V-variabler + kalkylatorn) + '5 vanliga nybörjarmisstag'
+  — totalt 27 inlägg
+- Sitemap: 504 URL:er · 515 statiska sidor · lint rent · allt prod-verifierat
+
+Stage Summary:
+- Admin helt stabil: roten (API-form) fixad, inte bara symptomet
+- Portföljsystemet komplett enligt grundarens ursprungliga önskan: vågor per
+  horisont per innehav + portföljens samlade vågprofil
+- Nästa sprint enligt styrelsen: (1) faktiska nya analyser när marknadsdata-
+  källa finns (2) fortsatt bloggtakt (3) ak1nvestor.com-front

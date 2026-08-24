@@ -2834,3 +2834,36 @@ Stage Summary:
   horisont per innehav + portföljens samlade vågprofil
 - Nästa sprint enligt styrelsen: (1) faktiska nya analyser när marknadsdata-
   källa finns (2) fortsatt bloggtakt (3) ak1nvestor.com-front
+---
+Task ID: 85-DJUPANALYS-EKOSYSTEM
+Agent: main (Z.ai Code)
+Task: 5×5×4-ekosystemet som PORTFÖLJANALYS med Python + oberoende datakällor — LIVE
+
+Work Log:
+- Grundarens önskan: samma ekosystem som 99-sidersrapporterna (5 horisonter × 5 teorier
+  × 4 dimensioner) men som portföljanalys — aktie för aktie → aggregerad portfölj,
+  genomsnittliga vågor per horisont, siffror via flera oberoende källor + Python
+- scripts/analysis_engine.py: helt beroendefri (ren urllib → fungerar på Vercel
+  serverless). Yahoo chart-API primärt + Stooq sekundärt; allowlist-värdar +
+  privata-IP-blockering + https-only (SSRF-säkert enligt säkerhetskrav).
+  Deterministisk. Per aktie: momentum per horisont, vågklass (impulsvåg/korrigering/
+  basbygge ur momentum×MA-struktur), σ-år, ATR14, 52v-spann+position, fib38/62,
+  MA50/200, volymtrend, Lucas-fönster (11/29/76/199/521), 25-cellers-matris med
+  signaler, bull/bear/neutral-dom
+- /api/member/portfolio/djupanalys: topp-10 innehav per vikt → python3/python-
+  kedjad spawn (race-fri) → viktad portföljmatris + vågprofil 5 horisonter +
+  viktad σ + koncentration + täckning %
+- UI (/min-portfolj): 'Kör djupanalys'-knapp, färgkodad 25-cellers-matris,
+  vågprofilsstaplar per horisont, utfällbara per-aktie-kort med riktig data
+- E2E VERIFIERAD med riktig portfölj: PREC.ST 0,758 SEK (live Yahoo) → 23/25 ▼,
+  VOLCAR-B 19,605 → 13/25 ▼; portfölj: 100 % täckning, BEARISH BIAS, viktad σ 78 %
+- Tidigare E2E-bugg: race i python3→python-fallbacken fixad (close-utan-data →
+  nästa binary istället för tom resolve)
+
+Stage Summary:
+- Ekosystem-analysen (signaturvyn från avanceradrapporterna) är nu tillgänglig för
+  ALLA medlemmar på deras egna portföljer — med riktig marknadsdata, inte självskattat
+- Ärlighet bevarad: proxy-signaler märks som heuristiska; teorier deklareras som
+  struktureringsverktyg (enligt rapporternas eget ansvarskapitel)
+- Nästa: Q-rapports-guide, wyfinance-utökning (fundamentaldel), pdf-export av
+  portföljrapporten

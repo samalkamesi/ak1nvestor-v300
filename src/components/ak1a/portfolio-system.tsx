@@ -48,6 +48,8 @@ export function PortfolioSystem() {
   const [meddelande, setMeddelande] = useState("");
   const [busy, setBusy] = useState(false);
   const [fraga, setFraga] = useState("");
+  const [begaran, setBegaran] = useState("");
+  const [begaranStatus, setBegaranStatus] = useState("");
 
   const hittaMedlem = async () => {
     setMeddelande("");
@@ -83,6 +85,32 @@ export function PortfolioSystem() {
     try {
       const res = await fetch(`/api/member/portfolio/analys?portfolioId=${portfolioId}`);
       if (res.ok) setRapport(await res.json());
+    } catch {}
+  };
+
+  const sparaVag = async (holdingId: string, horisont: "mikro" | "kort" | "medel" | "lang", varde: string) => {
+    setRapport((p) =>
+      p
+        ? {
+            ...p,
+            innehav: p.innehav.map((h) => (h.id === holdingId ? { ...h, vager: { ...h.vager, [horisont]: varde } } : h)),
+          }
+        : p
+    );
+    try {
+      await fetch("/api/member/holding", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          horisont === "mikro"
+            ? { holdingId, mikro: varde }
+            : horisont === "kort"
+              ? { holdingId, kort: varde }
+              : horisont === "medel"
+                ? { holdingId, medel: varde }
+                : { holdingId, lang: varde }
+        ),
+      });
     } catch {}
   };
 
@@ -283,6 +311,27 @@ export function PortfolioSystem() {
                       </Link>
                     </p>
                   )}
+                  <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                    {(["mikro", "kort", "medel", "lang"] as const).map((hz) => {
+                      const etikett = { mikro: "Mikro", kort: "Kort", medel: "Medel", lang: "Lång" }[hz];
+                      return (
+                        <label key={hz} className="text-[10px] uppercase tracking-wide text-muted-foreground">
+                          Våg · {etikett}
+                          <Select value={h.vager[hz] || "osatt"} onValueChange={(v) => sparaVag(h.id, hz, v === "osatt" ? "" : v)}>
+                            <SelectTrigger className="mt-1 h-8 text-xs">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="osatt">— osatt —</SelectItem>
+                              <SelectItem value="impulsvåg">Impulsvåg</SelectItem>
+                              <SelectItem value="korrigering">Korrigering</SelectItem>
+                              <SelectItem value="basbygge">Basbygge</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </label>
+                      );
+                    })}
+                  </div>
                 </div>
               ))}
             </div>
@@ -323,6 +372,43 @@ export function PortfolioSystem() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          {/* Begär analys */}
+          <section className="rounded-xl border border-dashed border-gold/40 bg-card p-5">
+            <h3 className="font-serif text-xl font-bold">Saknar du ett bolag?</h3>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Begär analys — förekomna önskemål prioriteras av grundaren.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Input
+                value={begaran}
+                onChange={(e) => setBegaran(e.target.value)}
+                placeholder="Ticker eller bolagsnamn (t.ex. SAAB-B)"
+                className="max-w-xs"
+              />
+              <Button
+                variant="outline"
+                onClick={async () => {
+                  if (!begaran.trim()) return;
+                  setBegaranStatus("Skickar…");
+                  try {
+                    const res = await fetch("/api/member/analys-efterfragad", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ email: medlem.email, ticker: begaran.trim() }),
+                    });
+                    setBegaranStatus(res.ok ? "Tack! Önskemålet är registrerat." : "Kunde inte skicka — försök igen.");
+                    if (res.ok) setBegaran("");
+                  } catch {
+                    setBegaranStatus("Nätverksfel");
+                  }
+                }}
+              >
+                Begär analys
+              </Button>
+            </div>
+            {begaranStatus && <p className="mt-2 text-xs text-gold">{begaranStatus}</p>}
           </section>
 
           {/* Fråga portföljen */}

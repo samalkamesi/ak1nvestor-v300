@@ -2915,3 +2915,20 @@ Stage Summary:
   hårda tak; beslut delegeras till byggagent-kön (stora penningbeslut = grundaren)
 - Nästa enligt rondens kö: (1) fortsättnings-lista per medlem (2) kursövningar
   (3) bloggplanering — F2: mikro-organ per domän + kundcache + retention-mätning
+---
+Task ID: 88-F2-RETENTION
+Agent: main (Z.ai Code)
+Task: 'Fortsätt där du slutade' — koordineringsrundans beslut #1 implementerad
+
+Work Log:
+- Beacon (layout): lokal historik i localStorage (ak1a-senaste, max 12 poster,
+  deduperad per path) — privat: lämnar aldrig besökarens browser
+- FortsattPanel (komponent): 4 senaste unika sidor, titel-mappning per typ
+  (kurs/artikel/analys/case/kalkylator/portfölj), ikon + datum
+- Monterad: /kurser + /min-portfolj (aside-panel)
+- Build: 707 sidor grönt; prod verifierad 200/200
+
+Stage Summary:
+- Retention-orga­nets köpunkt #1 klart; nästa i kön: övningsuppgifter per kurs,
+  bloggplanering, F2 fortsättning (kundcache server-side + retention-mätning
+  i analytics vid >10 medlemmar)

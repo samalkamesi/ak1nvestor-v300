@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { PortfolioSystem } from "@/components/ak1a/portfolio-system";
+import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 
 export const dynamic = "force-dynamic";
 
@@ -30,8 +31,13 @@ export default function MinPortfoljPage() {
         AKM1-poäng, vågbild per tidshorisont, riskmått och ger dig tips och tankar.
         Allt utifrån dina egna siffror — pedagogiskt, inte investeringsråd.
       </p>
-      <div className="mt-10">
-        <PortfolioSystem />
+      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_280px]">
+        <div>
+          <PortfolioSystem />
+        </div>
+        <aside className="h-fit space-y-4">
+          <FortsattPanel />
+        </aside>
       </div>
     </SeoPageShell>
   );

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
 import { pageMetadata, websiteJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 
 export const dynamic = "force-static";
 
@@ -41,7 +42,8 @@ export default function KurserPage() {
         pedagogiskt för privatpersoner.
       </p>
 
-      <div className="mt-10 space-y-10">
+      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_260px]">
+        <div className="space-y-10">
         {[...byCategory.entries()].map(([category, list]) => (
           <section key={category}>
             <h2 className="font-serif text-2xl font-bold border-b border-gold/30 pb-2">
@@ -70,6 +72,8 @@ export default function KurserPage() {
             </ul>
           </section>
         ))}
+        </div>
+        <aside className="h-fit"><FortsattPanel /></aside>
       </div>
     </SeoPageShell>
   );

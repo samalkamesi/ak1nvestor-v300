@@ -68,6 +68,12 @@ function PageViewBeacon() {
       dangerouslySetInnerHTML={{
         __html: `(${(function () {
           try {
+            var hk = "ak1a-senaste";
+            var hist = [];
+            try { hist = JSON.parse(localStorage.getItem(hk) || "[]"); } catch (e) {}
+            hist = hist.filter(function (x) { return x && x.path !== location.pathname; });
+            hist.unshift({ path: location.pathname, t: Date.now() });
+            try { localStorage.setItem(hk, JSON.stringify(hist.slice(0, 12))); } catch (e) {}
             var k = "ak1a-session";
             var sid = localStorage.getItem(k);
             if (!sid) {

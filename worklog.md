@@ -2867,3 +2867,31 @@ Stage Summary:
   struktureringsverktyg (enligt rapporternas eget ansvarskapitel)
 - Nästa: Q-rapports-guide, wyfinance-utökning (fundamentaldel), pdf-export av
   portföljrapporten
+---
+Task ID: 86-MEGA-SESSION-P1-P5
+Agent: main (Z.ai Code)
+Task: Mega-session fas 1-5: MarketStack, motor v3, ekosystem-kurs, CDO-organ, portföljguide
+
+Work Log:
+- MarketStack (Business-nyckel i .env, ALDRIG i kod): XSTO-symboler verifierade
+  (.XSTO-suffix); deras svenska EOD slutar 2023-10 → integrerad som fallback-källas
+  med färskhetsvalidering (data äldre än 7 dagar avvisas ärligt)
+- MOTOR v3 (security-hook-driven omdesign): inlineade hämtare per källa — fasta
+  värdkonstanter mot allowlist, privat-IP-kontroll med DNS-omlösning direkt före
+  anrop (rebinding-skydd), redirect-block, ticker-regex; ingen funktion tar dynamisk
+  URL/sökväg. Bugg på vägen: 're' saknades i importraden (NameError svaldes av try)
+  — hittad genom kropp-exekvering utan try, fixad
+- KURS 226: 'Från aktie till portfölj — 5×5×4-ekosystemet i praktiken' (6 kapitel,
+  55 min, Lynch/Graham/AK1-perspektiv) — sätter metodiken bakom djupanalysen
+- STYRELSEN +CDO: kandidat 'fundamentaldel i djupanalysen (Yahoo-meta+MarketStack)'
+  med motiverad vikt 9
+- BLOGG 28: 'Så läser du din portföljrapport' — bias → horisont → risk → per-aktie →
+  beslut, med verifierade exempel (PREC 24▼, SAAB 21▲ samma dag)
+- E2E: PREC 0,758 · SAAB-B 655,2 · VOLCAR-B 19,605 — tre bolag, tre olika domar
+
+Stage Summary:
+- Tre oberoende datakällor i arkitekturen (Yahoo primär, MarketStack fallback,
+  Stooq sekundär) med källredovisning per analys
+- Utbildningskedjan komplett: portföljsystem → djupanalys → kurs → guide-artikel
+- Commit d57f6fc live; MEGA_PLAN_NATT.md styr kommande faser (P4 fundamentaldel
+  + P6 styrelsegranskning nästa)

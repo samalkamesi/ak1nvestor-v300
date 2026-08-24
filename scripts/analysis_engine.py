@@ -41,6 +41,7 @@ def fetch_yahoo(ticker, period="1y", interval="1d"):
             timeout=15,
         )
         res = json.loads(raw)["chart"]["result"][0]
+        meta = res.get("meta", {}) or {}
         q = res["indicators"]["quote"][0]
         dagar = res["timestamp"]
         close, high, low, vol = [], [], [], []
@@ -54,7 +55,10 @@ def fetch_yahoo(ticker, period="1y", interval="1d"):
             vol.append(float(q["volume"][i] or 0))
         if len(close) < 30:
             return None
-        return {"close": close, "high": high, "low": low, "vol": vol}
+        return {"close": close, "high": high, "low": low, "vol": vol,
+                "meta": {k: meta.get(k) for k in
+                         ("longName", "shortName", "currency", "fullExchangeName",
+                          "fiftyTwoWeekHigh", "fiftyTwoWeekLow")}}
     except Exception:
         return None
 
@@ -180,6 +184,9 @@ def analysera_ticker(ticker):
     return {
         "ticker": ticker,
         "kallor": kallor,
+        "namn": (dag.get("meta", {}).get("longName") or dag.get("meta", {}).get("shortName") or ticker),
+        "bors": dag.get("meta", {}).get("fullExchangeName"),
+        "valuta": dag.get("meta", {}).get("currency"),
         "data": {
             "pris": round(pris, 4), "hojd52": round(hojd52, 4), "lag52": round(lag52, 4),
             "pos52": round(pos52, 3),

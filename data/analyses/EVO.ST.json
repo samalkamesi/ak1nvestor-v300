@@ -1,0 +1,119 @@
+{
+  "ticker": "EVO.ST",
+  "displayTicker": "EVO",
+  "company": "Evolution AB (publ)",
+  "exchange": "Stockholm",
+  "currency": "SEK",
+  "verified": "2026-08-24",
+  "analysisDate": "2026-08-24",
+  "source": "AK1A Analysis Engine — Yahoo Finance (pris/volym, 1 källa)",
+  "status": "Datadriven föranalys — AKM1:s 20-variabelgranskning väntar grundaren",
+  "kalla": "analysis-engine",
+  "recommendation": {
+    "del": "Datadriven genomlysning",
+    "title": "Rekommendation",
+    "body": "Signaler beräknade ur pris och volym via 5 horisonter × 5 teorier. Fundamental AKM1-granskning kompletteras manuellt innan full rekommendation.",
+    "main": "DATA NEUTRALT — AKM1-GRANSKNING VÄNTAR",
+    "mainSub": "Föranalys — ej investeringsråd",
+    "period": "löpande",
+    "bullets": [
+      "25-cell: 8▲ / 4▼ / 13—",
+      "Volatilitet σ 34 %/år",
+      "52v-position: 52 %"
+    ],
+    "priceTarget": {
+      "value": "1096.25",
+      "currency": "SEK",
+      "span12m": "515.4 – 1096.25",
+      "risk": "LÅG-MEDEL"
+    },
+    "nyborjareCallout": {
+      "title": "Vad är en datadriven föranalys?",
+      "body": "Vi har låtit motorn läsa pris och volym via fem tidshorisonter. Det visar TREND och RISK — men inte om bolaget är värt sitt pris. Det avgör fundamentalgranskningen (AKM1) som väntar."
+    }
+  },
+  "waveSummary": {
+    "title": "Våganalys — motorns klassificering",
+    "overallBias": "Blandad bild",
+    "perHorisont": {
+      "mikro": "impulsvåg",
+      "kort": "impulsvåg",
+      "medellang": "basbygge",
+      "lang": "korrigering",
+      "mega": "korrigering"
+    },
+    "matris25": {
+      "elliott.mikro": 1,
+      "fibonacci.mikro": 0,
+      "gann.mikro": 1,
+      "lucas.mikro": 1,
+      "volym.mikro": 0,
+      "elliott.kort": 1,
+      "fibonacci.kort": 0,
+      "gann.kort": 1,
+      "lucas.kort": 1,
+      "volym.kort": 0,
+      "elliott.medellang": 0,
+      "fibonacci.medellang": 0,
+      "gann.medellang": 0,
+      "lucas.medellang": 1,
+      "volym.medellang": 0,
+      "elliott.lang": -1,
+      "fibonacci.lang": 0,
+      "gann.lang": 0,
+      "lucas.lang": 1,
+      "volym.lang": 0,
+      "elliott.mega": -1,
+      "fibonacci.mega": 0,
+      "gann.mega": -1,
+      "lucas.mega": -1,
+      "volym.mega": 0
+    }
+  },
+  "priceLevels": {
+    "title": "Datastyrda nivåer",
+    "levels": [
+      {
+        "label": "52v-lägsta",
+        "value": "515.4",
+        "tone": "bear"
+      },
+      {
+        "label": "Fib 61,8 % (från topp)",
+        "value": "737.2847",
+        "tone": "neutral"
+      },
+      {
+        "label": "MA 50 dagar",
+        "value": "713.296",
+        "tone": "neutral"
+      },
+      {
+        "label": "Fib 38,2 % (från topp)",
+        "value": "874.3653",
+        "tone": "neutral"
+      },
+      {
+        "label": "MA 200 dagar",
+        "value": "640.485",
+        "tone": "neutral"
+      },
+      {
+        "label": "52v-högsta",
+        "value": "1096.25",
+        "tone": "bull"
+      }
+    ]
+  },
+  "motivation": {
+    "del": "Motivering",
+    "body": "Motorn hämtade 1 oberoende källa och beräknade momentum per horisont, volatilitet (σ 34 %/år), 52-veckorsposition (52 %) och vågklass per horisont: mikro=impulsvåg, kort=impulsvåg, medellang=basbygge, lang=korrigering, mega=korrigering. 25-cellersmatrisen ger 8 bullish-, 4 bearish- och 13 neutrala celler. Detta är trend- och riskläget — värderingen kommer i den manuella AKM1-granskningen."
+  },
+  "risk": {
+    "sigmaAr": 0.3425,
+    "atr14": 19.4857,
+    "voltrend": 0.0238,
+    "pos52": 0.524
+  },
+  "disclaimer": "Datadriven föranalys från pris/volymdata. Pedagogisk finansanalys — inte investeringsråd."
+}

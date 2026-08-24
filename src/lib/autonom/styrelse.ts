@@ -113,6 +113,14 @@ const KANDIDATER: Array<{
     motiv: "Nurture-flödet (dag 0/2/4/7/10) behöver e-postinfrastruktur — vänta på SMTP-nyckel från grundaren.",
   },
   {
+    titel: "CDO-organet: utöka datakällor (fundamentaldel via Yahoo quote + MarketStack)",
+    vikt: 9,
+    insats: "MEDEL",
+    kundnytta: 5,
+    planRef: "Djupanalys v2 — 'siffror via flera oberoende källor'",
+    motiv: "Motorn har pris/volym från Yahoo+MarketStack. Nästa kvalitetslyft: P/E, marginaler och nyckeltal per innehav i djupanalysen (Yahoo quote-meta + MarketStack fundamentals när tillgängligt) → viktad portfölj-P/E i rapporten.",
+  },
+  {
     titel: "Våg-självskattning per innehav (portföljsystemet v2)",
     vikt: 8,
     insats: "LÅG",

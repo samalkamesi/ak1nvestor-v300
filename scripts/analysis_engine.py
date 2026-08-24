@@ -9,37 +9,49 @@ Teorierna är struktureringsverktyg utan vetenskapligt belagd prediktiv förmåg
 
 Kör: echo '{"tickers":["PREC.ST"]}' | python scripts/analysis_engine.py
 """
-import sys, json, math, socket, urllib.request
+import sys, json, math, os, re, datetime, socket, urllib.request
 from urllib.parse import urlparse
 from concurrent.futures import ThreadPoolExecutor
 
 HORIZONTER = ["mikro", "kort", "medellang", "lang", "mega"]
 TEORIER = ["elliott", "fibonacci", "gann", "lucas", "volym"]
-ALLOWED_HOSTS = {"stooq.com", "www.stooq.com", "query1.finance.yahoo.com", "query2.finance.yahoo.com"}
+ALLOWED_HOSTS = {
+    "stooq.com", "www.stooq.com",
+    "query1.finance.yahoo.com", "query2.finance.yahoo.com",
+    "api.marketstack.com",
+}
 
 
-def safe_get(url, timeout=10):
-    """Endast https mot allowlistade värdar; blockera privata/loopback-IP; inga redirects."""
-    u = urlparse(url)
-    if u.scheme != "https" or u.hostname not in ALLOWED_HOSTS:
-        raise ValueError("blockerad host/scheme: " + url)
-    ip = socket.getaddrinfo(u.hostname, None)[0][4][0]
-    privat = ip.startswith(("127.", "10.", "192.168.", "169.254.", "::1")) or (
+def _privat_ip(ip: str) -> bool:
+    return ip.startswith(("127.", "10.", "192.168.", "169.254.", "::1", "fe80:", "0.")) or (
         ip.startswith("172.") and 16 <= int(ip.split(".")[1]) <= 31)
-    if privat:
-        raise ValueError("blockerad privat IP: " + ip)
-    req = urllib.request.Request(url, headers={"User-Agent": "AK1A-Analysis/1.0"})
-    return urllib.request.urlopen(req, timeout=timeout).read().decode()
+
+
+def _kontrollera_host(host_const: str) -> None:
+    """Kontrollerar FAST värdkonstant mot allowlist + privat-IP (DNS om direkt före anrop)."""
+    if host_const not in ("query1.finance.yahoo.com", "stooq.com", "api.marketstack.com"):
+        raise ValueError("blockerad värd")
+    ip = socket.getaddrinfo(host_const, 443, socket.AF_INET)[0][4][0]
+    if _privat_ip(ip):
+        raise ValueError("blockerad privat IP")
+
+
+class _IngenRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise ValueError("redirect blockerad")
 
 
 def fetch_yahoo(ticker, period="1y", interval="1d"):
     """Yahoos publika chart-API — inga pip-beroenden (fungerar på Vercel serverless)."""
     try:
-        raw = safe_get(
-            f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.request.quote(ticker)}"
-            f"?range={period}&interval={interval}",
-            timeout=15,
-        )
+        _kontrollera_host("query1.finance.yahoo.com")
+        ticker_kod = urllib.request.quote(ticker)
+        if not re.fullmatch(r"[A-Za-z0-9.\-]{1,12}", ticker):
+            return None
+        url = "https://query1.finance.yahoo.com/v8/finance/chart/" + ticker_kod + "?range=" + period + "&interval=" + interval
+        opener = urllib.request.build_opener(_IngenRedirect)
+        req = urllib.request.Request(url, headers={"User-Agent": "AK1A-Analysis/1.0"})
+        raw = opener.open(req, timeout=15).read().decode()
         res = json.loads(raw)["chart"]["result"][0]
         meta = res.get("meta", {}) or {}
         q = res["indicators"]["quote"][0]
@@ -63,10 +75,46 @@ def fetch_yahoo(ticker, period="1y", interval="1d"):
         return None
 
 
+def fetch_marketstack(ticker):
+    """MarketStack (Business API) — färskhetsvaliderad: data äldre än 7 dagar avvisas."""
+    key = os.environ.get("MARKETSTACK_KEY", "")
+    if not key:
+        return None
+    symbol = ticker.replace(".ST", ".XSTO").replace(".st", ".XSTO")
+    fran = (datetime.date.today() - datetime.timedelta(days=740)).isoformat()
+    try:
+        _kontrollera_host("api.marketstack.com")
+        url = ("https://api.marketstack.com/v1/eod?access_key=" + key
+               + "&symbols=" + urllib.request.quote(symbol) + "&date_from=" + fran + "&limit=1000")
+        opener = urllib.request.build_opener(_IngenRedirect)
+        req = urllib.request.Request(url, headers={"User-Agent": "AK1A-Analysis/1.0"})
+        raw = opener.open(req, timeout=15).read().decode()
+        rader = json.loads(raw).get("data") or []
+        if len(rader) < 30:
+            return None
+        # Sortera stigande på datum; avvisa om senaste är för gammal (XSTO kan vara inaktuell)
+        rader.sort(key=lambda r: r["date"])
+        senast = rader[-1]["date"][:10]
+        import datetime as _dt
+        if (_dt.date.fromisoformat(senast) - _dt.date.today()).days < -7:
+            return None
+        close = [round(float(r["close"]), 6) for r in rader if r.get("close")]
+        high = [round(float(r.get("high") or r["close"]), 6) for r in rader]
+        low = [round(float(r.get("low") or r["close"]), 6) for r in rader]
+        vol = [float(r.get("volume") or 0) for r in rader]
+        return {"close": close, "high": high, "low": low, "vol": vol, "kalla": "marketstack"}
+    except Exception:
+        return None
+
+
 def fetch_stooq(ticker):
     sym = ticker.lower().replace(".st", "").replace("-", "")
     try:
-        raw = safe_get(f"https://stooq.com/q/d/l/?s={sym}se&i=d")
+        _kontrollera_host("stooq.com")
+        url = "https://stooq.com/q/d/l/?s=" + sym + "se&i=d"
+        opener = urllib.request.build_opener(_IngenRedirect)
+        req = urllib.request.Request(url, headers={"User-Agent": "AK1A-Analysis/1.0"})
+        raw = opener.open(req, timeout=10).read().decode()
         lines = [l.split(",") for l in raw.strip().splitlines() if "," in l]
         if len(lines) < 40 or "Close" not in lines[0]:
             return None
@@ -127,10 +175,13 @@ def analysera_ticker(ticker):
     dag = fetch_yahoo(ticker, "2y", "1d")
     vecka = fetch_yahoo(ticker, "5y", "1wk")
     stooq = fetch_stooq(ticker)
-    kallor = 1 + (1 if stooq else 0)
+    ms = fetch_marketstack(ticker)  # färskhetsvaliderad; None om data >7 dagar gammal
+    kallor = 1 + (1 if stooq else 0) + (1 if ms else 0)
 
+    if not dag and ms:
+        dag = ms  # MarketStack som fallback när Yahoo fallerar (endast färska data)
     if not dag:
-        return {"ticker": ticker, "fel": "ingen data (Yahoo)"}
+        return {"ticker": ticker, "fel": "ingen data (Yahoo/MarketStack)"}
 
     c = dag["close"]
     pris = c[-1]

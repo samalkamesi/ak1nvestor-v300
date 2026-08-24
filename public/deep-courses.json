@@ -40318,5 +40318,107 @@
     "lynchSection": "Lynch använde WACC-fällor förenklat och menade att 'köp bra bolag till rimligt pris' räcker. Han ogillade överdriven precision i värdering.",
     "grahamSection": "Graham utvecklade själv WACC-fällor och betonade dess vikt. Han krävde dock alltid 'margin of safety' utöver beräknat värde.",
     "ak1Section": "AKM1 använder WACC-fällor som en av flera värderingsmetoder i V04–V06. Vanliga misstag i kapitalkostnadsberäkning integreras med andra variabler för helhetsbild."
+  },
+  "portfolj-ekosystemet": {
+    "slug": "portfolj-ekosystemet",
+    "category": "PRAKTISKA CASE",
+    "weight": "KRITISK",
+    "chapterCount": 6,
+    "totalMinutes": 55,
+    "title": "Från aktie till portfölj — 5×5×4-ekosystemet i praktiken",
+    "summary": "Så byggs en portföljanalys av aktieanalyser: fem horisonter, fem teorier, oberoende datakällor och viktad helhetsbild.",
+    "minutes": 55,
+    "xp": 500,
+    "level": "Intermediär",
+    "learn": "Hur enskilda aktieanalyser vägs samman till en portföljsamlad bild med vågprofil per horisont.",
+    "why": "Portföljen — inte aktien — är beslutsenheten. Fem bra aktier kan bilda en sårbar portfölj; ekosystem-analysen synliggör samspelet.",
+    "chapters_list": [
+      "Från enskild aktie till helhet — varför portföljen är analysenheten",
+      "De fem tidshorisonterna i din portfölj",
+      "De fem teorierna — oberoende röster, inte sanningar",
+      "Siffrorna bakom vågorna — Python och de oberoende källorna",
+      "Risk och koncentration — portföljens svaga punkter",
+      "Läs din portföljrapport — från celler till beslut"
+    ],
+    "history": {
+      "origin": "AK1A:s ekosystem-ramverk utvecklades ur de avancerade 99-sidiga aktieanalyserna (2026). När medlemmar började fråga 'men hur ser MIN portfölj ut i matrisen?' föddes portföljsystemet — samma fem horisonter och fem teorier, men viktat över samtliga innehav. Kursen samlar metodiken i sex kapitel, från systemtänk till beslutsramverk."
+    },
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 9,
+        "title": "Från enskild aktie till helhet — varför portföljen är analysenheten",
+        "intro": "En perfekt aktieanalys kan bli en dålig portfölj. Kapitlet visar varför helheten väger tyngre än delarna: korrelation, koncentration och hur fem bra bolag ändå kan bilda en sårbar portfölj. Vi introducerar ekosystem-tankegången: portföljen är ett system, inte en lista.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Portföljens risk är inte summan av aktiernas risker — det är deras SAMSPELL. Två bolag i samma sektor med samma kunder delar inte två risker utan nästan en. Institutionella förvaltare börjar därför alltid på portföljnivå: vilka risker bär jag SAMLAT, inte vilka aktier gillar jag. AK1A:s portföljanalys följer samma princip: varje aktie analyseras för sig (AKM1 + vågor) och vägs sedan ihop till portföljens samlade bild — viktat AKM1, viktad volatilitet, vågprofil per horisont."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 9,
+        "title": "De fem tidshorisonterna i din portfölj",
+        "intro": "Mikro, kort, medellång, lång och mega — samma fem fönster som i de avancerade analyserna, nu applicerade på HELA portföljen. Du lär dig skillnaden mellan att ha 80 % impulsvågar på mikro och 80 % på medellång — och varför det senare är det som faktiskt bör styra ditt sparande.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En portfölj kan se bullish ut på mikro (tillfällig rally) samtidigt som den är i korrigering på medellång sikt. Nybörjaren förväxlar fönstren och agerar på fel signal; analytikern håller isär dem. Djupanalysen i AK1A:s portföljsystem räknar vågprofil per horisont — viktad efter hur stort varje innehav är — så att du ser exakt var portföljen har momentum och var den väntar. Mikro = veckor, kort = 1-3 månader, medellång = 3-12 månader, lång = 1-5 år, mega = 5 år+. Din tidshorisont som människa avgör vilken rad som är DIN rad."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 9,
+        "title": "De fem teorierna — oberoende röster, inte sanningar",
+        "intro": "Elliott-vågor, Fibonacci, GANN, Lucas-cykler och volymanalys. Varje teori är ett oberoende perspektiv på samma prisdata. Ingen av dem har vetenskapligt belagd prediktiv förmåga — de är struktureringsverktyg. Kraften ligger i konfluens: när tre eller fler oberoende röster pekar samma håll minskar risken för att en enskild tolkning förblindar dig.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "I 25-cellers-matrisen (5 teorier × 5 horisonter) får varje teori rösta -1, 0 eller +1 per horisont. Ingen cell får dominera. Portföljens matris är den viktade summan av dina innehavs matriser — en enda bild av systemet. Lär dig läsa bias: övervägande ▲ = konfluens uppåt, övervägande ▼ = konfluens nedåt, splittrat = vänta. AK1A:s motor beräknar rösterna ur verklig pris- och volymdata via flera oberoende källor — proxy-mätare, redovisade som sådana."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 9,
+        "title": "Siffrorna bakom vågorna — Python och de oberoende källorna",
+        "intro": "Hur förvandlas rå prisdata till vågklassificering? Kapitlet visar motorns matta: momentum per fönster, glidande medelvärden, volatilitet (σ), ATR och 52-veckors-position — och hur vågklassen (impulsvåg/korrigering/basbygge) härleds ur dessa mått. Du får se exakt vilka formler som ligger bakom varje cell i matrisen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Impulsvåg = momentum över tröskeln + pris ovanför glidande medel. Korrigering = negativt momentum + pris under medel. Basbygge = momentum nära noll. Det är enkla, transparanta regler — och det är poängen: du ska kunna granska varje klassificering, inte tro på magi. Data hämtas från Yahoo Finance och MarketStack (två oberoende källor) och varje rapport redovisar vilka källor som levererat. Reproducerbarhet är hela skillnaden mellan analys och tyckande."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 9,
+        "title": "Risk och koncentration — portföljens svaga punkter",
+        "intro": "Viktad volatilitet, största innehavets andel, sektorspridning och analys-täckning. Du lär dig de fyra riskmått som portföljrapporten redovisar och vad varje mått fångar som de andra missar. Med konkreta trösklar: över 30 % i ett bolag, under fem innehav, över 60 % i en sektor.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ett bolag över 30 % av portföljen betyder att bolagsspecifika nyheter styr en tredjedel av din förmögenhet. Under fem innehav betyder att varje bolagsrisk väger tungt. Saknad analys-täckning betyder okontrollerat kapital — pengar i bolag du inte har underlag för. Portföljrapporten räknar ut alla fyra och ger regelbaserade tips när trösklarna passeras. Tipsen är pedagogiska, inte råd."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 9,
+        "title": "Läs din portföljrapport — från celler till beslut",
+        "intro": "Slutövningen: du öppnar din egen djupanalys och tolkar den steg för steg — 25-cellers-matrisen, vågprofilen per horisont, riskmåtten, tipsen. Kapitlet slutar med beslutsramverket: när du agerar (konfluens + riskmått i balans), när du väntar (splittrad bild) och när du åtgärdar (trösklar passerade).",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Rutinen: (1) Läs bias-dommen — bullish, bearish eller neutral? (2) Kontrollera VILKEN horisont som driver — är bilden stark på lång men svag på kort är det en fråga om tålamod, inte alarm. (3) Kontrollera riskmåtten — fel i risken åtgärdas innan du handlar på signaler. (4) Läs tipsen och notera vilka som gäller dig. (5) Skriv ner vad som skulle ändra din bild. Sen — och bara sen — fattar du ett beslut. Metodiken är fri; ansvaret är ditt. Pedagogisk finansanalys, inte investeringsråd."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch hade få innehav och djup kännedom för varje bolag — men hans portfölj var medvetet koncentrerad till det han förstod bäst. Ekosystem-analysen formaliserar den intuitionsbaserade helhetsblicken: koncentration är inte fel, okänd koncentration är fel.",
+    "grahamSection": "Benjamin Graham förespråkade spridning som skydd mot det okända — 20-30 positioner minskar enskild bolagsrisk dramatiskt. Portföljrapportens sektors- och koncentrationsmått är Grahams principer i sifferform: spridning är ett mått, inte en känsla.",
+    "ak1Section": "AK1:s tolkning: portföljen är ett system av vågor. AKM1-poängen per aktie vägs till portföljens viktade kvalitet; vågklasserna vägs till vågprofilen per horisont; och 25-cellers-matrisen aggregeras till en enda bias-dom. Systemet beräknas ur oberoende datakällor och varje steg är granskningsbart — det är ekosystemets kärna: en bild, hundra datapunkter, noll magi."
   }
 }

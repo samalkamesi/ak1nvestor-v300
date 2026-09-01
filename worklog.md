@@ -3153,3 +3153,19 @@ Stage Summary:
 - Varje kurs answerar: VARFÖR just denna + VAD du kan efter
 - Kö: integrera läroplanen i kurs-sidor (visar var i resan du är),
   fler nivåer med kurser, certifierings-system
+---
+Task ID: 101-RIKTEXT
+Agent: main (Z.ai Code)
+Task: RikText — automatisk visuell berikning av alla kurser — LIVE
+
+Work Log:
+- rik-text.tsx: intelligent texttolkare som omvandlar text till visuella element
+  automatiskt (steg-kort, data-chips, exempel-boxar, poäng-mätare, fallstudie-kort,
+  ◆-separatorer för långa stycken)
+- Integrerad i kurssidan: ersätter <p>-rendering med <RikText>
+- 708 statiska sidor grönt, deployad
+
+Stage Summary:
+- 'All text ska vara visuell' — RikText tolkar och renderar automatiskt
+- Alla 227 kurser får visuell berikning utan manuell omskrivning
+- Kö: integrera även i KursSteg (Graham), lägga till fler mönster

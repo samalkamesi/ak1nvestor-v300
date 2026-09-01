@@ -1,0 +1,1022 @@
+{
+  "slug": "the-outsiders",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "The Outsiders — Thorndike: KOMPLETT",
+  "summary": "The Outsiders (2012) är William Thorndikes studie av åtta VD:ar som slog S&P 500 med mer än tjugo gånger — inte genom imperiumsbyggande utan genom kapitalallokering. Kursen går igenom de fem gemensamma principerna, allokeringsverktygen (återköp, förvärv, utdelning, skuld och att göra ingenting) och alla åtta fallen: Murphy, Singleton, Anders, Malone, Graham, Stiritz, Simmons och Buffett. V20 — återköp av egna aktier — är bokens djupaste och mest användbara kapitel för AKM1-ekosystemet.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven förklara Thorndikes tes — att kapitalallokering är VD:ns viktigaste jobb och att de åtta outsider-VD:arna sammanlagt slog S&P 500 med mer än tjugo gånger — och de fem principer som förenade dem: decentraliserad organisation med minimala huvudkontor, fokus på kassaflöde och »cash EPS« i stället för redovisad vinst, allokering som kärnuppgift, beslutsfrihet via ägarstruktur samt långa tidshorisonter med nerv att gå emot. Eleven kan värdera återköp (V20) med Henry Singletons återköp av omkring nittio procent av Teledynes aktier och Buffetts regel om minst tjugo procents rabatt mot konservativt beräknat inre värde som riktmärke, och skilja värdeskapande återköp (pris under inre värde, marginal of safety) från värdeförstörande (köp på topp, kompensation för utspäddning). Vidare kan eleven tillämpa Murphy-modellen (köp samma affär igen och igen till låga multipler), Malones kabelmatematik (köpa system till omkring fem gånger kassaflödet, finansiera med skuld (V10) mot stabila abonnemangsintäkter (V12) och sälja vidare till högre multipl), Anders radikala krympning av General Dynamics med specialutdelning och återköp, samt Graham-, Stiritz- och Simmons-fallens tålmodiga allokering. Eleven kan slutligen granska vilken VD eller börsnoterad bolagsledning som helst med per-aktie-måttstocken (avkastning per aktie, inte per bolag) över tio till tjugo år, använda EV/EBITDA (V06) som multiplmått vid köp och återköp, och identifiera imperiebyggandets och guidance-kulturens varningsflaggor — med marginal of safety (utan V-nummer) som den övergripande prisdisciplinen.",
+  "why": "The Outsiders är den moderna klassikern om kapitalallokering och standardverket för den fråga som kurser i företagsekonomi sällan vågar ställa: vad gör egentligen en VD med bolagets kassa? Thorndike — grundare av riskkapitalbolaget Housatonic Partners — jämförde de åtta med genomsnittets imperiebyggare och fann att skiljelinjen inte var karisma eller operationell briljans utan priset på varje allokering. För AKM1-ekosystemet är boken den djupaste källan till V20 (återköp av egna aktier): Singletons Teledyne — där en dollar av inre värde köptes tillbaka för fyrtio cent, om och om igen, tills nittio procent av aktierna var inlösta — är börsens mest underskattade signals historiskt exempel, och Buffetts tjugo procents regel ger operationaliserbar disciplin. Samtidigt levererar boken ramverket kring smart belåning (V10) mot förutsägbara intäkter (V12), kassaflödestänkandet som grund för alla marginaler, och den långa per-aktie-måttstocken som gör att en AKM1-analys väger återköpens pris mot emissionriskens motsats (V19) snarare än mot kvartalsguidance. Boken citeras öppet i kursen; dess teser är byggda på verifierbara utfall i åtta börsnoterade bolag.",
+  "chapters_list": [
+    "1. Utanförarna — tesen och de åtta VD:arna",
+    "2. Kapitalallokeringen — VD:ns viktigaste jobb",
+    "3. Decentralisering — huvudkontoret är en kostnad, inte en styrka",
+    "4. Cash EPS — kassaflöde före redovisad vinst",
+    "5. Återköp I — Henry Singletons mästarklass (V20)",
+    "6. Återköp II — när återköp skapar och förstör värde (V20)",
+    "7. Tom Murphy — Capital Cities och konsten att köpa samma affär igen",
+    "8. John Malone — TCI och kabelmatematiken",
+    "9. Bill Anders — General Dynamics: krympa för att växa",
+    "10. Graham, Stiritz och Simmons — tre tålmodiga allokatorer",
+    "11. Warren Buffett — Berkshire och allokeringens fulländning",
+    "12. Verktygslådan — utdelning, skuld och att göra ingenting",
+    "13. Imperiebyggarna — spegelbilden av genomsnitts-VD:n",
+    "14. Syntesen — avkastning per aktie, långa horisonter och marginal of safety"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Utanförarna — tesen och de åtta VD:arna",
+      "intro": "William N. Thorndike Jr., riskkapitalist och grundare av Housatonic Partners, gav 2012 ut The Outsiders — åtta okonventionella VD:ar och deras radikalt rationella recept för framgång. Hans metod var enkel: mät VD:ars avkastning per aktie över lång tid, leta efter extremvärdena och fråga vad de gjorde annorlunda. Svaret blev en bok som snabbt blev standardverket om kapitalallokering — och som avslöjar att de bästa VD:arna i amerikansk börs i grunden var investerare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tesens kärna är statistiken: de åtta VD:arna — Tom Murphy (Capital Cities), Henry Singleton (Teledyne), Bill Anders (General Dynamics), John Malone (TCI), Katharine Graham (Washington Post), Bill Stiritz (Ralston Purina), Dick Simmons (General Cinema) och Warren Buffett (Berkshire Hathaway) — levererade sammantaget en avkastning som överträffade S&P 500 med mer än tjugo gånger under deras tid som chefer. De slog också hyllade ikoner som Jack Welch på GE, ofta med bred marginal. Ingen av dem var känd för karismatisk kommunikation eller imperiumsbyggande; flera undvek medierna aktivt. Vad de delade var ett annat fundament: de behandlade bolaget som sin egen portfölj och sig själva som dess allokator."
+        },
+        {
+          "type": "text",
+          "content": "Ordet »outsiders« har dubbel betydelse. Dels kom många av dem utifrån den etablerade VD-mallen: Anders var astronaut och kärningenjör, Malone kom från Bell Labs och konsultvärlden, Graham var änka som tvivlade på sin egen förmåga och Thorndike beskriver hur hon gick från att fråga »kan jag?« till att leda bolaget i två decennier. Dels stod de utanför samtidens management-tro — den om att storlek, personalstyrka och synlighet i sig skapar värde. Thorndikes porträtt är kyligt sakliga och sifferdrivna: hans huvudpersoner är rationella, prissatta beslutsfattare som inte behöver bli älskade."
+        },
+        {
+          "type": "text",
+          "content": "Fem principer återkommer hos alla åtta och utgör bokens ryggrad. För det första: decentraliserad organisation — minska huvudkontoret, öka de anställdas ansvar och tryck besluten nedåt. För det andra: fokus på kassaflöde, inte redovisad vinst — deras måttstock var »cash EPS«. För det tredje: kapitalallokeringen som VD:ns viktigaste jobb — att bestämma vad som händer med varje överskottskrona. För det fjärde: beslutsfrihet via ägarstruktur — beständiga huvudägare eller dubbelklassaktier som skyddade mot kortsiktighet. För det femte: långa tidshorisonter och nerv att gå emot strömmen. Resten av kursen bygger ut dessa principer, verktygen och de åtta fallen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De åtta utanförarna — överblick\",\"rader\":[[\"VD\",\"Bolag\",\"Period som VD\",\"CAGR aktien (≈)\",\"Nyckelgrepp\"],[\"Tom Murphy\",\"Capital Cities\",\"1966–1995\",\"≈19,9 %\",\"Köp samma affär (TV-stationer) igen och igen; ABC 3,5 mdr $\"],[\"Henry Singleton\",\"Teledyne\",\"1961–1986\",\"≈20 %\",\"Återköp av ~90 % av aktierna; ingen utdelning\"],[\"Bill Anders\",\"General Dynamics\",\"1991–1993\",\"flera hundra % totalt\",\"Krympa bolaget; specialutdelning 50 $/aktie\"],[\"John Malone\",\"TCI\",\"1973–1998\",\"≈30 %\",\"Kabelmatematik: köp 5x kassaflöde, sälj högre; ingen skatt\"],[\"Katharine Graham\",\"Washington Post\",\"1971–1993\",\">20 %\",\"Investera i kärnan; köp Stanley Kaplan; återköp\"],[\"Bill Stiritz\",\"Ralston Purina\",\"1981–1997\",\"≈20 %\",\"Återköp av ~60 % av aktierna; renodling kring varumärken\"],[\"Dick Simmons\",\"General Cinema/Harcourt\",\"1969–2001\",\"≈19 %\",\"Biograf → Pepsi-flaskning → Harcourt till låg multipl\"],[\"Warren Buffett\",\"Berkshire Hathaway\",\"1965–2011\",\"≈20 %\",\"Försäkringsfloat som bränsle; extrem prisdisciplin\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "De bästa VD:arna i amerikansk börs var inte operatörer som blev investerare — de var investerare som råkade driva bolag, och de mätte sig i avkastning per aktie, inte i bolagets storlek."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en VD för ett stort börsnoterat bolag som du följer. Ta reda på: hur stor är huvudkontoret (personal på koncernnivå), ger bolaget kvartalsguidance, och vad har hänt med aktieantalet de senaste fem åren — utspäddning eller återköp? Notera hur många av de fem principerna bolagsledningen lever upp till, och vilka som brutits."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur stor var de åtta utanförarnas sammanlagda överprestanda mot S&P 500 under deras tid som VD:ar?",
+          "alternativ": [
+            "Ungefär dubbla indexavkastningen",
+            "Omkring fem gånger bättre än index",
+            "Mer än tjugo gånger bättre än index",
+            "De slog inte index sammantaget"
+          ],
+          "ratt": 2,
+          "tips": "Tänk i termer av komponenter över decennier, inte ett enskilt år — vad händer om någon ligger några procentenheter före varje år i 25 år?"
+        },
+        {
+          "q": "Vad menar Thorndike med att kalla VD:arna för »outsiders«?",
+          "alternativ": [
+            "De kom ofta utifrån den etablerade VD-mallen — från andra karriärer och branscher — och följde inte samtidens management-ideal om storlek och synlighet",
+            "De var börsens mest kortade och omtalade bolag",
+            "De rekryterades alla från utlandet",
+            "De hade alla blivit avskedade från tidigare VD-poster"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad de INTE var: stabsdrivna företagsbyggare med managementbakgrund."
+        },
+        {
+          "q": "Vilken av följande är en av bokens fem gemensamma principer?",
+          "alternativ": [
+            "Aktiv kvartalsguidance för att bygga förtroende hos analytiker",
+            "Fokus på kassaflöde och »cash EPS« i stället för redovisad vinst",
+            "Centraliserad beslutsfattning på en växande koncernstab",
+            "Tillväxt genom förvärv oavsett pris"
+          ],
+          "ratt": 1,
+          "tips": "Principerna handlar om vad VD:n mäter, hur organisationen ser ut och vilka som äger bolaget — inte om kommunikationsstrategi."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Kapitalallokeringen — VD:ns viktigaste jobb",
+      "intro": "Thorndikes grundläggande omformulering av VD-rollen är kursens viktigaste idégivare: en VD är inte främst en operatör utan en kapitalallokator. Varje år samlar ett lönsamt bolag på sig kassa — och frågan vad som händer med den avgör på sikt mer än nästan allt annat i chefsjobbet. Detta kapitel bygger ramverket: de fem alternativen, beslutslogiken och kompounderingsmatematiken som gör små skillnader i allokeringskvalitet enorma över decennier.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En VD för ett växande bolag kan i princip göra fem saker med överskottskassan: återinvestera i den egna verksamheten, göra förvärv, betala utdelning, amortera ned skuld eller köpa tillbaka egna aktier. Thorndike poängterar att detta val — återkommande, år efter år — är VD:ns verkligt definierande uppgift. Buffett har sagt något i samma riktning i sina ägarbrev: kapitalfördelningsförmågan är avgörande för långsiktiga resultat, eftersom en VD som allokerar dåligt kan förstöra mer värde än en medelmåttig operatör någonsin skapar. Den operativa sidan kan och bör delegeras; allokeringen kan inte."
+        },
+        {
+          "type": "text",
+          "content": "Logiken bakom varje alternativ är priset. Att återinvestera i den egna verksamheten är rätt när avkastningen på investerat kapital överstiger vad ägarna kan få någon annanstans — annars är det värdeförstöring i fint förpackad form. Ett förvärv är rätt när köpet sker till ett pris under det beräknade värdet av tillgångarna, vilket kräver tålamod eftersom bra företag sällan är billiga. Utdelning och amortering är returnering av kapital när bolaget saknar bättre användning. Återköpet är den mest missförstådda av de fem: det är helt enkelt ett förvärv av bolagets egna aktier, och det följer exakt samma prislogik som vilken target som helst — vilket gör verktyget antingen det mest värdeskapande eller det mest värdeförstörande i lådan (V20)."
+        },
+        {
+          "type": "text",
+          "content": "Kompounderingsmatematiken förklarar varför Thorndike ägnar en hel bok åt besluten. En VD som årligen allokerar kassan till avkastningar på tolv procent skapar dubbelt så mycket värde per decennium som en som allokerar till sex procent — och över tjugofem år blir skillnaden inte dubbel utan nästan niofaldig. De åtta utanförarna var inte bättre operatörer än genomsnittet i någon dramatisk grad; de var systematiskt bättre på priset och avkastningen per investerad dollar. Deras gemensamma fråga var alltid densamma: vad är den bästa användningen av den här dollarn, mätt per aktie?"
+        },
+        {
+          "type": "text",
+          "content": "Observera vad som saknas i listan: att bygga huvudkontor, förvärva för att nå kritisk massa, eller behålla kassa för känslan av trygghet utan plan. Thorndike visar att alternativen har en inbyggd rangordningslogik — återinvestering i högavkastande kärnverksamhet går först, därefter förvärv och återköp när priserna är attraktiva, och returnering när inget annat vänder kapitalet bättre. En modern AKM1-analys översätter det till att väga förvärvsmultiplar (V06 EV/EBITDA) mot återköpets pris mot inre värde, och att misstro bolag som låter kassan ligga oanvänd i åratal utan allokeringsberättigande — stillastående kapital är en tyst förlust mot alternativkostnaden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De fem alternativen för bolagets kassa\",\"rader\":[[\"Alternativ\",\"Rätt när…\",\"Varningstecken\",\"AKM1-koppling\"],[\"Återinvestera i verksamheten\",\"Avkastningen på nytt kapital överstiger alternativkostnaden\",\"Tillväxt som köps till fallande avkastning\",\"Kapitalförbrukning utan avkastning (V19)\"],[\"Förvärv\",\"Priset ligger klart under beräknat värde; synergier är verkliga\",\"Strategiska motiveringar utan prisdisciplin; betalning med dyra egna aktier\",\"Multipl: V06 EV/EBITDA\"],[\"Utdelning\",\"Bolaget saknar användning för kapitalet; flödet är stabilt\",\"Utdelning som lånas för att hållas uppe\",\"Intäktsstabilitet V12\"],[\"Amortera skuld\",\"Skulden tryggar inte längre förtjänsten eller kostnaden stiger\",\"Amortering medan bättre alternativ finns\",\"Skuldsättningsgrad V10\"],[\"Återköp av egna aktier\",\"Kursen ligger klart under konservativt inre värde\",\"Köp på topp; återköp som endast kompenserar optioner\",\"Återköp V20 + marginal of safety\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett återköp är bara ett förvärv av bolagets egna aktier — det ska bedömas med exakt samma prisdisciplin som ett företagsköp: köper du en dollar av värde för fyrtio cent eller för två dollar?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett bolag du äger och uppskatta dess fria kassa efter investeringar för det senaste året. Fördela den i verklighetens fem alternativ utifrån årsredovisningen och pressmeddelandena. Hur stor andel gick till återinvestering, förvärv, utdelning, amortering respektive återköp — och till vilket pris? Skriv en mening om vilken alternativ du som ägare hade föredragit."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Thorndike är VD:ns viktigaste uppgift?",
+          "alternativ": [
+            "Att bygga en stark företagskultur",
+            "Att kommunicera med analytiker och media kvartalsvis",
+            "Att leda den årliga strategiprocessen",
+            "Kapitalallokeringen — att bestämma vad som händer med bolagets kassa"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig vilken uppgift som varken kan delegeras till dotterbolagschefer eller till stabsfunktioner."
+        },
+        {
+          "q": "Vilka är de fem huvudsakliga användningarna av bolagets kassa enligt boken?",
+          "alternativ": [
+            "Reinvestera i verksamheten, förvärv, utdelning, amortering av skuld och återköp av egna aktier",
+            "Lönebonusar, marknadsföring, expansion utomlands, sponsring och konsultarvoden",
+            "Utdelning, nyemission, förvärv, personaloptioner och donationer",
+            "Att binda kassan i räntebärande papper med olika löptider"
+          ],
+          "ratt": 0,
+          "tips": "Räkna upp vad ett moget, kassaflödesstarkt bolag realistiskt kan göra med överskottet år efter år."
+        },
+        {
+          "q": "Varför blir små skillnader i allokeringskvalitet så avgörande över tid?",
+          "alternativ": [
+            "Eftersom börsen belönar aktivitet och frekventa affärer",
+            "Eftersom regelverket kräver årlig omallokering av kapitalet",
+            "Eftersom kompoundering gör att några procents skillnad per år växer till enorma skillnader över decennier",
+            "Eftersom konkurrenter annars kopierar strategin inom ett år"
+          ],
+          "ratt": 2,
+          "tips": "Räkna på 12 mot 6 procents årlig avkastning över tio respektive tjugofem år."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Decentralisering — huvudkontoret är en kostnad, inte en styrka",
+      "intro": "Den första av de fem principerna är organisatorisk: utanförarna drev sina imperier med förbluffande små huvudkontor. Thorndike beskriver hur Capital Cities styrdes av ett femtiotal personer även efter att bolaget vuxit till tiotusentals anställda genom ABC-affären, och hur Berkshire Hathaway drivs av runt tjugo personer på kontoret i Omaha. Poängen är inte snålhet för snålhetens skull — det är att frigöra VD:ns tid och uppmärksamhet för de stora allokeringarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Murphy och hans mångårige partner Dan Burke byggde Capital Cities efter en enkel filosofi: anställ de bästa operatörerna, ge dem ansvar och resurser, och håll sedan tummarna ur. Stationcheferna bestämde över sina nyhetsredaktioner, sina säljare och sina budgetar. Huvudkontoret ägde inte detaljerna — det ägde kapitalallokeringen, förvärvspriser och standarder. När bolaget köpte en ny TV-station skickades Burkes ryktbara checklista för kostnadskontroll: trimma personalen, förhandla distributionsavtal (V17), måla taket i stället för att bygga om — men driften lämnades till den lokala ledningen. Resultatet blev snabbare beslut, lägre overhead och chefer som agerade som ägare."
+        },
+        {
+          "type": "text",
+          "content": "Berkshire är den extrema variant: en koncern med hundratusentals anställda i dussintals dotterbolag — försäkring, järnväg, energi, tillverkning — som hanteras av ett tjog människor i Omaha. Buffett beskriver sina verksamhetschefer som autonoma: de skickar kapital uppåt när de saknar användning för det, och Buffett fattar allokeringen. Thorndike ser detta som en medveten design: varje extralager på huvudkontoret kostar inte bara löner utan skapar beslutsavstånd, internpolitik och rapporter som ersätter verkligheten. Få medarbetare på huvudkontoret är alltså en kapitalallokeringsstrategi i förklädnad."
+        },
+        {
+          "type": "text",
+          "content": "Decentraliseringen förändrar också ersättningen. Utanförarna kopplade bonusar till den egna enhetens resultat och avkastning — inte till koncernens omsättning, inte till antalet underlydande och inte till aktiekursens svängningar mellan kvartal. Murphy förhandlade personligt de största affärerna men lät stationcheferna behålla sitt resultatansvar år från år, vilket skapade en djup bench av operatörer som kunde ta över större enheter. Thorndike noterar kontrasten mot storföretagens kompensationsscheman, där ersättningen korrelerar med bolagets storlek — ett incitament att växa för växandets skull som kapitel 13 återkommer till."
+        },
+        {
+          "type": "text",
+          "content": "För en AKM1-analytiker är decentraliseringen en observabel och underskattad variabel. Kolla i årsredovisningen: hur många arbetar på koncernnivå, hur många dotterbolagschefer har suttit länge, och hur styrs deras bonusar? Ett bolag som rapporterar små huvudkontor och långa chefstidslöptider skickar samma signal som en balansräkning med låg skuldsättningsgrad (V10) och stabil kassa: bolaget är byggt för att styra kapital, inte för att mata en organisation. Omvänt är ett svällande huvudkontor med strategiavdelningar och transformationsprogram en varningsflagga för imperiebygge."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett litet huvudkontor är inte snålhet — det är frihet: varje tjänst som inte behöver finnas på koncernnivå är kapital och uppmärksamhet som återförts till allokeringen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Jämför två bolag i samma bransch: ett med koncernstab på hundratals personer och ett med minimalt huvudkontor. Leta i års- och hållbarhetsredovisningarna efter personal på koncernnivå, antalet förvaltningsbolag och chefers genomsnittliga tid på posten. Vilket bolag tycker du allokerar kapital bättre — och vilka kostnader försvinner in i koncernens allmänna administrationskostnader?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur såg utanförarnas huvudkontor ut jämfört med genomsnittsbolagets?",
+          "alternativ": [
+            "Stora planeringsavdelningar som styrde dotterbolagen i detalj",
+            "Mycket små — Capital Cities drevs av ett femtiotal personer på huvudkontoret och Berkshire av omkring tjugo",
+            "Helt utlokaliserade till konsultbolag",
+            "De hade inga huvudkontor alls"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på förhållandet mellan antal anställda i koncernen och antal anställda på koncernnivå."
+        },
+        {
+          "q": "Vad är poängen med att pressa besluten långt ned i organisationen?",
+          "alternativ": [
+            "Att skydda VD:n från ansvar vid misstag",
+            "Att korta ner chefsunderlaget i årsredovisningen",
+            "Att undvika att anställda lämnar bolaget",
+            "De som är närmast kunden och verksamheten fattar bättre beslut — och VD:ns tid frigörs för de stora allokeringarna"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig vad VD:n faktiskt gör med tiden som inte går åt att granska dotterbolagsbeslut."
+        },
+        {
+          "q": "Hur kopplade utanförarna ersättning till prestation?",
+          "alternativ": [
+            "Fast lön utan bonus för alla chefer",
+            "Bonus kopplad till den egna enhetens resultat och avkastning — inte till koncernens storlek",
+            "Bonus kopplad till aktiekursens svängningar kvartalsvis",
+            "Ersättning enligt branschens standardindex för alla"
+          ],
+          "ratt": 1,
+          "tips": "Vad skulle hända med ett bonusystem som premierar antal anställda eller omsättning?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Cash EPS — kassaflöde före redovisad vinst",
+      "intro": "Andra principen är mätbar: utanförarna brydde sig inte om redovisad vinst per aktie utan om kassaflödet. Bokföringens vinst är en åsikt formad av avskrivningsplaner, avyttringar och engångsposter; kassan är ett faktum. Detta kapitel förklarar begreppet »cash EPS«, hur kapitalintensiva mediebolag visade vägen och hur John Malone använde redovisningen som ett aktivt verktyg för att slippa betala skatt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Thorndike återkommer ständigt till att de åtta rapporterade och tänkte i kassaflödesmått långt innan det blev modernt. För ett TV-bolag som Capital Cities var avskrivningar på sändningsutrustning och programkostnader stora poster som kunde trycka ned redovisad vinst medan kassan fortsatte rinna in — Murphy och Burke värderade stationer på kassaflödesmultiplar, inte på P/E. Buffett formulerade samma tanke som »owner earnings«: verklig ägarvinst är det kassaflöde som blir över efter nödvändiga investeringar för att behålla konkurrenskraften. För AKM1-analytikern är EV/EBITDA (V06) den närmaste släktingen — ett mått som renar för avskrivningspolitik och skattescheman."
+        },
+        {
+          "type": "text",
+          "content": "Cash EPS är bokens praktiska mått: redovisad vinst per aktie med tillbokförda icke-kontanta poster, i första hand avskrivningar och amorteringar, minus det underhållskapital som krävs för att hålla verksamheten intakt. Måttet gör två saker. Det jämför bolag med olika avskrivningsgrunder — ett kabelbolag med tunga avskrivningar kan se tråkigt ut på nettoresultat men generöst i kassan. Och det är den rätta nämnaren för allokering: när aktieantalet minskar genom återköp (V20) är det cash EPS per kvarvarande aktie som växer — den mekanism Singleton byggde sin förmögenhet på. En minskning av aktieantalet med hälften fördubblar cash EPS, om kassaflödet hålls intakt."
+        },
+        {
+          "type": "text",
+          "content": "John Malone tog tänkandet ett steg längre: han använde redovisningen som ett skatteverktyg. TCI:s kabelsystem skrevs av hårt, bolaget lånade för att expandera, och räntekostnaderna drogs av — resultatet var att TCI under decennier redovisade liten eller ingen vinst och därmed betalade minimal kassaflödesskatt. Thorndike citerar Malone-logiken öppet: eftersom aktiemarknaden värderade kabelbolag på kassaflöde snarare än nettoresultat, var varje dollar som inte gick till staten en dollar som kunde återinvesteras i system som växte. Det var inte kreativ redovisning — det var att spela spelet efter de regler som gällde, med värdet per aktie som enda domare."
+        },
+        {
+          "type": "text",
+          "content": "Vad betyder detta för en modern analys? För det första: misstro bolag som enbart pratar redovisad vinst och EPS-tillväxt utan att visa kassaflödet — särskilt om tillväxten kräver ständig kapitalförbrukning och nyemissioner (V19), den exakta motsatsen till utanförarnas värld. För det andra: när ett bolag gör återköp ska effekten mätas på kassaflöde per aktie, inte på en engångspost i resultaträkningen. För det tredje: skilj på tillväxt som genererar kassa och tillväxt som konsumerar den — intäktsstabilitet (V12) och marginaler är grunden, och utan dem blir låga multiplar en fälla i stället för en möjlighet."
+        },
+        {
+          "type": "insikt",
+          "content": "Redovisad vinst är en åsikt, kassaflöde ett faktum — och cash EPS per aktie är den enda vinstrad som avgör om ett återköp eller en nyinvestering skapar värde för dig som ägare."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett kapitalintensivt bolag (kabelinfrastruktur, industri, fastighet eller telekom). Beräkna grovt cash EPS för de senaste tre åren: redovisad vinst plus avskrivningar minus nödvändigt underhållskapital, dividerat med antal aktier. Jämför utvecklingen med den redovisade vinsten per aktie — pekar de åt samma håll, och vad säger skillnaden om bolagets allokeringsutrymme?"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför misstrodde utanförarna redovisad vinst som måttstock?",
+          "alternativ": [
+            "Eftersom vinst inte får användas vid värdering enligt amerikansk rätt",
+            "Eftersom bokförd vinst kan skilja stort från kassaflödet när avskrivningar, engångsposter och avyttringar styr bilden — de mätte hellre kassaflödesbaserade mått som cash EPS",
+            "Eftersom vinst alltid är lägre än kassaflödet",
+            "Eftersom analytiker enbart använde omsättningsmultiplar"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på skillnaden mellan en siffra som beror på avskrivningsplaner och en som beror på faktiska betalningar."
+        },
+        {
+          "q": "Vad är »cash EPS«?",
+          "alternativ": [
+            "Utdelning plus återköp per aktie",
+            "Vinst per aktie exklusive alla kostnader",
+            "Ett mått på intäkternas stabilitet över konjunkturcykler",
+            "Redovisad vinst per aktie med tillbokförda icke-kontanta poster — framför allt avskrivningar — och avdrag för nödvändigt underhållskapital"
+          ],
+          "ratt": 3,
+          "tips": "Räkna baklänges från »vad kan ägaren ta ut utan att förstöra verksamheten?«."
+        },
+        {
+          "q": "Hur använde Malone redovisningen för TCI?",
+          "alternativ": [
+            "Han maximerade redovisad vinst för att glädja analytiker",
+            "Han delade upp resultatet i tio redovisningssegment",
+            "Han lät TCI redovisa nästan nollvinst — tunga avskrivningar, räntor och återinvestering höll skatten borta och kapitalet kunde växa per aktie",
+            "Han bytte redovisningsprincip varje år för att jämna ut resultatet"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vilken skatt ett bolag betalar på en vinst som redovisas som nära noll."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Återköp I — Henry Singletons mästarklass (V20)",
+      "intro": "Om boken har en hjälte är det Henry Singleton och hans återköp. Mellan 1972 och 1984 köpte Teledyne tillbaka omkring nittio procent av sina aktier — historiens mest konsekvent värdeskapande återköpsprogram. Thorndike kallar återköp börsens mest underskattade signal, och Buffett har beskrivit Singleton som innehavare av det bästa drifts- och kapitalallokeringsrekordet i amerikansk näringsliv. Det här är kursens V20-kapitel i ordets mest fulla bemärkelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden: Singleton — doktor från MIT och pilot med gedigen matematik- och elektroteknikbakgrund — grundade Teledyne 1960 och byggde under 1960-talet upp bolaget genom omkring 130 förvärv, ofta betalda med Teledyne-aktier när dessa handlades på höga multipler. När konglomeratbubblan sprack i slutet av decenniet föll Teledyne till en bråkdel av inre värdet, och Singleton bytte verktyg: i stället för att köpa företag köpte han det billigaste bolag han kände till — sitt eget. Mellan 1972 och 1984 genomförde han en serie återköpserbjudanden, varsamt prissatta under inre värde — han köpte bara när aktien var billig, och lät bli annars."
+        },
+        {
+          "type": "text",
+          "content": "Matematiken är kursens viktigaste räkneexempel. Om ett bolags vinst och kassaflöde är oförändrade men aktieantalet minskar med nittio procent, växer vinsten och kassaflödet per aktie med en faktor tio. Återköpet fungerar alltså som en hävstång på per-aktie-måtten utan att röra rörelsen — förutsatt att priset ligger under inre värde, så att varje dollar som betalas ut köper mer än en dollar av kvarvarande aktieägars värde. Det är i grunden marginal of safety tillämpat på bolagets eget värdepapper: aktien köptes när den var billig och aldrig annars. Singleton vägrade att köpa tillbaka när aktien steg, lika enkelt som det låter — och vägrade att betala utdelning, eftersom utdelning dubbelbeskattas och är svår att sänka utan straff."
+        },
+        {
+          "type": "text",
+          "content": "Buffett levererade kursens andra nummer: hans regel är att återköp enbart är motiverat när aktien handlas med minst tjugo procents rabatt mot konservativt beräknat inre värde. Rabatten är marginalen som skyddar mot fel i värderingen — ju mer osäker värderingen, desto större rabatt krävs. Han har också kallat Singleton för innehavare av det bästa drifts- och kapitalallokeringsrekordet i amerikansk business, och Thorndike använder Teledyne som beviset för att en enda allokeringsregel — köp eget värdepapper när det är billigt, gör inget annars — kan slå nästan vilken strategi som helst. Under Singletons tid som VD komponerade aktien med omkring tjugo procent per år, mer än dubbelt så mycket som index."
+        },
+        {
+          "type": "text",
+          "content": "Singletons återköp var också ett statement om ägarlogik. Han delade aldrig aktien (ingen split), höll inga earnings calls och gav ingen guidance — han ville ha ägare som tänkte på bolaget som en tillgång, inte som en börspost att handla. Efter hans tid som VD delades Teledyne så småningom upp i flera bolag, vilket gav ägarna renodlad exponering mot de olika delarna — en sista allokering. För AKM1-analytikern är arvet konkret: ett bolag som återköper konsekvent under inre värde skickar den starkaste signal som finns (V20) — men bara om priset stämmer, vilket är nästa kapitels ämne."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Singleton och Teledyne — siffrorna bakom mästarklassen\",\"rader\":[[\"Fakta\",\"Värde\",\"Betydelse\"],[\"Förvärv under 1960-talet\",\"≈130 bolag\",\"Byggde kassaflödesbasen; ofta betald med dyra Teledyne-aktier\"],[\"Återköpsperiod\",\"1972–1984\",\"Började när aktien låg djupt under inre värde\"],[\"Andel aktier inlösta\",\"≈90 %\",\"Vinst och kassaflöde per aktie växte motsvarande (≈10x vid oförändrad rörelse)\"],[\"Utdelning under eran\",\"i praktiken ingen\",\"Utdelning dubbelbeskattas och är svår att sänka; återköp kan pausas\"],[\"Aktiesplit\",\"aldrig\",\"Signal om ägartänkande — kurs per aktie är irrelevant, ägarandel avgör\"],[\"CAGR under Singletons era\",\"≈20 % mot ≈8–9 % för S&P\",\"Dubbel avkastning mot index under ett kvartssekel\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett återköp under inre värde köper en dollar för fyrtio-femtio cent — och varje sådan dollar hamnar direkt i kvarvarande aktieägars ficka utan att röra rörelsen. Priset, inte storleken, gör återköpet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta upp ett bolag som köpt tillbaka aktier under minst fem år. Räkna ut det genomsnittliga pris som betalats per år (total återköpssumma delat med antal inlösta aktier, framgår ofta av kassaflödesanalysen) och jämför med dagens kurs. Har bolaget köpt billigt eller dyrt? Översätt till V20-språk: hur många cent per dollar av inre värde har återköpen i genomsnitt kostat?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur stor andel av Teledynes aktier köpte Singleton tillbaka mellan 1972 och 1984?",
+          "alternativ": [
+            "Omkring tio procent",
+            "Omkring en fjärdedel",
+            "Cirka hälften",
+            "Omkring nittio procent"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad den siffran gör med vinsten per aktie om rörelsen är oförändrad."
+        },
+        {
+          "q": "Vilket villkor formulerade Buffett för att ett återköp ska skapa värde?",
+          "alternativ": [
+            "Att aktiekursen stiger minst tjugo procent efteråt",
+            "Att bolaget lånar pengar till återköpet",
+            "Att vinsten per aktie stiger minst tio procent",
+            "Att aktien köps tillbaka med minst tjugo procents rabatt mot konservativt beräknat inre värde"
+          ],
+          "ratt": 3,
+          "tips": "Rabatten är en säkerhetsmarginal mot värderingsfel — ju osäkrare värderingen, desto större marginal behövs."
+        },
+        {
+          "q": "Varför vägrade Singleton att betala utdelning?",
+          "alternativ": [
+            "För att undvika dubbelbeskattning och behålla flexibiliteten — en utdelning är svår att sänka utan marknadsstraff, medan ett återköp kan pausas utan signalvärde",
+            "Därför att börsen förbjöd utdelning under 1970-talet",
+            "Eftersom Teledyne saknade fritt kassaflöde",
+            "För att han inte litade på aktieägarna"
+          ],
+          "ratt": 0,
+          "tips": "Jämför vad som händer med en VD som sänker utdelningen med vad som händer med en som pausar återköp."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Återköp II — när återköp skapar och förstör värde (V20)",
+      "intro": "Återköp är det mest missbrukade verktyget i verktygslådan. Samma instrument som gjorde Teledyne-ägarna rika gör dagens genomsnittsbolag fattigare — eftersom majoriteten av bolag köper tillbaka aktier när kursen är hög, ofta bara för att kompensera utspäddningen från personaloptioner. Detta kapitel bygger V20-checklistan: priset mot inre värde, finansieringen, tidpunkten och redovisningens EPS-fällor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundmekanismen är symmetrisk och obönhörlig. Köper bolaget tillbaka aktier under inre värde överförs värde från säljarna till de aktieägare som stannar — deras andel av bolagets framtida kassaflöden växer mer än vad bolaget betalade. Köper bolaget tillbaka aktier över inre värde sker det omvända: de som säljer tjänar på de som stannar. Därför är frågan aldrig hur stort återköpsprogrammet är utan vilket pris det köper till. Thorndike noterar att Singleton höll igen medan aktien steg och köpte när utbredd pessimism pressade kursen — medan genomsnittsbolaget, enligt forskning Thorndike och andra hänvisar till, gör det mesta av sina återköp när börsen och den egna aktien är dyr."
+        },
+        {
+          "type": "text",
+          "content": "EPS-fällan är den vanligaste ursäkten. Ett återköp kan höja vinsten per aktie rent mekaniskt utan att skapa ett gram värde: betala två dollar för en dollar av kassaflöde och EPS stiger fast ägarna blir fattigare. Det samma gäller återköp som enbart ska kompensera personaloptioner — då är återköpet egentligen en lönekostnad, bookad som allokering. En AKM1-V20-analys rensar redovisningen: nettoförändringen i aktieantal, priset per inlöst aktie mot en konservativ värdering av bolaget, och hur återköpen finansierats. Återköp som finansieras med skuld och tömmer bufferten kan skada likviditeten (V11) och höja skuldsättningsgraden (V10) i precis det ögonblick konjunkturen vänder."
+        },
+        {
+          "type": "text",
+          "content": "Signaldimensionen är minst lika viktig. Ett återköp under inre värde signalerar att ledningen tänker som ägare: de erbjuder sitt eget värdepapper när ingen annan vill ha det och behåller det annars. Det är börsens mest underskattade signal, som Thorndike skriver — för marknaden behandlar återköp som en rutinpost medan det i själva verket är bolagets största förvärsaffär, år efter år. Omvänt signalerar köp på topp antingen att ledningen inte tror på egen värdering eller att bonusar styrs av kortsiktiga EPS-mål. Båda signalerna är information som en ägare kan agera på — och ett skäl att fråga hur stor andel av VD:ns nettoförmögenhet som är bunden i bolagets aktier."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bra och dåliga återköp — V20-checklistan\",\"rader\":[[\"Fråga\",\"Värdeskapande återköp\",\"Värdeförstörande återköp\"],[\"Pris mot inre värde\",\"Klart under — minst tjugo procents rabatt (Buffetts regel)\",\"På eller över inre värde; »aktien har stigit så den är attraktiv«\"],[\"Timing\",\"Köp när marknaden är svag eller bolaget är omodernt\",\"Köp när börsen toppar och aktien är som dyrast\"],[\"Finansiering\",\"Fritt kassaflöde; buffert behålls (V11)\",\"Skuldbelåning som höjer V10 i toppen av cykeln\"],[\"Orsak\",\"Returnering av överskottskapital\",\"Kompensation för optionutspäddning; EPS-mål\"],[\"Alternativkostnad\",\"Ingen bättre användning av kapitalet finns\",\"Kärnverksamheten svälter samtidigt\"],[\"Uppföljning\",\"Netto minskande aktieantal över hela cykeln\",\"Bruttoåterköp som kamouflerar utspäddning\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig hur mycket ett bolag återköper — fråga till vilket pris. Ett stort återköp över inre värde är en värdeöverföring från dig som stannar till de som säljer."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj två bolag som båda återköper aktier. För varje bolag: beräkna nettoförändringen i aktieantalet senaste fem åren (återköp minus nyemission och optioner), det genomsnittliga priset per inlöst aktie, och hur aktien utvecklats sedan återköpen gjordes. Vilket av bolagen köpte en dollar för femtio cent — och vilket köpte dollar för ett-femtio?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kan återköp förstöra värde?",
+          "alternativ": [
+            "Eftersom de alltid minskar bolagets balansräkning",
+            "Eftersom aktieantalet alltid ökar vid återköp",
+            "Om aktien köps tillbaka över inre värde överförs värde från kvarvarande ägare till de som säljer — marginalen blir negativ",
+            "Eftersom utdelning alltid är skatteeffektivare"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad du som ägare får för varje utbetald krona — mer eller mindre än en kronas värde?"
+        },
+        {
+          "q": "Hur används återköp ofta i praktiken av genomsnittsbolag?",
+          "alternativ": [
+            "Endast när aktien är billig enligt inre värde",
+            "Sämst möjliga timing: som mest köps tillbaka när aktien är dyr — ofta bara för att kompensera utspäddning från personaloptioner",
+            "Enbart efter VD-byte",
+            "Bara när skuldsättningsgraden är noll"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på när bolag har som mest kassa och mod att köpa — i toppen av cykeln eller i botten?"
+        },
+        {
+          "q": "Vad bör en V20-analys av återköp titta på först?",
+          "alternativ": [
+            "Det totala beloppet per år",
+            "Priset som betalats i förhållande till inre värde — och hur aktiekursen utvecklats efteråt",
+            "Antalet analytiker som rekommenderar aktien",
+            "Hur stor andel av omsättningen återköpen motsvarar"
+          ],
+          "ratt": 1,
+          "tips": "Vad var det som avgjorde om Singletons återköp skapade värde — storleken eller priset?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Tom Murphy — Capital Cities och konsten att köpa samma affär igen",
+      "intro": "Tom Murphy byggde Capital Cities från en enda TV-station i Albany till ett medieimperium som 1985 vågade köpa hela ABC — och 1995 såldes till Disney för omkring nitton miljarder dollar. En dollar investerad i Cap Cities när Murphy tog över 1966 blev omkring tvåhundra dollar 1995, mot ungefär femton för S&P 500: en genomsnittlig årlig avkastning på knappt tjugo procent under tjugonio år. Hans modell — köp samma affär igen och igen, till rätt pris, och trimma kostnaderna — är bokens renaste förvärvsfall.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Murphy och Dan Burke lärde sig TV-branschen inifrån: de köpte inte medier för glamour utan för ekonomi. En TV-station i en medelstor stad var i praktiken ett lokalt duopol med förutsägbara annonsintäkter (V12), starkt varumärke (V14) i sin marknad och tunga fasta kostnader som gav stordriftsfördelar — annonsintäkten kunde dubbleras medan kostnaderna knappt rörde sig. Deras metod var att köpa stationer till rimliga kassaflödesmultiplar (V06), tillämpa Burkes checklista — tvätta programkostnader, förhandla nätverksavtal (V17) och syndikeringsavtal personligt, skära overhead — och sedan låta den lokala ledningen driva verksamheten decentraliserat. Samma affär, igen och igen: Murphy-modellen bygger kompetens genom upprepning i stället för diversifiering."
+        },
+        {
+          "type": "text",
+          "content": "Kostnadskulturen var legendarisk och började hemma hos Murphy själv: en berömd historia i boken skildrar hur han sålde företagslimousinen och frågade den nyförvärvade stationens VD varför taket på sändarmasten behövde bytas när det kunde målas. Thorndike berättar också hur Murphy personligen förhandlade de stora programmeringsavtalen — ett fåtal beslut per år som flyttade enorma belopp — medan organisationen sköttes med ett femtiotal personer på huvudkontoret. Även resor i ekonomiklass och små kontor var inte teater: de frigjorde kapital och uppmärksamhet för det som betydde något, nämligen priset på nästa förvärv."
+        },
+        {
+          "type": "text",
+          "content": "Kulmen var ABC-affären 1985: Capital Cities — obetydligt mindre än målet — köpte American Broadcasting Company för 3,5 miljarder dollar, till stor del med lånat kapital, efter att ha väntat åratal på rätt tillfälle. Warren Buffett backade affären med ett förköp på över en halv miljard dollar i preferensaktier och satte sig i styrelsen; Thorndike beskriver affären som ett mästerverk i timing och mod — köpa en högaktad kärntillgång i ett läge när medieklimatet var dystert. Därefter följde den discipl som skiljde Murphy från imperiebyggarna: i stället för att rulla vidare användes de kommande åren till att amortera ned skulden (V10) och trimma ABC med samma metodik som stationerna. När Disney köpte bolaget 1995 var det ett av USA:s mest välskötta medieföretag."
+        },
+        {
+          "type": "text",
+          "content": "Murphy-fallet ger tre lärdomar för AKM1. För det första: kompetens genom upprepning — den som köper samma typ av tillgång många gånger lär sig prissätta den bättre än någon investmentbank. För det andra: belåning är inte farlig i sig — farlig är belåning som inte matchar tillgångens kassaflödesstabilitet (V12) och som inte följs av disciplinerad amortering. För det tredje: en låg organisationsgrad håller bolaget flexibelt nog att våga en epokgörande affär när priset är rätt — ABC var möjligt just för att Cap Cities inte bar någon tung koncernstruktur. Murphy själv har sammanfattat filosofin i en mening som Thorndike citerar: bättre är större — inte tvärtom."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Murphy och Capital Cities — nyckeltalen\",\"rader\":[[\"Händelse\",\"År\",\"Detalj\"],[\"Första stationen\",\"1950-tal\",\"Albany — Murphy lärde sig driften inifrån\"],[\"Murphy VD\",\"1966\",\"1 dollar investerad → ≈204 dollar till 1995 (≈19,9 % per år mot ≈10,1 % för index)\"],[\"Metod\",\"1966–1985\",\"Köp TV-stationer till låga kassaflödesmultiplar (V06); Burkes kostnadschecklista; decentraliserad drift\"],[\"ABC-affären\",\"1985\",\"3,5 mdr $, kraftigt belånad; Buffett backade med över 0,5 mdr $ i preferensaktier\"],[\"Efter ABC\",\"1985–1995\",\"Amorterade skulden (V10); samma trimmad operativ modell\"],[\"Disney-försäljningen\",\"1995\",\"≈19 mdr $ — en av tidens största medieaffärer\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Murphy-modellen är kompetens genom upprepning: köp samma affär igen och igen tills du kan prissätta den bättre än säljaren — och håll organisationen så liten att du kan slå till när tillfället äntligen kommer."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera ett bolag som köpt upp flera aktörer i samma bransch under det senaste decenniet (sjukvård, gym, besiktning, mjukvarabolag). Lista dess förvärv med köpeskilling och multipel (V06) för varje affär. Ser du en Murphy-modell — samma affär, fallande eller stabil multipl, stigande marginaler — eller ett imperium som betalar allt högre priser för att få tillväxt?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnan i Murphys förvärvsfilosofi?",
+          "alternativ": [
+            "Att diversifiera in i så många branscher som möjligt",
+            "Att köpa samma sorters affär — TV-stationer — igen och igen, till rimliga multiplar med en beprövad kostnadsmodell",
+            "Att köpa teknikbolag i tidig fas",
+            "Att enbart köpa företag i konkurs"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som händer med prisförmågan när du har köpt samma tillgång trettio gånger."
+        },
+        {
+          "q": "Hur finansierades ABC-affären 1985?",
+          "alternativ": [
+            "Helt med nyutgivna Cap Cities-aktier",
+            "Med optioner och warrant-program",
+            "Med kraftig belåning — och Warren Buffett backade affären med ett förköp på över en halv miljard dollar i preferensaktier",
+            "Med statsobligationer via FCC"
+          ],
+          "ratt": 2,
+          "tips": "En av kursens återkommande teman är modig skuld — men bara mot stabila kassaflöden och med en plan för amortering."
+        },
+        {
+          "q": "Hur utvecklades en dollar investerad i Capital Cities under Murphys era 1966–1995?",
+          "alternativ": [
+            "Till omkring fyra dollar",
+            "Till omkring femton dollar — i linje med S&P 500",
+            "Till över tvåhundra dollar, mot omkring femton för index",
+            "Den förlorade hälften av sitt värde"
+          ],
+          "ratt": 2,
+          "tips": "Räkna baklänges: knappt tjugo procent per år under tjugonio år."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "John Malone — TCI och kabelmatematiken",
+      "intro": "John Malone tog 1973, vid trettiotre års ålder, över ett slitet kabelbolag i bergsterräng och gjorde det till USA:s största kabeloperatör — med en genomsnittlig aktieavkastning på omkring trettio procent per år under hans tid som VD, den högsta av de åtta. Hans hemlighet var kabelmatematiken: köp abonnenter billigt, låna mot deras förutsägbara betalningar, betala ingen skatt och bygg värde per aktie. Det är bokens renaste aritmetik — och den djupaste kopplingen mellan V10, V12 och V20-tänkande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kabelens ekonomi i en mening: enorma fasta kostnader för att bygga nätet, sedan nästan ren marginalinkomst per extra abonnemang. En gång grävd kabel betjänar tusen hushåll lika enkelt som femhundra, och abonnenterna betalade varje månad, i goda som dåliga tider — Thorndike framhåller intäktsstabiliteten (V12) som branschens dolda kapital. Malone insåg tidigt att ett system som köptes för omkring fem gånger sitt kassaflöde, finansierat med skuld vars ränta låg under avkastningen på inköpt kapital, var en komponderande maskin: varje förvärv tillförde abonnenter vars kassaflöde växte med prisökningar och nya kanaler, medan inflationen urholkade skuldens reala värde."
+        },
+        {
+          "type": "text",
+          "content": "Matematiken som Thorndike presenterar den: köp system till omkring fem gånger kassaflödet, finansiera med skuld (V10), låt kassaflödet växa tiotals procent per år genom priser, penetration och nya tjänster — och när branschens konsolidering för multiplarna uppåt, sälj vidare till multiplar runt tio. Skillnaden mellan att köpa på fem och sälja på tio är kapitalvinsten på hela inköpet, dessutom förskjuten i tiden med fördelaktig beskattning. Malone spelade dessutom skattespelet hårt: genom avskrivningar, räntor och ständigt återinvestering redovisade TCI minimal vinst och betalade i praktiken ingen kassaflödesskatt under de stora expansionsåren. Hans enda måttstock var värdet per aktie — inte nettoresultat, inte abonnentantal i sig, inte omsättning."
+        },
+        {
+          "type": "text",
+          "content": "Malone var också en mästare på struktur. Han byggde TCI:s position via samäganden och joint ventures, tog in partners när multiplarna steg och använde sitt rörliga aktieinnehav som valuta när den var dyr. När striden om innehåll och distribution tilltog på 1990-talet förstod Malone att tiden som oberoende operatör var begränsad: 1998 såldes TCI till AT&T i en av tidens största medieaffärer, och Malone lät ägarna behålla exponeringen mot de fristående Liberty-företagen som växte ur TCI:s innehållstillgångar. Återigen allokeringslogik: sälj när din valuta är dyrare än målets, behåll det som är underskattat."
+        },
+        {
+          "type": "text",
+          "content": "För AKM1-analytikern är Malone-fallet en mall för infrastruktur- och prenumerationsbolag. Kedjan är: stabil intäktsström (V12) → hög operativ hävstång → tolerabelt hög belåning (V10) → återinvestering till avkastning över räntekostnaden → växande värde per aktie. Men varningarna följer med: modellen kräver att intäkterna verkligen är stabila och att räntekostnaden inte exploderar — ett kabelbolag med V12 brutet (avhoppare, konkurrerande teknik) blir en skuldfälla i stället för en komponderingsmaskin. Malone-testet är därför: är prenumerantinkomsten fortfarande en quasi-monopolistisk annuitet, och köper bolaget nya abonnenter för mindre än de är värda?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kabelmatematiken — Malones aritmetik\",\"rader\":[[\"Steg\",\"Mekanik\",\"Effekt per aktie\"],[\"Köp system\",\"≈5x kassaflöde från lokala monopol\",\"Abonnenter förvärvas under ersättningsvärde\"],[\"Finansiera\",\"Skuld (V10) vars ränta understiger avkastningen på inköpt kapital\",\"Hävstång på avkastningen utan utspäddning\"],[\"Växt\",\"Prisökningar, penetration, nya kanaler — kassaflöde växer år från år\",\"Rörelsen betjänar skulden allt lättare (V12)\"],[\"Skatt\",\"Avskrivningar, räntor och återinvestering håller redovisad vinst nära noll\",\"Ingen kassaflödesskatt — kapitalet får bo kvar\"],[\"Exit\",\"Sälj vidare till högre multipl (≈10x) när branschen värderas upp\",\"Kapitalvinst på hela inköpsbasen — TCI till AT&T 1998\"],[\"Resultat\",\"CAGR ≈30 % under Malones era\",\"Högst av de åtta utanförarna\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Malones matematik: en stabil månadsbetalare är en annuitet, och en annuitet kan köpas billigt, belånas tryggt och säljas dyrt — men bara så länge intäktsstabiliteten (V12) är äkta."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett modernt prenumerations- eller infrastrukturbolag (kabel/fiber, SaaS med månadsintäkter, parkerings- eller fastighetsbolag). Uppskatta: vilken multipel betalas för nya kunder eller tillgångar (V06), vilken skuldsättningsgrad (V10) bär bolaget, och hur stabil är intäkten (V12) — churn, konkurrens, teknikskifte? Skriv en Malone-dom: skulle han ha köpt abonnenterna billigare än de var värda?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Malones kabelmatematik?",
+          "alternativ": [
+            "Att maximera redovisad vinst och betala ut den som utdelning",
+            "Att köpa kabelsystem till låga kassaflödesmultiplar — runt fem gånger — finansierat med skuld, låta de stabila abonnemangsintäkterna växa och sälja vidare till högre multipl",
+            "Att sälja alla system direkt efter köp",
+            "Att enbart bygga egna nät utan förvärv"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg de två multiplarna — inköp och exit — och vad som händer mellan dem."
+        },
+        {
+          "q": "Varför kunde Malone bära TCI:s höga skuldsättningsgrad (V10)?",
+          "alternativ": [
+            "Eftersom TCI hade statlig borgen",
+            "Eftersom abonnemangsintäkterna var förutsägbara och stabila (V12) — en nästintill monopolistisk betalningsström tryggade räntebetjäningen",
+            "Eftersom räntenivån var noll under hela perioden",
+            "Eftersom TCI inte redovisade skulden i balansräkningen"
+          ],
+          "ratt": 1,
+          "tips": "Belåning är bara så farlig som det kassaflöde som ska betjäna den."
+        },
+        {
+          "q": "Vad hände med TCI i slutet av 1990-talet?",
+          "alternativ": [
+            "Bolaget gick i konkurs",
+            "TCI delades i fyra delar och såldes till lokala konkurrenter",
+            "Malone sålde TCI till AT&T i en av tidens största medieaffärer — och ägarna fick behålla värde genom de fristående Liberty-företagen",
+            "TCI fusionerades gratis med Time Warner"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på när den säljande parten har mest att hämta: när den egna valutan är högt värderad."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Bill Anders — General Dynamics: krympa för att växa",
+      "intro": "Bill Anders var Apollo 8-astronaut — han fotograferade Earthrise från månens omloppsbana julen 1968 — innan han blev kärningenjör och företagsledare. När han tog över General Dynamics 1991 stod kalla kriget på upphällning och försvarsindustrin inför kraftiga neddragningar. Anders val var radikalt annorlunda än genomsnittsbolags: krympa bolaget till de delar som var bäst, sälja resten och returnera kapitalet till ägarna. Aktieavkastningen under hans korta tid som VD blev den högsta i boken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Läget 1991 var ett stadium av strukturell överkapacitet: Pentagon-budgeten krympte och försvarsbolagen var stora, tröga och värderade som om fred vore omöjlig. Anders — som kom till GD med tvärvetenskaplig blick och utan försvarsindustriellt arv — ställde en allokeringsfråga i stället för en tillväxtfråga: vilka verksamheter kan vi driva med #1- eller #2-position och förutsägbara kassaflöden, och vad är allt annat värt för någon annan? Han behöll kärnan — ubåtar, stridsvagnar, flyg där GD var starkt — och sålde i snabb takt enheter inom databehandling, rymd och missiltillverkning till konkurrenter som betalade strategiska priser."
+        },
+        {
+          "type": "text",
+          "content": "Det som gör fallet unikt i boken är vad Anders gjorde med överskottskassan. I stället för att ominvestera i nya storslagna projekt deklarerade han att han inte kunde hitta användning för kapitalet som matchade ägarnas krav — och returnerade det i stor skala. År 1992 betalade General Dynamics ut en specialutdelning på femtio dollar per aktie, ett belopp som översteg aktiekursen vid hans tillträde, tillsammans med omfattande återköp (V20) som kraftigt minskade aktieantalet. Skuldsättningsgraden (V10) togs upp tillfälligt som en brygga — Thorndike beskriver det som att Anders använde balansräkningen som ett aktivt verktyg, inte som en helgedom."
+        },
+        {
+          "type": "text",
+          "content": "Resultatet blev anmärkningsvärt: från ett bolag som hotades av nedmontering tredubblades aktiekursen och aktieägarna fick dessutom specialutdelningen och värdet av återköpen — totalavkastningen under Anders korta tid som VD blev flera hundra procent, högst av de åtta. Poängen är inte att försvarsindustri var en bransch i gungning — den var det tvärtom — utan att värdet fanns i att sluta förneka verkligheten. Imperiebyggar-VD:n hade försvarat storleken; Anders mätte sitt jobb i avkastning per aktie och handlade därefter. Krymp för att växa — växa per aktie, inte per omsättning."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-lärdomarna är tre. För det första: när en bransch går in i strukturell nedgång blir frågan inte hur man växer utan hur man returnerar kapital — bolag som envisas med att återinvestera i fallande avkastning bränner värde (V19 i dess renodlade form: kapital som förbrukas utan avkastning). För det andra: specialutdelning och återköp är syskon — båda returnerar kapital, men återköpet ger kvarvarande ägare extra andel om priset är rätt. För det tredje: tillfällig hög belåning (V10) kan vara rationell som brygga mellan utförsäljning och distribution, förutsatt att intäkterna från kvarvarande verksamhet är tillräckligt stabila (V12)."
+        },
+        {
+          "type": "insikt",
+          "content": "Anders bevisade att en VD:s jobb inte är att få bolaget att växa utan att få varje aktie att växa — ibland är den mest värdeskapande affären den egna tillgångens avyttring och kassans utdelning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta ett börsnoterat bolag i en bransch med strukturellt fallande efterfrågan (tidningar, traditionell detaljhandel, fossila bränsletjänster). Läs den senaste strategiska rapporten: väljer ledningen att returnera kapital (återköp V20, utdelning, avyttringar) eller att återinvestera i tillväxt? Bedöm som Anders: vilka enheter är #1/#2 med förutsägbara kassaflöden — och vad är resten värt för en köpare?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken princip använde Anders för General Dynamics affärsportfölj?",
+          "alternativ": [
+            "Att behålla alla enheter och vänta ut konjunkturen",
+            "Att behålla verksamheter där GD hade stark position och förutsägbara kassaflöden — och sälja resten för att returnera kapital",
+            "Att expandera kraftigt inom civil flyg",
+            "Att förstatliga bolagets verksamheter"
+          ],
+          "ratt": 1,
+          "tips": "Tänk portfolio rather än empire: vilka tillgångar hör hemma hos er — och vilka betalar andra mer för?"
+        },
+        {
+          "q": "Hur returnerade Anders kapital till ägarna?",
+          "alternativ": [
+            "Med en enorm specialutdelning — femtio dollar per aktie, ett belopp som översteg aktiekursen vid hans tillträde — tillsammans med omfattande återköp",
+            "Med en tiofaldigt höjd ordinär utdelning över tio år",
+            "Genom att dela ut dotterbolagsaktier till de anställda",
+            "Genom att lösa in alla preferensaktier till överkurs"
+          ],
+          "ratt": 0,
+          "tips": "Kom ihåg relationen mellan utdelningsbeloppet och aktiekursen när Anders tillträdde."
+        },
+        {
+          "q": "Vad är kärnan i »krympa för att växa«?",
+          "alternativ": [
+            "Att bolag alltid blir mer värda när de blir större",
+            "Att omsättning och anställda är de bästa VD-måtten",
+            "Att storlek inte är ett mål — minska bolaget till de delar som tjänar mest per aktie och returnera överskottet till ägarna",
+            "Att uppsägningar alltid sänker aktiekursen"
+          ],
+          "ratt": 2,
+          "tips": "Byt ordet växa mot ett mått — växa vad? Omsättning, anställda eller värde per aktie?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Graham, Stiritz och Simmons — tre tålmodiga allokatorer",
+      "intro": "Tre av de åtta förtjänar samlade kapitel: Katharine Graham, som tog över Washington Post vid börsnoteringen 1971 och byggde ett medie- och utbildningsbolag; Bill Stiritz, som renodlade Ralston Purina kring varumärkesstark kärna och köpte tillbaka i storleksordningen sextio procent av aktierna; och Dick Simmons, som förvandlade en biografkedja till ett holdingbolag via Pepsi-flaskning och förlagsköp. Deras gemensamma nämnare: ingen glamour, mycket prisdisciplin och avkastningar kring tjugo procent per år under decennier.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Katharine Graham övertog ledningen av Washington Post Company under de mest dramatiska åren i amerikansk journalistik: Pentagon Papers 1971, Watergate 1972–1974 och den stora tryckeriarbetarstrejken 1975, där hon höll ut mot fackföreningarna och tryckte tidningen med chefer i pressrummet. Som allokator var hon modigare än omvärlden förstod: hon investerade tungt i kärnverksamheten — nya tryckerier och tidningens kvalitet (varumärket V14 i dess renaste form) — diversifierade bort från tidningsberoendet genom att under 1980-talet köpa testförberedelsebolaget Stanley Kaplan för en bråkdel av dess framtida värde, samt TV-stationer, och använde återköp (V20) när aktien var billig. Warren Buffett köpte 1973 in sig för omkring tio miljoner dollar — knappt tio procent av bolaget — blev hennes rådgivare och satt i styrelsen i decennier; hennes memoarer Personal History belönades med Pulitzerpriset. Under hennes tid som ledare växte aktien med över tjugo procent per år, mot omkring hälften för index."
+        },
+        {
+          "type": "text",
+          "content": "Bill Stiritz tog över Ralston Purina 1981, ett diversifierat livsmedels- och djurfoderbolag, och renodlade det brutalt: sålde sidoverksamheter, koncentrerade kapitalet kring varumärkesstarka kärnprodukter (V14) — där Energizer-batteriernas rosa kanin blev en amerikansk ikon — och genomförde sedan det som i boken framstår som ett av historiens största återköpsprogram i förhållande till bolagets storlek: under Stiritz era köpte Ralston tillbaka i storleksordningen sextio procent av sina aktier. Hans logik var ren V20: när aktien handlades under internt beräknat värde var återköpet det bästa förvärvet bolaget kunde göra — bättre än alla strategiska alternativ i livsmedelsbranschen. När Nestlé förvärvade Purinas djurfoderverksamhet 2001 för drygt tio miljarder dollar krönte det en era av värdeskapande genom koncentration."
+        },
+        {
+          "type": "text",
+          "content": "Dick Simmons drev General Cinema under nästan fyra decennier och flyttade bolagets tyngdpunkt tre gånger — från biografer till dryckesflaskning (bolaget blev en av Pepsis största oberoende bottlare med stabil, återkommande kassa) till förlagsverksamheten. Kulmen var det fientliga budet på förlaget Harcourt Brace Jovanovich 1991 för omkring 1,5 miljarder dollar — ett tillfälle där Simmons köpte en kvalitetstillgång till en multipl som var anmärkningsvärt låg, trimmade den och sålde den knappt tio år senare till Reed Elsevier och andra till väsentligt högre värden. Thorndike framhäver Simmons som ett bevis på att kapitalallokering är en hantverksskicklighet: ingen enskild genialisk dragning, men en lång rad av prismedvetna beslut som tillsammans komponerar en aktieavkastning omkring nitton procent per år under hela perioden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre tålmodiga allokatorer — jämförelse\",\"rader\":[[\"VD\",\"Bolag\",\"Signaturgrepp\",\"Allokeringslogik\",\"Resultat\"],[\"Katharine Graham\",\"Washington Post\",\"Tunga kärninvesteringar; Kaplan-förvärvet; återköp när aktien var billig\",\"Kärnverksamheten först (V14); diversifiering till stabilare kassaflöden; V20 med prisdisciplin\",\">20 % per år under hennes era\"],[\"Bill Stiritz\",\"Ralston Purina\",\"Renodling kring varumärkeskärna; återköp av ≈60 % av aktierna\",\"När aktien är billigare än förvärvsalternativen är återköpet det bästa förvärvet\",\"≈20 % per år; Purina såldes till Nestlé 2001\"],[\"Dick Simmons\",\"General Cinema/Harcourt\",\"Biograf → Pepsi-flaskning → förlagsköp till låg multipl\",\"Köp samma typ av stabil kassaflöde billigt; trimma; sälj när multiplen stiger\",\"≈19 % per år under nästan fyra decennier\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Gemensamt för de tre: de behandlade återköp, förvärv och avyttringar som samma beslut — köp värde billigt, behåll det som är underskattat, sälj när någon betalar mer än det är värt — och de mätte sig i avkastning per aktie, inte i rubriker."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett av fallen och modernisera det: finns det idag ett medie-/utbildningsbolag (Graham-spåret), ett varumärkesbolag med stor återköpsandel (Stiritz-spåret) eller ett holdingbolag som byter bransch via förvärv till lågt V06-multiplar (Simmons-spåret)? Ringa in en kandidat och beskriv i tre meningar vilken av de tre VD:arna den nuvarande ledningen liknar — och varför."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gjorde Katharine Grahams kapitalallokering exceptionell?",
+          "alternativ": [
+            "Hon noterade bolaget och lämnade sedan över ansvaret till förvaltare",
+            "Hon kombinerade tunga investeringar i kärnverksamheten — tryckerier och tidningens varumärke — med förvärv utanför medier (Stanley Kaplan) och återköp när aktien var billig",
+            "Hon lade all kassa på återköp oavsett pris",
+            "Hon sålde Washington Post och blev renodlad investeringsfond"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på balansen: förstärk det du förstår bäst, diversifiera mot stabilare kassa, och returnera överskottet rätt pris."
+        },
+        {
+          "q": "Vad var Bill Stiritz signaturgrepp på Ralston Purina?",
+          "alternativ": [
+            "Han byggde ut huvudkontoret kraftigt",
+            "Han fyrdubblade utdelningen varje år",
+            "Han avnoterade bolaget från börsen",
+            "Massiva återköp — i storleksordningen sextio procent av aktierna — kombinerat med renodling kring en varumärkesstark kärna"
+          ],
+          "ratt": 3,
+          "tips": "Jämför med Singleton: vad händer med värdet per aktie när sextio procent försvinner ur marknaden?"
+        },
+        {
+          "q": "Hur skapade Dick Simmons värde i Harcourt-affären?",
+          "alternativ": [
+            "Genom att köpa utgivaren Harcourt Brace Jovanovich 1991 till en låg multipl — och sälja utgivningen knappt tio år senare till betydligt högre värden för bland annat Reed Elsevier",
+            "Genom att sälja Harcourt direkt med vinst efter en månad",
+            "Genom att byta Harcourt-aktier mot optioner",
+            "Genom att behålla Harcourt och avveckla biografkedjan gratis"
+          ],
+          "ratt": 0,
+          "tips": "Samma logik som kabelmatematiken: inköpsmultipl mot exitmultipl, med trimmad drift däremellan."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Warren Buffett — Berkshire och allokeringens fulländning",
+      "intro": "Buffett är bokens åttonde fall och dess syntes: en VD som integrerade alla principer — decentralisering till ett tjog personer i Omaha, kassaflödestänkande, extrema långsiktighet och en allokering som komponerade omkring tjugo procent per år i nästan ett halvt sekel. Det som gör Berkshire unikt är bränslet: försäkringsfloaten — andras pengar som Buffett fick behålla i princip utan kostnad — och hans test för när vinst ska behållas i stället för betalas ut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Berkshires motor är försäkringsverksamheten. Premieinkasseringen inkommer innan skadorna betalas ut, och floaten — de medel som hålls mellan inbetalning och utbetalning — växde från omkring fyrtio miljoner dollar 1970 till över sjuttio miljarder när boken publicerades 2011. Så länge försäkringsdriften är lönsamt prissatt blir floaten i praktiken kapital utan fast räntekostnad — Thorndike beskriver det som en unik hävstång: Buffett fick disponera enorma belopp utan att ägarna späddes ut och utan skuldränta (V10 i dess mest geniala form). Det är därför Buffett kunde växa per aktie utan nyemission — motsatsen till V19-kapitalförbrukningens bolag, som ständigt måste hämta nytt kapital."
+        },
+        {
+          "type": "text",
+          "content": "På köpsidan tillämpade Buffett en dubbelt sträng disciplin. Han köpte hela bolag med bestående konkurrensfördelar till rimliga priser — See's Candies blev mallen för varumärkeskraft (V14) — och han vidhöll principen att varje behållen dollar av vinst måste skapa minst en dollar av marknadsvärde; annars är det bättre att betala ut kapitalet. Utdelning har därför betalats en enda gång under hans era — tio cent per aktie 1967, ett beslut han skämtat om att ångra. Återköpen (V20) reserverades för lägen som 2011 års program, då Berkshire förband sig att köpa tillbaka endast under ett strikt definierat pristak — och hans allmänna regel är känd: återköp först när aktien handlas med minst tjugo procents rabatt mot konservativt beräknat inre värde."
+        },
+        {
+          "type": "text",
+          "content": "Organisatoriskt är Berkshire kapitel tre i fulländad form: operating managers som ansvarar för sina bolag med extrema mandat, ett huvudkontor på runt tjugo personer, och kapital som flyter uppåt från dotterbolagen till Omaha för reallokering. Buffetts brev till aktieägarna — som Thorndike lyfter fram som en lärobok i kapitalallokering — har under fyrtio år förklarat varje beslutslogik: försäkringsprissättning, val mellan förvärv och återköp, och varför Berkshire inte betalar utdelning trots växande kassa. Resultatet av systemet: från att ha varit en döende textilfabrik 1965 komponerade Berkshire sitt börsvärde med omkring tjugo procent per år, mot knappt tio för index — och inga nya aktier behövde ges ut för att finansiera tillväxten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Berkshire — allokeringens byggstenar\",\"rader\":[[\"Byggsten\",\"Beskrivning\",\"AKM1-koppling\"],[\"Försäkringsfloat\",\"Kapital mellan premieinkassering och skadeutbetalning; från ≈40 mdr $ 1970 till >70 mdr $ 2011\",\"Skuldliknande finansiering utan ränta (V10-spår)\"],[\"Förvärv av hela bolag\",\"Varumärkesstarka företag med bestående fördelar till rimliga priser\",\"V14 varumärke; V06 multipl\"],[\"Behållnings-testet\",\"Varje behållen dollar ska skapa minst en dollar i marknadsvärde\",\"Alternativkostnad som princip\"],[\"Utdelningspolicy\",\"En enda gång — tio cent per aktie 1967\",\"Utdelningens stelhet vs återköpets flexibilitet\"],[\"Återköpsdisciplin\",\"Enbart vid kraftig rabatt mot inre värde (≈20 %)\",\"V20 + marginal of safety\"],[\"Organisation\",\"≈20 personer i Omaha; extrem decentralisering\",\"Kapitel 3: få anställda på topp\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Berkshire-formeln: skaffa kapital som är billigare än skuld (float), organisera så att VD:n bara gör allokeringar, och behåll bara vinst som skapar minst en dollar av värde per behållen dollar — resten tillhör aktieägarna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta upp ett börsnoterat försäkringsbolag eller ett bolag med liknande kassaflödesbränsle (förskottsbetalningar, depositioner, prenumerationsintäkter). Uppskatta hur stort dess float är och om driften är lönsam. Fråga sedan: vad gör ledningen med kapitalet — förvärvas det till rimliga multiplar (V06), återköps aktier med rabatt (V20), eller byggs det onödig storhet? Skriv en Buffett-dom på tre meningar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är försäkringsfloatens roll i Berkshire?",
+          "alternativ": [
+            "En skatt som betalas årligen till delstaterna",
+            "Premieinkassering som får behållas innan skador betalas — i praktiken kapital utan fast räntekostnad som Buffett kan allokera",
+            "En typ av preferensaktie i dotterbolag",
+            "En personalstiftelses reservfond"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på tidsskillnaden mellan inbetalning och utbetalning — vem disponerar pengarna under tiden?"
+        },
+        {
+          "q": "Vilket test formulerade Buffett för när vinst ska behållas i bolaget?",
+          "alternativ": [
+            "Att vinsten per aktie ökar minst femton procent per år",
+            "Att varje behållen dollar ska skapa minst en dollar i marknadsvärde — annars hör kapitalet hemma hos aktieägarna",
+            "Att skuldsättningsgraden sjunker samtidigt",
+            "Att analytikerkonsensus höjs efter beskedet"
+          ],
+          "ratt": 1,
+          "tips": "Testet handlar om alternativkostnad: vad är en behållen dollar värd för ägaren?"
+        },
+        {
+          "q": "Hur många gånger har Berkshire betalat utdelning under Buffetts era?",
+          "alternativ": [
+            "Varje år sedan 1967",
+            "Aldrig",
+            "En enda gång — tio cent per aktie 1967",
+            "Varje kvartal sedan 1985"
+          ],
+          "ratt": 2,
+          "tips": "Buffett har skämtat om att detta enskilda beslut är det han ångrar mest."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Verktygslådan — utdelning, skuld och att göra ingenting",
+      "intro": "Kapitel 2 presenterade de fem alternativen; de två föregående kapitlen behandlade återköpet i djupet. Detta kapitel fyller verktygslådan: utdelningen — när utanförarna sa nej och varför; skulden — när belåning är smart och när den är dödlig; och det mest förbisedda verktyget, att göra ingenting. Alla tre verktygen bedöms med samma måttstock: vad händer med värdet per aktie?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utdelningens problem är dubbelt: skatt och stelhet. Vinsten är redan beskattad i bolaget; delas den ut beskattas den igen hos ägaren — en dubbel passage som utanförarna helst undvek. Värre är stelheten: marknaden bestraffar utdelningssänkningar hårt, och en VD som höjt utdelningen har därför bundit en växande andel av kassaflödet oavsett vad som händer med affären eller med priserna på bolagets egen aktie. Återköpet (V20) är flexibelt — det kan pausas utan katastrof, som Singleton visade genom att köpa som bolaget var billigt och låta bli annars. Därför blev utdelningen hos utanförarna ett slags reservlösning: den betalades när bolaget saknade bättre alternativ, inte som en default. Undantaget som bekräftar regeln: stabila, mogna kassaflöden utan reinvesteringbehov bär utdelningen väl (V12)."
+        },
+        {
+          "type": "text",
+          "content": "Skuldens roll hos utanförarna var aldrig ideologisk utan aritmetisk. Smart belåning (V10) känns igen på tre drag: den matchar tillgångens kassaflöde — Malones skuld bärs av abonnemangsintäkter som är nästan lika säkra som amorteringarna (V12); den är tillfällig när läget kräver det — Murphy och Anders tog upp skulden för att utföra en enda stor affär och amorterade sedan målmedvetet; och den finansierar tillgångar som köpts under värde, aldrig expansion för expansionens egen skull. Dum belåning är spegelbilden: permanent belåning på cykliska intäkter, skuld för att hålla utdelningar eller EPS-mål vid liv, och belåning som tömmer likviditetsbufferten (V11) i toppen av cykeln. Kom ihåg också att skuld lyfter ROE (V09) utan att skapa ett gram värde — en hävstångseffekt som ser bra ut tills den inte gör det."
+        },
+        {
+          "type": "text",
+          "content": "Det femte verktyget är att göra ingenting — och Thorndike menar det bokstavligt. Singleton gick åratal utan en enda stor allokering; Murphy väntade ut mediemarknaden innan ABC; Buffett lät kassan byggas upp när inget var billigt, under tålamodets paroll att inget måste hända. Att inte agera är i den här skolan ett aktivt beslut: varje affär som inte görs till fel pris frigör kapital och uppmärksamhet för det tillfälle som faktiskt lönar sig. Det är också den svåraste delen att praktisera — aktiemarknaden premierar aktivitet och VD:er premieras för handkraft — men det är precis därför nerv att gå emot strömmen är en av de fem principerna. Tålamod är en position."
+        },
+        {
+          "type": "text",
+          "content": "Sätt samman verktygslådan med en tidslinje för en fiktiv men typisk allokering: (1) Kärnverksamheten reinvesteras först när avkastningen överstiger alternativkostnaden. (2) Är aktien billig — kör återköp med rabatt mot inre värde. (3) Finns en måltillgång i känd bransch till rätt multipel (V06) — köp den, gärna med skuld som matchar kassaflödet (V10 mot V12). (4) Saknas allt detta — returnera kapitalet, och låt formen (utdelning eller återköp) avgöras av priset på den egna aktien. (5) Och om inget av detta är möjligt just nu — gör ingenting, medvetet. Det är verktygsordningen i en enda mening: högsta värdet per aktie för varje dollar, alltid."
+        },
+        {
+          "type": "insikt",
+          "content": "Utdelning är stel och dubbelbeskattad, skuld är ett verktyg som ska matcha kassaflödet — och att inte agera är en aktiv, ofta bästa, allokering: tålamod är en position."
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska ett bolags senaste fem år genom verktygslådan: hur mycket gick till återinvestering, utdelning, amortering, förvärv och återköp — och till vilka priser? Identifiera minst ett beslut där ledningen borde ha gjort ingenting (t.ex. ett förvärv till toppmultipl eller återköp på rekordnivåer) och ett beslut som följt verktygsordningen. Vilket vägde tyngst för aktieägarvärdet?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför var utanförarna återhållsamma med utdelningar?",
+          "alternativ": [
+            "De saknade i regel fritt kassaflöde",
+            "Dubbelbeskattning och stelhet — en utdelning som inte kan sänkas utan marknadsstraff binder kapital som annars kan allokeras flexibelt, medan återköp kan pausas utan samma signalvärde",
+            "Eftersom börsreglerna förbjöd utdelning vid återköpsprogram",
+            "De tyckte aktieägare skulle sälja aktier i stället för att få utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Jämför vad som händer om kassaflödet sjunker: vilka av de två formerna av utbetalning kan stängas av?"
+        },
+        {
+          "q": "Vad kännetecknar smart belåning (V10) hos utanförarna?",
+          "alternativ": [
+            "Maximal belåning oavsett verksamhetens stabilitet",
+            "Belåning enbart för att köpa tillbaka aktier",
+            "Skuld matchad mot förutsägbara kassaflöden (V12) — tillfällig kraft hos Murphy och Anders, permanent hos Malone — och alltid kopplad till tillgångar köpta under värde",
+            "Belåning endast i utländsk valuta"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på förhållandet mellan skuldens betjäningskrav och tillgångens intäktsstabilitet."
+        },
+        {
+          "q": "Vad är poängen med verktyget »att göra ingenting«?",
+          "alternativ": [
+            "Att VD:n undviker ansvar för utfallet",
+            "Att inte betala någon utdelning på tio år",
+            "Att tålamod är en aktiv allokering — att avstå från affärer till fel pris frigör kapital och uppmärksamhet för de tillfällen som faktiskt lönar sig",
+            "Att aldrig röra kassan förrän hela bolaget säljs"
+          ],
+          "ratt": 2,
+          "tips": "Minns vad Singleton gjorde under åren när Teledyne-aktien inte var billig."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Imperiebyggarna — spegelbilden av genomsnitts-VD:n",
+      "intro": "Thorndikes analys blir tydligast i kontrasten. Medan utanförarna mätte sig i avkastning per aktie byggde genomsnitts-VD:n imperium: större huvudkontor, fler förvärv, kvartalsguidance och en organisation anpassad för att se framgångsrik ut. Detta kapitel ställer de två profilerna mot varandra — och ger AKM1-analytikern en checklista av varningsflaggor som är direkt observerbara i vilka årsredovisningar och pressmeddelanden som helst.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första spegelvändningen är ersättningen. Studier som Thorndike hänvisar till visar att VD-löner korrelerar med bolagets storlek — omsättning och antal anställda — snarare än med avkastning per aktie. En VD som fördubblar omsättningen genom ett dyrt förvärv belönas alltså även om affären förstör värde: bonusen mäter storlek, inte pris. Utanförarna bröt mönstret på båda hållen: deras egna bolag kopplade bonusar till enhetsresultat och per-aktie-utveckling, och flera av dem — Buffett framför allt — höll egna löner blygsamma medan deras nettoförmögenhet låg i bolagets aktier. »Skin in the game« är därför en AKM1-variabel: hur stor del av VD:ns förmögenhet följer med aktieägarnas?"
+        },
+        {
+          "type": "text",
+          "content": "Den andra spegelvändningen är förvärvskulturen. Konglomeratens era — som Teledyne växte upp i och överlevde — byggdes på att köpa vad som helst så länge aktiemarknaden betalade för tillväxt; när musiken tystnade 1969–70 kollapsade kejsarna eftersom prisdisciplinen aldrig funnits. Forskningen som boken refererar till är entydig: en majoritet av stora förvärv förstör värde för den köparen, särskilt strategiskt motiverade jätteaffärer betalda med fullvärderade aktier. Utanförarna gjorde motsatsen: väntade åratal, köpte samma bransch de förstod, betalade kontant när de kunde — och vägrade förhandla mot sig själva. Skillnaden är inte aktivitetsnivå utan pris och fokus."
+        },
+        {
+          "type": "text",
+          "content": "Den tredje spegelvändningen är guidance-kulturen. Att leda ut kvartalsprognoser, hålla earnings calls och hantera konsensus har blivit en del av VD-rollen — men den som lovar marknaden siffror var tredje månad binder sig vid det korta perspektivet: investeringar skjuts upp till nästa kvartal ser bra ut, och varje avvikelse blir en kris. Utanförarna höll inga earnings calls, gav ingen guidance och rapporterade så pass lite som regelverket tillät — Singleton vägrade att dela aktien eller förklara kvartalen; Buffett förklarar sin logik i årsbrev i stället för i prognoser. Infrastrukturen kring bolaget — analytiker, medier, förväntningar — gillar det inte; utanförarna accepterade att bli impopulära i utbyte mot friheten att allokera långsiktigt."
+        },
+        {
+          "type": "text",
+          "content": "Den fjärde spegelvändningen är att använda återköpen. Genomsnittsbolaget återköper som mest när aktien är dyr — i praktiken ofta som en motpost till personaloptionernas utspäddning, vilket gör återköpet till en dold lönekostnad snarare än en allokering (V20 i perverterad form). Utanförarna gjorde motsatsen: köpte som mest när ingen annan ville äga aktien. Skillnaden mellan de två återköpskulturerna är en av de skarpaste signaturerna i hela boken — och en av de lättaste att kontrollera empiriskt: jämför det pris bolaget betalat för sina aktier med hur kursen utvecklades efteråt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Utanföraren kontra imperiebyggaren — åtta skiljelinjer\",\"rader\":[[\"Dimension\",\"Utanföraren\",\"Imperiebyggaren\"],[\"Måttstock\",\"Avkastning per aktie över 10–20 år\",\"Omsättning, storlek, ranking\"],[\"Huvudkontor\",\"Minimalt; beslut nedåt\",\"Växande stab; beslut uppåt\"],[\"Förvärv\",\"Samma bransch; pris under värde; tålamod\",\"Strategisk expansion; betalar med dyra aktier\"],[\"Utdelning\",\"Nej — eller när inget bättre finns\",\"Ja — och gärna höjd varje år oavsett läge\"],[\"Återköp\",\"När aktien är billig\",\"På topp; ofta bara optionkompensation\"],[\"Guidance\",\"Ingen; långa ägarbrev\",\"Kvartalsprognoser och konsensushantering\"],[\"Ersättning\",\"Kopplad till enhetsresultat och per-aktie-värde; eget ägande\",\"Kopplad till bolagets storlek\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Genomsnitts-VD:n är optimerad för att se framgångsrik ut kvartalsvis; utanförarna var optimerade för att skapa värde per aktie över decennier — och nästan varje val skiljer dem åt: ersättning, förvärv, guidance, återköp."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta din portföljs största innehav och kör tabellen som test: måttstock, huvudkontorets storlek, förvärvshistorik (multiplar och betalningssätt), utdelnings-/återköpspolitik och guidancekultur. Ge bolaget poäng per rad: hur många av åtta skiljelinjer pekar mot utanföraren? Skriv en slutsats om vilken typ av VD som ledningen består av."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad korrelerar typisk VD-ersättning med, enligt de studier boken hänvisar till?",
+          "alternativ": [
+            "Med avkastningen per aktie över tio år",
+            "Med bolagets storlek — omsättning och antal anställda — vilket ger incitament att växa för växandets skull",
+            "Med kassaflödesmultiplarnas utveckling",
+            "Med utdelningens utdelningsgrad"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vilket mått som är enklast att flytta genom ett enda stort beslut."
+        },
+        {
+          "q": "Vad visar forskningen om stora förvärv?",
+          "alternativ": [
+            "De skapar värde för köparen i majoriteten av fallen",
+            "Ungefär hälften skapar värde direkt vid tillkännagivandet",
+            "En majoritet förstör värde för köparen — särskilt stora, strategiskt motiverade affärer betalda med fullvärderade aktier",
+            "Forskningen är entydigt positiv eftersom synergier är pålitliga"
+          ],
+          "ratt": 2,
+          "tips": "Minns konglomeratens öde när prisdisciplinen saknas — och vem som köpte samma affär igen och igen i stället."
+        },
+        {
+          "q": "Varför är kvartalsguidance ett problem enligt Thorndike?",
+          "alternativ": [
+            "Den är förbjuden enligt amerikansk värdepappersrätt",
+            "Den lockar till sig kortsiktiga ägare och tvingar ledningen att styra mot konsensus i stället för långsiktigt värde — investeringar skjuts upp för att kvartalet ska se bra ut",
+            "Den höjer alltid bolagets kapitalkostnad",
+            "Den gör återköp tekniskt omöjliga"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad en VD som lovat en siffra var tredje månad får prioritera när ett långsiktigt lönsamt beslut krockar med nästa rapport."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Syntesen — avkastning per aktie, långa horisonter och marginal of safety",
+      "intro": "Sista kapitlet samlar boken till en metod. Utanförarnas gemensamma måttstock var avkastning per aktie över tio till tjugo år — aldrig bolagets totala storlek — och deras beslutsregel var alltid densamma: högsta värdet per aktie för varje dollar, med marginal of safety som prisdisciplin. Här byggs den kompletta utvärderingen av en VD och kursens avslutande akt: att omvandla Thorndikes åtta fall till ett arbetssätt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Per-aktie-måttstocken är mer radikal än den låter. En VD kan tiodubbla omsättningen och ändå lämna aktieägarna fattigare — om betalningen skett genom utspäddning, dyra förvärv och växande skuld. Omvänt kan en VD som krymper bolaget, som Anders, skapa enormt värde genom att koncentrera samma kassaflöde på allt färre aktier. Därför är de enda mått som betyder något de per aktie: kassaflöde per aktie, bokfört värde per aktie, och totalavkastning per aktie över en hel cykel. Thorndikes långtidssiffror visar skillnaden i praktiken: få procents extra avkastning per år, år efter år, är skillnaden mellan femton och tvåhundra dollar — mellan index och utanförarna."
+        },
+        {
+          "type": "text",
+          "content": "Samla kursens byggstenar till en VD-utvärdering i tio punkter. Ett: spårrekord — vad har aktieantalet gjort, netto, över en hel cykel (V20, med pris)? Två: förvärvshistorik — vilka multiplar (V06) har betalats och vad har hänt med förvärvens avkastning? Tre: utdelningslogik — styrs den av alternativ eller av vana? Fyra: skuldsättning (V10) — matchar den intäktsstabiliteten (V12)? Fem: huvudkontorets storlek och decentraliseringsgrad. Sex: guidancekultur och tidshorisont. Sju: ägarstruktur — finns beständiga ägare eller dubbelklassaktier som skyddar långsiktighet? Åtta: VD:ns eget ägande och hur ersättningen är kopplad. Nio: kapitaldisposition — reinvesteringars avkastning mot alternativkostnad (V19-varning vid kapitalförbrukning utan avkastning). Tio: prisdisciplinen — marginal of safety som den röda tråden i alla beslut, utan V-nummer, eftersom den är måttstocken för alla andra mått."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till AKM1-ekosystemet är rak. V20 är kursens centrum: återköpets värde avgörs av priset mot inre värde, och en femårig historik av återköp under värde är bland de starkaste signaler en börsnoterad bolagsledning kan sända. V10 och V12 hör ihop: belåning är rationell i exakt den mån intäkterna är stabila. V06 är multiplmåttet som binder samman förvärv, återköp och avyttringar till ett enda beslutsrum. V19 är spegelbildens varning — bolag som ständigt behöver nyemissioner och bränner kapital är utanförarnas motsats. Och marginal of safety förblir principen utan nummer: den som inte vet priset mot värde vet inget om allokeringen, oavsett hur många V-mått som räknas."
+        },
+        {
+          "type": "text",
+          "content": "Thorndikes avslutande formulering är kursens: utanförarna var inga genialiska enstaka händelser utan ett system — decentraliserad drift, centraliserad kapitalallokering, kassaflöde före redovisning, långa horisonter och nerv att gå emot — upprepat med disciplin under decennier. Någon av dem var ingenjör, någon astronaut, någon änka som tvivlade på sig själv, någon elev till Benjamin Graham; vad de delade var ett sätt att tänka på bolaget som en portfölj och på sig själva som dess kapitalförvaltare. Den som lär sig systemet — och tålamodet — kan tillämpa det på vilket bolag som helst, inklusive sina egna investeringar: varje dollar har bara fem destinationer, och valet avgörs alltid av priset mot värde."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Syntesen — utanförarnas system i sju delar\",\"rader\":[[\"Del\",\"Innehåll\",\"AKM1-översättning\"],[\"Måttstock\",\"Avkastning per aktie över 10–20 år\",\"All analys per aktie, aldrig per bolag\"],[\"Organisation\",\"Decentraliserad drift, minimal huvudkontor\",\"Få anställda på koncernnivå; långa chefstidslöptider\"],[\"Mätetal\",\"Kassaflöde och cash EPS före redovisad vinst\",\"V06 EV/EBITDA; V12 intäktsstabilitet\"],[\"Återköp\",\"Enbart under inre värde; ≈20 % rabatt som riktmärke\",\"V20 med marginal of safety\"],[\"Kapitalstruktur\",\"Skuld matchad mot stabila flöden; float där möjligt\",\"V10 mot V12; V11-buffer vid cykeltoppar\"],[\"Beslutsfrihet\",\"Beständiga ägare; ingen guidance\",\"Ägarstruktur och tidshorisont som analytisk variabel\"],[\"Temperament\",\"Långa horisonter; att göra ingenting; nerv att gå emot\",\"Tålamod som position; V19-varning för kapitalbrännare\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Systemet i en mening: decentraliserad drift, centraliserad kapitalallokering, kassaflöde per aktie som måttstock, tålamod som position — och marginal of safety som prövning av varje enskilt beslut."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutövningen: gör en fullständig allokeringsgranskning av ett bolag du äger eller överväger. Använd de tio punkterna: nettoförändring i aktieantal med priser (V20), förvärvsmultiplar (V06), utdelnings- och skuldlogik (V10, V12), huvudkontor, guidance, ägarstruktur och VD:ns eget ägande. Avsluta med en dom på Thorndikes skala — utanförare, imperiebyggare eller mittemellan — och tre konkreta händelser de kommande åren som skulle förändra domen."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken måttstock använde utanförarna för sin egen prestation?",
+          "alternativ": [
+            "Omsättningstillväxten (V01)",
+            "Avkastning per aktie över tio till tjugo år — aldrig bolagets totala storlek",
+            "Antalet genomförda förvärv per år",
+            "Rörelsemarginalen per kvartal"
+          ],
+          "ratt": 1,
+          "tips": "Minns Anders: hans bolag krympte kraftigt — och ägarna tjänade mest av alla."
+        },
+        {
+          "q": "Vad menas med beslutsfrihet via ägarstruktur i boken?",
+          "alternativ": [
+            "Att VD:n personligen äger en majoritet av aktierna",
+            "Att bolaget saknar utdelning helt",
+            "Att styrelsen består av före detta anställda",
+            "Beständiga huvudägare eller strukturer — som dubbelklassaktier — gav VD:arna lugn att fatta impopulära, långsiktiga beslut utan kortsiktigt marknadstryck"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på varför Murphy, Graham och Buffett kunde ignorera kvartalsbruset."
+        },
+        {
+          "q": "Vilken formulering sammanfattar bäst utanförarnas system?",
+          "alternativ": [
+            "Decentraliserad drift, centraliserad kapitalallokering, kassaflöde per aktie som måttstock, långa horisonter och nerv att gå emot — med marginal of safety som prisdisciplin",
+            "Centraliserad drift och decentraliserad finansiering",
+            "Maximal tillväxt med minimal kontroll",
+            "Köp index och återköp aldrig egna aktier"
+          ],
+          "ratt": 0,
+          "tips": "Gå tillbaka till de fem principerna från kapitel ett och lägg till den röda tråden om pris."
+        }
+      ]
+    }
+  ]
+}

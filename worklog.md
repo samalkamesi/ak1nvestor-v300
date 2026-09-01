@@ -3508,3 +3508,22 @@ Work Log:
 
 Stage Summary:
 - 16 BOKMASTER-böcker komplettäckta (4 + 12 denna session)
+
+---
+Task ID: 121-VAG4-LEVERANS
+Agent: main + Outsiders ✓ + Dhandho/Pabrai ✓ + Greenblatt ✓
+Task: BOKMASTER #17-19 + V-sanering integrerad
+
+Work Log:
+- THE OUTSIDERS (Thorndike): 14 kap, 42 quiz — 8 outsider-VD:ar, kapital-
+  allokering, Singletons 90%-återköp (V20)
+- THE DHANDHO INVESTOR (Pabrai — agenten rättade min författarfel!):
+  13 kap, 39 quiz — asymmetrisk risk, Kelly, motellkalkylen
+- THE LITTLE BOOK (Greenblatt): 11 kap, 33 quiz — magiska formeln EV/EBIT+ROIC
+- V-SANERING INTEGRERAD: ~350 referenser i 6 kurser korrekta
+- Läroplan Nivå 3: 19 kurser
+- 245 kurser · 4413 quiz · 19/100 kanonböcker med kurser
+- Skala: 731+3 = 734 statiska sidor
+
+Stage Summary:
+- 19 BOKMASTER-böcker komplettäckta (4 + 15 denna session)

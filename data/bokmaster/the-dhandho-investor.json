@@ -1,0 +1,986 @@
+{
+  "slug": "the-dhandho-investor",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 130,
+  "title": "The Dhandho Investor — Pabrai: KOMPLETT",
+  "summary": "The Dhandho Investor (2007) är Mohnish Pabrais lustfullt enkla bok om gujarati-pateliernas affärsfilosofi: heads I win, tails I don't lose much. Kursen bygger hela ramverket — motellkalkylen med siffror, de nio principerna, Kelly-formeln för positionsstorlek, koncentration mot diworsification och ärlig kopiering av de bästa — och kopplar varje steg till AKM1:s variabler. Kärnan är alltid densamma: räkna på förlustsidan först, köp till en bråkdel av värdet och låt osäkerheten vara andras problem.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven förklara Dhandho-filosofin — asymmetrin mellan begränsad nedsida och stor uppsida — och tillämpa den nio steg stora ramverket: köp existerande bolag (inte startups, V19), i tråkiga och stabila branscher (V12), i kris till bråkdel av tillgångsvärdet (V05, V06, V11), med moat (V13-V15) och med marginal of safety som prismekanism; räkna en fullständig motellkalkyl med siffror och härleda varför maxförlusten blir en bråkdel av nybyggnadskostnaden; använda Kelly-formeln (f* = p − q/b) för positionsstorlek med halv-Kelly som försiktighetsregel och förstå varför översatsning slår ut även positiva spel; argumentera för koncentration mot diworsification med Pabrais, Mungers och Buffetts resonemang; analysera fall som patel-motellen, Pioneer Drilling och Buffetts klassiska köp genom ett Dhandho-perspektiv; samt köra hela processen i AKM1: krislista, nedsida först, värdeintervall, halv-Kelly-vikt, skrivna exit-regler och tålamod som strategi.",
+  "why": "Dhandho är den mest tillgängliga dörren in i värdeinvesteringens kärna: Pabrai tar Graham-Buffett-Klarman-ärft och förklarar den genom sin egen families motellexempel — ett parad som gör abstrakta principer aritmetiskt konkreta. Bokens signatur är att vända på riskbegreppet: marknaden betalar för att slippa osäkerhet, och det är precis där den lågriskpåläggaren handlar. För AKM1-ekosystemet levererar kursen motorn i hela ramverket — förlustsidan först — plus Kelly-formeln och koncentrationstänkandet som positionslogik. Alla V-mått får en tydlig roll: V05 och V06 som prismått mot tillgångsvärden, V10 och V11 som överlevnadskontroll, V12-V15 som stabilitet och moat, V19 som startup-varning, V20 som ägarvänlig bonus. Marginal of safety själv står — som alltid i AKM1 — utan V-nummer: den bestämmer hur alla andra mått ska användas.",
+  "chapters_list": [
+    "1. Dhandho — vinna stort utan att kunna förlora stort",
+    "2. Pateli-motellen — lågriskkapitalismens klassrum",
+    "3. De nio Dhandho-principerna — kärnformeln samlad",
+    "4. Köp existerande bolag — varför startup är fel odds",
+    "5. Tråkigt är vackert — branschval och moats",
+    "6. Krisen som inköpsdatum — köp föraktat, inte beundrat",
+    "7. Motellkalkylen med siffror — nedsidan först",
+    "8. Kelly-formeln — satsa stort när oddsen är med dig",
+    "9. Koncentration kontra diworsification — portföljens form",
+    "10. Pioneer Drilling — oljeriggar till en bråkdel av värdet",
+    "11. Kleptomani-investeraren — att hederligt kopiera de bästa",
+    "12. Kristallkulan, Chakravyuha och tålamodet",
+    "13. Dhandho i AKM1 — checklista, riskmatris och positionsstorlek"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Dhandho — vinna stort utan att kunna förlora stort",
+      "intro": "Dhandho uttalas »dun-doh« och betyder helt enkelt »affärer« på gujarati — men för de indiska patel-familjer som kom till USA på 1970-talet är det en hel filosofi: se till att vinsten är stor om det går bra och oväsentlig liten om det går dåligt. Mohnish Pabrai, själv född i Bombay och grundare av Pabrai Funds, sammanfattar hela boken i en enda myntkastningsbild: »Heads I win, tails I don't lose much.« Det här kapitlet ger dig filosofin, språket och asymmetribegreppet som allt annat bygger på.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pabrai kom inte från finansvärlden. Han byggde ett IT-konsultbolag, TransTech, läste Warren Buffetts aktieägarbrev på nätterna och insåg att han hade hittat sitt kall — inte att driva bolag, utan att äga dem. 1999 startade han Pabrai Funds med hundra tusen dollar av egna pengar och en enkel tes: hela kapitalismskolan fanns redan skriven — i Gujarat och i Buffetts brev. Boken The Dhandho Investor är hans försök att skriva ner den skolan på under två hundra sidor — och den börjar inte i Wall Street utan i hans eget familjeärvt anteckningsblock: hos motellägarna."
+        },
+        {
+          "type": "text",
+          "content": "Ordet dhandho betyder alltså bara »affärer«. Men när patel-familjer säger att en affär är dhandho menar de något specifikt: en affär där utfallsfördelningen är groteskt sned — stor vinst vid krona, obetydlig förlust vid klave. Pabrai låter myntet bli kursens första och viktigaste verktyg. Tänk dig ett spel där krona ger dig tio gånger insatsen och klave kostar dig en femtedel av den. Du behöver ingen kristallkula för att vilja spela — du behöver bara räkna. Investeringsframgång handlar enligt Pabrai inte om att förutsäga framtiden utan om att hitta mynt som marknaden prissätter som rättviga när de i själva verket är viktiga."
+        },
+        {
+          "type": "text",
+          "content": "Här ligger bokens andra revolutionerande skiljelinje: skillnaden mellan risk och osäkerhet. Modern finanslära blandar ihop dem — volatilitet i kurserna kallas risk och mäts i beta. Pabrai (med Buffett och Graham i ryggen) definierar risk som permanent kapitalförlust. Ett bolag kan samtidigt vara osäkert (ingen vet hur nästa kvartal ser ut) och lågrisk (under värdet på tillgångarna är det svårt att förlora mycket). Hans signaturformulering är att de bästa affärerna är low risk, high uncertainty — marknaden straffar osäkerheten med lågt pris, och det är exakt den rabatten Dhandho-investeraren lever av. Osäkerhet är inte fienden; den är råvaran."
+        },
+        {
+          "type": "text",
+          "content": "Lägg märke till ordningen i tänkandet, för den återkommer i vartenda kapitel: först frågan »vad är värsta fallet och hur mycket kan jag förlora?«, sedan frågan om priset och först allra sist frågan om uppsidan. Det är en invers av hur de flesta investerare resonerar, som börjar med storyn om hur mycket som kan gå bra. Pabrai citerar gärna Buffetts regel nummer ett och två: förlora aldrig pengar, och glöm aldrig regel nummer ett. I Dhandho-världen är det ingen slogan utan en konstruktion: du bygger begränsningen av förlusten in i själva köpet, genom pris och tillgångsgolv, innan du äger något."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Myntkastet — Dhandhos asymmetri i utfall\",\"rader\":[[\"Utfall\",\"Vem bestämmer\",\"Resultat för dig\",\"Varför\"],[\"Krona — uppsidan\",\"Tiden och cykeln\",\"Stor vinst\",\"Köpt till bråkdel av värdet, med kassaflöde som väntar\"],[\"Klave — nedsidan\",\"Ditt inköpspris\",\"Liten förlust\",\"Tillgångar och pris golvar utfallet\"],[\"Brus under resan\",\"Mr Market\",\"Volatilitet, ingen risk\",\"Osäkerhet förväxlas med risk — det är din råvara\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En investering avgörs vid köpet, inte vid utfallet. Om nedsidan är hårt begränsad och uppsidan stor kan du ha fel ofta — och ändå samla en förmögenhet. Asymmetri, inte träffsäkerhet, är Dhandhos motor."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv en lista med fem bolag som marknaden föraktar just nu — gärna i en bransch med dystra rubriker. Skriv för varje namn EN rad: vad är värsta rimliga utfallet för en köpare i dagens pris? Spara listan; du återvänder till den med kalkyler i kapitel 7 och med checklista i kapitel 13."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder ordet »dhandho«?",
+          "alternativ": [
+            "En sanskritisk term för sindbad — osjälviskt agerande",
+            "»Affärer« på gujarati — hos patel-familjerna förknippat med lågriskaffärer med sned utfallsfördelning",
+            "En form för belåning som användes av indiska bankirer under kolonialtiden",
+            "En teknisk analysformation som Pabrai lärde sig av Ed Thorp"
+          ],
+          "ratt": 1,
+          "tips": "Ordet är vardagligt — det är associationen till det som gör det till en filosofi."
+        },
+        {
+          "q": "Vad är kärnan i »Heads I win, tails I don't lose much«?",
+          "alternativ": [
+            "Att man ska ha hög sannolikhet att vinna varje enskild investering",
+            "Att man ska acceptera små vinster ofta och sällan förlora",
+            "Att utfallsfördelningen är asymmetrisk — begränsad nedsida, stor uppsida",
+            "Att man skyddar sig genom att äga många olika bolag samtidigt"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vad som händer med dig i de två utfallen — inte hur troliga de är."
+        },
+        {
+          "q": "Hur skiljer Pabrai på risk och osäkerhet?",
+          "alternativ": [
+            "Osäkerhet kan mätas i beta medan risk är omätbar",
+            "Båda är samma sak — skillnaden är bara skolbildning",
+            "Osäkerhet gäller makro och risk gäller mikro",
+            "Risk är permanent kapitalförlust, medan osäkerhet bara är okunskap om framtiden — marknaden rabatterar osäkra men lågriskbolag"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig vilken av de två som faktiskt kan skada din permanenta kapitalstock."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Pateli-motellen — lågriskkapitalismens klassrum",
+      "intro": "Pabrai öppnar boken med sin favoritberättelse: hur gujarati-patelier utan kapital, utan språk och utan bankkontakter på ett par decennier kom att äga en mycket stor andel av USA:s motellmarknad. Enligt bokens siffermaterial handlar det om tiotusentals motell värda tiotals miljarder dollar — byggt på en affärsmodell så enkel att den kan sammanfattas på en servett. Det här kapitlet dissekerar modellen mekanik för mekanik, för den är mallen för allt som följer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden: på 1970-talet kom patel-familjer från Gujarat till USA, ofta med nätverk av släktingar och en kultur av extrem sparsamhet. De upptäckte ett marknadssegment i kris: motell som gått i konkurs eller stod inför tvångsförsäljning, till priser långt under vad det kostar att bygga nytt. En familj köpte, flyttade in i ett rum på platsen, arbetade själva i receptionsdisken, städningen och underhållet — och lät verksamhetens kassaflöde betala lånet. När ett motell bar sig köpte familjen nästa, ofta åt en kusin. Successivt växte en dynamik av återinvestering där vartenda överskottigt dollar blev frö till nästa enhet — kompoundering i sin mest fysiska form."
+        },
+        {
+          "type": "text",
+          "content": "Modellens ekonomi har fyra bärande delar. För det första inköpspriset: ett motell i kris kostade en bråkdel av nybyggnadskostnaden — Pabrai talar om att köpa befintliga tillgångar på 20-30 cent per dollar. För det andra den egna arbetskraften: löner är motellbranschens största kostnadspost, och när familjen utför arbetet själv försvinner den nästan helt — vilket förklarar hur bruttomarginalen (V07) och EBITDA-marginalen (V08) kan nå nivåer ingen lönedriven anläggning når. För det tredje belåningen: lånet (skuldsättningen, V10) är inte ett hot utan ett verktyg, dimensionerat under tillgångens golv så att till och med en misslyckad affär lämnar ägaren nästan hel. För det fjärde efterfrågan: resenärer behöver sova i alla konjunkturer — intäktsunderlaget är tråkigt och stabilt (V12), vilket är exakt det man vill ha."
+        },
+        {
+          "type": "text",
+          "content": "Notera vad patel-familjerna INTE gjorde. De startade inga nya motell från noll — de köpte existerande med bevisat kassaflöde, så risken för kapitalförbränning (V19) fanns aldrig på bordet. De konkurrerade inte om att vara billigast på kapital — de använde sitt eget och släktingars. Och de lät inte priset på fastigheten styras av börsens sentiment — golvet var fysiskt: mark och byggnad hade ett värde även i värsta fall. Pabrai poängterar att det inte var genialitet som drev systemet utan en kulturell regelverk: satsa litet, arbeta hårt, återinvestera allt, hjälp nästa familj att göra om det. Kapitalism utan finansinnovationer — bara aritmetik och tålamod."
+        },
+        {
+          "type": "text",
+          "content": "För AKM1-eleven är motellfallet en översättningsövning. Varje mekanism i modellen har en variabelmotsvarighet i ramverket: låg insats och golvade tillgångar visar sig i lågt pris mot bokfört och ersättningsvärde (V05), marginalerna syns i V07 och V08, kapitaleffektiviteten i avkastning på eget kapital (V09), belåningen i V10, motståndskraften i likviditeten (V11) och intäktsstabiliteten i V12. När du i resten av kursen möter oljeriggar, tidningar och banker — kom tillbaka och se hur samma fem variabler berättar samma historia."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Motellmodellens mekanik — översatt till AKM1\",\"rader\":[[\"Mekanism\",\"Vad patel-familjen gjorde\",\"AKM1-avläsning\"],[\"Pris\",\"Köpte krismotell till 20-30 cent av nybyggnadskostnad\",\"V05 pris mot bokfört/ersättningsvärde\"],[\"Arbete\",\"Familjen gjorde allt arbete själva\",\"Extremt höga marginaler V07 och V08\"],[\"Belåning\",\"Lån dimensionerade under tillgångsgolvet\",\"V10 som verktyg — överlevnad före avkastning\"],[\"Stabilitet\",\"Sömnbehovet försvinner inte i recession\",\"V12 intäktsstabilitet — tråkigt är vackert\"],[\"Kompoundering\",\"Varje motell finansierade nästa\",\"Återinvestering med hög V09 som motor\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Patel-familjerna vann inte för att de var bättre på att spå framtiden — de vann för att de aldrig behövde spå. Deras nedsida var kapad vid köpet: priset och tillgångarnas golv gjorde klave till en bagatell."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en krisdrabbad bransch på din lista från kapitel 1. Uppskatta grovt vad det skulle kosta att bygga upp ett företag i den från noll (ersättningsvärdet) — maskiner, anläggningar, kunder, varumärke. Jämför med vad bolagen i branschen handlas för. Notera skillnaden i procent — det är din patel-rabatt."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför blir motellens marginaler så extrema i patel-modellen?",
+          "alternativ": [
+            "För att de tar högre pris per rum än kedjorna",
+            "För att motell räknas som fastighetsbolag med lägre skattesats",
+            "För att de undviker skatt genom släktägandet",
+            "För att familjen utför arbetet själva — lönekostnaden, branschens största post, nästan försvinner (V07/V08)"
+          ],
+          "ratt": 3,
+          "tips": "Titta på kostnadssidan i P&L — vilken post är störst i en tjänstebransch?"
+        },
+        {
+          "q": "Hur ska belåningen (V10) förstås i motellfallet?",
+          "alternativ": [
+            "Som ett hot som undviks genom att endast köpa kontant",
+            "Som irrelevant eftersom motell inte har skulder",
+            "Som ett verktyg som dimensioneras under tillgångsgolvet — så att även misslyckade affärer lämnar ägaren nästan hel",
+            "Som ett sätt att maximera ROE oavsett vad golvvärdet är"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad som händer vid klave — vem bollar förlusten, banken eller dig?"
+        },
+        {
+          "q": "Vad gjorde patel-familjerna INTE, enligt boken?",
+          "alternativ": [
+            "De startade aldrig motell från noll — de köpte existerande verksamheter med bevisat kassaflöde",
+            "De återinvesterade aldrig överskotten",
+            "De använde aldrig släktens kapital",
+            "De sålde alltid motellen inom fem år"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på skillnaden mellan att köpa en affär och att bygga en."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "De nio Dhandho-principerna — kärnformeln samlad",
+      "intro": "I bokens mitt samlar Pabrai hela filosofin i nio principer — det han kallar Dhandho-ramverket. De är inte en meny där man väljer och vrakar utan en sekvens där varje steg förstärker det föregående: existerande bolag gör nedsidan läsbar, tråkiga branscher gör den stabila, krisen gör priset lågt, moats gör värdet hållbart, och marginalen gör att du kan ha fel utan att det gör ont. Det här kapitlet går igenom alla nio och visar hur de hänger ihop som ett enda beslutsflöde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Princip ett: köp ett existerande bolag, inte en startup. Ett bolag med historik har bevisat att produkten säljer, att marginalerna (V07, V08) är vad de är och att kapitaleffektiviteten (V09) går att läsa över en hel cykel. En startup har inget av detta — bara en tes och en brinnande kassa (V19). Princip två: köp enkla bolag i lättförståeliga, tråkiga branscher. Om vem som helst kan driva det på sikt är det ett föredöme — för då överlever verksamheten även medelgoda ägare. Princip tre: köp bolag i kris — helst distressed bolag i distressed branscher, där rubrikerna gör att priserna sjunker långt mer än värdena. Det är patel-motellens logik direkt översatt."
+        },
+        {
+          "type": "text",
+          "content": "Princip fyra: kräv en hållbar moat — ett varaktigt konkurrensskydd. Utan moat suger konkurrensen bort uppsidan som vinsterna kommer ifrån; med moat kan du faktiskt räkna på tioåriga kassaflöden. I AKM1:s språk lever moaten i varumärket (V14), patent och IP (V13), nätverkseffekter (V15) och i hur stabila och diversifierade intäkterna är (V12, V03). Princip fem: satsa tungt när oddsen är överväldigande i din favör — det är Kelly-formelns plats i ramverket, och den får ett eget kapitel. Princip sex: fokusera på arbitrage och special situations, där tidsaxeln är kort och utfallet dikterat av avtal snarare än av makro (i AKM1: avtal och partnerskap, V17)."
+        },
+        {
+          "type": "text",
+          "content": "Princip sju: köp till priser som ger en bred marginal — marginal of safety, som alltid i detta ekosystem står utan V-nummer eftersom den bestämmer hur alla V-mått ska användas. Princip åtta: sök lågrisk-högosäkerhetssituationer — bolag där den underliggande risken är låg men osäkerheten om timing och nästa kvartal är hög, för det är den kombinationen marknaden prissätter lägst. Princip nio, Pabrais mest personliga: det är bättre att vara en copycat än en innovatör — ärlig kopiering av de bästa är både billigare och farligare för eget ego än att uppfinna egna idéer. De tre sista principerna är kursens kapitel 8, 10-12 och 11."
+        },
+        {
+          "type": "text",
+          "content": "Ordningen mellan principerna är själva poängen. En kris utan moat är en värdefälla; en moat utan kris är en dyr kvalitetsaktie; och allt utan marginal är att spela utan golv. När du läser en investeringsidé med ramverket ska varje nej få dig att gå vidare utan ånger — Pabrai jämför det med att gå förbi dåliga hästar på ett kapplöpningsprogram: det kostar inget att låta bli. Ramverket är konstruerat för att du ska säga nej nästan alltid — och ja sällan, men tungt. Det är samma anda som Munger och Buffett: rikedomen ligger i återhållsamheten, inte i aktiviteten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De nio Dhandho-principerna — med AKM1-koppling\",\"rader\":[[\"#\",\"Princip\",\"AKM1-avläsning\"],[\"1\",\"Köp ett existerande bolag\",\"Historik i V07, V08, V09 — ingen V19-brasa\"],[\"2\",\"Enkelt bolag i tråkig bransch\",\"V12 intäktsstabilitet, påtaglig V03 diversifiering\"],[\"3\",\"Distressed bolag i distressed bransch\",\"V05 och V06 pressade mot tillgångsvärden, V11 kontrollerad\"],[\"4\",\"Hållbar moat\",\"V13 patent, V14 varumärke, V15 nätverkseffekter\"],[\"5\",\"Satsa tungt när oddsen är med dig\",\"Kelly-viktning av positionen\"],[\"6\",\"Fokusera på arbitrage och special situations\",\"V17 avtal och partnerskap som utfallsmekanism\"],[\"7\",\"Bred marginal i priset\",\"Marginal of safety — utan V-nummer\"],[\"8\",\"Låg risk, hög osäkerhet\",\"Marknadens osäkerhetsrabatt är din premie\"],[\"9\",\"Var en copycat, inte en innovatör\",\"Kloning av mästarköp — kapitel 11\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "De nio principerna är en sekvens, inte en meny: varje ja gör nästa fråga skarpare, och ett enda nej bör avsluta analysen. Ramverkets främsta produkt är alla affärer du aldrig gör."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå igenom din nuvarande portfölj princip för princip. Ge varje innehav ett betyg 1-9 (hur många principer uppfyller det i dagens pris?). Var ärlig: hur många faller på kris-priset eller marginalen? Skriv upp de två som klarar flest principer — de är dina framtida Kelly-kandidater."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är ordningen mellan principerna viktig, enligt Pabrais ramverk?",
+          "alternativ": [
+            "Eftersom varje steg förstärker det föregående — ett nej bör avsluta analysen, inte leda till kompromisser",
+            "Eftersom de måste följas i exakt tidsordning när man genomför ett köp hos banken",
+            "Eftersom de första principerna är lagstadgade och de senare frivilliga",
+            "Eftersom ordningen avgör hur mycket courtage man betalar"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på ramverket som ett filter, inte som en checklista att pricka av efter köpet."
+        },
+        {
+          "q": "Vad innebär princip åtta — låg risk, hög osäkerhet?",
+          "alternativ": [
+            "Att man söker bolag med hög beta och hög volatilitet för extra avkastning",
+            "Att man söker bolag där ingen vet hur nästa kvartal blir men där underliggande värde och överlevnad är välgrundade — marknaden rabatterar osäkerheten",
+            "Att man investerar i bolag vars framtid är helt okänd även för ledningen",
+            "Att man hedgear all osäkerhet med optioner innan man köper"
+          ],
+          "ratt": 1,
+          "tips": "Vem är osäker — bolaget eller marknaden? Och vad gör priset med den osäkerheten?"
+        },
+        {
+          "q": "Vilken av de nio principerna handlar om positionsstorlek?",
+          "alternativ": [
+            "Princip tre — distressed bolag i distressed branscher",
+            "Princip sju — bred marginal i priset",
+            "Princip fem — satsa tungt när oddsen är överväldigande i din favör",
+            "Princip nio — var en copycat"
+          ],
+          "ratt": 2,
+          "tips": "Vilken princip svarar på frågan hur mycket, inte vad?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Köp existerande bolag — varför startup är fel odds",
+      "intro": "Dhandho-ramverkets första princip låter oskyldigt ospektakulär: köp ett bolag som redan finns. Men den är ett direkt svep mot en hel investeringskultur — den som belönar det nya, spännande och berättelsestarka. Pabrai jämför det med att köpa begagnat istället för nytt: begagnade bolag, precis som begagnade motell, säljs med rabatt just för att ingen vill ha dem. Det här kapitlet visar varför startup-oddsen är strukturellt dåliga och hur kapitalförbränningen (V19) skiljer spelarna från ägarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett existerande bolag är en maskin med sin historia intakt. Du kan läsa fem års marginaler (V07, V08), se hur avkastningen på eget kapital (V09) betedde sig genom en recession, kontrollera hur intäkterna svajar (V12) och hur beroendet av enskilda kunder ser ut (V03). Allt detta är data om det enda du faktiskt behöver veta: hur mycket kontanter verksamheten producerar och hur troligt det är att den fortsätter. En startup erbjuder ingenting av detta. Där finns en tes, en brinnande kassa och en emissionskalender — och som Pabrai påpekar med referens till studier av nyföretagande: majoriteten av nystartade bolag når inte lönsamhet, och bland de som gör det är många år av utspädning senare. Oddset är helt enkelt byggt mot köparen."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s språk heter denna varning kapitalförbränning och emissionsrisk — V19. Det är variabeln som avgör vem som tjänar på bolagets tillväxt: ägarna eller dem som får emittera nytt kapital. Ett bolag med negativt kassaflöde måste förr eller senare hämta pengar — via nyemission, konvertibler eller nytt banklån — och varje sådan omgång flyttar värde från befintliga ägare till de nya. Tillväxt utan positiv kassa är därför inte en tillgång utan en option med okänd lösenpris. Därför är V19:s status den första frågan i en Dhandho-analys, före alla multiplar: bränner kassan, ja eller nej? Finns det ett datum då pengarna tar slut?"
+        },
+        {
+          "type": "text",
+          "content": "Det betyder inte att tillväxt är oviktigt — det betyder att tillväxt är en bonus man får betala först när överlevnaden är säkrad. Världens bästa bolag har ofta imponerande försäljningstillväxt (V01) och ARR-tillväxt (V02) — men det som gör dem till Dhandho-affärer är när den tillväxten kan köpas till ett pris som ges av en kris, ett missförstånd eller en föraktad bransch, med kassaflöde som redan betalar notan. Pabrai själv köpte aldrig startups; han köpte IT-bolag i kris, oljeriggar i kris, banker i kris. Tillväxten, när den kom, var gratis — han hade inte betalat för den i förskott."
+        },
+        {
+          "type": "text",
+          "content": "Den psykologiska skillnaden är minst lika viktig som den matematiska. Att äga det existerande och tråkiga kräver att du står ut med att vara omodern på middagsbordet — ingen vill höra om ett halvglömt industriföretag. Pabrai konstaterar att marknaden konsekvent betalar premium för spänning och rabatt för tristess, och att detta är en permanent strukturell fördel för den som kan tänka i tioårsperioder. Begagnat är inte bara billigare — det är också mindre osäkert, eftersom alla fel redan är synliga i historiken. Med ett nytt bolag vet du inte ens vilka fel du ska leta efter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Startup kontra existerande bolag — Dhandho-perspektivet\",\"rader\":[[\"Fråga\",\"Startup\",\"Existerande bolag\"],[\"Kassaflöde\",\"Negativt — kapitalförbränning, V19 larmar\",\"Positivt och dokumenterat över cykler\"],[\"Vem tjänar på tillväxten?\",\"Nya ägare vid varje emission\",\"Befintliga ägare — ibland förstärkt av återköp, V20\"],[\"Historik att läsa\",\"Ingen — alla fel är osynliga\",\"År av V07, V08, V09 och V12 att studera\"],[\"Prisättning\",\"Premium för berättelsen\",\"Rabatt för tristessen eller krisen\"],[\"Typiskt utfall\",\"De fleste når inte lönsamhet\",\"Nedsida läsbar mot tillgångsvärden (V05)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Köp maskinen som redan fungerar, inte ritningen på en maskin. V19 är frågan som avgör om du är ägare eller mjölkko: bränner kassan, är det alltid någon annan som slutligen får värdet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta i AKM1:s verktyg upp tre bolag med röd V19 (kapitalförbränning eller emissionsrisk) och tre med stabil positiv kassa. För varje rött: skriv vem som tjänar på nästa finansieringsrunda. För varje grönt: skriv vem som tjänar om inget händer på fem år — och vad återköpen (V20) i så fall gör med ditt ägande per aktie."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är V19 den första frågan i en Dhandho-analys, före alla multiplar?",
+          "alternativ": [
+            "Eftersom den avgör vem som tjänar på tillväxten — med negativ kassa flyttar varje emission värde från befintliga ägare till de nya",
+            "Eftersom kapitalförbränning är olagligt på de flesta börser",
+            "Eftersom V19 korrelerar perfekt med aktiens korttidsvolatilitet",
+            "Eftersom banker vägrar låna ut till bolag med V19-larm"
+          ],
+          "ratt": 0,
+          "tips": "Följ pengarna vid nästa finansieringsrunda — vems andel växer?"
+        },
+        {
+          "q": "Vad menar Pabrai med att existerande bolag är »begagnat«?",
+          "alternativ": [
+            "Att de alltid har dålig kvalitet och ska undvikas",
+            "Att de handlas med rabatt jämfört med det nya och spännande — och att alla deras fel redan syns i historiken",
+            "Att man ska köpa dem och sälja dem vidare snabbt som begagnade bilar",
+            "Att de saknar moat eftersom de är gamla"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden i pris och i informationsinnehåll mellan nytt och begagnat?"
+        },
+        {
+          "q": "Hur förhåller sig Dhandho till tillväxtvariablerna V01 och V02?",
+          "alternativ": [
+            "De är värdelösa och ska aldrig tittas på",
+            "De är enda giltiga köpkriterium",
+            "De är en bonus — först när överlevnad och marginal är säkrade, och helst när tillväxten kan köpas utan att betala för den i förskott",
+            "De gäller bara för tekniktillväxtbolag med ARR"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad du redan har betalat för — och vad du fick gratis."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Tråkigt är vackert — branschval och moats",
+      "intro": "Princip två och fyra hör ihop: det enkla bolaget i den tråkiga branschen är inte bara lätt att förstå — det är också lättare att köpa billigt, för ingen annan vill ha det. Men tråkighet i sig skyddar inget på tio års sikt; det gör moats. Det här kapitlet skiljer på branschens stabilitet (V12) och bolagets konkurrensskydd (V13-V15) och ger dig testerna för båda.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför tråkigt? Pabrai ger det praktiska skälet: tråkiga branscher attraherar varken kapital eller talanger. Ingen venture capitalist finansierar en ny motellkedja, ingen högt betald ingenjör drömmer om skruvfabriker. Det betyder att konkurrensen om framtiden inte förvärras — priset på att vara med i branschen förblir lågt. Stabila intäkter (V12) gör dessutom kassaflödet förutsägbart: människor sover på motell, borstar tänder och kör bil i alla konjunkturer. I AKM1:s termer är tråkighet en fråga om intäktsstabilitet över cykeln — och om hur diversifierat underlaget är (V03): tusen små kunder slår tio stora, eftersom ingen enskild kan döda intäktsströmmen."
+        },
+        {
+          "type": "text",
+          "content": "Moat — Buffetts term, via Pabrai — är det varaktiga skydd som gör att framgång inte sugas bort av konkurrens. Pabrai testar moats enkelt: kan en konkurrent med pengar men utan tålamod kopiera verksamheten på fem år? Om svaret är ja finns ingen moat, bara en tillfällig fördel. I AKM1 översätts skydden till variabler: varumärket (V14) — kunderna betalar med och kommer tillbaka utan att du betalar för varje köp; patent och IP (V13) — lagligt skydd som ger prissättningsmakt under en känd period; nätverkseffekter (V15) — varje ny kund gör tjänsten mer värdefull för de befintliga, som gör att nummer två aldrig ikapp. Ofta kombineras de: ett varumärke med nätverkseffekter är bland de starkaste fästen som finns."
+        },
+        {
+          "type": "text",
+          "content": "En moat utan förståelse är dock inget värde — den måste vara förklarbar på en mening, annars existerar den inte för dig. Det är den Munger-inspirerade kompetenscirkeln i praktisk tappning: Pabrai lägger inte tid på att bedöma om en halvledarfabrik ligger i teknikfronten, men han kan bedöma om ett bolag som hyr ut utrustning har ett ersättningsgolv under kursen. Kunskapscirkeln är inte en fast storlek — den växer när du läser årsredovisningar i en bransch under åratal — men den ska alltid vara ärlig. Frågan är aldrig »är detta ett bra bolag?« utan »förstår jag detta bolag bättre än den som säljer aktien till mig?«"
+        },
+        {
+          "type": "text",
+          "content": "Kombinationen tråkigt plus moat är också vad som gör krisinvesteringen möjlig att skilja från värdefällan. En bransch i kris med strukturell överkapacitet och utan skydd är en sjunkande hiss — billigt blir billigare. Men ett moat-bolag i en tråkig bransch som tillfälligt missförstås har ett väldefinierat värde att återvända till när rubrikerna bleknar. Moaten är alltså inte bara uppsidans garanti — den är det som gör att din nedsidakalkyl håller: ett varumärke (V14) eller patentportfölj (V13) bevarar värde även under omorganisering. Tråkigheten är golvet, moaten är väggen, krisen är dörren in."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Moat-tester — frågan, variabeln, beviset\",\"rader\":[[\"Moat\",\"AKM1-variabel\",\"Test på en mening\"],[\"Varumärke\",\"V14\",\"Betalar kunderna mer och kommer tillbaka utan att du betalar för varje köp?\"],[\"Patent och IP\",\"V13\",\"Ger portföljen prissättningsmakt under känd period — och vad händer när den löper ut?\"],[\"Nätverkseffekter\",\"V15\",\"Gör varje ny kund tjänsten mer värdefull för de befintliga — kan nummer två ikapp?\"],[\"Stabila intäkter\",\"V12\",\"Finns efterfrågan kvar i nästa recession — och hur mycket svajar intäkterna historiskt?\"],[\"Diversifierat underlag\",\"V03\",\"Är intäkterna utspridda på många kunder — kan en enskild säga upp allt?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En moat du inte kan förklara på en mening existerar inte för dig. Tråkigheten skyddar priset, moaten skyddar värdet — du behöver båda för att kris-köpet ska vara Dhandho och inte värdefälla."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ditt tråkigaste innehav. Skriv moaten i exakt en mening och peka ut vilken AKM1-variabel som bevisar den (V13, V14, V15 eller V12). Om meningen inte går att skriva — eller beviset inte går att hitta i siffrorna — är positionen en åsikt, inte en analys."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är det praktiska skälet till att söka tråkiga branscher?",
+          "alternativ": [
+            "Tråkiga branscher har alltid högst utdelning",
+            "De attraherar varken kapital eller konkurrenter — priset på att vara med förblir lågt och intäkterna är ofta stabila (V12)",
+            "Tråkiga branscher är mindre reglerade än spännande",
+            "De har högre beta och därmed högre förväntad avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vem som inte kommer att konkurrera med dig om fem år — och varför."
+        },
+        {
+          "q": "Hur testar Pabrai om en moat är äkta?",
+          "alternativ": [
+            "Genom att räkna antalet anställda med doktorsexamen",
+            "Genom att mäta aktiekursens volatilitet under fem år",
+            "Genom att fråga: kan en konkurrent med gott om kapital men utan tålamod kopiera verksamheten på fem år?",
+            "Genom att kolla om bolaget har flest patent i branschen oavsett kvalitet"
+          ],
+          "ratt": 2,
+          "tips": "Föreställ dig den mest kapitalstarka konkurrenten som kan tänkas vilja ta din marknad."
+        },
+        {
+          "q": "Vad är relationen mellan moat och nedsidakalkylen?",
+          "alternativ": [
+            "Ingen — moat gäller bara uppsidan",
+            "Moats gör att man kan hoppa över nedsidakalkylen",
+            "Moats ökar risken eftersom de är dyra att underhålla",
+            "Moaten bevarar värde även i kris — varumärke (V14) och IP (V13) gör att golvvärdet i nedsidaberäkningen håller"
+          ],
+          "ratt": 3,
+          "tips": "Vad återstår av värdet om rubrikerna blir svarta — och vad skyddar det som återstår?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Krisen som inköpsdatum — köp föraktat, inte beundrat",
+      "intro": "Princip tre är den mest kontraintuitiva: köp bolag i kris — gärna i branscher i kris, där rubrikerna är värst och ägarna mest desperata. Det är inte mod utan aritmetik: pris bestäms av tvång och känsla, värde bestäms av tillgångar och kassaflöde, och krisen är när de två glider isär som mest. Men inte all kris är köpläge — det här kapitlet ger dig filtren som skiljer tillfällig nöd från permanent förfall.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen bakom krispriser är beteendemässig, inte rationell. När ett bolag misslyckas eller en bransch får dåliga rubriker säljer ägare av skäl som inte har med värde att göra: fonderna måste sanera redovisningen inför kvartalspresentationen, marginalhandlarna tvingas täcka, indexprodukterna mekaniskt följer kapitalflödena ut. Pabrai — via Buffett — formulerar det som att marknaden är en maniodepressiv affärspartners som varje dag erbjuder dig priser: ibland euforiska, ibland desperata. Dhandho-investeraren har inget emot partnerns humör — han är beroende av den. Utan depressionerna finns ingen rabatt att köpa."
+        },
+        {
+          "type": "text",
+          "content": "Men krisen i sig är inte signalen att köpa — den är signalen att börja räkna. Först frågan om överlevnad: har bolaget likviditet (V11) att klara sig till marknaden vänder, och är skulderna (V10) sådana att borgenärerna inte tar över bolaget innan det hinner läka? Sedan frågan om branschens grundläggande efterfrågan: är det beteendet som krisat — konsumenter, teknologier, regulatorer (V18) — eller bara sentimentet? Motellen i kris var fortfarande fulla av resenärer; det var bankernas och ägarnas balansräkningar som krisat. Skillnaden mellan de två fallen är skillnaden mellan en återhämtning och en begravning."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1 läser du krisen i fyra variabler. V05 pris mot bokfört värde: handlar bolaget under vad tillgångarna är värda i en tvångslikvidation — eller åtminstone under ersättningsvärdet? V06 EV/EBITDA räknat på botten-EBITDA: även med depressionsnivåer på marginalerna, vad betalar du för verksamheten som helhet, skulder medräknade? V11 likviditet: hur många månaders rinnande kostnader står i kassan och kreditfaciliteterna? V10 skuldsättningsgrad: kan bolaget bära sin börda genom ett par magra år? Dessa fyra tillsammans definierar golvet. Golvet, inte storyn om återhämtning, är vad som gör affären till Dhandho."
+        },
+        {
+          "type": "text",
+          "content": "OBS: katalysatorer — produktlanseringar (V16), avtal (V17), regulatoriska förändringar (V18) — är i denna tradition bonus, aldrig krav. Pabrai och Klarman före honom menar att marginalen själv är katalysatorn: om du köpt betydligt under värde kommer värdet tillbaka till dig på en mängd sätt — återköp (V20), uppköp, konkursfordran, eller bara att tiden läker sentimentet. Den som kräver en katalysator med datum har rätt i teorin men betalar för det i priset. Den som köper golvet får katalysatorerna gratis, om än utan schema. Osäkerheten om när är precis den osäkerhet marknaden straffar — och du får betalt för att bära."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kris eller förfall — filtren i tur och ordning\",\"rader\":[[\"Fråga\",\"AKM1-variabel\",\"Tillfällig nöd om...\"],[\"Överlever bolaget?\",\"V11, V10\",\"Kassan och faciliteterna räcker 18+ månader; skulderna kan bäras även vid bottenmarginaler\"],[\"Finns efterfrågan kvar?\",\"V12\",\"Intäkterna dippar men försvinner inte — beteendet är intakt\"],[\"Vad är golvet?\",\"V05, V06\",\"Kurs och EV nära bokfört/ersättningsvärde eller botten-EBITDA-multipel\"],[\"Är kapitalbehovet slut?\",\"V19\",\"Inga tvångsemissioner på vägen — annars flyttas värdet till nya ägare\"],[\"Katalysator?\",\"V16-V18, V20\",\"Bonus — inte köpskäl\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Krisen är inte köpsignalen — den är startignalen för räkneverket. Du köper först när golvet är räknat i tillgångar, likviditet och bottenmultipel, aldrig för att fallen känns klar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en sektor som just nu har Sveriges värsta rubriker. Välj det bolag där V11 räcker längst och V10 är lägst. Räkna fram golvet: vad är V05 och EV/EBITDA (V06) på botten-EBITDA? Skriv ner golvet som en kronsumma — det är din patel-rabatt att jämföra marknadsvärdet mot."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kan kriser ge priser långt under värde?",
+          "alternativ": [
+            "Eftersom värde automatiskt minskar med 50 procent i kriser",
+            "Eftersom börsen stänger vid kriser och priserna fryses",
+            "Eftersom fundamenta aldrig förändras — bara kurserna",
+            "Eftersom tvångsförsäljningar, redovisningskrav och mekaniskt indexflöde säljer av skäl som saknar koppling till värde"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vem som säljer och varför — är det en värdebedömning eller ett tvång?"
+        },
+        {
+          "q": "Vilka AKM1-variabler definierar tillsammans golvet i en krisanalys?",
+          "alternativ": [
+            "V01 och V02 — tillväxten avgör om bolaget överlever",
+            "V16, V17 och V18 — katalysatorerna visar värdet",
+            "V05 och V06 mot tillgångsvärden och botten-EBITDA, kontrollerat mot V11 likviditet och V10 skuldsättningsgrad",
+            "V20 och V03 — återköp och diversifiering räcker alltid"
+          ],
+          "ratt": 2,
+          "tips": "Golvet handlar om vad du minimum får och om bolaget lever tills dess."
+        },
+        {
+          "q": "Hur förhåller sig katalysatorer (V16-V18) till Dhandho-köpet?",
+          "alternativ": [
+            "De är ett krav — utan datum är köpet ren spekulativ",
+            "De är ovidkommande eftersom kursen aldrig återhämtar sig utan katalysator",
+            "De gäller bara för bolag med V15 nätverkseffekter",
+            "De är bonus — marginal of safety är själv katalysatorn, och den som kräver katalysator med datum betalar för det i priset"
+          ],
+          "ratt": 3,
+          "tips": "Vad kostar det i pris att få veta när — istället för att bara veta att?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Motellkalkylen med siffror — nedsidan först",
+      "intro": "Nu gör vi patel-modellen till aritmetik. Ett motell som kostar fem miljoner dollar att bygga nytt köps i kris för en och en halv — och familjen sätter in tre hundratusen. Resten är mekanik: beläggning, marginaler utan lönekostnad, och ett lån som aldrig får sticka över tillgångens golv. Det här kapitlet går igenom hela kalkylen rad för rad, för den är mallen för varje Dhandho-analys du någonsin kommer göra — bara med ett börsbolag i stället för ett motell.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Scenariot: ett motell i en stad i Mellanvästern skulle kosta cirka 5,0 miljoner dollar att bygga nytt — mark, byggnad, inredning, tillstånd. Ägaren har gått i konkurs och banken vill ut. Familjen köper anläggningen för 1,5 miljoner — trettio cent per dollar av nybyggnadskostnaden. Insatsen är 300 000 dollar; resten, 1,2 miljoner, är banklån säkrat i fastigheten. Notera redan här kärnan i Dhandho: före första gästen har checkat in har familjen vunnit hälften av spelet — de äger tillgångar värda mångdubbelt priset, och deras maximala exponering är trehundratusen, sex procent av vad anläggningen är värd att bygga."
+        },
+        {
+          "type": "text",
+          "content": "Driften: sextio rum till ett genomsnittspris av femtio dollar per rum och natt, med sextiofem procents beläggning över året, ger intäkter på ungefär 710 000 dollar. Eftersom familjen sköter disk, städ, tvätt och underhåll själv är den operativa kostnaden — städmaterial, frukost, el, vatten, försäkring, reserv för renovering — omkring 250 000 dollar. Ränta och amortering på lånet kostar cirka 150 000 dollar. Kvar till familjen: omkring 310 000 dollar per år i fritt kassaflöde — alltså grovt räknat en hundraprocentig avkastning på den egna insatsen, år efter år. Det här är ingen fantasisiffra; det är vad som händer när inköpspriset är trettio cent på dollarn och lönekostnaden är noll. Marginalstrukturen (V07, V08) och kapitaleffektiviteten (V09) blir extremerna av två enkla val: pris vid köpet och eget arbete."
+        },
+        {
+          "type": "text",
+          "content": "Nedsidan — som alltid den första kalkylen, inte den sista. Om det hela misslyckas: mark och byggnad har ett beständigt värde, låt oss anta 1,2 miljoner i ett tvångsförsäljningsscenario. Det täcker exakt bankens fordran — banken är den som är skyddad, det är så lånet är dimensionerat (V10 som verktyg, inte hasard). Familjens absoluta maxförlust är insatsen: 300 000 dollar, sex procent av nybyggnadskostnaden, och inte ett öre mer — det finns ingen enskild mekanism i affären som kan förlora dem mer. Uppsiden däremot är öppen: kassaflödet år efter år, återinvestering i nästa motell, och om standarden höjs eller läget gentrifieras ett försäljningspris närmare nybyggnadskostnad. Det är bokstavligen heads I win, tails I don't lose much — i siffror."
+        },
+        {
+          "type": "text",
+          "content": "Översätt nu mallen till börsen. Ersätt motellet med ett börsnoterat bolag i kris: nybyggnadskostnaden blir ersättningsvärdet — vad det skulle kosta att bygga upp verksamheten från noll; krispriset blir börsvärdet eller enterprise value; beläggningen blir intäktsstabiliteten (V12); familjens arbete blir marginalerna (V07, V08); och lånet blir skuldsättningen (V10) som du som minoritetsägare inte kan välja — men kan kräva är dimensionerad under golvet (V11). Frågan till varje kandidat är always samma: vad är mitt 300 000 — alltså min faktiska maxförlust — räknat i marknadsvärde? Om svaret är en liten bråkdel av ersättningsvärdet, och överlevnad är säkrad, då sitter du i ett motell."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Motellkalkylen — rad för rad\",\"rader\":[[\"Post\",\"Belopp\",\"Dhandho-kommentar\"],[\"Nybyggnadskostnad\",\"$5 000 000\",\"Ersättningsvärdet — vad anläggningen kostar att skapa\"],[\"Krispris (bankkonkurs)\",\"$1 500 000\",\"30 cent på dollarn\"],[\"Egen insats (20%)\",\"$300 000\",\"Familjens maximala exponering — 6% av nybyggnadskostnaden\"],[\"Lån\",\"$1 200 000\",\"V10 dimensionerat under golvvärdet — banken bär risken, inte familjen\"],[\"Intäkter (60 rum, $50/natt, 65% beläggning)\",\"≈$710 000/år\",\"V12: sömnbehovet svajar inte med sentimentet\"],[\"Drift (familjen arbetar själv)\",\"≈$250 000/år\",\"V07/V08: lönekostnaden nästan noll\"],[\"Ränta + amortering\",\"≈$150 000/år\",\"Notan till banken\"],[\"Fritt kassaflöde\",\"≈$310 000/år\",\"≈100% återbetalning av insatsen per år\"],[\"Värsta fallet\",\"−$300 000\",\"Mark+byggnad ≈$1,2M täcker lånet — maxförlusten är insatsen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hela hemligheten sitter i köpet, inte i driftsåren: priset till 30 cent på dollarn och lånet under golvet gör att klave kostar sex procent av värdet medan krona betalar tillbaka insatsen varje år. När du räknat nedsidan först behöver du inte ha rätt om framtiden — bara om aritmetiken."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram listan från kapitel 1 och välj ett kris-drabbat bolag. Gör motellkalkylen: uppskatta ersättningsvärdet (nybyggnadskostnaden), räkna EV som krispris, identifiera ditt golv och din maxförlust i kronor. Skriv en rad: »Mitt värsta rimliga utfall är X procent av ersättningsvärdet.« Om X är litet har du en kandidat; om inte, nästa namn."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "I kalkylen — vad är familjens maximala förlust?",
+          "alternativ": [
+            "1,5 miljoner dollar — hela köpesumman",
+            "5 miljoner dollar — nybyggnadskostnaden",
+            "300 000 dollar — den egna insatsen, eftersom mark och byggnad i värsta fall täcker bankens fordran",
+            "Obegränsad — banken kan kräva familjens övriga tillgångar"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad som händer med lånet i det värsta fallet — och vem som står för resten."
+        },
+        {
+          "q": "Varför blir avkastningen på den egna insatsen så extrem — omkring hundra procent per år?",
+          "alternativ": [
+            "Eftersom motellen tar betydligt högre rumspriser än konkurrenterna",
+            "Eftersom inköpspriset är 30 cent per dollar och lönekostnaden är nära noll när familjen arbetar själva",
+            "Eftersom banken inte tar någon ränta under de första tio åren",
+            "Eftersom beläggningen är hundra procent året om"
+          ],
+          "ratt": 1,
+          "tips": "Två val styr utfallet: priset vid köpet och kostnadsstrukturen. Vilka är de?"
+        },
+        {
+          "q": "Hur översätts nybyggnadskostnaden när mallen används på ett börsbolag?",
+          "alternativ": [
+            "Till ersättningsvärdet — vad det skulle kosta att bygga upp verksamheten från noll — att jämföra med EV och börsvärde",
+            "Till dess årsomsättning (V01)",
+            "Till bolagets marknadsbearbetningsbudget",
+            "Till utdelningen nästa år"
+          ],
+          "ratt": 0,
+          "tips": "Vad skulle en konkurrent med pengar men utan tålamod behöva betala för att skapa samma sak?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Kelly-formeln — satsa stort när oddsen är med dig",
+      "intro": "När du väl hittat ett motell är frågan hur mycket av ditt kapital du ska satsa — och där har Pabrai lånat ett arv från kasinon och spelteori: Kelly-formeln, utvecklad vid Bell Labs 1956 och gjort berömd av Ed Thorp i Las Vegas och på börsen. Pabrai använder den inte som miniräknare utan som sinnelag — men den som inte förstår formeln förstår inte heller varför koncentration är logik och inte macho.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Historien är värd att känna till, för den förklarar formelns karaktär. John Kelly jr vid Bell Labs studerade 1956 hur mycket av en bankrulle en spelare borde satsa när han har en informationsfördel — en brusig telefonlinje i originalproblemet. Ed Thorp, matematikern som knäckte blackjack med korträkning, tog formeln till kasinot och skrev sedan Beat the Dealer och Beat the Market, innan han drev en av historiens mest framgångsrika hedgefonder. Berättelsen om Kelly, Thorp, Shannon och mötet med gangsters berättas i William Poundstones Fortune's Formula — en av de böcker Pabrai rekommenderar och den plats där Kelly-ärft och värdeinvestering möts. Thorps budskap i en mening: med en äkta kant är frågan inte om du vinner på lång sikt, utan hur stort du spelar — och det är exakt detta formeln svarar på."
+        },
+        {
+          "type": "text",
+          "content": "Formeln i sin enklaste, binära form: f* = p − q/b, där p är sannolikheten för vinst, q = 1 − p är sannolikheten för förlust, och b är nettooddsen — vad du vinner per insatsen dollar. Exempel: ett mynt som ger krona sextio procent av gångerna och betalar jämnt ger f* = 0,60 − 0,40/1 = 0,20 — satsa tjugo procent av bankrullen. Sjuttio procents krona med trefaldig utdelning: f* = 0,70 − 0,30/3 = 0,60. En åttio procents krona med jämn utdelning: f* = 0,80 − 0,20/1 = 0,60. Två saker slår en genast: för det första växer optimal insats linjärt med din kant — ju säkrare och ju generösare utfall, desto mer ska du satsa. För det andra är noll svar när du inte har en kant — formeln ger dig aldrig en anledning att spela ett dåligt spel, vilket är precis poängen med Dhandho som helhet."
+        },
+        {
+          "type": "text",
+          "content": "Men — och detta är kursens viktigaste risklektion — Kelly straffar högmod. Om du satsar mer än f* minskar din förväntade tillväxttakt, och om du satsar mer än ungefär dubbla f* blir den negativ: du är garanterad ruin på lång sikt även med ett positivt spel. Det klassiska felet är att överskatta p — din kant är aldrig så säker som den känns, särskilt inte på börsen där utfallet inte är ett mynt utan en fördelning. Därför arbetar de flesta praktiker, inklusive Pabrai, med bråkdelar av Kelly — halv-Kelly är standard — och betraktar formeln som ett tak, inte ett mål. I Pabrai Funds betyder tankesättet att de bästa idéerna får dominera portföljen: få positioner, där de tyngsta vilar på de bredaste marginalerna och de bästa uppskattningarna av p."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till AKM1 är rak: efter att nedsida, värde och marginal är räknade återstår positionsstorleken, och det är en matematisk fråga — inte en känsla. Uppskatta p (sannolikheten att värdet realiseras inom din horisont), uppsatta b (uppsidan mot din maxförlust från nedsidakalkylen), räkna f* — och klipp sedan ner det, eftersom din p alltid är osäkrare än du tror. Detta ger också ett sunt språk för att jämföra idéer: en affär med sjuttio procens träffsäkerhet och trefaldig uppsida är matematiskt sett mer värd än tio små »kanske« — och förtjänar därför mer plats i portföljen. Som Pabrai sammanfattar det: satsa tungt när oddsen är överväldigande i din favör — och låt bli att spela annars."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kelly-exempel — f* = p − q/b\",\"rader\":[[\"Sannolikhet vinst (p)\",\"Nettoodds (b)\",\"Kelly f*\",\"Halv-Kelly\"],[\"60%\",\"1,0\",\"20%\",\"10%\"],[\"70%\",\"3,0\",\"60%\",\"30%\"],[\"80%\",\"1,0\",\"60%\",\"30%\"],[\"55%\",\"10,0\",\"50,5%\",\"25%\"],[\"50%\",\"godtycklig\",\"0%\",\"0% — spela inte\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kelly lär två saker i ett: din insats ska skalas med din kant — och aldrig bli så stor att en dålig svit tar dig ur spelet. Översatsning dödar även positiv spel; halv-Kelly är ärlighet om att din p är en uppskattning, inte en sanning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj din största nuvarande position. Skriv ned explicit: din uppskattade p (sannolikhet att värdet realiseras), din uppskattade b (uppsida genom maxförlust). Räkna f* och halv-Kelly. Jämför med positionens faktiska vikt i portföljen. Om faktisk vikt vida överstiger halv-Kelly — vad säger det om din analys, respektive om ditt mod?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad uttrycker Kelly-formeln f* = p − q/b?",
+          "alternativ": [
+            "Den förväntade avkastningen på en aktie över tio år",
+            "Sannolikheten för att en aktie återhämtar sig efter en kris",
+            "Det maximala antalet positioner en koncentrerad portfölj bör innehålla",
+            "Andelen av bankrullen som maximerar den långsiktiga tillväxttakten när du har en kant — med p som vinstsannolikhet, q som förlustsannolikhet och b som nettoodds"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad formeln svarar på: inte vad, inte när — utan hur mycket."
+        },
+        {
+          "q": "Vad händer om du satsar mer än Kelly-fraktionen?",
+          "alternativ": [
+            "Ingenting — större insats ger alltid större förväntad tillväxt så länge spelet är positivt",
+            "Tillväxttakten sjunker, och vid ungefär dubbla Kelly blir den negativ — ruin är säker på lång sikt även med en äkta kant",
+            "Formeln justerar automatiskt p nedåt så att insatsen blir rätt",
+            "Endast volatiliteten ökar, inte risken för ruin"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden mellan att ha rätt och att överleva att ha rätt."
+        },
+        {
+          "q": "Hur använder praktiker som Pabrai och Thorp formeln i praktiken?",
+          "alternativ": [
+            "Som en exakt måttstock som följs till punkt och pricka vid varje köp",
+            "Som förbud mot att någonsin ha en position över tio procent",
+            "Som sinnelag med bråkdelar — halv-Kelly är standard, eftersom p alltid är osäkrare än den känns",
+            "Som ett sätt att beräkna stop-loss-nivåer för varje position"
+          ],
+          "ratt": 2,
+          "tips": "Vad är den farligaste inmatningen i formeln — och hur hanterar en försiktig människa den faran?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Koncentration kontra diworsification — portföljens form",
+      "intro": "Om Kelly säger hur stor en enskild satsning bör vara, säger koncentrationstänkandet hur portföljen som helhet ska se ut: några få positioner, tyngda där marginalen är bredast. Pabrai är öppet och stolt koncentrerad — och han använder ett ord som fastnade från en av sina stora förebilder inom branschen: diworsification, fördävning genom spridning. Det här kapitlet tar strid med den moderna portföljteorin på hemmaplan och visar när bredd är visdom och när det är bekännelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Argumentet börjar i kunskapens ekonomi. Varje genuin investeringsidé kostar veckor av arbete: att läsa årsredovisningar, räkna ersättningsvärden, förstå moaten (V13-V15), ringa konkurrenter och leverantörer. Om du gjort det arbetet på allvar har du en kant — och Kelly-logiken från förra kapitlet säger att en kant förtjänar vikt. En portfölj med fyrtio positioner där de tio största utgör en femtedel av kapitalet är därför ett självmotsägande: den kostar forskningsarbete som fjorton heldjupsanalyser, men väger som index. Munger har formulerat det hårdast: bred diversifiering är bekännelse av att man inte vet vad man gör — det är inget fel att inte veta, men då är indexfonden den ärligare produktens form."
+        },
+        {
+          "type": "text",
+          "content": "Diworsification — termen myntades av Peter Lynch och omfamnas av Pabrai — fångar det aktiva felet: att tvinga in kapital i mediokra idéer bara för att inte vara för exponerad mot sina bästa. Felet har två ansikten. Det kvantitativa: dina sjunde till tionde idéer har smalare marginaler, sämre nedsidor och vagare moats — de förtjänar inte kapital, de får det av artighet. Det psykologiska: en utspridd portfölj inbjuder till halvhjärtad uppföljning — ingen position är viktig nog att förstå på djupet, och ingen misskötsel märks förrän den är dyr. Pabrai Funds historiska form är därför ett fåtal namn, ofta under tio positioner, där de största få ta utrymme som en Kelly-logik motiverar — koncentrationen är inte macho, det är konsekvensen av att ta sina egna analyser på allvar."
+        },
+        {
+          "type": "text",
+          "content": "Invändningen är självklar och ärlig: koncentration ökar volatiliteten, och om du har fel i en stor position förlorar du mycket. Dhandho-svaret är nyanserat. Koncentration är inte risken — fel köppris är risken, och koncentration utan marginal är hasard. En portfölj av fem motellkalkyler — var och en med maxförlust på en bråkdel av värdet och överlevnad säkrad av V10/V11-kontroller — är sakligt sett mindre riskabel än en portfölj av fyrtio fullprisade berättelser om framtiden. Risken i AKM1:s mening är permanent kapitalförlust, inte svängningar på vägen. Men ödmjukheten hör hemma här också: koncentration förutsätter att du faktiskt har gjort arbetet. Har du inte tiden, skärpan eller temperamentet — är index eller en enklare strategi den rättare vägen."
+        },
+        {
+          "type": "text",
+          "content": "Praktiskt för AKM1-eleven: lägg kursen på ditt eget portföljarbete i tre steg. Ett: räkna hur många positioner du har och vad de fem största väger. Två: för varje position, testa om du kan skriva tesen på tio rader utan att titta på noteringen — nedsida, värde, moat, varför marknaden har fel. Tre: sortera positionerna efter marginalens bredd — inte efter känsla eller historisk vinst — och låt kapitalet följa marginalen. Målet är inte ett fixt antal positioner utan sammanfall mellan tyngd och kunskap: det du vet bäst och har räknat hårdast ska få störst plats, och det du inte kan förklara ska få noll."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bredd eller djup — två portföljfilosofier\",\"rader\":[[\"Fråga\",\"Bred diversifiering\",\"Dhandho-koncentration\"],[\"Antal positioner\",\"30-100\",\"Ofta under 10; de fem största dominerar\"],[\"Kunskapskrav per namn\",\"Ytlig — följer index eller screencriteria\",\"Fördjupad — ersättningsvärde, moat, nedsida räknad\"],[\"Vad den skyddar mot\",\"Det enskilda misstaget\",\"Det långsamma misstaget: att aldrig ha en kant alls\"],[\"När den är rätt\",\"När tiden eller kunskapen saknas — index är ärligt\",\"När marginalen är bred, Kelly-logiken motiverar vikt och arbetet är gjort\"],[\"Typiskt fel\",\"Diworsification — kapital till de sämsta idéerna\",\"Övermod — vikt utan marginal eller kunskap\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Koncentration är ett utlåtande om din egen kunskap, inte om marknaden: bredd är ärligt när du inte vet, djup är logiskt när du räknat. Vikten ska följa marginalen — aldrig bekvämligheten."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv tesen för varje innehav på tio rader — utan att titta på kursen: nedsida i kronor, ersättningsvärde, moat i en mening, varför priset är lågt. Om en position inte går att skriva är den diversifiering i förklädnad — planera för minskning eller fördjupning."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad fångar termen »diworsification«?",
+          "alternativ": [
+            "Att diversifiera över för många tillgångsslag som aktier, obligationer och råvaror",
+            "Att sprida kapital till mediokra idéer bara för att minska exponeringen mot de bästa — bredd som aktivt försämrar portföljen",
+            "Att använda indexfonder som kärna i portföljen",
+            "Att hedgea valutarisken i utländska innehav"
+          ],
+          "ratt": 1,
+          "tips": "Ordet är en ordlek: vad blir resultatet av diversifiering när idé nummer sju till tio får kapital?"
+        },
+        {
+          "q": "Vad är Dhandho-svaret på invändningen att koncentration är farligt?",
+          "alternativ": [
+            "Att risken är fel köppris, inte antal positioner — koncentration med bred marginal och kontrollerad V10/V11 är sakligt mindre riskabelt än bredd utan marginal",
+            "Att risk definieras som volatilitet och därmed kan hedgeas bort",
+            "Att koncentration aldrig kan vara farligt om bolagen är stora",
+            "Att man alltid ska köpa fler positioner precis efter en kraftig nedgång"
+          ],
+          "ratt": 0,
+          "tips": "Jämför fem motellkalkyler med fyrtio fullprisanalyser — vad kan permanent förstöra kapitalet i respektive fall?"
+        },
+        {
+          "q": "När är bred diversifiering det ärligare valet, enligt kursen?",
+          "alternativ": [
+            "När tiden, skärpan eller temperamentet för fördjupad analys saknas — då är index att föredra framför halvhjärtad koncentration",
+            "Aldrig — bredd är alltid ett tecken på svaghet",
+            "Bara när marknaden är i bubbla",
+            "När man har mer än tjugo års erfarenhet av aktieanalys"
+          ],
+          "ratt": 0,
+          "tips": "Mungers hårdaste dom gäller pretentionen — inte okunskapen i sig."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Pioneer Drilling — oljeriggar till en bråkdel av värdet",
+      "intro": "Från teori till Pabrais egen historiebok: efter borrboomens kollaps i början av 2000-talet handlade borrentreprenörbolag — däribland Pioneer Drilling, som Pabrai Funds köpte — till priser där hela bolaget kostade i nivå med vad själva riggarna var värda begagnade. Det är motellkalkylen i större skala: golvet i stål och järn, uppsidan i en cykel ingen kan tajma. Det här kapitlet visar hur man räknar på ett cykelbolag utan att spå.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Situationen: när naturgaspriset och borraktiviteten kollapsade lämnade borrentreprenörerna med tomma orderböcker och börskurser i fritt fall. Riggar — de stora landriggarna som borrar efter gas — är kapitalvaror med lång livslängd och ett funktionellt begagnatvärde: även i en djup depression är en fungerande rigg värd miljoner, och i värsta fall finns skrot- och återförsäljningsvärdet. Pabrai Funds resonemang kring köp av Pioneer Drilling var klassiskt Dhandho: om hela bolagets värde — aktier plus skulder — låg nära eller under det uppskattade värdet på riggflottan, då ägde köparen tillgångarna nästan gratis och fick borrverksamheten på köpet. All osäkerhet — när dayrates vänder, hur djup botten blir — är inprissatt till ett pris där den inte längre kan skada."
+        },
+        {
+          "type": "text",
+          "content": "Analytiskt mäter du detta i AKM1:s variabler. V06 EV/EBITDA är rätt multipel eftersom företagsvärdet räknar med skulderna — och på ett cykelbolag ska EBITDA i nämnaren vara botten-EBITDA, inte topp-EBITDA: vad är verksamheten värd även om marginalerna ligger kvar på botten i två år till? V05 pris mot bokfört fångar vad balansräkningen säger om riggarnas restvärde — men justera för att bokfört värde på riggar kan vara både överskattat (gammal teknik) och underskattat (inflation i stål och nybyggnadskostnad). V10 och V11 är överlevnadskontrollen: en riggflotta finansierad med kortfristig skuld i en bransch utan kassaflöde är inte ett golv utan en tidinställd bomb — golvet gäller bara om bolaget lever tills marknaden vänder. Det var därför Pabrai-fonden valde bolag där överlevnaden inte var fråga."
+        },
+        {
+          "type": "text",
+          "content": "Notera åter det känslomässiga landskapet, för det är här kurserna skiljs åt. Att köpa borrningsbolag när rubrikerna berättar att branschen är död känns som ett misstag varje dag i kvällspressen. Kursen gör inget för att belöna modet — den faller vidare, ibland länge. Pabrais poäng är att detta är mekaniken, inte buggen: låg risk (golvet i tillgångar) plus hög osäkerhet (timing av vändningen) är exakt den kombination som marknaden prissätter sämst. Den som kräver att veta när cykeln vänder har inget att hämta; den som räknat att redan på botten-dayrates betalar lånet och att riggarna är värda inköpspriset, kan vänta ut spelet. Cykelbolag är motell i större skala — äg golvet, låt timing vara andras problem."
+        },
+        {
+          "type": "text",
+          "content": "Är du redo att generalisera? Metoden för alla cykelbolag — shipping, skog, bygg, stål, halvledarutrustning — är samma tre steg. Ett: uppskatta golvet, i begagnat- eller ersättningsvärde på de fysiska tillgångarna, kontrollerat mot V10/V11 så att bolaget lever där. Två: räkna EV mot golvvärdet (V05/V06) och kräv att även ditt värsta rimliga scenario lämnar dig plus eller i stort sett neutral. Tre: acceptera att uppsidan — dayrates, fraktsatser, virkespriser — är en gratis option du inte betalat för, och att den realiseras utan schema. Om du kan formulera maxförlusten i procent av ersättningsvärdet har du gjort Pabrais arbete — om inte, har du en åsikt om cykeln och inte en beräkning av golvet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riggarnas värdeparti — från golv till topp\",\"rader\":[[\"Nivå\",\"Vad den motsvarar\",\"Roll i analysen\"],[\"Skrot-/återförsäljningsvärde\",\"Stål, komponenter, auktion\",\"Absoluta golvet — vad du som minst får vid tvångsförsäljning\"],[\"Begagnatvärde\",\"Vad en fungerande rigg kostar på andrahandsmarknaden\",\"Där Dhandho-köpet ligger: bolagets EV nära eller under detta\"],[\"Nybyggnadskostnad\",\"Vad en ny rigg kostar att bygga\",\"Uppsidans tak — när efterfrågan återvänder prissätts mot detta\"],[\"Botten-dayrates\",\"Intäkter i depressionsscenario\",\"Test: betalar de skuldtjänsten? (V10, V11)\"],[\"Toppcykel-EBITDA\",\"Normaliserade marginaler\",\"Bonus — aldrig grund för betydande betalning\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Cykelbolag är motell i större skala: om EV ligger nära begagnatvärdet på tillgångarna och överlevnaden är säkrad, är timingfrågan marknadens problem — inte ditt. Köp golvet, få cykeln gratis."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett cykelbolag på svensk eller nordisk lista — shipping, skog, byggtjänster eller stål. Uppskatta begagnatvärdet på de fysiska tillgångarna, kontrollera V10 och V11 för överlevnad, och räkna EV mot ditt golv. Skriv: »Mitt värsta rimliga utfall är X procent av ersättningsvärdet« — och jämför med aktuell multiples på botten-EBITDA (V06)."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utgör golvet i fallet Pioneer Drilling?",
+          "alternativ": [
+            "Riggarnas begagnade och återförsäljningsbara värde — fysiska tillgångar med ett pris även i depression",
+            "Den statliga garanti som fanns för borrentreprenörer",
+            "Bolagets patent på borrteknik (V13)",
+            "En utlovad uppköpsklausul från en konkurrent"
+          ],
+          "ratt": 0,
+          "tips": "Vad är värt något även om verksamheten aldrig tjänar en dollar mer?"
+        },
+        {
+          "q": "Varför ska EBITDA i nämnaren på ett cykelbolag vara botten-EBITDA?",
+          "alternativ": [
+            "Eftersom bokföringsreglerna kräver det för cykelbolag",
+            "Eftersom topp-EBITDA alltid är negativ i cykelbranscher",
+            "Eftersom värdet då testas i det scenario som faktiskt är prissatt — om även bottenmarginaler bär skuldtjänsten är nedsidan golvad",
+            "Eftersom botten-EBITDA alltid är högre än topp-EBITDA"
+          ],
+          "ratt": 2,
+          "tips": "Vilket scenario har marknaden redan målat i kursen — och vilket scenario vill du köpa i?"
+        },
+        {
+          "q": "Vad är Pabrais svar på frågan »när vänder borrmarknaden?«",
+          "alternativ": [
+            "Han spår vändningen med makromodeller för naturgaspriset",
+            "Han väntar på en regulatorisk katalysator (V18) innan köp",
+            "Han köper bara efter att vändningen är bekräftad i dayrates",
+            "Han behöver inte veta — om golvet i tillgångar och överlevnad är säkrat är timingen inprissatt till ett pris där den inte kan skada"
+          ],
+          "ratt": 3,
+          "tips": "Vilken fråga behöver du svara på för att köpa — och vilken kan du lämna åt marknaden?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Kleptomani-investeraren — att hederligt kopiera de bästa",
+      "intro": "Dhandho-ramverkets nionde princip är Pabrais mest personliga: det är bättre att vara en copycat än en innovatör. Pabrai skäms inte det minsta — han beskriver sig som en kleptomani-investerare som stjäl idéer från Buffett och Munger med båda händerna och offentliggör tjuveriet. Det här kapitlet handlar om skillnaden mellan att kopiera ärligt — vilket kräver att du förstår varför mästaren köpte — och cargo-kult, som bara köper samma aktier och hoppas på bäst.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Logiken är ren speltori, inte lathet. Om någon annan med bättre tänkande, längre historik och djupare resurser redan har löst en klass av problem — varför börja om från noll? Innovationspremien i investering är negativ: den som MÅSTE ha en egen idé betalar för originalitet med sämre utfall. Pabrai formulerar det som att han inte har en enda original tanke — och att det inte gör honom något. Buffetts brev, Mungers tal, Grahams böcker och Klarmans marginal är gratis forskningsavdelningar som öppnat sina labböcker för allmänheten. Den enda kostnaden är ödmjukheten att läsa dem noggrant nog att förstå mekanismen, inte bara slutsatsen."
+        },
+        {
+          "type": "text",
+          "content": "Skillnaden mellan kloning och cargo-kult är förståelsen av varför. Att se att Buffett köpte Washington Post 1973 och köpa nästa tidningsbolag är cargo-kult — det verkar, men det har ingen kraft. Att förstå affären är något annat: ett kvalitetsfranchise med starkt varumärke (V14) och stabila intäkter (V12), handlat till en bråkdel av både ersättningsvärde och beräknat värde (V05, marginal of safety), i en marknad som såg bara rubriker. American Express 1964 efter saladoolskandalen är samma mall: skandalen kostade aktien hälften, men beteendet — kundernas lojalitet till kortet — var intakt; varumärket överlevde nyheten. Det är dessa mekanismer du klonar: kris plus intakt kundbeteende plus moat plus bråkdel av värde. Aktien är bara namnskylten på en upprepbar situation."
+        },
+        {
+          "type": "text",
+          "content": "Och den renaste Buffett-kopian av dem alla? Att äga Berkshire Hathaway — bolaget själv. Att köpa Buffett som aktie är den äldsta formen av kloning: du låter kapitalfördelningen göras av dess främsta utövare och betalar ingen premium för egen genialitet. Det är samtidigt en perfekt övning i ärlighet, för det kräver att du medger att din egen kant i kapitalfördelning sannolikt är mindre än hans — och att handla därefter. Pabrai har genom åren sagt det rakt av: den som vill ha Buffetts resultat utan att göra Buffetts arbete kan börja med att köpa hans portföljförvaltning. Ego är dyrt i den här branschen; kleptomani är billig."
+        },
+        {
+          "type": "text",
+          "content": "Metoden att bygga en klon-bok är därför kursens mest praktiska verktyg. Läskulturen som Pabrai förespråkar är ingen överdrift — den är själva infrastrukturen: Buffetts årliga brev (gratis på nätet, läs alla), Grahams The Intelligent Investor, Klarman Margin of Safety, Greenblatts You Can Be a Stock Market Genius, Lowensteins Buffett-biografi och Poundstones Fortune's Formula för Kelly-ärftet. Varje mästar-köp du studerar dokumenterar du på en sida: situationen, priset mot värdet, nedsidan, moaten i AKM1-variabler (V13-V15, V12), och utfallet med eftertanke — vad gjorde köpet bra, och vilken mekanism kan sökas igen? Efter tjugo sådana sidor har du inte kopierat tjugo affärer — du har internaliserat ett antal mönster som du sedan känner igen i real tid. Det är då copycat övergår i hantverk."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Klonboken — mästar-köp att studera och deras mekanismer\",\"rader\":[[\"Mästar-köp\",\"Situation\",\"Mekanism att klona\"],[\"Washington Post 1973\",\"Kvalitetsfranchise i börsdepression\",\"V14 varumärke + V12 stabila intäkter till bråkdel av värde (V05)\"],[\"American Express 1964\",\"Skandal som inte berörde kundernas beteende\",\"V14 överlever nyheten — köp beteendet, inte rubriken\"],[\"Patel-motellen\",\"Kris + eget arbete + återinvestering\",\"Golv i tillgångar, V07/V08 utan lönekostnad, V10 under golv\"],[\"Pioneer Drilling\",\"Cykelbotten i borrbranschen\",\"EV (V06) mot begagnatvärde på riggarna; V10/V11 säkrar överlevnaden\"],[\"Berkshire Hathaway\",\"Kapitalfördelning som affär\",\"Den renaste kopian — äg förvaltaren istället för att imitera honom\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ärlig kopiering är snabbare än stolthet — men den kräver att du förstår VARFÖR mästaren köpte. Utan förståelsen är det inte kloning utan cargo-kult: samma aktier, ingen kraft."
+        },
+        {
+          "type": "utmaning",
+          "content": "Starta din klon-bok i dag: välj tre mästar-köp — gärna Washington Post 1973, American Express 1964 och ett av Pabrais egna — och skriv en sida per köp: situation, pris mot värde, nedsida, moat i AKM1-variabler (V13/V14/V15, V12), utfall och den mekanism du ska söka igen. Sätt upp en återkommande läs-sed: alla brev och en bok per månad."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är skillnaden mellan ärlig kloning och cargo-kult?",
+          "alternativ": [
+            "Kloning sker bara när man köper samma aktier som mästaren samma kvartal",
+            "Cargo-kult är effektivare eftersom den är snabbare",
+            "Kloning kräver att du förstår varför mästaren köpte — mekanismen, inte bara aktien; cargo-kult köper namnskylten och hoppas",
+            "Det finns ingen skillnad — båda är former av kopiering"
+          ],
+          "ratt": 2,
+          "tips": "Vad återstår i ditt huvud när aktien sålts och situationen är borta?"
+        },
+        {
+          "q": "Vad gjorde American Express 1964 till en Dhandho-situation?",
+          "alternativ": [
+            "Skandalen halverade aktien men kundernas beteende — lojaliteten till kortet och varumärket (V14) — var intakt",
+            "Bolaget hade nätverkseffekter (V15) som ingen konkurrent kunde efterlikna",
+            "Bolaget såldes till ett konglomerat kort efteråt",
+            "Regulatorisk katalysator (V18) tvingade fram en omstrukturering"
+          ],
+          "ratt": 0,
+          "tips": "Skillnaden mellan nyheten och beteendet — vilken av dem var prisad i kursen?"
+        },
+        {
+          "q": "Varför kallar Pabrai copycat-strategin för överlägsen innovation?",
+          "alternativ": [
+            "Eftersom originalitet är förbjudet inom värdeinvestering",
+            "Eftersom innovationspremien i investering är negativ — den som MÅSTE ha en egen idé betalar för originalitet med sämre utfall",
+            "Eftersom kopiering är snabbare att rapportera i kvartalsbrev",
+            "Eftersom bara indexer kan slå marknaden långsiktigt"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att vilja vara först — och vad kostar det att lära av den som redan gjort arbetet?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Kristallkulan, Chakravyuha och tålamodet",
+      "intro": "Tre berättelser avslutar Pabrais inre spel. Kristallkulan visar varför spådomar är meningslösa — och varför du ändå inte behöver dem. Chakravyuha, labyrinten ur Mahabharata, lär att den som bara vet hur man tar sig in men inte ut är dödsdömd — investerare behöver exit-regler skrivna före köpet. Och tålamodet är inte passivitet utan strategi: som Munger sa ligger de stora pengarna i väntandet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kristallkulan: Pabrai ägnar ett kapitel åt att redovisa hur dåligt även proffsen är på att förutsäga — chefer som missar sina egna kvartal, analytiker som reviderar bakåt, ekonomer som inte såg den senaste krisen komma. Slutsatsen är inte att framtiden är ointressant utan att den är ovetbar — och att hela Dhandho-konstruktionen är svaret på den ovetbarheten. Om dina köp görs med nedsidan räknad i tillgångar och marginal i priset behöver du inte veta vad nästa år bjuder: klave kostar dig lite, krona betalar bra, och tiden gör resten. Detta är kursens kanske mest befriande insikt: du får sluta gissa. Osäkerheten du fruktade är samma osäkerhet som ger dig rabatten."
+        },
+        {
+          "type": "text",
+          "content": "Chakravyuha — krigslabyrinten i Mahabharata. Abhimanyu lärde sig som ofött barn hur man bryter sig in i formationen, men inte hur man tar sig ut; han gick in, stred tappert och dog därinne. Pabrais parallell är ömsint brutal: den som köper en position utan att veta under vilka villkor han lämnar den har bara lärt sig hälften av hantverket. Praktiskt betyder det att exit-reglerna skrivs FÖRE köpet, inte efter: vad skulle göra tesen fel — om moaten (V13-V15) eroderar, om överlevnadskontrollerna (V10, V11) försämras, om priset nått beräknat värde — och vad gör jag då? Det är också en varning för halvfärdiga mellanting: att köpa en affär man inte riktigt förstår är att gå in i en labyrint man inte kartlagt. Kom ihåg: rätt tid att räkna ut utgången är när du fortfarande står utanför."
+        },
+        {
+          "type": "text",
+          "content": "Tålamodet är den tredje pelaren, och hos Munger — Pabrais andra stora läromästare efter Buffett — får den sin klassiska formulering: de stora pengarna ligger inte i köpen och försäljningarna utan i väntandet. Pabrai tillämpar det som aktiv inaktivitet: portföljen ändras sällan, besluten är få, och tiden mellan dem fylls av läsning — årsredovisningar, brev, böcker, klon-boken från förra kapitlet. I AKM1:s värld är detta kompounderingens mekanik: V09 i ROE-led multipliceras över år, och återköp (V20) gör att ditt ägande per aktie växer även när inget annat händer. Den som vänder portföljen varje kvartal betalar courtage, skatt och — värst av allt — uppmärksamhetsskatt: den slutar aldrig reagera på brus. Väntandet är alltså inte dötid; det är där räntan på räntan faktiskt arbeta."
+        },
+        {
+          "type": "text",
+          "content": "Sätt samman de tre berättelserna till ett dagligt temperament. Inför varje ny idé: först nedsidan (kapitel 7), sedan värdet och marginalen (kapitel 6), sedan vikten (kapitel 8) — och sedan exit-reglerna skrivna i klon-boken, daterade och undertecknade. Därefter: ingenting. Ingen omformulering av tesen när kursen faller tjugo procent och rubrikerna blir värre — det är marknadens humör, inte din analys som ändrats. Om du gjort arbetet är den svåraste disciplinen nu att inte göra något. Det är också den billigaste: i en värld där alla betalar för aktivitet och information får den som kan vänta betalt för att bära tiden. Det är Dhandhos sista asymmetri — och den som behärskar den har hela boken i fickan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre berättelser — tre verktyg\",\"rader\":[[\"Berättelse\",\"Lärdom\",\"Praktisk regel\"],[\"Kristallkulan\",\"Framtiden är ovetbar — spådomar är meningslösa\",\"Köp bara det som inte kräver en prognos: golvad nedsida plus marginal\"],[\"Chakravyuha (Abhimanyu)\",\"Att veta inträdet utan utgången är dödligt\",\"Skriv exit-regler FÖRE köpet: tes-brott, moat-erosion (V13-V15), överlevnad (V10, V11), pris mot värde\"],[\"Mungers väntan\",\"De stora pengarna ligger i väntandet\",\"Aktiv inaktivitet: få beslut, lång hålltid, läsning emellan — låt V09 och V20 kompa under årtionden\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du behöver inte veta vad som händer — bara vad som inte kan hända dig. Skriv utgången innan du går in, och låt sedan tiden arbeta: det är skillnaden mellan spådom och Dhandho."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå igenom varje innehav och skriv exit-regler — i dag, inte vid köpet nästa gång: tre villkor som skulle göra tesen fel (moat, överlevnad, pris mot värde) och ett för fallet att tiden överstiger din horisont. Datera och signera dokumentet. Om ett innehav inte har en tes som går att skriva regler för är det Chakravyuha — du är inne utan utgång."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängen med kapitlet om kristallkulan?",
+          "alternativ": [
+            "Att man ska hitta bättre prognosmakare och prenumerera på deras analyser",
+            "Att framtiden är ovetbar även för chefer och ekonomer — men att en golvad nedsida plus marginal gör att du inte behöver en prognos",
+            "Att teknisk analys ersätter fundamental prognos",
+            "Att man ska öka kassan varje gång en prognos reviseras nedåt"
+          ],
+          "ratt": 1,
+          "tips": "Vad kräver ditt köp av kunskap om framtiden — och vad kan konstrueras utan den?"
+        },
+        {
+          "q": "Vad lär berättelsen om Abhimanyu och Chakravyuha?",
+          "alternativ": [
+            "Att man ska vänta med att köpa tills alla andra har gått in först",
+            "Att man ska använda stop-loss på varje position",
+            "Att den som bara kan ta sig in men inte ut är dödsdömd — exit-regler skrivs före köpet",
+            "Att komplicerade bolag är bättre investeringar än enkla"
+          ],
+          "ratt": 2,
+          "tips": "Vad är det du lär dig om formationen — och vad är det du aldrig lär dig?"
+        },
+        {
+          "q": "Vad menar Munger med att de stora pengarna ligger i väntandet?",
+          "alternativ": [
+            "Att man ska pantsätta boendet för att köpa mer under korrektioner",
+            "Att långa holdingperioder alltid är bäst oavsett pris",
+            "Att man ska vänta med att sälja tills aktien når dubbla",
+            "Att avkastningen skapas av få beslaks kompoundering över tid — aktivitet kostar courtage, skatt och uppmärksamhet"
+          ],
+          "ratt": 3,
+          "tips": "Vad kostar all aktivitet — i avgifter och i uppmärksamhet — jämfört med att bara hålla?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Dhandho i AKM1 — checklista, riskmatris och positionsstorlek",
+      "intro": "Avslutningen sätter hela boken i ditt eget ekosystem. Dhandho är inte en strategi bland andra att lägga bredvid momentum och tillväxt — det är en ordning på besluten: förlustsidan först, priset sedan, vinsten gratis. Det här kapitlet bygger den fullständiga checklistan med AKM1:s variabler, kopplar den till riskmatrisen och Monte Carlo-tänkandet, och låter Kelly-formeln sätta vikten. Sista examen görs på ett levande kris-bolag — med en sida som argument.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Checklistan i sin helhet, som sekvens av frågor. Ett: existerar bolaget med historik — kan jag läsa fem års V07, V08, V09 och V12, och är V19 grönt (ingen kapitalförbränning, ingen emissionsrisk)? Två: är branschen tråkig och stabil — svajar V12 måttligt genom senaste cykeln och är intäktsunderlaget diversifierat (V03)? Tre: finns en moat jag kan förklara på en mening — V14 varumärke, V13 patent och IP, V15 nätverkseffekter? Fyra: är bolaget eller branschen i kris — och vad säger golvet: V05 och EV/EBITDA på botten-EBITDA (V06), kontrollerat mot V11 likviditet och V10 skuldsättningsgrad? Fem: ger priset marginal — köper jag betydligt under mitt värsta rimliga scenario? Först när alla fem är ja finns en affär att väga."
+        },
+        {
+          "type": "text",
+          "content": "Riskmatrisen gör nedsidan levande. För din kandidat, skriv tre scenarier med sannolikheter: botten (tvångsvärde på tillgångarna, botten-dayrates, moaten räknas i det begagnade värdet), bas (normaliserade marginaler, moat intakt) och topp (ersättningsvärdet prissätts, V16-V18-katalysatorer eller V20-återköp förstärker). I AKM1:s monte Carlo-anda är poängen inte punktskattningar utan fördelningen: hur djup är botten i procent, hur tung är den i sannolikhet? Dhandho-kriteriet är att botten-scenariot lämnar dig plus eller obetydligt minus — det är detta som gör att du sedan kan utsätta portföljen för verklig exponering mot bas och topp. Kelly-steget: sätt p som viktad sannolikhet för bas-plus-topp, b som deras värde genom din maxförlust, räkna f* — och halvera det för att din p alltid är en uppskattning. Den vikten, inte en känsla, är positionens storlek."
+        },
+        {
+          "type": "text",
+          "content": "Och allt som Dhandho INTE frågar efter — lika viktigt att veta. Varken V01 försäljningstillväxt eller V02 ARR-tillväxt är köpskäl i sig: tillväxt är något du får betala för i förskott och Dhandho vill ha det gratis eller rabatterat. Katalysatorfamiljen V16-V18 är bonus, aldrig krav — marginalen är katalysatorn. V20 återköp är en signal om ägarvänlighet och ett sätt att värde realiseras på vägen, men ingen räddare av ett dåligt köp. Notera slutligen vad som är sant om disciplinens komplement: index. När checklistan inte ger några ja — vilket den inte gör nästan alltid — är kontanter eller index den ärliga repliken, och att vänta är en position. Missförstå inte tålmodighet som passivitet: läs, uppdatera klon-boken, håll kris-listan varm."
+        },
+        {
+          "type": "text",
+          "content": "Slutexaminens form — för den som vill göra kursen till verklighet: välj ETT kris-drabbat bolag med begränsad nedsida och skriv en enda sida. Överst: maxförlusten i kronor och som procent av ersättningsvärdet. Därunder: golv-kalkylen (V05, V06 på botten-EBITDA, V10, V11), moat-meningen (V13-V15, V12), tre scenarier med sannolikheter, halv-Kelly-vikten och de tre exit-reglerna — daterat, undertecknat. Sidan är ditt investeringsbeslut; allt annat är åsikt. Om du kan skriva den har du gjort vad Pabrai gjorde före dig: översatt en gammal gujaratisk filosofi till aritmetik — och satt huvudet av risken på fel sida av myntet, där det hör hemma."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dhandho-checklistan i AKM1 — fråga, variabel, fällvärde\",\"rader\":[[\"Fråga\",\"AKM1-variabler\",\"Godkänt när...\"],[\"Finns bolaget — med historik?\",\"V07, V08, V09, V19\",\"Fem års läsbar historik; V19 grönt — ingen brinnande kassa\"],[\"Är branschen tråkig och stabil?\",\"V12, V03\",\"Måttlig svagning genom cykeln; intäkter utspridda på många kunder\"],[\"Finns moat — på en mening?\",\"V14, V13, V15\",\"Varumärke, IP eller nätverk som en kapitalstark konkurrent inte kopierar på fem år\"],[\"Är det kris — med golv?\",\"V05, V06, V11, V10\",\"EV nära begagnat- eller bokfört värde; likviditet och skulder bär 18+ månader\"],[\"Ger priset marginal?\",\"Marginal of safety\",\"Betydligt under värsta rimliga scenario\"],[\"Hur mycket?\",\"Kelly: f* = p − q/b\",\"Halv-Kelly som tak — vikt följer marginalen\"],[\"Ning händer — vem tjänar?\",\"V20, V09\",\"Återköp och ROE kompa under medan du väntar\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Dhandho är inte en strategi bland andra — det är en ordning på besluten: förlustsidan först, priset sedan, vinsten gratis. När checklistan säger ja sällan men tungt, och nej allt annat, har du hela boken i arbetsordning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutexamen: välj ett kris-drabbat bolag med begränsad nedsida och skriv analys-sidan — maxförlust i kronor och procent av ersättningsvärdet, golv-kalkyl (V05, V06, V10, V11), moat-meningen (V13-V15, V12), tre scenarier med sannolikheter, halv-Kelly-vikt och tre daterade exit-regler. Lägg den i klon-boken och återkom till den om ett år — det är hela hantverket på ett blad."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "I vilken ordning ska besluten fattas enligt Dhandho?",
+          "alternativ": [
+            "Förlustsidan först, sedan priset och marginalen, och vinsten gratis på köpet",
+            "Positionsstorlek först — sedan fylls portföljen med namn",
+            "Uppsideberäkning, sedan timing, sedan riskkontroll",
+            "Katalysator först — utan datum köps inget"
+          ],
+          "ratt": 0,
+          "tips": "Vad kan du veta med mest säkerhet — och vad bör du därför räkna på först?"
+        },
+        {
+          "q": "Hur används Kelly-steget i den fullständiga checklistan?",
+          "alternativ": [
+            "Som exakt target-vikt som följs mekaniskt vid varje köp",
+            "Inte alls — positionsstorlek sätts av magkänsla",
+            "Som jämförelse mellan bolag i samma bransch",
+            "Som ett tak: räkna f* från dina scenarier och halvera det — eftersom din sannolikhet alltid är en uppskattning"
+          ],
+          "ratt": 3,
+          "tips": "Vilken inmatning i formeln är minst pålitlig — och hur hanterar man det?"
+        },
+        {
+          "q": "Vad är den ärliga repliken när checklistan inte ger ett enda ja?",
+          "alternativ": [
+            "Att sänka kraven tills en affär passar",
+            "Kontanter eller index — att vänta är en position, och tiden används till läsning och kris-listan",
+            "Att köpa det minst dåliga alternativet för att vara investerad",
+            "Att öka belåningen för att förstärka nästa tillfälle"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att INTE göra något — och vad kan väntetiden fyllas med?"
+        }
+      ]
+    }
+  ]
+}

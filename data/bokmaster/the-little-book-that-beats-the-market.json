@@ -1,0 +1,774 @@
+{
+  "slug": "the-little-book-that-beats-the-market",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 11,
+  "totalMinutes": 100,
+  "title": "The Little Book That Beats the Market — Greenblatt: KOMPLETT",
+  "summary": "Joel Greenblatts lilla klassiker förvandlar en enda idé — köp bra bolag till reapris — till en mekanisk magisk formel byggd på EV/EBIT och ROIC. Kursen går igenom hela boken: värdebegreppet i klartext, formelns rankningsmekanik, den ärliga backtesten 1988–2004 och den psykologi som krävs för att faktiskt stanna kvar i systemet.",
+  "minutes": 9,
+  "xp": 1500,
+  "level": "",
+  "learn": "Räkna Enterprise Value, EBIT-avkastning (EBIT/EV) och ROIC i klartext · Köra magiska formelns rankning steg för steg på egna bolag · Värdera backtestens 30,8 %-siffra med ärliga förbehåll om kostnader, småbolag och momentum · Bygga en portfölj med 20–30 positioner och 12-månadersregler · Koppla Greenblatt till AKM1:s V06- och V09-familjer · Hantera kurvartik med förbestämda regler och en 3–5-årig horisont.",
+  "why": "Magiska formeln är den mest framgångsrika folkbildningen någonsin i systematisk värdeinvestering: två offentliga mått, en enkel regel och en författare som ärligt räknar ner sina egna backtestsiffror. För AK1A är den grundmotorn på värdesidan (V06-familjen) och kvalitetssidan (ROIC, V09-familjen) — och bokens viktigaste lärdom gäller alla strategier: premien betalas till dem som stannar kvar.",
+  "chapters_list": [
+    "1. Jason-bönen — varför vi alla vill ha nåt för ingenting",
+    "2. Mr Market — priset är inte värdet",
+    "3. Värde i klartext — EBIT, EV och EBIT-avkastning (V06-familjen)",
+    "4. Bra bolag — ROIC, retur på investerat kapital (V09-familjen)",
+    "5. Den magiska formeln — ranka, köp 30, håll 12 månader",
+    "6. Backtesten 1988–2004 — 30 % per år med ärliga förbehåll",
+    "7. Varför den fungerar — ineffektivitet, medelvärden och tålamod",
+    "8. Varför den är svår — kurvartik och psykologi",
+    "9. Praktiken — 30 positioner och årets hjul",
+    "10. Greenblatts råd — index som baseline och 3–5 års tålamod",
+    "11. Syntes — formeln i AKM1:s V-ramverk"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 9,
+      "title": "Jason-bönen — varför vi alla vill ha nåt för ingenting",
+      "intro": "Boken börjar inte med formler utan med en bön. Greenblatts unge son Jason ber sin kvällsbön och ber om fina saker — helst utan att behöva anstränga sig särskilt mycket. Det är hela mänsklighetens portföljproblem i miniatyr, och det är därför boken börjar där.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Joel Greenblatt är inte en teoretiker i första hand: han förvaltade Gotham Capital, som under två decennier i snitt gav cirka 40 procent per år — en av de bästa notoriteterna i branschhistorien — och han undervisade i värdeinvestering vid Columbia Business School. När han 2005 skrev The Little Book That Beats the Market var avsikten privat: han ville förklara investerande så enkelt att hans egen son Jason, då i tonåren, skulle förstå det. Resultatet blev en bok på knappa 150 småsidor som sålde i miljonupplaga — och som fortfarande är den mest tillgängliga ingången till systematiskt värdeinvestering."
+        },
+        {
+          "type": "text",
+          "content": "Bokens öppning är berättelsen om Jason-bönen. Den unge Jason ber kvällens bön och ber Gud om det klassiska: fina saker, bra betyg, lite tur — och gärna allt detta utan motsvarande jobb. Greenblatt drar slutsatsen med glimten i ögat: vi vill alla ha något för ingenting. På aktiemarknaden visar sig det som tron på tips, heta fonder och senaste kursnöjet — belöning utan process. Och marknaden är väldigt duktig på att ta betalt just för den önskan."
+        },
+        {
+          "type": "text",
+          "content": "Skepsisen är bokens första leverans: de allra flesta aktiva förvaltare slår inte index efter avgifter, och de som gör det sällan två perioder i sträck. Därför börjar Greenblatt med två motviktiga löften. Det första: han ska förklara hur man värderar bolag på ett sätt som ett barn kan följa — värde är relationen mellan pris och det bolaget faktiskt levererar. Det andra: han ska visa en mekanisk formel som historiskt slagit marknaden — men bara för den som orkar följa den mekaniskt i åratal. Mr Market-mantrat från Benjamin Graham — priset är inte värdet — löper som en röd tråd genom hela boken."
+        },
+        {
+          "type": "text",
+          "content": "Lägg märke till balansen, för den är designad. Boken är kritisk till din önskan om något för ingenting, men den hävdar samtidigt att det finns en nästan orättvist enkel metod — om du accepterar två villkor: tålamod och disciplin. Det är samma budskap som AK1A bär i sitt ramverk: det finns ingen genväg till kantningen, men det finns processer som historiskt betalat den som körde dem färdigt. Kursens jobb är att ge dig både motorn och karaktären."
+        },
+        {
+          "type": "insikt",
+          "content": "Jason-bönen är din spegel: vill du ha marknadens avkastning utan marknadens jobb är indexfond din bön. Vill du ha mera kräver boken något av dig — inte begåvning, utan mekanisk uthållighet när det känns sämst."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen bön på en rad: vad förväntar du dig av din aktieportfölj nästa år — och vad är du beredd att göra för den? Gissa sedan: hur många procent av Sveriges aktiefonder tror du slog sitt jämförelseindex de senaste tio åren, efter avgift? Skriv ner siffran. Vi återkommer till den i kapitel 10."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängen med berättelsen om Jasons kvällsbön i bokens inledning?",
+          "alternativ": [
+            "Att barn inte bör investera i aktier",
+            "Att de flesta av oss vill ha en belöning utan ansträngning — och att börsen straffar just det",
+            "Att Greenblatt inte tror på aktiemarknaden",
+            "Att böner är en lyckosam investeringsstrategi"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad boken vill visa om mänskliga önskningar innan den presenterar en enda siffra."
+        },
+        {
+          "q": "Vem är Joel Greenblatt?",
+          "alternativ": [
+            "Förvaltare bakom Gotham Capital och lärare vid Columbia — som skrev boken för att lära sin son investera",
+            "Grundare av indexfondbolaget Vanguard",
+            "Författare till The Intelligent Investor",
+            "Tidigare ordförande i amerikanska centralbanken"
+          ],
+          "ratt": 0,
+          "tips": "Personen bakom boken kombinerar praktiskt förvaltarskap med att undervisa i värdeinvestering."
+        },
+        {
+          "q": "Vilka två saker lovar boken sin läsare?",
+          "alternativ": [
+            "En teknisk analyskurs och daytradingregler",
+            "En enkel metod att värdera bolag och en mekanisk formel som historiskt slagit marknaden",
+            "Prognoser för räntor och råvarupriser",
+            "En lista över årets hetaste börsnoteringar"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på bokens struktur: först hantverket, sedan systemet."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 9,
+      "title": "Mr Market — priset är inte värdet",
+      "intro": "Greenblatts intellektuelle arvfader är Benjamin Graham, och bokens teoretiska ryggrad är Grahams parabel om Mr Market. En gång förstådd löser den halva problemet: att skilja på vad något kostar och vad något är värt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Greenblatt berättar om Mr Market, Grahams tänkta affärspartner. Tänk dig att du äger en andel i ett litet företag tillsammans med en partner som varje dag erbjuder dig ett pris på din andel — helt utan tvång. Vissa dagar är han euforisk och föreslår skyhöga priser, andra dagar deprimerad och nästan ger bort sin del. Du behöver aldrig svara. Det är exakt så börsen fungerar: noteringen är ett erbjudande, inte en dom. Med Grahams klassiska ord, som Greenblatt anför: på kort sikt är marknaden en röstmaskin, på lång sikt en vågmaskin — opinion first, värde sen."
+        },
+        {
+          "type": "text",
+          "content": "Vad är då värde? Greenblatts svar är jordnära: något är värt vad det kan leverera sin ägare i kronor, satt i relation till priset. Räkna i klartext: en lägenhet som genererar 100 000 kronor per år i fri hyra och kostar 1 000 000 kronor ger dig en avkastning på 10 procent per år. Är det bra? Om statsobligationen ger 4 procent och hyran är stabil — ja, det är ett rejält påslag för ansträngningen. Värderingen blir en jämförelse, inte en kristallkula. Grahams klassiker: värdeinvestering är att köpa en krona för femtio öre — marginalen är din säkerhet för att ha fel."
+        },
+        {
+          "type": "text",
+          "content": "Varför krävs ändå skepsis? Därför att Mr Markets humör är smittsamt. När kursen stiger bygger vi berättelser som rättfärdigar priset; när den faller hittar vi skäl att sälja vid bottnen. I AKM1:s språk: ju stabilare intäkterna (V12, intäktsstabilitet), desto enklare att uppskatta ett värde — och Mr Market pendlar som mest våldsamt kring bolag där resultatet är osäkert. Tips från kompisar, brusande analyser och kvartalsnöjen är sällan information — de är nästan alltid Mr Markets humör i ordform. Greenblatts strategi är att mekaniskt lyssna på erbjudandena men aldrig på humöret."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "Mr Market finns för att tjäna dig, inte leda dig. Hela magiska formeln är en maskin för att köpa när han är deprimerad — och det förutsätter att du slutar låta hans humör bestämma ditt beslut."
+        },
+        {
+          "type": "utmaning",
+          "content": "Värdera något vardagligt: en hyresfastighet i ditt område. Uppskatta hyresintäkt per år, dra av driftskostnader, dividera med begärt pris. Skriv en rad: vilken årlig avkastning ger den — och är den dyr eller billig mot alternativet statsobligation? Notera hur omdömet blir en relation, inte en känsla."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad erbjuder Mr Market dig varje handelsdag?",
+          "alternativ": [
+            "Ett pris — som du är fri att utnyttja eller ignorera",
+            "En färdig fundamental analys",
+            "En tvångsförsäljning av ditt innehav",
+            "En courtagerabatt"
+          ],
+          "ratt": 0,
+          "tips": "Kom ihåg att han är din partner, inte din chef."
+        },
+        {
+          "q": "Vad betyder uttrycket att köpa en krona för femtio öre?",
+          "alternativ": [
+            "Att handla med lånade pengar",
+            "Att köpa billiga småbolag",
+            "Att köpa något till ett pris under dess verkliga värde",
+            "Att vänta på decemberrean"
+          ],
+          "ratt": 2,
+          "tips": "Det handlar om relationen mellan pris och värde, inte om bolagets storlek."
+        },
+        {
+          "q": "Hur sammanfattar Graham — som Greenblatt citerar — marknaden på lång sikt?",
+          "alternativ": [
+            "En röstmaskin som följer opinionen",
+            "En vågmaskin som väger verkligt värde",
+            "Ett lotteri utan minne",
+            "En slumpmässig myntvändning"
+          ],
+          "ratt": 1,
+          "tips": "Kort sikt är opinion — använd samma logik omvänt för det långa loppet."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 9,
+      "title": "Värde i klartext — EBIT, EV och EBIT-avkastning (V06-familjen)",
+      "intro": "För att jämföra tusentals bolag behöver Greenblatt ett prismått som inte straffar bolag för skattesats eller belåning. Svaret är Enterprise Value dividerat med EBIT — och hela konstruktionen går att räkna för hand. Det här är V06-familjen i AKM1, i sin renaste form.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför inte vanlig P/E? För att nettovinsten påverkas av två saker som inte har med affären att göra: räntor på lån och skattesats. Räkneexempel i klartext: Bolag A och Bolag B har identisk verksamhet som tjänar 100 Mkr i drift (EBIT). A är skuldfritt; B har 500 Mkr i lån till 10 procent ränta, alltså 50 Mkr i räntekostnad. B:s vinst ser plötsligt mycket lägre ut — fast affären är precis samma. Greenblatt jämför därför på EBIT-nivå (rörelseresultatet) och justerar priset för skulderna. I AKM1:s kartotek tillhör detta V06-familjen (EV/EBITDA) — Greenblatts EV/EBIT är samma släkte; skillnaden är att EBIT ligger efter avskrivningar, som han ser som en real kostnad, medan EBITDA ligger före."
+        },
+        {
+          "type": "text",
+          "content": "Enterprise Value i klartext: vad kostar det att köpa HELA bolaget? Tre steg. Ett: räkna ut börsvärdet — antal aktier gånger aktiepris. Två: lägg till räntebärande skuld (du övertar den som köpare). Tre: dra ifrån kassan (den följer med och betalar tillbaka). Exempel Bolag X: 100 miljoner aktier à 8 kronor ger börsvärde 800 Mkr; räntebärande skuld 300 Mkr; kassa 100 Mkr. EV blir 800 + 300 − 100 = 1 000 Mkr. Med EBIT på 125 Mkr blir EV/EBIT 1 000 / 125 = 8,0. Invertera och du får formelns mått: EBIT-avkastningen 125 / 1 000 = 12,5 procent — för varje hundralapp du betalar för hela företaget får du tolv kronor och femtio öre i driftsöverskott per år."
+        },
+        {
+          "type": "text",
+          "content": "Att tänka på EBIT-avkastning som en ränta gör den intuitiv: 12,5 procent på en riktig affär, mot 4 procent på statsobligationen — det är påslag att köpa billigt. Men kursen kräver två varningar. För det första: EBIT måste vara äkta och repetbart — engångsposter och toppcykelvinster (tänk konjunkturbolag i cykeltopp) kan måla falsk billighet; det är därför AKM1 parar V06 med V12 intäktsstabilitet och V07/V08-marginalernas kvalitet. För det andra: en låg EV/EBIT på grund av gigantisk skuld är inte billigt — EV fångar skulden, men gör alltid hygienkontrollen mot V10 skuldsättningsgrad. Formeln rankar högst den som har högst EBIT-avkastning — billigast i relation till driftens verkliga överskott."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två identiska bolag — P/E luras, EV/EBIT ser rakt\",\"rader\":[[\"Mått\",\"Bolag A (skuldfritt)\",\"Bolag B (belånet)\"],[\"EBIT\",\"100 Mkr\",\"100 Mkr\"],[\"Börsvärde\",\"1 000 Mkr\",\"600 Mkr\"],[\"Räntebärande skuld\",\"0 Mkr\",\"500 Mkr\"],[\"Kassa\",\"0 Mkr\",\"100 Mkr\"],[\"Enterprise value\",\"1 000 Mkr\",\"1 000 Mkr\"],[\"EV/EBIT\",\"10,0\",\"10,0\"],[\"Räntekostnad (10 %)\",\"0 Mkr\",\"50 Mkr\"],[\"Vinst före skatt\",\"100 Mkr\",\"50 Mkr\"],[\"Skatt\",\"25 % = 25 Mkr\",\"40 % = 20 Mkr\"],[\"Nettovinst\",\"75 Mkr\",\"30 Mkr\"],[\"P/E\",\"13,3\",\"20,0\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "EBIT/EV är inte en multipel — det är en avkastningssats. Fråga alltid: hur många procent av priset för hela företaget får jag tillbaka per år i driftens överskott? Det är hela värdesidan i magiska formeln."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna själv på ett bolag, gärna på Nasdaq Stockholm. Hämta från senaste rapporten: rörelseresultat (EBIT), antal aktier, aktiepris, räntebärande skuld och kassa. Räkna EV = börsvärde + skuld − kassa. Dividera EV med EBIT för multipeln; invertera (EBIT/EV) för avkastningen i procent. Jämför med statsobligationsräntan och skriv en mening: dyrt eller billigt — och varför?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför använder formeln EBIT i stället för nettovinst i värderingen?",
+          "alternativ": [
+            "EBIT är alltid högre",
+            "EBIT neutraliserar skillnader i belåning och skatt — så bolagen blir rättvist jämförbara",
+            "Nettovinst saknas i årsredovisningar",
+            "EBIT fungerar bara för banker"
+          ],
+          "ratt": 1,
+          "tips": "Två identiska verksamheter kan visa mycket olika nettovinst — fundera på varför."
+        },
+        {
+          "q": "Bolag X: börsvärde 800 Mkr, räntebärande skuld 300 Mkr, kassa 100 Mkr. Vad är Enterprise Value?",
+          "alternativ": [
+            "1 000 Mkr",
+            "1 200 Mkr",
+            "800 Mkr",
+            "1 100 Mkr"
+          ],
+          "ratt": 0,
+          "tips": "EV är priset för hela bolaget: aktierna plus skulden minus kassan."
+        },
+        {
+          "q": "EV är 2 000 Mkr och EBIT är 250 Mkr. Vad blir EV/EBIT och EBIT-avkastningen?",
+          "alternativ": [
+            "12,5 respektive 8,0",
+            "8,0 respektive 12,5 procent",
+            "0,8 respektive 2,5",
+            "8,0 och 8,0"
+          ],
+          "ratt": 1,
+          "tips": "Multipeln först — invertera den sedan för att få avkastningen."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 9,
+      "title": "Bra bolag — ROIC, retur på investerat kapital (V09-familjen)",
+      "intro": "Billigt räcker inte. Formelns andra hälft letar bolag som gör mycket med lite kapital — för det är där vinst per ägarkrona växer snabbast. Här möter vi Jasons tuggummi, Greenblatts exakta kapitaldefinition och kopplingen till AKM1:s V09-familj.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens affärslektion till Jason är tuggummiaffären. Jason köper tuggummipaket i affären för 30 cent; paketet innehåller fem stänger; i skolan säljer han varje stång för 25 cent. Intäkt per paket: 5 × 25 = 125 cent. Kostnad: 30 cent. Vinst: 95 cent per paket — insatsen blir mer än fyrdubblad i intäkt på varje paket, och vinstmarginalen landar på ungefär 76 procent. Poängen är inte marginalen i sig utan relationen: hur mycket vinst genereras per krona som läggs in i affären. Det är kärnan i vad Greenblatt menar med ett bra bolag."
+        },
+        {
+          "type": "text",
+          "content": "Greenblatts exakta mått heter return on capital: ROC = EBIT delat med investerat kapital, där investerat kapital = netto rörelsekapital (lager plus kundfordringar minus leverantörsskulder) plus netto anläggningstillgångar — alltså allt kapital som är bundet i att bygga och driva affären. Räkneexempel i klartext: Butik A kostar 5 Mkr att bygga och binda upp (lokaler, inventarier, lager) och tjänar 1 Mkr i EBIT per år — ROIC blir 1 / 5 = 20 procent. Granne B bygger en identisk butik men har betalat 10 Mkr för samma vinst — ROIC 10 procent. Samma vinst, halva kvaliteten. ROC-frågan är alltid: vad kostar det att få fram den här vinsten?"
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s kartotek är ROIC kusinen till V09 ROE — samma släkt (avkastning på ägarkapitalet), men ROIC mäter driften oberoende av finansiering: ROE kan blåsas upp med belåning (kontrollera alltid mot V10), ROIC är svårare att pudra. Varför spelar hög ROIC så stor roll? Återinvesteringsmaskinen: ett bolag som återinvesterar vinster till 20 procent internränta fördubblar sitt resultat på cirka fyra år utan att belåna sig eller emittera aktier — compounding inifrån. Och de bästa källorna till ihållande hög ROIC är ofta AKM1:s V14 varumärke och V15 nätverkseffekter, ibland förstärkta av V17 avtal — fördelar som håller kapitalavkastningen uppe år efter år. Det är Greenblatts definition av ett bra företag, släkt med det Buffett kallar franchise."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två butiker — samma vinst, halva ROIC, dubbel compound-effekt\",\"rader\":[[\"\",\"Butik A\",\"Butik B\"],[\"EBIT per år\",\"1,0 Mkr\",\"1,0 Mkr\"],[\"Investerat kapital\",\"5,0 Mkr\",\"10,0 Mkr\"],[\"ROIC\",\"20 %\",\"10 %\"],[\"EBIT efter 10 år med återinvestering\",\"ca 6,2 Mkr\",\"ca 2,6 Mkr\"],[\"Vad hände\",\"vinsten växte till sexdubbel\",\"vinsten knappt trerdubblades\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "ROIC ensam säger hur bra affären är. EV/EBIT ensam säger hur bra priset är. Magiska formeln kräver båda — ett bra bolag till ett lågt pris, inte antingen eller."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ROIC på ett riktigt bolag. Hämta EBIT samt balansraderna: lager, kundfordringar, leverantörsskulder och netto anläggningstillgångar. Investerat kapital = (lager + kundfordringar − leverantörsskulder) + netto anläggningstillgångar. Dividera EBIT med summan. Är returen över 20 procent? Under 10? Skriv en mening om vad siffran säger om affärens kvalitet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad mäter ROIC — return on invested capital?",
+          "alternativ": [
+            "Hur mycket driftsvinst bolaget skapar per insatt kapitalkrona, oberoende av hur affären finansierats",
+            "Aktiekursens utveckling det senaste året",
+            "Utdelningsandelen av vinsten",
+            "Omsättningstillväxten"
+          ],
+          "ratt": 0,
+          "tips": "Fokus ligger på verksamhetens effektivitet — inte finansiering eller kurs."
+        },
+        {
+          "q": "Tuggummi-affären i boken: paketet kostar 30 cent och innehåller fem stänger som säljs à 25 cent. Vad blir vinsten per paket?",
+          "alternativ": [
+            "45 cent",
+            "75 cent",
+            "95 cent",
+            "125 cent"
+          ],
+          "ratt": 2,
+          "tips": "Räkna intäkten först — fem gånger 25 — och dra sedan av kostnaden."
+        },
+        {
+          "q": "EBIT är 2 Mkr och investerat kapital 8 Mkr. Vad blir ROIC?",
+          "alternativ": [
+            "4 procent",
+            "40 procent",
+            "16 procent",
+            "25 procent"
+          ],
+          "ratt": 3,
+          "tips": "Dela vinsten med kapitalet — inte tvärtom."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 9,
+      "title": "Den magiska formeln — ranka, köp 30, håll 12 månader",
+      "intro": "Nu sätter vi ihop delarna till maskinen. Magiska formeln är ingen spådom — den är en sortering: ranka tusentals bolag på två mått, köp de bästa 30 och håll exakt ett år. Sedan gör du om det hela. Hela mekaniken går att köra i ett kalkylblad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln i fem steg. Ett: definiera universum — i boken de cirka 3 500 största amerikanska bolagen, med finansen och kraftbolagen exkluderade eftersom deras balansräkningar gör EV- och kapitalmåtten missvisande. Två: ranka alla bolag efter EBIT-avkastning (EBIT/EV) — högst får rank 1. Tre: ranka alla efter ROIC — högst får rank 1. Fyra: summera varje bolags två rankningar till en kombinerad rank. Fem: köp 20–30 bolag med bäst kombinerad rank, håll varje position i cirka ett år, sälj och upprepa året därpå. Med Greenblatts återkommande ord är det hela inte mer mystiskt än att köpa bra bolag till reapris — mekaniskt."
+        },
+        {
+          "type": "text",
+          "content": "Varför ranker och inte råa tal? EBIT-avkastning på 14 procent och ROIC på 28 procent lever på olika skalor och olika branschstandarder — att addera dem rakt av vore godtyckligt. Rankningen gör vikten exakt 50/50 och jämför bolagen inom samma universum. Miniexempel med tre bolag: A har EBIT-avkastning 14 procent (rank 1) och ROIC 28 procent (rank 1) — summa 2. B har 11 procent (rank 2) och 22 procent (rank 3) — summa 5. C har 8 procent (rank 3) men höga 30 procent i ROIC (rank 2) — summa 5. A vinner trots att C har bäst ROIC: formeln kräver både billigt och bra. Notera att B och C delar summan 5 — vid delade ranker är ordningen godtycklig; på riktigt skiljs tusentals bolag åt och det jämna utfallet spelar ingen roll för topp-30."
+        },
+        {
+          "type": "text",
+          "content": "Tidscykeln gör formeln hanterbar. Nya positioner köps successivt under året — exempelvis 5–7 nya per kvartal — så att hela portföljen är omlagd efter cirka ett år och du sprider din inträdestiming. Varje enskild position hålls i tolv månader från köpet; i den amerikanska originalversionen säljs förlorare strax före årsskiftet och vinnare strax efter, av skatteskäl. Inte för att ett år är magiskt, utan för att det ger Mr Market tid att ändra humör — utan att du hinner micro-hantera. Varket daytrading eller köp-och-glöm: en jämn, mekanisk puls."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rankning med tre bolag — formeln kräver båda måtten\",\"rader\":[[\"Bolag\",\"EBIT/EV\",\"Rank EBIT-avk.\",\"ROIC\",\"Rank ROIC\",\"Summa\"],[\"A\",\"14 %\",\"1\",\"28 %\",\"1\",\"2\"],[\"C\",\"8 %\",\"3\",\"30 %\",\"2\",\"5\"],[\"B\",\"11 %\",\"2\",\"22 %\",\"3\",\"5\"],[\"Vinnare\",\"—\",\"—\",\"—\",\"—\",\"A — billigt OCH bra\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "Formeln är anti-intuitiv: du äger aldrig årets glansnummer — bara mekaniska rabatter på kvalitet. Bolaget som känns tråkigt och ser billigt ut, men tjänar 25 procent på sitt kapital, är exakt vad maskinen köper."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en miniranking: välj fem bolag i samma bransch. Hämta EBIT, EV och investerat kapital enligt kapitel 3 och 4. Beräkna EBIT-avkastning och ROIC, ge varje bolag rank 1–5 på varje mått och summera. Vilket bolag vinner? Skulle du våga köpa det — och vad i din magkänst säger nej? Skriv ner båda svaren."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur kombineras de två rankingerna i magiska formeln?",
+          "alternativ": [
+            "De multipliceras",
+            "De adderas till en kombinerad rank",
+            "Endast den sämsta ranken används",
+            "EBIT-avkastningen viktas 70 procent och ROIC 30"
+          ],
+          "ratt": 1,
+          "tips": "Formeln är demokratisk: båda måtten väger lika."
+        },
+        {
+          "q": "Varför exkluderar Greenblatt banker och kraftbolag ur universet?",
+          "alternativ": [
+            "De är alltid för lönsamma",
+            "Deras balansräkningar gör EV- och kapitalmåtten missvisande",
+            "De saknar rörelseresultat",
+            "De ingår inte i något index"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på hur en banks skuld skiljer sig från en tillverkares."
+        },
+        {
+          "q": "Hur länge hålls en position i formelns grundversion?",
+          "alternativ": [
+            "Successivt cirka ett år från köpet — sedan säljs den och kapitalet rullas vidare",
+            "Tills kursen stigit 50 procent",
+            "I en vecka",
+            "I minst tio år"
+          ],
+          "ratt": 0,
+          "tips": "Cykeln är årlig, men portföljen byggs upp gradvis under det första året."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 9,
+      "title": "Backtesten 1988–2004 — 30 % per år med ärliga förbehåll",
+      "intro": "Greenblatts bevis är en sjuttonårig historisk simulering, och siffrorna är det mest citerade — och mest missförstådda — i hela boken. Här kör vi dem i klartext, med alla ärliga förbehåll på bordet samtidigt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Resultatet. Från januari 1988 till december 2004 — sjutton år — gav en portfölj av de 30 högst rankade bolagen i snitt 30,8 procent per år före kostnader, mot cirka 12,3 procent per år för S&P 500 inklusive utdelning. I kronor, ränta på ränta: 10 000 dollar som investerades 1988 hade med formeln vuxit till ungefär 960 000 dollar vid slutet av 2004 — mot cirka 76 000 dollar i index enligt bokens beräkning. Metoden var mekanisk: årlig omläggning, bara offentliga rapporter, inga framtidskunskaper, inga undantag från reglerna. Det är just därför resultatet är intressant: ingen mänsklig briljans krävdes, bara sortering."
+        },
+        {
+          "type": "text",
+          "content": "Förbehållen — och här är boken på sitt bästa. För det första: siffran är före kostnader. Courtage, spread, skatt och utförande i verkligheten äter av; Greenblatt säger själv att verklig avkastning blir klart lägre. För det andra: småbolagseffekten. Formeln hamnar ofta i mindre bolag, där transaktionskostnaderna är högre och en stor förvaltare inte kan handla i skala — kapaciteten är begränsad. För det tredje: momentum-svagheten. Värdestrategin köper bolag på väg ned — under trendstarka perioder, som IT-bubblans slutskede 1998–1999, underpresterade formeln kraftigt medan bolag utan vinst steg paraboliskt. Historien slutade med att bubblan sprack och formeln målade ikapp — men vägen dit krävde nerver."
+        },
+        {
+          "type": "text",
+          "content": "Vad visar backtesten ändå? Att ett enkelt rankande av två fundamentala mått med lika vikt — billigt pris och hög kapitalavkastning — fångade en ihållande premie för billiga, lönsamma bolag. Senare akademisk forskning pekar samma håll: Fama och French kompletterade 2013 sina faktormodeller med en vinstfaktor — värde plus lönsamhet är historiskt de mest robusta kombinationerna. Men kursens huvudregel står: historisk avkastning är inte framtida avkastning, och ärligheten om förbehållen är del av metoden — inte en fotnot."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"10 000 dollar år 1988 — utfall 2004 (17 år)\",\"rader\":[[\"\",\"Magiska formeln\",\"S&P 500\"],[\"Avkastning per år\",\"ca 30,8 % (före kostnad)\",\"ca 12,3 % (inkl. utdelning)\"],[\"Värde år 2004\",\"ca 960 000 dollar\",\"ca 76 000 dollar\"],[\"Dåliga perioder\",\"kan underprestera i flera år i sträck\",\"jämförelseobjektet\"],[\"Verklig avkastning\",\"lägre efter kostnad, skatt, utförande\",\"indexfond: låg kostnad\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "insikt",
+          "content": "30,8-procentssiffran är bokens säljargument — och dess fallgrop. Greenblatt räknar själv öppet med lägre verklig avkastning. Äg logiken, inte siffran."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på kostnadseffekten: 10 000 dollar i 17 år. Vid 30,8 procent per år: cirka 960 000 dollar. Vid ett realistiskt netto på 18 procent per år: 1,18 upphöjt till 17 är cirka 16,7 — alltså ungefär 167 000 dollar. Jämför med index cirka 76 000. Skriv två rader: vad är rimligt att förvänta av formeln — och vad krävs av dig för att inte hoppa av när utfallet blir 18 och inte 30?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad ingår INTE i backtestens 30,8 procent per år?",
+          "alternativ": [
+            "Börsvärden och EBIT från offentliga rapporter",
+            "Rankning av de största bolagen",
+            "Årlig omläggning av portföljen",
+            "Handelskostnader, skatt och utförande i verkligheten"
+          ],
+          "ratt": 3,
+          "tips": "Siffran är ett teoretiskt bruttoresultat — vad saknas mellan teori och din depå?"
+        },
+        {
+          "q": "Vad blev 10 000 dollar efter 17 år med formeln, enligt boken?",
+          "alternativ": [
+            "Cirka 76 000 dollar",
+            "Cirka 96 000 dollar",
+            "Cirka 960 000 dollar",
+            "Cirka 5,2 miljoner dollar"
+          ],
+          "ratt": 2,
+          "tips": "Ränta på ränta i 17 år på drygt 30 procent per år ger en mycket stor multippel."
+        },
+        {
+          "q": "Vilket påstående om förbehållen är äkta bokens anda?",
+          "alternativ": [
+            "Formeln slog index vartenda enskilt år",
+            "Småbolagseffekt, momentum-svagheter och kostnader gör verkligt resultat lägre än 30-procentssiffran",
+            "Backtesten genomfördes i Sverige",
+            "Indexjämförelsen är gjord utan utdelningar"
+          ],
+          "ratt": 1,
+          "tips": "Greenblatt räknar själv ner sin egen siffra — gör du inte det blir kursen farlig."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 9,
+      "title": "Varför den fungerar — ineffektivitet, medelvärden och tålamod",
+      "intro": "En publicerad formel som slår marknaden borde konkurreras bort. Greenblatts svar har två delar: marknaden är på kort sikt systematiskt irrationell, och nästan ingen orkar utnyttja det. Det är precis därför premien kan bestå.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ineffektivitetens källor. För det första Mr Markets humörsvängningar: glädje och panik flyttar priser långt ifrån värde, i båda riktningarna. För det andra försummelsen: formelns bolag är per definition det som just nu är ospännande — förbigångna branscher, dåligt täckta mellanbolag, skräprubriker. Ingen analysbyrå byggs på dem, ingen story som samlar publik. För det tredje strukturella tvång: fonder som måste rensa upp förlorare inför årsslut, indexregler som tvingar försäljning — de säljer inte för att affären blivit sämre utan av yttre skäl. Formeln köper mekaniskt det som andra säljer av icke-fundamentala skäl."
+        },
+        {
+          "type": "text",
+          "content": "Återgången till medel är formelns motvikt. En hög EBIT-avkastning betyder att driftens kassaflöke är billigt i förhållande till hela företagets pris — marknaden har historiskt tenderat att med tiden prissätta sådana kassaflöden rimligt, så länge vinsten är äkta. En hög ROIC betyder att bolaget bygger värde varje år medan du väntar. Dubbelmotorn: antingen rättar sig priset uppåt, eller växer det underliggande värdet — ofta båda samtidigt. Greenblatt sammanfattar värdeinvesteringen som att räkna ut vad något är värt och betala mycket mindre; formeln automatiserar bara den meningen. Med AKM1:s språk: V12 intäktsstabilitet och V07/V08-marginaler avgör om EBIT-avkastningen är på riktigt eller en fälla."
+        },
+        {
+          "type": "text",
+          "content": "Och här kommer nyckeln: tålamod är själva edgen. Eftersom fördelen kräver en 3–5-årig horisont konkurrerar väldigt få om den — institutioner mäts kvartalsvis och privatpersoner ger upp efter två dåliga år. Premien är ingen belöning för smart information; den är betalning för uthållighet. Det är också därför kursen kopplar tillbaka till Jason-bönen: metoden är enkel, men enkelhet utan uthållighet är bara en bra avsikt."
+        },
+        {
+          "type": "insikt",
+          "content": "Formelns edge är inte information — all data är offentlig och beräkningen går i kalkylblad. Edgen är beteende: att köpa det osympatiska, mekaniskt, och att inte sälja när det känns som sämst."
+        },
+        {
+          "type": "utmaning",
+          "content": "Testa tråkighetsprincipen: leta upp tre bolag med EV/EBIT under 6 och ROIC över 20 procent — via screening eller manuellt. För varje bolag: vad är osympatiskt med det just nu? Skriv en rad per bolag. Notera att själva osympatin ofta Är rabatten — du köper skräprubriken till bra bolagspris."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kan formelns fördel bestå trots att boken publicerat metoden?",
+          "alternativ": [
+            "Formeln bygger på hemlig data",
+            "Få investerare orkar följa den mekaniskt genom åratal av underpresterande",
+            "Den köper bara teknikbolag",
+            "Den fungerar enbart i lågräntelägen"
+          ],
+          "ratt": 1,
+          "tips": "Premien betalas för beteende, inte för information."
+        },
+        {
+          "q": "Vad driver återgången till medel för formelns bolag?",
+          "alternativ": [
+            "Centralsbankernas räntesänkningar",
+            "Att marknaden med tiden tenderar prissätta driftens verkliga kassaflöde — höga EBIT-avkastningar försvinner sällan gratis",
+            "Att bolagen alltid höjer utdelningen",
+            "Att större bolag köper upp dem"
+          ],
+          "ratt": 1,
+          "tips": "Pris och värde dras mot varandra över tid — vad är värdets motor under tiden?"
+        },
+        {
+          "q": "Vilken är formelns informations-edge?",
+          "alternativ": [
+            "Snabbare nyhetsflöde",
+            "Insiderinformation",
+            "Ingen — all data är offentlig; edgen ligger i disciplinen",
+            "Patent på algoritmen"
+          ],
+          "ratt": 2,
+          "tips": "Alla kan räkna måtten — fråga vad alla inte orkar göra."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 9,
+      "title": "Varför den är svår — kurvartik och psykologi",
+      "intro": "Här är bokens viktigaste kapitel i praktiken: formeln fungerar inte jämnt, och det är precis därför den fungerar. Kurvartiken under perioder är priset du betalar för premien — och de flesta betalar inte.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Greenblatts kärnpoäng, sammanfattad som hans eget mantra: formeln fungerar därför att den ibland inte fungerar. Om en enkel, publicerad formel alltid slog marknaden skulle kapital flytta in tills fördelen var borta — konkurrensen äter alla säkra kanter. Det som skyddar formelns premie är dess smärta: år av underpresterande, ibland två–tre i sträck. Under IT-bubblan underpresterade värdestrategier grovt medan bolag utan vinst steg — logiken var trasig, sade rubrikerna, och de som trodde på det lämnade precis före det årtionde då strategin betalade bäst. Buggen är featuren."
+        },
+        {
+          "type": "text",
+          "content": "De psykologiska fällorna är konkreta. Tracking error-regret: att se grannens teknikaktier dubblas medan dina tråkiga formelbolag står stilla — det bränns, även om portföljen mår bra. Förlustaversion vid enskilda positioner: formeln köper också bolag som fortsätter falla; hela poängen med 30 positioner är att ingen enskild katastrof får bära resultatet. Och den klassiska: att överge strategin precis vid bottnen, när nästa års premie är som störst. Greenblatts motgift är proceduren: besluta på förhand, skrivet, att utvärdera efter flera hela år — inte efter känslan."
+        },
+        {
+          "type": "text",
+          "content": "En ramsa att bära med dig: 30 positioner à ungefär 3,3 procent; varje år rullas portföljen; enstaka positioner kommer falla 30–50 procent och enstaka bolag kan gå omkull — det är budgeterat. Portföljen vinner på snittet av många mekaniska köp, inte på varje enskild affär. Med AKM1:s hygien: EV fångar skulden, men kolla ändå V10 skuldsättningsgrad på varje namn — hög belåning förvandlar ett billigt bolag till ett skört. Frågan du måste kunna svara på innan du startar: vad skillnaden är mellan ett dåligt år och en trasig logik — och vem avgör vilket det är?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "Underpresterande är inte bevis på att formeln slutat fungera — det är själva mekanismen som skapar premien. Skilj alltid på dålig period och trasig logik, och avgör skillnaden i förväg, i skrift."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt hoppa-av-kontrakt INNAN första köpet: vid vilken kombination av tid och underpresterande får du lämna formeln? Exempel: först efter tre hela år, OCH bara om logiken — bra bolag billigt — upphört att fungera. Sätt datum, skriv under, visa för någon. Lägg kontraktet framför nästa köpbeslut."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med att formeln fungerar därför att den ibland inte fungerar?",
+          "alternativ": [
+            "Att den är opålitlig och bör undvikas",
+            "Att dess dåliga perioder är skälet till att den inte konkurrerats bort — och därmed kan fortsätta fungera",
+            "Att den bara fungerar i börsfall",
+            "Att resultaten är slumpmässiga"
+          ],
+          "ratt": 1,
+          "tips": "Vad skulle hända med premien om en enkel formel alltid fungerade?"
+        },
+        {
+          "q": "Vad är den vanligaste orsaken till att privatpersoner misslyckas med formeln?",
+          "alternativ": [
+            "De äger för många bolag",
+            "De handlar för sällan",
+            "De använder fel valuta",
+            "De överger strategin efter ett–två dåliga år, precis när premien betalas"
+          ],
+          "ratt": 3,
+          "tips": "Problemet är sällan modellen — det är hållbarheten."
+        },
+        {
+          "q": "Vad är bästa skyddet mot kurvartik?",
+          "alternativ": [
+            "Daglig bevakning av nyheter",
+            "Stop-loss på varje position",
+            "Förbestämda regler och en 3–5-årig horisont, skrivna innan första köpet",
+            "Att dubbla insatsen efter förlust"
+          ],
+          "ratt": 2,
+          "tips": "Beslutet måste fattas när du är kall — innan det känns."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 9,
+      "title": "Praktiken — 30 positioner och årets hjul",
+      "intro": "Teorin blir pengar först när den körs mekaniskt. Här är Greenblatts driftsmanual: hur många bolag, hur ofta du köper, hur länge du håller — och hur svenska förhållanden som ISK och färre screenerar ändrar rutinen men inte logiken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Antal och takt. Greenblatt rekommenderar 20–30 positioner: färre ökar enkelbolagsrisken dramatiskt — formelns kraft ligger i att många mekaniska köp snittar ut premierna — medan fler tunnar ut vitsen med urvalet. Köp 5–7 nya positioner per kvartal; efter cirka ett år består portföljen av fulla 28–30 namn och hjulet snurrar vidare av sig själv. Varje position görs ungefär lika stor, omkring 3–3,5 procent — ingen position är din favorit, för favoriserande är exakt det formeln ska befria dig från. Håll varje position cirka tolv månader från köpet; sälj den om den ramlat ur toppen — men behåll den om den fortfarande rankas högt: regeln är mekanisk men inte idiotisk."
+        },
+        {
+          "type": "text",
+          "content": "Den amerikanska detaljen — sälj förlorare strax före årsskiftet, vinnare strax efter — handlar om USA:s kapitalvinstbeskattning: förluster realiseras för att motverka vinster inom samma taxeringsår. På svensk ISK eller kapitalförsäkring spelar realisationstidpunkten skattemässigt ingen roll, så regeln kan förenklas till tolv-månaders-mekanik. Svenska anpassningar i övrigt: universum är mindre och spreadarna bredare på Nasdaq Stockholm; en enkel hemskörning i kalkylblad (EBIT, EV, ROIC per bolag) fungerar utmärkt, och kombinerar du med screening kommer du långt. Två hygienregler: EV/EBIT lågt enbart på grund av gigantisk skuld är inte billigt — kontrollera V10 — och var misstänksam mot EBIT som svajar med V12-instabilitet."
+        },
+        {
+          "type": "text",
+          "content": "Kostnadsdisciplinen är del av avkastningen. Varje omläggning kostar courtage och spread, särskilt i mindre bolag — handla därför kvartalsvis i klump, använd limitordrar och lägg aldrig marknadsorder i tunna aktier. Förvänta dig att en del positioner faller hårt; det är processens natur, inte ett tecken på att maskinen gått sönder. Och bygg journalen från dag ett: datum, bolag, EV/EBIT, ROIC, rank, motivering på en rad. Journalen är ditt enda försvar mot att minnet skriver om historien när kurvartiken kommer — och din data för att utvärdera efter tre hela år, inte tre svängiga månader."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Årets hjul i praktiken\",\"rader\":[[\"Kvartal 1\",\"Screena universum → köp 5–7 nya topprankade\"],[\"Kvartal 2\",\"Köp 5–7 nya — rör inte de gamla\"],[\"Kvartal 3\",\"Köp 5–7 nya\"],[\"Kvartal 4\",\"Köp 5–7 nya → nu cirka 28 positioner\"],[\"Efter 12 mån per position\",\"Sälj — om den inte rankas i topp fortfarande\"],[\"År 2 och framåt\",\"Upprepa hjulet; utvärdera först efter flera hela år\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "insikt",
+          "content": "Formeln är en process, inte en lista. Listan byts ut varje år — processen är det enda som betalar. Bygg journalen kring processen, inte kring aktienamnen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ett portföljutkast på riktigt: kör din rankning från kapitel 5, välj ut 7 bolag och fördela 100 000 kronor ungefär lika (cirka 14 000 per position). Sätt datum för nästa tre kvartalsköp och skriv in EV/EBIT och ROIC per bolag i din journal. Nu har du en maskin — det enda som återstår är att inte stänga av den."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför rekommenderar Greenblatt 20–30 positioner?",
+          "alternativ": [
+            "För att efterlikna index exakt",
+            "För att courtaget blir lägre",
+            "För att diversifiera bort enkelbolagsrisk men ändå behålla formelns karaktär",
+            "Regelverket kräver det"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på skillnaden mot att äga tre bolag — och mot att äga fem hundra."
+        },
+        {
+          "q": "Regeln att sälja förlorare strax före årsskiftet kommer från amerikansk skatt. Vad gäller på svensk ISK?",
+          "alternativ": [
+            "Samma regel måste följas",
+            "Skatteregeln saknar betydelse — men tolv-månadersdisciplinen är värd att behålla för sin egen skull",
+            "Alla vinster ska säljas direkt",
+            "Förlorare får aldrig säljas"
+          ],
+          "ratt": 1,
+          "tips": "Skilj på skatteskäl och beteendemässiga skäl."
+        },
+        {
+          "q": "Vad är rimlig handelsdisciplin enligt kursen?",
+          "alternativ": [
+            "Marknadsorder i tunna aktier, ofta",
+            "Kvartalsvis handel med limitordrar — spread och courtage är verkliga kostnader",
+            "Dagliga justeringar av portföljen",
+            "Handla bara på rykten"
+          ],
+          "ratt": 1,
+          "tips": "Formeln är årlig i sitt inre men kvartalsvis i sitt utförande."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 9,
+      "title": "Greenblatts råd — index som baseline och 3–5 års tålamod",
+      "intro": "Bokens avslutning är en varning lika mycket som en manual. Greenblatt säger rakt ut: om du inte kan följa formeln i minst tre till fem år — köp lågkostnadsindexfonder i stället. Det är ingen fotnot; det är halva boken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Råden i fyra punkter. Ett: baselinen först — en billig indexfond är mätetal som allt annat måste slå efter avgift; börja aldrig en aktiv strategi utan den jämförelsen på plats. Två: tålamod — utvärdera inte strategin på månader eller ens ett år; mr Market avgör kort sikt, logiken avgör lång sikt. Tre: bind dig för 3–5 år — skriftligen, enligt kapitel 8. Fyra: förstå vad du äger — en mekanisk strategi kräver att du kan förklara varför den köper det den köper; annars överger du den vid första motgångarna. Med Greenblatts ord är hela hemligheten sju ord: bra bolag till reapris — resten är drift."
+        },
+        {
+          "type": "text",
+          "content": "Förväntansstyrningen är ärligare än rubrikerna. Greenblatt räknar själv med att verklig avkastning ligger väsentligt under backtestens 30,8 procent — kostnader, skatt och kapacitet äter av utfallet. Rimlig förhoppning: att slå index med någon procentenhet per år över en hel cykel — vilket låter futtigt men i kronor är enormt. Räkna i klartext: 100 000 kronor under 20 år. Vid 10 procent per år (indexfond): cirka 673 000 kronor. Vid 13 procent per år (formeln med marginal): cirka 1 152 000 kronor. Skillnaden — nästan en halv miljon — är premien för tålamod och mekanik, inte för genialitet."
+        },
+        {
+          "type": "text",
+          "content": "När passar formeln inte? Om du behöver pengarna inom tre år; om du inte står ut med två års underpresterande; om du tror att du kan förbättra formeln med diskretionära undantag — då indexera, helt seriöst. Och var ärlig med efterföljandet: replikationer efter 2004 visar fortsatt historisk premie för kombinationen billigt plus lönsamt, men lägre än 30-procentssiffran och periodvis svag. Det är okej. Det är precis så en riktig kant ser ut: kantingen betalas för tålamod, inte för mirakel. Återvänd nu till din gissning från kapitel 1 — hur många svenska aktiefonder slog sitt index efter avgift? Siffran du hittar är argumentet för att ens ha en process."
+        },
+        {
+          "type": "insikt",
+          "content": "Att indexera är inte att ge upp — det är Greenblatts eget råd till de flesta. Formeln är för dig som kan lova tre till fem år av mekanisk uthållighet; annars är indexfond din formel."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slå upp siffran från kapitel 1: andelen svenska aktiefonder som slog sitt jämförelseindex de senaste tio åren, efter avgift. Skriv en rad om vad den betyder för din strategi — och en rad om vilka två löften du ger din egen portfölj: baseline och horisont."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad rekommenderar Greenblatt den som inte kan eller vill binda sig för 3–5 år?",
+          "alternativ": [
+            "Lågkostnadsindexfonder",
+            "Daytrading med hävstång",
+            "Att köpa guld",
+            "En dyr aktivt förvaltad fond"
+          ],
+          "ratt": 0,
+          "tips": "Hans fallback är det enklaste och billigaste alternativet."
+        },
+        {
+          "q": "Vad är en rimlig förväntan enligt bokens anda?",
+          "alternativ": [
+            "30 procent per år, varje år",
+            "Aldrig några förluster",
+            "Fördubbling på fem år",
+            "Att slå index med någon procentenhet per år över en hel cykel — inte varje enskilt år"
+          ],
+          "ratt": 3,
+          "tips": "Backtestens toppsiffra är brutto, historisk och före verklighetsfriction."
+        },
+        {
+          "q": "100 000 kronor i 20 år: 13 procent mot 10 procent per år ger ungefär?",
+          "alternativ": [
+            "Samma slutvärde",
+            "Cirka 673 000 mot 630 000 kronor",
+            "Cirka 1 152 000 mot 673 000 kronor",
+            "Cirka 2 miljoner mot 1 miljon kronor"
+          ],
+          "ratt": 2,
+          "tips": "Några procentenheter per år blir enorm skillnad över 20 år med ränta på ränta."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 9,
+      "title": "Syntes — formeln i AKM1:s V-ramverk",
+      "intro": "Sista steget: översätt Greenblatt till AKM1-språk, se begränsningarna och ta examen. Magiska formeln är en komplett värdestrategi på två variabler — men den är en motor, inte en hel bil.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V-mappningen, rad för rad. Prissidan: V06-familjen (EV/EBITDA) är formelns hem — Greenblatt använder EV/EBIT, samma släkte; skillnaden är att hans EBIT ligger efter avskrivningar, vilket gör måttet aningen strängare. Kvalitetssidan: ROIC tillhör V09-familjen (ROE) — kusinen som inte kan blåsas upp med belåning. Stödvariabler: V10 skuldsättningsgrad som hygiencheck bakom EV; V12 intäktsstabilitet plus V07/V08-marginaler för att avgöra om EBIT är äkta; V14 varumärke, V15 nätverkseffekter och V17 avtal som förklaringar till varför en hög ROIC kan bestå. Formeln ber dig inte analysera allt detta — men AKM1 gör det: maskinen rankar, linserna förklarar."
+        },
+        {
+          "type": "text",
+          "content": "Begränsningarna, ärligt. Formeln har ingen tillväxtvariabel — V01 försäljningstillväxt och V02 ARR-tillväxt saknas helt; den köper det som ÄR billigt nu, inte det som blir billigt i morgon. Den har inget momentum-filter — den köper fallande knivar med berått mod och får dålig timing-perioder på köpet. Värderingen är en grov rank, inte en DCF; rimligt värde beräknas aldrig. Kapaciteten är liten i småbolag, och i Sverige är universum färre och spreadarna bredare. Moderna replikationer visar att premien för billigt plus lönsamt består historiskt — men lägre än 1988–2004 och periodvis svag, delvis eftersom publiceringen i sig konkurrerat bort de enklaste utfallen. Slutsats AKM1: använd formeln som baselinemotor och lägg V-linser ovanpå — inte tvärtom."
+        },
+        {
+          "type": "text",
+          "content": "Examen. Du äger boken om du kan: räkna EV i klartext; beräkna EBIT-avkastning och ROIC; ranka fem bolag; förklara varför 30 positioner; förklara varför formeln underpresterar periodvis utan att du säljer; och hålla indexfondens avkastning som baseline i varje utvärdering. Avsluta med Greenblatts egna sju ord — ett bra bolag till ett lågt pris — och påminn dig om att hela boken är en maskin för att genomföra den meningen mekaniskt, plus en varning om att nästan ingen orkar. Det är karaktären som skiljer formelns läsare från formelns kapitalister."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Greenblatt i AKM1-V\",\"rader\":[[\"Formelns mått\",\"AKM1-familj\",\"Notering\"],[\"EV/EBIT\",\"V06\",\"Greenblatt räknar EBIT-avkastning (EBIT/EV); V06 = EV/EBITDA är kusinen — före avskrivningar\"],[\"ROIC\",\"V09\",\"ROIC mäter driften oberoende av finansiering — ROE kan pudras med skuld\"],[\"Skuldkontroll\",\"V10\",\"EV inkluderar skuld — men kolla alltid graden\"],[\"EBIT-kvalitet\",\"V12 + V07/V08\",\"Är vinsten stabil, äkta och buren av marginaler?\"],[\"Bestående fördel\",\"V14/V15/V17\",\"Varumärke, nätverk och avtal förklarar ihållande hög ROIC\"],[\"Saknas helt\",\"V01/V02 + momentum\",\"Ingen tillväxt- eller trendkomponent — formeln köper nuet\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "insikt",
+          "content": "Boken lär två saker: en motor — ranka billigt plus bra — och en karaktär — stanna kvar. Motorn kan du bygga om i ett kalkylblad. Karaktären måste du äga."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutuppgift: välj ETT bolag. Beräkna EV, EV/EBIT, EBIT-avkastning och ROIC. Jämför mot två branskkollegor och ranka trion. Skriv tre meningar: Är det billigt (V06-familjen)? Är det bra (V09-familjen/ROIC)? Vad skulle få dig att hoppa av? Spara i journalen — det är ditt BOKMASTER-bevis."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Till vilken AKM1-familj hör formelns prissida?",
+          "alternativ": [
+            "V04 P/S",
+            "V05 P/B",
+            "V06 EV/EBITDA-familjen — Greenblatt använder EV/EBIT, samma släkte",
+            "V13 Patent och IP"
+          ],
+          "ratt": 2,
+          "tips": "Prissidan mäter vad driftens vinst kostar i multipel — vilken familj gör det?"
+        },
+        {
+          "q": "Vilka dimensioner saknar formeln helt?",
+          "alternativ": [
+            "Pris och lönsamhet",
+            "Tillväxt (V01/V02) och momentum",
+            "Skulder",
+            "Rankning"
+          ],
+          "ratt": 1,
+          "tips": "Formeln köper det som är billigt nu — inte det som rör sig snabbast."
+        },
+        {
+          "q": "Vad är skillnaden mellan ROIC och ROE?",
+          "alternativ": [
+            "Ingen skillnad i praktiken",
+            "ROIC mäter driften oberoende av finansiering — ROE kan blåsas upp med belåning",
+            "ROE är alltid det ärligare måttet",
+            "ROIC fungerar bara för banker"
+          ],
+          "ratt": 1,
+          "tips": "Ett av måtten kan pudras med skuld — vilket?"
+        }
+      ]
+    }
+  ]
+}

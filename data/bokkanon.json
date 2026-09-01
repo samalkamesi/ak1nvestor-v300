@@ -323,7 +323,7 @@
         "Aktivitet är fienden: få affärer med hög träffsäkerhet slår ständig handel"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-014",
@@ -447,7 +447,7 @@
         "Enkel och disciplinerad slår komplex och känslomässig över tid"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-019",
@@ -497,7 +497,7 @@
         "Decentraliserad verksamhet med centraliserad kapitalallokering är ett bevisat framgångsmönster"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-021",

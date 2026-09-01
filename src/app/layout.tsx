@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/ak1a/theme-provider";
 import { Ak1aStoreProvider } from "@/components/ak1a/store-provider";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { ChatWidget } from "@/components/ak1a/chat-widget";
+import { ShortSeller } from "@/components/ak1a/short-seller";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -148,6 +149,7 @@ export default function RootLayout({
             {children}
             <Toaster />
             <ChatWidget />
+            <ShortSeller />
           </Ak1aStoreProvider>
         </ThemeProvider>
       </body>

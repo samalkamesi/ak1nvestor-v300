@@ -3564,3 +3564,23 @@ Work Log:
   över familjer, inte celler
 - Manifestet (kap 20): "vi är kontroversiella — och det är okej"
 - 252 kurser · 4710 quiz · 741 sidor
+
+---
+Task ID: 124-FLAGGSKEPP-AKM1
+Agent: AKM1-agent ✓ (Soros + Staley kör)
+Task: AKM1 — Den Kontroversiella Modellen: SUPERDJUP — EKOSYSTEM-flaggskepp #2
+
+Work Log:
+- 20 kapitel, 60 quiz, kategori EKOSYSTEM — alla 20 V-nummer superdjupt:
+  formel + 0/3/5-trösklar + RÄTTVIS mainstream-redogörelse + AKM1:s
+  avvikelse med motivering + kontroversen i klartext + "när invändaren
+  har rätt"
+- Stålmanade invändningar (5 st i kap 19) + falsifierbarhetsvillkor +
+  bekännelsen: pedagogiskt struktureringsverktyg, inte bevisad alfa-källa
+- V13-V15 som "oregistrerbar opinionsdata" besvaras; V19 emission-risk
+  står på starkast akademisk mark (Loughran-Ritter, Baker-Wurgler)
+- BÅDA flaggskeppen nu först i läroplanens Bokmaster-nivå
+- 253 kurser · 4770 quiz · 742 sidor
+
+Stage Summary:
+- Kontrovers-direktivet fullt implementerat i ekosystemets kärna

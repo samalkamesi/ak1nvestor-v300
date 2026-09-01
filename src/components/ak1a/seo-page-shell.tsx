@@ -38,7 +38,8 @@ export function SeoPageShell({
           ))}
         </nav>
           <div className="ml-auto flex items-center gap-3 text-sm">
-            <Link href="/laroplan" className="font-semibold text-gold">Läroplan</Link>
+            <Link href="/diagnos" className="font-semibold text-gold">🧠 AI-Diagnos</Link>
+            <Link href="/laroplan" className="text-gold">Läroplan</Link>
             <Link href="/kurser" className="text-muted-foreground hover:text-foreground">Kurser</Link>
             <Link href="/blogg" className="text-muted-foreground hover:text-foreground">Blogg</Link>
             <Link href="/logga-in" className="rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90">Logga in</Link>

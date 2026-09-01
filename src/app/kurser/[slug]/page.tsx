@@ -6,6 +6,7 @@ import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/se
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 import { KursQuiz } from "@/components/ak1a/kurs-quiz";
+import { LasProgress, KapitelBadge, InsiktPuls, VisaMetafor } from "@/components/ak1a/kurs-visuellt";
 
 export const dynamic = "force-static";
 
@@ -39,6 +40,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       breadcrumb={[{ name: "Kurser", href: "/kurser" }, { name: course.title }]}
     >
       <JsonLd data={courseJsonLd(course)} />
+      <LasProgress />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Kurser", path: "/kurser" },
@@ -131,9 +133,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
             return (
               <article key={ch.num} id={`kap-${ch.num}`} className="scroll-mt-24 rounded-xl border border-gold/20 bg-card p-5">
                 <div className="flex items-start gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold font-serif text-base font-bold text-primary-foreground">
-                    {ch.num}
-                  </span>
+                  <KapitelBadge num={ch.num} total={course.chapters.length} aktiv />
                   <div className="min-w-0 flex-1">
                     <h3 className="font-serif text-xl font-semibold">{ch.title}</h3>
                     <p className="mt-0.5 text-[11px] uppercase tracking-wide text-muted-foreground">
@@ -148,10 +148,13 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                 )}
                 {insikt && (
                   <div className="mt-3 rounded-lg border border-gold/40 bg-gold/10 px-4 py-3">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gold">◆ Nyckelinsikt</p>
+                    <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gold"><InsiktPuls /> Nyckelinsikt</p>
                     <p className="mt-1 text-sm font-medium leading-relaxed">{insikt}.</p>
                   </div>
                 )}
+                {(slug === "the-intelligent-investor" && ch.num === 2) && <VisaMetafor typ="mr-market" />}
+                {(slug === "the-intelligent-investor" && ch.num === 3) && <VisaMetafor typ="bro" />}
+                {(slug === "the-intelligent-investor" && ch.num === 8) && <VisaMetafor typ="skala" />}
                 {insiktBlock && (
                   <div className="mt-3 rounded-lg border-2 border-gold bg-gold/15 px-4 py-3">
                     <p className="text-[10px] font-bold uppercase tracking-widest text-gold">◆ 10x-insikt</p>

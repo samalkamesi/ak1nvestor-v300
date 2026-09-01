@@ -1,32 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 /**
  * TEMAVÄXLARE — mörkt läge med ett klick, på alla sidor.
- * Reader-vänligt nattläge: varm mörk bas + samma guldaccent.
+ * Ikonen väljs via CSS (dark:variant) så SSR-markup är identisk med klienten —
+ * ingen hydration-mismatch, knappen syns direkt även utan JS.
  */
 export function TemaVaxlare() {
-  const { theme, setTheme } = useTheme();
-  const [fardig, setFardig] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
 
-  useEffect(() => setFardig(true), []);
-
-  // Placeholder tills klienten hydrerats (undvik SSR/HTML-mismatch)
-  if (!fardig) {
-    return <span className="inline-block h-8 w-8" aria-hidden />;
-  }
-
-  const morkt = theme === "dark";
   return (
     <button
-      onClick={() => setTheme(morkt ? "light" : "dark")}
-      aria-label={morkt ? "Växla till ljust läge" : "Växla till mörkt läge"}
-      title={morkt ? "Ljust läge" : "Mörkt läge"}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      aria-label="Växla mellan ljust och mörkt läge"
+      title="Mörkt/ljust läge"
       className="flex h-8 w-8 items-center justify-center rounded-full border border-gold/40 text-sm transition-colors hover:bg-gold/10"
     >
-      {morkt ? "☀️" : "🌙"}
+      <span className="dark:hidden">🌙</span>
+      <span className="hidden dark:inline">☀️</span>
     </button>
   );
 }

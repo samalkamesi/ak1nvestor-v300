@@ -233,36 +233,34 @@ export function ChatWidget() {
       addXP(5);
       xpFortjanat = 5;
     }
-    setSrResultat((r) => ({
-      svara: r.svara + (kvalitet === 2 ? 1 : 0),
-      bra: r.bra + (kvalitet === 4 ? 1 : 0),
-      latta: r.latta + (kvalitet === 5 ? 1 : 0),
-      xp: r.xp + xpFortjanat,
-    }));
+    const ny = {
+      svara: srResultat.svara + (kvalitet === 2 ? 1 : 0),
+      bra: srResultat.bra + (kvalitet === 4 ? 1 : 0),
+      latta: srResultat.latta + (kvalitet === 5 ? 1 : 0),
+      xp: srResultat.xp + xpFortjanat,
+    };
+    setSrResultat(ny);
 
     if (srIndex + 1 >= srKo.length) {
       // Session klar → sammanfattning
       setSrAktiv(false);
       setSrKo([]);
-      setSrResultat((r) => {
-        const total = r.svara + r.bra + r.latta;
-        const st = srStatistik();
-        setMeddelanden((p) => [...p, {
-          fran: "ai",
-          ikon: "🏆",
-          text: `Repetitionssession klar! 🏆\n\n${total} kort repeterade: ${r.latta} ⚡ lätta · ${r.bra} ✅ bra · ${r.svara} 🔁 svåra (kommer igen imorgon).\n+${r.xp} XP förtjänade.\n\nTotalt: ${st.beharskade}/${st.totalt} kort i långt minne. Glömskekurvan bestämmer när nästa kort dyker upp — jag påminner dig här.`,
-          handlings: [
-            { text: "Fortsätt lära", lank: "/laroplan", ikon: "🗺️", beskrivning: "Nästa steg i utbildningen" },
-            { text: "Testa mig på en kurs", lank: "/kurser", ikon: "🧠", beskrivning: "Quiz: +10 XP per rätt svar" },
-          ],
-        }]);
-        return r;
-      });
+      const total = ny.svara + ny.bra + ny.latta;
+      const st = srStatistik();
+      setMeddelanden((p) => [...p, {
+        fran: "ai",
+        ikon: "🏆",
+        text: `Repetitionssession klar! 🏆\n\n${total} kort repeterade: ${ny.latta} ⚡ lätta · ${ny.bra} ✅ bra · ${ny.svara} 🔁 svåra (kommer igen imorgon).\n+${ny.xp} XP förtjänade.\n\nTotalt: ${st.beharskade}/${st.totalt} kort i långt minne. Glömskekurvan bestämmer när nästa kort dyker upp — jag påminner dig här.`,
+        handlings: [
+          { text: "Fortsätt lära", lank: "/laroplan", ikon: "🗺️", beskrivning: "Nästa steg i utbildningen" },
+          { text: "Testa mig på en kurs", lank: "/kurser", ikon: "🧠", beskrivning: "Quiz: +10 XP per rätt svar" },
+        ],
+      }]);
     } else {
       setSrIndex((i) => i + 1);
       setSrVisaSvar(false);
     }
-  }, [srKo, srIndex]);
+  }, [srKo, srIndex, srResultat]);
 
   // Nollställ ev. SR-läge när chatten stängs
   useEffect(() => {

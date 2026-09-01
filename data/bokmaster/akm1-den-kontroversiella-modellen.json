@@ -254,6 +254,298 @@
           "tips": "Kom ihåg skillnaden mellan att mäta en egenskap och att rekommendera ett köp till vilket pris som helst."
         }
       ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "V03: Intäktsdiversifiering — koncentrationsriskens pris",
+      "intro": "Ett bolag kan växa tjugo procent om året i fem år och ändå vara en enda kund bort från kollaps. V03 fångar det som tillväxtsiffran döljer: hur bred intäktsbasen faktiskt är. Här möter AKM1 en oväntad motståndare — inte akademikern som föraktar mjukdata, utan den som kan visa att diversifierade bolag historiskt handlas med rabatt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V03 Intäktsdiversifiering — definition och poängsättning. Variabeln mäter hur intäkterna är fördelade över kunder, segment och geografier. Det kvantitativa kärnverktyget är Herfindahl-Hirschman-index, HHI, som beräknas som summan av kvadraterna på varje kunds andel av intäkterna: HHI = Σ (andel i)². Med en enda kund på 100 procent blir HHI 1,0; med tio lika stora kunder 0,10. Praxis från konkurrensrätten används som riktmärke: under 0,15 är okoncentrerat, över 0,25 högt koncentrerat — men för kundintäkter är AKM1 strängare, för en toppkund på 30 procent är redan ett stycke utanför ditt kontroll. Trösklar: 0 poäng när största kunden överstiger 50 procent av intäkterna, eller när en enda kunds försvinnande är en existentiell händelse; 3 poäng när största kunden ligger runt 20–30 procent och de tio största under hälften av intäkterna; 5 poäng när största kunden är under 10 procent, inget segment överstiger 40 procent och HHI ligger under 0,15. Segment- och geografidimensionerna poängsätts i andra hand — ett bolag kan ha hundra kunder men en enda produkt och en enda marknad, och det är diversifiering på pappret bara."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger — och här kommer motgången som få förväntar sig. Inom corporate finance är det väletablerat att diversifierade konglomerat handlas med rabatt mot summan av sina delar: Berger och Ofek (1995) dokumenterade konglomeratrabatten — bolag som verkar i många branscher tenderar att värderas lägre än fokuserade jämförelsebolag, och senare forskning har kopplat diversifiering till lägre kapitalproduktivitet och värdeförstörande empire building. Strategilitteraturen (Porter med flera) har i decennier hävdat att fokus slår bredd. Markowitz diversifiering — den helgonförklarade sorten — gäller dessutom portföljer, inte enskilda bolags intäktsströmmar; den säger ingenting om huruvida ett bolag med en kund är riskabelt. Sammanfattat: den akademiska huvudfåran är minst sagt ljummen till idén att diversifiering i sig är en dygd på bolagsnivå."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför. Invändningen i klartext: ni belönar diversifiering trots att marknaden historiskt rabatterat diversifierade bolag — diversifiering är värdedödande, så varför ger den poäng? Vårt svar: V03 belönar inte konglomeratbildning — den belönar kundbasens bredd, vilket är en helt annan axel. Konglomeratrabatten handlar om att äga olika verksamheter man inte förstår och inte kan styra; kundkoncentration handlar om förhandlingsmakt och överlevnad. Ett mjukvarubolag med 4 000 kunder inom samma produkt har perfekt V03-poäng trots total produktfokus — det är precis den kombinationen, fokus i erbjudandet och bredd i kundbasen, som AKM1 söker. Det finns också ett rent prognosmässigt skäl: ju bredare intäktsbas, desto smalare konfidensintervall kring nästa års intäkt, desto mer är era andra poäng värda. En 5:a på ARR-tillväxt hos ett bolag med en kund på 60 procent av intäkterna är inte en 5:a — det är en option på ett avtalsförnyelse."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetsredovisningen. Det empiriska stödet för just kundkoncentration som prediktor är tunnare än för moat-liknande faktorer: forskning finns i redovisningslitteraturen om kundkoncentration som riskfaktor, men det är inte en etablerad prissatt faktor i Fama-French-traditionen. V03 är med andra ord ett medvetet trots-val — vi håller den med oss för att den är logiskt sammanhängande (koncentration är en diskret, identifierbar risk) och pedagogiskt nödvändig (den hindrar eleven från att stirra sig blind på tillväxttal), inte för att en decilstudie visar excess avkastning. En CFA får point för det. Vårt motargument: den som vägrar använda ett tänkbart riskmått för att det saknar faktorlitteratur har en märkligt avgränsad världsbild — risk var risk innan den blev en regressionskoefficient."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V03 Intäktsdiversifiering — formel, trösklar, mainstream\",\"rader\":[[\"Mått\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"Kundkoncentration\",\"HHI = Σ (kunds intäktsandel i kvadrat)\",\"Toppkund > 50 %\",\"Toppkund 20–30 %, topp-10 < 50 %\",\"Toppkund < 10 %, HHI < 0,15\",\"Konglomeratrabatt (Berger-Ofek 1995): diversifierade bolag värderas lägre\"],[\"Segment- och geografibredd\",\"Andel största segment resp. största land\",\"Ett segment är allt\",\"Största segment < 60 %\",\"Största segment < 40 %, flera länder\",\"Porter och fokus-skolan: fokus slår bredd på verksamhetsnivå\"],[\"AKM1:s hållning\",\"Bredd i kundbas med fokus i erbjudande\",\"\",\"\",\"\",\"Markowitz-diversifiering gäller portföljer — inte intäktsströmmar i ett bolag\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan V03 ställer är inte hur många produkter bolaget har utan hur många som måste säga nej innan intäkten försvinner. Konglomeratrabatten bestraffar bolag som gör allt — V03 bestraffar bolag som beror av någon."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta upp årsredovisningen för ett bolag du följer. Hitta noten om intäkter per segment och eventuell upplysning om största kunder (i Sverige ofta under riskavsnittet eller i noterna). Beräkna eller uppskatta HHI, sätt V03-poäng och skriv motiveringen i en mening. Om största kund inte redovisas — poängsätt ärligt baserat på segmentens storlek och notera osäkerheten."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Fyra kunder med intäktsandelarna 40, 30, 20 och 10 procent — vad blir HHI och vad tyder det på?",
+          "alternativ": [
+            "HHI = 0,10 — perfekt diversifierat, 5 poäng",
+            "HHI = 0,30 — högt koncentrerat, svag poäng; största kunden på 40 procent är dessutom nära ensamkundsrisk",
+            "HHI = 1,0 — maximikoncentration, 0 poäng",
+            "HHI kan inte beräknas utan kundernas absoluta intäkter i kronor"
+          ],
+          "ratt": 1,
+          "tips": "Kvadrera andelarna och summera: 0,16 + 0,09 + 0,04 + 0,01 — och jämför största andelen mot trösklarna också."
+        },
+        {
+          "q": "Hur svarar AKM1 på konglomeratrabatt-invändningen (att diversifierade bolag värderas lägre)?",
+          "alternativ": [
+            "V03 belönar bredd i kundbasen, inte bredd i verksamheter — fokus i erbjudandet med många kunder ger hög poäng",
+            "AKM1 håller med och drar av poäng för alla bolag med fler än en produkt",
+            "Konglomeratrabatten är en myt som aldrig studerats",
+            "V03 gäller bara multinationella bolag"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på skillnaden mellan att sälja många olika saker och att sälja en sak till många."
+        },
+        {
+          "q": "Vad är kursens ärliga hållning till bevisläget för V03?",
+          "alternativ": [
+            "Det är en etablerad prissatt faktor i femfaktormodellen",
+            "Det saknas stark decilstudie — variabeln hålls för logik och pedagogik, inte för bevisad excess avkastning",
+            "Bevisen kommer enbart från O'Shaughnessys deciler",
+            "Damodaran har bevisat att kundkoncentration saknar betydelse"
+          ],
+          "ratt": 1,
+          "tips": "Flera AKM1-variabler har svagt direkt empiriskt stöd — kursen säger det rakt ut när det gäller."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "V04: P/S — värderingens mest missbrukade nyckeltal",
+      "intro": "Inget nyckeltal har skapat så mycket förmögenhet och så mycket ruin som pris-till-försäljning. O'Shaughnessys deciler visade att lågt P/S var den mest lönsamma enkla värderingsregeln han testade — och Damodaran har samtidigt varnat hårt för det när det används blint. AKM1 behåller det, men som poängintervall i sammanhang, aldrig som enskild screen. Här är hela striden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V04 P/S — definition och poängsättning. Formeln: P/S = marknadsvärde dividerat med årlig nettoomsättning, eller per aktie: aktiekurs dividerat med omsättning per aktie. Trösklar (riktvärden, sektornjusterade): 0 poäng vid P/S över 10 — då pratar vi inte värdering utan prissatt förväntan på framtida världsdominans; 3 poäng vid cirka 2–5; 5 poäng under 1,5. Två villkor hänger alltid med och gör V04 mer än en enkellookup. För det första sektorn: ett P/S på 0,5 är normalt för dagligvaruhandel med bruttomarginal på 25 procent och abnormt för mjukvara med 80; trösklarna skalas mot sektorns normaler. För det andra marginalen, vilket är hela Damodarans poäng: P/S är en intäktsmultipel men värde skapas i marginalen, så samma P/S betyder helt olika värde i ett bolag som behåller 8 procent av varje intäktskrona jämfört med ett som behåller 60. I AKM1 diskas P/S-poängen därför av V07 — ett lågt P/S med låg bruttomarginal kan aldrig bli en äkta 5:a."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger — två giganter i tusch. James O'Shaughnessy delade i What Works on Wall Street aktiemarknaden i deciler efter P/S och fann att den lägsta decilen historiskt gav den bästa långsiktiga avkastningen bland de enkla värderingsmåtten — och att den högsta decilen var ren katastrof, ett svart hål dit avkastning försvinner. Hans Cornerstone Growth-strategi kombinerade lågt P/S med tillväxt och köpdisciplin och slog index över långa perioder. Men — och detta är viktigt att återge rätt — de lägsta P/S-decilernas genomsnitt drogs upp av ett fåtal extremvinnare; medianbolaget var sämre än genomsnittet, och strategin genomled långa torpperioder. Aswath Damodaran, värderingsdoktrinens främsta röst, har varit den tydligaste varningsklockan: P/S utan marginalkontext är bland de farligaste multiplarna, eftersom intäkter kan köpas med förluster — lönsamma bolag förtjänar betydligt högre P/S än olönsamma, och att jämföra ett lågmarginalbolags P/S med ett högmarginalbolags är att jämföra äpplen med bilar. Graham använde aldrig P/S som kärnmått — hans verktyg var P/E, P/B och substansvärde (net-nets)."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför — kontroversen i klartext. Invändningen: om O'Shaughnessy visade att lågt P/S fungerar, varför gör ni om en bevisad screen till ett mjukt poängintervall? Ni har tagit en fungerande regel och förstört den med skönsvärde. Vårt svar: vi har behållit dess kärna och avsagt oss dess garantier. En enskild screen är ett snett verktyg i en utbildningsmodell av tre skäl. Ett: decilresultaten är portföljresultat — bredd av hundratals aktier, där medelvärden bärs av svansvinnare; den enskilda eleven köper enskilda bolag och möter medianen, inte medelvärdet, och medianbolaget i lägsta P/S-decilen var ofta ett förfallande företag med goda skäl till sitt låga pris. Två: P/S utan marginal är meningslöst, vilket Damodaran — mainstream själv — betonar; en poängmodell kan faktorisera marginalen (via V07), en mono-screen kan inte. Tre: AKM1-poängen är ett intervall med motivering som sedan prissätts av marginal of safety — det bevarar värderingsdisciplinen utan att låtsas att en multipel är hela sanningen. Vi konverterar en bevisad portföljregel till en pedagogisk komponent och säger ärligt att konverteringen kostar: den kvantitativa garantin."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt — ärlighetsredovisningen. Om AKM1 vore en systematisk strategi vore mono-screenen bättre: replikerbar, backtestbar, fri från bedömningsfriktion. Poängintervallets fördelar — kontext, marginalkoppling, sektorjustering — är exakt dess svaghet: det ger analytikern frihetsgrader, och frihetsgrader är där bias bor. Därför kräver AKM1 att varje V04-poäng dokumenteras med tre tal: P/S-talet, sektorns median-P/S och bolagets bruttomarginal. Utan de tre talen är poängen ogiltig. Det är ingen perfekt lösning på skönsvärdet — det är en disciplin som gör biasen synlig och granskningsbar. Och för helheten: hög V04-poäng är värdelös om inte V01/V02 (tillväxt) och V13–V15 (moat) kan förklara varför intäkterna förtjänar sin placering. Billiga intäkter utan förklaring är en value trap i vardande."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V04 P/S — formel, trösklar, mainstream\",\"rader\":[[\"Mått\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"P/S\",\"Marknadsvärde / nettoomsättning\",\"P/S > 10\",\"P/S 2–5\",\"P/S < 1,5 (sektornjusterat)\",\"O'Shaughnessy: lägsta decilen bäst, högsta decilen svart hål — men portföljresultat med svansvinnare\"],[\"Marginalkontroll\",\"P/S läst mot bruttomarginal (V07)\",\"Högt P/S med låg bruttomarginal\",\"\",\"Lågt P/S med hög bruttomarginal\",\"Damodaran: P/S utan marginalkontext är farligt — intäkter kan köpas med förluster\"],[\"AKM1:s regel\",\"Tre tal krävs: P/S, sektormedian, bruttomarginal\",\"\",\"\",\"\",\"Graham använde P/E, P/B och substansvärde — aldrig P/S som kärnmått\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du kan inte äta intäkter. P/S är en måttstock på vad marknaden betalar per intäktskrona — men värdet bor i hur många öre av den kronan som stannar kvar. Läs alltid V04 genom V07, annars läser du inte alls."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta tre bolag i olika branscher (exempelvis dagligvaruhandel, industri, mjukvara) och räkna ut deras P/S. Sätt provisorisk V04-poäng med trösklarna, läs sedan deras bruttomarginaler och justera. Var hamnade dagligvaruhandeln kontra mjukvaran — och vad händer med poängen när marginalen läggs in i läsningen?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är ett P/S på 0,8 inte automatiskt 5 poäng?",
+          "alternativ": [
+            "För att P/S under 1,0 är förbjudet enligt Graham",
+            "För att P/S måste läsas mot sektorns normal och bruttomarginalen — lågt P/S med tioprocents bruttomarginal är ofta en value trap",
+            "För att kursen kräver P/S exakt 1,5 för högsta poäng",
+            "För att alla bolag med P/S under 1 har hög skuldsättning"
+          ],
+          "ratt": 1,
+          "tips": "Vad är en intäktskrona värd om bara några öre stannar i bolaget — och vad betalar marknaden normalt för sådana kronor?"
+        },
+        {
+          "q": "Vad är den ärliga kostnaden när AKM1 gör om O'Shaughnessys bevisade lågt-P/S-screen till ett poängintervall?",
+          "alternativ": [
+            "Ingen — resultaten är identiska",
+            "Frihetsgraderna ökar: analytikern kan rationalisera, och den kvantitativa replikerbarheten och garantin försvinner",
+            "Beräkningen blir dyrare",
+            "P/S blir ogiltigt som mått i alla sammanhang"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan en mekanisk regel ge dig som en motiverad bedömning inte kan — och tvärtom?"
+        },
+        {
+          "q": "Vilka tre tal kräver AKM1 för att en V04-poäng ska vara giltig?",
+          "alternativ": [
+            "P/E, P/B och utdelning",
+            "P/S-talet, sektorns median-P/S och bolagets bruttomarginal",
+            "Kurs, volym och beta",
+            "EBITDA, capex och rörelsekapital"
+          ],
+          "ratt": 1,
+          "tips": "Tre tal som tillsammans fångar multipeln, kontexten och marginalen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "V05: P/B — Grahams gamla kompass i en ny värld",
+      "intro": "Pris-till-bokvärde var Grahams hemmaplan och blev sedan hjärtat i Fama-French värdefaktor — bokvärde-till-pris är bokstaven H i HML. Sedan kom återköp, negativa eget kapital och mjukvaruekonomi, och måttet tappade greppet. AKM1 behåller det med förbehåll. Detta kapitel handlar om när en klassiker fortfarande fungerar — och om att ärligen erkänna när den inte gör det.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V05 P/B — definition och poängsättning. Formeln: P/B = marknadsvärde dividerat med bokfört eget kapital, eller aktiekurs dividerat med eget kapital per aktie. Trösklar: 0 poäng vid P/B över 8, eller negativt eget kapital utan godtagbar förklaring; 3 poäng vid cirka 3–4; 5 poäng under 1,5. Sektorsjustering är här inte tillåten som undantag — den är obligatorisk del av poängen: för banker och andra kapitalintensiva verksamheter är P/B under 1 en rimlig nivå för högsta poäng, medan ett bolag med negativt eget kapital orsakat av generationer av återköp kan vara fundamentalt friskt ändå — poängsätt då med förklaring snarare än mekaniskt noll. Det är själva definitionen av en variabel som kräver omdöme: trösklarna är riktvärden och varje avvikelse dokumenteras."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger. Graham gav den defensive investeraren hårda regler i The Intelligent Investor: pris inte mer än 1,5 gånger bokvärdet — eller, som komprommissregel, produkten av P/E och P/B högst 22,5 — och hans djupvärde, net-nets, köptes under två tredjedelar av rörelsekapital minus samtliga skulder. Fama och French (1992, 1993) gjorde sedan bokvärde-till-pris, alltså inverterat P/B, till kärnan i värdefaktorn HML: aktier med högt förhållande mellan bokvärde och pris överpresterade historiskt aktier med lågt, och det var en av de mest robusta tvärsnittsbilderna i finansforskningen. Men mainstream har också levererat motboken: sedan mitten av 1990-talet och särskilt efter 2007 har värdefaktorns förmåga varit svag, och i Fama-French femfaktormodell (2015) blir HML i princip redundant när lönsamhets- och investeringsfaktorerna (RMW och CMA) tas med. Damodaran tillägger det praktiska problemet: återköp krymper det bokförda egna kapitalet, vilket blåser upp P/B utan att något värdeskapande hänt — måttet blir meningslöst för bolag med stort immateriellt innehåll eller lång återköpshistorik."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför. Invändningen i klartext: P/B är en fossilfaktor — eran av bokvärdesbaserad värdering är över, HML är redundant i ert eget referensverk, och balansräkningen fångar inte mjukvaran, varumärket eller plattformen. Varför behålla den? Vårt svar har tre ben. Ett: för en betydande del av marknaden — banker, försäkringsbolag, fastighetsbolag, kapitalintensiv industri — är bokförda tillgångar fortfarande en reell proxy för substans, och där är P/B bland de mest ärliga måtten; att slopa V05 helt skulle göra AKM1 blind för en hel bolagsklass. Två: värdefaktorn har haft torperioder förut och kommit tillbaka; femfaktormodellen förklarar avkastning tvärsnittsmässigt men förklarar inte bort att billiga aktier historiskt haft fundamentalsäkrare utfall — marginal of safety-tänkandet är bredare än faktorpremier. Tre: variabeln tvingar eleven att öppna balansräkningen och fråga vad som faktiskt står där — och när svaret är ingenting (immateriella rättigheter inte bokförda, eget kapital uppköpt) är den insikten i sig poängvärd."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt. För mjukvarubolag, konsultbolag och varje verksamhet där värdet sitter i medarbetare, data och varumärke är P/B i princip brus — och AKM1 ska inte låtsas annorlunda. Därför denna praxis: i sådana bolag kan V05 aldrig vara en dragningspoäng (en 0:a i P/B för ett molnbolag med P/B 12 ska aldrig fälla totalbilden ensam), utan den dokumenterar avståndet mellan bokfört och ekonomiskt värde — information som åtminstone gör eleven medveten om hur mycket som är osynligt på balansräkningen och måste motverkas av moat-poängen V13–V15. Notera symmetrin med V04: där var risken att läsa multipeln utan marginalen; här är risken att läsa substansen utan immateriellt. V05 är modellens mest kontextberoende värderingsvariabel — och den enda där en poängavsikt kan vara helt ärlig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V05 P/B — formel, trösklar, mainstream\",\"rader\":[[\"Mått\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"P/B\",\"Marknadsvärde / bokfört eget kapital\",\"P/B > 8 eller negativt EK utan förklaring\",\"P/B 3–4\",\"P/B < 1,5 (banker: under 1)\",\"Graham: P/B under 1,5 eller P/E × P/B högst 22,5 för den defensive; net-nets djupt under rörelsekapital\"],[\"Värdefaktorn\",\"B/M — inverterat P/B\",\"\",\"\",\"\",\"Fama-French 1992/93: HML — högt B/M överpresterade; i femfaktormodellen 2015 i princip redundant mot RMW och CMA\"],[\"Svagheten\",\"Bokföring fångar inte immateriellt\",\"\",\"\",\"\",\"Damodaran: återköp krymper eget kapital och blåser upp P/B utan värdeskapande\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "P/B mäter avståndet mellan vad världen betalar och vad bokföringen erkänner. Ibland är avståndet en rabatt — Graham-mark. Ibland är det ett mått på allt bokföringen aldrig kommer att förstå. Uppgiften är att veta vilken av de två du ser."
+        },
+        {
+          "type": "utmaning",
+          "content": "Jämför en bank och ett mjukvarubolag. Räkna P/B för båda, sätt poäng efter trösklarna och skriv sedan en mening om varför måttet fungerar för det ena och inte för det andra. Fråga dig: vad står på bankens balansräkning som mjukvarubolagets saknar — och vart har mjukvarubolagets värde tagit vägen i bokföringen?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är korrekt om Graham och P/B?",
+          "alternativ": [
+            "Graham avrådde från P/B och använde bara kassaflödesmultiplar",
+            "Graham gav den defensive investeraren regeln P/B högst 1,5 (eller P/E × P/B högst 22,5) och köpte net-nets djupt under substans",
+            "Graham ansåg att P/B bara fungerar för banker",
+            "Graham rekommenderade P/B över 5 för tillväxtbolag"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på den defensive investerarens talregler och net-net-traditionen."
+        },
+        {
+          "q": "Vad hände med värdefaktorn HML i Fama-French femfaktormodell (2015)?",
+          "alternativ": [
+            "Den blev starkare än någonsin och dominerar modellen",
+            "Den blev i princip redundant när lönsamhetsfaktorn RMW och investeringsfaktorn CMA togs med",
+            "Den ersattes av en momentumpåttor",
+            "Den omvandlades till en P/S-faktor"
+          ],
+          "ratt": 1,
+          "tips": "Fem faktorer från 2015: marknad, SMB, HML, RMW, CMA — vad hände med en av dem när de två nya kom in?"
+        },
+        {
+          "q": "Hur hanterar AKM1 att P/B är meningslöst för immaterielltäta bolag?",
+          "alternativ": [
+            "Variabeln kan aldrig fälla totalbilden ensam där — den dokumenterar avståndet mellan bokfört och ekonomiskt värde istället för att mekaniskt dra ner",
+            "Sådana bolag får automatiskt 0 poäng i hela värderingskategorin",
+            "AKM1 räknar om bokvärdet med internt skapade varumärken",
+            "V05 slopas helt för alla bolag utan fabriker"
+          ],
+          "ratt": 0,
+          "tips": "Kom ihåg vad kapitlet sa om kontextberoende och om att en poängavsikt kan vara helt ärlig."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "V06: EV/EBITDA — kompromissen som blev standard",
+      "intro": "EV/EBITDA föddes i köpbolags-åttioalet, älskades av investmentbanker — och föraktas av Buffett och Munger, som menar att måttet systematiskt glömmer att maskiner slits ut. Damodaran anser att EV-baserade multiplar är de strukturellt rimligaste. AKM1 använder det med en fot på bromsen. Detta kapitel lär dig när måttet bär information och när det bär propaganda.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V06 EV/EBITDA — definition och poängsättning. Formeln: EV dividerat med EBITDA, där enterprise value är marknadsvärdet på aktierna plus nettoskuld plus minoritetsintresse plus pensionsskuld (och hyresskulder enligt IFRS 16, med konsekvens), och EBITDA är rörelseresultat före av- och nedskrivningar. Trösklar: 0 poäng vid EV/EBITDA över 20, eller negativ EBITDA; 3 poäng vid cirka 10–14; 5 poäng under 8, med rimlig justering för sektorns kapitalintensitet. Försvarsgroparna som var och en måste dokumenteras: EV är aldrig bara börsvärde plus lån — minoriteter, pensioner och hyresskulder gör att två bolag med likadan kurs har olika verkligt EV; EBITDA innehåller ingen kapitalförslitning; olika sektorer har olika naturliga nivåer; och genom en konjunkturcykel förändras täljare och nämnare samtidigt, vilket gör mätet som bäst vid jämförelse i samma cykelfas."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger. Damodaran — värderingsdoktrinens främsta röst — håller EV-baserade multiplar för strukturellt korrekta: värdet av hela verksamheten ska ställas mot flöden till hela verksamheten, medan P/E blandar kapital från två olika system; därför är EV/EBITDA och EV/EBIT hans standardmultiplar vid jämförelser mellan olika finansierade bolag. M&A-världen gjorde måttet till sin lingua franca av samma skäl — det gör ett bolag med hög skuld jämförbart med ett utan. Motståndet är lika tungt: Buffett har i brev och tal i decennier påpekat att avskrivningar är en verklig kostnad — maskiner och utrustning slits ut oavsett bokföringens behandling — och varnat för att EBITDA-tänkande bjuder in till att betrakta kapitalförslitning som kostnadsfritt; Munger har hånfullt kallat EBITDA för strunt-earnings. Notera också: det finns ingen EV/EBITDA-faktor i de akademiska faktormodellerna — det är ett praktikermått, älskat och misstrott i samma bransch."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför. Invändningen: ni använder ett mått som ni själva säger ignorerar kapitalbehov — varför inte EV/EBIT, EV/FCF eller rakt av diskonterade flöden? Vårt svar: för att V06 inte är avsett att stå ensam. AKM1:s värderingskategori är en triangel — V04 fångar intäktsnivån, V05 substansen, V06 rörelsens kassaflödesnära nivå — och kapitalförslitningen fångas strukturerat av V19 (kapitalförbränning) och av att EBITDA-poängen aldrig tolkas utan capex-kontext. Att byta EV/EBITDA mot EV/FCF löser inte problemet utan flyttar det: fritt kassaflöde är bullrigt år från år, kännsligt för enskilda investeringstillfällen och lättare att röra med timing. EV/EBITDA är stabilare, sektorbekant och transparent — och när det kombineras med V19:s kapitaldisciplin får vi det Buffett kräver: att kapitalförslitningen räknas med någonstans."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt — och anvisningen. EV/EBITDA är som mest vilseledande i kapitalintensiva verksamheter där EBITDA är stort men fritt kassaflöde är litet: järnvägar, telekom, gruvor, rederier. Där kan en hög V06-poäng vara helt fel — inte för att talet är felräknat utan för att det besvarar fel fråga. Därför AKM1:s hårdnade riktlinje: i kapitalintensiva sektorer (där capex normalt överstiger 8–10 procent av intäkterna) kan V06 inte ge högsta poäng om inte fritt kassaflöde visat sig positivt genom en hel cykel. Det illustrerar en princip för hela modellen: trösklarna är konstruerade för normala bolag, och när verksamhetens natur gör en tröskel missvisande är det tröskeln som ska böja sig — med motivering i dokumentationen, inte i tysthet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V06 EV/EBITDA — formel, trösklar, mainstream\",\"rader\":[[\"Mått\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"EV/EBITDA\",\"EV = börsvärde + nettoskuld + minoritet + pension (+ hyresskuld), delat med EBITDA\",\"EV/EBITDA > 20 eller negativ EBITDA\",\"10–14\",\"Under 8 (sektorjusterat)\",\"Damodaran: EV-multiplar strukturellt korrekta för jämförelser över skuldnivåer\"],[\"Kapitalintensitet\",\"Capex-andel av intäkten styr tolkningen\",\"Hög kapitalintensitet med hög multipl\",\"\",\"5:a kräver positivt fritt kassaflöde genom cykeln\",\"Buffett/Munger: avskrivningar är en verklig kostnad — EBITDA inbjuder till att glömma det\"],[\"AKM1:s svar\",\"V06 tolkas alltid tillsammans med V19 kapitaldisciplin\",\"\",\"\",\"\",\"Kompensationslogik: multiplens blindhet täcks av en annan variabel, inte av förnekande\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "EBITDA svarar på hur mycket verksamheten genererar innan verksamheten får betala för sitt eget slitage. Använd det som en sektorneutral nivåmätare — men låt aldrig bolaget övertyga dig om att slitage är valfritt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna EV/EBITDA för ett telekombolag och ett mjukvarubolag. Slå upp capex-andelen av intäkterna för båda. Sätt V06-poäng enligt trösklarna och tillämpa sedan kapitalintensitetsregeln. I vilket av fallen gjorde multiplens blindhet störst skillnad mellan EBITDA-världen och kassaflödesvärlden?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken komponent ingår korrekt i enterprise value?",
+          "alternativ": [
+            "Bara börsvärdet",
+            "Börsvärde plus nettoskuld plus minoritetsintresse (och med konsekvens även pension- och hyresskulder)",
+            "Börsvärde plus bruttovinsten",
+            "Börsvärde minus EBITDA"
+          ],
+          "ratt": 1,
+          "tips": "EV är värdet av hela verksamheten — vems fordringar på verksamheten måste köpas ut förutom aktieägarnas?"
+        },
+        {
+          "q": "Vad är Buffetts och Mungers huvudsakliga invändning mot EBITDA?",
+          "alternativ": [
+            "Att EBITDA är för svårt att beräkna för privatpersoner",
+            "Att avskrivningar är en verklig ekonomisk kostnad — maskiner slits ut — och EBITDA inbjuder till att behandla slitage som kostnadsfritt",
+            "Att EBITDA inte finns i IFRS",
+            "Att EBITDA bara fungerar för banker"
+          ],
+          "ratt": 1,
+          "tips": "Vad är D:et i EBITDA en ekonomisk representation av?"
+        },
+        {
+          "q": "När ska V06 enligt AKM1:s riktlinje vägra ge högsta poäng?",
+          "alternativ": [
+            "När EBITDA växer snabbare än intäkterna",
+            "När bolaget inte betalar utdelning",
+            "I kapitalintensiva sektorer där capex normalt överstiger 8–10 procent av intäkterna och fritt kassaflöde inte visat sig positivt genom en cykel",
+            "När räntenettot är negativt"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på var EBITDA-världen och kassaflödesvärlden skiljer sig mest åt."
+        }
+      ]
     }
   ]
 }

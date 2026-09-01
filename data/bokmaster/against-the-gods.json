@@ -5,11 +5,11 @@
   "chapterCount": 14,
   "totalMinutes": 150,
   "title": "Against the Gods — Bernstein: KOMPLETT",
-  "summary": "Peter Bernsteins Against the Gods (1996) är riskens kulturhistoria: från grekernas orakel och Cardanos tärningsbord via Pascals brev, dödstabellerna, nytteläran, normalfördelningen och Markowitz varians till optionernas årtionde. Kursen följer de män och kvinnor som under fyrahundra år lärde oss mäta osäkerheten — och ägnar ett eget kapitel åt den ärliga frågan 2008 ställde: vad händer när mätningen misslyckas (Mandelbrot, Taleb, Knight)? AKM1-kopplingarna är dragna hela vägen: V19 kapitalförbränning, V10 skuldsättningsgrad, Kelly-länken till position sizing och marginal of safety som princip utan siffra.",
+  "summary": "Peter Bernsteins Against the Gods (1996) är riskens kulturhistoria: från grekernas orakel och Cardanos tärningsbord via Pascal–Fermats brev, dödstabellerna, nytteläran, normalfördelningen och Markowitz varians till optionernas årtionde. Kursen följer de människor som under fyrahundra år lärde oss mäta osäkerheten — och ägnar ett eget kapitel åt den ärliga frågan 2008 ställde: vad händer när mätningen misslyckas (Mandelbrot, Taleb, Knight)? AKM1-kopplingarna är dragna hela vägen: V19 kapitalförbränning, V10 skuldsättningsgrad, Kelly-länken till positionsstorlek och marginal of safety som princip utan siffra.",
   "minutes": 10,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan eleven berätta riskens historia med dess rätta årtal och människor — Cardanos spelarbok från 1564, Pascal–Fermat-breven sommaren och hösten 1654, Graunts dödslistor 1662, Halleys Breslau-tabell 1693, Jacob Bernoulis 25 550 dragningar i Ars Conjectandi 1713, Daniel Bernoulis nyttolära 1738, klockkurvan från de Moivre 1733 via Gauss till Quetelets 5 738 soldatbröst, Galtons regression 1885, Knight och Keynes 1921, von Neumann–Morgensterns spelteori 1944, Markowitz varians 1952, Sharpes beta 1964 och Black–Scholes 1973 — och förklara vad varje steg egentligen löste: rättvis fördelning, väntevärde, inferens från stickprov, marginalnytta, genomsnittets tyranni, regressionens fälla, gränsen mellan risk och osäkerhet, strategiskt tänkande, portföljens geometri och optionens pris; reda ut det kontroversiella kapitlet ärligt — Mandelbrots feta svansar från bomullsstudien 1963, Talebs argument att variansen är blind för »risken att förlora 100 procent«, Knights osäkerhet och kraschen 2008 — och ändå förklara varför AKM1 poängsätter V19 kapitalförbränning & emission-risk och V10 skuldsättningsgrad: strukturen tvingar fram frågan »vad är värsta fallet?« även när svaret inte kan mätas; och tillämpa allt praktiskt genom positionsstorlek via Kelly-länken (edge, bankroll, överlevnad — kopplat till V20 återköp och bolagens egen kapitalallokering), normaliserade multipelkalkyler istället för rekordbasår, kohorttänk kring V02 ARR-tillväxt och V12 intäktsstabilitet samt marginal of safety som princip utan nummer.",
+  "learn": "Efter kursen kan eleven berätta riskens historia med dess rätta årtal och människor — Cardanos spelarbok från 1564, Pascal–Fermat-breven sommaren och hösten 1654, Graunts dödslistor 1662, Halleys Breslau-tabell 1693, Jacob Bernoulis 25 550 dragningar i Ars Conjectandi 1713, Daniel Bernoulis nyttolära 1738, klockkurvan från de Moivre 1733 via Gauss till Quetelets 5 738 soldatbröst, Galtons regression 1885, Knight och Keynes 1921, von Neumann–Morgensterns spelteori 1944, Markowitz varians 1952, Sharpes beta 1964 och Black–Scholes 1973 — och förklara vad varje steg egentligen löste: rättvis fördelning, väntevärde, inferens från stickprov, marginalnytta, genomsnittets tyranni, regressionens fälla, gränsen mellan risk och osäkerhet, strategiskt tänkande, portföljens geometri och optionens pris; reda ut det kontroversiella kapitlet ärligt — Mandelbrots feta svansar från bomullsstudien 1963, Talebs argument att variansen är blind för »risken att förlora 100 procent«, Knights osäkerhet och krisen 2008 — och ändå förklara varför AKM1 poängsätter V19 kapitalförbränning & emission-risk och V10 skuldsättningsgrad: strukturen tvingar fram frågan »vad är värsta fallet?« även när svaret inte kan mätas; och tillämpa allt praktiskt genom positionsstorlek via Kelly-länken (edge, bankrull, överlevnad — kopplat till V20 återköp och bolagens egen kapitalallokering), normaliserade multipelkalkyler istället för rekordbasår, kohorttänk kring V02 ARR-tillväxt och V12 intäktsstabilitet samt marginal of safety som princip utan nummer.",
   "why": "Varje analysmodell i finans vilar på idéer som en gång var revolutionerande: att framtiden kan struktureras, att slumpen har ett utfallsrum, att risken kan vägas. Bernstein berättar hur dessa idéer föddes — oftast av spelare, läkare och astronomer, inte av bankirer — och gör därmed begreppen levande istället för mekaniska. Kursen behövs eftersom AKM1:s riskvariabler (V19, V10, V11) bara blir kraftfulla när eleven förstår varifrån de kommer och var deras gränser går: bokens jubel över normalfördelning, VaR-tänk och optioner fick sin nackslag av krisen 2008, och Bernstein skrev själv uppdaterat förord om just det. Den som kan både historien och dess misslyckanden — Cardanos spelmissbruk, Pascals vädslar, grevens ruin, LTCM — slutar förväxla precision med kunskap och börjar i stället ställa den enda fråga som spelar roll: vad är värsta fallet, och överlever positionen det?",
   "chapters_list": [
     "1. Oraklens rike — grekerna, gudarna och tärningarna",
@@ -32,24 +32,23 @@
       "num": 1,
       "minutes": 10,
       "title": "Oraklens rike — grekerna, gudarna och tärningarna",
-      "intro": "Bernstein öppnar Against the Gods med en fråga: vad skiljer vår tid från allt som kom före? Svaret är inte science och inte teknik i sig, utan något mer subtilt — idén att framtiden kan bemästras. Kursen börjar där historien inte börjar: hos grekerna, som hade allt förutom just den idén.",
+      "intro": "Bernstein öppnar Against the Gods med en fråga: vad skiljer vår tid från allt som kom före? Svaret är inte vetenskap och inte teknik i sig, utan något mer subtilt — idén att framtiden kan bemästras. Kursen börjar där historien inte börjar: hos grekerna, som hade allt utom just den idén.",
       "blocks": [
         {
           "type": "text",
-          "content": "För grekerna tillhörde framtiden gudarna. Blixtar var Zeus vrede, skördar Demeters sinne, sjukdomar Apollons pilar. Den som behövde veta något om det som ännu inte hänt reste till Delfi, där Pythia andades in rökelse från klyftan och svarade i gåtor — svar som kunde tolkas åt vilket håll som helst, vilket kungen Kroisos fick erfara när han gick i krig mot perserna och ett »stort rike« skulle falla: hans eget. Oraklet var antikens informationsteknologi för framtiden, och dess produktspecifikation var nyckfullhet, inte sannolikhet."
+          "content": "För grekerna tillhörde framtiden gudarna. Blixtar var Zeus vrede, skördar Demeters sinne, sjukdomar Apollons pilar. Den som behövde veta något om det som ännu inte hänt reste till Delfi, där Pythia andades in rökelse från klyftan och svarade i gåtor — svar som kunde tolkas åt vilket håll som helst, vilket kung Kroisos fick erfara när han gick i krig mot perserna och ett »stort rike« skulle falla: hans eget. Oraklet var antikens informationsteknologi för framtiden, och dess produktspecifikation var nyckfullhet, inte sannolikhet."
         },
         {
           "type": "text",
-          "content": "Samtidigt spelade samma greker tärning — och hade gjort i årtusenden. Astragali, senknutar från får och getter med fyra spelbara ytor, hittas i egyptiska gravar från cirka 3000 f.Kr. Romerska soldater kastade lott om Kristi vapenrock vid korset, en detalj Bernstein själv lyfter fram. Kastet »Venus« (ettor, treor, fyror och sexor i samma kast) hyllades; kastet »hunden«, alla ettor, föraktades. Tusentals år av spelande, enorma insatser, fullt av mytologi kring tärningarna — och inte en enda grek eller romare skrev ner hur ofta de olika utfallen egentligen inträffade. Frågan ställdes aldrig."
+          "content": "Samtidigt spelade samma greker tärning — och hade gjort i årtusenden. Astragali, senknutar från får och getter med fyra spelbara ytor, hittas i egyptiska gravar från cirka 3000 f.Kr. Romerska soldater kastade lott om Kristi vapenrock vid korset, en detalj Bernstein själv lyfter fram. Kastet »Venus« — ettor, treor, fyror och sexor i samma kast — hyllades; kastet »hunden«, alla ettor, föraktades. Tusentals år av spelande, enorma insatser, mytologi kring tärningarnas vilja — och inte en enda grek eller romare skrev ner hur ofta de olika utfallen egentligen inträffade. Frågan ställdes aldrig."
         },
         {
           "type": "text",
-          "content": "Varför inte? Bernstein pekar på tre hinder. För det första vetenskapssynen: för grekerna var kunskap det som kunde bevisas, som i geometrin — sannolikhet, som bara gäller oftast, var ingen kunskap alls. Aristoteles formulerade den hållning Bernstein citerar genom hela boken: den lärdes kännetecken är att nöja sig med den grad av precision ämnet tillåter, och inte kräva exakthet där bara approximation är möjlig — en insikt antiken hade men aldrig applicerade på tärningsspelet. För det andra gudabilden: regelbundenhet i det tillfälliga vore att inskränka gudarnas frihet. För det tredje verktygen: utan nollan och med bokstavsnummer blev även enkel multiplikation ett arbete."
+          "content": "Varför inte? Bernstein pekar på tre hinder. För det första vetenskapssynen: för grekerna var kunskap det som kunde bevisas, som i geometrin — sannolikhet, som bara gäller oftast, var ingen kunskap alls. Aristoteles hade redan formulerat den hållning Bernstein citerar: den lärdes kännetecken är att nöja sig med den grad av precision ämnet tillåter, och inte kräva exakthet där bara approximation är möjlig — en insikt antiken alltså ägde, men aldrig applicerade på tärningsspelet. För det andra gudabilden: regelbundenhet i det tillfälliga vore att inskränka gudarnas frihet. För det tredje verktygen: utan nollan och med bokstavstal blev även enkel multiplikation ett arbete."
         },
         {
           "type": "text",
-          "content": "Här ligger kursens grundås: allt du gör som analytiker — scenarier, väntevärden, Kohorter, marginaler — vilar på ett språk som uppfanns först när människor slutade fråga oraklen och började räkna utfall. Bernstein sammanfattar sin tes i bokens första sidor, i översättning: den revolutionära idé som drar gränsen mellan modern tid och det förflutna är behärskningen av risken — tron att framtiden inte blott är gudarnas nyck och att vi inte står passiva inför naturen. Men lägg märke till kursens slutpunkt redan nu: kapitel 13 handlar om när den tron blev övermod. Marginal of safety är i AKM1 en princip just utan siffra — av skäl som antiken på sitt sätt förstod bättre än vi.",
-          "metadata": {}
+          "content": "Här ligger kursens grundtanke: allt du gör som analytiker — scenarier, väntevärden, kohorter, marginaler — vilar på ett språk som uppfanns först när människor slutade fråga oraklen och började räkna utfall. Bernstein sammanfattar sin tes på bokens första sidor, här i översättning: den revolutionära idé som drar gränsen mellan modern tid och det förflutna är behärskningen av risken — tron att framtiden inte blott är gudarnas nyck och att vi inte står passiva inför naturen. Men notera kursens slutpunkt redan nu: kapitel 13 handlar om när den tron blev övermod. Marginal of safety är i AKM1 en princip just utan siffra — av skäl som antiken på sitt sätt förstod bättre än vi."
         },
         {
           "type": "visuell",
@@ -57,7 +56,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Antikens slump — spel utan sannolikhet\",\"rader\":[[\"Fenomen\",\"Tid\",\"Särart\"],[\"Astragali i gravar\",\"Egypten ca 3000 f.Kr.\",\"Fyra spelbara ytor; mytologi kring kasten Venus och hunden\"],[\"Oraklet i Delfi\",\"700-tal f.Kr. till 300-tal e.Kr.\",\"Pythians rökelsesvar; krig och kolonier beslutades\"],[\"Romerska sortes\",\"Republiken och kejsartiden\",\"Lottning om ämbeten, domar och egendom\"],[\"Kristi vapenrock\",\"ca 30 e.Kr.\",\"Soldater kastar tärning om plagget — slumpen utan teori\"]]}"
+          "content": "{\"rubrik\":\"Antikens slump — spel utan sannolikhet\",\"rader\":[[\"Fenomen\",\"Tid\",\"Särart\"],[\"Astragali i gravar\",\"Egypten ca 3000 f.Kr.\",\"Fyra spelbara ytor; mytologi kring kasten Venus och hunden\"],[\"Oraklet i Delfi\",\"700-tal f.Kr. till 300-tal e.Kr.\",\"Pythias rökelsesvar; krig och kolonier beslutades\"],[\"Romerska sortes\",\"Republiken och kejsartiden\",\"Lottning om ämbeten, domar och egendom\"],[\"Kristi vapenrock\",\"ca 30 e.Kr.\",\"Soldater kastar tärning om plagget — slumpen utan teori\"]]}"
         },
         {
           "type": "insikt",
@@ -78,13 +77,13 @@
             "De hade redan utvecklat en hemlig sannolikhetslära som gick förlorad"
           ],
           "ratt": 1,
-          "tips": "Fundera på vad som räknades som kunskap i det antika Aten — och var oraklen fick sin makt ifrån."
+          "tips": "Fundera på vad som räknades som kunskap i det antika Aten — och varifrån oraklen fick sin makt."
         },
         {
           "q": "Vad var astragali?",
           "alternativ": [
             "Senknutar från får och getter som användes som spelredskap med fyra spelbara ytor",
-            "Grekiska astronomitabeller för att förutsäga eclipsen",
+            "Grekiska astronomitabeller för att förutsäga förmörkelser",
             "Tempelskattens gyllene tärningar i Delfi",
             "Ett romerskt lotteri för att utse konsuler"
           ],
@@ -112,15 +111,15 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Girolamo Cardano föddes 1501 i Pavia, oäkting till en milanesisk jurist och matematiker som umgicks med Leonardo da Vinci. Han blev en enastående läkare — 1552 reste han till Edinburgh och botade ärkebiskop John Hamilton från ett andningshål som hela Skottlands läkarkår gett upp — men Collegium Medicorum i Milano avvisade honom två gånger, dels för födelsen, dels för tunga. Han fick professor i Bologna 1562, fängslades 1570 av inkvisitionen för att ha ställt Kristi horoskop, köpte sig fri och en påvlig pension. 1576 fastställde han genom sitt eget horoskop dödsdagen till den 21 september — och dog den dagen, enligt legenden genom att vägra mat. En man som besegrade slumpen på pappret och kapitulerade inför den i livet."
+          "content": "Girolamo Cardano föddes 1501 i Pavia, oäkting till en milanesisk jurist och matematiker som umgicks med Leonardo da Vinci. Han blev en enastående läkare — 1552 reste han till Edinburgh och botade ärkebiskop John Hamilton från ett andningsbesvär som hela Skottlands läkarkår gett upp — men Collegium Medicorum i Milano avvisade honom två gånger, dels för födelsen, dels för sin vassa tunga. Han blev professor i Bologna 1562, fängslades 1570 av inkvisitionen för att ha ställt Kristi horoskop, släpptes och fick påvlig pension. 1576 fastställde han genom sitt eget horoskop dödsdagen till den 21 september — och dog den dagen, enligt legenden genom att vägra mat. En man som besegrade slumpen på pappret och kapitulerade inför den i livet."
         },
         {
           "type": "text",
-          "content": "Någon gång kring 1564 skrev Cardano Liber de Ludo Aleae — Boken om tärningsspelet. Manuskriptet publicerades först 1663, hundra år senare, i hans samlade verk, alltså efter Pascal och Fermat, och påverkade därmed ingen. Men det finns: ett halvt handbok, halvt dagbok från borden. Där finns den första egentliga sannolikhetsläran: antagandet att en ärlig tärning ger varje sida samma chans, idén om circuitus — kretsen, det totala antalet lika sannolika utfall — och uträkningar av hur många sätt två och tre tärningar kan giva varje summa. Där finns också hela kapitel om fusk: märkta kort, tyngda tärningar, fulla motspelare. Cardano räknade på det han inte kunde sluta spela."
+          "content": "Någon gång kring 1564 skrev Cardano Liber de Ludo Aleae — boken om tärningsspelet. Manuskriptet publicerades först 1663, hundra år senare, i hans samlade verk, alltså efter Pascal och Fermat, och påverkade därmed ingen. Men det finns: halvt handbok, halvt dagbok från borden. Där finns den första egentliga sannolikhetsläran: antagandet att en ärlig tärning ger varje sida samma chans, idén om circuitus — kretsen, det totala antalet lika sannolika utfall — och uträkningar av på hur många sätt två och tre tärningar kan ge varje summa. Där finns också hela avsnitt om fusk: märkta kort, tyngda tärningar, fulla motspelare. Cardano räknade på det han inte kunde sluta spela."
         },
         {
           "type": "text",
-          "content": "I självbiografin De Vita Propria, skriven mot slutet av livet, bekänner han spelmissbruket utan förskönning: han spelade dagligen i åratal, både tärning och kort, girigt och ilsket, och han berättar själv om natten då han högg efter en fuskande motspelare med kniv. De värsta åren i ungdomen, skriver han, slängde han bort vid spelduken när han som läkare knappt hade bröd. Bernstein drar porträttet med välbehag: den förste riskteoretikern var inte en försiktig aktuarie utan en man som kände hasardens sug i handflatorna. Just därför såg han det ingen annan såg — att bordet har en struktur."
+          "content": "I självbiografin De Vita Propria, skriven mot slutet av livet, bekänner han spelmissbruket utan förskönning: han spelade dagligen i åratal, både tärning och kort, girigt och ilsket, och han berättar själv om natten då han högg efter en fuskande motspelare med kniv. De värsta ungdomsåren, skriver han, slängde han bort vid spelduken när han som läkare knappt hade bröd. Bernstein tecknar porträttet med välbehag: den förste riskteoretikern var ingen försiktig aktuarie utan en man som kände hasardens sug i handflatorna. Just därför såg han det ingen annan såg — att bordet har en struktur."
         },
         {
           "type": "text",
@@ -132,15 +131,15 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Från spelbord till teori — Cardanos redskap\",\"rader\":[[\"Begrepp\",\"Hos Cardano\",\"Modern motsvarighet\"],[\"Circuitus — kretsen\",\"Alla lika sannolika utfall\",\"Utfallsrummet, scenariolistan\"],[\"Aequitas — likvillkor\",\"Ärlig tärning och rättvis spelare\",\"Modellantagande om data och redovisning\"],[\"Räkning av sätt\",\"Antal sätt att giva en summa\",\"Sannolikhet som kvot av gynnsamma och möjliga\"],[\"Fuskavsnitten\",\"Märkta kort och tyngda tärningar\",\"Modellrisk, bedrägeri, manipulation\"]]}"
+          "content": "{\"rubrik\":\"Från spelbord till teori — Cardanos redskap\",\"rader\":[[\"Begrepp\",\"Hos Cardano\",\"Modern motsvarighet\"],[\"Circuitus — kretsen\",\"Alla lika sannolika utfall\",\"Utfallsrummet, scenariolistan\"],[\"Aequitas — likvillkor\",\"Ärlig tärning och rättvis spelare\",\"Modellantagande om data och redovisning\"],[\"Räkning av sätt\",\"Antal sätt att ge en viss summa\",\"Sannolikhet som kvot av gynnsamma och möjliga utfall\"],[\"Fuskavsnitten\",\"Märkta kort och tyngda tärningar\",\"Modellrisk, bedrägeri, manipulation\"]]}"
         },
         {
           "type": "insikt",
-          "content": "Cardanos genombrott var inte en formel utan ett sätt att se: slumpen har en struktur som går att räknas. Att han förlorade mer på tärning än han vann gör bara poängen tydligare — att förstå sannolikheten och att agera rationellt är två helt olika konster."
+          "content": "Cardanos genombrott var inte en formel utan ett sätt att se: slumpen har en struktur som går att räkna. Att han förlorade mer på tärning än han vann gör bara poängen tydligare — att förstå sannolikheten och att agera rationellt är två helt olika konster."
         },
         {
           "type": "utmaning",
-          "content": "Lista utfallsrummet för en faktisk exponering i din portfölj eller watchlist — till exempel en mindre tillväxtemission. Vilka utfall erkänner du fullt ut, och vilka tränger du bort som önsketänkande? Ledning: ett komplett utfallsrum innehåller alltid det värsta fallet — kapitalförlust på hela insatsen — annars är listan reklam, inte analys."
+          "content": "Lista utfallsrummet för en faktisk exponering i din portfölj eller bevakningslista — till exempel en mindre tillväxtemission. Vilka utfall erkänner du fullt ut, och vilka tränger du bort som önsketänkande? Ledning: ett komplett utfallsrum innehåller alltid det värsta fallet — kapitalförlust på hela insatsen — annars är listan reklam, inte analys."
         }
       ],
       "quiz": [
@@ -175,7 +174,7 @@
             "Själva antagandet om ärlighet är en risk — tärningen kan vara tung och redovisningen kan vara fel"
           ],
           "ratt": 3,
-          "tips": "Fuskavsnitten i Cardanos bok har en direkt modern släkting i bokförningsskandaler."
+          "tips": "Fuskavsnitten i Cardanos bok har en direkt modern släkting i bokföringsskandaler."
         }
       ]
     },
@@ -183,23 +182,23 @@
       "num": 3,
       "minutes": 10,
       "title": "1654 — breven som födde väntevärdet",
-      "intro": "Sommaren 1654 utbytte en parisisk genius och en toulousansk magistrat brev om ett spelproblem. Inom några månader hade Blaise Pascal och Pierre de Fermat skapat väntevärdet — och samma höst fick Pascal en uppenbarelse och vände sig till Gud. Kursens tredje kapitel handlar om hur sannolikhetsläran föddes ur rättvisa, girighet och en vagn olycka.",
+      "intro": "Sommaren 1654 utbytte en parisisk genius och en toulousansk magistrat brev om ett spelproblem. Inom några månader hade Blaise Pascal och Pierre de Fermat skapat väntevärdet — och samma höst fick Pascal en uppenbarelse och vände sig till Gud. Kapitel tre handlar om hur sannolikhetsläran föddes ur rättvisa, girighet och en vagnolycka.",
       "blocks": [
         {
           "type": "text",
-          "content": "Problemet var gammalt: Luca Pacioli hade formulerat det i sin Summa 1494 och ingen löst det på 150 år. Två spelare tävlar till först till tre segrar; spelet avbryts vid ställningen ett–noll — hur delas potten rättvist? Paciolis eget svar, att delningen ska spegla vunna omgångar, kändes orättvist: den som ligger under kan fortfarande vinna. Frågan fördes till Pascal av Chevalier de Méré, salongsmänniskan och spelaren Antoine Gombaud, som också plågades av en tärningsgåta. Pascal — 31 år, redan berömd för räknemaskinen och kägelsnittet — skrev till Fermat i Toulouse, domstolsmannen som matematikhistorien kallar amatörernas furste. Breven gick mellan juli och oktober 1654, förmedlade av Pierre de Carcavi."
+          "content": "Problemet var gammalt: Luca Pacioli hade formulerat det i sin Summa 1494 och ingen löst det på 150 år. Två spelare tävlar till först till tre segrar; spelet avbryts vid ställningen ett–noll — hur delas potten rättvist? Paciolis eget svar, att delningen ska spegla vunna omgångar, kändes orättvist: den som ligger under kan fortfarande vinna. Frågan fördes till Pascal av Chevalier de Méré, salongsmänniskan och spelaren Antoine Gombaud, som också plågades av en tärningsgåta. Pascal — 31 år, redan berömd för räknemaskinen och kägelsnittsgeometrin — skrev till Fermat i Toulouse, domstolsmannen som matematikhistorien kallar amatörernas furste. Breven gick mellan juli och oktober 1654, förmedlade av Pierre de Carcavi."
         },
         {
           "type": "text",
-          "content": "Lösningen är kursens första finansiella idé. Potten ska inte delas efter det som hänt, utan efter var och ens chanser att vinna det som återstår. Fermat räknade framåt: alla möjliga slut på matchen, lika sannolika, och andelen där varje spelare vinner. Pascal kom dit rekursivt med sin aritmetiska triangel och räknade det klassiska exemplet: A behöver två segrar till, B behöver tre, potten är 64 pistoles — A:s chanser är elva av sexton, alltså tillhör A 44 pistoles och B 20. Det som härstammar ur matchläget är vad positionen är värd här och nu. Det är väntevärdet, och det är samtidigt definitionen av ett rättvist pris — födelsen ur rättvisekravet, inte ur girighet, är Bernsteins poäng. Varje V06 EV/EBITDA-värdering du gjort är en avläggare till den delningen."
+          "content": "Lösningen är kursens första finansiella idé. Potten ska inte delas efter det som hänt, utan efter var och ens chanser att vinna det som återstår. Fermat räknade framåt: alla möjliga slut på matchen, lika sannolika, och andelen där varje spelare vinner. Pascal kom dit rekursivt med sin aritmetiska triangel och räknade det klassiska exemplet: A behöver två segrar till, B behöver tre, potten är 64 pistoles — A:s vinstchans är elva av sexton, alltså tillhör A 44 pistoles och B 20. Värdet bestäms av matchläget: vad positionen är värd här och nu. Det är väntevärdet, och det är samtidigt definitionen av ett rättvist pris — att det föddes ur rättvisekravet och inte ur girigheten är Bernsteins poäng. Varje V06 EV/EBITDA-värdering du gjort är en avläggare till den delningen."
         },
         {
           "type": "text",
-          "content": "Samma höst vände Pascals liv. I oktober skenade hästarna för hans vagn på bron vid Neuilly; karriolen hängde ett ögonblick på broräcket innan den stannade, och Pascal var övertygad om att han sett avgrunden. Veckor senare, den 23 november 1654, upplevde han under en natt av eld en mystisk visshet och skrev minneslappen som han sydde in i rocken. Han drog sig till Port-Royal och matematiken blev teologi — men i Pensées lämnade han efter sig historiens mest berömda beslut under osäkerhet: vadslaget. Gud är eller är inte; ett spel pågår; vilken satsning väljer du när vinsten är oändlig? Pascal väger inte bara sannolikheten utan också insatsens storlek — nyttan — och skuggar därmed Daniel Bernoulli 180 år i förväg."
+          "content": "Samma höst vände Pascals liv. I oktober skenade hästarna för hans vagn på bron vid Neuilly; vagnen hängde ett ögonblick över broräcket innan den stannade, och Pascal var övertygad om att han sett avgrunden. Veckor senare, den 23 november 1654, upplevde han under en natt av eld en mystisk visshet och skrev minneslappen som han sydde in i rocken. Han drog sig till Port-Royal och matematiken blev teologi — men i Pensées lämnade han efter sig historiens mest berömda beslut under osäkerhet: vadslaget. Gud är eller är inte; ett spel pågår; vilket val gör du när vinsten är oändlig? Pascal väger inte bara sannolikheten utan också insatsens storlek — nyttan — och skuggar därmed Daniel Bernoulli 180 år i förväg."
         },
         {
           "type": "text",
-          "content": "De Mérés tärningsgåta fick också sitt svar: chansen för minst en sexa på fyra kast är 51,8 procent — gynnsamt — men minst en dubbel-sexa på 24 kast är bara 49,1 procent — ogynnsamt, fast de Mére trodde att proportionerna borde gynna båda. Enklast beskrivet: varje kast är oberoende, och chansen buildas som (35/36) upphöjt till 24. Christiaan Huygens, som hörde talas om breven i Paris, gav ut den första läroboken 1657 och formulerade där grevens ruin: även med fördel i varje omgång har den med mindre bankrulle en positiv sannolikhet att ruineras. Edge är inte överlevnad — det är V19 kapitalförbränning & emission-risk i en enda mening: ett bolag kan ha en vinnande produkt och ändå dö mellan två lönedagar, eftersom motparten — marknaden — har djupare fickor."
+          "content": "De Mérés tärningsgåta fick också sitt svar: chansen för minst en sexa på fyra kast är 51,8 procent — gynnsamt — men minst en dubbel-sexa på 24 kast är bara 49,1 procent — ogynnsamt, fast de Méré trodde att proportionerna borde gynna båda. Varje kast är nämligen oberoende, och chansen byggs multiplicativt: (35/36) upphöjt till 24 blir strax över ett halvt. Christiaan Huygens, som hörde talas om breven i Paris, gav ut den första läroboken 1657 och formulerade där grevens ruin: även med fördel i varje omgång har den med mindre bankrulle en positiv sannolikhet att ruineras. Edge är inte överlevnad — det är V19 kapitalförbränning & emission-risk i en enda mening: ett bolag kan ha en vinnande produkt och ändå dö mellan två lönedagar, eftersom motparten — marknaden — har djupare fickor."
         },
         {
           "type": "visuell",
@@ -207,15 +206,15 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"1654 — problemen och lösningarna\",\"rader\":[[\"Problem\",\"Fråga\",\"Nyckel\"],[\"Poängproblemet (Pacioli 1494)\",\"Hur delas potten när spelet avbryts?\",\"Väntevärde utifrån chansen att vinna det som återstår\"],[\"De Mérés tärningar\",\"Varför gynnas fyra kast för en sexa men inte 24 för en dubbel-sexa?\",\"Oberoende kast: 1 minus (5/6)^4 = 51,8 procent mot 1 minus (35/36)^24 = 49,1 procent\"],[\"Grevens ruin (Huygens 1657)\",\"Hur stor är risken att bankrullen tar slut?\",\"Även med fördel per omgång finns ruin­sannolikhet — bankrullens storlek avgör\"],[\"Pascals vadslaget\",\"Vad satsar man när vinsten är oändlig?\",\"Sannolikhet vägd mot insatsens storlek — nyttan\"]]}"
+          "content": "{\"rubrik\":\"1654 — problemen och lösningarna\",\"rader\":[[\"Problem\",\"Fråga\",\"Nyckel\"],[\"Poängproblemet (Paccioli 1494)\",\"Hur delas potten när spelet avbryts?\",\"Väntevärde utifrån chansen att vinna det som återstår\"],[\"De Mérés tärningar\",\"Varför gynnas fyra kast för en sexa men inte 24 för en dubbel-sexa?\",\"Oberoende kast: 1 minus (5/6)^4 = 51,8 procent mot 1 minus (35/36)^24 = 49,1 procent\"],[\"Grevens ruin (Huygens 1657)\",\"Hur stor är risken att bankrullen tar slut?\",\"Även med fördel per omgång finns ruinsnannolikhet — bankrullens storlek avgör\"],[\"Pascals vadslaget\",\"Vad satsar man när vinsten är oändlig?\",\"Sannolikhet vägd mot insatsens storlek — nyttan\"]]}"
         },
         {
           "type": "insikt",
-          "content": "Väntevärdet föddes av rättvisa, inte av vinstbegär: frågan var hur man delar en avbruten spel pott hederligt. Att prissätta risk började som etik — vilket förklarar varför ett rättvist pris och ett väntevärde i grund och botten är samma sak."
+          "content": "Väntevärdet föddes av rättvisa, inte av vinstbegär: frågan var hur man delar en avbruten spelpott hederligt. Att prissätta risk började som etik — vilket förklarar varför ett rättvist pris och ett väntevärde i grunden är samma sak."
         },
         {
           "type": "utmaning",
-          "content": "Ta en position som befinner sig mitt i spelet: ett V19-tungt bolag halvvägs till kassaflödespositivt, eller en gruvprospektering före beslut. Om spelet avbröts i dag — ny emission, utförsäljning — vad är ställningen värd då? Öva på att värdera läget, inte slutet. Ledning: räkna på vad som återstår till mål och chansen per steg, som Pascal."
+          "content": "Ta en position som befinner sig mitt i spelet: ett V19-tungt bolag halvvägs till kassaflödespositivt, eller en prospektering före beslut. Om spelet avbröts i dag — ny emission, utförsäljning, avslag — vad är ställningen värd då? Öva på att värdera läget, inte slutet. Ledning: räkna på vad som återstår till målet och chansen per steg, som Pascal."
         }
       ],
       "quiz": [
@@ -250,7 +249,7 @@
             "Eftersom lagen om stora tal garanterar utjämning vid 24 kast"
           ],
           "ratt": 2,
-          "tips": "Chansen att missa en sexa på fyra kast är (5/6)^4 — vad blir motsvarande för sexor på sexor?"
+          "tips": "Chansen att missa en sexa på fyra kast är (5/6)^4 — vad blir motsvarande för sexa på sexa?"
         }
       ]
     },
@@ -262,19 +261,19 @@
       "blocks": [
         {
           "type": "text",
-          "content": "John Graunt var handskmakare och kramhandlare i London — en borgare i pärmmössans tid. Varje vecka tryckte stiftssocknen listor över döda, ursprungligen för att övervaka pesten. Graunt samlade över två decenniers dödslistor och publicerade 1662 Natural and Political Observations: han räknade, klassificerade dödsorsaker, uppskattade Londons befolkning till omkring 384 000 genom hushållsmultiplikatorer, noterade att pojkar föddes i lätt övertal mot flickor, att barndödligheten var brutal och att siffrorna var förvånansvärt stabila år från år. Det var första gången någon drog slutsatser om ett helt samhälle ur ett stickprov. När Royal Society tvekade inför att ta in en krämmare skall Karl II ha svarat att om de hittade fler sådana rariteter skulle han vilja veta det — och Graunt blev ledamot."
+          "content": "John Graunt var kramhandlare i London — borgare i perukens tidevarv. Varje vecka tryckte stiftssocknarna listor över döda, ursprungligen för att övervaka pesten. Graunt samlade över två decenniers dödslistor och publicerade 1662 Natural and Political Observations: han räknade, klassificerade dödsorsaker, uppskattade Londons befolkning till omkring 384 000 genom hushållsmultiplikatorer, noterade att pojkar föddes i lätt övertal mot flickor, att barndödligheten var brutal och att siffrorna var förvånansvärt stabila år från år. Det var första gången någon drog slutsatser om ett helt samhälle ur ett stickprov. När Royal Society tvekade inför att ta in en krämmare skall Karl II ha svarat att om de hittade fler sådana rariteter ville han veta det — och Graunt blev ledamot."
         },
         {
           "type": "text",
-          "content": "Här ligger ett av bokens vackraste tankesprång: den enskilda döden är Guds ensak, men tusentals döda följer en lagbundenhet. Individen är oförutsägbar, aggregatet mönsterbärande — och i just det gapet ligger hela försäkringsbranschen. Edmond Halley, astronomkungen som gett sitt namn åt kometen, tog nästa steg 1693. Utifrån Caspar Neumanns kyrkböcker från Breslau — fem års födslor och dödsfall med ålder — byggde han den första riktiga livslängdstabellen: en kohort som följdes från vagga till grav, med överlevnadsandel per ålder. Och han gjorde något djupt praktiskt: räknade ut vad en livsränta borde kosta beroende på köparens ålder. Statens annuiteter såldes då till samma pris oavsett om köparen var 20 eller 70 — ett av historiens största prissättningsmisstag, och på sätt och vis den första fria lunchen för dem som förstod tabellen."
+          "content": "Här ligger ett av bokens vackraste tankesprång: den enskilda döden är Guds ensak, men tusentals döda följer en lagbundenhet. Individen är oförutsägbar, aggregatet mönsterbärande — och i just det gapet ligger hela försäkringsbranschen. Edmond Halley, astronomen som gett sitt namn åt kometen, tog nästa steg 1693. Utifrån Caspar Neumanns kyrkböcker från Breslau — fem års födslar och dödsfall med ålder — byggde han den första riktiga livslängdstabellen: en kohort som följdes från vagga till grav, med överlevnadsandel per ålder. Och han gjorde något djupt praktiskt: räknade ut vad en livsränta borde kosta beroende på köparens ålder. Statens annuiteter såldes då till samma pris oavsett om köparen var tjugo eller sjuttio — ett av historiens största prissättningsmisstag, och på sätt och vis den första fria lunchen för dem som förstod tabellen."
         },
         {
           "type": "text",
-          "content": "Samtidigt växte mekanismen för att handla med risk. Från omkring 1686 samlade Edward Lloyds kaffehus vid Tower Street sjöfartsnyheter, skeppslaster och ankomster — informationen drog till sig redare och de som ville bära deras risk mot premie. Ur kaffehuset växte Lloyd's, marknadsplatsen där olycksrisken till havs fick ett pris. 1762 grundades Equitable Life, det första livbolag som vetenskapligt satte premier efter ålder och dödstabeller — aktuarievetenskapen som yrke. Bernstein betonar ordningen: först informationen, sedan priset, sedan branschen. Graunt och Halley visste inget om Jacob Bernoulis matematik — men deras tabeller var de stora talens lag i praktiken, bevisad i verksamhet innan den var bevisad i teori."
+          "content": "Samtidigt växte mekanismen för att handla med risk. Från omkring 1686 samlade Edward Lloyds kaffehus vid Tower Street sjöfartsnyheter, skeppslaster och ankomster — informationen drog till sig redare och de som ville bära deras risk mot premie. Ur kaffehuset växte Lloyd's, marknadsplatsen där olycksrisken till havs fick ett pris. 1762 grundades Equitable Life, det första livbolaget som satte premier vetenskapligt efter ålder och dödstabeller — aktuarievetenskapen som yrke. Bernstein betonar ordningen: först informationen, sedan priset, sedan branschen. Graunt och Halley visste inget om Jacob Bernoulis matematik — men deras tabeller var de stora talens lag i praktiken, bevisad i verksamhet innan den var bevisad i teori."
         },
         {
           "type": "text",
-          "content": "För AKM1 är detta kapitel en övning i kohorttänk. En dödstabell och en churn-redovisning är samma uppfinning: en grupp som tillträder vid tid noll följs framåt, och andelen som återstår ger framtiden. Därför kräver V02 ARR-tillväxt på riktigt kohortdata — nettointäktsretention per kull, inte bara totaltillväxt som kan dölja urholkning — och därför mäts V12 intäktsstabilitet som mönster över tid, inte som ettårsimpress. Frågan till varje bolag är Graunts fråga till London: vad tillhör individen, och vad tillhör tabellen? Ett avtal som säger upp sig är en slump; tio kunder i månaden är en kurva."
+          "content": "För AKM1 är detta kapitel en övning i kohorttänk. En dödstabell och en churn-redovisning är samma uppfinning: en grupp som tillträder vid tidpunkten noll följs framåt, och andelen som återstår ger framtiden. Därför kräver V02 ARR-tillväxt på riktigt kohortdata — nettointäktsretention per kull, inte bara totaltillväxt som kan dölja urholkning — och därför mäts V12 intäktsstabilitet som mönster över tid, inte som ettårsintryck. Frågan till varje bolag är Graunts fråga till London: vad tillhör individen, och vad tillhör tabellen? En kund som säger upp sig är en slump; tio kunder i månaden är en kurva."
         },
         {
           "type": "visuell",
@@ -310,7 +309,7 @@
           "alternativ": [
             "Förutsägelsen av kometens återkomst 1758",
             "Botemedel mot pesten i hamnstäder",
-            "En gemensam europæisk folkräkning",
+            "En gemensam europeisk folkräkning",
             "Korrekt prissättning av livsräntor efter köparens ålder"
           ],
           "ratt": 3,
@@ -319,12 +318,12 @@
         {
           "q": "Varför blev just Edward Lloyds kaffehus försäkringsbranschens vagga?",
           "alternativ": [
-            "Kaffet höll sjömännen vakta på nattvakten",
+            "Kaffet höll sjömännen vakna på nattvakten",
             "Där samlades sjöfartsnyheterna — och där informationen fanns kunde riskerna prissättas och handlas",
             "Lloyd själv ägde hela den engelska handelsflottan",
-            "Kungligt dekret förbjöd försäkring utanför kaffehus"
+            "Ett kungligt dekret förbjöd försäkring utanför kaffehus"
           ],
-          "ratt": 0,
+          "ratt": 1,
           "tips": "Följ informationen: vad behövde redare och riskbärare gemensamt innan de behövde varandra?"
         }
       ]
@@ -337,11 +336,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Bernoulli var en familjeindustri: i tre generationer producerade Basel-ätten matematiker av världsklass — och fejdade som䐂 varandra. Jacob, född 1654 (samma år som Pascal–Fermat-breven), var den förste store: professor i matematik, sträng, långsam, noggrann. Brodern Johann, som Jacob själv undervisade, blev hans bittra rival; när de båda löste brakykronproblemet 1696–97 anklagade de varandra i tryck, och fejden slutade först med Jacobs död. Jacob höll på med Ars Conjectandi — konjekturernas konst — i två decennier, och när han dog 1705 låg del fyra oavslutad. Systersonn Nicholas redigerade och gav ut verket 1713."
+          "content": "Bernoulli var en familjeindustri: i tre generationer producerade Basel-ätten matematiker av världsklass — och fejdade lika ihärdigt inbördes. Jacob, född 1654 (samma år som Pascal–Fermat-breven), var den förste store: professor i matematik, sträng, långsam, noggrann. Brodern Johann, som Jacob själv undervisat, blev hans bittra rival; när de båda löste brachystokronproblemet 1696–97 anklagade de varandra i tryck, och fejden slutade först med Jacobs död. Jacob höll på med Ars Conjectandi — konjekturernas konst — i två decennier, och när han dog 1705 låg del fyra oavslutad. Brorsonen Nicholas redigerade och gav ut verket 1713."
         },
         {
           "type": "text",
-          "content": "Kärnan är den gyllene satsen, vår tids stora talens lag. Anta en urna med 3 000 vita och 2 000 svarta stenar — förhållandet tre till två, men det vet du inte. Du drar med återläggning: hur många dragningar krävs för att vara moraliskt säker — Jacob satte säkerheten till tusen mot ett — på att din stickprovsfrekvens ligger nära det sanna förhållandet? Svaret han räknade fram: 25 550 dragningar. Han var själv både stolt och förtvivlad — stolt över ett problem han ansåg så nytt och nyttigt att det förtjänade att meddelas, förtvivlad över att antalet var så absurt högt. I brevväxlingen med Leibniz 1703 klagade han över just det, och Leibniz svarade torrt att världen och dess observationer inte var så gamla att man kunde kräva sådana bevis."
+          "content": "Kärnan är den gyllene satsen, vår tids stora talens lag. Anta en urna med 3 000 vita och 2 000 svarta stenar — förhållandet tre mot två, men det vet du inte. Du drar med återläggning: hur många dragningar krävs för att vara moraliskt säker — Jacob satte säkerheten till tusen mot ett — på att stickprovsfrekvensen ligger nära det sanna förhållandet? Svaret han räknade fram: 25 550 dragningar. Han var själv både stolt och förtvivlad — stolt över ett problem han ansåg så nytt och nyttigt att det förtjänade att meddelas, förtvivlad över att antalet var så absurt högt. I brevväxlingen med Leibniz 1703 klagade han över just detta, och Leibniz svarade torrt att världen och dess observationer inte var så gamla att sådana bevis kunde krävas."
         },
         {
           "type": "text",
@@ -349,7 +348,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-övningen är omedelbar: hur många observationer bygger din tes? Två kvartal av accelererande V01 försäljningstillväxt är ett lotteri, inte en trend; osäkerheten på ett genomsnitt krymper i takt med roten ur antalet oberoende datapunkter, alltså fyra gånger fler data för att halvera bruset. Därför premierar AKM1 V12 intäktsstabilitet mätt över år och cykler, och därför ska en churn-kurva med åtta kohorter väga tyngre än ett lysande kundcase. Graunt och Halley jobbade ur stora listor av samma skäl. Den som inte vet sitt n vet inte vad han egentligen säger — han bara gissar utan Jacobs moralisk säkerhet."
+          "content": "AKM1-övningen är omedelbar: hur många observationer bygger din tes? Två kvartal av accelererande V01 försäljningstillväxt är ett lotteri, inte en trend; osäkerheten på ett genomsnitt krymper i takt med roten ur antalet oberoende datapunkter, alltså krävs fyra gånger fler data för att halvera bruset. Därför premierar AKM1 V12 intäktsstabilitet mätt över år och cykler, och därför ska en churn-kurva med åtta kohorter väga tyngre än ett lysande kundcase. Graunt och Halley arbetade ur stora listor av samma skäl. Den som inte känner sitt n vet inte vad han egentligen säger — han gissar utan Jacobs moraliska säkerhet."
         },
         {
           "type": "visuell",
@@ -408,23 +407,23 @@
       "num": 6,
       "minutes": 10,
       "title": "Daniel Bernoulli — nyttan slår väntevärdet",
-      "intro": "Ett spel med oändlig vinstchans som ingen vill betala mer än några dukater för — Nicolas Bernoullis paradox från 1713 väntade på sin lösning i 25 år. Kusinen Daniel levererade den 1738 och grundlade därmed riskaversion, marginalnytta och, i förlängningen, hela konsten att välja positionsstorlek.",
+      "intro": "Ett spel med oändlig vinstchans som ingen vill betala mer än några dukater för — Nicolas Bernoullis paradox från 1713 väntade i 25 år på sin lösning. Kusinen Daniel levererade den 1738 och grundlade därmed riskaversion, marginalnytta och, i förlängningen, hela konsten att välja positionsstorlek.",
       "blocks": [
         {
           "type": "text",
-          "content": "Paradoxen är enkel att beskriva. En bank slår mynt tills krona faller. Faller krona först vinner du två dukater; vid ett klave före vinner du fyra, vid två åtta, vid tre sexton — potenten fördubblas för varje klave. Väntevärdet är summan av en halva gånger två, en fjärdedel gånger fyra, en åttondel gånger åtta — varje term är ett, och summan är oändlig. Ändå vägrar förnuftiga människor betala mer än någon enstaka dukat för att vara med. Kusinen Nicolas Bernoulli formulerade problemet 1713; matematikern Gabriel Cramer föreslog 1728 att värdet växer långsammare än beloppet. Sedan kom Daniel Bernoulli, medlem av ryska akademien i Sankt Petersburg — efter tidskriften fick paradoxen sitt namn."
+          "content": "Paradoxen är enkel att beskriva. En bank slår mynt tills krona faller. Faller krona först vinner du två dukater; vid ett klave före vinner du fyra, vid två åtta, vid tre sexton — potten fördubblas för varje klave. Väntevärdet är summan av en halva gånger två, en fjärdedel gånger fyra, en åttondel gånger åtta — varje term är ett, och summan är oändlig. Ändå vägrar förnuftiga människor betala mer än någon enstaka dukat för att vara med. Kusinen Nicolas Bernoulli formulerade problemet 1713; matematikern Gabriel Cramer föreslog 1728 att värdet växer långsammare än beloppet. Sedan kom Daniel Bernoulli, ledamot av akademien i Sankt Petersburg — efter tidskriften fick paradoxen sitt namn."
         },
         {
           "type": "text",
-          "content": "I avhandlingen Specimen theoriae novae de mensura sortis 1733, publicerad 1738, formulerar Daniel Bernoulli lösningen i en mening som blivit klassiker, här i översättning: värdet av ett ting ska inte bestämmas av dess pris utan av den nytta det ger. En dukat är inte värd samma sak för en fattig som för en rik — marginalnyttan avtar med växande förmögenhet, och nyttan växer ungefär som logaritmen av rikedom. Byt ut väntevärdet mot förväntad nytta — moralisk förväntan — och paradoxen löses: det oändliga beloppets nytta är inte oändlig, och ingen förnuftig person satsar allt. Med det är riskaversion inte längre en svaghet utan matematik: rimliga människor avstår från rättvisa spel och betalar för att slippa dem. Det är hela försäkringsbranschens Psykologi i en ekvation."
+          "content": "I avhandlingen Specimen theoriae novae de mensura sortis, publicerad 1738, formulerar Daniel Bernoulli lösningen i en mening som blivit klassiker, här i översättning: värdet av ett ting ska inte bestämmas av dess pris utan av den nytta det ger. En dukat är inte värd samma sak för en fattig som för en rik — marginalnyttan avtar med växande förmögenhet, och nyttan växer ungefär som logaritmen av rikedom. Byt ut väntevärdet mot förväntad nytta — moralisk förväntan — och paradoxen löses: det oändliga beloppets nytta är inte oändlig, och ingen förnuftig person satsar allt. Med det är riskaversion inte längre en svaghet utan matematik: rimliga människor avstår från rättvisa spel och betalar för att slippa dem. Det är hela försäkringsbranschens psykologi i en ekvation."
         },
         {
           "type": "text",
-          "content": "Daniel Bernoulli levererade också, i samma avhandling, ett av finanshistoriens första diversifikationsexempel: köpmannen som delar sin last på tio skepp i stället för ett, därför att tio sjunker sällan samtidigt — 150 år före Markowitz. Men det familjedrama som omgav insikten var allt annat än diversifierat. Daniel var Johanns son, och när far och son 1734 delade Parisakademiens pris blev faren rasande — han hade räknat med att vinna ensam — och kastade ut Daniel ur hemmet. Onkeln Jacob hade fejdat med samma Johann i åratal. Teorin om hur människor borde fatta beslut under risk utarbetades, generation efter generation, i en familj som illustrerade hur de faktiskt gjorde det."
+          "content": "Daniel Bernoulli levererade också, i samma avhandling, ett av finanshistoriens första diversifieringsexempel: köpmannen som delar sin last på tio skepp i stället för ett, därför att tio sällan sjunker samtidigt — 150 år före Markowitz. Men det familjedrama som omgav insikten var allt annat än diversifierat. Daniel var Johanns son, och när far och son 1734 delade Parisakademiens pris blev fadern rasande — han hade räknat med att vinna ensam — och kastade ut Daniel ur hemmet. Onkeln Jacob hade fejdat med samme Johann i åratal. Teorin om hur människor borde fatta beslut under risk utarbetades, generation efter generation, i en familj som illustrerade hur de faktiskt gjorde det."
         },
         {
           "type": "text",
-          "content": "För AKM1 är detta kapitlet där siffror möter dig. Väntevärdet svarar på vad en position är värd i genomsnitt; nyttan svarar på vad den är värd för dig — med din bankrull, din tidshorizont och din oförmåga att träda in i nästa omgång om du ruinerats. Förlustens asymmetri är nyttolärans råmaterial: en nedgång på hälften kräver en fördubbling för återhämtning, och sista kassan har högst marginalnytta — därför är V19 kapitalförbränning & emission-risk existentiell och inte bara en procentpost. Position sizing är tillämpad Bernoulli: den som maxar väntevärdet utan att väga nyttan kan vinna rätt i varje omgång och ändå förlora allt som spelar roll."
+          "content": "För AKM1 är detta kapitlet där siffror möter dig. Väntevärdet svarar på vad en position är värd i genomsnitt; nyttan svarar på vad den är värd för dig — med din bankrull, din tidshorisont och din oförmåga att träda in i nästa omgång om du ruinerats. Förlustens asymmetri är nyttolärans råmaterial: en nedgång på hälften kräver en fördubbling för återhämtning, och den sista kassan har högst marginalnytta — därför är V19 kapitalförbränning & emission-risk existentiell och inte bara en procentpost. Positionsstorlek är tillämpad Bernoulli: den som maximerar väntevärdet utan att väga nyttan kan vinna rätt i varje omgång och ändå förlora allt som spelar roll."
         },
         {
           "type": "visuell",
@@ -440,7 +439,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Jämför två sätt att ta exponering i samma V19-tunga tillväxtbolag: tio procent av portföljen i ett svep, mot tre procent nu och tre vid varje avklarad milstolpe (kassa överlevnad, AFFO-sväng, orderstock). Vilket maximerar väntevärdet? Vilket maximerar din nytta — och skillnaden mellan svaren, vad beror den på? Ledning: räkna även in vad en totalförlust av respektive insats gör med din förmåga att fortsätta spela."
+          "content": "Jämför två sätt att ta exponering i samma V19-tunga tillväxtbolag: tio procent av portföljen i ett svep, mot tre procent nu och tre vid varje avklarad milstolpe (kassarunway, kassaflödessväng, orderstock). Vilket maximerar väntevärdet? Vilket maximerar din nytta — och vad beror skillnaden mellan svaren på? Ledning: räkna även in vad en totalförlust av respektive insats gör med din förmåga att fortsätta spela."
         }
       ],
       "quiz": [
@@ -475,7 +474,7 @@
             "Greshams lag"
           ],
           "ratt": 2,
-          "tips": "Markowitz blev berömd för att räkna på exakt detta 200 år senare."
+          "tips": "Markowitz blev berömd för att räkna på exakt detta tvåhundra år senare."
         }
       ]
     },
@@ -487,19 +486,19 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Abraham de Moivre var hugenott som fängslats i Paris efter ediktet i Nantes upphävande 1685 och som sedan tillbringade livet som fattig mattelärare i Londons kaffehus. Han blev vän med Newton — sägnen vill att Newton svarade elever med att gå till de Moivre, han kan det här bättre än jag. I The Doctrine of Chances 1718, tillägnad Newton, systematiserde han spelens matematik. Och 1733 gjorde han något större: han studerade myntkast i långa serier och fann att frekvensernas avvikelser från det rimliga värdet formar en symmetrisk kulle — klockkurvan, normalfördelningen. En dag, kärande de Moivre märkte att hans sömn var femton minuter längre för varje dag som gick, räknade fram när den skulle uppgå till ett dygn — och dog, enligt berättelsen, på utsatt dag i november 1754. Mannen som beskrev kurvan levde sitt sista år efter den."
+          "content": "Abraham de Moivre var hugenott som fängslats i Paris efter att Nantesediktet upphävts 1685 och som sedan tillbringade livet som fattig matematiklärare i Londons kaffehus. Han blev vän med Newton — sägnen vill att Newton avvisade elever med att de skulle gå till de Moivre, han kan det här bättre än jag. I The Doctrine of Chances 1718, tillägnad Newton, systematiserade han spelens matematik. Och 1733 gjorde han något större: han studerade myntkast i långa serier och fann att frekvensernas avvikelser från det rimliga värdet formar en symmetrisk kulle — klockkurvan, normalfördelningen. En dag märkte den åldrande de Moivre att hans sömn var femton minuter längre för varje dag som gick, räknade fram när den skulle uppgå till ett dygn — och dog, enligt berättelsen, på utsatt dag i november 1754. Mannen som beskrev kurvan levde sitt sista år efter den."
         },
         {
           "type": "text",
-          "content": "Nästa kapitel skrevs av himlarummet. Astronomer och lantmätare mäter samma sak flera gånger och får olika svar — felet måste hanteras. Carl Friedrich Gauss visade att mätfelen fördelar sig efter klockkurvan, att medeltaget av många observationer blir det mest sannolika värdet, och byggde minsta kvadrat-metoden därefter — med den berömda prioritetstvisten mot Legendre, som publicerade metoden först 1805, medan Gauss hävdade att han använt den sedan 1795. Ryktet grundades 1801 när han förutsade asteroiden Ceres återkomst på himlavalvet efter att den gått förlorad i solens sken. Laplace förädlade det hela i Théorie analytique des probabilités 1812 med tidiga former av centrala gränsvärdessatsen — förklaringen till varför klockkurvan dyker upp överallt där många små oberoende påverkan adderas."
+          "content": "Nästa kapitel skrevs av himlarummet. Astronomer och lantmätare mäter samma sak flera gånger och får olika svar — felet måste hanteras. Carl Friedrich Gauss visade att mätfelen fördelar sig efter klockkurvan, att medelvärdet av många observationer blir det mest sannolika värdet, och byggde minsta kvadrat-metoden därefter — med den berömda prioritetstvisten mot Legendre, som publicerade metoden först 1805, medan Gauss hävdade att han använt den sedan 1795. Berömmelsen grundlades 1801 när han förutsade asteroiden Ceres återkomst på himlavalvet efter att den gått förlorad i solens sken. Laplace förädlade det hela i Théorie analytique des probabilités 1812 med tidiga former av centrala gränsvärdessatsen — förklaringen till varför klockkurvan dyker upp överallt där många små oberoende påverkningar adderas."
         },
         {
           "type": "text",
-          "content": "Sedan tog Adolphe Quetelet, belgisk astronom, sin kayra och vände den mot samhället. 1846 publicerade han 5 738 skotska soldaters bröstmått och visade att de följde normalfördelningen nästan perfekt — naturen, menade han, siktar på genomsnittet, och avvikelserna är tillfälliga missar. Han mytte l'homme moyen, genomsnittsmänniskan, och tyckte henne inte bara statistiskt utan moraliskt vacker: medelt är idealet. Kvinnor och män föddes, dog, gifte sig och begick till och med brott i tal som var lika stabila som stjärnornas banor — social fysik, kallade han det. BMI heter fortfarande Quetelets index. Men i medelt som ideal låg ett frö: om genomsnittet är normen blir avvikelsen defekt — ett frö som Galton, som vi möter i nästa kapitel, skulle odla till sin mörka baksida."
+          "content": "Sedan tog Adolphe Quetelet, belgisk astronom, sin kikare och vände den mot samhället. 1846 publicerade han 5 738 skotska soldaters bröstmått och visade att de följde normalfördelningen nästan perfekt — naturen, menade han, siktar på genomsnittet, och avvikelserna är tillfälliga fel. Han myntade l'homme moyen, genomsnittsmänniskan, och tyckte henne inte bara statistiskt utan moraliskt vacker: medelvärdet är idealet. Födslar, dödsfall, giftermål och till och med brott uppvisade tal lika stabila som stjärnornas banar — social fysik kallade han det. BMI heter fortfarande Quetelets index. Men i medelvärdet som ideal låg ett frö: om genomsnittet är normen blir avvikelsen defekt — ett frö som Galton, som vi möter i nästa kapitel, skulle odla vidare, med en mörk baksida."
         },
         {
           "type": "text",
-          "content": "AKM1-läsningen är dubbel. Å ena sidan: klockkurvan är arbetsredskapet — standardavvikelser i analyser, konfidensintervall kring V07 bruttomarginal och V08 EBITDA-marginal, bruset kring en trend i V01. Å andra sidan: kurvan är antagande, inte lag om naturen i finans. Den genomsnittlige kunden finns sällan — en kundkoncentration på fyra accounts är ingen fördelning utan en pokerhand, och då säger V03 intäktsdiversifiering mer än vilken normalitet som helst. Och kom ihåg vad kurvan lovar: att det extrema är sällsynt. Kapitel 13 handlar om vad som händer de dagar det löftet bryts — i finans sker nämligen de största rörelserna just utanför kurvans väluppfostrade område."
+          "content": "AKM1-läsningen är dubbel. Å ena sidan: klockkurvan är arbetsredskapet — standardavvikelser i analyser, konfidensintervall kring V07 bruttomarginal och V08 EBITDA-marginal, bruset kring en trend i V01. Å andra sidan: kurvan är antagande, inte lag om naturen i finans. Den genomsnittlige kunden finns sällan — en kundkoncentration på fyra konton är ingen fördelning utan en pokerhand, och då säger V03 intäktsdiversifiering mer än vilken normalitet som helst. Och kom ihåg vad kurvan lovar: att det extrema är sällsamt. Kapitel 13 handlar om dagarna då det löftet bryts — i finans sker nämligen de största rörelserna just utanför kurvans väluppfostrade område."
         },
         {
           "type": "visuell",
@@ -511,11 +510,11 @@
         },
         {
           "type": "insikt",
-          "content": "Klockkurvan är statistikens mest framgångsrika export: den gör osäkerheten hanterbar genom att förutsäga att det extrema är sällsynt. Den fungerar utmärkt — tills den dag det inte gör det, och det är finansens dag."
+          "content": "Klockkurvan är statistikens mest framgångsrika export: den gör osäkerheten hanterbar genom att förutsäga att det extrema är sällsamt. Den fungerar utmärkt — tills den dag det inte gör det, och det är finansens dag."
         },
         {
           "type": "utmaning",
-          "content": "Ta en sektors multipel — till exempel V06 EV/EBITDA för dina holdings bolig — och räkna ut medeltal och standardavvikelse. Fråga sedan: är utliggarna data eller varningar? Vad säger fördelningens form (skev, fethalad, tvåtoppig) om branschens V12 intäktsstabilitet? Ledning: om en bransch har två toppar har den två olika branscher i sig — och ett medeltal som ljuger."
+          "content": "Ta en sektors multipel — till exempel V06 EV/EBITDA för dina holdingsbolag — och räkna ut medelvärde och standardavvikelse. Fråga sedan: är utliggarna data eller varningar? Vad säger fördelningens form — skev, fethalad, tvåtoppig — om branschens V12 intäktsstabilitet? Ledning: om en bransch har två toppar innehåller den två olika branscher — och ett medelvärde som ljuger."
         }
       ],
       "quiz": [
@@ -525,7 +524,7 @@
             "Abraham de Moivre 1733, ur långa serier av myntkast",
             "Carl Friedrich Gauss 1809, ur börsens prisrörelser",
             "Adolphe Quetelet 1846, ur soldaternas bröstmått",
-            "Pascal 1654, ur vädslaget"
+            "Pascal 1654, ur vadslaget"
           ],
           "ratt": 0,
           "tips": "Kurvan föddes ur spelbordets mest renodlade slump — inte ur samhällets data."
@@ -533,20 +532,20 @@
         {
           "q": "Vad menade Quetelet med l'homme moyen?",
           "alternativ": [
-            "En statistisk felsidesräkning som skulle kasseras",
+            "En statistisk felberäkning som skulle kasseras",
             "Att männens genomsnitt bör eftersträvas i politiken",
-            "Genomsnittsmänniskan — naturen siktar på medelt och avvikelser är tillfälliga fel",
+            "Genomsnittsmänniskan — naturen siktar på medelvärdet och avvikelser är tillfälliga fel",
             "Att alla soldater borde ha samma bröstmått"
           ],
           "ratt": 2,
-          "tips": "Hos honom var medelt inte bara en siffra utan ett ideal."
+          "tips": "Hos honom var medelvärdet inte bara en siffra utan ett ideal."
         },
         {
           "q": "Vad är poängen med anekdoten om de Moivres allt längre sömn?",
           "alternativ": [
             "Att han egentligen dog av kaffebrist",
             "Att han extrapolerade ett regelbundet mönster ända till sin egen dödsdag — kurvans lockelse i ren form",
-            "Att sömn är en fett svansad variabel",
+            "Att sömn är en fethalad variabel",
             "Att Newton bidrog med beräkningen"
           ],
           "ratt": 1,
@@ -558,23 +557,23 @@
       "num": 8,
       "minutes": 10,
       "title": "Galton — regressionens lag",
-      "intro": "Francis Galton mätte 928 barn och 205 föräldrapar och fann något som retade honom: långa föräldrar fick barn som var lägre än de, korta fick barn som var längre. Han hade upptäckt regressionen mot medelvärdet — den statistiklag som förklarar mer dåliga investeringsbeslut än någon annan enskild kraft.",
+      "intro": "Francis Galton mätte 928 barn och 205 föräldrapar och fann något som retade honom: långa föräldrar fick barn som var lägre än de, korta fick barn som var längre. Han hade upptäckt regressionen mot medelvärdet — den statistiklag som förklarar fler dåliga investeringsbeslut än någon annan enskild kraft.",
       "blocks": [
         {
           "type": "text",
-          "content": "Francis Galton var Darwinens halvkusin, upptäcktsresande i Sydvästafrika, meteorolog som kartlade anticiklonerna, mannen som gjorde fingeravtryck till vetenskap — och ord_myntaren av eugenik, ett mörkt arv som måste nämnas eftersom det var just arvshumor som drev hans statistik. Han byggde quincunxen, kulkulturen där kulor regnar genom dubbelpinnar och formar en klockkurva framför åskådarens ögon: slumpen synliggjord som maskin. Och han ärvde förmögenhet nog att mäta på heltid. Utrustad med våg, tumstock och en nästan moderlös tålamodsbegåvning kastade han sig över frågan: hur följs egenskaper från förälder till barn?"
+          "content": "Francis Galton var Darwins halvkusin, upptäcktsresande i Sydvästafrika, meteorolog som kartlade anticiklonerna, mannen som gjorde fingeravtryck till vetenskap — och upphovsmannen till ordet eugenik, ett mörkt arv som måste nämnas eftersom det var just arvsfrågor som drev hans statistik. Han byggde quincunxen, kulkulturen där kulor regnar genom dubbelpinnar och formar en klockkurva framför åskådarens ögon: slumpen synliggjord som maskin. Och han ärvde en förmögenhet nog att mäta på heltid. Utrustad med våg, tumstock och ett nästan overkligt tålamod kastade han sig över frågan: hur följs egenskaper från förälder till barn?"
         },
         {
           "type": "text",
-          "content": "Först ärterna. 1875 skickade Galton sötertsfrön av olika storlek till vänner runt om England som odlade dem vidare och vägde skörden. Avkomman till de största fröna blev större än genomsnittet — men mindre än sina föräldrar. Avkomman till de minsta blev mindre än genomsnittet — men större än sina föräldrar. Sedan människorna: 1885 publicerade han mätningar av 928 vuxna barn till 205 föräldrapar, och samma mönster — barnen till de längsta drogs ner mot medlet, barnen till de kortaste drogs upp. Galton kallade det först reversion, sedan regression till mediokriteten. Bernstein lyfter fram ironin: mannen som ville bevisa att extrem överlägsenhet ärvas fann den statistiska kraft som拖 den tillbaka."
+          "content": "Först ärterna. 1875 skickade Galton sötertsfrön av olika storlek till vänner runt om England som odlade dem vidare och vägde skörden. Avkomman till de största fröna blev större än genomsnittet — men mindre än sina föräldrar. Avkomman till de minsta blev mindre än genomsnittet — men större än sina föräldrar. Sedan människorna: 1885 publicerade han mätningar av 928 vuxna barn till 205 föräldrapar, och samma mönster — barnen till de längsta drogs ned mot medelvärdet, barnen till de kortaste drogs upp. Galton kallade det först reversion, sedan regression mot medelvärdet. Bernstein lyfter fram ironin: mannen som ville bevisa att extrem överlägsenhet ärvs fann den statistiska kraft som drar den tillbaka."
         },
         {
           "type": "text",
-          "content": "Här är kurvan som förklarar vardagen. Sophomore-slumpen: årets rekorddebutant presterar nästa år närmare genomsnittet. Sports Illustrated-omslagets förbannelse: omslaget väljs vid extremen, nästa säsong är medel. Rekordkvartalet: basåret var dels skicklighet, dels tur — och turens andel återgår. Mekanismen är ren statistik: när två variabler korrelerar mindre än perfekt dras extremvärden i den ena sannolikt mot medlet i den andra — den som hamnade på toppen stod delvis på turens axlar, och turen flyttar sig. Vi söker orsaker — formen tappade, motivationen sinade — där statistiken bara visar återgång. Galton myntade också korrelationen 1888 och gav därmed Markowitz ett nyckelverktyg 70 år i förväg."
+          "content": "Här är lagen som förklarar vardagen. Sophomore-slumpen: årets rekorddebutant presterar nästa år närmare genomsnittet. Omslagets förbannelse: Magazine-omslaget väljs vid extremen, nästa säsong är medel. Rekordkvartalet: basåret var dels skicklighet, dels tur — och turens andel återgår. Mekanismen är ren statistik: när två variabler korrelerar mindre än perfekt dras extremvärden i den ena sannolikt mot medelvärdet i den andra — den som hamnade på toppen stod delvis på turens axlar, och turen flyttar sig. Vi söker orsaker — formen tappades, motivationen sinade — där statistiken bara visar återgång. Galton myntade också korrelationen 1888 och gav därmed Markowitz ett nyckelverktyg sjuttio år i förväg."
         },
         {
           "type": "text",
-          "content": "AKM1 tillämpar regressionen hårt. Vid modellering av V01 försäljningstillväxt och V02 ARR-tillväxt: extrema tillväxtår är ärvda men försvagas — basera evighetsantagandena på normaliserade nivåer, inte på rekordåret, annars betalar du V04 eller V06-multipel för en transient spets. V07 bruttomarginal och V08 EBITDA-marginal utanför branschnormalen mean-reverterar som regel snarare än permanentas; V09 ROO och högt ROE förfaller successivt mot kapitalkostnaden när konkurrens och kapitalbas växer. V16 produktlanseringars sophomore-risk: första lanseringens extrem bevisar produktkraft, inte upprepning. Och V12 intäktsstabilitet är just frågan: återgår serien mot sitt eget medel — eller vandrar den? Fråga alltid: hur mycket av det extrema året var struktur, hur mycket var tur?"
+          "content": "AKM1 tillämpar regressionen hårt. Vid modellering av V01 försäljningstillväxt och V02 ARR-tillväxt: extrema tillväxtår är ärvda men försvagas — basera evighetsantagandena på normaliserade nivåer, inte på rekordåret, annars betalar du V04- eller V06-multipel för en transient spets. V07 bruttomarginal och V08 EBITDA-marginal utanför branschnormalen återgår som regel snarare än att permanentas; V09 ROE och högt ROE förfaller successivt mot kapitalkostnaden när konkurrens och kapitalbas växer. V16 produktlanseringars sophomore-risk: första lanseringens extrem bevisar produktkraft, inte upprepning. Och V12 intäktsstabilitet är just frågan: återgår serien mot sitt eget medel — eller vandrar den? Fråga alltid: hur mycket av det extrema året var struktur, hur mycket var tur?"
         },
         {
           "type": "visuell",
@@ -582,15 +581,15 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Regressionens fallgropar\",\"rader\":[[\"Fenomen\",\"Regressionens läsning\",\"AKM1-variabel\"],[\"Rekordkvartal\",\"Extrem utfall följs oftare av närmare-medel\",\"V01 försäljningstillväxt, V07 bruttomarginal\"],[\"Sophomore-slump\",\"Talang blandad med tur — turens andel återgår\",\"V16 produktlanseringar\"],[\"Omslagsförbannelse\",\"Urval vid extremen drar ner nästa observation\",\"V14 varumärkes-hype\"],[\"Evighet på toppbasår\",\"Basårets extrem begravs i DCF och multipel\",\"V04 P/S, V06 EV/EBITDA\"],[\"Högt ROE\",\"Konkurrens och kapitaltillväxt tömmer överavkastningen\",\"V09 ROE\"]]}"
+          "content": "{\"rubrik\":\"Regressionens fallgropar\",\"rader\":[[\"Fenomen\",\"Regressionens läsning\",\"AKM1-variabel\"],[\"Rekordkvartal\",\"Extrem utfall följs oftare av närmare-medel\",\"V01 försäljningstillväxt, V07 bruttomarginal\"],[\"Sophomore-slump\",\"Talang blandad med tur — turens andel återgår\",\"V16 produktlanseringar\"],[\"Omslagsförbannelse\",\"Urval vid extremen drar ned nästa observation\",\"V14 varumärkes-hype\"],[\"Evighet på toppbasår\",\"Basårets extrem begravs i DCF och multipel\",\"V04 P/S, V06 EV/EBITDA\"],[\"Högt ROE\",\"Konkurrens och kapitaltillväxt tömmer överavkastningen\",\"V09 ROE\"]]}"
         },
         {
           "type": "insikt",
-          "content": "Regression mot medelvärdet är den mest underdiagnostiserade orsaken till att investeringar inte blir som planerat: vi letar orsaker där statistiken bara visar återgång. Frågan varje extreme siffra förtjänar är inte varför — utan hur mycket."
+          "content": "Regression mot medelvärdet är den mest underdiagnostiserade orsaken till att investeringar inte blir som planerat: vi letar orsaker där statistiken bara visar återgång. Frågan varje extrem siffra förtjänar är inte varför — utan hur mycket."
         },
         {
           "type": "utmaning",
-          "content": "Hitta en position där du betalar för att extremåret ska upprepas — till exempel V06 EV/EBITDA satt mot rekordhöga EBITDA, eller V04 P/S mot rekordmarginal. Omkalkylera med ett normaliserat basår: tredjedels väg mot branschens genomsnitt, halva vägen. Hur mycket av tesen överlever normaliseringen? Om svaret är ingenting vet du vad du ägde: en belåten siffra, inte en analys."
+          "content": "Hitta en position där du betalar för att extremåret ska upprepas — till exempel V06 EV/EBITDA satt mot rekordhöga EBITDA, eller V04 P/S mot rekordmarginal. Omkalkylera med ett normaliserat basår: en tredjedel av vägen mot branschens genomsnitt, och halva vägen. Hur mycket av tesen överlever normaliseringen? Om svaret är ingenting vet du vad du ägde: en belåten siffra, inte en analys."
         }
       ],
       "quiz": [
@@ -603,26 +602,26 @@
             "Att genomsnittet förskjuts uppåt för varje generation"
           ],
           "ratt": 1,
-          "tips": "Han sökte ärftlighetens bevis — och fann något annat."
+          "tips": "Han sökte bevis för ärftligheten — och fann något annat."
         },
         {
           "q": "Varför uppstår regression mot medelvärdet statistiskt sett?",
           "alternativ": [
             "Därför att naturen straffar högmod",
-            "Därför att extremvärden innehåller en turskomponent — och turen flyttar sig när korrelationen är mindre än perfekt",
-            "Därför att mätinstrumenten alltid sliter mot noll",
-            "Därför att Galton valde fel frön"
+            "Därför att mätinstrumenten alltid driver mot noll",
+            "Därför att Galton valde fel frön",
+            "Därför att extremvärden innehåller en turskomponent — och turen flyttar sig när korrelationen är mindre än perfekt"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Tänk på vad ett extremt årsresultat är byggt av: två komponenter, varav en flyttar sig."
         },
         {
           "q": "Vad demonstrerar quincunxen — kulkulturen?",
           "alternativ": [
-            "Att klockkurvan kan uppstå ur många små oberoende slump-påverkningar",
+            "Att klockkurvan kan uppstå ur många små oberoende slumppåverkningar",
             "Att regressionen enbart gäller människors längd",
-            "Att Galton fuska med sina mätningar",
-            "Att arvslagarna är deterministiska"
+            "Att Galton fuskade med sina mätningar",
+            "Att arvlagarna är deterministiska"
           ],
           "ratt": 0,
           "tips": "Varje pinne är ett litet slumpöde — tillsammans formar de en kulle."
@@ -633,24 +632,23 @@
       "num": 9,
       "minutes": 10,
       "title": "Knight och Keynes — det vi inte kan veta",
-      "intro": "Medan 1800-talet kvantifierade världen reste två män 1921 hinderbommen: Frank Knight skilde mätbar risk från sann osäkerhet, och John Maynard Keynes skrev en hel avhandling om att sannolikhet är graden av tro, inte frekvens. Deras budskap är kursens viktigaste motviktsblock.",
+      "intro": "Medan 1800-talet kvantifierade världen reste två män 1921 hinderborgen: Frank Knight skilde mätbar risk från sann osäkerhet, och John Maynard Keynes skrev en hel avhandling om att sannolikhet är graden av tro, inte frekvens. Deras budskap är kursens viktigaste motvikt.",
       "blocks": [
         {
           "type": "text",
-          "content": "Frank Knights Risk, Uncertainty and Profit utkom 1921 och gör något lingvistiskt avgörande: den delar det okända i två_sorter. Risk är det mätbara — situationer där fördelningen är känd eller kan skattas, som dödstabellernas värld, och därför försäkrbart och prissatt. Osäkerhet — sann osäkerhet — är det som saknar meningsfulla sannolikheter alltså: situationer som är unika, som aldrig upprepats, där varken frekvens eller omdöme kan bilda en grund. Försäkringsbolag kan poola risker; osäkerhet kan inte poolas — den kan bara bäras. Och vinsten, hävdade Knight, är just belöningen för att bära den: i en värld av ren risk skulle konkurrensen sudda ut all vinst. Företagaren är den som stirrar in i det omätbara och ändå agerar. Det är också en perfekt beskrivning av tillväxtaktiens väsen."
+          "content": "Frank Knights Risk, Uncertainty and Profit utkom 1921 och gör något avgörande: den delar det okända i två sorter. Risk är det mätbara — situationer där fördelningen är känd eller kan skattas, som dödstabellernas värld, och därför försäkringsbart och prissatt. Osäkerhet — sann osäkerhet — är det som saknar meningsfulla sannolikheter överhuvudtaget: situationer som är unika, som aldrig upprepats, där varken frekvenser eller omdöme kan bilda en grund. Försäkringsbolag kan poola risker; osäkerhet kan inte poolas — den kan bara bäras. Och vinsten, hävdade Knight, är just belöningen för att bära den: i en värld av ren risk skulle konkurrensen sudda ut all vinst. Företagaren är den som stirrar in i det omätbara och ändå agerar. Det är också en perfekt beskrivning av tillväxtaktiens väsen."
         },
         {
           "type": "text",
-          "content": "Samma år publicerade John Maynard Keynes sin Treatise on Probability — omarbetad från en dissertation som förts honom till Cambridge redan 1909. Hans budskap: sannolikhet är inte frekvens utan grad av rimlig tro, en logik för partiell kunskap — och, avgörande, vissa frågor tillåter ingen sannolikhet alls; där är resonandet om siffror tomt. Tjugofem år senare, i General Theory 1936, tillämpade han det på börsen i kapitel tolv: aktiemarknaden som tidningens skönhetstävling, där priset går till den som gissar vad medeltjuset kommer tycka att medeltjushet kommer tycka — inte till den som bedömer det fundamentala. Och i den berömda uppsatsen 1937 om dessa ting: det finns ingen vetenskaplig grund på vilken någon beräkningsbar sannolikhet överhuvudtaget kan bildas. Vi vet helt enkelt inte. Bernstein kallar Knight och Keynes för kvantifieringens Motståndare — motsträviga hjältarna i en bok som annars handlar om triumf."
+          "content": "Samma år publicerade John Maynard Keynes sin Treatise on Probability — omarbetad från en avhandling som burit honom till Cambridge redan 1909. Hans budskap: sannolikhet är inte frekvens utan grad av rimlig tro, en logik för partiell kunskap — och, avgörande, vissa frågor tillåter ingen sannolikhet alls; där är resonemang i siffror tomt. Femton år senare, i General Theory 1936, tillämpade han det på börsen i kapitel tolv: aktiemarknaden som tidningens skönhetstävling, där priset går till den som gissar vad medeltaket kommer tycka att medeltaket kommer tycka — inte till den som bedömer det fundamentala. Och i uppsatsen 1937 formulerade han det som Bernstein återkommer till: om dessa ting finns ingen vetenskaplig grund på vilken någon beräkningsbar sannolikhet överhuvudtaget kan bildas. Vi vet helt enkelt inte. Bernstein kallar Knight och Keynes för kvantifieringens motståndare — motsträviga hjältar i en bok som annars handlar om triumf."
         },
         {
           "type": "text",
-          "content": "Historien gick emot dem, och historien hade delvis rätt: tabeller, premiemyndigheter och portföljmatematik byggde en modern ekonomi. Men Knight och Keynes hade rätt om gränsen. Det som flyttar kurserna mest — krig, regimeförändringar, bubbelsprickor, tekniska paradigmbyten — är till sin natur Knight-osäkerhet, inte fördelningsrisk. Därför är den centrala hygienfrågan i varje analys: befinner jag mig i tärningsvärlden eller i Knight-världen? Churn på en mogen SaaS-kassa med åtta kohorter är tärningsvärlden — grauntskt, tabellbart, skattbart. Ett V18-regulatoriskt beslut som avgör hela adresserbara marknaden är Knight-världen: unikt, binärt, utan frekvens. Att sätta enPROCentsiffra på det senare är inte analys utan talismangillning — precision som låtsas vara kunskap."
+          "content": "Historien gick emot dem, och historien hade delvis rätt: tabeller, premielogik och portföljmatematik byggde en modern ekonomi. Men Knight och Keynes hade rätt om gränsen. Det som flyttar kurserna mest — krig, regimförändringar, bubbelsprickor, tekniska paradigmskiften — är till sin natur Knight-osäkerhet, inte fördelningsrisk. Därför är den centrala hygienfrågan i varje analys: befinner jag mig i tärningsvärlden eller i Knight-världen? Churn på en mogen SaaS-kassa med åtta kohorter är tärningsvärlden — grauntskt, tabellbart, skattbart. Ett V18-regulatoriskt beslut som avgör hela adresserbara marknaden är Knight-världen: unikt, binärt, utan frekvens. Att sätta en procentsiffra på det senare är inte analys utan talanggörande — precision som låtsas vara kunskap."
         },
         {
           "type": "text",
-          "content": "AKM1:s praktiska svar är scenarier, inte siffer-show. För Knight-frågor: skriv utfallen med triggar och payoffs, märk vikterna som omdöme, aldrig som mätning; gör premortem — antag att tesen dött och skriv dödsattesten; bredda marginalen (Marginal of safety, principen utan nummer) eftersom osäkerheten inte kan prissättas med en koefficient. V18 regulatoriska katalysatorer behandlas just så: scenarier med fördröjning, avslag och överraskande godkännande — aldrig en punktprognos. Och Keynes vackra varning om skönhetstävlingen är direkt tillämpningsbar på momentumpositioner: du håller den bara så länge medeltjushet förväntas hålla den — veta skillnaden mellan att äga en kassaflödesmaskin och att spela gissningsleken.",
-          "metadata": {}
+          "content": "AKM1:s praktiska svar är scenarier, inte siffershower. För Knight-frågor: skriv utfallen med triggar och utfall, märk vikterna som omdöme, aldrig som mätning; gör premortem — antag att tesen dött och skriv dödsattesten; bredda marginalen (marginal of safety, principen utan nummer) eftersom osäkerheten inte kan prissättas med en koefficient. V18 regulatoriska katalysatorer behandlas just så: scenarier med fördröjning, avslag och överraskande godkännande — aldrig en punktprognos. Och Keynes varning om skönhetstävlingen är direkt tillämpningsbar på momentumpositioner: du håller den bara så länge medeltäcket förväntas hålla den — var medveten om skillnaden mellan att äga en kassaflödesmaskin och att spela gissningsleken."
         },
         {
           "type": "visuell",
@@ -658,7 +656,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Risk mot osäkerhet — Knights uppdelning\",\"rader\":[[\"Dimension\",\"Risk\",\"Sann osäkerhet\"],[\"Fördelning\",\"Känd eller skattbar\",\"Finns inte på ett meningsfullt sätt\"],[\"Exempel\",\"Dödstabeller, churn-kohorter, tärningar\",\"Krig, regimeväxling, paradigmbrott, unika godkännanden\"],[\"Hantering\",\"Premie, hedg, poolning\",\"Omdöme, scenarier, premortem, marginal\"],[\"Belöning\",\"Aktuarisk vinst\",\"Företagarvinst — Knights definition\"],[\"AKM1-plats\",\"V12, V11, V10\",\"V18, V13, djupa V16\"]]}"
+          "content": "{\"rubrik\":\"Risk mot osäkerhet — Knights uppdelning\",\"rader\":[[\"Dimension\",\"Risk\",\"Sann osäkerhet\"],[\"Fördelning\",\"Känd eller skattbar\",\"Finns inte på ett meningsfullt sätt\"],[\"Exempel\",\"Dödstabeller, churn-kohorter, tärningar\",\"Krig, regimväxling, paradigmbrott, unika godkännanden\"],[\"Hantering\",\"Premie, hedg, poolning\",\"Omdöme, scenarier, premortem, marginal\"],[\"Belöning\",\"Aktuarisk vinst\",\"Företagarvinst — Knights definition\"],[\"AKM1-plats\",\"V12, V11, V10\",\"V18 regulatoriska katalysatorer, V13 patenttvister, djupa V16\"]]}"
         },
         {
           "type": "insikt",
@@ -666,7 +664,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Lista tre V18-frågor för ett holdingsbolag: ett godkännande, en patenttvist, en regeländring. Sortera dem: vilka kan vägas statistiskt (finns historia, jämförbara fall) och vilka är rena Knight-fall? För Knight-fallen — skriv scenariorader med triggar i stället för procent, och beskriv hur positionen ska ändras av skillnaden. Ledning: om du inte kan förklara var siffran kommer ifrån är den inte en siffra."
+          "content": "Lista tre V18-frågor för ett holdingsbolag: ett godkännande, en patenttvist, en regeländring. Sortera dem: vilka kan vägas statistiskt (finns historia, jämförbara fall) och vilka är rena Knight-fall? För Knight-fallen — skriv scenariorader med triggar i stället för procent, och beskriv hur positionen ska ändras av skillnaden. Ledning: om du inte kan förklara var siffran kommer ifrån är den ingen siffra."
         }
       ],
       "quiz": [
@@ -675,7 +673,7 @@
           "alternativ": [
             "Risk gäller företag och osäkerhet privatpersoner",
             "Risk är det mätbara och försäkringsbara; sann osäkerhet saknar meningsfulla sannolikheter och kan bara bäras",
-            "Risk är samma sak som osäkerhet i moderne terminologi",
+            "Risk är samma sak som osäkerhet i modern terminologi",
             "Osäkerhet är risk som gått över till aktieägarna"
           ],
           "ratt": 1,
@@ -685,22 +683,22 @@
           "q": "Vad illustrerar Keynes skönhetstävling från General Theory?",
           "alternativ": [
             "Att skönhetsindustrin är övervärderad",
-            "Att aktiepriser drivs av att gissa vad medeltjushet kommer tycka att medeltjushet kommer tycka — andra ordningens förväntningar",
             "Att tidningar är tillförlitliga källor",
-            "Att_probability måste alltid räknas på frekvenser"
+            "Att aktiepriser drivs av att gissa vad medeltäcket kommer tycka att medeltäcket kommer tycka — förväntningar i andra ordningen",
+            "Att sannolikhet alltid måste räknas på frekvenser"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Det handlar om nivåer av gissningar — inte om det fundamentala värdet."
         },
         {
           "q": "Vad betyder Keynes rad från 1937: »Vi vet helt enkelt inte«?",
           "alternativ": [
             "Att ekonomer alltid bör medge okunnighet om allt",
-            "Att vissa framtida händelser inte tillåter någon beräkningsbar sannolikhet överhuvudtaget",
-            "Att all statistik är användbar bara om den är noggrann",
-            "Att han misslyckades med sin avhandling"
+            "Att all statistik bara är användbar om den är noggrann",
+            "Att han misslyckades med sin avhandling",
+            "Att vissa framtida händelser inte tillåter någon beräkningsbar sannolikhet överhuvudtaget"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Fundera på när själva grunden för en sannolikhet saknas — inte när den bara är svår att skatta."
         }
       ]
@@ -709,24 +707,23 @@
       "num": 10,
       "minutes": 10,
       "title": "Von Neumann och Morgenstern — beslutet som spel",
-      "intro": "1944 publicerades ett sextio år senare nästan ofattbart tjockt verk av en ungersk chaufförs mardröm och en österrikisk nationalekonom: Theory of Games and Economic Behavior. Med det blev beslutet under osäkerhet ett spel mot tänkande motparter — och Bernoullis nyttolära återföddes med axiomatik.",
+      "intro": "1944 publicerades ett verk av en ungersk beräkningstrollkarl och en österrikisk nationalekonom: Theory of Games and Economic Behavior. Med det blev beslutet under osäkerhet ett spel mot tänkande motparter — och Bernoullis nyttolära återföddes med axiomatik.",
       "blocks": [
         {
           "type": "text",
-          "content": "John von Neumann föddes i Budapest 1903, och anekdoterna är alla sanna nog tillsammans: som sexåring delade han åttasiffriga tal i huvudet på förfrågan; hans lärare i USA kallade honom den enda fully awake-studenten; kollegorna kallade ungrarna i Budapest för marsmän — varelser från en annan intelligensvärld. Han byggde datorernas arkitektur, satt i atombombsprojektet och blev senare atomenergikommissionär. Oscar Morgenstern, nationalekonom från Wien, hade redan på trettiotalet skrivit om problemet med fullständig förutsägelse i strategiska möten: Sherlock Holmes flyr Moriarty till Dover eller stiger av i Ashford — men om Moriarty kan beräkna Holmes val, och Holmes vet att Moriarty kan, finns ingen stabil lösning alls. Efter Anschluss 1938 hamnade Morgenstern i Princeton — där von Neumann satt."
+          "content": "John von Neumann föddes i Budapest 1903, och anekdoterna är alltför många för att alla ska vara sanna — men de pekar samma håll: som sexåring delade han åttasiffriga tal i huvudet på förfrågan; kollegorna kallade Budapests ungerska genier för marsmän, varelser från en annan intelligensvärld; Wigner sade att von Neumann var den ende fullt vakne bland dem. Han byggde datorernas arkitektur, satt i atombombsprojektet och blev senare atomenergikommissionär. Oscar Morgenstern, nationalekonom från Wien, hade redan på trettiotalet skrivit om problemet med fullständig förutsägelse i strategiska möten: Sherlock Holmes flyr Moriarty till Dover eller stiger av i Ashford — men om Moriarty kan beräkna Holmes val, och Holmes vet att Moriarty kan, finns ingen stabil lösning alls. Efter Anschluss 1938 hamnade Morgenstern i Princeton — där von Neumann satt."
         },
         {
           "type": "text",
-          "content": "Theory of Games and Economic Behavior utkom 1944 på Princeton University Press. Enligt Morgensterns dagbok dikterade von Neumann stora delar i vit hetta. Kärnan för tvåpersoners nollsummespel: minimax-satsen, som von Neumann redan bevisat 1928 — välj den strategi som minimerar din största möjliga förlust, ty din motpart maximerar din skada. Beslutet under osäkerhet blir därmed inte längre en dans med blind slump utan ett schack med en tänkande moståndare: mitt bästa val beror på hennes val, och hennes på mitt. Och i bokens bilaga finns den andra revolutionen: axiomatiseringen av förväntad nytta. Daniel Bernoullis 200-åriga idé får matematisk grund — om dina preferenser uppfyller vissa rimliga axiom beter du dig som om du maximerar förväntad nytta. Nyttoläran återföddes som beslutvetenskap."
+          "content": "Theory of Games and Economic Behavior utkom 1944 på Princeton University Press. Enligt Morgensterns dagbok dikterade von Neumann stora delar i vit hetta. Kärnan för tvåpersoners nollsummespel: minimax-satsen, som von Neumann redan bevisat 1928 — välj den strategi som minimerar din största möjliga förlust, ty motparten maximerar din skada. Beslutet under osäkerhet blir därmed inte längre en dans med blind slump utan ett schack med en tänkande motståndare: mitt bästa val beror på hennes val, och hennes på mitt. Och i bokens bilaga finns den andra revolutionen: axiomatiseringen av förväntad nytta. Daniel Bernoullis tvåhundraåriga idé får matematisk grund — om dina preferenser uppfyller vissa rimliga axiom beter du dig som om du maximerar förväntad nytta. Nyttoläran återföddes som beslutsvetenskap."
         },
         {
           "type": "text",
-          "content": "Efterverkningarna kom snabbt. RAND-anstaltens kalla krig gjorde spelteorin till strategiskt språk — avskräckning och terrorbalans analyserades som spel. Milton Friedman och Leonard Savage visade 1948 att en enda nyttokurva med en knäckpunkt förklarar varför samma människa köper både försäkring och lotter. Allais paradox 1953 (och Ellsbergs okända urnor) visade att riktiga människor bryter mot axiomen systematiskt — ett infall som väntar på kapitel 13 och kursen om beteendeekonomi. Men poängen består: i strategiska situationer räcker det inte att räkna sannolikheter — man måste modellera spelet, inklusive motpartens självintresse och information."
+          "content": "Efterverkningarna kom snabbt. RAND-anstalten under kalla kriget gjorde spelteorin till strategiskt språk — avskräckning och terrorbalans analyserades som spel. Milton Friedman och Leonard Savage visade 1948 att en enda nyttokurva med en knäckpunkt förklarar varför samma människa köper både försäkring och lotter. Allais paradox 1953 — och Ellsbergs okända urnor — visade att riktiga människor bryter mot axiomen systematiskt, ett spår som leder vidare till kapitel 13 och beteendeekonomin. Men poängen består: i strategiska situationer räcker det inte att räkna sannolikheter — man måste modellera spelet, inklusive motpartens självintresse och information."
         },
         {
           "type": "text",
-          "content": "AKM1 möter spelteorin överallt i marknaden. Din exit är någons entry: väntevärdet av din exit beror på vem som tar över när du säljer — och varför. V17 avtal & partnerskap är förhandlingsspel: vem har bästa alternativ utanför avtalet, BATNA i praktiken? V15 nätverkseffekter är spelteori i ren form: plattformskriget om standarden är ett winner-take-most-spel där minimax-frågan lyder — vad händer min position om rivalen vinner standarden? Och minimax är själva disciplinen i riskarbete: definiera värsta fallet och dimensionera för det (V19), i stället för att optimera för det troliga. Spelteori formaliserar den pascalska ödmjukheten: planera för motståndarens bästa drag, inte för hennes sämsta.",
-          "metadata": {}
+          "content": "AKM1 möter spelteorin överallt i marknaden. Din exit är någons entry: värdet av din exit beror på vem som tar över när du säljer — och varför. V17 avtal & partnerskap är förhandlingsspel: vem har bästa alternativ utanför avtalet — BATNA i praktiken? V15 nätverkseffekter är spelteori i ren form: plattformskriget om standarden är ett winner-take-most-spel där minimax-frågan lyder — vad händer min position om rivalen vinner standarden? Och minimax är själva disciplinen i riskarbete: definiera värsta fallet och dimensionera för det (V19), i stället för att optimera för det troliga. Spelteorin formaliserar den pascalska ödmjukheten: planera för motståndarens bästa drag, inte för hennes sämsta."
         },
         {
           "type": "visuell",
@@ -772,11 +769,11 @@
           "q": "Vad var poängen med Morgensterns Holmes–Moriarty-problem?",
           "alternativ": [
             "Att kriminalromaner är en dålig källa till ekonomisk teori",
-            "Att fullständig förutsägelse i strategiska möten är självförföljande — valen är ömsesidigt beroende",
             "Att tågresor alltid är riskabla",
-            "Att sannolikhet kan beräknas ur tågtablåer"
+            "Att sannolikhet kan beräknas ur tidtabeller",
+            "Att fullständig förutsägelse i strategiska möten är självförföljande — valen är ömsesidigt beroende"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Om Moriarty kan räkna ut Holmes, och Holmes vet det — vad händer med lösningen?"
         }
       ]
@@ -785,24 +782,23 @@
       "num": 11,
       "minutes": 10,
       "title": "Markowitz och Sharpe — risken blir varians och beta",
-      "intro": "1952 skrev en doktorand i Chicago en artikel som definierade om risk för alltid: inte en egenskap hos aktien, utan hos portföljen. Tolv år senare gav William Sharpe världen beta. Detta är kapitlet om hur risken blev ett nummer — och vad som följde med i köpet.",
+      "intro": "1952 skrev en doktorand i Chicago en artikel som definierade om risk för alltid: inte en egenskap hos aktien, utan hos portföljen. Tolv år senare gav William Sharpe världen betan. Detta är kapitlet om hur risken blev ett nummer — och vad som följde med i köpet.",
       "blocks": [
         {
           "type": "text",
-          "content": "Harry Markowitz sökte ett avhandlingstema och fick av en börsmäklare tips på biblioteket: tillämpa matematik på aktiemarknaden. Medan han läste om diversifiering föll poängen: om investerare diversifierar — vilket alla gör — kan de inte bara bry sig om avkastning; de måste bry sig om risk också. Portfolio Selection publicerades i Journal of Finance i mars 1952 och innehåller båda insikterna som skulle ge Nobelpriset 1990. Den första: risk är inte summan av delriskerna — aktier som inte rör sig i takt har tillsammans lägre risk än var för sig, eftersom kovarianserna gör att variationerna delvis tar ut varandra. Den andra: portföljvalet är därför ett problem i två dimensioner — förväntad avkastning mot varians — och lösningarna bildar en gräns, den effektiva fronten, där ingen extra avkastning finns att hämta utan extra risk. Bernstein kallar detta ögonblicket då risken fick sin egen geometri."
+          "content": "Harry Markowitz sökte ett avhandlingstämne och fick av en börsmäklare ett tips på biblioteket: tillämpa matematik på aktiemarknaden. Medan han läste om diversifiering föll poängen: om investerare diversifierar — vilket alla gör — kan de inte bara bry sig om avkastning; de måste bry sig om risk också. Portfolio Selection publicerades i Journal of Finance i mars 1952 och innehåller båda insikterna som skulle ge Nobelpriset 1990. Den första: risk är inte summan av delriskerna — aktier som inte rör sig i takt har tillsammans lägre risk än var för sig, eftersom kovarianserna låter variationerna delvis ta ut varandra. Den andra: portföljvalet är därför ett problem i två dimensioner — förväntad avkastning mot varians — och lösningarna bildar en gräns, den effektiva fronten, där ingen extra avkastning finns att hämta utan extra risk. Bernstein kallar detta ögonblicket då risken fick sin egen geometri."
         },
         {
           "type": "text",
-          "content": "Samma år, oberoende, publicerade A. D. Roy Safety First — om wishes were horses, beggars would ride, inleder han, och föreslog att välja den portfölj som minimerar risken att sjunka under en existensminimigräns. Historien glömde Roy och prisade Markowitz, men tillsammans visar de något: idén var mogen. Däremot fanns invändningar som vi ska bära med oss: varians är symmetrisk — den straffar överraskningar uppåt lika mycket som nedåt — och den säger ingenting om ruin. En strategi som ger en blinkning små vinster och en liten sannolikhet för total katastrof kan ha låg varians och se nästan riskfri ut. Det är frågan Daniel Bernoulli ställde 1738 och som Mandelbrot och Taleb skulle ställa igen — men det är att springa i förväg; 1952 var det variationsbegreppets sekel."
+          "content": "Samma år, oberoende, publicerade A. D. Roy Safety First — if wishes were horses, beggars would ride, inleder han, och föreslog att välja den portfölj som minimerar risken att sjunka under en existensminimumgräns. Historien glömde Roy och prisade Markowitz, men tillsammans visar de att idén var mogen. Däremot fanns invändningar som vi ska bära med oss: varians är symmetrisk — den straffar överraskningar uppåt lika mycket som nedåt — och den säger ingenting om ruin. En strategi som ger en ström av små vinster och en liten sannolikhet för total katastrof kan ha låg varians och se nästan riskfri ut. Det är frågan Daniel Bernoulli ställde 1738 och som Mandelbrot och Taleb skulle ställa igen — men det är att springa i förväg; 1952 inleddes variansbegreppets segerståg."
         },
         {
           "type": "text",
-          "content": "William Sharpe, doktorand som jobbat med just Markowitz på RAND för att förenkla kovariansberäkningarna, publicerade 1964 Capital Asset Prices och skapade CAPM. Om alla håller effektiva portföljer kan bara en portfölj finnas i jämvikt: marknadsportföljen. Då delar sig risken i två sorter: den systematiska — samvariationen med marknaden, betan — som inte kan diversifieras bort och därför är den enda som belönas med riskpremie; och den idiosynkratiska, som kan och därför inte betalar. Förväntad avkastning är riskfria räntan plus beta gånger marknadens premie. Treynor hade kommit likt i opublicerat material, Lintner och Mossin följde 1965 och 1966 — en av ekonomins verkliga samtidiga upptäckter. Sharpe delade Nobelpriset med Markowitz och Miller 1990."
+          "content": "William Sharpe, doktorand som arbetat med just Markowitz på RAND för att förenkla kovariansberäkningarna, publicerade 1964 Capital Asset Prices och skapade CAPM. Om alla håller effektiva portföljer kan bara en portfölj finnas i jämvikt: marknadsportföljen. Då delar sig risken i två sorter: den systematiska — samvariationen med marknaden, betan — som inte kan diversifieras bort och därför är den enda som belönas med riskpremie; och den idiosynkratiska, som kan och därför inte betalar. Förväntad avkastning är den riskfria räntan plus beta gånger marknadens premie. Treynor hade kommit likt i opublicerat material, Lintner och Mossin följde 1965 och 1966 — en av ekonomins verkliga samtidiga upptäckter. Sharpe delade Nobelpriset med Markowitz och Miller 1990."
         },
         {
           "type": "text",
-          "content": "Konsekvenserna blev institutionella. Beta tog plats på handelsborden; Sharpe-kvoten från 1966 blev prestationsmätarens hammare; och om bara systematisk risk betalar ligger indexfonden som teoretisk slutsats i luften — Wells Fargo startade institutionell indexering 1971 och Bogles First Index Investment Trust öppnade i augusti 1976, hånad och sedan oemotståndlig. För AKM1: enskildabolagens risk ska alltid frågas portföljfrågan — vad gör den här aktien med resten? Ett bolag med hög V03 intäktsdiversifiering (många kunder, branscher, geografier) tillför mindre idiosynkratisk risk än ett kundkoncentrerat med samma V08 EBITDA-marginal; därför ska koncentration bestraffas i avkastningskravet. Betan lever sedan vidare i diskussionsräntorna bakom dina V06 EV/EBITDA-värderingar. Och en varning från kursens senare kapitel: i kriser går korrelationerna mot ett — just när diversifieringen behövs som mest. Det visade både 1987, 1998 och 2008.",
-          "metadata": {}
+          "content": "Konsekvenserna blev institutionella. Betan tog plats på handelsborden; Sharpe-kvoten från 1966 blev prestationsmätarens hammare; och om bara systematisk risk betalar ligger indexfonden som teoretisk slutsats i luften — Wells Fargo startade institutionell indexering 1971 och John Bogles First Index Investment Trust öppnade i augusti 1976, hånad först och oemotståndlig sedan. För AKM1: enskilda bolags risk ska alltid frågas portföljfrågan — vad gör den här aktien med resten? Ett bolag med hög V03 intäktsdiversifiering — många kunder, branscher, geografier — tillför mindre idiosynkratisk risk än ett kundkoncentrerat med samma V08 EBITDA-marginal; därför ska koncentration bestraffas i avkastningskravet. Betan lever sedan vidare i diskonteringsräntorna bakom dina V06 EV/EBITDA-värderingar. Och en varning från kursens senare kapitel: i kriser går korrelationerna mot ett — just när diversifieringen behövs som mest. Det visade både 1987, 1998 och 2008."
         },
         {
           "type": "visuell",
@@ -810,7 +806,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Portföljteorins byggstenar\",\"rader\":[[\"År\",\"Insats\",\"Betydelse\"],[\"1952\",\"Markowitz: varians och kovarians\",\"Diversifiering blir beräknbart — risken får geometri\"],[\"1952\",\"Roy: Safety First\",\"Samtidig upptäckt — överlevnad framför genomsnitt\"],[\"1964\",\"Sharpe: beta och CAPM\",\"Endast systematisk risk belönas\"],[\"1966\",\"Sharpe-kvoten\",\"Risken blir prestationsmått\"],[\"1971 och 1976\",\"Wells Fargo och Bogle\",\"Teorin blir produkt — indexfonden\"]]}"
+          "content": "{\"rubrik\":\"Portföljteorins byggstenar\",\"rader\":[[\"År\",\"Insats\",\"Betydelse\"],[\"1952\",\"Markowitz: varians och kovarians\",\"Diversifiering blir beräknelig — risken får geometri\"],[\"1952\",\"Roy: Safety First\",\"Samtidig upptäckt — överlevnad framför genomsnitt\"],[\"1964\",\"Sharpe: beta och CAPM\",\"Endast systematisk risk belönas\"],[\"1966\",\"Sharpe-kvoten\",\"Risken blir prestationsmått\"],[\"1971 och 1976\",\"Wells Fargo och Bogle\",\"Teorin blir produkt — indexfonden\"]]}"
         },
         {
           "type": "insikt",
@@ -828,7 +824,7 @@
             "Eftersom fler aktier alltid ger högre avkastning",
             "Eftersom aktier som inte rör sig i perfekt takt har kovarianser under ett — variationerna tar delvis ut varandra",
             "Eftersom börsen alltid stiger på sikt",
-            "Eftersom aktieantal minskar courtagen till noll"
+            "Eftersom aktieantal sänker courtagen till noll"
           ],
           "ratt": 1,
           "tips": "Det handlar om samvariationen mellan delarna, inte om antalet."
@@ -847,13 +843,13 @@
         {
           "q": "Vilken slutsats i CAPM retade aktieväljarna mest?",
           "alternativ": [
-            "Att all avkastning kommer från dividendar",
-            "Att bara systematisk risk belönas — idiosynkratisk risk kan diversifieras bort och betalar därför inte",
+            "Att all avkastning kommer från utdelningar",
             "Att betan alltid är ett",
-            "Att kovarianser är oberoende av marknaden"
+            "Att kovarianser är oberoende av marknaden",
+            "Att bara systematisk risk belönas — idiosynkratisk risk kan diversifieras bort och betalar därför inte"
           ],
-          "ratt": 1,
-          "tips": "Fundera på vad som händer med aktiesäljarnas arbete om bara marknadsrisken betalar."
+          "ratt": 3,
+          "tips": "Fundera på vad som händer med aktieplockarnas arbete om bara marknadsrisken betalar."
         }
       ]
     },
@@ -865,21 +861,19 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Frågan hade legat och gäckat sedan 1900, då Louis Bachelier i sin avhandling Théorie de la Spéculation beskrev prisrörelser som slumpvandring — ett arbete som ignorerades i femtio år innan Samuelson lyfte det ur glömskan. Vad är en option egentligen värd? Fischer Black, konsult med examen i fysik och matematik, angrep problemet från CAPM och skrev ner differentialekvationen; Myron Scholes och Robert Merton kom dit via hedging och kontinuerlig ombalansering. Deras uppsats refuserades först av tidskrifter — Chicago-recensenterna tvekade — innan den publicerades i Journal of Political Economy maj–juni 1973. Lösningens kärna är nästan andlig i sin enkelhet: bygg en portfölj av option och underliggande akti, justera den ständigt, så är den riskfri varje ögonblick — och en riskfri position måste ge riskfria räntan. Resten är algebra."
+          "content": "Frågan hade legat och gäckat sedan 1900, då Louis Bachelier i sin avhandling Théorie de la Spéculation beskrev prisrörelser som slumpvandring — ett arbete som ignorerades i femtio år innan Samuelson lyfte det ur glömskan. Vad är en option egentligen värd? Fischer Black, konsult med examen i fysik och matematik, angrep problemet från CAPM och skrev ner differentialekvationen; Myron Scholes och Robert Merton kom dit via hedging och kontinuerlig ombalansering. Deras uppsats refuserades först av tidskrifter — recensenterna i Chicago tvekade — innan den publicerades i Journal of Political Economy i maj–juni 1973. Lösningens kärna är nästan andlig i sin enkelhet: bygg en portfölj av option och underliggande akti, justera den ständigt, så är den riskfri varje ögonblick — och en riskfri position måste ge den riskfria räntan. Resten är algebra."
         },
         {
           "type": "text",
-          "content": "Det förbluffande i formeln: priset beror på aktiekurs, lösenpris, löptid, ränta och volatilitet — men inte på aktiens förväntade avkastning. Du behöver inte ha rätt om bolaget för att prissätta optionen på det; du behöver bara kunna mäta dess osäkerhet. Volatiliteten blev därmed en handelsbar egenskap. Timglaset var perfekt: den 26 april 1973 öppnade Chicago Board Options Exchange och 911 kontrakt bytte ägare dag ett; räntor och valutor hade flutit sedan Bretton Woods död 1971 och oljekrisen 1973 gjorde osäkerheten till näringslivets vardag. Texas Instruments lanserade miniräknare med formeln inbyggd — Black erhöll, enligt sägnen, inte en cent i royalty och skämtade surt om saken. Bernstein kallar sjuttiotalet optionernas årtionde: instrument som låter var och välja sin riskprofil — försäkra, spekulera, låsa — spred sig från Chicago till alla världens handelsbodar."
+          "content": "Det förbluffande i formeln: priset beror på aktiekurs, lösenpris, löptid, ränta och volatilitet — men inte på aktiens förväntade avkastning. Du behöver inte ha någon åsikt om bolaget för att prissätta optionen på det; du behöver bara kunna mäta dess osäkerhet. Volatiliteten blev därmed en handelbar egenskap. Timglaset var perfekt: den 26 april 1973 öppnade Chicago Board Options Exchange och 911 kontrakt bytte ägare dag ett; valutor hade flutit sedan Bretton Woods död 1971 och oljekrisen 1973 gjorde osäkerheten till näringslivets vardag. Texas Instruments lanserade en miniräknare med formeln inbyggd — Black erhöll, enligt sägnen, inte en cent i royalty och skämtade surt om saken. Bernstein kallar sjuttiotalet optionernas årtionde: instrument som låter var och en välja sin riskprofil — försäkra, spekulera, låsa — spred sig från Chicago till världens alla handelsbodar."
         },
         {
           "type": "text",
-          "content": "Sedan kom påminnelserna. Portföljförsäkring — Leland, O'Brien och Rubinstein idé att replikera en säljoption genom att automatiskt sälja index när marknaden faller — var 1987 en mångmiljardindustri. Den 19 oktober 1987 föll Dow med 22,6 procent på en dag, och den mekaniska försäljningen förstärkte fallet den skulle skydda mot: dynamisk hedging förutsätter att man alltid kan handla, till rimliga priser, i tillräcklig volym — ett antagande som dör exakt när det behövs. I oktober 1997 fick Merton och Scholes Nobelpriset; Black hade avlidit 1995 och kom därmed aldrig att frågas. Inom tolv månader satt båda pristagarna i styrelsen för LTCM, som i september 1998 krävde Feds organiserade räddning — historien som kursen When Genius Failed berättar i sin helhet, och som bevisar samma feltologi: modellerna var rätt, antagandena om likviditet och korrelation var det inte.",
-          "metadata": {}
+          "content": "Sedan kom påminnelserna. Portföljförsäkring — Leland, O'Brien och Rubinstein idé att replikera en säljoption genom att automatiskt sälja index när marknaden faller — var 1987 en mångmiljardindustri. Den 19 oktober 1987 föll Dow med 22,6 procent på en dag, och den mekaniska försäljningen förstärkte fallet den skulle skydda mot: dynamisk hedging förutsätter att man alltid kan handla, till rimliga priser, i tillräcklig volym — ett antagande som dör exakt när det behövs. I oktober 1997 fick Merton och Scholes Nobelpriset; Black hade avlidit 1995 och kunde aldrig frågas. Inom tolv månader satt båda pristagarna i styrelsen för LTCM, som i september 1998 krävde Feds organiserade räddning — historien som kursen When Genius Failed berättar i sin helhet, och som bevisar samma felmekanik: modellerna var rätt, antagandena om likviditet och korrelation var det inte."
         },
         {
           "type": "text",
-          "content": "AKM1 läser derivat på två plan. Det ena: risktransferringens redskap — hedging av valutor, räntor, råvaror;ett bolag som skyddar sina marginaler (V07, V08) med derivat har lägre V12-varians, men läs noterna: derivat är också skuldsättning i förklädnad, och V10 skuldsättningsgrad syns inte i balansräkningen om du inte letar i not 27. Det andra: optionstänket som lins. Merton visade att aktien i ett skuldsatt bolag är en köpoption på tillgångarna — ägarna betalar inte mer än de väljer, och då det är kassan som brinner är V19 kapitalförbränning premien du betalar för asymmetrisk exponering. En tidig tillväxtaktie är samma konstruktion: insatsen är begränsad till priset, utfallet öppet uppåt — det är därför V16 produktlanseringar kan värderas som en portfölj av optioner: små premier, feta möjligheter, och ett tidsvärde som brinner upp varje kvartal utan katalysator.",
-          "metadata": {}
+          "content": "AKM1 läser derivat på två plan. Det ena: risköverföringens redskap — hedging av valutor, räntor och råvaror; ett bolag som skyddar sina marginaler (V07, V08) med derivat får lägre variation i V12-intäkterna, men läs noterna om finansiella instrument: derivat är också skuldsättning i förklädnad, och V10 skuldsättningsgrad syns inte i balansräkningen om du inte letar där. Det andra: optionstänket som lins. Merton visade att aktien i ett skuldsatt bolag är en köpoption på tillgångarna — ägarna betalar inte mer än de väljer, och när kassan brinner är V19 kapitalförbränning premien du betalar för asymmetrisk exponering. En tidig tillväxtaktie är samma konstruktion: insatsen är begränsad till priset, utfallet öppet uppåt — det är därför V16 produktlanseringar kan värderas som en portfölj av optioner: små premier, feta möjligheter, och ett tidsvärde som brinner upp varje kvartal utan katalysator."
         },
         {
           "type": "visuell",
@@ -895,7 +889,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Identifiera en position där du i praktiken köper en option: en tidig tillväxtaktie där premien är insatsen (V19-exponeringen) och lösenpriset är en milstolpe — godkännande, orderstock, lansering. Beräkna grovt hur mycket premie som brinner per kvartal utan katalysator, och vad som händer med din kassa vid två kvartal till av väntan. Ledning: en options köpare har rätt att vara fel länge — men inte gratis."
+          "content": "Identifiera en position där du i praktiken köper en option: en tidig tillväxtaktie där premien är insatsen (V19-exponeringen) och lösenpriset är en milstolge — godkännande, orderstock, lansering. Beräkna grovt hur mycket premie som brinner per kvartal utan katalysator, och vad som händer med bolagets kassa vid två kvartal till av väntan. Ledning: en optionsköpare har rätt att ha fel länge — men inte gratis."
         }
       ],
       "quiz": [
@@ -914,22 +908,22 @@
           "q": "Varför förvärrade portföljförsäkring kraschen 1987?",
           "alternativ": [
             "Den köpte aktier i stigande marknad och blev av med dem i fallande",
-            "Dynamisk hedging innebar automatisk försäljning när marknaden föll — och förutsatte likviditet som försvann just då",
             "Formeln använde fel ränta",
-            "Försäkringarna var för små för att spela roll"
+            "Försäkringarna var för små för att spela roll",
+            "Dynamisk hedging innebar automatisk försäljning när marknaden föll — och förutsatte likviditet som försvann just då"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Mekanismen som skyddar i modellen förutsätter att något alltid finns kvar att handla med."
         },
         {
           "q": "Vad säger Mertons modell om aktien i ett högt skuldsatt bolag?",
           "alternativ": [
             "Att den är värd noll",
-            "Att den är en köpoption på bolagets tillgångar — begränsad nedåt, öppen uppåt, med borgenärerna som motpart",
             "Att den bör värderas med direktavkastning",
-            "Att skulden är irrelevant för ägarna"
+            "Att skulden är irrelevant för ägarna",
+            "Att den är en köpoption på bolagets tillgångar — begränsad nedåt, öppen uppåt, med borgenärerna som motpart"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Tänk på vad aktieägaren faktiskt kan vinna och förlora när skulderna är störst."
         }
       ]
@@ -938,25 +932,23 @@
       "num": 13,
       "minutes": 10,
       "title": "Mot gudarna? — den mätbara riskens gränser",
-      "intro": "Hittill har kursen berättat en triumfhistoria: från orakel till optioner, fyrahundra år av att mäta det förr var Guds. Det här kapitlet är kursens ärlighet: jublet fick sin nackslag av krisen 2008, mandelbrot och Taleb hade varnat i decennier, och Bernstein själv skrev uppdaterat förord om saken. Och ändå poängsätter AKM1 V19 och V10. Varför — det är kapitlets fråga.",
+      "intro": "Hittills har kursen berättat en triumfhistoria: från orakel till optioner, fyrahundra år av att mäta det som förr var Guds. Det här kapitlet är kursens ärlighet: jublet fick sin nackslag av krisen 2008, Mandelbrot och Taleb hade varnat i decennier, och Bernstein själv skrev uppdaterat förord om saken. Och ändå poängsätter AKM1 V19 och V10. Varför — det är kapitlets fråga.",
       "blocks": [
         {
           "type": "text",
-          "content": "Läs som den var avsedd att läsas, 1996, är Against the Gods en hyllning: människans befrielse från slumpens tyranni, verktyg framåt. Sedan kom verklighetens fotnoter. 1998: LTCM — nobelpristagare, fyra miljarder förlorade, Fed-räddning. 2000: dotcom. Och 2007–2008: hela det globala systemet bygggt på riskmätningens tvillingsverktyg VaR och den gaussiska kopulan — den formel som lät bankerna sätta korrelationer på tusentals hypotekslån och prissätta det oprissättbara som AAA. När bostadsmarknaderna vände visade sig korrelationsantagandena vara önskedrömmar och VaR:s gränser vara att den svarar på hur mycket du kan förlora med 95 procents säkerhet — inte på vad som händer de fem procenten av dagarna, när allt händer samtidigt. Bernstein, som dog i juni 2009, hade i uppdaterade förord varnat för just övermodet: tron att det mätbara är det hela. Hans lösning var inte att kasta verktygen utan att skilja mellan att mäta och att veta."
+          "content": "Läst som den var avsedd att läsas, 1996, är Against the Gods en hyllning: människans befrielse från slumpens tyranni, verktyg framåt. Sedan kom verklighetens fotnoter. 1998: LTCM — nobelpristagare, miljarder förlorade, Fed-räddning. 2000: dotcom. Och 2007–2008: hela det globala systemet, byggt på riskmätningens tvillingverktyg VaR och den gaussiska kopulan — den formel som lät bankerna sätta korrelationer på tusentals bolån och prissätta det oprissättbara som AAA. När bostadsmarknaderna vände visade sig korrelationsantagandena vara önskedrömmar, och VaR:s svaghet stod naken: måttet svarar på hur mycket du kan förlora med 95 procents säkerhet — inte på vad som händer de fem procenten av dagarna, när allt händer samtidigt. Bernstein, som dog i juni 2009, hade i uppdaterade förord varnat för just övermodet — tron att det mätbara är det hela. Hans svar var inte att kasta verktygen utan att skilja på att mäta och att veta."
         },
         {
           "type": "text",
-          "content": "Varnarna var på plats före honom. Benoit Mandelbrot — upphovsmannen till fraktalerna — studerade 1963 hundra år av bomullspriser i Journal of Business och fann det ingen ville se: förändringarna var fethalade, med extrema dagar långt oftare än klockkurvan tillåter, hopklumpade i perioder (Josefseffekten) och bitvis hoppande (Noa-effekten); variansen var i praktiken oändlig. I The Misbehavior of Markets 2004 drev han det vidare: marknadernas slump är vild, inte mild. Under normalfördelningsantagandet är Dows fall på 22,6 procent den 19 oktober 1987 inte bara osannolikt — det är, som Taleb påpekat, omöjligt på universums ålder. Nassim Taleb, optionshandlare som sett svansen inifrån piten, skrev Fooled by Randomness 2001 och The Black Swan i oktober 2007 — ett år före kraschen som gjorde honom till samtiders profet. Hans mest obekväma tanke: vi använder gaussiska verktyg från mediocristan i en värld som är extremistan.",
-          "metadata": {}
+          "content": "Varnarna var på plats före honom. Benoit Mandelbrot — upphovsmannen till fraktalerna — studerade 1963 ett sekel av bomullspriser i Journal of Business och fann det ingen ville se: förändringarna var fethalade, med extrema dagar långt oftare än klockkurvan tillåter, hopklumpade i perioder (Josefseffekten) och bitvis hoppande (Noa-effekten); variansen var i praktiken oändlig. I The (Mis)Behavior of Markets 2004 drev han det vidare: marknadernas slump är vild, inte mild. Under normalfördelningsantagandet är Dow-indexets fall på 22,6 procent den 19 oktober 1987 inte bara osannolikt — det är, som Taleb påpekat, omöjligt på universums ålder. Nassim Taleb, optionshandlare som sett svansen inifrån piten, skrev Fooled by Randomness 2001 och The Black Swan i oktober 2007 — ett år före kraschen som gjorde honom till sin tids profet. Hans mest obekväma tanke: vi använder gaussiska verktyg från medelvärlden i en värld som är extremvärlden."
         },
         {
           "type": "text",
-          "content": "Tiebs skarpaste argument i AKM1-sammanhang: risken att förlora 100 procent. En strategi som ger små stadiga vinster och en liten sannolikhet för total förlust har låg standardavvikelse — variansen, Markowitz och Sharpes gudsbegrepp, ser den som nästan riskfri. Men variansen mäter spridning, inte överlevnad. Formulerat med det moderna ergodicitetsbegreppet: vad som händer hundra personer i genomsnitt en gång är inte samma sak som vad som händer en person hundra gånger i rad — och ruin är en absorbent härvagg, spelet tar slut och återhämtar sig inte. Det är därför grevens ruin från Huygens 1657 är mer än kuriosa: bankrullens storlek — inte väntevärdet — bestämmer om du får vara med när edge:n slutligen betalar. Knight och Keynes skuggar hela kapitlet: det viktigaste var aldrig mätbart."
+          "content": "Talebs skarpaste argument i AKM1-sammanhang: risken att förlora 100 procent. En strategi som ger små stadiga vinster och en liten sannolikhet för total förlust har låg standardavvikelse — variansen, Markowitz och Sharpes gudsbegrepp, ser den som nästan riskfri. Men variansen mäter spridning, inte överlevnad. Formulerat med det moderna ergodibegreppet: det som i genomsnitt händer hundra personer en gång är inte samma sak som det som händer en person hundra gånger i rad — och ruin är ett absorberande tillstånd: spelet tar slut och återhämtar sig inte. Därför är grevens ruin från Huygens 1657 mer än kuriosa: bankrullens storlek — inte väntevärdet — bestämmer om du får vara med när övertaget slutligen betalar. Knight och Keynes skuggar hela kapitlet: det viktigaste var aldrig mätbart."
         },
         {
           "type": "text",
-          "content": "Så varför poängsätter AKM1 ändå V19 kapitalförbränning & emission-risk och V10 skuldsättningsgrad — varför inte överge poängen och kapitulera inför osäkerheten? Därför att syftet med strukturen inte är att förutsäga utan att tvinga fram frågan: vad är värsta fallet? En checklista som kräver kassa runway, bränntakt, villkor och emitteringsbenägenhet tvingar analytikern att formulera ruinscenariot även när ingen sannolikhet kan sättas på det — och det är i formuleringen, inte i siffran, som värdet ligger. V19 är bankrullsfrågan, V10 är frågan hur många misstag som ryms innan tålamodet tar slut, V11 likviditet är frågan hur lång tid som finns. Den som vägrar strukturera för att osäkerheten ändå är stor lämnar fältet fritt för berättelser — och då är vi tillbaka hos oraklen. Mandelbrot och Taleb bevisar att modellerna kan döda; de bevisar inte att frågorna kan ställas ostrukturerat. Marginal of safety är i AKM1 en princip utan siffra av precis samma skäl: när fördelningen är okänd är marginalen bred, inte beräknad.",
-          "metadata": {}
+          "content": "Så varför poängsätter AKM1 ändå V19 kapitalförbränning & emission-risk och V10 skuldsättningsgrad — varför inte överge poängen och kapitulera inför osäkerheten? Därför att syftet med strukturen inte är att förutsäga utan att tvinga fram frågan: vad är värsta fallet? En checklista som kräver kassarunway, bränntakt, villkor och emissionsbenägenhet tvingar analytikern att formulera ruinscenariot även när ingen sannolikhet kan sättas på det — och det är i formuleringen, inte i siffran, som värdet ligger. V19 är bankrullsfrågan, V10 är frågan hur många misstag som ryms innan tålamodet tar slut, V11 likviditet är frågan hur lång tid som finns. Den som vägrar strukturera för att osäkerheten ändå är stor lämnar fältet fritt för berättelser — och då är vi tillbaka hos oraklen. Mandelbrot och Taleb bevisar att modellerna kan döda; de bevisar inte att frågorna kan ställas ostrukturerat. Marginal of safety är i AKM1 en princip utan siffra av precis samma skäl: när fördelningen är okänd är marginalen bred, inte beräknad."
         },
         {
           "type": "visuell",
@@ -964,16 +956,15 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Kritikerna och deras vapen\",\"rader\":[[\"Tänkare\",\"Vapen\",\"Påstående\"],[\"Mandelbrot\",\"Feta svansar — bomullen 1963\",\"Kursförändringars varians är i praktiken oändlig; klockkurvan lägnar om extremen\"],[\"Taleb\",\"Svarta svanar — 2007\",\"Variansen är blind för ruin; normalfördelning i extremistan dödar\"],[\"Knight och Keynes\",\"Sann osäkerhet\",\"Det viktigaste kan inte försäkras — bara bäras med omdöme\"],[\"Bernstein\",\"Uppdaterat förord\",\"Tilltron till mätbarheten sprängde sitt mått — ödmjukheten är del av metoden\"],[\"AKM1\",\"V19, V10, V11\",\"Strukturen tvingar fram värsta fallets fråga även när svaret är osäkert\"]]}"
+          "content": "{\"rubrik\":\"Kritikerna och deras vapen\",\"rader\":[[\"Tänkare\",\"Vapen\",\"Påstående\"],[\"Mandelbrot\",\"Feta svansar — bomullen 1963\",\"Kursförändringars varians är i praktiken oändlig; klockkurvan ljuger om extremiteten\"],[\"Taleb\",\"Svarta svanar — 2007\",\"Variansen är blind för ruin; normalfördelning i extremvärlden dödar\"],[\"Knight och Keynes\",\"Sann osäkerhet\",\"Det viktigaste kan inte försäkras — bara bäras med omdöme\"],[\"Bernstein\",\"Uppdaterat förord\",\"Tilltron till mätbarheten sprängde sitt mått — ödmjukheten är del av metoden\"],[\"AKM1\",\"V19, V10, V11\",\"Strukturen tvingar fram värsta fallets fråga även när svaret är osäkert\"]]}"
         },
         {
           "type": "insikt",
-          "content": "VaR svarar på hur mycket du kan förlora med 95 procents säkerhet. Krisen 2008 var de andra fem procenten — och frågan som avgjorde allt var inte hur ofta utan om du överlevde."
+          "content": "VaR svarar på hur mycket du kan förlora med 95 procents säkerhet. Krisen 2008 var de andra fem procenten — och frågan som avgjorde allt var inte hur ofta, utan om du överlevde."
         },
         {
           "type": "utmaning",
-          "content": "Ta din största position. Skriv två scenariorader utan sannolikheter — »värdelös« och »dubbel« — och räkna sedan på vad V19 och V10 säger om bolagets chans att leva länge nog att nå dem: kassa, bränntakt, villkor, emissionsbenägenhet. Om du inte kan formulera ruinfallet har du ingen analys — bara en berättelse. Ledning: fallet »värdelös« ska vara så konkret att du kan peka på datumet när kassan tar slut.",
-          "metadata": {}
+          "content": "Ta din största position. Skriv två scenariorader utan sannolikheter — »värdelös« och »dubbel« — och räkna sedan på vad V19 och V10 säger om bolagets chans att leva länge nog att nå dem: kassa, bränntakt, villkor, emissionsbenägenhet. Om du inte kan formulera ruinfallet har du ingen analys — bara en berättelse. Ledning: fallet »värdelös« ska vara så konkret att du kan peka på datumet när kassan tar slut."
         }
       ],
       "quiz": [
@@ -981,33 +972,33 @@
           "q": "Vad fann Mandelbrot i sin studie av bomullspriser 1963?",
           "alternativ": [
             "Att priserna följde normalfördelningen perfekt",
-            "Att förändringarna var fethalade med extrema dagar långt oftare än klockkurvan tillåter — variansen i praktiken oändlig",
             "Att bomullsmarknaden var den enda förutsägbara råvarumarknaden",
-            "Att priserna styrdes av säsonger enbart"
+            "Att priserna styrdes enbart av säsonger",
+            "Att förändringarna var fethalade med extrema dagar långt oftare än klockkurvan tillåter — variansen i praktiken oändlig"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Han letade efter kurvan och fann dess fromma lögn."
         },
         {
           "q": "Vad är kärnan i Talebs argument om »risken att förlora 100 procent«?",
           "alternativ": [
-            "Att standardavvikelsen mäter spridning men är blind för ruin — låg varians kan dölja en liten risk för total förlust",
             "Att alla positioner förr eller senare går till noll",
             "Att VaR alltid är försiktigt beräknat",
+            "Att standardavvikelsen mäter spridning men är blind för ruin — låg varians kan dölja en liten risk för total förlust",
             "Att diversifiering ökar risken för total förlust"
           ],
-          "ratt": 0,
+          "ratt": 2,
           "tips": "Tänk på en strategi med många små vinster och en enda möjlighet till katastrof."
         },
         {
           "q": "Varför poängsätter AKM1 V19 och V10 trots att kritikerna har rätt om riskmätningens gränser?",
           "alternativ": [
             "Eftersom AKM1 tror att modeller kan göra framtiden känd om de bara är noggranna",
-            "Eftersom strukturen tvingar fram frågan »vad är värsta fallet?« även när inget svar kan mätas",
             "Eftersom V19 och V10 alltid ger exakta sannolikheter",
-            "Eftersom checklistor ersätter omdöme helt"
+            "Eftersom checklistor ersätter omdöme helt",
+            "Eftersom strukturen tvingar fram frågan »vad är värsta fallet?« även när inget svar kan mätas"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Värdet ligger i att frågan måste formuleras — inte i att siffran blir sann."
         }
       ]
@@ -1016,27 +1007,23 @@
       "num": 14,
       "minutes": 10,
       "title": "Risken som befrielse — Bernsteins testamente och AKM1",
-      "intro": "Kursens sista kapitel samlar bågen: fyrahundra år från att fråga gudarna till att fråga utfallsrummet. Bernstein själv sammanfattade bokens mening som en befrielsehistoria — och kursen landar i det mest praktiska av alla verktyg: positionsstorlek, Kelly-länken, V19 och marginal of safety.",
+      "intro": "Kursens sista kapitel samlar bågen: fyrahundra år från att fråga gudarna till att fråga utfallsrummet. Bernstein sammanfattade bokens mening som en befrielsehistoria — och kursen landar i det mest praktiska av alla verktyg: positionsstorlek, Kelly-länken, V19 och marginal of safety.",
       "blocks": [
         {
           "type": "text",
-          "content": "Bernstein avslutar Against the Gods med att vända på hela perspektivet. Behärskningen av risk är inte främst en teknik utan en hållning till livet: möjligheten att definiera vad som kan hända i framtiden och att välja bland alternativen — det, skriver han, är moderna samhällens hjärta. Före risken var framtiden gudarnas att styra och människans att utstå; med risken blev den vår att förhandla med. Hans summering, i översättning: konsten är att maximera områdena där vi har viss kontroll över utfallet och minimera områdena där vi inte har någon kontroll alls. Notera att det är en fra-sats om ödmjukhet, inte om beräkning — samme Bernstein som i sina sista år såg 2008 och skrev om mätningens gränser. Risken som befrielse förutsätter att man vet var friheten slutar.",
-          "metadata": {}
+          "content": "Bernstein avslutar Against the Gods med att vända på hela perspektivet. Behärskningen av risk är inte främst en teknik utan en hållning till livet: möjligheten att definiera vad som kan hända i framtiden och att välja bland alternativen — det, skriver han, är moderna samhällens hjärta. Före risken var framtiden gudarnas att styra och människans att utstå; med risken blev den vår att förhandla med. Hans summering, här i översättning: konsten är att maximera områdena där vi har viss kontroll över utfallet och minimera områdena där vi inte har någon kontroll alls. Notera att det är en fras om ödmjukhet, inte om beräkning — samme Bernstein som i sina sista år såg 2008 och skrev om mätningens gränser. Risken som befrielse förutsätter att man vet var friheten slutar."
         },
         {
           "type": "text",
-          "content": "Läs bågen i en enda utandning. Oraklen tystnade när Cardano räknade kretsen; Pascal och Fermat gav det avbrutna spelet dess värde; Graunt och Halley hittade mönstret i döden; Jacob Bernoulli band samman stickprovet med sanningen och krävde sitt pris i observationer; Daniel Bernoulli skilde genomsnittet från dig; klockkurvan gjorde bruset hanterbart och Galton påminde om att det extrema återgår; Knight och Keynes höll vakt vid gränsen till det omätbara; von Neumann lärde oss räkna med tänkande motparter; Markowitz flyttade risken från aktien till portföljen; Sharpe visade vilken risk som betalar; Black, Scholes och Merton gjorde själva osäkerheten till en tillgång. Inget av det avskaffade det okända. Men vartenda steg omvandlade en bit av mörkret till en fråga som går att ställa — och det är inte litet.",
-          "metadata": {}
+          "content": "Läs bågen i en enda utandning. Oraklen tystnade när Cardano räknade kretsen; Pascal och Fermat gav det avbrutna spelet dess värde; Graunt och Halley hittade mönstret i döden; Jacob Bernoulli band samman stickprovet med sanningen och krävde sitt pris i observationer; Daniel Bernoulli skilde genomsnittet från dig; klockkurvan gjorde bruset hanterbart och Galton påminde om att det extrema återgår; Knight och Keynes höll vakt vid gränsen till det omätbara; von Neumann lärde oss räkna med tänkande motparter; Markowitz flyttade risken från aktien till portföljen; Sharpe visade vilken risk som betalar; Black, Scholes och Merton gjorde själva osäkerheten till en tillgång. Inget av det avskaffade det okända. Men vartenda steg omvandlade en bit av mörkret till en fråga som går att ställa — och det är inte litet."
         },
         {
           "type": "text",
-          "content": "Kursens sista verktyg är den där alltsammans förenas: positionsstorleken. John Kelly Jr vid Bell Labs publicerade 1956 en uppsats i informationsteoriens periferi — A New Interpretation of Information Rate — som visade hur en spelare med en genuin edge ska satsa för att maximera tillväxten på lång sikt: andelen av bankrullen ungefär lika med edge dividerat med odds. Klirra med Claude Shannon och ed Vegas: Edward Thorp tog formeln till blackjack-borden i Beat the Dealer 1962 och sedan till marknaderna. Två läror är för AKM1 allt. För det första: över satsning dödar även med äkta edge — därför satsar profession under full Kelly, ofta hälften, när edge:n är osäker; osäker edge är nämligen samma sak som Knights osäkerhet och kräver samma ödmjukhet. För det andra: full satsning är alltid förbjuden, ty ruinchansen måste hållas på noll — det är Daniel Bernoullis marginalnytta, Huygens greves ruin och V19 i en enda formel.",
-          "metadata": {}
+          "content": "Kursens sista verktyg är det där alltsammans förenas: positionsstorleken. John Kelly Jr vid Bell Labs publicerade 1956 en uppsats i utkanten av informationsteorin — A New Interpretation of Information Rate — som visade hur en spelare med en genuin edge ska satsa för att maximera tillväxten på lång sikt: andelen av bankrullen ungefär lika med övertaget dividerat med oddset. Formeln kretsade kring Claude Shannons idéer, och via Las Vegas tog Edward Thorp den till blackjack-borden i Beat the Dealer 1962 och sedan till marknaderna. Två läror är för AKM1 allt. För det första: översatsning dödar även med äkta edge — därför satsar professionella under full Kelly, ofta hälften, när övertaget är osäkert; osäkert övertag är nämligen samma sak som Knights osäkerhet och kräver samma ödmjukhet. För det andra: full satsning är alltid förbjuden, ty ruinchansen måste hållas noll — det är Daniel Bernoullis marginalnytta, Huygens greves ruin och V19 i en enda formel."
         },
         {
           "type": "text",
-          "content": "Och bolagen gör samma övning som du. V20 återköp är företagets positionsstorlek: ledningen med edge — aktien undervärderd, balansräkningen stark, V19-kapitalförbrukningen under kontroll — satsar rimligt genom att återköpa; ledningen som återköper med lånade pengar medan kassan brinner gör Kelly-motsatsen och över satsar på en edge som inte finns. Därför ska V20 läsas tillsammans med V19 och V10, aldrig ensamt. Åter till examen: kursen tar sin examen i tre rader. Vad är utfallsrummet — Cardanos fråga. Vad är värdet av ställningen om spelet avbryts — Pascals fråga. Och hur stor del av bankrullen förtjänar ställningen — Kellys fråga, med V19 som risk nummer ett och marginal of safety som principen utan siffra. Bernstein gav oss rätten att välja bland alternativen; AKM1 ger dig skyldigheten att fråga efter värsta fallet först. Det är befrielsens pris.",
-          "metadata": {}
+          "content": "Och bolagen gör samma övning som du. V20 återköp är företagets positionsstorlek: ledning med edge — aktien undervärderad, balansräkningen stark, V19-kapitalförbränningen under kontroll — satsar rimligt genom att återköpa; ledning som återköper med lånade pengar medan kassan brinner gör Kelly-motsatsen och översatsar på ett övertag som inte finns. Därför ska V20 läsas tillsammans med V19 och V10, aldrig ensamt. Kursens examen består av tre rader. Vad är utfallsrummet — Cardanos fråga. Vad är ställningen värd om spelet avbryts — Pascals fråga. Och hur stor del av bankrullen förtjänar ställningen — Kellys fråga, med V19 som risk nummer ett och marginal of safety som principen utan siffra. Bernstein gav oss rätten att välja bland alternativen; AKM1 ger dig skyldigheten att fråga efter värsta fallet först. Det är befrielsens pris."
         },
         {
           "type": "visuell",
@@ -1044,16 +1031,15 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fyrahundra år översatta till AKM1\",\"rader\":[[\"Genombrott\",\"Verktyg\",\"AKM1-plats\"],[\"Cardano och Pascal-Fermat, 1500- och 1600-tal\",\"Utfallsrum och väntevärde\",\"Scenariorader; V16 produktlanseringar som utfall\"],[\"Graunt, Halley, Jacob Bernoulli\",\"Kohorter och de stora talens lag\",\"V02 ARR-tillväxt per kohort; V12 intäktsstabilitet\"],[\"Daniel Bernoulli 1738\",\"Nytta och marginalnytta\",\"Positionsstorlek; V19 kapitalförbränning\"],[\"Gauss och Galton, 1800-tal\",\"Fördelning och regression\",\"Normaliserade V07 och V08; tak för V01-modeller\"],[\"Knight och Keynes 1921\",\"Osäkerhetens gräns\",\"V18 scenarier; Marginal of safety utan siffra\"],[\"Markowitz och Sharpe 1952–1964\",\"Varians, kovarians, beta\",\"V03 intäktsdiversifiering; portföljfrågan\"],[\"Black-Scholes 1973\",\"Optioner och hedg\",\"Asymmetrisk exponering; V16 som optioner\"],[\"Kelly 1956\",\"Tillväxt-optimal sats\",\"V20 återköp som bolagets position sizing; V19 först\"]]}"
+          "content": "{\"rubrik\":\"Fyrahundra år översatta till AKM1\",\"rader\":[[\"Genombrott\",\"Verktyg\",\"AKM1-plats\"],[\"Cardano och Pascal–Fermat, 1500- och 1600-tal\",\"Utfallsrum och väntevärde\",\"Scenariorader; V16 produktlanseringar som utfall\"],[\"Graunt, Halley, Jacob Bernoulli\",\"Kohorter och de stora talens lag\",\"V02 ARR-tillväxt per kohort; V12 intäktsstabilitet\"],[\"Daniel Bernoulli 1738\",\"Nytta och marginalnytta\",\"Positionsstorlek; V19 kapitalförbränning\"],[\"Gauss och Galton, 1800-tal\",\"Fördelning och regression\",\"Normaliserade V07 och V08; tak för V01-modeller\"],[\"Knight och Keynes 1921\",\"Osäkerhetens gräns\",\"V18 scenarier; marginal of safety utan siffra\"],[\"Markowitz och Sharpe 1952–1964\",\"Varians, kovarians, beta\",\"V03 intäktsdiversifiering; portföljfrågan\"],[\"Black-Scholes 1973\",\"Optioner och hedg\",\"Asymmetrisk exponering; V16 som optioner\"],[\"Kelly 1956\",\"Tillväxt-optimal sats\",\"V20 återköp som bolagets positionsstorlek; V19 först\"]]}"
         },
         {
           "type": "insikt",
-          "content": "Hela boken är en enda rörelse: från att fråga gudarna till att fråga utfallsrummet. Kelly-formeln är slutackordet — satsen ska vara så stor att tillväxten maxas och så liten att ruinen är omöjlig. Edge utan bankrull är ingenting; bankrull utan edge är stillastående."
+          "content": "Hela boken är en enda rörelse: från att fråga gudarna till att fråga utfallsrummet. Kelly-formeln är slutackordet — satsen ska vara så stor att tillväxten maxas och så liten att ruinen är omöjlig. Övertag utan bankrull är ingenting; bankrull utan övertag är stillastående."
         },
         {
           "type": "utmaning",
-          "content": "Skriv din personliga riskpolicy i tre rader och behåll den skriven: första raden — största tillåtna position som andel av portföljen och varför just den siffran. Andra raden — kraven på V19 och V10 som måste vara uppfyllda innan en positionsstorlek får växa. Tredje raden — vad marginal of safety betyder för dig när osäkerheten är Knight-stor. En ospoken policy är ingen policy; en skriven tvingar dig att leva med den synlig.",
-          "metadata": {}
+          "content": "Skriv din personliga riskpolicy i tre rader och behåll den skriven: första raden — största tillåtna position som andel av portföljen och varför just den siffran. Andra raden — kraven på V19 och V10 som måste vara uppfyllda innan en positionsstorlek får växa. Tredje raden — vad marginal of safety betyder för dig när osäkerheten är Knight-stor. En oskriven policy är ingen policy; en skriven tvingar dig att leva med den synlig."
         }
       ],
       "quiz": [
@@ -1061,34 +1047,34 @@
           "q": "Vad är Bernsteins huvudtes i Against the Gods?",
           "alternativ": [
             "Att risk alltid kan elimineras med rätt modell",
-            "Att behärskningen av risk är gränsen mellan modern tid och det förflutna — framtiden är inte bara gudarnas nyck",
             "Att börsen alltid slår räntan på lång sikt",
+            "Att behärskningen av risk är gränsen mellan modern tid och det förflutna — framtiden är inte bara gudarnas nyck",
             "Att matematiken upphävde slumpen på 1900-talet"
           ],
-          "ratt": 1,
-          "tips": "Bokens första meningar formulerar tesen — den handlar om en idé, inte en formel."
+          "ratt": 2,
+          "tips": "Bokens första sidor formulerar tesen — den handlar om en idé, inte en formel."
         },
         {
           "q": "Vad är den centrala läran i Kelly-kriteriet för en investerare?",
           "alternativ": [
             "Att alltid satsa max eftersom edge betalar",
-            "Att satsningen ska växa med edge — och att över satsning dödar även med äkta edge, därför satsas under full Kelly vid osäkerhet",
             "Att bankrullens storlek är irrelevant",
-            "Att satsa lika mycket på allt för att diversifiera"
+            "Att satsa lika mycket på allt för att diversifiera",
+            "Att satsningen ska växa med övertaget — och att översatsning dödar även med äkte edge, därför satsas under full Kelly vid osäkerhet"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Formeln maximerar tillväxt — men tillväxten har en fiende som heter ruin."
         },
         {
           "q": "Varför ska V20 återköp alltid läsas tillsammans med V19 och V10?",
           "alternativ": [
-            "Eftersom återköp är bolagets egen positionsstorlek — rimlig vid edge och stark balansräkning, men över satsning om kassan brinner eller skulderna växer",
             "Eftersom återköp alltid är värdeneutralt",
+            "Eftersom återköp är bolagets egen positionsstorlek — rimligt vid edge och stark balansräkning, men översatsning om kassan brinner eller skulderna växer",
             "Eftersom V20 ersätter alla övriga variabler i AKM1",
             "Eftersom återköp enbart styrs av marknadens beta"
           ],
-          "ratt": 0,
-          "tips": "Bolaget gör med sitt kapital exakt det du gör med ditt — frågan är om det har edge att satsa på."
+          "ratt": 1,
+          "tips": "Bolaget gör med sitt kapital exakt det du gör med ditt — frågan är om det har ett övertag att satsa på."
         }
       ]
     }

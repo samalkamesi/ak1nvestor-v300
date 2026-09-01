@@ -3718,3 +3718,20 @@ Work Log:
 - FOOLED BY RANDOMNESS (Taleb): 14 kap, 42 quiz — survivorship, alternativa
   historier, Short-Seller-agentens andlige fader
 - 270 kurser · 5502 quiz · 760 sidor · kanon 43/101
+
+---
+Task ID: 132-VAG12-KOMPLETT — 271 KURSER
+Agent: main + Silver ✓ (våg 12 komplett: Williams, Shiller, Bernstein, Taleb, Silver)
+Task: BOKMASTER #44 — prognoskonsten
+
+Work Log:
+- THE SIGNAL AND THE NOISE (Silver): 14 kap, 42 quiz — Tetlock-forskningen,
+  räv-vs-igelkott, Bayes i AKM1-praktik, kontroverskapitlet: "aktieprognoser
+  bland mänsklighetens sämsta" + vårt kalibreringssvar
+- VÅG 12 KOMPLETT: risk/prognos-pentagrammet (Williams-Shiller-Bernstein-
+  Taleb-Silver) — bibliotekets intellektuella motvikt till ekosystem-trognheten
+- 271 kurser · 5544 quiz · 761 sidor · kanon 44/101
+
+Stage Summary:
+- 44 BOKMASTER + 2 flaggskepp; motståndar-biblioteket lika komplett som
+  vårt eget — den mest ärliga finansutbildningen som finns

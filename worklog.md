@@ -3407,3 +3407,26 @@ Work Log:
 
 Stage Summary:
 - 714 sidor · grunden för kontinuerlig parallell byggnation lagd
+
+---
+Task ID: 116-VAG1-LEVERANS-1
+Agent: main + agenter (kanon ✓, Security Analysis ✓, Malkiel ✓; Murphy/Fisher/Nison kör)
+Task: 2 nya BOKMASTER + bokkanon-100 + fundamentaldata i djupanalysen
+
+Work Log:
+- BOKKANON: data/bokkanon.json — 100 böcker (37 fundamental, 19 teknisk, 15 strategi,
+  12 beteende, 11 makro, 6 risk; tier 1=37). Svenska verk verifierade (Torssell,
+  Företagsvärdering, Eklund). /bibliotek nu fylld med sök+filter.
+- SECURITY ANALYSIS (Graham & Dodd): 20 kap, 60 quiz, alla 7 delar täckta,
+  AKM1-koppling i löptext (V17×20, V19×23, V14×16, V04×14...) — kurs #5
+- RANDOM WALK (Malkiel): 18 kap, 54 quiz, EMH-vs-AK1TS ärligt i 3 steg
+  (random walk dödar obestyrkta påståenden, inte teknisk analys) — kurs #6
+- CDO-UPPGRADERING (styrelsens beslut #2): analysis_engine.py hämtar nu
+  fundamentdata via Yahoo quoteSummary med crumb-flöde (fc.yahoo→getcrumb→
+  signerat anrop, cachat per process) — P/E, P/B, ROE, marginaler, tillväxt,
+  skuld/EK, utdelning per innehav. Portfölj-UI visar AKM1-chips (V01/V04/V06/
+  V09/V14) med färgkodning. E2E-testat: VOLV-B P/E 19.6, ROE 20.9%.
+- integrera-bokmaster.mjs tål pågående agentskrivningar (skip + varning)
+
+Stage Summary:
+- 232 kurser · 3834 quiz · 716 sidor · 100-böckers bibliotek live

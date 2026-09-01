@@ -107,6 +107,91 @@ def fetch_marketstack(ticker):
         return None
 
 
+_CRUMB_CACHE = {"crumb": None, "cookie": None}
+
+
+def _yahoo_crumb():
+    """Hämta cookie + crumb för quoteSummary (fc.yahoo.com -> getcrumb).
+    Cachas per process. Returnerar (cookie, crumb) eller None."""
+    if _CRUMB_CACHE["crumb"] and _CRUMB_CACHE["cookie"]:
+        return _CRUMB_CACHE["cookie"], _CRUMB_CACHE["crumb"]
+    try:
+        _kontrollera_host("query1.finance.yahoo.com")
+        opener = urllib.request.build_opener(_IngenRedirect)
+        # fc.yahoo.com svarar 404 men sätter cookie
+        try:
+            r = opener.open(
+                urllib.request.Request("https://fc.yahoo.com", headers={"User-Agent": "Mozilla/5.0 (AK1A)"}),
+                timeout=6)
+            cookie = r.headers.get("Set-Cookie") or ""
+        except urllib.error.HTTPError as e:
+            cookie = e.headers.get("Set-Cookie") or ""
+        cookie = cookie.split(";")[0]
+        if not cookie:
+            return None
+        r2 = opener.open(
+            urllib.request.Request(
+                "https://query1.finance.yahoo.com/v1/test/getcrumb",
+                headers={"User-Agent": "Mozilla/5.0 (AK1A)", "Cookie": cookie}),
+            timeout=6)
+        crumb = r2.read().decode().strip()
+        if not crumb:
+            return None
+        _CRUMB_CACHE["crumb"] = crumb
+        _CRUMB_CACHE["cookie"] = cookie
+        return cookie, crumb
+    except Exception:
+        return None
+
+
+def fetch_yahoo_fundament(ticker):
+    """Grundlagda nyckeltal (AKM1-proxy) via Yahoos quoteSummary med crumb.
+    Returnerar None vid allt fel — portfoljen fungerar aendå (graceful)."""
+    try:
+        if not re.fullmatch(r"[A-Za-z0-9.\-]{1,12}", ticker):
+            return None
+        par = _yahoo_crumb()
+        if not par:
+            return None
+        cookie, crumb = par
+        _kontrollera_host("query1.finance.yahoo.com")
+        tk = urllib.request.quote(ticker)
+        url = ("https://query1.finance.yahoo.com/v10/finance/quoteSummary/" + tk
+               + "?modules=summaryDetail,defaultKeyStatistics,financialData&crumb="
+               + urllib.request.quote(crumb))
+        opener = urllib.request.build_opener(_IngenRedirect)
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (AK1A)", "Cookie": cookie})
+        raw = opener.open(req, timeout=8).read().decode()
+        res = (json.loads(raw).get("quoteSummary") or {}).get("result") or []
+        if not res:
+            return None
+        s = res[0].get("summaryDetail") or {}
+        k = res[0].get("defaultKeyStatistics") or {}
+        f = res[0].get("financialData") or {}
+
+        def tal(d, nyckel):
+            try:
+                v = (d.get(nyckel) or {}).get("raw")
+                return round(float(v), 4) if v is not None else None
+            except Exception:
+                return None
+
+        ut = {
+            "pe": tal(s, "trailingPE") or tal(k, "trailingPE"),
+            "peFwd": tal(s, "forwardPE"),
+            "pb": tal(k, "priceToBook"),
+            "utdelning": tal(s, "trailingAnnualDividendYield"),
+            "vinstmarginal": tal(f, "profitMargins"),
+            "roe": tal(f, "returnOnEquity"),
+            "tillvaxt": tal(f, "revenueGrowth"),
+            "skuldEk": tal(f, "debtToEquity"),
+        }
+        # endast om minst ett tal kommit igenom
+        return ut if any(v is not None for v in ut.values()) else None
+    except Exception:
+        return None
+
+
 def fetch_stooq(ticker):
     sym = ticker.lower().replace(".st", "").replace("-", "")
     try:
@@ -238,6 +323,7 @@ def analysera_ticker(ticker):
         "namn": (dag.get("meta", {}).get("longName") or dag.get("meta", {}).get("shortName") or ticker),
         "bors": dag.get("meta", {}).get("fullExchangeName"),
         "valuta": dag.get("meta", {}).get("currency"),
+        "fundament": fetch_yahoo_fundament(ticker),
         "data": {
             "pris": round(pris, 4), "hojd52": round(hojd52, 4), "lag52": round(lag52, 4),
             "pos52": round(pos52, 3),

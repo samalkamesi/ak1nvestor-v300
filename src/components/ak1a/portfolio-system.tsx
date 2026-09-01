@@ -495,6 +495,43 @@ export function PortfolioSystem() {
                               52v: {ih.analys.data.lag52}–{ih.analys.data.hojd52} (position{" "}
                               {Math.round(ih.analys.data.pos52 * 100)} %) · källor: {ih.analys.kallor}
                             </p>
+                            {ih.analys.fundament && (
+                              <div className="mt-2 flex flex-wrap gap-1.5">
+                                {ih.analys.fundament.pe != null && (
+                                  <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${ih.analys.fundament.pe < 15 ? "bg-bull/10 text-bull" : ih.analys.fundament.pe > 30 ? "bg-bear/10 text-bear" : "bg-muted"}`}>
+                                    V14 P/E {ih.analys.fundament.pe}
+                                  </span>
+                                )}
+                                {ih.analys.fundament.pb != null && (
+                                  <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-semibold">V14 P/B {ih.analys.fundament.pb}</span>
+                                )}
+                                {ih.analys.fundament.roe != null && (
+                                  <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${ih.analys.fundament.roe >= 0.15 ? "bg-bull/10 text-bull" : "bg-muted"}`}>
+                                    V09 ROE {Math.round(ih.analys.fundament.roe * 100)} %
+                                  </span>
+                                )}
+                                {ih.analys.fundament.vinstmarginal != null && (
+                                  <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-semibold">
+                                    V04 marginal {Math.round(ih.analys.fundament.vinstmarginal * 100)} %
+                                  </span>
+                                )}
+                                {ih.analys.fundament.tillvaxt != null && (
+                                  <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${ih.analys.fundament.tillvaxt >= 0.1 ? "bg-bull/10 text-bull" : ih.analys.fundament.tillvaxt < 0 ? "bg-bear/10 text-bear" : "bg-muted"}`}>
+                                    V01 tillväxt {ih.analys.fundament.tillvaxt > 0 ? "+" : ""}{Math.round(ih.analys.fundament.tillvaxt * 100)} %
+                                  </span>
+                                )}
+                                {ih.analys.fundament.skuldEk != null && (
+                                  <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${ih.analys.fundament.skuldEk > 150 ? "bg-bear/10 text-bear" : "bg-muted"}`}>
+                                    V06 skuld/EK {Math.round(ih.analys.fundament.skuldEk)}
+                                  </span>
+                                )}
+                                {ih.analys.fundament.utdelning != null && ih.analys.fundament.utdelning > 0 && (
+                                  <span className="rounded bg-gold/10 px-1.5 py-0.5 text-[10px] font-semibold text-gold">
+                                    utdelning {ih.analys.fundament.utdelning.toFixed(2)} %
+                                  </span>
+                                )}
+                              </div>
+                            )}
                             <p className="mt-1">Vågor: {Object.values(ih.analys.vager).join(" → ")}</p>
                             <p className="mt-1 italic">{ih.analys.notering}</p>
                           </div>

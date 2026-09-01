@@ -61,7 +61,13 @@ const fel = [];
 let nya = 0;
 
 for (const fil of kurser) {
-  const kurs = JSON.parse(readFileSync(join(KALLA, fil), "utf8"));
+  let kurs;
+  try {
+    kurs = JSON.parse(readFileSync(join(KALLA, fil), "utf8"));
+  } catch {
+    console.log(`⏸ hoppar över ${fil} — ofullständig/felaktig JSON (agent kanske skriver just nu)`);
+    continue;
+  }
   const quiz = validera(kurs, fel);
   if (fel.length) break; // stoppa vid första felaktiga kurs — rapportera
   if (djup[kurs.slug]) {

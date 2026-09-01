@@ -1,0 +1,103 @@
+2026-08-23T03:52:27.592Z 🧹 Städrobot startar — 25 loggtabeller
+2026-08-23T03:52:28.521Z ▶ news_articles: 40 rader
+2026-08-23T03:52:28.619Z   skivar på created_at
+2026-08-23T03:52:29.713Z   restplock: 40
+2026-08-23T03:52:29.808Z ✓ news_articles: 40 → 40
+2026-08-23T03:52:29.850Z ▶ autonomous_ai_executions: 1 rader
+2026-08-23T03:52:29.913Z   skivar på created_at
+2026-08-23T03:52:30.670Z   restplock: 1
+2026-08-23T03:52:30.739Z ✓ autonomous_ai_executions: 1 → 1
+2026-08-23T03:52:30.765Z ▶ ai_system_intelligence: 1 rader
+2026-08-23T03:52:30.812Z   skivar på created_at
+2026-08-23T03:52:31.560Z   restplock: 1
+2026-08-23T03:52:31.617Z ✓ ai_system_intelligence: 1 → 1
+2026-08-23T03:52:31.642Z ▶ ai_learning_sessions: 1 rader
+2026-08-23T03:52:31.689Z   skivar på created_at
+2026-08-23T03:52:32.444Z   restplock: 1
+2026-08-23T03:52:32.516Z ✓ ai_learning_sessions: 1 → 1
+2026-08-23T03:52:32.550Z ▶ ai_agent_registry: 1 rader
+2026-08-23T03:52:32.599Z   skivar på created_at
+2026-08-23T03:52:33.410Z   restplock: 1
+2026-08-23T03:52:33.486Z ✓ ai_agent_registry: 1 → 1
+2026-08-23T03:52:33.508Z ▶ autonomous_problem_detection: 5 rader
+2026-08-23T03:52:33.558Z   skivar på created_at
+2026-08-23T03:52:34.280Z   restplock: 5
+2026-08-23T03:52:34.356Z ✓ autonomous_problem_detection: 5 → 5
+2026-08-23T03:52:34.377Z ▶ market_data: 940 rader
+2026-08-23T03:52:34.425Z   skivar på created_at
+2026-08-23T03:52:35.358Z   restplock: 940
+2026-08-23T03:52:35.429Z ✓ market_data: 940 → 940
+2026-08-23T03:52:35.472Z ▶ ai_self_improvement_logs: 1 rader
+2026-08-23T03:52:35.518Z   skivar på created_at
+2026-08-23T03:52:36.344Z   restplock: 1
+2026-08-23T03:52:36.417Z ✓ ai_self_improvement_logs: 1 → 1
+2026-08-23T03:52:36.439Z ▶ ai_ecosystem_health: 1 rader
+2026-08-23T03:52:36.493Z   skivar på timestamp
+2026-08-23T03:52:37.386Z   restplock: 1
+2026-08-23T03:52:37.480Z ✓ ai_ecosystem_health: 1 → 1
+2026-08-23T03:52:37.510Z ▶ ai_prediction_metrics: 1 rader
+2026-08-23T03:52:37.554Z   skivar på created_at
+2026-08-23T03:52:38.388Z   restplock: 1
+2026-08-23T03:52:38.473Z ✓ ai_prediction_metrics: 1 → 1
+2026-08-23T03:52:38.505Z ▶ news_aggregation_log: 1 rader
+2026-08-23T03:52:38.551Z   skivar på created_at
+2026-08-23T03:52:39.283Z   restplock: 1
+2026-08-23T03:52:39.351Z ✓ news_aggregation_log: 1 → 1
+2026-08-23T03:52:39.377Z ▶ update_logs: 1 rader
+2026-08-23T03:52:39.444Z   skivar på created_at
+2026-08-23T03:52:40.187Z   restplock: 1
+2026-08-23T03:52:40.259Z ✓ update_logs: 1 → 1
+2026-08-23T03:52:40.283Z ▶ ai_organ_evolution_history: 1 rader
+2026-08-23T03:52:40.336Z   skivar på created_at
+2026-08-23T03:52:41.068Z   restplock: 1
+2026-08-23T03:52:41.125Z ✓ ai_organ_evolution_history: 1 → 1
+2026-08-23T03:52:41.151Z ▶ ai_service_generation_log: 1 rader
+2026-08-23T03:52:41.204Z   skivar på created_at
+2026-08-23T03:52:42.043Z   restplock: 1
+2026-08-23T03:52:42.126Z ✓ ai_service_generation_log: 1 → 1
+2026-08-23T03:52:42.165Z ▶ ai_organ_registry: 1 rader
+2026-08-23T03:52:42.221Z   skivar på created_at
+2026-08-23T03:52:42.998Z   restplock: 1
+2026-08-23T03:52:43.071Z ✓ ai_organ_registry: 1 → 1
+2026-08-23T03:52:43.115Z ▶ ai_email_reports: 1 rader
+2026-08-23T03:52:43.170Z   skivar på created_at
+2026-08-23T03:52:44.071Z   restplock: 1
+2026-08-23T03:52:44.153Z ✓ ai_email_reports: 1 → 1
+2026-08-23T03:52:44.177Z ▶ ai_error_tracking: 1 rader
+2026-08-23T03:52:44.224Z   skivar på created_at
+2026-08-23T03:52:44.964Z   restplock: 1
+2026-08-23T03:52:45.044Z ✓ ai_error_tracking: 1 → 1
+2026-08-23T03:52:45.069Z ▶ ai_user_interactions: 160 rader
+2026-08-23T03:52:45.119Z   skivar på created_at
+2026-08-23T03:52:45.884Z   restplock: 160
+2026-08-23T03:52:45.959Z ✓ ai_user_interactions: 160 → 160
+2026-08-23T03:52:45.990Z ▶ ai_quality_metrics: 1 rader
+2026-08-23T03:52:46.047Z   skivar på created_at
+2026-08-23T03:52:46.906Z   restplock: 1
+2026-08-23T03:52:46.991Z ✓ ai_quality_metrics: 1 → 1
+2026-08-23T03:52:47.015Z ▶ neural_cache_stats: 1 rader
+2026-08-23T03:52:47.067Z   skivar på timestamp
+2026-08-23T03:52:47.793Z   restplock: 1
+2026-08-23T03:52:47.868Z ✓ neural_cache_stats: 1 → 1
+2026-08-23T03:52:47.910Z ▶ collection_jobs: 1 rader
+2026-08-23T03:52:47.962Z   skivar på created_at
+2026-08-23T03:52:48.781Z   restplock: 1
+2026-08-23T03:52:48.858Z ✓ collection_jobs: 1 → 1
+2026-08-23T03:52:48.882Z ▶ ai_hourly_metrics: 1 rader
+2026-08-23T03:52:48.935Z   skivar på created_at
+2026-08-23T03:52:49.665Z   restplock: 1
+2026-08-23T03:52:49.731Z ✓ ai_hourly_metrics: 1 → 1
+2026-08-23T03:52:49.757Z ▶ analysis_history: 140 rader
+2026-08-23T03:52:49.806Z   skivar på created_at
+2026-08-23T03:52:50.705Z   restplock: 140
+2026-08-23T03:52:50.781Z ✓ analysis_history: 140 → 140
+2026-08-23T03:52:50.805Z ▶ swarm_coordination: 1 rader
+2026-08-23T03:52:50.856Z   skivar på created_at
+2026-08-23T03:52:51.619Z   restplock: 1
+2026-08-23T03:52:51.689Z ✓ swarm_coordination: 1 → 1
+2026-08-23T03:52:51.715Z ▶ ai_organs: 240 rader
+2026-08-23T03:52:51.760Z   skivar på created_at
+2026-08-23T03:52:52.469Z   restplock: 240
+2026-08-23T03:52:52.539Z ✓ ai_organs: 240 → 240
+2026-08-23T03:52:52.540Z 
+🎉 KLAR: 1 544 → 1 544 rader

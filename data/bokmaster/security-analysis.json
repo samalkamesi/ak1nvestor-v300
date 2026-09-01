@@ -1,0 +1,1394 @@
+{
+  "slug": "security-analysis",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 20,
+  "totalMinutes": 240,
+  "title": "Security Analysis — Graham & Dodd: KOMPLETT",
+  "summary": "Security Analysis av Benjamin Graham och David Dodd (1934/1940) är fundamentalanalysens bibel — det verk som först definierade skillnaden mellan investering och spekulation, mellan pris och inneboende värde. Denna kompletta BOKMASTER-kurs går igenom alla sju delar av 1940-upplagan, från obligationsselektion och intäktsanalys till net-nets och margin of safety, och kopplar varje idé till AKM1-ekosystemets variabler.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven tillämpa Graham & Dodds urvalsmetodik: beräkna räntetäckning, normalisera resultat över en konjunkturcykel, genomskåda intäktsredovisningens vanligaste trick, värdera balansräkningar med netto cirkulerande medel och kräva en prisvärd säkerhetsmarginal (V19) före varje köp. Eleven kan dessutom skilja investering från spekulering med bokens tre kriterier och strukturera analyser i lönsamma kontra farliga situationer.",
+  "why": "Security Analysis är den djupaste rotkällan till hela AKM1-ekosystemet: variabler som bruttomarginal (V04), kassaflöde (V08), moat (V13), värdering (V14), rapportkvalitet (V17) och margin of safety (V19) är rakt av operationaliseringar av Graham & Dodds frågor från 1934. Utan denna bok finns ingen modern värdeinvestering — den tillhör helt enkelt utbildningens ryggrad.",
+  "chapters_list": [
+    "1. Analysens uppgift — boken som lär marknaden läsa fakta",
+    "2. Investering eller spekulering — definitionen med tre villkor",
+    "3. Inneboende värde, pris och marknadens dom",
+    "4. Fast värde — obligationens logik och fyra grundsatser",
+    "5. Den negativa metoden — uteslutningens konst",
+    "6. Täckningskrav — räntetäckning bransch för bransch",
+    "7. Storlek, tillgångsvärde och defaulternas historia",
+    "8. Preferensaktier — säkerhet utan förfallodag",
+    "9. Konvertibla obligationer — när privileget är billigt",
+    "10. Warrants — den dolda kostnad som urholkar ägarna",
+    "11. Seniora papper med spekulativa drag — aritmetik och hedge",
+    "12. Common stock-teorins historia — från kassakalkyl till ny-era",
+    "13. Värde kontra pris — trend, prognos och transparens",
+    "14. Marknadsnivåerna 1897–1949 — cykler och avkastningsgap",
+    "15. Intäktsredovisningens fallgropar — hur resultat målas",
+    "16. Earning power och revisionens gränser",
+    "17. Balansräkningen talar — kassa, net-nets och likvidation",
+    "18. Nedskrivningar och dolda reserver — samspelet balans och resultat",
+    "19. Margin of safety — säkerhetsmarginalen och situationernas karta",
+    "20. Pris-värde-gap i praktiken — case-historier och AKM1-syntes"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Analysens uppgift — boken som lär marknaden läsa fakta",
+      "intro": "Året är 1934. Wall Street ligger i spillror efter kraschen och en professor vid Columbia, Benjamin Graham, skriver tillsammans med David Dodd det verk som ska definiera en hel disciplin: Security Analysis. Bokens budskap är radikalt enkelt — ett värdepappers värde går att undersöka med fakta, och skillnaden mellan pris och värde är där analysen skapar sin avkastning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Security Analysis föddes ur en kris. Graham & Dodd hade sett hur en hel generation investerare förlorade allt när 1920-talets eufori slog om i depression. Deras slutsats var att marknaden inte saknade information — den saknade metod. Bokens första del, Survey and Approach, lägger därför grunden: analys är en systematisk undersökning av fakta — tillgångar, intäkter, utdelningar och bestämda framtidsutsikter — utförd enligt etablerade principer, inte en konstnärlig känsla för berättelser.\n\nEnligt Graham & Dodd har analysen tre huvudfunktioner. Den beskrivande funktionen ordnar fakta: vad bolaget äger, tjänar och betalar ut. Den kritiskt värderande funktionen granskar om uppgifterna är korrekta, relevanta och fullständiga — är resultatet målat, är balansräkningen skriven ner eller upp? Den selektiva funktionen slutligen jämför värdepapperet mot andra och mot sitt eget pris, och avgör om det förtjänar en plats i portföljen."
+        },
+        {
+          "type": "text",
+          "content": "Bokens kanske mest föraktfulla uppgift är att skilja analys från förutsägelse. Graham & Dodd insisterade på att analytikerns styrka inte ligger i att spå framtiden utan i att fastställa nuvarande fakta och köpa dem med rabatt. Historiskt, menade de, är analysen som mest lönsam när marknaden som helhet är deprimerad och stora bolag handlas under dokumenterat värde — och som minst lönsam när allt redan är dyrt och framgång kräver att prognosen blir bättre än marknadens.\n\nDet är exakt denna ansats AKM1 bygger vidare på: variabler som V14 (värdering) och V19 (margin of safety) finns bara för att Graham & Dodd visade att skillnaden mellan pris och värde går att mäta. Kursens resten är en enda lång tillämpning av deras första kapitel."
+        },
+        {
+          "type": "text",
+          "content": "Kom ihåg vilken värld boken skrevs i: ingen SEC-arkivering att tala om förrän 1934, revisionsplikten i sin linda, obligationer som såldes på garantier och locklåtar. Det gör deras krav på dokumentation och skepticism ännu mer imponerande — och deras varningar mer aktuella än någonsin i en tid när berättelser åter säljs dyrt."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Analys besegrar inte marknaden genom att förutsäga den — den vinner genom att hitta de ögonblick då marknadens pris och fakta inte stämmer överens."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj ett bolag du äger eller bevakar. Skriv en ren faktagrid utan en enda prognos: senaste fem årens intäkter, bruttomarginal (V04), räkenskapsåret resultat, utdelning, nettoskuld och kassa per aktie. Jämför sedan kursen mot din grid — vad säger fakta, inte feeling?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Analysens tre funktioner enligt Graham & Dodd\",\"rader\":[[\"Funktion\",\"Fråga\",\"Modern AKM1-motsvarighet\"],[\"Beskrivande\",\"Vad äger, tjänar och betalar bolaget?\",\"Faktagrid: V04, V08, V09\"],[\"Kritiskt värderande\",\"Stämmer siffrorna, och hur har de skapats?\",\"Rapportkvalitet: V17\"],[\"Selektiv\",\"Är priset lägre än värdet med marginal?\",\"Värdering och marginal: V14, V19\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är enligt Graham & Dodd analysens främsta konkurrensfördel — var slår den marknaden?",
+          "alternativ": [
+            "Att förutsäga konjunkturvänderingar snabbare än andra",
+            "Att hitta gap mellan pris och dokumenterat värde, särskilt när marknaden är deprimerad",
+            "Att välja de bolag som har bäst berättelse och starkast momentum",
+            "Att tajma köp och försäljningar med tekniska formationer"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad boken skrevs som svar på: 1929 års misstag var inte dålig timing utan betalat överpris mot fakta."
+        },
+        {
+          "q": "Vad ingår i den kritiskt värderande funktionen i analysen?",
+          "alternativ": [
+            "Att sammanställa utdelningar och tillgångar i tabeller",
+            "Att rekommendera köp när kursen stiger",
+            "Att granska om uppgifterna är korrekta, fullständiga och rättvisande",
+            "Att prognosticera nästa års resultat per kvartal"
+          ],
+          "ratt": 2,
+          "tips": "Funktionerna är tre: beskriva, granska, välja. Vilken handlar om trovärdigheten i siffrorna?"
+        },
+        {
+          "q": "Varför skrevs Security Analysis just 1934?",
+          "alternativ": [
+            "För att fira att marknaden nått nya höjder",
+            "För att metodisera analys efter att 1920-talets spekulationskultur kraschat i depressionen",
+            "För att ersätta teknisk analys med diagramteori",
+            "För att marknadsföra investment trusts"
+          ],
+          "ratt": 1,
+          "tips": "Bokens första sidor diagnostiserar en kultur där pris och värde hade blivit samma sak."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Investering eller spekulering — definitionen med tre villkor",
+      "intro": "Hur skiljer man en investering från ett spel? Graham & Dodd gav 1934 världens mest citerade svar, och det innehåller tre villkor som alla måste vara uppfyllda. Missar du ett av dem är du — oavsett vad du kallar det — spekulant.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enligt Graham & Dodd är en investering en operation som efter grundlig analys (thorough analysis) lovar kapitalets säkerhet (safety of principal) och en tillfredsställande avkastning (adequate return). Operationer som inte uppfyller dessa krav är spekulering. Notera ordvalen: det är en operation, inte ett värdepapper — samma aktie är en investering vid ett pris och en spekulering vid ett annat. Priset och analysen avgör, inte etiketten på papperet.\n\nDe tre villkoren hänger ihop. Grundlig analys betyder att fakta är dokumenterade och granskade, inte gissade. Säkerhet för kapitalet betyder att skydd finns i sak — tillgångar, intjäningsförmåga, täckning — inte bara i hoppet om en högre budgivare. Tillfredsställande avkastning betyder en rimlig ersättning för insatsen, inte en lotterivinst. Uppfylls inte samtliga, återstår spekulation, som kan vara underhållande men aldrig ska förväxlas med hantverk."
+        },
+        {
+          "type": "text",
+          "content": "Graham & Dodd varnade särskilt för det farligaste mellanrummet: spekulering förklädd till investering via analysens språk. En tjock rapport med prognoser är inte analys om slutsatsen vilar på en enda osäker antagande — till exempel att tillväxten fortsätter i evighet. De flesta stora förluster i historien, menade de, drabbade dem som trodde sig investera men i sak spelade på trenden. I AKM1 termer: utan margin of safety (V19) är din bruttomarginal (V04) och ditt kassaflöde (V08) bara vackra siffror på en väg mot obestånd eller överpris."
+        },
+        {
+          "type": "text",
+          "content": "En viktig nyans: boken fördömer inte spekulering, bara förväxlingen. Den som medvetet tar en beräknad chans — och vet att det är den gör — är hederlig. Den som köper en tillväxtakt till vilken kurs som helst och kallar det långsiktigt, har enligt Graham & Dodd missat definitionen på det farligaste sättet: kapitalförlusten kommer som en överraskning."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Investering definieras av tre villkor — grundlig analys, kapitalets säkerhet, tillfredsställande avkastning — och samma aktie kan vara båda: det är priset som avgör, inte papperet."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Gå igenom din portfölj innehav för innehav. Skriv för varje: (1) Vilka dokumenterade fakta skyddar kapitalet? (2) Vilken avkastning är skäl att förvänta mot betalt pris? (3) Var gränsen för grundlig analys? Markera sedan ärligt varje innehav som investering eller spekulering enligt definitionen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre villkor — investering eller spekulering\",\"rader\":[[\"Villkor\",\"Investering uppfyller genom\",\"Spekulering känns igen på\"],[\"Grundlig analys\",\"Dokumenterade fakta, granskad rapportkvalitet (V17)\",\"Berättelse, prognoser, andras entusiasm\"],[\"Kapitalets säkerhet\",\"Täckning, tillgångar, margin of safety (V19)\",\"Tron att någon betalar mer senare\"],[\"Tillfredsställande avkastning\",\"Rimlig ersättning mot betalt pris (V14)\",\"Lotteriförhoppning om mångdubbling\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Enligt Graham & Dodds definition — vad är en investering?",
+          "alternativ": [
+            "Ett köp av en aktie i ett kvalitetsbolag, oavsett pris",
+            "En operation som efter grundlig analys lovar kapitalets säkerhet och en tillfredsställande avkastning",
+            "Ett köp med avsikt att behålla mer än tio år",
+            "Ett värdepapper med låg volatilitet och regelbunden utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Tre villkor i samma mening: analys, säkerhet, avkastning. Vilket alternativ innehåller alla tre?"
+        },
+        {
+          "q": "Varför skriver Graham & Dodd 'operation' i stället för 'värdepapper' i definitionen?",
+          "alternativ": [
+            "För att bara aktier kan vara investeringar",
+            "För att samma värdepapper kan vara investering vid ett pris och spekulering vid ett annat",
+            "För att obligationer alltid är säkrare än aktier",
+            "För att termen värdepapper inte fanns 1934"
+          ],
+          "ratt": 1,
+          "tips": "Priset och omständigheterna vid köpet — inte papperstypen — avgör karaktären."
+        },
+        {
+          "q": "Vilket är enligt boken det farligaste misstaget av följande?",
+          "alternativ": [
+            "Att medvetet spekulera med liten del av kapitalet",
+            "Att tro sig investera när man i sak spekulerar på trend och prognos",
+            "Att hålla kassaposition i en uppgående marknad",
+            "Att kräva säkerhetsmarginal före köp"
+          ],
+          "ratt": 1,
+          "tips": "Farligast är förväxlingen — då kommer förlusten som en överraskning och utan begränsning."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Inneboende värde, pris och marknadens dom",
+      "intro": "Bokens mest berömda begrepp — inneboende värde — missförstås ofta som en exakt siffra. Graham & Dodd menade tvärtom att värdet är en zon, inte en punkt. Men när priset ligger långt utanför zonen räcker zonen mer än väl för ett beslut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enligt Graham & Dodd är inneboende värde det värde som motiveras av fakta: tillgångar, intäkter, utdelningar och bestämda framtidsutsikter. Det är inte samma sak som marknadspriset, som styrs av psykologi, likviditet och mode. I bokens berömda exempel med jordbruksmaskinstillverkaren J. I. Case 1933 handlades aktien kring 30 dollar, medan en grundlig analys motiverade ett betydligt högre värde — hur högre berodde på hur jordbruket återhämtade sig. Värdet var en zon snarare än en siffra, men oavsett vilket antagande som valdes inom rimliga gränser låg priset under värdet. Det var ett köp, inte för att framtiden förutsades, utan för att fakta redan räckte."
+        },
+        {
+          "type": "text",
+          "content": "Graham & Dodd var samtidigt ödmjuka inför analysens gränser. Marknaden kan förbli irrationell längre än analysen förefaller rätt, och kollektiva missuppfattningar kan bära ett pris i åratal. Därför kräver de inte att analytikern förutsäger kurser — bara att denne köper med ett sådant avstånd mellan pris och värde att även ogynnsamma överraskningar kan absorberas. Det är embryot till hela margin of safety-tanken (V19) som kursen återkommer till i kapitel 19.\n\nEtt andra villkor för framgång var att värdepapperet är 'slankare' än berättelsen: enkel struktur, begriplig balansräkning, kontrollerbara uppgifter. Ju fler lager av dotterbolag, konvertibler och warranties kring ett bolag, desto svagare blir analysens slagkraft. I AKM1 speglas detta av V17 — sårbärhet och kvalitet i rapporterna — där komplexitet i sig är ett riskmått."
+        },
+        {
+          "type": "text",
+          "content": "Slutligen en praktisk poäng från boken: pris-värde-gap tenderar att slutas, men inte på klockslag. Analytikern arbetar med sannolikheter över tid, inte med garantier. Därför är tålamod inte en dygd utan en del av metoden — och därför kräver AKM1 att varje idé får en tidshorisont innan den köps."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Det inneboende värdet är en zon, inte en punkt — men när priset ligger långt under zonens konservativa kant behövs ingen exakt siffra för att veta att köpet är bra."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta ett bolag och bygg en värdezon: räkna tre värden — ett likvidationsnära (balansräkning), ett utdelningsbaserat och ett normaliserat intjäningsbaserat (5–10 års snitt). Skriv upp zonens spännvidd och jämför med dagens kurs. Ligger priset under hela zonen, inom den eller över?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definierar Graham & Dodd inneboende värde?",
+          "alternativ": [
+            "Det pris som marknaden sätter i en effektiv auktion",
+            "Värdet motiverat av fakta — tillgångar, intäkter, utdelningar och bestämda framtidsutsikter",
+            "Bokfört eget kapital enligt senaste balansräkningen",
+            "Framtida kurspotential enligt analytikerkonsensus"
+          ],
+          "ratt": 1,
+          "tips": "Värdet ska kunna motiveras med fakta i hand — inte med förväntningar i sikte."
+        },
+        {
+          "q": "Vad illustrerade exemplet J. I. Case 1933 enligt boken?",
+          "alternativ": [
+            "Att inneboende värde är en zon beroende på antaganden, men att analys ändå kunde påvisa klart underpris",
+            "Att jordbruksaktier alltid är dåliga investeringar",
+            "Att teknisk analys slår fundamental",
+            "Att småbolag aldrig kan värderas"
+          ],
+          "ratt": 0,
+          "tips": "Olika antaganden gav olika värden — men alla rimliga värden låg över priset. Det var poängen."
+        },
+        {
+          "q": "Varför betonar Graham & Dodd att värdepapperet ska vara enkelt och begripligt?",
+          "alternativ": [
+            "För att enkla bolag alltid är billigast",
+            "För att komplexa strukturer med dotterbolag och warrant-lager försvagar analysens slagkraft och döljer risk",
+            "För att revisorer kräver det",
+            "För att utdelningar bara kommer från enkla bolag"
+          ],
+          "ratt": 1,
+          "tips": "Komplexitet är i sig ett riskmått — fundera på vad den döljer för kontroll."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Fast värde — obligationens logik och fyra grundsatser",
+      "intro": "Bokens andra del öppnar med den tyngsta varningen: en obligations säkerhet sitter inte i pantbreven utan i gäldenärens betalningsförmåga. Den som förstår det har förstått mer kreditanalys än de flesta som tecknade 1920-talets säkra papper.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En fixed-value-investering — en obligation eller preferensaktie med fast avkastning — lovar två saker: ränta på schablon och återbetalning av kapitalet på förfallodagen. Enligt Graham & Dodd avgörs om det löftet hålls av en enda sak: gäldenärens förmåga att tjäna pengar under hela obligationens liv, inte pantens nominella värde. En fastighet värderad till hundra miljoner under ett låneboom kan vara värd en bråkdel i en kris — men intäkterna som skulle betala räntan syntes redan i resultaträkningen. Säkerheten ligger i företaget, inte i instrumentet.\n\nAv detta följer bokens fyra grundsatser för urval av fast värde-papper. För det första: urvalet bör vara negativt och uteslutande — säkerhet skapas genom att stryka det tvivelaktiga, inte genom att hitta guldkorn. För det andra: vikten ligger på säkerhet, inte på avkastning — jakten på en extra procentsats är den vanligaste vägen till förlust. För det tredje: lita till betalningsförmågan (intjäningskraften), inte till juridiska krav eller pant — en obligation utan pant hos ett starkt bolag är säkrare än en panträtt hos ett svagt. För det fjärde: kräv definitiva, mätbara standarder — genomsnittstäckning, dokumenterad stabilitet — inte allmänt gott rykte."
+        },
+        {
+          "type": "text",
+          "content": "Den mest mot-intuitiva lärdomen gäller avkastningens lockelse. Graham & Dodd påpekade att en högre ränta inte kompenserar risken för förlust, eftersom förlusten vid falliment slukar flera års extra kuponger på en gång. Extra yield är därför sällan en riskpremie i praktiken — den är en frestelse. I AKM1:s språk: värdet av en kassaflödesström (V08) står och faller med sannolikheten att den betalas, och en engångsförlust kan inte balanseras av marginellt högre kuponger (V19 är marginalen, inte kupongen)."
+        },
+        {
+          "type": "text",
+          "content": "Grundsatserna gäller än i dag, ordagrant i princip: när du granskar en dagens företagsobligation eller kredit, fråga inte 'vad är räntan' utan 'vilken täckning har räntan i genomsnitt och i sämsta år, och hur stor och stabil är gäldenären'. Resten är detaljer."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En obligations säkerhet sitter i gäldenärens intjäningsförmåga — pantens nominella värde är en illusion som dunstar precis när den behövs."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj en företagsobligation eller kredit ur ett nutida sparmeny-utbud. Granska: (1) Täckning av räntekostnaden i genomsnitt och sämsta år de senaste tio åren. (2) Företagets storlek och branschstabilitet. (3) Vad den extra procentsatsen egentligen betingar. Stryk papperet om något kriterium sviktar — uteslutning är metoden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Graham & Dodds fyra grundsatser för fast värde\",\"rader\":[[\"Grundsats\",\"Innebörd\",\"Vanligt misstag\"],[\"Negativt urval\",\"Stryk det tvivelaktiga — säkerhet genom elimination\",\"Letar guld i gruvor med extra kupong\"],[\"Säkerhet före avkastning\",\"Aldrig välja papper för högre räntas skull\",\"Jaga yield som kompensationskälla\"],[\"Betalningsförmåga inte pant\",\"Trovärdighet hos intjäningskraften, ej juridiska krav\",\"Tro på appriserat pantvärde\"],[\"Definitiva standarder\",\"Mätbar täckning, dokumenterad stabilitet\",\"Lita på namn och rykte\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför avfärdar Graham & Dodd pantens nominella värde som säkerhet?",
+          "alternativ": [
+            "För att pant aldrig får värderas",
+            "För att pantvärderingar är uppskattningar som kollapsar i kriser, medan betalningsförmågan syns i resultaträkningen i förväg",
+            "För att alla obligationer är osäkra",
+            "För att fastighetsvärden alltid stiger"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig var informationen fanns innan krisen: i apprisen eller i intäkterna?"
+        },
+        {
+          "q": "Vad menas med att urvalet av obligationer bör vara 'negativt'?",
+          "alternativ": [
+            "Att man ska korta dåliga obligationer",
+            "Att säkerhet skapas genom uteslutning av tvivelaktiga papper enligt bestämda standarder",
+            "Att man ska undvika alla obligationer",
+            "Att man bara köper statsobligationer"
+          ],
+          "ratt": 1,
+          "tips": "Metoden är ett såll — det som blir kvar är inte det bästa utan det som inte är dåligt."
+        },
+        {
+          "q": "Hur förhåller sig extra avkastning till risk enligt Graham & Dodd?",
+          "alternativ": [
+            "En högre kupong kompenserar alltid risken över tid",
+            "Extra procentsats är en frestelse — en engångsförlust vid default slukar år av extra kuponger",
+            "Risk och avkastning har inget samband",
+            "Högre kupong betyder alltid säkrare papper"
+          ],
+          "ratt": 1,
+          "tips": "Räkna: hur många års extra en halv procentsats motsvarar en total förlust av kapitalet?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Den negativa metoden — uteslutningens konst",
+      "intro": "De flesta förluster på obligationer kom inte från oväntade olyckor utan från papper som aldrig borde ha köpts. Graham & Dodds svar var ett systematiskt såll: lista det du vägrar äga — och låt resten bli portföljen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den negativa metoden vilar på en statistisk iakttagelse: bland väl etablerade, tillräckligt stora företag med dokumenterad intjäningskraft var default en sällsynthet även under depressionen; bland små, nya eller belånga gäldenärer var den vanlig. Enligt Graham & Dodd bör investeraren därför som huvudregel utesluta: företag utan tillräcklig storlek och etablering; branscher med dokumenterat vansklig historik; gäldenärer vars totala skuldbörda är så stor att hela kapitalstrukturen vilar på tunn is; samt papper som är underordnade andras anspråk i samma bolag — en tredjeprioriterad obligation är en chans, inte en placering."
+        },
+        {
+          "type": "text",
+          "content": "Metoden har en djupare poäng: den flyttar bevisbördan. I stället för att leta skäl att äga ett papper letar analytikern skäl att inte äga det — och kräver att varje undantag motiveras med extra marginal, inte med extra hopp. Ett nytt bolag kan vara utmärkt, men då ska köparen kompensera den kortare historien med större säkerhetsmarginal (V19). En garanti från ett kreditinstitut kan vara värd något — men bara om garanten själv står stark, annars är ordet 'garanterad' ren dekoration. Boken ägnar flera sider åt hur lockord som garanterad, första prioritet och säker vid gränsen missledde köpare under 1920-talet.\n\nI AKM1 termer är detta V17:s såll: en rapportstruktur eller kapitalstruktur som kräver förtroende i stället för verifiering ska strykas. Kvalitet är inte bara lönsamhet (V09) utan verifierbarhet."
+        },
+        {
+          "type": "text",
+          "content": "Slutligen: uteslutning är inte samma sak som feghet. Graham & Dodd köpte gärna kontroversiella papper — men då som medvetna special situations med beräknad marginal, vilket kursen återkommer till i kapitel 19 och 20. Skillnaden ligger i priset och i att riskerna är inventerade, inte ignorerade."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Bevisbördan ligger alltid på värdepappret: det som inte kan verifieras ska strykas — säkerhet skapas i sållret, inte i listan med hopp."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg ditt eget uteslutningsprotokoll med fem regler (storlek, etablering, belåning, underordning, verifierbarhet). Använd det på tio dagens företagsobligationer eller högavkastande krediter. Notera hur många som överlever sållret — och hur avkastningen skiljer sig mellan de som föll och de som stannade."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i den negativa metoden vid obligationsurval?",
+          "alternativ": [
+            "Att kortsälja svaga obligationer",
+            "Att systematiskt utesluta papper som inte uppfyller bestämda standarder, i stället för att söka attractiva undantag",
+            "Att bara köpa statsobligationer",
+            "Att välja papper med högst kupong bland etablerade bolag"
+          ],
+          "ratt": 1,
+          "tips": "Säkerhet definieras genom elimination enligt bestämda regler — vad slänger du bort?"
+        },
+        {
+          "q": "Hur såg Graham & Dodd på en 'garanterad' obligation?",
+          "alternativ": [
+            "Garantin gör alltid papperet säkert",
+            "Garantin är värd exakt det garanten står för — är garanten svag är ordet värdelöst",
+            "Garantier är förbjudna",
+            "Garanti höjer kupongen automatiskt"
+          ],
+          "ratt": 1,
+          "tips": "En kedja är aldrig starkare än sin svagaste länk — vem står egentligen bakom?"
+        },
+        {
+          "q": "Enligt boken — vad krävs för att acceptera ett bolag med kortare historik eller mindre storlek?",
+          "alternativ": [
+            "Ingenting särskilt, storlek spelar ingen roll",
+            "Extra säkerhetsmarginal som kompenserar den kortare historien och mindre etableringen",
+            "Högre kupong räcker alltid",
+            "Att bolaget tillverkar konsumentvaror"
+          ],
+          "ratt": 1,
+          "tips": "Varje avvikelse från standarden ska betalas med marginal — inte med förhoppningar."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Täckningskrav — räntetäckning bransch för bransch",
+      "intro": "Ett tal sammanfattar en obligations öde: hur många gånger företagets intjäning täcker dess ränta. Graham & Dodd gav bransch för bransch riktvärden som fortfarande används i kreditutskott världen över — och en varning: räkna på genomsnittet, inte på glansåret.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Täckning (coverage) är förhållandet mellan intjäningskraften och de fasta kostnaderna. Enligt Graham & Dodd är det enskilt viktigaste talet räntetäckningen — disponibel vinst före ränta och skatt dividerat med räntekostnaden — men den ska beräknas som ett genomsnitt över en hel konjunkturcykel, i praktiken fem till tio år, och helst kompletteras med frågan: vad var täckningen i det sämsta året? En obligation som klarade 3x i toppår men 1x i bottenår är farligare än en som låg stabilt 3x.\n\nSom riktvärden anger boken ungefär: industriella företag bör täcka sin ränta minst tre gånger på flerårigt genomsnitt; allmännyttiga verk (el, gas, vatten) minst två gånger räntan och betydligt mer när även preferensutdelningen räknas in; järnvägar minst omkring dubbelt mot samtliga fasta kostnader. Bakom skillnaderna ligger branschernas olika stabilitet: ett kraftverk har skyddad intjäning, en industri cyklisk — därför kräver industrin högre täckning för samma säkerhet."
+        },
+        {
+          "type": "text",
+          "content": "Vid preferensaktier och företag med flera senioritetsnivåer räknar man totaltäckning: intjäning dividerat med ränta plus preferensutdelning. Graham & Dodd menade att preferensutdelningen bör täckas med åtminstone samma marginal som räntan — helst större, eftersom den saknar förfallodag. I AKM1 termer är täckningsberäkningen en direkt föregångare till hur V08 (kassaflöde) och V04 (bruttomarginal) används: bruttomarginalens stabilitet över cykeln avslöjar hur mycket av täckningen som är konjunkturgåva, och kassaflödets kvalitet avgör om den teoretiska täckningen också blir betalning."
+        },
+        {
+          "type": "text",
+          "content": "En sista punkt från boken: täckning ska räknas på intäktsanalyser som är granskade. En räntetäckning byggd på uppblåst resultat through lagertrick eller för låga avskrivningar (kapitel 15 och 18) är ingen täckning alls. Kedjan är: rapportkvalitet (V17) före täckning, täckning före kupong."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Fråga alltid två tal: täckningen på tioårsnittet — och täckningen i sämsta år — för en obligation prövas i bottenåret, inte i glansåret."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta ett börsnoterat bolag med nettoskuld. Beräkna räntetäckningen (rörelseresultat före avskrivningar minus normalavskrivningar, dividerat med räntekostnad) för de senaste tio åren. Notera genomsnitt och sämsta år. Jämför med Graham & Dodds industri-norm på 3x — och skriv en rad om vad talet betyder för bolagets kreditvärdighet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riktvärden för täckning enligt Graham & Dodd\",\"rader\":[[\"Bransch\",\"Räntetäckning (flerårigt snitt)\",\"Kommentar\"],[\"Industri\",\"minst ca 3x\",\"Cykliska intäkter kräver större marginal\"],[\"Allmännyttiga verk\",\"minst ca 2x räntan; högre inkl. preferensutdelning\",\"Skyddad men belånad struktur\"],[\"Järnväg\",\"minst ca 2x samtliga fasta kostnader\",\"Stor skuldbörda, kapitaltungt\"],[\"Alla — bottenårstest\",\"sämsta årets täckning nära snittet\",\"Stabilitet väger tyngst\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur bör räntetäckning beräknas enligt Graham & Dodd?",
+          "alternativ": [
+            "På senaste årets resultat",
+            "Som genomsnitt över en hel konjunkturcykel, 5–10 år, gärna kompletterat med sämsta året",
+            "På förväntade nästa års resultat",
+            "På bokfört eget kapital"
+          ],
+          "ratt": 1,
+          "tips": "Ett år säger inget om stabilitet — över vilken period prövas en gäldenäre?"
+        },
+        {
+          "q": "Varför krävs högre räntetäckning för industrier än för allmännyttiga verk?",
+          "alternativ": [
+            "Industrier har alltid högre ränta",
+            "För att industriernas intjäning är cyklisk medan verkens är skyddad — samma säkerhet kräver större marginal",
+            "Allmännyttiga verk är alltid säkrare i alla avseenden",
+            "För att industrin har fler anställda"
+          ],
+          "ratt": 1,
+          "tips": "Täckningen speglar intäkternas stabilitet — V04:s variation över cykeln är ledtråden."
+        },
+        {
+          "q": "Vad är totaltäckning (aggregate coverage)?",
+          "alternativ": [
+            "Intjäning dividerat med ränta plus preferensutdelning",
+            "Tillgångar dividerat med skulder",
+            "Räntan dividerad med utdelningen",
+            "Kassa dividerat med marknadsvärdet"
+          ],
+          "ratt": 0,
+          "tips": "Alla fasta anspråk i capitalstrukturen ska in i nämnaren — i senioritetsordning."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Storlek, tillgångsvärde och defaulternas historia",
+      "intro": "Varför kraschade tusentals 'säkra' obligationer mellan 1929 och 1933? Graham & Dodd grubblade igenom defaulternas historia och fann ett mönster: papper sålda i goda tider till gäldenärer vars svaghet syntes i emissionens data från dag ett.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Två byggstenar återkommer i bokens kreditanalys: storlek och tillgångsvärde. Storlek är inte status utan statistik — större företag har diversifierade intäktskällor, ordning i finansieringen och överlevnadsförmåga i kriser; enligt Graham & Dodd var en vanlig orsak till falliment att bolaget var för litet för sin bransch. Tillgångsvärdet, å andra sidan, varnade de för som huvudskydd: tillgångar är värda vad de tjänar. En fabrik eller en fastighet utan intäktsström har i en kris endast skrotvärde och en bråkdel av bokfört belopp."
+        },
+        {
+          "type": "text",
+          "content": "Bokens genomgång av defaulternas historia är nedslående läsning. Järnvägsobligationerna från 1800-talets överbyggnadsboom som rekonstruerades i generationer; jordbrukslånen; kommunobligationerna i ensidiga fabriksstäder; fastighetsobligationerna från 1920-talet, sålda med appriser som kraftigt överdrev värdena medan hyresintäkterna aldrig räckte; och de utländska statsskulderna, sålda i massor efter första världskriget på teman som Tysklands betalningsförmåga och som kollapsade på 1930-talet. Mönstret var detsamma: emissionerna gjordes under optimism, säkerheten formulerades i pant och garantier i stället för i betalningsförmåga, och när konjunkturen vände fanns ingen marginal. Enligt Graham & Dodd kom förlusterna sällan från oväntade händelser — de kom från kriterier som var fel från början."
+        },
+        {
+          "type": "text",
+          "content": "Depressionens lärdom sammanfattas i boken som en dubbel slutsats: dels höll väl utvalda obligationer hos stora, etablerade gäldenärer med dokumenterad täckning — deras priser föll men kupongerna betalades; dels straffades systematiskt de papper som valts för avkastningens skull. Det är samma budskap som i AKM1:s stressscenario-modul: testa portföljen mot 1929–1932 (och 2008), inte mot gårdagens bull-marknad — sårbärheten (V17) mäts i bottenåret."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Default kommer sällan som en överraskning — den är nästan alltid inprissatt i emissionens data från dag ett, för den som räknar på genomsnittstäckning i stället för på berättelsen."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Studera en historisk kreditkrasch (till exempel fastighetsobligationerna 1926–1933 eller utländska statslån efter 1918). Lista tre data som fanns tillgängliga vid emissionen och som förutsade problemet — appriser, hyresintäkter, betalningsbalans, täckning. Skriv en regel formulierad som uteslutningskriterium att använda i dag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Defaultkategorier i bokens historik\",\"rader\":[[\"Kategori\",\"Typisk orsak\",\"Lärdom\"],[\"Jordbrukslån och småkommuner\",\"Ensidig inkomstkälla, ingen diversifiering\",\"Storlek och bredd på intäkterna\"],[\"Fastighetsobligationer 1920-tal\",\"Överdrivna appriser, hyresintäkter som inte räckte\",\"Pantvärde är ej betalningsförmåga\"],[\"Utländska statsskulder\",\"Politiska löften, svag betalningsbalans\",\"Garantier utan ekonomisk kärna är tomma\"],[\"Underordnade papper\",\"Allt för stort utestående i seniora krav\",\"Läs hela capitalstrukturen\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den vanligaste gemensamma nämnaren hos obligationer som gick i default enligt bokens genomgång?",
+          "alternativ": [
+            "De hade för låg kupong",
+            "De såldes under optimism med säkerhet formulerad i pant och garantier i stället för i betalningsförmåga",
+            "De var statsobligationer",
+            "De hade för lång löptid"
+          ],
+          "ratt": 1,
+          "tips": "Vad stod det i prospektet om skydd — och vad skulle faktiskt betala räntan i en nedgång?"
+        },
+        {
+          "q": "Hur värderar Graham & Dodd tillgångar som säkerhet för obligationer?",
+          "alternativ": [
+            "Tillgångar är alltid bäst skydd eftersom de kan säljas",
+            "Tillgångar är värda vad de tjänar — utan intäktsström har de i kris bara skrotvärde",
+            "Tillgångar ska ignoreras helt",
+            "Bokfört värde är detsamma som marknadsvärde"
+          ],
+          "ratt": 1,
+          "tips": "En fabrik utan lönsam produktion — vad är den värd på auktion i ett krisår?"
+        },
+        {
+          "q": "Vad hände med väl utvalda obligationer hos stora etablerade gäldenärer under depressionen, enligt boken?",
+          "alternativ": [
+            "De gick nästan alla i default",
+            "Priserna föll men kupongerna betalades — urvalet visade sig avgörande",
+            "De steg i värde genom hela krisen",
+            "De förbjöds"
+          ],
+          "ratt": 1,
+          "tips": "Kursfall och betalningsförsummelse är två olika ting — vad skilde de båda grupperna?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Preferensaktier — säkerhet utan förfallodag",
+      "intro": "En preferensaktie lovar utdelning före de vanliga aktieägarna — men den återbetalar aldrig kapitalet och delar aldrig i uppgången. Graham & Dodd kallade den därför en obligationens sämre kusin: kräv samma täckning plus extra marginal, eller stryk den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Preferensaktien intar en kluven plats i Security Analysis. Formellt är den ett senior claim: utdelningen står före de vanliga aktiernas. Men enligt Graham & Dodd saknar den allt det som gör obligationen hanterbar: det finns inget förfallodag då kapitalet återbetalas, ingen amorteringsplan, och ingen del i bolagets tillväxt. En i praktiken oändlig obligation utan återbetalning — det är den ogillande beskrivningen. Följden: en preferensaktie är bara en fast värde-placering om den bakomliggande säkerheten är större än vad som krävs för en obligation hos samma bolag — högre täckning av utdelningen än räntetäckningen, och helst rätt till inlösen."
+        },
+        {
+          "type": "text",
+          "content": "Boken går igenom preferensaktiens detaljer med en skeptikers lupp. Kumulativ eller icke-kumulativ: en icke-kumulativ preferensaktie ger bolaget rätt att för alltid förverka utebliven utdelning — en institutionell orättvisa som enligt Graham & Dodd aldrig borde accepterats av köpare, men som var vanlig av regulatoriska skäl i bokens amerikanska sammanhang. Deltagande eller ej: nästan alltid ej. Rösträtt: ofta begränsad tills utdelningen är i efterskott. Nettoresultatet: ägaren bär riskerna som en entreprenör och får avkastningen som en långivare."
+        },
+        {
+          "type": "text",
+          "content": "Varför existerar de då? Skatt och kapitalstruktur. Företag kunde emittera preferensaktier utan att öka sin formella skuld, och vissa perioder gav det fördelar i beskattning och reglering. För analytikern är slutsatsen densamma i dag: en preferensliknande struktur — exempelvis hybridkapital i banker — ska bedömas med obligationens täckningskrav plus en extra marginal för att anspråket aldrig förfaller (V19), och dess verkliga premi vid likvidation granskas noga i balansräkningen (V17)."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En preferensaktie är en obligation utan förfallodag och utan uppsida — äg den bara om täckningen är större än obligationens, annars är det dåliga villkor för pengarna."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Hitta ett nutida bolag eller bank med preferensaktie/hybridkapital i strukturen. Kontrollera: är utdelningen kumulativ, finns inlösningsrätt, och hur stor är täckningen av ränta plus preferensutdelning på tioårssnitt? Jämför med täckningen för vanlig ränta — är skillnaden tillräcklig enligt Graham & Dodds logik?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Obligation, preferensaktie och vanlig aktie\",\"rader\":[[\"Egenskap\",\"Obligation\",\"Preferensaktie\",\"Vanlig aktie\"],[\"Avkastning\",\"Fast ränta\",\"Fast utdelning\",\"Ostadig, potential\"],[\"Kapitalåterbetalning\",\"Förfallodag\",\"Saknas\",\"Aldrig\"],[\"Andel i uppgång\",\"Nej\",\"Nästan aldrig\",\"Ja\"],[\"Täckningskrav\",\"Hög (t.ex. 3x industri)\",\"Högre än obligationens\",\"Resterande\"],[\"AKM1-koppling\",\"V08, V19\",\"V19 extra marginal\",\"V13, V14\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kräver Graham & Dodd högre täckning för en preferensaktie än för en obligation hos samma bolag?",
+          "alternativ": [
+            "Preferensutdelningen är alltid högre än räntan",
+            "Kapitalet återbetalas aldrig och utdelningen kan utebli — därför behövs större marginal",
+            "Preferensaktier är förbjudna i industrin",
+            "Obligationer har alltid pant"
+          ],
+          "ratt": 1,
+          "tips": "Vad saknar preferensaktien som gör att skyddet måste vara större i stället?"
+        },
+        {
+          "q": "Vad menas med en icke-kumulativ preferensaktie?",
+          "alternativ": [
+            "En preferensaktie som aldrig ger utdelning",
+            "En preferensaktie där utebliven utdelning inte behöver betalas senare — den är förverkad",
+            "En preferensaktie med rösträtt",
+            "En preferensaktie som lösas in automatiskt"
+          ],
+          "ratt": 1,
+          "tips": "Ordet kumulativ handlar om vad som händer med utdelningar som inte betalas vid utsatt tid."
+        },
+        {
+          "q": "Hur sammanfattar boken preferensaktiens ekonomiska ställning?",
+          "alternativ": [
+            "Den bästa av båda världar: säkerhet och uppsida",
+            "Ägaren bär risker som en aktieägare men får avkastning som en långivare",
+            "Den är alltid säkrare än en obligation",
+            "Den är identisk med en konvertibel obligation"
+          ],
+          "ratt": 1,
+          "tips": "Jämför vad ägaren kan förlora mot vad ägaren som mest får."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Konvertibla obligationer — när privileget är billigt",
+      "intro": "En konvertibel obligation är två saker på en gång: en skuld och en aktieoption. Graham & Dodds fråga var alltid densamma — vad kostar optionen? Köper du den nästan gratis är papperet genialiskt; betalar du aktiekurs för den är du spekulant med extra steg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konvertibelns mekanik är enkel: obligationen kan bytas mot ett bestämt antal aktier. Värdet har två komponenter — investeringsvärdet (vad papperet är värt som ren obligation, med hänsyn till kreditkvalitet och kupong) och konverteringsvärdet (vad aktierna det kan bytas mot är värda). När kursen ligger nära det rena obligationsvärdet får man aktieoptionen nästan gratis; när kursen ligger över konverteringsvärdet betalar man en premie för hoppet om uppgång. Enligt Graham & Dodd är den attraktiva situationen den förra: köp konvertibeln när den erbjuder skydd i nedgång och deltagande i uppgång, till en marginell extra kostnad."
+        },
+        {
+          "type": "text",
+          "content": "Boken varnar samtidigt för konvertibelns baksidor. Bolag emitterar konvertibler när ledningen bedömer att aktien är fullvärdig eller dyr — annars hade de lånat billigt utan privilegium. Finansiören som ständigt säljer konvertibler 'billigt' skickar en signal om prisbildningen. Vidare innehåller villkoren fällor: inlösenrätten (call) gör att bolaget kan tvångslösa papperet precis när konverteringen blivit värdefull, och antidilutionsklausuler täcker sällan alla sätt att späda ut aktien på. Varje konvertibel ska alltså granskas på V17-manér: läggdelen i resultaträkningen och balansräkningen, optionsdelen i emissionshistoriken."
+        },
+        {
+          "type": "text",
+          "content": "I ett AKM1-perspektiv är konvertibeln ett tidigt exempel på vad som i dag kallas asymmetrisk utbetalning: betala litet för en option med begränsad nedsida och öppen uppsida. Men notera ordningen — Graham & Dodd krävde att obligationsdelen står på egna ben. En konvertibel från ett svagt bolag är ingen säker placering med bonus, det är en svag placering med dekoration (V19 först, V14 på optionsdelen)."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Köp konvertibeln när optionen är nästan gratis och obligationen står på egna ben — betalar du aktiekurs för konverteringsrätten är du lång option, inte trygg fordringsägare."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Leta rätt på en handlas konvertibel obligation (eller konvertibel preferensaktie). Beräkna: (1) investeringsvärdet genom att jämföra kupong och kredit med vanliga obligationer från samma gäldenär; (2) konverteringsvärdet mot dagens aktiekurs; (3) premien mellan kurs och det högsta av de två värdena. Slutsats: är optionen billig, rimlig eller dyr?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Konvertibeln i tre lägen\",\"rader\":[[\"Läge\",\"Kurs förhållande\",\"Bedömning enligt Graham & Dodd\"],[\"Skyddsläge\",\"Kurs nära investeringsvärdet, aktien långt under lösen\",\"Optionen nästan gratis — mest attraktivt\"],[\"Paritetsläge\",\"Kurs nära konverteringsvärdet\",\"Granska premie och call-risk noga\"],[\"Aktieläge\",\"Kurs över konverteringsvärdet\",\"Du är i praktiken lång aktien med extra steg\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "När är en konvertibel obligation mest attraktiv enligt Graham & Dodd?",
+          "alternativ": [
+            "När aktien ligger långt över lösenkursen och konverteringen redan lönar sig",
+            "När kursen ligger nära det rena obligationsvärdet så att aktieoptionen köps nästan gratis",
+            "När kupongen är lägst",
+            "När bolaget är svagast"
+          ],
+          "ratt": 1,
+          "tips": "Vad betalar du för optionen när obligationens värde bär kursen?"
+        },
+        {
+          "q": "Vad är den främsta risken med inlösningsrätten (call) på en konvertibel?",
+          "alternativ": [
+            "Bolaget kan tvångslösa papperet just när konverteringen blivit värdefull och stjäla uppsidan",
+            "Kupongen sänks automatiskt",
+            "Lösenkursen sjunker",
+            "Obligationen blir icke kumulativ"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på när bolaget helst löser in ett lån som kan konverteras billigt för dem."
+        },
+        {
+          "q": "Vad signalerar det enligt boken när ett bolag ständigt emitterar konvertibler?",
+          "alternativ": [
+            "Bolaget har stark balansräkning",
+            "Ledningen bedömer ofta aktien som fullvärdig eller dyr — privilegiet är dyrt för befintliga aktieägare",
+            "Att aktien är undervärderad",
+            "Att räntorna är höga"
+          ],
+          "ratt": 1,
+          "tips": "Säljaren av optioner tjänar mest när optionen är dyr — för vem?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Warrants — den dolda kostnad som urholkar ägarna",
+      "intro": "Warrants var 1920-talets finansiella innovation: rätten att köpa aktier till fast kurs, ofta med decennier på klockan. Graham & Dodd ägnade dem bokens vassaste kritik — värden skapade ur intet, betalade av framtiden och av befintliga aktieägare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En warrant (teckningsoption) ger innehavaren rätt att köpa en aktie till en bestämd kurs fram till ett förfallodag. Värdet styrs av tre variabler: aktiekursen i förhållande till lösenkursen, återstående tid och antalet aktier warrantsen kan teckna. Enligt Graham & Dodd är en warrant i sig ett legitimt instrument — men dess användning under 1920-talet, då investment trusts och förvärvskonglomerat betalade med warrants i stället för kontanter eller aktier, exponerade en strukturell fara: warrants gör det möjligt att betala för tillgångar med löften om framtida vinster utan att kostnaden någonsin syns i resultaträkningen. Värde skapas ur intet, bokförs ingenstädes och bärs av de befintliga aktieägarna genom utspädning."
+        },
+        {
+          "type": "text",
+          "content": "Mekanismen förtjänar att ses i flera steg. Ett företag köper ett annat och betalar med långlöpande warrants. Säljaren accepterar eftersom optionen kan bli värd mycket. Köparen har inte spädat ut sina aktier i dag — men överhängande utbud av framtida aktieemission vilar över kursen i åratal. När warranterna slutligen utnyttjas, ofta efter en marknadsuppgång, säljs aktierna vidare och pressar kursen. Effekten: vinsten tas ur framtiden, kostnaden förskjuts till osynliga fotnoter. Enligt Graham & Dodd är detta att kapitalisera framtiden utan att redovisa priset — och de visade med aritmetik hur warrant-massor från 1928–1929 års emissioner kom att överleva och belasta aktieägarleden långt efter kraschen."
+        },
+        {
+          "type": "text",
+          "content": "För dagens analytiker är budskapet tre följder. Räkna alltid med full utspädning (V14): warrants, optioner och konvertibler är framtida aktier och ska in i antalet aktier och i värdet per aktie — annars är din värdering en illusion. Granska emissionens logik (V17): betalar bolaget med papper vars kostnad inte syns, köper det med aktieägarnas marginal. Prissätt instrumentet korrekt: en warrant är en option och ska värderas som en — med dess faktiska sannolikhetsprofil, inte med hoppets matte."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Warrants gör det möjligt att betala med framtiden utan att bokföra priset — den verkliga kostnaden betalas av befintliga aktieägare som utspädning, och den syns bara för den som räknar."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta ett bolag med utestående warrants, optioner eller konvertibler. Beräkna två värden per aktie: (1) utan hänsyn till utspädning, (2) med full utspädning inklusive all framtida emission till lösenpriserna. Hur stor är skillnaden i procent? Skriv en mening om vad den gör med din köpkurs och margin of safety (V19)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Warrants — tre variabler och tre fallgropar\",\"rader\":[[\"Variabel\",\"Påverkar\",\"Fallgrop\"],[\"Aktiekurs mot lösen\",\"Warrantens innervärde\",\"Glömma överhängande utbud\"],[\"Återstående tid\",\"Optionens tidsvärde\",\"Låta lång löptid värderas som gratis\"],[\"Antal aktier\",\"Total utspädning\",\"Exkludera ur värderingen (V14)\"],[\"Emissionslogik\",\"Vem som betalar\",\"Kostnad syns ej i resultaträkningen (V17)\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Graham & Dodds huvudkritik mot warrants?",
+          "alternativ": [
+            "De är svåra att förstå",
+            "De gör det möjligt att betala för tillgångar med framtida löften utan att kostnaden syns i resultaträkningen — den bärs av aktieägarna som utspädning",
+            "De är olagliga",
+            "De ger för hög utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Vem betalar till slut för aktierna som warrantsen ger rätt att köpa — och var bokförs det?"
+        },
+        {
+          "q": "Vad menas med överhängande utbud (overhanging supply) av warrants?",
+          "alternativ": [
+            "Att warranterna redan utnyttjats",
+            "Att stora mängder framtida aktieemission vilar över kursen i åratal och pressar den när warranterna utnyttjas och säljs",
+            "Att bolaget har för få aktier",
+            "Att lösenkursen är för hög"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som händer med kursen när många samtidigt kan skapa nya aktier billigt."
+        },
+        {
+          "q": "Hur ska enligt bokens logik warrants hanteras i en aktievärdering?",
+          "alternativ": [
+            "Ignoreras eftersom de inte är aktier ännu",
+            "Räknas in som full utspädning — de är framtida aktier och ska påverka antalet aktier och värdet per aktie",
+            "Endast om lösenkursen är under marknaden",
+            "Bara om förfallotiden överstiger tio år"
+          ],
+          "ratt": 1,
+          "tips": "Värde per aktie förutsätter ett antal aktier — vilket antal är ärligt?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Seniora papper med spekulativa drag — aritmetik och hedge",
+      "intro": "I bokens tredje del finns en kategori papper som varken är rent säkra eller rena aktier: seniora fordringar som handlas med kraftig rabatt. Här krävs ingen känsla — bara kall konverteringsaritmetik och förståelse för vad som driver gapet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En senior fordran med spekulativt drag är en obligation eller preferensaktie vars kurs fallit långt under nominalvärdet — inte för att marknaden är hysterisk, utan för att betalningsförmågan är ifrågasatt. Enligt Graham & Dodd kan sådana papper vara utmärkta köp, men de ska analyseras som aktieanknutna värdepapper: deras värde följer bolagets framtidsutsikter, inte deras juridiska rang. Grundverktyget är paritetsberäkningen: för en konvertibel preferensaktie räknas parity-värdet mot den vanliga aktien, och papperet ska då köpas när kursen ligger klart under den verkliga förmånen — antingen mot aktien eller mot återställd betalningsförmåga."
+        },
+        {
+          "type": "text",
+          "content": "Boken beskriver också den skyddade positionen — en av analytikerns finaste vapen: köp den konvertibla fordran och korta den vanliga aktien i motsvarande proportion. Går aktien upp konverterar man med vinst; går den ner faller konvertibeln mindre och shortpositionen ger skydd. Det är i sak en hedge som förvandlar en riktad satsning till en arbitrage-liknande situation. Graham & Dodd påpekade nyanserna: transaktionskostnader, lånekostnader för den korta positionen, marginalkrav och risken att inlösen eller utebliven konvertering trasar sönder balansen. Men principen är evig: det går att konstruera positioner där det kvantitativa gapet mellan två papper från samma gäldenär realiseras oberoende av marknadsriktning."
+        },
+        {
+          "type": "text",
+          "content": "Den moderna AKM1-analogin är pair-trades och strukturerad arbitrage, men Graham & Dodds varning står kvar: hedgen skyddar mot prisrisk, inte mot kreditrisk. Om gäldenären själv kollapsar kan båda benen slå fel. Därför alltid gäldenäranalys först (V17), konstruktion sedan — aldrig omvänt."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En rabatterad senior fordran analyseras som ett aktieanknutet papper: räkna pariteten, räkna återhämtningen — och bygg vid behov en skyddad position där gapet realiseras oavsett marknadsriktning."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Öva konverteringsaritmetiken: en preferensaktie kan bytas mot tre vanliga aktier och handlas till 72; den vanliga aktien handlas till 28. Beräkna paritetsvärdet och premien i procent. Upprepa med egna siffror tills du kan räkna paritet, premie och brytpunkt i huvudet på en minut."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Konverteringsaritmetik — fyra nyckeltal\",\"rader\":[[\"Nyckeltal\",\"Beräkning\",\"Användning\"],[\"Paritetsvärde\",\"Antal aktier per papper × aktiekurs\",\"Vad konverteringen är värd nu\"],[\"Konverteringspremie\",\"(Papperskurs − paritet) / paritet\",\"Vad du extra betalar för optionen\"],[\"Investeringsvärde\",\"Värde som ren obligation/kredit\",\"Golvet i nedgång\"],[\"Brytpunkt\",\"Lösenkurs + betald premie\",\"Var aktien ska gå för att du vinner\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur ska en kraftigt rabatterad senior fordran analyseras enligt Graham & Dodd?",
+          "alternativ": [
+            "Som en statsobligation",
+            "Som ett aktieanknutet värdepapper vars värde följer gäldenärens framtidsutsikter — med paritetsberäkning och återhämtningsanalys",
+            "Enbart efter juridisk rangordning",
+            "Som en option på räntan"
+          ],
+          "ratt": 1,
+          "tips": "Vad driver värdet när betalningsförmågan är ifrågasatt — juridiken eller bolagets framtid?"
+        },
+        {
+          "q": "Vad kallas positionen där man köper en konvertibel fordran och kortar motsvarande mängd vanliga aktier?",
+          "alternativ": [
+            "Levererad hedge",
+            "Skyddad (hedged) position — den söker realisera gapet mellan papperen oavsett marknadsriktning",
+            "Riskfri arbitrage utan bismak",
+            "Kassahedge"
+          ],
+          "ratt": 1,
+          "tips": "Ett ben skyddar det andra — men kom ihåg att kreditrisken finns kvar."
+        },
+        {
+          "q": "En preferensaktie kan bytas mot tre aktier. Aktien kostar 28 och preferensen 72. Vad är paritetsvärdet?",
+          "alternativ": [
+            "72",
+            "84 — tre aktier à 28",
+            "24",
+            "100"
+          ],
+          "ratt": 1,
+          "tips": "Multiplicera antalet aktier med aktiekursen."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Common stock-teorins historia — från kassakalkyl till ny-era",
+      "intro": "Innan 1924 värderades aktier som osäkra obligationer: utdelningen var allt. Sedan kom ny-era-teorin — intjäningens trend var allt och priset spelade ingen roll. Graham & Dodd såg båda som halva sanningar, och kraschen 1929 bevisade varför.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den äldre synen på aktier, före 1920-talet, var i grund och botten obligationsliknande: en aktie värderades efter sin utdelningsavkastning, som med rätta skulle ligga över obligationens ränta som ersättning för risk. Fördelen var disciplinen — priset knöts till kontanter — nackdelen var att bolagets konsoliderade tillgångar och återinvestrade vinster ignorerades. Enligt Graham & Dodd var detta en slags obligations-approach: fel verktyg men rätt intuition om att pris och värde hänger samman."
+        },
+        {
+          "type": "text",
+          "content": "Ny-era-teorin, som växte fram under 1924–1929, vände upp och ned på allt. Aktiens värde, sades det, berodde enbart på intjäningskraften och dennas trend — en stabil eller stigande vinstkurva berättigade vilket pris som helst, och 'bra aktier' var per definition bra köp oavsett kurs. Utdelningen spelade ingen roll, ty bolaget återinvesterade bättre än ägaren. Enligt Graham & Dodd var det inte en värderingsteori utan en rationalisering av priserna: trenden extrapolerades i oändligheten och priset sattes på framtiden. Bokens exempel belyser mekanismen: flygplanstillverkaren Wright Aeronautical var 1922 enligt deras analys kraftigt undervärderad — bolagets kassa och innehav översteg i praktiken aktiekursen medan intjäningen var ansenlig — och blev 1928–1929, efter en mer än tjugofaldig uppgång, ett av börsernas dyraste papper prissatt enbart på trend. Samma bolag, samma verksamhet — metoderna och priserna hade bytts ut."
+        },
+        {
+          "type": "text",
+          "content": "Efter 1929 stod frågan: är aktier överhuvud taget möjliga som investeringar? Graham & Dodds svar i bokens fjärde del är ja — men tre villkor måste vara uppfyllda. Priset måste stå i rimligt förhållande till dokumenterad intjäningskraft och tillgångar, inte till trendens förlängning. Värderingen måste erkänna att framtiden är osäker och därför kräva en marginal. Och inflationsargumentet — att aktier automatiskt skyddar mot inflation — är en halvsanning: aktier skyddar bara om de köps till rätt pris och om bolaget har verklig konkurrenskraft (i AKM1: moat, V13). Köpta till toppriser besegrar inte ens bra bolag inflationen (V14)."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Ny-era-teorin bytte verktyg: från att prissätta kontanta utbetalningar till att prissätta en förlängd trend — och när trenden bröts fanns inget värde kvar, bara priset."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta ett av dagens trendbolag. Gör två värderingar: (1) bond-approach — värdet av framtida utdelningar diskonterade som en osäker obligation; (2) ny-era-approach — värdet av senaste tre årens vinsttrend extrapolerad tio år. Jämför båda med dagens kurs. Vilket antagande måste marknaden göra för att rättfärdiga priset?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur värderades aktier enligt den äldre skolan före 1920-talet?",
+          "alternativ": [
+            "Enligt intjäningens trend tio år framåt",
+            "Som osäkra obligationer med fokus på utdelningsavkastningen, som med rätta låg över obligationsräntan",
+            "Enligt bokfört eget kapital",
+            "Enligt teknisk analys"
+          ],
+          "ratt": 1,
+          "tips": "Vilken kontant ström stod i centrum — och varför skulle den ge mer än räntan?"
+        },
+        {
+          "q": "Vad var kärnan i ny-era-teorin 1924–1929?",
+          "alternativ": [
+            "Att utdelningen var allt",
+            "Att aktiens värde berodde enbart på intjäningskraften och dennas trend — bra aktier var bra köp oavsett pris",
+            "Att aktier skulle undvikas",
+            "Att obligationer var bättre än aktier"
+          ],
+          "ratt": 1,
+          "tips": "Vad sades spela ingen roll alls i den teorin?"
+        },
+        {
+          "q": "Vad illustrerade Wright Aeronautical enligt boken?",
+          "alternativ": [
+            "Att flygplanstillverkning är riskfritt",
+            "Att samma bolag kan vara djupt undervärderat 1922 (kassa över kurs) och kraftigt övervärderat 1929 (trendprissatt) — metoden avgör",
+            "Att småbolag alltid slår stora",
+            "Att utdelning inte spelar roll"
+          ],
+          "ratt": 1,
+          "tips": "Två datum, två prisnivåer, samma bolag — vad hade förändrats egentligen?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Värde kontra pris — trend, prognos och transparens",
+      "intro": "Alla vet att man ska köpa värde under pris. Graham & Dodds bidrag var att visa vad som inte får räknas som värde: en trend är inte värde, en prognos är inte värde — och utmärkt kvalitet är dessutom ofta redan prissatt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enligt Graham & Dodd är intjäningskraft (earning power) det centrala värdemåttet för aktier — men intjäningskraft är genomsnittet över en representativ period, normaliserat för engångsposter, inte senaste årets siffror och definitivt inte trendens slutpunkt. Trenden är frestande därför att den ser ut som ett faktum: sju år av stadig vinsttillväxt är dokumenterad historia. Felet är att marknaden under euforin prissätter trendens fortsättning i oändligheten, varvid även en perfekt verklig fortsättning ger otillräcklig avkastning — priset har redan ätit framtiden. I AKM1:s språk: V14 kräver att värdet vilar på normaliserad intjäning och att moatens (V13) hållbarhet prövas, inte antas."
+        },
+        {
+          "type": "text",
+          "content": "Framtidsutsikter kan visserligen motivera värde — boken skiljer på bestämda utsikter (signerade kontrakt, patent, reservtillgångar) och spekulativa förhoppningar. Men ju större del av värdet som ligger i framtiden, desto bredare måste marginalen mellan värde och pris vara (V19). En annan ödmjuk observation från boken: marknaden är oftast duktig på att prissätta synlig kvalitet. Ett erkänt välstärbart bolag handlas sällan billigt; det finns sällan skäl att tro att man ser kvalitet som marknaden missar — däremot ser marknaden emellanåt värde i tråkiga, komplicerade eller omoderna bolag som ingen orkar analysera. Därför letar Graham & Dodd-analytikern hellre där analysen kan addera fakta: i balansräkningar, emissioner och kapitalstrukturer."
+        },
+        {
+          "type": "text",
+          "content": "Transparens är därför inte en hygienfråga utan alfa: ju klarare ett bolag redovisar, desto mindre gap kan analysen hitta och desto mer konkurrens om det som syns. De bästa köpen i bokens case-historier var bolag där fakta fanns tillgänglig men där arbetet med att sammanställa den var tråtsamt — och där marknadens trötthet betalade den som gjorde hemläxan."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Trenden är historia prissatt som framtid — intjäningskraft är genomsnittet över cykeln, och ju mer av värdet som bor i framtiden, desto bredare marginal krävs vid köpet."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 För ett bolag med tydlig vinsttrend: beräkna snittresultatet per aktie för de senaste tio åren och senaste tre åren. Räkna P/E mot båda. Om marknaden betalar 40x senaste året men 25x tioårssnittet — vilket årtal är det ärliga talet för earning power? Skriv ner vad som måste hända för att dagens pris ska vara motiverat."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vad räknas som värde enligt Graham & Dodd\",\"rader\":[[\"Fakta\",\"Räknas som värde?\",\"Kommentar\"],[\"Genomsnittsintjäning över cykel\",\"Ja\",\"Kärnmåttet: earning power\"],[\"Bestämda utsikter (kontrakt, reservtillgångar)\",\"Ja, med försiktighet\",\"Verifierbara och tidsatta\"],[\"Trendens fortsättning\",\"Nej\",\"Historia prissatt som framtid\"],[\"Narrativ om disruption\",\"Nej\",\"Kräver bred marginal om något\"],[\"Balansräkningens netto cirkulerande medel\",\"Ja\",\"Kapitel 17\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är 'earning power' enligt Graham & Dodd?",
+          "alternativ": [
+            "Senaste årets vinst per aktie",
+            "Genomsnittlig intjäningsförmåga över en representativ period, normaliserad för engångsposter",
+            "Nästa års väntade vinst",
+            "Den långa vinsttrendens slutpunkt"
+          ],
+          "ratt": 1,
+          "tips": "Ett år är väder — vad är klimatet?"
+        },
+        {
+          "q": "Varför är trenden farlig som värdegrund?",
+          "alternativ": [
+            "Trender existerar inte",
+            "För att marknaden under eufori prissätter trendens fortsättning i oändligheten — även en perfekt fortsättning ger då otillräcklig avkastning",
+            "Trender är alltid nedåtgående",
+            "Trender kan inte mätas"
+          ],
+          "ratt": 1,
+          "tips": "Fråga: vad återstår för köparen om framtiden infaller exakt enligt plan?"
+        },
+        {
+          "q": "Vad observerade boken om marknadens prissättning av synlig kvalitet?",
+          "alternativ": [
+            "Att välstärbarta bolag ofta handlas billigt",
+            "Att erkänd kvalitet sällan är billig — de bästa köpen finns där analysen kan addera fakta som marknaden inte orkat sammanställa",
+            "Att kvalitet inte påverkar priset",
+            "Att moat alltid är osynlig för marknaden"
+          ],
+          "ratt": 1,
+          "tips": "Om alla ser fördelen — vem betalar för den i kursen?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Marknadsnivåerna 1897–1949 — cykler och avkastningsgap",
+      "intro": "Hur förhåller sig aktiernas nivå till obligationernas — och kan marknaden som helhet värderas? Graham & Dodd gick igenom ett halvt sekel data och drog en försiktig slutsats: nivån kan bedömas, aldrig tajmas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens genomgång av marknadsnivåerna 1897–1949 tecknar ett mönster som upprepas med otäck regularitet. Från 1897 till tidigt 1920-tal rörde sig genomsnitten i vida cykler kring en stabil nivå — nedgångar och uppgångar, men ingen bestående reavinst. Därefter 1924–1929: den stora bullen, där Dow-indexet steg från strax under hundra till sin topp på 381 i september 1929 — för att sedan falla med nära nio tiondelar till botten på 41 sommaren 1932. Återhämtningen till 1937 avbröts av nästa krasch, ungefär halvering 1938; krigsåren förde nya toppar 1946 följt av rean fram till 1949. Mönstret: extrema lägen följs av återgång, men tidpunkten är omöjlig att förutsäga."
+        },
+        {
+          "type": "text",
+          "content": "Som mätsticka använde Graham & Dodd främst avkastningsgapet: aktiens avkastning (utdelning och intjäning i procent av kursen) mot obligationsräntan. Under normala tider ger aktierna mer i direkt avkastning som ersättning för risk. I bottnar som 1921 och 1932 vände gapet på huvudet — aktier gav högre direktavkastning än obligationer, en historisk anomalisk signal på kollektiv överdriven pessimism. Vid toppen 1929 var det omvända extremt: aktieavkastningen aldrig lägre i förhållande till obligationer. Men — och detta är bokens poäng — indikatorn säger inget om tidpunkten. 1927 såg 'dyrt' ut och blev dyrare i två år till; den som väntade på perfekt signal missade eller förlorade. Slutsatsen: bedöm nivån, agera gradvis, bygg aldrig strategin på tajming."
+        },
+        {
+          "type": "text",
+          "content": "Den praktiska konsekvensen för analytikern är ansprålsfördelning: när marknaden som helhet är låg kan vanlig selektiv analys göra bra ifrån sig överallt (undervärdering är Regel); när marknaden är hög återstår special situations och särskilt rabatterade papper. Det är samma logik AKM1 använder när scenarier och position-sizing (Kelly) anpassas efter var i cykeln avkastningsgapet ligger — nivån styr förutsättningarna, aldrig klockslaget."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Avkastningsgapet mellan aktier och obligationer är marknadens termometer — den visar feber och köld, men aldrig när tillståndet vänder: bedöm nivån, tajma aldrig strategin."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Gör dagens termometeravläsning: ta breda index och beräkna (1) utdelningsavkastning, (2) inverterad P/E på tioårssnittet av resultatet, och jämför båda med tioåriga statsobligationens avkastning. Notera gapet i procentenheter. Skriv tre rader: vad pekar gapet på, och vilka brister har mätet enligt Graham & Dodds egen kritik?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Marknadens lägen 1897–1949 enligt boken\",\"rader\":[[\"Period\",\"Karaktär\",\"Avkastningsgap/kännetecken\"],[\"1897–1924\",\"Vida cykler kring stabil nivå\",\"Aktier ger normalt mer än obligationer\"],[\"1924–1929\",\"Stor bull — Dow 381 sept 1929\",\"Aktieavkastningen rekordlåg mot obligationer\"],[\"1929–1932\",\"Krasch — Dow 41 sommaren 1932\",\"Gapet vänder: aktier ger mest — kollektiv pessimism\"],[\"1937–1938\",\"Halvering efter återhämtning\",\"Cykel utan ny depression-botten\"],[\"1942–1949\",\"Krigstopp 1946, rea till 1949\",\"Gradvis normalisering av gapet\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med Dow-indexet mellan september 1929 och juli 1932?",
+          "alternativ": [
+            "Det föll med omkring 25 procent",
+            "Det föll från 381 till 41 — nära nio tiondelar",
+            "Det steg kraftigt",
+            "Det låg stilla"
+          ],
+          "ratt": 1,
+          "tips": "Bokens era innehåller historiens värsta björnmarknad fram till dess."
+        },
+        {
+          "q": "Vad kännetecknade avkastningsgapet i bottnar som 1921 och 1932?",
+          "alternativ": [
+            "Aktier gav högre direktavkastning än obligationer — en anomali som signalerade kollektiv överdriven pessimism",
+            "Obligationer och aktier gav lika mycket",
+            "Aktier gav extremt mindre än obligationer",
+            "Gapet saknar betydelse"
+          ],
+          "ratt": 0,
+          "tips": "Vid panik pressas aktiekurserna så att utdelningsavkastningen stiger över obligationsräntan."
+        },
+        {
+          "q": "Vad är bokens slutsats om att använda nivåindikatorer för marknadstajming?",
+          "alternativ": [
+            "De är tillförlitliga klockor för köp och försälj",
+            "De kan visa extrema lägen men inte tidpunkter — bedöm nivån, agera gradvis, bygg aldrig strategin på tajming",
+            "De är värdelösa och ska ignoreras helt",
+            "De fungerar bara på obligationer"
+          ],
+          "ratt": 1,
+          "tips": "1927 såg dyrt ut och blev dyrare — vad lär det om perfekt signal?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Intäktsredovisningens fallgropar — hur resultat målas",
+      "intro": "Bokens femte del är en katalog över konsten att måla ett resultat. Graham & Dodd visade hur rapporterad vinst kunde blåsas upp eller pressas ner med fullt lagliga medel — och deras genomgång är fortfarande standardutrustning för varje granskare av årsredovisningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enligt Graham & Dodd är rapporterat resultat inte ett faktum utan produkten av en rad val. Lagermetoden: i tider av stigande priser ger först-in-först-ut högre redovisad vinst än senare metoder — men den extra vinsten är en pappersprodukt som inte är kontant och som kräver återinvestering i dyrare lager (därför ska V04-bruttomarginal alltid läsas mot V08-kassaflödet). Avskrivningarna: en sänkning av avskrivningsprocenten, motiverad av 'längre livslängder', lyfter resultatet i varje period utan att en enda dollar förändras i verkligheten. Reserverna: avsättningar för garantier, tvister och pensioner är resultatregleringar i miniatyr — höj under goda år för att spara till dåliga, eller vända på metoden när en bonus behövs. Konsolideringen: välj om dotterbolag med och resultatet dansar — och minoritetsintressen kan gömma att den vanliga aktieägarens andel av vinsten är mindre än rapporten antyder."
+        },
+        {
+          "type": "text",
+          "content": "Bokens mest bestående lärdomar gäller engångsposter och intäktsperiodisering. Vinster på försäljning av tillgångar kan redovisas som rörelseresultat; subventioner och retroaktiva skatteåterbäringar kan dyka upp som vanliga intäkter; kontrakt kan faktureras i förskott. Enligt Graham & Dodd ska analytikern alltid skilja på återkommande driftsintäkter och poster som inte kan upprepas, och normalisera resultatet därefter. De varnade också för den omvända manipulationen — resultat som medvetet trycks ner under kriser (stora avskrivningar, utgiftstopp, reservuppbyggnad) för att skapa ett lågt jämförelsetal och sedan leverera 'spektakulär förbättring'. Bolag som jämnar ut resultaten (income smoothing) ger sken av stabilitet som förfalskar bild av risk (V17)."
+        },
+        {
+          "type": "text",
+          "content": "Arbetssättet är systematiskt: läs resultaträkningen från botten uppåt, rad för rad, och ställ samma fråga till varje rad — är detta kontant, återkommande och rörelsenaturligt? Tre ja krävs för att raden ska få ligga kvar i earning power. Allt annat betraktas som justeringar eller varningar. I AKM1 är detta själva ryggraden i V17 och grunden till att V09 (ROE) bara är meningsfullt när täljaren är rensad."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Resultatet är en åsikt, kassaflödet ett faktum — läs resultaträkningen baklänges och ställ tre frågor till varje rad: kontant, återkommande, rörelsenaturligt?"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta senaste årsredovisningen för ett bolag du följer. Lista fem redovisningsval som påverkar resultatet — lagermetod, avskrivningsgenomsnitt, reservförändringar, engångsposter, konsolidering — och riktningen för varje. Beräkna sedan ett normaliserat resultat utan dessa effekter och jämför med rapporterat."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fallgropar i intäktsredovisningen enligt boken\",\"rader\":[[\"Metod\",\"Effekt\",\"Fråga till bolaget\"],[\"Lagermetod vid stigande priser\",\"Uppblåst bruttomarginal (V04)\",\"Är vinsten kontant (V08)?\"],[\"Sänkta avskrivningsprocent\",\"Resultatlyft utan real förändring\",\"Vad är branschstandard?\"],[\"Reservförändringar\",\"Resultatreglering över cykeln\",\"Hur rör sig saldot över tiden?\"],[\"Kapitalvinster som driftsintäkt\",\"Sken av lönsamhet\",\"Kan posten upprepas?\"],[\"Jämnad resultatserie\",\"Förfalskad stabilitet\",\"Vad döljs i dåriga år?\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kan bruttomarginalen se bättre ut än verkligheten i tider av stigande priser?",
+          "alternativ": [
+            "För att försäljningen alltid stiger då",
+            "För att lagermetoder som först-in-först-ut ger redovisad vinst på lagervärdeökning som inte är kontant",
+            "För att avskrivningar sjunker automatiskt",
+            "För att skattesatsen sjunker"
+          ],
+          "ratt": 1,
+          "tips": "Vilken del av vinsten måste återinvesteras i dyrare lager — och försvinner därmed ur kassan?"
+        },
+        {
+          "q": "Hur kan en sänkt avskrivningsprocent påverka resultatet?",
+          "alternativ": [
+            "Den sänker resultatet",
+            "Den lyfter resultatet varje period utan att en enda real dollar förändras",
+            "Den påverkar bara balansräkningen",
+            "Den ökar utdelningen automatiskt"
+          ],
+          "ratt": 1,
+          "tips": "Avskrivning är en kostnad — vad händer när kostnaden görs mindre på pappret?"
+        },
+        {
+          "q": "Vad är syftet med att 'jämna ut' resultatserier (income smoothing)?",
+          "alternativ": [
+            "Att öka utdelningen",
+            "Att ge sken av stabilitet genom att spara resultat i goda år och frigöra i dåliga — vilket förfalskar bild av risk",
+            "Att sänka skatten",
+            "Att uppfylla bokföringslagen"
+          ],
+          "ratt": 1,
+          "tips": "Vem gynnas av att kurvan ser lugn ut — och vad döljer lugnet?"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 12,
+      "title": "Earning power och revisionens gränser",
+      "intro": "Hur mycket kan man lita på en revisors intyg? Graham & Dodd svarade: det är en omdömesförklaring, inte en garanti — och 1938 års McKesson & Robbins-skandal bevisade det inför hela världen. Samma del lärde också ut ordet earning power.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Earning power — bolagets varaktiga intjäningsförmåga — är enligt Graham & Dodd det centrala värdemåttet, och det konstrueras inte ur ett års siffror utan ur ett normaliserat flerårsutfall: genomsnitt över fem till tio år, rensat från engångsposter, med avskrivningar och reserver justerade till försiktiga nivåer. För cykliska bolag betyder det att toppåret och bottenåret ska vägas samman till ett genomsnitt som representerar en hel affärsomgång. I AKM1: V09 (ROE) och V04 (bruttomarginal) ska alltid presenteras som flerårsgenomsnitt med spridning — ett enskilt årsresultat är inte earning power, det är en nyhet."
+        },
+        {
+          "type": "text",
+          "content": "Men earning power bygger på att siffrorna är sanna, och här gör boken en av sina viktigaste insatser: granskningen av revisionens gränser. Enligt Graham & Dodd är revisorns intyg en försäkran om att rapporterna är upprättade enligt gällande regler i väsentliga delar — inte en försäkran om att inga bedrägerier förekommer och inte en värdering av bolaget. Skandalen McKesson & Robbins 1938 blev beviset: ledningen hade fabricerat cirka tjugo miljoner dollar i påhittade tillgångar — däribland ett påhittat lager och fiktiva kundfordringar hos skenbara leverantörer — och revisorerna hade inte fysiskt inventerat lagret, eftersom rutiner saknades. Händelsen tvingade fram ändrade revisionsstandarder med krav på observation av lager och bekräftelser av fordringar, och den illustrerar fortfarande gränsen för vad en extern granskning kan garantera. Bokens samtid hade också det europeiska fallet Kreuger & Toll 1932, där Ivar Kreugers komplexa kontrakt och belåningar hölls utanför ljuset ända till kollapsen — samma lärdom: ju mindre som kan verifieras, desto större risk (V17)."
+        },
+        {
+          "type": "text",
+          "content": "Den praktiska regeln för analytikern blir: använd revisionen som ett filter, inte som en filt. Ett kvalificerat intyg från en erkänd revisor är ett minimikrav — men aldrig en ersättning för egen genomgång av konton, notsystem och intäktskvalitet. Och när ett bolags struktur gör verklig kontroll omöjlig — dotterbolag i opaka jurisdiktioner, otransparenta relaterade parter, resultat som inte blir kassa — då är slutsatsen inte djupare analys utan uteslutning, exakt som i den negativa metoden från kapitel 5."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Ett revisorsintyg är ett omdöme, inte en garanti — McKesson & Robbins lärde världen att gränsen för revisionen går där den fysiska verifieringen slutar."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta en årsredovisning och läs revisorsintyget plus noterna noggrant. Leta: (1) avvikelser eller betoningar i intyget, (2) relaterade partier-transaktioner, (3) var intäkterna kommer ifrån geografiskt och segmentmässigt. Skriv en bedömning: vilka delar av rapporten kan du verifiera själv — och vilka vilar på förtroende?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Att bygga earning power\",\"rader\":[[\"Steg\",\"Åtgärd\",\"AKM1-koppling\"],[\"1. Samla\",\"Resultat för 5–10 år\",\"V09, V04 som serier\"],[\"2. Rensa\",\"Ta bort engångsposter och kapitalvinster\",\"V17 rapportkvalitet\"],[\"3. Justera\",\"Normalavskrivningar, konservativa reserver\",\"Samspel med balansräkningen\"],[\"4. Väg\",\"Snitt över cykeln, inte senaste året\",\"V14 värderingsbas\"],[\"5. Pröva\",\"Kan resultatet återinvesteras till bra avkastning?\",\"V13 moat\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur konstrueras earning power enligt Graham & Dodd?",
+          "alternativ": [
+            "Som senaste årets resultat per aktie",
+            "Som normaliserat genomsnitt över fem till tio år, rensat från engångsposter och med försiktiga avskrivningar",
+            "Som nästa års väntade resultat",
+            "Som den högsta årsinta gången under decenniet"
+          ],
+          "ratt": 1,
+          "tips": "Ett helt affärsomgång ska in i beräkningen — vad är en representativ period?"
+        },
+        {
+          "q": "Vad lärde McKesson & Robbins-skandalen 1938 om revision?",
+          "alternativ": [
+            "Att revisorer alltid upptäcker bedrägerier",
+            "Att intyget är ett omdöme om regeltillämpning — utan fysisk inventering av lager kunde påhittade tillgångar passera okontrollerade",
+            "Att revision är värdelös",
+            "Att bara banker behöver revideras"
+          ],
+          "ratt": 1,
+          "tips": "Vilken verifiering hade aldrig gjorts — och varför blev just den obligatorisk efteråt?"
+        },
+        {
+          "q": "Vad bör analytikern göra när ett bolags struktur gör verklig kontroll omöjlig?",
+          "alternativ": [
+            "Lita mer på revisorn",
+            "Tillämpa uteslutning — struktur som kräver förtroende i stället för verifiering ska strykas",
+            "Extrapolera trenden",
+            "Köpa med liten position som kompensation"
+          ],
+          "ratt": 1,
+          "tips": "Påminn dig om den negativa metoden — vad gör sållret med det som inte kan granskas?"
+        }
+      ]
+    },
+    {
+      "num": 17,
+      "minutes": 12,
+      "title": "Balansräkningen talar — kassa, net-nets och likvidation",
+      "intro": "När resultaträkningar kan målas finns en sanning kvar: balansräkningen. Bokens sjätte del visade att aktier ibland handlas under bolagets kassa och netto cirkulerande medel — en anomali som Graham & Dodd gjorde till en hel strategi.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enligt Graham & Dodd har balansräkningen tre uppgifter för analytikern. Den visar hur mycket kontanter och lättlösliga tillgångar bolaget förfogar över — en rörelsefrihet som sätter gränsen för hur länge bolaget kan överleva dåliga tider. Den visar netto cirkulerande medel (net current assets): omsättningstillgångar minus totala skulder — det belopp som i en likvidation teoretiskt skulle återstå till ägarna efter att allt skuldbetalts, även om anläggningstillgångarna bara ger skrotvärde. Och den visar den reala kapitalbasen mot vilken lönsamheten (V09) ska mätas — utan en ärlig balansräkning är varje avkastningssiffra meningslös."
+        },
+        {
+          "type": "text",
+          "content": "Ur detta föddes det som senare fått namnet net-nets: bolag vars börsvärde understeg det netto cirkulerande värdet. Enligt Graham & Dodd var sådana situationer inte teoretiska kuriosa utan statistiskt vanliga efter svåra kriser — de fanns i massor efter 1921 och än mer efter 1932, då hela marknaden prissattes som om vissa bolag skulle upphöra att existera. Köp under netto cirkulerande medel (i Grahams senare praktik med ytterligare rabatt, ofta anges två tredjedelar) betyder att investeraren betalar ingenting alls för verksamheten — bara för tillgångar som redan är nära kontanter. Bokens erfarenhet var att sådana portföljer historiskt presterat kraftigt över marknaden, med en inbyggd varning: net-nets kräver utspridda portföljer, eftersom enskilda bolag kan bränna sin kassa genom fortsatta förluster."
+        },
+        {
+          "type": "text",
+          "content": "Bakom metoden ligger ett kallt hantverk: likvidationstänkandet. Varje tillgångsklass diskonteras grovt — kassa till fullt värde, kundfordringar med avdrag, lager kraftigt, anläggning till bråkdelar. Det ger en undre gräns för värdet (V14) som inte vilar på en enda prognos, och därför är net-nets den renaste tillämpningen av margin of safety (V19): ju större gapet mellan pris och likvidationsvärde, desto mer fel kan analytikern ha utan att förlora. I dag är renodlade net-nets sällsynta, men principen lever: betala aldrig mer än du måste för tillgångar som redan finns, och låt balansräkningen sätta golvet under analysen."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Net-nets är den renaste margin of safety som finns: köper du under netto cirkulerande medel betalar du inget för verksamheten — och din analys behöver ingen prognos för att hålla."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Beräkna netto cirkulerande medel (omsättningstillgångar minus totala skulder) för tre småbolag du finner misstänkt billiga. Dividera med antalet aktier och jämför med kursen: handlas något under värdet? Om nej — hur stor andel av kursen betalar du för tillgångar respektive för verksamhet? Notera också risken: bränner bolaget kassan genom löpande förluster?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Likvidationstänkande — grova diskonter\",\"rader\":[[\"Tillgång\",\"Försiktigt värde\",\"Skäl\"],[\"Kassa och bank\",\"100%\",\"Redan kontant\"],[\"Kundfordringar\",\"80–90%\",\"Inkasso-förluster\"],[\"Lager\",\"50–70%\",\"Tvångsförsäljning slår hårt\"],[\"Anläggningstillgångar\",\"Skrotvärde, en bråkdel\",\"Inga intäkter utan drift\"],[\"Goodwill\",\"0%\",\"Betyder inget utan lönsam drift\"],[\"Netto cirkulerande medel\",\"Omsättningstillgångar − totala skulder\",\"Net-nets tröskel\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras netto cirkulerande medel (net current assets)?",
+          "alternativ": [
+            "Omsättningstillgångar minus kortfristiga skulder",
+            "Omsättningstillgångar minus totala skulder",
+            "Anläggningstillgångar minus skulder",
+            "Eget kapital dividerat med antal aktier"
+          ],
+          "ratt": 1,
+          "tips": "Det är beloppet som skulle återstå till ägarna om allt skuldbetalts — räkna därefter."
+        },
+        {
+          "q": "Varför betraktas köp under netto cirkulerande medel som en ren margin of safety?",
+          "alternativ": [
+            "För att kursen alltid stiger efteråt",
+            "För att investeraren betalar inget för verksamheten — värdet vilar på redan existerande tillgångar och ingen prognos krävs",
+            "För att bolagen alltid betalar ut kassan",
+            "För att metoden är riskfri"
+          ],
+          "ratt": 1,
+          "tips": "Vad behöver analytikern ha rätt om, när tillgångarna redan överstiger priset?"
+        },
+        {
+          "q": "Vilken varning kopplar Graham & Dodd till net-nets-strategin?",
+          "alternativ": [
+            "Att net-nets bara finns i bull-marknader",
+            "Att enskilda bolag kan bränna sin kassa genom fortsatta förluster — därför krävs utspridda portföljer",
+            "Att metoden är olaglig",
+            "Att netto cirkulerande medel alltid är noll"
+          ],
+          "ratt": 1,
+          "tips": "Vad är det enda sättet ett bolag under likvidationsvärde kan bli ännu billigare på?"
+        }
+      ]
+    },
+    {
+      "num": 18,
+      "minutes": 12,
+      "title": "Nedskrivningar och dolda reserver — samspelet balans och resultat",
+      "intro": "Under 1930-talet skrev hundratals bolag ner sina anläggningstillgångar och goodwill till en dollar. Askpektakulärt val? Kanske — men nästa års resultat fick plötsligt gratis lyft. Graham & Dodd avslöjade samspelet mellan skrivna värden och målad lönsamhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En nedskrivning av tillgångar — goodwill till en dollar, halverad anläggning — kan vara ren konservatism: under depressionen var det ärligt att erkänna att maskiner och rykte var mindre värda. Men enligt Graham & Dodd har nedskrivningar en systematisk baksida: de sänker framtida avskrivningar och därmed kostnader, vilket lyfter resultaträkningen i varje kommande period. Ett bolag som skriver ner kraftigt och strax därefter visar 'förbättrad lönsamhet' har inte nödvändigtvis blivit bättre — dess resultat är omkalibrerat. Bland de stora amerikanska industriföretagen genomfördes omfattande sådana nedskrivningar under 1930-talet, och jämförelser mellan bolag med skrivna och oskrivna balansräkningar blev därför ett analytiskt minfält: samma verksamhet, olika bokförda kostnader."
+        },
+        {
+          "type": "text",
+          "content": "Den omvända manövern — uppskrivning — blomstrade under 1920-talets slut. Tillgångar togs upp till 'aktuellt värde', varefter realisationsvinster kunde tas genom att sälja och leasa tillbaka, eller avsättningar kunde byggas som senare släpptes tillbaka till resultatet. Enligt Graham & Dodd är både ned- och uppskrivningar legitima endast när de speglar verifierbara värden och tillämpas konsekvent — annars är de resultatreglering i balansräkningens dräkt. Analytikerns motdrag är normalisering: räkna om resultatet med enhetliga, branschnormala avskrivningar oavsett vad bolaget skrivit, och jämför bolag på räkenskapslogik i stället för redovisad nivå (V17, V04)."
+        },
+        {
+          "type": "text",
+          "content": "Här knyts bokens trådar ihop: intäktsanalysen (del V) kan bara bedömas mot bakgrund av balansräkningen (del VI), och tvärtom. Resultatets kvalitet avgörs av hur tillgångarna värderats; tillgångarnas trovärdighet avgörs av vad de faktiskt tjänar. I AKM1 är detta därför en enda variabelkedja: V09 (ROE) blir meningsfullt först när täljaren är normaliserad (V17) och nämnaren — kapitalbasen — inte är godtyckligt skriven. Priset på en aktie ska stå i förhållande till denna rensade helhet (V14), med marginal (V19)."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Resultaträkningen kan inte läsas ensam: dess kvalitet avgörs av balansräkningens prissättning av tillgångarna — skrivna värden är resultatreglering i balansräkningens dräkt."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Hitta två konkurrenter där en skrivit ner stora tillgångsposter (goodwill, anläggning) och den andra inte. Jämför deras avskrivningar i procent av intäkter och deras redovisade marginaler. Räkna sedan om bådas resultat med en gemensam, normal avskrivningsnivå — vem är lönsammast då? Skriv en rad om vilken bild den redovisade resultaträkningen gav."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skrivna värden — två sidor av samma mynt\",\"rader\":[[\"Manöver\",\"Omedelbar effekt\",\"Senare effekt\",\"Fråga\"],[\"Nedskrivning av goodwill/anläggning\",\"Lägre bokfört kapital\",\"Lägre avskrivningar lyfter resultatet\",\"Vad händer med framtida kostnader?\"],[\"Uppskrivning av tillgångar\",\"Högre bokfört kapital\",\"Realisationsvinster och avsättningar kan frigöras\",\"Är värdet verifierbart?\"],[\"Enhetsnormalisering\",\"Jämförbara tal\",\"Ärlig jämförelse mellan bolag\",\"Vad är branschstandard?\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur kan en stor nedskrivning av anläggningstillgångar förbättra framtida resultat?",
+          "alternativ": [
+            "Genom att öka utdelningen",
+            "Genom att sänka de årliga avskrivningarna och därmed kostnaderna i varje kommande period",
+            "Genom att sänka skattesatsen",
+            "Genom att öka intäkterna"
+          ],
+          "ratt": 1,
+          "tips": "Avskrivningen beräknas på bokfört värde — vad händer med kostnaden när värdet krymper?"
+        },
+        {
+          "q": "Vad är faran med uppskrivningar av tillgångar enligt boken?",
+          "alternativ": [
+            "De är alltid olagliga",
+            "De skapar realisationsvinster och avsättningar som senare kan släppas tillbaka och ge sken av lönsamhet",
+            "De sänker kapitalbasen",
+            "De ökar avskrivningarna för alltid"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad ett högre bokfört värde gör möjligt att 'realisera' senare."
+        },
+        {
+          "q": "Vad är analytikerns motdrag mot olika skrivna värden mellan bolag?",
+          "alternativ": [
+            "Att använda rapporterade tal utan justering",
+            "Att normalisera — räkna om resultat med enhetliga, branschnormala avskrivningar oavsett bokfört nivå",
+            "Att bara jämföra bolag med identisk bokföring",
+            "Att ignorera balansräkningen"
+          ],
+          "ratt": 1,
+          "tips": "Jämförelse förutsätter gemensam måttstock — vems måttstock väljer du?"
+        }
+      ]
+    },
+    {
+      "num": 19,
+      "minutes": 12,
+      "title": "Margin of safety — säkerhetsmarginalen och situationernas karta",
+      "intro": "Allt boken byggt landar i ett begrepp: margin of safety. Och en praktisk karta över vilka situationer som alls är värda att analysera. Detta är Graham & Dodds testamente — och AKM1:s V19 i urform.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enligt Graham & Dodd är säkerhetsmarginalen skillnaden mellan det värde som fakta visar och det pris som marknaden kräver — tillräckligt stor för att täcka analytikerns oundvikliga misstag och framtids osäkerhet. För obligationer tog marginalen form av täckning: intjäningen vida över räntan. För aktier tar den form av pris under normaliserad intjäningskraft eller under netto cirkulerande medel. Poängen med marginalen är dess funktion: den gör framgång beroende av fakta i stället för prognos. Om värdet beräknas till 30 och priset är 20, kan en rad antaganden falla ut sämre än väntat utan att kapitalet skadas — omvänt kan ingen mängd analys rädda ett köp till 40, om framtiden måste bli perfekt för att motivera priset."
+        },
+        {
+          "type": "text",
+          "content": "Bokens sjunde del kategoriserar de situationer där analytikern överhuvud taget har ett arbetsobjekt. För det första: undervärderade värdepapper — köp när kursen ligger klart under beräknat värde, helst med marginal mot både netto cirkulerande medel och flerårsintjäning. För det andra: special situations — händelsestyrda lägen där värdet realiseras på en kalender i stället för på marknadens humör: rekonstruktioner med värdepapper som utdelas, fusioner med köpkurs under bytesvärde, inlösningar, kapitalutdelningar. Här är osäkerheten inte priset utan tiden och genomförandet. För det tredje: skyddade konstruktioner — hedgar och konvertibla kombinationer från kapitel 11. Allt annat — köp till marknadspris i hopp om uppgång — är enligt Graham & Dodd inte analysens domän utan spekulationens."
+        },
+        {
+          "type": "text",
+          "content": "Notera ödmjukheten i systemet: Graham & Dodd lovar inte att marginalen garanterar vinst — enskilda köp med marginal kan utfalla dåligt. Vad de hävdar, med historien som stöd, är att en portfölj av köp med marginal över tiden slår en portfölj av köp utan, eftersom felbarheten är inbyggd i metoden. Det är exakt därför AKM1 gör V19 till en variabel bland andra — marginalen är nödvändig men inte ensam tillräcklig; den ska kombineras med kvalitet (V04, V08, V09, V13) och prissättning (V14)."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Säkerhetsmarginalen gör framgång beroende av fakta i stället för prognos — med marginal spelar dina misstag ingen roll, utan den spelar framtiden måste bli perfekt."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Definiera din egen marginaltabell: för tre typer av köp (kvalitetsbolag, cykliskt bolag, special situation) skriv vilket värde mått du använder (normaliserad intjäning, netto cirkulerande medel, händelsevärde) och hur stor rabatt i procent du kräver före köp. Använd tabellen på nästa idé du överväger — och håll dig till den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Situationernas karta enligt Graham & Dodd\",\"rader\":[[\"Situation\",\"Vad som skapar värdet\",\"Vad analysen fokuserar på\"],[\"Undervärderat värdepapper\",\"Kurs under beräknat värde (intjäning/netto cirkulerande medel)\",\"Normaliserad intjäning, balansräkning, marginal (V19)\"],[\"Special situation\",\"Händelse realiserar värdet (fusion, rekonstruktion, inlösen)\",\"Tid, sannolikhet för genomförande, kvarvarande rabatt mot händelsevärdet\"],[\"Skyddad konstruktion\",\"Gap mellan två papper från samma gäldenär\",\"Paritet, kreditkvalitet, transaktionskostnader\"],[\"Köp på marknadspris\",\"Inget dokumenterat gap\",\"Ej analysens domän — spekulation\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är funktionen hos säkerhetsmarginalen enligt Graham & Dodd?",
+          "alternativ": [
+            "Att garantera vinst på varje enskilt köp",
+            "Att göra framgång beroende av fakta i stället för prognos — misstag och överraskningar kan absorberas",
+            "Att eliminera all risk",
+            "Att överskrida marknadens avkastning automatiskt"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som händer med ett köp till 20 mot värde 30 om antagandena slår fel."
+        },
+        {
+          "q": "Vad utmärker en special situation i bokens mening?",
+          "alternativ": [
+            "En aktie med hög volatilitet",
+            "En händelsestyrd position där värdet realiseras på en kalender — fusion, rekonstruktion, inlösen — och osäkerheten gäller tid och genomförande",
+            "Ett bolag med stark moat",
+            "En obligation med hög kupong"
+          ],
+          "ratt": 1,
+          "tips": "Vad är det som ska hända — och vem bestämmer det utöver marknadens humör?"
+        },
+        {
+          "q": "Vad hävdar Graham & Dodd om portföljer av köp med marginal?",
+          "alternativ": [
+            "Att varje köp garanterat går bra",
+            "Att enskilda köp kan utfalla dåligt men att en portfölj med marginal över tiden slår en portfölj utan — felbarheten är inbyggd i metoden",
+            "Att marginalen bara gäller obligationer",
+            "Att metoden kräver perfekt timing"
+          ],
+          "ratt": 1,
+          "tips": "Statistik över portföljen, inte garanti för enskilda fall — vad är den långsiktiga mekanismen?"
+        }
+      ]
+    },
+    {
+      "num": 20,
+      "minutes": 12,
+      "title": "Pris-värde-gap i praktiken — case-historier och AKM1-syntes",
+      "intro": "Boken avslutas där den började: i verkliga fall, med verkliga siffror. Graham & Dodds case-historier visar hur gap mellan pris och värde uppstår, upptäcks och sluts — och hur en hel utbildningsplattform kan byggas på deras frågor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Genom bokens case-kapitel löper ett återkommande dramaturgi. Ett bolag faller i glömska eller skandal — kursen sjunker långt under vad dokumenterad intjäning och balansräkning motiverar. Analytikern som gör hemläxan hittar gapet: kassa som överstiger börsvärdet, dotterbolagsvärden som inte syns i konsolideringen, rabatterade seniora papper där återhämtning syns i talet. Därefter krävs tålamod: gapet sluter sig inte på klockslag utan genom utdelning, ombildning, uppköp eller att marknaden tröttnar på att ignorera fakta. Enligt Graham & Dodd är det just därför gapen existerar — de flesta vill ha snabb bekräftelse, och pris-värde-skillnader betalar dem som kan vänta på fakta i stället för på känslor. Bokens exempel sträcker sig från industribolag som prissattes under kassa efter 1932 till special situations där rekonstruerade järnvägsfordringar och utdelade dotterbolagsaktier realiserade värde inom bestämd tid."
+        },
+        {
+          "type": "text",
+          "content": "Därmed är cirkeln sluten, och det är värt att skriva ut kedjan explicit: undersökning (del I) — fast värde-täckning (del II–III) — intäkts- och balansanalys (del V–VI) — margin of safety och situationer (del VII). Det är inte en historikuriosa utan en arbetsorder som AKM1 operationaliserar variabel för variabel: V04 bruttomarginalens stabilitet är bokens krav på dokumenterad intjäningskraft; V08 kassaflödet är dess genomskåda av icke-kontanta vinster; V09 ROE på rensad kapitalbas dess earning power; V13 moat dess varning för att kvalitet utan marginal bara är dyrt; V14 värdering dess förbud mot trendens förlängning; V17 rapportkvalitet dess hela katalog av fallgropar; V19 margin of safety själva slutstenen. Bokens lärdom att fakta slår känslor på sikt är därför inte trosarförklaring utan metod — och den metoden är testad i hundra år av marknader sedan dess."
+        },
+        {
+          "type": "text",
+          "content": "Sista övningen i en BOKMASTER-kurs är alltid densamma: bokens frågor ska bli dina. När du hädanefter ser en aktie, fråga inte först vad den kan komma att kosta i morgon — fråga vad fakta säger att den är värd, hur säkert det värdet är konstruerat, och hur stor marginalen är mot dagens pris. Kan du inte svara, har du en spekulering i handen. Kan du svara, har du — oavsett om köpet blir av — det som enligt Graham & Dodd är den enda hållbara grunden för framgång: en grundlig analys, kapitalets säkerhet och en tillfredsställande avkastning."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Graham & Dodd krävde inga prognoskonster — bara fakta, marginal och tålamod. Hundra år av marknader senare är det fortfarande hela hemligheten."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg din egen case-historia: välj ett bolag, dokumentera pris, normaliserad intjäning, netto cirkulerande medel, rapportkvalitet och beräknad marginal (V19). Skriv analysen som om den skulle publiceras — med argument, källor och slutsats. Låt den vila i tre månader och utvärdera sedan: stämde faktakedjan, och betalade marknaden tålamodet?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från Security Analysis till AKM1\",\"rader\":[[\"Bokens begrepp\",\"Del\",\"AKM1-variabel\"],[\"Intjäningskraft, stabil bruttomarginal\",\"V, II\",\"V04, V09\"],[\"Kontant bakom varje krona resultat\",\"V\",\"V08\"],[\"Konkurrenskraftens hållbarhet\",\"IV\",\"V13\"],[\"Pris mot normaliserat värde\",\"IV, VII\",\"V14\"],[\"Rapportkvalitet, revisionsgränser\",\"V, VI\",\"V17\"],[\"Täckning, margin of safety\",\"II, VII\",\"V19\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den typiska dramaturgin i bokens case-historier?",
+          "alternativ": [
+            "Bolaget upptäcks av momentum-handlare och stiger omedelbart",
+            "Ett bolag faller i glömska eller skandal, kursen sjunker under dokumenterat värde, analytikern hittar gapet — och tålamodet betalas när gapet sluter sig",
+            "Revisorer upptäcker värde och rapporterar det",
+            "Utdelningen höjs automatiskt"
+          ],
+          "ratt": 1,
+          "tips": "Vad krävs av analytikern efter att gapet hittats — och vad betalar marknaden?"
+        },
+        {
+          "q": "Varför existerar pris-värde-gap enligt Graham & Dodd?",
+          "alternativ": [
+            "För att marknaden alltid är rationell",
+            "För att de flesta vill ha snabb bekräftelse — skillnaderna betalar dem som kan vänta på fakta i stället för på känslor",
+            "För att gapen är slumpmässigt fördelade och oförklarliga",
+            "För att bolagen döljer all information"
+          ],
+          "ratt": 1,
+          "tips": "Vilket tålamod kräver metoden — och vad är det värda i en otålig marknad?"
+        },
+        {
+          "q": "Vad är den sista frågan enligt bokens metod när du står inför ett köp?",
+          "alternativ": [
+            "Vad kommer kursen att vara i morgon?",
+            "Vad säger fakta att pappret är värda, hur säkert är det värdet konstruerat, och hur stor är marginalen mot priset?",
+            "Vad tycker analytikerkonsensus?",
+            "Hur har kursen rört sig senaste månaden?"
+          ],
+          "ratt": 1,
+          "tips": "Tre led i kedjan: värde, konstruktion, marginal — vad är din egen arbetsorder?"
+        }
+      ]
+    }
+  ]
+}

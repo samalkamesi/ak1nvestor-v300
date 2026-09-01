@@ -6,11 +6,27 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
+type Fundament = {
+  pe?: number | null;
+  peFwd?: number | null;
+  pb?: number | null;
+  utdelning?: number | null;
+  vinstmarginal?: number | null;
+  roe?: number | null;
+  tillvaxt?: number | null;
+  skuldEk?: number | null;
+} | null;
+
 type Analys = {
   ticker: string;
   fel?: string;
   kallor?: number;
-  data?: { pris: number; hojd52: number; lag52: number; pos52: number; sigma_ar: number | null; atr14: number | null; voltrend: number | null };
+  namn?: string;
+  bors?: string;
+  valuta?: string;
+  fundament?: Fundament;
+  data?: { pris: number; hojd52: number; lag52: number; pos52: number; sigma_ar: number | null; atr14: number | null; voltrend: number | null; ma50?: number | null; ma200?: number | null };
+  momentum?: Record<string, number | null>;
   vager?: Record<string, string>;
   matris25?: Record<string, number>;
   sammanfattning?: { bull: number; bear: number; neutral: number };

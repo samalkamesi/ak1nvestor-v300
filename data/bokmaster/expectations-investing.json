@@ -47,7 +47,7 @@
         },
         {
           "type": "text",
-          "content": "För AKM1-ekosystemet är detta en naturlig hemvist. Alla AKM1-variabler — försäljningstillväxt (V01), ARR-tillväxt (V02), bruttomarginal (V07), EBITDA-marginal (V08), ROE (V09) — är just de värderingsdrivare som ett aktiepris bakar in. Expectations investing ger metoden att tömma priset på dess innehåll och lägga varje V-variabel på bordet för granskning. Begreppet marginal of safety (utan V-nummer) blir på samma gång slagbart: det är inte en rabatt mot en egensinnig målkurs, utan avståndet mellan marknadens inbakade krav och en konservativ bedömning av verkligheten. Har priset låga krav är sämgheten stor; har priset höga krav finns ingen marginal hur fint bolaget än är."
+          "content": "För AKM1-ekosystemet är detta en naturlig hemvist. Alla AKM1-variabler — försäljningstillväxt (V01), ARR-tillväxt (V02), bruttomarginal (V07), EBITDA-marginal (V08), ROE (V09) — är just de värderingsdrivare som ett aktiepris bakar in. Expectations investing ger metoden att tömma priset på dess innehåll och lägga varje V-variabel på bordet för granskning. Begreppet marginal of safety (utan V-nummer) blir på samma gång slagbart: det är inte en rabatt mot en egensinnig målkurs, utan avståndet mellan marknadens inbakade krav och en konservativ bedömning av verkligheten. Har priset låga krav är säkerheten stor; har priset höga krav finns ingen marginal hur fint bolaget än är."
         },
         {
           "type": "tabell",
@@ -836,7 +836,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Diskonteringsmekaniken. Vid 8 procents diskonteringsränta är en krona om ett år värd 1/1,08 ≈ 0,93 kronor idag; om fem år 1/1,08 upphöjt till 5 ≈ 0,68; om tio år ≈ 0,46; om tjugo år ≈ 0,21; om trettio år ≈ 0,10. Mönstret är exponentiellt: den första tiden är värde­tung, den avlägsna nästan värdelös. Det är därför som värderingen av moget kassaflöde i vila (kapitel 3) är så robust — och att närmarknadens kassaflöden i en tioårig DCF ofta bara är en fjärdedel av värdet. Samma tabell åt andra hållet är ränta-på-ränta: en krona som växer med 8 procent per år är efter tio år 2,16 kronor — dubblad på ungefär nio år enligt 72-regeln (72 dividerat med räntan)."
+          "content": "Diskonteringsmekaniken. Vid 8 procents diskonteringsränta är en krona om ett år värd 1/1,08 ≈ 0,93 kronor idag; om fem år 1/1,08 upphöjt till 5 ≈ 0,68; om tio år ≈ 0,46; om tjugo år ≈ 0,21; om trettio år ≈ 0,10. Mönstret är exponentiellt: de närmaste åren är värdetyngst, de avlägsna nästan värdelösa. Det är därför som värderingen av moget kassaflöde i vila (kapitel 3) är så robust — och att närmarknadens kassaflöden i en tioårig DCF ofta bara är en fjärdedel av värdet. Samma tabell åt andra hållet är ränta-på-ränta: en krona som växer med 8 procent per år är efter tio år 2,16 kronor — dubblad på ungefär nio år enligt 72-regeln (72 dividerat med räntan)."
         },
         {
           "type": "text",
@@ -911,7 +911,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Den fullständiga arbetsgången i sju steg: (1) EV = börsvärde + nettoskuld. (2) NOPAT = EBIT × (1 − skattesats). (3) Värde i vila = NOPAT/WACC. (4) Tillväxtens värde = EV − värde i vila. (5) Lös ut kravbilden: vilken tillväxt, marginal, ROIC och varaktighet kräver priset? (6) Pröva kravbilden mot base rates (kapitel 11), benchmark-bolag (kapitel 8) och katalysatorer (kapitel 9). (7) Besluta och övervaka: marknadens kravbild förändras med priset och med nyheterna, och positionen ska omvärderas löpande. Bokens sista steg — att behandla förväntningar som en portfölj — betyder att ingen position är köpt en gång för alla: när priset stiger utan att fundamenta förbättras har marginalen krympt, och analytiker­jobbet börjar om på steg ett."
+          "content": "Den fullständiga arbetsgången i sju steg: (1) EV = börsvärde + nettoskuld. (2) NOPAT = EBIT × (1 − skattesats). (3) Värde i vila = NOPAT/WACC. (4) Tillväxtens värde = EV − värde i vila. (5) Lös ut kravbilden: vilken tillväxt, marginal, ROIC och varaktighet kräver priset? (6) Pröva kravbilden mot base rates (kapitel 11), benchmark-bolag (kapitel 8) och katalysatorer (kapitel 9). (7) Besluta och övervaka: marknadens kravbild förändras med priset och med nyheterna, och positionen ska omvärderas löpande. Bokens sista steg — att behandla förväntningar som en portfölj — betyder att ingen position är köpt en gång för alla: när priset stiger utan att fundamenta förbättras har marginalen krympt, och analytikerjobbet börjar om på steg ett."
         },
         {
           "type": "text",

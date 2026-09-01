@@ -7,6 +7,7 @@ import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 import { KursQuiz } from "@/components/ak1a/kurs-quiz";
 import { LasProgress, KapitelBadge, InsiktPuls, VisaMetafor } from "@/components/ak1a/kurs-visuellt";
+import { KursSteg } from "@/components/ak1a/kurs-steg";
 
 export const dynamic = "force-static";
 
@@ -116,6 +117,22 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
 
       {/* Kapitel med strukturerade kort + INSIGHT-boxar */}
       <KursGate slug={slug} titel={course.title}>
+      {(course.chapters as any).some((ch: any) => ch.quiz) ? (
+        <KursSteg
+          kurs={{
+            slug: slug,
+            title: course.title,
+            chapters: (course.chapters as any[]).map((ch) => ({
+              num: ch.num,
+              title: ch.title,
+              intro: ch.intro,
+              minutes: ch.minutes,
+              blocks: ch.blocks,
+              quiz: ch.quiz,
+            })),
+          }}
+        />
+      ) : (
       <section className="mt-10">
         <h2 className="font-serif text-2xl font-bold">Kursinnehåll</h2>
         <div className="mt-4 space-y-6">
@@ -152,24 +169,6 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                     <p className="mt-1 text-sm font-medium leading-relaxed">{insikt}.</p>
                   </div>
                 )}
-                {(slug === "the-intelligent-investor" && ch.num === 2) && <VisaMetafor typ="mr-market" />}
-                {(slug === "the-intelligent-investor" && ch.num === 3) && <VisaMetafor typ="bro" />}
-                {(slug === "the-intelligent-investor" && ch.num === 8) && <VisaMetafor typ="skala" />}
-                {insiktBlock && (
-                  <div className="mt-3 rounded-lg border-2 border-gold bg-gold/15 px-4 py-3">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gold">◆ 10x-insikt</p>
-                    <p className="mt-1 text-sm font-semibold leading-relaxed">{String(utmaningBlock.content)}</p>
-                  </div>
-                )}
-                {utmaningBlock && (
-                  <details className="mt-3 rounded-lg border-2 border-gold/60 bg-paper px-4 py-3">
-                    <summary className="cursor-pointer text-xs font-bold uppercase tracking-widest text-gold">
-                      🎯 Utmaning — klicka när du vågar
-                    </summary>
-                    <p className="mt-2 text-sm leading-relaxed text-foreground/90">{String(utmaningBlock.content)}</p>
-                    <p className="mt-2 text-[11px] italic text-muted-foreground">Belöning: +10 XP och äkta förståelse — ingen fuskar sig till insikt.</p>
-                  </details>
-                )}
                 <div className="mt-3 space-y-3">
                   {stycken
                     .filter((p) => p !== insikt)
@@ -204,8 +203,8 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
           })}
         </div>
       </section>
-
-      </KursGate>
+      )}
+    </KursGate>
 
       {(course.lynchSection || course.grahamSection || course.ak1Section) && (
         <section className="mt-10">

@@ -40425,38 +40425,51 @@
     "slug": "the-intelligent-investor",
     "category": "BOKMASTER",
     "weight": "KRITISK",
-    "chapterCount": 8,
-    "totalMinutes": 75,
-    "title": "The Intelligent Investor — Graham: komplett",
-    "summary": "Benjamin Grahams klassiker, kapitel för kapitel: Mr Market, marginal of safety, defensivt och aktivt investerande, historien och hantverket.",
-    "minutes": 75,
-    "xp": 800,
-    "level": "Alla nivåer",
-    "learn": "Grahams kompletta system: investering vs spekulering, Mr Market, marginal of safety, portföljpolitik, aktieval och hantverket — tillämpat i nutid.",
-    "why": "Boken kallas världshistoriens bästa investeringsbok (Buffett) — inte för att den förutsäger marknaden, utan för att den skyddar dig mot dig själv och mot marknadens humör. Kursen bygger på boken med full källhänvisning: Benjamin Graham, The Intelligent Investor (1949, senaste reviderad utgåva 2003 med Jason Zweigs kommentarer).",
+    "chapterCount": 21,
+    "totalMinutes": 180,
+    "title": "The Intelligent Investor — Graham: KOMPLETT (alla kapitel)",
+    "summary": "Alla 20 kapitlen + eftegerskrift: investering vs spekulering, inflation, hundra års historia, portföljpolitik, Mr Market, fonder, rådgivare, analys, fallgropar, fallhistorier, marginal of safety.",
+    "minutes": 180,
+    "xp": 2000,
+    "level": "Alla",
+    "learn": "Boken kapitel för kapitel — komplett täckning av Grahams klassiker med quiz, insikter och utmaningar per kapitel.",
+    "why": "Kallas världshistoriens bästa investeringsbok (Buffett). Komplett genomgång med full källhänvisning till bokens samtliga kapitel — läs originalet för Grahams exakta ord.",
     "chapters_list": [
-      "Investering kontra spekulering — Grahams urskiljning",
-      "Mr Market — allegorin som förklarar allt beteende",
-      "Marginal of safety — de tre viktigaste orden",
-      "Den defensiva investeraren — portföljbygget som kräver noll tid",
-      "Den aktiva investeraren — Grahams sju krav på aktieval",
-      "Hundratalets visdomar — marknadshistorien som lärs ut en gång per generation",
-      "Bolagsanalysen — Grahams nummer mot gissningar",
-      "Grahams arv — från 1949 till din portfölj"
+      "Kap 1 · Investering kontra spekulering",
+      "Kap 2 · Investeraren och inflationen",
+      "Kap 3 · Ett sekel av börs Historia",
+      "Kap 4 · Allmän portföljpolitik",
+      "Kap 5 · Den defensiva investeraren och aktierna",
+      "Kap 6 · Den aktiva investeraren — portföljpolitik",
+      "Kap 7 · Den aktiva investeraren — negativa metoder",
+      "Kap 8 · Investeraren och marknadsfluktuationer",
+      "Kap 9 · Investeringsfonder",
+      "Kap 10 · Investeraren och hans rådgivare",
+      "Kap 11 · Värdepappersanalys för leken",
+      "Kap 12 · Investerarens fallgropar",
+      "Kap 13 · Jämförelse av fyra listor",
+      "Kap 14 · Aktieval för den defensiva investeraren",
+      "Kap 15 · Aktieval för den aktiva investeraren",
+      "Kap 16 · Konvertibler och warrant",
+      "Kap 17 · Fyra lärorika fallhistorier",
+      "Kap 18 · Jämförelse av åtta par",
+      "Kap 19 · Aktieägare och ledningar",
+      "Kap 20 · Marginal of safety — det centrala begreppet",
+      "Eftegerskrift · Envishet är inte nödvändig"
     ],
     "history": {
-      "origin": "Benjamin Graham publicerade The Intelligent Investor 1949; boken reviderades under hans livstid och har sålt i milontal exemplar. Warren Buffett: 'de fjorton kapitel som_changed mitt liv' (förordet till 4:e upplagan). Kursen är en pedagogisk genomgång av bokens centrala delar med full källhänvisning — läs originalet för Grahams exakta ord."
+      "origin": "Benjamin Graham publicerade The Intelligent Investor 1949. Denna kurs täcker samtliga kapitel i den reviderade utgåvan (2003, med Jason Zweigs kommentarer) — 20 kapitel + eftegerskrift. Källa: boken själv."
     },
     "chapters": [
       {
         "num": 1,
-        "minutes": 9,
-        "title": "Investering kontra spekulering — Grahams urskiljning",
-        "intro": "Allt börjar med en gränsdragning som de flesta marknadsdeltagare aldrig lär sig dra.",
+        "minutes": 8,
+        "title": "Kap 1 · Investering kontra spekulering",
+        "intro": "Grahams urskiljning — grunden allt vilar på.",
         "blocks": [
           {
             "type": "text",
-            "content": "Graham definierade en investeringsoperation som en som, grundad på grundlig analys, lovgar säkerhet för kapitalet och en tillfredsställande avkastning. Allt som inte uppfyller dessa tre krav — analys, säkerhet, avkastning — är spekulering. Det låter enkelt, men 1949 var detta revolutionärt, och än idag bryter de flesta mot regeln varje dag utan att veta om det. Köper du en aktie för att 'den har gått upp' är du spekulant. Köper du den för att bolaget genererar kassaflöde som överskrider priset med marginal — då investerar du. Boken öppnar med en varning till läsaren: resultatet av en spekulativ position beror på att någon annan betalar mer senare, medan investeringsresultatet beror på bolagets faktiska värde. Fråga dig vid varje köp: varifrån ska min avkastning komma — bolaget eller nästa köpare?"
+            "content": "En investeringsoperation grundas på grundlig analys, lovar säkerhet för kapitalet och en tillfredsställande avkastning. Uppfyller operationen inte alla tre kraven är den spekulering. Graham varnar redan på första sidan: resultatet av spekulativ position beror på att någon annan betalar mer senare; investeringsresultatet beror på bolagets värde. De flesta marknadsdeltagare bryter mot denna gräns dagligen utan att veta om det — de köper 'för att den går upp'. Frågan som avgör allt: varifrån ska avkastningen komma — bolaget eller nästa köpare? Bokens väg visar också att både defensiva och aktiva investerare kan lyckas — men den halvhjärtade, som läser tips och tror sig investera, är den som förlorar."
           },
           {
             "type": "insikt",
@@ -40464,92 +40477,91 @@
           },
           {
             "type": "utmaning",
-            "content": "Gå igen din portfölj (eller bevakningslista) och sortera varje innehav i två kolumner: 'bolaget betalar mig' (utdelning, kassaflöde, tillväxt i resultat) eller 'nästa köpare betalar mig' (kursuppgång jag hoppas på). Var ärlig — hur många hamnade i kolumn två?"
+            "content": "Sortera din portfölj i två kolumner: 'bolaget betalar mig' (utdelning, kassaflöde) eller 'nästa köpare betalar mig' (kursförhoppningar). Hur många hamnade i kolumn två?"
           }
         ],
         "quiz": [
           {
-            "q": "Vad är Grahams tre krav för att en operation ska räknas som INVESTERING?",
+            "q": "Grahams tre krav på en investering?",
             "alternativ": [
-              "Högre avkastning, kortare tid, mindre risk",
+              "Trend, momentum, stop-loss",
               "Grundlig analys, säkerhet för kapitalet, tillfredsställande avkastning",
-              "Diversifiering, hävstång, tajming",
-              "Teknisk analys, momentum, stop-loss"
+              "Hävstång, diversifiering, tajming",
+              "Chart, RSI, nyhetsflöde"
             ],
             "ratt": 1,
-            "tips": "Graham krävde analys FÖRE kapital — inte signaler efter kursen."
+            "tips": "Analys FÖRE kapital."
           },
           {
-            "q": "Du köper en aktie för att 'den har gått upp 40% i år'. Grahams dom?",
+            "q": "Köpa 'för att aktien gått upp 40%' är enligt Graham...",
             "alternativ": [
-              "Investering — trenden är din vän",
-              "Spekulering — din avkastning beror på nästa köpare, inte bolaget",
-              "Investering om du sätter stop-loss",
-              "Varken eller — Graham tog inte ställning"
-            ],
-            "ratt": 1,
-            "tips": "Fråga: varifrån ska avkastningen komma — bolaget eller nästa köpare?"
-          },
-          {
-            "q": "Vilken fråga ska du ställa vid varje köp enligt kapitel 1?",
-            "alternativ": [
-              "Kommer chartet att bryta upp?",
-              "Varifrån kommer min avkastning — bolaget eller nästa köpare?",
-              "Vad säger analystäckningen?",
-              "Hur hög är hävstången?"
+              "Investering",
+              "Spekulering — avkastningen beror på nästa köpare",
+              "Indexstrategi",
+              "Hedging"
             ],
             "ratt": 1
+          },
+          {
+            "q": "Vilken investerartyp farit värst historiskt?",
+            "alternativ": [
+              "Den defensiva",
+              "Den aktiva",
+              "Den halvhjärtade som tror sig investera",
+              "Indexfondsspararen"
+            ],
+            "ratt": 2,
+            "tips": "Boken varnar särskilt för halvhjärtat deltagande."
           }
         ]
       },
       {
         "num": 2,
-        "minutes": 9,
-        "title": "Mr Market — allegorin som förklarar allt beteende",
-        "intro": "Kapitel 8 innehåller finanshistoriens mest användbara metafor — och den kostar dig ingenting att använda.",
+        "minutes": 8,
+        "title": "Kap 2 · Investeraren och inflationen",
+        "intro": "Är aktier skydd mot inflation? Grahams svar överraskar.",
         "blocks": [
           {
             "type": "text",
-            "content": "Föreställ dig att du har en partner i varje bolag du äger: Mr Market. Varje dag erbjuder han att köpa din andel eller sälja dig mer — till ett pris han bestämmer utifrån humör. Vissa dagar är han euforisk och ropar skyhöga priser. Andra dagar är han deprimerad och praktiskt taget ger bort bolaget. Det geniala: Mr Market kommer tillbaka imorgon med ett nytt pris, och du är fri att ignorera honom helt. Hans humör är inte din uppmaning att agera — det är din möjlighet att utnyttja. Warren Buffett kallar detta kapitlet det viktigaste som någonsin skrivits om investering. Användningen är konkret: när en aktie du förstått faller 20 procent utan att affären förändrats, är det inte en förlust — det är Mr Market som erbjuder dig rabatt. När den stiger 20 procent utan orsak, är det erbjudande om att sälja dyrt. Hemligheten är att se marknaden som tjänare, inte herre."
+            "content": "Många köper aktier som autosvar på inflation — Graham avfärdar detta som ohållbart enkelt. Historien visar att aktier INTE tillförlitligt skyddar mot stigande priser: under 1966-70 steg konsumentpriser 22% medan aktier föll. Även obligationer kan slå aktier under inflationsperioder. Grahams slutsats: förlita dig inte på ett enda skydd — balansera. När inflationen äter köpkraft äter den också felplacerade aktiepositioner. Den riktiga frågan är inte 'aktier eller räntor mot inflation' utan 'vilken Marginal of safety finns i priset på det jag köper'. Aktier köpta på toppen mot rädsla för inflation är spekulativ försäkring — ingen trygghet."
           },
           {
             "type": "insikt",
-            "content": "Mr Markets pris är hans åsikt — aldrig bolagets värde. Du tjänar på hans humör, inte genom att dela det."
+            "content": "Aktier är inget automatiskt inflationsskydd — Marginalen i priset är skyddet, inte tillgången i sig."
           },
           {
             "type": "utmaning",
-            "content": "Ta en aktie du följer. Skriv ner dagens kurs och sedan tre rubriker från senaste månaden om bolaget. Fråga: förändrade något i rubrikerna BOLAGET — eller bara MARKNADENS HUMÖR? Om svaret är humöret: hur agerade du (eller skulle du agera ha agerat)?"
+            "content": "Ta reda på årlig inflation just nu. Räkna sedan ut vad en aktie du äger måste avkasta i real avkastning efter inflation. Hur stor marginal i pris krävs för det?"
           }
         ],
         "quiz": [
           {
-            "q": "Vem bestämmer Mr Markets pris?",
+            "q": "Skyddar aktier tillförlitligt mot inflation enligt Graham?",
             "alternativ": [
-              "Bolagets verkliga värde",
-              "Mr Markets humör — inte bolagets värde",
-              "Revisorn",
-              "Centralbanken"
-            ],
-            "ratt": 1,
-            "tips": "Priset är hans ÅSIKT, inte värdet."
-          },
-          {
-            "q": "En aktie du förstår faller 20% utan att affären förändrats. Mr Market-läsning?",
-            "alternativ": [
-              "Panik — sälj innan det värre",
-              "Erbjudande om rabatt — hans humör är din möjlighet",
-              "Signal om att bolaget är trasigt",
-              "Dags att korta"
+              "Ja, alltid",
+              "Nej — historien visar motsatsen under vissa perioder",
+              "Bara banker",
+              "Bara guldaktier"
             ],
             "ratt": 1
           },
           {
-            "q": "Buffett kallar Mr Market-kapitlet...",
+            "q": "Vad är det riktiga skyddet mot inflation?",
             "alternativ": [
-              "Överdrivet",
-              "Det viktigaste som skrivits om investering",
-              "Endast relevant 1949",
-              "Bra för daytraders"
+              "Mer aktier",
+              "Marginal of safety i priset",
+              "Korta obligationer",
+              "Krypto"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Under 1966-70: priserna +22%, aktierna...",
+            "alternativ": [
+              "+50%",
+              "Föll",
+              "Oförändrade",
+              "Föll 90%"
             ],
             "ratt": 1
           }
@@ -40557,105 +40569,104 @@
       },
       {
         "num": 3,
-        "minutes": 9,
-        "title": "Marginal of safety — de tre viktigaste orden",
-        "intro": "Kapitel 20 är bokens sista och tyngsta — konceptet hela byggnaden vilar på.",
+        "minutes": 8,
+        "title": "Kap 3 · Ett sekel av börs Historia",
+        "intro": "Hundra års cykler bevisar en enda punkt: det händer igen.",
         "blocks": [
           {
             "type": "text",
-            "content": "Grahams marginal of safety är enklast att förstå med en bro: bygger du en bro för lastbilar på 10 ton, konstruerar du den för 30 ton. Investeringar fungerar identiskt: köper du en aktie till ett pris som ligger 30-50 procent under din konservativa uppskattning av värdet, har du marginal för att ha fel — om affären försämras, om din analys innehåller misstag, om konjunkturen vänder. Utan marginal krävs att du har RÄTT för att inte förlora. Med marginal kan du ha fel och ändå klara dig. Detta är skillnaden mellan hopp och beräkning. Marginalen finns i tre former: prismatch mot värde (uppskattat av tillgångar eller tjänstekraft), diversifiering (du vet aldrig vilket enskilt val som slår fel) och krav på förutsägbarhet (ju osäkrare framtid, desto större marginal krävs). AKM1:s hela poängsättning — att kräva analys före kapital — är en tillämpning av samma princip."
+            "content": "Graham reser genom South Sea-bubblan, järnvägsekipaget, 1929 och efterföljande krascher — inte som kuriosa utan som mönster. Verklig trend får legitimt värde, värderingen frikopplas från verkligheten, nya investerare definierar bort risk med slogan ('det är annorlunda nu'), vanligt folk köper med hävstång, korrigeringen förintar portföljer. Sommar-Rally 1932: efter -89% i Dow kom +71% på tre månader — för den med marginal och nerver. Lärdomen: marknaden har inget minne mellan generationer, bara priser. Den som stannar hemma när bullen rusar KÄNNER det som förlust, men att delta utan marginal ÄR att förlora."
           },
           {
             "type": "insikt",
-            "content": "Marginal of safety betyder inte att du aldrig har fel — det betyder att du överlever att ha fel."
+            "content": "Bubblor känns som den nya normalen inifrån — historien är motgiftet."
           },
           {
             "type": "utmaning",
-            "content": "Räkna: om du anser en aktie är värd 100 kronor och köper till 70 — hur stor procentuell försämring av värdet tål du innan du förlorar? Räkna sedan om du köpt till 95. Vilken position sover du bättre med?"
+            "content": "Leta upp 1929 och 1972 (Nifty Fifty). Hitta tre 'det är annorlunda nu'-argument från respektive era. Jämför med dagens hypade bolags argument."
           }
         ],
         "quiz": [
           {
-            "q": "Marginal of safety liknas vid...",
+            "q": "Mönstret i alla bubblor?",
             "alternativ": [
-              "En bubbelpool som fylls",
-              "En bro byggd för 30 ton som bara lastas med 10",
-              "En racerbil utan bromsar",
-              "En schackmatch"
-            ],
-            "ratt": 1,
-            "tips": "Konstruktion för MER än förväntad last."
-          },
-          {
-            "q": "Vad är skillnaden på att ha marginal kontra inte?",
-            "alternativ": [
-              "Ingen — bara psykologi",
-              "Med marginal kan du ha FEL och ändå klara dig; utan krävs att du har rätt",
-              "Marginal ger högre avkastning alltid",
-              "Marginal gäller bara obligationer"
+              "Slump",
+              "Trend → frikopplad värdering → 'annorlunda nu' → hävstång → krasch",
+              "Centralbankens fel",
+              "Krig alltid"
             ],
             "ratt": 1
           },
           {
-            "q": "Du värderar en aktie till 100 kr. Vilket pris ger Grahams marginal?",
+            "q": "Sommar 1932 efter -89%: Dow steg...",
             "alternativ": [
-              "105 kr",
-              "95 kr",
-              "70 kr",
-              "100 kr exakt"
+              "0%",
+              "+71% på tre månader",
+              "-20%",
+              "Bankrost"
             ],
-            "ratt": 2,
-            "tips": "30-50% under konservativt värde = bro för 30 ton."
+            "ratt": 1,
+            "tips": "Marknadens humör vrider våldsamt båda väg."
+          },
+          {
+            "q": "Gör historien dig till...",
+            "alternativ": [
+              "Spåman",
+              "Skeptiker",
+              "Daytrader",
+              "Indexfond"
+            ],
+            "ratt": 1
           }
         ]
       },
       {
         "num": 4,
-        "minutes": 9,
-        "title": "Den defensiva investeraren — portföljbygget som kräver noll tid",
-        "intro": "Grahams första profil: investeraren som vill trygga kapital med minimal ansträngning — och förstås vinna på det.",
+        "minutes": 8,
+        "title": "Kap 4 · Allmän portföljpolitik",
+        "intro": "Hur mycket i aktier? Svaret är en policy — inte en känsla.",
         "blocks": [
           {
             "type": "text",
-            "content": "Den defensiva investerarens program är radikalt enkelt: 25-75 procent i aktier, resten obligationer (idag: räntefonder), återbalanserat regelbundet. Gram menade att en enkel 50/50-fördelning, justerad när vikterna driver, slår de flesta aktivt förvaltade portföljer över tid. Tre verktyg definierar förhållningssättet: automatiskt månadssparande (dollar cost averaging — samma belopp varje månad köper mer när marknaden faller), avvisande av frestelsen att tajma marknaden, och krav på bred diversifiering över branscher. Kritiken mot 'tråkigt' besvarar Graham snabbt: att tjäna pengar utan ansträngning är inte tråkigt — att FÖRLORA dem med stor ansträngning är det. Defensive investeraren köper indexerad exponering och stänger av bruset. Det väsentliga är att göra ett medvetet VAL: antingen lägger du tid och blir aktiva investeraren — eller så gör du det inte. Att halvtidsläsa aktietips och tro sig vara defensiv är den farligaste positionen av alla."
+            "content": "Grahams grundregel: aktiedelen ska ligga mellan 25 och 75 procent, aldri extremerna. När marknaden växt så att aktiedelen stiger kraftigt över din plan — SÄNK den mekaniskt; när den sjunker under — KAUP mer. Detta tvångsmässiga motstånd mot humöret är hela poängen: återbalansering tvingar dig att göra det som känns fel och är rätt. Månadssparande (dollar cost averaging) kompletterar: samma belopp köper fler aktier när priset faller, färre när det stiger — automatisk disciplin utan prognoser. Den som behöver prognoser för sin portföljpolitik har redan gett upp Marginalen."
           },
           {
             "type": "insikt",
-            "content": "Den bästa portföljen för den som inte vill studera bolag är den som inte KRÄVER att man studerar bolag — index + tålamod."
+            "content": "Policyn ska vara mekanisk nog att fungera den dag du minst vill följa den."
           },
           {
             "type": "utmaning",
-            "content": "Fundera: passar den defensiva eller aktiva profilerna ditt liv just nu — tid, intresse, temperament? Skriv ner ditt val och en anledning. Återkom till svaret om ett år."
+            "content": "Skriv din personliga policy: X% aktier, resten ränta, återbalansering vid avvikelse på Y procentenheter. Datumstämpla den. Det är ditt kontrakt med dig själv."
           }
         ],
         "quiz": [
           {
-            "q": "Den defensiva investerarens grundfördelning?",
+            "q": "Grahams aktieintervall i portföljen?",
             "alternativ": [
-              "100% aktier",
-              "25-75% aktier, resten räntor, återbalanserat",
-              "100% kassa",
-              "50% krypto"
+              "0-100%",
+              "25-75%",
+              "50-50 alltid",
+              "90-10"
             ],
             "ratt": 1
           },
           {
             "q": "Vad är dollar cost averaging?",
             "alternativ": [
-              "Dubbelt belopp när marknaden stiger",
-              "Samma belopp varje månad — köper mer när priset faller",
-              "Att snitta ner vid förlust",
-              "Att tajma toppar"
+              "Dubbelt vid uppgång",
+              "Fast belopp månadsvis — mer andelar när priset faller",
+              "Snitta ner aktivt",
+              "Tajma bottnar"
             ],
             "ratt": 1
           },
           {
-            "q": "Grahams svar på 'tråkigt' om index + återbalansering?",
+            "q": "Varför mekanisk återbalansering?",
             "alternativ": [
-              "Håller med — det är tråkigt",
-              "Att tjäna pengar utan ansträngning är inte tråkigt — att FÖRLORA dem med stor ansträngning är det",
-              "Tråkigt ger lägre avkastning",
-              "Aktiv handlar är alltid bättre"
+              "Högre avkastning garanterat",
+              "Tvingar dig att agera mot humöret — sälja högt, köpa lågt",
+              "Mindre skatt",
+              "Graham avrådde"
             ],
             "ratt": 1
           }
@@ -40663,52 +40674,51 @@
       },
       {
         "num": 5,
-        "minutes": 9,
-        "title": "Den aktiva investeraren — Grahams sju krav på aktieval",
-        "intro": "För den som väljer att lägga tid: en checklista som utsätts för extrem tålamod — och fortfarande fungerar.",
+        "minutes": 8,
+        "title": "Kap 5 · Den defensiva investeraren och aktierna",
+        "intro": "Fyra regler för den som vill sova gott — och fortfarande äga aktier.",
         "blocks": [
           {
             "type": "text",
-            "content": "Graham ställer sju krav för aktieval med tillräcklig säkerhet: (1) tillräcklig storlek — småbolag är lättare att manipulera; (2) stabil vinst — minst nio av tio år med positivt resultat; (3) utdelningskontinuitet — minst 20 år utan avbrott; (4) stabilitet — minst tio år med vinsttillväxt om än blygsam; (5) tillväxt — en tredjedels ökning av resultatet över ett decennium; (6) moderat pris-värdetillgångskvot — P/B under 1,5; (7) moderat P/E — under 15. Kraven är medvetet svåra: nästan inga bolag klarar alla sju vid en given tidpunkt, och DET är poängen — den aktive skall hitta de få tillfällen där marginalen är uppenbar. Graham kompletterar med två strategier för den aktive: köp av 'secondary companies' som handlas under beräknat värde, och specialsituationer —fusioner, omstruktureringar, spin-offs. Båda kräver räkning, inte tro. Buffett vidareutvecklade samma grund till fokus på kvalitet — men grunden förblev: mätbart underpris mot mätbart värde."
+            "content": "Den defensiva investeraren köper: (1) diversifierat urval av solida bolag — 10-30 namn, (2) tillräckligt stora företag (inte spekulativa småbolag), (3) finansiellt stabila — skulder som är hanterbara mot tillgångar, (4) kontinuerlig utdelning — helst 20+ år. Graham utesluter inte tillväxtbolag men varnar: betala inte tillväxtpriser utan marginal. Defensiv betyder inte utan avkastning — det betyder utan krav på att förutsäga. 1949-72 gav en enkel defensiv portfölj historier större avkastning än de flesta fonder. Tålamod + bredd + återbalansering — det är den defensivas trio."
           },
           {
             "type": "insikt",
-            "content": "En checklista som aldrig blockar ett köp är ingen checklista — den är en hyllningsgest till dina egna impulser."
+            "content": "Defensiv betyder inte utan avkastning — utan krav på förutsägelse."
           },
           {
             "type": "utmaning",
-            "content": "Välj ett bolag du äger eller bevakar. Testa det mot Grahams sju krav, ett i taget. Hur många klarar det? Vilka tre krav faller oftast — och vad säger det om marknadens nuvarande humör?"
+            "content": "Testa din största aktie mot de fyra reglerna: diversifiering (utgör den >20% av portföljen?), storlek, stabilitet, utdelningshistorik. Vilken regel faller först?"
           }
         ],
         "quiz": [
           {
-            "q": "Hur många av Grahams sju krav klarar typiska bolag vid en given tidpunkt?",
+            "q": "Hur många bolag i defensiv portfölj?",
             "alternativ": [
-              "Alla",
-              "Nästan inga — DET är poängen",
-              "Halva",
-              "Bara banker"
-            ],
-            "ratt": 1,
-            "tips": "Checklistan ska blocka — annars är den ingen checklista."
-          },
-          {
-            "q": "Vilka två kompletterande strategier ges den aktive?",
-            "alternativ": [
-              "Daytrading och swingtrading",
-              "Secondary companies under värde + specialsituationer (fusioner, spin-offs)",
-              "Krypto och optioner",
-              "Momentum och IPO"
+              "1-3",
+              "10-30",
+              "100+",
+              "Bara fonder"
             ],
             "ratt": 1
           },
           {
-            "q": "Vilka P-tal kräver Graham (krav 6-7)?",
+            "q": "Vilken utdelningshistorik föredras?",
             "alternativ": [
-              "P/B > 3 och P/E > 30",
-              "P/B under 1,5 och P/E under 15",
-              "P/E exakt 10",
-              "Inga krav på multiplar"
+              "1 år",
+              "20+ år",
+              "Ingen",
+              "Bara återköp"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Defensiv strategi kräver...",
+            "alternativ": [
+              "Förutsägelseförmåga",
+              "Ingen förutsägelse — bredd + tålamod",
+              "Daglig bevakning",
+              "Hävstång"
             ],
             "ratt": 1
           }
@@ -40716,51 +40726,51 @@
       },
       {
         "num": 6,
-        "minutes": 9,
-        "title": "Hundratalets visdomar — marknadshistorien som lärs ut en gång per generation",
-        "intro": "Första kapitlen reser genom hundra års bubblor — för att bevisa en enda punkt: det händer igen.",
+        "minutes": 8,
+        "title": "Kap 6 · Den aktiva investeraren — portföljpolitik",
+        "intro": "Vill du lägga tid? Då gäller andra regler — och varje krav hårdare.",
         "blocks": [
           {
             "type": "text",
-            "content": "Graham går igenom South Sea-bubblan, järnvägsekipaget, 1929, och efterföljande krascher — inte som kuriosa, utan som mönster. Mönstret är alltid detsamma: en verklig trend (teknik, handel, tillväxt) ges legitimt värde, värderingen sedan frikopplas från verkligheten, nya investeror definierar bort risk med slogan ('det är annorlunda nu'), vanligt folk köper med hävstång, och korrigeringen förintar portföljer. Lärdomen är att varje generation måste lära sig samma lektion på egen hand — eftersom det inte finns något minne mellan generationer på marknaden, bara priser. Historien gör dig inte till spåman — den gör dig till skeptiker. Graham tillägger: den som stannar hemma när bullen rusar känns det som att förlora; men att delta utan marginal är att förlora på riktigt. Historien om 1972 års 'Nifty Fifty' — femtio 'köp-aldrig-sälj'-bolag som alla föll 70-90 procent — är senare tiders bevis för att bokens varning överlever författaren."
+            "content": "Den aktiva investeraren förväntas göra bättre än marknaden — Graham varnar direkt: detta är svårt, de flesta misslyckas. Tre godtagbara vägar: (1) lågt värderade stabila bolag som marknaden tröttnat på, (2) secundära bolag — medelstora, okända, handlade under beräknat värde, (3) specialsituationer — fusioner, omstruktureringar, likvidationer där utfallet är räknbart. Vägar som INTE fungerar enligt Graham: marknadstajming, jaga tillväxtbolag till vilka priser som helst, korttidshandel, optioner. Den aktiva behöver tre gånger disciplin: kunskap att värdera, tålamod att vänta på marginal, och nerver att hålla positionen när Mr Market grimaserar."
           },
           {
             "type": "insikt",
-            "content": "Bubblor känns inte som bubblor inifrån — de känns som den nya normalen. Historien är motgiftet."
+            "content": "Att slå marknaden är inte en rättighet — det är en examen de flesta stryker på."
           },
           {
             "type": "utmaning",
-            "content": "Leta upp 1972 års Nifty Fifty-lista (sökbara). Välj tre bolag som 'kunde aldrig falla'. Ta reda på hur mycket de föll 1973-74. Jämför med ett 'tråkigt' bolag med marginal. Vad betyder det för hur du ser på dagens mest hypade bolag?"
+            "content": "Välj din aktiva väg (1, 2 eller 3 ovan). Motivera i tre meningar varför JUST den passar din kunskap. Om du inte kan — är du defensiv? Det är också ett svar."
           }
         ],
         "quiz": [
           {
-            "q": "Vad är mönstret Graham ser i alla bubblor?",
+            "q": "Vilka tre vägar godtar Graham för den aktive?",
             "alternativ": [
-              "Slumpmässiga händelser",
-              "Verklig trend → värderingen frikopplas → 'det är annorlunda nu' → vanligt folk med hävstång → krasch",
-              "Centralbankens fel enbart",
-              "Krig"
+              "Tajming, momentum, IPO",
+              "Undervärde, secundära bolag, specialsituationer",
+              "Daytrading, swish, crypto",
+              "Fonder, ETF:er, certifikat"
             ],
             "ratt": 1
           },
           {
-            "q": "Nifty Fifty 1972: vad hände de 'köp-aldrig-sälj'-bolagen?",
+            "q": "Grahams dom om marknadstajming?",
             "alternativ": [
-              "Steg för alltid",
-              "Föll 70-90% 1973-74",
-              "Konkurrerades ut av index",
-              "Nasdaq stängde dem"
+              "Kärnverktyg",
+              "Fruktansvärt svårt — ingen tillförlitlig metod",
+              "Bara för aktiva",
+              "Fungerar med rätt chart"
             ],
             "ratt": 1
           },
           {
-            "q": "Vad gör historien med dig enligt Graham?",
+            "q": "Den aktiva investeraren behöver framför allt...",
             "alternativ": [
-              "Gör dig till spåman",
-              "Gör dig till skeptiker",
-              "Garanterar återupprepning exakt",
-              "Inget — historien är irrelevant"
+              "Tur",
+              "Disciplin ×3: värdera, vänta, hålla",
+              "Dyra terminaler",
+              " Insiderinfo"
             ],
             "ratt": 1
           }
@@ -40768,51 +40778,51 @@
       },
       {
         "num": 7,
-        "minutes": 9,
-        "title": "Bolagsanalysen — Grahams nummer mot gissningar",
-        "intro": "Mitten av boken är hantverket: hur räknar du fram vad ett bolag är värt — och när lönar det sig?",
+        "minutes": 8,
+        "title": "Kap 7 · Den aktiva investeraren — negativa metoder",
+        "intro": "Vad du INTE gör är en strategi: Graham listar förbjudna frestelser.",
         "blocks": [
           {
             "type": "text",
-            "content": "Graham delar analysen i tre lager. Första: försvarsbarriären — läs årsredovisningen, letade red flags som upprepade 'engångsposter', svajiga redovisningsprinciper och väl snälla revisorer. Andra: tjänstekraften — beräkna bolagets genomsnittliga resultat över en konjunkturcykel (5-10 år), inte ett toppår. Tredje: värderingen — Graham presenterar multiplar-modellen: värde = genomsnittligt resultat × en faktor (8,5 för tillväxt 0 %, stigande till 15+ för stabilt växande bolag — formeln är berömd men han varnar: ingen formel ersätter marginalen). För djupvärderade fall  presenterar han sitt mest kända verktyg: net-nets — bolag som handlas under sitt omsättbara nettokapital (kortfristiga tillgångar minus ALLA skulder). Net-nets är i praktiken utrotade i stora universum, men principen lever: det finns ett pris då till och med ett medelbolag är en gåva. Grahams analysjobbar är mot en slutledning: ingen formel, ingen multipl och ingen story ersätter en marginal — formler gör dig disciplinerad, marginalen gör dig trygg."
+            "content": "Kapitel 7 är en lista av NEJ. Nej till att köpa tillväxtbolag vilka priser som helst — historien visar att premium för tillväxt nästan alltid betalar för mer än levererat. Nej till IPO:er — Graham citerar studier där nya emissioner underpresterar marknaden systematiskt. Nej tillkort terminshandel, optioner och warrant — nollsummespel med transaktionskostnader som äter båda parter. Den negativa metoden är inte tristess — det är skyddvallar. Warren Buffett sammanfattade den senare: 'Vi har tre lådor: ja, nej och för svårt.' Graham lär dig att 'för svårt' är ett legitimt svar — kanske det mest värdefulla."
           },
           {
             "type": "insikt",
-            "content": "Graham räknade på bolag som revisorer räknar på sina klienter — med misstänksamhet som utgångspunkt."
+            "content": "Det mest undervärderade svaret på börsen är 'för svårt — jag avstår'."
           },
           {
             "type": "utmaning",
-            "content": "Hämta senaste årsredovisningen för ett bolag du äger. Beräkna: (a) genomsnittligt resultat senaste 5 åren, (b) omsättningstillgångar minus totala skulder. Jämför båda mot börsvärdet. Vilken siffra överraskade dig mest — och vad beror skillnaden på?"
+            "content": "Gå igen bevakningslistan. Markera varje idé med ja/nej/för-svårt. Hur många får 'för svårt'? Det är inte svaghet — det är Graham i praktik."
           }
         ],
         "quiz": [
           {
-            "q": "Vad är en 'red flag' Graham letar i årsredovisningar?",
+            "q": "IPO:er enligt Graham?",
             "alternativ": [
-              "Stigande omsättning",
-              "Upprepade 'engångsposter'",
-              "Hög utdelning",
-              "Nya produkter"
+              "Bästa köpen",
+              "Systematisk underprestation — noll marginal",
+              "Samma som gamla bolag",
+              "Bara tech-IPO bra"
             ],
             "ratt": 1
           },
           {
-            "q": "Vad är tjänstekraft (earnings power)?",
+            "q": "Options- och terminshandel är...",
             "alternativ": [
-              "Senaste kvartalets vinst",
-              "Genomsnittligt resultat över en konjunkturcykel (5-10 år)",
-              "Väntetillväxten",
-              "Analytikerkonsensus"
+              "Hedging för alla",
+              "Nollsummespel minus kostnader",
+              "Investeringsgrund",
+              "Grahams favorit"
             ],
             "ratt": 1
           },
           {
-            "q": "Vad kännetecknar ett 'net-net'?",
+            "q": "Buffetts tre lådor?",
             "alternativ": [
-              "Hög utdelning",
-              "Handlas under omsättningsbara nettokapital (kortfristiga tillgångar minus ALLA skulder)",
-              "Ständig tillväxt",
-              "P/E över 20"
+              "Köp/sälj/vänta",
+              "Ja/nej/för svårt",
+              "A/B/C-aktier",
+              "Large/mid/small cap"
             ],
             "ratt": 1
           }
@@ -40820,59 +40830,735 @@
       },
       {
         "num": 8,
-        "minutes": 9,
-        "title": "Grahams arv — från 1949 till din portfölj",
-        "intro": "Bokens sista lektion finns inte på sidorna — den finns i vad som hänt med hans idéer sedan dess.",
+        "minutes": 8,
+        "title": "Kap 8 · Investeraren och marknadsfluktuationer",
+        "intro": "Mr Market — finans Historiens mest användbara partner.",
         "blocks": [
           {
             "type": "text",
-            "content": "Warren Buffett var Grahams elev, och hans berömda evolvement — från 'cigarrettpetter' (bolag köpta så billigt att en sista fimp värde fanns kvar) till kvalitetsbolag med hållbar fördel — är bokens fortlevnad i praktiken. Men kärnan förändrades aldrig: Mr Market, margin of safety, och kravet att skilja investering från spekulering. I en tid av algoritmer, nollprovisionshandel och sociala mediers dagshypar är Grahams budskap viktigare än 1949 — däremot har verktygen förbättrats. Det du lärt i den här kursen är grundstenarna i ett system: gränsdragningen (kapitel 1), disciplen mot marknadens humör (kapitel 2), marginalen (kapitel 3), portföljvalet (kapitel 4-5), historiens mönster (kapitel 6) och hantverket (kapitel 7). Så använder du dem: kör AKM1-analys på bolaget, kräv marginal mellan pris och ditt beräknade värde, köp endast när Mr Market är deprimerad, och håll positionen tills affären — inte humöret — förändrats. Boken är över 70 år — förståelsen av den är fortfarande din största konkurrensfördel."
+            "content": "Du har en partner i varje bolag: Mr Market. Dagligen erbjuder han köp eller sälj — till pris efter humör. Euforiska dagar: skyhöga priser. Deprimerade: han ger bort bolaget. Du är fri att ignorera honom — han kommer tillbaka imorgon. När en aktie du förstått faller 20% utan förändrad affär är det inte förlust utan erbjudande om rabatt. Stiger den 20% utan orsak: erbjudande att sälja dyrt. Buffett kallar kapitlet viktigast någonsin skrivet. Vet du bara en sak — marknadens humör är inte din uppmaning, utan din möjlighet — kan du resten av boken om så bara halvt."
           },
           {
             "type": "insikt",
-            "content": "Graham gav inte en formel för att bli rik — han gav ett ramverk för att inte bli utnyttjad. Rikedomen är bieffekten."
+            "content": "Mr Markets pris är hans åsikt — aldrig bolagets värde. Tjäna på humöret, dela det inte."
           },
           {
             "type": "utmaning",
-            "content": "Sammanfatta kursen i EN mening som du själv kan förklara för en vän som aldrig läst Graham — utan att använda orden 'aktier', 'köpa' eller 'marknad'. Klart du kan."
+            "content": "Välj en aktie du följer. Tre rubriker senaste månaden: förändrade de BOLAGET eller HUMÖRET? Hur agerade du — och hur borde en Mr Market-läsare agerat?"
           }
         ],
         "quiz": [
           {
-            "q": "Hur utvecklade Buffett Grahams cigarrettopetter?",
+            "q": "Vem bestämmer Mr Markets dagspris?",
             "alternativ": [
-              "Till korttidshandel",
-              "Till kvalitetsbolag med hållbar fördel — kärnan (Mr Market, marginal) förändrades aldrig",
-              "Till makro-tajming",
-              "Till krypto"
+              "Bolagets värde",
+              "Hans humör",
+              "Revisorn",
+              "Centralbanken"
             ],
             "ratt": 1
           },
           {
-            "q": "Vilka tre grundstenar förändrades aldrig?",
+            "q": "Aktie faller 20% utan affärsförändring. Läsning?",
             "alternativ": [
+              "Panik",
+              "Rabatt-erbjudande",
+              "Bolaget trasigt",
+              "Shorta"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Buffett om kapitel 8:",
+            "alternativ": [
+              "Överdrivet",
+              "Viktigast skrivet om investering",
+              "Omodernt",
+              "Bra för daytraders"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 8,
+        "title": "Kap 9 · Investeringsfonder",
+        "intro": "Fonder lovar bekvämlighet — Graham visar räkningen och utvägen.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fonder löser diversifiering men skapar två nya problem: avgifter och förvaltarens tvång att alltid vara investerad. Graham konstaterar brutalt: de flesta fonder underpresterar sitt index — avgifter äter skillnaden. Fondbranschens marknadsföring bygger på historisk avkastning, men historien upprepar sig inte i fondtabeller: årets vinnare är sällan nästa års. Detta var 1949/1972 — decennier före indexfondens genombrott — och Graham pekar redan dit: den billigaste exponeringen mot hela marknaden, med lägsta avgift, är den defensiva investerarens naturliga hem. Vill du ändå välja aktiv förvaltning: jämför minst 5-10 år, titta på avgifter FÖRST och avkastning SEDAN."
+          },
+          {
+            "type": "insikt",
+            "content": "Historisk fondavkastning är marknadsföring — avgiften är det enda garanterade talet."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räkna: din fonds (eller en vald) årsavgift × 30 år på 100 000 kr, vid oförändrad avkastning. Jämför summan mot en indexfond på 0,2%. Skillnaden är din läxa."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "De flesta fonder slår sitt index...",
+            "alternativ": [
+              "Ja",
+              "Nej — avgifter äter marginalen",
+              "Bara i kriser",
+              "Bara småbolagsfonder"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vad är 'garanterat' i en fond?",
+            "alternativ": [
+              "Avkastningen",
+              "Avgiften",
+              "Förvaltarens skicklighet",
+              "Utdelningen"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Grahams väg för defensiv fondexponering?",
+            "alternativ": [
+              "Dyrast = bäst",
+              "Billigast bredast index",
+              "Höga avgifter激活 förvaltning",
+              "Aktiv stockpicking-fond"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 8,
+        "title": "Kap 10 · Investeraren och hans rådgivare",
+        "intro": "Vem ska du lita på? Grahams test är obehagligt enkelt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Finansiella rådgivare delas i två sorter: de som tar betalt för utlåtanden (analytiker) och de som lever på transaktioner (mäklare). Struktur skapar incitament: mäklaren tjänar på din aktivitet, inte ditt resultat. Graham uppmanar: misstro råd som combined prognoser med handlingskraft — analys och brokerage ska aldrig blandas. Testet på en rådgivare: talar hen om när du ska GÖRA INGET? En ärlig rådgivare skriver ibland 'för svårt — avvakta'. Bankens och fondens gratis-råd är sällan gratis — de betalas i produkters avgifter. Din yttersta rådgivare ska vara din egen checklista — boken du håller är den."
+          },
+          {
+            "type": "insikt",
+            "content": "Rådgivare som aldrig säger 'avvakta' säljer aktivitet — inte kunskap."
+          },
+          {
+            "type": "utmaning",
+            "content": "Nästa gång du får ett spar-råd (bank, app, podd): leta efter vems intresse tjänar på att du agerar. Finns incitament? Skriv ner det — träna skeptikern."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Mäklarare tjänar på...",
+            "alternativ": [
+              "Ditt resultat",
+              "Din aktivitet",
+              "Din tålmodighet",
+              "Index"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Tecken på ärlig rådgivare?",
+            "alternativ": [
+              "Alltid köpreg",
+              "Säger ibland 'gör ingenting'",
+              "Lovar avkastning",
+              "Säljer egna fonder"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Gratis-råd från bank är betalt via...",
+            "alternativ": [
+              "Kärlek",
+              "Produkternas avgifter",
+              "Statligt",
+              "Ingenting"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 8,
+        "title": "Kap 11 · Värdepappersanalys för leken",
+        "intro": "Tre lager hantverk: red flags, tjänstekraft, värdering.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Första lagret: försvarsställning — läs årsredovisningen som en revisor med misstänksamhet. Upprepade engångsposter, svajiga principer, för snälla revisorer: varning. Andra: tjänstekraften — beräkna genomsnittligt resultat över en HEL konjunkturcykel (5-10 år), aldrig ett toppår. Tredje: värderingen — Graham presenterar sin formel V = E × (8,5 + 2g) men varnar omedelbart: ingen formel ersätter marginalen, formler gör dig disciplinerad — Marginalen gör dig trygg. Skillnaden mot teknisk analys: fundamental analys förutsäger affärens värde; teknisk förutsäger humör. Graham ägnar bokens första del åt att INTE förutsäga humör."
+          },
+          {
+            "type": "insikt",
+            "content": "Graham räknar på bolag som revisorer på klienter — misstänksamhet är utgångspunkten."
+          },
+          {
+            "type": "utmaning",
+            "content": "Hämta en årsredovisning. Leta: tre engångsposter, en principändring, revisorns namn. Varje fynd = en fråga värd att ställa innan du köper."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Tjänstekraft beräknas över...",
+            "alternativ": [
+              "Senaste kvartalet",
+              "Hela konjunkturcykeln 5-10 år",
+              "Nästa år",
+              "Analyskonsensus"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vad är en red flag?",
+            "alternativ": [
+              "Stigande omsättning",
+              "Upprepade engångsposter",
+              "Hög utdelning",
+              "Ny VD"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Formlers roll enligt Graham?",
+            "alternativ": [
+              "Ersätter marginalen",
+              "Ger disciplin — aldrig trygghet",
+              "Förlutar kursen",
+              "Krävs för köp"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 12,
+        "minutes": 8,
+        "title": "Kap 12 · Investerarens fallgropar",
+        "intro": "Perilerna: prognoser, trading, hävstång — listade för att du ska känna igen dem.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Graham listar farorna i tur och ordning. Prognoser: värdepappersanalys kan inte förutsäga kurser — den kan uppskatta värde; den som säljer kurstips säljer humörprognoser. Trading: frestelsen att vända positioner för vinst är en felony mot Marginalen — varje vända kostar spread och skatt. Hävstång: förstorar vinsten tills den förstorar förlusten — det finns inga 'säkra' lånade pengar. Särskilt varnad: margin-köp i uppgående marknad — exakt där känslan av säkerhet är störst är den minst verklig. Fallgroparna gemensam nämnare: de känns alla kloka i stunden. Därför behövs checklistan skriftligt — innan stunden."
+          },
+          {
+            "type": "insikt",
+            "content": "Fallgroparna känns kloka i stunden — det är därför reglerna måste skrivas före."
+          },
+          {
+            "type": "utmaning",
+            "content": "Skriv din personliga förbudslista: tre saker du ALDRIG gör (ex: 'aldrig hävstång', 'aldrig IPO-dag ett'). Förvara vid login. Uppdatera aldrig i uppåtgående marknad."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Kan fundamental analys förutsäga kurser?",
+            "alternativ": [
+              "Ja, exakt",
+              "Nej — uppskatta värde, inte kurs",
+              "Bara kort sikt",
+              "Bara banker"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Hävstång förstorar...",
+            "alternativ": [
+              "Bara vinst",
+              "Förlusten också — alltid",
+              "Ingenting",
+              "Marginalen"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Margin-köp känns säkrast...",
+            "alternativ": [
+              "I nedgång",
+              "I toppgående marknad — exactly när det är farligast",
+              "Med stop-loss",
+              "Aldrig"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 13,
+        "minutes": 8,
+        "title": "Kap 13 · Jämförelse av fyra listor",
+        "intro": "Fyra portföljer, samma period — lektionen om pris kontra kvalitet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Graham jämför fyra reella aktielistor 1941-60: Dow Jones-industritar, NYSE-listan, en 'undervärdesportfölj' och en 'tillväxt-/premiumportfölj'. Resultatet som överraskar alla då och nu: de billiga, tråkiga, lågt värderade bolagen gav HÖGRE totalavkastning än de dyrare tillväxtfavoriterna. Inte för att kvalitet var oviktig — utan för att priset på kvaliteten var för högt. Kapitlets kärna är en enda ekvation: din avkastning bestäms inte av hur bra bolaget är utan av hur mycket du betalade. Detta är Marginal of safety presenterat som statistik."
+          },
+          {
+            "type": "insikt",
+            "content": "Din avkastning bestäms inte av bolagets kvalitet — utan av priset du betalade för den."
+          },
+          {
+            "type": "utmaning",
+            "content": "Jämför två bolag du känner: ett 'tråkigt' lågt värderat, ett hypat premium. Skriv P/E på båda. Vad måste det hypade leverera för att motivera skillnaden?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilken portfölj vann 1941-60?",
+            "alternativ": [
+              "Tillväxtfavoriterna",
+              "De lågt värderade tråkiga bolagen",
+              "Teknikbolagen",
+              "Bankerna"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Avgörande för avkastning?",
+            "alternativ": [
+              "Bolagets kvalitet",
+              "Priset du betalade",
+              "VD:ns charm",
+              "Sektorn"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Kapitlet visar marginal of safety som...",
+            "alternativ": [
+              "Filosofi",
+              "Statistik",
+              "Myt",
+              "Tankeexperiment"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 14,
+        "minutes": 8,
+        "title": "Kap 14 · Aktieval för den defensiva investeraren",
+        "intro": "De sju kraven — checklistan som ska säga nej.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "För defensiva köp kräver Graham: (1) tillräcklig storlek, (2) stabil vinst — nio av tio år positiv, (3) utdelning 20+ år utan avbrott, (4) stabilitet — tio år utan förlust, (5) tillväxt — minst en tredjedels vinstökning över ett decennium, (6) P/B under 1,5, (7) P/E under 15. Kraven är medvetet svåra: nästan inga bolag klarar alla vid en given tidpunkt — och DET är poängen. Checklistan som aldrig blockar ett köp är ingen checklista. Den som vill äga ett bolag som faller på två krav kan göra det — men då som AKTIV investerare med full analys, inte defensivt på känsla."
+          },
+          {
+            "type": "insikt",
+            "content": "En checklista som aldrig säger nej är en hyllningsgest till dina egna impulser."
+          },
+          {
+            "type": "utmaning",
+            "content": "Testa ett bolag du äger mot de sju kraven. Hur många klaras? Vilka tre faller oftast — och vad säger det om marknadens humör?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Hur många år positiv vinst krävs?",
+            "alternativ": [
+              "1",
+              "9 av 10",
+              "3",
+              "5 av 5"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Utdelningskravet?",
+            "alternativ": [
+              "5 år",
+              "20+ år",
+              "Inget",
+              "Bara återköp"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "P/E-gränsen?",
+            "alternativ": [
+              "30",
+              "15",
+              "50",
+              "Ingen"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 15,
+        "minutes": 8,
+        "title": "Kap 15 · Aktieval för den aktiva investeraren",
+        "intro": "Tre arbetssätt för underpris — och det berömda net-net-verktyget.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den aktiva söker underpris via tre spår. Spår ett: undervärderade stabila bolag — lönsamma, men föråskade; vänta på rotation. Spår två: secundära bolag — medelstora, okända, med kassa och affär men utan analystäckning; bristen på uppmärksamhet ÄR marginalen. Spår tre: specialsituationer — fusioner, likvidationer, omstruktureringar där utfallet kan beräknas från offentliga dokument. Och verktyget som gjorde Graham legendarisk: net-nets — bolag vars börsvärde understiger omsättningsbart nettokapital (kortfristiga tillgångar minus ALLA skulder). Du köper i praktiken bolaget för mindre än dess kassa. Net-nets är idag sällsynta i storuniversum — men principen evig: det finns ett pris där även medelbolag är gåva."
+          },
+          {
+            "type": "insikt",
+            "content": "Net-net: köp bolaget för mindre än dess kassa — Grahams mest berömda verktyg."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räkna på ett mikrobolag: (omsättningstillgångar − totala skulder) jämfört med börsvärdet. Hur nära net-net-territorium är det? Vad förklarar gapet?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad kännetecknar secundära bolag?",
+            "alternativ": [
+              "Störst på börsen",
+              "Medelstora, okända — bristen på uppmärksamhet är marginalen",
+              "Bankjättar",
+              "Bara tech"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Net-net =",
+            "alternativ": [
+              "P/E under 5",
+              "Börsvärde under omsättningsbart nettokapital",
+              "Noll skuld",
+              "Utdelning 50%"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Specialsituationer bygger på...",
+            "alternativ": [
+              "Rykten",
+              "Offentliga dokument med räknbart utfall",
+              "Chart",
+              "Tips"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 16,
+        "minutes": 8,
+        "title": "Kap 16 · Konvertibler och warrant",
+        "intro": "Hybridpapper som låter bra — tills räkningen kommer.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Konvertibla obligationer ger ränta PLUS rätt att byta till aktier: 'förlora lite, vinn mycket'. Graham visar matematiken bakom illusionen: konverteringspariteten är prissatt så att bolaget tjänar — du betalar för optionen du tror att du får gratis. Warrant (teckningsoptioner) är värre: rena spelbiljetter på kursrörelser, värdefulla enbart vid extrem uppgång, värdelösa annars — och de späder ut ägarna. Båda instrumenten frestar med aspekttrikhet: 'skydd nedåt, delaktighet uppåt'. Verkligheten: komplicerade Villkor som gynnar utfärdaren. Grahams regel är värd att rama in: ju mer ett instrument liknar en konstruktion istället för en tillgång, desto mer spekulativt är det."
+          },
+          {
+            "type": "insikt",
+            "content": "Instrument som lovar förlora-lite-vinna-mycket har redan räknat ut dig — det är därför de existerar."
+          },
+          {
+            "type": "utmaning",
+            "content": "Leta reda på en aktuell konvertibel eller aktieoption (warrant). Läs villkoren: när blir utbyte lönsamt? Jämför med att bara köpa aktien eller obligationen. Vad kostar 'båda världarna'?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Konvertibler ger intrycket av...",
+            "alternativ": [
+              "Ren ränta",
+              "Skydd nedåt + delaktighet uppåt",
+              "Aktie med utdelning",
+              "Index"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Warrant är enligt Graham...",
+            "alternativ": [
+              "Klok hedging",
+              "Spelbiljett som späder ut ägare",
+              "Säker ränta",
+              "Defensiv"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Regeln om komplexa instrument?",
+            "alternativ": [
+              "Ju mer konstruktion, desto mer spekulativt",
+              "Komplexitet = trygghet",
+              "Villkor spelar ingen roll",
+              "Alltid bättre"
+            ],
+            "ratt": 0
+          }
+        ]
+      },
+      {
+        "num": 17,
+        "minutes": 8,
+        "title": "Kap 17 · Fyra lärorika fallhistorier",
+        "intro": "Penn Central, LTV, AAA-obligationer — katastrofer som stod i siffrorna.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fall ett: Penn Central — USA:s största konkurs 1970. Varningarna stod i rapporterna: åratal av svag täckning, ökande kortfristiga skulder. Marknaden såg 'för stort för att falla'. Fall två: Ling-Temco-Vought — konglomeratbygge på hävstång; börsvärde steg med redovisningsakrobatik, föll 96%+ när konstruktionen knäcktes. Fall tre: AAA-obligationer 1970 — 'säkra' papper som föll hårt; betyg är inte marginal. Gemensam nämnare: varje varning var OFFENTLIG och räknebar FÖRE kraschen. Fallstudiernas läxa: katastrofer annonserar sig i balansräkningar — för den som läser dem. Det är därför kapitel 11 finns."
+          },
+          {
+            "type": "insikt",
+            "content": "Katastrofer annonserar sig i balansräkningar — för den som läser dem."
+          },
+          {
+            "type": "utmaning",
+            "content": "Penn Central-varningarna var offentliga. Leta i en aktuell årsredovisning efter: fallande täckningsgrad, växande kortfristig skuld. Hittar du mönstret någonstans i din bevakning?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Penn Central-konkursen: var stod varningarna?",
+            "alternativ": [
+              "Hos Insiders",
+              "I de offentliga rapporterna",
+              "I charten",
+              "Hos regeringen"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "LTV föll på...",
+            "alternativ": [
+              "En produktmiss",
+              "Konglomerat + hävstång + redovisningsakrobatik",
+              "Strejk",
+              "Valuta"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Lärdomen av AAA-fallet?",
+            "alternativ": [
+              "Betyg = marginal",
+              "Betyg är inte marginal",
+              "AAA är alltid säkert",
+              "Ränta skyddar"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 18,
+        "minutes": 8,
+        "title": "Kap 18 · Jämförelse av åtta par",
+        "intro": "Åtta liknande bolagspar — en dyr och en billig. Vem vann?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Graham parade ihop åtta bolag i bransch efter bransch: i varje par ett högt värderat favoritbolag och ett lågt värderat, liknande bolag. Utgången över tid: de billiga vanligtvis bättre totalavkastning än de dyrasignalerna — inte alltid, inte dramatiskt, men systematiskt. Kapitlet bringar budskapet från kapitel 13 ner till butiksgolvet: MARKNADENS FAVORIT betalar premium som sällan återbetalas. Skillnaden mellan bolagen i varje par var oftast mindre än skillnaden i pris. Warren Buffett kom senare att formulera det som sitt eget Thailand-tillägg: pris är vad du betalar, värde är vad du får. Kapitel 18 är den satsen med åtta bevis."
+          },
+          {
+            "type": "insikt",
+            "content": "I åtta par av liknande bolag var prisskillnaden större än verklig skillnad — systematiskt."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj ett branschpar du känner (t.ex. två banker, två bolagbyggare). Skriv P/E på båda. Vad förklarar premiumen — och skulle Graham köpa den?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Kapitel 18 jämför...",
+            "alternativ": [
+              "Fonder",
+              "Åtta par av liknande bolag — dyrt mot billigt",
+              "Index",
+              "Obligationer"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Slutsats över tid?",
+            "alternativ": [
+              "Dyr favorit vann alltid",
+              "Billiga systematiskt bättre totalavkastning",
+              "Ingen skillnad",
+              "Slump"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "'Pris är vad du betalar, värde är vad du får' — kapitlets budskap?",
+            "alternativ": [
+              "Nej",
+              "Ja",
+              "Bara om tech",
+              "Bara vid kris"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 19,
+        "minutes": 8,
+        "title": "Kap 19 · Aktieägare och ledningar",
+        "intro": "Graham — den tidiga aktivisten: ägandrätt är en skyldighet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Före indexfonder och moderat activism predikade Graham aktieägarens ansvar: rösta, läsa styrelserapporter, ifrågasätta mångåriga optionsprogram och 'självutnämnda' styrelser. Han drev frågan i praktiken: kampanjer för utdelning av onödigt uppsamlad kassa (med Buffett i som allierad på GEICO-tiden). Argumentet: bolagets ledning förvaltar DITT kapital; passivt ägande bjuder in till slöseri och självgodhet. Han föreslog att en minoritets-skydds-mekanism borde värnas — föregångaren till dagens bolagsstämmor-motioner. För den enskilde: din rösta är en tillgång; att avstå är att skriva blankocheck på eget kapital."
+          },
+          {
+            "type": "insikt",
+            "content": "Bolaget förvaltar ditt kapital — passivt ägande är en blankocheck."
+          },
+          {
+            "type": "utmaning",
+            "content": "Leta upp nästa bolagsstämma för ett bolag du äger (eller en fond). Läs motionerna. Skulle du rösta som ledningen föreslår — och varför?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Graham såg aktieägande som...",
+            "alternativ": [
+              "Passiv pjäs",
+              "Ägande med skyldighet — rösta, ifrågasätta",
+              "Ren spekulering",
+              "Chart"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vad motionerade Graham om?",
+            "alternativ": [
+              "Optionsprogram",
+              "Utdelning av onödig kassa + minoritetsskydd",
+              "VD-löner +",
+              "Ingenting"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Att inte rösta är...",
+            "alternativ": [
+              "Okej",
+              "Blankocheck på eget kapital",
+              "Obligatoriskt",
+              "Olagligt"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 20,
+        "minutes": 8,
+        "title": "Kap 20 · Marginal of safety — det centrala begreppet",
+        "intro": "Bokens sista kapitel är dess hjärta — tre ord som bär allt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Marginal of safety är bron byggd för 30 ton när lastbilarna väger 10. Köper du till 30-50% under konservativt beräknat värde har du utrymme att ha FEL — om affären försämras, om analysen har misstag, om konjunkturen vänder. Utan marginal krävs att du har RÄTT för att inte förlora; med marginal kan du ha fel och överleva. Detta är skillnaden mellan hopp och beräkning. Marginalen finns i tre former: prismatch mot värde (tillgångar eller tjänstekraft), diversifiering (du vet aldrig vilken position som slår fel) och krav på förutsägbarhet (ju osäkrare framtid, desto större marginal). Investeringens whole historia i en mening: acceptera aldrig ett pris där du måste ha rätt."
+          },
+          {
+            "type": "insikt",
+            "content": "Marginal of safety betyder inte att du aldrig har fel — utan att du överlever att ha fel."
+          },
+          {
+            "type": "utmaning",
+            "content": "Värdera en aktie du äger försiktigt (kap 11-15). Om ditt värde är 100 — till vilket pris kräver 30% marginal? 50%? Jämför med dagens kurs. Marginal — eller hopp?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Marginalen liknas vid...",
+            "alternativ": [
+              "Bubbelpool",
+              "Bro byggd för mer än förväntad last",
+              "Bromslös bil",
+              "Schack"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Utan marginal krävs att du...",
+            "alternativ": [
+              "Har tur",
+              "Har rätt",
+              "Diversifierar",
+              "Hedgar"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Tre former av marginal?",
+            "alternativ": [
+              "Trend, timing, tur",
+              "Prismatch, diversifiering, förutsägbarhet",
               "Chart, RSI, MACD",
-              "Mr Market, marginal of safety, investering ≠ spekulering",
-              "Hävstång, diversifiering, shorting",
-              "IPO, buyback, split"
+              "Storlek, hävstång, option"
+            ],
+            "ratt": 1
+          }
+        ]
+      },
+      {
+        "num": 21,
+        "minutes": 8,
+        "title": "Eftegerskrift · Envishet är inte nödvändig",
+        "intro": "Bokens sista sida — kanske dess finaste.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Efterskriften till återutgåvan 2003 (med Zweigs kommentarer) landar i en enda mening från Buffett: 'Att investera intelligent kräver inte genialitet — det kräver karaktär.' Envishet, disciplin och villighet att se tråkig ut medan andra spelar. Den som behärskar kapitel 8 (Mr Market) och kapitel 20 (Marginalen) har bokens kärna; resten är hantverk som fördjupar kärnan. Grahams eget liv sammanfattar det: professor, praktiker, författare — som lärde att marknadens största gåva är andras humör, och den största fienden är ens egna. Utbildningen du genomgått här slutar inte — den börjar. Nästa steg: tillämpa. En analys i taget, en marginal i taget, ett humör att inte dela i taget."
+          },
+          {
+            "type": "insikt",
+            "content": "Investering kräver inte genialitet — det kräver karaktär."
+          },
+          {
+            "type": "utmaning",
+            "content": "Skriv ditt eget eftegerskrift: tre meningar om vad boken ändrat i ditt tänkande. Datum. Spara — läs om ett år."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Buffett om intelligent investering:",
+            "alternativ": [
+              "Kräver genialitet",
+              "Kräver karaktär — inte genialitet",
+              "Kräver tur",
+              "Kräver terminal"
             ],
             "ratt": 1
           },
           {
-            "q": "Graham gav ett ramverk för att...",
+            "q": "Bokens kärna ligger i kapitel...",
             "alternativ": [
-              "Bli rik snabbt",
-              "Inte bli utnyttjad — rikedomen var bieffekt",
-              "Slå index varje år",
-              "Undvika skatt"
+              "1 och 2",
+              "8 och 20",
+              "17 och 18",
+              "Bara eftegerskriftet"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Marknadens största fiende är...",
+            "alternativ": [
+              "Centralbanken",
+              "Ditt eget humör",
+              "Analytiker",
+              "Algorytmer"
             ],
             "ratt": 1
           }
         ]
       }
     ],
-    "lynchSection": "Peter Lynch (i 'Mina bästa investeringar' / One Up on Wall Street) byggde vidare på Graham: ' Köp bolag du förstår' är Grahams marginal omsatt i verkligheten — den som kan bedöma en affär kan bedöma om priset är rimligt.",
-    "grahamSection": "Självfallet hela boken — källa: Benjamin Graham, The Intelligent Investor, kapitel 1, 8 och 20 främst; portföljpolitik kapitel 4-5; aktieval kapitel 14-15.",
-    "ak1Section": "AK1:s tolkning: Grahams marginal of safety är moralen i AKM1 — ingen position utan analys, ingen analys utan marginal, ingen marginal utan tålamod. Kursen duger som introduktion; boken som bibel."
+    "lynchSection": "Peter Lynch (Mina bästa investeringar) byggde vidare: 'köp bolag du förstår' är Grahams Marginal omsatt i vardagen.",
+    "grahamSection": "Hela boken — 20 kapitel + eftegerskrift, alla täckta i denna kurs. Källa: The Intelligent Investor, reviderad utgåva 2003.",
+    "ak1Section": "AK1:s tolkning: Grahams Marginal = AKM1:s moral. Ingen position utan analys, ingen analys utan Marginal, ingen Marginal utan tålamod."
   }
 }

@@ -2991,3 +2991,23 @@ Stage Summary:
 - Inloggningsresan tydlig: valfri sida → guldknapp → /logga-in → kurser upplåsta
 - Kvar från användarens önskelista: SPA-hemsideheaderns meny (stor klient-
   komponent — nästa sprint), fler kurser
+---
+Task ID: 92-KOURSREVOLUTION-GRAHAM
+Agent: main (Z.ai Code)
+Task: Bokmaster-formatet + The Intelligent Investor komplett + gamification — LIVE
+
+Work Log:
+- Kursmotorn: nya blocktyper 'insikt' (◆ 10x-insikt, guldbox) och 'utmaning'
+  (🎯 Utmaning + belöningstext, details-reveal) — gamification per kapitel;
+  buggfix: .find() tog bara första blocket → separerade insikt/utmaning-rendering
+- NY KURS 227 (kategori BOKMASTER): 'The Intelligent Investor — Graham: komplett'
+  — 8 kapitel unikt författade (investering vs spekulering, Mr Market, margin of
+  safety, defensiv/aktiv, marknadshistoria Nifty Fifty m.fl., bolagsanalys med
+  net-nets, Grahams arv) med 8 insikter + 8 utmaningar; full källhänvisning till
+  Grahams bok (ärlighetsprincipen), Lynch/Graham/AK1-perspektiv anpassade
+- Prod: 200, 8 insikter + 8 utmaningar levererade i SSR
+
+Stage Summary:
+- Format bevisat: BOKMASTER-kurser med rikt innehåll + gamification
+- Kö: Lynch 'Mina bästa investeringar', Zero to One, Blue Ocean Strategy —
+  samma format, grundarens foundation-böcker som kursmaterial

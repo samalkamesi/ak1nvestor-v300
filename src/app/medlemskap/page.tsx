@@ -124,10 +124,10 @@ export default function MedlemskapPage() {
             för coachingen, gemenskapen och representant-vägen.
           </div>
           <Link
-            href="/#portal"
+            href="/fas2-ansok"
             className="mt-5 rounded-md border border-gold/50 px-4 py-2.5 text-center text-sm font-semibold hover:bg-gold/10"
           >
-            Ansök om Fas 2 → boka möte
+            Ansök om Fas 2 → kostnadsfritt, 2 minuter
           </Link>
         </div>
       </div>

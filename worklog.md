@@ -3467,3 +3467,25 @@ Work Log:
 
 Stage Summary:
 - BOKMASTER-biblioteket: 9 böcker komplettäckta (4+5 nya denna session)
+
+---
+Task ID: 119-VAG2-LEVERANS-2
+Agent: main + Marks ✓ + Damodaran ✓ + O'Neil ✓ + Schilit ✓ + blogg ✓
+Task: 4 BOKMASTER till (10-13) + blogg + V-mappningskorrigering
+
+Work Log:
+- THE MOST IMPORTANT THING (Marks): 15 kap, 45 quiz — risk/cykler/pendeln
+- INVESTMENT VALUATION (Damodaran): 18 kap, 54 quiz — alla formler exakta
+- HOW TO MAKE MONEY IN STOCKS (O'Neil): 16 kap, 48 quiz — CANSLIM ↔ AKM1/AK1TS
+- FINANCIAL SHENANIGANS (Schilit): 14 kap, 42 quiz — 7 kategorier + fall
+- BLOGG: 4 inlägg (PEG, ROIC, Mr Market, balansräkning) — takten hållen
+- KRITISK KORRIGERING: auktoritativ AKM1 V-mappning verifierad mot
+  kurs-slugs (V04=P/S, V07=Bruttomarginal, V13-15=Moat, V19=Kapitalförbränning
+  m.m.) — äldre briefs hade felaktig mappning; V-fix-agent sanerar 6 filer;
+  fundament-chips i portföljen rättade (V05 P/B, V08 marginal, V10 skuld/EK)
+- 239 kurser · 4176 quiz · 727 sidor · 13/100 kanonböcker har kurser
+- DEPLOY-NOTIS: prod fastnade på eb37d93 (Murphy/Fisher/Nison saknas live
+  trots push+hook) — bevakas, kan kräva Vercel-dashboard-koll av användaren
+
+Stage Summary:
+- 10 BOKMASTER-böcker totalt (4+6 denna session), bokkanon-uttagning igång

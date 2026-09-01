@@ -1,0 +1,1118 @@
+{
+  "slug": "how-to-make-money-in-stocks",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 16,
+  "totalMinutes": 175,
+  "title": "How to Make Money in Stocks — O'Neil: KOMPLETT",
+  "summary": "William J. O'Neils How to Make Money in Stocks (1988, senast omarbetad 2009) bygger på hans studier av varenda stor vinnare på den amerikanska börsen sedan 1953 — Sybase, Cisco, Price Club och hundratals andra — och destillerar mönstret till systemet CAN SLIM. Kursen går igenom alla sju bokstäverna, chartmönstren med exakta mått, säljreglerna och de vanligaste misstagen, och kopplar varje kriterium till AKM1:s fundamentalvariabler och AK1TS:s tekniska timing. Det är den perfekta hybridboken: fundamentala data som avgör VAD du köper, teknisk timing som avgör NÄR.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven köra hela CAN SLIM-processen själv: skärma fram kandidater med kvartals- och årsvis vinsttillväxt (C och A), identifiera det nya som driver rusningen (N), bedöma utbud och efterfrågan på aktien (S), skilja ledare från eftersläpare med relativ styrka (L), läsa institutionellt ägande (I), avgöra marknadsriktningen med distributionsdagar och follow-through days (M), samt köpa rätt vid pivot-punkten i en cup with handle, double bottom eller flat base — och sälja med -7/8 %-stoppen och styrkesäljreglerna.",
+  "why": "CAN SLIM är den enda stora metoden som förenar allt AK1A Research Lab står för: fundamental kvalitet i AKM1-stil (C, A, N, S, I mappar mot V01, V04, V09, V13, V16, V20) med teknisk timing i AK1TS-stil (L mappar mot Pris-dimensionens relativa styrka, M mot cykel- och Tidsperspektivet). O'Neils regelverk är dessutom mätbart och reproducerbart — exakta procentsatser, exakta mått, exakta säljregler — vilket gör det till det perfekta träningsunderlaget mellan kalkylatorn och chartanalysen. Kursen är också ärlig med spänningen mot Graham-skolan, vilket gör eleven medveten om när CAN SLIM fungerar och när det inte gör det.",
+  "chapters_list": [
+    "1. O'Neils bevis: 45 års vinnarstudier — systemet före åsikterna",
+    "2. C — Aktuella kvartalsvinster: motorn i varje stor vinnare",
+    "3. A — Årliga vinstökningar: treårsfilen och ROE ≥ 17 %",
+    "4. N — Nytt: produkter, ledning och höjder — motorn bakom rusningen",
+    "5. S — Utbud och efterfrågan: aktieantal, återköp och utspädning",
+    "6. L — Ledare eller eftersläpare: relativ styrka RS ≥ 80",
+    "7. I — Institutionellt stöd: fonder som köper — men inte överägt",
+    "8. M — Marknadsriktningen: distributionsdagar och follow-through days",
+    "9. Cup with handle: formatets exakta mått",
+    "10. Double bottom, flat base och de andra formationerna",
+    "11. Pivot-punkten och volymen: konsten att köpa rätt dag",
+    "12. Säljreglerna: -7/8 %-stoppen, styrkesälj och toppsignaler",
+    "13. De vanligaste misstagen — och hur du slutar göra dem",
+    "14. CAN SLIM mot Graham: den öppna spänningen mellan skolorna",
+    "15. Systemet i praktik: checklista, veckorutin och positionstorlek",
+    "16. Syntesen: vinnarmatte, O'Neils arv och den kompletta investeraren"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "O'Neils bevis: 45 års vinnarstudier — systemet före åsikterna",
+      "intro": "William J. O'Neil grundade sitt analysbolag 1963 och tidningen Investor's Business Daily 1984, och hans utgångspunkt var radikal: istället för att formulera teorier om hur börsen borde fungera, byggde han en databas över varenda aktie som steg kraftigt sedan 1953 och letade efter vad de gemensamt hade FÖRE utbrottet. Svaret blev CAN SLIM — sju drag som återkom hos vinnare som Sybase, Cisco och Price Club, oavsett decennium. Detta kapitel ger kartan över systemet och visar var varje bokstav landar i AKM1 och AK1TS.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "O'Neil var 30 år när han köpte en plats på NYSE, yngst på sin tid, efter att ha byggt sin förmögenhet på exakt den typ av aktier han senare kom att beskriva i How to Make Money in Stocks (första upplagan 1988, fjärde upplagan 2009). Hans metod var empirisk till skillnad från de flesta börsböcker: han och hans team gick tillbaka till 1953 och katalogiserade de största vinnarna cykel för cykel — vad hade resultuträkningen, produkten, aktieantalet, kursgrafen och fondernas beteende sett ut innan den stora kursrusningen började? Samma sju mönster återkom igen och igen, och tillsammans bildar de akronymen CAN SLIM: Current quarterly earnings, Annual earnings increases, New products/management/highs, Supply and demand, Leader or laggard, Institutional sponsorship, Market direction."
+        },
+        {
+          "type": "text",
+          "content": "Det viktiga att förstå är att CAN SLIM inte är en åsikt utan en observation. När Sybase bröt ut 1990, när Cisco rullade igång sitt löp på 1990-talet och när Price Club förädlat lagerklubbsformatet i början av 1980-talet, delade de tre saker med hundratals andra vinnare: kraftigt accelererande kvartalsvinster, ett nytt som förändrade sin bransch, och en kursgraf som byggde en bas innan utbrottet kom på hög volym. O'Neils poäng är att marknaden inte är slumpmässigt sammansatt — de största vinsterna har ett gemensamt fingeravtryck, och fingeravtrycket syns i data innan kursen ger sig av. Därmed blir frågan aldrig 'tror du på bolaget?' utan 'uppfyller aktien måtten?'."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A Research Lab är den här boken något så sällsynt som en bro. Fundamentalister läser C, A, N, S och I som en checklista i AKM1-variablernas språk: kvartalsvinst kopplar till V01 försäljningstillväxt, årsfilen till V09 ROE, det nya till V13 Patent & IP och V16 Produktlanseringar, återköpen till V20. Teknikern läser L och M som timing: relativ styrka är AK1TS Pris-dimensionen i ren form, och marknadsriktningen är ett cykel- och Tidsperspektiv. O'Neils eget system vägrar välja sida — han hävdar att fundamentala data avgör vad du köper och grafen avgör när du köper. Det är exakt ekosystemets tes, och anledningen till att den här kursen är märkt KRITISK."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CAN SLIM översatt till AK1A-ekosystemet\",\"rader\":[[\"Bokstav\",\"O'Neils kriterium\",\"Ekosystem-koppling\"],[\"C\",\"Kvartalsvinst ≥ +25 %, gärna accelererande\",\"AKM1 V01 Försäljningstillväxt + V04 P/S\"],[\"A\",\"Årlig tillväxt ≥ +25 %/år i 3 år, ROE ≥ 17 %\",\"AKM1 V01 + V09 ROE\"],[\"N\",\"Ny produkt, ny ledning, nytt högkurshål\",\"AKM1 V13 Patent & IP (och V16)\"],[\"S\",\"Aktieantal, float, återköp, utspädning\",\"AKM1 V06 EV/EBITDA + V20 Återköp\"],[\"L\",\"Relativ styrka RS ≥ 80 — köp ledaren\",\"AK1TS Pris-dimensionen: relativ styrka\"],[\"I\",\"Fonder som köper — men inte överägt\",\"AKM1 V16 Produktlanseringar (katalysatorn som drar in kapital)\"],[\"M\",\"3 av 4 aktier följer marknaden\",\"AK1TS cykelperspektiv: Tid-dimensionen + Volymteorin\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ O'Neil studerade inte börsen för att ta reda på vad han trodde — han studerade vinnarna för att ta reda på vad som redan var sant. Regelverket kommer efteråt, inte före. Det är samma princip som AK1A:s reproducierbarhetskrav: varje slutsats har en källa i data."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Öppna en långtidsgraf (veckoläge, 10 år) på Cisco eller ett eget favoritbolag. Leta reda på den period då kursen steg som mest, och notera datumet. Leta sedan upp bolagets resultuträkning för kvartalet FÖRE det datumet. Såg kvartalsvinsten accelerera mot ≥ +25 %? Detta är övning nummer ett i O'Neils metod: börja alltid i vinnarnas data, inte i dina preferenser."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken var O'Neils grundläggande metod när han byggde CAN SLIM?",
+          "alternativ": [
+            "Han formulerade först en teori om tillväxt och testade den sedan på marknaden",
+            "Han studerade de största vinnarna sedan 1953 och letade gemensamma drag FÖRE utbrotten",
+            "Han kopierade Grahams net-net-metod och la till chartmönster",
+            "Han intervjuade fondförvaltare om deras köpkriterier"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vilket som kommer först i boken: observationen av vinnarna eller reglerna? O'Neil beskriver sig själv som datadriven långt innan det blev modeord."
+        },
+        {
+          "q": "Vad står bokstaven N i CAN SLIM för?",
+          "alternativ": [
+            "Negativ korrelation med marknadsindex",
+            "Nyemissioner och kapitalanskaffning",
+            "Nya produkter, ny ledning och nya kurshöjder",
+            "Nettovinst per anställd"
+          ],
+          "ratt": 2,
+          "tips": "Ordet 'nytt' återkommer i tre skepnader i boken — i bolaget, i branschen och i kursgrafen."
+        },
+        {
+          "q": "Varför kallas den här boken en 'bro' i AK1A-ekosystemet?",
+          "alternativ": [
+            "Den förenar fundamentala urvalskriterier (AKM1-stil) med teknisk timing (AK1TS-stil)",
+            "Den förenar daytrading med långsiktigt sparande i fonder",
+            "Den översätter Graham till moderna nyckeltal",
+            "Den ersätter behovet av både fundamental och teknisk analys"
+          ],
+          "ratt": 0,
+          "tips": "Titta på tabellen: vilka bokstäver landar i V-variabler och vilka landar i AK1TS? O'Neil själv vägrade välja sida."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "C — Aktuella kvartalsvinster: motorn i varje stor vinnare",
+      "intro": "Bokstaven C är systemets hjärta: vinsten per aktie i det senaste kvartalet ska ha vuxit med minst +25 % — och ju mer, desto bättre. I O'Neils studier hade tre av fyra av de största vinnarna minst +30 % i kvartalsvinst det kvartal som föregick utbrottet. Här kopplas kriteriet till AKM1:s V01 försäljningstillväxt och V04 P/S.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "O'Neil är brutal i sin formulering: den aktuella kvartalsvinsten per aktie ska vara uppe minst +25 % jämfört med samma kvartal året innan. De allra största vinnarna visade ofta 40, 50, 100 eller flera hundra procent. Än viktigare än nivån är accelerationen — kvartal som stiger 20 %, sedan 30 %, sedan 40 %, är ett starkare tecken än en platt och jämn 25-procentare, eftersom acceleration betyder att något strukturellt händer i bolaget: en ny produkt börjar sälja, marginalerna vidgas, eller skalan börjar arbeta för bolaget. En vinst som decelererar från +45 % till +25 % är tvärtom en varning, även om 25 % fortfarande uppfyller minimikravet."
+        },
+        {
+          "type": "text",
+          "content": "Andra halvan av C-testet är kvaliteten på vinsten. O'Neil vill se att försäljningen i samma kvartal också växer, minst +20–25 % eller i accelerating takt — en vinstboom utan intäktsboom kan komma från engångsposter, nedskrivningar som vänder, eller besparingar, och sådana vinster håller inte. Han vill också gärna se stigande marginaler, alltså att bolaget inte enbart växer på volym utan också tjänar mer per såld krona. I AKM1:s språk är detta exakt V01 Försäljningstillväxt: kvartalsvinster utan försäljningsunderlag får låga poäng, och kalkylatorn straffar dem. Det är värt att minnas O'Neils varning: undvik att extrapolera en enda kvartalsbomb — leta efter det mönster som håller."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till V04 P/S kan verka oväntad men är logisk: när försäljningen accelererar (V01) börjar marknaden betala mer per intäktskrona (V04 stiger). O'Neils data visar att vinnarna köptes till måttliga P/S-nivåer FÖRE att accelerationen blev allmänt känd, och att multipeln expanderade under rusningen. För eleven betyder detta att C-arbetet är ett screeningarbete: gå igenom rapportkalendern, notera kvartalsvinst och försäljningstillväxt för de senaste tre till fyra kvartalen, och rita serien i en tabell. Ser den accelererande ut? Då har du en C-kandidat — men bara en av sju bokstäver."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"C-kriteriets checklista\",\"rader\":[[\"Mått\",\"O'Neils krav\",\"AKM1-variabel\"],[\"Kvartalsvinst (EPS)\",\"≥ +25 % mot föregående års kvartal; de bästa 40 %+\",\"V01 indirekt — vinsten backas av intäkterna\"],[\"Acceleration\",\"Kvartalen stiger i takt: 20 → 30 → 40 %\",\"V01 Försäljningstillväxt i accelerating serie\"],[\"Försäljningstillväxt\",\"≥ +20–25 % eller accelererande\",\"V01 direkt\"],[\"Marginaler\",\"Helst vidgande, inte enbart kostnadsklippt\",\"V07 Bruttomarginal som stöd\"],[\"Multipel vid köp\",\"Måttlig P/S — expanderar under rusningen\",\"V04 P/S\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En stor kvartalsvinst utan försäljningstillväxt är en lönsam vecka, inte en investeringsidé. C handlar om acceleration som är reparerad av intäkter — det är därför V01 är kursens första koppel till AKM1."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj tre bolag ur ditt bevakningslista och öppna deras senaste fyra resultaträkningar (kvartalsvis). Rita en enkel tabell: kvartalsvinst-tillväxt % och försäljningstillväxt % per kvartal. Markera vilket av de tre som har den tydligaste accelerationen. Spara tabellen — samma bolag ska återkomma i dina A- och L-övningar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är O'Neils minimikrav på senaste kvartalets vinst per aktie?",
+          "alternativ": [
+            "Minst +25 % jämfört med samma kvartal föregående år",
+            "Minst +10 % jämfört med föregående kvartal",
+            "Positiv vinst, oavsett storlek",
+            "Minst +25 % jämfört med föregående kvartal"
+          ],
+          "ratt": 0,
+          "tips": "O'Neil jämför alltid mot samma kvartal ett år tidigare — kvartal är säsongsmärkta, och det är tillväxttakten år mot år som mäter motorn."
+        },
+        {
+          "q": "Vilken vinstserie föredrar O'Neil — och varför?",
+          "alternativ": [
+            "Jämnt +25 % varje kvartal i flera år, för stabilitet",
+            "En engångsbomb på +200 % efter en förlustkvartalsvändning",
+            "Accelererande kvartal, exempelvis 20 → 30 → 40 %",
+            "Hög vinst oavsett försäljningen, så länge EPS stiger"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vilken serie som säger något strukturellt om bolagets framtid snarare än om en tillfällig effekt — och kom ihåg att O'Neil också granskar försäljningen som underlag."
+        },
+        {
+          "q": "Varför kräver O'Neils C-kriterium även försäljningstillväxt — vilket AKM1-variabel-par syns i kopplingen?",
+          "alternativ": [
+            "V13/V16 — först produkten, sedan lanseringen",
+            "V01/V04 — intäktstillväxten och vad marknaden betalar per intäktskrona",
+            "V06/V20 — värderingen och återköpen",
+            "V09/V10 — lönsamheten och skuldsättningen"
+          ],
+          "ratt": 1,
+          "tips": "En kvartalsvinst utan intäkter kan vara kosmetik. Vilka två variabler mäter 'intäkterna växer' respektive 'priset per intäktskrona'?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "A — Årliga vinstökningar: treårsfilen och ROE ≥ 17 %",
+      "intro": "Bokstaven A tittar på det längre perspektivet: vinsten per aktie ska ha vuxit med minst +25 % per år under de senaste tre åren, och bolagets lönsamhet på eget kapital — ROE — ska ligga på minst 17 %. Det är kriteriet som skiljer riktiga tillväxtbolag från tillfälliga kvartalsblänkare, och det mappar rakt mot AKM1:s V01 och V09.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Medan C fångar ögonblicket fångar A historien. O'Neil kräver en årsvis vinsttillväxt på minst +25 % per år i tre år — alltså inte 75 % ett år och noll de andra två, utan en jämn och ihållande tillväxt. Stabiliteten är poängen: en serie som ser ut som 30, 28, 35 procent per år är starkare än 90, -10, 10, eftersom den första visar en affärsmodell som kan växa genom konjunkturer och rapportstress. Enklast mäts detta som treårig sammansatt årlig tillväxttakt (CAGR) på vinst per aktie. I AKM1:s kalkylator är detta samma grunddata som matar V01 — fast på årsnivå snarare än kvartalsnivå."
+        },
+        {
+          "type": "text",
+          "content": "O'Neils andra A-mått är ROE, avkastning på eget kapital, med en miniminivå på 17 % — och de riktiga marknadsledarna låg ofta på 25 till 50 %. ROE är vinsten dividerad med eget kapital, och den mäter hur effektivt bolaget omvandlar behållna medel till ny vinst. Ett bolag som växer 25 % per år med ROE på 35 % finansierar sin tillväxt internt och genererar överskott; ett bolag med samma tillväxt och ROE på 8 % behöver ständig kapitalanskaffning, vilket leder dig rakt in i S-kriteriets utspädningsproblem. Här är kopplingen till AKM1:s V09 ROE rak och exakt: det är samma nyckeltal, med O'Neil som blodigt tydlig tröskel på 17."
+        },
+        {
+          "type": "text",
+          "content": "Två finesser värda att stjäla från boken. För det första: se även på kassaflödet per aktie, som O'Neil menar ofta kan överstiga vinsten per aktie hos kvalitetsbolag — det är en ärlighetstest mot bokföringstrickeri. För det andra: var uppmärksam på nystartade bolag utan treårig historia; O'Neil medger att unga bolag kan vara giltiga vinnare (han köpte själv sådana tidigt), men då vilar hela fallet på C-kriteriets acceleration och på N-kriteriets nya, vilket gör risken högre och kräver ännu striktare säljdisciplin. För nybörjaren är treårskravet ett skyddsnät: det utesluter historielösa berättelser tills grafen hunnit bevisa dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"A-kriteriets två mått\",\"rader\":[[\"Mått\",\"O'Neils krav\",\"AKM1-variabel\",\"Vanligt fel\"],[\"Årlig vinsttillväxt\",\"≥ +25 %/år i 3 år (CAGR)\",\"V01 årsnivå\",\"Extrapolera ett enskilt toppår\"],[\"ROE\",\"≥ 17 %, ledare ofta 25–50 %\",\"V09 ROE\",\"Acceptera hög tillväxt med låg ROE\"],[\"Kassaflöde per aktie\",\"Helst ≥ vinst per aktie\",\"V08-stöd\",\"Bortse från skillnaden bokföring vs kassa\"],[\"Historik\",\"3 år beprövad, annars högre risk\",\"V12 Intäktsstabilitet\",\"Köpa historielösa berättelser utan marginal\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ C är gnistan, A är bränslet. Utan en treårsfil av ≥ 25-procentig tillväxt och ROE ≥ 17 % vet du inte om kvartalsaccelerationen är början på en epok eller slutet på en lyckoträff — därför kräver O'Neil båda."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta fram årsredovisningarna för ett bolag du gillar. Beräkna vinst per aktie för de senaste tre räkenskapsåren, räkna ut den årliga tillväxttakten mellan åren, och kontrollera ROE för senaste året. Skriv dom: uppfyller bolaget A med minst +25 %/år och ROE ≥ 17 %? Om ROE är under 17 — varför? Hög skuld, låga marginaler eller kapitaltung modell?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka två siffror sammanfattar A-kriteriet?",
+          "alternativ": [
+            "Vinsttillväxt ≥ +25 %/år i tre år och ROE ≥ 17 %",
+            "Vinsttillväxt ≥ +10 %/år i fem år och ROE ≥ 10 %",
+            "Intäktstillväxt ≥ +25 %/år och P/E ≤ 17",
+            "Utdelningstillväxt ≥ +25 % och soliditet ≥ 17 %"
+          ],
+          "ratt": 0,
+          "tips": "En siffra mäter tillväxtens takt, den andra hur effektivt det egna kapitalet arbetar. Båda har en tydlig sifferskräck-tröskel i boken."
+        },
+        {
+          "q": "Varför spelar ROE-roll även när vinsttillväxten redan är hög?",
+          "alternativ": [
+            "Eftersom ROE avgör hur mycket utdelning bolaget kan betala",
+            "Eftersom låg ROE tvingar bolaget att finansiera tillväxt med nyemissioner som späder ut aktierna",
+            "Eftersom ROE är samma sak som relativ styrka",
+            "Eftersom hög ROE garanterar att kursen stiger"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på kopplingspunkten mellan A och S: bolag som inte tjänar tillräckligt på eget kapital behöver hämta kapital på annat håll — vad gör det med antalet aktier?"
+        },
+        {
+          "q": "Vad gör du enligt O'Neil med ett ungt bolag utan treårig vinsthistorik?",
+          "alternativ": [
+            "Avfesta det omedelbart — A-kriteriet är absolut",
+            "Räkna om ROE på prognosdata istället för historik",
+            "Det kan vara en giltig kandidat, men kraven på C, N och säljdisciplinen blir högre",
+            "Köp alltid, eftersom unga bolag stiger snabbast"
+          ],
+          "ratt": 2,
+          "tips": "O'Neil köpte själv unga bolag — men vad hände med kraven på resten av systemet när treårsskyddet saknades?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "N — Nytt: produkter, ledning och höjder — motorn bakom rusningen",
+      "intro": "Bokstaven N svarar på frågan VARFÖR kursen ska ge sig av: något nytt har hänt. Det kan vara en ny produkt eller tjänst, en ny VD, en ny branschförändring — och paradoxalt nog ett nytt all-time high i kursen, vilket O'Neil menar är den starkaste köpsignalen, inte en varning. I AKM1 mappar det nya främst mot V13 Patent & IP och V16 Produktlanseringar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Gå tillbaka till O'Neils egna exempel: Sybase hade en ny relationsdatabasmotor, Cisco byggde routrar som knöt ihop växande nätverk, Price Club uppfann i princip lagerklubbsformatet. I nästan varje stor vinnare i hans studier fanns en nyprodukt, en ny tjänst, en ny distributionskanal eller en ny ledning som förändrade bolagets ekonomi. Det nya är katalysatorn som gör att kvartalsvinster kan accelerera (C) och som ger funderna ett skäl att börja bygga positioner (I). Utan det nya är tillväxt en prognos; med det nya är tillväxt en pågående händelse. I AKM1 är detta moat-blockets och katalysator-blockets värld: V13 Patent & IP fångar när det nya är skyddat och svårkopierat, och V16 Produktlanseringar fångar själva utlösaren."
+        },
+        {
+          "type": "text",
+          "content": "N:ets andra ansikte är det mest provocerande i hela boken: köp aktier som gör nya höjder. De flesta investerare gör det omvända — de köper nedgången och undviker det som 'redan stigit'. O'Neils data säger emot intuitionen: de stora vinnarna köptes när de noterade nya toppar, inte när de var nedsjunkna. Logiken är utbud och efterfrågan i grafisk form — en aktie som står på all-time high har inget överhäng av förlorare över sig som säljer så fort kursen stiger ('overhead supply'), medan en aktie som fallit 40 % har tusentals innehavare som väntar på att komma ut på nollan. Kursens skull-tänk: det som känns dyrt (nya höjder) är ofta billigt i termer av fri väg uppåt; det som känns billigt (djupt fallen) är ofta dyrt i termer av motstånd."
+        },
+        {
+          "type": "text",
+          "content": "Skilj på nyhetens kvalitet. En ny produkt som är patenterad, svårkopierad och adresserar en växande marknad (V13 poäng 4-5) är en moat; en ny produkt som är en kopia av konkurrentens är bara pressrelease. En ny VD med dokumenterad historik av att skala bolag är en katalysator; en ny VD utan spår är ett hopp. Frågan att ställa i varje research case: 'Vad är det nya som kan förklara nästa tre års acceleration — och vad hindrar konkurrenterna från att ta det?'. Om du inte kan skriva en mening om det nya, saknar bolaget N, och då bör du inte heller förvänta dig en CAN SLIM-rusning, oavsett hur snygg basen ser ut."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Det som känns tryggt — en nedgången aktie — bär på osynlig skuld: tusentals säljare ovanför. Det som känns läskigt — en aktie på nya höjder — bär på frihet: ingen som vill ut på nollan. O'Neil byter om skräck och trygghet."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Öppna en veckograf på 5 år för en aktie du tidigare avfärdat som 'för dyr eftersom den redan stigit'. Notera var de stora motståndsnivåerna ligger — var skulle gamla köpare sälja? Jämför med en aktie som nyligen noterat all-time high: hur mycket 'överhäng' finns ovanför den? Skriv två meningar om vad din intuition sa först och vad grafen säger."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar O'Neil med N:ets dubbla betydelse?",
+          "alternativ": [
+            "Nya aktier och nya obligationer i portföljen",
+            "Nytt i bolaget (produkt, ledning, bransch) och nya kurshöjder vid köptillfället",
+            "Nytt P/E-låg och nytt kursmål",
+            "Nytt kvartal och nytt räkenskapsår"
+          ],
+          "ratt": 1,
+          "tips": "Ena halvan handlar om fundamental förändring, andra halvan om var i kursgrafen köpet sker. Båda börjar på samma bokstav."
+        },
+        {
+          "q": "Varför är en aktie på all-time high enligt O'Neil ofta ett BÄTTRE köp än en djupt nedgången aktie?",
+          "alternativ": [
+            "Eftersom all-time high garanterar vinsttillväxt nästa kvartal",
+            "Eftersom den saknar 'overhead supply' — förlorare ovanför som säljer vid varje uppgång",
+            "Eftersom nyckeltalen automatiskt är lägre vid höga kurser",
+            "Eftersom fonder aldrig säljer aktier på nya höjder"
+          ],
+          "ratt": 1,
+          "tips": "Tänk utbud och efterfrågan vertikalt: vem sitter med förlust ovanför dagens kurs och vad gör dessa när kursen når deras inköp?"
+        },
+        {
+          "q": "Hur avgör du om en 'ny produkt' har moat-kvalitet i AKM1:s ramverk?",
+          "alternativ": [
+            "Om pressreleasen får minst tio omnämnanden i media",
+            "Om produkten är svårkopierad — exempelvis patentskyddad — och adresserar en växande marknad (V13)",
+            "Om produkten är billigare än konkurrenternas",
+            "Om bolaget har störst marknadsföringsbudget i sektorn"
+          ],
+          "ratt": 1,
+          "tips": "V13 handlar om skydd: vad hindrar andra från att replikera det nya och äta upp marginalerna?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "S — Utbud och efterfrågan: aktieantal, återköp och utspädning",
+      "intro": "Bokstaven S handlar om aktiens egen mikroekonomi: hur många aktier finns, vem håller dem, och förändras utbudet? Ett bolag som köper tillbaka sina aktier krymper utbudet och lyfter vinst per aktie; ett bolag som späder ut genom nyemissioner gör motsatsen. I AKM1 mappar S mot V20 Återköp som renaste variabel och V06 EV/EBITDA som normering av bolagets storlek.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundlagen är enkel: kursen är en prislapp som bestäms av utbud och efterfrågan. Ett bolag med färre aktier i cirkulation — särskilt en liten 'free float', aktier som faktiskt handlas — kan röra sig våldsamt uppåt när efterfrågan växer, eftersom varje köpare måste jaga en krympande vara. Stora, tungt omsatta bolag behöver enorma kapitalflöden för att dubbleras. O'Neils observation från vinnarstudierna: många av de största vinsterna kom i mindre bolag med stark fundamentalt driv — men notera hans varning också, ty tunn float fungerar lika snabbt nedåt. I praktiken innebär S att du noterar aktieantalet, floatens storlek och omsättningsvolymen i aktien innan du köper."
+        },
+        {
+          "type": "text",
+          "content": "S-kriteriets renaste AKM1-variabel är V20 Återköp. När ett bolag meddelar ett återköpsprogram och verkställer det — O'Neil nämner nivåer kring 5–10 % av aktierna — krymper utbudet mekaniskt samtidigt som vinst per aktie stiger per automatik, utan att verksamheten behöver växa en enda procent. Det är supply-side av CAN SLIM: samma efterfrågan möter mindre utbud. Motsatsen är utspädning: nyemissioner, optionsprogram och konvertibler som ökar aktieantalet och urvattnar befintliga ägare. O'Neils råd är att granska förändringen i antalet aktier år för år — växer antalet med flera procent per år äter det upp vinsttillväxten ur små ägares synvinkel. Aktieantalet är också nära kopplat till A-kriteriet: vinst PER AKTIE kan växa långsammare än bolagets totala vinst om utspädningen är kraftig."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till V06 EV/EBITDA kan sammanfattas så: S handlar om att prissätta utbudet i relation till det bolaget faktiskt tjänar. EV/EBITDA normerar bolagets värde — inklusive skuld — mot rörelseresultatet, vilket gör att du kan jämföra två bolag med olika aktieantal, skuldsättning och kapitalstruktur. O'Neil är dessutom tydlig med skuld: vinnare hade ofta låg skuldsättning, eftersom hög skuld både begränsar utrymmet för återköp och ökar känsligheten för räntor och konjunktur. Två S-varningar från boken att memorera: stora eller upprepade aktiesplit sent i en lång rusning är ofta en toppsignal (marknaden firar), och enorm emission 'för tillväxt' i ett bolag med svag ROE är mekaniskt värdeförstöring för dig som äger före emissionen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"S-kriteriet — utbudets hävstångar\",\"rader\":[[\"Faktor\",\"Positiv signal\",\"Negativ signal\",\"AKM1-koppling\"],[\"Aktieantal/float\",\"Litet eller krympande\",\"Växande flera %/år\",\"V20 indirekt\"],[\"Återköp\",\"Program på 5–10 % som verkställs\",\"Lovade men overksamma program\",\"V20 Återköp\"],[\"Nyemission/utspädning\",\"—\",\"Emission i svag ROE-miljö\",\"V09 + V20\"],[\"Skuldsättning\",\"Låg, refinansieringstryck lågt\",\"Hög skuld vid stigande ränta\",\"V10-stöd\"],[\"Split\",\"Tidigt i en basuppbyggnad\",\"Upprepad stor split efter lång rusning\",\"Topp-signal (AK1TS)\"],[\"Storleksnormering\",\"Jämför värde mot resultat, inte kurs\",\"Jämföra kurs per aktie mellan bolag\",\"V06 EV/EBITDA\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Vinst per aktie är en andel av ett föränderligt antal. Bolag kan tjäna mer och ändå ge dig mindre per aktie — därför läser O'Neils system aktieantalet som en aktiv variabel, inte som bokföringsdetalj. V20 är där fundamentalt och mekaniskt möts."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta ett bolag du äger. Hitta antalet aktier idag och för tre år sedan (årsredovisningens not om aktiekapital). Räkna ut den årliga förändringen i procent. Kolla därefter om bolaget har ett återköpsprogram — och om det faktiskt minskat aktieantalet eller bara ligger där. Slutsats: är utbudet på din sida eller mot dig?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kan återköp vara en kraftfull signal i O'Neils system?",
+          "alternativ": [
+            "De visar att ledningen tror på bolaget och minskar utbudet samtidigt som vinst per aktie stiger mekaniskt",
+            "De garanterar att aktien stiger eftersom bolaget köper varje dag",
+            "De sänker P/E automatiskt utan risk",
+            "De ersätter behovet av försäljningstillväxt"
+          ],
+          "ratt": 0,
+          "tips": "Tänk två effekter samtidigt: efterfrågesidan (vem köper?) och vinstsidan (vad händer med EPS när nämnaren krymper?)."
+        },
+        {
+          "q": "Ett bolag ökar sitt aktieantal med 5 % per år genom nyemissioner medan totala vinsten växer 25 % per år. Vad säger O'Neils S-perspektiv?",
+          "alternativ": [
+            "Inget problem — totala vinsten är det enda som spelar roll",
+            "Bra — fler aktier ger bättre likviditet och högre kurs",
+            "Utspädningen äter en del av tillväxten: vinsten per aktie växer långsammare än 25 %",
+            "Det är positivt eftersom emissioner alltid finansierar tillväxt"
+          ],
+          "ratt": 2,
+          "tips": "CAN SLIM mäter alltid per aktie. Vad händer med en andel när nämnaren växer?"
+        },
+        {
+          "q": "Vad är O'Neils varning om aktiesplit?",
+          "alternativ": [
+            "Split ökar alltid volatiliteten permanent",
+            "Upprepade stora split sent i en lång kursrusning är ofta en toppsignal",
+            "Split minskar aktieantalet och är därmed negativt",
+            "Split skall alltid handlas med korta positioner"
+          ],
+          "ratt": 1,
+          "tips": "Fråga varför split sker och när: vilka bolag splitar, och vad säger det om euforin kring aktien i det läget?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "L — Ledare eller eftersläpare: relativ styrka RS ≥ 80",
+      "intro": "Bokstaven L talar om för dig vilken aktie i sektorn du ska köpa: ledaren, inte eftersläparen. O'Neils mått är relativ styrka — IBD:s RS-rating från 1 till 99, där vinnarna låg på 80+ innan sina utbrott (i snitt 87). Det är AK1TS Pris-dimensionen i dess renaste form: kursens prestanda mot resten av marknaden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Relativ styrka mäter hur en aktie presterar mot alla andra aktier under en period (IBD räknar på tolv månader, viktat mot de senaste kvartalen). En RS på 85 betyder att aktien slagit 85 % av marknaden. O'Neils studier visade att de stora vinnarna hade RS 80 eller högre före utbrottet — snittet låg kring 87 — och hans tumregel är därför att inte köpa aktier med RS under 80, helst 85–90 eller bättre. Logiken: marknaden röstar med fötterna kontinuerligt, och en aktie som redan slår index bär med sig en bevisad efterfråga. I AK1TS:s språk är detta Pris-dimensionens kärna: för varje horisont (Mikro till Mega) frågar systemet vad prisbilden säger — och RS är prissvaret på frågan 'vem leder?'."
+        },
+        {
+          "type": "text",
+          "content": "L står för Leader or Laggard, och O'Neil är hård: köp de två, tre främsta aktierna i den ledande branschgruppen — inte den sjunde. När en sektor blir het, rör sig kapitalet först till de etablerade ledarna med bäst produkt, bäst resultat och bäst RS; eftersläparna lockar med att vara 'samma sak fast billigare', men de stiger senare, svagare och faller tidigare. O'Neils formulering är minnesvärd: eftersläparna är billiga av en anledning. Att köpa ledaren KAN kännas fel — den har redan stigit — men det är exakt samma misstag som N-kapitlet varnade för: att förväxla 'känns dyr' med 'är dåligt'. Ledaren är den aktie som grafen och resultaträkningen redan kommit överens om."
+        },
+        {
+          "type": "text",
+          "content": "I praktiken blir L en rangordningsövning. Steg ett: identifiera de ledande branschgrupperna — vilka sektorer leder marknaden just nu (O'Neil tittade alltid på vilka grupper som klättrat i grupprankingen)? Steg två: lista gruppens medlemmar och rangordna dem på RS och på C-kriteriets acceleration. Steg tre: begränsa dina kandidater till toppen av den listan. Missa inte heller den disciplinära sidan av L: när en ledare tappar sin relativa styrka — markerar nya toppar på svagare volym, faller mer än marknaden i korrektioner — är det ett tidigt varningstecken på att ledarskapet byts. I AK1TS viks sådana observationer in som konfluens: Pris-dimensionen som säger samma sak som Volym-teorin."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"L-kriteriet i praktiken\",\"rader\":[[\"Verktyg\",\"Vad det mäter\",\"O'Neils tröskel\"],[\"RS-rating (1–99)\",\"Aktiens prisprestanda mot hela marknaden\",\"≥ 80, gärna 85–90+\"],[\"Snitt hos vinnarna\",\"RS före utbrott i vinnarstudierna\",\"≈ 87\"],[\"Branschgruppsranking\",\"Vilka sektorer som leder marknaden\",\"Köp i toppgrupperna\"],[\"Position i gruppen\",\"Ledare vs eftersläpare\",\"Topp 2–3, aldrig nummer 7\"],[\"AK1TS-mappning\",\"Pris-dimensionen per horisont\",\"RS = prissvaret på 'vem leder?'\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Köp aldrig eftersläparen för att den är billigare än ledaren. I en sektorrally är ledaren den aktie som marknaden redan valt — eftersläparen är en zon av hopp, inte av data. RS 80+ är O'Neils sätt att tvinga dig till marknadens eget urval."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj en het sektor du känner till (exempelvis AI, försvar eller GLP-1). Rangordna fem aktier i sektorn på senaste årets prisutveckling. Kontrollera sedan topp-aktien: har den också bäst kvartalsvinst-tillväxt (C)? Jämför grafiskt hur ledaren och tvåan i sektorn betedde sig i sektorns senaste svacka — vem föll minst?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder en RS-rating på 87?",
+          "alternativ": [
+            "Aktien stigit 87 % det senaste året",
+            "Aktien presterat bättre än 87 % av alla aktier på marknaden",
+            "Aktien handlas 87 % över sitt 50-dagars genomsnitt",
+            "87 % av bolagets aktier ägs av institutioner"
+          ],
+          "ratt": 1,
+          "tips": "Ratingskalan 1–99 är en percentilranking — den jämför aktien mot alla andra, inte mot sig själv."
+        },
+        {
+          "q": "Varför avråder O'Neil från att köpa sektorns billigare eftersläpare i stället för ledaren?",
+          "alternativ": [
+            "Eftersläparna har alltid högre P/E",
+            "Eftersläparna stiger senare, svagare och faller tidigare — de är billiga av en anledning",
+            "Ledarna har alltid lägre risk oavsett kurs",
+            "Eftersläparna saknar institutionellt ägande i alla lägen"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig var kapitalet tar vägen först när en sektor blir het — och vad som händer med resten när stämningen vänder."
+        },
+        {
+          "q": "Hur mappas L till AK1TS?",
+          "alternativ": [
+            "Till Volymteorin via omsättningstal",
+            "Till Pris-dimensionen — relativ styrka är prisens svar på vem som leder",
+            "Till Brytpunkt-dimensionen via pivot-avstånd",
+            "Till Tid-dimensionen via cykellängd"
+          ],
+          "ratt": 1,
+          "tips": "RS jämför prisprestanda mellan aktier. Vilken av de fyra dimensionerna (Våg, Pris, Tid, Brytpunkt) handlar om pris?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "I — Institutionellt stöd: fonder som köper — men inte överägt",
+      "intro": "Bokstaven I handlar om vem som köper aktien utöver dig: fonder, pensioner och försäkringsbolag. En CAN SLIM-vinnare behöver institutionellt kapital för att kunna stiga kraftigt — men när varje fond redan äger aktien är uppsidan slut. I AKM1 syns mekanismen tydligast i V16 Produktlanseringar: det är katalysatorn som får institutionernas analytiker att börja värdera bolaget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En stor kursrusning kräver stort kapital, och det kapitalet finns hos institutionerna. När en aktie ska gå från 100 till 400 behöver den hundratals fonder som vill äga den under resans gång — därför letar O'Neils I-kriterium efter tecken på ökande institutionellt ägande: fler fonder i ägarlistan kvartal för kvartal, gärna fonder med bra historik, och fondförvaltare som bygger positioner successivt i stället för att korttidshandlare köper och säljer i veckovy. Även kvaliteten på ägarna spelar roll: bästa sponsorer är fonder vars egna resultat ligger i toppen, eftersom deras researchprocess antas vara bäst. För den fundamentala analysen betyder I att ägarlistan är en datakälla på samma nivå som resultaträkningen."
+        },
+        {
+          "type": "text",
+          "content": "Men I har en baksida: överägd. När tusentals fonder och varje småspararnas ETF redan äger aktien, vem återstår att köpa? O'Neil varnar för aktier som är så ägda att det institutionella köpet är förbrukat — där har nämligen nästa kvartals rapport en takåskare: varje besvikelse säljs av alla samtidigt, och utbudet av aktier blir större än efterfrågan. Rätt zon är därför i mitten av kurvan: aktien har börjat upptäckas av kvalitetsfonder (inte noll ägare, inte alla ägare), och antalet fonder ökar. Det är i AK1A:s termer samma logik som S-kapitlet — utbud och efterfrågan — fast mätt på ägarsidan. En liten ärlighetsnotering: AKM1 har ingen direkt 'ägande'-variabel; kopplingen går via V16 Produktlanseringar, för det är normalt den katalysator som gör att bolaget syns i institutionernas skärmar och analytikernas nätverk överhuvudtaget."
+        },
+        {
+          "type": "text",
+          "content": "Konkret arbetar du med I genom kvartalsvisa ägarförändringar. Många databaser (och fondernas egna rapporter) visar vilka fonder som äger en aktie och hur positionerna rör sig. Frågorna är tre: växer det totala antalet ägarfonder? Är de nya ägarna av god kvalitet? Och hur stor andel av bolaget äger institutioner sammanlagt — låg andel med ökande intresse är den klassiska vinnarzonen, extremt hög andel är uttjatad marknad. Notera samspelet med L: institutionellt kapital är ofta det som ligger bakom en stigande RS-rating, så en aktie med RS 85 och växande fondägande har två bekräftade bokstäver på en gång. Det är konfluens i AK1TS:s mening — flera oberoende mätningar som pekar samma håll."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Institutionellt ägande är bränslet i uppförsbacken och bagaget i nedförsbacken. Du vill köpa aktien när fonderna börjar upptäcka den — inte när den sista fonden skrivit in den i sina hörnpelare."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta en av dina C-kandidater från kapitel 2 och slå upp dess största institutionella ägare. Jämför med läget för ett år sedan: har antalet fonder ökat eller minskat? Finns det namnkunniga förvaltare bland de nya? Skriv en rad: 'I-bokstaven: uppfylld / ej uppfylld / överägt' — med motivering."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är det bästa läget för institutionellt ägande enligt I-kriteriet?",
+          "alternativ": [
+            "Ingen institution äger aktien alls — rent spel",
+            "Alla större fonder äger redan aktien — tryggt",
+            "Kvalitetsfonder börjar bygga positioner och antalet ägare växer kvartal för kvartal",
+            "Endast korttidshandlare handlar aktien dagligen"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på efterfrågans livscykel: du vill stiga på samma våg som kapaciteten växer — varken före alla eller efter alla."
+        },
+        {
+          "q": "Varför är en 'överägd' aktie farlig i O'Neils system?",
+          "alternativ": [
+            "För att fonder alltid säljer vid kvartalsrapporter",
+            "För att det institutionella köpet redan är förbrukat — vid besvikelse säljer alla samtidigt och utbudet överstiger efterfrågan",
+            "För att överägda aktier alltid har hög P/E",
+            "För att fonder inte får äga mer än 10 % av ett bolag"
+          ],
+          "ratt": 1,
+          "tips": "Använd S-kapitlets mekanik på ägarsidan: vem finns kvar att köpa när alla redan köpt?"
+        },
+        {
+          "q": "Hur kopplar kursen I-bokstaven till AKM1?",
+          "alternativ": [
+            "Via V16 Produktlanseringar — katalysatorn som gör att bolaget syns hos institutionernas analytiker",
+            "Via V20 Återköp — fonder köper när bolaget köper",
+            "Via V09 ROE — fonder äger bara hög-ROE-bolag",
+            "Via V01 Försäljningstillväxt — fondernas ägande beräknas ur intäkterna"
+          ],
+          "ratt": 0,
+          "tips": "AKM1 har ingen direkt ägarvariabel — vilket V-block beskriver den händelse som normalt föranleder att institutioner upptäcker ett bolag?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 11,
+      "title": "M — Marknadsriktningen: distributionsdagar och follow-through days",
+      "intro": "Bokstaven M är systemets försäkring: 3 av 4 aktier följer marknadsriktningen, så oavsett hur bra en aktie ser ut, kommer den sannolikt ned i en marknadskorrektion. O'Neil ersätter prognoser med två mätbara signaler: distributionsdagar som varnar för toppar, och follow-through days som bekräftar bottnar. Det är AK1TS:s cykelperspektiv — Tid-dimensionen och Volymteorin tillsammans.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "O'Neils hårda sanning: tre av fyra aktier, hur bra de än är, följer så småningom den allmänna marknadens trend. Därför börjar och slutar varje CAN SLIM-process med samma fråga — vilket håll är marknaden på just nu? Men O'Neil prognosticerar inte; han mäter. Marknadsriktningen läses av i indexens (S&P 500, Nasdaq, Dow) dagliga pris och volym, och två byggstenar räcker långt. Den första är distributionsdagen: en dag då indexet faller på högre volym än dagen innan. Enstaka sådana dagar är buller; men fyra, fem distributionsdagar inom en fyra–fem veckors period har historiskt oftast markerat att en topp är på väg att formas. Förlust på ökad volym = institutionellt säljtryck; det är Volymteorins budskap i AK1TS, applicerat på indexet självt."
+        },
+        {
+          "type": "text",
+          "content": "Den andra byggstenen är follow-through day, som bekräftar att en botten kan vara på plats. Mekaniken: efter en ordentlig nedgång noteras dagen då indexet vänder upp — det är rallyförsökets dag 1. Om indexet sedan, typiskt dag 4 till 7 från den startpunkten (ibland senare), stiger minst +1,7 % på volym som är högre än dagen innan, har en follow-through day inträffat — historiskt en stark indikation på att en ny upptrend börjat. Viktigt med ärlighet: en follow-through day bevisar inte bottnen hundraprocentigt; en del följs av svaga marknader och misslyckas. Därför väntar rutinen på bekräftelse: köp inte allt på en gång, låt ledande aktiers utbrott och indexets fortsatta styrka validera signalen. Signaler bekräftas av vad som händer EFTER dem."
+        },
+        {
+          "type": "text",
+          "content": "M-kriteriet är också kursens tydligaste cykelperspektiv. Marknaden rör sig i återkommande rytm — ackumulation, upptrend, distribution, nedtrend — och AK1TS fångar detta i Tid-dimensionen: vilken fas är vi i, hur länge har den varat, och vad säger volymen om fasens hälsa? O'Neils praktiska konsekvens är obekväm men befriande: i en distributionsfas köper du inte nya positioner, oavsett hur många bokstäver aktien uppfyller; i en bekräftad upptrend är du agressiv med ledare som bryter ut ur baser. Detta är marknadstiming utan spåkula — inte en profetia om imorgon, utan en mätning av efterfrågan vs utbud på indexnivå, med tydliga regler för vad mätningen tillåter dig att göra."
+        },
+        {
+          "type": "text",
+          "content": "Så ser veckorutinen ut: följ indexens pris och volym dagligen. Markera varje distributionsdag i en kalender. Räkna: hur många under de senaste fyra–fem veckorna? Vid fyra–fem: minska exponeringen, strama åt stoppen, köp inget nytt. Efter en kraftig nedgång: identifiera dag 1 för rallyförsöket och börja räkna framåt mot dag 4–7. Kommer +1,7 %+ på stigande volym: notera follow-through, börja forska köpvärda ledare (C-A-N-S-L-I kandidater med färska baser) och skala in successivt. Den som gör detta i sex månader har en marknadsdagbok — och en helt annan känsla för M än den som bara läser rubriker."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"M-kriteriets två signaler\",\"rader\":[[\"Signal\",\"Definition\",\"Tolkning\"],[\"Distributionsdag\",\"Indexet faller på högre volym än föregående dag\",\"Institutionellt säljtryck\"],[\"4–5 st / 4–5 veckor\",\"Klustring av distributionsdagar\",\"Topp risk — minska exponering, inga nya köp\"],[\"Rallyförsök dag 1\",\"Indexet vänder upp efter nedgång\",\"Startpunkt för räkning\"],[\"Follow-through day\",\"Dag 4–7+: indexet +1,7 %+ på ökad volym\",\"Möjlig ny upptrend — men bekräfta med ledarnas utbrott\"],[\"Misslyckad FTD\",\"Indexet gör nya låg efter FTD\",\"Avbryt inköp, återgå till försvar\"],[\"AK1TS-mappning\",\"Tid-dimensionen (cykelfas) + Volymteorin\",\"Konfluens: fas + volym pekar samma håll\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Du behöver inte veta var marknaden är om sex månader — du behöver veta vad marknaden GÖR just nu, mätt i pris och volym. M ersätter spådom med mätning: distributionsdagar och follow-through days är marknadens egna ord om sin riktning."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Öppna en daggraf på ett brett index (S&P 500 eller en index-ETF som iShares Core S&P 500) med volymstaplar. Gå igenom de senaste fem veckorna dag för dag och markera varje distributionsdag (index ned på högre volym). Räkna ihop. Leta sedan bakåt i tiden till senaste stora botten: hittar du en dag 4–7 med +1,7 %+ på ökad volym efter ett rallyförsök? Skriv slutsats om aktuell marknadsfas."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en distributionsdag?",
+          "alternativ": [
+            "En dag då indexet stiger på lägre volym",
+            "En dag då indexet faller på högre volym än föregående dag",
+            "En dag då aktier delas ut till ägarna",
+            "En vecka då fem aktier gör nya höjder"
+          ],
+          "ratt": 1,
+          "tips": "Ordet kommer från att institutioner 'distribuerar' — säljer — sina aktier. Vad krävs pris- och volymmässigt för att ett stort säljtryck ska synas?"
+        },
+        {
+          "q": "Vad kännetecknar en follow-through day?",
+          "alternativ": [
+            "Indexet faller 1,7 % på rekordvolym och bottnar",
+            "Indexet stiger minst +1,7 % dag 4–7 eller senare efter ett rallyförsöks start, på volym högre än dagen innan",
+            "Indexet stiger 1,7 % valfri dag under en nedgång",
+            "Indexet handlas plant men på mycket hög volym"
+          ],
+          "ratt": 1,
+          "tips": "Tre ingredienser: timing (dag 4–7+ från rallyförsökets dag 1), pris (+1,7 %+) och volym (ökad). Alla tre krävs."
+        },
+        {
+          "q": "En follow-through day inträffar och du köper tre ledare — varefter indexet gör nya låg. Vad säger kursen om O'Neils syn på detta?",
+          "alternativ": [
+            "Att FTD-metoden är värdelös och bör överges",
+            "Att FTD inte är en garanti — signalen kan misslyckas, och därför gäller fortfarande -7/8 %-stoppen och successiv inskalning",
+            "Att du borde köpt mer eftersom bottnen är närmare",
+            "Att felaktiga aktier valdes — indexet spelar ingen roll"
+          ],
+          "ratt": 1,
+          "tips": "Ingen enskild signal i boken är hundraprocentig — O'Neil bygger system på sannolikheter plus säljdisciplin. Vilken regel skyddar dig när en bekräftelse uteblir?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Cup with handle: formatets exakta mått",
+      "intro": "Cup with handle är CAN SLIM:s signaturformation: en grund U-formig konsolidering med ett litet handtag i basens övre del, följt av utbrott på hög volym. O'Neil ger formationen konkreta mått — djup, längd, handtagets placering och pivot-punkten — som gör den mätbar i stället för magisk. Det här kapitlet går igenom måtten en för en.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formationen liknar en tekopp med handtag på sidan. Kursen faller, bottnar mjukt, stiger tillbaka mot toppen — det är koppen — för att sedan dra sig tillbaka en sista gång i en liten nedåtlutande kanal — handtaget. Måtten: koppen ska vara minst sju veckor djup i tid (många baser är tre till sex månader, ibland längre), och dess djup i normala marknader högst 12–15 % från topp till botten. I björnmarknader kan formationer vara ungefär två till två och en halv gånger djupare, alltså 30–35 %, och fortfarande vara giltiga. Djupare än så — särskilt V-formade fall som vräks ner och studsar direkt tillbaka — är en varning: de innehåller ingen tålmodig ackumulation, inget utbudsskifte från svaga till starka händer."
+        },
+        {
+          "type": "text",
+          "content": "Handtaget är formationens psykologiska test. Det bildas i koppens övre halva — aldrig i den nedre — och bör vara grunt (cirka 8–12 % djupt) samt pågå i minst en till två veckor. Poängen med handtaget är att skaka ut de svaga: de som köpte i koppen blir otåliga när utbrottet dröjer, och deras försäljning trycker ner kursen i en smal, tyst kanal. Hälsotecknet är volymen: i ett bra handtag torkar volymen upp — dagar med låg omsättning när kursen bara sipprar nedåt. Det säger att ingen större aktör säljer; det småsparare som tröttnar som lämnar. Utan handtag kan koppen fortfarande bryta ut (det förekommer), men handtaget ger den renaste pivot-punkten och den bästa riskkontrollen eftersom stoppet kan ligga nära."
+        },
+        {
+          "type": "text",
+          "content": "Pivot-punkten är handtagets högsta kurs — och där definieras köpet. När kursen passerar den nivån (i praktiken utlöses köpet strax ovanför, klassiskt cirka tio cent över pivot-nivån i äldre amerikansk litteratur) på kraftigt ökad volym, minimum 40–50 % över dagens genomsnittliga omsättning, är utbrottet bekräftat. Varför just volymen? Ett genombrott på svag volym kan vara ett falskt utbrott — kurser som drivits upp av brist på säljare snarare än av köpvilja; institutionellt kapital efterlämnar alltid volym. Måtten gör formationen falsifierbar: du kan innan köpet skriva ner pivot, stopp (strax under handtagets låga) och volymkrav — och sedan låta marknaden antingen uppfylla eller inte uppfylla listan. Ingen känsla, bara checklista."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Cup with handle — måtttabellen\",\"rader\":[[\"Mått\",\"Krav\",\"Kommentar\"],[\"Koppens längd\",\"Minst 7 veckor\",\"Ofta 3–6 månader\"],[\"Koppens djup\",\"≤ 12–15 % i normal marknad\",\"Björnmarknad: upp till 2–2,5x djupare\"],[\"Form\",\"Rund U-botten\",\"V-formade baser är varningstecken\"],[\"Handtagets läge\",\"Övre halvan av koppen\",\"Aldrig i nedre\"],[\"Handtagets djup\",\"Cirka 8–12 %\",\"Grunt är bra\"],[\"Handtagets längd\",\"Minst 1–2 veckor\",\"Smal, nedåtlutande kanal\"],[\"Volym i handtaget\",\"Torkar upp\",\"Ingen institutionell försäljning\"],[\"Pivot\",\"Handtagets högsta kurs\",\"Köp strax ovanför\"],[\"Utbrottsvolym\",\"≥ 40–50 % över snittet\",\"Annars misstänkt utbrott\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Handtaget är formationens svek: sista utbrytningen av svaga ägare precis innan utbrottet. Tyst volym i handtaget betyder att de som säljer är små och otåliga — och att de stora står kvar. Det är därför pivot-köpet känns läskigt att göra och fungerar de gånger det respekteras."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Öppna en veckograf (med volym) på en kvalitetsaktie som stigit mycket det senaste året. Scanna bakåt i tiden: hitta en cup with handle FÖRE den stora stigningen. Mät koppens djup i procent, dess längd i veckor, handtagets placering och längd. Hade volymen ett tork-läge i handtaget? Skriv måtten bredvid tabellens krav och betygsätt formationen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur djup får en cup with handle vara i en normal marknad?",
+          "alternativ": [
+            "Högst 5 %",
+            "Högst 12–15 % (i björnmarknader upp till ungefär dubbla och lite till)",
+            "Högst 40–50 %",
+            "Djupet spelar ingen roll om formationen är symmetrisk"
+          ],
+          "ratt": 1,
+          "tips": "Formationen handlar om tålmodig ackumulation — hur djupt kan ett bolag falla och ändå sägas vara 'i vila' snarare än i kris?"
+        },
+        {
+          "q": "Var ska handtaget ligga, och vad är hälsotecknet i det?",
+          "alternativ": [
+            "I koppens nedre halva, med stigande volym",
+            "I koppens övre halva, med upp-torkande volym",
+            "Precis vid koppens topp, med rekordvolym",
+            "Var som helst, volymen saknar betydelse"
+          ],
+          "ratt": 1,
+          "tips": "Tänk vem som säljer i handtaget: svaga och otåliga. Vilken volymbild skapar de — och var i formationen hinner kursen ligga när de säljer?"
+        },
+        {
+          "q": "Vad definierar pivot-punkten och ett bekräftat utbrott?",
+          "alternativ": [
+            "Koppenens botten, samt två stigande dagar",
+            "Handtagets högsta kurs, passerad på volym minst 40–50 % över dagssnittet",
+            "50-dagarsmedelvärdet, passerat på vilken volym som helst",
+            "Koppenens vänsterkant, passerad på tre lågvolymdagar i rad"
+          ],
+          "ratt": 1,
+          "tips": "Pivot är handtagets topp — och beviset på att genombrottet är äkta ligger i volymen. Vilket tal sätter O'Neil som minimikrav?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Double bottom, flat base och de andra formationerna",
+      "intro": "Cup with handle är huvudformationen, men inte den enda. O'Neils databas identifierade flera återkommande baser: double bottom med sitt W, den platta och korta flat basen, det grundande saucer-formatet och den stigande ascending base. Gemensamt för alla: de bygger utbudsskifte innan utbrottet, och volymen avslöjar om formationen är äkta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Double bottom ser ut som ett W. Kursen faller, stiger till en mellantopp, och faller en andra gång — och det finns ett litet men viktigt krav: det andra benet ska underminera det första, alltså nå en aning lägre botten. Det låter konstigt men har logik: det sista stop-loss-läget under den första botten rensas ut, de sista svaga ägarna kapitulerar, och utbudet som återstår tillhör köparna. Köppunkten definieras som mellantoppens högsta kurs (plus handtag om sådant finns — en double bottom med handtag är den starkaste varianten). V-formade, våldsamma W:n utan konsolidering är liksom i koppen varningstecken; du vill se tålamod i båda bottnarna."
+        },
+        {
+          "type": "text",
+          "content": "Flat base är formationens vilopaus: en kort, grund sidledesrörelse på minst fem veckor där kursen korrigerar högst 15 %. Den uppstår ofta EFTER ett utbrott ur en cup — aktien rusar några veckor, vilar platt, och fortsätter. Eftersom den är grund kräver den att du redan är beredd: pivot är formationens högsta kurs och utbrottet ska komma på samma 40–50-procentiga volymökning. Sedan finns saucer with handle — ett långsamt, brett och grunt bassäng som kan ta månader att bygga men som ofta föregår långa trendrallyn — och ascending base, där aktien gör tre successiva djupare pullbacks (vanligen 15–20 %) där varje återhämtning leder till ny topp: en trestegstrappa som visar att köparna växer sig starkare för varje svacka, ett av de mest bullisha mönster O'Neil beskrev."
+        },
+        {
+          "type": "text",
+          "content": "Två tvära regler binder samman alla formationer. Regel ett: volymen ska torka i basens slutskede och explodera vid utbrottet — formationer som byggs på hög och oregelbunden volym nedåt bär på institutionell försäljning, inte ackumulation. Regel två: grunda baser i tuffa marknader är farligare än djupa baser i starka — djupet ska tolkas mot marknadsläget (M-bokstaven), och en bas som bildas under en marknadsnedgång har motvind även vid perfekt form. I AK1TS:s termer är formationerna Brytpunkt-dimensionens material: basen definierar var köpet utlöses (pivot), var felet medges (under handtaget/botten) och hur långt målet ligger (formationens höjd projiceras uppåt). Chartläsning utan dessa tre siffror är dekoration."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Basformationerna jämförda\",\"rader\":[[\"Formation\",\"Form\",\"Typisk längd\",\"Typiskt djup\",\"Pivot\"],[\"Cup with handle\",\"U-botten plus handtag\",\"7+ veckor, ofta 3–6 mån\",\"≤ 12–15 % (normal marknad)\",\"Handtagets topp\"],[\"Double bottom\",\"W, andra benet lägre\",\"Flera månader\",\"20–35 %\",\"mellantoppens högsta kurs\"],[\"Flat base\",\"Platt sidledes\",\"Minst 5 veckor\",\"≤ 15 %\",\"Formationens topp\"],[\"Saucer with handle\",\"Brett grundt bassin\",\"Många månader\",\"Grund\",\"Handtagets topp\"],[\"Ascending base\",\"Tre högre bottnar\",\"Veckor–månader\",\"15–20 % per steg\",\"Senare toppen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Det andra benet i en double bottom SKA vara lägre än det första — det är inget fel, det är mekaniken: den sista gruppen svaga ägare ska rensas ut innan kursen får flyga. Det som ser farligast ut i en bas är ofta det friskaste."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj två aktier ur en ledande sektor (din L-övning). Scanna deras veckografer efter senaste årets baser. Klassificera varje bas: cup with handle, double bottom, flat base eller ingen. Mät djup och längd, kontrollera volymtorkan i slutet och volymökningen vid utbrottet. Vilken av de två byggde den renaste basen?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är det viktiga kravet på det andra bottnarna i en double bottom?",
+          "alternativ": [
+            "Den måste ligga exakt på samma nivå som den första",
+            "Den ska underminera — ligga något lägre än — den första bottnen",
+            "Den måste vara minst dubbelt så djup",
+            "Den får inte vara lägre, det är ett brustet mönster"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vilka stopp som sitter placerade under den första botten — och vad som händer med de sista svaga ägarna om den nivån bruts."
+        },
+        {
+          "q": "Hur känns en flat base igen, och var bildas den ofta?",
+          "alternativ": [
+            "Djup korrektion på 30 %+ under minst ett halvår, efter en nedgång",
+            "Grund sidledesrörelse på minst fem veckor med korrektion högst 15 %, ofta efter ett tidigare utbrott",
+            "En V-formad botten som bara varar en vecka",
+            "En formation som bara bildas i index, aldrig i aktier"
+          ],
+          "ratt": 1,
+          "tips": "Nyckeln är kombinationen tid (minst fem veckor) och ytterligt begränsat djup — det är en vilopaus, inte en kris."
+        },
+        {
+          "q": "Vad är ascending base och varför betraktas den som bullish?",
+          "alternativ": [
+            "En bas som stiger med marknaden, samma nivå som index",
+            "Tre successiva pullbacks där varje återhämtning leder till ny topp — köparna växer starkare för varje svacka",
+            "En bas som stiger ovanför 50-dagarsmedelvärdet",
+            "En bas med stigande volym hela vägen ner"
+          ],
+          "ratt": 1,
+          "tips": "Rita den: topp, svacka, högre topp, grundare svacka, ännu högre topp. Vad säger trappan om trycket uppåt vs trycket nedåt?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 11,
+      "title": "Pivot-punkten och volymen: konsten att köpa rätt dag",
+      "intro": "CAN SLIM-skärmen ger dig VAD du ska köpa — formationerna ger dig VAR. Detta kapitel handlar om NÄR och HUR: den exakta köpmekaniken vid pivot-punkten, volymkravet som skiljer äkta utbrott från falska, och disciplinen att inte jaga. Det är här systemet går från teori till orderläggning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "O'Neils köpregel är befriande enkel: köp när kursen passerar pivot-punkten, på volym minst 40–50 procent över genomsnittet. Inte tidigare — att köpa i basen är att gissa om utbrottet kommer — och inte mycket senare. Hans tumregel är att inte jaga mer än cirka 5 procent över pivot-nivån; därefter blir risken för stor för att stoppet (som logiskt ligger strax under handtaget eller basen) ska hålla matematiken samman. Ett exempel: pivot ligger på 100, du köper 101, stoppet ligger 97 — risken är 4 procent; fördriver du köpet till 108 är samma stopp plötsligt 11 procent bort och regelverket brutet. Köp-punkten är alltså inte en detalj — den är hela skillnaden mellan ett system och en impuls."
+        },
+        {
+          "type": "text",
+          "content": "Volymkravet är beviset. Ett utbrott utan volym är som ett åskväder utan regn: kurser kan drivas uppåt av tunn handel — någon semesterdag, brist på säljare — men institutionellt kapital, det kapital som driver de stora trendrallyna, efterlämnar alltid fotavtryck i omsättningsstatistiken. Volymen är därför AK1TS Volymteorins bidrag till AKM1:s fundamentala bild: fundamentala data säger 'detta bolag förtjänar uppmärksamhet', volymen vid pivot säger 'kapitalet har börjat röra sig'. Utan det senare är den fundamentala bilden bara en åsikt som marknaden ännu inte delar. Falska utbrott — kursen passerar pivot, stiger någon procent och rullar tillbaka in i basen — är också information: de inträffar oftast i svaga marknadslägen (M!), och O'Neils råd är att ett utbrott som faller tillbaka in i basen och bryter dess låga ska säljas utan tvekan."
+        },
+        {
+          "type": "text",
+          "content": "Praktiska detaljer som skiljer rutin från hobby. Använd veckografer för att hitta och mäta baser (dagsgrafens brus förstorar formationer som inte finns), men övervaka själva utbrottet i dagsgraf med volym per halvtimme. Lägg inte köpet som en marknadsorder före marknadsöppning — gap upp över pivot på öppningsvolym är bättre bekräftat än att 'fiska' i öppningens kaos. Notera overhead supply en sista gång: om det finns en äldre, djupare bas ovanför nuvarande formation har kursen ett tak nära; de bästa utbrotten sker när vägen ovanför är fri (nya höjder — N). Och tränar du på exempel i efterhand, tvinga dig att bara använda information fram till varje tidpunkt: det är skillnaden mellan att studera systemet och att bli blåst av efterklokhetens säkerhet."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Systemet ska kunna skrivas på ett papper FÖRE köpet: pivot, stopp, volymkrav, maximijakt. Om någon av raderna inte kan fyllas är det inte ett systematiskt köp — det är en impuls med kostym. O'Neils metod gör tålamod och snabbhet till samma dygd: vänta månader på formationen, verkställ på minuter."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg ett köpkort för en aktie som närmar sig pivot: skriv pivot-nivån, köputlösning (strax ovanför), stopp (strax under handtaget), volymkrav (minst 40–50 % över dagssnitt) och maximijakt (5 %). Spara kortet och låt det ligga — helst utan att köpa. Att låta bli att köpa är poängen: träningen ligger i att formulera reglerna innan marknaden testar dem."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför vägrar O'Neils system att köpa mer än cirka 5 % över pivot-punkten?",
+          "alternativ": [
+            "Eftersom P/E då blir för högt",
+            "Eftersom avståndet till stoppet under basen då växer och -7/8 %-regeln inte längre går att respektera med rimlig position",
+            "Eftersom mäklaren tar högre avgifter där",
+            "Eftersom volymen alltid är lägre 5 % över pivot"
+          ],
+          "ratt": 1,
+          "tips": "Räkna på ett exempel: pivot 100, stopp 97. Var hamnar risken om du istället köper 108?"
+        },
+        {
+          "q": "Varför krävs 40–50 % volymökning vid utbrottet?",
+          "alternativ": [
+            "För att mäklaravgifterna ska bli lägre",
+            "För att institutionellt kapital — motorn i stora rallyn — alltid syns i omsättningsvolymen; tunnvolymutbrott är ofta falska",
+            "För att volymen mäter bolagets vinst",
+            "För att index alltid stiger på hög volym"
+          ],
+          "ratt": 1,
+          "tips": "Vad SKULLE en fond som köper miljontals aktier lämna efter sig i statistiken? Volymkravet är ett fotavtrycks-test."
+        },
+        {
+          "q": "Ett utbrott faller tillbaka in i basen och kursen bryter basens lägsta nivå. Vad säger systemet?",
+          "alternativ": [
+            "Köp mer — basen är billigare nu",
+            "Håll — baser bryts ofta en gång innan de lyckas",
+            "Sälj utan tvekan — utbrottet har misslyckats och skyddsregeln träder in",
+            "Vänta till nästa rapport innan något görs"
+          ],
+          "ratt": 2,
+          "tips": "Fråga inte vad du hoppas, fråga vad regeln säger. Vilket alternativ låter en känsla styra och vilket låter en förutbestämd gräns styra?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Säljreglerna: -7/8 %-stoppen, styrkesälj och toppsignaler",
+      "intro": "O'Neil skrev att de flesta investerare lärt sig köpa men nästan ingen lärt sig sälja. Hans system har därför fler säljregler än köpregler: en absolut stoppförlust på 7–8 % under inköpet, regler för att sälja in i styrka, och en katalog över toppsignaler — climax runs, exhaustion gaps och distributionsdagar i den egna aktien. Kapitlet är kursens viktigaste.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Regeln är absolut och är systemets fundament: om en aktie faller 7–8 % under ditt inköpspris — sälj. Utan förhandling, utan 'men rapporten kommer om tre veckor', utan att vänta på att 'den kommer tillbaka'. O'Neil kallar den första förlusten den bästa förlusten: den är liten, och den frigör kapital och psyke för nästa kandidat. Varför just 7–8? Därför att ett genombrott ur en korrekt bas med pivot-köp och stopp under handtaget oftast ligger inom det avståndet — om aktien faller så långt har utbrottet misslyckats och premissen är ogiltig. En aktie som köpts på 100 och faller till 92 behöver stiga 8,7 % bara för att du ska nå break-even; en som faller 50 % behöver stiga 100 %. Förlustens matematik är olinjär — därför finns stoppen, och därför är regeln absolut: varje undantag du gör bjuder in nästa."
+        },
+        {
+          "type": "text",
+          "content": "Säljsidan för vinster: sälj in i styrka, inte i panik. O'Neils huvudregel är att ta majoriteten vinster när de når 20–25 % över inköpspriset (i starka marknadslägen kan ett fåtal ledare hållas längre, och den berömda åttaveckorsregeln gäller: en aktie som stiger 20 %+ inom en till tre veckor efter utbrottet bör hållas minst åtta veckor — så kraftfulla starter leder historiskt ofta till betydligt större löp). Paradoxen att förstå: systemet sträcker vinnare och kapar förlorare, vilket är rakt emot den mänskliga impulsen att ta små vinster snabbt ('nu har jag i alla fall tjänat lite') och bära förlorare länge ('det är ju bara pappersförlust'). O'Neil menade tvärtom: dina vinster betalar dina misstag — men bara om de får växa."
+        },
+        {
+          "type": "text",
+          "content": "Toppkatalogen — signalerna att en mogen vinnare är på väg att vända. Climax top: efter en lång rusning kommer aktiens största dagskurshöjning — euforin köper toppen. Exhaustion gap: ett gap uppåt sent i löpet — sista köparna rusar in på en gång. Största veckoutbredningen (hög-låg) nånsin, efter att kursen stigit länge. distributionsdagar i den egna aktien: fall på ökad volym, upprepade tillfällen. Upprepade stora aktiesplit sent i en lång rusning (från S-kapitlet). Brott av en längre tids trendlinje som hållit länge. Uppnåendet av extrema mål — kursen stigit två-tre gånger från basen utan konsolidering. Ingen enskild signal kräver omedelbar totalförsäljning, men när flera hopas är budskapet: sälj in i styrka medan någon annan fortfarande vill köpa — för den som förstår dessa mönster baklänges har dessutom short-seller-perspektivet sitt underlag (mer om det i kapitel 14)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Säljregelträdet\",\"rader\":[[\"Läge\",\"Signal\",\"Åtgärd\"],[\"Förlust\",\"Kurs -7/8 % under inköp\",\"SÄLJ — alltid, utan undantag\"],[\"Misslyckat utbrott\",\"Kursen tillbaka in i basen och under dess låga\",\"Sälj\"],[\"Vinst 20–25 %\",\"Normalt löp efter utbrott\",\"Sälj majoriteten in i styrka\"],[\"+20 % inom 1–3 veckor\",\"Kraftstart\",\"Håll minst 8 veckor\"],[\"Climax tecken\",\"Största dagsvinsten/gapet sent i löpet, distribution i aktien\",\"Trimma/sälj i styrka\"],[\"Ledarskapsbyte\",\"RS faller, nya toppar på svag volym\",\"Minska och ompröva\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Det finns bara en försäkring i O'Neils system och den heter -7/8 %. Köpmetodiken kan vara glänsande — utan stoppdisziplin är CAN SLIM en lista med bra aktier och en dålig portfölj. Regeln skyddar inte bara kapitalet; den skyddar reglerna själva från ditt bästa argument i fel ögonblick."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Gå igenom din nuvarande portfölj eller en pappersportfölj. Skriv för varje innehav: avstånd i procent till ditt -8 %-stopp skulle ligga, och om det avståndet är större än så — varför finns inget stopp? Välj därefter en graf på en mogen vinnare och leta upp climax-toppen: fanns där en största dagsvinst, ett gap, eller distributionsdagar i slutet?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är O'Neils regel för köpförluster?",
+          "alternativ": [
+            "Sälj när förlusten når 7–8 % under inköpspriset — utan undantag",
+            "Dubbla positionen när den faller 8 % för att sänka medelpriset",
+            "Sälj aldrig på förlust — vänta till marknaden vänder",
+            "Sälj hälften vid -15 % och resten vid -25 %"
+          ],
+          "ratt": 0,
+          "tips": "Kom ihåg den olinjära förlustmatematiken: hur mycket måste en aktie stiga efter -20 % respektive -50 % för att nå noll?"
+        },
+        {
+          "q": "Vad innebär regeln om 20–25 % vinster och åttaveckorsregeln?",
+          "alternativ": [
+            "Ta alltid all vinst vid exakt +25 % oavsett läge",
+            "Ta majoriteten vinster vid 20–25 % — men en aktie som når +20 % inom 1–3 veckor efter utbrott bör hållas minst åtta veckor",
+            "Håll alla aktier minst åtta veckor innan försäljning",
+            "Lägg till i positionen vid +25 % och sälj vid +8 %"
+          ],
+          "ratt": 1,
+          "tips": "Systemet skiljer på normala löp (realisera i styrka) och exceptionella starter (ge dem tid). Vad kännetecknar den exceptionella starten?"
+        },
+        {
+          "q": "Vilket av följande är exempel på O'Neils toppsignaler?",
+          "alternativ": [
+            "En grund flat base efter ett par veckors vila",
+            "Aktiens största dagsvinst sent i en lång rusning, exhaustion gap och distributionsdagar i aktien",
+            "Ett återköpsprogram på 8 % av aktierna",
+            "Ny produktlansering i tidig fas av ett löp"
+          ],
+          "ratt": 1,
+          "tips": "Topp-signaler är euforins och utmattningens tecken — slutskedet efter en lång stigning. Vilka alternativ beskriver snarare hälsosamma tidiga skeden?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "De vanligaste misstagen — och hur du slutar göra dem",
+      "intro": "O'Neil ägnar ett helt kapitel åt investerarnas klassiska misstag, och poängen är obekväm: problemet är sällan informationen, nästan alltid beteendet. Billig aktie-jakt, averaging down, och 'jag väntar tills den kommer tillbaka till inköpskursen' är tre av de dyraste vanorna. Detta kapitel ställer dem mot systemets motregler.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Misstag ett: jaga billiga aktier. Många väljer en 8-kronors aktie framför en 800-kronors 'för att man får fler aktier för pengarna'. O'Neils svar är kategoriskt: antalet aktier är irrelevant — du köper en procentuell avkastning, inte ett antal. En billig aktie är ofta billig därför att bolagets resultat är svagt eller till och med förlustbringande, och en aktie under en viss nivå är dessutom mer lättmanipulerad. Systemets motivering: pengarna söker sig till kvalitet och acceleration (C, A, L) — inte till låst pris. Misstag två: averaging down — att köpa mer av en fallande aktie för att 'sänka medelpriset'. Detta är den exakta motsatsen till -7/8 %-regeln: du ökar exponeringen mot ett argument som redan visat sig fel, och O'Neil påminner: skulle du köpa mer av en vara som faller i värde på grund av sämre kvalitet — eller är det bara stolt ägarkärlek?"
+        },
+        {
+          "type": "text",
+          "content": "Misstag tre: 'jag väntar tills den kommer tillbaka till inköpspris, sedan säljer jag'. Detta är den psykologiska fällan att låta förlustzonen förvandlas till en policy — aktien har inte längre ett eget värde i beslutet, bara din break-even-punkt. O'Neils botemedel är att besluta reglerna FÖRE inköpet (stopp, vinstmål, toppkatalog) och sedan följa dem mekaniskt: om premissen (utbrottet, accelerationen) är död skall positionen vara det också. Till detta listar han ett antal syskonmisstag: köpa på tips och rykten i stället för data; köpa eftersläpare i stället för ledare (L); undvika aktier som gör nya höjder (N) och därmed systematiskt utesluta de bästa; ignorera marknadsriktningen (M) och köpa 'bra bolag' i distributionsfas; samt att ta små vinster i vinnare och bära stora förluster i eftersläparna — det ska vara tvärtom."
+        },
+        {
+          "type": "text",
+          "content": "O'Neils djupare poäng är att misstagen inte är intellektuella utan känslomässiga: girighet (tips, billiga lotter), hopp (averaging down, break-even-väntan), stolthet ('jag har rätt, marknaden har fel') och rädsla (vågar inte köpa nya höjder, vågar inte realisera en förlust). Därför är lösningen strukturell, inte moralisk: skriv reglerna ned, förflytta besluten till rutinens ögonblick (när du är kall) och låt orderreglerna verkställa dem (stop-marknadsorder, pivot-köp). I AK1A:s filosofi är detta detsamma som reproducierbarhet: en portfölj som drivs av regler går att granska och förbättra — en portfölj som drivs av humör går bara att ångra. Ett enkelt självtest: kan du för varje position du har nu peka på vilken regel som gäller? Om inte — positionen drivs av känsla."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ 'Jag väntar tills den kommer tillbaka till nollan' är inte en strategi — det är att låta ditt inköpspris bestämma aktiens värde. Aktien bryr sig inte om var du köpte. O'Neils hela säljsystem finns för att någon annan än din break-even ska fatta beslutet."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Gör en misstag-inventering av ditt senaste halvår som investerare (eller av en pappersportfölj). Markera per affär: följdes köp-/säljregler, eller drevs beslutet av girighet/hopp/stolthet/rädsla? Räkna ut vad en konsekvent -8 %-stopp hade kostat respektive sparat. Skriv DEN misstag-typ du gör oftast överst — det är ditt träningsområde."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Misstag → motregel\",\"rader\":[[\"Misstag\",\"Känsla\",\"Systemets motregel\"],[\"Jaga billiga aktier\",\"Girighet\",\"Köp kvalitet med acceleration: C, A, L\"],[\"Averaging down\",\"Hopp\",\"-7/8 % stopp; lägg ALDRIG till i förlorare\"],[\"Vänta till break-even\",\"Stolthet\",\"Säljregler beslutade före inköp\"],[\"Köpa på tips\",\"Girighet\",\"Kräv data: rapporter, baser, volym\"],[\"Undvika nya höjder\",\"Rädsla\",\"N: nya höjder är systemets köpzon\"],[\"Ignorera marknaden\",\"Övertro\",\"M: räkna distributionsdagar, vänta på FTD\"],[\"Ta vinster för tidigt\",\"Rädsla\",\"20–25 %-mål, 8-veckorsregeln för kraftstarter\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför avfärdar O'Neil resonemanget 'jag köper den billiga aktien för då får jag fler aktier'?",
+          "alternativ": [
+            "Billiga aktier har alltid högre utdelning",
+            "Avkastningen mäts i procent — antalet aktier är irrelevant, och lågt pris speglar ofta svagt resultat",
+            "För att man alltid ska köpa aktier över 800 kronor",
+            "För att små bolag aldrig kan växa"
+          ],
+          "ratt": 1,
+          "tips": "Vad köper du egentligen — ett antal papper eller en procentuell avkastning? Och vad har sannolikt format det låga priset?"
+        },
+        {
+          "q": "Vad är Fel med averaging down enligt systemet?",
+          "alternativ": [
+            "Det ökar exponeringen i en position vars premiss redan visat sig fel — rakt emot -7/8 %-regeln",
+            "Det sänker medelpriset för mycket",
+            "Det fungerar bara i upptrender",
+            "Mäklare avråder från det"
+          ],
+          "ratt": 0,
+          "tips": "Fråga vad som händer med din totala exponering om teorin bakom köpet redan slagits omkull — och vilken regel i kapitel 12 som direkt motsäger beteendet."
+        },
+        {
+          "q": "Vilket är O'Neils strukturella botemedel mot känslodrivna misstag?",
+          "alternativ": [
+            "Att läsa fler böcker om psykologi",
+            "Att besluta reglerna före inköpet och verkställa dem mekaniskt — stopp, vinstmål, toppkatalog",
+            "Att handla mer sällan än en gång per kvartal",
+            "Att alltid diskutera beslut med en rådgivare först"
+          ],
+          "ratt": 1,
+          "tips": "När är du som mest kall och rationell — i sekunden av förlust, eller i planeringens lugn? Var borde besluten fattas?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "CAN SLIM mot Graham: den öppna spänningen mellan skolorna",
+      "intro": "O'Neil är öppet kritisk mot Grahams 'köp billigt'-skola och menar att de största vinnarna nästan aldrig var billiga — i hans data hade de snitt P/E kring 31 mot marknadens 12–15 vid utbrottet. Det här kapitlet tar spänningen på allvar: vad value-investerare ser som O'Neils svagheter, vad O'Neils läger svarar, och vad en short-seller ser i samma signaler — och vems kritik som egentligen är starkast.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fronten går mellan två djupt logiska system. Grahams värld: köp med marginal mellan pris och beräknat värde, gärna när marknaden är deprimerad, diversifiera, acceptera att tiden är din vän. O'Neils värld: köp när tillväxten accelererar och aktien bryter ut ur en bas på volym — även till multipel-priser, eftersom tillväxtens komponent snabbt täcker det dyrare priset. O'Neils argument från data: vinnarna i hans studier handlades till genomsnittligt P/E kring 31 när de bröt ut — dubbelt marknadens — vilket han använder för att avfärda P/E som urvalsmått ('P/E-myten'): billiga aktier var ofta billiga av goda skäl, och kvalitet köps sällan på rea. Graham-lägrets motargument: att multipel-expansion från 31 till 60 är en enklare förklaring till många CAN SLIM-löp än fundamentala förbättringar — och att multipel-expansion är just det som vänder i climax (kapitel 12)."
+        },
+        {
+          "type": "text",
+          "content": "Den ärliga kritiken mot CAN SLIM — som en AK1A-elev ska känna till — lyder: för det första survivorship bias: att studera de som vann bevisar inte att reglerna förutsade vinnarna, utan bara att vinnarna delade drag (avancerad fråga: hur många aktier som uppfyllde CAN SLIM-kriterierna misslyckades ändå? Boken mäter framför allt framgångsexempel). För det andra kräver systemet timing och rutin som de flesta privatpersoner saknar: missa follow-through-dagen, jaga 5 % över pivot, eller våga inte sälja på -8 % — och kanten försvinner. För det tredje omsättning och skatt: ett system som realiserar vinster vid 20–25 % betalar mer skatt och avgift än buy-and-hold, vilket äter i avkastningen. O'Neil-lägrets svar: systemet försvarar sig med sin stoppförlust-struktur — även med felkvot femtio procent blir förväntan positiv när förlusterna kapas vid 8 och vinnarna får springa till 20–25+ — och med att Grahams 'billiga' urval också kräver disciplin, bara en annan."
+        },
+        {
+          "type": "text",
+          "content": "Short-seller-perspektivet är den bästa syntesen — och en påminnelse om att AK1A har en egen shortseller-agent. Läs O'Neils signaler baklänges: distributionskluster i index (M) och i en mogen aktie, climax-toppar, exhaustion gaps, upprepade splits sent i löpet, fallande RS hos en före detta ledare, utspädande emissioner i svaga bolag (S) — allt är tecken på att utbud håller på att överväga efterfrågan på platsen. Short-seller gör med dessa mönster vad CAN SLIM gör med baser: väntar på strukturen, definerar risk, och kräver bekräftelse i volym. Därmed säger båda skolorna samma sak om marknadens natur — pris styrs av utbud och efterfrågan, och beteenden lämnar fotavtryck — men skiljer sig om VAR det finns en mätbar kant: Graham i gap mellan pris och värde hos försummade bolag, O'Neil i momentum hos framtidens ledare. AK1A:s slutsats behöver inte välja: AKM1 mäter kvalitet och värdering, AK1TS mäter timing och tryck — CAN SLIM är bäst när båda pekar samma håll, och somliga av dess toppsignaler är som gjorda för shortsidan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skolorna mot varandra — och mötespunkten\",\"rader\":[[\"Fråga\",\"Graham\",\"O'Neil\"],[\"När köper vi?\",\"När pris < inneboende värde, gärna i depressionsstämning\",\"När tillväxt accelererar och aktien bryter ut ur en bas på volym\"],[\"Multipel-view\",\"Låg P/E är kärnan i säkerheten\",\"P/E-myten: vinnare köptes till snitt ~31 mot marknadens 12–15\"],[\"Riskkontroll\",\"Margin of safety + diversifiering\",\"-7/8 % stopp + säljregler per position\"],[\"Tidsvänsatt\",\"Långt, tålmodigt\",\"Trend bunden till kvartal och marknadsfas\"],[\"Svaghet (motpartens krita)\",\"Kan fastna i 'value traps'\",\"Survivorship bias, kräver timing, skatt/omslutning\"],[\"Short-signalerna\",\"(ej Grahams område)\",\"Distribution, climax, exhaust-gap, split — lästa baklänges\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ CAN SLIM och Graham är oense om VAR kanten finns — men ense om att kanten bara finns där beteendet är reglerat. Båda skolorna förlorar sina elever till samma fiende: känslan. Skillnaden är bara vilken känsla — rädslan för dyrt mot rädslan för att sälja fel."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta en före detta ledare som fallit hårt från toppen (välj själv exempel). Läs dess graf baklänges från toppen: hittar du climax-dagar, exhaustion gap, distributionsdagar, stora splits — alltså O'Neils toppkatalog? Skriv därefter en kort bedömning: vad såg CAN SLIM-ögat som Graham-ögat missade — och tvärtom?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är O'Neils 'P/E-myten'?",
+          "alternativ": [
+            "Att P/E alltid är det bästa urvalsmåttet",
+            "Att lågt P/E skulle betyda säker aktie — hans vinnare köptes till snitt P/E kring 31 mot marknadens 12–15",
+            "Att P/E bara fungerar på banker",
+            "Att högt P/E alltid leder till högre avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Frågan är om 'billigt' och 'säkert' är samma sak. Vad visade O'Neils data om vinnarnas multipel vid utbrottet?"
+        },
+        {
+          "q": "Vilken är den seriösa metodkritiken mot O'Neils vinnarstudier?",
+          "alternativ": [
+            "Att studierna bara omfattar 1990-talet",
+            "Survivorship bias — att studera vinnarna inte visar hur många som uppfyllde kriterierna men ändå misslyckades",
+            "Att P/E inte fanns innan 1980",
+            "Att baser inte kan mätas objektivt"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på urvalet: om man bara läser filen med de som lyckades, vilken typ av fall saknas i underlaget?"
+        },
+        {
+          "q": "Hur kan en short-seller använda O'Neils signaler?",
+          "alternativ": [
+            "Kortköpa varje utbrott ur en cup with handle",
+            "Läsa toppkatalogn baklänges — distribution, climax, exhaustion gaps, RS-fall hos ledare — som tecken på att utbud växer mot efterfrågan",
+            "Korta aktier med lägst P/E",
+            "Använda Grahams net-nets som kortkandidater"
+          ],
+          "ratt": 1,
+          "tips": "O'Neils toppsignaler beskriver ett läge där köparna är slut och säljarna tar över — vems sida vill du stå på då, och åt vilket håll?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Systemet i praktik: checklista, veckorutin och positionstorlek",
+      "intro": "CAN SLIM blir först ett system när det blir en rutin. Detta kapitel sätter ihop bokstäverna till en levande checklista kopplad till AKM1-kalkylatorn, en veckovis arbetsgång med M-arbetet i centrum, och positionstorleks-matematiken som gör -7/8 %-stoppen överlevbar. Målet: att systemet körs i din kalender, inte bara i ditt huvud.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Checklistan sju steg. C: senaste kvartalets vinst-tillväxt ≥ +25 %, gärna accelererande, med försäljning ≥ +20–25 % (V01). A: treårig tillväxt ≥ +25 %/år, ROE ≥ 17 % (V01/V09). N: en mening som förklarar det nya — produkt, ledning, bransch — och att aktien närmar sig nya höjder (V13/V16). S: aktieantalets utveckling, återköp eller utspädning, floatens storlek (V20/V06). L: RS ≥ 80 och rangordning bland de främsta i en ledande grupp (AK1TS Pris). I: fler och bättre fonder kvartal för kvartal, inte överägt (V16-mekaniken). M: marknaden i bekräftad upptrend — distributionsräkning låg eller nylig follow-through (AK1TS cykel/Tid). Sju JA = kandidat; sedan krävs formationen (kapitel 9–10) och pivot-köpet (kapitel 11). I AKM1-kalkylatorn blir de fundamentala bokstäverna en poängbild — eleven kan bokföra varje kandidat med V-variabler och låta summan ranka urvalet innan chartarbetet ens börjar."
+        },
+        {
+          "type": "text",
+          "content": "Veckorutinen. DAGLIGT (tio minuter): notera indexens pris och volym; markera distributionsdagar; räkna klustret; kontrollera om någon bevakad aktie närmar sig eller passerat pivot (köpkortet!). VECKOVIS (en timme): skanna ledande branschgrupper och deras RS-utveckling; uppdatera ägarförändringar (I) och rapportkalendern (C); mät baser som byggs i kandidaterna. KVARTALSVIS: uppdatera C- och A-talen när rapporter landar; ompröva om det nya fortfarande är nytt (N); granska portföljen mot toppkatalogen. Rutinens kraft ligger i att den flyttar besluten till schemalagda, lugna ögonblick — marknadstiming blir då en mätövning, inte en känslouppgift. Den som har en marknadsdagbok med distributionsräkning och FTD-notiser i sex månader har dessutom sitt eget lilla dataset — och börjar se hur M-historien upprepade sig."
+        },
+        {
+          "type": "text",
+          "content": "Positionstorleks-matematiken är systemets armering. Om varje position har ett stopp på 7–8 % under inköp, och du vill att ett enskilt misstag maximalt ska kosta exempelvis 1–2 % av portföljen, blir positionen ungefär 12–25 % av portföljen per slag (1 % / 8 % ≈ 12,5 %). O'Neil själv höll ofta 4–5 positioner och pyramiderade ALDRIG nedåt — tillägg görs bara när en position går med vinst, som nya pivot-genombrott. Poängen är inte exakta tal utan principen: stoppavstånd och positionstorlek måste räknas ihop INNAN köpet, annars är -7/8 %-regeln antingen tandlös (för små positioner: fyra rätt och ett fel betyder ingenting) eller dödlig (för stora: ett fel tar ut halva årets kant). Slutligen: max fyra–fem samtidiga positioner gör att varje affär kan hållas professionellt bevakad — koncentration är i det här systemet en dygd, men bara kombinerad med stoppen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CAN SLIM-checklistan mot ekosystemet\",\"rader\":[[\"Steg\",\"Fråga\",\"Källa\",\"Ekosystem\"],[\"C\",\"Kvartalsvinst ≥ +25 %, accelererande, med försäljning?\",\"Rapport\",\"V01, V04\"],[\"A\",\"3 år ≥ +25 %/år, ROE ≥ 17 %?\",\"Årsredovisning\",\"V01, V09\"],[\"N\",\"Vad är det nya? Nya höjder?\",\"Bransch, graf\",\"V13, V16\"],[\"S\",\"Krymper eller växer utbudet?\",\"Aktieantal, program\",\"V20, V06\"],[\"L\",\"RS ≥ 80, topp 2–3 i ledande grupp?\",\"Ranking\",\"AK1TS Pris\"],[\"I\",\"Fler kvalitetsfonder, ej överägt?\",\"Ägarlista\",\"V16-mekanik\"],[\"M\",\"Uptrend bekräftad? Distribution? FTD?\",\"Index dagligen\",\"AK1TS cykel/Tid + Volym\"],[\"Bas + pivot\",\"Giltig bas, köpkort klart?\",\"Veckograf\",\"AK1TS Brytpunkt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Systemet lever i kalendern, inte i huvudet. En checklista som inte har en schemalagd stund att köras i är en teori; -7/8 %-regeln utan uträknad positionstorlek är en önskan. CAN SLIM slutar vara en bok den dag den blir en rutin."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg din CAN SLIM-rutin nu: (1) Skapa sju-raders-checklistan i din anteckningsapp. (2) Boka en daglig 10-minutersblock och ett veckovis 1-timmesblock i kalendern. (3) Välj MAX fem bevakningsobjekt och skriv deras pivot-nivåer. (4) Räkna ut din positionstorlek från ett 8-procentstopp. Rapportera för dig själv: vad heter dina fyra distributionsdagar senaste månaden — eller finns de inte?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Du vill att ett stopp-utslag på -8 % maximalt kostar 1 % av portföljen. Hur stor får positionen vara?",
+          "alternativ": [
+            "Cirka 8 % av portföljen",
+            "Cirka 12,5 % av portföljen (1 % / 8 %)",
+            "Cirka 25 % av portföljen",
+            "Cirka 50 % av portföljen"
+          ],
+          "ratt": 1,
+          "tips": "Räkna baklänges: om hela positionen faller 8 % när stoppet slår, vilken andel av portföljen gör att den förlusten blir 1 %?"
+        },
+        {
+          "q": "Vad gäller för tillägg (pyramidering) i O'Neils system?",
+          "alternativ": [
+            "Lägg till när positionen faller, för att sänka medelpriset",
+            "Lägg aldrig till — positionen är fast efter första köpet",
+            "Lägg till endast när positionen går med vinst, exempelvis vid nya pivot-genombrott",
+            "Lägg till slumpmässigt för att jämna ut inträdestidpunkten"
+          ],
+          "ratt": 2,
+          "tips": "Systemet ökar exponering som belöning till bevisad styrka — aldrig som tröst åt svaghet. Vilket alternativ är belöning?"
+        },
+        {
+          "q": "Vilken är den DAGLIGTA kärnuppgiften i veckorutinen?",
+          "alternativ": [
+            "Läsa alla rapporter för bevakningslistan",
+            "Notera indexens pris och volym, markera distributionsdagar och kontrollera pivot-nivåer",
+            "Räkna om treåriga vinstserier för varje aktie",
+            "Kontrollera ägarlistor hos alla bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad förändras varje handelsdag och måste mätas varje handelsdag — och vad hänger ihop med köpkorten?"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 11,
+      "title": "Syntesen: vinnarmatte, O'Neils arv och den kompletta investeraren",
+      "intro": "Det sista kapitlet räknar på systemets matematik — varför femtio procents felkvot kan bli en god avkastning — och sätter O'Neils arv i ekosystem-sammanhang: CAN SLIM är den praktiska föreningen av AKM1:s fundamentala poängbild och AK1TS:s tekniska timing. Kursen slutar där boken börjar: hos vinnarstudierna, och hos dig som deras nästa student.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vinnarmatten är systemets hjärta och förklaring. Antag tio affärer där hälften blir förlorare som stoppas vid -8 % (fem fel = -40 % summerat) och hälften vinnare som realiseras vid +22 % i genomsnitt (fem rätt = +110 %). Netto: +70 % på de tio affärerna — med femtioprocentig träffsäkerhet. Byt ut några av vinnarna mot löp på +50 till +100 % (de åttaveckors-bolagen) och förväntan stiger snabbt. Detta är hela hemligheten bakom O'Neils påstående att man kan ha fel hälften av tiden och ändå tjäna bra: systemet är inte byggt för att ha rätt, det är byggt för att betala när det har rätt och skydda när det har fel. Därmed är -7/8 %-regeln inte en detalj i systemet — den ÄR systemet, och allt annat är dess konstruktion för att maximera antalet tillfällen då vinnarmatten får arbeta."
+        },
+        {
+          "type": "text",
+          "content": "O'Neils arv sträcker sig långt utanför boken. Han grundade Investor's Business Daily 1984 som ett datadrivet alternativ för aktieurval, byggde ett av de första datoriserade aktiedatabaserna på 1960-talet (grunden till vinnarstudierna som senare utvidgades till att omfatta 1880-talet och framåt i vissa analyser), och hans metod möter eleven idag i RS-rankningar, sektorrankningar och utbildningsmaterial över hela branschen. Men arvet är också pedagogiskt: O'Neil insisterade på att marknadslogik går att LÄRA — att institutionernas fotavtryck (volym, formationer, distribution) är läsbara för vem som helst som lär sig mäta i stället för att gissa. Det är samma övertygelse som AK1A Research Lab vilar på: att finansanalys är hantverk, inte gåva, och att regler slår inspiration."
+        },
+        {
+          "type": "text",
+          "content": "För ekosystemet blir CAN SLIM den praktiska bro eleven kan gå över varje vecka: AKM1-kalkylatorn ger bokstäverna C, A, N, S och I ett poängspråk (V01, V04, V09, V13, V16, V20), AK1TS ger L och M deras timing-språk (Pris-dimensionens relativa styrka; cykel, Tid och Volym i marknadsarbetet), och chartarbetet binder samman allt vid pivot-punkten. Konfluens är nyckelordet: systemet är som starkast när flera oberoende mätningar — fundamentala poäng, RS, volym, marknadsfas — pekar samma håll, och som svagast när de retas. Den kompletta investeraren som den här kursen formar håller därför två sanningar samtidigt: vad bolaget är värt (AKM1) och vad marknaden just nu gör med det (AK1TS). O'Neils livsverk visar att det inte är ett antingen-eller — det är där systemen möts som den största kanten finns. Studera vinnarna, mät reglerna, håll stoppen — och låt matte och tålamod göra resten."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ CAN SLIM:s slutgiltiga lärdom är inte en aktiemetod utan förväntningsmatematik: ha fel ofta, fel litet; ha rätt ibland, rätt stort. Systemet är konstruerat för att belöna ödmjukhet (stoppen) och straffa girighet (att inte sälja i climax) — därför börjar utbildningen om igen varje gång portföljen glömmer det."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Slutövningen: välj fem amerikanska och fem svenska aktier som stigit mest det senaste året. Kör den sju-radiga checklistan baklänges på deras data FÖRE stigningen (rapporter, aktieantal, RS, ägare): hur många bokstäver uppfyllde de? Skriv en halvsida: 'Vad CAN SLIM hade sett — och var mitt ekosystem hade bekräftat det'. Spara den som ditt eget vinnarstudium nummer ett."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Fem affärer stoppas vid -8 % och fem realiseras vid +22 %. Vad är resultatet, och vad visar det?",
+          "alternativ": [
+            "-18 %: systemet kräver mer än 50 % träffsäkerhet",
+            "Ungefär +70 %: med små förluster och större vinster räcker femtioprocentig träffsäkerhet",
+            "0 %: förlusterna och vinstarna tar ut varandra",
+            "+40 %: vinsterna fördelas jämt över affärerna"
+          ],
+          "ratt": 1,
+          "tips": "Räkna grovt: -40 % summerat på fem fel, +110 % summerat på fem rätt. Vad blir nettot — och vad händer om några vinnare fått löpa längre?"
+        },
+        {
+          "q": "Vad var O'Neils databasernas roll i metodens tillkomst?",
+          "alternativ": [
+            "De bevisade att teknisk analys fungerar på alla aktier",
+            "De gjorde det möjligt att studera vinnarna systematiskt sedan 1953 — och se de gemensamma dragen FÖRE utbrotten",
+            "De prognostiserade konjunkturer med hög träffsäkerhet",
+            "De rankade fonder efter avgifter"
+          ],
+          "ratt": 1,
+          "tips": "Gå tillbaka till kapitel 1: vad var det O'Neils datoriserade genomgång av historien kunde visa som åsikter inte kunde?"
+        },
+        {
+          "q": "Hur sammanfattas kursens ekosystem-syntes bäst?",
+          "alternativ": [
+            "AKM1 ersätter AK1TS när fundamentala poäng är höga",
+            "AK1TS ersätter AKM1 när timingen är perfekt",
+            "AKM1 ger vad-beslutet (V01, V04, V09, V13, V16, V20) och AK1TS ger när-beslutet (Pris/RS, cykel/Tid, Volym, Brytpunkt) — starkast i konfluens",
+            "CAN SLIM fungerar utan både fundamental och teknisk analys om stoppen hålls"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på bokstäverna som två familjer: fem fundamentala och två tekniska — vilken fråga svarar varje familj på?"
+        }
+      ]
+    }
+  ]
+}

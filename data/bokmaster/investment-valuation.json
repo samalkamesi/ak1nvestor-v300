@@ -1,0 +1,1266 @@
+{
+  "slug": "investment-valuation",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 18,
+  "totalMinutes": 200,
+  "title": "Investment Valuation — Damodaran: KOMPLETT",
+  "summary": "Investment Valuation av Aswath Damodaran (NYU Stern) är modern värderingsläras standardverk — den bok AKM1 V14 bygger på. Kursen går från värderingens filosofi och dividendmodellen via FCFE/FCFF, justerade räkenskaper, tillväxtekvationen g = ROIC × återinvesteringsgrad, terminal value och WACC till relativa multipeler, specialfall som banker och unga bolag samt real options, montecarlo och värderingens psykologi.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven bygga en komplett DCF i tre varianter (DDM, FCFE, FCFF), justera räkenskaper till verkliga kassaflöden (R&D-kapitalisering, arbetskapital, engångsposter), beräkna fundamentalt driven tillväxt med g = ROIC × återinvesteringsgrad, sätta terminal value med evig tillväxt högst lika med riskfri ränta, härleda kapitalkostnad via CAPM med bottom-up-beta och WACC samt använda och justera multipeler (PEG, EV/EBIT(1-t)) utan att falla för multipelfällorna. Eleven kan dessutom värdera cykliska bolag med normaliserat resultat, banker med utdelningsmodell och rättvisad P/B, unga tillväxtbolag med överlevnadsviktning samt resonera kring real options, scenarier och value gap — grunden för AKM1 V19:s marginal mellan pris och intrinsiskt värde.",
+  "why": "Damodaran är världens mest citerade värderingslärare och Investment Valuation det verk som varje seriös DCF bygger på. Utan denna bok är AKM1 V10 (kassaflöde), V12 (värderingstillväxt), V14 (värdering) och V19 (marginal: pris mot intrinsikt värde) halva sanningar — med den blir värdering ett hantverk med exakta formler istället för en känsla.",
+  "chapters_list": [
+    "1. Värderingens filosofi — pris, värde och varför skillnaden betalar",
+    "2. Modellernas karta — absolut, relativ och optionellt värde",
+    "3. Utdelningsmodellen (DDM) — det renaste kassaflödet",
+    "4. FCFE — kassaflödet som faktiskt tillhör ägarna",
+    "5. FCFF — företagsvärde, från EV till aktiekurs",
+    "6. Från bokföring till kassaflöde — Damodarans justeringar",
+    "7. Tillväxt I — historien, analytikerna och deras bias",
+    "8. Tillväxt II — den fundamentala ekvationen g = ROIC × återinvesteringsgrad",
+    "9. Terminal value — evigheten som dominerar din DCF",
+    "10. Riskfri ränta, riskpremie och CAPM",
+    "11. Beta — mätproblem, bottom-up och skuldhävning",
+    "12. Skuldkostnad och WACC — kapitalets totala pris",
+    "13. Relativ värdering — multipelns logik och jämförbara bolag",
+    "14. Multipeljustering och multipelfällor — PEG, EV/EBIT(1-t) och negativa ekvitetsmultipeler",
+    "15. Cykliska bolag och banker — normalisering och utdelningsmodellen",
+    "16. Unga bolag, nätverkseffekter och värdeförvandling — Amazon, Glaxo och Beckham",
+    "17. Real options och probabilistisk värdering — montecarlo och scenarier",
+    "18. Värderingens psykologi och value gap — Appleförsäljningen och marknadens tålamod"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "Värderingens filosofi — pris, värde och varför skillnaden betalar",
+      "intro": "Aswath Damodaran, professor vid NYU Stern, har kallats värderingens dean. Investment Valuation är hans huvudverk, och första frågan är filosofisk: vad är värde, varför skiljer det sig från pris, och under vilka antaganden om marknadens rationalitet är din värdering ens värd något?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Damodaran börjar där Graham slutade: priset sätts av utbud och efterfrågan och drivs av hopp och rädsla — värdet drivs av kassaflöden, tillväxt och risk. Hela värderingsdisciplinen bygger på den skillnaden. Hans mest citerade tes, från Narrative and Numbers (2017), lyder ungefär: en värdering är en bro mellan berättelser och siffror. Utan berättelse blir siffrorna datalek; utan siffror blir berättelsen en saga. AKM1 V19 (marginal: pris mot intrinsikt värde) är rakt av operationaliseringen av detta gap: kurs 152 kronor mot beräknat värde 120 kronor ger ingen köpsignal förrän du förstår varför marknaden betalar mer — och vem som har rätt."
+        },
+        {
+          "type": "text",
+          "content": "Bokens filosofiska kärna är synen på marknadens rationalitet. Under perfekt rationalitet anpassas priset till värdet omedelbart och varje avvikelse arbritras bort — då återstår för värderaren bara att förklara varför priset är rätt. Damodaran intar den position han kallar praktisk rationalitet: marknaden har rätt det mesta av tiden, men den gör misstag — ibland stora, ibland på hela sektorer, och ibland länge. Det är i det mellanrummet en aktiv investerare lever. Notera också att värdering behövs även av dem som tror på effektiva marknader: vid IPO-prissättning, förvärv, plausibilitetsintyg, arv och beskattning måste någon sätta ett värde oavsett vad börsen säger för dagen."
+        },
+        {
+          "type": "text",
+          "content": "Damodaran skiljer på absoluta modeller (diskonterade kassaflöden — värde ur bolaget själv), relativa modeller (multipler — pris mot jämförbara) och optionella modeller (contingent claims). Och han varnar redan på första sidan för bias: värdering är inte en objektisk jakt på sanningen. Förutfattade meningar smyger in genom bakdörren — vi väljer de antaganden som ger den slutsats vi önskar. Hans motgift är konkret: värdera bolaget innan du tittar på kursen, och tvinga dig skriva historien som bärtalens siffror. Det är exakt disciplinen AKM1-ekosystemet tränar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rationalitet → konsekvens för värderaren\",\"rader\":[[\"Syn på marknaden\",\"Konsekvens\",\"Värderarens roll\"],[\"Perfekt rationalitet\",\"Pris = värde omedelbart\",\"Förklara pris; inget utrymme för systematiskt alfa\"],[\"Praktisk rationalitet\",\"Rätt oftast — fel ibland, ibland länge\",\"Hitta gap, kräv marginal (V19), ha tålamod\"],[\"Irrationellt kaos\",\"Allt kan hända när som helst\",\"Värdering överflödig — ren speculation\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Priset betalar du, värdet får du — och Damodarans hela projekt handlar om att mäta skillnaden med ärliga antaganden istället för att gissa."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj en aktie du äger. Skriv historien i tre meningar (vem betalar, varför, hur länge) och lista sedan vilka kassaflöden som måste materialiseras för att historien ska stämma. Jämför först därefter med dagens kurs: var skulle du kunna lura dig själv — vilken antagande valde du för att få svaret du ville ha?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är skillnaden mellan pris och värde i Damodarans ramverk?",
+          "alternativ": [
+            "Priset är objektivt, värdet är en känsla",
+            "Priset sätts av utbud och efterfrågan; värdet drivs av förväntade kassaflöden, tillväxt och risk",
+            "Priset gäller kort sikt, värdet gäller bara banker",
+            "Det finns ingen skillnad på lång sikt enligt boken"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som driver vardera: den ena sätts av marknadens humör, den andra av bolagets ekonomi."
+        },
+        {
+          "q": "Vad blir konsekvensen för värderaren om marknaden antas vara perfekt rationell?",
+          "alternativ": [
+            "Priset anpassas omedelbart till värdet — värderarens uppgift blir att förklara priset, inte slå det",
+            "Alla aktier blir alltid undervärderade",
+            "Värdering blir onödigt exakt och kan bara göras av professorer",
+            "Utdelningsmodellen blir det enda tillåtna verktyget"
+          ],
+          "ratt": 0,
+          "tips": "Perfekt rationalitet betyder noll varaktigt gap mellan pris och värde — vad gör det med möjligheten till systematisk överavkastning?"
+        },
+        {
+          "q": "Varför är Damodarans 'praktiska rationalitet' den gynnsamma positionen för en aktiv investerare?",
+          "alternativ": [
+            "Marknaden har alltid fel och är lätt att slå",
+            "Marknaden har oftast rätt men kan ha fel ibland och länge — där kan noggrant värderad övertro på egna siffror betala",
+            "Den gör teknisk analys överflödig på alla horisonter",
+            "Den innebär att man aldrig behöver beräkna kassaflöden"
+          ],
+          "ratt": 1,
+          "tips": "Ordet 'praktisk' är nyckeln: marknaden är rationell i genomsnitt men inte alltid — gap finns, men de kräver tålamod."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Modellernas karta — absolut, relativ och optionellt värde",
+      "intro": "Innan formlerna kommer kartan. Damodaran delar in alla värderingsmodeller i tre familjer — absoluta, relativa och optionella — och ger ett beslutsträd för när varje variant är rätt verktyg. Fel modell för frågan är det vanligaste felet nybörjaren gör.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Absoluta modeller (DCF) härleder värdet ur bolaget självt: uppskatta kassaflöden, tillväxt och risk och diskontera. Relativa modeller (multipeler) sätter ett pris genom jämförelse med andra bolag — Damodaran kallar det pricing, prissättning, till skillnad från valuation, värdering. Optionella modeller slutligen prissätter osäkerhet och flexibilitet med optionsteori. Tre familjer, tre frågor: vad är bolaget värt i sig, vad kostar det mot jämförbara, och vad är flexibiliteten värd? Ett moget hantverk innebär att kunna alla tre — och veta att multipeln ger pris medan DCF:n ger värde (V14 resonerar på samma sätt)."
+        },
+        {
+          "type": "text",
+          "content": "DCF-familjen har tre huvudvarianter. Utdelningsmodellen (DDM) värderar bara det som faktiskt betalas ut — den passar mogna bolag med stabil utdelningspolicy, som banker och kraftbolag. FCFE värderar kassaflödet som kunde betalas till ägarna — rätt när utdelningen avviker från kapaciteten, exempelvis när bolaget samlar kontanter eller återköper aktier. FCFF värderar flödet till allt kapital och ger företagsvärdet (EV) — rätt när skuldstrukturen förändras eller vid kapitalintensiva bolag. Damodaran tillfogar excess return-modeller: värde = investerat kapital + nuvärde av framtida överavkastning — elegant just när ROIC är kärnan i historien (V12)."
+        },
+        {
+          "type": "text",
+          "content": "Genomgående boken är konsistensregeln densamma: samma tre indata — kassaflöde, tillväxt och diskonteringsränta — driver alla modeller. En multipel är en DCF i komprimerad form: alla antaganden finns kvar, de är bara osynliga. P/E på 20 är inte 'dyrt' eller 'billigt' förrän du vet vilken tillväxt, risk och ROIC som är inbakad. Därför slutar varje relativ analys i AKM1 med samma fråga som DCF:n: vilken berättelse betalar jag för?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Modell → när → kärnformel\",\"rader\":[[\"DDM\",\"Mogen utdelningsbetalare, banker\",\"V = D1/(ke - g)\"],[\"FCFE\",\"Utdelning avviker från potential\",\"V = FCFE1/(ke - g)\"],[\"FCFF\",\"Föränderlig skuld, EV-perspektiv\",\"EV = FCFF1/(WACC - g)\"],[\"Excess return\",\"Moat och ROIC i fokus\",\"V = kapital + PV(spridning × nytt kapital)\"],[\"Multipel\",\"Snabb prissättning mot peer\",\"P/E, EV/EBITDA, EV/Sales\"],[\"Option\",\"Osäkerhet + exklusivitet\",\"Basvärde + optionspremie\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Byt inte modell för att få det svar du vill ha — byt modell när frågan eller bolaget kräver det."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta tre bolag du känner: en mogen utdelningsbetalare, ett tillväxtbolag som inte betalar ut något och en bank. Bestäm för varje bolag vilken modell (DDM, FCFE, FCFF, multipel) som är huvudverktyg — och motivera med ett stycke per bolag. Notera minst ett bolag där två modeller ger olika svar och fundera på varför."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken modellfamilj hör hemma i den absoluta värderingen?",
+          "alternativ": [
+            "Multipelanalys mot jämförbara bolag",
+            "Diskonterade kassaflöden",
+            "Teknisk trendanalys",
+            "Optionsprissättning av flexibilitet"
+          ],
+          "ratt": 1,
+          "tips": "Absolut = ur bolaget självt. Vilken familj härleder värdet istället för att jämföra priser?"
+        },
+        {
+          "q": "Med vilken ränta diskonteras FCFF?",
+          "alternativ": [
+            "Kostnad för eget kapital (ke)",
+            "Den riskfria räntan",
+            "Viktad genomsnittlig kapitalkostnad (WACC)",
+            "Bankens utlåningsränta"
+          ],
+          "ratt": 2,
+          "tips": "FCFF tillhör allt kapital — ägare och långivare. Vilken ränta representerar båda?"
+        },
+        {
+          "q": "Vad menar Damodaran med att en multipel är 'en DCF i komprimerad form'?",
+          "alternativ": [
+            "Att multipeler bara får användas på banker",
+            "Att alla DCF-antaganden om tillväxt, risk och avkastning finns inbakade i multipeln — fast osynliga",
+            "Att multipeler alltid är exakt lika med nuvärdet av utdelningar",
+            "Att DCF borde ersättas helt av multipeler i moderna analyser"
+          ],
+          "ratt": 1,
+          "tips": "Komprimerad = samma innehåll, mindre synligt. Vad döljer sig i P/E-talet 20?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Utdelningsmodellen (DDM) — det renaste kassaflödet",
+      "intro": "Dividend discount model är värderingens urform: en aktie är värd nuvärdet av alla framtida utdelningar. Här föds Gordonformeln, tvåstegsmodellen och den viktigaste begränsningen i hela boken — modellen värderar utdelningen, inte bolaget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundekvationen: V0 = D1/(ke - g), där D1 är nästa års utdelning, ke ägarnas avkastningskrav och g den eviga tillväxten. Räkneexempel: senaste utdelningen D0 = 5,00 kronor, g = 3 procent och ke = 8 procent ger D1 = 5,00 × 1,03 = 5,15 kronor och V0 = 5,15/(0,08 - 0,03) = 5,15/0,05 = 103 kronor. Känsligheten är brutal: höjer du ke till 10 procent faller värdet till 5,15/0,07 = 73,6 kronor — nästan 30 procent på två procentenheters ränta. Det är därför kapitlen om kapitalkostnad senare i kursen väger så tungt."
+        },
+        {
+          "type": "text",
+          "content": "För bolag med olika faser används tvåstegs- eller trestegsmodeller: hög tillväxt i fem till tio år, sedan evig stabil tillväxt. Exempel: D1 = 2,00 kronor växer 12 procent i fem år, därefter 4 procent för alltid, ke = 9 procent. Utdelningarna blir 2,00, 2,24, 2,51, 2,81 och 3,15 kronor med nuvärdena 1,83, 1,89, 1,94, 1,99 och 2,05 — sammanlagt 9,69 kronor. Slutvärdet år 5 är D6/(ke - g) = 3,15 × 1,04/(0,09 - 0,04) = 3,28/0,05 = 65,46 kronor, med nuvärde 65,46/1,09^5 = 42,54 kronor. Totalt värde = 9,69 + 42,54 = 52,2 kronor. Lägg märke till att över 80 procent av värdet ligger i slutvärdet — ett tema kapitel 9 återkommer till."
+        },
+        {
+          "type": "text",
+          "content": "DDM:s styrka är renheten: utdelningar är verkliga kontanta flöden som inte kan målas om. Svagheten är den speglade: modellen förutsätter att utdelningen speglar bolagets förmåga. Ett bolag som betalar ut 20 men kunde betala 80 undervärderas systematiskt av DDM — skillnaden är potential till framtida utdelningar eller återköp som modellen inte ser. Damodaran listar därför DDM som huvudverktyg för mogena utdelningsbetalare och banker, medan FCFE tar över när utdelning och kapacitet glider isär (V10 kompletterar med kassaflödesperspektivet). Notera även begränsningen g ≤ riskfri ränta för den eviga fasen — ingen utdelning växer snabbare än ekonomin i evighet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Gordonmodellens känslighet — aktievärde vid D1 = 5,15 kronor\",\"rader\":[[\"ke \\\\ g\",\"g = 2%\",\"g = 3%\",\"g = 4%\"],[\"ke = 7%\",\"103 kr\",\"129 kr\",\"172 kr\"],[\"ke = 8%\",\"86 kr\",\"103 kr\",\"129 kr\"],[\"ke = 9%\",\"74 kr\",\"86 kr\",\"103 kr\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ DDM värderar utdelningen, inte bolaget — de två sammanfaller bara när styrelsen betalar ut exakt det verksamheten förmår."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 En kraftbolagsaktie betalar 6,00 kronor i utdelning som växer 2 procent, och du kräver 7 procent avkastning. Räkna värdet (D1 = 6,12; V = 6,12/0,05 = 122,40 kronor). Sänk sedan g till 1 procent (D1 = 6,06; V = 6,06/0,06 = 101,00 kronor). Hur många procent av värdet försvann på en procentenhet lägre evig tillväxt — och vad säger det om dina egna g-antaganden?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Gordonmodellen: D1 = 6 kronor, ke = 10 procent, g = 4 procent. Vad är aktien värd?",
+          "alternativ": [
+            "60 kronor",
+            "100 kronor",
+            "150 kronor",
+            "90 kronor"
+          ],
+          "ratt": 1,
+          "tips": "Räkna nämnaren först: 0,10 - 0,04 = 0,06. Dividera sedan utdelningen med den."
+        },
+        {
+          "q": "När passar utdelningsmodellen bäst som huvudverktyg?",
+          "alternativ": [
+            "Unga tillväxtbolag utan utdelning",
+            "Mogena bolag med stabil utdelningspolicy, exempelvis banker och kraftbolag",
+            "Nystartade bolag som nyligen gjort en IPO",
+            "Bolag i konkursförhandling"
+          ],
+          "ratt": 1,
+          "tips": "Modellen kräver att det faktiskt finns ett regelbundet kassaflöde till ägarna att diskontera."
+        },
+        {
+          "q": "Vilken är DDM:s främsta systematiska svaghet?",
+          "alternativ": [
+            "Utdelningar kan aldrig prognostiseras överhuvudtaget",
+            "Modellen missar värde när bolaget betalar ut mindre än det faktiskt förmår — behållna kontanter och återköp syns inte",
+            "Formeln kräver att ke är lägre än noll",
+            "Modellen kan bara användas på amerikanska bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad hände med de 60 kronorna i exemplet i texten som betalades ut istället för 20? Var tog de vägen i modellen?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "FCFE — kassaflödet som faktiskt tillhör ägarna",
+      "intro": "FCFE (free cash flow to equity) frågar inte vad bolaget betalar ut utan vad det kan betala ut. Formeln lägger tillbaka icke-kontanta poster, drar av investeringar och räknar in ny nettoskuld — och är därmed Damodarans operativa kärna för aktieägaren.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln: FCFE = nettoresultat + avskrivningar (D&A) - capex - ökning av arbetskapital + nettolåntagande (ny skuld minus amortering). Räkneexempel: resultat 120, D&A 45, capex 90, ökning av arbetskapital 25 och ny nettoskuld 30 ger FCFE = 120 + 45 - 90 - 25 + 30 = 80 miljoner. Logiken är bokstavlig: börja med det ägarna har tjänat, lägg tillbaka det som inte kostade kontanter, drar ifrån det som måste återinvesteras för att hålla tillväxten vid liv, och justera för hur finansieringen förändras. Om bolaget behåller sin skuldkvot är nettolåntagandet den andel av investeringarna som långivarna står för."
+        },
+        {
+          "type": "text",
+          "content": "Värderingen sker med Gordonlogiken på ägarnivå: V = FCFE1/(ke - g). Om FCFE växer 4 procent är nästa års flöde 80 × 1,04 = 83,2; med ke = 9 procent blir ekvitetsvärdet 83,2/(0,09 - 0,04) = 83,2/0,05 = 1 664 miljoner, eller 8,32 kronor per aktie vid 200 miljoner aktier. Jämför med DDM: betalar bolaget bara ut 40 av sina 80 miljoner i potential ser DDM hälften av värdet — skillnaden är potential till högre utdelning eller återköp som marknaden förr eller senare får se. Damodaran påpekar att återköp är dolda utdelningar: ett bolags återköp av egna aktier är ett kassaflöde till ägare som säljer."
+        },
+        {
+          "type": "text",
+          "content": "När är FCFE rätt val? När utdelningen avviker från förmågan — i bägge riktningar. FCFE överstiger utdelningen: bolaget samlar krut, värdet ligger i framtida utdelningar, återköp eller förvärv. FCFE understiger utdelningen: utdelningen är osund och håller på att äta kapital — en varning Graham hade släppt igenom med råge. FCFE diskonteras alltid med ke, aldrig WACC, eftersom flödet redan ligger efter räntor och skuldrörelser. I AKM1 är detta V10:s analys i värderingsform: frikt kassaflöde till ägarna, prissatt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"FCFE-stegen — från resultat till ägarflöde\",\"rader\":[[\"Post\",\"Logik\",\"Exempel\"],[\"Nettoresultat\",\"Startpunkt: ägarnas resultat\",\"120\"],[\"+ D&A\",\"Icke-kontant kostnad läggs tillbaka\",\"+45\"],[\"- Capex\",\"Underhåll och tillväxt kostar kontanter\",\"-90\"],[\"- Δ Arbetskapital\",\"Kapital som binds i driften\",\"-25\"],[\"+ Nettolåntagande\",\"Ny skuld minus amortering\",\"+30\"],[\"= FCFE\",\"Kan betalas till ägarna\",\"80\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Fråga inte vad bolaget betalar ut — fråga vad det KAN betala ut. Skillnaden mellan utdelning och FCFE är värdeförändringen som väntar."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Räkna FCFE själv: nettoresultat 240, D&A 60, capex 110, arbetskapitalökning 35, nettolåntagande 20. Kontrollera att svaret blir 240 + 60 - 110 - 35 + 20 = 175 miljoner. Räkna sedan ekvitetsvärdet om flödet växer 3 procent och ke är 8 procent (ledning: FCFE1 = 180,4; V = 180,4/0,05 = 3 608). Vad händer med värdet om nettolåntagandet blir noll?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken formel är korrekt för FCFE?",
+          "alternativ": [
+            "EBIT(1-t) + D&A - capex - Δ arbetskapital",
+            "Nettoresultat + D&A - capex - Δ arbetskapital + nettolåntagande",
+            "Nettoresultat + räntekostnad - utdelning",
+            "EBITDA - skatt - utdelning + återköp"
+          ],
+          "ratt": 1,
+          "tips": "FCFE ligger EFTER räntor (det är ägarnas flöde) men före utdelning — och skuldrörelser ska finnas med."
+        },
+        {
+          "q": "Resultat 100, D&A 20, capex 50, arbetskapitalökning 10, nettolåntagande 15. Vad är FCFE?",
+          "alternativ": [
+            "75",
+            "95",
+            "45",
+            "115"
+          ],
+          "ratt": 0,
+          "tips": "100 + 20 = 120; dra sedan ifrån 50 och 10; lägg till sist till 15."
+        },
+        {
+          "q": "Ett bolag betalar ut 20 men dess FCFE är 80. Vad är den korrekta slutsatsen?",
+          "alternativ": [
+            "DDM fångar hela värdet eftersom utdelningen är det enda som räknas",
+            "Bolaget betalar ut mindre än det förmår — DDM missar potential till framtida utdelningar eller återköp",
+            "FCFE bör justeras ned till utdelningen i alla lägen",
+            "Bolaget måste omedelbart höja utdelningen fyra gånger enligt Damodaran"
+          ],
+          "ratt": 1,
+          "tips": "Var finns de 60 som inte betalas ut — och kommer marknaden någonsin att se dem?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "FCFF — företagsvärde, från EV till aktiekurs",
+      "intro": "FCFF (free cash flow to firm) värderar hela bolaget oberoende av hur det finansieras: flödet till ägare och långivare diskonterat med WACC ger företagsvärdet. Därifrån är vägen till aktiekursen ren aritmetik — men bara om du håller ränta och skuld borta ur flödet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln: FCFF = EBIT × (1 - t) + D&A - capex - ökning av arbetskapital. Räkneexempel: EBIT 200, skattesats 25 procent ger EBIT(1-t) = 150; addera D&A 40, dra ifrån capex 80 och arbetskapitalökning 30: FCFF = 150 + 40 - 80 - 30 = 80. Notera vad som saknas: räntor och amorteringar. De hör hemma i diskonteringsräntan (WACC), inte i kassaflödet — att blanda in dem både i flödet och i räntan är det klassiska dubbelräkningsfelet. NOPAT, alltså EBIT(1-t), är samma bärande begrepp som ROIC-beräkningen i kapitel 8 bygger på."
+        },
+        {
+          "type": "text",
+          "content": "Värderingen: EV = FCFF1/(WACC - g) och ekvitetsvärde = EV - nettoskuld (räntebärande skuld minus kassa). Exempel: FCFF1 = 80 × 1,03 = 82,4; WACC 8 procent och evig tillväxt 3 procent ger EV = 82,4/(0,08 - 0,03) = 82,4/0,05 = 1 648. Med nettoskuld 400 blir ekvitetsvärdet 1 648 - 400 = 1 248, alltså 6,24 kronor per aktie vid 200 miljoner aktier. Fördelen är strukturneutraliteten: samma FCFF-modell gäller oavsett skuldkvot, vilket är ovärderligt när bolaget förändrar sin finansiering — värdera verksamheten först, finansieringen sedan."
+        },
+        {
+          "type": "text",
+          "content": "Damodarans konsistensregler är hårda: FCFF diskonteras med WACC, FCFE och utdelningar med ke — aldrig tvärtom. Glömmer du att dra bort nettoskulden från EV värderar du verksamheten men låtsas att den tillhör aktieägarna gratis. Tänk också på icke-rörelseposter: dotterbolagsminoriteter, överskottskassa och icke-rörelsetillgångar justeras innan du delar med antalet aktier. I AKM1 termer är FCFF V10:s företagsperspektiv: kassaflöde genererat av all kapital, innan finansieringen får sin andel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre linser på samma bolag\",\"rader\":[[\"Modell\",\"Flöde\",\"Diskonteras med\",\"Ger\"],[\"DDM\",\"Faktisk utdelning\",\"ke\",\"Aktiepris direkt\"],[\"FCFE\",\"Potentiellt ägarflöde\",\"ke\",\"Ekvitetsvärde\"],[\"FCFF\",\"Flöde till allt kapital\",\"WACC\",\"Företagsvärde (EV)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ FCFF diskonterat med WACC ger hela tåget — ekviteten är sista vagnen: EV minus nettoskuld, först därefter värde per aktie."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 EBIT 160, skattesats 25 procent, D&A 35, capex 70, arbetskapitalökning 25. Kontrollera FCFF = 120 + 35 - 70 - 25 = 60. Räkna sedan EV med WACC 9 procent och evig tillväxt 4 procent (FCFF1 = 62,4; EV = 62,4/0,05 = 1 248). Dra slutligen bort nettoskuld 300 och dela på 200 miljoner aktier — vilken kurs får du, och hur förändras den om WACC stiger en halv procentenhet?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken formel är korrekt för FCFF?",
+          "alternativ": [
+            "Nettoresultat + D&A - capex - Δ arbetskapital + nettolåntagande",
+            "EBIT(1-t) + D&A - capex - Δ arbetskapital",
+            "EBITDA - ränta - skatt",
+            "Utdelning + återköp - capex"
+          ],
+          "ratt": 1,
+          "tips": "FCFF ligger FÖRE räntor — det är flödet till både ägare och långivare. Vilken post bör därför inte finnas med?"
+        },
+        {
+          "q": "EV är 1 648, nettoskuld 400 och antal aktier 200 miljoner. Vad blir värdet per aktie?",
+          "alternativ": [
+            "8,24 kronor",
+            "10,24 kronor",
+            "6,24 kronor",
+            "5,24 kronor"
+          ],
+          "ratt": 2,
+          "tips": "Ekvitetsvärde = EV - nettoskuld. Dela sedan på antalet aktier."
+        },
+        {
+          "q": "Varför passar FCFF särskilt väl när bolagets skuldstruktur förändras?",
+          "alternativ": [
+            "För att räntekostnaden då alltid är noll",
+            "För att FCFF ligger före finansieringen — räntor och amorteringar hanteras i WACC, inte i flödet, så modellen blir strukturneutral",
+            "För att FCFF inte behöver diskonteras alls",
+            "För att banker enbart värderas med FCFF"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på var i beräkningen finansieringen bor: i flödet eller i räntan?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Från bokföring till kassaflöde — Damodarans justeringar",
+      "intro": "Damodaran lär: resultat är en åsikt, kassaflöde ett faktum. Innan någon DCF får mata med siffror måste räkenskaperna rensas — engångsposter, operating leases och framför allt R&D som bokförs som kostnad trots att det är en investering.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokföringens redovisningsprinciper förvränger kassaflödena systematiskt. Damodarans första steg är alltid att rensa EBIT: lägg tillbaka engångsposter (omstruktureringskostnader, avvecklingsvinster), konstnadsför operating leases som kapitaliseras som skuld, och omklassificera R&D från kostnad till investering. Räkneexempel: rapporterad EBIT 300 innehåller en engångskostnad på 50 samt R&D-kostnad 80 med amortering på research-tillgången 60. Justerad EBIT = 300 + 50 + (80 - 60) = 370. Efter skatt vid 25 procent blir NOPAT 370 × 0,75 = 277,5 — att hoppa över justeringarna skulle undervärdera den lönsamma kärnverksamheten med en fjärdedel."
+        },
+        {
+          "type": "text",
+          "content": "R&D-kapitaliseringen är bokens mest berömda ingrepp, med läkemedelsbolaget Glaxo som standardexempel (där amorteras forskningen över tio år). Principen: behandla R&D som en investering i en forskningstillgång, inte som en omedelbar kostnad. Justerat resultat = resultat + R&D-kostnad - amortering av research-tillgången. I mogen fas (jämna R&D-utgifter) blir effekten neutral — 200 + 80 - 80 = 200 — men under tillväxt är den stor: R&D 80 mot amortering 60 ger +20 i resultat, samtidigt som återinvesteringsgraden ändras eftersom R&D nu räknas som kapitalbindning. Märk väl: den som värderar ett forskningsbolag utan denna justering straffar det för att investera i framtiden."
+        },
+        {
+          "type": "text",
+          "content": "Arbetskapitalet är den tredje byggstenen: NWC = lagervärde + kundfordringar - leverantörsskulder. Exempel: år 1 är (500 + 400 - 300) = 600 och år 2 är (540 + 430 - 310) = 660; ökningen på 60 är kontanter som bundits i driften och dras av från FCF varje år. Capex används brutto i formeln (D&A läggs tillbaka separat) — att netta dem i flödet och samtidigt addera D&A är ett tredje klassiskt fel. Slutligen: skilj underhållscapex från tillväxtcapex i din analys, även om formlerna använder totalsiffran — det är underhållet som håller ROIC vid liv i terminal value."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Justeringar från bokföring till kassaflöde\",\"rader\":[[\"Post\",\"Problem\",\"Damodarans justering\"],[\"Engångsposter\",\"Förvränger årets resultat\",\"Lägg tillbaka kostnader, ta bort vinster\"],[\"R&D\",\"Bokförs som kostnad\",\"Kapitalisera som tillgång, amortera (läkemedel ~10 år)\"],[\"Operating leases\",\"Dold skuld\",\"Kapitalisera som skuld, justera EBIT\"],[\"Arbetskapital\",\"Tillväxt binder kontanter\",\"ΔNWC dras av från FCF\"],[\"Capex\",\"Blandas ihop med D&A\",\"Använd brutto i formlerna\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Räkenskaperna är bolagets berättelse om sig själv — kassaflödesjusteringarna är sanningen du måste bygga själv, post för post."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett bolag rapporterar EBIT 300 med en engångskostnad 50, R&D-utgift 80 och forskningsamortering 60. Beräkna justerad EBIT (svar: 370) och NOPAT vid 25 procents skatt (svar: 277,5). Lägg sedan till D&A 40, dra ifrån capex 90 och arbetskapitalökning 35 — vilken FCFF får du? Kontrollera: 277,5 + 40 - 90 - 35 = 192,5."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kapitaliserar Damodaran R&D istället för att låta det vara en kostnad?",
+          "alternativ": [
+            "För att R&D aldrig leder till intäkter",
+            "För att R&D är en investering i framtida intäkter — att kostnadsföra den direkt straffar bolag som satsar på tillväxt",
+            "För att bokföringsreglerna förbjuder R&D i EBIT",
+            "För att R&D alltid är skattefritt"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden i ekonomisk substans mellan en fabrik och en forskningspipeline?"
+        },
+        {
+          "q": "EBIT 300, engångskostnad 50, R&D-kostnad 80, amortering på research-tillgången 60. Vad är justerad EBIT?",
+          "alternativ": [
+            "300",
+            "330",
+            "370",
+            "410"
+          ],
+          "ratt": 2,
+          "tips": "Lägg tillbaka engångskostnaden; lägg sedan till skillnaden mellan ny R&D och amorteringen (80 - 60)."
+        },
+        {
+          "q": "Arbetskapitalet ökar med 60 under året. Vad händer med det fria kassaflödet?",
+          "alternativ": [
+            "Det ökar med 60 — mer kapital i driften är positivt",
+            "Det minskar med 60 — kontanter har bundits i lager och fordringar",
+            "Det påverkas inte — arbetskapital är en balansräkningsfråga",
+            "Det minskar med 30 efter skatt"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig om kontanten lämnar bolaget eller kommer in. Vart tar lagertillväxten vägen?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Tillväxt I — historien, analyikerna och deras bias",
+      "intro": "Tillväxt är DCF:ns mest känsliga indata och den där biasen gömmer sig som tjockast. Damodaran sorterar mellan historisk tillväxt, analytikerkonsensus och fundamentalt driven tillväxt — och visar varför de två första aldrig får användas okritiskt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Historisk tillväxt verkar objektiv men är fulla av metoder och fallgropar. Geometriskt medelvärde fångar sammansatt tillväxt: intäkter 100 som efter två år (+21 procent, sedan 0 procent) står i 121 ger geometriskt √(121/100) - 1 = √1,21 - 1 = 10 procent, medan det aritmetiska medelvärdet (21 + 0)/2 = 10,5 procent överdriver eftersom det ignorerar kompositten. Damodaran: använd geometriskt för långa serier, helst med logaritmisk regression — men kom ihåg att standardfelet är enormt, särskilt på resultattillväxt. Tillväxt återgår mot medelvärdet: enskilda bolags tillväxt konvergerar mot ekonomin, inte tvärtom."
+        },
+        {
+          "type": "text",
+          "content": "Analytikerkonsensus är informationsrikare men inte opartiskt. Damodarans erfarenhet: konsensus är systematiskt optimistiskt — särskilt på unga bolag och på längre horisonter — och revideras sent, med flockdrift som förstärker både eufori och panik. Långsiktiga tillväxtprognoser över fem år för en hel sektor slår ofta igenom taket för vad kapitalbindningen möjliggör (testet kommer i kapitel 8). Konsensus är därför råmaterial, inte sanning: använd det som utgångspunkt och fråga alltid vilken återinvesteringsgrad och ROIC som krävs för att siffran ska vara möjlig."
+        },
+        {
+          "type": "text",
+          "content": "Den disciplinerande frågan är ekonomin i tillväxten: varje procent tillväxt måste köpas med återinvestering i capex, arbetskapital eller FoU. Tillväxt är inte gratis — den är en transaktion där bolaget byter kapital idag mot kassaflöden imorgon. Därför testar AKM1 V12 varje tillväxtantagande mot två frågor: har bolaget kapacitet (ROIC och marginal) att leverera, och har det kapital (återinvesteringsgrad) att finansiera? Historia och konsensus får bara svara om framtiden i den mån de klarar det testet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillväxtkällor — styrkor och fallgropar\",\"rader\":[[\"Källa\",\"Styrka\",\"Fallgrop\"],[\"Historisk (geometrisk)\",\"Faktiskt utfall, objektiv\",\"Reväxlar inget; mean reversion; högt standardfel\"],[\"Analytikerkonsensus\",\"Framåtblickande, informationsrik\",\"Systematiskt optimistisk; flockdrift\"],[\"Fundamentalt driven\",\"Kopplar tillväxt till kapital\",\"Kräver antaganden om ROIC\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Historisk tillväxt är en dålig prognosmakare — inte för att historien är ointressant, utan för att tillväxt återgår mot medelvärdet."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett bolags intäkter gick från 400 till 484 på två år. Beräkna den geometriska tillväxttakten (√(484/400) - 1 = √1,21 - 1 = 10,0 procent) och jämför med det aritmetiska medelvärdet om årsutfallen var +21 och 0 procent (10,5 procent). Diskutera: varför är skillnaden 0,5 procentenheter så pass farlig i en Gordonformel med nämnare på 0,05?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Intäkter går 100 → 121 på två år (+21 procent, sedan 0 procent). Vad är den geometriska tillväxttakten och varför används den?",
+          "alternativ": [
+            "10,5 procent — aritmetiskt medelvärde är alltid bäst i DCF",
+            "10 procent — den fångar sammansatt tillväxt och överdriver inte som det aritmetiska medelvärdet",
+            "21 procent — högsta året avgör",
+            "0 procent — slutvärdet avgör allt"
+          ],
+          "ratt": 1,
+          "tips": "Vilken takt tar bolaget exakt från 100 till 121 på två år? Kontrollera: 100 × 1,10 × 1,10 = 121."
+        },
+        {
+          "q": "Vad är Damodarans huvudsakliga invändning mot analytikerkonsensus som tillväxtinput?",
+          "alternativ": [
+            "Analytiker har aldrig tillgång till bolagsinformation",
+            "Konsensus tenderar att vara systematiskt optimistisk och revideras sent, med flockdrift",
+            "Konsensus innehåller för många olika åsikter för att vara användbart",
+            "Konsensus täcker bara svenska bolag"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på incitament och gruppdynamik snarare än informationsbrist."
+        },
+        {
+          "q": "Vilken fråga bör ställas till varje tillväxtsiffra innan den används i en DCF?",
+          "alternativ": [
+            "Om tillväxten var högst de senaste fem åren",
+            "VILKEN återinvesteringsgrad och ROIC som krävs för att finansiera och leverera tillväxten",
+            "Om börsen stiger eller faller just nu",
+            "Om bolaget betalar utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 8 ger formeln — försök föranleta den: varifrån köps tillväxten?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 11,
+      "title": "Tillväxt II — den fundamentala ekvationen g = ROIC × återinvesteringsgrad",
+      "intro": "Här är bokens mittpunkt: tillväxten är inte en extern prognos utan en funktion av kapital. g = ROIC × återinvesteringsgrad binder samman tillväxt, lönsamhet och kapitalbindning — och avgör om tillväxt skapar eller förstör värde. Detta är AKM1 V12 i ren form.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den fundamentala tillväxtekvationen finns i två speglade versioner. På företagsnivå: g = ROIC × återinvesteringsgrad, där återinvesteringsgraden = (capex - D&A + Δ arbetskapital)/EBIT(1-t) och ROIC = EBIT(1-t)/investerat kapital. På ekvitetsnivå: g = ROE × retention (1 minus utdelningskvoten). Räkneexempel på ekvitetsnivå: ROE 15 procent och utdelningskvot 40 procent ger retention 60 procent och g = 0,15 × 0,60 = 9 procent. En aktieägare kan inte få mer tillväxt än vad bolagets avkastning på eget kapital multiplicerat med återhållsamhet bära — den som antar 20 procents evig tillväxt hos ett bolag med ROE 12 procent och halv utdelning frågar efter det omöjliga (0,12 × 0,5 = 6 procent är taket)."
+        },
+        {
+          "type": "text",
+          "content": "Worked example på företagsnivå: EBIT(1-t) = 120 och investerat kapital (eget kapital plus räntebärande skuld) = 1 000 ger ROIC = 120/1 000 = 12 procent. Capex 80 minus D&A 40 plus arbetskapitalökning 50 ger nettoåterinvestering 90, alltså återinvesteringsgrad 90/120 = 75 procent. Den fundamentalt hållbara tillväxten: g = 0,12 × 0,75 = 9 procent per år. Detta är den enda tillväxtsiffra som är internt konsistent — och den är samtidigt en realitetskontroll av analytikerkonsensus: påstår marknaden 15 procent tillväxt för detta bolag måste antingen ROIC eller återinvesteringsgraden upp, med allt vad det innebär för kapitalbindning och marginal."
+        },
+        {
+          "type": "text",
+          "content": "Ekvationens viktigaste konsekvens: tillväxtens kvalitet avgörs av spreaden mellan ROIC och WACC. Tillväxt med ROIC över WACC skapar värde — varje återinvesterad krona tjänar mer än den kostar. Tillväxt med ROIC under WACC förstör värde även när intäkterna växer. Effektivitetstillväxt kallar Damodaran fallet då ROIC stiger utan nytt kapital: återinvesterar bolaget 50 procent av resultatet vid ROIC 8 procent växer det 4 procent; stiger ROIC till 16 procent med oförändrad återinvesteringsgrad växer det 8 procent — dubbelt så snabbt utan en enda ny investerad krona. Därför är moat och marginal (AKM1 V12) inte dekoration utan tillväxtens motorrum."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Värdeskapande tillväxt — spreaden avgör\",\"rader\":[[\"Spridning (ROIC - WACC)\",\"Effekt av tillväxt\",\"Dom\"],[\"Positiv\",\"Varje återinvesterad krona skapar värde\",\"Väx med kraft\"],[\"Noll\",\"Tillväxten är neutral\",\"Väx om strategin kräver\"],[\"Negativ\",\"Tillväxten förstör värde\",\"Sluta växa — betala ut istället\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Tillväxt är inte en gåva — den är köpt kapital: g = ROIC × återinvesteringsgrad. Ingen återinvestering, ingen tillväxt; ingen ROIC över WACC, inget värde."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett bolag har ROIC 15 procent och återinvesteringsgrad 40 procent. Beräkna g (svar: 6 procent). Hur hög återinvesteringsgrad krävs för 10 procents tillväxt vid oförändrad ROIC? (svar: 10/15 = 67 procent). Diskutera sedan: vad händer med utdelningen och med kapitalbindningen vid den förändringen — och vad krävs för att ROIC ska hålla när konkurrenterna ser samma möjlighet?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "ROIC 12 procent, återinvesteringsgrad 75 procent. Vad är den fundamentalt hållbara tillväxten?",
+          "alternativ": [
+            "8 procent",
+            "9 procent",
+            "12 procent",
+            "17 procent"
+          ],
+          "ratt": 1,
+          "tips": "Multiplicera avkastningen med andelen resultat som återinvesteras."
+        },
+        {
+          "q": "Vad händer med värdet om ett bolag växer snabbt men ROIC är lägre än WACC?",
+          "alternativ": [
+            "Tillväxten skapar alltid värde oavsett ROIC",
+            "Tillväxten förstör värde — varje återinvesterad krona tjänar mindre än den kostar",
+            "Värdet påverkas inte alls av ROIC",
+            "WACC sjunker automatiskt när bolaget växer"
+          ],
+          "ratt": 1,
+          "tips": "Jämför avkastning med kostnad för samma kapital: vad blir nettot per återinvesterad krona?"
+        },
+        {
+          "q": "ROE 15 procent, utdelningskvot 40 procent. Vad är den hållbara tillväxten på ekvitetsnivå?",
+          "alternativ": [
+            "6 procent",
+            "9 procent",
+            "15 procent",
+            "25 procent"
+          ],
+          "ratt": 1,
+          "tips": "Retention = 1 - utdelningskvoten. Multiplicera sedan med ROE."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Terminal value — evigheten som dominerar din DCF",
+      "intro": "All evig tillväxt måste växa högst som ekonomin: g får aldrig överstiga riskfri ränta. Ändå bär terminal value ofta två tredjedelar av hela DCF-värdet — Damodaran lär dig inte att fly ifrån den dominansen utan att göra evigheten ärlig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Slutvärdet beräknas i slutet av den explicita perioden: TV = FCFF(n+1)/(WACC - g). Räkneexempel: FCFF år 10 är 100, WACC 8 procent och evig tillväxt 3 procent ger TV(10) = 100 × 1,03/(0,08 - 0,03) = 103/0,05 = 2 060. Damodarans hårdhetsregel: g får aldrig överstiga riskfri räntan — i evigheten kan inget bolag växa snabbare än ekonomin som helhet, och den riskfria räntan är den bästa proxy vi har för nominell BNP-tillväxt. Andra krav: bolaget i terminalfasen ska återinvestera konsistent med g (återinvesteringsgrad = g/ROIC) och ha stabil kapitalstruktur — evighet är inte en slump, det är en jämvikt."
+        },
+        {
+          "type": "text",
+          "content": "Varför dominerar terminal value? Diskontera exemplet: PV(TV) = 2 060/1,08^10 = 2 060/2,159 = 954. Om nuvärdet av de tio explicita årens flöden är 500 blir EV = 500 + 954 = 1 454 — terminal value bär 954/1 454 = 66 procent av värdet. Damodarans råd är kontraintuitivt: förläng inte den explicita perioden i blindo. Tio år av detaljer bara flyttar problemet — efter tolv år är terminal value fortfarande hälften eller mer. Ärligheten ligger i antagandena: moderat g, ROIC som konvergerar mot WACC när moaten eroderar, och en känslighetsanalys som visar vad evigheten kostar."
+        },
+        {
+          "type": "text",
+          "content": "Alternativet till evig tillväxt är exit-multipeln: TV = EV/EBITDA-multipel × år n:ts EBITDA. Damodaran varnar för att blanda en multipel i sin DCF — det är att smuggla in relativ värdering genom bakdörren och anta att jämförbara bolag är korrekt prissatta just år n. Gör du det ändå: testa konsekvensen. Vilken evig tillväxt implicerar din exit-multipel? En multipel som antyder 6 procents evig tillväxt i en modell där du antagit 2 procent är inte ett antagande — det är en motsägelse. Den tredje vägen, nuvärde av evig överavkastning (kapital + PV av spridning mot WACC), passar moat-bolag där excessavkastningen antas klinga av."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Terminal value — tre vägar\",\"rader\":[[\"Metod\",\"Formel\",\"Krav\"],[\"Evig tillväxt\",\"TV = FCF(n+1)/(WACC - g)\",\"g ≤ riskfri ränta; stabil återinvesteringsgrad = g/ROIC\"],[\"Exit-multipel\",\"TV = multipel × fundament år n\",\"Implicerad g och WACC måste stämma med modellen\"],[\"Evig överavkastning\",\"V = investerat kapital + PV(spridning × kapital)\",\"Moat som eroderar mot WACC\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Terminal value är ingen fyllnadsövning — den är mer än halva ditt värde och ska tåla samma granskning som varenda explicit år före den."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 FCFF år 11 uppskattas till 60, WACC 7 procent, evig tillväxt 2 procent. Beräkna TV(10) = 60/0,05 = 1 200 och dess nuvärde 1 200/1,07^10 = 1 200/1,967 = 610. Variera sedan g till 3 procent (nämnaren 0,04; TV = 1 500; PV = 763). Hur många procent av ett totalt EV på 1 100 (med 490 i explicita flöden) bär terminal value i de två fallen — och vilken g är defensible mot riskfria räntan?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "FCFF år 10 = 100, WACC 8 procent, evig tillväxt 3 procent. Vad är terminal value?",
+          "alternativ": [
+            "206",
+            "1 250",
+            "2 000",
+            "2 060"
+          ],
+          "ratt": 3,
+          "tips": "Multiplicera flödet med 1,03 för nästa år och dividera med (0,08 - 0,03)."
+        },
+        {
+          "q": "Varför får evig tillväxt aldrig överstiga riskfri räntan?",
+          "alternativ": [
+            "För att riskfria räntan alltid är högst 2 procent",
+            "För att inget bolag i evighet kan växa snabbare än ekonomin — och riskfri ränta approximerar nominell BNP-tillväxt",
+            "För att WACC annars blir negativ",
+            "För att analytiker enligt Damodaran aldrig har rätt"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad bolaget är en del av: kan en del växa snabbare än helheten för alltid?"
+        },
+        {
+          "q": "Vad är Damodarans invändning mot att kombinera DCF med exit-multipel som terminal value?",
+          "alternativ": [
+            "Multipeln ger alltid lägre värde än evig tillväxt",
+            "Exit-multipeln smugglar in relativ värdering — den antar att jämförbara bolag är korrekt prissatta år n och måste implicera samma g och WACC som resten av modellen",
+            "Multipeln kräver att bolaget betalar utdelning",
+            "Det är förbjudet enligt bokföringslagar"
+          ],
+          "ratt": 1,
+          "tips": "Vad är dolt i en multipel? Tänk på kapitel 2: komprimerad DCF med osynliga antaganden."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Riskfri ränta, riskpremie och CAPM",
+      "intro": "Diskonteringsräntan börjar med två byggstenar: riskfri ränta och aktiernas riskpremie. Damodaran, som varje år publicerar världens mest använda implied ERP-databas, lär skillnaden mellan historisk och framåtblickande premie — och hur CAPM bygger avkastningskravet av dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den riskfria räntan är alla räntors utgångspunkt och kraven är tre: ingen default-risk, matchande duration och rätt valuta. I praktiken: en lång statsobligation i den valuta bolaget tjänar och investeraren konsumerar i — värderar du svenska bolag i kronor används svenska statsobligationer (exempelvis 2 procent i kursexemplen). Ett vanligt fel är att blanda amerikansk riskfri ränta med svenska kassaflöden — valutan måste bära hela vägen. Damodaran påpekar också att statsobligationer i länder med betydande default-risk inte är riskfria; där justeras räntan för landsrisken."
+        },
+        {
+          "type": "text",
+          "content": "Aktiernas riskpremie (ERP) är marknadens pris på att äga aktier istället för obligationer. Två vägar: den historiska (genomsnittlig överavkastning bakåt — känslig för periodval och en gång per sekel förvrängd av överlevnadsbias) och den implied som Damodaran förespråkar: vilken riskpremie förklarar dagens indexpris givet antaganden om utdelningar och tillväxt? Implied ERP är framåtblickande och uppdateras med marknaden — hans årliga dataunderlag är standardreferensen världen över. För tillväxtmarknader tillkommer landsrisk: ERP = mogen marknads premie + lambda × statsobligationens spread, där lambda justerar för bolagets faktiska exponering. Exempel: 4,5 + 0,8 × 3,0 = 6,9 procent."
+        },
+        {
+          "type": "text",
+          "content": "CAPM binder ihop allt: ke = riskfri ränta + beta × ERP. Räkneexempel: rf 2 procent, beta 1,2 och ERP 4,5 procent ger ke = 2 + 1,2 × 4,5 = 2 + 5,4 = 7,4 procent. Damodaran försvarar CAPM mot alternativen (Fama-French, momentum, faktorzoo) med ett praktiskt argument: hellre en enkel modell du kan förklara och försvara än en multifactormodell vars premier är bakåtblickande kuriosa. Alternativen används där de gör skillnad — småbolags- och värderabatt diskuteras i boken med samma skepsis som präglar hans betakritik (nästa kapitel)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CAPM-ingredienser i Damodarans praxis\",\"rader\":[[\"Ingrediens\",\"Vad\",\"Praxis\"],[\"rf\",\"Lång statsobligation\",\"Matchande valuta och duration, default-fri\"],[\"ERP\",\"Premie för aktierisk\",\"Implied, uppdateras årligen\"],[\"Beta\",\"Relativ risk\",\"Bottom-up, inte regression\"],[\"Landsrisk\",\"Emerging-market-premie\",\"lambda × statspread för faktisk exponering\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Riskpremien är marknadens pris på risk — inte en konstant i en tabell utan en levande siffra som Damodaran omräknar varje år."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Räkna ke med rf 2,5 procent, beta 0,9 och ERP 5 procent (svar: 2,5 + 4,5 = 7,0 procent). Upprepa med beta 1,4 (svar: 2,5 + 7,0 = 9,5 procent). Skillnaden är 2,5 procentenheter på en halv betapoäng — räkna sedan tillbaka på en Gordonaktie med D1 = 6 och g = 2 procent: V = 6/0,05 = 120 mot 6/0,075 = 80. Vad kostar en betanoskatt i kronor?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "rf 2 procent, beta 1,2, ERP 4,5 procent. Vad blir ke enligt CAPM?",
+          "alternativ": [
+            "5,4 procent",
+            "6,4 procent",
+            "7,4 procent",
+            "8,6 procent"
+          ],
+          "ratt": 2,
+          "tips": "Beta multipliceras med premien och adderas sedan till den riskfria räntan."
+        },
+        {
+          "q": "Vad kännetecknar den implied riskpremien som Damodaran förespråkar?",
+          "alternativ": [
+            "Den är genomsnittet av de senaste 90 årens överavkastning",
+            "Den är den premie som för rättvisar dagens indexpris givet antaganden om framtida utdelningar och tillväxt — alltså framåtblickande",
+            "Den sätts av centralbanken varje kvartal",
+            "Den är alltid exakt 5 procent"
+          ],
+          "ratt": 1,
+          "tips": "Implied = utläst ur priser idag, inte ur historisk utfallsstatistik."
+        },
+        {
+          "q": "Vilka tre krav ställer Damodaran på den riskfria räntan?",
+          "alternativ": [
+            "Kort duration, hö avkastning, stabil valuta",
+            "Ingen default-risk, matchande duration och rätt valuta",
+            "Utdelningsbaserad, lokal och leveransfri",
+            "Max 2 procent, dollar, daglig"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som kan snedvrida en ränta: betalningsförmåga, löptid och valutan du värderar i."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 11,
+      "title": "Beta — mätproblem, bottom-up och skuldhävning",
+      "intro": "Beta är CAPM:s mest kritiserade indata och Damodaran håller med kritikerna — regressionens beta är brusig och bakåtblickande. Hans lösning är bottom-up-beta: bygg betan från verksamheterna och häv den sedan med bolagets skuld.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Regressionbeta (att köra kursdata mot index) har tre systematiska problem: den är brusig — standardfelet överstiger ofta 0,25 vilket gör en uppmätt beta på 1,2 statistiskt oskiljbar från 0,7 och 1,7; den är bakåtblickande och mäter gårdagens verksamhetsmix; och den drar mot ett — extrema betor återgår mot genomsnittet. Damodarans dom är känd: beta är en dålig prognosmakare, men alternativet är inte att kasta CAPM — det är att bygga betan där framtiden finns: i verksamheterna."
+        },
+        {
+          "type": "text",
+          "content": "Bottom-up-beta i fyra steg. Ett: hämta unlevered betor (skuldfria) för varje affärsområde — regressionens brus tvättas ur av att du medelvärdesbildar över hundratals bolag. Två: vikta efter verksamhetsmixen — exempel: 60 procent detaljhandel med beta 0,9 och 40 procent mjukvara med beta 1,3 ger unlevered beta = 0,6 × 0,9 + 0,4 × 1,3 = 0,54 + 0,52 = 1,06. Tre: häv med skuld enligt Hamada: betaL = betaU × (1 + (1 - t) × D/E) — med D/E = 0,5 och t = 25 procent blir 1,06 × (1 + 0,75 × 0,5) = 1,06 × 1,375 = 1,46. Fyra: sätt in i CAPM: ke = 2 + 1,46 × 4,5 = cirka 8,6 procent. Överskottskassa minskar nettoskulden och därmed hävningseffekten — ett oförsiktigt bolag med berg av kontanter har lägre beta än skuldkvoten antyder."
+        },
+        {
+          "type": "text",
+          "content": "Poängen med hela proceduren är filosofisk: beta ska beskriva den risk du tar imorgon, inte den du tog i går. Köper bolaget ett nytt segment förändras vikterna och betan — regressionen märker det först efter år av data. Samma logik gäller D/E: värderar du ett bolag som targets en ny skuldkvot ska betan hävas med den framtida kvoten. Damodarans bottom-up är därmed inte en finess utan en hållbarhetsregel: varje antagande i kapitalkostnaden ska vara framtidsriktat och konsistent med resten av modellen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bottom-up-beta — steg för steg\",\"rader\":[[\"Steg\",\"Åtgärd\",\"Exempel\"],[\"1\",\"Unlevered betor per affärsområde\",\"0,9 (detaljhandel), 1,3 (mjukvara)\"],[\"2\",\"Vikta efter verksamhetsmix\",\"0,6 × 0,9 + 0,4 × 1,3 = 1,06\"],[\"3\",\"Skuldhävning (Hamada)\",\"1,06 × (1 + 0,75 × 0,5) = 1,46\"],[\"4\",\"ke via CAPM\",\"2% + 1,46 × 4,5% ≈ 8,6%\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Beta ska beskriva verksamhetens risk imorgon — därför bygger Damodaran den nerifrån: affärer, vikter, skuldhävning."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett bolag består av 70 procent livsmedel (unlevered beta 0,7) och 30 procent teknik (unlevered beta 1,5). Beräkna unlevered beta (0,7 × 0,7 + 0,3 × 1,5 = 0,49 + 0,45 = 0,94). Häv sedan med D/E = 0,4 och t = 25 procent (0,94 × 1,3 = 1,22). Räkna ke med rf 2 procent och ERP 4,5 procent — och jämför med vad en regressionsbeta på 1,0 skulle ha gett. Vem har fel om de skiljer?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "En verksamhetsmix av 60 procent detaljhandel (beta 0,9) och 40 procent mjukvara (beta 1,3). Vad är den unlevered betan?",
+          "alternativ": [
+            "0,98",
+            "1,06",
+            "1,10",
+            "1,22"
+          ],
+          "ratt": 1,
+          "tips": "Vikta varje beta med sin andel och summera: 0,6 × 0,9 + 0,4 × 1,3."
+        },
+        {
+          "q": "Unlevered beta 1,06, D/E = 0,5, skattesats 25 procent. Vad blir den hävda betan enligt Hamada?",
+          "alternativ": [
+            "1,06",
+            "1,32",
+            "1,46",
+            "1,59"
+          ],
+          "ratt": 2,
+          "tips": "Formeln: betaU × (1 + (1 - 0,25) × 0,5) = 1,06 × 1,375."
+        },
+        {
+          "q": "Sammanfatta Damodarans kritik mot regressionsbeta.",
+          "alternativ": [
+            "Beta mäter fel index och borde bytas mot volatilitet",
+            "Regressionen är brusig (högt standardfel), bakåtblickande och drar mot ett — därför bygger han beta bottom-up istället",
+            "Beta fungerar bara för banker och obligationer",
+            "Beta bör alltid sättas till 1 för enkelhets skull"
+          ],
+          "ratt": 1,
+          "tips": "Tre problem nämndes i texten: brus, bakåtblickande, återgång mot ett. Vilket alternativ fångar alla tre?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Skuldkostnad och WACC — kapitalets totala pris",
+      "intro": "WACC är DCF:ns växel: den ränta som förenar ägare och långivare till ett gemensamt avkastningskrav. Men den som jagar lägsta WACC genom maximal skuld missar den andra sidan av ekvationen — konkursrisken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Skuldkostnaden är inte kupongräntan utan marknadens pris: kd = riskfri ränta + spread för bolagets kreditrisk, där spreaden kan hämtas från rating eller en syntetisk rating från räntetäckning och skuldkvot. Räkneexempel: rf 2 procent plus spread 1,5 procent ger kd = 3,5 procent före skatt; efter skatteavdrag vid 25 procent blir den 3,5 × 0,75 = 2,6 procent. Varför efter skatt? Räntan är avdragsgivande — staten subventionerar en fjärdedel av kostnaden. Använd alltid marginalkostnaden för ny skuld, inte historiska kuponger, och marknadsvärden — inte bokförda — genomgående."
+        },
+        {
+          "type": "text",
+          "content": "WACC = (E/V) × ke + (D/V) × kd × (1 - t), där V = E + D på marknadsvärden. Räkneexempel: E = 600, D = 400 (V = 1 000), ke = 10 procent, kd = 4 procent och t = 25 procent: WACC = 0,6 × 10 + 0,4 × 4 × 0,75 = 6,0 + 1,2 = 7,2 procent. Det är just denna ränta som diskonterade FCFF i kapitel 5 — nu ser du hela kretsen: ke från CAPM (kapitel 10-11), kd från spreaden, vikter från mål-kapitalstrukturen. Har målet en annan skuldkvot än historien ska framtida vikter användas, vilket skapar en cirkularitet (värdet påverkar vikterna som påverkar värdet) som Damodaran löser iterativt — ett par varvor räcker."
+        },
+        {
+          "type": "text",
+          "content": "WACC-fällan är frestande: skuld är ju billigare än eget kapital, så maximal skuld borde ge minimal WACC och maximalt värde? Damodaran: nej — spreaden stiger med skulden, betan hävs (kapitel 11) och konkurskostnader växer in. Optimal kapitalstruktur ligger där skuldens gränsmässiga skattefördel är slut och kostnaden för finansiell nöd tar över. WACC är en balanspunkt, inte ett söktal. Samma sak gäller branschnivå: om du jämför bolag med radikalt olika skuldkvoter bör du antingen räkna om till gemensam struktur eller jämföra på FCFF-nivå (EV-multipeln), där finansieringen är borta."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"WACC-komponenter — exempel E 600 / D 400\",\"rader\":[[\"Del\",\"Formel\",\"Beräkning\"],[\"Eget kapital\",\"E/V × ke\",\"0,6 × 10% = 6,0%\"],[\"Skuld (efter skatt)\",\"D/V × kd × (1 - t)\",\"0,4 × 4% × 0,75 = 1,2%\"],[\"WACC\",\"Summa\",\"7,2%\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ WACC är inte ett söktal — det är en balanspunkt: varje extra procent skuld sänker räntan tills konkursrisken tar tillbaka den med råa."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett bolag har E = 800, D = 200, ke = 9 procent, kd = 3,5 procent och skattesats 25 procent. Beräkna WACC = 0,8 × 9 + 0,2 × 3,5 × 0,75 = 7,2 + 0,525 = 7,7 procent. Dubblera sedan skulden till D = 400 (E fortfarande 800, antag ke oförändrat i första steget) — vad blir WACC, och vilka två effekter i verkligheten saknar din beräkning?"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "E = 600, D = 400, ke = 10 procent, kd = 4 procent, t = 25 procent. Vad är WACC?",
+          "alternativ": [
+            "6,0 procent",
+            "7,2 procent",
+            "7,6 procent",
+            "8,4 procent"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg: skulddelen multipliceras med (1 - t). 0,6 × 10 + 0,4 × 4 × 0,75."
+        },
+        {
+          "q": "Varför används skuldkostnaden efter skatt i WACC?",
+          "alternativ": [
+            "För att skattesatsen alltid är 25 procent",
+            "För att räntekostnader är avdragsgivande — staten subventionerar en del av skuldens pris",
+            "För att obligationer inte bära någon risk",
+            "För att bokföringsreglerna kräver det"
+          ],
+          "ratt": 1,
+          "tips": "Vem betalar en del av räntan åt bolaget vid beskattningen?"
+        },
+        {
+          "q": "Varför är det fel att maximera skulden för att minimera WACC?",
+          "alternativ": [
+            "Skuld är alltid dyrare än eget kapital",
+            "Med växande skuld stiger kreditspreaden, betan hävs och konkurskostnader växer in — den optimala strukturen är en avvägning",
+            "WACC påverkas inte av skuldkvoten",
+            "Centralbanken förbjuder skuldkvoter över 50 procent"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med långivarnas pris när risken stiger? Tänk också på kapitel 11:s Hamada-effekt."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Relativ värdering — multipelns logik och jämförbara bolag",
+      "intro": "De flesta värderingar i praktiken är multiplar, inte DCF:er. Damodaran tar multipeln på allvar genom att behandla den som vad den är — prissättning mot jämförbara — och ger processen i fyra steg: definiera, beskriv universum, kontrollera skillnader och testa robusthet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varje multipel är en kvot av värde dividerat med en fundamental, och konsistensregeln är hård: ekvitetsmultipeler (P/E, P/B, P/FCFE) sätter pris mot ekvitetsfundament (nettoresultat, bokfört eget kapital, FCFE); företagsmultipeler (EV/EBITDA, EV/EBIT, EV/Sales, EV/FCFF) sätter företagsvärde mot företagsfundament. Att sätta EV mot nettoresultat — eller P mot EBITDA — blandar nivåer och jämför äpplen med päron. Den andra regeln är enhetlighet i tid: historisk mot historisk, framåtblickande mot framåtblickande. Damodaran kallar resultatet av allt detta pricing: du får ett pris som är rimligt mot gruppen — inte ett värde ur bolaget själv."
+        },
+        {
+          "type": "text",
+          "content": "Själva hantverket ligger i jämförelsegruppen. Damodaran: börja med ett brett universum (exempelvis sektorn), beskriv det (tillväxt, risk, ROIC, utdelning) och kontrollera skillnaderna — oftast med regression. Exempel: sektorns P/E följer linjen P/E = 8 + 1,2 × g (i procent). Ett bolag med förväntad tillväxt 10 procent bör enligt linjen handlas till 8 + 1,2 × 10 = 20; handlas det till P/E 15 ligger det 15/20 = 0,75, alltså 25 procent under sektorlinjen. Regressionen gör de dolda antagandena synliga igen — precis vad kapitel 2 lovade: multipeln är DCF i komprimerad form, regressionen packar upp den."
+        },
+        {
+          "type": "text",
+          "content": "Branschspecifika multipeler (EV per prenumerant, EV per användare, pris per ton kapacitet) accepterar bara om de kan knytas till värde: en prenumerant är bara värd nuvärdet av sitt framtida bidrag till kassaflödet. Damodaran varnar för att branschmultipeler ofta uppstår när vanliga fundament är negativa — de blir en flykt från problemet snarare än en lösning (se kapitel 14). Sluttestet är robusthet: Byt universum, byt period, byt fundamental — överlever slutsatsen? En aktie som bara är billig mot tolv noggrant utvalda jämförelsebolag är sällan billig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Konsistenta multipelpar\",\"rader\":[[\"Nivå\",\"Multipel\",\"Fundamental\"],[\"Ekvitet\",\"P/E\",\"Nettoresultat\"],[\"Ekvitet\",\"P/B\",\"Bokfört eget kapital\"],[\"Ekvitet\",\"P/FCFE\",\"Kassaflöde till ägarna\"],[\"Företag\",\"EV/EBITDA\",\"Rörelseresultat före D&A\"],[\"Företag\",\"EV/EBIT(1-t)\",\"NOPAT\"],[\"Företag\",\"EV/Sales\",\"Intäkter\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En multipel är en DCF-förkortning — alla antaganden finns kvar, men de är osynliga. Uppgiften är att göra dem synliga igen."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Antag att sektorlinjen är P/E = 6 + 1,2 × g (procent). Bolag A har g = 5 procent och handlas till P/E 12; bolag B har g = 15 procent och handlas till P/E 24. Beräkna förväntade P/E enligt linjen (A: 6 + 6 = 12; B: 6 + 18 = 24). Vilket är billigt? Varken eller — båda ligger på linjen. Vad krävs för att motivera köp av något av dem? Formulera svaret i termer av ROIC och risk."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken multipel är konsistent till sin nivå?",
+          "alternativ": [
+            "P/E matchad med EBITDA",
+            "EV matchad med nettoresultat",
+            "EV/EBITDA",
+            "P/B matchad med EBIT"
+          ],
+          "ratt": 2,
+          "tips": "EV är före skuld — vilken fundamental ligger också före skuld och ränta?"
+        },
+        {
+          "q": "Sektorregressionen ger förväntat P/E = 20 för ett bolag som handlas till P/E 15. Vad är den korrekta tolkningen?",
+          "alternativ": [
+            "Bolaget handlas 25 procent under sektorlinjen och kan vara relativt billigt — om inte risken är högre eller historien sämre",
+            "Bolaget är garanterat undervärderat med exakt 5 P/E-enheter",
+            "Regressionen är fel och bör kastas",
+            "Bolaget bör kortas eftersom multipeln är låg"
+          ],
+          "ratt": 0,
+          "tips": "Multipeln förklarar tillväxt men lämnar risk och ROIC — vad kan göra skillnaden?"
+        },
+        {
+          "q": "Vad är Damodarans villkor för att acceptera en branschspecifik multipel som EV per prenumerant?",
+          "alternativ": [
+            "Att den går att knyta till värde — nuvärdet av prenumerantens framtida kassaflödesbidrag",
+            "Att den är högre än konkurrenternas",
+            "Att alla analytiker i sektorn använder den",
+            "Att bolaget är vinstdrivande och betalar utdelning"
+          ],
+          "ratt": 0,
+          "tips": "Vad måste varje fundamental stå i relation till för att en multipel ska ha mening?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "Multipeljustering och multipelfällor — PEG, EV/EBIT(1-t) och negativa ekvitetsmultipeler",
+      "intro": "Lågt P/E betyder inte billigt — det kan betyda död. I detta kapitel justerar Damodaran multipeln för tillväxt, kapitalintensitet och kapitalstruktur, och listar fällorna: PEG som ignorerar ROIC, EV/EBITDA som ignorerar D&A och ekvitetsmultipeler som går sönder på negativa tal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför är lågt P/E inte synonymt med billigt? Eftersom multipeln är satt av marknadens förväntningar: låg tillväxt, hög risk eller låg ROIC ger låg multipel — rättvist. PEG-kvoten försöker justera för tillväxt: PEG = P/E delat med förväntad tillväxt i procent. Exempel: bolag A med P/E 15 och g 10 procent har PEG 1,5; bolag B med P/E 20 och g 20 procent har PEG 1,0 — B är billigare per enhet tillväxt. Men PEG har två blindfläckar som Damodaran påpekar: den straffar inte risk, och den antar att all tillväxt är lika mycket värd — vilket den bara är om ROIC överstiger WACC (kapitel 8). En PEG på 1,0 hos ett bolag som förstör värde är fortfarande dyr."
+        },
+        {
+          "type": "text",
+          "content": "EV/EBITDA är älskat för att det är kapitalstruktur- och D&A-neutralt — och just där ligger fällan. Två bolag med EV 1 000 och EBITDA 200 har båda EV/EBITDA = 5,0, men bolag X med D&A 100 har EBIT 100, NOPAT 75 vid 25 procents skatt och EV/EBIT(1-t) = 1 000/75 = 13,3; bolag Y med D&A 40 har EBIT 160, NOPAT 120 och EV/EBIT(1-t) = 1 000/120 = 8,3. Samma EBITDA-multipel, radikalt olika kapitalintensitet och skattebörda. Damodaran: EV/EBIT(1-t) ligger närmast DCF-logiken — den fångar att avskrivningar är en ekonomisk kostnad (kapital slits) och att staten tar sin andel. Ju mer kapitalintensiv bransch, desto mer missvisande blir EBITDA-multipeln."
+        },
+        {
+          "type": "text",
+          "content": "Negativa ekvitetsmultipeler är bokens konkreta varning. Bolag med förlust har ingen P/E — den som ändå 'beräknar' den får en negativ, meningslös kvot; filtrerar man bort förlustbolag ur jämförelsegruppen uppstår survivorship-bias (en urvalsskevhet som systematiskt överdriver gruppens värde). Bolag med negativt bokfört eget kapital — ofta ett resultat av stora återköp, inte av nöd — ger en absurd P/B. Lösningarna: byt fundamental (EV/Sales alltid positiv, men kräver marginalsammanhang), värdera framåt mot normaliserat resultat (kapitel 15), eller fall tillbaka på DCF där förlustår är bara år i en serie. Damodaran: multipeln som inte kan hantera verklighetens fula tal är ett verktyg som väljer verkligheten åt dig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Multipelfällor och motgift\",\"rader\":[[\"Fälla\",\"Varför den lurar\",\"Motgift\"],[\"Lågt P/E = billigt\",\"Speglar låg tillväxt, hög risk, låg ROIC\",\"Regression/PEG — kontrollera för tillväxt och risk\"],[\"EV/EBITDA i kapitalintensiva branscher\",\"Ignorerar D&A och skatt\",\"EV/EBIT(1-t)\"],[\"Negativt bokfört EK\",\"Återköp urholkar bokvärdet\",\"Byt fundamental — P/B är meningslös\"],[\"Förlustbolag\",\"P/E obefintlig; filtrering ger survivorship-bias\",\"EV/Sales + marginalbana, eller DCF\"],[\"Blandade nivåer\",\"EV mot ekvitetsfundament\",\"Kolla par-konsistens (kapitel 13)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Billig multipel och billigt bolag är olika saker — multipeln är satt av marknadens förväntningar, inte av ett snällt pris."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bolag C: P/E 10, förväntad tillväxt 3 procent — beräkna PEG (10/3 = 3,3). Bolag D: P/E 30, tillväxt 30 procent — PEG = 1,0. D ser billigt ut per tillväxtenhet. Konstruera nu ett argument där D ändå är dyr: vilken ROIC krävs för att 30 procents tillväxt ska skapa värde (jämför med WACC), och vad händer om tillväxten inte bara är hög utan osäker?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Bolag A har P/E 15 och tillväxt 10 procent; bolag B har P/E 20 och tillväxt 20 procent. Vad gäller deras PEG?",
+          "alternativ": [
+            "A har PEG 1,5 och B har PEG 1,0 — B är billigare per enhet tillväxt, men PEG säger inget om risk eller ROIC",
+            "A och B har identisk PEG",
+            "A har PEG 0,7 och B har PEG 1,5 — A är billigast",
+            "PEG kan bara beräknas på banker"
+          ],
+          "ratt": 0,
+          "tips": "Dividera P/E med tillväxten i procent. Vad glömmer kvoten att fråga efter?"
+        },
+        {
+          "q": "Två bolag har EV/EBITDA = 5,0 men bolag X har EV/EBIT(1-t) = 13,3 och bolag Y har 8,3. Vad förklarar skillnaden?",
+          "alternativ": [
+            "X har högre skattesats",
+            "X har betydligt högre D&A — mer kapitalintensiv verksamhet — vilket EV/EBITDA döljer men EV/EBIT(1-t) fångar",
+            "Y har mer skuld",
+            "X har högre intäkter"
+          ],
+          "ratt": 1,
+          "tips": "Gå från EBITDA till EBIT: vilken post ligger emellan och vad säger den om kapitalbindning?"
+        },
+        {
+          "q": "Varför blir P/B meningslös för ett bolag med negativt bokfört eget kapital efter stora återköp?",
+          "alternativ": [
+            "För att negativ P/E alltid är ett bättre mått",
+            "För att återköp mekaniskt urholkar bokfört eget kapital — kvoten blir negativ trots att bolaget kan vara lönsamt och välmående",
+            "För att aktier aldrig får handlas under bokvärdet",
+            "För att skattemyndigheten förbjuder negativa bokvärden"
+          ],
+          "ratt": 1,
+          "tips": "Skilj på redovisningsmekanik (återköp) och ekonomisk substans. Vad säger bokvärdet om verksamheten i detta fall?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Cykliska bolag och banker — normalisering och utdelningsmodellen",
+      "intro": "Vissa bolag går inte att värdera med standardverktygen: cykliska bolag vars resultat svänger med priser på råvaror, och banker vars skuld är råvara snarare än finansiering. Damodaran ger varje specialfall sin egen metod.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cykliska bolag (gruvor, skog, stål, olja) kan inte värderas på topp- eller bottenårets resultat — det blir som att mäta tidvatten med ett enda avläst värde. Damodarans metod: normalisera. Beräkna genomsnittlig rörelsemarginal över en hel cykel (5-10 år) och multiplicera med dagens intäkter. Exempel: marginalerna 2, 14, 6, 10 och 3 procent ger medel 7 procent; på intäkter 1 000 blir normaliserad EBIT 70 och NOPAT vid 25 procents skatt 52,5. Alternativet är scenarier över cykeln (kapitel 17). Notera att normaliseringen kräver att kapaciteten är intakt: strukturella förändringar — som en permanent skifte i efterfrågan — är inte cykel och får inte tvättas bort i medelvärdet."
+        },
+        {
+          "type": "text",
+          "content": "Banker är det omvända problemet: för en bank är skuld inte ett finansieringsval utan råvaran — insattningar och utlåning är själva verksamheten. Därför blir FCFF meningslös (skuldökningar ser ut som capex) och Damodaran flyttar hela värderingen till ekvitetsnivå. Tre verktyg: DDM med D1 = 4, ke = 8 procent och g = 2 procent ger V = 4/(0,08 - 0,02) = 4/0,06 = 66,7 kronor. FCFE-modellen fångar banker som återinvesterar via kredittillväxt. Rättvisad P/B: P/B = (ROE - g)/(ke - g) — med ROE 11, ke 9 och g 3 procent blir (0,11 - 0,03)/(0,09 - 0,03) = 0,08/0,06 = 1,33; vid bokvärde per aktie 100 kronor är rätt kurs 133 kronor. Huvudregel: en bank förtjänar P/B över 1 bara om ROE överstiger ke."
+        },
+        {
+          "type": "text",
+          "content": "För banker tillkommer tre discipliner: kreditförlustprovisioner är cykliskt färgade och ska normaliseras på samma sätt som gruvresultat; kapitaltäckningskrav sätter ett hårt tak för utdelning och tillväxt (regulatorn är en osynlig ägare); och hävstången gör ekvitetsmultiplern extra känslig för små ROE-förändringar — en bank med ROE strax under ke kan se billig på P/B 0,8 och ändå vara korrekt prissatt. AKM1 V19 har här en naturlig roll: pris under beräknat värde är inte nog — marginalen måste täcka att banks ROE är svårare att prognostisera än de flesta bolags."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Specialfall — modellval\",\"rader\":[[\"Bolagstyp\",\"Problem\",\"Metod\"],[\"Cykliskt\",\"Resultat svänger med cykeln\",\"Normaliserad marginal × dagens intäkter; scenarier\"],[\"Bank / försäkring\",\"Skuld är råvara, inte finansiering\",\"DDM/FCFE; P/B = (ROE - g)/(ke - g)\"],[\"Ungt bolag\",\"Inga historiska flöden\",\"Intäktsbana + överlevnadsviktning (kapitel 16)\"],[\"Resursbolag\",\"Priser cykliska + option i marken\",\"Normalisering + real options (kapitel 17)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ För en bank är skuld inte finansiering utan råvara — värdera alltid banken på ekvitetsnivå, aldrig med FCFF."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 En bank har ROE 10 procent, ke 9 procent och hållbar tillväxt 2 procent. Beräkna rättvisad P/B = (0,10 - 0,02)/(0,09 - 0,02) = 0,08/0,07 = 1,14. Vid bokvärde per aktie 80 kronor blir rätt kurs cirka 91 kronor. Om kursen är 65 kronor — vilken två frågor måste du besvara innan du ropar undervärdering? Ledning: en handlar om ROE:s hållbarhet, en om ke."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Cykliska marginaler på 2, 14, 6, 10 och 3 procent, dagens intäkter 1 000. Vad är normaliserad EBIT?",
+          "alternativ": [
+            "40",
+            "70",
+            "100",
+            "35"
+          ],
+          "ratt": 1,
+          "tips": "Medelvärdet av marginalerna multiplicerat med intäkterna."
+        },
+        {
+          "q": "Bank med ROE 11 procent, ke 9 procent, g 3 procent. Vad är rättvisad P/B?",
+          "alternativ": [
+            "1,00",
+            "0,89",
+            "1,33",
+            "1,67"
+          ],
+          "ratt": 2,
+          "tips": "Formeln: (ROE - g)/(ke - g). Räkna med decimaler: 0,08/0,06."
+        },
+        {
+          "q": "Varför lämpar sig inte FCFF för banker?",
+          "alternativ": [
+            "Banker betalar aldrig skatt",
+            "Insättningar och utlåning är själva verksamheten — skuld är råvara, så flödet till 'allt kapital' blir dåligt definierat; värdera på ekvitetsnivå istället",
+            "Banker har ingen EBIT",
+            "WACC kan aldrig beräknas för finansbolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med FCFF-formeln när ökade skulder är kärnverksamhet snarare än finansiering?"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 11,
+      "title": "Unga bolag, nätverkseffekter och värdeförvandling — Amazon, Glaxo och Beckham",
+      "intro": "The Dark Side of Valuation, kallar Damodaran konsten att värdera bolag utan historia, utan resultat och ibland utan intäkter. Här finns Amazongåtan, överlevnadsviktningen, nätverkseffekternas lockbetten och värdeförvandlingen — när dolda tillgångar som forskning och varumärken blir synliga värden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Unga bolag värderas inte på nästa kvartal utan på vägen dit. Damodarans byggstenar: en top-down-intäktsbana (från hela marknaden till tagbar andel vid mognad), en målmarginal som plockas från mogna peer-bolag när verksamheten mognar, en återinvesteringsplan kopplad till g = ROIC × återinvesteringsgrad, och sist överlevnad: de flesta unga bolag dör, och det ska prissättas. Räkneexempel: 70 procents chans att nå ett värde på 200 och 30 procents risk att landa på 20 ger förväntat värde 0,7 × 200 + 0,3 × 20 = 140 + 6 = 146. Att värdera startuppen som om utfallet vore säkert är inte optimism — det är ett modellfel."
+        },
+        {
+          "type": "text",
+          "content": "Amazongåtan är Damodarans egen läromästare. 2014 värderade han Amazon till strax under 200 dollar — medan kursen låg över 350 — och skrev öppet: antingen har marknaden fel eller min berättelse. Istället för att svära vid sina siffror tvingade han sig att ompröva historien: Prime som klubbmedlemskap, rakbladsekonomi där marginalerna kommer senare, och (som han senare medgav att han underskattat) AWS. Reviderad berättelse gav ett värde närmare 300. Lärdomen är dubbel: en värdering är bara så bra som sin berättelse, och när priset skriker att du har fel ska du granska berättelsen — inte bara upprepa multiplarna. Värde får inte växa bara för att kursen gör det; men berättelsen får heller inte frysa bara för att den var bekväm."
+        },
+        {
+          "type": "text",
+          "content": "Nätverkseffekter ger upphov till samma frestelse från andra hållet: värdet per användare växer med antalet användare (n²-logiken), så vinnaren kan ta allt — men Damodaran påpekar att effekten är prissatt länge innan den är realiserad, och att monetarisering utan att döda tillväxten är den verkliga flaskhalsen. Värdeförvandling slutligen är bokens mest lärorika specialfall: att göra dolda tillgångar synliga. Glaxo-exemplet visar R&D som kapitaliserad forskningstillgång (kapitel 6) — forskning som slutar vara kostnad och bli balansräkningsobjekt. Beckham-exemplet — Damodarans uppmärksammade analys av övergången till Real Madrid — visar samma logik på ett mänskligt varumärke: värdet är de inkrementella kassaflöden (reklam, försäljning av tröjor, biljetter) som berättelsen kan bära, inte berättelsen själv. Värdeförvandling är alltså inte magi: det är att flytta en tillgång från osynlig till prissatt — med kassaflöden som bevis."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Unga bolag — byggstenar i Damodaransordning\",\"rader\":[[\"Steg\",\"Fråga\",\"Verktyg\"],[\"Intäktsbana\",\"Hur stor andel av marknaden är tagbar?\",\"Top-down: TAM → andel\"],[\"Marginal\",\"Vilken marginal vid mognad?\",\"Mogna peer-bolags marginaler\"],[\"Återinveste- ring\",\"Vad kostar tillväxten?\",\"g = ROIC × återinvesteringsgrad\"],[\"Överlevnad\",\"Hur stor risk att bolaget dör?\",\"Sannolikhetsviktning / option\"],[\"Värdeförvandling\",\"Vilka dolda tillgångar?\",\"R&D, varumärke, nätverk — prissatt med kassaflöden\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Ett ungt bolag värderas inte på vad det tjänar utan på vilken berättelse dess siffror måste bära — skriv berättelsen först, siffrorna sedan, och vikta för att de flesta dör."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 En startup har 60 procents chans att nå ett värde på 300 och 40 procents risk att landa på 30 (restvärde efter nedmontering). Beräkna förväntat värde: 0,6 × 300 + 0,4 × 30 = 180 + 12 = 192. Senaste investerarrundan värderade bolaget till 250. Vilken kombination av sannolikhet och lyckat värde motiverar 250 — och vad heter den bias som får grundare (och investerare) att låtsas att utfallet är säkert?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "70 procents chans till värde 200, 30 procents risk att landa på 20. Vad är förväntat värde?",
+          "alternativ": [
+            "128",
+            "140",
+            "146",
+            "200"
+          ],
+          "ratt": 2,
+          "tips": "Viktat medelvärde: 0,7 × 200 + 0,3 × 20."
+        },
+        {
+          "q": "Vad är huvudlärdomen från Damodarans Amazon-upplevelse?",
+          "alternativ": [
+            "Att börsen alltid har rätt och DCF är värdelös",
+            "Att man aldrig ska publicera en värdering offentligt",
+            "Att när pris och värde skiljer kraftigt ska man granska sin berättelse — han underskattade Prime-klubben och AWS och reviderade uppåt",
+            "Att Amazon borde kortas så länge multipeln är hög"
+          ],
+          "ratt": 2,
+          "tips": "Vad gjorde han själv när hans värde (under 200) låg långt under kursen (över 350)?"
+        },
+        {
+          "q": "Vad är Damodaransskepsis mot nätverkseffekter som värderingsargument?",
+          "alternativ": [
+            "Nätverkseffekter existerar inte i verkligheten",
+            "Effekten är ofta reell men redan prissatt långt fram i tiden — och monetarisering utan att döda tillväxten är flaskhalsen",
+            "Nätverk bara fungerar för banker",
+            "Användarantal får inte användas i värdering enligt lag"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden mellan en verklig fördel och en fördel som marknaden redan betalat för i förskott?"
+        }
+      ]
+    },
+    {
+      "num": 17,
+      "minutes": 11,
+      "title": "Real options och probabilistisk värdering — montecarlo och scenarier",
+      "intro": "En DCF som spottar ur sig en enda siffra ljuger om sin egen säkerhet. Damodaran vill se osäkerheten som fördelning: scenarier, montecarlo och decision trees — och där flexibiliteten är verklig och exklusiv: real options. Detta är kapitel där AK1TS-scenariomaskineriet är rakt släkt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Probabilistisk värdering börjar i diskret form: scenarier med sannolikheter. Räkneexempel: 30 procent tjur (värde 180), 50 procent bas (100) och 20 procent björn (40) ger förväntat värde 0,3 × 180 + 0,5 × 100 + 0,2 × 40 = 54 + 50 + 8 = 112 — men poängen är inte medelvärdet utan spridningen och asymmetrin. Montecarlo tar steget fullt ut: ge varje osäker indata (tillväxt, marginal, WACC) en fördelning istället för en punktskatt, simulera tusen gånger och läs av värdets fördelning — exempelvis P10 60, median 95 och P90 150. Handlas aktien till 80 har du dämpning på nedsidan och skevhet uppåt — information en enda DCF-siffra aldrig visar. AK1TS-scenariomaskinen är exakt detta hantverk: sannolikhetsviktade utfall som blir en fördelning, inte en punkt."
+        },
+        {
+          "type": "text",
+          "content": "Real options prissätter flexibilitet: rätten — inte skyldigheten — att expandera, skjuta upp eller överge. Räkneexempel: en gruva har bas-NPV minus 20, men rätten att expandera vid högre priser är värd 0,4 × 150 + 0,6 × 0 = 60; totalvärde = -20 + 60 = 40 — negativt projekt blir positivt med optionen. Men Damodarans varning är lika klassisk som verktyget: kalla det inte en option utan exklusivitet, osäkerhet och tid. Kan vem som helst expandera är det ingen option utan en affär alla kan kopiera; utan osäkerhet finns inget värde i att vänta; och utan tid är flexibiliteten bara teoretisk. Optionstämpeln har använts som ursäkt för överpris på allt från telecomlicenser till bränsleceller — samma skepsis som nätverkseffekterna förtjänar (kapitel 16)."
+        },
+        {
+          "type": "text",
+          "content": "När är vilket verktyg rätt? Scenarier vid få stora vägval (regulatoriskt godkännande, patentprocess). Montecarlo när många indata är osäkra och samspelar. Decision trees när beslutet är sekventiellt — investera i etapper och omvärdera. Real options när flexibiliteten är exklusiv. Damodarans poäng är att precision inte är målet: en enklare modell som visar var osäkerheten sitter slår en komplicerad som döljer den. En kurs på 80 kronor mot värdefördelningen P10 60 till P90 150 säger mer om risk än en punktskatt på 95 någonsin gör."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Osäkerhetsverktyg — när vilket\",\"rader\":[[\"Verktyg\",\"Ger\",\"När bäst\"],[\"Scenarier\",\"Få diskreta utfall med sannolikheter\",\"Stora vägval: godkännande, patent\"],[\"Montecarlo\",\"Hela värdefördelningen\",\"Många osäkra indata som samspelar\"],[\"Decision tree\",\"Sekventiella beslut och omvärdering\",\"Investerar i etapper\"],[\"Real option\",\"Värde av exklusiv flexibilitet\",\"Expandera/skjuta upp/överge — med exklusivitet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Osäkerhet ska inte elimineras i en enda siffra — den ska visas som en fördelning, prissatt med sannolikheter och optioner där flexibiliteten är verklig."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett läkemedelsprojekt kostar 150 idag och ger vid 25 procents godkännandechans ett nuvärde på 800 — annars noll. Förväntat värde = 0,25 × 800 - 150 = 200 - 150 = 50 (positivt). Upprepa med kostnad 250 (0,25 × 800 - 250 = -50). Vid vilken kostnad är projektet neutralt (svar: 200)? Vad styr godkännandechansen — och vad kallas verktyget om beslutet kan skjutas upp till efter fas 2-data?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Bas-NPV är -20 och expansionsrätten är värd 0,4 × 150 + 0,6 × 0 = 60. Vad är totalvärdet?",
+          "alternativ": [
+            "-20",
+            "40",
+            "60",
+            "130"
+          ],
+          "ratt": 1,
+          "tips": "Basvärdet och optionsvärdet adderas — det är hela poängen med flexibiliteten."
+        },
+        {
+          "q": "Vad är den främsta fördelen med montecarlo jämfört med en punktskatt i DCF?",
+          "alternativ": [
+            "Den ger alltid högre värde",
+            "Den visar hela fördelningen av värde (P10/median/P90) — inklusive asymmetri och svansar — istället för en enda siffra",
+            "Den tar bort behovet av antaganden",
+            "Den fungerar bara på banker"
+          ],
+          "ratt": 1,
+          "tips": "Vad förlorar du när tusen simuleringar trycks ihop till ett tal?"
+        },
+        {
+          "q": "Vilka tre villkor kräver Damodaran för att något ska få kallas en real option?",
+          "alternativ": [
+            "Hög belåning, låg beta och stabil utdelning",
+            "Exklusivitet, osäkerhet och tid — utan dessa är 'optionen' bara en ursäkt för överpris",
+            "Svart-Scholes-formeln, amerikansk option och courtagefri handel",
+            "Minst tio års historik och positivt EBITDA"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med värdet av att vänta om alla kan göra samma sak — eller om utfallet redan är känt?"
+        }
+      ]
+    },
+    {
+      "num": 18,
+      "minutes": 11,
+      "title": "Värderingens psykologi och value gap — Appleförsäljningen och marknadens tålamod",
+      "intro": "Bokens sista lärdom är personlig: den svåraste variabeln i varje värdering är värderaren själv. Här möter du Appleförsäljningen 2012, biasens bakdörrar och value gap — den smärtsamma sanningen att marknaden kan ha fel länge, och att det är just därför V19 kräver marginal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Damodaran beskriver psykologin kring värdering med fyra klassiska biaser. Förankring: vi börjar i kursen eller i vårt senaste målpris och 'värderar' oss dit. Bekräftelse: vi söker data som stöd och ignorerar data som motbevisar. Halo: bra produkt, bra vd eller bra berättelse blir automatiskt bra aktie — pris och värde blandas. Commitment-eskalering: när kursen faller dubblar vi hellre än att ompröva. Allt detta kommer in genom bakdörren: inte via fuskade formler utan via valda antaganden — tillväxten som 'kanske lite högre', WACC som 'kanske lite lägre'. Motgiften är process: värdera innan du ser kursen, skriv ner nyckelantagandena, och gör en pre-mortem där du formulerar björnens bästa argument innan marknaden gör det åt dig."
+        },
+        {
+          "type": "text",
+          "content": "Appleförsäljningen är hans mest använda självexempel. 2011 köpte Damodaran Apple billigt — med dagens splitjusterade aktier motsvarande cirka 11-12 dollar — och sålde under 2012 när kursen nådde hans beräknade värde, runt 21-22 dollar splitjusterat. Affären var en god affär — och ändå en läromästare: Apple fortsatte mångdubbla, och orsaken var att hans berättelse frös medan bolagets förbättrades. Ekosystemets bindning, prisformningskraften och tjänsteintäkterna gjorde historien starkare än den han sålt på. Lärdomen, som han lär ut öppet: när kursen når ditt beräknade värde är frågan inte 'sälj?' utan 'har historien förändrats?'. En värdering är inte en engångsbedömning — den är en levande hypotes som ska uppdateras när berättelsen gör det, annars är det inte disciplin utan dogm."
+        },
+        {
+          "type": "text",
+          "content": "Value gap är kursens slutkläm: avståndet mellan pris och intrinsikt värde kan bestå i åratal — marknaden kan ha fel länge, och Keynes ord, ofta citerade av Damodaran, står sig: marknaden kan förbli irrationell längre än du kan förbli solvent. Konsekvensen är inte fatalism utan konstruktion: utan katalysator stängs gapet kanske inte alls, och rätt för tidigt är fortfarande fel. Därför kräver AKM1 V19 margin — köp aldrig gapet utan marginal som skyddar mot att din värdering, inte marknadens, är fel. Och därför slutar kursen där den började: värdering är en bro mellan berättelse och siffror. Historien utan siffror är en saga; siffrorna utan historia är datalek; och gapet mellan pris och värde är platsen där tålamod och marginal tillsammans betalar lönen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bias → yttring → motgift\",\"rader\":[[\"Bias\",\"Yttring\",\"Motgift\"],[\"Förankring\",\"Startar från kursen eller målpris\",\"Värdera innan du ser kursen\"],[\"Bekräftelse\",\"Söker stöd, sorterar bort motbevis\",\"Skriv björnens bästa case\"],[\"Halo\",\"Bra produkt = bra aktie\",\"Håll pris och värde isär (V19)\"],[\"Commitment-eskalering\",\"Dubblar när kursen faller\",\"Pre-mortem och fördefinierade omprövningskriterier\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Värderingens svåraste variabel är inte betan eller terminal tillväxten — det är investeraren som väljer antaganden för att få den kurs man redan älskar."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Skriv ner din mest bevakade akties investmenttes med de tre bärande antagandena (tillväxt, ROIC, WACC). Byt sedan sida: formulera björnens bästa argument mot varje antagande. Fråga slutligen V19-frågan: hur stor rabatt mot ditt beräknade värde kräver du för att björnens scenario ska vara prissatt — och vad i din tes dör först om kursen faller 30 procent utan att någon nyhet kommit?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Damodarans egen huvudlärdom av att ha sålt Apple för tidigt 2012?",
+          "alternativ": [
+            "Att man aldrig ska sälja en vinnande aktie",
+            "Att hans berättelse frös medan bolagets förbättrades — när kursen når det beräknade värdet ska man fråga om historien förändrats, inte sälja maskinellt",
+            "Att DCF-modeller inte fungerar på teknikbolag",
+            "Att Apple manipulerade sina bokslut"
+          ],
+          "ratt": 1,
+          "tips": "Vad hade förändrats sedan hans köp: modellen eller berättelsen (ekosystem, prisformningskraft, tjänster)?"
+        },
+        {
+          "q": "Vad är 'value gap' och dess praktiska konsekvens?",
+          "alternativ": [
+            "Skillnaden mellan budget och utfall — konsekvensen är att räkna om bokslutet",
+            "Avståndet mellan pris och intrinsikt värde — gapet kan bestå länge utan katalysator, därför krävs marginal (V19) och tålamod",
+            "Skillnaden mellan P/E och PEG — konsekvensen är att alltid välja lägst PEG",
+            "Skillnaden mellan WACC och ke — konsekvensen är att minimera skulden"
+          ],
+          "ratt": 1,
+          "tips": "Keynes-citatet i texten handlar om vad marknaden kan förbli längre än du. Vad skyddar dig mot det?"
+        },
+        {
+          "q": "Hur kommer bias in i en värdering enligt Damodaran?",
+          "alternativ": [
+            "Endast genom avrundningsfel i formler",
+            "Genom bakdörren — vi väljer antaganden (tillväxt, risk, multipel) som ger den slutsats vi redan önskar",
+            "Enbart genom analytikerkonsensus",
+            "Bara när man använder montecarlo"
+          ],
+          "ratt": 1,
+          "tips": "Formlerna var korrekta i alla hans exempel också. Varifrån kom då de olika svaren?"
+        }
+      ]
+    }
+  ]
+}

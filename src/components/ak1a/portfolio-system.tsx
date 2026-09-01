@@ -500,11 +500,11 @@ export function PortfolioSystem() {
                               <div className="mt-2 flex flex-wrap gap-1.5">
                                 {ih.analys.fundament.pe != null && (
                                   <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${ih.analys.fundament.pe < 15 ? "bg-bull/10 text-bull" : ih.analys.fundament.pe > 30 ? "bg-bear/10 text-bear" : "bg-muted"}`}>
-                                    V14 P/E {ih.analys.fundament.pe}
+                                    P/E {ih.analys.fundament.pe}
                                   </span>
                                 )}
                                 {ih.analys.fundament.pb != null && (
-                                  <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-semibold">V14 P/B {ih.analys.fundament.pb}</span>
+                                  <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-semibold">V05 P/B {ih.analys.fundament.pb}</span>
                                 )}
                                 {ih.analys.fundament.roe != null && (
                                   <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${ih.analys.fundament.roe >= 0.15 ? "bg-bull/10 text-bull" : "bg-muted"}`}>
@@ -513,7 +513,7 @@ export function PortfolioSystem() {
                                 )}
                                 {ih.analys.fundament.vinstmarginal != null && (
                                   <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-semibold">
-                                    V04 marginal {Math.round(ih.analys.fundament.vinstmarginal * 100)} %
+                                    V08 marginal {Math.round(ih.analys.fundament.vinstmarginal * 100)} %
                                   </span>
                                 )}
                                 {ih.analys.fundament.tillvaxt != null && (
@@ -523,7 +523,7 @@ export function PortfolioSystem() {
                                 )}
                                 {ih.analys.fundament.skuldEk != null && (
                                   <span className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${ih.analys.fundament.skuldEk > 150 ? "bg-bear/10 text-bear" : "bg-muted"}`}>
-                                    V06 skuld/EK {Math.round(ih.analys.fundament.skuldEk)}
+                                    V10 skuld/EK {Math.round(ih.analys.fundament.skuldEk)}
                                   </span>
                                 )}
                                 {ih.analys.fundament.utdelning != null && ih.analys.fundament.utdelning > 0 && (

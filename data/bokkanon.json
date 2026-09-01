@@ -176,7 +176,7 @@
         "Ett mönster av små avvikelsejusteringar är starkare varning än en enskild skandal"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-008",
@@ -200,7 +200,7 @@
         "Värdera felet: ett intervall med ärlig osäkerhet slår en falsk punktskattning"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-009",
@@ -618,7 +618,7 @@
         "Klipp förlusten vid sju åtta procent: små förluster är systemets försäkringspremie"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-026",
@@ -884,7 +884,7 @@
         "Risk är mer än volatilitet: det är permanent kapitalförlust och marginalen är enda skyddet"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-037",

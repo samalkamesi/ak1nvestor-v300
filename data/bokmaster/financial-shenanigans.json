@@ -1,0 +1,1054 @@
+{
+  "slug": "financial-shenanigans",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "Financial Shenanigans — Schilit: KOMPLETT",
+  "summary": "Howard Schilit, redovisningsprofessorn som kallats redovisningens Sherlock Holmes, katalogiserar i Financial Shenanigans (första upplagan 1993) sju sätt för ledningar att lura med siffror — från för tidiga intäkter till dolda skulder och fejkad kassa. Kursen går igenom alla sju kategorierna med äkta fall (Enron, WorldCom, Sunbeam, HealthSouth, Luckin, Wirecard), bygger Schilits detektorsystem och kopplar allt till AKM1:s V17, V08, V04 och V05.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Schilits sju shenanigan-kategorier: för tidiga intäkter (channel stuffing, bill-and-hold), fiktiva intäkter (Luckin, ZZZZ Best), intäktsöverföringar (engångsvinster som löpande intäkt), underskattade kostnader (avskrivningar, reservfonder, pension), kostnadsförskjutningar (kapitalisering — WorldCom 3,8 Md USD, big bath — Sunbeams cookie jar), dolda skulder (Enrons SPE:s) och missbruk av kassaflödesredovisningen; detektorsystemet: vinst mot kassaflöde (V08), DSO, lageromsättning, bruttomarginalens kvalitet (V04), fotnotsläsning, non-recurring-analys och mjuka varningssignaler (revisorsbyte, CFO-avgångar, aggressivitet mot kritiker); historikens största fall med mekanik och årtal; samt integrationen i AKM1 där V17 gör redovisningskvaliteten till ett mätbart såll.",
+  "why": "Utan Schilit läser du AKM1:s nyckeltal som sanningar: V04-marginaler, V08-kassaflöden och V05-balansräkningar blir vackra siffror även när de är fabricerade. Varje val du gör i AKM1 bygger på rapportens kvalitet — Schilit är det som gör V17 till mer än en åsikt och som skiljer en aktieanalys från en beskrivning av en berättelse. Den som kan shenanigans vägrar vara den som betalar för nästa Enron.",
+  "chapters_list": [
+    { "num": 1, "title": "Schilits detektivarbete — sju sätt att lura med siffror", "minutes": 10 },
+    { "num": 2, "title": "Shenanigan 1: Intäkter för tidigt — channel stuffing och bill-and-hold", "minutes": 10 },
+    { "num": 3, "title": "Shenanigan 2: Fiktiva intäkter — påhittade kunder och falsk kassa", "minutes": 10 },
+    { "num": 4, "title": "Shenanigan 3: Intäktsöverföringar — engångsvinster i löpande drift", "minutes": 10 },
+    { "num": 5, "title": "Shenanigan 4: Underskattade kostnader — avskrivningar och reservfonder", "minutes": 10 },
+    { "num": 6, "title": "Shenanigan 5: Kostnadsförskjutningar — kapitalisering och big bath", "minutes": 10 },
+    { "num": 7, "title": "Shenanigan 6: Dolda skulder — Enrons SPE:s och off-balance-sheet", "minutes": 10 },
+    { "num": 8, "title": "Shenanigan 7: Missbruk av kassaflödesredovisningen", "minutes": 10 },
+    { "num": 9, "title": "Detektör I: Vinst mot kassaflöde — V08 som lögndetektor", "minutes": 10 },
+    { "num": 10, "title": "Detektör II: DSO, lageromsättning och marginalradarn (V04)", "minutes": 10 },
+    { "num": 11, "title": "Detektör III: Fotnoter, engångsposter och mjuka signaler", "minutes": 10 },
+    { "num": 12, "title": "Fallstudier I: Enron, WorldCom, Sunbeam och HealthSouth", "minutes": 10 },
+    { "num": 13, "title": "Fallstudier II: Luckin Coffee och Wirecard — nya erans bedrägerier", "minutes": 10 },
+    { "num": 14, "title": "Schilit i AKM1: checklista, V17-integration och 30-sekunderstestet", "minutes": 10 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Schilits detektivarbete — sju sätt att lura med siffror",
+      "intro": "Howard Schilit är certifierad revisor och redovisningsprofessor som började samla på sig rättsfall där ledningar manipulerat sina rapporter. Resultatet blev Financial Shenanigans (1993), boken som gav hela kategorier av redovisningstrick sina namn. Hans kärnbudskap är befriande praktiskt: du behöver inte vara revisor för att hitta tricken — du behöver veta var de gömmer sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Schilits definition är utgångspunkten: finansiella shenanigans är avsiktliga handlingar — genom att göra eller att underlåta — från ledningens sida, syftande till att vilseleda investerare och borgenärer om bolagets verkliga resultat och finansiella ställning. Notera tre ord. Avsiktliga: det handlar inte om ärliga uppskattningsfel utan om val. Underlåta: en del av de värsta tricken består i att inte bokföra något. Vilseleda: målet är bilden av bolaget, inte nödvändigtvis någon enskild siffra. I gråzonen mellan aggressiv men laglig redovisning och hänsynslöst bedrägeri lever de flesta kurser — och det är där den som känner kategorierna har övertaget."
+        },
+        {
+          "type": "text",
+          "content": "Varför gör ledningar detta? Schilit pekar på att bolag hanterar redovisad vinst som vilken annan produkt som helst: den tillverkas, paketeras och säljs till marknaden. Drivkrafterna är konkreta — räcka till marknadens förväntningar (guidance), bonusprogram kopplade till resultat, låneförpliktelser (covenants) som utlöses om vinsten sjunker, och personliga aktieinnehav som ska realiseras. Cresseys klassiska bedrägeritriangel sammanfattar mekaniken: press, möjlighet och rationalisering. Pressen är evig, möjligheten ges av komplexa rapporter och svaga kontroller, och rationaliseringen låter alltid rimlig: ”vi tar tillbaka nästa kvartal”."
+        },
+        {
+          "type": "text",
+          "content": "Schilits katalog har vuxit med upplagorna men stommen är sju kategorier. Tre bor på intäktssidan: att bokföra intäkter för tidigt eller innan de är säkra, att bokföra helt fiktiva intäkter, och att klä engångsvinster som löpande intäkt. Två bor på kostnadssidan: att underskatta kostnader och förluster, och att skjuta kostnader framför sig genom kapitalisering eller big bath. En bor i balansräkningen: att dölja skulder och ansvar utanför rapporten. Och den sjunde, tillkommen senare, bor i kassaflödesrapporten: att missbruka klassificeringen av kassaflöden. Intäktssidan är enligt Schilit den mest frestande — intäkten är den siffra marknaden multiplicerar."
+        },
+        {
+          "type": "text",
+          "content": "Detektivens arbetssätt är Schilits egentliga gåva till investeraren. Steg ett: förstå verksamheten så väl att du vet vilka marginaler, kassaflöden och balansposter som är normala. Steg två: känna igen tidiga varningssignaler — aggressiva redovisningsval, konstiga transaktioner, svag internkontroll. Steg tre: känna spelen, det vill säga kategorierna i denna kurs. Steg fyra: tillämpa verktygen — läsa hela rapporten inklusive fotnoter, jämföra vinst med kassa, följa fordringar och lager över tid. I AKM1 är detta exakt V17:s uppdrag: sårbärhet och kvalitet i rapporterna, där komplexitet i sig är ett riskmått."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Vinst är en åsikt, kassa är ett faktum — hela Schilits metod kan komprimeras till en enda vägran: acceptera aldrig en vinstsiffra utan att fråga hur den skapades och om kassaflödet bekräftar den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Schilits sju shenanigan-kategorier\",\"rader\":[[\"Nr\",\"Kategori\",\"Kärnmekanik\",\"Klassiskt fall\"],[\"1\",\"För tidiga intäkter\",\"Intäkt bokförs innan prestationen är säker\",\"Sunbeam 1997, Xerox 1997-2000\"],[\"2\",\"Fiktiva intäkter\",\"Påhittade kunder och försäljning\",\"ZZZZ Best 1987, Luckin 2019\"],[\"3\",\"Intäktsöverföringar\",\"Engångsvinster kläs som löpande intäkt\",\"Dells Intel-rabatter 2002-2006\"],[\"4\",\"Underskattade kostnader\",\"Avskrivningar och reserver för små\",\"Waste Management 1992-1997\"],[\"5\",\"Kostnadsförskjutningar\",\"Kostnader kapitaliseras eller sparas i burk\",\"WorldCom 2002, AOL 1996\"],[\"6\",\"Dolda skulder\",\"Skulder utanför balansräkningen\",\"Enron 2001, Parmalat 2003\"],[\"7\",\"Kassaflödesmissbruk\",\"Finansiering kläs som driftskassaflöde\",\"Kraft Heinz leverantörsfinansiering 2019\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta fram en årsredovisning för ett bolag du äger eller bevakar. Räkna sidorna: hur många sidor är resultatrapport och balansräkning, och hur många sidor är noter? Bläddra sedan till revisorsutlåtandet och läs de tre sista meningarna — där framgår om revisorn haft något att invända. Notera din magekänsla före och efter: det är V17-arbetets första repetition."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar enligt Schilit en finansiell shenanigan?",
+          "alternativ": [
+            "Ett ärligt uppskattningsfel i en osäker framtidsberäkning",
+            "En avsiktlig handling eller underlåtelse från ledningen för att vilseleda om verklig finansiell ställning",
+            "En laglig redovisningsmetod som marknaden råkar tolka fel",
+            "En revisorsfelaktighet som ledningen inte kände till"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på de tre orden i definitionen: avsikt, underlåtelse, vilseleda."
+        },
+        {
+          "q": "Varför pekar Schilit på intäktssidan som den vanligaste platsen för trick?",
+          "alternativ": [
+            "Intäkter är lättast att räkna på utan dokumentation",
+            "Intäkten är den siffra marknaden multiplicerar — en krona in där flyttar värderingen mest",
+            "Kostnadssidan granskas alltid hårdare av revisorer",
+            "Intäkter påverkar inte skatten och är därför riskfria att manipulera"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vilken rad som driver P/E och P/S — det är där incitamentet är störst."
+        },
+        {
+          "q": "Vilken av följande är en av Schilits sju kategorier?",
+          "alternativ": [
+            "Att byta revisor var femte år",
+            "Att hålla presskonferenser utan sifferunderlag",
+            "Att bokföra engångsvinster som löpande intäkt",
+            "Att vägra lämna framtidsprognoser"
+          ],
+          "ratt": 2,
+          "tips": "Kategorierna handlar alla om var i rapporterna siffrorna flyttas, inte om kommunikation."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Shenanigan 1: Intäkter för tidigt — channel stuffing och bill-and-hold",
+      "intro": "Den första och vanligaste kategorin handlar om tidpunkten: intäkten är äkta i någon mening, men den bokförs innan den är säker eller utlämnad. Schilit visar att flera av de stora namnen — Sunbeam, Xerox, Under Armour — brann på just denna mekanik. Nyckeln för dig är att lära dig känna igen den i kundfordringarnas rörelser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundregeln i både IFRS 15 och US GAAP är att intäkt redovisas när prestationsplikten är uppfylld — när kunden fått kontroll över varan eller tjänsten. Shenanigan nummer ett flyttar den tidpunkten bakåt i tiden. Det farliga med kategorin är att den är lätt att rationalisera: affären är ju på väg att hända, bokföringen kommer bara några kvartal för tidigt. Men en intäkt som bokförs i kvartal fyra för att rädda året är ett lån från nästa år — och som alla lån ska det betalas tillbaka, nu med ränta i form av rabatter, returer eller nästa års hål att fylla."
+        },
+        {
+          "type": "text",
+          "content": "Channel stuffing är den klassiska tekniken: i kvartalets sista veckor pressas distributörer och återförsäljare att ta emot stora volymer med djupa rabatter, utökade betalningstider eller rätten att returnera osålt. Resultatet blir en snygg kvartalsrapport och ett distributörssystem som är mättat. Sunbeam gjorde det med grillar och utemöbler under vintern 1997-1998 — produkter med säsongsförsäljning som gick ut i handeln långt före säsongen. Krispy Kreme anklagades av SEC för liknande mönster med donuts 2004-2005, och Under Armour skiftade enligt SEC:s utredning (2021) fram cirka 408 miljoner dollar i befintliga order mellan kvartal 2015-2016 för att hålla tillväxtsiffran intakt."
+        },
+        {
+          "type": "text",
+          "content": "Bill-and-hold är den mer avancerade kusinen: kunden faktureras och äganderätten övergår formellt, men varorna stannar kvar i säljarens lager. I vissa branscher är detta legitimt (kunden begär förvaring), men kriterierna är strikta och Schilit visar hur de böjs. Sunbeams fjärde kvartal 1997 var fyllt av bill-and-hold-försäljning som SEC senare slog fast var illusorisk. En teknik i samma familj gäller långfristiga kontrakt — bygg, försvar, programvara — där intäkten löpande bokförs efter procent av slutförande. Där bor tricket i uppskattningarna: hur mycket är gjort, och vad återstår i kostnad? En liten justering av färdigställandegraden flyttar miljoner mellan kvartal."
+        },
+        {
+          "type": "text",
+          "content": "Xerox är kategoriens mastodontfall. Mellan 1997 och 2000 accelererade bolaget redovisningen av kopiatoravtal — stora delar av värdet på fleråriga avtal om utrustning och service bokfördes redan vid tecknandet i stället för att fördelas över avtalens löptid. SEC:s utredning (2002) visade att 6,4 miljarder dollar i intäkter accelererats felaktigt, och Xerox fick betala den då största bötesmulkten i SEC:s historia — 10 miljoner dollar — och jämka om räkenskaperna. Notera generalrendan: bolaget behövde inte hitta på affärer. Det behövde bara flytta tidpunkten. Därför är Xerox den bästa skolan i varför du ska granska tillväxtens kvalitet, inte bara dess storlek."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En för tidigt bokförd intäkt är inget tillskott — det är ett lån från framtiden, och bolag som lånar av nästa kvartal går så småningom bankrutt på sin egen kalender."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kategori 1: trick, signal och fråga till bolaget\",\"rader\":[[\"Trick\",\"Varningssignal\",\"Fråga till bolaget\"],[\"Channel stuffing\",\"Kundfordringar växer snabbare än intäkter; DSO stiger\",\"Varför ökar distributörernas lager i slutet av kvartalet?\"],[\"Bill-and-hold\",\"Fotnot om förvarade, fakturerade varor\",\"Vilka kriterier uppfyller bill-and-hold-avtalen?\"],[\"Accelererade avtal\",\"Intäkt per kvartal oscillerar; backlogg sjunker\",\"Hur beräknas färdigställandegraden?\"],[\"Gross-up (agent som principal)\",\"Intäkten hoppar utan vinsttillväxt\",\"Bokförs intäkten brutto eller netto?\"],[\"Rabatter och returer\",\"Stigande säljkostnader; returreserv växer\",\"Hur stor del av kvartalets försäljning är returbar?\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Öppna not 1 (redovisningsprinciper) i en årsredovisning och hitta avsnittet om intäktsredovisning. Leta efter orden ”principal”, ”agent”, ”returrätt”, ”prestationsplikt” och ”färdigställandegrad”. Skriv ner alla bedömningar ledningen själv säger att den gör — var och en av dem är en möjlig spänning mellan bokförd intäkt och verklig prestation."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnmekaniken i channel stuffing?",
+          "alternativ": [
+            "Att hitta på kunder som inte existerar",
+            "Att pressa distributörer att ta emot mer varor än efterfrågan med rabatter och returrätter",
+            "Att kapitalisera marknadsföringskostnader",
+            "Att flytta skulder till ett specialbolag"
+          ],
+          "ratt": 1,
+          "tips": "Fokus ligger på kanalen — distributionsledet — och på timing, inte på påhittade affärer."
+        },
+        {
+          "q": "Vad kännetecknar bill-and-hold-försäljning?",
+          "alternativ": [
+            "Varan faktureras men stannar fysiskt kvar hos säljaren",
+            "Varan säljs tillbaka till säljaren nästa kvartal",
+            "Intäkten delas upp över fem år",
+            "Kunden betalar kontant vid leverans"
+          ],
+          "ratt": 0,
+          "tips": "Namnet beskriver mekaniken: ena halvan är fakturan, andra halvan är varans placering."
+        },
+        {
+          "q": "Sunbeams fjärde kvartal 1997 innehöll stora mängder försäljning av grillar och utemöbler mitt i vintern. Vilken fråga borde en Schilit-analytiker ha ställt först?",
+          "alternativ": [
+            "Varför stiger råvarukostnaderna?",
+            "Varför har bolaget bytt revisor?",
+            "Varför är utdelningen så låg?",
+            "Varför köper återförsäljarna säsongsvaror mitt i lågsäsongen — och med vilka villkor?"
+          ],
+          "ratt": 3,
+          "tips": "Säsongsvaror utanför säsong är ett timingproblem — börja med vem som bär risken när varan lämnar lagret."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Shenanigan 2: Fiktiva intäkter — påhittade kunder och falsk kassa",
+      "intro": "Kategori två är den renaste formen av bedrägeri: intäkter som aldrig ägt rum. Här finns ingen gråzon och inga rationaliseringar att falla tillbaka på — bara påhittade kunder, falska dokument och i slutändan kassa som inte existerar. Schilit visar ändå att även de mest häpnadsväckande bluffarna lämnar spår i balansräkningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det äldsta exemplet i litteraturen är ZZZZ Best, tvättfirman som Barry Minkow grundade som 16-åring och börsnoterade som 19-åring 1986. Bolaget bokförde helt påhittade restaureringskontrakt efter brand- och vattenskador — kontrakt med kunder som inte fanns, dokumenterade med falska arbetsordrar. Det hela rasade 1987 och Minkow dömdes till fängelse. Revisorernas misstag är lärorikt för alla som granskar kassa: de kontrollerade bankinsättningar på kontoutdrag i stället för att begära oberoende bankbekräftelser. Ett dokument som bolaget självt kan tillverka bevisar ingenting."
+        },
+        {
+          "type": "text",
+          "content": "HealthSouth, sjukhusjätten som grundades av Richard Scrushy, visar hur kultur blir mekanik. Från 1996 till 2003 uppblåstes resultaten med minst 1,4 miljarder dollar genom falska poster — poster som togs in för att stänga gapet mellan verkligt resultat och Wall Streets förväntningar. Redovisningscheferna fick i praktiken order om att fylla luckan: här är siffran som behövs, hitta på resten. Ingen enskild post var dramatisk; mekaniken var därför osynlig utåt i åratal. Fallet visar Schilits poäng om att bedrägeri sällan börjar med ett stort beslut — det börjar med att någon en kvartalsavslutningsdag känner pressen och väljer gapet i stället för sanningen."
+        },
+        {
+          "type": "text",
+          "content": "Luckin Coffee är kategoriens moderna standardfall. Bolaget grundades 2017, noterades på Nasdaq i maj 2019 och växte snabbare än någon kafakedja före den. Den 31 januari 2020 publicerades en anonym kortrapport (som Muddy Waters ställde sig bakom och själv blankade) med bland annat CCTV-räknade kundflöden och kvitton från butiker. Den 2 april 2020 erkände bolaget att COO:n och medarbetare fabricerat cirka 2,2 miljarder yuan — omkring 310 miljoner dollar — i försäljning under andra till fjärde kvartalet 2019, bland annat genom kopongförsäljning till bolag kopplade till anställda. I juni 2020 avnoterades aktien. Mekaniken: falska transaktioner genom relaterade parter, som ser ut som försäljning men aldrig blir kassa."
+        },
+        {
+          "type": "text",
+          "content": "Den indiska IT-jättens grundare Ramalinga Raju lämnade 2009 ett av finanshistoriens mest kända bekännelsebrev efter att Satyams kassa visat sig till övervägande del påhittad: han beskrev bedrägeriet som en ridtur på en tiger — utan att veta hur man hoppar av utan att bli uppäten. Det är kategoriens sanning i en mening: fiktiva intäkter kan inte realiseras, och därför måste de förbli i balansräkningen som kundfordringar eller — värre — som kassa som inte finns. Det är därför V08-testet och en enkel fråga om ränteavkastning på kassan fångar nästan alla påhittade intäkter förr eller senare."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Fiktiv intäkt kan aldrig förvandlas till kassa — den tvingas stanna kvar i balansräkningen som en växande, tyst fordring; därför avslöjar jämförelsen mellan intäktstillväxt och kassaflöde till slut nästan varenda påhittad kund."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fiktiva intäkter: fall, mekanik och avslöjande\",\"rader\":[[\"Fall\",\"Mekanik\",\"Avslöjades genom\"],[\"ZZZZ Best 1987\",\"Påhittade restaureringskontrakt\",\"Revisor godtog förfalskade kontoutdrag i stället för bankbekräftelser\"],[\"HealthSouth 1996-2003\",\"Toppenstyrda poster som stängde gapet mot estimates\",\"CFO-visselblåsare, FBI, SEC 2003\"],[\"Luckin 2019\",\"Kopongsförsäljning till kopplade bolag; falska order\",\"Anonym rapport med butiksdata; bolagets egen utredning 2020\"],[\"Satyam 2009\",\"Fejkad kassa och kundfordringar\",\"Grundarens eget bekännelsebrev när bluffen inte längre kunde rullas\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj ett tillväxtbolag och gör kopplingstestet: jämför intäktstillväxten med den faktiska kassaflödet från kunder (kontantflödesanalysens översta rad) för tre år. Om intäkterna växer 40 procent per år men kassan från kunder står stilla — vad har du hittat, och vilken av Schilits kategorier passar mönstret? Skriv en rad med din slutsats."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur fabricerade Luckin Coffee i huvudsak sin försäljning 2019?",
+          "alternativ": [
+            "Genom att kapitalisera butikskostnader",
+            "Genom kopong- och orderförsäljning till bolag kopplade till anställda",
+            "Genom att sälja tilläggsförsäkringar till kunder",
+            "Genom att förlänga avskrivningstider på kaffemaskiner"
+          ],
+          "ratt": 1,
+          "tips": "Försäljningen behövde se ut som volym — tänk på hur en kafakedja kan blåsa upp antalet transaktioner utan pengar."
+        },
+        {
+          "q": "Vad var revisorernas avgörande misstag i ZZZZ Best-fallet?",
+          "alternativ": [
+            "De granskade för många kontoutdrag",
+            "De vägrade signera rapporten",
+            "De kontrollerade kassan på bolagets egna kontoutdrag i stället för via oberoende bankbekräftelser",
+            "De samarbetade med FBI för tidigt"
+          ],
+          "ratt": 2,
+          "tips": "Frågan är vem som producerade underlaget — bolaget självt eller banken?"
+        },
+        {
+          "q": "HealthSouths falska poster kallades internt poster som skulle ”fylla gapet”. Vad säger det om mekaniken?",
+          "alternativ": [
+            "Bedrägeriet styrdes uppifrån med target first — siffran sattes först, dokumenten sen",
+            "Posterna var slumpmässiga datafel",
+            "Det var revisorerna som föreslog posterna",
+            "Gapet berodde på valutakurser"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på i vilken ordning tal och verklighet kom — vilket kom först, hönan eller rapporten?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Shenanigan 3: Intäktsöverföringar — engångsvinster i löpande drift",
+      "intro": "Den tredje kategorin flyttar inte belopp utan plats: en engångsvinst — en såld fastighet, en leverantörsrabatt, en valutavinst — kläs ut som löpande intäkt eller rörelseresultat. Schilit menar att investerare luras av klassificering oftare än av belopp, eftersom platsen i rapporten är ett tyst påstående om att vinsten kommer igen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken är förödande enkel att förstå och svår att se i sammanfattade siffror. En tillgångsförsäljning hör hemma som separat engångspost — men om vinsten på försäljningen bokförs i rörelsen ser marginalerna bättre ut. Schilit beskriver hur bolag stoppar in vinster på fastighetsförsäljning, värdepapper, valutor och försäljning av dotterbolag i den löpande resultaträkningen. Summan i botten blir densamma — men den rad som analytiker multiplicerar med en multipel har förbättrats. Klassificering är i redovisningen ett påstående om varaktighet: löpande intäkt säger ”detta återkommer”, engångsvinst säger ”detta hände en gång”. Trick nummer tre bygger på att byta plats på de två påståendena."
+        },
+        {
+          "type": "text",
+          "content": "Dell-fallet är kategoriens skolbild. Enligt SEC:s utredning (2010) var Dell mellan 2002 och 2006 i praktiken beroende av hemliga betalningar från Intel — exklusivitetsavgifter för att enbart använda Intels processorer — för att möta sina vinstmål. Under en period motsvarade dessa betalningar en betydande del av operativresultatet, samtidigt som bolaget presenterade en bild av en extremt lönsam pc-tillverkare. När betalningarna upphörde framförhandlades en förlikning med SEC 2010. Lärdomen är V04-kopplad: en bruttomarginal eller rörelsemarginal som ser för bra ut mot konkurrenter kan bero på intäkter av helt fel slag — här leverantörsbetalningar bokförda i rörelsen, i det tysta."
+        },
+        {
+          "type": "text",
+          "content": "Den europeiska varianten heter leverantörsrabatter. Tesco fick 2014 erkänna att man överdrivit halvårsresultatet med 263 miljoner pund genom att bokföra kommersiella intäkter — rabatter och bonusar från leverantörer — för tidigt och för optimistiskt. Gränsfallet blir trick när bokföringen systematiskt är den optimistiska tolkningen. Schilit ger motgiftet: gör alltid listan över poster ledningen kallar engångs och ställ följdfrågan — hur stor var samma post förra året, och året innan? En ”engångs”-post som återkommer tre år i rad är inte engångs — den är löpande med dåligt rykte."
+        },
+        {
+          "type": "text",
+          "content": "Det omvända tricket är minst lika vanligt och kanske farligare: att klä löpande kostnader som engångsposter. Restruktureringskostnader som återkommer varje år, integrationskostnader i det ena förvärvet efter det andra, ”omställningsposter” utan slut. Extremexemplet är Groupon 2011, som i prospektet lanserade sitt eget mått ACSOI — justerat rörelseresultat där marknadsföringskostnaderna var borträknade — alltså kostnaden för att skaffa kunderna till en kundtillväxtverksamhet. SEC stoppade måttet. Schilits regel: när ledningen konstruerar egna mått är det alltid samma fråga — vad är det de inte vill att du ska räkna med?"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Summan är densamma men platsen är budskapet — i en resultatrapport är klassificeringen ett påstående om varaktighet, och det påståendet är ofta det enda som skiljer multipel 15 från multipel 25."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kategori 3: var posten hör hemma — och var tricket lägger den\",\"rader\":[[\"Post\",\"Hör hemma som\",\"Tricket lägger den\"],[\"Vinst fastighetsförsäljning\",\"Engångspost\",\"Rörelseintäkt\"],[\"Leverantörsrabatt (Tesco)\",\"Netting i inköp eller engångspost\",\"Löpande kommersiell intäkt\"],[\"Exklusivitetsavgift (Dell/Intel)\",\"Övrig intäkt, exponerad\",\"Tyst del av rörelseresultatet\"],[\"Valutagevinster\",\"Finansnetto\",\"Rörelseresultat\"],[\"Återkommande omstrukturering\",\"Löpande kostnad\",\"Engångspost varje år\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta de tre senaste rapporterna för ett bolag och gör två kolumner: Poster ledningen kallar engångs och Poster ledningen lyfter i presentationen. Markera varje post som finns i mer än en av de tre rapporterna. Om hälften eller mer av vinsten består av återkommande engångsposter — vad blir din justerade vinst, och vad händer med multipeln?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är klassificeringen av en post — löpande eller engångs — så viktig för värderingen?",
+          "alternativ": [
+            "Klassificeringen påverkar skatten direkt",
+            "Engångsposter måste alltid bokföras i balansräkningen",
+            "Det spelar ingen roll — summan är densamma",
+            "Platsen signalerar varaktighet: löpande intäkt multipliceras med hög multipel, engångsvinst ignoreras"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad marknaden gör med en intäkt den tror återkommer varje år."
+        },
+        {
+          "q": "Vad var kärnan i Dells enligt SEC granskade intäktsöverföring?",
+          "alternativ": [
+            "Försäljning av datorer som inte levererats",
+            "Hemliga Intel-betalningar som täckte vinstmål men inte exponerades som beroende",
+            "Fakturering av egna dotterbolag",
+            "Kapitaliserade garantikostnader"
+          ],
+          "ratt": 1,
+          "tips": "Frågan är inte att betalningarna fanns — utan att bolagets lönsamhet sakta byggde på dem i tysthet."
+        },
+        {
+          "q": "Groupons ACSOI-mått 2011 räknade bort marknadsföringskostnader. Vilken Schilit-fråga avslöjar den typen av egendesignade mått?",
+          "alternativ": [
+            "Vilken revisor har godkänt måttet?",
+            "Är måttet samma som konkurrenternas?",
+            "Vad är det ledningen inte vill att jag ska räkna med?",
+            "Hur gammalt är måttet?"
+          ],
+          "ratt": 2,
+          "tips": "Ett justerat mått är alltid en subtraktion — börja med att fråga vad som subtraherats."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Shenanigan 4: Underskattade kostnader — avskrivningar och reservfonder",
+      "intro": "Den fjärde kategorin angriper kostnadssidan: att inte bokföra det som borde bokföras. Schilit visar att de farligaste exemplen knappast syns i resultaträkningen — de gömmer sig i antaganden om nyttjandetider, saldovärden och reservnivåer som bara finns i fotnoter. Här blir notläsning och jämförelse med konkurrenter till din främsta teknik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avskrivningar är redovisningens mest underskattade manipulerbara ratt. En sopbil som skrivs av över tjugo år kostar hälften så mycket per år som en som skrivs av över tio — förläng nyttjandetiden och resultatet stiger utan att en enda affär förändras. Waste Management, världens största avfallskoncern, sträckte enligt SEC mellan 1992 och 1997 nyttjandetiderna på sopbilar och containrar och höjde antagna restvärden — resultatet blev 1,7 miljarder dollar i uppblåst resultat innan bolaget tvingades jämka om allt. Revisorn var Arthur Andersen, som senare även figurerade i Enron och Sunbeam. Notera mekanismen: inga falska dokument behövs — bara en fotnotsändring av en parameter som få läsare kontrollerar."
+        },
+        {
+          "type": "text",
+          "content": "Reservfonder är kostnadssidans svar på intäktstrick. Garantireserver, kreditförlustreserver och processreserver är uppskattningar av framtida kostnader — och den som uppskattar kan underskatta. Schilit beskriver hur bolag systematiskt underdimensionerar reserverna i goda tider för att sedan täcka hålen i dåliga, när ändå ingen tittar. Omvänt blev AIG:s transaktion med General Re år 2000 — en omförsäkring på 500 miljoner dollar som enligt reglerarna knappast överförde någon verklig risk — ett exempel på reserver använda som dekoration: AIG ville visa analytikerna större skadereserver än konkurrenterna utan att egentligen köpa något skydd. I båda riktningarna gäller: en reserv är en åsikt om framtiden, och åsikter kan styra resultat."
+        },
+        {
+          "type": "text",
+          "content": "Pensionsredovisningen är den tredje ratten. Förväntad avkastning på pensionsmedel, diskonteringsränta och antaganden om löneutveckling är alla parametrar som ledningen väljer — och varje parameter som väljs optimistiskt sjunker kostnaden. Ett bolag som höjer antagen avkastning från 6 till 8 procent bokför en vinst som ingen kund betalat för. Detsamma gällde fram till 2005 aktieoptioner, som i USA inte behövde bokföras som lönekostnad alls — teknikbolag kunde betala tusentals anställda med optioner som var osynliga i resultaträkningen. Schilits råd är att alltid söka kostnaderna som inte syns: optioner, pensioner, garantier och — fram till IFRS 16 — även leasingåtaganden utanför balansräkningen."
+        },
+        {
+          "type": "text",
+          "content": "Hur hittar du kategorin? Tre verktyg. För det första: jämför avskrivningsprinciper med konkurrenter — en lastbilsflotta med längre nyttjandetid än branschens förklarar bort en marginalfördel. För det andra: följ kvoten avskrivningar/capex över fem år; sjunker den utan förklaring kan något hålls vid liv i balansräkningen i stället för att kostnadsföras. För det tredje: läs reservnoterna baklänges — öppningsbalans, tillägg, användning, avslutande balans — och se om reserverna släpps tillbaka till resultatet. Det är kopplat direkt till AKM1 V04: en bruttomarginal som stiger utan prisökningar, mixskifte eller kostnadsprogram kan vara ett avskrivnings- eller reservtrick."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En kostnad som inte bokförs försvinner inte — den blir en dold skuld i balansräkningen som återkommer med ränta som jämkning, nedskrivning eller konkurs; avskrivningstider och reservnivåer är därför vinstens tysta rattar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kategori 4: ratt, trick och var du letar\",\"rader\":[[\"Kostnadsratt\",\"Trick\",\"Var du hittar den\"],[\"Nyttjandetid (Waste Management)\",\"Längre tid, högre restvärde\",\"Not om avskrivningsprinciper; jämför med konkurrent\"],[\"Garanti-/kreditreserver\",\"Systematisk underdimensionering\",\"Reservnotens rollforward\"],[\"Pensionsantaganden\",\"Optimistisk avkastning och ränta\",\"Pensionsnot\"],[\"Optioner (före 2005)\",\"Lön osynlig i resultaträkningen\",\"Not om aktiebaserad ersättning\"],[\"Nedskrivningstajming\",\"Vänta med nedskrivning till big bath-året\",\"Not om nedskrivningar av tillgångar\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Slå upp avskrivningsnoten i två konkurrenters årsredovisningar (välj en kapitalintensiv bransch — transport, skog, telekom). Skriv upp nyttjandetider för deras viktigaste tillgångsklasser. Om den ena skriver av maskiner på 20 år och den andra på 12 — hur många procentenheter av rörelsmarginalen är bara en parameter? Skriv en slutsatsrad om vilken rapport du litar på."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur blåste Waste Management upp sitt resultat enligt SEC?",
+          "alternativ": [
+            "Genom att förlänga nyttjandetider och överdriva restvärden på sopbilar och containrar",
+            "Genom att bokföra påhittade avtal med kommuner",
+            "Genom att sälja skulder till specialbolag",
+            "Genom att kapitalisera lönekostnader"
+          ],
+          "ratt": 0,
+          "tips": "Fallet handlar om en parameter i en fotnot — inte om påhittade affärer."
+        },
+        {
+          "q": "Vad händer med ett års resultat om bolaget förlänger avskrivningstiden på en stor tillgångsbas?",
+          "alternativ": [
+            "Resultatet sjunker eftersom tillgångarna hålls längre",
+            "Resultatet påverkas inte — det är bara en balansräkningsfråga",
+            "Kassaflödet stiger automatiskt",
+            "Resultatet stiger eftersom den årliga avskrivningskostnaden sjunker"
+          ],
+          "ratt": 3,
+          "tips": "Samma anskaffningskostnad fördelas på fler år — vad händer med kostnaden per år?"
+        },
+        {
+          "q": "Varför är reservfonder särskilt manipulerbara?",
+          "alternativ": [
+            "De är alltid bokförda i fotnoter som ingen får läsa",
+            "De bygger på uppskattningar av framtida kostnader — och den som uppskattar kan underskatta",
+            "De påverkas inte av revisorer",
+            "De bokförs bara vart femte år"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vilka delar av en rapport som är rena kontanttransaktioner och vilka som är prognoser."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Shenanigan 5: Kostnadsförskjutningar — kapitalisering och big bath",
+      "intro": "Den femte kategorin flyttar kostnader från resultaträkningen till balansräkningen — eller sparar dem i en burk för framtida återföring till resultatet. Här bor världshistoriens största redovisningsbedrägeri, WorldComs 3,8 miljarder dollar i kapitaliserade kostnader, men också det vardagligare tricket att döpa om kostnader till tillgångar. Schilit kallar tiden för den bästa granskaren: allt som kapitaliseras ska förr eller senare avskrivas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "WorldCom är kategorins och kanske hela ämnets centrala fall. Teleoperatören betalade stora avgifter till andra operatörer för att trafiken skulle nå fram — line costs, i grunden en löpande kostnad som hyran. Från 1999 bokfördes i stället miljarder av dessa avgifter som kapitalutgifter: kostnaden togs ur resultaträkningen och byggdes upp som en tillgång på balansräkningen som sedan avskrevs långsamt. När den interna revisorn Cynthia Cooper 2002 grävde i bolagets böcker, till stor del på eget initiativ och om nätterna, hittades de första 3,8 miljarder dollar i kapitaliserade kostnader — senare växte det totala bedrägeriet till omkring 11 miljarder. Bernie Ebbers dömdes till 25 års fängelse, CFO:n Scott Sullivan och redovisaren Betty Vinson — som bokförde de styrda toppjusteringarna, så kallade top-side adjustments, under protest — dömdes likaså."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken i kapitalisering är lätt att ta till eftersom gränsen mellan kostnad och tillgång är en bedömning. AOL kapitaliserade under 1990-talets första hälft kostnader för att skaffa nya kunder — marknadsföringsutgifter bokfördes som uppskjutna kundanskaffningskostnader och skrevs av över tid. 1996 skrevs hundratals miljoner dollar (385 miljoner i en och samma post) av i en engångssanering när tillväxten mattades; SEC:s utredning följde 2000. Samma logik återkommer i mjukvaruutveckling, borrningar och FoU: närhelst en kostnad får lov att heta tillgång kommer någon att vilja döpa om den. Frågan att ställa är alltid samma: skulle kostnaden försvinna om bolaget slutade investera — eller är den ett villkor för att ens ha en verksamhet?"
+        },
+        {
+          "type": "text",
+          "content": "Big bath är kategorins andra ansikte: att samla allt ont i ett enda förödande kvartal. När en ny VD tillträder är incitamentet att städa ut alla misstag på föregångarens watch — en gigantisk restruktureringskostnad — eftersom marknaden ändå straffar övergången och den nya ledningen får en ren start. Problemet är vad som händer med reserverna: Sunbeams Al ”Chainsaw” Dunlap byggde efter tillträdet 1996 stora omstruktureringsreserver — en cookie jar, en kakburk — som under 1997 släpptes tillbaka in i resultaten för att måla en vändning som enligt SEC:s anklagelser (2001) var illusorisk. Kakburkens mekanik: ta ut för stora reserver en gång, släpp tillbaka dem successivt utan att någon ser, kvartal efter kvartal."
+        },
+        {
+          "type": "text",
+          "content": "Detektionen har tre ben. För det första raden kapitaliserade utvecklingskostnader i balansräkningen — följ dess storlek och avskrivningstakt; växer den snabbare än intäkterna är något fel. För det andra kvoten capex/avskrivningar över en konjunkturcykel: ligger den systematiskt högt i ett moget bolag frågar du vad som egentligen byggs. För det tredje restruktureringsnotens rollforward: öppningsreserv, tillägg, förbrukning, avslut. Om reserver släpps tillbaka till resultatet kvartal efter kvartal — utan att verksamheten syns förändras — har du hittat en kakburk. Detta är en av de direkaste operationaliseringarna av V17 i AKM1: frågan är aldrig om siffrorna är rätt utan om de är rätt för rätt skäl."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Kapitalisering förvandlar en kostnad till en tillgång — och en tillgång är i slutänden bara en kostnad som ledningen lovar att visa dig senare; tiden avslöjar alltid vad som dolts, för allt som kapitaliseras ska också avskrivas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kategori 5: mekanik, fall och signal\",\"rader\":[[\"Teknik\",\"Fall\",\"Signal i rapporten\"],[\"Kapitaliserade löpande kostnader\",\"WorldCom 1999-2002 (3,8 Md USD först, ~11 Md totalt)\",\"Capex/avskrivning stiger; gap mellan EBITDA och resultat växer\"],[\"Kapitaliserad kundanskaffning\",\"AOL 1994-1996\",\"Marknadskostnader försvinner ur resultaträkningen\"],[\"Cookie jar-reserver\",\"Sunbeam 1996-1998\",\"Reservnotens förbrukning utan motstycke i verksamheten\"],[\"Big bath vid VD-byte\",\"Många fall\",\"Jättepost år 1, mirakelvändning år 2\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Hitta balansräkningen för ett bolag och leta efter poster som innehåller orden kapitaliserad, uppskjuten eller förskottsbetalad. För varje post: vad händer med den i kontantflödesanalysen — är den en avkastande tillgång eller en kostnad som skjutits upp? Jämför två år och skriv ner om posten växer snabbare än intäkterna."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnan i WorldComs redovisningsbedrägeri?",
+          "alternativ": [
+            "Bokföring av påhittade abonnemang",
+            "Försäljning av skulder till specialbolag",
+            "Löpande kostnader för trafik (line costs) kapitaliserades som tillgångar i stället för att kostnadsföras",
+            "Underskattade pensionsåtaganden"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vilken löpande kostnad ett telebolag har som mest av — och vart den skulle bokföras."
+        },
+        {
+          "q": "Vad är en cookie jar-reserv (Sunbeam)?",
+          "alternativ": [
+            "En reserv för råvarupriser som låses tre år",
+            "En överdimensionerad reserv som byggs i ett år och sedan släpps tillbaka till resultaten över tid",
+            "En pensionsbuffert för styrelsen",
+            "En skattereserv för kommande år"
+          ],
+          "ratt": 1,
+          "tips": "Bildspråket är en burk man stoppar i när det finns ont och tar ur ifrån när det behövs."
+        },
+        {
+          "q": "Vilken fråga avslöjar en tvivelaktig kapitalisering av kostnader?",
+          "alternativ": [
+            "Är kostnaden betald kontant?",
+            "Finns kostnaden i budgeten?",
+            "Har revisorn godkänt kapitaliseringen?",
+            "Skulle kostnaden återkomma även om bolaget inte tillväxte — är den ett villkor för själva verksamheten?"
+          ],
+          "ratt": 3,
+          "tips": "En tillgång ska ge framtida nytta — fråga vad som händer med utgiften om allt står stilla."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Shenanigan 6: Dolda skulder — Enrons SPE:s och off-balance-sheet",
+      "intro": "Den sjätte kategorin handlar om balansräkningens blinda fläck: skulder som varken syns eller räknas men som ändå måste betalas. Enron gjorde tekniken — special purpose entities — till ett system, och kraschen 2001 förändrade regelverken. Men mekaniken lever kvar i moderna varianter som leverantörsfinansiering och komplexa partnerstrukturer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett special purpose entity, SPE, är ett bolag som skapas för ett enda syfte — till exempel att äga en tillgång eller utföra en transaktion. Spelet var (före regeländringarna) att om minst tre procent av kapitalet kom från en utomstående investerare kunde SPE:t hållas utanför koncernens balansräkning, även om koncernen i praktiken bar hela risken. Enron byggde tusentals sådana strukturer med fantasifulla namn — JEDI, Chewco (uppkallat efter Chewbacca), Raptors — och förde över skulder och dåliga investeringar till dem. Resultatet: Enrons redovisade skuldsättning var en fiktion, medan den verkliga risken fanns kvar. CFO:n Andrew Fastow drev själv partnerskapen (LJM1 och LJM2) som gjorde affärer med Enron — en intressekonflikt som dokumenterades i noter som få läste."
+        },
+        {
+          "type": "text",
+          "content": "Den andra Enron-mekaniken var mark-to-market-redovisningen av långfristiga energikontrakt. När Enron tecknade ett gasavtal som skulle löpa i tjugo år fick bolaget (efter godkännandet av metoden i början av 1990-talet) boka in det uppskattade nettovärdet av hela avtalet som vinst direkt vid tecknandet. En gigantisk del av de vinster som drev Enrons aktie var således framtidsförväntningar bokförda som resultat. När marknaden så småningom krävde att förväntningarna skulle realiseras — och verkligheten inte höll måttet — rasade konstruktionen. Kombinationen är Schilits mardrömsscenario: skulder gömda utanför rapporten och vinster tagna före tid. Schilit betonar ironin i att Fortune sex år i rad utsåg Enron till Amerikas mest innovativa bolag — innovationen satt delvis i redovisningen."
+        },
+        {
+          "type": "text",
+          "content": "Kategorin är inte historik. Parmalat, Europas eget Enron, använde enligt åtal en fejkad Bank of America-deposition på närmare fyra miljarder dollar (på ett konto på Caymanöarna via dotterbolaget Bonlat) för att dölja ett hål på omkring fjorton miljarder euro — när revisorn i december 2003 skulle bekräfta saldot upptäcktes att kontot inte existerade. I modern tid har leverantörsfinansiering (supplier finance) spelat samma roll: leverantörer får en bank att betala dem direkt och kundens skuld förlängs i det tysta, ofta bokförd som vanlig handelsskuld snarare än som finansiering — SEC varnade 2023-2024 hela marknaden och flera bolag, däribland Kraft Heinz (2019), fick jämka om sina poster. Samma princip, ny förpackning: skulden är inte borta — den är omdöpt."
+        },
+        {
+          "type": "text",
+          "content": "Detektorns angreppssätt är tre notstopp. Först noten om kopplade parter: varje transaktion med styrelseledamöters, VD:s eller CFO:s egna bolag är en varning i sig. Sedan noten om åtaganden och kontingenser: garantier, köplovan, outtagna kapitalåtaganden och leasingåtaganden — summera dem och jämför med den redovisade nettoskulden; om åtagandena är av samma storleksordning som skulderna vet du att balansräkningen bara visar en del av sanningen. Slutligen kontrollfrågan om konsolidering: finns strukturer som bolaget inte äger men som det ändå kontrollerar eller bär risk i? Detta är kärnan i AKM1 V17: komplexitet i sig är ett riskmått — en struktur som kräver förtroende i stället för verifiering är inte en tillgång utan ett frågetecken."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Den viktigaste raden i Enrons balansräkning stod aldrig i balansräkningen — off-balance-sheet innebär att det som inte redovisas kan vara större och farligare än allt som redovisas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kategori 6: teknik, exempel och var du hittar den\",\"rader\":[[\"Teknik\",\"Exempel\",\"Var du letar\"],[\"SPE utanför konsolidering\",\"Enron 2001 (JEDI, Chewco, Raptors)\",\"Not om konsolidering och kopplade parter\"],[\"Mark-to-market på långa avtal\",\"Enron 1990-tal\",\"Not om redovisning av derivat och långa kontrakt\"],[\"Fejkad deposition\",\"Parmalat 2003\",\"Bankbekräftelser — begär oberoende sådana\"],[\"Leverantörsfinansiering\",\"Kraft Heinz 2019\",\"Not om leverantörsprogram; handelsskuldens fotnot\"],[\"Rekursfactoring\",\"Många fall\",\"Not om finansiering av kundfordringar\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Gå till noten åtaganden och kontingenser i en årsredovisning och summera garantier, köplovan och leasingåtaganden. Jämför totalen med bolagets redovisade nettoskuld. Skriv en rad: är den verkliga skuldsättningen högre än den redovisade — och i så fall med hur många procent? Om du inte hittar noten alls är det i sig ett fynd."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var poängen med Enrons SPE-strukturer enligt Schilits kategori 6?",
+          "alternativ": [
+            "Att snabba upp kundbetalningar",
+            "Att finansiera forskning och utveckling",
+            "Att hålla skulder och dåliga investeringar utanför koncernens balansräkning",
+            "Att minska bolagsskatten lagligt"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad som försvann ur rapporten — inte vad som tillkom."
+        },
+        {
+          "q": "Vad gjorde Enrons mark-to-market-redovisning av långa energikontrakt så farlig?",
+          "alternativ": [
+            "Den dolde kassaflöden i noter",
+            "Den bokförde uppskattade framtidsvinster på tjugoåriga avtal som resultat direkt vid tecknandet",
+            "Den gjorde skulder till intäkter",
+            "Den flyttade kostnader till dotterbolag"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på avståndet mellan när vinsten bokfördes och när den — om någonsin — blev kassa."
+        },
+        {
+          "q": "En Schilit-detektör vill kontrollera att en stor kassapost är äkta. Vilket är det starkaste underlaget?",
+          "alternativ": [
+            "Bolagets eget kontoutdrag bifogat rapporten",
+            "VD:ns försäkring på telefonkonferensen",
+            "En revisionsberättelse utan reservationer",
+            "En oberoende bankbekräftelse från banken själv"
+          ],
+          "ratt": 3,
+          "tips": "ZZZZ Best och Parmalat gör frågan lätt: vem har producerat dokumentet?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Shenanigan 7: Missbruk av kassaflödesredovisningen",
+      "intro": "När investerare lärt sig lita på kassaflödet i stället för vinsten flyttade trickarna dit. Den sjunde kategorin manipulerar inte belopp utan etiketter: pengar som egentligen är lån kläs som driftskassaflöde. Schilits observation är cyniskt sann: redovisningstrick vandrar alltid dit där investerarna för tillfället inte tittar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kassaflödesanalysens tre delar — löpande verksamhet, investeringar, finansiering — är en klassificeringsövning, och klassificering går att manipulera. Det renaste exemplet är leverantörsfinansiering i dess klassiska skepnad: i stället för att betala sina leverantörer inom 30 dagar låter bolaget en bank stå för betalningen och betalar själv banken först efter 90 eller 120 dagar. Ekonomin är ett lån — men eftersom skulden till banken kan bokföras som en vanlig leverantörsskuld skjuts utbetalningen upp utan att finansieringsdelen i kassaflödesanalysen visar något. Driftskassaflödet ser förbättrat ut. Kort sagt: lån som kläs som driftskassaflöde. Kraft Heinz var bland de första att jämka om sina poster (2019, drygt 200 miljoner dollar) och SEC varnade 2023-2024 hela marknaden för teknikens spridning."
+        },
+        {
+          "type": "text",
+          "content": "Den andra tekniken är att flytta tidpunkten för utbetalningar. Ett bolag som i kvartalets slut systematiskt dröjer med leverantörsbetalningar blåser upp driftskassaflödet tillfälligt — men bara till priset av att nästa kvartal blir tyngre. Det syns i nyckeltalet DPO (dagar leverantörsskuld): en plötslig DPO-ökning i kvartal fyra som återställs i kvartal ett är en klassisk periodiseringseffekt, ingen förbättring. Den tredje tekniken är att sälja sina kundfordringar (factoring, sekuritisering): kassan kommer direkt i stället för vid betalningsdag och hamnar i driftskassaflödet — ibland legitimt, men om programmet löper ständigt har bolaget i praktiken flyttat sin kreditgivning till kunderna till en bank utan att finansieringsdelen visar det. Schilit noterade redan på 1990-talet hur bolag med ständiga fordringsförsäljningar presenterade driftskassaflödet som styrka."
+        },
+        {
+          "type": "text",
+          "content": "Den tredje varianten handlar om att välja fel rubrik för in- och utbetalningar: ränta, utdelningar och skatt kan i vissa standarder redovisas i olika delar; köp av kundfordringar kan kallas investering; inlåning från kunder kan blandas ihop med verksamhetens kassa. Wirecard-fallet (kapitel 13) är den extrema versionen: påstådda transaktioner i tredjepartsinlösen visade sig till stor del aldrig ha existerat — halva bolagets rapporterade lönsamhet satt i en affärsmodell vars kassa inte gick att verifiera. Lärdomen för dig: en kassaflödesanalys är bara så sann som de klassificeringsval och verifikationer som ligger bakom den. Revisionsbevis för kassa heter bankbekräftelser — och det är precis där Wirecard kollapsade."
+        },
+        {
+          "type": "text",
+          "content": "Detektionen är hanterbar. För det första: läs fotnoterna till kassaflödesanalysen — där redovisas icke-kontanta transaktioner och förändringar i klassificering; en not om leverantörsfinansieringsprogram är idag ett måste att fråga efter. För det andra: följ DPO kvartalsvis och se efter toppar i kvartal fyra. För det tredje: jämför trenden i driftskassaflöde med trenden i nettoresultat och med historien — ett driftskassaflöde som stiger just när förlusterna växer är alltid en fråga om klassificering, inte om verksamhet. I AKM1 V08 är detta redan inbyggt: vinstens kvalitet kontrolleras mot kassan, men kassans kvalitet kontrolleras mot noterna. Båda testerna ska genomföras — alltid."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ I kassaflödesanalysen går det sällan att förfalska beloppen — men nästan alltid att byta etiketter på dem; granska klassificeringen innan du litar på talet, för skulden som kallas leverantörsskuld kan i själva verket vara ett lån."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kategori 7: teknik, mekanik och signal\",\"rader\":[[\"Teknik\",\"Mekanik\",\"Signal\"],[\"Leverantörsfinansiering\",\"Bank betalar leverantör; bolaget betalar banken senare\",\"Not om leverantörsprogram; DPO stiger strukturellt\"],[\"Betalningsdröjsel i Q4\",\"Leverantörer betalas efter kvartalsskiftet\",\"DPO-topp i Q4 som återställs i Q1\"],[\"Ständig fordringsförsäljning\",\"Ford ringar säljs löpande till bank\",\"Not om factoring; DSO faller utan att kunderna betalar snabbare\"],[\"Felaktig rubrik\",\"Investering/finansiering kallas drift\",\"Klassificeringsändringar i fotnoter mellan år\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Öppna kontantflödesanalysen i en årsredovisning och gå till fotnoterna. Leta efter leverantörsfinansiering, factoring, sekuritisering och icke-kontanta transaktioner. Räkna sedan DPO två år i rad (leverantörsskulder/inköp × 365). Om DPO stiger med mer än en vecka — skriv ner om ökningen kommer från förhandling eller från finansiering."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur kan leverantörsfinansiering missbruka kassaflödesredovisningen?",
+          "alternativ": [
+            "Den ökar intäkterna genom snabbare leveranser",
+            "En bank betalar leverantörerna och bolagets skuld förlängs — men den ser ut som vanlig handelsskuld och håller driftskassaflödet uppe",
+            "Den minskar bolagets skatt",
+            "Den flyttar kundfordringar till ett specialbolag"
+          ],
+          "ratt": 1,
+          "tips": "Följ pengarna: vem betalar vem, när — och var hamnar strömmen i rapportens tre delar?"
+        },
+        {
+          "q": "Vad är det mest pålitliga sättet att skilja äkta driftskasseförbättring från klassificeringstrick?",
+          "alternativ": [
+            "Titta på aktiekursens reaktion",
+            "Jämför med analytikernas konsensus",
+            "Följ DPO och fotnoter om finansiella program kvartalsvis över flera år",
+            "Lita på EBITDA-trenden"
+          ],
+          "ratt": 2,
+          "tips": "Klassificeringstrick lämnar spår i timing (kvartalsmönster) och i noter — inte i sammanfattade mått."
+        },
+        {
+          "q": "Varför säger Schilit att tricken vandrar dit investerare inte tittar?",
+          "alternativ": [
+            "Eftersom revisorer alltid hittar allt inom fem år",
+            "Eftersom bolag vill bli upptäckta",
+            "Eftersom kassaflöde är lättare att fejka än vinst",
+            "Eftersom manipulation söker billigast möjliga upptäcktsrisk — när marknaden börjar granska vinsten flyttas tricket till kassan"
+          ],
+          "ratt": 3,
+          "tips": "Tänk som en manipulatör: vilken siffra granskas minst just nu?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Detektör I: Vinst mot kassaflöde — V08 som lögndetektor",
+      "intro": "Nu bygger vi Schilits detektorsystem, och det första instrumentet är det kraftfullaste: att ställa räkenskapsårets resultat mot kassaflödet från löpande verksamhet, år efter år. Det är samtidigt kärnan i AKM1 V08 — och det test som i efterhand fångar nästan vartenda stort bedrägeri.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför fungerar testet? Resultatet är fullt av antaganden — intäkter som bokförts men inte betalats, kostnader som uppskattats, avskrivningar som valts. Kassaflödet från löpande verksamhet är resultaträkningen rensad från en stor del av dessa antaganden: hit har pengarna faktiskt kommit eller gått. Schilit och hans efterföljare formulerar tumregeln: över en konjunkturcykel bör kassaflödet från löpande verksamhet ligga i nivå med eller över det redovisade resultatet. Uppfylls det inte, år ut och år in, återstår två förklaringar — någon har en dålig affär med lång betalningscykel, eller så är vinsten mestadels antaganden. Ingen av förklaringarna är köpsignal."
+        },
+        {
+          "type": "text",
+          "content": "WorldCom visar testets gränser — och dess mogna version. Kapitaliseringstricket gjorde både vinsten och driftskassaflödet snygga: kostnaderna togs inte bara ur resultaträkningen, de hamnade i investeringsdelen av kassaflödesanalysen. Driftskassan såg därför stark ut! Lösningen är att aldrig stanna vid driftskassaflödet, utan gå vidare till fritt kassaflöde: driftskassa minus investeringar (capex). När du drar ifrån kapitaliseringarna — som var WorldComs gömställe — försvinner miraklet. I AKM1 V08 är detta operativregel: presentera alltid nettoresultat, driftskassaflöde och fritt kassaflöde sida vid sida, minst fem år."
+        },
+        {
+          "type": "text",
+          "content": "Det omvända fallet — fejkad kassa — är modernare. Luckin och framför allt Wirecard visade att en kassapost i balansräkningen kan vara lögn. Motgiftet är räntetestet: en kassabalans på två miljarder euro som ger upphov till försvinnande små ränteintäkter är misstänkt, för pengar på bankkonto genererar avkastning som bokförs någon annanstans i rapporten. Satyam var för övrigt samma historia — en kassa som i grunden inte fanns. Schilits råd från första upplagan gäller alltjämt: verifiera kassan — kassan på kontot är en bankfråga, inte en presentationsfråga."
+        },
+        {
+          "type": "text",
+          "content": "Så operationaliseras V08-detektorn i praktiken. Steg ett: tabell med fem kolumner för fem år — nettoresultat, driftskassaflöde, fritt kassaflöde, kvot driftskassa/resultat och ackumulerad summa. Steg två: markera varje år då vinsten överstiger driftskassan utan rimlig förklaring (tillväxt i arbetskapital är en förklaring — en gång; inte för evigt). Steg tre: om kvoten under fem år systematiskt understiger ett — eller om gapet vidgas medan tillväxten accelererar — är rapporten en V17-fråga fram till att bolaget själv förklarar gapet. Det är då inte köpargumentet som gäller, utan urvalsfrågan: vad betalar jag för — vinst eller en berättelse om vinst?"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ När vinsten och kassaflödet går isär talar vinsten om en framtid någon hoppas på och kassan om en verklighet som redan hänt — om vinsten springer och kassan står stilla är det nästan alltid vinsten som ljuger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V08: scenarier — tolkning och åtgärd\",\"rader\":[[\"Scenario\",\"Trolig tolkning\",\"Åtgärd\"],[\"Vinst och kassa i paritet över 5 år\",\"Hög resultatkvalitet\",\"Normal analys — fortsätt till V04/V05\"],[\"Vinst överstiger kassa, ett år\",\"Tillväxt i arbetskapital\",\"Kontrollera DSO/lager nästa rapport\"],[\"Vinst överstiger kassa, år efter år\",\"Periodiseringstrick eller dålig affär\",\"Kräv förklaring; sätt ned V17-betyget\"],[\"Vinst fin, kassa fin, fritt kassaflöde svagt\",\"Kapitaliseringstrick (WorldCom-mönster)\",\"Granska capex/avskrivning och kapitaliserade poster\"],[\"Jättekassa, knappt någon ränteavkastning\",\"Fejkad eller låst kassa\",\"Begär logik för bankbekräftelser; omvärdera hela tesen\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg V08-tabellen för ett bolag du överväger att köpa: fem år, tre rader (nettoresultat, driftskassaflöde, fritt kassaflöde) och en rad kvot. Markera åren med kvot under 1,0. Skriv därefter en enda mening som förklarar gapet. Om du inte kan skriva meningen med stöd i rapporterna har du precis hittat kursens viktigaste fynd."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är tumregeln för förhållandet mellan nettoresultat och driftskassaflöde över en cykel?",
+          "alternativ": [
+            "Driftskassaflödet bör ligga i nivå med eller över det redovisade resultatet",
+            "Resultatet bör alltid vara minst dubbla driftskassan",
+            "Kvoten spelar ingen roll om tillväxten är stark",
+            "Driftskassan bör vara negativ i tillväxtbolag"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vilken av de två siffrorna som innehåller flest antaganden — och vad det betyder om den är störst."
+        },
+        {
+          "q": "Varför såg WorldComs driftskassaflöde starkt ut trots bedrägeriet?",
+          "alternativ": [
+            "Kostnaderna flyttades till investeringsdelen — kapitaliseringen gömde dem också i kassaflödesanalysen",
+            "Bolaget sålde kundfordringar varje kvartal",
+            "Kassan var fejkad från början",
+            "Ränteintäkterna var onaturligt höga"
+          ],
+          "ratt": 0,
+          "tips": "Kapitalisering flyttar kostnaden från resultaträkningen — men vart tar den vägen i kassaflödesanalysen?"
+        },
+        {
+          "q": "Hur kan ett enkelt räntetest avslöja fejkad kassa?",
+          "alternativ": [
+            "Fejkad kassa ger alltid för höga skulder",
+            "Räntan på skulder sjunker när kassan är fejkad",
+            "En stor kassabalans borde generera ränteintäkter — saknas de är kassan misstänkt",
+            "Räntetestet fungerar bara i banker"
+          ],
+          "ratt": 2,
+          "tips": "Pengar på konto lönar sig — bokfört någon annanstans i rapporten. Följ spåret."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Detektör II: DSO, lageromsättning och marginalradarn (V04)",
+      "intro": "Schilits andra instrument är balansräkningen som lögndetektor: fordringar och lager rör sig inte lika lätt som resultatrader. Här bygger vi nyckeltalsradarn — DSO, lageromsättning och bruttomarginal — och kopplar den till AKM1 V04, där marginalens stabilitet är ett krav på dokumenterad kvalitet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "DSO — dagar utestående försäljning, Days Sales Outstanding — är det enskilt viktigaste nyckeltalet för kategori ett och två. Beräkningen: kundfordringar dividerat med intäkter, gånger 365. Tanken är enkel: om bolaget säljer mer och kundernas betalningsförmåga är normal borde fordringarna växa i takt med intäkterna. När fordringarna växer mycket snabbare — DSO stiger från 45 till 60 dagar medan intäkterna stiger 20 procent — har en av två saker hänt: kunderna betalar sämre (kassaproblem, ökad kreditrisk) eller så bokförs intäkter som inte är riktiga ännu (kategori ett) eller alls (kategori två). Xerox accelererade intäkter och Sunbeam fyllde kanaler — i båda fallen stod fordringsökningen där och väntade på att någon skulle titta."
+        },
+        {
+          "type": "text",
+          "content": "Lagret är fordringarnas kusin och dess eget nyckeltal heter DIO — dagar i lager (lager dividerat med kostnad sålda varor, gånger 365). Lager som växer snabbare än försäljningen kan betyda osäljbara varor som snart måste skrivas ned — eller värre: påhittat lager. Crazy Eddie, elektronikkedjan som Sam Antar och hans familj drev på 1980-talet, övervärderade systematiskt lagret inför börsnoteringen 1984; när bluffen upptäcktes 1987 visade sig stora delar av det bokförda lagret aldrig ha funnits. Schilits poäng: resultaträkningen kan berätta vad som helst, men en fysisk inventering är svårare att fejka — ju kortare väg från redovisning till verklighet, desto svårare att lura."
+        },
+        {
+          "type": "text",
+          "content": "Bruttomarginalen är den tredje raden och binder det hela till AKM1 V04. En marginal som är stabilt högre än konkurrenternas är antingen en moat (V13) eller ett redovisningsval. V04:s krav på flerårsgenomsnitt och marginalstabilitet är därför i sig ett shenaniganskydd: kolla tre saker. För det första nivån mot två till tre konkurrenter — skillnader över fem procentenheter utan förklaring (teknik, varumärke, skala) är en fråga, inte en komplimang. För det andra trenden — en plötslig marginalförbättring utan prisökning, mixförbättring eller kostnadsprogram är ofta ett avskrivnings- eller reservtrick (kategori fyra). För det tredje sambandet: en marginal som stiger samtidigt som DSO och lager stiger är den farligaste kombinationen i hela kursen — bolaget påstår lönsamhet samtidigt som varor och fordringar hopas."
+        },
+        {
+          "type": "text",
+          "content": "För den som vill komplettera Schilits hantverk med kvantitet finns Beneish M-Score (1999), en konstruktion av åtta index som väger exakt dessa signaler — DSO-index, marginalindex, avskrivningsindex, tillgångstillväxt med flera — till en siffra för manipulationsrisk. Indexen bygger på samma logik som denna kurs: fordringar, lager, marginaler och mjuka kostnader rör sig inte utan att lämna spår. Du behöver inte minnas formeln — du behöver komma ihåg att varje index i den motsvarar en av Schilits kategorier. När du i AKM1:s V04 registrerar bruttomarginalen som en serie (inte som ett enskilt års värde) gör du redan halva Beneish-jobbet."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Resultaträkningen är en berättelse, balansräkningen är vittnesmålet emot — låt kundfordringar, lager och marginal granska intäkterna rad för rad, för den som ljuger i resultaträkningen tvingas så småningom ljuga i balansräkningen också."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Nyckeltalsradarn\",\"rader\":[[\"Nyckeltal\",\"Beräkning\",\"Varning\",\"Kopplad kategori\"],[\"DSO\",\"Kundfordringar/intäkt × 365\",\"Stiger snabbare än intäkten\",\"1 och 2\"],[\"DIO\",\"Lager/kostnad sålda varor × 365\",\"Växer utan försäljningstillväxt\",\"1, 2 och 4\"],[\"Bruttomarginal (V04)\",\"Bruttovinst/intäkt\",\"Plötsligt hopp utan förklaring\",\"4 och 5\"],[\"Avskrivningar/capex\",\"Avskrivningar ÷ capex\",\"Systematiskt lågt i moget bolag\",\"5\"],[\"Vinst/driftskassa (V08)\",\"Nettoresultat ÷ driftskassaflöde\",\"Kvot under 1,0 år efter år\",\"Alla\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj ett bolag och beräkna DSO och DIO för de tre senaste räkenskapsåren. Skriv intäktstillväxten bredvid. Om DSO eller DIO stiger mer än intäkterna — läs om kapitel 2 och 3 och avgör vilken mekanik som passar bäst. Avsluta med en fråga du skulle ställa till bolagets IR."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder det om ett bolags intäkter växer 20 procent men kundfordringarna växer 50 procent?",
+          "alternativ": [
+            "Bolaget har förbättrad inkasso",
+            "DSO stiger — intäkter kan bokföras för tidigt eller vara påhittade, eller kunderna betalar sämre",
+            "Bolaget har sålt sina fordringar",
+            "Lagret är undervärderat"
+          ],
+          "ratt": 1,
+          "tips": "Fordringar är intäkter som inte blivit kassa ännu — vad säger det om kvaliteten på intäkterna?"
+        },
+        {
+          "q": "Crazy Eddie fejkade i huvudsak vilken balanspost?",
+          "alternativ": [
+            "Kundfordringar",
+            "Goodwill",
+            "Kassan",
+            "Lagret — stora delar av det bokförda lagret existerade inte"
+          ],
+          "ratt": 3,
+          "tips": "Det var en detaljhandelskedja — den post som samlar nästan allt kapital hos en återförsäljare."
+        },
+        {
+          "q": "Enligt V04-kopplingen: vilken kombination är den farligaste?",
+          "alternativ": [
+            "Stigande bruttomarginal samtidigt som DSO och lager stiger",
+            "Fallande bruttomarginal med fallande lager",
+            "Stigande bruttomarginal med fallande DSO",
+            "Stabila marginaler med stigande kassa"
+          ],
+          "ratt": 0,
+          "tips": "Fråga vad som krävs för att en marginal ska stiga — och vad det betyder om det i stället är varor och fordringar som hopas."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Detektör III: Fotnoter, engångsposter och mjuka signaler",
+      "intro": "Schilits tredje instrument är själva läsningen: hela rapporten, noter före diagram, och sedan de mjuka signalerna runt omkring — revisorsbyten, CFO-avgångar, ledningens tonläge mot kritiker. Det är här kursen går från nyckeltal till hantverk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Schilit är envis om en läsregel: läs hela rapporten — från omslag till sista not. Anledningen är strukturell: resultaträkningen och balansräkningen är marknadsföring; noterna är där ledningen är rättsligt tvungen att vara exakt. Börja därför med not 1, redovisningsprinciper, och leta efter orden ändring och omräkning — en redovisningsprincip som ändras mellan två år är den enskilt mest informationstäta raden i hela årsredovisningen. Fortsätt med noten om kopplade parter, noten om åtaganden, segmentnoten (där olika verksamheter redovisas var för sig) och noten om händelser efter rapportdagen. I Enrons fall fanns både SPE-strukturerna och Fastows intressekonflikt dokumenterade — i noterna."
+        },
+        {
+          "type": "text",
+          "content": "Engångsposterna förtjänar en egen checklista. Regel ett: räkna hur många år i rad ledningen lyft fram poster som engångs — tre år i rad är inte engångs. Regel två: kolla om samma typ av kostnad döps om — omstrukturering, omställning, effektivisering, integration — medan substansen är densamma. Regel tre: rekonstruera ett mått själv: börja med redovisat resultat, lägg tillbaka kostnader som kallas engångs, dra ifrån vinster som kallas engångs. Om ditt justerade resultat ser sämre ut än ledningens justerade — och det gör det alltid — har du förstått varför justerade mått konstrueras. Schilits fråga: vad är det ledningen inte vill att du ska räkna med?"
+        },
+        {
+          "type": "text",
+          "content": "De mjuka signalerna är ofta starkare än talen. Revisorsbyte — särskilt till en mindre byrå, eller efter en tvist om redovisningsval (Wirecard bytte aldrig revisor, men tillsatte en extra granskare som ändå missade allt). Revisorns utlåtande med reservationer, going concern-varning eller kritik mot internkontrollen (i USA krävs sedan Sarbanes-Oxley 2002 en särskild bedömning av internkontrollen). CFO-avgångar — särskilt flera i följd eller mitt i räkenskapsåret. Omfattande insidersälj av ledning samtidigt som bolaget köper tillbaka aktier. Och tonläget: hur bemöter ledningen kritiker? Wirecard och Luckin svarade med hot om stämningar och påtryckningar — aggression mot frågeställare är i sig en varningssignal, för bolag med rena böcker har inget att förlora på att svara sakligt."
+        },
+        {
+          "type": "text",
+          "content": "Samla signalerna i ett V17-protokoll. Tre hårda frågor: ändrades redovisningsprinciper det senaste året? Finns kopplade-parter-transaktioner? Summerar åtagandena i noterna mer än en femtedel av balansräkningen? Tre mjuka frågor: har CFO eller revisor bytts nyligen? Hur bemöts kritiker? Säljer insiderna medan multipeln byggts på justerade mått? Sex nej-svar är en ren rapport; två eller fler ja-svar är inte köp — det är arbete: läs om, fråga IR, jämför med konkurrenter. Om svaren inte håller är slutsatsen inte att justera multipeln — den är att gå vidare. Nästa aktie är en knapptryckning bort; nästa Wirecard kan äta en hel portfölj."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Fotnoterna är den plats i årsredovisningen där ledningen är tvungen att tala sant — därför börjar detektiven där, inte i direktörsbrevet; och aggression mot frågeställare är alltid information, för den med rena böcker behöver inte hota."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fotnot- och signaljakt\",\"rader\":[[\"Plats/signal\",\"Fråga\",\"Röd flagga\"],[\"Not 1 (principer)\",\"Ändrades något?\",\"Ny princip som höjer resultatet retroaktivt\"],[\"Not om kopplade parter\",\"Vem gör affärer med vem?\",\"Styrelse-/CFO-ägda bolag i värdekedjan (Enrons LJM)\"],[\"Not om åtaganden\",\"Hur stora är garantierna?\",\"Åtaganden i storleksordning av nettoskulden\"],[\"Revisorsutlåtande\",\"Reservationer?\",\"Going concern, internkontrollbrist, byte av byrå\"],[\"CFO/ledning\",\"Avgångar?\",\"CFO-byte mitt i året; flera avgångar i följd\"],[\"Tonläge\",\"Hur bemöts kritik?\",\"Hot om stämning (Wirecard), motstånd mot granskning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ge dig själv 30 minuter med en årsredovisning: anteckna varje förekomst av orden ändring, omräkning, kopplad, engångs och värdering i noterna. Räkna ihop fynden. Fem eller fler — skriv ett V17-protokoll med tre frågor till bolaget. Noll fynd efter 30 minuters läsning — du har förmodligen inte läst noterna, utan bara resultaträkningen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför börjar Schilit-läsaren i noterna i stället för i direktörsbrevet?",
+          "alternativ": [
+            "Noterna är kortare och snabbare att läsa",
+            "Direktörsbrevet innehåller aldrig siffror",
+            "Noterna är den del där ledningen är rättsligt bunden att vara exakt och fullständig",
+            "Revisorn skriver noterna helt utan ledningens inflytande"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vilket dokument som vänder sig till marknaden — och vilket som kan komma att läsas av domstol."
+        },
+        {
+          "q": "En ”engångspost” förekommer tre år i rad. Vilken är Schilit-slutsatsen?",
+          "alternativ": [
+            "Posten är slumpmässig och kan ignoreras",
+            "Bolaget har haft otur tre år i rad",
+            "Posten ska läggas tillbaka bara vart tredje år",
+            "Posten är i praktiken löpande — ledningen väljer varje år att lyfta bort den ur sitt egna mått"
+          ],
+          "ratt": 3,
+          "tips": "Ordet engångs är en klassificering — vad händer med den när frekvensen motsäger den?"
+        },
+        {
+          "q": "Wirecard reagerade på kritik med hot om stämningar och påtryckningar mot journalister. Vad säger det enligt kursen?",
+          "alternativ": [
+            "Ingenting — alla bolag försvarar sig",
+            "Aggression mot frågeställare är i sig en varningssignal — bolag med verifierbara böcker vinner på att svara sakligt",
+            "Det bevisar att kritikerna hade fel",
+            "Det är ett tecken på stark internkontroll"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vem som har mest att förlora på en öppen granskning."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Fallstudier I: Enron, WorldCom, Sunbeam och HealthSouth",
+      "intro": "Nu samlar vi kursen i de fyra klassiska fallen — inte som kuriosa, utan som repetition: varje fall är en eller flera kategorier med namn och datum. Målet är att du efter detta kapitel kan titta på en rapport och tänka: här är mekanismen, här är signalen som fanns, här är vad den kostade.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enron (krasch 2001): energibolaget som Fortune sex år i rad utsåg till Amerikas mest innovativa företag. Mekaniken var en kombination av kategori sex och tre: SPE:s (JEDI, Chewco, Raptors; partnerskapen LJM1 och LJM2 ledda av CFO Andrew Fastow) höll skulder utanför balansräkningen, och mark-to-market på tjugoåriga energikontrakt bokförde framtidsförväntningar som aktuell vinst. Visselblåsaren Sherron Watkins varnade i ett memorandum i augusti 2001; i december 2001 sökte bolaget konkurs — då tidernas största — och revisorn Arthur Andersen, som förstört dokument, kollapsade med det. Aktieägarna förlorade tiotals miljarder dollar. Signalen som fanns i rapporten: noterna om SPE:s och Fastows dubbelroller, samt en avkastning på kapital som aldrig stämde med den rapporterade vinsttillväxten."
+        },
+        {
+          "type": "text",
+          "content": "WorldCom (2002): efter en förvärvsvåg på sextio bolag, däribland MCI 1998, behövde ledningen hålla vinsten uppe medan telekrisen pressade intäkterna. Lösningen blev kategori fem: från 1999 kapitaliserades line costs — avgifter till andra operatörer, i grunden löpande kostnader — som tillgångar. Den interna revisorn Cynthia Cooper och hennes team grävde på egen hand, om natten, och hittade 2002 de första 3,8 miljarder dollar; det totala bedrägeriet uppskattades till omkring 11 miljarder. Bernie Ebbers fick 25 års fängelse, CFO Scott Sullivan dömdes likaså, och redovisaren Betty Vinson — som bokfört de styrda toppjusteringarna under protest — fängslades. Signalen som fanns: driftskassan såg stark ut men det fria kassaflödet var svagt; avskrivningarna svällde; EBITDA-måttet bar hela fasaden."
+        },
+        {
+          "type": "text",
+          "content": "Sunbeam (1996-1998): Al ”Chainsaw” Dunlap anställdes 1996 för att skära kostnader och vända hushållsbolaget. Han genomförde en stor omstrukturering med överdimensionerade reserver (kategori fem: kakburken) och fyllde sedan kanalerna med grillar och utemöbler — channel stuffing med rabatter och returrätter (kategori ett) plus bill-and-hold-fakturor (kategori ett). 1997 rapporterades en rekordvändning; 1998 avslöjades spelet och Dunlap sparkades; SEC:s anklagelser följde 2001 och bolaget gick i konkurs. Signalerna som fanns: DSO som steg, kvartalsmönster med jätteförsäljning i kvartal fyra, och en omstruktureringsreserv som sakta tömdes in i resultaten. Sunbeam är kursens bästa enskilda fall — det innehåller tre kategorier i en och samma rapport."
+        },
+        {
+          "type": "text",
+          "content": "HealthSouth (2003): sjukvårdskoncernen där Richard Scrushy lät bygga manipulationer in i kulturen från 1996. Mekaniken var kategori två och fyra i kombination: falska intäkter och uteblivna kostnadsposter som stängde gapet mot analytikernas förväntningar — sammanlagt minst 1,4 miljarder dollar i uppblåst resultat enligt SEC, med falska poster till ett sammanlagt värde uppemot 2,7 miljarder. CFO-visselblåsaren Weston Smith och FBI:s avlyssningar dokumenterade kulturen där medarbetare fick order om att fylla luckan. Scrushy frikändes — kontroversiellt — i den federala rättegången 2005 men dömdes 2006 i en delstatlig rättegång för mutbetal till en guvernör. Signalen som fanns: en resultatkurva som var suspekt jämn mot estimates, kvartal efter kvartal, medan kassaflödet inte följde med — för jämn vinst är i sig en varning."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ I samtliga fyra fall fanns bevisen publicerade i bolagens egna rapporter innan kraschen — noterna, fordringarna, reservnoterna och kassaflödet visade vägen; det som saknades var inte information utan investerare som tittade."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De fyra klassikerna på en rad\",\"rader\":[[\"Fall\",\"Huvudtrick (kategori)\",\"Signal i rapporten\",\"Slut\"],[\"Enron 2001\",\"Dolda skulder i SPE + MTM-vinster (6+3)\",\"Kopplade parter i noter; obegriplig struktur\",\"Konkurs dec 2001; Andersen kollapsade\"],[\"WorldCom 2002\",\"Kapitaliserade line costs (5)\",\"EBITDA fin, fritt kassaflöde svagt\",\"3,8 → ~11 Md USD; Ebbers 25 års fängelse\"],[\"Sunbeam 1998\",\"Kakburk + stuffing/bill-and-hold (5+1)\",\"Q4-toppar; DSO stiger; reserv töms\",\"Dunlap sparkad 1998; SEC 2001; konkurs\"],[\"HealthSouth 2003\",\"Falska poster mot estimates (2+4)\",\"För jämn vinst; kassan följer ej\",\"1,4 Md USD; visselblåsare; FBI 2003\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj ett av de fyra fallen och skriv en halv sida som om du vore analytiker med bara den offentliga rapporten ett år innan kraschen: vilka tre rader eller noter använder du för att visa att något inte stämmer? Spara texten — det är din framtida bruksanvisning nästa gång ett bolag känns för bra för att vara sant."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken kombination av kategorier utgjorde kärnan i Enrons fall?",
+          "alternativ": [
+            "Fiktiva kunder och fejkat lager",
+            "Kapitaliserade lönekostnader och kakburksreserver",
+            "Dolda skulder i SPE:s samt framtidsvinster bokförda direkt via mark-to-market",
+            "Leverantörsfinansiering som driftskassaflöde"
+          ],
+          "ratt": 2,
+          "tips": "Enron behövde både dölja skuld och visa vinst — vilka två kategorier gör det bäst?"
+        },
+        {
+          "q": "Vem upptäckte WorldComs bedrägeri och hur?",
+          "alternativ": [
+            "SEC:s rutinkontroll av telebranschen",
+            "En konkurrent som anmälde bolaget",
+            "Revisorn Arthur Andersens årliga granskning",
+            "Den interna revisorn Cynthia Cooper, vars team granskade bokföringen på eget initiativ — om nätterna"
+          ],
+          "ratt": 3,
+          "tips": "Det var någon inuti bolaget — och det var inte den externa revisorn."
+        },
+        {
+          "q": "Vad är Sunbeams främsta lärokurs enligt kursen?",
+          "alternativ": [
+            "Att ett bolag kan kombinera flera kategorier — kakburk, stuffing och bill-and-hold — i en och samma rapport",
+            "Att grillar är en säsongsriskabel bransch",
+            "Att VD-byte alltid är positivt",
+            "Att revisorer alltid upptäcker allt inom två år"
+          ],
+          "ratt": 0,
+          "tips": "Räkna kategorierna i fallet: reservburk, kanaltryckning och fakturerat-men-oförvarat."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Fallstudier II: Luckin Coffee och Wirecard — nya erans bedrägerier",
+      "intro": "De två största redovisningsskandalerna 2020 — Luckin Coffee och Wirecard — bevisar att Schilits kategorier inte åldras: nya bolag, nya tekniker, samma mekanismer. De visar också två moderna krafter: kortförsäljare och grävande journalister som detektorer, och revisorns gränser som garanti.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Luckin Coffee grundades 2017, noterades på Nasdaq i maj 2019 och lovade att slå Starbucks i Kina med appar, koponger och upphämtningsbutiker i kontor och gallerior. I januari 2020 publicerades en anonym kortrapport — med Muddy Waters som mest kända spridare och blankare — byggd på täckande butiksbesök, CCTV-räknade kunder och insamlade kvitton. Rapporten hävdade att butiksnivåförsäljningen var kraftigt uppblåst. Den 2 april 2020 meddelade bolaget att en intern utredning funnit att COO Jian Liu och medarbetare fabricerat transaktioner för cirka 2,2 miljarder yuan (omkring 310 miljoner dollar) under 2019 — bland annat kopongförsäljning genom bolag kopplade till anställda, som skickade falska orderflöden tillbaka in i resultaträkningen. I juni 2020 avnoterades aktien. Kategori två, exekverad i en app-ekonomi: volymen fanns i systemet men inte i kassan."
+        },
+        {
+          "type": "text",
+          "content": "Wirecard var Tysklands fintech-stolthet — betalprocessor med egen teknik och löfte om digitala betalningar i tillväxtmarknader. Problemet satt i segmentet third-party acquiring (TPA): i Asien och andra marknader löste lokala partner korttransaktioner åt Wirecard, och genom dem flöt — enligt bolaget — stora kassabalanser som Wirecard redovisade som egna tillgångar. Financial Times (journalisten Dan McCrum) grävde i åratal; KPMG anlitades 2019 av bolaget självt för att rentvå det och konstaterade i april 2020 att man inte kunnat bekräfta ursprunget till TPA-verksamhetens kassaflöden. I juni 2020 vägrade EY — revisor sedan 2009 med rena utlåtanden — att signera 2019 års rapport: 1,9 miljarder euro i påstådda escrow-konton hos två filippinska banker visade sig aldrig ha existerat; ”bekräftelserna” var förfalskade. Bolaget ansökte om insolvens den 25 juni 2020; VD Markus Braun greps och COO Jan Marsalek försvann. BaFin, som under 2019 förbjudit blankning av aktien och låtit polis gå till väga mot FT-journalister, stod med skammen."
+        },
+        {
+          "type": "text",
+          "content": "Vad lär de två fallen? För det första: kassa fordrar bevis, inte beskrivningar. Wirecards 1,9 miljarder kunde inte verifieras med oberoende bankbekräftelser — den äldsta och enklaste revisionshandlingen. För det andra: struktur med opacitet är en varning i sig. TPA-modellen — halva lönsamheten hos partner som inte granskades — är V17:s komplexitetsargument i ren form. För det tredje: angrepp på kritiker är information. Både Luckin och Wirecard svarade på frågor med hot; Wirecards svar blev påtryckningar mot journalister och myndigheter. För det fjärde: kortförsäljare och journalister är marknadens röda blodkroppar — Muddy Waters och FT producerade i båda fallen det underlag som revisorer och styrelser inte levererade. Du behöver inte gilla blankare för att använda deras research: deras incitament — fallande kurser — är i alla fall ärligare än ledningens guidance."
+        },
+        {
+          "type": "text",
+          "content": "För AKM1-användaren blir slutsatsen konkret. Regel ett: äg aldrig ett bolag vars kassa inte kan förklaras med namngivna banker och konton (fråga till IR: vilka banker förvaltar bolagets kassa och kan ni visa oberoende bekräftelser?). Regel två: om en betydande andel av vinsten kommer från en struktur du inte kan räkna hem — partnerskap, agentnät, relaterade parter — är det en V17-flagga oavsett hur vackra marginalerna är. Regel tre: när ett bolag har fallen kritiker och svarar med advokater i stället för siffror — ställ dig på samma sida som dem som gräver, inte som dem som hotar. Schilit skrev sina kategorier före internet; Luckin och Wirecard visar att de bara behöver nya kulisser för att spelas igen."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Wirecard bevisade att den äldsta lektionen fortfarande gäller: kassa som inte kan verifieras med en oberoende bankbekräftelse är inte kassa — den är en berättelse; och en berättelse om pengar är värd exakt noll tills banken skriver under."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Luckin och Wirecard: mekanik och spegling\",\"rader\":[[\"Inslag\",\"Luckin 2020\",\"Wirecard 2020\"],[\"Fabricerat\",\"2,2 Md RMB (~310 M USD) falsk försäljning\",\"1,9 Md EUR påstådda escrow-konton\"],[\"Mekanik\",\"Kopongförsäljning via kopplade bolag (kat. 2)\",\"Påstådd TPA-kassa som inte existerade (kat. 2+7)\"],[\"Detektor\",\"Anonym rapport: butiksdata, CCTV, kvitton\",\"FT-journalistik; KPMG kunde inte bekräfta kassan\"],[\"Ledningens svar\",\"Intern utredning; COO avskedad\",\"Hot om stämningar; BaFin förbjöd blankning\"],[\"Slut\",\"Avnoterad juni 2020\",\"Insolvens juni 2020; VD greps; COO försvann\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Leta upp den senaste kortrapporten mot ett bolag i din bevakningslista (Muddy Waters, Hindenburg, Viceroy eller en lokal blankare). Läs den med Schilit-ögon: vilken av de sju kategorierna anklagas bolaget för, och vilka av rapportens data — DSO, butiksdata, kassakonton — kan du verifiera själv i årsredovisningen? Skriv tre rader: kategori, bevis, din bedömning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnan i Luckin-skandalen?",
+          "alternativ": [
+            "Kapitaliserade butikshyror",
+            "Dolda skulder i specialbolag",
+            "Underskattade garantikostnader",
+            "Fabricerad försäljning — cirka 2,2 miljarder yuan — bland annat via kopongförsäljning till bolag kopplade till anställda"
+          ],
+          "ratt": 3,
+          "tips": "Sök mekanismen bland kategorierna: volym som fanns i systemen men aldrig blev pengar."
+        },
+        {
+          "q": "Vad visade sig om Wirecards 1,9 miljarder euro i escrow-konton?",
+          "alternativ": [
+            "Att kontona aldrig existerat — bekräftelserna från filippinska banker var förfalskade",
+            "Att de fanns men var låsta i tre år",
+            "Att de tillhörde kunder, inte bolaget",
+            "Att de användes till förvärv"
+          ],
+          "ratt": 0,
+          "tips": "Fallet handlar om bevisning: vad hände när revisorn äntligen begärde oberoende bekräftelser?"
+        },
+        {
+          "q": "Vilken är kursens slutsats om bolag som bemöter kritiker med hot och advokater?",
+          "alternativ": [
+            "Att det är normalt försvar av aktieägarna",
+            "Att aggression i sig är en varningssignal — rena böcker försvaras med siffror, inte med stämningshot",
+            "Att man ska köpa mer eftersom kritikerna säkert har fel",
+            "Att man ska invänta revisorns nästa utlåtande"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vem som tjänar på att diskussionen tystas — och vem som tjänar på att den fortsätter."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Schilit i AKM1: checklista, V17-integration och 30-sekunderstestet",
+      "intro": "Sista kapitlet bygger bron från bokens kategorier till AKM1:s variabler: V17 gör redovisningskvaliteten till ett såll, V08 kontrollerar vinsten mot kassan, V04 binder marginalens stabilitet till dess äkthet, V05 gör balansräkningens trovärdighet till förutsättning för P/B. Kursen avslutas med ett test du kan köra på trettio sekunder.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V17 — rapportkvalitet och sårbärhet — är Schilit-kursens naturliga hem i AKM1. Operationalisera volymen som ett fem punkters protokoll. Ett: komplexitet — hur många sidor noter, hur många dotterbolag, hur många länder; komplexitet i sig är ett riskmått. Två: redovisningsval — ändrade principer, kapitaliseringar, aggressiva antaganden (kategori ett till fem). Tre: struktur — kopplade parter, SPE:s, partnerlösningar som Wirecards TPA (kategori sex). Fyra: granskning — revisorns oberoende, utlåtandets reservationer, byten av byrå. Fem: kultur — hur bemöts kritiker, hur styrs bonusar, vad säger visselblåsarspåren. Poängen är att V17 inte blir en magkänsla utan en checklista som kan dokumenteras i varje analys — det är den dokumentationen frågorna i denna kurs har tränat dig på."
+        },
+        {
+          "type": "text",
+          "content": "De övriga volymerna blir stödet runt V17. V08 är lögndetektorn: fem år av nettoresultat, driftskassaflöde och fritt kassaflöde sida vid sida; kvot under ett år efter år är en granskningssignal, inte en köpsignal. V04 är marginalens kvalitetskontroll: bruttomarginalen som serie, jämförd med två till tre konkurrenter; ett hopp utan förklaring är kategori fyra eller fem tills motsatsen bevisats. V05 — P/B — är kursens tysta lärdom: ett lågt P/B är bara billigt om balansräkningen är sann. Enrons balansräkning, Satyams kassa, Wirecards konton — när boken (eget kapital) är påhittad blir multipeln på den meningslös. Därför hamnar Schilit-testet före multipeln i analysflödet: först verifiera, sedan värdera. Och V19 — margin of safety — ska innehålla redovisningsrisk: en aktie med otydlig rapport kräver större rabatt, eller ingen position alls."
+        },
+        {
+          "type": "text",
+          "content": "Här är 30-sekunderstestet — fem frågor, ja eller nej. Ett: växer kundfordringarna (DSO) snabbare än intäkterna? Två: har nettoresultatet överstigit driftskassaflödet två år i rad eller mer? Tre: återkommer poster som kallas engångs år efter år? Fyra: växer kapitaliserade poster eller avskrivningsbasen snabbare än intäkterna? Fem: finns kopplade parter, komplexa partnerstrukturer eller påstådda kassor utan namngivna banker? Fem nej: rapporten tål ljuset — fortsätt till värderingen. Ett ja: läs noterna igen och ställ frågan till bolaget. Två ja eller fler: kräv ett V17-betyg som sänker positionen till noll tills frågorna besvarats. Testet är avsiktligt grovt — det är en brandvarnare, inte en utredning. Men den som kör det på varje kandidat utesluter i praktiken risken att sitta kvar i nästa kapitel tolv."
+        },
+        {
+          "type": "text",
+          "content": "Schilits slutmaning till investeraren är vardaglig och sträng: lita, men verifiera — och läs allt. Bokens kärna är inte misstro mot företag i allmänhet utan respekt för att redovisning görs av människor under press, och att pressen inte försvinner. Din kappa i AKM1 är därför dubbelt: använd systemets nyckeltal (V04, V08, V05, V13) för att hitta kvalitet — och använd Schilit (V17) för att avslöja dess fejk. Det är också en etisk position: bedrägerier kan inte förhindras av enskilda investerare, men de kan förnekas bränsle — det kapital som stannar hemma hos den som läst noterna. Kursens examen är enkel: nästa gång en rapport känns för bra för att vara sann — vilka tre sidor läser du först, och vilken fråga ställer du?"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Du kan inte förhindra bedrägeri — men du kan vägra vara den som betalar för det: Schilits checklista skiljer inte ärliga bolag från lögnare i förväg, den skiljer dig från offren."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sju kategorier × AKM1-variabler\",\"rader\":[[\"Kategori\",\"AKM1-koppling\",\"Fråga du ställer\",\"Åtgärd vid flagg\"],[\"1. För tidiga intäkter\",\"V04/V08\",\"Växer DSO snabbare än intäkten?\",\"Läs intäktsnoten; fråga om returrätter\"],[\"2. Fiktiva intäkter\",\"V08/V17\",\"Kommer intäkten som kassa?\",\"Kontrollera kassa från kunder; bankbekräftelser\"],[\"3. Intäktsöverföringar\",\"V04\",\"Återkommer engångsvinster?\",\"Rekonstruera resultaten tre år\"],[\"4. Underskattade kostnader\",\"V04/V05\",\"Avviker avskrivningar och reserver från konkurrenter?\",\"Jämför noter med 2-3 konkurrenter\"],[\"5. Kostnadsförskjutningar\",\"V08\",\"Växer kapitaliserade poster? Vart tar capex vägen?\",\"Fritt kassaflöde fem år; reservnotens rollforward\"],[\"6. Dolda skulder\",\"V17/V05\",\"Hur stora är åtagandena och de kopplade parterna?\",\"Summa noter mot balansräkning; sänk V17-betyget\"],[\"7. Kassaflödesmissbruk\",\"V08\",\"Vad säger fotnoterna om klassificering?\",\"DPO-trend; not om leverantörsfinansiering\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Kör 30-sekunderstestet på hela din portfölj eller bevakningslista: fem frågor per bolag, ja eller nej. Ranka bolagen efter antal ja. Läs om noterna för de två sämsta och skriv ner exakt vilken sida och vilken not som fick dig att tveka. Om alla bolag fick fem nej — kör testet imorgon på ett bolag du aldrig analyserat: övningen ska sitta i ryggraden, inte i minnet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur kopplar kursen Schilit till V05 (P/B)?",
+          "alternativ": [
+            "Ett lågt P/B är alltid bäst oavsett balansräkningens kvalitet",
+            "P/B fungerar bara för banker",
+            "P/B är bara meningsfullt om balansräkningen är sann — fejkade tillgångar gör multipeln värdelös",
+            "Schilit rekommenderar P/B som huvudmått"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på Enron, Satyam och Wirecard: vad var fejkat — multipeln eller boken den byggde på?"
+        },
+        {
+          "q": "I 30-sekunderstestet: vad är rätt åtgärd vid två ja eller fler?",
+          "alternativ": [
+            "Köpa mer eftersom marknaden överdriver risken",
+            "Kräva dokumenterat V17-betyg som sänker positionen till noll tills frågorna besvarats",
+            "Vänta på nästa kvartalsrapport innan någon åtgärd",
+            "Justera multipeln nedåt med tio procent"
+          ],
+          "ratt": 1,
+          "tips": "Testet är en brandvarnare — vad gör du när en brandvarnare larmar två gånger?"
+        },
+        {
+          "q": "Vad är kursens etiska slutsats om investerarens roll?",
+          "alternativ": [
+            "Att enskilda investerare kan stoppa bedrägerier genom anmälningar",
+            "Att man ska lita på ledningar tills motsatsen bevisas i domstol",
+            "Att revisorer tar allt ansvar",
+            "Att bedrägerier kan förnekas bränsle — kapitalet som stannar hemma hos den som läst noterna"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad som faktiskt styr kostnaden för att lura — efterfrågan på berättelsen."
+        }
+      ]
+    }
+  ]
+}

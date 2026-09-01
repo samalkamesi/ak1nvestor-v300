@@ -1,0 +1,259 @@
+{
+  "slug": "akm1-den-kontroversiella-modellen",
+  "category": "EKOSYSTEM",
+  "weight": "KRITISK",
+  "chapterCount": 20,
+  "totalMinutes": 240,
+  "title": "AKM1 — Den Kontroversiella Modellen: SUPERDJUP",
+  "summary": "AKM1 är AK1A Research Labs fundamentalmodell: 20 variabler i sju kategorier, 0–5 poäng per variabel, maximalt 100 poäng. Detta superdjup går igenom varje variabels formel och trösklar, redogör rättvist för vad mainstream-finansen faktiskt säger — och visar exakt var modellen avviker, varför vi gör det, och vilka invändningar du kommer att möta.",
+  "minutes": 12,
+  "xp": 2500,
+  "level": "",
+  "learn": "Du lär dig sätta 0–5-poäng på alla 20 AKM1-variabler med konkreta formler och trösklar, redogöra rättvist och exakt för Fama-French-, O'Shaughnessy-, Damodaran- och Graham-positionerna, försvara modellens avvikelser mot en CFA-utbildad skeptiker — och samtidigt veta exakt var bevisläget är svagast och vad mainstream faktiskt har rätt om.",
+  "why": "Eftersom AKM1 är flaggskeppet — och flaggskepp syns. Den som använder modellen offentligt kommer att möta akademiker, kvantiteter och CFA:er som brukar argumentera att moat-poäng är opinionsdata, att vikterna är godtyckliga och att katalysatorvariabler är spådom. Den här kursen bygger försvarswerket innan belägringen börjar: ärlighet om svagheterna, precision om avvikelserna och marginal of safety som principen som prissätter allt.",
+  "chapters_list": [
+    "1. Modellen som vågar vara kontroversiell — AKM1:s karta",
+    "2. Viktmatrisen — varför inte alla variabler väger lika",
+    "3. V01 + V02: Försäljningstillväxt och ARR-tillväxt — tillväxtens två ansikten",
+    "4. V03: Intäktsdiversifiering — koncentrationsriskens pris",
+    "5. V04: P/S — värderingens mest missbrukade nyckeltal",
+    "6. V05: P/B — Grahams gamla kompass i en ny värld",
+    "7. V06: EV/EBITDA — kompromissen som blev standard",
+    "8. V07: Bruttomarginal — lönsamhetens första sanning",
+    "9. V08: EBITDA-marginal — och add-back-spelet",
+    "10. V09: ROE — lönsamhetens dubbelverkande svärd",
+    "11. V10 + V11: Skuldsättningsgrad och likviditet — balansräkningens väktare",
+    "12. V12: Intäktsstabilitet — prognosens ryggrad",
+    "13. V13: Patent och IP — moaten som kan mätas och löpa ut",
+    "14. V14: Varumärke och kundlojalitet — moaten som saknas i bokföringen",
+    "15. V15: Nätverkseffekter — den mest spekulativa moaten",
+    "16. V16 + V17: Produktlanseringar och avtal — händelsekatalysatorerna",
+    "17. V18: Regulatoriska katalysatorer — när staten talar",
+    "18. V19 + V20: Emission-risk och återköp — kapitalets två vägar",
+    "19. Förbered dig på motstånd — invändningarna och svaren",
+    "20. AKM1 × AK1TS — fundamentalvåg plus prisvåg = helhetsbilden"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Modellen som vågar vara kontroversiell — AKM1:s karta",
+      "intro": "AKM1 borde vara en enkel sak: tjugo variabler, sju kategorier, noll till fem poäng, hundra poäng som tak. Ändå kommer modellen att ifrågasättas av precis de personer du respekterar mest — akademiker, kvantiteter och CFA-utbildade analytiker. Det här kapitlet ritar kartan över både modellen och striden, så att du vet exakt vad du försvarar och exakt var försvaret är tunnast.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "AKM1 i ett stycke: modellen poängsätter ett bolag på 20 variabler fördelade på sju kategorier — Tillväxt (V01–V03), Värdering (V04–V06), Lönsamhet (V07–V09), Stabilitet (V10–V12), Moat (V13–V15), Katalysator (V16–V18) och Risk (V19–V20). Varje variabel får 0, 1, 2, 3, 4 eller 5 poäng efter dokumenterade trösklar. Aritmetiken är enkel: 20 variabler gånger max 5 poäng ger exakt 100 poäng som maximal totalsumma. Sex kategorier har tre variabler och bidrar med högst 15 poäng var; Risk har två variabler och bidrar med högst 10. Poängen är en fundamentalprofil — en våg av belägg — och aldrig ett köpsignal i sig. Det är där den första kontroversen börjar, för enligt den akademiska huvudfåran ska förväntade avkastningar förklaras av faktorer, inte av rubriker med rubriker i."
+        },
+        {
+          "type": "text",
+          "content": "Skalan 0–5 är ett medvetet kompromissval. En tiogradig skala skulle ge sken av precision vi inte har — ingen kan ärligt skilja en 7:a från en 8:a på varumärkesstyrka. En treskig skala (dålig–ok–bra) räcker inte för att skilja en moralisk segrare från en ordinär aktör. Fem steg tvingar dig att ta ställning men kräver inte falsk noggrannhet. Regeln vi arbetar efter: varje poäng ska kunna motiveras i en enda mening med ett tal eller ett dokumenterat faktum i. Trösklarna du möter i den här kursen är riktvärden — sektorjustering är tillåten och efterfrågan, men den ska dokumenteras, inte smygas in. Poängsättning utan motivering är inte analys; det är stämningsläge med siffror på."
+        },
+        {
+          "type": "text",
+          "content": "Marginal of safety är modellens överhuvud — och den har avsiktligt inget V-nummer. Benjamin Graham ägnade kapitel 20 i The Intelligent Investor åt principen: skillnaden mellan pris och verkligt värde är det som skyddar dig när din analys, eller världen, har fel. AKM1 poängsätter bolagets fundamentaldata; marginalen prissätter allt. En rak 100-poängare på ett bolag som handlas till fyra gånger verkligt värde är ett svagt case, inte ett starkt. Varför ingen variabel? Därför att marginal of safety inte är en egenskap hos bolaget — den är en egenskap hos transaktionen. Att baka in den i summan skulle låta dig säga att ett dyrt bolag med 92 poäng är bättre än ett billigt med 78. Det är precis fel ordning. Först poäng, sedan pris. Alltid."
+        },
+        {
+          "type": "text",
+          "content": "Kontroversernas karta har tre frontavsnitt, och du ska kunna samtliga utantill. Front ett: moat-variablerna V13–V15 (patent, varumärke, nätverkseffekter) — en kvantitativ tradition med rötter i Famas effektiva marknadshypotes (1970) skulle kalla dem oregistrerbara opinionsdata som inte kan backtestas. Front två: katalysatorvariablerna V16–V18, som poängsätter framtida händelser — mainstream-modeller äter bara bakåtblickande data. Front tre: själva viktningsmatrisen, där inga regressionsvikter har satt talen. Mot allt detta en ärlig bekännelse som kursen upprepar: AKM1 är ett pedagogiskt struktureringsverktyg som tvingar dig att titta på allt — inte en bevisad alfa-källa. Vi tror på strukturen. Vi har inte ett p-value att visa upp. Det är utgångsläget, och det är bättre att veta det före motståndaren."
+        },
+        {
+          "type": "insikt",
+          "content": "AKM1 ger dig inte sanningen om ett bolag — den ger dig en tvångströja mot din egen latitet. De 20 variablerna finns till för att du inte ska få lov att fastna för en snygg berättelse och kalla det analys. Poängen är ett förhör, inte en profetia."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag du äger eller följer. Innan du har lärt dig en enda tröskel: gissa dess poäng på alla 20 variabler, variabel för variabel. Skriv gissningarna. Kursen igenom kommer du att byta ut gissningar mot trösklar — och skillnaden mellan din bukkänsla och dokumenterad poäng är exakt den förbättring detta superdjup köper dig."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför har marginal of safety inget V-nummer i AKM1?",
+          "alternativ": [
+            "Den tillhör transaktionen (priset), inte bolaget — därför kan den inte vara en variabel bland andra",
+            "Graham förbjöd användning av hans princip i poängsystem",
+            "Den är för svår att beräkna för vanliga aktörer",
+            "Den ersätts av riskvariabeln V19 i praktiken"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad en variabel mäter: en egenskap hos bolaget eller en egenskap hos affären du gör."
+        },
+        {
+          "q": "Vad blir den maximala totalsumman i AKM1, och varför?",
+          "alternativ": [
+            "105, eftersom varje kategori ger max 15 poäng",
+            "100, eftersom 20 variabler ger max 5 poäng var",
+            "95, eftersom Risk-kategorin bara kan dra av poäng",
+            "120, eftersom moat-variablerna ger dubbel vikt"
+          ],
+          "ratt": 1,
+          "tips": "Räkna på multiplikationen: antal variabler gånger maximal poäng per variabel."
+        },
+        {
+          "q": "Kursen hävdar att AKM1 främst är vad?",
+          "alternativ": [
+            "En bevisad alfa-källa med publicerad historik",
+            "En hedgefondstrategi i utbildningsformat",
+            "Ett pedagogiskt struktureringsverktyg som tvingar dig att granska allt — inte en bevisad alfa-källa",
+            "En omkodning av Fama-French femfaktormodell"
+          ],
+          "ratt": 2,
+          "tips": "Ärligheten är allt i den här kursen — vad säger vi rakt ut om bevisläget för modellen själv?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Viktmatrisen — varför inte alla variabler väger lika",
+      "intro": "Den vanligaste frågan om AKM1 är inte varför en variabel finns — utan varför den väger som den gör. Det här kapitlet öppnar hela matrisen: sex kategorier à tre variabler, en kategori med två, och aritmetiken som gör att allt landar på exakt 100. Sedan konfronterar vi den obekväma sanningen: mainstream-faktormodeller låter data sätta vikterna. Vi gör det inte. Här är varför.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Matrisen konkret: Tillväxt (V01 Försäljningstillväxt, V02 ARR-tillväxt, V03 Intäktsdiversifiering) max 15 poäng. Värdering (V04 P/S, V05 P/B, V06 EV/EBITDA) max 15. Lönsamhet (V07 Bruttomarginal, V08 EBITDA-marginal, V09 ROE) max 15. Stabilitet (V10 Skuldsättningsgrad, V11 Likviditet, V12 Intäktsstabilitet) max 15. Moat (V13 Patent och IP, V14 Varumärke och kundlojalitet, V15 Nätverkseffekter) max 15. Katalysator (V16 Produktlanseringar, V17 Avtal och partnerskap, V18 Regulatoriska katalysatorer) max 15. Risk (V19 Kapitalförbränning och emission-risk, V20 Återköp) max 10. Summa: 100. Lägg märke till vad matrisen inte gör: den multiplicerar inte, den diskonterar inte, den har inga dolda interaktionstermer. En 5:a i moat räknas exakt lika mycket som en 5:a i bruttomarginal. Det är enkelt, transparent — och angripningsbart, vilket vi kommer till."
+        },
+        {
+          "type": "text",
+          "content": "Första invändningen vi avfärdar själva: varför inte likaviktning mellan kategorierna, sju kategorier à cirka 14,3 poäng? Tre skäl. Ett: variabeln — inte kategorien — är den atomära bedömningsenheten. Det går att motivera en tröskel för bruttomarginal; det går inte att motivera varför Lönsamhet som låda exakt ska väga lika mycket som Katalysator som låda. Två: kategoriviktning tvingar fram onaturliga variabelvikter. Om Risk ska ge 14,3 poäng med två variabler skulle V19 och V20 väga 7,15 var — mer än någon enskild variabel i modellen — eller så skulle vi behöva hitta på en tredje riskvariabel bara för symmetrins skull. Tre: Risk-kategorins roll är till stor del asymmetrisk — den flaggar och sänker, den bygger inte berättelser. Att den bidrar med 10 i tak är en konservativ design, inte ett förbiseende."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream gör — och här ska vi vara exakta, för det är en stark motståndare. Fama-French-faktormodellerna (tre faktorer 1993, fem faktorer 2015) är långa-korta-portföljer: HML är lång hög bokvärde/pris och kort låg; SMB är lång små och kort stora; i femfaktormodellen läggs RMW (lång robust lönsamhet, kort svag) och CMA (lång låg investering, kort hög) till. Vikterna där är inte doctrinära gissningar — de är datadrivna konstruktioner som testats över decennier av tvärsnitt, och när Fama och French 2015 visade att HML i stort uppslukas av lönsamhets- och investeringsfaktorerna gjorde de precis det en AKM1-kritiker skulle kräva: reviderade modellen. Det är vetenskapligt beteende, och vi respekterar det. Skillnaden är ändamålet: en faktormodell söker förklara avkastningsskillnader mellan portföljer. AKM1 söker strukturera en helhetsbedömning av enskilda bolag i utbildningssyfte. Vi konstruerar ingen hedgefondstrategi, och vi ska inte låtsas att vi gör det."
+        },
+        {
+          "type": "text",
+          "content": "Den verkliga svagheten — och den ärliga bekännelsen: att varje variabel väger lika (5 poäng i tak) är i sig ett val som ingen regression gjort. En optimerare som fick välja vikter fritt skulle nästan säkert vrida matrisen — tycka att lönsamheten borde väga mer och katalysatorerna mindre. Varför låter vi den inte? Därför att fritt optimerade vikter på liten data är en fabrik för överanpassning: Bailey och López de Prado har visat hur backtests med många frihetsgrader producerar imponerande Sharpe-tal som kollapsar ur sample. Väljer vi mellan en falskt exakt optimerad matris och en transparent, dumt-förklarbar matris som varje elev kan granska i huvudet — väljer vi transparency. Motprestandat vi åtar oss: dokumenterade poäng, sensitivitetstest (slok en hel kategori och se om helhetsbilden ändras — gör den det var bilden skör), och mod att ändra trösklar offentligt när de misslyckas. En matris som inte får granskas är ingen modell; den är dogm."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"AKM1:s viktmatris — kategori, variabler, maxpoäng\",\"rader\":[[\"Kategori\",\"Variabler\",\"Max poäng\"],[\"Tillväxt\",\"V01 Försäljningstillväxt, V02 ARR-tillväxt, V03 Intäktsdiversifiering\",\"15\"],[\"Värdering\",\"V04 P/S, V05 P/B, V06 EV/EBITDA\",\"15\"],[\"Lönsamhet\",\"V07 Bruttomarginal, V08 EBITDA-marginal, V09 ROE\",\"15\"],[\"Stabilitet\",\"V10 Skuldsättningsgrad, V11 Likviditet (Kvick), V12 Intäktsstabilitet\",\"15\"],[\"Moat\",\"V13 Patent och IP, V14 Varumärke och kundlojalitet, V15 Nätverkseffekter\",\"15\"],[\"Katalysator\",\"V16 Produktlanseringar, V17 Avtal och partnerskap, V18 Regulatoriska katalysatorer\",\"15\"],[\"Risk\",\"V19 Kapitalförbränning och emission-risk, V20 Återköp\",\"10\"],[\"Totalt\",\"20 variabler × 5 poäng\",\"100\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fama-French reviderar sina vikter när data talar — det är deras styrka och deras skyldighet, för de bygger förklaringsmodeller. AKM1:s styrka är i stället att varje elev kan hålla hela matrisen i huvudet och ifrågasätta varenda poäng. Enkelheten är inte restprodukten av att vi inte klarar matte — den är designen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör sensitivitetstestet på riktigt: ta din gissningspoängsättning från kapitel 1 och räkna ut totalen tre gånger — en gång full matris, en gång utan Moat-kategorin, en gång utan Katalysator-kategorin. Ändras din rangordning av bolaget mot andra kandidater? Om en hel kategori kan slopas utan att bilden ändras vet du nu vilken del av din analys som bara är utsmyckning."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför väger Risk-kategorin max 10 poäng medan övriga sex väger max 15?",
+          "alternativ": [
+            "Riskvariabler är mindre viktiga för avkastningen",
+            "Den har två variabler i stället för tre — variabeln, inte kategorien, är atomär enhet med 5 poäng i tak",
+            "Grahams system hade 10 riskpoäng",
+            "Risk-kategorin multipliceras med en faktor 0,5 i beräkningen"
+          ],
+          "ratt": 1,
+          "tips": "Titta på aritmetiken i matrisen — vad är gemensamt för alla variabler oavsett kategori?"
+        },
+        {
+          "q": "Vad är den viktigaste skillnaden mellan Fama-French-faktormodeller och AKM1:s viktmatris?",
+          "alternativ": [
+            "Fama-French är datadrivna långa-korta-portföljer som förklarar avkastningsskillnader; AKM1 är en helhetsbedömning för utbildning",
+            "Fama-French gäller bara amerikanska aktier; AKM1 gäller bara svenska",
+            "Fama-French använder ingen data; AKM1 använder regression",
+            "De är i grunden samma modell med olika notation"
+          ],
+          "ratt": 0,
+          "tips": "Fråga vad varje verktyg är byggt för att åstadkomma: portföljförklaring eller strukturerad bedömning."
+        },
+        {
+          "q": "Vilket argument ger kapitlet för att INTE låta en optimerare välja vikter fritt?",
+          "alternativ": [
+            "Optimering är för dyr beräkningsmässigt",
+            "Regulatorer förbjuder optimerade vikter i utbildningsmaterial",
+            "Fritt optimerade vikter på begränsad data riskerar överanpassning — backtests med många frihetsgrader ger skenbra resultat",
+            "Optimerade vikter kräver IFRS-godkännande"
+          ],
+          "ratt": 2,
+          "tips": "Bailey och López de Prado skrev om just detta fenomen — vad händer med ett backtest när man får prova många kombinationer?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "V01 + V02: Försäljningstillväxt och ARR-tillväxt — tillväxtens två ansikten",
+      "intro": "Tillväxt är det löftesrikaste och farligaste ordet i finans. AKM1 ger den två egna variabler: V01 mäter försäljningstillväxten som den bokförs, V02 mäter ARR-tillväxten som återkommande intäkter växer. En akademiker skulle börja med att påpeka att tillväxt historiskt varit värdeinvesterarens fiende. Hon skulle ha mer rätt än du tror — och vi ska tala om exakt hur mycket.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V01 Försäljningstillväxt — definition och poängsättning. Formeln är CAGR över tre senaste räkenskapsåren: CAGR = (Intäkt år 3 / Intäkt år 0) upphöjt till (1/3), minus 1. Använd organisk tillväxt där det går att skilja ut — förvärvad tillväxt är inköpt, inte skapad. Trösklar: 0 poäng vid negativ tillväxt (minskande intäkter), 3 poäng vid cirka 15 procent årlig organisk tillväxt, 5 poäng vid över 25 procent årligen, hållbart över tre år. Mellanlägen får mellanpoäng — 10 procent är en svag 2:a, 20 procent en stark 4:a. Två varningar i poängsättningen: ett enda pandemiår eller extrahändelseår räknas inte — därför treårsfönstret; och tillväxt köpt med prissänkningar eller rabatter ska dokumenteras ned, för det är intäkt skapad på bekostnad av framtid. En CAGR-exempel: 100 till 175 på tre år är 24 procent årligen — alltså gränsfall för 5 poäng."
+        },
+        {
+          "type": "text",
+          "content": "V02 ARR-tillväxt — SaaS-erans svar på frågan om intäktskvalitet. ARR, Annual Recurring Revenue, är den annualiserade värdet av aktiva återkommande kontrakt: ett abonnemang på 10 000 kr per månad är 120 000 kr i ARR. Skillnaden mot bokförd intäkt är fundamental: bokförd intäkt kan vara engångsförsäljning som måste vinnas om varje kvartal; ARR är kontraktad, buffrad av förhandsbetalning och mätbar i retention. Trösklar: 0 poäng när ARR inte redovisas, inte är ärligt återkommande eller minskar; 3 poäng vid 15–25 procents ARR-tillväxt med net revenue retention (NRR) runt 100 procent; 5 poäng vid över 40 procents ARR-tillväxt med NRR över 110 och dokumenterad churn. NRR är kärnan: över 100 betyder att befintliga kunder växer snabbare än de som lämnar — tillväxt utan ny kundanskaffning. Ärlighetspunkten som ska med varje gång: ARR är inte ett IFRS-mått. Bolagen definierar det själva, och definitionerna läcker — multi-year-kontrakt som räknas helt, icke-återkommande intäkter som smygs in. V02 poängsätter därför definitionskvalitet lika mycket som tillväxttakt."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger — och här är motståndet tungt. Chan, Karceski och Lakonishok (2003, The Level and Persistence of Growth Rates) visade att företags tillväxttakter är kraftigt mean-reverterande: idag snabbväxande bolag är imorgon genomsnittliga, och varken analytiker eller tidsseriemodeller kan förutsäga vilka som behåller takten. Fama-French-traditionen tillför att tillväxtaktier historiskt underpresterat värdeaktier — HML-premien, åtminstone fram till början av 2000-talet då den stora värdetorkan inleddes, gav värde sidan fördelen. O'Shaughnessys decilstudier i What Works on Wall Street visar den viktiga nyansen: ren tillväxt är ingen strategi — hans Cornerstone Growth-kombination som slog index kombinerade lågt pris-till-försäljning med tillväxt och köpdisciplin, inte tillväxt ensam. Sammanfattat: mainstream har rätt om att (1) tillväxt mean-reverterar och (2) högt betald tillväxt är en dålig affär historiskt."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför — kontroversen i klartext. CFA-invändningen: ni poängsätter något som mean-reverterar och som marknaden historiskt överbetalar; det är dokumenterat att köpa snabb tillväxt är en förlorarstrategi. Vårt svar har tre ben. Ett: V01 och V02 är deskriptiva ingångar, inte köpsignaler — poängen beskriver fundamentalvågen; det är Värderingskategorierna V04–V06 och marginalen av safety som prissätter den. AKM1 säger aldrig: hög tillväxt, köp. Den säger: hög tillväxt, nu prata om pris. Två: V02 är just den nyans som CKL-studien saknar — återkommande intäkter med NRR över 100 är inte en extrapolationsdröm utan en pool av bevisade kontrakt; det är kvalitetsskillnaden mellan retentionstillväxt och engångstillväxt, och hela SaaS-erans bokföring gjordes för att synliggöra den. Tre: vi delar invändarens förakt för tillväxt köpt med prissänkningar — det är poängsatt ned i V01 och kräver intäktsdiversifiering V03 och stabilitet V12 för att inte bli en enda stor kundberättelse. Vi står inte fast åt att tillväxt slår värde. Vi står fast åt att en fundamentalbild utan tillväxtmått är ofullständig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V01 och V02 — formel, trösklar, mainstream\",\"rader\":[[\"Variabel\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"V01 Försäljningstillväxt\",\"CAGR = (Intäkt3/Intäkt0)^(1/3) − 1, organisk\",\"Negativ tillväxt\",\"≈ 15 % per år\",\"≥ 25 % per år i 3 år\",\"CKL 2003: tillväxt mean-reverterar; analytiker kan inte prognostisera den\"],[\"V02 ARR-tillväxt\",\"ARR-tillväxt % + NRR som kvalitetsmått\",\"ARR saknas, läcker eller minskar\",\"15–25 % med NRR ≈ 100\",\"≥ 40 % med NRR > 110\",\"ARR är icke-IFRS och bolagsdefinierat — akademiker litar inte på självrapporterade mått\"],[\"Kombinationen\",\"V01 + V02 max 10 poäng\",\"\",\"\",\"\",\"Fama-French: tillväxt underpresterat värde; O'Shaughnessy: bara tillväxt+pris-disciplin slagit index\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig bara hur snabbt intäkterna växer — fråga hur mycket av dem som måste vinnas om i morgon. Bokförd tillväxt kan vara en tappande hink; ARR med NRR över 100 är en fyllande. Det är hela skillnaden mellan V01 och V02."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett SaaS-bolag och ett detaljhandelsbolag du känner. Räkna V01 (treårs-CAGR på bokförd intäkt, organisk om möjligt) och V02 (ARR-tillväxt och NRR om de redovisas — detaljhandelsbolaget får förmodligen en ärlig 0:a med motiveringen saknat mått). Skriv en mening per poäng. Vilket bolag har tillväxt som är bevisad kontrakt och vilket har tillväxt som är vunna engångsaffärer?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Ett bolag växer från intäkt 100 till 175 på tre år. Vad är CAGR, och vilken poängcirka på V01?",
+          "alternativ": [
+            "Cirka 24 procent per år — stark 4:a eller svag 5:a",
+            "Cirka 75 procent per år — rak 5:a",
+            "Cirka 8 procent per år — en 2:a",
+            "Cirka 58 procent per år — maxpoäng med råge"
+          ],
+          "ratt": 0,
+          "tips": "Tre år av tillväxt fördelas över tre perioder: roten ur 1,75 är strax under 1,21."
+        },
+        {
+          "q": "Varför har ARR fått en egen variabel (V02) i AKM1?",
+          "alternativ": [
+            "För att ARR är ett IFRS-godkänt mått som revisorer garanterar",
+            "För att återkommande intäkter mäter intäktskvalitet — retention kontra engångsförsäljning — vilket bokförd intäkt döljer",
+            "För att Graham använde ARR i Security Analysis",
+            "För att ARR alltid är högre än bokförd intäkt"
+          ],
+          "ratt": 1,
+          "tips": "Vad vet du om morgondagens intäkter om dagens var bokförda engångsintäkter — och vad vet du om de var kontrakterade?"
+        },
+        {
+          "q": "En CFA hävdar att AKM1:s tillväxtvariabler bygger på en dokumenterat dålig strategi. Vad är kursens ärligaste svar?",
+          "alternativ": [
+            "Hon har fel — tillväxt har slagit värde sedan 1990-talet",
+            "Hon har delvis rätt: tillväxt mean-reverterar och har överbetalats — men V01/V02 är beskrivande ingångar som prissätts av V04–V06 och marginal of safety",
+            "AKM1 har en backtest som motbevisar CKL-studien",
+            "Vi håller med fullt ut och avser ta bort variablerna"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg skillnaden mellan att mäta en egenskap och att rekommendera ett köp till vilket pris som helst."
+        }
+      ]
+    }
+  ]
+}

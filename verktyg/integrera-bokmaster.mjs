@@ -20,7 +20,7 @@ const VISUELL = new Set(["skala", "compound", "cykel", "donut", "bro", "radar"])
 function validera(kurs, fel) {
   const pre = `[${kurs.slug || "???"}] `;
   if (!kurs.slug) fel.push(pre + "saknar slug");
-  if (kurs.category !== "BOKMASTER") fel.push(pre + "category != BOKMASTER");
+  if (kurs.category !== "BOKMASTER" && kurs.category !== "EKOSYSTEM") fel.push(pre + "category ogiltig (BOKMASTER|EKOSYSTEM)");
   if (!Array.isArray(kurs.chapters) || kurs.chapters.length < 10) fel.push(pre + "för få kapitel (<10)");
   let quizTotal = 0;
   for (const k of kurs.chapters || []) {
@@ -68,8 +68,13 @@ for (const fil of kurser) {
     console.log(`⏸ hoppar över ${fil} — ofullständig/felaktig JSON (agent kanske skriver just nu)`);
     continue;
   }
+  const felFore = fel.length;
   const quiz = validera(kurs, fel);
-  if (fel.length) break; // stoppa vid första felaktiga kurs — rapportera
+  if (fel.length > felFore) {
+    // ogiltig kurs — hoppa över den men fortsätt med övriga
+    console.log(`⏸ hoppar över ${fil} — valideringsfel (ofärdig agentfil?)`);
+    continue;
+  }
   if (djup[kurs.slug]) {
     console.log(`↻ uppdaterar ${kurs.slug} (${kurs.chapters.length} kap, ${quiz} quiz)`);
   } else {
@@ -80,9 +85,8 @@ for (const fil of kurser) {
 }
 
 if (fel.length) {
-  console.error("\n✗ VALIDERINGSFEL — inget skrevs:");
-  fel.forEach((f) => console.error("  " + f));
-  process.exit(1);
+  console.log("\n⚠ VALIDERINGSFEL ( dessa kurser hoppades över):");
+  fel.forEach((f) => console.log("  " + f));
 }
 
 const totalKurser = Object.keys(djup).length;

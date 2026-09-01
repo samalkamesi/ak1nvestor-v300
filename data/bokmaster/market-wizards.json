@@ -1,0 +1,493 @@
+{
+ "slug": "market-wizards",
+ "category": "BOKMASTER",
+ "weight": "KRITISK",
+ "chapterCount": 13,
+ "totalMinutes": 140,
+ "title": "Market Wizards — Schwager: KOMPLETT",
+ "summary": "Jack Schwagers Market Wizards (1989) är den mest lästa intervjustaden om traders någonsin: Michael Marcus, Ed Seykota, Bruce Kovner, Richard Dennis, Paul Tudor Jones, Marty Schwartz, Jim Rogers och Van Tharp förklarar själva hur de tänker kring risk, förluster och disciplin. Kursens kärna är bokens kärna — det finns ingen enda väg till framgång, men beteendet kring förlusten är gemensamt. Kursen avslutas med kopplingen till AK1TS, där risken bor i Brytpunkt-dimensionens stopp, och till beteendediagnostiken i /profil och Short-Sellern.",
+ "minutes": 10,
+ "xp": 1800,
+ "level": "",
+ "learn": "Efter kursen kan eleven redogöra för kärnslutsatsen i Jack Schwagers Market Wizards — att det inte finns någon enda väg till framgång, men att världens främsta traders delar en uppsättning beteenden: riskkontroll före avkastning, disciplin, tålamod, oberoende tänkande och förmågan att ta förluster utan att tappa processen. Eleven kan återge och tillämpa de centrala lärdomarna från intervjuerna: Michael Marcus regel att kliva ur en obekväm förlorande position (du kan alltid gå in igen), hans tålamod och hans dimensionering efter övertygelse; Ed Seykotas trefaldiga budskap att kapa förluster, hans systemtro och hans psykologiska poäng att alla får vad de vill ha från marknaden; Bruce Kovners princip att stoppet bestäms före ingången och hans läsning av the market's way; Richard Dennis Turtles-experiment och beviset att metoder kan läras ut men disciplinen inte; Paul Tudor Jones försvarstänkande, 200-dagarsmedelvärdet som regime-filter och regeln att aldrig addera på förlorare; Marty Schwartz vändning från fundamental analys till prisaktion; Jim Rogers värde-tålmodiga motpol som väntar tills pengarna ligger i hörnet; samt Van Tharps fördelning 60/30/10 och begreppet expectancy. Eleven kan dessutom översätta boken till AK1TS-ramverket — risken bor i Brytpunkts-dimensionen, som definierar både stopp och positionsstorlek — och använda boken som beteendediagnostik i /profil samt som disciplinram för Short-Sellern, där V19 Kapitalförbrukning & Emission-risk, V12 Intäktsstabilitet och V10 Skuldsättningsgrad utgör fundamentalt flaggmaterial.",
+ "why": "Market Wizards är den mest lästa boken någonsin om vad som skiljer framgångsrika traders från ruinerade — och dess svar är inte metod utan beteende. För AK1A-ekosystemet är den kritisk av tre skäl: den ger /profil ett empiriskt underlag av verkliga spelstilar (Marcus-, Seykota-, Rogers-, Schwartz- och PTJ-typerna), den visar att stoppet — AK1TS Brytpunkts-dimension — är den enda komponent som alla mästare delar oavsett metod, och den lär eleven den viktigaste enskilda regeln: att älska små förluster och aldrig låta dem växa. Utan den beteendegrunden blir varje V-analys och varje tekniskt system snyggt på pappret och farligt i praktiken.",
+ "chapters_list": [
+  "1. Ingen enda väg — Schwagers fråga",
+  "2. Michael Marcus — tålamod och små förluster",
+  "3. Ed Seykota — kapera förluster tre gånger",
+  "4. Bruce Kovner — stoppet bestäms före ingången",
+  "5. Richard Dennis & Turtles — kan trading läras ut?",
+  "6. Paul Tudor Jones — försvar, försvar, försvar",
+  "7. Marty Schwartz — fundamentalisten som blev tekniker",
+  "8. Jim Rogers — köp värde och sitt stilla",
+  "9. Van Tharp — psykologin: 60/30/10",
+  "10. Förlustens anatomi — älska att förlora litet",
+  "11. Schwagers syntes — de gemensamma dragen",
+  "12. AK1TS — risken bor i Brytpunkten",
+  "13. Profilen & Short-Sellern — beteendet avgör"
+ ],
+ "chapters": [
+  {
+   "num": 1,
+   "minutes": 10,
+   "title": "Ingen enda väg — Schwagers fråga",
+   "intro": "På 1980-talet reste finansjournalisten och analytikern Jack Schwager runt för att intervjua de mest framgångsrika traders som gick att finna — personer som förvandlat små konton till förmögenheter och gjort det år efter år, i olika marknader. Resultatet blev Market Wizards (1989), förmodligen den mest lästa intervjustaden i finanslitteraturen. Bokens budskap är obekvämt för alla som söker en genväg: det finns ingen enda väg till framgång — men de gemensamma dragen är nog så avslöjande.",
+   "blocks": [
+    {"type": "text", "content": "Schwagers metod var radikal i sin enkelhet: i stället för att bygga en egen teori om vad som fungerar lät han mästarna själva förklara. Han intervjuade diskretionära traders, systemhandlare, fundamentalister, tekniker, makrospekulanter och värdeinvesterare — och lät deras röster bilda ett körsång av olikhet. Michael Marcus handlade råvaror på instinkt och tålamod. Ed Seykota lät en dator fatta besluten. Bruce Kovner kombinerade makroförståelse med teknisk bekräftelse. Paul Tudor Jones jagade vändningar med hugg och försvar. Jim Rogers vägrade timing och köpte värde. Marty Schwartz bytte sida från fundamentalism till diagram. Kontrasterna är poängen: Schwager letade inte en mall — han letade mönster under mallarna."},
+    {"type": "text", "content": "Kärnslutsatsen, som Schwager själv återkommer till i bokens reflektioner, är att det inte finns någon enda sann väg till marknadsframgång. Vissa av mästarna är tekniker, andra fundamentalister; vissa handlar hundra gånger om året, andra noll; vissa älskar risk, andra hatar den. Men när Schwager lyfter blicken från metoderna och ser på beteendet — vad de gör dagen det går fel, hur de dimensionerar, hur de hanterar att ha haft fel — framträder en gemensam struktur: riskkontroll först, disciplin, tålamod, oberoende tänkande och en närmast kärleksfull relation till den lilla förlusten."},
+    {"type": "text", "content": "Boken är därför i grunden en beteendebok, inte en metodbok. Metoden är privat: du kan inte kopiera Michael Marcus instinkt eller Ed Seykotas system och vänta dig deras resultat, eftersom metoden är sammansvetsad med deras personlighet. Beteendet är däremot allmänt: att bestämma var man har fel innan man går in, att aldrig addera på en förlorare, att dra ner storlek efter förluster — det går att lära, mäta och träna hos vem som helst. Det är precis den distinktionen AK1A bygger vidare på: /profil diagnosticerar personen, AK1TS strukturerar beslutet, och boken levererar bevisen på att processen slår prediction."},
+    {"type": "text", "content": "I den här kursen går vi kapitel för kapitel in i de åtta rösterna som boken och dess uppföljare är mest kända för, med tyngd på det som är användbart för en svensk aktie-elev: hur man tänker kring förluster, stopp, positionsstorlek och sitt eget temperament. Kursen avslutas med att översätta allt till AK1TS — där risken bor i Brytpunkt-dimensionen — och till beteendediagnostiken i /profil och Short-Seller-rollen. Håll en fråga levande genom hela kursen: vilken av mästarna liknar jag — och vilken borde jag lära av trots att jag inte liknar hen?"},
+    {"type": "insikt", "content": "Metoden är privat. Beteendet är allmänt. Du kan inte kopiera Marcus trades — men du kan kopiera hans förhållande till förluster."},
+    {"type": "utmaning", "content": "Fundera på var dina investeringsidéer kommer ifrån. Om du raderade alla källor utom en — vilken skulle du behålla, och vad säger det om hur oberoende ditt tänkande egentligen är? Skriv ner svaret i en mening."},
+    {"type": "tabell", "content": "{\"rubrik\":\"Marknadsmästarna i boken — metoder och kärnregler\",\"rader\":[[\"Trader\",\"Huvudmetod\",\"Kärnregel\",\"För eleven\"],[\"Michael Marcus\",\"Diskretionär trend- och råvaruhandel\",\"Kliv ur obekväma förlorare — du kan alltid återvända\",\"Tålamod och små förluster\"],[\"Ed Seykota\",\"Mekaniskt trendföljande system\",\"Kapa förluster — tre gånger om\",\"Systemet måste passa psyket\"],[\"Bruce Kovner\",\"Makro med teknisk bekräftelse\",\"Stoppet bestäms före ingången\",\"Planera utgången först\"],[\"Richard Dennis\",\"Regelbaserad trendhandel\",\"Reglerna är enkla — disciplinen är svår\",\"Enkelhet och konsekvens\"],[\"Paul Tudor Jones\",\"Diskretionär timing i många marknader\",\"Spela försvar först\",\"Skydda kapitalet före avkastningen\"],[\"Marty Schwartz\",\"Kortiktig teknisk aktiehandel\",\"Lär dig ta förlusterna\",\"Priset avgör tajmingen\"],[\"Jim Rogers\",\"Global värdeinvestering\",\"Köp värde och sitt stilla\",\"Att inte handla är en position\"],[\"Van Tharp\",\"Handelspsykologi och forskning\",\"Du handlar dina övertygelser\",\"60/30/10-fördelningen\"]}"},
+    {"type": "visuell", "content": "radar"}
+   ],
+   "quiz": [
+    {
+     "q": "Vilken slutsats drar Schwager efter alla intervjuer i Market Wizards?",
+     "alternativ": ["Alla framgångsrika traders använder samma tekniska system", "Det finns ingen enda väg till framgång — men gemensamma beteenden finns", "Fundamental analys är överlägsen teknisk analys", "Framgång beror framför allt på tillgång till information före andra"],
+     "ratt": 1,
+     "tips": "Tänk på hur olika personerna i boken är — vad kan de då dela, om inte metoden?"
+    },
+    {
+     "q": "Vad har intervjuernas huvudpersoner främst gemensamt?",
+     "alternativ": ["Hög akademisk examen", "Förmåga att förutsäga marknaden med extrem precision", "Riskkontroll, disciplin och förmåga att ta förluster", "De undvek alltid belåning"],
+     "ratt": 2,
+     "tips": "Fråga dig vad som händer hos alla när en position går emot dem."
+    },
+    {
+     "q": "Varför är Market Wizards i grunden en beteendebok snarare än en metodbok?",
+     "alternativ": ["Eftersom metoden är personlig medan beteendet kring risk och förluster är överförbart", "Eftersom ingen av traderna ville avslöja sina metoder", "Eftersom Schwager inte förstod de tekniska systemen", "Eftersom boken bara handlar om psykologiska experiment"],
+     "ratt": 0,
+     "tips": "Överväg vilken del av en traders process som går att kopiera till en annan människa."
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "minutes": 10,
+   "title": "Michael Marcus — tålamod och små förluster",
+   "intro": "Michael Marcus är ett av bokens starkaste bevis på att vägen går via misslyckandet: han förvandlade runt 30 000 dollar till cirka 80 miljoner dollar på knappt tjugu år — efter att först ha förlorat sina besparingar mer än en gång. Hans kapitel handlar om två saker: tålamod och förlusternas roll. Schwager låter Marcus själv förklara varför den som vill överleva måste lära sig att förlora — litet.",
+   "blocks": [
+    {"type": "text", "content": "Marcus kom till marknaden genom en vän som lovat att fördubbla hans pengar; i stället förlorade han dem, fyllde på, och förlorade igen. Den unga Marcus var det Schwager kallar en typisk förlorare: han handlade för stor, hoppades i stället för att agera och tog förluster personligt. Vändningen kom när han slutade försöka ha rätt och började fokusera på att förlora rätt — små, snabba, planerade förluster och långa, tåliga vinnare. Hos Commodities Corporation mötte han Ed Seykota, och deras samtal om risk cementerade det som blev hans signum: att klippa förluster utan att tveka och att hålla vinnare utan att röras."},
+    {"type": "text", "content": "Marcus mest citerade råd handlar om den obekväma positionen: »If you have a losing position that is making you uncomfortable, the solution is very simple: Get out, because you can always get back in.« Obehag är information: om du inte kan sova, om du kontrollerar kursen var tionde minut, om du önskar dig en räddande nyhet — då är positionen fel dimensionerad eller fel tes, och utgången kostar mindre än ovissheten. Han tillägger också att de bästa affärerna görs vid vändningar: »I believe the very best money is made at the market turns.« Det kräver just det tålamod han är känd för — att vänta tills marknaden visar sin hand innan man satsar stort."},
+    {"type": "text", "content": "Kursens formulering av Marcus filosofi är att du måste älska att förlora pengar — litet. Det låter paradoxalt, men meningen är exakt: den som hatar små förluster kommer att förhandla med dem, flytta stoppen och låta dem växa tills de blir stora. Den som älskar dem — som ser varje liten, planerad förlust som bevis på att processen fungerar — betalar en låg och jämn avgift för att få vara med när trenden kommer. Marcus påminde om att även de bästa har fel i kanske fyra fall av tio; förlusten är inte ett personligt nederlag utan affärens hyra. Skillnaden mellan en karriär och en ruin är hyrans storlek."},
+    {"type": "text", "content": "Marcus dimensionerade sina positioner efter övertygelse — men övertygelse som bekräftas av marknaden, inte av känslan. När en tes hade flera oberoende ben som började slå in växte positionen, försiktigt, i steg. När övertygelsen var vag var positionen litet eller obefintlig. Vinnare pyramidrade han — han adderade till det som rörde sig hans väg — medan en förlorande position aldrig fick sällskap av mer kapital. Och när inget setup fanns gjorde han det svåraste av allt: ingenting. Tålamodet var inte passivitet; det var beredskap."},
+    {"type": "insikt", "content": "En liten förlust är hyran för information. En stor förlust är ett beslut."},
+    {"type": "utmaning", "content": "Minns din senaste riktigt stora förlust. Var den en enda händelse — eller en kedja av små förnekade förluster som fick växa? Skriv ner ögonblicket då den fortfarande var liten och vad som hindrade dig från att då kapa den."},
+    {"type": "tabell", "content": "{\"rubrik\":\"Michael Marcus — situation och tillvägagångssätt\",\"rader\":[[\"Situation\",\"Marcus tillvägagångssätt\",\"Översättning för eleven\"],[\"Förlorande position som känns obekväm\",\"Kliv ur direkt — du kan alltid gå in igen\",\"Obehag är en exit-signal, inte en prövning\"],[\"Hög övertygelse som marknaden bekräftar\",\"Större position och försiktig pyramidering\",\"Öka bara när marknaden rättat dig\"],[\"Låg eller oklar övertygelse\",\"Liten position eller ingen alls\",\"Tvekan är ett svar — minska\"],[\"Inget tydligt setup\",\"Vänta\",\"En tom portfölj är en strategi\"],[\"Vinnande position\",\"Håll kvar och låt vinsten växa\",\"Klipp inte blomman i knopp\"]}"}
+   ],
+   "quiz": [
+    {
+     "q": "Vad är Michael Marcus råd om en förlorande position som känns obekväm?",
+     "alternativ": ["Addera mer för att sänka genomsnittskostnaden", "Behåll den och vänta — tålamod är allt", "Kliv ur — du kan alltid gå in igen", "Flytta stoppet längre bort"],
+     "ratt": 2,
+     "tips": "Hur prissätter Marcus kostnaden för att sitta kvar i ovisshet?"
+    },
+    {
+     "q": "Vad menas med Marcus inställning att man måste vara beredd att förlora — fast litet?",
+     "alternativ": ["Att man aldrig ska riskera kapital alls", "Att förluster ska ignoreras eftersom de slår ut statistiskt", "Att man ska dubbla insatsen efter varje förlust", "Att små, planerade förluster är processens kostnad medan stora förluster är beslut"],
+     "ratt": 3,
+     "tips": "Skilj på förlust som hyra och förlust som konkurs."
+    },
+    {
+     "q": "Hur dimensionerade Marcus sina positioner?",
+     "alternativ": ["Alltid samma storlek oavsett tilltro", "Efter övertygelse och marknadens bekräftelse — större när fler delar av tesen slår in", "Efter hur mycket han förlorat samma vecka", "Så litet som möjligt varje gång"],
+     "ratt": 1,
+     "tips": "Tänk på vad som gör att en och samma handlare vågar satsa mer vissa gånger."
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "minutes": 10,
+   "title": "Ed Seykota — kapera förluster tre gånger om",
+   "intro": "Ed Seykota var ingenjören som redan på 1970-talet lät en dator testa handelsregler — något av det första i världen — och byggde ett mekaniskt trendföljande system som gav hans konto en av historiens vackraste avkastningskurvor. I intervjun med Schwager talar han som en zenmästare med räknesnurra: riskkontroll är allt, systemet är enkelt, och marknaden speglar vad du innerst inne vill ha. Hans kapitel är bokens renaste läxa i skillnaden mellan att veta en regel och att leva den.",
+   "blocks": [
+    {"type": "text", "content": "Seykotas mest kända råd är also hans kortaste: »The elements of good trading are: (1) cutting losses, (2) cutting losses, and (3) cutting losses. If you can follow these three rules, you may have a chance.« Skämtet är allvarligt. Alla andra delar av handeln — entry, exit, instrument, timing — kan variera och ändå fungera; men den som inte kapar förluster kommer förr eller senare att utplånas av den enda förlust som blev för stor. Marknaden har ett oändligt tålamod och din krona är ändlig: utan skydd tar marknaden ut alla, utan undantag och utan hänsyn till hur rätt du hade."},
+    {"type": "text", "content": "Seykotas djupaste poäng är psykologisk: »Win or lose, everybody gets what they want out of the market. Some people seem to like to lose, so they win by losing money.« Marknaden delar ut det du verkligen söker — inte det du säger att du söker. Den som vill ha spänning får spänning, och betalar för den. Den som vill ha rätt får hålla kvar förlorande positioner tills de en dag, kanske, visar att hon hade rätt — till priset av kapitalet. Den som vill ha lugn och pengar får arbeta för dem genom regler. Fundera på vad dina senaste tio affärer faktiskt köpte för dig: spänning, bekräftelse eller avkastning?"},
+    {"type": "text", "content": "Om systemtrading är din väg har Seykota en varning som gäller alla som lånar andras system: »The trick is for a trader to develop a system with which he is compatible.« Systemet behöver inte vara komplext — Seykotas eget var trendföljande och genomskinligt — men det måste passa din psykologi. Ett system med låg träffprocent och långa svackor fungerar bara för den som tål svackor; annars överger du det exakt vid botten av förlustserien, vilket är den dyraste av alla vanliga misstag. Systemtro handlar alltså inte om att tro på systemet, utan om att veta att du klarar av att följa det även när det förlorar."},
+    {"type": "text", "content": "Seykotas praktik kan kondenseras i fyra vanor. För det första: risken per position är liten och jämn — en bråkdel av kapitalet, alltid. För det andra: trender följs, de förutsägs inte — han hakar på vågor och hoppar av när de bryts. För det tredje: svackorna är systemets andning, inte dess fel — en trendföljare lever på att de flesta affärerna är små förluster och några få är stora vinster. För det fjärde: besluten fattas av regeln, inte av stunden. Det är inte glamoröst. Det är därför det fungerar."},
+    {"type": "insikt", "content": "Systemtro handlar inte om att tro på systemet — utan om att veta att du klarar av att följa det även när det förlorar."},
+    {"type": "utmaning", "content": "Har du någon gång haft en fungerande regel som du övergav mitt i en svacka — för att byta till något som kändes bättre just då? Skriv ner vad bytet kostade dig i en mening."},
+    {"type": "tabell", "content": "{\"rubrik\":\"Ed Seykota — systemets pelare\",\"rader\":[[\"Pelare\",\"Innebörd\",\"Fallgropen den tar död på\"],[\"Risk per trade\",\"Liten och jämn andel av kapitalet på varje position\",\"Att öka risken efter en vinstsvit\"],[\"Kapa förluster\",\"Mekanisk exit utan förhandling\",\"Hopp och medelfel som strategi\"],[\"Följ trenden\",\"Haka på vågor och hoppa av när de bryts\",\"Att vilja förutsäga vändningar\"],[\"System-passning\",\"Reglerna måste passa din psykologi\",\"Att låna en främlings temperament\"],[\"Jämnhet\",\"Samma regler varje dag\",\"Regler som bara gäller när det passar\"]}"},
+    {"type": "visuell", "content": "cykel"}
+   ],
+   "quiz": [
+    {
+     "q": "Hur lyder Ed Seykotas berömda tre punkter om god trading?",
+     "alternativ": ["Diversifiera, diversifiera, diversifiera", "Kapa förluster, kapa förluster, kapa förluster", "Köp lågt, köp lägre, håll kvar", "Prognostisera, bekräfta, avvakta"],
+     "ratt": 1,
+     "tips": "Vilken enda handling kan rädda en felaktig position?"
+    },
+    {
+     "q": "Vad menar Seykota med att alla får vad de vill ha från marknaden?",
+     "alternativ": ["Att marknaden är opartisk och delar ut vinst rättvist", "Att alla förr eller senare blir rika", "Att resultatet speglar vad handlaren faktiskt — även omedvetet — söker: spänning, att få ha rätt eller pengar", "Att mäklarnas avgifter avgör utfallet"],
+     "ratt": 2,
+     "tips": "Fundera på vad en person som älskar att ha rätt hamnar i för positioner."
+    },
+    {
+     "q": "Vad krävs enligt Seykota för att kunna följa ett system genom svackorna?",
+     "alternativ": ["Att systemet aldrig förlorar", "Att systemet är så komplext att det inte kan missförstås", "Att man byter system vid varje svacka", "Att systemet är förenligt med handlarens psykologi"],
+     "ratt": 3,
+     "tips": "Vem är det egentligen som följer reglerna — systemet eller du?"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "minutes": 10,
+   "title": "Bruce Kovner — stoppet bestäms före ingången",
+   "intro": "Bruce Kovner hade studerat musik och statskunskap, kört taxi i New York och övervägt en akademisk bana innan han satte sina första sparade pengar på ett terminskonto. När Schwager intervjuade honom förvaltade han miljarder, men talade ödmjukt om att tradingens svåraste del är den emotionella. Hans kapitel är en läxa i förberedd exit, kroppslig självkännedom och att läsa marknaden framför nyheterna.",
+   "blocks": [
+    {"type": "text", "content": "Kovners mest citerade regel gäller timingen av beslutet om utgång: »Before I put on a trade, I always decide in advance where I'm getting out.« Logiken är psykologisk. Före ingången är du neutral — du kan resonera om var tesen är fel utan att någon krona ligger i spel. Efter ingången är du känslans fånge: varje krona av förlustargument köps med obehag, och ju djupare positionen går emot dig, desto dyrare blir det att tänka klart. Att bestämma stoppet i förväg flyttar det viktigaste beslutet till det enda ögonblick du är rationell: innan du äger något."},
+    {"type": "text", "content": "Kovner är också bokens tydligaste röst om emotionell balans. Han berättar att han känner i kroppen när en position är för stor — stress, irritabilitet, sömnlöshet — och att känslan då är information, inte oväsentligt brus: positionen skalas ned tills den inte längre skriker. Om motsatsen gäller, eufori efter en stor vinst, behandlas den som samma sorts varning. Och från sin mentor Michael Marcus — Kovner började sin karriär som hans assistent — har han den mest befriande regeln av alla: »Michael taught me one thing: you have to be willing to make mistakes regularly; there is nothing wrong with it.« Den som gör hundra beslut i veckan måste få göra misstag; det enda som är förbjudet är att inte hantera dem."},
+    {"type": "text", "content": "Kovner talar om the market's way — marknadens sätt. Hans poäng: marknaden går före det fundamentala budskapet, eftersom priset sätter sig innan du hunnit läsa rubriken. Därför ska du inte läsa nyheten — du ska läsa marknadens reaktion på nyheten. Bulliga nyheter som inte lyfter kursen är en allvarligare varning än björniga nyheter som inte pressar den. Reaktionen är evidensen; rubriken är bara en åsikt. Detta är omedelbart användbart för eleven: innan du handlar på en rapport, fråga vad priset gjorde med informationen — inte vad du tycker att informationen var värd."},
+    {"type": "text", "content": "Slutligen visar Kovner på att beteende kan föras vidare. Kedjan i boken — Seykota som formade Marcus tankar om risk, Marcus som lärde Kovner misstagens roll — är ett mentorskap i miniatyr: metoden följer inte med, men relationen till risken gör det. Det är samma idé som AK1A bygger /profil på: din spelstil är påverkbar, din karaktär är träinbar, och den viktigaste arvslotten från en mästare är inte en aktietips-lista utan frågan var är jag fel, och vad gör jag då?"},
+    {"type": "insikt", "content": "Ett stopp som bestäms efter ingången är inget stopp — det är en förhandling med dig själv."},
+    {"type": "utmaning", "content": "Gå igenom dina senaste tio avslut. För hur många av dem hade du bestämt utgångsnivån före köpet? Räkna ihop vad de oplanerade kostade dig i kronor och skriv ner summan."},
+    {"type": "tabell", "content": "{\"rubrik\":\"Bruce Kovner — regler i praktiken\",\"rader\":[[\"Regel\",\"Tillämpning\",\"Effekt\"],[\"Stopp i förväg\",\"Utgången definieras innan entry\",\"Känslan får aldrig sätta priset\"],[\"Misstag-tolerans\",\"Felmöjligheten accepteras som normal\",\"Beslut utan skam och rädsla\"],[\"Kroppens signal\",\"Stress betyder för stor position\",\"Storleken justeras ned\"],[\"Priset före nyheten\",\"Reaktionen väger tyngst\",\"Marknadens dom blir evidensen\"],[\"Balans efter vinst\",\"Eufori behandlas som varning\",\"Ingen jakt på upprepning\"],[\"Mentorskap\",\"Relationen till risken förs vidare\",\"Beteende går att lära ut\"]}"}
+   ],
+   "quiz": [
+    {
+     "q": "När bestämmer Bruce Kovner sitt stopp?",
+     "alternativ": ["Efter att förlusten blivit så stor att den känns i kroppen", "Bara när mäklaren ringer och kräver täckning", "Innan han går in i positionen", "Först när fundamentala nyheter bekräftar tesen"],
+     "ratt": 2,
+     "tips": "Vilken tidpunkt är fri från positionens känslomässiga drag?"
+    },
+    {
+     "q": "Vad menar Kovner med att marknaden går före — the market's way?",
+     "alternativ": ["Att nyheter alltid kommer före kursen och styr den", "Att prisaktionen visar hur marknaden tolkat nyheten — bra nyheter som inte lyfter kursen är en varning", "Att teknisk analys är meningslös", "Att man bara ska handla på rykten"],
+     "ratt": 1,
+     "tips": "Vad ska du titta på om du vill veta vad marknaden tycker om en nyhet?"
+    },
+    {
+     "q": "Vad lärde sig Kovner av Michael Marcus om misstag?",
+     "alternativ": ["Att misstag ska döljas för omvärlden", "Att ett misstag betyder att systemet är fel", "Att man ska sluta handla efter varje misstag", "Att man måste vara beredd att göra misstag regelbundet — det finns inget fel i det"],
+     "ratt": 3,
+     "tips": "Vilken relation till fel har någon som fattar hundratals beslut i veckan?"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "minutes": 10,
+   "title": "Richard Dennis & Turtles — kan trading läras ut?",
+   "intro": "Richard Dennis hade som ung förvandlat runt 400 dollar till en av Chicagos största förmögenheter i råvarurampitarna. Hans vänskapliga tvist med partnern William Eckhardt — kan trading läras ut, eller krävs medfödd fallenhet? — mynnade i ett av finanshistoriens berömdaste experiment: Turtles. Svaret förändrade hur världen ser på trading, och det har en snooande poäng för varje elev.",
+   "blocks": [
+    {"type": "text", "content": "Tvistan var enkel. Dennis menade att hans framgång gick att lära ut till vem som helst med normal begåvning och vilja; Eckhardt trodde att Dennis hade något medfött som inte gick att överföra. För att avgöra saken lät Dennis publicera en annons i Wall Street Journal: han sökte lärlingar att träna — från gatan, inte från handelsgolvet. Över tusen sökandeerring; ett drygt dussin utvaldes i två klasser, 1983 och 1984. Namnet föddes ur Dennis infall till Eckhardt, i stil med: vi ska odla traders som man odlar sköldpaddor på en farm i Singapore — vi're going to raise traders like turtles. Turtles var ett faktum."},
+    {"type": "text", "content": "Reglerna som lärdes ut var trendföljande och genomskinliga: köp när priset bryter ut ur ett 20- eller 55-dagars högsta-lägsta-intervall, dimensionera positionen efter marknadens volatilitet (betecknad N i kursen), sätt stoppet på mekaniskt avstånd från ingången (ungefär två N), pyramidera i trendens riktning och gå ut när trenden bryts genom ett motbrott. Ingen diskretion, inga undantag, inga åsikter. Eleverna fick dessutom en liten andel av vinsten — verkliga pengar, verklig press. Det var ingen skolövning; det var handel med ansvar, fast med regler."},
+    {"type": "text", "content": "Resultatet blev en sensation. Flera av Turtles gjorde tiotals miljoner dollar under experimentets år och blev framgångsrika förvaltare i egen rätt; som grupp tillhörde de sin generations bästa nya traders. Men — och här ligger experimentets dolda rön — inte alla lyckades. Några av dem med exakt samma regler, exakt samma undervisning och exakt samma möjligheter förlorade eller hoppade av. Dennis själv sammanfattade senare kärnan i vad en schablonaktig observers skulle kalla paradoxen: »You could publish my trading rules in the newspaper and no one would follow them. The key is consistency and discipline.« Samma regelbok, olika människor, olika utfall. Reglerna var lärbart; disciplinen var det inte."},
+    {"type": "text", "content": "För AK1A-eleven är Turtles ett paradexperiment. Det bevisar för det första att metoden inte är magi: en enkel, regelbaserad process räcker för edge. Det bevisar för det andra att utfallet inte bestäms av metoden utan av efterlevnaden — därför bygger AK1A på regler plus beteendediagnostik (/profil) i stället för på tips och signaler. Och det bevisar för det tredje att små, jämnt fördelade fördelar sammansatta över tid är hela spelet: varje enskild affär betyder nästan ingenting, sekvensen betyder allt. Det är compounding i dess renaste form — på beteendet."},
+    {"type": "insikt", "content": "Turtles bevisade att reglerna är den minsta delen av framgången — disciplinen är skillnaden mellan samma regler och olika resultat."},
+    {"type": "utmaning", "content": "Anta att du imorgon fick perfekta regler — köp här, stopp där, exit där. Vilken regel skulle du först frestas bryta, och i vilket känsloäge? Det svaret är din första /profil-fråga."},
+    {"type": "tabell", "content": "{\"rubrik\":\"Turtles-reglerna — syfte och översättning\",\"rader\":[[\"Regel\",\"Syfte\",\"Översättning för eleven\"],[\"Inträde vid 20 eller 55 dagars utbrott\",\"Fånga trender tidigt\",\"Brytpunkten definierar ingången\"],[\"Stopp på cirka 2 N avstånd\",\"Begränsa förlusten per unit\",\"Volatiliteten sätter risken\"],[\"Jämn risk per unit\",\"Överleva förlustserier\",\"Konstant andel av kapitalet\"],[\"Pyramidering i trenden\",\"Öka bara det som går rätt\",\"Addera på vinnare, aldrig förlorare\"],[\"Utgång vid motbrott\",\"Låt trenden visa när den är slut\",\"Utgången är en regel, inte en känsla\"],[\"Ingen diskretion\",\"Beslutsångest elimineras\",\"Samma svar varje gång\"]}"},
+    {"type": "visuell", "content": "compound"}
+   ],
+   "quiz": [
+    {
+     "q": "Vad handlade tvisten mellan Richard Dennis och William Eckhardt om?",
+     "alternativ": ["Om guld eller silver var bäst att handla på 1980-talet", "Om råvarubörserna borde avregleras", "Om trading kan läras ut eller om det kräver medfödd fallenhet", "Om fundamental eller teknisk analys är mest vetenskaplig"],
+     "ratt": 2,
+     "tips": "Tänk på vad en annons i Wall Street Journal kan bevisa."
+    },
+    {
+     "q": "Vad blev resultatet när Dennis lärde ut sina regler till Turtles?",
+     "alternativ": ["Alla misslyckades — Eckhardt hade helt rätt", "Flera blev mycket framgångsrika, men några misslyckades trots identiska regler", "Reglerna visade sig omöjliga att formulera", "Ingen skillnad mot en kontrollgrupp"],
+     "ratt": 1,
+     "tips": "Vad säger det att samma regelbok gav olika utfall hos olika människor?"
+    },
+    {
+     "q": "Varför menar Dennis att han skulle kunna publicera sina regler i en tidning?",
+     "alternativ": ["För att reglerna är enkla — det som saknas hos de flesta är konsekvens och disciplin att följa dem", "För att reglerna bara fungerar för honom själv", "För att ingen läser finanstidningar", "För att reglerna är för dyra att följa"],
+     "ratt": 0,
+     "tips": "Skilj på att känna till en regel och att följa den i tuffa stunder."
+    }
+   ]
+  },
+  {
+   "num": 6,
+   "minutes": 10,
+   "title": "Paul Tudor Jones — försvar, försvar, försvar",
+   "intro": "Paul Tudor Jones blev världsberömd för att ha varit förberedd när oktoberkraschen 1987 kom — men i Market Wizards är det inte profeten som står i centrum, utan försvararen. Hans filosofi kan sammanfattas i tre ord som han själv återkommer till: defence, defence, defence. För PTJ är den bästa attacken ett kapital som är kvar när möjligheten kommer.",
+   "blocks": [
+    {"type": "text", "content": "Jones mest citerade råd vänder på hela spelet: »I am always thinking about losing money as opposed to making money. Don't focus on making money, focus on protecting what you have.« Den som lärt sig hans historia förstår allvaret. Som ung trader förstörde han merparten av sitt dåvarande kapital på en enda bomullsposition — han var lång, tog bort stoppet och övertygade sig själv om att marknaden hade fel. Smällen formade honom: från och med dess blev förlusthantering inte en del av spelet, utan själva spelet. Han beskriver sig själv som en defensiv spelare som vinner genom att inte förlora stora."},
+    {"type": "text", "content": "På hans kontor hänger en skylt med orden »Losers average losers« — förlorare adderar på förlorare. Det är den mest komprimerade varningen i boken mot att köpa mer av det som faller för att sänka sitt genomsnitt. Att addera till en förlorande position är att dubbla upp på ett beslut marknaden redan börjat döma ut; det förvandlar ett litet, hanterbart misstag till ett existentiellt. Jones regel är absolut: en position som går emot dig ska bli mindre eller försvinna — aldrig större. Ärligheten om förlusterna hör ihop med detta: i intervjun redovisar han sina misstag utan kosmetik, eftersom den som sminkar historien är dömd att upprepa den."},
+    {"type": "text", "content": "Som övergripande måttstock använder Jones något oväntat enkelt. »My metric for everything I look at is the 200-day moving average of closing prices« — 200-dagars glidande medelvärde på slutkurser. Det är ingen köp- eller säljsignal; det är en klassificering av spelets regim. Handlar en aktie eller ett index över sitt 200-dagarsmedelvärde är trenden gästvänlig; handlar det under, är oddsen föränderliga och riskerna av annan storleksordning. Det är precis så kursen använder AK1TS Pris- och Våg-dimensioner: inte som spådom, utan som en temperaturmätning som avgör hur mycket risk som är rimlig att bära."},
+    {"type": "text", "content": "Slutligen asymmetrin. Jones söker affärer där möjligheten är en multipel av risken — gärna flera gånger större. Med det förhållandet kan han ha fel ofta och ändå tjäna: fyra små förluster mot en stor vinst är en god månad. Fel-kvoten är accepterad kostnad; det är storleken på felen som är förbjuden. Efter förlorade perioder drar han ned storleken och väntar in sin form — återhämtning sker genom mindre risk, aldrig genom hämndtrades. Det är försvar, försvar, försvar — och därför attacker som får betyda något."},
+    {"type": "insikt", "content": "Försvar är inte feghet. Det är det som håller dig kvar vid bordet tills oddsen är dina."},
+    {"type": "utmaning", "content": "Vilken position i din portfölj håller du mest av stolthet? Fråga dig sedan: vad skulle det kosta att erkänna att den är fel — och vad kostar det att inte veta?"},
+    {"type": "tabell", "content": "{\"rubrik\":\"Paul Tudor Jones — försvarssystemet\",\"rader\":[[\"Princip\",\"Innebörd\",\"Övning\"],[\"Förlusten först\",\"Varje trade planeras från risken\",\"Skriv risken före möjligheten\"],[\"200-dagarsmedelvärde\",\"Regime-filter för hel marknad\",\"Kolla var index står mot 200 MA\"],[\"Aldrig addera på förlorare\",\"Medelfel är förbjudet\",\"En regel utan undantag\"],[\"Minska efter förluster\",\"Sänk temperaturen efter backslag\",\"Halvera storleken efter svacka\"],[\"Asymmetri i oddsen\",\"Sök multipler av risken\",\"Kräv mål långt över stoppet\"]}"},
+    {"type": "visuell", "content": "skala"}
+   ],
+   "quiz": [
+    {
+     "q": "Vad är Paul Tudor Jones förhållningssätt till pengar?",
+     "alternativ": ["Han fokuserar på att skydda det han har — förlusterna tänker han på först", "Han fokuserar på att maximera vinsten i varje enskild trade", "Han ignorerar risk eftersom allt är hedgeat", "Han litar på att börsen stiger över tid"],
+     "ratt": 0,
+     "tips": "Tänk på vilken ordning orden försvar och attack kommer i hans värld."
+    },
+    {
+     "q": "Vad använder Jones som sitt övergripande mått — my metric for everything?",
+     "alternativ": ["P/E-talet", "200-dagars glidande medelvärde på slutkurser", "Antalet börsnoteringar per kvartal", "Den amerikanska handelsbalansen"],
+     "ratt": 1,
+     "tips": "Det handlar om att klassificera spelets regim, inte om en enskild akties värdering."
+    },
+    {
+     "q": "Vad betyder skylten Losers average losers på Jones kontor?",
+     "alternativ": ["Att genomsnittliga traders alltid förlorar", "Att alla förlorar i genomsnitt", "Att förlorare bör köpa mer av det som faller för att sänka genomsnittet", "Att den som adderar till en förlorande position definierar sig som förlorare — addera aldrig på förlorare"],
+     "ratt": 3,
+     "tips": "Vad kallas det när man köper mer av något man redan förlorar på?"
+    }
+   ]
+  },
+  {
+   "num": 7,
+   "minutes": 10,
+   "title": "Marty Schwartz — fundamentalisten som blev tekniker",
+   "intro": "Marty Schwartz tillbringade nio år som fundamental aktieanalytiker med mediokert resultat och konstant ångest. När han slutade argumentera med priserna och började lyssna på dem förändrades allt: han blev en av USA:s mest framgångsrika kortfristiga aktietraders och vann den amerikanska investeringstävlingen US Investing Championship med bred marginal. Hans berättelse är bokens tydligaste vittnesbörd om att analys och tajming är två olika hantverk.",
+   "blocks": [
+    {"type": "text", "content": "Schwartz var ingen novis när han bytte sida. Han hade arbetat som aktieanalytiker på flera finanshus, kunde läsa balansräkningar och byggde fundamentala modeller — och han förlorade ändå, år efter år, på att handla på sina egna slutsatser. Problemet var inte att analysen var dålig utan att den saknade tidsperspektiv: han köpte bolag han trodde på och satt sedan frågande när marknaden rationerade ned dem. Vändningen kom när han började lyssna på priserna — diagram, nivåer, volym, momentum — och använda fundamentet som bakgrund i stället för signal. I intervjun sammanfattar han skillnaden torrt: han mådde bra som fundamentalist, men han blev rik som tekniker."},
+    {"type": "text", "content": "Huvudregeln är densamma som hos Marcus och Seykota, men hos Schwartz får den sin mest konkreta formulering: »Learn to take the losses. The most important thing in making money is not letting your losses get out of hand.« Ta smällen — take a hit — när marknaden visar att du har fel. Smällen är alltid billigare än förnekandet, och den är som en vaccination: den gör ont en sekund och förhindrar sjukdomen. Schwartz poäng är att den professionella inte är den som aldrig har fel — den som aldrig har fel finns inte — utan den som är snabbast att konvertera fel till en liten, avslutad kostnad."},
+    {"type": "text", "content": "Schwartz är också bokens mest levande exempel på respekt för form. Efter förlorande perioder handlade han mindre — inte mer. Som en atlet efter skada byggde han tillbaka volym och storlek gradvis, tills statistiken visade att han var i form igen. Därtill en detalj som säger mycket: han trivds som aller bäst när han handlar för eget konto, utan ägare att förklara sig för — trycket att förklara varje svacka för andra gjorde honom sämre, medan journalen över egna affärer gjorde honom bättre. Självkännedom var en del av verktygslådan, inte en biprodukt."},
+    {"type": "text", "content": "För AK1A-eleven är Schwartz beviset på att fundamental och teknisk analys inte är fiender utan olika lager i samma beslut. Det fundamentala arbetet — affärsmodell, kassaflöde, V-mått — svarar på frågan vad. Prisaktionen — nivåer, brytpunkter, trend — svarar på frågan när. Och förlusthanteringen — stoppet, storleken, ritu­alet efter fel — svarar på frågan hur länge. Eleven som bara behärskar ett lager har ett svartvittfoto av ett beslut som i verkligheten är i färg: det fundamentala huset byggs i AKM1, men dörren öppnas och stängs av prisets tid, alltså AK1TS."},
+    {"type": "insikt", "content": "Fundamentalanalys säger vad. Prisaktionen säger när. Förlusthanteringen säger hur länge."},
+    {"type": "utmaning", "content": "I vilken position har du rätt i analysen men fel i tajmingen? Skriv tesen — och skriv vilken kursnivå som bevisar att tajmingen är fel. Har du den nivån definierad på förhand?"},
+    {"type": "tabell", "content": "{\"rubrik\":\"Före och efter — Marty Schwartz två liv\",\"rader\":[[\"Område\",\"Som fundamentalist\",\"Som teknisk trader\"],[\"Källa till beslut\",\"Rapporter och modeller\",\"Pris, nivåer och volym\"],[\"Förhållande till pris\",\"Argumenterade emot\",\"Lyssnade och följde\"],[\"Felhantering\",\"Höll kvar tills analysen rättfärdigades\",\"Take a hit — ut direkt\"],[\"Efter svacka\",\"Analyserade mer\",\"Handlade mindre\"],[\"Självbild\",\"Ville ha rätt\",\"Ville ha pengar\"],[\"Resultat\",\"Mediokert med ångest\",\"Tävlingsvinnande\"]}"}
+   ],
+   "quiz": [
+    {
+     "q": "Vad hände med Marty Schwartz resultat när han gick från fundamental till teknisk analys?",
+     "alternativ": ["Ingen märkbar skillnad", "Det blev sämre eftersom han slutade läsa rapporter", "Han blev vinstande — bland annat vinnare av US Investing Championship", "Han slutade handla aktier helt"],
+     "ratt": 2,
+     "tips": "Tänk på vad som händer när någon byter fråga från varför till när."
+    },
+    {
+     "q": "Vad är Schwartz främsta råd om förluster?",
+     "alternativ": ["Lär dig ta förlusterna — det viktigaste är att inte låta dem växa ur händerna", "Håll kvar tills analysen visar att du har rätt", "Flytta stoppen tills marknaden vänder", "Handla större för att ta igen förlusten"],
+     "ratt": 0,
+     "tips": "Vad är billigast: smällen nu eller förnekandet senare?"
+    },
+    {
+     "q": "Hur hanterade Schwartz svackor i resultaten?",
+     "alternativ": ["Han ökade storleken för att komma tillbaka snabbt", "Han minskade positionsstorleken och väntade in sin form igen", "Han bytte marknad omedelbart", "Han slutade föra handelsjournal"],
+     "ratt": 1,
+     "tips": "Tänk på hur en atlet tränar efter en skada."
+    }
+   ]
+  },
+  {
+   "num": 8,
+   "minutes": 10,
+   "title": "Jim Rogers — köp värde och sitt stilla",
+   "intro": "Jim Rogers — som under tio år medgrundade och drev Quantum Fund tillsammans med George Soros, med en sammanlagd avkastning som överträffade index med en faktor av tiotals — är bokens inofficielle dissident: en världsinvesterare som öppet förklarar sig vara en usel trader och därför inte trader. Hans kapitel tvingar fram kursens viktigaste fråga: vem är du — och vilken spelstil kräver ditt temperament?",
+   "blocks": [
+    {"type": "text", "content": "Rogers håller ingen tillbaka när Schwager frågar om timing: han är öppet skeptisk till att försöka tajma marknaden och menar att de allra flesta gör bäst i att handla sällan — eller inte alls. Hans mest berömda formulering lyder: »I just wait until there is money lying in the corner, and all I have to do is go over and pick it up. What do I do in the meantime? Nothing.« Med det menar han inte att marknaden delar ut pengar; han menar att verkligt goda tillfällen — missmod, försummelse, priser långt under rimligt värde med en förändring på väg — är sällsynta och uppenbara när de väl kommer. Konsten är att vänta på dem med kontanter, inte att leta fram dem med lupp varje vecka."},
+    {"type": "text", "content": "Metodiken är klassisk värdeinvestering: köp det som är billigt i förhållande till sina grunder — bokvärde och substans är värdemått av gammal skola (i AKM1-världen talar vi om V05 P/B) — och kräv då en marginal of safety, utan att hänga siffror på den i den här kursen. Sedan sitt. Rogers varnar också för historiens dyraste replik: »The four most dangerous words in investing are: this time it's different.« Någon visar alltid varför den gamla värderingsregeln inte gäller just nu — och det är praktiskt taget alltid samma visa. Hans egen stil var att köpa pessimism och försummelse, gärna i tillgångar och länder ingen annan orkade titta på, och sedan låta väntan göra jobbet."},
+    {"type": "text", "content": "Spänningen i boken är uppbyggd medvetet: Rogers, som inte trader, mot Schwartz, som lever på att trader dagligen. Schwager dömer ingen av dem — och det är poängen. Seykotas regel om att alla får vad de vill ha förklarar skillnaden bättre än någon metoddiskussion: Rogers vill ha lugn, långa bågar och få beslut; Schwartz vill ha närvaro, feedback och täta dueller. Ingen av dem är fel; de är rätt för sig själva. Kursens översättning är rak: innan du väljer metod — välj vem du är. Det är kärnan i /profil-arbetet, och Rogers kapitel är dess renaste empiri."},
+    {"type": "text", "content": "Slutligen: kontanter som position. Rogers kunde sitta nästan helt i kontanter under år när inget låg i hörnet — en hållning som känns omöjlig för den som tror att tomma dagar är förlorade dagar. Men Quantum-epokens siffror — tusentals procent i avkastning på ett decennium medan index steg blygsamt — byggdes på få, stora, tålmodiga slag snarare än på aktivitet. I en värld av ständiga signaler, flöden och frestelser är tålamod en konkurrensfördel som inte kankopplas, eftersom det inte finns någon app för det."},
+    {"type": "insikt", "content": "Att inte handla är också en position — och tålamod är den mest underskattade tillgången i en portfölj."},
+    {"type": "utmaning", "content": "Hur länge orkar du sitta med kontanter utan att känna dig utfryst? Minns senaste gången du handlade bara för att göra något — vilken känsla drev dig? Skriv ner den med ett ord."},
+    {"type": "tabell", "content": "{\"rubrik\":\"Två spelstilar — Rogers och Schwartz\",\"rader\":[[\"Dimension\",\"Rogers\",\"Schwartz\"],[\"Horisont\",\"År till decennier\",\"Dagar till veckor\"],[\"Antal beslut\",\"Få och stora\",\"Många och små\"],[\"Förlusthantering\",\"Sällan fel — men då djupt\",\"Täta små förluster\"],[\"Främsta vapen\",\"Värde och tålamod\",\"Pris och reaktion\"],[\"Farligaste fienden\",\"Att köpa billigt som blir billigare\",\"Att inte ta smällen\"],[\"Passar den som...\",\"...kan vänta i åratal\",\"...vill ha daglig feedback\"]]"}
+   ],
+   "quiz": [
+    {
+     "q": "Vad gör Jim Rogers medan han väntar på det perfekta tillfället?",
+     "alternativ": ["Handlar smått för att hålla sig i form", "Ingenting — han väntar tills pengarna ligger i hörnet och bara ska plockas upp", "Hedgar hela portföljen med optioner", "Läser bara kvartalsrapporter"],
+     "ratt": 1,
+     "tips": "Tänk på vad aktivitet kostar honom jämfört med väntan."
+    },
+    {
+     "q": "Vilka fyra ord kallar Rogers de farligaste inom investering?",
+     "alternativ": ["Buy the dip", "Cash is trash", "This time it's different", "Time in the market"],
+     "ratt": 2,
+     "tips": "Repliken används alltid för att förklara varför gamla värderingsregler plötsligt inte skulle gälla."
+    },
+    {
+     "q": "Vilken roll spelar Rogers i boken som kontrast till tradrarna?",
+     "alternativ": ["Han bevisar att timing är allt", "Han rekommenderar daytrading för unga", "Han menar att enbart short-selling lönar sig", "Han visar att även en motståndare till aktiv trading når toppresultat med värde och tålamod — metod måste matcha temperament"],
+     "ratt": 3,
+     "tips": "Tänk på vad Quantum-epoken visar om frekvensen i hans beslutfattande."
+    }
+   ]
+  },
+  {
+   "num": 9,
+   "minutes": 10,
+   "title": "Van Tharp — psykologin: 60/30/10",
+   "intro": "Van Tharp var psykologiprofessor som lät sin forskning om framgångsrika traders bli en egen disciplin: handelspsykologin. Hans bidrag i Schwagers serie handlar om proportioner — och hans budskap är en varning till alla som älskar att labba med system: systemet är den minsta biten. Psykologin är den största, och positionsstorleken däremellan.",
+   "blocks": [
+    {"type": "text", "content": "Tharps mest kända fördelning lyder i rounda tal: omkring sextio procent av tradingframgången är psykologi, omkring trettio procent är positionsstorlek (money management) och omkring tio procent är själva systemet — entry- och exit-reglerna. Slående nog ägnar de flesta privatpersoner nästan all sin tid på de tio procenten: de letar signaler, testar indikatorer och bygger skärmar — medan de sextio procenten, deras eget huvud, förblir oundersökt territorium. Tharps budge­n är därför enkel: om du vill bli bättre, börja med att studera dig själv — det är där den största hävstången finns."},
+    {"type": "text", "content": "Tharps mest citerade påstående är: »You trade your beliefs about the market.« Dina positioner speglar inte marknaden — de speglar dina antaganden om marknaden. Om du inte känner dina antaganden handlar du blint, och dina omedvetna övertygelser (jag måste vinna tillbaka, jag får inte ha fel, jag missar tåget) kommer att fatta dina beslut åt dig. Arbetet är därför att skriva ner sina övertygelser, testa dem mot verkligheten och byta ut de som kostar pengar. Det är exakt det /profil gör i AK1A: ett kartläggningsverktyg för övertygelsernas portfölj — den som ligger bakom aktieportföljen."},
+    {"type": "text", "content": "Tharp formaliserade också begreppet expectancy — förväntan per affär: sannolikheten för vinst gånger snittvinsten, minus sannolikheten för förlust gånger snittförlusten. Poängen är befriande för alla med låg träffkvot: ett system som träffar fyra gånger av tio kan vara kraftfullt lönsamt om vinsterna är tillräckligt mycket större än förlusterna — vilket är exakt Paul Tudor Jones asymmetri och Marcus håll-vinnare-kapa-förluster-kultur. Omvänt kan en hög träffkvot med stora förluster ruinera dig långsamt. Frågan att ställa till varje strategi är alltså inte hur ofta den har rätt — utan vad den väntas ge per affär, i relation till risken."},
+    {"type": "text", "content": "Den fjärde pelaren är personligt ansvar. Tharp observerade att topptraders, när något går fel, ställer sig frågan hur de själv skapade situationen — inte vem som är skyldig. Marknaden är inte emot dig; den är inte alls mot någon. Den som skyller på manipulatio­ner, mäklare eller marknadsguruner lämnar ifrån sig det enda som kan förbättras: sina egna beslut. Därför är journalen Tharps viktigaste verktyg — varje affär dokumenterad med tes, känsla och utvärdering — och därför är han, i AK1A-sammanhang, /profils andlige fader: beteendediagnostik före metod, alltid."},
+    {"type": "insikt", "content": "Du kan inte handla marknaden — du handlar din bild av marknaden. Arbeta med bilden, inte bara med kurserna."},
+    {"type": "utmaning", "content": "Skriv ner tre övertygelser du har om marknaden just nu — om räntor, om ditt favoritbolag, om börsens riktning. Formulera för varje: vad skulle bevisa att jag har fel?"},
+    {"type": "tabell", "content": "{\"rubrik\":\"60/30/10 — från siffror till praktik\",\"rader\":[[\"Komponent\",\"Andel\",\"Praktik hos eleven\"],[\"Psykologi\",\"Cirka 60 %\",\"Journal, känsloregistrering, /profil\"],[\"Positions-storlek\",\"Cirka 30 %\",\"Risk i kronor per affär, storlek efter stoppavstånd\"],[\"System\",\"Cirka 10 %\",\"Enkla regler för entry och exit\"]]}"},
+    {"type": "visuell", "content": "donut"}
+   ],
+   "quiz": [
+    {
+     "q": "Hur fördelar Van Tharp tradingens framgångskomponenter?",
+     "alternativ": ["90 procent system och 10 procent tur", "50 procent system och 50 procent mäklare", "Cirka 60 procent psykologi, 30 procent positionsstorlek och 10 procent system", "100 procent positionsstorlek"],
+     "ratt": 2,
+     "tips": "Tänk på vilken del av din egen träning som får minst tid idag."
+    },
+    {
+     "q": "Vad menar Tharp med att du handlar dina övertygelser om marknaden?",
+     "alternativ": ["Att man bara ska handla utifrån magkänsla", "Att dina positioner speglar dina — ofta omedvetna — antaganden, och att du måste känna dem för att handla med kontroll", "Att övertygelser är irrelevanta i trading", "Att man ska byta övertygelse varje vecka"],
+     "ratt": 1,
+     "tips": "Fundera på vilka övertygelser som styr när du inte kan släppa en förlorande position."
+    },
+    {
+     "q": "Vad innebär ett systems expectancy — förväntan?",
+     "alternativ": ["Sannolikt utfall per affär — låg träffkvot kan vara lönsamt om vinsterna är tillräckligt större än förlusterna", "Att systemet alltid vinner", "Hur mycket mäklaren tar i avgift", "Antal trades per år"],
+     "ratt": 0,
+     "tips": "Räkna med både träffkvot och storlek på vinster och förluster."
+    }
+   ]
+  },
+  {
+   "num": 10,
+   "minutes": 10,
+   "title": "Förlustens anatomi — älska att förlora litet",
+   "intro": "Tar man bort metoder, marknader och decennier från Schwagers intervjuer återstår ett enda tema: förlusten. Alla mästarna har den gemensam — inte som olycka utan som design. Detta kapitel samlar bokens mest undervisande material om varför små förluster är billigast, stora är frivilliga och hela skillnaden mellan karriär och ruin bor i avståndet mellan dem.",
+   "blocks": [
+    {"type": "text", "content": "Schwagers återkommande observation är att de som ruinerades inte var mindre intelligenta eller mindre informerade än mästarna — de var mindre kapabla att ta en förlust. Förlorarprofilen i boken är en liknelse: en position går emot dem, de hoppas i stället för att agera, de adderar för att sänka genomsnittet, de flyttar stoppet som blivit generat och till sist tvingas de ur av mäklaren eller av ren utmattning — på botten. I intervju efter intervju pekar mästarna på samma förmåga som den enskilt viktigaste: att acceptera att en affär är fel, och betala det pris som då är rimligt. Inget annat drag hjälper den som saknar det, och inget misslyckande är förbigånget för den som har det."},
+    {"type": "text", "content": "Bokens regel om förluster är i grunden en enda regel, i fem dialekter. Michael Marcus: kliv ur det obekväma — du kan alltid gå in igen. Ed Seykota: kapa förluster, kapa förluster, kapa förluster. Bruce Kovner: stoppet bestäms innan du köper. Paul Tudor Jones: addera aldrig på en förlorare. Marty Schwartz: ta smällen när du har fel. Fem män, fem decennier, femtio olika marknader — och samma princip: förlustens storlek är din enda verkligt kontrollerbara variabel. Vinsterna bestämmer om du blir rik; förlusterna bestämmer om du får stå kvar i spelet länge nog för att bli det."},
+    {"type": "text", "content": "Ett avgörande verktyg är att skilja på två sorters förluster. En kvalitetsförlust är en affär där regeln följdes, risken var rimlig och edgen helt enkelt inte realiserades den gången — det är en planerad kostnad, en del av verksamheten, inget att ångra. Ett disciplinbrott är en affär där regeln bröts: stoppet flyttades, storleken ökades, positionen lades till emot dig. Den första sorten är avskrivningsbar som hyra; den andra är en läcka som måste repareras innan den sänker skeppet. Utan journal går det inte att skilja dem åt — minnetäter alltidDiskretionär kosmetik och i efterhand känns alla förluster nödvändiga. Därför: skriv ner varje affär, medan den lever."},
+    {"type": "text", "content": "Det goda nyheterna — för de som orkar höra det — är att förlust-tålighet är tränbar, precis som Turtles visade att trading är lärbart. Träningen är konkret: börja med små positioner så att förlusterna är pysnöta hack i stairdan avsett för att blixtlåsa in proceduren; ha en ritual efter varje förlust (paus, aldrig omedelbar re-trade, halverad storlek tills statistiken vänder — PTJ och Schwartz övade båda detta); och dokumentera varje förlust med en rad om vad den lärde. Efter tjugo dokumenterade förluster har du en databas över dig själv som ingen bok kan ersätta. Det är den billigaste utbildning finansmarknaden säljer."},
+    {"type": "insikt", "content": "Räkna inte dina vinster — räkna dina förluster: de avslöjar metoden, profilen och lögnerna du berättar för dig själv."},
+    {"type": "utmaning", "content": "Sortera dina senaste tolv avslut i två högar: planerade förluster och disciplinbrott. Vilken hög är tyngst — och vad kostade den i kronor? Skriv ner den summan."},
+    {"type": "visuell", "content": "cykel"}
+   ],
+   "quiz": [
+    {
+     "q": "Vilket mönster såg Schwager hos dem som ruinerades?",
+     "alternativ": ["De diversifierade för mycket", "De handlade för lite", "De följde sina system för noggrant", "De kunde inte ta en förlust — de hoppades, adderade och flyttade stopp"],
+     "ratt": 3,
+     "tips": "Fråga dig vad som händer med en liten förlust som ingen är beredd att ta."
+    },
+    {
+     "q": "Vad är en kvalitetsförlust?",
+     "alternativ": ["En förlust du vägrar erkänna", "En förlust där regeln följdes och edgen bara inte realiserades den gången — en planerad kostnad", "Årets största förlust", "En förlust på en short-position"],
+     "ratt": 1,
+     "tips": "Tänk på om regeln eller utfallet definierar kvaliteten."
+    },
+    {
+     "q": "Vad gör flera av bokens traders efter en förlustperiod?",
+     "alternativ": ["Minskar positionsstorleken tills form och resultat återkommer", "Dubblar insatsen för att ta igen", "Byter marknad omedelbart", "Slutar föra journal"],
+     "ratt": 0,
+     "tips": "Hur tränar en atlet efter en skada — hårdare eller lugnare?"
+    }
+   ]
+  },
+  {
+   "num": 11,
+   "minutes": 10,
+   "title": "Schwagers syntes — de gemensamma dragen",
+   "intro": "I bokens avslutande reflektioner drar Schwager ihop trådarna från alla intervjuer. Syntesen är kursens karta: åtta drag som återkommer hos i princip alla mästare — oavsett om de handlar på fundamentala data, diagram, system eller värde. Kapitlet bygger listan, förklarar det minst uppenbara draget — den yttre vaksamheten — och visar hur allt blir en självdiagnos.",
+   "blocks": [
+    {"type": "text", "content": "Den första hälften av listan handlar om processens inre. Metod-passion: alla mästarna älskar själva arbetet — analysen, marknaden, jakten — och ingen av dem skulle byta bort jobbet mot vad som helst; passionen är bränslet som bär dem igenom svackor som knäcker andra. Riskkontroll först: kapitalets överlevnad är alltid villkoret för allt annat, därför tänker de på förlusten före vinsten. Disciplin: reglerna följs mekaniskt, utan undantag när det blåser — för som Dennis påpekade: reglerna kan publiceras öppet, eftersom ändå ingen följer dem. Förlust-tålighet: förmågan att ta små, planerade förluster utan att psyket kollapsar eller hämndlystnad tar över."},
+    {"type": "text", "content": "Den andra hälften handlar om processens yttre. Oberoende tänkande: mästarna bildar egna slutsatser och handlar emot konsensus när deras analys kräver det — att följa massan är att släppa sitt edge. Tålamod: de väntar på sina tillfällen, ibland i åratal, som Rogers — eller åtminstone tills setupet är helt rätt, som Marcus. Motståndskraft: slående nog hade nästan alla genomlevt svåra, ibland nästan ruinösa förlustperioder tidigt i karriären — och kommit tillbaka starkare; det är bokens mest tröstande empiri. Och slutligen yttre vaksamhet: den ständiga övervakningen av världen utanför den egna tesen."},
+    {"type": "text", "content": "Yttre vaksamhet förtjänar sin plats på listan, för den är det minst glamourösa och kanske viktigaste av alla drag. Den betyder att aldrig låta en tes bli en identitet: att läsa det som talar emot ens position lika noggrant som det som talar för den, att följa världen — räntor, konkurrenter, regulatorer, kunder — och att uppdera tesen när verkligheten förändras, hellre än att marknaden gör det åt en. Fienden heter bekräftelsebias: den mänskliga benägenheten att samla bevis för det man redan tror. Mästarnas motgift är en öppen fråga i varje portfölj: vad måste hända för att jag ska ha fel — och har det börjat hända? Det är också kärnan i AK1TS Brytpunkt-frågan."},
+    {"type": "text", "content": "Och ändå — Schwagers sista och viktigaste påminnelse: det finns ingen mall. Bredden i boken är enorm: Rogers väntar i åratal, Schwartz duellerar dagligen; Seykota lät datorn bestämma, Marcus litade på instinkt. Om alla dessa människor delar de åtta dragen men inte metoder, kan eleven dra bara en slutsats: hitta din egen väg — men låna beteendena. Metod-passionen måste vara din egen, riskkontrollen kan vara Marcus, disciplinen kan vara Dennis, den yttre vaksamheten kan vara Kovner. Boken är ett bibliotek av möjliga jag, och ditt jobb är att skriva ihop ditt eget."},
+    {"type": "insikt", "content": "Det gemensamma är inte vad de köper — det är vad de gör dagen det går fel."},
+    {"type": "utmaning", "content": "Poängsätt dig själv 1–5 på de åtta dragen: metod-passion, riskkontroll, disciplin, förlust-tålighet, oberoende tänkande, tålamod, motståndskraft, yttre vaksamhet. De två lägsta poängen är din personliga kursplan — skriv ner dem."},
+    {"type": "tabell", "content": "{\"rubrik\":\"De åtta gemensamma dragen\",\"rader\":[[\"Drag\",\"Exempel från boken\",\"Övning för eleven\"],[\"Metod-passion\",\"Marcus analyserade marknader varje vakna timme\",\"Älska processen, inte utdelningen\"],[\"Riskkontroll först\",\"Seykota: kapa förluster tre gånger om\",\"Sätt risken före målet\"],[\"Disciplin\",\"Dennis: konsekvens och disciplin är nyckeln\",\"Följ regeln utan undantag\"],[\"Förlust-tålighet\",\"Marcus: älska att förlora litet\",\"Planera förlusten i förväg\"],[\"Oberoende tänkande\",\"Rogers handlade emot sitt tidevarvs konsensus\",\"Egen tes mot konsensus\"],[\"Tålamod\",\"Rogers: sitt stilla tills tillfället är uppenbart\",\"Sitt stilla en hel månad\"],[\"Motståndskraft\",\"PTJ: tillbaka starkare efter bomullen\",\"Res dig med mindre storlek\"],[\"Yttre vaksamhet\",\"Kovner: läs priset, inte rubriken\",\"Uppdatera tesen varje kvartal\"]}"},
+    {"type": "visuell", "content": "radar"}
+   ],
+   "quiz": [
+    {
+     "q": "Vilka gemensamma drag lyfter Schwagers syntes fram?",
+     "alternativ": ["Metod-passion, riskkontroll, disciplin, förlust-tålighet och oberoende tänkande", "Samma system, samma mäklare och samma råvaror", "Akademisk examen och låg belåning", "Enbart teknisk analys"],
+     "ratt": 0,
+     "tips": "Tänk på vad som fanns kvar när Schwager strök alla metoder ur bilden."
+    },
+    {
+     "q": "Vad betyder yttre vaksamhet i kursens sammanfattning?",
+     "alternativ": ["Att hålla koll på vad andra handlare gör och kopiera dem", "Att bara handla på utländska marknader", "Att ständigt testa sin egen tes mot ny information från världen utanför den egna övertygelsen", "Att låsa in sig i sin analys tills den slår in"],
+     "ratt": 2,
+     "tips": "Vilken bias är den yttre vaksamhetens främsta fiende?"
+    },
+    {
+     "q": "Vad har de intervjuade mästarna gemensamt i sina bakgrunder?",
+     "alternativ": ["De var rika från början", "De började som analytiker på banker", "De har alla upplevt svåra förluster och kommit tillbaka — motståndskraft", "De undvek risk under hela karriären"],
+     "ratt": 1,
+     "tips": "Tänk på vad som krävs för att lära sig förlusthantering på riktigt."
+    }
+   ]
+  },
+  {
+   "num": 12,
+   "minutes": 10,
+   "title": "AK1TS — risken bor i Brytpunkten",
+   "intro": "Nu sätter vi boken i system. AK1TS beskriver varje affär i fyra dimensioner: Våg (struktur och trendregim), Pris (nivå och värdering), Tid (horisont och tålamod) och Brytpunkt (nivån där tesen är fel). Market Wizards bekräftar något avgörande för hela ekosystemet: risken — och därmed stoppet — bor i Brytpunkts-dimensionen. Därmed definierar den också positionsstorleken.",
+   "blocks": [
+    {"type": "text", "content": "Låt oss först se var mästarna bor i de fyra dimensionerna. Våg: Seykotas trendföljande system och Paul Tudor Jones 200-dagarsmedelvärde är ren regime-läsning — vilket spel är vi i, medvind eller motvind? Pris: Rogers värderingsdisciplin och Schwartz prisnära trading handlar om nivåer — vad är det värt och var handlas det? Tid: Marcus tålamod och Rogers decenniehorisont handlar om hur länge en tes förtjänar sitt utrymme. Brytpunkt: Kovners förhandsstopp, Turtles 2N-regel och Schwartz take a hit är alla svar på samma fråga — var är tesen fel? Fyra dimensioner, en affär — och bokens mästare tillsammans täcker dem alla."},
+    {"type": "text", "content": "Bevisen för att risken bor i Brytpunkten är bokens kanske mest samstämmiga material. Kovner: stoppet bestäms före ingången — Brytpunkten är alltså en del av tesen, inte av känslan. Dennis/Turtles: stopp på två N definierade risken per unit innan inträde tog plats — Brytpunkten är en del av storleken. Paul Tudor Jones: aldrig addera på en förlorare — Brytpunkten är en gräns som inte förhandlas. Marty Schwartz: ta smällen när du har fel — Brytpunkten är ekvationens hårda punkt. Slutsatsen blir kursens tes: en position utan definierad Brytpunkt är inte en position — det är en önskan."},
+    {"type": "text", "content": "Från stopp till storlek — risk-first blir aritmetik. Sätt först risken i kronor, ett belopp du accepterar att förlora på affären. Dividera sedan med avståndet mellan ingångspris och Brytpunkt. Resultatet är antalet aktier. Exempel: du accepterar en risk på 2 000 kronor, din Brytpunkt ligger 8 kronor under ingången — då blir positionen 250 aktier. Om avståndet till Brytpunkten är större blir positionen automatiskt mindre; är det mindre blir den automatiskt större. På så sätt kan ingen enskild affär skada kapitalet mer än du bestämt i förväg — vilket är Michael Marcus övertygelse-dimensionering och Ed Seykotas jämn-risk i en enda uträkning som en elev kan göra på tio sekunder."},
+    {"type": "text", "content": "Slutligen mötet mellan två världar: värde och Brytpunkt. Värdeinvesterarens marginal of safety — som i den här kursen används utan siffror — köper fel-utrymme i Pris-dimensionen: du kan ha fel i värderingen och ändå klara dig, eftersom du köpte billigt. Men marginalen är inte ett stopp. Även den mest tålmodiga värdeposition, Rogers typ, har en nivå där tesen är fel — där det visar sig att värdet var en illusion eller att förändringen aldrig kommer. Att förena bokens två läger är därför enkelt och krävande: köp med marginal av säkerhet, definiera vad som bevisar att du har fel, sitt tåligt — och kapa när beviset kommer. Pris ger dig fel-utrymme; Brytpunkten säljer dig illusionen att utrymmet är oändligt."},
+    {"type": "insikt", "content": "Fråga inte hur mycket du kan tjäna. Fråga var du har fel — svaret avgör storlek, tid och risk."},
+    {"type": "utmaning", "content": "Välj en position du har just nu och fullborda meningen: Jag är fel om ___. Skrev du den utan att tveka? Om du tvekar — det är ditt svar."},
+    {"type": "tabell", "content": "{\"rubrik\":\"AK1TS — fyra dimensioner och bokens mästare\",\"rader\":[[\"Dimension\",\"Fråga\",\"Mästare som äger den\"],[\"Våg\",\"Vilket trendregim råder?\",\"Seykota, PTJ med 200 MA\"],[\"Pris\",\"Vad är det värt och var handlas det?\",\"Rogers, Schwartz\"],[\"Tid\",\"Hur länge förtjänar tesen tålamod?\",\"Marcus, Rogers\"],[\"Brytpunkt\",\"Var är tesen fel — och vad kostar det?\",\"Kovner, Dennis och Turtles, PTJ\"]}"},
+    {"type": "visuell", "content": "bro"}
+   ],
+   "quiz": [
+    {
+     "q": "I vilken AK1TS-dimension bor risken — stoppet — enligt kursen?",
+     "alternativ": ["Våg", "Pris", "Tid", "Brytpunkt"],
+     "ratt": 3,
+     "tips": "Vilken dimension svarar på frågan var är tesen fel?"
+    },
+    {
+     "q": "Hur blir positionsstorleken rationell enligt kapitlet?",
+     "alternativ": ["Genom att ta så stor position som kontot tillåter", "Genom att sätta risken i kronor och dividera med avståndet till Brytpunkten", "Genom att alltid köpa exakt 100 aktier", "Genom att matcha indexviktning"],
+     "ratt": 1,
+     "tips": "Tänk på vad som händer med storleken automatiskt när avståndet till stoppet växer."
+    },
+    {
+     "q": "Vad är förhållandet mellan marginal of safety och Brytpunkten?",
+     "alternativ": ["Värde-marginalen gör stoppet onödigt", "De två utesluter varandra", "Båda handlar bara om timing", "Värde-marginalen köper fel-utrymme i Pris-dimensionen — men även en värdeposition har en nivå där tesen är fel"],
+     "ratt": 3,
+     "tips": "Fundera på om fel-utrymme någonsin kan vara oändligt."
+    }
+   ]
+  },
+  {
+   "num": 13,
+   "minutes": 10,
+   "title": "Profilen & Short-Sellern — beteendet avgör",
+   "intro": "Sista steget: från bokens värld till din. Market Wizards är i AK1A inte främst en metodbok utan en beteendekarta — råmaterial för /profil och för den som vill axla Short-Seller-rollen. Här knyter vi samman trader-typerna med profilerna och med det mest krävande uppdraget i ekosystemet: att sälja kort det som varit allas favorit.",
+   "blocks": [
+    {"type": "text", "content": "/profil-kopplingen är bokens mest praktiska gåva. Boken ger fem arketyper. Rogers-typen: tålmodig, värdeorienterad, få beslut — långsiktig värdeinvestering. Marcus-typen: instinkt och övertygelse, dimensionerar efter bekräftelse, pyramiderar försiktigt. Seykota-typen: regeltrogen och jämn — mekanisk trendföljning. Schwartz-typen: intensiv, prisnära, kort horisont — kräver daglig feedback. PTJ-typen: asymmetrisk opportunist med försvar först — väntar på händelser med otympliga oddser. Seykotas regel är profilerandets kärna: alla får vad de vill ha från marknaden. Din profil avslöjar vad du vill ha — och om det inte är vad du säger att du vill ha, förr eller senare, får du det ändå. Därför matcha metod till temperament, innan du väljer aktier."},
+    {"type": "text", "content": "Short-Sellern är bokens testamente också i praktiken: mästarna var som mest korta när regimen var som sämst — Paul Tudor Jones 1987 är det berömda exemplet. Att sälja kort kräver extra disciplin av en strukturell anledning: en lång position kan som mest förlora hundra procent, medan en shorts förlust är öppen uppåt — teoretiskt obegränsad. Därför är Brytpunkten heligare för en Short-Sellern än för någon annan. Det fundamentala flagg-materialen i AKM1-världen är få och hårda: V19 Kapitalförbrukning & Emission-risk — bolag som bränner kassa och måste emittera är short-kandidaters material; V12 Intäktsstabilitet — en skör intäktsbas gör tesen skör; V10 Skuldsättningsgrad — hög skuldbörda gör misslyckanden permanenta. Men notera ordningen: det är beteendet — tålamod, stopp, storlek — som avgör om shorts-resultatet blir gott, V-flaggorna bara pekar ut jaktmarker."},
+    {"type": "text", "content": "Tre frågor ska kunna besvaras på tio sekunder före varje agressiv position — kort eller lång. Ett: var är jag fel? (Brytpunkten — nivån som bevisar tesen fel, skriven före ingången, i Karl Kovners och Turtles anda.) Två: hur stor är jag? (Antal aktier räknat som risk i kronor dividerat med avståndet till Brytpunkten — risk-first-aritmetiken.) Tre: vad gör jag efter en förlust? (PTJ:s svar: dra ner storleken och vänta in form. Aldrig hämnas.) Om du inte kan alla tre svaren har du ingen position — du har en önskan med kursrisk."},
+    {"type": "text", "content": "Market Wizards lämnar ingen formel — den lämnar en spegel. Ditt resultat är din process; din process är din karaktär i siffror. Boken visar att det finns många karaktärer som vinner, och en enda gemensam nämnare: respekt för förlusten. Nästa steg i AK1A är konkret: kör /profil för att hitta din arketyp, gå igenom dina öppna positioner och sätt en Brytpunkt på varje — skriftligen, med datum — och lär dig ritualen efter förlust innan du behöver den. Och när du står där med en position som känns obekväm, hör Michael Marcus röst: kliv ur — du kan alltid gå tillbaka in. Alla får vad de vill ha från marknaden. Se till att du vill ha rätt sak."},
+    {"type": "insikt", "content": "Din profil är inte vad du handlar. Det är vad du gör dagen efter en förlust."},
+    {"type": "utmaning", "content": "Skriv ditt trader-löfte i tre rader: där jag är fel, hur stor jag är, vad jag gör efter en förlust. Spara det och läs det före varje ny position."},
+    {"type": "tabell", "content": "{\"rubrik\":\"Trader-typerna och din profil\",\"rader\":[[\"Typ\",\"Kännetecken\",\"Passande spelstil\",\"Främsta risk\"],[\"Rogers-typen\",\"Tålmodig, värdeorienterad, få beslut\",\"Lång värde med lång horisont\",\"Att köpa billigt som blir billigare\"],[\"Marcus-typen\",\"Instinkt, övertygelse, skalning\",\"Koncentrerad med bekräftelse\",\"Övertro efter vinstsvit\"],[\"Seykota-typen\",\"Regeltrogen, jämn, systematisk\",\"Mekanisk trendföljning\",\"Stelhet när regimen vänder\"],[\"Schwartz-typen\",\"Intensiv, prisnära, kort horisont\",\"Kortfristig aktiehandel\",\"Utmattning och övertrading\"],[\"PTJ-typen\",\"Asymmetrisk, defensiv, opportunistisk\",\"Händelsedrivna lägen\",\"Att vänta för länge\"]]}"}
+   ],
+   "quiz": [
+    {
+     "q": "Vad är /profil-kopplingen från Market Wizards?",
+     "alternativ": ["Boken ger en mall som alla ska följa", "Profilen avgör vilka aktier du får köpa", "Boken hjälper dig matcha metod till temperament — olika typer kräver olika spelstil", "Alla ska bli daytraders"],
+     "ratt": 2,
+     "tips": "Tänk på Rogers och Schwartz — båda framgångsrika, helt olika människor."
+    },
+    {
+     "q": "Varför kräver short-selling extra disciplin?",
+     "alternativ": ["För att det är olagligt utan licens", "För att risken uppåt är öppen — förlusten begränsas inte av nollnivån, vilket gör Brytpunkten ännu viktigare", "För att courtage är högre vid short", "För att short endast får göras av fonder"],
+     "ratt": 1,
+     "tips": "Jämför den värsta möjliga förlusten på en lång och en kort position."
+    },
+    {
+     "q": "Vilka fundamentala flaggor nämns som material för en Short-Sellern?",
+     "alternativ": ["V19 Kapitalförbrukning & Emission-risk, V12 Intäktsstabilitet och V10 Skuldsättningsgrad", "V13 Patent & IP och V14 Varumärke", "V01 Försäljningstillväxt och V02 ARR-tillväxt", "V16 Produktlanseringar och V17 Avtal & Partnerskap"],
+     "ratt": 0,
+     "tips": "Vilka flaggor handlar om skörhet och tvång att emittera — inte om tillväxt?"
+    }
+   ]
+  }
+ ]
+}

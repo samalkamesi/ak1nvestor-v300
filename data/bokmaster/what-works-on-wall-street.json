@@ -1,0 +1,954 @@
+{
+  "slug": "what-works-on-wall-street",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 140,
+  "title": "What Works on Wall Street — O'Shaughnessy: KOMPLETT",
+  "summary": "James O'Shaughnessys megastudie delar upp tusentals amerikanska aktier i decilportföljer varje år från 1951 och nästan sextio år framåt för att svara på en enda fråga: vilka faktorer har faktiskt slagit marknaden? Svaret är obehagligt tydligt — lågt pris i förhållande till försäljningen (P/S) är den starkaste enskilda faktorn, hög förväntad tillväxt är en fälla och kombinationen värde plus momentum är vinnarkombinationen. Kursen täcker metoden, alla huvudfaktorer, Cornerstone-strategierna, small-cap-premien och den ärliga redovisningen av förluståren.",
+  "minutes": 10,
+  "xp": 1800,
+  "level": "",
+  "learn": "Testa en faktor vetenskapligt med decilportföljer, årlig rebalansering och kontroll för survivorship bias · Köra V04 P/S som bokens starkaste enskilda faktor med äkta decilskillnader i klartext · Känna igen tillväxtfällan — varför högst förväntad tillväxt gav sämst avkastning (V01 inverterat mot pris) · Ranka aktier på 12-månaders relativ styrka enligt AK1TS Pris och förstå varför man äger starka aktier, inte svaga · Kombinera värde och momentum till Trending Value och förstå Cornerstone Growth fyra villkor (V04 + V12 + Pris) · Sålla small-cap-premiens pappersavkastning mot V11 Likviditet · Hantera förlustår med mekanisk disciplin och mappa hela boken till AKM1:s V01–V20.",
+  "why": "Detta är den stora kvantitativa grundboken för hela AK1A-systemet: ingen annan studie har så systematiskt visat att värderingsmultipln — särskilt P/S — är den starkaste enskilda drivkraften i aktieavkastning, och att berättelser om tillväxt är vad marknaden betalar mest för och får minst för. För AK1A är boken bevisbasen för V04:s huvudroll, V01:s inverterade logik (tillväxt är bara värdefull till rätt pris) och prismomentumets plats i AK1TS. Utan den här boken är AKM1-mappningen åsikt — med den är den data.",
+  "chapters_list": [
+    "1. Metoden — Compustat, deciler och sextio år av data",
+    "2. Värdefaktorernas kung — lågt P/S (V04)",
+    "3. P/B, P/E och P/CF — övriga värdefaktorer (V05, V06)",
+    "4. Tillväxtfällan — hög förväntad tillväxt är en dålig faktor (V01)",
+    "5. Story stocks och IPO-fällan",
+    "6. Momentum — 12 månaders relativ styrka (AK1TS Pris)",
+    "7. Vinnarkombinationen — Värde + Momentum (Trending Value)",
+    "8. Cornerstone Growth — P/S + stabil vinsttillväxt + styrka (V04, V12)",
+    "9. Cornerstone Value — utdelning och storbolag (V20-koppling)",
+    "10. Storlek och likviditet — small-cap-premien och dess baksida (V11)",
+    "11. Multifaktor och robusthet — varför kombinationer slår enskilda faktorer",
+    "12. Ärlighetens kapitel — förlustår, slumpen och disciplinen",
+    "13. Från bok till skärm — din AKM1-screening (V01–V20-mappningen)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Metoden — Compustat, deciler och sextio år av data",
+      "intro": "Innan O'Shaughnessy visar vad som fungerar visar han hur man tar reda på det. Boken bygger på Compustat-databasen med tusentals amerikanska aktier från 1951 och framåt, uppdelade i tio lika stora portföljer — deciler — som rebalanseras en gång om året. Detta är mallen för all seriös faktoranalys, inklusive AK1A:s egna backtester.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Upplägget är ren mekanik. Varje år den 31 december delas hela universumet i tio lika stora grupper — deciler — efter en faktor, till exempel P/S. Decil 1 innehåller de tio procent av aktierna som har lägst värde på faktorn, decil 10 de tio procent som har högst. Man köper decilportföljen, håller exakt ett år och upprepar proceduren. Inga åsikter, inga anpassningar under vägen, ingen kunskap om framtiden. Sedan jämför man decilernas sammanlagda resultat med universumet som helhet under decennier. Detta är hur man testar en faktor — och det är exakt arbetsättet AK1A använder när en variabel ska förtjäna sin plats i systemet."
+        },
+        {
+          "type": "text",
+          "content": "Två universum ligger till grund för nästan alla tester. Alla aktier (All Stocks) är alla bolag med tillräcklig storlek — tusentals aktier i moderna upplagor. Stora aktier (Large Stocks) är de större och mer omsatta bolagen. Under huvudperioden 1951–1996 gav Alla aktier cirka 13,6 procent per år medan Stora aktier gav cirka 11,9 procent — småbolagspremien finns alltså redan i grunddatan, något kapitel 10 återkommer till. Fjärde upplagan sträcker testen fram till 2009 och i flera kapitel bakåt ända till 1927 — och huvudsluten håller i princip oförändrade genom IT-bubblan och finanskrisen."
+        },
+        {
+          "type": "text",
+          "content": "Bokens viktigaste metodval handlar om survivorship bias. En vanlig aktiedatabas innehåller bara bolag som fortfarande finns — de som gått i konkurs eller avnoterats har försvunnit. Testar man faktorer på ett sådant urval överskattas resultatet systematiskt, eftersom alla döda bolag saknas i statistiken. O'Shaughnessy använder databasens researchfil som inkluderar historiska, numera avlidna bolag just för att resultatet ska spegla verkligheten: den som köpte decil 1 år 1955 kunde inte veta vilka bolag som skulle överleva till 1996. Dessutom letar han efter MONOTONA samband — att resultatet förbättras eller försämras jämnt över decilerna — eftersom ett gradvis mönster över tio steg är svårt att förklara med tur, medan en enskild toppnotering lätt är datamining."
+        },
+        {
+          "type": "insikt",
+          "content": "En faktor förtjänar bara sin plats om den klarar tre prov: en logisk förklaring (varför betalar marknaden för det här felet?), ett monotont samband över deciler och stabilitet över delperioder. Använd exakt samma ribba när du utvärderar egna screener och AKM1-variabler — en bakåtblickande vinnare utan logik är en inbjudan till framtida förlust."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Metodens byggstenar i siffror\",\"rader\":[[\"Byggsten\",\"Innehåll\",\"Anmärkning\"],[\"Datakälla\",\"Compustat inklusive researchfil\",\"döda bolag medtas — undviker survivorship bias\"],[\"Universum\",\"Alla aktier och Stora aktier\",\"tusentals aktier, årligen omsorteras\"],[\"Indelning\",\"Tio deciler per faktor\",\"decil 1 = lägst värde, decil 10 = högst\"],[\"Rebalansering\",\"En gång per år\",\"mekaniskt, utan åsikter\"],[\"Period\",\"1951–1996, senare till 2009\",\"vissa tester back till 1927\"],[\"Resultat 1951–1996\",\"Alla aktier ≈13,6 %/år, Stora aktier ≈11,9 %/år\",\"småbolagspremien syns redan här\"],[\"Kvalitetskrav\",\"Monotont decilmönster\",\"gradvishet skiljer faktor från tillfälligheten\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör så här: öppna din screener och sortera hela ditt universum på P/S (V04). Dela listan i tio lika stora grupper och notera hur du tror avkastningsskillnaden mellan decil 1 och decil 10 ser ut historiskt — skriv ner din gissning i procentenheter. I bokens data är skillnaden enorm, och i nästa kapitel får du siffrorna. Jämför sedan din gissning med facit: trodde du att skillnaden var större eller mindre än den faktiskt var?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför delar O'Shaughnessy in aktierna i deciler i stället för att bara välja de tio billigaste aktierna?",
+          "alternativ": [
+            "För att se om sambandet är gradvis och monotont över hela skalan — inte en engångstur i en enskild grupp",
+            "För att minska antalet beräkningar i databasen",
+            "Därför att deciler alltid ger högre avkastning än urval",
+            "För att Compustat bara innehåller tio aktier per år"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad ett mönster som håller över tio steg säger om sambandets robusthet jämfört med en enskild toppnotering."
+        },
+        {
+          "q": "Vad är survivorship bias i den här typen av studier?",
+          "alternativ": [
+            "Att vissa årtionden innehåller fler datafel än andra",
+            "Att småbolag räknas som stora bolag i databasen",
+            "Att databasen saknar bolag som gått i konkurs eller avnoterats, vilket systematiskt överskattar resultaten",
+            "Att valutakurser påverkar den historiska avkastningen"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vilka bolag som saknas i en vanlig aktielista tio år senare — och hur deras frånvaro snedvrider bilden."
+        },
+        {
+          "q": "Hur ofta rebalanseras decilportföljerna i bokens huvudtester?",
+          "alternativ": [
+            "Varje handelsdag",
+            "Var tionde år",
+            "Bara när börsen faller mer än tio procent",
+            "En gång om året, mekaniskt på samma datum"
+          ],
+          "ratt": 3,
+          "tips": "Frekvensen är avvägd: tillräckligt sällan för att hålla kostnaderna nere, tillräckligt ofta för att faktorn ska fångas om året."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Värdefaktorernas kung — lågt P/S (V04)",
+      "intro": "Om boken bara innehöll ett kapitel skulle det vara detta. Lågt pris i förhållande till försäljningen — P/S — är den enskilda faktor som har starkast och mest stabilt samband med framtida avkastning i hela studien. I AKM1:s kod heter den V04, och det är ingen slump att just den variabeln är bokens tyngsta bevis.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Resultatet i klartext. Under huvudperioden 1951–1996 gav decil 1 — de tio procent av aktierna med lägst P/S — cirka 16 procent per år. Tio tusen dollar som investerades i den decilen 1951 blev cirka 8,2 miljoner dollar till slutdatum, mot cirka 3,1 miljoner för samma insats i Alla aktier som helhet (≈13,6 procent per år). Och i andra änden av skalan? Decil 10 — de dyraste aktierna mätt i P/S, alltså glansaktierna — avkastade knappt fem procent per år. Det är sämre än statsobligationer under samma period. O'Shaughnessys slutsats är odramatisk men total: förhållandet mellan aktiekurs och försäljning är den starkaste enskilda faktorn i hela studien."
+        },
+        {
+          "type": "text",
+          "content": "Varför just P/S? Därför att nästan allt annat går att pynta med. nettovinsten — grunden i P/E — påverkas av avskrivningsregler, nedskrivningar, skatteposter och engångsposter; ledningar har stor frihet att massera resultatet. Försäljningen är svårare att fejka i längd: antingen finns intäkterna i fakturorna eller inte. P/S mäter dessutom hela verksamhetens storlek — vad du betalar per krona som kassan rör igenom — inte bara skärvan som blir kvar efter alla kostnader. Koppla till Grahams arv: marginal of safety utan siffror är just detta — att betala litet för mycket fundament per krona. Lågt P/S är den mest pålitliga prisformen av den säkerhetsmarginalen."
+        },
+        {
+          "type": "text",
+          "content": "Den beteendeekonomiska förklaringen är överreaktion. Marknaden älskar berättelser och extrapolerar dem: hypade bolag får betala vilken multipel som helst (decil 10), medan tråkiga, omoderna eller tillfälligt missgynnade bolag kastas i papperskorgen (decil 1). Forskningen om att förlorare slår vinnare över tid — DeBondt och Thalers överreaktionshypotes — är teorin bakom datan: eftersom människor systematiskt överdriver glans och elände, köper lågt P/S felprisad pessimism och säljer den inte förrän den hunnit korrigeras. Tråkighet betalar. I AK1A betyder det att V04 ska väga tyngst i hela värderingsdimensionen — men bokens egen varning gäller: ensam är stark men inte okrossbar. 1996–1999 underpresterade lågt P/S tre år i rad medan IT-glansen steg och steg. Lösningen kommer i kapitel 7: kombinera."
+        },
+        {
+          "type": "insikt",
+          "content": "V04 är bokens kungafaktor och ska behandlas därefter i AKM1: huvudvikt i värderingsblocket, alltid räknad i klartext (marknadsvärde dividerat med årets intäkter) och alltid ställd mot storyblocket. Kom ihåg ordningen: först priset per krona försäljning, sedan allt annat. En perfekt berättelse till en P/S på åtta är decil 10 — bokens statistiska dödszon."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"P/S-deciler ur Alla aktier 1951–1996 (cirka-värden)\",\"rader\":[[\"Decil\",\"P/S-karaktär\",\"Avkastning per år\",\"10 000 USD blev\"],[\"1\",\"lägst i universumet\",\"≈16 %\",\"≈8,2 miljoner USD\"],[\"2–3\",\"lågt\",\"över genomsnitt\",\"klart över index\"],[\"4–7\",\"mittemot\",\"≈ universumet\",\"≈3,1 miljoner USD\"],[\"8–9\",\"högt\",\"under genomsnitt\",\"betydligt sämre än index\"],[\"10\",\"högst — glansaktier\",\"knappt 5 %\",\"under 100 000 USD — sämre än statsobligationer\"],[\"Alla aktier\",\"hela universumet\",\"≈13,6 %\",\"≈3,1 miljoner USD\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Screena ditt universum — till exempel Nasdaq Stockholm eller en global lista — på P/S och plocka fram de tjugo lägsta. Ställ sedan tre kontrollfrågor per bolag: är intäkterna äkta och återkommande (V12 Intäktsstabilitet), är skuldsättningen hanterbar (V10) och finns det kapitalbehov eller emissionsrisk (V19)? Lågt P/S utan svar på de tre frågorna är inte en köpplan — det är en lista med kandidater till värdefällor. Räkna: hur många av de tjugo överlever dina filter?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur stor var den ungefärliga skillnaden i årlig avkastning mellan lägsta och högsta P/S-decilen 1951–1996?",
+          "alternativ": [
+            "Några tiondels procentenheter — i princip ingen skillnad",
+            "Högsta decilen vann med bred marginal",
+            "Cirka en till två procentenheter till lågt P/S fördel",
+            "Cirka elva procentenheter — runt 16 procent mot knappt 5 procent per år"
+          ],
+          "ratt": 3,
+          "tips": "Minns vad högsta decilen presterade jämfört med statsobligationer — det ger en känsla för avståndet."
+        },
+        {
+          "q": "Varför menar O'Shaughnessy att P/S är ett tillförlitligare mått än P/E?",
+          "alternativ": [
+            "Därför att P/S alltid är lägre än P/E",
+            "Därför att försäljning är svårare att massera med bokföringsval än nettovinst",
+            "Därför att intäkter alltid växer snabbare än vinster",
+            "Därför att P/S bara fungerar på banker och fastighetsbolag"
+          ],
+          "ratt": 1,
+          "tips": "Räkna upp alla legitima bokföringsval som påverkar nettovinsten — avskrivningar, nedskrivningar, engångsposter — och jämför med hur många som påverkar intäkterna."
+        },
+        {
+          "q": "Vad hände med den rena lågt-P/S-strategin under IT-bubblans år 1996–1999?",
+          "alternativ": [
+            "Den vann stort varje enskilt år",
+            "Den underpresterade tre år i rad innan den krossade index efter år 2000",
+            "Den stod helt still medan marknaden steg",
+            "Den förbjöds i USA"
+          ],
+          "ratt": 1,
+          "tips": "Värde kan vara fel länge när berättelseaktierna får vinden med sig — det är just därför boken bygger kombinationer."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "P/B, P/E och P/CF — övriga värdefaktorer (V05, V06)",
+      "intro": "P/S är kungen, men boken testar hela familjen värdefaktorer: P/B, P/E och pris per kassaflöde. De pekar alla åt samma håll — billigt slår dyrt — men med olika styrka och stabilitet. I AKM1 känner du igen dem som V05 och den moderna kusinen EV/EBITDA som V06.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lågt P/E fungerar: portföljer med lågt pris per vinst slagit universumet, särskilt bland större och stabilare bolag. Bland småbolag är sambandet vildare — vinsten är helt enkelt ett smalare och mer manipulerbart mått. Pris per kassaflöde (P/CF) var i praktiken näst starkast av de klassiska fyra, tätt efter P/S — kassaflödet ljuger sämre än redovisad vinst eftersom det är svårare att pynta med antaganden. Det är ingen slump att AK1A låter V04 och V06 arbeta ihop: båda mäter vad du betalar per krona av fundamentet på sidan av resultaträkningen som är svårast att fejka."
+        },
+        {
+          "type": "text",
+          "content": "P/B (V05) är den svagaste av de klassiska värdefaktorerna — den fungerar, men fördelen minskade kraftigt efter 1990, något fjärde upplagans tester genom 2009 bekräftar. Förklaringen är strukturell: bokvärdet fångar maskiner och inventarier men inte immateriella tillgångar — varumärken (V14), mjukvara, patent och IP (V13), kundrelationer — i ett samhälle där växande andel av företagsvärdet är immateriellt. Ett modernt tjänstebolag kan se fruktansvärt dyrt ut på P/B men vara billigt på P/S. Därför håller AK1A V05 på plats som komplement, aldrig som huvudfaktor."
+        },
+        {
+          "type": "text",
+          "content": "EV/EBITDA (V06) testades inte i bokens originalupplagor — måttet blev mainstream senare — men det är en direkt arvtagare till bokens logik på två sätt: det normaliserar för kapitalstruktur (Enterprise Value räknar in skulden, vilket gör belåna och skuldfria bolag jämförbara — V10-logik) och det bygger på driftens resultat före de bokföringsregler som gör P/E och P/B instabila. Bokens budskap till AKM1-användaren: mät aldrig värde med bara en multiplikator — använd en familj (V04 huvud, V06 bekräftelse, V05 låg vikt). När flera oberoende multipln pekar samma håll har du en bred marginal of safety utan att behöva en enda siffra för den."
+        },
+        {
+          "type": "insikt",
+          "content": "Det gemensamma Nämnaren för alla katastrofdeciler är PRIS, inte berättelse. Decil 10 på P/S, decil 10 på P/E, decil 10 på P/B — alla var förödande. Det spelar alltså mindre roll vilken multiplikator du råkar mäta dyrhet med; det avgörande är att du inte betalar toppmultipeln för en förväntan. Dyr multipel är dyr förväntan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Värdefaktorerna rangerade enligt bokens tester\",\"rader\":[[\"Faktor\",\"AKM1\",\"Slagkraft\",\"Notering\"],[\"P/S\",\"V04\",\"starkast\",\"stabilaste sambandet med avkastning i hela studien\"],[\"P/CF\",\"V06-granne\",\"näst starkast\",\"kassaflödet ljuger sämre än vinsten\"],[\"P/E\",\"V06-familj\",\"bra\",\"bäst bland större, stabilare bolag\"],[\"P/B\",\"V05\",\"svagast av de fyra\",\"fördelen minskade kraftigt efter 1990 — missar immateriella tillgångar\"],[\"EV/EBITDA\",\"V06\",\"modern kusin\",\"normaliserar för skulder och avskrivningar — bokens logik i ny förpackning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta tre bolag du äger eller bevakar. Räkna ut P/S (V04), P/B (V05) och EV/EBITDA (V06) i klartext. Placera sedan varje bolag grovt i bokens decilskala per faktor: ligger det i decil 1–3 eller i decil 8–10? Vilket av dina tre bolag har den bredaste säkerhetsmarginalen — alltså lågt värde på samtliga multipln — och vilket betalar du mest för per krona fundament? Skriv ner slutsatsen."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur står sig P/B (V05) jämfört med P/S i bokens tester?",
+          "alternativ": [
+            "P/B är den starkaste faktorn av alla",
+            "P/B fungerar inte alls i långa perioder",
+            "P/B fungerar men är svagast bland de klassiska värdefaktorerna och fördelen minskade efter 1990",
+            "P/B fungerar bara för banker och investmentbolag"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vad bokvärdet systematiskt missar i ett samhälle där allt mer av företagens värde är immateriellt."
+        },
+        {
+          "q": "Vilken värdefaktor var näst starkast efter P/S i bokens datan?",
+          "alternativ": [
+            "Pris per kassaflöde",
+            "Pris per bokvärde",
+            "P/E bland småbolag",
+            "Direktavkastning bland småbolag"
+          ],
+          "ratt": 0,
+          "tips": "Vilket av talen är näst svårast att massera med bokföringsregler — nettovinst, kassaflöde eller bokvärde?"
+        },
+        {
+          "q": "Vad kännetecknar portföljerna i decil 10 för samtliga värdefaktorer?",
+          "alternativ": [
+            "De slog marknaden med bred marginal",
+            "De var extra bra under recessionsår",
+            "De låg exakt i linje med marknaden",
+            "De var katastrofer — högsta P/S-decilen underpresterade till och med statsobligationer"
+          ],
+          "ratt": 3,
+          "tips": "Gemensam nämnare är vad du betalar — inte vilket bolag det är. Minns kapitel 2:s siffror för den dyraste decilen."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Tillväxtfällan — hög förväntad tillväxt är en dålig faktor (V01)",
+      "intro": "Här kommer bokens mest provocerande resultat: hög tillväxt är inte en bra faktor att köpa på — tvärtom. Aktierna med högst FÖRVÄNTADE vinsttillväxt var bland de sämsta investeringarna i hela studien. Detta är V01:s mörka spegelbild i AKM1: verklig försäljningstillväxt är värdefull — men bara till rätt pris.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Testet. Med konsensusuppskattningar från analytiker (I/B/E/S-data, tillgängligt från 1982) delade O'Shaughnessy aktierna i portföljer efter förväntad årlig vinsttillväxt fem år framåt. Resultatet var en inverterad skala: de aktier marknaden trodde mest på — högst förväntad tillväxt — avkastade knappt tio procent per år under perioden, flera procentenheter sämre än Alla aktier (ungefär 13 procent) och betydligt sämre än portföljer med låga eller måttliga förväntningar. Det fina i kråkan: portföljerna med högst förväntningar hade också HÖGST risk, mätt i svängningar. Mindre avkastning för mer oro — den svenska upplagan av en dålig affär."
+        },
+        {
+          "type": "text",
+          "content": "Samma mönster gäller historisk, faktisk tillväxt: bolagen med högst verkliga femåriga vinstökningar bakåt underpresterade också marknaden. Marknaden betalar en premium för tillväxt som redan inträffat och extrapolerar den långt in i framtiden — och extrapolationen är nästan alltid för optimistisk. Bokens paradox i klartext: du behöver inte hitta de snabbast växande bolagen för att slå marknaden; du behöver undvika att betala för tillväxtförväntningar som redan ligger i priset. Skillnaden mellan femton och tjugo procents tillväxt är strukturellt liten. Skillnaden mellan en multiplik på 0,5 och en på 8 gigantisk. Det är priset, inte tillväxttakten, som avgör utfallet."
+        },
+        {
+          "type": "text",
+          "content": "V01-inverteringen i AKM1. AK1A ställer alltid V01 Försäljningstillväxt — verklig, rapporterad tillväxt — mot pris (V04). En femtonprocentväxare till 0,5 gånger P/S är en intressant affär; samma tillväxt till åtta gånger P/S är decil 10 med andra ord. Därför ska V01 aldrig läsas ensam: tillväxt utan priskontroll är en story, tillväxt med låg multiplik är en faktor. Notera också nyckeln i formuleringen: boken testade FÖRVÄNTAD tillväxt (prognoser) och HISTORISK tillväxt (bakåt) — båda överprissatta. Verklig framtida försäljningstillväxt till ett lågt pris är bara vad Cornerstone Growth strategiskt fångar (kapitel 8): stabil, påvisad tillväxt kombinerad med lågt P/S och prisstyrka."
+        },
+        {
+          "type": "insikt",
+          "content": "Tillväxt är vad du betalar FÖR; marginal of safety är vad du betalar MED. V01 utan V04 är en berättelse — V01 till låg V04 är en bevisad kantfunktion. Skriv det på skärmen: aldrig tillväxt utan priskoll."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Förväntad vinsttillväxt (analytikerkonsensus) — fällan i siffror\",\"rader\":[[\"Portfölj\",\"Avkastning per år (ca)\",\"Risk\"],[\"Högst förväntad tillväxt\",\"knappt 10 %\",\"högst i testet\"],[\"Alla aktier, samma period\",\"≈13 %\",\"genomsnittlig\"],[\"Låga eller måttliga förväntningar\",\"i nivå med eller över genomsnittet\",\"lägre\"],[\"Slutsats\",\"hypad tillväxt betalades men levererades inte\",\"mindre avkastning för mer risk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå till din bevakningslista. Sortera på förväntad vinsttillväxt enligt analytikerkonsensus, högst först. Räkna nu P/S på de tio översta: hur många av de mest hypade tillväxtbolagen har P/S över fem — bokens decil 9–10? Skriv ner hur många av dem du tror slår index de kommande fem åren, och lägg lappen i lådan. Om fem år jämför du din tro med bokens data. Fundera också: hur många av listans bolag har en påvisad femårig tillväxthistoria i stället för en prognos?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hittade O'Shaughnessy om aktierna med högst FÖRVÄNTADE tillväxttal?",
+          "alternativ": [
+            "De slog marknaden komfortabelt",
+            "De låg i linje med marknaden",
+            "De var bäst bland storbolag men sämst bland småbolag",
+            "De underpresterade marknaden — och hade samtidigt högst risk"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig vad som redan ligger i priset när alla vill äga samma berättelse."
+        },
+        {
+          "q": "Hur ska V01 Försäljningstillväxt användas i AKM1 enligt bokens lärdom?",
+          "alternativ": [
+            "V01 ska användas ensam — tillväxt är det enda som räknas",
+            "V01 gäller bara för banker och fastighetsbolag",
+            "V01 ska alltid tolkas mot pris (V04): verklig tillväxt är värdefull endast till låg värdering",
+            "V01 mäter i grunden direktavkastning"
+          ],
+          "ratt": 2,
+          "tips": "Boken skiljer skarpt på tillväxt som FAKTUM och tillväxt som PRIS. Vilken halva är variabeln och vilken är multiplikn?"
+        },
+        {
+          "q": "Vilken typ av tillväxt underpresterade också marknaden i bokens tester?",
+          "alternativ": [
+            "Den högsta HISTORISKA vinsttillväxten — marknaden betalar premium för tillväxt som redan skett",
+            "Ingen — all historisk tillväxt slog marknaden",
+            "Den lägsta historiska tillväxten",
+            "Bara tillväxt hos bolag utan utdelning"
+          ],
+          "ratt": 0,
+          "tips": "Extrapolering är människans standardfel — även bakåtblickande stjärnsiffror prissätts som om de fortsätter i evighet."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Story stocks och IPO-fällan",
+      "intro": "Bokens kapitel om story stocks — små, spännande berättelsebolag — och nya börsnoteringar är ren hjärtskirurgi för den som gillar att investera i drömmar. Kombinationen liten, dyr och hypad visar sig vara den värsta av alla i studien. Här möter du också V19:s spegelbild: kapitalbehovet bakom glansen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En story stock definieras av sin berättelse, inte av sina siffror: ett litet bolag i en het ny bransch — ny teknik, ny konsumenttrend, ny behandlingsform — med hög förväntad tillväxt och en aktie som alla pratar om. I bokens tester var den gruppen den absolut sämsta, värre än någon enskild decil 10-portfölj av större bolag. Mekanismen är enkel och grym: berättelsen säljer aktien till investerare som betalar vilken multipel som helst, och när tillväxten så mycket som antyder en enda svag kvartal kollapsar inte bara siffrorna utan multiplikn — dubbel förlust. Boken konstaterar torrt att investerare som jagar små glansbolag systematiskt köper de sämsta aktierna på marknaden."
+        },
+        {
+          "type": "text",
+          "content": "IPO-testet ger samma medicin. Bokens kapitel om nya noteringar — med data från 1960-talet och framåt — visar att nynoteringar underpresterade marknaden kraftigt i genomsnitt, särskilt de som noterades i heta perioder. Förklaringen är inte konspiratorisk utan logisk: bolag och deras ägare säljer när priserna är höga och efterfrågan som störst — tidpunkten väljs av säljaren, inte av dig. Lägg till V19-logiken: många story stocks är kapitaltörstiga — de behöver kontinuerligt nya emissioner för att växa, och varje emission späder ut dig som ägare. Glans och kapitalbehov är inte oberoende egenskaper; de hänger ihop. I AKM1 är just V19 Kapitalförbränning och Emission-risk det naturliga filtret mot den här gruppen."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till AK1A:s Short-Sellern-kurs är direkt: boken ger historisk statistik för short-sidans bästa filter — hög P/S, litet bolag och hög förväntad tillväxt är den grupp som förlorat mest värde över tid. Men med en obligatorisk varning: glansaktier kan bli glansigare. Momentum-effekten (kapitel 6) gör att dyra berättelseaktier kan stiga länge efter att de blev dyra, och blankare som står emot en squeeze kan pressas ut på toppen. Därför kräver blankning mer än dyrhet — den kräver pris-STYRKA-logik och positioner som tål att vara fel. Faktorn säger att vinden är emot dem; den säger inte när vinden vänder."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig bara om detta är ett bra bolag. Fråga vad du betalar — och vem som säljer till dig. Vid en ny notering är svaret på den sista frågan alltid: de som känner bolaget bäst. När de mest informerade ägarna är säljare och du är köpare, vad säger det om priset?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Story stock-profilen enligt bokens data\",\"rader\":[[\"Egenskap\",\"AKM1-signal\",\"Resultat i datan\"],[\"Litet bolag\",\"V11-utmaning\",\"högre risk och svajig statistik\"],[\"Hög förväntad tillväxt\",\"V01 utan priskoll\",\"underpresterar marknaden\"],[\"Hög P/S\",\"V04 decil 9–10\",\"den statistiska dödszonen\"],[\"Kapitaltörst och emissioner\",\"V19\",\"utspädning av ägarna\"],[\"Hypad berättelse\",\"V13–V18 som story\",\"prisad perfektion som sällan infaller\"],[\"Totalbild\",\"—\",\"bokens sämsta grupp av alla\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj tre bolag som noterats på börs de senaste 24 månaderna — valfri lista. Räkna ut P/S (V04), granskassa och kapitalförbränning (V19) och räkna antalet emissioner eller riktade nyemissioner sedan noteringen. Hur många av de tre matchar bokens story stock-profil på minst tre av fem punkter? Skriv en mening per bolag: vem är säljaren och varför säljer den nu?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur presterade små story stocks med hög förväntad tillväxt i bokens data?",
+          "alternativ": [
+            "Bäst av alla testade grupper",
+            "I linje med marknaden",
+            "Sämst av alla testade grupper",
+            "Bra under recessionsår och sämre under uppgångar"
+          ],
+          "ratt": 2,
+          "tips": "Det är kombinationen av egenskaper — liten, dyr och hypad — som gör skadan, inte någon enskild."
+        },
+        {
+          "q": "Varför är nya börsnoteringar statistiskt sett dåliga köp enligt boken?",
+          "alternativ": [
+            "Därför att alla nya bolag är bedrägerier",
+            "Därför att börsen stänger ut nya bolag från index",
+            "Därför att noteringar koncentreras till perioder då priser och efterfrågan är höga — säljarna väljer tidpunkten",
+            "Därför att IPO:er alltid har lägst P/S i universumet"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vem som bestämmer timingen för en försäljning — och vems intresse den tidpunkten tjänar."
+        },
+        {
+          "q": "Vilken AKM1-variabel varnar bäst för story stock-risken?",
+          "alternativ": [
+            "V14 Varumärke",
+            "V03 Intäktsdiversifiering",
+            "V20 Återköp",
+            "V19 Kapitalförbränning och Emission-risk"
+          ],
+          "ratt": 3,
+          "tips": "Vilken variabel mäter om bolaget behöver hämta in nytt kapital — och späda ut dig som ägare?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Momentum — 12 månaders relativ styrka (AK1TS Pris)",
+      "intro": "Efter värde är momentum bokens viktigaste upptäckt: aktier som stigit mer än marknaden det senaste året tenderar att fortsätta stiga — och aktier som fallit mest tenderar att fortsätta falla. Detta är grundmotorn i AK1TS Pris-modulen, och den är direkt beprövad i O'Shaughnessys deciler.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Testet. Varje år rankas alla aktier efter tolv månaders relativ styrka (RS) — kursutvecklingen jämfört med universumet. Decil 1, de starkaste, slog Alla aktier med god marginal år efter år; decil 10, de svagaste, var en förödelse. Slutsatsen är rakt motsatt den populära intuitionen att köp billigt som fallit: du vill ÄGA aktier som redan är starka, inte samla på dig fallande knivar. O'Shaughnessys råd är naket — köp styrka, inte svaghet. Det som fallit mest under det senaste året är inte en fyndkorg; det är statistiskt sett en fortsatt svag aktie."
+        },
+        {
+          "type": "text",
+          "content": "Fönstret spelar roll. Tolv månaders RS är den robusta varianten i bokens tester: tillräckligt långt för att vardagsbruset ska lämna materialet, tillräckligt kortt för att trenden fortfarande lever. Extremt korta fönster — veckor eller enskilda månader — domineras av brus och blir instabila, och att stirra flera år bakåt i tiden säger inte samma sak om framtiden. Skillnaden mot AK1A:s sätt att tänka: RS är inte en grafisk läsning av en enskild aktie — det är en RANGORDNING av hela universumet. Frågan är inte hur aktiens kurva ser ut, utan var den står i det tvärsnittliga styrkesorteringen. Det är exakt det AK1TS Pris mäter."
+        },
+        {
+          "type": "text",
+          "content": "Den beteendeekonomiska grunden: anknytnings- och förankringseffekter, informationsdiffusion som går långsamt och framför allt dispositionseffekten — investerare säljer vinnare för tidigt och behåller förlorare för länge. Det gör att ny information bara delvis prissätts direkt och att trender får svansar. Koppla till AK1A:s random walk-kurs: på kort sikt är prisrörelser nästan slumpmässiga i NIVÅ — ingen vet var index står om en månad — men tvärsnittsstyrkan, alltså vilka aktier som slår vilka, är en av de mest replikerade anomalier som finns. Slumpen förklarar nivån; beteendet förklarar ordningen. Det är skillnaden mellan att spå och att ranka."
+        },
+        {
+          "type": "insikt",
+          "content": "RS svarar på NÄR, V04 svarar på VAD. Den enskilt mest användbara timinginformationen i boken är inte linjer i en graf utan var aktien står i tolvmånadersstyrkan mot hela universumet. Billigt (V04) och starkt (AK1TS Pris) är inte motpoler — de är de två halvorna av varje komplett köpbeslut."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tolvmånaders relativ styrka — decilernas karaktär\",\"rader\":[[\"Decil\",\"Innebörd\",\"Historisk bild\"],[\"1\",\"starkast under senaste tolv månader\",\"slår universumet med god marginal, år efter år\"],[\"2–3\",\"stark\",\"över genomsnitt\"],[\"4–7\",\"mittemot\",\"cirka universumet\"],[\"8–9\",\"svag\",\"under genomsnitt\"],[\"10\",\"svagast — fallande knivar\",\"kraftigt underpresterande; ingen fyndkorg\"],[\"Nyckel\",\"—\",\"köp styrka, inte svaghet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna AK1TS Pris eller din screener och ranka ditt universum på tolvmånaders avkastning relativt index. Var ligger dina nuvarande innehav — övre decilen eller nedre? Bokens data ger en obekväm regel: kandidater i decil 10 ska dekommissioneras oavsett hur billa de känns. Kom ihåg skillnaden från kapitel 2: billigt gäller multipln (V04), inte fallande kurser. Skriv upp namnen på de innehav som ligger i nedre decilen och motivera för dig själv varför du behåller dem — om du kan."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bokens huvudbudskap om tolv månaders relativ styrka?",
+          "alternativ": [
+            "Köp de aktier som fallit mest — de är billigast",
+            "Momentum fungerar bara på obligationsmarknaden",
+            "Äg aktier med stark tolvmånaders relativ styrka; de svagaste fortsätter vara svaga",
+            "Relativ styrka går inte att backtesta"
+          ],
+          "ratt": 2,
+          "tips": "Billigt har två betydelser — låg multipel och fallande kurs. Boken gillar bara den första."
+        },
+        {
+          "q": "Varför fungerar momentum enligt den beteendeekonomiska förklaringen?",
+          "alternativ": [
+            "Investerare säljer vinnare för tidigt och behåller förlorare för länge, vilket ger trender svansar",
+            "Momentum beror enbart på centralbankernas räntor",
+            "Det är ett rent dataproblem utan beteendeförklaring",
+            "Bara institutionella investerare orsakar momentum"
+          ],
+          "ratt": 0,
+          "tips": "Dispositionseffekten gör att jämvikten sätts långsamt — och det syns i priset."
+        },
+        {
+          "q": "Hur förhåller sig momentum till random walk-kursens budskap?",
+          "alternativ": [
+            "Random walk visar att momentum är omöjligt",
+            "Kortsiktiga NIVÅER är nästan slump — men tvärsnittsstyrkan, vilka aktier som slår vilka, är replikerbar",
+            "Momentum förutsäger indexnivån om fem år",
+            "Slump och momentum är samma sak"
+          ],
+          "ratt": 1,
+          "tips": "Skilj på att förutsäga en nivå och att rangordna ett tvärsnitt."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Vinnarkombinationen — Värde + Momentum (Trending Value)",
+      "intro": "Bokens kanske viktigaste praktiska lärdom: värde ensamt kan ligga under vatten i åratal, momentum ensamt köper dyra toppar. Tillsammans kompletterar de varandra. Lågt P/S kombinerat med hög tolvmånaders styrka — det O'Shaughnessy i senare upplagor kallar Trending Value — är studiens vinnarkombination.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför kombinera? Därför att varje enskild faktor har en karakteristisk svaghet. Lågt P/S underpresterade tre raka år 1996–1999 medan berättelseaktierna steg — värde utan styrka är ofta för tidigt ute. Ren momentum å andra sidan köper de dyraste glansaktierna precis när de är som mest uppblåsta — styrka utan värde är för sent ute. Kombinationen kräver att aktien är BÅDE billig (V04) och stark (AK1TS Pris): ett lågt värderat bolag som återfått fotfäste och börjat stiga relativt marknaden. I fjärde upplagans tester, där varje aktie rankas på flera värderingsmått samtidigt och kombineras med momentum, gav den typen av Trending Value-strategi några av de högsta avkastningarna i hela boken — i storleksordningen sjutton till tjugo procent per år genom perioden."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken bakom Value Composite — den kombinerade värderingsrankningen — är förövrigt en av bokens viktigaste konstruktioner. I stället för att lita på ett enda mått rankas varje aktie på flera värderingsmått samtidigt (P/S, P/E, P/B, P/CF och i senare versioner EV/EBITDA och aktieägaravkastning) och summan av rangerna blir faktorpoängen. Effekten är dubbel: säkerhetsmarginalen breddas — aktien måste vara billig på flera sätt samtidigt — och strategin blir robust mot att ett enskilt mått tappar kraft, vilket exakt hände P/B efter 1990. I AK1A motsvarar detta att V04 är huvudvikt men V05 och V06 får confirmatoriska röster. Momentumfiltret gör sedan resten: aktien måste ha börjat stiga innan du äger den."
+        },
+        {
+          "type": "text",
+          "content": "Viktiga varningar från boken: kombinera inte godtyckligt. Faktorerna ska ha varsin oberoende logik — värde bygger på långsiktig överreaktion (marknaden överdriver glans och elände), momentum på kortsiktig underreaktion (information tar tid att prissa). Två mekanismer, inte en. Därför fungerar kombinationen så bra: de korrelerar negativt, vilket betyder att när den ena sover jobbar den andra. Och inte minst: resultaten gäller decil- och portföljstrategier med många aktier och årlig mekanisk rebalansering — inte en handplockad femma. Kursen kopplar också rakt till Short-Sellern-logiken: bokens baksida av samma mynt är att den SAMTIDIGT dyraste och svagaste gruppen (decil 10 på V04 och decil 10 på RS) är den statistiskt värsta av alla — blanklistans naturliga avdelning."
+        },
+        {
+          "type": "insikt",
+          "content": "Värde utan momentum är för tidigt; momentum utan värde är för sent. Kombinationen är där beviset och tålamodet möts — och den enda av bokens konstruktioner som historiskt gav både högre avkastning och jämnare kurva än ren värde. I AK1A: värderingsblocket sätter VAD, AK1TS Pris sätter NÄR."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Värde och momentum — kombinationens kraft\",\"rader\":[[\"Strategi\",\"Ingredienser\",\"Avkastning per år (ca)\",\"Karakter\"],[\"Alla aktier\",\"hela universumet\",\"≈13,6 % (1951–1996)\",\"baseline\"],[\"Enbart lågt P/S\",\"V04\",\"≈16 %\",\"höga toppar, långa svackor\"],[\"Enbart hög RS\",\"AK1TS Pris\",\"över genomsnitt\",\"köper dyra toppar i slutet av trender\"],[\"Värde + RS (Trending Value)\",\"V04 huvud + Pris timing\",\"bland bokens högsta, i storleksordningen 17–20 %\",\"högre avkastning med jämnare kurva\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg kombinationen i miniatyr i din screener: filtrera fram de tjugo procent av aktierna som har lägst P/S (V04), ranka sedan den förkortade listan på tolvmånaders relativ styrka och plocka de tio starkaste. Detta är Trending Value i praktiken. Dokumentera portföljen med datum och kvotvärden — och lägg in en påminnelse om exakt ett år: då rebalanserar du, mekaniskt, utan att fråga magen. Räkna också ut hur många av de tio som samtidigt ligger i övre RS-halvan — det är hela idén."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är lågt P/S plus hög relativ styrka bättre än endera faktorn ensam?",
+          "alternativ": [
+            "Därför att de är perfekt korrelerade och förstärker varandra",
+            "Därför att båda mäter exakt samma sak",
+            "Därför att kombinationen eliminerar all risk",
+            "Därför att de fångar olika anomalier — överreaktion (värde) och underreaktion (momentum) — och skyddar mot varandras svagheter"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vad varje faktor svarar på: prisnivån och prisriktningen."
+        },
+        {
+          "q": "Vad är en Value Composite enligt boken?",
+          "alternativ": [
+            "En enskild multipel med extra vikt",
+            "En teknisk indikator för timing",
+            "En kombinerad rankning på flera värderingsmått samtidigt — P/S, P/E, P/B, P/CF med flera",
+            "En mak prognosmodell"
+          ],
+          "ratt": 2,
+          "tips": "Nyckelordet är diversifiering — fast mellan faktorer i stället för mellan aktier."
+        },
+        {
+          "q": "Vilken grupp är enligt boken den statistiskt värsta av alla — blanklistans naturliga avdelning?",
+          "alternativ": [
+            "Bolag med lägst P/S och lägst RS",
+            "Bolag som betalar utdelning och återköper aktier",
+            "Bolag med HÖGST P/S och LÄGST RS samtidigt",
+            "Stora omsatta storbolag med lågt P/E"
+          ],
+          "ratt": 2,
+          "tips": "Vänd på vinnarkombinationen och läs den spegelvänt."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Cornerstone Growth — P/S + stabil vinsttillväxt + styrka (V04, V12)",
+      "intro": "Cornerstone Growth är bokens mest kända färdiga strategi — fyra mekaniska regler som historiskt levererat cirka arton procent per år. Den förenar allt ni lärt hittills: låg P/S, stabil — inte maximal — vinsttillväxt, prisstyrka och hanterbar storlek.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fyra villkoren, ur universumet Alla aktier. Ett: tillräcklig börsvärde — bolaget ska vara stort nog för att vara hanterbart och omsatt (V11-logik; i boken med inflationsjusterade trösklar). Två: P/S under 1,5 — värdeporten, alltså V04 med en tydlig siffra. Tre: ökad vinst per aktie fem år i rad, utan en enda nedgång — inte hög tillväxt, utan OFÖRSTÖRD tillväxt. Fyra: senaste tolv månadernas avkastning över universumets genomsnitt — prisstyrkan från kapitel 6. Resultatet 1951–1996: ungefär arton procent per år mot cirka 13,6 för Alla aktier. Tio tusen dollar blev över femton miljoner, mot cirka tre komma en miljoner för universumet."
+        },
+        {
+          "type": "text",
+          "content": "Det fina i kråkan är det tredje villkoret — och det är en direkt tillämpning av V12 Intäktsstabilitet. Strategin kräver inte hög tillväxt, bara att vinsten har växt varje enskilt år i fem år. Det är raka motsatsen till kapitel 4:s förväntad-tillväxt-fälla: historisk konsistens är ett BEVIS som redan levererats, medan glansprognoser är en story som ska levereras. Skillnaden mellan tio och tjugo procents tillväxt är oviktig här; skillnaden mellan tio år i rad och nio av tio år är det inte. I AK1A operationaliserar V12 exakt detta: återkommande, förutsägbara intäkter och resultat väger tyngre än explosiva men spröda. Stabilitet är datans eget sätt att säga kvalitet."
+        },
+        {
+          "type": "text",
+          "content": "Ärligheten tillhör strategin. Cornerstone Growth äger små och medelstora bolag med momentum — i kraschår som 2008 faller den hårt, och under långa trendlösa perioder kan den underprestera. Bokens egna slutvärden förutsätter att investeraren höll regimen vid varje enskild rebalansering, inklusive de år det gjorde ont — mekaniken är hela poängen. Notera också varför strategin fungerar över tid: den plockar bolag som är billiga (V04), bevisat stabila (V12) och som marknaden just nu gillar (AK1TS Pris) — tre oberoende anomalier i en enda checklista. Det är ingen slump att den hamnar bland bokens bästa; det är aritmetiken i kombination."
+        },
+        {
+          "type": "insikt",
+          "content": "Fem svaga år i rad är inte fem misslyckanden — det är fem bevis. Cornerstone Growth visar AK1A:s princip rakt i ögonen: belöna STABILITET (V12), köp den billigt (V04), äg den stark (AK1TS Pris). Tre filter, en aktie — och disciplin däremellan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Cornerstone Growth — fyra villkor, en strategi\",\"rader\":[[\"Villkor\",\"Siffra eller mått\",\"AKM1-koppling\"],[\"Börsvärde\",\"över inflationsjusterad tröskel\",\"V11 hanterbarhet\"],[\"P/S\",\"under 1,5\",\"V04 — värdeporten\"],[\"Vinst per aktie\",\"ökade fem år i rad, ingen nedgång\",\"V12 — stabilitet före nivå\"],[\"Prisstyrka\",\"tolvmånaders avkastning över universumets snitt\",\"AK1TS Pris\"],[\"Resultat 1951–1996\",\"≈18 % per år mot ≈13,6 % för Alla aktier\",\"cirka fem gånger slutkapitalet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör en mini-Cornerstone i din screener. Steg ett: filtrera på P/S under 1,5 (V04). Steg två: behåll bara bolag med fem raka år av växande vinst per aktie eller rörelseresultat — kolla årsredovisningarna, inte pressreleaser (V12). Steg tre: sortera resten på tolvmånaders relativ styrka och notera de tio översta. Fråga dig sedan: hur många bolag klarade alla tre filtren — och vilka åkte ut precis på V12-villkoret? De senaste är lärorikast: billiga och starka men inte stabila."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken typ av tillväxt kräver Cornerstone Growth?",
+          "alternativ": [
+            "Högsta möjliga prognostiserade tillväxt",
+            "Exakt tio procent varje år",
+            "Fem på varandra följande år med stigande vinst per aktie — stabilitet före nivå",
+            "Ingen tillväxt alls"
+          ],
+          "ratt": 2,
+          "tips": "Minns skillnaden mellan historia (redan levererat) och prognos (en story)."
+        },
+        {
+          "q": "Vad är P/S-tröskeln i Cornerstone Growth?",
+          "alternativ": [
+            "P/S under 1,5",
+            "P/S under 10",
+            "P/S över 5",
+            "P/S används inte i strategin"
+          ],
+          "ratt": 0,
+          "tips": "Strategin börjar med värdeporten — och den grövsta sådan presenterades i kapitel 2."
+        },
+        {
+          "q": "Varför ingår tolvmånaders styrkan som fjärde villkor?",
+          "alternativ": [
+            "För att öka antalet bolag i portföljen",
+            "För att momentum ersätter värderingen",
+            "För att strategin ska kunna blanka",
+            "För att undvika värdefällor som fortsätter falla — aktien måste ha börjat stiga"
+          ],
+          "ratt": 3,
+          "tips": "Vad saknar en billig aktie som fortsätter sjunka, enligt kapitel 6?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Cornerstone Value — utdelning och storbolag (V20-koppling)",
+      "intro": "Bokens andra hörnsten riktar sig till den som vill sova gott: stora, omsatta bolag med god direktavkastning och låg värdering. Cornerstone Value visar att tråkiga, utdelningsbetalande jättar slagit såväl sitt index som de flesta aktiefonder — med lägre risk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Receptet, ur universumet Stora aktier: ta stora och välomsatta bolag med solid kassaflöde och direktavkastning över genomsnittet — och köp sedan de femtio med högst utdelning. Resultatet 1951–1996: cirka femton procent per år, mot cirka 11,9 procent för Stora aktier som helhet — och här kommer poängen — med LÄGRE risk, mätt i svängningar, än index. En strategi som alltså gav mer och svajade mindre. Utdelningen är inte bara avkastning i handen; den fungerar också som ett kvitto på att kassaflödet är äkta (P/CF-logiken från kapitel 3) och som en disciplin hos ledningen — pengar som betalas ut kan inte spenderas på imperiebygge."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till AKM1 går via V20 Återköp. Utdelning och återköp är samma idé med olika genomförande: kapital som flödar TILLBAKA till ägarna i stället för att behållas i bolaget och finansiera prestigeprojekt. Tillsammans bildar de det som kallas aktieägaravkastning — shareholder yield — och i bokens senare upplagor ingår den komponenten i den kombinerade värderingsrankningen. En ledning som betalar utdelning ELLER minskar aktieantalet (V20) skickar samma signal: kassan är äkta, över efter alla nödvändiga investeringar, och ägarna prioriteras. I AK1A räknas därför både utdelning och V20 som kvalitetssignaler som ska bekräfta — aldrig ersätta — en låg V04."
+        },
+        {
+          "type": "text",
+          "content": "Marginal of safety-vinkeln är konkret: en storbolagsaktie med hög direktavkastning ger dig en avkastning du kan ta ut UTAN att någon annan behöver köpa aktien dyrare. Om kursen står stilla i fem år men du får fyra procent per år i utdelning har du ändå tjänat pengar — det är en inbyggd säkerhetsmarginal i Grahams anda. Men varningen står kvar från hela boken: jaga aldrig enbart högst utdelning. En direktavkastning på tio procent är ofta marknadens sätt att prissätta en kommande nedskärning. Utdelningen måste täckas av kassaflödet och bäras av stabila intäkter (V12) och hanterbar skuld (V10) — annars är det en värdefälla med extra steg."
+        },
+        {
+          "type": "insikt",
+          "content": "Utdelning och återköp (V20) är samma princip i olika förpackning: bolaget erkänner att pengarna blev över — och lämnar tillbaka dem till ägarna. Leta alltid efter båda formerna i AK1A:s kvalitetsblock, men kom ihåg att de är kryddor till lågt P/S, aldrig huvudrätten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Cornerstone Value — recept och resultat\",\"rader\":[[\"Ingrediens\",\"Varför\"],[\"Stora, välomsatta bolag\",\"lägre risk, genomförbart i praktiken (V11)\"],[\"Solid kassaflöde\",\"utdelningen är äkta och hållbar\"],[\"Direktavkastning över snittet\",\"kapital tillbaka till ägarna varje år\"],[\"Köp de femtio högst avkastande\",\"mekaniskt, ingen stockpicking\"],[\"Resultat 1951–1996\",\"≈15 % per år mot ≈11,9 % för Stora aktier — med lägre risk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Screena de tjugo största bolagen på din börs. Sortera på direktavkastning och granska de tio översta med tre frågor: täcks utdelningen av kassaflödet, är skuldsättningen rimlig (V10) och har utdelningen växt stabilt över fem år (V12)? Sök sedan upp vilka av bolagen dessutom återköper aktier (V20). Skriv ner om något av bolagen nyligen skurit sin utdelning — och hur kursen reagerade den dagen. Det är den läxa som fastnar."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utmärker Cornerstone Values resultat jämfört med Stora aktier-index?",
+          "alternativ": [
+            "Högre avkastning med lägre risk",
+            "Lägre avkastning med högre risk",
+            "Exakt samma avkastning",
+            "Funkar bara på den amerikanska marknaden"
+          ],
+          "ratt": 0,
+          "tips": "Direktavkastning bland kvalitetsstorbolag är en av finanshistoriens mest robusta kantfunktioner."
+        },
+        {
+          "q": "Hur kopplas utdelning till V20 i AKM1?",
+          "alternativ": [
+            "De är varandras motsatser",
+            "V20 mäter i stället P/B",
+            "Utdelning och återköp utgör tillsammans aktieägaravkastning — kapital tillbaka till ägarna",
+            "V20 används bara för banker"
+          ],
+          "ratt": 2,
+          "tips": "Vad har en utbetalad utdelning och ett minskat aktieantal gemensamt?"
+        },
+        {
+          "q": "Vilken varning ger kursen om att enbart jaga hög direktavkastning?",
+          "alternativ": [
+            "Ingen — hög utdelning är alltid bäst",
+            "Utdelning är skattefritt i alla länder",
+            "Direktavkastning gäller bara småbolag",
+            "En mycket hög utdelning kan prissätta en kommande nedskärning — den måste täckas av kassaflöde, stabila intäkter och hanterbar skuld"
+          ],
+          "ratt": 3,
+          "tips": "Titta på vad som brukar hända kursen den dag en utdelning skärs ned."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Storlek och likviditet — small-cap-premien och dess baksida (V11)",
+      "intro": "Alla aktier slog Stora aktier i bokens data — småbolagspremien är real. Men kapitlet om marknadskapital visar också premiens baksida: pappersavkastningen i de minsta bolagen är nästintill omöjlig att realisera i praktiken. Det här är V11 Likviditets praktiska uppgift i din checklista.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Storlekstesterna visar en tydlig trappa: ju mindre bolag, desto högre historisk genomsnittsavkastning — och desto högre risk. Mikrobolagen, de allra minsta, hade de bästa siffrorna på papper. Men premien är inte gratis pengar — den är en ERSÄTTNING. Småbolag är dåligt analyserade, dåligt omsatta och dyra att handla; institutioner kan inte bygga positioner i dem utan att flytta kursen, vilket lämnar felprissättningar kvar för den som kan och orkar vara där. Det är samtidigt kantens ORSAK och dess GRÄNS: samma illikviditet som skapar möjligheten gör att den inte låter sig skalas. Du kan inte skala upp en strategi på en premi som existerar för att ingen annan kan ta den."
+        },
+        {
+          "type": "text",
+          "content": "Fjärde upplagan tog konsekvensen av det här. För att strategierna skulle vara INVESTERbara — inte bara backtestbara — höjde O'Shaughnessy minimikapitaliseringen i universumet till inflationsjusterade trösklar och tog bort de allra minsta bolagen. Resultatet: fortfarande starka utfall, men nu från portföljer som en verklig investerare faktiskt KAN bygga och rebalansera varje år. Det är en av bokens mest underskattade lärdomar: en strategi som kräver att du köper tjugo procent av den dagliga omsättningen i en aktie är ingen strategi — du är själv marknaden, och spreaden, glidningen och kapacitetsbristen äter premien med råge."
+        },
+        {
+          "type": "text",
+          "content": "I AK1A är V11 Likviditet porten mellan teori och genomförande. De praktiska frågorna innan varje köp i den lilla änden: vad är den dagliga omsättningen i pengar? Hur stor andel av den utgör din tänkta position? Kan du ta dig UT lika enkelt som in — och vad händer med kursen om du behöver sälja på en torsdag med normal volym? En perfekt decil 1-aktie på V04 utan omsättning är ingen investering; det är en fälla med vackert mått. Kopplingen till Short-Sellern är densamma från andra hållet: de bolag som är svårast att låna och handla är just de illikvida story stocks — därför koncentreras faktiska korta positioner till flytande papper, hur lockande glansmultiplar än ter sig i teorin."
+        },
+        {
+          "type": "insikt",
+          "content": "Small-cap-premien är hyran för att vistas där institutionerna inte kan. Om din strategi kräver att du själv blir marknaden i aktien har du ingen kant kvar — bara en osålbart god avsikt. V11 står inte i vägen för din analys; den avgör om din analys får pengar ur den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Universumen och verkligheten\",\"rader\":[[\"Universum\",\"Avkastning per år (ca) 1951–1996\",\"Praktisk hållbarhet\"],[\"Alla aktier\",\"≈13,6 %\",\"bra — bred och genomförbar\"],[\"Stora aktier\",\"≈11,9 %\",\"utmärkt — djup likviditet\"],[\"Mikrobolag (på pappret)\",\"högre\",\"osäker — omsättningsbrist, spreadar, kapacitet\"],[\"Fjärde upplagans lösning\",\"—\",\"inflationsjusterade minimivärden gör strategierna investerbara\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta de tio minsta bolagen från din P/S-screen i kapitel 2. Beräkna genomsnittlig daglig omsättning i pengar per bolag. Räkna sedan ut hur många dagars normal omsättning din tänkbara position skulle utgöra — och vad det betyder för att bygga och senare lämna positionen utan att flytta kursen mer än något enstaka procent. Skriv ner den storlekströskel där V11 säger stopp för ditt kapital. Den siffran är personlig: den beror på hur mycket du förvaltar."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför slog Alla aktier Stora aktier i bokens tester?",
+          "alternativ": [
+            "Därför att stora bolag är dåligt skötta",
+            "Därför att småbolag har lägre risk",
+            "Det var ett datafel som korrigerades senare",
+            "Småbolag betalar premie för informations- och likviditetsbrist — felprissättningar stannar kvar längre"
+          ],
+          "ratt": 3,
+          "tips": "Samma orsak skapar både möjligheten och begränsningen."
+        },
+        {
+          "q": "Hur hanterade fjärde upplagan problemet med mikrobolagen?",
+          "alternativ": [
+            "Tog bort alla småbolag ur boken helt",
+            "Höjde minimikapitaliseringen till inflationsjusterade trösklar så att strategierna blev praktiskt investerbara",
+            "Multiplicerade resultaten med två",
+            "Bytte databas till europeiska bolag"
+          ],
+          "ratt": 1,
+          "tips": "Fokus ligger på skillnaden mellan pappersresultat och genomförbart resultat."
+        },
+        {
+          "q": "Vad är den praktiska V11-frågan innan du köper en småbolagsaktie?",
+          "alternativ": [
+            "Har bolaget en fin logotyp och tydlig varumärke (V14)?",
+            "Är bolaget störst i sin bransch?",
+            "Betalar bolaget utdelning?",
+            "Kan jag köpa — och inte minst sälja — min position utan att själv flytta kursen?"
+          ],
+          "ratt": 3,
+          "tips": "En position du inte kan lämna är ingen position — det är ett förvar."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Multifaktor och robusthet — varför kombinationer slår enskilda faktorer",
+      "intro": "En enskild faktor kan misslyckas i årtionden. Bokens längsta lärdom handlar om robusthet: vilka egenskaper gör att en strategi överlever nya decennier, nya bubblor och nya kriser? Svaret är diversifiering — mellan faktorer, inte bara mellan aktier.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett faktortest kan smita igenom en period av ren tur — ju fler faktorer man testar, desto fler ser bra ut av en slump (datamining). O'Shaughnessys robusthetskontroller är därför lika viktiga som själva resultaten: dela upp decennierna i delperioder och kontrollera att faktorn fungerar i de flesta; kräv att sambandet är monotont över decilerna; och kräv en beteende- eller strukturell förklaring till varför marknaden betalar för felet. P/S och relativ styrka klarade proven. Många hypade faktorer gjorde inte det. Samma testbatteri ska du lägga på varje ny AKM1-variabel innan den får kapital."
+        },
+        {
+          "type": "text",
+          "content": "Faktorer samvarierar — och det är avgörande för konstruktionen. Värdefaktorerna korrelerar sinsemellan: ett bolag som är billigt på P/S är ofta billigt på P/E och P/CF, så att stapla värdefaktorer ger bekräftelse men inte skydd. Däremot korrelerar värde och momentum NEGATIVT — när den ena underpresterar tenderar den andra att fungera. Det är därför Trending Value (kapitel 7) är bokens tåligaste bygge och därför AK1A vill ha täckning från oberoende anomalier: värderingsblocket (V04, V05, V06), tidsblocket (AK1TS Pris) och stabilitetsblocket (V12). Tre pelare som inte rasar samtidigt."
+        },
+        {
+          "type": "text",
+          "content": "Boken ger också sina egna exempel på faktorer som bleknade. P/B:s fördel minskade kraftigt efter 1990 när ekonomin blev immateriell; extremt korta momentumfönster var aldrig stabila; hög förväntad tillväxt var inte ens en svag faktor utan en inverterad sådan. Lärdomen är inte att ge upp faktorer utan att aldrig bygga på EN. Bygg på en familj av faktorer med gemensam logik — betala lite, kräv bevis, äg styrka — så att ett enskilt mått kan tappa kraft utan att systemet gör det. Fråga aldrig vilken faktor som är bäst i år; fråga vilka BETEENDEN som sätter avkastningen och hur många oberoende sätt du har att mäta dem."
+        },
+        {
+          "type": "insikt",
+          "content": "Bakom bokens alla vinnare finns bara två mekanismer: överreaktion (värde) och underreaktion (momentum). Faktorerna är instrument som mäter mekanismerna — instrument byts ut när de slits, mekanismerna består. Bygg din AKM1-process på mekanismerna, inte på instrumenten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Enskild faktor kontra kombination\",\"rader\":[[\"Bygge\",\"Styrka\",\"Svaghet\"],[\"Enbart lågt P/S\",\"hög långsiktig avkastning\",\"långa perioder av underpresterande (1996–1999)\"],[\"Enbart hög RS\",\"fångar trender\",\"köper dyra toppar i slutet av rörelser\"],[\"Värdefamiljen staplad\",\"breddad säkerhetsmarginal\",\"korrelerar — ger litet skydd emot varandra\"],[\"Värde + RS (olika mekanismer)\",\"högre avkastning, jämnare kurva\",\"kräver disciplin vid varje rebalansering\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en faktor-CV för din nuvarande portfölj. För varje innehav: notera grov decilposition (1–10) på V04, på V12 och på tolvmånaders RS. Räkna sedan hur många innehav som ligger i decil 8–10 på V04 — det är din portföljs exponering mot bokens katastrofdecil — och hur många som ligger i decil 8–10 på RS. Skriv en rad om vilken mekanism (överreaktion eller underreaktion) din portfölj faktiskt äger, och vilken den saknar."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med ett monotont samband i faktortestning?",
+          "alternativ": [
+            "Att avkastningen är densamma i alla deciler",
+            "Att faktorn bara fungerar på måndagar",
+            "Att alla aktier går lika bra oavsett faktor",
+            "Att resultatet förbättras eller försämras jämnt över decilerna — inte bara ett glapp på ett enskilt ställe"
+          ],
+          "ratt": 3,
+          "tips": "Ett mönster som håller över hela stegen är svårt att förklara med tur."
+        },
+        {
+          "q": "Varför är värde och momentum särskilt bra att kombinera?",
+          "alternativ": [
+            "De korrelerar positivt och förstärker varandra",
+            "De är i grunden identiska faktorer",
+            "Båda fungerar bara på den japanska marknaden",
+            "De korrelerar negativt — när den ena underpresterar tenderar den andra att fungera"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad som händer en portfölj vars två delar inte gillar samma väder."
+        },
+        {
+          "q": "Vilken lärdom drar boken av att P/B:s fördel minskade efter 1990?",
+          "alternativ": [
+            "Att P/B blev starkare än P/S",
+            "Att P/B aldrig testades på allvar",
+            "Att enskilda faktorer kan blekna — bygg på familjer av faktorer med gemensam logik",
+            "Att alla faktorer är likadana"
+          ],
+          "ratt": 2,
+          "tips": "Ett instrument kan slitas utan att mekanismen bakom det försvinner."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Ärlighetens kapitel — förlustår, slumpen och disciplinen",
+      "intro": "Ingen strategi i boken — ingen enda — vinner varje år. Det ärligaste kapitlet handlar om när faktorerna sviker: lågt P/S under IT-bubblan, momentum i vändningarna, allt i finanskrisen 2008. Den som inte klarar av att läsa det här kapitlet bör inte handla på faktorer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fakta först. De bästa strategierna i boken har förlustår med jämna mellanrum och underpresterar index i hela flerårsperioder. Lågt P/S underpresterade tre raka år 1996–1999 medan IT-glansen steg. I finanskrisen 2008 föll värdeportföljer minst lika hårt som index — låg P/S köpte banker och byggare som blev billigare och billigare hela vägen ner, en påminnelse om att billigt kan bli billigare när bolagen är kapitaltörstiga (V19-varningen igen). Strategier med småbolag och momentum, som Cornerstone Growth, föll ännu hårdare. Ingen av detta förändrar slutsatserna på sextio års sikt — men det förändrar kraven på den som ska sitta i sätena."
+        },
+        {
+          "type": "text",
+          "content": "Slumpens roll — och här knyter kursen an direkt till AK1A:s random walk-kurs. På kort sikt är marknadens NIVÅER nästan omöjliga att förutsäga; ingen vet var index står om ett år, och den som påstår det gissar. Men tvärsnittsanomalier — vilka aktier som slår vilka — är replikerbara i decennier: lågt P/S mot högt, stark RS mot svag, alla dokumenterade över sextio år och flera marknader. Skilj alltså på nivåprognoser (nästan omöjliga) och rangordning (svårt men möjligt). O'Shaughnessys hela poäng är att sluta jaga tidpunkter och i stället äga beteendemässiga kantfunktioner — och låta ränta-på-ränta-arbetet få sextio år på sig. Det är inte sexigt. Det är bara den aritmetik som gjorde tio tusen dollar till åtta miljoner."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till Short-Sellern-kursen är densamma ärlighet från andra hållet. Decil 10 på P/S är historiskt en dödszon — men glansaktier kan stiga länge på momentum och squeezas våldsamt när de äntligen vänder. Bokens data säger: äg inte decil 10, och shorta den bara med positioner som tål att vara fel länge, för faktorn säger att vinden är med dig — inte när den slutar blåsa. En blank som har rätt om värderingen men fel om timingen är inte rätt; den är flatt. Samma regel som på långsidan: mekanismen är stark, klockan är okänd, storleken måste tåla båda."
+        },
+        {
+          "type": "text",
+          "content": "O'Shaughnessys egen slutsats om disciplin har blivit klassisk: investeringsstrategier är som dieter — de fungerar bara om man håller dem. Alla de miljontals dollar i slutkapital som bokens tabeller visar förutsätter en och samma sak: att investeraren höll regimen vid varje rebalansering, inklusive åren då grannen med IT-aktier såg smartare ut och kvällspressen förklarade att värde var dött. Ett system utan en ägare som tål smärtan är bara siffror i en bok. Planera för förluståret INNAN det kommer — när det är lätt att tänka klart."
+        },
+        {
+          "type": "insikt",
+          "content": "Backtestens svåraste tal är inte den årliga avkastningen — det är antalet år du måste underprestera grannar och index utan att överge systemet. Skriv reglerna i lugn, följ dem i storm. Det är hela skillnaden mellan att ha en strategi och att ha en historia."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget förlustårskontrakt. Om din V04-plus-RS-portfölj underpresterar index i tjugofyra månader: vad gör du exakt — och vad är du förbjuden att göra? Formulera också regler för när en AKM1-faktor ska bytas ut (bruten logik, försvunnen mekanism — inte ett dåligt år) och när den ska behållas. Datera och signera för dig själv. Kontraktet skrivs i dagens lugn; det prövas i morgonens storm."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med lågt P/S under 1996–1999 och i finanskrisen 2008?",
+          "alternativ": [
+            "Ingenting särskilt — strategin vann varje år",
+            "Den underpresterade IT-åren tre år i rad och föll hårt 2008 när billiga kapitalkänsliga bolag blev billigare ända ner",
+            "Den förbjöds i USA",
+            "Den gick bättre än någonsin tidigare"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vilka sektorer som var billigast på P/S precis före respektive bubbla och kris."
+        },
+        {
+          "q": "Hur relaterar boken till random walk-kursens budskap?",
+          "alternativ": [
+            "Allt på börsen är förutsägbart för den som räknar rätt",
+            "Slump gör alla strategier likvärdiga",
+            "Kortsiktiga NIVÅER är nästan slump — men vilka aktier som slår vilka är replikerbart över decennier",
+            "Faktorer fungerar bara när börsen stiger"
+          ],
+          "ratt": 2,
+          "tips": "Skilj på att förutsäga en nivå och att rangordna ett tvärsnitt."
+        },
+        {
+          "q": "Vad menar O'Shaughnessy med liknelsen om dieter?",
+          "alternativ": [
+            "Att man ska byta strategi ofta för att hitta den bästa",
+            "Att backtester är oviktiga",
+            "Att man ska äta lunch före handelsdagets öppning",
+            "Att strategier bara fungerar om man följer dem konsekvent — även de år det gör ont"
+          ],
+          "ratt": 3,
+          "tips": "En regels värde uppstår först när den är svår att följa."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Från bok till skärm — din AKM1-screening (V01–V20-mappningen)",
+      "intro": "Sista kapitlet översätter sextio år av forskning till AK1A:s arbetssätt: vilka V-variabler som är bevisat laddade, hur de ska vägas mot varandra och hur du bygger en Cornerstone-liknande process i din egen terminal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mappningen i sin helhet. V04 P/S är bokens starkaste faktor och ska ha huvudvikt i värderingsdimensionen. V05 P/B och V06 EV/EBITDA är kompletterande värdefaktorer — V05 medvetet lägre vikt eftersom dess kant försvagades efter 1990, V06 som modern bekräftelse. V01 Försäljningstillväxt används prissett och delvis inverterat: verklig tillväxt är bra bara till låg multiplik, och hög förväntad tillväxt plus hög P/S är bokens sämsta grupp genom tiderna. V12 Intäktsstabilitet är Cornerstone Growths femårskrav — stabilitet före nivå. V09 ROE är kvalitet som bara lönar sig i kombination med lågt pris, aldrig ensam. V10 Skuldsättningsgrad och V19 Kapitalförbränning är riskfilter som hindrar värdefällor. V11 Likviditet är genomförbarhetsporten. V20 Återköp är aktieägaravkastning tillsammans med utdelning. Och storyblocket — V13 Patent, V14 Varumärke, V15 Nätverkseffekter, V16 Produktlanseringar, V17 Avtal och V18 Regulatoriska katalysatorer — får aldrig driva ett köp; det rankar bara bland aktier som redan är billiga, stabila och starka."
+        },
+        {
+          "type": "text",
+          "content": "Processen i fem steg. Ett: breda universumet med en V11-tröskel — bara bolag du faktiskt kan handla. Två: värdescreen med V04 i spetsen och V05 och V06 som bekräftelser. Tre: riskrens med V10 och V19 — billigt med sprängfull balansräkning eller tom kassa är inte billigt, det är en tickande bomb. Fyra: kvalitets- och tidsfiltret — V12-stabilitet plus tolvmånaders prisstyrka enligt AK1TS Pris. Fem: positionstorlekar och årsrebalansering, mekaniskt. Två förbehåll från boken: resultaten gäller decilportföljer med femtio eller fler aktier — koncentration ökar avvikelserna åt båda hållen — och blankning enligt Short-Sellern-logiken kräver marginal för squeeze, särskilt i glansaktierna där logiken som mest pekar ut dem."
+        },
+        {
+          "type": "text",
+          "content": "O'Shaughnessys genomgående hållning är värd att ta med sig som citat i marginalen: intressera dig för vad som FUNGERAR, inte för vad som BORDE fungera enligt teorin. Hela boken är en enda lång övning i att flytta investerandet från åsikt till bevis — att låta sextio år av data säga ifrån när både börsens berättelser och ens egna favoritargument pekar fel. Det är också AK1A:s grundhållning: varje variabel i V01–V20 är en påstående om verkligheten, och påståenden ska kunna testas. Slutar de stämma byts de ut — med samma kyliga metodik som denna bok lärde branschen."
+        },
+        {
+          "type": "insikt",
+          "content": "Bokens slutpoäng är befriande: du behöver inte vara smartare om framtiden — bara disciplinerad med historien. V04-tungt, riskrensat, V12-bevisat och RS-starkt, i bred portfölj och med ett års tålamod i taget. Det är hela systemet. Resten är story."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken till AKM1 — översättningstabellen\",\"rader\":[[\"Bokens faktor\",\"AKM1\",\"Vikt\",\"Roll i processen\"],[\"Lågt P/S — starkaste enskilda faktorn\",\"V04\",\"huvud\",\"värderingskärna\"],[\"Lågt P/B\",\"V05\",\"låg\",\"komplement med svag trend\"],[\"EV/EBITDA / P/E / P/CF\",\"V06\",\"medel\",\"bekräftande värdefamilj\"],[\"Tillväxt prissatt\",\"V01\",\"inverterad\",\"priskontroll — aldrig story\"],[\"EPS-stabilitet fem år\",\"V12\",\"medel\",\"bevis, inte prognos\"],[\"Kvalitet\",\"V09\",\"låg\",\"bonus vid lågt pris\"],[\"Skuldsättning\",\"V10\",\"filter\",\"riskrens\"],[\"Kapitalförbränning och emissioner\",\"V19\",\"filter\",\"värdefälle-varning\"],[\"Likviditet och storlek\",\"V11\",\"port\",\"genomförbarhet\"],[\"Utdelning och återköp\",\"V20\",\"bonus\",\"aktieägaravkastning\"],[\"Story (patent, varumärke, nätverk, lansering, avtal, regulatorik)\",\"V13–V18\",\"aldrig huvud\",\"endast rankning bland billiga och starka\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg och spara din O'Shaughnessy-screen i AK1A: lägsta kvartilen på V04, rensad med V19 (inga kapitaltörstiga bolag utan kassa), minst tre år stabil tillväxt (V12) och övre halvan på tolvmånaders RS. Rebalansera på kalenderår, mekaniskt. Logga dessutom för varje köp vilken V04-decil bolaget låg i — och bokmärk loggen till nästa års rebalansering. Om ett år har du börjat bygga din egen sextioåriga dataserie. Den börjar i dag."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken roll ska storyblocket (V13–V18) ha enligt kursens slutsats?",
+          "alternativ": [
+            "Driva köpbeslutet — berättelsen är avgörande",
+            "Ersätta värderingen när berättelsen är stark",
+            "Aldrig driva köpet — bara rangordna bland aktier som redan är billiga, stabila och starka",
+            "Användas bara vid blankning"
+          ],
+          "ratt": 2,
+          "tips": "Minns kapitel 4 och 5: berättelsen är vad man betalar för — inte vad man betalar med."
+        },
+        {
+          "q": "Vad kommer direkt efter värdescreenen (V04) i den rekommenderade processen?",
+          "alternativ": [
+            "Köpa direkt på lägst P/S utan vidare kontroll",
+            "Kolla sentiment och forumstämningsläge",
+            "Öka belåningen för att maximera kantfunktionerna",
+            "Riskrens med V10 Skuldsättningsgrad och V19 Kapitalförbränning"
+          ],
+          "ratt": 3,
+          "tips": "Billigt kan bli billigare — vilka filter hindrar just det?"
+        },
+        {
+          "q": "Varför betonar kursen decilbrett ägande med många aktier?",
+          "alternativ": [
+            "Därför att alla enskilda aktier är bedrägerier",
+            "Därför att bokens resultat gäller portföljer — koncentration ökar avvikelserna åt båda hållen",
+            "Därför att det alltid är billigast i courtage",
+            "Därför att index alltid slår alla strategier"
+          ],
+          "ratt": 1,
+          "tips": "En faktor är en sannolikhetsfordel — inte ett löfte per enskild aktie."
+        }
+      ]
+    }
+  ]
+}

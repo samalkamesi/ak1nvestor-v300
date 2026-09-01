@@ -36,7 +36,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Börja med teamet, för det är hela poängen. John Meriwether var Wall Streets mest mytomspunna obligationshandlare, arvtagare till Salomon Brothers arbitragegrupp. Robert Merton och Myron Scholes fick Nobelpriset i ekonomi i oktober 1997 — knappt ett år innan fonden kollapsade — för den optionsteori som byggde modern finans. David Mullins Jr lämnade posten som vice ordförande i Federal Reserve för att bli partner. Runt dem: Lawrence Hilibrand, Victor Haghani, Greg Hawkins, Eric Rosenfeld och ett tjugotal doktorer. Om genialitet kunde mätas i examensbevis hade LTCM varit det säkraste finansexperimentet i historien. Det var det inte."
+          "content": "Börja med teamet, för det är hela poängen. John Meriwether var Wall Streets mest mytomspunna obligationshandlare, arvtagare till Salomon Brothers arbitragegrupp. Robert Merton och Myron Scholes fick Nobelpriset i ekonomi i oktober 1997 — knappt ett år innan fonden kollapsade — för den optionsteori som bygggde modern finans. David Mullins Jr lämnade posten som vice ordförande i Federal Reserve för att bli partner. Runt dem: Lawrence Hilibrand, Victor Haghani, Greg Hawkins, Eric Rosenfeld och ett tjugotal doktorer. Om genialitet kunde mätas i examensbevis hade LTCM varit det säkraste finansexperimentet i historien. Det var det inte."
         },
         {
           "type": "text",
@@ -44,7 +44,7 @@
         },
         {
           "type": "text",
-          "content": "För AK1A:s del är det här riskutbildningens kärntext i berättelseform. Kursen läser LTCM genom tre variabler: V10 skuldsättningsgrad (hävstången som gjorde fonden till vad den var), V11 likviditet (finansieringen som kunde dras tillbaka över en natt) och V19 kapitalförbrukning och emissionsrisk (margin calls som brände kapitalet, och en räddning som spädde ägarna med 90 procent). Dessutom en princip utan nummer: marginal of safety — avståndet till ruin — som mäts i design, inte i intelligens."
+          "content": "För AK1A:s del är det här riskutbildningens kärntext i berättelseform. Kursen läser LTCM genom tre variabler: V10 skuldsättningsgrad (hävstången som gjorde fonden till vad den var), V11 likviditet (finansieringen som kunde dras tillbaka över en natt) och V19 kapitalförbrukning och emissionsrisk (margin calls som brände kapitalet, och en räddning som spädde ut ägarna till en tiondel). Dessutom en princip utan nummer: marginal of safety — avståndet till ruin — som mäts i design, inte i intelligens."
         },
         {
           "type": "text",
@@ -77,7 +77,7 @@
             "Fonden var den första som handlade statsobligationer"
           ],
           "ratt": 2,
-          "tips": "Titta på personerna på stycklista — inte på instrumenten."
+          "tips": "Titta på personerna på stycklistan — inte på instrumenten."
         },
         {
           "q": "Vad fångar metaforen om att plocka upp mynt framför en ångvält?",
@@ -111,23 +111,23 @@
       "blocks": [
         {
           "type": "text",
-          "content": "På 1970-talets Salomon var obligationshandeln ett hantverk av magkänsla och kundrelationer. Meriwether, en lärarson från Chicago somummeltalanger och hästkapplöpningar, förde in något främmande: akademiker. Eric Rosenfeld undervisade i finansiell ekonomi vid Harvard; Bill Krasker kom från MIT. Deras insikt var att obligationer, till skillnad från aktier, har exakta matematiska samband — en 29-årig och en 30-årig statsobligation är samma pengar och ska i grunden prissättas lika. När marknaden av rädsla eller bekvämlighet prissatte dem olika fanns en mätbar avvikelse att handla på: köp den billiga, sälj kort den dyra, vänta på konvergens. Ingen gissning om räntans riktning — bara relativ prissättning."
+          "content": "På 1970-talets Salomon var obligationshandeln ett hantverk av magkänsla och kundrelationer. Meriwether — en lärarson från Chicago som själv älskade vadslagning och hästkapplöpningar — förde in något främmande: akademiker. Eric Rosenfeld undervisade i finansiell ekonomi vid Harvard; Bill Krasker kom från MIT. Deras insikt var att obligationer, till skillnad från aktier, har exakta matematiska samband — en 29-årig och en 30-årig statsobligation är i grunden samma pengar och ska i princip prissättas lika. När marknaden av rädsla eller bekvämlighet prissatte dem olika fanns en mätbar avvikelse att handla på: köp den billiga, sälj kort den dyra, vänta på konvergens. Ingen gissning om räntans riktning — bara relativ prissättning."
         },
         {
           "type": "text",
-          "content": "Kulturen runt gruppen blev legendarisk. Meriwether tog sina doktorer med på pokerspel på huga insatser — Lowenstein öppnar sin skildring i den miljön — och lät dem satsa stora belopp på marknaden utan att själv pusta. Tryggheten byggde på att alla var smartare än motståndaren, en övertygelse som grupperna internaliserade. Den bar dem långt: under 1980- och 90-talet blev arbitragegruppen Salomons vinstmaskin, och år 1990 tjänade Lawrence Hilibrand 23 miljoner dollar — mer än någon annan anställd på Wall Street det året. Handelsbordet hade blivit stjärnfabrik, och stjärnorna trodde att systemet var derigt."
+          "content": "Kulturen runt gruppen blev legendarisk. Meriwether tog sina doktorer med på pokerspel på höga insatser — Lowenheimers skildring av gruppen öppnar i den miljön — och lät dem satsa stora belopp på marknaden utan att själv blinka. Tryggheten byggde på att alla var smartare än motståndaren, en övertygelse gruppen internaliserade. Den bar dem långt: under 1980- och 90-talet blev arbitragegruppen Salomons vinstmaskin, och år 1990 tjänade Lawrence Hilibrand 23 miljoner dollar — mer än någon annan anställd på Wall Street det året. Handelsbordet hade blivit en stjärnfabrik, och stjärnorna trodde att systemet var deras."
         },
         {
           "type": "text",
-          "content": "Sedan kom fallet. I augusti 1991 avslöjades att handlaren Paul Mozer lämnat falska bud i amerikanska statsobligationsauktioner — och att ledningen dröjt med att rapportera övertrampet till staten. Warren Buffett, som just tagit över som tillförordnad chef efter ett misslyckat budövertagande, tvingade fram avgående för de ansvariga. Meriwether, som var högst ansvarig för Mozers bord, avgick — med anseende bland handlare oskadat, men med en fläck som gjorde vägen tillbaka till en storbank stängd. Lowenstein menar att det är då idén föds: bygga egen verksamhet — utan bankstyrning, utan ägare som bromsar."
+          "content": "Sedan kom fallet. I augusti 1991 avslöjades att handlaren Paul Mozer lämnat falska bud i amerikanska statsobligationsauktioner — och att ledningen dröjt med att rapportera övertrampet till myndigheterna. Warren Buffett, som just klev in som tillförordnad chef efter skandalen, tvingade fram avgående för de ansvariga. Meriwether, högst ansvarig för Mozers bord, avgick — med anseende bland handlare i stort sett oskadat, men med en fläck som stängde vägen tillbaka till en storbank. Lowenstein menar att det är här idén föds: att bygga en egen verksamhet — utan bankstyrning, utan ägare som bromsar."
         },
         {
           "type": "text",
-          "content": "Här ligger kursens första systemläxa. Arbitragekanten — insikten att relativa prisskillnader konvergerar — var äkta, men extremt tunn: ofta bråkdelar av en procent per affär. En sådan kant kan aldrig förvandlas till stjärnavkastning med mer skicklighet, bara med mer hävstång. Salomon-bankens balansräkning satte taket; den stora bankens ägare och riskfunktioner var den broms som fanns. Hedgefonden som företeelse blev drömmen om samma affärer med frivillig hävstång och utan extern kontroll. Nästa kapitel visar hur drömmen finansierades."
+          "content": "Här ligger kursens första systemläxa. Arbitragekanten — insikten att relativa prisskillnader konvergerar — var äkta, men extremt tunn: ofta bråkdelar av en procent per affär. En sådan kant kan aldrig förvandlas till stjärnavkastning med mer skicklighet, bara med mer hävstång. Salomon-bankens balansräkning satte taket; den stora bankens ägare och riskfunktion var den broms som fanns. Hedgefonden som företeelse blev drömmen om samma affärer med frivillig hävstång och utan extern kontroll. Nästa kapitel visar hur drömmen finansierades."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Från Salomon till LTCM — arvet i fyra punkter\",\"rader\":[[\"Arv\",\"På Salomon\",\"Hos LTCM\"],[\"Människor\",\"Akademiker som Rosenfeld och Hilibrand mitt bland grovhuggna säljare\",\"Samma kärna — utan säljkultur: bara forskare och handlare\"],[\"Metod\",\"Relativa spel: köp den billiga obligationen, sälj kort den dyra\",\"Samma metod, global skala och modellstyrka\"],[\"Kapital\",\"Bankens balansräkning och ägare som bromsade\",\"Oreglerad fond — hävstången blev ett fritt val, och den valdes hög\"],[\"Bromsar\",\"Ägare, riskfunktion, en VD ovanför\",\"Partners som granskade sig själva — kontrollen urgraduerad\"]]}"
+          "content": "{\"rubrik\":\"Från Salomon till LTCM — arvet i fyra punkter\",\"rader\":[[\"Arv\",\"På Salomon\",\"Hos LTCM\"],[\"Människor\",\"Akademiker som Rosenfeld och Hilibrand mitt bland grovhuggna säljare\",\"Samma kärna — utan säljkultur: bara forskare och handlare\"],[\"Metod\",\"Relativa spel: köp den billiga obligationen, sälj kort den dyra\",\"Samma metod, global skala och modellstyrka\"],[\"Kapital\",\"Bankens balansräkning och ägare som bromsade\",\"Oreglerad fond — hävstången blev ett fritt val, och den valdes hög\"],[\"Bromsar\",\"Ägare, riskfunktion, en VD ovanför\",\"Partners som granskade sig själva — kontrollen avskaffades i praktiken\"]]}"
         },
         {
           "type": "insikt",
@@ -145,7 +145,7 @@
             "Han hade förlorat bankens pengar i en hävstångsblåsa",
             "En underordnad, Paul Mozer, hade lämnat falska bud i statsobligationsauktioner och ledningen dröjt med att rapportera — Meriwether var högst ansvarig",
             "Han tackade nej till vd-posten och avgick i protest",
-            "Buffett avskedade alla handlare när han köpte banken"
+            "Buffett avskedade alla handlare när han tog över banken"
           ],
           "ratt": 1,
           "tips": "Skandalen handlade om själva råvaran i verksamheten: statsobligationsauktionerna."
@@ -182,19 +182,19 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Försäljningen av fonden 1993 var ett mästerverk i finansieringens historia. Målet sattes till 1,25 miljarder dollar — mer än någon hedgefond startat med — och trots att fonden krävde tre år bindningstid och en avgiftsstruktur på 2 procent förvaltningsavgift plus 25 procent av vinsten, det dubbla mot branschnorm, var efterfrågan enorm. Pitchbladet erbjöd inte avkastning på marknadsrisk utan nästan Statistical säkerhet: vi tar inte marknadsrisk, vi skördar avvikelser som historiskt alltid stängts. Bland investerarna fanns pensionsfonder, förmögenheter — och Italiens centralbank med omkring hundra miljoner dollar. Om centralbanker som övervakar systemet investerar, vilken institutionell ägare kan säga nej?"
+          "content": "Försäljningen av fonden 1993 var ett mästerverk i finansieringens historia. Målet sattes till 1,25 miljarder dollar — mer än någon hedgefond startat med — och trots att fonden krävde tre års bindningstid och en avgiftsstruktur på 2 procent förvaltningsavgift plus 25 procent av vinsten, det dubbla mot branschnorm, var efterfrågan enorm. Säljmaterialet erbjöd inte avkastning på marknadsrisk utan närmast statistisk säkerhet: vi tar inte marknadsrisk, vi skördar avvikelser som historiskt alltid stängts. Bland investerarna fanns pensionsfonder, förmögenheter — och Italiens centralbank med omkring hundra miljoner dollar. Om centralbanker som övervakar systemet investerar, vilken institutionell ägare kan då säga nej?"
         },
         {
           "type": "text",
-          "content": "Merton och Scholes bidrog inte med daglig handel utan med världsbild och legitimitet. Merton, professor vid Harvard, var arkitekten bakom den kontinuerliga finansieringsteorin — marknader som flyter utan friktion, där priser alltid finns och handel alltid är möjlig. Scholes, vid Stanford, var medskapare av optionsteorin som gett honom Nobelpriset (och som hedrade den avlidne Fischer Black). I oktober 1997, ett år före kollapsen, krönte Svenska Akademien deras livsverk — och händelsen förvandlade LTCM:s marknadsföring från trovärdig till övernaturlig. Lowenstein noterar ironin: priset delades ut när fondens riskmätare redan visade att den satsade mer än någonsin."
+          "content": "Merton och Scholes bidrog inte med daglig handel utan med världsbild och legitimitet. Merton, professor vid Harvard, var arkitekten bakom den kontinuerliga finansieringsteorin — marknader som flyter utan friktion, där priser alltid finns och handel alltid är möjlig. Scholes var medskapare av optionsteorin som i oktober 1997 gav honom och Merton Nobelpriset (med den avlidne Fischer Black hedrad). Kungliga Vetenskapsakademiens pris, ett år före kollapsen, krönte deras livsverk — och förvandlade LTCM:s marknadsföring från trovärdig till övernaturlig. Lowenstein noterar ironin: priset delades ut när fondens riskmätare visade att den satsade mer än någonsin."
         },
         {
           "type": "text",
-          "content": "I maskinrummet satt Salomon-kärnan: Hilibrand, swaparbitragets mästare med kontor målade i svart och en personlig förmögenhet som gjorde honom till fondens tyngsta partner; Haghani och Hawkins på ränteboken och aktievolatiliteten; Rosenfeld som Meriwethers förtrogne sedan Harvard. David Mullins Jr:s avgång från Fed i februari 1994 — från att reglera marknaderna till att handla i dem — gav fonden centralbankskompetens och ett kontaktnät som skulle visa sig avgörande i september 1998. Partnerna återinvesterade stora delar av sina arvoden; vid krisens utbrott fanns nästan två miljarder dollar av deras egna pengar i fonden. Skin in the game — verkligt, men också maximal koncentration."
+          "content": "I maskinrummet satt Salomon-kärnan: Hilibrand, swaparbitragets mästare med det svartmålade kontor Lowenstein beskriver och en personlig förmögenhet som gjorde honom till fondens tyngsta partner; Haghani och Hawkins på ränteboken och aktievolatiliteten; Rosenfeld som Meriwethers förtrogne sedan Harvard. David Mullins Jr:s avgång från Fed i februari 1994 — från att reglera marknaderna till att handla i dem — gav fonden centralbankskompetens och ett kontaktnät som skulle visa sig avgörande i september 1998. Partnerna återinvesterade stora delar av sina arvoden; vid krisens utbrott fanns nästan två miljarder dollar av deras egna pengar i fonden. Skin in the game — verkligt, men också maximal koncentration."
         },
         {
           "type": "text",
-          "content": "Ett detaljerat exempel på hur myten spreds: UBS paketerade LTCM-avkastningen i kapitalskyddade noter och sålde till sina kunder — banken tog fondexponering och finansierade garantin genom att sälja optioner, en konstruktion som i sig borde varnat för att något var fel med en »riskfri« superegen. Fonden, skriver Lowenstein, betraktades som framtiden: en institution byggd på människor som visste mer än marknaden. Kursen noterar mönstret: ju mer oemotsagd en institution ser ut, desto mindre granskas mekanismerna under huven."
+          "content": "Ett exempel på hur myten spreds: UBS paketerade LTCM-avkastningen i kapitalskyddade noter och sålde till sina kunder — banken tog fondexponering och finansierade garantin genom optioner, en konstruktion som i sig borde väckt frågor om vad en »riskfri« superegen egentligen innehöll. Fonden, skriver Lowenstein, betraktades som framtiden: en institution byggd på människor som visste mer än marknaden. Kursen noterar mönstret: ju mer oemotsagd en institution ser ut, desto mindre granskas mekanismerna under huven."
         },
         {
           "type": "visuell",
@@ -234,7 +234,7 @@
             "Att fonden behövde en jurist för sina avtal"
           ],
           "ratt": 1,
-          "tips": "Tänk på vilken signal det skickar när systemets spelare bör spela mot systemet."
+          "tips": "Tänk på vilken signal det skickar när systemets spelare börjar spela mot systemet."
         },
         {
           "q": "När fick Merton och Scholes Nobelpriset i ekonomi?",
@@ -257,15 +257,15 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Den intellektuuta grunden var tre byggstenar. Först den effektiva marknadshypotesen: priser återspeglar all tillgänglig information, och avvikelser är slumpbrus. Sedan slumpvandringen: prisförändringar följer en välartad fördelning där extrema utfall är extremt osannolika — svansarna är tunna och förutsägbara. Tre, arbitraget som mekanism: om en avvikelse uppstår kommer rationella aktörer att handela på den tills den försvinner. Black-Scholes-modellen från 1973 byggde exakt på denna värld och gjorde volatiliteten till något som kunde prissättas exakt. För Merton-skolan var finans inte längre hantverk utan naturvetenskap."
+          "content": "Den intellektuella grunden vilade på tre byggstenar. Först den effektiva marknadshypotesen: priser återspeglar all tillgänglig information, och avvikelser är slumpbrus. Sedan slumpvandringen: prisförändringar följer en välartad fördelning där extrema utfall är extremt osannolika — svansarna är tunna och förutsägbara. Tre: arbitraget som mekanism — om en avvikelse uppstår kommer rationella aktörer att handla på den tills den försvinner. Black-Scholes-modellen från 1973 byggde exakt på denna värld och gjorde volatiliteten till något som kunde prissättas exakt. För Merton-skolan var finans inte längre hantverk utan naturvetenskap."
         },
         {
           "type": "text",
-          "content": "För LTCM blev detta en affärsmodell. Tusentals små positioner, var och en med liten positiv förväntan, skulle enligt de stora talens lag jämna ut varandra till en jämn avkastningskurva. Diversifieringen mättes i historisk korrelation mellan marknader: amerikanska obligationer, japanska aktier, europeiska swapar — oberoende nok. Portföljrisken summerades i Value-at-Risk, VaR: med 95 procents konfidens förlorar vi inte mer än så mycket och så mycket på en dag. Eftersom varje enskild trade kunde visas »lågrisk« blev den logiska slutsatsen att hävstången inte ökade risken nämnvärt — bara avkastningen. Det var vetenskap, trodde man. Lowenstein beskriver hur Mertons världsbild — flytande, ständigt handelsbara marknader — gjorde likviditet till en fotnot snarare än en riskfaktor."
+          "content": "För LTCM blev detta en affärsmodell. Tusentals små positioner, var och en med liten positiv förväntan, skulle enligt de stora talens lag jämna ut varandra till en jämn avkastningskurva. Diversifieringen mättes i historisk korrelation mellan marknader: amerikanska obligationer, japanska aktier, europeiska swapar — oberoende nog. Portföljrisken summerades i Value-at-Risk: med 95 procents konfidens förlorar vi inte mer än så och så mycket på en dag. Eftersom varje enskild affär kunde visas »lågrisk« blev den logiska slutsatsen att hävstången knappast ökade risken — bara avkastningen. Det var vetenskap, trodde man. Lowenstein beskriver hur Mertons världsbild — flytande, ständigt handelsbara marknader — gjorde likviditeten till en fotnot snarare än en riskfaktor."
         },
         {
           "type": "text",
-          "content": "Kursen lyfter fyra blinda fläckar som Lowensteins skildring lägger bare. Ett: feta svansar — verkliga prisförändringar är vildare än normalfördelningen; händelser som enligt modellen ska inträffa en gång på universums ålder inträffar i verkligen varje decennium. Två: icke-stationaritet — korrelationer uppmätta under lugna år säger inget om krisår, när just de förhållanden som skapade datamaterialet upphör. Tre: likviditeten — modellerna antar att du alltid kan handla dig ur; i panik finns inga bud vid modellpris. Fyra: trängsel — när andra kopierar samma konvergenshandel blir utgången trång, och det som var en statistisk fördel blir ett systemiskt beroende."
+          "content": "Kursen lyfter fyra blinda fläckar som Lowensteins skildring lägger bart. Ett: feta svansar — verkliga prisförändringar är vildare än normalfördelningen; händelser som enligt modellen ska inträffa en gång på flera miljarder år inträffar i verkligheten i varje generation. Två: icke-stationaritet — korrelationer uppmätta under lugna år säger inget om krisår, när just de förhållanden som skapade datamaterialet upphör. Tre: likviditeten — modellerna antar att du alltid kan handla dig ur; i panik finns inga bud vid modellpris. Fyra: trängsel — när andra kopierar samma konvergenshandel blir utgången trång, och det som var en statistisk fördel blir ett systemiskt beroende."
         },
         {
           "type": "text",
@@ -281,7 +281,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Ta en modell du lever efter — »bostadspriser stiger i snitt fem procent«, »spreaden sluter sig alltid«, »jobbpropertyn är stabil«. Lista tre tillstånd som ligger utanför modellens data: krig, tvångsförsäljning, motpartsfall. Fråga sedan: vad gör modellen med dem? Svaret är inget — och det är poängen."
+          "content": "Ta en modell du lever efter — »bostadspriser stiger i snitt fem procent«, »spreaden sluter sig alltid«, »inkomsten är stabil«. Lista tre tillstånd som ligger utanför modellens data: krig, tvångsförsäljning, motpartsfall. Fråga sedan: vad gör modellen med dem? Svaret är inget — och det är poängen."
         }
       ],
       "quiz": [
@@ -316,7 +316,7 @@
             "Trängsel när alla kopierar samma affärer"
           ],
           "ratt": 2,
-          "tips": "Tre av alternativen handlar om vad modellen missar i världen — ett handlar om verktyget självt."
+          "tips": "Tre av alternativen handlar om vad modellen missar i världen — ett handlar om verktygets hastighet."
         }
       ]
     },
@@ -328,7 +328,733 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Familj ett: statsobligationer nya mot äldre. En nyligen utfärdad amerikansk tioårig obligation — »on the run« — handlas dyrare än en äldre, kemiskt nästan identig emission, för att institutioner vill ha just den mest omsatta papperet. LTCM köpte de äldre, illikvida papperen och sålde kort de nya, och tjänade på att preminmatural.. " 
+          "content": "Familj ett: statsobligationer, nya mot äldre. En nyligen utfärdad amerikansk tioåring — »on the run« — handlas dyrare än en äldre, i grunden identisk emission, eftersom institutioner vill ha just det mest omsatta papperet. LTCM köpte de äldre, illikvida papperen och sålde kort de nya, och tjänade på att likviditetspremien sjönk när obligationerna åldrades. Affären är i grunden en satsning på att bli betald för att bära det ingen annan vill ha: illikviditeten. I fredstid krymper premien och mynten samlas in. I panik — augusti 1998 — flyger kapitalet till just de nya, mest likvida papperen, och premien vidgas istället. Affären som skulle konvergera divergerar."
+        },
+        {
+          "type": "text",
+          "content": "Familj två: swap-spreads. Bankerna betalar fast ränta i ränteswappar mot att ta emot flytande; skillnaden mellan swapräntan och statens långa ränta — swap-spreaden — pendlar med bankernas kreditkvalitet och emissionsvolymer. LTCM satsade på att spreaden skulle krympa: ta emot fast ränta i swapen, sälja kort statsobligationer. Kanten var några hundradelar procent per år — vilket betyder att positionerna måste byggas i enorma notionaler för att synas i resultatet. Här bodde stora delar av den biljondollarnotional som kompletterade balansräkningen: inget lånat kapital, men massiv känslighet."
+        },
+        {
+          "type": "text",
+          "content": "Familj tre: aktievolatilitet. Implicit volatilitet på långa indexoptioner stod historiskt högt; LTCM tog positioner som tjänade på att den sjönk eller stannade — i praktiken att sälja försäkring mot kraftiga börsrörelser och plocka premien. Det var myntmetaforen i ren form: jämna, förklarade inkomster fram till den dag marknaden panikerar och den implicita volatiliteten exploderar. Familj fyra: fusionarbitrage — köp målbolaget, sälj köparen, plocka spreaden mot affärens genomförande. Familj fem: tillväxtmarknader och specialfall — ryska och andra tillväxtmarknadsobligationer, danska bolåneobligationer, japanska konvertibler. Global närvaro, fem kontinenter — och en portfölj som såg diversifierad ut i varje riskrapport."
+        },
+        {
+          "type": "text",
+          "content": "Men under ytan hade alla fem familjerna samma hjärta. De köpte likviditetspremier eller sålde försäkring mot panik i den ena eller andra formen, de finansierade kort via repo, och de antog att utgångarna skulle bli trånga men aldrig samtidiga. Lowenstein visar hur den nominella diversifieringen — obligationer emot aktier, USA emot Japan — dolde att allt var samma satsning: att marknaden inte skulle hamna i fritt fall med tvångsförsäljningar. När Ryssland föll var det just det som hände, och fem familjer förlorade pengar i samma vecka. AKM1:s V03-lära i analogin: intäktskällor som ser oberoende ut men alla beror av samma underliggande faktor är ingen diversifiering."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fem strategifamiljer — mekanism, dödsorsak, AKM1-lära\",\"rader\":[[\"Strategi\",\"Mekanism\",\"Vad dödade den 1998\",\"AKM1-lära\"],[\"Nya mot äldre statsobligationer\",\"Köp äldre, illikvida papper; sälj kort nya, dyra\",\"Flykten till trygghet vidde likviditetspremien\",\"V11 — likviditet är en position\"],[\"Swap-spreads\",\"Satsa på att spreaden krymper, i enorma notionaler\",\"Spreadarna exploderade när bankerna pressades\",\"V10 — notional är dold hävstång\"],[\"Aktievolatilitet\",\"Sälja implicit volatilitet som såg dyr ut\",\"Implicit volatilitet spikade — short vol förlorar snabbt\",\"V12 — intäkter som ser stabila ut tills svansen kommer\"],[\"Fusionarbitrage\",\"Köpa målbolag, sälja köparen, plocka spreaden\",\"Affärer sköts upp; spreadar vida sig\",\"Katalysator-risk — spreaden betalar för break-risken\"],[\"Tillväxtmarknader\",\"Bära ryska och andra tillväxtmarknadsskulder\",\"Ryssland defaultade; allt såldes samtidigt\",\"V19 — kriser sprider sig via kapitalbrist, inte via logik\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fem strategier på fem kontinenter kan vara en enda position om de alla köper likviditetspremien. Diversifiering mätt i historisk korrelation är ingen diversifiering — det är en förklädnad."
+        },
+        {
+          "type": "utmaning",
+          "content": "Plocka isär din egen portfölj eller ekonomi: vilka två exponeringar ser mest olika ut? Hitta den gemensamma faktor som kan slå mot båda samma dag — ränta, likviditet, dollar, riskaptit. Om du inte hittar någon: leta en gång till."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnan i affären mellan nya och äldre statsobligationer?",
+          "alternativ": [
+            "Köpa de nyligen utfärdade eftersom de är säkrast",
+            "Köpa äldre, illikvida papper och sälja kort de nya och dyrare — en satsning på att likviditetspremien krymper",
+            "Spekulera i att centralbanken sänker räntan",
+            "Valutaspekulation mellan dollar och yen"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vad fonden blev betald för att bära — risk eller obehag?"
+        },
+        {
+          "q": "Vad innebar det att LTCM sålde aktievolatilitet?",
+          "alternativ": [
+            "De köpte indexoptioner som skydd",
+            "De handlade bara aktier med låg volatilitet",
+            "De arrenderade ut volatilitet till banker",
+            "De tog positioner som tjänar på att volatiliteten sjunker eller är oförändrad — och förlorar accelererat när den stiger"
+          ],
+          "ratt": 3,
+          "tips": "Tänk försäkring: vem tar risken och vem får premien?"
+        },
+        {
+          "q": "Vilken gemensam nämnare förenade strategifamiljerna?",
+          "alternativ": [
+            "De var alla korta likviditet och volatilitet — de sålde trygghet och plockade betalningen",
+            "De var alla långa råvaror",
+            "De var alla valutaspel mot dollarn",
+            "De hade inget gemensamt — det var just det som diversifierade"
+          ],
+          "ratt": 0,
+          "tips": "Vad säljer en bank som får för mycket av samma sak? Vem köper trygghet i en kris?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Maskinen — hävstång, repo och 1,25 biljoner i derivat",
+      "intro": "Med cirka 4,7 miljarder i eget kapital bar LTCM en balansräkning på ungefär 125 miljarder — och bakom den skuggpositioner i derivat med notional över en biljon dollar. Detta kapitel visar maskineriet: hur repohandeln gjorde hävstången billig, och varför motparterna gav världens mest belånade fond de mjukaste villkoren — ända tills det spelade roll.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hävstångens aritmetik är enkel och hänsynslös. Med 25 delar skuld på en del kapital raderar en prisrörelse på fyra procent i boken hela ägarkapitalet; med 30:1 räcker dryga tre. LTCM:s kant per affär uppmättes ofta i någon enstaka baspunkt — och hundra procent av en baspunkt är en baspunkt. För att förvandla millimeteravkastning till fyrtioprocentiga år krävdes hävstång i den klassen. Det är kursens första V10-lära: hävstången var inte en olyckshändelse och ingen sidoeffekt — den var affärsmodellen. V10 Skuldsättningsgrad är i AKM1 just den variabeln: skuld i förhållande till eget kapital, och den bestäms avsiktligt, inte av marknaden."
+        },
+        {
+          "type": "text",
+          "content": "Finansieringen sköttes via repomarknaden: fonden pantsatte sina obligationer som säkerhet och lånade kontanter, rullade över lånen och återinvesterade i nästa position. Här öppnade prestige dörrar som var stängda för andra: eftersom motparterna konkurrerade om relationen med världens mest hyllade fond fick LTCM finansiering till nästan självkostnad, i praktiken utan säkerhetsavdrag — haircut nära noll — och med möjlighet att i viss utsträckning själv värdera sina positioner. Villkoren var paradisiska i fredstid. Men de vilade på ett enda antagande: att motparterna aldrig skulle vilja ut. Vilket är kursens V11-poäng: finansieringsvillkor är förhandsläge som håller exakt till dess du behöver dem — generösa när risken är som minst, indragna när den är som störst."
+        },
+        {
+          "type": "text",
+          "content": "Bakom balansräkningen öppnade derivaten en andra, osynlig hävstångsvåning. Swappar och optioner kräver lite kontanter framför hand — men innesluter enorm riktningsrisk. LTCM:s notional i derivat översteg en biljon dollar: betalningsflöden som existerar utan att registreras som lån, skulder utan ränta i fredstid och med ränta i kris. En iakttagare som bara läste balansräkningen saknade hälften av fonden. I AKM1:s språk: mät V10 på hela exponeringen — skuggposter och garantier inräknade — annars mäter du inte alls. ROE-illusionen hör hemma här också (V09): avkastning på eget kapital kan köpas med skuld; en hög ROE är lika ofta ett mått på balansräkningens konstruktion som på verksamhetens kvalitet."
+        },
+        {
+          "type": "text",
+          "content": "Vem kunde ha stoppat maskinen? Inte investerarna, som älskade kurvan; inte bankerna, som litade på modellerna och ville vara vänner; inte en regulator — hedgefonder stod utan kapitalkrav, och Fed var ingen tillsynsmyndighet för en fond i Greenwich i Connecticut. Den enda verkliga gränsen var motparternas vilja att fortsätta låna ut — en gräns som raderas exakt när förlusterna kommer. Det är mekanismen som kapitel 10 förvandlar till dödsspiral. Lowensteins summering av konstruktionen låter ungefär så: fonden som tänkt bortom kriser hade byggt sin överlevnad på antagandet att kriser aldrig inträffar."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre lager av hävstång\",\"rader\":[[\"Lager\",\"Storlek 1998\",\"Synlighet\"],[\"Eget kapital\",\"cirka 4,7 miljarder USD\",\"Offentligt — fondens ansikte utåt\"],[\"Balansräkning med repofinansierade positioner\",\"cirka 125 miljarder USD — hävstång 25-28:1\",\"Halvsynlig — krävde grävande för att se\"],[\"Derivat-notional i swappar och optioner\",\"över 1 biljon USD\",\"Osynlig — skuggposter i fotnoter\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hävstång köper avkastning med överlevnadstid. Och derivatnotional är skuld utan ränta i fredstid — med ränta i kris. Mät V10 på allt du bär, inte på det som syns."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på en tänkt portfölj i två versioner: utan hävstång och med 3:1. Priset faller 20 procent och du tvingas sälja till tio procent under marknad. Räkna ut vilken återhämtning varje version kräver för att återgå till noll. Skriv ner siffrorna — de är kursens kärna i miniformat."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför var hävstången en del av affärsmodellen snarare än en olycka?",
+          "alternativ": [
+            "Kanten per affär var ytterst tunn — utan multiplikator blev avkastningen obetydlig",
+            "Reglerna tvingade fonden att belåna",
+            "Kunderna krävde volatilitet",
+            "Datorerna fungerade bara med derivat"
+          ],
+          "ratt": 0,
+          "tips": "Vad blir en baspunkt per affär multiplicerat med hundratals affärer — och vad krävs för att det ska bli en avkastning?"
+        },
+        {
+          "q": "Hur finansierade LTCM i praktiken sina positioner?",
+          "alternativ": [
+            "Med långa bankkrediter till fast ränta",
+            "Med emissioner av egna obligationer",
+            "Med korta repolån mot obligationer som pant — rullade om kontinuerligt och ofta utan säkerhetsavdrag tack vare prestigen",
+            "Med lån från Internationella valutafonden"
+          ],
+          "ratt": 2,
+          "tips": "Tänk kort löptid, pant i obligationer och en veckoklocka som tickar."
+        },
+        {
+          "q": "Vad mäter AKM1:s V10?",
+          "alternativ": [
+            "Likviditet",
+            "Kapitalförbrukning",
+            "Återköp",
+            "Skuldsättningsgrad — skuld i förhållande till eget kapital"
+          ],
+          "ratt": 3,
+          "tips": "Vilket V-nummer svarar på frågan hur mycket du lånat per ägd krona?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Guldtiden — 43 och 41 procent och myten som växte",
+      "intro": "1995 och 1996 nettoavkastade LTCM cirka 43 och 41 procent — med svängningar jämförbara med en tråkig obligationsfond. Pengarna strömmade in, avgifterna gjorde partnerna förmögna bortom mått, och myten om den riskfria superegern blev självbärande. Sedan, i december 1997, tog fonden sitt ödesdigra beslut: att lämna tillbaka kapital till investerarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Siffrorna förblir hisnande. 1994, trots att fonden startade i februari mitt i en våldsam räntechock, nettoavkastade den omkring 20 procent. 1995: 59 procent brutto, cirka 43 netto. 1996: 57 brutto, 41 netto — uppnått med svängningar som en vanlig obligationsfond. Avgiftsmaskinen malde: två procent av förmögenheten och en fjärdedel av vinsten, år ut och år in. Partnerna återinvesterade arvodena, och vid krisens utbrott bar de själva nästan två miljarder dollar av fonden. Det fanns alltså verklig risktagning i egen ficka — och samtidigt en koncentration som gjorde undergången personlig för varje partner."
+        },
+        {
+          "type": "text",
+          "content": "Varför fungerade det? Spreadarna var fortfarande generösa efter början av 90-talets kaos, konkurrenterna få och exekveringsdisciplinen exceptionell. Men redan 1997 tunnade kanterna ut: nettoavkastningen föll till cirka 17 procent. Anledningen var enkel och illustrativ — investmentbankerna hade anställt LTCM:s alumner och kopierat affärerna. När spreadarna pressades ihop av konkurrens växte kapitalet snabbare än möjligheterna. En hederlig förvaltare med den insikten krymper fonden. LTCM valde en annan väg — som också var en krympning, men av fel variabel."
+        },
+        {
+          "type": "text",
+          "content": "I december 1997 beslutade fonden att lämna tillbaka 2,7 miljarder dollar till investerarna och behålla cirka 4,7. Det presenterades som omtanke: kapitalet var större än strategierna behövde. Men positionerna krympte inte i motsvarande grad, och därmed steg den effektiva hävstången — samma balansräkning bars nu av mindre kapital. Kursen noterar den besynnerla symmetrin med AKM1:s V20 (Återköp): att lämna ut kapital utan att avveckla risk är spegelbilden av ett återköp finansierat med skuld — båda höjer V10 och gör konstruktionen mer konjunkturkänslig, inte mindre. Kapitalåterlämning är i sigken varken bra eller dålig; den är bara bra om risken minskar i takt."
+        },
+        {
+          "type": "text",
+          "content": "Samtidigt växte myten. Institutionsinvesterare tiggde om plats; UBS kapitalskyddade noter spred evangeliet; och i oktober 1997 kom Nobelpriset som krona på verket. Ingen ställde den enda fråga som betydde något: vad händer när alla som äger samma affärer vill ut samtidigt? Guldtider skapar nämligen alltid det som guldtider skapar — en tro på att kurvan är en naturlag. Lowenstein noterar att fondens egen riskmätning vid den här tiden visade att den tog större risker än någonsin. Det är inte fusk som dödar superstjärnor; det är att de slutar tro att reglerna gäller dem."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Åren i siffror\",\"rader\":[[\"År\",\"Nettoavkastning\",\"Kommentar\"],[\"1994\",\"cirka 20 procent\",\"Start i februari mitt i räntechocken\"],[\"1995\",\"cirka 43 procent\",\"Brutto 59 procent — guldet\"],[\"1996\",\"cirka 41 procent\",\"Brutto 57 procent — imitatörerna anländer\"],[\"1997\",\"cirka 17 procent\",\"Spreadar hoppressade; kapitalöverskott\"],[\"1998\",\"minus cirka 90 procent\",\"Nio månader från stjärnstatus till räddning\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "När avkastningen faller men egoet består finns två hederliga vägar: krymp fonden eller krymp hävstången. Att lämna tillbaka kapital men behålla positionerna gör ingen av delarna — det höjer V10 i tysthet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Föreställ dig ett bolag du äger som genomför ett stort återköp eller en extrautdelning samtidigt som skulderna består. Vilka V-tal rör sig åt vilket håll — och vad händer med marginalen i en nedgång? Skriv två meningar och spara dem till kapitel 14."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför föll avkastningen 1997?",
+          "alternativ": [
+            "Marknaden blev ineffektiv igen",
+            "Imitatörer kopierade affärerna och pressade spreadarna — kapitalet växte snabbare än möjligheterna",
+            "Avgifterna sänktes",
+            "Fondens nyckelpersoner slutade"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en tunn kant när den blir allmän egendom?"
+        },
+        {
+          "q": "Vad blev den praktiska effekten av att lämna tillbaka 2,7 miljarder i början av 1998?",
+          "alternativ": [
+            "Säkerhetsmarginalen ökade",
+            "Ingen — kapitalet var overksamt",
+            "Avgiftsintäkterna fördubblades",
+            "Den effektiva hävstången steg, eftersom positionerna inte krympte i takt med kapitalet"
+          ],
+          "ratt": 3,
+          "tips": "Räkna på bråket: samma täljare, mindre nämnare."
+        },
+        {
+          "q": "Ungefär hur mycket av partnernas egna pengar satt i fonden vid krisen?",
+          "alternativ": [
+            "Obetydligt — de hade tagit ut allt",
+            "Knappt två miljarder dollar — arvodena återinvesterades, vilket gjorde undergången personlig",
+            "Hundra miljoner dollar",
+            "Endast Meriwethers kapital"
+          ],
+          "ratt": 1,
+          "tips": "Vad hände med de enorma arvodena från guldtiden?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Sommaren 1998 — Ryssland defaultar och allt rör sig fel samtidigt",
+      "intro": "Kollapsen började inte i Greenwich. Våren 1998 stängde Salomon Smith Barney sin arbitrageenhet och tömde positioner som speglade LTCM:s; juni blev den värsta förlustmånaden hittills; den 17 augusti defaultade Ryssland; och fredagen den 21 augusti förlorade fonden över en halv miljard dollar på en enda dag. Alla fem strategifamiljer rörde sig fel — samtidigt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Våren 1998 var luften redan tunn efter Asienkrisen. När den sammanslagna Salomon Smith Barney beslutade stänga sin arbitrageenhet och likvidera boken hamnade positioner som nästan exakt speglade LTCM:s ut på marknaden — och spreadarna rörde sig emot fonden, affär för affär. Det är trängselns mekanism i slow motion: dina spegelbilder blir dina motparter på väg ut. Juni blev den värsta månaden hittills, med en förlust nära en halv miljard dollar. Inom fonden rådde fortfarande en professors tålamod: avvikelser är tillfälliga, konvergensen kommer. Kapitalet stod för en hävstång strax under toppnivåerna."
+        },
+        {
+          "type": "text",
+          "content": "Den 17 augusti devalverade Ryssland rubeln och meddelade en de facto-default på sina skulder i rubel. LTCM:s direkta Rysslandsexponering var överraskande modest — men det spelade ingen roll, för det var inte epicentrumet som dödade fonden utan tryckvågen. Utländska investerare som bränt sig i Ryssland drog hem kapital från allt de kunde sälja; hedgefonder med likviditetsproblem avyttrade amerikanska obligationer och europeiska swapar; kapitalet flydde till de mest likvida, tryggaste papperen — de nyaste amerikanska statsobligationerna. Varje spread fonden var long vidgades; varje försäkring den sålt steg i värde åt fel håll."
+        },
+        {
+          "type": "text",
+          "content": "Fredagen den 21 augusti blev den svartaste dagen: en endagsförlust på omkring 550 miljoner dollar. Swap-spreadarna i Europa och USA exploderade, den implicita aktievolatiliteten spikade, fusionsspreadar gapade, japanska och danska positioner föll. Vid månadens slut hade kapitalet krympt från 4,8 miljarder vid årsskiftet till omkring 2,1 miljarder — medan balansräkningen slagits först långsamt. Hävstången, räknad på papperet, närmade sig det dubbla av toppnivåerna. Månadens sammanlagda förlust uppgick till nästan två miljarder dollar. Lowenstein beskriver hur telefonerna i Greenwich tystnade och hur partnerna för första gången såg boken röra sig som en enda organism."
+        },
+        {
+          "type": "text",
+          "content": "September inleddes med en kapitaljakt utan like. Fonden erbjöd nya andelar till djupa rabatter för att täppa till hålen; Soros och Quantum diskuterade ett tillskott om ett halvt miljardbelopp — villkorat på att betydligt större belopp hämtades in av andra före månadsskiftet, vilket misslyckades; UBS och de flesta andra nappade inte. Bear Stearns, fondens clearingbank, krävde ytterligare en säkerhetsbuffert. Varje motpart började märka positionerna strängare — ofta samma banker som själva ägde spegelpositioner. Klockan tickade: tekniskt kunde vilken stor motpart som helst utlösa en tvångslikvidation genom att dra finansieringen."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tidslinje 1998 — händelse, mekanism, effekt\",\"rader\":[[\"Tid\",\"Händelse\",\"Effekt på LTCM\"],[\"Vår\",\"Salomon Smith Barney stänger sin arbitrageenhet\",\"Spegelpositioner säljs ut — spreadar rör sig emot fonden\"],[\"Juni\",\"Förlustmånad nära en halv miljard\",\"Kapitalet pressas; modellerna säger tillfälligt\"],[\"17 augusti\",\"Ryssland devalverar och defaultar på skuld i rubel\",\"Global flykt till trygghet — spreadar vida sig\"],[\"21 augusti\",\"Panikfredagen\",\"Endagsförlust omkring 550 miljoner USD\"],[\"Slutet av augusti\",\"Kapitalet nere vid cirka 2,1 miljarder\",\"Hävstången stiger mot det dubbla av toppen\"],[\"September\",\"Kapitaljakt och krav på säkerhet\",\"Motparter kan tekniskt stänga fonden vilken dag som helst\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är aldrig vad du förlorar i krisens epicentrum. Frågan är vad alla dina positioner har gemensamt när paniken sprider sig — och vad du tvingas sälja först."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta din lista från kapitel 1. Lägg till en kolumn: »vad tvingas jag sälja den dagen allt faller samtidigt — och till vilket pris?« Det är den kolumnen som avgör om du lever längre än krisen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den omedelbara utlösaren i augusti 1998?",
+          "alternativ": [
+            "En amerikansk recessionsrapport",
+            "Ett tekniskt fel hos en clearingbank",
+            "ECU:s sammanbrott",
+            "Rysslands devalvering och de facto-default på skulder i rubel den 17 augusti"
+          ],
+          "ratt": 3,
+          "tips": "Datumet 17 augusti 1998 står för något politiskt och monetärt beslut österut."
+        },
+        {
+          "q": "Varför skadade Ryssland LTCM långt mer än fondens direkta Rysslandsexponering motiverade?",
+          "alternativ": [
+            "Fondens hela bok bestod av ryska papper",
+            "Rubeln var fondens huvudvaluta",
+            "Ryssland nationaliserade fondens tillgångar",
+            "Defaulten utlöste en global flykt till trygghet som vidgade i princip varje spread fonden var long — mekanismen, inte epicentrum, dödade"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vad investerare som förlorat i Moskva gjorde med allt annat de ägde."
+        },
+        {
+          "q": "Hur stora var förlusterna den värsta dagen, fredagen den 21 augusti?",
+          "alternativ": [
+            "Cirka 55 miljoner dollar",
+            "Cirka 5,5 miljarder dollar",
+            "Omkring 550 miljoner dollar — över en halv miljard på en enda fredag",
+            "Cirka 1,5 miljarder dollar"
+          ],
+          "ratt": 2,
+          "tips": "Räkna baklänges: augustis totala nästan två miljarder fördelade på några få katastrofdagar."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Korrelationens förräderi — diversifieringen som försvann",
+      "intro": "LTCM:s riskmodeller byggde på historisk korrelation: tusentals oberoende småslag skulle jämna ut varandra till en jämn kurva. I augusti 1998 gick korrelationerna mot ett — alla positioner föll tillsammans. Detta är kursens teoretiska kärna: varför diversifiering i lugnt väder är en illusion, och vad AKM1:s V03 och V12 har att lära.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Modellernas logik: med tusentals positioner vars parvisa korrelation uppmätts lågt, ofta nära noll, skulle de stora talens lag göra dagens sammanlagda resultat förutsägbart. VaR-modellen spottade ur sig en maxförlust per dag som kändes hanterbar, och kapitalbufferten dimensionerades efter den. Sedan kom augusti. Dagliga förluster som enligt modellens matematik skulle inträffa en gång på flera miljarder år inträffade — flera veckor i rad. Det är inte mystik; det är vad som händer när fördelningen man antog inte är fördelningen som finns."
+        },
+        {
+          "type": "text",
+          "content": "Varför går korrelationerna mot ett i kris? Tre skäl, alla synliga hos LTCM. För det första gemensam finansiering: alla aktörer i samma positioner finansierar på samma repomarknad, och när finansieringen stryps tvingas alla sälja samma saker. För det andra gemensam riskfaktor: under ytan var alla fem strategifamiljerna samma satsning — kort likviditet, kort volatilitet — och när den faktorn slog, slog den allt. För det tredje trängsel: när utgången är trång blir allas försäljning allas pris. Lowensteins torra konstaterande: fonden som ägde allt var i grunden long en enda sak."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s språk finns två närliggande lärdomar. V03 Intäktsdiversifiering: intäktskällor som ser oberoende ut men alla beror av samma underliggande faktor — här: riskaptiten och likviditeten i globala kapitalmarknader — ger falsk diversifiering. V12 Intäktsstabilitet: en avkastning som är extremt stabil i fredstid, som försäkringspremier eller såld volatilitet, är inte stabil — den bär sin risk gömd i sällsynta, jättestora betalningar. En kurvas jämnhet säger ingenting om kurvans framtid; den säger bara att svansen inte har kommit ännu."
+        },
+        {
+          "type": "text",
+          "content": "Den praktiska konsekvensen för AKM1-användaren: stress-testa alltid korrelationer till ett. Fråga inte »hur har dessa tillgångar rört sig tillsammans historiskt?« utan »vilken gemensam mekanism kan få dem att falla samma månad, och vad gör jag den månaden?«. Och mät diversifiering i mekanismer — varför betalas jag? vem äger samma sak? vem tvingas sälja samtidigt med mig? — inte i namn eller i en korrelationsmatris. LTCM hade den bästa korrelationsmatrisen på planeten; den var byggd på fem år som inte innehöll en enda dag som augusti 1998."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Diversifieringens tre nivåer\",\"rader\":[[\"Nivå\",\"Lugna år\",\"Krisår\",\"AKM1-lära\"],[\"Tillgångar\",\"Olika namn, olika kurvor\",\"Alla rörelser synkroniserade\",\"Mät mekanismer, inte tickers\"],[\"Strategier\",\"Fem familjer med egen logik\",\"En satsning: kort likviditet och vol\",\"V03 — falsk intäktsdiversifiering\"],[\"Förklaringsfaktorer\",\"Många; data ger låga korrelationer\",\"En enda: tvång och finansiering\",\"V12 — stabil i fred är inte stabil i kris\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Korrelation är inte en egenskap hos tillgångarna — den är en egenskap hos paniken. I krisen återstår en enda faktor: vem som tvingas sälja."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör ett tankeexperiment på din ekonomi: imorgon blir alla korrelationer ett — allt du äger faller 25 procent på en månad och någon kräver samtidigt säkerhet eller inlösen. Räkna ut din överlevnadstid i månader. Om svaret känns obehagligt kort har du förstått kapitlet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med korrelationerna mellan LTCM:s positioner i augusti 1998?",
+          "alternativ": [
+            "De blev negativa — perfekt hedge",
+            "De blev noll",
+            "De var oförändrade",
+            "De gick mot ett — allt föll samtidigt"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad fem »oberoende« böcker gör när alla säljs av samma skäl."
+        },
+        {
+          "q": "Vilken djupare satsning låg under alla fem strategifamiljerna?",
+          "alternativ": [
+            "Lång olja",
+            "Kort likviditet och kort volatilitet — fonden sålde trygghet i alla dess former",
+            "Lång dollar",
+            "Korta japanska aktier"
+          ],
+          "ratt": 1,
+          "tips": "Vad säljer den som erbjuder alla andra att slippa bära obehag?"
+        },
+        {
+          "q": "Hur ska diversifiering enligt kursen mätas?",
+          "alternativ": [
+            "I antal positioner",
+            "I historisk korrelation från fem lugna år",
+            "I indexmedlemskap",
+            "I mekanismer — varför betalas jag, och vem tvingas sälja samma sak samtidigt som jag?"
+          ],
+          "ratt": 3,
+          "tips": "Vilket sätt att mäta hade avslöjat att fem strategier var en enda?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Likviditetsdöden — margin calls och den onda spiralen",
+      "intro": "När förlustarna kom krävde motparterna mer säkerhet — och LTCM tvingades sälja i marknader där köparna försvunnit. Försäljningarna pressade priserna, vilket utlöste nya margin calls: den onda spiralen. I september bar omkring 600-700 miljoner dollar i kapital en balansräkning på över hundra miljarder — en mekanisk hävstång vida över 100:1.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken är värd att lära sig i detalj, för den är universell. LTCM:s positioner finansierades med pantlån; när positionerna föll i värde krävde motparterna mer säkerhet — margin calls. De mjuka villkor fonden en gång fått, säkerhetsavdrag nära noll och egen värdering, försvann på några veckor; nu märkte bankerna positionerna åt sig själva, ofta nedåt, och krävde buffertar i kontanter. Bear Stearns, som clearingbank, krävde en extra säkerhetsbuffert bara för att fortsätta hantera flödena. Varje enskilt krav var rationellt ur bankens perspektiv. Tillsammans utgjorde de en dödsdom."
+        },
+        {
+          "type": "text",
+          "content": "Spiralen: fonden säljer för att möta ett krav. Det den måste sälja — äldre obligationer, swappositioner, optionsböcker — är illikvidt; köparna är få och rabatthungriga. Försäljningen pressar priserna, prisfallet slår mot kvarvarande positioner, nya margin calls föds, nytt tvång. Och den grymmaste paradoxen: ju mer fonden sålde, desto högre blev hävstången — kapitalet föll snabbare än balansräkningen. Konvergensmatematiken var förmodligen fortfarande riktig; spreadarna kom faktiskt att stängas senare. Men det finns en äldre regel än konvergensen: marknaden kan förbli irrationell längre än du kan förbli solvent. Tidsgränsen sätts inte av sanningen utan av den som kan kräva pengarna tillbaka i morgon."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna under september: från 2,1 miljarder i slutet av augusti smalt kapitalet med omkring en och en halv miljard på tre veckor — ned mot 600-700 miljoner den 21-22 september. Balansräkningen hade knappast hunnit halveras. Mekaniskt sett bar fonden då en hävstång vida över 100:1, och varje ytterligare procent i boken motsvarade förluster som raderade det som återstod. Lowenstein beskriver hur partnerkapitalet — de återinvesterade arvodena, nästan två miljarder — i princip utplånades. Här klarnar V19-läran: kapitalförbrukning i stress är inte en långsam urholkning utan ett stup, och den som måste hämta nytt kapital i panik säljer sin framtid till dagens pris."
+        },
+        {
+          "type": "text",
+          "content": "V11 Likviditet i AKM1:s system: likviditet är ingen egenskap hos en tillgång utan ett tillstånd hos en marknad — och det är förhandsvisat. Det finns i överflöd när du inte behöver det och försvinner exakt när du behöver det. Frågorna till vilken exponering som helst: hur är den finansierad, vem kan kräva den tillbaka, på vilken uppsägningstid, och vad händer den dag alla kräver samtidigt? Bolag som rullar företagsobligationer, hushåll som rullar bolåneräntor, fonder med daglig inlösen — alla bär samma mekanism som LTCM, i mindre skala."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den onda spiralen — sex steg\",\"rader\":[[\"Steg\",\"Händelse\",\"AKM1-koppling\"],[\"1\",\"Positioner rör sig emot fonden\",\"V10 — hävstången förstorar\"],[\"2\",\"Motparter kräver mer säkerhet\",\"V11 — finansieringen dras in\"],[\"3\",\"Fonden säljer för att möta kraven\",\"V11 — likviditet prisas ned\"],[\"4\",\"Prisfallet slår mot kvarvarande positioner\",\"V10 — hävstången stiger när kapitalet faller\"],[\"5\",\"Nya margin calls föds\",\"Spiralen upprepas snabbare\"],[\"6\",\"Motparter kan stänga fonden\",\"V19 — utan nytt kapital dör positionen före sanningen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du kan ha rätt i fundamenten och ändå gå under. Solvent är inte samma sak som likvid — och det är likviditeten som avgör om du får vara med när sanningen anländer."
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita en finansieringskarta över dina exponeringar: vem kan kräva säkerhet eller inlösen inom 30 dagar — bank, mäklare, arbetsgivare, hyresvärd, motpart? Addera det värsta sammanlagda kravet och ställ det mot din likvida buffert. Kvoten är ditt verkliga V11-betyg."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför räddade inte korrekt konvergensmatematik fonden?",
+          "alternativ": [
+            "Matematiken var helt enkelt fel",
+            "Fed förbjöd fonden att handla",
+            "Positionerna var för små för att spela roll",
+            "För att tvångsförsäljningar och margin calls kan tömma kapitalet långt innan spreadarna sluter sig — solvent är inte samma sak som likvid"
+          ],
+          "ratt": 3,
+          "tips": "Vem bestämmer när du måste realisera — marknaden eller din modell?"
+        },
+        {
+          "q": "Vad hände med den effektiva hävstången i september när kapitalet smalt?",
+          "alternativ": [
+            "Den sjönk eftersom tillgångar såldes av",
+            "Den blev i princip oförändrad",
+            "Den steg vida över 100:1 — kapitalet föll snabbare än balansräkningen",
+            "Fonden slutade mäta den"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på bråket: täljare och nämnare — vilken föll snabbast?"
+        },
+        {
+          "q": "Vilken är AKM1:s V11-lära från likviditetsdöden?",
+          "alternativ": [
+            "Likviditet är alltid gratis",
+            "Likviditet spelar ingen roll för den långsiktige",
+            "Likviditet är detsamma som volatilitet",
+            "Likviditet är ett tillstånd hos marknaden som försvinner när det behövs — mät den i stress, inte i fredstid"
+          ],
+          "ratt": 3,
+          "tips": "När fanns riklig likviditet i historien — och när försvann den?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Rescuen — Feds rum, 14 banker och 3,625 miljarder",
+      "intro": "Den 23 september 1998 samlade New York Feds ordförande William McDonough cheferna för ett stort antal banker i Federal Reserves lokaler i New York. Frågan var inte om LTCM förtjänade att räddas — utan vad en tvångslikvidation av en biljondollarsbok skulle göra med ett system som redan blödde. Eftermiddagen slutade med att fjorton banker gemensamt lade in 3,625 miljarder dollar och tog 90 procent av fonden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Veckorna före var en enda kapitaljakt. Soros och Quantum diskuterade ett tillskott om ett halvt miljardbelopp — men villkorade det på att LTCM först hämtade in betydligt större belopp av andra, vilket misslyckades. J.P. Morgan försökte sy ihop banker till en gemensam injektion. Och på rescuens morgon, den 23 september, kom en konkurrerande livlina: Warren Buffett, med Goldman Sachs och AIG, bjöd omkring 250 miljoner dollar för portföljen plus ett kapitaltillskott på 3,75 miljarder — totalt i storleksordningen fyra miljarder. Men budet krävde att Meriwether och partnerna lämnade, hade skattetkniska och strukturella problem, och föll ut vid lunchtid. Lowenstein skildrar morgonen som en pokerhand där LTCM satt med en klocka i stället för kort."
+        },
+        {
+          "type": "text",
+          "content": "Samma förmiddag agerade New York Fed. Ordföranden William McDonough — inte den politiska Federal Reserve i Washington, men den marknadsnära gren som handskakar Wall Street varje dag — sammankallade bankcheferna. Hans argument var systemets självbevarelsedrift: fondens bok på över hundra miljarder var sammanflätad med varenda storbank som motpart; en tvångslikvidation i panikslagna marknader skulle pressa ned varenda spread igen, slå mot bankernas egna spegelpositioner och riskera en kedja av fall. Inga allmänna medel fanns med i bilden: Fed medlade, bankerna betalade. Och bankerna kom av egoistiska skäl — de räddade i grunden sina egna exponeringar och marknadens funktion, inte fondens ägare."
+        },
+        {
+          "type": "text",
+          "content": "Affären: fjorton banker — bland dem Goldman Sachs, Merrill Lynch, J.P. Morgan, Morgan Stanley, Travelers, Lehman Brothers, UBS, Deutsche Bank, Credit Suisse First Boston, Barclays, Bankers Trust, Chase, Société Générale och Paribas — slog ihop 3,625 miljarder dollar och fick 90 procent av fonden; de gamla ägarna behöll tio. Partnerna fick stanna som förvaltare, eftersom bankerna inte kunde driva boken själva. Och notera vad som räddades: inte investerarna, som redan förlorat omkring 90 procent, utan motparterna och marknadsfunktionen. Det är hela skillnaden mellan att rädda en fond och att rädda systemet från en fond."
+        },
+        {
+          "type": "text",
+          "content": "Efterspelet på marknaden: oron bestod en tid, men Federal Reserve sänkte räntan tre gånger på sju veckor — den 29 september, den 15 oktober och den 17 november — delvis med hänvisning till marknadsstressen. Konsortiet drev fonden i lugn takt genom 1999; när marknaderna återhämtade sig konvergerade spreadarna — precis som LTCM-spådomarna sade — och bankerna återfick i det närmaste sina pengar, en del med liten vinst. Portföljen hade alltså »rätt«; den skyldige var inte strategin utan konstruktionen. Ironin är nästan outhärdlig: boken som tvingat fram en räddning betalade tillbaka räddarna — men först sedan ägarna ruinerats och precedenten satts."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Räddningens aktörer och roller\",\"rader\":[[\"Aktör\",\"Roll\",\"Intresse\"],[\"NY Fed och William McDonough\",\"Sammankallade och medlade — ingen statlig krona\",\"Förhindra eldspridning till hela marknaden\"],[\"14 banker (Goldman, Merrill, J.P. Morgan, Morgan Stanley, UBS med flera)\",\"Slog ihop 3,625 miljarder för 90 procent av fonden\",\"Skydda egna exponeringar och marknadsfunktionen\"],[\"Warren Buffett med Goldman och AIG\",\"Konkurrerande morgonbud — cirka 250 miljoner för portföljen plus 3,75 miljarder nytt kapital\",\"Köpa portföljen billigt; villkoret att partnerna lämnade sänkte budets praktiska värde för fonden\"],[\"Meriwether och partnerna\",\"Kvar som förvaltare av spillrorna\",\"Rädda det som räddas kunde\"],[\"Fondens investerare\",\"Utspädda; kvar med 10 procent\",\"Hade redan förlorat cirka 90 procent\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Rescuen räddade inte LTCM — den räddade LTCM:s motparter från LTCM. Ägarna förlorade nästan allt; systemet skonades. Den asymmetrin är hela moral hazard-debatten."
+        },
+        {
+          "type": "utmaning",
+          "content": "Anta att en stor aktör i din närhet räddas »för systemets skull«. Skriv tre rader: vem betalar, vem skyddas, och vad lär sig alla övriga om risk? Spara svaret till nästa kapitel."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vems pengar genomförde räddningen?",
+          "alternativ": [
+            "Federal Reserves egna medel",
+            "Skattemedel anslagna av kongressen",
+            "Internationella valutafondens",
+            "Fjorton privatbanker som gemensamt lade in 3,625 miljarder dollar för 90 procent av fonden"
+          ],
+          "ratt": 3,
+          "tips": "Fed:s roll var att sammankalla och medla — vem skrev checken?"
+        },
+        {
+          "q": "Varför vägrade bankerna att bara låta fonden kollapsa?",
+          "alternativ": [
+            "De trodde fortfarande på fondens modeller",
+            "De fruktade att en tvångslikvidation av en bok på över hundra miljarder i redan panikslagna marknader skulle dra med sig systemet — inklusive deras egna spegelpositioner",
+            "Fed kunde lagligen tvinga dem",
+            "De ville behålla fonden som kund"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vem som var motpart och medägare till samma positioner."
+        },
+        {
+          "q": "Vad hände med Buffett-gruppens bud den 23 september?",
+          "alternativ": [
+            "Det accepterades men bankerna överbjöd det i sista stund",
+            "Det kom en vecka för sent",
+            "Det var i stort generöst men krävde att Meriwether och partnerna lämnade — och var korttidat; budet föll ut vid lunchtid och bankernas konsortium blev slutet",
+            "Fonden tackade ja men rätten ogillade det"
+          ],
+          "ratt": 2,
+          "tips": "Vem skulle få gå om budet gått igenom — och hur lång var deadlines?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Moral hazard — när »too big to fail« föddes",
+      "intro": "Räddningen kritiserades omedelbart: hade Fed lärt Wall Street att systemviktiga aktörer alltid skyddas? Greenspan och McDonough försvarade beslutet — inga allmänna medel, ägarna förlorade — men precedenten var satt. Detta kapitel gräver i moral hazard-frågan och i efterspelet för människorna bakom rubrikerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fallet för räddningen: kreditsystemet fungerade knappt; LTCM:s bok var sammanflätad med varenda storbank; alternativet var en okontrollerad brand i amerikanska obligationer och europeiska swapar. McDonough betonade att bankerna agerade i eget intresse och att inga skattemedel, ingen Fed-kredit och ingen garanti fanns med — och att fondens ägare förlorat i princip allt. Om det är en bailout, frågade försvararna, var finns då de räddade? Svaret — borgenärerna — bekräftar samtidigt kritikens poäng."
+        },
+        {
+          "type": "text",
+          "content": "Fallet mot räddningen: borgenärerna gick i princip oskadda ur det hela och drog den rationella slutsatsen — att utlåning till systemviktiga aktörer bär en dold garanti. Feds sammankallande var i sig maktutövning: att tacka nej till ett möte på Fed var teoretiskt möjligt och praktiskt otänkbart. I kongressförhör pressade politikerna Greenspan, McDonough och SEC:s ordförande Arthur Levitt — varför tillät man att en oreglerad fond blev systemkritisk, och vilken signal sänder räddningen? Uttrycket »too big to fail« gick från banktillsynens fotnoter till dagligt språk. Kursen noterar den svenska parallellen: bankkrisen 1991-93 och den allmänna bankgarantin 1992 förde samma debatt — vems förluster socialiseras när vinsterna förblir privata?"
+        },
+        {
+          "type": "text",
+          "content": "Människorna efteråt: Mertons och Scholes Nobel-troféer fick en permanent asterisk — teorin förblev ädel, men tilltron till den blev varnande exempel. Rosenfeld återvände delvis till akademin; Mullins lämnade rampljuset; Hilibrand och de övriga partnerna förlorade det mesta av sina återinvesterade förmögenheter. Meriwether grundade JWM Partners redan 1999 och drev åter konvergenshandel med lägre hävstång — och drabbades igen 2008, när fondens huvudprodukt föll kraftigt. Mönstret är kursens dyraste lärdom: samma strategi, mindre hävstång, fortfarande skör. Genialitet flyttar inte bristningspunkten; den flyttar bara tron på bristningspunkten."
+        },
+        {
+          "type": "text",
+          "content": "Och motfrågan som gör debatten så svår: vad skulle ha hänt utan räddningen? Ingen vet — och det är precis det som gör moral hazard-argument billiga att framföra i efterhand. Kostnaden för det som inte hände är osynlig; kostnaden för räddningen syns som precedent. Lowenstein, som följt aktörerna nära, landar i en nyanserad hållning: räddningen var förståelig — kanske nödvändig — men den prissattes fel, för den var gratis för dem som löpte störst risk. En räddning som straffar ägare men aldrig borgenärer lär bara ut hälften av lektionen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Räddningen — två läsningar\",\"rader\":[[\"Fråga\",\"Försvar (Greenspan och McDonough)\",\"Kritik (moral hazard-lägret)\"],[\"Vem betalade?\",\"Bankerna själva — inga allmänna medel\",\"Bankerna räddade sina egna exponeringar — det är poängen\"],[\"Straffades ägarna?\",\"Ja — cirka 90 procent av kapitalet förlorades\",\"Borgenärerna skonades och lärde sig fel läxa\"],[\"Alternativet?\",\"Brand i hela kreditsystemet\",\"Okänt — och just därför billigt att påstå\"],[\"Långsiktig effekt?\",\"Systemet hölls stabilt\",\"Precedens: systemviktiga aktörer förväntar sig skydd\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Moral hazard handlar inte om vad som hände — utan om vad nästa generation lär sig förvänta sig. Räddningen köpte lugn 1998 och skrev ett optionskontrakt på framtida räddningar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Formulera din egen princip: vem ska räddas, med vems pengar och på vems villkor? Testa principen mot tre fall — en systembank, ett pensionslöfte, en hedgefond. Om den inte håller för alla tre: är det principen eller fallen som undantar sig?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den klassiska moral hazard-invändningen mot rescuen?",
+          "alternativ": [
+            "Att Fed använde skattepengar",
+            "Att fonden fick för lite nytt kapital",
+            "Att räntesänkningarna kom för sent",
+            "Att borgenärerna skonades — och därmed lärde sig att utlåning till systemviktiga aktörer bär en dold garanti"
+          ],
+          "ratt": 3,
+          "tips": "Vem förlorade och vem gick fri — och vad lär sig den som gick fri?"
+        },
+        {
+          "q": "Vad hände med LTCM:s ägare i räddningen?",
+          "alternativ": [
+            "De fick kapitalet till fullt värde",
+            "De behöll kontrollen över fonden",
+            "De utspäddes till en tiondel och hade redan förlorat omkring 90 procent — räddningen skyddade systemet, inte dem",
+            "De stämdes av bankerna på skadestånd"
+          ],
+          "ratt": 2,
+          "tips": "Skillnaden mellan att rädda en fond och att rädda systemet från en fond."
+        },
+        {
+          "q": "Vad hände med Meriwethers nästa fond, JWM Partners, under 2008?",
+          "alternativ": [
+            "Den gick i konkurs direkt",
+            "Den föll kraftigt igen — samma strategi med lägre hävstång var fortfarande skör",
+            "Den avvecklades frivilligt före krisen",
+            "Den klarade sig oskadd tack vare nya regler"
+          ],
+          "ratt": 1,
+          "tips": "Vad ändrades i strategin mellan 1998 och 2008 — och vad ändrades inte?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Debatten — modellfel eller otur? Taleb mot försvararna",
+      "intro": "Var det idioti eller otur? Försvararna säger: strategierna var statistiskt sunda, modellerna hanterade 98 procent av utfallen — svansarna och hävstången dödade. Kritikerna, tydligast Nassim Nicholas Taleb, svarar: att spela rysk roulette och överleva fem omgångar bevisar inte att revolvern var oladdad. Kursen tar ingen sida — men visar vilka skydd som gäller i båda världarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Försvaret, i dess starkaste form: varje LTCM-affär hade en liten, verklig positiv förväntan byggd på decennier av prisdata. Diversifieringen var äkta under normala förhållanden. Chocken 1998 — Rysslands default plus en korrelationskollaps utan motstycke — ligger många standardavvikelser utanför allt datamaterial; en fond med samma strategier och måttlig hävstång hade överlevt 1998 och sannolikt tjänat stort på den efterföljande konvergensen, vilket konsortiets senare återhämtning antyder. Felet, enligt försvaret, var inte vetenskapen utan positioneringen: storleken och hävstången. Med halverad belåning är 1998 en djup vallgrav fonden går igenom — inte ett gravval den faller i."
+        },
+        {
+          "type": "text",
+          "content": "Talebs angrepp, framarbetat i Fooled by Randomness och senare The Black Swan: LTCM sålde svansrisk för slantar. Fem års jämna vinster bevisar ingenting om säkerheten — de bevisar bara att revolverns kamrar som lossades var tomma. Att efteråt kalla händelsen »tio sigma« är modellarrogans: världen har ingen skyldighet att lyda vår fördelning, och att mäta osannolikhet med en modell byggd på fem lugna år är som att spela rysk roulette utan att veta om revolvern är laddad — och ta betalt för att hålla den. Det avgörande Taleb-påståendet: smidig avkastning och säker strategi är inte samma sak; ibland är den jämna kurvan premien för att bära en dold katastrof i fickan."
+        },
+        {
+          "type": "text",
+          "content": "Mittenpositionen, som också ligger nära Lowensteins egen läsning: modellerna var inte idiotiska — tron att modeller kunde ersätta omdöme var det. Fonden saknade det som gör skarpa strategier överlevnadskraftiga: positionstak satta i förhållande till marknadens djup, likviditetsstress-tester, en ärlig svansbudget och en extern part som kunde säga nej. Till det kommer institutionell hubris — teamet som vunnit varje år började tro att konkurrensens resultat bevisade dem rätt — och incitament: avgiftsstrukturen belönade hävstång, inte överlevnad. Genialiteten var verklig. Säkerhetsdesignen saknades helt. Båda kan vara sanna samtidigt; det är därför debatten aldrig avgörs."
+        },
+        {
+          "type": "text",
+          "content": "Kursens syntes för praktiken: du behöver inte avgöra debatten för att skydda dig. Om försvararna har rätt räddar dig lägre hävstång; om Taleb har rätt räddar dig positionstak, svansscenarior och en konstruktion utan enstaka dödsdatum. Samma åtgärder fungerar i båda världarna — det är kriteriet för en robust riskdesign. Marginal of safety, principen utan nummer, betyder just detta: bygg inte för att ha rätt, bygg för att överleva att ha fel. LTCM byggde för att ha rätt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skulden för kollapsen — fyra förklaringsmodeller\",\"rader\":[[\"Förklaring\",\"Kärna\",\"Styrka\",\"Svaghet\"],[\"Modellfel\",\"Normalfördelningen missar verkligheten\",\"Augusti 1998 som levande bevis\",\"Modellerna förutsade inte omöjligt — de missbedömde svansarna\"],[\"Otur\",\"Ett multi-sigma-tillstånd utanför all data\",\"Utan hävstång hade fonden överlevt\",\"Fem års vinst bevisar ingenting om säkerhet\"],[\"Designfel\",\"Hävstång plus likviditet plus trängsel — inte matematik\",\"Maskineriet är fullt förklarligt\",\"Kräver att »geni« skiljs från »riskdesign«\"],[\"Hubris och incitament\",\"Tro på egen ostraffbarhet; avgifter som belönade hävstång\",\"Kapitalåterlämningen 1997; frånvaron av bromsar\",\"Kan förklara allt — och bevisar därför ingenting ensam\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du behöver inte veta om det var fel eller otur för att veta vad du ska göra: designa portföljen så att den överlever båda förklaringarna. Det är skillnaden mellan att vinna diskussionen och att finnas kvar nästa år."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj din starkaste ekonomiska övertygelse — en aktie, en marknad, en modell. Skriv Taleb-frågan under den: vad vet jag, och vad har jag bara inte sett hända än? Ändra sedan en parameter — storlek, hävstång eller tidsram — så att du överlever svaret."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i försvaret att LTCM:s strategier var statistiskt sunda?",
+          "alternativ": [
+            "Varje affär hade liten positiv förväntan; med måttlig hävstång hade fonden överlevt 1998 — felet var positioneringen, inte vetenskapen",
+            "Att modellerna aldrig gjorde fel",
+            "Att Fed godkänt strategierna",
+            "Att konkurrenterna kopierade dem och därmed bevisade att de fungerade"
+          ],
+          "ratt": 0,
+          "tips": "Separera två saker: strategins väntvärde och fondens konstruktion."
+        },
+        {
+          "q": "Vad menar Taleb med liknelsen om rysk roulette?",
+          "alternativ": [
+            "Att handlarna var oerfarna",
+            "Att revolvern var oladdad",
+            "Att finansiella instrument är som vapen",
+            "Att jämna avkastningar inte bevisar säkerhet — man kan inte skilja skicklighet från tur utan att veta vilka risker som inte inträffat"
+          ],
+          "ratt": 3,
+          "tips": "Vad visar fem överlevda omgångar — och vad visar de inte?"
+        },
+        {
+          "q": "Vilken är kursens syntes i debatten?",
+          "alternativ": [
+            "Avgör debatten innan du handlar",
+            "Lita till modeller med längre datahistorik",
+            "Bygg positionstak, hävstångsgränser, likviditetsbuffertar och svansscenarior — en design som skyddar oavsett vem som har rätt",
+            "Hoppas på det bästa och lita på storleken"
+          ],
+          "ratt": 2,
+          "tips": "Vilket svar fungerar oavsett om försvararna eller Taleb har rätt?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Arvet — från LTCM till 2008 och din egen checklista",
+      "intro": "Tio år efter LTCM spelade det globala banksystemet om samma logik på tiopotenser större skala: hävstång kring 30:1, risk mätt på lugn historik, trygghetspriser i AAA-trancher — och en flykt där korrelationerna gick mot ett. Detta sista kapitel knyter ihop historien med din egen checklista: de lärdomar som är permanenta oavsett IQ.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Parallellerna är svindlande. Investmentbankerna bar 2007 hävstång kring 30:1 — LTCM:s nivå. Risk mättes med VaR på lugn historik — LTCM:s metod, nu inbakad i Basel-reglerna. Den nya konvergensaffären var AAA-rated CDO-trancher: instrument som modellerna sa nästan aldrig förlorar, och som systemets smartaste spelare ägde samtidigt. AIG sålde kreditförsäkring på dem och plockade premien — exakt LTCM:s aktievolatilitetsbok i större skala. När amerikanska bostadslån föll gick korrelationerna mot ett, alla tvingades avveckla samma positioner, och myndigheterna räddade det ena systeminstitutet efter det andra — fast denna gång med offentliga medel: Bear Stearns i mars, Lehman den 15 september 2008, AIG dagen därpå, sedan TARP:s 700 miljarder. LTCM hade varit generalrepetitionen som ingen tagit biljett till. Sverige kände igen mekanismen från bankkrisen 1991-93: statsgarantier, räddningskonsortier — och samma moral hazard-debatt om vem som egentligen räddas."
+        },
+        {
+          "type": "text",
+          "content": "Efter 2008 skrev reglerarna den checklista LTCM aldrig hade: hävstångsramar som täcker skuggposter, obligatoriska stresstester — myndighetsversionen av frågan »vad händer om allt går fel samtidigt?« — central clearing av derivat och Volcker-regeln mot egen handel i bankerna. Ironin är stark: de reformerna är en direkt översättning av LTCM:s bristlista från 1998. Kursen noterar också vad som inte ändras: hävstångens aritmetik, likviditetens flyktiga natur och korrelationens förräderi är finansens naturlagar; de reformeras inte, bara hanteras. Nästa generation hittar en ny förpackning — kryptohävstång, algoritmisk riskparitet, whatever — men mekanismen förblir densamma."
+        },
+        {
+          "type": "text",
+          "content": "De permanenta lagarna, destillerade ur Lowenstein. Ett: hävstång förkortar tiden du kan ha rätt — med 25:1 krävs bara fyra procent fel. Två: likviditeten är flyktig (V11) — den finns när du inte behöver den och försvinner när du behöver den. Tre: överlappande risker dödar (V03-läran) — mät mekanismer och medägare, inte namn. Fyra: kapitalförbrukning i stress är ett stup, inte en sluttning (V19) — den som behöver nytt kapital i panik betalar med framtiden. Fem: marginal of safety är en princip utan nummer — avståndet till ruin mäts i design (positionstak, löptider, buffertar), inte i intelligens. Sex: intelligens är inte en riskkontroll utan en förstärkare, som gör både goda och dödliga idéer större."
+        },
+        {
+          "type": "text",
+          "content": "Din AKM1-checklista före varje belånat eller illikvidt åtagande: mät V10 ärligt — inklusive skuggposter och garantier. Kartlägg V11 — vem kan kräva pengar tillbaka, hur snabbt, mot vad? Beräkna V19-horisonten — hur många månader överlever du utan nytt kapital vid fallande priser? Kör svansscenariot — korrelationer lika med ett, allt nere 25-30 procent samma kvartal. Ställ trängselfrågan — vem äger samma sak, och vad händer när ni alla går mot utgången samtidigt? Och bygg en exit som inte kräver att någon annans exit lyckas först. LTCM:s epitafer blev bokens titel: when genius failed. Geniet behövdes inte; skyddet behövdes. Det gäller även dig."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"LTCM 1998 mot bankerna 2008 — samma mekanism, större skala\",\"rader\":[[\"Mekanism\",\"LTCM 1998\",\"Bankerna 2008\",\"AKM1\"],[\"Hävstång\",\"25-28:1 på cirka 125 miljarder\",\"Investmentbanker kring 30:1\",\"V10\"],[\"Riskmätning\",\"VaR på fem lugna år\",\"VaR inbakad i Basel-reglerna — samma historikfälla\",\"V12\"],[\"Trygghetshandel\",\"Såld volatilitet och likviditetspremier\",\"AAA-CDO-trancher och AIG:s kreditförsäkring\",\"V19\"],[\"Korrelation\",\"Alla spreadar vida sig samtidigt\",\"Allt faller samtidigt hösten 2008\",\"V03\"],[\"Räddning\",\"3,625 miljarder av bankerna; Fed medlade\",\"TARP 700 miljarder; Fed finansierade\",\"V11\"],[\"Efterspel\",\"Positionstak och stresstester efterlystes\",\"Leverage-ramar, stresstester, Volcker — checklistan LTCM saknade\",\"—\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "LTCM:s kollaps krävde ingen dumhet — bara tre vanliga ingredienser: hävstång, illikviditet och överlappande risker. Finanshistoriens enda verkliga innovation är skalan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din pre-mortem: anta att din största position om ett år har halverats och att du tvingades sälja i botten. Skriv historien om hur det gick till — vilken länk i kedjan bröts först? Gå sedan ut och ändra just den länken i verkligheten. Det är hela kursen i en enda övning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den mest träffande parallellen mellan LTCM och 2008?",
+          "alternativ": [
+            "Båda orsakades av en enskild handlares bedrägeri",
+            "Båda började med att Ryssland defaultade",
+            "Båda löstes helt utan myndighetsingripande",
+            "Samma mekanism i ny förpackning: hävstång kring 30:1, risk mätt på lugn historik och trygghetsprodukter som bar svansrisk — nu i systemisk skala"
+          ],
+          "ratt": 3,
+          "tips": "Leta efter mönstret, inte personerna: hävstång, VaR, trängsel."
+        },
+        {
+          "q": "Vilken reform efter 2008 svarar mest direkt mot en LTCM-brist?",
+          "alternativ": [
+            "Förbud mot börsnoterade optioner",
+            "Att hedgefonder måste äga guld",
+            "Avskaffad repomarknad",
+            "Obligatoriska stresstester och hårdare hävstångsramar — den checklista LTCM aldrig hade"
+          ],
+          "ratt": 3,
+          "tips": "Vilken av LTCM:s saknade bromsar översätts bäst till en regel?"
+        },
+        {
+          "q": "Vad är kursens slutlära?",
+          "alternativ": [
+            "Undvik matematik inom finans",
+            "Hävstång, illikviditet och överlappande risker tillsammans är dödliga oavsett IQ — designen skyddar, inte intelligensen",
+            "Jaga hög avkastning så räcker bufferten till slut",
+            "Följ nobelpristagare och lysande track record"
+          ],
+          "ratt": 1,
+          "tips": "Vad fanns det inte ett enda av i Greenwich — och vad kan du bygga även utan deras IQ?"
         }
       ]
     }

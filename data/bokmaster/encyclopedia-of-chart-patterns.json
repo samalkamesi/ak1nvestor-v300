@@ -127,7 +127,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Nyckeltalen förklarade\",\"rader\":[[\"Begrepp\",\"Betydelse\",\"Typisk nivå (hedged)\"],[\"Snittstigning\",\"Genomsnittlig rörelse från utbrott till bästa punkt\",\"Cirka 20–40 % för flertalet vändbottnar\"],[\"Felfrekvens\",\"Andel som inte når tröskelrörelsen i väntad riktning\",\"Från låga enkelprocent upp till över 20 %\"],[\"Throwbackfrekvens\",\"Hur ofta kursen återvänder till utbrottszonen\",\"Ofta en tredjedel till två tredjedelar\"],[\"Rank\",\"Relativ prestanda inom hans urval\",\"1 är bäst i klassen — men urvalsberoende\"]]}"
+          "content": "{\"rubrik\":\"Nyckeltalen förklarade\",\"rader\":[[\"Begrepp\",\"Betydelse\",\"Typisk nivå (med förbehåll)\"],[\"Snittstigning\",\"Genomsnittlig rörelse från utbrott till bästa punkt\",\"Cirka 20–40 % för flertalet vändbottnar\"],[\"Felfrekvens\",\"Andel som inte når tröskelrörelsen i väntad riktning\",\"Från låga enkelprocent upp till över 20 %\"],[\"Throwbackfrekvens\",\"Hur ofta kursen återvänder till utbrottszonen\",\"Ofta en tredjedel till två tredjedelar\"],[\"Rank\",\"Relativ prestanda inom hans urval\",\"1 är bäst i klassen — men urvalsberoende\"]]}"
         },
         {
           "type": "visuell",
@@ -182,7 +182,7 @@
         },
         {
           "type": "text",
-          "content": "Siffrorna — ärligt hedged, med utgångspunkt i andra upplagans material: genomsnittsnedgången efter ett bekräftat utbrott ligger i storleksordningen drygt 20 procent, och felfrekvensen är några få procent, vilket placerar formationen bland de mer pålitliga vändtopparna i hela boken. Tiden ner till botten räknas ofta i månader, inte veckor — detta är inget snabbt mönster. En av hans mer användbara iakttagelser är att kontexten väger tungt: toppar som bildas efter långa och platta upptrender tenderar att prestera bättre än de som följer direkt efter en brant spik, där utmattningen redan förbrukat mycket av rörelsen."
+          "content": "Siffrorna — ärligt redovisade med förbehåll, med utgångspunkt i andra upplagans material: genomsnittsnedgången efter ett bekräftat utbrott ligger i storleksordningen drygt 20 procent, och felfrekvensen är några få procent, vilket placerar formationen bland de mer pålitliga vändtopparna i hela boken. Tiden ner till botten räknas ofta i månader, inte veckor — detta är inget snabbt mönster. En av hans mer användbara iakttagelser är att kontexten väger tungt: toppar som bildas efter långa och platta upptrender tenderar att prestera bättre än de som följer direkt efter en brant spik, där utmattningen redan förbrukat mycket av rörelsen."
         },
         {
           "type": "text",
@@ -198,7 +198,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Huvud-och-skuldror topp i siffror (hedged)\",\"rader\":[[\"Mått\",\"Värde i storleksordningen\",\"Kommentar\"],[\"Snittnedgång\",\"Drygt 20 %\",\"Mätt från utbrott till botten\"],[\"Felfrekvens\",\"Några få procent\",\"Bland de lägre i hans tabeller\"],[\"Pullback efter utbrott\",\"Runt hälften eller fler av fallen\",\"Påverkar inträde och stopp\"],[\"Tid till botten\",\"Ofta månader\",\"Inget snabbt mönster\"]]}"
+          "content": "{\"rubrik\":\"Huvud-och-skuldror topp i siffror (med förbehåll)\",\"rader\":[[\"Mått\",\"Värde i storleksordningen\",\"Kommentar\"],[\"Snittnedgång\",\"Drygt 20 %\",\"Mätt från utbrott till botten\"],[\"Felfrekvens\",\"Några få procent\",\"Bland de lägre i hans tabeller\"],[\"Pullback efter utbrott\",\"Runt hälften eller fler av fallen\",\"Påverkar inträde och stopp\"],[\"Tid till botten\",\"Ofta månader\",\"Inget snabbt mönster\"]]}"
         },
         {
           "type": "visuell",
@@ -253,7 +253,7 @@
         },
         {
           "type": "text",
-          "content": "Trippelformationerna är den puritanska kusinen: tre toppar eller bottnar på grovt samma nivå, med kravet att varje nivå faktiskt testas och håller. Statistiken ligger i samma band som huvud-och-skuldror — genomsnitt i 35-plus-klassens storleksordning och låga felfrekvenser, hedged mellan upplagor — men urvalet är mindre och signalerna färre. Det är den klassiska avvägningen i hela boken: ju striktare definition, desto högre tillförlitlighet per signal och desto färre signaler. Bulkowski dokumenterar också falska startar — att många formationer producerar ett eller flera för tidiga utbrott som stängs tillbaka innan det äkta — vilket är ytterligare ett skäl att kräva stängning, inte bara intrång."
+          "content": "Trippelformationerna är den puritanska kusinen: tre toppar eller bottnar på grovt samma nivå, med kravet att varje nivå faktiskt testas och håller. Statistiken ligger i samma band som huvud-och-skuldror — genomsnitt i 35-plus-klassens storleksordning och låga felfrekvenser med variation mellan upplagor — men urvalet är mindre och signalerna färre. Det är den klassiska avvägningen i hela boken: ju striktare definition, desto högre tillförlitlighet per signal och desto färre signaler. Bulkowski dokumenterar också falska startar — att många formationer producerar ett eller flera för tidiga utbrott som stängs tillbaka innan det äkta — vilket är ytterligare ett skäl att kräva stängning, inte bara intrång."
         },
         {
           "type": "text",
@@ -269,7 +269,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Vändbottnar mot varandra (hedged)\",\"rader\":[[\"Formation\",\"Snittstigning i storleksordningen\",\"Felfrekvens\"],[\"Huvud-och-skuldror botten\",\"Cirka 35–40 %\",\"Låga enkelprocent\"],[\"Trippelbotten\",\"Cirka 35–40 %\",\"Enkelprocent till låga ton\"],[\"Dubbelbotten Eve & Eve\",\"Ofta högst i klassen\",\"Låg\"],[\"Dubbelbotten Adam-varianter\",\"Lägre\",\"Kan nå 15–20 %\"]]}"
+          "content": "{\"rubrik\":\"Vändbottnar mot varandra (med förbehåll)\",\"rader\":[[\"Formation\",\"Snittstigning i storleksordningen\",\"Felfrekvens\"],[\"Huvud-och-skuldror botten\",\"Cirka 35–40 %\",\"Låga enkelprocent\"],[\"Trippelbotten\",\"Cirka 35–40 %\",\"Enkelprocent till låga ton\"],[\"Dubbelbotten Eve & Eve\",\"Ofta högst i klassen\",\"Låg\"],[\"Dubbelbotten Adam-varianter\",\"Lägre\",\"Kan nå 15–20 %\"]]}"
         },
         {
           "type": "visuell",
@@ -324,7 +324,7 @@
         },
         {
           "type": "text",
-          "content": "Siffrorna, hedged mellan upplagor och urval: Eve & Eve ligger i topp — genomsnittsstigningar som i hans tabeller närmar sig de högsta i hela vändbottom-klassen, i storleksordningen uppemot och ibland över 50 procent beroende på material, med låga felfrekvenser. Adam & Adam ligger i botten med märkbart lägre snitt och felfrekvenser som i vissa tabeller närmar sig en av fem. Logiken bakom är värd mer än siffrorna: en rundad botten tar tid och skakar ut svaga händer medan utbudet absorberas långsamt; två snabba spetsar lämnar folkträngningen oberörd och publiken övertygad på fel grund. Dessutom gäller bekräftelseregeln: signalen kommer först när kursen stänger över toppen mellan de två bottnarna — att bara köpa vid andra botten är att gissa, inte att handla mönster."
+          "content": "Siffrorna, med variation mellan upplagor och urval: Eve & Eve ligger i topp — genomsnittsstigningar som i hans tabeller närmar sig de högsta i hela vändbottom-klassen, i storleksordningen uppemot och ibland över 50 procent beroende på material, med låga felfrekvenser. Adam & Adam ligger i botten med märkbart lägre snitt och felfrekvenser som i vissa tabeller närmar sig en av fem. Logiken bakom är värd mer än siffrorna: en rundad botten tar tid och skakar ut svaga händer medan utbudet absorberas långsamt; två snabba spetsar lämnar folkträngningen oberörd och publiken övertygad på fel grund. Dessutom gäller bekräftelseregeln: signalen kommer först när kursen stänger över toppen mellan de två bottnarna — att bara köpa vid andra botten är att gissa, inte att handla mönster."
         },
         {
           "type": "text",
@@ -340,7 +340,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Dubbelbottnar rankade (hedged)\",\"rader\":[[\"Variant\",\"Karaktär\",\"Prestanda\"],[\"Eve & Eve\",\"Båda bottnarna rundade och breda\",\"Bäst — högst snitt, lägst felfrekvens\"],[\"Adam & Eve\",\"Först spetsig, sedan rundad\",\"God — mittparti\"],[\"Eve & Adam\",\"Först rundad, sedan spetsig\",\"Svagare — mittparti\"],[\"Adam & Adam\",\"Båda spetsiga och snabba\",\"Sämst — högst felfrekvens\"]]}"
+          "content": "{\"rubrik\":\"Dubbelbottnar rankade (med förbehåll)\",\"rader\":[[\"Variant\",\"Karaktär\",\"Prestanda\"],[\"Eve & Eve\",\"Båda bottnarna rundade och breda\",\"Bäst — högst snitt, lägst felfrekvens\"],[\"Adam & Eve\",\"Först spetsig, sedan rundad\",\"God — mittparti\"],[\"Eve & Adam\",\"Först rundad, sedan spetsig\",\"Svagare — mittparti\"],[\"Adam & Adam\",\"Båda spetsiga och snabba\",\"Sämst — högst felfrekvens\"]]}"
         },
         {
           "type": "visuell",
@@ -391,7 +391,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Den stigande triangeln har plant tak och stigande golv: köparna accepterar allt högre priser medan ett distrikt av säljare håller taket. I Bulkowskis tabeller — andra upplagan, hedged — är det en av de bättre formationerna på långa sidan: genomsnittsstigning i storleksordningen kring 35 procent, felfrekvens i intervallet kring 10 till 15 procent och throwbacks i ungefär en tredjedel till hälften av fallen. Den är i grunden en fortsettningsformation som gillar att verka i upptrender, även om den ibland dyker upp som vändning efter nedtrender — med annan, svagare statistik, vilket kapitel 12 återkommer till."
+          "content": "Den stigande triangeln har plant tak och stigande golv: köparna accepterar allt högre priser medan ett distrikt av säljare håller taket. I Bulkowskis tabeller — andra upplagan, med förbehåll — är det en av de bättre formationerna på långa sidan: genomsnittsstigning i storleksordningen kring 35 procent, felfrekvens i intervallet kring 10 till 15 procent och throwbacks i ungefär en tredjedel till hälften av fallen. Den är i grunden en fortsettningsformation som gillar att verka i upptrender, även om den ibland dyker upp som vändning efter nedtrender — med annan, svagare statistik, vilket kapitel 12 återkommer till."
         },
         {
           "type": "text",
@@ -411,7 +411,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Triangelfamiljen (hedged)\",\"rader\":[[\"Formation\",\"Typisk roll\",\"Snitt i storleksordningen\",\"Felfrekvens\"],[\"Stigande triangel\",\"Bullish, ofta fortsettning\",\"Cirka 35 % uppgång\",\"Kring 10–15 %\"],[\"Symmetrisk triangel\",\"Fortsettning oftare än vändning\",\"Något lägre snitt\",\"Varierar, ofta högre\"],[\"Fallande triangel\",\"Bearish, ofta fortsettning ned\",\"Cirka 20–25 % nedgång\",\"Låg till medel\"]]}"
+          "content": "{\"rubrik\":\"Triangelfamiljen (med förbehåll)\",\"rader\":[[\"Formation\",\"Typisk roll\",\"Snitt i storleksordningen\",\"Felfrekvens\"],[\"Stigande triangel\",\"Bullish, ofta fortsettning\",\"Cirka 35 % uppgång\",\"Kring 10–15 %\"],[\"Symmetrisk triangel\",\"Fortsettning oftare än vändning\",\"Något lägre snitt\",\"Varierar, ofta högre\"],[\"Fallande triangel\",\"Bearish, ofta fortsettning ned\",\"Cirka 20–25 % nedgång\",\"Låg till medel\"]]}"
         },
         {
           "type": "visuell",
@@ -466,7 +466,7 @@
         },
         {
           "type": "text",
-          "content": "Kronjuvelen är high and tight-flaggan: stången där kursen grovt fördubblas inom omkring två månader, följd av en konsolidering som ger tillbaka mindre än i storleksordningen en fjärdedel av stången. Bulkowskis berömda siffror — hedged och med hans egen varning om urvalets storlek: genomsnittsstigning efter utbrott i närheten av 70 procent och en felfrekvens som i hans material rapporterades som noll. Läs det igen och läs sedan varningen: noll fel i ett litet antal observationer är enastående men inte samma sak som en fysisk lag. Det är formationen alla vill hitta, och därför den som oftast förfalskas — brant och imponerande räcker inte, det måste vara en faktisk fördubbling på kort tid."
+          "content": "Kronjuvelen är high and tight-flaggan: stången där kursen grovt fördubblas inom omkring två månader, följd av en konsolidering som ger tillbaka mindre än i storleksordningen en fjärdedel av stången. Bulkowskis berömda siffror — med förbehåll och med hans egen varning om urvalets storlek: genomsnittsstigning efter utbrott i närheten av 70 procent och en felfrekvens som i hans material rapporterades som noll. Läs det igen och läs sedan varningen: noll fel i ett litet antal observationer är enastående men inte samma sak som en fysisk lag. Det är formationen alla vill hitta, och därför den som oftast förfalskas — brant och imponerande räcker inte, det måste vara en faktisk fördubbling på kort tid."
         },
         {
           "type": "text",
@@ -482,7 +482,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fortsettningens elit (hedged)\",\"rader\":[[\"Formation\",\"Snitt efter utbrott\",\"Felfrekvens\",\"Frekvens\"],[\"High and tight-flagga\",\"Cirka 65–70 % uppgång\",\"Noll i hans lilla urval\",\"Mycket sällsynt\"],[\"Flagga\",\"Hög prestanda\",\"Låg\",\"Vanligare\"],[\"Vimpel\",\"Hög prestanda\",\"Låg\",\"Vanligare\"],[\"Rektangel\",\"God, något lägre\",\"Medel\",\"Vanlig\"]]}"
+          "content": "{\"rubrik\":\"Fortsettningens elit (med förbehåll)\",\"rader\":[[\"Formation\",\"Snitt efter utbrott\",\"Felfrekvens\",\"Frekvens\"],[\"High and tight-flagga\",\"Cirka 65–70 % uppgång\",\"Noll i hans lilla urval\",\"Mycket sällsynt\"],[\"Flagga\",\"Hög prestanda\",\"Låg\",\"Vanligare\"],[\"Vimpel\",\"Hög prestanda\",\"Låg\",\"Vanligare\"],[\"Rektangel\",\"God, något lägre\",\"Medel\",\"Vanlig\"]]}"
         },
         {
           "type": "visuell",
@@ -533,7 +533,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Formen är en rundad botten — koppen — ofta med ett djup i storleksordningen 12 till 33 procent, följt av ett grunt handtag som driver svagt nedåt i koppens övre halva, och signal vid utbrott över handtagets överkant. Bulkowskis siffror, hedged efter andra upplagans material: genomsnittsstigning i storleksordningen drygt 30 procent och en felfrekvens som ligger i de lägre regionerna bland basformationerna. Han testade också detaljerna — djupa kontra grunda koppar, handtagets placering och längd — och fann att handtag i övre delen av koppen, konsistent med O'Neils regel, hör ihop med bättre statistik."
+          "content": "Formen är en rundad botten — koppen — ofta med ett djup i storleksordningen 12 till 33 procent, följt av ett grunt handtag som driver svagt nedåt i koppens övre halva, och signal vid utbrott över handtagets överkant. Bulkowskis siffror, med utgångspunkt i andra upplagans material: genomsnittsstigning i storleksordningen drygt 30 procent och en felfrekvens som ligger i de lägre regionerna bland basformationerna. Han testade också detaljerna — djupa kontra grunda koppar, handtagets placering och längd — och fann att handtag i övre delen av koppen, konsistent med O'Neils regel, hör ihop med bättre statistik."
         },
         {
           "type": "text",
@@ -553,7 +553,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Koppen — krav och siffror (hedged)\",\"rader\":[[\"Detalj\",\"Kriterium\",\"Bulkowski-fynd i korthet\"],[\"Koppdjup\",\"Ofta 12–33 %\",\"Båda extremerna fungerar; mittpartiet robust\"],[\"Handtagsläge\",\"Övre halvan av koppen\",\"Övre läge ger bättre statistik\"],[\"Utbrott\",\"Över handtagets överkant, gärna med volym\",\"Volymbekräftelse förbättrar snitt\"],[\"Snitt efter utbrott\",\"Drygt 30 % i storleksordningen\",\"Felfrekvens i låga procent\"]]}"
+          "content": "{\"rubrik\":\"Koppen — krav och siffror (med förbehåll)\",\"rader\":[[\"Detalj\",\"Kriterium\",\"Bulkowski-fynd i korthet\"],[\"Koppdjup\",\"Ofta 12–33 %\",\"Båda extremerna fungerar; mittpartiet robust\"],[\"Handtagsläge\",\"Övre halvan av koppen\",\"Övre läge ger bättre statistik\"],[\"Utbrott\",\"Över handtagets överkant, gärna med volym\",\"Volymbekräftelse förbättrar snitt\"],[\"Snitt efter utbrott\",\"Drygt 30 % i storleksordningen\",\"Felfrekvens i låga procent\"]]}"
         },
         {
           "type": "visuell",
@@ -608,7 +608,7 @@
         },
         {
           "type": "text",
-          "content": "Dead-cat bounce är bokens mest nykterläkande kapitel. Efter ett brant fall — ofta på en eller två dagar — kommer en teknisk studs, och Bulkowski studerar systematiskt hur stora och långa dessa studsar är och vad som händer sedan. I storleksordningen, hedged: studsen landar kring ett tiotal procent i median, med genomsnittet draget upp av kraftiga svansar, och den fullbordas oftast inom dagar till ett par veckor. Därpå den viktiga delen: i merparten av fallen gör kursen nya bottnar. Studsen är alltså ett exit-fönster för långsäljare och ett setup för korta — inte en botten att köpa."
+          "content": "Dead-cat bounce är bokens mest nykterläkande kapitel. Efter ett brant fall — ofta på en eller två dagar — kommer en teknisk studs, och Bulkowski studerar systematiskt hur stora och långa dessa studsar är och vad som händer sedan. I storleksordningen, med förbehåll: studsen landar kring ett tiotal procent i median, med genomsnittet draget upp av kraftiga svansar, och den fullbordas oftast inom dagar till ett par veckor. Därpå den viktiga delen: i merparten av fallen gör kursen nya bottnar. Studsen är alltså ett exit-fönster för långsäljare och ett setup för korta — inte en botten att köpa."
         },
         {
           "type": "text",
@@ -624,7 +624,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fortsettningens statistik (hedged)\",\"rader\":[[\"Händelse\",\"Statistik i storleksordningen\",\"Handelsimplikation\"],[\"Dead-cat-studs\",\"Median kring ett tiotal procent\",\"Kortsidsetup eller exit-fönster\"],[\"Andel som gör nya bottnar\",\"Merparten av fallen\",\"Köp inte fallande knivar\"],[\"Mätt rörelse — andra benet\",\"Nära första benet i median, stor spridning\",\"Riktmål, ej garanti\"],[\"Korrektion till mittpunkten\",\"Vanligt viloläge, bred spridning\",\"Halva förra rörelsen som riktmärke\"]]}"
+          "content": "{\"rubrik\":\"Fortsettningens statistik (med förbehåll)\",\"rader\":[[\"Händelse\",\"Statistik i storleksordningen\",\"Handelsimplikation\"],[\"Dead-cat-studs\",\"Median kring ett tiotal procent\",\"Kortsidsetup eller exit-fönster\"],[\"Andel som gör nya bottnar\",\"Merparten av fallen\",\"Köp inte fallande knivar\"],[\"Mätt rörelse — andra benet\",\"Nära första benet i median, stor spridning\",\"Riktmål, ej garanti\"],[\"Korrektion till mittpunkten\",\"Vanligt viloläge, bred spridning\",\"Halva förra rörelsen som riktmärke\"]]}"
         },
         {
           "type": "visuell",
@@ -695,7 +695,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Utbrottets anatomi (hedged)\",\"rader\":[[\"Fenomen\",\"Frekvens i storleksordningen\",\"Konsekvens\"],[\"Throwback efter uppgångsutbrott\",\"Kring hälften, variationsrik\",\"Dela inträdet vid utbrottet\"],[\"Pullback efter nedgångsutbrott\",\"Liknande eller något högre\",\"Kortinträde på rekyl\"],[\"Utbrott med gap\",\"Kastas tillbaka mer sällan\",\"Prioritera gapbekräftade utbrott\"],[\"Tid till återkomst\",\"Ofta dagar till ett par veckor\",\"Stopp måste tåla normal rekyl\"]]}"
+          "content": "{\"rubrik\":\"Utbrottets anatomi (med förbehåll)\",\"rader\":[[\"Fenomen\",\"Frekvens i storleksordningen\",\"Konsekvens\"],[\"Throwback efter uppgångsutbrott\",\"Kring hälften, variationsrik\",\"Dela inträdet vid utbrottet\"],[\"Pullback efter nedgångsutbrott\",\"Liknande eller något högre\",\"Kortinträde på rekyl\"],[\"Utbrott med gap\",\"Kastas tillbaka mer sällan\",\"Prioritera gapbekräftade utbrott\"],[\"Tid till återkomst\",\"Ofta dagar till ett par veckor\",\"Stopp måste tåla normal rekyl\"]]}"
         },
         {
           "type": "visuell",
@@ -750,7 +750,7 @@
         },
         {
           "type": "text",
-          "content": "Volymen är det andra kvalitetsmåttet, och Bulkowskis mätningar är tydliga: utbrott på volym över det senaste snittet hör samman med bättre genomsnitt och klart lägre felfrekvenser — i hans tabeller ofta grovt halverade, hedged. Volym är deltagandets bekräftelse; den talar om att rörelsen bär fler än en handfull aktörer. Men hans varning är värd att memorera: volym räddar inte en dålig formation. En slarvigt byggd bas med svag form och fel kontext blir inte bättre av hög volym — volymen bekräftar och förstärker en god setup, den skapar ingen."
+          "content": "Volymen är det andra kvalitetsmåttet, och Bulkowskis mätningar är tydliga: utbrott på volym över det senaste snittet hör samman med bättre genomsnitt och klart lägre felfrekvenser — i hans tabeller ofta grovt halverade, med förbehåll för upplaga och urval. Volym är deltagandets bekräftelse; den talar om att rörelsen bär fler än en handfull aktörer. Men hans varning är värd att memorera: volym räddar inte en dålig formation. En slarvigt byggd bas med svag form och fel kontext blir inte bättre av hög volym — volymen bekräftar och förstärker en god setup, den skapar ingen."
         },
         {
           "type": "text",
@@ -766,7 +766,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Utbrottets kvalitetscheck (hedged)\",\"rader\":[[\"Kvalitet\",\"Så mäts den\",\"Effekt i storleksordningen\"],[\"Stängning genom nivån\",\"Intradagpeta räcker inte\",\"Rena intradagförsök felar oftare\"],[\"Gap vid utbrott\",\"Öppning bortom nivån\",\"Bättre snitt, färre throwbacks\"],[\"Volymexpansion\",\"Utbrottsdag över senaste snitt\",\"Klart lägre felfrekvens\"],[\"Marknadsriktning\",\"Index i samma riktning\",\"Förstärkt väntevärde\"]]}"
+          "content": "{\"rubrik\":\"Utbrottets kvalitetscheck (med förbehåll)\",\"rader\":[[\"Kvalitet\",\"Så mäts den\",\"Effekt i storleksordningen\"],[\"Stängning genom nivån\",\"Intradagpeta räcker inte\",\"Rena intradagförsök felar oftare\"],[\"Gap vid utbrott\",\"Öppning bortom nivån\",\"Bättre snitt, färre throwbacks\"],[\"Volymexpansion\",\"Utbrottsdag över senaste snitt\",\"Klart lägre felfrekvens\"],[\"Marknadsriktning\",\"Index i samma riktning\",\"Förstärkt väntevärde\"]]}"
         },
         {
           "type": "visuell",
@@ -837,7 +837,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Kontextens effekter (hedged)\",\"rader\":[[\"Kontext\",\"Effekt på statistiken\",\"Praktisk regel\"],[\"Björnmarknad\",\"Vändningar skarpare, nedgångar större i snitt\",\"Räkna med våldsammare rörelser\"],[\"Upptrend som fortsettning\",\"Bästa tabellvärden för trianglar och flaggor\",\"Prioritera fortsettningssetup\"],[\"Nedtrend som vändning\",\"Högre felfrekvens\",\"Kräv mer bekräftelse\"],[\"Utbrott med marknaden\",\"Bättre väntevärde\",\"Kolla indexriktningen först\"]]}"
+          "content": "{\"rubrik\":\"Kontextens effekter (med förbehåll)\",\"rader\":[[\"Kontext\",\"Effekt på statistiken\",\"Praktisk regel\"],[\"Björnmarknad\",\"Vändningar skarpare, nedgångar större i snitt\",\"Räkna med våldsammare rörelser\"],[\"Upptrend som fortsettning\",\"Bästa tabellvärden för trianglar och flaggor\",\"Prioritera fortsettningssetup\"],[\"Nedtrend som vändning\",\"Högre felfrekvens\",\"Kräv mer bekräftelse\"],[\"Utbrott med marknaden\",\"Bättre väntevärde\",\"Kolla indexriktningen först\"]]}"
         },
         {
           "type": "visuell",
@@ -904,7 +904,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Bygg ett handelskort för en aktuell formation: inträdesnivå vid bekräftat utbrott, stopp vid formationens logiska dödsläge med marginal för normalt throwbackdjup, mål från mätregeln med halvhöjdsdelmål. Räkna ut R-multipeln och Para in formationens hedged felfrekvens från kursens tabeller. Skriv ner throwbackplanen — vad du gör vid återkomst till zonen inom två veckor, och vad du gör om den uteblir."
+          "content": "Bygg ett handelskort för en aktuell formation: inträdesnivå vid bekräftat utbrott, stopp vid formationens logiska dödsläge med marginal för normalt throwbackdjup, mål från mätregeln med halvhöjdsdelmål. Räkna ut R-multipeln och beakta formationens uppskattade felfrekvens från kursens tabeller. Skriv ner throwbackplanen — vad du gör vid återkomst till zonen inom två veckor, och vad du gör om den uteblir."
         },
         {
           "type": "tabell",
@@ -963,7 +963,7 @@
         },
         {
           "type": "text",
-          "content": "Sedan den verkliga kontroversen. Oberoende replikationer och senare studier av klassiska mönster pekar genomgående mot svagare råkanter än Bulkowskis originaltabeller — hedged, med variation mellan studier och perioder. Förklaringarna är strukturella, inte mystiska: decimaliseringen 2001 minskade minimirörelserna, ETF:er och passiva flöden ändrade hur enskilda aktier rör sig, algoritmhandeln arbetar snabbare än någon formationsläsare, och framför allt trängseln — mönster fungerar tills alla ser dem. En formation som tusentals trader väntar på blir en arena för ogynnsam selektion: stoppen jagas, utbrotten förfalskas medvetet, och kanten betalas av de sena anländarna. Därtill kommer metodkritiken mot Bulkowskis eget material: urvals- och survivorshipfrågor, effekter av multipel testning över dussintals formationer och transaktionskostnader som inte finns i tabellerna."
+          "content": "Sedan den verkliga kontroversen. Oberoende replikationer och senare studier av klassiska mönster pekar genomgående mot svagare råkanter än Bulkowskis originaltabeller — med variation mellan studier och perioder. Förklaringarna är strukturella, inte mystiska: decimaliseringen 2001 minskade minimirörelserna, ETF:er och passiva flöden ändrade hur enskilda aktier rör sig, algoritmhandeln arbetar snabbare än någon formationsläsare, och framför allt trängseln — mönster fungerar tills alla ser dem. En formation som tusentals trader väntar på blir en arena för ogynnsam selektion: stoppen jagas, utbrotten förfalskas medvetet, och kanten betalas av de sena anländarna. Därtill kommer metodkritiken mot Bulkowskis eget material: urvals- och survivorshipfrågor, effekter av multipel testning över dussintals formationer och transaktionskostnader som inte finns i tabellerna."
         },
         {
           "type": "text",
@@ -979,7 +979,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Vad överlever modern tid? (hedged)\",\"rader\":[[\"Element\",\"Status i modern tid\",\"Användning\"],[\"Volymbekräftade utbrott\",\"Bäst bevarad kant\",\"Behåll som hårt filter\"],[\"Gap-utbrott\",\"Fortfarande meningsfullt\",\"Behåll\"],[\"Throwbackstatistik\",\"Beteendet kvarstår\",\"Timing och stoppavstånd\"],[\"Råa formationer utan volym och kontext\",\"Försvagade\",\"Kräv extra bekräftelse\"],[\"Statistisk discipl\",\"Metod, inte kant\",\"Bär allt annat\"]]}"
+          "content": "{\"rubrik\":\"Vad överlever modern tid? (med förbehåll)\",\"rader\":[[\"Element\",\"Status i modern tid\",\"Användning\"],[\"Volymbekräftade utbrott\",\"Bäst bevarad kant\",\"Behåll som hårt filter\"],[\"Gap-utbrott\",\"Fortfarande meningsfullt\",\"Behåll\"],[\"Throwbackstatistik\",\"Beteendet kvarstår\",\"Timing och stoppavstånd\"],[\"Råa formationer utan volym och kontext\",\"Försvagade\",\"Kräv extra bekräftelse\"],[\"Statistisk discipl\",\"Metod, inte kant\",\"Bär allt annat\"]]}"
         },
         {
           "type": "visuell",

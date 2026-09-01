@@ -36,15 +36,15 @@
    "blocks": [
     {
      "type": "text",
-     "content": "En bucket shop var ingen börs utan en spelbule på priser. Kunden la en marginal på tio procent och satsade på att en aktie skulle stiga eller falla; inga aktier bytte ägare, firman betalade vinst och tog förlust mot noteringen. För den unge Livermore var det ett perfekt laboratorium: affären kvitterades omedelbart, utfallet var entydigt och det fanns ingen att skylla på. Vid femton års ålder gjorde han sin första affär — fem dollar på Burlington tillsammans med en kamrat — och vann 3,12 dollar. Han drog slutsatsen han aldrig släppte: här var ett spel där aritmetik och observation kunde slå slumpen. Lefèvre låter honom sammanfatta skolgången: 'The game taught me the game. And it didn't spare the rod while teaching.' — spelet lärde mig spelet, och det sparade inte riset under undervisningen."
+     "content": "En bucket shop var ingen börs utan en spelhåla där man satsade på priser. Kunden la en marginal på tio procent och satsade på att en aktie skulle stiga eller falla; inga aktier bytte ägare, firman betalade vinst och tog förlust mot noteringen. För den unge Livermore var det ett perfekt laboratorium: affären kvitterades omedelbart, utfallet var entydigt och det fanns ingen att skylla på. Vid femton års ålder gjorde han sin första affär — fem dollar på Burlington tillsammans med en kamrat — och vann 3,12 dollar. Han drog slutsatsen han aldrig släppte: här var ett spel där aritmetik och observation kunde slå slumpen. Lefèvre låter honom sammanfatta skolgången: 'The game taught me the game. And it didn't spare the rod while teaching.' — spelet lärde mig spelet, och det skonade inte riset under undervisningen."
     },
     {
      "type": "text",
-     "content": "Hans metod var beskedlig och revolutionerande på samma gång. I en liten anteckningsbok skrev han priser, dag ut och dag in, och letade inte efter skäl utan efter upprepning: uppför sig en aktie på ett visst sätt idag som den gjorde förra gången innan den steg? Han skriver i boken att han aldrig frågade varför en järnväg steg — det angick honom inte; om handlingen följde ett mönster var mönstret nog. Detta är tape reading i sin rena form: sekvensen av priser och volymer som språk, inte åsikter om värde. Bucket-shoppen kvitterade varje gissning utan pardon, och på några år hade fjortonåringen byggt sig en kapital på tusen dollar — mer än många vuxna sparede på år — och sedan tio tusen vid tjugo. Firman började kalla honom 'the boy plunger', unge plundraren, och en efter en stängde de dörren för hans affärer."
+     "content": "Hans metod var beskedlig och revolutionerande på samma gång. I en liten anteckningsbok skrev han priser, dag ut och dag in, och letade inte efter skäl utan efter upprepning: uppför sig en aktie på ett visst sätt idag som den gjorde förra gången innan den steg? Han skriver i boken att han aldrig frågade varför en järnväg steg — det angick honom inte; om handlingen följde ett mönster var mönstret nog. Detta är tape reading i sin rena form: sekvensen av priser och volymer som språk, inte åsikter om värde. Bucket-shoppen kvitterade varje gissning utan pardon, och på några år hade fjortonåringen byggt en kapitalpost på tusen dollar — mer än många vuxna sparade på år — och sedan tio tusen vid tjugo. Firman började kalla honom 'the boy plunger', unge plundraren, och en efter en stängde de dörren för hans affärer."
     },
     {
      "type": "text",
-     "content": "Här finns kursens första AK1A-läxa och dess första skugga. Läxan: feedback skapar skicklighet. Livermore fick tusentals snabba, ärliga återkopplingar innan han riskerade något stort — det ingen längre får när courtageappen öppnas med en swipe och varje fill är omedelbar men tolkningen fri. Skuggan: bucket-shoppen var ett spelbule, och doftet av spelet satt kvar i honom livet ut. Han lärde sig mönster bättre än någon samtid, men också att spänningen i bandet var något han ville ha mer av — ett beroende som kapitel 13 återkommer till med full ärlighet. Notansen i anteckningsboken blev både hans bästa verktyg och hans första sprängämne."
+     "content": "Här finns kursens första AK1A-läxa och dess första skugga. Läxan: feedback skapar skicklighet. Livermore fick tusentals snabba, ärliga återkopplingar innan han riskerade något stort — det ingen längre får när courtageappen öppnas med en swipe och varje fill är omedelbar men tolkningen fri. Skuggan: bucket-shoppen var en spelhåla, och doftet av spelet satt kvar i honom livet ut. Han lärde sig mönster bättre än någon samtid, men också att spänningen i bandet var något han ville ha mer av — ett beroende som kapitel 13 återkommer till med full ärlighet. Anteckningsboken blev både hans bästa verktyg och hans första sprängämne."
     },
     {
      "type": "insikt",
@@ -68,7 +68,7 @@
      "q": "Vad var en bucket shop i bokens Boston?",
      "alternativ": [
       "En dagligvarubutik där aktietips såldes över disk",
-      "En spelbule där kunden satsade på prisförändringar utan att några aktier bytte ägare",
+      "En spelhåla där kunden satsade på prisförändringar utan att några aktier bytte ägare",
       "En tidig form av bank som erbjöd marginalobligationer till järnvägsarbetare",
       "En av börsensläktklubbar där unga mäklare fick öva på orderhantering"
      ],
@@ -95,7 +95,7 @@
       "Han vägrade betala sin marginal på tio procent"
      ],
      "ratt": 0,
-     "tips": "En spelbule tjänar på förlorare — vad händer med den när en kund alltid vinner?"
+     "tips": "En spelhåla tjänar på förlorare — vad händer med den när en kund alltid vinner?"
     }
    ]
   },
@@ -111,11 +111,11 @@
     },
     {
      "type": "text",
-     "content": "Här ligger också en av bokens mest missförstådda satser: 'Prices are never too high to begin buying or never too low to begin selling.' — priser är aldrig för höga för att börja köpa, aldrig för låga för att börja sälja. Det är inte uppmaning att jaga dyrbara aktier; det är en angreppspunkt mot nivelldygden. För Livermore var 'den har stigit så mycket att den måste falla' inget argument, bara en åsikt. Det enda som betydde något var om den underliggande trenden — line of least resistance, motståndslinjen — pekade uppför eller nedför. När alla krafter i marknaden trycker åt samma håll är prisnivån irrelevant; när krafterna är oavgjorda är varje position ett vad, oavsett hur 'billig' aktien ser ut. Hans kritik mot allmänheten var punktvis: de köper det som fallit bara för att det fallit, och säljer det som stigit bara för att det stigit — nivå som alkemi."
+     "content": "Här ligger också en av bokens mest missförstådda satser: 'Prices are never too high to begin buying or never too low to begin selling.' — priser är aldrig för höga för att börja köpa, aldrig för låga för att börja sälja. Det är inte uppmaning att jaga dyrbara aktier; det är en angreppspunkt mot nivåtron. För Livermore var 'den har stigit så mycket att den måste falla' inget argument, bara en åsikt. Det enda som betydde något var om den underliggande trenden — line of least resistance, motståndslinjen — pekade uppför eller nedför. När alla krafter i marknaden trycker åt samma håll är prisnivån irrelevant; när krafterna är oavgjorda är varje position ett vad, oavsett hur 'billig' aktien ser ut. Hans kritik mot allmänheten var punktvis: de köper det som fallit bara för att det fallit, och säljer det som stigit bara för att det stigit — nivå som alkemi."
     },
     {
      "type": "text",
-     "content": "Motståndslinjen avgörs inte av magi utan av tillgång och efterfrågan som桶arna själva visar: säljtryck som suger upp allt bud utan prisfall betyder starka händer; köplust som inte flyttar noteringen betyder dold supply. Livermore testade linjen med små positioner innan han åtog sig risk — han sålde lite för att se om marknaden 'tog emot', köpte lite för att se om den 'höll'. Detta är ett av historiens tidigaste systematiska test-tänkandena: agera inte på åsikt om marknadens riktning, agera på marknadens svar på din fråga. Att ha rätt för tidigt är, noterar han, samma sak som att ha fel — marknaden straffar inte bara fel analys utan också rätt analys med fel timing."
+     "content": "Motståndslinjen avgörs inte av magi utan av tillgång och efterfrågan, som händerna själva visar: säljtryck som suger upp allt bud utan prisfall betyder starka händer; köplust som inte flyttar noteringen betyder dold supply. Livermore testade linjen med små positioner innan han åtog sig risk — han sålde lite för att se om marknaden 'tog emot', köpte lite för att se om den 'höll'. Detta är ett av historiens tidigaste systematiska test-tänkandena: agera inte på åsikt om marknadens riktning, agera på marknadens svar på din fråga. Att ha rätt för tidigt är, noterar han, samma sak som att ha fel — marknaden straffar inte bara fel analys utan också rätt analys med fel timing."
     },
     {
      "type": "text",
@@ -186,7 +186,7 @@
     },
     {
      "type": "text",
-     "content": "Bokens renaste exempel på en pivotal point-förhandling är comebacken 1915. Efter konkursen och skulderna lånade Livermore en blygsam summa och kunde bara ta en position — ett hundra aktier. Han valde Bethlehem Steel under krigets stålexpansion, lade en tydlig brytpunkt vid ungefär 98–99 dollar och väntade, enligt bokens skildring, i flera veckor medan aktien närmade sig zonen. Först när den visade honom rätt — bröt uppåt på volym — köpte han. Aktien rusade mot 145 och vida därutöver; testpositionen vid brytpunkten blev fundmentet till hans återtåg och småningom till att han kunde återbetala alla borgenärer. Ingen magi: en enda tranch, en enda brytpunkt, full disciplin under en månad av väntan med skulder i ryggen."
+     "content": "Bokens renaste exempel på en pivotal point-förhandling är comebacken 1915. Efter konkursen och skulderna lånade Livermore en blygsam summa och kunde bara ta en position — ett hundra aktier. Han valde Bethlehem Steel under krigets stålexpansion, lade en tydlig brytpunkt vid ungefär 98–99 dollar och väntade, enligt bokens skildring, i flera veckor medan aktien närmade sig zonen. Först när den visade honom rätt — bröt uppåt på volym — köpte han. Aktien rusade mot 145 och vida därutöver; testpositionen vid brytpunkten blev fundamentet till hans återtåg och småningom till att han kunde återbetala alla borgenärer. Ingen magi: en enda tranch, en enda brytpunkt, full disciplin under en månad av väntan med skulder i ryggen."
     },
     {
      "type": "insikt",
@@ -198,7 +198,7 @@
     },
     {
      "type": "tabell",
-     "content": "{\"rubrik\":\"Pivotal point → AK1TS\",\"rader\":[[\"Element\",\"Livermores version\",\"AK1TS-översättning\"],[\"Brytpunkt\",\"Notering där marknaden visar sitt kort\",\"Triggerzon mot bas\"],[\"Väntan på bevis','Veckor av inaktivitet före entry\",\"Ingen entry utan konfluens\"],[\"Testposition\",\"100 aktier Bethlehem Steel\",\"Litet_läge_forst']]", "comment": ""
+     "content": "{\"rubrik\":\"Pivotal point → AK1TS\",\"rader\":[[\"Element\",\"Livermores version\",\"AK1TS-översättning\"],[\"Brytpunkt\",\"Notering där marknaden visar sitt kort\",\"Triggerzon mot bas\"],[\"Väntan på bevis\",\"Veckor av inaktivitet före entry\",\"Ingen entry utan konfluens\"],[\"Testposition\",\"100 aktier Bethlehem Steel\",\"Liten första tranch\"],[\"Addering\",\"Först när positionen visar vinst\",\"Storlek efter bevis\"]]}"
     },
     {
      "type": "visuell",
@@ -249,7 +249,7 @@
    "blocks": [
     {
      "type": "text",
-     "content": "En operatör som vill äga en stor aktiepost kan inte bara lämna en order. Ett rejält köp flyttar priset mot honom själv, tömmer orderboken och avslöjar intentionen för hela gatan. Därför byggs stora positioner i kampanjer: köp spridda över tid, gärna nedpressade nyhetsdagar, blandat med försäljningar som får aktien att se svag ut — shakeouts som skräcker ut svaga ägare vars papper sedan kan plockas upp billigt. Detta kallar boken accumulating. Samma koreografi i reverse vid toppen: distributing — utdelning av stora poster till entusiastiska köpare som köper styrka, nyheter och berättelser, medan kampanjledaren säljer i lugn takt under ytan."
+     "content": "En operatör som vill äga en stor aktiepost kan inte bara lämna en order. Ett rejält köp flyttar priset mot honom själv, tömmer orderboken och avslöjar intentionen för hela gatan. Därför byggs stora positioner i kampanjer: köp spridda över tid, gärna nedpressade nyhetsdagar, blandat med försäljningar som får aktien att se svag ut — shakeouts som skräcker ut svaga ägare vars papper sedan kan plockas upp billigt. Detta kallar boken accumulating. Samma koreografi i omvänd riktning vid toppen: distributing — utdelning av stora poster till entusiastiska köpare som köper styrka, nyheter och berättelser, medan kampanjledaren säljer i lugn takt under ytan."
     },
     {
      "type": "text",
@@ -261,7 +261,7 @@
     },
     {
      "type": "text",
-     "content": "För nutidens AK1A-elev blir läxan tvådelad. För det första: läs volym och beteende kring nyheter — en rivalförlust som sänker en aktie en timme och sedan köps tillbaka är ett annat statement än en vinstökning som firas och sedan säljs av i veckor. För det andra: lita aldrig på berättelsen ensam, utan översätt den till V-språk — ett avtal (V17 Avtal & Partnerskap) eller en lansering (V16 Produktlanseringar) är en accumulationssignal först när den syns i intäktsstabiliteten eller i orderbokens beteende, inte när pressmeddelandet landar i din inkorg med orders debatterade av andra."
+     "content": "För nutidens AK1A-elev blir läxan tvådelad. För det första: läs volym och beteende kring nyheter — ett konkurrentbesked som sänker en aktie en timme och sedan köps tillbaka är ett annat budskap än en vinstökning som firas och sedan säljs av i veckor. För det andra: lita aldrig på berättelsen ensam, utan översätt den till V-språk — ett avtal (V17 Avtal & Partnerskap) eller en lansering (V16 Produktlanseringar) är en accumulationssignal först när den syns i intäktsstabiliteten eller i orderbokens beteende, inte när pressmeddelandet landar i din inkorg med orders debatterade av andra."
     },
     {
      "type": "insikt",
@@ -280,12 +280,12 @@
     {
      "q": "Vad syftar en operator till med 'shakeouts' under en accumulation?",
      "alternativ": [
-      "Att skrämma ut svaga ägare så deras papper kan plockas upp billigt",
       "Att skaka hand med mäklarna för bättre villkor",
       "Att fysiskt skaka om kurvan i tidningen för att räta ut den",
-      "Att öka utdelningen för att attrahera pensionsfonder"
+      "Att öka utdelningen för att attrahera pensionsfonder",
+      "Att skrämma ut svaga ägare så deras papper kan plockas upp billigt"
      ],
-     "ratt": 0,
+     "ratt": 3,
      "tips": "Fråga dig vem som gynnas av att aktien ser svag ut en kort stund."
     },
     {
@@ -328,7 +328,7 @@
     },
     {
      "type": "text",
-     "content": "Här fins kursens kanske viktigaste koppling till AK1A:s metodskåp: bayesiansk omviktning. Att behandla varje ny notering som ett bevis som får flytta övertygelsen — snarare än som en förolämpning mot den — är formulerad ödmjukhet, samma muskel Livermore byggde med smärta. Skillnaden är att han bar det i kroppen och ibland bröt mot det; AK1A skriver omvikningen i processen så att den inte kräver hjältemod varje gång. En tes som inte kan ändras av data är inte en tes utan en identitet — och identiteter är dyra att äga i en marknad som aldrig har fel."
+     "content": "Här finns kursens kanske viktigaste koppling till AK1A:s metodskåp: bayesiansk omviktning. Att behandla varje ny notering som ett bevis som får flytta övertygelsen — snarare än som en förolämpning mot den — är formulerad ödmjukhet, samma muskel Livermore byggde med smärta. Skillnaden är att han bar det i kroppen och ibland bröt mot det; AK1A skriver omvikningen i processen så att den inte kräver hjältemod varje gång. En tes som inte kan ändras av data är inte en tes utan en identitet — och identiteter är dyra att äga i en marknad som aldrig har fel."
     },
     {
      "type": "text",
@@ -399,7 +399,7 @@
     },
     {
      "type": "text",
-     "content": "Hans motgift var inte känslolöshet utan ordning: regler som skrivs i kallt tillstånd och verkställs i varmt. Positionens storlek är den första regeln — så pass liten att du kan tänka klart; han menade att den som inte kan sova har för stor position och att den som inte kan tänka har ännu större problem. Stoppet är den andra — beslutat före entry, verkställt utan förhandling. Tredje regeln är att skilja beslutstillfälle från verkställelsetillfälle: hopp och rädsla talar bara i närvaro av en öppen position, så formulera planen innan positionen finns, när ingen känsla har något att förlora. Det är exakt strukturerna i AK1TS — stopp, invalidation, adderingsplan — och i Elder-kursens psykologiska första kapitel: rules beat willpower, varje dag."
+     "content": "Hans motgift var inte känslolöshet utan ordning: regler som skrivs i kallt tillstånd och verkställs i varmt. Positionens storlek är den första regeln — så pass liten att du kan tänka klart; han menade att den som inte kan sova har för stor position och att den som inte kan tänka har ännu större problem. Stoppet är den andra — beslutat före entry, verkställt utan förhandling. Tredje regeln är att skilja beslutstillfälle från verkställelsetillfälle: hopp och rädsla talar bara i närvaro av en öppen position, så formulera planen innan positionen finns, när ingen känsla har något att förlora. Det är exakt strukturerna i AK1TS — stopp, invalidation, adderingsplan — och i Elder-kursens psykologiska första kapitel: regler slår viljestyrka, varje dag."
     },
     {
      "type": "text",
@@ -433,12 +433,12 @@
     {
      "q": "Vilken modern term beskriver att vi behåller förlorare och säljer vinnare för tidigt?",
      "alternativ": [
-      "Dispositionseffekten",
       "Diversifiering",
       "Konfluens",
-      "Mean reversion"
+      "Mean reversion",
+      "Dispositionseffekten"
      ],
-     "ratt": 0,
+     "ratt": 3,
      "tips": "Namnet kommer från vad vi gör med våra positioner — ojämlikt."
     },
     {
@@ -482,7 +482,7 @@
     },
     {
      "type": "tabell",
-     "content": "{\"rubrik\":\"Asymmetrins två rader\",\"rader\":[[\"Situation\",\"Impulsen','Livermores regel\",\"AK1TS-översättning\"],[\"Position går back\",\"Hopp om vändning\",\"Kapa snabbt\",\"Exit vid invalidation\"],[\"Position går med vinst','Rädsla att förlora','Behåll och låt löpa\",\"Trailing och omvärdering\"],[\"Lusten att 'plocka av'\",\"Still a oro\",\"Pyramidera i vinst\",\"Addera först på bevis\"],[\"Snittpris stiger vid addering\",\"Känns fel\",\"Rationellt — bevis kostar','Adderingsplan med stoppanyck\"]]}"
+     "content": "{\"rubrik\":\"Asymmetrins två rader\",\"rader\":[[\"Situation\",\"Impulsen\",\"Livermores regel\",\"AK1TS-översättning\"],[\"Position går back\",\"Hopp om vändning\",\"Kapa snabbt\",\"Exit vid invalidation\"],[\"Position går med vinst\",\"Rädsla att förlora\",\"Behåll och låt löpa\",\"Trailing och omvärdering\"],[\"Lusten att plocka av\",\"Stillar oro\",\"Pyramidera i vinst\",\"Addera först på bevis\"],[\"Snittpris stiger vid addering\",\"Känns fel\",\"Rationellt — bevis kostar\",\"Adderingsplan med stoppnyck\"]]}"
     },
     {
      "type": "visuell",
@@ -541,11 +541,11 @@
     },
     {
      "type": "text",
-     "content": "Nuansen som AK1A lägger till — och som skiljer kursen från trading-kulturens dogmer — gäller förhållandet till DCA, det regelbundna indexsparandet. Att månadspara indexfond livet ut är inte omvänd pyramidering utan en strategi vars bärighet är diversifiering och tiden (V12 Intäktsstabilitet på indexnivå, om man så vill). Att addera i en fallande enskild aktie däremot, med tesen 'den är billig nu', är exakt det Livermore förbjuder: medellinjen förkastas och hoppet gödslar. Skillnaden ligger i vad som bär adderingen — en mekanism eller en bön. Kelly-kriteriet i AK1A:s verktygslåda formaliserar samma idé: storleken ska växa med bevisen och kanten, aldrig med önskan."
+     "content": "Nuansen som AK1A lägger till — och som skiljer kursen från trading-kulturens dogmer — gäller förhållandet till DCA, det regelbundna indexsparandet. Att månadspara indexfond livet ut är inte omvänd pyramidering utan en strategi vars bärighet är diversifiering och tiden (V12 Intäktsstabilitet på indexnivå, om man så vill). Att addera i en fallande enskild aktie däremot, med tesen 'den är billig nu', är exakt det Livermore förbjuder: marknaden förkastar tesen och hoppet gödslar. Skillnaden ligger i vad som bär adderingen — en mekanism eller en bön. Kelly-kriteriet i AK1A:s verktygslåda formaliserar samma idé: storleken ska växa med bevisen och kanten, aldrig med önskan."
     },
     {
      "type": "text",
-     "content": "Praktisk konturlista från hans praxis: börja med en bråkdel av avsedd slutstorlek; lägg till först när positionen bevisat dig rätt mot en definierad nivå; drag undan stoppet till brytnivå för varje tillägg så att den äldsta tranchen aldrig riskerar mer än den såg som vinst; ha en övre gräns för antal tillägg — en pyramid har ändar; och behåll alltid en reserv, för han som är fullt investerad har inga alternativ kvar när det bästa tillfället kommer. Det sista var hans eget återkommande bekymmer: att vara så full att nästa obestridliga möjlighet inte fick plats."
+     "content": "Praktisk konturlista från hans praxis: börja med en bråkdel av avsedd slutstorlek; lägg till först när positionen bevisat dig rätt mot en definierad nivå; drag undan stoppet till brytnivå för varje tillägg så att den äldsta tranchen aldrig riskerar mer än den såg som vinst; ha en övre gräns för antal tillägg — en pyramid har en topp; och behåll alltid en reserv, för han som är fullt investerad har inga alternativ kvar när det bästa tillfället kommer. Det sista var hans eget återkommande bekymmer: att vara så full att nästa obestridliga möjlighet inte fick plats."
     },
     {
      "type": "insikt",
@@ -557,7 +557,7 @@
     },
     {
      "type": "tabell",
-     "content": "{\"rubrik\":\"Positionens byggsteg enligt Livermore\",\"rader\":[[\"Steg\",\"Villkor','Exempel\"],[\"Testposition','Brytpunkt definierad','100 aktier Bethlehem Steel\"],[\"Första addering\",\"Position visar vinst mot nivå\",\"Köp vid bekräftad fortsättning\"],[\"Nästa addering','Trenden intakt, nytt bevis','Mindre tranch än den förra\"],[\"Stoppnyck\",\"Varje bevis flyttar risken\",\"Stoppet till senaste brytpunkt\"],[\"Reserv\",\"Aldrig allt investerat\",\"Kapital kvar för nästa möjlighet\"]]}"
+     "content": "{\"rubrik\":\"Positionens byggsteg enligt Livermore\",\"rader\":[[\"Steg\",\"Villkor\",\"Exempel\"],[\"Testposition\",\"Brytpunkt definierad\",\"100 aktier Bethlehem Steel\"],[\"Första addering\",\"Position visar vinst mot nivå\",\"Köp vid bekräftad fortsättning\"],[\"Nästa addering\",\"Trenden intakt, nytt bevis\",\"Mindre tranch än den förra\"],[\"Stoppnyck\",\"Varje bevis flyttar risken\",\"Stoppet till senaste brytpunkt\"],[\"Reserv\",\"Aldrig allt investerat\",\"Kapital kvar för nästa möjlighet\"]]}"
     },
     {
      "type": "visuell",
@@ -612,15 +612,15 @@
     },
     {
      "type": "text",
-     "content": "Den andra fienden var värre för Livermore än dåliga tips: behovet av action. 'The desire for constant action irrespective of underlying conditions is responsible for many losses in Wall Street.' — Begäret efter konstant handling oavsett underliggande villkor är ansvarigt för många förluster på Wall Street. Han skriver om frestelsen att handla bara för att marknaden är öppen och pengarna 'borde arbeta' — att sitta stilla med kapital i reserv känns som att förlora tid, även när det rätta är att vänta på linjen av minst motstånd. Övertradingens räkenskap är tyst: courtage, slippage och spridning äter små kanter; värre är att varje onödig affär förbrukar uppmärksamhet och beslutsenergi som den riktiga affären skulle behövt."
+     "content": "Den andra fienden var värre för Livermore än dåliga tips: behovet av action. 'The desire for constant action irrespective of underlying conditions is responsible for many losses in Wall Street.' — Begäret efter konstant handling oavsett underliggande villkor är ansvarigt för många förluster på Wall Street. Han skriver om frestelsen att handla bara för att marknaden är öppen och pengarna 'borde arbeta' — att sitta stilla med kapital i reserv känns som att förlora tid, även när det rätta är att vänta på linjen av minst motstånd. Övertradingens räkenskap är tyst: courtage, slippage och spread äter små kanter; värre är att varje onödig affär förbrukar uppmärksamhet och beslutsenergi som den riktiga affären skulle behövt."
     },
     {
      "type": "text",
-     "content": "AKM1:s svar på ryktets ekonomi är fundamental källkritik: ett rykte är en oproper källa till en V-variabel. 'De ska skriva kontrakt' — V17 Avtal & Partnerskap gäller först när avtalet finns i primärt material; 'lanseringen kommer spränga' — V16 Produktlanseringar bedöms i säljsiffror, inte i förväntan; 'myndigheten godkänner i maj' — V18 Regulatoriska katalysatorer är daterade beslut, inte hörsägen. Varje rykte kan alltså testas mot samma fråga: vilken V-variabel påstås påverkas, och vad säger primärkällan? Detta gör AK1A till ryktets naturliga fiende — inte genom misstro mot allt, utan genom att flytta bevisbördan tillbaka dit den hör hemma."
+     "content": "AKM1:s svar på ryktets ekonomi är fundamental källkritik: ett rykte är ingen primärkälla till en V-variabel. 'De ska skriva kontrakt' — V17 Avtal & Partnerskap gäller först när avtalet finns i primärt material; 'lanseringen kommer spränga' — V16 Produktlanseringar bedöms i säljsiffror, inte i förväntan; 'myndigheten godkänner i maj' — V18 Regulatoriska katalysatorer är daterade beslut, inte hörsägen. Varje rykte kan alltså testas mot samma fråga: vilken V-variabel påstås påverkas, och vad säger primärkällan? Detta gör AK1A till ryktets naturliga fiende — inte genom misstro mot allt, utan genom att flytta bevisbördan tillbaka dit den hör hemma."
     },
     {
      "type": "text",
-     "content": "Mot actionbegäret finns bara ett botemedel värt namnet: att definiera vad som utgör en affär i förväg — bas, trigger, konfluens — och att låta dagens värde mätas i väntan lika gärna som i handel. En dag utan affär när villkoren saknas är en vinnande dag i Livermores räkenskap; Old Turkeys 'sitting tight' var inte passivitet utan aktiv väntan på rätt tillfälle. Skriv därför upp kriterierna först, och låt kalendern bli en påminnelse om att marknaden betalar för tålamod men hyr ut spänningen till alla som vill ha den — en sanning Livermore betalade miljoner för att få lära sig, och som kapitel 13 tar på fullt allvar."
+     "content": "Mot actionbegäret finns bara ett botemedel värt namnet: att definiera vad som utgör en affär i förväg — bas, trigger, konfluens — och att låta en dags värde mätas i väntan lika gärna som i handling. En dag utan affär när villkoren saknas är en vinnande dag i Livermores räkenskap; Old Turkeys 'sitting tight' var inte passivitet utan aktiv väntan på rätt tillfälle. Skriv därför upp kriterierna först, och låt kalendern bli en påminnelse om att marknaden betalar för tålamod men hyr ut spänningen till alla som vill ha den — en sanning Livermore betalade miljoner för att få lära sig, och som kapitel 13 tar på fullt allvar."
     },
     {
      "type": "insikt",
@@ -679,15 +679,15 @@
    "blocks": [
     {
      "type": "text",
-     "content": "Paniken 1907 började som en förtroendekris i New Yorks trustbolag — mindre bankliknande institut med tunn reserv. När Knickerbocker Trust svek i oktober utlöste det bank runs i kedja: insättare krävde sina pengar, bankerna drog hem sina call loans, mäklarkunder fick marginalkrav och tvingades sälja, vilket pressade priserna ned och genererade nya marginalkrav. Detta är likviditetsspiralen — panikens egentliga motor — och den drivs inte av pessimism utan av tvång: säljare som inte har några åsikter kvar, bara skyldigheter. Utlåningsräntan på börsens dagliga kredit spikade; marknaden som helhet slutade fungera som prisupptäcktsmaskin och blev en enda likviditetsbrunn."
+     "content": "Paniken 1907 började som en förtroendekris i New Yorks trustbolag — mindre bankliknande institut med tunn reserv. När Knickerbocker Trust suspenderades i oktober utlöste det bankrusningar i kedja: insättare krävde sina pengar, bankerna drog hem sina call loans, mäklarkunder fick marginalkrav och tvingades sälja, vilket pressade priserna ned och genererade nya marginalkrav. Detta är likviditetsspiralen — panikens egentliga motor — och den drivs inte av pessimism utan av tvång: säljare som inte har några åsikter kvar, bara skyldigheter. Utlåningsräntan på börsens dagslån sköt i taket; marknaden som helhet slutade fungera som prisupptäcktsmaskin och blev en enda likviditetsbrunn."
     },
     {
      "type": "text",
-     "content": "Livermore hade läst linjen rätt: han burit stora shortpositioner genom höstens förfall, och på panikens kulminationsdag gjorde han en vinst som samtiden uppskattade till över en miljon dollar — vid nedgångens slut närmare tre. Sedan hände det som gör händelsen odödlig: som boken och samtida vittnen skildrar det sände J.P. Morgan — mannen som organiserade räddningskommittéerna, inhalade bankchefer i sitt bibliotek och höll systemet uppe med sin auktoritet — bud till de stora shortsellrarna att sluta sälja, för marknaden klarade inte mer tryck. Livermore täckte sin position samma dag och köpte sedan. Hans egen poänge efteråt var dubbel: han hade läst rätt, och han förstod att när systemets överlevnad står på spel ändras spelets villkor — den som inte läser det läser allt annat fel. Ingen Fed fanns ännu; Morgan var lender of last resort i personform. Panikens efterspel blev Federal Reserve Act 1913 — krisen skapade själva institutionen som äger likviditetsaxeln idag, och därmed en av de tydligaste regulatoriska katalysatorerna i finanshistorien (V18 i AKM1:s språk)."
+     "content": "Livermore hade läst linjen rätt: han burit stora shortpositioner genom höstens förfall, och på panikens kulminationsdag gjorde han en vinst som samtiden uppskattade till över en miljon dollar — vid nedgångens slut närmare tre. Sedan hände det som gör händelsen odödlig: som boken och samtida vittnen skildrar det sände J.P. Morgan — mannen som organiserade räddningskommittéerna, inkallade bankchefer i sitt bibliotek och höll systemet uppe med sin auktoritet — bud till de stora shortsellrarna att sluta sälja, för marknaden klarade inte mer tryck. Livermore täckte sin position samma dag och köpte sedan. Hans egen poäng efteråt var dubbel: han hade läst rätt, och han förstod att när systemets överlevnad står på spel ändras spelets villkor — den som inte läser det läser allt annat fel. Ingen Fed fanns ännu; Morgan var lender of last resort i personform. Panikens efterspel blev Federal Reserve Act 1913 — krisen skapade själva institutionen som äger likviditetsaxeln idag, och därmed en av de tydligaste regulatoriska katalysatorerna i finanshistorien (V18 i AKM1:s språk)."
     },
     {
      "type": "text",
-     "content": "AK1A-läxan är strukturell, inte anekdotisk. För det första: likviditet kan inte диаграмmeras bort — V11 Likviditet och dess samspel med hävstång (V10 Skuldsättningsgrad) är det som avgör om en prisrörelse blir en utmaning eller ett tvång. När marginalen tvingar är alla korrelationer etta och alla teser irrelevant; riskmatrisens likviditetsscenario finns just för att sätta priset på det läget i förväg. För det andra: stabilisering är inte köpsignal — att Morgan stoppade fallet räddade betalningssystemet, inte enskilda aktiers värde, och shortsellern som läser 'räddad marknad' som 'billiga aktier' blandar ihop två olika system. För det tredje, med respekt för ironin: den som är stort short när alla andra tvingas sälja tjänar på andras tvång — och bör, som Livermore 1907 och 1929, lämna bordet när systemet vädjar. Det är en spelstil som kräver både streck och gränser."
+     "content": "AK1A-läxan är strukturell, inte anekdotisk. För det första: likviditet syns inte i diagrammet förrän den saknas — V11 Likviditet och dess samspel med hävstång (V10 Skuldsättningsgrad) är det som avgör om en prisrörelse blir en utmaning eller ett tvång. När marginalen tvingar är alla korrelationer etta och alla teser irrelevant; riskmatrisens likviditetsscenario finns just för att sätta priset på det läget i förväg. För det andra: stabilisering är inte köpsignal — att Morgan stoppade fallet räddade betalningssystemet, inte enskilda aktiers värde, och shortsellern som läser 'räddad marknad' som 'billiga aktier' blandar ihop två olika system. För det tredje, med respekt för ironin: den som är stort short när alla andra tvingas sälja tjänar på andras tvång — och bör, som Livermore 1907 och 1929, lämna bordet när systemet vädjar. Det är en spelstil som kräver både kyla och gränser."
     },
     {
      "type": "insikt",
@@ -699,7 +699,7 @@
     },
     {
      "type": "tabell",
-     "content": "{\"rubrik\":\"1907 i mekanik och läxa\",\"rader\":[[\"Händelse\",\"Mekanik\",\"AK1A-läxa\"],[\"Bank run på trustbolag\",\"Insättare kräver pengar; kreditten dras hem\",\"V11 Likviditet i riskmatrisen\"],[\"Call loans kallas in\",\"Marginalkrav tvingar försäljning\",\"Hävstång gör pris till tvång (V10)\"],[\"Priser faller, nya marginalkrav','Likviditetsspiralen snurrar\",\"Korrelationerna går mot ett\"],[\"Morgan samlar bankerna\",\"Lender of last resort i personform\",\"Stabilisering räddar systemet — inte enskilda aktier\"],[\"Efterspel: Fed 1913\",\"Krisen skapar institutionen\",\"V18 Regulatoriska katalysatorer\"]]}"
+     "content": "{\"rubrik\":\"1907 i mekanik och läxa\",\"rader\":[[\"Händelse\",\"Mekanik\",\"AK1A-läxa\"],[\"Bank run på trustbolag\",\"Insättare kräver pengar; kreditten dras hem\",\"V11 Likviditet i riskmatrisen\"],[\"Call loans kallas in\",\"Marginalkrav tvingar försäljning\",\"Hävstång gör pris till tvång (V10)\"],[\"Priser faller, nya marginalkrav\",\"Likviditetsspiralen snurrar\",\"Korrelationerna går mot ett\"],[\"Morgan samlar bankerna\",\"Lender of last resort i personform\",\"Stabilisering räddar systemet — inte enskilda aktier\"],[\"Efterspel: Fed 1913\",\"Krisen skapar institutionen\",\"V18 Regulatoriska katalysatorer\"]]}"
     },
     {
      "type": "visuell",
@@ -711,7 +711,7 @@
      "q": "Vad var panikens 1907 egentliga motor?",
      "alternativ": [
       "Massivt utbrett pessimism bland långsiktiga sparare",
-      "Tvungen försäljning — bank runs, indragna call loans och marginalkrav som tvingade fram mer försäljning",
+      "Tvungen försäljning — bankrusningar, indragna call loans och marginalkrav som tvingade fram mer försäljning",
       "En enda stor börskortläggning",
       "Importtullar på järnvägsrails"
      ],
@@ -750,15 +750,15 @@
    "blocks": [
     {
      "type": "text",
-     "content": "Sensommaren 1929 var hävstången allmän. Margin på tio procent, investeringstrusts som staplade hävstång på hävstång, och en kultur där kontorsspring pojkar och pianostämmare hade favoritaktier. Detta är miljön bokens läsare kände igen — girigheten var ingen uppfinning av 1929; den fanns i bucket-shoppen 1891 och den finns i appen idag. Livermore hade under våren och sommaren 1929 successivt byggt stora shortpositioner, när linjen av minst motstånd efter hand vände nedåt: den stora massan köpte fallhanden, och han sålde dem den — inte i en enda heroisk dag, utan kampanjvis, med tålamod och med positionen bevisad av marknadens beteende vid brytpunkterna. När oktoberkraschen kom satt han rätt i den största nedgången i modern tid. Samtida rapporter — ingen heltäckande dokumentation finns — talade om en vinst runt hundra miljoner dollar; historiker har senare argumenterat både för lägre och för högre belopp. Det säkra är att det var tidens största enskilda tradingvinst, och att han enligt egen berättelse täckte systematiskt in i svagheten — distribution av shorts i stället för att jaga botten."
+     "content": "Sensommaren 1929 var hävstången allmän. Margin på tio procent, investeringstrusts som staplade hävstång på hävstång, och en kultur där hisspojkar och pianostämmare hade favoritaktier. Detta är miljön bokens läsare kände igen — girigheten var ingen uppfinning av 1929; den fanns i bucket-shoppen 1891 och den finns i appen idag. Livermore hade under våren och sommaren 1929 successivt byggt stora shortpositioner, när linjen av minst motstånd efter hand vände nedåt: den stora massan köpte för fulla handen, och han sålde dem andelar — inte i en enda heroisk dag, utan kampanjvis, med tålamod och med positionen bevisad av marknadens beteende vid brytpunkterna. När oktoberkraschen kom satt han rätt i den största nedgången i modern tid. Samtida rapporter — ingen heltäckande dokumentation finns — talade om en vinst runt hundra miljoner dollar; historiker har senare argumenterat både för lägre och för högre belopp. Det säkra är att det var tidens största enskilda tradingvinst, och att han enligt egen berättelse täckte systematiskt in i svagheten — distribution av shorts i stället för att jaga botten."
     },
     {
      "type": "text",
-     "content": "Affärens anatomi är värd att skilja från myten. Det var inte en spådom: han hade burit förluster under vårens fortsatta uppgång, slukat papper på shortpositioner som kom för tidigt, och just därför är hans 1929 ett argument i kursen — han väntade på att marknaden skulle bevisa honom rätt, inte på att han skulle bevisa marknaden fel. Det var inte heller girighetens triumf: han tog ut vinster i takt med att paniken mojnade och nöjde sig med att lämna bordet medan andra letade bottnar att köpa. Och det var, vilket ofta glöms, en affär i en marknad han tillbringat trettio år med att läsa — den korta versionen av hans livsARBETE. Man kan ogilla spelet och ändå studera spelaren: discipline under bevisning, tålamod under förlust, exit utan triumf."
+     "content": "Affärens anatomi är värd att skilja från myten. Det var inte en spådom: han hade burit förluster under vårens fortsatta uppgång, slukat pengar på shortpositioner som kommit för tidigt, och just därför är hans 1929 ett argument i kursen — han väntade på att marknaden skulle bevisa honom rätt, inte på att han skulle bevisa marknaden fel. Det var inte heller girighetens triumf: han tog ut vinster i takt med att paniken mojnade och nöjde sig med att lämna bordet medan andra letade bottnar att köpa. Och det var, vilket ofta glöms, en affär i en marknad han tillbringat trettio år med att läsa — den korta versionen av hans livsverk. Man kan ogilla spelet och ändå studera spelaren: disciplin medan bevisen byggdes, tålamod under förlust, exit utan triumf."
     },
     {
      "type": "text",
-     "content": "Efterspelet är kursens varnande halva. Under 1930-talet förlorade Livermore den större delen av förmögenheten — råvarupositioner, optioner, ett nytt marknadsläge och en man som allt oftare handlade mot sina egna regler. Samtidigt förändrades själva spelet: Securities Act 1933, Securities Exchange Act 1934 och SEC:s bildande,Glass–Steagall 1933 som skilde bank från börser — den regulatoriska våg som kraschen födde (V18 Regulatoriska katalysatorer i AKM1:s vokabulär). Bucket-shoppar var sedan länge förbjudna, shortselling fick regler, insynen ökade. Ironin är strukturell: den man som läst varje regeländring rätt i trettio år slutade uppdatera kartan just när terrängen byttes — en påminnelse om att edge inte är en egendom utan ett lån som marknaden kan säga upp, och att scenariometoden (vad ändras efter den här krisen?) är lika viktig som entry-disciplinen."
+     "content": "Efterspelet är kursens varnande halva. Under 1930-talet förlorade Livermore den större delen av förmögenheten — råvarupositioner, optioner, ett nytt marknadsläge och en man som allt oftare handlade mot sina egna regler. Samtidigt förändrades själva spelet: Securities Act 1933, Securities Exchange Act 1934 och SEC:s bildande 1934 samt Glass–Steagall 1933 som skilde bankerna från värdepappershandeln — den regulatoriska våg som kraschen födde (V18 Regulatoriska katalysatorer i AKM1:s vokabulär). Bucket-shopparna var sedan länge borta, shortselling fick regler, insynen ökade. Ironin är strukturell: den man som läst varje regeländring rätt i trettio år slutade uppdatera kartan just när terrängen byttes — en påminnelse om att edge inte är en egendom utan ett lån som marknaden kan säga upp, och att scenariometoden (vad ändras efter den här krisen?) är lika viktig som entry-disciplinen."
     },
     {
      "type": "insikt",
@@ -817,19 +817,19 @@
    "blocks": [
     {
      "type": "text",
-     "content": "Fallet nr ett var tekniskt: bucket-shopmetoden fungerade inte i New York. På börsen tog det tid att verkställa order — bandet visade gamla priser, och den som scalpade som i en bucket shop blev slaktad av slippage och fördröjning. Han förlorade återkommande, bröt flera gånger, tvingades ibland låna blygsamma belopp för att ens kunna återvända. Detta var ingen psykologisk kollaps utan en läxa om miljöer: en metod är bunden till sina förutsättningar — orderflöde, likviditet, kostnader — och den som flyttar metod utan att räkna om kostnaderna har ingen metod kvar. AK1A:s motsvarighet heter transactionskostnader och venue: samma strategi i en tunn aktie och i en liquid kan vara två olika strategier."
+     "content": "Fallet nr ett var tekniskt: bucket-shopmetoden fungerade inte i New York. På börsen tog det tid att verkställa order — bandet visade gamla priser, och den som scalpade som i en bucket shop blev slaktad av slippage och fördröjning. Han förlorade återkommande, bröt bank flera gånger, tvingades ibland låna blygsamma belopp för att ens kunna återvända. Detta var ingen psykologisk kollaps utan en läxa om miljöer: en metod är bunden till sina förutsättningar — orderflöde, likviditet, kostnader — och den som flyttar metod utan att räkna om kostnaderna har ingen metod kvar. AK1A:s motsvarighet heter transactionskostnader och venue: samma strategi i en tunn aktie och i en liquid kan vara två olika strategier."
     },
     {
      "type": "text",
-     "content": "Fallet som gjorde djupast intryck i boken är bomullen 1907–1908. Livermore hade då över en miljon dollar efter paniken och en fungerande regeluppsättning. Sedan mötte han Percy Thomas, bomullskungen, en man med verklig expertis och stillsam auktoritet — och lät sig övertalas att gå emot sitt eget band. Han behöll en förlorande bomullspost, bröt mot sin rule om omedelbar exit, eskalerade i förlust och släpade med sig även vinnande positioner i fallet. Slutfakturan: i princip hela förmögenheten, och småningar en konkurs med över en miljon dollar i skulder. Det är detta fall vetet-och-bomull-citatet beskriver — inte en teoretisk frestelse utan en verklig, dokumenterad katastrof där regelbrottet var att tro någon annans övertygelse mer än sitt eget band. Hans egen sammanfattning av epoken är kursens hårdaste mening: 'There is nothing like losing all you have in the world for teaching you what not to do. And when you know what not to do in order not to lose money, you begin to learn what to do in order to win.' — Det finns ingenting som att förlora allt man äger i världen för att lära en vad man inte ska göra. Och när du vet vad du inte ska göra för att inte förlora pengar börjar du lära dig vad du ska göra för att vinna. Och till detta: 'It takes a man a long time to learn all the lessons of all his mistakes.' — Det tar en man lång tid att lära sig alla läxor av alla sina misstag."
+     "content": "Fallet som gjorde djupast intryck i boken är bomullen 1907–1908. Livermore hade då över en miljon dollar efter paniken och en fungerande regeluppsättning. Sedan mötte han Percy Thomas, bomullskungen, en man med verklig expertis och stillsam auktoritet — och lät sig övertalas att gå emot sitt eget band. Han behöll en förlorande bomullspost, bröt mot sin regel om omedelbar exit, eskalerade i förlust och släpade med sig även vinnande positioner i fallet. Slutfakturan: i princip hela förmögenheten, och småningom en konkurs med över en miljon dollar i skulder. Det är detta fall vetet-och-bomull-citatet beskriver — inte en teoretisk frestelse utan en verklig, dokumenterad katastrof där regelbrottet var att tro någon annans övertygelse mer än sitt eget band. Hans egen sammanfattning av epoken är kursens hårdaste mening: 'There is nothing like losing all you have in the world for teaching you what not to do. And when you know what not to do in order not to lose money, you begin to learn what to do in order to win.' — Det finns ingenting som att förlora allt man äger i världen för att lära en vad man inte ska göra. Och när du vet vad du inte ska göra för att inte förlora pengar börjar du lära dig vad du ska göra för att vinna. Och till detta: 'It takes a man a long time to learn all the lessons of all his mistakes.' — Det tar en man lång tid att lära sig alla läxor av alla sina misstag."
     },
     {
      "type": "text",
-     "content": "Comebacken förtjänar sin plats bredvid fallet. Efter 1915 års lån och Bethlehem Steel-affären återuppbyggde Livermore kapitalet under krigets tjurmarknad — och återbetala alla borgenärer, dollar för dollar, trots att konkursen juridiskt skrivit av skulderna. Det är en integritetshandling som säger något om mannens bästaste sidor och gör historien svårare att reducerar till varningsexempel: han var ingen ohederlig spelare utan ett studium i hur begåvning och disciplin kan samexistera med självförstörelse. Efter 1929 följde dock det sista fallet — förluster genom 1930-talet, växande frånvaro från den dagliga disciplinen, ett privatliv i bitar. I AKM1:s språk är strukturen igenkännelig: V19 Kapitalförbrukning & Emission-risk beskriver företags som bränner kapital utan att återhämta sig — Livermores privatliv var en sådan balansräkning, där varje comeback finansierade nästa förlustperiod och där 'emissionerna' bestod av lånat förtroende från omvärlden."
+     "content": "Comebacken förtjänar sin plats bredvid fallet. Efter 1915 års lån och Bethlehem Steel-affären återuppbyggde Livermore kapitalet under krigets tjurmarknad — och återbetala alla borgenärer, dollar för dollar, trots att konkursen juridiskt skrivit av skulderna. Det är en integritetshandling som säger något om mannens bästa sidor och gör historien svårare att reducera till varningsexempel: han var ingen ohederlig spelare utan ett studium i hur begåvning och disciplin kan samexistera med självförstörelse. Efter 1929 följde dock det sista fallet — förluster genom 1930-talet, växande frånvaro från den dagliga disciplinen, ett privatliv i bitar. I AKM1:s språk är strukturen igenkännelig: V19 Kapitalförbrukning & Emission-risk beskriver företags som bränner kapital utan att återhämta sig — Livermores privatliv var en sådan balansräkning, där varje comeback finansierade nästa förlustperiod och där 'emissionerna' bestod av lånat förtroende från omvärlden."
     },
     {
      "type": "text",
-     "content": "Skelettet i alla fall är detsamma och går att skriva i tre steg. Ett: en regel finns och är känd — exit vid förlust, ingen främmande övertygelse, ingen position utan bärighet. Två: en situation uppstår där regeln känns förväntansfullt fel — 'den här gången är annorlunda', 'den här mannen kan mer än jag', 'marknaden har inte förstått än'. Tre: hävstång och storlek förvandlar det som varit en läxa till en förlust av existentiell dignation. Regeln bryts alltid först i liten skala; hävstången avgör priset. Därför placerar AK1A riskmatrisen och V10 Skuldsättningsgrad-bredden vid sidan av — inte efter — entry-disciplinen: priset på regelbrott ska vara känt och begränsat innan det bryts."
+     "content": "Skelettet i alla fall är detsamma och går att skriva i tre steg. Ett: en regel finns och är känd — exit vid förlust, ingen främmande övertygelse, ingen position utan bärighet. Två: en situation uppstår där regeln känns förväntansfullt fel — 'den här gången är annorlunda', 'den här mannen kan mer än jag', 'marknaden har inte förstått än'. Tre: hävstång och storlek förvandlar det som varit en läxa till en förlust av existentiell kaliber. Regeln bryts alltid först i liten skala; hävstången avgör priset. Därför placerar AK1A riskmatrisen och V10 Skuldsättningsgrad-bredden vid sidan av — inte efter — entry-disciplinen: priset på regelbrott ska vara känt och begränsat innan det bryts."
     },
     {
      "type": "insikt",
@@ -896,19 +896,19 @@
     },
     {
      "type": "text",
-     "content": "Nu till den obekväma sanningen om bokens mottagning. Reminiscences hyllas som traders bibel — citerad på t-shirts, öppningskapitel i nästan varje tradingutbildning, förälskad läst av miljontals. Men bokens hjälte är inte en framgångssaga utan en varning skriven i jag-form: han tjänade och förlorade flera förmögenheter, och slutade som en man som betraktade sitt liv som misslyckat. Lefèvre, som skrev boken som reportage och sedebok, är tydligare än sina läsare: berättelsen innehåller sina egna motargument. När kulturen trycker citaten 'the market is never wrong' och 'cut your losses' på muggar hoppar den över att mannen bakom dem dog ogillamod av spelet han älskade. Detta är inte ett argument mot boken — det är argumentet för att läsa den hela."
+     "content": "Nu till den obekväma sanningen om bokens mottagning. Reminiscences hyllas som traders bibel — citerad på t-shirts, öppningskapitel i nästan varje tradingutbildning, läst med förälskelse av miljoner. Men bokens hjälte är inte en framgångssaga utan en varning skriven i jag-form: han tjänade och förlorade flera förmögenheter, och slutade som en man som betraktade sitt liv som misslyckat. Lefèvre, som skrev boken som reportage och sedebok, är tydligare än sina läsare: berättelsen innehåller sina egna motargument. När kulturen trycker citaten 'the market is never wrong' och 'cut your losses' på muggar hoppar den över att mannen bakom dem dog slutkörd av spelet han älskade. Detta är inte ett argument mot boken — det är argumentet för att läsa den hela."
     },
     {
      "type": "text",
-     "content": "Kopplingen till dagtrading-statistiken som Elder-kursen går igenom är omedelbar. Studier av aktiva privatdaytraders — bland annat Barber, Lee, Liu och Odeans data från Taiwan och senare uppföljningar — visar enbild efter bild: den stora majoriteten förlorar pengar efter kostnader, en minoritet går runt noll, och endast en bråkdel — i vissa studier under en procent — uppvisar varaktigt lönsam skicklighet. Bokens egen beskrivning av allmänheten — som inte vill arbeta, inte ens tänka, utan bara få en aktie att köpa — är 1923 års version av samma statistik. Elder-kursensbudskap är detsamma som Livermores praktik men med omvänd bevisbörda: psykologin är allt — men den räcker inte, och den är inte värd priset för de flesta. Att vara bland de statistiskt exceptionella kräver inte bara Livermores regler utan också hans heltidsengagemang — och hans liv visar vad det kostar."
+     "content": "Kopplingen till dagtrading-statistiken som Elder-kursen går igenom är omedelbar. Studier av aktiva privatdaytraders — bland annat data från Taiwan i Barber, Lee, Liu och Odeans studier och senare uppföljningar — visar en bild efter bild: den stora majoriteten förlorar pengar efter kostnader, en minoritet går runt noll, och endast en bråkdel — i vissa studier under en procent — uppvisar varaktigt lönsam skicklighet. Bokens egen beskrivning av allmänheten — som inte vill arbeta, inte ens tänka, utan bara få en aktie att köpa — är 1923 års version av samma statistik. Elder-kursens budskap är detsamma som Livermores praktik men med omvänd bevisbörda: psykologin är allt — men den räcker inte, och den är inte värd priset för de flesta. Att vara bland de statistiskt exceptionella kräver inte bara Livermores regler utan också hans heltidsengagemang — och hans liv visar vad det kostar."
     },
     {
      "type": "text",
-     "content": "Spelproblematiken tillhör ärligheten. Bucket-shoppen var ett spelbule, och det var där han blev bra — men också där han lärde sig älska bandets rytm. Mönstret som forskningen känner igen hos problemspelare finns genom hela hans liv: jakten på att vinna tillbaka, handel i smyg, ångern efteråt, återfallen efter högtidliga löften — och behovet av allt större action för samma känsla. Att neka denna läsning vore att förvandla boken till reklam. AK1A:s hållning är därför dubbel: marknadspsykologin och positionsdisciplinen är evig och värdefull kunskap — och samtidigt är handel inte ett neutralverktyg utan för vissa en drog med kvitto. Frågan varje elev bör kunna svara på är inte 'kan jag bli lika bra som Livermore?' utan 'varför vill jag handla — och vad händer med mig när det går dåligt?'"
+     "content": "Spelproblematiken tillhör ärligheten. Bucket-shoppen var en spelhåla, och det var där han blev bra — men också där han lärde sig älska bandets rytm. Mönstret som forskningen känner igen hos problemspelare finns genom hela hans liv: jakten på att vinna tillbaka, handel i smyg, ångern efteråt, återfallen efter högtidliga löften — och behovet av allt större action för samma känsla. Att neka denna läsning vore att förvandla boken till reklam. AK1A:s hållning är därför dubbel: marknadspsykologin och positionsdisciplinen är evig och värdefull kunskap — och samtidigt är handel inte ett neutralt verktyg utan för vissa en drog med kvitto. Frågan varje elev bör kunna svara på är inte 'kan jag bli lika bra som Livermore?' utan 'varför vill jag handla — och vad händer med mig när det går dåligt?'"
     },
     {
      "type": "text",
-     "content": "Så vad tar AK1A från boken — och vad avvisar vi, öppet? Vi tar: marknadspsykologins evighet (cykler och misslyckanden upprepas eftersom mänsklig natur gör det); asymmetrin vinst/förlust som aritmetisk grund; väntan och konfluens som norm; testpositioner och pyramider i vinst; kulterna kring feedback och logg. Vi avvisar: timing-kulten — tron att förmögenheter byggs på klockrena calls och att den som bara hittar rätt system slår marknaden när som helst; hävstångsuppbyggnad utan moat-förankring — positioner vars storlek saknar fundamental bärighet i V-variablerna och därför lever eller dör med bandets nåd; och trading som identitet — Livermores egen dödsorsak var inte en position utan ett liv där spelet var enda rummet. Boken lär ut bandet; AK1A lär ut att äga företag och läsa bandet — i den ordningen."
+     "content": "Så vad tar AK1A från boken — och vad avvisar vi, öppet? Vi tar: marknadspsykologins evighet (cykler och misslyckanden upprepas eftersom mänsklig natur gör det); asymmetrin vinst/förlust som aritmetisk grund; väntan och konfluens som norm; testpositioner och pyramider i vinst; kulturen kring feedback och logg. Vi avvisar: timing-kulten — tron att förmögenheter byggs på klockrena calls och att den som bara hittar rätt system slår marknaden när som helst; hävstångsuppbyggnad utan moat-förankring — positioner vars storlek saknar fundamental bärighet i V-variablerna och därför lever eller dör med bandets nåd; och trading som identitet — Livermores egen dödsorsak var inte en position utan ett liv där spelet var enda rummet. Boken lär ut bandet; AK1A lär ut att äga företag och läsa bandet — i den ordningen."
     },
     {
      "type": "insikt",
@@ -975,7 +975,7 @@
     },
     {
      "type": "text",
-     "content": "Översättningen till AK1A:s system är rak. Bandläsningen blir trend- och basanalysen i AK1TS; pivotal points blir triggerzoner; testpositionen blir en liten första tranche dimensionerad efter Kelly-fraktion; pyramideringen blir adderingsregler i vinst med stoppnyck; tape readingns ödmjukhet blir bayesiansk omviktning där varje notering är en röstedom; reglerna om tips och action blir loggen och konfluenskravet. AKM1 bidrar med det bandet saknade: fundamental rang — V12 Intäktsstabilitet och V01 Försäljningstillväxt för löptidens bärighet, V07/V08 för marginalernas vittnesmål, V10 och V11 för riskens gränser, V18 för scenarier som ändrar spelet, V19 för kapitalförbränningens varningar. Självklart kopplas även V04, V05 och V06 till värderingen av det man äger — men det bandet lämnar åt eftervärlden. Livermore gav timingen sin form; Graham och hans arvtagare gav värdet dess — AK1A är dessa två读da tillsammans."
+     "content": "Översättningen till AK1A:s system är rak. Bandläsningen blir trend- och basanalysen i AK1TS; pivotal points blir triggerzoner; testpositionen blir en liten första tranche dimensionerad efter Kelly-fraktion; pyramideringen blir adderingsregler i vinst med stoppnyck; tape readingens ödmjukhet blir bayesiansk omviktning där varje notering är en röstedom; reglerna om tips och action blir loggen och konfluenskravet. AKM1 bidrar med det bandet saknade: fundamental rang — V12 Intäktsstabilitet och V01 Försäljningstillväxt för löptidens bärighet, V07/V08 för marginalernas vittnesmål, V10 och V11 för riskens gränser, V18 för scenarier som ändrar spelet, V19 för kapitalförbränningens varningar. Värderingsvariablerna V04 P/S, V05 P/B och V06 EV/EBITDA hör hemma i Graham-traditionen — inte i bandets. Livermore gav timingen sin form; Graham och hans arvtagare gav värdet dess — AK1A är dessa två traditioner tillsammans."
     },
     {
      "type": "text",
@@ -987,7 +987,7 @@
     },
     {
      "type": "utmaning",
-     "content": "Välj tre av de tio reglerna och implementera dem konkret i din nästa analys: skriv exakt var i din process de lever — i loggen, i mallen, i riskmatrisen, i sizningen? För varje regel, namnge också dens fekälla: var kommer den att testas hårdast? Tre regler, tre platser, tre prövningar — det är skillnaden mellan att ha läst Livermore och att bruka honom."
+     "content": "Välj tre av de tio reglerna och implementera dem konkret i din nästa analys: skriv exakt var i din process de lever — i loggen, i mallen, i riskmatrisen, i sizningen? För varje regel, namnge också dess prövning: var kommer den att testas hårdast? Tre regler, tre platser, tre prövningar — det är skillnaden mellan att ha läst Livermore och att bruka honom."
     },
     {
      "type": "tabell",

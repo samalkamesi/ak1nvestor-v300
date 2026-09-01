@@ -1,0 +1,1050 @@
+{
+  "slug": "you-can-be-a-stock-market-genius",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "You Can Be a Stock Market Genius — Greenblatt: KOMPLETT",
+  "summary": "You Can Be a Stock Market Genius (1997) är Joel Greenblatts osminkade handbok i special situations — spin-offs, merger securities, riskarbitrage, rekonstruktioner och rights offerings — skriven för den som är beredd att läsa dokumenten som ingen annan läser. Kursen översätter mekaniken till svenska förhållanden (PM, budhandlingar, avnoteringar, OMX) och är samtidigt ärlig med att kanterna är mindre idag: algoritmer och kapitalmängder har industrialiserat delar av jakten, medan principerna — tvingade säljare och försummade hörn — lever kvar.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven förklara Greenblatts grundtes — att överavkastning finns där ingen tittar och att »geni« är kodord för läxan i ignorerade hörn — och identifiera de tvingade säljare som skapar felprisningen (V10 skuldsättningsgrad, V11 likviditet, V19 emissionsrisk); analysera spin-offs steg för steg: varför värde skapas, hur Form 10 och svenska PM läses och vad checklistan kräver (inget stort moderöverhäng, insynsköp, ledigt kapacitetsutrymme); räkna merger securities och riskarbitrage med spread, annualiserad årstakt, förväntat värde och brytpunktssannolikhet — och veta när positionen ska avbrytas; följa en rekonstruktion från skuldbörda till fresh start-värdering och prissätta post-reorg-aktier med EV/EBITDA (V06), EBITDA-marginal (V08) och ROE (V09); hantera rights offerings med ex-right-beräkning och rätters teoretiska värde samt räkna på rekap-stubbar; använda dokumentkartan — budhandling, noterings-PM, flaggning, insynsköp — på svenska förhållanden; och slutligen skilja den kant som lever kvar (tvång och komplexitet) från den som algoritmer tagit ifrån honom, med Greenblatts disciplin: enbart offentlig information och marginal of safety som princip utan V-nummer (korsreferens Margin of Safety-kursen).",
+  "why": "Joel Greenblatt driver Gotham Capital från 1985 med en ofta citerad årsavkastning i storleksordningen 50 procent under bolagets första nio år, innan utomstående kapital returnerades — och boken är hans utläggning av hur: inte genialitet utan systematiskt arbete i vråar där institutionella regler lämnar marknaden halvtom. Titeln är halvt skämt och kursen tar skämtet på allvar: området kräver läsning av SEC-dokument och svenska PM, och ingen screener i världen ersätter den tiden. För AK1A-ekosystemet är kursen den komplementära mekanikdelen till Margin of Safety-kursen — Klarman ger ramverket (marginalen, tvånget, kassan), Greenblatt ger spelboken per situation: spin-offs, bud, rekonstruktioner och emissioner. Och kursen är kontroversiellt ärlig med att världen förändrats: mer kapital och nyhetsalgoritmer som pollar dagens svenska budmarknad på minuter har krympt arbitragen — men mekanismerna bakom varje special situation är inte förbrukade, och det är den skiljelinjen eleven lär sig att dra.",
+  "chapters_list": [
+    "1. Grundtesen — »geni« betyder läxa i ignorerade hörn",
+    "2. Tvingade säljare — motorn bakom varje special situation",
+    "3. Spin-offs I — varför avknoppningar skapar värde",
+    "4. Spin-offs II — konsten att läsa Form 10 och svenska PM",
+    "5. Spin-offs III — varianter, svenska översättningar och fallgropar",
+    "6. Merger securities — budets dolda papper",
+    "7. Riskarbitrage — matematiken och konsten att avbryta",
+    "8. Restructuring och Chapter 11 — från skuldbörda till nya aktier",
+    "9. Fresh start — felprisade nyemissioner efter rekonstruktion",
+    "10. Rights offerings och recaps — teckningsrätternas mekanik",
+    "11. Fallstudierna — Cypress Gardens, Marriott-spliten och Genesis",
+    "12. Guldkornen — läsa budhandlingar och prospekt som proffs",
+    "13. Ärligheten — krympta kanter, algoritmer och insidergränsen",
+    "14. Masterchecklistan — syntes med AKM1 och marginal of safety"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Grundtesen — »geni« betyder läxa i ignorerade hörn",
+      "intro": "Joel Greenblatt driver Gotham Capital från 1985 med resultat som gjorde boken möjlig — ofta citerat omkring 50 procent per år under de första nio åren — och blir senare adjungerad professor vid Columbia Business School. Boken från 1997 har undertiteln Uncover the Secret Hiding Places of Stock Market Profits, och titeln är halvt skämt: genialitet behövs inte, däremot viljan att läsa dokument i vrår där ingen annan gör det.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundtesen är en enda mening: ovanlig avkastning finns där ingen tittar. Greenblatts marknad är inte helt effektiv — den är effektiv där många letar (stora, välbevakade bolag) och slapp där få letar (avknoppningar, budpapper, rekonstruktioner, emissioner). Dessa special situations kräver arbete, inte begåvning: att läsa en Form 10 eller ett svenskt PM på hundratalet sidor, räkna på mekaniken och vänta på att tvånget släpper. Bokens kapitel om avknoppningar heter tecknande »Chips Off the Old Stock« — och budkapitlet varnar »Don't Try This at Home« — stilen är rakt på sak, och kursen citerar boken öppet precis som Margin of Safety-kursen citerar Klarman."
+        },
+        {
+          "type": "text",
+          "content": "Varför lämnas vråarna obevakade? Inte för att marknaden är dum, utan för att den är institutionell. En stor fond kan sällan äga en nyligen avknappad småbolagsaktie: för litet för mandatet (V11 likviditet), ingen analystäckning, ingen indexhistorik. En indexfond måste sälja det som faller ur index och får inte äga det som tillkommit. En aktiefond får inte äga obligationerna som ingår i ett budvederlag. Varje regel skapar en grupp säljare som agerar utan hänsyn till värde — och deras slarv är din inköpslistas råmaterial. Det är samma institutionella mekanik som Klarman beskriver i Margin of Safety-kursen; här får du den tillämpad situation för situation."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel på hur vråarna bygger en portfölj: tio situations per år som i snitt ger 15 procent med begränsat nedside, plus två som ger 40 procent, är inte en aktieplockares dröm — det är aritmetik. Tio positioner à 15 procent på ett år lyfter en halvfull portfölj med cirka 7,5 procent; läggs Greenblatt-erans djupare rabatter till (30-50 procent under beräknat värde) blir siffrorna av annat slag. Gotham ska under nio år ha någt omkring 50 procent per år — inte genom genialitet utan genom att äga få, välanalyserade situations med marginal. Kompounderingen gör resten: 50 procent per år i nio år förvandlar 1 krona till omkring 38."
+        },
+        {
+          "type": "text",
+          "content": "Kursens kontroversiella ärlighet redan från start: det här är inget område för den som vill ha en screener och en eftermiddag. Varje situation kräver läsning av primärdokument — SEC-dokument som Form 10 i USA, budhandlingar och PM i Sverige — och 5-20 timmars arbete innan en krona investeras. Kantens kosta är tiden; kantens valuta är tålamod. Kapitel 2 ger motorn (tvång), kapitel 3-5 avknoppningar, kapitel 6-7 bud, kapitel 8-9 rekonstruktioner, kapitel 10 emissioner, kapitel 11 fallstudierna, kapitel 12 dokumentläsningen, kapitel 13 sanningen om krympta kanter och kapitel 14 syntesen med AKM1 och marginal of safety — principen utan V-nummer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens gömställen — och vad de kräver av dig\",\"rader\":[[\"Gömställe\",\"Varför ignorerat\",\"Vad som krävs av dig\"],[\"Spin-offs\",\"För litet, fel sektor, utdelat till ägare som aldrig bad om det\",\"Läsa Form 10 eller svenskt PM — fem till femton timmar\"],[\"Merger securities\",\"Icke-aktiedelar i budvederlag förstås inte av mottagarna\",\"Läsa hela betalningspaketet i budhandling och prospekt\"],[\"Restructurings\",\"Konkursprocesser är tröga, juridiska och otrevliga\",\"Läsa reorganisationsplan och räkna på fresh start\"],[\"Rights offerings\",\"Emissioner skrämmer — utspädning (V19)\",\"Räkna ex-right-värde och läsa emissionsvillkor\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "insikt",
+          "content": "Titelns »geni« är kodord för läxa: du behöver inte vara smartare än marknaden — bara beredd att läsa det marknaden inte orkar läsa, i vrån där tvånget redan pressat priset."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå ut på Nasdaq OMX Nordic och leta rätt på en pågående avnotering, budprocess eller nyligen genomförd avknoppning på svenska börsen. Ladda ner budhandlingen eller PM:et. Läs inte allt — hitta bara avsnitten om bakgrund, villkor och finansiering. Skriv tre meningar: vem är tvingad att sälja, vad händer mekaniskt och när? Det är kursens första riktiga läxa — och du har nu gjort mer än de flesta som handlar på kungörelsen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är titeln You Can Be a Stock Market Genius i grunden ett påstående om?",
+          "alternativ": [
+            "Att vissa människor föds med börsgeni och andra inte",
+            "Att man kan tjäna pengar utan att göra hemläxa",
+            "Att »geni« är kodord för att göra läxan i vrår där ingen annan gör den — arbete, inte begåvning",
+            "Att bara privatpersoner kan slå marknaden"
+          ],
+          "ratt": 2,
+          "tips": "Läs undertiteln: var gömmer sig vinsterna enligt boken?"
+        },
+        {
+          "q": "Varför existerar överavkastning i special situations enligt Greenblatt?",
+          "alternativ": [
+            "Institutionella begränsningar — mandat, storleksregler och incitament — lämnar vrårna strukturellt obevakade",
+            "Därför att börsen är stängd vissa dagar",
+            "Därför att privatpersoner alltid har snabbare information",
+            "Därför att kurserna slumpas"
+          ],
+          "ratt": 0,
+          "tips": "Vad hindrar en stor fond från att äga det du kan äga?"
+        },
+        {
+          "q": "Vad kräver området främst av den som vill äga kanten?",
+          "alternativ": [
+            "En snabb dator och rätt screener",
+            "Viljan att läsa primärdokument — Form 10, budhandlingar, PM — som ingen annan orkar läsa",
+            "Kontakter inom bolagsledningar",
+            "Teknisk analys av intradagsdiagram"
+          ],
+          "ratt": 1,
+          "tips": "Vad är det som algoritmer och screenerar inte kan göra åt dig?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Tvingade säljare — motorn bakom varje special situation",
+      "intro": "Varje situation i boken drivs av samma motor: en säljare som är prisokänslig. Priset sätts av marginalhandlaren, och när marginalsäljaren agerar av tvång — regel, mandat, process — hamnar priset där tvånget släpper, inte där värdet ligger. Detta kapitel tränar frågan som avgör allt: vem måste sälja, till vem och hur länge?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Priset på ett värdepapper sätts av den som faktiskt handlar just då — marginalhandlaren. En analytiker kan ha rätt om värdet i åratal utan att det spelar roll om de som faktiskt säljer är prisokänsliga. Kategorierna är systematiska: indexfonden som måste sälja när bolaget faller ur index; sektorsfonden som inte får äga bolaget som lämnat sektorn efter en split; kreditgivaren som får aktier i en rekonstruktion och vill ha pengar, inte ägande; arvtagaren och ISK-plattformens kunder som säljer utdelade avknoppningsaktier utan att öppna PM:et. Ingen av dem frågar: vad är detta värt? De frågar: hur blir jag av med det?"
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel: en indexfond måste göra sig av med ett innehav motsvarande 2 miljarder kronor i en aktie med tunn orderbok (V11). Normal omsättning är 40 miljoner per dag. Fonden som följer index måste vara ur position inom några veckor — den kan inte vänta på värde. Trettio dagars tvångsförsäljning vid dubbel normalvolym trycker priset kanske 15-20 procent under det värde som en köpare med tålamod räknar fram. Notera ordningen: fallet orsakas av logistiken, inte av fundamenta. När logistiken är klar försvinner orsaken — men de flesta köpare då redan skrämda eller obefintliga."
+        },
+        {
+          "type": "text",
+          "content": "Special situations är tvånget packat i en händelse med tidsplan: en avknoppning har utdelningsdag, ett bud har brytvillkor och stängningsdatum, en rekonstruktion har omröstning och framträdande, en emission har teckningsstop. Det är därför Greenblatt kallar dem mekaniska snarare än humördrivna: utfallet styrs av avtal, regler och juridik — saker som går att läsa och räkna på — inte av marknadens sinnesstämning. Klarman säger samma sak i Margin of Safety-kursen: katalysatorn är bonus. Skillnaden här är att katalysatorn i special situations ofta är inbyggd i strukturen och daterad."
+        },
+        {
+          "type": "text",
+          "content": "Ärligheten igen, för den hör hemma i varje kapitel: kanten i en tvångssituation är aldrig hastighet — den ägs av algoritmer och event-fonder. Din kanta är att förstå tvångets orsak, längd och storlek bättre än de som bara ser en fallande kurs. Till det hör riskfiltreringen från AKM1: hög skuldsättningsgrad (V10) gör att bolaget inte överlever väntan; svag likviditet (V11) gör att ditt eget köp trycker priset; ostadiga intäkter (V12) menar att värdet kan försvinna medan du väntar; kapitalförbränning (V19) menar att en emission står runt hörnet. Tvånget är din rabatt — ditt filter är din överlevnad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tvångets källa — från händelse till pressat pris\",\"rader\":[[\"Händelse\",\"Vem som tvingas sälja\",\"Tidsfönster\",\"Klassisk fallgrop\"],[\"Spin-off\",\"Ägare med fel mandat eller indexregel\",\"Dagar till månader efter utdelningen\",\"Förväxla tvångsrabatt med värdeminskning\"],[\"Bud genomförs\",\"Arbitrageörer efter avslut; fonder utan bud-utfall\",\"Till stängningsdagen\",\"Köpa spread utan villkorsanalys\"],[\"Rekonstruktion\",\"Borgenärer som får aktier istället för pengar\",\"Månader efter framträdandet\",\"Köpa gamla utspäddade aktier i stället för de nya\"],[\"Nyemission\",\"Ägare som inte kan eller vill teckna\",\"Fram till teckningsstop\",\"Kalla utspädningen (V19) för gåva\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig först varför aktien är billig — fråga vem som är tvungen att sälja, till vem, och hur länge tvånget varar. Svaret avgör om rabatten är mekanik eller varning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta ett pågående bud eller en avnoteringsprocess på Nasdaq Stockholm. Kartlägg tvånget: vilka institutioner äger bolaget, vilka regler tvingar dem att acceptera eller sälja, och vilka datum styr processen (budtidens utgång, brytvillkor, avnotering). Uppskatta hur stort säljtrycket är i kronor — och när det upphör. Skriv en halv sida. Det är den analys som avgör om det finns en affär alls."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad sätter priset när säljaren är prisokänslig?",
+          "alternativ": [
+            "Analyskonsensus bland mäklare",
+            "Utdelningsdiskonteringen",
+            "Det genomsnittliga riktkursmålet",
+            "Tvånget — inte värdet; priset hamnar där tvångssäljaren måste släppa ifrån sig papperet"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med priset när säljaren inte kan vänta på ett bättre?"
+        },
+        {
+          "q": "Vad menas med att special situations har struktur snarare än sentiment?",
+          "alternativ": [
+            "Att de bara köps i nedgångar",
+            "Att utfallet drivs av beslutade händelser med tidsplaner och tvångsmekanik — avtal, regler och juridik — inte av marknadens humör",
+            "Att de aldrig förlorar värde",
+            "Att de följer räntecykeln"
+          ],
+          "ratt": 1,
+          "tips": "Vad styr utfallet i en budaffär — känslor eller skrivna villkor?"
+        },
+        {
+          "q": "Varför förstorar svag likviditet (V11) tvångseffekten?",
+          "alternativ": [
+            "Illikvida aktier är alltid dåliga bolag",
+            "Illikvida aktier kan inte kortas",
+            "Eftersom även en måttlig försäljning kan krossa priset när köpsidan i orderboken är tunn",
+            "Eftersom börsen stänger handeln vid låg omsättning"
+          ],
+          "ratt": 2,
+          "tips": "Hur många köpare står i orderboken i en småbolagsaktie?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Spin-offs I — varför avknoppningar skapar värde",
+      "intro": "Bokens längsta och tyngsta kapitel — sextio sidor med titeln Chips Off the Old Stock — handlar om avknoppningar: när ett moderbolag delar ut en dotterverksamhet till sina egna ägare. Mekaniken skapar automatiskt tvingade säljare och därmed pressade priser. Det här kapitlet förklarar varför värde skapas; nästa kapitel hur du läser dokumenten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En spin-off betyder att moderbolaget delar ut dotterbolagets aktier till sina egna aktieägare, pro rata — i Sverige kallas det utdelning i aktier (in natura) och dottern noteras separat. I USA är konstruktionen ofta skattefri om villkoren i internal revenue code följs (pro rata-fördelning, moder och dotter driver verklig verksamhet). Varför gör moderbolag detta? Greenblatts svar: flera skäl samtidigt. Konglomeratet som vill berättas rent — analysera en ren skogsbolagsaktie är enklare än en blandning; viljan att göra sig av med ett »dåligt« barn som drar ner på fleravärderingen; och inte minst incitamenten — dotterbolagets ledning får plötsligt egna optioner kopplade till egen kurs och eget resultat."
+        },
+        {
+          "type": "text",
+          "content": "Varför skapas värde? Tre lager. Lager ett: separationen avslöjar dolt värde — summan av delarna blir synlig och jämförbar (V03 intäktsdiversifiering — blandningen som skapar konglomeratrabatt). Lager två: dottern frigörs — ledningen styr själv, kan belåna sig, återköpa aktier (V20) eller växa efter egen spelplan i stället för att konkurrera om moderbolagets kapital. Lager tre — och här kommer tvånget: aktierna hamnar hos ägare som aldrig bad om dem. Indexfonder som inte får äga den nya aktien, sektorsfonder som inte täcker sektorn, internationella förvaltare vars mandat inte omfattar Sverige eller storleken, privatpersoner som ser en okänd småaktie dyka upp på kontot. De säljer — inte för att priset är rätt, utan för att ägandet är fel."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel: ett moderbolag handlas till 85 kronor. Kärnverksamheten är värd 90 kronor och dottern 15 kronor — summan av delarna 105 kronor. Konglomeratrabatten är (105 − 85)/105, ungefär 19 procent. Efter avknoppningen noteras delarna separat: om marknaden — fri från tvång och med analys — prissätter dem till 105 har ägaren tjänat 23,5 procent utan att någonting i verksamheterna förändrats. Greenblatt hänvisar i boken till forskning som visar att avknoppningar i genomslett slår marknaden under de första åren efter separationen — inte magi, utan mekaniken ovan: tvång, fokus och incitament."
+        },
+        {
+          "type": "text",
+          "content": "Svenska exempel — samma mönster på OMX. SCA delde 2017 av hygienverksamheten Essity; Autoliv knoppade 2018 av elektronikdelen Veoneer; Electrolux lyfte 2020 ut Professional-verksamheten; Sandvik delde 2022 av materialdelen som Alleima. I samtliga fall gällde Greenblatts mönster: en renare berättelse, egna incitament — och en period av osäkerhet och tvångsförsäljning kring noteringen där den som gjort läxan kunde köpa av den som inte gjort den. Veoneer fick dessutom inom några år ett bud — katalysatorn du inte får betala för men ibland får på köpet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Varför spin-offs skapar värde\",\"rader\":[[\"Drivkraft\",\"Mekanism\",\"Vad du letar efter\",\"Fallgrop\"],[\"Fokus i moderbolaget\",\"Moder gör av med »dåligt« barn och kan berättas rent\",\"Att etiketten »dåligt« är överdriven\",\"Dottern är faktiskt döende (V01, V12)\"],[\"Nya incitament\",\"Dotterledningen får egna optioner och egen kurs\",\"Insiders som köper i öppen marknad\",\"Optionprogram som tömmer aktien på värde\"],[\"Tvingad försäljning\",\"Mottagarna kan eller vill inte äga\",\"Inget stort moderägande kvar som överhäng\",\"Tolka tvångsförsäljning som fundamentalsignal\"],[\"Ren balansräkning\",\"Dottern startar med rimlig eller ingen skuld\",\"Ledigt kapacitetsutrymme — återköp (V20) eller tillväxt\",\"Skulden lastas på dottern (V10)\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "Spin-off-rabatten är strukturell, inte fundamental: säljarna äger inte analysen — de äger ett ägande de inte vill ha. Din uppgift är att ta över analysen när de lämnat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en av de svenska avknoppningarna — Essity, Veoneer, Electrolux Professional eller Alleima. Hämta kursdata för moderbolaget före separationen och för båda bolagen efter. Räkna summan av delarna 30 dagar efter noteringen och 24 månader senare. Skrevs rabatten ut eller inte? Notera också vad som hände under de första trettio dagarna — det är där tvångssäljarnas fingeravtryck syns."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka skäl har moderbolag att göra spin-offs enligt boken?",
+          "alternativ": [
+            "Endast skatteskäl — inget annat spelar in",
+            "Endast press från aktivister",
+            "Flera samverkande: fokusera kärnan, göra sig av med icke-passande verksamhet, ge dottern egna incitament — separationen frigör dolt värde",
+            "Inga — spin-offs är alltid värdeneutrala"
+          ],
+          "ratt": 2,
+          "tips": "Vem vinner på att skilja verksamheterna åt — och hur?"
+        },
+        {
+          "q": "Vilken mekanik pressar spin-off-aktien tidigt?",
+          "alternativ": [
+            "Att börsen saknar prisfeed för nya aktier",
+            "Att utdelningen beskattas omgående för alla",
+            "Att dotterbolaget alltid misslyckas affärsmässigt",
+            "Att aktierna hamnar hos ägare som inte kan, får eller vill äga dem — institutionellt och privat tvångssäljande"
+          ],
+          "ratt": 3,
+          "tips": "Vad gör en indexfond med en aktie som inte ingår i dess index?"
+        },
+        {
+          "q": "Moderbolaget handlas till 85 kronor; kärnan är värd 90 och dottern 15. Hur stor är konglomeratrabatten?",
+          "alternativ": [
+            "10 procent",
+            "Ungefär 19 procent — (105 − 85) dividerat med 105",
+            "35 procent",
+            "Obefintlig — marknaden har redan rätt"
+          ],
+          "ratt": 1,
+          "tips": "Rabatten mäts mot summan av delarna — inte mot moderkursen."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Spin-offs II — konsten att läsa Form 10 och svenska PM",
+      "intro": "Här görs skiljelinjen mellan läsaren och screenern. Ett amerikanskt spin-off lämnar in en Form 10 till SEC — ett dokument på hundratalet sidor med affärsbeskrivning, kapitalisering och avtal. Den svenska motsvarigheten är noteringsprospektet eller PM:et. Greenblatts poäng: det är precis detta arbete som gör att vrån förblir vrå — och därmed att rabatten förblir din.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dokumentet är fyllt av kött. Form 10 innehåller: business-beskrivningen (hur dottern faktiskt tjänar pengar — intäktsstabilitet V12, kunder, avtal V17); kapitaliseringen (skuld, kassa, antal aktier — V10); de finansiella uttalandena (ofta med separat redovisning för första gången — marginaler V07/V08 kan beräknas ordentligt); relaterade parters transaktioner (vilka avtal som gäller mellan moder och dotter efter separation); samt riskfaktorerna. I Sverige heter motsvarande dokument prospekt eller informationsmemorandum vid notering — Finansinspektionen granskar prospektet — och innehållet är slående likartat: verksamheten, kapitalstrukturen, stamavtalen, riskerna. Hundra sidor läsning är priset för att få handla före dem som inte läser."
+        },
+        {
+          "type": "text",
+          "content": "Greenblatts checklista — vad du letar efter. Ett: inget stort moderägande kvar. Moderbolag som behåller en stor post kan komma att dumpa den senare — ett framtida överhäng som trycker kursen i åratal. Två: insiders köper. När dotterbolagets ledning och styrelse köper aktier i öppen marknad med egna pengar — i Sverige synligt via insideranmälningar till Finansinspektionen — är det den starkaste signalen: de som kan verksamheten bäst väljer äga mer. Tre: ledigt kapacitetsutrymme — en balansräkning utan skuld och med handlingsutrymme, som tillåter återköp (V20), förvärv eller att bära en nedgång. Fyra: rimliga villkor i avtalen med moderbolaget (V17) — dottern ska inte betala avgifter som suger ur den. Fem: är etiketten »dåligt barn« förtjänad? Om moderbolaget gjort av med dottern därför att den förlorar pengar är rabatten kanske rätt pris."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel från dokumentet: dotterns separata finansiella uttalande visar EBITDA på 60 miljoner kronor, ingen skuld och 50 miljoner i kassa. Jämförbara bolag handlas till 7 gånger EV/EBITDA (V06). Beräkningen: EV = 7 × 60 = 420; eget kapital = 420 − 0 skuld + 50 kassa = 470 miljoner. Nyskapad marknadsvärde dag ett, pressat av tvångsförsäljning: 330 miljoner. Rabatt: (470 − 330)/470, ungefär 30 procent. Lägg till kvalitetsfrågorna: äger dottern patent och IP (V13) eller varumärken (V14) som moderbolaget ägde men inte prissatte? Då kan normaliserade kassaflöden ligga över det separata uttalandets snitt. Så byggs en Greenblatt-affär: dokument, multiplar, marginal — och tvånget som motpart."
+        },
+        {
+          "type": "text",
+          "content": "Fallgroparna sitter i samma dokument. Skuldfördelningen: moder kan lasta dottern med skuld innan separation (V10) — räntekostnaden kan äta hela EBITDA. Kostnadsallokeringen: moder kan ta ut höga stamavgifter retroaktivt formulerade. Kapitaltömningen: moder kan låta dotren betala en extra utdelning till sig själv före splitdagen — kassan försvinner. Optionsprogrammen: stora emitterade optioner till ledningen betyder framtida utspädning. Och den värsta: dottern är det dåliga barnet på riktigt — fallande försäljning (V01) och ostadiga intäkter (V12) i de separata uttalandena. Rabatt är inte marginal; marginal är rabatt mot bevisat värde. Det är skillnaden mellan att köpa billigt och att köpa rätt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Form 10 och PM — var guldkornen sitter\",\"rader\":[[\"Sektion\",\"Vad du finner\",\"Grön flagga\",\"Röd flagga\"],[\"Bakgrund och skäl\",\"Moders motiv och tidsplan\",\"Ärlig problembeskrivning\",\"Vaga formuleringar om framtida avsikter\"],[\"Kapitalisering\",\"Dotterns skuld och kassa vid start\",\"Noll eller låg skuld (V10)\",\"Maximal belåning eller tömd kassa\"],[\"Relaterade parters transaktioner\",\"Avtal mellan moder och dotter\",\"Marknadsmässiga villkor (V17)\",\"Stamavtal som gynnar moder på dotterns bekostnad\"],[\"Ledning och insynspersoner\",\"Vem som leder och äger\",\"Insiders köper i öppen marknad\",\"Ledningen säljer vid första kursstänk\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Dokumentet är skrivet av jurister som måste berätta allt — din edge är att faktiskt läsa det. Varje timme i en Form 10 eller ett PM är en timme som konkurrensen strukturerat valt bort."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hämta en Form 10 från SEC:s Edgar för en pågående amerikansk spin-off — eller ett svenskt PM för en pågående avknoppning eller notering. Läs kapitaliseringen och avsnittet om relaterade parters transaktioner. Hitta tre grönflaggor och en röd från kursens tabell. Avsluta med en rad: vid vilken börsvärdesnivå skulle du vilja köpa — och vilken multipel och marginal den motsvarar (V06)."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en Form 10?",
+          "alternativ": [
+            "Det separationsdokument ett amerikanskt spin-off-bolag lämnar till SEC — med affärsbeskrivning, kapitalisering och avtal; svenska motsvarigheten är noterings-PM eller prospekt",
+            "En blankett för korta försäljningar",
+            "En kvartalsrapport för dotterbolag",
+            "Ett optionsavtal mellan moder och dotter"
+          ],
+          "ratt": 0,
+          "tips": "Vilket dokument måste spin-off-bolaget lämna in innan noteringen kan ske?"
+        },
+        {
+          "q": "Vilken kombination är grönast enligt Greenblatts checklista?",
+          "alternativ": [
+            "Moder behåller 40 procent och ledningen säljer",
+            "Moder behåller majoriteten och optionerna är lösenklara",
+            "Inget stort moderägande kvar, insiders köper i öppen marknad, dottern startar utan skuld",
+            "Dottern har maximal belåning och stor emission framför sig (V19)"
+          ],
+          "ratt": 2,
+          "tips": "Tre gröna nyckelord från checklistan: överhäng, insynsköp, balansräkning."
+        },
+        {
+          "q": "Varför är det positivt att inga stora moderägare återstår efter en spin-off?",
+          "alternativ": [
+            "Därför att moder då brukar köpa tillbaka dottern omgående",
+            "Därför att moder annars kan komma att dumpa sitt innehav senare — ett framtida försäljningsöverhäng",
+            "Därför att dottern då slipper börsens regelverk",
+            "Därför att utdelningen då blir skattefri"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan en stor ägare göra med sin post om ett år — och vad gör det med kursen?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Spin-offs III — varianter, svenska översättningar och fallgropar",
+      "intro": "Avknoppningen kommer i flera varianter: den rena spin-offen, equity carve-outen där moder noterar en minoritetspost, partial spin-offs och tracking stocks — och den svenska varianten, avnoteringen efter genomfört bud. Varje variant har egen mekanik, egen checklista och egna fallgropar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Equity carve-out: moderbolaget sätter ut och säljer en minoritetspost i dottern i en börsintroduktion — dottern blir noterad men moder behåller kontrollen. Det intressanta är inte dottern utan stubben: moderbolagets eget börsvärde. Om dottern är noterad till 1 000 miljoner och moder äger 80 procent är innehavet värt 800; värderar du kärnverksamheten till 300 bör moder handlas runt 1 100. Handlas moder till 950 finns en stub-rabatt på omkring 14 procent ((1 100 − 950)/1 100). Greenblatts varning: minoritetsrabatten kan vara permanent — kontrollen och kassaflödet sitter kvar hos moder, och värdepapperet som ser billigt ut kan förbli billigt tills en händelse (bud, helt uppköp av minoriteten, ny carve-out av kärnan) frigör värdet."
+        },
+        {
+          "type": "text",
+          "content": "Partial spin-offs och tracking stocks: moder delar ut bara en del av dottern, eller emitterar en spårningsaktie som följer dotterns resultat utan att juridiskt skilja verksamheterna. Varningen är strukturell: när en rörelse har två ägarkategorier — stamaktieägare och spårningsaktieägare — vinner rörelseintressena (moder och dess stamägare) nästan alltid när intressena kolliderar. Tracking stocks är därför inget för den som inte kan läsa rättslig hierarki. Svenska översättningen av hela fältet: avknoppning genom utdelning i aktier är den vanliga vägen på OMX; carve-out motsvaras av att en koncern noterar en dotter medan koncernen själv är kvar — eller att en stor ägare gör en introduktion av en del av koncernen. Noteringarna följer prospektreglernas logik — samma dokument, samma vrå-effekt."
+        },
+        {
+          "type": "text",
+          "content": "Den svenska specialiteten: avnoteringen. När ett bud genomförs på Nasdaq Stockholm lämnar bolaget börsen — först efter att budgivaren nått brytvillkoret (oftast 90 procents acceptans) och utlösningsförfarandet drivits klart. Minoritetsägare som inte accepterat sitter kvar med onoterade aktier i budgivarens bolag — ofta utan marknad, utan kurs och med svag likviditet (V11). Det finns ett pris där minoritetsposten är värd att köpa — Greenblatt-logiken gäller även i det oregelverket — men priset måste reflektera att utgången saknar datum. Att jämföra en avnoterad minoritetspost med senaste börsdag är som att jämföra en insjö med havet: samma molekyler, olika vågor."
+        },
+        {
+          "type": "text",
+          "content": "Fallgroparna sammanfattade — och kopplade till AKM1:s filter. För det första: skuldfördelningen (V10) — lärdomen från Marriott-spliten i kapitel 11. För det andra: tillväxten (V01) och intäktsstabiliteten (V12) i dotterns separata uttalanden — en avknoppad verksamhet med fallande och ostadiga intäkter är ett dåligt barn som förtjänar sin rabatt. För det tredje: likviditeten (V11) — nyskapade aktier handlas tunnast under de första veckorna; den som köper för mycket trycker priset själv. För det fjärde: emissionsrisken (V19) — en dotter som behöver nytt kapital inom en snar framtid kan tvingas till emission som urholkar just din marginal. Varje fälla har ett mått — det är därför kursen mappar boken till V-systemet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Spin-off-varianter — situation, mekanism, checklista, fallgrop\",\"rader\":[[\"Variant\",\"Mekanism\",\"Checklista\",\"Fallgrop\"],[\"Ren spin-off\",\"Alla dotteraktier delas ut till ägarna\",\"Moderöverhäng? Insynsköp? Skuldfördelning (V10)?\",\"Tunn handel (V11) de första månaderna\"],[\"Equity carve-out\",\"Moder noterar en minoritetspost av dottern\",\"Stub-rabatt i moder? Vem kontrollerar kassaflödet?\",\"Minoritetsrabatten permanentiseras\"],[\"Partial spin-off / tracking\",\"Del av dotter delas ut eller spåras\",\"Äger stamaktieägarna verksamheten — på riktigt?\",\"Rörelseintressena vinner över minoriteten\"],[\"Avnotering efter bud\",\"Bolaget lämnar börsen när bud fullbordas\",\"Brytvillkor uppnått? Minoritetsskydd? Utbyteslikvid?\",\"Kvar som minoritet i oregelverkat bolag utan marknad\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "Varianten avgör var värdet sitter: i rena spin-offen i dotterns kurs, i carve-outen i moderns stub-rabatt, i tracking-aktien i rättslig hierarki. Lär dig se vilket papper som är felprisat — inte bara att något är felprisat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en pågående eller nyligen genomförd avknoppning eller avsikt att separera på svenska börsen — pressmeddelanden med orden »avsikt att dela upp«, »avknoppning« eller »notering av« är startskottet. Läs kungörelsen och det PM som så småningom publiceras. Klassificera varianten enligt tabellen. Räkna därefter: vad borde delarna vara värda var för sig — och var handlas de? Skriv en sida med marginalberäkning (V06) och den fallgrop du bedömer som störst."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en equity carve-out?",
+          "alternativ": [
+            "Alla dotteraktier delas ut gratis till ägarna",
+            "Dottern likvideras och tillgångarna delas ut",
+            "Moderbolaget noterar endast en minoritetspost av dottern — och stubben (moder) kan då handla under summan av sina delar",
+            "Dottern köper upp moderbolaget"
+          ],
+          "ratt": 3,
+          "tips": "Hur stor del av dottern sätts ut till börshandeln — och vad behåller moder?"
+        },
+        {
+          "q": "En carve-out: dottern är värderad till 1 000, moder äger 80 procent, kärnan är värd 300 — men moder handlas till 950. Vad visar det?",
+          "alternativ": [
+            "Att marknaden prissätter en stub-rabatt på ungefär 14 procent mot summan 1 100",
+            "Att kärnan är värd noll",
+            "Att dottern är övervärderad med exakt 50 kronor",
+            "Att moder måste delas upp omgående enligt lag"
+          ],
+          "ratt": 1,
+          "tips": "Jämför moders börsvärde med summan av dess delar — hur stor är skillnaden i procent?"
+        },
+        {
+          "q": "Vilken är den klassiska fallgropen i skuldfördelningen vid en split?",
+          "alternativ": [
+            "Att analytikern missar att skulden (V10) lastats på dottern medan marknaden antar motsatsen",
+            "Att moder får för mycket kassa",
+            "Att dottern betalar för hög utdelning till minoriteten",
+            "Att warranterna löper för länge"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vem som bar räntebördan i Marriott-fallet — kapitel 11 kommer tillbaka till det."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Merger securities — budets dolda papper",
+      "intro": "Ett bud består sällan bara av en rubriksiffra. Vederlaget kan vara kontanter, aktier — och ibland obligationer, preferensaktier eller warranter. De sistnämnda, merger securities, är bokens doldis: papper som hamnar hos ägare som inte får, vill eller förmår äga dem, och som därför säljs billigt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen: när ett bolag förvärvar ett annat betalas vederlaget ut till de säljande aktieägarna. Kontantbud är renast — en siffra, ett villkorsavsnitt, en tidslinje. Aktiebud ger ett utbytesförhållande (ratio) och därmed risk i båda papperen. Men i en del affärer — Greenblatts era var full av dem — kompletteras vederlaget med obligationer, preferenser eller warranter för att få ihop värdet eller skatten. I Sverige är kontantbud normen på Nasdaq Stockholm, och svenska budhandlingar innehåller därför sällan exotiska papper; däremot finns aktiebud med ratio och ibland värdepapper i europeiska bud. Där budvederlaget innehåller mer än kontant och aktier — där finns merger securities."
+        },
+        {
+          "type": "text",
+          "content": "Varför blir de billigt? Samma tvångsmekanik som alltid. Mottagarna av vederlaget är aktieägare — ofta institutionella aktiefonder med mandat som bara tillåter aktier, och privatpersoner som aldrig ägt en obligation. Aktiefonden som får obligationer i ett bud säljer dem — inte för att priset är fel utan för att ägandet inte tillåts i förvaltarmandatet. Privatpersonen förstår inte vad warranten är värd och slänger den med aktierna. Resultatet är ett papper utan naturliga köpare och nästan alltid utan analystäckning: ingen bank skriver research på en warrantserie på två hundra miljoner. Illikviditeten (V11) som gör pappret ointressant för de stora är exakt det som gör det intressant för den som räknar själv."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel (förenklat i Greenblatts anda): ett bud ger säljarna en obligation med pari 100 kronor, kupong på 8 procent och lösen om sex månader i samband med affärens stängning. Papperet handlas till 82 kronor — mottagarna säljer mekaniskt. Den som räknar: 18 kronor kursvinst på 82 kronor på ett halvår är cirka 22 procent — grovt räknat omkring 44 procent årstakt — plus kupongen. Frågan som avgör allt: hur säker är lösen? Om affären spricker kan obligationen dröja obestämd tid. Räkna istället med två utfall: genomförd affär ger lösen 100; spricka ger ett papper värt kanske 90 med okänd löptid. Förväntat värde avgör — inte kupongen. Detta är merger securities i en mening: mekanisk försäljning skapar felprisning; dokumenten avgör säkerheten."
+        },
+        {
+          "type": "text",
+          "content": "Warranterna — budgivarens lilla extra. En warrant ger rätten att köpa budgivarens aktie till en fast lösenkurs under en löptid. När aktien handlas strax över lösenkursen kan warranten handlas nära sitt inneboende värde; när aktien ligger under lösenkursen handlas warranten som en ren option — och små warrantserier utan bevakning kan handla långt under/optionsprisens teoretiska värde. Greenblatts poäng är inte att spekulera i volatilitet utan att ibland ges papper som i praktiken är billiga optioner till ägare som slänger dem. Ditt verktyg är samma som alltid: läs villkoren i prospektet (lösenkurs, löptid, utspädningsmekanik), räkna värdet, köp med marginal — och glöm aldrig att en warrant på ett dåligt bolag till vilket pris som helst är ett dåligt papper (V10, V12 i bakkanten)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Budets papper — vem får dem och varför de säljs billigt\",\"rader\":[[\"Papper\",\"Vem som får det\",\"Varför det säljs billigt\",\"Var detaljerna finns\"],[\"Kontantvederlag\",\"Alla säljande ägare\",\"Säljs inte — men definierar spreaden\",\"Budhandlingens villkorsavsnitt\"],[\"Budgivarens aktier\",\"Alla säljande ägare\",\"Fonder som inte vill ha budgivaren exponerad\",\"Vederlagsbeskrivning och utbytesförhållande\"],[\"Obligationer och preferenser\",\"Alla säljande ägare\",\"Aktiefonder får inte äga räntepapper — säljer omedelbart\",\"Prospektets lånevillkor: kupong, lösen, säkerhet\"],[\"Warranter\",\"Alla säljande ägare\",\"Ingen analystäckning på små serier\",\"Lösenkurs och löptid i emissionsvillkoren\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Budet består av mer än rubriksiffran: läs hela betalningspaketet. Aktierna prissätts av algoritmer på sekunder — de övriga papperen av ingen alls."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett nyligen europeiskt eller amerikanskt bud där vederlaget innehöll mer än kontanter — S-4 eller motsvarande prospekt på nätet. Identifiera alla papper säljarna fick. Jämför med ett svenskt kontantbud på Nasdaq Stockholm: vad fick säljarna där — och vilken mekanisk försäljning uppstod? Skriv ner var gränsen går mellan det algoritmerna prissätter och det de inte rör."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är merger securities?",
+          "alternativ": [
+            "Bankernas lånebrev till budgivaren",
+            "Optioner utskrivna av börsen på budmålet",
+            "Analytrapporter om budaffärer",
+            "Värdepapper som budgivaren betalar med utöver aktier eller kontanter — obligationer, preferenser, warranter"
+          ],
+          "ratt": 3,
+          "tips": "Vad kan finnas i vederlagspaketet utöver aktier och kontanter?"
+        },
+        {
+          "q": "Varför säljs icke-aktiedelen av ett budvederlag ofta billigt?",
+          "alternativ": [
+            "Därför att den alltid är i konkurs",
+            "Därför att räntan alltid är noll",
+            "Därför att börsen förbjuder handel med dem",
+            "Därför att mottagarna — aktiefonder och privatpersoner — inte får, vill eller förmår äga den typen av papper och säljer mekaniskt"
+          ],
+          "ratt": 3,
+          "tips": "Vad gör en renodlad aktiefond med obligationer den får i ett bud?"
+        },
+        {
+          "q": "En obligation med pari 100 handlas till 82 sex månader före planerad lösen. Den årliga kursvinsten i grov släng är...",
+          "alternativ": [
+            "Omkring 44 procent årstakt — 18 kronor på 82 på ett halvår, fördubblat",
+            "7 procent",
+            "2 procent",
+            "Noll — lösen kan aldrig räknas med"
+          ],
+          "ratt": 0,
+          "tips": "Räkna först avkastningen på halvåret, fördubbla sedan grovt för att annualisera."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Riskarbitrage — matematiken och konsten att avbryta",
+      "intro": "Riskarbitrage — att köpa målbolaget under budpriset och tjäna spreaden om affären genomförs — är bokens mest frestande och farligaste kapitel; Greenblatt döper det Don't Try This at Home. Här är matematiken: spread, annualiserad årstakt, förväntat värde och brytpunktssannolikheten. Och här är den moderna sanningen: svenska budmarknaden pollas av algoritmer inom minuter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Basfallet: ett bolag budas till 40 kronor kontant. Aktien handlas till 38. Spreaden är 2 kronor — 5,3 procent på insatt kapital. Men 5,3 procent säger inget utan tidsaxeln: med fyra månader till förväntad stängning är den enkelt annualiserade avkastningen cirka 15,8 procent (5,3 procent per fyra månader gånger tre). Räkneexemplet visar arsenalen: en spread på 2 kronor som ser liten ut i absoluta tal kan vara utmärkt på fyra månader och usel på arton. Annualiseringen är första räkningen; den andra är risken att affären inte blir av."
+        },
+        {
+          "type": "text",
+          "content": "Förväntat värde-modellen. Uppskatta sannolikheten p att affären genomförs — från dokumenten, inte från magkänsla: villkorsavsnittet (brytvillkor om acceptans, myndighetsgodkännanden enligt V18 regulatoriska katalysatorer), finansieringens säkerhet (kontant på kontot? bankförbindelse? villkorad?), budgivarens bindning (avtalets karaktär enligt V17 — fast bindning eller lös avsiktsförklaring) och motbudsrisk. Räkna: EV = p × vinst + (1 − p) × förlust. Med p = 0,9, vinst = +2 och förlust = −8 (kursen backar till fristående värde 30 vid sprick) blir EV = 0,9 × 2 − 0,1 × 8 = 1,0 krona — positivt men inte fett. Brytpunkten: p × 2 = (1 − p) × 8 ger p = 80 procent. Tror du mindre än så — stå utanför. Notera känsligheten: smalare spread kräver högre p; med spread 1 kronor krävs p = 90 procent bara för att bryta ens."
+        },
+        {
+          "type": "text",
+          "content": "Nedside är allt. Kursen 38 är inte ditt skydd — ditt skydd är vad målbolaget är värt utan bud. Om bolaget handlades till 28 före budet är fallet vid sprick kanske till 30, inte till 40. Men om kursen drivits av förväntan — bud på rykten, uppgång på spekulation — kan spricket bli brant och djupt. Därför Greenblatts varning i kapiteltiteln: den som inte kan räkna fristående värde (kapitel 3-5:s verktyg: V06 EV/EBITDA, V12 intäktsstabilitet) äger ingen spread — spreaden äger honom. Aktiebud kräver dessutom hedging: korta budgivarens aktier för att låsa ratio:t — med alla kostnader och lånetagrisken det innebär."
+        },
+        {
+          "type": "text",
+          "content": "När avbryter du? Svaret är EV-baserat, inte prisbaserat. Ny information som sänker p — myndighetsinvändningar, finansieringsproblem, budgivarens vacklan — kan förvandla en god affär till en dålig även om spreaden breddats (bred spread är ofta marknadens sätt att säga samma sak). Sälj när EV vänder negativt, oavsett om du har förlust eller vinst på positionen. Och den moderna ärligheten: dagens svenska budmarknad stängs inte av dig. Nyhetsalgoritmer köper kungörelsen på millisekunder och spreaden efter ett OMX-bud är ofta nere på någon procent inom minuter. Din edge är inte hastighet — det är att läsa brytvillkoret på sidan 47 och förstå om det finns en verklig sprickrisk som marknaden underskattar, eller tvärtom en tvångsmekanik (budgivare som måste genomföra) som gör spreaden säkrare än den ser ut."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riskarbitrage — räkneschemat\",\"rader\":[[\"Fråga\",\"Var svaret finns\",\"Siffra att räkna\",\"Varningstecken\"],[\"Genomförs affären?\",\"Brytvillkor, finansiering, myndighetsprövning (V17, V18)\",\"Sannolikheten p i procent\",\"Finansiering bunden vid skuldmarknad i stress\"],[\"När stängs den?\",\"Tidsplanen i budhandlingen\",\"Annualiserad spread — årstakt\",\"Långa prövningar äter upp års takten\"],[\"Vad händer vid sprick?\",\"Målets fristående värde\",\"Nedside i kronor\",\"Kursen före bud vida över fristående värde\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Spreaden är lön för villkorsanalys — inte för snabbhet. Algoritmen läser rubriken på sekunden; din lön kommer från att läsa villkoren bättre än den som sålde dig aktien."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett pågående bud på Nasdaq Stockholm. Notera budpris, dagskurs och budtidens utgång. Räkna: spread i procent, annualiserad årstakt, och skriv en procentuppskattning av p med tre skäl ur budhandlingen (brytvillkor, finansiering, myndighetsprövning). Beräkna EV med ditt eget antagande om nedside — målets värde utan bud. Vid vilken p är affären jämnt? Skriv slutsatsen: köpa, eller står du utanför?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Bud 40 kronor, kurs 38, fyra månader till stängning. Enkelt annualiserad avkastning?",
+          "alternativ": [
+            "5,3 procent",
+            "Cirka 15,8 procent årstakt — 5,3 procent per fyra månader gånger tre",
+            "40 procent",
+            "2,6 procent"
+          ],
+          "ratt": 1,
+          "tips": "Annualisera: sprid per period gånger antal perioder per år."
+        },
+        {
+          "q": "Spread 2 kronor på kurs 38; nedside vid sprick är minus 8 kronor. Vid vilken sannolikhet är förväntat värde noll?",
+          "alternativ": [
+            "80 procent — lös p × 2 = (1 − p) × 8",
+            "50 procent",
+            "10 procent",
+            "95 procent"
+          ],
+          "ratt": 0,
+          "tips": "Sätt vinst gånger sannolikhet lika med förlust gånger rest-sannolikheten och lös ekvationen."
+        },
+        {
+          "q": "När ska en arbitrageposition avbrytas?",
+          "alternativ": [
+            "Aldrig — positioner hålls till slutet oavsett",
+            "Först när spreaden är exakt noll",
+            "När ny information sänker sannolikheten så att förväntat värde vänder negativt — brytvillkor hotas, finansieringen svajar eller myndigheten invänder",
+            "När kursen stiger över budpriset"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med EV om sannolikheten faller — och vad styr ditt beslut?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Restructuring och Chapter 11 — från skuldbörda till nya aktier",
+      "intro": "När skuldbördan (V10) kväver ett bolag går det in i en rekonstruktionsprocess — Chapter 11 i USA, företagsrekonstruktion i Sverige. De gamla aktierna utspäddas eller utplånas; borgenärerna får nya papper och nya aktier. Kapitlet följer processen steg för steg — och visar varför den som förstår den kan köpa framtida värden till bråkdelar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vägen dit är nästan alltid densamma: belåning som blev fel. Ett LBO eller expansionslån (V10 skuldsättningsgrad) möter en nedgång — intäkterna ostadiga (V12), marginalerna pressade (V07) — och räntetäckningen släcker. Chapter 11 är inte döden utan ett rättsligt skydd: bolaget får behålla verksamheten igång under domstolens överinseende, skjuta borgenärerna ifrån sig och lägga fram en plan. DIP-finansiering — ny, överordnad kredit som finansierar processen — håller lamporna tänd. I Sverige heter motsvarigheten företagsrekonstruktion enligt rekonstruktionslagen, med rekonstruktör och borgenärssammanträde; den svenska processen är kortare men ger färre verktyg. Moderna svenska exempel: SAS gick igenom den amerikanska Chapter 11-processen 2022-2024; Northvolt lämnade in Chapter 11 i USA 2024 — processerna är globala även när bolagen är svenska."
+        },
+        {
+          "type": "text",
+          "content": "Spelplanen i fyra steg. Ett: ansökan — gamla aktier rasar och handlas på ren slump eftersom de sannolikt utplånas; det är här de mest novisartade misstagen görs (att köpa »billiga« gamla aktier i hopp om att de överlever). Två: planen — reorganisationsplanen och disclosure statement beskriver vem som får vad: säkrade borgenärer först, sedan osäkrade, ofta med en blandning av nytt papper och nya aktier; gamla aktieägare får i regel ingenting eller en bråkdel. Tre: omröstning och godkännande — klasserna röstar, domstolen stadfäster. Fyra: framträdandet — bolaget lämnar processen med renad balansräkning och nya aktier distribuerade till borgenärerna. Vem är då ägare? Kreditörer som ville ha pengar tillbaka — inte onoterat aktieägande. De är följaktligen säljare, och det är exakt där Greenblatt pekar."
+        },
+        {
+          "type": "text",
+          "content": "Varför felprisat? Tre skäl. Första: de nya aktierna hamnar hos motiverade säljare utan analysintresse — en kreditfond som specialiserat sig på distressed skuld, inte på att värdera ett friskt vårdbolags framtid; när den får aktier i stället för kontanter likviderar den. Andra: bolaget saknar allt institutionsmarknaden bygger på — ingen analys- historia, ingen indexplacering, ingen ägarbas med mandat. Tredje: etiketten. Många förvaltare får inte äga »konkursaktier« eller nyligt rekonstruerade bolag alls — reglerna igen, vråarna igen. Resultatet: nyskapade aktier i ett rensat bolag kan handlas till bråkdelar av värdet — samma struktur som en spin-off, fast med extra stämpel av skam."
+        },
+        {
+          "type": "text",
+          "content": "Riskerna — Greenblatt köper inte tragedin utan räknar den. Om verksamheten fortfarande bränner kapital (V19) kommer nästa emission och äter rabatten. Om intäktsstabiliteten (V12) är dålig är fresh start-värdet en illusion. Om planen ännu inte är klar är utfallet att rättsligt gissa — Greenblatts disciplin är att vänta tills strukturen är tillräckligt fast för att räkna på: vem får vilka papper, hur mycket skuld lämnas kvar, vad är den renade balansräkningen värd i normaliserad drift. Tillgångarna i det rekonstruerade bolaget — fastigheter, patent och IP (V13), varumärken (V14), avtal (V17) — värderas ofta av marknaden som om de vore förbrukade. De är det sällan; skulden var problemet, inte tillgångarna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Chapter 11 — processen steg för steg\",\"rader\":[[\"Steg\",\"Dokument\",\"Vem som blir säljare\",\"Vad du räknar\"],[\"Ansökan och DIP\",\"Ansökan, DIP-finansiering\",\"Gamla aktieägare ger upp\",\"Täckning för det nya papperet\"],[\"Plan och omröstning\",\"Reorganisationsplan, disclosure statement\",\"Borgenärer som röstar med fötterna\",\"Vem som får vilken andel av de nya aktierna\"],[\"Framträdande\",\"Ny balansräkning — fresh start\",\"Borgenärer som får aktier i stället för pengar\",\"EV/EBITDA (V06) mot sektorns multipel\"],[\"Livet efter\",\"De första rapporterna\",\"Ingen — och därför felprisat\",\"Om verksamheten fortfarande blöder (V12, V19)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Konkursprocessen är en tvångsförsäljningsmaskin med tidsplan: den gamla aktien är oftast död — den nya, som hamnar hos borgenärer som ville ha kontanter, är ofta levande och felprisad."
+        },
+        {
+          "type": "utmaning",
+          "content": "Följ en pågående eller nyligen avslutad rekonstruktion — exempelvis en av de större svenska fallen de senaste åren. Leta upp planen eller motsvarande svensk dokumentation och svara: vad fick de säkrade borgenärerna, vad fick de osäkrade, vad fick gamla aktieägarna? Räkna sedan på vad de nya aktierna handlades till efter framträdandet — och vad de är värda idag. Skriv en sida om var rabatten satt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär Chapter 11?",
+          "alternativ": [
+            "Ett rättsligt skydd där bolaget omorganiserar under domstolens överinseende i stället för att omedelbart likvideras — svensk motsvarighet är företagsrekonstruktion",
+            "En omedelbar likvidation av alla tillgångar",
+            "En obligatorisk börsnotering av borgenärspapper",
+            "En skatteuppgörelse med skattemyndigheten"
+          ],
+          "ratt": 0,
+          "tips": "Vad skiljer en rekonstruktion från en konkurs?"
+        },
+        {
+          "q": "Vem får i regel de nya aktierna i en rekonstruktion?",
+          "alternativ": [
+            "De gamla aktieägarna, pro rata",
+            "Staten",
+            "Personalen enligt lag",
+            "Borgenärerna — som ville ha pengar tillbaka, inte onoterat aktieägande, och därför blir motiverade säljare"
+          ],
+          "ratt": 3,
+          "tips": "Vem hade fordran på bolaget — och vad ville den ha ut?"
+        },
+        {
+          "q": "Varför är nyskapade post-reorg-aktier ofta felprisade?",
+          "alternativ": [
+            "De saknar analyshistorik och hamnar hos ägare utan intresse för dem — samma tvångsmekanik som spin-offs",
+            "De är olagliga för institut att äga",
+            "De kan aldrig betala utdelning",
+            "Börsen vägrar handla dem"
+          ],
+          "ratt": 0,
+          "tips": "Vad ville de nya ägarna ha — aktier eller kontanter?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Fresh start — felprisade nyemissioner efter rekonstruktion",
+      "intro": "Vid framträdandet ur rekonstruktionen skrivs balansräkningen om: tillgångar och skulder värderas till aktuella värden — fresh start. Bokvärdet börjar om, ägarna är borgenärer som hellre vill ha pengar, och analysen saknas. Det är här kursens kanske renaste Greenblatt-affär finns — och här Genesis-fallet hör hemma, som kapitel 11 återkommer till.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fresh start-mekaniken: skulder omvandlas till eget kapital, tillgångarna värderas om, och de nya aktierna emitteras till borgenärerna till ett bokfört eget kapital som speglar planens värderingsantaganden. Det är bokföringens redo — och bokföringens svaghet: bokvärdet är en åsikt om värdet, skriven av dem som strukturen tjänar på att den är konservativ. Om planen värderar verksamheten försiktigt (vilket den ofta gör — domstolar och borgenärer föredrar försiktighet) och marknaden sedan handlar aktien under bokvärdet, samlas två nivåer av pessimism. Greenblatts regel: räkna aldrig mot bokvärdet — räkna mot normaliserade kassaflöden. Boken är utgångspunkt; kassaflödet är domaren."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel: ett bolag lämnar rekonstruktionen med fresh start-eget kapital på 600 miljoner kronor. Nettoskuld är 150 miljoner och normaliserad EBITDA 100 miljoner — en EBITDA-marginal (V08) som historiken visar är återkommande i normalår. Dag ett handlas de nya aktierna till sammanlagt 350 miljoner. Räkningen: EV = 350 + 150 = 500; EV/EBITDA (V06) = 5,0 gånger. Sektorbolag av samma kvalitet handlas till 8 gånger. Om re-rating till sektorn: EV = 800; eget kapital = 800 − 150 = 650 miljoner — 86 procent över dag ett-kursen. Alternativt, utan re-rating: ROE (V09) på återuppbyggd balansräkning plus avbetalning av skuld skapar värde underifrån. Notera vad som gör fallet till en special situation: siffrorna är offentliga i planen — och ingen läser dem."
+        },
+        {
+          "type": "text",
+          "content": "Greenblatts eget Genesis-fall — senare dokumenterat i hans undervisning och offentliga framträdanden — följde exakt det här mönstret: en vårdoperatör krossad av skuld (inte av sin verksamhet) gick igenom Chapter 11 vid sekelskiftet; han och fondens investerare köpte seniora fordringar under pari under processen, fick nya aktier vid framträdandet och behöll dem medan marknaden långsamt prissatte det rensade bolaget. Siffrorna i kursens exempel är förenklade för pedagogiken — men strukturen är den dokumenterade: köp papper med säkerhet i strukturen, låt processen omvandla dem, och äg resultatet medan tvångssäljarna lämnar. Ingen gång behövdes hemlig information — bara dokument, räkning och tålamod."
+        },
+        {
+          "type": "text",
+          "content": "Varningarna. Ett: »billigt mot bok« är inte marginal — bokvärdet är som sagt en åsikt; om normaliseringsantagandena (V07, V08, V12) är fel är bokvärdet fel. Två: kapitalbehovet (V19) — om verksamheten fortfarande förbränner kapital kommer nästa emission, och då äts just din rabatt; leta efter verksamheter där krisen var finansieringsproblem, inte efterfrågeproblem. Tre: den nya skulden — vissa planer lämnar kvar betydande belåning (V10); räkna på hur mycket av EBITDA som går till ränta i ett normalt dåligt år. Fyra: struktur-oklarhet — vänta tills planen är stadfäst; att gissa utfall av pågående rättsprocesser är inte värdeinvestering utan hasard. Fem, och störst: förväxla inte det nya bolaget med det gamla. Skulden är borta — men bara för att den bytte ägare. Frågan återstår: är verksamheten bra? Det är V01-V15:s jobb att svara."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fresh start — signal, mekanik och räknelära\",\"rader\":[[\"Signal\",\"Mekanism\",\"Räkneexempel\",\"Varning\"],[\"Borgenärer får nya aktier\",\"De ville ha pengar — säljer utan analys\",\"Dag ett-kurs 45 procent under fresh start-bokvärdet\",\"Bokvärdet är en åsikt — räkna på kassaflödet\"],[\"Ingen analystäckning\",\"Institut saknar historia och mandat\",\"V06 på 5 gånger mot sektorns 8\",\"Täckningen saknas evang av skäl — svaga fundamenta\"],[\"Ren balansräkning\",\"Skuld omvandlad till eget kapital\",\"ROE (V09) byggs upp från låg bas\",\"Ny belåning (V10) kan återkomma\"],[\"Nyemission efter reorg\",\"Kapitalbristen kvarstår (V19)\",\"Ny utspädning äter rabatten\",\"Emission utan tydlig plan är vägen tillbaka ner\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "insikt",
+          "content": "Bokvärdet efter fresh start är en åsikt — rabatten mot normaliserat kassaflöde är fakta. Köp aldrig rabatten mot boken; köp rabatten mot framtiden."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta upp ett bolag som lämnat en rekonstruktion under de senaste två åren — amerikanska listor över nyligen framträdda bolag finns fritt tillgängliga. Hämta den första rapporten efter framträdandet. Räkna EV/EBITDA (V06), EBITDA-marginal (V08) och ROE (V09). Jämför med två sektorkollegor. Skriv en analys på en sida: är rabatten mot sektorn förtjänad — eller hänger etiketten kvar när skulden är borta?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är fresh start-värderingen?",
+          "alternativ": [
+            "En inköpsrabatt som mäklare ger dag ett",
+            "Börsvärdet första handelsdagen",
+            "En omvärdering av tillgångar och skulder till aktuella värden vid framträdandet ur rekonstruktionen — bokföringen börjar om",
+            "Analyschefens första riktkurs"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med bokföringen när skulderna omvandlats till eget kapital?"
+        },
+        {
+          "q": "Post-reorg: normaliserat EBITDA 100 miljoner, nettoskuld 150, börsvärde 350. EV/EBITDA (V06)?",
+          "alternativ": [
+            "2,0 gånger",
+            "5,0 gånger — (350 + 150) dividerat med 100",
+            "10,0 gånger",
+            "3,5 gånger"
+          ],
+          "ratt": 1,
+          "tips": "EV är börsvärde plus nettoskuld — dividera sedan med EBITDA."
+        },
+        {
+          "q": "Vad är den största varningen med att köpa »billigt mot bok« efter en rekonstruktion?",
+          "alternativ": [
+            "Bokföringar är olagliga att läsa för privatpersoner",
+            "Bokvärdet kan aldrig understiga börsvärdet",
+            "Boken visar alltid exakt rätt värde",
+            "Att kapitalbehovet (V19) kan kvarstå — nya emissioner äter rabatten om verksamheten fortfarande bränner pengar"
+          ],
+          "ratt": 3,
+          "tips": "Varför gick bolaget in i rekonstruktionen från början — skuld eller trasig verksamhet?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Rights offerings och recaps — teckningsrätternas mekanik",
+      "intro": "Nyemissioner med företrädesrätt är svenska börsens husmus — och Greenblatts mekanik gäller dem rakt av. Kapitlet går igenom ex-right-beräkningen, rätternas värde och vad passivitet kostar — samt rekordkapitaliseringarna, där en stor utdelning byts mot skuld och en stub återstår att värdera.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken: bolaget erbjuder sina ägare att teckna nya aktier till ett pris under marknadskursen — med företrädesrätt, alltså via teckningsrätter som handlas separat på börsen fram till teckningsstoppen. Varför gör bolag det? För att stärka balansräkningen (V19 — kapitalbrist eller minskad belåning), ibland för finansiering av förvärv. En garantiorganisation backstoppar emissionen: bankerna garanterar teckning mot en premie, och garantipremien kostar befintliga ägare värde — den syns i emissionsvillkoren. I Sverige är konstruktionen med företrädesrätt normen vid nyemissioner — bankkrisens emissioner 2008-2009 är de stora historiska exemplen, och varje konjunkturell kris skapar en ny våg. Greenblatts blick: emissioner är tvångsmaskiner — ägare som inte kan eller vill teckna tvingas sälja sina rätter, och de som inte gör något alls betalar tyst."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexemplet som allt handlar om. Aktien handlas till 10 kronor. Emissionen erbjuder en ny aktie per fyra befintliga (1:4) till teckningskursen 7 kronor. Ex-rätt-värdet: (4 × 10 + 1 × 7) / 5 = 47/5 = 9,40 kronor. Teckningsrättens teoretiska värde: (10 − 7) / 5 = 0,60 kronor. Kontrollen: ägaren av fyra aktier hade 40 kronor; efter emissionen, om han säljer sina fyra rätter: 4 × 9,40 + 4 × 0,60 = 37,60 + 2,40 = 40 — värdeneutralt. Om han tecknar: betalar 7 kronor och får en aktie värd 9,40 — samma värde som rätterna. Men om han gör ingenting: fyra aktier värda 37,60 kronor — en tyst förlust på 6 procent. Det är utspädningens pris (V19), och det betalas av den som inte öppnar kuvertet."
+        },
+        {
+          "type": "text",
+          "content": "När är emissionen en affär? Greenblatts test: två villkor. Första: rabatten är djup — inte för att bolaget är desperat utan för att marknaden är rädd. En sund bank eller fastighetsägare som emitterar i en systemkris säljer trygghet till panikpris; deltagaren får marginal, den passiva betalar. Andra: bolaget är fundamentalt friskt — kapitalet ska gå till att förstärka en levande verksamhet (V12 stabila intäkter, rimlig V10), inte ner i ett hål (V19). I marknadshistorien var det just systemkrisens bankemissioner som gav deltagarna dubbla siffror i rabatt mot justerat bokvärde (V05) — medan samma emission i ett döende bolag bara var sista viloplatsen innan nästa. Samma mekanik, motsatta utfall — dokumenten och räkningarna skiljer dem åt."
+        },
+        {
+          "type": "text",
+          "content": "Recapitalizationerna — spegelvända emissioner. I en rekap betalas en stor, ofta lånefinansierad utdelning till aktieägarna; skuld replaces eget kapital (V10 stiger med avsikt) och kvar står en stub — restvärdet av bolaget efter utdelningen. Greenblatts era använde företag rekar för att slåss mot bud — lämna ut värde till ägarna så att de inte säljer. För dig som analytiker är frågan alltid: vad är stubben värd? Räkna fristående: bolagets värde minus ny skuld minus utdelningen. Fallgropen är att betala för stuben som vore det hela bolaget — kursen före utdelningen innehåller ju pengarna som snart lämnar kontot. Vissa rekar delar även ut warranter till ägarna (rätt att köpa tillbaka aktien till fast kurs) — papper som ofta värderades slarvigt, samma mekanik som merger securities i kapitel 6."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rights offering och rekap — mekanik och räknelära\",\"rader\":[[\"Situation\",\"Mekanism\",\"Räkna så här\",\"Fallgrop\"],[\"Nyemission med företrädesrätt\",\"Teckningsrätter till rabatt; garantiorganisation backstoppar\",\"Ex-rätt = (N × kurs + teckningskurs) / (N + 1)\",\"Tro att rabatten är en gåva — passivitet kostar\"],[\"Försäljning av rätter\",\"Rätterna handlas separat på börsen\",\"Rättens värde = (kurs − teckningskurs) / (N + 1)\",\"Låta rätterna löpa ut ovärderade\"],[\"Rekap med stor utdelning\",\"Skuld erstätter eget kapital — stub återstår\",\"Stub = bolagsvärde minus ny skuld (V10)\",\"Betala för stuben som vore det hela bolaget\"],[\"Rekap med warranter\",\"Ägarna får utdelning plus warrant\",\"Warrantvärde mot lösenkurs och löptid\",\"Glömma att utdelningen tömde balansräkningen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "I en emission med företrädesrätt är rabatten ingen gåva: den som tecknar eller säljer sina rätter står neutral — den som ingenting gör betalar utspädningen (V19). Gör alltid något."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en pågående eller nyligen avslutad nyemission med företrädesrätt på Nasdaq Stockholm. Läs prospektet: teckningskurs, ratio, garant och garantipremie. Räkna ex-rätt-värdet, rätternas teoretiska värde och vad passivitet kostade i procent. Jämför din siffra med hur rätterna faktiskt handlades. Skriv en halv sida: var handlades de mot teoretiskt värde — och vad förklarade avvikelsen?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Kurs 10 kronor, teckningskurs 7, en ny aktie per fyra befintliga (1:4). Vad är teckningsrättens teoretiska värde?",
+          "alternativ": [
+            "3,00 kronor",
+            "1,75 kronor",
+            "7,00 kronor",
+            "0,60 kronor — (10 − 7) dividerat med (4 + 1)"
+          ],
+          "ratt": 3,
+          "tips": "Räkna först ex-värdet (4 × 10 + 7) / 5 — rätten är sedan skillnaden mot teckningskursen, spridd på antalet gamla aktier."
+        },
+        {
+          "q": "Vad händer den passiva ägaren som varken tecknar eller säljer sina rätter?",
+          "alternativ": [
+            "Han betalar utspädningen — i exemplet cirka 6 procent av positionsvärdet",
+            "Ingenting — emissionen är alltid värdeneutral för alla",
+            "Han får nya aktier automatiskt utan betalning",
+            "Hans rätter förlängs till nästa emission"
+          ],
+          "ratt": 0,
+          "tips": "Vad är kvar i handen när ex-rätt-sänkningen skett utan att någon ersättning togs ut?"
+        },
+        {
+          "q": "När är en djup emissionsrabatt en edge snarare än en fälla?",
+          "alternativ": [
+            "Alltid — rabatt är rabatt",
+            "När bolaget är fundamentalt friskt och emissionen stärker balansräkningen — djup rabatt plus sund kärna ger marginal, medan ett sjukt bolag bara får nytt slukhål (V19)",
+            "Aldrig — emissioner är alltid dåliga",
+            "Bara om garanten är en utländsk bank"
+          ],
+          "ratt": 1,
+          "tips": "Vad ska det nya kapitalet användas till — förstärkning eller överlevnad?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Fallstudierna — Cypress Gardens, Marriott-spliten och Genesis",
+      "intro": "Bokens kraft sitter i fallen: det lilla nöjesföretaget som värderades under sin kassa och mark, hotelljätten som delade sig och lastade skulden, vårdoperatören som rekonstruerades och kom tillbaka. Detta kapitel går igenom fallen — och de lärdomar som gått i arv under samlingsnamnet Leeds-fallen: de praktikfall Greenblatt lyfter som exempel på hur yrkesfolk arbetar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cypress Gardens — bokens intrödesfall och dess renaste läxa. Ett litet floridanskt nöjesföretag, helt utanför institutionell bevakning: för litet, för tråkigt, för okänt. Greenblatt visar hur en enkel räkning — kassan plus värdet på marken och tillgångarna mot börsvärdet — kunde visa att aktien handlades under sina likvida delar, med själva verksamheten på köpet. Poängen är inte fallet i sig utan vad det bevisar: vråarna behöver inte vara komplicerade. De behöver bara vara orapporterade. Den som gör en grundlig värdering av ett bolag ingen analyserar konkurrerar med trötthet och ointresse — inte med Goldman Sachs."
+        },
+        {
+          "type": "text",
+          "content": "Marriott-spliten 1992 — årets händelse i amerikansk finans och en läxa i skuldfördelning (V10). Marriott Corporation meddelade i oktober 1992 att bolaget skulle delas: Marriott International — hotellförvaltningen, avgiftsverksamheten, kassaflödesmaskinen — och Host Marriott — de ägda hotellen och i praktiken det mesta av koncernens skuld i storleksordningen tre miljarder dollar. Obligationsägarna i gamla Marriott såg sig bestulna: fordran på hela koncernen blev fordran på den skuldbetyngda delen. De stämde och obligationspriserna föll kraftigt. Greenblatt och Gotham analyserade stämningarnas utsikter och fann att marknadens rädsla överdrev riskerna; de dokumenterat stora vinsterna i situationen kom från att skilja juridisk teater från ekonomisk substans. Lärdomen till svenska förhållanden: varje separation — bud, avknoppning, utdelning — är en skuldens omfördelning. Fråga alltid: vem bär räntebördan efteråt, och vad är det värt att stå på rätt sida?"
+        },
+        {
+          "type": "text",
+          "content": "Genesis — Greenblatts eget post-reorg-mästerverk, dokumenterat i hans undervisning och offentliga framträdanden. En vårdoperatör vars problem var finansieringen, inte verksamheten: solid efterfrågan (V12), för tung skuld (V10). I rekonstruktionen köpte Greenblatt seniora fordringar under pari — papper med säkerhet i strukturen, överst i återbetalningstrappan — och lät processen omvandla dem till nya aktier i det rensade bolaget vid framträdandet. Två beslut skilde fallet från hasard: papperets senioritet (nedside definierat av strukturen) och verksamhetens kvalitet (uppsiden definierad av fundamenta). Siffrorna var offentliga i planen hela vägen. Till bokens fallbank hör också praktikfallen som i kursmaterialet sammanfattas som Leeds-fallen — berättelserna om yrkesmännens affärer: få, välanalyserade situations, stora positioner när edge och marginal sammanfaller, och en sträng disciplin att aldrig handla på annat än offentlig information. Samma mönster i Harcourt-affären från boken: budets blandade vederlag såldes mekaniskt av mottagarna — läsa hela paketet, inte rubriken."
+        },
+        {
+          "type": "text",
+          "content": "Mönstren på tvären — därför är fallen flera kapitel och inte kuriosa. Ett: tvånget fanns före köpet — panik, process eller mekanik — och var identifierbart i dokument. Två: värdet var räknebart i offentligt material — kassa och mark i Cypress Gardens, aktiver och avgifter i Marriott, planen och fundamenta i Genesis. Tre: marginalen (priset under beräknat värde — principen utan V-nummer, utförligt i Margin of Safety-kursen) skyddade mot fel. Fyra: tålamodet — utfallen tog månader eller år, och mellan köp och erkännande såg positionerna fel ut. Det är också därför fallen överlever sin epok: algoritmer kan tömma en spread, men de kan inte äga en osäker process i arton månader medan dokumenten sakta prissätts. Det är människoarbete fortfarande."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens fall — situation, mekanism, lärdom\",\"rader\":[[\"Fall\",\"Situation\",\"Mekanism\",\"Lärdom\"],[\"Cypress Gardens\",\"Litet okänt nöjesföretag i Florida\",\"Kurs under kassa plus markvärde\",\"Vråar behöver inte vara komplicerade — bara orapporterade\"],[\"Marriott-spliten 1992\",\"Bolaget delas; skuld lastas på Host\",\"Obligationspanik överdrev rättsrisken\",\"Fördelningen av skuld (V10) avgör vem som vinner\"],[\"Genesis\",\"Vårdoperatör i rekonstruktion\",\"Köp av senior skuld — nya aktier vid framträdandet\",\"Köp papper med säkerhet; låt processen göra jobbet\"],[\"Harcourt-affären\",\"Bud med blandat vederlag\",\"Icke-aktiedelen såldes mekaniskt\",\"Läs hela betalningspaketet — inte bara rubriken\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "I varje fall köpte de inte en aktie — de köpte en mekanism: tvång plus dokument plus marginal. Aktien var bara kvittot på att mekanismen fanns."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ett Marriott-tankeexperiment: anta att ett börsbolag med börsvärde 100 miljarder delas i två delar; den ena får avgiftsverksamheten värd 70 och den andra tillgångarna plus 60 miljarder skuld. Vilket papper vill du äga — och vad tror du marknaden gör med de två kurserna de första nittiota dagarna? Skriv ner mekaniken, inte opinionen. Jämför sedan med en verklig svensk separation och se om mönstret håller."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med skulden i Marriott-spliten 1992?",
+          "alternativ": [
+            "Den fördelades ojämnt — det mesta lastades på Host Marriott, vilket utlöste obligationsägarnas stämning och panik i vederlagen",
+            "Den avskrevs helt av fordringsägarna",
+            "Den konverterades till warranter",
+            "Den togs över av staten"
+          ],
+          "ratt": 0,
+          "tips": "Vilken del av bolaget fick bära räntebördan — avgiftsverksamheten eller tillgångarna?"
+        },
+        {
+          "q": "Vad köpte Greenblatt i princip i Genesis-fallet?",
+          "alternativ": [
+            "Gamla vanliga aktier på börsen",
+            "Indexfonder på vårdsektorn",
+            "Valutaoptioner",
+            "Seniora fordringar under pari under rekonstruktionen — med nya aktier som utdelning vid framträdandet"
+          ],
+          "ratt": 3,
+          "tips": "Vilket papper står först i återbetalningstrappan?"
+        },
+        {
+          "q": "Vad är den gemensamma nämnaren i kursens fall?",
+          "alternativ": [
+            "Alla köptes på tips från insider",
+            "Alla var teknikbolag",
+            "Alla hölls kortare än en månad",
+            "Alla affärer byggde på tvång, dokumentläsning och marginal — inte på timing"
+          ],
+          "ratt": 3,
+          "tips": "Vad fanns i alla fallen utöver tur — och vad saknades?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Guldkornen — läsa budhandlingar och prospekt som proffs",
+      "intro": "Special situations-yrket är till hälften läsning. Det här kapitlet är dokumentkartan: vilka papper som finns, var de hämtas och i vilka avsnitt guldkornen ligger — från Form 10 och Schedule 13D i USA till budhandlingen, prospektet, flaggningen och insynsköpen i Sverige.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den amerikanska kartan. Form 10 — avknoppningens separationsdokument (kapitel 4). S-1 — prospektet vid noteringsintroduktioner och carve-outs. S-4 — registreringen när vederlaget innehåller värdepapper: hela betalningspaketet finns här. 14D-9 — målbolagets styrelsesvar på ett offentligt bud: rekommendation, bakgrund och villkor. Schedule 13D — anmälan när någon passerar fem procent i ett börsbolag: vem som bygger en post, till vilket pris och med vilken avsikt; ett välskrivet 13D är en gratis affärsplan från någon som gjort läxan. Form 4 — insynspersoners köp och försäljningar: ledningar som köper med egna pengar. Allt hämtas fritt på SEC:s Edgar — sekunder från din skärm, och ändå oläst av marknadens majoritet."
+        },
+        {
+          "type": "text",
+          "content": "Den svenska kartan. Budhandlingen enligt Nasdaqs takeover-regler: bakgrund och orsak till budet (läs noga — här står vad budgivaren tror och varför säljande styrelse rekommenderar), villkoren för genomförandet (brytvillkor som acceptansnivå — ofta 90 procent — myndighetsgodkännanden enligt V18, finansieringens form), samt den finansiella rådgivarens utlåtande. Noteringsprospektet eller PM:et vid avknoppningar och emissioner: kapitalisering, stamavtal mellan moder och dotter, riskfaktorer — samma struktur som Form 10. Flaggningen enligt flaggningslagen: den svenska 13D:n — anmälan vid trösklar som 5, 10 och 15 procent avslöjar vem som bygger poster. Insynsanmälningarna till Finansinspektionen: ledamöters och ledares köp. Årsredovisningen och delårsrapporterna: fundamentat som gör att du kan räkna fristående värde när budet spricker."
+        },
+        {
+          "type": "text",
+          "content": "Var guldkornen ligger — tre favoritställen. Första: villkorsavsnittet i budhandlingen. Där står vad som kan spräcka affären — och spreadens hela risk ligger där, inte i rubriken. Ett bud med mjuk finansiering eller osedvanligt många godkännanden (V18) ska handlas med bredare spread än ett med kontant finansiering och färre villkor. Andra: relaterade parters transaktioner i prospektet. Avtalen mellan moder och dotter avgör vem som betalar vem efter separation — Greenblatt-fallgropen nummer ett. Tredje: bakgrundsavsnittet. När budet eller separationen uppstod, vilka alternativ som övervägdes och vilka rådgivare som lett processen avslöjar handlingsutrymmet: ett bud som följt en budauktion har andra sannolikheter än ett som kommit efter månader av stilla förhandling. Läsning i denna ordning — villkor, avtal, bakgrund — är kursens kärna i praktik."
+        },
+        {
+          "type": "text",
+          "content": "Rutinen som gör dokumenten till en portfölj. Veckoskanning: SEC:s senaste Form 10-anmälningar; pressmeddelanden med orden separation, spin-off, intention to separate; Nasdaq OMX:s lista över pågående erbjudanden och noteringar; flaggningar och insynsköp i svenska bolag i din investeringsuniversum. Triage på femton minuter: finns tvång? finns dokument? finns räknebart värde? Om ja på alla tre — djupläsning på fem till femton timmar: verksamhet, kapitalstruktur, avtal, insiderägande. Sedan värdering och beslut. Femton timmar låter mycket tills du ser alternativet: att förlora samma tid på diskussionforum om bolag som hundra analyser redan täcker. Det är den byteshandeln boken hela tiden erbjuder: din tid mot deras likgiltighet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dokumentkartan — var guldkornen finns\",\"rader\":[[\"Dokument\",\"USA\",\"Sverige\",\"Guldkornet\"],[\"Separation\",\"Form 10\",\"Noterings-PM eller prospekt\",\"Kapitalisering och relaterade parters avtal\"],[\"Bud\",\"S-4 och 14D-9\",\"Budhandling enligt takeover-reglerna\",\"Brytvillkor, finansiering, bakgrund\"],[\"Ägarförändring\",\"Schedule 13D\",\"Flaggning enligt flaggningslagen\",\"Vem som byggt post — och varför\"],[\"Insynspersoner\",\"Form 4\",\"Insideranmälan till Finansinspektionen\",\"Ledare som köper med egna pengar\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Algoritmen läser rubriken — du läser brytvillkoret på sidan 47. Kanten sitter inte i att få dokumentet först, utan i att vara den ende som läste det klart."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå till Nasdaq OMX Nordic, hitta listan pågående offentliga erbjudanden och hämta en fullständig budhandling. Läs i kursens ordning: villkorsavsnittet först, sedan bakgrund och orsak, sedan finansieringen. Svara skriftligt: vilka tre villkor kan spränga affären, hur säker är finansieringen och vad antyder bakgrunden om budgivarens handlingsutrymme? Sätt ett tidtagarur — ett pass ska ta högst en timme."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad motsvarar amerikanska Schedule 13D i Sverige?",
+          "alternativ": [
+            "Kvartalsrapporten",
+            "Budhandlingen",
+            "Pressmeddelandet",
+            "Flaggningen — anmälan när trösklar passeras enligt lagen om flaggningsplikt"
+          ],
+          "ratt": 3,
+          "tips": "Vilket svenskt dokument avslöjar vem som byggt en stor post — och varför?"
+        },
+        {
+          "q": "Var i budhandlingen finner du brytvillkoren?",
+          "alternativ": [
+            "I revisionsberättelsen",
+            "I villkorsavsnittet — exempelvis acceptnivå och myndighetsgodkännanden (V18) som styr genomförandet",
+            "I ordlistan",
+            "På omslaget"
+          ],
+          "ratt": 1,
+          "tips": "Vilket avsnitt avgör när budet kan läggas ner?"
+        },
+        {
+          "q": "Vad är poängen med att läsa dokument som algoritmer inte läser?",
+          "alternativ": [
+            "Kanten ligger i villkors- och strukturanalys — djup, inte hastighet",
+            "Dokument innehåller alltid insiderinformation",
+            "Det ger fartfördel i mikrosekunder",
+            "Alla dokument är alltid korrekta"
+          ],
+          "ratt": 0,
+          "tips": "Vad kan en människa göra bättre än en nyhetsalgoritm — läsa snabbare eller förstå djupare?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Ärligheten — krympta kanter, algoritmer och insidergränsen",
+      "intro": "En bok från 1997 om marknadens vrår förtjänar en ärlig fråga: gäller den än? Kursens svar är nyanserat. Tre kontroverser behandlas rakt av: att området kräver dokumentläsning och ingenting annat; att arbitragen har krympt — mer kapital och algoritmer som pollar svenska budmarknaden på minuter; och att information-edge måste hållas strikt på rätt sida av insidergränsen. Slutsatsen: kanten är mindre — principerna lever.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kontrovers ett: det här är inget område för den som vill ha en screener. Boken förutsätter — och kursen har varit konsekvent — att varje situation börjar i ett primärdokument: Form 10, budhandling, reorganisationsplan, prospekt. Det innebär fem till tjugo timmars arbete per affär, och det innebär också att tillgängligheten är själva filtret: den som inte läser kan inte fejka läsning — det syns i portföljen. Följden är obekväm och befriande samtidigt: konkurrensen är inte andra genier utan trötthet, tidsbrist och ointresse. Men det är också en sanningens gång: den som söker en genväg — signaler, screeninglistor, forumrykten — äger inte special situations; special situations äger honom. Greenblatts ord i bokens anda: chanserna finns, men de faller inte i knäet på den som inte gör läxan."
+        },
+        {
+          "type": "text",
+          "content": "Kontrovers två: arbitragen har krympt. När Greenblatt skrev var budmarknader långsamma; informationen färdades med post och telefon, och spreadar kunde vara vida öppna i veckor. Idag pollar nyhetsalgoritmer kungörelser på millisekunder; eventdrivna fonder med tiotals miljarder jagar samma affärer; spreaden efter ett svenskt OMX-bud stängs ofta till någon procent inom minuter. Den klassiska riskarbitragen — köpa spridens dagar efter kungörelsen — är därför till stor del industrialiserad. Vad återstår? Det algoritmerna strukturellt lämnar: de illikvida hörnen (V11) — små nyskapade avknoppningsaktier där ingen får finnas, post-reorg-papper utan analystäckning, minoritetsposter i avnoterade bolag, trånga teckningsrätter; och det som kräver omdöme i stället för fart — att väga en brytvillkors risk, en process varaktighet, en skuldfördelnings rättsliga utsikter. Hastighets-kanten är borta. Djup-kanten lever — men den är mindre, trängre och kräver mer arbete per procent."
+        },
+        {
+          "type": "text",
+          "content": "Kontrovers tre: information-edge mot insidergränsen. Special situations ligger farligt nära informationskällor — rådgivare, revisorer, anställda, vänner i branschen — och just därför är Greenblatts disciplin kursens viktigaste etiska skydd: enbart offentlig information. Allt han beskriver i boken — varenda fall, varenda räkning — bygger på dokument som vem som helst kan hämta. I Sverige är gränsen dessutom lag: marknadsmissbruksförordningen förbjuder handel på basis av insideinformation, och stämpling — att få tips från någon som själv har insideinformation — är lika straffbart. Praktisk tumregel: om informationen inte är publicerad och påverkande, är den inte din att handla på — oavsett hur den nådde dig. Följdefrågan eleven måste kunna besvara: vad är då kanten? Svaret: att läsa offentligt material bättre och tålmodigare än andra. Det är tråkigare än ett tips — och helt lagligt, helt hållbart, helt i bokens anda."
+        },
+        {
+          "type": "text",
+          "content": "Vad lever alltså vidare? Mekanismerna, inte epokens priser. Tvingade säljare existerar fortfarande — indexreglerna skriver om varje kvartal, mandat ändras, rekonstruktioner skapar nya motiverade ägare (SAS och Northvolt bara de senaste årens svenska exempel), emissioner tvingar passiva ägare att betala. Försummade hörn existerar fortfarande — avknoppningar på OMX får fortfarande tunn handel och tunn täckning de första månaderna. Och marginalen — principen utan V-nummer, den som Klarman ger hela sitt bibliotek till i Margin of Safety-kursen — skyddar dig än idag mot det som förändrats: att du har fel om en process, att tiden blir längre än tålamodet, att kanten var mindre än du trodde. I AKM1:s språk: V10, V11, V12 och V19 filtrerar riskerna; V16-V18 fångar katalysatorerna; V20 signalerar kapitalallokering; och marginalen avgör om affären finns där allt detta korsas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kanten då och nu\",\"rader\":[[\"Epok\",\"Var kanten satt\",\"Status idag\",\"Vad som återstår\"],[\"Greenblatts era\",\"Bud och separationer lästes av få\",\"Till stor del industrialiserad\",\"Djupare vrår: illikvida spin-offs, post-reorg\"],[\"Algoritm-eran\",\"Hastighet på kungörelser\",\"Upptagen av eventdrivna fonder\",\"Villkorsanalys — sidorna algoritmer inte läser\"],[\"Dagens vrår\",\"Tvång och komplexitet\",\"Fortsatt outtömliga\",\"Samma principer: tvingade säljare, dokument, marginal\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "insikt",
+          "content": "Kanter försvinner — principer förblir. Algoritmen kan inte tröttna, men den kan inte heller vänta i arton månader på att en rekonstruktion ska prissättas: det som kräver tålamod och omdöme förblir människoarbete."
+        },
+        {
+          "type": "utmaning",
+          "content": "Mät själv: nästa gång ett bud kungörs på Nasdaq Stockholm, notera målbolagets kurs inom de första femton minutarna och igen efter en timme och en dag. Räkna ut spreaden vid varje tidpunkt. Skriv ner vad som stängde den — och vem som sannolikt tog den. Upprepa vid en avknoppnings notering: hur handlar aktien dag ett, dag trettio? Ditt eget mätetal på var algoritmernas gräns går blir din jaktkarta."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad har algoritmerna gjort med budmarknaden?",
+          "alternativ": [
+            "Inte något märkbart alls",
+            "De har förbjudit bud på småbolag",
+            "De har gjort budhandlingar olästa",
+            "De har industrialiserat kungörelse-jakten — spreaden efter ett bud sluts ofta på minuter, och hastighets-kanten är borta"
+          ],
+          "ratt": 3,
+          "tips": "Hur snabbt prissätts ett OMX-bud idag jämfört med 1997?"
+        },
+        {
+          "q": "Var går gränsen mot insider enligt Greenblatts disciplin?",
+          "alternativ": [
+            "Om informationen kommer från en vän är det okej",
+            "Gränsen går vid tio procents vinst",
+            "Enbart offentlig information får användas — kanten får komma från att läsa offentligt material bättre, aldrig från hemlig",
+            "Insiderregler gäller bara anställda i bolaget"
+          ],
+          "ratt": 2,
+          "tips": "Vilken sorts information bygger varenda fall i boken på?"
+        },
+        {
+          "q": "Vad av bokens innehåll lever ostört vidare?",
+          "alternativ": [
+            "Riskarbitragens spreadnivåer från 1997",
+            "Junkbondarnas kuponger",
+            "1990-talets specifika avtal",
+            "Principerna — tvingade säljare, försummade hörn, dokumentens marginal — mekanismerna bakom varje special situation"
+          ],
+          "ratt": 3,
+          "tips": "Skilj på epokens priser och eviga mekanismer."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Masterchecklistan — syntes med AKM1 och marginal of safety",
+      "intro": "Kursens sista kapitel binder ihop boken med ekosystemet: masterchecklistan som gäller varje special situation, mappningen till AKM1:s V-mått, processen från jakt till avslut — och den princip som står över alla nummer: marginal of safety, priset under beräknat värde, utförligt behandlad i Margin of Safety-kursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Masterchecklistan — tio frågor, vilken situation som helst. Ett: finns en tvingad säljare — vem, och hur länge varar tvånget? Två: finns dokumentet — Form 10, budhandling, plan, prospekt — och har du läst det klart? Tre: vad är beräknat värde, i konservativt intervall (V06 som genväg när oberoende räkning finns)? Fyra: vad är nedside om mekaniken fastnar eller spricker — och är det överkomligt? Fem: köper insiders (insynsköp, flaggning) eller säljer de? Sex: finns moderöverhäng eller andra framtida tvångssäljare kvar? Sju: vem bär skulden efter omstruktureringen (V10)? Åtta: överlever verksamheten väntan — intäktsstabilitet (V12), kapitalbehov (V19)? Nio: finns marginal — priset markant under värdets nedre del? Tio: har positionen rätt storlek — stor nog att spela roll, liten nog att ett fel inte är katastrofalt? Tio ja är en affär. Något nej är inte en nästan-affär — det är en nej."
+        },
+        {
+          "type": "text",
+          "content": "Mappningen till AKM1:s V-mått — kursens sammandrag. Värderingsgenvägarna: V04 P/S och V05 P/B på substansnära situationer (likvidationer, bankemissioner), V06 EV/EBITDA som arbetsmultipel i varje värdering. Lönsamhetens kvalitet: V07 bruttomarginal och V08 EBITDA-marginal visar om dotterns eller det rekonstruerade bolags normalnivåer är realistiska; V09 ROE på hur det renade bolaget bygger värde underifrån. Riskerna: V10 skuldsättningsgrad — frågan om vem som bär skulden, i varje kapitel; V11 likviditet — både tvångsmekanismen och din egen inträdesproblem; V12 intäktsstabilitet — överlever värdet väntan; V19 kapitalförbränning och emissionsrisk — rabattens värsta fiende. Moats: V13 patent och IP, V14 varumärke — tillgångar som ofta följer med i avknoppningar och rekonstruktioner. Katalysatorer: V16-V18 — produktlanseringar, avtal och regulatoriska händelser, där särskilt V18 (myndighetsgodkännanden) är special situations inbyggda risk och möjlighet. V20 återköp — signalen på ledigt kapacitetsutrymme och kapitalallokering. Och över allt: marginal of safety — principen utan V-nummer."
+        },
+        {
+          "type": "text",
+          "content": "Processen — från jakt till avslut, fem steg. Ett: jakten — veckoskanningen från kapitel 12: separationer, bud, rekonstruktioner, emissioner, flaggningar, insynsköp. Två: triage — femton minuter per situation: tvång, dokument, räknebart värde? Tre: djupläsning och värdering — fem till femton timmar; dokumentet, intervallvärderingen, nedsiden. Fyra: beslut och storlek — checklistans tio frågor; positionens storlek efter nedside, inte efter förväntad avkastning. Fem: ägande och avslut — tålamod medan mekaniken mognar; avslut när priset når värde, när en bättre situation kräver kapitalet — eller omedelbart om ny information vänder förväntat värde negativt. Runt processen: kassan som position och aldrig egen belåning — Klarman-läran som gäller även här. Få situations, ojämlika positioner, och tomrummet mellan dem fylls av att vänta."
+        },
+        {
+          "type": "text",
+          "content": "Greenblatts testamente — och kursens sista ord. Boken slutar inte med en formel utan med en inbjudan: marknadens gömställen är inte slut — de flyttar. Sanningen i titeln är ödmjuk: du kan bli aktiemarknadsgeni om du menar en person som läser det andra inte läser, räknar det andra inte räknar och väntar det andra inte väntar. I BOKMASTER-spalten står den här kursen bredvid Margin of Safety — Klarman ger varför, Greenblatt ger hur; tillsammans ger de dig verktyget att gå på jakt med marginal. Din första jakt är redan förberedd: en pågående avnotering eller avknoppning på svenska börsen och dess PM, som väntar på att läsas klart. Arkivera inte boken — använd den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Masterchecklistan — kärnan per situation\",\"rader\":[[\"Situation\",\"Checklistans kärna\",\"AKM1-mått\",\"Kapitel\"],[\"Spin-off\",\"Moderöverhäng, insynsköp, skuldfördelning\",\"V10, V20, V11\",\"3-5\"],[\"Merger securities\",\"Hela vederlagspaketet, icke-aktiedelens tvångssäljare\",\"V17, V18, V11\",\"6\"],[\"Riskarbitrage\",\"Brytvillkor, sannolikhet, nedside, årstakt\",\"V17, V18\",\"7\"],[\"Rekonstruktion\",\"Plan, fresh start, post-reorg-tryck\",\"V06, V08, V09, V19\",\"8-9\"],[\"Emission och rekap\",\"Ex-rätt-räkning, garant, stubvärde\",\"V19, V10, V11\",\"10\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Tio ja är en affär — ett nej är ett nej. Special situations utan marginal är inte special situations, bara dramatiska sätt att förlora pengar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprovet: hitta en pågående avnotering, budprocess eller avknoppning på svenska börsen. Läs PM:et eller budhandlingen klart. Kör masterchecklistans tio frågor skriftligt, mappa mot V-måtten (V06, V10-V12, V19 minimum) och avsluta med ett beslut: köpa, står utanför eller fortsätt bevaka — med siffra för vid vilket pris beslutet vänder. Datera och spara. Om ett år jämför du: vad hände, och vad lärde checklistan dig?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad står först i masterchecklistan?",
+          "alternativ": [
+            "Kurdiagrammets form",
+            "Mäklarens rekommendation",
+            "Antal analyser som täcker bolaget",
+            "Finns det en tvingad säljare — vem, och hur länge varar tvånget?"
+          ],
+          "ratt": 3,
+          "tips": "Vad är motorn i varje special situation kursen behandlat?"
+        },
+        {
+          "q": "Hur förhåller sig marginal of safety till AKM1:s V-mått?",
+          "alternativ": [
+            "Den är ett V-mått bland andra — nummer tjugoen",
+            "Den är en princip utan V-nummer som avgör hur alla V-mått ska tolkas — utförligt i Margin of Safety-kursen",
+            "Den motsvarar V06",
+            "Den används bara vid börsraser"
+          ],
+          "ratt": 1,
+          "tips": "Vissa saker är mått — andra principer för hur måtten ska brukas."
+        },
+        {
+          "q": "En situation har tydligt tvång och bra dokumentation — men beräknat värde understiger kursen. Vad gör du?",
+          "alternativ": [
+            "Köper — tvånget räcker som trygghet",
+            "Köper halv position för att vara med",
+            "Köper och hoppas på bud över värde",
+            "Står utanför — utan marginal är det ingen special situation, bara en historia"
+          ],
+          "ratt": 3,
+          "tips": "Vad återstår av affären om ingen katalysator kommer och värdet aldrig erkänns?"
+        }
+      ]
+    }
+  ]
+}

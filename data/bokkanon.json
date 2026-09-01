@@ -423,7 +423,7 @@
         "Definiera katalysator och tidshorisont innan du går in i en specialsituation"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-018",
@@ -834,7 +834,7 @@
         "Det finns tid att vara lång, tid att vara kort och tid att vänta: veta vilken tid det är"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-035",
@@ -1858,7 +1858,7 @@
         "Modeller bygger på historisk data och blir farliga när en ny regime kommer"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-078",

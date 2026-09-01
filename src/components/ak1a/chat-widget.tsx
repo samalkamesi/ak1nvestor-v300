@@ -148,22 +148,28 @@ export function ChatWidget() {
   const [meddelanden, setMeddelanden] = useState<Meddelande[]>([]);
   const [fragor, setFraga] = useState("");
   const [busy, setBusy] = useState(false);
+  const [hydrerad, setHydrerad] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Bygg elev-kontext
-  const ctx: elevContext = useMemo(() => {
-    const medlem = lasMedlem();
-    return {
+  // Bygg elev-kontext — ENDAST på klienten (localStorage kräver browser)
+  const [ctx, setCtx] = useState<elevContext>({
+    niva: 1, xp: 0, klaraKurser: 0, stjarnor: 0,
+    inloggad: false, aktuellSida: "/", sidTyp: "start",
+  });
+
+  useEffect(() => {
+    setCtx({
       niva: niva(),
       xp: lasXP(),
       klaraKurser: lasKlaraKurser().length,
       stjarnor: lasStjarnor(),
-      inloggad: Boolean(medlem),
+      inloggad: Boolean(lasMedlem()),
       aktuellSida: pathname || "/",
       sidTyp: analyseraSida(pathname || "/"),
-    };
+    });
+    setHydrerad(true);
   }, [pathname]);
 
   // Initiera med proaktiv hälsning när chatt öppnas

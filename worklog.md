@@ -2973,3 +2973,21 @@ Stage Summary:
 - Nästa enligt grundarens önskelista: fler kurser, server-syncad progress,
   LLM-nyckel till chatbot (kräver grundarens nyckel), autonomt verk-bygge vid
   höga nivåer (F2-fas i PLAN_MEGASYSTEM)
+---
+Task ID: 91-LOGIN-NIVABORT
+Agent: main (Z.ai Code)
+Task: /logga-in + meny + nivåetiketter borttagna — LIVE
+
+Work Log:
+- Ny /logga-in: e-post = konto (register-API hittar/skapar), status med nivå/XP/
+  stjärnor, utloggning, policy-godkännande-länkar, SEO + sitemap
+- Meny i SEO-skal (alla sidor): Kurser · Blogg · guld 'Logga in'-knapp
+- Kursportall-CTA → /logga-in
+- Nivåsystemet (Nybörjare/Intermediär/Avancerad) BORT: kursindex-rad, kurssida-
+  eybrow + chips, chatbot-svar, Course-JSON-LD educationalLevel — 0 träffar kvar
+- Prod verifierad: /logga-in 200, knapp levererad, 0 nivåträffar
+
+Stage Summary:
+- Inloggningsresan tydlig: valfri sida → guldknapp → /logga-in → kurser upplåsta
+- Kvar från användarens önskelista: SPA-hemsideheaderns meny (stor klient-
+  komponent — nästa sprint), fler kurser

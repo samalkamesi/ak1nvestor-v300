@@ -81679,5 +81679,2155 @@
     "lynchSection": "Peter Lynch (Mina bästa investeringar) byggde vidare: 'köp bolag du förstår' är Grahams Marginal omsatt i vardagen.",
     "grahamSection": "Hela boken — 20 kapitel + eftegerskrift, alla täckta i denna kurs. Källa: The Intelligent Investor, reviderad utgåva 2003.",
     "ak1Section": "AK1:s tolkning: Grahams Marginal = AKM1:s moral. Ingen position utan analys, ingen analys utan Marginal, ingen Marginal utan tålamod."
+  },
+  "mina-basta-investeringar": {
+    "slug": "mina-basta-investeringar",
+    "category": "BOKMASTER",
+    "weight": "KRITISK",
+    "chapterCount": 20,
+    "totalMinutes": 180,
+    "title": "Mina bästa investeringar — Peter Lynch: KOMPLETT (alla kapitel)",
+    "summary": "Alla 20 kapitlen: investera i det du känner till, sex bolagstyper, P/E, tvåminutars-drillen, de tolv dumma påståendena, bokslutets hemligheter, PEG, säljfilosofi och portföljbygge — varje kapitel med insikt, utmaning och quiz.",
+    "minutes": 180,
+    "xp": 2000,
+    "level": "Alla",
+    "learn": "Boken kapitel för kapitel — komplett täckning av Lynchs klassiker med quiz, insikter och utmaningar per kapitel.",
+    "why": "En av historiens mest framgångsrika förvaltare (ca 29% årligen under 13 år) förklarar hur privatinvesterare kan använda vardagskunskap och bokslutsanalys för att slå marknaden. Läs originalet för djupet — kursen ger dig strukturen.",
+    "chapters_list": [
+      {
+        "num": 1,
+        "title": "Investera i det du känner till",
+        "minutes": 9
+      },
+      {
+        "num": 2,
+        "title": "Sex bolagstyper",
+        "minutes": 9
+      },
+      {
+        "num": 3,
+        "title": "De sex typernas risk och avkastning",
+        "minutes": 9
+      },
+      {
+        "num": 4,
+        "title": "P/E förståelse — pris mot vinst",
+        "minutes": 9
+      },
+      {
+        "num": 5,
+        "title": "Tvåminutars-drillen",
+        "minutes": 9
+      },
+      {
+        "num": 6,
+        "title": "De tolv dummaste påståendena",
+        "minutes": 9
+      },
+      {
+        "num": 7,
+        "title": "Kontrollera storyn",
+        "minutes": 9
+      },
+      {
+        "num": 8,
+        "title": "Bokslutets hemligheter",
+        "minutes": 9
+      },
+      {
+        "num": 9,
+        "title": "Vinst-tillväxtens kraft",
+        "minutes": 9
+      },
+      {
+        "num": 10,
+        "title": "Stockpicker vs marknaden",
+        "minutes": 9
+      },
+      {
+        "num": 11,
+        "title": "När sälja? När köpa?",
+        "minutes": 9
+      },
+      {
+        "num": 12,
+        "title": "Fallexer och hur undvika dem",
+        "minutes": 9
+      },
+      {
+        "num": 13,
+        "title": "Options och warrant — varför Lynch varnar",
+        "minutes": 9
+      },
+      {
+        "num": 14,
+        "title": "50 000 frågor till VD",
+        "minutes": 9
+      },
+      {
+        "num": 15,
+        "title": "Slöa och snabba bolag",
+        "minutes": 9
+      },
+      {
+        "num": 16,
+        "title": "Dividend och återköp",
+        "minutes": 9
+      },
+      {
+        "num": 17,
+        "title": "P/E och tillväxt tillsammans — PEG-ratio",
+        "minutes": 9
+      },
+      {
+        "num": 18,
+        "title": "Bokslutsanalys i praktiken",
+        "minutes": 9
+      },
+      {
+        "num": 19,
+        "title": "Bygg en portfölj enligt Lynch",
+        "minutes": 9
+      },
+      {
+        "num": 20,
+        "title": "Lynchs arv — 29% årligen under 13 år",
+        "minutes": 9
+      }
+    ],
+    "history": {
+      "origin": "Peter Lynch förde Fidelity Magellan 1977-1990 med runt 29% årlig avkastning. Boken från 1989 (svensk titel: Mina bästa investeringar) skrevs för att visa att amatören har verkliga fördelar: vardagsobservationer kombineras med enkel men disciplinerad bokslutsanalys.",
+      "evolution": "Boken demokratiserade aktieanalysen: 'investera i det du känner till' blev ett av historiens mest citerade investeringsråd. PEG-talet populariserades via boken, och indelningen i sex bolagstyper blev standardverktyg för generationer av stockpickers. Efter indexfondernas genombrott har bokens budskap om delat: vissa läser den som en manual för aktieval, andra som ett argument för att bara äga det man verkligen förstår.",
+      "modern": "I dagens marknad lever principerna vidare: nyhetsflöden och butikskön ersätts av appen du använder varje dag, men mekaniken är densamma — observera, verifiera i bokslutet, skriv storyn, kontrollera kvartalsvis. Lynchs varningar för derivat och 'nästa stora aktie' har blivit mer aktuella med nollkommissionshandel och sociala mediers aktiehype. Kärnan står sig: vinsttillväxt driver kursen på lång sikt, och balansräkningen avgör vem som överlever nedgången."
+    },
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 9,
+        "title": "Investera i det du känner till",
+        "intro": "Din största fördel som privatinvesterare finns redan i din vardag.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lynchs mest kända idé är enkel: amatören ser trenderna innan analytikerna gör det. Du använder produkter, handlar i butiker och märker när något plötsligt blir populärt bland vänner och kollegor. Den informationen är förstahandsresearch — den kostar inget och ingen annan har exakt din vinkel. Ett klassiskt exempel från boken är strumpbyset L'eggs, som Lynch fick upp ögonen på för att hans hustru köpte dem och tyckte de var överlägsna konkurrenterna. Professionella analytiker bevakar hundratals bolag samtidigt och sitter sällan i butikskön — du kan vara där. Men Lynch är noga med att kunskapen om produkten bara är ett försprång, inte ett köpskäl i sig. Försprånget måste bekräftas i siffrorna: växer vinsten, är balansräkningen stark, är värderingen rimlig? Utan den kontrollen blir principen bara en ursäkt för att köpa trendiga bolag utan analys. Vardagskunskap öppnar dörren — bokslutet avgör om du går in genom den."
+          },
+          {
+            "type": "insikt",
+            "content": "Din vardag ger dig förstahandsinformation — men den måste alltid bekräftas av siffrorna i bokslutet."
+          },
+          {
+            "type": "utmaning",
+            "content": "Gör en lista med tio produkter eller butikskedjor du använder ofta. Leta upp vilket börsbolag som står bakom varje produkt och läs deras senaste delårsrapport. Notera om din positiva upplevelse syns i siffrorna."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är kärnan i Lynchs princip 'investera i det du känner till'?",
+            "alternativ": [
+              "Köp alltid bolag vars produkter du gillar — det räcker som analys",
+              "Vardagsobservationer ger ett försprång som sedan måste bekräftas av bokslutsanalys",
+              "Köp bara bolag i din egen hemstad",
+              "Undvik alla bolag du redan känner till för att minska bias"
+            ],
+            "ratt": 1,
+            "tips": "Försprånget är en startsignal — analysen avgör köpet."
+          },
+          {
+            "q": "Varför har privatpersoner ett informationsförsprång enligt boken?",
+            "alternativ": [
+              "De har tillgång till insiderinformation som analytiker saknar",
+              "De kan köpa aktier billigare än institutioner",
+              "De ser produkter och trender i vardagen innan analysvärlden reagerar",
+              "De får alltid rösta på bolagsstämmor med mer vikt"
+            ],
+            "ratt": 2,
+            "tips": "Kön i butiken och samtalet med kollegor är research."
+          },
+          {
+            "q": "Vilket påstående stämmer med Lynchs syn?",
+            "alternativ": [
+              "Känner du till produkten kan du hoppa över bokslutet",
+              "En bra produkt garanterar alltid en bra aktie",
+              "Vardagskunskap är en bra start men aldrig hela analysen",
+              "Vardagskunskap öppnar dörren, men bokslutet avgör beslutet"
+            ],
+            "ratt": 3,
+            "tips": "Produktkunskap utan sifferkontroll blir bara en gissning."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 9,
+        "title": "Sex bolagstyper",
+        "intro": "Alla aktier är inte skapade lika — Lynch delar in dem i sex kategorier med egna regler.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Innan du värderar ett bolag måste du veta vilken typ av bolag det är, för kategorin avgör hur du ska tolka siffrorna. Lynch skiljer på sex typer. Slow growers är mogna jättar som växer marginellt och främst belönar ägare med utdelning. Stalwarts är stora, stabila bolag med cirka tio till tolv procents tillväxt — de skyddar portföljen i nedgångar. Fast growers är mindre, aggressiva bolag som växer tjugo till tjugofem procent om året — här finns de stora vinnarna, men också risken att tillväxten plötsligt bromsar. Cyclicals som stål-, bil- och flygbolag svänger med konjunkturen: lönsamheten kommer i vågor. Turnarounds är bolag i kris som kan vända — ingen korrelation med börsen, men risken att allt går förlorat är överhängande. Asset plays är bolag med dolda tillgångar — mark, patent, kassa, skattemässiga fördelar — som marknaden inte prissatt. Kategorin avgör vad du ska titta på, hur du värderar bolaget och när det är dags att sälja."
+          },
+          {
+            "type": "insikt",
+            "content": "Innan du kan värdera ett bolag måste du veta vilken av de sex kategorierna det tillhör — kategorin avgör hela spelet."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj fem aktier i din portfölj eller bevakningslista och klassificera var och en i en av de sex kategorierna. Skriv en mening per aktie som motiverar varför den tillhör just den kategorin."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad kännetecknar en fast grower?",
+            "alternativ": [
+              "Hög utdelning och mycket låg tillväxt",
+              "Tjugo till tjugofem procents årlig vinsttillväxt med potential att bli flerfaldigare",
+              "Vinsterna svänger kraftigt med konjunkturen",
+              "Bolaget äger dolda tillgångar som marknaden ignorerar"
+            ],
+            "ratt": 1,
+            "tips": "Fast growers är motorn i en Lynch-portfölj — tills tillväxten stannar."
+          },
+          {
+            "q": "Vilken bolagstyp är mest kopplad till konjunkturcykler?",
+            "alternativ": [
+              "Slow growers",
+              "Stalwarts",
+              "Cyclicals",
+              "Asset plays"
+            ],
+            "ratt": 2,
+            "tips": "Tänk stål, bilar, kemikalier och flyg — lönsamheten kommer i vågor."
+          },
+          {
+            "q": "Vad är ett asset play?",
+            "alternativ": [
+              "Ett bolag som köper tillbaka sina egna aktier varje år",
+              "Ett bolag med värdefulla dolda tillgångar som marknaden ännu inte prissatt",
+              "Ett nystartat bolag utan intäkter",
+              "Ett bolag som växer tjugo procent om året"
+            ],
+            "ratt": 1,
+            "tips": "Mark, patent, kassa och skattemässiga fördelar kan ligga gömda i balansräkningen."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 9,
+        "title": "De sex typernas risk och avkastning",
+        "intro": "Rätt kategori betyder rätt förväntningar — och rätt sorts försiktighet.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kategorierna skiljer sig dramatiskt i risk och avkastning. Slow growers är tråkiga men trygga — de betalar utdelning och skyddar på väg ned. Stalwarts är relativt säkra, men den stora risken är att betala för högt pris för ett utmärkt bolag — en övervärderad kvalitetsaktie kan ligga still i åratal. Fast growers har störst potential men faller hårt när tillväxten oväntat mattas — deceleration är den farligaste händelsen i denna kategori. Cyclicals lurar investerare eftersom de ser billigast ut på toppen av cykeln, när P/E är lägst, och dyrast ut på botten — det omvända mot intuitionen. Turnarounds kan gå till noll — här gör balansräkningen skillnad mellan tillfällig kris och konkurs. Asset plays kräver tålamod: ingen vet när marknaden upptäcker värdet, och skulder kan äta tillgångarna under väntan. Matcha kategori med din risktolerans, din tid och din förmåga att övervaka."
+          },
+          {
+            "type": "insikt",
+            "content": "Farligaste misstaget är att använda en typs regler för en annan — som att köpa en cyklisk som vore den en stabil tillväxtaktie."
+          },
+          {
+            "type": "utmaning",
+            "content": "Rangordna de sex kategorierna efter din egen risktolerans. Vilken kategori passar din portfölj bäst just nu — och vilken bör du undvika helt tills du har mer erfarenhet?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Varför ser cykliska bolag ofta 'billiga' ut precis när det är farligast att köpa?",
+            "alternativ": [
+              "Deras P/E är som lägst på cykelns topp, precis innan vinsterna faller",
+              "Deras utdelning är som högst på botten",
+              "De har alltid lägst skulder på toppen",
+              "Deras tillväxt är som starkast på toppen"
+            ],
+            "ratt": 0,
+            "tips": "Lågt P/E på en cyklisk kan betyda att vinsten är på väg att kollapsa."
+          },
+          {
+            "q": "Vad är den största risken med en fast grower?",
+            "alternativ": [
+              "Att utdelningen sänks",
+              "Att tillväxten oväntat mattas och värderingen kollapsar",
+              "Att bolaget förvärvar en konkurrent",
+              "Att räntan stiger med en procentenhet"
+            ],
+            "ratt": 1,
+            "tips": "Deceleration är fast grower-ägarens värsta fiende."
+          },
+          {
+            "q": "Vilken kategori kan i värsta fall gå till noll?",
+            "alternativ": [
+              "Turnarounds",
+              "Slow growers",
+              "Stalwarts",
+              "Asset plays"
+            ],
+            "ratt": 0,
+            "tips": "En misslyckad vändning slutar ofta i rekonstruktion eller konkurs."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 9,
+        "title": "P/E förståelse — pris mot vinst",
+        "intro": "Ett enda tal kan berätta om en aktie är dyr eller billig — om du vet hur du läser det.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "P/E-talet — priset dividerat med vinsten per aktie — anger hur många års nuvarande vinster du betalar för aktien. Ett P/E på 12 betyder att du betalar tolv års nuvarande vinst; ett P/E på 40 betyder fyrtio år. Lynch betonar att P/E ska jämföras med tre referenspunkter: bolagets egen historia, branschens snitt och — viktigast — tillväxttakten. Ett P/E på 15 är billigt vid trettio procents tillväxt och dyrt vid noll procents tillväxt. Högt P/E betyder höga förväntningar, och förväntningar straffas hårt när de misslyckas: en aktie på P/E 40 som missar budgeten kan halvera. Lågt P/E kan å andra sidan vara en värdefälla, särskilt hos cykliska bolag där vinsten står på topp. Lynch menar också att hela börsens genomsnittliga P/E säger något om marknadens totala optimism. Regeln: läs aldrig P/E isolerat — det är ett story-mått, inte en faktauppgift."
+          },
+          {
+            "type": "insikt",
+            "content": "P/E är marknadens pris på framtida förväntningar — inte en faktaräknare, utan ett story-mått."
+          },
+          {
+            "type": "utmaning",
+            "content": "Slå upp P/E för tre aktier du äger. Jämför med respektive bolags genomsnittliga P/E de senaste fem åren. Är de dyrare eller billigare än sitt eget historiska snitt — och varför?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad uttrycker P/E-talet?",
+            "alternativ": [
+              "Hur många aktier bolaget gett ut",
+              "Hur många års nuvarande vinst du betalar för aktien",
+              "Bolagets utdelningsandel i procent",
+              "Förhållandet mellan skuld och eget kapital"
+            ],
+            "ratt": 1,
+            "tips": "Pris dividerat med vinst per aktie — antal 'vinstår' du betalar."
+          },
+          {
+            "q": "När är ett P/E på 15 'billigt' enligt Lynchs logik?",
+            "alternativ": [
+              "När bolaget inte växer alls",
+              "När det alltid är billigt oavsett tillväxt",
+              "När bolaget växer kraftigt, till exempel trettio procent om året",
+              "När börsen som helhet har fallit"
+            ],
+            "ratt": 2,
+            "tips": "P/E ska alltid läsas mot tillväxttakten."
+          },
+          {
+            "q": "Varför kan lågt P/E vara en värdefälla?",
+            "alternativ": [
+              "Lågt P/E är alltid säkert enligt boken",
+              "Lågt P/E gäller bara småbolag",
+              "Lågt P/E garanterar alltid utdelning",
+              "Hos cykliska bolag kan vinsten stå på toppen och vara på väg att kollapsa"
+            ],
+            "ratt": 3,
+            "tips": "Cykliskt lågt P/E vid toppen av cykeln är en klassisk fälla."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 9,
+        "title": "Tvåminutars-drillen",
+        "intro": "Om du inte kan förklara varför du äger en aktie på två minuter — äg den inte.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lynchs tvåminutarsdrill går ut på att du innan köpet kan berätta bolagets story i enkla termer: vad bolaget gör och, avgörande, varför det kommer att växa. Storyn ska vara konkret och typisk för kategorin: 'fast growern expanderar från tvåhundra butiker till fyrahundra', 'stalwarten köper tillbaka aktier och ökar vinsten per aktie', 'cyklikern närmar sig botten och lagren minskar', 'turnarounden har sålt av förlorarna och är snart skuldfri'. Om din anledning är 'kursen har gått upp' har du ingen story — då har du en trend, och trender är inte skäl. Drillen skyddar dig också mot tips: när någon rekommenderar en aktie, be om storyn i en mening. Kan ingen ge den är det inte en investering, det är ett rykte. Skriv ner storyn när du köper — den blir din checklista varje kvartal. En skriven story tvingar dig att definiera exakt vad som ska hända, och därmed när du har fel."
+          },
+          {
+            "type": "insikt",
+            "content": "En investering utan en skriven story är bara ett vadslag — drillen tvingar dig att definiera vad som ska hända."
+          },
+          {
+            "type": "utmaning",
+            "content": "Skriv en tvåminuterspresentation för varje aktie i din portfölj: vad bolaget gör, varför det växer och exakt vad som ska hända för att kursen ska stiga. Spara texterna och läs dem om ett kvartal."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är syftet med tvåminutars-drillen?",
+            "alternativ": [
+              "Att hitta billiga aktier snabbt",
+              "Att kunna förklara bolagets story och tillväxtskäl enkelt innan köp",
+              "Att hinna handla innan marknaden öppnar",
+              "Att jämföra P/E mellan bolag"
+            ],
+            "ratt": 1,
+            "tips": "Kan du inte berätta storyn enkelt har du ingen story."
+          },
+          {
+            "q": "Vilket av följande är INTE en godtagbar story enligt drillen?",
+            "alternativ": [
+              "Bolaget expanderar från tvåhundra till fyrahundra butiker",
+              "Bolaget köper tillbaka aktier och minskar aktieantalet",
+              "Kursen har stigit varje månad det senaste halvåret",
+              "Bolaget har sålt av förlustverksamheter och är snart skuldfritt"
+            ],
+            "ratt": 2,
+            "tips": "En stigande kurs är en observation, inte en förklaring."
+          },
+          {
+            "q": "Hur skyddar drillen dig mot tips från vänner?",
+            "alternativ": [
+              "Du kan be om storyn i en mening — kan ingen ge den är det ett rykte",
+              "Du slipper betala courtage",
+              "Tips från vänner är alltid bättre än analytikerrapporter",
+              "Drillen gör att du kan köpa större positioner"
+            ],
+            "ratt": 0,
+            "tips": "Ingen story, inget köp — oavsett hur entusiastisk tipsaren är."
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 9,
+        "title": "De tolv dummaste påståendena",
+        "intro": "Fällorna finns inte i marknaden — de bor i dina egna ursäkter.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lynch listar en samling klassiska påståenden som kostar investerare förmögenheter. 'Den har fallit så mycket att den inte kan falla mer' — den kan, ända till noll. 'Det är ett stort bolag, det klarar sig' — stora bolag kan förlora nittio procent av sitt värde. 'Jag köpte billigt så jag väntar bara' — ett felköp blir inte rätt av att vänta. 'Den har stigit tiofalt, hur mycket högre kan den gå?' — ett växande bolag kan mångdubbla igen. 'Det är bara en pappersförlust' — marknaden bryr sig inte om din bokföring. 'Jag missade den, jag tar nästa' — 'nästa' är sällan lika bra. 'Vad spelar det för roll, jag är långsiktig' — en ursäkt för att aldrig kontrollera något. Gemensamt för alla påståenden är att de byter ut analys mot hopp. De låter som förnuft men fungerar som smärtlindring. Känn igen dem när du själv hör dig säga dem — det är ögonblicket att öppna bokslutet istället."
+          },
+          {
+            "type": "insikt",
+            "content": "Varje klassiskt dumt påstående byter ut analys mot hopp — ursäkter låter som förnuft men fungerar som smärtlindring."
+          },
+          {
+            "type": "utmaning",
+            "content": "Gå igenom dina tidigare affärer och identifiera vilka av de tolv påståendena du själv använt. Skriv ner de två vanligaste hos dig och en motfråga du ska ställa dig nästa gång."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är problemet med påståendet 'den har redan fallit så mycket, den kan inte falla mer'?",
+            "alternativ": [
+              "Inget — det är nästan alltid sant",
+              "En aktie som fallit kan fortsätta falla ända till noll",
+              "Det gäller bara småbolag",
+              "Det stämmer så länge P/E är under tio"
+            ],
+            "ratt": 1,
+            "tips": "Kursen har ingen golvnivå — balansräkningen har det."
+          },
+          {
+            "q": "Vilken gemensam nämnare har de tolv dumma påståendena?",
+            "alternativ": [
+              "De byter ut analys mot hopp och känslor",
+              "De gäller bara för optionshandel",
+              "De används enbart av professionella förvaltare",
+              "De bygger på teknisk analys"
+            ],
+            "ratt": 0,
+            "tips": "Ursäkten låter logisk men innehåller noll analys."
+          },
+          {
+            "q": "Hur bör du reagera när du hör dig själv använda ett av påståendena?",
+            "alternativ": [
+              "Köpa mer för att sänka genomsnittskursen",
+              "Sälja omedelbart utan eftertanke",
+              "Öppna bokslutet och kontrollera om storyn fortfarande lever",
+              "Sluta följe aktien tills kursen stigit igen"
+            ],
+            "ratt": 2,
+            "tips": "Ursäkten är en signal att uppdatera analysen — inte att agera på känslo."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "minutes": 9,
+        "title": "Kontrollera storyn",
+        "intro": "Ingen story är evig — din uppgift är att märka när den byter riktning.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Köpet är bara början: varje kvartal ska storyn kontrolleras mot verkligheten. Lynch ger konkreta varningssignaler. Lager som växer snabbare än försäljningen är en klassisk signal om att efterfrågan mattas — ofta före kursen. Kundfordringar som växer fortare än intäkterna tyder på att kunderna betalar sämre. Insiders som säljer kraftigt är ett tecken värt att notera. Nya konkurrenter som går in, minskande marginaler, avstannande butiksexpansion och ett P/E långt över tillväxttakten är alla skäl att se sig om. För cykliska bolag: håll koll på kapacitet och efterfrågan. För turnarounds: minskar skulderna verkligen? För asset plays: finns tillgången kvar och är den fortfarande undervärderad? Poängen är att sälja när skälet att äga försvinner — inte när kursen rör sig. Kvartalsvis kontroll förvandlar 'köp och glöm' till 'köp och verifiera'."
+          },
+          {
+            "type": "insikt",
+            "content": "Du säljer inte för att kursen stigit eller fallit — du säljer när storyn du köpte inte längre stämmer."
+          },
+          {
+            "type": "utmaning",
+            "content": "Gör en kvartalsvis story-kontroll av alla dina innehav: notera lager, kundfordringar, marginaler och P/E relativt tillväxt. Jämför med föregående kvartal och skriv en rad om storyn lever eller inte."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad innebär det när lagren växer snabbare än försäljningen?",
+            "alternativ": [
+              "En klassisk varningssignal om att efterfrågan mattas",
+              "Ett tecken på kommande vinstökning",
+              "Bolaget förbereder en storskalig kampanj — alltid positivt",
+              "Inget att bry sig om i tjugo år"
+            ],
+            "ratt": 0,
+            "tips": "Lageruppbyggnad föregår ofta både sänkta prognoser och fallande kurser."
+          },
+          {
+            "q": "När bör du sälja enligt Lynchs filosofi?",
+            "alternativ": [
+              "När kursen stigit femtio procent",
+              "När skälet att äga — storyn — inte längre stämmer",
+              "När kursen fallit tio procent",
+              "Vid varje räntehöjning"
+            ],
+            "ratt": 1,
+            "tips": "Kursrörelsen är inte säljsignalen — storyn är det."
+          },
+          {
+            "q": "Vad bör du övervaka extra noga i en turnaround?",
+            "alternativ": [
+              "Om skulderna faktiskt minskar",
+              "Om utdelningen höjs varje år",
+              "Om P/E stiger över femtio",
+              "Om antalet analytiker som bevakar bolaget ökar"
+            ],
+            "ratt": 0,
+            "tips": "En turnaround utan skuldsanering är bara en våt dröm."
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 9,
+        "title": "Bokslutets hemligheter",
+        "intro": "Balansräkningen är en detektivberättelse — och du kan lära dig läsa den.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Balansräkningen visar vad bolaget äger och vad det är skyldigt — och den avslöjar mer än någon pressrelease. Tre poster är centrala för Lynch. Först kassapositionen: en kraftig kassa är en fästning i nedgångar, bränsle för expansion och återköp, och en buffert mot misstag. Försök hitta bolag med nettokassa — mer pengar än skulder. För det andra långfristiga skulder: måttlig skuld hos ett växande bolag är hanterbart, men tung skuld hos ett bolag i kris är livsfarlig. För det tredje eget kapital: växer det stadigt år från år? Kolla också kassaflödesanalysen — ett bolag kan visa pappersvinster samtidigt som det förbränner kontanter. Jämför skuldsättningen över flera år: ökar eller minskar belåningen? En stark balansräkning förvandlar misstag till överlevbara händelser; en svag förvandlar tillfälliga kriser till katastrofer."
+          },
+          {
+            "type": "insikt",
+            "content": "Kassan är kungen — ett bolag med mer pengar än skulder kan överleva misstag, köpa tillbaka aktier och växa utan att låna."
+          },
+          {
+            "type": "utmaning",
+            "content": "Öppna senaste bokslutet för ett bolag du äger. Räkna ut nettokassan (kassa minus total skuld) och notera om skulderna ökat eller minskat under tre år. Skriv en rad om balansräkningens styrka."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad menas med nettokassa?",
+            "alternativ": [
+              "Kassan minus totala skulder — när kassan överstiger skulderna",
+              "Årets vinst minus utdelningen",
+              "Kassan plus goodwill",
+              "Intäkterna minus kostnaderna"
+            ],
+            "ratt": 0,
+            "tips": "Nettokassa betyder att bolaget har mer pengar än skulder."
+          },
+          {
+            "q": "Varför är tung skuld extra farligt i en turnaround?",
+            "alternativ": [
+              "Räntekostnaderna kan äta upp vändningen och driva bolaget i konkurs",
+              "Skulder är alltid farliga i alla kategorier",
+              "Det gör P/E högre",
+              "Skulder minskar alltid utdelningen"
+            ],
+            "ratt": 0,
+            "tips": "En misslyckad turnaround med hög belåning slutar ofta i rekonstruktion."
+          },
+          {
+            "q": "Vad kan kassaflödesanalysen avslöja som resultaträkningen döljer?",
+            "alternativ": [
+              "Att bolaget visar pappersvinst men förbrukar kontanter",
+              "Antalet anställda",
+              "Vilken valuta bolaget handlar i",
+              "Styrelsens arvoden"
+            ],
+            "ratt": 0,
+            "tips": "Vinst är en åsikt — kassaflöde är ett faktum."
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 9,
+        "title": "Vinst-tillväxtens kraft",
+        "intro": "På lång sikt följer kursen vinsten — inget annat.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Den kanske viktigaste sanningen i boken: aktiekursen följer vinsten per aktie över tid. Kortsiktigt driver stämning och humör kursen åt vilket håll som helst; på lång sikt är det vinsttillväxten som dominerar. Växer vinsten tjugo procent om året tenderar kursen att följa efter — P/E-multiplen svänger bara omkring den linjen. Därför letar Lynch efter bolag som kan växa vinsten i åratal, inte i kvartal. Regeln om 72 illustrerar kraften: vid tjugo procents tillväxt fördubblas vinsten på knappt fyra år. Skilj också på tillväxtens källor. Tillväxt genom kostnadsklippning har ett tak — när kostnaderna är borta är tillväxten borta. Tillväxt genom stigande försäljning kan pågå mycket längre. Var dessutom misstänksam mot vinsttillväxt drivet av engångsposter som försäljningar av tillgångar eller skatteeffekter. Frågan du alltid ska ställa: var kommer nästa års vinster ifrån?"
+          },
+          {
+            "type": "insikt",
+            "content": "Kursen är en hyresgäst som flyttar runt — vinsten är huset den alltid återvänder till."
+          },
+          {
+            "type": "utmaning",
+            "content": "Rita en enkel graf över vinst per aktie och aktiekurs för ett bolag under tio år. Lägg märke till hur kursen svänger runt vinstlinjen. Notera åren då kursen höll takt med vinsten och år då den kopplade ifrån."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad driver aktiekursen på lång sikt enligt boken?",
+            "alternativ": [
+              "Räntenivån",
+              "Vinsttillväxten per aktie",
+              "Aktieanalyikers rekommendationer",
+              "Tekniska nivåer och stödlinjer"
+            ],
+            "ratt": 1,
+            "tips": "Kortsiktigt humör, långsiktigt vinst."
+          },
+          {
+            "q": "Varför är tillväxt genom kostnadsklippning begränsad?",
+            "alternativ": [
+              "Den har ett tak — när kostnaderna är borta är tillväxten borta",
+              "Kostnadsklippningar är alltid olagliga",
+              "Den syns aldrig i resultaträkningen",
+              "Den gäller bara cykliska bolag"
+            ],
+            "ratt": 0,
+            "tips": "Kostnader kan bara klippas en gång — försäljning kan växa länge."
+          },
+          {
+            "q": "Hur länge fördubblas vinsten vid tjugo procents årlig tillväxt (regel om 72)?",
+            "alternativ": [
+              "På knappt fyra år",
+              "På tio år",
+              "På tjugo år",
+              "På exakt två år"
+            ],
+            "ratt": 0,
+            "tips": "72 dividerat med tillväxttakten ger antal år."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 9,
+        "title": "Stockpicker vs marknaden",
+        "intro": "Marknaden kan inte slå dig — men du kan slå dig själv.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lynch argumenterar för att amatören kan slå index — men inte av en slump. Fördelen ligger i strukturen. Professionella förvaltare är fångna i sina regler: de kan inte bygga små positioner i småbolag, de döms kvartalsvis och karriärisken tvingar dem till populära bolag, och när fonden växer tvingas de till de största bolagen. Amatören har ingen chef, ingen kvartalsdom och kan hålla kontanter tills rätt tillfälle dyker upp. Amatören kan också äga det som är för obskyrt för institutionerna — där de bästa möjligheterna ofta gömmer sig. Men fördelen förverkligas bara med disciplin: läxor gjorda, rimlig diversifiering och inga impulshandelar. Lynch är samtidigt ärlig: de flesta som aktieväljer underpresterar, och indexfonder är ett respektabelt alternativ för den som saknar tid. Poängen är inte att aktieval är lätt — det är att amatörens strukturella fördelar är verkliga men sällan använda."
+          },
+          {
+            "type": "insikt",
+            "content": "Din fördel är inte information — den är friheten att vänta, att äga obskyra bolag och att inte dömas av någon kvartalsvis."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räkna ut hur många timmar per månad du faktiskt lägger på bolagsanalys. Är det under två — överväg indexfonder som kärna och aktieval som komplement. Är det över tio — skriv ner var din tid ger bäst utdelning."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilken strukturell fördel har privatinvesterare över fonder?",
+            "alternativ": [
+              "De får alltid köpa aktier billigare",
+              "De kan äga små och obskyra bolag som institutioner inte kan bygga positioner i",
+              "De har tillgång till bättre analysverktyg",
+              "De betalar lägre skatt"
+            ],
+            "ratt": 1,
+            "tips": "Stora fonder kan inte äga det som är för litet — det är amatörens jaktmark."
+          },
+          {
+            "q": "Vad tvingar ofta professionella förvaltare till 'populära' bolag?",
+            "alternativ": [
+              "Lagen",
+              "Karriärisken att avvika från jämförelseindex",
+              "Bolagens ägarstrukturer",
+              "Att de saknar utbildning"
+            ],
+            "ratt": 1,
+            "tips": "Ingen blir avskedd för att äga det alla andra äger."
+          },
+          {
+            "q": "Vad säger Lynch om indexfonder?",
+            "alternativ": [
+              "De är ett respektabelt alternativ för den som saknar tid att analysera",
+              "De är alltid ett dåligt val",
+              "De borde förbjudas",
+              "De garanterar tjugonio procents avkastning"
+            ],
+            "ratt": 0,
+            "tips": "Aktieval utan läxor slår sällan index."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 9,
+        "title": "När sälja? När köpa?",
+        "intro": "Timing handlar inte om kurser — det handlar om skäl.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lynchs filosofi: sälj när storyn bryts, inte när kursen rör sig. Den mogna fast growern vars expansion mättas och vars tillväxt sjunker — överväg försäljning. Stalwarten vars P/E sprängt det historiska spannet — överväg försäljning. Cyklikern när lagren stiger och efterfrågan kokar överallt — överväg försäljning. Turnarounden som lyckats eller misslyckats avgörande — agera. Asset playet som upptäckts — realisera. Köp å andra sidan när chansen känns obekväm: i nedgångar, paniker och åtstramningar köps de bästa bolagen till halva pris. Två vanliga misstag att undvika: att sälja vinnarna och behålla förlorarna — blommor ska vattnas och ogräs rensas bort — och att använda sin egen resultatrapport som beslutsunderlag. Marknaden känner inte din inköpskurs. Köp mer på dipp endast om storyn är intakt; fallet i sig är ingen anledning."
+          },
+          {
+            "type": "insikt",
+            "content": "Beslutet att sälja ska tas med samma analys som beslutet att köpa — inte med hjälp av din resultatrapport."
+          },
+          {
+            "type": "utmaning",
+            "content": "Skriv för varje innehav en säljregel på en mening: exakt vad som måste hända i bolaget — inte i kursen — för att du ska avsluta positionen. Spara reglerna och läs dem varje kvartal."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "När bör enligt Lynch en fast grower övervägas såld?",
+            "alternativ": [
+              "Så fort kursen stigit tjugo procent",
+              "När expansionen mättas och tillväxten börjar mattas",
+              "Vid varje börsnedgång",
+              "Aldrig — fast growers köps och glöms"
+            ],
+            "ratt": 1,
+            "tips": "När storyn om expansion tar slut tar uppsidan slut."
+          },
+          {
+            "q": "Vad är bakvänt enligt Lynch — men vanligt bland investerare?",
+            "alternativ": [
+              "Att sälja vinnarna och behålla förlorarna",
+              "Att köpa samma aktie två gånger",
+              "Att hålla kassa i nedgångar",
+              "Att läsa bokslut varje kvartal"
+            ],
+            "ratt": 0,
+            "tips": "Vattna blommorna, rensa ogräset."
+          },
+          {
+            "q": "När är det rätt att köpa mer av en fallande aktie?",
+            "alternativ": [
+              "Alltid när den fallit över tjugo procent",
+              "Endast om storyn är intakt och fallet inte ändrat fundamenta",
+              "Aldrig — man ska aldrig öppna en förlustposition",
+              "Bara om P/E är lägst i branschen"
+            ],
+            "ratt": 1,
+            "tips": "Fallet i sig är ingen anledning — de fundamenta avgör."
+          }
+        ]
+      },
+      {
+        "num": 12,
+        "minutes": 9,
+        "title": "Fallexer och hur undvika dem",
+        "intro": "Ett fallande pris är en present — bara om bolaget överlever.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "En 'fallkniv' är en aktie som störtat och ser billig ut. Att hugga i den är farligt om du inte vet varför den föll och om orsaken är tillfällig. Skillnaden mellan en möjlighet och en katastrof ligger i balansräkningen. Ett solitt bolag med nettokassa och hanterbar skuld överlever en kris och reser sig; ett belåat bolag med pressad kärnverksamhet kan gå omkull medan kursen fortfarande ser 'billig' ut. Tecken på överlevbar krasch: kassaöverdrag, fungerande kärnverksamhet, stabil kundbas. Tecken på fara: tung bankskuld, urholkad lönsamhet i kärnan, upprepade nya aktieemissioner som späder ut ägarna. Kom också ihåg värdefällan: ett cykliskt bolag kan se billigt ut på P/E precis när vinsten står på topp och är på väg att kollapsa. Frågan är aldrig hur mycket kursen fallit — den är om bolaget klarar sig till nästa cykel."
+          },
+          {
+            "type": "insikt",
+            "content": "Balansräkningen avgör om du fångar en möjlighet eller en fallkniv — kursfallet säger inget om överlevnad."
+          },
+          {
+            "type": "utmaning",
+            "content": "Hitta en aktie som fallit över fyrtio procent senaste året. Granska balansräkningen: nettokassa, skulder och lönsam kärnverksamhet? Skriv en bedömning: fallande kniv eller köpläge?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad avgör om en störtad aktie är en möjlighet eller en fallkniv?",
+            "alternativ": [
+              "Hur mycket kursen fallit i procent",
+              "Om bolaget överlever — vilket syns i balansräkningen",
+              "Om bolaget finns i någon indexfond",
+              "Antalet analytiker som fortfarande rekommenderar den"
+            ],
+            "ratt": 1,
+            "tips": "Överlevnad först, pris sedan."
+          },
+          {
+            "q": "Vilket är ett varningstecken vid granskning av ett fallande bolag?",
+            "alternativ": [
+              "Upprepade nya aktieemissioner som späder ut ägarna",
+              "Att bolaget betalar ut dividend",
+              "Att ledningen köper aktier",
+              "Att kassan växer"
+            ],
+            "ratt": 0,
+            "tips": "Utdelning av aktier istället för utdelning av kassa är ett dystert tecken."
+          },
+          {
+            "q": "Vad kännetecknar en överlevbar krasch?",
+            "alternativ": [
+              "Kassaöverskott, hanterbar skuld och intakt kärnverksamhet",
+              "Fallit över nittio procent",
+              "Hög P/E",
+              "Stora rubriker i finanspressen"
+            ],
+            "ratt": 0,
+            "tips": "Fästningen är kassan; kärnan är verksamheten."
+          }
+        ]
+      },
+      {
+        "num": 13,
+        "minutes": 9,
+        "title": "Options och warrant — varför Lynch varnar",
+        "intro": "Med derivat satsar du på tiden — och tiden arbetar mot dig.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lynch ägnar ett helt avsnitt åt att varna för optioner och warranter. Kärnproblemet är löptiden: en option upphör att gälla. Du kan ha helt rätt om bolaget och ändå förlora — för att rätt tidpunkt inte inföll innan optionen löpte ut. Tidsvärdet urholkas kontinuerligt, och säljaren av optionen tar premien medan köparen behöver både rätt riktning och rätt timing. Warranter späder ut befintliga aktieägare när de löses in. Att sälja täckta optioner kan kännas som en extra inkomst men takar av uppsidan — och det är uppsidan som betalar för alla misstag i en portfölj. Lynchs ställningstagande: den långsiktiga investeraren tjänar på bolagens tillväxt, inte på korta kursgissningar. Förstår du ett bolag väl — äg aktierna. Vill du spekulera i prisrörelser, var ärlig med att det är spel, och satsa bara vad du har råd att förlora."
+          },
+          {
+            "type": "insikt",
+            "content": "Att ha rätt om bolaget räcker inte med optioner — du måste även ha rätt om NÄR, och det är ett mycket svårare spel."
+          },
+          {
+            "type": "utmaning",
+            "content": "Om du någon gång handlat optioner: räkna ut din totala vinst eller förlust. Notera hur många gånger du haft rätt om riktningen men ändå förlorat på löptiden. Skriv ner lärdomen i en mening."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är Lynchs främsta invändning mot optioner?",
+            "alternativ": [
+              "De är olagliga i de flesta länder",
+              "De löper ut — du kan ha rätt om bolaget men förlora på timingen",
+              "De har för hög courtage",
+              "De fungerar bara för småbolag"
+            ],
+            "ratt": 1,
+            "tips": "Rätt bolag + fel tidpunkt = förlust."
+          },
+          {
+            "q": "Vad händer med en warrants inlösen för befintliga aktieägare?",
+            "alternativ": [
+              "Den ökar utdelningen",
+              "Den minskar skulderna",
+              "Den späder ut de befintliga ägarna",
+              "Ingenting alls"
+            ],
+            "ratt": 2,
+            "tips": "Fler aktier samma bolag = mindre per aktie."
+          },
+          {
+            "q": "Vad är effekten av att sälja täckta köpoptioner på aktier du äger?",
+            "alternativ": [
+              "Du eliminerar risken helt",
+              "Du takar av uppsidan men behåller nedsidan",
+              "Du dubblar din dividend",
+              "Du ökar ditt aktieantal"
+            ],
+            "ratt": 1,
+            "tips": "Premien är liten — den avverkade storkursen är stor."
+          }
+        ]
+      },
+      {
+        "num": 14,
+        "minutes": 9,
+        "title": "50 000 frågor till VD",
+        "intro": "Frågorna finns överallt — hos säljaren, konkurrentens personal och leverantören.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lynch hämtade information från primärkällor — inte bara rapporter. Ring investerarrelationer, ställ frågor på bolagsstämmor, prata med anställda, leverantörer och kunder. Och glöm inte den bästa källan: konkurrenterna. Fråga ett bolag vilken rival de respekterar mest — svaret ger bättre research än de flesta analysrapporter. Konkurrenter har ingen anledning att smickra varandra, men de känner branschen bättre än någon utomstående. Bra frågor att alltid bära med sig: Vilken är den största risken? Hur utvecklas efterfrågan just nu? Vad görs med överflödig kassa? Hur många nya butiker eller kunder tillkommer? Läs därtill årsredovisningar, delårsrapporter och branschtidskrifter. Viktigt: ta ledningens optimism med skepsis och verifiera mot siffrorna. Ett bolags ledning är sällan neutral — glädjeändor är deras jobb, sanningen är ditt jobb."
+          },
+          {
+            "type": "insikt",
+            "content": "Konkurrenterna vet bäst — fråga ett bolag vilken rival som är farligast, så får du bättre research än analysbyråer."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ring eller mejla investerarrelationerna på ett bolag du äger med tre konkreta frågor — till exempel om efterfrågan, konkurrentläget och användningen av kassan. Notera svaren och jämför med nästa rapport."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilken källa beskriver Lynch som särskilt värdefull för information om ett bolag?",
+            "alternativ": [
+              "Konkurrenterna",
+              "Aktietips på internetforum",
+              "Tekniska analyser",
+              "Reklamfilmer"
+            ],
+            "ratt": 0,
+            "tips": "Fienden känner dig bäst — fråga vilken rival de respekterar."
+          },
+          {
+            "q": "Hur bör du förhålla dig till ledningens utsagor?",
+            "alternativ": [
+              "Ta dem för sanning — de känner bolaget bäst",
+              "Med skepsis — verifiera mot siffrorna",
+              "Ignorera dem helt",
+              "Lita på dem om aktien stiger"
+            ],
+            "ratt": 1,
+            "tips": "Glädjeändor är deras jobb, sanningen är ditt."
+          },
+          {
+            "q": "Vilken av följande är en bra fråga att ställa till ett bolag?",
+            "alternativ": [
+              "Kommer aktien att stiga i år?",
+              "Vilken är den största risken för verksamheten?",
+              "Vilken bank använder ni?",
+              "Hur många anställda heter Lars?"
+            ],
+            "ratt": 1,
+            "tips": "Fråga om verksamheten — inte om kursen."
+          }
+        ]
+      },
+      {
+        "num": 15,
+        "minutes": 9,
+        "title": "Slöa och snabba bolag",
+        "intro": "Frågan är inte om bolaget är gammalt — utan om det agerar snabbt när världen ändras.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Lynch skiljer på bolag efter deras handlingskraft: sömniga bolag som gör som de alltid gjort och vakna bolag som agerar när omvärlden förändras. Ett bolag kan vara hundra år och ändå snabbt — och ett ungt bolag kan vara hopplöst byråkratiskt. Tecken på vakenhet: snabba produktbeslut, omedelbar kostnadsanpassning när efterfrågan vänder, förmåga att möta teknikskiften, ledning som själv köper aktier. Tecken på slöhet: långa beslutskedjor, förnekande av förändring, försvar av föråldade produkter medan konkurrenterna äter marknadsandelar. Här finns också en klassisk möjlighet: den sovande jätten — ett slött bolag med värdefulla tillgångar som en ny energisk ledning kan väcka. Katalysatorer som nya chefer, omstruktureringar eller en stor ägare som engagerar sig kan förvandla ett trögt bolag till en vinnare. Slutsatsen är kaxig men sann: ett vakert ledarskap i en tråkig bransch slår ett sömnigt ledarskap i en spännande bransch."
+          },
+          {
+            "type": "insikt",
+            "content": "En tråkig bransch med ett vakert ledarskap slår en spännande bransch med en sömnig ledning."
+          },
+          {
+            "type": "utmaning",
+            "content": "Läs de tre senaste pressmeddelandena från ett bolag du bevakar. Hur snabbt agerar ledningen på förändringar — ny teknik, ny konkurrens, sviktande efterfrågan? Jämför med en konkurrent och bedöm vem som är vakenast."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad kännetecknar ett 'vaket' bolag enligt boken?",
+            "alternativ": [
+              "Det har alltid yngsta personalen",
+              "Det agerar snabbt på förändringar — kostnader, produkter och teknikskiften",
+              "Det har högst P/E i branschen",
+              "Det ger aldrig utdelning"
+            ],
+            "ratt": 1,
+            "tips": "Handlingskraft, inte ålder, avgör."
+          },
+          {
+            "q": "Vad är en 'sovande jätte'?",
+            "alternativ": [
+              "Ett slött bolag med värdefulla tillgångar som en ny ledning kan väcka",
+              "Ett bolag som gått i konkurs",
+              "En aktie som inte handlas på flera månader",
+              "En indexfond med låg avgift"
+            ],
+            "ratt": 0,
+            "tips": "Värdet finns — det saknas bara energi att realisera det."
+          },
+          {
+            "q": "Vilken katalysator kan väcka en sovande jätte?",
+            "alternativ": [
+              "En ny energisk ledning eller omstrukturering",
+              "Att aktien byter namn",
+              "Att bolaget anställer fler jurister",
+              "En höjd direktörspension"
+            ],
+            "ratt": 0,
+            "tips": "Ny ledning, omstrukturering eller en aktiv storägare väcker ofta jättar."
+          }
+        ]
+      },
+      {
+        "num": 16,
+        "minutes": 9,
+        "title": "Dividend och återköp",
+        "intro": "Ett bolag som tjänar pengar har två vägar tillbaka till dig — utdelning eller återköp.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Vinsten kan antingen återinvesteras, betalas ut som utdelning eller användas till återköp av egna aktier. Utdelning är återkommande kontanter och signalerar stabilitet — Lynch gillar särskilt bolag med lång historia av att höja utdelningen år efter år. Utdelning passar slow growers och stalwarts: bolag vars bästa investeringsmöjligheter redan är förbrukade. Återköp minskar antalet aktier och höjer därmed vinsten per aktie för de kvarvarande ägarna — en tyst men kraftfull belöning när den görs till rimligt pris. Men återköp ska granskas kritiskt: köper bolaget tillbaka aktier bara för att kompensera utfärdandet av personaloptioner är nettominskningen noll. Också varning för bolag som betalar utdelning med lånade pengar medan skulderna växer — det är ingen avkastning, det är flyttning av pengar. Vilken väg som är bäst beror på bolagets möjligheter: kan vinsten återinvesteras till hög avkastning är det bättre än både utdelning och återköp."
+          },
+          {
+            "type": "insikt",
+            "content": "Återköp är utdelning i förklädnad — men bara om antalet aktier faktiskt minskar och priset är rimligt."
+          },
+          {
+            "type": "utmaning",
+            "content": "Kolla antalet utestående aktier för ett bolag de senaste fem åren. Ökar eller minskar det? Räkna sedan ut om återköpen täckts av fri kassaflöde eller lån — och vad det betyder för dig som ägare."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är effekten av ett äkta återköpsprogram?",
+            "alternativ": [
+              "Antalet aktier minskar och vinsten per aktie stiger för kvarvarande ägare",
+              "Bolagets skulder minskar automatiskt",
+              "Utdelningen höjs med samma procent",
+              "P/E sjunker alltid"
+            ],
+            "ratt": 0,
+            "tips": "Samma tårta, färre bitar — mer per bit."
+          },
+          {
+            "q": "När är återköp i praktiken värdelösa för aktieägaren?",
+            "alternativ": [
+              "När de bara kompenserar utfärdandet av personaloptioner och aktieantalet inte minskar",
+              "När de görs under bokvärde",
+              "När bolaget har nettokassa",
+              "När de görs i en nedgång"
+            ],
+            "ratt": 0,
+            "tips": "Netto noll minskning är ingen belöning."
+          },
+          {
+            "q": "Vilken bolagstyp passar utdelning bäst enligt boken?",
+            "alternativ": [
+              "Slow growers och stalwarts vars bästa tillväxtmöjligheter redan är förbrukade",
+              "Turnarounds med tunga skulder",
+              "Nystartade bolag utan vinst",
+              "Fast growers som behöver all kapital för expansion"
+            ],
+            "ratt": 0,
+            "tips": "Växande bolag ska växa — mogna bolag ska betala."
+          }
+        ]
+      },
+      {
+        "num": 17,
+        "minutes": 9,
+        "title": "P/E och tillväxt tillsammans — PEG-ratio",
+        "intro": "Ett tal som knyter pris och tillväxt — använd det klokt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "PEG-talet knyter samman värdering och tillväxt: P/E dividerat med den förväntade tillväxttakten. En tumregel är att PEG runt ett är rimligt värderat, under ett potentiellt billigt och väl över ett dyrt. Talet gör det möjligt att jämföra bolag med olika tillväxttakt: ett bolag med P/E trettio och trettio procents tillväxt (PEG ett) kan vara billigare än ett med P/E femton och fem procents tillväxt (PEG tre). Men begränsningarna är minst lika viktiga som talet. Tillväxtprognoser är gissningar — PEG är bara så bra som antagandet. Talet beaktar inte risk, inte utdelning och inte hur länge tillväxten kan pågå. Cykliska bolag ger missledande PEG: siffror eftersom vinsten står på topp när P/E är lägst. Lynch använde förhållandet mellan P/E och tillväxt som en utgångspunkt — aldrig som beslutsregel. Jämför också med det egna historiska spannet: en fast grower som alltid handlats till PEG ett och en halv som plötsligt står på noll komma åtta förtjänar undersökning. Men ingen multipl ersätter förståelsen för verksamheten."
+          },
+          {
+            "type": "insikt",
+            "content": "PEG jämför priset med takten — men säger inget om hur länge takten håller, och det är där risken bor."
+          },
+          {
+            "type": "utmaning",
+            "content": "Räkna ut PEG för tre tillväxtaktier. Leta sedan upp riskerna: vad kan få tillväxten att stanna? Skriv ner en konkret risk per bolag och bedöm om PEG fångar den."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Hur beräknas PEG?",
+            "alternativ": [
+              "P/E dividerat med förväntad tillväxttakt",
+              "Pris dividerat med försäljning",
+              "Utdelning dividerat med kurs",
+              "Eget kapital dividerat med skulder"
+            ],
+            "ratt": 0,
+            "tips": "Pris i förhållande till tillväxt — inte bara till vinst."
+          },
+          {
+            "q": "Vilken är en viktig begränsning med PEG?",
+            "alternativ": [
+              "Det går inte att beräkna för svenska bolag",
+              "Tillväxtprognosen är en gissning och talet ignorerar risk och varaktighet",
+              "Det fungerar bara för banker",
+              "Det kräver tillgång till insiderinformation"
+            ],
+            "ratt": 1,
+            "tips": "PEG är aldrig bättre än tillväxtantagandet."
+          },
+          {
+            "q": "Vad kan ett oväntat lågt PEG-tal jämfört med bolagets egen historik tyda på?",
+            "alternativ": [
+              "Att bolaget är misstänkt billigt och förtjänar undersökning",
+              "Att bolaget garanterat stiger",
+              "Att bolaget snart höjer utdelningen",
+              "Ingenting — talet är meningslöst"
+            ],
+            "ratt": 0,
+            "tips": "Avvikelse från eget historiskt spann är en utredningssignal."
+          }
+        ]
+      },
+      {
+        "num": 18,
+        "minutes": 9,
+        "title": "Bokslutsanalys i praktiken",
+        "intro": "Från rapport till beslut — en arbetsgång du kan följa varje kvartal.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Bokslutsanalysen blir hanterbar om du följer en fast arbetsgång. Steg ett: läs resultaträkningen — intäkter, marginaler och vinst per aktie. Vilken är trenden? Steg två: granska balansräkningen — kassa mot skuld, utvecklingen av eget kapital. Steg tre: kolla kassaflödet — stämmer löpande kassaflöde med redovisad vinst? Steg fyra: räkna nyckeltal — P/E mot tillväxt, skuldsättningsgrad, lagrens och kundfordringarnas tillväxt mot försäljningens. Steg fem: jämför med historiken över fem till tio år och med konkurrenterna. Steg sex: pröva storyn — bekräftar eller motbevisar rapporten den story du köpte på? Steg sju: notera röda flaggor — växande lager, kundfordringar som springer ifrån intäkterna, upprepade 'engångsposter', revisionsanmärkningar. Avsluta alltid med en sida anteckningar. Poängen är inte att förutsäga framtiden perfekt — den är att skapa en repeterbar process som gör dig bättre varje kvartal."
+          },
+          {
+            "type": "insikt",
+            "content": "En bra analys slutar aldrig med en kursprognos — den slutar med en anteckning om huruvida storyn lever."
+          },
+          {
+            "type": "utmaning",
+            "content": "Gör en komplett analys av ett bolag enligt de sju stegen. Avsluta med en sida: story, nyckeltal, röda flaggor och ditt beslut — köp, håll eller sälj — med motivering."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är ett rimligt första steg i bokslutsanalysen?",
+            "alternativ": [
+              "Gissa kursutvecklingen kommande månad",
+              "Läsa resultaträkningen — intäkter, marginaler och vinst per aktie",
+              "Kolla vad forum skriver om aktien",
+              "Räkna ut betavärdet"
+            ],
+            "ratt": 1,
+            "tips": "Börja uppifrån: vad tjänar bolaget?"
+          },
+          {
+            "q": "Vad är en klassisk röd flagga i rapporten?",
+            "alternativ": [
+              "Kundfordringar som växer mycket snabbare än intäkterna",
+              "Stigande kassabehållning",
+              "Att vinsten per aktie ökat",
+              "Att ledningen köpt aktier"
+            ],
+            "ratt": 0,
+            "tips": "Fordringar som springer ifrån försäljningen tyder på sämre betalande kunder."
+          },
+          {
+            "q": "Hur bör en bra analys avslutas?",
+            "alternativ": [
+              "Med en exakt kursprognos tolv månader fram",
+              "Med en anteckning om huruvida storyn lever — och ett beslut",
+              "Med en rekommendation till vänner",
+              "Med att radera alla underlag"
+            ],
+            "ratt": 1,
+            "tips": "Processen är viktigare än profetian."
+          }
+        ]
+      },
+      {
+        "num": 19,
+        "minutes": 9,
+        "title": "Bygg en portfölj enligt Lynch",
+        "intro": "Diversifiering är inte att äga mycket — det är att äga rätt olika saker.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "För den som har tid och kunskap föreslår Lynch en kärnportfölj på tre till tio bolag — fler för den som har mindre tid att följa varje bolag. Kategorierna fyller olika funktioner: stalwarts ger stabilitet, fast growers driver avkastningen, cykliska kräver att du följer cykeln, turnarounds passar hög risktolerans och asset plays är specialsituationer. Diversifiera mellan kategorier och branscher — tio teknikbolag är ingen diversifiering. Störst positioner i det du förstår bäst. Undvika 'diworsification' — Lynchs ord för diversifiering som försämrar portföljen, det vill säga köp av obekanta bolag bara för att sprida risken. Balansera om efter storyn, inte efter vikter. Håll alltid lite kontanter för möjligheter. Räkna med svängningar: en portfölj med tio aktier kommer att innehålla förlorare — det är okej så länge vinnarna bär. Antalet innehav är mindre viktigt än tiden du lägger på att övervaka dem."
+          },
+          {
+            "type": "insikt",
+            "content": "Bredd skyddar mot enskilda misstag — men bara om bredden består av verkligt olika bolag, inte tio kopior av samma idé."
+          },
+          {
+            "type": "utmaning",
+            "content": "Rita upp din drömportfölj med tre till tio bolag fördelade över minst tre av de sex kategorierna. Motivera varje val med en mening och bestäm en maximal vikt per position."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Hur många bolag föreslår Lynch som grundportfölj för den som har tid och kunskap?",
+            "alternativ": [
+              "Tre till tio bolag",
+              "Fyrtio till femtio bolag",
+              "Endast ett bolag",
+              "Minst hundra bolag"
+            ],
+            "ratt": 0,
+            "tips": "Färre bolag — djupare kunskap per bolag."
+          },
+          {
+            "q": "Vad menar Lynch med 'diworsification'?",
+            "alternativ": [
+              "Diversifiering som försämrar portföljen — köp av obekanta bolag bara för att sprida risk",
+              "Att äga för få aktier",
+              "Att investera i utländsk valuta",
+              "Att använda hävstång"
+            ],
+            "ratt": 0,
+            "tips": "Spridning i sig är inte alltid förbättring."
+          },
+          {
+            "q": "Varför är tio teknikbolag ingen diversifiering?",
+            "alternativ": [
+              "Teknikbolag är alltid farliga",
+              "De drabbas av samma risker samtidigt — det är tio kopior av samma idé",
+              "Teknikbolag betalar aldrig utdelning",
+              "De handlas aldrig med rabatt"
+            ],
+            "ratt": 1,
+            "tips": "Diversifiering handlar om olika risker — inte olika tickersymboler."
+          }
+        ]
+      },
+      {
+        "num": 20,
+        "minutes": 9,
+        "title": "Lynchs arv — 29% årligen under 13 år",
+        "intro": "Tretton år, runt tjugonio procent per år — vad säger siffran oss egentligen?",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Mellan 1977 och 1990 förvaltade Lynch fonden Magellan med en genomsnittlig årlig avkastning på cirka tjugonio procent — en av de bästa förvaltningsperioderna i historien. Vad ligger bakom rekordet? Först ett enormt arbete: bolagsbesök, tusentals rapporter och samtal — Lynch var känd för att nästan aldrig vila. För det andra nyfikenhet som motor: han jagade idéer överallt, från parkeringsautomater till begravningsbyråer. För det tredje ödmjukhet: han erkände fritt sina misstag — poängen var att vinnarna vägde tyngre än förlorarna. För det fjärde ett långsiktigt perspektiv genom dagligt brus. Kontexten spelar roll: en historisk börsuppgång och en fond som växte enormt — som privatinvesterare har du fördelar Lynch tappade när fonden blev för stor för småbolag. Arvet är demokratiskt: aktiv forskning, vardagskunskap och tålamod är tillgängliga för alla. Process slår genialitet. Arbete slår tur. Tålamod slår timing."
+          },
+          {
+            "type": "insikt",
+            "content": "Hemligheten bakom rekordet var inte genialitet — det var tusentals analyser, ödmjukhet inför misstag och tålamod att låta vinnarna springa."
+          },
+          {
+            "type": "utmaning",
+            "content": "Skriv din personliga investeringsplan på en sida: vilka kategorier du jagar, hur ofta du kontrollerar storyn, när du säljer och hur mycket tid du lägger per månad. Datera den och läs den om ett år."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilken fond förvaltade Lynch mellan 1977 och 1990?",
+            "alternativ": [
+              "Magellan",
+              "Sequoia",
+              "Berkshire Hathaway",
+              "Vanguard 500"
+            ],
+            "ratt": 0,
+            "tips": "Fonden som mångdubblades under hans tretton år."
+          },
+          {
+            "q": "Vilken faktor tillskriver Lynch själv stor betydelse för sitt resultat?",
+            "alternativ": [
+              "Enormt arbete med bolagsbesök och rapporter — kombinerat med ödmjukhet",
+              "Teknisk analys av diagram",
+              "Lyckosam timing av börsens topp- och bottennivåer",
+              "Hög belåning i uppgångar"
+            ],
+            "ratt": 0,
+            "tips": "Rekordet byggde på fotarbete, inte snabba vändor."
+          },
+          {
+            "q": "Vilken fördel har privatinvesterare som Lynch tappade när fonden växte?",
+            "alternativ": [
+              "Möjligheten att äga småbolag som är för små för en jättestor fond",
+              "Tillgång till snabbare datorer",
+              "Rätt att handla med insiderinformation",
+              "Lägre courtage"
+            ],
+            "ratt": 0,
+            "tips": "Storleken blev hans fiende — småbolagen försvann ur räckvidd."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Hela boken — samtliga kapitelkoncept täcks: kärnprincipen, sex bolagstyper, P/E, tvåminutars-drillen, de tolv dumma påståendena, story-kontroll, balansräkning, vinsttillväxt, sälj- och köpfilosofi, fallknivar, derivatvarningar, informationskällor, dividend och återköp, PEG, bokslutsarbetsgång och portföljbygge. Källa: Mina bästa investeringar (One Up On Wall Street, 1989).",
+    "grahamSection": "Lynch är Grahams arvtagare i praktiken: tvåminutars-drillen är Grahams krav på 'grundlig analys' i vardagsformat, och viktningen av kassa och skuld i balansräkningen är Marginal-tänk tillämpat på överlevnad. Där Graham söker statistisk marginal söker Lynch förståelse för tillväxtens varaktighet — samma försiktighet, olika ingång.",
+    "ak1Section": "AK1:s tolkning: Lynch bygger bron mellan vardagsobservation och kvantitativ analys. Kursen kopplar varje kapitel till AKM1:s variabler — V01 tillväxt, V04/V05 värdering, V09 lönsamhet, V10/V11 skuldsättning och likviditet — och gör bokens principer till repeterbara kontroller i den kvartalsvisa story-granskningen."
+  },
+  "blue-ocean-strategy": {
+    "slug": "blue-ocean-strategy",
+    "category": "BOKMASTER",
+    "weight": "KRITISK",
+    "chapterCount": 15,
+    "totalMinutes": 130,
+    "title": "Blue Ocean Strategy — Kim & Mauborgne: KOMPLETT (15 kapitel)",
+    "summary": "W. Chan Kim & Renée Mauborgnes strategiklassiker komplett: röda vs blå hav, value innovation, ERRC-rutnätet, fyra handlingar-ramverket, strategi-canvas, de sex stigarna, tre kriterier på effektiv strategi, fem steg till blå ocean, kundens kund, tre nivåer av icke-kunder, rätt sekvens, vändpunktledarskap, fair process — med case från Cirque du Soleil och [yellow tail] till Nintendo Wii.",
+    "minutes": 130,
+    "xp": 1500,
+    "level": "Alla",
+    "learn": "Bokens alla kärnverktyg — value innovation, ERRC-rutnätet, strategi-canvas, de sex stigarna, de tre nivåerna av icke-kunder, sekvensen nytta-pris-kostnad-adoption och fair process — med quiz, insikter och utmaningar per kapitel.",
+    "why": "Blue Ocean Strategy (2005) är en av tidernas mest inflytelserika strategiböcker — med miljontals sålda exemplar i över fyrtio språk. För investeraren förklarar den hur bolag skapar lönsam tillväxt utan att blöda i priskrig. Källa: boken själv.",
+    "chapters_list": [
+      "Kap 1 · Blue Ocean vs Red Ocean",
+      "Kap 2 · Value Innovation",
+      "Kap 3 · ERRC-rutnätet",
+      "Kap 4 · Fyra handlingar-ramverket",
+      "Kap 5 · Strategi-canvas",
+      "Kap 6 · Omfattning — var ritar du gränserna?",
+      "Kap 7 · Fokus, Divergens, Catchy Slogan",
+      "Kap 8 · Fem steg till Blue Ocean",
+      "Kap 9 · Kundens kund",
+      "Kap 10 · Icke-kunder i tre nivåer",
+      "Kap 11 · Sekvens: Köpare, Pris, Kostnad, Implementation",
+      "Kap 12 · Övervinna organisatoriska hinder",
+      "Kap 13 · Bygg execution in i strategin",
+      "Kap 14 · Fair Process",
+      "Kap 15 · Blue Ocean i praktiken — Cirque du Soleil till Nintendo Wii"
+    ],
+    "history": {
+      "origin": "W. Chan Kim och Renée Mauborgne publicerade Blue Ocean Strategy 2005, byggt på forskning om 150 strategiska drag över hundra år och ett trettiotal branscher. Kursen täcker bokens centrala ramverk och case — läs originalet för författarnas exakta ord."
+    },
+    "chapters": [
+      {
+        "num": 1,
+        "minutes": 8,
+        "title": "Blue Ocean vs Red Ocean",
+        "intro": "Grundtanken — sluta blöda i samma vatten som alla andra.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Röda hav\n\nEtt rött hav är den kända marknaden. Branschens gränser är definierade och spelreglerna kända. Företagen försöker slå varandra genom att ta kunder från varandra — ju hårdare konkurrens, desto mer likriktade erbjudanden, desto mer prispress. Vattnet färgas rött av blod. I röda hav handlar strategi om att välja position: bli billigast eller mest differentierad, och försvara den positionen.\n\nBlå hav\n\nEtt blå hav är oexploaterat marknadsrum. Här skapas efterfrågan istället för att kämpas om, spelreglerna väntar på att sättas och konkurrensen blir irrelevant. Blue Ocean Strategy handlar inte om att förutsäga teknikgenombrott — det handlar om att systematiskt skapa nytt marknadsrum med högre värde till lägre kostnad."
+          },
+          {
+            "type": "text",
+            "content": "Forskningen bakom boken\n\nKim och Mauborgne studerade 150 strategiska drag över hundra år och ett trettiotal branscher. När de granskade 108 företags lanseringar fann de att 86 procent var röda hav — inkrementella förbättringar i befintliga marknader. De stod för 62 procent av intäkterna men bara 39 procent av vinsterna. De 14 procent som var blå hav genererade 38 procent av intäkterna men hela 61 procent av vinsterna.\n\nTre sanningar att bära med sig:\n• Blå hav skapas lika ofta inom befintliga branscher som utanför dem (Cirque du Soleil skapades inom cirkusbranschen).\n• Det är sällan teknikpionjärer som skapar blå hav — det är värdepionjärer.\n• Marknadens gränser är inte givna av naturen — de existerar bara i chefernas huvuden."
+          },
+          {
+            "type": "insikt",
+            "content": "I röda hav vinner du genom att ta marknadsandelar. I blå hav skapar du ny marknad — och konkurrensen blir irrelevant."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj en bransch du känner (bank, gym, livsmedel). Lista hur många aktörer som konkurrerar med i princip identiska erbjudanden. Hitta sedan en faktor som ingen av dem tävlar om — där kan en blå ocean gömma sig."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad kännetecknar ett RÖTT hav?",
+            "alternativ": [
+              "Oexploaterat marknadsrum utan konkurrenter",
+              "Känd marknad där bolag slåss om befintlig efterfrågan",
+              "Ny teknik som ännu saknar kunder",
+              "En marknad med bara en dominant aktör"
+            ],
+            "ratt": 1,
+            "tips": "Rött = blod. Befintlig marknad, befintliga regler, nollsummespel."
+          },
+          {
+            "q": "Studien av 108 lanseringar visade att blå hav...",
+            "alternativ": [
+              "var ovanliga men stod för majoriteten av vinsterna",
+              "var vanliga men knappt lönsamma",
+              "endast skapades av teknikstartuppar",
+              "aldrig uppstod inom mogna branscher"
+            ],
+            "ratt": 0,
+            "tips": "14 procent av lanseringarna — 61 procent av vinsterna."
+          },
+          {
+            "q": "Vilket påstående stämmer med boken?",
+            "alternativ": [
+              "Blå hav skapas nästan alltid av teknikpionjärer",
+              "Blå hav kan skapas inom existerande, moget branscher",
+              "Blå hav uppstår bara i helt nya industrier",
+              "Blå hav är detsamma som patentbelagt skydd"
+            ],
+            "ratt": 1,
+            "tips": "Cirque du Soleil — en cirkus, fast utan det som gjorde ont i cirkusens P&L."
+          }
+        ]
+      },
+      {
+        "num": 2,
+        "minutes": 8,
+        "title": "Value Innovation",
+        "intro": "Kärnan i strategin — värde och innovation i en och samma rörelse.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Begreppet\n\nValue innovation — värdeinnovation — är hörnstenen i Blue Ocean Strategy. Utan det är en strategi bara strukturerad slöseri. Logiken bygger på en insikt: värde utan innovation är inkrementell förbättring — lite bättre på samma sak. Innovation utan värde är teknikdrift — teknik för teknicens egen skull, bortom vad köparna är beredda att betala för. Värdeinnovation slår samman de två: innovation kring nytta, pris och kostnadsposition samtidigt.\n\nDetta bryter strategiläran än mer grundläggande: traditionell strategi säger att du måste VÄLJA mellan differentiering (högre värde, högre kostnad) och låg kostnad. Värdeinnovation säger att du ska uppnå BÅDA samtidigt — genom att höja köparvärdet och samtidigt sänka kostnadsstrukturen."
+          },
+          {
+            "type": "text",
+            "content": "Hur ser det ut i praktiken?\n\nCirque du Soleil eliminerade cirkusens dyraste poster — djur och stjärnartister — och sänkte därmed kostnaderna dramatiskt. Samtidigt höjde och skapade de värde som cirkusen aldrig erbjudit: tema, konstnärlig musik och dans, en förfinad tittarmiljö. Kostnaderna ner, värdet upp — och en helt ny publik (vuxna och teaterpublik) betalade teaterbiljettpriser.\n\nNintendo Wii gjorde samma rörelse i konsolkriget: enklare (billigare) grafik, men nytt värde genom rörelsekontroll och socialt spel som öppnade hemmet för icke-gamers. Värdeinnovation är alltså inte 'mer av det gamla' och inte 'ny teknik för teknikens skull' — det är nytt köparvärde till lägre kostnad."
+          },
+          {
+            "type": "insikt",
+            "content": "Värdeinnovation = differentiering OCH låg kostnad samtidigt. Avvägningen mellan dem är en tankevurpa från strategiläran — inte en naturlag."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta en produkt du använder varje dag. Vad är inkrementellt (samma sak, lite bättre)? Vad skulle vara värdeinnovation — nytt värde FÖR DIG till LÄGRE kostnad för tillverkaren?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är value innovation?",
+            "alternativ": [
+              "Innovation utan hänsyn till kostnad",
+              "Samtidigt höjt köparvärde och sänkt kostnadsstruktur",
+              "Att köpa in ny teknik tidigt",
+              "Att differentiera sig på alla faktorer samtidigt"
+            ],
+            "ratt": 1,
+            "tips": "Båda hållen samtidigt — värdet upp, kostnaden ner."
+          },
+          {
+            "q": "Teknikdriven innovation som köparna inte värdesätter kallas i boken...",
+            "alternativ": [
+              "värdeinnovation",
+              "disruptiv innovation",
+              "innovation utan värde",
+              "röd ocean-strategi"
+            ],
+            "ratt": 2,
+            "tips": "Teknik som går längre än vad köparna accepterar betala för."
+          },
+          {
+            "q": "Vilket exempel illustrerar värdeinnovation?",
+            "alternativ": [
+              "Ett bolag som lägger till en kamera till varje ny modell",
+              "Ett bolag som sänker priset genom sämre kvalitet",
+              "Cirque du Soleil eliminerade djuren och höjde det konstnärliga",
+              "Ett bolag som kopierar marknadsledarens produkt exakt"
+            ],
+            "ratt": 2,
+            "tips": "Kostnad ner + värde upp = värdeinnovation."
+          }
+        ]
+      },
+      {
+        "num": 3,
+        "minutes": 8,
+        "title": "ERRC-rutnätet",
+        "intro": "Eliminate, Reduce, Raise, Create — de fyra rutor som tvingar fram förnyelse.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Rutnätet\n\nERRC-rutnätet (Eliminate-Reduce-Raise-Create) är bokens mest praktiska verktyg. Fyra frågor:\n\n• ELIMINERA — vilka faktorer som branschen tävlat om i åratal borde helt tas bort?\n• REDUCERA — vilka borde sänkas långt under branschstandard?\n• HÖJ — vilka borde höjas långt över branschstandard?\n• SKAPA — vilka borde skapas som branschen aldrig erbjudit?\n\nDe två första raderna frigör kostnader. De två sista lyfter köparvärdet. Tillsammans öppnar de en blå ocean — och tvingar bolaget att agera på ALLA fyra. De flesta strategibyggen fokuserar bara på att höja och skapa ('mer av allt') vilket driver kostnaderna, eller enbart på att reducera ('kostnadsjakt') vilket urholkar värdet."
+          },
+          {
+            "type": "text",
+            "content": "Cirque du Soleils ERRC\n\n• Eliminera: djur, stjärnartister, flera parallella shower, försäljning i gångarna.\n• Reducera: humorn, spänning och fara, viss underhållningskostnad.\n• Höja: unik scenmiljö (venue) långt över cirkusstandard.\n• Skapa: tema, förfinad tittarmiljö, artistisk musik och dans, flera produktioner med story.\n\nResultatet blev inte 'en bättre cirkus' — det blev en ny kategori mellan cirkus och teater. Notera att de svåraste rutorna är eliminera och reducera. De utmanar branschens heligaste antaganden, och därför är det just där den verkliga kostnadsfrigöringen och differentieringen ligger."
+          },
+          {
+            "type": "insikt",
+            "content": "De flesta strategier bommar på de två första raderna. Eliminera och reducera är där kostnaderna frigörs — och där den blå oceanen faktiskt öppnas."
+          },
+          {
+            "type": "utmaning",
+            "content": "Rita ett ERRC-rutnät för en bransch du känner väl. Krav: minst två faktorer att eliminera, två att reducera, två att höja och två att skapa. Vilken ruta blev svårast — och varför?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilka två rader i ERRC-rutnätet sänker kostnadsstrukturen?",
+            "alternativ": [
+              "Höj och Skapa",
+              "Eliminera och Reducera",
+              "Eliminera och Skapa",
+              "Reducera och Höj"
+            ],
+            "ratt": 1,
+            "tips": "Ta bort och sänk = pengar som frigörs för värdelyft."
+          },
+          {
+            "q": "Varför är 'Eliminera' ofta svårast för organisationer?",
+            "alternativ": [
+              "Det kräver mest kapital",
+              "Det utmanar branschens etablerade antaganden — chefer associerar mer med mer",
+              "Kunderna kräver alltid alla faktorer",
+              "Eliminering är förbjudet i de flesta branscher"
+            ],
+            "ratt": 1,
+            "tips": "Ingen vågar plocka bort det alla alltid tävlat om."
+          },
+          {
+            "q": "Vad SKAPADE Cirque du Soleil enligt boken?",
+            "alternativ": [
+              "Större djurpark och fler arter",
+              "Billigare biljetter genom volym",
+              "Tema, förfinad tittarmiljö och artistisk musik och dans",
+              "Fler föreställningar per dag"
+            ],
+            "ratt": 2,
+            "tips": "Det cirkusen aldrig erbjudit — det teatern alltid gjort."
+          }
+        ]
+      },
+      {
+        "num": 4,
+        "minutes": 8,
+        "title": "Fyra handlingar-ramverket",
+        "intro": "De fyra frågorna som bryter branschens värde-kostnad-mönster.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Ramverket\n\nFyra handlingar-ramverket (Four Actions Framework) ställer fyra frågor som tillsammans utmanar branschens etablerade strategiska logik och affärsmodell:\n\n1. Vilka faktorer som branschen tagit för givna borde ELIMINERAS?\n2. Vilka borde REDUCERAS långt under branschstandard?\n3. Vilka borde HÖJAS långt över branschstandard?\n4. Vilka borde SKAPAS som branschen aldrig erbjudit?\n\nDe två första frågorna ger insikt i hur kostnadsstrukturen kan sänkas. De två sista ger insikt i hur köparvärdet kan höjas — och hur en helt ny efterfrågan kan skapas. Tillsammans låter de bolaget samtidigt uppnå differentiering och låg kostnad — och därmed bryta värde-kostnad-avvägningen som definierar röda hav."
+          },
+          {
+            "type": "text",
+            "content": "Exemplet Yellow Tail\n\nAustraliska Casella Wines lanserade [yellow tail] 2001 och skrev vinbranschens historia. Genom de fyra frågorna:\n\n• Eliminera: årgångsterminologi, lång lagring, tanniner, komplexitet — allt som skrämde bort vanliga folk från vin.\n• Reducera: sortimentet (i princip två sorter), vinkunnighet som krav, buteljerings- och odlingsexpertens.\n• Höja: lättdrucket, tillgänglighet i butik, prisvärd kvalitet.\n• Skapa: ett roligt, äventyrligt och avslappnat vin — lika enkelt att välja som en flaska läsk eller cocktail.\n\nResultatet: [yellow tail] blev det snabbast växande importvinet i USA:s historia — och kunderna kom inte från konkurrenternas vinkällare utan från öldisken och baren. Det är skillnaden mellan att flytta om efterfrågan och att skapa ny."
+          },
+          {
+            "type": "insikt",
+            "content": "De fyra frågorna fungerar bara tillsammans. Värde utan kostnadsfrigörelse (eliminera/reducera) blir bara dyrare. Kostnadsjakt utan nytt värde blir bara billigare."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj en tjänst du använder (bank, streaming, gym). Besvara alla fyra frågorna. Svarar du bara på 'höj och skapa' — har du en röd hav-förbättring, inte en blå ocean."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är huvudsyftet med fyra handlingar-ramverket?",
+            "alternativ": [
+              "Att mäta kundnöjdhet",
+              "Att bryta avvägningen mellan differentiering och låg kostnad",
+              "Att identifiera bolagets kärnkompetenser",
+              "Att rangordna konkurrenterna"
+            ],
+            "ratt": 1,
+            "tips": "Två frågor sänker kostnaden, två höjer värdet — samtidigt."
+          },
+          {
+            "q": "Vilket av följande är INTE en av de fyra handlingarna?",
+            "alternativ": [
+              "Eliminera",
+              "Imitera",
+              "Höja",
+              "Skapa"
+            ],
+            "ratt": 1,
+            "tips": "Imitation är röda havets nationalsport."
+          },
+          {
+            "q": "Vad eliminerade [yellow tail] ur vinupplevelsen?",
+            "alternativ": [
+              "Alkoholen helt",
+              "Årgångsterminologi, tanniner och komplexitet",
+              "Buteljerna",
+              "All marknadsföring"
+            ],
+            "ratt": 1,
+            "tips": "Allt som gjorde vin svårt och skrämmande för vanliga folk."
+          }
+        ]
+      },
+      {
+        "num": 5,
+        "minutes": 8,
+        "title": "Strategi-canvas",
+        "intro": "Visualisera din marknadsposition — diagnostik och handling i en bild.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Verktyget\n\nStrategi-canvasen är både ett diagnostiskt och ett handlingsorienterat ramverk. Den fångar branschens nuvarande läge och låter dig rita din framtida position:\n\n• X-axeln: de faktorer branschen tävlar om (pris, sortiment, service, kvalitet...).\n• Y-axeln: den nivå som köparna erbjuds på varje faktor.\n\nVärdekurvan är den grafiska linjen som visar hur bolaget presterar relativt på faktorerna. En röd hav-bransch känns igen på att alla kurvor har samma form — konkurrenterna säger olika i sina presentationer men gör samma sak i sina P&L:er. Ju mer likriktade kurvorna, desto mer commoditiserad marknad."
+          },
+          {
+            "type": "text",
+            "content": "Läsa och rita kurvan\n\nSouthwest Airlines är bokens klassiska exempel. Vanliga flygbolag tävlade om måltider, platser, bagagehantering, hub-anslutningar. Southwest ritade i stället en kurva som liknade BILRESAN: frekventa avgångar, punkt-till-punkt, snabb vändtid på marken, måttlig service, lågt pris. Deras värdekurva divergerade från branschens — och konkurrerade egentligen inte med flyget, utan med bilen.\n\nCanvasen används i två steg: först som diagnos (rita branschens och ert nuvarande kurva), sedan som vision ('to-be'-kurvan där ni vill befinna er). En stark värdekurva har tre kännetecken — fokus, divergens och en catchy slogan — vilket är nästa kapitels ämne."
+          },
+          {
+            "type": "insikt",
+            "content": "Om din värdekurva har samma form som konkurrenternas — konkurrerar du på pris, oavsett vad strategidokumentet påstår."
+          },
+          {
+            "type": "utmaning",
+            "content": "Skissa en enkel strategi-canvas för två konkurrerande bolag i en bransch du följer. Har deras värdekurvor samma form? I så fall: var skapar den första divergerande kurvan mest värde?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad visar axlarna i en strategi-canvas?",
+            "alternativ": [
+              "Intäkt och vinst över tid",
+              "Branschens konkurrensfaktorer och den erbjudna nivån på varje faktor",
+              "Marknadsandel och tillväxt",
+              "Kundantal och pris"
+            ],
+            "ratt": 1,
+            "tips": "X = vad man tävlar om. Y = hur mycket man erbjuder."
+          },
+          {
+            "q": "Vad kännetecknar en stark värdekurva?",
+            "alternativ": [
+              "Hög nivå på samtliga faktorer",
+              "Samma form som branschgenomsnittet",
+              "Fokus (få faktorer högt) och divergens från branschens kurva",
+              "Låg nivå på alla faktorer utom pris"
+            ],
+            "ratt": 2,
+            "tips": "Fokus + divergens + catchy slogan."
+          },
+          {
+            "q": "Vems värdekurva liknade bilresan snarare än flygbranschens?",
+            "alternativ": [
+              "British Airways",
+              "Southwest Airlines",
+              "SAS",
+              "Lufthansa"
+            ],
+            "ratt": 1,
+            "tips": "'The speed of a plane at the price of a car.'"
+          }
+        ]
+      },
+      {
+        "num": 6,
+        "minutes": 9,
+        "title": "Omfattning — var ritar du gränserna?",
+        "intro": "Marknadsdefinition — de sex stigarna som ritar om branschens gränser.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Gränserna finns bara i huvudet\n\nFöretag låser in sig i sin egen branschdefinition och ser därför bara röda hav. Bokens första princip: marknadens gränser är inte givna — de ritas av chefernas uppfattning om världen. Sex stigar (Six Paths Framework) för att rita om dem:\n\n• Stig 1 — Se över ALTERNATIVA BRANSCHER. Konsumenten väljer mellan alternativ, inte bara mellan varumärken: restaurang eller bio, golf eller gym. Callaway Golf vände sig till dem som golfat upp och gett upp — och gjorde golfenkelt nog för alla fritidsaktiviteter att konkurrera med.\n• Stig 2 — Se över STRATEGISKA GRUPPER inom branschen. Budget- eller premium? Curves hamnade mellan fullservice-gymmen och hemmagymmet: 30-minuterspass för kvinnor, utan speglar, utan män, till lågt pris.\n• Stig 3 — Se över KEDJAN AV KÖPARE. Köpare, användare, påverkare — vem riktar sig branschen egentligen mot? (Eget kapitel senare.)"
+          },
+          {
+            "type": "text",
+            "content": "Tre stigar till\n\n• Stig 4 — Se över KOMPLEMENTÄRA erbjudanden. Vad används produkten tillsammans med? Bokhandlarna som lade till kafé och fåtöljer konkurrerade inte med bokpris — de konkurrerade om kvällens fritid.\n• Stig 5 — Se över FUNKTIONELL vs EMOTIONELL orientering. Branscher tenderar att vara det ena eller andra. The Body Shop tog bort emotionen från kosmetika (förföriskt paket, löften om skönhet) och sålde funktionellt (ingredienser som fungerar). Starbucks gjorde omvänt: tog funktionellt kaffe och gjorde det emotionellt — 'den tredje platsen' mellan hem och jobb.\n• Stig 6 — Se över TID. Läs trender som är tydliga, oföränderliga i riktning och som når utanför branschen — och agera innan trenden nått sin slutpunkt. Cisco byggde sin router-position på den oundvikliga explosionen av internettrafik.\n\nOmfattning handlar alltså om vad du INKLUDERAR i din marknadsdefinition. Rita gränserna fel och du slåss i fel hav — rita dem om och en blå ocean öppnas."
+          },
+          {
+            "type": "insikt",
+            "content": "En blå ocean öppnas sällan inom branschens ramar. Den öppnas när du flyttar själva ramarna."
+          },
+          {
+            "type": "utmaning",
+            "content": "Välj en bransch. Testa stig 1: vilka alternativa branscher löser samma kundbehov? Vilken faktor från alternativet saknas helt i er bransch — och vem skulle betala för att få den?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilket av följande är ETT av de sex stigarna?",
+            "alternativ": [
+              "Se över alternativa branscher",
+              "Kopiera marknadsledarens position",
+              "Mikro-segmentera befintliga kunder",
+              "Sänka priset under alla konkurrenter"
+            ],
+            "ratt": 0,
+            "tips": "Kunden väljer mellan alternativ — inte bara varumärken."
+          },
+          {
+            "q": "The Body Shop-exemplet illustrerar vilken stig?",
+            "alternativ": [
+              "Tidsdimensionen",
+              "Skiftet mellan funktionell och emotionell orientering",
+              "Strategiska grupper",
+              "Komplementära erbjudanden"
+            ],
+            "ratt": 1,
+            "tips": "De tog bort löftena om skönhet och sålde funktion."
+          },
+          {
+            "q": "Varför är marknadsdefinitionen (omfattningen) avgörande?",
+            "alternativ": [
+              "Den avgör vilka alternativ kunden jämför dig med — och därmed vilken efterfrågan du kan nå",
+              "Den bestämmer bolagets organisationsstruktur",
+              "Den styr vilka nyckeltal som ska rapporteras",
+              "Den påverkar bara marknadsföringsbudgeten"
+            ],
+            "ratt": 0,
+            "tips": "Jämförelserummet definierar konkurrensen."
+          }
+        ]
+      },
+      {
+        "num": 7,
+        "minutes": 9,
+        "title": "Fokus, Divergens, Catchy Slogan",
+        "intro": "Tre kriterier som skiljer en effektiv strategi från survagg.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre kännetecken\n\nEn effektiv strategi — synlig i värdekurvan — känns igen på tre egenskaper:\n\n1. FOKUS — bolaget satsar hårt på de få faktorer som skapar exceptionellt värde, och offrar resten. Wiis kurva: extremt hög på rörelse, enkelhet och socialt spel — låg på grafik och rå kraft. Ingen tung middag på alla tallrikar.\n\n2. DIVERGENS — värdekurvan skiljer sig från branschens. När alla kurvor ser lika ut konkurreras det på pris; när en kurva divergerar skapas ett nytt utrymme. Southwests kurva liknade bilresan, inte flyets.\n\n3. CATCHY SLOGAN — strategin uttrycks i en sann och slagkraftig mening som genast förmedlar erbjudandet. Southwest: 'flygets fart till bilens pris — när du än behöver det.'"
+          },
+          {
+            "type": "text",
+            "content": "Vad händer när kriterierna saknas?\n\nUtan FOKUS blir strategin 'lite bättre på allt' — kostnaderna stiger, ingen drar nytta av något särskilt och ingen kommer ihåg bolaget. Utan DIVERGENS är det en me-too-strategi med andra ord — marknadsföring kan inte rädda en kurva som ser ut som allas andras. Utan SLOGAN finns inget gemensamt språk: internt förstår ingen vad bolaget egentligen säljer, och kunden kan inte berätta värdet för nästa person.\n\nAnvänd de tre kriterierna som test på din egen canvas: har din to-be-kurva fokus (få faktorer höga), divergens (annan form än branschens) och en slogan som en utomstående förstår på fem sekunder? Om något saknas — åter till ritbordet."
+          },
+          {
+            "type": "insikt",
+            "content": "Kan du inte uttrycka strategin i en enda sann mening som kunden känner igen — är den inte klar."
+          },
+          {
+            "type": "utmaning",
+            "content": "Skriv en catchy slogan för ett bolag du följer (eller ditt eget). Test: förstår en utomstående erbjudandet på fem sekunder? Om inte — saknas fokus eller divergens, inte bara ord."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilka är de tre kännetecknen på en effektiv strategi?",
+            "alternativ": [
+              "Storlek, historik, kapital",
+              "Fokus, divergens, catchy slogan",
+              "Pris, kvalitet, service",
+              "Innovation, imitation, expansion"
+            ],
+            "ratt": 1,
+            "tips": "Ett från canvasen, ett mot branschen, ett för språket."
+          },
+          {
+            "q": "Vad var Southwests slogan?",
+            "alternativ": [
+              "The speed of a plane at the price of a car — whenever you need it",
+              "The world's favourite airline",
+              "Flyg billigt, flyg smart",
+              "We love to fly and it shows"
+            ],
+            "ratt": 0,
+            "tips": "Flygets fart — bilens pris."
+          },
+          {
+            "q": "Vad signalerar en värdekurva UTAN fokus?",
+            "alternativ": [
+              "En tydlig differentiering",
+              "Bolaget investerar på alla faktorer — hög kostnad, ingen profil",
+              "En blå ocean nära",
+              "Låg kostnad och högt värde"
+            ],
+            "ratt": 1,
+            "tips": "Allt på måfå = dyrt och glömt."
+          }
+        ]
+      },
+      {
+        "num": 8,
+        "minutes": 9,
+        "title": "Fem steg till Blue Ocean",
+        "intro": "Från idé till verklighet — processen som gör om tanken till rörelse.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Steg 1–3: se och föreställa\n\nBlå ocean-skapande är ingen lyckoträff — det är en strukturerad process i fem steg (främst från uppföljaren Blue Ocean Shift, 2017):\n\nSTEG 1 — KOM IGÅNG RÄTT. Välj rätt startpunkt och rätt team: brett i funktion (inte bara chefsrummet), engagerat från första minuten. Fair process börjar här.\n\nSTEG 2 — SE VAR NI STÅR. Förstå nuläget ('current state of play'): rita branschens strategi-canvas med öppna ögon. Var ligger smärtpunkterna hos kunder — och var lägger branschen pengar utan att kunderna bryr sig?\n\nSTEG 3 — FÖRESTÄLL ER VAR NI KUNDE VARA. Gå på field trip: prata med kunder, framför allt med ICKE-kunder, observera hur produkten faktiskt används. Rita därefter en 'to-be'-canvas — från stift till klar bild."
+          },
+          {
+            "type": "text",
+            "content": "Steg 4–5: hitta vägen och gör rörelsen\n\nSTEG 4 — HITTA VÄGEN DIT. Nå utöver befintlig efterfrågan: utforska de tre nivåerna av icke-kunder och leta efter deras gemensamma skäl. Tillämpa ERRC-rutnätet för att sänka kostnader och höja värdet samtidigt.\n\nSTEG 5 — GÖR ER RÖRELSE. Välj och genomför i rätt sekvens: exceptionell köparnytta → strategiskt pris → mål-kostnad → adoption. Övervinna de organisatoriska hindren med tipping point-ledarskap och bygg in execution från start genom fair process.\n\nNotera att varje steg har sina egna verktyg: canvasen (steg 2–3), icke-kunder och ERRC (steg 4), sekvensen och hinderbrytning (steg 5). Processen gör metoden reproducerbar — det är därför bolag som Curves, Yellow Tail och Nintendo kunde upprepa andras framgångar i sina egna branscher."
+          },
+          {
+            "type": "insikt",
+            "content": "Blue ocean-skapande är hantverk, inte hasard: se nuläget, föreställ dig framtiden, hitta vägen — och gör sedan rörelsen i rätt ordning."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta ett förändringsprojekt du känner till. Vilket av de fem stegen skedde aldrig? (Ofta steg 3 — ingen gick på field trip och pratade med icke-kunderna.)"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är syftet med field trip i steg 3?",
+            "alternativ": [
+              "Att belöna teamet för jobbet",
+              "Att se verkligheten genom kunders och icke-kunders ögon och samla underlag till to-be-canvasen",
+              "Att besöka konkurrenterna",
+              "Att hitta nya leverantörer utomlands"
+            ],
+            "ratt": 1,
+            "tips": "Upplevelser som kontorssiffror aldrig fångar."
+          },
+          {
+            "q": "Vilken ordning är rätt bland de fem stegen?",
+            "alternativ": [
+              "Pris → kostnad → nytta → adoption",
+              "Kom igång rätt → se nuläget → föreställ framtiden → hitta vägen → gör rörelsen",
+              "Rita canvas → sänk pris → kopiera → expandera",
+              "Se nuläget → gör rörelsen → hitta vägen → föreställ → kom igång"
+            ],
+            "ratt": 1,
+            "tips": "Först se, sedan föreställa, sedan vägen, sedan rörelsen."
+          },
+          {
+            "q": "Vilka verktyg hör hemma i steg 4?",
+            "alternativ": [
+              "Köparnytto-kartan och priskorridoren",
+              "De tre nivåerna av icke-kunder och ERRC-rutnätet",
+              "Akvarium-management och kingpins",
+              "Slogan-testet och divergens"
+            ],
+            "ratt": 1,
+            "tips": "Steg 4 = nå utöver befintlig efterfrågan."
+          }
+        ]
+      },
+      {
+        "num": 9,
+        "minutes": 9,
+        "title": "Kundens kund",
+        "intro": "Utöka efterfrågepoolen — se hela kedjan, inte bara den som betalar.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Kedjan av köpare\n\nBranscher vänder sig inrutat till en och samma köpargrupp. Men i varje affär finns en kedja av tre roller:\n\n• KÖPAREN (purchaser) — den som betalar beslutet.\n• ANVÄNDAREN (user) — den som använder produkten.\n• PÅVERKAREN (influencer) — den som påverkar beslutet.\n\nLäkemedelsbranschen: läkaren förskriver (påverkare), patienten använder, apotek/betalare betalar. IT-branschen på åttiotalet: IT-avdelningen köpte, men användarna — traders och analytiker — led av verktygens brister. Michael Bloomberg vände sig direkt till traders: hans terminal löste deras smärta (realstidsdata + analys i ett) och användarna drog sedan köpet med sig."
+          },
+          {
+            "type": "text",
+            "content": "Byt länk — öppna ocean\n\nGenom att byta vilken länk i kedjan bolaget riktar sig mot kan en blå ocean öppnas. Novo Nordisk är bokens exempel: insulin såldes via läkare (påverkare) och bolaget konkurrerade som alla andra. Novo Nordisk bytte fokus till PATIENTEN — användaren — och utvecklade insulinpennor som var enkla att bära, dosera och använda. Värdet för användaren höjdes, kostnaden sjönk (enklare hantering, färre fel), och efterfrågan växte långt bortom de redan insulinbehandlade.\n\nFrågorna att ställa: Vem bestämmer egentligen? Vem bär smärtan i vardagen? Vem betalar — och vems budget skulle kunna flyttas? Ofta är det kundens kund som håller nyckeln till den efterfrågan branschen aldrig når."
+          },
+          {
+            "type": "insikt",
+            "content": "Fråga inte bara 'vem är vår kund'. Fråga 'vem är kundens kund — vem bär nyttan och vem bär smärtan?'"
+          },
+          {
+            "type": "utmaning",
+            "content": "Kartlägg köparkedjan för en produkt du känner: vem betalar, vem använder, vem påverkar? Vilken länk ignorerar hela branschen — och vad skulle hända om någon riktade erbjudandet dit?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilka tre roller utgör kedjan av köpare?",
+            "alternativ": [
+              "Ägare, styrelse, VD",
+              "Köpare, användare, påverkare",
+              "Tillverkare, distributör, återförsäljare",
+              "Nyanställda, chefer, kunder"
+            ],
+            "ratt": 1,
+            "tips": "Betalar, använder, påverkar."
+          },
+          {
+            "q": "Novo Nordisks insulinpenna riktade in sig främst på...",
+            "alternativ": [
+              "läkarna som påverkare",
+              "apoteken som köpare",
+              "patienten som användare",
+              "försäkringsbolagen"
+            ],
+            "ratt": 2,
+            "tips": "Den som lever med sjukdomen varje dag."
+          },
+          {
+            "q": "Vad kan hända när ett bolag byter vilken länk i kedjan det riktar sig mot?",
+            "alternativ": [
+              "Inget — kedjan saknar strategisk betydelse",
+              "En blå ocean kan öppnas — man når efterfrågan branschen ignorerat",
+              "Kostnaderna stiger alltid",
+              "Konkurrensen skärps inom samma segment"
+            ],
+            "ratt": 1,
+            "tips": "Ny länk = ny efterfrågepool."
+          }
+        ]
+      },
+      {
+        "num": 10,
+        "minutes": 9,
+        "title": "Icke-kunder i tre nivåer",
+        "intro": "Nära, avståndstagande, okända — den största efterfrågan finns utanför.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre nivåer av icke-kunder\n\nNIVÅ 1 — SNART-ICKE-KUNDER ('soon-to-be'). De köper motvilligt och minimalt, utnyttjar erbjudandet 'på gränsen' och är redo att hoppa av när ett bättre alternativ dyker upp. De letar efter ett skäl att stanna.\n\nNIVÅ 2 — AVSTÅNDSTAGANDE ICKE-KUNDER ('refusing'). De har övervägt erbjudandet och medvetet tackat nej. De ser sitt behov som löst på annat sätt — eller har blivit avskräckta av branschens komplexitet eller kostnad.\n\nNIVÅ 3 — OKÄNDA ICKE-KUNDER ('unexplored'). De har aldrig betraktats som potentiella kunder av branschen. De finns i andra marknader och använder helt andra lösningar."
+          },
+          {
+            "type": "text",
+            "content": "Gemensamheter — inte skillnader\n\nNyckeln är att sluta leta efter SKILLNADER mellan kundsegment (den röda havens mikro-segmentering) och istället leta efter GEMENSAMHETER mellan icke-kunderna. Vilka gemensamma skäl har de för att inte köpa? Vilken gemensam smärta kan ett nytt erbjudande eliminera?\n\n[yellow tail] vände sig till nivå 2 och 3: öldrickare och cocktail-drickare som medvetet tackat nej till vinets komplexitet — och folk som aldrig ens övervägt vin. Nintendo Wii vände sig till familjer, seniorer och sociala spelare — nivå 2 och 3 gentemot gamingbranschens hardcore-användare. I båda fallen var efterfrågepoolen en ocean — medan den befintliga kundpoolen var en hink."
+          },
+          {
+            "type": "insikt",
+            "content": "Sluta segmentera kunderna. Letar du efter vad icke-kunderna har gemensamt hittar du en ocean — mikro-segmentering av kunder ger bara hinkar."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ring tre personer som INTE använder en tjänst du känner väl. Varför inte? Letar du efter deras skillnader — eller deras gemensamma skäl? Skriv ner den gemensamma smärtan i en mening."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilka är de tre nivåerna av icke-kunder?",
+            "alternativ": [
+              "Loyala, lessningsgradigt lojala, iloyala",
+              "Snart-icke-kunder, avståndstagande icke-kunder, okända icke-kunder",
+              "Stora, medelstora, små kunder",
+              "B2B-, B2C- och B2G-kunder"
+            ],
+            "ratt": 1,
+            "tips": "På gränsen, tackat nej, aldrig ens övervägda."
+          },
+          {
+            "q": "[yellow tail] vände sig primärt till...",
+            "alternativ": [
+              "vinconnoisörer som ville ha mer komplexa viner",
+              "befintliga vindrickare som ville byta märke",
+              "icke-vindrickare — öl- och cocktailsdrickare",
+              "restauranger och barer"
+            ],
+            "ratt": 2,
+            "tips": "Efterfrågan skapades vid öldisken — inte i vinkällaren."
+          },
+          {
+            "q": "Vad ska du leta efter hos icke-kunder?",
+            "alternativ": [
+              "Deras olikheter, för att segmentera dem",
+              "Deras gemensamma skäl att inte köpa",
+              "Deras betalningsförmåga enbart",
+              "Deras medlemskap i konkurrenternas program"
+            ],
+            "ratt": 1,
+            "tips": "Commonalities — gemensamheterna bär oceanen."
+          }
+        ]
+      },
+      {
+        "num": 11,
+        "minutes": 9,
+        "title": "Sekvens: Köpare, Pris, Kostnad, Implementation",
+        "intro": "Rätt ordning — annars dör idén innan den når marknaden.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Steg 1: Exceptionell köparnytta\n\nDen strategiska sekvensen börjar med frågan: erbjuder produkten ett banbrytande värde — tar den bort en väsentlig smärta, låser upp ny nytta eller förändrar upplevelsen? Köparnytto-kartan hjälper dig hitta svaret: sex steg i köparens upplevelsecykel (köp, leverans, användning, tillägg, underhåll, avyttring) kombinerat med sex nyttospakar (kundproduktivitet, enkelhet, bekvämlighet, risk, nöje och image, miljö). Där kartorna korsas finns 36 rutor — leta efter blocker, de smärtpunkter där dagens erbjudanden faller platt.\n\nWii tog bort gamingens största blocker — kontrollens komplexitet och den sociala tröskeln — med enkelhet, nöje och rörelse."
+          },
+          {
+            "type": "text",
+            "content": "Steg 2–4: Pris, kostnad, adoption\n\nSTEG 2 — STRATEGISKT PRIS. Sätt priset från dag ett för att FÅNGA MASSAN — inte högt för att sedan tvingas sänka (det skapar misstro och bjuder in imitatörer). Använd priskorridoren: vad kostar alternativen och imitationerna? Wii lanserades till 249 dollar mot PlayStation 3:s 599.\n\nSTEG 3 — MÅL-KOSTNAD. Frågan är om bolaget kan nå ett lönsamt pris som massan accepterar — genom strömlinjeformad verksamhet, partnerskap, ny affärsmodell och kostnadsjakt via eliminera/reducera. Går det inte: skrota idén eller omformulera den. Kostnaderna formas efter priset — aldrig omvänt.\n\nSTEG 4 — ADOPTION. Identifiera och övervinn hinder hos anställda, partners och allmänhet från början. Rätt sekvens alltså: nytta → pris → kostnad → adoption."
+          },
+          {
+            "type": "insikt",
+            "content": "Priset sätts först för att vinna massan — kostnaderna formas sedan efter priset. Omvänd ordning är den vanligaste mördaren av blå oceaner."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta en ny produktidé (din eller andras). Vilket pris skulle MASSAN acceptera? Kan kostnaden nås lönsamt? På vilket steg i köparcykeln tar idén bort en verklig smärta?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilken är den strategiska sekvensen?",
+            "alternativ": [
+              "Pris → kostnad → nytta → adoption",
+              "Köparnytta → strategiskt pris → mål-kostnad → adoption",
+              "Kostnad → pris → nytta → marknadsföring",
+              "Adoption → nytta → pris → kostnad"
+            ],
+            "ratt": 1,
+            "tips": "Först varför någon ska köpa. Sedan till vilket pris massan köper."
+          },
+          {
+            "q": "Vad är syftet med mål-kostnadssteget (target costing)?",
+            "alternativ": [
+              "Att maximera kvaliteten oavsett pris",
+              "Att säkra att bolaget kan leverera lönsamt till det pris massan accepterar — annars skrotas idén",
+              "Att sänka lönerna i organisationen",
+              "Att beräkna break-even på befintlig volym"
+            ],
+            "ratt": 1,
+            "tips": "Kostnaden formes efter priset — inte tvärtom."
+          },
+          {
+            "q": "Vilket är INTE en av de sex nyttospakarna i köparnytto-kartan?",
+            "alternativ": [
+              "Enkelhet",
+              "Varumärkeskapital",
+              "Risk (minskad)",
+              "Nöje och image"
+            ],
+            "ratt": 1,
+            "tips": "Spakarna: kundproduktivitet, enkelhet, bekvämlighet, risk, nöje/image, miljö."
+          }
+        ]
+      },
+      {
+        "num": 12,
+        "minutes": 9,
+        "title": "Övervinna organisatoriska hinder",
+        "intro": "Få med hela teamet — vändpunktledarskap med begränsade resurser.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Fyra hinder och vändpunkten\n\nFörändring möter fyra organisatoriska hinder: KOGNITIVT (folk förstår inte behovet av förändring), RESURSER (man tror att det krävs mer pengar än man har), MOTIVATION (folk vet vad som ska göras men vill inte) och POLITIK (motstånd från intressenter som riskerar att förlora).\n\nBokens svar är vändpunktledarskap (tipping point leadership) — inspirerat av Bill Brattons förvandling av New York-polisen: koncentrera insatserna på de få punkter där liten kraft ger oproportionerlig effekt, så att förändringen når sin vändpunkt och blir självdrivande — som en epidemi. För att väcka folk kognitivt: låt dem SE problemet med egna ögon (Bratton lät sina chefer åka tunnelbana i nattetimmar i stället för att läsa rapporter om den)."
+          },
+          {
+            "type": "text",
+            "content": "Resurser, motivation och politik\n\nRESURSER: identifiera HOT SPOTS (där liten resurs ger stor effekt) och COLD SPOTS (där stora resurser binds utan effekt) — och driv horse trading: byt resurser mellan enheter istället för att begära mer.\n\nMOTIVATION: sätt ljuset på KINGPINS — de nyckelpersoner som andra följer — och använd akvarie-management: gör mål, prestanda och framsteg synliga för alla, kontinuerligt. Bryt upp stora mål i atomiserade micro-actions som varje person kan påverka.\n\nPOLITIK: engagera ÄNGLAR (de med inflytande som vill er väl), identifiera och tysta DJÄVLARNA (de som har mest att förlora) — och anställ en consigliere: en insiktsfull person som känner politiken inifrån och vet var minorna ligger."
+          },
+          {
+            "type": "insikt",
+            "content": "Du behöver inte övertyga alla — bara nå vändpunkten där förändringen blir självdrivande. Koncentration slår volym."
+          },
+          {
+            "type": "utmaning",
+            "content": "I din organisation: var finns hot spots (liten insats — stor effekt) och cold spots (stor insats — ingen effekt)? Flytta en resurs från en cold spot till en hot spot den här veckan."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilka är de fyra organisatoriska hindren?",
+            "alternativ": [
+              "Kognitivt, resurser, motivation, politik",
+              "Budget, personal, tid, teknik",
+              "Rädsla, okunskap, lathet, byråkrati",
+              "Styrelse, fack, media, konkurrenter"
+            ],
+            "ratt": 0,
+            "tips": "Huvudet, plånboken, hjärtat — och korridorerna."
+          },
+          {
+            "q": "Vad är en 'hot spot' i resurshänseende?",
+            "alternativ": [
+              "En marknad med hög tillväxt",
+              "En aktivitet där liten resursinsats ger oproportionerligt stor effekt",
+              "En enhet som bränner mest kapital",
+              "En produkt med högst marginal"
+            ],
+            "ratt": 1,
+            "tips": "Motsatsen är cold spot — stora resurser, ingen effekt."
+          },
+          {
+            "q": "Vad syftar akvarium-management till?",
+            "alternativ": [
+              "Att hålla information hemlig inom ledningen",
+              "Att göra nyckelpersoners mål och prestanda synliga för alla — och skapa motivation",
+              "Att isolera motståndare från beslut",
+              "Att mäta kundnöjdhet i realtid"
+            ],
+            "ratt": 1,
+            "tips": "Alla ser alla. Transparens driver motivation."
+          }
+        ]
+      },
+      {
+        "num": 13,
+        "minutes": 9,
+        "title": "Bygg execution in i strategin",
+        "intro": "Gör det rätt från start — genomförandet är inte ett steg efteråt.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Gapet mellan tänkande och görande\n\nTraditionellt strategiarbete delas upp i två faser: ledningen formulerar strategin — sedan ska 'organisationen exekvera'. Resultatet är välbekant: motstånd, fördröjning, förvanskning. De som ska genomföra strategin har aldrig varit del av att skapa den, och det gapet visar sig som passiv sabotage, halvhjärtat deltagande och 'det där är deras projekt, inte vårt'.\n\nBokens svar: bygg in execution i själva strategiskapandet. Innan man fattar strategiska beslut involverar man dem som ska genomföra dem — inte för hövlighetens skull, utan för att deras kunskap förbättrar beslutet OCH för att deltagandet skapar ägarskap. En strategi som exekveras när den skapas."
+          },
+          {
+            "type": "text",
+            "content": "Agera i närheten av de som berörs\n\nPoängen är inte att organisationen ska hålla med om allt — besluten fattas fortfarande av ledningen. Poängen är processen: när människor känner att deras röster hörts och deras argument vägts — också när deras förslag inte segrar — återstår deras vilja att genomföra. De känner ett intellektuellt och emotionellt erkännande: 'jag är en person vars tankar räknas'.\n\nResultatet blir mätbart: snabbare genomförande, lägre kostnad för förändringen och engagemang utöver det formella kontraktet. Mekanismen som gör detta möjligt är fair process — nästa kapitel — och den ska genomsyra hela resan från ERRC-workshop till lansering."
+          },
+          {
+            "type": "insikt",
+            "content": "Motstånd mot strategi är sällan mot idén — det är mot processen. Fixa processen och det mesta motståndet försvinner."
+          },
+          {
+            "type": "utmaning",
+            "content": "Nästa förändring du driver: vilka måste genomföra den i praktiken? Involvera dem i formuleringen — inte bara i presentationen av det färdiga beslutet."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad menas med att 'bygga in execution i strategin'?",
+            "alternativ": [
+              "Att anställa en konsult för genomförandet",
+              "Att involvera dem som ska genomföra redan när strategin skapas",
+              "Att skriva en detaljerad projektplan",
+              "Att belöna dem som exekverar snabbast"
+            ],
+            "ratt": 1,
+            "tips": "Skaparna blir bärarna."
+          },
+          {
+            "q": "Varifrån kommer motstånd mot strategi enligt boken?",
+            "alternativ": [
+              "Från bristande bonussystem",
+              "Från att processen upplevs orättvis — inte nödvändigtvis från idén",
+              "Från konkurrenternas motattacker",
+              "Från att strategin är för enkel"
+            ],
+            "ratt": 1,
+            "tips": "Kap 14 fördjupar svaret: fair process."
+          },
+          {
+            "q": "Vad kännetecknar en strategi 'exekverad när den skapas'?",
+            "alternativ": [
+              "Den har en detaljerad Gantt-matris",
+              "De som ska genomföra den var med och formade den",
+              "Den hemlighålls tills lanseringen",
+              "Den formuleras enbart av strategiavdelningen"
+            ],
+            "ratt": 1,
+            "tips": "Ägarskap uppstår i skapandet — inte i kommunikationen."
+          }
+        ]
+      },
+      {
+        "num": 14,
+        "minutes": 9,
+        "title": "Fair Process",
+        "intro": "Varför rättvisa processer vinner — engagera, förklara, förtydliga.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Tre e:n\n\nFair process vilar på tre principer — de tre e:n:\n\n1. ENGAGEMENT (engagement) — involvera människor i de beslut som berör dem. Be om deras input, låt dem argumentera mot varandras idéer. Det skapar bättre beslut OCH ett intellektuellt erkännande.\n\n2. FÖRKLARING (explanation) — alla som berörs förstår varför beslutet togs som det togs. Feedback på förslagen — också de som avslogs — är avgörande.\n\n3. FÖRTYDLIGANDE (expectation clarity) — nya spelregler kommuniceras tydligt: mål, ansvar, bedömningskriterier och konsekvenser.\n\nOBS: fair process är INTE konsensus eller demokrati. Ledningen fattar fortfarande beslutet — och kan gå emot majoriteten. Det avgörande är att processen upplevs som rättvis och att människor blev hörda på allvar."
+          },
+          {
+            "type": "text",
+            "content": "Varför det fungerar\n\nForskningen bakom boken — och teorin om procedural justice — visar att människors vilja att samarbeta styrs mer av hur beslut fattas än av vad som beslutas. När processen är rättvis accepterar människor till och med ogynnsamma utfall; när den är orättvis saboterar de även gynnsamma.\n\nEffekten är frivilligt samarbete utöver det formella kontraktet: folk delar kunskap, tar initiativ och genomför med energi — för att de känner respekt för sitt intellekt och sina känslor. För en strategi som kräver att människor gör det de kan men inte måste — som en blå ocean alltid gör — är fair process ingen mjuk faktor. Det är själva exekveringsmekanismen."
+          },
+          {
+            "type": "insikt",
+            "content": "Människor accepterar nästan vilket beslut som helst om processen var rättvis — och nästan inget om den inte var det."
+          },
+          {
+            "type": "utmaning",
+            "content": "Ta ditt senaste beslut som påverkade andra. Hade det alla tre e:n — engagemang, förklaring, förtydligande? Vilket saknades, och vad kostade det i genomförande?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vilka är de tre principerna i fair process?",
+            "alternativ": [
+              "Engagemang, förklaring, förtydligande av förväntningar",
+              "Effektivitet, ekonomi, elegans",
+              "Konsensus, kompromiss, kontroll",
+              "Transparens, hierarki, bonus"
+            ],
+            "ratt": 0,
+            "tips": "De tre e:n: engagement, explanation, expectation clarity."
+          },
+          {
+            "q": "Är fair process detsamma som konsensusbeslut?",
+            "alternativ": [
+              "Ja — majoriteten avgör alltid",
+              "Nej — ledningen kan fatta beslutet; det avgörande är att processen är rättvis och att folk blev hörda",
+              "Ja — alla måste hålla med innan beslut fattas",
+              "Nej — fair process innebär att chefen beställer en utredning"
+            ],
+            "ratt": 1,
+            "tips": "Rättvis process ≠ rösträtt."
+          },
+          {
+            "q": "Vad är den praktiska effekten av fair process?",
+            "alternativ": [
+              "Snabbare beslut i ledningen",
+              "Frivilligt samarbete och engagemang utöver det formella kontraktet",
+              "Lägre lönekostnader",
+              "Färre möten"
+            ],
+            "ratt": 1,
+            "tips": "Folk gör det de KAN men inte MÅSTE."
+          }
+        ]
+      },
+      {
+        "num": 15,
+        "minutes": 9,
+        "title": "Blue Ocean i praktiken — Cirque du Soleil till Nintendo Wii",
+        "intro": "Från cirkusmanegen till vardagsrummet — ramverken i verkligheten.",
+        "blocks": [
+          {
+            "type": "text",
+            "content": "Cirque du Soleil och [yellow tail]\n\nCirque du Soleil startade 1984 i Montreal medan cirkusbranschen befann sig i långsamt förfall: djurrättsdebatter, stigande stjärnartisters löner, publik som vände TV, video och sporten ryggen. Cirque eliminerade djuren och stjärnorna, höjde det konstnärliga, skapade tema och story — och plockade publiken från teatern, som redan var van att betala betydligt mer för en kvälls upplevelse. Cirkusens största kostnadsposter försvann, biljettintäkterna per besökare flerdubblades, och bolaget växte till en global underhållningsindustri.\n\n[yellow tail] (2001) gjorde motsvarande rörelse i vin: eliminera komplexiteten, reducera sortimentet, höja lättdrucket och tillgänglighet, skapa kul och äventyr — och blev det snabbast växande importvinet i USA:s historia med en efterfrågan som kom utifrån branschen."
+          },
+          {
+            "type": "text",
+            "content": "Nintendo Wii — och lärdomarna\n\n2006 var konsolkriget ett bildexempel på rött hav: Sony och Microsoft tävlade om grafik, processorkraft och hardcore-gamers. Nintendo valde motsatt väg: en enklare, billigare maskin (249 dollar) med rörelsekontroll — Wii. Målgruppen var hela hemmet: familjer, seniorer, folk som aldrig spelat. Wii sålde över 100 miljoner enheter och gick om de tekniskt överlägsna konkurrenterna.\n\nLärdomarna att bära med sig:\n• Blå hav skapas av VÄRDEpionjärer — inte teknikpionjärer. Wii vann med sämre teknik men högre köparnytta.\n• Blå hav kan skapas i de mest mogna, 'döda' branscherna.\n• Blå hav varar inte för evigt — imitation kommer, oceanen färgas röd. Därför är PROCESSEN att skapa nya oceaner den verkliga kärnkompetensen.\n• För dig som analyserar bolag (AK1:s synvinkel): en divergerande värdekurva syns i siffrorna som AKM1-tillväxt med bibehållen eller förbättrad marginal. Rita bolagets canvas innan du djupdyker i nyckeltalen."
+          },
+          {
+            "type": "insikt",
+            "content": "Cirque, Yellow Tail och Wii hade en sak gemensamt: de tävlade inte om att vara BÄST — de gjorde konkurrensen irrelevant."
+          },
+          {
+            "type": "utmaning",
+            "content": "Hitta ett bolag — på börsen eller i din närhet — vars erbjudande ser annorlunda ut än branschens. Rita dess värdekurva: har den fokus och divergens? Har du hittat en kandidat till en blå ocean — undersök hur länge den håller imitationen borta."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad gjorde Cirque du Soleil med cirkusens djur?",
+            "alternativ": [
+              "Utökade djurparken för att locka familjer",
+              "Eliminerade dem — kostnaden sänktes och det konstnärliga värdet höjdes",
+              "Hyrde ut dem till andra cirkusar",
+              "Behöll dem men tog betalt extra"
+            ],
+            "ratt": 1,
+            "tips": "Djuren var en av de största kostnadsposterna — och lockade ingen vuxen publik."
+          },
+          {
+            "q": "Nintendo Wiis värdekurva byggde på...",
+            "alternativ": [
+              "maximal grafik och processorkraft",
+              "lägst möjligt pris oavsett upplevelse",
+              "rörelsekontroll, enkelhet och socialt spel för hela hemmet",
+              "exklusiva spelutgivningsavtal"
+            ],
+            "ratt": 2,
+            "tips": "Sämre teknik — högre köparnytta."
+          },
+          {
+            "q": "Vilken slutsats drar boken om teknik och blå hav?",
+            "alternativ": [
+              "Teknikledarskap är en förutsättning för blå hav",
+              "Det är värde — inte teknik — som skapar blå hav; teknik utan köparnytta blir röd",
+              "Teknik är irrelevant för strategin",
+              "Blå hav skapas bara i teknikbranscher"
+            ],
+            "ratt": 1,
+            "tips": "Värdepionjärer, inte teknikpionjärer."
+          }
+        ]
+      }
+    ],
+    "lynchSection": "Peter Lynch (Mina bästa investeringar) letade efter bolag som växte snabbare än marknaden förstod — ofta för att de öppnat en egen nisch. Blue Ocean Strategy ger Lynch-fantomen en struktur: titta på bolagets värdekurva, inte bara dess nyckeltal.",
+    "grahamSection": "Graham (The Intelligent Investor, 1949) talade om marginal of safety. Blue Ocean förklarar hur säkerheten uppstår fundamentalt: ett bolag i en blå ocean har färre konkurrenter och prissättningsmakt. Källa: båda böckerna.",
+    "ak1Section": "AK1:s tolkning: en divergerande värdekurva syns i AKM1 som tillväxt med bibehållen marginal. När du analyserar ett bolag — rita dess canvas innan du djupdyker i nyckeltalen."
   }
 }

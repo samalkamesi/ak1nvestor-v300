@@ -56,3 +56,6 @@ dev.log
 
 # keepalive
 keepalive.sh
+
+.vercel
+.env*

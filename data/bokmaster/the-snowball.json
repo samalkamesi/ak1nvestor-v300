@@ -1,0 +1,1234 @@
+{
+  "slug": "the-snowball",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 16,
+  "totalMinutes": 175,
+  "title": "The Snowball — Schroeder om Buffett: KOMPLETT",
+  "summary": "Alice Schroeders auktoriserade Buffett-biografi (2008) är historien bakom principerna: hur en rädd pojke från Omaha byggde världshistoriens största snöboll av ränta på ränta, försäkringsfloat och rykte — och vad det kostade familjen, omgivningen och honom själv. Kursen täcker hela boken med öppen ärlighet: mentorskapen under Graham och Munger, partnerskapsåren, Berkshire-misstaget, See's, Salomon, Gen Re och 2008-krisen — men också den obekväma frågan om hur mycket av resultatet som var epok, överlevnadsstatistik och strukturella fördelar.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för Alice Schroeders projekt — fem års arbete, oinskränkt tillgång till arkiv och samtal, och villkoret att hon inte gav Buffett vetorätt över texten — och förklarar bokens signaturmetod: när olika versioner av en händelse krockar används den som är mindre smickrande för huvudpersonen. Eleven behärskar kronologin från Omaha 1930 via Columbia och Graham (säkerhetsmarginalen utan siffror, Mr Market, fimpan), partnerskapsåren 1956–1969 med incitamentstrukturen som lade risken på förvaltaren, Berkshire-felköpet och dess lära om kapitalförbränning (V19), floatens mekanik (V11 likviditet, V12 intäktsstabilitet, V20-återköpsregeln), Munger- och Fisher-inflytandena, See's 1972 som bevis på varumärkets prissättningskraft (V14, V07, V08, V09) samt Salomon 1991, Gen Re och 2008-årets strukturerade krisavtal (V17). Eleven kan dessutom föra ett moget samtal om bokens kontroverser: familjeoffret och Susies roll, rädslan som drivkraft, Citigroup-protesternas 2000-tal och kritiken att Buffett som munk predikande återhållsamhet själv åtnjöt too big to fail-ryggen, Moody's-ägandet och derivatpositioner som stod i strid med retoriken. Slutligen kan eleven skilja det replikerbara (temperament, cirkel, säkerhetsmarginal, rykte, lång tidshorisont) från det strukturella (float-hävstång, epok, survivorship) och koppla boken till Essays-kursens principsystem och Outsiders-kursens kapitalallokerare.",
+  "why": "The Snowball är den enda biografi Buffett medverkat till utan att redigera, och därför den enda källan som visar vad principerna kostar att leva efter. För AK1A-ekosystemet fyller den luckan mellan två andra BOKMASTER-kurser: Essays-kursen ger systemet, Outsiders-kursen ger kapitalallokeringen — Snöbollen ger historien, personen och prislistan. Utan den blir Buffett en karikatyr av ett geni; med den blir han ett bevis på att ränta på ränta är lika mycket temperament och relationsarbete som matematik. Kursen behandlar också det de flesta hyllningar undviker: hur stor del av avkastningen som kommer från en unik epok, en regulatorisk ryggrad och en försäkringsfloat ingen privat sparare kan bygga — den ärliga gränsen för vad vi kan kopiera.",
+  "chapters_list": [
+    "1. Snöbollen — Schroeders projekt och bokens kontrakt",
+    "2. Omaha 1930 — Howard, Leila och rädslan som bränsle",
+    "3. Rutter, flipper och det första kapitalet",
+    "4. Graham — Columbia, GEICO-besöket och gratisarbetet som refuserades",
+    "5. Partnerskapen 1956–1969 — lovet om överprestanda",
+    "6. Berkshire — bucklan och det dyraste misstaget",
+    "7. Floaten — National Indemnity och kemin i snön",
+    "8. Munger och Fisher — evolutionen från fimpor till franchise",
+    "9. See's Candies 1972 — prissättningskraften",
+    "10. Susie — människan bakom avkastningen",
+    "11. Franchiseprovet — Washington Post, Buffalo News, Coca-Cola",
+    "12. Salomon 1991 — ryktet som enda verkliga kapital",
+    "13. Gen Re — ärlighetens redovisning av misstagen",
+    "14. 2008 — girig när andra är rädda, i praktiken",
+    "15. Kontroversen — helgonbilden och too big to fail",
+    "16. Replikerbar? — principer att kopiera, resultat att inte vänta"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Snöbollen — Schroeders projekt och bokens kontrakt",
+      "intro": "The Snowball (2008) är resultatet av ett ovanligt kontrakt: Warren Buffett gav den forna försäkringsanalytikern Alice Schroeder full tillgång till sitt liv — arkiv, dagböcker, brev och människor — i utbyte mot att han inte fick röra en enda mening. Detta kapitel introducerar bokens metod, metaforen som ger den titel och den kontroversiella ärlighet kursen kommer att hålla sig till.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Alice Schroeder var ingen författare utan försäkringsanalytiker på PaineWebber, rankad i toppen av sitt fack, när hennes djuplodande rapport om Berkshire Hathaway fångade Buffetts uppmärksamhet. Han imponerades av att hon förstod försäkringskalkylen bakom bolaget — det som de flesta analytiker missade — och när han år senare bestämde sig för att en biografi ändå skulle skrivas, helst av någon som kunde räkna, föll valet på henne. Resultatet blev fem års arbete, tusentals timmar av samtal med familj, vänner, kritiker och före detta medarbetare, och en tillgång till källmaterial som ingen utomstående fått före eller efter."
+        },
+        {
+          "type": "text",
+          "content": "Kontraktet är bokens viktigaste dokument. Buffett krävde inte kontroll — han krävde motsatsen. Schroeder har berättat att han instruerade henne att, när olika minnesversioner av en händelse ställs mot varandra, använda den version som är minst smickrande för honom själv. Det är en anmärkningsvärd instruktion för världens mest beundrade investerare: han ville ha en bok, inte ett helgonmåleri. Resultatet blev att The Snowball visar både ränta-på-räntans majestät och dess prislista — och att boken, som publicerades hösten 2008, landade mitt i den finansiella kris som kapitel 14 och 15 återkommer till."
+        },
+        {
+          "type": "text",
+          "content": "Titeln kommer från prologen. Buffett formulerade sitt livs sammanfattande metafor för Schroeder: »Livet är som en snöboll. Det viktiga är att hitta våt snö och en riktigt lång backe.« Våt snö är kapital och förmåga som fastnar och kan rullas vidare — återinvesterade vinster, försäkringsfloat, rykte, relationer. Backen är tiden: sjuttio år av compounding gör att även en blygsam årspott växer sig monströs. Metaforen förklarar också vad boken inte är: den handlar inte om snabba affärer utan om mekaniken i att snön fastnar — och om vad som kladdar ner snön på vägen."
+        },
+        {
+          "type": "text",
+          "content": "Kursens hållning följer bokens. Buffett portätteras här inte som helgon utan som en extremt begåvad människa vars styrkor och kostnader hänger ihop: rädslan som drev honom, familjen som betalade, strukturella fördelar han åtnjöt och sällan redovisade som fördelar. Samtidigt som kursen läser biografin binder den varje era till de principer som Essays-kursen systematiserar och som Outsiders-kursen jämför med andra kapitalallokerare. Snöbollen är historien bakom principerna — och en räkenskap över vad det kostar att leva efter dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens eror och kursens täckning\",\"rader\":[[\"Era\",\"Händelse\",\"Princip i kursen\"],[\"1930–1948\",\"Omaha, depressionen, rutter och flipper\",\"Ränta på ränta från första spadtaget\"],[\"1949–1956\",\"Columbia, Graham, GEICO\",\"Säkerhetsmarginalen — utan siffror\"],[\"1956–1969\",\"Partnerskapen\",\"Incitament, fimpor, överprestandalöftet\"],[\"1965–1972\",\"Berkshire, floaten, See's\",\"Från fimp till franchise\"],[\"1973–1998\",\"Washington Post, Coke, Salomon, Gen Re\",\"Rädsla och girighet över en hel cykel\"],[\"2008\",\"Goldman, GE, debattartikeln\",\"Girig när andra är rädda — med villkor\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Buffetts liv bevisar metaforen bokstavligen: snön var våt (float, kvarhållna vinster, rykte) och backen lång (över sjuttio år) — men boken visar också att varje extra varv på snöbollen hade ett pris som inte står i årsredovisningen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Reflektera kring din egen snöboll: vad är din våta snö — kompetens, produkt eller kapital som fastnar och kan återinvesteras? Och hur lång är din backe, i år, räknat från idag? Skriv två rader, en för snön och en för backen, och var ärlig med om snön faktiskt är våt."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Alice Schroeders bakgrund innan hon skrev The Snowball?",
+          "alternativ": [
+            "Vetenskapsjournalist på Wall Street Journal",
+            "Försäkringsanalytiker som rankats i toppen av sitt fack",
+            "Professor i ekonomisk historia vid Columbia",
+            "Tidigare kommunikationschef på Berkshire Hathaway"
+          ],
+          "ratt": 1,
+          "tips": "Buffett ville ha någon som kunde läsa en försäkringsbalansräkning — inte en som bara kunde berätta."
+        },
+        {
+          "q": "Vilken instruktion gav Buffett Schroeder när minnesversioner av en händelse stred mot varandra?",
+          "alternativ": [
+            "Använd alltid hans egen version eftersom han har bäst minne",
+            "Stryk hela händelsen om den var känslig",
+            "Använd den version som är minst smickrande för honom",
+            "Låt familjen avgöra vilken version som publiceras"
+          ],
+          "ratt": 2,
+          "tips": "Instruktionen säger något om bokens hela karaktär — den byggdes för att inte bli ett helgonmåleri."
+        },
+        {
+          "q": "Vad står »våt snö« för i bokens titelmettafor?",
+          "alternativ": [
+            "Kapital och förmåga som fastnar och kan återinvesteras fördelaktigt",
+            "Likvida marknader med hög omsättningshastighet",
+            "Vintertid då börsen historiskt stigit",
+            "Höga räntor som gör obligationer attraktiva"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad som får en snöboll att växa vid varje varv — och vad som bara passerar utan att fastna."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Omaha 1930 — Howard, Leila och rädslan som bränsle",
+      "intro": "Warren Buffett föddes i Omaha den 30 augusti 1930, mitt i depressionen, som son till en investmentmäklare som blev politiker och en moder med en vass tunga. Schroeder ägnar bokens första avdelning åt detta hem, för här formas den rädsla som blev motorn i hans liv: rädslan att dö, att inte duga och att tiden ska rinna bort. Kapitlet handlar om hur man gör en snöboll av ett ångestladdat barns behov av kontroll.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fadern Howard Buffett var investmentmäklare i familjefirman Buffett-Falk i Omaha och invaldes 1942 i representanthuset som republikan. Hos Schroeder framstår Howard som mannens moraliska kompass: principfast, sparsam, beredd att förlora val på övertygelser. Modern Leila, född Stahl, var begåvad och krävande — med ett temperament som kunde ge hårda utfall mot barnen. Schroeder skildrar hur den unge Warren lärde sig läsa hennes humör som en marknad: han blev tidigt en mästare på att undvika risk i det egna hemmet."
+        },
+        {
+          "type": "text",
+          "content": "Rädslan är bokens kanske mest överraskande genomgångstema. Buffett har berättat för Schroeder att rädslan för att dö funnits där så länge han kan minnas — han var som barn djupt rädd för döden och kunde gripas av tanken på att förlora dem han älskade. Vid tio års ålder mötte han boken A Thousand Ways to Make $1000 och räntetabellerna där: synen av hur en dollar växer exponentiellt med tiden fick honom inte bara att vilja tjäna pengar, utan att inse att varje förlorat år är en fördubbling som aldrig kan köpas tillbaka. Dödsångest och compounding blev två sidor av samma mynt: en livslång oro över tiden."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna blev hans fristad. Warren memorerade basebollstatistik och stadsbefolkningar; han räknade i huvudet när andra barn lekte. När familjen 1942 flyttade till Washington för Howards kongressarbete mådde han så dåligt att han rymde hem till Omaha ett tag. Ur det socialt otympliga barnet växer en identitet som hel och hållen bygger på det inre rapportkortet — uttrycket är bokens eget: att döma sig själv efter egna mått i stället för andras. Buffett formulerade det för Schroeder som ett val: vill du vara världens bästa älskare som alla tror är sämst, eller världens sämsta som alla tror är bäst — och vilken av de två du hellre skulle vara."
+        },
+        {
+          "type": "text",
+          "content": "Kursens varning är skyldig boken rättvisa: detta är inte psykologiserande dekor utan Schroeders tes. Rädslan förklarar både tvånget att compounda, svårigheten att släppa taget om pengar och projekt, och den känslomässiga beroendeställning som Susie senare kommer att fylla (kapitel 10). Depressionens knapphet i en mäklarfamilj bidrog också till livslång motvilja mot skuld och respekt för kontant buffert. För investeraren finns här en grundkurs: temperamentet är inte biografins utsmyckning — det är strategins grundval."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Hemmet som formade snöbollen\",\"rader\":[[\"Aktör\",\"Roll\",\"Spår i principerna\"],[\"Howard\",\"Mäklare och kongressman — principfast\",\"Inre rapportkortet, rykte som kapital\"],[\"Leila\",\"Begåvad, krävande, vass tunga\",\"Rädslan att inte duga, behovet av kontroll\"],[\"Omaha\",\"Gemenskap och återkommande nätverk\",\"Cirkeln: håll dig till vad och vem du känner\"],[\"Depressionen\",\"Knapphet i en mäklarfamilj\",\"Motvilja mot skuld, respekt för buffert\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Det inre rapportkortet — att döma sig själv efter egna mått — är motgiftet mot både Leilas blick och börsens, och det är den egenskap som allt annat i boken vilar på."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner tre kriterier på ditt eget inre rapportkort: hur vill du döma dina investeringsbeslut och ditt leverne när ingen utom du ser resultatet? Jämför sedan med hur du faktiskt reagerar när portföljen dunkas av marknadens humör."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med »det inre rapportkortet« i boken?",
+          "alternativ": [
+            "Buffetts privatbudget som han bokförde för hand",
+            "Grahams betyg på Buffett i Columbia-kursen",
+            "Att döma sig själv efter egna mått i stället för andras",
+            "Berkshires interna riskrapport till styrelsen"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vem som skriver under betyget — om det inte är du själv är det något annat än ett inre rapportkort."
+        },
+        {
+          "q": "Hur kopplar Schroeder samman Buffetts dödsångest med ränta på ränta?",
+          "alternativ": [
+            "Räntetabellerna visade att varje förlorat år är en fördubbling som aldrig kommer tillbaka",
+            "Han begravde sina besparingar i tron att de skulle växa i jorden",
+            "Hans far förlorade pengar på aktier och Warren svor att hinna i kapp",
+            "Rädslan gjorde honom avers mot aktier tills Graham övertalade honom"
+          ],
+          "ratt": 0,
+          "tips": "Vad är det, ur en compounding-synvinkel, som gör ett förlorat år oåterkalleligt?"
+        },
+        {
+          "q": "Vilken roll hade fadern Howard i bokens framställning?",
+          "alternativ": [
+            "En skeptisk månglare som ogillade sonens aktieintresse",
+            "Investmentmäklare och kongressman som moralisk kompass",
+            "Bankir som finansierade Warrens första partnerskap",
+            "Lantbrukare som lärde honom värdet av jordbruksmark"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vilken typ av auktoritet som passar en man som valde bort omröstningsvinst för övertygelsens skull."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Rutter, flipper och det första kapitalet",
+      "intro": "Innan Buffett läst en enda finansbok hade han redan drivit fler verksamheter än de flesta gör under ett liv: fem tidningsrutter, golfbollsförsäljning, kapplöpningsblad och ett flipperbolag. Schroeder skildrar ungdomsåren som en enda läxa i volym, system och kapital som arbetar utan ägaren. Kapitlet slutar med en tonåring med cirka femtusen dollar och en plan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "I Washington, medan fadern satt i kongressen, byggde Warren ut sina tidningsrutter till fem stycken — Washington Post och Times-Herald vid olika tidpunkter på morgonen — och tjänade omkring två dollar om dagen, pengar som han sparade till sista cent. Han optimerade slingorna, sorterade tidningarna i rätt leveransordning och dimensionerade sin verksamhet med samma vana som han senare skulle analysera bolag med. Vid fjorton lämnade han in sin första deklaration och drog av klockan och cykeln som arbetsredskap — trettiofem dollar i avdrag, allt enligt regelverket."
+        },
+        {
+          "type": "text",
+          "content": "Tillsammans med vännen Don Danly grundade han Wilson Coin Operated Machine Company: de köpte en begagnad flippermaskin för tjugofem dollar, placerade den i en frisersalong och delade intäkterna med ägaren. När maskinen gick bra köpte de fler, och snart stod en liten park av automater i Omahas frisersalonger och betalade kontant till två gymnasiegrabbar som aldrig behövde vara på plats. Det är kursens första möte med kapital som arbetar utan ägaren — lektionen som senare blir floatens och hela Berkshire-konstruktionens kärna. Vid sidan av flipperverksamheten sålde han begagnade golfbollar och, tillsammans med kamrater, kapplöpningsblad på Ak-Sar-Ben-banan."
+        },
+        {
+          "type": "text",
+          "content": "Vid fjorton års ålder köpte han fyrtio tunnland nebraskansk jordbruksmark för 1 200 dollar och lät en arrendator bruka den — en tillgång som betalar hyra i all oändlighet. När han gick ut high school hade han sparat ungefär femtusen dollar, en summa som då motsvarade flera års löner för en vuxen. Han hade dessutom offentligt deklarerat målet för klasskamraterna: han skulle vara miljonär vid trettio. Schroeder noterar målet bredvid det som inte fick plats i planen — fritid, vänskapsrelationer och sömn, komponenter som aldrig kom med i compoundingen."
+        },
+        {
+          "type": "text",
+          "content": "Fadern skickade honom till Wharton, där sonen enligt egen utsago lärde sig nästan ingenting och hellre läste böcker; han bytte till University of Nebraska och tog examen där. Betydligt viktigare för bokens berättelse blev Dale Carnegie-kursen i offentligt talande — hundra dollar som han senare kallade bland det bästa han någonsin köpt, eftersom den lärde honom presentera sina idéer för människor. Kursens slutsats: när Graham kommer in i nästa kapitel möter han inte ett oskrivet blad utan en ung man som redan i praktiken behärskar volym, marginaler och återinvestering — och som bara saknar ett teoretiskt språk."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ungdomens affärer och deras lära\",\"rader\":[[\"Affär\",\"Mekanik\",\"Lära\"],[\"Tidningsrutter\",\"Fem rutter, optimerade slingor, ca 2 USD/dag\",\"Marginaler genom volym och system\"],[\"Golfbollar och kapplöpningsblad\",\"Återförsäljning vid Ak-Sar-Ben\",\"Arbitrage på efterfrågan och information\"],[\"Wilson Coin Operated\",\"25-USD-flipper i frisersalonger\",\"Kapital som arbetar utan ägaren\"],[\"Jordbruksmark, 40 tunnland\",\"1 200 USD vid 14 års ålder\",\"Tillgångar som betalar hyra i tid och evighet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Före den första aktien fanns redan tre grundfärdigheter: volym, system och kapital som arbetar — Graham kom sedan och gav dem ett teoretiskt språk, inte tvärtom."
+        },
+        {
+          "type": "utmaning",
+          "content": "Lista tre av dina egna »rutter« — inkomstkällor eller färdigheter som skulle kunna skalas utan att din tid skalas med. Vilken av dem är närmast en flippermaskin, och vad krävs för att köpa nästa maskin?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur var flipperföretaget Wilson Coin Operated uppbyggt?",
+          "alternativ": [
+            "Buffett tillverkade egna flippermaskiner i garagen",
+            "Begagnade maskiner placerades i frisersalonger med intäktsdelning",
+            "Han köpte en hel spelhall och hyrde ut den i timmar",
+            "Han licensierade en patentlösning till en speltilverkare"
+          ],
+          "ratt": 1,
+          "tips": "Nyckeln är vad Warren behövde göra varje gång en maskin tjänade pengar — och svaret är: ingenting."
+        },
+        {
+          "q": "Ungefär hur mycket hade Buffett sparat när han gick ut high school?",
+          "alternativ": [
+            "Cirka femhundra dollar",
+            "Cirka femtusen dollar",
+            "Cirka femtiotusen dollar",
+            "Han hade skulder eftersom han återinvesterade allt"
+          ],
+          "ratt": 1,
+          "tips": "Summan motsvarade då flera års löner för en vuxen — och den var sparad, inte spenderad."
+        },
+        {
+          "q": "Vad var poängen med köpet av jordbruksmark vid fjorton års ålder?",
+          "alternativ": [
+            "En spekulation i stigande råvarupriser",
+            "En familjeinvestering som fadern förvaltade",
+            "En tillgång som betalar hyra utan ägarens aktiva tid",
+            "Ett sätt att kringgå skatt på tidningsrutterna"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vem som gjorde arbetet — och vem som fick betalt."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Graham — Columbia, GEICO-besöket och gratisarbetet som refuserades",
+      "intro": "Benjamin Graham gav Buffett ett språk för det han redan gjorde: säkerhetsmarginalen, Mr Market och fimpan. Kapitlet följer Columbia-åren, det berömda lördagsbesöket hos GEICO i Washington — och det ännu mer berömda avslaget när den unge Buffett erbjöd sig att arbeta för Graham utan lön.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vid Nebraska stötte Buffett på Grahams The Intelligent Investor och upptäckte att författaren inte bara levde utan undervisade på Columbia i New York. Han skrev in sig, och i Grahams klass fick han — enligt en väletablerad tradition — det enda betyget A+ som Graham delade ut under över två decenniers lärargärning. Relationen blev både kärlekshistoria och kursplan: faderns moraliska allvar förenat med en mätbar metod. Graham själv, uppvuxen i fattigdom i New York, letade inte framtidens vinnare utan skydd mot förlust — först överlevnad, sedan avkastning."
+        },
+        {
+          "type": "text",
+          "content": "Tre begrepp från Graham blev Buffetts grundutrustning. Först Mr Market: en lika hjälpvänlig som labil motpart som varje börsdag erbjuder dig priser på dina innehav, priser som ibland är vansinnigt höga och ibland orimligt låga — och som du kan välja att lyssna på eller ignorera. Sedan säkerhetsmarginalen: avståndet mellan pris och beräknat värde, det som skyddar dig när analysen visar sig fel — en princip utan fasta siffror, men med kravet att gapet måste vara påfallande. Och slutligen fimpan: ett bolag som handlas så billigt att det finns ett sista bloss kvar, även om verksamheten är medelmåttig."
+        },
+        {
+          "type": "text",
+          "content": "GEICO-besöket är bokens första stora initiativkapitel. En lördag i januari 1951 tog den tjugoettårige Buffett tåget till Washington, gick rakt till försäkringsbolaget GEICO:s kontor och träffade — eftersom det var lördag och stängt — i stället vicepresidenten Lorimer Davidson, som under flera timmar lärde honom direktförsäkringens ekonomi: försäkring till statligt anställda via post annonserad direkt, i stället för genom dyra agenter. Buffett gick hem och investerade drygt tiotusen dollar, tre fjärdedelar av förmögenheten. Något år senare sålde han för att finansiera annat — en utförsäljning som i efterhand kostade miljoner och som han själv räknat som ett av sina tidigaste stora misstag: rätt företag, fel hållning."
+        },
+        {
+          "type": "text",
+          "content": "Efter examen erbjöd Buffett sig att arbeta för Graham utan lön. Graham tackade nej, och Buffett återvände till Omaha som månglare hos faderns firma och kvällslärare i investering, medan han brevväxlade idéer med sin idol. Först 1954, när Graham erbjöd en plats, flyttade Buffett till New York och två år av intensiv lärlingstid hos Graham-Newman. När Graham 1956 lade ned firman och pensionerade sig väntade ingen arbetsgivare: Buffett var tjugosex, nyligen hemkommen till Omaha — och startade det som blev partnerskapen i kapitel 5."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Grahams begrepp och deras prövning\",\"rader\":[[\"Begrepp\",\"Innebörd\",\"Prövning i Buffetts liv\"],[\"Mr Market\",\"Dagliga erbjudanden att köpa eller sälja\",\"Rutinen att ignorera kurser och läsa rapporter\"],[\"Säkerhetsmarginal\",\"Gap mellan pris och värde som skyddar mot fel\",\"Inget köp utan det, hur vacker historien än är\"],[\"Fimpan\",\"Billigt bolag med ett sista bloss\",\"Tidiga förvärv som Sanborn och Dempster\"],[\"Cirkeln\",\"Köp bara det du förstår\",\"GEICO-besöket: han reste dit och frågade\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Grahams största gåva till Buffett var inte en formel utan ett temperament — en rutin som gör att du inte blir din egen värsta fiende när marknaden bjuder in dig att bli det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Definiera din egen cirkel: tre branscher eller affärsmodeller du faktiskt förstår från insidan. Testa sedan om du kan förklara hur pengarna kommer in och ut i ett bolag i varje cirkel — om du inte kan det inom en minut, tillhör den inte cirkeln ännu."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför reste Buffett till Washington en lördag i januari 1951?",
+          "alternativ": [
+            "För att träffa sin blivande hustrus familj",
+            "För att besöka GEICO:s kontor och lära sig bolaget på plats",
+            "För att intervjua kongressledamöter om bankreglering",
+            "För att sälja tidningsprenumerationer lördagsöppet"
+          ],
+          "ratt": 1,
+          "tips": "Han tog initiativ till ett besök som ingen bokat — och stannade flera timmar längre än han tänkt."
+        },
+        {
+          "q": "Vad hände när Buffett efter examen erbjöd sig att arbeta gratis för Graham?",
+          "alternativ": [
+            "Graham anställde honom omedelbart på grund av betyget",
+            "Graham tackade ja men bara deltid utan lön",
+            "Graham tackade nej; anställningen kom först 1954",
+            "Buffett ångrade erbjudandet och sökte till Harvard istället"
+          ],
+          "ratt": 2,
+          "tips": "Bokens poäng är att ens idol inte alltid ser det man ser — och att vänta på rätt dörr kan vara strategin."
+        },
+        {
+          "q": "Vad kännetecknar säkerhetsmarginalen såsom kursen definierar den?",
+          "alternativ": [
+            "Ett fast procentuellt avstånd till konsensusvärde",
+            "En formel som Graham publicerade med exakta siffror",
+            "En optionsliknande struktur med begränsat nedsida-risk",
+            "Avståndet mellan pris och värde som skyddar när analysen slår fel"
+          ],
+          "ratt": 3,
+          "tips": "Det handlar om skydd mot ditt eget fel — inte om en magisk multipel."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Partnerskapen 1956–1969 — lovet om överprestanda",
+      "intro": "I maj 1956 samlade Buffett sju familjemedlemmar och vänner till 105 100 dollar och grundade sitt första partnerskap. Tretton år senare, när go-go-årens marknad inte längre liknade något han förstod, stängde han det med en avkastning som gjort honom till legend. Kapitlet handlar om incitamentens anatomi, fimpköpens storhetstid — och om den sociala kostnad som följde med kontrollinvesterandet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Strukturen är kursens första undervisning i incitament. Buffett tog ingen fast avgift; hans ersättning var en andel — som regel en fjärdedel — av vinsten över en räntetröskel, och förluster togs inte bara ett år utan bars framåt tills de var ikompenserade innan någon ersättning alls utbetalades. Hans uttalade ambition till partnerna var att överprestera index: att slå Dow-indexten med i genomsnitt tio procentenheter per år — inte varje år, utan över tid. Det är löftets dubbla konstruktion: han fick bara tjäna när partnerna tjänade, och han lovade ändå att ligga steget före. När han stängde 1969 hade partnerskapet avkastat i riktning mot trettio procent per år mot index cirka sju, och det förvaltade kapitalet passerat hundratalet miljoner dollar."
+        },
+        {
+          "type": "text",
+          "content": "Fimpköpens era producerade kursens klassiska fall. Sanborn Map: ett kartföretag vars börsnoterade värdeportfölj översteg hela börsvärdet; Buffett tog plats i styrelsen och tvingade fram en omstrukturering som gav aktieägarna fullt värde. Dempster Mill: ett pumpföretag i Nebraska köpt till bråkdel av värdet; när vändningsarbetet med Harry Bottle krävde minskade lager och nedskärningar protesterade stadens invånare i Beatrice — kapitalet tredubblades, och Buffett lärde sig att kontrollinvesterandet har ett socialt pris. American Express 1964: efter »salad oil-skandalen« föll aktien kraftigt, men Buffett såg restauranggäster som fortfarande höll upp sina gröna kort — varumärket, V14, hade överlevt en balansskandal opåverkat hos kunderna — och han byggde en position på tretton miljoner dollar som blev en av epokens bästa affärer."
+        },
+        {
+          "type": "text",
+          "content": "Andra affärer fyller ut listan: Disney 1966, där Buffett efter ett studiebesök — inklusive ett möte med Walt Disney själv — köpte en position på fyra miljoner dollar i animationsstudion; och varuhuskedjan Hochschild-Kohn, som visade motsatta läran: handel utan varumärke är kapitalörar, och affären avvecklades i princip utan vinst. Tillsammans bildar åren en skola: fimpan fungerar statistiskt, men den kräver omsättning, aktivism eller tur — och den lämpar sig sämre när kapitalet växer. Schroeder följer samtidigt den privata utvecklingen: familjen med Susie och de tre barnen, huset på Farnam Street, och arbetskvällarna med årsredovisningar i knät."
+        },
+        {
+          "type": "text",
+          "content": "Slutet kom som en disciplinhandling. I go-go-årens slutfas, när marknaden handlades på berättelser han inte kunde värdera, skrev Buffett i maj 1969 till sina partners att han inte längre förstod spelet som spelades — och att han vägrade förvalta deras pengar i ett spel han inte begrep. Partnerskapet likviderades, innehaven distribuerades, och många av de utbetalade aktierna — däribland Berkshire — såldes omedelbart av mottagarna som inte ville ha dem. Övergången till nästa era hade börjat: från att plocka fimpor till att bygga något som rullar av egen kraft, det Buffett beskrev som att äga företag man kan sova gott med och vars värde han inte behöver börsens kursnotering för att känna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Partnerskapsårens signaturaffärer\",\"rader\":[[\"Affär\",\"Struktur\",\"Utgång och lära\"],[\"Sanborn Map\",\"Kartbolag med dold värdeportfölj\",\"Aktivism tvingade fram full värdeutlösning\"],[\"Dempster Mill\",\"Kontrollköp och vändning via Harry Bottle\",\"Tredubblat kapital — men socialt pris i Beatrice\"],[\"American Express\",\"Skandalfall 1964 med intakt varumärke (V14)\",\"Stor vinst; kundernas förtroende var opåverkat\"],[\"Hochschild-Kohn\",\"Varuhus utan varumärke\",\"Utfall runt noll; lära: undvik kapitalörar\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Partnerskapsepoken visar att resultatet inte bara var köpbesluten — det var designen: incitament där förvaltaren bara tjänar när partnerna gör det, förlustbärning framåt och en rak kommunikation om vad han inte förstod."
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska incitamenten i ditt eget sparande: har din förvaltare en tröskel och förlustbärning — eller en fast avgift oavsett utfall? Om du förvaltar själv: vad är ditt uttalade mål mätt mot index, och vad gör du när spelet inte längre liknar något du förstår?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur var incitamentstrukturen i Buffetts partnerskap uppbyggd?",
+          "alternativ": [
+            "Fast arvode oavsett resultat plus prestationsbonus",
+            "Andel av vinsten över en tröskel, med förluster burna framåt",
+            "Arvode endast på nya insättningar från partnerna",
+            "Han tog betalt per genomförd affär som mäklare"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig när Buffett själv kunde få betalt — och vad som hände med ersättningen ett förlustår."
+        },
+        {
+          "q": "Vad hände i Dempster-fallet som blev en läxa utöver den ekonomiska?",
+          "alternativ": [
+            "Stadens invånare protesterade när vändningen skar hårt",
+            "Buffett köpte fel bolag och förlorade allt insatt kapital",
+            "Partners stämde honom för otydlig rapportering",
+            "Bolaget förbjöds att handla av myndigheterna"
+          ],
+          "ratt": 0,
+          "tips": "Vändningen lyckades ekonomiskt — men något annat än siffrorna reagerade i den lilla staden."
+        },
+        {
+          "q": "Varför stängde Buffett partnerskapet 1969?",
+          "alternativ": [
+            "Han hade förlorat förtroendet efter en skandal",
+            "Nya skatteregler förbjöd prestationsbaserad ersättning",
+            "Marknaden handlades på ett sätt han inte längre förstod",
+            "Partnerna krävde ut sina pengar i massuttag"
+          ],
+          "ratt": 2,
+          "tips": "Det var ett uttalande om kompetens och cirklar — inte om bristande framgång."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Berkshire — bucklan och det dyraste misstaget",
+      "intro": "Berkshire Hathaway började som en textilfabrik i New Bedford och blev, genom ett sprucket handslag, finanshistoriens största compounding-fordon. Schroeder berättar historien som bokens centrala ironi: historiens bästa aktiehus byggdes på det Buffett själv kallade sitt dummaste aktieköp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Berkshire Hathaway var en bomullsfabrik med anor från 1800-talet, sammanslagen av två textilsläkter, och aktien handlades i början av sextiotalet under sitt arbetskapital. Buffett började köpa i december 1962 kring sju och en halv dollar — en klassisk Graham-fimp. 1964 erbjöd disponenten Seabury Stanton att lösa in Buffetts innehav, och de hade skakat hand om elva-femtio. När erbjudandet formellt kom låg det på elva och tre åttondelar — en försumbar skillnad som bröt överenskommelsen. Buffett, ung och stingslig, svarade med att köpa hela bolaget i stället för att sälja: han köpte, som Schroeder låter historien förstå det, i praktiken en buckla — ett buckligt, skadat företag — av princip."
+        },
+        {
+          "type": "text",
+          "content": "Textilbranschen visade snart sin ekonomi: maskiner som krävde ständig återinvestering, prissättning pressad av utländsk och sydstatlig konkurrens, och inget varumärke som kunde bära marginaler. Varje vunnen dollar riskerade att återinvesteras i mer av samma kapitalör. Kursens V19-vokabulär passar här: detta var kapitalförbränning i slow motion — verksamheten konsumerade kapital utan att skapa avkastning, och risken låg inte i emissioner utan i att ägarna ständigt skulle undsätta med mer kapital. Buffett lärde sig skillnaden mellan statistiskt billigt och verkligt bra, och han lärde sig den dyrt: han har senare uppskattat att det kapital som bands upp i textilen, hade det i stället satts i försäkring, med tiden compundats till hundratals miljarder dollar i utebliven avkastning."
+        },
+        {
+          "type": "text",
+          "content": "Räddningen var att han slutade försöka rädda fabrikerna. Kapital från textilen flyttades 1967 till köpet av försäkringsbolaget National Indemnity (kapitel 7) — kapitalomfördelning från sämre snö till bättre. Ken Chace fick driva textilen ärligt och länge, men 1985 stängdes den sista textilrörelsen; i årets ägarbrev förklarade Buffett att han borde ha agerat tidigare och att envisheten kostat ägarna pengar. Kursens minnesregel från hans egen formulering: när du sitter i ett hål — sluta gräva. Det ironiska är att namnet fick stanna: världens mest framgångsrika investeringshus bär namnet på hans största misstag, och Buffett har i efterhand kallat det den dummaste aktien han någonsin köpte."
+        },
+        {
+          "type": "text",
+          "content": "För portföljbyggets del markerar kapitlet tre överföringar. För det första: kvalitet på ekonomi slår statistisk billighet, för ett lågt pris på ett kapitalörande bolag är en illusorisk marginal. För det andra: när Berkshire 1969 blev mottagare av de tidigare partnernas innehav visade sig beteendets makt — många partners sålde sina Berkshire-aktier direkt, och de som behöll dem fick uppleva en av historiens längsta backar. För det tredje: förmågan att erkänna ett misstag i egna och specifika termer, i stället för att rationalisera det, blev en Berkshire-signatur som kapitel 13 återkommer till."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Berkshire-misstagets kronologi\",\"rader\":[[\"Årtal\",\"Händelse\",\"Princip\"],[\"1962\",\"Köp av aktier runt 7,50 USD\",\"Statistiskt billigt är inte detsamma som bra\"],[\"1964\",\"Handslag om 11,50 spricker på 11,375\",\"Aldrig fatta affärsbeslut ur trotsskap\"],[\"1965\",\"Kontroll; Ken Chace blir VD\",\"Bra människor räddar inte dålig ekonomi\"],[\"1967\",\"Textilkapital köper National Indemnity\",\"Flytta kapital från sämre till bättre snö\"],[\"1985\",\"Textilrörelsen stängs\",\"Sluta gräva när du sitter i ett hål\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Bucklan lärde att priset på ett företag som förbrukar kapital alltid är för högt, vad multiplarna än säger (V19) — och att det dyraste misstaget inte alltid syns i en förlustpost, utan i det uteblivna alternativet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Har du en textilfabrik i portföljen eller i livet — något du håller kvar i av stolthet, princip eller sunk cost? Räkna grovt på vad det kostar per år i utebliven återinvestering, och skriv en mening om vad du skulle göra om du inte redan ägde det."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utlöste att Buffett köpte hela Berkshire i stället för att sälja?",
+          "alternativ": [
+            "Bolaget hade just vunnit ett stort textilkontrakt",
+            "Ett handslag om inlösning till 11,50 bröts med ett bud på 11,375",
+            "Hans partners tvingade honom att ta kontroll",
+            "Graham rådde honom att övertala konkurrenten"
+          ],
+          "ratt": 1,
+          "tips": "Det handlade om en försumbar summa pengar — och allt om princip och stingslighet."
+        },
+        {
+          "q": "Vad gjorde Buffett med textilverksamhetens kassaflöde?",
+          "alternativ": [
+            "Delade ut det som utdelning till aktieägarna",
+            "Köpte 1967 försäkringsbolaget National Indemnity",
+            "Investerade det i nyare vävmaskiner",
+            "Låste det i räntebärande statsobligationer"
+          ],
+          "ratt": 1,
+          "tips": "Snön flyttades från en torr backe till en våt — till vilken bransch?"
+        },
+        {
+          "q": "Hur har Buffett i efterhand beskrivit köpet av Berkshire?",
+          "alternativ": [
+            "Som sitt livs bästa affär trots textilförlusterna",
+            "Som en neutral parksedel i utvecklingen",
+            "Som den dummaste aktien han köpt, med enorm utebliven avkastning",
+            "Som ett nödvändigt offer för att lära sig detaljhandel"
+          ],
+          "ratt": 2,
+          "tips": "Hans egen uppskattning av kostnaden handlar om vad kapitalet hade compundats till i en bättre backe."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Floaten — National Indemnity och kemin i snön",
+      "intro": "Köpet av National Indemnity 1967 är den mest underskattade händelsen i boken: från och med den kan Berkshire investera kapital som anländer före kostnaden. Kapitlet förklarar floatens mekanik, dess koppling till likviditet och intäktsstabilitet — och varför disciplinen i försäkringsprissättningen är hela skillnaden mellan en guldgruva och en tidbomb.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Jack Ringwalt byggde National Indemnity på ovanliga risker med stram prissättning, och 1967 sålde han bolaget till Buffett för 8,6 miljoner dollar — affären klubbad på plats, i den anda av handslag som präglade Omahas affärsliv. Kärnan i köpet var inte företaget utan kemin: en försäkrare tar emot premier innan skadorna betalas. Mellan inbetalning och utbetalning finns en växande reserv av pengar — floaten — som får investeras. I början av sjuttiotalet handlade det om i storleksordningen fyrtio miljoner dollar; genom GEICO (1996), Gen Re (1998) och Ajit Jains enhet växte den till närmare sextio miljarder vid bokens utkomst 2008 — och har sedan dess flerfaldigats."
+        },
+        {
+          "type": "text",
+          "content": "Kursens AKM1-koppling är dubbel. V11 likviditet: floaten är strukturell likviditet som inte kan fly i en kris — Berkshire har kunnat bära jordbävningar, terrordåd och finanskriser utan att tvingas sälja innehav på bottennivåer, den mest dolda konkurrensfördelen av alla. V12 intäktsstabilitet: försäkringspremier är i grunden relativt stabila intäkter över konjunkturcykler, vilket gör kapitalbasen förutsägbar — men bara under en förutsättning, att underwriting håller disciplin. Så länge combined ratio hålls under hundra är floaten billigare än gratis: kunderna betalar Berkshire för att få låna pengarna. Förlorar prissättningen greppet blir samma float en hävstång som förstärker misstag i stället för att bära dem."
+        },
+        {
+          "type": "text",
+          "content": "Disciplinen är kärnkompetensen. Buffett och senare Ajit Jain — anställd 1986 och i boken beskriven som ett av Buffetts bästa »förvärv« någonsin — är beredda att krympa volymen när priserna är dåliga, och att skriva jätterisker när marknaden betalar för dem: katastrofcover och retroaktiva avtal där äldre skadestockar övertas mot en engångspremie. Skalan i sig blev en vallgrav: ingen annan kan skriva de största riskerna i världen med Berkshires kreditvärdighet bakom. Det är en självförstärkande snöboll inuti snöbollen: float ger kapital, kapital ger kreditvärdighet, kreditvärdighet ger rätt att skriva risker som genererar mer float."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlets ärliga anmärkning, som kursen återkommer till i kapitel 16: floaten är en strukturell fördel som ingen privat sparare kan kopiera. Den kräver försäkringslicens, en balansräkning i megaskala och en prissättningskultur som kostar decennier att bygga. Vad som däremot är kopierbart är principen att tänka i kapitalkostnad. Här hör också Buffett-vokabulären om återköp hemma, V20: han har hävdat att återköp endast är rätt när aktien handlas under inre värde — samma envishet som i underwriting, köp aldrig vare sig risker eller egna aktier bara för att marknaden erbjuder dem. Berkshire:s kassaflöde återinvesterades i decennier i stället för att delas ut; utdelning har bolaget inte betalat sedan 1967."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Floatens byggnader\",\"rader\":[[\"Byggnadssten\",\"Årtal\",\"Bidrag\"],[\"National Indemnity\",\"1967\",\"Startskottet: 8,6 MUSD; float kring 40 MUSD i början av 70-talet\"],[\"GEICO, återstående andel\",\"1996\",\"Direktförsäkring till statligt anställda; 2,3 mdr USD\"],[\"Gen Re\",\"1998\",\"Global återförsäkring; floaten tiodubblas\"],[\"Ajit Jains enhet\",\"1986 och framåt\",\"Katastrof- och retroaffärer i megaskala\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Floaten förvandlade ett försäkringsbolag till en compounding-maskin: kapital som anländer före kostnaden ger V11-likviditet att investera med och V12-stabilitet att lita på — men bara så länge prissättningsdisciplinen håller combined ratio under hundra."
+        },
+        {
+          "type": "utmaning",
+          "content": "Var i din egen ekonomi finns float — pengar du sitter på mellan mottagande och betalning: buffertar, upplupna skatter, semestermedel? Hur är den investerad idag, och vad skulle det betyda om den förvaltades med en prissättningsdisciplin i stället som vilopengar?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är försäkringsfloat i sin enklaste form?",
+          "alternativ": [
+            "Vinsten på återförsäkringsavtal med konkurrenter",
+            "Premieinkomster som inkommit innan skador betalats ut",
+            "Buffetts personliga likviditetsreserv utanför Berkshire",
+            "Värdet av försäkringsbolagets outnyttjade skatteavdrag"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på tidsskillnaden: när kommer pengarna in — och när lämnar de bolaget?"
+        },
+        {
+          "q": "Vilket villkor gör floaten till en fördel i stället för en risk?",
+          "alternativ": [
+            "Att combined ratio hålls under hundra över tid",
+            "Att premievolymen växer varje år utan undantag",
+            "Att alla risker placeras hos återförsäkrare",
+            "Att floaten alltid hålls i kontanta medel"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig om kunderna sammanlagt betalar mer än skadorna och kostnaderna — eller tvärtom."
+        },
+        {
+          "q": "Vad var Ajit Jains roll i berättelsen?",
+          "alternativ": [
+            "Han förhandlade köpet av Gen Re till ett lägre pris",
+            "Han byggde enheten för katastrof- och retroaffärer i megaskala",
+            "Han var Grahams partner före Buffett",
+            "Han reformerade textilrörelsen efter 1985"
+          ],
+          "ratt": 1,
+          "tips": "Boken beskriver honom som ett av Buffetts allra bästa förvärv — och han stod inte på någon balansräkning."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Munger och Fisher — evolutionen från fimpor till franchise",
+      "intro": "Två röster förde Buffett från Grahams fimpor till kvalitetsbolagen: Phil Fishers metod och inte minst Charlie Munger, partnern som i femtio år sade »jag har inget att tillägga« till allt utom det viktigaste. Kapitlet handlar om mentorskapets andra akt — hur en investerare byter strategi utan att byta principer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mötet 1959 är ett av bokens bästa scener. Vid en middag hos Edwin och Dorothy Davis i Omaha presenterade den tjugonioårige Buffett sina metoder; efter middagen bestämde sig paret Davis för att investera hundratusen dollar — en betydande andel av deras förmögenhet. När Buffett frågade varför fick han svaret: »Du påminner oss om Charlie Munger.« Munger var då advokat i Los Angeles, bredare lärd, sarkastisk och byggd av samma Nebraska-malm. Vänskapen som inleddes där kom att bli en av näringslivets längsta och mest produktiva partnerskap."
+        },
+        {
+          "type": "text",
+          "content": "Phil Fisher författade 1958 Common Stocks and Uncommon Profits, och hans bidrag var metoden: scuttlebutt — att lära sig ett företag genom att prata med dess kunder, konkurrenter, före detta anställda och leverantörer, inte bara genom att läsa dess bokföring. Fisher letade tillväxt och ledarskapskvalitet, det som Grahams skärmar inte fångade. Buffett har sammanfattat arvet som att han till största delen är Graham och till mindre del Fisher — och Schroeder visar hur proportionen glider över livet: American Express-affären 1964, där han satt på restaurangen och iakttog kortanvändarna, är Fisher i praktiken."
+        },
+        {
+          "type": "text",
+          "content": "Mungers inflytande var bromsen mot skräp. Genom Blue Chip Stamps, deras gemensamma fordon, och genom See's-förvärvet 1972 (kapitel 9) trängde Munger på för att betala för kvalitet: ett underbart företag till ett rimligt pris slår ett medelmåttigt företag till ett lockpris — omvändningen av Grahams fimp. Vid Berkshires styrelsemöten fick Mungers roll sin fasta form. När Buffett lagt fram ett förslag och vände sig till Charlie kom svaret som oftast: »Jag har inget att tillägga.« Det var inte likgiltighet utan en hierarki av tystnad — han bröt den bara när det verkligen betydde något. Buffett har beskrivit arbetsfördelningen så: »Berkshire har byggts efter Charlies ritningar; min roll var generalentreprenörens.«"
+        },
+        {
+          "type": "text",
+          "content": "Bokens ömsesidiga ödmjukhet är värd kursens uppmärksamhet. Munger hävdade att Warren klarat sig utmärkt utan honom; Buffett har hävdat det omvänt — att det var Mungers ritningar som gjorde bygget till vad det blev. Poängen för eleven ligger inte i vem som hade rätt, utan i vad oenighet gör med beslutskvalitet: en partner med eget kapital, eget omdöme och ingen rädsla för tystnad tvingar huvudpersonen att tänka en gång till. Munger bidrog också med tankeverktyget att vända på problemen — fråga inte hur man lyckas, fråga hur man säkert misslyckas, och undvik sedan det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mentorerna och deras bidrag\",\"rader\":[[\"Mentor/partner\",\"Bidrag\",\"Synlig lämning\"],[\"Graham\",\"Disciplin, säkerhetsmarginal, Mr Market\",\"Risktänkandet och fimp-eran\"],[\"Fisher\",\"Scuttlebutt, kvalitet, tillväxt\",\"Frågandet: prata med användare och konkurrenter\"],[\"Munger\",\"Bromsen mot skräp, ritningarna\",\"Franchise till rimligt pris; vänd på problemet\"],[\"Ringwalt och operatörerna\",\"Verksamhetsförståelse\",\"Underwriting-disciplinen som kultur\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ingen snöboll rullas ensam: Graham gav disciplinen, Fisher frågorna, Munger ritningarna — och Susie, kapitel 10, det mänskliga skyddet. Listan är lika viktig som ordningen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Vem är din Munger — personen som får dig att inte göra det tredje impulsiva köpet? Om du saknar en: skriv ner hur du skulle värva en sådan röst i din investering eller ditt företag, och vilket mandat den rösten behöver för att våga säga ifrån."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur kom Buffett och Munger i kontakt med varandra?",
+          "alternativ": [
+            "Som rivaler vid ett auktionsbud på ett försäkringsbolag",
+            "Genom en middag hos familjen Davis, som jämförde de två",
+            "Munger var lärare till Buffett i Los Angeles",
+            "De möttes som grannar i Omaha på fyrtiotalet"
+          ],
+          "ratt": 1,
+          "tips": "Värdparet satte namnet på det de såg — och investerade samtidigt en betydande summa."
+        },
+        {
+          "q": "Vad innebär Fishers scuttlebutt-metod?",
+          "alternativ": [
+            "Att analysera bokföringen ned till sista posten",
+            "Att lära sig bolag genom samtal med kunder, konkurrenter och före detta anställda",
+            "Att kopiera kända investerares aktieköp",
+            "Att fråga bolagets ledning om framtidsprognoser"
+          ],
+          "ratt": 1,
+          "tips": "Metoden ligger närmare journalistik än redovisning — sanningen söks utanför bolagets egna kanaler."
+        },
+        {
+          "q": "Vad menas med Mungers »jag har inget att tillägga«?",
+          "alternativ": [
+            "En hierarki av tystnad: han bröt den bara när det verkligen betydde något",
+            "Ett sätt att markera ointresse för styrelsearbetet",
+            "En övning i att hålla investerare ovetande",
+            "En kritik mot Buffetts presentationsform"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad det gör med ett rums beslutskultur när tystnad är norm och invändning är undantag."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "See's Candies 1972 — prissättningskraften",
+      "intro": "Köpet av See's Candies för tjugofem miljoner dollar 1972 är bokens vändpunkt: första gången Buffett medvetet betalade för osynligt kapital — ett varumärke. Kapitlet följer chokladfabrikens siffror genom trettiofem år, prissättningskraftens mekanik och övergången till företag man kan sova gott med.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "See's Candies var — och är — ett kaliforniskt chokladföretag med kvalitetsstolthet och en lojal kundkrets, när ägarsläkten i början av sjuttiotalet behövde sälja. Priset förhandlades ner från trettio till tjugofem miljoner dollar genom Blue Chip Stamps, och det som köptes syns inte i balansräkningen: bolaget omsatte strax över trettio miljoner dollar med en vinst före skatt på 4,2 miljoner, och köpesumman motsvarade flera gånger bokfört värde — hädiskt för Grahams skola. Munger drev på. Buffett, fortfarande fimp-tänkare, motsatte sig — och hade fel, vilket han sedan gjort mycket av att medge."
+        },
+        {
+          "type": "text",
+          "content": "Prissättningskraften testades på karakteristiskt vis. Buffett lät höja priset dagen efter jul, den sämsta tänkbara tidpunkten för försäljningen — och kunderna betalade. See's choklad är en gåva, och gåvans värde ligger i signalen: ett lågt pris skulle förstöra signalen. Här är kursens V14: varumärket är det osynliga kapital som gör att priser kan höjas över kostnad, år efter år, utan volymförlust — en vallgrav av det slag som inte kan byggas med kapital, bara med tid och konsekvens. Marginalerna (V07, V08) höjdes genom pris, inte genom kostnadsskalor, och eftersom verksamheten krävde så lite nytt kapital blev ägaravkastningen (V09) exceptionell utan hävstång."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna är kursens stolpar. Från 1972 till 2007 tillfördes See's sammanlagt bara omkring trettiotvå miljoner dollar i nytt kapital; vinsten före skatt växte från 4,2 till åttiotvå miljoner dollar, och sammanlagt förverkade bolaget omkring 1,35 miljarder dollar — som allt återinvesterats i Berkshires snöboll. Jämför med textilfabriken i kapitel 6, som konsumerade kapital i tjugo år: två verksamheter, två motsatta kapitalbudgetar. See's lärde Buffett vad han sedan letade efter överallt: kapitalsnåla franchisebolag med prissättningsmakt — lärplanen för Coca-Cola-affären sexton år senare."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlets sista läsning gäller hållbarheten. Buffett har formulerat kriteriet som att han vill äga företag han skulle behålla även om börsen stängde i tio år — bolag vars värde växer oavsett om marknaden noterar dem eller inte, och som han kan sova gott med. See's uppfyllde det: kassa in varje jul, konkurrenter oförmögna att undergräva gåvosignalen, ingen kapitalsvält. Men kursen noterar också gränsen: principen bär inte vilka multiplar som helst — ett underbart företag kan bli ett förfärligt köp om priset glömmer säkerhetsmarginalen. See's köptes rimligt; det är kombinationen, inte varumärket i sig, som gör affären."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"See's Candies 1972 mot 2007\",\"rader\":[[\"Mått\",\"1972\",\"2007\"],[\"Köpeskilling\",\"25 MUSD\",\"—\"],[\"Vinst före skatt\",\"4,2 MUSD\",\"82 MUSD\"],[\"Nytillfört kapital\",\"—\",\"32 MUSD sammanlagt\"],[\"Ackumulerade vinster\",\"—\",\"1,35 mdr USD\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "See's bevisade att det bästa kapitalet är osynligt: ett varumärke (V14) som tillåter priser över kostnad år efter år, utan motsvarande nyinvestering — och därför en ROE (V09) som ingen hävstång behöver bygga."
+        },
+        {
+          "type": "utmaning",
+          "content": "Nämn ett bolag som du tror kan höja priserna tio procent imorgon utan nämnvärd volymförlust. Vad är beviset — inte åsikten? Leta efter historiska prishöjningar, kunddata eller gåvokaraktär i produkten, och skriv ner vad som skulle behöva hända för att du skulle ha fel."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var radikalt med See's-köpet 1972 ur Grahamskolans perspektiv?",
+          "alternativ": [
+            "Bolaget köptes under likvidationsvärdet",
+            "Priset motsvarade flera gånger bokfört värde — betalat för osynligt kapital",
+            "Köpet finansierades med företagsobligationer",
+            "Buffett köpte bara en minoritetspost utan styrelseplats"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som stod i balansräkningen — och vad som inte stod där men betalades för."
+        },
+        {
+          "q": "Hur testade Buffett prissättningskraften i praktiken?",
+          "alternativ": [
+            "Genom att höja priset strax efter jul och iaktta försäljningen",
+            "Genom att släppa en billig konkurrerande produktlinje",
+            "Genom att fråga franchisetagare om priselasticiteten",
+            "Genom att sänka priset och mäta volymökningen"
+          ],
+          "ratt": 0,
+          "tips": "Tidpunkten valdes så att den inte skulle kunna förklaras av säsongsvariationer — den sämsta tiden på året för choklad."
+        },
+        {
+          "q": "Vad visar relationen mellan nytt kapital och vinst hos See's?",
+          "alternativ": [
+            "Att stora återinvesteringar krävdes för att hålla marginalerna",
+            "Att vinster kunde växa kraftigt med mycket lite nytillfört kapital",
+            "Att bolaget emitterade ny aktie vid flera tillfällen",
+            "Att vinsten kom främst från finansiella placeringar"
+          ],
+          "ratt": 1,
+          "tips": "Jämför de två siffrorna: trettiotvå miljoner nytillförda — och 1,35 miljarder förverkade."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Susie — människan bakom avkastningen",
+      "intro": "Schroeders mest personliga kapitel handlar om Susan Thompson Buffett: kvinnan som trodde på honom innan någon annan gjorde det, som gjorde honom mänsklig i andras ögon och som betalade ett högt pris för snöbollen. Kapitlet behandlar separationen 1977, det okonventionella triangelförhållandet och ensamheten i Farnam House — utan att försköna och utan att döma.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Susan Thompson träffade Warren genom hans syster Roberta, som var hennes rumskamrat; paret gifte sig 1952. Susie var begåvad sångerska, empatisk och socialt skicklig — egenskaper Warren saknade. I Schroeders framställning blir hennes roll svår att överskatta: hon översatte honom till omvärlden, hon var värdinna, tolk och skydd mot en social värld han inte behärskade. Och hon övertygade honom om det som blev självuppfyllande: att han inte behövde oroa sig — han skulle bli rik. Hennes tilltro fungerade som ett emotionellt startkapital, motgiftet till moderns krav och till den egen rädsla som kapitel 2 beskrev."
+        },
+        {
+          "type": "text",
+          "content": "Äktenskapets ekonomi är kursens verkliga ämne. Medan Susie bar hushåll, barn och socialt liv tillbringade Warren kvällarna i studion med årsredovisningar och compounding-tabeller; han var fysiskt närvarande och mentalt frånvarande, ett mönster som Schroeder återkommer till genom decennier av familjescener. Susie engagerade sig dessutom i medborgarrättsrörelsen och sociala frågor — värderingar som kom att prägla släktens senare filantropi, men som förde henne bort från den inre kretsen kring snöbollen. Buffett älskade henne, behövde henne och var inte närvarande för henne: tre sanningar som boken vägrar lösa upp i en enda bekväm lösning."
+        },
+        {
+          "type": "text",
+          "content": "Separationen kom 1977: Susie flyttade till San Francisco för att sjunga och leva sitt eget liv, men paret skilde sig aldrig — äktenskapet bestod, och Susie ordnade så att Astrid Menk, som Warren lärt känna genom Omahas krogvärld, tog hand om hans vardag i Omaha. Arrangemanget, som Omahas inre kretsar kände till men världen inte gjorde, skildras av Schroeder utan sensation men med full tydlighet: en man som äter popcorn och läser rapporter ensam i ett stort hus; en hustru i en annan stad som fortsatte att vårda hans sociala liv; en partner i köket. När boken publicerades var det dessa kapitel som chockerade legendens beundrare mest."
+        },
+        {
+          "type": "text",
+          "content": "Susie dog i juli 2004, och förlusten skakade honom djupare än något börsfall. Två år senare tillkännagav Buffett att han skulle skänka bort i princip hela förmögenheten — till stor del till Bill Gates stiftelse, till delar till familjestiftelser — och han hänvisade då till Susies värderingar: det var hennes sociala engagemang, inte hans, som gav gåvorna deras riktning. Kursens slutsats av kapitlet är dubbel. För det första: bakom varje compounding-kurva finns en budget i mänsklig valuta, och den står inte i årsredovisningen. För det andra: portföljens arkitekt byggde på en familjeekonomi som andra människor bar — och en ärlig kurs räknar den kostnaden, även när den inte kan bokföras."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Människorna runt snöbollen\",\"rader\":[[\"Aktör\",\"Relation\",\"Funktion i snöbollen\"],[\"Susie\",\"Hustru och partner 1952–2004\",\"Socialt kapital, tilltro, värderingar\"],[\"Astrid Menk\",\"Partner efter 1977\",\"Vård och vardag i Omaha\"],[\"Barnen Susie, Howard och Peter\",\"Familjen\",\"Bärare av kostnaden för en frånvarande partner\"],[\"Katharine Graham\",\"Vän i Washington\",\"Öppnade dörrar och lärde honom umgänget\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Schroeders viktigaste bidrag: tilltron som gjorde honom till världens rikaste man kom från en människa som betalade med sin egen levnadsplan — snöbollens amorteringstabell finns bara i mänsklig valuta."
+        },
+        {
+          "type": "utmaning",
+          "content": "Reflektera kring priset för din egen compounding: hur många timmar av närvaro, relationer eller hälsa kostar din plan just nu? Skriv ner beloppet — och avgör om det är ett pris du valt med öppna ögon eller ett som smugit sig in i avtalet."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur bidrog Susie till Buffetts framgång enligt boken?",
+          "alternativ": [
+            "Hon analyserade bolag och dubbelkollade hans kalkyler",
+            "Hon förvaltade partnerskapets administration och bokföring",
+            "Hon gav socialt kapital, trygghet och en nästan profetisk tilltro",
+            "Hon finansierade det första partnerskapet med familjemedel"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad Warren saknade — och vad hon översatte åt omvärlden."
+        },
+        {
+          "q": "Vad hände 1977 i äktenskapet?",
+          "alternativ": [
+            "Paret skilde sig och Susie flyttade till Omaha",
+            "Susie flyttade till San Francisco; äktenskapet bestod och Astrid Menk tog hand om Warren",
+            "Susie tog över som VD för Berkshire",
+            "Paret flyttade gemensamt till Washington"
+          ],
+          "ratt": 1,
+          "tips": "Upplösningen var inte juridisk utan geografisk och praktisk — och involverade en tredje person som Susie själv godtog."
+        },
+        {
+          "q": "Vad motiverade enligt Buffett själv gåvorna 2006?",
+          "alternativ": [
+            "Susies värderingar och sociala engagemang",
+            "En kampanj från Gates Foundation",
+            "Skatteskäl efter försäljning av aktier",
+            "Ett löfte till fadern Howard från ungdomen"
+          ],
+          "ratt": 0,
+          "tips": "Riktningen på pengarna — mot samhällsfrågor — kom från en annan person i huset än den som tjänade dem."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Franchiseprovet — Washington Post, Buffalo News, Coca-Cola",
+      "intro": "Efter See's tillämpades franchise-läran i stor skala: Washington Post 1973, Buffalo Evening News 1977 och Coca-Cola 1988. Kapitlet visar mönstret i de tre affärerna — kvalitet köpt i kris — och hur floaten bakom gav Berkshire ett tålamod ingen konkurrent kunde matcha.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Washington Post, 1973–74. Börsfallet krossade Kay Grahams mediekoncern, och Buffett köpte en betydande andel — omkring tiondelen av bolaget — för strax över tio miljoner dollar, en bråkdel av vad tidningsverksamheten och tv-stationerna var värda i hans kalkyl. Det är säkerhetsmarginalen i praktik, utan siffror: gapet mellan pris och värde var så stort att inte ens grova felmarginaler kunde äta upp det. Han tog plats i styrelsen och en roll som rådgivare åt Katharine Graham, som i sin tur lärde honom umgänget i Washington — kursens påminnelse om att nätverk och närvaro är del av kapitalet."
+        },
+        {
+          "type": "text",
+          "content": "Buffalo Evening News, 1977. Buffett köpte dagstidningen för knappt trettiotre miljoner dollar och inledde ett uppseglingskrig: en söndagsupplaga lanserades mot etablerade Courier-Express, förlusterna rev år efter år, ett antitrustförfarande överlevdes — och när konkurrenten gick omkäll 1982 stod Buffalo News som stadens enda tidning med den ekonomi ett lokalt monopol ger. Affären visar två saker. För det första patientkapitalet: bara ett hus med float bakom sig kan tappa pengar i fem år utan att tappa ägare. För det andra tidningsekonomins särart — annonsörer och läsare i en cirkel där varje extra läsare gör produkten värdefullare för annonsören, en lokal täthet som mäter sig med de bästa vallgravarna."
+        },
+        {
+          "type": "text",
+          "content": "Coca-Cola, 1988–89. Efter kraschen 1987 och en period av tvivel kring bolagets riktning köpte Berkshire aktier för omkring en miljard dollar och blev en av de största ägarna. Vad som köptes var världens starkaste varumärke (V14) med en global distribution ingen kan bygga om — och en prissättningsmakt i praktiken obegränsad: när produkten säljs i länder med växande köpkraft blir varje ny kund en marginell intäktsökning utan motsvarande kapitalkostnad. V12-perspektivet: konsumtionen av en Coca-Cola är bland de mest stabila intäktsströmmar som existerar, i stort sett oberoende av konjunktur. Positionen har behållits i decennier och var redan vid bokens utkomst värd många gånger insatsen."
+        },
+        {
+          "type": "text",
+          "content": "Mönstret i de tre affärerna är kursens cykel-kapitel. Citatet — »var rädd när andra är giriga, och girig bara när andra är rädda« — formulerades i ett ägarbrev på åttiotalet, men levandegjordes redan 1973–74: han köpte inte kriser, han köpte franchise-kvalitet när krisen sänkte priset. Skillnaden är avgörande, för en kris i sig skapar inget värde; den skapar bara tillfället att köpa kvalitet felaktigt prissatt. Samma logik återkommer i megaskala 2008 (kapitel 14) — med den skillnad som kontroverskapitlet sedan synar: 2008 köpte han inte aktier utan strukturerade avtal, med villkor ingen annan fick."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Franchiseprovets affärer\",\"rader\":[[\"Köp\",\"Kontext\",\"Vad som köptes\"],[\"Washington Post, 1973–74\",\"Börsfall och tvivel om bolaget\",\"Monopoltidning och tv-stationer till bråkdel av värde\"],[\"Buffalo News, 1977\",\"Uppgörelsekrig med etablerad konkurrent\",\"Framtida lokalmonopol efter års förluster\"],[\"Coca-Cola, 1988–89\",\"Efter 1987 års krasch\",\"Globalt varumärke med distribution och prissättningsmakt (V14)\"],[\"Goldman och GE, 2008\",\"Systemkris\",\"Strukturerade avtal (V17) — se kapitel 14\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Mönstret är inte timing utan selektivitet: Buffett köpte kvalitet när priset var kris — inte kriser när priset var lågt. Skillnaden förklarar varför metodens bärkraft inte beror på att förutsäga kriser."
+        },
+        {
+          "type": "utmaning",
+          "content": "Backa ett rullande tolvmånadersfönster i minnet: vilket kvalitetsbolag handlades i panik under perioden — och vad hindrade dig från att agera? Var svaret information eller temperament? Skriv en rad om vilken rutin som hade flyttat dig från hinder till beslut."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar de tre affärerna Washington Post, Buffalo News och Coca-Cola?",
+          "alternativ": [
+            "De köptes till premie i optimistiska marknader",
+            "Franchise-kvalitet köptes när kris pressade priset",
+            "De finansierades med lån mot framtida kassaflöden",
+            "De såldes inom några år för snabb vinst"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på ordningen: kvaliteten avgjordes först, priset gjorde affären."
+        },
+        {
+          "q": "Vad gjorde Buffalo News-affären möjlig för Berkshire men svår för de flesta ägare?",
+          "alternativ": [
+            "Buffetts politiska kontakter i delstaten New York",
+            "Patientkapitalet — floaten bakom — som tillät årsförluster",
+            "Tidningens dominerande tekniska överläge i tryckeri",
+            "En exklusiv licens för söndagsutgivning"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vem som kan tappa pengar i fem år utan att någon försäljning tvingas fram."
+        },
+        {
+          "q": "Varifrån kommer Coca-Colas prissättningsmakt i kursens läsning?",
+          "alternativ": [
+            "Från råvarukontrakt som säkrar socker till lågt pris",
+            "Från varumärket och den globala distributionen (V14)",
+            "Från reglerade monopol i hemmamarknaden",
+            "Från patent på produktsammansättningen"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att bygga om — för någon som vill konkurrera med en produkt som är identisk men inte heter samma sak?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Salomon 1991 — ryktet som enda verkliga kapital",
+      "intro": "När handelsfirman Salomon Brothers 1991 stod med förfalskade bud på amerikanska statspapper och hot om att stängas, tog Buffett över som tillförordnad ordförande och avgav det vittnesmål som blivit en av näringslivets mest citerade meningar. Kapitlet handlar om ryktet som kapital — och om den systemiska ryggrad som redan 1991 visade sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden: Berkshire hade 1987 räddat Salomon med sjuhundra miljoner dollar i preferensaktier under en marknadskris, och John Gutfreund ledde firman i den handelskultur som kännetecknade Wall Street. 1991 upptäcktes att tradern Paul Mozer lämnat falska bud i auktioner på amerikanska statspapper — och att ledningen dröjt med att redovisa det fulla omfånget. När skandalen nått myndigheterna och firman hotades av indragen licens avgick Gutfreund, och Buffett fick en söndagskväll frågan han inte kunde tacka nej till: tillförordnad ordförande för den institution som riskerade att dra med sig halva marknaden."
+        },
+        {
+          "type": "text",
+          "content": "Vittnesmålet inför kongressen i september 1991 är bokens mest citerade passage. Buffett förklarade för anställda — och sedan för hela världen — hur huset skulle styras: »Förlorar ni pengar åt firman är jag förstående. Förlorar ni en flis av firman rykte, kommer jag att vara hänsynslös.« Han kompletterade med en regel som satte kulturen i system: den som ser något fel rapporterar det inom tjugofyra timmar — till honom, utan omvägar och utan bestraffning för budbäraren. Kursen noterar att det är samma kapital-logik som resten av boken: pengar går att tjäna tillbaka, rykte går att förvalta men aldrig återköpa till listpris."
+        },
+        {
+          "type": "text",
+          "content": "Driften under krisen visade vad ett namn är värt. Buffett tog ordförandeklubban för en dollar i ersättning, rensade ledningen, satte sanningen i första rummet mot myndigheter och kunder — och Salomon överlevde, med böter som sammanlagt uppskattats till närmare trehundra miljoner dollar. Men kursens ärliga läsning noterar också vad som räddade firman: att systemet inte kunde tillåta en primärhandlare av den storleken att kollapsa. Regulatorernas backstop — det som senare skulle sammanfattas som too big to fail — var med från början. Buffetts rykte fungerade som säkerheten som fick myndigheter och marknad att ge firman en andra chans; systemets rädsla för kollaps höll bakdörren öppen. Båda var nödvändiga, och bara den ena står i hans meritförteckning."
+        },
+        {
+          "type": "text",
+          "content": "Efterspelet knyter an till bokens senare kontroverser. Salomon såldes 1997 till Travelers, den koncern som kort därpå smälte samman med Citigroup — namnet som kapitel 15 återkommer till i protesternas och kritikens klimat. Kvar för eleven står två överförbara instrument. Det första är ryktets bokföring: i varje organisation är den viktigaste balansposten den enda som inte kan köpas, bara byggas eller förslösas. Det andra är tjugofyra-timmarsregeln som ledarskapsdesign: en kanal där sanningen färdas snabbare än felet — annars kommer felet alltid först."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Salomon-dramat steg för steg\",\"rader\":[[\"Händelse\",\"Tidpunkt\",\"Lära\"],[\"Mozer lämnar falska bud\",\"februari–april 1991\",\"Små fusk eskalerar när chefer blundar\"],[\"Ledningens dröjsmål visas upp\",\"sommaren 1991\",\"Tystnad är medhjälp\"],[\"Gutfreund avgår; Buffett tar över\",\"augusti 1991\",\"Ledarskap sätts in först efter katastrofen — bättre förr\"],[\"Kongressvittnesmålet\",\"september 1991\",\"Rykte vägs mot pengar i en enda mening\"],[\"Systemets backstop håller firman vid liv\",\"1991\",\"En försmak av 2008:s too big to fail\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Salomon visade att rykte är en reell balanspost — Buffetts namn fungerade som säkerhet när inget annat godtogtes — men bakdörren hölls öppen av systemet, inte av honom. Kursen bokför båda posterna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Har din organisation — eller ditt eget varumärke som investerare eller expert — en fungerande tjugofyra-timmarsregel? Skriv ner vart ett allvarligt fel skulle rapporteras, och vad som händer med den som rapporterar. Om svaret är tystnad: vad kostar den tystnaden vid nästa Mozer?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad bestod Salomon-skandalen 1991 i?",
+          "alternativ": [
+            "Förluster på räntederivat till följd av prisfel",
+            "Förfalskade bud i auktioner på amerikanska statspapper",
+            "Insynshandel med kunders order före publicering",
+            "Oredovisade krediter till operativa chefer"
+          ],
+          "ratt": 1,
+          "tips": "Det handlade om en specifik marknad — den säkraste i världen — och om bud som inte var sanna."
+        },
+        {
+          "q": "Vad sa Buffett i sitt vittnesmål om pengar kontra rykte?",
+          "alternativ": [
+            "Att förlorade pengar aldrig fick upprepas men rykte fick rinna",
+            "Att rykte och pengar borde vägas lika i alla beslut",
+            "Att förlust av pengar möts med förståelse men av rykte med hänsynslöshet",
+            "Att firman skulle läggas ned i stället för att återhämta ryktet"
+          ],
+          "ratt": 2,
+          "tips": "Meningens kraft ligger i asymmetrin mellan de två valutanterna."
+        },
+        {
+          "q": "Vilken aspekt av räddningen pekar fram mot 2008-kritiken?",
+          "alternativ": [
+            "Att Buffett personligen borgade med privategendom",
+            "Att myndigheterna inte kunde tillåta en så stor primärhandlare att falla",
+            "Att aktieägarna röstade ned böterna i protest",
+            "Att Salomon var den enda handlaren i statspapper"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vem som egentligen öppnade bakdörren — och av vilken rädsla."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Gen Re — ärlighetens redovisning av misstagen",
+      "intro": "Köpet av återförsäkraren General Re 1998 blev Buffetts tydligaste vuxenmisstag: för dyrt, i övervärderade aktier, med reserver och en kultur som visade sig vara en tickande bomb. Kapitlet behandlar 9/11, AIG-transaktionen och den genre Buffett utvecklat till konst: att bekänna misstag i detalj och utan juristspråk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "I augusti 1998, i veckorna runt hedgefonden LTCM:s kollaps, tillkännagav Berkshire förvärvet av General Re — världens största återförsäkrare — betalt med aktier till ett värde av omkring tjugotvå miljarder dollar. Strategin var lockande: floaten skulle tiodubblas och kapaciteten att skriva risk växa i paritet med Berkshires balansräkning. Svårigheterna kom i efterhand: Gen Re:s skadesreserver visade sig underdimensionerade under flera år, derivatbolaget Gen Re Securities bar risker som inte gick att förvalta med disciplin, och kulturskillnaden mellan ett konservativt Omaha och en handelsorienterad återförsäkring visade sig dyr. Buffett har i efterhand medgett att han betalade för mycket — och att betalningen i övervärderade aktier förvärrade misstaget."
+        },
+        {
+          "type": "text",
+          "content": "Åren som följde testade ärligheten. Skadepåfyllningarna på Gen Re:s gamla affärer krävde stora tilläggsavsättningar; 2001 träffade 11 september-branschen med enorma förluster, och Buffett konstaterade rakt i ägarbrevet att branschen — inklusive Berkshire — underprissatt terrorismrisken före dådet. Kursens V10-vinkel: försäkring är i grunden hävstångsverksamhet med regelverk; det som skyddar är konservativ balansräkning, stor likviditet (V11-tråden från kapitel 7) och en reserveringskultur som hellre tar smällen i dag än skjuter den framåt. Gen Re visade vad som händer när en av pelarna sviker — och vad det kostar att bygga om den under pågående drift."
+        },
+        {
+          "type": "text",
+          "content": "Den svåraste delen är AIG-transaktionen: en finite reinsurance-affär mellan Gen Re och AIG i början av 2000-talet, som enligt åklagarna användes för att försköna AIG:s siffror. Fem Gen Re-chefer åtalades och dömdes 2008 — samma år som boken publicerades — och Berkshire samarbetade med utredarna. För kursens del är fallet dubbelt lärorikt. Det bevisar att ägande inte desinficerar kultur: ett dotterbolag kan bära en smitta som koncernens rykte sedan får betala för. Och det visar skillnaden mellan prisfel och karaktärsfel: Buffetts egna misstag — Berkshire, textilen, Gen Re-priset — är av det första slaget; AIG-affären var av det andra, och hans hållning till de båda skilde sig systematiskt: bekänna det egna, samarbeta mot det andras."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetens genre är kapitlets egentliga ämne. Buffetts ägarbrev behandlar misstag med en öppenhet som saknar motstycke i amerikanskt näringsliv: fel beslut nämns vid namn, orsaker förklaras utan omvägar och generella undanflykter undviks. Det är inte blygsamhet utan kapitalförvaltning: breven bygger det rykte som Salomon-kapitlet visade väger tyngst. För eleven är överföringen rak: den som vill compoundera långsiktigt har störst nytta av en dokumenterad historia av specifika bekännelser — inte av en fläckfri meritförteckning, som ingen tror på ändå."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Gen Re-kronologin och bekännelserna\",\"rader\":[[\"Händelse\",\"Årtal\",\"Ärlighetens formulering\"],[\"Förvärvet betalas i aktier\",\"1998\",\"»Vi betalade för mycket« — medgett öppet i efterhand\"],[\"Reserverna visar sig tunna\",\"1999–2002\",\"Påfyllningar redovisades som misstag, inte som nyheter\"],[\"11 september\",\"2001\",\"Underprissatt terrorismrisk erkändes utan undanflykter\"],[\"AIG-transaktionen\",\"2000–2008\",\"Fem dotterbolagschefer dömda; koncernen samarbetade med åklagare\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Skillnaden mellan Berkshire och genomsnittet ligger inte i att slippa misstag — utan i hastigheten och specificiteten i bekännelsen. Ryktet (kapitel 12) byggs med samma teknik som redovisningen av misstag."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din senaste investeringsbekännelse: ett beslut som gick fel, siffrorna och orsaken — utan ordet »men«. Behåll den, och läs den nästa gång du känner säkerhet utan grund."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur betalade Berkshire förvärvet av Gen Re 1998?",
+          "alternativ": [
+            "Med kontanter från floaten",
+            "Med nyemitterade Berkshire-aktier till omkring 22 miljarder dollar",
+            "Gen Re förvärvades i en konkursauktion",
+            "Med en blandning av preferensaktier och obligationer"
+          ],
+          "ratt": 1,
+          "tips": "Betalmedlet blev själv en del av misstaget — fundera på vad aktierna då handlades till."
+        },
+        {
+          "q": "Vad var Gen Re:s och AIG:s finite reinsurance-affär i grunden?",
+          "alternativ": [
+            "En laglig spridning av katastrofrisk mellan återförsäkrare",
+            "En transaktion som enligt åklagarna förskönade AIG:s siffror",
+            "En option på framtida premieintäkter",
+            "En felprisad valutahedge"
+          ],
+          "ratt": 1,
+          "tips": "Nyckelordet är redovisningens yta snarare än riskens substans — fem chefer dömdes 2008."
+        },
+        {
+          "q": "Hur hanterade Buffett 9/11-erkännandet i ägarbrevet?",
+          "alternativ": [
+            "Han skyllde på återförsäkrarnas oförmåga att betala",
+            "Han erkände att terrorismrisken varit underprissatt — inklusive av Berkshire",
+            "Han lät branschorganisationen formulera ett gemensamt uttalande",
+            "Han undvek ämnet till följande års brev"
+          ],
+          "ratt": 1,
+          "tips": "Samma teknik som kring Gen Re-priset: först namnet på felet, sedan orsaken — utan mellanled."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "2008 — girig när andra är rädda, i praktiken",
+      "intro": "Finanskrisens höst gjorde bokens tes till rubrik: medan systemet blödde köpte Buffett preferensavtal i Goldman Sachs och General Electric på villkor ingen annan erbjöds — och skrev en debattartikel med uppmaningen att köpa amerikanskt. Kapitlet visar hur »girig när andra är rädda« såg ut i verkligheten, och vilka strukturella villkor som krävdes.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hösten 2008 kollapsade förtroendet: Freddie Mac och Fannie Mae togs över av staten, Lehman Brothers sattes i konkurs den femtonde september, AIG räddades dagen därpå, penningmarknadsfonder tappade kapitalvärde — och mitt i detta publicerades The Snowball. Schroeders bok och huvudpersonens största offentliga prov sammanföll i tiden: medierna ville tala om biografin, marknaderna ville tala om överlevnad. Buffetts telefon blev i praktiken en krislinje för amerikanska ikoner som behövde kapital och — inte minst — hans namn på sina balansräkningar."
+        },
+        {
+          "type": "text",
+          "content": "Goldman Sachs, tjugotredje september: fem miljarder dollar i permanenta preferensaktier med tio procents kupong, plus ett warrant-program knutet till aktien — en avkastning kontrakterad i avtal, med optionell delaktighet i uppåtrisken. General Electric, första oktober: tre miljarder dollar på samma mall. Via MidAmerican köptes dessutom omkring tio procent av batteri- och biltillverkaren BYD för cirka tvåhundratrettio miljoner dollar. Kursens V17-vokabulär passar här som handsken: detta var avtal och partnerskap i sin mest raffinerade form — förhandlade instrument med kupong, säkerhet och warrant, inte aktieköp på börsens orderdjup."
+        },
+        {
+          "type": "text",
+          "content": "Den sextonde oktober publicerade Buffett en debattartikel i New York Times med den berömda slutklämmen: »Buy American. I Am.« — köp amerikanskt, jag gör det. Formuleringen knöt an till den gamla maximen om att vara rädd när andra är giriga och girig när andra är rädda. Men kursens ärliga läsning skiljer på retorik och position: hans girighet var säkrare än genomsnittets. Preferenskupongen betalades oavsett aktiekurs; warrant-programmet gav uppåtrisk utan motsvarande exponering på nedsidan; och han förhandlade i en situation där motparterna hade TARP-program och statliga garantier bakom sig. Säkerhetsmarginalen — kapitel 4 — var här inte bara analytisk utan skriven in i avtalen."
+        },
+        {
+          "type": "text",
+          "content": "Utfallen blev legendariska: kupongerna flödade, inlösen skedde med vinst när motparterna repat sig, och warrant-programmen löstes senare in till värden i miljarder. Efter bokens publicering följde 2011 samma mall i Bank of America — fem miljarder dollar i preferens med warrant-program — och kritiken växte: var detta värdeinvestering eller uthyrning av ett rykte med statligt stödd risk? Kursen svarar inte färdigt, utan sparar frågan till nästa kapitel: att köpa i kris var principen; frågan är vilka delar av utrustningen som var hans — och vilka som var systemets."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Krisens affärer och deras struktur\",\"rader\":[[\"Affär\",\"Villkor\",\"Funktion\"],[\"Goldman Sachs, 23 sept 2008\",\"5 mdr USD preferens, 10 % kupong, warrant-program\",\"Kontrakterad avkastning med optionell upsida (V17)\"],[\"General Electric, 1 okt 2008\",\"3 mdr USD preferens, 10 %, warrant-program\",\"Samma mall i nästa institution\"],[\"BYD, sept 2008\",\"Cirka 230 MUSD för knappa 10 % via MidAmerican\",\"Nischexponering utanför huvudspåret\"],[\"Debattartikel, 16 okt 2008\",\"—\",\"»Buy American. I Am.« — princip och position sammanföll\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "2008 visade principen och strukturen i samma rörelse: girighet när andra är rädda — men med säkerhetsmarginalen skriven i avtalet (V17), inte bara i analysen. Den skillnaden förklarar mycket av utfallet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Om nästa kris kommer: vad står i din checklista — likviditet, cirkel, instrument? Skriv ner vilka verktyg du faktiskt har (kontantandel, mandat, durationsgränser) och vilket du saknar. Utan verktygen är modet bara en känsla."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken form hade avtalet med Goldman Sachs i september 2008?",
+          "alternativ": [
+            "Vanliga aktier köpta på börsen i öppen marknad",
+            "Fem miljarder i preferensaktier med tio procents kupong och warrant-program",
+            "En kort obligation med statsgaranti",
+            "Ett lån säkrat i Goldmans fastigheter"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som betalas först i en kris — och vad som krävs för att alls få delta i en återhämtning."
+        },
+        {
+          "q": "Vad stod i Buffetts debattartikel i New York Times?",
+          "alternativ": [
+            "En varning för att krisen skulle bli djupare än 1929",
+            "Ett försvar av bankernas bonussystem",
+            "Uppmaningen att köpa amerikanskt — med honom själv som exempel",
+            "Ett förslag om att förbjuda vissa derivat"
+          ],
+          "ratt": 2,
+          "tips": "Rubriken på artikeln var en uppmaning och en handling i samma mening."
+        },
+        {
+          "q": "Varför var Buffetts »girighet« 2008 strukturellt säkrare än en vanlig aktieköpares?",
+          "alternativ": [
+            "Han hade insiderinformation från myndigheterna",
+            "Kupong- och warrantstrukturen gav avkastning och uppåtrisk utan motsvarande exponering på nedsidan",
+            "Han kunde lämna tillbaka aktierna inom trettio dagar",
+            "Affären var valutasäkrad i schweiziska franc"
+          ],
+          "ratt": 1,
+          "tips": "Jämför vad som händer med en preferenskupong och med en aktiekurs om återhämtningen dröjer fem år."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 10,
+      "title": "Kontroversen — helgonbilden och too big to fail",
+      "intro": "Detta är kursens uttalat kontroversiella kapitel: munken som blundar. Buffett kritiserade Wall Street i hela sitt liv — samtidigt som hans resultat bar på strukturella fördelar som sällan redovisades som fördelar: systemets ryggrad, betygsinstitut i portföljen och citat som stod i strid med egna positioner. Kapitlet övar den mogna läsningen: beundra principerna, granska strukturerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Helgonbilden är själva målet för kritiken. Media kallade honom Omahas orakel och folkhjälten från Main Street — mannen utan dator på huvudkontoret, utan utdelning, med popcorn och Cherry Coke — i tydlig kontrast till giriga investmentbanker. Schroeders bidrag är att hon aldrig låter karikatyrerna stå kvar: boken visar en man vars rädsla drev honom till kontrollbehov, vars familj betalade i närvaro (kapitel 10), och vars institutionella position gav honom fördelar som den hyllande bilden aldrig räknade upp. Att älska resultaten är inte detsamma som att tro på helgonmåleriet — och boken själv, med sin mindre smickrande version, är det bästa argumentet mot det senare."
+        },
+        {
+          "type": "text",
+          "content": "Den första strukturfördelen visade sig 1991: Salomon räddades inte enbart av Buffetts rykte utan av att systemet inte kunde släppa en så stor primärhandlare (kapitel 12). 2008 återkom mönstret i större skala: hans motparter — Goldman, GE, senare Bank of America — opererade med TARP-program, statliga garantier och centralbankernas likviditet bakom sig. Kritikerna sammanfattade det som too big to fail-fördelar: preferenskupongens säkerhet vilade delvis på en implicit statsgaranti som ingen privat investerare fick räkna med. Munken som blundar är kursens bild för gapet mellan predikan om marknadsdisciplin och tystnaden om den egna ryggraden — och gapet är historiskt verifierbart, inte konspiration: villkoren i hans avtal hade inte existerat utan systemreserven."
+        },
+        {
+          "type": "text",
+          "content": "Den andra posten heter Moody's. Berkshire ägde under 2000-talet en betydande andel av betygsinstitutet — den institution vars trippel-A-stämplar underblåste den bubbla som krisen 2008 byggdes på. Buffetts försvar var att han inte förvaltade aktivt och att inköpet gjordes i god tro; kritikernas replik är att ägarskap är ett ansvar, särskilt när vinsten kommer från just den mekanism man offentligt kritiserar. Samma mönster syns i Citigroup-tråden: Salomon såldes till Travelers, som blev en del av Citigroup — banken som 2000-talets protestklimat gjorde till symbol för aggressiv utlåning; campus-kampanjer, med studenter i bland annat Oberlin i frontlinjen, riktade sig mot den typen av institutioner samtidigt som Buffett, den folkkäre kritikern av Wall Street, blivit en av dess mest framgångsrika deltagare. Ironin kräver ingen överdrift — den räcker som den är."
+        },
+        {
+          "type": "text",
+          "content": "Den tredje posten är retoriken kontra positionen. Buffett kallade derivat för finansiella massförstörelsevapen i början av 2000-talet — och Berkshire hade då både avvecklat Gen Re Securities derivatbok och börjat skriva egna långa indexoptioner i megaskala, positioner som var derivat under ett annat namn. Återigen gäller den mogna läsningen: det är inte hyckleri att använda instrument vars okontrollerade användning man kritiserar, men kursen kräver att citatet och positionen läses tillsammans — annars blir både hyllning och anklagelse falska. Kapitlets slutpunkt: av allt detta följer inte att principerna var falska — det följer att resultatet inte kan läsas som ett rent bevis för principerna. Därav nästa kapitels fråga."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritikens fyra poster\",\"rader\":[[\"Kritik\",\"Kärna\",\"Fråga att ställa\"],[\"Too big to fail-ryggen\",\"2008-villkor med systemisk backstop bakom motparterna\",\"Vad återstår av affären utan garantin?\"],[\"Moody's-ägandet\",\"Betygsinflationens motor i den egna portföljen\",\"Vad följer med ägarskapet?\"],[\"Citigroup-klimatet\",\"2000-talets protestkampanjer mot megabankarna\",\"Vem tjänar på bilden av Main Street?\"],[\"Derivat-retoriken\",\"Massförstörelsevapen-citatet medan egna optioner skrevs\",\"Läser du citatet eller positionen?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den mogna läsningen är inte att tvätta bort hjälten och inte att behålla helgonet: beundra principerna, granska strukturfördelarna — och kom ihåg att helgon inte behöver beräkna, medan människor alltid gör det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en struktur-audit av en investerare du beundrar: vilka delar av resultatet kommer från epok, hävstång, skatt, nätverk eller systemreserver — och vilka från beslut? Skriv två kolumner och avgör sedan vilken kolumn din egen strategi ska kopiera."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken fördel pekar kritikerna på i Buffetts 2008-avtal?",
+          "alternativ": [
+            "Att han slapp betala skatt på kupongerna",
+            "Att motparterna hade statliga garantier och systemreserver bakom sig",
+            "Att han fick insiderinformation om TARP-besluten",
+            "Att warrant-programmet var skattefritt vid inlösen"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad som fanns bakom motparterna om affären gått fel — och vem som fick samma trygghet."
+        },
+        {
+          "q": "Varför är Berkshire:s ägande i Moody's ett känsligt kapitel?",
+          "alternativ": [
+            "Institutet betygsatte Berkshire:s egna obligationer uppåt",
+            "Betygsinstitutets stämplar underblåste den bubbla som kritiserades — medan vinsten föll till ägaren",
+            "Moody's konkurrerade med Berkshire i försäkring",
+            "Ägandet skedde i strid med amerikansk rapporteringsplikt"
+          ],
+          "ratt": 1,
+          "tips": "Konflikten ligger mellan den offentliga kritiken och den privata intäkten — inte i något formellt fel."
+        },
+        {
+          "q": "Hur förhåller sig massförstörelsevapen-citatet till Berkshires egna handlingar?",
+          "alternativ": [
+            "Berkshire undvek helt derivat efter citatet",
+            "Berkshire avvecklade allt och nämnde aldrig instrumenten igen",
+            "Bolaget skrev själva långa indexoptioner i megaskala vid samma tid",
+            "Citatet gällde enbart konsumentkrediter"
+          ],
+          "ratt": 2,
+          "tips": "Kursens regel: läs citatet och positionen tillsammans — vad gjorde bolaget medan orden cirkulerade?"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 11,
+      "title": "Replikerbar? — principer att kopiera, resultat att inte vänta",
+      "intro": "Kursens sista kapitel ställer den ärliga frågan: är Buffetts resultat replikerbart — eller survivorship, epok och float-fördel? Svaret blir en uppdelning av snöbollen i det kopierbara och det strukturella, med hans eget ödmjuka svar och en syntes av bokens sexton kapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Frågan är obligatorisk. En man som compundat i sjuttio år från amerikanskt efterkrigstjugotalet, med en försäkringsfloat som strukturhävstång, utan utdelningsskatt på vägen och med livslång hälsa och ett livslångt äktenskapligt stödsystem — det är n lika med ett: en enda observation. Statistiskt är han den yttersta svansen i en fördelning av miljontals investerare; några av orsakerna till att just han lyckades kan inte upprepas ens av honom själv. Att studera honom som bevis för att metoden fungerar vore som att studera lotterivinnarens system. Kursen väljer i stället den hållbara läsningen: resultatet är inte replikerbart; frågan är vilka delar av metoden som är det."
+        },
+        {
+          "type": "text",
+          "content": "Hans eget svar är ödmjukt nog. Buffett har formulerat det i en mening som kursen låter få sista ordet före syntesen: »Du behöver inte vara raketforskare. Investering är inte ett spel där killen med IQ 160 slår killen med 130.« Vad som krävs i stället — enligt honom själv och enligt hela bokens vittnesbörd — är temperament: förmågan att inte agera när alla andra agerar, att läsa och tänka varje dag i decennier och att hålla sig inom en cirkel. Det är just frånvaron av krav på genialitet som gör honom studerbar: hans verktyg — säkerhetsmarginalen utan siffror, Mr Market, det inre rapportkortet, dollartestet för kvarhållna vinster — kräver karaktär och tid, inte IQ."
+        },
+        {
+          "type": "text",
+          "content": "Uppdelningen blir kursens sluttabell. Kopierbart: temperamentet, cirkeldisciplinen, säkerhetsmarginalen, kapitalallokeringens logik (Essays-kursens dollartest), ryktets långsamma byggande (Salomon), ärlighetens redovisning (Gen Re) och — minst kopierat av allt — den långa backen: tålamodet att inte behöva se resultat på tio år. Inte kopierbart: floaten (V11-V12-fördelen), epokens värderingsintervall och ränteutveckling, skattestrukturen i ett amerikanskt försäkringsbolag och survivorship-turen. Delvis kopierbart: prissättningskraftens logik i egna bolag (V14, V09 och V07-V08-tråden från See's) och strukturerade krisavtal (V17) — om än i mindre skala. Outsiders-kursen visar att generaliseringen håller: kapitalallokerare som Henry Singleton nådde Buffett-liknande logik utan att vara Buffett."
+        },
+        {
+          "type": "text",
+          "content": "Syntesen av bokens sexton kapitel: en pojke som var rädd för att dö byggde ett livslångt system för att tiden inte skulle rinna bort — rutter och flipper (kapitel 3) gav systemet, Graham (4) disciplinen, partnerskapen (5) incitamenten, bucklan (6) respekten för kapitalörar, floaten (7) snön, Munger (8) och See's (9) kvaliteten, Susie (10) det mänskliga priset, franchiseprovet (11) tillämpningen, Salomon (12) ryktet, Gen Re (13) ärligheten, 2008 (14) krisens struktur och kontroversen (15) gränsen för vad resultaten kan lära ut. Vad som återstår för eleven är två rader: fukta snön — hitta kapital och förmågor som fastnar — och förläng backen — ge compoundingen tid, hälsa och relationer som håller hela vägen. Kopiera principerna, inte porträttet; resultatet tillhör honom, metoden tillhör alla."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Replikerbarhets-granskningen\",\"rader\":[[\"Faktor\",\"Replikerbar?\",\"Så kopierar du den\"],[\"Temperament mot Mr Market\",\"Ja\",\"Köp- och säljregler skrivna i lugn\"],[\"Säkerhetsmarginal\",\"Ja\",\"Krav på gap mellan pris och värde — utan fasta nummer\"],[\"Kapitalallokeringens logik\",\"Ja\",\"Dollartestet från Essays-kursen\"],[\"Float-hävstång\",\"Nej\",\"Kompensera med tid, låga avgifter, ingen hävstång\"],[\"Epok och survivorship\",\"Nej\",\"Blygsammare avkastningsförväntningar\"],[\"Rykte och nätverk\",\"Delvis\",\"Byggs långsamt; förslösas i en sekund\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Det ärliga svaret på frågan om du kan bli Buffett är nej — och det är befriande: han behövde inte vara geni, han behövde vara konsekvent i sjuttio år. Konsekvensen är den kopierbara delen; geniet behövde han inte ens själv."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen snöbollsplan på tre rader: vad är snön (kapital, produkt, kompetens), vad gör den våt (återinvesteringsavkastningen) och hur lång är backen (antalet år du realistiskt ger den)? Lägg till en fjärde rad: priset — kapitel 10 — och vem som betalar det."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Buffetts eget svar på frågan om vilken begåvning som krävs?",
+          "alternativ": [
+            "Att man behöver vara raketforskare för att hänga med",
+            "Att investering inte är ett spel där IQ 160 slår IQ 130",
+            "Att en matematisk doktorsexamen krävs",
+            "Att talang är allt och rutin ingenting"
+          ],
+          "ratt": 1,
+          "tips": "Svaret flyttar tyngdpunkten från begåvning till något annat — vad gjorde han varje dag i sjuttio år?"
+        },
+        {
+          "q": "Vilken faktor i resultatet är svårast att kopiera för en privat sparare?",
+          "alternativ": [
+            "Att läsa årsredovisningar noggrant",
+            "Att vänta med att sälja under turbulens",
+            "Försäkringsfloaten som strukturell hävstång",
+            "Att hitta bolag med varumärke"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad som kräver licens, balansräkning och prissättningskultur — inte bara karaktär."
+        },
+        {
+          "q": "Vad är kursens slutsats om det replikerbara?",
+          "alternativ": [
+            "Ingenting går att kopiera utan samma epok",
+            "Kopiera resultaten genom att följa hans köp offentligt",
+            "Kopiera principerna — temperament, cirkel, säkerhetsmarginal, tid — inte resultatet",
+            "Vänta på en liknande kris och agera då"
+          ],
+          "ratt": 2,
+          "tips": "Skillnaden mellan att beundra en kurva och att äga en metod — vad bärs över till din egen backe?"
+        }
+      ]
+    }
+  ]
+}

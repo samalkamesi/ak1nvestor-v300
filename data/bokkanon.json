@@ -810,7 +810,7 @@
         "Din personliga pengahistoria styr besluten mer än kalkylbladet"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-034",
@@ -931,7 +931,7 @@
         "Stora positioner över årtionden kräver att du förstår ägare och ledning på djupet"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-039",

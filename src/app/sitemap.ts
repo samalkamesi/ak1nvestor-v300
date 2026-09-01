@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/profil`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/certifikat`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${baseUrl}/topplista`, changeFrequency: "daily", priority: 0.8, lastModified: now },
+    { url: `${baseUrl}/bibliotek`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${baseUrl}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${baseUrl}/terms`, changeFrequency: "yearly", priority: 0.2 },

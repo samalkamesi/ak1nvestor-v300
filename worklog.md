@@ -3380,3 +3380,30 @@ Stage Summary:
   installerbar app, social tävlingslayer
 - Alla fungerar utan env-nycklar; Z.ai aktiveras av ZAI_API_KEY när den
   droppas i Vercel
+
+---
+Task ID: 111-VAG1-GRUND
+Agent: main (Z.ai Code) + 5 bakgrundsagenter (kanon, SA, Murphy, Malkiel, audit)
+Task: MEGA PLAN V2 påbörjad — granskning, megamenu, bibliotek, sanering
+
+Work Log:
+- MEGA_PLAN_V2.md: masterplan (WS-A..F) som alla agenter följer
+- AI-styrelsen rond körd: kö = bloggtakt, CDO-datakällor, vågskattning
+- AUDIT KLAR (data/rapporter/auditrappport-2026-09-01.md): 704/704 URL 200,
+  0 trasiga länkar, P1=1 (manglat labb-case), P2=5, P3=4
+- P1 FIXAD: case-studies.json 33 manglingar (FÖRSIKTIGT KÖP, kärna, Synergimål,
+  MSEK/år, material/Waters falska positiva reparerade)
+- P2 FIXADE: canonical på /, 404 egen metadata+design, dubblettitlar
+  differentierade (pf-06/ud-02, Fannie/Freddie), policy-sidor server-renderade
+  med metadata, <main>-wrap i SeoPageShell (a11y)
+- WS-F: sanera-aao.mjs — 32 manglingar fixade i deep-courses.json (tabeller)
+- WS-D: HUVUDMENY (megamenu Lär/Analysera/Träna) i sticky header på alla
+  SEO-sidor — samma DNA
+- WS-A: /bibliotek byggd (sök+filter kategori/tier/AKM1-variabel, bok-kort,
+  kurslänkar) — fylls med data när kanon-agenten levererar
+- 4 agenter bygger parallellt: bokkanon-100, Security Analysis, Murphy TA,
+  Malkiel Random Walk → data/bokmaster/ + data/bokkanon.json
+- verktyg/integrera-bokmaster.mjs: säker merge med schemavalidering
+
+Stage Summary:
+- 714 sidor · grunden för kontinuerlig parallell byggnation lagd

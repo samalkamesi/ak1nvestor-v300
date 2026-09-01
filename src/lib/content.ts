@@ -112,6 +112,36 @@ export function getCourse(slug: string): Course | null {
   return getCourses()[slug] ?? null;
 }
 
+// ── Bokkanon ─────────────────────────────────────────────────────────────────
+
+export type Bok = {
+  id: string;
+  titel: string;
+  author: string;
+  year: number;
+  kat: string;
+  niva: number;
+  why: string;
+  ak: string[];
+  ts: string[];
+  lessons: string[];
+  tier: number;
+  status: string;
+};
+
+let bokCache: Bok[] | null = null;
+
+export function getBokkanon(): Bok[] {
+  if (bokCache) return bokCache;
+  try {
+    const raw = readFileSync(join(ROOT, "data", "bokkanon.json"), "utf8");
+    bokCache = JSON.parse(raw).bocker || [];
+  } catch {
+    bokCache = [];
+  }
+  return bokCache!;
+}
+
 // ── Analyser ────────────────────────────────────────────────────────────────
 
 export function getAnalyses(): Analysis[] {

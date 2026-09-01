@@ -1,51 +1,13 @@
-"use client";
+import type { Metadata } from "next";
+import { SpaHem } from "@/components/ak1a/spa-hem";
 
-import * as React from "react";
-import { useAk1aStore } from "@/lib/ak1a-store";
-import { useAutoLogger } from "@/lib/ak1a/use-activity-logger";
-import { Header } from "@/components/ak1a/header";
-import { Footer } from "@/components/ak1a/footer";
-import { SearchModal, SummaryDrawer, ShareDialog } from "@/components/ak1a/overlays";
-import { HomeSection } from "@/components/ak1a/sections/home-section";
-import { PrecSection } from "@/components/ak1a/sections/prec-section";
-import { KurserSection } from "@/components/ak1a/sections/kurser-section";
-import { LabbSection } from "@/components/ak1a/sections/labb-section";
-import { OmOssSection } from "@/components/ak1a/sections/om-oss-section";
-import { StyrelseSection } from "@/components/ak1a/sections/styrelse-section";
-import { AnalyserSection } from "@/components/ak1a/sections/analyser-section";
-import { AktierSection } from "@/components/ak1a/sections/aktier-section";
-import { UtbildningSection } from "@/components/ak1a/sections/utbildning-section";
-import { PortalSection } from "@/components/ak1a/sections/portal-section";
-import { StrategiSection } from "@/components/ak1a/sections/strategi-section";
-import { Fas3Section } from "@/components/ak1a/sections/fas3-section";
+export const metadata: Metadata = {
+  title: "AK1A Research Lab — Från utbildning till inkomst | Ak1 Apex Nexus",
+  description:
+    "Sveriges enda institutionella metodik, byggd för privatpersoner. Djupare än en blogg. Ärligare än en bank. Snabbare än en utbildning. Pedagogisk finansanalys — inte investeringsråd.",
+  alternates: { canonical: "https://lab.ak1nvestor.com" },
+};
 
 export default function Page() {
-  const { section, isAdmin } = useAk1aStore();
-  // Auto-log client activity for admin dashboard
-  useAutoLogger();
-
-  return (
-    <div className="flex min-h-screen flex-col max-w-full overflow-x-hidden">
-      <Header />
-      <main className="flex-1">
-        {section === "hem" && <HomeSection />}
-        {section === "prec" && <PrecSection />}
-        {section === "analyser" && <AnalyserSection />}
-        {section === "aktier" && <AktierSection />}
-        {section === "kurser" && <KurserSection />}
-        {section === "labb" && <LabbSection />}
-        {/* STYRELSE only for admin — backend system, not customer-facing */}
-        {section === "styrelse" && isAdmin && <StyrelseSection />}
-        {section === "utbildning" && <UtbildningSection />}
-        {section === "strategi" && <StrategiSection />}
-        {section === "fas3" && <Fas3Section />}
-        {section === "om-oss" && <OmOssSection />}
-        {section === "portal" && <PortalSection />}
-      </main>
-      <Footer />
-      <SearchModal />
-      <SummaryDrawer />
-      <ShareDialog />
-    </div>
-  );
+  return <SpaHem />;
 }

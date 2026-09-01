@@ -5,6 +5,7 @@ import { getCourses, getCourse } from "@/lib/content";
 import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
+import { KursQuiz } from "@/components/ak1a/kurs-quiz";
 
 export const dynamic = "force-static";
 
@@ -188,6 +189,9 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                       );
                     })}
                 </div>
+                {(ch as any).quiz && (
+                  <KursQuiz slug={slug} kapitelNr={ch.num} fragor={(ch as any).quiz} />
+                )}
                 <div className="mt-4 flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
                   <span className="h-px flex-1 bg-gold/20" />
                   {ch.num < course.chapters.length ? `Nästa: ${course.chapters[ch.num]?.title || ""}` : "Kursen klar ⭐"}

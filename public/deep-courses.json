@@ -40466,6 +40466,40 @@
             "type": "utmaning",
             "content": "Gå igen din portfölj (eller bevakningslista) och sortera varje innehav i två kolumner: 'bolaget betalar mig' (utdelning, kassaflöde, tillväxt i resultat) eller 'nästa köpare betalar mig' (kursuppgång jag hoppas på). Var ärlig — hur många hamnade i kolumn två?"
           }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är Grahams tre krav för att en operation ska räknas som INVESTERING?",
+            "alternativ": [
+              "Högre avkastning, kortare tid, mindre risk",
+              "Grundlig analys, säkerhet för kapitalet, tillfredsställande avkastning",
+              "Diversifiering, hävstång, tajming",
+              "Teknisk analys, momentum, stop-loss"
+            ],
+            "ratt": 1,
+            "tips": "Graham krävde analys FÖRE kapital — inte signaler efter kursen."
+          },
+          {
+            "q": "Du köper en aktie för att 'den har gått upp 40% i år'. Grahams dom?",
+            "alternativ": [
+              "Investering — trenden är din vän",
+              "Spekulering — din avkastning beror på nästa köpare, inte bolaget",
+              "Investering om du sätter stop-loss",
+              "Varken eller — Graham tog inte ställning"
+            ],
+            "ratt": 1,
+            "tips": "Fråga: varifrån ska avkastningen komma — bolaget eller nästa köpare?"
+          },
+          {
+            "q": "Vilken fråga ska du ställa vid varje köp enligt kapitel 1?",
+            "alternativ": [
+              "Kommer chartet att bryta upp?",
+              "Varifrån kommer min avkastning — bolaget eller nästa köpare?",
+              "Vad säger analystäckningen?",
+              "Hur hög är hävstången?"
+            ],
+            "ratt": 1
+          }
         ]
       },
       {
@@ -40485,6 +40519,39 @@
           {
             "type": "utmaning",
             "content": "Ta en aktie du följer. Skriv ner dagens kurs och sedan tre rubriker från senaste månaden om bolaget. Fråga: förändrade något i rubrikerna BOLAGET — eller bara MARKNADENS HUMÖR? Om svaret är humöret: hur agerade du (eller skulle du agera ha agerat)?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vem bestämmer Mr Markets pris?",
+            "alternativ": [
+              "Bolagets verkliga värde",
+              "Mr Markets humör — inte bolagets värde",
+              "Revisorn",
+              "Centralbanken"
+            ],
+            "ratt": 1,
+            "tips": "Priset är hans ÅSIKT, inte värdet."
+          },
+          {
+            "q": "En aktie du förstår faller 20% utan att affären förändrats. Mr Market-läsning?",
+            "alternativ": [
+              "Panik — sälj innan det värre",
+              "Erbjudande om rabatt — hans humör är din möjlighet",
+              "Signal om att bolaget är trasigt",
+              "Dags att korta"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Buffett kallar Mr Market-kapitlet...",
+            "alternativ": [
+              "Överdrivet",
+              "Det viktigaste som skrivits om investering",
+              "Endast relevant 1949",
+              "Bra för daytraders"
+            ],
+            "ratt": 1
           }
         ]
       },
@@ -40506,6 +40573,40 @@
             "type": "utmaning",
             "content": "Räkna: om du anser en aktie är värd 100 kronor och köper till 70 — hur stor procentuell försämring av värdet tål du innan du förlorar? Räkna sedan om du köpt till 95. Vilken position sover du bättre med?"
           }
+        ],
+        "quiz": [
+          {
+            "q": "Marginal of safety liknas vid...",
+            "alternativ": [
+              "En bubbelpool som fylls",
+              "En bro byggd för 30 ton som bara lastas med 10",
+              "En racerbil utan bromsar",
+              "En schackmatch"
+            ],
+            "ratt": 1,
+            "tips": "Konstruktion för MER än förväntad last."
+          },
+          {
+            "q": "Vad är skillnaden på att ha marginal kontra inte?",
+            "alternativ": [
+              "Ingen — bara psykologi",
+              "Med marginal kan du ha FEL och ändå klara dig; utan krävs att du har rätt",
+              "Marginal ger högre avkastning alltid",
+              "Marginal gäller bara obligationer"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Du värderar en aktie till 100 kr. Vilket pris ger Grahams marginal?",
+            "alternativ": [
+              "105 kr",
+              "95 kr",
+              "70 kr",
+              "100 kr exakt"
+            ],
+            "ratt": 2,
+            "tips": "30-50% under konservativt värde = bro för 30 ton."
+          }
         ]
       },
       {
@@ -40525,6 +40626,38 @@
           {
             "type": "utmaning",
             "content": "Fundera: passar den defensiva eller aktiva profilerna ditt liv just nu — tid, intresse, temperament? Skriv ner ditt val och en anledning. Återkom till svaret om ett år."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Den defensiva investerarens grundfördelning?",
+            "alternativ": [
+              "100% aktier",
+              "25-75% aktier, resten räntor, återbalanserat",
+              "100% kassa",
+              "50% krypto"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vad är dollar cost averaging?",
+            "alternativ": [
+              "Dubbelt belopp när marknaden stiger",
+              "Samma belopp varje månad — köper mer när priset faller",
+              "Att snitta ner vid förlust",
+              "Att tajma toppar"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Grahams svar på 'tråkigt' om index + återbalansering?",
+            "alternativ": [
+              "Håller med — det är tråkigt",
+              "Att tjäna pengar utan ansträngning är inte tråkigt — att FÖRLORA dem med stor ansträngning är det",
+              "Tråkigt ger lägre avkastning",
+              "Aktiv handlar är alltid bättre"
+            ],
+            "ratt": 1
           }
         ]
       },
@@ -40546,6 +40679,39 @@
             "type": "utmaning",
             "content": "Välj ett bolag du äger eller bevakar. Testa det mot Grahams sju krav, ett i taget. Hur många klarar det? Vilka tre krav faller oftast — och vad säger det om marknadens nuvarande humör?"
           }
+        ],
+        "quiz": [
+          {
+            "q": "Hur många av Grahams sju krav klarar typiska bolag vid en given tidpunkt?",
+            "alternativ": [
+              "Alla",
+              "Nästan inga — DET är poängen",
+              "Halva",
+              "Bara banker"
+            ],
+            "ratt": 1,
+            "tips": "Checklistan ska blocka — annars är den ingen checklista."
+          },
+          {
+            "q": "Vilka två kompletterande strategier ges den aktive?",
+            "alternativ": [
+              "Daytrading och swingtrading",
+              "Secondary companies under värde + specialsituationer (fusioner, spin-offs)",
+              "Krypto och optioner",
+              "Momentum och IPO"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vilka P-tal kräver Graham (krav 6-7)?",
+            "alternativ": [
+              "P/B > 3 och P/E > 30",
+              "P/B under 1,5 och P/E under 15",
+              "P/E exakt 10",
+              "Inga krav på multiplar"
+            ],
+            "ratt": 1
+          }
         ]
       },
       {
@@ -40565,6 +40731,38 @@
           {
             "type": "utmaning",
             "content": "Leta upp 1972 års Nifty Fifty-lista (sökbara). Välj tre bolag som 'kunde aldrig falla'. Ta reda på hur mycket de föll 1973-74. Jämför med ett 'tråkigt' bolag med marginal. Vad betyder det för hur du ser på dagens mest hypade bolag?"
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är mönstret Graham ser i alla bubblor?",
+            "alternativ": [
+              "Slumpmässiga händelser",
+              "Verklig trend → värderingen frikopplas → 'det är annorlunda nu' → vanligt folk med hävstång → krasch",
+              "Centralbankens fel enbart",
+              "Krig"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Nifty Fifty 1972: vad hände de 'köp-aldrig-sälj'-bolagen?",
+            "alternativ": [
+              "Steg för alltid",
+              "Föll 70-90% 1973-74",
+              "Konkurrerades ut av index",
+              "Nasdaq stängde dem"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vad gör historien med dig enligt Graham?",
+            "alternativ": [
+              "Gör dig till spåman",
+              "Gör dig till skeptiker",
+              "Garanterar återupprepning exakt",
+              "Inget — historien är irrelevant"
+            ],
+            "ratt": 1
           }
         ]
       },
@@ -40586,6 +40784,38 @@
             "type": "utmaning",
             "content": "Hämta senaste årsredovisningen för ett bolag du äger. Beräkna: (a) genomsnittligt resultat senaste 5 åren, (b) omsättningstillgångar minus totala skulder. Jämför båda mot börsvärdet. Vilken siffra överraskade dig mest — och vad beror skillnaden på?"
           }
+        ],
+        "quiz": [
+          {
+            "q": "Vad är en 'red flag' Graham letar i årsredovisningar?",
+            "alternativ": [
+              "Stigande omsättning",
+              "Upprepade 'engångsposter'",
+              "Hög utdelning",
+              "Nya produkter"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vad är tjänstekraft (earnings power)?",
+            "alternativ": [
+              "Senaste kvartalets vinst",
+              "Genomsnittligt resultat över en konjunkturcykel (5-10 år)",
+              "Väntetillväxten",
+              "Analytikerkonsensus"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vad kännetecknar ett 'net-net'?",
+            "alternativ": [
+              "Hög utdelning",
+              "Handlas under omsättningsbara nettokapital (kortfristiga tillgångar minus ALLA skulder)",
+              "Ständig tillväxt",
+              "P/E över 20"
+            ],
+            "ratt": 1
+          }
         ]
       },
       {
@@ -40605,6 +40835,38 @@
           {
             "type": "utmaning",
             "content": "Sammanfatta kursen i EN mening som du själv kan förklara för en vän som aldrig läst Graham — utan att använda orden 'aktier', 'köpa' eller 'marknad'. Klart du kan."
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Hur utvecklade Buffett Grahams cigarrettopetter?",
+            "alternativ": [
+              "Till korttidshandel",
+              "Till kvalitetsbolag med hållbar fördel — kärnan (Mr Market, marginal) förändrades aldrig",
+              "Till makro-tajming",
+              "Till krypto"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Vilka tre grundstenar förändrades aldrig?",
+            "alternativ": [
+              "Chart, RSI, MACD",
+              "Mr Market, marginal of safety, investering ≠ spekulering",
+              "Hävstång, diversifiering, shorting",
+              "IPO, buyback, split"
+            ],
+            "ratt": 1
+          },
+          {
+            "q": "Graham gav ett ramverk för att...",
+            "alternativ": [
+              "Bli rik snabbt",
+              "Inte bli utnyttjad — rikedomen var bieffekt",
+              "Slå index varje år",
+              "Undvika skatt"
+            ],
+            "ratt": 1
           }
         ]
       }

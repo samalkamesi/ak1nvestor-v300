@@ -3342,3 +3342,41 @@ Stage Summary:
 - Världens första finansutbildning med 4 komplettäckta böcker + quiz +
   AI-mentor + Short-Seller + spaced repetition + certifikat
 - Parallell byggnation: 4 agenter + main = 5 system samtidigt
+
+---
+Task ID: 111-115-NEXT-FIVE
+Agent: main (Z.ai Code)
+Task: SR-UI i chatten + Z.ai-LLM + Dark mode + PWA + Topplista
+
+Work Log:
+- 111 SPACED REPETITION I CHATTEN: src/lib/spaced-repetition.ts (SM-2:
+  facit/intervall/repetitioner, +5 XP per Bra/Lätt-svar en gång/kort/dag)
+  + ChatWidget: snabbkommando "🃏 Repetera", "N förfallna"-badge i headern,
+  flashcard-session (framsida → vänd → Svår/Bra/Lätt), sammanfattning med
+  statistik. "repetera" i input triggar session; "#" = SR-konvention.
+- 112 Z.AI-KOPPLING: src/lib/zai.ts (host allow-list api.z.ai/api.bigmodel.cn,
+  https-only, 25s timeout, null-fallback). Chatbot: LLM-svar GROUNDAT i
+  kursmatchningar + AKM1-regelverk (V-nummer, aldrig hitta på formler).
+  Short-Seller: sokratisk system-prompt, LLM läser HELA tesen och angriper
+  svagaste antagande. AKTIVERAS med ZAI_API_KEY i Vercel env — utan nyckel
+  körs deterministiskt som innan.
+- 113 DARK MODE: .dark-temat fanns i globals.css — la TemaVaxlare (🌙/☀️)
+  i SeoPageShell-nav på ALLA sidor. Granskade text-white: alla på färgade
+  knappar = OK i mörkt läge.
+- 114 PWA: src/app/manifest.ts (auto /manifest.webmanifest) + ikoner
+  genererade med sharp (192/512/maskable/apple) + public/sw.js
+  (nätverksförst för sidor, cache-först för statiskt, API aldrig cachat)
+  + PwaRegistrerare (endast prod) + viewport/themeColor i layout.
+- 115 TOPLISTA: /topplista + /api/topplista (GET aggregerar xp_sync-events,
+  POST synkar + returnerar egen rank; e-post maskeras till initialer,
+  namn visas bara om angett). Podium 🥇🥈🥉 + nivåetiketter + egen rad
+  highlightad. Nav 🏆 + sitemap + chatbot-intent "topplista".
+- Sitemap kompletterad: laroplan + profil + certifikat + topplista.
+- Städning: public/robots.txt + public/sitemap.txt bort (dubletter av
+  metadata-routes robots.ts/sitemap.ts).
+
+Stage Summary:
+- 5 nya system på en session: minnesträning, LLM-grund, mörkt läge,
+  installerbar app, social tävlingslayer
+- Alla fungerar utan env-nycklar; Z.ai aktiveras av ZAI_API_KEY när den
+  droppas i Vercel

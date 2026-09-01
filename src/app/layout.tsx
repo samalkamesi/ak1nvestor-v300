@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
@@ -7,6 +7,7 @@ import { Ak1aStoreProvider } from "@/components/ak1a/store-provider";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { ChatWidget } from "@/components/ak1a/chat-widget";
 import { ShortSeller } from "@/components/ak1a/short-seller";
+import { PwaRegistrerare } from "@/components/ak1a/pwa-registrerare";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,6 +29,16 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f1e8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0b09" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: "AK1A Research Lab — Från utbildning till inkomst | Ak1 Apex Nexus",
   description:
@@ -46,6 +57,15 @@ export const metadata: Metadata = {
   authors: [{ name: "Ak1 Apex Nexus" }],
   icons: {
     icon: "/ak1a/favicon.svg",
+    apple: "/ak1a/apple-touch-icon.png",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "AK1A Research Lab",
+  },
+  formatDetection: {
+    telephone: false,
   },
   openGraph: {
     title: "AK1A Research Lab — Sveriges enda institutionella metodik för privatpersoner",
@@ -150,6 +170,7 @@ export default function RootLayout({
             <Toaster />
             <ChatWidget />
             <ShortSeller />
+            <PwaRegistrerare />
           </Ak1aStoreProvider>
         </ThemeProvider>
       </body>

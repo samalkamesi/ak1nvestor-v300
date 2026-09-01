@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TemaVaxlare } from "@/components/ak1a/tema-vaxlare";
 
 /**
  * Enkelt skal för crawlbara SEO-sidor (server components).
@@ -42,7 +43,9 @@ export function SeoPageShell({
             <Link href="/laroplan" className="text-gold">Läroplan</Link>
             <Link href="/kurser" className="text-muted-foreground hover:text-foreground">Kurser</Link>
             <Link href="/blogg" className="text-muted-foreground hover:text-foreground">Blogg</Link>
+            <Link href="/topplista" className="text-muted-foreground hover:text-foreground">🏆</Link>
             <Link href="/logga-in" className="rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90">Logga in</Link>
+            <TemaVaxlare />
           </div>
         <div className="mt-8">{children}</div>
         <footer className="mt-16 border-t border-gold/30 pt-6 text-xs text-muted-foreground">

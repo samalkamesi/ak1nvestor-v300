@@ -66,4 +66,16 @@ tasks + 201 cases + analyser + protokoll) och verifierar hela kedjan.
 - Sitemap: **459 URL:er** (startade natten med 1)
 - Statiskt genererade sidor: **470** (225 kurser + 201 cases + 23 blogg + analyser + mer)
 - Bygget: ✅ grönt, lint rent på alla nya filer
-- Worklog: Task 75 dokumenterad
+- **Committat lokalt: `902fe10` + `0939f08`** (599 filer) — INTE pushat, säg till om du vill
+- Worklog: Task 75–76 dokumenterade
+
+## 6. Säkerhetshärdning som tillkom under natten
+
+Säkerhetsscannern krävde fixar innan commit — bra sådan:
+- **SSRF**: 10 API-routes byggde Supabase-URL:er ur miljövariabler utan kontroll.
+  Ny gemensam helper `src/lib/supabase-rest.ts` — endast `https://*.supabase.co`,
+  localhost/privata nätverk avvisas. Alla routes refaktorerade och testade.
+- **Path traversal**: 5 döda engångsskript togs bort (2 hade hårda sökvägar från en
+  främmande maskin, 1 var beroende av borttagen Prisma). Finns kvar i git-historien.
+- `MIGRATE_SECRET`-låset på migrerings-endpointen är på plats i kod — lägg till
+  variabeln i Vercel (steg 3 ovan) så den blir aktiv.

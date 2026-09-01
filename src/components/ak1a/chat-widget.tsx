@@ -2,7 +2,15 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor } from "@/lib/member-local";
+import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor, addXP } from "@/lib/member-local";
+import {
+  forfallnaKort,
+  bedomKort,
+  forjanaXP,
+  srStatistik,
+  ALLA_KORT,
+  type SRKort,
+} from "@/lib/spaced-repetition";
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
@@ -118,9 +126,18 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
   return forslag.slice(0, 4);
 }
 
+/** Blanda samtliga 100 kort (övning även när inget är förfallet) */
+function blandaKort(): SRKort[] {
+  const ko = [...ALLA_KORT];
+  for (let i = ko.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [ko[i], ko[j]] = [ko[j], ko[i]];
+  }
+  return ko.slice(0, 10);
+}
+
 /** Kontextmedveten hälsning */
-function halsning(ctx: elevContext): string {
-  const timme = new Date().getHours();
+function halsning(ctx: elevContext): string {  const timme = new Date().getHours();
   const tid = timme < 10 ? "God morgon" : timme < 13 ? "God dag" : timme < 18 ? "God eftermiddag" : "God kväll";
 
   if (!ctx.inloggad) {
@@ -149,6 +166,15 @@ export function ChatWidget() {
   const [fragor, setFraga] = useState("");
   const [busy, setBusy] = useState(false);
   const [hydrerad, setHydrerad] = useState(false);
+
+  // ── SPACED REPETITION-session i chatten ──
+  const [srAktiv, setSrAktiv] = useState(false);
+  const [srKo, setSrKo] = useState<SRKort[]>([]);
+  const [srIndex, setSrIndex] = useState(0);
+  const [srVisaSvar, setSrVisaSvar] = useState(false);
+  const [srResultat, setSrResultat] = useState({ svara: 0, bra: 0, latta: 0, xp: 0 });
+  const [srForfallna, setSrForfallna] = useState(0);
+
   const pathname = usePathname();
   const router = useRouter();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -169,8 +195,82 @@ export function ChatWidget() {
       aktuellSida: pathname || "/",
       sidTyp: analyseraSida(pathname || "/"),
     });
+    setSrForfallna(forfallnaKort(1000).length);
     setHydrerad(true);
   }, [pathname]);
+
+  // ── SR: starta repetitionssession ──
+  const startaSR = useCallback((alla: boolean = false) => {
+    const ko = alla ? blandaKort() : forfallnaKort(10);
+    if (ko.length === 0) {
+      const st = srStatistik();
+      setMeddelanden((p) => [...p, {
+        fran: "ai",
+        ikon: "🃏",
+        text: `Inga kort förfallna idag — perfekt discipl! 🌟\n\nDin statistik: ${st.beharskade}/${st.totalt} behärskade (sitter i långt minne) · ${st.repetitionerTotalt} repetitioner totalt.\nNästa kort förfaller ${st.nastaNasta || "snart"}. Glömskekurvan jobbar för dig — kom tillbaka imorgon.`,
+        handlings: [
+          { text: "Blanda samtliga 100 kort", lank: "sr:alla", ikon: "🎴", beskrivning: "Övning trots inga förfallna" },
+          { text: "Tillbaka till lärandet", lank: "/laroplan", ikon: "🗺️", beskrivning: "Nästa steg" },
+        ],
+      }]);
+      return;
+    }
+    setSrKo(ko);
+    setSrIndex(0);
+    setSrVisaSvar(false);
+    setSrResultat({ svara: 0, bra: 0, latta: 0, xp: 0 });
+    setSrAktiv(true);
+  }, []);
+
+  // ── SR: betygsätt kort (SM-2: Svär=2, Bra=4, Lätt=5) ──
+  const bedom = useCallback((kvalitet: 2 | 4 | 5) => {
+    const kort = srKo[srIndex];
+    if (!kort) return;
+    bedomKort(kort.id, kvalitet);
+
+    let xpFortjanat = 0;
+    if (kvalitet >= 4 && forjanaXP(kort.id)) {
+      addXP(5);
+      xpFortjanat = 5;
+    }
+    setSrResultat((r) => ({
+      svara: r.svara + (kvalitet === 2 ? 1 : 0),
+      bra: r.bra + (kvalitet === 4 ? 1 : 0),
+      latta: r.latta + (kvalitet === 5 ? 1 : 0),
+      xp: r.xp + xpFortjanat,
+    }));
+
+    if (srIndex + 1 >= srKo.length) {
+      // Session klar → sammanfattning
+      setSrAktiv(false);
+      setSrKo([]);
+      setSrResultat((r) => {
+        const total = r.svara + r.bra + r.latta;
+        const st = srStatistik();
+        setMeddelanden((p) => [...p, {
+          fran: "ai",
+          ikon: "🏆",
+          text: `Repetitionssession klar! 🏆\n\n${total} kort repeterade: ${r.latta} ⚡ lätta · ${r.bra} ✅ bra · ${r.svara} 🔁 svåra (kommer igen imorgon).\n+${r.xp} XP förtjänade.\n\nTotalt: ${st.beharskade}/${st.totalt} kort i långt minne. Glömskekurvan bestämmer när nästa kort dyker upp — jag påminner dig här.`,
+          handlings: [
+            { text: "Fortsätt lära", lank: "/laroplan", ikon: "🗺️", beskrivning: "Nästa steg i utbildningen" },
+            { text: "Testa mig på en kurs", lank: "/kurser", ikon: "🧠", beskrivning: "Quiz: +10 XP per rätt svar" },
+          ],
+        }]);
+        return r;
+      });
+    } else {
+      setSrIndex((i) => i + 1);
+      setSrVisaSvar(false);
+    }
+  }, [srKo, srIndex]);
+
+  // Nollställ ev. SR-läge när chatten stängs
+  useEffect(() => {
+    if (!oppnad && srAktiv) {
+      setSrAktiv(false);
+      setSrKo([]);
+    }
+  }, [oppnad, srAktiv]);
 
   // Initiera med proaktiv hälsning när chatt öppnas
   useEffect(() => {
@@ -186,7 +286,7 @@ export function ChatWidget() {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [meddelanden]);
+  }, [meddelanden, srIndex, srVisaSvar, srAktiv]);
 
   // Uppdatera vid sidbyte
   useEffect(() => {
@@ -199,10 +299,18 @@ export function ChatWidget() {
     }
   }, [pathname]);
 
-  const skicka = async () => {
-    const q = fragor.trim();
+  const skicka = async (text?: string) => {
+    const q = (text ?? fragor).trim();
     if (!q || busy) return;
     setFraga("");
+
+    // Intercept: repetition startas lokalt (SM-2 går via localStorage, ej API)
+    if (/repeter|flashcard|minnesträning|flashkort/i.test(q)) {
+      setMeddelanden((p) => [...p, { fran: "du", text: q }]);
+      startaSR(/alla|blanda/i.test(q));
+      return;
+    }
+
     setMeddelanden((p) => [...p, { fran: "du", text: q }]);
     setBusy(true);
 
@@ -243,6 +351,7 @@ export function ChatWidget() {
     { text: "Räkna", ikon: "🧮", fraga: "kalkylator" },
     { text: "Portfölj", ikon: "💼", fraga: "portfölj" },
     { text: "Testa mig", ikon: "🧠", fraga: "testa min nivå" },
+    { text: "Repetera", ikon: "🃏", fraga: "repetera" },
     { text: "Nästa steg", ikon: "➡️", fraga: "vad är nästa steg för mig" },
   ];
 
@@ -262,6 +371,15 @@ export function ChatWidget() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] opacity-80">{ctx.sidTyp}</span>
+              {hydrerad && srForfallna > 0 && (
+                <button
+                  onClick={() => startaSR()}
+                  className="rounded-full bg-primary-foreground/15 px-2 py-0.5 text-[10px] font-bold hover:bg-primary-foreground/25"
+                  title={`${srForfallna} flashcards förfallna — repetera nu`}
+                >
+                  🃏 {srForfallna} förfallna
+                </button>
+              )}
               <button onClick={() => setOppnad(false)} aria-label="Stäng" className="text-lg leading-none">×</button>
             </div>
           </div>
@@ -271,7 +389,7 @@ export function ChatWidget() {
             {snabbKommandon.map((k) => (
               <button
                 key={k.text}
-                onClick={() => { setFraga(k.fraga); setTimeout(skicka, 50); }}
+                onClick={() => skicka(k.fraga)}
                 className="flex-1 rounded-lg border border-gold/20 bg-paper px-1 py-1.5 text-[10px] font-medium hover:border-gold/50 hover:bg-gold/10"
               >
                 {k.ikon} {k.text}
@@ -281,6 +399,86 @@ export function ChatWidget() {
 
           {/* Meddelanden */}
           <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-3">
+
+            {/* ── SPACED REPETITION-session ── */}
+            {srAktiv && srKo[srIndex] && (
+              <div className="rounded-xl border-2 border-gold/40 bg-card p-3 shadow-sm">
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[10px] font-bold text-gold">
+                    🃏 {srKo[srIndex].kategori}
+                  </span>
+                  <span className="text-[10px] text-muted-foreground">
+                    Kort {srIndex + 1}/{srKo.length} · +5 XP per bra svar
+                  </span>
+                </div>
+                <div className="mb-3 h-1 w-full overflow-hidden rounded-full bg-gold/10">
+                  <div
+                    className="h-full bg-gold transition-all"
+                    style={{ width: `${((srIndex) / srKo.length) * 100}%` }}
+                  />
+                </div>
+
+                {/* Framsidan — alltid synlig */}
+                <div className="rounded-lg border border-gold/20 bg-paper/60 px-3 py-3 text-center">
+                  <div className="text-[10px] uppercase tracking-wide text-muted-foreground">FRÅGA</div>
+                  <div className="mt-1 text-sm font-semibold leading-snug text-foreground">
+                    {srKo[srIndex].framsida}
+                  </div>
+                </div>
+
+                {/* Baksidan — visas efter vändning */}
+                {srVisaSvar ? (
+                  <div className="mt-2 rounded-lg border border-bull/30 bg-bull/5 px-3 py-3 text-center">
+                    <div className="text-[10px] uppercase tracking-wide text-muted-foreground">SVAR</div>
+                    <div className="mt-1 text-xs leading-relaxed text-foreground/90">
+                      {srKo[srIndex].baksida}
+                    </div>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setSrVisaSvar(true)}
+                    className="mt-2 w-full rounded-lg border border-gold/40 bg-gold/10 px-3 py-2.5 text-xs font-bold text-gold hover:bg-gold/20"
+                  >
+                    🔄 Vänd kortet — tänk först, kolla sen
+                  </button>
+                )}
+
+                {/* Betygsättning — först när svaret är vant */}
+                {srVisaSvar && (
+                  <div className="mt-2 grid grid-cols-3 gap-1.5">
+                    <button
+                      onClick={() => bedom(2)}
+                      className="rounded-lg border border-bear/40 bg-bear/5 px-1 py-2 text-[11px] font-semibold text-bear hover:bg-bear/15"
+                      title="Kommer igen imorgon (SM-2 nollställer intervallet)"
+                    >
+                      🔁 Svår
+                    </button>
+                    <button
+                      onClick={() => bedom(4)}
+                      className="rounded-lg border border-gold/40 bg-gold/10 px-1 py-2 text-[11px] font-semibold text-gold hover:bg-gold/20"
+                      title="Rätt — intervallet växer"
+                    >
+                      ✅ Bra
+                    </button>
+                    <button
+                      onClick={() => bedom(5)}
+                      className="rounded-lg border border-bull/40 bg-bull/5 px-1 py-2 text-[11px] font-semibold text-bull hover:bg-bull/15"
+                      title="Satt direkt — långt intervall"
+                    >
+                      ⚡ Lätt
+                    </button>
+                  </div>
+                )}
+
+                <button
+                  onClick={() => { setSrAktiv(false); setSrKo([]); }}
+                  className="mt-2 w-full text-[10px] text-muted-foreground underline-offset-2 hover:underline"
+                >
+                  Avsluta repetitionen
+                </button>
+              </div>
+            )}
+
             {meddelanden.map((m, i) => (
               <div key={i}>
                 <div
@@ -299,7 +497,12 @@ export function ChatWidget() {
                       <button
                         key={j}
                         onClick={() => {
-                          if (h.lank.startsWith("#")) {
+                          if (h.lank === "sr:alla") {
+                            startaSR(true);
+                          } else if (h.lank === "#") {
+                            // Konvention: "#" = starta spaced repetition i chatten
+                            startaSR();
+                          } else if (h.lank.startsWith("#")) {
                             // Scroll till sektion på samma sida
                             document.querySelector(h.lank)?.scrollIntoView({ behavior: "smooth" });
                           } else {
@@ -339,7 +542,7 @@ export function ChatWidget() {
               className="flex-1 rounded-lg border border-gold/30 bg-card px-3 py-2.5 text-xs outline-none focus:border-gold"
             />
             <button
-              onClick={skicka}
+              onClick={() => skicka()}
               disabled={busy}
               className="rounded-lg bg-gold px-4 py-2.5 text-xs font-bold text-primary-foreground disabled:opacity-50"
             >

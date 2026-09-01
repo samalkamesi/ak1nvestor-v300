@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCourses } from "@/lib/content";
 import { EKOSYSTEM, ModellRef } from "@/lib/ekosystem";
+import { zaiAktiv, zaiChat } from "@/lib/zai";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -59,6 +60,18 @@ const HISTORISKA_FALL: Record<string, { bolag: string; fel: string; lardom: stri
   "roe": { bolag: "H&M", fel: "ROe-fall från 30% till 10% vid moat-förlust", lardom: "ROE är en produkt av moat — när moat försvinner, försvinner ROE" },
 };
 
+/** System-prompt för Z.ai GLM — sokratisk Reasoning Mode (ALDRIG direkta svar) */
+const ZAI_SYSTEM = `Du är "Short-Sellern" — en sokratisk grillningsagent i AK1A Research Lab (svensk finansutbildning).
+DIN ENDA UPPGIFT: angrip elevens investeringsanalys med skarpa motfrågor. Du ger ALDRIG direkta svar, ALDRIG beröm, ALDRIG bekräftelse — bara frågor som tvingar eleven att granska sina antaganden.
+
+REGLER:
+1. Ett svar = EN enda motfråga (max 3 meningar). Ingen lista, ingen utläggning.
+2. Attackera alltid det SVAGASTE antagandet i elevens text: sifferunderlag, snittberäkningar, hållbarhet, WACC/multipel-val, moat, hävstång, konjunkturkänslighet.
+3. Referera AKM1-variabler med V-nummer när det passar (V01 försäljningstillväxt, V02 ARR, V04 bruttomarginal, V06 skuld/eget kapital, V09 ROE, V10 kassaflöde, V13 moat, V19 marginal of safety).
+4. Historisk grund: relatera vid lämplighet till verkliga fall (Sinch, H&M, Penn Central, LTV, Nifty Fifty, IT-bubblan 2000, 2008).
+5. Svaret skrivs på svenska, ton: respektfullt hård, som en short-seller som granskar en pitch.
+6. Börja aldrig med "Jag" — gå rakt på frågan.`;
+
 export async function POST(req: NextRequest) {
   try {
     const { mode, amne, tes } = await req.json();
@@ -68,6 +81,28 @@ export async function POST(req: NextRequest) {
       const attacker = ATTACKER[amne] || ATTACKER["default"];
       const slump = Math.floor(Math.random() * attacker.length);
       const attack = attacker[slump];
+
+      // Z.ai-läge: LLM genererar en färsk, skräddarsydd attack
+      if (zaiAktiv()) {
+        const svaret = await zaiChat(
+          [
+            { role: "system", content: ZAI_SYSTEM },
+            { role: "user", content: `Eleven har begärt att bli grillad på ämnet "${amne}". Generera din nästa attackfråga.` },
+          ],
+          { temperatur: 0.9, maxTokens: 200 }
+        );
+        if (svaret) {
+          return NextResponse.json({
+            agent: "shortseller",
+            mode: "sokratisk-llm",
+            attack: { ...attack, fraga: svaret },
+            historisktFall: HISTORISKA_FALL[amne] || null,
+            meddelande: `🎯 [AKM1/AK1TS · GLM] ${svaret}`,
+            kontext: attack.kontext,
+            nastaSteg: "Svara med din analys. Short-Sellern kommer att följa upp.",
+          });
+        }
+      }
 
       return NextResponse.json({
         agent: "shortseller",
@@ -97,6 +132,29 @@ export async function POST(req: NextRequest) {
 
       const attacker = ATTACKER[kategori];
       const attack = attacker[Math.floor(Math.random() * attacker.length)];
+
+      // Z.ai-läge: LLM läser HELA tesen och anger det svagaste antagandet
+      if (zaiAktiv()) {
+        const svaret = await zaiChat(
+          [
+            { role: "system", content: ZAI_SYSTEM },
+            { role: "user", content: `Elevens tes att försvara:\n"""${tesText}"""\n\nHitta det svagaste antagandet och ställ din attackfråga.` },
+          ],
+          { temperatur: 0.8, maxTokens: 200 }
+        );
+        if (svaret) {
+          return NextResponse.json({
+            agent: "shortseller",
+            mode: "sokratisk-llm",
+            attack: { ...attack, fraga: svaret },
+            historisktFall: HISTORISKA_FALL[kategori] || null,
+            meddelande: `🔴 [AKM1/AK1TS · GLM] ${svaret}`,
+            kontext: attack.kontext,
+            tips: "Short-Sellern ger inga svar — bara frågor. Försvara din position!",
+            nastaSteg: "Försvara din tes eller revidera den. Det är så man växer.",
+          });
+        }
+      }
 
       // Generera sokratisk motfråga baserad på tesen
       const sokratiskFraga = attack.fraga === "default"

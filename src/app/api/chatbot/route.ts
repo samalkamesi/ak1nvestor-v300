@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCourses } from "@/lib/content";
 import { lasMedlem, niva, lasXP, lasKlaraKurser } from "@/lib/member-local";
+import { zaiAktiv, zaiChat } from "@/lib/zai";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -45,6 +46,11 @@ function navigera(fraga: string): Intent | null {
     if (/portfölj|mina aktier|innehav/.test(q)) return { typ: "navigering", handlings: [
       { text: "Min portfölj (lägg in aktier)", lank: "/min-portfolj", ikon: "💼" },
       { text: "Portfölj-kursen (5×5×4)", lank: "/kurser/portfolj-ekosystemet", ikon: "📊" },
+    ]};
+    if (/topplista|leaderboard|tävla|rank/.test(q)) return { typ: "navigering", handlings: [
+      { text: "Topplistan 🏆", lank: "/topplista", ikon: "🏆" },
+      { text: "Förtjäna XP: läs en kurs", lank: "/kurser", ikon: "📚" },
+      { text: "Logga in gratis", lank: "/logga-in", ikon: "🔑" },
     ]};
     if (/kalkylator|räkna|beräkna/.test(q)) return { typ: "navigering", handlings: [
       { text: "AKM1-kalkylatorn (20 variabler)", lank: "/kalkylator", ikon: "🧮" },
@@ -185,7 +191,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 1) AKM1-variabel svar
+    // 1) AKM1-variabel svar — alltid deterministiskt (exakta formler, noll hallucination)
     const akm1 = akm1Svar(q);
     if (akm1) {
       return NextResponse.json({ ...akm1, kalla: "AKM1-ekosystem", typ: "utbildning" });
@@ -230,6 +236,53 @@ export async function POST(req: NextRequest) {
       if (p > 0) poang.set(k.slug, p);
     }
     const topp = [...poang.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
+    const relevanta = topp.map(([slug]) => kurser.find((k) => k.slug === slug)!).filter(Boolean);
+
+    // 4b) Z.ai GLM-läge — fritt formulerat pedagogiskt svar, GROUNDAT i kurserna
+    if (zaiAktiv()) {
+      const kurserKontext = relevanta.length > 0
+        ? relevanta.map((k) => `- /kurser/${k.slug} — ${k.title}: ${(k.learn || "").slice(0, 200)}`).join("\n")
+        : "Inga kursmatchningar — svara allmänt pedagogiskt.";
+      const svaret = await zaiChat(
+        [
+          {
+            role: "system",
+            content: `Du är "AI-Mentorn" i AK1A Research Lab (lab.ak1nvestor.com) — svensk finansutbildning med 230 kurser, kalkylator (AKM1: 20 fundamentalvariabler V01-V20, 0-5 poäng, max 100), portföljsystem (AK1TS: 5 tidshorisonter × 5 teorier × 4 dimensioner), quiz med +10 XP, flashcards med spaced repetition, certifikat.
+
+REGELVERK:
+1. Svara på svenska — varm, rak, pedagogisk. Max ~150 ord.
+2. ALLT ekosystem: nämner du ett fundamentalbegrepp, koppla till AKM1-variabel med V-nummer (t.ex. "V09 ROE = resultat efter skatt / snitt eget kapital").
+3. HITTA PÅ ALDRIG formler eller siffror du inte är säker på — säg istället "räkna exakt i kalkylatorn".
+4. Avsluta med en konkret nästa handling (kurs, kalkylatorn, quiz eller portföljen).
+5. Eleven befinner sig nu på: ${sokvag || "/"} — anpassa svaret.
+
+KURSMATCHNINGAR (grounding — lär dig från dessa, länka dem):
+${kurserKontext}`,
+          },
+          { role: "user", content: q },
+        ],
+        { temperatur: 0.6, maxTokens: 400 }
+      );
+      if (svaret) {
+        return NextResponse.json({
+          svar: svaret,
+          handlings: (relevanta.length > 0
+            ? relevanta.slice(0, 2).map((k) => ({
+                text: `Starta: ${k.title.slice(0, 30)}… →`,
+                lank: `/kurser/${k.slug}`,
+                ikon: "📚",
+              }))
+            : [
+                { text: "Räkna i kalkylatorn →", lank: "/kalkylator", ikon: "🧮" },
+                { text: "Läroplanen →", lank: "/laroplan", ikon: "🗺️" },
+              ]
+          ).concat([{ text: "Repetera flashcards →", lank: "#", ikon: "🃏" }]),
+          kalla: "Z.ai GLM + AKM1-ekosystem",
+          typ: "utbildning",
+          modell: "GLM",
+        });
+      }
+    }
 
     if (topp.length > 0) {
       const relevanta = topp.map(([slug]) => kurser.find((k) => k.slug === slug)!).filter(Boolean);

@@ -1,0 +1,914 @@
+{
+  "slug": "quality-of-earnings",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 12,
+  "totalMinutes": 130,
+  "title": "Quality of Earnings — O'Glove: KOMPLETT",
+  "summary": "Thornton O'Glove — securitiesanalytikern som 1987, före Schilit och före Enron, lärde investerare läsa resultaträkningen kritiskt — gav namn åt hela fältet earnings quality. Kursen går igenom hans metod: att aldrig läsa resultaträkningen ensam utan tillsammans med kassaflödesdata och förklarande noter, samt hela detektorsystemet med försäljning/fordringar-kvoten (DSO), inventory/sales, marginaltrender, engångsposter, avskrivningar, pension och utdelningens kvalitet.",
+  "minutes": 10,
+  "xp": 1600,
+  "level": "",
+  "learn": "Efter kursen kan eleven förklara Thornton O'Gloves huvudtes från Quality of Earnings (1987) — att resultaträkningen aldrig får läsas ensam, utan alltid tillsammans med kassaflödesdata och de förklarande noterna — och tillämpa hela hans detektorsystem på riktiga svenska årsredovisningar (K3). Eleven kan beräkna och tolka försäljning/fordringar-kvoten och DSO (kundfordringarnas omsättningsdagar) och känna igen O'Gloves varning nummer ett: att kundfordringar växer markant snabbare än försäljningen (V01). Eleven kan analysera lagret via inventory/sales-kvoten och lageromsättningsdagar, läsa hela rörelsekapitalet (fordringar, lager, leverantörsskulder) som en avvikelseanalys mot försäljningstillväxten (stöd: V12 intäktsstabilitet) och skilja hälsosam negativ kassacykel från stress, samt tolka bruttomarginalens trend (V07) och EBITDA-marginalens (V08) relation till avskrivningsvalen. Eleven kan vidare identifiera återkommande 'engångsposter' (jämförelsestörande poster) och själv bygga kärnvinst — O'Gloves 'core earnings' avant la lettre — beräkna hur livslängdsval i avskrivningar och pensionsantaganden (V10 skuldsättningsgrad, V11 likviditet) flyttar vinst utan att röra en enda krona kassa, samt pröva utdelningens och återköpens (V20) kvalitet mot det operativa kassaflödet och kapitalförbrukningen (V19). Eleven kan slutligen köra O'Gloves masterchecklista — fem frågor på tio år av siffror, alltid i jämförelse med konkurrenter — som kvalitetsgrind före all värdering i AKM1, med marginal of safety (utan V-nummer) som principen att ett rättvist pris på dåliga siffror fortfarande är en dålig affär.",
+  "why": "Quality of Earnings (1987) är boken som gav fenomenet dess namn: Thornton O'Glove — tidigare securitiesanalytiker och utgivare av nyhetsbrevet med samma namn — skrev den i junkbond- och LBO-erans USA, fem år före Schilits Financial Shenanigans och fjorton år före Enron, och lärde en hel generation att fråga inte 'hur mycket' ett bolag tjänar utan 'hur'. För AKM1-ekosystemet är boken den historiska roten till all redovisningskällkritik: Schilit byggde vidare på O'Glove, och efterföljarnas berömda formulering — att om man bara fick äga en enda finansiell rapport skulle det vara kassaflödesanalysen — är bara en komprimering av O'Gloves paradigm, medan mästaren själv betonade kombinationen av alla tre rapporterna. Där Schilit katalogiserar manipulationen levererar O'Glove hantverket: försäljning/fordringar-kvoten som varning nummer ett, inventory/sales, marginaltrenden (V07), de återkommande engångsposterna (stöd: V12), avskrivnings- och pensionsgranskning (V08, V10, V11) och utdelningens kvalitet (V19, V20) — allt med S&P-rapporternas tioåriga dataserier som verktyg, här översatt till svenska förhållanden med K3, notsystemet och offentliga årsredovisningar. Boken citeras och återges öppet i kursen; en 1987-metod som fortfarande fångar moderna fall är den starkaste möjliga grundvalen under varje nyckeltal i AKM1.",
+  "chapters_list": [
+    { "num": 1, "title": "O'Glove 1987 — pionjären som gav earnings quality dess namn", "minutes": 10 },
+    { "num": 2, "title": "Huvudtesen: tre rapporter, aldrig en — vinst, kassa och noter", "minutes": 10 },
+    { "num": 3, "title": "S&P-rapporten — detektivens dataunderlag och earnings-opinioner", "minutes": 10 },
+    { "num": 4, "title": "Varning nummer 1: kundfordringar, försäljningskvoten och DSO", "minutes": 10 },
+    { "num": 5, "title": "Lagret som lögndetektor — inventory/sales och lageromsättningsdagar", "minutes": 10 },
+    { "num": 6, "title": "Rörelsekapitalanalysen — balansräkningen avslöjar resultaträkningen", "minutes": 10 },
+    { "num": 7, "title": "Marginaltrenden — bruttomarginalens berättelse (V07)", "minutes": 10 },
+    { "num": 8, "title": "Engångsposternas återkommande natur — one-time som årsvana", "minutes": 10 },
+    { "num": 9, "title": "Avskrivningar — livslängdsvalet som tyst vinstmaskin (V08)", "minutes": 10 },
+    { "num": 10, "title": "Pension, avsättningar och gömda åtaganden (V10, V11)", "minutes": 10 },
+    { "num": 11, "title": "Utdelning, återköp och kassans kvalitet (V19, V20)", "minutes": 10 },
+    { "num": 12, "title": "Detektivens masterchecklista — noter, konkurrenter och AKM1", "minutes": 10 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "O'Glove 1987 — pionjären som gav earnings quality dess namn",
+      "intro": "År 1987 — junkbondernas och LBO-vågens USA, året för börsfallet i oktober — publicerade securitiesanalytikern Thornton O'Glove boken som gav ett helt fält dess namn. Han hade praktisk erfarenhet från analysbyråer och drev ett eget nyhetsbrev kallat just Quality of Earnings. Detta kapitel placerar boken i sin tid och förklarar varför den fortfarande är AKM1:s källkritiska grundval.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Thornton L. O'Glove var securitiesanalytiker i den mening gamla skolan menar: en person vars jobb var att gräva i siffror, inte att marknadsföra dem. Under 1980-talet drev han nyhetsbrevet Quality of Earnings, där han hjälpte till att popularisera frågan som sedan blev en hel disciplin: inte bara hur mycket ett bolag redovisar i vinst, utan hur den vinsten är sammansatt. Boken Quality of Earnings — undertiteln The Investor's Guide to How Much Money a Company Is Really Making ställer frågan redan på omslaget — kom 1987, skriven tillsammans med professor Robert Sobel, som svarade för de historiska partierna om Wall Street-kriser och rapporttolkningens historia. Tänk dig timingen: samma år som Black Monday, mitt i ett decennium där uppköp, kreativ bokföring och finansiell ingenjörskonst gick hand i hand. O'Glove skrev före Schilits Financial Shenanigans (1993), före Enron (2001), före WorldCom — när han formulerade problemet fanns knappt vokabulären för det."
+        },
+        {
+          "type": "text",
+          "content": "Huvudtesen kan formuleras i en enda mening, och hela kursen är bara utfällningen av den: jämför aldrig resultaträkningen med sig själv — läs den alltid tillsammans med kassaflödesdata och de förklarande noterna. O'Glove menade att den enskilda resultaträkningen är den mest manipulerbara och mest feltolkade av rapporterna, eftersom den bygger på periodisering: intäkter bokförs när de tjänas (eller när ledningen väljer att hävda att de tjänats), inte när pengarna kommer. Ett enkelt räkneexempel illustrerar klyftan. Bolag A redovisar 100 Mkr i resultat och 130 Mkr i operativt kassaflöde — kassaflödet bekräftar och överträffar vinsten, avskrivningar läggs tillbaka, kvaliteten är hög. Bolag B redovisar samma 100 Mkr men bara 20 Mkr i operativt kassaflöde: skillnaden på 80 Mkr sitter i växande kundfordringar och lager — resultatet finns på pappret, pengarna finns inte på banken. Enligt O'Glove är B-fallet inte en fotnot utan huvudfrågan."
+        },
+        {
+          "type": "text",
+          "content": "O'Gloves plats i kanon är lätt att fastställa genom arvsleden. Benjamin Graham lärde i Security Analysis (1934) att redovisade siffror måste granskas och justeras; O'Glove förvandlade den intuitionen till systematiskt hantverk med konkreta kvoter; Howard Schilit katalogiserade fem år senare manipulationens alla trick och hedrar pionjärerna före sig; och efterföljarna komprimerade allt till den berömda formuleringen — att om en investerare bara fick äga en enda finansiell rapport skulle det vara kassaflödesanalysen. Notera nyansen, för den är kursens: den berömda one-statement-formuleringen är efterföljarnas ande, medan O'Glove själv betonade kombinationen — vinst, kassa och noter som ett trianguleringssystem där ingen källa litar på sig själv. Det är därför denna kurs aldrig lämnar resultaträkningen ensam."
+        },
+        {
+          "type": "text",
+          "content": "Vad menas då med quality of earnings, själva begreppet? O'Gloves arbetsdefinition: graden av överensstämmelse mellan redovisat resultat och den ekonomiska verkligheten — i praktiken i vilken utsträckning vinsten backas av kassa, genereras av kärnverksamheten, är hållbart upprepbar och försiktigt redovisad. Fyra dimensioner sammanfattar det. (1) Kassagrad: vinst mot operativt kassaflöde. (2) Kärngrad: återkommande drift mot engångsposter och värdepappersvinster. (3) Hållbarhet: kan marginalen (V07) upprepas, eller är den bara tillfälligt uppe? (4) Konservatism: små eller stora antaganden i avskrivningar (V08-länk), pension (V10) och avsättningar. Ett bolag med 8 Mkr i vinst som uppfyller alla fyra är för O'Glove rikare än ett med 15 Mkr som inte gör det — och för AKM1 är det skillnaden mellan en V09-ROE som betyder något och en som är dekoration."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ O'Gloves bidrag var inte att upptäcka att bolag pyntar med siffror — det visste Graham. Bidraget var att ge earnings quality ett namn, tre konkreta kvoter och en berättelse av exempel — och därmed göra kvalitetsgranskningen till något varje enskild investerare kan utföra vid köksbordet, inte bara revisorn."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"O'Gloves verktygslåda — översikt\",\"rader\":[[\"Verktyg\",\"Kärnfråga\",\"Varning\",\"Kurskapitel\"],[\"Försäljning/fordringar-kvot (DSO)\",\"Betalar kunderna det som bokförts som intäkt?\",\"Fordringar växer klart snabbare än försäljning (V01)\",\"Kap 4\"],[\"Inventory/sales-kvot\",\"Bygger lagret upp framtida nedskrivningar?\",\"Lager växer klart snabbare än försäljning\",\"Kap 5\"],[\"Rörelsekapitalanalys\",\"Finns vinsten som kassa i verksamheten?\",\"Rörelsekapital slukar kassa år från år\",\"Kap 6\"],[\"Marginaltrend (V07)\",\"Är lönsamheten äkta och beständig?\",\"Marginaltopp med stigande fordringar och lager\",\"Kap 7\"],[\"Engångsposter\",\"Är 'one-time' verkligen engångs?\",\"Samma typ av poster återkommer år efter år\",\"Kap 8\"],[\"Avskrivningar (V08-länk)\",\"Hur fabriceras vinst via antaganden?\",\"Livslängder förlängs, avskivningars andel av capex faller\",\"Kap 9\"],[\"Pension och avsättningar (V10, V11)\",\"Vilka åtaganden syns inte i skuldsättningen?\",\"Pensionsgarantier, leasing, borgensåtaganden\",\"Kap 10\"],[\"Utdelnings- och återköpsanalys (V19, V20)\",\"Backas utdelning av kärnkassa?\",\"Utdelning finansierad med skuld eller engångsmedel\",\"Kap 11\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: välj ett svenskt bolag du äger eller bevakar och hämta senaste årsredovisningen (årsredovisningar.se är gratis). Innan du läser en enda siffra: bläddra fram resultaträkningen, kassaflödesanalysen och notförteckningen — tre olika fysiska platser i dokumentet. Skriv ner tre meningar: var i dokumentet bor vinsten, var bor kassan, var bor förklaringarna. O'Gloves metod börjar med denna geografi: den som inte vet var de tre rapporterna bor kan inte heller låta dem tala med varandra."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var O'Gloves huvudtes i Quality of Earnings (1987)?",
+          "alternativ": [
+            "Att resultaträkningen är den enda rapport som behövs om den bara läses noggrant",
+            "Att resultaträkningen aldrig ska läsas ensam utan alltid tillsammans med kassaflödesdata och förklarande noter",
+            "Att kassaflödesanalysen helt ersätter resultaträkningen vid all analys",
+            "Att årsredovisningen bör läsas baklänges från sista sidan för bästa förståelse"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på triangulering: tre källor som kontrollerar varandra, inte en källa som ersätter en annan."
+        },
+        {
+          "q": "Varför är resultaträkningen enligt O'Glove den mest feltolkade rapporten?",
+          "alternativ": [
+            "Den innehåller fler decimaler än övriga rapporter",
+            "Den är den enda rapport som revisorn aldrig granskar",
+            "Den bygger på periodisering — intäkter bokförs när de hävdas vara tjänade, inte när pengarna kommer",
+            "Den skrivs alltid av marknadsavdelningen i stället för av ekonomichefen"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig när en intäkt blir en intäkt: vid prestation, vid fakturering eller vid betalning?"
+        },
+        {
+          "q": "Vad är den korrekta relationen mellan O'Glove och den berömda one-statement-formuleringen om kassaflödesanalysen?",
+          "alternativ": [
+            "O'Glove skrev att kassaflödesanalysen är den enda rapporten och att övriga bör ignoreras",
+            "Formuleringen är O'Gloves exakta citat på första sidan av boken från 1987",
+            "Formuleringen är Schilits originalcitat som O'Glove översatte till nyhetsbrevet",
+            "Formuleringen är efterföljarnas komprimering av O'Gloves paradigm — mästaren själv betonade kombinationen av alla tre rapporterna"
+          ],
+          "ratt": 3,
+          "tips": "Skillnaden är subtil men kurskritisk: anda mot bokstav."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Huvudtesen: tre rapporter, aldrig en — vinst, kassa och noter",
+      "intro": "O'Gloves metod är en vägran att acceptera en enda siffra utan korskontroll. Resultaträkningen ställer frågan, kassaflödesanalysen avgör om svaret är sant, och noterna förklarar skillnaderna. I detta kapitel bygger du trianguleringssystemet — med svenska K3-rapporter som föremål.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med att förstå varför en resultaträkning överhuvudtaget kan vilseleda utan att en enda rad är olaglig. Periodiseringens logik: när ett bolag fakturerar en kund 12 Mkr i december för en tjänst levererad under året bokförs hela beloppet som intäkt direkt — trots att pengarna kanske anländer i februari. Resultatet visas år 1, kassan år 2. Detta är korrekt redovisning, inte fusk — men det öppnar dörren för det O'Glove kallade resultatets kvalitetsproblem. Om ett bolag i december skriver kontrakt på 12 Mkr med generösa betalningsvillkor (betalning efter 180 dagar, full returrätt) kan detta års resultat visas upp, medan kassan och riskerna hamnar i nästa års problem. Räkneexempel: vinsten ökar från 40 till 52 Mkr (+30 procent) men kundfordringarna ökar från 60 till 110 Mkr (+83 procent). Resultaträkningen applåderar, balansräkningen visar priset, kassaflödet visar bristen på pengar. Tre rapporter, tre olika berättelser — O'Gloves poäng är att endast den som läser alla tre ser den verkliga."
+        },
+        {
+          "type": "text",
+          "content": "Kassaflödesanalysen är lögndetektorn, och nyckeltalet är enkelt: jämför rörelseresultat plus avskrivningar (ett grovt mått på intern kassagenerering) med kassaflödet från den löpande verksamheten. Om det operativa kassaflödet systematiskt ligger under den redovisade vinsten år efter år är kvaliteten låg. Räkneexempel på mönstret O'Glove varnar för: År 1: vinst 50, operativt kassaflöde 48 — normalt. År 2: vinst 62, kassaflöde 41 — avvikelsen växer. År 3: vinst 74, kassaflöde 33 — vinsten stiger år från år medan kassan faller. Tre år i rad med växande negativ klyfta mellan vinst och kassa är en av de starkaste varningar som finns — investerare som köpte sådana bolag på billiga multipler (V04-V06 i AKM1) köpte i själva verket en multipel på en illusion. Omvänt: ett bolag vars operativa kassaflöde överstiger vinsten år efter år (avskrivningsrikt verksamhet, försiktiga antaganden) är en kvalitetsängel — O'Gloves egen preferens."
+        },
+        {
+          "type": "text",
+          "content": "Noterna är det tredje benet, och i svenska K3-rapporter är systemet tydligt: not 1 innehåller redovisningsprinciper (bolagets val av metoder och antaganden — avskrivningsprinciper, intäktsredovisningsprincip), och övriga noter förklarar varje väsentlig post i resultaträkningen och balansräkningen. O'Glove älskade noterna av en specifik anledning: det är där ändringar avslöjas. Om avskrivningstiden för anläggningstillgångar förlängs från 8 till 12 år finns det en rad i en not — och den raden kan vara värd tiotals miljoner i ökad vinst, utan att en enda affär förändrats. Om intäktsredovisningen för långa kontrakt ändras kan helårets intäkt ritas om. Enligt O'Glove är principändringarna i not 1 (eller dess amerikanska motsvarighet) bland det första en detektiv ska läsa — inte bland det sista. Hans reporter-instinkt: förändringar i fotnoter är nyheter; rubriksiffrorna är bara pressmeddelanden."
+        },
+        {
+          "type": "text",
+          "content": "Samla metoden i en arbetsgång — O'Gloves triangulering på svenska. Steg 1: läs resultaträkningen och notera vinstens storlek och tillväxt. Steg 2: läs kassaflödesanalysen och beräkna klyftan mellan vinst och operativt kassaflöde för tre år. Steg 3: läs balansräkningen och beräkna tillväxten i kundfordringar och lager mot försäljningstillväxten (V01). Steg 4: läs not 1 och alla noter med orden 'ändring', 'omräkning' eller 'jämförelsestörande'. Steg 5: jämför allt med två konkurrenter. Räkneexempel på hur systemet fångar: ett bolag med 15 procents vinsttillväxt, 2 procents försäljningstillväxt (V01 svag), DSO-stegring från 48 till 63 dagar och en not om ändrad avskrivningsprincip — fem identifierade signaler som tillsammans bildar ett mönster ingen enskild källa avslöjar. Triangulering är inte tre kontroller — det är multiplicerad sannolikhet att upptäcka."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Resultaträkningen är bolagets självskattning, kassaflödesanalysen är bankkontot och noterna är de små tryckta förklaringsraderna på baksidan av kontraktet — O'Gloves regel: lita aldrig på självskattningen utan att fråga bankkontot, och fråga aldrig bankontot utan att läsa de små tryckta raderna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre rapporter, tre frågor — trianguleringssystemet\",\"rader\":[[\"Källa\",\"Detektivfråga\",\"Normal\",\"Varning\"],[\"Resultaträkning\",\"Hur stor är vinsten och varifrån kommer den?\",\"Växer i takt med försäljningen (V01)\",\"Växer klart snabbare än försäljning och kassa\"],[\"Kassaflödesanalys\",\"Backas vinsten av operativ kassa?\",\"Kassaflöde minst lika stort som vinsten\",\"Klyftan mellan vinst och kassa växer tre år i rad\"],[\"Balansräkning\",\"Vart tar intäkterna vägen — fordringar, lager?\",\"Fordringar och lager växer som försäljningen\",\"Fordringar eller lager växer dubbelt så snabbt som försäljningen\"],[\"Noter (K3: not 1 m.fl.)\",\"Vilka antaganden och ändringar ligger bakom?\",\"Stabila principer, tydliga förklaringar\",\"Ändrade avskrivningstider, intäktsprinciper, avsättningar\"],[\"Konkurrenter\",\"Är mönstret unikt eller branschnormalt?\",\"Liknande kvoter hos peers\",\"Bolaget avviker kraftigt utan förklaring\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: ta samma årsredovisning som i kapitel 1 (eller en ny). Skriv upp årets redovisade resultat efter skatt. Bläddra till kassaflödesanalysen och skriv upp kassaflödet från den löpande verksamheten. Beräkna klyftan. Bläddra sedan till not 1 och leta efter avsnittet om redovisningsprinciper — notera om någon princip 'ändrats', 'omräknats' eller 'justerats' i år. Tre siffror och en notrad senare har du genomfört O'Gloves kärnprocedur: det tog inte mer än femton minuter, och det är mer än de flesta gör på ett år."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Ett bolag redovisar vinsttillväxt på 30 procent tre år i rad, men det operativa kassaflödet faller varje år. Vad är O'Gloves slutsats?",
+          "alternativ": [
+            "Bolaget är undervärderat eftersom kassaflödet alltid slår ifrån sig med fördröjning",
+            "Hög vinstkvalitet — avskrivningarna sjunker tydligen",
+            "Låg vinstkvalitet — vinsten backas inte av kassa och mönstret är en klassisk varning",
+            "Det spelar ingen roll så länge bolaget handlas till en låg multipel"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad som finns kvar av vinsten när bankontot får tala."
+        },
+        {
+          "q": "Varför bör not 1 (redovisningsprinciper) i en K3-rapport läsas tidigt av en O'Glove-detektiv?",
+          "alternativ": [
+            "Därför att den innehåller VD:ns bonusmål",
+            "Därför att ändrade antaganden där — avskrivningstider, intäktsredovisning — kan flytta miljontals i vinst utan affärsförändring",
+            "Därför att den är den kortaste noten och sparar tid",
+            "Därför att revisorsutlåtandet alltid hänvisar till den"
+          ],
+          "ratt": 1,
+          "tips": "Var bor nyheten: i rubriksiffran eller i antagandet bakom den?"
+        },
+        {
+          "q": "Vad innebär 'triangulering' i O'Gloves mening?",
+          "alternativ": [
+            "Att tre analytiker oberoende granskar samma bolag",
+            "Att man ritar en triangel mellan vinst, marginal och ROE (V09) i ett diagram",
+            "Att man köper tre bolag i samma bransch för att sprida risken",
+            "Att resultaträkning, kassaflödesanalys och noter läses tillsammans så att varje källa kontrollerar de andra"
+          ],
+          "ratt": 3,
+          "tips": "Ordet kommer från navigation: tre mätpunkter ger en position som ingen enskild mätpunkt kan ge."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "S&P-rapporten — detektivens dataunderlag och earnings-opinioner",
+      "intro": "O'Glove arbetade före internet och Bloomberg-terminaler, och hans främsta verktyg var Standard & Poors Stock Reports — standardiserade sidor med tio års historik per bolag. Detta kapitel förklarar hur han använde dem, vad han tyckte om analytikerkårens earnings-opinioner, och hur du bygger motsvarande dataunderlag för svenska förhållanden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "S&P:s Stock Reports var O'Gloves främsta vapen. Varje rapport visade ett amerikanskt bolag på två tättryckta sidor: tio år av omsättning, marginaler, kundfordringar, lager, per-aktie-siffror och nyckeltal — i exakt samma format för alla bolag. Detta var kraften: standardiseringen gjorde jämförelser möjliga. En årsredovisning är skriven för att sälja bolaget (O'Glove påpekade att den är bolagets egen marknadsföringsprodukt, med VD-brev som prosa och färggrafik som parfym), medan S&P-rapporten var ett utdrag ur verkligheten i enhetligt format. O'Gloves arbetsgång var därför: hämta tioårsserien ur S&P-rapporten, beräkna trenderna, och gå sedan in i årsredovisningens noter för förklaringarna. Verktyget löste det största problemet för en 1987-detektiv — snål tillgång till historik — och lär oss en metodlära som fortfarande gäller: bygg först det enhetliga dataunderlaget, döm sedan."
+        },
+        {
+          "type": "text",
+          "content": "Om S&P-rapporterna var dataleverantören var S&P:s och gatans earnings-opinioner något O'Glove betraktade med skepsis — och här är en av bokens mest förutsägande insikter. Han visade hur konsensusuppskattningar och rekommendationer är åsikter om redovisade siffror, inte granskningar av dem: analytikern tar bolagets vinstserie som given och extrapolerar. O'Glove ville vända på proceduren: justera först vinstserien för engångsposter, pensionspåverkningar och andra kvalitetsbrister — och extrapolera först därefter. Detta är exakt det som femton år senare, 2002, blev S&P:s eget begrepp core earnings (kärnvinst): ett standardiserat mått som rensar vinsten från pensionseffekter, engångsposter och finansiella vinster. O'Glove gjorde detta för hand år 1987 — core earnings avant la lettre. Räkneexempel på hans justering: redovisad vinst 80 Mkr, varav 18 Mkr är vinst på försäljning av en fastighet, 12 Mkr är bokfört pensionsöverskott och 9 Mkr är återvinning av en tidigare nedskrivning — kärnvinsten är 80 − 18 − 12 − 9 = 41 Mkr, och den multipel du trodde dig betala på V04-talet (P/S i förhållande till relaterade vinstmått) är i praktiken dubbelt så hög när nämnaren halveras."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till svenska förhållanden är enkel, eftersom Sverige har en av världens bästa offentliga infrastrukturer för O'Glove-metoden. Alla svenska aktiebolags årsredovisningar är offentliga via Bolagsverket och årsredovisningar.se — gratis, i fulltext, med noter. För noterade bolag finns dessutom delårsrapporter och nyckeltalsserier hos gratis dataleverantörer. Bygg ditt eget S&P-kort för varje bevakat bolag: en enda sida med tio rader (år) och tio kolumner: omsättning (V01), rörelsemarginal, bruttomarginal (V07), vinst, operativt kassaflöde, kundfordringar, lager, DSO, lageromsättningsdagar och antal aktier. Fyll i fem år för hand från årsredovisningarna — det tar en eftermiddag per bolag och är, i O'Gloves anda, själva detektivarbetet: handen som skriver siffrorna tvingar ögat att se dem. Ett digitalt kalkylblad visar trender; ett handskrivet kort avslöjar avbrott."
+        },
+        {
+          "type": "text",
+          "content": "O'Gloves reporter-instinkt — han behandlade årsredovisningar som en journalist behandlar källor — gav honom en regel om informationsflödet som är direkt användbar i dagens Sverige: skilj på fakta (redovisade siffror i rapporten), tolkningar (bolagets egna förklaringar och prognoser) och opinioner (analytikerkonsensus, riktkurser, media). Fakta kontrolleras med triangulering från kapitel 2. Tolkningar kontrolleras mot noterna och konkurrenterna. Opinioner kontrolleras inte alls — de bara noteras, som väderprognoser. Räkneexempel på varför ordningen spelar roll: ett bolag med stark konsensusopinion men DSO-stegring från 50 till 72 dagar och lageruppbyggnad på 40 procent har en rapport vars inre spänningar ingen opinion fångar. AKM1:s nyckeltal (V04-V06) blir meningsfulla först när nämnarna är granskade — annars är de multiplicerade åsikter."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ O'Glove skilde på data och opinion trettiofem år före core earnings blev en standard: den som justerar vinsten för hand innan han värderar gör sig oberoende av konsensus — och oberoende är det enda övertaget en enskild investerare verkligen äger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Detektivens dataunderlag — 1987 och 2026\",\"rader\":[[\"Behov\",\"O'Gloves 1987-verktyg\",\"Svensk motsvarighet 2026\",\"Användning\"],[\"Tioårig standardiserad historik\",\"S&P Stock Reports\",\"Eget utdrag ur 5-10 årsredovisningar (årsredovisningar.se)\",\"Trender för V01, marginaler, fordringar, lager\"],[\"Justerad kärnvinst\",\"Egen handberäkning (core earnings avant la lettre)\",\"Egen justering av jämförelsestörande poster enligt K3-noter\",\"Äkta nämnare till multipler (V04, V06)\"],[\"Noter och principändringar\",\"Läsning av fotnoter i 10-K\",\"K3-not 1 och övriga noter\",\"Avslöja ändrade antaganden\"],[\"Konkurrentjämförelse\",\"S&P-rapporter för peers\",\"Peers årsredovisningar\",\"Normalavvikelseanalys\"],[\"Opinionskoll\",\"Wall Street-consensus (noteras, men styr inte)\",\"Analytikerkonsensus och riktkurser (noteras, men styr inte)\",\"Kontrast mot egen granskning\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: bygg ditt första S&P-kort. Välj ett noterat svenskt bolag och hämta de tre senaste årsredovisningarna från årsredovisningar.se. Rita en tabell med rader för åren och kolumner för: omsättning (V01), rörelsemarginal, bruttomarginal (V07), resultat efter skatt, operativt kassaflöde, kundfordringar, lager och antal aktier. Fyll i för hand — inte klipp och klistra. Notera vilka rader som växer snabbast. Spara kortet: det blir ditt referensdokument i kapitel 4-11, där vi fyller på med DSO, lageromsättning, engångsposter och avskrivningar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför föredrog O'Glove S&P:s Stock Reports framför bolagens egna årsredovisningar som första datakälla?",
+          "alternativ": [
+            "S&P-rapporterna innehöll insiderinformation som årsredovisningarna saknade",
+            "De var gratis medan årsredovisningarna kostade pengar",
+            "De visade tio års data i enhetligt format för alla bolag — årsredovisningen är bolagets egen marknadsföringsprodukt",
+            "S&P garanterade att alla siffror var granskade och korrekta"
+          ],
+          "ratt": 2,
+          "tips": "Vad gör dig bäst i stånd att jämföra: en säljbrochyr eller ett standardiserat register?"
+        },
+        {
+          "q": "Vad menas med att O'Glove utförde 'core earnings avant la lettre'?",
+          "alternativ": [
+            "Att han förutsåg S&P:s 2002-begrepp genom att för hand justera vinsten för engångsposter och pensionspåverkningar innan han värderade bolaget",
+            "Att han var den förste att använda ordet earnings i finanslitteraturen",
+            "Att han enbart använde rörelseresultatet och ignorerade alla övriga rader",
+            "Att han hittade en formel som eliminerar behovet av kassaflödesanalys"
+          ],
+          "ratt": 0,
+          "tips": "Avant la lettre betyder 'före begreppet fanns' — vad gjorde han för hand som senare blev standardiserat?"
+        },
+        {
+          "q": "Redovisad vinst är 80 Mkr, varav 18 Mkr fastighetsförsäljningsvinst, 12 Mkr bokfört pensionsöverskott och 9 Mkr återvinning av nedskrivning. Vad är kärnvinsten?",
+          "alternativ": [
+            "119 Mkr",
+            "80 Mkr — redovisad vinst är alltid kärnvinst",
+            "41 Mkr",
+            "62 Mkr"
+          ],
+          "ratt": 2,
+          "tips": "Dra ifrån allt som inte är löpande kärnverksamhet: 80 − 18 − 12 − 9."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Varning nummer 1: kundfordringar, försäljningskvoten och DSO",
+      "intro": "Om hela boken skulle komprimeras till en enda kvot skulle det bli försäljning delat med kundfordringar. O'Glove betecknade avvikelsen i denna kvot som sin varning nummer ett, och följande decenniers redovisningsskandaler har bekräftat honom. Här lär du dig beräkningen, tolkningen och de falska signalerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kvoten är enkel: försäljning delat med kundfordringar, per år. Tanken: ett bolag med sund kundkreditgivning har ett stabilt förhållande mellan årsförsäljning och utestående fordringar. Om försäljningen växer 10 procent men fordringarna växer 35 procent har något förändrats i kreditgivningen, i kundernas betalningsförmåga eller i bokföringen av intäkter — och ingen av de tre förklaringarna är bra. Räkneexempel, år mot år: År 1: försäljning 1 000 Mkr, kundfordringar 150 Mkr — kvot 6,7 (fordringarna representerar cirka 55 dagars försäljning). År 2: försäljning 1 100 Mkr (+10 procent), kundfordringar 205 Mkr (+37 procent) — kvot 5,4 (cirka 68 dagar). Kvotens fall från 6,7 till 5,4 är O'Gloves varning nummer ett: bolaget bokför intäkter snabbare än kunderna betalar. Antingen har man mjukat upp betalningsvillkor för att pumpa årets siffror (varor trycks ut till distributionsled som inte säljer vidare — det som senare fick namnet channel stuffing), eller så säljer man till sämre kunder, eller så är en del intäkter helt enkelt inte äkta."
+        },
+        {
+          "type": "text",
+          "content": "Moderna analytiker uttrycker samma kvot som DSO — days sales outstanding, på svenska kundfordringarnas omsättningsdagar: kundfordringar delat med årsförsäljning gånger 365. Fortsätt exemplet ovan: År 1: 150/1 000 × 365 = 55 dagar. År 2: 205/1 100 × 365 = 68 dagar. Stegningen på 13 dagar betyder att 13 dagars av årets redovisade försäljning (1 100/365 × 13 ≈ 39 Mkr) existerar som fordringar i stället för som kassa — och det är den exakta storleken på den ifrågasatta intäkten. Tumregeln i O'Gloves anda: en DSO-stegring på mer än 10-15 procent år från år, utan branschförklaring, förtjänar en notfråga; en stegring två år i rad förtjänar en utförsäljning av positionen tills förklaringen finns. Komplettera också med nivån: jämför alltid DSO med konkurrenterna — detaljhandeln har ofta 5-15 dagar, byggentreprenad 60-90, SaaS-bolag 30-60. En avvikelse är bara en avvikelse inom sitt sammanhang."
+        },
+        {
+          "type": "text",
+          "content": "Vad kan ligga bakom en DSO-stegring? Katalogen är värd att memorera. (1) Kanalisering: varor trycks ut till distributörer i kvartalsslut med generösa returrätter och förlängda betalningsvillkor — intäkten är bokförd men risken är kvar hos säljaren. (2) Kreditmjukning: nya kundsegment med sämre betalningsförmåga, ofta för att nå tillväxtmål. (3) Faktureringseffekt: en större andel av årets försäljning faller på årets sista kvartal eller månad — oskyldigt, men kontrollerbart genom att jämföra samma kvartal år mot år i stället för kvartal mot kvartal. (4) Dåliga kundfordringar som inte skrivs ner: svenska K3-rapporter redovisar kreditförluster och nedskrivning av fordringar i en särskild not — om kreditförlusterna inte växer medan DSO gör det är nedskrivningspolitiken för optimistisk. (5) Factoring som upphör: om bolaget tidigare sålt sina fordringar utan regress och plötsligt slutar, stiger DSO mekaniskt. Räkneexempel på katalogen i bruk: DSO 58 → 71, försäljning +9 procent, kvartal 4 står för 41 procent av årsförsäljningen mot 33 procent föregående år, kreditförluster oförändrade — mönstret pekar mot en kombination av (1) och (3), och nästa steg är att läsa noterna om intäktsredovisning och kreditvillkor."
+        },
+        {
+          "type": "text",
+          "content": "O'Gloves egen varning blev historiskt bekräftad: han verkade i en era där flera amerikanska bolag fångades just på fordringsanalysen — och efter honom har listan bara växt. Klassiska fall: bolag som i kvartalsrapporter visade stigande DSO i fyra-sex kvartal före ett vinstvarsel; Schilit kom sedan att formalisera mönstret. Den svenska översättningen: i K3 redovisas kundfordringar som en post i balansräkningen, med noter om förfallostruktur, kreditrisk och nedskrivningar — gräv där. Två falska positiva bör du också behärska. Snabbt växande bolag kan tillfälligt stiga i DSO om de nyligen tecknat större kontrakt — kontrollera mot orderstock och intäktsredovisningsprincip. Och bolag med säsongsvariationer får bara jämföras årsvis eller samma kvartal år mot år. O'Gloves disciplin: en kvot avviker aldrig utan en orsak — den avviker med en förklaring som du måste begära. Notens svar avgör om avvikelsen är oskyldig eller ödesdiger."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Försäljning/fordringar-kvoten är O'Gloves arv i en enda division: intäkt är ett påstående, kundfordran är påståendets pris — när priset stiger snabbare än påståendet är det påståendet som bär notan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fordringssignalen — signal, normal, avvikelse, åtgärd\",\"rader\":[[\"Signal\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"Kvot försäljning/kundfordringar\",\"Stabil eller stigande år från år\",\"Fallande två år i rad\",\"Läs not om kreditvillkor och intäktsredovisning\"],[\"DSO (omsättningsdagar)\",\"Plus-minus 10 procent kring branschnormal\",\"Stigande 15 procent eller mer utan förklaring\",\"Jämför kvartalsfördelning och peers\"],[\"Kvartal 4-andel av årsförsäljning\",\"Liknande tidigare år\",\"Kraftig ökning — årsslutspump\",\"Kontrollera returrätter och returrisker i noter\"],[\"Kreditförluster i förhållande till fordringar\",\"Växer med fordringarna\",\"Planar medan fordringar och DSO stiger\",\"Misstänk för optimistiska nedskrivningar\"],[\"Fordringar från ägare och koncernbolag\",\"Noll eller obetydliga\",\"Växande interna fordringar\",\"Läs not om transaktioner med närstående\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: ta fram S&P-kortet från kapitel 3. Beräkna DSO för varje år: kundfordringar / omsättning × 365. Skriv raden under omsättningen. Har ditt bolag stigit, planat eller fallit i DSO? Leta sedan rätt på noten om kundfordringar — hittar du förfallostruktur (förfallna men inte nedskrivna fordringar)? Avsluta med att jämföra DSO med bolagets största konkurrent. En kvot, en division och en not: du har nu kört O'Gloves varning nummer ett på riktig data."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "År 1: försäljning 1 000 Mkr, kundfordringar 150 Mkr. År 2: försäljning 1 100 Mkr, kundfordringar 205 Mkr. Vad säger O'Gloves varning nummer ett?",
+          "alternativ": [
+            "Allt är normalt eftersom försäljningen växer",
+            "Fordringarna växer 37 procent mot försäljningens 10 procent — kvoten faller och DSO stiger kraftigt, en tydlig varning",
+            "DSO har fallit och bolaget är attraktivare",
+            "Kvoten kan inte beräknas utan kassaflödesdata"
+          ],
+          "ratt": 1,
+          "tips": "Jämför tillväxttakten i de två raderna — skillnaden är signalen."
+        },
+        {
+          "q": "Vilken av följande är en OSKYLDIG förklaring till stigande DSO?",
+          "alternativ": [
+            "Varor trycks ut till distributörer med generösa returrätter i kvartalsslut",
+            "Försäljning till sämre kundsegment för att nå tillväxtmål",
+            "En större andel av årets försäljning föll på årets sista kvartal jämfört med tidigare år",
+            "Kreditförluster hålls nere medan fordringarna exploderar"
+          ],
+          "ratt": 2,
+          "tips": "Tre av alternativen innebär att kassan riskeras eller att risk döljs — ett handlar bara om timing inom året."
+        },
+        {
+          "q": "Hur hanterar du säsongsproblemet i DSO-analysen enligt O'Gloves disciplin?",
+          "alternativ": [
+            "Jämför alltid december med januari för att fånga säsongs extremvärden",
+            "Ignorera DSO helt för säsongsbolag",
+            "Multiplicera DSO med säsongsfaktorn fyra",
+            "Jämför alltid samma kvartal år mot år och helst årsnivåer, aldrig kvartal mot kvartal"
+          ],
+          "ratt": 3,
+          "tips": "Säsongsbolagets balansräkning andas med året — jämför bara andetag från samma årstid."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Lagret som lögndetektor — inventory/sales och lageromsättningsdagar",
+      "intro": "Efter fordringarna kommer lagret: O'Gloves andra klassiska kvot. Ett lager som växer snabbare än försäljningen är antingen ett självförvållat framtida förlustresultat eller en plats där kostnader göms. Kapitlet lär dig kvoten, mekanikerna och de svenska K3-noter som avslöjar dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kvoten: lager delat med försäljning (eller dess spegel, lageromsättningsdagar = lager / kostnad sålda varor × 365 — när varukostnaden inte redovisas separat i svenska rapporter används försäljningen som nämnare, med en notering om att metoden måste vara konsekvent). Poängen är densamma som för fordringar: i ett hälsosamt bolag växer lagret i takt med verksamheten. Räkneexempel: År 1: försäljning 800 Mkr, lager 120 Mkr — lager/försäljning 15 procent, cirka 55 lageromsättningsdagar (beräknat på försäljning). År 2: försäljning 864 Mkr (+8 procent), lager 165 Mkr (+38 procent) — kvoten stiger till 19 procent och dagarna till cirka 70. Vad betyder det? Någonstans ligger det varor för ungefär 15 dagars extra försäljning som kunderna inte har köpt. Antingen har inköpsavdelningen missbedömt (dyrt men oskyldigt), eller säljer bolaget sämre än det rapporterar (allvarligt), eller — det tredje alternativet, kapitel 5:s tema — används lagret som göm plats för kostnader. I samtliga fall är nästa års resultat belastat med en växande risk för nedskrivningar, för lagret skrivs av i nästa periodisering."
+        },
+        {
+          "type": "text",
+          "content": "Mekanismen att gömma kostnader i lagret förtjänar en egen genomgång, för den är listig nog att återfinnas i alla länder. Ett tillverkande bolag har fasta kostnader — hyra, maskiner, löner — som per period fördelas (absorberas) på producerade enheter. Om produktionen är större än försäljningen hamnar en del av de fasta kostnaderna i lagrets värde i stället för i årets resultat: vinsten stiger, lagret sväller. Räkneexempel: fasta kostnader 90 Mkr per år, produktion 100 000 enheter, försäljning 80 000 enheter — 90 Mkr / 100 000 = 900 kr per enhet i fast kostnad; men bara 80 000 × 900 = 72 Mkr belastar årets resultat, resten — 18 Mkr — sitter i lagret som upplagt värde. Årets vinst är 18 Mkr högre än den ekonomiska verkligheten, och effekten återbetalar sig först när lagret säljs — om det säljs. I svenska K3-rapporter syns mekaniken i noten om lagervärdering (vald kostnadsfördelningsprincip) och i posten förändring av lager i kassaflödesanalysen: ett stort negativt 'förändring av lager' år från år, utan motsvarande försäljningstillväxt, är själva fingeravtrycket."
+        },
+        {
+          "type": "text",
+          "content": "Tolka lagerkvoten i sammanhang, för lagret är branschens spegel. Dagligvaruhandeln har lageromsättningsdagar på 20-35, verkstadsindustrin 60-120, och bygg- och projektbolag kan ha lager och pågående arbete som varierar kraftigt med projekten. Två analysregler. (1) Jämför utvecklingen, inte nivån: kvoten kan ligga på 90 dagar i tio år och vara helt sund för det bolaget — faran ligger i förändringen (som i exemplet ovan: 55 → 70 dagar). (2) Läs notens lagerstruktur: svenska noter delar upp lagret i råvaror och förbrukningsmaterial, pågående arbete samt färdiga varor. Ett växande färdigvarulager medan råvarorna står stilla betyder att produkterna inte säljs — den värsta kombinationen. Ett växande råvarulager kan vara medvetet lagerbyggande före prisstegringar (kontrollera om ledningen förklarar det). Pågående arbete som växer kan vara legitimt i projektbolag men också en plats för optimistiska slutföranden. O'Gloves råd i förkortning: lagret är resultaträkningens framtid — nästa års kostnader ligger redan där, och du kan läsa dem i dag."
+        },
+        {
+          "type": "text",
+          "content": "Kombinera slutligen lagret med fordringarna till en helhetsbild — O'Gloves poäng var alltid kombinationen, aldrig den enskilda kvoten. Fyra mönster. (1) Fordringar och lager växer båda snabbare än försäljningen: det klassiska förvarningsmönstret — intäkter bokförs som varken betalats eller sålts vidare; många av historiens krascher visade exakt detta två-tre år i förväg. (2) Lager växer, fordringar normala: produktionsoptimism eller absorptionsspel — kassaflödet tar stryptag (operativt kassaflöde under vinsten), vilket du ser direkt i kassaflödesanalysens rad förändring av lager. (3) Fordringar växer, lagret normalt: service- eller licensintäkter bokförda i förväg — kontrollera intäktsredovisningsprincipen för kontrakt med långa prestationstider. (4) Båda faller medan försäljningen står stilla: effektiviseringsprogram — ofta ett undervärderat läge, om marginalerna (V07) återhämtar sig. Räkneexempel på mönster (1) satt ihop av kapitel 4-5: försäljning +10, fordringar +37, lager +38, operativt kassaflöde 33 mot vinst 74 — alla fyra detektörerna pekar samma håll, och det är då O'Glove säger att den enskilda investerarens övertag är som störst: marknaden ser multipeln (V04), du ser mekanismen."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Lagret är en framtidskista: nästa års nedskrivningar ligger redan gömda i årets balansräkning — den som läser dagens lager läser nästa års vinstvarsel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Lagersignalen — signal, normal, avvikelse, åtgärd\",\"rader\":[[\"Signal\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"Kvot lager/försäljning\",\"Stabil kring branschnormal\",\"Stigande två år i rad utan försäljningstillväxt (V01)\",\"Läs not om lagerstruktur och nedskrivning\"],[\"Lageromsättningsdagar\",\"Jämn nivå, jämn förändring\",\"Kraftig förändring år från år\",\"Jämför med peers och med historik\"],[\"Färdigvarulager\",\"Växer som försäljningen\",\"Växer medan råvaror och försäljning står stilla\",\"Misstänk osäljbart lager — kommande nedskrivning\"],[\"Posten förändring av lager i kassaflödet\",\"Svänger runt noll\",\"Stort negativt år från år\",\"Misstänk kostnadsabsorption i lagret\"],[\"Lagernedskrivningar i not\",\"Återkommer i normal omfattning\",\"Noll medan lagerkvoten stiger\",\"Misstänk för optimistisk värdering\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: fyll i lagerraden på ditt S&P-kort: lager och lageromsättningsdagar (lager / försäljning × 365, samma metod alla år) för varje år. Leta sedan i årsredovisningens not om lager: hur delas lagret upp i råvaror, pågående arbete och färdiga varor? Vilken del växer snabbast? Avsluta i kassaflödesanalysen: hur stor är posten förändring av lager, och åt vilket håll? Om lagret växer snabbare än försäljningen utan förklaring i not eller VD-brev har du precis hittat O'Gloves andra varning på egen hand."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Försäljningen växer 8 procent och lagret 38 procent. Vad är den mest försiktiga första slutsatsen?",
+          "alternativ": [
+            "Bolaget bygger upp lager inför en kraftig försäljningsökning — köp",
+            "Lagret är alltid en god signal eftersom det representerar framtida intäkter",
+            "Något är fel — antingen missbedömd inköp, svagare försäljning än rapporterad, eller kostnader som göms i lagret; nedskrivningsrisken växer",
+            "Kvoten är ointressant eftersom lagret värderas till anskaffningsvärde"
+          ],
+          "ratt": 2,
+          "tips": "Vem bestämmer hur mycket lager som ska ligga där — produktionen eller kunderna?"
+        },
+        {
+          "q": "Hur kan ett tillverkande bolag höja årets vinst genom att producera mer än det säljer?",
+          "alternativ": [
+            "Genom att fasta kostnader absorberas i lagervärdet i stället för att belasta årets resultat",
+            "Genom att lager aldrig behöver värderas i K3",
+            "Genom att produktion alltid ökar försäljningen automatiskt",
+            "Genom att momsen återbetalas på producerat lager"
+          ],
+          "ratt": 0,
+          "tips": "Räkna: 90 Mkr fasta kostnader / 100 000 enheter = 900 kr per enhet — vad händer med de 20 000 osålda enheternas andel?"
+        },
+        {
+          "q": "Vilken detalj i en svensk K3-not om lager är mest alarmerande?",
+          "alternativ": [
+            "Råvarulagret växer kraftigt",
+            "Färdigvarulagret växer kraftigt medan råvaror och försäljning står stilla",
+            "Noten är skriven på engelska",
+            "Pågående arbete redovisas utan kommentar"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vilken del av lagret som bevisligen saknar efterfrågan."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Rörelsekapitalanalysen — balansräkningen avslöjar resultaträkningen",
+      "intro": "O'Gloves djupare insikt: balansräkningen är resultaträkningens undermedvetna. Tre poster — kundfordringar, lager och leverantörsskulder — berättar tillsammans hur verksamheten faktiskt mår. Detta kapitel sätter samman helheten i en rörelsekapitalanalys med kassacykeln som krona.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Rörelsekapitalanalysen är summan av kapitel 4 och 5 plus en tredje post: leverantörsskulder. O'Gloves arbetssätt: ställ upp tillväxttakten för försäljning (V01), kundfordringar, lager och leverantörsskulder sida vid sida, flera år i rad, och läs avvikelserna. Det sunda mönstret är att alla växer ungefär lika — verksamheten expanderar proportionerligt. Räkneexempel på ett sunt år: försäljning +14, kundfordringar +16, lager +12, leverantörsskulder +13 — allt inom några procentenheter av varandra. Räkneexempel på ett osunt år: försäljning +12, kundfordringar +35, lager +28, leverantörsskulder +4. Tolkningen: kunderna betalar allt långsammare, lagret byggs upp, och bolaget betalar sina egna leverantörer i förtid — möjligen för att tjäna tidigbetalningsrabatter och på så vis pumpa marginalen (V07), eller för att inköpsorganisationen pressats. Nettoresultatet i kassa: kassaflödesanalysens rad rörelsekapitalförändring visar ett stort negativt belopp, och det operativa kassaflödet hamnar långt under vinsten. Balansräkningen har just avslöjat det resultaträkningen målade upp."
+        },
+        {
+          "type": "text",
+          "content": "Kassacykeln (cash conversion cycle) samlar de tre posterna i ett enda mått: DSO + lageromsättningsdagar − betaltid till leverantörer (DPO, leverantörsskulder / inköp eller försäljning × 365). Måttet säger hur många dagar som passerar mellan att bolaget betalar sina leverantörer och tar emot kundernas pengar — kortare cykel är i regel bättre. Räkneexempel: DSO 62 + lagerdagar 85 − DPO 38 = kassacykel 109 dagar. Året därpå: DSO 74 + lagerdagar 95 − DPO 30 = 139 dagar. Cykeln har förlängts med 30 dagar — vid en daglig driftskostnad på exempelvis 1,2 Mkr är det 36 Mkr kassa som bundits under året, helt osynligt i resultaträkningen men fullt synligt i kassaflödet och i bolagets ökade beroende av kassakrediten. Följ kassacykeln år från år som en enda detektor: en trend uppåt två år i rad, utan branschförklaring, är en av de starkaste helhetssignalerna i O'Gloves system (stöd: V12 — intäkternas kvalitet visar sig i hur stabilt de konverteras till kassa)."
+        },
+        {
+          "type": "text",
+          "content": "Leverantörsskulden är den underskattade tredje posten, och den kan spela två olika roller. Roll ett — stressignal: ett bolag som inte kan betala sina leverantörer i tid låter leverantörsskulderna växa och DPO stiga; kombineras det med fallande likviditet (V11) och växande kortfristiga skulder är det en finansieringskris i vardande. Roll två — medveten finansiering: starka detaljhandelskedjor med snabb varuomsättning och kunder som betalar direkt kan arbeta med negativ kassacykel — kundernas pengar finns i kassan innan leverantörerna betalas, vilket gör verksamheten självfinansierande i tillväxt. Räkneexempel: DSO 4, lagerdagar 35, DPO 60 — kassacykel 4 + 35 − 60 = −21 dagar: varje krona i försäljningstillväxt frigör kassa i stället för att binda den. Detta är den berömda mekaniken hos prenumerations- och detaljhandelsmodeller — i AKM1-språk stödjer den V12 (intäktsstabilitet): återkommande intäkter som betalas i förväg skapar både stabil kassa och ett starkt rörelsekapital. O'Gloves varning i anslutning: negativ kassacykel är en fördel endast så länge kunderna kommer tillbaka — cykeln är en funktion av intäktskvaliteten, inte en ersättning för den."
+        },
+        {
+          "type": "text",
+          "content": "Sammanfatta rörelsekapitalanalysen i tre iterativa frågor, tillämpade på ditt S&P-kort. Fråga ett: växer kundfordringar och lager snabbare än försäljningen? — i så fall, i hur många år och med hur många procentenheter? Fråga två: backas den redovisade vinsten av det operativa kassaflödet, och kan klyftan förklaras av rörelsekapitalförändringar som syns i kassaflödesanalysen? Fråga tre: håller likviditeten (V11) — hur stor del av kassan består av utnyttjade kassakrediter, och vad säger noten om beviljade kreditramar? Ett komplett räkneexempel: bolag med 20 Mkr i vinst, −15 Mkr i rörelsekapitalförändring, operativt kassaflöde 12 Mkr, kassakredit utnyttjad till 60 Mkr av en ram på 80 Mkr — slutsatsen är att tillväxten i resultaträkningen konsumerar kassa, att kassakrediten är fylld till 75 procent, och att bolaget är två svaga kvartal från emissionrisk (V19) eller tvångsåtgärder. O'Glove ville att varje investerare skulle kunna skriva denna analysrad på baksidan av ett kuvert — kapitel 12 gör den till checklista."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Resultaträkningen visar vad bolaget hävdar att det tjänat, balansräkningen visar vad det kostade att hävda det — rörelsekapitalet är differensen mellan påstående och verklighet, och den differensen betalas alltid i kassa."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rörelsekapital-triangeln — post, normal, avvikelse, åtgärd\",\"rader\":[[\"Post\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"Kundfordringar\",\"Växer som försäljningen (V01)\",\"Växer två-tre gånger snabbare\",\"Kap 4: DSO-analys och kreditnot\"],[\"Lager\",\"Växer som försäljningen\",\"Växer snabbare medan färdigvaror sväller\",\"Kap 5: lagerstruktur och nedskrivningar\"],[\"Leverantörsskulder\",\"Växer som inköpen\",\"Växer kraftigt med fallande likviditet (V11)\",\"Läs not om betalningsvillkor och krediter\"],[\"Kassacykel (DSO + lagerdagar − DPO)\",\"Stabil eller förkortas\",\"Förlängs två år i rad\",\"Beräkna kassabindning per dag och år\"],[\"Rörelsekapitalförändring i kassaflödet\",\"Svänger runt noll\",\"Stort negativt år från år\",\"Förklara med de tre posterna ovan\"],[\"Kassakredit och kreditram\",\"Låg eller ingen utnyttjning\",\"Nära fullt utnyttjad\",\"V19-länk: bedöm emissionrisk\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: fyll i leverantörsskulderna på S&P-kortet och beräkna kassacykeln för varje år: DSO + lageromsättningsdagar − DPO (leverantörsskulder / försäljning × 365). Rita cykeln som en talserie. Bläddra sedan till kassaflödesanalysen och hitta årets rörelsekapitalförändring. Stämmer den med vad dina tre poster förutsäger? Avsluta i noten om upptagna krediter: hur stor del av kreditramen är utnyttjad? Du har nu en komplett rörelsekapitaldiagnos — O'Gloves balansräkningsläsning i sin helhet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den sunda grundregeln i rörelsekapitalanalysen?",
+          "alternativ": [
+            "Kundfordringar ska alltid växa snabbare än försäljningen",
+            "Kundfordringar, lager och leverantörsskulder ska växa ungefär i takt med försäljningen",
+            "Leverantörsskulder ska alltid minskas så snabbt som möjligt",
+            "Rörelsekapitalet ska vara noll för alla bolag"
+          ],
+          "ratt": 1,
+          "tips": "Tänk proportionell expansion: vad borde hända med de tre posterna om allt är friskt?"
+        },
+        {
+          "q": "DSO är 62, lageromsättningsdagar 85 och DPO 38. Vad är kassacykeln?",
+          "alternativ": [
+            "185 dagar",
+            "109 dagar",
+            "47 dagar",
+            "9 dagar"
+          ],
+          "ratt": 1,
+          "tips": "Summera de två första och dra ifrån den tredje — leverantörstiden finansierar en del av cykeln."
+        },
+        {
+          "q": "Vad kännetecknar en bolagsmodell med negativ kassacykel?",
+          "alternativ": [
+            "Bolaget betalar alltid leverantörerna först och tar betalt av kunderna sist — en svag position",
+            "Kassacykeln är ointressant att beräkna för sådana bolag",
+            "Kunderna betalar innan bolaget betalar sina leverantörer, vilket gör tillväxten självfinansierande — ofta kopplat till förbetalda, återkommande intäkter (stöd V12)",
+            "Bolaget har alltid högre lager än konkurrenterna"
+          ],
+          "ratt": 2,
+          "tips": "Vem lånar av vem — bolaget av leverantörerna, eller kunderna av bolaget?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Marginaltrenden — bruttomarginalens berättelse (V07)",
+      "intro": "O'Glove ägnade marginaltrenderna stort utrymme: riktningen på bruttomarginalen över år säger mer om verksamheten än någon enskild vinstsiffra. Här lär du dig läsa trenden, förstå drivkrafterna och skilja äkta prissättningskraft från redovisningskonst.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bruttomarginalen (V07 i AKM1) — bruttovinsten delat med omsättningen — är enligt O'Gloves anda den mest ärliga raden i resultaträkningen. Den ligger långt ifrån finansiella poster, engångsvinster och skatteeffekter; den mäter en enda sak: vad bolaget får behålla av varje såld krona efter varans kostnad. Därför är trenden så informativ. Räkneexempel, tre år: År 1: omsättning 1 000, varukostnad 580 — bruttomarginal 42,0 procent. År 2: omsättning 1 120, varukostnad 627 — 44,0 procent. År 3: omsättning 1 254, varukostnad 683 — 45,5 procent. Marginalhöjningen på 3,5 procentenheter kan verka liten, men effekten är enorm: bruttovinsten har vuxit från 420 till 571 Mkr (+36 procent) medan omsättningen vuxit 25 procent. En stigande bruttomarginal komposterar — varje ny procentenhet landar direkt i rörelseresultatet. Omvänt: en fallande bruttomarginal är en varning långt innan vinsten synker, eftersom volymen kan dölja försämringen i år, men inte i morgon."
+        },
+        {
+          "type": "text",
+          "content": "Nästa steg är att fråga varför marginalen rör sig — O'Gloves fyra klassiska drivkrafter. (1) Pris: äkta prissättningskraft — bolaget kan höja priser utan att förlora kunder, tecken på stark position (varumärkesstyrka, V14-territorium i AKM1-sammanhang). (2) Mix: försäljningen har glidit mot mer lönsamma produkter — ofta sunt, men kontrollera att det inte är en engångsförflyttning. (3) Kostnad: råvaror, valutor, löner — yttre faktorer som vänder; en marginal som steg bara beroende på en svag dollar är ingen vallgrav, den är en valutasatsning. (4) Redovisning: den misstänkta drivkraften — kostnader kapitaliseras in i lagret (kapitel 5), varukostnader periodiseras om, eller avsättningar minskar. Räkneexempel på att skilja: marginalen stiger från 42 till 45 procent samtidigt som lageromsättningsdagarna förlängs från 55 till 72 — då är en del av marginalhöjningen absorption (fasta kostnader gömda i lagret) och därmed inte äkta. Samma marginalförbättring med oförändrad lageromsättning och bevisligen höjda priser: äkta. Trenden är samma siffra, men historien är helt olika — och bara kombinationen av resultatrader och balansräkningsrader kan skilja dem åt."
+        },
+        {
+          "type": "text",
+          "content": "O'Glove varnade också för marginaltoppar och medelvärdets återkomst. Branschens marginaler har en historisk tendens att återvända mot sitt genomsnitt: höga marginaler attraherar konkurrens, substitution och press från kunder; låga marginaler driver konsolidering och rationalisering. Ett bolag som ligger 20 procentenheter över branschgenomsnittet (jämför alltid med två-tre konkurrenter, som O'Glove systematiskt gjorde via S&P-rapporterna) förtjänar antingen en strukturförklaring du kan formulera i en mening — eller en misstanke. Räkneexempel: bolaget redovisar bruttomarginal 52 procent mot branschens 34; förklaringen i årsredovisningen är 'unik teknik'. Frågorna: finns skyddande patent (V13 i AKM1)? Fakturerar kunderna i tid (DSO normal)? Växer lagret normalt? Om svaret är nej på samtliga har du en marginal som inte kan förklaras av position och som därför sannolikt förklaras av redovisning eller tillfälligheter — och en multipel (V04) beräknad på 52-procentmarginalen är mycket dyrare när normaliseringen kommer."
+        },
+        {
+          "type": "text",
+          "content": "Bygg marginalraden på S&P-kortet och komplettera med V08 (EBITDA-marginalen) för att isolera avskrivningarna. Arbetsgången: bruttomarginal (V07) för fem-tio år, rörelsemarginal samma period, EBITDA-marginal (V08) samma period. Tre mönster att känna igen. (1) Bruttomarginal stabil, rörelsemarginal fallande: kostnaderna under varuraden — administration, marknad — äter upp kärnstyrkan; kontrollera om ledningen 'investerar för tillväxt' år efter år utan resultat. (2) Rörelsemarginalen stiger medan EBITDA-marginalen står stilla: hela förbättringen kommer från lägre avskrivningar — en kapitel 9-varning om förlängda livslängder, inte en bättre verksamhet. (3) Bruttomarginalen faller medan rörelsemarginalen hålls: någon post har flyttats från varukostnaden till övriga kostnader (omklassificering) eller en engångsintäkt täcker hålet — läs noterna om ändrade poster. Marginalanalysen är O'Gloves tredje detektorsystem: tre marginaler, tre år, tre konkurrenter — tolv siffror som tillsammans berättar om verksamheten är bättre eller bara snyggare redovisad."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Bruttomarginalen är resultaträkningens ärligaste rad just för att den är tråkig — långt från finansiella trick, engångsposter och skattekonst; när den ändå rör sig, fråga alltid om drivkraften är pris, mix, kostnad eller bokföring."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Marginaltrenden (V07) — mönster, tolkning, åtgärd\",\"rader\":[[\"Mönster\",\"Tolkning\",\"Åtgärd\"],[\"Bruttomarginal stigande tre år i rad\",\"Prissättningskraft eller mixförbättring — kontrollera äktheten\",\"Jämför DSO, lager och peers; leta strukturförklaring\"],[\"Bruttomarginal fallande, vinsten uppe\",\"Volym döljer försämring; engångsintäkter täcker\",\"Justera vinsten (kap 8) och normalisera\"],[\"Bruttomarginal långt över branschgenomsnitt\",\"Strukturposition eller överdrift — avgör vilken\",\"Formulera vallgraven i en mening; hittar du den inte — minska\"],[\"Rörelsemarginal stiger, EBITDA-marginal (V08) stilla\",\"Förbättringen är avskrivningskonst, inte drift\",\"Kap 9: jämför avskrivningar mot capex och livslängder\"],[\"Marginalcykler upp och ner var tredje till femte år\",\"Cykliskt bolag\",\"Normalisera marginalen över hel cykel före V04/V06\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: lägg till tre marginalrader på S&P-kortet — bruttomarginal (V07), rörelsemarginal och EBITDA-marginal (V08) — för varje år. Redovisas inte bruttovinsten separat, beräkna den som omsättning minus kostnad sålda varor (använd samma definition alla år). Fråga dig sedan: stiger eller faller V07-trenden, och vilken av de fyra drivkrafterna — pris, mix, kostnad, redovisning — är mest sannolik? Avsluta med att hämta största konkurrentens marginaler och skriv en mening om varför ditt bolag avviker."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallas bruttomarginalen (V07) resultaträkningens ärligaste rad?",
+          "alternativ": [
+            "Därför att den alltid är den högsta marginalen",
+            "Därför att den ligger långt från finansiella poster, engångsvinster och skatteeffekter — den mäter bara vad som blir kvar efter varans kostnad",
+            "Därför att den inte påverkas av prissättning",
+            "Därför att revisorn alltid garanterar den"
+          ],
+          "ratt": 1,
+          "tips": "Avståndet till manipulerbara poster är själva poängen."
+        },
+        {
+          "q": "Bruttomarginalen stiger från 42 till 45 procent medan lageromsättningsdagarna förlängs från 55 till 72. Vad är mest sannolikt?",
+          "alternativ": [
+            "Äkta prissättningskraft som bör värderas högt",
+            "Ren valutaeffekt som inte behöver analyseras",
+            "En del av marginalhöjningen kommer från kostnadsabsorption i lagret och är därför inte äkta",
+            "Bolaget har sålt alla varor med förlust"
+          ],
+          "ratt": 2,
+          "tips": "Vad hände med de fasta kostnader som hör till de extra lagerdagarna?"
+        },
+        {
+          "q": "Rörelsemarginalen förbättras tre år i rad, men EBITDA-marginalen (V08) är oförändrad. Vad innebär det?",
+          "alternativ": [
+            "Verksamheten har blivit radikalt effektivare",
+            "Förbättringen sitter i lägre avskrivningar — ett varningstecken om ändrade antaganden snarare än bättre drift",
+            "Bolaget har höjt alla priser",
+            "Kundfordringarna har minskat kraftigt"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden mellan rörelseresultat och EBITDA, och vem styr den skillnaden?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Engångsposternas återkommande natur — one-time som årsvana",
+      "intro": "O'Gloves mest citerade iakttagelse: 'engångsposter' som återkommer år efter år är inte engångsposter — de är driftkostnader som klätts ut som tillfälligheter. Kapitlet lär dig justera vinsten till kärnvinst och känna igen big bath-mekaniken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kärniakttagelsen formuleras enkelt: en post som är extraordinär tre år på rad är inte extraordinär — den är en del av verksamheten. O'Glove visade i boken hur bolag år efter år presenterade omstruktureringar, nedskrivningar och förluster som engångsbelastningar, och hur både analytiker och marknad godtog att 'lägga dessa åt sidan' vid värderingen. Räkneexempel på mönstret: År 1: redovisad vinst 62 Mkr, omstruktureringskostnad −18 Mkr (redovisad som jämförelsestörande). År 2: vinst 71 Mkr, IT-kostnader och uppsägningar −22 Mkr. År 3: vinst 80 Mkr, nedskrivning av avyttrat segment −15 Mkr. Justerad vinst enligt bolaget: 80 + 15 = 95 Mkr — men om samtliga år faktiskt innehåller strukturella kostnader för att anpassa verksamheten är den ekonomiska sanningen att verksamheten kostar 15-20 Mkr per år att driva, och den äkta vinsten är 60-65 Mkr. Värderar du bolaget till tolv gånger justerad vinst i stället för tolv gånger äkta vinst betalar du cirka 360 Mkr för luft."
+        },
+        {
+          "type": "text",
+          "content": "I svenska K3-rapporter heter fenomenet jämförelsestörande poster: poster av väsentligt annorlunda storlek eller art som presenteras separat i resultaträkningen för att jämförbarheten mellan åren ska framstå som bättre. Definitionen är rimlig — ett bolag som sålt en fastighet eller drabbats av en brand ska särredovisa — men O'Gloves varning gäller ordet 'art'. Frågan varje detektiv ska ställa: härrör posten från kärnverksamheten eller ej? En nedskrivning av goodwill på ett inköpt dotterbolag härrör från kärnverksamheten ( hade det inte varit för förvärvet hade posten inte funnits); en förlust på en såld fastighet som bolaget köpt för att hyra ut är ett gränsfall; en brandförlust är ett äkta engångsläge. Praktisk tumregel från bokens anda: räkna hur många av de senaste fem-tio åren som innehållit 'engångs'-poster. Noll till ett år: normalt. Två till tre år: räkna fram genomsnittet av beloppen och behandla det som en årlig kostnad — dra av den från vinsten. Fyra år eller mer: bolagets verkliga vinst är den redovisade, och den justerade siffran är marknadsföring."
+        },
+        {
+          "type": "text",
+          "content": "Big bath är engångspostens aggressivaste kusin och förtjänar sin egen beskrivning. Mekaniken: när ett bolag ändå måste redovisa ett dåligt år samlar ledningen in alla kända framtida kostnader — uppsägningar, nedskrivningar, tvister, garantier — och bokför dem på en gång, gärna med råge. Året blir fruktansvärt, men varenda krona av detta är kostnader som annars skulle ha tyngt kommande år — som därmed blir konstigt starka. Räkneexempel: ett bolag med äkta löpande vinst kring 50 Mkr per år redovisar år 2 ett resultat på −120 Mkr genom att bokföra 170 Mkr i samlade omstrukturerings- och nedskrivningsposter. År 3: 'vändningen' — vinsten visar 84 Mkr, av vilka kanske 24 Mkr är kostnader som aldrig kom (redan bokförda i badet) och 10 Mkr återförda reserver. Den som jämför år 3 mot år 2 ser en vändning; den som jämför år 3 mot år 1 (före badet) ser en vinst på 84 Mkr som vilar på en kostnadsbas som redan slagits ut. O'Gloves råd: när ett bolag köper sig ett dåligt år, läs de följande årens resultat med minne — vändningen är ofta en bokföringsprodukt."
+        },
+        {
+          "type": "text",
+          "content": "Bygg kärnvinsten — core earnings avant la lettre — som en egen rad på S&P-kortet. Arbetsgång: (1) lista alla jämförelsestörande poster för de senaste fem åren från resultaträkningen och noterna (i K3 ofta redovisade med belopp och förklaring i en egen not); (2) sortera dem i två kolonner: äkta engång (brand, expropriation, förlust på försäljning av en icke-verksamhetsnära tillgång) respektive strukturell (omstrukturering, nedskrivning av rörelsegoodwill, IT-kostnader, personalkostnader); (3) summera den strukturella kolonnen per år; (4) beräkna kärnvinst = redovisad vinst minus strukturellt genomsnitt, med äkta engång justerade för sig. Använd kärnvinsten som nämnare i alla vinstmultipler — V06 (EV/EBITDA) och P/E — medan V04 (P/S) och V05 (P/B) blir kontrollerbara när du vet att intäkter och substansvärden inte är uppblåsta av samma poster. Detta är exakt arbetet S&P standardiserade som core earnings 2002, femton år efter att O'Glove publicerade sin handmetod. Skillnaden mellan dig och konsensus är sedan exakt skillnaden mellan redovisad och kärnvinst — en kant som inte försvinner när marknaden blir effektiv, för den kräver läsning, inte beräkning."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Lyssna på frekvensen, inte på ordet: 'engångspost' är ett påstående om framtiden, och historien — samma post, år efter år — är beviset som dementerar det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Engångspost-analys — posttyp, exempel, bedömning\",\"rader\":[[\"Posttyp\",\"Exempel\",\"Bedömning\"],[\"Äkta engång\",\"Brandförlust, expropriation, unik händelse utan koppling till verksamheten\",\"Lägg tillbaka i vinsten — sant jämförelsestörande\"],[\"Strukturell klädd som engång\",\"Omstrukturering år 3 av 5, IT-kostnader, uppsägningar\",\"Behåll som kostnad i kärnvinsten\"],[\"Goodwillnedskrivning\",\"Nedskrivning på inköpt dotterbolag\",\"Härrör från kärnverksamheten (förvärvet) — äkta kostnad för förvärvspolitiken\"],[\"Återföring av reserv\",\"Återbokning av tidigare nedskrivning\",\"Fråga varför reserverna fanns; ofta vinstflyttning mellan år\"],[\"Värdepappers- eller fastighetsvinst\",\"Försäljning av icke-operativ tillgång\",\"Exkludera ur kärnvinsten — engångs i bägge riktningar\"],[\"Big bath-samlingpost\",\"170 Mkr samlade kostnader i ett enda år\",\"Läs följande år med minne: vändningen kan vara bokförd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: gå till resultaträkningen i din årsredovisning och leta efter avsnittet jämförelsestörande poster (och dess not). Lista alla poster för de senaste tre-fem åren med belopp. Sortera dem i två kolonner: äkta engång och strukturell. Beräkna kärnvinsten för det senaste året och jämför med bolagets egen 'justerade' siffra i pressmeddelandet eller VD-brevet. Hur stor är skillnaden? Om någon typ av post återkommer tre år i rad har du fångat O'Gloves mest citerade fälla i naturen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är O'Gloves kärniakttagelse om engångsposter?",
+          "alternativ": [
+            "Att alla engångsposter alltid är fusk och ska anmälas",
+            "Att en post som är extraordinär tre år på rad inte är extraordinär utan en driftkostnad klädd som tillfällighet",
+            "Att engångsposter aldrig får läggas tillbaka i vinsten",
+            "Att engångsposter bara finns i amerikanska rapporter"
+          ],
+          "ratt": 1,
+          "tips": "Ordet 'engång' är ett påstående — vad säger frekvensen?"
+        },
+        {
+          "q": "Vad kännetecknar big bath-mekaniken?",
+          "alternativ": [
+            "Bolaget sprider kostnader jämnt över många år för att slippa dåliga kvartal",
+            "Bolaget samlar alla kända framtida kostnader i ett redan dåligt år, vilket gör följande år konstigt starka",
+            "Bolaget bokför intäkter i förväg för att slippa dåliga år",
+            "Bolaget använder lågkonjunkturer för att lansera nya produkter"
+          ],
+          "ratt": 1,
+          "tips": "Vilket år väljer man för att bokföra allt ont man kan tänka sig?"
+        },
+        {
+          "q": "Redovisad vinst är 80 Mkr. Senaste tre åren innehåller strukturella 'engångs'-kostnader på 18, 22 och 15 Mkr. Vad är den mest försiktiga kärnvinsten?",
+          "alternativ": [
+            "95 Mkr (80 + genomsnittet återfört)",
+            "135 Mkr (80 + samtliga poster återförda)",
+            "Cirka 62 Mkr (80 − genomsnittet cirka 18 som varaktig kostnad)",
+            "80 Mkr — redovisad vinst är alltid kärnvinst"
+          ],
+          "ratt": 2,
+          "tips": "Om kostnaden återkommer år från år är den en del av verksamheten — ska den då läggas till eller dras ifrån?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Avskrivningar — livslängdsvalet som tyst vinstmaskin (V08)",
+      "intro": "Avskrivningen är resultaträkningens största antagande: en uppskattning av hur länge en tillgång tjänar pengar. O'Glove visade hur en enda ändrad siffra i noten kan höja vinsten med miljoner utan att något händer i verksamheten. Detta kapitel gör dig till mästare på livslängdstänkandet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En avskrivning är inget kontant flöde — det är en uppskattning fördelad i tiden. När ett bolag köper en maskin för 100 Mkr antas den ha en ekonomisk livslängd och kanske ett restvärde; kostnaden fördelas över livslängden i resultaträkningen, medan pengarna lämnade bolaget redan dag ett (syns i investeringsposten i kassaflödesanalysen). Här ligger manipulationsytan: livslängden är en bedömning, och bedömningar kan väljas generöst. Räkneexempel: maskin 100 Mkr. Livslängd 8 år — årlig avskrivning 12,5 Mkr. Om ledningen förlänger livslängden till 12,5 år (exempelvis med hänvisning till bättre underhåll) blir den årliga avskrivningen 8,0 Mkr — och vinsten före skatt stiger med 4,5 Mkr per år, år efter år, utan att en enda kund, produkt eller krona i verksamheten rörs. I ett bolag med 30 Mkr i vinst är det en femton procents 'förbättring' av lönsamheten, skapad i en not. EBITDA-marginalen (V08) påverkas inte alls — därför är skillnaden mellan V08 och rörelsemarginalen en av dina bästa detektorer: om den skillnaden krymper år från år utan att investeringarna minskar, fråga varför."
+        },
+        {
+          "type": "text",
+          "content": "Tecknet på manipulation är inte själva ändringen — bolag kan ha goda skäl att justera livslängder — utan kombinationen av tre observationer. (1) Ändringen kommer samtidigt som resultatmål hotas att missas (timing). (2) Avskrivningarna som andel av investeringarna (capex) faller: i ett moget bolag i stabil tillväxt bör avskrivningar och capex följas åt över tiden — om avskrivningarna ligger stadigt under capex år efter år växer en eftersläpning av icke-redovisad förbrukning som en dag måste komma ifatt (gamla maskiner måste bytas). Räkneexempel: capex 60 Mkr per år, avskrivningar 42 Mkr i fem år — efter fem år har 90 Mkr av förbrukning inte redovisats; den dagen investeringsbördan kommer ikapp slår det mot vinsten. (3) Not 1 i K3-rapporten ändras i avskrivningsavsnittet: lägg tid på att jämföra årets not med förra årets — raden 'avskrivningstiden för byggnader har omräknats från 33 till 50 år' är värd mer information än hela VD-brevet. O'Glove älskade detta hantverk: han behandlade notens ändringsrader som en reporters scoop — den viktigaste informationen står tryckt längst ner."
+        },
+        {
+          "type": "text",
+          "content": "Översätt till svenska förhållanden. K3 (och IFRS för noterade koncerner) kräver komponentavskrivning: en byggnad delas upp i komponenter (grund, tak, hissar, installationer) med olika livslängder, vilket är gott för transparens men också öppnar för antagandespel per komponent. Den svenska noten att läsa är noten om anläggningstillgångar, som visar ingående värde, årets avskrivningar, tillkommande och utgående investeringar — och ibland omräkningar. Jämför tre saker mellan bolag och över tid: genomsnittlig avskrivningstid (bruttovärde delat med årets avskrivning), avskrivningar mot capex, och eventuella ändringsrader i not 1. Räkneexempel på jämförelsen: verkstadsbolag A avskriver på 12 år, konkurrent B på 18 år med i övrigt liknande maskinpark — B:s rörelseresultat är strukturellt 'bättre' med en tredjedel lägre avskrivningskostnad, och den som jämför deras marginaler och multipler (V06) utan att justera jämför äpplen med päron. Normalisera: räkna om B:s resultat med A:s livslängder — det tar en kalkylrad och ger dig den enda jämförbara siffran i branschen."
+        },
+        {
+          "type": "text",
+          "content": "Avskrivningsanalysens krona är förhållandet mellan avskrivningar, capex och kassaflöde — tre mått på samma fysiska verklighet (maskiner slits). I det ideala mogna bolaget ligger de tre nära varandra: kassaflödet ersätter det som slits, avskrivningen mäter slitaget, capex utför ersättningen. Avvikelser tolkas: avskrivningar mycket under capex under flera år = tillväxt (kan vara sunt) eller eftersläpning (farligt — kontrollera med maskinparkens ålder om den redovisas); avskrivningar mycket över capex = lyfter kassan idag men kan dölja underinvestering som hämnas i konkurrenskraft (V07-marginalen sjunker senare när gamla maskiner ger sämre kvalitet eller högre kostnader); avskrivningar plötsligt förändrade utan investeringsförändring = not 1-varningen ovan. Enligt O'Gloves anda bör varje investerare kunna svara på tre frågor om varje ägt bolag: Hur stora är avskrivningarna per år? Hur mycket investeras per år? Vilken genomsnittlig livslängd antas? — tre siffror som tillsammans avslöjar om resultaträkningens kostnadssida är sann eller önskad."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Avskrivningen är den enda stora kostnad som ledningen väljer genom att skriva en siffra i en not — den som kontrollerar livslängden kontrollerar vinsten, och den som jämför avskrivningar med capex ser vem som skönmålar slitaget."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Avskrivningsdetektorn — signal, normal, avvikelse, åtgärd\",\"rader\":[[\"Signal\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"Avskrivningar / capex\",\"Nära varandra över tid\",\"Avskrivningar klart under capex tre år i rad\",\"Beräkna eftersläpning; fråga om underhållet\"],[\"Genomsnittlig livslängd (brutto/årsavskrivning)\",\"Stabil, liknar peers\",\"Plötslig förlängning\",\"Läs not 1: ändrad avskrivningsprincip\"],[\"Skillnad rörelsemarginal mot V08 (EBITDA-marginal)\",\"Stabil relation\",\"Krymper år från år utan lägre investeringar\",\"Misstänk förlängda livslängder\"],[\"Komponentändringar i anläggningsnoten\",\"Få och förklarade\",\"Frekventa omräkningar och omvärderingar\",\"Begär förklaring; jämför med peers\"],[\"Avskrivningar i not mot resultaträkning\",\"Stämmer\",\"Avviker utan förklaring\",\"Kontrollera kapitaliserade utvecklingskostnader\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: öppna noten om anläggningstillgångar och not 1 i din årsredovisning. Tre uppgifter: (1) vad var årets avskrivningskostnad? (2) vad var årets investeringar (capex, ur kassaflödesanalysen)? (3) vilken genomsnittlig livslängd ger bruttovärdet delat med årsavskrivningen? Läs sedan not 1:s avskrivningsavsnitt och jämför med förra årets version av samma not (hämta båda årsredovisningarna) — hittar du en ändrad livslängd eller metod har du precis sett hur en vinst höjs utan en enda affär."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "En maskin för 100 Mkr avskrivs över 8 år. Livslängden ändras till 12,5 år. Vad händer med årsresultatet?",
+          "alternativ": [
+            "Ingenting — avskrivningar påverkar inte resultatet",
+            "Årlig avskrivning sjunker från 12,5 till 8,0 Mkr och vinsten före skatt stiger med 4,5 Mkr per år utan affärsförändring",
+            "Vinsten sjunker med 4,5 Mkr per år",
+            "Kassaflödet minskar med samma belopp"
+          ],
+          "ratt": 1,
+          "tips": "Räkna på pappret: 100/8 mot 100/12,5 — vart tar differensen vägen?"
+        },
+        {
+          "q": "Vad innebär det om avskrivningarna ligger stadigt under capex i fem år?",
+          "alternativ": [
+            "Bolaget är överinvesterat och bör sälja maskiner",
+            "Avskrivningarna är för höga och bolaget är undervärderat",
+            "En eftersläpning av icke-redovisad förbrukning byggs upp — investeringsbördan kommer ikapp förr eller senare",
+            "Det är alltid tecken på hälsosam tillväxt"
+          ],
+          "ratt": 2,
+          "tips": "Vad är avskrivningens uppgift — och vad händer när den inte hinner med verklighetens slitage?"
+        },
+        {
+          "q": "Varför är skillnaden mellan EBITDA-marginalen (V08) och rörelsemarginalen en användbar detektor?",
+          "alternativ": [
+            "Därför att EBITDA alltid är mer sant än rörelseresultatet",
+            "Skillnaden består i huvudsak av avskrivningarna — krymper den år från år utan minskade investeringar är livslängdsförlängning en sannolik förklaring",
+            "Därför att skillnaden visar bolagets skattesats",
+            "Skillnaden mäter kundfordringarnas kvalitet"
+          ],
+          "ratt": 1,
+          "tips": "Skriv upp definitionerna under varandra — vilka rader skiljer de två marginalerna åt?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Pension, avsättningar och gömda åtaganden (V10, V11)",
+      "intro": "O'Gloves eras amerikanska pensionsbokföring kunde lyfta miljarder in i resultaträkningen som 'pensionsintäkt' medan ofinansierade åtaganden gömdes i noter. Det moderna svenska landskapet ser annorlunda ut — men principen är evig: åtaganden som inte syns i skuldsättningsgraden (V10) är skulder ändå.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden först, för den förklarar varför O'Glove ägnade pensionsbokföringen ett helt kapitel. I 1980-talets USA redovisade många bolag pensionstillgångar och -skulder off balance med förväntad avkastning som intäkt i resultaträkningen: om pensionsplanen förväntades avkasta 8 procent bokfördes 8 procent som vinst — oavsett vad planen faktiskt presterade. Ett bolag med 2 miljarder dollar i pensionstillgångar kunde därmed redovisa 160 miljoner dollar i 'pensionsintäkt' per år som inte hade något med verksamheten att göra och som kunde vända till förlust när aktiemarknaden föll. O'Glove visade hur mekanismen kunde både blåsa upp vinsten (vid hög förväntad avkastning) och dölja enorma ofinansierade åtaganden. Räkneexempel i hans anda: redovisad vinst 200 Mkr, varav 35 Mkr pensionsintäkt beräknad på 8 procents förväntan; verklig avkastning blev 3 procent — den ekonomiska intäkten var cirka 13 Mkr, och 22 Mkr av vinsten var en antagandeprodukt. Justera, och den multipel du trodde dig betala var en helt annan."
+        },
+        {
+          "type": "text",
+          "content": "I Sverige är systemet annorlunda men frågan densamma. De flesta svenska bolag har löftesbaserade tjänstepensioner (ITP för tjänstemän, avtalspensioner för arbetare) som i huvudsak är försäkrade hos kollektiva försäkringsgivare (Alecta med flera) — vilket innebär att åtagandet inte ligger som en stor post i bolagets egen balansräkning. Men tre undantag är vanliga och värda granskning. (1) Avsättning för pensionsåtagande: bolag med egna pensionsåtaganden (äldre utfästelser, utländska dotterbolag, VD- och nyckelpersonpensioner) redovisar en avsättning vars beräkning vilar på antaganden om diskonteringsränta, löneutveckling och dödlighet. (2) IFRS-bolag: noterade koncerner som tillämpar IAS 19 redovisar definierade förmånsplaner med förväntad avkastning på planens tillgångar som finansiell intäkt — precis den mekanism O'Glove varnade för, fast mer reglerad. (3) Känslighet: en not visar hur avsättningen ändras om diskonteringsräntan ändras en procentenhet. Räkneexempel: avsättning 400 Mkr, känslighet plus-minus 60 Mkr per procentenhet — en siffra som direkt påverkar skuldsättningsgraden (V10) och som säger dig hur mycket av soliditeten som vilar på ett ränteantagande."
+        },
+        {
+          "type": "text",
+          "content": "Utöver pension finns en hel familj av åtaganden som inte syns fullt ut i balansräkningen, och O'Gloves råd — läs noterna om ansvar och garantier — gäller dem alla. Katalogen för en svensk årsredovisning: eventualförpliktelser (borgen, garantier, pågående tvister — en not som kan innehålla miljonbelopp som aldrig blir en bokförd skuld men mycket väl en kontant utgift); leasing (IFRS 16 har flyttat in leasing i balansräkningen för koncerner, men korta och osäkra avtal plus rena tjänsteavtal bor kvar utanför); utfästelser till kunder (returrätter, bonusprogram, garantier på sålda produkter — avsättningens storlek mot historisk utgift är en kvot); förvärvsåtaganden (earn-outs till säljare, som kan bli stora kontantbördor när det går bra). Räkneexempel på helhetssyn: bolag med synlig skuldsättningsgrad (V10) på 0,4 — men med 180 Mkr i eventualförpliktelser (borgen för dotterbolag), 90 Mkr i restvärdegarantier och en underfinansierad pensionsavsättning på 60 Mkr; det justerade skuldbeloppet ger en reell skuldsättningsgrad närmare 0,7. Likviditetsanalysen (V11) och kapitalförbrukningen (V19) bör alltid testas mot de dolda posterna — det är där kriser överraskar."
+        },
+        {
+          "type": "text",
+          "content": "Arbetsgången för en O'Glove-granskning av åtaganden i en svensk årsredovisning, i läsordning. (1) Balansräkningen: hitta avsättning för pension och övriga avsättningar — hur har de rört sig under tre år? (2) Noten om avsättningar: vilka antaganden används (diskonteringsränta, löneutveckling) och hur stor är känsligheten? (3) Noten om eventualförpliktelser: summera borgen, garantier och tvister; fråga dig vilka som kan bli kontanta inom två år. (4) Noten om finansiella åtaganden: leasingåtaganden totalt, obetalda earn-outs. (5) Kassaflödesanalysen: finns pensionsbetalningar och garantibetalningar som tyder på att åtagandena realiseras? (6) Räkna om V10 med dolda åtaganden inräknade. Resultatet är en skuldsättningsbild som är din egen — inte bolagets presentation — och det är exakt den typen av självständighet O'Glove menade var den enskilda investerarens enda verkliga konkurrensfördel. En multipel på V06 (EV/EBITDA) beräknad på ett företagsvärde som missar dolda åtaganden är inte en multipel — det är en gissning med decimaler."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Skuldsättning är en bedömning, inte en post: pensionsantaganden, eventualförpliktelser och garantier bor i noterna — och skulden som inte syns i skuldraden är den skuld som slår hårdast när den en dag syns."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Gömda åtaganden — post, var den bor, fråga, åtgärd\",\"rader\":[[\"Post\",\"Var den bor\",\"Detektivfråga\",\"Åtgärd\"],[\"Pensionsavsättning\",\"Balansräkning och avsättningsnot\",\"Vilken diskonteringsränta och känslighet?\",\"Räkna om V10 vid rimlig ränta\"],[\"Förväntad pensionsavkastning (IFRS)\",\"Not om pensionsplaner\",\"Är intäkten en antagandeprodukt?\",\"Justera vinsten — kärnvinst enligt kap 8\"],[\"Eventualförpliktelser\",\"Egen not\",\"Vilka kan bli kontanta inom två år?\",\"Lägg till i skuldbilden vid bedömning av V10/V11\"],[\"Garantier och returrätter\",\"Avsättningsnot och intäktsnot\",\"Stämmer avsättningen mot historisk utgift?\",\"Justera om avsättningen sjunker medan försäljningen växer\"],[\"Leasing utanför balansräkningen\",\"Not om finansiella åtaganden\",\"Vad är totalåtagandet?\",\"Räkna om med kapitaliserad leasing\"],[\"Earn-outs\",\"Förvärvsnot och åtagandenot\",\"Vad utlöses vid bra utfall?\",\"Testa V19 vid betalningstillfället\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: gå till balansräkningen och hitta posten avsättning för pension (och övriga avsättningar). Notera beloppet för tre år. Leta sedan upp noten om avsättningar och eventualförpliktelser: vilka antaganden används, och hur stor är känsligheten för en procentenhets ränteändring? Summera slutligen eventualförpliktelser (borgen, garantier, tvister). Beräkna nu en justerad skuldsättningsgrad (V10) där du lägger dolda åtaganden ovanpå de synliga skulderna. Hur stor var skillnaden mot den presenterade bilden?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur kunde 1980-talets amerikanska pensionsbokföring blåsa upp vinsten?",
+          "alternativ": [
+            "Pensionsutbetalningar bokfördes som investeringar",
+            "Förväntad avkastning på pensionsplanens tillgångar bokfördes som intäkt — oavsett verklig avkastning",
+            "Pensionsskulden avskrevs över 40 år",
+            "Pensionskostnader bokfördes aldrig i resultaträkningen"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden mellan förväntad och realiserad avkastning, och vem väljer den förväntade?"
+        },
+        {
+          "q": "Vad är syftet med att räkna om skuldsättningsgraden (V10) med eventualförpliktelser, garantier och pensionsavsättningar?",
+          "alternativ": [
+            "Att få en lägre skuldsättningsgrad och ett billigare bolag",
+            "Att följa K3-reglerna exaktare än bolaget gör",
+            "Att få en egen, ärligare skuldbild — åtaganden som kan bli kontanta utgifter är skulder även när de inte syns i skuldraden",
+            "Att beräkna bolagets skatt"
+          ],
+          "ratt": 2,
+          "tips": "Vem presenterar den officiella graden — och vems intresse tjänar presentationen?"
+        },
+        {
+          "q": "En not visar att pensionsavsättningen ändras med 60 Mkr per procentenhet i diskonteringsränta. Vad lär du dig av det?",
+          "alternativ": [
+            "Att avsättningen är exakt och pålitlig",
+            "Att bolaget saknar pensionsåtaganden",
+            "Att en stor del av balansräkningens soliditet vilar på ett ränteantagande — testa rimligheten i antagandet",
+            "Att diskonteringsräntan är irrelevant för pension"
+          ],
+          "ratt": 2,
+          "tips": "Vem skördar fördelen av att välja räntan — och vad händer om den väljs generöst?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Utdelning, återköp och kassans kvalitet (V19, V20)",
+      "intro": "O'Glove såg utdelningsströmmen som ett ultimat kvalitetstest: en utdelning som backas av operativt kassaflöde år efter år är den ärligaste signal ett bolag kan sända. Här knyter du ihop kursens detektorer till den sista frågan — vad gör bolaget med kassan, och varifrån kommer den?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utdelningens styrka som signal är att den är kontant. Ett bolag kan redovisa vinst med periodiseringar och antaganden, men en utdelning på 50 Mkr kräver att 50 Mkr lämnar bankontot — den kan inte fabriceras med en not. O'Gloves test är därför: granska utdelningsströmmens finansiering. Räkneexempel, det sunda fallet: vinst 60 Mkr, operativt kassaflöde 95 Mkr (avskrivningar läggs tillbaka), nödvändiga investeringar (capex) 35 Mkr — fri kassa 60 Mkr, utdelning 30 Mkr: hälften av fri kassa, beloppet täcks med god marginal och kan växa med verksamheten. Det osunda fallet: vinst 60 Mkr, operativt kassaflöde 38 Mkr (rörelsekapital slukar kassan — kapitel 6-varningar), capex 35 Mkr — fri kassa 3 Mkr, men utdelningen är 30 Mkr; skillnaden på 27 Mkr tas från kassabehållning, ny skuld eller, i värsta fall, nyemission (V19). En utdelning som inte backas av fri kassa är inte en gåva till aktieägarna — den är en omfördelning från framtiden, och den slutar alltid antingen med nedskärning eller med emission. Följ tråden tre år bakåt: varifrån kom utdelningskronorna?"
+        },
+        {
+          "type": "text",
+          "content": "Utdelningsanalysen har tre klassiska fällor värda att memorera. Fälla ett — utdelning från engångsmedel: bolaget betalar utdelning med intäkten från en såld tillgång eller en fastighetsvinst; strömmen ser stabil ut men källan är icke-återkommande (testa mot kapitel 8:s kärnvinst). Fälla två — utdelning som finansieras med skuld: att låna för att dela ut kan under korta perioder vara rimligt (skatteeffekt, balansering), men som permanent mönster är det en långsam likvidation; kontrollera nettoskuldens utveckling mot utdelningssumman. Fälla tre — utdelningsandelen beräknad på fel nämnare: bolag marknadsför ofta utdelningen som andel av redovisad vinst — men om vinsten innehåller engångsvinster eller om kapitalbehovet är högt är rätt nämnare fri kassa. Räkneexempel: utdelning 40, redovisad vinst 100 — utdelningsandel 40 procent (ser försiktigt ut); men fri kassa efter nödvändigt capex är 45 — utdelningsandel på fri kassa 89 procent (allt annat än försiktigt). Den som köper aktien för utdelningens hållbarhet bör studera den andra beräkningen — och O'Gloves råd är att alltid räkna båda och fråga vilken marknaden tittar på."
+        },
+        {
+          "type": "text",
+          "content": "Återköpen (V20) är utdelningens moderna kusin, och samma kvalitetstest gäller — med två tillägg. Test ett — finansiering: backas återköpen av operativ kassa, eller lånas de (vid låga räntor kan det vara rimligt, men testa V10 och räntekänsligheten)? Test två — pris: återköp skapar värde endast när aktien köps under inre värde; köps den över, överförs värde från kvarvarande ägare till säljare (marginal of safety-principen utan V-nummer: köp med rabatt mot konservativt beräknat värde, annars låt bli). Tillägg ett — mekanisk utspädning: många bolag köper tillbaka aktier endast för att neutralisera personaloptioner; det är kompensationssanering, inte kapitalåterbäring — kontrollera aktieantalets nettoförändring, inte återköpsbeloppet. Räkneexempel: bolaget meddelar återköp för 200 Mkr; aktieantalet faller från 100 till 99 miljoner (en procent) medan optioner utlösts på 3 miljoner nya aktier — netto har antalet aktier vuxit; det enda sanna måttet är per-aktie-siffrorna (vinst per aktie, fri kassa per aktie), inte återköpspressmeddelandet. Tillägg två — timing: återköp som kulminerar vid börstoppar och upphör i kriser är värdemördande; studera bolagets historik av när det faktiskt köpt."
+        },
+        {
+          "type": "text",
+          "content": "Samla kassakapitlet i en enda utdelnings- och återköpsdiagnos, som kronan på S&P-kortet. Sex rader per år: redovisad vinst, kärnvinst (kapitel 8), operativt kassaflöde, capex, fri kassa (operativt kassaflöde minus capex) samt utdelning plus återköp. Tre tolkningsregler. (1) Fri kassa större än utdelning plus återköp, tre år i rad: kassakvaliteten hög — bolaget kan växa, dela ut och betala av skuld samtidigt; V19-emissionsrisken är låg. (2) Utdelning plus återköp nära eller över fri kassa: bolaget återlämnar mer än verksamheten alstrar — fråga hur länge det kan pågå och vad som händer med V10 och V11 när räntan eller konjunkturen vänder. (3) Utdelning plus återköp växer snabbare än fri kassa: ledningen jagar en berättelse om aktieägarvärde som verksamheten inte finansierar — en klassisk signal före nedskärningar. Räkneexempel på regel (2): fri kassa 25 Mkr, utdelning 40 Mkr, återköp 30 Mkr — 45 Mkr per år finansieras från balansräkningen; med kassa på 80 Mkr och outnyttjad kredit på 100 Mkr kan det pågå i två-tre år; därefter kommer valet mellan nedskärning, emission (V19) eller försäljning — och du vill ha tagit ditt beslut innan bolaget tar sitt."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Vinst är en åsikt, utdelning är ett faktum — men källan bakom utdelningen är faktumets kärna: O'Gloves test är alltid varifrån kronorna kommer, inte hur stora de är."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kassans kvalitet — mått, normal, avvikelse, åtgärd\",\"rader\":[[\"Mått\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"Operativt kassaflöde / vinst\",\"Minst 1 över tid\",\"Långt under 1 tre år i rad\",\"Kap 2-6: hitta var kassan fastnar\"],[\"Fri kassa (operativt CF − capex)\",\"Positiv och växande\",\"Negativ eller minimal\",\"V19: emissionrisk; kap 9: avskrivningsunderlag\"],[\"Utdelning / fri kassa\",\"Under cirka 60-70 procent\",\"Nära eller över 100 procent\",\"Testa hållbarheten; läs skuld- och kassautvecklingen\"],[\"Utdelningskälla\",\"Operativ kassa\",\"Tillgångsförsäljning eller ny skuld\",\"Justera för engångsmedel (kap 8)\"],[\"Nettoaktieantal (V20)\",\"Fallande vid återköp\",\"Oförändrat eller stigande trots återköpsbud\",\"Räkna på per-aktie-siffror, inte belopp\"],[\"Återköpstajming (V20)\",\"Konsekvent genom cykeln\",\"Köp på toppar, uppehåll i kriser\",\"Räkna historisk vinst per återköpt aktie\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: lägg till sex rader på S&P-kortet: redovisad vinst, kärnvinst, operativt kassaflöde, capex, fri kassa samt utdelning (och återköp om de förekommer). Beräkna utdelningsanden på båda nämnarna — redovisad vinst och fri kassa. Följ sedan nettoaktieantalet tre år tillbaka: stiger eller faller det? Avsluta med en mening: backas ägarnas kontanter av verksamhetens kassa, och är återköpen (V20) gjorda under eller över inre värde (marginal of safety-principen)? Du har nu kört O'Gloves sista test — från vinstens kvalitet till kassans sanning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är det grundläggande skälet till att utdelningen är en stark kvalitetssignal enligt O'Glove?",
+          "alternativ": [
+            "Utdelningsskatten avslöjar bolagets ärlighet",
+            "Utdelningen kan aldrig minskas utan revisorns tillstånd",
+            "En utdelning är kontant och kan inte fabriceras med periodiseringar eller antaganden — men källan bakom den måste granskas",
+            "Hög utdelning innebär alltid hög vinstkvalitet"
+          ],
+          "ratt": 2,
+          "tips": "Vad krävs fysiskt för att kunna dela ut — och vad kan en not inte åstadkomma?"
+        },
+        {
+          "q": "Vinst 60 Mkr, operativt kassaflöde 38 Mkr, capex 35 Mkr, utdelning 30 Mkr. Vad är slutsatsen?",
+          "alternativ": [
+            "Utdelningen är trygg eftersom den är hälften av vinsten",
+            "Fri kassa är 3 Mkr och utdelningen 30 Mkr — den finansieras från balansräkningen och är inte hållbar i sin nuvarande form",
+            "Bolaget bör snart fördubbla utdelningen",
+            "Capex är irrelevant för utdelningsanalysen"
+          ],
+          "ratt": 1,
+          "tips": "Räkna fri kassa först: 38 − 35. Jämför sedan med utdelningen."
+        },
+        {
+          "q": "Ett bolag meddelar återköp för 200 Mkr men aktieantalet faller bara från 100 till 99 miljoner. Vad är den rätta slutsatsen?",
+          "alternativ": [
+            "Återköpen har minskat aktieantalet med en procent — kapitalåterbäring i linje med budskapet",
+            "Aktieantalet är ointressant när återköpsbeloppet redan är känt",
+            "Återköp är alltid bra oavsett pris och utfall",
+            "Återköpen har till stor del neutraliserat optioner och utspädning — bedöm nettoaktieantalet och per-aktie-siffrorna, inte beloppet (V20)"
+          ],
+          "ratt": 3,
+          "tips": "Vad hände samtidigt med antalet aktier — och vilken storlek är den ärliga måttstocken?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Detektivens masterchecklista — noter, konkurrenter och AKM1",
+      "intro": "Kursens sista kapitel samlar alla detektorer i en masterchecklista och visar hur O'Gloves metod blir kvalitetsgrinden i AKM1 — steget före alla multipelberäkningar. Här blir du redo att granska vilket bolag som helst på en eftermiddag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "O'Gloves jämförelsedisciplin är metodens sista och mest försummade del: döm aldrig ett bolags kvoter isolerat — alltid mot två-tre konkurrenter. Anledningen är att alla mått är kontextuella: DSO på 68 dagar är hotfullt i detaljhandel men normalt i entreprenad; lageromsättning på 90 dagar är sjukt i livsmedel men sunt i verkstad; bruttomarginal (V07) på 50 procent är fantastiskt i distribution och mediokert i mjukvara. Räkneexempel på jämförelsen i praktiken: ditt bolag stiger i DSO från 52 till 63 dagar (+21 procent) — varning? Hämta tre konkurrenter: peer A 54 → 56, peer B 58 → 60, peer C 50 → 52. Hela branschen är stabil medan ditt bolag avviker med femton procentenheter — avvikelsen är bolagsspecifik och därmed en verklig varning. Utan jämförelsen hade du inte vetat om 63 dagar var branschnormal eller bolagsproblem. Bygg därför alltid peer-kolumnen på S&P-kortet: varje detektorvärde, för varje år, för minst två konkurrenter. O'Gloves S&P-rapporter gjorde detta enkelt 1987 — årsredovisningar.se gör det enklare i dag."
+        },
+        {
+          "type": "text",
+          "content": "Notläsningens prioriteringsordning — den svenska O'Glove-ordningen, därför att årsredovisningens notsystem är standardiserat nog att läsas systematiskt. Läs i denna ordning: (1) not 1, redovisningsprinciper — leta efter orden ändring, omräkning, justering; (2) noten om intäktsredovisning (för kontrakt, licenser, abonnemang); (3) noten om kundfordringar och kreditrisk; (4) noten om lager och lagernedskrivningar; (5) noten om avskrivningar och anläggningstillgångar (tillsammans med capex i kassaflödet); (6) noten om jämförelsestörande poster; (7) noten om avsättningar, pension och eventualförpliktelser; (8) noten om finansiella åtaganden (leasing, borgen, earn-outs); (9) noten om transaktioner med närstående; (10) segmentnoten (om koncernen delar upp verksamheten — där kan en hel svag affärsgren gömmas i en stark koncernbild). Tio notavsnitt, ungefär trettio minuter för en tränad läsare, och de täcker i princip alla mekanismer från kapitel 2-11. Resten av årsredovisningen — VD-brevet, hållbarhetsavsnittet, fotot på fabriken — är marknadsföring och ska läsas som sådan: med intresse men utan tillit."
+        },
+        {
+          "type": "text",
+          "content": "Masterchecklistan — O'Gloves fem frågor, körda på tio års data och tre konkurrenter. Fråga ett: växer kundfordringarna (DSO) snabbare än försäljningen (V01), två år i rad? Fråga två: växer lagret (inventory/sales) snabbare än försäljningen, särskilt färdigvarulagret? Fråga tre: är engångsposterna återkommande — finns jämförelsestörande poster av samma typ tre av fem år? Fråga fyra: backas den redovisade vinsten av operativt kassaflöde, och kan klyftan förklaras av rörelsekapital som slukar kassa (stöd: V12 — intäktsstabiliteten mäts bäst i hur stabilt intäkterna konverteras till kassa)? Fråga fem: har redovisningsprinciperna ändrats — avskrivningstider, intäktsredovisning, pensionsantaganden? Fem ja-svar är en position att lämna. Ett ja är en not att läsa. Noll ja-svar och bolaget går vidare till värdering med rent hus — multipelberäkningar på V04 (P/S), V05 (P/B), V06 (EV/EBITDA), marginaler (V07, V08) och ROE (V09) blir först meningsfulla när nämnarna är granskade. Det är i denna mening Quality of Earnings är AKM1:s kvalitetsgrind: metoden säger inte vad du ska betala — den säger om priset ens får räknas."
+        },
+        {
+          "type": "text",
+          "content": "Placera slutligen O'Glove i AKM1:s ekosystem. Ekosystemets tidshorisonter och dimensioner vilar alla på samma fundament: att rapporterna är vad de utger sig för att vara. V01 (försäljningstillväxt) är bara en tillväxt om den är betald — DSO-testet (kap 4). V07 och V08 (marginaler) är bara lönsamhet om lagret inte absorberar kostnader (kap 5, 7) och om avskrivningarna är ärliga (kap 9). V09 (ROE) är bara en avkastning om resultatet är äkta (kap 8) och om skuldbilden (V10) och likviditeten (V11) är räknade på riktiga åtaganden (kap 10). V19 (kapitalförbrukning och emissionrisk) och V20 (återköp) testas mot fri kassa (kap 11). Och hela kedjan stängs med marginal of safety — den princip som saknar V-nummer just för att den är överordnad: ett pris med marginal mot konservativt beräknat värde är det enda skydd som fungerar även när en detektor missat något. O'Glove 1987, Schilit 1993, K3 i dag: redovisningen förändras, mekanismerna återkommer. Den som kan båda — mekanismerna och deras historia — läser nästa skandal i dagens DSO-rad, innan den blir nästa decenniums rubrik."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Fem frågor, tio år, tre konkurrenter, tio notavsnitt — O'Gloves test är anmärkningsvärt nog en eftermiddag per bolag: den dyra delen av aktieanalys har aldrig varit tiden, utan konsekvensen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"O'Gloves masterchecklista — signal, normal, avvikelse, åtgärd\",\"rader\":[[\"Signal\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"DSO-trend mot V01-försäljningstillväxt\",\"Fordringar växer som försäljningen\",\"DSO stiger 15 procent eller mer två år i rad mot stabila peers\",\"Avsluta eller kräv förklaring i not\"],[\"Lager/försäljning\",\"Stabil kring branschnormal\",\"Stigande med svällande färdigvarulager\",\"Misstänk kommande nedskrivningar\"],[\"Kassacykel\",\"Stabil eller förkortas\",\"Förlängs två år i rad\",\"Beräkna kassabindning; testa V11\"],[\"Engångsposter (jämförelsestörande)\",\"Sällan och varierat\",\"Samma typ tre av fem år\",\"Behåll som kostnad i kärnvinsten\"],[\"Vinst mot operativt kassaflöde (stöd V12)\",\"Kassa minst lika stor som vinst\",\"Klyftan växer tre år\",\"Hitta var kassan fastnar (rörelsekapital)\"],[\"Avskrivningar mot capex (V08-länk)\",\"Följs åt\",\"Avskrivningar under capex tre år i rad\",\"Räkna eftersläpning; läs not 1\"],[\"Principändringar i not 1\",\"Sällan\",\"Livslängder eller intäktsprinciper ändrade vid press\",\"Justera historiken bakåt\"],[\"Dolda åtaganden (V10)\",\"Obetydliga\",\"Stora eventualförpliktelser, pensionskänslighet\",\"Räkna om skuldbilden\"],[\"Fri kassa mot utdelning och återköp (V19, V20)\",\"Täcks med marginal\",\"Överstiger fri kassa\",\"Testa hållbarhet och nettoaktieantal\"],[\"Peer-avvikelse\",\"Liknar konkurrenterna\",\"Kraftig avvikelse utan förklaring\",\"Bolagsspecifik varning — prioritera\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Slutövning — den fullständiga O'Glove-granskningen: välj ett bolag (gärna ett du överväger att köpa). Kör hela masterchecklistan: fem frågor på tio års data (fem år minimum), tio notavsnitt i prioritetsordning, och minst två konkurrenters DSO-, lager- och marginalutveckling som kontrast. Skriv en enda slutsatsrad: hur många av de fem varningarna lyser, och vilken är starkast? Om svaret är noll: gå vidare till värdering (V04-V06) med marginal of safety. Om svaret är två eller mer: stanna, läs noterna igen, och fråga dig om du vill äga det bolag noterna beskriver — i stället för det som årsredovisningens omslag beskriver. Det är O'Gloves test, och nu är det ditt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kräver O'Gloves metod att varje detektorvärde jämförs med konkurrenter?",
+          "alternativ": [
+            "Därför att konkurrenternas siffror alltid är mer pålitliga",
+            "Därför att alla mått är kontextuella — DSO 68 dagar är hot i detaljhandel men normalt i entreprenad; bara peer-jämförelsen skiljer bolagsproblem från branschnormal",
+            "Därför att det ser professionellt ut i analysen",
+            "Därför att konkurrenter måste godkänna varandras rapporter"
+          ],
+          "ratt": 1,
+          "tips": "Vet du om 63 dagars DSO är mycket — utan att veta vad branschen visar?"
+        },
+        {
+          "q": "Vilken är den första noten en O'Glove-detektiv läser i en K3-rapport, och varför?",
+          "alternativ": [
+            "Segmentnoten — därför att den är längst",
+            "Noten om eventualförpliktelser — därför att den alltid innehåller skulder",
+            "Not 1 om redovisningsprinciper — därför att ändrade antaganden (livslängder, intäktsredovisning) kan rita om hela resultatet",
+            "Personalnoten — därför att löner avslöjar kulturen"
+          ],
+          "ratt": 2,
+          "tips": "Var bor ändringarna av spelreglerna — och vad kan de flytta utan en enda affär?"
+        },
+        {
+          "q": "Hur förhåller sig marginal of safety till O'Gloves detektorsystem i AKM1?",
+          "alternativ": [
+            "Marginal of safety ersätter behovet av detektorer — en billig aktie är alltid trygg",
+            "De är oberoende verktyg för olika tidshorisonter",
+            "Marginal of safety gäller bara utdelningsbolag",
+            "Detektorsystemet är kvalitetsgrinden före värderingen — och marginal of safety (utan V-nummer) är den överordnade principen att prisavståndet mot konservativt värde är det enda skydd som fungerar även när en detektor missat något"
+          ],
+          "ratt": 3,
+          "tips": "Vad skyddar dig den dagen du ändå haft fel — priset eller din grundlighet?"
+        }
+      ]
+    }
+  ]
+}

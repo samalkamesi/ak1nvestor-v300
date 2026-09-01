@@ -1,0 +1,954 @@
+{
+  "slug": "100-baggers",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 140,
+  "title": "100 Baggers — Mayer: KOMPLETT",
+  "summary": "Christopher Mayer grävde igenom hela den amerikanska börsen 1962–2014 och fann 365 aktier som steg minst 100 gånger — dollar för hundrade dollar. I denna BOKMASTER-kurs lär du dig de två motorerna (EPS-tillväxt och multipel-expansion), compounding-matematiken (100x motsvarar cirka 20 procent per år i 25 år) och beteendet som krävs för att inte sälja prinsen för tidigt.",
+  "minutes": 10,
+  "xp": 1800,
+  "level": "",
+  "learn": "Du lär dig Mayers 365-bolagsstudie (1962–2014), de två motorerna bakom varje 100-bagger (EPS-tillväxt och multipel-expansion), compounding-matematiken (100x ≈ 20 %/år i cirka 25 år) och kännetecknen: litet startvärde, låg startmultipel, lång tillväxtbana, återinvestering till hög avkastning (V09), ägare-operatorer, rationella återköp (V20) och låg utspädning (V19) — samt psykologin: toads kontra prinsar, doodle-effekten och när (nästan aldrig) man säljer.",
+  "why": "Eftersom 100-baggers inte är lotterier utan compounding-maskiner som fanns i det öppna när resan började. Kursen ger dig AKM1-språket och AK1TS-horisonten (Lång/Mega) som krävs för att hitta, värdera och — svårast av allt — behålla nästa generation hundra-baggers.",
+  "chapters_list": [
+    "Studien: 365 aktier som gav 100x",
+    "De två motorerna: EPS-tillväxt + multipel",
+    "Tidens makt: compounding-matematiken",
+    "Börja litet: det lilla startvärdet",
+    "Köp billigt: den låga startmultipeln",
+    "Runway: tillväxt som räcker i decennier",
+    "ROIC: motorn i motorn (V09)",
+    "Ägare-operatorer: incitament som compoundar",
+    "Toads och prinsar: skippa kyssarna",
+    "Återköp och utspädning (V20/V19)",
+    "Doodle-effekten: konsten att inte röra något",
+    "När sälja: nästan aldrig",
+    "100-bagger-jägaren: AK1TS-processen"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Studien: 365 aktier som gav 100x",
+      "intro": "Mayers bok har undertiteln »Lessons on Money-Making from Stocks That Returned 100-to-1«, och meningen är bokstavlig. Kapitel 1 presenterar grundmaterialet: 365 amerikanska aktier som mellan 1962 och 2014 steg minst hundra gånger. Vi tittar på monstron, genomsnitten och kärnekvationen som förklarar hela kursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En 100-bagger förvandlar en dollar till hundra dollar — det är hela definitionen, och den är viktigare än den låter. Sätter du in 10 000 dollar i en äkta 100-bagger har du 1 000 000 dollar när resan är klar. Mayer och hans team skannade hela den amerikanska börsen mellan 1962 och 2014, från i princip alla möjliga startpunkter, och fann exakt 365 bolag som klarade testet. Det är en liten skara — men den är större än de flesta tror, och gemensamt för bolagen är att de inte var några hemligheter när resan började."
+        },
+        {
+          "type": "text",
+          "content": "Monstren i studien är legendariska. Monster Beverage, energidrycksbolaget, steg över 1 000 gånger från mitten av 1990-talet till 2014 — en av de största aktieresorna i modern börshistoria. Berkshire Hathaway förvandlades under Warren Buffett från en döende textilfabrik till ett compounding-maskineri med tiotusenfaldig avkastning på ett halvsekel. Amazon, noterat 1997, hade vid studiens slut vuxit flera hundra gånger. Men poängen med Mayers material är att de flesta av de 365 var små, tråkiga och fullt synliga bolag — tillverkare, försäkringsbolag, specialitetsdistributörer — som bara fortsatte att återinvestera och växa i årtionden."
+        },
+        {
+          "type": "text",
+          "content": "Räkna på kärnekvationen. Hundra gånger på 25 år kräver en årlig avkastning på cirka 20 procent, eftersom 1,20 upphöjt till 25 är ungefär 95 — alltså nästan exakt 100x. Hundra kronor blir då cirka 9 500 kronor. Sänker du takten till 10 procent per år dröjer det istället bortåt 48 år innan kapitalet hundrafaldigats. Det är därför Mayer återkommer till tidens makt: tiden är den variabel som avgör om ekvationen blir rimlig eller omöjlig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Monstren i Mayers studie\",\"rader\":[[\"Bolag\",\"Period\",\"Utfall\",\"Huvudmotorer\"],[\"Monster Beverage\",\"1995–2014\",\"över 1000x\",\"Försäljningsexplosion (V01) + varumärke (V14) + lanseringar (V16)\"],[\"Berkshire Hathaway\",\"1965–2014\",\"över 10000x\",\"Återinvestering till hög avkastning (V09) + låg utspädning (V19 omvänt)\"],[\"Amazon\",\"1997–2014\",\"cirka 200x\",\"Försäljningstillväxt (V01) + nätverkseffekter (V15) + återinvestering\"],[\"Typisk 100-bagger\",\"1962–2014\",\"100x+ på cirka 25 år\",\"Litet värde + låg startmultipel + EPS-motor (V01/V09)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En 100-bagger är sällan ett lotteri som bara kan förklaras i efterhand — den är en compounding-maskin som fanns i det öppna, som köptes till rimligt pris och som lämnades ifred. Mayers största lärdom är inte vilka bolagen var, utan vad de krävde av ägaren: förmågan att identifiera motorn och sedan inte störa den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Din uppgift: välj ett bolag i ditt eget universum som redan har flerfaldigats under de senaste tio åren. Identifiera vilken motor som drev resan — växande försäljning (V01), högre avkastning på eget kapital (V09) eller ren multipel-expansion — och räkna sedan ett compound-scenario: om motorn fortsätter i ytterligare femton år vid oförändrad multipel, vad blir aktien då värd?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär en 100-bagger i Mayers studie?",
+          "alternativ": [
+            "Att aktien steg 100 procent",
+            "Att en dollar blev hundra dollar",
+            "Att portföljen innehöll 100 positioner",
+            "Att bolaget delade ut 100 dollar per aktie"
+          ],
+          "ratt": 1,
+          "tips": "Bokens undertitel talar om förhållandet mellan insatt och uttaget kapital."
+        },
+        {
+          "q": "Hur många amerikanska aktier 1962–2014 uppfyllde 100x-kriteriet i studien?",
+          "alternativ": [
+            "365",
+            "36",
+            "3 650",
+            "12"
+          ],
+          "ratt": 0,
+          "tips": "Ett brett urval över ett halvsekel — men ändå en exkluderande skara."
+        },
+        {
+          "q": "Ungefär hur lång tid tog det i snitt för en 100-bagger i studien?",
+          "alternativ": [
+            "5 år",
+            "10 år",
+            "25 år",
+            "50 år"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på hur många år en årlig tillväxt på cirka 20 procent behöver för att nästan hundrafaldiga kapitalet."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "De två motorerna: EPS-tillväxt + multipel",
+      "intro": "Aktiekursen följer en enkel identitet: pris är vinst per aktie gången multipel. Därmed har varje 100-bagger två källor. Kapitel 2 visar hur rörelsen (EPS-tillväxten) och bränslet (multipel-expansionen) samspelar — och varför båda krävs för de riktigt stora resorna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mayer beskriver varje stor aktieresa med två bilder: motorn och bränslet. Motorn är tillväxten i vinst per aktie — den gör jobbet år efter år genom att bolaget behåller och återinvesterar sina vinster. Bränslet är expansionen av värderingsmultipeln, som accelererar resan när marknaden omvärderar bolaget uppåt. Mayer är tydlig med att 100-baggers kräver båda: en bil utan bränsle kommer ingenstans, och bränsle utan motor brinner bara upp."
+        },
+        {
+          "type": "text",
+          "content": "Räkna med ett konkret scenario. Ett bolag vars vinst per aktie växer 20 procent per år i tjugo år når en vinstfaktor på cirka 38 (1,20^20 ≈ 38,3). Om aktien samtidigt köptes till P/E 8 och efterhand omvärderas till P/E 21 bidrar multipeln med en faktor på 2,6. Multiplicerat: 38 × 2,6 ≈ 100. Det är hela receptet i siffror — men observera ordningen: motorn först, bränslet sedan. Den som köper till P/E 40 har ingen bränsletank kvar, hur vackert bolaget än är."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1-språk mäter du bränsletanken med V04 (P/S), V05 (P/B) och V06 (EV/EBITDA) vid köptillfället. En låg startmultipel är inte samma sak som billig — den måste paras med en fungerande V01-maskin som växer in i sin kvalitet. Och en hög startmultipel är den tysta fienden: den som betalar 40 gånger vinsten för ett underbart bolag kan tjäna bra pengar på EPS-sidan och ändå tiofaldiga sämre än den som köpte samma bolag till 10 gånger vinsten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två motorer, fyra scenarier (20 år)\",\"rader\":[[\"Scenario\",\"EPS-tillväxt\",\"Multipelförändring\",\"Totalavkastning\"],[\"A: Motor utan bränsle\",\"10 %/år (cirka 6,1x)\",\"P/E 15 till 15 (1,0x)\",\"cirka 6x\"],[\"B: Stark motor utan bränsle\",\"20 %/år (cirka 38x)\",\"P/E 21 till 21 (1,0x)\",\"cirka 38x\"],[\"C: Motor + bränsle\",\"20 %/år (cirka 38x)\",\"P/E 8 till 21 (2,6x)\",\"cirka 100x\"],[\"D: Bränsle utan motor\",\"0 %/år (1,0x)\",\"P/E 20 till 100 (5,0x)\",\"cirka 5x\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Multiplar är bränsle, inte motor. V06 och V04 berättar hur stor bränsletanken är vid köpet — men utan en V01/V09-motor som fyller på vinsterna tar bränslet slut inom några år. Det är därför rena omvärderingsspel nästan aldrig blir 100-baggers, medan compounding-bolag som köps billigt ibland gör det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en aktie du äger eller bevakar. Notera dagens V06 (EV/EBITDA) och V04 (P/S), samt hur vinsten per aktie har växt de senaste fem åren. Räkna två vägar till 100x: en där multipeln står helt still (vilken EPS-takt krävs?) och en där EPS växer 15 procent per år (vilken multipel-expansion krävs?). Vilken väg känns mest realistisk — och vad säger det om bolaget?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kallar Mayer »rörelsen« i en 100-bagger?",
+          "alternativ": [
+            "EPS-tillväxten",
+            "Multipel-expansionen",
+            "Utdelningsökningen",
+            "Handelsvolymen"
+          ],
+          "ratt": 0,
+          "tips": "Vilken av de två källorna gör jobbet år efter år, oavsett om marknaden sover eller vaknar?"
+        },
+        {
+          "q": "Vad utgör »bränslet« i ekvationen?",
+          "alternativ": [
+            "Utdelningsökningar",
+            "Omvärdering till högre multipel",
+            "Nya emissioner",
+            "Räntenivån"
+          ],
+          "ratt": 1,
+          "tips": "Det som accelererar resan när omvärldens föreställning om bolaget förändras."
+        },
+        {
+          "q": "EPS växer 20 procent per år i 20 år (cirka 38x) och P/E går från 8 till 21 (2,6x). Ungefär vad blir totalavkastningen?",
+          "alternativ": [
+            "cirka 20x",
+            "cirka 60x",
+            "cirka 100x",
+            "cirka 260x"
+          ],
+          "ratt": 2,
+          "tips": "Multiplicera de två bidragen — motor gånger bränsle."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Tidens makt: compounding-matematiken",
+      "intro": "Ekvationen bakom varje 100-bagger är compounding: slutvärde är start-belopp gånger (1 + r) upphöjt till t. Kapitel 3 gör matematiken påtaglig — hur många år olika takter kräver, varför jämna serier slår ojämna, och varför tiden är den mest underskattade ingrediensen i hela boken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Här är kursens kanske viktigaste tabell. Vid 20 procent per år tar hundrafaldigandet cirka 25 år; vid 15 procent cirka 33 år; vid 26 procent cirka 20 år. Formeln är enkel: antalet år är logaritmen av 100 dividerat med logaritmen av (1 + r). Mayer sammanfattar hela sin filosofi i en uppmaning som är värd att skriva ut och sätta på väggen: glöm inte tidens makt. Compounding är inte en kraft du kan förhandla med — den arbetar bara om den får år att arbeta i."
+        },
+        {
+          "type": "text",
+          "content": "Detta förändrar hur du ska tänka på avkastningskrav. En förvaltare som levererar 15 procent om året under tre år gör ett bra jobb — men 100-bagger-jägaren som hittar en 15-procentscompounder och håller den i 33 år gör något mycket mer värdefullt. Skillnaden ligger inte i förmågan att välja bolag, utan i horisont och beteende. Tiden är den enda ingrediens som inte kan köpas för pengar, och den är samtidigt den som gör störst delen av jobbet: av de 95 gångerna en 20-procentsresa ger dig kommer de sista tio åren att stå för mer än halva resan."
+        },
+        {
+          "type": "text",
+          "content": "Tiden samarbetar bara med jämna serier. Det är Variance drag som slår: går portföljen upp 50 procent ett år och ner 50 procent nästa är netto minus 25 procent — inte noll. En aktie som pendlar vilt men i genomsnitt ger 20 procent äger inte samma kraft som den som jämnt levererar 20 år efter år. Därför belönar compounding bolag med intäktsstabilitet (V12) och stadiga marginaler (V07/V08) — och ägare som inte själva skapar onödig varians genom konstant handlande."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"År till 100x vid olika årlig avkastning\",\"rader\":[[\"Årlig avkastning\",\"År till 100x\",\"100 kr blir\"],[\"10 %\",\"cirka 48 år\",\"cirka 9 700 kr\"],[\"15 %\",\"cirka 33 år\",\"cirka 10 000 kr\"],[\"20 %\",\"cirka 25 år\",\"cirka 9 500 kr\"],[\"26 %\",\"cirka 20 år\",\"cirka 10 200 kr\"],[\"35 %\",\"cirka 15 år\",\"cirka 9 000 kr\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Compounding ser tråkig ut i början och absurd ut i slutet. Tjugo procent per år känns som en hyfsad årsbonus — men upprepat i 25 år är det skillnaden mellan 100 kronor och 9 500 kronor. Mayers budskap: byt fokus från hur snabbt till hur länge. Varaktigheten slår takten, varje gång."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ditt eget compound-scenario: välj en realistisk årlig tillväxttakt för en kandidat i din bevakningslista (utgå från historisk V01 och V09). Använd 72-regeln eller logaritmer för att uppskatta antalet år till 100x. Skriv ned siffran — är du beredd att äga bolaget så länge? Om svaret är nej: är det bolaget eller horisonten som behöver justeras?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Cirka 20 procent per år i hur många år ger ungefär 100x?",
+          "alternativ": [
+            "cirka 10 år",
+            "cirka 25 år",
+            "cirka 40 år",
+            "cirka 60 år"
+          ],
+          "ratt": 1,
+          "tips": "Studiens genomsnittliga 100-bagger tog just så lång tid."
+        },
+        {
+          "q": "Vad blir netto av +50 procent ett år följt av −50 procent nästa?",
+          "alternativ": [
+            "0 procent",
+            "+25 procent",
+            "−25 procent",
+            "+50 procent"
+          ],
+          "ratt": 2,
+          "tips": "Procentenheter appliceras på olika basbelopp — räkna med 100 kr som start."
+        },
+        {
+          "q": "Vad menar Mayer är den mest underskattade ingrediensen i en 100-bagger?",
+          "alternativ": [
+            "Hävstången",
+            "Timingen",
+            "Nyhetstraffiken",
+            "Tiden"
+          ],
+          "ratt": 3,
+          "tips": "Det enda inslaget som inte kan köpas, lånas eller hackas — bara ges."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Börja litet: det lilla startvärdet",
+      "intro": "Studiens tydligaste mönster: 100-baggers börjar små. Anledningen är enkel aritmetik — storleken är i sig ett tak. Kapitel 4 visar varför det lilla startvärdet är ett nödvändigt villkor, och hur du i AKM1 kompenserar för småbolagens extra risker.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett bolag värderat till 50 miljoner dollar som stegras hundra gånger slutar på 5 miljarder — fullt rimligt och gjort många gånger om. Ett bolag värderat till 50 miljarder som gör samma resa slutar på 5 biljoner dollar, en storlek som knappt existerar på någon börs. Detta är geometrins hårda tak: ju större startvärdet är, desto osannolikare blir hundrafaldigandet. Därför dominerar småbolagen Mayers lista — inte för att små är fint, utan för att matematiken bara öppnar dörren för dem."
+        },
+        {
+          "type": "text",
+          "content": "Det lilla är inte bara sannolikhetsmatematik — det är också runway. En nischledare med 3 procent av en stor marknad kan dubblera sin andel flera gånger innan den mättar, medan ett bolag som redan äger 60 procent av sin marknad måste hitta nya spelplaner — ny geografi, nya kundgrupper, intäktsdiversifiering (V03) — för att fortsätta växa. Små bolag kan alltså växa länge på sin egen marknad. Därför var de flesta av de 365 små, okända och obetydliga när resan inleddes, vilket också betyder: dåligt täckta av analytiker och ofta missförstådda av marknaden."
+        },
+        {
+          "type": "text",
+          "content": "Men litenhet är ingen garanti — den är ett nödvändigt villkor bland flera. Små bolag faller oftare, har tunnare likviditet och är beroende av sina grundare. Mayers motgift är kvalitet i balansräkningen: låg skuldsättningsgrad (V10) och god likviditet (V11) gör att bolaget överlever dåliga år utan att tvingas emittera kapital på ofördelaktiga villkor — vilket annars skulle förstöra per-aktie-värdet (V19, omvänt). Smått och solitt slår smått och skuldsatt, varje gång."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Startvärde bestämmer taket\",\"rader\":[[\"Startvärde\",\"Värde vid 100x\",\"Realism\"],[\"100 Mkr\",\"10 Mrd\",\"Klassisk 100-bagger-storlek\"],[\"1 Mrd\",\"100 Mrd\",\"Svårt men möjligt\"],[\"10 Mrd\",\"1 000 Mrd\",\"Mycket svårt\"],[\"500 Mrd\",\"50 000 Mrd\",\"Praktiskt omöjligt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du kan inte hitta en 100-bagger i toppen av index — geometrin tillåter det inte. Om du vill jaga hundrafaldiganden måste universum vara småbolagen, där ett slutvärde på några tiotals miljarder fortfarande är realistiskt. Det innebär att acceptera tunnare likviditet och mer grävjobb — priset för att matematiken ska vara på din sida."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en screener och sortera fram bolag under en miljard dollar i börsvärde med positiv V01-tillväxt och kontrollerad V10. Välj ut en kandidat och räkna: om bolaget om tjugofem år nått ett slutvärde på 20 miljarder — vad blir det i multipel mot dagens värde? Vilken årlig försäljningstillväxt krävs för att komma dit?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför börjar de flesta 100-baggers som små bolag?",
+          "alternativ": [
+            "Ett litet startvärde ger ett realistiskt slutvärde — aritmetiken tillåter det",
+            "Små bolag har alltid högst ROE",
+            "De slipper betala skatt",
+            "Analytiker täcker dem bättre"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på hur stort slutvärdet blir vid 100x från olika startpunkter."
+        },
+        {
+          "q": "Ett bolag värderat till 5 miljarder dollar som går 100x slutar på:",
+          "alternativ": [
+            "50 miljarder",
+            "500 miljarder",
+            "5 miljoner",
+            "50 miljoner"
+          ],
+          "ratt": 1,
+          "tips": "Multiplicera — och kom ihåg att få bolag når den storleken."
+        },
+        {
+          "q": "Vilka AKM1-variabler skyddar småbolagskandidaten i balansräkningen?",
+          "alternativ": [
+            "V10 Skuldsättningsgrad och V11 Likviditet",
+            "V16 Produktlanseringar",
+            "V04 P/S",
+            "V18 Regulatoriska katalysatorer"
+          ],
+          "ratt": 0,
+          "tips": "Frågan gäller överlevnad utan tvångsemissioner — vilka mått mäter den risken?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Köp billigt: den låga startmultipeln",
+      "intro": "Den andra sidan av ekvationen är multipeln vid köpet. En 100-bagger behöver inte köpas till spottpris, men de flesta köptes till blygsamma startmultiplar — det blev deras bränsletank. Kapitel 5 kopplar V04, V05 och V06 till marginal of safety och varnar för value traps.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mayers material visar att de flesta 100-baggers köptes till blygsamma startmultiplar. Det som gör startmultipeln så viktig är inte att den förutsäger nästa kvartal, utan att den avgör hur mycket bränsle som finns i tanken när motorerna startar. I AKM1 mäter du den med V04 (P/S), V05 (P/B) och V06 (EV/EBITDA). Det du letar efter är gapet mellan en låg dagens multipel och en rimlig framtida multipel — ett gap som sluts när marknaden upptäcker att bolaget växt in i sin kvalitet."
+        },
+        {
+          "type": "text",
+          "content": "Två investerare köper samma underbara compounder — du till P/E 8, din vän till P/E 24. Tjugo år senare handlas bolaget till P/E 24, som det riktigt bra bolag det visade sig vara. Din vän har fått noll hjälp av multipeln; du har fått en trefaldig gaspedal. Vid samma vinsttillväxt har din avkastning blivit exakt tre gånger vännens — inte för att du valde ett bättre bolag, utan för att du valde samma bolag till ett lägre pris. Marginal of safety, avståndet mellan pris och värde utan fasta siffror, är alltså inte bara skydd mot fel — det är hävstång på compoundingen när du har rätt."
+        },
+        {
+          "type": "text",
+          "content": "Men billig i multipel är inte detsamma som bra. Value traps finns: bolag som ser billiga ut på V05 men vars motor har dött — fallande V01, urholkade marginaler (V07/V08), ingen V12-stabilitet. Mayers recept är kombinationen: låg startmultipel OCH en fungerande tillväxtmotor. Multipeln är villkoret, motorn är orsaken. Utan motor är den låga multipeln oftast bara en siffra som ser billig ut i en verksamhet som sjunker. Med motor är den den bästa möjliga startpunkten för en lång resa."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Startmultipeln blir bränslet\",\"rader\":[[\"Köpt till P/E\",\"Slut-P/E\",\"Multipelbidrag\"],[\"5\",\"20\",\"4,0x\"],[\"8\",\"21\",\"2,6x\"],[\"15\",\"20\",\"1,3x\"],[\"25\",\"20\",\"0,8x (huvudvind)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Multipel är den mest missförstådda variabeln bland tillväxtinvesterare. Den som betalar vilken multipel som helst för kvalitet förväxlar bolagets framtid med sin egen avkastning. Ett perfekt bolag till fel pris blir en tråkig aktie; ett gott bolag till låg startmultipel med fungerande motor blir ibland en hundrafaldigande aktie."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en kandidat i ditt universum där V06 (EV/EBITDA) ligger i nedre delen av bolagets egen historiska range samtidigt som V01-tillväxten är positiv. Räkna ett scenario: om multipeln normaliserar upp till sektorgenomsnittet på fem år medan vinsten växer 12 procent per år (1,12^5 ≈ 1,76x) — vad blir den samlade avkastningen när du multiplicerar bidragen?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad krävs för att multipeln ska kunna fungera som »bränsle« i en 100-bagger?",
+          "alternativ": [
+            "Att du köper till en hög startmultipel",
+            "Att du köper till en låg startmultipel",
+            "Att du köper vid marknadstoppens",
+            "Att innehavstiden är kort"
+          ],
+          "ratt": 1,
+          "tips": "Bränsle är utrymmet mellan dagens och morgondagens värdering — var måste du börja för att ha utrymme?"
+        },
+        {
+          "q": "Du köper ett bolag till P/E 8 och en vän till P/E 24. Tjugo år senare handlas det till P/E 24. Ditt multipelbidrag är:",
+          "alternativ": [
+            "1x",
+            "2x",
+            "3x",
+            "9x"
+          ],
+          "ratt": 2,
+          "tips": "Jämför din inköpsmultipel med slutmultipeln."
+        },
+        {
+          "q": "Vad kallas bufferten mellan pris och värde i Mayers och Grahams tradition?",
+          "alternativ": [
+            "Beta",
+            "Marginal of safety",
+            "Alpha",
+            "Duration"
+          ],
+          "ratt": 1,
+          "tips": "Det är ett begrepp, inte en siffra — skyddsavståndet mot att ha fel."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Runway: tillväxt som räcker i decennier",
+      "intro": "En stark motor i fem år räcker inte — 100-baggers kräver tillväxt i decennier. Kapitel 6 handlar om runway: den långa landningsbanan av återinvestering, och om vallgravarna (V13–V15) som gör tillväxten hållbar nog att pågå i trettio år.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mayer kräver inte bara att bolaget växer — han kräver att det kan växa länge. Kalla det runway: en lång och bred landningsbana för återinvestering innan marknaden mättar. I AKM1 ser du motorerna som V01 (försäljningstillväxt), V02 (ARR-tillväxt) och V03 (intäktsdiversifiering), och de kännetecknas av att varje års intäkter blir en plattform för nästa års. Ett bolag med 3 procent av en enorm marknad och växande återkommande intäkter har en lång bana; ett mättat bolag med en kund har ingen."
+        },
+        {
+          "type": "text",
+          "content": "Det som gör tillväxten hållbar är vallgravarna — i AKM1: V13 (patent och IP), V14 (varumärke) och V15 (nätverkseffekter). Monster Beverage sålde inte bara energidryck: varje såld burk förstärkte varumärket (V14), vilket höjde prissättningskraften och marginalerna (V07/V08) och därmed avkastningen på allt kapital som återinvesterades i fler kylar, fler marknader och fler lanseringar (V16). Vallgraven är inte dekoration — den är mekanismen som låter motorerna springa i decennier utan att konkurrensen äter upp marginalerna."
+        },
+        {
+          "type": "text",
+          "content": "Räkna på längdens makt: ett bolag som växer vinsten 15 procent per år i 30 år når en EPS-faktor på cirka 66 (1,15^30 ≈ 66,2). Lägg till en blygsam multipelökning från P/E 10 till 15 — faktor 1,5 — och totalen är cirka 100x. Notera vad som gjorde jobbet: inte briljans, inte perfekt timing, utan trettio år av uthållig tillväxt skyddad av en vallgrav. Produktlanseringar (V16) och avtal (V17) kan förlänga banan; regulatoriska katalysatorer (V18) kan öppna helt nya marknader att springa på."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillväxtmotorer och deras AKM1-markörer\",\"rader\":[[\"Motor\",\"AKM1\",\"Hållbarhetsmarkör\"],[\"Ny försäljning\",\"V01\",\"Orderstock och andel av TAM\"],[\"Återkommande intäkter\",\"V02/V12\",\"Bortfallsfrekvens och kontraktslängder\"],[\"Kunddiversifiering\",\"V03\",\"Ingen enskild kund över cirka 10 %\"],[\"Patent och IP\",\"V13\",\"Licenser, utgående skydd, forskningslinje\"],[\"Varumärke\",\"V14\",\"Prissättningskraft synlig i V07/V08\"],[\"Nätverkseffekter\",\"V15\",\"Växande nytta per användare\"],[\"Lanseringar och avtal\",\"V16/V17\",\"Pipeline och partnerstyrka\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte bara »växer bolaget?« utan »hur länge kan det växa?«. En 15-procentscompounder med 30 års runway slår en 25-procentscompounder med 8 års runway — ungefär 66x mot 6x i EPS-faktor. Runway, inte hastighet, är den mest värdefulla egenskapen hos en 100-bagger-kandidat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en kandidat och uppskatta dess runway: andel av adresserbar marknad, aktuella V01/V02-siffror, och vilka vallgravar (V13–V15) som skyddar pris och marginaler. Räkna sedan compound-scenariot: 15 procent per år i så många år du tror banan räcker, multiplicerat med dagens V06-multipel normaliserad uppåt — blir det en 100-bagger?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka AKM1-variabler fångar tillväxtmotorerna?",
+          "alternativ": [
+            "V01–V03",
+            "V13–V15",
+            "V19–V20",
+            "V10–V11"
+          ],
+          "ratt": 0,
+          "tips": "Försäljningstillväxt, ARR-tillväxt och intäktsdiversifiering — vilken spänn hör hemma där?"
+        },
+        {
+          "q": "Vilka AKM1-variabler beskriver vallgravar som gör tillväxten hållbar?",
+          "alternativ": [
+            "V01–V03",
+            "V13–V15",
+            "V04–V06",
+            "V07–V08"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på intellectual property, varumärke och nätverk — det som skyddar mot konkurrens."
+        },
+        {
+          "q": "Ett bolag växer vinsten 15 procent per år i 30 år (cirka 66x) och multipeln ökar 1,5x. Ungefär vad blir totalen?",
+          "alternativ": [
+            "cirka 30x",
+            "cirka 66x",
+            "cirka 100x",
+            "cirka 150x"
+          ],
+          "ratt": 2,
+          "tips": "Multiplicera vinstfaktorn med multipelbidraget."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "ROIC: motorn i motorn (V09)",
+      "intro": "Under EPS-motorn ligger en djupare motor: avkastningen på investerat kapital. Tillväxt utan hög avkastning är bara storlek, inte värde. Kapitel 7 visar mekaniken — ROIC gånger återinvestering är lika med tillväxt — och varför V09 är kursens kanske viktigaste enskilda variabel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mayers regel är densamma som Buffetts: tillväxt utan hög avkastning på investerat kapital skapar inte värde — det är återinvestering vid hög avkastning som skapar compounding. Ett bolag kan dubbla försäljningen (V01) och ändå lämna aktieägarna fattigare om varje ny investering tjänar mindre än kapitalets kostnad. I AKM1 fångas kärnan av V09 (ROE), med V07 (bruttomarginal) och V08 (EBITDA-marginal) som bevis på prissättningskraft. Hög och stabil V09 år efter år är den gemensamma nämnaren bakom de flesta av de 365."
+        },
+        {
+          "type": "text",
+          "content": "Relationen är mekanisk: tillväxttakten (utan förvärv) är ungefär ROIC multiplicerat med andelen vinst som återinvesteras. Ett bolag med 20 procent ROIC som återinvesterar hela vinsten växer cirka 20 procent per år — det är 38x EPS på tjugo år. Samma bolag som bara återinvesterar hälften växer 10 procent — 6,7x. Och ett bolag med 8 procent ROIC kan återinvestera allt och ändå bara nå 8 procent per år. För compoundern är låg ROIC en läckande hink: hur mycket du än häller i rinner värdet ut genom botten."
+        },
+        {
+          "type": "text",
+          "content": "Här finns också tentationen: att växa med hävstång eller förvärv istället för organiskt. Mayers material visar att 100-baggers sällan byggdes genom serieförvärv och skuld; de byggdes genom organisk tillväxt, återinvestering i kärnan och tålamod. V10 (skuldsättningsgrad) och V11 (likviditet) är därför inte tråkiga soliditetsmått utan compounding-försäkring: en balansräkning som tål recessioner låter motorn köras vidare när konjunkturen stannar av, i stället för att tvingas stå still eller sälja delar av sig själv."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"ROIC × återinvestering = tillväxt\",\"rader\":[[\"ROIC\",\"Återinvestrad vinst\",\"Tillväxt per år\",\"EPS-faktor efter 20 år\"],[\"20 %\",\"100 %\",\"cirka 20 %\",\"cirka 38x\"],[\"15 %\",\"100 %\",\"cirka 15 %\",\"cirka 16x\"],[\"10 %\",\"100 %\",\"cirka 10 %\",\"cirka 6,7x\"],[\"20 %\",\"50 %\",\"cirka 10 %\",\"cirka 6,7x\"],[\"8 %\",\"100 %\",\"cirka 8 %\",\"cirka 4,7x\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hög V09 utan återinvesteringsmöjligheter blir bara utdelning — och utdelning som inte kan återinvesteras till lika hög avkastning läcker kraft ur ekvationen. Det fullständiga kravet är dubbelt: hög avkastning OCH fler platser att sätta pengarna till samma avkastning. Motorn och bränslepumpen, i samma bolag."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en kandidat och uppskatta V09 de senaste fem åren samt hur stor andel av kassaflödet som återinvesterats. Räkna fram den organiska tillväxttakten (V09 gånger återinvesteringsandel) och testa ett 20-årsscenario. Om takten understiger 12 procent — var ska ny tillväxt komma ifrån: V16-lanseringar, V17-avtal eller nya marknader?"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den organiska tillväxttakten ungefär lika med?",
+          "alternativ": [
+            "ROIC multiplicerat med andelen vinst som återinvesteras",
+            "Utdelningsandelen",
+            "P/E multiplicerat med tillväxten",
+            "EBITDA-marginalen multiplicerat med skulden"
+          ],
+          "ratt": 0,
+          "tips": "Vinst som behålls blir bara tillväxt om den sätts i arbete till god avkastning."
+        },
+        {
+          "q": "100 procent återinvestering vid 20 procent ROIC i 20 år ger en EPS-faktor på ungefär:",
+          "alternativ": [
+            "6,7x",
+            "38x",
+            "400x",
+            "20x"
+          ],
+          "ratt": 1,
+          "tips": "Tillväxttakten blir ungefär 20 procent per år — vad gör den med 1:an under två decennier?"
+        },
+        {
+          "q": "Vilka marginaler i AKM1 signalerar den prissättningskraft som stödjer hög V09?",
+          "alternativ": [
+            "V07 brutomarginal och V08 EBITDA-marginal",
+            "V04 och V05",
+            "V17",
+            "V11"
+          ],
+          "ratt": 0,
+          "tips": "Prissättningskraft syns först i den översta resultatraden — vilka mått mätter den?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Ägare-operatorer: incitament som compoundar",
+      "intro": "Mayers lista över gemensamma nämnare innehåller människor, inte bara siffror: ägare-operatorer — grundare och VD:ar med stort personligt ägande som själva driver verksamheten. Kapitel 8 handlar om incitament, kapitaldisciplin (V19/V20) och din försäkring när resan blir jobbig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En ägare-operator är en person som både driver bolaget och äger en betydande andel av det — vars förmögenhet compoundar i takt med din. Incitamenten blir långsiktiga av sig själva: en huvudägande VD återinvesterar, återköper billigt (V20) och undviker att späda ut (V19), för hon tjänar inget på kvartalsshowens genvägar. Mayer hittar detta mönster hos många av de 365: bolag där samma namn satt vid ratten i decennier och tänkte som ägare, inte som anställd."
+        },
+        {
+          "type": "text",
+          "content": "Internt ägarskap syns i detaljerna: aktieantalet minskar eller står stilla, optionsprogram är återhållsamma och emissioner är sällsynta. Vänd på V19 — kapitalförbränning och emissionsrisk — och använd den som ett aktivt filter: bolag som ständigt behöver nytt kapital äger inte sina kassaflöden; bankerna och emissionärerna gör det. Mayers dataordning är tydlig: bolag med låg kapitalförbrukning och ägande ledning dominerar bland 100-baggarna, medan permanent kapitalhungriga bolag sällan lämnar startblocken."
+        },
+        {
+          "type": "text",
+          "content": "Ägar-operatorn är också din försäkring när resan blir jobbig — och den blir det. En 100-bagger faller 30–50 procent flera gånger på vägen, och då är det avgörande att någon med stor ägarandel och lång horisont sitter vid ratten: som inte paniksäljer, inte byggt upp skuld (V10) som måste refinansieras i vettskrämda marknader, och inte tömt kassan (V11) före vintern. Du köper inte bara en verksamhet — du anlitar en kapitalfördelare. Välj en som redan har bevisat att hon kan multiplicera."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ägare-operatorn i AKM1\",\"rader\":[[\"Egenskap\",\"Grön markör\",\"Röd markör\"],[\"Ägande\",\"Stor personlig andel, köper mer\",\"Säljer systematiskt\"],[\"Kapitalanskaffning\",\"V19 lugn — få eller inga emissioner\",\"Årliga nyemissioner\"],[\"Skuld\",\"V10 låg, V11 god\",\"Uppbyggnad av skuld i toppen\"],[\"Återköp\",\"V20 under innersta värdet\",\"V20 vid toppmultiplar\"],[\"Kompensation\",\"Aktier med låsning\",\"Kvartalsbonus utan ägande\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "När operatören äger mycket och länge försvinner intressekonflikten mellan bolaget och aktieägaren — och kvar blir ren compounding. Mayers 365-tal bekräftar det: det är lättare att lita på en VD som blir rik tillsammans med dig än på en som blir rik av dig."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gräv i en kandidats insiderstatistik: vem äger vad, hur har andelen rört sig fem år tillbaka, och hur har aktieantalet utvecklats (V19/V20)? Om du hittar en ägare-operator med växande andel och krympande aktiemassa — räkna ett scenario där per-aktie-värdet dessutom får en årlig återköpseffekt på 2 procent i tjugo år (1,02^20 ≈ 1,49x)."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en ägare-operator enligt Mayer?",
+          "alternativ": [
+            "Stor personlig ägarandel kombinerad med operativt ansvar",
+            "En inhyrd VD utan aktieinnehav",
+            "En fond med 2 procent av rösterna",
+            "Ett helt utbytt styrelseproffs"
+          ],
+          "ratt": 0,
+          "tips": "Ordets två delar säger allt: både ägare och operator."
+        },
+        {
+          "q": "Vilken röd flagga avslöjar missanpassade incitament i AKM1?",
+          "alternativ": [
+            "Ständig utspädning via emissioner och optionsprogram (V19)",
+            "Låg skuldsättningsgrad",
+            "Att insidern köper mer",
+            "Att bolaget gör återköp (V20)"
+          ],
+          "ratt": 0,
+          "tips": "Följ vems vägningar kapitalet tar — mot ägarna eller ifrån dem."
+        },
+        {
+          "q": "Varför spelar V10 och V11 roll för compoundern?",
+          "alternativ": [
+            "Skuld kan tvinga fram kapitalanskaffning i dåliga tider och bryta compoundingen",
+            "Skuld är alltid bra för avkastningen",
+            "Likviditet saknar betydelse för tillväxt",
+            "De påverkar bara utdelningens storlek"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad som händer med motorn i en recession om balansräkningen är svag."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Toads och prinsar: skippa kyssarna",
+      "intro": "Mayer lånar en bild från Charlie Munger: paddan. Vissa bolag behöver kyssas — förvandlas — för att bli värdefulla. Kapitel 9 förklarar varför turnaround-jakt sällan betalar, och varför du istället ska söka prinsar som redan compoundar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Munger-ättlingen till bilden är paddan (toad): vissa bolag är paddor — de behöver kyssas, det vill säga förvandlas av ny ledning, ny strategi eller yttre räddning, för att bli värdefulla. Problemet med att kyssa paddor är att de för det mesta förblir paddor. Äkta förvandlingar är sällsynta, och när de sker är de sällan förutsägbara i förväg. Turnaround-jakten bygger på händelser du inte kan kontrollera och sällan kan förutse — och den betalar nästan aldrig nog för att kompensera risken, än mindre nog för att skapa 100x."
+        },
+        {
+          "type": "text",
+          "content": "Sök istället prinsar: bolag som redan compoundar. Spåret syns i historiken — växande V01, stabila eller stigande V07/V08, V12-intäktsstabilitet och en V09 som håller en hög nivå år efter år. Det låter misstänkt enkelt: köp bolag som redan har visat att de kan växa, och låt dem fortsätta. Men det kräver att du överger drömmen om att fynda i trubbel och istället betalar för bevisad kvalitet — en betydligt mer vinnande men betydligt tråkigare strategi. Tråkigt är i detta sammanhang en komplimang."
+        },
+        {
+          "type": "text",
+          "content": "Räkna på skillnaden i sannolikhet. En beprövad compounder som fortsätter sitt historiska mönster är en extrapolation — osäker, men åtminstone förankrad i observerade fakta. En padda som förvandlas är en mutation: du behöver samtidigt ny ledning, ny strategi, en kapitalstruktur som håller och lite tur. Mayers dataset talar tydligt: de 365 var övervägande bolag som redan höll på att compounda när en observatör kunde köpa dem — inte bolag som räddades från avgrunden i sista stund."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Padda eller prins?\",\"rader\":[[\"Dimension\",\"Padda (turnaround)\",\"Prins (compounder)\"],[\"Försäljning (V01)\",\"Fallande\",\"Växande\"],[\"Marginaler (V07/V08)\",\"Pressade eller negativa\",\"Stabila och höga\"],[\"Intäktsstabilitet (V12)\",\"Ojämn\",\"Jämn och förutsägbar\"],[\"Avkastning (V09)\",\"Låg eller negativ\",\"Hög och uthållig\"],[\"Skuld (V10/V11)\",\"Ansträngd\",\"Solid\"],[\"Vad som krävs\",\"Kyss: förvandling\",\"Inget: fortsättning\"],[\"Sannolikhet\",\"Låg\",\"Högre\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Att undvika paddor är en negativ selection som kan vara värd mer än all stockpicking: varje timme du lägger på bolag som behöver räddas är en timme du inte lade på bolag som redan levererar. Compounding älskar fokus — paddorna stjäl det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Sortera din bevakningslista i två kolumner — paddor och prinsar — med hjälp av V01, V08, V09 och V12. Välj en prins och räkna ett scenario där den historiska tillväxttakten fortsätter i tio år vid oförändrad multipel. Räkna sedan en padda där du antar lyckad turnaround till sektorgenomsnittlig lönsamhet. Vad kräver varje utfall av framtiden — och vilket är mest beroende av tur?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en »toad« i Mayers (och Mungers) vokabulär?",
+          "alternativ": [
+            "Ett bolag som måste förvandlas — kyssas — för att bli värdefullt",
+            "En kort position i en nedgående sektor",
+            "Ett bolag med starka nätverkseffekter",
+            "En aktie med hög direktavkastning"
+          ],
+          "ratt": 0,
+          "tips": "Metaforen handlar om förvandling — och hur sällan den sker."
+        },
+        {
+          "q": "Vad ska du söka istället för paddor?",
+          "alternativ": [
+            "Prinsar som redan compoundar — växande V01, stabil V12, hög V09",
+            "Nedgående sektorer med billig V05",
+            "Bolag med fallande marginaler och stigande skuld",
+            "Bolag med maximal utspädning"
+          ],
+          "ratt": 0,
+          "tips": "Extrapolering av något gott slår förhoppningar om förvandling."
+        },
+        {
+          "q": "Varför undviker Mayer turnarounds?",
+          "alternativ": [
+            "Låg träffsäkerhet, beroende av yttre räddning och förstörd compounding-jämnhet",
+            "De är alltid dyrast i multipel",
+            "De betalar för stor utdelning",
+            "De finns inte på den amerikanska börsen"
+          ],
+          "ratt": 0,
+          "tips": "Räkna antalet saker som måste gå rätt samtidigt — och vem som kontrollerar dem."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Återköp och utspädning (V20/V19)",
+      "intro": "Per-aktie-värdet är det enda som spelar roll för dig som ägare — och aktieantalet är den tysta variabeln. Kapitel 10 räknar på vad rationella återköp (V20) och låg utspädning (V19, omvänt) bidrar med över ett helt 100-bagger-spann.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mayer lyfter rationella återköp (AKM1: V20) som ett compounding-verktyg i toppklass. När ledningen köper tillbaka aktier under bolagets innersta värde flyttas värde från säljarna till de kvarvarande ägarna — utan skatt, utan utdelningsbeslut och utan att röra verksamhetsmotorn. Ett bolag som varje år krymper sitt aktieantal med 3 procent ger dig en extra årlig hävstång ovanpå allt annat: samma bolag, större andel per aktie, år efter år."
+        },
+        {
+          "type": "text",
+          "content": "Räkna på tjugo år. Ett bolag som späder ut 5 procent per år — emissioner, optionsprogram, räddningskapital — har efter tjugo år 2,65 gånger så många aktier (1,05^20): varje akties andel av vinsten har skurits ned till 38 procent av vad den kunde vara. Ett bolag som återköper 3 procent per år har 0,54 gånger aktierna (0,97^20): varje akties andel har vuxit med 84 procent. Skillnaden mellan de två vägarna är nästan femfaldig per aktie — helt oberoende av hur själva verksamheten utvecklas."
+        },
+        {
+          "type": "text",
+          "content": "Nyckelordet är rationella. Återköp till vilket pris som helst är värdeförstöring — att betala 40 gånger vinsten för egna aktier bara för att pumpa rapporten är att byta goda tillgångar mot dyra. V20 ska bedömas som varje annan kapitalanskaffning: är priset under ett konservativt beräknat värde? Bolag som återköper aggressivt i toppar och fryser i dalar förstör värde; bolag som köper när rädslan är som störst bygger 100-bagger-matematik. Monster Beverage och Berkshire höll sina aktiemassor i princip orörda — därför fick ägarna hela resan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Aktieantalets väg på 20 år\",\"rader\":[[\"Årlig förändring\",\"Aktieantal efter 20 år\",\"Värde per aktie\"],[\"+5 % (utspädning)\",\"2,65x\",\"−62 %\"],[\"0 %\",\"1,00x\",\"±0\"],[\"−3 % (återköp)\",\"0,54x\",\"+84 %\"],[\"−5 % (aggressivt V20)\",\"0,36x\",\"+179 %\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "V20 och V19 är samma mynts två sidor: frågan är alltid om bolagets kapital stannar hos ägarna eller läcker till emissionärer. En krympande aktiemassa vid sidan av en växande V01-motor är compounding på compounding — den mest underskattade ingrediensen i många verkliga 100-baggers."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kolla aktieantalens utveckling fem år tillbaka för tre bolag du följer. Räkna ut den årliga förändringen och extrapolera tjugo år framåt (anta oförändrad policy). Multiplicera sedan med ett organiskt scenario: 12 procent vinsttillväxt per år (1,12^20 ≈ 9,6x) — vilken total per-aktie-effekt får de tre bolagen, och vad betyder det för deras 100x-chans?"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "När är återköp (V20) rationella enligt Mayer?",
+          "alternativ": [
+            "När aktien handlas under bolagets uppskattade innersta värde",
+            "Alltid — oavsett pris",
+            "Bara vid marknadstoppens",
+            "När de finansieras med maximal skuld"
+          ],
+          "ratt": 0,
+          "tips": "Det är en kapitalanskaffning som alla andra — priset avgör."
+        },
+        {
+          "q": "Årlig utspädning på 5 procent under 20 år gör att aktieantalet blir:",
+          "alternativ": [
+            "1,1x",
+            "2,65x",
+            "0,5x",
+            "5x"
+          ],
+          "ratt": 1,
+          "tips": "Räkna 1,05 upphöjt till 20."
+        },
+        {
+          "q": "Återköp som minskar aktieantalet 3 procent per år i 20 år ger:",
+          "alternativ": [
+            "0,54x aktier — per-aktie-värdet lyfts cirka 84 procent",
+            "1,6x aktier — per-aktie-värdet halveras",
+            "3x aktier — per-aktie-värdet tredubblas",
+            "0,95x aktier — marginell effekt"
+          ],
+          "ratt": 0,
+          "tips": "Räkna 0,97 upphöjt till 20 — och vad det betyder för din andel av kakan."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Doodle-effekten: konsten att inte röra något",
+      "intro": "Mayers mest provocerande läxa handlar om att inte göra något. Kalla det doodle-effekten: konsten att sitta med portföljen och rita i marginalen medan compoundern arbetar. Kapitel 11 visar varians-drag, kostnadernas erosiva kraft och varför tålamod är en färdighet, inte en sinnesstämning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De flesta investerare förstör värde genom aktivitet — de köper och säljer på nyheter, hoppar av vid minus 30 procent och missar återhämtningen. En 100-bagger är per definition en aktie du höll genom allt. Mayer kallar fram bilden av att doodla: att sitta med portföljen månad efter månad, år efter år, utan att röra den i onödan. Det låter passivt, men det är den mest krävande aktiviteten i hela boken — att inte störa en maskin som fungerar."
+        },
+        {
+          "type": "text",
+          "content": "Variance drag är matematiken bakom: plus 100 procent följt av minus 50 procent är noll, inte plus 25. Detsamma gäller dina egna ingrepp: varje avbrott i compoundingen måste betalas med en högre framtidsavkastning bara för att komma tillbaka till samma spår. Lägg till transaktionskostnader och skatt på realiserade vinster, och den överaktiva portföljen börjar varje år med ett handikapp. Att inte röra portföljen är därför inte lättja — det är en aktiv strategi med bättre förväntad matematik."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna är brutala: en oproportionerligt stor del av en långsiktig totalavkastning koncentreras till ett litet antal handelsdagar — och de kommer mitt i paniken, inte i lugnet. Den som missar dem tappar större delen av utfallet. En 100-bagger som faller 40 procent på vägen är inte ett bevis på att tesen brustit; det är priset för inträdet. Mayers budskap är rakt: den svåraste delen av 100-baggers är inte att hitta dem — det är att behålla dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Beteendets pris på en 25-årsresa\",\"rader\":[[\"Beteende\",\"Konsekvens\",\"Resan vid cirka 20 %/år\"],[\"Håller hela vägen\",\"Får hela 1,20^25\",\"cirka 95x\"],[\"Säljer vid −30 % och återkommer senare\",\"Tappar återhämtningssprånget\",\"betydligt lägre\"],[\"Hög omsättning med kostnad och skatt\",\"Årligt handikapp\",\"avsevärt lägre\"],[\"Försöker time:a toppar och dalar\",\"Missar de bästa dagarna\",\"betydligt lägre\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Doodle-effekten är inte passivitet — det är aktivt motstånd mot ditt eget nervsystem. Bestäm i förväg, skriftligen, vad som får dig att sälja; allt annat är brus. Portföljens bästa dagar kommer när rubrikerna är som svartast, och då ska du göra det svåraste av allt: ingenting."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv en pre-mortem för din främsta kandidat: lista tre framtida händelser som skulle få dig att vilja sälja, och avgör vilka som är tesbrott och vilka som bara är brus. Räkna sedan ett scenario: 18 procent per år i 28 år (1,18^28 ≈ 103) — vad blir värdet per investerade 10 000 kronor, och vad kostar det i slutvärde att avbryta resan efter år tio (1,18^10 ≈ 5,2x)?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är doodle-effekten?",
+          "alternativ": [
+            "Konsten att sitta still med portföljen — inte röra den i onödan",
+            "Att rita tekniska formationer i diagram",
+            "Att handela ofta för att jämna ut variansen",
+            "Att mekaniskt rebalansera varje kvartal"
+          ],
+          "ratt": 0,
+          "tips": "Nyckeln är vad du låter bli att göra medan compoundern arbetar."
+        },
+        {
+          "q": "Vad blir netto av +100 procent ett år följt av −50 procent nästa?",
+          "alternativ": [
+            "+50 procent",
+            "0 procent",
+            "+25 procent",
+            "−50 procent"
+          ],
+          "ratt": 1,
+          "tips": "Räkna med 100 kronor som start och se var du hamnar."
+        },
+        {
+          "q": "En 100-bagger som på vägen föll 40 procent — vad krävs för att hinna med resan?",
+          "alternativ": [
+            "Förmågan att sitta kvar igenom svängarna medan tesen står fast",
+            "Perfekt timing av bottnen",
+            "En automatisk stop-loss",
+            "Daglig handel för att höja avkastningen"
+          ],
+          "ratt": 0,
+          "tips": "Priset för inträdet är nedgångarna — frågan är vem som tål dem."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "När sälja: nästan aldrig",
+      "intro": "Om nästan aldrig sälja är regeln — när är undantaget? Kapitel 12 definierar tesbrott i AKM1-termer, skiljer brus från signal, och visar varför skatten och klockan gör varje onödig realisering så dyr.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mayers svar på säljfrågan: när tesen bryts. Inte när aktien faller, inte när kvartalet missas, inte när en analytiker byter rekommendation. Tesen är din skriftliga bild av motorn: växande V01, uthållig V09, vallgravar V13–V15, kapitaldisciplin V19/V20. När de källorna sinar kroniskt — inte i ett kvartal, utan över år — är resan över, oavsett om aktien just då är upp eller ned. Att sälja med vinst kan lika gärna vara ett misstag som att sälja med förlust; avgörande är aldrig kursen, utan motorn."
+        },
+        {
+          "type": "text",
+          "content": "Den andra godtagbara anledningen är extrem värdering: när priset har löpt så långt ifrån ett konservativt värde att V04 och V06 ligger vida utanför allt historiskt och rimligt, är framtida avkastning matematiskt strypt — även perfekt fortsatt tillväxt ger dig en dålig aktie från det priset. Mayer varnar ändå för att detta blir en flyktdörr för otåliga: de flesta som säljer i förtid gör det med motiveringen att aktien blivit dyr — och tittar sedan på när den blir dyrare och dyrare, för att motorn aldrig fick chansen att visa vad den kan."
+        },
+        {
+          "type": "text",
+          "content": "Tänk på skatten som compoundingens friktion: varje onödig realisering tar ut kapital ur (1 + r) upphöjt till t och startar en ny klocka på nytt, med mindre kapital och kortare tid kvar. Berkshire-aktier som såldes 1985 för att de stigit klart missade huvuddelen av resan. Frågan är aldrig »hur mycket har den stigit?« utan »hur mycket återstår av motorn?«. En aktie som redan gått 10x och vars motor är intakt kan ha längre kvar till 100x än vad en nyligen dubblad aktie med döende motor har till 5x."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sälj eller behåll?\",\"rader\":[[\"Signal\",\"AKM1-markör\",\"Dom\"],[\"V01 faller två år i rad\",\"Motor tappar kraft\",\"Ompröva tesen\"],[\"V09 halveras utan förklaring\",\"Motorn slits\",\"Ompröva tesen\"],[\"Vallgrav eroderar\",\"V13–V15 luckras\",\"Ompröva tesen\"],[\"Återköp till toppmultiplar\",\"V20 kapitaldisciplin luckras\",\"Varning\"],[\"Ny emission\",\"V19 utspädning återkommer\",\"Varning\"],[\"Kvartalsmiss mot konsensus\",\"Brus\",\"Behåll om tesen hel\"],[\"Aktien faller 20 procent\",\"Brus\",\"Behåll om tesen hel\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Byt fråga. Inte »när ska jag sälja?« utan »har tesen brutits?«. Den första frågan bjuder in känslor och kursgrafen; den andra bjuder in verksamheten. Med en skriftlig tes blir svaret nästan alltid uppenbart — och nästan alltid: behåll."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ett tesdokument för din största position: motorer (V01/V09), vallgravar (V13–V15), kapitaldisciplin (V19/V20) och exakt vad som skulle utgöra ett tesbrott. Räkna sedan kvarvarande compound-utrymme: om aktien redan gått 10x — vilken ytterligare faktor krävs för 100x totalt, och hur många år motsvarar det vid 15 procent per år (cirka 33 år totalt)?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mayers huvudregel för försäljning?",
+          "alternativ": [
+            "Nästan aldrig sälja — förrän tesen bryts",
+            "Sälj varje år för att ta hem vinst",
+            "Sälj så snart aktien gått plus 50 procent",
+            "Sälj på rykten om svagare kvartal"
+          ],
+          "ratt": 0,
+          "tips": "Fråga inte kursen — fråga motorn."
+        },
+        {
+          "q": "Vilket av följande är ett äkta tesbrott?",
+          "alternativ": [
+            "Motorerna (V01/V09) sviker kroniskt över år och runways tar slut",
+            "Ett kvartalssiffror under konsensus",
+            "Aktien faller 15 procent på en månad",
+            "En konkurrent lanserar en ny produkt"
+          ],
+          "ratt": 0,
+          "tips": "Ett tesbrott gäller vad som händer i verksamheten under lång tid — inte priset eller nyhetsflödet."
+        },
+        {
+          "q": "Extremt höga V04/V06 kan motivera vad?",
+          "alternativ": [
+            "Omprövning eller försiktig trimning — priset har löpt ifrån värdet",
+            "Inköp med maximal hävstång",
+            "Att ignorera värderingen för alltid",
+            "Att alltid blanka bolaget"
+          ],
+          "ratt": 0,
+          "tips": "Även en perfekt motor ger dålig avkastning om du betalar ett pris som redan räknar med allt."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "100-bagger-jägaren: AK1TS-processen",
+      "intro": "Avslutningen kopplar Mayers material till AK1TS och din egen process: de långa horisonterna (Lång och Mega), AKM1 som screeningmotor och en komplett checklista från storlek till beteende. Slutligen: kärnberäkningen som sätter allt i perspektiv.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "100-bagger-jakten lever bara på de långa horisonterna — i AK1TS är det Lång och Mega — eftersom hela matematiken bygger på åratal av compounding. AKM1 blir din screening- och bevakningsmotor: V01–V03 för att hitta växande motorer, V13–V15 för att testa om tillväxten är skyddad, V04–V06 för att bedöma startmultipel och bränsletank, V09–V11 för kvalitet och soliditet, V19–V20 för kapitaldisciplin. Fem horisonter, fem teorier, fyra dimensioner — men bara en av dem rummar hundrafaldiganden, och det är den längsta."
+        },
+        {
+          "type": "text",
+          "content": "Processen i sju steg: (1) screena små bolag med växande V01 och hög V09 — geometrin kräver litet startvärde; (2) filtrera bort paddorna — kräv V12-stabilitet och marginaler som håller; (3) verifiera vallgrav V13–V15 och uppskatta runway; (4) kontrollera att startmultipeln (V04/V06) lämnar bränsle i tanken; (5) kontrollera att V19/V20 inte läcker värde ifrån ägarna; (6) köp och skriv tesen med tydliga tesbrott; (7) doodla. Ingenstans i flödet ingår att förutsäga makro, räntor eller nästa kvartal — det är just det som gör det genomförbart."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta med kärnberäkningen: 100 000 kronor som compoundas i 20 procent per år i 25 år blir cirka 9,5 miljoner kronor (1,20^25 ≈ 95). Med fem väl valda positioner räcker det att en enda levererar — de övriga fyra ska vara skyddade, solida compounders som inte kostar dig kapital medan du väntar. Det är Mayers egentliga portföljfilosofi: bygg kärnan av uthålliga compounders, koncentrera din tro där bevisen är starkast, och ge tidens makt en chans att arbeta. Boken slutar inte med en lista över nästa hundra baggers — den slutar med en spegel: vad krävs av dig?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"100-bagger-processen i AKM1\",\"rader\":[[\"Steg\",\"AKM1\",\"Fråga\"],[\"1. Storlek\",\"—\",\"Är slutvärdet vid 100x realistiskt?\"],[\"2. Motor\",\"V01/V02/V03\",\"Växer intäkterna riktigt och länge?\"],[\"3. Kvalitet\",\"V09/V07/V08\",\"Återinvesteras vinsten till hög avkastning?\"],[\"4. Vallgrav\",\"V13/V14/V15\",\"Skyddas pris och marginaler?\"],[\"5. Pris\",\"V04/V05/V06\",\"Finns bränsle i startmultipeln?\"],[\"6. Disciplin\",\"V19/V20\",\"Stannar värdet hos ägarna?\"],[\"7. Beteende\",\"—\",\"Kan du hålla i 20+ år?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Mayers hemlighet är till slut inte selektion utan beteende. De 365 bolagen var köpbara för vem som helst med lite grävlust — det som skilde vinnarna från åskådarna var 25 år av att inte röra något. Utrustad med AKM1-filter och en Mega-horisont är din uppgift inte att förutsäga framtiden, utan att hitta de maskiner som sannolikt fortsätter att compounda — och sedan skydda dem från din egen otålighet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din första riktiga 100-bagger-screen: minst fem AKM1-villkor (till exempel V01 över 10 procent, V09 över 15 procent, V12 stabil, V19 ingen utspädning, V06 under historiskt snitt). Välj ut tre kandidater, räkna compound-scenarier (15 procent per år i 25 år är cirka 32,9x) och skriv en tes för varje. Datummärk dokumenten — du ska kunna läsa om dem om tio år."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka AK1TS-horisonter passar 100-bagger-jakten?",
+          "alternativ": [
+            "Lång och Mega",
+            "Intradag och kort",
+            "Swing",
+            "Alla horisonter lika bra"
+          ],
+          "ratt": 0,
+          "tips": "Vilken horisont rymmer 25 år av compounding?"
+        },
+        {
+          "q": "Vad är Mayers egentliga hemlighet enligt kursens slutsats?",
+          "alternativ": [
+            "Teknisk analys av utbrott",
+            "Beteendet — tid, tålamod och låg omsättning — lika mycket som selektion",
+            "Hävstång i uppgångarna",
+            "Makro-timing av räntor"
+          ],
+          "ratt": 1,
+          "tips": "Bolagen var köpbara för alla — vad skilde ägarna åt?"
+        },
+        {
+          "q": "100 000 kronor som compoundas 20 procent per år i 25 år blir ungefär:",
+          "alternativ": [
+            "cirka 350 000 kronor",
+            "cirka 2 miljoner kronor",
+            "cirka 9,5 miljoner kronor",
+            "cirka 100 miljoner kronor"
+          ],
+          "ratt": 2,
+          "tips": "Räkna 1,20 upphöjt till 25 och multiplicera."
+        }
+      ]
+    }
+  ]
+}

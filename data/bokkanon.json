@@ -151,7 +151,7 @@
         "När lager och kundfordringar växer snabbare än försäljningen är något fel"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-007",
@@ -2399,6 +2399,32 @@
       ],
       "tier": 3,
       "status": "kanon"
+    },
+    {
+      "id": "bk-101",
+      "titel": "100 Baggers",
+      "author": "Christopher Mayer",
+      "year": 2015,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Studien av de 365 aktier som gav 100x 1962-2014 — compounding, små startvärden och moats i ett bevisligt paket.",
+      "ak": [
+        "V01",
+        "V09",
+        "V13",
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Pris"
+      ],
+      "lessons": [
+        "100x kräver båda motorerna: EPS-tillväxt OCH multipel-expansion från låg startpunkt",
+        "Tid är strategin: ~25 år à 20 % — köp bolag som kan compounda, inte lotter",
+        "Aktieantalet avgör: utspädning äter avkastning, återköp (V20) adderar den"
+      ],
+      "tier": 1,
+      "status": "kurs"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCourses } from "@/lib/content";
+import { EKOSYSTEM, ModellRef } from "@/lib/ekosystem";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -73,7 +74,7 @@ export async function POST(req: NextRequest) {
         mode: "sokratisk",
         attack,
         historisktFall: HISTORISKA_FALL[amne] || null,
-        meddelande: `🎯 ${attack.fraga}`,
+        meddelande: `🎯 [AKM1/AK1TS] ${attack.fraga}`,
         kontext: attack.kontext,
         nastaSteg: "Svara med din analys. Short-Sellern kommer att följa upp.",
       });
@@ -107,7 +108,7 @@ export async function POST(req: NextRequest) {
         mode: "sokratisk",
         attack: { ...attack, fraga: sokratiskFraga },
         historisktFall: HISTORISKA_FALL[kategori] || null,
-        meddelande: `🔴 ${sokratiskFraga}`,
+        meddelande: `🔴 [AKM1/AK1TS] ${sokratiskFraga}`,
         kontext: attack.kontext,
         tips: "Short-Sellern ger inga svar — bara frågor. Försvara din position!",
         nastaSteg: "Försvara din tes eller revidera den. Det är så man växer.",

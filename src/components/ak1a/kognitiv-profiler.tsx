@@ -165,7 +165,7 @@ export function KognitivProfiler() {
 
           <div className="mt-6 space-y-2">
             <Link href="/laroplan" className="block rounded-xl bg-gold px-6 py-3 text-sm font-bold text-primary-foreground">
-              Starta din läroplan (Nivå {profil.rekommenderadNiva}) →
+              Starta AKM1-läroplanen (Nivå {profil.rekommenderadNiva}) →
             </Link>
             <Link href="/kurser/the-intelligent-investor" className="block text-xs underline hover:text-gold">
               Eller börja med Graham komplett →

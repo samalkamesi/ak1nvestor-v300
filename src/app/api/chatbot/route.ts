@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCourses } from "@/lib/content";
+import { EKOSYSTEM } from "@/lib/ekosystem";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -73,7 +74,7 @@ export async function POST(req: NextRequest) {
       const relevanta = topp.map(([slug]) => kurser.find((k) => k.slug === slug)!);
       const svar =
         relevanta.length === 1
-          ? `Det låter som kursen **${relevanta[0].title}** (${relevanta[0].totalMinutes || relevanta[0].minutes} min).\n\n${relevanta[0].learn}\n\nBör här: /kurser/${relevanta[0].slug}`
+          ? `Enligt AKM1 (20 fundamentalvariabler) — det låter som kursen **${relevanta[0].title}** (${relevanta[0].totalMinutes || relevanta[0].minutes} min).\n\n${relevanta[0].learn}\n\nBör här: /kurser/${relevanta[0].slug}`
           : `Flera kurser matchar:\n${relevanta
               .map((k) => `• **${k.title}** — ${k.learn?.slice(0, 90)}… (/kurser/${k.slug})`)
               .join("\n")}`;

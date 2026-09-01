@@ -3604,3 +3604,21 @@ Work Log:
 Stage Summary:
 - 27 böcker + 2 flaggskepp komplettäckta; kontrovers-direktivet genomgår
   alla nya kurser
+
+---
+Task ID: 126-VAG8-LEVERANS — 258 KURSER
+Agent: main + Elliott ✓ + Dreman ✓ + Elder ✓
+Task: BOKMASTER #28-30 — kontrovers-spåret komplett på tekniksidan
+
+Work Log:
+- ELLIOTT WAVE PRINCIPLE (Frost & Prechter): 16 kap, 48 quiz — de tre hårda
+  reglerna exakta, nio våggrader, kontroverskapitlet med Prechters egna
+  prognosmissar redovisade balanserat + AK1TS:s deterministiska brytning
+- CONTRARIAN INVESTMENT STRATEGIES (Dreman): 14 kap, 42 quiz — lågvärdes-
+  bevisen, överraskningsläran, EMH-svaret + Lakonishok-Shleifer-Vishny
+- TRADING FOR A LIVING (Elder): 14 kap, 42 quiz — psykologi/disciplin/system,
+  daytrading-statistiken kontroverskapitel, triple-screen + 2%/6%-regler
+- Kanon 30/101 · 258 kurser · 4983 quiz · 747 sidor
+
+Stage Summary:
+- 30 BOKMASTER-böcker + 2 flaggskepp; kontrovers-direktivet i varje ny kurs

@@ -1,0 +1,1310 @@
+{
+  "slug": "elliott-wave-principle",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 16,
+  "totalMinutes": 170,
+  "title": "Elliott Wave Principle — Frost & Prechter: KOMPLETT",
+  "summary": "A.J. Frost och Robert Prechters \"Elliott Wave Principle\" (1978) är Elliott-våglärans kanoniska text — AK1TS:s viktigaste enskilda teorikälla. Denna BOKMASTER-kurs täcker bokens hela kärna i 16 kapitel: Elliotts upptäckt, grundmönstret 5-3, de fraktala våggraderna, de tre hårda reglerna, vågpersonligheterna, alla korrektiva mönster, Fibonacci-matematiken, volym och divergens samt Prechters socionomics — krönt med ett kapitel kontroversiell ärlighet om kritiken och AK1TS:s svar.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan du: redogöra för Ralph Nelson Elliotts liv, upptäckt och förhållande till Dow-teorin; rita grundmönstret 5-3 med fem impulsvågor och en a-b-c-korrigering och förklara varför formen alltid återkommer; navigera den fraktala strukturen med våggrader från Grand Supercycle till Subminuette och nästla grader i varandra; tillämpa de tre hårda reglerna exakt — våg 2 återgår aldrig under våg 1:s start, våg 3 är aldrig kortast av vågorna 1-3-5, våg 4 överlappar aldrig våg 1:s pristerräng i cash-marknaden; känna igen vågpersonligheterna från våg 1:s tvivel till våg 5:s eufori och B-vågens falska hopp; skilja på zigzag (5-3-5), flat (3-3-5), triangel (a-b-c-d-e) och kombinationer (W-X-Y) samt tillämpa alternation-principen; räkna med Fibonacci-retracements på 38,2, 50 och 61,8 procent och extensions som våg 3 = 1,618 × våg 1 och våg 5 = våg 1; läsa volym och divergens som bränslemätare och varningsklocka; förklara socionomics — att masspsykologin driver vågorna, inte omvänt; samt redogöra rättvist för Malkiels och akademins kritik och förklara varför AK1TS behåller vågbegreppet genom deterministiska proxy-mått, struktur som beskrivningsram och hård riskhantering.",
+  "why": "Frost & Prechters \"Elliott Wave Principle\" (1978) är DEN kanoniska Elliott-texten — det verk som förvandlade en sjuk pensionsålders revisors 1930-talsupptäckt till hela den moderna våganalysens grund. För AK1TS är boken den viktigaste enskilda teorikällan: hela Våg-dimensionens tankevärld — fem steg i trendriktningen, tre tillbaka, fraktal hierarki och objektiva invalidregler — kommer härifrån, och dimensionerna Pris, Tid och Brytpunkt bygger vidare på samma skelett. Samtidigt är teorin bland det mest kritiserade i finans, vilket kursen behandlar med full ärlighet: vi behåller strukturen som beskrivningsram och måttstock, men ersätter den subjektiva räkningen med deterministiska proxy-mått. Den fulla brytningen förklaras i vårt flaggskepp \"AK1TS — Våglärans Hierarki\".",
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Ralph Nelson Elliott — mannen bakom vågorna",
+      "minutes": 10
+    },
+    {
+      "num": 2,
+      "title": "Dow-teorin — arvet Elliott byggde vidare på",
+      "minutes": 10
+    },
+    {
+      "num": 3,
+      "title": "Grundmönstret — fem vågor i trend, tre i korrigering",
+      "minutes": 15
+    },
+    {
+      "num": 4,
+      "title": "Fraktalvärlden — våggrader från Grand Supercycle till Subminuette",
+      "minutes": 10
+    },
+    {
+      "num": 5,
+      "title": "De tre hårda reglerna — teorins ryggrad",
+      "minutes": 10
+    },
+    {
+      "num": 6,
+      "title": "Vågpersonligheterna — psykologin i varje position",
+      "minutes": 10
+    },
+    {
+      "num": 7,
+      "title": "Korrigeringar I — zigzag och flat",
+      "minutes": 10
+    },
+    {
+      "num": 8,
+      "title": "Korrigeringar II — trianglar och kombinationer",
+      "minutes": 10
+    },
+    {
+      "num": 9,
+      "title": "Alternation och korrigeringarnas djup",
+      "minutes": 10
+    },
+    {
+      "num": 10,
+      "title": "Fibonacci — den matematiska ryggraden",
+      "minutes": 10
+    },
+    {
+      "num": 11,
+      "title": "Vågornas proportioner — retracements och extensions",
+      "minutes": 10
+    },
+    {
+      "num": 12,
+      "title": "Tidsmåtten — Fibonacci i dimensionen Tid",
+      "minutes": 10
+    },
+    {
+      "num": 13,
+      "title": "Volym och divergens — bränslet och varningsklockan",
+      "minutes": 10
+    },
+    {
+      "num": 14,
+      "title": "Socionomics — masspsykologin driver vågorna",
+      "minutes": 10
+    },
+    {
+      "num": 15,
+      "title": "Kontroversiell ärlighet — kritiken och AK1TS:s brytning",
+      "minutes": 15
+    },
+    {
+      "num": 16,
+      "title": "Från bok till AK1TS — vågbegreppet i praktiken",
+      "minutes": 10
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Ralph Nelson Elliott — mannen bakom vågorna",
+      "intro": "Innan vågteorin fanns en sjuk revisor i Los Angeles som inte kunde arbeta men inte kunde sluta tänka. Att Ralph Nelson Elliott gjorde sitt livs upptäckt först i sextioårsåldern, efter en decennielång karriär i centralamerikanska järnvägsbolag, är kursens startpunkt — för den förklarar varför teorin ser ut som den gör: den byggdes på decennier av prisdata, inte på en flash av intuition.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ralph Nelson Elliott föddes 1871 i Marysville, Kansas, och arbetade i över tjugo år som revisor och företagsledare — främst för järnvägsbolag i Centralamerika. Han var ingen chartist och ingen börsman: han var en bokhållare av den gamla skolan, van att se struktur och periodicitet i siffror. Frost & Prechter ägnar bokens inledning åt denna biografi, och deras poäng är viktig: Elliott kom till marknadsdata utan förutfattade meningar, med ett revisorsöga som letade mönster i kolumner. I mitten av 1920-talet anställdes han av det amerikanska utrikesdepartementet för att hjälpa till ordna Nicaraguas statsfinanser — ett uppdrag som krävde just förmågan att se system i kaos."
+        },
+        {
+          "type": "text",
+          "content": "Sedan kom livets vendetta. I slutet av 1920-talet drabbades Elliott av en allvarlig blodbrist orsakad av en parasit han fått i Centralamerika. Han blev sängliggande under långa perioder och tvingades överge karriären. Vad han gjorde sedan är en av finanshistoriens mest osannolika berättelser: från sin sjukbädd började han studera Dow Jones-indexens prisdata — sjuttiofem år av vecko- och månadskurser — med samma noggrannhet som han reviderat balansräkningar. Frost & Prechter menar att det var just isoleringen och tålamodet som gjorde upptäckten möjlig: ingen skärm, inget brus, bara papper, linjal och tid. År 1934, vid 62 års ålder, kunde han formulera det han kallade vågprincipen."
+        },
+        {
+          "type": "text",
+          "content": "Elliott skrev brev till Charles J. Collins, redaktören bakom en av tidens mest respekterade marknadsbrev. Collins avfärdade honom först som ännu en självlärd systembyggare — tills Elliotts prognoser träffade. Känd är telegrammet i februari 1935: mitt under en hård nedgång, när marknaden gjorde nya bottennivåer för året och stämningsläget var som mörkast, telegraferade Elliott att nedgången höll på att ta slut och en kraftig uppgång väntade. Dagarna därpå vände Dow-indexet och nästan fördubblades under de följande två åren. Collins blev övertygad, skrev förordet till Elliotts \"The Wave Principle\" (1938) och hjälpte honom publicera tolv artiklar i tidskriften Financial World 1939. Elliotts sista stora verk, \"Nature's Law — The Secret of the Universe\", kom 1946. Han dog 1948, i tron att han hittat naturens egen rytm i marknadspriserna."
+        },
+        {
+          "type": "text",
+          "content": "Vägen från Elliott till boken du nu läser om går genom två män. Den kanadensiske analytikern A. Hamilton Bolton skrev 1960 uppskattningen \"The Elliott Wave Principle — A Critical Appraisal\" och följde vågräkningen i årliga supplement till sina marknadsbrev fram till sin död 1967. Hans partner A.J. Frost — en teknisk analytiker av gammal skola i Hamilton, Ontario — fortsatte arbetet. Robert Prechter, en ung psykolog från Yale som arbetade som teknisk analytiker på Merrill Lynch, hade hittat Boltons bok i ett bibliotek och blev besatt. Frost och Prechter inledde en korrespondens via Collins, möttes 1977 och skrev tillsammans \"Elliott Wave Principle\", publicerad i november 1978. Boken räddade Elliotts arv från glömskan — och gav den svenska kursen du håller på att läsa sitt viktigaste teoretiska skelett."
+        },
+        {
+          "type": "insikt",
+          "content": "Elliott hittade inte vågorna genom att leta efter dem — han fick dem att träda fram ur sjuttiofem års data för att han tvingades titta länge nog. Det är samma inställning AK1TS kräver av dig: se hela historiken, inte bara det senaste halvåret, innan du bestämmer dig för var du befinner dig i cykeln."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en månadschart på ett långtgående index med så lång historik du kan hitta — gärna flera decennier. Rita med ögonen (eller ett ritverktyg) de största topparna och botten du ser. Försök ännu inte räkna vågor; bara markera vändpunkterna och notera hur långa de stigande och fallande sviterna är. Denna samling vändpunkter är råmaterialet för hela kursen — Elliott började exakt här."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från sjukbädd till kanonisk bok — tidslinjen\",\"rader\":[[\"År\",\"Händelse\"],[\"1871\",\"Ralph Nelson Elliott föds i Kansas\"],[\"1900-1925\",\"Karriär som revisor och företagsledare i centralamerikansk järnvägsindustri\"],[\"1927-1930\",\"Sjukdom tvingar honom ur arbetslivet; studerar 75 år av Dow-data\"],[\"1934\",\"Formulerar vågprincipen vid 62 års ålder; kontaktar Charles Collins\"],[\"1935\",\"Telegrammet: botten kallas mitt i paniken — och träffar\"],[\"1938\",\"'The Wave Principle' publiceras med förord av Collins\"],[\"1939\",\"Tolv artiklar i Financial World sprider läran\"],[\"1946\",\"'Nature's Law' — Elliotts sista verk\"],[\"1960\",\"Boltons 'A Critical Appraisal' håller arvet vid liv\"],[\"1978\",\"Frost & Prechter publicerar 'Elliott Wave Principle'\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Ralph Nelson Elliotts yrkesbakgrund innan han utvecklade vågprincipen?",
+          "alternativ": [
+            "Revisor och företagsledare, främst inom centralamerikansk järnvägsindustri",
+            "Aktiemäklare på Wall Street med specialisering på optioner",
+            "Professor i matematik vid Yale",
+            "Journalist på Financial World"
+          ],
+          "ratt": 0,
+          "tips": "Frost & Prechter betonar i biografin att hans hantverk var bokföring och struktur i siffror — inte spekulation."
+        },
+        {
+          "q": "Vad hände efter Elliotts berömda telegram till Collins 1935?",
+          "alternativ": [
+            "Dow-indexet vände uppåt och nästan fördubblades under de följande ungefär två åren",
+            "Marknaden fortsatte falla och Elliott förlorade sitt kapital",
+            "Collins avslöjade att telegrammet var ett bluff",
+            "Elliott lämnade marknadsanalysen för att skriva om naturvetenskap"
+          ],
+          "ratt": 0,
+          "tips": "Prognosen kom mitt i värsta pessimismen — tänk på vad det gjorde med Collins förtroende."
+        },
+        {
+          "q": "Hur hänger A. Hamilton Bolton samman med boken 'Elliott Wave Principle' (1978)?",
+          "alternativ": [
+            "Han skrev 1960 en uppskattning av vågprincipen och hans partner Frost fullbordade kedjan till Prechter",
+            "Han var Prechters studiekamrat på Yale",
+            "Han var Elliotts svärson och ägde upphovsrätten",
+            "Han var förläggare som refuserade manuset"
+          ],
+          "ratt": 0,
+          "tips": "Länken Elliott till Frost till Prechter går via ett litet kanadensiskt analyshus och en bok på ett bibliotek."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Dow-teorin — arvet Elliott byggde vidare på",
+      "intro": "Elliott kallade sin upptäckt en förfining av Dow-teorin, inte en revolt mot den. Charles Dows beskrivning av marknaden som tidvatten, svall och krusningar var det naturliga språk Elliott ärvt — men där Dow gav prosa, gav Elliott form. Förstå skillnaden, så förstår du vad vågprincipen egentligen tillför.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Charles Dow, grundare av Wall Street Journal och av indexen som bär hans namn, formulerade i sina editorer kring sekelskiftet 1900 en bild som kom att kallas Dow-teorin. Hans mest berömda idé är marknadens tre rörelser: primärtrenden — tidvattenen, varar år; den sekundära svallningen — veckor till månader; och dagskrusningarna — bruset som ingen bör handla på. Dow lärde också att indexen diskonterar allting: varje känd information, varje förväntan, finns redan i priset. Trenden bekräftas av volym, och industri- och järnvägsindexen måste bekräfta varandra för att en signal ska gälla. Detta är grunden för all modern teknisk analys."
+        },
+        {
+          "type": "text",
+          "content": "Dow beskrev också en börs som rör sig i tre faser upp och tre faser ner — en kvalitativ skiss av ackumulation, deltagande och eufori. Frost & Prechter påpekar i bokens första kapitel att Elliott, som studerade Dows efterföljares arbeten noggrant, ställde sig en enkel fråga: om marknaden har svall och tidvatten, vilken exakt form har svallen? När Elliott räknade i sitt datamaterial fann han svaret: fem vågor i primärrörelsens riktning, tre emot. Dows tre faser blev Elliotts fem vågor; Dows korrigeringar fick en fast anatomi. Dows intuitioner om att korrigeringar ofta återtar ungefär en tredjedel till två tredjedelar av föregående svall föregrep också de Fibonacci-mått Elliott senare-systematiserade i kapitel efter kapitel."
+        },
+        {
+          "type": "text",
+          "content": "Skillnaden är dock djupare än räkneverket. Dows teori är kvalitativ: den säger att det finns trender och faser, men ger ingen mall för var en fas börjar eller slutar. Elliotts vågprincip är formell: den ger precis form, inbördes proportion och nästlingsdjup åt samma rörelser, och den gäller — till skillnad från Dows krav på två bekräftande index — för varje fritt handlad tillgång med likvid offentlig prissättning. Frost & Prechter sammanfattar skillnaden så att Dow-teorin beskriver havet, medan vågprincipen beskriver vågen: samma fenomen, men på olika exakthetsnivå. Samtidigt håller Elliott med Dow om det viktigaste av allt — att prisrörelsens orsak ligger i marknadens egen kollektiva psykologi, inte i nyheterna om den."
+        },
+        {
+          "type": "text",
+          "content": "För AK1TS är arvet efter Dow och Elliott gemensamt: hierarkin. Dows tidvatten, svall och krusning lever vidare som principen att korta sviter betjänar långa, och att du alltid måste veta vilken grad du handlar och vilken grad som ger sammanhanget. När du senare i kursen lär dig våggraderna från Grand Supercycle till Subminuette, ser du Dows tre rörelser utvidgade till ett helt telescopeoretiskt system — det är denna hierarki som är kärnan i flaggskeppet \"AK1TS — Våglärans Hierarki\", där varje horisont från Mikro till Mega har sin egen våg."
+        },
+        {
+          "type": "insikt",
+          "content": "Dow gav finansvärlden sjökortet; Elliott gav den vågformeln. Den som bara kan Dow ser att det finns ett tidvatten — den som kan Elliott ser hur många svall tidvattnet består av, och därmed var han själv står i vattnet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram en veckochart på ett index över minst tio år. Markera först Dows tre faser i den största uppgången du ser — ackumulation, deltagande, eufori — med tre pilar. Markera sedan, utan att ännu kräva perfektion, var fem tydliga steg upp och tre ner skulle kunna passa in. Jämför dina två markeringar: är de samma toppar och bottnar, eller ser femman något som trean missar?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dow-teorin mot Elliotts vågprincip\",\"rader\":[[\"Aspekt\",\"Dow-teorin\",\"Elliotts vågprincip\"],[\"Grundbild\",\"Tidvatten, svall, krusning\",\"Fem vågor i trend, tre i korrigering, på alla grader\"],[\"Fasbeskrivning\",\"Tre faser upp och ner (kvalitativ)\",\"Precis form och delning per våg (formell)\"],[\"Mått på korrigering\",\"Ungefär 1/3 till 2/3 av svaret\",\"Fibonacci-kvoter: 38,2 / 50 / 61,8 procent\"],[\"Tillämpningsområde\",\"Bekräftelse mellan index\",\"Alla fritt handlade, likvida tillgångar\"],[\"Orsak till rörelsen\",\"Kollektiv psykologi diskonterad i pris\",\"Samma — men formaliserad som vågform\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är Dows tre rörelser i marknaden?",
+          "alternativ": [
+            "Primärtrenden (tidvattenet), sekundär svallning och dagskrusningar",
+            "Trend, kanal och utbrott",
+            "Impuls, korrigering och konsolidering",
+            "Ackumulation, distribution och reaktion"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på havet: den stora strömmen, svallen ovanpå den, och bruset på ytan."
+        },
+        {
+          "q": "Vad var Elliotts främsta bidrag utöver Dow-teorin?",
+          "alternativ": [
+            "Idén att marknaden diskonterar all information",
+            "Kravet på volymbekräftelse av trender",
+            "Att index måste bekräfta varandra",
+            "En precis form — fem vågor i trendriktningen och tre i korrigering — med proportioner och nästling"
+          ],
+          "ratt": 3,
+          "tips": "Dow gav prosan om faser; Elliott gav mallen som kan räknas och ritas."
+        },
+        {
+          "q": "Vad menar både Dow och Elliott om vad som driver prisrörelserna?",
+          "alternativ": [
+            "Räntesättningar och penningmängd",
+            "Offentlig information i takt med att den publiceras",
+            "Tilfällesstyrning utan struktur",
+            "Marknadens egen kollektiva psykologi, som diskonteras i priset"
+          ],
+          "ratt": 3,
+          "tips": "Båga börjar i samma övertygelse om att priset vet mer än nyhetsflödet."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 15,
+      "title": "Grundmönstret — fem vågor i trend, tre i korrigering",
+      "intro": "Här är kursens hjärta: det mönster Elliott såg upprepas genom hela prishistoriken. Fem vågor bär en trend framåt, tre vågar för den tillbaka — alltid, på alla tidshorisonter, i varje fritt handlad tillgång. Ta dig tid att läsa detta kapitel långsamt och rita medan du läser; mönstret är enkelt att se och svårt att bemästra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Rita med. Börja på en botten som du kallar 0. Priset stiger i en första våg — kalla den våg 1 — som följs av ett fall, våg 2, som inte går under startpunkten 0. Därefter kommer rörelsens motor: våg 3, kraftigare och oftast längre än våg 1. Efter våg 3 följer en ny nedgång, våg 4, som — och detta är avgörande — inte sjunker så djupt att den nuddar våg 1:s högsta pris. Till sist en femte våg upp, våg 5, som ofta slår ny topp men med mattare inre kraft. Fem vågor uppåt: 1-2-3-4-5. Detta är impulssekvensen, marknadens sätt att förflytta sig i en riktning."
+        },
+        {
+          "type": "text",
+          "content": "Efter de fem vågorna följer korrigeringen, bokstavsmärkt a-b-c. Våg a faller, våg b stiger svagt — men inte upp till våg 5:s topp — och våg c faller djupt, ofta förbi våg a:s botten. Tre vågor emot trendriktningen. Sedan är cykeln hel: åtta vågor totalt, fem i rörelsens riktning och tre bakåt. Frost & Prechter beskriver detta somhandlingens och reaktionens lag i prisernas form: framsteg sker inte i en rak linje utan i fem steg framåt och tre tillbaka, därför att optimistisk framtidstro byggs och prövas i omgångar, medan tvilet återkommer i tre vågor. När a-b-c är slut är inte historien över — då börjar en ny femvågssekvens i samma riktning som den föregående femman, på en högre nivå."
+        },
+        {
+          "type": "text",
+          "content": "Nu kommer det geniella: delningen. Vågorna 1, 3 och 5 — de som går med överordnad trend — består själva av fem mindre vågor. Vågorna 2 och 4 — de som går emot — består av tre mindre vågor. I korrigeringen består a av fem mindre vågor, b av tre och c av fem. Detta är varje vågs inre struktur, och det är nyckeln till nästa kapitels fraktaler. En våg som går med strömmen delar sig i fem; en våg som simmar mot den delar sig i tre. Frost & Prechter kallar de femdelade vågorna drivvågor och de tredelade korrigerande vågor. Du kan kontrollräkna: en hel cykel på åtta vågor innehåller 5+3+5+3+5 = 21 små vågor i drivdelen och 5+3+5 = 13 i korrigeringen — tal ur Fibonacci-följden, något vi återkommer till i kapitel 10."
+        },
+        {
+          "type": "text",
+          "content": "En viktig praktisk konsekvens: riktningen avgörs alltid av graden ovanför. Våg 2 ser ut som en nedgång om du står inom den — men den är en del av en uppgång en grad högre upp. Om femman på din horisont är våg 2 på högre grad, är hela din femvågsuppgång egentligen bara ett steg i något större. Detta är våglärans första och vanligaste misstolkning: att förväxla en korrigerande svit med en ny trend, eller tvärtom. AK1TS löser det i praktiken genom att alltid först bestämma hierarkin — vilken horisont och vilken överordnad riktning — innan någon våg räknas. Det är därför våra fem tidshorisonter, från Mikro till Mega, finns: de är deterministiska grader att stå på."
+        },
+        {
+          "type": "text",
+          "content": "Frost & Prechter formulerar bokens kärna i en enda mening: vågprincipen är en katalog över hur massorna rör sig från extrem pessimism till extrem optimism och tillbaka igen — och 5-3-formen är den form denna resa alltid tar. Fem vågor bygger hoppet, tre vågar prövar det. När du ser en stadig uppgång med tydliga rekyler, och kan rita 1-2-3-4-5 i den, har du inte bara ett mönster — du har en berättelse om kollektivt humör som följer en fast dramaturgi."
+        },
+        {
+          "type": "insikt",
+          "content": "Fem framåt, tre tillbaka. Om du bara minns en enda sak från denna bok, minns det: framsteg är femdelat och tvivel tredelat, på alla nivåer, från sekunddiagram till sekler. Formen är alltid densamma — bara storleken skiljer."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en dagschart på en aktie som haft en kraftig och tydlig trend det senaste året. Ta papper och penna och rita av prislinjens största svängningar. Prova att märka 1-2-3-4-5 på den dominerande uppgången och a-b-c på nedgången efteråt. Kontrollera delningen: består dina vågor 1, 3 och 5 av fem mindre steg? Spara ritningen — du kommer att förbättra den i vartenda kommande kapitel, särskilt efter de tre hårda reglerna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Cykelns åtta vågor — riktning, karaktär och inre delning\",\"rader\":[[\"Våg\",\"Riktning\",\"Inre delning\",\"Karaktär i korthet\"],[\"1\",\"Med trenden\",\"Fem\",\"Första försiktiga uppgången från en botten; få tror på den\"],[\"2\",\"Mot trenden\",\"Tre\",\"Djup rekyl som testar våg 1; håller över dess start\"],[\"3\",\"Med trenden\",\"Fem\",\"Motorvågen — kraftigast, ofta längst, volym och bredd ökar\"],[\"4\",\"Mot trenden\",\"Tre\",\"Trög, sidledes och ofta komplex korrigering\"],[\"5\",\"Med trenden\",\"Fem\",\"Sista stötet — eufori utanför, mattare kraft inom\"],[\"a\",\"Mot trenden\",\"Fem\",\"Nedgång som många misstar för vanlig rekyl\"],[\"b\",\"Mot trenden (uppåt i en bear-korrigering)\",\"Tre\",\"Svag falsk rally; snäv och volymfattig\"],[\"c\",\"Mot trenden\",\"Fem\",\"Förödande slutvåg som slår nya bottnar\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur delar sig en våg som rör sig i samma riktning som trenden en grad högre upp?",
+          "alternativ": [
+            "I fem mindre vågor",
+            "I tre mindre vågor",
+            "I åtta mindre vågor",
+            "Det beror på volymen"
+          ],
+          "ratt": 0,
+          "tips": "Med strömmen simmas i fem steg; mot den i tre. Det är principens rakaste kännetecken."
+        },
+        {
+          "q": "Vad utgör en komplett cykel enligt vågprincipen?",
+          "alternativ": [
+            "Fem vågor totalt",
+            "Tio vågor — fem upp och fem ner",
+            "Tretton vågor enligt Fibonacci",
+            "Åtta vågor — fem i trendriktningen och tre i korrigeringen (a-b-c)"
+          ],
+          "ratt": 3,
+          "tips": "Räkna ihop drivdelen och korrigeringen från beskrivningen du just läste."
+        },
+        {
+          "q": "Varför är det så lätt att misstolka våg 2?",
+          "alternativ": [
+            "Den är alltid den kortaste vågen",
+            "Den innehåller alltid en triangel",
+            "Den består alltid av åtta delvågor",
+            "Inifrån ser den ut som en ren nedgång, fast den bara är del av en större uppgång"
+          ],
+          "ratt": 3,
+          "tips": "Riktningen avgörs alltid av graden ovanför — vad du ser beror på var du står i hierarkin."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Fraktalvärlden — våggrader från Grand Supercycle till Subminuette",
+      "intro": "Elliotts djärvaste påstående är att 5-3-formen upprepas i sig själv, i oändlighet neråt och uppåt i skala. En våg är aldrig bara en våg — den är alltid också ett kapitel av mindre vågor, och alltid samtidigt en del av något större. Detta kapitel ger dig navigationssystemet: våggraderna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "För att kunna tala om vågor behövde Elliott namn på nivåerna. Frost & Prechter presenterar nio våggrader, från störst till minst: Grand Supercycle, Supercycle, Cycle, Primary, Intermediate, Minor, Minute, Minuette och Subminuette. En Grand Supercycle kan spänna över århundraden; en Subminuette varar minuter. Märkningen skiljer graderna åt: stora romerska siffror (I, II, III, IV, V) för högre grader, inringade och hakparentesrutiner för mellangrader, små siffror och bokstäver för de lägsta. Exakta symboler är konvention — poängen är hierarkin: varje våg av en grad är uppbyggd av vågor av närmaste lägre grad, och är själv en delvåg i närmaste högre."
+        },
+        {
+          "type": "text",
+          "content": "Bygg det inre och yttre med ett exempel. En hel uppgång på Cycle-grad består av fem vågor på Primary-grad: P1 till P5. Våg P3 består i sin tur av fem vågor på Intermediate-grad. Varje sådan Intermediate-våg består av fem eller tre Minor-vågor — fem om den går med Cycle-trenden, tre om den går emot. Och så vidare neråt, till Minuette och Subminuette. Uppåt gäller samma: hela din Cycle-uppgång är kanske bara våg (i) av en våg i på Supercycle-grad. Frost & Prechter illustrerar detta med diagram där samma form återkommer på varje förstoringsgrad — marknadens självlikformighet, det vi idag kallar fraktalstruktur."
+        },
+        {
+          "type": "text",
+          "content": "Här finns en historisk kuriosa som är värd att ta på allvar: när Elliott formulerade självsimulerande mönster i prisdata på 1930-talet fanns inte ens ordet fraktal — Benoit Mandelbrot myntade det först på 1970-talet. Elliott hade alltså, decennier före den matematiska formaliseringen, observerat att aktiemarknadsdata är självlikformiga över skalor. (Mandelbrot skulle senare själv bli en av våglärans kritiker, men det hör kapitel 15 till.) Frost & Prechter drar slutsatsen att formen är oberoende av tidsramen: samma 5-3-skelett syns i timdiagram som i sekellånga serier, eftersom den underliggande mekanismen — kollektiva humörets svängningar — är densamma oavsett hur många människor och hur många klockslag som deltar."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk konsekvens: en vågräknare arbetar alltid med tre grader samtidigt — den grad som intresserar handeln, en grad upp för sammanhang och en grad ner för bekräftelse av delningen. Går du in på en Mikro-horisont i AK1TS-systemet är din 'intressanta grad' dagssvallningen, sammanhanget är Kort-horisontens kvartalsvåg och bekräftelsen ligger i timmarnas struktur. Det är exakt så flaggskeppet \"AK1TS — Våglärans Hierarki\" bygger sina fem nivåer: Mikro, Kort, Medellång, Lång och Mega är i praktiken fem arbetsgrader av Elliotts telescope, var och en med sin egen dataseries längd och sina egna mått — deterministiskt definierade, så att två användare alltid ser samma våg."
+        },
+        {
+          "type": "insikt",
+          "content": "Elliott räknade fraktaler innan fraktaler fanns som begrepp. Marknadens självlikformighet — samma skelett på minut- och sekelskala — är hans mest bestående observation, och den som gör att vågspråket kan översättas till mått på vilken horisont som helst."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en aktie eller ett index och öppna tre tidsramar: årschart, veckochart och dagschart. Hitta den tydligaste femvågsstrukturen du kan på varje tidsram.märk dem med olika grader efter känsla — till exempel Intermediate på årscharten, Minor på veckan, Minute på dagen. Notera hur varje våg på den större bilden innehåller hela strukturer på den mindre. Du just byggde ett telescope med händerna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Våggraderna — nio nivåer av samma form\",\"rader\":[[\"Grad\",\"Typisk tidsomfattning\",\"Märkning (konvention)\"],[\"Grand Supercycle\",\"Århundraden\",\"Stora romerska siffror med ram\"],[\"Supercycle\",\"Årtionden\",\"Romerska siffror, I II III IV V\"],[\"Cycle\",\"Flera år\",\"Romerska siffror eller inringade\"],[\"Primary\",\"Månader till år\",\"Inringade romerska siffror\"],[\"Intermediate\",\"Veckor till månader\",\"(1) (2) (3) med parentes\"],[\"Minor\",\"Dagar till veckor\",\"Små siffror 1 2 3 4 5\"],[\"Minute\",\"Timmar till dagar\",\"Små siffror med streck\"],[\"Minuette / Subminuette\",\"Minuter\",\"Små bokstäver och mikromärken\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur många våggrader namnges i Frost & Prechters system?",
+          "alternativ": [
+            "Nio grader — från Grand Supercycle till Subminuette",
+            "Fem grader",
+            "Sju grader",
+            "Tolv grader"
+          ],
+          "ratt": 0,
+          "tips": "Tre grader för de storarörelserna, tre för mellanplanet och tre för mikronivån."
+        },
+        {
+          "q": "Vad består en våg av en viss grad av, enligt vågprincipen?",
+          "alternativ": [
+            "Exakt åtta vågor av närmaste högre grad",
+            "Slumpmässigt antal delvågor utan fast struktur",
+            "Alltid samma antal som sin modervåg",
+            "Vågor av närmaste lägre grad — fem om den går med överordnad trend, tre om den går emot"
+          ],
+          "ratt": 3,
+          "tips": "Självsimulerande struktur: riktningen mot eller med högre grad avgör delningen."
+        },
+        {
+          "q": "Vad är den historiskt intressanta kopplingen mellan Elliott och fraktaler?",
+          "alternativ": [
+            "Elliott och Mandelbrot skrev boken tillsammans",
+            "Elliott myntade begreppet fraktal 1975",
+            "Fraktaler förbjöds inom teknisk analys fram till 1980",
+            "Elliott beskrev självlikformiga mönster i prisdata årtionden innan Mandelbrot formaliserade fraktaler"
+          ],
+          "ratt": 3,
+          "tips": "Ordet kom senare än observationen — терминologin fick honom inte, datat gjorde."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "De tre hårda reglerna — teorins ryggrad",
+      "intro": "Bland alla riktlinjer och tolkningar i våglitteraturen finns tre påståenden som Frost & Prechter formulerar som absoluta. De kallas de hårda reglerna, och de är teorins enda delar som kan brytas — vilket är exakt vad som gör dem ovärdesbara. I denna kurs, och i hela AK1TS, är de tre reglerna det vi behåller när det subjektiva kastas bort.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Regel ett: våg 2 återgår aldrig under våg 1:s start. Priset får falla hur djupt det vill i våg 2 — men aldrig ned till eller förbi den botten där våg 1 en gång började. Detta gäller på cash-marknaden, i alla grader. Konsekvensen är konkret: om priset väl är nere vid eller under våg 1:s startpunkt är din räkning fel — det du kallade våg 1 var ingen impulsvåg i en uppgång, utan troligen en korrigerande svit i en större nedgång, och hela märkningen måste göras om. Frost & Prechter är kompromisslösa: brottet innebär inte att vågprincipen svikit, utan att räknaren räknat fel. Startpunkten för våg 1 är därmed din första objektiva invalidningsnivå."
+        },
+        {
+          "type": "text",
+          "content": "Regel två: våg 3 är aldrig den kortaste av vågorna 1, 3 och 5. Observera formuleringen exakt — våg 3 kan mycket väl vara kortare än våg 1, men endast om våg 5 är kortare än våg 3, så att treman ändå inte är den minsta. I praktiken är våg 3 oftast den längsta och kraftigaste vågen, och den mest benägna att extensioneras — att rusa iväg i en lång, nästan obruten rörelse. Konsekvensen: om din räkning ger en pyttesmal våg 3 medan 1 och 5 är långa, är den misstänkt. Ofta visar sig sanningen vara att det du märkt som 3-4 i själva verket är delar av en enda lång våg 3 vars inre delvågor ännu inte är synliga, eller att hela din placering av sekvensen är förskjuten ett steg."
+        },
+        {
+          "type": "text",
+          "content": "Regel tre: våg 4 överlappar aldrig våg 1:s pristerräng. Det område av priser som våg 1 trafikerade — från dess botten till dess topp — får våg 4 aldrig återvända in i. Sjunker priset i våg 4 ned till eller under våg 1:s topp, är räkningen ogiltig och mönstret skall tolkas om: du står sannolikt i en korrigering eller rentav en ny nedtrend, inte i en sund impuls. Frost & Prechter noterar två viktiga nyanser: regeln gäller cash-marknaden — i terminsmarknader med hävstång kan extremt korta intradagsutstick överlappa utan att räkningen dör — och det finns ett formellt undantag, diagonaler, kilformade mönster i våg 5- eller våg C-position, där våg 4 tillåts nudda våg 1:s zon. Utanför dessa undantag: ingen överlappning, någonsin."
+        },
+        {
+          "type": "text",
+          "content": "Räknproblemslogiken blir nu tydlig. Reglerna fungerar som ett valideringsskelett: vilken vågräkning du än föreslår måste den passera genom alla tre grindarna, annars sorteras den bort automatiskt — utan diskussion, utan tyckande. Detta är anledningen till att vågräkning trots allt har ett rationellt kärna: tre Simplicitetsvillkor som kan kontrolleras med linjal. Frost & Prechter liknar reglerna vid grammatiken i vågspråket: meningen kan tolkas på många sätt, men den får inte bryta mot grammatiken. Grammatikbrott betyder inte att språket är fel — det betyder att meningen inte var en mening."
+        },
+        {
+          "type": "text",
+          "content": "För AK1TS är dessa regler guld, och det av ett skäl som boken själv inte drar ut fullt ut: de är färdiga riskgränser. En vågräkning levererar alltid ett pris där den dör — våg 1:s start för long-positioner i våg 3, våg 1:s topp för positioner genom våg 5. Omvandla reglerna till stopp-nivåer och positionstorlek, så har du ett system där struktur blir riskhantering. Det är exakt denna översättning — från profetia till invalidring — som är kärnan i vår brytning med den klassiska vågläran, och som förklaras fullt ut i flaggskeppet \"AK1TS — Våglärans Hierarki\". Där subjektiva räknare diskuterar om våg 4 är slut, frågar AK1TS: var dör tesen, och hur mycket riskerar vi om den dör idag?"
+        },
+        {
+          "type": "insikt",
+          "content": "De tre hårda reglerna är vågteorins enda falsifierbara delar — de enda påståenden som kan vara fel. Och just därför är de de enda delarna vi bygger handelslogik på: ett verktyg som kan dö kan hanteras; ett som alltid har rätt kan aldrig hanteras."
+        },
+        {
+          "type": "utmaning",
+          "content": "Återvänd till din vågritning från kapitel 3 — eller ta en ny dagschart med en tydlig trend. Märk din bästa gissning på 1-2-3-4-5 och pricka in de tre reglerna: streckrar våg 2 över våg 1:s start? Är våg 3 kortast av 1-3-5? Nådde våg 4 ned i våg 1:s priszón? Svara med ja eller nej per regel. Om någon regel bryts: skriv om märkningen tills alla tre håller — eller sluta dig till att strukturen är en korrigering, inte en impuls."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De tre hårda reglerna — lydelse, kontroll och konsekvens\",\"rader\":[[\"Regel\",\"Exakt lydelse\",\"Om den bryts\"],[\"Regel 1\",\"Våg 2 återgår aldrig under våg 1:s start\",\"Räkningen är ogiltig — kalla inte strukturen impuls; märk om som korrigering\"],[\"Regel 2\",\"Våg 3 är aldrig den kortaste av vågorna 1, 3 och 5\",\"Misstänk förskjuten räkning — ofta är en längre våg 3 på väg att visa sina delvågor\"],[\"Regel 3\",\"Våg 4 överlappar aldrig våg 1:s pristerräng (i cash-marknaden; undantag: diagonaler i våg 5-/C-position, samt korta utstick på terminsmarknader)\",\"Impulstes är död — tolka om strukturen som korrigerande eller som del av motsatt trend\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gäller för våg 2 enligt den första hårda regeln?",
+          "alternativ": [
+            "Den återgår aldrig under våg 1:s startpunkt",
+            "Den får aldrig bli längre än våg 4 i tid",
+            "Den måste retracera minst 61,8 procent av våg 1",
+            "Den måste bestå av exakt fem delvågor"
+          ],
+          "ratt": 0,
+          "tips": "Regeln handlar om pris, inte om tid eller andel — sträck ut linjalens startpunkt."
+        },
+        {
+          "q": "Hur lyder regeln om våg 3?",
+          "alternativ": [
+            "Våg 3 är alltid längre än våg 1",
+            "Våg 3 är alltid den våg som har störst volym",
+            "Våg 3 är aldrig kortast av vågorna 1, 3 och 5",
+            "Våg 3 får aldrig innehålla en extension"
+          ],
+          "ratt": 2,
+          "tips": "Läs formuleringen exakt: det är en rangordningsförbud, inte ett krav på att vara störst."
+        },
+        {
+          "q": "Vad händer med din vågräkning om våg 4 sjunker in i våg 1:s pristerräng på en cash-marknad?",
+          "alternativ": [
+            "Ingenting — överlappning är tillåten i alla grader",
+            "Du ska vänta på bekräftelse i volymen innan du avgör",
+            "Endast våg 5 måste räknas om; resten får stå kvar",
+            "Räkningen är ogiltig och strukturen ska tolkas om — mönstret är sannolikt korrigerande"
+          ],
+          "ratt": 3,
+          "tips": "Tänk grammatikbrott: meningen var ingen mening, oavsett hur bra den lät."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Vågpersonligheterna — psykologin i varje position",
+      "intro": "Varje position i den åttavågiga cykeln har sin egen känsla — sin personlighet, som Frost & Prechter kallar det. Personligheterna är inte regler utan symptombeskrivningar, och deras värde ligger i att de låter dig kontrollera en räkning mot stämningen på marknaden. En våg som räknats rätt känns också rätt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Våg 1 är födelsen, och nästan ingen ser den. Den börjar ur ett stämningsläge av djup pessimism — fundamentalt är nyheterna som sämst, värderingarna försummade, och de flesta deltagarna är sysselsatta med att slicka sår. Våg 1 är därför oftast kraftigt ifrågasatt: den bärs upp av ett fåtal som vågar, och hon slås tillbaka hårt av våg 2, som ofta återtar hälften till sextio procent av stigningen och psykologiskt känns som att allt hopp är ute. Frost & Prechter beskriver våg 2 som djup och skoningslös — men också som våglärans viktigaste tålighetsprov: den korta sidan av en början är dyr att korta, för den som säljer i våg 2 och tar vinst för sent blir körda av våg 3. Våg 2 håller dock alltid över våg 1:s start, enligt hårda regeln."
+        },
+        {
+          "type": "text",
+          "content": "Våg 3 är motorvågen, och den känns som den. Det är här allmänheten vaknar: fundamentala nyheter förbättras, volymen sväller, bredden ökar — alltfler aktier deltar — och prisrörelsen är den längsta och kraftigaste i sekvensen, rik på luckor och tydliga impulsiva dagar. Kortpositioner pressas ut i omgångar, och varje rekyl köps snabbt tillbaka. Våg 4 är våg 3:s efterdyning: en trög, tråkig, sidledes och ofta strukturellt komplex korrigering som varken glädjer longen eller göder shorten. Deltagarna är trötta, inte rädda — och det är just därför våg 4 oftast blir en platt formation eller triangel snarare än den skarpa nedgång våg 2 var."
+        },
+        {
+          "type": "text",
+          "content": "Våg 5 är finalen. Utåt är den härligast — nya rekord, euforiska rubriker, alla känner någon som blivit rik på aktier. Men inuti är hon svagare: volymen når sällan våg 3:s nivå, bredden smalnar av till färre och färre ledande aktier, och momentummätare börjar visa divergens — pris upp, kraft ned. Sedan kommer a-b-c. Våg a faller och bemöts av förklaringen att det bara är en rekyl — de flesta missar att delningen är fem vågor, en varning. Våg b är marknadens mest förrädiska fas: en smal, volymlös uppgång som återtar mycket av a och får alla att tro att trenden är tillbaka — en klassisk bull trap. Våg c är straffet: en tredje-vågsliknande nedgång som fördriver hoppet och ofta slutar i ren desperation. Frost & Prechter noterar att C-vågor är psykologiskt förvillande lika impulser — de är det, fast i motsatt riktning."
+        },
+        {
+          "type": "text",
+          "content": "Hur använder AK1TS personligheterna? Som checklistekontroll, inte som bevis. En räkning som placerar marknaden i våg 3 skall åtföljas av ökande volym, bred delaktighet och starkt momentum — våra deterministiska proxy-mått i Våg-dimensionen (momentumtecken, glidande medelvärldens lutning, 20- mot 90-dagars volymkonfluens) testar just detta utan att någon behöver räkna ännu en enda våg. En misstänkt våg 5 skall visa divergens och smalnande bredd; en B-våg skall vara volymfattig. Personligheterna ger berättelsen — proxy-måtten ger mätningen. Tillsammans eliminerar de det mesta av det subjektiva som gör klassisk vågräkning så kritiserad."
+        },
+        {
+          "type": "insikt",
+          "content": "Vågpersonligheterna är våglärans psykologi i ren form: hopp byggs i fem steg och krossas i tre. Lär dig känna igen stämningarna — misstänksamhet, hopp, eufori, förnekelse, falskt hopp, desperation — så kan du ofta säga vilken våg det är utan att räkna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en känd bubbla eller boomen du minns — en aktie eller ett index med dramatisk topp. Gå tillbaka på charten och läs den som en pjäs i fem akter med efterföljande tre akers fall. Skriv en rad per våg: hur stämningen måste ha känts där, vilka rubriker som präglade den. Kontrollera sedan mekaniskt: fanns divergens vid våg 5? Var våg b:s rally volymsvagt? Du kommer att se att personligheterna inte är mystik — de är folkläran om girighet och rädsla, systematis."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vågpersonligheterna i sammanfattning\",\"rader\":[[\"Position\",\"Stämning på marknaden\",\"Typiska kännetecken\"],[\"Våg 1\",\"Misstänksamhet — få tror på vändningen\",\"Startar från nedvärderade bottnar; korta säljare fortfarande starka\"],[\"Våg 2\",\"Återvändande förtvivlan\",\"Djup rekyl, ofta 50-61,8 procent; håller över våg 1:s start; dyr att korta\"],[\"Våg 3\",\"Växande övertygelse\",\"Störst kraft och längd; volym, bredd och luckor; kortpositioner pressas ut\"],[\"Våg 4\",\"Trötthet, uttråkning\",\"Trög sidledes korrigering; ofta platt eller triangel; alternation mot våg 2\"],[\"Våg 5\",\"Eufori\",\"Nya rekord, men lägre volym än våg 3, smalnande bredd, divergens\"],[\"Våg a\",\"Förnekelse\",\"Nedgång som avfärdas som rekyl; femvågsdelning avslöjar den\"],[\"Våg b\",\"Falskt hopp\",\"Smal, volymfattig rally tillbaka — den klassiska bull trappen\"],[\"Våg c\",\"Desperation\",\"Förödande femvågsnedgång; ny bottennivå och maximal pessimism\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken våg är typiskt den kraftigaste och ofta längst i en impulssekvens?",
+          "alternativ": [
+            "Våg 1",
+            "Våg 5",
+            "Våg 3",
+            "Våg b"
+          ],
+          "ratt": 2,
+          "tips": "Motorvågen ligger i mitten — den vaknar när allmänheten börjar tro."
+        },
+        {
+          "q": "Vad kännetecknar en våg 4?",
+          "alternativ": [
+            "En trög, sidledes och ofta komplex korrigering präglad av uttråkning",
+            "En skarp paniknedgång som slår nya bottnar",
+            "En volymstark euforisk finalvåg",
+            "En femdelad impuls med störst bredd"
+          ],
+          "ratt": 0,
+          "tips": "Efter motorvågen kommer tröttheten — deltagarna är uttråkade, inte rädda."
+        },
+        {
+          "q": "Varför beskriver boken våg 2 som 'dyr att korta'?",
+          "alternativ": [
+            "Eftersom våg 2 alltid är kort och svår att tajma",
+            "Eftersom lånemekostnaderna är högst i korrigeringar",
+            "Eftersom våg 2 aldrig faller under våg 1:s start — den som kortar riskerar att möta våg 3",
+            "Eftersom våg 2 saknar delning och inte kan räknas"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad som kommer efter en våg 2 som håller — och var stoppet för en kortposition hamnar."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Korrigeringar I — zigzag och flat",
+      "intro": "Impulserna är enkla: fem vågor, tydlig riktning. Korrigeringarna är våglärans riktiga prov — ett myller av mönster som alla har tre ben men mycket olika karaktär. Vi börjar med de två viktigaste familjerna: det skarpa zigzaget och den platta formationen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Zigzaget är korrigeringens kanonform: en skarp, tydlig A-B-C-nedgång med strukturen 5-3-5. Våg a består av fem delvågor — det är priset som faller med syfte — våg b är en svag tredelad uppgång som återtar högst omkring sextio procent av a, och våg c är ytterligare en femvågsnedgång som nästan alltid slår a:s botten. Frost & Prechter noterar att c ofta blir ungefär lika lång som a, eller förhåller sig till den som 1,618 till 1. Zigzag känns igen på sin vinkel: korrigeringen går utför i tydliga stötar och snabba rekylerna emellan, som bokstaven Z utdragen i pris. En regelrätt Z-zigzag är marknadens sätt att snabbt rensa ut övervärdering."
+        },
+        {
+          "type": "text",
+          "content": "Flatten har strukturen 3-3-5 och ser helt annorlunda ut. Våg a är svag — tre delvågor, inte fem — för att säljarna inte har kraft nog att driva en impuls. Våg b är desto starkare: den stiger tillbaka till våg a:s startpunkt eller en aning förbi den. Våg c faller sedan i fem vågor, ungefär lika lång som a, och stannar i nivå med a:s botten. Resultatet är en sideways-formation: en platt rektangel där botten testas två gånger. Frost & Prechter beskriver flattens budskap: korrigeringen är inte ett prisfenomen utan ett tidsfenomen — marknaden straffar de otåliga med väntan i stället för med fall. Notera nyckeln till skiljandet: a:s inre delning. Fem delvågor i a betyder zigzag; tre betyder flat."
+        },
+        {
+          "type": "text",
+          "content": "Den mest dramatiska varianten är den expanderade flattten. Här går våg b förbi våg a:s startpunkt markant — korrigeringen börjar med att priset gör en ny topp för hela svängen, vilket förvirrar alla som väntat sig nedgång. Våg c faller sedan brutalt, ofta 1,618 gånger så lång som a, och slår djupt under a:s botten. Frost & Prechter pekar på ett mönster av stor praktisk vikt: expanderade flattor uppträder ofta i starka trender, i positionen våg 4 eller i våg 2 före en kraftig våg 3 — marknaden laddar om genom att först lura bort dem som trenden hotar. En djupt förvirrande korrigering som börjar med ny topp och slutar med hänsynslöst fall, följd av explosionsartad uppgång, är klassisk expanderad flat."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk checklista för korrigeringar i realtid: räkna delningarna. Har första benet fem vågor väntar sannolikt ett zigzag (föreställ dig ett skarpt A och en lika skarp C). Har det tre väntar en flatfamilj (förbered dig på sideways eller en expanderad variant). Mät sedan retracements med Fibonacci — våg b mot våg a, våg c mot våg a — och lägg märke till var flera mättnivåer klustrar. AK1TS tillägger en deterministisk kontroll: volymen skall sinka genom hela korrigeringen och momentum skall ligga neutralt mot negative. En 'korrigering' på stigande volym med starkt positivt momentum är misstänkt — då är den ingen korrigering utan början på något annat."
+        },
+        {
+          "type": "insikt",
+          "content": "B-vågen är marknadens lögn. Zigzagets b är svag och volymlös, flattens b lurar med en hel ny topp, och den expanderade flattens b är ren chock-taktik. När du känner dig säkrast mitt i en korrigering — är det nästan alltid våg b."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta två korrigeringar på index- eller aktiecharts: en som föll skarpt och snabbt (troligen zigzag) och en som gick sidledes länge (troligen flat). Räkna delvågorna i första benet — fem eller tre? Mät våg b:s återhämtning i procent av våg a, och våg c:s längd mot våg a. Skriv ner vilken modell som passar. Jämför slutligen med vad som hände efteråt: följdes korrigeringen av en stark ny uppgång?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Zigzag och flat — struktur och mått\",\"rader\":[[\"Mönster\",\"Struktur\",\"Våg b når\",\"Våg c blir\"],[\"Zigzag\",\"5-3-5\",\"Max cirka 61,8 procent av våg a\",\"Ofta lika med a eller 1,618 × a; slår a:s botten\"],[\"Flat (reguljär)\",\"3-3-5\",\"Tillbaka till våg a:s startpunkt\",\"Ungefär lika lång som a; slutar i nivå med a:s botten\"],[\"Expanderad flat\",\"3-3-5\",\"Förbi våg a:s startpunkt — ny topp\",\"Ofta 1,618 × a; slår djupt under a:s botten\"],[\"Dubbelt zigzag\",\"5-3-5-3-5 via X\",\"Svag mellanben i X\",\"Nytt zigzag; totalt djupare korrigering\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är strukturen hos ett zigzag?",
+          "alternativ": [
+            "3-3-5",
+            "3-3-3-3-3",
+            "5-3-5-3-5",
+            "5-3-5"
+          ],
+          "ratt": 3,
+          "tips": "Skarpa korrigeringar faller med syfte — första och sista benet är drivande."
+        },
+        {
+          "q": "Vad skiljer en flat från ett zigzag rent strukturellt?",
+          "alternativ": [
+            "Flatten har sju vågor, zigzaget åtta",
+            "Flatten innehåller alltid en triangel",
+            "Flattens våg a består av tre vågor i stället för fem, och hela formationen blir sidledes",
+            "Zigzagets våg c når aldrig ny botten"
+          ],
+          "ratt": 2,
+          "tips": "Nyckeln ligger i första benets inre delning — hur många steg har säljarna kraft till?"
+        },
+        {
+          "q": "Vad kännetecknar den expanderade flattens våg c?",
+          "alternativ": [
+            "Den blir ofta 1,618 gånger våg a och slår djupt under a:s botten",
+            "Den blir alltid kortare än våg a",
+            "Den delar sig i tre vågor",
+            "Den slutar alltid exakt vid a:s botten"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på hur en formation som inleds med en falsk ny topp brukar avslutas."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Korrigeringar II — trianglar och kombinationer",
+      "intro": "Två korrigeringssfärer återstår: triangeln, våglärans mest sed formation, och kombinationerna, där flera enkla korrigeringar kedjas samman av förbindarvågor. Båda delar samma signum: vikande volatilitet och komprimerad energi — marknaden blir allt smalare innan den bestämmer sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Triangeln är en korrigering med fem ben — a, b, c, d och e — där varje ben delar sig i tre vågor: strukturen är 3-3-3-3-3. Rita två konvergerande linjer: en ovanför topparna av a, c och e, en under bottnarna av b och d. Priset vandrar inuti ett allt trängre rör. Den kontraherande triangeln är den i särklass vanligaste formen; den expanderande, där linjerna divergerar och formationen blir bredare och bredare, är sällsynt men våldsam. Frost & Prechter anger triangels sanna kännetecken utöver formen: volymen och volatiliteten avtar genom formationen, som en våg som drar sig samman innan den bryter."
+        },
+        {
+          "type": "text",
+          "content": "Positionen i den större strukturen är förutsägbar: trianglar uppträder i våg 4-position eller i våg b-position — alltså i den näst sista korrigeringen innan en final rörelse. Efter en triangel återstår nämligen endast ett enda ben i den pågående sekvensen: våg 5 eller våg c. Därför gäller våglärans mest användbara tumregler här: utbrottet ur en triangel sker i trendriktningen och är ofta det snabbaste, rakaste benet sedan formationen inleddes — marknaden hopar energi under kompressionen och frigör den i ett stötraktigt utfall. Frost & Prechter anger riktlinjen att utfallet ofta färdas ungefär lika långt som triangelns bredaste ben. En triangel är med andra ord inte bara ett viloläge — den är en katapult, och den talar om för dig i vilken riktning det sista skottet kommer."
+        },
+        {
+          "type": "text",
+          "content": "Kombinationer är korrigeringarnra svar på att marknaden ibland behöver mer tid än ett enkelt mönster kan ge. En dubbel-tre är två enkla korrigeringar — till exempel ett zigzag och en flat — sammanlänkade av en förbindarvåg kallad X. En trippel-tre är tre sådana, länkade av två X-vågor. På samma sätt kan zigzag kedjas samman till dubbla och trippla zigzag när en nedgång behöver förlängas. Frost & Prechter ger kombinationerna en tydlig signum: de är i grunden sidledes — oavsett vilka enkla mönster de byggs av tenderar helheten att bli horisontell, ett utdraget vindlande som rör sig snett emot trenden snarare än brant nerför. Om zigzag är en straffexpedition och flat ett tidsstraff, är kombinationen ett fängelsestraff: marknaden låser in deltagarna i månadatal av hopplös sidledesrörelse."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk igenkänning: först delning — har benet fem steg (impuls/zigzag-a) eller tre (flat/triangel)? Sedan antal — är det tre ben (A-B-C), fem konvergerande ben (triangel) eller många ben med förbindare (kombination)? Kom ihåg att korrigeringar i en trend ofta blir djupare och mer komplexa ju längre den överordnande trenden varit igång — den gamla marknadsregeln om att korrigeringar fördjupas med åldern är våglärans kombinationslära i folkmun. AK1TS hanterar dessa situationer med tidsregler i stället för mönstergissningar: en sidledes struktur som varat längre än en definierad tröskel klassificeras som komplex korrigering oavsett exakt form, och handeln väntar på volymkonfluens och brytpunktsbekräftelse innan position tas."
+        },
+        {
+          "type": "insikt",
+          "content": "Trianglar och kombinationar är samma idé i två tempon: energi komprimeras. Ju trängre formationen och ju svagare volymen inuti den, desto hårdare blir utbrottet — och trianglar berättar dessutom i vilken riktning det sista benet kommer, för de uppträder bara i position fyra eller B."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta upp en kontraherande triangel på en dags- eller veckochart — de är vanligast i korrigeringar efter långa trender. Rita de två konvergerande linjerna,märk benen a till e och kontrollera att varje ben har tre steg. Mät det bredaste benet (oftast a) i pris och projicera den sträckan från utbrottspunkten. Jämför med hur det faktiska utfallet blev — träffade riktlinjen ungefär?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Korrektiva mönster — komplett översikt\",\"rader\":[[\"Mönster\",\"Struktur\",\"Typisk position\",\"Kännetecken\"],[\"Zigzag\",\"5-3-5\",\"Våg 2, a eller c\",\"Skarp nedgång; c lika med a eller 1,618 × a\"],[\"Flat\",\"3-3-5\",\"Våg 4\",\"Sidledes; b till a:s start; c lika lång som a\"],[\"Expanderad flat\",\"3-3-5\",\"Våg 4 eller våg 2 före stark våg 3\",\"Ny topp i b; c ofta 1,618 × a\"],[\"Kontraherande triangel\",\"3-3-3-3-3\",\"Våg 4 eller våg B\",\"Konvergerande linjer; avtagande volym; katapult-utbrott\"],[\"Expanderande triangel\",\"3-3-3-3-3\",\"Våg 4 eller våg B\",\"Divergerande linjer; sällsynt och våldsam\"],[\"Dubbel/trippel-tre\",\"W-X-Y (-X-Z)\",\"Komplexa korrigeringar\",\"Kedjade enkla mönster; i grunden sidledes\"],[\"Dubbelt/trippelt zigzag\",\"5-3-5 via X\",\"Förlängda nedgångar\",\"Skarpare totalrörelse än kombination\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den inre strukturen hos en triangel?",
+          "alternativ": [
+            "5-3-5",
+            "3-3-5",
+            "3-3-3-3-3 — tre vågor i vart och ett av de fem benen",
+            "5-5-5-5-5"
+          ],
+          "ratt": 2,
+          "tips": "Trianglar är korrigerande rakt igenom — inget ben får drivekraften av en impuls."
+        },
+        {
+          "q": "Var i den större strukturen uppträder trianglar?",
+          "alternativ": [
+            "I våg 4- eller våg B-position — den näst sista korrigeringen",
+            "I våg 1- eller våg 3-position",
+            "Bara som våg 2",
+            "Endast efter en komplett cykel"
+          ],
+          "ratt": 0,
+          "tips": "Efter en triangel återstår bara ett ben — tänk på vilken position som har exakt ett ben kvar efter sig."
+        },
+        {
+          "q": "Vad är en X-våg?",
+          "alternativ": [
+            "Den längsta drivvågen i en impuls",
+            "Benvågen mellan två trianglar",
+            "En felmärkning som alltid skall bytas ut mot Y",
+            "En förbindarvåg som länkar samman enkla korrigeringar i en kombination"
+          ],
+          "ratt": 3,
+          "tips": "I W-X-Y är W och Y korrigeringar — vad finns i mitten?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Alternation och korrigeringarnas djup",
+      "intro": "En enda princip ordnar myllret av korrigeringar till något nästan förutsägbart: alternationen. Om en korrigering var skarp blir nästa trög; var den snabb blir nästan den långsam. Frost & Prechter kallar alternation för en lag om variation — marknadens vägran att upprepa sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Alternationens princip i sin klassiska form gäller våg 2 och våg 4: om våg 2 var en skarp korrigering — ett djupt, snabbt zigzag — kommer våg 4 att vara en trög sådan — en flat, en triangel eller en komplex sidledes formation. Och omvänt: var våg 2 platt och trött, våg 4 skarp och skoningslös. Frost & Prechter sträcker principen vidare än formen: den gäller djup, längd och varaktighet. En djup våg 2 tenderar att följas av en grund våg 4; en kortvågig korrigering av en långdragen. Grundtanken är psykologisk: marknaden disciplinerar varje generation av deltagare på ett nytt sätt — de som lärde sig paniken i våg 2 skall tröttas ut i våg 4 i stället."
+        },
+        {
+          "type": "text",
+          "content": "Korrigeringarnas djup följer riktlinjer som är tillräckligt stadiga för att planera efter. Våg 2 återtar oftast en stor del av våg 1 — omkring hälften till sextioen komma åtta procent är klassiskt, och den kan gå djupare men aldrig, enligt hårda regeln, under våg 1:s start. Våg 4 är till sin natur grundare: ofta cirka trettioåtta komma två procent av våg 3, sällan mer än hälften. Frost & Prechter tillägger en av våglärans mest användbara tumregler: korrigeringar tenderar att sluta i priszonen för föregående fjärde våg av närmast lägre grad — den plats där marknaden senast vilade innan det sista stötet. En kraftig nedgång som närmar sig ett sådant område av tidigare konsolidering har statistiskt sett god chans att hitta stöd där."
+        },
+        {
+          "type": "text",
+          "content": "Observera noggrant statusen: alternation och djupmått är riktlinjer — guidelines — inte hårda regler. Frost & Prechter är själva angelägna om skillnaden: de tre reglerna från kapitel 5 kan aldrig brytas; riktlinjerna träffar ofta men inte alltid. Att blanda ihop dessa två kategorier är vågräknarens vanligaste misstag — att behandla en tumregel som lag och tvångsmärka om en perfekt impuls bara för att våg 4 blev grundare än väntat. I AK1TS:s översättning blir distinktionen enkel: reglerna blir invalidring, riktlinjerna blir förväntan och scenarievikt. En riktlinje som inte infrias flyttar probability, aldrig stopp."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk användning av alternation är att göra dig beredd i förväg. Har du räknat en djup, skarp våg 2 — förbered dig inte för en ny panik i våg 4 utan för ett utdraget, tråkigt sidledes: välj strategi därefter (tålamod, tidsstopp, inga shorts i formationen). Har våg 2 varit platt — håll utkik efter en oväntat hänsynslös våg 4 innan finalvågen. Frost & Prechter beskriver alternation som marknadens anda av omväxling; AK1TS formulerar samma sak i risktermer: den korrigering du inte förväntar dig är den som kostar mest, och alternation är systematikens sätt att vägra anta att nästa gång blir som senast."
+        },
+        {
+          "type": "insikt",
+          "content": "Alternation är marknadens anti-mönster-instinkt: upprepning är undantaget, variation regeln. Den som handlar som att nästa korrigering blir en kopia av den senaste har redan missat poängen — och kommer att bli överraskad på exakt det sätt principen förutsäger."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta tre färdiga impulssekvenser på valfria charts — gärna olika tillgångar och tidsramar. För varje sekvens: karaktärisera våg 2 (skarp eller trög? djup i procent av våg 1?) och våg 4 (samma frågor). Hur många av de tre följde alternation? Mät också hur nära korrigeringarna landade i zonen för föregående fjärde våg av lägre grad. Spara siffrorna — de är dina egna första statistiska test av bokens riktlinjer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riktlinjer för korrigeringarnas djup och karaktär\",\"rader\":[[\"Våg\",\"Typisk retracement\",\"Typisk karaktär\"],[\"Våg 2\",\"50-61,8 procent av våg 1; kan gå djupare men aldrig under dess start\",\"Ofta skarp (zigzag); djup och snabb\"],[\"Våg 4\",\"Cirka 38,2 procent av våg 3; sällan över hälften\",\"Ofta trög (flat, triangel eller kombination); sidledes\"],[\"Korrigeringens mål\",\"Zonen för föregående fjärde våg av närmast lägre grad\",\"Marknadens viloplats före sista stötet\"],[\"Alternation\",\"—\",\"Skarp våg 2 följs av trög våg 4, och omvänt — i djup, form och tid\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger alternation-principen om våg 2 och våg 4?",
+          "alternativ": [
+            "De tenderar att växla i karaktär — var våg 2 skarp blir våg 4 trög, och omvänt",
+            "De är alltid lika djupa",
+            "Våg 4 är alltid djupare än våg 2",
+            "De måste alltid ha samma mönster"
+          ],
+          "ratt": 0,
+          "tips": "Principen handlar om vägran att upprepa sig — i form, djup och tid."
+        },
+        {
+          "q": "Vilken riktlinje gäller ofta för våg 2:s djup?",
+          "alternativ": [
+            "Ungefär 38,2 procent av våg 1",
+            "Högst en tredjedel av våg 1",
+            "Ofta 50 till 61,8 procent av våg 1 — men aldrig under dess start",
+            "Alltid exakt 78,6 procent"
+          ],
+          "ratt": 2,
+          "tips": "Tidiga korrigeringar är de djupaste — men den hårda regeln sätter golvet."
+        },
+        {
+          "q": "Var tenderar en korrigering att sluta, enligt bokens tumregel?",
+          "alternativ": [
+            "Alltid vid våg 1:s startpunkt",
+            "Vid den exponentiella trendlinjen",
+            "Exakt vid 50-dagars medelvärdet",
+            "I priszonen för föregående fjärde våg av närmast lägre grad"
+          ],
+          "ratt": 3,
+          "tips": "Marknaden återvänder gärna till sin senaste viloplats — platsen där den vilade före sista stötet."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Fibonacci — den matematiska ryggraden",
+      "intro": "Elliott skrev att Fibonacci-talföljden genomsyrar vågprincipen, och Frost & Prechter ägnar bokens matematiska kapitel åt att visa hur: antal vågor, retracements och extensioner förhåller sig som 1,618 och dess invers 0,618. Detta kapitel ger dig talen — och den skepsis mot sifferdyrkan som AK1TS anser obligatorisk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fibonacci-följden är enkel att bygga: börja med 1 och 1, och låt varje tal vara summan av de två föregående — 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, och så vidare i all oändlighet. Dividera ett tal med nästa och kvoten går mot 0,618; dividera med föregående och den går mot 1,618 — det gyllene snittet, känt sedan antiken och återfunget i solrosors fröhallar, snäckskal, paradoxalt nog också i Elliotts vågantal: en hel cykel innehåller 21 små vågor i drivdelen och 13 i korrigeringen, tal ur följdens hjärta. Frost & Prechter citerar Elliotts egen slutsats: att talföljden inte är en tillfällighet utan uttryck för samma tillväxtprocess som styr alla naturliga system — inklusive mänskliga massors humörsvängningar."
+        },
+        {
+          "type": "text",
+          "content": "För praktiken är det tre tal som betyder något. 61,8 procent — det gyllene förhållandet baklänges — är den klassiska retracementen: våg 2 mot våg 1, våg c mot föregående uppgång. 38,2 procent är 0,618 i kvadrat och är den grundare nivån: typisk för våg 4, typisk för rekyl i starka trender. 50 procent är, som Frost & Prechter ärligt konstaterar, inte ett Fibonaccital alls — det är Dows gamla tumregel att korrigeringer återtar omkring hälften — men det förtjänar sin plats för att marknaden respekterar det så ofta. Dessa tre nivåer räcker för att göra en chart mätbar: drag ett svings lägsta till högsta, och du har en skala där reaktioner tenderar att stanna."
+        },
+        {
+          "type": "text",
+          "content": "Så här mäter du: identifiera en färdig sväng, till exempel våg 1 från botten till topp. Räkna ut 38,2, 50 och 61,8 procent av dess höjd och drag horisontella linjer ned från toppen. Zonen mellan hälften och sextioen komma åtta är där en våg 2 statistiskt sett ofta hittar sin botten. Gör detsamma för våg 3 för att få våg 4:s kandidatområden. Kraften kommer när flera beräkningar pekar på samma ställe: retracementen av våg 3 sammanfaller med extensionen av våg 1 och med en gammal brytpunkt — då har du en konfluens-zon, ett ställe där tre oberoende argument möts. Konfluens, inte enskilda tal, är Fibonacci-analysens verkliga vapen."
+        },
+        {
+          "type": "text",
+          "content": "Nu den obligatoriska varningen, och den är värd att ta på större allvar än de flesta böcker gör. Fibonacci-tal kan hittas mellan vilka två priser som helst om man letar tillräckligt länge — det är därför kritiker kallar det siffermystik, och anklagelsen är inte lätt att avfärda. Frost & Prechter själva placerar proportionerna bland riktlinjerna, inte bland reglerna: talen är magneter, inte lagar; marknader överskjuter och underskjuter dem konstant. AK1TS:s hållning är därför stringent: Fibonacci används för att definiera zoner att bevaka, aldrig för att röra sig in i positioner. Inträde kräver strukturell och volymlig bekräftelse — en brytpunkt som inträffar i en konfluens-zon är en signal; en konfluens-zon utan bekräftelse är bara en linje på skärmen. Hela den filosofin är genomarbetad i flaggskeppet \"AK1TS — Våglärans Hierarki\"."
+        },
+        {
+          "type": "insikt",
+          "content": "Fibonacci är bokens enda matematik — och även den är riktlinje. Använd talen för att skapa mätbara hypoteser (hit bör en korrigering stanna), men låt alltid struktur, volym och brytpunkt avgöra om hypotesen håller. Tal föreslår, marknaden disponerar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en aktie som just gått igenom en tydlig sväng upp följt av en korrigering — färdig, inte pågående. Mät svängen, dra 38,2-, 50- och 61,8-procentnivåerna. Var stannade korrigeringen faktiskt? Skriv avståndet i procent från närmaste nivå. Gör om övningen på tre tillfällen. Du bygger nu din egen statistik om hur exakta — eller oexakta — talen är i verkligheten, vilket är en sundare relation till Fibonacci än någon tro."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fibonacci-talen i praktisk användning\",\"rader\":[[\"Kvot\",\"Värde\",\"Vanlig användning\"],[\"0,618\",\"61,8 procent\",\"Klassisk retracement för våg 2; stöd i trend\"],[\"0,500\",\"50 procent\",\"Dows arv; psykologisk mittpunkt; ofta respekterad\"],[\"0,382\",\"38,2 procent\",\"Grund retracement för våg 4; rekyl i stark trend\"],[\"1,618\",\"161,8 procent\",\"Extension: våg 3 mot våg 1; våg c mot våg a\"],[\"2,618\",\"261,8 procent\",\"Förlängd extension i exceptionella våg 3:or\"],[\"1, 1, 2, 3, 5, 8...\",\"Talföljden\",\"Antal vågor i strukturer; tidsmått mellan vändpunkter\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är 0,618 i förhållande till 1,618?",
+          "alternativ": [
+            "Kvadraten på 1,618",
+            "Det inverterade värdet — ett dividat med 1,618",
+            "Summan av de tio första Fibonaccitalen",
+            "Halva det gyllene snittet"
+          ],
+          "ratt": 1,
+          "tips": "Dela ett tal i följden med nästa, och se vart serien går."
+        },
+        {
+          "q": "Vilket av talen 38,2, 50 och 61,8 är INTE ett äkta Fibonacciförhållande?",
+          "alternativ": [
+            "38,2 procent",
+            "50 procent",
+            "61,8 procent",
+            "Ingen av dem är det"
+          ],
+          "ratt": 1,
+          "tips": "Frost & Prechter själva påpekar att denna nivå är Dows arv snarare än Fibonacci-familjens."
+        },
+        {
+          "q": "Vad gör en Fibonacci-nivå verkligt användbar enligt AK1TS?",
+          "alternativ": [
+            "Att den beräknas på logaritmisk skala",
+            "Att den alltid passar exakt historiskt",
+            "När den inträffar i en konfluens-zon och bekräftas av struktur, volym och brytpunkt",
+            "Att den kommer från ett heligt tal"
+          ],
+          "ratt": 2,
+          "tips": "En linje på skärmen är en hypotes — vad krävs för att du ska handla på den?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Vågornas proportioner — retracements och extensions",
+      "intro": "Nu sätter vi samman två av kursens trådar: vågstruktur och Fibonacci-matematik. Frost & Prechter ger en katalog över hur vågorna förhåller sig till varandra i längd — vilka multiplar våg 3 tenderar att vara av våg 1, när våg 5 blir lika lång som våg 1. Detta är våglärans kartmatematik: du mäter det som hänt för att projicera det som väntar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundförhållandena i en impuls. Våg 3 är den mest benägna att extensioneras — att bli proportionellt längre än kamraterna — och den vanligaste relationen är att våg 3 blir 1,618 gånger våg 1:s längd. När våg 3 har extensionerat tenderar våg 5 mot jämlikhet: ungefär lika lång som våg 1, eller ibland 0,618 gånger den. Alternativt, när våg 5 är den som extensionerar, blir den ofta 1,618 gånger hela sträckan från våg 1:s start till våg 3:s topp. Frost & Prechter betonar att extensioner oftast uppträder i våg 3 på lägre grader men att vem som helst av 1, 3 och 5 kan ta den rollen — dock aldrig två av dem i samma sekvens. Endast en våg får spela huvudrollen."
+        },
+        {
+          "type": "text",
+          "content": "Korrigeringarnas proportioner är stabilare och lättare att använda. I ett zigzag blir våg c ofta lika lång som våg a eller 1,618 gånger den. I en expanderad flat blir c systematiskt 1,618 × a. Våg 2 retracerar som bekant 50 till 61,8 procent av våg 1; våg 4 cirka 38,2 procent av våg 3. Frost & Prechter summerar erfarenheten så: ju starkare trend, desto grundare korrigeringar; ju svagare, desto djupare. Det är därför en korrigering som bara når 38,2-procentsnivån och vänder är ett tecken på styrka i sig — marknadens sätt att säga att den inte har tid att vänta."
+        },
+        {
+          "type": "text",
+          "content": "Tekniken att bygga målklustring: mät våg 1, multiplicera med 1,618 och lägg längden från våg 2:s botten — det är våg 3:s primära målområde. Mät sedan sträckan 0 till 3, multiplicera med 0,382 ned från våg 3:s topp — våg 4:s område. Addera våg 1:s längd från våg 4:s botten — våg 5:s jämlikhetsmål. Upprepa beräkningen på närmast lägre grad och på närmast högre. När två eller tre oberoende projektioner landar i samma priszon har du ett kluster — och kluster är det närmaste en teknisk analys kommer ett prefektionsbevis. Arbetsregeln: handla aldrig en enskild projektion; handla strukturen i klustret."
+        },
+        {
+          "type": "text",
+          "content": "Två praktiska varningar från bokens egen anda. För det första: använd logaritmisk skala när svängningar är stora — proportioner som beräknas i procent skall också mätas i procent, annars skapar låga prisnivåer illusioner. För det andra: projektioner är zoner, inte punkter — Frost & Prechter publicerar mått med interwal, och riktiga marknader slutar sällan på en öre exakt. AK1TS tillämpar detta som policy: varje projektion presenteras som ett band med en förväntan och en invalidring, och positionstorleken sätts efter avståndet till invalidringen — inte efter övertygelsen om målet. Proportionsanalys ger kartan; riskmatematiken ger bränslebudgeten."
+        },
+        {
+          "type": "insikt",
+          "content": "Proportionsanalys förvandlar en chart från teckning till koordinatsystem: det som hänt innehåller mått på det som väntar. Men kom ihåg rangordningen — strukturen bestämmer formen, proportionerna bestämmer storleken. Räkna aldrig baklänges: formeln tjänar räkningen, inte tvärtom."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en färdig, komplett impulssekvens från ett verkligt chart. Mät våg 1 och beräkna 1,618 × våg 1 från våg 2:s botten: hur nära våg 3:s faktiska topp kom projektionen? Mät våg 4:s retracement av våg 3 i procent. Testa slutligen jämlikheten: hur nära var våg 5 våg 1 i längd? Skriv upp alla tre felen i procent. Tre bra tester ger dig en personlig känsla för precisionen — och för varför vi talar om zoner."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vanliga vågrelationer i siffror\",\"rader\":[[\"Förhållande\",\"Vanlig relation\",\"Kommentar\"],[\"Våg 3 mot våg 1\",\"Ofta 1,618 × våg 1\",\"Våg 3 är den mest extensionbenägna\"],[\"Våg 5 mot våg 1\",\"Ofta lika med våg 1, alternativt 0,618 × våg 1\",\"Jämlikhet vanligast när våg 3 extensionerat\"],[\"Våg 5 (extension)\",\"1,618 × sträckan 0 till 3\",\"När våg 5 tar huvudrollen\"],[\"Våg c mot våg a\",\"Lika med a eller 1,618 × a\",\"1,618 vanligast i expanderad flat\"],[\"Våg 2 mot våg 1\",\"50-61,8 procent retracement\",\"Djup men aldrig under start\"],[\"Våg 4 mot våg 3\",\"Cirka 38,2 procent\",\"Grundare i starka trender\"],[\"Endast en extension\",\"—\",\"Endast en av vågorna 1, 3, 5 extensionerar per sekvens\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den vanligaste längdrelationen för våg 3?",
+          "alternativ": [
+            "0,618 gånger våg 1",
+            "Lika med våg 5",
+            "1,618 gånger våg 1",
+            "Exakt dubbelt så lång som våg 2"
+          ],
+          "ratt": 2,
+          "tips": "Motorvågen är den mest benägna att rusa — vilket multipel associerar du med extension?"
+        },
+        {
+          "q": "När våg 3 har extensionerat, vad tenderar våg 5 att bli?",
+          "alternativ": [
+            "Alltid längre än våg 3",
+            "Ungefär lika lång som våg 1 — jämlikhet",
+            "Alltid en diagonal",
+            "Noll — sekvensen slutar i våg 4"
+          ],
+          "ratt": 1,
+          "tips": "Endast en våg får spela huvudrollen per sekvens — vem får då birollen?"
+        },
+        {
+          "q": "Vad är ett målklustring?",
+          "alternativ": [
+            "En felmätning som skall korrigeras",
+            "När två eller flera oberoende projektioner landar i samma priszon",
+            "En metod att räkna vågor i flera grader samtidigt",
+            "Volymmätning över flera tidsramar"
+          ],
+          "ratt": 1,
+          "tips": "Styrkan ligger i oberoende argument som pekar på samma plats — konfluens."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Tidsmåtten — Fibonacci i dimensionen Tid",
+      "intro": "Elliott hävdade att även tiden mellan marknadens vändpunkter följer Fibonacci — att avstånd i dagar, veckor och månader mellan toppar och bottnar ofta är tal ur följdens skatt. Frost & Prechter presenterar tidsanalysen, men med en uppriktighet som är uppfriskande: det är dimensionen de själva litar minst på. Det gör den perfekt för AK1TS:s filosofi: fönster, inte klockslag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundidén är lika enkel som retacement-idén, men i tidsaxeln: räkna kalender- eller handelsdagar, veckor eller månader mellan två betydelsefulla vändpunkter, och leta efter Fibonaccital — 8, 13, 21, 34, 55, 89, 144. Frost & Prechter visar exempel på marknadsvändningar som inträffat exakt 55 veckor eller 21 månader efter en föregångare, och på korrigeringar vars varaktighet förhåller sig till den föregående som 1,618. Även förhållanden mellan likartade punkter — topp till topp, botten till botten — sägs följa mönstret, och vissa räknare lägger till års-cyklar och årstidsberoende, men kärnan är talföljdens rytm i axeln framåt."
+        },
+        {
+          "type": "text",
+          "content": "Bokens egen varning förtjänar att citeras i sin anda: Frost & Prechter placerar tidsförhållanden bland de minst tillförlitliga av vågprincipens verktyg. Tidsmått inträffar ofta i närheten av viktiga vändpunkter — men sällan nog för att handlas på egen hand. En månadskillnad kan vara 13 eller 14 eller 15 beroende på var exakt du räknar start och slut, och med tillräckligt många tal och tillräckligt många vändpunkter blir alla avstånd Fibonacci på något sätt. Det är samma data-mining-fälla som kritiker ilsket påpekat om hela teorin — här är den som störst."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS:s lösning är hierarkisk och deterministisk. För det första: våra fem tidshorisonter — Mikro, Kort, Medellång, Lång och Mega — är själva fasta tidsfönster, definierade i datalängd och därmed oberoende av subjektiv räkning. För det andra: tiden används för att öppna och stänga uppmärksamhet, aldrig för att handla. Ett tidsfönster är en period då en vändning blir statistiskt mer sannolik — det är då vi söker bekräftelse i Pris (struktur och brytpunkt), Volym (konfluens) och Våg (momentumtecken). Om bekräftelse uteblir stängs fönstret och vi går vidare; inget händer. Där en klassisk vågräknare kanske agerar på att '89 dagar har gått sedan botten', väntar AK1TS på att strukturen skall dö eller fortsätta — tiden väger hypotesen, priset avgör handlingen."
+        },
+        {
+          "type": "text",
+          "content": "En praktisk metod för den som vill utforska tidsaxeln utan att falla i fällan: samla ett större antal vändpunkter — minst tjugo — på en lång chart. Mät alla inbördes avstånd. Beräkna andelen som ligger inom en eller två handelsdagar från ett Fibonaccital. Om andelen inte är påfallande högre än slumpens — och den är ofta det inte — har du personligt reproducerat kritikernas experiment och vet varför AK1TS behandlar tiden som bihang. Detsamma gäller tidsförhållanden mellan vågor: testa dem, men låt dem aldrig åsidosätta form och pris. Frost & Prechter själva rangordnar: form, sedan pris, sedan tid."
+        },
+        {
+          "type": "insikt",
+          "content": "Pris säger var, struktur säger hur, tid säger när — men 'när' är alltid ett fönster och aldrig en klockslag. Den som kräver exakthet av tiden begär av den svagaste dimensionen det den starkaste inte ens levererar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett index med lång historik och markera de fem största bottnarna. Räkna handelsdagar mellan varje par av bottnar. Hur många avstånd ligger inom tre handelsdagar från 8, 13, 21, 34, 55, 89 eller 144? Antalet träffar dividerat med antal mätningar är din träffkvot. Jämför den med vad du skulle förvänta dig av slumpen. Skriv en rad om vad det innebär för hur du bör använda tid i din egen analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tidsanalysens verktyg och deras tillförlitlighet\",\"rader\":[[\"Verktyg\",\"Beskrivning\",\"Tillförlitlighet enligt boken\"],[\"Fibonacci-avstånd\",\"Dagar eller veckor mellan vändpunkter ur talföljden\",\"Låg till medel — inträffar ofta närheten men sällan exakt\"],[\"Tidsförhållanden\",\"Varaktighetskvoter mellan vågor, ofta 1,618\",\"Låg — känslig för var gränser dras\"],[\"Års-cyklar och årstider\",\"Wiederkehrande säsongsmönster\",\"Utöver kärnan; svagt stöd\"],[\"Fasta horisonter (AK1TS)\",\"Definierade tidsfönster per grad, Mikro till Mega\",\"Deterministisk — oberoende av subjektiv räkning\"],[\"Arbetsregeln\",\"Tid öppnar fönster; pris, volym och struktur avgör handling\",\"Grundprincip i hela AK1TS\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka tal söks i tidsaxeln mellan vändpunkter?",
+          "alternativ": [
+            "Primtal som 7, 11 och 13",
+            "Fibonaccital som 8, 13, 21, 34, 55 och 89",
+            "Multipar av tio",
+            "Kvartalsdatum"
+          ],
+          "ratt": 1,
+          "tips": "Samma familj som styr proportionerna i pris — fast här i antal perioder."
+        },
+        {
+          "q": "Hur rangordnar Frost & Prechter de tre dimensionerna i tillförlitlighet?",
+          "alternativ": [
+            "Tid först, sedan pris, sedan form",
+            "Alla tre är lika tillförlitliga",
+            "Volym först, tid sedan, pris sist",
+            "Form först, sedan pris, sedan tid — tiden är minst tillförlitlig"
+          ],
+          "ratt": 3,
+          "tips": "Bokens egen uppriktighet om tidsmåttens svaghet är kursens mest citerade varning."
+        },
+        {
+          "q": "Hur använder AK1TS tidsdimensionen?",
+          "alternativ": [
+            "Som exakta köp- och säljdatum",
+            "Som fönster som öppnar uppmärksamhet — handling kräver bekräftelse i pris, volym och struktur",
+            "Inte alls — tiden har ingen roll",
+            "Som enda källa till stopp-nivåer"
+          ],
+          "ratt": 1,
+          "tips": "Tiden väger hypotesen — vem eller vad avgör sedan handlingen?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Volym och divergens — bränslet och varningsklockan",
+      "intro": "Frost & Prechter ägnar ett helt kapitel åt volymen, och med rätta: den är impulsernas bränslemätare och korrigeringarnas sömnmedel. Tillsammans med momentumdivergens får du här våglärans tidiga varningssystem — de instrument som talar om att en femte våg ljuger om sin styrka.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Huvudregeln ärFew lines sammanfattad: volymen expanderar med impulser i riktning mot den överordnade trenden och kontraherar i korrigeringar mot den. I en frisk uppgång bärs stigningarna av tyngre handel än fallet — uppdagar är volymstarkare än neddagar, och varje ny hög-prisvåg rider på bredare deltagande. I en sund korrigering är det omvända sant: volymen sinar, intresset svalnar, formationen drivs av frånvaro av köpare snarare än av närvaro av säljare. Frost & Prechter drar den viktiga slutsatsen att volymen är en bekräftelsevariabel: i tveksamma situationer är det volymskillnaden mellan alternativ räkningar som avgör vilken som är rätt."
+        },
+        {
+          "type": "text",
+          "content": "Volymens vågprofill är förunderligt konsekvent. Våg 1: måttlig volym på låg bas. Våg 2: sjunkande volym — beviset på att säljtrycket är uttömt. Våg 3: högst volym i hela sekvensen, ofta med tydliga volymsexpansioner vid varje delvågsuppgång. Våg 4: låg och uttunnad volym, i synnerhet i trianglar. Våg 5: här kommer varningen — volymen når sällan våg 3:s nivå. Priset gör nya rekord på svagare och svagare underlag, deltagandet smalnar av till ett fåtal ledare, och de breda indexen börjar eftersläpa huvudindexet. Frost & Prechter kallar detta fenomen intermarknadlig och bredddivergens, och det är femte vågens signatur: toppen i pris, men inte i kraft."
+        },
+        {
+          "type": "text",
+          "content": "Divergensen är varningsklockan. Bokens verktyg är i modern tappning momentummätare — oscillatorer som mäter förändringstakt snarare än nivå. Klassiska mönstret: under våg 3 når momentummätaren sin högsta nivå i takt med priset; vid våg 5:s topp noterar priset ny topp men mätaren en tydligt lägre topp — pris upp, kraft ned. Frost & Prechter visar hur dessa divergenser vid femte vågen av hög grad kan byggas upp under månader och till och med år, och hur multipla oscillator-divergenser (mätaren slår ny topp på lägre nivå flera svitgnågor i rad) är bland de starkaste varningarna hela metoden kan ge. OBS viktig begränsning som boken också understryker: divergens är ett tillstånd, inte en signal — den talar om att kraften mattas, inte att vändningen sker idag."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS:s deterministiska översättning är rak. Vågpositionens subjektiva fråga 'är detta våg 5?' ersätts av mätbara förhållanden: volymkonfluens — hur förhåller sig kort volym (20 dagar) till lång (90 dagar)? Momentumtecken — hur många sammanhängande perioder med positiv resp. negativ förändringstakt? Medelvärldens lutning — pekar glidande medelvärden på Mikro, Kort och Medellång i samma riktning? När en prissekvens gjort nya toppar medan dessa mått har mattats har vi en AK1TS-divergens — oavsett om någon räknat vågor eller inte. Detta är kärnan i vår brytning med den klassiska skolan: vi behåller bokens fenomenologi men byter ut tolkningen mot mätning. I flaggskeppet \"AK1TS — Våglärans Hierarki\" är volymkapitlet (kapitel 11) just denna översättning, fullt genomförd."
+        },
+        {
+          "type": "insikt",
+          "content": "Divergens är utmattningens graf: priset säger uppåt, deltagandet säger nej. Men kom ihåg rangordningen — divergens varnar i förväg, strukturen bekräftar, och brytpunkten beslutar. En varning är inte en order; den är en skäl att höja vaksamheten."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en prisbild med en tydlig topp — en aktie som fallit kraftigt efter en lång uppgång. Gå tillbaka och undersök de sista månaderna före toppen: jämför volymen på den sista uppgångsvågen med volymen på uppgångsvågen före den. Rita ett enkelt momentumdatum — till exempel priset mot sitt 20-dagars medelvärde, eller RSI om verktyget finns — och leta efter lägre toppar hos mätaren där priset gjorde högre. Dokumentera vad du hittar: hur många veckor i förväg varnade avvikelsen?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Volym och kraft per vågposition\",\"rader\":[[\"Position\",\"Volym\",\"Kraft och bredd\"],[\"Våg 1\",\"Måttlig, återhämtande från botten\",\"Ingen bred tilltro; få deltagare\"],[\"Våg 2\",\"Sjunkande\",\"Säljtrycket sinar — bevis på uttömning\"],[\"Våg 3\",\"Högst i sekvensen\",\"Störst kraft, bredast deltagande, luckor\"],[\"Våg 4\",\"Låg, uttunnad\",\"Bredd smalnar; trianglar extra volymfattiga\"],[\"Våg 5\",\"Lägre än våg 3\",\"Divergens: prisrekord på mattare kraft\"],[\"Våg b\",\"Svag\",\"Smal rally utan volymstöd — klassisk fälla\"],[\"Våg c\",\"Stigande i fallet\",\"Panikvolym vid slutet; kapitulation\"],[\"AK1TS-mått\",\"20- mot 90-dagars volym\",\"Deterministisk ersättare till vågposition\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur beter sig volymen normalt i en korrigering?",
+          "alternativ": [
+            "Den ökar kraftigt genom hela korrigeringen",
+            "Den är oförändrad jämfört med impulsen",
+            "Den kontraherar — sinar och tunnas ut",
+            "Den blir alltid högre än i våg 3"
+          ],
+          "ratt": 2,
+          "tips": "Korrigeringar drivs av frånvaro av intresse snarare än av aktivt säljtryck."
+        },
+        {
+          "q": "Vad är den klassiska volymvarningen vid en våg 5?",
+          "alternativ": [
+            "Volymen är högre än i våg 3",
+            "Volymen når sällan våg 3:s nivå — nya prisrekord på svagare underlag",
+            "Volymen är exakt lika med våg 1",
+            "Volymen är noll"
+          ],
+          "ratt": 1,
+          "tips": "Femte vågen är final med publik men utan motor — vad säger bränslemätaren?"
+        },
+        {
+          "q": "Vad är divergens, och vad är dess begränsning?",
+          "alternativ": [
+            "Pris och momentum pekar åt samma håll — alltid en köpsignal",
+            "Volymen bekräftar trender — den kan aldrig felaktigt tolkas",
+            "Pris gör ny topp medan momentum inte gör det — en varning om utmattning, men inte en tidsbestämd vändsignal",
+            "Prisens avstånd till sitt långsamma medelvärde — en exakt nivå där vändning alltid sker"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på skillnaden mellan ett tillstånd (kraften mattas) och en order (vänd nu)."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Socionomics — masspsykologin driver vågorna",
+      "intro": "Bokens mest-radikala idé finns mellan raderna hos Elliott men formuleras av Prechter, som kom från psykologin till finans: orsakriktningen är den omvända av vad de flesta tror. Det är inte händelserna som driver marknadens humör — det är marknadens humör som driver händelserna. Denna lära kom att kallas socionomics.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den konventionella bilden är enkel: nyheter och händelser påverkar investerare, som köper och säljer, vilket flyttar priser. Prechter vänder på den. I hans läsning är det kollektiva humöret det primära — ett endogent, självorganiserande system som svänger i mönstret Elliott fann — och både priser och händelser är dess uttryck. Marknadsvågen och samhällsstämningen är två utfall av samma underliggande process. Frost & Prechters formulering i boken är att marknaden inte reagerar på nyheter utan att båga är funktioner av samma masspsykologi; Prechter utvecklade argumentet fullt ut senare, i 'The Wave Principle of Human Social Behavior' (1999) och 'Socionomics' (2003), där stämningens svängningar kopplas till allt från politisk valtakt till populärmusik och krig och fred."
+        },
+        {
+          "type": "text",
+          "content": "Bevisen Prechter anför är av samma typ: nyhetsflödets oförmåga att förklara marknadens rörelser. Vissa av de största enskilda dagarnas uppgångar i historien har skett på väsentligen goda nyheter — och den värsta enskilda nedgången, krasheden i oktober 1987, saknade motsvarande konkret yttre orsak: inget krigsutbrott, ingen konkurshärd av den storleken. Tvärtom, noterar socionomics-skolan: studierna visar att överraskande makronyheter förklarar en ytterst liten del av prisvolatiliteten. Även riktningen stämmer dåligt — de värsta nedgångarna tenderar att komma när nyheterna fortfarande är goda, och bottnarna bildas i djupast pessimism, inte i värsta läge. Slutsatsen: om nyheterna inte kan förutsäga marknaden, är det de som är eftersläpande — en spegling av humöret, inte dess källa."
+        },
+        {
+          "type": "text",
+          "content": "I svenska kursens språk: fundamentala förklaringar är efterhandskonstruktioner. När våg 3 är som starkast hittar analytikerna skäl att vara bull-troende; när C-vågen krossar allt hittas skälen till björnmarknad — samma bolag, samma produkter, olika humör. Detta är varför en produktlansering (V16) eller ett avtal (V17) aldrig kan vrida vågriktningen, bara påverka dess hastighet: i en nedåtgående våg av tillräcklig grad köps goda nyheter bort och glöms, i en uppgående badas dåliga nyheter i likviditet. Även politik och reglering är i denna läsning eftersläpande — en regulatorisk katalysator (V18) kommer typiskt när humöret redan har vänt, inte före. Frost & Prechters blick är därför alltid vänd mot marknadens egen prisserie: där finns humöret, dokumenterat och mätbart, i realtid — medan fundamental förklaringskonst alltid skrivs i efterhand."
+        },
+        {
+          "type": "text",
+          "content": "För AK1TS följer två konkreta hållningar ur socionomics. För det första: metoden att läsa humöret ur pris, volym och momentum är inte en nödlösning utan en konsekvens — om humöret är det primära är prisserien dess bästa mätinstrument, och teknisk analys dess naturliga språk. För det andra: ödmjukheten inför att ingen yttre händelse kan rädda en position som går emot vågen av tillräcklig grad — vilket manar till samma riskdisciplin som hela denna kurs byggt: definiera var tesen dör, mät konfluensen, storleksanpassa. Men observera också att Prechers tes har ett allvarligt problem — hon kan inte falsifieras på enkelt sätt, och den flyttar all förklaringsbörda till ett osynligt kollektivt humör — vilket är ett av ämnena i nästa kapitel, där kritiken får tala till punkt."
+        },
+        {
+          "type": "insikt",
+          "content": "Socionomics är bokens djupaste idé: marknaden är inte en våg som slås av händelser — den är själva pulsen, och händelserna är dess eko. Vänd på orsakriktningen och många marknadsfenomen faller på plats; behåll skeptiken, för tesen är svår att pröva."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj tre stora rubriker från de senaste tio åren — gärna en politisk chock, en centralbankshändelse och en rapportchock. Slå upp vad marknaden gjorde de följande sex månaderna efter varje rubrik. Notera fallen där 'god' nyhet följdes av fall och 'dålig' av uppgång. Skriv tre rader om vad detta antyder om nyheters förklaringskraft — och om vilken dataström som istället visade riktningen i realtid."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Händelse mot reaktion — socionomics läsning\",\"rader\":[[\"Observation\",\"Konventionell läsning\",\"Socionomics läsning\"],[\"Krasch utan yttre orsak (oktober 1987)\",\"Orsak saknas — marknaden irrationell\",\"Humöret hade vänt i vågstruktur; händelse är ej nödvändig\"],[\"God nyhet, fallande marknad\",\"Marknaden 'ignorerar' goda nyheter\",\"Humöret var redan negativt; nyheter är eko\"],[\"Dålig nyhet, stigande marknad\",\"Marknaden 'prissatt det värsta'\",\"Humöret var positivt och absorberade nyheten\"],[\"Bottnar i värsta makroläge\",\"Marknaden ser framåt\",\"Humörets botten sammanfaller med maximal pessimism\"],[\"Reglering efter krasch\",\"Reglering förhindrar nästa krasch\",\"Politik är eftersläpande — följer humöret, leder sällan\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i socionomics?",
+          "alternativ": [
+            "Att makronyheter är marknadens främsta drivkraft",
+            "Att kollektivt humör driver både marknad och händelser — inte omvänt",
+            "Att centralbanker styr vågornas längd",
+            "Att aktiemarknaden följer konjunkturcykler med fördröjning"
+          ],
+          "ratt": 1,
+          "tips": "Orsakriktningen är den omvända mot den konventionella bilden — vem leder och vem eka?"
+        },
+        {
+          "q": "Hur förhåller sig en produktlansering (V16) eller regulatorisk katalysator (V18) till vågriktningen enligt socionomics?",
+          "alternativ": [
+            "De kan vrida vågriktningen när som helst",
+            "De kan påverka hastigheten men inte vända en våg av tillräcklig grad",
+            "De är den främsta orsaken till våg 3-extensioner",
+            "De spelar ingen roll alls för priset"
+          ],
+          "ratt": 1,
+          "tips": "I en våg av tillräcklig grad köps goda nyheter bort — och dåliga badas i likviditet."
+        },
+        {
+          "q": "Vilken senare bok av Prechter utvecklar socionomics vidare?",
+          "alternativ": [
+            "'The Wave Principle of Human Social Behavior' (1999) och 'Socionomics' (2003)",
+            "'Nature's Law' från 1946",
+            "'A Critical Appraisal' från 1960",
+            "'The Elliott Wave Analyzer' från 1985"
+          ],
+          "ratt": 0,
+          "tips": "Elliotts och Boltons titlar är äldre — socionomics-böckerna är Prechters egna senare verk."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 15,
+      "title": "Kontroversiell ärlighet — kritiken och AK1TS:s brytning",
+      "intro": "Elliott-vågteorin är bland det mest kritiserade i hela finans, och denna kurs vägrar skylla det under stolen. I detta kapitel får kritikerna tala till punkt — Malkiels hån, akademins tystnad, Prechters egna misslyckade prognoser — varefter vi redogör för varför AK1TS ändå bygger på vågbegreppet, fast på helt andra villkor. Detta är kursens viktigaste kapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Burton Malkiels attack i 'A Random Walk Down Wall Street' är den mest kända och den bitrandeaste. Hans huvudpunkter: vågräkning är vag — samma chart ger olika räkningar beroende på vem som räknar och när; tolkningen sker i efterhand, när mönstret redan är klart, och prognosvärdet i realtid är eländigt; och det finns ingen dokumenterad, oberoende testad förmåga hos vågräknare att slå marknaden. Malkiel driver hem poängen med ett experiment av typen myntkast: han lät ett slumptal generera en prisserie som var omöjlig att skilja från en riktig aktiechart — komplett med trendlinjer, stöd, motstånd och vågliknande mönster. Slutsatsen: vad vågräknare ser är projekioner i brus. Hans mest-rynka-på-näsan formulering — att olika Elliott-analytiker vid samma tidpunkt hänför marknaden till olika vågpositioner och ändå alla kallar metoden vetenskap — har aldrig bemötts på ett övertygande sätt."
+        },
+        {
+          "type": "text",
+          "content": "Akademisk forskning har gett vågteorin föga stöd. Det finns få peer-granskade studier som visar att vågräkning ger prognosförmåga utöver tursfaktorn efter transaktionskostnader, och de som testat tekniska mönsters förutsägelseförmåga (som den omfattande studien av Lo, Mamaysky och Wang 2000) fann mönsterstatistik men inga starkt vinstdrivande regler av Elliott-typ. Det strukturella problemet är djupare än bristen på studier: teorins frihetsgrader är så många — val av startpunkt, val av grad, val av korrektiv tolkning, möjligheten att märka om i efterhand — att den kan förklara varje utfall. När en räkning slår fel säger utövaren att räkningen var fel, inte teorin; formuleringen 'vågprincipen har aldrig fel, bara analytikern' gör systemet i praktiken ofalsifierbart. Detta är filosofins kanske hårdaste anklagelse: en teori som inte kan ha fel kan inte heller ha innehåll."
+        },
+        {
+          "type": "text",
+          "content": "Sedan Prechters egen prognos-Historia, berättad med samma ärlighet. Å den ljusa sidan: 1978 förutsade boken en stor våg V-uppgång när Dow stod omkring 800 och framtiden tedde sig mörk — den kom; i augusti 1982 blev Prechter publikt bull-troende nära exakt botten (Dow 776) och blev kallad tidernas största marknadstime; i oktober 1987 vände han björn endast dagar före kraschen; och 1984 vann han den övervakade reala penning-tävlingen i optioner med omkring 444 procent på fyra månader. Å den mörka sidan: efter 1987 förblev Prechter huvudsakligen bear-troende genom 1990-talet — han förutsade en depression och en djup björnmarknad som aldrig kom — och missade därmed en av historiens starkaste börsuppgångar. Mark Hulberts oberoende mätning av marknadsbrevs tajming placerade över längre perioder Prechters brev blygsamt till svagt. Samma man, samma metod: briljant på ett decennium, fel på nästa. Det är inte ett argument mot alla mönster — men det är ett obekvämt faktum om metoden som grund för prognoser."
+        },
+        {
+          "type": "text",
+          "content": "Ändå bygger AK1TS på vågbegreppet. Inte för att teorin har rätt, utan för att de delar av den som kan mätas och dö fungerar som beskrivning och riskhantering. Brytningen består av fyra steg. För det första: vi överger den subjektiva räkningen — frågan 'vilken våg är det nu?' ersätts av deterministiska proxy-mått: momentumtecken, medelvärldens lutning per horisont och 20/90-dagars volymkonfluens mäter impulskraft, korrigeringströtthet och divergens utan att någon behöver välja grad eller mönster. Två oberoende användare av AK1TS får samma svar — vilket vågräkning aldrig kan lova. För det andra: strukturen behålls som beskrivningsram — 5-3-formen, hierarkin mellan grader, alternation och korrigeringstyper är ett språk för att samtala om prisbilder, inte en spådomsmaskin. För det tredje: de tre hårda reglerna blir invalidrings- och riskverktyg — varje tes om fortsatt trend får en prisnivå där den dör, vilket ger stopp och positionstorlek. För det fjärde: tid används som fönster, aldrig som klockslag. Den fulla brytningen — med motiv, mätmetoder och bevisföring — förklaras i vårt flaggskepp 'AK1TS — Våglärans Hierarki', särskilt kapitel 7 (Elliott) och kontrovers-kapitlen 14 till och med 17."
+        },
+        {
+          "type": "text",
+          "content": "Sammanfatta ärligheten i en tabell i huvudet. Vad kritikerna har rätt om: räkningens subjektivitet, efterhands-klokheten, ofalsifierbarheten i klassisk praktik, prognosmisslyckandena, akademins brist på stöd. Vad AK1TS ändå behåller: vågformens beskrivningsvärde (fem steg framåt, tre tillbaka är den mest välanvända sanningen om hur trender rör sig), hierarki-idén (korta sviter betjänar långa), Fibonacci som mätsticka för zoner, volymens och divergensens fenomenologi, och de tre reglerna som riskgrammatik. Vad vi kastar: alla anspråk på förutsägelse, exakta tidsmål, dogmatisk märkning och tron att struktur förutsäger. Hållningen är densamma som genom hela AK1TS: vi är kontroversiella genom att säga vad vi inte tror på — och vi bygger bara på det som kan mätas, backas och dö."
+        },
+        {
+          "type": "insikt",
+          "content": "Vi tror inte på Elliott som profetia — vi anvår honom som grammatiker. Fem i trend, tre mot, regler som kan bryta och hierarkin som ordnar det hela: ett språk för att beskriva och ett regelverk för att överleva. Det är den ärliga versionen, och den räcker."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner det starkaste argumentet MOT Elliott-vågteorin med dina egna ord — låt det bli riktigt bra, som om Malkiel själv skulle godkänna det. Testa sedan din senaste chart-baserade analys mot argumentet: vilka delar av den skulle kollapsa om räkningens subjektivitet är dödlig, och vilka delar står på måttbara fakta som volym, momentum och definierade nivåer? Det som överlever det testet är AK1TS — resten är dekoration."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritik mot AK1TS:s svar — brytningen punkt för punkt\",\"rader\":[[\"Kritik\",\"Vad kritiken träffar\",\"AK1TS:s svar\"],[\"Räkningen är vag och subjektiv\",\"Kärnan i Malkiels anklagelse\",\"Subjektiv räkning ersätts av deterministiska proxy-mått: momentum, medelvärld, volymkonfluens\"],[\"Olika räknare ger olika svar\",\"Dokumenterat och sant\",\"AK1TS:s mått ger samma svar för oberoende användare\"],[\"Myntkast ser ut som vågor\",\"Mönster projiceras i brus\",\"Struktur används som beskrivningsram, inte som signalkälla\"],[\"Teorin är ofalsifierbar\",\"'Principen har aldrig fel' är ett problem\",\"Endast falsifierbara delar behålls: de tre hårda reglerna som invalidring\"],[\"Prechters prognosmisslyckanden\",\"Sanna för 1990-talet\",\"AK1TS gör inga prognosanspråk — endast scenarier med vikter och stopp\"],[\"Akademiskt stöd saknas\",\"Få peer-granskade belägg\",\"Vi kräver inte tro — vi kräver att varje verktyg kan backtestas och dö\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Malkiels kritik mot Elliott-vågteorin?",
+          "alternativ": [
+            "Att Fibonacci-tal inte existerar i naturen",
+            "Att vågräkning är vag och subjektiv — tolkas i efterhand, ger olika räknare olika svar och saknar bevisad prognosförmåga",
+            "Att Elliott stal idén från Dow",
+            "Att teknisk analys är för dyr att tillämpa"
+          ],
+          "ratt": 1,
+          "tips": "Tre anklagelser återkommer: vagheten, efterhandsklokheten och bristen på oberoende belägg."
+        },
+        {
+          "q": "Hur ser Prechters prognos-Historia ut, redovisad ärligt?",
+          "alternativ": [
+            "Rätt hela tiden — därför kan metoden anses bevisad",
+            "Fel hela tiden — därför är metoden värdelös",
+            "Briljant kring 1982 och 1987, men i princip bear-troende och fel genom 1990-talets stora uppgång",
+            "Han har aldrig lämnat offentliga prognoser"
+          ],
+          "ratt": 2,
+          "tips": "Samma man, samma metod, två decennier — helt olika utfall. Det är just detta som är problemet."
+        },
+        {
+          "q": "Vad ersätter AK1TS den subjektiva vågräkningen med?",
+          "alternativ": [
+            "Fundamentala skulderations",
+            "Deterministiska proxy-mått — momentumtecken, medelvärldens lutning och volymkonfluens — plus de tre hårda reglerna som invalidring",
+            "Centralbankens kalender",
+            "Slumpade tidspunkter för rebalansering"
+          ],
+          "ratt": 1,
+          "tips": "Kravet är att två oberoende användare skall få samma svar — vilket mått uppfyller det?"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 10,
+      "title": "Från bok till AK1TS — vågbegreppet i praktiken",
+      "intro": "Sista kapitlet knyter ihop allt: hur en 1978-bok om vågor blir ett fungerande, deterministiskt analysramverk i AK1TS. Här är översättningstabellen från Frost & Prechters begrepp till våra mått — och den avslutande arbetsordningen du kan använda på vilken chart som helst, imorgon.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Översättningen börjar i hierarkin. Frost & Prechters våggrader — från Grand Supercycle till Subminuette — blir i AK1TS fem bestämda horisonter: Mikro (dagar), Kort (kvartal), Medellång (arenaåret), Lång (konjunkturen) och Mega (hela historiken). Skillnaden är avgörande: en AK1TS-grad definieras av sin datalängd, aldrig av en räknares bedömning. Frågan 'vilken våg av vilken grad?' ersätts av 'vilken horisont handlar jag på, och vad säger högre horisonters momentum?' Den överordnade trenden, som hos Elliott bestämmer hur allt annat skall tolkas, läses av som medelvärldens och momentumtecknens samstämmighet uppåt i horisonterna — den berömda hierarkiläran: korta vågor betjänar de långa."
+        },
+        {
+          "type": "text",
+          "content": "Sedan strukturen. Impuls korrelerar i AK1TS med samfällt positivt momentum och expandande volym på sin horisont; korrigering korrelerar med neutralt momentum och sinande volym; divergens — priset nya toppar, kraften lägre — definieras av två mätvärden som pekar isär, inte av ett tolkat förhållande till en femte våg. Vågpersonligheterna återkommer som checklista: 'våg 3-känsla' är volym- och breddexpansion; 'våg 5-känsla' är divergens och smalnande deltagande; 'B-vågekänsla' är volymlös rally. De tre hårda reglerna behålls ordagrant men används som riskgränser: våg 1:s start och topp är givna invalidnivåer för positioner i en antagen impuls. Tid slutligen används som i kapitel 12: fasta fönster per horisont, väntande bekräftelse i Pris, Volym och Våg — dimensionerna Brytpunkt beslutar."
+        },
+        {
+          "type": "text",
+          "content": "Arbetsordningen i fem steg, användbar på vilken tillgång som helst. Ett: välj horisont — den du faktiskt handlar på, inte den som passar din önskan. Två: fastställ överordnad riktning genom högre horisonters momentum och medelvärld — är de samstämmiga eller splittrade? Tre: läs din horisonts struktur med proxy-måtten — volymkonfluens 20 mot 90, momentumsvitlängd, medelvärtslutning — och placera den, på vågspråk, som impuls, korrigering eller vänding. Fyra: formulera tesen med invalidring och målband — var dör den, vilken zon pekar proportionerna mot, hur stor position medger avståndet till invalidringen? Fem: logga och utvärdera — träffade strukturen, fel på timing? Struktur rätt, tolkning fel? Detta är hela skillnaden mot klassisk vågräkning: varje steg är mätbart, jämförbart mellan två användare och möjligt att backtesta — vilket är den enda form av bevis AK1TS accepterar."
+        },
+        {
+          "type": "text",
+          "content": "Vad är då kvar av Frost & Prechter? Mer än du kanske tror efter kapitel 15. Formen — fem steg i trendriktningen, tre emot — är fortfarande det bästa komprimerade språket för hur trender faktiskt rör sig; hierarkin mellan grader är grunden för all fler-tidsramsanalys; alternation gör dig förberedd på att nästa korrigering inte liknar den senaste; Fibonacci ger zoner att bevaka snarare än siffror att dyrka; volym- och divergensläran är den tidigaste utmattningsvarning som finns; och de tre hårda reglerna är och förblir kursens bärande innovation — teorins enda falsifierbara delar, omvandlade till riskgrammatik. Boken lär oss ett språk; AK1TS bygger om dess grammatik till mätbara regler. Från Elliotts sjukbädd till din skärm: vågen som beskrivning, aldrig som profetia."
+        },
+        {
+          "type": "insikt",
+          "content": "Elliott gav formen, Frost & Prechter gav boken, AK1TS ger måtten. När språket översatts till bestämda regler — horisont först, momentum och volym sedan, invalidring alltid — då har du våglärans användbara kärna utan dess mest kritiserade last."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutövningen. Välj ett index och genomför hela arbetsordningen: välj horisont, läs överordnad riktning, placera strukturen med proxy-mått (volym 20/90, momentum, medelvärdet), formulera en tes med invalidring och målband enligt vågrelationerna från kapitel 11. Skriv ner allt på ett halvt A4. Upprepa på en horisont upp. Spara båda — när scenariot har spelat klart om några veckor eller månader vet du exakt vad som stämde, vad som felade och varför. Det dokumentet, och inte någon vågcount, är början på din egen bevisföring."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Översättningstabellen — från vågbegrepp till AK1TS-mått\",\"rader\":[[\"Bokens begrepp\",\"AK1TS:s deterministiska översättning\"],[\"Våggrader, Grand Supercycle till Subminuette\",\"Fem fasta horisonter: Mikro, Kort, Medellång, Lång, Mega\"],[\"Impuls (fem vågor)\",\"Samfällt momentumtecken, expandande volym på sin horisont\"],[\"Korrigering (tre vågor)\",\"Neutralt momentum, sinande volym, sidledes struktur\"],[\"Våg 5-divergens\",\"Priset nya toppar medan momentum och volym mattas — mätbar avvikelse\"],[\"De tre hårda reglerna\",\"Invalidnivåer och stopp: våg 1:s start och topp definierar risken\"],[\"Fibonacci-retracements och extensions\",\"Konfluens-zoner att bevaka — aldrig inträde utan bekräftelse\"],[\"Tidsmått\",\"Fasta tidsfönster per horisont; bekräftelse krävs i Pris och Volym\"],[\"Alternation\",\"Förväntan om att nästa korrigering skiljer sig från den senaste — scenarievikt, inte stopp\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad motsvarar Frost & Prechters våggrader i AK1TS?",
+          "alternativ": [
+            "Sektorsindelningar",
+            "Fem fasta tidshorisonter — Mikro, Kort, Medellång, Lång och Mega — definierade av datalängd",
+            "Fem fundamentala nyckeltal",
+            "Ett rörligt medelvärde med perioden nio"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden mot klassiska grader är att definitionen inte kan förhandlas — vad avgör den?"
+        },
+        {
+          "q": "Vilken roll spelar de tre hårda reglerna i AK1TS?",
+          "alternativ": [
+            "De förutsäger våglängder",
+            "De bestämmer valutor och råvaror",
+            "De används som riskgrammatik — invalidnivåer, stopp och positionstorlek",
+            "De ersätter volymanalysen helt"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad en nivå som aldrig får brytas kan användas till i en position."
+        },
+        {
+          "q": "Vad är det första steget i kursens avslutande arbetsordning?",
+          "alternativ": [
+            "Räkna vågor på lägsta graden",
+            "Köpa enoptionsposition för hedgning",
+            "Beräkna Fibonacci-mål",
+            "Välja horisont — den du faktiskt handlar på"
+          ],
+          "ratt": 3,
+          "tips": "Allt annat i ordningen bestäms av vad du väljer först — hierarkin börjar alltid överst."
+        }
+      ]
+    }
+  ]
+}

@@ -127,7 +127,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Tre frågor — två världsbilder\",\"rader\":[[\"Fråga\",\"EMH och jämviktsteori\",\"Soros och AK1TS\"],[\"Vad gör priset?\",\"Speglar all tillgänglig information om ett givet fundament\",\"Påverkar fundamentet det ska spegla — en kraft, inte en läsare\"],[\"Vad är en bubbla?\",\"Avvikelse: brus, hysteri eller extern chock\",\"Mekanism: feedback-loopens naturliga produkt i åtta faser\"],[\"Vem har rätt?\",\"Ingen systematiskt — marknaden är räntabel att följa\",\"Marknaden aggregerar biased uppfattningar; felet är mönster, inte brus\"],[\"Vad gör investeraren?\",\"Index, tålamod, ignorera prisets påverkan\",\"Mät loopen: fas, bränsle, tvång — vågmätning som observation\"]]}"
+          "content": "{\"rubrik\":\"Tre frågor — två världsbilder\",\"rader\":[[\"Fråga\",\"EMH och jämviktsteori\",\"Soros och AK1TS\"],[\"Vad gör priset?\",\"Speglar all tillgänglig information om ett givet fundament\",\"Påverkar fundamentet det ska spegla — en kraft, inte en läsare\"],[\"Vad är en bubbla?\",\"Avvikelse: brus, hysteri eller extern chock\",\"Mekanism: feedback-loopens naturliga produkt i åtta faser\"],[\"Vem har rätt?\",\"Ingen gör det systematiskt — marknaden är lönsam att följa\",\"Marknaden aggregerar biased uppfattningar; felet är mönster, inte brus\"],[\"Vad gör investeraren?\",\"Index, tålamod, ignorera prisets påverkan\",\"Mät loopen: fas, bränsle, tvång — vågmätning som observation\"]]}"
         },
         {
           "type": "insikt",
@@ -715,7 +715,7 @@
         },
         {
           "type": "text",
-          "content": "Slagets mekanik. Under sensommaren 1992 byggde Quantum en kort pundposition på omkring tio miljarder dollar, finansierad för att kunna hålla positionen så länge bandet stod — downside begränsad, upside enorm: en asymmetri värd att spela stor. Regeringen och Bank of England försvarade med interventioner och räntehöjningar; den 16 september höjdes räntan från tio till tolv procent med löfte om femton. Det var här reflexiviteten komprimerades: varje misslyckat försvar blev information — marknaden lärde sig att motståndet var ändligt, och varje ny våg av spekulation blev billigare att motivera. På kvällen suspenderades Storbritanniens ERM-medlemskap; pundet föll kraftigt, mot D-mark och dollar, och Soross position tjänade omkring en miljard dollar på en dag. Fondens slutresultat för 1992 blev en avkastning på närmare sjuttio procent."
+          "content": "Slagets mekanik. Under sensommaren 1992 byggde Quantum en kort pundposition på omkring tio miljarder dollar, finansierad för att kunna hålla positionen så länge bandet stod — nedsidan begränsad, uppsidan öppen: en asymmetri värd att spela stor. Regeringen och Bank of England försvarade med interventioner och räntehöjningar; den 16 september höjdes räntan från tio till tolv procent med löfte om femton. Det var här reflexiviteten komprimerades: varje misslyckat försvar blev information — marknaden lärde sig att motståndet var ändligt, och varje ny våg av spekulation blev billigare att motivera. På kvällen suspenderades Storbritanniens ERM-medlemskap; pundet föll kraftigt, mot D-mark och dollar, och Soross position tjänade omkring en miljard dollar på en dag. Fondens slutresultat för 1992 blev en avkastning på närmare sjuttio procent."
         },
         {
           "type": "text",
@@ -908,11 +908,11 @@
           "q": "Hur svarar Soros själv på kritiken att teorin inte är vetenskaplig?",
           "alternativ": [
             "Han hävdar att den är det — med matematiska bevis",
-            "Han erkänner det: teorin är fallibilistisk, ett sätt att tänka — och vrider bevisbördan mot jämviktsteorins anomalier",
+            "Han menar att vetenskapligheten är irrelevant för handel",
             "Han vägrar diskutera frågan offentligt",
-            "Han menar att vetenskapligheten är irrelevant för handel"
+            "Han erkänner det: teorin är fallibilistisk, ett sätt att tänka — och vrider bevisbördan mot jämviktsteorins anomalier"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Hans ärlighet är poängen — vad anser han att handelsframgången bevisar?"
         },
         {
@@ -1015,7 +1015,7 @@
         },
         {
           "type": "text",
-          "content": "Hantverket i fem regler. (1) Överleva först — ingen position, ingen tes och inget ego får vara större än spelets fortsättning. (2) Formulera hypoteser om mekanismer, inte prognoser om nivåer — och ge varje hypotes ett datum och en dödsorsak. (3) Låt marknaden testa tesen med pengar, och läs förlusten som data — Soros rygg, om så behövs. (4) Spela asymmetrier stort och övrigt smått: takad nedsida och öppen upside är när konviktionsstorlek är rätt (Plaza, pundet); i övriga lägen är måttlighet en form av överlevnad. (5) Mät loopen, inte sanningen — fas, bränsle, ammunition, tvång — i V-mått, med marginal of safety som reservationspris. Soross två citat som sammanfattar strategin: »The worse a situation becomes, the less it takes to turn it around, and the bigger the upside« och »money is made by discounting the obvious and betting on the unexpected«."
+          "content": "Hantverket i fem regler. (1) Överleva först — ingen position, ingen tes och inget ego får vara större än spelets fortsättning. (2) Formulera hypoteser om mekanismer, inte prognoser om nivåer — och ge varje hypotes ett datum och en dödsorsak. (3) Låt marknaden testa tesen med pengar, och läs förlusten som data — Soros rygg, om så behövs. (4) Spela asymmetrier stort och övrigt smått: begränsad nedsida och öppen uppsida är när konviktionsstorlek är rätt (Plaza, pundet); i övriga lägen är måttlighet en form av överlevnad. (5) Mät loopen, inte sanningen — fas, bränsle, ammunition, tvång — i V-mått, med marginal of safety som reservationspris. Soross två citat som sammanfattar strategin: »The worse a situation becomes, the less it takes to turn it around, and the bigger the upside« och »money is made by discounting the obvious and betting on the unexpected«."
         },
         {
           "type": "text",
@@ -1027,7 +1027,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Alkemistens överlevnadsprotokoll\",\"rader\":[[\"Princip\",\"Fråga att ställa\",\"Verktyg\"],[\"Överlevnad först\",\"Kan denna position avsluta mitt spel?\",\"Positionsstorlek; marginal of safety utan nummer\"],[\"Hypotes, inte prognos\",\"Vad ska hända för att jag ska veta att jag har fel?\",\"Daterad tes; dödsorsak; V07/V08 som verklighetsankare\"],[\"Mät loopen\",\"Vilken fas, vilket bränsle, vilken ammunition?\",\"V04/V05/V06 prissida; V10/V11/V19 maskinsida\"],[\"Asymmetri före conviction\",\"Är nedsidan takad och uppsidan öppen?\",\"Plaza/pundet-logik: fel kostar ränta, rätt betalar kollaps\"],[\"Fel som data\",\"Vad lärde den senaste falsifikationen mig?\",\"Dokumenterade fel — utan alibi, som boken själv\"]]}"
+          "content": "{\"rubrik\":\"Alkemistens överlevnadsprotokoll\",\"rader\":[[\"Princip\",\"Fråga att ställa\",\"Verktyg\"],[\"Överlevnad först\",\"Kan denna position avsluta mitt spel?\",\"Positionsstorlek; marginal of safety utan nummer\"],[\"Hypotes, inte prognos\",\"Vad ska hända för att jag ska veta att jag har fel?\",\"Daterad tes; dödsorsak; V07/V08 som verklighetsankare\"],[\"Mät loopen\",\"Vilken fas, vilket bränsle, vilken ammunition?\",\"V04/V05/V06 prissida; V10/V11/V19 maskinsida\"],[\"Asymmetri före conviction\",\"Är nedsidan begränsad och uppsidan öppen?\",\"Plaza/pundet-logik: fel kostar ränta, rätt betalar kollaps\"],[\"Fel som data\",\"Vad lärde den senaste falsifikationen mig?\",\"Dokumenterade fel — utan alibi, som boken själv\"]]}"
         },
         {
           "type": "insikt",

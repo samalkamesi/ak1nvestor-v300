@@ -347,7 +347,7 @@
         "Diversifiera mellan kontrarianska positioner: felprisning kan bestå längre än du har tålamod"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-015",
@@ -592,7 +592,7 @@
         "Vågstrukturen är fraktal och finns i alla tidsskalor från minuter till århundraden"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-025",
@@ -642,7 +642,7 @@
         "Din största fiende sitter mellan öronen: handelsdagboken är verktyget"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-027",

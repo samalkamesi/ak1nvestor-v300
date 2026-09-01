@@ -1,0 +1,1066 @@
+{
+  "slug": "contrarian-investment-strategies",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "Contrarian Investment Strategies — Dreman: KOMPLETT",
+  "summary": "David Dremans huvudverk landar i en siffra och en mekanism: mellan 1970 och 1996 slog de billigaste decilerna — lågt P/E, P/B, P/CF och P/D — både marknaden och de dyraste decilerna, år efter år, med lägre risk. Mekanismen är psykologisk: marknaden betalar systematiskt för mycket för glänsande bolag och för lite för tråkiga, vilket gör överraskningar asymmetriska och lågvärderingen exploaterbar. Kursen täcker decilbevisen, överraskningsläran, portföljreglerna, value traps, striden med EMH-skolan och hela mappningen till AKM1:s V01–V20.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Köra Dremans decilbevis — varför lägsta P/E-, P/B- och P/CF-decilerna slog marknaden 1970–1996 med lägre beta · Förstå den psykologiska motorn: affect-heuristiken, anchoring, överreaktion och analytikernas systematiska tillväxtbias · Använda surprise-läran i detalj — förväntningsribban, inte verkligheten, avgör hur en rapport landar · Bygga den konträra portföljen: 15–30 bolag, sektorspridning, hanterbar V10, V11 likviditet, V19-disciplin och 3–5 års tålamod · Skilja felpris från value trap med V01–V03-trenden, V07–V08-marginalerna, V12-stabiliteten och V13–V18 tillgångstestet · Redogöra ärligt för kontroversen: Fama-French riskförklaring, Dremans beteendemotargument, Lakonishok-Shleifer-Vishnys slag mot riskhistorien och value-premiens varierande storlek över årtionden · Köra hela Dreman-checklistan som AKM1-screening från V01 till V20 under marginal of safety-principen.",
+  "why": "Detta är boken som gav AK1A:s lågvärdespel både databasen och motorn: decilmönstret visar att billighet inte är en åsikt utan en statistisk kraft, och surprise-läran förklarar varför — förväntningar, inte resultat, flyttar priser. Utan kontroverskapitlet vore kursen halv: value-premien är verklig men periodvis frånvarande, och den som inte kan formulera Fama-French riskförklaring (och LSV:s motbevis) vet inte vilken risk han faktiskt bär när han köper det hatade. Kursen omvandlar Dreman-kriterierna till en körbar AKM1-checklista: V04–V06 för billighet, V10–V12 och V19 för överlevnad, V01–V03 och V07–V09 för fälltestet, V13–V18 och V20 för tillgången och katalysatorn.",
+  "chapters_list": [
+    "1. Metoden och mannen — 7 500 bolag, 27 år, tio deciler",
+    "2. Bevisen — lågt P/E, P/B, P/CF och P/D decil för decil (V04–V06)",
+    "3. Risken som inte fanns — lägre beta, högre avkastning",
+    "4. Psykologin I — varför marknaden överprissar glänsande bolag",
+    "5. Psykologin II — överreaktion, extrapolering och återgång mot medel",
+    "6. Analytikernas tillväxtbias — estimeringsfelens verkliga storlek",
+    "7. Surprise-läran — förväntningsribban som flyttar priser",
+    "8. Konträr strategi i praktiken — portföljbyggets regler (V10–V12)",
+    "9. När konträrt fungerar bäst — bear-marknader, kriser, sektor-avversion",
+    "10. Fällorna — value traps, cykliska toppar och \"cheap for a reason\" (V01–V03)",
+    "11. Kontroversen — EMH:s försvar och Dremans motangrepp (Fama-French mot LSV)",
+    "12. Efter boken — vad forskningen sagt och premiens varierande storlek",
+    "13. Dreman som AKM1-screening — hela checklistan från V01 till V20",
+    "14. Karaktären — att äga det hatade i tre till fem år"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Metoden och mannen — 7 500 bolag, 27 år, tio deciler",
+      "intro": "David Dreman är värdeinvesteraren som byggde sin tes på data i stället för anekdoter. Under perioden 1970–1996 följde han i storleksordningen 7 500 amerikanska bolag, uppdelade i deciler på fyra värderingsmått och rebalanserade mekaniskt varje år. Upplägget är förebilden för AK1A:s egna faktortester: opartiskt, långt och med de döda bolagen kvar i materialet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dreman började som journalist och praktiker, inte som akademiker. Efter att ha bränt sig på djupt oprisade tillväxtaktier i slutet av 1960-talet skrev han Psychology and the Stock Market (1977), grundade Dreman Value Management samma decennium och kom att skriva konträr krönika i Forbes i över trettio år. Huvudverken är The New Contrarian Investment Strategy (1982) och Contrarian Investment Strategies: The Next Generation (1998), där det stora datamaterialet finns, följt av den psykologiskt fördjupade upplagan från 2012. Tesen är densamma genom alla böcker: marknadens misstag är inte slumpmässiga — de är systematiska och går i en riktning, och därför kan de skördas."
+        },
+        {
+          "type": "text",
+          "content": "Metoden är ren mekanik. Hela universumet — i storleksordningen 7 500 bolag under 27 år, 1970–1996 — sorteras varje år på ett värderingsmått, till exempel P/E, och delas i tio lika stora deciler. Decil 1 är de tio procent billigaste bolagen, decil 10 de tio procent dyraste. Man köper decilportföljen, håller exakt ett år och gör om proceduren. Databasen är Compustat med researchfiler, vilket betyder att konkursbolag och avnoterade bolag ligger kvar i materialet — survivorship bias är alltså hanterat, i motsats till i de flesta bakåtblickande vinnarlistor. Jämförelsegruppen är S&P 500 med utdelningar."
+        },
+        {
+          "type": "text",
+          "content": "Resultatet i grova drag: den billigaste decilen på lågt P/E växte från 10 000 dollar till över 1,2 miljoner dollar under perioden, medan jämförelsegrupperna — den dyraste decilen och marknaden — landade i storleksordningen 240 000 dollar eller därutanför. I årlig ränta betyder det att lågdecilerna låg i runt 15–20 procent per år beroende på mått och period, mot grovt 11–14 procent för marknaden och de dyraste decilerna. Skillnaden låter måttlig per år, men efter 27 års ränta-på-ränta är den skillnaden mellan att bli miljonär och att bli kvartmiljonär. Och avgörande nog: mönstret upprepades på alla fyra måtten Dreman testade."
+        },
+        {
+          "type": "text",
+          "content": "Det viktigaste med bevisen är inte toppdecilen utan trappan. Om lågt P/E vunnit bara i en enskild grupp hade det kunnat vara en turstaräng, men Dreman visar ett monotont mönster: avkastningen stiger i princip steg för steg från dyraste decil till billigaste. Ett samband som håller över tio steg, fyra olika mått och 27 år är inte slump — det är en struktur. Det är exakt samma ribba AK1A lägger på alla egna faktorer och som O'Shaughnessy visade med sextio års data i What Works on Wall Street: gradvishet skiljer faktor från tillfällighet."
+        },
+        {
+          "type": "insikt",
+          "content": "Dreman vann inte debatten med åsikter utan med ett upplägg: definiera regeln i förväg, kör den mekaniskt, håll döda bolag kvar och kräv monotoni över deciler. Kopiera detta testmässiga Skepticism till allt i AK1A — en strategi som bara fungerar i en decil, en sektor eller ett decennium är en historia, inte en faktor."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dremans studie i siffror\",\"rader\":[[\"Byggsten\",\"Innehåll\",\"Anmärkning\"],[\"Datakälla\",\"Compustat inklusive researchfil\",\"döda bolag medtas — survivorship bias hanterad\"],[\"Universum\",\"i storleksordningen 7 500 bolag\",\"amerikanskt universum, stora som små\"],[\"Period\",\"1970–1996 (27 år)\",\"förlängd i senare upplagor\"],[\"Indelning\",\"tio deciler per mått\",\"decil 1 = billigast, decil 10 = dyrast\"],[\"Mått\",\"P/E, P/B, P/CF, P/D\",\"samma mönster på alla fyra\"],[\"Rebalansering\",\"en gång per år\",\"mekaniskt, utan åsikter\"],[\"Resultat\",\"10 000 dollar till över 1,2 M$ i billigaste decilen\",\"mot runt 240 000 dollar för jämförelsegrupper\"],[\"Årsränta\",\"lågdeciler cirka 15–20 %\",\"marknad och dyrdeciler grovt 11–14 %\"],[\"Kvalitetskrav\",\"monotont decilmönster\",\"gradvishet skiljer faktor från tur\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna din screener och sortera hela ditt universum på P/E. Dela listan mentalt i tio lika stora grupper och titta på namnen i decil 1. Skriv ner din magkänsla om varje namn: tråkigt, fult, förståeligt hatat? Spara listan — den är kursens råmaterial. Notera sedan din gissning: hur stor tror du att avkastningsskillnaden mellan decil 1 och decil 10 är per år, i procentenheter? Skriv ner siffran innan du läst klart kapitel 2, där facit kommer. Din magkänsla och din gissning är data om dig själv, inte om marknaden."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är det monotona mönstret — att avkastningen stiger steg för steg genom decilerna — viktigare än att en enskild billig grupp vann?",
+          "alternativ": [
+            "Ett mönster som håller över tio steg och 27 år kan knappast vara slump, medan en enskild grupps vinst kan vara en engångstur",
+            "Därför att monotona mönster alltid ger högre avkastning än icke-monotona",
+            "För att Compustat bara kan beräkna monotona samband korrekt",
+            "För att dyrare deciler då är olagliga att äga"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad som krävs för att en tur ska upprepas tio gånger i rad i rätt ordning."
+        },
+        {
+          "q": "Hur hanterar Dremans studie survivorship bias?",
+          "alternativ": [
+            "Genom att bara använda bolag som fortfarande finns",
+            "Genom att räkna om alla fall med 50 procents marginal",
+            "Genom att Compustat-materialet med researchfiler innehåller även konkursbolag och avnoterade bolag",
+            "Genom att jämföra med svenska aktier i stället"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vilka bolag som saknas i en vanlig aktielista tjugo år senare — och vad deras frånvaro gör med resultaten."
+        },
+        {
+          "q": "Hur ofta rebalanserades decilportföljerna i huvudstudierna?",
+          "alternativ": [
+            "Varje handelsdag för att fånga överraskningar",
+            "Var femte år för att minimera kostnader",
+            "Bara när marknaden fallit mer än tjugo procent",
+            "En gång om året, mekaniskt enligt förutbestämd regel"
+          ],
+          "ratt": 3,
+          "tips": "Regeln ska gå att följa utan åsikter — fundera på vilken frekvens som är opartisk och praktiskt genomförbar."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Bevisen — lågt P/E, P/B, P/CF och P/D decil för decil (V04–V06)",
+      "intro": "Här är huvudresultatet i sin helhet. Alla fyra värderingsmått Dreman testade — P/E, P/B, P/CF och P/D — visar samma trappstegsmönster: ju billigare decil, desto högre avkastning. I AKM1:s språk är V05 P/B den närmaste släktingen, medan V04 P/S och V06 EV/EBITDA är samma idé i modern tappning: priset satt i förhållande till en stabil nämnare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "P/E-studien är den mest citerade. Den billigaste decilen levererade i Dremans material i runt 15–20 procent per år beroende på exakt period, medan den dyraste decilen och marknaden låg i intervallet 11–14 procent. Spridningen mellan ytterdecilerna var på flera procentenheter per år — nog för att frågan ska bli varför marknaden inte arbitrerar bort den. Dremans svar kommer i kapitel 4–7: för att felet sitter i psykologin, inte i informationen, och psykologin bygger inte om sig själv för att någon publicerar en tabell."
+        },
+        {
+          "type": "text",
+          "content": "P/B (V05) är den mått som Fama-French senare gjorde till akademisk huvudfaktor via book-to-market, alltså P/B upp-och-ner: hög B/M är samma sak som lågt P/B. Dreman fann samma trappa här som på P/E — den billigaste book-to-market-decilen slog den dyraste med bred marginal under hela perioden. P/CF och P/D (pris i förhållande till utdelning) kompletterar: kassaflöde är svårare att manipulera än vinst, och utdelning en hård utfallsförpliktelse. Att fyra olika nämnare ger samma mönster pekar på att felet inte ligger i nämnaren utan på prissidan — marknaden betalar för mycket för det den älskar, oavsett vilken linjal man mäter med."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s termer är V04 P/S och V06 EV/EBITDA moderna varianter av Dremans mått. P/S har O'Shaughnessy visat vara den starkaste enskilda faktorn i sextio års data; EV/EBITDA har fördelen att den är okänslig för skuldsättning och avskrivningspolitik, vilket gör den till ett bra komplement till P/E för bolag med olika kapitalstruktur. Grundregeln är densamma genom alla nämnare: köp sista decilen eller kvinten, aldrig bara ett enskilt lågt nummer utan kontext — ett P/E på 8 i en sektor där snittet är 7 är inte billigt, det är medelmåttigt."
+        },
+        {
+          "type": "text",
+          "content": "Räntan-på-ränta-effekten är bevisens tysta argument. Några procentenheter per år låter abstrakt tills man räknar på 27 år: 10 000 dollar till över 1,2 miljoner mot i storleksordningen 240 000. Detta är också kopplingen till Graham och Dodd och deras efterföljares marginal of safety — Dremans deciler är den statistiska bevisningen av det gamla hantverket: kuschen mellan pris och värde är inte bara skydd, den är genom historien också avkastning. I AK1A används marginal of safety som princip utan fasta procentsatser — kraften ligger i disciplinen, inte i en magisk siffra."
+        },
+        {
+          "type": "insikt",
+          "content": "Det gemensamma för vinnarna är inte nämnaren utan riktningen: alla fyra måtten köper det marknaden just nu inte vill ha. Nämnaren är bara en linjal — felet är alltid på prissidan. Därmed ska din AKM1-screen aldrig avgöras av en enskild multipel utan av var flera instämmer: V04, V05 och V06 som pekar samma håll är ett starkare FACTUM än en ensam extrema siffra."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dremans fyra mått och deras AKM1-släktingar\",\"rader\":[[\"Dreman-mått\",\"Vad det mäter\",\"AKM1-koppling\",\"Styrka\"],[\"P/E\",\"pris per vinstenhet\",\"släkting till V06-tänket\",\"basmåttet i studierna\"],[\"P/B\",\"pris per bokfört kapital\",\"V05 P/B\",\"Fama-French akademiska bevisning\"],[\"P/CF\",\"pris per kassaflödesenhet\",\"kompletterar V08\",\"svårare att manipulera än vinst\"],[\"P/D\",\"pris per utdelningskrona\",\"koppling till V20-utdelningstänk\",\"hård utfallsförpliktelse\"],[\"P/S\",\"pris per försäljningskrona\",\"V04\",\"O'Shaughnessys starkaste faktor\"],[\"EV/EBITDA\",\"värde oberoende av kapitalstruktur\",\"V06\",\"okänslig för skuld och avskrivningar\"],[\"Gemensamt\",\"låg decil/kvint av universum\",\"V04–V06 i samklang\",\"felet ligger på prissidan\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör två sorteringar på ditt universum: en på V05 P/B och en på V06 EV/EBITDA. Jämför de tjugo billigaste namnen i respektive lista. Skriv upp var de överlappar — det är dina primära kandidater. För namn som är billiga på V05 men inte på V06, kontrollera V10 Skuldsättningsgrad: hög skuld trycker ner bokvärdet och P/B kan då se billigt ut av fel anledning. Anteckna för tre överlappande namn vilken nämnare du litar mest på och varför — den motiveringen är början på en investeringstes."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad talar det faktum att P/E, P/B, P/CF och P/D alla ger samma decilmönster för?",
+          "alternativ": [
+            "Att alla nämnare är ekvivalenta och kan bytas ut fritt",
+            "Att felet sannolikt ligger på prissidan — marknaden överprissar omtyckta bolag oavsett linjal",
+            "Att bara kassaflödesmåttet är pålitligt",
+            "Att decilindelningen fungerar bara på amerikanska data"
+          ],
+          "ratt": 1,
+          "tips": "Om fyra olika linjalar visar samma mönster, ligger förklaringen sannolikt inte i linjalerna."
+        },
+        {
+          "q": "Varför kan ett lågt P/B (V05) i sig vara missledande?",
+          "alternativ": [
+            "Bokfört kapital är alltid övervärderat i redovisningen",
+            "För att hög skuldsättningsgrad kan trycka ner bokvärdet så att multipeln ser billigt ut av fel anledning — kontrollera V10",
+            "P/B fungerar bara på teknikbolag",
+            "Lågt P/B är alltid bättre ju lägre det är"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad nämnaren består av och vad som kan förändra den utöver börskursen."
+        },
+        {
+          "q": "Vad är relationen mellan Dremans deciler och Grahams marginal of safety?",
+          "alternativ": [
+            "Decilerna är en statistisk bevisning av samma princip — kuschen mellan pris och värde har historiskt både skyddat och gett avkastning",
+            "De är motsatta strategier som utesluter varandra",
+            "Marginal of safety gäller bara obligationer",
+            "Dreman avvisade Grahams tankar uttryckligen"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad en stor rabatt gentemot ett stabilt underliggande värde gör med nedside- och uppsiderisken."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Risken som inte fanns — lägre beta, högre avkastning",
+      "intro": "Effektiv marknadshypotes har en kärnförutsägning: högre förväntad avkastning kräver högre risk. Dremans deciler bryter mot den logiken — de billigaste portföljerna hade lägre beta och klarade nedgångar bättre än de dyraste. Detta kapitel är den första sprickan i den rationella berättelsen, och grunden för kontroversen i kapitel 11.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "I Dremans tabeller låg de billigaste decilernas beta under 1 — i storleksordningen 0,85–0,95 — medan de dyraste decilerna låg över 1,1. Högre avkastning och lägre volatilitet i samma portföljer är precis vad CAPM-världen säger inte kan existera i jämvikt. För Dreman var detta avgörande: om det är ofelbart risk som betalar premien, varför bär då de säkraste portföljerna hem den största lönen? Hans svar: för att det inte är risk som betalar — det är andras misstag, och misstag görs systematiskt på de glänsande bolagen."
+        },
+        {
+          "type": "text",
+          "content": "Bear-marknaderna 1973–1974 är det historiska skolexemplet. S&P 500 tappade som mest omkring hälften, men de så kallade Nifty Fifty — epokens favoritglänzare som Polaroid, Xerox, Avon och McDonald's som handlats på 50–100 gånger vinsten — föll ofta 60–80 procent. Mönstret upprepades vid IT-kraschen 2000–2002 och i den stora krisen 2008: de dyraste, mest älskade bolagen har högst att falla eftersom deras prisning innehåller mest framtid och minst kuschen. Lågt värderade bolag faller också, men de har redan pessimismen prissatt och slår tillbaka snabbare."
+        },
+        {
+          "type": "text",
+          "content": "Dreman skiljer skarpt mellan volatilitet och verklig risk. Volatilitet är priset på en aktie som svänger; verklig risk är permanent kapitalförlust — att betala för mycket för något och tvingas sälja när tesen hunnit slå in men kapitalet redan är blett. För konträren är därför den djupa rabatten på V04–V06 inte ett risksamtal utan ett risksänkande samtal: kuschen mellan pris och värde är det som gör felbedömningar överlevbara. Det är marginal of safety-principen i praktik — utan fasta procentsatser, som princip."
+        },
+        {
+          "type": "text",
+          "content": "Räntan-på-ränta gör nedgångsskyddet dyrbart. En portfölj som faller 30 procent behöver 43 procents uppgång för att komma tillbaka; en som faller 50 procent behöver 100 procent. Lågdecilernas kombination av lägre fall och snabbare återhämtning — tack vare lågt ställda förväntningar som slås oftare — gör att det geometriska snittet över ett helt decennium plockas hem just i kriserna. I AK1A är detta argumentet bakom V10-skärningen: bolag som inte kan tvingas i konkurs av en tillfällig kris kan vänta ut sin återhämtning."
+        },
+        {
+          "type": "insikt",
+          "content": "AK1A:s riskdefinition följer Dreman snarare än beta: risk är sannolikheten för permanent förlust, mätt i tes och balansräkning — inte dagens kurssvängningar. En billig, skuldfri aktie med sviktande sentiment kan vara volatil i kurs och ändå lågrisk i kapital; en stabil glänzare kan vara omvända. Fråga alltid: vad kostar det mig att ha fel i tre år?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Avkastning och risk i Dremans deciler (ungefärliga nivåer)\",\"rader\":[[\"Grupp\",\"Avkastning per år\",\"Beta\",\"Beteende i nedgång\"],[\"Decil 1 (billigast)\",\"cirka 15–20 %\",\"cirka 0,85–0,95\",\"faller mindre, återhämtar snabbare\"],[\"Decil 5 (mitten)\",\"nära marknaden\",\"cirka 1,0\",\"uppföljare till index\"],[\"Decil 10 (dyrast)\",\"grovt 11–14 %\",\"över cirka 1,1\",\"faller mest i bear-marknader\"],[\"S&P 500\",\"cirka 12 % med utdelning\",\"1,0\",\"referens\"],[\"Nifty Fifty 1973–74\",\"—\",\"hög\",\"föll ofta 60–80 % när index föll omkring hälften\"],[\"Slutsats\",\"högre avkastning med lägre beta\",\"bryter mot CAPM-logiken\",\"riskhistorien ifrågasatt (kapitel 11)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta två aktier i din portfölj eller bevakningslista: en du uppfattar som trygg och omtyckt, en som är billig och utskälld. Slå upp beta och aktuell V06 EV/EBITDA för båda. Besvara skriftligt för varje: om bolaget faller 40 procent i morgon — är det en tillfällig sentimentsförlust som en stabil balansräkning och V12-intäktsbas kan vänta ut, eller strukturell värdeförstörelse? Din klassificering avgör vilken av dem som är den verkliga riskpositionen, oavsett vad beta säger."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är kombinationen högre avkastning och lägre beta i de billigaste decilerna ett problem för den rationella riskförklaringen?",
+          "alternativ": [
+            "Betan beräknas bara på dagshandel",
+            "För att teorin säger att extra avkastning ska kräva extra risk — här betalas premien till de mindre volatila portföljerna",
+            "För att låg beta bara förekommer på småbolag",
+            "Det är inget problem eftersom avkastningen justerats för inflation"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på i vilken riktning risk och avkastning ska hänga ihop om marknaden prissätter allt korrekt."
+        },
+        {
+          "q": "Vad hände med Nifty Fifty-bolagen i bear-marknaden 1973–1974?",
+          "alternativ": [
+            "De föll precis lika mycket som index",
+            "De steg eftersom de var kvalitetsbolag",
+            "De föll ofta 60–80 procent när index tappade omkring hälften — hög prisning ger djupast fall",
+            "De stängdes för handel"
+          ],
+          "ratt": 2,
+          "tips": "Ju mer framtid som redan ligger i priset, desto mer finns det att ta bort när framtiden ifrågasätts."
+        },
+        {
+          "q": "Hur definierar Dreman verklig risk i motsats till volatilitet?",
+          "alternativ": [
+            "Som permanent kapitalförlust — att betala för mycket och inte kunna vänta ut tesen",
+            "Som dagsvolatilitet i kursen",
+            "Som avståndet till 52-veckors lägstanivå",
+            "Som storleken på utdelningen"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vilken förlust som går att bära med en intakta balansräkning och tiden på sin sida."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Psykologin I — varför marknaden överprissar glänsande bolag",
+      "intro": "Dremans kärna är psykologisk: marknaden gör inte slumpvisa misstag utan systematiska, och de går alltid åt samma håll — upp för det älskade, ned för det föraktade. Verktyget som främst förklarar det är affect-heuristiken: känslan av att ett bolag är bra ersätter beräkningen av om aktien är billig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Affect-heuristiken, som Dreman lånar från psykologen Paul Slovics forskning, innebär att människor avgör med buken och förklarar med hjärnan. Bolag vi gillar — starkt varumärke (V14), snygg produkt, positiv nyhetsbild — bedöms inte bara som bra bolag utan som bra aktier, oavsett pris. Experimenten visar att försökspersoner som ombeds rangordna bolag efter hur bra de känner för dem producerar nästan samma rankning som när de ombeds rangordna efter hur bra investering de tror bolaget är. Känslan läcker in i kalkylen. Dreman citerar gärna sin egen slutsats: psykologin är marknadens viktigaste faktor — och den minst förstådda."
+        },
+        {
+          "type": "text",
+          "content": "Anchoring gör resten av jobbet. När en berättelse väl satt sig — en tillväxtkurva, en teknisk ledarposition, en visionär VD — blir berättelsen ankaret som all ny information dras mot. Positiva nyheter bekräftar ankaret och driver högre; negativa nyheter rationaliseras bort som tillfälliga. Analytiker som reviderar en prognos gör det i små steg från förra prognosen i stället för att räkna om från grunden — därför hamnar pris och prognoser systematiskt på fel sida om verkligheten när verkligheten vänder. I AK1TS-språk: marknaden tenderar att förhöja trender som redan rullar, inte vända dem i tid."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen syns i prisbildningen: de mest beundrade bolagen handlas på de högsta multiplarna, eftersom varje köpare betalar för berättelsen om framtiden redan idag. Dreman pekar på att detta inte är dumhet hos enskilda utan en kollektiv regularitet — därför upprepas decilmönstret decennium efter decennium, genom Nifty Fifty, biotek-bubblan, IT-bubblan och vidare. Självklart är inte alla glänsande bolag dåliga investeringar; poängen är att gruppen som helhet är systematiskt överprissatt, och att det är gruppen, inte enskilda stjärnkast, som avgör en diversifierad portföljs resultat."
+        },
+        {
+          "type": "text",
+          "content": "För konträren är det här nyckeln till avkastningen: eftersom överprissättningen är stabil och riktad går den att systematiskt shortsälja logiskt — inte genom att sälja blankt, utan genom att köpa det spegelvända felet: de bolag vars affect är som lägst och där förväntningarna därför slagits med bred marginal. Om marknadens kärlek till glänzare är en stridssäker överprissättningsmaskin är dess likgiltighet eller förakt för tråkiga, stabila bolag en lika stridssäker underprissättningsmaskin. Där sitter Dreman och väntar."
+        },
+        {
+          "type": "insikt",
+          "content": "Din egen affect är den första skärmen du måste stänga av. Magkänslan 'det här är ett kvalitetsbolag' är en omdömesbild som är oberoende av pris — och som marknaden redan har prissatt, med ränta. Fråga AK1A-style vid varje köp: skulle jag gilla det här bolaget lika mycket om kursen låg stilla i tre år? Om svaret är nej har du köpt en berättelse, inte en aktie."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Affect-heuristikens prissättning\",\"rader\":[[\"Fasad\",\"Glänsande bolag\",\"Tråkigt bolag\"],[\"Känsla\",\"beundran, trygghet\",\"likgiltighet, obehag\"],[\"Berättelse\",\"lösningen på allt\",\"problemet som inte löses\"],[\"Multiplar (V04–V06)\",\"högsta i universum\",\"lägsta i universum\"],[\"Förväntningar\",\"heroiska\",\"pessimistiska\"],[\"Ny positiv information\",\"redan prissatt\",\"överraskande, driver drift uppåt\"],[\"Ny negativ information\",\"kräver omprövning av hela berättelsen\",\"i stort redan prissatt\"],[\"Historiskföljd\",\"decil 9–10: lägst avkastning\",\"decil 1–2: högst avkastning, lägre beta\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner tre bolag du beundrar som kund eller läsare — gärna sådana du själv köper produkter från. Slå upp deras V04 P/S och V06 EV/EBITDA. Skriv sedan ner tre bolag du tycker är tråkiga, omoderna eller obehagliga — granska deras multipler och V12 intäktsstabilitet. Jämför de två listorna. Anteckna ärligt: vilken lista var billigast, och hur stort var din motståndskänsla mot att äga den billiga listan? Den motståndskänslan är affect-heuristiken på jobbet — den är mätbar, och den är din."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är affect-heuristiken i Dremans användning?",
+          "alternativ": [
+            "En statistisk metod för att mäta volatilitet",
+            "Att känslan för ett bolag ersätter beräkningen — omtyckta bolag bedöms som bra aktier oavsett pris",
+            "En regel för hur man väger nyckeltal mot varandra",
+            "En teknik för att tajma marknadscyklar"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på var i processen känslan kommer in — före eller efter sifferjämförelsen."
+        },
+        {
+          "q": "Hur bidrar anchoring till systematiska prisfel?",
+          "alternativ": [
+            "Genom att all ny information dras mot den etablerade berättelsen i stället för att trigga omräkning från grunden",
+            "Genom att aktier handlas till fastkurs en månad i taget",
+            "Genom att analytiker bara följevar index",
+            "Anchoring förekommer bara på räntemarknaden"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vad som händer med en prognos när verkligheten avviker om den justeras i små steg från en fast utgångspunkt."
+        },
+        {
+          "q": "Varför hävdar Dreman att överprissättningen av glänsande bolag är exploaterbar trots att den är känd?",
+          "alternativ": [
+            "Därför att den är slumpmässigt fördelad",
+            "Därför att den bara förekommer på små marknader",
+            "Därför att den är stabil och riktad — ett systematiskt fel kan skördas av den som köper spegelbilden",
+            "Därför att den försvinner när centralbanken höjer räntan"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på skillnaden mellan brus, som inte går att handla på, och ett fel med konstant riktning."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Psykologin II — överreaktion, extrapolering och återgång mot medel",
+      "intro": "Varför forcerar priserna utanför rättvisa nivåer? Därför att människor extrapolerar: den senaste trenden känns permanent. Detta kapitel knyter Dremans praktik till den akademiska överreaktionslitteraturen och till den starkaste kraften i all fundamental analys — återgången mot medel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundfelet är extrapolering. Kahneman och Tverskys forskning om heuristiker visar att människor bedömer sannolikheten för att en trend fortsätter efter hur representativ den känns, inte efter baskvantumens statistik — och för aktier betyder det att tre år av stark tillväxt uppfattas som en egenskap hos bolaget snarare än som en episod. Analytiker och investerare sträcker ut den senaste kurvan i framtiden. Därmed prissätts det bästa av det förflutna som om det vore den sämsta sanningen om framtiden — och tvärtom för bolag i motvind."
+        },
+        {
+          "type": "text",
+          "content": "Det akademiska ryggradsstödet kom 1985 när De Bondt och Thaler publicerade överreaktionshypotesen: portföljer av aktier som underpresterat som värst under tre år slog därefter portföljer av de största vinnarna med i genomsft cirka 25 procentenheter under de följande tre åren. Marknaden straffade förlorare för hårt och belönade vinnare för mycket — precis Dremans decilmönster, fast byggdt på tidigare avkastning i stället för värderingsmultipel. Att två oberoende infallsvinklar når samma slutsats stärker tesen: felet sitter i hur marknaden hanterar historik, inte i något enskilt nyckeltal."
+        },
+        {
+          "type": "text",
+          "content": "Den fundamentala motorn bakom överreaktionen är återgång mot medel — den mest underskattade kraften i finans. Högt lönsam tillväxt attraherar konkurrens, kapital och substitution; pressade marginaler driver konsolidering, kostnadskontroll och utträde. Resultatet är att extrema tillväxttal nästan alltid klappar ut mot branschens normalnivå, medan de värsta bolagen ofta repeteras av omstrukturtering eller konkurser som tar ut kapacitet. Dreman återkommer gång på gång till att baskvanten för fem års tillväxt är låg — andelen bolag som växer över 20 procent per år i fem år är historiskt en lågenprocentig minoritet — medan marknadens prisning implicerar att undantaget är regeln."
+        },
+        {
+          "type": "text",
+          "content": "Samtidigt som marknaden överreagerar på lång sikt underreagerar den på kort: efter en överraskning drar priserna inte hela vägen direkt, utan fortsätter att glida i överraskningens riktning i veckor och månader. Ankaret sitter kvar trots ny information. Denna kombination — överreaktion på årssidan, underreaktion på dagssidan — är hela den konträra mekanismen i miniatyr och tas i detalj i kapitel 7. För AK1A blir slutsatsen att pris avviker från värde länge nog att en tålmodig portfölj kunna plocka ut skillnaden, men att själva insamlingen sker i små steg av överraskningar, inte i ett stort upprättelseögonblick."
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är aldrig 'är det ett bra bolag' utan 'vilken tillväxt står i priset, och vad säger historiens baskvantum om sådan tillväxt?' Återgången mot medel är konträrens kollega: den gör det hatade bolagets nästa överraskning sannolikt positiv, och det älskades nästa sannolikt besviken — inte för att världen är orättvis, utan för att konkurrens är trögt men obevekligt verkande."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Överreaktion och återgång mot medel\",\"rader\":[[\"Beteende\",\"Marknaden gör\",\"Konsekvens i pris\"],[\"Extrapolering\",\"sträcker ut senaste trenden\",\"extrema multiplar på glans och skam\"],[\"Överreaktion på lång sikt\",\"straffar förlorare för hårt\",\"De Bondt–Thaler: förlorare slog vinnare med cirka 25 pp på tre år\"],[\"Underreaktion på kort sikt\",\"prissätter inte hela överraskningen direkt\",\"priset glider vidare efter rapporter\"],[\"Baskvantsförakt\",\"prissätter undantag som regel\",\"få bolag växer >20 %/år i fem år\"],[\"Återgång mot medel\",\"konkurrens pressar toppar, omstrukturering lyfter bottnar\",\"tillväxt konvergerar mot branschens normal\"],[\"Strategiskföljd\",\"—\",\"köp det extremt föraktade, undvik det extremt älskade\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en sektor som för tillfället är som mest utskälld i svenska medier. Skriv ner den rådande berättelsen i två meningar — den fungerar som marknadens ankare. Leta sedan fram två fakta som talar emot total pessimism: till exempel V12 intäktsstabilitet över fem år och V07 bruttomarginal som hållit även i nedgångar. Fråga slutligen: innehåller dagens multipl (V04/V05/V06) nån återhämtning alls, eller prissätter den fortsatt förfall? Skriv ner svaret som en sats om förväntningar, inte om bolagets kvalitet."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade De Bondt och Thaler (1985) i sin överreaktionsstudie?",
+          "alternativ": [
+            "Att vinnaraktier fortsätter slå förloraraktier i alla perioder",
+            "Att portföljer av stora förlorare därefter slog stora vinnare med i genomsnitt cirka 25 procentenheter under tre år",
+            "Att värderingsmultiplar saknar betydelse för avkastningen",
+            "Att marknaden alltid prissätter information direkt och korrekt"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad marknaden gör med ett bolag som redan fallit kraftigt — och hur mycket av det värsta som då redan ligger i priset."
+        },
+        {
+          "q": "Varför är återgång mot medel så viktig för den konträra tesen?",
+          "alternativ": [
+            "Den gör att alla bolag förr eller senare går i konkurs",
+            "Den garanterar att aktier aldrig kan falla",
+            "Konkurrens pressar extrema tillväxttal mot normalnivåer och omstrukturering lyfter pressade bolag — extrema utfall är tillfälliga",
+            "Den innebär att index alltid slår aktiva förvaltare"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vad kapital som söker avkastning gör med en bransch med exceptionellt höga marginaler."
+        },
+        {
+          "q": "Hur kan marknaden samtidigt överreagera på lång sikt och underreagera på kort?",
+          "alternativ": [
+            "Det är en motsägelse — endera gäller",
+            "Överreaktionen gäller bara räntor och underreaktionen bara valutor",
+            "Överreaktionen gäller bara småbolag",
+            "Ankaret gör att enskilda nyheter bara prissatas delvis och gradvis, medan den ackumulerade berättelsen driver priserna långt utanför rimliga nivåer"
+          ],
+          "ratt": 3,
+          "tips": "Skilj på reaktionen på en enskild rapport och på flera års samlad berättelse."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Analytikernas tillväxtbias — estimeringsfelens verkliga storlek",
+      "intro": "Om analytiker hade rätt ungefär alltid skulle överraskningar inte spela någon roll. Dreman dokumenterar det motsatta: konsensusfel är stora, systematiskt optimistiska och som störst just där värderingen är högst. Detta är surprise-lärans bränsle.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dreman och Michael Berry granskade i en uppmärksammad studie hundratusentals kvartalsskattningar ur IBES databas och fann att konsensusfel inte var små justeringsfel utan stora, riktade misstag: skattningarna var i genomsnitt optimistiska, och felmarginalerna i storleksordningen tiotals procent — inte enstaka. Konsekvensen är oerhört viktig för förståelsen av marknaden: eftersom verkliga utfall hamnar vida ifrån konsensus i en majoritet av kvartal är det inte resultaten i sig som flyttar kurserna, utan avståndet till förväntningarna. En bra rapport kan fälla en aktie och en medioker kan lyfta en — beroende på ribban."
+        },
+        {
+          "type": "text",
+          "content": "De långa prognoserna är ännu värre. I Dremans och Eric Lufkins granskning av analyikers femårstillväxtprognoser blev den faktiska tillväxten för bolagen med högst prognostiserad tillväxt i genomsft mindre än hälften av prognosen — ett genomsnittligt fel av närmare hundra procent. Mönstret är inte slarv utan struktur: ju glänsande bolaget, desto högre sätter marknaden ribban, och desto längre ifrån verkligheten hamnar den. Det är extrapoleringen från förra kapitlet i siffror — den senaste tillväxtkurvan vikts ut i fem år och klubbas fast i en multipel."
+        },
+        {
+          "type": "text",
+          "content": "Incitamenten förvränger ytterligare. Säljsidans analytiker arbetar ofta nära bolag som deras hus vill ha investmentbanking-affärer från, och under 1990-talets bullmarknad var ungefär nio av tio rekommendationer köp eller starkt köp medan rena säljrekommendationer under vissa år var nere i omkring en procent. Jay Ritters IPO-studie kompletterar bilden: bland de 1 526 bolag som börsnoterades 1977–1987 avkastade genomsnittsbolaget knappt 35 procent under de tre följande åren, mot över 60 procent för jämförbara redan noterade bolag. Marknadens mest entusiastiska prissättning sker där informationen är som tunnast och incitamenten som starkast."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s språk: V01 Försäljningstillväxt och V02 ARR-tillväxt är verkliga och värdefulla faktorer — felet är att betala för dem till fullo i dag. Konsensus är inte information utan marknadens sinnesstämning uttryckt i siffror. Därför behandlar AK1A prognoser som ett beteendeinlägg: frågan är alltid vad som måste bli sant för att priset ska hålla, och hur sannolikt det är med hänsyn till baskvantumet — inte vad analytikerna tror. Dremans rådjur till investerare är därför att avfärda makroprognoser: ingen kan förutsäga räntor, ekonomin eller börsen — dismiss all such forecasts."
+        },
+        {
+          "type": "insikt",
+          "content": "Konsensus är motparten, inte kompassen. När du i AK1A frågar 'vad står i priset?' gör du Dremans analys omvänd: du läser marknadens implicita prognos ur multipeln och jämför den med baskvantens hård fakta. Skillnaden mellan dessa två är din bruttomarginal — och den finns bara där marknaden har satt ribban fel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Estimeringsfelens anatomi\",\"rader\":[[\"Område\",\"Fynd i Dremans material\",\"Mekanism\"],[\"Kvartalskonsensus\",\"fel i tiotals procent, ofta optimistiskt\",\"ankare + incitament\"],[\"Femårstillväxt\",\"faktisk tillväxt ofta under hälften av prognos för toppgruppen\",\"extrapolering av senaste trenden\"],[\"Rekommendationer\",\"cirka 9 av 10 köp under 1990-talet, sälj runt 1 %\",\"banking-relationer, karriärrisk\"],[\"IPO 1977–1987\",\"knappt 35 % avkastning på tre år mot över 60 % för jämförbara bolag\",\"tunn information + maximal entusiasm\"],[\"Makroprognoser\",\"omöjliga att träffa_consistent\",\"komplexitet + självöverskattning\"],[\"Strategiskföljd\",\"—\",\"prissätt förväntningar, inte uppnådda resultat\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en svenska storlek med hög förväntad tillväxt — gärna en som media tycker om. Räkna ut vad priset kräver: om V06 EV/EBITDA ligger på 20 mot sektorns historiska snitt kring 12, vilken årlig tillväxt i fem år måste inträffa för att multipeln ska vara motiverad om sektorn samtidigt normaliseras? Skriv ner siffran. Slå sedan upp baskvanten: hur stor andel bolag i historien har levererat den tillväxten fem år i rad? Anteckna gapet mellan krav och baskvant — det är Dremans hela tes i en enda övning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var det centrala fyndet i Dreman och Berrys studie av kvartalsskattningar?",
+          "alternativ": [
+            "Att konsensus träffade utfallet inom någon procent nästan alltid",
+            "Att felen var stora och systematiskt optimistiska — ofta i storleksordningen tiotals procent",
+            "Att analytiker bara prognostiserar utdelningar",
+            "Att felen enbart berodde på valutaeffekter"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad som händer med avståndet mellan förväntan och verklighet om skattningarna ständigt ligger över utfallet."
+        },
+        {
+          "q": "Vad gällde för analyikers femårstillväxtprognoser i Dremans och Lufkins granskning?",
+          "alternativ": [
+            "De var i genomsnitt korrekta inom fem procent",
+            "De var endast fel för småbolag",
+            "För bolagen med högst prognostiserad tillväxt blev faktisk tillväxt i genomsnitt mindre än hälften av prognosen",
+            "De var systematiskt pessimistiska"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vad extrapoleringen av en redan hög tillväxtkurva gör med en femårsprognos."
+        },
+        {
+          "q": "Vad visade Jay Ritters IPO-studie 1977–1987?",
+          "alternativ": [
+            "Att nynoterade bolag slog redan noterade bolag klart under de tre första åren",
+            "Att nynoteringar i genomsnitt avkastade knappt 35 procent på tre år mot över 60 procent för jämförbara noterade bolag",
+            "Att alla nynoteringar gick i konkurs",
+            "Att noteringstajming saknar betydelse för avkastningen"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på var entusiasm och information möts som mest snedvridet i en bolags livscykel."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Surprise-läran — förväntningsribban som flyttar priser",
+      "intro": "Här är bokens mekaniska hjärta: inte resultaten utan förväntningarna flyttar kurser, och förväntningarnas höjd styrs av värderingen. Lågt värderade bolag slår sin låga ribba oftare än de misslyckas; högt värderade misslyckas oftare än de slår. Mechanismen tas här steg för steg, från rapport till kurs.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utgångspunkten är asymmetrin i ribbans höjd. Ett bolag som handlas på låg V06 bär en implicit prognos om att saker förblir tröga eller förvärras — ribban ligger på golvet. Ett bolag på hög multipel bär en prognos om fortsatt exceptionell tillväxt — ribban ligger i taket. Med estimeringsfel i tiotals procent (kapitel 6) blir frågan inte 'är verkligheten bra?' utan 'är verkligheten bättre än ribban?'. En tråkig men stabil verklighet slår en pesimistisk prognos; en bra men inte heroisk verklighet missar en heroisk prognos. Därför är lågt värderade bolag inte bättre bolag — de är bättre placerade inför nästa rapport."
+        },
+        {
+          "type": "text",
+          "content": "Dremans empiri visar att utfallsfordelningen speglar det. Lågt värderade bolag levererar positiva överraskningar oftare än negative — i hans material slog de konsensus i runt sex av tio rapporter, medan högt värderade bolag misslyckades oftare än de levererade. Än viktigare är reaktionernas storlek: en positiv överraskning i ett lågt värderat bolag ger en kraftig kursreaktion följt av fortsatt uppdrift i veckor och månader, eftersom marknadens ankare sitter så lågt att den måste revideras upprepade gånger. En negativ överraskning i samma bolag ger dämpad och kort reaktion — mycket av besvikelsen ligger redan i priset. Spegelbilden gäller för glänzarna: negativa överraskningar faller dem hårt och länge, positiva överraskningar reagerar trögt eftersom de redan var kalkylerade."
+        },
+        {
+          "type": "text",
+          "content": "Denna tröga efterföljande rörelse — post-earnings announcement drift — är en av de mest välbelagda anomalier i finansforskningen (Victor Bernard och Jacob Thomas dokumenterade den akademiskt, och den finns kvar decennier efter upptäckten). Att den existerar är beteendebevis nummer ett: om marknaden vore rationell skulle en överraskning prissättas på en gång. Istället tar omprövningen tid, eftersom varje investerare väntar på nästa bekräftelse innan ankaret flyttas. För konträren blir driftkvoten ett insamlingsinstrument: varje besviken pessimism hos ett lågt värderat bolag är en liten utdelning av den stora felprissättningen."
+        },
+        {
+          "type": "text",
+          "content": "Portföljkonsekvensen är den dolda motorn bakom decilpremien. En portfölj av femton till trettio lågt värderade bolag får en positivt snedvriden överraskningsprofil: många små positiva driftar uppåt, få katastrofala omprövningar nedåt — eftersom katastrofen till stor del redan var prissatt. En portfölj av glänzare har omvänd profil: små belöningar för framgång och stora, ihållande fall för besvisselser. Slår du ihop detta med lägre beta från kapitel 3 förstår du varför lågdecilerna kunde leverera mer med mindre risk: själva utfallsfordelningen var bättre formad, inte bara snittet högre."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga alltid 'vad måste gå fel för att jag förlorar stort?' — för båda decilerna. Svaret avgörs inte av bolagets kvalitet utan av ribbans höjd. Det är förväntningarnas geometri som avgör hur verkligheten landar, och därför skyddar låg värdering på sätt som hög kvalitet aldrig kan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Överraskningarnas asymmetri\",\"rader\":[[\"Kombination\",\"Frekvens/mönster\",\"Kursreaktion\"],[\"Lågt värderad + positiv överraskning\",\"slår ribban oftare (i runt sex av tio rapporter i Dremans material)\",\"kraftig reaktion + fortsatt drift uppåt\"],[\"Lågt värderad + negativ överraskning\",\"förekommer men förväntat\",\"dämpad, kort fall — mycket redan prissatt\"],[\"Högt värderad + negativ överraskning\",\"misslyckar oftare än de slår\",\"kraftigt och ihållande fall — ankaret måste omprövas\"],[\"Högt värderad + positiv överraskning\",\"levereras ibland\",\"trögt — framgången var redan kalkylerad\"],[\"Mekanism\",\"ribbans höjd + estimeringsfel + anchoring\",\"drift i överraskningens riktning (PEAD)\"],[\"Portföljföljd\",\"många små positiva driftar, få katastrofer\",\"positivt snedvriden utfallsprofil\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en ribbanevaluering av tre lågt värderade kandidater från kapitel 2:s övning. Skriv för varje: (1) Vilken implicit prognos står i dagens V04/V06 — fortsatt förfall, oförändrat trögt läge eller återhämtning? (2) Hur hög är ribban inför nästa rapport — vad förväntas i siffror? (3) Klassificera varje bolag som låg- eller högribboläge. Behåll bara de med lägst ribba på listan. Du har nu konstruerat den mekanism detta kapitel beskriver — i stället för att hoppas på goda nyheter har du positionerat dig för att vanliga nyheter ska räcka."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför slår lågt värderade bolag förväntningarna oftare än de misslyckas?",
+          "alternativ": [
+            "Därför att de alltid är bättre bolag",
+            "Därför att lågt värderade bolag aldrig har negativa överraskningar",
+            "Därför att deras multipel alltid är lägre än sektorns",
+            "Därför att den implicita prognosen i priset är pesimistisk — ribban ligger lågt och en trögt stabil verklighet räcker för att slå den"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vilken framtid som redan är inbakad i priset när marknaden hatar en aktie."
+        },
+        {
+          "q": "Vad är post-earnings announcement drift och varför är den betydelsefull?",
+          "alternativ": [
+            "Att kursen efter en överraskning fortsätter röra sig i överraskningens riktning under veckor — ett bevis på att information inte prissätts direkt",
+            "Att kurser står stilla efter rapporter",
+            "Att utdelningar dröjer till nästa kvartal",
+            "En teknikoptisk indikator utan fundamental betydelse"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad långsam omprövning av ankare gör med prisets väg från rapportdag till ny jämvikt."
+        },
+        {
+          "q": "Hur bidrar surprise-asymmetrin till att lågdecilerna hade lägre risk?",
+          "alternativ": [
+            "Portföljen får många små positiva driftar och få katastrofala omprövningar — katastrofen var till stor del redan prissatt",
+            "Överraskningar är mindre i lågt värderade bolag",
+            "Lågt värderade bolag rapporterar mer sällan",
+            "Asymmetrin gör att beta automatiskt blir högre"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på formen på utfallsfordelningen — inte bara var snittet ligger utan vad som finns i vänster svans."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Konträr strategi i praktiken — portföljbyggets regler (V10–V12)",
+      "intro": "Dreman är inte en aktiejägare som litar på enstaka namn — strategin är en portföljteknik. Diversifiering över minst femton bolag och flera sektorer, balansräkningar som tål väntan, likvida aktier och en horisont på tre till fem år. Detta kapitel översätter reglerna till AKM1:s V-variabler.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Regel ett: diversifiering. Dreman rekommenderar minst femton aktier, gärna tjugo till trettio, utspridda över olika sektorer — som riktlinje max en sjättedel till en femtedel av portföljen i en enda sektor. Anledningen är matematisk snarare än filosofisk: överraskningar är delvis bolagsspecifika, och kraften i surprise-asymmetrin (kapitel 7) är en statistisk egenskap hos gruppen, inte hos individen. Även den bäste konträren har fel om många enskilda bolag — portföljen är maskinen som förvandlar många osäkra enstaka felpris till en pålitlig sammanlagd edge. Att köpa tre billiga aktier är ett vad; att köpa tjugofem är en strategi."
+        },
+        {
+          "type": "text",
+          "content": "Regel två: balansräkningen måste tåla väntan. V10 Skuldsättningsgrad ska vara hanterbar, för i kriser förvandlar skuld tillfälliga problem till permanenta: refinansiering på värsta tänkbara tidpunkt, tvångsförsäljningar, utspädningar. Konträr investering fungerar bara om bolaget lever när sentimentet vänder — därför kompletterar Dreman låg multipel med krav på substans och skuldfrihet i praktiken. I AK1A läggs V19 Kapitalförbrukning och emissionsrisk ovanpå: ett ungt bolag som ser billigt ut på V04 men som måste emittera kapital årligen är ingen lågvärderingsposition utan en option med negativ bärkomst — utspädningen äter upp återhämtningen."
+        },
+        {
+          "type": "text",
+          "content": "Regel tre: likviditet (V11) och regel fyra: tålamod. Köp aktier du kan sälja utan att flytta kursen själv — olåsta småbolag straffar tvångssäljare, och konträra perioder slutar ofta med att du behöver ombalansera i just det ögonblicket. Och ge strategin tid: Dremans underpresterar mot marknaden ofta i ettårs- och tvåårsperioder; omprissättningen av ett hatat bolag är en process av många rapporter, inte en händelse. Tre till fem år är miniminivån, och bränslet som gör väntan uthållig är V12 intäktsstabilitet — intäkter som kommer tillbaka varje kvartal oavsett rubriker gör det möjligt att skilja tillfälliga_attachment-svängningar från verklig försämring."
+        },
+        {
+          "type": "text",
+          "content": "Säljsidans logik hör också till praktiken. Dreman säljer när multipeln närmar sig marknadens nivå — felprissättningen är då skördad och kapitalet kan flyttas till en djupare rabatt; när den grundläggande tesen visar sig fel (strukturell nedgång, inte konjunktursvacka); eller när ett bättre alternativ med större kuschen dyker upp. Inte sälja på grund av tristess, en dålig kvartal utan tesbrott eller mediernas förakt — det är omvända fallen av inköpsargumenten. I AK1A termer är detta hela kedjan: köp på V04–V06, filtrera genom V10–V12 och V19, håll genom bruset, sälj när multipeln eller tesen är slut."
+        },
+        {
+          "type": "insikt",
+          "content": "Den konträra enheten är portföljen, inte aktien. Diversifiering över femton plus hatade namn omvandlar individuell osäkerhet till statistisk edge — därför är koncentration 'i min bästa lågvärdesidé' en självmotsägelse: den behåller felet men slänger ifrån sig försäkringen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dremans portföljregler i AKM1-termer\",\"rader\":[[\"Regel\",\"Dremans krav\",\"AKM1-variabel\"],[\"Antal bolag\",\"minst 15, gärna 20–30\",\"portföljkonstruktion\"],[\"Sektorspridning\",\"max cirka 15–20 % per sektor\",\"branschdiversifiering\"],[\"Skuldsättning\",\"hanterbar, kris tålbar\",\"V10\"],[\"Likviditet\",\"kunna sälja utan att flytta kursen\",\"V11\"],[\"Intäktsstabilitet\",\"stäiga intäkter gör väntan möjlig\",\"V12\"],[\"Kapitaldisciplin\",\"inga återkommande emissioner\",\"V19\"],[\"Horisont\",\"3–5 år minimum\",\"tålamod som position\"],[\"Sälj\",\"multipel mot marknadsnivå, tes bruten eller bättre alternativ\",\"V04–V06 i praktik\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en pappersportfölj enligt Dreman: välj ut 15 aktier ur de billigaste två kvintilerna på V04–V06, med max 20 procent i en sektor, där varje namn dessutom passerar V10-högstgräns, har stabil V12 över fem år och ingen pågående emissionskarusell (V19). Skriv upp portföljen och rör den sedan inte på en månad. Föra dagbok över impulsen att byta, lägga till eller peta — varje anteckning om 'jag orkar inte vänta' är priset du kommer få betala i verkligheten, och den som känner den i förväg är bättre rustad."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kräver Dreman minst femton aktier i en konträr portfölj?",
+          "alternativ": [
+            "För att mäklarkostnaderna då blir lägre",
+            "För att överraskningsasymmetrin är en statistisk egenskap hos gruppen — enskilda felpris kan slå fel, portföljen samlar in edge",
+            "Därför att index innehåller minst femton aktier",
+            "För att fewer bolag ger högre utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad som händer med ett enskilt bolags osäkerhet när det blandas med tjugofyra andra oberoende felpris."
+        },
+        {
+          "q": "Varför är hanterbar V10 Skuldsättningsgrad så central i den konträra strategin?",
+          "alternativ": [
+            "Skuld gör aktien billigare på P/E",
+            "Skuld ökar utdelningen automatiskt",
+            "Skuld kan förvandla en tillfällig svacka till en permanent förlust genom refinansiering och tvångsåtgärder i kriser",
+            "Det är bara ett kosmetiskt krav utan praktisk betydelse"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vem som bestämmer villkoren när ett skuldsatt bolag behöver nytt kapital i ett dåligt läge."
+        },
+        {
+          "q": "Vilken roll spelar V12 Intäktsstabilitet i portföljbygget?",
+          "alternativ": [
+            "Ingen — det är en tillväxtvariabel",
+            "Stabila intäkter gör det möjligt att skilja sentimentsvängningar från verklig försämring, vilket gör 3–5 års väntan uthållig",
+            "Den ersätter behovet av diversifiering",
+            "Den används bara vid försäljning"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad du behöver veta om intäkterna för att hålla positionen genom dåliga rubriker."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "När konträrt fungerar bäst — bear-marknader, kriser, sektor-aversion",
+      "intro": "Strategins relativa styrka kommer när rädslan är som störst: i bear-marknader, kriser och när hela sektorer är prisade för undergång. Då ligger förväntansribborna på golvet och kuschen är som djupast. Samtidigt är det precis där disciplinen prövas hårdast.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bear-marknader är den konträra strategins hemmaplan. Lågt värderade bolag faller mindre — dels beroende på lägre beta (kapitel 3), dels beroende på att pesimismen redan ligger i priset och förväntansribban inte kan sänkas mycket mer. Efteråt återhämtar de sig snabbare, eftersom redan normala nyheter då räknas som positiva överraskningar (kapitel 7). Glädjande nog för den tålmodige är därför decilpremien historiskt som störst i och efter de värsta åren — det är i nedgångarna som glädjarnas höga ribbor hämningslöst revs ner, medan lågribborna omprövades uppåt."
+        },
+        {
+          "type": "text",
+          "content": "Kriser mekanism är tvång. När belånade och likviditetspressade aktörer måste sälja friställds priset från det fundamentala värdet — 1987, 2008, mars 2020. I den omarbetade upplagan från 2012 driver Dreman tesen att de största köptillfällena kommer efter katastrofdalar, när kvalitetsbolag handlas på djupa rabatter: den som då har kontant likviditet, ingen egen hävstång och en skriven checklista kan köpa det som andra tvingas överge. AK1A kompletterar med V11-logiken: dina egna positioner måste vara så likvida och skuldfria att det är du som kan agera i krisen, inte du som tvingas agera."
+        },
+        {
+          "type": "text",
+          "content": "Sektor-avversion är den tredje arena där konträrt slår till. Ibland prisas hela branscher som om de vore på väg att försvinna: europeiska banker efter skuldkrisen 2011, olja 2016 och 2020, telekommunikationsutrustning efter 2000, svenska bolag under 1990-talets bankkris. Där finns potential — men också fällan från nästa kapitel: sektorn måste vara hatad, inte döende. AK1A:s V13–V18 används som sortering: Patent och IP (V13), varumärke (V14), nätverkseffekter (V15) och långa avtal (V17) är tillgångar som överlever en sentimentbotten; regleringskatalysatorer (V18) och produktlanseringar (V16) är de utlösare som kan vända prisningen när de траdiga intäkterna (V12) väl är tillbaka i fokus."
+        },
+        {
+          "type": "text",
+          "content": "Det strategiska problemet är att köptillfällena känns fel meddesignat. Affekten (kapitel 4) skriker att det som fallit är farligt och att det som stigit är tryggt — i botten av en kris är varje impulse du har riktad emot köp. Därför är mekaniska regler inte byråkrati utan överlevnadsmateriel: skrivna köpnivåer, återkommande sparing under nerförskördning, förbestämda positionstorlekar. Dreman är tydlig med att strategin som överges i botten av en kris inte var en strategi — den var en squatning i en trend, och den som gör om den gör fel på samma ställe igen."
+        },
+        {
+          "type": "insikt",
+          "content": "Den konträra kalendern är inverterad: dina bästa köpdagar är marknadens värsta rubrikdagar. Behandla krisdislokationer som renaste formen av V04–V06-rabatt — och kom ihåg att hela din konstruktion (V10 skuldfrihet, V11 likviditet, V12 stabila intäkter, V19 ingen emissionspress) existerar enbart för att du ska kunna agera den dagen när andra inte kan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Konträra tillfället och deras mekanik\",\"rader\":[[\"Tillfälle\",\"Mekanism\",\"AK1A-verktyg\"],[\"Bear-marknad\",\"lägre beta + ribba på golvet\",\"V04–V06 rabatt, V12\"],[\"Kris (1987, 2008, 2020)\",\"tvångsförsäljning friställer pris från värde\",\"likviditet, ingen hävstång, checklista\"],[\"Sektor-aversion\",\"bransch prissatt som döende\",\"V13–V17 tillgångstest\"],[\"Regulatorisk vendetta/bottom\",\"V18 som utlösare\",\"V18 + V12\"],[\"Efter-krak-kvalitet (2012-upplagan)\",\"kvalitetsbolag på djup rabatt\",\"kombination V04–V06 + V09\"],[\"Varning\",\"måste vara hatat, inte döende\",\"fälltest kapitel 10\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en sektor som för tillfället är som mest omskriven negativt. Plocka tre bolag där och poängsätt varje: V07 bruttomarginal fem år tillbaka (stabil eller urholkad?), V10 Skuldsättningsgrad (klarar tre år till av dålig marknad?), V12 intäktsstabilitet och V13–V17 (finns en varaktig tillgång — varumärke, IP, avtal, nätverk — kvar?). Klassificera sedan varje bolag som 'billigt och hatat' eller 'billigt och döende'. Endast de förstnämnda går vidare till en Dreman-portfölj — anteckna vilka som föll bort och varför."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är bear-marknader den konträra strategins bästa terräng?",
+          "alternativ": [
+            "Därför att alla aktier då stiger",
+            "Lägre beta och förväntansribbor på golvet gör att de faller mindre och återhämtar snabbare — normala nyheter räknas då som positiva överraskningar",
+            "Därför att utdelningar betalas dubbelt",
+            "Konträr strategi fungerar bara när marknaden stiger"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på hur en ribba som redan ligger i källaren förhåller sig till nästa nyhetsflöde."
+        },
+        {
+          "q": "Vad menas med att kriser har en mekanik av tvång?",
+          "alternativ": [
+            "Att centralbanken tvingar upp kurserna",
+            "Att olja och råvaror styr börsen",
+            "Att belånade och pressade aktörer måste sälja oavsett värde, vilket friställer priserna från det fundamentala",
+            "Att bolag tvingas betala utdelning"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vem som sätter priset när en del av marknaden måste sälja till vilket pris som helst."
+        },
+        {
+          "q": "Hur använder AK1A variablerna V13–V18 vid sektor-avversion?",
+          "alternativ": [
+            "Som sortering för att skilja 'hatad sektor' från 'döende sektor' — varaktiga tillgångar och katalysatorer avgör om lågvärderingen är tillfällig",
+            "Som mått på värderingsmultiplar",
+            "Som korttidsmomentumindikatorer",
+            "De används bara för att beräkna beta"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad som krävs för att en hel bransch ska överleva en sentimentbotten och kunna omprissättas."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Fällorna — value traps, cykliska toppar och \"cheap for a reason\" (V01–V03)",
+      "intro": "Inte allt billigt är konträrt guld. Två fällor dominerar: strukturella nedgångar som ser billiga ut men som blir permanent billigare, och cykliska toppar där multiplarna ser låga ut just för att vinsterna är på rekordnivå. Konsten är att skilja tillfälligt hat från permanent förfall.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Value trap är bolaget som är billigt år efter år, förblir billigt och där resultatet långsamt urholkas — marknaden hade rätt, köparen hade en billig multipel på ett krympande underlag. Kärnfrågan är därför alltid: är skälet till den låga värderingen tillfälligt (konjunktur, sentiment, kris) eller strukturellt (substitution, teknologisk omvälvning, försvinnande efterfrågan)? De strukturella varningssignalerna i AKM1 är tydliga: V01 försäljningstillväxt som trendar nedåt år från år, V03 intäktsdiversifiering som försämras genom kundkoncentration, V07–V08 marginaler som urholkas kvartal för kvartal. Dagstidningsbolagen och filmspelaren Kodak var billiga på multipeln i åratal medan deras underlag försvann — det var inte sentiment, det var arkeologi."
+        },
+        {
+          "type": "text",
+          "content": "Cykelfällan är listigare: där ser multiplerna som lägst ut när läget är som bäst. Stål, rederier, olja och byggmaterial når rekordvinster på cykelns topp — och ett rekordhögt vinstunderlag ger ett lågt P/E och låg V06 precis när vinsterna är på väg att vända. Lågt P/E på toppvinster är en synvilla: nämnaren E är inte normaltillståndet utan undantaget. AK1A:s test är att ställa multiplen mot V01–V03-trenden: om försäljningstillväxten och intäktsdiversifieringen står på cykeltopp samtidigt som multiplerna ligger i botten för sektorn — var då misstänksam i stället för girig. Fråga 'vad betyder multipeln om intäkterna normaliserar ned mot tioårssnittet?' och räkna på det svaret innan du köper."
+        },
+        {
+          "type": "text",
+          "content": "Dremans försvar mot fällorna är inte fullkomlig urskiljning utan konstruktion. Dels diversifieringen (kapitel 8): vissa fällor kommer att slå till i en portfölj med tjugofem namn, och det är inprissatt. Dels filtren: V12 intäktsstabilitet ända genom cykler, V10 som bär kriser, och undvikande av namn där V01-trenden redan brutit nedåt. V19 Kapitalförbrukning och emissionsrisk tillhör samma försvarslinje — ungt bolag som ser billigt ut men bränner kassa och emitterar återkommande är en annan sorts fälla, där utspädningen äter återhämtningen även om tesen slår in. Konträren behöver aldrig ha rätt om allt — han behöver bara att gruppen återhämtar sig och att enskilda strukturella förluster inte är dödliga."
+        },
+        {
+          "type": "text",
+          "content": "Säljlogiken är fälltestets spegel. Tesen bruten i strukturell mening — intäkter, marginaler eller tillgångsbas (V13–V17) visar bestående försämring — är en försäljning oavsett hur billigt det ser ut; ny lägre multipel på ett sämre bolag är inte ett nytt köp, det är samma gamla fälla ett år senare. Men en dålig kvartal i en annars intakt tes, eller en kursreaktion på rubriker utan fundamentalt innehåll, är tvärtom den överreaktion strategin lever på. Dreman sålde när multipeln nådde marknadsnivå, när tesen bröts eller när ett större felpris dök upp någon annanstans — aldrig på tristess eller förakt."
+        },
+        {
+          "type": "insikt",
+          "content": "'Billigt' är ett faktum om priset; 'felprissatt' är en bedömning om skälet. Hela den konträra konsten ligger i frågan om varför — tills du kan formulera varför marknaden har fel och varför det felet är tillfälligt, är låg multipel bara en siffra. V01–V03-trenden, V07–V08-marginalerna och V13–V18 tillgångstestet är AK1A:s sätt att tvinga fram det svaret innan kapitalet börjar vänta."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Value trap-checklist\",\"rader\":[[\"Signal\",\"Varning om\",\"Tolkning\"],[\"V01 försäljningstillväxt\",\"trend nedåt flera år\",\"strukturell nedgång — slå ifrån dig\"],[\"V03 intäktsdiversifiering\",\"kundkoncentration ökar\",\"en kunds beslut blir ditt resultat\"],[\"V07–V08 marginaler\",\"urholkas kvartal för kvartal\",\"pris­kraft försvinner — underlaget krymper\"],[\"V12 intäktsstabilitet\",\"ostadig genom cykler\",\"bränslet för väntan saknas\"],[\"V19 kapitaldisciplin\",\"bränning + återkommande emissioner\",\"utspädning äter återhämtningen\"],[\"V13–V18 tillgångar\",\"patent/varumärke/avtal försvagas\",\"nästa generation upplaga av samma nedgång\"],[\"Multipl + V01-topp\",\"låg V06 med intäkter på cykeltopp\",\"cykelfälla — normalisera nämnaren först\"],[\"Struktur ok + hatat sentiment\",\"kvarvarande kassaflöde och tillgångar\",\"kandidat — gå vidare till portföljreglerna\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör ett komplett value-trap-test på dina tre billigaste kandidater. Svara ja eller nej på: (1) Är V01-trenden uppåt eller sidledes de senaste fem åren? (2) Ökar eller minskar V03 kundkoncentration? (3) Är V07 bruttomarginalen stabil eller urholkad? (4) Finns en strukturell tillgång — V13 patent, V14 varumärke, V15 nätverk, V17 avtal — som består? (5) Kräver multiplerna att intäkterna är på cykeltopp för att stämma? Räkna antalet nej: ett enda strukturellt nej ska diskvalificera namnet från Dreman-portföljen, oavsett hur billig multipeln är. Anteckna vilket namn som föll bort och vilken siffra som fällde det."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en äkta value trap?",
+          "alternativ": [
+            "Hög multipel på stabila intäkter",
+            "En positiv överraskning som inte reagerar i kursen",
+            "Bolaget förblir billigt år efter år medan resultatet urholkas — marknaden hade rätt om skälet",
+            "En aktie som stigit kraftigt på kort tid"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vad som händer med nämnaren i multiplen när nedgången är strukturell i stället för tillfällig."
+        },
+        {
+          "q": "Varför är lågt P/E vid en cyklisk topp en synvilla?",
+          "alternativ": [
+            "Eftersom P/E alltid är missvisande på cykliska bolag",
+            "Eftersom utdelningar brukar höjas samtidigt",
+            "Eftersom betan då är som lägst",
+            "Eftersom vinsterna i nämnaren står på rekordnivå — multiplen ser låg ut just när underlaget är på väg att normalisera nedåt"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vilken av multiplens två delar som är tillfällig vid en cykeltopp."
+        },
+        {
+          "q": "Hur skyddar sig Dreman-konstruktionen mot fällor den ändå inte kan undvika?",
+          "alternativ": [
+            "Genom att bara köpa storbolag",
+            "Genom diversifiering över 15–30 namn så att enskilda strukturella förluster inte blir dödliga, plus filter som V01-trend, V12-stabilitet och V10-hanterbarhet",
+            "Genom att lita på analyikers säljrekommendationer",
+            "Genom att alltid blanka det billigaste bolaget"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på skillnaden mellan att förutsäga varje fälla och att konstruera portföljen så att några fällor är överlevbara."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Kontroversen — EMH:s försvar och Dremans motangrepp (Fama-French mot LSV)",
+      "intro": "Det ärliga kapitlet. EMH-anhängarna förnekar inte att value-premien finns — de förklarar om den: billig aktie är riskabel aktie, premien är lön för buren risk. Dreman svarar att felet är psykologiskt, inte riskbaserat. I mitten av 1990-talet kom avgörande ammunition till Dremans linje — men kriget avslutades aldrig, och du som investerare behöver förstå båda sidor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "EMH-försvaret, formulerat starkast av Eugene Fama och Kenneth French: i deras trefaktormodell (1992–1993) är aktieavkastning förklarad av marknadsrisk, storlek och — avgörande här — bokvärde/-marknadsvärde-faktorn HML. Att value-aktier (hög B/M, alltså lågt P/B) givit högre avkastning ses inte som ett mispris utan som en riskpremie: billiga bolag är ofta finansiellt trängda, och investerare kräver ersättning för att bära den risken, särskilt i dåliga tider när trångmålet slår som hårdast. I denna läsning är Dremans decilpremie en lön, inte ett markup: ingen gratis lunch — bara en dåligt uppskattad riskfaktor. Det är ett stringent, sammanhängande försvar som inte kan avfärdas."
+        },
+        {
+          "type": "text",
+          "content": "Dremans motangrepp är empiriskt, inte ideologiskt. Om premien vore risklön borde de billigaste portföljerna bete sig som de farligaste — falla mest i nedgångar, kräva mest i kriser, visa högre beta. Hans tabeller visade det omvända: lägre beta, grundare fall i bear-marknader, och en överraskningsmekanism (kapitel 6–7) som är förutsägbar och psykologisk — stora riktade estimeringsfel, asymmetriska reaktioner, drift efter rapporter. Risk förklarar inte varför marknaden systematiskt sätter ribban för högt på glänzare; ankring, affect och analyikers incitament gör det. Ett mispris som drivs av mänsklig natur upprepas — en riskpremi förtjänar sitt namn bara om smärtan faktiskt kommer i dåliga tider."
+        },
+        {
+          "type": "text",
+          "content": "Avgörande ammunition kom 1994 med Lakonishok, Shleifer och Vishnys studie Contrarian Investment, Extrapolation, and Risk. De testade värde- mot glamourstrategier 1968–1990 och fann att värdeportföljerna slog glamourportföljerna med i storleksordningen 8–11 procentenheter per år. Sedan gjorde de det som verkligen skadar riskhistorien: de letade efter tillfällena då värdeportföljerna straffade sig — i nedgångar, i recessioner, över långa fönster — och hittade dem inte. Värde gjorde inte sämre i dåliga tider. Deras förklaring är beteendemässig: marknaden extrapolerar naivt, och värdestrategin betalar sig därför att den systematiskt tar andra sidan om den extrapoleringen. Risk finns kvar som teoretisk möjlighet — Fama invände med det gemensamma hypotesproblemet: varje test av effektivitet är samtidigt en test av vilken prismodell man använde, så anomalier kan alltid skyllas på fel modell — men som empirisk historia blev riskförklaringen svagare efter LSV."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s ställning är pragmatisk: du behöver inte avgöra akademikernas krig för att investera rationellt, men du behöver veta att det pågår. Behandla value som en faktor med en beteendemotor som historiskt inte betett sig som risk — och samtidigt respektera att premiens storlek varierar och att perioder av underprestering är del av paketet, inte ett motbevis men ingen garanti heller. Steelmann båda sidor i varje position: vilken risk bär jag om EMH-folket har rätt, vilket mispris skördar jag om Dreman har rätt? Om du inte kan formulera båda svaren äger du inte tesen — du äger en åsikt."
+        },
+        {
+          "type": "insikt",
+          "content": "Båda lägren håller med om en sak: premien finns. De tvistar om varför — risk eller beteende. Det avgörande för din praktik är att bära tesen ärligt: har du köpt en beteendemotor (då är tålamod ditt verktyg och drift-datan din trygghet) eller en riskpremie (då är positionstorlek och överlevnad ditt verktyg och trång år din fiende)? Konstruera för båda — så kräver AK1A."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två förklaringar till value-premien\",\"rader\":[[\"Fråga\",\"Riskförklaringen (Fama–French)\",\"Beteendeförklaringen (Dreman, LSV)\"],[\"Vad är premien?\",\"kompensation för trångmålsrisk i billiga bolag\",\"betalning för att ta andra sidan om systematiska mispris\"],[\"Varför billig aktie?\",\"hög B/M signalerar finansiell trångmål\",\"affect + extrapolering håller nere det hatade\"],[\"Empirisk prophesia\",\"premien ska komma i dåliga tider\",\"premien ska komma när ribbor slås och glädjar faller\"],[\"Vad visar datan?\",\"HML i snitt cirka 4–5 %/år i långa serier\",\"lägre beta för lågdeciler, LSV: värde slog glamour 8–11 pp/år utan straff i nedgångar\"],[\"Svaghet\",\"finner inte trångmålsmönstret i dåliga tider (LSV)\",\"premín kan försvinina periodvis utan att teori säger när\"],[\"AK1A-följd\",\"positionera för att överleva svaga perioder\",\"håll 3–5 års horisont och skörda överraskningsasymmetrin\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Steelmann-övning: ta din bästa lågvärderingsposition och skriv två analyser à fem rader. Först EMH-versionen: vilken specifik risk bär jag — trångmål, cykel, irreversibel kapitalbindning — och när skulle den slå? Sedan Dreman-versionen: vilket specifikt mispris skördar jag — vilken ribba är för högt ställd, varför är den det och vad vänder den? Om någon av texterna blir tom eller generell är det positionens svagaste sida — och den ska antingen förstärkas genom mer data eller köpas mindre."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur förklarar Fama-French-skolan value-premien?",
+          "alternativ": [
+            "Som en riskpremie — billiga bolag är ofta finansiellt trängda och investerare kräver ersättning för att bära den risken",
+            "Som ett rent dataproblem i Compustat",
+            "Som en effekt av utdelningsskatt",
+            "Som bevis på att marknaden är irrationell alltid och överallt"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på hur en rationell värld räddar effektiviteten när högre avkastning ändå observeras."
+        },
+        {
+          "q": "Vad var det mest skadande fyndet i Lakonishok-Shleifer-Vishnys studie för riskförklaringen?",
+          "alternativ": [
+            "Att värdeportföljer slå glamourportföljer — det visste redan Fama-French",
+            "Att de letade efter perioder då värdeportföljerna straffade sig — nedgångar, recessioner, långa fönster — och inte hittade dem",
+            "Att alla analyiker är oberoende",
+            "Att beta saknar korrelation med avkastning på dagsbasis"
+          ],
+          "ratt": 1,
+          "tips": "En riskpremi ska kännas i handen när det gör ont — fundera på vad LSV letade efter och fann saknat."
+        },
+        {
+          "q": "Vad är Famas invändning med det gemensamma hypotesproblemet?",
+          "alternativ": [
+            "Att alla test av marknadseffektivitet samtidigt testar den prismodell som används — anomalier kan alltid skyllas på fel modell",
+            "Att data alltid är för kort för slutsatser",
+            "Att betor inte kan beräknas korrekt",
+            "Att bara svenska data är tillförlitliga"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad ett avvikande resultat egentligen bevisar om två antaganden testas samtidigt."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Efter boken — vad forskningen sagt och premiens varierande storlek",
+      "intro": "Ärlighetens kapitel om efter-spelet: value-premien är dokumenterad globalt och över lång tid, men den är inte konstant — den har försvunnit i åratal åt gången, både före och efter att den blev känd. Vad som överlever granskning, vad som hänt efter publiceringen och hur AK1A storleksätter faktorn därefter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Forskningen efter Dreman har bekräftat grundfyndet brett. Value-premien finns i internationella data (Fama-French globala faktorserier), i andra tillgångsslag (Cliff Asness och AQR visade value i valutor, obligationer och råvaror) och i långa historiska serier där HML i snitt legat kring 4–5 procent per år. Men publicering har ett pris: McLean och Pontiff följde academiskt upptäckta anomalier och fann att avkastningen i genomsnitt sjönk med omkring en tredjedel utanför provperioden och med mer än hälften efter publicering — del av edgen äts av att den blir känd och kan handlas. Dremans egen förutsägelse var att psykologin är svårare att arbitrer bort än en databeräkning; kapitel 13–14 i den här kursen visar att han hade delvis rätt — premien lever, men smalare och trängre."
+        },
+        {
+          "type": "text",
+          "content": "Samtidigt varierar premiens storlek kraftigt över årtionden, och den ärliga redovisningen är en del av bokens arv. 1998–1999 underpresterade value kraftigt mot tillväxt i teknikbubblans slutspurt — Dreman själv tvingades bära år där strategin såg fel ut, för att sedan vinna tillbaka mycket när bubblan sprack 2000–2001. Under 2010-talet kom value:s sämsta relativa decennium i amerikanska data, med extrema gap mot tillväxt 2017–2020, följt av en våldsam återkomst 2022 när räntan vände. En femtilltiotalsårig svacka är alltså inom historisk erfarenhet — det är inte ett motbevis av faktorn, men det är heller ingen garanti: den som inte kan bära tio års underprestering har ingen faktorstrategi, han har en åsikt med bra bakgrundshistoria."
+        },
+        {
+          "type": "text",
+          "content": "Varför lever premien ändå? Dremans svar är att den psykologiska motorn är hårdkodad: affect och ankring försvinner inte för att någon skriver en bok om dem — människor som mår dåligt av att äga det föraktade köper inte det bara för att en tabell säger att de borde. Dessutom förstärker institutionella bindningar felet: förvaltare med benchmark och karriärrisk straffas hårdare för att avvika och förlora än för att följa och förlora, vilket gör herden rationell på individnivå och dyr för systemet. Åsiktsförakt är därför inte lätt att handla bort — det kräver både kapacitet att bära perioder av svek och en process som inte överges mitt i dem."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s praktiska slutsats är att aldrig köpa ren decil-1-exponering utan att konstruera för premiens variation: kvalitetsfilter (V07–V12) som skyddar det underliggande, fälltestet (V01–V03) som sorterar bort strukturella fallgropar, katalysatorer (V16–V18) och V20 återköp som kan korta väntan, samt en positionstorlek där ett förlorat decennium är överlevbart. Value som tilt, inte som religion — Dreman-motivet i en modern riskram. Kursen i detta: faktorer dör inte, men de vintrar; konstruera för vintern."
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är aldrig 'fungerar value?' utan 'är min konstruktion byggd för att fungera även de åren den inte gör det?' — positionstorlek, horisont och kassaflödesfilter avgör om du är faktorinvesterare eller bara en som gillade en backtest. Historik garanterar premien; din konstruktion avgör om du är kvar när den betalar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Value-premiens historia i korthet\",\"rader\":[[\"Period\",\"Vad som hände\"],[\"1968–1990\",\"LSV: värde slog glamour med cirka 8–11 pp per år\"],[\"1970–1996\",\"Dremans lågdeciler: cirka 15–20 %/år mot 11–14 % för marknad och dyrdeciler\"],[\"Långa serier (FF-data)\",\"HML i snitt cirka 4–5 % per år — med långa svackor\"],[\"1998–1999\",\"value underpresterade kraftigt i teknikbubblans slutspurt\"],[\"2000–2001\",\"value vann stort när bubblan sprack\"],[\"2010-talet\",\"value:s sämsta relativa decennium, extrema gap 2017–2020\"],[\"2022\",\"våldsam återkomst när räntan vände\"],[\"Efter publicering\",\"McLean–Pontiff: anomalier tappar i snitt en tredjedel utanför provperioden, mer än hälften efter publicering\"],[\"Slutsats\",\"premien är verklig men periodvis frånvarande — konstruera för variationen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slå upp tioårsutvecklingen för en värdeindexfond och ett bredare svenskt index. Identifiera value:s sämsta treårsperiod inom decenniet och räkna ut underpresteringen i procent. Besvara sedan skriftligt: (1) Skulle min portfölj ha överlevt den sträckan ekonomiskt? (2) Skulle jag ha stannat kvar i strategin — vilken mekanism, i dag skriven, hade hållit mig kvar? (3) Hur stor del av mitt kapital får ligga i en faktor med den historien? Siffrorna är historiens sätt att ställa frågan kapitel 14 handlar om — beteendet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad fann McLean och Pontiff om publicerade anomalier?",
+          "alternativ": [
+            "Att de blir starkare efter publicering",
+            "Att de är oförändrade över tid",
+            "Att avkastningen i genomsnitt sjönk med omkring en tredjedel utanför provperioden och mer än hälften efter publicering",
+            "Att publicering saknar betydelse för faktoravkastning"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vad som händer när många försöker utnyttja samma felpris samtidigt."
+        },
+        {
+          "q": "Vilken ärlig slutsats ska dras av att value underpresterade under 1998–1999 och stora delar av 2010-talet?",
+          "alternativ": [
+            "Att value-premien är ett dataproblem som aldrig funnits",
+            "Att fem till tio års svackor är inom historisk erfarenhet — de är varken motbevis av faktorn eller garantier för snabb återkomst",
+            "Att value bara fungerar på amerikanska småbolag",
+            "Att man ska byta strategi varje gång ett år gått dåligt"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på skillnaden mellan en faktors långtidsgenomsnitt och dess väg dit."
+        },
+        {
+          "q": "Varför hävdar Dreman att den psykologiska motorn inte arbitrerar bort?",
+          "alternativ": [
+            "Därför att lagar förbjuder värdeinvestering",
+            "Därför att affect och ankring är djupt mänskliga och institutionella karriärrisker förstärker herden — felet är svårt att handla bort även när det är känt",
+            "Därför att ingen läst boken",
+            "Därför att value-aktier saknar utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad som krävs av en förvaltare för att bära det föraktade när det fortsätter falla — och vad som händer om han inte gör det."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Dreman som AKM1-screening — hela checklistan från V01 till V20",
+      "intro": "Översättningskapitlet: hela boken som en körbar AKM1-checklista. Billighet på V04–V06, överlevnad på V10–V12 och V19, fälltestet på V01–V03 och V07–V09, tillgångstestet på V13–V18 och bekräftelsen i V20 — allt under marginal of safety-principen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kärnskärmen är billighet: V04 P/S, V05 P/B och V06 EV/EBITDA ska ligga i det billigaste kvintilen eller decilen av universum — inte bara under något godtyckligt absolut-värde. Kontexten är poängen: billigt betyder billigt mot universum och mot eget historiskt spann. Kontrollera därefter samspelet mellan V05 och V09 ROE: eftersom P/B i praktiken är P/E gånger ROE kan ett lågt P/B med intakt V09 bara betyda två saker — marknaden prissatt låg tillväxt eller hög upplevd risk. Ta reda på vilken: är V12 stabil och V10 hanterbar är det troligen ett sentimentfelpris (Dreman-territorium); är intäkterna i strukturell fall (V01) är det en fälla (kapitel 10)."
+        },
+        {
+          "type": "text",
+          "content": "Överlevnadsfiltren gör väntan möjlig: V10 Skuldsättningsgrad hanterbar så att krisen inte blir permanent, V11 Likviditet så att du kan agera när andra tvingas, V12 Intäktsstabilitet som bränsle genom tre till fem år av tristess, V19 Kapitalförbrukning under kontroll så att ingen emissionskarusell äter återhämtningen. Därefter fälltestet i omvänd ordning: V01–V03 trenden (uppåt eller sidledes, aldrig brutet nedåt; se upp för cykeltopp där intäkterna står på rekord), V07–V08 marginalernas femårshistorik, och V13–V18 tillgångstestet — finns patent och IP (V13), varumärke (V14), nätverkseffekter (V15) eller långa avtal (V17) kvar som gör nedvärderingen tillfällig?"
+        },
+        {
+          "type": "text",
+          "content": "Katalysatorerna och bekräftelserna avgör hastigheten: V16 Produktlanseringar och V18 Regulatoriska katalysatorer kan förkorta väntan genom att tvinga fram omprissättning när sentimentet vänder; V20 Återköp är den mest talskyddade bekräftelsen av alla — när ledningen, som känner bolaget bäst, köper tillbaka egna aktier i lågvärderingen puttar sitt eget kapital dit marknadens affect vägrar gå. Utan katalysator är positionen fortfarande Dreman-korrekt — han köpte inte katalysatorer utan rabatter — men med V20 och V16–V18 på plats kortas vägen och risken för evig lågvärdering minskar. Sammantaget: varje V-variabel i AKM1 svarar på exakt en av Dremans frågor."
+        },
+        {
+          "type": "text",
+          "content": "Marginal of safety är principen som håller ihop allt — i AK1A utan fasta procentsatser, som förhållningssätt. Kuschen mellan pris och värde är både skyddet (du kan ha fel om timing och delvis om tes) och själva avkastningen (dekapprissättningen är historiskt där pengarna gjorts). Dremans ordning är alltid pris först, berättelse sedan: om berättelsen är fantastisk men priset är rättvis eller högt är det ingen konträr position, hur bra bolaget än är. Screenen i en mening: det billigaste kvintilen på V04–V06, minus allt som inte överlever väntan, minus allt som är billigt av strukturella skäl, plus fördel för namn med V20 och katalysatorer — minst femton namn, minst tre år."
+        },
+        {
+          "type": "insikt",
+          "content": "AKM1 är Dreman-checklistan systematiserad: V04–V06 svarar på 'är det billigt?', V10–V12 och V19 på 'överlever det väntan?', V01–V03 och V07–V09 på 'är det billigt av fel skäl?', V13–V18 på 'finns en varaktig tillgång kvar?' och V20 på 'bekräftar de som kan köpa?'. En position som saknar svar på någon av de fem frågorna är inte konträr — den är bara billig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dreman → AKM1 översättningen\",\"rader\":[[\"Dremans fråga\",\"AKM1-variabler\",\"Godkänt svar\"],[\"Är det billigt?\",\"V04, V05, V06\",\"billigaste kvintilen av universum, flera mått i samklang\"],[\"Överlever det väntan?\",\"V10, V11, V12, V19\",\"hanterbar skuld, likvid aktie, stabila intäkter, ingen emissionskarusell\"],[\"Billigt av fel skäl?\",\"V01, V02, V03, V07, V08\",\"trend upp/sidledes, marginaler stabila, ingen cykeltopp i nämnaren\"],[\"Kvalitetskontroll\",\"V09 ROE\",\"lågt P/B med intakt ROE = troligen sentimentfelpris\"],[\"Finns tillgången kvar?\",\"V13, V14, V15, V17\",\"patent, varumärke, nätverk eller avtal består\"],[\"Vad förkortar väntan?\",\"V16, V18, V20\",\"lanseringar, regulatoriska katalysatorer, återköp\"],[\"Samlingsprincip\",\"marginal of safety\",\"kuschen är både skydd och avkastning — utan fast siffra\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör den kompletta Dreman-skärmen på ditt universum: (1) rangordna på genomsnittlig rank på V04, V05 och V06; (2) stryk alla med V10 över din gräns, ostadig V12 eller pågående utspädning (V19); (3) stryk alla med V01-trend nedåt eller intäkter på cykeltopp; (4) poängsätt kvarvarande på V13–V18 och ge bonus för V20 återköp; (5) behåll 15–25 namn med sektortak 20 procent. Skriv upp de tre högst rankade och formulera för varje: vad måste gå fel för att jag förlorar stort? Om svaret är 'konkurrensen äter marginalerna permanent' har fälltestet misslyckats — börja om."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder ett lågt P/B (V05) med intakt V09 ROE i AK11-tolkningen?",
+          "alternativ": [
+            "Alltid en value trap",
+            "Ett tecken på att emission är nära förestående",
+            "Marknaden prissätter antingen låg tillväxt eller hög upplevd risk — med stabil V12 och hanterbar V10 talar det för ett sentimentfelpris",
+            "Att bokvärdet är felaktigt beräknat"
+          ],
+          "ratt": 2,
+          "tips": "Kom ihåg sambandet P/B ≈ P/E × ROE och fråga vad marknaden kan ha rätt och fel om."
+        },
+        {
+          "q": "Varför är V20 Återköp den mest talskyddade bekräftelsen i checklistan?",
+          "alternativ": [
+            "Därför att återköp alltid höjer aktiekursen omedelbart",
+            "Därför att återköp räknas in i betan",
+            "Därför att det är en skattefråg enbart",
+            "Därför att ledningen — som känner bolaget bäst — placerar eget kapital dit marknadens affect vägrar gå"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vems handlande som kräver mest egen overtygelse och insyn."
+        },
+        {
+          "q": "Vilken ordning gäller i Dremans screen?",
+          "alternativ": [
+            "Berättelse först — om bolaget är tillräckligt bra spelar priset mindre roll",
+            "Pris först: billigaste kvintilen på V04–V06, sedan överlevnads- och fällfilter, med katalysatorer som bonus",
+            "Katalysator först, pris aldrig",
+            "Beta först, multipel aldrig"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad som skiljer en konträr position från en bra aktie till rättvis ett pris."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Karaktären — att äga det hatade i tre till fem år",
+      "intro": "Sista kapitlet handlar om priset på premien: strategin är enkel att beskriva och brutal att driva. De år den inte fungerar ges ingen bekräftelse alls — inga gratulationer, ingen kursvalidering, bara väntan. Konstruktionen är vad som gör bärandet möjligt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den psykologiska kostnaden är strategins verkliga pris. Ett hatat bolag ger ingen bekräftelse under väntan: kvartalen rullar på med drift uppåt men kursen står stilla, media upprepar varför bolaget är värdelöst, och varje samtal om portföljen börjar i försvarsposition. Dreman drar av hela den sortens brus med ett råd som blivit ett av hans mest citerade: ingen kan förutsäga räntor, ekonomins riktning eller börsen — dismiss all such forecasts. Hans poäng är inte pessimism utan fokus: eftersom ingen kan förutsäga omvärlden ska strategin inte vara beroende av att någon gör det — den ska köpa felpris, inte prognoser."
+        },
+        {
+          "type": "text",
+          "content": "Regler existerar för att psykologin sviker när den behövs som mest. Därför är mekanik — skrivna köpnivåer, bestämda positionstorlekar, årlig ombalansering, på förhand formulerade säljkriterier — inte byråkrati utan emotionell krigsplan. Dreman summerade sitt eget livstema som att psykologin är marknadens viktigaste faktor och den minst förstådda — och den som förstår den i teorin men saknar regler i praktiken äger kunskapen utan dess avkastning. I AK1A är därför varje screen värdelös utan sin beteendemässiga motpart: horisonten, storleken och de skrivna villkoren som gör att du fortfarande är ägare när omprissättningen kommer."
+        },
+        {
+          "type": "text",
+          "content": "Säljreglerna är karaktärens testpunkter: multipeln når marknadsnivå — felpriset skördat, flytta kapitalet; tesen bryts strukturellt (V01 intäkter, V07 marginaler, V13–V17 tillgångsbas) — gå oavsett hur billigt det blivit; ett större felpris dyker upp — byt. Däremot aldrig: sälja av tristess, sälja på en enskild dålig kvartal med intakt tes, eller sälja för att omvärlden skrattar. Varje sådant impulssäljande är affect-heuristiken (kapitel 4) som vinner över processen — hos dig, på samma sätt som den vinner över marknaden. Det är kursens sista ironi: du kan bara skörda andras systematiska fel om du inte gör dem själv."
+        },
+        {
+          "type": "text",
+          "content": "Boken i en mening: köp marknadens minst beundrade bolag till marknadens mest pesimistiska priser — billigt på V04–V06, överlevande enligt V10–V12 och V19, inte strukturellt döende enligt V01–V03 och V13–V18 — i en diversifierad, skuldfri, likvid portfölj, ge omprissättningen tre till fem år, skörda överraskningsasymmetrin under väntan och upprepa. Det är en komplett strategi med en öppen fråga — risk eller beteende — som du nu kan formulera från båda håll. Mer ärlighet än så finns inte i den här branschen, och Dreman levererade mer av den än de flesta."
+        },
+        {
+          "type": "insikt",
+          "content": "Den dyra delen av strategin är inte avgiften utan åren. Premien betalas ut till dem som kan bära den — och bärandet är inte en karaktärsegenskap utan en konstruktion: rimlig storlek, skrivna regler, en horisont du valt i förväg och en portfölj du kan förklara utan att använda ordet 'snart'. Bygg konstruktionen först; modet kommer sällan först."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dremans system på en sida\",\"rader\":[[\"Steg\",\"Regel\",\"AKM1-spår\"],[\"Köp\",\"billigaste kvintilen på flera mått\",\"V04, V05, V06\"],[\"Filtrera\",\"skuld, likviditet, stabilitet, kapitaldisciplin\",\"V10, V11, V12, V19\"],[\"Fälltest\",\"trend, marginaler, tillgångar — inga strukturella nej\",\"V01–V03, V07–V08, V13–V18\"],[\"Diversifiera\",\"15–30 namn, sektortak cirka 20 %\",\"portfölj som enhet\"],[\"Håll\",\"3–5 år minimum, skörda överraskningsdrift\",\"tålamod som position\"],[\"Sälj\",\"multipel vid marknadsnivå, tes bruten, bättre felpris\",\"regler som inte kräver mod\"],[\"Ignorera\",\"prognoser, tristess, andras förakt\",\"marginal of safety som princip\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen konträra spelbok: tre köpregler (till exempel 'billigaste kvintilen på minst två av V04–V06'), två säljregler (multipeln eller tesen — aldrig tristess), ett sektortak och en skriven horisont på minst tre år. Lägg till en rad om vad du gör året då strategin underpresterar med tjugo procent. Signera dokumentet och lägg det där du ser det varje gång du vill handela. Det är ditt skydd mot kapitel 4 och 5 — som du nu vet verkar lika starkt hos dig som hos marknaden."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den verkliga kostnaden i den konträra strategin enligt Dreman?",
+          "alternativ": [
+            "Aktiemäklarnas avgifter",
+            "Bristen på bekräftelse under väntan — år utan kursvalidering där omvärlden ifrågasätter positionerna",
+            "Att utdelningar beskattas hårdare",
+            "Att man måste handla varje dag"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad som krävs av dig som människa under de år strategin inte syns fungera."
+        },
+        {
+          "q": "Vilket av följande är enligt Dreman giltigt skäl att sälja en konträr position?",
+          "alternativ": [
+            "Aktien har varit tråkig och stillastående i ett år",
+            "En enskild kvartal missade konsensus men tesen är intakt",
+            "Multipeln nått marknadsnivå, tesen brutits strukturellt eller ett större felpis dykt upp",
+            "Medierna har publicerat negativ krönika om bolaget"
+          ],
+          "ratt": 2,
+          "tips": "Skilj på impulser från omvärlden och förändringar i de villkor du skrev när du köpte."
+        },
+        {
+          "q": "Varför betonar Dreman mekaniska regler framför att lita på eget omdöme i stunden?",
+          "alternativ": [
+            "Därför att omdöme är overksamt i alla finansiella frågor",
+            "Därför att psykologin sviker exakt när den behövs mest — regler beslutade i lugn ro gör att strategin överlever mötet med marknadens och egna känslor",
+            "Därför att regler ger högre avkastning garanterat",
+            "Därför att analytiker förbjuder omdömesbaserade beslut"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på när under en marknadscykel ditt omdöme är som sämst och vad som då bör ha bestämts redan i förväg."
+        }
+      ]
+    }
+  ]
+}

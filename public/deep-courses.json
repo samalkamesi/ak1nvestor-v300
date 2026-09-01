@@ -40469,6 +40469,10 @@
         "blocks": [
           {
             "type": "text",
+            "content": "Innan du laser vidare: gor detta test. Oppna din broker och titta pa dina senaste fem affarer. For varje, skriv ner VARFOR du kopte. (a) laste du rapporten och raknade pa vardet, eller (b) tips/kansla/kurs gick upp? Om fler an tva av fem ar (b) - du ar spekulant enligt Graham. Det ar inte skamligt, men reglerna ar helt olika."
+          },
+          {
+            "type": "text",
             "content": "En investeringsoperation grundas på grundlig analys, lovar säkerhet för kapitalet och en tillfredsställande avkastning. Uppfyller operationen inte alla tre kraven är den spekulering. Graham varnar redan på första sidan: resultatet av spekulativ position beror på att någon annan betalar mer senare; investeringsresultatet beror på bolagets värde. De flesta marknadsdeltagare bryter mot denna gräns dagligen utan att veta om det — de köper 'för att den går upp'. Frågan som avgör allt: varifrån ska avkastningen komma — bolaget eller nästa köpare? Bokens väg visar också att både defensiva och aktiva investerare kan lyckas — men den halvhjärtade, som läser tips och tror sig investera, är den som förlorar."
           },
           {
@@ -40478,6 +40482,14 @@
           {
             "type": "utmaning",
             "content": "Sortera din portfölj i två kolumner: 'bolaget betalar mig' (utdelning, kassaflöde) eller 'nästa köpare betalar mig' (kursförhoppningar). Hur många hamnade i kolumn två?"
+          },
+          {
+            "type": "tabell",
+            "content": "{\"rubrik\":\"Investerare vs Spekulant\",\"rader\":[[\"Aspekt\",\"Investerare\",\"Spekulant\"],[\"Grund\",\"Analys av varde\",\"Kurs/trend\"],[\"Tidsram\",\"Fler ar\",\"Dagar-manader\"],[\"Risk\",\"Marginal\",\"Stop-loss\"],[\"Fiende\",\"Egna impulser\",\"Alla andras\"],[\"Resultat\",\"Ackumulerar varde\",\"Nollsumma minus kostnader\"]]}"
+          },
+          {
+            "type": "visuell",
+            "content": "skala"
           }
         ],
         "quiz": [
@@ -40523,6 +40535,10 @@
         "blocks": [
           {
             "type": "text",
+            "content": "Oppna en kalkylator. 100 000 kr efter 10 ar vid 2% inflation = du behover 121 899 kr for samma sakerna. Inflationen atit 22% av din kopkraft - tyst och obevekligt. Fragar aktier skydda mot detta? Graham: INTE tillforlitligt. Under 1966-70 steg priserna 22% medan aktier FOLL. De som kopte som inflationsskydd forlorade pa bada fronter."
+          },
+          {
+            "type": "text",
             "content": "Många köper aktier som autosvar på inflation — Graham avfärdar detta som ohållbart enkelt. Historien visar att aktier INTE tillförlitligt skyddar mot stigande priser: under 1966-70 steg konsumentpriser 22% medan aktier föll. Även obligationer kan slå aktier under inflationsperioder. Grahams slutsats: förlita dig inte på ett enda skydd — balansera. När inflationen äter köpkraft äter den också felplacerade aktiepositioner. Den riktiga frågan är inte 'aktier eller räntor mot inflation' utan 'vilken Marginal of safety finns i priset på det jag köper'. Aktier köpta på toppen mot rädsla för inflation är spekulativ försäkring — ingen trygghet."
           },
           {
@@ -40532,6 +40548,14 @@
           {
             "type": "utmaning",
             "content": "Ta reda på årlig inflation just nu. Räkna sedan ut vad en aktie du äger måste avkasta i real avkastning efter inflation. Hur stor marginal i pris krävs för det?"
+          },
+          {
+            "type": "tabell",
+            "content": "{\"rubrik\":\"Inflation vs aktier\",\"rader\":[[\"Period\",\"Priser\",\"Aktier\",\"Rantor\"],[\"1946-49\",\"+33%\",\"-22%\",\"+6%\"],[\"1966-70\",\"+22%\",\"-15%\",\"+14%\"],[\"1973-74\",\"+22%\",\"-42%\",\"+2%\"],[\"1979-81\",\"+32%\",\"+22%\",\"-8%\"]]}"
+          },
+          {
+            "type": "visuell",
+            "content": "compound"
           }
         ],
         "quiz": [
@@ -40575,6 +40599,10 @@
         "blocks": [
           {
             "type": "text",
+            "content": "Se denna tidslinje som en karta over mansklig daraskap. Ar 1720: South Sea Company - Isaac Newton forlorade 20 000 pund och sa: Jag kan berakna himlakroppars banor, men inte manniskors daraskap. Ar 1929: Dow -89%. Ar 1972: Nifty Fifty -70%. Ar 2000: Dot-com -78%. Ar 2008: Finanskris -54%. Samma monster varje gang: verklig trend, vardering frikopplas, annorlunda-nu argument, havstang + amatorer, krasch."
+          },
+          {
+            "type": "text",
             "content": "Graham reser genom South Sea-bubblan, järnvägsekipaget, 1929 och efterföljande krascher — inte som kuriosa utan som mönster. Verklig trend får legitimt värde, värderingen frikopplas från verkligheten, nya investerare definierar bort risk med slogan ('det är annorlunda nu'), vanligt folk köper med hävstång, korrigeringen förintar portföljer. Sommar-Rally 1932: efter -89% i Dow kom +71% på tre månader — för den med marginal och nerver. Lärdomen: marknaden har inget minne mellan generationer, bara priser. Den som stannar hemma när bullen rusar KÄNNER det som förlust, men att delta utan marginal ÄR att förlora."
           },
           {
@@ -40584,6 +40612,14 @@
           {
             "type": "utmaning",
             "content": "Leta upp 1929 och 1972 (Nifty Fifty). Hitta tre 'det är annorlunda nu'-argument från respektive era. Jämför med dagens hypade bolags argument."
+          },
+          {
+            "type": "tidslinje",
+            "content": "{\"titel\":\"Bubblor genom historien\",\"punkter\":[[\"1720\",\"South Sea\"],[\"1929\",\"Dow -89%\"],[\"1972\",\"Nifty Fifty\"],[\"2000\",\"Dot-com\"],[\"2008\",\"Finanskris\"]]}"
+          },
+          {
+            "type": "visuell",
+            "content": "cykel"
           }
         ],
         "quiz": [
@@ -40628,6 +40664,10 @@
         "blocks": [
           {
             "type": "text",
+            "content": "Grahams portfoljpolitik ar enkel nog att skriva pa ett kort: aktiedelen mellan 25 och 75 procent. ALDRIG 0%, ALDRIG 100%. Yterligheterna ar prognoser. 0% aktier = prognos att de faller. 100% = prognos att de stiger. Atterbalansering ar motgiftet: nar aktier stiger till 65/35 Tvingas du salja (salu hogt!), nar de faller till 35/65 tvingas du kopa (kop lagt!). Detta kannis ALWAYS fel - och det ar darfor det fungerar."
+          },
+          {
+            "type": "text",
             "content": "Grahams grundregel: aktiedelen ska ligga mellan 25 och 75 procent, aldri extremerna. När marknaden växt så att aktiedelen stiger kraftigt över din plan — SÄNK den mekaniskt; när den sjunker under — KAUP mer. Detta tvångsmässiga motstånd mot humöret är hela poängen: återbalansering tvingar dig att göra det som känns fel och är rätt. Månadssparande (dollar cost averaging) kompletterar: samma belopp köper fler aktier när priset faller, färre när det stiger — automatisk disciplin utan prognoser. Den som behöver prognoser för sin portföljpolitik har redan gett upp Marginalen."
           },
           {
@@ -40637,6 +40677,14 @@
           {
             "type": "utmaning",
             "content": "Skriv din personliga policy: X% aktier, resten ränta, återbalansering vid avvikelse på Y procentenheter. Datumstämpla den. Det är ditt kontrakt med dig själv."
+          },
+          {
+            "type": "tabell",
+            "content": "{\"rubrik\":\"Atterbalansering\",\"rader\":[[\"Situation\",\"Kansla\",\"Policy\",\"Ratt\"],[\"Aktier stigit\",\"Greed\",\"SALJ\",\"✓\"],[\"Aktier fallit\",\"Raddsla\",\"KOP\",\"✓\"],[\"Neutral\",\"Lugn\",\"Behall\",\"✓\"]]}"
+          },
+          {
+            "type": "visuell",
+            "content": "compound"
           }
         ],
         "quiz": [
@@ -40680,6 +40728,10 @@
         "blocks": [
           {
             "type": "text",
+            "content": "Den defensiva investeraren ar INTE lat - det ar en MEDVETEN strategi. En enkel portfolj av solida bolag + atterbalansering har historiskt slagit flesta aktiva forvaltare. Fyra krav: (1) 10-30 bolag olika branscher, (2) tillracklig storlek, (3) finansiell stabilitet, (4) 20+ ar utdelning. Av ~400 bolag pa Nasdaq Stockholm klarar typiskt bara 40-60 alla fyra SAMTIDIGT. Det ar poangen - filtret ska ta bort det mesta."
+          },
+          {
+            "type": "text",
             "content": "Den defensiva investeraren köper: (1) diversifierat urval av solida bolag — 10-30 namn, (2) tillräckligt stora företag (inte spekulativa småbolag), (3) finansiellt stabila — skulder som är hanterbara mot tillgångar, (4) kontinuerlig utdelning — helst 20+ år. Graham utesluter inte tillväxtbolag men varnar: betala inte tillväxtpriser utan marginal. Defensiv betyder inte utan avkastning — det betyder utan krav på att förutsäga. 1949-72 gav en enkel defensiv portfölj historier större avkastning än de flesta fonder. Tålamod + bredd + återbalansering — det är den defensivas trio."
           },
           {
@@ -40689,6 +40741,14 @@
           {
             "type": "utmaning",
             "content": "Testa din största aktie mot de fyra reglerna: diversifiering (utgör den >20% av portföljen?), storlek, stabilitet, utdelningshistorik. Vilken regel faller först?"
+          },
+          {
+            "type": "tabell",
+            "content": "{\"rubrik\":\"Defensiva filtret\",\"rader\":[[\"Krav\",\"Troskel\",\"Varfor\"],[\"Diversifiering\",\"10-30 bolag\",\"Enskild risk<5%\"],[\"Storlek\",\">1 mdr\",\"Integrationsrisk\"],[\"Stabilitet\",\"Skulder<EK/2\",\"Overlevnad\"],[\"Utdelning\",\"20+ ar\",\"Uthallighet\"]]}"
+          },
+          {
+            "type": "visuell",
+            "content": "donut"
           }
         ],
         "quiz": [
@@ -40836,6 +40896,10 @@
         "blocks": [
           {
             "type": "text",
+            "content": "Forestall dig att du ager en andel i ett litet foretag - en gard, en butik. Varje dag kommer Mr Market till din dorr och erbjuder att kopa din andel eller salja dig mer. Hans pris varierar vilt efter humor. Vissa dagar euforisk: Din gard ar vard en formogenhet! Andra deprimerad: Ingen vill ha girdar. Du ar ALDRIG tvingad att agera - han kommer tillbaka imorgon. Buffetts tillampning: 1973 kopte han Washington Post till 25% av vardet. 1987 Coca-Cola efter kraschen. 2008 Goldman Sachs under finanskrisen. Varje gang: Mr Markets humor var inte information utan mojlighet."
+          },
+          {
+            "type": "text",
             "content": "Du har en partner i varje bolag: Mr Market. Dagligen erbjuder han köp eller sälj — till pris efter humör. Euforiska dagar: skyhöga priser. Deprimerade: han ger bort bolaget. Du är fri att ignorera honom — han kommer tillbaka imorgon. När en aktie du förstått faller 20% utan förändrad affär är det inte förlust utan erbjudande om rabatt. Stiger den 20% utan orsak: erbjudande att sälja dyrt. Buffett kallar kapitlet viktigast någonsin skrivet. Vet du bara en sak — marknadens humör är inte din uppmaning, utan din möjlighet — kan du resten av boken om så bara halvt."
           },
           {
@@ -40845,6 +40909,14 @@
           {
             "type": "utmaning",
             "content": "Välj en aktie du följer. Tre rubriker senaste månaden: förändrade de BOLAGET eller HUMÖRET? Hur agerade du — och hur borde en Mr Market-läsare agerat?"
+          },
+          {
+            "type": "tabell",
+            "content": "{\"rubrik\":\"Mr Market-laran\",\"rader\":[[\"Signal\",\"Kansla\",\"Handling\",\"Resultat\"],[\"Fall -20% utan orsak\",\"PANIK\",\"Kop med marginal\",\"✓\"],[\"Stiger +20% utan orsak\",\"EUFORI\",\"Overvag salja\",\"✓\"],[\"Inte alls\",\"Lugn\",\"Gor ingenting\",\"✓\"]]}"
+          },
+          {
+            "type": "visuell",
+            "content": "cykel"
           }
         ],
         "quiz": [
@@ -41460,6 +41532,10 @@
         "blocks": [
           {
             "type": "text",
+            "content": "Kapitel 20 ar bokens hjarta. Marginal of safety i en mening: bygg bron starkare an lasten. Om lastbilar vagar 10 ton, konstruera bron for 30. Om du varderar en aktie till 100 kronor, kop den inte for 98 - kop den for 70 eller mindre. Tre konkreta exempel: (1) Tillgangsmarginal: bolag med 200 mdr tillgangar, 100 mdr skulder, borjsvarde 80 mdr = 20% marginal. (2) Resultatmarginal: P/E 6, om resultatet halveras ar P/E fortfarande bara 12. (3) Diversifieringsmarginal: 20 positioner istallet for 3 - en nollposition kostar 5%, inte 33%."
+          },
+          {
+            "type": "text",
             "content": "Marginal of safety är bron byggd för 30 ton när lastbilarna väger 10. Köper du till 30-50% under konservativt beräknat värde har du utrymme att ha FEL — om affären försämras, om analysen har misstag, om konjunkturen vänder. Utan marginal krävs att du har RÄTT för att inte förlora; med marginal kan du ha fel och överleva. Detta är skillnaden mellan hopp och beräkning. Marginalen finns i tre former: prismatch mot värde (tillgångar eller tjänstekraft), diversifiering (du vet aldrig vilken position som slår fel) och krav på förutsägbarhet (ju osäkrare framtid, desto större marginal). Investeringens whole historia i en mening: acceptera aldrig ett pris där du måste ha rätt."
           },
           {
@@ -41469,6 +41545,14 @@
           {
             "type": "utmaning",
             "content": "Värdera en aktie du äger försiktigt (kap 11-15). Om ditt värde är 100 — till vilket pris kräver 30% marginal? 50%? Jämför med dagens kurs. Marginal — eller hopp?"
+          },
+          {
+            "type": "tabell",
+            "content": "{\"rubrik\":\"Marginalens tre former\",\"rader\":[[\"Form\",\"Skydd\",\"Exempel\"],[\"Prismatch\",\"Kopa under varde\",\"100→70=30%\"],[\"Diversifiering\",\"Bred portfolj\",\"20 pos vs 3\"],[\"Forutsagbarhet\",\"Krava stabilitet\",\"Undvika cykliska\"]]}"
+          },
+          {
+            "type": "visuell",
+            "content": "bro"
           }
         ],
         "quiz": [

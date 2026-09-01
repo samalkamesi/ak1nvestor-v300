@@ -2947,3 +2947,29 @@ Work Log:
 Stage Summary:
 - Rundans kö: #1 fortsättnings-lista ✓ #2 övningar ✓ → nästa: bloggplanering
   + F2 kundcache/retention-mätning
+---
+Task ID: 90-MEDLEMSUPPLEVELSE-2.0
+Agent: main (Z.ai Code)
+Task: Kursmall 2.0 + portall + XP/nivå + kunskaps-AI — ALLT LIVE
+
+Work Log:
+- KURSMALL 2.0 (alla 226): snabbfakta-chips, korstabell 'Kursöversikt' med
+  ankare + totalrad, kapitelkort med nummer-badge/INSIKT-box/punktlistor/
+  'Nästa'-footer. Byggbuggar fixade: ogiltig possessiv regex, newline-escapes
+- KURSPORTALL: kapitel 1-2 + övningar synliga för gäster (smakprov, SEO-säkert),
+  kapitel 3+ bakom GRATIS-registrering (blur+CTA) — grundsens vision: allt
+  gratis för inloggade, smakprov för övriga
+- XP/SYSTEM: member-local.ts (localStorage): +50 XP + ★ per kurs, nivå 1-100
+  (100 XP/nivå), NivaBar på kurssidor, Fas 2-lock vid nivå 25
+- KUNSKAPS-AI: /api/chatbot (titelträff 10x, skiljetecken-strippning, varumärkes-
+  FAQ: Sam Alkamesi/AK1nvestor/Fas/policy) + ChatWidget (flytande 💬 på alla
+  sidor, UTF-8-säker). Bugg: Git-Bash-curl förstorade 'ä' i test — widget/browser
+  korrekt; verifierat via node
+- PROD verifierat: chatbot ROE→V09-kursen, widget levererad på kurssidor
+
+Stage Summary:
+- Dynamisk medlemsresa komplett v1: smakprov → gratis konto → XP/stjärnor/nivå →
+  Fas 2-lock vid nivå 25 → chatbot som guidar
+- Nästa enligt grundarens önskelista: fler kurser, server-syncad progress,
+  LLM-nyckel till chatbot (kräver grundarens nyckel), autonomt verk-bygge vid
+  höga nivåer (F2-fas i PLAN_MEGASYSTEM)

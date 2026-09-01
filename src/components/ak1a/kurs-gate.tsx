@@ -43,7 +43,7 @@ export function KursGate({
             och alla övriga 225 kurserna, för alltid. Fundamentalanalys är en rättighet.
           </p>
           <Link
-            href="/#portal"
+            href="/logga-in"
             className="mt-5 inline-block rounded-lg bg-gold px-6 py-3 text-sm font-bold text-primary-foreground hover:opacity-90"
           >
             Lås upp gratis →

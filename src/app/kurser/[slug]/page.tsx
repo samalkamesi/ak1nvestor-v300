@@ -47,7 +47,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
 
       <header className="border-b border-gold/30 pb-6">
         <p className="text-xs uppercase tracking-widest text-gold">
-          AKM1 · {course.category} · {course.level}
+          AKM1 · {course.category}
         </p>
         <h1 className="mt-2 font-serif text-4xl font-bold">{course.title}</h1>
         <p className="mt-3 text-muted-foreground leading-relaxed">{course.learn}</p>
@@ -56,7 +56,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
             `📖 ${course.chapters.length} kapitel`,
             `⏱ ${course.totalMinutes || course.minutes} min`,
             course.xp ? `⚡ ${course.xp} XP` : null,
-            `🎓 ${course.level}`,
+
             `⚖ Vikt: ${course.weight || "6%"}`,
             `🏷 ${course.category}`,
           ].filter(Boolean).map((chip: string) => (

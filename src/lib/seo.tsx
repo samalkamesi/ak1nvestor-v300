@@ -184,7 +184,6 @@ export function courseJsonLd(course: Course) {
     name: `${course.title} — AKM1 ${course.slug.toUpperCase()}`,
     description: course.learn || course.summary,
     inLanguage: "sv-SE",
-    educationalLevel: course.level || "Intermediate",
     timeRequired: `PT${course.totalMinutes || course.minutes || 30}M`,
     provider: {
       "@type": "Organization",

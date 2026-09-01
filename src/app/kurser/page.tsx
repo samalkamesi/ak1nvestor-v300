@@ -61,7 +61,7 @@ export default function KurserPage() {
                   >
                     <span className="font-serif font-semibold">{c.title}</span>
                     <span className="block mt-1 text-xs text-muted-foreground">
-                      {c.level} · {c.chapters.length} kapitel · {c.totalMinutes || c.minutes} min
+                      {c.chapters.length} kapitel · {c.totalMinutes || c.minutes} min
                     </span>
                     <span className="block mt-2 text-xs text-muted-foreground leading-relaxed">
                       {c.learn}

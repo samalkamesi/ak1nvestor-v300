@@ -3209,3 +3209,24 @@ Stage Summary:
 - FRÅN: 63 frågor → TILL: 3573 frågor (57x ökning)
 - Alla kurser får nu: kapitel-för-kapitel stepper + visuell progress + quiz
 - Nästa: F2 adaptiv motor (DDA, multimodalt) eller F3 Adversarial AI
+---
+Task ID: 104-SHORT-SELLER
+Agent: main (Z.ai Code)
+Task: Agent 3 Short-Seller — sokratisk grillningsagent — LIVE
+
+Work Log:
+- /api/shortseller: två lägen (utmana + försvar), 5 ämneskategorier,
+  15 attack-frågor (matematik/antagande/risk/historia/logik), historiska
+  fall (Sinch, Nifty Fifty, Penn Central, H&M, LTV)
+- ShortSeller-widget: röd 🎯-knapp på alla sidor (bredd gulda 💬)
+- Sokratisk princip: ALDRIG direkta svar — bara motfrågor
+- System-prompt förberedd för Z.ai GLM-5.3 Reasoning Mode
+- ZAI_NATIVE_PLAN.md: komplett tre-agent-arkitektur
+
+Stage Summary:
+- Agent 3 (Short-Seller) live i v1 — sokratisk mode utan LLM
+- LLM-uppgradering: koppla Z.ai GLM-5.3 Reasoning Mode → full dialog
+- Alla tre agenter har nu grundimplementation:
+  Agent 1 (Behavioral): 70%
+  Agent 2 (Live Market): 70%
+  Agent 3 (Short-Seller): 40%

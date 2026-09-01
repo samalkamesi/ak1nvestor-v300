@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getCourseList } from "@/lib/content";
 
 /**
  * PWA-MANIFEST — AK1A Research Lab installerbar som app (Android/desktop/iOS).
@@ -9,7 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "AK1A Research Lab — Finansutbildning",
     short_name: "AK1A",
     description:
-      "240 kurser, AI-Mentor, kalkylator och portföljsystem — pedagogisk finansanalys enligt AKM1/AK1TS. Fas 1 alltid gratis.",
+      `${getCourseList().length} kurser, AI-Mentor, kalkylator och portföljsystem — pedagogisk finansanalys enligt AKM1/AK1TS. Fas 1 alltid gratis.`,
     lang: "sv",
     dir: "ltr",
     start_url: "/?kalla=pwa",

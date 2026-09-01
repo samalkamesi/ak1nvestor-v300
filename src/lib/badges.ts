@@ -122,6 +122,8 @@ export const BADGER: Badge[] = [
   // EKOSYSTEM — verktygen i bruk
   { id: "forsta-djupanalys", namn: "Djupdykaren", ikon: "🔬", kategori: "ekosystem", krav: "1 djupanalys körd",
     beskrivning: "Första djupanalysen körd — 5×5×4-matrisen har öppnats." },
+  { id: "dagens-pass", namn: "Ritualstartad", ikon: "⚡", kategori: "ekosystem", krav: "1 Dagens Pass klarat",
+    beskrivning: "Dagens Pass fullföljt — den dagliga ritualen har inletts på riktiga marknadsdata." },
   { id: "forsta-vagskattning", namn: "VågLäsaren", ikon: "🎯", kategori: "ekosystem", krav: "1 vågskattning",
     beskrivning: "Första vågskattningen registrerad — tidshorisonterna kartlagda." },
   { id: "certifikat-skapat", namn: "Intyget utfärdat", ikon: "🏆", kategori: "ekosystem", krav: "1 certifikat skapat",

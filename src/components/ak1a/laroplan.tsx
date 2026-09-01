@@ -72,6 +72,7 @@ const NIVAER = [
     kurser: [
       { slug: "akm1-den-kontroversiella-modellen", syfte: "EKOSYSTEMET: alla 20 variabler superdjupt — vad mainstream säger och varför vi avviker", tid: 240, xp: 2500 },
       { slug: "ak1ts-vaglarans-hierarki", syfte: "EKOSYSTEMET: vågmätningens deterministiska hierarki — och den kontroversiella sanningen", tid: 230, xp: 2500 },
+      { slug: "vagfundament-variablerna-som-tidsserier", syfte: "EKOSYSTEMET: variablerna som tidsserier — fundamentalvågor, divergens och portföljens matris", tid: 150, xp: 2500 },
       { slug: "the-intelligent-investor", syfte: "Grahams komplett system: Mr Market, marginal, disciplin", tid: 180, xp: 2000 },
       { slug: "mina-basta-investeringar", syfte: "Lynch: investera i det du förstår — på rätt sätt", tid: 170, xp: 2000 },
       { slug: "security-analysis", syfte: "Graham & Dodds bibel: analysens hantverk från grunden", tid: 240, xp: 2000 },

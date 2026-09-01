@@ -1,0 +1,882 @@
+{
+  "slug": "vagfundament-variablerna-som-tidsserier",
+  "category": "EKOSYSTEM",
+  "weight": "KRITISK",
+  "chapterCount": 12,
+  "totalMinutes": 150,
+  "title": "Vågfundament — Variablerna som Tidsserier",
+  "summary": "Vågfundamentet är ekosystemets tredje ben: där AKM1 poängsätter tjugo fundamentalvariabler och AK1TS läser prisets vågor, behandlar denna kurs varje variabel som vad den verkligen är — en tidsserie med egen riktning, egen fart och egen rytm, läsbar på fem tidshorisonter från mikro till mega. Resultatet är en matris med tjugo rader och fem kolumner där varje cell bär en av fyra vågklasser: impulsvåg, korrigering, basbygge — eller osatt, den hederliga utdata som säger att underlaget inte räcker och att motorn hellre tiger än gissar. Kursen lär ut hierarkin cell till variabel till kategori till helhet, konsten att läsa mönster och kluster i matrisen, divergensen mellan fundamental våg och prisvåg (AK1TS-korsningen), portföljaggregering som idé, AI-protokollet som tvingar vår AI att citera celler exakt — och ett helt kapitel åt motståndaren som hävdar att fundamental data inte kan ha vågor alls. Motorns exakta klassificeringsregler är labbets interna know-how; det denna kurs lär ut är det som kan och ska läras ut: hur du läser och tolkar vågklasserna.",
+  "minutes": 12,
+  "xp": 2500,
+  "level": "",
+  "learn": "Efter kursen kan du: förklara varför en poängsatt variabel är en stillbild och vad tidsserietänket tillför; använda de fem horisontnamnen mikro, kort, medellång, lång och mega som begrepp — perspektiv från det närmaste nuet till hela tillgängliga historiken — utan att förväxla dem med kalenderrutor; skilja vågklasserna impulsvåg, korrigering och basbygge åt, känna deras psykologi och översätta en klass till mening per variabel (en impulsvåg i skulden är inte goda nyheter, en korrigering i värderingen är inte dåliga); behandla osatt som en styrka och en arbetsmarkering i stället för ett fel; läsa matrisen hierarkiskt — cell, variabel, kategori, helhet — och känna igen kluster, kontraster, väntrum och tomma fläckar; formulera divergensen mellan fundamental våg och prisvåg som en studieinbjudan, aldrig en signal; tänka portföljaggregering som viktad cellvis sammanläggning; redogöra för motståndarens argument — fundamental analys är nivåer, kvartalsdata är brusig, leverantörshistoriken är kort — tillsammans med våra medgivanden; granska AI:s cellciteringar mot protokollet; och köra ett komplett arbetsflöde på /vagfundament med journal och månadsrytm.",
+  "why": "Efter AKM1 (den kontroversiella modellen) och AK1TS (våglärans hierarki) återstod en strukturell lucka i ekosystemet: fundamentals behandlades som ögonblicksbilder medan priset fick historia. Men en ROE på tjugo procent är bara ett tal — banan dit, med bruttomarginalen som breddar och skuldsättningen som smalnar, är en berättelse. Vågfundamentet bygger den berättelsen deterministiskt: samma data ger alltid samma vågklasser, och när data inte räcker visas osatt i stället för en gissning. Kursen behövs eftersom läsning av en matris med hundra celler är ett hantverk — hierarki, mönster, kontraster, divergens — och eftersom ärligheten kräver att motståndarens starkaste invändning (fundamental data kan inte ha vågor) formuleras bättre här än hos motståndaren själv. Konkret reglering: motorns exakta klassificeringsregler är intern know-how och nämns därför aldrig i kursen; det vi lär ut är hur man läser och tolkar vågklasserna.",
+  "chapters_list": [
+    { "num": 1, "title": "Idén — indikatorer förblir inte längre statiska", "minutes": 12 },
+    { "num": 2, "title": "Tidsserietänket — varje AKM1-variabel har sin egen historia", "minutes": 12 },
+    { "num": 3, "title": "De fem horisonterna — från mikro till mega, som begrepp", "minutes": 12 },
+    { "num": 4, "title": "Vågklasserna — impulsvåg, korrigering, basbygge och deras psykologi", "minutes": 12 },
+    { "num": 5, "title": "Osatt — den mest missförstådda klassen", "minutes": 12 },
+    { "num": 6, "title": "Hierarkin — cell, variabel, kategori, helhet", "minutes": 12 },
+    { "num": 7, "title": "Att läsa matrisen — mönster, kluster, tomma fläckar", "minutes": 12 },
+    { "num": 8, "title": "Divergens — fundamental våg möter prisvåg", "minutes": 12 },
+    { "num": 9, "title": "Portföljen — från varje aktie för sig till helheten", "minutes": 12 },
+    { "num": 10, "title": "Kontroversen — fundamental data kan inte ha vågor", "minutes": 12 },
+    { "num": 11, "title": "AI-protokollet — hur vår AI läser matrisen", "minutes": 12 },
+    { "num": 12, "title": "Praktiken — använd Vågfundamentet och portföljsektionen", "minutes": 12 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Idén — indikatorer förblir inte längre statiska",
+      "intro": "Allt börjar med en irritation som de flesta analytiker känner men sällan formulerar: en poängsatt variabel är en stillbild. AKM1 ger dig tjugo variabler och ett tal per variabel — men talet fångar ögonblicket, inte rörelsen. Detta kapitel handlar om skillnaden mellan att veta var något står och att veta vart det är på väg, och om varför den skillnaden är värd ett helt ekosystemben.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En ROE på tjugo procent är bara ett tal. Det kan vara toppen av en fallande båge, botten av en stigande, eller mittpunkten i ett årtionde av stillastående — samma siffra, tre helt olika bolag. Men banan dit — från sexton procent till tjugo, med bruttomarginalen som breddar och skuldsättningen som smalnar — är en berättelse. Berättelsen säger vad siffran är på väg att bli; siffran säger bara var den är. Hela skiljelinjen mellan vanlig fundamental analys och Vågfundamentet ligger i den meningen: vi slutar fråga hur högt och börjar fråga sedan när och åt vilket håll."
+        },
+        {
+          "type": "text",
+          "content": "Tänk på två bolag med identisk AKM1-profil: samma poäng på tillväxt, lönsamhet, stabilitet. Stillbilden säger att de är utbytbara. Men i det första breddar marginalerna för varje rapport medan skulden smalnar; i det andra har poängen nåtts på en nedåtgående trappa — tillväxten köpt med utspäddning, marginalen räddad av engångsposter. Om tio rapporter har de två bolagen bytt plats, och om femtio rapporter har de bytt kategori. Ingen enstaka poängsättning kan se det. Tidsserien ser det direkt. Det är inte en finess av modellen — det är själva påståendet: variablernas rörelse bär information som nivåerna inte bär."
+        },
+        {
+          "type": "text",
+          "content": "Ett viktigt avstamp innan vi går vidare, för det präglar hela kursen. Vågfundamentets motor klassar varje variabel på varje horisont — men motorns exakta klassificeringsregler är labbets interna know-how. Det vi lär ut i denna kurs är något annat och, vi hävdar, värdefullare: hur du läser och tolkar vågklasserna, hur du bygger hierarkin från cell till helhet, och hur du håller ärligheten levande när underlaget är tunt. Du kommer alltså inte att hitta tröskelvärden att memorera i dessa kapitel. Du kommer att hitta ett språk för rörelse — och språket är det som gör att du kan använda verktyget, oavsett vad motorn heter i morgon."
+        },
+        {
+          "type": "insikt",
+          "content": "En variabel utan historia är ett foto; en variabel med historia är en film. Fotografiet kan visa att bolaget ler — filmen visar om leendet håller på att bildas eller att hålla på att försvinna. All fundamental analys innan tidsserietänket var fotografi av bolag som lever i rörelse."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta den senaste AKM1-poängsättning du gjorde — din egen eller en genomgång du läst. Välj en variabel, till exempel V09 ROE. Skriv ur minnet: vad låg den på för ett år sedan? För två år sedan? Skriv ner dina siffror innan du kollar. Slå sedan upp de verkliga rapporterna. De flesta upptäcker att minnet håller nivåer ganska bra men banor dåligt — och det är exakt det här kursen finns för att åtgärda."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Samma variabel — två sätt att fråga\",\"rader\":[[\"Aspekt\",\"Stillbildens fråga\",\"Tidsseriens fråga\"],[\"Nivå\",\"Hur hög är ROE idag?\",\"Sedan när står den där?\"],[\"Riktning\",\"—\",\"Stiger eller faller den?\"],[\"Förklaring\",\"Vad påverkar talet just nu?\",\"Vad driver banan — marginal, skuld, tillväxt?\"],[\"Beslut\",\"Är poängen rättvist satt?\",\"Är rörelsen hållbar?\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnproblemet med att poängsätta en variabel i taget, enligt kursen?",
+          "alternativ": [
+            "Poängen blir för exakta",
+            "En poäng är en stillbild — den fångar nivån men inte rörelsen eller banan",
+            "Variablerna går inte att poängsätta",
+            "AKM1 förbjuder tidsserier"
+          ],
+          "ratt": 1,
+          "tips": "Vad vet du om en bil genom att bara se hastighetsmätarens läge i en enda sekund?"
+        },
+        {
+          "q": "Två bolag har identisk AKM1-profil. Vad kan tidsserietänket tillägga?",
+          "alternativ": [
+            "Ingenting — profilen avgör",
+            "Att den ena kan vara på väg upp och den andra på väg ner, trots samma poäng",
+            "Att en av profilerna är felräknad",
+            "Att båda bör säljas"
+          ],
+          "ratt": 1,
+          "tips": "Samma toppvärde kan ligga vid början eller slutet av en bana."
+        },
+        {
+          "q": "Vad lär denna kurs ut om motorns klassificeringsregler?",
+          "alternativ": [
+            "Alla exakta trösklar, kapitel för kapitel",
+            "Att reglerna slumpas fram vid varje körning",
+            "Att de exakta reglerna är intern know-how — kursen lär ut hur man läser och tolkar vågklasserna",
+            "Att reglerna är identiska med AK1TS prisregler"
+          ],
+          "ratt": 2,
+          "tips": "Formuleringen återkommer i varje kapitel: reglerna är interna, tolkningen öppen."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Tidsserietänket — varje AKM1-variabel har sin egen historia",
+      "intro": "AKM1 har tjugo variabler, från försäljningstillväxt till återköp, grupperade i sju kategorier. I kalkylatorn uppträder de som ett formulär. I verkligheten uppträder de som tjugo samtidiga serier med olika drivkrafter och olika tempo. Detta kapitel gör seriernas olikhet påtaglig — för det är just olikheten som gör matrisen intressant.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Försäljningstillväxten drivs av produktcykler och orderläge — den svarar fort på världen och är stökig av naturen. Bruttomarginalen drivs av prissättning, kostnadsbas och valutor — den rör sig långsammare men med tyngd. Skuldsättningsgraden drivs inte alls av marknaden utan av ledningens kapitalbeslut: en emission, en såld anläggning, ett nytt lån — och plötsligt har serien hoppat. Patent och varumärke drivs av strategi som mätas i år, inte kvartal. Värderingsvariablerna, P/S och P/B och EV/EBITDA, är egentligen två serier i en — bolagets tal och marknadens pris — och ryms därför med marknadens humör. Tjugo variabler, tjugo motorer."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen är att ett bolags fundamentals aldrig har ett enda tillstånd. När du säger att bolaget mår bra gör du ett slags medeltal av tjugo berättelser — där några förbättras, några försämras och några står stilla — och medeltalet gömmer spridningen. Spridningen är inte brus; den är innehållet. Ett bolag där lönsamheten breddar medan tillväxten korregerar håller på att bli ett annat bolag än det var. Matrisens tjugo rader gör den omvandlingen synlig rad för rad, i stället för att blanda ihop den till en enda känsla av hälsa."
+        },
+        {
+          "type": "text",
+          "content": "Var kommer serierna ifrån? Ur rapportströmmen. Kvartalsrapporterna är seriens pulsslag — varje slag lämnar ett värde per variabel, och värdena i följd bildar historiken som motorn läser. Underlaget hämtas från offentlig datakälla, och där ett AKM1-värde kan beräknas ur underlaget visas nivån som en poäng 0–5 intill raden; där det inte kan beräknas deterministiskt visas ett streck. Det är samma ärlighet på nivåsidan som på vågsidan: beräkna där det går, tiga där det inte går. Historikens längd varierar dessutom mellan bolag — ett bolag med kort rapporthistorik har en kort serie, oavsett hur intressant den är — och det leder oss rakt in i horisonterna och i osatt-klassens värld, som vi kommer till."
+        },
+        {
+          "type": "insikt",
+          "content": "Tänk på bolaget som en orkester, inte en ton. Stråkarna kan spela starkt medan blåset korregerar och slagverken väntar — och 'ljudet just nu' säger inget om vem som håller på att ta över stämman. Tjugo variabler i tjugo tempon: det är därför en matris behövs och inte en känsla."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag du tror att du känner. Välj tre variabler: en tillväxtvariabel, en lönsamhetsvariabel och skuldsättningsgraden. Ranka dem efter tempo — vilken rör sig snabbast mellan rapporter, vilken långsammast? Skriv ner din ranking och kontrollera mot de senaste rapporternas tal. Nästa rapport: upprepa och se om din tempomodell höll."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra variabler — fyra serier med egen rytm\",\"rader\":[[\"Variabel\",\"Vad som driver serien\",\"Rytm i korthet\"],[\"Försäljningstillväxt (V01)\",\"Produktcykler och orderläge\",\"Snabb och stökig\"],[\"P/S (V04)\",\"Marknadens humör om intäkterna\",\"Rör sig med marknaden\"],[\"Skuldsättningsgrad (V10)\",\"Ledningens kapitalbeslut\",\"Långsam och beslutsburen\"],[\"Patent & IP (V13)\",\"Strategi och forskningsinsats\",\"Långsam och kvalitativ\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med att variablerna har 'olika motorer'?",
+          "alternativ": [
+            "Att de beräknas av olika dataleverantörer",
+            "Att de drivs av olika krafter — orderläge, kapitalbeslut, strategi, marknadshumör — och rör sig i olika tempo",
+            "Att vissa variabler är viktigare än andra",
+            "Att motorn har tjugo instanser"
+          ],
+          "ratt": 1,
+          "tips": "Vem eller vad bestämmer skuldsättningsgraden — marknaden eller styrelserummet?"
+        },
+        {
+          "q": "Varför är spridningen mellan variablernas rörelser 'innehåll och inte brus'?",
+          "alternativ": [
+            "För att spridningen kan avslöja att bolaget håller på att bli ett annat bolag än det var",
+            "För att brus alltid är negativt",
+            "För att AKM1 premierar spridning",
+            "För att spridningen gör medelvärdet högre"
+          ],
+          "ratt": 0,
+          "tips": "Lönsamhet som breddar medan tillväxten korregerar — vad håller bolaget på att bli?"
+        },
+        {
+          "q": "Vad visar nivå-badgen intill en rad i matrisen?",
+          "alternativ": [
+            "Alltid en AKM1-poäng 0–5",
+            "Variabelns ålder",
+            "AKM1-poängen där den kan beräknas ur underlaget — annars ett streck",
+            "Antal rapporter i underlaget"
+          ],
+          "ratt": 2,
+          "tips": "Samme ärlighet som på vågsidan: beräkna där det går, tiga där det inte går."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "De fem horisonterna — från mikro till mega, som begrepp",
+      "intro": "En serie kan läsas på många avstånd, och avståndet avgör vad man ser. Vågfundamentet ger varje variabel fem namngivna perspektiv: mikro, kort, medellång, lång och mega. I denna kurs behandlas de som begrepp — namn på frågor, inte kalenderrutor att memorera. Det är medvetet: det du behöver bära med dig är skillnaden i synvinkel, inte en tabell över fönster.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mikro är det närmaste nuet — variabelns senaste andetag i rapportströmmen. Frågan lyder: vad gör den just nu? Kort är den färskare årsrytmen — vad har hänt på senare tid, bortom det allra senaste. Medellång är där årsdata börjar samla tyngd — är detta på väg att bli en trend? Lång är konjunktursvängningens höjd — vad händer med variabeln över hela upp- och nedgångar. Mega är hela perspektivet: vad säger den historia som faktiskt finns att läsa, från första till senaste observationen. Fem namn, fem synvinklar — från att andas till att åldras."
+        },
+        {
+          "type": "text",
+          "content": "Varför fem, och inte ett genomsnitt? Därför att en och samma serie kan stiga på ett avstånd och ligga stilla på ett annat — och skillnaden är informationen. En bruttomarginal som breddar det senaste året men ligger stilla över hela den långa historien är en återhämtning inne i ett långt platå; samma breddning ovanpå ett decennium av stigande marginaler är något helt annat — en fortsättning eller till och med en utmattning. Ser du bara ett genomsnitt ser du inget av detta. Ser du de fem perspektiven sida vid side blir frågan sedan när? besvarad innan du hinner ställa den. Det är hela poängen med kolumnerna i matrisen: de skiljer det nära från det långsamma utan att du behöver gissa vilken du tittar på."
+        },
+        {
+          "type": "text",
+          "content": "Ett varnande ord, lärt av erfarenhet: blanda inte ihop horisont med svårighet. Mikro är inte enklast och mega inte svårast — de svarar på olika frågor och kräver olika tålamod av underlaget. Ju längre horisont, desto mer historik krävs för att kunna säga något alls; ett ungt bolag kan ha ett tydligt mikro-läge och ett helt tyst mega-läge, och det är inte ett fel i matrisen utan en egenskap hos verkligheten. Där historiken inte räcker finns bara ett ärligt svar — och det svaret har ett eget kapitel i denna kurs."
+        },
+        {
+          "type": "insikt",
+          "content": "En horisont är en fråga, inte ett fönster: sedan när rör den sig? Fem horisonter är fem sedan-när — och den som ställer frågan på rätt avstånd slipper bråka om svaret."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en variabel i ett bolag du följer. Beskriv — i dina egna ord, innan du öppnar något verktyg — dess läge på alla fem horisonterna: vad gör den just nu, vad har hänt på senare tid, är det på väg att bli trend, vad säger den långa svängningen, och vad säger hela historiken? Spara din text. När du senare ser matrisen kommer du att upptäcka vilka avstånd ditt ögonmått hanterar sämst — de flesta är blinda för ett av dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fem horisonter — fem frågor till samma serie\",\"rader\":[[\"Horisont\",\"Frågan\",\"Var läget lever\"],[\"Mikro\",\"Vad gör variabeln just nu?\",\"Det närmaste nuet i rapportströmmen\"],[\"Kort\",\"Vad har hänt på senare tid?\",\"Den färskare årsrytmen\"],[\"Medellång\",\"Börjar det bli en trend?\",\"Årsdata som samlar tyngd\"],[\"Lång\",\"Vad säger konjunktursvängningen?\",\"Hela upp- och nedgångar\"],[\"Mega\",\"Vad säger hela historiken?\",\"Allt tillgängligt underlag\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur behandlas horisonterna i denna kurs?",
+          "alternativ": [
+            "Som begrepp — namn på perspektiv, utan kalenderrutor att memorera",
+            "Som exakta fönster i antal kvartal",
+            "Som en rankning från lätt till svår",
+            "Som synonymer för varandra"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlet använder medvetet ordet begrepp — vad är det du behöver bära med dig?"
+        },
+        {
+          "q": "En bruttomarginal breddar det senaste året men ligger stilla över hela den långa historiken. Vilken läsning är rimlig?",
+          "alternativ": [
+            "En fortsättning av decennier av förbättring",
+            "En återhämtning inne i ett långt platå",
+            "Ett datafel",
+            "En korrigering"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer när nära perspektiv och långt perspektiv säger olika?"
+        },
+        {
+          "q": "Varför kräver längre horisonter mer tålamod av underlaget?",
+          "alternativ": [
+            "För att de beräknas långsammare",
+            "För att de behöver mer historik för att kunna säga något alls — unga bolag kan ha tysta långa horisonter",
+            "För att motorn sparar dem till sist",
+            "För att långa horisonter bara gäller index"
+          ],
+          "ratt": 1,
+          "tips": "Vad finns i ett ungt bolags mega-perspektiv — och vad är det ärliga svaret då?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Vågklasserna — impulsvåg, korrigering, basbygge och deras psykologi",
+      "intro": "Fyra ord är allt som behövs för att namnge en fundamentalvariabels rörelse: impulsvåg, korrigering, basbygge — och osatt, som får vänta till nästa kapitel. Men de tre första är inte bara etiketter; de bär varsin psykologi, och en av dem måste dessutom läsas med en viktig förbehållsregel. Detta kapitel ger dig klassernas grammatik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Impulsvågen (▲) betyder att variabeln rör sig kraftigt i positiv riktning — marginalen som breddar rejält, tillväxten som tar fart. Korrigeringen (▼) är spegelbilden: kraftig rörelse i negativ riktning — vinsterna som tunnas av, stabiliteten som urholkas. Basbygget (◼) betyder att variabeln i princip står stilla — ingen kraftig rörelse åt något håll, utan ett plan där serien samlas. Tre klasser, tre teman: kraft, motgång, stillhet. I matrisen visas de som färger och symboler, och hela den visuella läsningen bygger på att dessa tre ord blir lika självklara som upp och ner."
+        },
+        {
+          "type": "text",
+          "content": "Nu förbehållsregeln, som är den vanligaste felsäkringen en ny läsare behöver: vågklassen beskriver variabelns EGEN rörelse — inte om rörelsen är bra eller dålig för bolaget. En stigande skuldsättningsgrad är en impulsvåg — i skulden. Det är inga goda nyheter, men det är en impulsvåg. En fallande P/E-kvot är en korrigering — i värderingen. Många skulle jubla, men klassen heter korrigering. Översättningen från klass till mening måste alltså göras per variabel: lönsamhetsvariabler läses rakt (impuls är gott), skuld- och kapitalförbrukningsvariabler läses med tecknet vänt, och värderingsvariabler läses som fråga — billigare blir det, men varför? Ett undantag finns där motorn redan vänt läsningen åt dig: återköpen (V20), där ett minskat aktieantal läses som positiv våg — företaget köper hem sig självt, och det räknas som kraft i rätt riktning."
+        },
+        {
+          "type": "text",
+          "content": "Klassernas psykologi är värda att känna eftersom de inte bara beskriver tal utan beslut och stämningar bakom talen. Impulsvågen är entusiasm med kraft bakom — investeringar som betalar av, prissättning som håller. Korrigeringen är utmattning eller bakslag — kostnadsbas som växt ifrån intäkterna, en kund som försvunnit. Basbygget är kanske den mest underskattade: tystnad. Ett bolag vars nyckeltal står stilla under flera sammanhängande perioder bygger antingen en plattform eller en fålla — och att skilja dem åt är analys, inte matrisens jobb. När du sedan läser klasserna i motorn: samma exakta klassificeringsregler som avgör när en rörelse är kraftig nog att heta impuls är intern know-how — ditt jobb är tolkningen av det namngivna, inte omnamngivningen."
+        },
+        {
+          "type": "insikt",
+          "content": "Basbygget är matrisens mest undervärderade klass. Stillastående variabler låter tråkiga — men plan är där följande rörelse förbereds, och 'inget händer' är i sig en observation värd en anteckning. På fundamentalt håll är tålamod inte frånvaro av information; det är information om läge."
+        },
+        {
+          "type": "utmaning",
+          "content": "Svara utan att titta i matrisen: namna en variabel där en impulsvåg skulle oroa dig, och en där en korrigering skulle glädja dig. Förklara för dig själv varför tecknet vänts i just de fallen. Om du kan två sådana par — till exempel skuldsättningsgrad och återköp — har du klassernas grammatik i ryggraden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre vågklasser — rörelse, psykologi, läsning\",\"rader\":[[\"Klass\",\"Ikon\",\"Variabelns rörelse\",\"Psykologi\",\"Exempel på läsning\"],[\"Impulsvåg\",\"▲\",\"Kraftig rörelse i positiv riktning\",\"Entusiasm, kraft\",\"Bruttomarginalen breddar rejält\"],[\"Korrigering\",\"▼\",\"Kraftig rörelse i negativ riktning\",\"Utmattning, bakslag\",\"Tillväxten tappar fart tydligt\"],[\"Basbygge\",\"◼\",\"I princip stillastående\",\"Tålamod, ackumulation\",\"Marginalen ligger stilla och samlar kraft\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder vågklassen för en variabel — till exempel impulsvåg i skuldsättningsgraden?",
+          "alternativ": [
+            "Att bolaget blivit mindre riskabelt",
+            "Att variabeln rör sig kraftigt i sin egen positiva riktning — alltså stigande skuld — oavsett om det är bra eller dåligt",
+            "Att motorn rekommenderar köp",
+            "Att variabeln är osatt"
+          ],
+          "ratt": 1,
+          "tips": "Klassen beskriver variabelns rörelse, inte rörelsens värde för dig."
+        },
+        {
+          "q": "Vilken variabel läser motorn med tecknet redan vänt — det vill säga där minskat mått läses som positiv våg?",
+          "alternativ": [
+            "V10 Skuldsättningsgrad",
+            "V04 P/S",
+            "V20 Återköp",
+            "V09 ROE"
+          ],
+          "ratt": 2,
+          "tips": "Vilken variabel handlar om hur många aktier som finns?"
+        },
+        {
+          "q": "Varför kallas basbygget kursens mest undervärdrade klass?",
+          "alternativ": [
+            "För att det är vanligast",
+            "För att stillastående variabler varken ropar köp eller sälj — men 'inget händer' är i sig en observation om läge",
+            "För att motoren inte räknar det",
+            "För att det bara finns på mega"
+          ],
+          "ratt": 1,
+          "tips": "Var förbereds den nästa rörelsen — i tid eller i tystnad?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Osatt — den mest missförstådda klassen",
+      "intro": "Den fjärde klassen har ingen symbol med budskap, bara en punkt: osatt (·). Den är matrisens mest missförstådda utdata — av alla som förväntar sig att ett verktyg alltid ska leverera ett svar. Detta kapitel försvarar tystnad som resultat, och visar varför tomma celler är arbetsmarkeringar snarare än fel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Osatt betyder exakt en sak: att underlaget inte räcker för en säker klassning, och att motorn därför hellre tiger än gissar. Det är inte ett beräkningsfel, inte ett hinder och inte en nödlösning — det är en vald utdata. Samma ärlighet känner du igen från AKM1-kalkylatorn: när du poängsätter en variabel och inte har underlag nog kan du lämna den opoängsatt i stället för att hitta på. Vågfundamentet gör detta automatiskt. En matris full av kvalificerade gissningar är ett farligare verktyg än en matris med ärliga luckor, för gissningarna bär samma visuella auktoritet som beräkningarna — och därmed samma risk att tas på tro."
+        },
+        {
+          "type": "text",
+          "content": "Varför blir celler osatta? Tre skäl dominerar. För det första kort historik: ett nynoterat bolag har en ung serie, och särskilt de långa horisonterna kan sakna tillräckligt underlag. För det andra dataleverantörernas begränsningar: historiken hos offentliga källor är kortare än vi skulle önska, och det är ett medgivande vi återkommer till i kontroverskapitlet. För det tredje variablernas natur: moat- och katalysatorvariabler — patent, varumärke, nätverkseffekter, avtal — är till stora delar kvalitativa, och där kan inte en nivå beräknas deterministiskt ur talunderlaget. Då visar nivå-badgen ett streck, och där seriens underlag är för tunt visas vågen som osatt. Tomheten har alltså orsaker, och orsakerna är läsbara."
+        },
+        {
+          "type": "text",
+          "content": "Så vad gör du med en osatt cell? Du gör ditt arbete. Osatt är gränsen där motorn stannar och den manuella analysen börjar — samma analoga gräns som mellan beräknad AKM1-poäng och din egen bedömning. Ett kluster av osatta celler i moat-kategorin är inte ett hål i verktyget; det är en påminnelse om att moat fortfarande är ett hantverk. Och en hel rad osatt för ett ungt bolag är en sund varning: det finns ännu inte historia nog att läsa, oavsett hur stark berättelsen känns. I denna mening är osatt en styrka: det är den klass som håller de tre andra ärliga. Varje gång du ser en punkt i matrisen ser du verktyget vägra att sträcka sig längre än underlaget räcker — och den disciplinen är värd mer än en fullmatad matris."
+        },
+        {
+          "type": "insikt",
+          "content": "Osatt är en styrka — aldrig gissa. Tomma celler är kartmarkeringar för här börjar ditt arbete: verktyget ritar kusten, men inlandet är ditt. Den som lär sig läsa luckorna läser mer än den som bara läser färgerna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en matris — gärna demomatrisen på /vagfundament. Leta reda på de osatta cellerna. Klustrar de sig i vissa kategorier eller horisonter? Skriv ned en mening per kluster om vad du skulle behöva för att fylla det: äldre rapporter, annan källa, eller egen kvalitativ analys. Du har just formulerat en researchplan med hjälp av tystnad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Osatt — vad det är och vad det inte är\",\"rader\":[[\"Påstående\",\"Stämmer\",\"Förklaring\"],[\"Osatt betyder att motorn misslyckats\",\"Nej\",\"Det är en vald utdata — tystnad i stället för gissning\"],[\"Osatt betyder att variabeln står stilla\",\"Nej\",\"Stillastående heter basbygge — osatt handlar om underlaget\"],[\"Osatt visar var eget arbete behövs\",\"Ja\",\"Där börjar manuell AKM1-bedömning\"],[\"Osatt är vanligast där historiken är tunn\",\"Ja\",\"Nya bolag, kort datahistorik, mjuka variabler\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder klassen osatt?",
+          "alternativ": [
+            "Att variabeln står stilla",
+            "Att underlaget inte räcker för säker klassning — och att motorn hellre tiger än gissar",
+            "Att motorn kraschat",
+            "Att variabeln är struken ur AKM1"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden mellan rörelsens natur och underlagets längd — vad beskriver basbygget?"
+        },
+        {
+          "q": "Vilket av följande är ETT av de tre huvudsakliga skälen till osatta celler?",
+          "alternativ": [
+            "Att variabeln är för gammal",
+            "Att dataleverantörernas historik är kort — ett medgivande kursen är öppen med",
+            "Att användaren betalat för lite",
+            "Att matrisen är felritad"
+          ],
+          "ratt": 1,
+          "tips": "Kapitlet räknar upp kort historik, leverantörernas begränsningar och variablernas natur."
+        },
+        {
+          "q": "Vad är den rätta reaktionen på en kluster av osatta celler i moat-kategorin?",
+          "alternativ": [
+            "Att anta att moaten är svag",
+            "Att anta att moaten är stark",
+            "Att se det som en arbetsmarkering — där börjar den manuella, kvalitativa analysen",
+            "Att ta bort kategorin från AKM1"
+          ],
+          "ratt": 2,
+          "tips": "Var stannar motorn och var börjar hantverket?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Hierarkin — cell, variabel, kategori, helhet",
+      "intro": "Tjugo variabler gånger fem horisonter är hundra celler — för många för huvudet, precis lagå för en matris. Lösningen är en hierarki i fyra steg: cellen, variabeln, kategorin, helheten. Detta kapitel lär ut hur matrisen byggs uppåt och hur den ska läsas nedåt — och hur den håller kontakten med AKM1:s vikter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bygget börjar i botten. En cell är en variabels vågklass på en horisont — den minsta läsbara enheten, en enda observation. En rad är variabelns vågprofil: hur klassen skiftar eller håller över de fem horisonterna. En kategorirad är variablernas sammanlagda drag per horisont — tillväxt, värdering, lönsamhet, stabilitet, moat, katalysator, risk — där kategorins celler sammanfattas till ett tal per horisont. Och helhetsraden är hela AKM1-bilden i vågform: kategoritalen viktas samman med AKM1:s kategorivikter, alltså samma vikter som styr poängsättningen i kalkylatorn. Därför rimmar systemen: Vågfundamentet är inte en ny modell bredvid AKM1 — det är AKM1 med tid på."
+        },
+        {
+          "type": "text",
+          "content": "Sammanfattningstalens skala löper från minus ett till plus ett, och den ska läsas som en samstämmighetsmätare: värden nära ändarna betyder att variablerna i gruppen drar åt samma håll, medan värden nära noll betyder att de bråkar — eller att många är osatta och därför inte drar åt något håll alls. Det är en viktig nyans: noll är inte neutral i bemärkelsen lugnt, utan i bemärkelsen oavgjort. En kategori kan ligga nära noll för att den är ett stridsfält mellan impulser och korrigeringar — och det är i sig en läsning värd att stanna vid."
+        },
+        {
+          "type": "text",
+          "content": "Så läsningen — som ska ske i omvänd ordning mot bygget. Börja med helhetsraden: vad säger den viktade fundamentala bilden per horisont? Zooma sedan in i den kategori som pekar längst ifrån de andra, eller den som förvånar dig. Gå därefter till variabelraderna i den kategorin och leta upp vilka rader som driver. Landa sist i cellerna — de enskilda observationer som förklarar resten. Fyra steg, från karta till gata. Det är inte en ceremoni utan en attentionsekonomi: hundra celler är oöverblickbara, en helhetsrad med sju kategorital är det inte. Hierarkins jobb är att se till att ditt öga börjar där informationen är tätast — och slutar där den är minst."
+        },
+        {
+          "type": "insikt",
+          "content": "Hierarkin är en muskel för uppmärksamheten: hundra celler förpackas till en berättelse i fyra steg. Den som kan bygga uppåt kan räkna — den som kan läsa nedåt kan analysera. Kursen kräver det senare."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta vilken matris som helst och träna båda riktningarna. Bygga uppåt: välj en cell, formulera vad den betyder för sin variabelrad, sedan för sin kategori, sedan för helheten. Läsa nedåt: börja på helhetsraden och zooma tills du hittar cellen som förklarar mest. Skriv en mening per nivå om samma observation — fyra meningar som ska hänga ihop. Kan du det, kan du hierarkin."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Hierarkins fyra nivåer\",\"rader\":[[\"Nivå\",\"Fråga\",\"Exempel på läsning\"],[\"Cell\",\"Vad gör denna variabel på denna horisont?\",\"V09 på medellång: impulsvåg\"],[\"Variabel\",\"Vilken vågprofil har variabeln?\",\"ROE stiger på alla horisonter utom mikro\"],[\"Kategori\",\"Dra variablerna åt samma håll?\",\"Lönsamheten samlad kring impulsvåg\"],[\"Helhet\",\"Vad säger den viktade bilden per horisont?\",\"Drag mot samma håll på medellång\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en cell i matrisen?",
+          "alternativ": [
+            "En hel kategori sammanfattad",
+            "En variabels vågklass på en enda horisont",
+            "Helhetsradens värde",
+            "En AKM1-poäng"
+          ],
+          "ratt": 1,
+          "tips": "Den minsta lesenheten — vad behövs för att ange en observation?"
+        },
+        {
+          "q": "Hur vägs helhetsraden samman?",
+          "alternativ": [
+            "Med lika vikt för alla tjugo variabler",
+            "Med AKM1:s kategorivikter — samma vikter som i kalkylatorn",
+            "Slumpvis",
+            "Efter prisvolym"
+          ],
+          "ratt": 1,
+          "tips": "Därför rimmar systemen: det är AKM1 med tid på."
+        },
+        {
+          "q": "Vad betyder ett sammanfattningstal nära noll?",
+          "alternativ": [
+            "Att gruppen är lugn och stabil",
+            "Att variablerna bråkar åt olika håll — eller att många är osatta",
+            "Att motorn är osäker",
+            "Att kategorin saknar data helt"
+          ],
+          "ratt": 1,
+          "tips": "Noll är inte lugnt utan oavgjort — vad kan ligga bakom ett oavgjort resultat?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Att läsa matrisen — mönster, kluster, tomma fläckar",
+      "intro": "En ifylld matris är inte en checklista att bocka av utan en väderkarta för bolagets fundamentals. Kartan ska inte läsas cell för cell utan system för system: kluster som bildar klimat, kontraster som ställer frågor, väntrum som samlar kraft och tomma fläckar som pekar ut arbete. Detta kapitel är läskonsten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Läs rader först. En variabelrad berättar seriens hela sammanhang på en enda rad: impulsvåg på alla fem horisonter är en genuin strukturell förbättring — rörelsen har funnits länge och lever fortfarande. Impuls endast på det närmaste perspektivet med stilla eller motsatta längre perspektiv är ett ryck, inte en förändring — möjligen början på en, men det vet ingen än. Korrigering som djupnar ju längre horisonten är en lång torka; korrigering endast på det närmaste med frisk långsida är ett bakslag i en frisk serie. Raden är alltså variabelns levnadsbeskrivning i fem meningar — och du läser den vänster till höger från nuet mot historien."
+        },
+        {
+          "type": "text",
+          "content": "Läs sedan kolumner och kluster. En kolumn är bolagets fundamentals på ett avstånd: en hel kolumn i impulsvåg är samordnad förbättring — sällsynt, och ofta tidigt i en bolagscykel; en kolumn i korrigering är samordnad försämring, och den vill du se tidigt. Ännu mer informationsbärande är kontrasterna, eftersom de ställer frågor åt dig: är lönsamheten i impulsvåg medan värderingen korrigera? Bygger stabiliteten bas medan tillväxten växer? Sådana kombinationer — rakt ur labbets egen presentationslogik — är inbjudningar att fråga varför, inte slutsatser att handla på. Klustret slår cellen: en ensam grön ruta är en anekdot, en grön kategori är ett klimat."
+        },
+        {
+          "type": "text",
+          "content": "Och läs till slut det som inte finns. Tomma fläckar — kluster av osatta celler — är matrisens tysta markering: de visar var underlaget tar slut, vilka variabler som aldrig blir talserier och vilka horisonter som är för långa för detta bolag just nu. Ett ungt bolag har tysta långa sidor; ett moget bolag med tyst moat-kategori påminner dig om att vissa saker aldrig blir data. De tomma fläckarna är alltså inte brister i läsningen utan en del av den — och när du väl läser både fält och luckor har du hela kartan. Då återstår bara den mest spännande läsningen av alla: att lägga en prismatris bredvid och se vad som händer när två vågvärldar säger olika. Det är nästa kapitel — kursens klimax."
+        },
+        {
+          "type": "insikt",
+          "content": "Kluster slår celler. En ensam cell i impulsvåg är en anekdot; en hel kategori är ett klimat; en hel kolumn är en årstid. Fråga alltid: är detta ett väderfenomen eller ett klimatförändring — och sedan när?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en matris och hitta en kontrast du reagerar på — till exempel lönsamhet som pekar ena hållet och värdering det andra. Skriv den två meningar långa berättelsen: mening ett beskriver vad som ses, mening två ställer frågan varför. Spara den. Vid nästa genomgång, läs om din egen fråga — var den rätt formulerad? Det är så läsöga kalibreras."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fem mönster i matrisen — och deras läsning\",\"rader\":[[\"Mönster\",\"Ser ut som\",\"Bör studeras som\"],[\"Kluster\",\"Hela kategorin i samma klass\",\"Ett klimat, inte en anekdot\"],[\"Kontrast\",\"Lönsamhet impuls, värdering korrigera\",\"En fråga om varför de skiljer sig\"],[\"Väntrum\",\"Bred sammanhängande basbygge-rad\",\"Stabilitet som samlar kraft\"],[\"Kolumnsväng\",\"Hela kolumnen i impuls\",\"Samordnad förbättring — sällsynt\"],[\"Tom fläck\",\"Osatta celler samlade\",\"Dataöken — här krävs eget arbete\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder det om en variabel visar impulsvåg på alla fem horisonterna?",
+          "alternativ": [
+            "Att rörelsen är ett kortvarigt ryck",
+            "Att det är en genuin strukturell förbättring — rörelsen har funnits länge och lever fortfarande",
+            "Att variabeln är osatt",
+            "Att bolaget är overksamt"
+          ],
+          "ratt": 1,
+          "tips": "Vad krävs för att en rörelse ska synas på alla avstånd samtidigt?"
+        },
+        {
+          "q": "Varför sägs kontraster — som lönsamhet i impulsvåg medan värderingen korrigera — vara mer informationsbärande än enstämmighet?",
+          "alternativ": [
+            "För att de alltid betyder köpläge",
+            "För att de ställer en varför-fråga som inbjuder till studium, i stället för att bara bekräfta",
+            "För att motorn räknar dem dubbelt",
+            "För att de är vanligast"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör en fråga med din analys — jämfört med en bekräftelse?"
+        },
+        {
+          "q": "Vad är den rätta läsningen av en tom fläck — ett kluster av osatta celler?",
+          "alternativ": [
+            "Att variablerna är onormala",
+            "Att motorn faller sönder",
+            "Att underlaget tar slut där — en karta över var eget arbete behövs",
+            "Att bolaget saknar fundamentals"
+          ],
+          "ratt": 2,
+          "tips": "Kom ihåg osatt-kapitlet: tystnad är en kartmarkering."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Divergens — fundamental våg möter prisvåg",
+      "intro": "Här möts ekosystemets två vågvärldar: AK1TS läser prisets vågor, Vågfundamentet läser variablernas. Ofta säger de samma sak — och det är tråkigt nog det minst intressanta fallet. Kursens klimax är ögonblicket då de skiljer sig åt, för då blir den verkligt viktiga frågan synlig: vem håller på att ha fel, och vad krävs för att de ska mötas igen?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Två system, en aktie. Prisvågorna summerar marknadens samlade röstning om framtiden — hopp, rädsla och likviditet i en enda serie. Fundamentalvågorna summerar bolagets förmåga att skapa värde — marginaler, tillväxt, balansräkning, tjugo serier. När båda pekar uppåt är hållbarheten som störst: trenden har en motor. När båda pekar nedåt är bilden samlad i sin motsats: marknaden och talen går samma väg bakåt. Men när de pekar olika — då börjar det intressanta. Divergensen är inte ett fel i något av systemen; det är den observation som bägge systemen tillsammans är konstruerade för att göra synlig."
+        },
+        {
+          "type": "text",
+          "content": "Två rubrikdivergenser tar priset. Fundamental impulsvåg kombinerat med pris-korrigering kallas i labbets språkbruk en värde-signal att studera: bolaget bygger — marginaler breddar, skulder smalnar — medan marknaden säljer. Värde-signal, inte värde-köp: frågan du ska ställa är vad marknaden tvivlar på som matrisen inte ser — ett kommande beslut, en sektorström, en storägare, ettmakroläge. Den spegelvända divergensen — fundamental korrigering med pris i impulsvåg — är priset som springer ifrån fundamentet: uppgången bär inte av talen utan av berättelse, momentum eller likviditet, och förr eller senare måste antingen talen ta sig ikapp eller priset vänta in dem. Båda läsningarna är studieinbjudningar. Ingen av dem är en köp- eller säljsignal, och den som talar om dem i termer av handling har missförstått verktyget."
+        },
+        {
+          "type": "text",
+          "content": "Konvergensen är alltså inte alltid lycka och divergensen inte alltid larm — de fyra rutorna i pris gånger fundamental innehåller fyra olika studiefrågor, och nyansen ligger i hur frågorna formuleras. En gemensam uppgång förtjänar frågan vad som kan knäcka samstämmigheten; en gemensam nedgång förtjänar frågan hur mycket som redan är prissatt. Och en praktisk iakttagelse från läsning av många matriser: ju kortare horisont, desto oftare bråkar pris och fundament — och desto mindre bör det väga i dina slutsatser. Långsamma divergenser är de som betyder något; snabba är oftare bara brus i två serier som pulserar olika. Så härled hierarkin även här: läs korsningen uppifrån och ner, från långsamt till snabbt — aldrig tvärtom."
+        },
+        {
+          "type": "insikt",
+          "content": "Divergensen vänder på frågan. Ensam frågar systemet: hur mår bolaget? Tillsammans frågar de: vem har rätt — marknaden eller talen — och vad måste hända för att de ska mötas igen? Det är ekosystemets klimax, för svaret kräver båda systemen och tålamod nog att vänta på ett av dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett innehav du har en åsikt om. Placera det först i din egen fyra-ruta: tror du att pris och fundament pekar samma håll, och i så fall vilken? Skriv ner varför. Om du är medlem, kör sedan matriserna och se om din placering stämde — och framför allt: om du gissade konvergens av önskan att ha rätt, vilket är ett av de vanligaste kalibreringsfelen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prisvåg × fundamentalvåg — fyra rutor\",\"rader\":[[\"Kombination\",\"Läsning\",\"Studiefråga\"],[\"Pris impuls + fundamental impuls\",\"Trend med motor\",\"Vad kan knäcka samstämmigheten?\"],[\"Pris korrigering + fundamental korrigering\",\"Både marknad och tal gått bakåt\",\"Hur mycket är redan prissatt?\"],[\"Pris korrigering + fundamental impuls\",\"Värde-signal att studera\",\"Vad tvivlar marknaden på som matrisen inte ser?\"],[\"Pris impuls + fundamental korrigering\",\"Priset springer ifrån fundamentet\",\"Vad bär uppgången om inte talen?\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kallas kombinationen fundamental impulsvåg och pris i korrigering?",
+          "alternativ": [
+            "En värdefälla",
+            "En värde-signal att studera",
+            "En konvergens",
+            "Ett datafel"
+          ],
+          "ratt": 1,
+          "tips": "Bolaget bygger medan marknaden säljer — vad kallas den inbjudan?"
+        },
+        {
+          "q": "Vad är den korrekta hållningen till en divergens?",
+          "alternativ": [
+            "Köp — marknaden har fel",
+            "Sälj — matrisen har fel",
+            "En inbjudan att studera — aldrig en signal att köpa eller sälja",
+            "Vänta på att motorn räknar om"
+          ],
+          "ratt": 2,
+          "tips": "Formuleringen står på själva sidan: en inbjudan att studera."
+        },
+        {
+          "q": "Vad sägs om divergenser på korta respektive långa horisonter?",
+          "alternativ": [
+            "Korta divergenser är de viktigaste",
+            "Ju kortare horisont, desto oftare bråkar pris och fundament — och desto mindre bör det väga",
+            "Horisonten spelar ingen roll",
+            "Långa horisonter divergerar aldrig"
+          ],
+          "ratt": 1,
+          "tips": "Två serier som pulserar olika — var bruseras bort och var består spåren?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Portföljen — från varje aktie för sig till helheten",
+      "intro": "En matris per aktie besvarar frågor om aktien. Men du äger inte aktier — du äger en portfölj, och portföljen har egenskaper som inget enskilt innehav avslöjar. Detta kapitel behandlar portföljaggregeringen som idé: vad som händer när cellerna viktsammanläggs över alla innehav, och vilka frågor som bara den sammanlagda bilden besvarar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Idén är lika enkel som konsekvenserna är djupa: varje innehav bidrar med sina celler, viktade med innehavets storlek, och portföljen får därmed sin egen matrisbild — rad för rad, horisont för horisont. En liten position påverkar bilden lite; en dominant position sätter bilden. Det är inte en svaghet utan en sanning om ägande: din portföljs fundamentala vågor är i praktiken dina största innehavs vågor, och den viktade bilden visar det utan att dölja det bakom en jämlikhet som inte finns. Aggregeringen är alltså hederlig på samma villkor som allt annat i ekosystemet — den visar vad som gäller, inte vad man önskar gällde."
+        },
+        {
+          "type": "text",
+          "content": "Vad avslöjar den sammanlagda bilden som enskilda bilder inte gör? Framför allt gemensamma faktorer. Om hela portföljens värderingskategori korregerar samtidigt äger du inte fem separata problem — du äger ett gemensamt: en exponering mot samma slags risk, travad i flera innehav som ser olika ut på ytan. Om lönsamhetskategorin samlar impulser över i princip alla innehav rider portföljen en gemensam våg av marginalförbättring — och då är den också sårbar för vad som vänder den. Frågan växlar alltså från vilka aktier äger jag? till vilka vågor äger jag? — och det är en betydligt farligare fråga, i bemärkelsen att den når det som faktiskt kan skada dig."
+        },
+        {
+          "type": "text",
+          "content": "Praktiskt levereras detta i portföljsektionen: medlemmar kan köra matrisen för egna innehav och se portföljen samlad i Min portfölj. Bilden är pedagogisk analys — inte en omfördelningsplan eller en uppmaning att rebalansera. Två saker är värda att bära med sig från den vy som helhet. För det första att vikterna gör bilden ärlig: den stora posten syns, och det är meningen. För det andra att de osatta fläckerna aggregeras också — en portfölj av unga bolag har en ung portföljmatris, och det syns. Även på portföljnivå gäller alltså kursens grundton: verktyget ritar kartan, inklusive dess tomma partier, och besluten förblir dina."
+        },
+        {
+          "type": "insikt",
+          "content": "Du är din viktnings vågor. Portföljaggregeringen flyttar frågan från vilka aktier äger jag till vilka vågor äger jag — och svaret på den senare frågan är nästan alltid mer oväntat, eftersom få aktiesparare någonsin har sett sitt ägande som ett klimat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ned dina innehav i storleksordning — störst först, ungefärliga andelar räcker. Gissa sedan: vilket enskilt innehav dominerar portföljens sammanlagda lönsamhetsrad? Skriv också en gissning om huruvida din värderingsrad samlat drar åt något håll. Kör sedan portföljvyn, om du är medlem, och se om gissningarna stämde — och om den dominerande posten var den du trodde."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Frågor som bara portföljvyn besvarar\",\"rader\":[[\"Fråga\",\"Var svaret syns\",\"Vad det inte är\"],[\"Vilka vågor dominerar mitt ägande?\",\"Helhetsraden per horisont\",\"Inte en köp- eller säljplan\"],[\"Är en risk gemensam för flera innehav?\",\"Kluster i aggregerade kategorier\",\"Inte en korrelationsberäkning\"],[\"Drar ett enskilt innehav åt allt?\",\"Viktingens effekt på raderna\",\"Inte en uppmaning att rebalansera\"],[\"Var saknar jag underlag?\",\"Osatta kluster i portföljen\",\"Inte ett fel i motorn\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur vägs portföljens matrisbild samman?",
+          "alternativ": [
+            "Alla innehav bidrar lika mycket",
+            "Cellvis, viktat efter innehavens storlek — stora positioner sätter bilden",
+            "Efter högst AKM1-poäng",
+            "Slumpvis per horisont"
+          ],
+          "ratt": 1,
+          "tips": "Vad är den ärliga sanningen om vem som bestämmer i en portfölj?"
+        },
+        {
+          "q": "Vad betyder det om hela portföljens värderingskategori korregerar samtidigt?",
+          "alternativ": [
+            "Att alla innehav är dåliga",
+            "Att du äger en gemensam riskexponering travad i flera innehav — ett gemensamt faktum, inte fem separata",
+            "Att motorn viktar fel",
+            "Att du bör sälja allt"
+          ],
+          "ratt": 1,
+          "tips": "Fem problem eller ett — vad heter skillnaden?"
+        },
+        {
+          "q": "Vad är portföljvyn enligt kapitlet — och vad är den inte?",
+          "alternativ": [
+            "En omfördelningsplan",
+            "En automatiserad rebalanseringsuppmaning",
+            "Pedagogisk analys av det viktade ägandet — besluten förblir dina",
+            "En prestandamätning mot index"
+          ],
+          "ratt": 2,
+          "tips": "Grundtonen i hela ekosystemet: verktyget ritar kartan."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Kontroversen — fundamental data kan inte ha vågor",
+      "intro": "Vågfundamentets starkaste motståndare finns inte hos chartisterna utan mitt i den mainstream som kursen vill nå: fundamental analys, heter det, är studiet av nivåer — och nivåer har inga vågor. Detta kapitel låter motståndaren tala färdigt i bästa form, redogör för varför AK1A ändå tänker som det gör — och listar medgivandena utan försköning. Det är kursens tyngsta kapitel, avsiktligt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Motståndarens argument, formulerat så starkt det går. Fundamental analys handlar om nivåer: ett P/E är ett förhållande, en marginal är en andel, en balansräkning är ett läge vid en tidpunkt. Vågor hör prisvärlden till — där finns kontinuerlig handel, tusentals observationer per dag, en serie mjuk nog att böjas. Fundamental data däremot anländer i diskreta paket per rapport, revideras i efterhand, påverkas av räkenskapsval och säsong, och beskriver ett förflutet som redan hänt. Att lägga vågor på sådan data är att klä prisanalys i bokföringskläder — snyggt att se på, dålig fysik. Och datahistoriken? Kort, hos de flesta leverantörer påfallande kort, särskilt utanför de största börserna. Moat och katalysatorer är dessutom bedömningar, inte serier — det finns ingen våg att läsa i en uppskattning."
+        },
+        {
+          "type": "text",
+          "content": "Varför tänker AK1A ändå som det gör? Därför att argumentet bevisar för mycket. En variabel som observeras upprepade gånger över tid är per definition en serie — frågan är inte om rörelsen finns utan om vi namnger den med disciplin eller stirrar på nivåer och låtsas att de inte rör sig. Priset har momentum — det är finansforskningens mest dokumenterade fenomen — men att fundamenta saknar motsvarande litteratur betyder inte att de står stilla; det betyder att ingen mätt strukturerat. Det är exakt gapet Vågfundamentet fyller: samma data vid varje körning, samma klass vid varje läsning, samma tystnad när underlaget tryter. Och notera vad motståndarens egen kritik faktiskt kräver: ärlighet om bruset, ärligheten om den korta historiken, ärligheten om de mjuka variablerna. Det är inte ett angrepp på matrisen — det är en specifikation av den. Osatt-klassen, nivå-strecken och medgivandena nedan är den specifikationen, implementerad."
+        },
+        {
+          "type": "text",
+          "content": "Medgivandena, i klartext, så att de aldrig glöms bort i marknadsföringen. Ett: kvartalsdata är brusig — enskilda rapporter innehåller engångsposter, säsongseffekter och revideringar, och en enstaka cells klass kan därför vara brusets verk, inte verklighetens. Två: historiken hos dataleverantörerna är kort — långa horisonter blir ofta glesa eller osatta, och ju yngre bolag, desto tystare matris. Tre: vissa variabler blir aldrig vågor — moat och katalysatorer förblir i praktiken manuella AKM1-bedömningar, och matrisen säger det genom streck och punkter i stället för att låtsas. Fyra: klassificeringsreglerna är valda kontrakt, internt know-how — inte naturkonstanter, och de ska inte förväxlas med sanningar. Fem: ingen vågklass i matrisen bär prediktiv garanti — verktyget strukturerar observationer, det profeterar inte. Den som läser detta och ändå finner verktyget värdefullt har förstått det rätt; den som finner det meningslöst har åtminstone avfärdat det på rätt grunder — och det är också en seger för ärligheten."
+        },
+        {
+          "type": "insikt",
+          "content": "Motståndarens starkaste vapen är medgivandena — så vi förekommer dem. En matris som säger osatt när data tryter, streck när nivå inte kan beräknas, och inga prognoser någonsin, är svårare att angripa än en som lovar vågor den inte kan bevisa. Ärligheten är inte försvaret — den är produkten."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv motståndarens bästa argument i din egen formulering — inte kapitlets, ditt. Skriv sedan vårt svar utan att förneka ett enda av de fem medgivandena. Om du lyckas har du en position som håller i ett samtal med en CFA-utbildad analyschef — och det är provet en kontroverskurs ska stå för."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — argument, svar, medgivanden\",\"rader\":[[\"Motståndarens argument\",\"Vårt svar\",\"Vårt medgivande\"],[\"Fundamental analys handlar om nivåer\",\"Varje nivå som observeras upprepade gånger är en serie — rörelsen kan namnges med disciplin\",\"Många förblir nivåer i praktiken\"],[\"Kvartalsdata är brusig och revideras\",\"Därför kräver klassningen determinism — och tystnad när underlaget är tunt\",\"Bruset är verkligt; osatta celler är dess pris\"],[\"Dataleverantörernas historik är kort\",\"Motorn säger osatt i stället för att sträcka serien\",\"Långa horisonter blir ofta glesa\"],[\"Moat och katalysatorer är bedömningar\",\"De hanteras som nivåer och manuella poäng — inte påtvingade vågor\",\"Vissa rader blir aldrig vågor\"],[\"Vågor lovar för mycket\",\"Ingen vågklass bär prediktiv garanti — verktyget strukturerar\",\"Vi kan inte bevisa prognosförmåga\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är motståndarens kärnpåstående?",
+          "alternativ": [
+            "Att fundamental analys är bättre än teknisk",
+            "Att fundamental data är nivåer — diskret, reviderad, brusig — och därför inte kan bära vågor",
+            "Att AKM1 har för många variabler",
+            "Att vågor bara finns i valutor"
+          ],
+          "ratt": 1,
+          "tips": "Vad skiljer en rapportpunkts karaktär från en handlad prissäries?"
+        },
+        {
+          "q": "Vilket är AK1A:s huvudsvar?",
+          "alternativ": [
+            "Att motståndaren aldrig läst kursen",
+            "Att en variabel som observeras upprepade gånger är en serie — och att frågan är om rörelsen namnges med disciplin eller ignoreras",
+            "Att fundamental data är kontinuerlig egentligen",
+            "Att alla kritiker har fel om prisvågor med"
+          ],
+          "ratt": 1,
+          "tips": "Argumentet bevisar för mycket — vad följer av att även diskreta observationer bildar serier?"
+        },
+        {
+          "q": "Vilket av följande är ETT av kursens fem medgivanden?",
+          "alternativ": [
+            "Att kvartalsdata är brusig och att enskilda celler kan vara brusets verk",
+            "Att matrisen förutsäger vinsterna",
+            "Att moat-variabler är enkelt att beräkna",
+            "Att leverantörshistoriken är oändlig"
+          ],
+          "ratt": 0,
+          "tips": "Medgivandena börjar med brus, fortsätter med kort historik och mjuka variabler."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "AI-protokollet — hur vår AI läser matrisen",
+      "intro": "Ekosystemets AI har tillgång till matrisen — och är dessutom byggd enligt ett protokoll som gör den till läsare och inte spåkvinna. Protokollet kan sammanfattas i en mening: citera celler exakt, extrapolera aldrig. Detta kapitel förklarar reglerna, varför de finns och hur du själv granskar att AI:n följer dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Protokollets första regel: exakt citering. När AI:n refererar matrisen gör den det med variabel, horisont och klass — V09 ROE, medellång, impulsvåg — inte med omskrivningar som starkt lönsamhetsläge eller imponerande utveckling. Skillnaden låter akademisk men är allt annat: citeringen kan kontrolleras mot matrisen av vem som helst, medan omskrivningen redan är en tolkning — och tolkningar glider. Andra regeln: aldrig extrapolation. AI:n sträcker sig aldrig bortom vad cellerna säger — den drar inte slutsatser om nästa rapport, om målpris eller om vad vågen kommer att bli. Tredje regeln: osatt förblir osatt. När en cell är osatt säger AI:n det, i stället för att fylla luckan med det mest sannolika svaret — vilket är exakt det en språkmodell är byggd att göra, och exakt varför regeln finns."
+        },
+        {
+          "type": "text",
+          "content": "Varför kräver just AI:n ett protokoll? Eftersom modeller är tränade på att vara hjälpsamma och flytande — och flytande tal är en risk eftersom materialet innehåller ärliga tomrum. En modell utan regler fyller gärna osatta celler med rimliga gissningar, glättar kontraster till berättelser och förvandlar studieinbjudningar till rekommendationer, allt med samma självsäkra ton. Protokollet bryter det: det gör AI:n till en sträng bibliotekarie som hämtar rätt bok på rätt hylla och läser upp rätt sida — och som hellre svarar det står inget här än att hitta på. Det är en medveten inskränkning av verktygets behaglighet till förmån för dess pålitlighet, och den samma princip som får motorn att skriva osatt: hellre tig än gissa."
+        },
+        {
+          "type": "text",
+          "content": "Hur använder du det här? Be om celler, inte om domar: vad säger V10 på lång? Vilka variabler är osatta på mega, och vad beror det på? Visa mig kontrasten mellan lönsamhet och värdering på medellång. Sådana frågor spelar protokollet i händerna — och du kan alltid granska svaret mot matrisen, vilket är hela poängen med en citerande AI: kontrollen är byggd in. I labbets interna numrering av principer kallas principen P7 — AI:en citerar celler exakt — men du behöver inte minnas någon kod; du behöver bara skilja när ett AI-svar är en citering och när det är en skapelse. Den färdigheten håller längre än vilken modellversion som helst, och den fungerar lika bra mot alla andra system som lovar att läsa data åt dig."
+        },
+        {
+          "type": "insikt",
+          "content": "En AI som får säga jag ser det inte är starkare än en som alltid svarar. Protokollet bygger in tystnaden som ett svar — och därmed blir varje yttrande granskningsbart: citeringen kan kontrolleras, extrapoleringen kan bara troddas."
+        },
+        {
+          "type": "utmaning",
+          "content": "Testa protokollet i praktiken. Ställ en cellfråga och ett lockbete i samma samtal: först vad säger V09 på medellång? och sedan tror du vågen håller i sig? Betygssätt svaret på tre punkter: citerades cellen exakt, förblev osatt osatt, och vägrades extrapolationen? Ett svar som klarar alla tre har klarat provet — och du har precis granskat en AI bättre än de flesta någonsin gör."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"AI-protokollet — gör och gör aldrig\",\"rader\":[[\"AI:n gör\",\"AI:n gör aldrig\"],[\"Citerar celler exakt med variabel och horisont\",\"Parafraserar impulsvåg till starkt köpläge\"],[\"Säger osatt när cellen är osatt\",\"Fyller tomma celler med sannolika värden\"],[\"Hänvisar till matrisen som källa\",\"Extrapolerar bortom vad cellerna säger\"],[\"Formulerar studiefrågor\",\"Omvandlar divergenser till råd\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är AI-protokollets kärna?",
+          "alternativ": [
+            "Att AI:n alltid ger en rekommendation",
+            "Att AI:n citerar celler exakt och aldrig extrapolerar",
+            "Att AI:n förutsäger nästa rapport",
+            "Att AI:n väljer ut de bästa variablerna"
+          ],
+          "ratt": 1,
+          "tips": "En mening, två verb: citera — extrapolera aldrig."
+        },
+        {
+          "q": "Varför är just språkmodeller i behov av ett sådant protokoll?",
+          "alternativ": [
+            "För att de är tränade på gammal data",
+            "För att de är tränade att vara hjälpsamma och flytande — och därmed locka att fylla tomrum med rimliga gissningar",
+            "För att de inte kan läsa tabeller",
+            "För att de arbetar offline"
+          ],
+          "ratt": 1,
+          "tips": "Vad är en språkmodell byggd att alltid leverera — och vad innehåller matrisen som stör den leveransen?"
+        },
+        {
+          "q": "Vad gör AI:n när en cell är osatt?",
+          "alternativ": [
+            "Gissar det mest sannolika värdet",
+            "Hoppar över frågan tyst",
+            "Säger att cellen är osatt — tystnaden är ett svar",
+            "Frågar användaren att fylla i"
+          ],
+          "ratt": 2,
+          "tips": "Samma princip som motorn: hellre tig än gissa."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Praktiken — använd Vågfundamentet och portföljsektionen",
+      "intro": "Sista kapitlet lämnar läsningen och går till verktyget: arbetsflödet från demomatris till egen journal. Här samlas kursens trådar till en vana — och till kursens eget slutmål, som inte är en analys utan en reflex: att fråga sedan när? om varje siffra du möter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja offentligt och utan konto: sidan /vagfundament visar demomatrisen med dess exempelaktie, och där kan du träna hela kursen gratis. Arbetsordningen är den tränade hierarkin: läs först sammanfattningen — antalet impulsvågor, korrigeringar, basbyggen och osatta celler ihela matrisen — för att få klimatet på en rad. Gå sedan till helhetsraden och kategoritalen per horisont, välj ut den kategori som pekar längst ifrån de andra, och följ dess variabelrader ner till de celler som driver. Hovra över celler för att få detaljer om underlaget. Fem minuter, en genomläsning — och du har övat allt sedan kapitel tre."
+        },
+        {
+          "type": "text",
+          "content": "När formen sitter: kör egna innehav. Medlemmar kan köra matrisen för sina aktier och se portföljen samlad i Min portfölj — och där gäller samma läsordning som för en aktie, fast med den viktade bilden och dess egna frågor från kapitel nio. Bygg en liten kalibreringsritual i varje genomgång: gissa först, kör sedan. Skriv ned — innan du tittar — vad du tror om en variabels vågprofil och om helhetsradens drag. Jämför. Skillnaderna är dina blinda fläckar, namngivna och daterade, och de är den mest personliga utbytet kursen kan lämna: en karta över var ditt ögonmått behöver motorn mest."
+        },
+        {
+          "type": "text",
+          "content": "Och den sista sammanfläktningen: kombinera. Kör prisvågorna (AK1TS) och fundamentalvågorna sida vid sida, läs korsningen uppifrån och ner — från långsamma horisonter till snabba — och formulera, om en divergens syns, studiefrågan i en enda mening. Spara den i din journal. Upprepa hela passet månadsvis; matriser är ögonblicksbilder och värdet uppstår i serien av dem — vilket är kursens sista och mest självironiska poäng: verktyget som lär dig läsa variabler som tidsserier blir själv bäst läst som en tidsserie. Indikatorer förblir inte längre statiska — vi förstår deras rörelser. Det är meningen på sidan, och nu också en beskrivning av hur du arbetar: allt du mött i denna kurs var en inbjudan att studera, aldrig en uppmaning att handla — och den inbjudan gäller även efter sista quizet."
+        },
+        {
+          "type": "insikt",
+          "content": "Övningens slutprodukt är inte en analys utan en vana: att fråga sedan när? om varje siffra. Den som ställer den frågan automatiskt — om ROE, om skulden, om priset, om sin egen övertygelse — har fått kursens verkliga utbyte, och det kan inget verktyg ta ifrån henne."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör ett komplett pass denna vecka: läs demomatrisen på /vagfundament i fem minuter enligt hierarkin; kör därefter ett eget innehav om du är medlem; skriv en mening om det starkaste mönstret och en om den största tomma fläcken; lägg till en studiefråga om pris och fundament divergerar. Datera och spara. Om en månad: gör om passet — och läs då förra månadens meningar före den nya körningen. Det är hela praktiken i en paragraf."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Praktiken — arbetsflödet i sex steg\",\"rader\":[[\"Steg\",\"Handling\",\"Syfte\"],[\"1\",\"Läs demomatrisen på /vagfundament\",\"Lära känna formen\"],[\"2\",\"Börja med sammanfattning och helhetsrad\",\"Klimat före detalj\"],[\"3\",\"Zooma via kategori till variabelrader och celler\",\"Fånga en berättelse\"],[\"4\",\"Gissa först, kör sedan egna innehav\",\"Kalibrera ögonmåttet\"],[\"5\",\"Skriv en mening om mönster och en om luckor\",\"Bygga journal\"],[\"6\",\"Upprepa månadsvis och jämför\",\"Se serien i serien\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Var börjar arbetsflödet enligt kapitlet?",
+          "alternativ": [
+            "Med egna innehav — annars lär man sig inget",
+            "Med demomatrisen på /vagfundament — formen tränas gratis och utan konto",
+            "Med portföljsektionen",
+            "Med en AI-fråga"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan tränas offentligt innan något körs privat?"
+        },
+        {
+          "q": "Varför ska gissningen ske före körningen av egna innehav?",
+          "alternativ": [
+            "För att motorn kräver det",
+            "För att gissningar förbättrar datan",
+            "För att skillnaden mellan gissning och matris namnger dina blinda fläckar — kalibreringen är utbytet",
+            "För att det går snabbare"
+          ],
+          "ratt": 2,
+          "tips": "Vad lär du dig av att se facit först — och vad lär du dig av att gissa först?"
+        },
+        {
+          "q": "Vad är kursens slutprodukt enligt sista kapitlet?",
+          "alternativ": [
+            "En komplett bolagsanalys",
+            "En portfölj som slår index",
+            "En vana: att fråga sedan när? om varje siffra — inklusive sina egna övertygelser",
+            "En lista med köpsignaler"
+          ],
+          "ratt": 2,
+          "tips": "Vad kan inget verktyg ta ifrån dig — och vad följer med till nästa rapport, nästa bolag, nästa år?"
+        }
+      ]
+    }
+  ]
+}

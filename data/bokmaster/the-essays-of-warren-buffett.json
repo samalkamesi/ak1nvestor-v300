@@ -37,7 +37,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Cunninghams insats var inte att skriva om innehållet utan att synliggöra systemet i det. Chronologin i ägarbreven dolde vad Buffett faktiskt hade byggt: en sammanhängande teori om hur bolag bör styras, finansieras, värderas och redovisas. Genom att klippa isär breven och sortera styckena i nio teman — företagsstyrning, finansiering och investering, investeringsalternativ, vanliga aktier, fusioner och förvärv, värdering och redovisning, redovisningstrick, redovisningspolicy och skattefrågor — visar Cunningham att breven tillsammans utgör en hel företagsekonomi skriven av en ägare, för ägare. Subtiteln Lessons for Corporate America är menad på fullt allvar: det är en läxa till företags Amerika."
+          "content": "Cunninghams insats var inte att skriva om innehållet utan att synliggöra systemet i det. Kronologin i ägarbreven dolde vad Buffett faktiskt hade byggt: en sammanhängande teori om hur bolag bör styras, finansieras, värderas och redovisas. Genom att klippa isär breven och sortera styckena i nio teman — företagsstyrning, finansiering och investering, investeringsalternativ, vanliga aktier, fusioner och förvärv, värdering och redovisning, redovisningstrick, redovisningspolicy och skattefrågor — visar Cunningham att breven tillsammans utgör en hel företagsekonomi skriven av en ägare, för ägare. Subtiteln Lessons for Corporate America är menad på fullt allvar: det är en läxa till företags Amerika."
         },
         {
           "type": "text",
@@ -53,7 +53,7 @@
         },
         {
           "type": "insikt",
-          "content": "Breven är en hel företagsekonomi skriven från ägarens perspektiv — Cunninghams bidrag var att visa att systemet fanns där hela tiden, dolt under chronologin."
+          "content": "Breven är en hel företagsekonomi skriven från ägarens perspektiv — Cunninghams bidrag var att visa att systemet fanns där hela tiden, dolt under kronologin."
         },
         {
           "type": "utmaning",
@@ -69,11 +69,11 @@
           "q": "Vad är Lawrence Cunninghams konkret bidrag till boken?",
           "alternativ": [
             "Han skrev nya analyser av Berkshires portfölj",
-            "Han tematiserade Buffetts ägarbrev — klippte och sorterade dem efter ämne i stället för år",
+            "Han sammanställde breven i kronologisk ordning med kommentarer",
             "Han intervistade Buffett om hans privatliv",
-            "Han sammanställde breven i kronologisk ordning med kommentarer"
+            "Han tematiserade Buffetts ägarbrev — klippte och sorterade dem efter ämne i stället för år"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Tänk på vad en professor i bolagsrätt kan tillföra texter som redan finns — formen, inte innehållet."
         },
         {
@@ -91,11 +91,11 @@
           "q": "Vilken målformulering anger Buffett som Berkshires långsiktiga ekonomiska mål?",
           "alternativ": [
             "Maximal omsättningstillväxt i koncernen",
-            "Maximal årlig genomsnittlig ökning i inneboende värde per aktie",
+            "En stabil och växande kvartalsutdelning",
             "Att slå S&P 500 varje enskilt år",
-            "En stabil och växande kvartalsutdelning"
+            "Maximal årlig genomsnittlig ökning i inneboende värde per aktie"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Tre detaljer i formuleringen är avgörande: per aktie, inneboende värde och genomsnitt över tid."
         }
       ]
@@ -206,23 +206,23 @@
         {
           "q": "Vad säger Buffett om relationen mellan operativ skicklighet och kapitalallokering hos många VD:ar?",
           "alternativ": [
-            "De hänger samman: en bra operatör är alltid en bra allokator",
             "Många förstklassiga operatörer blir tredjeklassiga kapitalfördelare när vinsterna ska placeras",
+            "De hänger samman: en bra operatör är alltid en bra allokator",
             "Kapitalallokering kan alltid delegeras till finansfunktionen",
             "Operatörer bör hålla sig borta från strategiska beslut helt"
           ],
-          "ratt": 1,
+          "ratt": 0,
           "tips": "Färdigheter är domänspecifika — fundera på varför brillians i en domän inte automatiskt överförs till en annan."
         },
         {
           "q": "Vad är retained earnings-testet (dollartestet)?",
           "alternativ": [
             "Att varje utdelad dollar ska återinvesteras av aktieägaren",
-            "Att behållen vinst endast är motiverad när varje behållen dollar rimligen skapar minst en dollar i marknadsvärde för ägarna",
             "Att bolaget ska behålla all vinst i minst tio år",
+            "Att behållen vinst endast är motiverad när varje behållen dollar rimligen skapar minst en dollar i marknadsvärde för ägarna",
             "Att balanserade vinster ska placeras i räntepapper"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Testet handlar om att sätta ett villkor på retention — vad måste varje behållen dollar leverera?"
         },
         {
@@ -274,22 +274,22 @@
           "q": "Vad är en cigar butt i Buffetts terminologi?",
           "alternativ": [
             "Ett bolag med stor utdelning och låg skuldsättning",
-            "Ett bolag som handlas så billigt att ett sista »bloss« av värde återstår — en engångsvinst vid uppryckning",
+            "Ett bolag som betalat utdelning i femtio år",
             "Ett nystartat bolag med hög tillväxt",
-            "Ett bolag som betalat utdelning i femtio år"
+            "Ett bolag som handlas så billigt att ett sista »bloss« av värde återstår — en engångsvinst vid uppryckning"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Metaforen handlar om att det mesta redan är rökt — bara ett bloss återstår."
         },
         {
           "q": "Varför kallar Buffett tiden för den medelmåttiga affärens fiende?",
           "alternativ": [
             "Medelmåttiga bolag blir alltid konkurrensutsatta på fem år",
-            "Den låga avkastningen på tillsatt kapital urholkar varje ursprunglig prisfördel allteftersom åren går",
             "Medelmåttiga bolag kan inte behålla sina anställda",
+            "Den låga avkastningen på tillsatt kapital urholkar varje ursprunglig prisfördel allteftersom åren går",
             "Börsen straffar alltid låg omsättningstillväxt"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Fundera på vad som kompounderar i ett bolag med låg avkastning på nytt kapital — och åt vilket håll."
         },
         {
@@ -345,22 +345,22 @@
           "q": "Vad är kärnbudskapet i How Inflation Swindles the Equity Investor (1977)?",
           "alternativ": [
             "Aktier är en perfekt inflationsskydd eftersom vinster växer med priserna",
-            "Bolagssnittets avkastning på eget kapital är trög kring tolv procent — vid hög inflation blir realavkastningen efter skatt nära noll eller negativ",
+            "Aktieägare bör fly till guld vid inflation",
             "Inflation gynnar alltid lågbelånade bolag",
-            "Aktieägare bör fly till guld vid inflation"
+            "Bolagssnittets avkastning på eget kapital är trög kring tolv procent — vid hög inflation blir realavkastningen efter skatt nära noll eller negativ"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Rubriken talar om ett bedrägeri — fråga dig vad som ser ut som avkastning men inte är det."
         },
         {
           "q": "Vad betyder bilden av inflationen som en gigantisk företagsbandmask?",
           "alternativ": [
             "Inflationen gör att kunderna slutar köpa bolagets produkter",
-            "Inflationen konsumerar bolagets investeringsdollar i förväg — kapital måste ständigt tillföras bara för att hålla den fysiska volymen intakt",
             "Inflationen gör att bokföringsreglerna ändras",
+            "Inflationen konsumerar bolagets investeringsdollar i förväg — kapital måste ständigt tillföras bara för att hålla den fysiska volymen intakt",
             "Inflationen höjer alltid bolagens marginaler"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Tänk på skillnaden mellan redovisad vinst och det kapital som krävs för att bara stå still."
         },
         {
@@ -416,22 +416,22 @@
           "q": "Vad är nyckeln i allegorin om Mr Market?",
           "alternativ": [
             "Att marknadens priser är den bästa informationen om ett bolags värde",
-            "Att kurserna är erbjudanden från en mani-depressiv partner vars humör du kan utnyttja — inte låta dig undervisas av",
             "Att man alltid ska köpa när marknaden faller",
+            "Att kurserna är erbjudanden från en mani-depressiv partner vars humör du kan utnyttja — inte låta dig undervisas av",
             "Att man ska följa marknadens trender för att maximera avkastningen"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Fråga dig i vilken riktning information ska flyta: från affären till dig, eller från kursen till dig."
         },
         {
           "q": "Hur lyder den berömda regeln från 1986 års brev om rädsla och girighet?",
           "alternativ": [
             "Var girig när andra är giriga, för då bekräftas trenden",
-            "Försök vara rädd när andra är giriga, och girig bara när andra är rädda",
+            "Var rädd när marknaden stiger snabbt och girig när volatiliteten är låg",
             "Var varken rädd eller girig — mekanisk indexinvestering är alltid bäst",
-            "Var rädd när marknaden stiger snabbt och girig när volatiliteten är låg"
+            "Försök vara rädd när andra är giriga, och girig bara när andra är rädda"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Regeln handlar om att vara emot sentimentsströmmen — fråga dig vilket tillstånd hos andra som skapar fyndpriser."
         },
         {
@@ -483,33 +483,33 @@
           "q": "Vad skriver Buffett 1994 om aktieprognostikers värde?",
           "alternativ": [
             "Att de är oumbärliga för den som vill slå index",
-            "Att deras enda värde är att få spåmän att se bra ut",
+            "Att deras prognoser är användbara om man kombinerar dem med teknisk analys",
             "Att de är rätt i omkring hälften av fallen",
-            "Att deras prognoser är användbara om man kombinerar dem med teknisk analys"
+            "Att deras enda värde är att få spåmän att se bra ut"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Formuleringen är en kvickhet — vem jämförs prognosmakarna med, och vad säger den jämförelsen?"
         },
         {
           "q": "Vad menas med monitoring i motsats till predicting?",
           "alternativ": [
-            "Att följa börsens tekniska nivåer dagligen och reagera snabbt",
             "Att följa verksamhetens volym, marginaler och kapitalbehov över tid i stället för att förutsäga marknadens riktning",
+            "Att följa börsens tekniska nivåer dagligen och reagera snabbt",
             "Att övervaka makroindikatorer och justera beta i portföljen",
             "Att varje kvartal byta till de bolag som just slagit sina estimat"
           ],
-          "ratt": 1,
+          "ratt": 0,
           "tips": "Fråga dig vad källan till din kunskapsfördel kan vara — något du kan veta bättre än marknaden."
         },
         {
           "q": "Vad menar Buffett med att lethargi som gränsar till lättja är en hörnsten i investeringsstilen?",
           "alternativ": [
             "Att man ska vara så passiv att man aldrig ens läser delårsrapporter",
-            "Att disciplinen ligger i att inte agera på medelmåttiga affärer — att vänta är en aktiv handling",
+            "Att man ska handla bara en gång per år oavsett läge",
             "Att indexfonder är det enda rimliga valet",
-            "Att man ska handla bara en gång per år oavsett läge"
+            "Att disciplinen ligger i att inte agera på medelmåttiga affärer — att vänta är en aktiv handling"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Tänk på beslutsutrymme som en begränsad resurs — vad händer om du slösar den på dåliga affärer?"
         }
       ]
@@ -572,11 +572,11 @@
           "q": "Hur förhåller sig imperativets tredje lag till strategiskt underlag i förvärv?",
           "alternativ": [
             "Studierna är oberoende och därför tillförlitliga",
-            "Varje önskan hos ledaren får snabbt stöd av detaljerade avkastnings- och strategistudier framställda av medarbetarna",
             "Studierna skrivs alltid av utomstående rådgivare med kritiskt mandat",
+            "Varje önskan hos ledaren får snabbt stöd av detaljerade avkastnings- och strategistudier framställda av medarbetarna",
             "Tredje lagen handlar om konkurrenternas prissättning, inte om underlag"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Fråga dig vem som producerar underlaget och vilka incitament de har att säga nej."
         }
       ]
@@ -617,33 +617,33 @@
           "q": "Vad säger Buffett om kompetenscirkeln?",
           "alternativ": [
             "Cirkeln bör vidgas ständigt genom nya branscher",
-            "Cirkelns storlek spelar inte så stor roll — det avgörande är att känna till dess gränser",
+            "Cirkeln bestäms av bolagets storlek, inte av ägarens kunskap",
             "Cirkeln bör omfatta hela börsen för den som diversifierar",
-            "Cirkeln bestäms av bolagets storlek, inte av ägarens kunskap"
+            "Cirkelns storlek spelar inte så stor roll — det avgörande är att känna till dess gränser"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Fråga dig vad som är farligast: liten kunskapsbas eller fel uppfattning om kunskapsbasens gräns."
         },
         {
           "q": "Vad är Management Trust vid förvärv?",
           "alternativ": [
             "Att förtroende för ledningen kan etableras efter köpet genom incitamentprogram",
-            "Att Berkshire saknar managementbank och därför bara kan köpa verksamheter vars chefer det redan litar på och avser att behålla",
             "Att köparen bör byta ut ledningen inom de första hundra dagarna",
+            "Att Berkshire saknar managementbank och därför bara kan köpa verksamheter vars chefer det redan litar på och avser att behålla",
             "Att förvärv alltid ska struktureras som earn-outs för att bygga förtroende"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Tänk på vad Berkshire gör med de chefer som driver de köpta bolagen — och vad som händer om de inte fungerar."
         },
         {
           "q": "Vad är goodwill-amortiseringens problem enligt 1983 års uppsats?",
           "alternativ": [
             "Den är för snabb och gör alla förvärv olönsamma på papper",
-            "Den kan dölja att det ekonomiska goodwillet växer medan posten skrivs ned — eller att det urholkas medan posten står kvar",
+            "Den borde amorteras snabbare för att skydda kreditgivare",
             "Den saknar betydelse eftersom goodwill inte är en tillgång",
-            "Den borde amorteras snabbare för att skydda kreditgivare"
+            "Den kan dölja att det ekonomiska goodwillet växer medan posten skrivs ned — eller att det urholkas medan posten står kvar"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Mekanisk amortisering speglar inte verklighetens utveckling — i vilka två riktningar kan verkligheten avvika?"
         }
       ]
@@ -656,7 +656,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Fakta i fallet: i januari 1972 köpte Blue Chip Stamps (senare sammanslaget med Berkshire) See's Candies för 25 miljoner dollar. Bolaget hade omsättning på 31,3 miljoner dollar, vinst före skatt på 4,2 miljoner dollar och netto materiella tillgångar på omkring åtta miljoner dollar. Köpeskillingen var alltså betydligt över substansvärdet — ett beteende som Grahams skola betraktade som nestlag. Men See's var inget vanligt bolag: varumärket — kvalitet, tradition, lojal kundbas — gav en avkastning på det materiella kapitalet som låg vida över vad som krävdes, och varje år kunde priserna höjas utan att kunderna övergav godiset."
+          "content": "Fakta i fallet: i januari 1972 köpte Blue Chip Stamps (senare sammanslaget med Berkshire) See's Candies för 25 miljoner dollar. Bolaget hade omsättning på 31,3 miljoner dollar, vinst före skatt på 4,2 miljoner dollar och netto materiella tillgångar på omkring åtta miljoner dollar. Köpeskillingen var alltså betydligt över substansvärdet — ett beteende som Grahams skola betraktade som nästan kätterskt. Men See's var inget vanligt bolag: varumärket — kvalitet, tradition, lojal kundbas — gav en avkastning på det materiella kapitalet som låg vida över vad som krävdes, och varje år kunde priserna höjas utan att kunderna övergav godiset."
         },
         {
           "type": "text",
@@ -699,11 +699,11 @@
           "q": "Hur mycket nytillfört kapital krävdes för att See's skulle växa till 82 miljoner dollar i vinst före skatt till 2007?",
           "alternativ": [
             "Omkring 383 miljoner dollar",
-            "Omkring 32 miljoner dollar",
+            "Inget alls — bolaget behövde minska kapitalet",
             "Omkring 1,35 miljarder dollar",
-            "Inget alls — bolaget behövde minska kapitalet"
+            "Omkring 32 miljoner dollar"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Jämför med den kumulativa vinsten på 1,35 miljarder — förhållandet mellan de två talen är fallets poäng."
         },
         {
@@ -727,23 +727,23 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Coca-Cola-köpet blev Buffetts bevis på att en underbar affär till ett rimligt pris slår alla cigar butts. Från 1988 och några år framåt byggde Berkshire en post i Coca-Cola för omkring en miljard dollar — sex procent av världens mest kända varumärke. Efter köpet kunde bolaget fortsätta höja priser i takt med eller över inflationen, distribueras i fler länder, och återinvestera till hög avkastning. Värdet på posten växte till över tretton miljarder dollar inom ett decennium. Buffetts hållning förklarar varför han inte sålde: »Vår favoritholdingperiod är för alltid« (1988 års brev) — en aktie i ett franchise-bolag köps för att behållas, inte för att bytas."
+          "content": "Coca-Cola-köpet blev Buffetts bevis på att en underbar affär till ett rimligt pris slår alla cigar butts. Från 1988 och några år framåt byggde Berkshire en post i Coca-Cola för omkring en miljard dollar — sex procent av världens mest kända varumärkesbolag. Efter köpet kunde bolaget fortsätta höja priser i takt med eller över inflationen, expandera distributionen till fler länder och återinvestera till hög avkastning. Värdet på posten växte till över tretton miljarder dollar inom ett decennium. Buffetts hållning förklarar varför han inte sålde: »Vår favoritholdingperiod är för alltid« (1988 års brev) — en aktie i ett franchise-bolag köps för att behållas, inte för att bytas."
         },
         {
           "type": "text",
-          "content": "GEICO är den andra polen: konkurrensfördelen ligger inte i varumärket utan i kostnadsstrukturen. GEICO säljer bilförsäkring direkt — utan agentnät — vilket ger strukturellt lägre administrativa kostnader per premiekrona, vilket i sin tur låter bolaget erbjuda lägre premier, vilket drar fler kunder, vilket sänker kostnaden per kund ytterligare: en självförstärkande moat. Buffett följt bolaget sedan 1951 (sin hemortsinvestering i ungdomen), Berkshire byggde under slutet av 1970-talet en betydande post för omkring 46 miljoner dollar och förvärvade 1995 resterande delar för cirka 2,3 miljarder dollar. I breven beskriver Buffett denna kostnadsöverlägsenhet som bolagets djupa och varaktiga konkurrensfördel — en vallgrav som vidgas för varje år som GEICO växer."
+          "content": "GEICO är den andra polen: konkurrensfördelen ligger inte i varumärket utan i kostnadsstrukturen. GEICO säljer bilförsäkring direkt — utan agentnät — vilket ger strukturellt lägre administrativa kostnader per premiekrona, vilket i sin tur låter bolaget erbjuda lägre premier, vilket drar fler kunder, vilket sänker kostnaden per kund ytterligare: en självförstärkande moat. Buffett följde bolaget sedan ett berömt studiebesök hos GEICO 1951; Berkshire byggde under slutet av 1970-talet en betydande post för omkring 46 miljoner dollar och förvärvade 1995 resterande delar för cirka 2,3 miljarder dollar. I breven beskriver Buffett denna kostnadsöverlägsenhet som bolagets djupa och varaktiga konkurrensfördel — en vallgrav som vidgas för varje år som GEICO växer."
         },
         {
           "type": "text",
-          "content": "GEICO introducerar också försäkringsekonomins särdrag, som AKM1-analytiker måste förstå: float. En försäkringspremie betalas in innan skadorna betalas ut — under mellantiden förvaltar bolaget pengar som inte är dess egna. Är underwriting resultatet positivt (kombikvoten under 100) är kostnaden för detta kapital negativ: bolaget betalas för att låna. För Berkshire blev försäkringsfloaten — från GEICO och senare General Re — det kapital som Buffett allokera vidare till aktier och förvärv. Här möts två variabler: kostnadsmoaten (V07) skapar underwriting-resultatet, och floaten är finansieringen som gör kapitalförbrukningsfrågan (V19) obrukbar — kapital anskaffas inte genom emissioner utan genom kunder som betalar i förskott."
+          "content": "GEICO introducerar också försäkringsekonomins särdrag, som AKM1-analytiker måste förstå: float. En försäkringspremie betalas in innan skadorna betalas ut — under mellantiden förvaltar bolaget pengar som inte är dess egna. Är underwriting-resultatet positivt (kombikvoten under 100) är kostnaden för detta kapital negativ: bolaget betalas för att låna. För Berkshire blev försäkringsfloaten — från GEICO och senare General Re — det kapital som Buffett allokerade vidare till aktier och förvärv. Här möts två variabler: kostnadsmoaten (V07) skapar underwriting-resultatet, och floaten är finansieringen som gör emissionsrisken (V19) till en icke-fråga — kapital anskaffas inte genom nyemissioner utan genom kunder som betalar i förskott."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Två moatar och deras ekonomi\",\"rader\":[[\"Fall\",\"Moat-typ\",\"Mekanism\",\"AKM1-variabel\"],[\"Coca-Cola\",\"Varumärke\",\"Prissättningskraft och global distribution; köpt för ≈1 Mdr USD, värt över 13 Mdr inom tio år\",\"V14 varumärke; V12 intäktsstabilitet\"],[\"GEICO\",\"Kostnadsövertag\",\"Direktförsäljning utan agenter → lägre kostnad per policy → lägre premium → fler kunder → lägre kostnad per kund\",\"V07 marginal; självförstärkande volymcykel\"],[\"See's (jfr kap 10)\",\"Varumärke + prissättningskraft\",\"Vinsten växte 20x utan motsvarande kapitaltillväxt\",\"V14; V19 lågt kapitalbehov\"],[\"Försäkring float\",\"Negativ kapitalkostnad\",\"Underwriting-vinst gör lånat kapital kostnadsfritt\",\"V19 inversen — kapital anskaffas genom verksamheten\"]]}"
+          "content": "{\"rubrik\":\"Två moatar och deras ekonomi\",\"rader\":[[\"Fall\",\"Moat-typ\",\"Mekanism\",\"AKM1-variabel\"],[\"Coca-Cola\",\"Varumärke\",\"Prissättningskraft och global distribution; köpt för ≈1 Mdr USD, värt över 13 Mdr inom tio år\",\"V14 varumärke; V12 intäktsstabilitet\"],[\"GEICO\",\"Kostnadsövertag\",\"Direktförsäljning utan agenter → lägre kostnad per policy → lägre premium → fler kunder → lägre kostnad per kund\",\"V07 marginal; självförstärkande volymcykel\"],[\"See's (jfr kap 10)\",\"Varumärke + prissättningskraft\",\"Vinsten växte 20x utan motsvarande kapitaltillväxt\",\"V14; V19 lågt kapitalbehov\"],[\"Försäkringsfloat\",\"Negativ kapitalkostnad\",\"Underwriting-vinst gör lånat kapital kostnadsfritt\",\"V19 inversen — kapital anskaffas genom verksamheten\"]]}"
         },
         {
           "type": "insikt",
-          "content": "En moat är antingen förmågan att ta högre pris (varumärke) eller att kosta mindre (kostnadsstruktur) — allt annat är tidsbildade fördelar som konkurrensen äter."
+          "content": "En moat är antingen förmågan att ta högre pris (varumärke) eller att kosta mindre (kostnadsstruktur) — allt annat är tidsbegränsade fördelar som konkurrensen äter."
         },
         {
           "type": "utmaning",
@@ -765,12 +765,12 @@
         {
           "q": "Varför är GEICO:s kostnadsstruktur en moat?",
           "alternativ": [
-            "Därför att bolaget betalar läst lön än branschsnittet tack vare fackliga avtal",
-            "Därför att direktförsäljning utan agenter ger lägre kostnad per policy, vilket möjliggör lägre premier, vilket drar fler kunder och sänker kostnaden ytterligare — en självförstärkande cykel",
+            "Därför att bolaget betalar lägre lön än branschsnittet tack vare fackliga avtal",
             "Därför att bolaget har patent på sin prismodell",
+            "Därför att direktförsäljning utan agenter ger lägre kostnad per policy, vilket möjliggör lägre premier, vilket drar fler kunder och sänker kostnaden ytterligare — en självförstärkande cykel",
             "Därför att bolaget är för litet för att konkurrera med de stora"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Fråga vad som händer med kostnaden per kund när volymen växer i en direktförsäljningsmodell."
         },
         {
@@ -798,15 +798,15 @@
         },
         {
           "type": "text",
-          "content": "Logiken förklarar varför Buffett inte bryr sig om hururellas vinsten betalas ut — bara vad den blir till. En behållen dollar i ett bolag med hög avkastning på investerat kapital är värd mer än en utdelad, eftersom den kompounderar skattefritt inuti bolaget (kapitel 14 återkommer till skattemekaniken). En behållen dollar i ett bolag som inte klarar dollartestet från kapitel tre är däremot värd mindre än en utdelad — där retentionspolitiken urholkar ägarnas värde. Look-through-vinsten är alltså inte ett argument för retention i sig, utan ett krav på att mäta rätt siffra innan man dömer: värderar du bolaget på utdelningen ser du bara fyrtio procent av bilden i exemplet ovan."
+          "content": "Logiken förklarar varför Buffett inte bryr sig om hur vinsten betalas ut — bara vad den blir till. En behållen dollar i ett bolag med hög avkastning på investerat kapital är värd mer än en utdelad, eftersom den kompounderar skattefritt inuti bolaget (kapitel 14 återkommer till skattemekaniken). En behållen dollar i ett bolag som inte klarar dollartestet från kapitel tre är däremot värd mindre än en utdelad — där retentionspolitiken urholkar ägarnas värde. Look-through-vinsten är alltså inte ett argument för retention i sig, utan ett krav på att mäta rätt siffra innan man dömer: värderar du bolaget på utdelningen ser du bara fyrtio procent av bilden i exemplet ovan."
         },
         {
           "type": "text",
-          "content": "I praktik blev look-thread-vinsten Berkshires sätt att redovisa värdet av aktieinnehav som Washington Post, GEICO och Coca-Cola: att äga sex procent av Coca-Cola gav Berkshire en årlig andel av bolagets vinster vida större än utdelningen som flöt in. Samma tanke används i svenska förhållanden av investmentbolagsägare: att äga en investerare innebär att äga en andel av dess innehavs vinster, oavsett utdelningspolicy. För en AKM1-analys ger begreppet två verktyg: det rättfärdigar att betala för retention när kapitalavkastningen (V09) hög och kapitalbehovet (V19) lågt, och det varnar för att jaga utdelningsavkastning i bolag där de behållna vinsterna förstörs. Intäktsstabiliteten (V12) är det som gör look-thread-vinsten beräkningsbar: utan stabila intäkter är inte din andel av framtida vinster uppskattningsbar."
+          "content": "I praktiken blev look-through-vinsten Berkshires sätt att redovisa värdet av aktieinnehav som Washington Post, GEICO och Coca-Cola: att äga sex procent av Coca-Cola gav Berkshire en årlig andel av bolagets vinster vida större än utdelningen som flöt in. Samma tanke används i svenska förhållanden av investmentbolagsägare: att äga ett investmentbolag innebär att äga en andel av dess innehavs vinster, oavsett utdelningspolicy. För en AKM1-analys ger begreppet två verktyg: det rättfärdigar att betala för retention när kapitalavkastningen (V09) är hög och kapitalbehovet (V19) lågt, och det varnar för att jaga utdelningsavkastning i bolag där de behållna vinsterna förstörs. Intäktsstabiliteten (V12) är det som gör look-through-vinsten beräkningsbar: utan stabila intäkter är inte din andel av framtida vinster uppskattningsbar."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Räkneexempel — look-through-vinst steg för steg\",\"rader\":[[\"Rad\",\"Exempel\"],[\"Din ägarandel\",\"10 %\"],[\"Bolagets totala vinst\",\"100\"],[\"Därav utdelad vinst\",\"40\"],[\"Din kontanta utdelning\",\"4\"],[\"Din andel av behållen vinst\",\"6\"],[\"Din look-through-vinst (före justerad skatt)\",\"10\"],[\"Frågan som avgör värdet\",\"Vad blir de sex behållna till? (dollartestet, kap 3; V09)\"]]}"
+          "content": "{\"rubrik\":\"Räkneexempel — look-through-vinst steg för steg\",\"rader\":[[\"Rad\",\"Exempel\"],[\"Din ägarandel\",\"10 %\"],[\"Bolagets totala vinst\",\"100\"],[\"Därav utdelad vinst\",\"40\"],[\"Din kontanta utdelning\",\"4\"],[\"Din andel av behållen vinst\",\"6\"],[\"Din look-through-vinst (före skattejustering)\",\"10\"],[\"Frågan som avgör värdet\",\"Vad blir de sex behållna till? (dollartestet, kap 3; V09)\"]]}"
         },
         {
           "type": "visuell",
@@ -826,11 +826,11 @@
           "q": "Vad är look-through-vinsten?",
           "alternativ": [
             "Bolagets redovisade konsolvinst per aktie",
-            "Din proportionella andel av ett bolags totala vinst — utdelad som behållen — minus den extra skatt en utdelning skulle ha kostat",
             "Den utdelning du mottar justerad för inflation",
+            "Din proportionella andel av ett bolags totala vinst — utdelad som behållen — minus den extra skatt en utdelning skulle ha kostat",
             "Bolagets kassaflöde från löpande verksamhet per aktie"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Begreppet tittar genom redovisningen — vad är din andel av det verkliga resultatet, oavsett betalningsform?"
         },
         {
@@ -869,7 +869,7 @@
         },
         {
           "type": "text",
-          "content": "Buffett tillägger två varningar. För det första är beräkningen svår: företagsledningar har en stark tendens att underskatta underhållscapex — ingen VD gillar att medge att hans företags verkliga intjäkningsförmåga är lägre än den redovisade. För det andra skiljer sig bolagen dramatiskt: en kapitalsnål franchise kan ha owner earnings nära sin redovisade vinst, medan en tung verksamhet kan tjäga miljarder på pappret och samtidigt inte producera något alls efter det kapital som maskinerna kräver. Analysen måste därför alltid innehålla kapitalförbrukningen (V19): capex som andel av omsättningen, och huruvida tillväxten betalas med fria kassaflöden eller med emissioner."
+          "content": "Buffett tillägger två varningar. För det första är beräkningen svår: företagsledningar har en stark tendens att underskatta underhållscapex — ingen VD gillar att medge att hans företags verkliga intjäkningsförmåga är lägre än den redovisade. För det andra skiljer sig bolagen dramatiskt: en kapitalsnål franchise kan ha owner earnings nära sin redovisade vinst, medan en tung verksamhet kan tjäna miljarder på pappret och samtidigt inte producera något alls efter det kapital som maskinerna kräver. Analysen måste därför alltid innehålla kapitalförbrukningen (V19): capex som andel av omsättningen, och huruvida tillväxten betalas med fria kassaflöden eller med emissioner."
         },
         {
           "type": "text",
@@ -877,7 +877,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Owner earnings-bryggan — två exempel\",\"rader\":[[\"Rad\",\"Kapitalsnålt franchisebolag\",\"Kapitalintensivt bolag\"],[\"Redovisad nettovinst\",\"100\",\"100\"],[\"+ Avskrivningar och amorteringar (D&A)\",\"5\",\"45\"],[\"− Underhållscapex\",\"8\",\"55\"],[\"− Ökning av rörelsekapital\",\"2\",\"10\"],[\"= Owner earnings\",\"95\",\"80\"],[\"EBITDA (jfr)\",\"105\",\"140\"],[\"Lärdom\",\"EBITDA nära owner earnings\",\"EBITDA överdriver intjätningsförmågan med 75 %\"]]}"
+          "content": "{\"rubrik\":\"Owner earnings-bryggan — två exempel\",\"rader\":[[\"Rad\",\"Kapitalsnålt franchisebolag\",\"Kapitalintensivt bolag\"],[\"Redovisad nettovinst\",\"100\",\"100\"],[\"+ Avskrivningar och amorteringar (D&A)\",\"5\",\"45\"],[\"− Underhållscapex\",\"8\",\"55\"],[\"− Ökning av rörelsekapital\",\"2\",\"10\"],[\"= Owner earnings\",\"95\",\"80\"],[\"EBITDA (jfr)\",\"105\",\"140\"],[\"Lärdom\",\"EBITDA nära owner earnings\",\"EBITDA överdriver intjäningsförmågan med 75 %\"]]}"
         },
         {
           "type": "visuell",
@@ -897,11 +897,11 @@
           "q": "Vilken av följande beskriver owner earnings-formeln exakt?",
           "alternativ": [
             "Nettovinst + intäkter − rörelsekostnader",
-            "Redovisad vinst plus avskrivningar, utarmning, amorteringar och vissa andra icke-kontanta poster, minus genomsnittligt årligt kapitaliserat underhållscapex för att bibehålla konkurrensposition och volym — inklusive medelökningen av rörelsekapital",
+            "Utdelning plus återköp av aktier",
             "EBITDA minus räntenetto och skatt",
-            "Utdelning плюс återköp av aktier"
+            "Redovisad vinst plus avskrivningar, utarmning, amorteringar och vissa andra icke-kontanta poster, minus genomsnittligt årligt kapitaliserat underhållscapex för att bibehålla konkurrensposition och volym — inklusive medelökningen av rörelsekapital"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Formeln börjar som EBITDA-liknande men drar ifrån det som EBITDA-kulturen inte nämner: kapitalbehovet för att behålla positionen."
         },
         {
@@ -918,12 +918,12 @@
         {
           "q": "Hur bör V06 (EV/EBITDA) användas med hänsyn till Buffetts kritik?",
           "alternativ": [
-            "Som enda värderingsmått eftersom det eliminerar kapitalstruktur och skatt",
             "Som jämförelsemått mellan bolag, kompletterat med owner earnings och capex-analys (V19) — EBITDA säger inget om vad verksamheten kräver för att bestå",
+            "Som enda värderingsmått eftersom det eliminerar kapitalstruktur och skatt",
             "Inte alls — Buffett rekommenderar P/E i stället",
             "Bara för banker och försäkringsbolag"
           ],
-          "ratt": 1,
+          "ratt": 0,
           "tips": "Multiplen är praktisk för jämförelse — frågan är vad den döljer om kapitalbehovet."
         }
       ]
@@ -936,15 +936,15 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Buffetts utdelningslogik är en direkt tillämpning av dollartestet från kapitel tre: betala ut när bolaget saknar möjligheter som med rimlig säkerhet skapar minst en dollar i värde per behållen dollar — behåll när sådana möjligheter finns. Skattemekaniken förstärker: en utdelning beskattas hos ägaren redan det år den betalas, medan en behållen vinst som återinvesteras kompounderar utan att beskattas förrän ägaren en dag säljer. Skillnaden verkar liten per år men blir astronomisk över decennier — därför är retention i ett högt avkastande bolag i princip alltid skattemässigt överlägsen utdelning, medan retention i ett dollartest-fallande bolag är dubbel förlust: kapitalet förstörs och utdelningen uteblir."
+          "content": "Buffetts utdelningslogik är en direkt tillämpning av dollartestet från kapitel tre: betala ut när bolaget saknar möjligheter som med rimlig säkerhet skapar minst en dollar i värde per behållen dollar — behåll när sådana möjligheter finns. Skattemekaniken förstärker: en utdelning beskattas hos ägaren redan det år den betalas, medan en behållen vinst som återinvesteras kompounderar utan att beskattas förrän ägaren en dag säljer. Skillnaden verkar liten per år men blir astronomisk över decennier — därför är retention i ett högt avkastande bolag i princip alltid skattemässigt överlägsen utdelning, medan retention i ett dollartest-fallande bolag är en dubbel förlust: kapitalet förstörs och utdelningen uteblir."
         },
         {
           "type": "text",
-          "content": "Paradexemplet är Katharine Grahams Washington Post, där Buffett satt i styrelsen från 1974 och vars aktier Berkshire köpte 1973 till en bråkdel av värdet (ett av hans mest kända fynd). Grahams allokering följde principerna: när Posten kunde köpa televisionstationer till låga multipler av kassaflödet behöll bolaget vinsterna och expandera — när de låga multiplarna försvann ur marknaden höjde bolaget utdelningen och köpte så småningom tillbaka egna aktier (V20) i stället för att tvinga kapital in i sämre alternativ. Samma kvinna blev i Thorndikes Outsiders en av de åtta allokatorerna; böckerna bekräftar varandra: utdelningspolicyn är inte en åsikt om generositet utan ett allokeringssystem, som ska förändras när alternativens pris förändras."
+          "content": "Paradexemplet är Katharine Grahams Washington Post, där Buffett satt i styrelsen från 1974 och vars aktier Berkshire köpte 1973 till en bråkdel av värdet (ett av hans mest kända fynd). Grahams allokering följde principerna: när Posten kunde köpa televisionstationer till låga multipler av kassaflödet behöll bolaget vinsterna och expanderade — när de låga multiplarna försvann ur marknaden höjde bolaget utdelningen och köpte så småningom tillbaka egna aktier (V20) i stället för att tvinga kapital in i sämre alternativ. Samma kvinna blev i Thorndikes Outsiders en av de åtta allokatorerna; böckerna bekräftar varandra: utdelningspolicyn är inte en åsikt om generositet utan ett allokeringssystem, som ska förändras när alternativens pris förändras."
         },
         {
           "type": "text",
-          "content": "Kortismen — börsens fixering vid nästa kvartal — är enligt Buffett en följd av samma brist på ägarperspektiv. Graham formulerade botemedlet: »På kort sikt är börsen en röstmaskin, på lång sikt en vågmaskin.« Berkshire ger ingen kvartalsguidance och Buffett varnar för bolag som bygger sin berättelse på att slå estimat — det är hur VD-löner och optioner ofta är konstruerade, inte hur värde skapas. För ägaren blir den praktiska regeln: värdera utdelning, återköp (V20) och retention som tre prövade kapitalbeslut, bedömda på samma sätt — pris, avkastning och tid — oberoende av vad kvartalskulturen belönar. Ett återköp till överpris är lika mycket värdeneutralisering som en emission; en utdelning som lånas för att hållas är lika mycket värdeförstörelse som ett dåligt förvärv."
+          "content": "Kortismen — börsens fixering vid nästa kvartal — är enligt Buffett en följd av samma brist på ägarperspektiv. Graham formulerade botemedlet: »På kort sikt är börsen en röstmaskin, på lång sikt en vågmaskin.« Berkshire ger ingen kvartalsguidance och Buffett varnar för bolag som bygger sin berättelse på att slå estimat — det är nämligen hur VD-löner och optioner ofta är konstruerade, inte hur värde skapas. För ägaren blir den praktiska regeln: värdera utdelning, återköp (V20) och retention som tre prövade kapitalbeslut, bedömda på samma sätt — pris, avkastning och tid — oberoende av vad kvartalskulturen belönar. Ett återköp till överpris skapar inget värde alls; en utdelning som lånas för att hållas är lika mycket värdeförstörelse som ett dåligt förvärv."
         },
         {
           "type": "tabell",
@@ -956,7 +956,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Granska utdelnings- och återköpbesluten för ett bolag du äger under de senaste fem åren: hur mycket delades ut, hur mycket köptes tillbaka (V20) — och till vilket genomsnittligt pris relativt till bokfört och uppskattat inget värde? Pröva besluten mot dollartestet: blev de behållna vinsterna till minst en dollar i marknadsvärde? Skriv en dom: var policyn allokering eller vana?"
+          "content": "Granska utdelnings- och återköpbesluten för ett bolag du äger under de senaste fem åren: hur mycket delades ut, hur mycket köptes tillbaka (V20) — och till vilket genomsnittligt pris relativt till bokfört och uppskattat inneboende värde? Pröva besluten mot dollartestet: blev de behållna vinsterna till minst en dollar i marknadsvärde? Skriv en dom: var policyn allokering eller vana?"
         }
       ],
       "quiz": [
@@ -974,12 +974,12 @@
         {
           "q": "Vad kännetecknar Katharine Grahams allokering i Washington Post?",
           "alternativ": [
-            "Konstant hög utdelningsandel oavsett marknadsläge",
             "Retention och expansion när televisionstationer kunde köpas till låga multipler, senare högre utdelning och återköp när alternativen blev dyra",
+            "Konstant hög utdelningsandel oavsett marknadsläge",
             "Att bolaget aldrig delade ut något under hennes tid",
             "Att all vinst lades i räntepapper"
           ],
-          "ratt": 1,
+          "ratt": 0,
           "tips": "Policyn varierade med priset på alternativen — vad gör en allokator när fynden försvinner?"
         },
         {
@@ -999,27 +999,27 @@
       "num": 15,
       "minutes": 10,
       "title": "Ärlighetens räkenskap — Gen Re, Salomon och misstagens konst",
-      "intro": "Bokens avslutande läxa handlar inte om siffror utan om kultur: Buffetts ovana sed att redovisa sina misstag i detalj, två fall där ärligheten sattes på prov — Salomonbrödernas obligationshärva 1991 och General Res försäkringsförluster — och stilen som gör breven till inversen av Wall Streets retorik. Kursen sluts med syntesen och marginal of safety.",
+      "intro": "Bokens avslutande läxa handlar inte om siffror utan om kultur: Buffetts ovana att redovisa sina misstag i detalj, två fall där ärligheten sattes på prov — Salomonbrödernas obligationshärva 1991 och General Re:s försäkringsförluster — och stilen som gör breven till inversen av Wall Streets retorik. Kursen avslutas med syntesen och marginal of safety.",
       "blocks": [
         {
           "type": "text",
-          "content": "Buffetts sätt att hantera misstag är en del av hans metod. I 1989 års brev ägnade han ett helt avsnitt åt de första tjugofem årens misstag, och hans slutsats är uppbygglig: de flesta misstagen var onödiga — de uppstod inte av bristande information utan av att han ignorerade vad han visste. Han skiljer också på misstag av handling (synliga, eftersom de syns i resultaträkningen) och misstag av underlåtelse (osynliga, eftersom de bara kostar utebliven vinst) — och medger att de sena är minst lika verkliga för ägaren. Hit hör bekännelserna: USAir-preferensaktien från 1989, skriven med självironi; och Dexter-skon, som han kallat sitt värsta avtal — betald med Berkshire-aktier, vilket gjorde en dålig affär till en långsiktig värdeförstörelse för kvarvarande ägare."
+          "content": "Buffetts sätt att hantera misstag är en del av hans metod. I 1989 års brev ägnade han ett helt avsnitt åt de första tjugofem årens misstag, och hans slutsats är uppbygglig: de flesta misstagen var onödiga — de uppstod inte av bristande information utan av att han ignorerade vad han visste. Han skiljer också på misstag av handling (synliga, eftersom de syns i resultaträkningen) och misstag av underlåtelse (osynliga, eftersom de bara kostar utebliven vinst) — och medger att de senare är minst lika verkliga för ägaren. Hit hör bekännelserna: USAir-preferensaktien från 1989, skriven med självironi; och Dexter-skon, som han kallat sitt värsta avtal — betalat med Berkshire-aktier, vilket gjorde en dålig affär till en långsiktig värdeförstörelse för kvarvarande ägare."
         },
         {
           "type": "text",
-          "content": "Salomon-fallet 1991 är bokens moraliska vändpunkt. En trader på Salomon Brothers, Paul Mozer, lämnade olagliga anbud i amerikanska statsobligationer, och bolaget dröjde med att redovisa det. Buffett, störste ägare sedan 1987, klivde in som tillförordnad VD i september 1991 och vittnade inför kongressen med vad som blivit bokens mest sedda stycke om rykte: »Förlorar ni pengar för bolaget ska jag vara förstående. Förlorar ni bara en flisa av bolagets rykte ska jag vara hänsynslös.« Affären visade att ryktet är en ekonomisk tillgång: när förtroendet hotades var det bolagets hela affär som stod på spel — och det var ärligheten, inte listan med kunder, som räddade det."
+          "content": "Salomon-fallet 1991 är bokens moraliska vändpunkt. En trader på Salomon Brothers, Paul Mozer, lämnade olagliga anbud i amerikanska statsobligationer, och bolaget dröjde med att redovisa det. Buffett, störste ägare sedan 1987, klev in som tillförordnad VD i september 1991 och vittnade inför kongressen med vad som blivit bokens mest sedda stycke om rykte: »Förlorar ni pengar för bolaget ska jag vara förstående. Förlorar ni bara en flisa av bolagets rykte ska jag vara hänsynslös.« Affären visade att ryktet är en ekonomisk tillgång: när förtroendet hotades var det bolagets hela affär som stod på spel — och det var ärligheten, inte listan med kunder, som räddade det."
         },
         {
           "type": "text",
-          "content": "General Re-fallet blev den numerära motsvarigheten. Förvärvat 1998 till ett värde av omkring tjugotvå miljarder dollar — betalt i Berkshire-aktier nära en börstopp — visade sig återförsäkringsverksamheten ha underdimensionerade reserver och underprissatt risk. Förlusterna i miljardklassen, förvärrade av terrorattackerna 2001, tvingade fram omfattande upprensning, och Buffett konstaterade öppet i breven att förvärvet och den egna långsamheten varit ett misstag — utan att sky ifrån sig på marknadsväder eller exogena händelser. Hit hör också bokens domar över kreativ redovisning: »Det har alltid varit betydligt säkrare att stjäla stora summor med penna än små summor med pistol«, och den världsberömda observationen att först när ebbvattnet sjunker ser man vem som simmat naken — en bild som fångar både Gen Res dolda reserveringsbrister och varje redovisning som ser bra ut bara så länge konjunkturen håller."
+          "content": "General Re-fallet blev den numerära motsvarigheten. Förvärvat 1998 till ett värde av omkring tjugotvå miljarder dollar — betalt i Berkshire-aktier nära börsens topp — visade sig återförsäkringsverksamheten ha underdimensionerade reserver och underprissatt risk. Förlusterna i miljardklassen, förvärrade av terrorattackerna 2001, tvingade fram omfattande upprensning, och Buffett konstaterade öppet i breven att förvärvet och den egna långsamheten varit ett misstag — utan att sky ifrån sig på marknadsväder eller exogena händelser. Hit hör också bokens domar över kreativ redovisning: »Det har alltid varit betydligt säkrare att stjäla stora summor med penna än små summor med pistol«, och den världsberömda observationen att först när ebbvattnet sjunker ser man vem som simmat naken — en bild som fångar både Gen Res dolda reserveringsbrister och varje redovisning som ser bra ut bara så länge konjunkturen håller."
         },
         {
           "type": "text",
-          "content": "Syntesen: vad gör breven till inversen av Wall Street-kulturen? Tre saker. För det första riktningen på informationen: Berkshire berättar för ägarna, inte för marknaden, och det enligt candor-principen — plus och minus, misstag med namn och siffror. För det andra tidsaxeln: inga kvartalsguidance, inga estimatjakter, väntan som hörnsten och favoritholdingperiod för alltid. För det tredje priset: marginal of safety — den gamla Graham-regeln som binder samman hela boken, från cigar butts till owner earnings, utan att någonsin behöva en formel. Ett ägarbrev som uppfyller de tre kraven är den främsta information en AKM1-analyserare kan önska; ett som inte gör det har berättat något ännu viktigare."
+          "content": "Syntesen: vad gör breven till inversen av Wall Street-kulturen? Tre saker. För det första riktningen på informationen: Berkshire berättar för ägarna, inte för marknaden, och det enligt candor-principen — plus och minus, misstag med namn och siffror. För det andra tidsaxeln: ingen kvartalsguidance, inga estimatjakter, väntan som hörnsten och favoritholdingperioden för alltid. För det tredje priset: marginal of safety — den gamla Graham-regeln som binder samman hela boken, från cigar butts till owner earnings, utan att någonsin behöva en formel. Ett ägarbrev som uppfyller de tre kraven är den främsta information en AKM1-analyserare kan önska; ett som inte gör det har berättat något ännu viktigare."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Bokens stora fall och deras lärdomar\",\"rader\":[[\"Case\",\"Vad som hände\",\"Lärdom\"],[\"See's Candies (1972–)\",\"Köptes för 25 MUSD; 1,35 Mdr USD i vinster på 32 MUSD kapital\",\"Ekonomiskt goodwill: vinsttillväxt utan kapitaltillväxt (V14)\"],[\"Coca-Cola (1988–)\",\"≈1 Mdr USD blev över 13 Mdr på tio år\",\"Underbart företag till rimligt pris; håll för alltid\"],[\"GEICO (1976, 1995)\",\"Kostnadsmoat + float\",\"Kostnadsövertag (V07) och negativ kapitalkostnad\"],[\"Gen Re (1998–2002)\",\"≈22 Mdr USD betalda i aktier; underreservering; miljardförluster\",\"Erkänn misstag tidigt; betala inte med dyra aktier\"],[\"Salomon (1991)\",\"Olagliga anbud; Buffett tillförordnad VD; kongressvittne\",\"Ryktet är bolagets viktigaste tillgång — försvara det hänsynslöst\"],[\"USAir (1989) / Dexter (1993)\",\"Preferensaktie som höll på att kollapsa; skoföretag betalt i aktier\",\"Onödiga misstag: cigarr-fimpor och aktiebetalning förvärvar katastrofer\"]]}"
+          "content": "{\"rubrik\":\"Bokens stora fall och deras lärdomar\",\"rader\":[[\"Case\",\"Vad som hände\",\"Lärdom\"],[\"See's Candies (1972–)\",\"Köptes för 25 MUSD; 1,35 Mdr USD i vinster på 32 MUSD kapital\",\"Ekonomiskt goodwill: vinsttillväxt utan kapitaltillväxt (V14)\"],[\"Coca-Cola (1988–)\",\"≈1 Mdr USD blev över 13 Mdr på tio år\",\"Underbart företag till rimligt pris; håll för alltid\"],[\"GEICO (1976, 1995)\",\"Kostnadsmoat + float\",\"Kostnadsövertag (V07) och negativ kapitalkostnad\"],[\"Gen Re (1998–2002)\",\"≈22 Mdr USD betalda i aktier; underreservering; miljardförluster\",\"Erkänn misstag tidigt; betala inte med dyra aktier\"],[\"Salomon (1991)\",\"Olagliga anbud; Buffett tillförordnad VD; kongressvittne\",\"Ryktet är bolagets viktigaste tillgång — försvara det hänsynslöst\"],[\"USAir (1989) / Dexter (1993)\",\"Preferensaktie som höll på att kollapsa; skoföretag betalt i aktier\",\"Onödiga misstag: fimpa-köp och betalning med egna aktier\"]]}"
         },
         {
           "type": "insikt",
@@ -1046,11 +1046,11 @@
           "q": "Vilka lärdomar drar Buffett av Gen Re-fallet?",
           "alternativ": [
             "Att återförsäkring är en olönsam bransch i sig",
-            "Att underreserverad risk kan döljas i åratal, att betalning med egna aktier nära toppen förvärrar ett misstag — och att felet ska erkännas öppet och tidigt",
             "Att terrorattacker gör all försäkringsoch analys omöjlig",
+            "Att underreserverad risk kan döljas i åratal, att betalning med egna aktier nära toppen förvärrar ett misstag — och att felet ska erkännas öppet och tidigt",
             "Att förvärv alltid bör betalas i aktier för att spara kassa"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Två mekanismer samverkade: dolda reserver och betalningsmedlet — och en kulturell: hur felet hanterades i rapporteringen."
         },
         {

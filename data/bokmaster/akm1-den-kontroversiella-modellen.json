@@ -546,6 +546,590 @@
           "tips": "Tänk på var EBITDA-världen och kassaflödesvärlden skiljer sig mest åt."
         }
       ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "V07: Bruttomarginal — lönsamhetens första sanning",
+      "intro": "Bruttomarginal är den första platsen där en verksamhet visar om den har prissättningskraft eller bara volym. Här ligger också AKM1:s mest bekväma hemmaplan: kvalitetsforskningen — Novy-Marx och AQR-skolan — har faktiskt gett lönsamhet akademisk legitimitet. Men var uppmärksam: den akademiska versionen ser annorlunda ut än vår, och skillnaden är värd att känna till.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V07 Bruttomarginal — definition och poängsättning. Formeln: bruttomarginal = (intäkter minus kostnad för sålda varor och tjänster) dividerat med intäkter. Det är det första spåret av prissättningskraft: hur mycket av varje intäktskrona som återstår efter att själva leveransen betalats. Trösklar: 0 poäng under 15 procent — bolaget levererar med hårfin marginal och saknar prutmån; 3 poäng runt 35 procent — respektabelt för industri och handel; 5 poäng över 60 procent — territoriet för mjukvara, läkemedel, lyx och starka nätverk. Mellanvärden ger mellanpoäng. Två dokumentationskrav: konsekvent beräkning över åren (vissa bolag lägger logistik i kostnaden för sålda varor, andra inte — jämför inom bolaget över tid, inte bara mellan bolag), och segmentbrytning där verksamheten blandar en högmarginal- och en lågmarginalgren — poängsätt den drivande segmentmixen, inte det utspädda snittet."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger — och för en gångs skull står det på vår sida. Robert Novy-Marx publicerade 2013 The Other Side of Value: The Gross Profitability Premium och visade att brutovinst per balansräkningsmässig tillgång — gross profitability, GP/A — förutsade avkastning i samma styrka som bokvärde-till-pris: lönsamma bolag överpresterade olönsamma, och faktorn fångade den andra sidan av värdefaktorn (värdebolag med hög lönsamhet klarade sig bättre än värdebolag utan). Frazzini och Pedersen på AQR byggde vidare i Quality Minus Junk: bolag med hög kvalitet — lönsamhet, stabil förtjänst, tillväxt i utdelning, försiktig finansiering — har historiskt överpresterat skräpbolag. Fama-French femfaktormodell (2015) inkluderar RMW, robust lönsamhet, som egen faktor. Sammanfattat: när AKM1 poängsätter lönsamhet står den inte ensam mot akademin — den står bredvid den."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker — och här är avvikelsen subtil men viktig. Den akademiska faktorn är inte bruttomarginal i procent; den är brutovinst normaliserad mot tillgångar (GP/A) eller, i Fama-French-fallet, rörelsevinst mot eget kapital. Anledningen är metodologisk: faktormodeller söker variabler som förutsäger tvärsnittet av avkastning, och varianten normaliserad mot tillgångar presterade bäst i testen. AKM1 poängsätter marginalnivån i procent — det är en egenskap hos affärsmodellen, inte en portföljkonstruktion. Kontroversen i klartext: en kvant skulle säga att vi använder en förenklad version av Novy-Marx faktor — varför inte använda måttetalet som faktiskt bevisats? Vårt svar: för att syftet skiljer sig. GP/A blandar ihop affärsmodellens renhet med kapitalstrukturens tyngd — ett mjukvarubolag med få tillgångar och ett logistikbolag med stora lager kan få liknande GP/A av helt olika skäl. Bruttomarginalen talar direkt om vad kunden betalar över leveranskostnad — det är den mest läsbara moat-indikator som finns, och den kopplar till V04 (P/S ska läsas genom marginalen) och V14 (prissättningskraft). Vi offrar faktorprecision mot pedagogisk och diagnostisk klarhet, och medger att det är exakt det valet."
+        },
+        {
+          "type": "text",
+          "content": "Ärligheten om begränsningen. En hög bruttomarginal är inte en moat i sig; den är en moat in spe som måste förklaras. Hela mikroekonomin säger att attraktiva marginaler attraherar konkurrens som äter dem — bruttomarginaler är mean-reverterande över lång tid, om än långsammare än tillväxttakter (Chan-Karceski-Lakonishok visade att lönsamhet är mer persistent än tillväxt, men inte evig). Därför gäller i AKM1: en 5:a på V07 utan trovärdig förklaring i V13–V15 (patent, varumärke, nätverk) är en observation utan teori — poängen får stå kvar men flaggas som oförklarad, och oförklarade marginaler ska behandlas som tillfälliga tills en moat visats. Det är modellens interna logik: lönsamheten ställer frågan, moaten svarar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V07 Bruttomarginal — formel, trösklar, mainstream\",\"rader\":[[\"Mått\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"Bruttomarginal\",\"(Intäkter − kostnad sålda varor/tjänster) / intäkter\",\"Under 15 %\",\"Cirka 35 %\",\"Över 60 %\",\"Novy-Marx 2013: brutovinst per tillgång (GP/A) förutsäger avkastning lika starkt som värde\"],[\"Kvalitetsblocket\",\"Bruttomarginal som tidigaste kvalitetsspåret\",\"\",\"\",\"\",\"AQR Quality Minus Junk och FF:s RMW (2015): lönsamhet är etablerad faktor — AKM1 står här på akademisk mark\"],[\"Avvikelsen\",\"AKM1 poängsätter marginalnivå, inte GP/A\",\"\",\"\",\"\",\"Kvantens invändning: ni använder en förenklad variant — vårt svar: diagnostisk läsbarhet före faktorprecision\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Bruttomarginalen är priset på bolagets självförtroende: hur mycket vågar det ta ut över sin leveranskostnad? Men en hög marginal är ett löfte om angrepp, inte ett bevis på försvar — det är moat-variablerna som avgör om löftet håller."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta två bolag i samma sektor men med olika positionering — exempelvis en budgetaktör och ett premiumvarumärke. Räkna bruttomarginalerna, sätt V07-poäng och fråga sedan: vad förklarar skillnaden — kostnadsläge, varumärke, teknik eller kontraktsstruktur? Om du inte kan förklara marginalen har du ingen moat-hypotes, bara en siffra."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade Novy-Marx (2013) om brutovinst?",
+          "alternativ": [
+            "Att bruttovinst saknar samband med avkastning",
+            "Att brutovinst per tillgång (GP/A) förutsäger avkastning i samma styrka som bokvärde-till-pris",
+            "Att bara nettoresultat spelar roll",
+            "Att låg bruttovinst ger högst framtida avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Studiens titel talar om världens andra sida — vad fanns på den sidan?"
+        },
+        {
+          "q": "Hur skiljer sig AKM1:s V07 från den akademiska faktorn?",
+          "alternativ": [
+            "AKM1 poängsätter marginalnivån i procent av intäkten; faktorlitteraturen normaliserar brutovinst mot tillgångar (GP/A)",
+            "AKM1 använder nettoresultat; akademikerna bruttovinst",
+            "De är identiska i alla avseenden",
+            "AKM1 normaliserar mot antal anställda"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad täljare och nämnare är i respektive mått."
+        },
+        {
+          "q": "Varför flaggas en 5:a på V07 utan förklaring i moat-variablerna?",
+          "alternativ": [
+            "För att bruttomarginal över 60 procent är omöjligt",
+            "För att attraktiva marginaler attraherar konkurrens som äter dem — oförklarade marginaler ska betraktas som tillfälliga",
+            "För att IFRS förbjuder höga bruttomarginaler",
+            "För att bruttomarginal inte får ge 5 poäng enligt matrisen"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer i en bransch där någon tjänar ovanligt mycket per intäktskrona?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "V08: EBITDA-marginal — och add-back-spelet",
+      "intro": "När bruttomarginalen visar affärsmodellen visar EBITDA-marginalen ledningen: hur mycket återstår när löner, marknadsföring och administration fått sitt? Men det är också här bolagen frestas som mest — i gapet mellan rapporterad och justerad EBITDA bor den moderna bokföringsteaterns största akt. AKM1:s poängsättning börjar med att skilja dem åt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V08 EBITDA-marginal — definition och poängsättning. Formeln: EBITDA-marginal = EBITDA dividerat med intäkter, där EBITDA är rörelseresultat före av- och nedskrivningar (alternativt rörelseresultat plus av- och nedskrivningar om bolaget redovisar den vägen runt). Trösklar: 0 poäng vid negativ EBITDA — verksamheten förlorar pengar innan ens finansierings- och kapitalkostnader; 3 poäng vid 12–15 procent — fungerande industriell lönsamhet; 5 poäng över 25 procent — verksamheter där skala och differentiering bär. Skillnaden mot bruttomarginalen är diagnostiskt viktig: faller mer än en fjärdedel av bruttomarginalen bort på vägen till EBITDA har bolaget en kostnadsapparat som äter differentieringen — hög bruttomarginal med låg EBITDA-marginal är ett varumärke som förvaltas av en byråkrati. Poängsätt därför båda och läs luckan mellan dem."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger. Operativ lönsamhet ingår i kvalitetsfaktorerna — Fama-French RMW bygger på rörelsevinst per eget kapital, AQR:s kvalitetsmått på stabil förtjänst — så grundidén har stöd. Men mainstream-kritiken av EBITDA-specifikt är kampanjen mot justeringarna. Sedan rapporteringspraxis växte har andelen bolag som redovisar justerade resultat mångdubblats, och forskning och uppsynsorgan (bland annat SEC, som 2016 utfärdade varningsbrev om mått utanför GAAP) har dokumenterat att justerade tal systematiskt ligger över rapporterade och att skillnaden vuxit med tiden. Add-backar för engångskostnader som återkommer varje år — omstruktureringar, integrationskostnader, aktiebaserad ersättning — är den klassiska mekanismen. EBITDA ligger extra exponerat eftersom det ändå är en konstruktion utan IFRS-definition: varje bolag bygger sin egen."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför. Invändningen: EBITDA-marginalen är det enklaste måttet att manipulera — varför bygga en poäng på den? Vårt svar har två delar. Ett: vi poängsätter två tal, inte ett. Primärt rapporterad EBITDA-marginal (från rörelseresultat plus avskrivningar — alltså utan bolagets egna justeringar), och därefter justeringsgapet: differensen mellan bolagets egen justerade EBITDA och den rapporterade. Gapet är i sig information — en bolagsledning som varje år hittar nya engångskostnader berättar något om sin kultur, och AKM1 dokumenterar det i stället för att låtsas att det inte finns. Två: sektorskillnaderna är så stora att en fast tröskel vore meningslös — poängen sätts mot sektorns normal, vilket också är den läsning en bank eller köpare faktiskt gör. Notera symmetrin med V06: där använde vi EBITDA-nivån (multiplen), här används andelen (marginalen). Blindheten är densamma — kapitalförslitningen bor i avskrivningarna — därav kopplingen till V19."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt. För tidiga bolag i medvetet förlustfas — som bränner pengar för att köpa marknadsandelar — kan en 0:a på V08 vara en helt optimal strategi, och poängen missleder om den läses som tecken på dålig ledning. Därför gäller tidsregeln i AKM1: ett bolag i dokumenterad investeringssfas poängsätts på sin väg mot guidad målmarginal, och poängen noteras med villkor — om tvåårsplanen för marginalen inte infrias rullas poängen om retroaktivt vid nästa granskning. Det är en av modellens tydligaste skillnader mot en statisk screen: variabeln minns vad bolaget lovat. Det är också en erkänd svaghet: den ger analytikern en frihetsgrad till. Dokumentationskravet — citera guiden, datumet och siffran — är motgiften."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V08 EBITDA-marginal — formel, trösklar, mainstream\",\"rader\":[[\"Mått\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"EBITDA-marginal\",\"EBITDA / intäkter (rapporterad väg: rörelseresultat + avskrivningar)\",\"Negativ EBITDA\",\"12–15 %\",\"Över 25 % (sektornjusterat)\",\"Operativ lönsamhet ingår i kvalitetsfaktorer (FF RMW, AQR QMJ) — men justerade mått kritiseras hårt\"],[\"Justeringsgap\",\"Bolagets justerade EBITDA minus rapporterad\",\"Stort och växande gap\",\"\",\"Litet eller frånvarande gap\",\"SEC-varningar och forskning: mått utanför GAAP ligger systematiskt över rapporterade och skillnaden har vuxit\"],[\"Kopplingen\",\"Läs gapet V07 till V08 — kostnadsapparatens vikt\",\"\",\"\",\"\",\"Buffett/Munger: EBITDA glömmer slitage; AKM1 täcker det med V19\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte bara hur stor EBITDA-marginalen är — fråga hur stor den var innan bolagets egna berättare justerade den. Skillnaden mellan rapporterat och justerat är en kulturmätare: den visar hur ledningen behandlar sanningen när ingen tvingar dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta ett bolags rapport eller presentation där justerad EBITDA redovisas. Beräkna gapet mot rapporterad EBITDA för de senaste tre åren. Sätt V08-poäng på rapporterad basis först, notera sedan hur många poäng bolagets egen berättelse skulle ha gett — skillnaden är det tal du ska minnas."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den korrekta utgångspunkten för rapporterad EBITDA i AKM1:s poängsättning?",
+          "alternativ": [
+            "Bolagets egna justerade EBITDA-tal",
+            "Rörelseresultat plus av- och nedskrivningar — alltså utan bolagets egna add-backar",
+            "Nettoresultat plus skatt",
+            "Bruttovinst minus marknadskostnader"
+          ],
+          "ratt": 1,
+          "tips": "Från vilket tal ska add-back-spelet inte kunna påverka poängen?"
+        },
+        {
+          "q": "Vad säger den dokumenterade kritiken mot justerade mått utanför GAAP/IFRS?",
+          "alternativ": [
+            "Att de alltid stämmer exakt med rapporterade tal",
+            "Att de systematiskt ligger över rapporterade tal och att skillnaden har vuxit — SEC har varnat för utvecklingen",
+            "Att de är förbjudna i alla länder",
+            "Att de enbart används av banker"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med ett mått när den som mäter själv får välja bort det smärtsamma?"
+        },
+        {
+          "q": "Hur hanterar AKM1 medvetna förlustfaser i unga bolag?",
+          "alternativ": [
+            "De får automatiskt 5 poäng eftersom de investerar",
+            "De poängsätts på sin väg mot guidad målmarginal — men poängen rullas om om planen inte infrias",
+            "De utesluts ur modellen helt",
+            "V08 slopas och V12 används istället"
+          ],
+          "ratt": 1,
+          "tips": "Kapitlet beskriver en variabel som minns vad bolaget lovat — hur?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "V09: ROE — lönsamhetens dubbelverkande svärd",
+      "intro": "Return on equity är det mått styrelser belönas och manipuleras med. Det finns i den akademiska frontlinjen — q-faktormodellen ger ROE en huvudroll — men det kan också byggas med skulder och återköp, utan att en enda värdeskapande krona tillkommit. AKM1:s hantering: DuPont-dekomponeringen är obligatorisk. Ingen dekomponering, ingen poäng.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V09 ROE — definition och poängsättning. Formeln: ROE = nettoresultat dividerat med eget kapital. AKM1 poängsätter femårsmedelvärdet, inte ett enskilt år. Trösklar: 0 poäng vid negativt resultat eller under 5 procent — kapitalet skulle tjäna mer på statsobligationer; 3 poäng runt 12 procent — normalavkastning på eget kapital; 5 poäng över 20 procent, varaktigt och med rimlig belåning. Själva poängsättningen kräver sedan DuPont-dekomponeringen, som delar ROE i tre ben: vinstmarginal (nettoresultat/intäkter), kapitalomsättningshastighet (intäkter/tillgångar) och hävstång (tillgångar/eget kapital). ROE = vinstmarginal gånger kapitalomsättning gånger hävstång. Regeln är att en 5:a ska vara driven av de två första benen. En ROE på 25 procent byggd på hög vinstmarginal och snabb kapitalomsättning är en affärsmodell; samma ROE byggd på hävstång 5 med enklare marginaler är en finansieringskonstruktion — och poängsätts därefter, samt fångas vidare av V10."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger — och det är blandat på ett intressant sätt. Hou, Xue och Zhang (2015) gav i q-faktormodellen ROE en huvudroll: deras två kärnfaktorer är investering och förväntad ROE, och modellen har tävlat med Fama-French om att förklara avkastningens tvärsnitt — ROE har alltså akademisk status i den moderna faktordebatten. Men redovisningsforskningen har samtidigt dokumenterat hur ROE kan byggas konstlat: hög skuldsättning lyfter ROE via hävstångsbenet; stora återköp krymper eget kapital och lyfter ROE utan att resultaten förbättras; och kapitalstrukturtraditionen — från Modigliani-Miller till trade-off-teorin och Myers pecking order — har i över sextio år påpekat att avkastning på eget kapital är ett pris på den risk kapitalägarna tar. Damodaran sammanfattar det praktiskt: jämför alltid ROE mot räntan på bolagets skuld och mot branschens kapitalkostnad — annars vet du inte om lönsamheten är skicklighet eller bara kompensation för risk."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför. Invändningen: ROE kan manipuleras med balansräkningsgymnastik — återköp och belåning blåser upp måttet utan värdeskapande, så varför poängsätta det alls? Vårt svar: ROE är trots allt det enda lönsamhetsmått som besvarar den fråga en ägare faktiskt ställer — vad fick mitt kapital? De akademiska alternativen flyttar bara problemet: ROA straffar bolag som valt en rimlig finansiering, ROCE blandar in skatteenheter. Istället för att överge måttet dekomponerar vi det — DuPont har sedan 1919 varit branschens svar på exakt den här invändningen, och krävs därför som bilaga till varje V09-poäng. Dessutom korsas V09 systematiskt av V10 (hävstången fångas separat) och V20 (utspädning respektive återköp dokumenteras där) — det är poängen med en modell i tjugo variabler: inget mått behöver bära hela sanningen ensamt."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt — två fallgropar. Fallgrop ett: negativt eller mycket litet eget kapital. Vid återköpsdrivna bolag kan nämnaren närma sig noll och ROE explodera till meningslöshet (eller bli negativ av helt fel skäl) — då är ROE ogiltigt som mått och V09 poängsätts med ROIC eller avkastning på sysselsatt kapital som ersättning, med notis. Fallgrop två: cykliska toppar. Ett gruvbolag i toppcykel kan visa 30 procents ROE som aldrig återkommer — därför femårsfönstret och kravet att även cykelns bottennivå ligga över noll. Den ärliga slutsatsen om V09: bland AKM1:s variabler är detta kanske den där dokumentationskravet gör mest nytta — måttet är bekant, offentligt och lätt — och just därför är frestelsen att läsa det rakt av som störst."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V09 ROE — formel, trösklar, mainstream\",\"rader\":[[\"Mått\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"ROE (5 år)\",\"Nettoresultat / eget kapital\",\"Under 5 % eller negativ\",\"Cirka 12 %\",\"Över 20 % med rimlig belåning\",\"Hou-Xue-Zhang (2015): ROE är kärnfaktor i q-modellen — men redovisningsforskning visar hur måttet kan byggas med skuld och återköp\"],[\"DuPont\",\"ROE = vinstmarginal × kapitalomsättning × hävstång\",\"5:a driven av hävstång\",\"\",\"5:a driven av marginal och omsättning\",\"Damodaran: jämför ROE mot skuldränta och kapitalkostnad — annår vet du inte om det är skicklighet\"],[\"Ersättningsregel\",\"Vid nästan noll i eget kapital: använd ROIC\",\"\",\"\",\"\",\"Modigliani-Miller-traditionen: avkastning på eget kapital är priset på tagen risk\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "ROE besvarar vad kapitalet fick — DuPont besvarar varför. Utan varför är ROE bara en siffra som kan ha tillverkats på tre olika sätt: varav två är illusioner och en är en affärsmodell."
+        },
+        {
+          "type": "utmaning",
+          "content": "Dekomponera ROE för två bolag med liknande ROE men olika balansräkningar — ett skuldfritt, ett belånat. Skriv de tre DuPont-benen för varje. Vilken 5:a köper du hellre, och vad säger hävstångsbenet om vad som händer med ROE om räntan stiger med två procentenheter?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka tre ben ingår i DuPont-dekomponeringen av ROE?",
+          "alternativ": [
+            "Intäktstillväxt, utdelning och återköp",
+            "Vinstmarginal, kapitalomsättningshastighet och hävstång",
+            "Bruttomarginal, EBITDA-marginal och ROIC",
+            "Kassaflöde, skuld och goodwill"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på de tre multiplikatorer som tillsammans blir nettoresultat delat med eget kapital."
+        },
+        {
+          "q": "Vad är den korrekta akademiska statusen för ROE?",
+          "alternativ": [
+            "ROE är förbjudet i faktormodeller sedan 1990",
+            "Hou-Xue-Zhang ger ROE en huvudroll i q-faktormodellen (2015) — samtidigt som redovisningsforskningen dokumenterar hur måttet kan byggas konstlat",
+            "ROE används bara av fundamentalister utan akademiskt stöd",
+            "Fama-French bevisade att ROE saknar betydelse"
+          ],
+          "ratt": 1,
+          "tips": "Två sanningar samtidigt: ett mått kan ha faktorstatus och ändå vara manipulerbart."
+        },
+        {
+          "q": "Ett bolag har nästan noll i eget kapital efter åratal av återköp, och ROE ser extremt ut. Vad gör AKM1?",
+          "alternativ": [
+            "Ger automatiskt 5 poäng för kapitaldisciplin",
+            "Förklarar ROE ogiltigt och poängsätter med ROIC eller avkastning på sysselsatt kapital som ersättning, med notis",
+            "Slopar hela lönsamhets­kategorin",
+            "Multiplicerar ROE med bokvärdet"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en division när nämnaren närmar sig noll?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "V10 + V11: Skuldsättningsgrad och likviditet — balansräkningens väktare",
+      "intro": "Här bor AKM1:s mest oglamorösa poäng: skulder och kassabuffertar. Nobelpristagare har bevisat att skuldsättning i en perfekt värld inte spelar någon roll, och Jensen-varningen säger att för mycket kontanter bara blir ledningens leksak. AKM1 poängsätter ändå försiktighet — och det är ett medvetet, ideologiskt val som du ska kunna försvara.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V10 Skuldsättningsgrad — definition och poängsättning. AKM1 använder två mått i par: skuldsättningsgrad, totala räntebärande skulder dividerat med eget kapital, och det mer informationstäta nettoskuld-till-EBITDA: (räntebärande skulder minus kassa) dividerat med EBITDA. Trösklar: 0 poäng vid nettoskuld/EBITDA över 4 eller skuldsättningsgrad över 2 — nivåer där en normal konjunkturcykel sväljer manövreringsutrymmet; 3 poäng vid nettoskuld/EBITDA kring 1,5–2,5 eller skuldsättningsgrad 0,5–1; 5 poäng vid nettokassa eller nettoskuld/EBITDA under 0,5. Sektorjustering är obligatorisk — banker och fastighetsbolag lever av balansräkningen och bedöms på kapitaltäckning och belåningsgrad i stället; V10-poängen för en bank handlar om kapitalbasens kvalitet, inte om frånvaron av skuld."
+        },
+        {
+          "type": "text",
+          "content": "V11 Likviditet (Kvick) — definition och poängsättning. Kvickvärdet (quick ratio) = (omsättningstillgångar minus lager) dividerat med kortfristiga skulder. Trösklar: 0 poäng under 0,5 — betalningsobligationerna kan inte täckas ens av fordringar och kassa; 3 poäng runt 1,0 — balanserat; 5 poäng över 1,5 — buffert. Med den fotnot som hör till modellen: ett alldeles för högt kvicktal — tre, fyra gånger — poängsätts inte högre, utan noteras som outnyttjat kapital och läses tillsammans med V20 (varför ligger kapitalet kvar i stället för att återinvesteras eller lämnas tillbaka?). Skillnaden mot vanlig kassalikviditet är medveten: lagret exkluderas, eftersom lager är den del av omsättningstillgångarna som inte kan realiseras snabbt utan prisavdrag — i ett lagerberoende bolag kan kassalikviditeten se trygg ut medan kvickvärdet avslöjar att tryggheten sitter på hyllor."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger. Modigliani och Miller (1958) visade att kapitalstrukturen i en perfekt marknad — inga skatter, inga konkurskostnader, full information — är irrelevant för värdet: skuld höjer väntad avkastning på eget kapital bara som kompensation för höjd risk. Modern forskning har sedan förklarat varför verkligheten ändå har skulder: trade-off-teorin (skattesparande vägs mot konkurskostnader) och Myers pecking order (finansiering sker i ordningen internt kapital, skuld, nyemission). Altmans Z-score (1968) visade att likviditets- och skuldmått förutsäger konkurs — omsättningstillgångar, balansräkningsstruktur och intjäning vägdes samman i en multipel — vilket gav balansmåtten en akademisk hemvist i kreditanalysen. Och Jensens artikel om fritt kassaflöde (1986) varnade för motsatt problem: bolag med för mycket kontanter lider av byråkrati och empire building, eftersom utdelning tvingar ledningen till kapitalmarknadsdisciplin. Inom aktiefaktormodellerna är belåning i stort sett frånvarande som egen premiefaktor — AQR:s kvalitetsmått innehåller låg belåning som del av kvalitet, men det är undantaget snarare än regeln."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför — kontroversen i klartext. Invändningen: ni straffar skuld och belönar kassaberg — trots att Modigliani-Miller visar att skuld är neutral, att skuld legitimt förhöjer ROE enligt trade-off-teorin, och att Jensens forskning visar att kassaberg bjuder in till slöseri. Det ni kallar stabilitet är bara oförmåga att optimera. Vårt svar är en ideologisk bekännelse snarare än en motbevisning: AKM1 är byggd för privatpersoner som ska hålla positioner genom svåra perioder utan att tvingas sälja. Balansräkningar med nettokassa är optioner på överlevnad: de låter bolaget köpa tillgångar, konkurrenter eller sitt eget slag när cykeln vänder, och de låter ägaren sova. Vi betalar för det med en förmodligen lägre förväntad avkastning under goda år — det är en försäkringspremie, inte ett missförstånd av teorin. Värt att minnas är också att Modigliani-Millers irrelevans gäller en värld utan konkurskostnader — verklighetens bolag lever med båda. Och Jensen har rätt om kassabergen: därför har V11 ett tak och en vidarebefordran till V20 — kapital som inte arbetar ska ifrågasättas, inte belönas i det oändliga."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetsredovisningen. Det finns ingen stark litteratur som visar att låg belåning i sig ger högre aktieavkastning som egen faktor — om den fanns skulle den sitta i femfaktormodellen. V10 och V11 är alltså riskmätningsvariabler, inte avkastningsprediktorer: de smalar av prognosens nedåtsida utan att vidga upåtsidan. En kvant som påpekar detta har rätt, och skillnaden i språk är värdefull: hen pratar förväntad avkastning, vi pratar utfallsfördelning. Det är också här modellen knyter an till marginal of safety: en balansräkning som tål två års svag konjunktur gör att dina nitton övriga poäng hinner få verkan — en balansräkning som kollapsar år ett gör att resten av analysen aldrig blir relevant."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V10 + V11 — formler, trösklar, mainstream\",\"rader\":[[\"Variabel\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"V10 Nettoskuld/EBITDA\",\"(Räntebärande skuld − kassa) / EBITDA\",\"Över 4 (eller skuldsättningsgrad över 2)\",\"1,5–2,5\",\"Nettokassa eller under 0,5\",\"M&M 1958: kapitalstruktur irrelevant i perfekt marknad; trade-off och pecking order förklarar verkliga skulder\"],[\"V11 Kvick\",\"(Omsättningstillgångar − lager) / kortfristiga skulder\",\"Under 0,5\",\"Cirka 1,0\",\"Över 1,5 (tak — högre noteras som outnyttjat kapital)\",\"Altman Z-score 1968: balansmått förutsäger konkurs; Jensen 1986: kassaberg bjuder in till slöseri\"],[\"AKM1:s ställning\",\"Stabilitet är ett val: försäkringspremie mot lägre förväntad avkastning\",\"\",\"\",\"\",\"Ingen egen premiefaktor för låg belåning i aktiefaktormodeller — vi mäter utfall, inte premie\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Skuld förvandlar tillfälliga problem till permanenta. En balansräkning utan manövreringsutrymme tvingar bolaget att sälja framtiden för att överleva nuet — och dina nitton övriga variabler blir meningslösa om bolaget inte lever tillräckligt länge för att realisera dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna nettoskuld/EBITDA och kvicktal för ett bolag genom en hel cykel — ta siffror från ett bra år och ett dåligt. Hur rörde sig måtten? Poängsätt V10 och V11 på det dåliga året, inte det goda: balansräkningens väktare ska testas i det värsta läge du har data för."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför använder V11 kvickvärdet i stället för vanlig kassalikviditet?",
+          "alternativ": [
+            "För att kvickvärdet utesluter lagret — som inte kan realiseras snabbt utan prisavslag",
+            "För att kassalikviditet är förbjuden enligt IFRS",
+            "För att kvickvärdet inkluderar goodwill",
+            "För att Graham använde kvickvärdet för banker"
+          ],
+          "ratt": 0,
+          "tips": "Vilken del av omsättningstillgångarna är svårast att snabbt förvandla till betalningsmedel?"
+        },
+        {
+          "q": "Vad är den ärliga redovisningen av V10 och V11:s bevisläge?",
+          "alternativ": [
+            "Låg belåning är en starkt bevisad avkastningsfaktor",
+            "De är riskmätningsvariabler som smalar prognosens nedåtsida — inte bevisade avkastningsprediktorer",
+            "Modigliani-Miller bevisade att låg skuld ger högst avkastning",
+            "Jensen bevisade att kassaberg alltid skapar värde"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden mellan förväntad avkastning och utfallsfördelning är kapitlets poäng."
+        },
+        {
+          "q": "Hur svarar AKM1 på Jensens invändning om kassaberg och slöseri?",
+          "alternativ": [
+            "V11 belönar kassa i det oändliga",
+            "V11 har ett tak, och outnyttjat kapital vidarebefordras till V20 där återköp och återinvesteringsdisciplin prövas",
+            "Modellen ignorerar ledningsproblem helt",
+            "Kassaberg är förbjudna i modellen"
+          ],
+          "ratt": 1,
+          "tips": "Vad ska hända med kapital som bara ligger?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "V12: Intäktsstabilitet — prognosens ryggrad",
+      "intro": "All fundamentalanys är i grunden en prognos, och alla prognoser behöver en ryggrad. V12 mäter hur mycket av intäkterna som återkommer av sig själv — och hur lite de svänger när världen svänger. Akademikerns invändning kommer att överraska dig: stabil bolag är inte gratis, de är till och med systematiskt underprisade på ett sätt som gör dem dyrare att köpa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V12 Intäktsstabilitet — definition och poängsättning. Två mått i par. Det första är intäkternas volatilitet: standardavvikelsen hos de årliga intäktstillväxterna över fem år. Det andra är återkommande andel: andelen av intäkterna som är prenumerations-, avtals- eller servicebaserade och förnyas utan ny försäljningsinsats. Trösklar: 0 poäng när intäkterna svänger med över 25 procentenheter mellan år eller faller kraftigt i varje nedgång — klassisk cykelverksamhet utan motvikt; 3 poäng vid måttlig svängning (10–15 procentenheter) och delvis återkommande bas; 5 poäng när svängningen är under 5 procentenheter eller över 90 procent av intäkterna är återkommande med dokumenterad förnyelserata. Det viktiga är att mäta i nedgångar: ett bolag vars intäkter aldrig backar mer än ett par procent i en recession har en annan prognosryggrad än ett som växer fortare i medeltal men backar tjugo i varje motvind."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger — här kommer en invändning de flesta inte ser komma. Den kända anomalin i litteraturen är lågvolatilitetsparadoxen: Baker, Bradley och Wurgler (2011) visade att aktier med låg volatilitet historiskt givit högre riskjusterad avkastning än högvolatilitetsaktier — förklarad med bland annat att förvaltare med benchmark- och karriärrisk undviker dem och att lambokrav skapar överdriven shortsida i de riskfyllda. Men — och detta är invändningen — den anomalin gäller aktiens prisvolatilitet, inte intäkternas. För intäktsstabilitet i sig finns ingen motsvarande etablerad premiefaktor; däremot visar kvalitetslitteraturen (AQR:s Quality Minus Junk) att stabil förtjänst ingår i kvalitetsdefinitionen och historiskt premierats. Intäktsstabilitet är alltså en komponent i kvalitetsfaktorn snarare än egen faktor — en nyanserad bild som AKM1 ska återge som den är."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför. Invändningen i klartext: stabila bolag är kända, uppskattade och prissatta — marknaden betalar redan för förutsägbarhet, så ni betalar en premie för något som inte ger premium; och om ni tror att stabilitet ger skydd i nedgångar så är det bara en annan form av den illusion som lågvolatilitetsaktier bjöd på före 2008, då defensiva aktier föll minst — tills de föll som allt annat. Vårt svar: delvis håller vi med om prissättningen — stabilitet är sällan gratis, och det ska sägas. Men AKM1:s syfte med V12 är inte att hitta ocasherad avkastning; det är att kalibrera prognoskonen. Ju stabilare intäktsbas, desto smalare osäkerhetsintervall kring din värdering av framtida kassaflöden, desto mer är hela din analys värd — V12 är en precisionvariabel, inte en avkastningsvariabel. Vidare är stabilitet en psykologisk nödvändighet för privatpersoner: en position som kräver att du sitter igenom trettio procents intäktsfall varje cykel kräver ett psyke de flesta inte har, och en modell som ignorerar det bygger för teoretiska människor. Slutligen: V12 samspelar med V02 — ARR-tillväxt med hög retention är den starkaste stability-generatorn som finns."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetsredovisningen. Det finns en verklig risk med V12 som användaren måste känna till: stabilitet kan köpas med bindande långtidskontrakt som låser fast bolaget i dåliga priser, och i vissa strukturer (vad som helst med take-or-pay eller miniminivåer) är intäktsstabiliteten äkta men marginalstabiliteten inte. Därför poängsätts aldrig V12 enbart på intäktslinjen — kravet är intäkter och marginal tillsammans, och en stabil intäkt med kollapsande marginal noteras som skenbar stabilitet. Dessutom: fem års fönster fångar inte alla cykler — ett bolag kan se stabilt ut genom en kort expansion och ändå vara djupt cykliskt. Använd det längsta fönstret som finns och notera cykellängden i sektorn. V12 är den variabel där historisk data som mest lätt blir en fälla formad av den period som råkar finnas i databasen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V12 Intäktsstabilitet — mått, trösklar, mainstream\",\"rader\":[[\"Mått\",\"Formel\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"Volatilitet\",\"Standardavvikelse hos årlig intäktstillväxt, 5 år\",\"Över 25 %-enheter\",\"10–15 %-enheter\",\"Under 5 %-enheter\",\"Lågvolatilitetsparadoxen (Baker-Bradley-Wurgler 2011) gäller prisvolatilitet — inte intäkter\"],[\"Återkommande andel\",\"Avtals-/prenumerationsintäkter / totala intäkter\",\"Under 25 %\",\"Cirka 50 %\",\"Över 90 % med dokumenterad förnyelse\",\"Stabil förtjänst ingår i AQR:s kvalitetsfaktor — men intäktsstabilitet är ingen egen premiefaktor\"],[\"AKM1:s syfte\",\"Precision i prognoskonen — ingen premiejakt\",\"\",\"\",\"\",\"Invändning: stabilitet är prissatt — vårt svar: V12 kalibrerar prognosen, den söker inte ocasherad avkastning\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Stabilitet är inte fri från risk — det är en annan fördelning av samma risk. Det bolag vars intäkter aldrig svänger ger dig inte en säker framtid, det ger dig en smalare prognos. Skillnaden mellan att inte veta och att veta hur lite man vet är hela värdet hos V12."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett cykliskt bolag och ett prenumerionsbolag. Skriv ned deras årliga intäktstillväxt fem år bakåt, beräkna grovt standardavvikelsen och uppskatta återkommande andel. Sätt V12-poäng för båda — och notera sedan vilken av dem vars femårsbild som hade sett annorlunda ut om fönstret varit ett år längre eller kortare."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gäller för lågvolatilitetsparadoxen i forskningen?",
+          "alternativ": [
+            "Den visar att intäktsstabilitet ger högst avkastning av alla faktorer",
+            "Den gäller aktiens prisvolatilitet — Baker-Bradley-Wurgler (2011) — inte bolagets intäktsvolatilitet",
+            "Den bevisar att stabilitet alltid är gratis",
+            "Den gäller bara räntor och valutor"
+          ],
+          "ratt": 1,
+          "tips": "Skilj på hur aktiekursen svänger och hur intäkterna svänger."
+        },
+        {
+          "q": "Vad är AKM1:s huvudsakliga syfte med V12?",
+          "alternativ": [
+            "Att hitta bolag marknaden missprissatt på grund av stabil intäkt",
+            "Att kalibrera prognoskonen — smalare osäkerhet gör resten av analysen mer värd",
+            "Att ersätta V02 ARR-måttet",
+            "Att mäta ledningens kapitaldisciplin"
+          ],
+          "ratt": 1,
+          "tips": "Kapitlet kallar V12 en precisionvariabel — till skillnad från vad?"
+        },
+        {
+          "q": "Vad är den dokumenterade fallgropen med skenbar stabilitet?",
+          "alternativ": [
+            "Att stabila intäkter kan köpas med kontrakt som låser fast dåliga priser — intäktsstabilitet utan marginalstabilitet är inte äkta",
+            "Att alla stabila bolag är banker",
+            "Att standardavvikelse inte kan beräknas",
+            "Att IFRS förbjuder redovisning av kontrakt"
+          ],
+          "ratt": 0,
+          "tips": "Vad kan ligga under en platt intäktslinje som ändå gör att lönsamheten svänger?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "V13: Patent och IP — moaten som kan mätas och löpa ut",
+      "intro": "Nu lämnar vi världen där alla håller oss sällskap. Patent är den första av de tre moat-variabler som en kvantitativ tradition utan tvekan skulle kalla omeningsbar opinion. Ändå finns det forskning om patentens värde — och ändå har patent en klocka som tickar. Detta kapitel ger dig både sköld och svärd.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V13 Patent och IP — definition och poängsättning. Poängen sätts på fyra kriterier, vart och ett dokumenterat. Bredd: omfånget av portföljen i förhållande till kärnverksamheten — tio patent som skyddar huvudprodukten väger tyngre än tusen kring periferin. Djup: om patenten skyddar själva produkten eller bara tillbehör. Enforcebarhet: hur lätt rättigheterna är att skydda i domstol — ett patent som aldrig processats är en hypotes, ett som överlevt prövning är ett bevis. Löptid: år kvar till dess att kärnpatenten löper ut, och vad intäktsbilden ser ut vid klonen. Trösklar: 0 poäng när verksamheten saknar meningsfullt immateriellt skydd och differentieringen vilar på ingenting som kan försvaras; 3 poäng för en fungerande portfölj som skyddar delar av erbjudandet med kännbar löptid kvar; 5 poäng när en tät, beprövad och affärskritisk portfölj — eller ett motsvarande hemlighetsskydd som visat sig hålla i decennier — bär differentieringen. Notera att highest poäng inte kräver många patent: det kräver att differentieringen inte kan kopieras lagligt inom överskådlig tid."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger — och här är forskningen faktiskt på vår sida mer än moat-motståndarna medger. Hall, Jaffe och Trajtenberg har i uppmärksammade studier visat att patentciteringar — hur ofta andras patent bygger på bolagets — har ett starkt samband med bolagets marknadsvärde: citeringar är ett mått på patentens kvalitet och betydelse, långt bättre än patentantal. Ekonomisk forskning om innovation och konkurrens (bland annat Aghion och Howitts schumpeterianska tillväxtmodeller) ger det teoretiska ramverket: tillfälliga monopoler via innovation är en motor i marknadsekonomin. Så den akademiska världen förnekar inte att immateriella rättigheter bär värde — det är inhämtningen som är problemet. Patentdata är offentliga men svåra att tolka, citeringar har fördröjning på år, hemlighetsskydd (Coca-Cola-receptet är det klassiska exemplet) finns inte i någon databas alls. Standardfaktormodellerna kan därför inte prissätta det — och därmed förblir det osynligt i deras världsbild."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför — kontroversen i klartext. Invändningen: ni poängsätter något som varje seriös kvant skulle kalla omeningsbar opinion — patentportföljens värde kan inte komprimeras till en siffra, era 0–5 är en känsla med sifferkostym. Vårt svar har fyra ben. Ett: precisionsargumentet bevisar för mycket — om bara det som ryms i en faktormodell får analyseras kan ingen bolagsbedömning ske alls, inte ens av dem som gör den bäst; hela den aktiva branschen, akademiker inräknade, ägnar sig åt bedömningar av framtida förtjänstkraft. Två: vi poängsätter inte patentets värde i kronor — vi poängsätter strukturen i skyddet: bredd, djup, enforcebarhet, löptid; fyra frågor med dokumenterade svar, inte en gissning. Tre: viktningen är medveten blygsam — V13 är max 5 av 100; moat-trogen sätter ingen att ena variabeln kan dominera helheten. Fyra: vi anger utfallsriskarna i klartext, vilket leder till nästa block."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt — tre verkliga svagheter som ska erkännas varje gång. Ett: patent löper ut. Ett läkemedels huvudpatent ger cirka tjugo år, varav en stor del förbrukas av utvecklingstid — patentklippor är en av de mest välldokumenterade händelserna i branschen, med intäktsfall som styrt hela bolags värderingar. En 5:a på V13 med två år kvar till kärnpatentets utgång är en felaktig poäng. Två: patent är en utmaning, inte en mur — förDesigned-around-lösningar och processer är vanliga, särskilt i olika jurisdiktioner; ett amerikanskt patent skyddar inte i Europa, ett kinesiskt patent kan vara svårare att driva igenom. Tre: patentmängd kan vara ett omvänt tecken — bolag som mäter innovation i antal ansökningar bygger ofta murar av papper; kvalitetsmått (citeringar, processade patent, familjebredd) väger alltid tyngre än antal. Sammanfattningen som du ska kunna utantill: V13 är modellens första ärliga bekännelse att strukturerad bedömning inte är detsamma som objektiv mätning — och att vi gör den ändå, med öppen bok."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V13 Patent och IP — kriterier, trösklar, mainstream\",\"rader\":[[\"Kriterium\",\"Fråga\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"Bredd\",\"Täcker portföljen kärnverksamheten?\",\"Inget meningsfullt skydd\",\"Skyddar delar av erbjudandet\",\"Tät portfölj kring kärnprodukten\",\"Hall-Jaffe-Trajtenberg: patentciteringar har starkt samband med marknadsvärde — kvalitet går att mäta\"],[\"Enforcebarhet\",\"Har rättigheterna överlevt prövning?\",\"Oprocessade, oprövade\",\"Delvis prövade\",\"Beprövade i domstol eller hemlighetsskydd i decennier\",\"Standardfaktormodeller kan inte inhämta IP-djup — därför osynligt i deras värld\"],[\"Löptid\",\"År kvar till kärnpatentens utgång?\",\"Under 3 år till klippa\",\"5–10 år\",\"Över 10 år eller förnybar pipeline\",\"Patentklippor är väldokumenterade — särskilt läkemedel: cirka 20 år, varav utvecklingstid äter en stor del\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett patent är inte en mur utan en hyresperiod. Frågan V13 egentligen ställer är: när löper skyddet ut — och vad finns kvar av verksamheten den dagen som någon annan får kopiera? Den bästa IP-moaten är den som fortfarande står när patenten som en gång skyddade den har fallit."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett läkemedelsbolag och ett mjukvarubolag. För läkemedlet: när löper huvudpatenten ut och vad är pipelinen bakom? För mjukvaran: vad skyddar egentligen verksamheten — patent, upphovsrätt, data, eller något V13 inte fångar? Sätt poäng för båda och notera i vilken av dem V13 gör mest nytta — och i vilken variabel som borde ta över."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade Hall, Jaffe och Trajtenbergs patentforskning?",
+          "alternativ": [
+            "Att antalet patent är den bästa värdeindikatorn",
+            "Att patentciteringar — hur ofta andra bygger på bolagets patent — har starkt samband med bolagets marknadsvärde",
+            "Att patent saknar ekonomisk betydelse",
+            "Att patent bara gäller i USA"
+          ],
+          "ratt": 1,
+          "tips": "Kvalitet framför kvantitet — vad mäter kvalitet hos ett patent?"
+        },
+        {
+          "q": "Varför syns inte immateriella rättigheter i standardfaktormodellerna?",
+          "alternativ": [
+            "För att forskare anser att patent är omoraliska",
+            "För att data är svår att inhämta och tolka — citeringar fördröjs år, hemlighetsskydd finns inte i databaser",
+            "För att patent är förbjudna att värdera",
+            "För att faktormodeller bara täcker räntor"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vad en modell kan se — och vad som strukturellt förblir osynligt för den."
+        },
+        {
+          "q": "Vilket påstående om V13:s svagheter är korrekt enligt kursen?",
+          "alternativ": [
+            "Patent ger evigt skydd",
+            "Patent löper ut, kan utmanas genom design-around och kan vara ett omvänt tecken när bolag mäter innovation i antal",
+            "Patentmängd är alltid ett kvalitetsmått",
+            "En 5:a är rätt även om kärnpatentet löper ut om två år"
+          ],
+          "ratt": 1,
+          "tips": "Tre svagheter redovisas: klockan, processerna och pappersmurarna."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "V14: Varumärke och kundlojalitet — moaten som saknas i bokföringen",
+      "intro": "Världens mest värdefulla tillgång står inte på någon balansräkning. Interiört skapade varumärken får enligt IAS 38 inte bokföras alls — de expenserar sig fram genom resultaträkningen, år efter år, osynliga ända tills de en dag syns överallt i prissättningen. AKM1 poängsätter det osynliga. Det är här kontroversen är som renast.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V14 Varumärke och kundlojalitet — definition och poängsättning. Även här: fyra dokumenterade kriterier. Kännedom: andel av målgruppen som känner till varumärket — enkätdata, sökvolymer, direkt efterfrågan. Lojalitet: upprepat köpbeteende — retention, återköpsfrekvens, andel intäkter från befintliga kunder (för konsumtionsvaror: paneldata; för B2B: avtalsförnyelser). Prissättningskraft: förmågan att höja priser utan volymförlust — det mest hårdvaluta av alla mått, eftersom det syns direkt i bruttomarginalens utveckling och hör samman med V07. Varaktighet: hur länge kraften har visat sig bestå — ett decennium av retention är en annan artefakt än två års trend. Trösklar: 0 poäng när produkten är en råvara i kundernas ögon och köpet styrs av pris och tillgänglighet; 3 poäng för ett etablerat varumärke med mätbar lojalitet men begränsad prissättningskraft; 5 poäng när varumärket kan ta ut högre pris än jämförbara produkter, behålla kunderna genom prishöjningar och cykler, och har gjort det i minst en hel konjunkturcykel."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger. Bokföringsdoktrinen är den mest konkreta fienden: enligt IAS 38 får internt förvärvade immateriella tillgångar — varumärken, kundrelationer, internt utvecklad mjukvara i vissa tolkningar — inte redovisas som tillgång; de kostnadsförs. Resultatet är att hela moat-blocket saknas i P/B och ROE-mått, vilket metodiskt sett är anledningen till att P/B blivit allt mer meningslöst för varumärkesbolag — och det är också ett stöd för AKM1:s vägran att låta V05 fälla bilden ensam. Inom marknadsföringsvetenskapen är Aaker och Keller de stora namnen: varumärkeseget kapital byggs av kännedom, associationer och lojalitet, och är reellt — men fältet är praktikerdominerat, inte likvid. Interbrand-rankningarna anger kronvärden på varumärken men är metodiskt kritiserade och skyddade som handelshemligheter. Damodaran har gett den mest användbara finansiella översättningen: ett varumärke är bara värt något om det ger prissättningskraft eller lägre kapitalkostnad — ett känt namn utan marginalpåverkan är ingen moat. Och Buffett-populariserade hela idén om moats — hans poäng är att den bästa fasta tillgången är en verksamhet som kan höja priser utan att förlora kunder."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför — kontroversen i klartext. Invändningen: varumärkesstyrka är definitionsmässigt subjektiv — era fyra kriterier är fyra åsikter, Interbrand-listor är kommersiella produkter, och varje backtest ni försöker bygga på det skulle vara data mining i ren form. Dessutom: nostalgi bias — människor överskattar varumärken de själva tycker om, och era elever kommer att ge 5:or till bolag de gillar. Vårt svar: ett: vi köper Damodarans hårda kärna — V14 poängsätts i första hand på prissättningskraft och retention, det vill säga på beteenden som syns i siffror (bruttomarginalens respons på prishöjningar, avtalsförnyelser, paneldata), inte på tycke; kännedom är stödbevis, inte huvudbevis. Två: nostalgi-bias är verklig och därfär kräver modellen beteendedata — vad kunderna gör, inte vad analysen tycker om varumärket. Tre: vi erkänner att detta inte är en replikerbar faktor; det är en bedömning med dokumentation, och hela modellens design — fem poäng i tak av hundra — ser till att inte heller en perfekt varumärkesberättelse kan bära en analys ensam."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt — varumärkesfällan. Det starkaste motargumentet är historiskt: Kodak och Nokia hade på sin tid enorma varumärken med enorm kundlojalitet — och blev ändå passerade, för att lojaliteten var kopplad till en produktgeneration, inte till ett behov. Varumärke är en ställningsfördel i en given teknik- och behovsbild; när bilden skiftar är lojaliteten ett sakernas tillstånd, inte en försäkring. Därför kan V14-aldrig läsas utan V16 (pipeline) och V13/V15 (övriga moat-ben): ett varumärke som inte förnyas är en värderingsposter med utgångsdatum som ingen känner. Den pedagogiska vändningen: det är just därför varumärket måste poängsättas — osynligt och outsourcat till känslor blir det antingen övervärderat (nostalgi) eller undervärderat (bokföringen ser det inte). Strukturerad poängsättning är ett sätt att tvinga fram en explicit, granskningsbar tes i stället för ett outtalat antagande."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V14 Varumärke och kundlojalitet — kriterier, trösklar, mainstream\",\"rader\":[[\"Kriterium\",\"Fråga\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"Prissättningskraft\",\"Kan bolaget höja pris utan volymförlust?\",\"Råvara, prisstyrt\",\"Begränsad kraft\",\"Höjer pris, behåller kunder\",\"Damodaran: varumärket är bara värt något om det ger prissättningskraft eller lägre kapitalkostnad\"],[\"Lojalitet\",\"Återkommer kunderna?\",\"Ingen mätbar retention\",\"Mätbar\",\"Hög retention genom cykler\",\"Aaker/Keller: varumärkeseget kapital är reellt men praktikerdominerat fält\"],[\"Redovisning\",\"Finns moaten på balansräkningen?\",\"\",\"\",\"\",\"IAS 38: internt skapade varumärken får inte bokföras — därför saknas hela moat-blocket i P/B och ROE\"],[\"Fällan\",\"Är lojaliteten kopplad till produkt eller behov?\",\"Produktgenerationsberoende\",\"\",\"Behovsberoende, förnyas via V16\",\"Kodak och Nokia: enorma varumärken, passerade ändå\"]]"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett varumärke är inte vad kunderna känner — det är vad de gör när priset höjs. Kännedom kan köpas med reklam för pengar; prissättningskraft kan bara förtjänas. Börja alltid V14 med beteendet, aldrig med känslan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett varumärke du själv tycker om — medvetet, för att din bias ska vara påskrivs. Hitta därefter beteendedata: har bolaget höjt priser de senaste fem åren, och vad hände med volym och bruttomarginal? Sätt V14-poäng enligt beteendet. Skiljde sig poängen från vad din gustation ville ge? Skillnaden är nostalgi-bias, uppmätt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger IAS 38 om internt skapade varumärken?",
+          "alternativ": [
+            "Att de alltid bokfords till fullt marknadsvärde",
+            "Att de inte får redovisas som tillgång — internt förvärvade immateriella värden kostnadsförs",
+            "Att de bokförs som lager",
+            "Att de bara får bokföras i USA"
+          ],
+          "ratt": 1,
+          "tips": "Vad är anledningen till att P/B blivit meningslös för många varumärkesbolag?"
+        },
+        {
+          "q": "Vilket är V14:s viktigaste hårda bevis enligt Damodarans logik?",
+          "alternativ": [
+            "Antal följare i sociala medier",
+            "Prissättningskraft — förmågan att höja pris utan volymförlust",
+            "Interbrand-placeringen",
+            "Antal anställda i marknadsavdelningen"
+          ],
+          "ratt": 1,
+          "tips": "Vad i varumärkets kraft syns direkt i bruttomarginalens respons?"
+        },
+        {
+          "q": "Vad är varumärkesfällan som Kodak och Nokia illustrerar?",
+          "alternativ": [
+            "Att varumärke alltid skyddar mot konkurrens",
+            "Att lojalitet kopplad till en produktgeneration inte överlever när teknik- eller behovsbilden skiftar — därav kravet att läsa V14 med V16",
+            "Att reklam alltid bygger varumärke",
+            "Att varumärke bara finns i B2B"
+          ],
+          "ratt": 1,
+          "tips": "Vad var kunderna lojala mot — varumärket som abstrakt behovsuppfyllare eller produkten som fysisk artefakt?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "V15: Nätverkseffekter — den mest spekulativa moaten",
+      "intro": "Om V13 är bekännelsen och V14 är konflikten är V15 ren spekulation — det vet vi, och vi säger det först. Nätverkseffekter är den enda moat som kan skapa vinnare-tar-mesta-delar-dynamik inom en generation, och den enda som kan försvinna på ett kvartal. Här spelar ekonomisk nobelprisforskning oss bortåt — och här är AKM1:s mest utsatta poäng.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V15 Nätverkseffekter — definition och poängsättning. Nätverkseffekt föreligger när produktens värde för varje användare ökar med antalet användare — direkt (telefonnät: fler samtalspartner), indirekt (plattform: fler säljare lockar fler köpare och tvärt om) eller via data (fler användare ger bättre algoritmer som lockar fler användare). Poängsättningen vilar på fyra beviskrav. Användartillväxtens respons: accelererar tillväxten av sig själv, utan motsvarande marknadskostnad? Multi-homing: hur dyrt är det för användare att använda flera plattformar samtidigt — ju billigare, desto skörare nätverk. Retention genom nätverket: lämnar användare när nätverket växer (moat byggd) eller trots det (moat politisk)? Koncentration: tenderar marknaden mot en eller två aktörer — har nätverkets historia visat vinnare-tar-mesta-delar? Trösklar: 0 poäng när ingen nätverksmekanism finns — värde skapas enskilt per kund; 3 poäng för ett funktionellt tvåsidigt nätverk med mätbar men inte dominerande dragkraft; 5 poäng när direkta nätverkseffekter driver självförstärkande tillväxt, multi-homing är dyr, retention stiger med nätverkets storlek och marknaden koncentreras kring bolaget."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger. Här har akademin faktiskt något att komma med: Rochet och Tirole (2003) formaliserade tvåsidiga marknader — plattformar där värdet för en sida beror på den andras storlek, och där prissättningen inte följer klassisk mikroteori (plattformen subventionerar ofta en sida); Tirole fick Nobelpriset 2014 bland annat för arbetet om marknadsdominans och reglering. Brian Arthurs forskning om ökande skalavkastning förklarade redan på åttio-talet hur nätverksmarknader kan låsa in sig kring en vinnare av tillfälliga skäl — historia spelar roll, inte bara det bästa alternativet. Metcalfes lag — nätverkets värde växer med kvadraten på antalet noder — är praktikerns tumregel, ingen fysik, men den fångarmekanismen. Vad mainstream INTE har: någon robust faktormodell som prissätter nätverkseffekter — de är strukturellt omätbara ex ante, och först ex post syns de i marknadsandelar. Det är kärnan i kontroversen."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför — kontroversen i klartext. Invändningen: detta är inte bara mjukdata, det är spådom — ni poängsätter en framtida marknadsstruktur som varje plattformsekonom forskare skulle säga är omöjlig att förutsäga; nätverkseffekter identifieras bekvämt i efterhand, och varje 5:a ni ger är en berättelse om att detta blir nästa vinnare. Dessutom, tillägger regleringsmedvetna invändare, är nätverkseffekter det som reglerare numera attackerar först — EU:s digitala marknadsförordning och åratal av antitrustprocesser riktar sig exakt mot mekanismen ni belönar. Vårt svar, med ärlighet först: vi håller med om att V15 är modellens mest spekulativa variabel — och det är därför den, precis som alla andra, väger max 5 av 100. Vi gör inte anspråk på att förutsäga vinnare; vi poängsätter dokumenterad mekanik hos befintliga nätverk: hur tillväxt, multi-homing-kostnad, retention och koncentration beter sig i data som finns i dag. En 5:a betyder inte att vi spår dominans — den betyder att alla fyra mekaniska bevisen finns på bordet. Om framtiden väljer en annan väg är det en omständighet utanför variabelns täckning, och det är just därför marginal of safety och prisdisciplin finns."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt — tre svagheter att erkänna utan motstånd. Ett: nätverkseffekter kan vända negativa. Nätverk som krymper förlorar värde snabbare än linjärt — samma mekanik som byggde moaten river den, och plattformar som tappat kritisk massa har kollapsat på kvartal. Två: regleringsrisken är reell och riktar sig mekaniskt mot just denna moat — en 5:a på V15 utan en regleringsbedömning i V18 är ofullständig analys. Tre: data-nätverkseffekter (fler användare ger bättjare produkt) är den svagaste formen — förbättringen är ofta marginell och kan kopieras av konkurrenter med kapital; den som ger 5:a enbart på data-loopar utan stark retention överdriver. Sammanfatta gärna V15 så här för motståndaren: det är modellens enda variabel där vi betecknar bevisläget som strukturellt osäkert — och där hela poängen med att ändå poängsätta är att en bedömning som ändå görs (medvetet eller omedvetet) syns och kan granskas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V15 Nätverkseffekter — bevis, trösklar, mainstream\",\"rader\":[[\"Bevis\",\"Fråga\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"Direkta effekter\",\"Ökar värdet per användare med antalet användare?\",\"Nej\",\"Indirekta/tvåsidiga\",\"Direkta, självförstärkande\",\"Rochet-Tirole (2003): tvåsidiga marknader; Tirole Nobelpris 2014 för plattformar och reglering\"],[\"Multi-homing\",\"Kan användare billigt använda flera plattformar?\",\"Billigt\",\"\",\"Dyrt — låsning\",\"Brian Arthur: ökande skalavkastning kan låsa in marknader kring en vinnare av tillfälliga skäl\"],[\"Retention och koncentration\",\"Stiger retention med storlek? Koncentreras marknaden?\",\"Nej\",\"Delvis\",\"Ja, marknaden koncentreras\",\"Metcalfes lag är tumregel, inte fysik — och nätverkseffekter är omätbara ex ante i faktormodeller\"],[\"Regleringskoppling\",\"Attackeras mekanismen av reglerare? (läs med V18)\",\"\",\"\",\"\",\"EU:s digitala marknadsförordning och antitrustprocesser riktar sig exakt mot nätverkseffekter\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Nätverkseffekter är den enda moaten som byggs och rivs med samma mekanik. Den som förstår varför nätverket växer av sig själv förstår också exakt hur det kommer att dö — moat-frågan är inte om kraften finns, utan om den sitter i bolaget eller bara råkar passera genom det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Analysera en plattform du använder: vilken typ av nätverkseffekt (direkt, tvåsidig, data)? Vad kostar det dig att använda en konkurrent samtidigt — multi-homing? Sätt poäng på de fyra bevisen och avsluta med regleringsfrågan från V18: vad händer med nätverket om regleraren tvingar upp interoperabilitet?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken forskning ligger bakom den akademiska förståelsen av plattformsmarknader?",
+          "alternativ": [
+            "Grahams Security Analysis",
+            "Rochet och Tirole (2003) om tvåsidiga marknader — Tirole belönades med Nobelpriset 2014 för arbetet om marknadsdominans och reglering",
+            "O'Shaughnessys decilstudier",
+            "Modigliani-Millers kapitalstrukturteorem"
+          ],
+          "ratt": 1,
+          "tips": "Vilket pris delades ut 2014 för forskning om marknadsdominans och reglering?"
+        },
+        {
+          "q": "Vad betyder en 5:a på V15 enligt kursen?",
+          "alternativ": [
+            "Att AKM1 spår att bolaget kommer dominera sin marknad",
+            "Att alla fyra mekaniska bevisen finns dokumenterade i dag — inte en spådom om framtida dominans",
+            "Att bolaget har flest användare i sektorn",
+            "Att regleringsrisken är noll"
+          ],
+          "ratt": 1,
+          "tips": "Skilj mellan att beskriva dokumenterad mekanik och att förutsäga ett utfall."
+        },
+        {
+          "q": "Vilken svaghet hos nätverkseffekter ska erkännas enligt kursen?",
+          "alternativ": [
+            "Att de enbart gäller telecombolag",
+            "Att de kan vända negativa — krimpnätverk förlorar värde snabbare än linjärt — och att reglerare attackerar just denna moat",
+            "Att data-nätverkseffekter är den starkaste formen",
+            "Att multi-homing stärker moaten"
+          ],
+          "ratt": 1,
+          "tips": "Samma mekanik bygger och river — vad betyder det när nätverket krymper?"
+        }
+      ]
     }
   ]
 }

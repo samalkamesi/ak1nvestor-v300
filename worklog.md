@@ -3096,3 +3096,19 @@ Stage Summary:
   redo att integreras i kurser, blogg, portfölj och kalkylator
 - Kö: integrera VIL i Graham-kursens kapitel, skapa fler för Lynch/böcker,
   animerade transitioner, personalized learning path
+---
+Task ID: 98-DJUPARE-KAPITEL
+Agent: main (Z.ai Code)
+Task: Graham-kursen expanderad — data, tabeller, tidslinjer — LIVE
+
+Work Log:
+- 7 nyckelkapitel (1,2,3,4,5,8,20) expanderade med extra text, datatabeller
+  (investering vs spekulering, inflation vs aktier, återbalansering, Mr Market,
+  marginalens tre former), bubbel-tidslinje 1720-2008, visuella metadata
+- Blocktyper: text (djupare), tabell (JSON-struktur), tidslinje, visuell (VIL-komponent)
+- Snitt per kapitel: 628→772 tecken, 6 tabeller, 1 tidslinje, 7 visuella
+
+Stage Summary:
+- 'Var är visuella bilder beskrivningar' besvarat: datatabeller, tidslinjer och
+  visuella metadata tillagda i nyckelkapitlen
+- Återstående 14 kapitel behöver samma expansion (kö)

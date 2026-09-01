@@ -88,3 +88,30 @@ Kö (prioritetsordning, AKM1/AK1TS-anknytning):
 
 ## STATUSLOGG (uppdateras av main efter varje våg)
 - VÅG 0 (klar): Tasks 111–115 deployade (be04e17, 8c936b0), 713 sidor.
+- VÅG 1 (klar, deployad + verifierad): audit 704/704 OK (P1+P2 fixade),
+  megamenu, /bibliotek, åäö-sanering (32+19+33 fix), policy-sidor, 404,
+  canonical, dubblettitlar (089fd6b).
+- VÅG 2 (klar, deployad + verifierad): BOKMASTER #5-13 levererade och LIVE
+  (SA 20/60, Random Walk 18/54, Murphy 20/60, Fisher 15/45, Nison 16/48,
+  Marks 15/45, Damodaran 18/54, O'Neil 16/48, Schilit 14/42) + bokkanon-100
+  (data/bokkanon.json, 13/100 status=kurs) + fundamentdata via Yahoo-crumb
+  (P/E,P/B,ROE,marginal,tillväxt,skuld/EK per innehav i djupanalysen) +
+  vågskattning per innehav + 4 blogginlägg + KursSok på /kurser + läroplan
+  Nivå 3: 16 kurser (7739d23, a4a9adc, 223261e). Skala: 239 kurser · 4176
+  quiz · 727 sidor.
+- PÅGÅR (agenter): V-nummer-sanering i 6 kursfiler (felaktig mappning i
+  äldre briefs — auktoritativ mappning nu i memory + worklog), BOKMASTER
+  #14-16: Klarman Margin of Safety, Munger Poor Charlie's Almanack, Graham
+  Interpretation of Financial Statements (läroplanen länkar dem REDAN —
+  integrera snabbt när de landar!). Integration: node verktyg/integrera-
+  bokmaster.mjs + kanon-status + build + commit + push (UTAN extra hook —
+  kö-latens, vänta 20 min).
+- VÅG 4 (kö): The Outsiders (V20 kapitalallokering), The Dhandho Investor,
+  The Little Book That Beats the Market (Greenblatt, kortast), 100 Baggers
+  (Mayer), Expectations Investing (reverse-DCF), Quality of Earnings,
+  Market Wizards, The Alchemy of Finance — briefs med AUKTORITATIV V-mapp-
+  ning (se worklog Task 119). OBS regler: Write-tool (ej python), egna filer
+  i data/bokmaster/, citera öppet, inga level-etiketter.
+- DEPLOY-NOTIS: hooks stackade → kö-latens på Hobby (upp till 20-25 min).
+  Pusha + EN hook + tålamod. Verifiera med KursSok-test ("Sök bland" på
+  /kurser) vilken build som är live.

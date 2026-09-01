@@ -3756,3 +3756,20 @@ Work Log:
   signatur
 - Meny: Superanalysen + Badges + Manifestet inlagda; sitemap +3
 - 271 kurser · 5544 quiz · 763 sidor
+
+---
+Task ID: 134-MEGAVAG13 — 280 KURSER
+Agent: main + 9 agenter (Fas 2-flöde ✓ + 8 böcker ✓)
+Task: krishistoria-klustret + Fas 2-ansökan — 51/101 kanon
+
+Work Log:
+- KRISHISTORIA-KLUSTRET (8 böcker): Misbehaving (Thaler, 14/42),
+  Black Swan (Taleb, 15/45), Manias Panics & Crashes (Kindleberger,
+  15/45, Minsky-faserna), The Big Short (Lewis, 14/42), Liar's Poker
+  (13/39), Devil Take the Hindmost (Chancellor, 15/45), Great Crash
+  1929 (Galbraith, 13/39), Popular Delusions (Mackay 1841, 12/36)
+- FAS 2-ANSÖKAN (styrelsens beslut #3): /fas2-ansok + API + meny
+- FIX: integrera-skriptets VISUELL-tillåtelse utökad med de 4 nya
+  graf-typerna (tidslinje/bubbel/termometer/konvergens) — tidigare
+  blockerades flaggskeppens VIL-2-block + 5 nya kurser
+- Kanon 51/101 · 280 kurser · 5919 quiz · 773 sidor

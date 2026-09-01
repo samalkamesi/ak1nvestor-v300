@@ -1788,7 +1788,7 @@
         "Små förändringar i beslutsdesign ger stora beteendeförändringar"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-075",
@@ -1834,7 +1834,7 @@
         "Skråpstrategin: maximal säkerhet kombinerat med små aggressiva satsningar, inget däremellan"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-077",
@@ -1905,7 +1905,7 @@
         "En slutgiltig utlåningsinstans avgör hur djup kraschen blir, inte om den kommer"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-080",
@@ -1953,7 +1953,7 @@
         "Systemets incitament skapar blindheter: följ pengaflödet"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-082",
@@ -2001,7 +2001,7 @@
         "Efter en börskrasch kommer ofta djup recession, inte en snabb v-formad återhämtning"
       ],
       "tier": 3,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-084",
@@ -2024,7 +2024,7 @@
         "Lär dig historien: bubblor känns nya varje gång men följer gamla mönster"
       ],
       "tier": 3,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-085",
@@ -2047,7 +2047,7 @@
         "En kultur utan riskkontroll kan vända lönsamhet till förlust på en kvartal"
       ],
       "tier": 3,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-086",
@@ -2163,7 +2163,7 @@
         "Läs historien innan du antar att din tid är unik"
       ],
       "tier": 3,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-091",

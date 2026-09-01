@@ -1,0 +1,958 @@
+{
+  "slug": "liars-poker",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 140,
+  "title": "Liar's Poker — Lewis: KOMPLETT",
+  "summary": "Michael Lewis bok Liar's Poker (1989) är 1980-talets Wall Street i självbiografisk form: konsthistoriestudenten som rekryterades till Salomon Brothers traineeprogram 1984, handelsbordets hierarki där obligationer härskade och aktier förlöjligades, Lewis Ranieris bolåneobligationsmaskin som skapade en hel marknad, Gutfreund och Meriwether och pokerhanden om en miljon dollar, Howie Rubins våghalsiga positioner, kraschen 1987 — och Lewis avgång 1988, av äckel över ett spel där kunden var motpart. Kursen läser boken som AK1A-incitamentsutbildning: se hur banken tänker, förstå vad bonussystemet belönar, och vägra spela andras spel.",
+  "minutes": 10,
+  "xp": 1800,
+  "level": "",
+  "learn": "Efter kursen kan eleven berätta Salomon-historien i dess rätta detaljer — Michael Lewis rekryterad 1984 via en London-middag och ett konstigt intervjupass, traineeprogrammet och »the board« där tillsättningarna till handelsborden skrevs ut, hierarkin där »Equities in Dallas« var ett förakt och obligationsbordet på 41:a våningen var universums mitt, Lewis Ranieris (inte författarens!) resa från postrummet till bolåneobligationernas fader, Gutfreunds utmaning »en hand, en miljon dollar« och Meriwethers svar »Make it ten«, Howie Rubins bonusdrivna positioner och förlustens mekanik samt kraschen 1987 — och förklara mekanismerna bakom varje skede i AKM1:s språk: V15 nätverkseffekter när Ranieri byggde likviditet åt en marknad som inte fanns, V16 produktlanseringar och avsaknaden av V13-patent som gjorde innovatören kopierbar, V07-bruttomarginalens erosion, V10 skuldsättningsgrad och V11 likviditet som dödade ställningar, V12 intäktsstabilitetens illusion på handelsbordet, V14 varumärke och V18 regulatoriska katalysatorer i fallet Salomon 1991 och vägen in i Citigroup; eleven ska också kunna reda ut 1980-talets ideologiska strid — frihetstäsen om avreglering under Reagan och Thatcher och att marknaden belönar skicklighet mot kritiken om en destruktiv machokultur som drev Lewis själv att säga upp sig — samt tillämpa AK1A-positionen: incitamentsanalys framför moralisk indignation, V17-frågan om vem avtalet egentligen gynnar, bonussystemet som styrsignal och banken som motpart — aldrig vän; och slutligen bära med sig marginal of safety som princip utan siffra: spela bara de händer där förlusten inte ruinerar dig.",
+  "why": "Ingen annan bok lär ut vad den moderna finansvärlden ÄR från insidan — inte vad den borde vara. Liar's Poker är wall street-kulturens självbiografiska uppfinning: den första stora insiderberättelsen där handelsbordets logik — bluff, informationsskillnad, bonusjakt, kunden som motpart — redovisas utan filt av mannen som själv satt där och lämnade av äckel. För en AK1A-elev är boken ett praktiskt incitamentslaboratorium: varje V17-varning om att läsa avtalet från motpartens sida, varje V16-misstanke mot ivrigt lanserade produkter, varje V10/V11-respekt för hävstång och likviditet har sin levande illustration här. Kursen behövs också för att koppla ihop finanshistoriens blodslinje: Ranieris bolåneobligationer födde marknaden som 2008 exploderade, Meriwethers arbitragörer blev LTCM i When Genius Failed, och Salomons namn försvann in i Citigroup — den som förstår 1987 förstår 1998 och 2008. Och kontroversen tvingar eleven till en vuxen position: varken att fördöma girigheten religiöst eller att hylla den ideologiskt, utan att läsa incitamenten — för banken är inte din vän, bara din motpart.",
+  "chapters_list": [
+    "1. Spelet och bluffen — dollarsedlar på handelsbordet",
+    "2. Rekryteringen — drottningmiddagen och traineeklassen 1984",
+    "3. Handelsbordets hierarki — »Equities in Dallas«",
+    "4. Ranieri och pengamaskinen — bolåneboomens födelse",
+    "5. Produktinnovationens guldålder — nya papper, nya historier",
+    "6. Meriwether och arbitragens professorer",
+    "7. Miljonhanden — när kungen utmanade mästaren",
+    "8. Howie Rubin — bonusjägare och riskens asymmetri",
+    "9. Svarta måndagen 1987 — när likviditeten försvann",
+    "10. Kontroversen — girighetskulturen och 1980-talets två berättelser",
+    "11. Fallet Salomon — från kungarike till Citigroup-filia",
+    "12. Lewis avgår — »I quit« och boken som satte kulturen på display",
+    "13. AK1A-syntes — incitament, motparten och marginal of safety"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Spelet och bluffen — dollarsedlar på handelsbordet",
+      "intro": "Michael Lewis bok öppnar inte med aktier eller obligationer utan med ett spel. På Salomon Brothers handelsbord på 1980-talet satt några av finansvärldens mäktigaste män och spelade poker utan kort — med dollarsedlarnas serienummer som underlag. Spelet var, skriver Lewis, ren bluff, och det blev hans metafor för hela branschen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Så här gick spelet till: varje spelare höll en dollarsedel och tittade på dess serienummer. Därefter bjöd man i tur och ordning på hur många av en viss siffra som fanns totalt på alla sedlar i omgången — fem treor, sju nollor, och så vidare. Budet höjdes tills någon vågade säga »liar!«, sedlarna visades och förloraren betalade. Ingen visste hela underlaget; alla agerade på delvis information, mod och rädsla. Lewis noterar att spelets kärna var att manipulera motståndarna — siffrorna var bara ursäkten. Det är därför boken heter som den gör: Wall Street var Liar's Poker spelat om miljarder, med kunder och chefer vid bordet."
+        },
+        {
+          "type": "text",
+          "content": "Bokens mest berömda scen är en enda hand som aldrig spelades. John Gutfreund, Salomons vd och en man som kallats »King of Wall Street«, stannade en dag vid bordet där John Meriwether satt — handelsbordets bäste pokerspelare. Gutfreund föreslog en enda hand om en miljon dollar. Meriwether svarade lugnt: »Make it ten« — gör det till tio miljoner. Gutfreund skrattade och tackade nej. Händelsen analyseras i kapitel 7 som spelteori; redan här noterar du strukturen: utmanaren höjde insatsen tills priset för kungen blev för högt, och kungen förstod att han inte hade något att vinna. Det är börsens äldsta sanning i miniatyr — asymmetrin avgör, inte modet."
+        },
+        {
+          "type": "text",
+          "content": "Själva boken: utgiven 1989, skriven av en man som var 24 år när han anställdes i Salomons traineeprogram 1984 och 28 när han sa upp sig. Michael Lewis var utbildad konsthistoriestudent som hamnat i London — utan en enda finansiell examen — och just därför blev han branschens bästa antropolog. Liar's Poker blev en bestseller som definierade 1980-talets självbild: girighetskulturen, machojargongen, bonusarna. För AK1A är boken något mer: en primärkälla om hur motparten tänker. Kursen följer berättelsen kronologiskt genom tretton kapitel, från rekryteringen till Salomons fall, med V01-V20-glasögonen på."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Spelet Liar's Poker — regler och metaforer\",\"rader\":[[\"Del av spelet\",\"Regel\",\"Wall Street-motsvarighet\"],[\"Underlaget\",\"dollarsedlarnas serienummer\",\"positioner och risker ingen kan verifiera fullt ut\"],[\"Budgivningen\",\"bud på antal siffror hos alla spelare\",\"priser som sätts på delvis information\"],[\"Bluffen\",\"kan inte bevisas förrän någon säger liar\",\"informationsövertag mot motparten\"],[\"Insatsen\",\"från småbelopp till Gutfreunds miljon\",\"bonusen som står på spel varje år\"],[\"Utmaningen\",\"den som ropar liar fel förlorar\",\"att anklaga marknaden fel kostar kapital\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett bluffspel belönar den bäste skådespelaren lika mycket som den bäste informerade. På Wall Street satt skådespelarna med dina pengar i potten — och dina kort blev aldrig uppvisade förrän det var för sent."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du går vidare: skriv ner tre pågående finansiella relationer där motparten (bank, mäklare, rådgivare) vet mer än du — bolånet, en strukturerad produkt, försäkringen. Notera vid varje vad du INTE kan kontrollera. Spara listan; kursen återkommer till den i kapitel 10 och 13."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utgör underlaget i spelet Liar's Poker?",
+          "alternativ": [
+            "En vanlig kortlek med två jokrar",
+            "Dollarsedlarnas serienummer",
+            "Dagens slutkurser på obligationsmarknaden",
+            "Tärningar som rullas bakom en skärm"
+          ],
+          "ratt": 1,
+          "tips": "Pengar i sin mest konkreta, fysiska form — och siffrorna som redan står på dem."
+        },
+        {
+          "q": "Vad svarade Meriwether när Gutfreund föreslog en hand om en miljon dollar?",
+          "alternativ": [
+            "»You're on« — och handen spelades direkt",
+            "Att han inte spelade om pengar med kollegor",
+            "Att spelet var barnsligt och vägrade delta",
+            "»Make it ten« — han krävde tio miljoner för att spela"
+          ],
+          "ratt": 3,
+          "tips": "Utmanaren svarade inte nej — han höjde insatsen tills priset blev orimligt för den utmanade parten."
+        },
+        {
+          "q": "Vilken roll fick Michael Lewis hos Salomon Brothers 1984?",
+          "alternativ": [
+            "Trainee i utbildningsprogrammet, senare obligationsäljare",
+            "Direkt delägare med ansvar för arbitragebordet",
+            "Ekonomianalytiker i aktieforskningsavdelningen",
+            "Personlig assistent till Lewis Ranieri"
+          ],
+          "ratt": 0,
+          "tips": "Han togs in i programmets stora årskull — inte i någon topposition."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Rekryteringen — drottningmiddagen och traineeklassen 1984",
+      "intro": "Lewis väg in i finans började inte med ett CV-utskick utan med en middag i London — och en kvinna som tyckte att han slösade bort sitt liv. Därifrån gick det via ett par förvirrande intervjuer till Salomon Brothers traineeprogram sommaren 1984. Kapitlet visar hur banken väljer sina människor — och varför det spelar roll för dig som motpart.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lewis var ung, utbildad konsthistoriker och höll till i London när han hamnade på en stor bankett — och vid bordet satt han bredvid hustrun till en av Salomon Brothers mest framstående chefer. När hon hörde att han funderade på en akademisk framtid avfärdade hon idén rakt ut, i stil med: gå till Wall Street i stället — det är där pengarna och framtiden finns. En rekrytering utan en enda teknisk fråga. Att en sådan tillfällighet kunde öppna dörren till handelsbordet säger allt om branschens meritokratiska självbild: nätverket kom först, kompetensen kunde köpas senare."
+        },
+        {
+          "type": "text",
+          "content": "Intervjuerna var sin egen genre. Lewis skildrar samtal som lika mycket var personlighetstester som kunskapsprov — konstiga frågor, provokationer och en känsla av att examinatorn ville se hur kandidaten reagerade på förödmjukelse och osäkerhet. Sedan: traineeprogrammet 1984, en boot camp i obligationer där nyexaminerade och doktorer pressades genom intensivkurser i räntematematik, kredit och — framför allt — Salomons egen syn på världen. Firman växte våldsamt under 1980-talets avregleringsvindar (V18): den behövde kroppar till borden, inte färdiga bankmän."
+        },
+        {
+          "type": "text",
+          "content": "Programmets heliga och skräckinjagande punkt var »the board« — listan där tillsättningarna skrevs ut: vilken trainee som fick rotation på vilket bord, vilka löften som utdelats och till vem. Ett halvårs nervös spekulation mynnade ut i en tavla. Karriären avgjordes inte av betyg utan av var det råkade finnas luckor — och godtyckligheten är poängen: systemet trodde inte att det spelade roll vem som satt var, för spelarna var utbytbara och maskinen skulle forma dem. Det är V12-logik i kulturform: intäkterna ska drivas av borden och produkterna, inte av individer."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från konsthistoria till handelsbord — Lewis väg in\",\"rader\":[[\"Steg\",\"Händelse\",\"AKM1-notering\"],[\"1\",\"Banketten i London — bordsgranne till en Salomon-hustru\",\"nätverk före meriter\"],[\"2\",\"Intervjuerna med konstiga frågor och provokationer\",\"test av formbarhet, inte kunskap\"],[\"3\",\"Traineeprogrammet 1984 — obligationernas boot camp\",\"kulturell indoktrinering\"],[\"4\",\"The board — listan med bord och löften\",\"godtycklig tillsättning, spelare utbytbara\"],[\"5\",\"Rotation och så småningom säljbord i London\",\"motpartens fotsoldat — mot dig\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Banken rekryterade inte vad du visste utan vad du kunde förmås att göra. Samma gäller dina motparter i dag: deras organisationskultur — inte deras annonser — avgör hur de behandlar dig när det blir dyrt att vara schysst."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram ditt senaste samtal med en bankrådgivare eller säljare. Skriv upp: vem bestämde samtalets agenda, vilka frågor ställde du aldrig, och vad skulle säljaren ha svarat om du bett få se HUR hen blir betald? En rad räcker — men var ärlig."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur fick Lewis sin första förbindelse med Salomon Brothers?",
+          "alternativ": [
+            "Genom headhuntare som läst hans examensarbete",
+            "Han satt vid en middag i London bredvid hustrun till en av Salomons toppchefer",
+            "Genom en annons i Financial Times",
+            "Hans far var delägare i firman"
+          ],
+          "ratt": 1,
+          "tips": "Ingen rekryteringsprocess alls — bara en slump som placerade rätt person vid bordet."
+        },
+        {
+          "q": "Vad var »the board« i traineeprogrammet?",
+          "alternativ": [
+            "Tavlan där pokerhandens odds räknades ut",
+            "Styrelsens protokoll över bonusarna",
+            "Listan där tillsättningarna till handelsborden skrevs ut",
+            "En ranking över traineernas examensresultat"
+          ],
+          "ratt": 2,
+          "tips": "Ett halvårs väntan mynnade i en simpel uppräkning — av bord och människor."
+        },
+        {
+          "q": "Vilken AKM1-variabel fångar bäst att 1980-talets avregleringar (Reagan/Thatcher-eran) skapade förutsättningarna för firmornas expansion?",
+          "alternativ": [
+            "V18 regulatoriska katalysatorer",
+            "V07 bruttomarginal",
+            "V13 patent och IP",
+            "V20 återköp"
+          ],
+          "ratt": 0,
+          "tips": "Regelverket är också en variabel — ibland den som flyttar hela spelplanen."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Handelsbordets hierarki — »Equities in Dallas«",
+      "intro": "På Salomon Brothers var inte alla marknader lika. Obligationshandlarna på 41:a våningen var kungar; aktiemännen var provinsbor. Kapitlet kartlägger handelsbordets kastsystem — och rollerna vars incitament du fortfarande möter som investerare i dag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens mest citerade svepning är en enda mening: »Equities in Dallas«. Frågan var var aktiehandeln egentligen hörde hemma, och svaret — i Dallas, i provinsen, långt från maktens centrum — sammanfattade hierarkin. På 1980-talet var det obligationerna som bar lönen: räntan var avreglerad och volatil, företagen lånfinansierades, staterna lånade, och den som förstod ränta och kredit tjänade som i en guldgruva. Salomon var obligationshuset framför andra, och dess handelsbord på 41:a våningen i New York var branschens mitt — buller, skärmar, telefoner och en lukt av makt och svett."
+        },
+        {
+          "type": "text",
+          "content": "Lewis ger oss ett galleri av typer och öknamn. »The Human Piranha« var säljaren Alexander, som kunde sticka in en svordom mitt i ett ord och som undervisade Lewis i bordets verkliga grammatik: sanningen är det du kan få motparten att agera på. »Dash Rip Rock« var ett av handlarnas stridnamn. Rollerna var tydliga: traders tog positioner för firmans eget konto — de fick rätt eller fel mot marknaden; säljarna flyttade papper till kunder — de fick rätt eller fel mot motparter som inte visste varför de blev uppringda; investment bankers förhandlade emissioner — deras produkt var förtroende per timme. Tre roller, tre uppsättningar incitament, en gemensam kassa att tömma."
+        },
+        {
+          "type": "text",
+          "content": "På toppen av stegen stod det boken kallar Big Swinging Dick — BSD — den handlare vars positioner och resultaträkning gjort honom ostoppbar. Status mättes inte i titel utan i P&L: hur många miljoner du gjort åt firman det senaste året. Det är en ren prestigeliga (V14 varumärke på individnivå): ditt rykte skrivs av din senaste resultaträkning, och i morgon kan det skrivas om. För AK1A är detta första mötet med kursens genomgående tema: ett system som belönar korta utfall skapar rationellt kortsiktiga människor — se till att du aldrig förväxlar deras årsbonus med din tioårshorisont."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rollerna på bordet — och deras incitament\",\"rader\":[[\"Roll\",\"Uppgift\",\"Belönas på\",\"Din exponering\"],[\"Trader\",\"positioner för firmans konto\",\"P&L — utfall, inte kvalitet\",\"firmans kapital blir deras pokermarker\"],[\"Säljare\",\"flytta papper till kunder\",\"omsättning och relationer\",\"du är motparten, inte klienten\"],[\"Investment banker\",\"emissioner och rådgivning\",\"affärer som stänger\",\"rådgivningen styrs av nästa mandat\"],[\"Forskare/analytiker\",\"underlag och berättelser\",\"att vara användbar för borden\",\"rekommendationer med syfte\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig en motpart vad du bör göra — fråga vad hen belönas för. Säljaren betalas för omsättning, tradern för utfall, bankern för stängda affärer. Bara du betalas för ditt eget resultat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kartlägg ett nyligen köp av finansiell produkt eller tjänst: vem tjänade på OMSÄTTNINGEN (provisioner, spreadar) och vem på att du BEHÖLL produkten (förvaltningsavgift, bindningstid)? Om svaret är samma part — notera vad det betyder för rådgivningens kvalitet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad uttrycker put-downen »Equities in Dallas«?",
+          "alternativ": [
+            "Att Salomon skulle flytta aktiehandeln till Dallas",
+            "Att aktiehandel var provinsiell och låg i hierarkin medan obligationer härskade",
+            "Att Dallas-börsen var börsens tekniska nav",
+            "Att aktiehandlare tjänade mest men arbetade minst"
+          ],
+          "ratt": 1,
+          "tips": "Det är en geografisk förolämpning — geografin säger allt om var makten låg."
+        },
+        {
+          "q": "Vad mätte främst statusen hos en BSD — en »Big Swinging Dick« — på Salomon?",
+          "alternativ": [
+            "Titel och antal års anställning",
+            "Antal klientrelationer",
+            "Storleken på den senaste tidens vinster och förluster — P&L",
+            "Akademiska examina och publikationer"
+          ],
+          "ratt": 2,
+          "tips": "På bordet fanns bara ett språk som räknades — och det bokfördes dagligen."
+        },
+        {
+          "q": "Vilken roll fick Lewis själv efter traineeprogrammet?",
+          "alternativ": [
+            "Obligationsäljare — han flyttade papper till kunder",
+            "Chef över arbitragebordet",
+            "Aktieforskare som gav ut rekommendationer",
+            "Internrevisor"
+          ],
+          "ratt": 0,
+          "tips": "Han stod på den sidan av bordet där telefonlistan var arbetsredskapet."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Ranieri och pengamaskinen — bolåneboomens födelse",
+      "intro": "Här finns kursens viktigaste förväxlingsrisk: Lewis Ranieri är INTE författaren Michael Lewis. Ranieri var postkillen som blev obligationstrader och som byggde Salomons bolåneobligationsavdelning — bokens kapitel kallar dem »The Fat Men and Their Marvelous Money Machine«. Det är här den moderna securitiseringen föds.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Slå fast skillnaden en gång för alla: Michael Lewis är författaren, traineen, observatören. Lewis Ranieri är handlaren — en orimligt stor, bullrig man som började i Salomons postrum och slutade som vice ordförande och som den som i praktiken grundade marknaden för bolånebaserade värdepapper. Bokens kapitel om honom och hans avdelning — »The Fat Men and Their Marvelous Money Machine« — skildrar en grupp män som på få år byggde en pengamaskin av tusentals amerikanska bostadslån. Ranieri talade om sin uppgift som något nästan religiöst: han och hans gäng skulle bygga en marknad som inte fanns, från ingenting."
+        },
+        {
+          "type": "text",
+          "content": "Maskinen: bankerna och sparinstituten satt på miljontals bostadslån som ingen kunde handla med. Ranieris team buntade ihop dem till värdepapper — pass-throughs — där investerare fick en andel av amorteringar och räntor. Problemet var att amerikanska låntagare kan återbetala när de vill, så riskerna var svårprissatta. Lösningen blev att låneflödet klipptes i trancher med olika risk och avkastning — CMO-idén som branschen tog till sig 1983. Plötsligt fanns papper för alla smaker. Ranieri reste landet runt och undervisade investerare, och han lobbade i Washington för skatte- och regelverk som gjorde strukturerna möjliga. V18 i praktiken: marknaden byggdes inte bara av priser utan av lagparagrafer."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s språk är detta en trippellektion. V15 nätverkseffekter: ju fler som handlade bolåneobligationer, desto tätare blev likviditeten, desto lägre blev spreadarna, desto fler emitenter kom — marknaden skapade sin egen dragningskraft, och Salomon satt i mitten som marknadsgörare. V16 produktlanseringar: här föddes en produktlinje som skulle komma att definiera finans i två årtionden. V03 intäktsdiversifiering: Salomon fick en helt ny intäktsström vid sidan av statsobligationer och företagslån. Men notera också frånvaron av V13: en obligationstruktur går inte att patentera — konkurrenterna kopierade CMO-idén, och de feta marginalerna (V07) pressades gradvis — vilket blir Ranieris öde i kapitel 11."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Byggstenarna i bolåneobligationsmaskinen\",\"rader\":[[\"Byggesten\",\"Idé\",\"Risk som följer med\"],[\"Pass-through\",\"bunt av bostadslån, ägarandel av flödena\",\"företidsbetalningar när räntan faller\"],[\"CMO-tranch\",\"snittet av flöden i olika riskklasser\",\"complexitet — priset blir en förhandling\"],[\"IO/PO-strips\",\"ränta och amortering sålda separat\",\"ren ränte- eller värdeexponering — svår att hedga\"],[\"Finansiering\",\"lagerkrediter och garantier\",\"motpartsrisk när marknaden stelnar\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Finansiell innovation saknar patentskydd (V13 saknas) — därför handlar innovationspelet om att vara först och skörda övergångsmarginalerna (V07) innan kopiatorna anländer. Den som jublar över en »unik« produkt med stora marginaler har inte läst historien om Ranieri."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en strukturerad produkt eller obligation du kan komma åt i dag (prospekt eller faktablad räcker). Identifiera: vem bär förtidsbetalningsrisken? Vad händer med värdet om räntan halveras? Om du inte kan svara — är det du eller utfärdaren som gillar det så?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är skillnaden mellan Lewis Ranieri och Michael Lewis?",
+          "alternativ": [
+            "Två namn på samma person — Ranieri är författarens namn i branschen",
+            "Ranieri var handlaren som grundade avdelningen för bolåneobligationer; Michael Lewis är författaren som skrev boken",
+            "De var bröder som arbetade på varsin avdelning",
+            "Ranieri är huvudpersonen i When Genius Failed"
+          ],
+          "ratt": 1,
+          "tips": "En byggde pengamaskinen — den andre skrev ner det som hände sedan."
+        },
+        {
+          "q": "Vilket kärnproblem löste CMO-trancherna?",
+          "alternativ": [
+            "De eliminerade kreditförluster i bostadslån helt",
+            "De gjorde emissionskostnaderna noll",
+            "De delade upp oförutsägbara låneflöden i papper med olika risk och avkastning",
+            "De garanterade fast ränta för låntagarna"
+          ],
+          "ratt": 2,
+          "tips": "Frågan var vad man gör med flöden ingen kan förutsäga — svaret var att skära dem i bitar."
+        },
+        {
+          "q": "Vilken AKM1-variabel beskriver bäst att marknadsgörarskapet gjorde marknaden självförstärkande — mer handel gav tätare likviditet som gav mer handel?",
+          "alternativ": [
+            "V15 nätverkseffekter",
+            "V09 ROE",
+            "V11 likviditet",
+            "V19 kapitalförbränning"
+          ],
+          "ratt": 0,
+          "tips": "En variabel om att produktens värde växer med varje ny användare — även marknader fungerar så."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Produktinnovationens guldålder — nya papper, nya historier",
+      "intro": "Bolåneobligationerna var bara en av många produktlanseringar. 1980-talets Wall Street var en fabrik för nya papper — och en fabrik för berättelserna som skulle få kunderna att köpa dem. Kapitlet visar mekaniken bakom »the story« och kopplingen till vad banken råkar äga för mycket av.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Produktfabriken: auction rate preferred (ARPS) där räntan sätts i återkommande auktioner, strippade statsobligationer där kupong och principal separeras, CMO-trancher i alla former — och med junk bonds under Michael Milken på konkurrenten Drexel. Gemensamt för lanseringarna: de skapade handelsmarginaler (V07) och avgifter (V08) där ingen marknad funnits innan, och de lät sig säljas med en enkel historia till varje kundtyp — »säkerhet med extra avkastning«, »ränta utan krångel«, »avkastning utan skatt«. V16-produktlanseringar drev V01-försäljningstillväxt på kort sikt — men varje produkts livslängd var kort, eftersom strukturer inte kan patenteras (V13 saknas igen) och spreadarna pressades så snart konkurrenterna lärt sig kopiera."
+        },
+        {
+          "type": "text",
+          "content": "Lewis lärde sig säljaryrkets kärna av sina mentorer, och han är brutal i redovisningen: en produkt är vad dess berättelse får den att vara. En säljare ringer inte för att informera utan för att flytta — det gällde att läsa klienten, skräddarsy historien och skapa en känsla av tillfälle. En av bokens mest obehagliga lärdomar för investeraren: när firman satt med för mycket av ett papper var det just det papper som skulle säljas hårdast den veckan. Inte för att säljarna var onda — för att deras chefer mätte dem på det, och bonusen följde flyttad volym. Incitamentet skapade verkligheten (V17 i dess renaste form: anställnings- och bonusavtalen var marknadens styrsignaler)."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen är rak. 1) När en bank lanserar ivrigast, fråga vad den själv vill bli av med — lanseringsglädje är ofta lagerreducering i förklädnad. 2) V12 intäktsstabilitet: en intäktsbas byggd på produkter med kort livslängd är en löpbandstillväxt — den kräver ständig ny V16 för att inte kollapsa, och V03-diversifieringen blir skenbar om alla linjer bygger på samma risk. 3) Läs prospektet som ett avtal skrivet av motparten: formuleringarna om uppsägning, omprövning och »diskretionära« rättigheter avslöjar vem som äger relationen när det blir ont om luft."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1980-talets produktgalleri — lockelse och baksida\",\"rader\":[[\"Produkt\",\"Säljargumentet\",\"Vad som kunde gå fel\"],[\"Auction rate preferred (ARPS)\",\"»flytande ränta« via auktionsmekanik\",\"auktionen kan misslyckas — likviditeten försvinner\"],[\"Strippade obligationer\",\"ren exponering, exakt duration\",\"okänd ränterisk i en ny förpackning\"],[\"CMO-trancher\",\"skräddarsydd risk för varje investerare\",\"complexitet — priset sätts av den som förstår strukturen bäst\"],[\"Junk bonds (Drexel/Milken)\",\"»avkastning utan motstycke«\",\"kreditrisk som visade sig i nästa recession\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Varje finansiell produkt har två pris: det som står på pappret och den berättelse som får dig att acceptera det. Säljaren äger berättelsen — du äger konsekvenserna. Jämför alltid det andra priset med alternativa, enkla exponeringar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta fram ett prospekt eller faktablad för en strukturerad produkt. Hitta tre formuleringar där utfärdarens rättigheter överstiger dina — diskretionära ändringar, uppskov med återbetalning, ensidig prissättning vid dåliga marknader. Räkna dem och skriv upp vilken som oroar dig mest."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Lewis vara den mest cyniska lärdomen om vad säljarna skulle flytta?",
+          "alternativ": [
+            "Det papper som var bäst för kunden enligt forskningsavdelningen",
+            "Det papper som firman själv satt med för mycket av",
+            "Det papper som hade lägst avgifter för klienten",
+            "Endast papper som kunden uttryckligen efterfrågat"
+          ],
+          "ratt": 1,
+          "tips": "Fråga inte vad som var bäst — fråga hur lagret såg ut den veckan."
+        },
+        {
+          "q": "Varför pressas marginalerna (V07) snabbt på framgångsrika nya obligationsstrukturer?",
+          "alternativ": [
+            "Eftersom centralbanken förbjuder höga marginaler",
+            "Eftersom strukturer inte kan patenteras — V13-skydd saknas och konkurrenterna kopierar",
+            "Eftersom kunderna alltid vägrar betala för innovation",
+            "Eftersom marginalerna regleras i prospektet"
+          ],
+          "ratt": 1,
+          "tips": "Inget patentskydd — bara ett försprång som håller tills kopiatorna satt sig in i idén."
+        },
+        {
+          "q": "Hur bör en AK1A-elev läsa ett prospekt enligt detta kapitel?",
+          "alternativ": [
+            "Som neutral information från en opartisk källa",
+            "Som en juridisk formalitet utan investeringsrelevans",
+            "Som en garanti för framtida avkastning",
+            "Som ett avtal skrivet av motparten — med fokus på dennas rättigheter"
+          ],
+          "ratt": 3,
+          "tips": "Vem skrev dokumentet — och vem betalar advokaterna som skrev det?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Meriwether och arbitragens professorer",
+      "intro": "Långt från bulleret stod en annan Salomon-kultur: John Meriwethers arbitragegrupp — tystlåtna doktorer som letade prisskillnader mellan i grunden likvärdiga papper. De var framtidens finans. Det är också här tråden till LTCM och kursen When Genius Failed börjar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "John Meriwether rekryterade inte säljare utan professorer — män med doktorsexamina i matematik och ekonomi som han halvt skämtsamt kallade »the faculty«. Deras hantverk: arbitrage, att hitta två tillgångar som i grunden var samma sak men prissatts olika — en statlig obligation här, en kvasi-statlig där, en ny emitterad mot en gammal — och köpa den billiga medan man sålde den dyra. Skillnaderna var små, ofta några hundradels procent. Vad som krävdes var inte buller utan databearbetning, tålamod och en balansräkning som tålde att vänta. Gruppen var handelsbordets motsats i stil: lågmäld, akademisk, iskall."
+        },
+        {
+          "type": "text",
+          "content": "Deras fördel var treled: informationen (de bearbetade priserna snabbare och bättre), kapitalet (firman lät dem låna mot positionerna — V10-hävstång som förvandlar hundradelar till hela procent) och nerverna (de höll kvar när andra kapitulerade). I AKM1:s språk är resultattabellen förrädisk: utfallen såg stabila ut (V12 som illusion) eftersom de små skillnaderna nästan alltid konvergerar — men hävstången (V10) gör svanshändelser till existentiella händelser, och det som saknades var moderna riskmått och kapitalkänslighet (V06-verktygen fanns helt enkelt inte; V19-frågan ställdes aldrig förrän det var för sent). Just denna kombination — stabil avkastning, dold hävstång, akademisk självsäkerhet — är råmaterialet till LTCM-katastrofen 1998."
+        },
+        {
+          "type": "text",
+          "content": "Följ tråden: Meriwether lämnar Salomon i början av 1990-talet och grundar 1994 Long-Term Capital Management med bland andra Eric Rosenfeld, Lawrence Hilibrand och Victor Haghani från just denna grupp — plus nobelpristagarna Merton och Scholes. Fonden tjänar enormt i tre år och förlorar sedan i princip allt på nio månader 1998. Hela den historien — konvergensstrategierna, hävstången kring 25:1, Rysslands default och räddningen på 3,625 miljarder dollar — tas djupgående i BOKMASTER-kursen When Genius Failed. Här räcker kopplingen: Salomon-arvet levererar både människorna och spelteorin. Notera också pokern: Meriwether var bordets mästare just för att han visste när oddsen var hans — kapitel 7 visar vad som hände när kungen försökte spela mot honom."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från Salomons arbitragebord till LTCM\",\"rader\":[[\"Namn\",\"Roll hos Salomon\",\"Senare öde\"],[\"John Meriwether\",\"chef för arbitragegruppen\",\"grundade LTCM 1994 — kollapsen 1998\"],[\"Eric Rosenfeld\",\"arbitragör\",\"partner i LTCM\"],[\"Lawrence Hilibrand\",\"arbitragör\",\"partner i LTCM — de största positionerna\"],[\"Victor Haghani\",\"arbitragör\",\"partner i LTCM\"],[\"Merton och Scholes\",\"(ej Salomon) akademiska rötter\",\"nobelpristagare 1997 — LTCM:s ansikte utåt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "De lugnaste rösterna på ett handelsbord bär ofta den största dolda hävstången. Volym är inte risk — V10 är risk, och den bokförs inte i decibeler utan i balansräkningen. Och V11: den som MÅSTE sälja äger ingenting."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera den mest »stabila« strategin eller positionen i din egen portfölj. Skriv upp dess värsta kända månad historiskt — och vad som händer om den upprepas tre gånger i rad samtidigt som finansieringen stramas åt. Det är ditt LTCM-test."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kallade Meriwether sina doktorer i arbitragegruppen?",
+          "alternativ": [
+            "»The faculty« — fakulteten",
+            "»The fat men«",
+            "»Big swinging dicks«",
+            "»The board«"
+          ],
+          "ratt": 0,
+          "tips": "Ett skämt från en man som rekryterade professorer till ett handelsbord."
+        },
+        {
+          "q": "Vad är kärnan i en klassisk arbitrageaffär?",
+          "alternativ": [
+            "Att köpa tillgångar som stigit mest senaste året",
+            "Att låna kort och låna långt i olika valutor",
+            "Att köpa optioner strax före rapporter",
+            "Att köpa den undervärderade och sälja den övervärderade av två i grunden likvärdiga tillgångar"
+          ],
+          "ratt": 3,
+          "tips": "Samma sak, två priser — och en väntan på att skillnaden ska försvinna."
+        },
+        {
+          "q": "Vilken senare institution byggdes av människor från Meriwethers Salomon-grupp?",
+          "alternativ": [
+            "Drexel Burnham",
+            "Federal Reserve i New York",
+            "Long-Term Capital Management — LTCM",
+            "Citigroups tradingdivision"
+          ],
+          "ratt": 2,
+          "tips": "Namnet lovade långsiktighet — historien levererade en av finans största kollapser, 1998."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Miljonhanden — när kungen utmanade mästaren",
+      "intro": "En enda ospelad pokerhand är bokens mest analyserade scen. Gutfreund erbjöd en hand om en miljon dollar; Meriwether krävde tio; kungen backade. Kapitlet dissekerar varför — och vad det lär om förhandling, asymmetri och när man ska vägra spela.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Scenen igen, nu i analys. Gutfreund — vd, »King of Wall Street«, en man vars ord flyttade miljarder — stannade vid Meriwethers bord och föreslog en enda hand om en miljon dollar. Meriwether svarade: »Make it ten«. Gutfreund skrattade och gick därifrån; handen spelades aldrig. På ytan ett bus från branschens bar. Under ytan en av de renaste illustrationerna i finanslitteraturen till varför insatser bara är en variabel — och ofta den minst viktiga."
+        },
+        {
+          "type": "text",
+          "content": "Räkna på asymmetrin. För Meriwether var en vinst mot kungen en historia för livet; en förlust en miljon dollar som hans bonus året därpå täckte. För Gutfreund var en vinst nästan värdelös — ingen belöning för att ha slagit sin egen anställd — men en förlust var förödande: kungen av Wall Street som förlorar en pokerhand om en miljon till en anställd handlare slutar vara kung. Hans varumärke (V14) — förtroendet, myten — var hela hans kapital, och han skulle riskera det för en summa han inte behövde. Meriwether förstod detta och höjde därför insatsen tills den var orimlig: han prissade optionen han erbjöd kungen att köpa. Gutfreund läste priset rätt och tackade nej — det klokaste han gjorde, noterar Lewis."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen blir tre regler. 1) Spela bara när spelet gynnar dig: utan edge är varje insats en donation, hur skicklig du än är (pokerns första sats — och Kelly-logikens). 2) Räkna alltid motpartens bästa och sämsta utfall, inte bara din egen: om motparten inte kan förlora något är det du som betalar priset, någonstans, senare. 3) Varumärket är kapital: Gutfreunds status var lånad likviditet — den kunde försvinna i en enda dålig hand, och det gjorde den (fast vid ett annat bord: 1991-skandalen i kapitel 11). Detta är också marginal of safety-spelets kärna utan siffror: vägra händer där en förlust förstör dig, även när sannolikheten för förlust ser liten ut."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Miljonhanden — asymmetrin räknad\",\"rader\":[[\"Faktor\",\"Gutfreund (kungen)\",\"Meriwether (mästaren)\"],[\"Om han vinner\",\"nästan ingen vinst — status quo\",\"en story för livet plus en miljon\"],[\"Om han förlorar\",\"myten om kungen — oersättligt\",\"en miljon — bonusen täcker\"],[\"Bästa utfall\",\"att slippa spela\",\"att bli utmanad igen\"],[\"Sämsta utfall\",\"att förlora inför hela bordet\",\"att inte få spela\"],[\"Slutsats\",\"rationellt att tacka nej\",\"rationellt att höja insatsen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga alltid: »Vad vinner motparten om jag går med på det här?« Om du inte kan svara är priset redan inbakat — och det är du som betalar det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Inför din nästa förhandling — lön, avtal, köp, lån — skriv en tabell som den ovan: båda parters bästa och sämsta utfall, INTE bara din egen. Markera parten som har mest att förlora. Det är din förhandlingsstyrka, inte din argumentationsförmåga."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför var en förlust så mycket dyrare för Gutfreund än för Meriwether?",
+          "alternativ": [
+            "Gutfreund hade mindre kapital än Meriwether",
+            "Gutfreund var sämre pokerspelare och visste det",
+            "Gutfreunds status och varumärke — myten om kungen — stod på spel, vilket var oersättligt",
+            "Reglerna i spelet gynnade Meriwether statistiskt"
+          ],
+          "ratt": 2,
+          "tips": "Räkna inte bara dollar — räkna vad som inte går att tjäna tillbaka."
+        },
+        {
+          "q": "Varför svarade Meriwether »Make it ten« — en höjning till tio miljoner?",
+          "alternativ": [
+            "Han var övertygad om att han hade bättre kort",
+            "Han ville skrämma bort vittnen från bordet",
+            "Han visste att Gutfreund inte hade tio miljoner",
+            "Han prissade optionen — höjde insatsen tills den blev orimlig för den utmanade parten att acceptera"
+          ],
+          "ratt": 3,
+          "tips": "En höjning kan vara ett sätt att säga nej — med en inbjudan att göra bort sig."
+        },
+        {
+          "q": "Vilken princip från detta kapitel är kärnan i »marginal of safety«?",
+          "alternativ": [
+            "Att alltid spela när insatserna är stora nog att spela om",
+            "Att fördubbla insatsen efter varje förlust",
+            "Att vägra händer där en enda förlust kan förstöra dig — oavsett hur liten förlustrisken verkar",
+            "Att bara spela mot svagare motståndare"
+          ],
+          "ratt": 2,
+          "tips": "Det handlar om överlevnad först — utfall sedan."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Howie Rubin — bonusjägare och riskens asymmetri",
+      "intro": "Bokens mest vägande varning handlar om en ung mortgage-stjärna: Howie Rubin, som tog positioner stora nog att skaka ett helt bolag. Kapitlet visar mekanismen som gör extrema risker rationella — för den som inte bär dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Howie Rubin tillhörde den nya generationen traders på bolånesidan — ung, aggressiv och hungrig, med CMO-boken som leksak. Hans positioner var enorma i förhållande till det kapital som backade dem, och i en marknad som rörde sig hans väg blev vinsterna sagolika. Lewis skildrar honom utan moralism: Rubin var vad systemet producerade. En handelsbordskultur där P&L var enda språket (kapitel 3) och där bolåneavdelningen just hade lärt sig att strukturer kan mixtras i det oändliga, skapar inte försiktiga människor — den belönar inte försiktighet (V12-logik: ett stilla år utan position är ett förlorat år)."
+        },
+        {
+          "type": "text",
+          "content": "Nu mekanismen, i AKM1:s renaste form. Ett bonusystem är ett avtal (V17): det definierar vad som betalas, när, och — avgörande — vad som händer vid förlust. Salomon-modellen betalade ut en andel av årets vinst men krävde nästan aldrig tillbaka vid förlust; sämsta fallet för tradern var att förlora jobbet — och marknaden re-prissatte stjärnhandlare med en förlust bakom sig milt, eftersom alla vet att positioner kan gå fel. Räkna på det: vinst ger livsförändrande bonus; förlust ger en ny anställning någon annanstans. Det är en gratis option på bolagets kapital: heads I win big, tails I lose little. En rationell Rubin TAR den risken — det är avtalet som är defekt, inte primärt människan."
+        },
+        {
+          "type": "text",
+          "content": "Utgången. Rubin lämnade så småningom Salomon för Merrill Lynch, med ett garantipaket som gör resonemanget ovan ännu skarpare — och i kraschen oktober 1987 (kapitel 9) förlorade hans positioner, enligt Lewis skildring, i storleksordningen 300 miljoner dollar. Det var inte Rubins pengar. Förlusten landade på Merrills ägare och på bolagets kapitalbas (V19 kapitalförbränning), medan de goda årens avkastning (och den ROE, V09, som belönades) hade varit byggd på hävstång (V10) som gjorde utfallen stora åt båda hållen. Detta är kursens mest praktiskt användbara diagram: när du ser en finansiell institutions fantastiska avkastning, fråga först — vems kapital absorberar den sämsta variabeln?"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bonusoptionens asymmetri — vem bär utfallet?\",\"rader\":[[\"Utfall\",\"Tradern (Rubin)\",\"Bolaget/ägarna\"],[\"Stort plusår\",\"bonus i miljonklassen\",\"delad vinst — och en stjärna att hålla kvar\"],[\"Mellanting\",\"bonus\",\"normal avkastning på använt kapital\"],[\"Stort minusår\",\"kanske nytt jobb — marknaden förlåter\",\"förlusten landar här: kapital (V19) och aktiekurs\"],[\"Extremt minusår\",\"samma som minusår — inga återbetalningskrav\",\"existentiellt — kapitalbasen kan ätas upp\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En bonus utan återbetalningsklausul är en gratis option på bolagets kapital — och optionen skrivs alltid till någon. Fråga inte hur duktig tradern är; fråga vem som betalar premien om underliggande rasar (V10, V19)."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta fram en banks senaste årsredovisning eller prospekt. Hitta bonus- och incitamentsprogrammen: triggar de VOLYM, RISK eller LÖNSAMHET? Finns återbetalning (clawback) vid senare förluster? Skriv en rad om vad programmet gör rimligt för en Rubin att göra."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gör ett bonusystem utan återbetalningsklausul vid förluster rationellt att göra?",
+          "alternativ": [
+            "Att ta maximal risk — vinsten är ens egen, förlusten bär bolaget",
+            "Att hålla positionerna små och diversifierade",
+            "Att enbart handla mot kunder, aldrig för eget konto",
+            "Att pantsätta den årliga bonusen mot säkerheter"
+          ],
+          "ratt": 0,
+          "tips": "Tänk option: begränsad nedsida för ena parten, obegränsad för den andra."
+        },
+        {
+          "q": "Var landade slutligen förlusterna från Howie Rubins stora positioner i oktober 1987?",
+          "alternativ": [
+            "På Rubin personligen, som gick i personlig konkurs",
+            "På Federal Reserve, som ersatte förlusterna",
+            "På Salomon, som gått i borgen för honom",
+            "På Merrills kapital och ägare — inte på tradern"
+          ],
+          "ratt": 3,
+          "tips": "Han hade bytt hus vid det laget — men pengarna som stod på spel var aldrig hans."
+        },
+        {
+          "q": "Vilken AKM1-koppling är mest träffande för detta kapitel?",
+          "alternativ": [
+            "V13 patent och IP — handelsstrategier kan patenteras",
+            "V17 avtal och partnerskap — bonusavtalet är en styrsignal som definierar beteendet",
+            "V20 återköp — bonusar finansieras alltid av återköp",
+            "V02 ARR-tillväxt — traders mäts på återkommande intäkter"
+          ],
+          "ratt": 1,
+          "tips": "Läs avtalet så förstår du beteendet — innan du bedömer människan."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Svarta måndagen 1987 — när likviditeten försvann",
+      "intro": "Den 19 oktober 1987 föll Dow Jones med 22,6 procent på en dag — den största endagssvängningen i procent i dess historia. För handelsborden var kraschen inte en kurva utan en dörr som blev för smal när alla skulle ut samtidigt. Kapitlet handlar om V11: likviditet som försvinner exakt när den behövs.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Måndagen den 19 oktober 1987: Dow Jones föll 508 punkter, 22,6 procent — på en enda handelsdag. Bakom paniken fanns delvis portföljförsäkring: en strategi där institutioner sålde indexfutures automatiskt när marknaden föll, för att skydda sig — vilket fick marknaden att falla mer, vilket triggade mer försäljning. Ett system byggt för att vara säkert blev en motorsåg. På Salomons och konkurrenternas bord stelnade bullret till tystnad; på Lewis säljsida i London gick telefonlistan från vardagsredskap till larmcentral — kunderna ville veta ett enda: vad är allt värt NU, och till vem kan jag sälja?"
+        },
+        {
+          "type": "text",
+          "content": "Svaret definierar V11. Skärmpriset är inte ett pris — det är en notering som förutsätter att någon står på andra sidan. När alla är säljare finns ingen annan sida, och spreadarna mellan bud och fråga exploderar; illikvida papper, som bolåneobligationer med sina komplexa flöden (kapitel 4), frös hårdare än statspapper. Samma mekanism dödade Merrills CMO-positioner (kapitel 8): förlusten uppstod inte bara för att värdena föll utan för att UTGÅNGEN stängdes samtidigt. Det är definitionen på likviditetsdöd: du kan ha rätt om värdet och ändå gå under på vägen dit — den som är tvungen att sälja äger inte sin position, han hyr den tills marknaden säger tvärstopp."
+        },
+        {
+          "type": "text",
+          "content": "Efterdyningarna, i tre akter. 1) Intäktsstabiliteten (V12): handelsbordens vinster svängde våldsamt — ett dåligt år kunde äta flera goda år; investerare som värnar V12 noterade att »intäktsdiversifieringen« (V03) mellan bord ofta var skenbar när alla borden bar samma ränte- och likviditetsrisk. 2) Regulatorerna (V18) vaknade: utredningar om portföljförsäkring och dess mekanismer — men regelverket kom efter händelsen, som alltid. 3) Kulturen: förväntan om att buset skulle dö var fel — efter ett djupt andetag kom bonusarna och risktagandet tillbaka, starkare. Lewis förstod då att spelet aldrig skulle ändra sig av sig självt — en av drivkrafterna bakom hans avgång (kapitel 12)."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Marknadens tre tillstånd — före, under, efter kraschen\",\"rader\":[[\"Faktor\",\"Före (boomen)\",\"Under (19 okt)\",\"Efter\"],[\"Spreadar\",\"smala — likviditet tas för given\",\"exploderar eller saknas helt\",\"trubbig normalisering\"],[\"Handelsvolym\",\"hög och självförstärkande\",\"ensidig — alla säljer\",\"ljummen, misstänksam\"],[\"Prisets betydelse\",\"konsensus om värde\",\"notering utan köpare\",\"förhandling från fall till fall\"],[\"Attityd\",\"»marknaden går alltid upp«\",\"panik\",\"»det kan hända igen« — tills det glöms\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Likviditet (V11) är en option som är värd noll när du behöver den som mest. Bygg aldrig en portfölj som kräver att dörren är öppen — bygg en som överlever att den stängs."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör ett likviditets-stresstest av din portfölj: vad är varje innehav realistiskt värt om allt måste säljas på en dag med 20 procents rabatt — och vad är värdet av att INTE behöva sälja, om du kan vänta ut ett år? Räkna på skillnaden i kronor."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var portföljförsäkringens paradoxala roll den 19 oktober 1987?",
+          "alternativ": [
+            "Den skyddade institutionerna från alla förluster",
+            "Den förbjöd all handel i indexfutures",
+            "Den fungerade exakt som utlovat och stabiliserade marknaden",
+            "Dess automatiska försäljning vid fallande marknad förstärkte fallet och triggade mer försäljning"
+          ],
+          "ratt": 3,
+          "tips": "En strategi byggd för säkerhet blev en mekanism som matade själva fallet."
+        },
+        {
+          "q": "Vad menas med att en position bara är värd »skärmpriset«?",
+          "alternativ": [
+            "Att priset är garanterat av börsen till nästa dags stängning",
+            "Att priset alltid avspeglar fundamentalt värde",
+            "Att priset är detsamma som börsens slutkurs",
+            "Ingenting — skärmpriset förutsätter en köpare, och när alla säljer finns ingen annan sida"
+          ],
+          "ratt": 3,
+          "tips": "En notering är inte ett erbjudande — den är en förhoppning om en motpart."
+        },
+        {
+          "q": "Vilken kombination av AKM1-variabler fångar bäst kraschens lärdomar för en investerare?",
+          "alternativ": [
+            "V11 likviditet plus V10 skuldsättningsgrad — tvångsförsäljning med hävstång är dödlig",
+            "V13 patent plus V14 varumärke — innovation skyddar mot krascher",
+            "V16 produktlanseringar plus V01 försäljningstillväxt",
+            "V20 återköp plus V09 ROE"
+          ],
+          "ratt": 0,
+          "tips": "Det handlar om dörren och hävstången — inte om produkterna eller tillväxten."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Kontroversen — girighetskulturen och 1980-talets två berättelser",
+      "intro": "Här står kursens obligatoriska kontrovers: var Liar's Poker en berättelse om befrielse eller om fördärv? Kapitlet låter 1980-talets frihetstäsa och dess kritiker mötas på allvar — och landar i AK1A-positionen, som varken är ideologisk eller moralisk utan analytisk: läs incitamenten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först kulturen i dess egen högform. Salomon-bordet var macho, bullrigt och hierarkiskt; status mättes i P&L (kapitel 3), språket var rått (the Human Piranha), spelen hårda (Liar's Poker om miljonbelopp) och bonuserna sagolika i en värld där en 27-åring kunde tjäna mer än företagschefer. Utanför fönstret sammanfattade tiden sig själv: Gordon Gekko i filmen Wall Street (1987) förklarade att »greed, for lack of a better word, is good«. Det är mot den bakgrunden boken lästes 1989 — som bekräftelsen på att finansvärlden verkligen var sådan: en casinokultur med potten på världens kapital."
+        },
+        {
+          "type": "text",
+          "content": "Frihetstäsen — argumenten som gjorde kulturen möjliga och som dess anhängare höll för sanna. 1) Avregleringen: från May Day 1975 (courtage-avregleringen på NYSE) via Garn-St Germain-lagen 1982 (som omformade bolånemarknaden och banade väg för securitisering) till Big Bang i London 1986 — under Reagan i USA och Thatcher i Storbritannien flyttades kapitalallokeringen från politiker och karteller till marknader, vilket förespråkarna menade gav billigare kapital, djupare marknader och högre tillväxt. 2) Meritokratin: »marknaden belönar skicklighet« — och Salomon var på sitt sätt ett bevis: Ranieri kom från postrummet till vice ordförande (kapitel 4); ingen akademisk merit krävdes, bara resultat. 3) Innovationen: bolåneobligationerna gav låntagare finansiering och investerare avkastning — det fanns ett verkligt samhällsnytta i maskinen, inte bara avgifter. Detta är ett seriöst argument och förtjänar ett seriöst bemötande."
+        },
+        {
+          "type": "text",
+          "content": "Kritiken — och här talar boken själv, eftersom författaren är sitt eget huvudvittne. Michael Lewis sa upp sig 1988, vid 28, trots att pengarna var goda — av det han själv beskriver som äckel: ett system där kunden systematiskt var motpart (kapitel 5), där risk togs med ägarnas kapital men krediterades individens bonus (kapitel 8), och där BSD-kulturens tävling i hårdhet gjorde destruktivitet till dygd. Till det de yttre kostnaderna: sparbankskrisen (S&L-krisen) — det som avregleringen skulle rädda blev i stället en generation havererade institut som skattebetalarna till slut fick betala räkningen för — och en finanssektor vars vinster växte snabbare än nyttan den levererade. Kritikens kärna är inte att människor är giriga — människor har alltid varit det — utan att INCITAMENTEN belönade fel saker: volym framför kvalitet, storlek framför hänsyn, kort sikt framför lång."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-positionen: avgör inte debatten — använd den. Vi behöver inte bestämma oss för om girighet är ont, för det är fel fråga; frågan är VAD SOM BELÖNAS i varje specifik relation, och det går alltid att läsa. Tre verktyg. 1) V17 avtal och partnerskap: varje relation har ett avtal — bonusprogrammet, prospektet, rådgivningsavtalet — och avtalet är en styrsignal som avslöjar beteendet i förväg (kapitel 8). 2) Bonussystemet som styrsignal: fråga vad säljarens kvartal belönar — nya affärer? bindningstid? volym? — och du vet vad du kommer att erbjudas. 3) Motpartspedagogiken: den stora gåvan i Liar's Poker är att vi får SE hur andra sidan tänker, inifrån, av en som satt där. Banken är INTE din vän — den är din motpart, och det är okej: en motpart som du förstår är bättre än en vän som du inte förstår. Men glöm aldrig vilken sida av bordet som skrev berättelsen."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1980-talets två berättelser — fråga för fråga\",\"rader\":[[\"Fråga\",\"Frihetstäsen\",\"Kritiken\"],[\"Avreglering\",\"frigör kapital, sänker kostnader, ökar tillväxt\",\"skapar casinologi och systemrisk (se S&L-krisen)\"],[\"Mobilitet\",\"postkillen kan bli vice ordförande — verklig meritokrati\",\"mobiliteten gäller de få; priset bärs av kunder och ägare\"],[\"Innovation\",\"nya produkter finansierar bostäder och tillväxt\",\"complexiteten säljs till dem som inte förstår den\"],[\"Kunder\",\"marknader gör alla till vinnare genom effektivitet\",\"kunden är motpart — informationsskillnaden exploateras\"],[\"Resultatet\",\"vinster, djupare marknader, 1980-talets boom\",\"Lewis lämnade av äckel; Salomon föll; 2008 väntade\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Moralisk indignation är en dålig riskmodell — den säger dig vad du får tycka, inte vad som kommer att hända. Incitamentsanalys är bättre: fråga inte »är den här girig?« utan »vad belönas här — och vem betalar när det går fel?«"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en finansiell produkt eller rådgivningsrelation du har eller överväger. Skriv tre rader: 1) Vad belönas säljarens/bankens kvartalssystem mest för i den här affären? 2) Vem bär risken om affären går fel? 3) Vilken fråga skulle tvinga fram ett ärligt svar på 1 och 2? Spara svaret till kapitel 13."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken händelse i boken sammanfattar bäst kritikens kärna mot kulturen?",
+          "alternativ": [
+            "Att Gutfreund tackade nej till pokerhanden",
+            "Att traineeprogrammet var för kort",
+            "Att Michael Lewis — som själv tjänade bra — sa upp sig 1988 av äckel över ett system där kunden var motpart och risken låg på andra",
+            "Att Ranieri började i postrummet"
+          ],
+          "ratt": 2,
+          "tips": "Det starkaste vittnesmålet kommer inifrån — från någon som lämnade pengarna."
+        },
+        {
+          "q": "Vad är AK1A:s position i girighetsdebatten?",
+          "alternativ": [
+            "Att girighet är bra därför att marknader är effektiva",
+            "Att girighet är ont och bör förbjudas genom reglering",
+            "Att avgöra om girighet är moraliskt rätt eller fel",
+            "Att avgöra debatten är mindre viktigt än att läsa incitamenten — vad som belönas och vem som bär risken"
+          ],
+          "ratt": 3,
+          "tips": "Vi håller oss till frågor med svar som går att handla på."
+        },
+        {
+          "q": "Vad innebär »motpartspedagogiken« i AK1A:s läsning av boken?",
+          "alternativ": [
+            "Att banken är ens vän så länge man är en god kund",
+            "Att lära sig se hur motparten tänker — banken är inte din vän, men en förstådd motpart är bättre än en oförstådd vän",
+            "Att undvika all kontakt med banker och deras produkter",
+            "Att alltid lita på att regleringar skyddar kunden"
+          ],
+          "ratt": 1,
+          "tips": "Det handlar om att förstå — inte om att lita eller fly."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Fallet Salomon — från kungarike till Citigroup-filia",
+      "intro": "Salomon Brothers var en gång själva obligationsmarknaden. I dag finns namnet knappt kvar. Kapitlet följer fallet — Ranieris förvisning 1987, Gutfreunds avgång i 1991-års skandal, Buffetts räddning och den långa vägen in i Citigroup — och läser det som en lärobok i V14 och V18.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första fallet: Ranieri. Berättelsen om bolåneavdelningens grundare slutar i juli 1987, när han sparkades från firman han gjort till marknadens centrum. Orsakerna var flera: avdelningens interna strider, de växande förlusterna på egna positioner när marknaden vände — men också den strukturella sanningen från kapitel 4: pengamaskinen gick att kopiera, spreadarna pressades, och den man som byggde marknaden var plötsligt dyr i förhållande till vad den nya konkurrensen tillät (V07-erosion utan V13-skydd). Pionjärerna äger sällan frukten av sin innovation — de lär upp sina konkurrenter på vägen."
+        },
+        {
+          "type": "text",
+          "content": "Andra fallet, det definitiva: 1991. Då avslöjades att Paul Mozer på Salomons statsobligationsbord lämnat falska bud i amerikanska statsauktioner — i systemets allra heligaste rum. Skandalen var inte primärt en förlusthistoria utan en förtroendehistoria: motparten till Salomons bud var USA:s finansdepartement, och att ljuga där innebar att firmans ord inte längre var värt något alls. Gutfreund — kungen som överlevt miljonhanden (kapitel 7) — avgick i augusti 1991. Warren Buffett trädde in som tillförordnad ordförande och lade in kapital för att rädda bolaget: en V19-klassisk situation — kapital måste tillföras exakt när det är som mest smärtsamt, eftersom förtroendet (V14) redan brunnit."
+        },
+        {
+          "type": "text",
+          "content": "Den långa utförslingen. Salomon överlevde 1991, men som en annan firma — stinget satt i varumärket (V14 är i finans lånad likviditet: när den sägs upp torkar affärerna ut). Fusionen med Travelers 1997 förde Salomon in i Smith Barney-världen, och när Citigroup bildades 1998 försvann namnet från Wall Streets gatubild. V18 är utföraren: den regulatoriska katalysatorn (auktionsskandalen) var tändmekanismen — men bränslet var kulturen och den balansräkning den byggt (V10, kapitel 8-9). Från fusionen med råvaruhuset Phibro 1981 — med oljehandlare av Andy Hall-typ, en V03-diversifiering in i nya intäktskällor — till att bli en filial i ett bankimperium: bågen tar knappt två årtionden. AK1A-lärdomen: institutioner dör sällan av marknadsförluster ensamma — de dör av att förtroendet försvinner snabbare än kapitalet kan ersättas."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Salomon Brothers — uppstigning och fall i årtal\",\"rader\":[[\"År\",\"Händelse\",\"AKM1-länk\"],[\"1981\",\"fusionen med råvaruhuset Phibro\",\"V03 intäktsdiversifiering — och kulturkrock\"],[\"1984\",\"Lewis traineeklass; bolånemaskinen på topp\",\"V15-V16 marknadsbygge och lanseringar\"],[\"juli 1987\",\"Ranieri sparkas\",\"V07 marginalerosion utan V13-skydd\"],[\"okt 1987\",\"kraschen — illikviditet och svängande resultat\",\"V11, V12\"],[\"aug 1991\",\"auktionsskandalen; Gutfreund avgår; Buffett går in\",\"V14 varumärke, V18 regulatoriskt, V19 kapital\"],[\"1997-98\",\"Travelers köper; Citigroup bildas; namnet försvinner\",\"V14 — varumärket som dödsorsak\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "I finans är varumärket (V14) lånad likviditet: det kan sägas upp i ett regulatoriskt ögonblick (V18), och då är det kapitalet (V19) som måste träda fram — precis när det är som dyrast. Prisa förtroendet som den balanspost det är."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en bank eller finansiell institution du följer. Beräkna hur mycket av dess ROE (V09) som är äkta lönsamhet och hur mycket som är hävstång (V10). Fråga sedan: vad händer med kapitalbasen (V19) vid en 1991-typ av händelse — ett förlorat förtroende utan motsvarande förlustsiffra?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför sparkades Ranieri 1987 — vad var den strukturella orsaken utöver interna strider?",
+          "alternativ": [
+            "Han vägrade handla bolåneobligationer",
+            "Han hade förlorat pokerhanden mot Gutfreund",
+            "Han lämnade firman för LTCM",
+            "Maskinen han byggde gick att kopiera — marginalerna pressades och pionjären blev dyr mot den nya konkurrensen"
+          ],
+          "ratt": 3,
+          "tips": "Inget patentskydd på innovationer — bara ett försprång, och försprånget höll inte för alltid."
+        },
+        {
+          "q": "Vad utlöste Gutfreunds avgång 1991?",
+          "alternativ": [
+            "Falska bud i amerikanska statsauktioner — en förtroendeskandal mot själva finansdepartementet",
+            "Miljonhanden mot Meriwether avslöjades offentligt",
+            "Förlusterna i kraschen 1987 kom på tal för sent",
+            "En fejd med Buffett om aktieägarvärde"
+          ],
+          "ratt": 0,
+          "tips": "Det handlade om att ljuga på fel ställe — i systemets heligaste rum."
+        },
+        {
+          "q": "Vad hände slutligen med Salomon Brothers namn?",
+          "alternativ": [
+            "Det lever kvar som självständig investmentbank",
+            "Det köptes av Drexel Burnham",
+            "Det bytte namn till LTCM",
+            "Det försvann in i Travelers/Smith Barney och Citigroup efter 1997-98"
+          ],
+          "ratt": 3,
+          "tips": "Kungariket blev en filial — en rad i ett större banksystems organisationskarta."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Lewis avgår — »I quit« och boken som satte kulturen på display",
+      "intro": "1988 lämnade Michael Lewis handelsbordet — inte för en bättre bank, utan för att berätta. Avgången och boken som följde blev wall street-memoarens födelse: insiderspelet beskrivet av en insider. Kapitlet handlar om varför det vittnesmålet fortfarande är en av finansutbildningens mest undervärderade källor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avgången. 1988, vid 28 år, med en karriär och bonusar de flesta bara drömmer om framför sig, sa Michael Lewis upp sig — och gjorde sin exit offentlig och förklarad, ett uppror i bokform snarare än i avskedsbrev. Hans egen förklaring, genomgående i boken, är äcklet: han såg hur spelet fungerade — klienten som motpart (kapitel 5), risken som bärs av andra (kapitel 8), kulturen som belönade det (kapitel 10) — och insåg att han var bättre lämpad att studera cirkusen än att uppträda i den. Att gå ifrån pengarna är i finansvärlden det mest uppseendeväckande en insider kan göra; att sedan berätta VARFÖR, med namn och mekanismer, var nästan ohövligt."
+        },
+        {
+          "type": "text",
+          "content": "Boken som följde — Liar's Poker, utgiven 1989 — blev en bestseller och ett slags självporträtt för en hel era: plötsligt såg allmänheten (och branschen själv) handelsbordet inifrån, med bluffen, öknamnen och bonuskampen osminkat. Wall Street skrattade och arg samtidigt; vissa handlare kände igen sig i varje detalj, andra förnekade allt. Effekten på längre sikt är svår att överskatta: Lewis uppfann i praktiken den moderna wall street-memoaren som genre, och fortsatte sedan som finansens översättare till normalspråk — från penningkulturen på 1990-talet till The Big Short 2010, där han följer just de bolåneobligationer som föddes i Ranieris maskin (kapitel 4) till deras logiska slut i 2008 års kris. Cirkeln sluts: den unge säljarens motpartsobservation blir vuxenanalysens kartläggning av systemkollapsen."
+        },
+        {
+          "type": "text",
+          "content": "Varför spelar detta roll för en AK1A-elev? Eftersom information har hierarki. Regler och prospekt talar om vad som är FÖRBUDET; press och analyser talar om vad som är AKTUELLT; men memoarer av dem som lämnat berättar vad som är NORMALT — den dagliga logik som ingen regel förbjuder men som ändå avgör hur du blir behandlad. Normalt på ett handelsbord: att klienten är en motpart vars okunnighet är en resurs, att berättelsen är en säljteknik, att bonusen är ett styrsystem. Att läsa det är en gratis lärlingsplats i motpartens tänkande — gåvan med Liar's Poker är inte skadeglädje utan översättningsnyckeln (V17-frågorna, bonus-styrningen, produktlanseringarnas verkliga syfte — allt från kapitel 5-10 samlas här i ett enda användbart kartset)."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vad hände sedan? — personerna efter 1988\",\"rader\":[[\"Person\",\"Efter Salomon\",\"Notering\"],[\"Michael Lewis\",\"författare — Liar's Poker 1989, senare bland annat The Big Short\",\"översatte cirkusen; cirkeln sluts 2008\"],[\"Lewis Ranieri\",\"isolerad pionjär; senare verksam i bolånevärlden\",\"byggde marknaden — föll före den\"],[\"John Meriwether\",\"grundade LTCM 1994\",\"kollaps 1998 — kursen When Genius Failed\"],[\"John Gutfreund\",\"avgick 1991; levde tillbakadragen\",\"kungen som överlevde miljonhanden men inte skandalen\"],[\"Howie Rubin\",\"Merrills förluster 1987\",\"fall i bonusoptionens asymmetri\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den mest undervärderade finansiella källan är personen som lämnat pengarna och ändå vill prata: uppsägelseberättelser innehåller sanningar som inget prospekt någonsin kommer att formulera. Sök alltid vittnesmålet framför broschyren."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta upp en intervju eller memoar av en avhoppad insider från en bransch du investerar i (bank, fond, tech). Skriv upp tre mekanismer de beskriver som är NORMALA (inte skandaler) — och fundera på vilken av dem som påverkar din roll som ägare eller kund mest."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför lämnade Michael Lewis Salomon Brothers 1988?",
+          "alternativ": [
+            "Han fick ett bättre erbjudande från Goldman Sachs",
+            "Han sparkades efter förluster på bolåneobligationer",
+            "Han blev tvungen att flytta till Dallas för aktiehandeln",
+            "Av äckel över spelets logik — klienten som motpart, risken på andra — trots goda inkomster"
+          ],
+          "ratt": 3,
+          "tips": "Det mest uppseendeväckande en insider kan göra är att gå ifrån pengarna — och förklara varför."
+        },
+        {
+          "q": "Vilken senare bok av Lewis följer bolåneobligationerna från Salomon-eran till deras logiska slut?",
+          "alternativ": [
+            "Moneyball",
+            "Flash Boys — om högfrekvenshandel",
+            "The Big Short — om 2008 års kris",
+            "The Undoing Project"
+          ],
+          "ratt": 2,
+          "tips": "Ranieris maskin från 1980-talet får sitt slutförande trettio år senare."
+        },
+        {
+          "q": "Vad menas med att memoarer som källa talar om vad som är »normalt« snarare än förbjudet?",
+          "alternativ": [
+            "Att de ersätter regelverk och prospekt i juridisk mening",
+            "Att de alltid är sanningsenliga och opartiska",
+            "Att de enbart innehåller skandaler och brott",
+            "Att de beskriver den dagliga logik och kultur som ingen regel förbjuder men som ändå avgör hur kunder behandlas"
+          ],
+          "ratt": 3,
+          "tips": "Systemet styrs sällan av det som är förbjudet — utan av det som lönar sig."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "AK1A-syntes — incitament, motparten och marginal of safety",
+      "intro": "Kursens sista kapitel samlar Liar's Poker till ett arbetsverktyg: fem lärdomar, en motpartschecklista och en princip — marginal of safety utan siffra. Målet är inte att du ska sluta handla med banker, utan att du aldrig mer spelar deras spel utan att veta om det.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fem lärdomar att bära med dig. 1) Spelet är bluff: informationsskillnaden är branschens råvara — motparten vet mer om produkten än du, alltid (kapitel 1, 5). 2) Incitamenten styr: bonusar och avtal (V17) är styrsignaler som förutsäger beteende bättre än karaktär (kapitel 8, 10). 3) Produkterna säljs när banken behöver sälja: V16-lanseringsglädje är ofta lagerreducering — V07-marginalerna är störst innan kopiatorna kommer, eftersom V13-skydd saknas (kapitel 4-5). 4) Hävstång och likviditet dödar: V10 plus V11 är den återkommande dödsorsaken — 1987 i det små, 1998 i LTCM, 2008 i systemet (kapitel 6, 8-9). 5) Kulturer dör plötsligt: V14-varumärket är lånad likviditet, och V18-katalysatorn kommer när den kommer (kapitel 11)."
+        },
+        {
+          "type": "text",
+          "content": "Motpartschecklista — frågorna att ställa (till dig själv, gärna högt) vid varje finansiellt erbjudande. 1) Vem bär risken om detta går fel — jag, banken eller en tredje part? (V10/V19.) 2) Vad tjänar säljaren på affären i år — provision, bindning, spread? (V17.) 3) Vad händer med min position om marknaden stänger en månad — kan jag tvingas sälja? (V11.) 4) Finns det en enkel, tråkig exponering som gör samma sak utan berättelsen? (V07 — du betalar marginalen för storyn.) 5) Hur ser partens intäkter ut — är kvaliteten stabil och diversifierad (V12, V03) eller löpbandstillväxt (V01 utan bestånd)? Dessa fem frågor, rätt använda, gör dig till den kund som säljaren inte ringer för att lura — för det tar för lång tid."
+        },
+        {
+          "type": "text",
+          "content": "Och principen: marginal of safety — utan siffra, som hållning. Den är miljonhandens spegelbild (kapitel 7): Gutfreund överlevde för att han vägrade en hand där en förlust kunde förstöra honom; Rubin-modellen exploderade för att den var byggd tvärtom (kapitel 8). Praktiskt: handla bara i situationer där du kan ha FEL och ändå överleva — där tvång, hävstång och bristande likviditet inte kan tvinga ut dig innan din analys har hunnit visa sig rätt. Marginal of safety är rätten att ha fel. Den mäts inte i en procentsats utan i avståndet mellan din exponering och din ruin. Slutligen: linjen i finanshistorien går från Ranieris pengamaskin via Meriwethers arbitragörer till 2008 — fortsätt i BOKMASTER-kursen When Genius Failed för nästa kapitel i samma berättelse, och låt Liar's Poker vara din översättningsnyckel varje gång en motpart med glittrande ögon ringer."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens händelser — AKM1-översättningen\",\"rader\":[[\"Bokhändelse\",\"Lärdom\",\"AKM1-verktyg\"],[\"Spelet Liar's Poker\",\"informationsskillnad som råvara\",\"motpartsperspektivet\"],[\"Miljonhanden\",\"asymmetri och när man vägrar spela\",\"marginal of safety (princip)\"],[\"Ranieris pengamaskin\",\"marknadsbygge utan patentskydd\",\"V15, V16, V07, V13-frånvaro\"],[\"»The story«-försäljningen\",\"produkter som berättelser\",\"V17, V16, V07\"],[\"Howie Rubin\",\"bonusoption på bolagets kapital\",\"V17, V10, V19\"],[\"Kraschen 1987\",\"likviditet som försvinner\",\"V11, V12, V18\"],[\"Salomons fall\",\"förtroende och regulatorisk katalysator\",\"V14, V18, V19\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du kan inte sluta spela mot banker — finans är inte ett val utan en miljö. Men du kan vägra spela deras spel: marginal of safety är rätten att ha fel, och incitamentsläsningen är kartan över var motparten står."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din motparts-databas: för varje finansiell relation du har (bank, mäklare, fond, försäkring) skriv en rad — deras incitament / din risk / din exit. Upprepa årligen. Ta sedan listan från kapitel 1 (där motparten vet mer än du) och markera vilka relationer som nu har en motstrategi — och vilka som fortfarande står obrutna."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den bästa förutsägaren av hur en motpart kommer att bete sig — enligt kursens genomgående tema?",
+          "alternativ": [
+            "Personens karaktär och rykte",
+            "Firmans marknadsföring och värdegrund",
+            "Historisk avkastning i deras fonder",
+            "Vad som belönas i deras avtal och bonussystem — incitamenten (V17)"
+          ],
+          "ratt": 3,
+          "tips": "Läs styrsignalerna, inte självbilden — beteende följer belöningen."
+        },
+        {
+          "q": "Vad betyder »marginal of safety« i denna kurs — utan siffra?",
+          "alternativ": [
+            "En fast procentsats under beräknat värde, alltid 30 procent",
+            "En stop-loss-order på varje position",
+            "Att alltid behålla 50 procent kontanter",
+            "Rätten att ha fel — avståndet mellan din exponering och din ruin, så att tvång och hävstång inte kan slå ut dig"
+          ],
+          "ratt": 3,
+          "tips": "Det är en hållning snarare än en siffra — Gutfreunds tack till miljonhanden i praktik."
+        },
+        {
+          "q": "Vilken fortsättningskurs bygger direkt vidare på Liar's Poker-personerna?",
+          "alternativ": [
+            "Security Analysis — om Graham och Dodd",
+            "When Genius Failed — om LTCM, Meriwethers arbitragörer och kollapsen 1998",
+            "The Intelligent Investor-kursen om indexfonder",
+            "Japanese Candlestick Charting"
+          ],
+          "ratt": 1,
+          "tips": "Samma människor, större hävstång — nästa akt i samma tragedi."
+        }
+      ]
+    }
+  ]
+}

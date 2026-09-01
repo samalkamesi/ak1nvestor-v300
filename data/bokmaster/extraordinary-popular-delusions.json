@@ -1,0 +1,882 @@
+{
+  "slug": "extraordinary-popular-delusions",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 12,
+  "totalMinutes": 130,
+  "title": "Extraordinary Popular Delusions — Mackay: KOMPLETT",
+  "summary": "Charles Mackays Extraordinary Popular Delusions and the Madness of Crowds (1841) är ursprungstexten om massans galenskap: tulpanmanin i Holland 1636–37, John Laws Mississippi-system i Paris 1719–20 och South Sea Bubble i London 1720 — tre finansmanier som Mackay läste som varianter av samma psykologi. Kursen går igenom bokens tre kärnkapitel med dess bästa citat intakt, mappar varje skede på AK1TS:s cykel-vokabulär EUFORI→PANIK och på AKM1:s faktorer (V04–V06 som berättelsens pris, V12 som intäktskvalitet, V18–V20 som systemets ventiler), och ägnar ett helt kapitel åt kontroversen: Peter Garbers forskning om de optionsliknande tulpankontrakten och Anne Goldgars källkritik av de mest kända anekdoterna. Där Mackay hade rätt — mönstret eufori, krasch, domstol går igen varje sekel — och där eftertiden blåste upp hans berättelse.",
+  "minutes": 10,
+  "xp": 1800,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för bokens tre finansmanier i Mackays egen version — tulpanerna (Semper Augustus, värdshushandeln, domstolarnas hasard-domar efter kraschen), Mississippi (John Law, pappersmyntet, rue Quincampoix, 300 000 nya aktier à 5 000 livres och kollapsen sommaren 1720) och South Sea (statskulden som byttes mot aktier, Sir John Blunt, de 86 bubblorna, Newtons 20 000 pund) — citera nyckelpassager från 1841 års original, förklara massans tre motorer imitation, auktoritetstro och berättelsens makt, skilja Mackays styrka (mönstret som återkommer 1929, 2000, 2008, 2021) från hans överdrifter (Garbers optionsargument, Goldgars källkritik av pampfletternas anekdoter) och omsätta allt i AKM1-V-språk: vad V19:s emission i eufori, V12 intäktsstabilitet, V04–V06 värderingsankare och marginal of safety utan siffra lär av 1637, 1720 och därefter.",
+  "why": "Ingen bok har levererat fler varningsbilder till finansspråket än denna: guldlocket som hänger framför folket, flugorna kring honungskrukan, massan som återfår förståndet en i taget. Men ingen bok har heller missbrukats fler gånger — tulpanmanin är lika mycket en myt som en händelse, och kursen visar skillnaden. Detta är grundvalen för allt i AK1A som rör sentiment och cykler: AK1TS:s EUFORI→PANIK-vokabulär är i praktiken Mackay operationaliserad, och kontroverskapitlet lär den kritiska hållning som skiljer en analytiker från en anekdotberättare.",
+  "chapters_list": [
+    "1. Boken som såg massan först — Mackay 1841",
+    "2. Massans tre motorer — imitation, auktoritet och berättelsen",
+    "3. Tulpanmania I — blomman som blev status (1593–1636)",
+    "4. Tulpanmania II — värdshusmarknaden och windhandel (vintern 1636–37)",
+    "5. Tulpanmania III — kraschen och domstolarna (1637)",
+    "6. Kontroversen — där Mackay hade rätt och där han överdrev",
+    "7. Mississippi I — John Law och papperspengens teori",
+    "8. Mississippi II — rue Quincampoix och euforins gata (1719)",
+    "9. Mississippi III — systemets kollaps (1720)",
+    "10. South Sea I — när statskulden blev aktier (1711–1720)",
+    "11. South Sea II — euforin, bubblorna och Newton (1720)",
+    "12. Mackays verktyg — mönstret, mätarna och marginalen"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Boken som såg massan först — Mackay 1841",
+      "intro": "År 1841 gav den skotske journalisten och sångtextförfattaren Charles Mackay ut Memoirs of Extraordinary Popular Delusions — en katalog över mänsklighetens kollektiva anfall, från korstågen till häxprocesserna. Kursen läser bokens finansiella hjärta: tulpanmanin, Mississippi-systemet och South Sea Bubble.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mackay var ingen ekonom utan en berättare med reporterns öga för det bisarra: skotte, poet, uppskattad vissångare och journalist i det viktorianska London. Boken kom i tre band 1841 och utvidgades 1852; den behandlar korstågen (massan som följer Peter Eremiten), häxmanin, alkemisterna och spåmännen — och, som bokens ekonomiska kärna, tre pengamanier: Hollands tulpaner 1636–37, Frankrikes Mississippi 1719–20 och Englands South Sea 1720. Mackay kallade dem alla samma sak: nationella delirier. Vår kurs håller sig till finanskapitlen plus den psykologiska ram de vilar på."
+        },
+        {
+          "type": "text",
+          "content": "Förordet innehåller en av finanslitteraturens mest citerade meningar. Mackay skriver 1841: »We find that whole communities suddenly fix their minds upon one object, and go mad in its pursuit« — hela samhällen fixerar sig plötsligt på ett enda föremål och blir galna i jakten på det. Och vidare: »Men, it has been well said, think in herds; it will be seen that they go mad in herds, while they only recover their senses slowly, and one by one.« Män tänker i hjordar, blir galna i hjordar, men återfår förståndet långsamt och en i taget. Notera asymmetrin — den är hela kursens klocka: EUFORI är kollektiv och snabb, återhämtningen individuell och långsam. Det är därför bottnar är processer och toppar är ögonblick."
+        },
+        {
+          "type": "text",
+          "content": "De tre manierna är inte tre slumpvisa historier utan tre byggstenar i samma mönster. Tulpanmanin är den rena tillgångsmanin: inga statliga institutioner, bara lökar, kontrakt och berättelse. Mississippi är penningmanin: John Law byggde en centralbank, ett handelsimperium och en börs som en enda maskin av papperspengar. South Sea är skuldmanin: engelska statens obligationer byttes mot aktier i ett handelsbolag vars affär var att trycka aktier. Kapitel 3–5 läser tulpanen, 7–9 Mississippi, 10–11 South Sea — och kapitel 12 sätter samman verktygen i en checklista mot AKM1:s faktorer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre manier, ett mönster\",\"rader\":[[\"Mani\",\"År\",\"Tillgång\",\"Kärnmekanism\",\"AKM1-koppling\"],[\"Tulpanmania\",\"1636–37\",\"Tulpanlökar\",\"Terminskontrakt på värdshus, handpenning, berättelse om evig efterfrågan\",\"V04, V13–V14, V19\"],[\"Mississippi\",\"1719–20\",\"Aktier och sedlar\",\"Skuld byts mot aktier, sedelpress stödjer kursen, rue Quincampoix\",\"V15, V18, V19\"],[\"South Sea\",\"1720\",\"Aktier\",\"Statskuld konverteras till aktier, teckningar i eufori, eget aktiestöd\",\"V12, V17, V19–V20\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Mackay skrev som moralist, inte som analytiker. Boken innehåller ingen enda värderingsmodell, ingen kassaflödesanalys, ingen riskberäkning — dess mätenhet är anekdoten. Det är inte en svaghet utan en avgränsning: Extraordinary Popular Delusions är ett mönsterbibliotek för sentiment, inte en manual för prissättning. AK1A:s upplägg följer den uppdelningen — Mackay levererar psykologin och cykelvokabulären (EUFORI→PANIK), AKM1:s tjugo faktorer levererar instrumenten. Den som bara läser Mackay blir underhållen och sedan ruinerad; den som mäter utan Mackay ser inte när siffrorna slutar spela roll."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner tre tillfällen i ditt liv då du gjort något mest för att andra gjorde det — ett köp, en åsikt, en modehandling. Datera dem grovt och bedöm för varje: vilken av Mackays tre motorer var starkast — imitation (alla gjorde det), auktoritetstro (någon med status sa det) eller berättelsen (det fanns en magnetisk förklaring)? Spara svaret: kapitel 2 återanvänder det när motorerna definieras, och kapitel 12 när du bygger din egen bubbelchecklista."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken tes ur förordet 1841 är bokens mest kända?",
+          "alternativ": [
+            "Att aktier alltid övervärderas på lång sikt",
+            "Att män tänker i hjordar, blir galna i hjordar men återfår förståndet långsamt, en i taget",
+            "Att centralbanker skapar alla bubblor genom räntesänkningar",
+            "Att tulpaner var en unik händelse som aldrig upprepats"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på asymmetrin mellan hur galenskapen sprids och hur förståndet återvänder."
+        },
+        {
+          "q": "Vad utgör bokens finansiella kärna?",
+          "alternativ": [
+            "Korstågen, häxprocesserna och alkemisterna",
+            "Dueller, giftmord och spådomskonst",
+            "Den stora depressionen och järnvägsmanierna",
+            "Tulpanmanin, Mississippi-systemet och South Sea Bubble"
+          ],
+          "ratt": 3,
+          "tips": "Tre händelser under två sekel, alla med pengar som föremål för det kollektiva raseriet."
+        },
+        {
+          "q": "Varför kallar kursen Mackay för mönsterbibliotek snarare än värderingsmanual?",
+          "alternativ": [
+            "Eftersom boken endast täcker tre från varandra oberoende händelser",
+            "Eftersom Mackay skrev den som lärobok i nationalekonomi",
+            "Eftersom boken innehåller anekdoter och psykologi men inga kassaflöden eller multiplar",
+            "Eftersom boken enbart handlar om religion och vidskepelse"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vad boken mäter med — vilken mätenhet använder författaren?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Massans tre motorer — imitation, auktoritet och berättelsen",
+      "intro": "Innan kursen går in i historierna behöver den bokens ram: varför blir folk galna tillsammans? Mackay ger inget formellt system, men hans tre finanskapitel roterar kring tre motorer — imitation, auktoritetstro och berättelsens makt. Kapitlen som följer visar dem i aktion.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första motorn: imitation. Mackays exempel är korstågen (en eremit sätter igång, en by följer, en kontinent följer), giftmodet vid hoven och duellerna. Men den renaste finansdemonstrationen står i South Sea-kapitlet: det var synen av parisare som slog sig rika på Mississippi som satte igång London. Mackay skriver rakt ut att det var medan folket trängdes på rue Quincampoix som de engelska direktörerna lade fram sin plan — Mississippi-systemet »inspired them with an idea that they could carry on the same game in England«. Manin smittar alltså mellan länder som en fashion, inte som ett argument: EUFORI i Paris 1719 var den direkta orsaken till EUFORI i London 1720."
+        },
+        {
+          "type": "text",
+          "content": "Andra motorn: auktoritetstro. John Laws sedlar fick värde därför att regenten stod bakom dem; South Sea-kursen fick näring av att kungahus och ministrar tog emot aktier; tulpanprisen bekräftades av notarier och värdshusnoteringar. När staten eller en institution blåser på en tillgång sjunker upplevd risk snabbare än verklig risk — det är den farligaste typen av V18-katalysator, den regulatoriska som dessutom är officiell. Modern forskning om social bevisning ger samma bild: vi lyssnar på vem som säger något nästan lika mycket som på vad som sägs. Bokens lärdom: kolla alltid vem som står som garant bakom priset — garantin är också en part."
+        },
+        {
+          "type": "text",
+          "content": "Tredje motorn: berättelsen. Tulpanernas berättelse var att hela Europas rikedom skulle samlas i Holland — Mackay återger den rak: »Every one imagined that the passion for tulips would last for ever, and that the wealthy from every part of the world would send to Holland, and pay whatever prices were asked for them.« Mississippis berättelse var Louisianas guld och en ny typ av pengar; South Seas berättelse var Sydamerikas handelsrikedomar — trots att Mackay torrt noterar att själva handeln gav bolaget »little or no augmentation of their revenues«. Berättelsen prissätts alltså utanför kassaflödena. Just där har AKM1 sina ankare: V04 P/S, V05 P/B och V06 EV/EBITDA mäter vad berättelsen kostar i förhållande till det företag som faktiskt existerar — och V01 försäljningstillväxt och V02 ARR-tillväxt är det som berättelsen så småningom måste visa i siffror för att överleva."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre motorer, tre exempel, tre mätare\",\"rader\":[[\"Motor\",\"Mekanism\",\"Exempel ur boken\",\"AKM1-länk\"],[\"Imitation\",\"Priser och deltagande sprids mellan marknader och klasser som en fashion\",\"South Sea-directörerna kopierade Laws system i England\",\"V15, V16\"],[\"Auktoritetstro\",\"Garantier och officiella signaler sänker upplevd risk mer än verklig risk\",\"Regentens rygg bakom sedlarna; kungligheter som bolagsguvernörer\",\"V17, V18\"],[\"Berättelsen\",\"En magnetisk förklaring som prissätts utanför kassaflödena\",\"Europas hela rikedom skulle samlas vid Zuiderzee\",\"V01–V02, V04–V06\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "De tre motorerna förklarar en kuriosa som annars ser orimlig ut: att EUFORI kan vända utan någon nyhet alls. Om priset bärs av smitta, auktoritet och berättelse — inte av nya kassaflöden — då kan vändningen komma av att smittan helt enkelt når mättnad: en auktion i Haarlem den 3 februari 1637 räckte. Därför mäter AK1TS berättelsens spridning och prevalens, inte dess sanningshalt. Frågan är inte om berättelsen stämmer utan hur många som redan hört den — de som redan handlat kan inte driva priset vidare."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en tillgång du följer. Skriv dess berättelse i exakt en mening — den version som används av dem som köper. Skriv därefter vad berättelsen måste visa i siffror om tolv månader (till exempel V01-försäljningstillväxt över ett visst tröskelvärde eller V02-ARR-tillväxt som gör dagens multipel rimlig) för att hålla. Lägg båda i journalen med datum: kapitel 12 återkommer till skillnaden mellan berättelsens pris och berättelsens bevis."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den direkta förebilden för South Sea-directörernas plan enligt Mackay?",
+          "alternativ": [
+            "Den holländska tulpanhandeln femtio år tidigare",
+            "John Laws Mississippi-system i Paris",
+            "Bank of Englands grundande 1694",
+            "De medeltida korstågens finansiering"
+          ],
+          "ratt": 1,
+          "tips": "Mackay placerar den engelska planen vid samma tillfälle som folket trängdes på en viss parisergata."
+        },
+        {
+          "q": "Vilken kombination kallar kursen för massans tre motorer?",
+          "alternativ": [
+            "Ränta, inflation och valutakurs",
+            "Utdelning, tillväxt och hävstång",
+            "Imitation, auktoritetstro och berättelsens makt",
+            "Girighet, rädsla och brist på utbildning"
+          ],
+          "ratt": 2,
+          "tips": "Tre mekanismer ur bokens exempel — inte tre nationalekonomiska variabler."
+        },
+        {
+          "q": "Varför kan EUFORI enligt kursen vända utan ny information?",
+          "alternativ": [
+            "Eftersom börsers alltid reagerar på räntereduktioner",
+            "Eftersom myndigheter alltid ingriper vid bestämda prisnivåer",
+            "Eftersom det aldrig händer i verkligheten",
+            "Eftersom priset bärs av smitta och berättelse som kan nå mättnad"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vad som driver priset när grunderna saknas — och om det har en naturlig takpunkt."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Tulpanmania I — blomman som blev status (1593–1636)",
+      "intro": "Tulpanen kom till Holland från det ottomanska riket i slutet av 1500-talet, och några av dess lökar utvecklade flammiga mönster som gjorde varje blomma unik. Mackay berättar hur en trädgårdsväxt blev nationens dyraste tillgång — med en prislista som fortfarande chockerar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden är avgörande för att förstå priserna. Tulpanen var exotisk import, och de mest eftertraktade varianterna — som den legendariska Semper Augustus med djupröda flammor på vit botten — fick sina mönster av ett mosaikvirus som bröt blombladens färg (det är modern växtpatologi; Mackay kände inte till orsaken). Viruset gjorde två saker: skönheten ökade och förökningen försvårades, eftersom virussmittade lökar försvagades. En Semper Augustus var därför i praktiken en unik och icke upprepningsbar upplaga — epokens handgjorda lyxobjekt. Här ligger V13-anknytningen: nya sorter var tidens intellektuella egendom, en odlingsrätt till en mutation, med samma brist och prestige som patent ger idag."
+        },
+        {
+          "type": "text",
+          "content": "Mackays noteringar är konkreta. Tulpaner såldes efter vikt i perits — en enhet mindre än ett grain. En Admiral Liefken på 400 perits värderades till 4 400 florins; en Viceroy på 400 perits till 3 000; en Semper Augustus på bara 200 perits ansågs »very cheap at 5500 florins«. År 1635, skriver Mackay, lade folk förmögenheter på 100 000 florins i fyrtio rötter. Vintern 1636 fanns enligt honom bara två Semper Augustus-lökar i hela Holland: för den i Haarlem erbjöds tolv tunnland byggnadsmark i fri och ägo — en av få anekdoter som senare forskning faktiskt kunnat spåra — och den i Amsterdam köptes för 4 600 florins, en ny vagn, två grå hästar och komplett seleverk."
+        },
+        {
+          "type": "text",
+          "content": "Vad var det som prissattes? Inte blommans skönhet i sig utan status, sällsynthet och en förväntan om framtida avkommalökar — en lök förlökar sig med sidolökar, och därmed hade en tulpan en implicit utdelning. Det gör manin till en ren V14-förvillelse: varumärkesprissättning utan varumärkeskassaflöde, premium för berättelsen om evig efterfrågan. Man kan också se den som V16-driven av produktlanseringar: varje säsong premiärvisades nya sorter, och marknaden betalade lanseringspris i förskott. Från början var det en samlarmarknad för välbeställda connaisseurer — problemet uppstod när marknaden flyttade från trädgårdarna till värdshusen, vilket är nästa kapitel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mackays noteringar vintern 1636–37\",\"rader\":[[\"Lök\",\"Vikt (perits)\",\"Pris (florins)\"],[\"Admiral Liefken\",\"400\",\"4 400\"],[\"Admiral Van der Eyck\",\"446\",\"1 260\"],[\"Childer\",\"106\",\"1 615\"],[\"Viceroy\",\"400\",\"3 000\"],[\"Semper Augustus\",\"200\",\"5 500 — och ansågs billig\"],[\"Referens 1635\",\"40 rötter\",\"100 000 florins för hela partiet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens V04-lärdom från tulpanen: en multipel behöver en nämnare. Priset per aes — vikt — var tidens värderingsmultipel, men dess nämnare, den intäktsbas den delades med, var i praktiken noll, eftersom lökens framtida sidolökar inte kunde mätas. När multiplicanden är noll eller påhittad kan multiplicern säga vad som helst, och det är precis vad som händer i varje mani: P/S utan S, evigt tillväxtantagande utan intäkt. Därför börjar AK1A varje värdering med att fastställa att nämnaren finns — först därefter har P/S, P/B och EV/EBITDA mening."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en modern tillgång där priset sätts per enhet utan kassaflöde — konstverk, samlarkort, sneakers, numrerade digitala objekt. Skriv ner: vad motsvarar perits-enheten där? Vilken av Mackays tre motorer bär priset? Och vad skulle motsvara sidolöken — den förökningsmekanism som köparen i grunden betalar för? Motivera i max tio rader och datera svaret."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför var lökar med flammiga mönster som Semper Augustus så dyra?",
+          "alternativ": [
+            "De doftade starkare än vanliga tulpaner",
+            "Ett virus gav unika mönster och försvagade samtidigt förökningen, vilket gav sällsynthet",
+            "De var förbjudna av staten och därmed svarta",
+            "De blommade hela året runt"
+          ],
+          "ratt": 1,
+          "tips": "Kombinationen av skönhet och svår förökning är nyckeln — orsaken var biologisk."
+        },
+        {
+          "q": "Vad motsvarar en tulpanlöks sidolökar i kursens analogi?",
+          "alternativ": [
+            "En implicit utdelning eller framtida avkastningsström",
+            "En skatt som staten tog ut på handeln",
+            "En försäkring mot krascher",
+            "Ett lån man tog för att köpa löken"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vad en köpare av en lök på sikt kunde få ut i avkastningsbar form."
+        },
+        {
+          "q": "Vad är kursens huvudsakliga invändning mot pris per perits som mått?",
+          "alternativ": [
+            "Vikten mättes fel eftersom vågarna var oexakta",
+            "Perits var en förbjuden måttenhet i Holland",
+            "Multipeln saknade meningsfull nämnare eftersom det inte fanns någon intäktsbas att dela med",
+            "Priserna gällde bara vanliga lökar, inte sällsynta"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad en värderingsmultipel kräver för att över huvud taget säga något."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Tulpanmania II — värdshusmarknaden och windhandel (vintern 1636–37)",
+      "intro": "Vintern 1636–37 flyttade tulpanhandeln från trädgårdar och börs till tavernorna, där klubbar av handlare noterade kontrakt över middag. Mackay beskriver hur en samlarmarknad blev ett spekulationskasino — med deltagare från adel till sotare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mackay beskriver infrastrukturen med reporterns precision. Handeln blev så omfattande att en egen rättsordning behövdes: särskilda notarier och skrivare anställdes enbart för blomsterhandelns räkning — »The designation of public notary was hardly known in some towns, that of tulip-notary usurping its place«. I städer utan börs valdes huvudvärdshuset som show-plats: »In the smaller towns, where there was no exchange, the principal tavern was usually selected as the 'show-place', where high and low traded in tulips, and confirmed their bargains over sumptuous entertainments.« Middagar med två, trehundra deltagare och krukor med blommande tulpaner på borden. Noteringarna som kursen citerade i förra kapitlet är just värdshusmarknadens priser, inte trädgårdens."
+        },
+        {
+          "type": "text",
+          "content": "Kontrakten var terminer: köp idag, leverans vid säsongens slut, löken ofta fortfarande i säljarens jord. Modern forskning (Peter Garber) har påpekat att handeln med successiva motparter — kedjor av löften om lökar som knappt existerade — kallades windhandel, vindhandel: man handlade med luft. Kärnan i manin fångar Mackay i bokens mest citerade passage: »A golden bait hung temptingly out before the people, and one after the other, they rushed to the tulip-marts, like flies around a honey-pot.« Och vem som deltog: »Nobles, citizens, farmers, mechanics, sea-men, footmen, maid-servants, even chimney-sweeps and old clothes-women, dabbled in tulips.« När sotare och tjänsteflickor blir motparter är smittan total — AK1TS:s EUFORI-steg är uppnått."
+        },
+        {
+          "type": "text",
+          "content": "Betalningen skedde ofta i natura. Mackay återger den samtida listan för en enda Viceroy-lök: två last vete, fyra last råg, fyra oxar, åtta svin, tolv får, två oxhuvud vin, fyra tunnor öl, två tunnor smör, tusen pund ost, en komplett säng, en dräkt kläder och en silverbägare — sammanlagt 2 500 florins, ett helt gårdsbruk räknat i reala tillgångar. Och sedan matrosen: en köpman får nyheten att en skeppslast anlänt från Levanten och belönar budbäraren med en rödsill till frukost — mannen stoppar i stället den lök som ligger på disken i fickan och äter den på kajkanten. Löken var en Semper Augustus värd tre tusen florins, omkring 280 pund sterling; middagen, skriver Mackay, hade kunnat bespisa prinsen av Oranien och hela hovet. Matrosen sattes i fängelse, anklagad för stöld. Anekdoten är osannolik — kapitel 6 återkommer till den — men som bild av priset är den exakt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"En Viceroy-lök, betald i natura — Mackays lista\",\"rader\":[[\"Artikel\",\"Värde (florins)\"],[\"Två last vete\",\"448\"],[\"Fyra last råg\",\"558\"],[\"Fyra feta oxar\",\"480\"],[\"Åtta feta svin\",\"240\"],[\"Tolv feta får\",\"120\"],[\"Två oxhuvud vin\",\"70\"],[\"Fyra tunnor öl\",\"32\"],[\"Två tunnor smör\",\"192\"],[\"Tusen pund ost\",\"120\"],[\"En komplett säng\",\"100\"],[\"En dräkt kläder\",\"80\"],[\"En silverbägare\",\"60\"],[\"Summa\",\"2 500\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "V19-lärdomen från värdshuset: handpenning är inte pris utan hävstång. Enligt senare forskning kunde kontraktspositioner kontrolleras mot en deposition om några procent av kontraktsvärdet — vilket betyder att de noteringar vi läser som pris egentligen var premie på exponering, inte betalning för tillgången. Samma förväxling återkommer i varje mani: när insatsen är liten blir den nominella prisnivån meningslös som värdeindikator och meningsfull bara som mått på riskaptit. Om en position kan tas för fem procent av noteringen talar inte noteringen om vad något är värt — bara om hur långt smittan hunnit."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna: om du kan kontrollera 100 000 kronors exponering med 5 000 i deposition, hur många sådana positioner bär en portfölj på 50 000 kronor? Skriv ner multipeln och jämför med en tulpanhandlare med 100 florins i handpenning och kontrakt på tusentals florins. Slutsatsen ska formuleras som en mening om V19 och depositionens relation till verklig risk — notera den i journalen inför kapitel 9."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Var utspelade sig den organiserade tulpanhandeln vintern 1636–37 enligt Mackay?",
+          "alternativ": [
+            "På den reglerade börsen i Amsterdam med statlig tillsyn",
+            "På värdshus i städer utan börs, med tulpan-notarier och middagar",
+            "I trädgårdarna hos odlarna i Haarlem",
+            "På kungliga auktioner i Haag"
+          ],
+          "ratt": 1,
+          "tips": "Mackay betonar att det saknades börs i de mindre städerna — vad tog dess plats?"
+        },
+        {
+          "q": "Vad innebar begreppet windhandel?",
+          "alternativ": [
+            "Att lökarna skadades av frost och blev värdeförda",
+            "Att segelfartyg användes för import från Levanten",
+            "Att man handlade med löften om lökar som ofta inte ens fanns i mark — handel med luft",
+            "En skatt på blomsterhandel som togs ut i vin"
+          ],
+          "ratt": 2,
+          "tips": "Namnet är en metafor för vad kontrakten faktiskt innehöll."
+        },
+        {
+          "q": "Vad betydde de små handpenningarna enligt kursens V19-läsning?",
+          "alternativ": [
+            "Att noteringarna var premie på exponering snarare än pris för tillgången",
+            "Att lökarna var billigare än man trodde",
+            "Att staten subventionerade handeln",
+            "Att kontrakten var helt riskfria för köparna"
+          ],
+          "ratt": 0,
+          "tips": "Skilj på vad man betalar in och vad man förbundit sig att betala."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Tulpanmania III — kraschen och domstolarna (1637)",
+      "intro": "I februari 1637 vände marknaden på några dagar. Det som följde — klagomålen, deputerade, domstolar som vägrade döma — är kursens första fullständiga genomgång av efterspelet efter en bubbla, från EUFORI genom PANIK till domstolarnas viskande avslut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mackay fångar vändningen psykologiskt, inte kronologiskt: »At last, however, the more prudent began to see that this folly could not last for ever... As this conviction spread, prices fell, and never rose again. Confidence was destroyed, and a universal panic seized upon the dealers.« Paniken var total. A hade köpt tio Semper Augustini av B till 4 000 florins stycket med leverans om sex veckor; när priset fallit till tre, fyra hundra vägrade A ta emot lökarna eller betala skillnaden. Defaulter kungjordes dag efter dag i alla Hollands städer; människor som månaden före inte trott att fattigdom existerade satt med lökar ingen ville köpa ens till en fjärdedel av inköpspriset. Modern forskning (Posthumus, Goldgar) kan datera brottet: den 3 februari 1637 misslyckades en ordinär auktion i Haarlem — partierna hittade inga köpare, och inom veckor låg priserna på vanliga lökar på bråkdelar av toppnoteringarna."
+        },
+        {
+          "type": "text",
+          "content": "Klagomålen var omedelbara och väldokumenterade hos Mackay — »The language of complaint and reproach was in every body's mouth, and all the meetings were of the most stormy character«. Lökarägarna i städerna höll offentliga möten och skickade deputerade till Amsterdam för att begära statlig bot. Regeringen vägrade ingripa men uppmanade parterna att komma överens. Deputerades kompromiss blev: kontrakt tecknade före november 1636 förklaras ogiltiga; senare kontrakt kan hävas mot tio procent av kontraktssumman till säljaren. Ingen blev nöjd — Mackay påpekar det fatala i matematiken: en lök som en gång noterats till 6 000 florins gick nu att få för 500, så tio procent var mer än lökens verkliga värde. Missnöjet blev totalt på båda sidor, vilket är efterspelets viktigaste lag: när priset är borta finns ingen rättvis fördelning kvar."
+        },
+        {
+          "type": "text",
+          "content": "Domstolarna visade sig vara manins sista instans — genom att inte vara det. Amsterdams domare vägrade enigt att gripa in med motiveringen att »debts contracted in gambling were no debts in law« — spelkulder är inga kulder i lagens mening. Ärendet hänsköts till provinsrådet i Haag, som övervägde i tre månader och sedan förklarade sig inte kunna fatta något slutgiltigt beslut; man nöjde sig med ett förfarande där säljaren skulle erbjuda lökarna in natura inför vittnen och därefter kunna auktionsutslag mot köparen. Ingen domstol i Holland verkställde. Modern forskning (Garber, med stöd av Staten av Hollands dekret den 27 april 1637) har visat att lösningen blev att kontrakten i praktiken förvandlades till optioner: köparen kunde häva mot en avgift omkring 3,5 procent — kapitel 6 återkommer till vad det gör med prisanalysen. Mackay själv summerar: »the commerce of the country suffered a severe shock, from which it was many years ere it recovered« — en slutsats som senare forskning starkt ifrågasatt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från krasch till domstol — 1637 års efterspel\",\"rader\":[[\"Tidpunkt\",\"Instans\",\"Beslut och verkan\"],[\"3 februari 1637\",\"Auktion i Haarlem\",\"Partier utan köpare — marknaden bryter, priserna kollapsar inom veckor\"],[\"Februari–mars 1637\",\"Deputerade i Amsterdam\",\"Kontrakt före nov 1636 ogiltiga; senare hävbara mot 10 procent — ingen nöjd\"],[\"Våren 1637\",\"Amsterdams domstol\",\"Vägrar ingripa: spelkulder är inga lagliga skulder\"],[\"27 april 1637\",\"Staten av Holland (modern forskning)\",\"Kontrakten blir i praktiken optioner — hävning mot cirka 3,5 procent av kontraktet\"],[\"Sommar 1637\",\"Provinsrådet i Haag\",\"Tre månaders överläggning, inget slutgiltigt beslut; in natura-förfarande\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens V11-lärdom: likviditet är inte bara djup i orderboken — den är rättslig. En marknad består av tre lager: köpare och säljare, verkställbara kontrakt och domstolar som håller motparten ansvarig. I februari 1637 försvann det första lagret på en eftermiddag; det andra och tredje visade sig aldrig ha funnits på värdshuset. När du idag bedömer en illikvid tillgång — ett onoterat lån, en småbolagsaktie, en alternativ tillgång — fråga: vad är min domstol om motparten inte betalar? Likviditet utan verkställighet är bara en notering."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv tre villkor som du skulle kräva i ett bilateralt avtal med en motpart — ett om säkerhet eller deposition, ett om tvistlösning och forum, ett om hävning och avgift. Testa varje villkor mot Haarlem 1637: hade det ändrat utfallet för en köpare med kontrakt på tio Semper Augustini? Motivera kort och datera."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur motiverade Amsterdams domare sin vägran att verkställa tulpankontrakten?",
+          "alternativ": [
+            "Att kontrakten saknade notariestämpel",
+            "Att skulder ingångna i spel inte är några skulder enligt lag",
+            "Att staten redan betalat ut kompensation",
+            "Att utländska köpare saknade talerätt"
+          ],
+          "ratt": 1,
+          "tips": "Domarna likställde handeln med en verksamhet lagen traditionellt vägrar skydda."
+        },
+        {
+          "q": "Vad blev den praktiska lösningen enligt modern forskning om dekretet i april 1637?",
+          "alternativ": [
+            "Alla kontrakt förklarades fullt verkställbara till toppnoteringarna",
+            "Staten löste in lökarna till halva pris",
+            "Kontrakten förvandlades i praktiken till optioner — köparen kunde häva mot en avgift på cirka 3,5 procent",
+            "Handeln förbjöds och lökarna förstördes"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad en fast avgift gör med köparens maximala förlust."
+        },
+        {
+          "q": "Vad innebär kursens V11-lärdom från efterspelet?",
+          "alternativ": [
+            "Att likviditet också är rättslig — utan verkställbara kontrakt och domstol finns ingen riktig marknad",
+            "Att likviditet bara handlar om antalet aktörer",
+            "Att värdshus var olämpliga handelsplatser av akustiska skäl",
+            "Att tulpaner var för billig likviditet"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vilka lager en marknad egentligen vilar på bortom köpare och säljare."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Kontroversen — där Mackay hade rätt och där han överdrev",
+      "intro": "Detta är kursens obligatoriska kontroverskapitel. Mackay skrev moraliskt: massan är galen. Modern forskning har nyanserat honom — Peter Garber om kontraktens struktur, Anne Goldgar om källorna. Frågan är inte vem som har rätt, utan vad varje hållning lär en analytiker.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först källkritiken — historiografiens egen bubbla. Mackay skrev tvåhundra år efter händelserna och byggde sin tulpanframställning i stor utsträckning på Johann Beckmanns historik och på den pamflettlitteratur som trycktes i Holland 1637, det vill säga satiriska sånger och nidskrifter skrivna av förlorare som hånade vinnare. Anne Goldgar (Tulipmania, 2007) granskade arkiven: antalet aktiva handlare var litet — några hundra i Haarlem, inte en hel nation — förlusterna var verkliga men koncentrerade, ekonomin hämtade sig snabbt, och de mest berömda anekdoterna, som matrosen som åt en Semper Augustus till en rödsill, är andrahandsuppgifter som inte går att spåra i original. Mackays slutsats att Hollands handel led i åratal håller inte. Anekdoten om tolv tunnland mark för en lök är däremot en av de få som dokumenterats — myten och verkligheten är alltså blandade, och det är just blandningen som är lärdomen."
+        },
+        {
+          "type": "text",
+          "content": "Sedan Garbers invändning mot galenskapstesen. Peter Garber (Famous First Bubbles, 1989 och 2000) påpekade tre saker. För det första: priset på sällsynta, virusskadade lökar var högt både före och långt efter manin — Semper Augustus-klassens lökar förblev dyrbara samlarobjekt i decennier, så höga priser i sig bevisar ingen mani. För det andra: själva utbrottet i januari–februari 1637 gällde främst vanliga lökar i värdshusterminerna som steg omkring tjugofalt på några veckor. För det tredje — det vassaste argumentet: med den rättsliga struktur som gällde efter kraschen, där köparen kunde häva kontraktet mot cirka 3,5 procent, var positionerna optionsliknande: förlusten nedåt var begränsad till avgiften, vinsten uppåt obegränsad. Att betala höga nominella belopp för en sådan asymmetri är inte självklart irrationellt — marknadsstrukturen, inte bara galenskapen, formade priserna. Rational bubbles-debatten (Blanchard och Watson, Tirole) spänner bågen vidare: även helt rationella aktörer kan hålla en bubbla vid liv om alla tror att de kan sälja vidare till en dyrare köpare — galenskap är alltså inte nödvändig för en krasch, endast överenskommelsen om spelet."
+        },
+        {
+          "type": "text",
+          "content": "Var hade Mackay då rätt? Om mönstret. Eufori, bred delaktighet, utländskt kapital, plötslig vändning utan nyhet, domstolar och klagomål — sekvensen går igen i Mississippi och South Sea bara åratal efter varandra 1720, och därefter 1929, Japan 1989, IT-bubblan 2000, finanskrisen 2008 och spekulationerna 2021. Även hans kärnobservationer är empiriskt robusta: imitation och berättelsespridning är verkliga mekanismer — senare beteendevetenskap och narrativ ekonomi har formaliserat det Mackay skrev som anekdoter. Där han överdrev är skalorna: nationell depression, alla klasser ruinerade, galenskap som förklaring. Skillnaden är avgörande för hur kursen använder boken: mönstret är bevisat, moralen är litteratur. En analys som hänvisar till tulpaner utan att kunna redogöra för Garbers invändning är inte en analys utan en upprepad anekdot."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mackays påstående mot senare forskning\",\"rader\":[[\"Mackay 1841\",\"Senare forskning\"],[\"Hollands handel led i åratal efter kraschen\",\"Begränsade, koncentrerade förluster; ekonomin hämtade sig snabbt (Goldgar)\"],[\"Alla klasser, från adel till sotare, handlade aktivt\",\"Några hundra aktiva handlare i Haarlem; de flesta anekdoter ospårbara i arkiven (Goldgar)\"],[\"Galna priser på sällsynta lökar bevisar manin\",\"Sällsynta lökar var dyra före och efter manin — samlarmarknad (Garber)\"],[\"Kontraktspriserna var uttryck för kollektiv galenskap\",\"Optionsliknande struktur med begränsad förlust gör höga nominella pris rimliga (Garber)\"],[\"Eufori följt av krasch är ett återkommande mönster\",\"Bekräftat av 1720, 1929, 1989, 2000, 2008 och 2021\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Meta-lärdomen är den värdefullaste: berättelsen om tulpanmania var själv en bubbla. Pampfletterna blåste upp händelserna, Beckmann kopierade pampfletterna, Mackay kopierade Beckmann — och varje led lade till dramatik. För analytikern innebär det en disciplin som AKM1 bygger hela sin datahierarki på: primärkälla före sekundär, siffra före anekdot. Innan en anekdot blir ett argument i en värdering — oavsett hur väl den passar tesen — spåra den till ursprunget. De bästa varningsexemplen i historien är de som tål granskning; de som inte gör det skadar tesen de skulle stödja."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en allmän vedertagen anekdot om en marknad — till exempel att alla tjänade pengar på en viss tillgång under ett visst år. Spåra den: vem är primärkällan? Finns en siffra som visar andelen som faktiskt tjänade? Vem gynnades av att historien spreds? Redovisa dina fynd i cirka 150 ord med källhänvisning eller bristen på sådan."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Garbers invändning mot den traditionella tulpanmanin-tolkningen?",
+          "alternativ": [
+            "Att tulpanhandeln aldrig ägde rum utan uppdiktades på 1800-talet",
+            "Att viruset gjorde att lökarna inte fanns fysiskt",
+            "Att sällsynta lökar var dyra före och efter manin, och att kontraktens optionsliknande struktur gjorde höga nominella pris rimliga",
+            "Att alla priser i Holland var reglerade av staten"
+          ],
+          "ratt": 2,
+          "tips": "Garber tittar på vad kontraktet faktiskt gav köparen för risk och vad som hände med priserna före och efter."
+        },
+        {
+          "q": "Vad visade Anne Goldgars arkivgranskning bland annat?",
+          "alternativ": [
+            "Att flera hundra, inte en hel nation, handlade aktivt och att många kända anekdoter saknar ursprung",
+            "Att Mackay var närvarande i Holland 1637",
+            "Att alla förluster betalades tillbaka av staten",
+            "Att tulpanprisen var desamma före och efter kraschen"
+          ],
+          "ratt": 0,
+          "tips": "Hennes poänger rör skalan på handeln och källornas beviskraft."
+        },
+        {
+          "q": "Vad är den viktigaste skillnaden mellan rational bubbles-debatten och Mackays förklaring?",
+          "alternativ": [
+            "Rational bubbles kräver att alla aktörer är ovetande om spelet",
+            "Rational bubbles visar att galenskap inte är nödvändig — överenskommelse om att sälja vidare räcker",
+            "Rational bubbles gäller bara råvarumarknader",
+            "Mackay förutsatte rationella aktörer i alla lägen"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad som minimalt krävs för att ett pris som stiger enbart av förväntan om vidareförsäljning ska bestå."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Mississippi I — John Law och papperspengens teori",
+      "intro": "Innan South Sea fanns Mississippi: den skotske spelaren och ekonomiteoretikern John Law, som fick Frankrikes regent att pröva en idé — att pengar är förtroende, och att ett bank- och handelsimperium kan byggas på papper. Mackay berättar historien med en ambivalens som gör den unik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Law själv är bokens intressantaste gestalt. Född i Edinburgh 1671, son till en guldsmed och bankir som köpte egendomen Lauriston, matematiskt begåvad, elegant och omtyckt hos damerna — de kallade honom Beau Law medan männen hånade hans fåfänga som Jessamy John. I London blev han spelare och slogs i duell (mot en man vid namn Beau Wilson, 1694), fängslades, rymde och tillbringade år vid kontinentens spelbord, där han finslipade sannolikhetsräkningen. Han var också seriös ekonomisk teoretiker: i Money and Trade Considered (1705) föreslog han ett pappersmynt backat av jord för fattiga Skottland — förslaget avslogs. Mellan en finansministers vägran och en regents behov låg bara några år."
+        },
+        {
+          "type": "text",
+          "content": "Frankrike 1715 var en färdig kris. Mackay räknar upp siffrorna: statskulden 3 000 miljoner livres, inkomsterna 145 miljoner om året, utgifterna 142 — tre miljoner kvar att betala ränta på tre tusen. Regenten, hertigen av Orléans, grep till och med till en myntomräkning som devalverade myntfoten med en femtedel — statens egen konfiskation, noterar Mackay med ilska. I det läget erbjöd Law sitt system: 1716 Banque Générale, som gav sedlar inlösliga mot mynt; 1717 Compagnie d'Occident med monopol på handel och exploatering i det enorma Louisiana-Mississippi-området; 1718 banken kunglig — Banque Royale — med regenten som garant. Bolaget köpte skatteuppbörden, tobaksmonopolet och myntverket, och slogs successivt samman till ett enda konglomerat. I januari 1720 blev Law contrôleur général — en utlänning som Frankrikes finansminister."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen: Mississippi-systemet är V18 i sin renaste form — varje dekret var en prisrörlig katalysator, och eftersom staten var både ägare, garanti och kund var V17-avtalet (partnerskapet med staten) inte en del av affären utan hela affären. Och grunderna var på sätt och vis verkliga: bolaget kontrollerade faktiska skatteströmmar och monopol — det är därför Garber läser systemets tidiga uppgång som fundamentalt motiverad. Manin började först när berättelsen — guld och evig tillväxt i Louisiana — slet sig loss från skattematematiken. Kursen håller den gränsen på minnet genom de två nästa kapitlen: fundamentals först, eufori därefter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Systemet byggs 1715–1720\",\"rader\":[[\"År\",\"Åtgärd\",\"Funktion\"],[\"1715\",\"Frankrikes skuld 3 000 M livres; intäkter 145, utgifter 142\",\"Krisen som öppnar dörren för Law\"],[\"1716\",\"Banque Générale\",\"Sedlar inlösliga mot mynt; förtroendet byggs\"],[\"1717\",\"Compagnie d'Occident\",\"Monopol på Louisiana och Mississippi; verkliga skatte- och handelsrätter\"],[\"1718\",\"Banque Royale\",\"Banken kunglig — regentens garanti bakom sedlarna\"],[\"1719\",\"Fusioner; 300 000 nya aktier à 5 000 livres\",\"Skulden ska betalas med aktier — 1 500 M livres\"],[\"1720\",\"Law blir contrôleur général\",\"Systemets och mannens topp — och vändpunkt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Mackays mest mogna stycke är hans omdöme om Law: »John Law was neither knave nor madman, but one more deceived than deceiving, more sinned against than sinning« — varken skurk eller galning, utan mer bedragen än bedragare. Han förstod krediter bättre än någon i sin samtid, skriver Mackay, men räknade inte med hur långt både hopp och misstro kan drivas. Det är V18:s djupa läxa: regulatoriska katalysatorer är symmetriska. Samma instrument som bygger förtroende kan förstöra det — ett system vars värde vilar på en dekret dör av en dekret. Lärdomen idag: varje tillgång vars pris styrs av en reglerings- eller garantimekanism bär inbyggt i sig spegelbilden av sin uppgång."
+        },
+        {
+          "type": "utmaning",
+          "content": "List en aktuell tillgång vars pris i grunden styrs av en statsmekanism — valutor, subventionerade branscher, räntepåverkade tillgångar. Skriv en edikt-riskanalys i tre rader: vad händer med priset om regeln ändras över en natt? Vilken av Mackays tre motorer håller priset uppe idag? Datera och spara till kapitel 9."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken var kärnan i Laws monetära idé?",
+          "alternativ": [
+            "Att mynt skulle backas exklusivt av silver",
+            "Att pengar är förtroende och att sedlar backade av tillgångar kan utöka handeln och välståndet",
+            "Att all ränta skulle förbjudas",
+            "Att skatterna skulle avskaffas och ersättas med lotteri"
+          ],
+          "ratt": 1,
+          "tips": "Han var teoretiker först — vad ville hans skrift från 1705 åstadkomma?"
+        },
+        {
+          "q": "Vilken ekvation beskriver Frankrikes läge 1715 enligt Mackay?",
+          "alternativ": [
+            "Skuld 3 000 miljoner livres, intäkter 145, utgifter 142 — tre miljoner kvar för ränta",
+            "Skuld 145 miljoner, intäkter 3 000 — enormt överskott",
+            "Balanserad budget med litet underskott",
+            "Skuldfri stat med stora guldlager"
+          ],
+          "ratt": 0,
+          "tips": "Tre siffror — och skillnaden mellan de två sista är det som skriker."
+        },
+        {
+          "q": "Hur sammanfattar Mackay sin dom om Law?",
+          "alternativ": [
+            "En simpel bedragare som flydde med statskassan",
+            "En spion som arbetade för England",
+            "En galning som saknade all ekonomisk insikt",
+            "Varken skurk eller galning — mer bedragen än bedragare, som förstod krediter men inte massans hopp"
+          ],
+          "ratt": 3,
+          "tips": "Mackays formulering är förvånansvärt generös mot systemets arkitekt."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Mississippi II — rue Quincampoix och euforins gata (1719)",
+      "intro": "Hösten 1719 blev en gränd i Paris världens viktigaste adress. Mackay beskriver rue Quincampoix som ett renodlat EUFORI-laboratorium: hyror som steg månfaldigt, en skomakare som hyrde ut sitt stånd, och en puckelrygg som lånade ut sin puckel som skrivbord.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Gatan först. Rue de Quincampoix var smal och opraktisk, och olyckor inträffade ständigt för trycket från folkmassan, skriver Mackay. Hus med normal hyra på tusen livres om året gav tolv, sexton tusen. En skomakare med ett stånd i gatan tjänade omkring tvåhundra livres om dagen på att hyra ut det och tillhandahålla skrivmateriel. Och anekdoten: en puckelryggig man i gatan sägs ha tjänat stora summor på att låna ut sin puckel som skrivbord åt spekulanterna — Mackay inleder själv med »The story goes«, vilket är en av de få gånger han hederligt flaggar för att det är en historia, inte ett faktum. När trängseln blev för stor flyttade handeln till Place Vendôme med bås, tält och roulettbord mitt på torget. Nattetid rensade soldater gatan. Detta är EUFORI som urbanism: när en gatas hyror stiger månfaldigt vet du vad som prissätts — inte fastigheter utan deltagande."
+        },
+        {
+          "type": "text",
+          "content": "Sedan affären. Hösten 1719 beslutades att skapa inte mindre än 300 000 nya aktier à 5 000 livres, för att regenten skulle kunna utnyttja entusiasmen till att betala av statskulden — 1 500 miljoner livres behövdes, och Mackay noterar att tre gånger summan skulle ha tecknats om regeringen tillåtit det. Betalning togs enligt modern forskning emot i statsobligationer och skuldebrev (billets d'état), successivt: Frankrikes skuld blev bokstavligen bolagets aktier. Aktiekursen, noterar Mackay, kunde stiga tio, tjugo procent på några timmar. Hans lysande anekdot: en stor aktieägare blir sjuk och skickar sin tjänare att sälja 250 aktier till 8 000 livres stycket; när tjänaren kommer fram till Jardin de Soissons har kursen hunnit stiga till 10 000 — skillnaden, en halv miljon livres, omkring 20 000 pund, stoppar tjänaren i egen ficka och lämnar landet samma kväll. Law själv satt lugnt i sitt bibliotek och skrev brev till trädgårdsmästaren på barndomsgodset Lauriston."
+        },
+        {
+          "type": "text",
+          "content": "Kursens EUFORI-mätning på 1719: bredd (»People of every age and sex and condition in life speculated« — Mackay noterar att hela aristokratin utom hertigen av Saint-Simon och marskalk Villars handlade), emissionstakt (300 000 nya aktier är V19:s renodlade varningssignal) och reflexivitet: banken kunde emittera sedlar som stödde kursen, vilket stödde förtroendet, vilket stödde kursen — loopen som Soros senare gav namn. Ordet miljonär sägs ha myntats just här, för dem som Mississippi gjort rika. AKM1-motsvarigheten: bolagets intäkter var skatter — verkliga (en V12-typ av intäktsstabilitet, fast statlig) men köpta till ett pris som lämnade verkligheten; vid 10 000 livres var hela bolaget prissatt tiotals gånger över Frankrikes årliga intäkter, och en V15-nätverksläsning säger detsamma: bank plus bolag plus sedlar var ett nätverk vars värde föll med det första utträdet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Aktien — från 500 till 10 000 och tillbaka\",\"rader\":[[\"Tidpunkt\",\"Kursnivå (livres)\",\"Händelse\"],[\"Vår 1719\",\"cirka 500\",\"Bolaget med skattemonopol; Garber läser uppgången som fundamentalt motiverad\"],[\"Hösten 1719\",\"teckning à 5 000\",\"300 000 nya aktier; statskuld byts mot aktier; rue Quincampoix fullt\"],[\"Vintern 1719–20\",\"upp till 10 000\",\"Tjänaren med 250 aktier hann knappt gå till Jardin de Soissons före kursen\"],[\"Sommar 1720\",\"devalveras i steg\",\"Edikten sänker officiellt kursen i månadssteg; PANIK inleds\"],[\"September 1721\",\"cirka 500\",\"Tillbaka till vårens 1719-nivå (Garber) — hela manin som en spets i serien\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "V04-lärdomen från Quincampoix: jämför alltid priset med den intäktsbas som matar det. Bolagets bärande intäkt var Frankrikes skatter — 145 miljoner livres om året. Vid toppen var bolaget prissatt tiotals gånger över den basen, vilket aritmetiskt kräver att skattebasen växer lika många tiopotenser. När en tillgångs värde överstiger sin egen nämnare med en storleksordning är berättelsen det enda kvarvarande priset. Det är samma test som AKM1 tillämpar på bolag: räknerligt börsvärde mot V01-tillväxt och V03-intäktsdiversifiering — finns det en väg från här till där i siffror, eller bara i berättelsen?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på ett bolag du följer: börsvärdet dividerat med den årliga intäktsbas som faktiskt matar det — och andelen av intäkterna som är återkommande och diversifierade (V03, V12). Om multipeln av den basen vida överstiger branschens, skriv på en halv sida vad som måste hända i siffror för att rättfärdiga den. Jämför med hur 10 000 livres förhöll sig till 145 miljoner."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar hyrorna och skomakarståndet på rue Quincampoix enligt kursen?",
+          "alternativ": [
+            "Att fastighetsmarknaden i Paris var reglerad",
+            "Att det som prissattes var deltagandet i handeln, inte vanliga fastighetsvärden",
+            "Att Paris led av bostadsbrist",
+            "Att skomakare var tidens högavlönade yrke"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad en månfaldig hyrestegning i en enda gränd egentligen mäter."
+        },
+        {
+          "q": "Hur betalades de 300 000 nya aktierna hösten 1719 i huvudsak?",
+          "alternativ": [
+            "Med guld och silver som bars till banken",
+            "Med Louisiana-jordbruksprodukter",
+            "Med arbetstid i bolagets tjänst",
+            "Med statsobligationer och skuldebrev — statsskulden blev aktier"
+          ],
+          "ratt": 3,
+          "tips": "Systemets poäng var just vad skulden skulle förvandlas till."
+        },
+        {
+          "q": "Vad är kursens V19-varningssignal från 1719?",
+          "alternativ": [
+            "Emissionstakten — enorm nyemission i eufori är det mest pålitliga bubbelalarmet",
+            "Att utdelningen sänktes",
+            "Att bolaget köpte tillbaka aktier",
+            "Att aktierna blev svåra att sälja"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vem som gagnar en stor emission och när den sker i cykeln."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Mississippi III — systemets kollaps (1720)",
+      "intro": "Sommar 1720 dog världens mest avancerade finanssystem på sex månader. Mackay skildrar devalveringsedikten, köerna vid banken, kravallerna — och Law som flydde Frankrike med en diamant kvar. Detta är PANIK-fasens fulla anatomi.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vändningen kom inifrån systemet självt. Den 21 maj 1720 utfärdades ett edikt som förordnade att bolagets aktier och bankens sedlar successivt skulle minska i värde till hälften av nominellt belopp inom ett år — en kontrollerad nedgång, tänkt som landning. Utfallet blev det motsatta: rop på förräderi, parlamentet vägrade registrera ediktet, och inom sju dagar tvingades rådet upphäva sitt eget beslut. Men skadan var redan skedd — staten hade avslöjat att papperets värde var en styrfråga. Samma dag som banken stoppade inlösen mot mynt (27 maj) avskedades Law från ministeriet; när han infann sig vid Palais Royal vägrades han inträde, om kvällen släpptes han in genom en dold dörr. Kaststenar kastades mot hans vagn; hans hustru och dotter angreps i sin kalesch. Law fick schweizisk vakt och flyttade in hos regenten."
+        },
+        {
+          "type": "text",
+          "content": "Sommarens PANIK är Mackay vid sin starkaste. Köerna vid banken blev så täta att folk krossades till döds vid dörrarna; betalning gick till slut ut i koppar, och Mackay ser män slitna och svettande bära växelpengar för femtio livres genom gatorna. Den 9 juli 1720 blev trängseln vid Mazarinträdgårdarna så tät att vakterna stängde grindarna; en soldat träffad av en sten sköt in i folkmassan och en man föll död ner. Åtta dagar senare klämdes femton personer till döds vid bankdörrarna; pöbeln bar tre av liken på bårar till Palais Royal för att visa regenten vad han och Law ställt till med. Vid ett tillfälle trodde trängseln att Law satt i hans vagn — den slogs i bitar och kusken kom undan med livet. Samtidigt devalverades aktien stegvis genom edikt — kursen från omkring 9 000 ned mot 5 000 livres i månadssteg — och betalningar skulle tas emot i bolagets egna medel. En stat som tvingar sitt papper på folket ger samtidigt folket dess pris."
+        },
+        {
+          "type": "text",
+          "content": "Slutet blev en flykt. I december 1720 lämnade Law Frankrike — med regentens pass, i madame de Pries postskjuts eskorterad av sex gardesryttare, vidare till Bryssel och Venedig. Hans avskedsord till regenten är värda att minnas: »I confess that I have committed many faults. I committed them because I am a man, and all men are liable to error; but I declare to you most solemnly that none of them proceeded from wicked or dishonest motives.« Mackay noterar det som talar för hans karaktär: Law hade inte skickat kapital utomlands; hela hans förmögenhet var investerad i fransk jord, och han lämnade landet nästan utfattig med en enda diamant värd några tusen pund. Han dog i Venedig 1729. Mackays bild för systemet är oförglömlig: Law som båtkarlen på floden mot fallen — »He was the boatman, and they were the waters.« EUFORI→PANIK fullbordad: smitta, rättslig vändning, kapitalkontroller, syndabocksritual — sekvensen som upprepas varje sekel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1720 — systemets död på sex månader\",\"rader\":[[\"Datum\",\"Åtgärd eller händelse\",\"Verkan\"],[\"21 maj\",\"Edikt: aktier och sedlar ska halveras inom ett år\",\"Kontrollerad landning blir panik; ediktet upphävs inom sju dagar\"],[\"27 maj\",\"Banken stoppar inlösen mot mynt\",\"Förtroendets vändpunkt; Law avskedas och återtas via dold dörr\"],[\"1 juni\",\"Förbudet att äga mer än 500 livres i mynt hävs\",\"Försök att återföda mynthandeln\"],[\"10 juni\",\"Banken återöppnas med silver i växel\",\"Köer; utbetalning slutligen i koppar\"],[\"9 juli\",\"Kravaller vid Mazarinträdgårdarna\",\"En död av gevärsskott; åtta dagar senare klämdes femton till döds vid banken\"],[\"December\",\"Law lämnar Frankrike\",\"Postskjuts till Bryssel och Venedig; dör 1729 nästan utfattig\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "V19:s djupaste läxa: systemet dog av sitt eget botemedel. När priset inte längre bars av fundament utan av nya sedlar och nya aktier, blev varje räddningsedikt en bekräftelse på att priset var dött — nedtrappningen var en officiell deklaration av det marknaden anat. Emission i eufori är syrgas och grav i ett: den finansierar uppgången och bevisar dess beroende. Därför är V19 den enklaste och hårdaste av AKM1:s varningar — inte för att emission är fel i sig, utan för att utfärdarens behov av att emittera i eufori avslöjar var priset kommer ifrån."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera två moderna mekanismer där ny emission eller penningutvidgning stödjer tillgångspriser — exempelvis nyemission i ett hett bolagssegment eller centralbankens balansräkning. Skriv för varje: vad håller loopen uppe, och vad skulle bryta den? Jämför med 21 maj 1720: varför blev räddningen själv kraschen?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför blev 21 maj-ediktet den fatala vändningen?",
+          "alternativ": [
+            "Det ökade utdelningen på aktierna",
+            "Det nationaliserade bolaget till förmån för banken",
+            "Det tillkännagav en planerad devalvering — och bekräftade därmed att papperets värde var en styrfråga",
+            "Det förbjöd all handel med aktier permanent"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vad det gör med förtroendet när utfärdaren själv prisar ned sitt eget papper."
+        },
+        {
+          "q": "Vad hände vid banken och Mazarinträdgårdarna sommaren 1720?",
+          "alternativ": [
+            "Ordningen var välskött med utökad öppettid",
+            "Banken öppnade en filial i varje stadsdel",
+            "Alla fick full utbetalning i guld",
+            "Människor klämdes till döds i köerna och en kravall slutade med en skjuten"
+          ],
+          "ratt": 3,
+          "tips": "Mackay räknar offer — det är PANIK-fasens fysiska kostnad."
+        },
+        {
+          "q": "Hur lämnade Law Frankrike i december 1720?",
+          "alternativ": [
+            "Med en flotta lastad med guld till Skottland",
+            "Med regentens pass, i madame de Pries postskjuts, eskorterad av sex gardesryttare — nästan utfattig",
+            "Fångad och fängslad i Bastiljen",
+            "Som diplomat i officiellt uppdrag till England"
+          ],
+          "ratt": 1,
+          "tips": "Mackay noterar att han tackade nej till pengar och lämnade landet med en enda diamant."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "South Sea I — när statskulden blev aktier (1711–1720)",
+      "intro": "South Sea Company grundades 1711 på en enkel idé: ta över en bit av engelska statskulden mot handelsrättigheter. 1720 blev idén ett maskineri som bytte statens trygga obligationer mot aktier — och tjänade på mellanskillnaden. Detta är bubblan som affärsmodell.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bolaget var aldrig i grunden ett handelsbolag. Det grundades 1711 under Tory-ledaren Harley med en kapitalstock om tio miljoner pund bestående av statskuldförbindelser — finansieringen var affären från dag ett. Efter freden i Utrecht 1713 fick det asientokontraktet (transporterna till spanska Amerika) och rätt till ett handelsfartyg per år; Mackay konstaterar torrt att handeln med Sydamerika gav bolaget »little or no augmentation of their revenues« — en monetär institution i en handelsmans kläder. Detta är V17 i sin renaste form: partnerskapet med staten var inte en del av verksamheten, det var verksamheten. Decennier av krig hade byggt en statsskuld på över femtio miljoner pund, och frågan 1719–20 var vem som skulle få förvalta den: Bank of England, East India Company eller South Sea."
+        },
+        {
+          "type": "text",
+          "content": "Mississippi gav mallen — Mackay skriver att Laws system inspirerade direktörerna till att spela samma spel i England, fast klokare: de trodde sig kunna sträcka kreditens rep till dess yttersta utan att det brast. I januari 1720 lade bolaget sitt bud: att konvertera cirka 31 miljoner pund av statskulden till bolagets aktier, till villkor som underbudde Bank of England. Riksdagen godkände; att den gjorde det var inte oberoende av att aktier och förskott delats ut till ministrar, kungahusets omgivning och ledamöter — vid utredningen 1721 namnges finansministern Aislabie och sekreteraren Craggs, och Mackay redovisar korruptionen i detalj. V18 och V17 i rå form: licensen var köpt, och de som skulle vakta systemet var dess delägare."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken förtjänar exakthet, för den är moderna. Obligationsägarna bytte sina trygga, fast räntebärande annuiteter mot bolagets aktier — de tog kapitalrisk mot hoppet om kursvinst, och konverteringen var frivillig men skedde i tider av stigande kurs. Bolagets vinst låg i mellanskillnaden: aktier emitterades till kurs långt över det värde statsskulden togs in till, och spreaden var intäkten. Till det kom kontantteckningar — money subscriptions — vars inflöden kunde användas till att stödja aktiekursen, bland annat genom att bolaget lånade ut mot egna aktier och köpte eget papper. AKM1-översättningen: V12-lärdomen är att emissionsvinster är engångs- och inte återkommande intäkter; V20-spegeln är att bolag som säljer eget papper högt gör det omvända mot återköp — och gör sig beroende av euforin för sin finansiering; V19 är hela modellens pulsåder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Affärsmodellen i fyra komponenter\",\"rader\":[[\"Komponent\",\"Mekanik\",\"AKM1-länk\"],[\"Konvertering av statskuld\",\"Obligationsägare byter trygghet mot aktier — bolaget emitterar över pari\",\"V12: engångsintäkt, inte stabilt flöde\"],[\"Kontantteckningar\",\"Nyemission mot pengar i eufori-läge\",\"V19: emission i eufori som varningssignal\"],[\"Eget aktiestöd\",\"Bolaget köper och utlånar mot egna aktier för att hålla kursen\",\"V20: återköpets spegelvända missbruk\"],[\"Mutor och licens\",\"Monopol och villkor köps från beslutsfattare\",\"V17 och V18: partnerskap och regler som pris\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Konvertibelns dubbelnatur är kapitlets kärna. För staten var bytet ett sätt att sänka räntekostnaden och sträcka löptiden; för bolaget ett sätt att trycka aktier till överpris; för obligationsägaren ett sätt att byta en säker intäkt mot en osäker — just i ögonblicket då den osäkra steg snabbast. V12-frågan att ställa idag till varje bolag med lysande vinstsiffror: är intäkten återkommande verksamhet eller engångsföreteelse som emissioner, omvärderingar och tillgångsförsäljningar? South Sea var ett finansbolag som låtsades vara ett handelsbolag; differensen mellan bilden och intäktskällan är alltid där bubblan bor."
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska ett bolags senaste rapport: hur stor del av resultatet kommer från engångsposter, värdeomföringar, räntebidrag eller realisationsvinster? Klassifiera intäkterna enligt V12 (stabilitet) och notera om någon del är emissionsberoende (V19). Tre rader, med datum — du återanvänder dem i kapitel 12:s checklista."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var South Sea Companys egentliga affärsidé från grundandet?",
+          "alternativ": [
+            "Att odla tobak i Louisiana",
+            "Att bygga en engelsk centralbank",
+            "Att förvalta och omfinansiera statskuld mot handelsrättigheter — finansieringen var affären",
+            "Att gruvbryta silver i Peru"
+          ],
+          "ratt": 2,
+          "tips": "Mackay noterar att själva Sydamerikahandeln gav bolaget nästan ingenting."
+        },
+        {
+          "q": "Var låg bolagets vinst i konverteringsmekaniken?",
+          "alternativ": [
+            "I utdelningen från spanska handelsfartyg",
+            "I spreaden — aktier emitterades till kurs över det värde statskulden togs in till",
+            "I statliga jordbrukssubventioner",
+            "I valutaväxling mellan pund och livres"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad bolaget fick in och vad det gav ut — och till vilka kurser."
+        },
+        {
+          "q": "Hur relaterar bolagets aktiestöd till V20?",
+          "alternativ": [
+            "Det var återköp i modern mening och skapade värde",
+            "V20 gäller inte bolag utan bara stater",
+            "Aktiestödet skedde utan att kursen påverkades",
+            "Det var återköpets spegel — bolaget sålde eget papper högt och blev beroende av euforin för finansiering"
+          ],
+          "ratt": 3,
+          "tips": "Skilj på att köpa tillbaka eget papper billigt och att sälja det dyrt."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "South Sea II — euforin, bubblorna och Newton (1720)",
+      "intro": "Våren 1720 exploderade London: teckningar övertecknades på timmar, 86 bubbelbolag upplöstes på ett bräde, och ett okänt prospekt lovade ett företag av stor fördel — utan att någon fick veta för vad. På hösten kom räkningen, och Isaac Newton förlorade 20 000 pund.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursens våglängd. Aktien steg från omkring 128 pund i januari. Den 12 april, fem dagar efter lagens ikraftträdande, öppnades den första kontantteckningen: en miljon erbjuds till 300 procent, över två miljoner tecknades, betalning i fem ratitioner om 60 pund. Inom några dagar kurs 340; den 21 april utlovade direktörerna en tioprocentig mellandividend på alla teckningar, och strax därefter öppnades den andra teckningen till 400 procent — en och en halv miljon tecknades på några timmar. Den 3 juni, när säljarna blev fler än köparna i gränden, föll kursen från 890 till 640 på ett bräde — varpå direktörernas agenter köpte upp och kursen stängde på 750. I början av augusti nåddes omkring 1 000, och Mackay skriver meningen som alla citerar: »The bubble was then full-blown, and began to quiver and shake preparatory to its bursting.« Prinsen av Wales var guvernör i ett av bubbelbolagen och tjänade enligt Mackay 40 000 pund."
+        },
+        {
+          "type": "text",
+          "content": "Runt huvudbubblan svärmade de små. Varje kväll nya projekt, varje morgon nya, skriver Mackay; de kallades bubbles, och namnet satt. En kunglig proklamation den 11 juni förbjöd dem, och den 12 juli upplöste Lords Justices samtliga med ett slag — 86 bolag på den berömda listan: sågspånsskivor av sågspån, evighetsmaskin med kapital en miljon, försäkring av barns förmögenheter, valnötsträd från Virginia. Och mästerverket: »A company for carrying on an undertaking of great advantage, but nobody to know what it is« — ett bolag för att bedriva ett företag av stor fördel, men ingen skulle få veta vad det är. Femtusen aktier à hundra pund, deposition två pund, utlovad hundraprocentig årlig avkastning; kontoret på Cornhill öppnade klockan nio, stängde klockan tre, och mannen gick därifrån med 2 000 pund — samma kväll lämnade han landet och hördes aldrig av igen. Damerna handlade hos modisterna, männen på krogarna; samma aktie kunde i samma stund noteras tio procent skilt åt olika håll i gränden. Segeldukstillstånden — kvadrater av spelkort med vaxsigill — såldes för sextio guineas stycket."
+        },
+        {
+          "type": "text",
+          "content": "Höstens fall och efterspelet. I september noterades 700; den 8 september fylls Merchant Taylors Hall till kvävning för ett förtroendemöte — men september och oktober utplånar årets uppgång, och mot årets slut noteras aktien kring 150. Sedan kommer rättsprocesserna som Mackay följer noggrant: kassören Knight, som visste för mycket, packade böcker och handlingar och flydde i en liten båt till Calais; en kunglig proklamation utlovade 2 000 pund för hans gripande. Direktörer uteslöts ur underhuset och häktades — bland dem Edward Gibbon, historikerns farfar. Finansminister Aislabie uteslöts ur parlamentet och sattes i Towern. Sir John Blunt — ursprungligen skrivare, fromm dissentare enligt Pope — fråntogs storparten av sin förmögenhet. Och Newton: han hade sålt i april med god vinst, sett vännerna bli rikare, köpt tillbaka nära toppen och förlorade 20 000 pund. Det citat som tillskrivs honom — att han kunde beräkna himlakropparnas rörelser men inte människors galenskap — finns inte hos Mackay och är sentida tradition; förlusten däremot är dokumenterad. Det gör fallet starkare, inte svagare: det behöver ingen utsmyckning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1720 i siffror\",\"rader\":[[\"Händelse\",\"Siffra\"],[\"Första kontantteckningen (12 april)\",\"1 miljon erbjuden till 300 procent — över 2 miljoner tecknade\"],[\"Andra teckningen\",\"1,5 miljon tecknad på några timmar till 400 procent\"],[\"Prinsens vinst på bubbelbolag\",\"40 000 pund (enligt Mackay)\"],[\"Kurstoppen i augusti\",\"omkring 1 000 pund mot 128 i januari\"],[\"2 september\",\"700 pund — fallet påbörjat på allvar\"],[\"Det okända företagets dag\",\"2 000 pund på fem timmar — och flykt samma kväll\"],[\"Newtons förlust\",\"20 000 pund\"],[\"Belöning för kassören Knight\",\"2 000 pund\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Newton-fallet är kursens varnande spegel av en sanning som intelligens inte ändrar på: positionens storlek avgör, inte förståelsen. Newton förstod mekaniken bättre än någon i England — han hade ju sålt med vinst — men att se vännerna tjäna mer än han var en social kraft starkare än matematiken, och han återinträdde vid toppen. Därför formuleras marginal of safety utan siffra i AK1A: det är inte ett avstånd i procent utan en egenskap hos exponeringen — den ska överleva att du har fel, länge, och offentligt. Frågan i EUFORI är aldrig om du förstår tillgången. Frågan är vad som händer med dig om berättelsen dör i natt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din Newton-klausul: en regel på två meningar som förbjuder dig att öka en position du redan har sålt med vinst, bara för att priset gått vidare utan dig — till exempel ett krav på ny fundamentalt grundad motivering och en maximal exponeringsökning. Testa klausulen mot en verklig eller hypotetisk 1720-situation och skriv utfallet."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utlovade det berömda prospektet utan innehåll?",
+          "alternativ": [
+            "Ett företag av stor fördel som ingen skulle få veta vad det var",
+            "Evighetsmaskinen med en miljon i kapital",
+            "Sågspånsskivor av sågspån",
+            "Försäkring av barns förmögenheter"
+          ],
+          "ratt": 0,
+          "tips": "Prospektets formulering är nästan surrealistisk — och den lockade in 1 000 aktietecknare på en förmiddag."
+        },
+        {
+          "q": "Vad hände med kassören Knight efter kraschen?",
+          "alternativ": [
+            "Han blev ny styrelseordförande",
+            "Han återbetalade alla aktieägare personligen",
+            "Han utsågs till guvernör över Bank of England",
+            "Han flydde med böcker och handlingar till Calais, och 2 000 pund utlovades för hans gripande"
+          ],
+          "ratt": 3,
+          "tips": "Mackay betonar att han var bärare av direktörernas farliga hemligheter."
+        },
+        {
+          "q": "Hur presenterar kursen Newton-citatet om himlakroppar och galenskap?",
+          "alternativ": [
+            "Som Mackays egen slutsats i boken",
+            "Som ett brev i Newtons samlade verk",
+            "Som sentida tradition — citatet finns inte hos Mackay, men förlusten på 20 000 pund är dokumenterad",
+            "Som en senare insättning av South Seas direktörer"
+          ],
+          "ratt": 2,
+          "tips": "Källkritiken från kapitel 6 tillämpas även på hjältehistorierna."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Mackays verktyg — mönstret, mätarna och marginalen",
+      "intro": "Kursens sista kapitel sätter samman tre sekel till en arbetsmetod: mönstret EUFORI→PANIK som Mackay beskrev det, AKM1:s tjugo faktorer som mätinstrument, och marginal of safety utan siffra som den exponering som överlever att ha fel. En checklista du kan använda nästa gång sotaren börjar prata aktier.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först mönstrets bevisning. Tulpanen: tillgångens berättelse plus terminshandel med liten handpenning. Mississippi: ny penningteknik plus skuldkonvertering plus emission i eufori. South Sea: samma konvertering plus kontantteckningar plus bolagets eget kursstöd. Sedan repetitionen: 1929 (marginalhandel), Japan 1989 (mark och aktier mot lån), IT-bubblan 2000 (optioner och nynoteringar), 2008 (lån mot bostäder, omförpackade), 2021 (SPAC, meme-aktier, dagsoptioner). Variablerna byter namn — hävstången, emissionstakten, berättelsen och den breda delaktigheten är desamma i alla. Mackays tre motorer och AK1TS:s cykelvokabulär är samma kartas teori och praktik: EUFORI känns som normalitet inifrån, varje gång."
+        },
+        {
+          "type": "text",
+          "content": "Sedan mätarna — AKM1-V som bubbelinstrument. Värderingsankarena V04 P/S, V05 P/B och V06 EV/EBITDA säger vad berättelsen kostar i förhållande till företaget som existerar; när de förlorar kontakten med V07 bruttomarginal, V08 EBITDA-marginal och V09 ROE — med hur bolaget faktiskt förtjänar sina pengar — prissätts berättelsen ensam. V12 intäktsstabilitet skiljer återkommande flöden från South Seas emissionsvinster. V10 skuldsättningsgrad och V11 likviditet avgör vem som blir tvingad säljare i PANIK — de tvingade säljarna är bubblans bränsle på väg ned. V19 emission i eufori är den mest pålitliga signalen i hela serien från 1637 till 2021; V20 återköp är dess spegel — kontantfinansierade återköp i svaghet är anti-South Sea. V13 patent och IP, V14 varumärke, V15 nätverkseffekter, V16 produktlanseringar och V17 avtal beskriver berättelsens substans: Semper Augustus var verkligen sällsynt — det ändrade inte att priset var fel. Substans kan vara äkta och ändå felprisad; det är prisets förhållande till substansen som kräver granskning."
+        },
+        {
+          "type": "text",
+          "content": "Till sist återhämtningens klocka och marginalen. Mackays förord avslutar sin kända mening med att massan återfår förståndet långsamt, en i taget — det är också beskrivningen av en botten: inte ett kollektivt uppvaknande utan en lång procession av enskilda omprövningar, där varje individuell köpare mot pris lägger en markör. Därför är bottnar utdragna och toppar ögonblick, och därför är tålamod en positionsstorleksfråga, inte en karaktärsegenskap. Marginal of safety i AK1A:s mening är utan siffra: det är rummet i exponering, balansräkning och temperament att ha fel länge utan att tvingas agera. Mackay levererar psykologin, AKM1-V levererar instrumenten, AK1TS läser cykelläget. Analysens uppgift är att mäta massans berättelse, prissätta den och överleva att komma för tidigt — ty en enda sak i finanshistorien är helt säker, och det är att man som tidig har fel länge före man har rätt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bubbelalarm — AKM1-V mot historien\",\"rader\":[[\"Faktor\",\"Fråga vid EUFORI\",\"Historiskt eko\"],[\"V04–V06\",\"Vad kostar berättelsen i multipel? Finns nämnaren?\",\"Tulpanens pris per aes utan intäktsbas\"],[\"V07–V09\",\"Hur förtjänas pengarna i marginaler och avkastning?\",\"South Sea: emission i stället för marginaler\"],[\"V12\",\"Är intäkterna återkommande eller engångs?\",\"Konverterings- och emissionsvinster 1720\"],[\"V10–V11\",\"Vem blir tvingad sälja när priset vänder?\",\"Handpenningar 1637, teckningsratitioner 1720\"],[\"V19\",\"Emitterar utfärdaren i eufori?\",\"300 000 aktier 1719, money subscriptions 1720\"],[\"V20\",\"Köper bolaget tillbaka eget papper — och med vad?\",\"South Sea köpte egna aktier för att hålla kursen uppe\"],[\"V13–V17\",\"Finns substans — och hur stor del av priset är den?\",\"Semper Augustus var äkta; priset ändå fel\"],[\"V18\",\"Vem gynnas av regeln — och vad händer när den ändras?\",\"Bubble Act, edikterna i maj 1720\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista och djupaste lärdom: bubblor är inte avvikelser från marknader utan deras mest renodlade form — en marknad där enbart berättelsen prissätts och varje instrument som kunde säga emot har kopplats ur. Därför behöver analysen alltid två ben: substansmätning genom AKM1-V och sentimentmätning genom AK1TS. Mackay utan mätning är underhållning; mätning utan Mackay är blindhet för det år då siffrorna slutar spela roll. Bokens bidrag, nära tvåhundra år gammalt, är att ha namgett mekanismen — hjordens galenskap och det långsamma, enskilda tillfrisknandet — så att vi slipper upptäcka den på nytt varje generation."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din 1637-checklista: fem ja- eller nej-frågor du ställer dig själv innan du ökar exponeringen i en marknad som stigit länge — minst en från värdering (V04–V06), en från emission (V19), en från hävstång och likviditet (V10–V11), en från intäktskvalitet (V12) och en från berättelsens spridning. Testa checklistan mot tulpanen, Mississippi och South Sea: var och en ska fallera på minst tre frågor. Datera och spara den i din journal."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken faktor pekar kursen ut som den mest pålitliga bubbel-signalen genom historien?",
+          "alternativ": [
+            "V19 — att utfärdaren emitterar nytt papper i eufori",
+            "V14 — att varumärket är starkt",
+            "V16 — att produktlanseringar kommer tätt",
+            "V13 — att patentportföljen växer"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad 300 000 aktier 1719 och kontantteckningarna 1720 hade gemensamt."
+        },
+        {
+          "q": "Vad menar kursen med att bottnar är processer enligt Mackays förord?",
+          "alternativ": [
+            "Att massan vaknar kollektivt vid en gemensam tidpunkt",
+            "Att förståndet återvänder långsamt och en i taget — enskilda omprövningar lägger bottnar",
+            "Att bottnar alltid bestäms av centralbanker",
+            "Att bottnar bara finns i råvarumarknader"
+          ],
+          "ratt": 1,
+          "tips": "Asymmetrin mellan galenskapens spridning och förståndets återkomst är nyckeln."
+        },
+        {
+          "q": "Hur definieras marginal of safety i kursens avslutning?",
+          "alternativ": [
+            "Som en fast procentsats under beräknat inneboende värde",
+            "Som ett tekniskt stop-loss-avstånd i grafen",
+            "Som förhållandet mellan utdelning och kurs",
+            "Utan siffra — som rummet i exponering och beslutsförmåga att ha fel länge utan att tvingas agera"
+          ],
+          "ratt": 3,
+          "tips": "Definitionen handlar om överlevnad, inte om ett avstånd i procent."
+        }
+      ]
+    }
+  ]
+}

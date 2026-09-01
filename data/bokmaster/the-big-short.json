@@ -1,0 +1,1074 @@
+{
+  "slug": "the-big-short",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "The Big Short — Lewis: KOMPLETT",
+  "summary": "Michael Lewis The Big Short (2010, undertitel Inside the Doomsday Machine) är den definitiva berättelsen om bostadskrisen — sedd från den osannolika minoritet som såg den komma. En enögd läkare med Aspergers, Michael Burry, köpte sina första credit default swaps på subprime redan i maj 2005; Steve Eisman med sitt FrontPoint-team, två småslantar i ett skjul i Berkeley som växt från 110 000 dollar till 30 miljoner, och Deutsche Bank-handlaren Greg Lippmann följde efter. Kursen bygger mekaniken från grunden — MBS, trancher, CDO, CDO², sintetiska CDO:er, NINJA-lån, rating-byråernas betalningsmodell och ABX-indexet — och följer de förlorade åren då shorts betalade premie, attackerades av egna investerare och såg ut att ha fel, fram till kraschen 2008 och utdelningen: 725 miljoner dollar till Burrys investerare, 135 miljoner till Cornwall och den största enskilda handelsförlusten i Wall Streets historia på motsidan.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven berätta The Big Short-historien i dess rätta siffror — Burrys första subprime-swappar i maj 2005 med Goldman Sachs som motpart, Scion Capitals 489 procent netto mellan november 2000 och juni 2008 mot omkring 2-3 procent för S&P 500, 725 miljoner dollar till investerarna och 100 miljoner till Burry själv, FrontPoints insats i miljardklassen under Morgan Stanleys paraply, Cornwall Capitals resa från 110 000 dollar i ett skjul i Berkeley till 135 miljoner, Lippmanns bonus på cirka 47 miljoner dollar 2007 och Howie Hublers nio miljarder i förlust för Morgan Stanley — och förklara mekanikerna bakom varje steg: inteckningssecuritisering, trancher och kreditvattenfallet, CDO-alcin som förvandlade BBB till AAA, CDO², sintetiska CDO:er som lät marknaden satsa många gånger på samma lån, credit default swaps, NINJA-lån och 2/28-teasers, ABX-indexet och rating-byråernas emittentbetalda affärsmodell; identifiera spekulationsmaskinens byggstenar i AKM1:s språk — V10 skuldsättningsgrad hos hushåll och banker, V11 likviditet och bankrusningar, V12 intäktsstabilitetens illusion i gain-on-sale-bokföringen, V14 varumärket AAA, V16 produktlanseringar av strukturerade produkter, V17 avtal och partnerskap med fel betalningspart, V18 regulatoriska katalysatorer som räddningar och utebliven reform, V19 kapitalförbrukning i shortets negativa carry och bankernas utspädning, V20 återköp som tömde buffertarna — plus marginal of safety som princip utan siffra; reda ut kontroversen om att shorta: Kathryn Staleys försvar från short-selling-kursen, Burrys dödshot och investeraruppror, debatten om vinst på andras olycka och svaret att shorts var obligationsmarknadens enda kvalitetskontroll, samt varför nästan alla institutioner missade bubblan — incitament, groupthink och betalningsmodellen — och varför det är så svårt att vara tidig eftersom early is the same as wrong; och tillämpa lärdomarna genom en checklista: läsa primärmaterialet, mäta hävstång och finansieringsrisk, misstro bokförd stabilitet, aldrig köpa produkter man inte förstår och storleksätta positioner så att väntan inte dödar tesen.",
+  "why": "Finansutbildningens standardberättelse om 2008 — giriga banker, dumb money, en häst som sprungit ifrån stallet — förklarar ingenting och lär ut mindre. Lewis bok förklarar något mycket farligare: hur ett helt system kan ha fel samtidigt när incitamenten pekar åt samma håll, och hur den enda kvalitetskontrollen på kreditmarknaden kom att utövas av en handfull outsiders med tjocka prospektus och lös koppling till konsensus. För AK1A-användaren är boken kärnutbildning: varje AKM1-varning om skuldsättning (V10), likviditet (V11), förfalskad intäktsstabilitet (V12) och kapitalförbrukning (V19) har sin fullständiga illustration här, från hushållets 2/28-lån till investmentbankens 30-gånger hävstång. Kursen behövs också för dess obekväma halva: shorts etik, vinsten på andras olycka, hatet och hoten mot dem som hade rätt — och den svåraste läxan av alla, att ha rätt helt enkelt inte räcker. Utan kassa, kontrakt och karaktär att vänta ut marknaden är det tidiga rätta omöjligt att skilja från det felaktiga — tills katalysatorn kommer, och då är det för sent att bygga positionen.",
+  "chapters_list": [
+    "1. Prologen — inuti dödens maskin",
+    "2. Michael Burry — det enda ögat som läste prospektusen",
+    "3. Instrumentet — credit default swaps: brandförsäkring på grannens hus",
+    "4. Maskinen — MBS, CDO, CDO² och de sintetiska sidospelen",
+    "5. Domarna som betalades av de dömda — rating-byråernas förräderi",
+    "6. NINJA-lånen — 2/28, stated income och bokföringens lögn",
+    "7. Steve Eisman — från Lomas till FrontPoint (och varför filmen kallade honom Baum)",
+    "8. Greg Lippmann och ABX — short-sidans föreläsningståg",
+    "9. Cornwall Capital — 110 000 dollar i ett skjul i Berkeley",
+    "10. De förlorade åren — att ha rätt och bli straffad",
+    "11. Las Vegas, januari 2007 — mötet med CDO-maskinen",
+    "12. Kraschen — från New Century till Lehman och utdelningen",
+    "13. Kontroversen — shorts igen: Staley, dödshoten och svaret från obligationsmarknaden",
+    "14. Arvet — bankerna som fick lyckas och din egen checklista"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Prologen — inuti dödens maskin",
+      "intro": "Michael Lewis The Big Short (2010) ställer en enda fråga om krisen 2008: vem såg den komma — och varför var det nästan bara outsiders? Svaret blev en av finanslitteraturens bästa berättelser, med undertiteln Inside the Doomsday Machine. Det här är kursens karta: fyra lag, en maskin och en kontrovers.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med frågan, för den är bokens motor. År 2008 frös världens kreditsystem, världens största banker räddades eller föll, och skattebetalarna fick notan i biljonklassen. Lewis nöjer sig inte med att beskriva kraschen — han vill veta vem som såg den komma, och varför den informationen fanns tillgänglig, i prospektus och lånedata, för alla som brydde sig om att titta efter. Svaret blev obekvämt: de som såg det var människor marknaden inte lyssnar på — en fondförvaltare med Aspergers syndrom som läste varje prospektus rad för rad, ett team av bankkritiker som gjort karriär på att misstro kredithajar, och två unga män i ett skjul bakom ett föräldrahus i Berkeley. Ingen av dem satt i maktens rum; det är därför de kunde se klart."
+        },
+        {
+          "type": "text",
+          "content": "Rollistan, med film-noteringen på plats. Michael Burry, den enöge neurologen som startade Scion Capital i november 2000 och i maj 2005 blev först i världen med att köpa credit default swaps på subprime-bolån i större skala. Steve Eisman, consumer finance-analytikern som via FrontPoint Partners — bolaget under Morgan Stanleys paraply — byggde miljardshortet tillsammans med Vincent Daniel, Danny Moses och Porter Collins. Cornwall Capital: Jamie Mai och Charlie Ledley med Ben Hockett, som växte 110 000 dollar till 30 miljoner och sedan till 135 på krisen. Och Greg Lippmann, Deutsche Bank-obligationshandlaren som reste marknaden runt och predikade shortet. I filmen från 2015 heter Eisman Mark Baum och Lippmann Jared Vennett — filmens namn är påhittade, personerna och affärerna är verkliga."
+        },
+        {
+          "type": "text",
+          "content": "Sedan maskinen, för utan den finns ingen historia. Amerikanska bolån paketerades till värdepapper (MBS), delades i risktrancher, byggdes om i flera våningar (CDO och CDO²) och kopierades syntetiskt genom sidospel — allt betygsatt AAA av byråer som betalades av emittenterna. Lewis kallar konstruktionen för en dödens maskin: den fungerade så länge huspriserna steg och förintade allt när de slutade. Under maskinens huvar fanns bränslet: lån till hushåll som aldrig haft råd att betala tillbaka — NINJA-lån med två års lockränta. När shortarna förstod att kejsaren var naken fanns instrumentet som gjorde insatsen möjlig: credit default swaps, försäkring på skulder man inte behövde äga."
+        },
+        {
+          "type": "text",
+          "content": "Kursens AKM1-lins: vi läser boken genom variablerna V10 skuldsättningsgrad (hushållens, bankernas, strukturernas), V11 likviditet (bankrusningar och illikvida markeringar), V12 intäktsstabilitet (långivarnas bokföringsillusion), V14 varumärke (AAA-stämpeln), V16 produktlanseringar (strukturproduktsfloden), V17 avtal och partnerskap (vem som betalar vem), V18 regulatoriska katalysatorer (räddningar och utebliven reform), V19 kapitalförbrukning och emissionsrisk (shortets negativa carry, bankernas utspädning) och V20 återköp (buffertar som återköptes bort) — plus marginal of safety som princip utan siffra. Bågen: kapitel 2-9 bygger människorna och mekaniken, kapitel 10-11 är de förlorade åren och Vegas, kapitel 12 kraschen, kapitel 13 kontroversen och kapitel 14 arvet."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De fyra lagen — verkliga namn, insats och resultat\",\"rader\":[[\"Aktör\",\"Bakgrund\",\"Kapital vid insatsen\",\"Resultat av shortet\"],[\"Michael Burry — Scion Capital\",\"Neurolog, value-investerare, Aspergers\",\"Fond över en halv miljard dollar, swappar i miljardklassen\",\"Cirka 725 MUSD till investerare, 100 MUSD till Burry\"],[\"Steve Eisman — FrontPoint\",\"Tidigare Oppenheimer-analytiker\",\"Team runt 700 MUSD-1 Mdr USD under Morgan Stanley\",\"Vinst i miljardklassen, ungefär 1 Mdr USD\"],[\"Cornwall Capital — Mai, Ledley, Hockett\",\"Amatörer från ett skjul i Berkeley\",\"Cirka 30 MUSD\",\"135 MUSD\"],[\"Greg Lippmann — Deutsche Bank\",\"Subprime-handlare, short-sidans predicant\",\"Bankens handelsbok\",\"Bonus cirka 47 MUSD 2007\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Krisen förstörde inte sanningen — den publicerade den bara. Informationen om att lånen var skräp stod tryckt i prospektusen hela tiden; det som saknades var incitament att läsa."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du läser vidare: skriv ner tre saker du själv äger eller överväger köpa vars underliggande innehåll du inte kan förklara på en minut — fond, strukturerad produkt, aktie i bolag du inte grävt i. Spara listan; kursen återkommer till den i kapitel 14."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Michael Lewis kärnfråga i The Big Short?",
+          "alternativ": [
+            "Hur Federal Reserve räddade bankerna 2008",
+            "Vem som såg krisen komma — och varför det nästan uteslutande var outsiders",
+            "Vilken investmentbank som var störst 2007",
+            "Hur mycket räntan sänktes efter kraschen"
+          ],
+          "ratt": 1,
+          "tips": "Läs på undertiteln igen — boken handlar om maskinen sett inifrån, inte om räddningsarbetet."
+        },
+        {
+          "q": "Filmens Mark Baum — vem är det i boken?",
+          "alternativ": [
+            "Steve Eisman, FrontPoint-analytikern med bakgrund från Oppenheimer",
+            "Greg Lippmann, Deutsche Bank-handlaren",
+            "Jamie Mai, Cornwall-grundaren",
+            "Wing Chau, CDO-chefen från Las Vegas"
+          ],
+          "ratt": 0,
+          "tips": "Filmen bytte namn på verkliga personer — men behöll deras affärer."
+        },
+        {
+          "q": "Vad syftar undertiteln Inside the Doomsday Machine på?",
+          "alternativ": [
+            "På Feds krisrum i Washington",
+            "På kärnkraftsliknelser Lewis gör om AIG",
+            "På den strukturerade kreditmaskin som bara fungerade om huspriserna steg för alltid",
+            "På byggsektorns maskinparker i Nevada"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad som krävs för att en hävstångskonstruktion ska överleva."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Michael Burry — det enda ögat som läste prospektusen",
+      "intro": "Huvudpersonen i bokens första halva är en läkare som aldrig slutade göra research. Michael Burry hade förlorat ett öga som barn, hade Aspergers, och byggde världens första stora subprime-short från ett skrivbord fullt av prospektus. Hans resa från Stanfords sjukhuskorridorer till Scion Capital är value-traditionens mest ensamma seger.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grunden, som Lewis tecknar den med värme. Burry förlorade sitt vänstra öga mot retinal cancer vid två års ålder och bar glasöga resten av livet; diagnostiserad med Aspergers som vuxen beskrev han sig själv som dålig på att läsa människor och genial på att läsa dokument. Under medicinsk tjänstgöring i neurologi på Stanford Hospital bloggade han nätter igenom om value-investering i Ben Grahams anda — med sådan skärpa att investerare som Joel Greenblatt följde bloggen. I november 2000, i skuggan av IT-kraschen, lämnade han medicinen och startade Scion Capital. Fonden växte till över en halv miljard dollar och hans självbild var gammaldags: förvaltarskapsansvar, grundlig läsning, köp av missprisade värdepapper."
+        },
+        {
+          "type": "text",
+          "content": "Sedan kom prospektusen. Från 2004 började Burry ägna nätter åt något ingen institutionell förvaltare gör: att läsa subprime-MBS fullständiga erbjudandedokument, lån för lån. Han såg att andelen farliga lån exploderade — 2/28-ARM:er med två års lockränta och därefter rörlig ränta, lån till låntagare som bara klarade teaserbetalningen, ränteswappar inbyggda så att låntagarna bar den ränterisk han själv inte ville ha. Han räknade på när lockräntan skulle slås om och insåg att default-toppen låg som en tidsinställd bomb i 2006-2007 års utbetalningar. Slutsatsen var ren value-logik: marknaden prissatte katastrofrisken nästan gratis, därför var försäkring mot den löjligt billig."
+        },
+        {
+          "type": "text",
+          "content": "Maj 2005: affären. Burry ville köpa credit default swaps på subprime-obligationer — att betala en liten årspremie för en stor utdelning om trancherna föll. Bankerna hade knappt hört talas om den här efterfrågan; Goldman Sachs blev först ut att skriva på, andra följde. Han byggde positioner med notinal i miljardklassen över handplockade trancher av sårbara emissioner. Notera den symmetriska lärdomen i AKM1:s språk: det här är omvänd V19 — han sökte en liten, förutsägbar kapitalförbrukning (premien) mot en massiv, tidsbestämd utdelning. Och som tidigare value-investerare var han tränad i V12: att aldrig tro på bokförd stabilitet förrän rådata granskats."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta porträttet med det mänskliga. Burry ställde om hela fonden till tesen — och skulle komma att betala för det socialt, finansiellt och juridiskt, med upprörda investerare, hot om stämning och senare, när historien blev känd, hat och hot mot honom och familjen. Lewis skildrar honom som beviset för att seendet inte är en gruppaktivitet: Burry kunde inte läsa rum, och det var därför han kunde läsa prospektus. Ett av bokens viktigaste porträtt: kunskap som marknaden straffar — och till slut betalar för."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Burry och Scion Capital i siffror\",\"rader\":[[\"Händelse\",\"Tidpunkt\",\"Siffra\",\"Kommentar\"],[\"Scion grundas\",\"November 2000\",\"Startkapital cirka 1 MUSD\",\"Greenblatt bland tidiga investerare\"],[\"AUM vid tesen\",\"2005-2006\",\"Över 0,5 Mdr USD\",\"Value-fond med subprime-fokus\"],[\"Första subprime-CDS\",\"Maj 2005\",\"Goldman Sachs motpart\",\"Världens första stora sådana position\"],[\"Positionens notinal\",\"2005-2007\",\"Miljardklassen\",\"Swappar på utvalda subprime-trancher\"],[\"Slutresultat\",\"2000-juni 2008\",\"489 procent netto\",\"Mot omkring 2-3 procent för S&P 500\"],[\"Vinst på shortet\",\"2007-2008\",\"Cirka 725 MUSD till investerare\",\"Plus cirka 100 MUSD till Burry personligen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Burry vann inte för att han förutsåg framtiden — utan för att han läste det som redan publicerats. Edge kan vara så enkelt som att vara den ende som öppnar dokumentet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en tillgång du äger. Leta upp det mest primära dokument du kan hitta — årsredovisning, prospektus, lånevillkor — och läs i 30 minuter utan att öppna en enda analys. Notera tre saker ingen analys du läst har nämnt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gjorde Burry unikt bland förvaltare 2004-2005?",
+          "alternativ": [
+            "Han hade störst fond i sin kategori",
+            "Han läste subprime-prospektuser lån för lån och räknade på 2/28-lånen",
+            "Han hade en insider på Moody's",
+            "Han handlade enbart guld och råvaror"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad en value-investerare gör som ingen annan orkar göra."
+        },
+        {
+          "q": "När tecknade Burry sina första credit default swaps på subprime?",
+          "alternativ": [
+            "Maj 2005, med Goldman Sachs som motpart",
+            "September 2008, när Lehman föll",
+            "Januari 2007, efter Las Vegas",
+            "Mars 1999, under IT-bubblan"
+          ],
+          "ratt": 0,
+          "tips": "Kom ihåg att det sista steget i forskningen blev affären — tre år före kraschen."
+        },
+        {
+          "q": "Vad var Burrys bakgrund innan Scion?",
+          "alternativ": [
+            "Ingenjör på Boeing",
+            "Advokat på Skadden",
+            "Medicinsk tjänstgöring i neurologi på Stanford, med value-blogg på nätterna",
+            "Obligationshandlare på Salomon"
+          ],
+          "ratt": 2,
+          "tips": "Han kom till finansen utifrån — med en blogg som visitkort."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Instrumentet — credit default swaps: brandförsäkring på grannens hus",
+      "intro": "Shortet i The Big Short var inte en aktie-short utan ett derivat: credit default swaps. Kursens tekniska kärna förklarar hur CDS fungerar, varför det lät vem som helst med ett ISDA-avtal försäkra sig mot — eller spekulera i — andras fall, och vad negativ carry gör med en fond som väntar på krasch.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken först. En credit default swap är ett tvåpartsavtal: köparen av skydd betalar en löpande premie — prissatt i punkter per år, där 100 punkter motsvarar en procent — och säljaren förbinder sig att ersätta förlusten om den underliggande obligationen eller tranchen fallerar. Det centrala för historien: köparen behöver inte äga det underliggande. Du kan köpa skydd på subprime-obligationer du aldrig haft, därför kallas det gärna brandförsäkring på grannens hus — du satsar på att grannens hus brinner. Samma underliggande, obegränsade sidospel. Det är skillnaden mot aktiemarknadens short, där utbudet begränsas av aktier i cirkulation: här kunde marknaden satsa många gånger pengarna på samma lån."
+        },
+        {
+          "type": "text",
+          "content": "Praktiskt krävdes trösklar och motparter. För att handla CDS behövdes ett ISDA-avtal — en juridisk behörighet som fondbolag utan bankbakgrund saknade, vilket senare blir avgörande för Cornwall. Bankerna å sin sida behövde hitta riskaptit på säljsidan: att sälja skydd är att skriva försäkring på subprime. Här gör Lewis narr av branschens självbild — bankerna sålde skyddet billigt inte för att de var dumma, utan för att deras modeller, baserade på historiska defaultfrekvenser och antagandet att amerikanska huspriser inte faller samtidigt överallt, sa att risken var försumbar. AIG Financial Products i London sålde skydd på de säkraste trancherna i jätteskala; Morgan Stanleys Howie Hubler skrev skydd på AAA för en slant — och hedgade det med ett eget subprime-short som var för litet. Det blev Wall Streets största enskilda handelsförlust: cirka 9 miljarder dollar."
+        },
+        {
+          "type": "text",
+          "content": "Sedan shortets grundvillkor: den negativa carryn. Varje månad du håller skyddet betalar du premie; varje månad marknaden inte kollapsar ser din avkastning sämre ut. V19 kapitalförbrukning och emissionsrisk är här bokstavlig: kapitalbränningen är premien, och om den tvingar fonden att häva positionen — eller emittera nytt kapital i botten — har tesen rätt och ändå förlorat dig pengar. Därför är sizing hela konsten: positionen ska överleva så många års premie att katalysatorn hinner anlända. Burry räknade med att 2/28-lånens omställningskurva skulle spränga trancherna runt 2007 — hans tålamodsbehov var begränsat av matematik, inte av magkänsla."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta med asymmetrin, för den är instrumentets gåva. Ett skydd på en BBB-tranch som kostar omkring en procent per år ger som värst förlusten av betalda premier — men utdelning på uppåt hundra procent av notinalen vid default. Burry förhandlade tidigt ner premierna ytterligare, ibland till en bråkdel per år. Lewis poäng, öppet återgiven: shortsiden spelade med oddsen i sin favör, longsiden med oddsen emot sig — och ändå betraktades shortarna som spelarna. Det är en tanke kursen återkommer till i kontrovers-kapitlet: vem var egentligen casinots kund?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CDS-transaktionen — kassaflöden och risker\",\"rader\":[[\"Part\",\"Gör\",\"Får\",\"Risk\"],[\"Skyddsköpare (short)\",\"Betalar årlig premie i punkter\",\"Utdelning motsvarande förlust vid default\",\"Förlorar betalda premier — dör av väntan\"],[\"Skyddssäljare (long)\",\"Skriver försäkring\",\"Premie så länge inget händer\",\"Betalar upp till 100 punkter vid default\"],[\"Dealern (bank)\",\"Matchar parter\",\"Courtage\",\"Motparts- och modellrisk\"],[\"Emittenten av underliggande\",\"Lånar ut till hushåll\",\"Ränta och avgifter\",\"Hela kedjans undergång\"],[\"Hushållet\",\"Lånar med 2/28-teaser\",\"Kontantutbetalning nu\",\"Förlorar hemmet vid omställningen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett short är inte en åsikt — det är en åsikt med hyra. Varje månad du har rätt men marknaden inte hunnit dit betalar du för rättigheten att ha rätt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på ett tankeexperiment: du kan köpa skydd på en obligationsbuffert för 1 procent per år. Hur många år orkar din kassa betala om du satsar 2, 10 respektive 50 procent av kapitalet? Vid vilken insatsningsnivå blir rätt tes ändå ruinös? Skriv ner siffrorna."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en credit default swap?",
+          "alternativ": [
+            "En aktieoption med lösenpris på index",
+            "Ett avtal där köparen betalar premie och säljaren ersätter förlust vid default på en obligation eller tranch — utan att köparen behöver äga underliggande",
+            "Ett statsobligationslån mellan centralbanker",
+            "En typ av konvertibelt lån"
+          ],
+          "ratt": 1,
+          "tips": "Fokusera på vad säljaren förbinder sig att göra — och på vem som får köpa."
+        },
+        {
+          "q": "Varför kallas CDS »brandförsäkring på grannens hus«?",
+          "alternativ": [
+            "Premien är alltid låg",
+            "Skyddet gäller bara bostäder",
+            "Köparen kan teckna skydd på tillgångar han inte äger och därmed spekulera i fall",
+            "Försäkringsbolagen krävde fastighetsbesiktning"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på skillnaden mot att shorta en aktie du lånat."
+        },
+        {
+          "q": "Vad är negativ carry i ett CDS-short?",
+          "alternativ": [
+            "Att premierna höjs varje år automatiskt",
+            "Att utdelningen betalas kvartalsvis",
+            "Att motparten kan häva avtalet när som helst",
+            "Att premien bränner kapital medan marknaden vägrar falla — rätt för tidigt kan ruinera"
+          ],
+          "ratt": 3,
+          "tips": "Koppla till V19 och frågan hur länge en tes får kosta."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Maskinen — MBS, CDO, CDO² och de sintetiska sidospelen",
+      "intro": "Bokens skräckvy är inte något enskilt bedrägeri utan en produktionslinje: bolån blev MBS, MBS blev CDO, CDO blev CDO² — och hela konstruktionen kopierades syntetiskt genom sidospel. Här bygger vi maskinen våning för våning, för att förstå hur skräp kunde bli AAA och hur samma lån kunde säljas många gånger om.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Våning ett: securitiseringen. Tiotusentals bolån samlas i en pool och delas i trancher — det finansiella vattenfallet. Alla räntebetalningar strömmar först till den säkraste tranchen (AAA), sedan nästa (AA), vidare ner till BBB och till sist en första-förlust-tranch utan betyg. Så länge hushållen betalar samlas risken i de lägre trancherna, och AAA-köparna — pensionsfonder, försäkringsbolag, utländska banker — trodde de köpt något lika tryggt som statsobligationer. Problemet: i subprime-pooler var hela vattnet smutsigt; tranchningen flyttade bara smutsen nedåt — tills nästa våning återfödde den som ren."
+        },
+        {
+          "type": "text",
+          "content": "Våning två: CDO-alcin. De svårsålda BBB-trancherna — botten på vattenfallet — samlades i nya poolar, CDO:er, och genom antaganden om diversifiering mellan pooler skrevs cirka 80 procent av den nya konstruktionen som AAA. Detta är bokens kärntrick: samma risk, samma hushåll, samma huspriser — men ny etikett. Och våning tre: CDO², CDO:er byggda på bitar av andra CDO:er, där det underliggande blivit så abstrakt att ingen ens teoretiskt kunde spåra pengarna till ett verkligt hus. Lewis skildrar öppet hur strukturerna själva slutade förstå sina produkter; maskinens förnämsta egenskap var att den var för komplex för att granskas — vilket i praktiken var dess försvar."
+        },
+        {
+          "type": "text",
+          "content": "Våning fyra, den som gör historien unik: de sintetiska CDO:erna. Med credit default swaps behövdes inga nya lån — en CDO kunde byggas av swappar på befintliga trancher, ett sidospel på sidospel. Efterfrågan på premieinkomster — viljan att sälja skydd — blev i praktiken obegränsad: samma subprime-pool kunde ligga under multiplar av sin egen notinal i utestående satsningar. Eisman räknade i boken på att marknadens satsningar på subprime översteg de underliggande lånen — kasinot hade vuxit större än hotellet. Här finns också en perverterad V15 nätverkseffekt: ju fler som handlade strukturen, desto självklarare prissattes den — likviditet och konvention blev sin egen bevisning."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-linsen på maskinen: V16 produktlanseringar — Wall Streets tillväxt 2004-2007 drevs av en flod av nya produkter vars kundnytta var oklar men vars avgifter var säkra; varje lansering (MBS→CDO→CDO²→sintetisk CDO) skapade mer volym än den förra. V10 skuldsättningsgrad — maskinen var i grunden en hävstångsmaskin: bankernas balansräkningar på uppemot 30 gånger eget kapital, plus inbyggd hävstång i strukturerna, plus hushållens. V09 ROE — tidens bankvinster såg ut som skicklighet men var i hög grad hävstång: avkastning på eget kapital skapad genom lånade pengar ser briljant ut ända tills den inte gör det. Och V17 avtal och partnerskap — hela kedjan hölls samman av avtal där betalningen gick i fel riktning, vilket kapitel 5 och 6 dissekerar."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Maskinen våning för våning\",\"rader\":[[\"Konstruktion\",\"Vad den gör med risken\",\"AKM1-notering\"],[\"MBS\",\"Samlar tusentals lån i pool med trancher\",\"Flyttar hushållsrisk till marknaden\"],[\"Tranchning (vattenfallet)\",\"AAA tar första strömmen, BBB första förlusten\",\"Fördelar — och döljer — samma underliggande\"],[\"CDO\",\"Samlar BBB-trancher, cirka 80 procent betygsätts AAA\",\"Alcin med diversifieringsantaganden\"],[\"CDO²\",\"CDO byggd på CDO-bitar\",\"Underliggande ospårbar för granskare\"],[\"Sintetisk CDO\",\"CDO vars underliggande är CDS — sidospel\",\"Samma lån, multipla insatser (V15-gemenskap)\"],[\"Credit default swap\",\"Möjliggör short utan att äga\",\"Burry och hela bokens insatsverktyg\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Maskinens genialitet var inte att den dolde risken — utan att den gjorde risken så svår att spåra att köparna fick betala för att inte behöva förstå den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram papper och rita maskinen själv från minnet: lån, pool, trancher, CDO, CDO², sintetisk version. Var du fastnar är exakt där 2007 års AAA-köpare fastnade — notera punkten."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gjorde en CDO med BBB-trancher från subprime-pooler?",
+          "alternativ": [
+            "Samlade dem och betygsatte cirka 80 procent som AAA med hjälp av diversifieringsantaganden",
+            "Konverterade dem till statsobligationer",
+            "Skickade tillbaka dem till långivarna",
+            "Raderade första-förlust-tranchen ur kedjan"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad som krävs för att tvätta botten av ett vattenfall."
+        },
+        {
+          "q": "Vad kännetecknar en sintetisk CDO?",
+          "alternativ": [
+            "Den innehåller bara statsobligationer som underliggande",
+            "Den är förbjuden enligt ISDA-avtal",
+            "Den betalar utdelning kontant vid teckning",
+            "Dess underliggande är credit default swaps — sidospel på samma lån som kunde säljas många gånger om"
+          ],
+          "ratt": 3,
+          "tips": "Nyckelordet är sidospel: behövs nya lån för att öka volymen?"
+        },
+        {
+          "q": "Vilken AKM1-variabel fångar bäst Wall Streets flod av nya strukturprodukter 2004-2007?",
+          "alternativ": [
+            "V13 patent och IP",
+            "V16 produktlanseringar",
+            "V01 försäljningstillväxt",
+            "V20 återköp"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vad som egentligen drev bankernas intäktstillväxt under perioden."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Domarna som betalades av de dömda — rating-byråernas förräderi",
+      "intro": "Utan AAA-stämpeln ingen maskin. Moodys och Standard & Poor's hade fått en halvofficiell domarställning på kreditmarknaden — samtidigt som de betalades av bankerna vars produkter de dömde. Detta kapitel förklarar betalningsmodellen, modellernas dödliga antaganden och middagen i Las Vegas där FrontPoint förstod att domarna visste.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Makten först. En AAA-betyg från Moody's eller S&P var inte en åsikt bland andra — det var en nödvändig nyckel. Pensionsfonder, försäkringsbolag och utländska institutioner hade mandat och regelverk som sa: köp bara investment grade, helst AAA. Byråerna hade denna ställning delvis genom regulatorisk design (V18): statsmaktens olika certifieringar gjorde dem till halvofficiella domare med oligopol. V14 varumärke blir därför kapitlets nyckelvariabel: byråernas produkt VAR förtroendet — det tryckta märket — och genom 2005-2007 pantade de det, lager efter lager, mot emittenternas avgifter."
+        },
+        {
+          "type": "text",
+          "content": "Sedan betalningsmodellen, bokens mest citerade strukturella problem. Rating-industrin betalades inte av dem som använde betygen utan av dem som fick dem: varje CDO-emission genererade analysavgifter till byrån. En emittent som inte fick sitt AAA hos S&P kunde gå till Moody's — konkurrensen om uppdragen drev betygen uppåt som prispress driver priser nedåt. Lewis skildrar hur byråernas modeller byggde på historisk defaultdata från en tid då subprime var en liten, strikt bransch, och på det dödliga antagandet att amerikanska huspriser inte kunde falla samtidigt i hela landet — de hade aldrig gjort det tidigare. Historiens varning: när antagandet bygger på att det aldrig hänt är sannolikheten inte noll, bara oprissatt."
+        },
+        {
+          "type": "text",
+          "content": "Middagen i Las Vegas, januari 2007. FrontPoint-teamet fick träffa en analysansvarig på Standard & Poor's, och Eisman förhörde honom om hur en produkt byggd på dåliga lån kunde få toppbetyg. Svaren han fick — om modeller, tidsbrist, och om vad som händer med den byrå som säger nej — övertygade teamet om två saker: att problemet var känt inuti byråerna, och att incitamenten gjorde det omöjligt för någon enskild att backa. Det var det ögonblicket Las Vegas-resan förvandlades från research till övertygelse. I AKM1:s språk: V17 avtal och partnerskap — granskningsrelationen hade förvandlats till försäljningsrelation, och granskaren hade blivit leverantörens partner."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta med motbilden — för kontrollen FANNS, bara inte där den borde. Bokens djupaste iakttagelse är inte att betygen var fel, utan att ingen på köparsidan gjorde jobbet: obligationsmarknaden saknar börsens arméer av aktieanalytiker, kortförsäljare och journalister som gräver i allt. Kreditmarknadens enda kvalitetskontroll blev till slut de där handfulla outsiders som läste prospektus och köpte skydd. Upton Sinclairs gamla iakttagelse — att det är svårt att få en människa att förstå något när hennes lön beror på att hon inte förstår det — sammanfattar Lewis incitamentsanalys bättre än någon regression: lönen styr seendet, i båda riktningarna."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kedjan — vem betalar vem i emissionsmaskinen\",\"rader\":[[\"Part\",\"Roll\",\"Betald av\",\"Incitament pekar mot\"],[\"Långivare\",\"Säljer lån\",\"Courtage per utbetalat lån\",\"Volym, inte kvalitet\"],[\"Emissionsbank\",\"Bygger MBS/CDO\",\"Avgifter per emission\",\"Fler emissioner, mer komplexitet\"],[\"Rating-byrå\",\"Dömer produkten\",\"Avgift från emittenten\",\"Betyg som tillfredsställer kunden\"],[\"CDO-chef\",\"Förvaltar strukturen\",\"Avgift på förvaltad volym\",\"Större strukturer, mer risk\"],[\"Köparen (AAA)\",\"Finansierar allt\",\"Sparande\",\"Förtroende för märket — inget eget gräv\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett betyg är inte analys — det är en partsinlagan från den som betalat för den. Granska alltid vem som betalat granskaren."
+        },
+        {
+          "type": "utmaning",
+          "content": "Sök upp två analys- eller granskningsrelationer i ditt liv: en kreditvärdering, en fondrecension, en oberoende granskare. Rita för varje: vem betalar, och vad händer om granskaren säger nej? Om svaret är inget — notera det."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför var rating-byråernas incitament förvridna?",
+          "alternativ": [
+            "De betalades av skattemedel",
+            "De var förbjudna att granska banker",
+            "De ägdes av hedgefonder",
+            "De betalades av emittenterna vars produkter de betygsatte — den som inte gav AAA förlorade uppdraget"
+          ],
+          "ratt": 3,
+          "tips": "Följ pengarna: vem skickar fakturan, vem mottar betyget?"
+        },
+        {
+          "q": "Vilket antagande gjorde byråernas modeller dödliga?",
+          "alternativ": [
+            "Att amerikanska huspriser inte kunde falla samtidigt i hela landet",
+            "Att räntan alltid skulle falla",
+            "Att hushåll alltid återfinansierade till lägre ränta",
+            "Att dollarn alltid stärktes"
+          ],
+          "ratt": 0,
+          "tips": "Fråga vilken historisk serie som aldrig hade visat fallet."
+        },
+        {
+          "q": "Vad blev FrontPoints slutsats efter middagen med S&P-analytikern i Las Vegas?",
+          "alternativ": [
+            "Att byråerna skulle reformeras inom kort",
+            "Att problemet var känt inuti byrån men att incitamenten omöjliggjorde motstånd",
+            "Att AAA-betygen faktiskt var försiktiga",
+            "Att de borde köpa mer AAA själva"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg vad som händer med en anställd som backar när konkurrenten tar affären."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "NINJA-lånen — 2/28, stated income och bokföringens lögn",
+      "intro": "Maskinens bränsle var lån som aldrig skulle betalas tillbaka. Här är botten av bostadskrisen: NINJA-lån, stated income, lockräntor som sprängde hushållens ekonomi vid år två — och den bokföring som fick långivarnas intäkter att se stabila ut precis när de var som mest döda.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med akronymen som blev symbol. NINJA: no income, no job, no assets — lån tecknade utan kontroll av återbetalningsförmåga. Med stated income (älskat kallade liar loans) uppgav låntagaren själv sin inkomst, ofta uppblåst av lånehandläggaren eftersom courtage betalades per utbetalat lån. 2/28-ARM:ernas mekanik: två år med teaser-ränta — ibland under två procent — sedan omställning till rörlig marknadsränta plus marginal, med ränteswappar inbyggda i trancherna som gjorde att betalningen steg när penningmarknaden steg. Följden var matematiskt förutsägbar: betalningsförmågan fanns bara under teaser-perioden. Burrys upptäckt i prospektusen var exakt detta — att det inte krävdes en recession för att lånen skulle fallera, bara att åren gick."
+        },
+        {
+          "type": "text",
+          "content": "Sedan bolånebranschen och dess spår. Långivare som Ownit — delvis ägt av Merrill Lynch, nedstängt i december 2006 — och New Century, branschens nummer två, som gick i konkurs i april 2007. Lewis skildrar en bransch där anställda med dåligt samvete slutade, de som stannade tjänade på volym, och där den som frågade om återbetalningsförmågan betraktades som ett besvärligt element. AKM1-lins nummer ett: V10 skuldsättningsgrad — på hushållsnivå. Lån på 100 procent av värdet, ibland mer med tysta andrahandslån, på hus vars pris stigit i åratal. Hushållets balansräkning var en hävstång på en enda, illikvid tillgång — och V11 likviditet saknades helt: ingen buffert, ingen reserv, ingen plan B när omställningen kom."
+        },
+        {
+          "type": "text",
+          "content": "Sedan bokföringslögnen — Vincent Daniels bidrag till historien. Som revisor på Arthur Andersen, granskare av subprime-långivare, hade han upptäckt två saker som blev FrontPoints fundament: för det första att fallissemang inte sprids jämnt utan klustrar vid månad 24, när 2/28-teasern löper ut — de senaste lånen är alltså friska tills de plötsligt inte är det. För det andra gain-on-sale-bokföringen: långivaren bokför hela den förväntade livstidsvinsten på ett lån redan vid utbetalningen. V12 intäktsstabilitet är här kursens viktigaste variabel: intäkterna ser inte bara bra ut — de ser STABILA ut, de växer ju med volymen, ända fram till dagen då kurvan vrider. En intäktsmaskin byggd på två års fördröjning mellan inkomst och sanning är definitionen på fabricerad stabilitet."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta med siffran som förklarar hela krisens tidslinje. Subprime-utlåningen exploderade 2004-2006; 2/28-lånen från 2005-2006 fick sina omställningskurvor 2007-2008. Default-vågen behövde ingen katalysator utöver kalendern. Det är därför Burry kunde sätta tidsschemat för sitt short — och därför marknadens första sprickor 2007 (New Century, Bear Stearns-fonderna) inte var oväder utan hållplatser på ett tåg som lämnat stationen två år tidigare. I AKM1:s språk: branschens V16 produktlanseringar — nya låntyper, nya program, stated income som standard — drevs av samma logik som bankernas strukturprodukter: avgifterna var säkra, riskerna var någon annans."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Låntyperna i botten av krisen\",\"rader\":[[\"Typ\",\"Mekanik\",\"Dold risk\",\"AKM1-notering\"],[\"NINJA\",\"Ingen kontroll av inkomst, jobb eller tillgångar\",\"Återbetalningsförmågan aldrig testad\",\"V10 hushållens hävstång\"],[\"Stated income\",\"Låntagaren uppgav inkomst själv\",\"Uppblåsta uppgifter, courtage-incitament\",\"V12 intäktsstabilitet (långivare)\"],[\"2/28-ARM\",\"Två års lockränta, sedan rörlig ränta\",\"Betalningschock vid månad 24\",\"Tidsinställd default-kurva\"],[\"Tyst andrahandslån\",\"Extra lån på toppen\",\"LTV över 100 procent\",\"V10, V11 — ingen buffert\"],[\"Ränteswapp i tranch\",\"Låntagaren bär ränterisken\",\"Stigande ränta ger stigande betalning\",\"Modellerna ignorerade korrelationen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Det farligaste med gain-on-sale-bokföringen är inte att den ljuger — utan att den ljuger med tid: intäkten är bokförd två år innan sanningen anländer."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en långivare eller konsumerkreditaktie du känner till. Leta i redovisningen: när bokförs vinsten — vid utlåning eller efter återbetalning? Hur reserveras fallissemang, och är kurvan jämn eller klustrad? Skriv ner slutsatsen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är ett NINJA-lån?",
+          "alternativ": [
+            "Ett lån säkrat av särskilda program",
+            "Ett lån med rörlig ränta från Japan",
+            "No income, no job, no assets — lån utan kontroll av återbetalningsförmåga",
+            "Ett lån från 1990-talets S&L-kris"
+          ],
+          "ratt": 2,
+          "tips": "Akronymen beskriver vad långivaren INTE kontrollerade."
+        },
+        {
+          "q": "Hur fungerar 2/28-lånet?",
+          "alternativ": [
+            "28 års fast ränta efter två års uppskov",
+            "Två års låg teaser-ränta som sedan stiger till rörlig marknadsränta — defaulterna klustrar vid omställningen",
+            "Räntan delas mellan två banker",
+            "Lånet är förlorat efter 28 missade betalningar"
+          ],
+          "ratt": 1,
+          "tips": "Siffrorna är antal år med lockränta och resten av lånets förutsättningar."
+        },
+        {
+          "q": "Vad hade Vincent Daniel lärt sig som revisor åt subprime-långivare?",
+          "alternativ": [
+            "Att fallissemangen klustrar vid månad 24 och att gain-on-sale-bokföringen visar vinster långt före sanningen",
+            "Att långivarna alltid reserverade för mycket",
+            "Att subprime-kunder var de säkraste",
+            "Att prospektusen var fullständiga"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad en revisor ser som ingen annan: tidpunkten mellan inkomst och förlust."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Steve Eisman — från Lomas till FrontPoint (och varför filmen kallade honom Baum)",
+      "intro": "Bokens moraliska centrum är en man som gjort karriär på att misstro kreditbranschen. Steve Eisman började som consumer finance-analytiker på Oppenheimer, lärde sig via Lomas och Household att branschens hjälte oftast är en skurk — och byggde sedan FrontPoint-teamet som kortade maskinen. I filmen heter han Mark Baum; i boken är han sig själv.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ursprunget, som Lewis berättar det med glimten. Eisman — Cornell, Harvard Law, son till föräldrar på Oppenheimer — blev analytiker som täckte consumer finance-bolag: kreditkortsbolag, studielåneaktier, konsumentutlåning. Tidigt gjorde han sig ett namn genom att våga ha sälj på bolag branschen älskade. Det stora tidiga slaget var Lomas Financial, subprime-aktören där han såg skräp i framförhållning — och som kort därefter gick i konkurs. Lärdomen som formade honom: när ett kreditbolags VD försäkrar om kvalitet är det ofta en teknisk beskrivning av redovisningen, inte av verkligheten. Eisman blev vad Lewis skildrar som en man som letade efter lögnen i siffrorna — och fann den oftare än marknaden var bekväm med."
+        },
+        {
+          "type": "text",
+          "content": "Nästa vågmästare: Household Finance. Eisman lärde genom sin hustru Valerie Feigen känna till företagets aggressiva utlåning till fattiga hushåll — det branschen kallade subprime och aktivister kallade predatorisk — och shortsade aktien medan Wall Street älskade den. Household köptes till slut av HSBC och betalade förlikningar till reglerare, men Eismans poäng överlevde: bolag som tjänar på människor som inte har råd att betala tillbaka ser underbart lönsamma ut — ända tills förlikningar, återbetalningskrav och regleringsärenden anländer. I AKM1:s språk är det en övning i V12: att skilja intäkter som är tjänade från intäkter som är låntagares förluster i förskott. Hans misstro var ingen cynisk attityd — den var metod."
+        },
+        {
+          "type": "text",
+          "content": "Sedan FrontPoint. Under Morgan Stanleys paraply byggde Eisman ett team kring vad han inte kunde göra själv: Vincent Daniel, revisorn som grävt i subprime-bokföring; Danny Moses och Porter Collins, försäljare som blivit forskare. Tillsammans åkte de 2005-2006 ut till långivare och förhörde dem — Lewis skildrar resor där de mötte branschfolk som öppet erkände att lånen var skräp men att pengarna var för bra för att sluta. FrontPoints förvaltade kapital låg i storleksordningen 700 miljoner till en miljard dollar; Morgan Stanley ägde bolaget, vilket ger en av bokens många ironier: banken som finansierade Eismans research sålde samtidigt maskinens produkter."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta med Baum-noteringen och temat. I Adam McKays film från 2015 döptes Eisman om till Mark Baum — delvis för dramatiskt utrymme, delvis för att komponera en karaktär ur flera verkliga personer; bokens Eisman är alltså verkligheten bakom filmens moralist. Hans båge i boken: från att ha shortat enskilda bolag (Lomas, Household) till att förstå att själva systemet var en enda lånkedja av Household — att den amerikanska bostadsdrömmens finansiering blivit en fälla såld som rikedom. Eisman beskriver det i bokens termer som att shorta hushållens ekonomi — att hamna på rätt sida av det kändes inte som triumf. Det är därför hans porträtt, inte Burrys, är bokens moraliska tyngdpunkt: han visste vem som betalade notan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"FrontPoint-gänget — bokens viktigaste team\",\"rader\":[[\"Namn\",\"Bakgrund\",\"Roll i tesen\"],[\"Steve Eisman\",\"Oppenheimer-analytiker, Harvard Law\",\"Teamets ledare och moraliska kompass; filmens Mark Baum\"],[\"Vincent Daniel\",\"Revisor Arthur Andersen, granskade subprime\",\"Förstod gain-on-sale och default-kurvor (V12)\"],[\"Danny Moses\",\"Säljare bliven forskare\",\"Handels- och marknadskännedom\"],[\"Porter Collins\",\"Säljare bliven forskare\",\"Research och positionering\"],[\"Backas av\",\"Morgan Stanley\",\"Ägde FrontPoint — sålde samtidigt CDO:er\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Eismans metod var enkel att beskriva och omöjlig att kopiera utan karaktär: anta att kreditbranschens vinststory är en bokföringskonst, och gräv tills motsatsen bevisats."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag vars affärsmodell du misstanker tjänar på kunder som inte har råd. Skriv tesen i två kolumner: hur intäkterna bokförs, och när kundens förlust anländer. Låt den vila till kapitel 12."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Eismans tidiga karriärslag?",
+          "alternativ": [
+            "Köptips på Microsoft under 1990-talet",
+            "Sälj på Lomas Financial — som kort därefter gick i konkurs",
+            "Grundandet av en Deutsche Bank-desk",
+            "Lång position i Goldman Sachs"
+          ],
+          "ratt": 1,
+          "tips": "Det var ett subprime-bolag och det började med en säljrekommendation."
+        },
+        {
+          "q": "Vad bidrog Vincent Daniel med till FrontPoint?",
+          "alternativ": [
+            "Kontakter på Moody's",
+            "Kapital från Morgan Stanley",
+            "Revisorsblicken: gain-on-sale-bokföring och klustrade fallissemang",
+            "Programmering av ABX-index"
+          ],
+          "ratt": 2,
+          "tips": "Han kom från granskningssidan — och hade sett tillverkningen inifrån."
+        },
+        {
+          "q": "Vilken relation hade FrontPoint till Morgan Stanley?",
+          "alternativ": [
+            "Morgan Stanley backade och ägde FrontPoint, samtidigt som banken sålde maskinens produkter",
+            "Ingen — de var helt oberoende",
+            "De var rättstvistande parter",
+            "Morgan Stanley kopierade deras short"
+          ],
+          "ratt": 0,
+          "tips": "En av bokens ironier ligger i ägarstrukturen."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Greg Lippmann och ABX — short-sidans föreläsningståg",
+      "intro": "Idén om att shorta subprime behövde en försäljare, och den hette Greg Lippmann — Deutsche Bank-handlaren som reste USA och Europa runt med en presentation om att marknaden var galen. Filmen kallade honom Jared Vennett; boken visar honom som mannen som byggde short-nätverket — och ABX-indexet blev tesens riktmärke.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vem han var. Greg Lippmann drev Deutsche Banks handel i subprime-relaterade produkter — en dealer vars affär var att förmedla risk, inte att äga den. Tillsammans med bankens kvant Eugene Xu grävde han i 2/28-data och kom till samma slutsats som Burry och Eisman: trancherna var dödsdömda och skyddet var prisvärt. Skillnaden: Lippmann satt på distributionsapparaten. Han förstod att hans egen vinst låg i att hitta köpare av skydd — motparter han kunde förmedla — och att sälja idén till varje fond i Amerika och Europa. Lewis skildrar honom som en av bokens särmaste figurer: en man med slickat hår och en föreläsning om undergång som han höll med en försäljares energi."
+        },
+        {
+          "type": "text",
+          "content": "Rundresan är i sig en finansiell läxa. Lippmann och hans team presenterade datan om lånens kvalitet, omställningsräntor och tranchstruktur för allt från små fonder till gigantiska förvaltare. Få köpte; många blev förnärmade; några — FrontPoint, Cornwall, en handfull andra — lyssnade och byggde positioner. Här finns en finurlig vändning i AKM1:s språk: en V15 nätverkseffekt på kortsidan — varje ny köpare av skydd bidrog till att prissätta informationen, spred kunskapen och gjorde marknaden lite mindre galen. Dealern som byggde sina kunders short är också en bild av hur finance faktiskt fungerar: motivationen var courtage och egen handelsvinst — men mekanismen blev informationsspridning."
+        },
+        {
+          "type": "text",
+          "content": "Sedan ABX-indexet, tesens mätinstrument. ABX var en familj av index över priset på skydd i subprime-CDS, i trancher från AAA ner till BBB — en sammanfattning av marknadens syn på subprime-krediten. Shortarnas problem 2005-2006: obligationsmarknaden vägrade röra sig, och utan rörelse inga markeringar. ABX blev riktmärket: när BBB-serien från 100 började falla under 2007 — först smygande, sedan brant — fanns en offentlig, prissatt indikator som visade att någon annan än de själva börjat tro på samma sak. För FrontPoint och Cornwall blev ABX-kurvan det bevis de kunde visa sina investerare — och sina tvivel — medan obligationspriserna ännu låg kvar."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta med siffran och ironin. Lippmann tjänade enligt boken cirka 47 miljoner dollar i bonus 2007 — på att ha rätt när hans egen arbetsgivare och hela kundbasen hade fel. Deutsche Bank tog överhuvudtaget ingen större subprime-förlust i jämförelse med konkurrenterna, delvis eftersom Lippmanns övertygelse smittade av sig på delar av huset. Hans eftermäle i boken: beviset på att det fanns människor inuti systemet som såg allt — och att systemets incitament lät dem bara agera om de samtidigt kunde tjäna på det. Det är samma dubbelthet kursen återkommer till i kontrovers-kapitlet: kvalitetskontrollen uppstod inte av plikt, utan av vinstmöjlighet."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"ABX BBB (januari 2006-serien) — ungefärligt förlopp\",\"rader\":[[\"Tidsperiod\",\"Indexnivå\",\"Marknadens budskap\"],[\"Våren 2006\",\"Cirka 97-98\",\"Lite oro, mest business as usual\"],[\"Hösten 2006\",\"Cirka 90-95\",\"Första diskussionerna om lånkvalitet\"],[\"Februari-mars 2007\",\"Cirka 65-80\",\"New Century-oro, index faller brant\"],[\"Sommaren 2007\",\"Cirka 50-60\",\"Bear Stearns-fonderna spricker\"],[\"Krisen 2008\",\"Under cirka 40\",\"Subprime som tillgångsklass svartlistad\"],[\"Notering\",\"\",\"Obligationspriserna följde efter med fördröjning — shortarnas frustration\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Index och spread är inte information — de är informationens prislapp. ABX gjorde det osynliga synligt: att marknaden redan hade börjat tro vad prospektusen sa."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta ett ledande index eller spreadmått för en marknad du följer. Skriv ner vad det faktiskt mäter, vem som sätter priserna och hur snabbt det rörde sig vid senaste chocken. Fråga: vad är dess ABX-roll i din tes?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vem var Greg Lippmann?",
+          "alternativ": [
+            "En analyschef på Moody's",
+            "Subprime-handlare på Deutsche Bank som reste runt och sålde idén om att shorta marknaden — filmens Jared Vennett",
+            "Grundare av Cornwall Capital",
+            "Eismans gamle chef på Oppenheimer"
+          ],
+          "ratt": 1,
+          "tips": "Han var dealer — och blev short-sidans predicant."
+        },
+        {
+          "q": "Vad var ABX-indexet?",
+          "alternativ": [
+            "Ett index över amerikanska aktiers volatilitet",
+            "Ett index över bostadspriser i Nevada",
+            "Ett index över priset på skydd i subprime-CDS som blev shortarnas riktmärke",
+            "En lista över rating-byråernas kunder"
+          ],
+          "ratt": 2,
+          "tips": "Fokusera på vad som prissattes — skydd, inte hus."
+        },
+        {
+          "q": "Ungefär hur stor var Lippmanns bonus 2007 enligt boken?",
+          "alternativ": [
+            "Cirka 47 miljoner dollar",
+            "Cirka 5 miljoner dollar",
+            "Cirka 900 miljoner dollar",
+            "Han fick ingen bonus"
+          ],
+          "ratt": 0,
+          "tips": "Tre år av predikande betalade sig — i den klass han arbetade."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Cornwall Capital — 110 000 dollar i ett skjul i Berkeley",
+      "intro": "Bokens roligaste och mest lärorika historia: två unga män utan finansbakgrund som startade en fond med 110 000 dollar i ett skjul bakom ett hus i Berkeley, växte den till 30 miljoner på missprissatta optioner — och sedan till 135 miljoner på krisen. Cornwall är beviset för att outsiders utan institutionell tyngd kunde se det som professionen inte såg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ursprunget, som Lewis berättar med ömhet. År 2003 öppnade Jamie Mai och Charlie Ledley ett gemensamt konto på Schwab med 110 000 dollar, i ett skjul — en carriage house — bakom föräldrahemmet i Berkeley. Ingen av dem hade finansbakgrund värd namnet; deras kapital var tid, nyfikenhet och en misstanke om att marknader prissätter osannolika utfall alltför billigt. Deras offentliga mål var modest: bygga en liten förmögenhet. Deras faktiska metod var radikal: de letade efter situationer där marknadens prissättning sa att något var nästan omöjligt som de trodde var bara osannolikt — och köpte optioner på det."
+        },
+        {
+          "type": "text",
+          "content": "Metoden i praktiken: köp missprissatt osymmetri. Det tidiga stora slaget var Capital One 2002-2003: bolaget hotades av regulatoriska problem som antingen skulle slå ut det eller bli en icke-händelse — en marknad med binärt utfall där aktien kunde dubblas eller halveras. Cornwall köpte optioner som prissatte dramat som nästan uteslutet. Dramat uteblev — aktien steg kraftigt — och optionerna multiplicerades. Genom den affären och dess syskon växte kontot: 110 000 dollar till cirka 30 miljoner på tre år. AKM1-notering: detta är V19 i sin positiva riktning — liten, avgränsad kapitalförbrukning (optionspremien) mot väldig potential, position efter position, utan att någonsin riskera ruin på en tes."
+        },
+        {
+          "type": "text",
+          "content": "Sedan steget in i det stora spelet. Cornwall förstod via Greg Lippmann på Deutsche Bank att subprime-skydd var precis deras sorts affär: prissatt som nästan omöjligt, matematiskt tidsbestämt, obegränsad på uppsidan. Problemet var trösklarna — att handla CDS krävde ISDA-avtal och en institutionell struktur de saknade. Lösningen hette Ben Hockett: f d derivathandlare från Deutsche Bank med förståelse för verktyget, som gick med i skjulsgänget och gav dem verkstaden. Via Deutsche köpte de skydd på subprime-trancher — den del av kapitalet de satte på risk var försiktig, men utdelningen blev gigantisk: 30 miljoner blev 135."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta med poängen i Lewis berättelse. Cornwall bevisar att nyckeln till att se krisen inte var insiderstatus, titlar eller tillgång till maktens korridorer — det var viljan att räkna på världen som den är och ställa de dumma frågorna (varför är detta skydd så billigt? vad händer år tre?). Lewis kontrast är medveten: ju närmare maskinens centrum aktörerna stod — banker, rating-byråer, reglerare — desto mindre såg de. Cornwalls tre män i ett skjul såg klart eftersom ingen hade berättat för dem vad de inte kunde se. Kursens AKM1-slutnotis: deras edge var procedurell blygsamhet — varje position storleksad så att ett fel bara kostade premien, aldrig fonden."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Cornwalls resa i siffror\",\"rader\":[[\"Tidpunkt\",\"Kapital\",\"Drivkraft\"],[\"2003\",\"110 000 USD\",\"Schwab-konto i skjulet i Berkeley\"],[\"2003-2006\",\"Cirka 30 MUSD\",\"Missprissatta optioner, binära utfall\"],[\"2006\",\"Anställer Ben Hockett\",\"ISDA och verktyg för CDS\"],[\"2006-2007\",\"Skydd på subprime-trancher\",\"Liten insats, asymmetri, V19-tänk\"],[\"2008\",\"Cirka 135 MUSD\",\"Krisens utdelning\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Cornwalls hemlighet var inte genialitet utan ödmjukhet: de byggde positioner där det dyra felet var premien — och det billiga var tålamodet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Beskriv för dig själv en affär där maxförlusten är förhandsbestämd och liten men utdelningen är multipel. Vad skulle krävas för att du faktiskt tog den — och vad säger det om varför så få gjorde det 2006?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur startade Cornwall Capital?",
+          "alternativ": [
+            "Med 110 000 dollar på ett Schwab-konto i ett skjul bakom ett hus i Berkeley",
+            "Som avdelning till Deutsche Bank",
+            "Med 500 miljoner från universitetsstiftelser",
+            "Som en Morgan Stanley-proprietary desk"
+          ],
+          "ratt": 0,
+          "tips": "Ordet skjul är nyckeln — de började bokstavligt i utkanten."
+        },
+        {
+          "q": "Vad var Cornwalls metod?",
+          "alternativ": [
+            "Högfrekvenshandel i index",
+            "Köpa billigt prissatt skydd och optioner på utfall marknaden betraktade som nästan omöjliga",
+            "Att följa analysternas rekommendationer",
+            "Ren teknisk analys"
+          ],
+          "ratt": 1,
+          "tips": "Tänk binärt: nästan omöjligt är inte samma sak som omöjligt."
+        },
+        {
+          "q": "Vem var Ben Hockett?",
+          "alternativ": [
+            "En analytiker på Moody's",
+            "Eismans kollega från Oppenheimer",
+            "F d derivathandlare på Deutsche Bank som gav Cornwall ISDA-tillträde och förståelse för CDS",
+            "En av Burrys investerare"
+          ],
+          "ratt": 2,
+          "tips": "Han var bryggan mellan skjulet och marknaden."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "De förlorade åren — att ha rätt och bli straffad",
+      "intro": "Mellan tesen (2005) och utdelningen (2007-2008) ligger bokens svåraste kapitel: år av stigande marknader, brännande premier, rasande investerare och internt tvivel. Här förstås varför early is the same as wrong — och varför kassan, inte övertygelsen, avgör om man får behålla sin rätt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Scenen: 2005-2006. Burry har byggt sitt swappaket; FrontPoint och Cornwall är på. Och marknaden? Stiger. Huspriserna stiger, subprime-emissionerna växer, bankernas vinster slår rekord. Shortarna betalar premie varje månad — en förutsägbar, demoraliserande blödning i V19:s renaste form: kapitalförbrukning utan inkomster, tålamodets pris satt i kontanter. Scions avkastning släpar mot index; FrontPoints investerare undrar varför fonden tjänar på att huspriser faller; Cornwall ser sin kassa rinna i premie. Lewis skildrar hur varje grupp tvingades genom samma prövning: att skilja tesens bevis (lånens kvalitet) från marknadens dom (dagens pris)."
+        },
+        {
+          "type": "text",
+          "content": "Sedan upproret — bokens mest smärtsamma. Scions investerare, med Joel Greenblatts firma i spetsen, krävde sitt kapital tillbaka; när Burry hösten 2006 låste delen av fonden i en särskild konstruktion för att skydda shortet kom advokatbreven, hot om stämning och anklagelser om brottsligt beteende. Mannen som höll på att göra dem rikare behandlades som om han stal deras pengar — för att han hade rätt. Eismans investerare var mindre juridiska men mer ihärdiga; Cornwall hade tur: deras kapital var eget. Senare, när historien blev offentlig, fick Burry dessutom leva med hat, hot och — i sin mest extrema form — dödshot mot honom och familjen. Att ha rätt i finans är ingen popularitetstävling; kapitel 13 återkommer till etiken."
+        },
+        {
+          "type": "text",
+          "content": "Mellan dessa poler: tvivlet som metodens fiende. Lewis beskriver hur även de mest övertygade vacklade — Eisman ifrågasatte sin tes när marknaden vägrade falla, Cornwall övervägde att ta avsevärt mindre risk, och Lippmann fick otåliga chefer och kollegor emot sig. Incitamenten tryckte från alla håll: fondbranschens karriärrisk straffar avvikelser (fel en gång och du är borta), kassaflödeskraven straffar långsiktig positionering, och ledningar — fondbolagets, bankens, byråns — pressar dem som skapar obekväma sanningar. Det är bokens spegelbild av groupthink: inte bara att alla trodde fel, utan att systemet aktivt bestraffade dem som trodde rätt för tidigt."
+        },
+        {
+          "type": "text",
+          "content": "Sätt samman principen: early is the same as wrong. På marknaden skiljs inte tidigt från fel förrän katalysatorn anländer — båda ser ut som förlust i redovisningen, i investerares ögon och i självförtroende. Därför är avståndet mellan analys och position inte storlek utan TID: hur länge bär positionen sin egen vikt? Burrys svar var matematiskt (omställningskurvan 2007), Cornwalls strukturellt (liten premie, stor kassa), FrontPoints kulturellt (ett team som höll ut tillsammans). Marginal of safety — principen utan siffra — gäller här i sin renaste form: utrymmet att ha rätt i förtid utan att dö av väntan. Annars är tesen bara en åsikt med hyra."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Väntans ekonomi — vad som brann under de förlorade åren\",\"rader\":[[\"Kostnad\",\"Bärare\",\"AKM1-variabel\"],[\"Årlig skyddspremie\",\"Scion, FrontPoint, Cornwall\",\"V19 kapitalförbrukning\"],[\"Underpresterande avkastning\",\"Scion mot index\",\"Investerartålamod\"],[\"Juridiskt tryck och hot om stämning\",\"Burry efter låsningen 2006\",\"Karriär- och processrisk\"],[\"Karriärrisk för avvikelse\",\"Alla shorts i institutioner\",\"Groupthinkets pris\"],[\"Internt tvivel\",\"Alla — Lewis skildrar det öppet\",\"Tesens psykologiska ränta\"],[\"Hat och dödshot när historien blev känd\",\"Burry och de andra\",\"Kapitel 13:s ämne\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Marknaden betalar inte för att ha rätt — den betalar för att ha rätt i tid, med kvarvarande kapital. Analysen avgör riktningen; kassan avgör ankomsten."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta din mest övertygade tes idag. Skriv: hur många månader kan den kosta dig innan du tvingas ge upp? Vem kan kräva ut ditt kapital under perioden — och vad gör din struktur för att hindra dem? Om svaret är ingenting har du en åsikt, inte en position."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände när Scions avkastning släpade 2005-2006?",
+          "alternativ": [
+            "Burry avslutade shortet och bad om ursäkt",
+            "Investerare och media hyllade honom för framsynthet",
+            "Morgan Stanley köpte ut fonden",
+            "Investerarna krävde ut kapital, hotade med stämning och attackerade Burry personligen"
+          ],
+          "ratt": 3,
+          "tips": "Kom ihåg vem som ägde rätten att bestämma över kapitalet."
+        },
+        {
+          "q": "Vad betyder early is the same as wrong?",
+          "alternativ": [
+            "Att man aldrig ska agera före andra",
+            "Att marknaden inte skiljer på tidig och fel förrän katalysatorn kommit — under tiden ser båda ut som förluster",
+            "Att bra analyser alltid är tidiga",
+            "Att shorts alltid förlorar pengar"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på hur ett resultatrapport skiljer dem åt innan vändpunkten."
+        },
+        {
+          "q": "Vilken AKM1-variabel är väntans direkta kostnad?",
+          "alternativ": [
+            "V14 varumärke",
+            "V16 produktlanseringar",
+            "V19 kapitalförbrukning och emissionsrisk — premien bränner kapital utan nytt inflöde",
+            "V09 ROE"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad som händer med kassan månadsvis när inget händer i marknaden."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Las Vegas, januari 2007 — mötet med CDO-maskinen",
+      "intro": "I januari 2007 reste shortarna till subprime-branschens årliga parad i Las Vegas — American Securitization Forum — för att se sin motpart i ögonen. Vid poolen mötte Eisman CDO-chefen Wing Chau, och mitt i glamouren kom insikten: dessa män skapar efterfrågan på skräp, de tillfredsställer den inte.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Scenen. American Securitization Forum i Las Vegas, januari 2007: tusentals deltagare, partytäta kvällar, en bransch som fortfarande känner sig som vinnare. Dit reser FrontPoint (Eisman, Daniel, Moses, Collins) och Cornwall (Mai, Ledley, Hockett) — forskningsresa till fiendens högtid. Lewis använder Vegas som berättarbild: en stad byggd på antagandet att huset alltid vinner — och fylld av människor som var övertygade om att de var huset. För shortarna blev resan något annat än research — den blev den slutgiltiga bekräftelsen, i mänsklig form."
+        },
+        {
+          "type": "text",
+          "content": "Mötet vid poolen: Wing Chau, CDO-chef med Harding Advisory, som förvaltade strukturer åt investerare. Eisman förhörde honom om hans affär — hur betalades han, vad ägde han för risk, varför fortsatte han köpa? Svaren målade upp hela den felvridna ekonomin: Chau betalades på förvaltad volym, behöll ingen väsentlig egen risk, och behövde hela tiden nya trancher att fylla nya CDO:er med. Lewis återger Eismans slutsats i en av bokens mest citerade iakttagelser — CDO-cheferna tillfredsställde inte efterfrågan, de skapade den (»They weren't satisfying demand. They were creating demand.«). Med det vänder hela analysen: problemet var inte att investerare ville ha för mycket skräp — problemet var att leverantörerna behövde tillverka mer skräp för att behålla sina avgifter."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen av den vändningen: en efterfrågemaskin. Om CDO-cheferna skapar efterfrågan måste nya BBB-trancher tillverkas — vilket kräver nya subprime-lån — vilket driver långivare att utfärda dem, banker att paketera dem och byråer att betygsätta dem. Hela kedjan, som kapitel 4-6 byggt våning för våning, visade sig vara upp-och-ner: utbudet skapade efterfrågan. I AKM1:s språk: V17 avtal och partnerskap — varje avtal i kedjan (courtage per lån, avgift per emission, avgift per förvaltad krona) var byggt för att maximera genomströmning, inte kvalitet. Frågan var inte vem som var dum — den var vilken incitamentslogik varje part följde."
+        },
+        {
+          "type": "text",
+          "content": "Efter Vegas: handling. FrontPoint utökade och förfinade sitt short; Cornwall kände sin tes bekräftad och växte sin position — och deras resa innehöll också den märkligaste av bokens praktiska lärdomar: att ens motpart också gör markeringar, och att dessa markeringar är tröga av skäl som har med incitament att göra, inte med sanningen. Vegas-kapitlet är kursens vattendelare: före det handlade shortet om siffror och prospektus — efter det om förståelsen av ett helt systems incitament. Det är också bokens svar på varför kvalitetskontrollen inte kom inifrån: den kom från ett möte vid en pool där en man ställde jobbiga frågor till en man som aldrig förväntats få dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vegas-frågorna — Eismans förhör och svaren\",\"rader\":[[\"Fråga till maskinen\",\"Svar från systemet\",\"Insikt\"],[\"Hur betalas CDO-chefen?\",\"Avgift på förvaltad volym\",\"Incitament: storlek, inte kvalitet\"],[\"Behåller han risken?\",\"Nej — den vidarefördelas\",\"Någon annans problem\"],[\"Vem vill ha dessa trancher?\",\"Efterfrågan skapas av honom själv\",\"Tillfredsställer inte — skapar\"],[\"Vad händer om lånen fallerar?\",\"Maskinen bygger nya CDO:er\",\"Tills bränslet tar slut\"],[\"Vem kontrollerar allt detta?\",\"Rating-byråer betalda av emittenter\",\"Ingen oberoende part i kedjan\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den farligaste frågan i finans är inte vad något kostar — utan vem som betalas för att det ska fortgå. Följ avgifterna och du följer systemets styrning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en bransch du följer. Rita dess avgiftskarta: vem betalar vem per transaktion? Markera alla ställen där kvalitet borde kontrolleras men där betalningen går till volym. Spara kartan till kapitel 13."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför blev mötet med Wing Chau avgörande?",
+          "alternativ": [
+            "Chau erbjöd dem att gå med i en CDO",
+            "Eisman förstod att CDO-cheferna skapade efterfrågan på nya lån istället för att tillfredsställa befintlig",
+            "Chau visade sig vara en förklädd reglerare",
+            "De kom överens om att dela research"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad hans avgifter betingades av."
+        },
+        {
+          "q": "Hur betalades CDO-chefen enligt boken?",
+          "alternativ": [
+            "Fast lön från regleraren",
+            "Provision på vinst i trancherna",
+            "Avgift på förvaltad volym — incitamenten belönade storlek, inte kvalitet",
+            "Bonus kopplad till låntagarnas återbetalning"
+          ],
+          "ratt": 2,
+          "tips": "Vad växer när han lyckas — värdet eller volymen?"
+        },
+        {
+          "q": "Vad gjorde shortlagen efter Las Vegas?",
+          "alternativ": [
+            "De avslutade positionerna i vinst",
+            "De anmälde sig själva till SEC",
+            "De köpte AAA-trancher som hedge",
+            "De utökade och förfinade sina shorts — övertygelsen var total"
+          ],
+          "ratt": 3,
+          "tips": "Resan var tänkt som sista kontrollen — den gav grönt ljus."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Kraschen — från New Century till Lehman och utdelningen",
+      "intro": "2007-2008 kom kalenderns facit till insamling: New Century föll, Bear Stearns-fonderna sprack, ABX rasade — och ändå väntade marknaden till september 2008 innan den trodde. Här är krisens tidslinje, utdelningen i siffror och likviditetens dödslag i AKM1:s språk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första sprickorna, 2007. Ownit lades ner i december 2006; i februari-mars 2007 sjönk ABX BBB brant när New Century — landets näst största subprime-långivare — gick i konkurs (Chapter 11, april 2007). Subprime-långivare föll som dominos, och i juni-juli 2007 kollapsade Bear Stearns två hedgefonder som ägt CDO:er finansierade med kort, återanskaffningsbar finansiering — första gången maskinens förluster tvingade en stor bank att visa sina kort. Men obligationsmarknaden svarade långsamt: trancherna höll sina nominella priser, dealernas markeringar släpade, och shortarna satt med vinster som papperet sa men kontot inte visade. Lewis skildrar frustrationen: att ha rätt är inte samma sak som att få rätt, i redovisningen."
+        },
+        {
+          "type": "text",
+          "content": "Sedan fryser maskinen. Augusti 2007: penningmarknaden krampar, och den brittiska bolånebanken Northern Rock drabbas av en riktig bankrusning — den första på generationsminne. Hösten 2007 tvingas Merrill Lynch och Citigroup till jättenedskrivningar och deras vd:ar avgår; statliga fonder från Asien och Mellanöstern pumpar in kapital i bankerna på utspädningsvillkor (V19 emissionsrisk, bokstavligt: befintliga ägare betalade räkningen). CDO-marknaden dör i praktiken. Januari-mars 2008: falsk gryning — aktier återhämtar sig, shorts pressas, FrontPoint tar av vinster — och den 16 mars säljs Bear Stearns till JPMorgan för två dollar per aktie, senare omförhandlat till tio. I september tas Fannie Mae och Freddie Mac över av staten (den 7 september 2008)."
+        },
+        {
+          "type": "text",
+          "content": "Sedan september 2008, på några veckor som förändrade allt. Måndagen den 15 september ställer Lehman Brothers betalningarna — konkurs, den största i amerikansk historia. Dagen efter tar Federal Reserve över AIG mot en initialt 85 miljarder dollar stor kreditlinje: försäkringsjätten som sålt skydd på hundratals miljarder, däribland närmare 80 miljarder knutna till CDO:er, kunde inte ställa den säkerhet som Goldmans och andras krav krävde. Den 25 september går Washington Mutual — USA:s största bankkollaps någonsin. Den 3 oktober godkänner kongressen TARP: 700 miljarder dollar till att rädda systemet. V11 likviditet är allt här: en bank med hög skuldsättningsgrad dör inte av förluster utan av att finansieringen dras över en natt; V18 regulatoriska katalysatorer är utdelningen: räddningarna var de händelser som besannade shortarnas teser."
+        },
+        {
+          "type": "text",
+          "content": "Utdelningen, i bokens siffror. Burry: cirka 725 miljoner dollar till Scions investerare och 100 miljoner till sig själv; fondens sammanlagda nettoavkastning november 2000 till juni 2008 blev 489 procent mot omkring 2-3 procent för S&P 500. FrontPoint/Eisman: vinst i miljardklassen. Cornwall: 30 miljoner blev 135. Lippmann: bonus cirka 47 miljoner. Mot dem: Howie Hublers handel förlorade cirka 9 miljarder dollar för Morgan Stanley — då den största enskilda handelsförlusten i Wall Streets historia — och AIG:s, Merrill Lynch och Citigroups nedskrivningar mättes i tiotals miljarder. Kursens avslutande notis om resultatet: detta var inte en enkel överföring från fattiga till rika — det var en överföring från dem som inte gjorde läxan till dem som gjorde den, med skattebetalarna som kudde i botten. Vilket är precis därför kapitel 13 finns."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vinnare och förlorare — utdelningen i siffror\",\"rader\":[[\"Part\",\"Resultat\",\"Kommentar\"],[\"Michael Burry / Scion\",\"Cirka +725 MUSD till investerare, +100 MUSD personligen\",\"489 procent netto 2000-2008\"],[\"FrontPoint / Eisman\",\"Vinst i miljardklassen\",\"Team om fyra under Morgan Stanley\"],[\"Cornwall Capital\",\"30 MUSD till 135 MUSD\",\"Från skjul i Berkeley\"],[\"Greg Lippmann / DB\",\"Bonus cirka 47 MUSD 2007\",\"Predikantens courtage\"],[\"Howie Hubler / Morgan Stanley\",\"Cirka -9 miljarder USD\",\"Största enskilda handelsförlusten då\"],[\"AIG, Merrill, Citi m fl\",\"Nedskrivningar i tiotals miljarder\",\"Räddade, utspädda, skattefinansierade\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Banker dör inte av att ha fel — de dör av att finansieringen dras när marknaden misstänker att de har fel. V11 är V10:s bödel."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en likviditetsstress på en aktie du äger i finanssektorn (bank, försäkring, fastighet): vem finansierar balansräkningen, hur kort är löptiden och vad händer om motparterna säger nej samma vecka? Skriv svaret som en tidslinje."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände den 15 september 2008?",
+          "alternativ": [
+            "TARP godkändes",
+            "Lehman Brothers ställde betalningarna — den största konkursen i amerikansk historia",
+            "AIG förstatligades",
+            "Bear Stearns såldes"
+          ],
+          "ratt": 1,
+          "tips": "En måndag som har fått ett eget namn i finanshistorien."
+        },
+        {
+          "q": "Hur stor var Howie Hublers handelsförlust för Morgan Stanley?",
+          "alternativ": [
+            "Cirka 900 miljoner dollar",
+            "Cirka 90 miljoner dollar",
+            "Cirka 9 miljarder dollar — då största enskilda handelsförlusten i Wall Streets historia",
+            "Cirka 90 miljarder dollar"
+          ],
+          "ratt": 2,
+          "tips": "Tre nior och en nolla — och en man som egentligen var halvt rätt."
+        },
+        {
+          "q": "Vad blev Scions sammanlagda resultat?",
+          "alternativ": [
+            "489 procent netto 2000-2008, cirka 725 MUSD till investerare och 100 MUSD till Burry",
+            "12 procent och stängd fond",
+            "Förlust på 200 miljoner dollar",
+            "Utspädad till noll"
+          ],
+          "ratt": 0,
+          "tips": "Jämför med vad index gjorde under samma åtta år."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Kontroversen — shorts igen: Staley, dödshoten och svaret från obligationsmarknaden",
+      "intro": "Obligatoriskt kontrovers-kapitel. De här männen tjänade hundratals miljoner när miljoner hushåll förlorade sina hem — är det fult att shorta? Kursen väcker debatten igen, länkar till Kathryn Staleys klassiker om short selling, låter Burrys dödshot och investeraruppror stå mot svaret: någon måste vara obligationsmarknadens kvalitetskontroll. Och: varför missade institutionerna — och varför är det så svårt att vara tidig?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelsen först, tagen på allvar. När krisens röken skingrades stod ett halvt dussin män med enorma vinster — och miljoner hushåll med förlorade hem, sparande och pensionsgrunder. Medier och politiker ställde frågan vi redan tog i kursen om Kathryn Staleys The Art of Short Selling, och den är värd att ta på allvar igen: är det moraliskt försvarbart att tjäna på andras olycka? Shortarna själva var knappast hjältar i egna ögon — Eisman-teamet beskrev det som att shorta den amerikanska drömmens finansiering, och segern kändes inte som triumf. Burry fick bära det yttersta priset utanför marknaden: när hans historia blev känd regnade hat, hot och — i sin mest extrema form — dödshot över honom och hans familj, samtidigt som de investerare som stannat i fonden tjänade hundratals miljoner tack vare att han vägrade lyssna på dem. Notera ironin: mannen som gjorde arbetet straffades; de som inte trodde på honom betalades."
+        },
+        {
+          "type": "text",
+          "content": "Svaret, i två steg. Steg ett: shorts skapade inte förlusterna. Lånen skrevs av långivare, paketerades av banker, betygsattes av byråer och köptes av institutioner — allt före och oberoende av någon short. CDS:erna var försäkringar på redan emitterad skuld; att någon köpte dem ändrade inte låntagarnas öde, bara priset på informationen om det. Steg två — det positiva försvaret, Staleys kärnpunkt applicerad på obligationsmarknaden: kreditmarknaden saknar börsens ekosystem av analytiker, journalister och aktivistiska ägare som granskar allt. Utan shortarna skulle BBB-tranchernas kvalitet ha prissatts av exakt de parter som betalades för att inte se den — emittenter, byråer och säljande banker. Shortarna var den enda kvalitetskontroll som fanns; deras vinster var marknadens sätt att betala för det grävande arbete ingen annan betalade för. Med Staleys precision: vinsten var inte orsaken till krisen — den var priset på att någon till slut sa sanningen om den."
+        },
+        {
+          "type": "text",
+          "content": "Sedan den svårare frågan: varför missade nästan alla institutioner det? Tre samverkande skäl, alla strukturella. Incitament: varje led i kedjan tjänade på volym — courtage per lån, avgift per emission, avgift per betyg, avgift per förvaltad struktur — och ingen tjänade på kvalitet; Upton Sinclairs iakttagelse om lönen som styr seendet var aldrig mer bokstavlig. Groupthink: när alla ansedda institutioner — banker, byråer, reglerare, fondförvaltare — agerade som om risken var ljum blev avvikelsen ett karriärbeslut; fel tillsammans med alla är ursäktligt, fel ensam är avsked. Rating-byråernas betalningsmodell: den formella nyckeln till allt — AAA-stämpeln — såldes av domare som betalades av de dömda, med konkurrens om uppdragen som pressade betygen uppåt. Institutionerna missade inte bubblan trots sina resurser — de missade den på grund av dem."
+        },
+        {
+          "type": "text",
+          "content": "Och varför är det så svårt att vara tidig? Därför att early is the same as wrong fungerar som filter mot precis de människor som borde agera. Burry pressades av sina investerare och av advokater; ledningar i banker och byråer pressade de anställda som såg problemen att tiga; karriärsystemet premierar dem som har fel tillsammans och bestraffar dem som har rätt ensamma och i förtid. Det är inte ett misstag i systemet — det är systemets design: konsensus är billigt, avvikelse är dyr, och marknaden prissätter skillnaden i åratal av negativ carry. Kursens slutsats är därför dubbel: respektera shortarna som gjorde kvalitetskontrollens jobb — och konstruera din egen verksamhet så att du har råd att ha rätt i förtid: kassa, kontrakt, storlek och marginal of safety som princip utan siffra. Annars har du åsikter, inte positioner."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Debatten — anklagelse mot svar\",\"rader\":[[\"Anklagelse\",\"Svar\"],[\"Ni tjänade på andras olycka\",\"Vinsten var priset på informationen — förlusterna skapades av lån, betyg och köp som skedde oberoende av shorts\"],[\"Shorts sprängde bankerna\",\"Bankerna sprängdes av hävstång och illojal finansiering (V10+V11); Lehman och Bear dog av bankrusning, inte av shorts\"],[\"Det är fult att shorta (Staley-debatten)\",\"Obligationsmarknaden saknar annan kvalitetskontroll — utan shorts prissätts skräp av dem som betalas för att inte se det\"],[\"Ni var bara tidiga som tur\",\"Timing byggde på matematik — 2/28-omställningen 2007 — och åratal av primärresearch, inte gissningar\"],[\"Systemet borde stoppat er\",\"Systemet försökte: investerartryck, karriärrisk, groupthink — därför är det svårt att vara tidig\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är inte om det är moraliskt att tjäna på andras olycka — den är vem som ska betala för att granska marknaden när alla incitament pekar åt andra hållet. Utan shorts blir svaret: ingen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv en miniuppsats på 200 ord: föreställ dig att du var Burrys investerare 2006 och krävde ut kapitalet — och sedan fick veta att du därmed avsade dig en 489-procentars historia. Vad skulle du kräva av en förvaltare för att stanna kvar nästa gång? Formulera tre krav."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kursens starkaste försvar för shortarna?",
+          "alternativ": [
+            "Att de gav vinst till välgörenhet",
+            "Att de var obligationsmarknadens enda kvalitetskontroll — utan dem prissattes skräpet av parter som betalades för att inte se det",
+            "Att de följde lagen till punkt och pricka",
+            "Att de var oberoende rika sedan tidigare"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vem som annars skulle ha gjort researchen på kreditmarknaden."
+        },
+        {
+          "q": "Vilket påstående är INTE en orsak till att institutionerna missade bubblan?",
+          "alternativ": [
+            "Regulatoriskt förbud mot att analysera MBS",
+            "Incitament som belönade volym i varje led",
+            "Groupthink och karriärrisk för avvikelse",
+            "Rating-byråernas emittentbetalda modell"
+          ],
+          "ratt": 0,
+          "tips": "Tre av alternativen var strukturella krafter — ett är påhittat."
+        },
+        {
+          "q": "Vad lär Burrys historia om att vara tidig?",
+          "alternativ": [
+            "Att tidiga alltid belönas i slutändan",
+            "Att man ska vänta på konsensus innan man agerar",
+            "Att institutioner alltid stödjer rättfärdiga teser",
+            "Att ha rätt utan kassa och kontrakt att vänta ut marknaden är i praktiken samma sak som att ha fel"
+          ],
+          "ratt": 3,
+          "tips": "Kom ihåg vem som ägde rätten att bestämma över kapitalet under väntan."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Arvet — bankerna som fick lyckas och din egen checklista",
+      "intro": "Lewis slutkapitel är ingen triumf. Bankerna blev större, reformerna uteblev och incitamenten pekade åt samma håll — det var inte problemet att Lehman fick gå under, utan att den fått lyckas så länge. Kursens sista kapitel samlar karaktärernas efteröd och bygger din AKM1-checklista mot nästa maskin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Efterspelet, i Lewis version. Krisen nationaliserade förluster och privatiserade vinster på ett sätt som lämnade systemet intakt — snarare förstärkt: bankerna som överlevde blev större, de som föll slukades av konkurrenter, och de reformer som följde rörde inte vid incitamentens grund. Lewis sammanfattar med bokens kanske viktigaste mening: problemet var inte att Lehman Brothers fick misslyckas — problemet var att Lehman Brothers fått lyckas (»The problem wasn't that Lehman Brothers had been allowed to fail. The problem was that Lehman Brothers had been allowed to succeed.«). Samma logik som byggde maskinen 2004-2007 — avgifter för volym, bonusar för hävstång, ingen nota för systemrisk — låg kvar när röken skingrats. I AKM1:s språk: V18 regulatoriska katalysatorer som räddade men inte omformade; V20 återköp som kommit att symbolisera periodens kapitalmisskötsel — banker som återköpte aktier för miljarder 2005-2007 istället för att bygga buffertar, för att sedan tvingas emittera i botten (V19)."
+        },
+        {
+          "type": "text",
+          "content": "Karaktärernas efteröd, kort. Burry, utbränd av åren av krig med investerare, stängde Scion Capital och lämnade tillbaka kapitalet 2008 — han hade gjort sitt och ville sluta på egna villkor; senare har han återkommit som investerare, med vatten som ett av temana. Eisman och teamet fortsatte FrontPoint under några år av blandade resultat. Cornwall flyttade verksamheten till New York och siktar på att växa — med den ödmjukhet som kännetecknat dem. Lippmann lämnade efter hand Deutsche Bank och startade egen kreditfond (sker strax efter bokens slut). Lewis poäng med efterspelet är inte att straffa eller belöna — den är att systemet inte lärde. Nästa maskin byggs inte av samma människor; den byggs av samma incitament."
+        },
+        {
+          "type": "text",
+          "content": "Sedan din checklista — AKM1-tolkad. Ett: läs primärmaterialet; Burrys edge var prospektusen, inte prognoser. Två: V10 skuldsättningsgrad — mät hävstång hos bolag, banker och hushåll; ROE utan hävstångsanalys (V09) är dekoration. Tre: V11 likviditet — fråga vem som kan dra finansieringen över en natt, och hur illikvid din egen position är när du måste sälja den. Fyra: V12 intäktsstabilitet — sök gain-on-sale-strukturer där intäkt och sanning skiljs åt av år. Fem: V14 varumärke — ett betyg, ett märke, en ranking är en partsinlagan; granska vem som betalat. Sex: V16 produktlanseringar — misstro tillväxt som drivs av produkter du inte kan förklara. Sju: V17 avtal — kartlägg vem som betalar vem i kedjan. Åtta: V18 regulatoriska katalysatorer — räkna med räddningar och regelförändringar som både risk och utdelning. Nio: V19 kapitalförbrukning — din egen och bolagens. Tio: V20 återköp — återköp på topp med hävstång är omvänd marginal of safety. Och V05 P/B: aktier — särskilt finansaktier — som ser billiga ut på multiplar med trasig balansräkning är värdefällor, inte värde."
+        },
+        {
+          "type": "text",
+          "content": "Avsluta med bokens gåva till dig. The Big Short är ingen manual för att shorta — den är en utbildning i att skilja information från prissatt konsensus. Dess hjältar var inte lyckosamma spelare utan människor som gjorde jobbet ingen betalade för, med den tålamods- och kapitalstruktur som krävdes för att överleva att ha rätt. Marginal of safety, principen utan siffra, är sammanfattningen: utrymmet mellan din tes och din ruin, mellan din analys och din likviditet, mellan att ha rätt och att klara av att ha rätt. Nästa gång en maskin bygger växande produktfloder på hushållens hävstång — och den kommer — är frågan inte om du kommer att se den. Frågan är om du kommer att ha struktur nog att agera på det du ser. Det är skillnaden mellan att läsa boken och att ha lärt sig den."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"AKM1-checklistan mot nästa maskin\",\"rader\":[[\"Variabel\",\"Big Short-frågan\"],[\"V05 P/B\",\"Ser finansaktien billig ut för att balansräkningen är trasig?\"],[\"V09 ROE\",\"Är avkastningen skicklighet — eller hävstång (V10)?\"],[\"V10 Skuldsättningsgrad\",\"Vem har hävstång — bolaget, banken, hushållet, strukturen?\"],[\"V11 Likviditet\",\"Vem kan dra finansieringen över en natt? Hur illikvid är min position?\"],[\"V12 Intäktsstabilitet\",\"Bokförs intäkten före sanningen (gain-on-sale)?\"],[\"V14 Varumärke\",\"Vem betalade för betyget, märket, rankingen?\"],[\"V16 Produktlanseringar\",\"Förstår jag produkten som driver tillväxten?\"],[\"V17 Avtal & Partnerskap\",\"Följ avgifterna: vem tjänar på volym, vem på kvalitet?\"],[\"V18 Regulatoriska katalysatorer\",\"Vad händer vid räddning, förbud, regeländring?\"],[\"V19 Kapitalförbrukning\",\"Orkar kassan tesens tidslinje — min och bolagets?\"],[\"V20 Återköp\",\"Buffert byggd — eller återköpt bort?\"],[\"Marginal of safety\",\"Utrymme mellan tes och ruin — principen utan siffra\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Bokens slutpoäng är inte att några såg framtiden — utan att alla kunde ha sett nuet. Information fanns; det som saknades var incitamenten att läsa den. Bygg dina egna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Fram med listan från kapitel 1 — de tre sakerna du äger utan att kunna förklara dem. Kör checklistan ovan på varje: vad hittar du? Bestäm för varje: behåll, minska eller avveckla — och sätt ett datum när beslutet är genomfört."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken slutsats drar Lewis om krisens efterspel?",
+          "alternativ": [
+            "Att systemet rensades och blev säkert",
+            "Att reglerarna fick nya verktyg som löste allt",
+            "Att bankerna blev större och incitamenten låg kvar — problemet var inte att Lehman fick gå under utan att den fått lyckas",
+            "Att shortsidan reglerades bort"
+          ],
+          "ratt": 2,
+          "tips": "Citera gärna meningen om Lehman för dig själv."
+        },
+        {
+          "q": "Vad gjorde Burry efter vinsten?",
+          "alternativ": [
+            "Stängde Scion och lämnade tillbaka investerarnas kapital 2008",
+            "Blev vd för Goldman Sachs",
+            "Startade en ny megafond direkt",
+            "Gick in i politiken"
+          ],
+          "ratt": 0,
+          "tips": "Efter kriget med investerarna ville han sluta på egna villkor."
+        },
+        {
+          "q": "Hur bör AKM1-användaren tillämpa V11 ur Big Short?",
+          "alternativ": [
+            "Som ett mått på bankens goodwill",
+            "Som frågan vem som kan dra finansieringen över en natt — och hur illikvid ens egen position är då",
+            "Som en multiplar på kassaflödet",
+            "Som ett mått på varumärkesstyrka"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som faktiskt dödade Lehman och Bear."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,990 @@
+{
+  "slug": "the-great-crash-1929",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 140,
+  "title": "The Great Crash 1929 — Galbraith: KOMPLETT",
+  "summary": "John Kenneth Galbraiths The Great Crash 1929 (1955) är den klassiska krissanalysen — skriven med arkivkällor, tick-för-tick-detaljer och en ironi som bitit i sjuttio år. Kursen följer hela bågen: Coolidge-velvet och teknikens äkta löften, Florida-boomen, investment trusts som hävstång på hävstång (Goldman Sachs Trading Corporation från 222,5 till 1,75 dollar), margin-köpen med tio procent eget kapital, Fishers 'permanently high plateau', oktober 1929 dag för dag — svarta torsdagen, måndagen och tisdagen — Richard Whitneys fall från börsens hjälte till Sing Sing, mellankrigets felsläpp och Galbraiths fem faktorer. Kursen viker inte undan för debatten: Friedman-Schwartz monetära förklaring mot Galbraiths strukturella redogörs båda, och 1955-perspektivet — boken som varning under Eisenhower-boomen och Fulbright-förhören — ges sin plats.",
+  "minutes": 10,
+  "xp": 1800,
+  "level": "",
+  "learn": "Efter kursen kan eleven berätta 1929-historien i dess rätta siffror — Dow 381,17 den 3 september 1929 och 41,22 den 8 juli 1932, minus 89 procent, 12,9 miljoner aktier den 24 oktober, 16,4 miljoner den 29 oktober, belåningslån på omkring 8,5 miljarder dollar, call money till 20 procent i mars 1929 och Goldman Sachs Trading Corporation från 104 dollar via toppen 222,5 till botten 1,75 — och förklara mekanismerna bakom varje steg: hur investment trusts byggde hävstång på hävstång och vad det gör med en vanlig nedgång (V10 skuldsättningsgrad som masterclass), hur tio procents marginal och uppsägningsbara call-lån gjorde oktober strukturellt oundviklig (V10, V11 likviditet), varför den eftersläpande tick-bandaren förvärrade paniken och varför ett stödpool kan förskjuta en kraschs tidsplan men aldrig dess destination; eleven kan redogöra för Galbraiths fem faktorer — ojämn inkomstfördelning, dålig företagsstruktur, dålig bankstruktur, dåliga externa balanser och dålig ekonomisk intelligens — och översätta dem till AKM1:s språk (V09 ROE mot V10, V11, V12 intäktsstabilitet, V18 regulatoriska katalysatorer); eleven kan dessutom skilja på krasch och depression och redogöra ärligt för den öppna debatten om orsakerna — Friedman-Schwartz penningmängdsförklaring mot Galbraiths strukturella eftersläpningsförklaring, och den nyare syntesen — samt förklara varför varje generation tror att den är annorlunda, inklusive 1955: boken skrevs som varning under Eisenhower-boomen och blev Fulbright-förhören referenslitteratur; och eleven kan tillämpa lärdomarna praktiskt genom kreditaggregat, likviditetsstress-tester, policy-scenarier, V20 återköp och margin-skuld som eufori-mätare samt marginal of safety som princip utan siffra.",
+  "why": "Ingen händelse är mer återanvänd i finansretoriken än 1929 — och få är mindre förstådd. Galbraiths bok är motgiftet: skriven av en ekonom som vågar skratta åt sin egen bransch, byggd på verkliga kurser, verkliga lån och verkliga människor, och numera aldrig ur tryck. Kursen behövs eftersom boken inte är en kuriosa-historia utan ett mönsterkort: tekniskt äkta tillväxtberättelser (V01, V02, V13) som finansieras med lager av hävstång (V10) och övernattningsfinansiering (V11) och prissätts utan värderingsdisciplin (V04, V05) — det mönstret återkom 1999, 2007 och återkommer igen. AK1A:s riskutbildning saknar ryggrad utan detta fall: varje variabel i kursens röda tråd — skuldsättningsgrad, likviditet, intäktsstabilitet, regulatoriska katalysatorer — har sin blodigaste illustration i oktober 1929. Och kursen är ärlig på ett sätt som de flesta kurser duckar: orsakerna till depressionen är fortfarande omdebatterade, och den som bara kan en skola — monetär eller strukturell — kommer att feltolka nästa kris, som alltid kommer att innehålla lite av båda.",
+  "chapters_list": [
+    "1. Prologen — 1955 års varning till ett glatt Wall Street",
+    "2. Det nya tidevarvet — Coolidge-velvet och teknikens löften",
+    "3. Florida, Ponzi och varningarnas öde",
+    "4. In Goldman Sachs We Trust — hävstång på hävstång",
+    "5. Tio procent — margin, call money och kreditens roll",
+    "6. Permanently high plateau — toppen och självförnekelsen",
+    "7. Svarta torsdagen — 24 oktober tick för tick",
+    "8. Måndagen och tisdagen — 28 och 29 oktober",
+    "9. Nedåt i tre år — 41,22 och de som klarade sig",
+    "10. Richard Whitney — hjälten som stal från sitt eget trust",
+    "11. Från krasch till depression — mellankrigets felsläpp",
+    "12. Galbraiths fem faktorer — krisens djupare orsaker",
+    "13. KONTROVERS — Den här gången är det annorlunda"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Prologen — 1955 års varning till ett glatt Wall Street",
+      "intro": "I november 1955 publicerade John Kenneth Galbraith, kanadensfödd harvardekonom, The Great Crash 1929 — tjugosex år efter händelserna och mitt i Eisenhowers börshausse. Det är finanslitteraturens mest bestående ironi: en bok om landets värsta finansfrosseri, skriven som varning till ett land som höll på att glömma. Det här är kursens karta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Galbraith var ingen utomstående. Han hade arbetat i Roosevelts administration under kriget, skulle senare rådgiva Kennedy och bli ambassadör i Indien — men The Great Crash 1929 gjorde honom till något större än ekonom: finanshistoriens mest läste ironiker. Boken, som aldrig släppts ur tryck, bygger på offentliga arkiv, börsdata och tidningsreportage från 1929, inte på minnen och myter. Galbraith är noga med det: han vill skilja det som hände från det som sades hända, och han njuter öppet av glappet. Om självmordsvågen efter kraschen — som aldrig ägde rum i statistiken — konstaterar han att skämten (»Vill ni ha rummet för att sova eller hoppa?») var tidens svarta humor, inte dess dödsregister."
+        },
+        {
+          "type": "text",
+          "content": "Timing var hela poängen. Dow Jones hade i november 1954 äntligen återtagit toppen 381,17 från september 1929 — en resa som tog tjugofem år. Nu steg marknaden igen, marginalskulden växte och »det nya tidevarvet» var tillbaka i samtalen. Den 26 september 1955, dagen efter att president Eisenhowers hjärtattack rapporterats, föll Dow med 6,5 procent — värsta dagen sedan 1929 — och Washington vaknade med ett ryck. Senator J. William Fulbright lät bankutskottet öppna förhör om aktiemarknaden, och några veckor senare låg Galbraiths bok i handeln. Den blev bästsäljare och kommittéernas referenslitteratur. Varningen var inte historisk — den var aktuell."
+        },
+        {
+          "type": "text",
+          "content": "Galbraiths metod förtjänar att lyftas fram, för den är kursens. För det första: siffror före adjektiv — omsättning, belåningslån, räntor, datum. För det andra: ironi som analysinstrument, inte som dekoration. När han myntar begreppet the bezzle — »inventariet av oupptäckta förskingring» — påstår han att summan växer i goda tider, när pengar är lätta att gömma, och upptäcks i krascher, när de inte längre kan döljas: konjunkturen synliggör vad boomen skapade. För det tredje: den mest citerade meningen, om bankmännens agerande i oktober 1929 — »Ansvarskänslan inom finanssamhället för samhället i stort är inte liten. Den är nästan noll.» Det är domslutet hela kursen återkommer till."
+        },
+        {
+          "type": "text",
+          "content": "Kursens båge: kapitel 2-3 bygger boomen — Coolidge-velvet, bilen, radion, elektriciteten och Florida-spekulationen. Kapitel 4-6 bygger maskineriet: investment trusts, margin-köp och septembermånadens topp. Kapitel 7-8 är oktober — torsdagen, måndagen och tisdagen, tick för tick. Kapitel 9-10 räknar ruinerna och följer Richard Whitney från hjälte till fånge. Kapitel 11-12 går från krasch till depression och till Galbraiths fem faktorer. Kapitel 13 är kontroversen: Fisher mot Galbraith, Friedman-Schwartz mot Galbraith, och varför varje generation tror att den är annorlunda. AKM1:s röda tråd: V10 skuldsättningsgrad, V11 likviditet — och marginal of safety som princip utan siffra."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1929 års krasch — grundfakta att bära med dig\",\"rader\":[[\"Mått\",\"Siffra\",\"Notering\"],[\"Dow-toppen 3 september 1929\",\"381,17\",\"Symbolen för ett århundrades folly\"],[\"Dow-botten 8 juli 1932\",\"41,22\",\"Minus 89 procent från toppen\"],[\"Omsättning torsdagen 24 oktober\",\"12,9 miljoner aktier\",\"Dagens rekord — slaget redan fem dagar senare\"],[\"Omsättning tisdagen 29 oktober\",\"16,4 miljoner aktier\",\"Rekord som stod sig i nästan 40 år\"],[\"Belåningslån oktober 1929\",\"cirka 8,5 miljarder USD\",\"Tio procent eget kapital, nittio procent lån\"],[\"Call money mars 1929\",\"20 procent\",\"Uppsägningsbar daglånränta på penningmarknaden\"],[\"Återhämtning till 381,17\",\"23 november 1954\",\"Tjugofem år efter toppen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Krascher återkommer inte därför att historien upprepar sig mekaniskt, utan därför att incitamenten och självbilden gör det. Minnet är finansvärldens enda vaccin — och det försvinner i takt med att vinsterna växer."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du går vidare: skriv ner dina tre största innehav och formulera med en mening vardera vad du anser vara din marginal of safety — avståndet till det tvingande beslutet. Lägg pappret i en låda. Kursen återkommer till det i kapitel 13, och då ska du få uppleva hur det känns att läsa sina egna ord igen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför skrev Galbraith boken just 1955?",
+          "alternativ": [
+            "Han ville skriva en jubileumsbok och hylla börsens återhämtning",
+            "Fulbright hade anställt honom som utredare",
+            "Dow hade återtagit 1929 års topp, marginalskulden växte och han ville varna ett land som höll på att glömma",
+            "Han ville rehabilitera Irving Fishers rykte"
+          ],
+          "ratt": 2,
+          "tips": "Titta på vad marknaden gjorde året innan boken kom — och på vad som hände i september 1955."
+        },
+        {
+          "q": "Vad är 'the bezzle' i Galbraiths terminologi?",
+          "alternativ": [
+            "Börsens samlade börsvärde",
+            "Skillnaden mellan köp- och säljkurs",
+            "Räntan på marginalbelåning",
+            "Inventariet av oupptäckta förskingring — summan som ännu inte avslöjats"
+          ],
+          "ratt": 3,
+          "tips": "Galbraith leker ljudmässigt med ordet embezzlement."
+        },
+        {
+          "q": "Hur lång tid tog det för Dow att återta toppen 381,17?",
+          "alternativ": [
+            "Fem år",
+            "Tio år",
+            "Tjugofem år",
+            "Fyrtio år"
+          ],
+          "ratt": 2,
+          "tips": "Botten kom 1932 — men återhämtningen var ingen rak linje."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Det nya tidevarvet — Coolidge-velvet och teknikens löften",
+      "intro": "1920-talet var ingen chimär. Bilen, radion och elektriciteten förändrade livet på riktigt, industrins produktivitet växte och arbetslösheten var låg. Men när verklig tillväxt mötte Coolidges retorik, Hoovers triumfkänsla och billig kredit, föddes idén om välstånd utan slut. Det här kapitlet handlar om skillnaden mellan en sann tillväxtberättelse och det pris man betalar för den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grunden var äkta. Kriget hade lämnat Europa utmattat och Amerika som industrins centrum. Omkring 5,3 miljoner motorfordon tillverkades 1929; elektriciteten spred sig från fabriker till hushåll; radion gick från kuriosa till massmedium — från i princip noll apparater 1922 till över tio miljoner 1929. Radiobolaget RCA byggde nätverk (NBC startade 1926), samlade patentpooler med GE och Westinghouse och tjänade licensintäkter som i praktiken fungerade som återkommande betalningar — 1920-talets närmaste motsvarighet till det vi idag skulle kalla V02 ARR-tillväxt. General Motors under Alfred Sloan institutionaliserade årsmodellen och varumärkestrappan från Chevrolet till Cadillac — V16 produktlanseringar och V14 varumärke i full blom. Detta var verklig V01 försäljningstillväxt av en dignitet en generation tidigare knappast kunnat föreställa sig."
+        },
+        {
+          "type": "text",
+          "content": "Retoriken växte i takt med siffrorna. Calvin Coolidge — som sagt att »amerikanernas huvudsakliga affär är affärsverksamhet» — öppnade sin sista budgetförklaring i december 1928 med att ingen kongress någonsin samlat under mer gynnsamma utsikter. Hans efterträdare Hoover, vald 1928, hade lovat att Amerika stod »närmare den slutliga segern över fattigdomen än något land någonsin i historien». Ekonomen Waddill Catchings — sedermera arkitekten bakom Goldmans trusts — hade tillsammans med William Foster sålt miljontals exemplar av tesen att maskinerna och den moderna ekonomin gjort depressioner föråldrade. Fed fanns ju nu, sade man, som stabilisator. Det är typiken för varje ny tidsepok: den förklarar inte att cykeln slutat gälla — den förklarar varför den just denna gång inte behöver gälla."
+        },
+        {
+          "type": "text",
+          "content": "Skuggsidan var lika verklig. Jordbruket lidande genom hela decenniet — jordbrukarna återhämtade sig aldrig från krigsefterfrågans kollaps. Inkomstfördelningen blev ojämnare; konsumtionen nedtill fick finansieras med avbetalningskrediter, en innovation som lät hushållen köpa nu och betala senare. Och börsens stjärna RCA betalade inte en enda utdelning under decenniet — köparna behövde ingen; priset steg ändå. Det är kapitlets AKM1-poäng i ren form: när V01 och V02 är äkta men multiplarna (V04, V05) löper ifrån alla historiska referenspunkter, har berättelsen blivit en värderingsfråga. Tekniken bestämmer om ett företag lever. Priset bestämmer vad du tjänar på det."
+        },
+        {
+          "type": "text",
+          "content": "Notera ordningen, för den återkommer i varje booms årtionde. Först den verkliga revolutionen — bilen, radion, elnätet. Sedan de verkliga vinnarna — GM, RCA, elbolagen. Sedan börsen, som prissätter vinnarna som om vinsterna skulle växa för alltid. Och sist de finansiella innovationer som låter alla vara med: trusts, belåning, marginal. Galbraiths varning är inte att optimismen var dum — bönderna och ingenjörerna i Michigan och Schenectady byggde verkliga saker — utan att den verkliga tillväxten lånat sin trovärdighet till en prisbild som den inte kunde bära. Bubblor behöver alltid något verkligt att skruva upp."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Det nya tidevarvet — löfte, verklighet och AKM1-lins\",\"rader\":[[\"Område\",\"Löftet\",\"1929 års verklighet\",\"AKM1-lins\"],[\"Bilar\",\"Massbilismen förändrar landet\",\"Omkring 5,3 miljoner fordon 1929; årsmodeller som affärsidé\",\"V01, V14, V16\"],[\"Radio\",\"Nätverkens tidsålder\",\"Över tio miljoner apparater; stjärnan RCA betalade ingen utdelning\",\"V02, V13\"],[\"Elektricitet\",\"Fabriker och hushåll elektrifieras\",\"Stabila intäkter — men pyramidstrukturer byggdes ovanpå\",\"V12, V10\"],[\"Jordbruk\",\"Delar av välståndet\",\"Lidande hela decenniet; efterfrågan fanns inte där basen fanns\",\"V12\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Tekniken var äkta 1929 — det fejkade var prislappen. En sann tillväxtberättelse och en bubbla utesluter inte varandra; det är just de äkta historierna som får bära de största multiplarna, eftersom inget i berättelsen säger stopp."
+        },
+        {
+          "type": "utmaning",
+          "content": "Lista dagens tre 'RCA-bolag' — företag vars produkter du själv använder och tycker om. Kolla sedan V04 och V05 mot deras tioårsgenomsnitt och ställ den enda fråga som spelar roll: betalar jag för tillväxten (V01, V02) eller för berättelsen om tillväxten? Spara svaret till kapitel 13."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad sade Hoover i valkampanjen 1928 om fattigdomen?",
+          "alternativ": [
+            "Att den bara kunde bekämpas med nya tullar",
+            "Att fattigdomen var en permanent del av samhället",
+            "Att Amerika stod närmare den slutliga segern över fattigdomen än något land någonsin i historien",
+            "Att bönderna måste lämna landet"
+          ],
+          "ratt": 2,
+          "tips": "Retoriken var en triumfdeklaration — formulerad tolv månader före toppen."
+        },
+        {
+          "q": "Vad kännetecknade aktien RCA under 1920-talet?",
+          "alternativ": [
+            "Den betalade aldrig någon utdelning men steg ändå kraftigt",
+            "Den var ett tråkigt kraftbolag med stabil direktavkastning",
+            "Den var börsens billigaste aktie mått med P/B",
+            "Den fanns inte i något index"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad köparna då köpte — det var i varje fall inte kontanta utdelningar."
+        },
+        {
+          "q": "Vilken sektor följde inte med i 1920-talets välstånd?",
+          "alternativ": [
+            "Bilindustrin",
+            "Radioindustrin",
+            "Jordbruket",
+            "Elektrisk utrustning"
+          ],
+          "ratt": 2,
+          "tips": "En hel näringsgren återhämtade sig aldrig från första världskrigets efterfrågan."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Florida, Ponzi och varningarnas öde",
+      "intro": "Innan Wall Street fick sin bubbel hade Florida en. Uppköp av osedda tomter, delbetalningar som rullades vidare till nästa spekulant och en orkan som 1926 blåste bort hela konstruktionen. Kapitlet handlar om bubbelpsykologins mekanik — och om varningarna som faktiskt kom 1929, och varför de inte hjälpte.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Florida-boomen 1925 var kursens laboration i miniatyr. Tomter i Miami såldes till köpare som aldrig sett dem — det berättas till och med om säljare som erbjöd mark 'per tum'. Systemet med binders var avgörande: köparen erlade tio procent och betalade aldrig resten, för avsikten var att sälja vidare till högre pris innan delbetalningen förföll. Det är samma geometri som margin-köpen på börsen — tio procents insats, resten på kredit — transplanterad från träskmark till aktier. När orkanen i september 1926 krävde hundratals liv och förstörde illusionen kollapsade marknaden; en till orkan 1928 begravde resterna. Köparna av sista omgången stod kvar med värdelösa skriftliga löften om paradis."
+        },
+        {
+          "type": "text",
+          "content": "Boston hade redan 1920 fått sin läxa i form av Charles Ponzi, som lovade femtio procent avkastning på fyrtiofem dagar via internationella svarskuponger — en affär som aldrig existerade i den skala han påstod. Galbraiths bezzle-begrepp fångar efterdyningen: i goda tider, när pengar är lätta och ingen granskar, växer inventariet av oupptäckta bedrägerier; i kraschen upptäcks det. Florida skänkte dessutom amerikanerna den känsla som behövdes på Wall Street: att man förstår spelet, att man kan lämna i tid. Alla som köpte aktier 1929 var övertygade om att de inte var som Florida-tomtköparna. Det var de."
+        },
+        {
+          "type": "text",
+          "content": "Varningarna 1929 var många, dokumenterade och — resultatlösa. Paul Warburg varnade i februari för den obegränsade spekulationen och hånades som sand i maskineriet. Federal Reserve sände den 2 februari ett brev till medlemsbankerna om att begränsa utlåningen till börsen; bankerna nobbade — vinsterna var för goda. Charles Mitchell på National City lovade öppet att hans bank skulle låna ut vidare oavsett vad Fed tyckte. I mars 1929 pressades call-räntan till 20 procent och marknivån rasade tillfälligt — och köptes tillbaka. Den 5 september höll Roger Babson sitt tal: 'förr eller senare kommer en krasch, och den kan bli fruktansvärd' — eftermiddagens fall döptes skrattande till 'Babson break', och Irving Fisher svarade med att försvara kurserna. Två dagar tidigare, den 3 september, hade Dow toppat på 381,17. Varningarna var alltså inte bara rätt — de var synkroniserade med toppen, och det spelade ingen roll."
+        },
+        {
+          "type": "text",
+          "content": "Här ligger kapitlets AKM1-lärdom, och den är obekväm: en varning utan datum är oanvändbar som positionering men oumbärlig som riskdesign. Att ha rätt för tidigt är att ha fel — Kennedy-familjens historia (Josef Kennedy som påstås ha sålt efter att skoputsaren givit honom aktietips ) är evigt citerad delvis därför att den beskriver undantaget: den som lämnar tidigt och permanent. Den praktiska översättningen: när V04 och V05 ligger vida över historiska referenspunkter och systemets kreditaggregat växer snabbare än ekonomin, skall du inte gissa toppen — du ska se till att en vanlig nedgång inte kan tvinga dig att agera. Det är positionens, inte prognosens, uppgift."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Varningarna 1929 — vad som sades och vad som hände\",\"rader\":[[\"Tidpunkt\",\"Varning\",\"Mottagande\"],[\"Februari 1929\",\"Paul Warburg varnar för obegränsad spekulation\",\"Hånas som sand i maskineriet\"],[\"2 februari 1929\",\"Fed:s brev till medlemsbanker: begränsa börsbelåningen\",\"Bankerna nobbar — utlåningen är för lönsam\"],[\"Mars 1929\",\"Call-räntan 20 procent; mellanras\",\"Köps tillbaka; Mitchell lovar fortsatt utlåning\"],[\"5 september 1929\",\"Babson: 'en krasch kommer förr eller senare, och den kan bli fruktansvärd'\",\"Eftermiddagens fall döps skrattande till 'Babson break'\"],[\"15 oktober 1929\",\"Fisher: kurserna har nått 'permanently high plateau'\",\"Mötet applåderar — toppen passerades sex veckor tidigare\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Varningar har inga datum. Den som agerar på en varning för tidigt ser ut som en dåre; den som väntar på bekräftelse ser ut som ett kraschoffer. Därför handlar riskhantering om positioner, aldrig om spådomar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner två påståenden om dagens marknad som du misstänker är 'Babson-sanningar' — sanna men tidiga. Bestäm sedan inte NÄR du skulle handla på dem utan HUR: vilken förändring av dina positioner kräver inte att du har rätt i tiden, bara i riktningen?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur fungerade 'binders'-systemet i Florida-boomen?",
+          "alternativ": [
+            "Köparen erlade tio procent och räknade med att sälja vidare innan resten föll due",
+            "Köparen betalade allt kontant direkt",
+            "Tomten fick bara köpas av Floridabor",
+            "Statliga obligationer krävdes som säkerhet"
+          ],
+          "ratt": 0,
+          "tips": "Jämför insatsens storlek med det som senare kallades margin på börsen."
+        },
+        {
+          "q": "Vad hände efter Roger Babsons tal den 5 september 1929?",
+          "alternativ": [
+            "Marknaden steg kraftigt i protest",
+            "Börsen stängdes i en vecka",
+            "Markniven föll på eftermiddagen och fallet döptes skrattande efter honom",
+            "Fed sänkte räntan till noll"
+          ],
+          "ratt": 2,
+          "tips": "Epitetet blev ett skämt — ett 'break' som fick hans namn."
+        },
+        {
+          "q": "Vad lovade Charles Ponzi sina investerare 1920?",
+          "alternativ": [
+            "Femtio procent avkastning på fyrtiofem dagar",
+            "En procent per år i evighet",
+            "Gratis tomtmark i Florida",
+            "Utdelning i guld"
+          ],
+          "ratt": 0,
+          "tips": "Siffrorna var valda för att kännas som snabba pengar men inte ren galenskap."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "In Goldman Sachs We Trust — hävstång på hävstång",
+      "intro": "1928 och 1929 föddes hundratals investment trusts — stängda fonder som lovade diversifiering och expertis. I händerna på Goldmans Sachs Trading Corporation, Shenandoah och Blue Ridge blev de i stället hävstång på hävstång: strukturer som köpte varandras aktier med lånat kapital. Galbraith gav kapitlet titeln 'In Goldman Sachs We Trust' — ironin sitter än.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Investment trusten var tidens finansiella innovation — en brittisk import som snabbt amerikaniserades. Idén var inte galen: samla kapital, diversifiera över aktier, låta professionella förvalta. Problemet var att börsens sug gjorde att trusterna kunde emittera aktier till priser över underliggande tillgångsvärde och att de gärna finansierade sina inköp med förmånsrättsbelåning — seniorandelar som fungerade som skuld. Galbraith räknar: 186 nya trusts under 1928, och 265 stycken under 1929 enbart. Den som köpte en trust köpte i praktiken en belånad aktieportfölj — men marknadsföringen talade om diversifiering och trygghet. Det är V03 intäktsdiversifiering som retorik: spridningen var illusionär när hela portföljen bestod av samma tidens börsaktier, värderade till samma sentiment."
+        },
+        {
+          "type": "text",
+          "content": "Goldman Sachs gick till historien. I december 1928 emitterades Goldman Sachs Trading Corporation till 104 dollar per aktie; Marknaden svalde, och aktien steg till 222,5 dollar i februari 1929 — mer än en fördubbling på åtta veckor, trots att tillgångarnas värde rört sig betydligt mindre. Sommaren 1929 följde Shenandoah och Blue Ridge, konstruerade för att investera i GSTC och — sinsemellan — i varandra. Galbraith noterar med rak tunga att företagen köpte varandras aktier med emitterade pengar: hävstången staplades på hävstång. Bankens egen ekonom, Waddill Catchings, var tesens apostel: moderna produktionsmetoder gjorde krascher föråldrade. Kapitelrubrikens ordlek på 'In God we trust' är ett av finanslitteraturens kyligaste skämt."
+        },
+        {
+          "type": "text",
+          "content": "Räkna på ruinens aritmetik, för det är här V10 skuldsättningsgrad får sin masterclass. Med tio procent eget kapital på ett lager raderar ett fall på tio procent i underliggande tillgångar hela ägarkapitalet — fordringsägarna tar resten. Lägg till ett andra lager, där trustens egna aktier är underlag för nästa belåning, och ett vanligt börsfall på några tioprocent räcker för att alla ägare nedåt i kedjan ska vara utplånade samtidigt. Detta var inga randfenomen i perifera bolag: det var börsens mest respekterade namn som stod för konstruktionerna. Och mekanismen är evig — hävstång ovanpå hävstång förvandlar en recession, som är normal, till en ruin, som är permanent."
+        },
+        {
+          "type": "text",
+          "content": "Slutet: GSTC, som toppat på 222,5 dollar, handlades 1932 kring 1,75 — en nedgång med över 99 procent, från ett papper som varit börsens stolthet. Tillgångarna — riktiga aktier i riktiga bolag — hade fallit kanske 85-90 procent; skillnaden till de sista 99+ var strukturerna. Galbraith är rättvis: många trusts var lagliga, vissa hyggligt skötta, och ingen tvingade någon att köpa. Brottet var systemiskt — en epok där alla incitament pekade mot att bygga mer hävstång. Modern läsning: när du idag ser börsnoterade holdingbolag som äger börsnoterade holdingbolag, fond-i-fond-kedjor eller belånade stängda fonder med rabatt, räkna lagren. Varje lager är en V10-multiplikator som du betalar för med din överlevnad, inte din avkastning."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Goldman-trusterna — pyramiden och dess öde\",\"rader\":[[\"Bolag\",\"Uppgifter\",\"Konstruktion\",\"Öde\"],[\"Goldman Sachs Trading Corporation\",\"Emitterad december 1928 till 104 USD\",\"Modern; belånad aktieportfölj med seniorandelar\",\"Topp 222,5 i februari 1929 — omkring 1,75 dollar 1932\"],[\"Shenandoah Corporation\",\"Sommar 1929\",\"Nytt kapital som bl a köpte GSTC och syskonbolag\",\"Kollapsade till bråkdelar av emissionsvärdet\"],[\"Blue Ridge Corporation\",\"Sommar 1929\",\"Köpte och ägdes av syskontrusterna — hävstång på hävstång\",\"Nästan värdelös i botten 1932\"],[\"Branschen totalt\",\"265 nya trusts enbart 1929\",\"Diversifiering som marknadsföring, belåning som verklighet\",\"Sektor som helhet förlorade mer än marknaden\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hävstång på hävstång är inte ett risktagande — det är ett antagande om att ingen vanlig nedgång någonsin ska inträffa. Lagren förvandlar en normal recession till en permanent ruin; därför är antalet lager i en struktur viktigare än innehållet i den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en struktur du äger eller överväger — börsnoterat investmentbolag, fond-i-fond, belånad stängd fond eller holdingbolag med dotterlistningar — och rita dess ägarlager på ett papper. Räkna sedan ut: hur många procent behöver de underliggande tillgångarna falla innan ditt lager är helt utplånat? Om du inte kan räkna ut det är det svaret."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad anspelar kapitelrubriken 'In Goldman Sachs We Trust' på?",
+          "alternativ": [
+            "USA:s nationalsång",
+            "Goldman Sachs gamla slogan",
+            "Frasen på dollar sedlar — 'In God We Trust' — riktad mot den bank vars trusts kom att symbolisera epoken",
+            "En psalm som sjöngs på börsen"
+          ],
+          "ratt": 2,
+          "tips": "Galbraiths ironi bygger på vad som står tryckt på amerikanska sedlar."
+        },
+        {
+          "q": "Vad innebar 'hävstång på hävstång' i trust-konstruktionerna?",
+          "alternativ": [
+            "Att trusterna enbart köpte utländska obligationer",
+            "Att Goldman lånte pengar av konkurrenterna",
+            "Att belånade portföljer ägdes av belånade portföljer — ett normalt börsfall räckde för att radera hela ägarleden",
+            "Att aktierna delades ut som utdelning"
+          ],
+          "ratt": 2,
+          "tips": "Räkna multipeln: tio procent eget kapital per lager."
+        },
+        {
+          "q": "Hur gick det för Goldman Sachs Trading Corporations aktie?",
+          "alternativ": [
+            "Från 104 till 222,5 dollar — och till omkring 1,75 dollar 1932",
+            "Från 1,75 till 222,5 dollar under 1930-talet",
+            "Den behöll sitt värde tack vare diversifiering",
+            "Den byttes ut mot statsobligationer"
+          ],
+          "ratt": 0,
+          "tips": "Frågan är inte hur högt den steg — utan var den låg tre år senare."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Tio procent — margin, call money och kreditens roll",
+      "intro": "Boomens bränsle hette margin. Köparen erlade tio procent, mäklaren lånade ut nittio — och finansierade sig själv med uppsägningsbara call-lån. Hösten 1929 uppgick belåningslånen till omkring 8,5 miljarder dollar. Det här kapitlet förklarar kreditens maskineri och varför oktober var strukturellt oundvikligt — inte en olyckshändelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken var enkel och därför farlig. Kunden köpte aktier för 10 000 dollar med 1 000 i insats; mäklaren stod för resten, lånad på penningmarknaden som call money — lån som borgenären kunde säga upp med ett dyggs varsel. Räntan rörde sig med efterfrågan och nådde 20 procent i mars 1929. Vem som helst med en adress och en ambition kunde delta: kontorister, stenografer och präster spelade tillsammans med banker och fonder av alla slag. Systemets totala belåningslån växte från omkring 3,5 miljarder dollar i början av 1927 till omkring 8,5 miljarder i oktober 1929 — och de senaste årens tillväxt kom alltmer från icke-banker: företag, investment trusts och utländska pengar som sökte den höga dygnsräntan."
+        },
+        {
+          "type": "text",
+          "content": "Utlåarna var systemets mest respekterade institutioner — det är Galbraiths poäng. Storföretag placerade sina kassor i call-lån eftersom avkastningen var överlägsen; bankerna följde med; utländska fonder flöt in. När Federal Reserve i februari 1929 bad medlemsbankerna att begränsa den spekulativa utlåningen tackade man artigt nej — Charles Mitchell på National City förklarade att hans bank skulle fortsätta låna ut oavsett. Incitamenten var helt rationella på institutionsnivå och kollektivt destruktiva: varje enskild långivare tjänade på att hålla kvar, och varje enskild kunde lämna över en natt. Det är V11 likviditet i sin renaste gestalt: en balansräkning full av långfristiga aktier, finansierad med skulder som kan förfalla på tjugofyra timmar."
+        },
+        {
+          "type": "text",
+          "content": "Loopen var reflexiv och därför självförstärkande. Stigande kurser ökade värdet på säkerheterna, vilket gav utrymme för nya lån, som blev nya köp, som steg kurserna ytterligare. Aggregerat var V10 skuldsättningsgrad hela marknadens dolda variabel — ingen enskild aktie behövde vara mani för att systemet skulle vara det. Och i vändningen gick mekanismen baklänges med samma automatik: sjunkande kurser gav margin calls, margin calls gav tvångsförsäljningar, tvångsförsäljningar gav sjunkande kurser. Oktober 1929 krävde ingen nyhet, inget brott och ingen katastrof — det krävde bara att en tillräckligt stor andel av köparna hade sitt kapital hos långivare som måste agera. Kraschen satt inskriven i finansieringen månader innan den inträffade."
+        },
+        {
+          "type": "text",
+          "content": "Modern översättning kräver ingen fantasi. Margin-skuld, belånade ETF:er, repor och derivat med daglig säkerhetsställning spelar idag samma roll som call money — finansiering som är billig i ro och bortsopad i storm. Frågorna är desamma som 1929: Hur mycket eget kapital står du med? Vem finansierar resten, till vilken ränta och på vilket uppsägningssvarsel? Vad händer med dig samma dag som kraven på eget kapital höjs och värdena faller samtidigt? Marginal of safety — principen utan siffra — betyder just detta: avståndet mellan din balansräkning och ett beslut som fattas åt dig."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kreditmaskineriet — 1929 och idag\",\"rader\":[[\"Element\",\"1929\",\"Modern motsvarighet\",\"AKM1-fråga\"],[\"Insats\",\"Tio procent eget kapital\",\"Reglerad initialmarginal omkring femtio procent i USA — men derivat och produkter öppnar bakdörrar\",\"Hur mycket eget kapital står du med?\"],[\"Finansiering\",\"Call money — uppsägningsbar inom ett dygn\",\"Marginal-skuld, repo, daglig säkerhetsställning\",\"Vem kan säga upp din finansiering — och hur snabbt?\"],[\"Kostnad\",\"Upp till 20 procent i mars 1929\",\"Styrränta plus påslag\",\"Vad kostar det att stå kvar när det blåser?\"],[\"Systemrisk\",\"Cirka 8,5 miljarder dollar i belåningslån\",\"Margin-skuld och derivat-notional i biljonklassen\",\"Vad händer när alla tvingas samtidigt?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Belåning förvandlar prisfall till försäljningstvång och försäljningstvång till prisfall. Det är därför hävstång är den enda variabel som kan förvandla ett misstag till en existentiell händelse — felet blir inte större, men konsekvenserna blir det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör din egen margin-stress: om kravet på eget kapital dubblades imorgon och dina innehavs värden samtidigt faller 30 procent — överlever du utan att sälja något? Om svaret är nej existerar din verkliga risk i finansieringen, inte i aktieurvalet. Skriv ner vilken förändring i belåning eller likviditet som skulle krävas för att svaret ska bli ja."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknade ett call-lån 1929?",
+          "alternativ": [
+            "Det löpte på tio år fast ränta",
+            "Det kunde bara ges till banker",
+            "Det varstatsgaranterat",
+            "Borgenären kunde säga upp det med ett dyggs varsel"
+          ],
+          "ratt": 3,
+          "tips": "Namnet kommer av att lånet kunde 'kallas in' — nästan när som helst."
+        },
+        {
+          "q": "Varför ignorerade bankerna Fed:s vädjan i februari 1929 om att begränsa börsbelåningen?",
+          "alternativ": [
+            "Brevet kom aldrig fram",
+            "Utmaningen ansågs okej eftersom aktierna steg",
+            "Utlåningen var för lönsam — och konkurrenterna lånte ut vidare",
+            "Fed saknade legal rätt att skicka brev"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vem som skulle tjäna på att vara ensam om att säga nej."
+        },
+        {
+          "q": "Vad är den reflexiva loopen i en belånad booms vändning?",
+          "alternativ": [
+            "Fallande kurser ger margin calls, som ger tvångsförsäljningar, som ger fallande kurser",
+            "Fallande kurser ger högre utdelningar som lockar köpare",
+            "Stigande räntor gör aktierna billigare och stabiliserar marknaden",
+            "Centralbanken köper alltid bottnen"
+          ],
+          "ratt": 0,
+          "tips": "Följ tvångets riktning: vem måste sälja oavsett pris?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Permanently high plateau — toppen och självförnekelsen",
+      "intro": "Den 3 september 1929 stängde Dow på 381,17 — ingen visste att det var toppen, och det är precis därför det är lärorikt. Sex veckor senare formulerade Amerikas mest ansedde ekonom, Irving Fisher, tidens mest citerade felbedömning. Kapitlet handlar om toppens karaktär: inte ett ögonblick av panik, utan en epok av stilla säkerhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Uppgången in i september hade allt en topps kännetecken utom etiketten. Ett mellanras i mars 1929 — när call-räntan nådde 20 procent — hade köpts tillbaka på veckor, vilket lärt marknaden att nedgångar var inköpslägen; 1928 års valrally hade bytt 'Coolidge-börsen' mot 'Hoover-börsen' utan att ta udden av optimismen; omsättningen slog rekord månad efter månad; och de mest belånade och mest berättelseburna papperen — radio, kraft, trusts — steg snabbast. Aktiernas direktavkastning hade under året sjunkit under obligationsräntan, ett brott mot decenniers mönster som samtiden förklarade med att aktier nu var förstådda och trygga. Kursernas V04 och V05 hade lossnat från varje förgångare; just att historien inte längre tänjdes tillräckligt var argumentet."
+        },
+        {
+          "type": "text",
+          "content": "Sedan Fisher. Den 15 oktober 1929 — med Dow redan en bit under toppen och svajiga dagar bakom sig — förklarade Irving Fisher, Yale-professor, grundaren av index- och penningteori som skulle komma att bära hans namn i läroböckerna, att aktiekurserna nått 'what looks like a permanently high plateau'. Han hade fog för optimism i fundamentalerna: bolagens vinster och utdelningar hade faktiskt stigit genom decenniet. Men priset hade stigit mycket mer, och Fisher hade personligen — med egna och sin svägerskas pengar — stora belånade positioner. Mannen var inte dum; han var investerad, och det är därför hans mening blivit evig. Galbraith behandlar honom med den där respektfulla ironi som gör boken stor: Fishers mening var formad av en av århundradets skarpaste hjärnor."
+        },
+        {
+          "type": "text",
+          "content": "Värderingslagret förtjänar sin egen läsning. Sektorernas mest 'obligationslika' del — kraftbolagen, med verkligt stabila intäkter (V12 intäktsstabilitet i sin renaste form) — bar via holdingstrukturerna marknadens största dolda skuldsättning (V10). Insull-pyramiderna kontrollerade enorma elsystem genom hävstångskedjor; ju stabilare underlaget såg ut, desto mer hävstång byggdes på det. Det är börsens djupaste ironi: kvaliteten hos tillgången frestar fram strukturen som förstör ägaren. En perfekt V12-andel i en dålig struktur är en dålig investering. Omvänt gällde att epokens tillväxtstjärnor — radio främst — prissattes som om V01 och V02 skulle fortsätta i all evighet utan konkurrens, utan cykel, utan kapitalkostnad."
+        },
+        {
+          "type": "text",
+          "content": "Toppens sociala symtom var lika tydliga som de finansiella. Börsen hade blivit nationellt samtalsämne; tick-tjänsten hade blivit något man kunde följa på hotell och barberstugor; berättelser om män som slutat arbeta för att leva på börsen cirkulerade som folklore; och anekdoten om Josef Kennedy som lät skoputsarens aktietips bli hans signal att lämna marknaden är evig just för att den fångar epokens logik: när tipsen nått skoputsaren fanns ingen kvar att sälja till. Galbraiths slutsats är kysk: toppar tillkännages inte. De känns igen i efterhand, av dem som överlevde, och den sista köparen är definitionsmässigt den sämst informerade. Därför är frågan vid varje topp inte 'vem säljer' utan 'vilket pris skulle få mig att sluta köpa' — och att märka när man saknar svar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mot kraschen — september och oktober 1929\",\"rader\":[[\"Datum\",\"Händelse\",\"Samtidens läsning\"],[\"3 september\",\"Dow toppar på 381,17\",\"Ingen vet något; det är bara en tisdag\"],[\"5 september\",\"Babson-varningen; eftermiddagens fall\",\"Döps skrattande till 'Babson break' — och köps tillbaka\"],[\"Sent september\",\"Utflöde av svaga dagar; trust-nyemissioner fortsätter\",\"'Teknisk korrektion' i en sund marknad\"],[\"15 oktober\",\"Fishers 'permanently high plateau'\",\"Applåder; gratulationer till en stor ekonom\"],[\"21-23 oktober\",\"Tunga dagar; onsdagens sena ras\",\"Margin calls bereds över natten — torsdagen ska bli annorlunda\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Toppens kännetecken är inte att alla köper — det är att ingen längre kan formulera vilket pris som skulle få dem att sluta köpa. Säkerheten är total just därför att frågan är ostraffad."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen 'platå-mening': den mening du idag tror på om en tillgång och som du skulle skämmas över att läsa högt 2035. Formulera sedan beviskravet bakvänt: vilka två observationer skulle få dig att överge meningen? Om du inte hittar några är det inte en tes — det är en identitet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad sade Irving Fisher i mitten av oktober 1929?",
+          "alternativ": [
+            "Att en krasch var nära förestående",
+            "Att Fed borde höja räntan kraftigt",
+            "Att guld var den enda trygga tillgången",
+            "Att aktiekurserna nått vad som ser ut som en permanent hög platå"
+          ],
+          "ratt": 3,
+          "tips": "Meningen har blivit själva sinnebilden för felkalibrerad säkerhet."
+        },
+        {
+          "q": "Vad innebar det att aktiernas direktavkastning 1929 sjönk under obligationsräntan?",
+          "alternativ": [
+            "En traditionell trygghetsregel bröts — aktier prissattes som överlägsna obligationer",
+            "Att bolagen höjde utdelningarna",
+            "Att obligationer blev förbjudna",
+            "Ingenting — det hade alltid varit så"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på varför aktier historiskt behövt ge högre direktavkastning än obligationer."
+        },
+        {
+          "q": "Vilken paradox kännetecknade kraftbolagens holdingstrukturer?",
+          "alternativ": [
+            "De hade stabilast intäkter och störst dold skuldsättning",
+            "De hade ostadiga intäkter men ingen skuld alls",
+            "De var förbjudna i tolv delstater",
+            "De betalade all skuld i guld"
+          ],
+          "ratt": 0,
+          "tips": "V12 och V10 i samma sektor — fundera på vilket som bars av vilket."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Svarta torsdagen — 24 oktober tick för tick",
+      "intro": "Torsdagen den 24 oktober 1929 inleddes med en omsättning aldrig skådad och avslutades — tack vare en teatralisk intervention — med Dow endast omkring två procent ned. Däremellan ligger en av finanshistoriens mest studerade dagar. Kapitlet går igenom den timme för timme.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förspelet hade byggt hela veckan. Måndagen den 21 och tisdagen den 22 var tunga men behärskade; onsdagen den 23 höll sig samman tills eftermiddagen, då marknivån bröt och Dow föll med över sex procent under dagen — det mesta på eftermiddagen. Över natten bereddes margin calls i tiotusental — kunder som måste sätta in pengar eller sälja. Torsdagen öppnade klockan tio med en vägg av säljorder som ingen kursökning kunde möta; priserna föll oavbrutet från första slaget, och inom den första timmen bytte fler aktier ägare än under hela normala dagar. Börsens ledning övervägde — ryktades det — att stänga handeln, och ryktet blev i sig ett drivmedel: vem ville sitta kvar när dörren kunde slå igen?"
+        },
+        {
+          "type": "text",
+          "content": "Kring halv tolv på förmiddagen samlades fem av Wall Streets mäktigaste män på J.P. Morgans kontor på 23 Wall Street — Morgan-partners ledda av Thomas Lamont tillsammans med Charles Mitchell från National City och Albert Wiggin från Chase. Kommunikén till pressen var den mest halvhjärtade i krisens historia: marknaden led av 'tekniska' problem, en viss tvångsförsäljning, men fundamentalt var allt väl. Sedan skickades Richard Whitney, börsens vice ordförande och Morgan-mäklare, ut på golvet med instruktioner. Med tvärsäker min gick han till US Steel-posten och böd 205 dollar för 25 000 aktier — över senaste kurs — varefter han upprepade köpbud i en handfull blue chips. Det var 1907 års recept i ny inpackning: visad styrka som medicin. Eftermiddagen vände kurserna; shorts täckte, torsdagen stängde med 12,9 miljoner omsatta aktier och Dow 'bara' omkring två procent ned. Teatern hade fungerat — för en dag."
+        },
+        {
+          "type": "text",
+          "content": "Under ytan malde mekanismer som ingen intervention nådde. Tick-bandaren — marknadens enda gemensamma informationssystem — kom efter, timme efter timme; under eftermiddagen citerades kurser som var gamla medan den verkliga handeln skedde ännu lägre. Säljarna sålde blint, vilket gjorde försäljningen till panik snarare än beslut. Nere på Broad Street samlades folkmassor — poliser kallades in, fotografier från eftermiddagen blev kraschens ikoner — och rykteskvarteret ekade: börsen skulle stängas, nationalgardet skulle kallas, revolutionen var på väg. Inget av det stämde, men informationsbristen gjorde varje rykte lika trovärdigt som en notering. Galbraiths iakttagelse står sig: en marknad som inte vet var den är blir farligare än en som vet att den faller."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen är mikromekanisk och evig. Torsdagen visar tre saker. För det första: när säljare är margin-tvungna är utbudet prisokänsligt — det finns ingen kurs som får dem att stanna, ty de säljer inte för att de vill utan för att de måste (V11 som systemvariabel). För det andra: ett stödpool kan förskjuta en kraschs tidsplan men aldrig dess destination — köparna av sista utvägen är alltid brutna förr eller senare. För det tredje: informationens hastighet är i sig en riskfaktor; den eftersläpande bandaren 1929 har sina arvingar i varje modern glapp mellan 'skärmbilden' och 'marknaden'. Att torsdagen stängde 'hyfsat' var inte en vändpunkt — det var ett uppskov, och helgen skulle äta upp det."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Torsdagen 24 oktober 1929 — tick för tick\",\"rader\":[[\"Tid (cirka)\",\"Händelse\",\"Mekanism\"],[\"Onsdag eftermiddag\",\"Sent ras; Dow ner över sex procent på slutet\",\"Margin calls bereds över natten\"],[\"Torsdag 10:00\",\"Vägg av säljorder; priserna faller från första slaget\",\"Tvångsförsäljning möter inga bud\"],[\"Cirka 11:30\",\"Bankmännen på 23 Wall; pressmeddelande om 'tekniska' problem\",\"Visad likviditet som medicin\"],[\"Strax efter\",\"Whitney böd 205 dollar för 25 000 US Steel — och mer i blue chips\",\"1907 års recept: styrka som signal\"],[\"Eftermiddag\",\"Kurserna vänder; shorts täcker; 12,9 miljoner aktier omsatta\",\"Teatern fungerar — för en dag\"],[\"Fredag-lördag\",\"Lugn; partiell återhämtning på fredagen\",\"Falsk ro — måndagen väntar\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett stödpool kan förskjuta en kraschs tidsplan, aldrig dess destination. Den som köper för att hindra ett fall är alltid mindre än den som måste sälja — ty den senare slutar inte när priset är rätt, utan när skulden är betald."
+        },
+        {
+          "type": "utmaning",
+          "content": "Notera nästa gång ett 'stödköp' presenteras i media — centralbank, bolagsköp eller bankkartell. Skriv då ner, innan verkligheten gör det: vem finansierar ingripandet, hur länge räcker medlen, och vad händer med priset när de tar slut? Jämför din analys med utgången."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gjorde Richard Whitney på börs golvet torsdagen den 24 oktober?",
+          "alternativ": [
+            "Han stängde handeln i en timme",
+            "Han sålde hela sin portfölj öppet",
+            "Han förbjöd all margin-handel",
+            "Han böd 205 dollar för 25 000 aktier i US Steel — och köpbud i fler blue chips"
+          ],
+          "ratt": 3,
+          "tips": "Budet lades över senaste kurs — med avsikt."
+        },
+        {
+          "q": "Varför förvärrade den eftersläpande tick-bandaren paniken?",
+          "alternativ": [
+            "Den visade för höga kurser som lockade fler köpare",
+            "Den hann aldrig eftersläpa",
+            "Bandaren fungerade bara för banker",
+            "Säljarna agerade på timmar gamla kurser — de sålde blint utan att veta var marknaden var"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig vad ett beslut blir värt när informationen är gammal."
+        },
+        {
+          "q": "Hur stängde torsdagen den 24 oktober?",
+          "alternativ": [
+            "Med Dow nere omkring två procent — uppskov, inte vändpunkt",
+            "Med Dow nere tjugo procent",
+            "Med börsen stängd",
+            "Med rekorduppgång tack vare Fed"
+          ],
+          "ratt": 0,
+          "tips": "Interventionen såg ut att fungera — tills måndagen."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Måndagen och tisdagen — 28 och 29 oktober",
+      "intro": "Helgens tidningar lugnade; måndagen den 28 oktober föll Dow med 12,8 procent och tisdagen den 29 med ytterligare 11,7 på rekordomsättningen 16,4 miljoner aktier. De två värsta dagarna i börsens dittillsvarande historia kom inte med panikskrik utan med tyst, outtröttligt säljande. Kapitlet följer dagarna och november som följde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Helgen mellan torsdagen och måndagen var ett studium i beredskapsretorik. Tidningar och talesmän intalade landet att den värsta avyttringen var över, att fundamentala värden var intakta, att en sund rensning ägt rum. Måndagen den 28 oktober öppnade tungt — och den här gången fanns ingen Whitney-promenad som kunde bära: bankmännen samlades igen men meddelandet var tunnare, och marknaden hade lärt sig att läsa mellan raderna. Säljandet var oavbrutet hela dagen, utan det dramatiska klustret från torsdagen: bara en lång, tung väg ner. Dow stängde 38,33 poäng lägre, minus 12,8 procent — den värsta dagen i börsens historia dittills. Inget hade hänt; just det var poängen. När tvungna säljare möter frånvarande köpare behöver ingen katalysator finnas."
+        },
+        {
+          "type": "text",
+          "content": "Tisdagen den 29 oktober blev kraschens ikon. Omsättningen nådde 16,4 miljoner aktier — ett rekord som stod sig i nästan fyrtio år — och dagen bjöd på den mest förkrossande syn en börs kan erbjuda: hela block som kastades mot bud som inte fanns; blue chips som föll gap mellan noteringarna; bandaren som kom efter allt mer. Dow föll ytterligare 11,7 procent. Två dagar i följd av dubbelsiffrigt fall och omsättning utan motstycke — och ändå, påminner Galbraith, var oktober bara akten. November var pjäsen: vecka efter vecka av obeveklig nedgång, nya bottennoteringar, tills Dow den 13 november stängde kring 198,6 — långt under tisdagens stängning. Hans kapitel om den månaden heter 'Things Become More Serious', och titeln rymmer all den ironi han förmår."
+        },
+        {
+          "type": "text",
+          "content": "Mytbildningen började omedelbart, och Galbraith ägnar den kärleksfull granskning. Självmordsvågen — med tidningarnas ritningar av mäklare på hustak och hotelldirektörernas ibland citerade fråga om gästen ville ha rummet 'för att sova eller hoppa' — var i huvudsak en myt; dödstalen för 1929 visar ingen våg, och de mest citerade fallen kan inte spåras. Däremot var förmögenheterna verkliga: margin-konton utplånades, mäklare sviktade, papperstillgångar föll bort, och de strukturer som byggts på hävstång — trusts, holdingbolag, belånade positioner — förlorade inte marknadens fall utan multipeln av det. Skillnaden mellan -85 och -99 procent var inte pessimism; det var kapitalstruktur."
+        },
+        {
+          "type": "text",
+          "content": "Vad kunde ingen göra? Marknadens arkitektur var envägs: allmänheten kunde köpa på marginal men hade ingen enkel kanal att korta; kretsbrytare existerade inte; stödpool var privat teater utan ryggrad; och Reglering kom först senare (Glass-Steagall 1933, SEC 1934, marginalregler 1934) som institutionaliserat minne av just denna vecka. AKM1-läsningen: oktober 1929 är den renaste demonstrationen av att marknadsrisk inte bor i prisernas nivå utan i ägandets finansiering och i systemets envägsdesign. De mekanismer som idag heter kretsbrytare, shorts och marginalkrav är alla barn av denna vecka — och deras existens är inget bevis för att de räcker."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Oktober-november 1929 — dag för dag\",\"rader\":[[\"Dag\",\"Omsättning\",\"Dow-förändring\",\"Notering\"],[\"Torsdag 24 oktober\",\"12,9 miljoner aktier\",\"cirka -2,1 procent\",\"Stödbud håller — precis\"],[\"Fredag 25 - lördag 26 oktober\",\"Lugnare\",\"Upp på fredagen\",\"Falsk ro över helgen\"],[\"Måndag 28 oktober\",\"Omkring 9,2 miljoner aktier\",\"-12,8 procent\",\"Värsta dagen dittills; inget stöd räcker\"],[\"Tisdag 29 oktober\",\"16,4 miljoner aktier\",\"-11,7 procent\",\"Rekordomsättning — stod sig i nästan 40 år\"],[\"Onsdag 13 november\",\"Fortfarande tung\",\"Dow kring 198,6\",\"November värre än oktober — 'Things Become More Serious'\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Oktober var akten; november var pjäsen. De berömda dagarna säljer böcker, men förmögenheterna förstördes av den tysta, obevekliga nedsläppet som följde — det är därför 'krasch' och 'björnmarknad' är två olika diagnoser."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta dagens 'oktober-för-torsdag': en tillgång där alla talar om en enda dramatisk dag, men där trenden sedan månadsvis är nedåt. Träna dig att skilja ljudet (den stora dagen) från riktningen (den långa nedsläppet) — anteckna vilka beslut du skulle ha fattat för tidigt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utmärkte måndagen den 28 och tisdagen den 29 oktober?",
+          "alternativ": [
+            "Två dagar i rad av fall på över tio procent, med rekordomsättning 16,4 miljoner aktier på tisdagen",
+            "Små fall som kompenserades av stigande obligationer",
+            "Att börsen var stängd båda dagarna",
+            "Att Fed köpte aktier öppet"
+          ],
+          "ratt": 0,
+          "tips": "Torsdagens rekord slogs redan fem dagar senare."
+        },
+        {
+          "q": "Vad konstaterar Galbraith om självmordsvågen efter kraschen?",
+          "alternativ": [
+            "Att den var värre än rapporterat",
+            "Att den var statssecret i femtio år",
+            "Att den bara drabbade bankirer i Boston",
+            "Att den i huvudsak var en myt — dödstalen visar ingen våg, och de citerade fallen kan inte spåras"
+          ],
+          "ratt": 3,
+          "tips": "Galbraith skiljer systematiskt mellan statistik och samtida skämt."
+        },
+        {
+          "q": "Vad hände den 13 november 1929?",
+          "alternativ": [
+            "Dow återtog toppen",
+            "Andra världskriget bröt ut",
+            "Börsen stängdes för gott",
+            "Dow noterades kring 198,6 — november visade sig värre än oktober"
+          ],
+          "ratt": 3,
+          "tips": "Kapitlet i boken om den perioden heter 'Things Become More Serious'."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Nedåt i tre år — 41,22 och de som klarade sig",
+      "intro": "Kraschen tog slut i november 1929; björnmarknaden tog slut först i juli 1932 på 41,22 — minus 89 procent från toppen. Under vägen fanns en falsk vår 1930 som övertygade nästan alla. Kapitlet räknar de tre åren och frågar vad som egentligen skilde de som överlevde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först kom tron att det var över. Efter november steg marknaden; fram till april 1930 återtog Dow nästan allt och nådde omkring 294 — och hela etablissemanget körde samma melodi: den värsta tvångsavyttringen var över, fundamentala värden återstod, företagens balansräkningar var starka. Harvard Economic Society — tidens mest ansedda prognosbyrå — höll fast vid återhämtning genom hela nedsläppet och tvingades småningom lägga ner sin verksamhet. Falsk vår är inte en bisak i björnmarknadens anatomi; den är dess kärna, för den lurar kvar det kapital som sedan går förlorat i den sista tredjedelen av fallet. Från april 1930 var det i princip rakt ner i tjugosex månader: 41,22 den 8 juli 1932."
+        },
+        {
+          "type": "text",
+          "content": "De värsta ruinerna låg i sektorn som såg tryggast ut. Sam Insull hade byggt enorma elsystem genom holdingbolags-pyramider — bolag som kontrollerade bolag som kontrollerade bolag, med en tunn tråd av eget kapital högst upp. Underliggande intäkter var verkliga och stabila (V12 intäktsstabilitet av högsta klass — människan betalar sin elräkning), men strukturen var en V10-maskin: ett normalt nedslag i efterfrågan eller finansiering rev hela kedjan. Imperiet kollapsade 1932, Insull flydde landet, utlämnades och frikändes till slut i domstol — oskyldig, och ändå ruinerad, liksom hans investerare. AKM1-lärdomen är absolut: tillgångens kvalitet och kapitalstrukturens kvalitet är två olika frågor, och den sämre av dem vinner."
+        },
+        {
+          "type": "text",
+          "content": "De som klarade sig skiljde sig inte i intelligens utan i struktur. Josef Kennedy och Bernard Baruch — enligt både egen utsaga och eftervärldens berättelser — stod i kontanter och obligationer, avvisade belåning och lämnade tidigt. Benjamin Graham, värderingslärans fader, blev kvar och slets ner: hans förvaltning förlorade omkring sjuttio procent 1929-1932, överlevde — och ur ruinerna skrev han med David Dodd Security Analysis (1934), där marginal of safety formuleras som disciplin, inte som siffra. Avsikten med den historien är exakt densamma som AK1A:s: mästaren själv bevisade att analys utan finansieringsdisciplin inte räddar dig. Vid botten hade Dow fallit 89 procent; aktien som man köpte 'billigt' på väg ner var sällan billig i efterhand. Och återhämtningen? Dow passerade 381,17 igen den 23 november 1954 — tjugofem år senare."
+        },
+        {
+          "type": "text",
+          "content": "Överlevnadsanalysen är kapitlets praktiska arv. Frågan vid varje nedgång är aldrig 'hur djupt faller marknaden' utan 'vem tvingas agera på vägen ner': den med belåning tvingas, den med löpande kapitalbehov tvingas, den vars motpart kan dra in finansiering tvingas. V19 kapitalförbrukning och emissionsrisk är 1932 års verklighet på företagssidan — bolag som behövde nytt kapital i botten dog genom utspädning eller konkurs, hur bra verksamheten än var. För ägaren gäller spegelbilden: V10 och V11 bestämmer om du får vara längre än marknaden. Historiens grövsta aritmetik: -89 procent kräver +809 procent för att återta toppen — därför är överlevnad, inte avkastning, den dominerande variabeln i en verklig kris."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den långa nedsläppet — fem stationer\",\"rader\":[[\"Datum\",\"Dow\",\"Vad som hände i huvudet på marknaden\"],[\"3 september 1929\",\"381,17\",\"Toppen — ingen vet det\"],[\"13 november 1929\",\"198,6\",\"Oktoberkraschen bottnar; 'det värsta är över'\"],[\"17 april 1930\",\"Omkring 294\",\"Falsk vår: etablissemanget utlovar återhämtning\"],[\"8 juli 1932\",\"41,22\",\"Riktig botten: minus 89 procent; utspädningar och banker faller\"],[\"23 november 1954\",\"381,17\",\"Tillbaka på topp — efter tjugofem år\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är aldrig hur djupt marknaden faller, utan vem som tvingas agera på vägen ner. Överlevnad bestäms av finansieringsstruktur — V10 och V11 — inte av åsikter, analys eller ens intelligens."
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska ditt största innehav som en 1932-analys: om intäkterna halveras under två år och kreditmarknaden stänger — tvingas bolaget emittera aktier, sälja kärntillgångar eller söka ägare? Om ja: vid vilken kurs? Skriv ner svaret och kalla det bolagets verkliga brytpunkt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med Dow fram till april 1930?",
+          "alternativ": [
+            "Den föll oavbrutet varje månad",
+            "Den förbjöds",
+            "Den stängde på 41,22",
+            "Den steg till omkring 294 — en falsk vår som övertygade de flesta om att det värsta var över"
+          ],
+          "ratt": 3,
+          "tips": "Björnmarknadens farligaste del är ofta återhämtningen mitt i."
+        },
+        {
+          "q": "Hur gick det för Benjamin Graham genom kraschen?",
+          "alternativ": [
+            "Han undvek alla förluster genom teknisk analys",
+            "Han blev rik på att korta marknaden",
+            "Han gick i konkurs och lämnade branschen",
+            "Hans förvaltning förlorade omkring sjuttio procent men överlevde — och formulerade sedan marginal of safety i Security Analysis"
+          ],
+          "ratt": 3,
+          "tips": "Lärdomen skrevs av en som betalade för den — i bokstavlig mening."
+        },
+        {
+          "q": "Vad hände med Sam Insull efter att hans pyramid kollapsat?",
+          "alternativ": [
+            "Han dömdes till livstids fängelse",
+            "Han flydde, utlämnades, frikändes i domstol — men ruin var hans och investerarnas oavsett domen",
+            "Han återvände som ordförande i SEC",
+            "Han byggde upp pyramiderna igen på fyrtiotalet"
+          ],
+          "ratt": 1,
+          "tips": "Domstolen friade honom — strukturen gjorde det inte."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Richard Whitney — hjälten som stal från sitt eget trust",
+      "intro": "Mannen som böd 205 dollar för US Steel på svarta torsdagen blev 1938 Amerika mest omskrivna finansfånge: börsens president, dömd för att ha förskingrat värdepapper ur sin svärfars trust och en välgörenhetsfond. Galbraith njuter öppet av ironin — och skandalen tvingade fram den reform som Wall Street inte ville veta av.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Richard Whitney var torsdagen den 24 oktober 1929 hjältten — Morgan-mäklaren som med tvär säkerhet böd över marknaden och räddade eftermiddagen. Han blev NYSE:s president 1930-1935, börsens offentliga ansikte och självregleringens mest högröstade försvarare: Wall Street behövde ingen statlig tillsyn, menade han, börsen skötte sina egna. I retoriken stod han för den gamla ordningen — gentleman, Groton och Harvard, klubbmedlem, yachtmänniska. Det är porträttet Galbraith bygger upp för att sedan få riva det, för som ekonomisk analys är berättelsen nästan för perfekt: samma man, samma säkerhet, samma institution — och ett privat hushållssläp av skulder som ingen frågat efter."
+        },
+        {
+          "type": "text",
+          "content": "Fallet. Whitneys egen mäklarfirma gick allt sämre genom trettiotalet, och för att hålla den levande pantsatte han värdepapper som inte var hans: handlingar ur sin svärfars dödsbo-trust, ur hustruns trustmedel och ur New York Produce Exchange:s garantifond — en välgörenhetsfond han själv haft ansvar för som handelsplatsens president. Upptäckten kom 1937 i samband med 1937-38 års recession; i mars 1938 konfronterades han av börsens styrelse, uteslöts ur allt, greps och dömdes i april till fem till tio års fängelse — fånge på Sing Sing. Brodern George, Morgan-partner, och vänner samlade ihop pengar för att gottgöra de drabbade. Galbraith summerar epokens oskrivna lag: börsens största talesman för heder förvaltade sin egen välgörenhet som en personlig kassett."
+        },
+        {
+          "type": "text",
+          "content": "Skandalens politik var viktigare än brottet. Den kom i botten av 1937-38 års recession, mitt i Pecora-förhörenas efterspel — där Albert Wiggin visats ha kortat sin egen bank Chase under kraschen för en vinst på över fyra miljoner dollar, och Charles Mitchells privata affärer syntats — och den gav SEC:s nye ordförande William O. Douglas den politiska hävstång som behövdes. NYSE tvingades omorganiseras: börsen fick sin första heltidsavlönade president, mäklarfirmornas och börsens roller separerades, och självregleringens tid som argument var förbi. Galbraiths dom över epokens finanssamhälle — »Ansvarskänslan för samhället i stort är inte liten. Den är nästan noll» — skrevs om män som Whitney, och den har inte föråldrats."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen är en styrelsvariabeln: förvaltning och kontroll är inte mjuka värden bredvid modellen — de är modellen. V14 varumärke gäller institutioner som bolag: anseende är balansräkningens osynliga post, aldrig bokförd men alltid realiserad, och Whitney är asymmetrins rena demonstration: decennier att bygga, en enda transaktion att omsätta i skuld. De praktiska varningssignalerna kallas idag besläktade parters transaktioner, dominans utan efterträdare, lån mot egna värdepapper utan oberoende granskning. Kursens test är enkelt: om en structures mäktigaste person kan flytta på tillgångar utan att någon märker — är strukturen problemet, oavsett personen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Richard Whitney — två akter\",\"rader\":[[\"Akt\",\"24 oktober 1929\",\"1937-1938\"],[\"Roll\",\"Börsens vice ordförande; Morgans man på golvet\",\"F d börspresident; desperat ägare av eget brokerfirma\"],[\"Gärning\",\"Böd 205 dollar för 25 000 US Steel och räddade torsdagen\",\"Förskingrade värdepapper ur svärfars trust, hustruns medel och Produce Exchange:s fond\"],[\"Publik bild\",\"Finansiellt ledarskap inkarnerat\",\"Arresterad, dömd till fem-tio år — Sing Sing\"],[\"Efterspel\",\"Symbolen som retoriken byggdes på\",\"Självregleringen dog som argument; NYSE omorganiserades under SEC-tryck\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Anseende är balansräkningens osynliga post — den bokförs aldrig men realiseras alltid. Whitney lärar asymmetrin: det tar decennier att bygga förtroende och en enda transaktion att omsätta det i skuld. V14 har ingen bottenförsäkring."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en årsredovisning för ett av dina innehav och leta Whitney-mönstret: transaktioner med besläktade parter, lån eller pantsättningar från dominerande ägare, brist på oberoende granskning av nyckelpersoners mellanhavanden. Hittar du inget — skriv varför du är säker; det svaret är din verkliga kontroll."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad dömdes Richard Whitney för 1938?",
+          "alternativ": [
+            "Insiders handel i US Steel",
+            "Att ha förskingrat värdepapper ur sin svärfars trust och ur Produce Exchange:s garantifond",
+            "Att ha kortat hela marknaden",
+            "Skattebrott i Florida"
+          ],
+          "ratt": 1,
+          "tips": "Brottet begicks mot dem som minst kunde säga nej — hans egna närmaste och en fonds medlemmar."
+        },
+        {
+          "q": "Vad blev den politiska konsekvensen av Whitney-skandalen?",
+          "alternativ": [
+            "Ingen — den förblev en privat tragedi",
+            "Börsen stängdes i ett år",
+            "Självregleringen avfärdades som argument; NYSE omorganiserades med heltidsavlönad president under SEC:s tryck",
+            "All kortförsäljning förbjöds"
+          ],
+          "ratt": 2,
+          "tips": "Skandalen kom lagom tillsammans med recessionen 1937-38 och Pecoras avslöjanden."
+        },
+        {
+          "q": "Vilken ironi betonar Galbraith i Whitneys fall?",
+          "alternativ": [
+            "Att Whitney var den ende som varnade för kraschen",
+            "Att börsens mest högröstade talesman för heder och självreglering förvaltade andras tillgångar som sina egna",
+            "Att Whitney aldrig hade arbetat på Wall Street",
+            "Att Whitney var immigrant utan kontakter"
+          ],
+          "ratt": 1,
+          "tips": "Jämför hans offentliga retorik med hans privata balansräkning."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Från krasch till depression — mellankrigets felsläpp",
+      "intro": "En krasch är inte en depression. Mellan 1929 och 1933 förvandlades en recession av normalt snitt till katastrof — inte av boenden, utan av politik: tullar, räntehöjningar, skattehöjningar och guldfixeringens logik. Kapitlet går igenom felsläppen och varnar för den bekväma slutsatsen att det bara var dumhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första tiden efter kraschen liknade en vanlig recession: produktion och sysselsättning föll, men i takt som tidigare nedgångar. Vad som följde skilde sig. Hoover — ingen passiv åskådare, som Galbraith påpekar, utan en aktiv ingenjörspolitiker — högg fel: i juni 1930 undertecknade han Smoot-Hawley-tullarna trots att 1 028 ekonomer i en gemensam petition bett honom lägga veto. Motåtgärderna från handelspartners kom omedelbart; världshandeln drogs samman och USA:s utrikeshandel föll med omkring två tredjedelar fram till 1933. En kris som börjat som inhemsk spekulation exporterades som protektionism — och impulsen kom tillbaka som fallande efterfrågan på amerikanska varor. V18 regulatoriska katalysatorer har få bättre illustrationer: politikens svar blev ekonomins multiplikator."
+        },
+        {
+          "type": "text",
+          "content": "Sedan penningpolitiken — kapitlets mörkaste rum. I december 1930 föll Bank of United States, en privat New York-bank med hundratusentals depositioner, och insättningsrusningar spred sig genom ett system utan insättningsgaranti. Hösten 1931 lämnade Storbritannien guldmyntfoten; för att försvara dollarn och guldet höjde Federal Reserve i oktober diskontoräntan till det dubbla — till 3,5 procent — mitt i en depression. 1932 kom stora skattehöjningar i balanserad budgets namn (toppskatten mer än fördubblades); 1933 stängdes banksystemet i den nationella bank holiday, över 9 000 banker hade fallit sedan 1930, penningmängden hade krympt med omkring en tredjedel och priserna fallit med en fjärdedel. Irving Fisher — ja, samme Fisher — skrev 1933 skuldeflationsteorin som förklarar exakt denna spiral: fallande priser gör skulderna tyngre, tyngre skulder tvingar mer försäljning, mer försäljning pressar priserna ytterligare. Historiens finaste poäng: platå-prognostikern blev dess bästa patolog."
+        },
+        {
+          "type": "text",
+          "content": "Den internationella väven var Galbraiths fjärde faktor i praktik: krigsskulder som Tyskland skulle betala, allierade som skulle betala USA, och amerikanska lån som finansierade hela kretloppet. När Wall Streets egna höga räntor 1928-29 drog kapitalet hem, upphörde de amerikanska utlåningen till Europa — och betalningsstrukturen kollapsade som ett korthus, med tullarna som sista slaget. Guldmyntfoten band samman allt: den som förlorade guld tvingades dra åt, oavsett läge; länder som lämnade guldmyntfoten tidigt — Storbritannien 1931 — återhämtade sig tidigare. Att systemet var gjutet så var ingen olyckshändelse: det var ortodoxin, samma regler som banker, riksdagar och centralbanker svurit vid. Felen var inte främst personers — de var regelverkens."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-lärdomen att bära med sig: i varje kris är den farligaste variabeln inte ekonomin utan svaret på ekonomin. V18 på makronivå är ingen fotnot — den kan multiplicera vilken chock som helst. Därför måste ett scenarioarbete alltid innehålla en policy-fel-gren: vad händer om myndigheterna gör 1930-talets fel — stramar åt i krisen, skyddar valutan framför sysselsättningen, retirerar in i protektionism? Att dagens beslutfattare 'vet bättre' är exakt vad 1920-talet sa om 1873. Ödmjukheten inför regelverkens makt — inte föraktet för beslutfattarna — är mellankrigets egentliga arv, och den är bas för kapitel 13:s debatt om vad som egentligen orsakade depressionen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Felsläppen 1929-1934 — kronologi\",\"rader\":[[\"Tidpunkt\",\"Beslut eller händelse\",\"Verkan\"],[\"Juni 1930\",\"Smoot-Hawley-tullarna trots 1 028 ekonomers vädjan\",\"Retaliation; världshandeln krymper kraftigt\"],[\"December 1930\",\"Bank of United States faller (privat bank med hundratusentals depositioner)\",\"Insättningsrusningar utan insättningsgaranti\"],[\"September-oktober 1931\",\"Storbritannien lämnar gulden; Fed höjer diskontoräntan till 3,5 procent\",\"Guld försvaras framför ekonomin — mitt i depression\"],[\"1932\",\"Stora skattehöjningar; toppskatten mer än fördubblad\",\"Balanserad budgets ortodoxi iverkställd i botten\"],[\"Mars 1933\",\"Nationell bank holiday; banksystemet stängs\",\"Över 9 000 banker fallna; penningmängden nere en tredjedel\"],[\"Januari 1934\",\"Guldet devalveras från 20,67 till 35 dollar per uns\",\"Spärret lossas — för sent för decenniets första hälft\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "I varje kris är den farligaste variabeln inte ekonomin utan politiken som svarar på den. 1930-talets fel var inte utförda av dårar utan av regelverk som alla litade på — därför ska du övervaka regelverken, inte bara männen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ett policy-träd för en av dina positioner: tre grenar — beslutsam åtgärd, passivitet, aktivt fel (åtstramning, valutaskydd, protektionism) — och uppskatta priset på aktien i varje gren om ett år. Om gren tre inte finns i din analys har du just upptäckt din blinda fläck."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gjorde 1 028 ekonomer inför Smoot-Hawley-tullarna 1930?",
+          "alternativ": [
+            "De krävde högre tullar",
+            "De undertecknade en petition och bad Hoover lägga veto — han skrev under ändå",
+            "De grundade Federal Reserve",
+            "Ingenting — ekonomerna var eniga med Kongressen"
+          ],
+          "ratt": 1,
+          "tips": "Kollektiv expertvisdom fanns — den saknade politisk hävstång."
+        },
+        {
+          "q": "Varför höjde Federal Reserve räntan hösten 1931?",
+          "alternativ": [
+            "För att bekämpa inflation",
+            "För att försvara guldet och dollarn efter att Storbritannien lämnat guldmyntfoten",
+            "För att finansiera kriget",
+            "För att stimulera bostadsmarknaden"
+          ],
+          "ratt": 1,
+          "tips": "Ortodoxi: valuta före sysselsättning."
+        },
+        {
+          "q": "Vad var ironin med Bank of United States?",
+          "alternativ": [
+            "Den var USA:s centralbank",
+            "Det var en privat bank — namnet gjorde dess fall till ett förtroendchock för staten själv",
+            "Den fanns bara i Kanada",
+            "Den hade inga insättare"
+          ],
+          "ratt": 1,
+          "tips": "Namnet fick rusningarna att kännas som en statlig kollaps."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Galbraiths fem faktorer — krisens djupare orsaker",
+      "intro": "Bokens avslutande analys listar fem svagheter som gjorde depressionen sannolik — kraschen gjorde den bara till ett faktum. Fem faktorer, fem AKM1-översättningar, och en ärlig brasklapp: detta är 1955 års syntes, skriven innan Friedman och Schwartz. Kapitlet läser listan på båda sätt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Faktor ett: den dåliga inkomstfördelningen. En ovanligt stor andel av decenniets inkomsttillväxt samlades högt upp; ekonomin behövde att de rika investerade och att resten kreditfinansierade sitt konsumerande. Så länge optimismen var god cirkulerade allt — men när förmögenhetarnas förtroende vacklade stannade investeringarna, och när hushållens krediter ströps föll konsumtionen direkt. Detta är underkonsumtionsteorins kärna i Galbraiths version: sårbar efterfrågan på grund av skev fördelning, inte brist på produktionskapacitet. Notera att detta är den mest omdebatterade faktorn — den monetära skolan (kapitel 13) menar att fördelningen var ungefär densamma under decennier utan depression — men som diagnos av sårbarhet har den överlevt: en ekonomi där efterfrågan hänger på förtroende och kredit har kort säkerhetsmarginal."
+        },
+        {
+          "type": "text",
+          "content": "Faktor två och tre: strukturen. Företagssidan var fylld av holdingbolags-pyramider — Galbraith påpekar att det bara krävdes ett litet ekonomiskt avbrott högt upp för att hela kedjor skulle falla, och att kraftbolagens investeringar därför kunde kollapsa snabbare än själva efterfrågan. V10 och V09 ROE i maskopi: pyramider tillverkar imponerande ägarkapitalavkastning i uppgången och total utplåning i nedgången. Banksidan var ännu värre konstruktion: tusentals små, lokala, odiversifierade banker — enhetsbanker — utan insättningsgaranti, där ett enda misslyckande kunde starta en rusning som slog ut friska institutioner. Här går Galbraith monetaristerna till mötes: hans tredje faktor är mekaniken bakom penningmängdens kollaps, om än han väger den som struktur snarare än som penningpolitikens misslyckande."
+        },
+        {
+          "type": "text",
+          "content": "Faktor fyra och fem: omvärlden och intelligensen. De externa balanserna — krigsskulder, reparationer och det kretslopp av amerikanska lån som höll liv i hela betalningssystemet — var opaka och sköra; när Wall Streets räntor drog hem kapitalet 1928-29 slutade utlåningen, och väven snärjde sig själv. Och den dåliga ekonomiska intelligensen: rådgivarna. Harvard Economic Society höll återhämtning som prognos genom hela nedsläppet; Fisher såg platån; den etablerade läran krävde balanserade budgeter och 'sund rensning' i botten — enligt Hoovers memoarer formulerad av Andrew Mellon som rådet att likvidera arbete, aktier och jordbruk tills visheten återvänt. Galbraiths femte faktor är hans mest sarkastiska och mest bestående: krisen förvärrades av män med goda betyg som gav fel råd samfällt — och förstärktes av att alla andra följde dem."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen gör listan operativ. Faktor ett blir en makro-overlay: hur sårbar är efterfrågan i den ekonomi du investerar i — kreditandelen, fördelningen, beroendet av förtroende? Faktor två och tre blir V10/V09 och V11: struktur framför substans, likviditetsarkitektur framför lönsamhet. Faktor fyra blir V18:s storebror: betalningsströmmar och politiska spelplaner mellan länder. Faktor fem blir epistemisk ödmjukhet som variabel: när konsensus är total är dess värde som information noll — och dess värde som risksignal högt. Kör listan som radar över vilken marknad du analysar; fem låga värden är sällan problemet — faran är att flera sticker ut samtidigt."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Galbraiths fem faktorer — innehåll och AKM1-översättning\",\"rader\":[[\"Faktor\",\"Galbraiths innehåll\",\"AKM1-översättning\"],[\"1. Ojämn inkomstfördelning\",\"Efterfrågan bars av fås investeringar och de bredas kredit\",\"Makro-overlay: efterfrågans sårbarhet\"],[\"2. Dålig företagsstruktur\",\"Holdingpyramider; små avbrott fäller hela kedjor\",\"V10/V09: struktur framför substans\"],[\"3. Dålig bankstruktur\",\"Tusentals småbanker utan garanti; mekanik för banker\",\"V11: systemets likviditetsarkitektur\"],[\"4. Dåliga externa balanser\",\"Krigsskuld, reparationer och lån i ett skört kretslopp\",\"V18-makro: betalningsströmmar och politik\"],[\"5. Dålig ekonomisk intelligens\",\"De nästan vises råd förvärrade krisen\",\"Epistemisk ödmjukhet som variabel\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den femte faktorn är den farligaste — den gäller den som läser den. Expertkårens råd var inte bara fel; de var fel på ett sätt som förstärktes av att alla andra följde dem. Konsensus är inte information — det är koncentration av risk."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör femfaktorstestet på dagens Sverige eller världen: ge varje faktor ett betyg ett till fem med en mening motivering. Vilken faktor skulle du sätta högst — och vilken åtgärd i dina positioner skulle det betyga? Spara bedömningen för omprövning om ett år."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken av följande ingår INTE i Galbraiths fem faktorer?",
+          "alternativ": [
+            "Ojämn inkomstfördelning",
+            "Dålig företagsstruktur med holdingpyramider",
+            "Bristen på guldmyntfot i Asien",
+            "Dålig ekonomisk intelligens"
+          ],
+          "ratt": 2,
+          "tips": "Tre av alternativen är nästan ordagrant ur bokens avslutande kapitel."
+        },
+        {
+          "q": "Vilken av de fem faktörerna överlappar mest med den monetära skolans förklaring?",
+          "alternativ": [
+            "Den dåliga bankstrukturen — mekaniken bakom rusningar och penningmängdens fall",
+            "Den ojämna inkomstfördelningen",
+            "Den dåliga företagsstrukturen",
+            "Den dåliga ekonomiska intelligensen"
+          ],
+          "ratt": 0,
+          "tips": "Friedman och Schwartz börjar ungefär där — men de lägger ansvaret någon annanstans."
+        },
+        {
+          "q": "Vad menar Galbraith med 'dålig ekonomisk intelligens'?",
+          "alternativ": [
+            "Att folket var för dåligt utbildat för att köpa aktier",
+            "Att tidens ledande rådgivare och prognosmakare hade fel — samfällt och med stor övertygelse",
+            "Att tidningarna skrev för mycket om börsen",
+            "Att universiteten saknade ekonomiska institut"
+          ],
+          "ratt": 1,
+          "tips": "Harvard Economic Society och Fisher är hans huvudexempel."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "KONTROVERS — Den här gången är det annorlunda",
+      "intro": "Kursens obligatoriska kontrovers har tre lager: Galbraiths ironi mot 'det nya tidevarvet' och varför varje generation tror att den är annorlunda; 1955-perspektivet med Fulbright-förhören; och den öppna frågan om depressionens orsaker — Friedman-Schwartz mot Galbraith, båda redovisade ärligt. Kapitlet slutar med din checklista.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför tror varje generation att den är annorlunda? Därför att argumentet alltid är lokalt sant. 1929 var tekniken äkta (V13, V01, V02), bolagen verkliga, tillväxten påtaglig — 'det nya tidevarvet' var ingen lögn, det var en halvsanning med finansiering. Detsamma gällde 1955 (boken skrevs ju som varning under Eisenhower-boomen), 1999 (internet var verkligt) och varje senare episod: berättelsen bär alltid tillräckligt mycket sanning för att multiplarna skall kännas försvarbara. Galbraiths ironi träffar just detta: tron på det nya tidevarvet är inte stupiditet hos individen utan en egenskap hos cykeln — den uppstår när minnet har räckt som en generation, och den spirar i samma jordmån som V04:s och V05:s utvidgning. Formuleras den bäst av en akademiker med legitimitet (Fisher 1929) är den extra farlig, för då saknar marknaden sin rationella motpart."
+        },
+        {
+          "type": "text",
+          "content": "1955-perspektivet är kursens meta-lärdom. Efter den lilla kraschen i september 1955 — Dow minus 6,5 procent på Eisenhowers hjärtattack — öppnade senator Fulbrights bankutskott sina aktiemarknadsförhör: marginalkredit, allmänhetens inträde i börsen och institutionernas makt stod på bordet; Wall Streets ledare tröstad, och vid senare omgångar vittnade Bernard Baruch, dåtidens siste levande legend, med nästan profetisk skepsis om allmänhetens börsdeltagande. Galbraiths bok, publicerad några veckor efter raset, blev förhörenas lärobok och bästsäljare. Och — notera detta — ingen krasch kom; decenniet som följde var starkt. Vilken läxa ska man då dra? Inte att varningar är felaktiga, utan att varningar är probabilistiska: en risk som inte realiseras på schema är inte falsifierad. Galbraith sa själv att boken inte var en prognos utan ett minne — skyddet mot illusion är vad man vet, inte vad man gissar."
+        },
+        {
+          "type": "text",
+          "content": "Sedan orsakerna — ärligt. Den monetära skolan: Milton Friedman och Anna Schwartzs A Monetary History (1963) visar att penningmängden föll med en tredjedel 1929-33, att Fed sviktade som långivare av sista utväg (Bank of United States 1930, oförmågan att stoppa rusningarna 1931-33), och att depressionen därför var ett policymisslyckande som kunnat undvikas — botemedlet är regelstyrda penningmängd och en centralbank med ryggrad. Galbraiths strukturella skola: en arbetslöshet kring 25 procent förklaras inte enbart av penningmängden — efterfrågan var strukturellt svag (ojämlikhet, pyramider, kreditberoende konsumtion), och även med stabil penningmängd hade tjugotalet lämnat en skör ekonomi; botemedlet är fiskal politik, omfördelning och reglering. De är ense om mer än de trodde: guldfotens ok, skuldeflationens spiral, att 'rensningsläran' var galenskap, och — viktigt — att kraschen ensam inte orsakade depressionen; även Galbraith skriver att svagheterna fanns där före oktober. Nyare forskning (Temin, Eichengreen, Bernankes finansiella accelerator) har syntetiserat: kreditsystem, guldok och efterfrågechock förstärkte varandra ömsesidigt. För dig som praktiker: övervaka både pengarna och strukturen — den som bara kan en skola kommer feltolka nästa kris, som alltid innehåller lite av båda."
+        },
+        {
+          "type": "text",
+          "content": "Checklistan — kursens hela arv i AKM1:s språk. Ett: räkna hävstångens lager, hos dig och hos systemet (V10 — trusts-lektionen). Två: fråga vem som kan säga upp din och marknadens finansiering, och hur snabbt (V11 — call money-lektionen). Tre: skilj verklig tillväxt från berättad tillväxt (V01, V02, V13, V16 mot V04, V05 — RCA-lektionen). Fyra: tro inte diversifiering du inte kan rita upp (V03 — trusts-lektionen igen). Fem: övervaka intäktsstabilitetens bärare och belastning (V12, V09 — Insull-lektionen). Sex: bygga policy-träd med en fel-gren (V18 — Smoot-Hawley-lektionen). Sju: läs V20 återköp och margin-skuld som eufori-mätare, inte som värde (1929 års belåningsboom i modern förpackning). Åtta: marginal of safety som princip utan siffra — avståndet till det tvingande beslutet (Grahams arv ur samma ruin). Och slutligen bezzle: i nästa boom växer det osynliga igen. När den kommer — och den kommer — ska den här kursen kännas som ett minne, inte som en profetia."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Depressionens orsaker — debatten ärligt redovisad\",\"rader\":[[\"Fråga\",\"Monetaristerna (Friedman-Schwartz)\",\"Strukturalisterna (Galbraith)\",\"Nyare syntes\"],[\"Vad dödade ekonomin?\",\"Penningmängden föll en tredjedel; Fed sviktade som långivare av sista utväg\",\"Efterfrågan var strukturellt svag: ojämlikhet, pyramider, kreditberoende\",\"Kreditsystem, guldok och efterfrågechock förstärkte varandra\"],[\"Kraschens roll?\",\"Utlösare, inte orsak\",\"Symptom och accelerator — orsakerna fanns där före oktober\",\"En trigger bland flera multiplikatorer\"],[\"Botemedel?\",\"Regelbunden penningmängd; aldrig låta banker dö i drivor\",\"Fiskal politik, omfördelning, reglering\",\"Lägesberoende — ingen enda spak\"],[\"Lärdom för dig\",\"Övervaka kreditaggregat och centralbankens ryggrad\",\"Övervaka efterfrågestruktur och skuldkvoter\",\"Bygg scenarier där båda felen kan inträffa samtidigt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den ärliga läsningen av 1929 är att ingen enskild teori äger sanningen. Den som kräver en enda orsak — penningen eller strukturen — har redan missat nästa kris, som alltid kommer att innehålla lite av båda, plus något som ingen av oss har räknat med."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget 1929-brev, daterat idag, till dig själv vid nästa 'permanently high plateau': tre villkor som måste gälla för att du ska reducera risk, tre som gör att du behåller exponeringen, och en regel för när brevet får öppnas. Hämta sedan fram lådan från kapitel ett — och jämför marginal of safety du trodde att du hade med den du kan formulera idag."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Friedman-Schwartzs förklaring till depressionen?",
+          "alternativ": [
+            "Att ojämlik inkomstfördelning ströp konsumtionen",
+            "Att penningmängden föll med en tredjedel och att Fed sviktade som långivare av sista utväg — ett policymisslyckande",
+            "Att tullarna ensamma orsakade allt",
+            "Att börsen föll för lite"
+          ],
+          "ratt": 1,
+          "tips": "Deras kapitel om 1929-33 kallas 'den stora kontraktionen'."
+        },
+        {
+          "q": "Vad sätter Fulbright-förhören i 1955 i kursens sammanhang?",
+          "alternativ": [
+            "De bevisade att Galbraith hade fel",
+            "De visar att boken skrevs i en levande debatt — efteråt av september månads lilla krasch, med marginalkredit och allmänhetens börsdeltagande på bordet",
+            "De ledde till att börsen stängdes",
+            "De handlade om guldpriset"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg vad som hänt marknaden några veckor före boksläppet."
+        },
+        {
+          "q": "Vad är den epistemiska poängen med 'den här gången är det annorlunda'?",
+          "alternativ": [
+            "Att argumentet alltid är helt falskt",
+            "Att argumentet alltid är delvis sant — det är därför det fungerar; halvsanningen med finansiering är bubblans naturform",
+            "Att bara akademiker tror på det",
+            "Att det bara gäller teknikaktier"
+          ],
+          "ratt": 1,
+          "tips": "Radion var verklig 1929. Internet var verkligt 1999. Fråga dig vad som ändå gick snett."
+        }
+      ]
+    }
+  ]
+}

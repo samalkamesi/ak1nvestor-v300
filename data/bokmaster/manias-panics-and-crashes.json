@@ -1,0 +1,1158 @@
+{
+  "slug": "manias-panics-and-crashes",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 160,
+  "title": "Manias, Panics, and Crashes — Kindleberger & Aliber: KOMPLETT",
+  "summary": "Charles P. Kindlebergers Manias, Panics, and Crashes (1978) — sedan femte upplagan reviderad av Robert Z. Aliber — är finanskrishistoriens standardverk: fyra sekler av mania, panik och krasch ordnade i Minskys femfascykeln. Kursen går igenom hela modellen (displacement, boom, eufori, vinsttagning, panik) och testar den på historiens största kollapser — tulpaner 1637, South Sea 1720, Latinamerika-lånen 1825, järnvägarna 1873, 1929, S&L och Latinamerika på 1980-talet, Japan 1989, Asien 1997, IT 2000, bostadsbubblan 2008 och Islands bankkollaps — för att sluta i den viktigaste debatten: är Minsky-mönstret vetenskap eller apofeni?",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för Minsky–Kindleberger-cykeln i dess fem faser — displacement, boom, eufori, vinsttagning och panik — och förklara varför krediten är bubblans gemensamma nämnare i AKM1:s språk: V10 skuldsättningsgrad som bränsle, V11 likviditet som panikfasens överlevnadsvariabel och V19 kapitalförbränning & emission-risk som testet av vem som klarar kraschen; berätta de tolv kronologiska fallen i deras rätta siffror och årtal — från Semper Augustus för cirka 5 000 floriner och South Sea-aktien från 128 pund i januari 1720 till nära 1 000 pund i juni, 1825 års 70-tal fallna banker och guldet från Banque de France, Jay Cookes fall i september 1873, Dow från 381,17 till 41,22, Mexiko augusti 1982, Nikkeis topp 38 916 den 29 december 1989, bahtens float 2 juli 1997, Nasdaq från 5 048,62 till 1 114, Lehman den 15 september 2008 och Islands banker med tillgångar kring tiofalt BNP — och identifiera hur »this time is different«-syndromet, Shillers eufori-psykologi och insiders tysta vinsttagning återkommer i vartenda fall; förklara Bagehots doktrin för lender of last resort, hur Bernanke 2008 tillämpade — och bröt — den, och vad moral hazard kostar i verkliga pengar (S&L: omkring 124 miljarder skattemedel); och avgöra, i kontroverskapitlet, skillnaden mellan historisk lag och historisk tendens: rational expectations-motståndet, Reinhart-Rogoff-kritiken (Herndon-Ash-Pollin 2013) och risken för apofeni — samt ändå formulera 400-årssvaret som en testbar tendens snarare än en spådom, med marginal of safety som princip utan siffra.",
+  "why": "Ingen annan bok gör det Kindleberger gör: han sorterar fyra hundra års panikhistoria i en enda rimlig sekvens och vågar dra slutsatsen att kriser inte är olyckshändelser utan systemets normala utveckling. Påståendet stör — Minskys instabilitetshypotes utmanar hela jämviktsekonomin — och därför finns ett helt kapitel om motståndet: Famas effektiva marknader, Lucas rationella förväntningar, klientens »den gången är annorlunda« och Reinhart-Rogoffs metodikproblem. Kursen behövs eftersom varje generation möter sin egen bubbla övertygad om sin egen unikitet: den som känner igen cykelns fem faser — och vet att krediten (V10), inte objektet, är det farliga — har ett försprång som varken aktiemäklare 1929 eller isländska sparare 2008 hade. Och för att varje AKM1-analytiker förr eller senare möter frågan som boken egentligen handlar om: när alla andra blir rika på ett mönster du inte tror på — vad gör du då?",
+  "chapters_list": [
+    "1. Boken, mannen och modellen — varför 400 år av kriser",
+    "2. Fas ett: Displacement — förskjutningen som tänder göken",
+    "3. Fas två: Boom — krediten är bränslet (V10)",
+    "4. Fas tre: Eufori — »this time is different« och Shillers överlapp",
+    "5. Fas fyra: Vinsttagning — insiders lämnar scenen",
+    "6. Fas fem: Panik — revulsion, discredit och fire sales (V11)",
+    "7. Tulpaner 1637 och South Sea 1720 — de första bubblorna",
+    "8. 1825 och 1873 — Latinamerikas lån och järnvägsmanierna",
+    "9. 1929 — kraschen som blev depression",
+    "10. 1980-talet — S&L-krisen och Latinamerikas skuldkris",
+    "11. Japan 1989 — landet som trodde att priser bara stiger",
+    "12. Asien 1997 och IT 2000 — valutor och nätverkseufori",
+    "13. 2008 och Island — Alibers bostadsbubbla och ö-bankerna",
+    "14. Lender of last resort — Bagehot, Bernanke och moral hazard",
+    "15. Kontroversen — Minsky mot jämvikten, apofenien och 400 år av mönster"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Boken, mannen och modellen — varför 400 år av kriser",
+      "intro": "År 1978 publicerade MIT-professorn Charles P. Kindleberger en bok med en anspråkslös undertitel: A History of Financial Crises. Den blev finanskrishistoriens standardverk, reviderad efter hans död 2003 av Robert Z. Aliber i femte (2005), sjätte (2011) och sjunde (2017) upplagorna. Det här är kursens karta: en modell i fem faser, fyra sekler av bevis och en tvist som pågår än.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Charles Poor Kindleberger (1910–2003) var ingen biblioteksekonom. Han arbetade på Federal Reserve och utrikesdepartementet, räknas som en av Marshallplanens arkitekter efter 1945 och hamnade sedan på MIT, där han skrev Manias, Panics, and Crashes över några somrar — full titel: Manias, Panics, and Crashes: A History of Financial Crises. Boken blev en klassiker just för att den vägrade vara antingen historia eller teori: den är en teori som kavalkad av historia. När Kindleberger dog 2003 tog Robert Z. Aliber, professor emeritus i internationell ekonomi vid University of Chicago, över pennan. Alibers upplagor förde historien framåt med nya fall: Japans sammanbrott, Asienkrisen, IT-bubblan, den amerikanska bostadsbubblan och — ett av hans signumtillägg — Islands bankkollaps 2008."
+        },
+        {
+          "type": "text",
+          "content": "Bokens ryggrad lånar Kindleberger öppet från ekonomen Hyman Minsky (1919–1996) och dennes finansiella instabilitetshypotes. Minskys kända paradox — »stability is destabilizing« — säger att lugna tider inte är systemets viloläge utan dess lömskaste tillstånd: under stabilitet vågar aktörerna mer skuld, bankerna mer kredit och reglerna mjukas upp, tills systemet är så skuldsatt att en liten stördning får det att välta. Minsky skilde på tre finansieringstillstånd — hedge (kassaflödet täcker ränta och amortering), speculative (bara räntan) och Ponzi (inte ens räntan; skulden betalas med nya lån i hoppet om stigande priser). Kindlebergers bidrag var att lägga 400 år av kriser ovanpå skelettet och visa att sekvensen återkommer: displacement, boom, eufori, vinsttagning, panik."
+        },
+        {
+          "type": "text",
+          "content": "Det viktigaste Kindleberger lär är att det spekulativa objektet byts ut men att mönstret förblir detsamma. Lökar 1637, statsskuld 1720, latinamerikanska obligationer 1825, järnvägar 1873, aktier 1929, dollarkrediter till stater 1982, japansk mark 1989, asiatiska valutor 1997, IT-aktier 2000, amerikanska hus 2006, isländska banker 2008 — objekten skiljer sig åt som biotoper, men ekologin är densamma: en verklig nyhet, en kreditexpansion, kollektiv övertro, tyst utförsäljning från insiders och till sist tvingad panik. För AKM1-läsaren betyder det att fundamentalerna i V01–V20 är mikroskopet och att Kindlebergers cykel är klockan: den ena säger vad ett företag är värt, den andra när marknaden slutar bry sig om vad något är värt."
+        },
+        {
+          "type": "text",
+          "content": "Kursens gång följer bokens logik. Kapitel 2–6 går igenom de fem faserna mekaniskt, som en tekniker går igenom en motor. Kapitel 7–13 provkör motorn på historiens största kollapser i kronologisk ordning — från Haarlem i februari 1637 till Reykjavik i oktober 2008. Kapitel 14 tar bokens politiska slutsats: lender of last resort, Bagehots doktrin och Bernankes 2008. Kapitel 15 tar den debatt boken aldrig slutade föra: om Minsky-mönstret är vetenskap, historieberättande eller apofeni — och varför skillnaden mellan historisk lag och historisk tendens är hela skillnaden mellan att spå och att förbereda sig. Marginal of safety förekommer genom hela kursen som princip, aldrig som siffra."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Minsky–Kindleberger-cykeln i fem faser\",\"rader\":[[\"Fas\",\"Namn\",\"Vad som händer\",\"AKM1-läsning\"],[\"1\",\"Displacement\",\"En verklig nyhet chockar vinstförväntningarna\",\"V16, V13, V18\"],[\"2\",\"Boom\",\"Kredit och pengar expanderar; utbudet av objektet växer\",\"V10, V11\"],[\"3\",\"Eufori\",\"Priser stiger för att priser stiger; »den gången är annorlunda«\",\"V04, V15, V14, V01\"],[\"4\",\"Vinsttagning\",\"Insiders säljer; financial distress; kvaliteten på emissioner sjunker\",\"V20, V19, V12\"],[\"5\",\"Panik\",\"Revulsion, discredit, fire sales, bank runs\",\"V11; marginal of safety utan siffra\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kindlebergers kärna kan sägas i en mening: bubblor handlar inte om det som köps utan om hur köpet betalas. Objektet är utbytbart; krediten är konstanten. Därför är V10 skuldsättningsgrad den enda AKM1-variabel som förekommer i samtliga fall i kursen — från terminer på lökar till isländska bankbalansräkningar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du läser vidare: välj en tillgång du tror på — bolån, aktie, krypto, guld. Skriv ner tre rader: vad skulle kunna fungera som displacement för den, vilket tecken skulle få dig att inse att eufori ersatt analys, och vilken exitregel du sätter idag — inte i efterhand. Spara pappret; kursen återkommer till det i kapitel 5 och 15."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bokens teoretiska ryggrad?",
+          "alternativ": [
+            "Famas effektiva marknadshypotes",
+            "Keynesianska konjunkturcykler",
+            "Minskys finansiella instabilitetshypotes",
+            "Fishers kvantitetsteori för pengar"
+          ],
+          "ratt": 2,
+          "tips": "Kindleberger lånar skelettet från en samtida teoretiker som ansåg att stabiliteten själv är farlig."
+        },
+        {
+          "q": "Vilken roll tog Robert Z. Aliber över efter 2003?",
+          "alternativ": [
+            "Han skrev bokens originalmanus 1978",
+            "Han var Kindlebergers doktorand vid MIT",
+            "Han reviderade boken i femte till sjunde upplagorna med bland annat Island och bostadsbubblan",
+            "Han översatte boken till japanska efter 1989"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vem som förde historien framåt efter originalets upphovsman."
+        },
+        {
+          "q": "Vad betyder Minskys »stability is destabilizing«?",
+          "alternativ": [
+            "Att lugna perioder ökar risktagandet tills systemet blir skört",
+            "Att stabila aktier alltid är dåliga investeringar",
+            "Att centralbanker aldrig ska styra räntan",
+            "Att finansmarknader alltid återgår till jämvikt"
+          ],
+          "ratt": 0,
+          "tips": "Paradoxen handlar om vad lugn gör med människors benägenhet att låna."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Fas ett: Displacement — förskjutningen som tänder göken",
+      "intro": "Varje bubbla i boken börjar med något verkligt: en ny teknik, ett nytt land, en avreglering, ett krigsslut. Kindleberger kallar det displacement — förskjutning — och den är farlig just för att den inte är en lögn. Fas ett handlar om att skilja äkta nya möjligheter från det som senare kläs i samma språk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kindleberger definierar displacement som en förändring som chockar vinstförväntningarna — en ny möjlighet som öppnar sig för företagare, investerare och spekulanter. Historiens exempel är konkreta: guld upptäcks i Kalifornien 1848, Latinamerika frigör sig från Spanien på 1820-talet och öppnar lånemarknader, järnvägen förvandlar transportekonomin under 1840- och 1860-talen, elektricitet och bilen skapar 1920-talets verkliga välstånd, internet kopplar samman världen på 1990-talet. Displacement kräver inte teknologi: krigssluten 1815 och 1918, valutareformer och finansiella innovationer har räckt gott. Poängen Kindleberger driver igenom är att förskjutningen ofta är äkta — det är responsen på den som avgör om historien slutar i utveckling eller i krasch."
+        },
+        {
+          "type": "text",
+          "content": "Den vanligaste moderna displacementen är politisk: avreglering. I AKM1:s språk är V18 regulatoriska katalysatorer den variabel som bäst fångar den, och 1900-talets slut var ett laboratorium: Depository Institutions Deregulation and Monetary Control Act 1980 och Garn-St Germain 1982 släppte amerikanska sparbanker fria, Londons Big Bang 1986 moderniserade handeln, Japan liberaliserade kapitalflödena under 1980-talet, de asiatiska ekonomierna öppnade kapitalkontona i början av 1990-talet och Island privatiserade sina banker 1998–2003. Varenda en av dessa förskjutningar tände en kreditboom — och kapitel 10 till 13 visar hur de tre sistnämnda slutade. V18 fångar också motsatsen: en regulatorisk åtstramning är en klassisk utlösare i fas fem."
+        },
+        {
+          "type": "text",
+          "content": "Teknologiska förskjutningar syns tidigt i fundamentals, och det är därför fas ett känns så trovärdig. En äkta displacement visar sig i V16 produktlanseringar som faktiskt levereras, i V13 patent & IP som skyddar något verkligt och i att V01 försäljningstillväxt och V02 ARR-tillväxt accelererar utan att kvaliteten försämras. Internet 1996–1999 var en verklig förskjutning i denna mening: Amazon, Cisco och Oracle växte med verkliga intäkter. Skillnaden mot euforin är att fas ett fortfarande kan besvaras med siffror. Frågan varje AKM1-analytiker bör ställa vid en misstänkt displacement: hur stor del av värdehöjningen kan förankras i V01–V20 — och hur stor del kräver att framtiden samarbetar felfritt i tjugo år?"
+        },
+        {
+          "type": "text",
+          "content": "Observera vad displacement inte är: den är inte penningmängdens ökning och inte prisernas ökning. Kindleberger är noga med ordningen — förskjutningen kommer först, krediten förstärker. En boom utan verklig förskjutning — som före börsfallet i oktober 1987, där manin saknades men paniken ändå kom — beter sig annorlunda: brantare, utan den långa euforibyggnad som gör de stora bubblorna så förödande. Kursens första praktiska regel lyder därför: identifiera displacementen innan du bedömer bubblan. En bubbla utan verklig kärna kollapsar ofta av sig själv; en bubbla med verklig kärna kan hålla i åratal och ruinera skeptikern som shortar för tidigt."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Klassiska förskjutningar och vad de tände\",\"rader\":[[\"Tid\",\"Förskjutning\",\"Spekulativt objekt\"],[\"1630-tal\",\"Tulpanodlingens prestige och terminshandel\",\"Lökar och kontrakt\"],[\"1719–1720\",\"Omvandling av statsskuld till aktier\",\"Mississippi- och South Sea-aktier\"],[\"1820-tal\",\"Latinamerikas frigörelse från Spanien\",\"Statliga lån och gruvaktier\"],[\"1840–1870-tal\",\"Järnvägstekniken\",\"Järnvägsaktier och -obligationer\"],[\"1920-tal\",\"Elektricitet, bilar, radio\",\"Aktier och investment trusts\"],[\"1980-tal\",\"Avreglering och petrodollar-recirkulering\",\"Sparbanker och statsobligationer\"],[\"1990-tal\",\"Internet och kapitalfrigörelse\",\"Teknikaktier, valutor, fastigheter\"],[\"2000-tal\",\"Finansiell innovation och billiga lån\",\"Bostäder och strukturerade produkter\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En verklig förskjutning är nödvändig men inte tillräcklig — bubblan kräver dessutom kredit och kollektiv övertro. Därför är inte varje revolution bubbelpoesi: tekniken avgör om världen förändras, finansieringen avgör om du förlorar pengar på det. V16 och V13 kan verifieras; V10 avgör dödslängden."
+        },
+        {
+          "type": "utmaning",
+          "content": "Lista tre aktuella kandidater till displacement — till exempel AI, energiövergång och rymd. För varje: skriv ner vad som är verkligt och mätbart (V01, V02, V13, V16) och vad som i dagens pris snarare kräver kollektiv tro plus generös kredit (V10). Frågan är inte om tekniken är äkta — den är nästan alltid äkta — utan om finansieringen hinner före fundamentals."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en displacement i Kindlebergers mening?",
+          "alternativ": [
+            "En ren spekulation utan verklig grund",
+            "En centralbanks räntesänkning",
+            "En tillfällig ökning av börsens omsättning",
+            "En förändring som chockar vinstförväntningarna och ofta är verklig"
+          ],
+          "ratt": 3,
+          "tips": "Kom ihåg att det farliga med fas ett är att det äkta blandas med det påhittade."
+        },
+        {
+          "q": "Vilken AKM1-variabel fångar avreglering som utlösare?",
+          "alternativ": [
+            "V18 regulatoriska katalysatorer",
+            "V17 avtal & partnerskap",
+            "V12 intäktsstabilitet",
+            "V20 återköp"
+          ],
+          "ratt": 0,
+          "tips": "Variabeln heter som den gör just för att politiken kan vrida åt båda hållen."
+        },
+        {
+          "q": "Varför är displacementen farlig trots att den ofta är verklig?",
+          "alternativ": [
+            "Den gör att börsen stängs",
+            "Den minskar alltid företagens lönsamhet",
+            "Den legitimerar den kreditexpansion som sedan driver euforin",
+            "Den tvingar centralbanker att höja räntan direkt"
+          ],
+          "ratt": 2,
+          "tips": "Farligt är inte nyheten i sig utan vad den låter banker och köpare berätta för sig själva."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Fas två: Boom — krediten är bränslet (V10)",
+      "intro": "Efter förskjutningen expanderar kredit och pengar, och objektets pris stiger. Produktionen av det spekulativa objektet ökar — nya lån, nya linjer, nya hus, nya emissioner. Kindleberger är entydig: utan monetär expansion ingen mani. Det här kapitlet handlar om hävstångens mekanik och om varför boomen känns så rationell medan den pågår.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kindleberger ägnar bokens kärnkapitel åt att visa att varje mani har ett monetärt centrum: bankerna expanderar, nya kreditinstrument uppfinns och penningmängden växer snabbare än ekonomin. Minsky formulerade det i en av finanshistoriens bästa meningar: »Anyone can create money; the problem is getting it accepted.« Under en boom är det just detta som sker — betalningsmedel skapas och accepteras, för alla andra accepterar dem. Historien erbjuder en uppsjö mekanismer: terminsaffärer med marginal på lökar 1637, lån mot aktier 1720, engelska country banks sedelutgivning på 1820-talet, investmentbanker som Jay Cooke som placerade järnvägsobligationer 1873, call loans och marginal på 10 procent 1929, euromarknadens dollarkrediter till stater 1982, japanska banklån mot mark som säkerhet 1989, securitization och repo 2008."
+        },
+        {
+          "type": "text",
+          "content": "Boomens självförstärkande kretslopp är mekaniskt enkelt och förrädiskt rationellt: stigande priser gör säkerheten mer värd, mer värd säkerhet ger plats för mer lån, mer lån driver upp priserna. Bankernas innovation under 2000-talet var att flytta utlåningen från balansräkningen — genom securitization förvandlades lånen till handelbara papper, och krediten kunde växa utan att någon enskild bank såg den samlade risken. Kindlebergers iakttagelse är att objektets utbud växer i takt med priset: 1825 emitterades nya latinamerikanska lån så länge någon köpte, 1873 byggdes dubbla järnvägslinjer, 1929 startades investment trusts veckovis, 1999–2000 noterades bolag i rekordfart, 2005 byggdes hus i takt med att arbetskraft fanns. Uppbyggnaden av utbud är boomens tysta förrädare — den återkommer i kapitel 8."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s språk är V10 skuldsättningsgrad bokens mittpunkt — den enda variabel som förekommer i samtliga fall. Fas två är också den fas där V09 ROE kan dekoreras: en hög avkastning på eget kapital som uppnås med hävstång är inte skicklighet utan risk som tillfälligt låter ut som avkastning. Skillnaden ser man först i nästa nedgång, när samma hävstång raderar kapitalet dubbelt så snabbt. Under boomen känns hävstången gratis: volatiliteten är låg, kreditspreadarna är som trängast och säkerheten stiger. Det är precis därför V10-disciplinen måste vara en regel som beslutas i fredstid — under boomen kommer varje argument att låna mer att se sunt ut, även för den som kan den här boken."
+        },
+        {
+          "type": "text",
+          "content": "Skilj också på kredit som finansierar produktion och kredit som finansierar priser. Det första bygger fabriker, det andra köper redan befintliga tillgångar av varandra till stigande pris. Kindleberger noterar att boomen börjar i det förstnämnda och slutar i det senare: alltmer av den nya krediten går till att rulla över och bolla befintliga objekt snarare än att skapa nytt. För den enskilda investeraren är fas två ändå den svåraste att hantera — fundamentalt goda investeringar finns kvar, marknaden stiger, och den som agiterar för V10-disciplin ser ut som en nojabo. Bokens tröst: cykeln har alltid varit längre än skeptikerns tålamod och kortare än optimistens kredit."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kreditens ansikte genom tolv kriser\",\"rader\":[[\"Kris\",\"Kreditmekanism\",\"Signatur\"],[\"Tulpaner 1637\",\"Terminer och marginal i »windhandeln«\",\"Levererade löften om framtida leverans\"],[\"South Sea 1720\",\"Lån mot aktier — hos banker och hos bolaget självt\",\"Säkerhet som stiger med priset\"],[\"1825\",\"Country banks emitterade sedlar för utlåning\",\"Kreditexpansion utan fungerande reserv\"],[\"1873\",\"Investmentbanker placerade järnvägsobligationer\",\"Dubbelkapitaliserade linjer\"],[\"1929\",\"Call loans; marginal på cirka 10 procent\",\"Brokers lån fördubblades på två år\"],[\"1982\",\"Syndikerade dollarkrediter till stater\",\"Flytande ränta på LIBOR-bas\"],[\"Japan 1989\",\"Banklån mot mark som säkerhet\",\"Säkerheten var priset bubblan skapade\"],[\"Asien 1997\",\"Ohedgade kortfristiga dollarkrediter\",\"Valutarisk gömd i balansräkningar\"],[\"IT 2000\",\"Emissioner, optionslöner och telecomobligationer\",\"Bränslefinansiering av tillväxt\"],[\"2008\",\"Securitization, CDO och repo\",\"Krediten flyttade utanför balansräkningar\"],[\"Island 2008\",\"Bankerna finansierade sig på penningmarknaden\",\"Tillgångar kring tiofalt BNP\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hävstång är dubbel hävstång: den förstärker avkastningen under boomen och bestämmer fallhastigheten i paniken. V10 är därmed både en avkastningsvariabel och en överlevnadsvariabel — och det är den senare rollen som betalar hyran över en hel cykel."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på din egen största skuldposition — bolån, marginallån eller liknande. Vad händer om värdet på säkerheten faller 30 procent samtidigt som räntan stiger och långivaren kräver amortering? Om svaret känns obehagligt har du just upptäckt varför V10-disciplin ska beslutas före boomen, inte under den. Marginal of safety är en princip, inte en procentsats."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är boomens gemensamma nämnare enligt boken?",
+          "alternativ": [
+            "Statliga subventioner",
+            "Tekniska framsteg",
+            "Stigande befolkning",
+            "Expansion av kredit och pengar"
+          ],
+          "ratt": 3,
+          "tips": "Kindleberger ägnar ett helt kapitel åt detta — och det är monetärt."
+        },
+        {
+          "q": "Vad innebär Minsky-citatet »Anyone can create money; the problem is getting it accepted«?",
+          "alternativ": [
+            "Att centralbanker har monopol på pengar",
+            "Att betalningsmedel skapas av många aktörer — men de fungerar bara så länge alla litar på dem",
+            "Att kontanter alltid är överlägsna digitala pengar",
+            "Att banker inte kan skapa pengar"
+          ],
+          "ratt": 1,
+          "tips": "Citatet handlar om förtroende — och om vad som händer med acceptansen i fas fem."
+        },
+        {
+          "q": "Varför kan hög ROE (V09) under en boom vilseleda?",
+          "alternativ": [
+            "ROE mäter alltid fel under uppgångar",
+            "ROE räknas bara på banker",
+            "För att hävstång kan skapa hög ROE utan skicklighet — och samma hävstång förstör kapitalet i fallet",
+            "ROE sjunker automatiskt när V10 stiger"
+          ],
+          "ratt": 2,
+          "tips": "Fråga alltid vad nämnaren i nyckeltalet är finansierad med."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Fas tre: Eufori — »this time is different« och Shillers överlapp",
+      "intro": "I euforin stiger priserna för att priserna stiger. Förväntningarna vänder från avkastning till kapitalvinst, noviserna tar över från professionella och berättelserna förenklas. Här bor också syndromet som fångat alla generationer: »den här gången är det annorlunda«.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kindleberger fångar euforins sociala mekanik i en mening som blivit klassisk: »There is nothing so disturbing to one's well-being and judgment as to see a friend get rich.« Euforin är smittsam just för att den sprids via bekantskap, inte via analyser. Tecknen är desamma i alla fallen: investerare köper för att sälja dyrare till någon annan, horisonten förkortas från år till månader till dagar, daghandlare och skoputsare ger tips (Joseph Kennedy-anekdoten från 1929), och den professionella attityden skiftar från analys till deltagande — det Keynes fångade i skönhetstävlingens logik: att inte välja vad man själv tycker är vackrast, utan att förutse vad genomsnittet tror att genomsnittet kommer att välja. I euforin handlas inte längre värdet utan berättelsen om värdet."
+        },
+        {
+          "type": "text",
+          "content": "Sir John Templeton kallade »this time is different« för de fyra dyraste orden i engelska språket, och Reinhart och Rogoff gjorde frasen till titeln på sin krishistoria från 2009. Kindleberger hade dokumenterat syndromet i tre decennier innan dess: Irving Fisher i oktober 1929 om att aktierna nått »a permanently high plateau«, Japans förklaring på 1980-talet att mark i Tokyo var knapp och att priserna speglade industriell makt, IT-tidens budskap att vinstmultiplar var omoderna i den nya ekonomin, bostadsmarknadens försäkran 2005–2006 om att huspriser aldrig faller nationellt i USA, och Islands övertygelse om att en liten ö kunde förvalta en global kapitalström. Mönstret är alltid detsamma: en verklig förändring (fas ett) används som bevis för att prisernas mekanik upphört gälla."
+        },
+        {
+          "type": "text",
+          "content": "Här överlappar boken med Robert Shillers Irrational Exuberance, som publicerades i mars 2000 — samma månad som Nasdaq toppade. Shiller formaliserar det Kindleberger visar historiskt: återkopplingsloopar där stigande priser skapar berättelser som skapar nya köpare, naturligt förekommande Ponzi-strukturer utan central organisatör, och medias förstärkande roll. AKM1-läsningen av euforin är att fundamentalerna (V01–V20) kläs i narrativ kostym: V15 nätverkseffekter blir »vinnaren tar allt — därför är alla priser motiverade«, V14 varumärke blir »kundlojaliteten är evig«, och när V04 P/S ersätter P/E som huvudnyckeltal vet man att vinsterna tagit semester. V01 försäljningstillväxt är euforins favoritvariabel — tillväxt utan marginaler (V07, V08) är berättelsens mest populära vara."
+        },
+        {
+          "type": "text",
+          "content": "Euforins viktigaste kännetecken är kanske inte optimismen utan att risken prissätts till noll. Volatiliteten är låg (både 1929 och 2007 hade sina lugnaste perioder nära toppen), kreditspreadarna är som trängast och stop-loss-planer ersätts av köp-på-dip-reflexer. Galbraith påpekade att benägenheten att lura växer parallellt med benägenheten att spekulera — bedrägerierna är euforins ekonomiska biotop (Poyais 1825, Keating på 1980-talet, WorldCom 2002, Madoff efter 2008). För AKM1 är fas tre den plats där disciplinen testas: marknaden belönar berättelsen länge nog att även fundamentalsinvesterare börjar tvivla på sina egna siffror."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"»Den gången är annorlunda« genom tiderna\",\"rader\":[[\"Skeende\",\"Påståendet\",\"Utfallet\"],[\"Mississippi 1720\",\"Pappersmynt och aktier skapar verklig rikedom\",\"Systemkollaps; Law flydde landet\"],[\"USA 1929\",\"»A permanently high plateau« — Fisher 15 oktober 1929\",\"Dow föll 89 procent till 1932\"],[\"Japan 1989\",\"Mark är knapp; Nikkei speglar industriell makt\",\"Nikkei -82 procent; decennier av deflation\"],[\"IT 2000\",\"Nya ekonomin gör vinster och multiplar omoderna\",\"Nasdaq -78 procent till 2002\"],[\"Bostäder 2006\",\"Huspriser faller aldrig nationellt i USA\",\"Case-Shiller föll cirka 27 procent nationellt\"],[\"Island 2007\",\"Vi kan förvalta global kapitalström\",\"Tre banker kollapsade; BNP föll 6,6 procent 2009\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Euforins signatur är inte överdriven optimism utan förkortade horisonter. När köpmotivet blir att sälja dyrare till någon annan — greater fool — har värderingen redan avskedats; det som återstår är ett spel om vem som håller pappret när musiken tystnar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner de tre senaste tillfällen du hört ett »den gången är annorlunda«-argument — i media, hos kollegor eller i ditt eget huvud. Formulera för vart och annat vilket V01–V20-fakta som skulle kunna vederlägga påståendet, och vilka två fakta som faktiskt stöder det. Ärlighet krävs: argumentet är aldrig helt fel — bara prissatt fel."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Kindleberger är mest störande för omdömet?",
+          "alternativ": [
+            "Att läsa felaktiga analyser",
+            "Att se en vän bli rik",
+            "Att missa en börsuppgång med 10 procent",
+            "Att centralbanken sänker räntan oväntat"
+          ],
+          "ratt": 1,
+          "tips": "Citatet handlar om något socialt — och smittsamt."
+        },
+        {
+          "q": "Vad betyder det när P/E ersätts av P/S (V04) som huvudargument?",
+          "alternativ": [
+            "Att bolagen är billiga",
+            "Att intäkterna är stabilare än vinster",
+            "Att V07 och V08 automatiskt förbättras",
+            "Att vinsterna försvunnit ur berättelsen och euforin tagit över"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vad som krävs för att ett nyckeltal ska behöva bytas ut."
+        },
+        {
+          "q": "Vad är den viktigaste överlappningen med Shillers Irrational Exuberance?",
+          "alternativ": [
+            "Att båda publicerades 1978",
+            "Att Shiller formaliserar psykologin — återkopplingsloopar och naturliga Ponzi-strukturer — som Kindleberger visar historiskt",
+            "Att båda förnekar att kredit spelar roll",
+            "Att Shiller ersatte Kindleberger som författare"
+          ],
+          "ratt": 1,
+          "tips": "Den ene gav historien, den andra psykologin — samma eufori."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Fas fyra: Vinsttagning — insiders lämnar scenen",
+      "intro": "Efter euforins topp börjar de bäst informerade sälja — ofta tyst, medan allmänheten köper. Kindleberger kallar mellanstadiet financial distress: signalerna är diskreta men läsbara för den som letar. Det här är kursens viktigaste kapitel för den som vill agera i tid.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vinsttagning är cykelns mest ojämlika fas: utgången i toppen är inte demokratiskt fördelad. South Sea-bolagets egna direktörer sålde under sommaren 1720 medan nya teckningar marknadsfördes mot allmänheten; 1929 distribuerade initierade aktier till detaljhandeln under höstens rallyn; japanska institutioner reducerade innehav medan privatpersoner riktade sitt sparande in i aktier; 2005–2006 sålde cheferna på amerikanska husbyggnadsbolag aktier för hundratals miljoner dollar medan budskapet om en ny era för bostäder levde kvar. Kindlebergers poäng är strukturell, inte moralisk: de som vet mest om hur pappret skapats har bäst underlag att värdera det — och minst behov av berättelsen när den bågnar."
+        },
+        {
+          "type": "text",
+          "content": "Financial distress är fasens tekniska namn: perioden då vissa investerare börjar ana problem men de flesta inte agerar. Signaturerna återkommer: volatiliteten stiger trots att priserna gör sitt sista ryck; kreditspreadarna börjar breda ut sig; nyemissionernas kvalitet försämras (V19 emission-risk — när marknaden tar emot vad som helst emitteras vad som helst); short interest växer; och enskilda svaga institutioner börjar visa stress utan att någon bryr sig. Kindleberger liknar fasen vid torkan före skogsbranden: tillståndet är brännbart, men det krävs en gnista — en bankkrasch, ett valutautbrott, ett oväntat konkurser eller bara ett misslyckat auktionstillfälle — för att fas fem ska börja."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen av fas fyra handlar om att skilja hälsosam finansiering från gymnastik på toppen. V20 återköp är kursens mest dubbelbottnade variabel: disciplinerade återköp av undervärderade aktier skapar värde, men återköp finansierade med skuld på toppnivåer — som amerikanska banker gjorde 2006–2007 innan de tvingades be om kapital 2008–2009 — är i praktiken omvända emissioner med fel skylt. V19 kapitalförbränning & emission-risk är fasens larmvariabel: en våg av nyemissioner, konvertibler och aggressiv optionsträning betyder att insiders och bolag tillsammans levererar papper till marknaden samtidigt som optimismen är som störst. Uppsidan av emissioner är legitim finansiering; frågan är alltid priset och timingen."
+        },
+        {
+          "type": "text",
+          "content": "Praktiskt är fas fyra den enda fas där privatpersonen har en strukturell fördel: han behöver inte äga varenda topp. Insiders kan inte deklarera sina budskap, men de kan deklarera sina försäljningar — och det gör de, i insynsregistret. En AKM1-checklista för fas fyra: Hur har insiderköp och -försäljningar utvecklats senaste tolv månaderna (V19)? Har bolaget emitterat aggressivt eller trappat ner återköpen (V20, V19)? Har intäktsstabiliteten (V12) testats av en verklig nedgång, eller är den ett antagande? Marginal of safety är här ingen formel utan en hållning: utrymme för att ha fel utan att behöva sälja."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tecken på vinsttagning och financial distress\",\"rader\":[[\"Signal\",\"Historiskt exempel\",\"AKM1-koppling\"],[\"Insiders säljer\",\"South Sea-direktörer sommaren 1720; husbyggar-Chefer 2005–2006\",\"V19 emission-risk\"],[\"Emissionsvåg med sjunkande kvalitet\",\"IPO-takten 1999–2000\",\"V19\"],[\"Återköp finansierade med skuld på toppen\",\"Amerikanska banker 2006–2007\",\"V20 i kombination med V10\"],[\"Volatilitet och spreads stiger\",\"Somrarna 1929 och 2007\",\"V11-varning\"],[\"Narrativet byter försvar\",\"Från P/E till P/S och »eyeballs« 1999\",\"V04; V01 utan V07/V08\"],[\"Intäktsstabilitet otestad\",\"Alla booms, alltid\",\"V12\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Toppmärket handlar om utbud, inte om värdering: när insiders och bolag tillsammans levererar som mest papper precis när optimismen är som störst, möter maximal efterfrågan maximal försäljningsvilja. Priset behöver inte falla samma dag — men spelet har bytts från värde till musikaliska stolar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag du äger. Kolla upp tre saker för de senaste tolv månaderna: nettoinsiderhandel, nyemissioner och konvertibla lån (V19), samt storlek och finansiering av återköp (V20). Om alla tre pekar mot papper som lämnar bolaget till marknadens pris — vad är din plan? Skriv ner den medan den är obekväm."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar financial distress i Kindlebergers sekvens?",
+          "alternativ": [
+            "Att alla investerare säljer samtidigt",
+            "Att centralbanken redan har räddat systemet",
+            "En period då vissa börjar ana problem men de flesta inte agerar",
+            "Att priserna stiger explosionsartat"
+          ],
+          "ratt": 2,
+          "tips": "Namnet antyder något processuellt — ett tillstånd, inte en händelse."
+        },
+        {
+          "q": "Vad är den mest tveksamma kombinationen av V20 och V10 på en marknadstopp?",
+          "alternativ": [
+            "Återköp finansierade med kassa",
+            "Återköp finansierade med skuld — följt av tvångsutspädande emissioner i botten",
+            "Utdelning höjs i takt med vinster",
+            "Inga återköp alls"
+          ],
+          "ratt": 1,
+          "tips": "Amerikanska banker 2006 till 2009 är fallstudien."
+        },
+        {
+          "q": "Varför är fas fyra den fas där privatpersonen har en strukturell fördel?",
+          "alternativ": [
+            "Privatpersoner har bättre information än bankers",
+            "Privatpersoner kan shorta utan kostnad",
+            "Insidernas försäljningar är hemliga",
+            "Privatpersoner behöver inte äga varenda topp — och kan läsa insiders offentliga försäljningar"
+          ],
+          "ratt": 3,
+          "tips": "Fördelen ligger i friheten att avstå — inte i bättre data."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Fas fem: Panik — revulsion, discredit och fire sales (V11)",
+      "intro": "Cykelns sista fas har två namn i boken: revulsion — äcklet mot objektet — och discredit — förtroendets kollaps. Försäljning föder försäljning, tvingad utförsäljning pressar priserna under fundamentalt värde och likviditeten försvinner exakt när den behövs. Detta är V11:s kapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Panikens mekanik är balansräkningens, inte psykologins: den som är hävstångad måste sälja när marginalkrav kommer, den som måste sälja pressar priset, det pressade priset ger nya marginalkrav. Fire sales gör att priserna slutar spegla vad tillgångar är värda och börjar spegla vem som måste sälja. Irving Fisher formulerade 1933 den skuldeflationsmekanik som förvandlar en börsnedgång till en depression: fallande priser ökar skuldernas reala värde, vilket tvingar fram mer försäljning, vilket sänker priserna ytterligare. Kindleberger tillägger det institutionella: bankerna faller i kluster, för deras fordringar är varandras säkerheter. En panik är därför aldrig bara problem för en tillgångsklass — den är en kedja av balansräkningar som alla försöker krympa samtidigt."
+        },
+        {
+          "type": "text",
+          "content": "Historiens panikdagar har en påfallande gemensam rytm. Februaridagen 1637 då en auktion i Haarlem inte fick några bud och tulpanpriserna kollapsade inom veckor. December 1825, då drygt sjuttio engelska country banks föll som dominos och Bank of Englands reserv nästan sinade. September 1873, då New York-börsen stängdes i tio dagar efter Jay Cookes fall. Oktober 1929 med svarta måndagen och tisdagen (minus 12,8 respektive 11,7 procent) och den långa slutnedgången till 1932. Juli 1997 till januari 1998, då asiatiska valutor och banker föll i kedja. September till oktober 2008, då penningmarknaden frös efter Lehman. Kindleberger noterar också anomalin oktober 1987: en endags förlust på 22,6 procent — utan föregående mani — vilket visar att panik kan inträffa utan full cykel, men sällan bli lika förödande utan den kredit som byggts upp under fas två och tre."
+        },
+        {
+          "type": "text",
+          "content": "För AKM1 är V11 likviditet panikens överlevnadsvariabel, i tre skepnader: marknadslikviditet (bud-spreaden försvinner; där fanns en köpsida, finns ingen), finansieringslikviditet (korta lån och margin calls dras tillbaka — call loans 1929, repo 2008) och balanslikviditet (kassa och outnyttjade kreditlinjer som låter dig vara kvar). Northern Rock den 14 september 2007 — Storbritanniens första bankrushning sedan Overend Gurney 1866 — och köerna utanför isländska banker i oktober 2008 visar att insättningsrush är samma mekanik på detaljhandelsnivå. Priset i paniken bestäms av tvingade säljare; möjligheten i paniken tillhör de med V11. Det är också här marginal of safety blir praktik snarare än teori: utrymmet att ha fel, i tid och i pris, utan att tvingas realisera."
+        },
+        {
+          "type": "text",
+          "content": "Panikens slut är bokens ekonomisk-politiska kärnfråga och får sitt eget kapitel (14): Kindleberger, som följer Bagehot, menar att paniker kan avslutas av en trovärdig lender of last resort som backar obegränsat mot god säkerhet — och att 1825, 1866 och 1907 är bevisen, medan 1929–1933 är motbeviset. Två varningar för investeraren: för det första är »billigt i panik« inte samma sak som »bottnat i panik« — fire sales kan gå djupare än någon fundamentalmodell; för det andra är sommarköparen 1930 (Dow-rally till april) en påminnelse om att cykelns femte fas kan pausa för att sedan trappas vidare. Paniken köper man inte med mod — den köps med balansräkning."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Panikens mekanik — ordbok\",\"rader\":[[\"Begrepp\",\"Betydelse\",\"Exempel\"],[\"Fire sale\",\"Tvingad försäljning under fundamentalt värde\",\"Lehmans portföljer hösten 2008\"],[\"Margin call\",\"Krav på mer säkerhet när priset faller\",\"Call loans oktober 1929; LTCM 1998\"],[\"Bank run\",\"Insättare kräver kontanter samtidigt\",\"Northern Rock september 2007; Island oktober 2008\"],[\"Revulsion\",\"Äckel mot objektet och dess papper\",\"Tulpanhandeln februari 1637\"],[\"Discredit\",\"Förtroendekollaps för institutioner\",\"Islands banker; WaMu september 2008\"],[\"Skuldeflation\",\"Fallande priser ökar skuldens reala värde\",\"Fishers mekanik 1929–1933\"],[\"Contagion\",\"Smitta via balansräkningar och rädsla\",\"Asien juli 1997–januari 1998\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "I paniken bestäms priserna av vem som måste sälja, inte av vad tillgångarna är värda. Därför är V11 likviditet inte en avkastningsvariabel utan en överlevnadsvariabel — och den billigaste försäkring som finns på en balansräkning, så länge den tecknas i fas ett och inte i fas fem."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör ett panik-test av din privatekonomi: om alla dina tillgångar föll 35 procent på en månad och du samtidigt behövde likvider för en oförutsedd utgift, vad säljer du först — och i vilken ordning? Skriv ordningen idag. Om svaret är »jag vet inte« är det nästa rad i planen. Marginal of safety utan siffra betyder: du har redan svarat före krisen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en fire sale?",
+          "alternativ": [
+            "Utförsäljning av felaktigt märkta varor",
+            "Försäljning vid börsens öppningsauktion",
+            "Tvingad försäljning av tillgångar under fundamentalt värde",
+            "När en brand drabbar börsen"
+          ],
+          "ratt": 2,
+          "tips": "Ordvalet pekar på tvånget — inte på priset i sig."
+        },
+        {
+          "q": "Vad var särskilt signifikativt med Northern Rock september 2007?",
+          "alternativ": [
+            "Det var världens största bank",
+            "Storbritanniens första bankrushning sedan Overend Gurney 1866",
+            "Banken hade ingen verksamhet i Storbritannien",
+            "Den räddades av ECB"
+          ],
+          "ratt": 1,
+          "tips": "Det historiska jämförelsetalet är från Viktoriatidens London."
+        },
+        {
+          "q": "Vad menar Fisher med skuldeflation?",
+          "alternativ": [
+            "Att skulder avskrivs vid deflation",
+            "Att centralbanken köper skulder",
+            "Att inflation alltid löser skuldproblem",
+            "Att fallande priser höjer skuldens reala värde och tvingar fram mer försäljning"
+          ],
+          "ratt": 3,
+          "tips": "Mekanismen är en spiral — och den börjar i prisfallets effekt på låntagaren."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Tulpaner 1637 och South Sea 1720 — de första bubblorna",
+      "intro": "Bokens två äldsta fall är också dess mest mytomspunna: holländsk tulpanmani och Londons South Sea-bolag. De innehåller hela cykeln i miniatyr — displacement, kredit, eufori, utspädning och panik — och dessutom historiens första dokumenterade exempel på att emittera nytt papper direkt in i en eufori.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tulpanmanin 1634–1637 är finanshistoriens mest missbrukade exempel — och därför extra nyttigt. Det verkliga: tulpaner var statusobjekt i det rika Holland, sällsynta lökar handlades för enorma summor (Semper Augustus bjöds till cirka 5 000 floriner — i nivå med ett kanalhus i Amsterdam), handeln skedde till stor del som terminer med marginal (»windhandel« — vindhandel, affärer på papper utan att lökar rörde sig), och i februari 1637, när en auktion i Haarlem den 3 februari inte fick några bud, kollapsade priserna med över 90 procent inom några veckor. Holländska myndigheter upplöste från 1638 kontrakten; säljare kunde lösa sig fria mot en avgift på 3,5 procent. Det ärliga: modern forskning (Peter Garber; Anne Goldgar) har visat att deltagarna var färre, beloppen mindre och den makroekonomiska skadan nästan ingen — Mackays victorianska skildring från 1841 är färgstark men opålitlig. Kindleberger använder fallet ändå, för mekanismens skull."
+        },
+        {
+          "type": "text",
+          "content": "Mississippi-bubblan i Paris 1719–1720 är bokens första fullskaliga finansiella systemkollaps. Skotten John Law — spelare och penningteoretiker — övertygade den franska kronan om att pappersmynt och aktier kunde betala ned statsskulden: bolaget (Compagnie d'Occident, senare Compagnie des Indes) övertog statsskulden mot aktier, aktien steg från cirka 150 livres 1719 till över 10 000 i början av 1720, handeln rasade på rue Quincampoix och Paris upplevde sin första demokratisering av spekulationen. När konvertibla insatser och sedelutgivning accelererade inflationen kollapsade förtroendet; sommaren 1720 återställdes aktiens värde med tvång och Law flydde landet — han dog i Venedig 1729. Systemet — inte bara aktien — föll, och Frankrike fick en djup misstro mot papperspengar som varade i generationer."
+        },
+        {
+          "type": "text",
+          "content": "South Sea Company 1720 är läroboken i att trycka nytt papper in i stigande pris. Bolaget övertog cirka 10 miljoner pund av brittisk statsskuld mot aktier; aktien steg från cirka 128 pund i januari till nära 1 000 i juni–augusti; bolaget emitterade nya aktier i en strid ström (tre stora teckningar april–augusti) och lånade ut pengar till köpare så att de kunde köpa mer — marginallån i eget papper. Bubble Act i juni 1720 stiftades för att stoppa konkurrerande bolag, vilket ironiskt nog signalerade att regleringen skyddade euforin. Direktörer sålde under sommaren; på hösten föll aktien till omkring 150 pund, bolagets bank (Sword Blade Bank) föll, och Sir Isaac Newton förlorade enligt samtida uppgifter omkring 20 000 pund efter att ha gått in igen i bubblan — han ska ha suckat att han kunde beräkna himlakroppars rörelser men inte människors galenskap (citatet är möjligen en efterhandskonstruktion)."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen av 1720: tillgången var ren berättelse — ett monopol på handeln med Spanska Sydamerika som aldrig materialiserades. V17 avtal & partnerskap var hela fundamentet (ett kungligt avtal om statsskuld), V14 varumärke det som såldes till allmänheten (förväntan själv), och V05 P/B saknade mening eftersom bokfört värde var en statsskuld. South Sea lär ut det viktigaste om utspädning: bolaget tryckte nytt papper in i stigande pris — varje emission såldes ut, och varje emission vidhöll illusionen av efterfrågan tills den plötsligt inte gjorde det. I moderna termer: när ett bolag med berättelsen som enda tillgång emitterar aggressivt (V19) är det inte finansiering — det är distribution."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"South Sea-aktien 1720 — priset och mekaniken\",\"rader\":[[\"Tid\",\"Händelse\",\"Pris (cirka)\"],[\"Januari 1720\",\"Konvertibelt statslån öppnar; euforin börjar\",\"£128\"],[\"April–augusti\",\"Tre stora teckningar; bolaget lånar ut till köpare\",\"£300 → £950\"],[\"Juni 1720\",\"Bubble Act — konkurrenter förbjuds\",\"Toppnivå nära £1 000 i juni–augusti\"],[\"September–december\",\"Kollaps; Sword Blade Bank faller\",\"£150–£200\"],[\"Eftermäle\",\"Walpoles omförhandling; Newton förlorar cirka £20 000\",\"Berättelsen dör, statsskulden lever\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "1720 lär ut bubbelns mest tidlösa mekanik: bolaget självt var den störste säljaren av aktier under prisuppgången. När emitterandet är affärsmodellen — South Seas tre teckningar, IT-bolagens optionsutspädning, husbyggarnas nyproduktion — är varje ny topp ett samarbete mellan marknadens aptit och bolagets tryckpress."
+        },
+        {
+          "type": "utmaning",
+          "content": "South Sea-upplägget var i grunden en skuld-till-aktie-konvertering med staten som garant. Hitta ett modernt bolag eller instrument där skuld byts mot eget kapital under högt sentiment — och fråga: vem bär risken när konverteringen sker vid toppen, och vad betyder det för V19 och V20 hos mottagaren?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var »windhandeln« under tulpanmanin?",
+          "alternativ": [
+            "Handel med trädgårdsredskap",
+            "En skatt på tulpanodling",
+            "Export av lökar till Frankrike",
+            "Terminshandel på papper med marginal — utan att lökar levererades"
+          ],
+          "ratt": 3,
+          "tips": "Namnet antyder att affärerna bara var luft."
+        },
+        {
+          "q": "Varför är Bubble Act 1720 ironiskt?",
+          "alternativ": [
+            "Den förbjöd South Sea-bolaget",
+            "Den stiftades för att skydda South Sea mot konkurrenter — och blev startskottet på euforins slut",
+            "Den införde inkomstskatt",
+            "Den legaliserade tulpanhandeln i England"
+          ],
+          "ratt": 1,
+          "tips": "Lagen stärkte ett bolags monopol — och signalerade samtidigt att tåget var fullt."
+        },
+        {
+          "q": "Vad säger modern forskning (Garber, Goldgar) om tulpanmanin?",
+          "alternativ": [
+            "Att den var värre än Mackay skildrade",
+            "Att den aldrig ägde rum",
+            "Att den var makroekonomiskt mindre betydelsefull än myten — men mekaniskt intressant",
+            "Att den orsakade Hollands fall som stormakt"
+          ],
+          "ratt": 2,
+          "tips": "Kritiken rör skalan och källorna — inte mekanismen."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "1825 och 1873 — Latinamerikas lån och järnvägsmanierna",
+      "intro": "1800-talet gav bubblorna deras moderna form: internationell kredit, investmentbanker och en press som kunde sprida berättelser. 1825 var den första emerging market-krisen; 1873 den första industriella överinvesteringen. Båda lär ut cykelns tysta förrädare — att utbudet växer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "År 1825 stod London för det som idag skulle heta emerging market-låneutlåning. Latinamerikas nya republiker — Mexiko, Colombia, Peru, Buenos Aires — släppte statsobligationer på den londonbörsen, gruvaktier emitterades med löften om silver från gruvor som knappt påbörjats, och country banks tryckte sedlar för att kunna låna ut mer. Bland papperen fanns obligationer för Poyais — ett land som inte fanns. Den skotske majoren Gregor MacGregor hade utnämnt sig till cazique av ett fiktivt territorium vid Honduraskusten och sålde både obligationer och jordlotter till sparare; bedrägeriet är historiens tidigaste exempel på att en berättelse ensam kan bära en emission hela vägen till kollapsen. I december 1825 sprack allt: drygt sjuttio banker föll, Pole, Thornton bland dem, och Bank of England höll på att sinas på guld."
+        },
+        {
+          "type": "text",
+          "content": "1825 är också lender of last resort-historiens första avgörande kapitel. Bank of England, som varit restriktiv, bröt sin egen doktrin och lånade ut fritt — förstärkt av guld som skeppades över natten från Banque de France. Paniken hejdades inom veckor. Efterdyningarna blev värre: de latinamerikanska lånen gick i standard under 1820- och 30-talen och inlöstes till slut för cent på pundet; de som köpt »diversifiering« fick vänta decennier. AKM1-läsningen: V03 intäktsdiversifiering användes som euforins argument — nya marknader, nya låntagare, ny spridning — men diversifiering som inte vilar på förstådd kreditkvalitet (V12 intäktsstabilitet hos låntagaren) är bara exponering med tre stavningar. Kindleberger använder 1825 för att visa att lånecykler till nya gränser gått i arv från Genua och Amsterdam via London till varje senare finansiellt centrum."
+        },
+        {
+          "type": "text",
+          "content": "1873 är den första tekniskt drivna överinvesteringen. Efter inbördeskriget byggde Amerika järnväg på spekulation: bolag emitterade obligationer och aktier långt innan trafikintäkter fanns, och investmentbanker — med Jay Cooke & Co i spetsen — placerade papperet hos europeiska och amerikanska sparare. Wiens börskrasch i maj 1873 spred sig genom Centraleuropa; i september kunde Jay Cooke inte rulla Northern Pacifics obligationer och föll den 18 september, varvid New York-börsen stängdes i tio dagar och 1873–1879 blev en lång depression. Båda manierna visar Kindlebergers poäng från fas två: boomen producerar själv sin död — utbudet av lån (1825) och linjer (1873) växer tills marginalintäkten möter marginalskulden. V06 EV/EBITDA-disciplin är det moderna motgiftet: räcker företagets kassaflöde till att betjäna kapitalet — ränta, amortering och utdelning — vid normala antaganden, inte enbart vid de optimala?"
+        },
+        {
+          "type": "text",
+          "content": "Galbraiths iakttagelse — att benägenheten att lura växer parallellt med benägenheten att spekulera — fick sitt 1800-talsbevis i Poyais, och den återkommer i varje sekel: Keatings Lincoln Savings på 1980-talet, WorldCom 2002, Madoffs Ponzi-system som avslöjades 2008. För den som vill ha en tidlös checklista från detta kapitel: (1) Vilket är objektet och vem är emitteraren? (2) Finns det en verifierbar kassaflödeskälla (V12), eller är det en berättelse om någon annan som ska betala nästa gång? (3) Vem trycker nytt papper, och hur snabbt (V19)? (4) Om priset föll hälften — vem tvingas sälja först (V10, V11)? Det är samma fyra frågor i Haarlem 1637 som i London 1825."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1825 och 1873 — jämförelse\",\"rader\":[[\"Drag\",\"1825\",\"1873\"],[\"Objekt\",\"Statliga lån till nya republiker; gruvaktier\",\"Järnvägsobligationer och aktier\"],[\"Kredit\",\"Country banks sedelutgivning\",\"Investmentbanker som placerade obligationer\"],[\"Katalysator\",\"Latinamerikas frigörelse från Spanien\",\"Efterkrigstidens expansion och ny teknik\"],[\"Brott\",\"Poyais — staten som inte fanns\",\"Dubbelbyggda linjer utan trafikunderlag\"],[\"Utfall\",\"70-tal banker faller i december\",\"Wien i maj; New York i september; tio dagars börsstängning\"],[\"Räddning\",\"Bank of England lånade fritt — med guld från Frankrike\",\"Ingen koordinerad lender of last resort\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Utbudet är bubblans tysta mördare. När boomens logik är knapphet — knappt med latinamerikanska obligationer, järnvägsrättigheter, hus eller aktier — trycker samma boom fram nytt utbud som så småningom krossar priset. Fråga alltid i fas tre: vem bygger, emitterar eller odlar mer av objektet just nu?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör ett Poyais-test av din portfölj: vilka innehav vilar på en berättelse du inte kan verifiera med offentliga källor — en licens, ett avtal (V17), en marknad (V03) som du antar finns men aldrig kontrollerat? Lista dem och markera hur många minuter det skulle ta att verifiera varje antagande."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Poyais?",
+          "alternativ": [
+            "En silvergruva i Peru",
+            "Ett fiktivt land vars obligationer såldes i London på 1820-talet",
+            "En järnvägslinje i Ohio",
+            "En holländsk tulpanodling"
+          ],
+          "ratt": 1,
+          "tips": "Gregor MacGregor var »landets« ledare — på pappret."
+        },
+        {
+          "q": "Vad räddade enligt boken det engelska systemet i december 1825?",
+          "alternativ": [
+            "Att man införde guldmyntfoten",
+            "Att alla banker stängdes en månad",
+            "Att Latinamerika betalade sina lån",
+            "Att Bank of England bröt sin restriktiva doktrin och lånade ut fritt — med guld från Banque de France"
+          ],
+          "ratt": 3,
+          "tips": "Det är det första stora historiska exemplet på bokens avslutande doktrin."
+        },
+        {
+          "q": "Vad är cykelns »tysta förrädare« enligt 1825 och 1873?",
+          "alternativ": [
+            "Att utbudet av det spekulativa objektet växer tills det krossar priset",
+            "Centralbankens räntepolitik",
+            "Att befolkningen minskar",
+            "Att guldet tar slut"
+          ],
+          "ratt": 0,
+          "tips": "Boomens egen produktion av objektet — nya lån, linjer, hus — är mekanismen."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "1929 — kraschen som blev depression",
+      "intro": "Detta är bokens tyngsta fall: en verklig displacement (el, bilar, radio), en kreditfinansierad eufori (marginal på 10 procent, investment trusts), en krasch i oktober 1929 — och en depression som inte blev oundviklig förrän bankerna och skulderna lämnades åt sitt öde. Skillnaden mellan krasch och depression är kapitel 14:s föreläsning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "1920-talet var verkligt välstånd kombinerat med en finansieringsrevolution. Elektrifiering, bilen (USA:s biltillverkning nådde cirka fem miljoner fordon 1929) och radion skapade företag med verkliga intäkter. På finanssidan: marginal på 10 procent — 90 procent av aktieköpet kunde lånas — och call loans som bankerna rullade dagligen; brokers lånevolym växte från cirka 3,5 miljarder dollar 1927 till omkring 8,5 miljarder i oktober 1929. Investment trusts kompletterade hävstången: Goldman Sachs Trading Corporation (december 1928) följdes av Shenandoah och Blue Ridge sommaren 1929 — fonder som lånade för att köpa varandras och egna andelar, pyramider där hävstången staplades (V10 på V10)."
+        },
+        {
+          "type": "text",
+          "content": "Toppdatumet var 3 september 1929: Dow 381,17. Den 15 oktober formulerade Irving Fisher sitt »permanently high plateau«. Sedan kom veckan som fick sitt namn i historieböckerna: Black Thursday 24 oktober (rekordvolym 12,9 miljoner aktier; ett bankkonsortium köpte stödjande), Black Monday 28 oktober (minus 12,8 procent) och Black Tuesday 29 oktober (minus 11,7 procent; 16,4 miljoner aktier bytte ägare). Efter en mellanliggande botten i november (198,60) och ett kortvarigt rally till april 1930 (kring 294) kom den verkliga nedgången: 8 juli 1932 noterades Dow 41,22 — 89 procent under toppen. Vem som helst kan se en krasch i efterhand; Kindleberger visar att fas fyra fanns där för den som letade: emissionsvågen av trusts, insidernas distribution och marknadens breda deltagande hösten 1929."
+        },
+        {
+          "type": "text",
+          "content": "Från krasch till depression gick via tre misslyckanden. Det första var penningpolitiskt: Federal Reserve, som skulle vara systemets lender of last resort, lämnade bankerna att falla — över 9 000 banker föll 1930–1933 och penningmängden krympte med omkring en tredjedel. Det andra var skulddeflationsmekaniken (Fisher 1933): fallande priser och löner ökade de reala skuldbördorna, vilket tvingade fram mer försäljning. Det tredje var internationellt: guldmyntfoten, tullkriget och kapitalflykt förstärkte kontraktionen globalt. Friedman och Schwartz (1963) gjorde Feds passivitet till huvudförklaringen; Bernanke visade 1983 att kreditförmedlingens kollaps — när banker som känner sina låntagare försvinner — skadar ekonomin bortom penningmängden. Båda verken formade 2008, och det är ingen slump."
+        },
+        {
+          "type": "text",
+          "content": "Bernanke satte 2002, vid Milton Friedmans nittioårsdag, ord på arvet: »You're right, we did it. We're very sorry. We won't do it again.« — Feds erkännande av 1930-talets svikten. AKM1-läsningen av 1929: V09 ROE och V10 skuldsättningsgrad är oskiljaktiga i en marginalekonomi — avkastningen var hävstång, och hävstången var risken; V12 intäktsstabilitet ignorerades eftersom euforin prisade evig expansion; och V11 likviditet var den variabel som skilde de som tvingades sälja 1932 från de som kunde köpa. För investeraren är 1929 också en varning om timing: den som shortade euforin 1927 blev utplånad före kraschen; den som köpte dippen 1930 fick vänta ett kvarts sekel på att återse toppnoteringen. Marginal of safety utan siffra är enda skyddet mot båda felen."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1929 i siffror\",\"rader\":[[\"Nyckeltal\",\"Värde\",\"Notering\"],[\"Dow-topp 3 september 1929\",\"381,17\",\"Rekord som stod i 25 år\"],[\"Botten 8 juli 1932\",\"41,22\",\"Minus 89 procent\"],[\"Black Monday/Tuesday 28–29 oktober\",\"-12,8 / -11,7 procent\",\"16,4 miljoner aktier den 29 oktober\"],[\"Brokers loans\",\"cirka 3,5 → 8,5 miljarder dollar\",\"1927 till oktober 1929\"],[\"Marginalkrav\",\"cirka 10 procent\",\"90 procent av köpet kunde lånas\"],[\"Bankfel 1930–1933\",\"över 9 000 banker\",\"Penningmängden föll cirka en tredjedel\"],[\"Arbetslöshet 1933\",\"cirka 25 procent\",\"Depressionens botten\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "1929 lär att krasch och depression är olika djur: börsfallet blev katastrof först när kreditbortfallet inte stoppades. Samma börsfall med fungerande lender of last resort heter 1987; utan den heter det 1932. Hanteringen av skuld och banker — inte börsens fall i sig — avgör priset i mänskligt lidande."
+        },
+        {
+          "type": "utmaning",
+          "content": "Läs Bernankes citat från 2002 och skriv ner: vad, konkret, borde Fed ha gjort hösten 1930 enligt Bagehots doktrin? Jämför sedan din lista med vad Fed faktiskt gjorde 2008 (kapitel 14). Skillnaderna mellan dina två listor är den bästa sammanfattning av hundra års krislärande du kan få."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var topp- och bottennoteringen för Dow 1929–1932?",
+          "alternativ": [
+            "100 den 3 september 1929; 50 den 8 juli 1932",
+            "381,17 den 3 september 1929; 41,22 den 8 juli 1932",
+            "381,17 den 24 oktober 1929; 41,22 den 1 januari 1934",
+            "200 den 3 september 1929; 90 den 8 juli 1932"
+          ],
+          "ratt": 1,
+          "tips": "Toppdagen kom drygt en månad före den svarta veckan."
+        },
+        {
+          "q": "Hur utvecklades brokers loans före kraschen?",
+          "alternativ": [
+            "De halverades",
+            "De var förbjudna",
+            "De fördubblades från cirka 3,5 till 8,5 miljarder dollar 1927–1929",
+            "De hölls konstanta av Fed"
+          ],
+          "ratt": 2,
+          "tips": "Fas två i en enda sifferserie."
+        },
+        {
+          "q": "Vad sa Bernanke 2002 om Fed:s roll i depressionen?",
+          "alternativ": [
+            "Att Fed var maktlös",
+            "Att guldmyntfoten var oklanderlig",
+            "Att bankerna ensamma bar skulden",
+            "»You're right, we did it. We're very sorry. We won't do it again.«"
+          ],
+          "ratt": 3,
+          "tips": "Orden riktades till Milton Friedman på hans nittioårsdag."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "1980-talet — S&L-krisen och Latinamerikas skuldkris",
+      "intro": "Två kriser, en rot: avreglering och recirkulerade petrodollar. Den ena drunknade amerikanska sparbanker och kostade skattebetalarna omkring 124 miljarder dollar; den andra skapade Latinamerikas förlorade decennium. Tillsammans visar de hur V18 kan vara både tändning och dynamit.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Latinamerikakrisen började som recirkulering. Efter oljeprischocket 1973 deponerade oljestaterna sina petrodollar i västerländska banker, och bankerna lånade ut dem vidare — gärna som syndikerade lån till utvecklingsländer till flytande ränta (LIBOR plus en marginal). Mellan 1975 och 1982 tredubblades Latinamerikas externa skuld till runt 300 miljarder dollar, och argumentet var euforins klassiker: stater går inte i konkurs, exporten växer, diversifieringen (V03) sprider risken. När Volcker höjde den amerikanska räntan för att bryta inflationen steg lånekostnaderna samtidigt som råvarupriser föll och dollarn stärktes — en trefaldig smäll för låntagare vars intäkter var i pesos och skulder i dollar. I augusti 1982 meddelade Mexiko att man inte kunde betjäna skulden; inom veckor följde Brasilien, Argentina och andra."
+        },
+        {
+          "type": "text",
+          "content": "Krisen hanterades som en maraton: bridge-lån och omstruktureringar höll bankerna på fötterna, Baker-planen 1985 erbjöd nytt kapital mot reformer, och först Brady-planen 1989 skapade en exit — gamla lån byttes mot nya obligationer med nedsättningar, de så kallade Brady bonds. I maj 1987 satte Citicorp upp tre miljarder dollar i reserver för tredje världens lån — och aktien steg på beskedet: realismen avlöste förnekelsen. AKM1-läsningen: V10 skuldsättningsgrad på statsnivå mäts bäst mot exportintäkter, och V12 intäktsstabilitet är hela kärnan — en stat vars intäkter svänger med råvarupriser och vars skulder är i främmande valuta till flytande ränta har ingen inkomststabilitet alls, oavsett vad berättelsen om statlig kreditvärdighet säger."
+        },
+        {
+          "type": "text",
+          "content": "S&L-krisen är samma decennium, samma rot, annan mekanik. Avregleringen 1980 (DIDMCA) och 1982 (Garn-St Germain) gav sparbanker — som historiskt lånat långsiktigt mot bostäder och finansierat kort — rätt att låna ut i kommersiell fastighet och annat med högre risk, medan insättningarna var statligt försäkrade. När Volckerräntan pressade marginalerna och det nya spelrummet öppnades blev resultatet väntat: tillgångar i riskfylld fastighet, i vissa fall renodlad ekonomisk brottslighet — Charles Keatings Lincoln Savings blev symbolen, och de fem senatorerna som tog emot hans bidrag blev Keating Five. FSLIC, försäkringssystemet, hade inte medel för notan; FIRREA 1989 skapade RTC som stängde och sålde. Cirka 1 043 sparbanker försvann 1986–1995, och kostnaden blev omkring 160 miljarder dollar — varav runt 124 miljarder skattebetalarnas."
+        },
+        {
+          "type": "text",
+          "content": "Båda kriserna är V18:s dubbla natur i praktiken: regulatoriska katalysatorer kan släppa loss tillväxt — och fara. De är också bokens tydligaste moral hazard-laboratorium: när insättare och långivare är garanterade men risktagarna privata hamnar vinsten hos aktörerna och förlusten hos skattebetalarna (S&L), och när banker vet att systemet inte tål deras fall förhandlas notan i efterhand (LatAm-bankerna, och senare 2008). Galbraiths iakttagelse om att lurendrejeriet växer med spekulationen fick sitt 1980-talsbevis i Keatings imperium. För AKM1-analytikern är decenniets lärdom att kredithärdar ofta föds ur goda intentioner: bostäder åt alla (S&L), utveckling åt alla (LatAm) — kombinerat med en finansieringsstruktur där någon annan än beslutsfattaren bär risken."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två kriser, en rot — 1980-talet\",\"rader\":[[\"Drag\",\"Latinamerika 1982\",\"S&L 1980-tal\"],[\"Rot\",\"Petrodollar-recirkulering\",\"Avreglering 1980 och 1982\"],[\"Kreditmekanism\",\"Syndikerade lån på LIBOR-bas\",\"Försäkrade insättningar och nya utlåningsrättigheter\"],[\"Utlösare\",\"Volckerränta, fallande råvaror, stark dollar\",\"Räntetryck plus spelrum för risk och fusk\"],[\"Symbol\",\"Mexiko augusti 1982\",\"Lincoln Savings och Keating Five\"],[\"Upplösning\",\"Baker 1985; Brady bonds 1989\",\"FIRREA 1989 och RTC\"],[\"Kostnad\",\"Förlorat decennium i regionen\",\"cirka 160 miljarder; 124 miljarder skattemedel\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Moral hazard är ingen abstraktion utan en budgetpost: 124 miljarder dollar är priset för att ha försäkrat skulderna utan att kontrollera riskerna. Frågan att bära med sig till 2008: vilka implicita garantier växer just nu, okvoterade, i systemets utkanter?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera två nutida mekanismer med samma struktur som S&L: garanterad finansiering eller implicit statligt skydd, kombinerat med fri risktagning hos den som inte bär förlusten. Ledtrådar: insättningsgarantier, implicita too-big-to-fail-garantier, statligt backade kreditmarknader. Vad skulle V18-katalogen säga om dem?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utlöste Latinamerikas skuldkris 1982?",
+          "alternativ": [
+            "En jordbävning i Mexiko City",
+            "En ny lag i USA:s kongress",
+            "Volckerräntan, fallande råvarupriser och stark dollar mot flytande dollarkrediter — Mexiko meddelade i augusti att skulden inte kunde betjänas",
+            "Brady-planen"
+          ],
+          "ratt": 2,
+          "tips": "Tre krafter samverkade mot samma balansräkning — alla i dollar."
+        },
+        {
+          "q": "Varför steg Citicorps aktie när banken satte upp tre miljarder i reserver 1987?",
+          "alternativ": [
+            "Reserverna var skattefri inkomst",
+            "Aktien föll i själva verket",
+            "Fed subventionerade reserverna",
+            "Därför att realism avlöste förnekelse — marknaden prissatte äntligen en känd förlust i stället för en okänd"
+          ],
+          "ratt": 3,
+          "tips": "Ett erkänt nummer kan vara värt mer än ett okänt."
+        },
+        {
+          "q": "Vad blev den totala notan för S&L-uppstädningen?",
+          "alternativ": [
+            "Cirka 160 miljarder dollar, varav omkring 124 miljarder för skattebetalarna",
+            "Noll — försäkringspremierna räckte",
+            "20 miljarder dollar",
+            "1 biljon dollar"
+          ],
+          "ratt": 0,
+          "tips": "FSLIC hade inte medel att betala — notan gick vidare till den offentliga sektorn."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Japan 1989 — landet som trodde att priser bara stiger",
+      "intro": "Historiens största bubbla i en stor ekonomi: aktier på 60 gånger vinster och Tokyo-mark prissatt som om knappheten var evig. Kollapsen blev inte en krasch utan en generation av deflation, zombie-banker och balansräkningsrecession. Aliber ägnar fallet stort utrymme.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Uppbyggnaden var en klassisk displacement med politisk förstärkning. Efter Plaza-avtalet 1985 steg yen kraftigt; för att motverka recession höll Bank of Japan diskontoräntan nere vid 2,5 procent från 1987 — och lät den ligga kvar för länge. Företag och banker spelade zaitech — finansiering till finansiell spekulation som blev en vinstmaskin för sig; keiretsu-strukturer med korsägande gjorde aktierna strukturellt knappa, och bankerna lånade mot mark som säkerhet, där markpriset steg delvis därför att bankerna lånade mot den. Euforins argument var kulturellt: Japan var en unik ekonomisk supermakt, mark i Tokyo var knapp (påståendet att kejsarens slottspark var värd mer än hela Kalifornien cirkulerade på fullt allvar) och Nikkeis topp speglade industriell överlägsenhet. Den 29 december 1989 noterades Nikkei 38 915,87 — ett rekord som stod sig i 34 år."
+        },
+        {
+          "type": "text",
+          "content": "Vändningen kom politiskt: Bank of Japan höjde diskontoräntan från 2,5 procent i maj 1989 till 6,0 procent i augusti 1990, och finansmyndigheterna begränsade fastighetsutlåningen. Aktierna föll först (minus cirka 60 procent till 1992), marken följde med flera års fördröjning — och föll sedan i femton år. Nikkei bottnade på 7 054 i april 2003, 82 procent under toppen. Bankerna svarade med evergreening — att rulla över dåliga lån för att slippa erkänna förluster — vilket skapade zombie-banker och zombie-företag: verksamheter som levde på att inte behöva betala sina skulder. Krisen blev administrativ i stället för explosiv: ingen panikvecka, men ett decennium av deflation, och först i november 1997 — när Hokkaido Takushoku Bank och Yamaichi Securities föll inom några veckor — såg Japan sin första bankrushning sedan kriget."
+        },
+        {
+          "type": "text",
+          "content": "Richard Koo har kallat det som följde en balansräkningsrecession: företag med skadade balansräkningar slutade maximera vinst och började minimera skuld — även vid nollränta. Det är Minsky baklänges som nationell strategi, och det förklarar varför penningpolitiken miste sitt spärr. Alibers analys betonar det Kindelbergerska — krediten mot stigande säkerhet byggde systemet; när säkerheten föll blev balansräkningarna strukturellt trasiga, och ingen enskild ränta läker en trasig balansräkning. För AKM1 är Japan den renaste illustrationen av V05 P/B:s gränser: när priset på bokfört kapital (V05) och P/E passerar alla historiska referenspunkter återstår bara berättelsen om unikhet — »den gången är annorlunda« på japanska."
+        },
+        {
+          "type": "text",
+          "content": "Japans mest obehagliga lärdom för investeraren är tidens pris. Ett pris som är dubbelt så högt som skäligt kräver inte en krasch för att ruinera köparen — det räcker att priset står stilla i tjugo år medan alternativkostnaden samlar ränta. Nikkeis topp 1989 återerövrades först 2024. AKM1-testet vid extrema värderingar: vilken kombination av V09 ROE och tillväxt krävs — och under hur många år — för att motivera dagens P/E och P/B vid normalt avkastningskrav? Om svaret kräver ett decennium av perfektion är frågan inte om bolaget är bra (Japan var bra) utan om priset lämnar marginal för mänskligt fel. Marginal of safety är, återigen, principen utan siffra."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Japan i siffror\",\"rader\":[[\"Händelse\",\"Siffra\",\"Notering\"],[\"Nikkei-topp 29 december 1989\",\"38 915,87\",\"Rekord som stod i 34 år — slaget 2024\"],[\"Botten april 2003\",\"7 054\",\"Minus 82 procent\"],[\"Diskontoränta maj 1989–augusti 1990\",\"2,5 → 6,0 procent\",\"BoJ:s vändning\"],[\"P/E på toppen\",\"cirka 60 gånger\",\"V05 P/B på motsvarande extrema nivåer\"],[\"Slottspark kontra Kalifornien\",\"omstritt mått från 1989\",\"Euforins signaturargument\"],[\"November 1997\",\"Hokkaido Takushoku och Yamaichi\",\"Första bankrushningarna sedan kriget\"],[\"Markpriser\",\"fallande i cirka 15 år från 1991\",\"Säkerhetens långa död\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Japan lär att dumhetens tidsgräns kan vara en generation: ett pris som är dubbelt för högt behöver inte krascha för att förgöra avkastning — det räcker att tiden står stilla. Zombie-bankerna är dessutom beviset på att låtsas-att-inget-hänt har ett pris: ingen panik, men decennier av stillastående."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna baklänges: ett bolag handlas till åtta gånger bokfört värde (V05). Om ditt avkastningskrav är 8 procent och den långsiktiga tillväxten 3 procent — vilken ROE (V09) krävs för att motivera multipeln? Skriv ner svaret och fundera på hur många bolag i historien som levererat den siffran i tjugo år utan avbrott."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "När toppade Nikkei och på vilken nivå?",
+          "alternativ": [
+            "1 januari 1990 på 50 000",
+            "29 december 1989 på 38 915,87",
+            "29 december 1989 på 21 000",
+            "3 september 1929 på 381,17"
+          ],
+          "ratt": 1,
+          "tips": "Rekordet stod i 34 år — tills februari 2024."
+        },
+        {
+          "q": "Vad är evergreening?",
+          "alternativ": [
+            "Att banken planterar träd som säkerhet",
+            "Att sälja lån till utlandet",
+            "Att rulla över dåliga lån för att slippa erkänna förluster — vilket skapar zombie-banker",
+            "Att höja räntan på befintliga lån"
+          ],
+          "ratt": 2,
+          "tips": "Ordet låter vårlikt men beskriver ett sätt att bevara det gamla."
+        },
+        {
+          "q": "Vad var euforins centrala »den gången är annorlunda«-argument i Japan?",
+          "alternativ": [
+            "Att japansk mark var knapp och priserna speglade unik industriell styrka",
+            "Att Nikkei var för liten för att falla",
+            "Att Japan saknade banker",
+            "Att yen var bunden till guld"
+          ],
+          "ratt": 0,
+          "tips": "Argumentet handlade om en fysisk tillgångs unika knapphet."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Asien 1997 och IT 2000 — valutor och nätverkseufori",
+      "intro": "Två bubblor inom tre år på varsitt håll om Stilla havet: den ena i valutor och fastigheter, den andra i teknikaktier. Mallen är densamma — verklig förskjutning, generös kredit, euforins berättelse — och utfallet likaså: djupt fall, verklig teknik kvarstår.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Asienkrisen var en fastighets- och valutakris förklädd till framgångssaga. De asiatiska ekonomierna — Thailand, Korea, Indonesien, Malaysia — hade knutit sina valutor löst till dollarn och öppnat kapitalkontona (V18 som tändning). Banker och företag lånade kortfristigt offshore i dollar, ohedgat, i tron att peggen gjorde valutarisken till en formalitet; krediten gick till fastigheter och industrikapacitet. När dollarn stärktes och exporten mattades blev peggarna ohållbara: Thailand släppte bahten den 2 juli 1997, och inom ett halvår hade smittan gått genom regionen — Indonesiens rupiah föll från cirka 2 400 till över 14 000 per dollar i januari 1998, Korea undertecknade IMF:s dittills större program (58 miljarder dollar) den 3 december 1997, och Indonesiens politiska system föll med Suharto i maj 1998. Malaysia svarade i september 1998 med kapitalkontroller — kätteri som efterhand bedömts mindre katastrofalt än väntat."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken var Minsky i valutatappning: de lokala tillgångarna (fastigheter, aktier) hade finansierats i dollar; när valutorna föll steg den reala skuldbördan dramatiskt, vilket tvingade fram försäljning, vilket pressade tillgångarna och valutorna ytterligare — skuldeflation med ett valutaskikt ovanpå. AKM1-läsningen: V10 skuldsättningsgrad måste läsas i rätt valuta; en balansräkning kan se hedgad ut i lokala kronor och vara ett kasino i dollar. V12 intäktsstabilitet gäller också makro — en ekonomi vars tillväxt berodde på kort kapitalinflöde hade ingen stabil inkomst när flödet vände. IMF:s program och deras åtstramningskrav har kritiserats hårt (bland annat av Stiglitz) för att förvärra nedgången; återhämtningen blev trots det V-formig i de flesta länder — en påminnelse om att cykeln är en tendens, inte ett straff som alltid varar decennier."
+        },
+        {
+          "type": "text",
+          "content": "IT-bubblan är euforins renaste moderna exempel. Nasdaq fördubblades från oktober 1999 till toppen 5 048,62 den 10 mars 2000 och föll sedan 78 procent till 1 114 i oktober 2002. Värderingslogiken bytte instrument vid varje motfråga: P/E dog, P/S (V04) tog över; när V04 blev pinsam räknade man ögon (eyeballs), klick och »mindshare« — V15 nätverkseffekter som narrativ kostym: sanningen (nätverkseffekter är verkliga) användes som bevis för att alla priser var motiverade. Cisco passerade 500 miljarder dollar i börsvärde i mars 2000 som världens största bolag; telecombranschen lånade för nät och 3G-licenser (Storbritanniens auktion inbringade 22,5 miljarder pund i april 2000 — betalat på toppen). Pets.com visade Super Bowl-reklam i januari 2000 och var likviderat i november samma år; Amazon föll över 90 procent utan att göra fel strategiskt."
+        },
+        {
+          "type": "text",
+          "content": "Skillnaden mellan lögn och bubbelfinansiering var V19 kapitalförbränning & emission-risk. De bolag som överlevde hade antingen kassaflöden, kassa eller tillgång till kapital när emissionsfönstret stängdes 2000–2002; de som levde på att sälja nytt papper till euforiska köpare försvann på månader när fönstret stängdes. WorldComs redovisningsbedrägeri (11 miljarder dollar i felaktiga poster, konkurs 2002) visade att Galbraiths lag — bedrägeriet växer med spekulationen — gällde också här. För AKM1 är IT-fallet en balansgång: displacementen var äkta (V13 patent & IP och V15 nätverkseffekter byggde verkliga bolag — Amazons och Googles bästa decennier kom efter kraschen), men investeraren som betalade euforins pris deltog i ett lotteri där vinnarna fanns men priset var fel. Tekniken överlevde; portföljerna gjorde inte alltid det."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Asien 1997 och IT 2000 — samma mall\",\"rader\":[[\"Drag\",\"Asien 1997\",\"IT 2000\"],[\"Objekt\",\"Valutor, fastigheter, banker\",\"Teknik- och telecomaktier\"],[\"Kredit\",\"Ohedgade kortfristiga dollarkrediter\",\"Emissioner, optionslöner, telecomobligationer\"],[\"Narrativ\",\"Asiatiska miraklet\",\"Nya ekonomin; nätverkseffekter som alltförklarande\"],[\"Brytpunkt\",\"Bahten float 2 juli 1997\",\"Nasdaq-topp 10 mars 2000, 5 048,62\"],[\"Fall\",\"Rupiah cirka 2 400 → över 14 000 per dollar\",\"Nasdaq -78 procent till 1 114 i oktober 2002\"],[\"Eftermäle\",\"IMF-program; V-formig återhämtning i de flesta länder\",\"Få överlevare; teknikens verkliga tillväxt kom efter\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "IT-fallet visar att sanningen kan vara bubblans bästa bränsle: nätverkseffekterna var verkliga (V15), patentskogen var verklig (V13) — det var finansieringen och priset som var bubbla. När en sann berättelse och en galen värdering sammanfaller blir fallet djupt men tekniken består; investerarens uppgift är att skilja dem, inte att förneka den ena."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en dagens tillväxtbransch. Skilj på tre rader: (1) vad i berättelsen kan verifieras i V13, V15 och V16; (2) vad som kräver kapitalmarknadens fortsatta aptit för att överleva (V19); (3) vad dagens pris antar om de nästa tio åren. Ställ sedan IT-frågan: om tekniken har rätt men priset fel — vem får avkastningen?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den centrala sårbarheten i Asien före 1997?",
+          "alternativ": [
+            "För höga räntor lokalt",
+            "Brist på naturresurser",
+            "För låg exportskörd",
+            "Kortfristiga dollarkrediter utan valutasäkring, kopplade till löst peggade valutor"
+          ],
+          "ratt": 3,
+          "tips": "Balansräkningarna såg bra ut i lokal valuta — och katastrofala i dollar."
+        },
+        {
+          "q": "Vad hände med Nasdaq 2000–2002?",
+          "alternativ": [
+            "Föll 78 procent från 5 048,62 den 10 mars 2000 till 1 114 i oktober 2002",
+            "Föll 20 procent och återhämtade sig på ett år",
+            "Föll 50 procent och återhämtade sig på en månad",
+            "Steg ytterligare 78 procent"
+          ],
+          "ratt": 0,
+          "tips": "Toppdatumet och procentsiffran hör till de mest citerade i finanshistorien."
+        },
+        {
+          "q": "Vad skilde de IT-bolag som överlevde kraschen?",
+          "alternativ": [
+            "De hade högst P/S-multiplar",
+            "De profilerade sig i Super Bowl-reklamer",
+            "De saknade patent",
+            "De hade kassaflöden, kassa eller kapitaltillgång när emissionsfönstret stängdes — V19 avgjorde"
+          ],
+          "ratt": 3,
+          "tips": "Överlevnaden handlade om bränsle, inte berättelse."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "2008 och Island — Alibers bostadsbubbla och ö-bankerna",
+      "intro": "Alibers upplagor gör 2000-talet till bokens eget nutidskapitel: en global bostadsbubbla byggd i securitization, och en liten ö vars banker växte till tiofalt BNP innan de föll på tio dagar. Island är Kindleberger-cykelns renaste moderna laboratorium.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den amerikanska bostadsbubblan byggdes av tre samverkande mekanismer. För det första penningpolitik: efter IT-kraschen hölls styrräntan på 1 procent 2003–2004. För det andra kreditinnovation: securitization förvandlade bostadslån till handelbara produkter (RMBS, CDO) där riskerna gömdes i lagerpaket och betyg; subprime-andelen av nya lån steg till omkring 20 procent 2005–2006, ofta med rörliga räntor som betalades så länge priserna steg. För det tredje efterfrågan på avkastning: globala investerare och penningmarknadsfonder köpte pappret. Bostadspriserna steg kraftigt — nationellt med mer än 80 procent på ett decennium till toppen 2006 — och argumentet var euforins klassiker: bostäder är en realtillgång, folkets sparande, de faller inte nationellt. V10 byggdes in i systemet på alla nivåer: hushållen, bankerna med hävstång på 30 gånger och uppåt, och investmentbankerna finansierade via kortfristig repo över natten — bankernas egen windhandel."
+        },
+        {
+          "type": "text",
+          "content": "Tidslinjen förtjänar att läsas som en kalender. Den 9 augusti 2007 frös BNP Paribas tre fonder (fordringar i amerikanska bostadslån gick inte att värdera) och penningmarknadens uttorkning inleddes. Den 14 september 2007 stod köerna utanför Northern Rock — Storbritanniens första bankrushning sedan 1866. I mars 2008 räddades Bear Stearns genom förmedling. Den 7 september 2008 togs Fannie Mae och Freddie Mac i konservatorskap. Den 15 september fick Lehman Brothers gå i konkurs — den största i USA:s historia — och inom tio dagar hade AIG räddats (initialt 85 miljarder dollar), Reserve Primary Fund brutit dollarn (broke the buck), Washington Mutual fallit som USA:s största bankkollaps och TARP (700 miljarder dollar) skrivits under i lag. Case-Shillers nationella index föll cirka 27 procent från 2006 till botten; i de värsta regionerna betydligt mer. Den som vill veta hur en fas fem ser ut på systemnivå behöver bara läsa september 2008 i kalendern."
+        },
+        {
+          "type": "text",
+          "content": "Island är Alibers signumfall. Bankerna privatiserades 1998–2003 och växte explosivt på den internationella penningmarknaden: Kaupthing, Landsbanki (med sin Icesave-internetfilial) och Glitnir hade vid krisen tillgångar kring tiofalt Islands BNP. Valutan och betalningsbalansen skrek eufori — underskottet på betalningsbalansen passerade 20 procent av BNP mitt i decenniet — men berättelsen var att en liten, kunnig nation kunde förvalta global kapital. När Lehman föll frös den finansiering som de isländska bankerna levde på. Den 6 oktober 2008 stiftade alltinget nödlagar; inom tre dagar hade alla tre bankerna tagits över, den isländska kronan föll med omkring hälften, inflationen nådde cirka 18 procent i början av 2009, BNP föll 6,6 procent 2009, och Storbritannien använde terrorlagstiftning mot Landsbanki i Icesave-tvisten. Kapitalkontroller infördes och avskaffades först 2017; återhämtningen drevs av turism och fiske. Hushållens indexlån gjorde skuldeflationen till mikroplanens verklighet."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen av 2008 och Island: V10 och V11 är systemvariabler, inte bara bolagsvariabler — hela systemet hade hävstång och hela systemet tappade likviditet samtidigt, vilket är definitionen på fas fem. V19 visar sin omvända sida: banker som återköpt aktier 2006–2007 (V20) tvingades 2008–2009 emittera nytt kapital till krispriser — aktieägarna betalade notan för hävstången. Och V03 intäktsdiversifiering visade sin mörka sida: spridningen av risk genom CDO:er skapade en illusion av säkerhet som fick fler att ta mer risk — diversifiering som fungerar på papper och fallerar när alla äger samma faktorer. Marginal of safety utan siffra är även här slutstationen: den som hade buffert köpte 2009; den som hade hävstång såldes ut av den."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från 2007 till 2008 — vecka för vecka\",\"rader\":[[\"Datum\",\"Händelse\",\"AKM1-läsning\"],[\"9 augusti 2007\",\"BNP Paribas frös tre fonder\",\"V11: värderingen dog först\"],[\"14 september 2007\",\"Northern Rock — köer utanför banken\",\"Första brittiska bankrushningen sedan 1866\"],[\"16 mars 2008\",\"Bear Stearns förmedlas till JP Morgan\",\"Repo-rushningen stoppad i tid\"],[\"7 september 2008\",\"Fannie Mae och Freddie Mac i konservatorskap\",\"Implicit garanti explicit\"],[\"15 september 2008\",\"Lehman i konkurs — störst i USA:s historia\",\"V11: penningmarknaden stannar\"],[\"16–25 september 2008\",\"AIG räddas; Reserve Primary bryter dollarn; WaMu faller\",\"Systemisk fas fem\"],[\"3 oktober 2008\",\"TARP godkänns — 700 miljarder dollar\",\"Lender of last resort omstart\"],[\"6–9 oktober 2008\",\"Islands tre banker nationaliseras\",\"Tiofalt BNP i tillgångar på tre dagar\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Island är kursens renaste laboratorium: liten ekonomi, synliga mekanismer, hela cykeln på ett decennium. Och det visar att Kindlebergers mönster inte kräver nya instrument — bara ny kredit. Samma fem faser, från privatisering 1998 till nationalisering 2008."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör ett Island-test av ditt eget finansiella system: vilken andel av det du äger är finansierat med kortfristig eller utländsk kredit? Vad händer på 30 dagar om den finansieringen fryser? Om svaret är obehagligt har du hittat din personliga V11-blinda fläck — och det är den som avgör i fas fem."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände den 9 augusti 2007?",
+          "alternativ": [
+            "Lehman gick i konkurs",
+            "Nasdaq toppade",
+            "BNP Paribas frös tre fonder eftersom bostadslånefordringar inte kunde värderas — penningmarknadens uttorkning inleddes",
+            "Islands banker nationaliserades"
+          ],
+          "ratt": 2,
+          "tips": "Många daterar krisens början här — över ett år före Lehman."
+        },
+        {
+          "q": "Hur stora var de isländska bankernas tillgångar vid kollapsen?",
+          "alternativ": [
+            "Cirka lika med Islands BNP",
+            "Hälften av Islands BNP",
+            "100 miljarder euro per bank",
+            "Kring tiofalt Islands BNP"
+          ],
+          "ratt": 3,
+          "tips": "En liten ö med en mycket stor balansräkning — tre stycken."
+        },
+        {
+          "q": "Vad visar 2008 om samspelet mellan V20 och V19?",
+          "alternativ": [
+            "Att återköp alltid är klok politik",
+            "Att emissioner är förbjudna i kriser",
+            "Att V19 aldrig spelar roll för banker",
+            "Att återköp med skuld på toppen följdes av tvångsutspädande emissioner i botten — aktieägarna betalade för hävstången"
+          ],
+          "ratt": 3,
+          "tips": "Bankerna köpte tillbaka aktier 2006–2007 och bad om kapital 2008–2009."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Lender of last resort — Bagehot, Bernanke och moral hazard",
+      "intro": "Bokens ekonomisk-politiska slutsats handlar om den som kan stoppa en panik: lender of last resort. Walter Bagehots viktorianska regler från 1873 möter Bernankes 2008 — och mitt emellan står moral hazard-frågan som Kindleberger aldrig slutade formulera.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Walter Bagehot skrev Lombard Street (1873) efter krisen 1866, då bankfirman Overend Gurney föll och Bank of England först tvekade — varpå paniken blev värre — innan den slutade diskontera fritt och krisen lade sig. Bagehots doktrin, sedan dess finanshistoriens viktigaste regelverk: i en panik ska centralbanken låna ut fritt (generöst till alla som är solventa), snabbt, mot god säkerhet — och till avstraffande ränta. Poängen är inte räntan utan trovärdigheten: paniken slutar när marknaden tror att någon obegränsat kan och vill köpa. Kindleberger strukturerar sitt policykapitel som frågor: Vem är lender of last resort? När ska den ingripa? Hur mycket? Till vem? Och — hans egen tvekan — till vilket pris i form av moral hazard, eftersom varje räddning lär marknaden att nästa gång också bli räddad?"
+        },
+        {
+          "type": "text",
+          "content": "Historien ger båda svaren. 1825: Bank of England lånade fritt, förstärkt av franskt guld, och paniken dog inom veckor. 1907: ingen centralbank fanns i USA — J.P. Morgan spelade lender of last resort från sitt bibliotek — och erfarenheten ledde till Federal Reserve Act 1913. 1929–1933: Fed fanns men gjorde inte jobbet; över 9 000 banker föll och depressionen blev depression. Bernanke, som gjort depressionen till sitt forskningsliv, satte 2002 ord på det: »You're right, we did it. We're very sorry. We won't do it again.« När 2008 kom agerade han efter läroboken: räntan från 5,25 till 0–0,25 procent, likviditetsfaciliteter för banker och primärhandlare, garantier för penningmarknadsfonder, och — när säkerheten visade sig vara röta — kapitalinjektioner i aktier via TARP. Den moderna Bagehot-tolkningen: när collateral inte är god återstår att ta aktier, och straffet blev utspädning och styrning i stället för ränta."
+        },
+        {
+          "type": "text",
+          "content": "Lehman-undantaget är doktrinens svåraste fall: den 15 september 2008 fick en stor investmentbank gå i konkurs — och paniken som följde blev den värsta sedan 1930-talet. Försvaret har varit att ingen köpare fanns, att rättsliga befogenheter saknades och att någon måste visa att gränser existerar; kritiken att kostnaden för trovärdighet betalades av systemet. Kindleberger, som dog 2003, såg det aldrig; Alibers upplagor diskuterar utfallet mot Bagehot. Bokens egen hållning är öppen ambivalens: rädda för lite och paniken äter systemet (1933), rädda för mycket och nästa generation bygger större hävstång i trygg förvissning om räddning (2008 följt av debatten om too big to fail). Moral hazard är inte ett argument mot lender of last resort — det är en kostnad som måste prissättas och debatteras varje gång."
+        },
+        {
+          "type": "text",
+          "content": "För den privata investeraren översätts doktrinen rakt av. Din lender of last resort är din egen balansräkning: V11 likviditet i form av kassa och outnyttjade linjer, och en V10-nivå som låter dig behålla tillgångar genom en fas fem. Den som räknar med centralbankens räddning som sin exitstrategi har läst 2008 med fel facit: räddningen 2008 gällde systemet — aktieägarna i Lehman, WaMu och de isländska bankarna fick ändå noll. Marginal of safety utan siffra är Bagehot tillämpad privat: utrymme att låna till dig själv, fritt och mot god säkerhet — dina kvarvarande tillgångar — när ingen annan gör det. Det är också den enda likviditetsgarantin som inte skapar moral hazard i ditt eget hushåll."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bagehots regler möter 2008\",\"rader\":[[\"Bagehot 1873\",\"2008-tillämpning\",\"Frågan\"],[\"Låna fritt\",\"Fed öppnade faciliteter för banker och primärhandlare; garantier för penningmarknaden\",\"Vem får låna?\"],[\"Mot god säkerhet\",\"Säkerheten var i många fall röta — därav kapitalinjektioner i aktier via TARP\",\"Vad är god säkerhet?\"],[\"Till avstraffande ränta\",\"Räntorna var låga; straffet blev utspädning och politisk styrning\",\"Vilket pris?\"],[\"Snabbt\",\"Bear mars 2008, Lehman september, TARP i oktober\",\"Tempo och trovärdighet\"],[\"Systemet, inte enskilda banker\",\"Bear och AIG räddades; Lehman undantaget\",\"Var går gränsen — och vem betalar moral hazard-notan?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Bagehots kärna är trovärdighet, inte ränta: paniken slutar när marknaden tror att någon kan och vill köpa obegränsat. Bernankes svåraste läxa är spegelbilden — trovärdigheten kostar också, och Lehman blev priset för att bevisa att gränser fanns."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din privata lender of last resort-plan: hur många månaders utgifter finns i likvida medel, vilka kreditlinjer är outnyttjade, och vilka tillgångar skulle du — i en fas fem — kunna behålla utan att sälja? Dokumentera den medan den är ointressant. Det är Bagehot för hushåll: fritt, snabbt, mot god säkerhet — från dig själv."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är Bagehots tre huvudregler?",
+          "alternativ": [
+            "Låna lite, långsamt, till utvalda banker",
+            "Låna bara till staten",
+            "Låna fritt, snabbt, mot god säkerhet — till avstraffande ränta",
+            "Låna aldrig — låt marknaden rensa"
+          ],
+          "ratt": 2,
+          "tips": "Reglerna formulerades efter Overend Gurney 1866 och handlar om trovärdighet."
+        },
+        {
+          "q": "Varför kapitalinjektioner i aktier (TARP) i stället för enbart lån 2008?",
+          "alternativ": [
+            "Aktier gav högre avkastning till staten",
+            "Lån var olagliga",
+            "Fed saknade tryckpress",
+            "För att säkerheten i många banker var så dålig att Bagehots krav på god säkerhet inte kunde uppfyllas med lån"
+          ],
+          "ratt": 3,
+          "tips": "Bagehot-tolkningen: när säkerheten är röta återstår aktier — och utspädning som straff."
+        },
+        {
+          "q": "Vad var Kindlebergers egen hållning till lender of last resort?",
+          "alternativ": [
+            "Ett entusiastiskt ja utan förbehåll",
+            "Ett blankt nej",
+            "Att bara guldstandard kan fungera",
+            "Öppen ambivalens: räddning stoppar paniken men skapar moral hazard som förbereder nästa boom"
+          ],
+          "ratt": 3,
+          "tips": "Han formulerade den som en prisfråga — inte en ja/nej-fråga."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 10,
+      "title": "Kontroversen — Minsky mot jämvikten, apofenien och 400 år av mönster",
+      "intro": "Bokens ramverk utmanar nationalekonomins mainstream: om marknader systematiskt skapar sina egna kriser duger inte jämviktsmodellerna. Det här kapitlet redovisar motståndet på allvar — rational expectations, klientens invändningar, Reinhart-Rogoff-kritiken — och riskerar det viktigaste av allt: att mönsterigenkänning i historien kan vara apofeni. Skillnaden mellan historisk lag och historisk tendens avgör hela kursens värde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mainstream-motståndet är seriöst och bör framföras ordentligt. Effektiva marknadshypotesen (Fama, 1970) menar att priser speglar tillgänglig information; bubblor kan i så fall identifieras först i efterhand, och ordet bubble är — som Fama själv sagt i en känd intervju 2010 — något som driver honom till vansinne, eftersom det antyder ett förutsägbart fel som rationella investerare borde arbitrera bort. Rational expectations-skolan (Muth, Lucas) och Lucas-kritiken (1976) gör ett djupare hack i teorin: om ett mönster är känt och pålitligt kommer aktörer och reglerare att förändra sitt beteende tills mönstret upphör gälla — historien kan inte upprepa sig mekaniskt, för historien lär sig. Och de makromodeller som dominerade före 2008 — DSGE utan fungerande finanssektor — såg ingen anledning att modellera det Minsky menade var kärnan. Mot detta står Kindlebergers metod: fyra hundra år, dussintals kriser, samma sekvens — en frekvens som är svår att förklara som slump."
+        },
+        {
+          "type": "text",
+          "content": "Klientens invändningar är samma argument i mötesrummet: »centralbankerna har lärt sig«, »derivat sprider risken«, »regleringen är bättre«, »stress-tester och kapitalkrav gör systemet säkert«, »globala besparingar gör kapital billigt«. Minsky-hypotesens svar är obehagligt: stabilitet är just problemet. Great Moderation 1985–2007 — decennier av lugn volatilitet och låg inflation — var inte systemets mognad utan dess förberedelse: lugnet tillät mer hävstång (V10), mer finansiell innovation som hittar nya vägar runt regler (V18 åt båda hållen) och en generation utan personlig erfarenhet av fas fem. Varje periods lugn blir nästa cykels gnista; 2008 var det just de mest reglerade institutionerna — bankerna — som bar hävstången. Argumentet kan förvisso föras för långt, men det har den fördelen att det förklarar varför varje generation måste lära om det — och varför »den gången är annorlunda« fortfarande är de fyra dyraste orden."
+        },
+        {
+          "type": "text",
+          "content": "Reinhart och Rogoffs This Time Is Different (2009) gav mönstret sin kvantitativa tyngd: åtta sekler, sextiosex bankkriser, en databas med hundratals episoder — och slutsatsen att kriser återkommer oavsett regim. Därefter, 2013, kom metodikkritiken som kursen måste ta på allvar: doktoranden Thomas Herndon tillsammans med Michael Ash och Robert Pollin kunde inte replikera resultatet om att statsskuld över 90 procent av BNP skulle sammanfalla med negativ tillväxt. De fann ett Excel-fel (fem länders poster exkluderade), en okonventionell viktning som gav vissa år extra tyngd i genomsnittet, och selektiva exklusioner av efterkrigsdata. När felen rättades steg den genomsnittliga tillväxten över 90 procents skuld från minus 0,1 procent till plus 2,2 procent — tröskeln försvann. Reinhart och Rogoff erkände felet och försvarade slutsatsens riktning. Lärdomen är dubbel: kvantitativ historia är också bräcklig — och just därför ska siffror granskas som påståenden, inte som domar."
+        },
+        {
+          "type": "text",
+          "content": "Nu det ärligaste i hela kursen: mönsterigenkänning i historien kan vara apofeni — tendensen att se mönster i brus. Med dussintals kriser och en fri berättarkonst går det att hitta strukturer i nästan vad som helst; Kindlebergers egen metod är narrativ och delvis selektiv, och historien minns kriser bättre än de tysta decennierna då disciplinen segrade. Skillnaden mellan historisk lag och historisk tendens är därför kursens sista examination: en lag förutsäger — samma indata, samma utdata, samma tidsplan; en tendens återkommer — sannolikt, mekaniskt förklarbar via kredit (V10) och incitament, men utan tidtabell och utan garanterad fullständighet. Kindleberger presenterade själv faserna som typiska, inte som en lagbok: faserna överlappar, ordningen varierar, och många uppgångar dör utan panik (1987 var panik utan föregående mani). Svaret på apofeni-anklagelsen är 400 år och många regimer: tulpaner till Island spänner över guldstandard och fiat, reglering och avreglering, teknologier och valutor — och konstanten är inte ett mönster i prisserier utan en mekanism: kreditexpansion som möter kollektiv övertro och sedan reverseras. Det är en testbar tendens — varje ny kris har hittills fått den att passa — och den räcker för riskhantering. Man behöver inte veta när. Man behöver veta att hävstångscyklar återkommer, och att marginal of safety — principen utan siffra — är det enda verkliga skyddet."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Striden om bubblor — lägren\",\"rader\":[[\"Fråga\",\"Jämviktslägret\",\"Minsky–Kindleberger\"],[\"Priser\",\"Speglar tillgänglig information\",\"Kan frikopplas från fundamentals i åratal\"],[\"Fel\",\"Slump och oväntade chocker\",\"Systematiska och endogena — cykeln skapar sig själv\"],[\"Mönster i historien\",\"Apofeni utan mekanism\",\"Kreditmekaniken ger orsakssamband: V10\"],[\"Policy\",\"Låt marknaden rensa ut\",\"Lender of last resort stoppar panik — till priset av moral hazard\"],[\"Bevisning\",\"Väntar på falsifiering\",\"400 år och många regimer — samma tendens, aldrig samma tidtabell\"],[\"Praktisk hållning\",\"Timing är möjlig för den rationelle\",\"Förberedelse framför spådom; marginal of safety utan siffra\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Skillnaden mellan lag och tendens är skillnaden mellan att spå och att förbereda sig. Kindlebergers lag finns inte — hans tendens räcker: den som accepterar att hävstångscyklar återkommer utan tidtabell slipar inte spåkulan utan bygger balansräkningar, checklistor och tålamod. Det är mindre spännande — och det är hela skillnaden mellan underhållning och överlevnad."
+        },
+        {
+          "type": "utmaning",
+          "content": "Apofeni-testet: formulera tre falsifierbara påståenden om nästa bubbla — till exempel vad V10, V19 och emissionsvolymen ska visa tolv månader före en topp, och vad som skulle få dig att inse att mönstret brutits. Skriv också ett datum om två år då du utvärderar. En teori som inte kan ha fel är ingen teori — den är en tro."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Lucas-kritikens (1976) invändning mot historiska mönster?",
+          "alternativ": [
+            "Att historiska data alltid är förfalskade",
+            "Att ekonomi inte är en vetenskap",
+            "Att alla kriser orsakas av krig",
+            "Att kända mönster förändrar aktörers beteende och policy tills mönstret upphör gälla"
+          ],
+          "ratt": 3,
+          "tips": "Mönstret lär — och det som lär sig ändrar sig."
+        },
+        {
+          "q": "Vad fann Herndon, Ash och Pollin (2013) i Reinhart-Rogoffs analys?",
+          "alternativ": [
+            "Att datan var helt korrekt",
+            "Ett Excel-fel, okonventionell viktning och selektiva exklusioner — tröskeln vid 90 procent skuld försvann när felen rättades",
+            "Att åtta sekler var för kort period",
+            "Att bankkriser aldrig inträffar"
+          ],
+          "ratt": 1,
+          "tips": "En doktorands replikationsuppgift blev ekonomihistoriens mest kända kalkylbladsfel."
+        },
+        {
+          "q": "Vad är skillnaden mellan historisk lag och historisk tendens?",
+          "alternativ": [
+            "Ingen — det är samma sak",
+            "En lag förutsäger med determinism; en tendens återkommer sannolikt, med mekanism men utan tidtabell",
+            "En tendens är alltid falsk",
+            "Lagar gäller bara fysiken, inte ekonomin"
+          ],
+          "ratt": 1,
+          "tips": "Kindleberger kallade sina faser typiska — aldrig obligatoriska."
+        }
+      ]
+    }
+  ]
+}

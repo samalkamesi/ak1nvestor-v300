@@ -1,0 +1,1158 @@
+{
+  "slug": "devil-take-the-hindmost",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 160,
+  "title": "Devil Take the Hindmost — Chancellor: KOMPLETT",
+  "summary": "Edward Chancellors Devil Take the Hindmost (1999) är spekulationens bredaste kulturhistoria: från romerska societates och tulpankontrakt i holländska värdshus, via John Laws pappersmyntssystem och South Sea, 1820-talets latinamerikanska lån och påhittade landet Poyais, järnvägsmanin och George Hudson, Jay Gould och Gilded Age, 1929, Japans zaitech-bubbla, 1990-talets hedgefonder och emerging markets — till internetbubblan som boken skrevs mitt i. Kursen läser hela galleriet genom AKM1:s variabler och tvingar fram den eviga debatten: är spekulationen parasit eller nödvändig — och vad gör AK1TS av frågan?",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven återberätta spekulationens historia från Rom till internetbubblan med dess äkta karaktärer och siffror — romerska societates publicanorum, tulpanmanins vindhandel och Semper Augustus till ett värde av tusentals floriner, John Laws Mississippi-aktiers färd från cirka 150 livres till över 10 000, South Seas teckningsrundor och Bubbelakten 1720, Poyais-obligationerna 1822, järnvägsmanins halvbetalda aktier, Jay Goulds guldcorner Black Friday 1869, marginalhandeln och investment trusts 1929, Nikkeis topp 38 915 den 29 december 1989, Soross pundhandel 1992, LTCM-sommaren 1998 och Nasdaqs fallet med 78 procent 2000-2002; identifiera och förklara det återkommande mönstret — ny innovation, kreditsprång, eufori, insider-utträde, panik — i Minsky-Kindlebergers fem akter, och visa hur variationerna (tid, kreditkälla, teknik) aldrig rör mekanismen; redogöra öppet för bäda sidor i spekulationsdebatten — Keynes kasinokritik och Galbraiths slöseri-anklagagelse mot likviditet, prisupptäckt, hedging och riskkapitalets överfinansiering av verkliga nätverk — samt redovisa AK1TS:s position: vi mäter vågorna utan att döma surfarna, vi lär ut att läsa spekulativ dynamik som riskinformation, alltså cykel-position; översätta historien till AKM1:s språk — multipelinflation (V04 P/S, V05 P/B, V06 EV/EBITDA) utan förankring i V01 försäljningstillväxt, V07 bruttomarginal, V08 EBITDA-marginal och V09 ROE; berättelsevariabler (V14 varumärke, V15 nätverkseffekter, V16 produktlanseringar, V17 avtal) som prisargument; kredit och hävstång (V10 skuldsättningsgrad, V11 likviditet); intäktsstabilitetens illusioner (V12 intäktsstabilitet, V03 intäktsdiversifiering); regulatoriska katalysatorer i båda riktningar (V18); emissions- och utspädningsvågor som cykelindikator (V19 kapitalförbrukning och emissionsrisk) samt återköp vid toppar (V20); och tillämpa marginal of safety som princip utan siffra — betala aldrig för att få delta i euforin.",
+  "why": "Varje generation är övertygad om att den här gången är det annorlunda — och varje generation har fel på exakt samma sätt. Chancellors bok är den bredaste sammanställningen av det påståendets kostnadshistoria, skriven med osedvanlig litterär kraft och, unikt nog, färdig mitt i en pågående bubbla (1999): en historiker som stod vid avgrunden och räknade sekunderna. Kursen behövs eftersom svensk publik levt igenom två av epokens kapitel i egen kött och blod — fastighets- och bankkrisen 1990-94 och IT-kraschen 2000-02 — och därför har allt att vinna på att se mekanismen hela vägen från Rom till Nasdaq. Boken ger också AKM1-ramverket dess kulturella djup: multipel-drift, kreditcykler, emissionsvågor och berättelsevariabler är inte uppfunna av modern aktieanalys utan uråldriga beteenden som bara bytt kostym. Slutligen tvingar kursens kontroverskapitel fram en mogen hållning: att förstå spekulationen som information — var i cykeln vi befinner oss — i stället för att moralisera över den man inte kan avskaffa.",
+  "chapters_list": [
+    "1. Prologen — fan tar den siste: 3 000 år av spekulation",
+    "2. Rom och medeltiden — societates, Fibonacci och spekulationens råmaterial",
+    "3. Tulpanmanin — Holland 1637 och vindhandeln",
+    "4. 'Change Alley 1690-tal — stockjobbingens födelse",
+    "5. System-skaparna 1720 — John Laws Mississippi och South Sea",
+    "6. 1820-talet — det första emerging market-ruset och landet som inte fanns",
+    "7. Järnvägsmanin — George Hudson och 1840-talets folkrörelse",
+    "8. Gilded Age — Jay Gould och skurkarna på Wall Street",
+    "9. 1880-talet — Grant, guldbolag och den solvente men illikvida banken",
+    "10. 1929 — New Era, marginalhandel och den stora kraschen",
+    "11. Japan — zaitech och keiretsuernas tjugotal",
+    "12. Hedgefonder och emerging markets — 1990-talets globala spelbord",
+    "13. Internet-bubblan — boken skriven vid avgrunden",
+    "14. Kontroversen — parasit eller nödvändig? AK1TS:s position",
+    "15. Mönstret och examen — innovation, kredit, eufori, krasch"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Prologen — fan tar den siste: 3 000 år av spekulation",
+      "intro": "Edward Chancellors Devil Take the Hindmost (1999) är den bredaste kulturhistorien om finansspekulationen som finns: från Rom till internet, skriven medan nästa bubbel svällde. Titeln är ett gammalt engelskt ordspråk från lekar och hinderlopp — fan tar den som är sist — och sammanfattar spekulationens etik: var och en för sig själv, mot alla, varje generation på nytt. Detta kapitel ger kursens karta och läsglasögon.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Boken och dess författare först. Edward Chancellor är brittisk finanshistoriker och journalist, och Devil Take the Hindmost utkom 1999 — skriven medan internetbubblan redan pågick, vilket ger den en sällsam ställning: en historia om bubblor färdigställd vid avgrunden till nästa. Chancellor berättar inte ekonomernas historia utan kulturens: han är lika hemma i romerska brev, holländska pamfletter och japanska finanskrimser som i kursdiagram. Hans material spänner från romerska societates publicanorum, över tulpanmanin och 1720-talets system-skapare, till George Hudsons järnvägar, Jay Goulds guldcorner, 1929, zaitech-Japan, 1990-talets hedgefonder och internetmanin. Ingen annan enkel volym täcker så mycket bevis för samma mekanism."
+        },
+        {
+          "type": "text",
+          "content": "Vad är då spekulation? Chancellor börjar i etymologin: ordet kommer av latinets speculari — att speja, iaktta, utforska (samma rot som spegeln och spionen). Spekulanten är den som agerar på det iakttagna framtida i stället för för det närvarande nuet: köper inte för kassaflödets skull utan för att sälja vidare till någon som iakttagit mer. Chancellor pekar på spekulationens tre förutsättningar — en organiserad marknad, pengar och kredit, samt en osäker framtid — och noterar att världens äldsta bevarade börsbok, Joseph de la Vegas Confusión de Confusiones från 1688 om Amsterdambörsen, redan beskriver hela det känslomässiga registret: hopp, girighet, rädsla och ångerns tidevarv. Börsen är mänsklig natur med notering."
+        },
+        {
+          "type": "text",
+          "content": "Bokens tes är kursens ryggrad: mönstret ny innovation, kreditsprång, eufori och krasch upprepas genom varje sekel, och nyheterna förändras aldrig känslorna — bara kulisserna. Chancellor avslutar med att spekulationens historia aldrig slutar; den börjar om. Kursen läser honom genom AKM1:s glasögon: multipel-drift som frigörs från fundamenten (V04 P/S, V05 P/B, V06 EV/EBITDA mot V01 försäljningstillväxt, V07 bruttomarginal, V08 EBITDA-marginal och V09 ROE), kredit (V10 skuldsättningsgrad) och likviditet (V11) som bränsle och tändning, berättelsevariabler (V14 varumärke, V15 nätverkseffekter, V16 produktlanseringar, V17 avtal och partnerskap) som euforins språk, regulatoriska katalysatorer i båda riktningar (V18), emissionsvågor och kapitalförbrukning (V19) samt återköp vid toppar (V20) — och över allt: marginal of safety, principen utan siffra."
+        },
+        {
+          "type": "text",
+          "content": "Ett varningens ord om hur kursen ska läsas: Chancellor fördömer inte — han iakttar. Bubblornas galleri är fullt av begåvning, integritet och till och med verkliga landvinningar; järnvägarna byggdes, internet byggdes. Det som återkommer är inte dumheten utan strukturen: kredit möter berättelse, och priserna lossnar från det som kan mätas. Svensk publik känner igen mekanismen i egen historia — fastighets- och bankkrisen 1990-94, IT-kraschen 2000-02 — och det är just därför boken behövs i en svensk finansutbildning: den visar att våra bubblor inte var svenska undantag utan kapitel i världslitteraturen. Kapitel 2-13 går genom epokerna, kapitel 14 tvingar fram kontroversen parasit eller nödvändig, kapitel 15 för samman mönstret till examen."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens galleri — elva kapitel i världshistorien\",\"rader\":[[\"Epok\",\"Plats\",\"Signaturinnovation\",\"Kraschmoder\"],[\"Antiken\",\"Rom\",\"Societates och skattefarm\",\"Andelspriser på krigsrykten\"],[\"1636-37\",\"Holland\",\"Tulpanframtidskontrakt\",\"Haarlem 3 februari 1637\"],[\"1690-tal\",\"London\",\"Bank of England, lotterier, optioner\",\"Slump 1695-96, brookerlagen 1697\"],[\"1719-20\",\"Paris och London\",\"Pappersmynt och konvertibla statsobligationer\",\"Hösten 1720\"],[\"1822-25\",\"London\",\"Latinskaamerikanska lån och gruvaktier\",\"December 1825\"],[\"1844-46\",\"London\",\"Järnvägsaktier och halvbetalda aktier\",\"1846-47\"],[\"1866-73\",\"New York\",\"Corner-konster och obligationsräls\",\"Black Friday 1869, Jay Cooke 1873\"],[\"1927-29\",\"New York\",\"Marginalhandel och investment trusts\",\"Oktober 1929\"],[\"1986-89\",\"Tokyo\",\"Zaitech och land som säkerhet\",\"1990 och två förlorade decennier\"],[\"1993-99\",\"Globalt\",\"Carry trade, hedgefonder, internet IPO\",\"Asien 1997, Ryssland-LTCM 1998, Nasdaq 2000\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Spekulationens historia är historien om en och samma känsla i ny förpackning. Innovationen förändrar världen; euforins kemi förändras aldrig — och därför går den att känna igen i förväg."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner din starkaste nuvarande finansiella övertygelse av typen den här gången är det annorlunda. Formulera den som en mening, lägg den i kuvert och spara den till kursens sista kapitel. Uppgiften är inte att döma dig — bara att dokumentera hur cykelpositionens röst låter inifrån."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad står bokens titel för?",
+          "alternativ": [
+            "En varning från medeltida kyrka mot räntetagande",
+            "John Laws smeknamn bland Parisspekulanter",
+            "Ett gammalt engelskt ordspråk från lekar och hinderlopp — fan tar den som är sist: var och en spekulerar för egen räkning mot alla andra",
+            "Holländsk lagtext från tulpanmanin om vem som bär förlusten"
+          ],
+          "ratt": 2,
+          "tips": "Ordspråket kommer från spel och kapplöpningar — inte från finansens litteratur."
+        },
+        {
+          "q": "Vad betyder spekulationens etymologiska ursprung, latinets speculari?",
+          "alternativ": [
+            "Att tänka långsamt och noggrant",
+            "Att speja och iaktta — spekulanten agerar på det iakttagna framtida, inte på det närvarande",
+            "Att spegla sig i framgång",
+            "Att satsa allt på ett kort"
+          ],
+          "ratt": 1,
+          "tips": "Samma rot som ordet spegeln — och spionen."
+        },
+        {
+          "q": "Vilken är bokens och kursens huvudtes?",
+          "alternativ": [
+            "Att alla bubblor orsakas av centralbanker och att guldmyntfoten förhindrar dem",
+            "Att tekniken med tiden avskaffat bubbelrisken",
+            "Att spekulation uppstod med internet och är ett modernt fenomen",
+            "Att mönstret ny innovation, kreditsprång, eufori och krasch upprepas genom varje sekel — nyheterna byts, känslorna gör det inte"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad som är konstant genom galleriet och vad som byts ut."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Rom och medeltiden — societates, Fibonacci och spekulationens råmaterial",
+      "intro": "Chancellor letar upp spekulationens äldsta spår i antikens Rom: andelarna i skattefarmarföretagen societates publicanorum som handlades på krigsrykten. Därefter följer femtonhundra års uppehåll — förbuden mot ränta och vinst — innan Fibonacci och den kommersiella revolutionen återuppfinner råvarorna: siffror, kredit och organiserad handel. Kapitlet visar att spekulationens historia är en institutionernas historia.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Chancellors första kapitel tar läsaren till den romerska republiken. Staten hyrde ut skatteuppbörd, krigskontrakt och provinsförvaltning till sällskap av publicani — riddarklassens finansfolk — organiserade som societates med delbara andelar. Dessa andelar omsattes, och Chancellor beskriver hur priserna rörde sig på nyheter om krig och skattekontrakt: ryktet om Kartagos fall kunde flytta en kurs i Forum liksom en rapport om eftergiftsvillkor. Här finns alla ingredienser — företag med delat ägarskap, priser som rör sig på framtidsförväntningar, kapitalister med aptit — och Chancellor drar slutsatsen att romerna var sin tids mest avancerade spekulanter. Under kejsartiden drogs kontrakten in statsligt och andelshandeln förtvinade: spekulationen dog inte av brist på aptit utan av brist på institutioner."
+        },
+        {
+          "type": "text",
+          "content": "Varför dröjde det sedan nästan femtonhundra år innan aktiemarknaden återuppstod? Chancellors svar: kristendomens och canon rättens krig mot räntan och vinsten utan arbete. Fördömandet av lucrum cessans och turpe lucrum — vinst som skam — gjorde krediten dyr, informell och personlig istället för marknadslik och överlåtbar. Detta är kursens första V18-relaterade historielektion: förbud förskjuter beteendet, de avskaffar det inte; räntan återkom som avgifter, växlingsrisk och vinstandelar. Regleringens historia är lika gammal som spekulationens — och den har alltid samma dubbla verkan: den kan bygga förtroende på lång sikt men skapar svarta marknader på kort."
+        },
+        {
+          "type": "text",
+          "content": "Medeltidens genombrott kom från en matematiker. År 1202 publicerade Leonardo av Pisa — Fibonacci — Liber Abaci, som förde de hindu-arabiska siffrorna, positionssystemet och bråkräkningen till Europa. Utan detta verk inga dubbla bokföringar (den sammanfattades av Pacioli 1494), inga växlar, inga diskonterade kassaflöden. Champagnemässorna och hansastäderna byggde kreditinstrument som kunde resa över hav; de italienska stadsstaterna lånade genom statsobligationer — venetianska monti — som handlades med svängande kurser. Inom loppet av några sekler hade Europa fått det Rom saknade: abstrakt penningräkning och överlåtbar skuld. Råvarorna till den första riktiga aktiemarknaden var färdiga."
+        },
+        {
+          "type": "text",
+          "content": "Kulissen flyttas till Amsterdam. Nederländska Ostindiska kompaniet (VOC) grundades 1602 och blev världens första permanenta aktieföretag med kontinuerlig handel — aktier som bars i århundraden, priser som publicerades, en börs med organiserade maklare och derivat. Chancellor pekar på ironin: världens mest beundrade, högt diversifierade och långsiktiga företag gav upphov till världens första aktiespekulation, options- och terminshandel — från vilket följande kapitels lökar växer fram. Institutionerna skapar inte girigheten; de ger den hastighet och räckvidd. I AKM1:s språk: samma fundamenta (V01, V03, V12) kan bära vilka priser som helst om kredit och berättelse (V10, V15) flyter fritt — oavsett sekel."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från Rom till Amsterdam — institutionernas tidslinje\",\"rader\":[[\"År (ungefär)\",\"Händelse\",\"Betydelse för spekulationen\"],[\"Republikens Rom\",\"Societates publicanorum\",\"Andelar i skattefarmarföretag handlas på krigsrykten\"],[\"120-300-tal\",\"Kanonisk rätt och ränteförbud\",\"Kredit blir personlig och dold — institutioner saknas\"],[\"1202\",\"Fibonacci: Liber Abaci\",\"Siffror, bråk och procenträkning möjliggör kreditsystem\"],[\"1200-1300-tal\",\"Champagnemässor och växlar\",\"Överlåtbar skuld på tvärs av gränser\"],[\"1494\",\"Pacioli: dubbel bokföring\",\"Företaget blir granskningsbart — och belåningsbart\"],[\"1602\",\"VOC och Amsterdambörsen\",\"Första permanenta aktiemarknaden med optioner och terminer\"],[\"1688\",\"De la Vega: Confusión de Confusiones\",\"Världens äldsta börsbok — psykologin fullt utvecklad\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Spekulationen uppstår inte där girigheten är störst utan där institutionerna är redo: delbara andelar, mätbara priser och överlåtbar kredit. Aptiten är konstant — marknadsdesignen bestämmer hastigheten."
+        },
+        {
+          "type": "utmaning",
+          "content": "Fundera på dagens snabbaste kreditreglage: snabbkrediter,köp nu betala senare, belåning i appen på trettio sekunder. Skriv ner hur en medeltida ränteförbuds logik skulle försöka stoppa det — och vart beteendet skulle flytta sig i stället. Du har just gjort V18-analys på 3 000 års avstånd."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var societates publicanorum?",
+          "alternativ": [
+            "Romerska skattefarmarföretag med delbara andelar som handlades på krigs- och kontraktsnyheter",
+            "Tempelsällskap som förvaltade offergåvor",
+            "Kejsarens privata myntverkstäder",
+            "Gladiatortrupper med delade vinster"
+          ],
+          "ratt": 0,
+          "tips": "Företag med delat ägarskap och priser som rörde sig — i Forum."
+        },
+        {
+          "q": "Varför uppstod ingen varaktig aktiemarknad i Europa under medeltiden?",
+          "alternativ": [
+            "För att befolkningen var för liten",
+            "För aktier inte kunde tillverkas utan tryckpress",
+            "För att handeln var för snabb",
+            "För att kyrkans förbud mot ränta och skamlig vinst höll krediten personlig och institutionerna borta"
+          ],
+          "ratt": 3,
+          "tips": "Orsaken var regelverket och institutionsbygget — inte brist på aptit."
+        },
+        {
+          "q": "Vad var Fibonaccis Liber Abacis praktiska betydelse?",
+          "alternativ": [
+            "Den bevisade att börsen är slumpmässig",
+            "Den gav Europa hindu-arabiska siffror och modern räkning — grunden för bokföring, växlar och diskonterat kassaflöde",
+            "Den innehöll den första aktiefonden",
+            "Den räknade ut gyllene snittet på börsdiagram"
+          ],
+          "ratt": 1,
+          "tips": "Tänk infrastruktur för att räkna — inte för att spå."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Tulpanmanin — Holland 1637 och vindhandeln",
+      "intro": "Holland 1636-37: handeln med lökar som låg kvar i jorden blev nattlig terminshandel i värdshus — vindhandeln — med små marginaler som gjorde kontrakten till inbyggda optioner. Chancellor läser tulpanmanin som mer än kuriosa: här finns hävstången, berättelsen om sällsynthet, och mytbildningen efteråt. Kapitlet visar hur en lök kan bli en tillgång utan kassaflöde men med hela euforins mekanik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden är världens rikaste samhälle. Holländarna hade VOC, världshandel, sparande och — från 1593, när Carolus Clusius planterade de första lökarna i Leiden — en ny statusblomma från Osmanska riket. Chancellor betonar sällsynthetens ekonomi: de mest eftertraktade tulpanerna, som Semper Augustus med sina flammor, fick sina mönster av ett mosaikvirus som gjorde varje lök unik och — groteskt nog — sjuk. Skönheten var själva smittan. Priser på tusentals floriner för en enda lök rapporterades: Semper Augustus omtalades kring 5 000 floriner och uppåt, medan en hantverkare tjänade någonstans kring 300 om året. En lök, ett kanalhus i Amsterdam — samma budgivning."
+        },
+        {
+          "type": "text",
+          "content": "Sedan kom finansieringen, och med den euforin. Eftersom lökar grävs upp och levereras enbart på sommaren utvecklades handel med kontrakt på framtida leverans — tecknade och snurrade på värdshusens colleges, ofta på kvällar, av folk från alla samhällsklasser. Chancellor kallar det vindhandeln: man handlar med blåsten, ägandet är luft. Avgörande var betalningsstrukturen: köparen erlade en liten deposition, ofta någon enstaka procent, och kunde vid leveransdag vägra ta emot löken och endast mista insatsen. Det gör kontraktet till en köpoption och säljaren till en optionsutgivare — Holland uppfann, i baren, en optionsmarknad med hävstång (V10) på tjugo- till trettiofalden. När insatsen är tre procent förlorar man allt på en rörelse på tre procent."
+        },
+        {
+          "type": "text",
+          "content": "Topp och fall är snabbt berättat. Euforin nådde sin spets vintern 1636-37; vid en auktion i Haarlem den 3 februari 1637 misslyckades budgivningen — och hela marknaden frös till is på en eftermiddag. Chancellor nyanserar sedan den populära myten: Holland ruinerades inte. Domstolarna vägrade genomdriva full utförelse av vad de ansåg spelmål, kontrakten skrevs ned till något optionellt, krediten hade varit lokal — den nationella ekonomin och VOC skadades knappet. Men moralpaniken blev enorm, och pamfletternas ilskna satir — tjänare och värdshusvärdar som spelat herrar — avslöjar vad samtiden faktiskt fruktade: inte konkursen utan den sociala ordningens tillfälliga upphävande. Euforins äkta ansikte är alltid hierarkiskt oprövad."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läran från lökarna är fyrdelad. Ett: tillgångar utan kassaflöde prissätts enbart av nästa köpare — värdering blir ren berättelse (V14 varumärkeslogik och V15 nätverksberättelser i dess renaste form: jag köper därför att du kommer att vilja köpa). Två: hävstången sitter i marginalen, inte i lånet — depositioner gör samma jobb som belåning (V10). Tre: när domstolar och myndigheter efteråt ändrar spelreglerna visar det att rättsläget är en dold variabel i varje derivatkonstruktion (V18). Fyra: att kraschen blev begränsad berodde på att krediten var kort och lokal — skadans storlek bestäms alltid av hävstångens längd och räckvidd (V10, V11). Löken är oskyldig; konstruktionen är allt."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tulpanmanin i siffror och mekanismer\",\"rader\":[[\"Fakta\",\"Värde\",\"Mekanisk läsning\"],[\"Semper Augustus, omtalat pris\",\"cirka 5 000 floriner och uppåt\",\"Tio-tjugo års hantverkarlöner för en lök\"],[\"Hantverkarlön per år\",\"cirka 300 floriner\",\"Prisreferens för samtiden\"],[\"Deposition vid kontraktsköp\",\"någon enstaka procent\",\"Köpoption i praktiken — hävstång V10 på 20-30x\"],[\"Topp\",\"Haarlem 3 februari 1637\",\"Misslyckad auktion fryser marknaden\"],[\"Efterspel\",\"Domstolar vägrar full utförelse\",\"Kontrakt nedskrivna till optioner — V18 ändrar spelet i efterhand\"],[\"Nationell skada\",\"Begränsad enligt Chancellor\",\"Krediten var lokal och kort — räckvidden avgör skadan\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En tillgång utan kassaflöde har ingen fundamental värdering — endast en köpkö. Därför faller den inte till rättvis nivå när euforin dör; den faller tills berättelsen gör det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera tre samtida tillgångar vars pris nästan uteslutande vilar på nästa köpare — utan kassaflöde, utdelning eller återköpslogik. Skriv för varje: vad är depositionen eller hävstången (V10), vad är berättelsen (V14/V15), och vad händer om domstolar eller regler ändras (V18)? Spara listan till kontroverskapitlet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallades tulpanhandeln vindhandel?",
+          "alternativ": [
+            "För att lökarna exporterades med segelfartyg",
+            "För att man handlade med kontrakt på lökar som låg kvar i jorden — ägandet var luft, bara vind",
+            "För att den skedde utomhus i stormväder",
+            "För att handeln förbjöds inomhus"
+          ],
+          "ratt": 1,
+          "tips": "Ordet spelar på att affärerna gällde något som inte fanns att röra vid."
+        },
+        {
+          "q": "Vad blev den praktiska effekten av att köpare erlade bara en liten deposition?",
+          "alternativ": [
+            "Kontrakten blev riskfria för båda parter",
+            "Depositionen fungerade som optionspremie — små marginaler gav inbyggd hävstång på tiotalsfalt",
+            "Alla lökar blev enhetligt prissatta",
+            "Värdshusen tog på sig förlusterna"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad insatsen gör med utfallet vid prisfall — och vad den strukturen kallas i modern terminologi."
+        },
+        {
+          "q": "Hur nyanserar Chancellor den vanliga tulpanmanin-berättelsen?",
+          "alternativ": [
+            "Han hävdar att manin aldrig ägde rum",
+            "Han menar att den var en brittisk propagandahistoria",
+            "Han visar att lökarna faktiskt var värda priserna",
+            "Holland ruinerades inte — domstolar vägrade full utförelse, krediten var lokal, och skadan begränsades; moralpaniken var större än den ekonomiska kollapsen"
+          ],
+          "ratt": 3,
+          "tips": "Separera den ekonomiska skadan från samtidens ilskna pamfletter."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "'Change Alley 1690-tal — stockjobbingens födelse",
+      "intro": "Efter Karl II:s restauration växte andelsaffärerna i Londons kaffehus fram; på 1690-talet förvandlade krigsfinansieringen — lotterier, tontiner, Bank of England — staden till världens första moderna aktiemarknad. Chancellor skildrar stockjobbers i Exchange Alley, deras terminer och optioner, första kursmanipulationerna — och den första regleringen efter första kraschen. Här föds både yrket och dess dåliga rykte.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grunden lades under Karl II. Restaurationen 1660 återöppnade England för bolag och spekulation: kungliga bolagsprivilegier, Royal African Company, Hudson's Bay Company 1670 — andelar som bytte ägare i allt högre takt och i en ny typ av inomhusinstitution: kaffehuset. Sedan kom 1688 års revolution och kriget med Frankrike, som tvingade fram en finansiell revolution. Staten behövde låna i en skala som inte fanns: 1690-talets svar blev lotterier, tontinen 1693, Bank of England 1694 och ett nytt Ostindiskt kompani — med aktier och obligationer som handlades öppet. I gränden bakom börsen, Exchange Alley, och i kaffehusen Jonathan's och Garraway's föddes därmed världens första moderna aktiemarknad med en ny yrkesgrupp: stockjobbers, aktiemedlarna."
+        },
+        {
+          "type": "text",
+          "content": "Chancellor beskriver jobberns verktygslåda med precision: time bargains — affärer till fast pris med leverans och betalning längre fram, alltså terminer; refusals — rätten att vägra en post till fast premie, alltså optioner; blanka överlåtelser, grunda rykten och snabbvunna förtroenden. Priserna på Bank of England- och Ostindien-aktierna svängde kraftigt på krigsnyheter, och jobbers kunde tjäna på både upp- och nedgångar — något som samtidens kommentarer betraktade som djupt onaturligt. Kritiken var hård och aristokratisk: Davenant klagade över män utan egen kapital som levde på att flytta andras, och Defoe skulle snart publicera sin bitrande analys av Exchange Alley. Thomas Guy, däremot, visade yrket från sin bästa sida — han byggde en av tidens största förmögenheter på att köpa och sälja Ostindiska aktier vid rätt tillfällen och testamenterade den till ett sjukhus som än idag bär hans namn."
+        },
+        {
+          "type": "text",
+          "content": "Sedan kom den första moderna boomen och busten. En våg av bolagsgrundanden och emissionsglädje på 1690-talets mitt följdes av en härdsmälta: aktier föll kraftigt 1695-96, allmänheten brändes, och parlamentet lät utreda. Resultatet blev 1697 års lag för att begränsa antalet och praktiken hos brokers och stock-jobbers — licensplikt, antalsbegränsningar och ett tillsynsämbete. Kursen noterar mönstret som ska följa läsaren genom alla kommande kapitel: krasch, skandal, utredning, reglering — och handeln som fortsätter, bara dyrare och mer dold. Ingen av epokens lagar avskaffade spekulanten; de flesta skapade helt enkelt nya armlängds avstånd mellan köpare och skuld."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen av 'Change Alley är dubbel. Å ena sidan skapade jobbers något värdefullt: löpande priser och en marknad där långsiktiga ägare kunde stiga av — likviditet (V11) är en tjänst, och Chancellor låter samtidens försvarare komma till tals. Å andra sidan visade redan 1690-talet hur informationens överläge (rykten före nyhet, positioner före prospekt) flyttar pengar från publiken till insikterna — och hur terminer och optioner koncentrerar risk till dem som minst förstår den (V10). V18-läran: den första regleringen efter den första kraschen fastställde en sekvens som upprepats i alla efterföljande sekel — och som kursens kapitel 10 och 15 ska visa i full skala. Från Exchange Alley är vägen kort till 1720-talets system-skapare."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den finansiella revolutionen 1690-1697\",\"rader\":[[\"År\",\"Händelse\",\"Roll för aktiemarknaden\"],[\"1660-1670-tal\",\"Restaurtionen och bolagsprivilegier\",\"Andelsmarknad växer fram i kaffehusen\"],[\"1693\",\"Tontinen\",\"Statsskuld som marknadsförd lotteri- och livränteprodukt\"],[\"1694\",\"Bank of England grundas\",\"Större och mest omsatta aktien — marknadens ryggrad\"],[\"1690-talets mitt\",\"Emissions- och bolagsvåg\",\"Första moderna boom för allmänhet\"],[\"1695-96\",\"Kursfall och brända sparare\",\"Första moderna busten — förtroendekris\"],[\"1697\",\"Lag om brokers och stock-jobbers\",\"Licens och antalsbegränsning — den första krasch-regleringen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Redan i sin vagga visade aktiemarknaden sina två ansikten: jobbers skapade priserna och likviditeten — och använde samma verktyg till att skilja publiken från dess pengar. Parasit och tjänst kom till världen som tvillingar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en dag och följ ryktesdriven handel i ett litet svenskt bolag — forum, kursrörelser, pressmeddelanden. Notera tre tillfällen där priset rörde sig före informationen. Du har precis gjort den granskning Davenant krävde 1696 — med bättre verktyg."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den främsta drivkraften bakom 1690-talets London-marknad?",
+          "alternativ": [
+            "Uppfinningen av tryckpressen",
+            "Handeln med kinesiskt te",
+            "Ren spekulation utan koppling till staten",
+            "Krigsfinansieringens nya instrument — lotterier, tontiner, Bank of England och bolagsaktier — som skapade en djup och omsatt marknad"
+          ],
+          "ratt": 3,
+          "tips": "Följ statens behov av lån — inte folkets nöjen."
+        },
+        {
+          "q": "Vad är en time bargain i 1690-talets terminologi?",
+          "alternativ": [
+            "En option på räntan",
+            "Ett köp av en växel i Amsterdam",
+            "En affär till idag fast pris med leverans och betalning senare — alltså ett terminskontrakt",
+            "Ett förbud mot handel efter stängning"
+          ],
+          "ratt": 2,
+          "tips": "Ordet time är nyckeln — vad händer med prisrisken om betalningen skjuts upp?"
+        },
+        {
+          "q": "Vad blev effekten av 1697 års lag om brokers och stock-jobbers?",
+          "alternativ": [
+            "Aktiehandeln upphörde i England",
+            "Den första krasch-regleringen: licens och begränsningar — men handeln fortsatte, dyrare och mer dold",
+            "Alla optioner förbjöds permanent",
+            "Bank of England fick monopol på all handel"
+          ],
+          "ratt": 1,
+          "tips": "Jämför med varje senare sekel: vad häller reglering faktiskt emot?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "System-skaparna 1720 — John Laws Mississippi och South Sea",
+      "intro": "1720 är spekulationens ur-år: John Law byggde i Paris ett system av pappersmynt, monopolbolag och konvertibel statskuld som drev Mississippi-aktien från cirka 150 till över 10 000 livres — och i London utbytte South Sea Company statsskuld mot aktier i en böja mot över 1 000 pund innan allt kollapsade. Chancellor skildrar de första system-skaparna och den bubbelåret som gav kursen dess titelvärld. Här finns alla moderna mekanismer i ursprungsform.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "John Law är finanshistoriens första system-arkitekt. Skotten hade dödat en man i duell, rymt till kontinenten och levt som spelare och ekonomisk pamflettförfattare innan han 1716 fick tillstånd att grunda Banque Générale i Paris — och 1717 köpa Mississippi-området och grunda Compagnie d'Occident, som genom fusioner växte till ett jättelikt monopolbolag med handel, skatter och myntning. Laws tes, framarbetad i Money and Trade, var att pengar inte är silver utan förtroende och att en stat kan skapa välstånd genom kredit. Statskulden byttes mot aktier i kompaniet, banknotter trycktes för att hålla kurserna uppe, och på Rue Quincampoix samlades halva Europa: aktien steg från någonstans kring 150-200 livres till över 10 000 på knappt två år. Chancellor låter samtiden tala — berättelser om tjänare som blev miljonärer på en förmiddag, och om den förtvivlade flykten när banken stängdes. I februari 1720 suspenderades sedlarnas inlösning mot mynt; till hösten var systemet dött, och Law flydde landet för att dö fattig i Venedig 1729."
+        },
+        {
+          "type": "text",
+          "content": "I London spelade South Sea Company samma melodi i engelsk tonart. Bolaget, grundat 1711 med handelsprivilegier (inklusive slavhandeln mot spanska Amerika), fick 1720 uppdraget att förvandla cirka 31 miljoner pund av statskulden till aktier — en skuld-bytets-mot-aktier-maskin med fyra teckningsrundor där publiken fick betala i tidsatser. Aktien steg från 128 pund i januari till omkring tusen pund i sommartoppen; kung Georg I och innersta cirklar mutades med optioner, och varje runda såldes slut. Kring sig blomstrade Bubble companies — bland dem det beryktade bolaget som annonserade ett företag av stor fördel men som ingen fick veta vad det var, och som samlade in pengar och försvann. Bubbelakten i juni 1720, avsedd att skydda South Sea mot konkurrerande bluffbolag, knäckte i stället hela tilliten: när luften gick ur gick den ur allt. I slutet av september låg aktien under 200 pund. Direktörernas gods konfiskerades, och Isaac Newton — som stigit av med vinst om våren — klättrade omkull igen och förlorade en förmögenhet uppskattad till 20 000 pund, varpå han enligt traditionen klagade över att han kunde beräkna himlakroppars rörelser men inte människors galenskap."
+        },
+        {
+          "type": "text",
+          "content": "Chancellor jämför systemen, och skillnaderna är lärrika. Frankrike kombinerade bolag och centralbank: pappersmyntet blev inflationen och kraschen dödade förtroendet för generationer — Frankrike drog sig från papperspengar i årtionden och den finansiella utvecklingen fördröjdes. England höll bank och bolag isär: kraschen blev en förmögenhetsomfördelning snarare än ett monetärt sammanbrott, och efter Walpoles städning återhämtade sig marknaden relativt snabbt. Gemensamt är mekanismen: en statskuld som bränsle, en berättelse om monopol och evig tillväxt, teckningsrundor på kredit som låter publiken betala med hävstång (V10), insider som stiger av i förtid — och en reglering (V18) som kommer mitt i euforin och blir den perfida utlösaren. 1720 är inte en udda företeelse: det är mallen."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen av år 1720: system-löftet är alltid att skuld ska förvandlas till tillgång utan att någon betalar — konstruktionen lever på ständiga nya emissioner och dör den dag de nya pengarna slutar anlända (V19 kapitalförbrukning och emissionsrisk i sin urform). Multipeln lossnar från allt mätbart: det finns inget försäljningsunderlag, ingen marginal, ingen avkastning som rättfärdigar tusen pund — V04-till-V06-logiken upphör fungera när berättelsen (V14 varumärke, V15 nätverk avant la lettre: monopol som nätverk) blir enda fundamentet. Chancellor påminner också om aktörskonsekvensen: de som förstod systemen — Law själv in i det sista, South Sea-direktörerna med sina optioner — sålde eller skyddade sig medan publiken tecknade. Insiders exit är euforins sista bekräftelse."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1720 i siffror — systemen sida vid sida\",\"rader\":[[\"Fakta\",\"Mississippi (Paris)\",\"South Sea (London)\"],[\"Grundidén\",\"Pappersmynt och monopolbolag\",\"Konvertering av cirka 31 miljoner pund statskuld\"],[\"Kursfärd\",\"cirka 150-200 till över 10 000 livres\",\"128 pund i januari till omkring 1 000 i sommartopp\"],[\"Publikens betalning\",\"Banknotter och krediter\",\"Fyra teckningsrundor på tidsatser — hävstång V10\"],[\"Vändpunkt\",\"Suspenderad sedelinlöning feb 1720\",\"Bubbelakten juni 1720 knäcker tilliten\"],[\"Botten\",\"I princip noll; Law flyr dec 1720\",\"Under 200 pund i slutet av september\"],[\"Långsiktigt efterspel\",\"Frankrike vänder sig från papperspengar i generationer\",\"Förmögenhetsomfördelning; marknaden återhämtar sig\"],[\"Berömd förlorare\",\"Halva Parisspekulanter\",\"Isaac Newton, cirka 20 000 pund\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett systems löfte är alltid detsamma: att skuld ska förvandlas till tillgång utan att någon betalar. Det lever av nästa emission — och dör exakt när nästa emission inte kommer (V19)."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en modern konstruktion där skuld eller framtida intäkter byts mot aktier — konvertibla villkorade emissioner, förskottsfinansierad tillväxt, rullande expansionskapital. Fråga: vem bär risken när berättelsen dör, och vad händer med befintliga ägares andel? Det är din 1720-skanning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnan i John Laws monetära tes?",
+          "alternativ": [
+            "Att silver är enda sanna pengar",
+            "Att pengar är förtroende och kredit — en stat kan skapa välstånd genom pappersmynt och ett monopolbolag",
+            "Att alla banker borde vara statliga spannmålslager",
+            "Att aktier aldrig får belånas"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad han tryckte — och vad det ersatte."
+        },
+        {
+          "q": "Hur blev Bubbelakten i juni 1720 en utlösare av kraschen?",
+          "alternativ": [
+            "Den förbjöd all aktiehandel i England",
+            "Den nationaliserade South Sea Company",
+            "Den sänkte statskulden kraftigt",
+            "Den var avsedd mot konkurrerande bluffbolag — men knackade tilliten till hela marknaden och accelererade kollapsen"
+          ],
+          "ratt": 3,
+          "tips": "Reglering mitt i euforin kan få en effekt ingen avsåg — på vad?"
+        },
+        {
+          "q": "Vad hände Isaac Newton under bubbelt 1720?",
+          "alternativ": [
+            "Han var styrelseordörande i South Sea",
+            "Han vägrade Investing och skrev en avhandling om bubblor",
+            "Han steg av med vinst men återkom, och förlorade omkring 20 000 pund — intelligens skyddar inte mot eufori",
+            "Han uppfann en kursprognosmodell"
+          ],
+          "ratt": 2,
+          "tips": "Han hade rätt en gång — och gjorde sedan det som känns mest mänskligt."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "1820-talet — det första emerging market-ruset och landet som inte fanns",
+      "intro": "Efter 1815 exporterade London sitt kapital till världen: lån till de nyfrigjorda latinamerikanska republikerna och aktier i gruvor som inte öppnats på trehundra år. Mitt i rörelsen sålde Gregor MacGregor obligationer i Poyais — ett land som inte fanns. Chancellor kallar det första emerging market-ruset; det slutade i december 1825 med sextio fallna banker och en centralbank nära på guld. Kursens första V19-kapitel i full skala.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "London efter Napoleon var världens kapitalbalja, och 1820-talet gav pengarna ett nytt spelbräde: de spanska kolonierna i Latinamerika frigjorde sig, och de nya republikerna — Colombia, Mexiko, Peru, Chile, Guatemala, Buenos Aires — lånade i pund med gruvor och tullar som säkerhet. Chancellor beskriver utförligt hur emissionerna mottogs med entusiasm: mer än tjugo miljoner pund flödade söderut på några år, en enorm andel av dåtidens kapitalmarknad. Vid sidan av statsobligationerna kom gruvbolagen — Anglo Mexican, United Mexican med flera — som lovade att återöppna de silver- och guldgruvor som spanska kronan förslutit. Prospektens historia var i bästa fall välment och i värsta fall diktad från början till slut: gamla rapporter om förslutna schakt blev aktiefabriker. Analysen var minimal — u-landsromantik, statsnamnets klang och räntans storlek var hela grundanalysen."
+        },
+        {
+          "type": "text",
+          "content": "Sedan den fulländade bluffen. Gregor MacGregor, skotsk legoknekt och selvudklarad cazique, hade fått eller tillskrivit sig landrättigheter hos moskitfolkets kung på den karibiska kusten av Honduras och Nicaragua — och utropade i början av 1820-talet kungariket Poyais. Han sålde land, utnämnde ministrar, tryckte egen handbok och valuta, och lät i London 1822 emittera Poyais-obligationer till sammanlagt omkring 200 000 pund med en sexprocentig lockelse. Samtidigt rekryterade han skotska bosättare: skepp avseglade 1822-23 med människor som sålt sina hem för att börja om i paradiset. Poyais visade sig vara djungel utan hamn, staden som ritats på handbokens gravyrer fanns inte, och majoriteten av kolonisterna dog innan de räddade hem. MacGregor hann fly till Frankrike, där han rekryterade en ny våg bosättare. Chancellor berättar historien som det renaste beviset på vad en emission kan bära när ingen kontroll finns: ett helt land kan hittas på om ryktet och avkastningslöftet räcker."
+        },
+        {
+          "type": "text",
+          "content": "Kraschen kom som en finansiell vinter. Spekulationsvärmen i London — latinlån, gruvor och inhemska bolag — bröts när penningmarknaden stramades åt och guld rann från Bank of England. I december 1825 föll drygt sextio bankhus som dominos, med det ansedda Pole, Thornton bland de första; panik spreds till allmänheten, och Bank of England var timmar från att slå igen — tills man fann en glömd låda med opåkallade enpundsedlar, som trycktes och spreds för att stilla rädslan. Centralbanken blev den som Chancellor beskriver den: långivare i sista hand genom utlåning mot exchequer bills till de banker som behövde rullas över. Utanför England följde det som blivit standard i varje emerging market-kris: praktiskt taget varje latinsk låntagare utom Brasilien gick i default innan decenniet var slut, och gruvaktierna blev värdelösa papper. Ett decennium av utvecklingsglädje hade bytts mot ett decennium av advokater."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läran är specifically V19 och V12. Emerging market-lånet är en konstruktion som lever av refinansiering: låntagarens betalningsförmåga (V12 intäktsstabilitet — tullar, skatter, gruvproduktion) är politiskt och cykliskt skör, och när nytt kapital slutar anlända blir skillnaden mellan illikviditet och insolvens akademisk (V11). Poyais är dessutom varningens rena form: utan granskningsbar intäktskälla är emissionen en berättelse om avkastning, inte en tillgång — V17 avtal och partnerskap som marknadsföring i stället för kassaflöde. Kursen noterar att 1825 innehåller hela den moderna emerging market-cykeln: kapitalflöden in, berättelse om hög avkastning, plötslig stopp, korrelerad krasch, centralbankens räddning, decennielång upprättelse. Kapitel 12 ska visa exakt samma biografi i asiatisk 1997-tappning."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1820-talets emerging market-cykel\",\"rader\":[[\"År\",\"Händelse\",\"Mekanisk läsning\"],[\"1822\",\"Poyais-obligationer emitteras i London\",\"Emission utan tillgång — V17 som marknadsföring\"],[\"1822-23\",\"Skepp med bosättare avseglar\",\"Berättelsen får mänsklig kostnad\"],[\"1824-25\",\"Toppen av lån- och gruvutrust\",\"Över 20 miljoner pund utlånat — V10 på systemnivå\"],[\"December 1825\",\"Drygt sextio bankhus faller; panik\",\"Korrelerad krasch — V11 försvinner\"],[\"1825-26\",\"Bank of England räddar med exchequer bills\",\"Långivare i sista hand föds\"],[\"1826-29\",\"Nästan alla latinska låntagare utom Brasilien default\",\"V12 visar sig — intäktsstabiliteten var illusorisk\"],[\"Eftermäle\",\"Gruvaktier värdelösa\",\"V19 — konstruktionen levde av nya emissioner\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den farligaste bluffen behöver inte förfalska en enda siffra — den behöver bara ett land som ingen besökt och en avkastning ingen kan kontrollera. Där granskning saknas blir emissionen litteratur."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en samtida emissionstungtillväxtberättelse och gör en Poyais-kontroll: vem kan intyga intäktskällan, vad händer om nytt kapital uteblir ett kvartal, och vilket V-tecken (V19) skulle första trycket visa? Om du inte kan svara har du hittat 1822 i modern tappning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vem var Gregor MacGregor?",
+          "alternativ": [
+            "En skotsk äventyrare som utropade det påhittade landet Poyais, sålde land, obligationer och bosättningspaket i London 1822",
+            "Guvernör i Bank of England 1825",
+            "Ordförande i Anglo Mexican Mining",
+            "En peruansk befriare som förhandlade lån"
+          ],
+          "ratt": 0,
+          "tips": "Hans titel var cazique — och hans land fanns inte."
+        },
+        {
+          "q": "Hur överlevde det brittiska betalningssystemet december 1825?",
+          "alternativ": [
+            "Att alla banker fick statsstöd direkt",
+            "Att Latinamerika betalade tillbaka i tid",
+            "Bank of England agerade långivare i sista hand med utlåning mot exchequer bills — och en glömd låda enpundsedlar hjälpte till att stilla paniken",
+            "Att guldstandarden suspenderades i tio år"
+          ],
+          "ratt": 2,
+          "tips": "Någon måste ta rollen som sista utpost — med vad som helst som liknar sedlar."
+        },
+        {
+          "q": "Hur slutade 1820-talets latinamerikanska lån?",
+          "alternativ": [
+            "Alla återbetalades i full mått",
+            "Endast Colombias lån kvarstod",
+            "Ryssland köpte upp skulderna",
+            "Nästan alla stater utom Brasilien gick i default innan decenniet var slut"
+          ],
+          "ratt": 3,
+          "tips": "Brasilien är det vanliga undantaget i berättelserna om 1820-talet."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Järnvägsmanin — George Hudson och 1840-talets folkrörelse",
+      "intro": "1840-talets England gjorde järnvägsaktien till en folkrörelse: präster, änkor och köpmän tecknade halvbetalda aktier i tusentals mil nya banor. I centrum stod George Hudson, Railway King, som höll kurserna uppe med generösa utdelningar — delvis betalda ur kapital. Chancellor skildrar manin, redovisningskonsten och fallet; kapitlet är kursens renaste studie i hur verklig teknisk revolution och förstörelse av kapital kan ske samtidigt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Järnvägen var 1800-talets internet: en teknik som förändrade allt — tid, avstånd, pris på varor och information — och som finansierades av publiken. Efter pionjärsträckorna och 1837 års mindre böja kom den stora manin 1844-46. Chancellor målar upp dess sociala bredd: lokalpress fylldes av prospekt, parlamentet drunknade i petitioner för tusentals mil nya linjer under sessionsåret 1845 — enligt samtida beräkningar fler än hela det då existerande nätet — och aktietecknarna kom från alla klasser: köpmän, präster, officerare, tjänsteflickor och änkor som satte sina livräntningar på Bangor, Bury och Birmingham. Nya tidningar tillkom enbart för att spegla järnvägspapper. Det var den första bubblan sedan 1720 som inte krävde exklusivitet — den behövde bara allmänhetens delaktighet och en känsla av nationellt bygge."
+        },
+        {
+          "type": "text",
+          "content": "I mitten stod George Hudson, Yorks draperare som blivit järnvägsdirektör och genom uppköp och fusioner — krönt med bildandet av Midland Railway 1844 — kontrollerade ett av imperiets största nät: Railway King. Hans metod var enkel och förödande: generösa utdelningar, ty de höjde kursen och kursen underlättade nästa fusion. Chancellor redogör för redovisningskonsten bakom: kostnader kapitaliserades, trafikintäkter justerades, och utdelningar betalades delvis ur kapital i stället för intäkter — vad kursens AKM1-språk kallar manipulerade lönsighetsmått (V09 i förklädnad) och dold kapitalförbrukning (V19-analogi). När granskning kom 1849 — efter att Hudsons sätt att blanda linjers och bolags räkenskaper synats av aktieägare som George Leeman — krävdes återbetalning, Hudson avgick i vanära och dog i exil 1871. Mannen som satinlade ett nät sjönk med sina siffror."
+        },
+        {
+          "type": "text",
+          "content": "Mekanismen i manin var belåningen — inte på banken utan i aktiens egen konstruktion. Aktier tecknades med en liten deposition, ofta omkring en tiondel, med resten i kallelser allteftersom bygget framskred: halvbetalda aktier. Det är hävstång (V10) inbyggd i pappret — och på den handlades scrip, andelar i ännu inte fullbetalda aktier, i ren spekulationsanda. Hösten 1845 nådde euforin sin topp; sedan vände allt på en gång: penningmarknaden stramades åt (Bank Charter Acts begränsningar verkade), den irländska svälten och spannmålskrisen tog plats i nyheterna, och kallelserna kunde inte betalas — vilket tvingade fram försäljningar som pressade kurser som gjorde fler kallelser obetalbara. Kraschen 1846-47 och den kommersiella krisen hösten 1847 gjorde processen fullständig. Ett decennium senare fanns dock ett järnvägsnät som förändrat landet — överkapaciteten rationaliserades, priserna föll, och vinnarna blev passagerare och speditörer snarare än de första aktieägarna."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läran från manin är kursens viktigaste teknik-lektion: verklig revolutionär teknik är ingen investeringsgaranti. Nyhetsflödet av nya linjer, koncessioner och fusioner (V16 produktlanseringar i dess tidiga form) pumpade priser långt bortom vad trafikintäkterna motiverade; lönsamheten överdrevs med redovisning (V09); och konstruktionen med halvbetalda aktier (V10) gjorde publiken uppskattligt känslig för kallelser när vändningen kom. Chancellor noterar också förnekelsagens grammatik: mot varje varning stod argumentet att järnvägen var verklig — vilket den var — och att därför priset var oviktigt — vilket det inte var. Det argumentet ska kursen möta igen i kapitel 13, i märket .com."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Järnvägsmanin — mekanik och förlopp\",\"rader\":[[\"Element\",\"Innehåll\",\"AKM1-koppling\"],[\"Innovation\",\"Järnvägsnätet förändrar tid och avstånd\",\"V16 — lanseringsflöde som bränsle\"],[\"Finansiering\",\"Halvbetalda aktier med deposition och kallelser\",\"V10 — inbyggd hävstång i själva pappret\"],[\"Sekundärhandel\",\"Scriphandel i ännu inte fullbetalda aktier\",\"V10 — hävstång på hävstång\"],[\"Redovisning\",\"Utdelningar delvis ur kapital; kapitaliserade kostnader\",\"V09 — manipulerade lönskhetsmått\"],[\"Topp\",\"Hösten 1845; petitionflod till parlamentet\",\"Eufori — berättelsen nationell\"],[\"Vändning\",\"Pengarna tar slut; kallelser obetalbara 1846\",\"V19 — kapitalbehovet träffar slutet marknaden\"],[\"Efterspel\",\"Kris 1847; Hudson faller 1849\",\"Nätet består — aktieägarna betalade det\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Tekniken kan förändra världen utan att förändra din avkastning. Mellan revolutionen och aktiekursen står konstruktionen: hävstång, redovisning och priset på deltagande. Järnvägen byggdes två gånger — en gång i stål, en gång i prospekt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Lista tre sektorer där nätbyggarlogiken gäller — enorma sunk costs, kapitaltuggande racing, vinnare konsumenter och efterkommande. Fråga för varje: var i cykeln sitter ny emissioner (V19) och vad händer med befintliga ägare när kallelserna kommer? Jämför med vad du skrev om järnvägen i detta kapitel."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur höll George Hudson kurser och förtroende uppe?",
+          "alternativ": [
+            "Genom att betala skatt för alla aktieägare",
+            "Genom att förbjuda all försäljning av aktier",
+            "Genom att publicera trafiksiffror i realtid",
+            "Med generösa utdelningar — delvis finansierade ur kapital — som höjde kursen och underlättade fusioner"
+          ],
+          "ratt": 3,
+          "tips": "Följ utdelningarna: varifrån kom pengarna egentligen?"
+        },
+        {
+          "q": "Varför gav halvbetalda aktier publiken en inbyggd hävstång?",
+          "alternativ": [
+            "De var skattefria",
+            "En liten deposition gav full prisrörelseexponering — och kommande kallelser blev en skuld när marknaden vände",
+            "De garanterades av staten",
+            "De kunde bara köpas av banker"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad depositionen exponerar dig mot — och vad kallelserna kräver vid fel tidpunkt."
+        },
+        {
+          "q": "Vad vände järnvägsmanin 1845-46?",
+          "alternativ": [
+            "En ny lag som förbjöd järnvägsaktier",
+            "Upptäckten av att tåg inte fungerade",
+            "Atstramad penningmarknad, spannmålskris och obetalbara kallelser som tvingade fram försäljningar — en mekanisk nedgång",
+            "Hudsons avgång, som ensam fick kurserna att falla"
+          ],
+          "ratt": 2,
+          "tips": "Tre saker samtidig: pengar, livsmedel och kallelser."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Gilded Age — Jay Gould och skurkarna på Wall Street",
+      "intro": "Efter inbördeskriget blev Wall Street ett fält utan regler: Erie-krigets nytryckta aktier, Jay Gould och Jim Fisks guldcorner som svartade fredagen den 24 september 1869, corners, bear raids och mutade domare. Chancellor skildrar Gilded Age som manipulationens klassiska era — och kursen läser den som en studie i att likviditet och utbud är vapen, inte konstanter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Inbördeskriget hade lämnat efter sig en nationell ekonomi, nationalbanklagar — och en börs utan vare sig insyn, redovisningskrav eller gränser för emission. Chancellor placerar Erie-kriget 1866-68 som tidens signaturstrid: Cornelius Vanderbilt, ångbåtskungen som köpte järnvägar, jagade kontroll över Erie — och möttes av Daniel Drew, Jay Gould och Jim Fisk, som helt enkelt tryckte nya aktier i strid med allt och lät vattnet flöda (stock watering är tidens ord). När domstolar och sheriff kom flydde Gould och Fisk till Jersey City med kassan, varifrån de förhandlade sig till fred, mutade under tiden lagstiftare och Tammany-hallen och installerade sina egna domare. Vanderbilt-attributet från eran fångar stilen: vad bryr jag mig om lagen — har jag inte makten? Chancellor låter karaktärerna bära sin egen tids färg: skurkarna på Wall Street var inte avvikare utan systemets stjärnor."
+        },
+        {
+          "type": "text",
+          "content": "Sedan Black Friday. Goulds plan hösten 1869 var en corner på guld — den enda djupt omsatta guldmarknaden i greenback-eran, där en liten fri flotte kunde flytta priset och där spekulanter med kopplingar till president Grants krets trodde sig veta att myndigheterna inte skulle ingripa. Gould och Fisk köpte, med Abel Corbin — presidentens svåger — som dörröppnare och försäkring; guld steg och steg, köpmän och spekulanter hängde på, och den 24 september nådde priset 162 med panik i spannmål och handel. Där bröts spelet: Grant hade genomskådat kopplingarna, och finansministriet släppte guld på marknaden — inom minuter föll priset till 133. Operatorer ruinerades, börsens guldrum stängdes, och dagen fick sitt svarta namn. Gould hade dock smugit ut sin position i förväg, varnad genom kanalerna — en av finanshistoriens stora insider-lärdomar: den som kontrollerar informationens flöde behöver aldrig bära konsekvenserna själv."
+        },
+        {
+          "type": "text",
+          "content": "Efter Black Friday följde tiotalet som visade systemets kostnad: Jay Cooke & Co, den mest ansedda bankfirman — finansieraren av inbördeskriget — hade allt binderat i Northern Pacific-järnvägens obligationer, och när marknaden för dem sinade stängde firman den 18 september 1873; börsen stängde i tio dagar och depressionen följde. Chancellor visar hur eran skapade motreaktionen: pressens och populisternas hat mot Gould (tidens Mephisto), den första seriösa kritiken av osynliga balansräkningar, kraven på insyn — reformer som skulle landna först i seklets Pecora-hörningar och SEC (kapitel 10). AKM1 noterar: utan redovisningskrav blir intäktskvalitet (V12) och kapitalförbrukning (V19) osynliga — och osynligheten är en strategi för den som gynnas av den."
+        },
+        {
+          "type": "text",
+          "content": "Kursens djupare läsning av Gilded Age: likviditet är inte ett tillstånd utan ett vapen. En corner — Erie, guld, eller en modern squeeze — bygger på att köpa upp det fria utbudet så att motparten (den shortsolida, den nödsålade) måste betala vilket pris som helst för att komma ur sin position; V11 likviditet blir i manipulatörens hand ett pris-TVÅ sätt. Rykte, prognos och prospekt flyttar pengar från dem som reagerar sent till dem som designat nyhetsflödet. Historien upprepar sig i modern skepnad — lågt fri flöde, hög kort ränta och tvångsköp är fortfarande ekvationen bakom moderna kort-squeeze-episoder. Skillnaden mot 1869 är insynen: redovisning, positionsplikt och rapportering gjorde manipulationen dyrare — aldrig omöjlig."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Gilded Age — operationer och mekanismer\",\"rader\":[[\"Operation\",\"År\",\"Mekanism\",\"AKM1-läsning\"],[\"Erie-kriget\",\"1866-68\",\"Nytryckta aktier och mutade domare\",\"Uppet och emission som vapen — V19-vridning\"],[\"Black Friday\",\"24 september 1869\",\"Guld-corner; pris 162 till 133 på minuter\",\"V11 — likviditet som prisvapen\"],[\"Insider-utgång\",\"1869\",\"Gould varnas via kanaler och lämnar i förväg\",\"Informationsasymmetri — vinna utan risk\"],[\"Jay Cookes fall\",\"18 september 1873\",\"Överbindrat järnvägsobligationer\",\"V19 — beroendet av ny emission\"],[\"Efterverk\",\"1870-90-tal\",\"Hat mot skurkarna; krav på insyn\",\"V18 — reformtrycket byggs\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Manipulationens kärna är aldrig priset — det är utbudet. Den som kontrollerar det fria flödet av en tillgång (eller en nyhet) behöver inte sia om framtiden; han tillverkar den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Sök fram en nutida aktie med mycket litet fri flöde och rapporterad hög kortränta. Beskriv mekanismen i Gould-termer: vem äger utbudet, vem tvingas köpa, och vilken nyhet skulle utlösa tvånget? Sedan: vilka V-mått (V11, V19) skulle varnat en utomstående?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad handlade Erie-kriget om i grunden?",
+          "alternativ": [
+            "Om priset på olja",
+            "En strejk bland järnvägsarbetare",
+            "Kontroll över Erie-banan — där Vanderbilt mötte Gould, Fisk och Drew som tryckte nya aktier och mutade domare och lagstiftare",
+            "En tvist om kanaltullar"
+          ],
+          "ratt": 2,
+          "tips": "Vapnet var inte köpkraft utan tryckpressen."
+        },
+        {
+          "q": "Hur bröts guld-corneren den 24 september 1869?",
+          "alternativ": [
+            "Guld släpptes från finansministriet på marknaden — priset föll från 162 till 133 på minuter och paniken bröts",
+            "Gould och Fisk frivilligt lämnade sina positioner",
+            "Börsen stängdes permanent",
+            "England skickade guldflottor"
+          ],
+          "ratt": 0,
+          "tips": "Någon med obegränsad utbudsmakt bestämde sig för att använda den."
+        },
+        {
+          "q": "Vad utlöste börs- och bankkrisen 1873?",
+          "alternativ": [
+            "Ett jordskalv i New York",
+            "Jay Cooke and Companys fall — firman hade allt binderat i Northern Pacific-järnvägens obligationer",
+            "En federal förbudslag mot optioner",
+            "Segern i presidentvalen"
+          ],
+          "ratt": 1,
+          "tips": "Den mest ansedda firman på den mest ansedda tillgången — tills marknaden för den sinade."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "1880-talet — Grant, guldbolag och den solvente men illikvida banken",
+      "intro": "Mellan skurkarna och 1929 ligger den tysta eran: brittiska sparare diversifierade ut i världens obligationer och sydafrikanska gruvaktier, Wall Street svepte med ex-president Grant i Ferdinand Wards bedrägeri, och Barings räddades 1890 som den första moderna solvent-but-illiquid-banken. Chancellor visar hur även lugnare decennier bär bubbel-mekaniken — bara kamouflerad som respektabilitet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "1880-talet var guldstandardens och deflationens decennium — men också den första stora epoken för privat sparande i världspapper. Chancellor skildrar den brittiska medelklassens nya vana: att placera i utländska obligationer — argentinska, amerikanska järnvägspapper, senare ryska och japan — som gav högre ränta med en statistiktabell som grundanalys. Det var diversifieringens (V03) och den förmenta stabilitetens (V12) tidevarv: utländsk ränta presenterades som trygg inkomst, och korrelationerna mellan ländernas kriser — som skulle visa sig 1890 — ingick i ingen tabell. Samtidigt växte en mer nervig marknad i sydafrikanska gruvaktier: efter Witwatersrands guldfynd 1886 blev kaffirs — tidens namn på Rand-gruvornas papper — Londonbörsens spekulativa raserbil, med Cecil Rhodes och Barney Barnato som huvudaktörer i både gruvor och promotor-kultur. Chancellor visar hur obligations- och aktiekulturerna möttes i samma portföljer: pensionens trygghet och spelbordets hastighet under samma hatt."
+        },
+        {
+          "type": "text",
+          "content": "I New York stod tidens mest uppriktiga krock mellan heder och manipulation. Ferdinand Ward — kallad finansvärldens unge Napoleon — hade byggt Grant & Ward på bluffkontrakt som utlovade säker avkastning, och med sig hade han ex-presidenten Ulysses S. Grants son och namn. När huset kollapsade i maj 1884 visade det sig att lånen gått till Wards egna spekulationer; Ward fängslades, och familjen Grant ruinerades — inklusive den åldrade generalen, som skrivit på som stilleståndspartner utan insyn. Chancellor använder galleriet av 1880-talets dramatis personae — obligationsspelare av W. R. Graces kaliber i peruanska papper inräknade — för att visa vad som händer när förtroende substituerar granskning: namnet Garant är värt miljoner tills det inte är det. Grants sista bricka blev den mest rörliga i finanshistorien: döende i cancer skrev han sina memoarer för att försörja familjen, publicerade av Mark Twains förlag, och arvodet — ett av tidens största bokavtal — räddade de efterlämnade. Heder kan köpas tillbaka; förlorat kapital återkommer inte."
+        },
+        {
+          "type": "text",
+          "content": "Sedan den första moderna bankräddningen. Argentinas kris 1890 förde tillbaka paprena från Buenos Aires till London med sjunkande värde, och Barings — som bundit sig i argentinska lån, däribland det beryktade Buenos Aires vatten- och avloppslånet — befann sig solvent på pappret men ur stånd att betala. Bank of England organiserade i november 1890 en garanti från rikets storbanker och privata hus (Rothschild i spetsen): Barings bars över krisen, likviderades i långsam takt och borgenärerna tog ingen totalförlust. Chancellor lyfter formuleringen som blivit standard: banken var solvent men illikvid — de tre orden som ska förklara nästan varje räddning ända fram till vår tid. Kursen noterar V11-kärnan: likviditetskriser kräver inte insolvens, bara att tillgångarna inte kan säljas till priserna på pappret vid det ögonblick betalning krävs — och att multinationell diversifiering (V03) plötsligt visar sig vara korrelerad exponeringsökning när London och Buenos Aires hänger ihop via samma lånebok."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-syntesen av det lugna decenniet: respektabilitet är ingen riskkontroll. Obligationsmarknadens V12-intäktsstabilitet visade sig vara suveränrisk och räntekänslighet; gruvaktiernas berättelser om fynd (en tidig V16-värld: varje borrningsrapport som kursrörelse) krävde gruvprospekt som få kunde läsa; och hela systemets beroende av att nytt kapital hela tiden ville in (V19) ställdes på prov 1890. Det tysta decenniet lär oss att bubblor inte alltid skriker — ibland bär de bowlerhatt och kallas för diversifierad ränta. Kapitel 10 visar vad som händer när samma mekanismer får modern kredit och modern publik."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1880-talets tysta galleri\",\"rader\":[[\"Händelse\",\"Innehåll\",\"AKM1-läsning\"],[\"Utländska obligationer\",\"Brittisk medelklassplacerar i världens räntor\",\"V03 — diversifieringens illusion\"],[\"Kaffir-aktierna\",\"Rand-guldgruvor från 1886; Rhodes och Barnato\",\"V16 — varje fyndrapport en kursrörelse\"],[\"Grant och Ward 1884\",\"Wards bluffkontrakt ruinerar ex-president Grant\",\"Namn som substitut för granskning\"],[\"Peruanska papper\",\"Obligationsspelare av Graces kaliber\",\"V12 — statsrisk maskerad som ränta\"],[\"Barings 1890\",\"Solvent men illikvid; Bank of England-lett konsortium\",\"V11 — de tre orden som förklarar alla räddningar\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Solvent men illikvid — finanshistoriens mest dyrbara tre ordpar. De påminner om att kriser sällan handlar om vad tillgångarna är värd på pappret, utan om vad de kan säljas till den dag betalning krävs."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en fond eller portfölj som marknadsförs som stabil utländsk inkomst. Skriv de tre frågor 1890 skulle ha krävt svar på: vad händer om landet ställer in, vad händer om alla säljer samtidigt, och vem är långivare i sista hand? Om prospektet inte svarar har du hittat vatten- och avloppslånet i modern tappning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände i fallet Grant och Ward 1884?",
+          "alternativ": [
+            "Ex-president Grant köpte upp Wall Street",
+            "Ferdinand Wards bluffkontrakt avslöjades — firman föll och ruinerade krigshjälten Grant och hans familj",
+            "Barings tog över firman",
+            "En strejk stängde börsen i månader"
+          ],
+          "ratt": 1,
+          "tips": "Ett hedervärt namn blev den billigaste säkerheten i en oärlig bokföring."
+        },
+        {
+          "q": "Hur räddades Barings 1890?",
+          "alternativ": [
+            "Genom statligt förstatligande",
+            "Genom att Argentina återbetalade allt i förskott",
+            "Genom konkurs och utdelning till borgenärerna",
+            "Genom ett av Bank of England lett garanti-konsortium — banken var solvent men illikvid"
+          ],
+          "ratt": 3,
+          "tips": "Formuleringen om solvens och likviditet är själva motiveringen."
+        },
+        {
+          "q": "Vad var kaffirs på 1880-talets Londonbörs?",
+          "alternativ": [
+            "Kaffefutures",
+            "Brittiska konsolobligationer",
+            "Sydafrikanska guldbolags aktier från Rand-området",
+            "Egyptiska bomullslån"
+          ],
+          "ratt": 2,
+          "tips": "Namnet kommer från Sydafrika — och guldet, inte drycken."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "1929 — New Era, marginalhandel och den stora kraschen",
+      "intro": "1920-talet gav världen New Era-doktrinen: att tekniken och krediten avskaffat konjunkturen. Med tio procents marginal och hävstångs-pyramider av investment trusts bars Dow till 381 — för att falla 89 procent till juli 1932. Chancellor bygger på Galbraith och visar hur kraschen födde modern värdepappersreglering. Kursens största V10-kapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "New Era var tidens tro: radio, bil, kedjebutiker och installationskredit hade skapat ett nytt ekonomiskt väsen där nedgångar var ett minne blott. Nationalekonomer och banker intalade samma budskap, och Chancellor låter epokens röst stå kvar i historien: den 16 oktober 1929 — dagar före kraschen — förklarade Yales Irving Fisher att aktierna nått en permanent hög platå. Bakgrunden var kredit: aktier köptes med tio procents marginal, mäklarlänen växte till omkring 8,5 miljarder dollar, och räntan på dem blev i sig själv en börsmekanism. Kursen på Dow Jones steg från omkring 60-talet 1921 till 381,17 den 3 september 1929. Deltagandet var brett: kontor, fabriker och vardagsrum fylldes av kurser; samtiden berättar historien om Joseph Kennedy som steg av efter att ha fått aktietips av skoputsaren — den klassiska indikatorn som Chancellor återkommer till med ett Skeptiskt leende: varje epok har sin skoputsare."
+        },
+        {
+          "type": "text",
+          "content": "Instrumenten var hävstång på hävstång. Investment trusts — tidens fondhybrid — såldes med löftet om expertförvaltning men konstruerades ofta som pyramider: en trust ägde aktier i en annan trust som ägde aktier i en tredje, och varje våg multiplicerade rörelsen. Goldman Sachs Trading Corporation, följd av Shenandoah och Blue Ridge 1929, blev symbolen: emissioner utfärdade till börsens topphöjd, insider-köp som marknadsföring, och kurser som föll med över 90-95 procent. Chancellor visar hur trusts sålde allmänheten en vind: diversifieringens matta (V03) ovanpå hävstångens kvicksand (V10). Även de intäktsmässigt sunda bolagen handlades till multiplar som inte lämnade utrymme för fel — V04-till-V06-logik hade slutat vara analys och blivit attityd. Kursen noterar mekanismen: när priset inte längre rättfärdigas av kassaflöde (V01, V07, V08, V09) utan av deltagandet itself, återstår bara strömmens riktning."
+        },
+        {
+          "type": "text",
+          "content": "Sedan kraschen, som Chancellor läser genom John Kenneth Galbraiths The Great Crash (1955). Efter sommarens svaghet och Roger Babsons nedgångsvarning den 5 september kom oktober: den svarta torsdagen den 24 — när tickerbanden eftersläpade marknaden med timmar och bankirernas pool stöttade upp kurserna för stunden — och därefter den svarta måndagen och tisdagen den 28-29 oktober, då Dow föll med tolv respektive tretton procent på rekordvolymer. Sedan följde drygt två och ett halvt års nedgång i trappsteg: toppen 381,17 blev botten 41,22 den 8 juli 1932 — ett fall på 89 procent. Efterdyningarna blev depressionen: tusentals bankkollapser, massarbetslöshet, och en värld av skulder som inte kunde betalas till de priser som gällt när de togs. Galbraiths berömda begrepp bezzle — summan av oärligt hanterade pengar som ökar i goda tider och upptäcks i dåliga — sammanfattar mekanismen: kreditens expansion skapar inte bara felpriser utan dolda brott som surfar på dem."
+        },
+        {
+          "type": "text",
+          "content": "Ur kraschen föddes den moderna regleringen — kursens största V18-våg. Pecora-hörningarna 1932-33 lade bankirernas praxis i belysning; Securities Act 1933 och Securities Exchange Act 1934 (med SEC) införde prospekt-, redovisnings- och insynskrav; Glass-Steagall 1933 skilde affärsbank från värdepappersbolag; marginalkrav reglerades federal. Chancellor påminner om att reglerna kom efteråt — först när skadan gjorts politiskt omöjlig att ignorera — och att de kom att prägla världen i ett halvsekel framåt, tills avregleringen på 1980-90-talen öppnade nästa eras dörrar. AKM1-slutledning för kapitlet: 1929 är den fullständiga demonstrationen av att V10 dödar — tio procents marginal raderar hela eget kapital av en tioprocentig nedgång — och att V11 försvinner exakt när alla behöver det samtidigt; V19 visade trusts-emissionerna som toppsignal; och marginal of safety, principen utan siffra, var exakt det ord som saknades i en marknad där någon betalade 381 gånger tidens intjäning för deltagandet."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1929 i siffror\",\"rader\":[[\"Nyckeltal\",\"Siffra\",\"Betydelse\"],[\"Dow-topp\",\"381,17 den 3 september 1929\",\"Euforins sista kurva\"],[\"Dow-botten\",\"41,22 den 8 juli 1932\",\"Fall på 89 procent\"],[\"Marginalkrav\",\"cirka 10 procent\",\"10 procent fall raderar hela eget kapital — V10\"],[\"Mäklarlänsvolym\",\"cirka 8,5 miljarder dollar\",\"Krediten som bär börsen\"],[\"Investment trusts fall\",\"många över 90-95 procent\",\"Hävstångspyramider — V19-emissioner på toppen\"],[\"Svarta måndagen och tisdagen\",\"28-29 oktober, minus 12 och 13 procent\",\"Rekordvolymer; ticker eftersläpar\"],[\"Reformvåg\",\"1933-34: Securities Act, SEC, Glass-Steagall\",\"V18 — den största regleringscykeln\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hävstång gör samma misstag tio gånger större och hundra gånger snabbare. 1929 krävde ingen dålig analys — bara tio procents marginal och en tro på att credit-nivån var en platå."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på marginalens aritmetik: köp för 100 med 10 procent eget kapital; fallet 10 procent är 100 procent av kapitalet. Sedan varianten med 50 procent eget kapital. Skriv ner skillnaden i överlevnadstid och återhämtningsbehov — och which V-tecken du skulle följa för att se när marknadens genomsnittliga marginal börjar likna 1929."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var investment trusts bidrag till kraschens storlek?",
+          "alternativ": [
+            "De stabiliserade marknaden genom diversifiering",
+            "De investerade enbart i utländska obligationer",
+            "De var riskfria tack vare försäkring",
+            "De byggde hävstångspyramider — trust som ägde trust som ägde trust — vilka föll över 90-95 procent"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad multiplicerade lager gör med en nedgång — och vem som emitterade dem vid toppen."
+        },
+        {
+          "q": "Vad hade Irving Fisher sagt veckor före kraschen?",
+          "alternativ": [
+            "Att en krasch var nära förestående",
+            "Att aktierna nått en permanent hög platå — den klassiska new era-formuleringen",
+            "Att han sålt alla sina aktier",
+            "Att guldstandarden skulle överges"
+          ],
+          "ratt": 1,
+          "tips": "Formuleringen har blivit epokens signum — en platå av vilken sort?"
+        },
+        {
+          "q": "Hur stort var Dow-fallet från topp till botten 1929-1932?",
+          "alternativ": [
+            "Omkring 30 procent",
+            "Omkring 50 procent",
+            "89 procent — från 381,17 till 41,22",
+            "12 procent"
+          ],
+          "ratt": 2,
+          "tips": "Från septembers topp till juli 1932 — räkna i trappsteg, inte i ett hopp."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Japan — zaitech och keiretsuernas tjugotal",
+      "intro": "På 1980-talet gjorde Japans företag finans till en näringsgren: zaitech — konsten att skörda vinster från börs och fastigheter — medan land användes som säkerhet för lån som köpte aktier som steg därför att landet steg. Nikkei toppade på 38 915 den 29 december 1989 och föll därefter i två decennier. Chancellor visar hur världens mest beundrade ekonomin blev spekulationens mest respektabla scen — med P/B kring fem och blygsam ROE.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden var världens mest framgångsrika exportekonomi. Efter Plaza-avtalet 1985 stärktes yen kraftigt, och Japans centralbank sänkte diskontot till 2,5 procent 1987 för att dämpa valans smärta — det blev, noterar Chancellor, en penningpolitik som stannade kvar långt efter att behovet försvann. Billigt kapital och inbördes bekräftande stigande tillgångspriser — den klassiska ekvationen. Samhällsstrukturen gjorde resten: keiretsu-grupper med korsvisa aktieinnehav, banker som lånade mot mark och fastigheter vars värden steg med börsen, och en kultur där att sälja var förräderi och att hålla var dygd. Aktier och mark steg i ömsesidig bekräftelse: land som säkerhet gav lån som köpte aktier som höjde börsen som höjde landet. Chancellor kallar det bubbelperiodens samlingsverk — en nationalitetsneutral mekanism i nationell skala."
+        },
+        {
+          "type": "text",
+          "content": "Sedan zaitech — finans-tekniken, företagens konst att producera vinster ur balansräkningen i stället för fabrikerna. Chancellor beskriver hur allt fler av de större företagens resultat kom från värdepapper, warrants-utgivning och terminshandel — enligt samtida beräkningar stod finansiella poster för en tredjedel eller mer av de största företagens vinster vid toppen. Det är kursens renaste V12-fall: intäktsstabilitet som illusion — resultaten var jämna och stigande just därför att marknaden steg, alltså var de kamouflerad beta. Nikkei nådde 38 915,87 den 29 december 1989; pris-mot-intjäning låg kring sextio eller högre för stora bolag, bokvärdesmultiplar kring fem (V05) med blygsam avkastning på eget kapital (V09), och marknadens sammanlagda värde översteg USA:s. Samtidens rykten — som Kejsarpalatsets marker i Tokyo värda mer än hela Kalifornien — var overdrivna i siffrorna men sanna i känslan: golfmedlemskap handlades som tillgångar, och tjänstemän lånade mot aktier för att köpa aktier."
+        },
+        {
+          "type": "text",
+          "content": "Kollapsen var inte en händelse utan ett klimat. År 1990 föll Nikkei med nära fyrtio procent; centralbanken höjde under året, och markens värden vek sig sedan i takt med att bankerna tvingades erkänna sina lån. Det som följde är känt som de förlorade decennierna: börsen nådde botten först 2003 omkring 7 600 — ned över 80 procent från toppen — och återhämtade sig aldrig fullt ut förrän en generation senare; bankerna, lastade med tvivelaktiga fordringar, nollränta, deflation och zombieföretag som hölls vid liv av banker som inte kunde erkänna förlusterna. Chancellor noterar det japanska tillägget till bubbelmönstret: förnekelsens institutionella form — att bära förlusterna öppet var kulturellt och regulatoriskt omöjligt, så systemet bar dem i stället, i decennier. Det är V11:s långsamma variant: likviditet som inte återvänder på grund av skam, inte brist på pengar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-läsningen av Japan är kursens skarpaste multipel-varning. Extremt P/B (V05) med svag ROE (V09) betyder att priset betalar ingen nuvarande lönsamhet — endast berättelsen om att någon annan betalar mer; zaitech-intäkterna (V12) var marknadsbeta i resultaträkningens förklädnad; korsvisa äganden fungerade som nätverkets berättelse (V15) — aktierna hölls för relationens skull, inte avkastningens; och hela konstruktionen vilade på säkerhetsvärden som steg med skulderna (V10). Sverige känner igen mekanismen från 1990-talets fastighets- och bankkris: land som säkerhet, upplåning mot stigande värden, och en finans som lånar ut baserat på gårdagens prislista. Japankapitlets slutplädering: när resultaten är en börsrapport och säkerheterna är marknaden själv, är balansräkningen marknaden — och marknaden har ingen botten förrän berättelsen gör det."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Japans bubbla i siffror\",\"rader\":[[\"Nyckeltal\",\"Siffra\",\"AKM1-läsning\"],[\"Nikkei-topp\",\"38 915,87 den 29 december 1989\",\"Euforins nationaldag\"],[\"P/E stora bolag\",\"cirka 60 eller högre\",\"Ingen analys motsvarar priset\"],[\"P/B\",\"cirka 5\",\"V05 extrem — med blygsam V09 ROE\"],[\"Zaitech-andel av resultat\",\"en tredjedel eller mer vid toppen\",\"V12 — intäktsstabilitet som illusion\"],[\"År 1990\",\"Nikkei faller nära 40 procent\",\"V10 mekanismen vänder\"],[\"Botten 2003\",\"cirka 7 600 — ned över 80 procent\",\"Två förlorade decennier\"],[\"Säkerhet\",\"Mark och fastigheter vars värde steg med börsen\",\"Balansräkningen blev marknaden\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "När resultaträkningen blir en börsrapport är verksamheten inte längre verksamheten. Zaitech-lönsamhet är marknadsbeta i förklädnad — jämna intäkter tills dagen marknaden inte stiger."
+        },
+        {
+          "type": "utmaning",
+          "content": "Segmentera resultatet för ett modernt konglomerat eller förvaltningsbolag: hur mycket kommer från finansiella poster, värdepapper och valutaeffekter — och hur mycket från kärnverksamhet? Klassificera finansiella intäkter ur V12-perspektiv: hederlig diversifiering (V03) eller kamouflerad marknadsrisk?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betydde zaitech i 1980-talets Japan?",
+          "alternativ": [
+            "Företagens konst att skörda finansiella och spekulativa vinster — finans som näringsgren vid sidan av verkstaden",
+            "Centralbankens namn på räntepolitiken",
+            "En keiretsu-form av kvalitetskontroll",
+            "Ett redovisningsstandard för export"
+          ],
+          "ratt": 0,
+          "tips": "Ordet betyder finans-teknik — frågan är var resultaten togs."
+        },
+        {
+          "q": "Var och när toppade Nikkei?",
+          "alternativ": [
+            "December 1989 på 38 915 punkter",
+            "Januari 1990 på 21 000 punkter",
+            "September 1987 på 26 000 punkter",
+            "Mars 2000 på 20 000 punkter"
+          ],
+          "ratt": 0,
+          "tips": "Sista handelsdagen av ett decennium — och av en era."
+        },
+        {
+          "q": "Vad är kapitlets skarpaste AKM1-varning från Japan?",
+          "alternativ": [
+            "Att exportberoende ekonomier alltid kraschar",
+            "Extremt högt bokvärdesmultipel (V05) med blygsam avkastning på eget kapital (V09) betalar ingen lönsamhet — endast tron på nästa köpare",
+            "Att banker aldrig ska få lånas ut mot fastigheter",
+            "Att centralbanker alltid ska hålla nollränta"
+          ],
+          "ratt": 1,
+          "tips": "Jämför vad priset betalar med vad företagen faktiskt tjänar på sitt kapital."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Hedgefonder och emerging markets — 1990-talets globala spelbord",
+      "intro": "Efter murens fall fick kapitalet hela världen som spelbord: Soros bröt pundet 1992, valutor och tillväxtmarknader blev tillgångsslag, carry trade-byggen växte — och sommaren 1998 svepte Asien, Ryssland och LTCM med i samma våg. Chancellor visar hur den gamla frågan återkom med ny skärpa: stabiliserar eller destabiliserar spekulanten? Kursens sista epok-kapitel före internet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "1990-talet började med historiens slut och kapitalets världsomspännande utbredning. Hedgefonder — arvtagare till 1940-talets lång-kort-struktur men nu med hävstång och derivat som motorkraft — blev tidens mytiska gestalter: masters of the universe i ny tappning. Signaturögonblicket kom den 16 september 1992, svarta onsdagen, när George Soros Quantum-fond (med Stanley Druckenmiller som strateg) satsade mot det brittiska pundets band inom ERM: Bank of England försvarade kursen med räntehöjningar och valutareserver, tvingades ge upp, och punden lämnade mekanismen — Quantum tjänade omkring en miljard dollar på en dag. Chancellor låter episoden sammanfatta erans nya sanning: när en stats finansiella åtaganden står mot en öppen, hävstångad marknad är utfallet inte längre givet. Spekulationen hade blivit en maktfaktor — och frågan om den var parasit eller disciplinär (kapitel 14) blev politisk."
+        },
+        {
+          "type": "text",
+          "content": "Samtidigt demokratiserades det som kallades emerging markets till en tillgångsklass. Fonder, banker och pensionsmedel placerade i Asiens och Latinamerikas tillväxt; statliga och privata låntagare tog upp dollardenominerad skuld; och carry trade-byggen växte — låna i en lågräntevaluta (nu mest yen), placera i högre avkastande tillgångar annorstädes: en ren hävstångsstruktur (V10) där valutarisken antas vara stillastående. Chancellor skildrar hur Asiens underverk — fasta eller halvfasta valutor, hög tillväxt, kreditexpansion i utländsk valuta — buktade under samma sommar: den thailändska bahten lämnade sin peg den 2 juli 1997, och kontagionen gick genom Indonesien, Korea och Malaysia på veckor. De gemensamma dragen är AKM1-läsningens kärna: skuld i främmande valuta mot intäkter i lokal sådan (V12-intäktsstabilitetens valutavariant), kort finansiering av långa tillgångar (V11), och en V18-katalysator av klassisk typ: fastkursregimer som bröts när reserverna tog slut — det fasta växelkurssystemet var katalysatorn själv."
+        },
+        {
+          "type": "text",
+          "content": "Kulmen kom 1998. Ryssland devalverade och ställde in betalningar på lokal skuld i rubel den 17 augusti — en liten tillgång i globala mått, men med enorm drivning: kapital flydde från allt som liknade risk, spreadar vida sig, och Long-Term Capital Management — hedgefonden med nobelpristagare och hävstång kring 25:1 — gick i princip omkull på några veckor och räddades av ett bankkonsortium den 23 september. Chancellor använder LTCM som bevis på att spekulationens klassiska mekanismer — hävstång, trängsel, korrelationer som går mot ett (V03, V10, V11, V19) — nu var globala och systemiska. För den som vill gå djupare har AK1A en hel separat kurs om LTCM (When Genius Failed); här räcker slutsatsen: när alla spelar samma spel med samma pengar blir skillnaden mellan stor och systemisk en fråga om tid."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlets syntes i AKM1:s språk: 1990-talet förvandlade spekulationen från episod till infrastruktur. Pengar rörde sig med knapptryckning; hävstången byggdes i valutor och derivat (V10) snarare än på marginalkonton; tillgångsslag med gemensam finansiering uppstod över hela världen och deras V12-stabilitet visade sig vara en funktion av kapitalflödenas riktning; och V18-katalysatorer — valutasystem, kapitalkontroller, IMF-program — blev de brytpunkter där eufori blev panik på en eftermiddag. Kursen noterar återkomsten av en uråldrig insikt från kapitel 6: emerging market-krisens biografi är densamma 1825 som 1997 — kapitalflöde in, berättelse om ny avkastning, sudden stop, korrelerad krasch, räddning, upprättelse. Bara hastigheten är modern."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1990-talets kriser — fyra vågor, en mekanik\",\"rader\":[[\"Kris\",\"Utlösande\",\"Mekanik\",\"AKM1-spår\"],[\"Svarta onsdagen 1992\",\"Pundets band i ERM bryts\",\"Hävstångad marknad mot statsfinanser\",\"V10 — storlek mot motpart\"],[\"Mexiko 1994\",\"Tequila-krisen efter devalvering\",\"Kort dollarfinansiering av långa positioner\",\"V11 — sudden stop\"],[\"Asien 1997\",\"Bahten lämnar peg 2 juli\",\"Valutemismatch och kontagion\",\"V12 — intäktsstabilitetens valutavariant\"],[\"Ryssland och LTCM 1998\",\"Default 17 augusti\",\"Korrelationer mot ett; fond med 25:1 hävstång faller\",\"V03, V10, V11, V19\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Carry trade är tulpanmanins deposition i modern skepnad: plocka små skillnader med hjälp av hävstång — tills den dag valutan eller spreaden rör sig, och då rör sig allt. Mönstret dör aldrig; det byter bara valuta."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en valuta eller ett växelkursband i dagens värld och skriv ett break-scenario: vad krävs i reserver, ränta och politisk vilja för att hålla det — och vad händer med de som lånat i valutan när bandet brister? Det är din 1992- eller 1997-övning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände den svarta onsdagen den 16 september 1992?",
+          "alternativ": [
+            "Bank of England höjde räntan till 40 procent",
+            "Soros Quantum-fond satsade mot pundets band, Storbritannien gav upp ERM-pundet och fonden tjänade omkring en miljard dollar",
+            "Euro infördes i förtid",
+            "LTCM grundades"
+          ],
+          "ratt": 1,
+          "tips": "En centralbanksförsvar mot en marknad — och marknaden vann den gången."
+        },
+        {
+          "q": "Vad var kopplingen mellan Ryssland och LTCM i augusti 1998?",
+          "alternativ": [
+            "Ingen — de var fristående händelser",
+            "LTCM hade lånat till Ryssland",
+            "Ryssland köpte LTCM:s positioner",
+            "Rysslands default utlöste en global flykt från risk som vidgade spreadarna och fällde den högt belånade fonden — räddad av bankkonsortium i september"
+          ],
+          "ratt": 3,
+          "tips": "Tänk tryckvågor: epicentrum var litet, mekanismen global."
+        },
+        {
+          "q": "Vad är en carry trade i sin kärna?",
+          "alternativ": [
+            "Att handla varor fysiskt över gränsen",
+            "En hedging-strategi utan valutarisk",
+            "Att låna i lågräntevaluta och placera i högre avkastande tillgångar — en ren hävstångsstruktur som faller när valutan eller spreaden rör sig",
+            "Centralbankers svar på inflation"
+          ],
+          "ratt": 2,
+          "tips": "Fråga var lånet tas och var avkastningen står — och vad som händer när skillnaden slår igen."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Internet-bubblan — boken skriven vid avgrunden",
+      "intro": "Chancellor publicerade 1999 mitt i nästa bubbla: daghandlare, IPO-popp på flera hundra procent, värderingsmått byggda på klick och drömmar — och en new era-retorik som förklarade att de gamla reglerna dött. Han skrev spekulationens historia medan den upprepade sig framför honom. Kursens sista epok-kapitel slutar där boken slutade: månader före fallet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Att skriva bubbelhistoria mitt i en bubbla är bokens unika kvalitet — Chancellor publicerade medan manin pågick, och hans sista kapitel är därför historikerns in situ-observation av euforin. Signaturdragen: Netscapes börsdebut i augusti 1995, som fördubblades vid stängning och öppnade epoken med IPO-pop som varumärke; theglobe.com den 13 november 1998, som steg över 600 procent över emissionspriset på en dag; daghandlarfirmor med skärmar i varuhus; tv-kanaler vars program om aktier slog talkshows. New era-retoriken hade återvänt i exakt 1929-tappning: den gamla ekonomin var död, vinsterna var gammalmodiga, och det som inte kunde värderas med multiplicar kunde värderas med berättelse. Chancellor kände igen varje drag — han hade just skrivit deras biografier i trehundra år."
+        },
+        {
+          "type": "text",
+          "content": "Värderingsakrobatiken blev kursens tydligaste multipel-kapitel. När få bolag hade intäkter och nästan ingen hade EBITDA blev P/S (V04) mått på hundratalet för bolag med obetydliga intäkter och EV/EBITDA (V06) omöjligt att beräkna eftersom E saknades — analysen flyttades till klick, eyeballs och pris per dröm. Tillväxten (V01) blev enda fundamentet — och eftersom tillväxt är en berättelse om framtiden kunde vilken tillväxt som helst rättfärdiga vilket pris som helst. Nätverkseffekter (V15) var epokens teologi: vinnaren tar allt, därför är förlusten värd vad som helst; varje produktlansering (V16) och varje partnerskapsavsikt (V17) var en pump. Emissionsmaskinen (V19) malde: IPO-fönster, sekundära emissioner, optionsutdelningar — kapitalförbrukning var inte risk utan affärsmodell. Analytiker gav priser som marknadsföring. Kursen noterar: när multipel-logiken löses upp från V01, V07, V08 och V09 återstår deltagandet itself som värde — vilket är definitionen av eufori."
+        },
+        {
+          "type": "text",
+          "content": "Matematikens come-back blev som alltid grotesk och lysande. I mars 2000 sålde 3Com en minoritetspost i handdatorbolaget Palm — och efter dagens rally var Palm värt mer på börsen än hela 3Com, som ju fortfarande ägde majoriteten: den underförstådda värderingen av återstoden av 3Com blev negativ, ett aritmetiskt omöjligt tillstånd som i dagligt tal kallas att marknaden prissätter det omöjliga. Tio dagar senare, den 10 mars 2000, nådde Nasdaq 5 048,62 — sedan föll indexet i två och ett halvt år till omkring 1 114 hösten 2002, ned 78 procent, och i den globala IT-krasen förstördes förmögenheter i biljonklassen. Sverige levde samma biografi i egen tappning: IT-bolag på Stockholmsbörsen med tresiffriga multiplar, optioner och telefonaktier som nationell identitet — och en krasch som formade ett decennium av svensk finans. Chancellor hade slutat skriva strax före; bokens sista tanke — att spekulationens historia aldrig slutar — bekräftades inom månader."
+        },
+        {
+          "type": "text",
+          "content": "Kursens syntes av epoken: internetbubblan innehöll alla klassiker — ny innovation av verklig betydelse (därmed svår att avfärda), lätt kredit (efter 1998 års räntesänkningar och millenieskiftets likviditet), berättelse som rättfärdigade pris (new era, nätverkseffekter), bred publik med nya verktyg (daghandel), och emissionsvåg som cykelns hjärta (V19). Chancellor visar dessutom hur varje invändning bemöttes med epokens klassiker: järnvägsargumentet — tekniken är verklig — vilket den var, och prisfrågan oviktig, vilket den inte var. Palm-episoden är kapitlets viktigaste tankeverktyg: när marknaden producerar omöjliga priser i ett hörn av systemet är det inte ett lokalt misstag — det är information om systemets tillstånd. Det är AK1TS:s hela läsart, som nästa kapitel formaliserar."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Internet-epoken 1995-2002 i siffror\",\"rader\":[[\"Händelse\",\"Siffra eller utfall\",\"Läsning\"],[\"Netscape IPO\",\"augusti 1995; kursen fördubblades vid stängning\",\"IPO-pop som signatur\"],[\"theglobe.com\",\"13 november 1998; över 600 procent över emissionspriset på en dag\",\"Euforins tempelhöjd\"],[\"Nasdaq 1999\",\"plus omkring 86 procent på ett år\",\"V19 — emissionsmaskinen maler\"],[\"Palm och 3Com\",\"mars 2000; underförstådd restvärde negativ\",\"Marknaden prissätter det omöjliga\"],[\"Nasdaq-topp\",\"5 048,62 den 10 mars 2000\",\"Cykelns topp\"],[\"Nasdaq-botten\",\"omkring 1 114 hösten 2002 — ned 78 procent\",\"Två och ett halvt års nedgång\"],[\"Förluster\",\"förmögenheter i biljonklassen globalt\",\"AKM1-V04 utan V01-förankring\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "När ett hörn av marknaden prissätter det aritmetiskt omöjliga — som ett negativt restvärde — är det inte ett lokalt misstag. Det är systemets eget uttalande om sitt tillstånd."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör Palm-övningen på dagens marknad: sök avknoppningar eller duala listningar där dotterbolaget värderas till mer än modern inklusive ägandet. Finns en sådan konstellation, beskriv vad den säger om riskaptiten — och vilka V-signaler (V04, V15, V19) som pekar samma håll."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gör Chancellors bok unng för internetbubblan?",
+          "alternativ": [
+            "Den skrevs tio år efter kraschen med full överblick",
+            "Den publicerades 1999 mitt i manin — en historia om bubblor färdigställd vid avgrunden till nästa",
+            "Den förutsade exakt datumet för Nasdaq-topp",
+            "Den behandlar inte internet alls"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på när sista kapitlet skrevs — och vad som hände strax därefter."
+        },
+        {
+          "q": "Vad visade Palm-3Com-episoden i mars 2000?",
+          "alternativ": [
+            "Att 3Com var värre företag än Palm",
+            "Att internetbolag saknade teknik",
+            "Att det fanns för få daghandlare",
+            "Att Palm värderades högre än hela 3Com, vilket gav återstoden negativt värde — marknaden prissatte det aritmetiskt omöjliga"
+          ],
+          "ratt": 3,
+          "tips": "Räkna på vad modern ägde — och vad marknadens priser implicerade för resten."
+        },
+        {
+          "q": "Hur stort var Nasdaqs fall från mars 2000 till botten 2002?",
+          "alternativ": [
+            "Cirka 30 procent",
+            "Cirka 45 procent",
+            "78 procent — från 5 048,62 till omkring 1 114",
+            "Cirka 10 procent på en vecka"
+          ],
+          "ratt": 2,
+          "tips": "Från över femtusen till strax över ettusen — räkna i år, inte dagar."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Kontroversen — parasit eller nödvändig? AK1TS:s position",
+      "intro": "Spekulationens eviga debatt: är den en parasit som suger näring från verklig verksamhet — Keynes kasino, Galbraiths slöseri — eller en nödvändig funktion som ger likviditet, prisupptäckt och finansiering åt innovationen? Kapitlet redogör för båda lägren i deras starkaste form och landar i AK1TS:s position: vi mäter vågorna utan att döma surfarna — vi lär ut att läsa spekulativ dynamik som riskinformation, det vill säga cykel-position.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelsen i dess klassiska form formulerades av Keynes i General Theory (1936), och Chancellor för den vidare genom hela sitt galleri: spekulanter kan vara harmlösa som bubblor på en stadig ström av företagsamhet — men allvaret kommer när företagsamheten själv blir bubblan på ett virvelbad av spekulation. Och den berömda slutsatsen: när kapitalbildningen i ett land blir en biprodukt av ett kasinos verksamhet kommer jobbet sannolikt att bli dåligt gjort. Kasinokritiken har flera ben: spekulationen drar kapital och talang från produktiv verksamhet (1929:s mäklarlänen, Japans zaitech); den förvandlar priser från information till manöver (Gould); den slösar resurser på prospekt-samhällen som aldrig borde ha byggts (Poyais, överkapaciteten 1846, fibernät som mörklades i årtionden); och den omfördelar från sentkomna publiken till dem som designade spelet (1720, investment trusts). Galbraiths tillägg: goda tider ökar bezzle — den dolda oärlighetens lager — som upptäcks först när euforin släcker ljuset."
+        },
+        {
+          "type": "text",
+          "content": "Försvarsskriften är minst lika stark. Utan spekulanter finns ingen likviditet: någon måste handla i det tysta, trånga och ovissa för att långsiktiga ägare och sparare ska kunna stiga av — Keynes själv behövde en marknad att vara långsiktig i. Utan spekulanter ingen prisupptäckt: termins- och optionsmarknadernas priser samlar information om framtiden som bönder, flygbolag och tillverkare använder som styrinstrument (V11 och V18 i funktion). Utan risktagare ingen innovationsfinansiering: kanaler, järnvägar, telefoni, fiber och internet överfinansierades alla — och byggdes; riskkapitalets institutionaliserade spekulation på Sand Hill Road är mekanismen som betalat framtidens infrastruktur genom att tolerera att de flesta satsningarna dör. Chancellor själv påminner om förbudshistoriens facit: Bubbelakten, de holländska domstolarnas vägran, 1930-talets regleringar, förbud i olika tappning — förbudet förskjuter alltid spekulationen till svartare eller främmande arenor; den avskaffas aldrig. Notera ironin Chancellor också lyfter: Keynes, kasinots kritiker, drev King's College-fonden med briljant spekulation — det är inte hyckleri utan poängen: skillnaden ligger i vem som bär risken och vem som låter kasinot styra kapitalets fördelning."
+        },
+        {
+          "type": "text",
+          "content": "Chancellers egen hållning är därför historikerns: frågan om spekulationen är parasit eller nödvändig är fel ställd — den är båda, beroende på dos, konstruktion och cykel-position. I moderation och med sund kredit är den marknadens nervsystem; i eufori med hävstång blir den en pump som flyttar kapital till prospekt och bort från avkastning. Bokens hela bevisning visar att ingen epok har lyckats behålla den förra utan att hamna i den senare — och att ingen epok har lyckats avskaffa den senare annat än till priset av att mista den förra. AK1TS:s slutsats av denna historia är därför ingen mittpolitik utan ett tredje ställningstagande: frågan vi ställer är inte om spekulationen är god eller ond, utan vad den just nu avslöjar. Vi mäter vågorna utan att döma surfarna — och vi lär ut att läsa spekulativ dynamik som riskinformation: att fastställa var i cykeln marknaden befinner sig, är det tidig kredit eller eufori, vem som bär hävstången, vem som emitterar och vem som stiger av."
+        },
+        {
+          "type": "text",
+          "content": "Den praktiska läsningen — cykel-position i AKM1:s variabler. Multipel-drift: V04 P/S, V05 P/B och V06 EV/EBITDA som expanderar utan förankring i V01 försäljningstillväxt, V07 bruttomarginal, V08 EBITDA-marginal och V09 ROE signalerar att priserna lösgörs från fundamenten (Japan 5x bok med svag ROE; internet utan E i EBITDA). Berättelse-förskjutning: när V14 varumärke, V15 nätverkseffekter, V16 produktlanseringar och V17 avtal/partnerskap används som prisargument i stället för som kassaflödds-drivare är euforins grammatik aktiv. Kvalitets-förskjutning: V03 intäktsdiversifiering och V12 intäktsstabilitet som degraderar (zaitech, emerging market-intäkter) visar att stabiliteten var kamouflerad risk. Bränsle och tändning: V10 skuldsättningsgrad (marginal 1929, depositioner 1637, carry trade), V11 likviditet (som finns när den inte behövs och försvinner när den behövs). Katalysatorer och vågor: V18 regulatoriska katalysatorer i båda riktningar — avreglering som bränsle (1980-90-tal), re-reglering som vändpunkt (Bubbelakten 1720, SEC 1934); V19 emissionsvågor som cykelns hjärta (IPO-antal och nyemissionsvolym som toppindikator); V20 återköp koncentrerade till toppar som samma signal spegelvänt. Och över allt: marginal of safety, principen utan siffra — den enda policy som fungerar i båda lägren."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre läsningar av spekulationen\",\"rader\":[[\"Fråga\",\"Parasit-lägret\",\"Nödvändighets-lägret\",\"AK1TS-läsningen\"],[\"Vad gör den?\",\"Drar kapital och talang från verklig verksamhet\",\"Ger likviditet, prisupptäckt och riskbärare\",\"Avslöjar cykel-position — den är information\"],[\"Bästa beviset\",\"Kasinocitatet; zaitech; 1929:s mäklarläns\",\"Järnvägar och internet byggdes via överfinansiering\",\"Mönstret genom seklerna är mätbart\"],[\"Vad ska staten göra?\",\"Förbjuda eller strama åt\",\"Skydda funktionen, reglera konstruktionen\",\"Läsa signalerna — V18 i båda riktningar\"],[\"Farligaste felet\",\"Eufori med hävstång\",\"Att tro att den kan avskaffas\",\"Att moralisera i stället för att mäta\"],[\"AKM1-signaler\",\"V10, V19, bezzle\",\"V11, V03, innovationsfinansiering\",\"V04-V06 mot V01/V07/V08/V09; V12, V15, V20\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Spekulationen är varken synd eller system — den är mätbar. Frågan som lönar sig är inte om surfarna är goda människor utan vad vågorna säger om var vi står i cykeln: eufori, kredit, emission, insider-utträde eller panik."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en aktuell tillgång eller sektor. Skriv de tre läsningarna — parasit, nödvändig, AK1TS — med en mening vardera. Bestäm sedan din cykel-position med tre V-signaler (till exempel V04-V06 mot V01, V10, V19) och vad som skulle vända din slutsats. Det är kursens kärnövning i storskalig skala."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Keynes kasinokritik?",
+          "alternativ": [
+            "Att optioner borde förbjudas",
+            "Att alla spekulanter förlorar pengar",
+            "Att börser inte borde finnas",
+            "Att när kapitalbildningen blir en biprodukt av kasinots verksamhet kommer jobbet sannolikt att bli dåligt gjort — företagsamhet som bubbla på spekulationens virvelbad"
+          ],
+          "ratt": 3,
+          "tips": "Citatet handlar om förhållandet mellan kasinot och det verkliga kapitalarbetet."
+        },
+        {
+          "q": "Vilket är det starkaste nödvändighets-argumentet?",
+          "alternativ": [
+            "Att spekulation alltid är lönsam för samhället",
+            "Att bubblor aldrig skadar någon",
+            "Att spekulanter ger likviditet, prisupptäckt och riskbärande — och att överfinansierad spekulation byggt kanaler, järnvägar, telekom och internet",
+            "Att reglering alltid förvärrar allt"
+          ],
+          "ratt": 2,
+          "tips": "Tre funktioner och ett historiskt facit av byggda nätverk — sammantaget."
+        },
+        {
+          "q": "Vad är AK1TS:s position i debatten?",
+          "alternativ": [
+            "Att spekulationen bör förbjudas genom lag",
+            "Vi mäter vågorna utan att döma surfarna — vi lär ut att läsa spekulativ dynamik som riskinformation, alltså fastställa cykel-position med AKM1:s variabler",
+            "Att alltid hålla med Keynes i allt",
+            "Att endast hedgefonder får spekulera"
+          ],
+          "ratt": 1,
+          "tips": "Tredje ställningstagandet: information, inte dom."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 10,
+      "title": "Mönstret och examen — innovation, kredit, eufori, krasch",
+      "intro": "Femton kapitel, ett mönster: ny innovation, kreditsprång, eufori, insider-utträde, panik — och reformer som gör oss trygga tills glömskan kommer. Det sista kapitlet för samman Chancellors galleri till en master-checklista i AKM1:s variabler och avslutar med examen: att läsa nästa bubbla innan den läser dig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mönstret har en klassisk femaktsform, formulerad av Kindleberger och Minsky och bekräftad av varenda episod i Chancellors galleri. Akt ett: förskjutningen — en ny innovation eller omständighet som på riktigt förändrar framtidsutsikterna (tulpanens sällsynthet, joint-stock-bolaget, pappersmyntet, järnvägen, guldzonen, masskrediten, exportmiraklet, internet). Akt två: boomen — kredit och nya emissioner finansierar deltagandet, priserna stiger, stigande priser rättfärdigar mer kredit (V10, V19). Akt tre: euforin — nya mått ersätter gamla (pris per dröm), nya försvarare trädar fram, den här gången är det annorlunda blir marknadens grammatik, och insiders emitterar och stiger av (V19, V20, bezzle växer). Akt fyra: det kritiska läget — vinsttagningen, där de som designat spelet lämnar det och nya kreditorer bär risken. Akt fem: paniken och avsmaket — tvångsförsäljningar, V11 försvinner, reformer, ett decennium av dygd — och så småningom glömskan som öppnar akt ett igen."
+        },
+        {
+          "type": "text",
+          "content": "Chancellers bidrag är att visa variationernas ytterlighet och mekanismens konstans. Tidsskalan spänner från tulpanmanins månader till Japans decennier; kreditkällan från depositioner och värdshusräkningar till mäklarläns-pyramider, land som säkerhet och carry trade; innovationen från en sjuk lök till fibernät; myndighetsresponsen från Bubbelakten till Fed:s räddningar. Konstanten är antropologisk: aptit, förnekelse, berättelsens makt och hävstångens aritmetik — med 10 procent marginal raderar 10 procents fall allt; med 25:1 hävstång räcker fyra procent (V10). Konstant är också informationsasymmetrin: de som designar konstruktionen säljer till de som läser prospektet. Och konstant är förnekelsens grammatik: epoken argumenterar alltid med att innovationen är verklig — vilket den alltid är — för att undvika frågan om priset, vilket aldrig är oviktigt. Järnvägsargumentet och internetargumentet är samma mening i olika sekel."
+        },
+        {
+          "type": "text",
+          "content": "Master-checklistan — cykel-position i AKM1:s alla variabler. Fundament mot pris: om V04 P/S, V05 P/B och V06 EV/EBITDA expanderar utan att V01 försäljningstillväxt, V07 bruttomarginal, V08 EBITDA-marginal och V09 ROE förankrar dem, lossnar priserna från det mätbara. Kvalitet: V03 intäktsdiversifiering och V12 intäktsstabilitet som degraderar (finansiella intäkter, valutamatchningar, cykliga kunder förklädda till stabila) visar att tryggheten är kamouflerad risk. Berättelse mot kassaflöde: när V13 patent och IP, V14 varumärke, V15 nätverkseffekter, V16 produktlanseringar och V17 avtal och partnerskap används som prisargument i stället för som intäktsdrivare är euforins språk aktivt. Bränsle och tändning: V10 skuldsättningsgrad och V11 likviditet — mät dem i stress, inte i fredstid. Katalysatorer och vågor: V18 regulatoriska katalysatorer i båda riktningar; V19 kapitalförbrukning och emissionsrisk som cykelindikator (IPO-vågen, nyemissionernas volym, utspädningstakten); V20 återköp koncentrerade till toppar som spegel-signal. Policy över allt: marginal of safety, principen utan siffra — betala aldrig för att få delta i euforin, betala för kassaflöde med felmarginal."
+        },
+        {
+          "type": "text",
+          "content": "Examen och vidare läsning. Kursens slutprov är muntligt och utan anteckningar: återberätta mönstret för en kollega med dess fem akter, tre historiska exempel med siffror (välj fritt bland 1720, 1825, 1846, 1869, 1929, 1989, 1998, 2000), och en AKM1-checklista för att fastställa dagens cykel-position. Sedan kombinationer: Chancellors breda historia läst bredvid When Genius Failed (mekanismen i detalj), Irrational Exuberance (psykologin) och A Random Walk Down Wall Street (motpolen) ger spekulationsämnets hela spänningsfält. Sista tanken: Chancellor skrev sista raden 1999 utan att veta att kraschen var månader bort — hans verktyg var historien, inte spådomen. Nästa kapitel i spekulationens historia skrivs just nu, någonstans, i en ny innovation med ny kredit — och med dig som potentiell läsare av vågorna. Fan tar den siste; marginalen tar den som glömmer den."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mönstret genom seklerna — nio bevis\",\"rader\":[[\"Epok\",\"Innovation\",\"Kreditsprång\",\"Euforins signatur\",\"Krasch\"],[\"1637 Holland\",\"Tulpanens sällsynthet\",\"Depositioner och vindhandel\",\"Semper Augustus som statusmarkör\",\"Haarlem feb 1637\"],[\"1720 Paris och London\",\"Pappersmynt och monopol\",\"Teckningsrundor; banknotter\",\"Skuld blir till aktie-berättelse\",\"Hösten 1720\"],[\"1825 London\",\"Nya republiker och gruvor\",\"Bankutlåning i pund\",\"Poyais och 20 miljoner pund söderut\",\"December 1825\"],[\"1846 England\",\"Järnvägsnätet\",\"Halvbetalda aktier\",\"Petitioner för tusentals mil\",\"1846-47\"],[\"1869-73 New York\",\"National ekonomi och räls\",\"Corners och obligations-emissioner\",\"Guld-corner som statskupp\",\"Black Friday; Jay Cooke 1873\"],[\"1929 New York\",\"Masskonsumtion och teknik\",\"Marginal 10 procent; trusts\",\"Permanent hög platå\",\"Oktober 1929\"],[\"1989 Tokyo\",\"Exportmirakel och zaitech\",\"Land som säkerhet\",\"P/B 5 med svag ROE\",\"1990 och två decennier\"],[\"2000 globalt\",\"Internet\",\"Daghandel och IPO-maskin\",\"Pris per dröm; negativt restvärde\",\"Mars 2000, minus 78 procent\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den här gången är det annorlunda — historiens dyraste mening, sagd vid varje topp sedan 1637. Skillnaden mellan erfarenhet och ruin är en checklista: multipel mot fundament, kredit, berättelse, emission, marginal of safety."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din bubbel-barometer: fem indikatorer (V04-V06-drift mot V01/V07/V08/V09, V10-kredit, V15-berättelsens dominans, V19-emissionsvåg, V20-återköp vid topp) med varsin tröskel och en marginal of safety-policy utan siffra. Testa den på dagens marknad, skriv ner cykel-positionen — och upprepa om ett halvår. Det är examen, och den upprepas livet ut."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den klassiska femaktsordningen i bubbelmönstret?",
+          "alternativ": [
+            "Förskjutning, kredit-boom, eufori, vinsttagning och panik — i den ordningen",
+            "Panik, eufori, boom, reform, förskjutning",
+            "Reglering, innovation, stagnation, default",
+            "Eufori, förskjutning, reform, boom, glömska"
+          ],
+          "ratt": 0,
+          "tips": "Börja med det nya som på riktigt förändrar framtidsutsikterna — och följ pengarna."
+        },
+        {
+          "q": "Vilken kombination är kursens främsta AKM1-signal för eufori?",
+          "alternativ": [
+            "Hög V09 och låg V04",
+            "Stark V01 tillsammans med fallande V19",
+            "Låg V10 och riklig V11 i stress-scenarier",
+            "Multipel-expansion (V04-V06) utan förankring i fundament (V01, V07, V08, V09) samtidigt med emissionsvåg (V19) och berättelse-dominans (V15)"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad priserna betalar — och vem som nyligen fått sälja nytt papper."
+        },
+        {
+          "q": "Vad betyder marginal of safety i denna kurs?",
+          "alternativ": [
+            "En fast procentsats på alla köp",
+            "Ett tekniskt stop-loss-utfall",
+            "En princip utan siffra — betala aldrig för att delta i euforin, betala för kassaflöde med felmarginal",
+            "En centralbanks buffert-reserv"
+          ],
+          "ratt": 2,
+          "tips": "Ordet policy börjar med princip — inte med siffra."
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,7 @@ const KALLA = join(ROTT, "data", "bokmaster");
 const MAL = join(ROTT, "public", "deep-courses.json");
 
 const BLOCKTYP = new Set(["text", "insikt", "utmaning", "tabell", "visuell", "tidslinje"]);
-const VISUELL = new Set(["skala", "compound", "cykel", "donut", "bro", "radar"]);
+const VISUELL = new Set(["skala", "compound", "cykel", "donut", "bro", "radar", "tidslinje", "bubbel", "termometer", "konvergens"]);
 
 function validera(kurs, fel) {
   const pre = `[${kurs.slug || "???"}] `;

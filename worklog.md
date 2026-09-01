@@ -3773,3 +3773,25 @@ Work Log:
   graf-typerna (tidslinje/bubbel/termometer/konvergens) — tidigare
   blockerades flaggskeppens VIL-2-block + 5 nya kurser
 - Kanon 51/101 · 280 kurser · 5919 quiz · 773 sidor
+
+---
+Task ID: 135-VAG14-KOMPLETT — 285 KURSER
+Agent: main + Bogle ✓ + Siegel ✓ + Bernstein ✓ + Money Game ✓ + Flash Boys ✓
+Task: portfölj/marknadsstruktur-spåret komplett
+
+Work Log:
+- COMMON SENSE ON MUTUAL FUNDS (Bogle): 13/39 — kostnads-determinismen
+  (2% avgift = 43% av slutfondförmögenheten), aktiv-vs-index-syntesen
+- STOCKS FOR THE LONG RUN (Siegel): 13/39 — 1802-2020, IBM-vs-Standard Oil,
+  kontrovers: CAPE/Japan-1989/survivorship + Mega-syntesen
+- INTELLIGENT ASSET ALLOCATOR (Bernstein): 13/39 — korrelationsformeln
+  genomräknad, återbalanseringsbonusen, 2008-korrelationskritiken
+- THE MONEY GAME (Adam Smith 1968): 12/36 — karaktärsgalleriet, spelet
+  mot dig själv
+- FLASH BOYS (Lewis): 12/36 — latency-arbitrage i 6 steg, svenska
+  transaktionsskatten 1984-91, kontroversen HFT-försvaret vs Lewis
+- Kanon 56/101 · 285 kurser · 6108 quiz · 780 sidor
+
+Stage Summary:
+- 56 BOKMASTER + 2 flaggskepp · DAGENS PASS + MIN SIDA live
+- Positioneringen "DAGLIG" fullt förverkligad: nav + vana + hantverk

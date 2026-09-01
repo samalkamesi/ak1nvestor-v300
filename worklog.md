@@ -3546,3 +3546,21 @@ Work Log:
 
 Stage Summary:
 - 22 BOKMASTER-böcker komplettäckta — kanonens tier-1-kärna nästan färdig
+
+---
+Task ID: 123-FLAGGSKEPP-AK1TS
+Agent: AK1TS-agent ✓ (AKM1-flaggskepp + Soros + Staley kör)
+Task: AK1TS — Våglärans Hierarki: SUPERDJUP — EKOSYSTEM-flaggskepp #1
+
+Work Log:
+- 20 kapitel, 60 quiz, kategori EKOSYSTEM — kursen läser MOTORN:
+  alla regler i analysis_engine.py dokumenterade exakt (momentum ±6%,
+  MA50/MA200, Elliott ±4%, Fibonacci 0.38/0.62, GANN-asymmetrin, Lucas-
+  talen, volym-logiken, vecko/dag-reservvägarna)
+- Kontroversen på djupet (kap 14-17): EMH/random walk MED momentum-
+  anomalin som motbevis, Park & Irwin, multipel testning VÄNDS MOT AK1TS
+  SJÄLVT, Elliott/GANN:s "not even wrong"-status + vad motorn gör åt det
+- Självkritik: 25 celler = ~3 information familjer — konfluens räknas
+  över familjer, inte celler
+- Manifestet (kap 20): "vi är kontroversiella — och det är okej"
+- 252 kurser · 4710 quiz · 741 sidor

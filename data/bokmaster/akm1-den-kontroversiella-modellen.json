@@ -1130,6 +1130,384 @@
           "tips": "Samma mekanik bygger och river — vad betyder det när nätverket krymper?"
         }
       ]
+    },
+    {
+      "num": 16,
+      "minutes": 12,
+      "title": "V16 + V17: Produktlanseringar och avtal — händelsekatalysatorerna",
+      "intro": "Här gör AKM1 något som ingen seriös kvantmodell gör: poängsätter händelser som ännu inte har hänt. Produktlanseringar och avtal är framtidens intäkter i nutidens pressreleaser — och all forskning om effektiva marknader säger att marknaden redan räknat med dem. Vi poängsätter ändå. Strukturerat, med bevishierarki, och med basfrekvenser som broms.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V16 Produktlanseringar — definition och poängsättning. Variabeln mäter pipeline: den dokumenterade vägen från nuvarande produkttillgång till framtida intäkter. Tre bevislager. Leveranshistorik: har bolaget lanserat det det lovat, i tid, vid upprepade tillfällen — en lanseringsmaskin är ett mönster, inte ett löfte. Konkretion: finns namngivna produkter med datumerade planer (prenumerationsmodeller av ModiTaG-typ, regulatoriska godkännandevägar, byggstart, kliniska faser) — eller bara ordet pipeline i en presentation? Materialitet: vad motsvarar lanseringen i potential intäkt mot dagens bas? Trösklar: 0 poäng när pipelinen är tom, försenad eller när bolaget har dokumenterad historik av missade leveranser; 3 poäng för en trovärdig, daterad lansering inom tolv månader med osäker men rimlig storlek; 5 poäng när bolaget har upprepad leveranshistorik och en pipeline i flera steg — nästa lansering är då en upprepning av ett bevisat mönster, inte ett språng i mörkret."
+        },
+        {
+          "type": "text",
+          "content": "V17 Avtal och partnerskap — definition och poängsättning. Samma logik, annan bevishierarki, och hierarkin är allt. Från svagast till starkast: avsiktsförklaring (LOI) — en handskakning på papper, i princip alltid återkallbar; ramavtal — rätt att köpa, aldrig skyldighet; pilotprojekt — verklig användning i liten skala, bevis på intresse men inte på volym; binderat avtal — skyldighet att betala, med volymer, priser och straffsatser; kapitalförbindelse — parten tar ekonomisk risk själv (äger, finansierar, co-utvecklar). Trösklar: 0 poäng när portföljen består av pressreleaserade LOI utan värde i kronor och med tystnad som uppföljning; 3 poäng för pågående piloter med namngivna, respektabla parter och en trovärdig väg till binderade volymer; 5 poäng när binderade fleråriga avtal med namngivna kunder motsvarar en betydande andel av nästa års intäktsbas — och då ska avtalen gå att läsa: volym, pris, löptid, uppsägning."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger. Eventstudietraditionen är en av finansforskningens äldsta och starkaste: Fama, Fisher, Jensen och Roll (1969) visade i sin studie av aktiesplit att kurserna anpassar sig till ny information snabbt — fundamentet för effektiva marknader-hypotesen. Ball och Brown (1968) dokumenterade att marknaden börjar röra sig mot resultatnyheter redan månader före publiceringen, och efterföljande forskning om drift efter rapporter (bland annat Bernard och Thomas) visade att anpassningen är ofullständig men att den sker kring offentliga händelser. Översatt: marknaden förväntar katalysatorer innan de inträffar — köp ryktet, sälj nyheten är dokumenterat beteende, inte bara ett ordspråk. Och samtliga kvantmodeller är strikt bakåtblickande: de kan poängsätta vad som hänt, aldrig vad som kommer. AKM1:s katalysatorpoäng saknar därför akademisk motsvarighet helt — vilket vi säger rakt ut."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför — kontroversen i klartext. Invändningen: ni poängsätter spådomar. En produktlansering som inte hänt är en berättelse; ett LOI är värt vad pappret trycktes på; basfrekvensen säger att de flesta lanseringar misslyckas — i konsumtionsvaror citeras ofta att en stor majoritet av nya produkter inte når sina kommersiella mål, och i läkemedel når en låg ensiffrig andel av tidiga kandidater godkännande. Ni har byggt in systematisk överoptimism i modellen. Vårt svar: ett: vi skiljer beskrivning från prognos — V16 och V17 poängsätter bevisläget för leveransförmåga och avtalskvalitet, inte utfallet; en 5:a på V16 betyder att bolaget visat sig kunna leverera upprepade gånger, vilket är ett historiskt faktum, inte en spådom. Två: basfrekvenserna är just därför inbyggda som broms — lanseringspoäng kan aldrig komma ensamma till toppen; de tolkas med V01 (tillväxttrend), V12 (stabilitet) och marginal of safety. Tre: bevishierarkin i V17 gör skillnaden mellan pressrelease och kontrakt till en poängfråga — vilket är en mer systematisk behandling av nyheterna än de flesta privatpersoners. Den ärliga slutsatsen: katalysatorkategorin är modellens tydligaste pedagogiska val — vi bedömer framtid händelser med dokumentation i stället för att låtsas att de inte påverkar våra beslut. De gör det redan, för alla."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V16 + V17 — bevis, trösklar, mainstream\",\"rader\":[[\"Variabel\",\"Bevisfråga\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"V16 Produktlanseringar\",\"Kan bolaget leverera vad det lovar?\",\"Tom eller försenad pipeline, dokumenterad leveranssvikt\",\"Daterad lansering inom 12 månader\",\"Uprepad leveranshistorik + pipeline i flera steg\",\"Eventstudier (FFJR 1969, Ball-Brown 1968): marknaden prissätter katalysatorer i förväg — köp ryktet, sälj nyheten är dokumenterat\"],[\"V17 Avtal\",\"Är parten binderad?\",\"Pressreleasade LOI utan värde\",\"Piloter med namngivna parter\",\"Binderade fleråriga avtal med betydande andel av intäktsbasen\",\"Kvantmodeller är strikt bakåtblickande — framtida händelser kan inte faktoriseras\"],[\"Bromsen\",\"Basfrekvenser i poängen\",\"\",\"\",\"\",\"Lanseringsbasfrekvenser är dystra — katalysatorpoäng tolkas alltid med V01, V12 och marginalen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett avtal är värt exakt det som händer med dig om motparten bryter det. Bevishierarkin från avsiktsförklaring till binderat kontrakt är hela skillnaden mellan en berättelse och en intäktsström — och den skillnaden går att poängsätta utan spådom."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå igenom senaste halvårets pressreleaser för ett småbolag du följer. Sortera varje produkt- och avtalsnyhet enligt bevishierarkin: LOI, ramavtal, pilot, binderat avtal, kapitalförbindelse. Räkna hur många som är binderade. Sätt V16 och V17 — och jämför poängen med hur bolagets egen presentation beskriver samma händelser."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade den klassiska eventstudieforskningen (FFJR 1969, Ball-Brown 1968)?",
+          "alternativ": [
+            "Att marknaden alltid reagerar för långsamt på nyheter",
+            "Att kurserna anpassar sig till information i förväg och kring offentliga händelser — marknaden prissätter katalysatorer innan de inträffar",
+            "Att pressreleaser saknar pris påverkan",
+            "Att bara räntebeslut påverkar kurser"
+          ],
+          "ratt": 1,
+          "tips": "Vad innebär köp ryktet, sälj nyheten i termer av informationsanpassning?"
+        },
+        {
+          "q": "Vilken plats i bevishierarkin är starkast för V17?",
+          "alternativ": [
+            "Avsiktsförklaring (LOI) från ett stort bolag",
+            "Pressrelease om ett samarbete",
+            "Binderat flerårigt avtal med volymer, priser och uppsägningsvillkor",
+            "Ett omnämnande i styrelsens rapport"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med motparten ekonomiskt om den bryter åtagandet?"
+        },
+        {
+          "q": "Hur motiverar AKM1 att en 5:a på V16 inte är en spådom?",
+          "alternativ": [
+            "För att modellen har en hemlig prognosmodell",
+            "För att 5:an betyder upprepad, dokumenterad leveranshistorik — ett historiskt faktum — inte en förutsägelse av utfallet",
+            "För att alla lanseringar lyckas enligt branschdata",
+            "För att katalysatorer inte påverkar kursen"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden mellan att beskriva ett bevisat mönster och att förutsäga en enskild händelse?"
+        }
+      ]
+    },
+    {
+      "num": 17,
+      "minutes": 12,
+      "title": "V18: Regulatoriska katalysatorer — när staten talar",
+      "intro": "Ingen katalysator flyttar värde så brutalt som ett myndighetsbeslut: ett godkännande, en licens, en skattesänkning, ett förbud. AKM1 poängsätter den mekanismen — med respekt för att utfallen är binära och att branschens basfrekvenser är obevekliga. Här gäller en annan spelregel än i övriga modellen: katalysatorpoängen får aldrig avgöra portföljens storlek.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V18 Regulatoriska katalysatorer — definition och poängsättning. Tre dimensioner. Riktning: är den väntande regleringen för bolaget (godkännande, licens, monopolisering, subvention, liberalisering), emot det (förbud, pristak, skatt, miljaukrav som träffar kärnan) eller neutral. Datum: finns ett konkret beslutsdatum — en myndighetskalender, ett godkännandemål, en auktion, ett ikraftträdande — eller bara en politisk vind? Materialitet: vad motsvarar utfallet i intäkt eller kostnad mot dagens bas. Trösklar: 0 poäng när en hotfull reglering närmar sig med godtagbar sannolikhet och träffar kärnintäkterna — oavsett hur fint bolaget är i övrigt, V18 är en varningsflagga; 3 poäng vid neutral bild eller osäker, avlägsen påverkan; 5 poäng vid daterat beslut med gynnsam basfrekvens och stor materialitet — exempelvis en godkänd ansökan med known tidslinje, en tilldelad licens med exklusivitet, en liberalisering som öppnar en markerad marknad."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger. Mainstream-finansen behandlar reglering nästan uteslutande som risk — riskavsnittet i varje prospekt och årsredovisning listar regulatorisk exponering, men ingen faktormodell har en variabel för gynnsamma myndighetsbeslut. Eventlitteraturen om läkemedelsgodkännanden visar ett mönster som är obehagligt för den som tror att beslutsdagen är vinstdagen: kurserna bygger upp positioner månader före beslut (marknaden förväntar sig godkännande), och vid själva godkännandet är effekten ofta redan prissatt — ibland negativ, sälj nyheten. Basfrekvenserna är dokumenterade brutala: i läkemedelsbranschens egna analysdata når historiskt sett en låg ensiffrig andel av projekt som går in i fas I slutligen godkännande; sannolikheten stiger markant först i sena faser. Alltså har V18 en inbyggd sannolikhetsvikts-logik: poängen ska spegla fas, inte förhoppning."
+        },
+        {
+          "type": "text",
+          "content": "Var AKM1 avviker och varför — kontroversen i klartext. Invändningen: detta är hasardspel med akademisk vocabulary. Ett binärt utfall — godkänt eller inte — kan inte poängsättas på en femgradig skala utan att lura eleven att kontroll finns där slumpen styr; och den som väljer bolag efter väntande myndighetsbeslut har bytt fundamental analys mot lotteri. Vårt svar har fyra ben. Ett: skalan poängsätter inte utfallet utan beslutslandskapet — riktning, datum, materialitet, fas; det är information som finns i dag och som systematiskt ignoreras av privatpersoner. Två: basfrekvenser är obligatoriska bilaga — en 5:a på ett fas I-bolag är en felaktig poäng oavsett hur fint beslutet är daterat; fasens historiska godkännandegrad sätter taket. Tre: spelregeln om positionering — i AKM1-ekosystemet får V18 aldrig motivera en portföljvikt som kräver att binären faller rätt; katalysatorn är en timing- och strukturvariabel, och den som vill förstå hur stora positioner som är försvarbara hänvisas till positionswiktnings- och sannolikhetsarbetet i ekosystemets övriga kurser. Fyra: reglering är också moat — banker, spelbolag, teleoperatörer och apotek skyddas av licenssystem; den som vägrar analysera regulatoriska villkor förstår inte hälften av många bolags affärsmodeller."
+        },
+        {
+          "type": "text",
+          "content": "När invändaren har rätt — och gränsdragningen. Om en analys skulle visa att hela investeringsfallet vilar på ett enda myndighetsbeslut är det inte en AKM1-analys — det är ett vad, och modellen ska ha sagt ifrån genom att övriga 18 variabler inte bar. V18:s funktion är att synliggöra och tidsätta mekanismer som ändå påverkar bilden, inte att ersätta fundamentals. En andra ärlig punkt: politisk risk är svårare än myndighetsrisk — en myndighet följer process och kalender, en regering kan vända efter ett val; poängsätt politiska katalysatorer därför alltid med en extrautfallsruta (vad händer om beslutet dröjer två år?) och låt den ruton påverka marginalen av safety — inte poängen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V18 Regulatoriska katalysatorer — dimensioner, trösklar, mainstream\",\"rader\":[[\"Dimension\",\"Fråga\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"Riktning\",\"Hjälper eller skadar regleringen bolaget?\",\"Hotfull, träffar kärnan\",\"Neutral eller osäker\",\"Gynnsam, daterad, material\",\"Reglering behandlas som risk i prospekt — ingen faktormodell har en upside-variabel för myndighetsbeslut\"],[\"Basfrekvens\",\"Vad säger fasens historiska godkännandegrad?\",\"Tidig fas med hög risk\",\"\",\"Sen fas eller redan tilldelad licens\",\"Läkemedelsdata: låg ensiffrig andel av fas I-projekt når godkännande — sannolikheten stiger först i sena faser\"],[\"Prissättning\",\"Är beslutet redan förväntat?\",\"\",\"\",\"\",\"Eventlitteratur: kurser bygger upp före beslut; vid godkännande ofta redan prissatt — sälj nyheten\"],[\"Spelregel\",\"Får V18 avgöra portföljvikt?\",\"Nej — aldrig\",\"Nej\",\"Nej\",\"Binära utfall kräver sannolikhetsvikta positioner, inte övertygelse\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett myndighetsbeslut är den enda katalysator där motparten har obligatoriskt tålamod: processen följer kalender, inte marknadsvillkor. Det som går att poängsätta är beslutslandskapet — riktning, datum, fas, materialitet. Utfallet tillhör slumpen, och ärligheten är att veta skillnaden."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera ett bolag med väntande regulatorisk händelse — ett godkännande, en licensauktion, en skatteändring. Skriv riktning, datum, materialitet och fasens basfrekvens. Sätt V18-poäng. Avsluta med gränsfrågan: hur stor del av investeringsfallet vilar på att binären faller rätt — och är den andelen acceptabel för dig?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger spelregeln för V18 i AKM1?",
+          "alternativ": [
+            "Att katalysatorpoängen alltid ska maximera portföljvikten",
+            "Att V18 aldrig får motivera en portföljvikt som kräver att ett binärt utfall faller rätt",
+            "Att alla regulatoriska beslut är neutrala",
+            "Att politisk risk kan ignoreras"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med portföljen om myndigheten säger nej?"
+        },
+        {
+          "q": "Vad visar eventlitteraturen om läkemedelsgodkännanden?",
+          "alternativ": [
+            "Att kurserna alltid stiger vid godkännande",
+            "Att kurser ofta byggt upp positioner i förväg och att själva godkännandet kan bli sälj nyheten",
+            "Att beslutsdatum aldrig går att känna till",
+            "Att basfrekvensen för godkännande är över 90 procent i alla faser"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en förväntan som redan är prissatt när den infrias?"
+        },
+        {
+          "q": "Varför kan regulatoriska villkor också vara en moat?",
+          "alternativ": [
+            "För att alla regleringar gynnar bolagen",
+            "För att licenssystem — banker, spel, tele, apotek — skapar inträdesbarriärer som skyddar befintliga aktörer",
+            "För att myndigheter alltid delar ut monopol gratis",
+            "För att reglering inte kostar något"
+          ],
+          "ratt": 1,
+          "tips": "Vad krävs av en ny konkurrent för att få gå med i en reglerad bransch?"
+        }
+      ]
+    },
+    {
+      "num": 18,
+      "minutes": 12,
+      "title": "V19 + V20: Emission-risk och återköp — kapitalets två vägar",
+      "intro": "Risk-kategorin har två variabler som är varandras spegelbilder: V19 straffar bolaget som täcker sina hål med dina aktier, V20 belönar bolaget som köper tillbaka dem billigt. Här står AKM1 oväntat stadigt i en invändares värld: forskningen om emissioner är bland de starkaste i corporate finance. Om återköp är den bilder motsatta — och det ska vi också säga.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "V19 Kapitalförbränning och emission-risk — definition och poängsättning. Tre mått. Kassförbränning (burn): kassaflödet från löpande verksamhet minus investeringar, per kvartal eller år — negativt tal är förbränning. Runway: kassa dividerat med månadsförbränning — hur många månader bolaget lever på nuvarande bana. Utspädningshistorik: antalet nya aktier emitterade de senaste tre åren, och till vilket pris i förhållande till dåvarande kurs — emissioner med kraftig rabatt (som svenska företrädesemissioner ofta har) flyttar värde från gamla till nya ägare. Trösklar: 0 poäng när runway understiger tolv månader utan säkrad finansiering, eller när bolaget har upprepad emissionsshistorik som späder ut ägarna till lägre och lägre substans per aktie; 3 poäng vid tolv till tjugofyra månaders runway eller identifierat finansieringsbehov med trovärdig väg; 5 poäng när bolaget är självbärande — positivt kassaflöde från verksamheten — och inte har spätt ut ägarna på tre år. Punkten om varför V19 är en egen riskvariabel och inte bara en fotnot i V10: skuld kan förhandlas om, men utspädning är permanent — en nyemission kan aldrig lämnas tillbaka, och därför är kapitalförbränningens risk till sin natur annorlunda än balansräkningens."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger — och här är marken fast. Loughran och Ritter (1995) dokumenterade att bolag som gör nya aktieemissioner historiskt underpresterat kraftigt de följande fem åren — kapitalmarknaden visar sig systematiskt dyr för köparen. Baker och Wurgler (2002) visade att bolag emitterar efter starka kurser — ledningar time:ar marknaden med framgång, på aktieägarnas bekostnad. Pontiff och Woodgate (2008) fann att förändringen i antal aktier i sig förutsäger avkastning: nettoutspädande bolag underpresterar, nättoåterköpande överpresterar. Detta är en av de mest replikerade bilderna i corporate finance, och den ger AKM1:s V19 ett empiriskt stöd som få av modellens övriga variabler har. Uppriktigt sagt: när en CFA frågar vilken AKM1-variabel som har starkast forskningsstöd är svaret V19."
+        },
+        {
+          "type": "text",
+          "content": "V20 Återköp av egna aktier — definition och poängsättning. AKM1 poängsätter inte återköpsprogram — det poängsätter förändringen i antalet aktier, det enda talet som inte går att snurra. Ett program på en miljard är en pressrelease; aktieantalet minus fem procent på tre år är en mekanik. Trösklar: 0 poäng när aktieantalet växer — optioner och programposter täcker inte utspädningen, eller när återköp görs med belåning som riskerar balansräkningen; 3 poäng när återköp neutraliserar utspädningen — aktieantalet plant; 5 poäng när aktieantalet varaktigt minskar, återköpen sker under bolagets egen uppskattning av verkligt värde (inte vilket pris som helst — priset betyder allt), och balansräkningen inte offrats för att finansiera dem. Kopplingen till V09 ska nämnas: återköp krymper nämnaren i ROE — en ROE-förbättring via återköp är mekanik, inte förbättrad affär; DuPont-benet avslöjar det."
+        },
+        {
+          "type": "text",
+          "content": "Vad mainstream säger om återköp — och här är bevisläget blandat, vilket kursen ska återge rakt av. Grullon och Michaely (2002) fann att återköp historiskt förknippats med positiv framtida avkastning och att marknaden i genomsnitt tolkat dem som positiv signal om värdering. Men Lazonicks uppmärksammade artikel Profits Without Prosperity (2014) argumenterade att återköp i stor skala går ut över långsiktig investering och löner — en kritik som sträcker sig in i den politiska debatten om finansialisering. Senare forskning har nyanserat: återköp som sker ovanför verkligt värde överför värde från kvarvarande ägare till säljare; återköp som sker under det omvända; och ledningar med aktieprogram incitaments­styrda av resultat per aktie kan köpa tillbaka aktier vid vilket pris som helst. Sammanfattningen som är AKM1:s: mekaniken är neutral, priset och finansieringen avgör — därför poängsätter V20 nettominskning med prisdisciplin, inte ideologi åt något håll."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V19 + V20 — mått, trösklar, mainstream\",\"rader\":[[\"Variabel\",\"Mått\",\"0 poäng\",\"3 poäng\",\"5 poäng\",\"Vad mainstream säger\"],[\"V19 Runway\",\"Kassa / månadsförbränning; utspädningshistorik\",\"Under 12 månader eller upprepad utspädning\",\"12–24 månader eller identifierat behov\",\"Självbärande, ingen utspädning på 3 år\",\"Loughran-Ritter 1995: emissioner följs av underprestanda; Baker-Wurgler 2002: bolag emitterar efter starka kurser; Pontiff-Woodgate 2008: utspädning förutsäger underprestanda\"],[\"V20 Nettoköp\",\"Förändring i antal aktier, 3 år\",\"Antalet växer (optioner täcks inte)\",\"Plant antal\",\"Varaktig minskning, köpt under verkligt värde, utan att balansräkningen offras\",\"Grullon-Michaely 2002: positiv signal i genomsnitt — men Lazonick 2014 och senare forskning: priset och finansieringen avgör om värde skapas eller flyttas\"],[\"Koppling\",\"V19 är permanent till skillnad från skuld; V20 påverkar ROE-mekaniken\",\"\",\"\",\"\",\"Utspädning kan aldrig lämnas tillbaka — därför egen riskvariabel\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Två knappar styr din andel av framtida vinster: emission och återköp. Den ena kan aldrig ångras, den andra bara är klok om priset är rätt. En aktieägares mest tysta fiende och mest tyste vän heter samma sak: aktieantalet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett småbolag och ett moget bolag. För småbolaget: beräkna runway och slå upp emissionerna tre år bakåt — till vilket pris emitterades aktierna i förhållande till dåvarande kurs? För det mogna: hur har aktieantalet utvecklats tre år, och till vilka genomsnittskurser gjordes återköpen? Sätt V19 och V20 för båda — och avgör vem som jobbat för dig och emot dig."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken AKM1-variabel har starkast empiriskt forskningsstöd enligt kursen?",
+          "alternativ": [
+            "V15 Nätverkseffekter",
+            "V19 Kapitalförbränning och emission-risk — Loughran-Ritter, Baker-Wurgler och Pontiff-Woodgate ger robust stöd",
+            "V14 Varumärke och kundlojalitet",
+            "V03 Intäktsdiversifiering"
+          ],
+          "ratt": 1,
+          "tips": "Två av studierna handlar om vad som händer efter nyemissioner, den tredje om aktieantalets förändring."
+        },
+        {
+          "q": "Varför poängsätter V20 aktieantalets förändring i stället för återköpsprogrammets storlek?",
+          "alternativ": [
+            "För att program alltid är värdelösa",
+            "För att programmet är en pressrelease medan förändringen i antal aktier är mekanik — det enda talet som inte går att snurra",
+            "För att IFRS förbjuder redovisning av program",
+            "För att antalet aktier inte kan mätas"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden mellan en avsikt och ett utfall?"
+        },
+        {
+          "q": "Vad är den ärliga redovisningen av återköpsforskningen?",
+          "alternativ": [
+            "Att alla återköp skapar värde",
+            "Att bevisläget är blandat: genomsnittligen positiv signal, men värdet beror på priset som betalas och hur återköpen finansieras",
+            "Att Lazonick bevisade att alla återköp är värdeförstörande",
+            "Att forskning saknas helt på området"
+          ],
+          "ratt": 1,
+          "tips": "Överföringen av värde beror på en enda variabel — vilken?"
+        }
+      ]
+    },
+    {
+      "num": 19,
+      "minutes": 12,
+      "title": "Förbered dig på motstånd — invändningarna och svaren",
+      "intro": "Du har nu alla tjugo variabler, alla trösklar och alla avvikelser i ryggen. Det som återstår är inte kunskap utan ståndpunkt — för den som använder AKM1 offentligt kommer att möta motstånd, och motståndet kommer att vara välinformerat. Detta kapittel ger dig de fem vanligaste invändningarna, våra svar, och — viktigast — listan över där invändarna har rätt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fem invändningarna, formulerade så starkt som en motståndare förmår. Ett — data mining: ni har plockat tjugo variabler och sju kategorier utan backtest; vad som helst kan byggas så, och utan historisk testning finns det ingen anledning att tro att hög AKM1-poäng hänger samman med avkastning. Två — subjektivitet: moat- och katalysatorpoängen är åsikter med sifferformat; två analytiker poängsätter samma bolag olika och ingen av dem kan bevisa fel. Tre — vikterna: varför fem poäng per variabel och inte fyra eller sju? Ingen regression har valt era vikter, och ändå presenteras summan av hundra som om den vore meningsfull. Fyra — verklighetsfrågor: modellen säger inget om kostnader, likviditet, skatt eller positionering — allt som avgör en verklig avkastning. Fem — spådomen: katalysatorvariablerna poängsätter händelser som inte hänt, vilket är analiz av önskade utfall, inte analys. Om du kan höra dessa fem utan att blinka är du redo.",
+          "content": ""
+        },
+        {
+          "type": "text",
+          "content": "Svaren — och bekännelsen först. AKM1 är ett pedagogiskt struktureringsverktyg som tvingar dig att tiga på allt: tillväxt, värdering, lönsamhet, stabilitet, moat, katalysator och risk i en och samma genomgång. Det är dess existensberättigande. Det är inte en bevisad alfa-källa, och vi gör inget anspråk på att hög AKM1-poäng förutsäger överavkastning — vi har ingen backtest, och en backtest på poängsatta bedömningar vore dessutom mest ett mått på bedömarnas bias. Mot invändning två och tre: subjektiviteten och vikterna är verkliga, och motgiften är disciplin, inte förnekande — dokumenterade trösklar, motivering per poäng, sensitivitetstest, och fem-poäng-taket som ser till att ingen åsikt kan bära en analys ensam. Mot invändning fyra: korrekt — AKM1 är fundamentalvågen, inte hela ekosystemet; kostnader, likviditet och positionering hör hemma i ekosystemets övriga delar, och prisvågen AK1TS tar timingen. Mot invändning fem: vi poängsätter dokumenterade bevis för leveransförmåga och avtalskvalitet med basfrekvenser som broms — se kapitel sexton och sjutton. Notera mönstret: varje svar börjar med att erkänna det som är sant i invändningen. Det är inte svaghet. Det är den enda hållbara retoriken för en kontroversiell modell.",
+          "content": ""
+        },
+        {
+          "type": "text",
+          "content": "Där invändarna har rätt — den listan du ska kunna rabbla. De har rätt om att modellen saknar empirisk validering. De har rätt om att poängsättning innehåller frihetsgrader där bias bor. De har rätt om att katalysatorkategorin är den akademiskt svagaste. De har rätt om att en modell utan kostnads- och positionsperspektiv inte är en strategi. Och de har rätt om att vissa variabler — V19 starkast, V07–V09 med stöd från kvalitetsfaktorerna — står fastare än andra, vilket betyder att modellen inte är jämnt bevisad ens inbördes. Det som återstår när allt detta erkänts är modellens kärna: strukturerad, dokumenterad, granskningsbar helhetsbedömning i utbildningssyfte — med marginal of safety som prissätter allt. Den som vill veta vad som skulle få oss att överge modellen har rätt att få ett falsifierbarhetsvillkor, och här är det: om AKM1-poängsatta helhetsbedömningar systematiskt leder till sämre beslut än okvalificerad indexnära förvaltning efter kostnader — mätt över långa perioder och många beslut — då är modellen felkalibrerad som utbildningsverktyg och ska skrivas om. Vi säger det eftersom vi menar det.",
+          "content": ""
+        },
+        {
+          "type": "text",
+          "content": "Övningen som gör dig bättre än motståndaren: tänk som en short seller. En short sellers affärsidé är att hitta det du missat — och AKM1-poängen är som gjord för att attackeras: var är tröskeln satt för snällt, var bevisar ett LOI ingenting, var gömmer sig en emission bakom en stabil kassa? Gå igenom din egen poängsättning med uppgiften att förstöra den: hitta för varje 4:a och 5:a det faktum som borde ha dragit ner den. Det du inte kan förstöra är trovärdigt; det du kan förstöra var önsketänkande. Fördjupningen finns i ekosystemets kurs om short sellers — sök via widgeten /kurser-finns — och den kursen är i praktiken AKM1:s motvikt: samma verktyg, omvänd mandate.",
+          "content": ""
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Invändning → svar → där invändaren har rätt\",\"rader\":[[\"Invändning\",\"Vem säger den\",\"AKM1:s svar\",\"Där invändaren har rätt\"],[\"Ingen backtest — data mining\",\"Kvantiteter, akademiker\",\"Modellen är ett pedagogiskt struktureringsverktyg — inget alfa-anspråk; backtest av bedömningar mäter mest bias\",\"Den som söker bevisad avkastning ska inte leta här\"],[\"Subjektiva poäng\",\"CFA, redovisningsforskare\",\"Dokumenterade trösklar, motivering per poäng, sensitivitetstest, 5-poängstak\",\"Frihetsgraderna är verkliga — bias bor där\"],[\"Godtyckliga vikter\",\"Faktormodell-traditionen\",\"Transparent matris som varje elev kan granska; optimerade vikter skulle ge skenprecision (överanpassning)\",\"Likaviktning är också ett val utan datastöd\"],[\"Katalysatorer är spådom\",\"Praktiskt sinnade akademiker\",\"Bevishierarki, basfrekvenser, spelregeln att V18 aldrig får avgöra portföljvikt\",\"Kategorin är akademiskt sett den svagaste i modellen\"],[\"Inga kostnader, ingen positionering\",\"Alla praktiker\",\"AKM1 är fundamentalvågen — kostnader och positionering hör till ekosystemets övriga delar\",\"En modell utan kostnadsperspektiv är ingen strategi\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En kontroversiell modell försvaras inte genom att förneka kontroversen — den försvaras genom att kunna sina svagheter bättre än motståndaren och sina styrkor utan att överdriva dem. Den som erkänner allt och ändå står kvar är den som är klar att använda verktyget.",
+          "content": ""
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt 90-sekunders försvarstal för AKM1 inför en skeptisk CFA. Struktur: bekännelsen (vad modellen inte är), skillnaden i syfte (faktorförklaring mot helhetsbedömning), beviskartan (vilka variabler som står starkt och vilka som inte gör det), och avslutningen (marginal of safety prissätter allt). Läs upp det högt. Seriusitet kontrolleras av hur många invändare du övertygar — eller åtminstone nyfiken gör.",
+          "content": ""
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den korrekta första intervallen i ett AKM1-försvar?",
+          "alternativ": [
+            "Hävda att modellen slagit index i alla perioder",
+            "Bekänna vad modellen inte är — ett pedagogiskt struktureringsverktyg, inte en bevisad alfa-källa",
+            "Angripa CFA-utbildningen som föråldrad",
+            "Presentera en hemlig backtest"
+          ],
+          "ratt": 1,
+          "tips": "Kapitlet säger att varje svar börjar med att erkänna det som är sant i invändningen.",
+          "content": ""
+        },
+        {
+          "q": "Vilket falsifierbarhetsvillkor anger kursen för AKM1?",
+          "alternativ": [
+            "Inget — modellen är en trosfråga",
+            "Om AKM1-poängsatta helhetsbedömningar systematiskt leder till sämre beslut än indexnära förvaltning efter kostnader över långa perioder är modellen felkalibrerad och ska skrivas om",
+            "Om en enda aktie med hög poäng faller",
+            "Om akademiker publicerar kritik"
+          ],
+          "ratt": 1,
+          "tips": "Vad skulle kunna visa att modellen är fel som utbildningsverktyg — mätt över vad?",
+          "content": ""
+        },
+        {
+          "q": "Vad är syftet med short seller-övningen i kapitlet?",
+          "alternativ": [
+            "Att hitta bolag att shortsälja",
+            "Att attackera sin egen poängsättning — det du inte kan förstöra är trovärdigt, det du kan förstöra var önsketänkande",
+            "Att lära sig teknisk analys",
+            "Att undvika all kritik"
+          ],
+          "ratt": 1,
+          "tips": "Vilken mandate har en short seller — och vad blir konsekvensen om du tillfälligt får den?",
+          "content": ""
+        }
+      ]
+    },
+    {
+      "num": 20,
+      "minutes": 12,
+      "title": "AKM1 × AK1TS — fundamentalvåg plus prisvåg = helhetsbilden",
+      "intro": "En fundamentalbild utan prisbeteende är halvfärdig, och en prisanalys utan fundament är statistik utan själ. AKM1 är ekosystemets fundamentalvåg; AK1TS är dess prisvåg. Detta sista kapitel visar hur vågorna läggs samman till helhetsbilden — och varför marginal of safety, principen utan V-nummer, får sista ordet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Två vågor, två frågor. Fundamentalvågen — AKM1:s tjugo variabler — besvarar frågan vad bolaget är: tillväxt, värdering, lönsamhet, stabilitet, moat, katalysator, risk, sammanfattat i högst hundra poäng med dokumentation bakom vartenda steg. Prisvågen — AK1TS — besvarar frågan hur aktien beter sig: trend och momentum, volym och volatilitet, stöd- och motståndsnivåer, marknadens psykologi ristad i prisets historia. Vågorna är komplementära av samma skäl som karta och väderlek: den bästa kartan säger inte när det är säkert att gå. Ett fundamentalt superbolag i en fallande trend kan vara en dålig aktie just nu; en vacker prisbild utan fundament är en satsning på att någon annan betalar mer — dans på statistik. AK1A:s helhetsbild kräver båda, och den kräver dem åtskilda.",
+          "content": ""
+        },
+        {
+          "type": "text",
+          "content": "Syntesens arbetsgång i fyra steg. Ett: fundamentalvågen först — AKM1-poängen byggs med trösklar och dokumentation; poängen utan motivering är ogiltig. Två: marginalen prissätter — höga poäng utan marginal of safety är ingen köpande tes utan en bevakningslista; verkligt värde uppskattas och avståndet mellan pris och värde bestäms innan tidningen läses. Tre: prisvågen bekräftar — AK1TS avgör om marknadens beteende stödjer tesen: är trenden vänd, är volymen med, ligger priset vid en nivå där risk är liten i förhållande till belöning? Fundamentalvågen säger vad, prisvågen säger när — och närmar är ingen trivialitet: rätt bolag vid fel tidpunkt kan sönderköras psykiskt länge innan tesen infrias. Fyra: helheten dokumenteras — poäng, värdeuppskattning, marginal, prisbild och vilka observationer som skulle förändra respektive våg. Regeln som aldrig får brytas: vågarna får inte skriva över varandra. En stigande trend kan aldrig höja en fundamentalpoäng, och en hög fundamentalpoäng kan aldrig rättfärdiga att köpa in sig i en sönderfallande prisstruktur utan medveten riskkalkyl.",
+          "content": ""
+        },
+        {
+          "type": "text",
+          "content": "Marginal of safety — sista ordet, som vanligt. Grahams princip från kapitel tjugo i The Intelligent Investor är ekosystemets yttersta filter: skillnaden mellan pris och verkligt värde är det som skyddar dig när du har fel — och du kommer att ha fel. I AKM1 × AK1TS-syntesen får den tre konkreta roller. Prisrollen: marginalen avgör om en hög poäng blir en kandidat eller en bevakningslista. Psykologiska rollen: marginalen är det som gör att du orkar hålla en position genom prisvågens turbulens — den som köpte med marginal har ett argument, den som köpte på berättelse har bara hoppet. Och disciplinrollen: marginalen hindrar den vanligaste av alla fel — att låta en vacker fundamentalbild eller en vacker graf förmå en att betala vad som helst. Poäng är en övertygelse med måttband. Priset är porten. Kommer du inte igenom porten spelar måttbandet ingen roll.",
+          "content": ""
+        },
+        {
+          "type": "text",
+          "content": "Avslutningen — vad du nu har, och vad du inte har. Du har ett strukturerat sätt att tvinga dig själv att tiga på ett bolag i tjugo dimensioner, med trösklar som går att granska, en beviskarta som talar om var marken är fast (V19, lönsamhetsblocket) och var den är tunn (katalysatorerna, nätverkseffekterna), ett försvar mot de fem vanligaste invändningarna och en syntes med prisvågen som gör helheten större än delarna. Du har inte en bevisad alfa-källa, ingen garanti och ingen ersättning för omdöme — bara ett verktyg som gör omdömet synligt, dokumenterat och angripbart. Nästa steg i ekosystemet: fördjupa dig i AK1TS för att behärska prisvågen på djupet, och gå short seller-kursen för att lära dig attackera det du byggt — båda når du via widgeten /kurser-finns. Den som kan bygga tesen, prissätta den, tajma den och sedan försöka förstöra den — den eleven har fått allt den här kursen kan ge.",
+          "content": ""
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Syntesen i fyra steg — fundamentalvåg × prisvåg\",\"rader\":[[\"Steg\",\"Våg\",\"Fråga\",\"Verktyg\",\"Resultat\"],[\"1\",\"Fundamentalvågen (AKM1)\",\"Vad är bolaget?\",\"20 variabler, 0–5 poäng, max 100, dokumenterade trösklar\",\"Fundamentalprofil med beviskraft\"],[\"2\",\"Principen\",\"Vad är det värt — och vad kostar det?\",\"Verkligt värde + marginal of safety\",\"Kandidat eller bevakningslista\"],[\"3\",\"Prisvågen (AK1TS)\",\"När är läget rätt?\",\"Trend, momentum, volym, nivåer\",\"Bekräftelse eller väntan\"],[\"4\",\"Helheten\",\"Vad skulle förändra bilden?\",\"Dokumenterade förändringspunkter per våg\",\"En tes som kan granskas — och överges\"]]"
+        },
+        {
+          "type": "insikt",
+          "content": "Fundamentalvågen säger vad, prisvågen säger när, marginalen säger om. Tre frågor, tre verktyg, en helhetsbild — och den som hoppar över den tredje frågan har byggt ett slott utan att fråga vad marken kostar.",
+          "content": ""
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din första fullständiga helhetsbild: välj ett bolag, poängsätt alla tjugo variabler med motivering, uppskatta ett verkligt värde med en marginal som motiveras, läs av prisvågen hos AK1TS och skriv de tre observationer som skulle förändra din tes — en fundamentalt, en prisligt, en tredje som gäller hela tesen. Spara dokumentet. Om ett år jämför du det med vad som hände. Det är så ett ekosystem lär.",
+          "content": ""
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken fråga besvarar prisvågen (AK1TS) i syntesen?",
+          "alternativ": [
+            "Vad bolaget är värt fundamentalt",
+            "Hur aktien beter sig — trend, momentum, volym, nivåer — alltså när läget är rätt",
+            "Hur många anstälda bolaget har",
+            "Vilken viktmatrisen ska ha"
+          ],
+          "ratt": 1,
+          "tips": "Fundamentalvågen säger vad — vad blir den naturliga komplementfrågan?"
+        },
+        {
+          "q": "Vad är regeln om vågorna i syntesen?",
+          "alternativ": [
+            "Att de får skriva över varandra vid osäkerhet",
+            "Att de aldrig får skriva över varandra — en trend kan inte höja en fundamentalpoäng och en poäng kan inte rättfärdiga att köpa i en sönderfallande prisstruktur utan medveten riskkalkyl",
+            "Att prisvågen alltid vinner",
+            "Att fundamentalvågen bara gäller banker"
+          ],
+          "ratt": 1,
+          "tips": "Två oberoende beviskedjor — vad händer med dem om de får skriva över varandra?"
+        },
+        {
+          "q": "Vilken tre konkreta roller har marginal of safety i syntesen?",
+          "alternativ": [
+            "Prisrollen (kandidat eller bevakningslista), den psykologiska rollen (uthålligheten) och disciplinrollen (hindrar att vackra bilder förmår dig att betala vad som helst)",
+            "Teknisk roll, skatterättslig roll och politisk roll",
+            "Den används bara för banker och fastighetsbolag",
+            "Ingen — marginalen slopas i syntesen"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlet ger den tre roller — den första handlar om priset, den andra om dig, den tredje om frestelsen."
+        }
+      ]
     }
   ]
 }

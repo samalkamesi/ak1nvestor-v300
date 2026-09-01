@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { RefreshCw, Plus, Trash2 } from "lucide-react";
+import { VagSkattning } from "@/components/ak1a/vag-skattning";
 
 type Medlem = { id: string; email: string; name: string | null; member_type: string };
 type Portfolj = { id: string; name: string; total_value: number; cash_position: number; holdings: any[] };
@@ -533,6 +534,7 @@ export function PortfolioSystem() {
                               </div>
                             )}
                             <p className="mt-1">Vågor: {Object.values(ih.analys.vager).join(" → ")}</p>
+                            <VagSkattning ticker={ih.ticker} motorSvar={ih.analys.vager?.kort} />
                             <p className="mt-1 italic">{ih.analys.notering}</p>
                           </div>
                         ) : (

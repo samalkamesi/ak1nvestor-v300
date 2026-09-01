@@ -12,26 +12,106 @@
   "learn": "Efter kursen kan du: konstruera och läsa stång- och candlestickdiagram med rätt skala per tidshorisont; identifiera trender, stöd/motstånd samt reversal- och fortsättningsmönster med mått och bekräftelsekrav; använda RSI, stokastik, MACD och ADX i rätt marknadsregim; räkna Elliott-vågor enligt de tre reglerna och arbeta med Fibonacci-retracements, extensions och tidszoner; läsa intermarket-kedjan dollar–råvaror–räntor–aktier, följa sektorsrotation och tolka OBV; samt bygga ett handelssystem med Murphy-klassad pengarhantering — allt mappat mot AK1TS fem horisonter, fem teorier och fyra dimensioner.",
   "why": "Murphys bok är den mest sammankopplade källan till hela AK1TS-ekosystemet: Elliott, Fibonacci, cykler och volym är bokstavligen fyra av de fem AK1TS-teorierna, och bokens genomgående trådar — trend, pris, tid och brytpunkt — är de fyra dimensionernas ursprung. Ingen annan bok täcker så många av matrisens 25 celler i ett enda verk, och ingen författare förklarar tydligare varför samma principer gäller från intradag till decennier.",
   "chapters_list": [
-    { "num": 1, "title": "Filosofin — marknadsaktionen avslöjar allt", "minutes": 11 },
-    { "num": 2, "title": "Dow-teorin — teknikens urfader", "minutes": 11 },
-    { "num": 3, "title": "Chartkonstruktion — stänger, candles och skalor", "minutes": 11 },
-    { "num": 4, "title": "Trender, stöd och motstånd", "minutes": 11 },
-    { "num": 5, "title": "Volym och open interest — bränslet i prisrörelsen", "minutes": 11 },
-    { "num": 6, "title": "Huvud-och-skuldra — kungamönstret", "minutes": 11 },
-    { "num": 7, "title": "Dubbeltoppar, dubbelbottnar och V-svängar", "minutes": 11 },
-    { "num": 8, "title": "Fortsättningsmönster — trianglar, flaggor och kilar", "minutes": 11 },
-    { "num": 9, "title": "Gap — fönster i priset", "minutes": 11 },
-    { "num": 10, "title": "Trendlinjer, kanaler och procentuella retracements", "minutes": 11 },
-    { "num": 11, "title": "Moving averages — trendens puls", "minutes": 11 },
-    { "num": 12, "title": "Momentum och RSI — oscillatorernas klassiker", "minutes": 11 },
-    { "num": 13, "title": "Stokastik, MACD och ADX — verktygslådan bredvid", "minutes": 11 },
-    { "num": 14, "title": "Cykler — marknadens hjärtslag", "minutes": 11 },
-    { "num": 15, "title": "Elliott-vågläran — fem vågor framåt, tre tillbaka", "minutes": 11 },
-    { "num": 16, "title": "Fibonacci — marknadens dolda matematik", "minutes": 11 },
-    { "num": 17, "title": "Intermarket-analys — alla marknader hänger ihop", "minutes": 11 },
-    { "num": 18, "title": "Sektorsrotation och relative strength", "minutes": 11 },
-    { "num": 19, "title": "Money flow — OBV och volymens vittnesmål", "minutes": 11 },
-    { "num": 20, "title": "Handelssystem, risk och AK1TS-integrationen", "minutes": 11 }
+    {
+      "num": 1,
+      "title": "Filosofin — marknadsaktionen avslöjar allt",
+      "minutes": 11
+    },
+    {
+      "num": 2,
+      "title": "Dow-teorin — teknikens urfader",
+      "minutes": 11
+    },
+    {
+      "num": 3,
+      "title": "Chartkonstruktion — stänger, candles och skalor",
+      "minutes": 11
+    },
+    {
+      "num": 4,
+      "title": "Trender, stöd och motstånd",
+      "minutes": 11
+    },
+    {
+      "num": 5,
+      "title": "Volym och open interest — bränslet i prisrörelsen",
+      "minutes": 11
+    },
+    {
+      "num": 6,
+      "title": "Huvud-och-skuldra — kungamönstret",
+      "minutes": 11
+    },
+    {
+      "num": 7,
+      "title": "Dubbeltoppar, dubbelbottnar och V-svängar",
+      "minutes": 11
+    },
+    {
+      "num": 8,
+      "title": "Fortsättningsmönster — trianglar, flaggor och kilar",
+      "minutes": 11
+    },
+    {
+      "num": 9,
+      "title": "Gap — fönster i priset",
+      "minutes": 11
+    },
+    {
+      "num": 10,
+      "title": "Trendlinjer, kanaler och procentuella retracements",
+      "minutes": 11
+    },
+    {
+      "num": 11,
+      "title": "Moving averages — trendens puls",
+      "minutes": 11
+    },
+    {
+      "num": 12,
+      "title": "Momentum och RSI — oscillatorernas klassiker",
+      "minutes": 11
+    },
+    {
+      "num": 13,
+      "title": "Stokastik, MACD och ADX — verktygslådan bredvid",
+      "minutes": 11
+    },
+    {
+      "num": 14,
+      "title": "Cykler — marknadens hjärtslag",
+      "minutes": 11
+    },
+    {
+      "num": 15,
+      "title": "Elliott-vågläran — fem vågor framåt, tre tillbaka",
+      "minutes": 11
+    },
+    {
+      "num": 16,
+      "title": "Fibonacci — marknadens dolda matematik",
+      "minutes": 11
+    },
+    {
+      "num": 17,
+      "title": "Intermarket-analys — alla marknader hänger ihop",
+      "minutes": 11
+    },
+    {
+      "num": 18,
+      "title": "Sektorsrotation och relative strength",
+      "minutes": 11
+    },
+    {
+      "num": 19,
+      "title": "Money flow — OBV och volymens vittnesmål",
+      "minutes": 11
+    },
+    {
+      "num": 20,
+      "title": "Handelssystem, risk och AK1TS-integrationen",
+      "minutes": 11
+    }
   ],
   "chapters": [
     {
@@ -40,18 +120,69 @@
       "title": "Filosofin — marknadsaktionen avslöjar allt",
       "intro": "Innan en enda trendlinje ritas måste frågan besvaras: vad är teknisk analys egentligen? Murphy inleder sin bibel med en definition som blivit standard i hela branschen — och med tre premisser som allt annat i boken vilar på. Detta är kursens fundament och samtidigt kopplingspunkten till hela AK1TS-ekosystemet.",
       "blocks": [
-        { "type": "text", "content": "Murphy: \"Teknisk analys är studiet av marknadsaktionen, främst genom användning av diagram, i syfte att förutsäga framtida prisrörelser.\" Marknadsaktion är hans samlingsbegrepp för tre komponenter: pris, volym och open interest. Analytikern studerar alltså inte världen utanför marknaden — han studerar marknadens egen footprint. Murphys första premiss lyder \"marknadsaktionen diskonterar allt\": all känd information, allt fundamentalt, all rädsla och all girighet är redan inprissatt. Diagrammet är marknadens samlade vittnesmål, och teknikerns jobb är att läsa det." },
-        { "type": "text", "content": "De tre premisserna är: (1) marknadsaktionen diskonterar allt, (2) priserna rör sig i trender, (3) historien upprepar sig. Den andra premissen är hela hantverkets motor — en riktning som etablerats tenderar att bestätta tills något definitivt bryter den. Den tredje handlar om människor: eftersom marknader drivs av psykologi som svänger mellan hopp och förtvivlan lämnar människor samma spår i graferna generation efter generation. Därför fungerar mönster som lästes på 1930-talet fortfarande." },
-        { "type": "text", "content": "Murphy ägnar inledningen åt att avväpna kritiken mot teknik. Fundamentalister studerar orsak, tekniker studerar verkan — de är inte fiender utan kompletterar varandra (boken avslutas med just integrationen). Viktigast är hans universalitetsprincip: samma tekniska principer gäller på aktier, obligationer, valutor och råvaror, på dagsgrafer såväl som månadsgrafer. Det är exakt därför ett ramverk som AK1TS kan spänna från Mikro till Mega med samma verktyg — olika klockor, samma mänskliga mönster. I AK1TS-ekosystemet är detta kapitel Pris-dimensionens filosofiska fotfaste." },
-        { "type": "text", "content": "Vad teknisk analys INTE är: ingen exakt vetenskap och ingen spådkonst. Murphy talar om sannolikheter och disciplin, inte säkerhet. En chartist som kräver hundraprocentig träffsäkerhet har missat poängen — teknikens edge ligger i att sistemtigt handla Situationer där oddsen lutar åt ett håll, och att lämna resten. Den disciplinen är också det som senare i kursen skiljer systemhandlaren från impuls-handlaren." },
-        { "type": "insikt", "content": "Murphys första premiss — marknadsaktionen diskonterar allt — betyder att priset är marknadens samlade vitsord. Du behöver inte veta VARFÖR priset står där det står för att handla det; du behöver bara läsa VAD marknaden gör. Det är hela Pris-dimensionens filosofi i en mening." },
-        { "type": "utmaning", "content": "Öppna en dagsgraf på en svensk storbank och samtidigt en månadsgraf på OMXS30. Markera sammadatum i båda graferna. Notera hur samma tre komponenter — högsta, lägsta, stängning — beskriver två helt olika tidshorisonter. Du har just sett Mikro-logik och Lång-logik sida vid sida, vilket är hela poängen med AK1TS fem horisonter." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Murphys tre premisser\",\"rader\":[[\"Premiss\",\"Innebörd\",\"AK1TS-koppling\"],[\"Marknadsaktionen diskonterar allt\",\"Priset speglar all information och all psykologi\",\"Pris-dimensionen\"],[\"Priser rör sig i trender\",\"Riktning består tills den bevisas bruten\",\"Våg-dimensionen\"],[\"Historien upprepar sig\",\"Mänskligt beteende lämnar återkommande spår\",\"Alla fem horisonter\"]]}" }
+        {
+          "type": "text",
+          "content": "Murphy: \"Teknisk analys är studiet av marknadsaktionen, främst genom användning av diagram, i syfte att förutsäga framtida prisrörelser.\" Marknadsaktion är hans samlingsbegrepp för tre komponenter: pris, volym och open interest. Analytikern studerar alltså inte världen utanför marknaden — han studerar marknadens egen footprint. Murphys första premiss lyder \"marknadsaktionen diskonterar allt\": all känd information, allt fundamentalt, all rädsla och all girighet är redan inprissatt. Diagrammet är marknadens samlade vittnesmål, och teknikerns jobb är att läsa det."
+        },
+        {
+          "type": "text",
+          "content": "De tre premisserna är: (1) marknadsaktionen diskonterar allt, (2) priserna rör sig i trender, (3) historien upprepar sig. Den andra premissen är hela hantverkets motor — en riktning som etablerats tenderar att bestätta tills något definitivt bryter den. Den tredje handlar om människor: eftersom marknader drivs av psykologi som svänger mellan hopp och förtvivlan lämnar människor samma spår i graferna generation efter generation. Därför fungerar mönster som lästes på 1930-talet fortfarande."
+        },
+        {
+          "type": "text",
+          "content": "Murphy ägnar inledningen åt att avväpna kritiken mot teknik. Fundamentalister studerar orsak, tekniker studerar verkan — de är inte fiender utan kompletterar varandra (boken avslutas med just integrationen). Viktigast är hans universalitetsprincip: samma tekniska principer gäller på aktier, obligationer, valutor och råvaror, på dagsgrafer såväl som månadsgrafer. Det är exakt därför ett ramverk som AK1TS kan spänna från Mikro till Mega med samma verktyg — olika klockor, samma mänskliga mönster. I AK1TS-ekosystemet är detta kapitel Pris-dimensionens filosofiska fotfaste."
+        },
+        {
+          "type": "text",
+          "content": "Vad teknisk analys INTE är: ingen exakt vetenskap och ingen spådkonst. Murphy talar om sannolikheter och disciplin, inte säkerhet. En chartist som kräver hundraprocentig träffsäkerhet har missat poängen — teknikens edge ligger i att sistemtigt handla Situationer där oddsen lutar åt ett håll, och att lämna resten. Den disciplinen är också det som senare i kursen skiljer systemhandlaren från impuls-handlaren."
+        },
+        {
+          "type": "insikt",
+          "content": "Murphys första premiss — marknadsaktionen diskonterar allt — betyder att priset är marknadens samlade vitsord. Du behöver inte veta VARFÖR priset står där det står för att handla det; du behöver bara läsa VAD marknaden gör. Det är hela Pris-dimensionens filosofi i en mening."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en dagsgraf på en svensk storbank och samtidigt en månadsgraf på OMXS30. Markera sammadatum i båda graferna. Notera hur samma tre komponenter — högsta, lägsta, stängning — beskriver två helt olika tidshorisonter. Du har just sett Mikro-logik och Lång-logik sida vid sida, vilket är hela poängen med AK1TS fem horisonter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Murphys tre premisser\",\"rader\":[[\"Premiss\",\"Innebörd\",\"AK1TS-koppling\"],[\"Marknadsaktionen diskonterar allt\",\"Priset speglar all information och all psykologi\",\"Pris-dimensionen\"],[\"Priser rör sig i trender\",\"Riktning består tills den bevisas bruten\",\"Våg-dimensionen\"],[\"Historien upprepar sig\",\"Mänskligt beteende lämnar återkommande spår\",\"Alla fem horisonter\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vad omfattar 'marknadsaktionen' i Murphys definition av teknisk analys?", "alternativ": ["Endast dagliga slutkurser", "Pris, volym och open interest", "Rapporter och nyhetsflöden", "Endast trendlinjer och mönster"], "ratt": 1, "tips": "Räkna på tre komponenter — varav en av dem bara finns på termins- och optionsmarknaden." },
-        { "q": "Vad menar Murphy med premissen att marknadsaktionen 'diskonterar allt'?", "alternativ": ["Att all känd information redan är inprissatt i priset", "Att teknisk analys alltid slår fundamental analys", "Att diagram ger exakta framtidsprognoser", "Att volym är viktigare än pris"], "ratt": 0, "tips": "Ordet 'diskontera' kommer från finansvärlden — tänk på hur en aktie kan falla på en bra rapport." },
-        { "q": "Varför fungerar samma tekniska principer på alla tidshorisonter, enligt Murphy?", "alternativ": ["För att regulatorer kräver samma diagramverktyg", "För att mönstren programmeras in i plattformarna", "För att mänsklig psykologi är densamma oavsett tidsram", "För att långa grafer är mer slumpmässiga än korta"], "ratt": 2, "tips": "Fråga dig vem som faktiskt skapar mönstren — och om den varelsen ändras med grafens upplösning." }
+        {
+          "q": "Vad omfattar 'marknadsaktionen' i Murphys definition av teknisk analys?",
+          "alternativ": [
+            "Endast dagliga slutkurser",
+            "Rapporter och nyhetsflöden",
+            "Pris, volym och open interest",
+            "Endast trendlinjer och mönster"
+          ],
+          "ratt": 2,
+          "tips": "Räkna på tre komponenter — varav en av dem bara finns på termins- och optionsmarknaden."
+        },
+        {
+          "q": "Vad menar Murphy med premissen att marknadsaktionen 'diskonterar allt'?",
+          "alternativ": [
+            "Att all känd information redan är inprissatt i priset",
+            "Att teknisk analys alltid slår fundamental analys",
+            "Att diagram ger exakta framtidsprognoser",
+            "Att volym är viktigare än pris"
+          ],
+          "ratt": 0,
+          "tips": "Ordet 'diskontera' kommer från finansvärlden — tänk på hur en aktie kan falla på en bra rapport."
+        },
+        {
+          "q": "Varför fungerar samma tekniska principer på alla tidshorisonter, enligt Murphy?",
+          "alternativ": [
+            "För att regulatorer kräver samma diagramverktyg",
+            "För att mönstren programmeras in i plattformarna",
+            "För att mänsklig psykologi är densamma oavsett tidsram",
+            "För att långa grafer är mer slumpmässiga än korta"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vem som faktiskt skapar mönstren — och om den varelsen ändras med grafens upplösning."
+        }
       ]
     },
     {
@@ -60,19 +191,73 @@
       "title": "Dow-teorin — teknikens urfader",
       "intro": "All modern teknisk analys härstammar från en man som aldrig skrev en bok om den. Charles Dow, grundare av Wall Street Journal och skapare av Dow Jones-indexen, lade grunden runt sekelskiftet 1900 — och Murphy kallar Dow-teorin för teknikens hörnsten. Här finns redan allt som AK1TS bygger vidare på: trender i flera nivåer, faser, bekräftelse och volym.",
       "blocks": [
-        { "type": "text", "content": "Charles Dow skrev sina tankar som ledare i Wall Street Journal på 1890-talet. Efter hans död systematiserades arbetet av William Hamilton och senare Robert Rhea, som myntade begreppet 'Dow-teorin'. Murphy sammanfattar den i sex huvudprinciper, och den första är densamma som kursens första kapitel: indexen diskonterar allt. Dow studerade sina egna index — industrierna och järnvägarna — som barometer över ekonomin." },
-        { "type": "text", "content": "Dows mest berömda bidrag är de tre trenderna, förklarade med havsanalogin: primärtrenden är tidvattnet, sekundärtrenden är vågorna och minortrenden är krusningen på ytan. Primärtrenden varar mer än ett år, sekundärtrenden tre veckor till tre månader och korrigerar typiskt en tredjedel till två tredjedelar av primärrörelsen, minortrenden varar under tre veckor. I AK1TS-ekosystemet är detta en direkt förlaga till horisonterna Lång, Medellång och Kort — med Mega ovanför (Kondratieff, kapitel 14) och Mikro under." },
-        { "type": "text", "content": "Primärtrenden har tre faser: ackumuleringsfasen där de mest informerade köper medan allmänheten är likgiltig, den publika fasen där trenden syns och tekniskt skickliga handlare hoppar på, och distributionsfasen där allmänhetens eufori tar över medan de informerade säljer. Dow tillade två bekräftelsekrav som Murphy understryker: indexen (då industri och järnväg, idag sektorer och bredt index) måste bekräfta varandra, och volymen måste bekräfta trenden — stigande marknad på stigande volym är hälsosam, rally på sinande volym är misstänkt." },
-        { "type": "text", "content": "Murphy är också ärlig med Dow-teorins svagheter: signalerna kommer först efter att vändningen inletts, indexen ifrågasattes när järnvägarna förlorade sin ekonomiska roll, och teorin säger inget om timing av enskilda köp. Ändå håller skelettet: trender i nivåer, faser i masspsykologi, bekräftelse mellan marknader och volymens vittnesmål. Allt som AK1TS bygger vidare på — de fem horisonterna, Volym-teorin och Våg-dimensionens trendhierarki — står på Dows axlar." },
-        { "type": "insikt", "content": "Dows fjärde princip — volymen måste bekräfta trenden — är Volym-teorins födelseattest i AK1TS. Och hans sista princip, att en trend antas gälla tills den ger definitiva vändningssignaler, är anledningen till att teknikern aldrig jagar toppar utan väntar på bevis." },
-        { "type": "utmaning", "content": "Öppna OMXS30 i veckograf för de senaste tio åren. Markera en primär upptrend och en sekundär reaktion inom den. Hur djup var reaktionen i procent av föregående rörelse? Dow-teorin säger typiskt en tredjedel till två tredjedelar — stämmer det på din marknad?" },
-        { "type": "tabell", "content": "{\"rubrik\":\"Dows tre trender → AK1TS-horisonter\",\"rader\":[[\"Trend\",\"Varaktighet\",\"Havsanalogi\",\"AK1TS-horisont\"],[\"Primär\",\"Över 1 år\",\"Tidvattnet\",\"Lång\"],[\"Sekundär\",\"3 veckor–3 månader\",\"Vågorna\",\"Medellång\"],[\"Minor\",\"Under 3 veckor\",\"Krusningen\",\"Kort\"]]}" },
-        { "type": "visuell", "content": "cykel" }
+        {
+          "type": "text",
+          "content": "Charles Dow skrev sina tankar som ledare i Wall Street Journal på 1890-talet. Efter hans död systematiserades arbetet av William Hamilton och senare Robert Rhea, som myntade begreppet 'Dow-teorin'. Murphy sammanfattar den i sex huvudprinciper, och den första är densamma som kursens första kapitel: indexen diskonterar allt. Dow studerade sina egna index — industrierna och järnvägarna — som barometer över ekonomin."
+        },
+        {
+          "type": "text",
+          "content": "Dows mest berömda bidrag är de tre trenderna, förklarade med havsanalogin: primärtrenden är tidvattnet, sekundärtrenden är vågorna och minortrenden är krusningen på ytan. Primärtrenden varar mer än ett år, sekundärtrenden tre veckor till tre månader och korrigerar typiskt en tredjedel till två tredjedelar av primärrörelsen, minortrenden varar under tre veckor. I AK1TS-ekosystemet är detta en direkt förlaga till horisonterna Lång, Medellång och Kort — med Mega ovanför (Kondratieff, kapitel 14) och Mikro under."
+        },
+        {
+          "type": "text",
+          "content": "Primärtrenden har tre faser: ackumuleringsfasen där de mest informerade köper medan allmänheten är likgiltig, den publika fasen där trenden syns och tekniskt skickliga handlare hoppar på, och distributionsfasen där allmänhetens eufori tar över medan de informerade säljer. Dow tillade två bekräftelsekrav som Murphy understryker: indexen (då industri och järnväg, idag sektorer och bredt index) måste bekräfta varandra, och volymen måste bekräfta trenden — stigande marknad på stigande volym är hälsosam, rally på sinande volym är misstänkt."
+        },
+        {
+          "type": "text",
+          "content": "Murphy är också ärlig med Dow-teorins svagheter: signalerna kommer först efter att vändningen inletts, indexen ifrågasattes när järnvägarna förlorade sin ekonomiska roll, och teorin säger inget om timing av enskilda köp. Ändå håller skelettet: trender i nivåer, faser i masspsykologi, bekräftelse mellan marknader och volymens vittnesmål. Allt som AK1TS bygger vidare på — de fem horisonterna, Volym-teorin och Våg-dimensionens trendhierarki — står på Dows axlar."
+        },
+        {
+          "type": "insikt",
+          "content": "Dows fjärde princip — volymen måste bekräfta trenden — är Volym-teorins födelseattest i AK1TS. Och hans sista princip, att en trend antas gälla tills den ger definitiva vändningssignaler, är anledningen till att teknikern aldrig jagar toppar utan väntar på bevis."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna OMXS30 i veckograf för de senaste tio åren. Markera en primär upptrend och en sekundär reaktion inom den. Hur djup var reaktionen i procent av föregående rörelse? Dow-teorin säger typiskt en tredjedel till två tredjedelar — stämmer det på din marknad?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dows tre trender → AK1TS-horisonter\",\"rader\":[[\"Trend\",\"Varaktighet\",\"Havsanalogi\",\"AK1TS-horisont\"],[\"Primär\",\"Över 1 år\",\"Tidvattnet\",\"Lång\"],[\"Sekundär\",\"3 veckor–3 månader\",\"Vågorna\",\"Medellång\"],[\"Minor\",\"Under 3 veckor\",\"Krusningen\",\"Kort\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
       ],
       "quiz": [
-        { "q": "Vilken är den korrekta ordningen i Dows tre trender, från längst till kortast?", "alternativ": ["Minor, sekundär, primär", "Primär, sekundär, minor", "Sekundär, primär, minor", "Primär, minor, sekundär"], "ratt": 1, "tips": "Använd havsanalogin: tidvattnet kommer först i storlek, krusningen sist." },
-        { "q": "Vad innebär Dows princip om att 'indexen måste bekräfta varandra'?", "alternativ": ["Att alla aktier i indexet måste stiga samtidigt", "Att volymen måste stiga i båda indexen", "Att en signal i ett index måste bekräftas av det besläktade indexet", "Att diagrammen måste ritas i samma skala"], "ratt": 2, "tips": "Dow jämförde industri och järnväg — två halvor av samma ekonomi. Vad skulle det betyda om bara en halva bekräftade?" },
-        { "q": "Enligt Dow-teorin: hur länge antas en trend gälla?", "alternativ": ["Tills volymen faller en enda dag", "Tills den ger definitiva signaler att den vänt", "I exakt ett år", "Tills en fundamental rapport motsäger den"], "ratt": 1, "tips": "Murphy citerar denna princip oftast när handlare frestas att pricka vändningar i förväg." }
+        {
+          "q": "Vilken är den korrekta ordningen i Dows tre trender, från längst till kortast?",
+          "alternativ": [
+            "Minor, sekundär, primär",
+            "Sekundär, primär, minor",
+            "Primär, sekundär, minor",
+            "Primär, minor, sekundär"
+          ],
+          "ratt": 2,
+          "tips": "Använd havsanalogin: tidvattnet kommer först i storlek, krusningen sist."
+        },
+        {
+          "q": "Vad innebär Dows princip om att 'indexen måste bekräfta varandra'?",
+          "alternativ": [
+            "Att alla aktier i indexet måste stiga samtidigt",
+            "Att volymen måste stiga i båda indexen",
+            "Att en signal i ett index måste bekräftas av det besläktade indexet",
+            "Att diagrammen måste ritas i samma skala"
+          ],
+          "ratt": 2,
+          "tips": "Dow jämförde industri och järnväg — två halvor av samma ekonomi. Vad skulle det betyda om bara en halva bekräftade?"
+        },
+        {
+          "q": "Enligt Dow-teorin: hur länge antas en trend gälla?",
+          "alternativ": [
+            "Tills volymen faller en enda dag",
+            "I exakt ett år",
+            "Tills den ger definitiva signaler att den vänt",
+            "Tills en fundamental rapport motsäger den"
+          ],
+          "ratt": 2,
+          "tips": "Murphy citerar denna princip oftast när handlare frestas att pricka vändningar i förväg."
+        }
       ]
     },
     {
@@ -81,18 +266,69 @@
       "title": "Chartkonstruktion — stänger, candles och skalor",
       "intro": "Diagrammet är teknikerns rådata, och hur det konstrueras avgör vad du kan se. Murphy går igenom stapel- och candlestickdiagram, volymfoten, aritmetisk kontra logaritmisk skala — och inte minst vilken tidsram som hör till vilken fråga. Detta kapitel är AK1TS-horisonternas hantverksdel.",
       "blocks": [
-        { "type": "text", "content": "Stångdiagrammet (bar chart) visar fyra data per period: öppning, högsta, lägsta och stängning — OHLC. Linjediagrammet visar endast stängningar och räcker som snabb översikt, men stången avslöjar dagens kamp: hur högt köparna drev priset, hur djupt säljarna pressade det, och var striden slutade. Under priset ligger volymfoten, som Murphy alltid kräver — ett pris utan volym är en mening utan betoning." },
-        { "type": "text", "content": "Candlestickdiagrammet, som Murphy gjort mer än någon annan för att popularisera i väst (han skrev standardverket om japanska candlesticks), packar samma OHLC-data i en kropp med skuggor. Stor kropp = övertygelse, långa skuggor = avvisade försök. En candle med lång nedre skugga vid stöd säger 'säljarna testade och förlorade'. Candlesticks är korta informationsbärare — i AK1TS-termer Mikro- och Kort-horisontens triggersignal inne i en större Medellång-kontext." },
-        { "type": "text", "content": "Skalval är inte kosmetik. På aritmetisk skala är avstånden lika i kronor; på logaritmisk är de lika i procent. Murphy är tydlig: för långa serier — Lång- och Mega-horisonten — måste logaritmen användas, annars försvinner de tidiga rörelserna och de senaste årens svängningar dominera bilden. Ett år av fördubbling ser samma ut som tio procent på log-skala, och det är som det bör: marknader räknar i procent." },
-        { "type": "text", "content": "Murphys arbetsordning är Top-down i diagramform: börja med månadsgrafen för perspektiv, gå till veckografen för trenden, och använda dagsgrafen för timing. Tidsramar mappar direkt till AK1TS: intradag för Mikro, dagsgraf för Kort, dags/vecka för Medellång, vecka/månad för Lång, månadsgraf över decennier för Mega. Ju längre tidsram, desto viktigare blir nivåerna — ett månadsstöd väger tyngre än ett 15-minutersstöd." },
-        { "type": "insikt", "content": "Murphys råd att börja i månadsgrafen och zooma in är hela AK1TS-horisonttanken i praktiken: du läser alltid det större sammanhanget först. Att handla Mikro-signaler utan Lång-kontext är att läsa en mening utan att veta vilken bok den kommer ur." },
-        { "type": "utmaning", "content": "Öppna en svensk storaktie i tioårig månadsgraf, först med aritmetisk och sedan med logaritmisk skala. Ser lågkonjunkturen 2008–2009 lika djup ut i båda? Förklara för dig själv varför procent är marknadens naturliga mått — och vilken skala du henceforth ska använda på Lång-horisonten." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Diagramtyp per syfte\",\"rader\":[[\"Diagram\",\"Visar\",\"Bäst för\"],[\"Linje\",\"Endast stängningar\",\"Snabb översikt\"],[\"Stång (OHLC)\",\"Öppning/högsta/lägsta/stängning\",\"Klassisk mönsteranalys\"],[\"Candlestick\",\"OHLC + dagens psykologi\",\"Mikro/Kort-triggers\"],[\"Månadsgraf + log-skala\",\"Procentuell utveckling\",\"Lång och Mega\"]]}" }
+        {
+          "type": "text",
+          "content": "Stångdiagrammet (bar chart) visar fyra data per period: öppning, högsta, lägsta och stängning — OHLC. Linjediagrammet visar endast stängningar och räcker som snabb översikt, men stången avslöjar dagens kamp: hur högt köparna drev priset, hur djupt säljarna pressade det, och var striden slutade. Under priset ligger volymfoten, som Murphy alltid kräver — ett pris utan volym är en mening utan betoning."
+        },
+        {
+          "type": "text",
+          "content": "Candlestickdiagrammet, som Murphy gjort mer än någon annan för att popularisera i väst (han skrev standardverket om japanska candlesticks), packar samma OHLC-data i en kropp med skuggor. Stor kropp = övertygelse, långa skuggor = avvisade försök. En candle med lång nedre skugga vid stöd säger 'säljarna testade och förlorade'. Candlesticks är korta informationsbärare — i AK1TS-termer Mikro- och Kort-horisontens triggersignal inne i en större Medellång-kontext."
+        },
+        {
+          "type": "text",
+          "content": "Skalval är inte kosmetik. På aritmetisk skala är avstånden lika i kronor; på logaritmisk är de lika i procent. Murphy är tydlig: för långa serier — Lång- och Mega-horisonten — måste logaritmen användas, annars försvinner de tidiga rörelserna och de senaste årens svängningar dominera bilden. Ett år av fördubbling ser samma ut som tio procent på log-skala, och det är som det bör: marknader räknar i procent."
+        },
+        {
+          "type": "text",
+          "content": "Murphys arbetsordning är Top-down i diagramform: börja med månadsgrafen för perspektiv, gå till veckografen för trenden, och använda dagsgrafen för timing. Tidsramar mappar direkt till AK1TS: intradag för Mikro, dagsgraf för Kort, dags/vecka för Medellång, vecka/månad för Lång, månadsgraf över decennier för Mega. Ju längre tidsram, desto viktigare blir nivåerna — ett månadsstöd väger tyngre än ett 15-minutersstöd."
+        },
+        {
+          "type": "insikt",
+          "content": "Murphys råd att börja i månadsgrafen och zooma in är hela AK1TS-horisonttanken i praktiken: du läser alltid det större sammanhanget först. Att handla Mikro-signaler utan Lång-kontext är att läsa en mening utan att veta vilken bok den kommer ur."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en svensk storaktie i tioårig månadsgraf, först med aritmetisk och sedan med logaritmisk skala. Ser lågkonjunkturen 2008–2009 lika djup ut i båda? Förklara för dig själv varför procent är marknadens naturliga mått — och vilken skala du henceforth ska använda på Lång-horisonten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Diagramtyp per syfte\",\"rader\":[[\"Diagram\",\"Visar\",\"Bäst för\"],[\"Linje\",\"Endast stängningar\",\"Snabb översikt\"],[\"Stång (OHLC)\",\"Öppning/högsta/lägsta/stängning\",\"Klassisk mönsteranalys\"],[\"Candlestick\",\"OHLC + dagens psykologi\",\"Mikro/Kort-triggers\"],[\"Månadsgraf + log-skala\",\"Procentuell utveckling\",\"Lång och Mega\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vad skiljer en candles kropp från dess skuggor?", "alternativ": ["Kroppen visar öppning–stängning, skuggorna högsta–lägsta", "Kroppen visar volymen, skuggorna priset", "Skuggorna visar öppning och stängning, kroppen trenden", "Ingen skillnad — bara färger"], "ratt": 0, "tips": "Fråga dig vilken del av dagens intervall som representerar var striden faktiskt slutade." },
-        { "q": "När rekommenderar Murphy logaritmisk skala?", "alternativ": ["Bara på intradagsgrafer", "Vid korta prisrörelser", "På långa tidsserier där procentuell jämförelse matter", "Bara för råvarumarknader"], "ratt": 2, "tips": "Tänk på vad som händer med en tioårig graf där aktien gått från 10 till 500 kronor på linjär skala." },
-        { "q": "Vad är Murphys rekommenderade arbetsordning när du öppnar en ny aktie?", "alternativ": ["Börja i 5-minutersgrafen och zooma ut", "Börja i månadsgrafen och zooma in mot kortare tidsramar", "Läs bara senaste månadens nyheter först", "Rita alltid Fibonacci före något annat"], "ratt": 1, "tips": "Ordet han använder är 'perspektiv' — var i grafen finner du det största perspektivet?" }
+        {
+          "q": "Vad skiljer en candles kropp från dess skuggor?",
+          "alternativ": [
+            "Kroppen visar öppning–stängning, skuggorna högsta–lägsta",
+            "Kroppen visar volymen, skuggorna priset",
+            "Skuggorna visar öppning och stängning, kroppen trenden",
+            "Ingen skillnad — bara färger"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vilken del av dagens intervall som representerar var striden faktiskt slutade."
+        },
+        {
+          "q": "När rekommenderar Murphy logaritmisk skala?",
+          "alternativ": [
+            "Bara på intradagsgrafer",
+            "Vid korta prisrörelser",
+            "På långa tidsserier där procentuell jämförelse matter",
+            "Bara för råvarumarknader"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad som händer med en tioårig graf där aktien gått från 10 till 500 kronor på linjär skala."
+        },
+        {
+          "q": "Vad är Murphys rekommenderade arbetsordning när du öppnar en ny aktie?",
+          "alternativ": [
+            "Börja i 5-minutersgrafen och zooma ut",
+            "Läs bara senaste månadens nyheter först",
+            "Börja i månadsgrafen och zooma in mot kortare tidsramar",
+            "Rita alltid Fibonacci före något annat"
+          ],
+          "ratt": 2,
+          "tips": "Ordet han använder är 'perspektiv' — var i grafen finner du det största perspektivet?"
+        }
       ]
     },
     {
@@ -101,18 +337,69 @@
       "title": "Trender, stöd och motstånd",
       "intro": "Trenden är teknikens centrala begrepp — Murphy citerar gärna branschens äldsta visa: trender är din vän. Men en trend är inte en känsla utan en definierbar sekvens av toppar och bottnar. Och där trender möter hinder finns stöd och motstånd: prisnivåer där minne, ånger och runga tal styr handlingen.",
       "blocks": [
-        { "type": "text", "content": "Definitionerna är mekaniska. Uptrend: en sekvens av högre högsta och högre lägsta. Downtrend: lägre högsta och lägre lägsta. Sidledes: oregelbundna toppar och bottnar inom ett band. Det viktiga: trender existerar samtidigt på alla tidshorisonter och pekar ofta åt olika håll — en Kort-korrigering nedåt inuti en Lång-upptrend är inte en motsägelse utan hierarki. Din horisont avgör vilken trend du handlar." },
-        { "type": "text", "content": "Stöd är en nivå där köpintresse är starkt nog att stoppa en nedgång; motstånd är där säljtryck stoppar en uppgång. Källorna är konkreta: tidigare toppar och bottnar, trendlinjer, runga tal (10, 20, 50, 100 kronor; index vid 100, 1 000) och nivåer där stora positioner byggts. Murphys viktigaste observation är rollbyte: brutet motstånd blir stöd, och brutet stöd blir motstånd. Förklaringen är mänsklig — handlare som missade köpet vid motståndet vill in vid nästa chans, och de som köpte felaktigt vill ut utan förlust när priset återvänder." },
-        { "type": "text", "content": "Murphy: \"Trenden är din vän\" — och dess komplement från Dow-teorin: en trend antas gälla tills den ger definitiva vändningssignaler. Den praktiska konsekvensen är handelsriktningen: köp stöd i upptrend, sälj motstånd i nedtrend, och lita aldrig på att en topp är en topp bara för att det känns högt. Toppjakt är den vanligaste dödsorsaken bland teknikens överträdare." },
-        { "type": "text", "content": "Trendlinjer och kanaler knyter ihop koncepten: en stigande trendlinje dras under de stigande bottnarna och blir ett rörligt stöd; en kanal lägger en paralleell motståndslinje ovanför topparna. Murphy väger linjen efter antal tester och tidslängd — en linje som rörts och hållit fem gånger under ett år betyder mer än en linje med två punkter på en vecka. Bryts linjen med stängning och volym är det en signal, inte en åsikt. Detaljerna praktiseras i kapitel 10; här noterar du att detta är Pris-dimensionens och Brytpunkt-dimensionens första möte." },
-        { "type": "insikt", "content": "Stöd och motstånd är inte linjer utan zoner där minne och ånger möts. Nivån blir bara betydelsefull när den testas — och avgörande när den bryts. Det är därför AK1TS skiljer på Pris (nivån) och Brytpunkt (brottet): nivån är potentialen, brottet är beviset." },
-        { "type": "utmaning", "content": "Öppna en svensk storaktie i dagsgraf för senaste året. Markera varje punkt där priset vänt. Dra horisontella linjer genom nivåer där priset vänt mer än en gång. Lägg märke till hur ofta runga tal och gamla toppar/bottnar sammanfaller. Du har just ritat din första Pris-dimensionkarta." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Trenderna definierade\",\"rader\":[[\"Trend\",\"Sekvens\",\"Handelsimplikation\"],[\"Upp\",\"Högre högsta + högre lägsta\",\"Köp stöd, håll position\"],[\"Ner\",\"Lägre högsta + lägre lägsta\",\"Sälj motstånd eller stå vid sidan\"],[\"Sidledes\",\"Oregelbundna toppar/bottnar i band\",\"Köp botten, sälj topp — eller vänta på brytning\"]]}" }
+        {
+          "type": "text",
+          "content": "Definitionerna är mekaniska. Uptrend: en sekvens av högre högsta och högre lägsta. Downtrend: lägre högsta och lägre lägsta. Sidledes: oregelbundna toppar och bottnar inom ett band. Det viktiga: trender existerar samtidigt på alla tidshorisonter och pekar ofta åt olika håll — en Kort-korrigering nedåt inuti en Lång-upptrend är inte en motsägelse utan hierarki. Din horisont avgör vilken trend du handlar."
+        },
+        {
+          "type": "text",
+          "content": "Stöd är en nivå där köpintresse är starkt nog att stoppa en nedgång; motstånd är där säljtryck stoppar en uppgång. Källorna är konkreta: tidigare toppar och bottnar, trendlinjer, runga tal (10, 20, 50, 100 kronor; index vid 100, 1 000) och nivåer där stora positioner byggts. Murphys viktigaste observation är rollbyte: brutet motstånd blir stöd, och brutet stöd blir motstånd. Förklaringen är mänsklig — handlare som missade köpet vid motståndet vill in vid nästa chans, och de som köpte felaktigt vill ut utan förlust när priset återvänder."
+        },
+        {
+          "type": "text",
+          "content": "Murphy: \"Trenden är din vän\" — och dess komplement från Dow-teorin: en trend antas gälla tills den ger definitiva vändningssignaler. Den praktiska konsekvensen är handelsriktningen: köp stöd i upptrend, sälj motstånd i nedtrend, och lita aldrig på att en topp är en topp bara för att det känns högt. Toppjakt är den vanligaste dödsorsaken bland teknikens överträdare."
+        },
+        {
+          "type": "text",
+          "content": "Trendlinjer och kanaler knyter ihop koncepten: en stigande trendlinje dras under de stigande bottnarna och blir ett rörligt stöd; en kanal lägger en paralleell motståndslinje ovanför topparna. Murphy väger linjen efter antal tester och tidslängd — en linje som rörts och hållit fem gånger under ett år betyder mer än en linje med två punkter på en vecka. Bryts linjen med stängning och volym är det en signal, inte en åsikt. Detaljerna praktiseras i kapitel 10; här noterar du att detta är Pris-dimensionens och Brytpunkt-dimensionens första möte."
+        },
+        {
+          "type": "insikt",
+          "content": "Stöd och motstånd är inte linjer utan zoner där minne och ånger möts. Nivån blir bara betydelsefull när den testas — och avgörande när den bryts. Det är därför AK1TS skiljer på Pris (nivån) och Brytpunkt (brottet): nivån är potentialen, brottet är beviset."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en svensk storaktie i dagsgraf för senaste året. Markera varje punkt där priset vänt. Dra horisontella linjer genom nivåer där priset vänt mer än en gång. Lägg märke till hur ofta runga tal och gamla toppar/bottnar sammanfaller. Du har just ritat din första Pris-dimensionkarta."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Trenderna definierade\",\"rader\":[[\"Trend\",\"Sekvens\",\"Handelsimplikation\"],[\"Upp\",\"Högre högsta + högre lägsta\",\"Köp stöd, håll position\"],[\"Ner\",\"Lägre högsta + lägre lägsta\",\"Sälj motstånd eller stå vid sidan\"],[\"Sidledes\",\"Oregelbundna toppar/bottnar i band\",\"Köp botten, sälj topp — eller vänta på brytning\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vad kännetecknar en upptrend enligt Murphy?", "alternativ": ["Stigande volym varje vecka", "En sekvens av högre högsta och högre lägsta", "Priset över 200-dagars medelvärdet", "Fler positiva dagar än negativa"], "ratt": 1, "tips": "Definitionen är rent strukturell — den handlar om vad topparna och bottnarna gör, inte om hjälpmedel." },
-        { "q": "Vad menas med rollbyte (role reversal) mellan stöd och motstånd?", "alternativ": ["Att stöd alltid är svagare än motstånd", "Att brutet motstånd blir stöd — och tvärtom", "Att nivåer byter plats i grafen", "Att volymen vänder riktning"], "ratt": 1, "tips": "Tänk på de två grupperna av handlare kring en bruten nivå: de som missade — och de som fastnat." },
-        { "q": "Varför fungerar runga tal ofta som stöd eller motstånd?", "alternativ": ["De är programmerade i börssystemen enligt lag", "De fungerar som psykologiska mål och samlingspunkter för beslut", "De motsvarar alltid fundamentalt värde", "Murphy avråder från att använda dem"], "ratt": 1, "tips": "Fråga dig var en långsiktig placerare intuitivt lägger sin limitorder: 97 kronor eller 100 kronor?" }
+        {
+          "q": "Vad kännetecknar en upptrend enligt Murphy?",
+          "alternativ": [
+            "Stigande volym varje vecka",
+            "Priset över 200-dagars medelvärdet",
+            "En sekvens av högre högsta och högre lägsta",
+            "Fler positiva dagar än negativa"
+          ],
+          "ratt": 2,
+          "tips": "Definitionen är rent strukturell — den handlar om vad topparna och bottnarna gör, inte om hjälpmedel."
+        },
+        {
+          "q": "Vad menas med rollbyte (role reversal) mellan stöd och motstånd?",
+          "alternativ": [
+            "Att stöd alltid är svagare än motstånd",
+            "Att nivåer byter plats i grafen",
+            "Att brutet motstånd blir stöd — och tvärtom",
+            "Att volymen vänder riktning"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på de två grupperna av handlare kring en bruten nivå: de som missade — och de som fastnat."
+        },
+        {
+          "q": "Varför fungerar runga tal ofta som stöd eller motstånd?",
+          "alternativ": [
+            "De är programmerade i börssystemen enligt lag",
+            "Murphy avråder från att använda dem",
+            "De motsvarar alltid fundamentalt värde",
+            "De fungerar som psykologiska mål och samlingspunkter för beslut"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig var en långsiktig placerare intuitivt lägger sin limitorder: 97 kronor eller 100 kronor?"
+        }
       ]
     },
     {
@@ -121,18 +408,69 @@
       "title": "Volym och open interest — bränslet i prisrörelsen",
       "intro": "Priset berättar riktning, men volymen berättar övertygelse. Murphy ägnar ett helt kapitel åt volym och open interest, och sammanfattar med branschens äldsta talesätt: volymen förgår priset. I AK1TS är detta Volym-teorins ursprungskälla.",
       "blocks": [
-        { "type": "text", "content": "Volymen mäter aktivitet — antalet handlade enheter per period — och därmed intensiteten bakom prisrörelsen. Murphy: volymen är gradmått på trycket bakom rörelsen. Den grundläggande tolkregeln är bekräftelse: i en hälsosam upptrend ökar volymen i stigande rörelser och avtar i korrigeringar; i en nedtrend ökar den i fallen. Rally på avtagande volym är varning, precis som fall på sinande volym antyder att säljtrycket tar slut." },
-        { "type": "text", "content": "Vid vändningar talar volymen tydligast. Efter en lång uppgång signaleras utmattning av volymklimax — rekordhöga volymer där sista köparna kliver in och marknaden snurrar. Vid bottnar är mönstret det omvända: volymen torkar ut, handeln dör, de otåliga har gett upp — tyst ackumulering pågår medan ingen tittar. Murphys talesätt 'volymen förgår priset' betyder exakt detta: volymmönstret syns ofta i diagrammet före prissvängen." },
-        { "type": "text", "content": "Open interest — antalet öppna kontrakt på termins- och optionsmarknaden — ger en tredje dimension. Stigande open interest betyder nytt kapital in i positionen; fallande betyder liquidation. Kombinationen med pris ger fyra tolkningar: pris upp + open interest upp = nya longs, bekräftat bulliskt; pris upp + open interest ner = shortcoverering, svagt rally; pris ner + open interest upp = nya shorts, bekräftat beariskt; pris ner + open interest ner = longar stänger, uttjänt fall. Murphy: det är förändringen i open interest som gör skillnad." },
-        { "type": "text", "content": "I AK1TS-ekosystemet är detta Volym-teorins kärna: volymen som självständig indikatorklass bredvid pris och tid. I 25-cellersmatrisen får Volym-teorin sin tyngd på Kort- och Medellång-horisonten där termins- och optionsdata finns, men principen — att flödet föregår priset — gäller på alla nivåer. Kapitel 19 operationaliserar det hela med OBV och money flow; här läggs grunden." },
-        { "type": "insikt", "content": "Priset ljuger sällan om riktning men nästan alltid om övertygelse. Volymen är polygrafprovet: Murphy kräver att volymen bekräftar trenden — gör den inte det är trenden en statisk skugga utan substans. En rörelse utan volym är en åsikt; en rörelse med volym är ett beslut." },
-        { "type": "utmaning", "content": "Öppna en chart med volymfönster. Hitta den senaste större toppen i en svensk aktie: var volymen rekordstor just vid toppen eller några dagar före? Jämför med nästa nedgångsfas — ökar eller avtar volymen i de fallande rörelserna? Skriv ner dina två observationer; de är din första volymläsningsövning." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Pris × open interest (terminsmarknaden)\",\"rader\":[[\"Pris\",\"Open interest\",\"Tolkning\"],[\"Upp\",\"Stigande\",\"Nya longs — bulliskt bekräftat\"],[\"Upp\",\"Fallande\",\"Shortcoverering — svagt rally\"],[\"Ner\",\"Stigande\",\"Nya shorts — beariskt bekräftat\"],[\"Ner\",\"Fallande\",\"Longliquidation — uttjänt fall\"]]}" }
+        {
+          "type": "text",
+          "content": "Volymen mäter aktivitet — antalet handlade enheter per period — och därmed intensiteten bakom prisrörelsen. Murphy: volymen är gradmått på trycket bakom rörelsen. Den grundläggande tolkregeln är bekräftelse: i en hälsosam upptrend ökar volymen i stigande rörelser och avtar i korrigeringar; i en nedtrend ökar den i fallen. Rally på avtagande volym är varning, precis som fall på sinande volym antyder att säljtrycket tar slut."
+        },
+        {
+          "type": "text",
+          "content": "Vid vändningar talar volymen tydligast. Efter en lång uppgång signaleras utmattning av volymklimax — rekordhöga volymer där sista köparna kliver in och marknaden snurrar. Vid bottnar är mönstret det omvända: volymen torkar ut, handeln dör, de otåliga har gett upp — tyst ackumulering pågår medan ingen tittar. Murphys talesätt 'volymen förgår priset' betyder exakt detta: volymmönstret syns ofta i diagrammet före prissvängen."
+        },
+        {
+          "type": "text",
+          "content": "Open interest — antalet öppna kontrakt på termins- och optionsmarknaden — ger en tredje dimension. Stigande open interest betyder nytt kapital in i positionen; fallande betyder liquidation. Kombinationen med pris ger fyra tolkningar: pris upp + open interest upp = nya longs, bekräftat bulliskt; pris upp + open interest ner = shortcoverering, svagt rally; pris ner + open interest upp = nya shorts, bekräftat beariskt; pris ner + open interest ner = longar stänger, uttjänt fall. Murphy: det är förändringen i open interest som gör skillnad."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS-ekosystemet är detta Volym-teorins kärna: volymen som självständig indikatorklass bredvid pris och tid. I 25-cellersmatrisen får Volym-teorin sin tyngd på Kort- och Medellång-horisonten där termins- och optionsdata finns, men principen — att flödet föregår priset — gäller på alla nivåer. Kapitel 19 operationaliserar det hela med OBV och money flow; här läggs grunden."
+        },
+        {
+          "type": "insikt",
+          "content": "Priset ljuger sällan om riktning men nästan alltid om övertygelse. Volymen är polygrafprovet: Murphy kräver att volymen bekräftar trenden — gör den inte det är trenden en statisk skugga utan substans. En rörelse utan volym är en åsikt; en rörelse med volym är ett beslut."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en chart med volymfönster. Hitta den senaste större toppen i en svensk aktie: var volymen rekordstor just vid toppen eller några dagar före? Jämför med nästa nedgångsfas — ökar eller avtar volymen i de fallande rörelserna? Skriv ner dina två observationer; de är din första volymläsningsövning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Pris × open interest (terminsmarknaden)\",\"rader\":[[\"Pris\",\"Open interest\",\"Tolkning\"],[\"Upp\",\"Stigande\",\"Nya longs — bulliskt bekräftat\"],[\"Upp\",\"Fallande\",\"Shortcoverering — svagt rally\"],[\"Ner\",\"Stigande\",\"Nya shorts — beariskt bekräftat\"],[\"Ner\",\"Fallande\",\"Longliquidation — uttjänt fall\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Pris faller samtidigt som open interest stiger kraftigt. Vad säger Murphy om det?", "alternativ": ["Nya shorts byggs — det fallande priset är bekräftat", "Longar stänger och fallet är snart över", "Marknaden är neutral", "Det är en korttäckningsrally"], "ratt": 0, "tips": "Fråga dig vem som måste ha öppnat nya positioner för att priset ska falla — och i vilken riktning." },
-        { "q": "Hur ser den hälsosamma volymprofilen ut i en intakt upptrend?", "alternativ": ["Jämnt hög volym varje dag", "Högre volym i uppgångar, lägre i korrigeringar", "Högre volym i nedgångar än uppgångar", "Volymen spelar ingen roll i trender"], "ratt": 1, "tips": "Volymen ska stödja rörelsens riktning — inte dess motsats." },
-        { "q": "Vad kännetecknar volymen nära en uttjänt botten enligt Murphy?", "alternativ": ["Rekordhöga och stigande volymer", "Volymklimax följt av rekordlåg volym", "Konstant volym hela vägen ner", "Volymen ökar endast på uppgångsdagar"], "ratt": 1, "tips": "Tänk på hur en utmattningsvändning känns i nyhetsflödet först — och hur tyst det blir efteråt." }
+        {
+          "q": "Pris faller samtidigt som open interest stiger kraftigt. Vad säger Murphy om det?",
+          "alternativ": [
+            "Nya shorts byggs — det fallande priset är bekräftat",
+            "Longar stänger och fallet är snart över",
+            "Marknaden är neutral",
+            "Det är en korttäckningsrally"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vem som måste ha öppnat nya positioner för att priset ska falla — och i vilken riktning."
+        },
+        {
+          "q": "Hur ser den hälsosamma volymprofilen ut i en intakt upptrend?",
+          "alternativ": [
+            "Jämnt hög volym varje dag",
+            "Volymen spelar ingen roll i trender",
+            "Högre volym i nedgångar än uppgångar",
+            "Högre volym i uppgångar, lägre i korrigeringar"
+          ],
+          "ratt": 3,
+          "tips": "Volymen ska stödja rörelsens riktning — inte dess motsats."
+        },
+        {
+          "q": "Vad kännetecknar volymen nära en uttjänt botten enligt Murphy?",
+          "alternativ": [
+            "Rekordhöga och stigande volymer",
+            "Volymen ökar endast på uppgångsdagar",
+            "Konstant volym hela vägen ner",
+            "Volymklimax följt av rekordlåg volym"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på hur en utmattningsvändning känns i nyhetsflödet först — och hur tyst det blir efteråt."
+        }
       ]
     },
     {
@@ -141,18 +479,69 @@
       "title": "Huvud-och-skuldra — kungamönstret",
       "intro": "Bland alla reversalmönster råder ett: huvud-och-skuldra. Murphy ger det kunglig status eftersom det är det mest tillförlitliga av de klassiska vändningsmönstren — och för att det innehåller allt: förutsättning, anatomi, volymprofil, bekräftelse och mått. I AK1TS är detta Våg-dimensionens kungsväg för att identifiera en avslutad primärtrend.",
       "blocks": [
-        { "type": "text", "content": "Förutsättningen för varje reversalmönster är något att vända: det måste finnas en etablerad trend före mönstret. Murphy väger också storlek: stora mönster ger stora rörelser — ju högre mönster och ju längre bildningstid, desto större blir den efterföljande rörelsen. Reversalmönster är dessutom probabilistiska: de varnar för trendskifte, men trenden kan också bara pausa (och bli ett fortsättningsmönster). Bekräftelsekravet är därför allt." },
-        { "type": "text", "content": "Huvud-och-skuldra-toppens anatomi: vänster axel (uppgång på hög volym som korrigeras), huvudet (ny högsta topp, ofta på något lägre volym), höger axel (lägre topp på tydligt svagare volym) — och nacklinjen, den horisontella eller svagt lutande linjen genom de två mellanliggande bottnarna. Volymprofilen är en del av diagnosen: köpintresset sinar successivt från axel till axel. Murphy är obönhörlig på en punkt: mönstret är INTE komplett förrän nacklinjen brutits på stängning, helst med ökande volym. Före dess har du bara tre toppar." },
-        { "type": "text", "content": "Måttet följer klassisk mönstermatematik: mät avståndet från huvudets topp ner till nacklinjen och projicera samma avstånd nedåt från brytpunkten. Det är murphyska 'measured moves' — ingen garanti men ett första pris mål. Efter brottet är en återgång upp till nacklinjen (nu motstånd) vanlig innan nedgången fortsätter; det är också den klassiska andra chansen för den som missade brytningen." },
-        { "type": "text", "content": "Huvud-och-skuldra-botten är spegelbilden: tre bottnar där mitten är lägst, nacklinjen ovanför de två topparna, brytning uppåt bekräftar. Murphy noterar en viktig asymmetri: bottnar tar längre tid att bilda än toppar och kräver tyngre volymbekräftelse i brytningen — upptrender byggs av girighet som är tålmodig, nedtrender av rädsla som är snabb. I AK1TS-termer: H&S på månadsgrafen är ett Lång-horisontskifte i Våg-dimensionen; samma silhuett på dagsgraf är ett Medellång-signal. Nacklinjebrottet är i båda fallen Brytpunkt-dimensionens bevis." },
-        { "type": "insikt", "content": "Ett huvud-och-skuldra existerar inte förrän nacklinjen är bruten — Murphy säger det rakt ut: innan dess är det bara tre toppar med sinande volym. Mönstrets värde ligger inte i silhuetten utan i brytpunkten. Den som agerar på silhuetten gissar; den som väntar på brottet bevisar." },
-        { "type": "utmaning", "content": "Öppna OMXS30 eller en svensk cyklisk aktie i veckograf för de senaste 15 åren. Leta upp ett fullbordat huvud-och-skuldra. Mät huvudets höjd över nacklinjen, projicera målet nedåt från brytpunkten — hur nära kom nedgången målet? Notera också volymen i höger axel: var den svagast i mönstret?" },
-        { "type": "tabell", "content": "{\"rubrik\":\"Huvud-och-skuldra — komponenterna\",\"rader\":[[\"Del\",\"Kännetecken\",\"Volym\"],[\"Vänster axel\",\"Första toppen\",\"Högst\"],[\"Huvud\",\"Högsta toppen\",\"Dockande\"],[\"Höger axel\",\"Lägre topp\",\"Lägast\"],[\"Nacklinje\",\"Brytpunkten\",\"Expanderande vid brottet\"],[\"Mått\",\"Huvudhöjd projiceras från brytpunkten\",\"—\"]]}" }
+        {
+          "type": "text",
+          "content": "Förutsättningen för varje reversalmönster är något att vända: det måste finnas en etablerad trend före mönstret. Murphy väger också storlek: stora mönster ger stora rörelser — ju högre mönster och ju längre bildningstid, desto större blir den efterföljande rörelsen. Reversalmönster är dessutom probabilistiska: de varnar för trendskifte, men trenden kan också bara pausa (och bli ett fortsättningsmönster). Bekräftelsekravet är därför allt."
+        },
+        {
+          "type": "text",
+          "content": "Huvud-och-skuldra-toppens anatomi: vänster axel (uppgång på hög volym som korrigeras), huvudet (ny högsta topp, ofta på något lägre volym), höger axel (lägre topp på tydligt svagare volym) — och nacklinjen, den horisontella eller svagt lutande linjen genom de två mellanliggande bottnarna. Volymprofilen är en del av diagnosen: köpintresset sinar successivt från axel till axel. Murphy är obönhörlig på en punkt: mönstret är INTE komplett förrän nacklinjen brutits på stängning, helst med ökande volym. Före dess har du bara tre toppar."
+        },
+        {
+          "type": "text",
+          "content": "Måttet följer klassisk mönstermatematik: mät avståndet från huvudets topp ner till nacklinjen och projicera samma avstånd nedåt från brytpunkten. Det är murphyska 'measured moves' — ingen garanti men ett första pris mål. Efter brottet är en återgång upp till nacklinjen (nu motstånd) vanlig innan nedgången fortsätter; det är också den klassiska andra chansen för den som missade brytningen."
+        },
+        {
+          "type": "text",
+          "content": "Huvud-och-skuldra-botten är spegelbilden: tre bottnar där mitten är lägst, nacklinjen ovanför de två topparna, brytning uppåt bekräftar. Murphy noterar en viktig asymmetri: bottnar tar längre tid att bilda än toppar och kräver tyngre volymbekräftelse i brytningen — upptrender byggs av girighet som är tålmodig, nedtrender av rädsla som är snabb. I AK1TS-termer: H&S på månadsgrafen är ett Lång-horisontskifte i Våg-dimensionen; samma silhuett på dagsgraf är ett Medellång-signal. Nacklinjebrottet är i båda fallen Brytpunkt-dimensionens bevis."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett huvud-och-skuldra existerar inte förrän nacklinjen är bruten — Murphy säger det rakt ut: innan dess är det bara tre toppar med sinande volym. Mönstrets värde ligger inte i silhuetten utan i brytpunkten. Den som agerar på silhuetten gissar; den som väntar på brottet bevisar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna OMXS30 eller en svensk cyklisk aktie i veckograf för de senaste 15 åren. Leta upp ett fullbordat huvud-och-skuldra. Mät huvudets höjd över nacklinjen, projicera målet nedåt från brytpunkten — hur nära kom nedgången målet? Notera också volymen i höger axel: var den svagast i mönstret?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Huvud-och-skuldra — komponenterna\",\"rader\":[[\"Del\",\"Kännetecken\",\"Volym\"],[\"Vänster axel\",\"Första toppen\",\"Högst\"],[\"Huvud\",\"Högsta toppen\",\"Dockande\"],[\"Höger axel\",\"Lägre topp\",\"Lägast\"],[\"Nacklinje\",\"Brytpunkten\",\"Expanderande vid brottet\"],[\"Mått\",\"Huvudhöjd projiceras från brytpunkten\",\"—\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vad är den absoluta förutsättningen för att ett reversalmönster ska vara meningsfullt?", "alternativ": ["Rekordvolym i huvudet", "En etablerad tidigare trend att vända", "Att RSI är överköpt", "Att mönstret syns i månadsgraf"], "ratt": 1, "tips": "Man kan inte vända en trend som inte finns — vad måste finnas före mönstret?" },
-        { "q": "När är ett huvud-och-skuldera fullbordat enligt Murphy?", "alternativ": ["När höger axel formats", "När huvudet tagits ut", "Först när nacklinjen brutits på stängning", "När volymen stiger i vänster axel"], "ratt": 2, "tips": "Murphy upprepar bekräftelsekravet flera gånger — vilket element av mönstret fungerar som trigger?" },
-        { "q": "Hur beräknas målet (measured move) för ett H&S-topp?", "alternativ": ["Bredd på höger axel projiceras uppåt", "Avstånd huvudets topp till nacklinjen projiceras nedåt från brytpunkten", "Hela mönstrets längd i tid multipliceras med tre", "50 % av föregående upptrend"], "ratt": 1, "tips": "Mönstermatematiken mäter alltid vertikalt och projicerar i trendens nya riktning." }
+        {
+          "q": "Vad är den absoluta förutsättningen för att ett reversalmönster ska vara meningsfullt?",
+          "alternativ": [
+            "Rekordvolym i huvudet",
+            "Att mönstret syns i månadsgraf",
+            "Att RSI är överköpt",
+            "En etablerad tidigare trend att vända"
+          ],
+          "ratt": 3,
+          "tips": "Man kan inte vända en trend som inte finns — vad måste finnas före mönstret?"
+        },
+        {
+          "q": "När är ett huvud-och-skuldera fullbordat enligt Murphy?",
+          "alternativ": [
+            "När höger axel formats",
+            "När huvudet tagits ut",
+            "Först när nacklinjen brutits på stängning",
+            "När volymen stiger i vänster axel"
+          ],
+          "ratt": 2,
+          "tips": "Murphy upprepar bekräftelsekravet flera gånger — vilket element av mönstret fungerar som trigger?"
+        },
+        {
+          "q": "Hur beräknas målet (measured move) för ett H&S-topp?",
+          "alternativ": [
+            "Bredd på höger axel projiceras uppåt",
+            "50 % av föregående upptrend",
+            "Hela mönstrets längd i tid multipliceras med tre",
+            "Avstånd huvudets topp till nacklinjen projiceras nedåt från brytpunkten"
+          ],
+          "ratt": 3,
+          "tips": "Mönstermatematiken mäter alltid vertikalt och projicerar i trendens nya riktning."
+        }
       ]
     },
     {
@@ -161,18 +550,69 @@
       "title": "Dubbeltoppar, dubbelbottnar och V-svängar",
       "intro": "Dubbeltoppen är marknadens vanligaste och mest överdiagnostiserade mönster — alla ser den, få ser rätt. Murphy skiljer kallblodigt mellan två misslyckade motståndstest och ett äkta mönster, och kompletterar med triplets, rundbottnar och blixtsnabba V-svängar. Våg-dimensionens variationsrikedom på Medellång-horisonten.",
       "blocks": [
-        { "type": "text", "content": "Äkta dubbeltopp: två uppgångar misslyckas på eller nära samma nivå, volymen är lägre på andra toppen — och mönstret är fullbordat först när mellanbotten (punkt B) brutits på stängning. Murphy varnar uttryckligen: många till synes dubbeltoppar blir aldrig dubbeltoppar, eftersom priset ofta bryter upp istället. Ett misslyckat motståndstest är bara ett sådant — tills beviset kommer. Måttet är klassiskt: mönstrets höjd (topp till punkt B) projiceras nedåt från brytpunkten." },
-        { "type": "text", "content": "Dubbelbotten är spegelbilden och tenderar — liksom alla bottnar — att vara trögare och kräva tyngre volym i brytningen uppåt. Trippeltoppar och trippelbottnar är ovanligare men starkare: tre försumade försök vid samma nivå är ett tydligare uttömmande av köp- eller säljtryck än två. Murphy påpekar att alla dessa mönster egentligen är variationer på stöd-motstånd-logiken från kapitel 4 — mönsterkunskapen är tillämpad nivåanalys." },
-        { "type": "text", "content": "Rund botten (saucer) är långsam ackumulerings tysta signatur: en lång, U-formad kurva där volymen torkar ut i botten för att sedan öka gradvis när priset lämnar formationen. V-svängen är dess motsats — blixtsnabb, utlöst av panik eller nyhet, med få förvarningar. Murphy rekommenderar för V-svängar att använda divergens (kapitel 12) och dagarsantal för att överhuvudtaget hinna reagera; ön-vändningen (kapitel 9) är den extremaste V-varianten." },
-        { "type": "text", "content": "I AK1TS-ekosystemet är dessa mönster Våg-dimensionens språk på Medellång-horisonten. En dubbeltopp med oscillator-divergens på andra toppen är i Elliott-termer ofta ett våg 5-försök som dör i förtid — kraften sinar (lägre volym, lägre momentum) även om priset närmar sig gamla nivåer. Dubbelbotten vid ett Fibonacci-stöd från kapitel 16 är dubbelt så intressant: två oberoende teorier pekar på samma nivå. Det är klustertänkandet i sin renaste form." },
-        { "type": "insikt", "content": "Murphys viktigaste läxa om dubbeltoppar: diagnosen kommer först vid brottet av mellanbotten. Allt före det är anekdoter. Tålamod är mönsterhandlarens billigaste edge — marknsten delar ut straff för för tidiga diagnoser, aldrig för väntade." },
-        { "type": "utmaning", "content": "Hitta en aktie som testat samma motstånd två gånger det senaste året utan att gå igenom. Markera mellanbotten och markera nivån. Notera volymen på varje topp — sinar den? Sätt en mental notis: stängning under mellanbotten ger dig ett mönster; annars har du bara två toppar och ett motstånd." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Reversalmönster i korthet\",\"rader\":[[\"Mönster\",\"Karaktär\",\"Bekräftelse\"],[\"Huvud-och-skuldra\",\"Tungt, klassiskt\",\"Nacklinjebrott + volym\"],[\"Dubbeltopp/botten\",\"Vanligt, lurigt\",\"Brott av mellanbotten\"],[\"Rund botten\",\"Långsam ackumulerings\",\"Volymvändning uppåt\"],[\"V-sväng\",\"Blixtsnabb\",\"Ofta bara i efterhand — använd divergens\"]]}" }
+        {
+          "type": "text",
+          "content": "Äkta dubbeltopp: två uppgångar misslyckas på eller nära samma nivå, volymen är lägre på andra toppen — och mönstret är fullbordat först när mellanbotten (punkt B) brutits på stängning. Murphy varnar uttryckligen: många till synes dubbeltoppar blir aldrig dubbeltoppar, eftersom priset ofta bryter upp istället. Ett misslyckat motståndstest är bara ett sådant — tills beviset kommer. Måttet är klassiskt: mönstrets höjd (topp till punkt B) projiceras nedåt från brytpunkten."
+        },
+        {
+          "type": "text",
+          "content": "Dubbelbotten är spegelbilden och tenderar — liksom alla bottnar — att vara trögare och kräva tyngre volym i brytningen uppåt. Trippeltoppar och trippelbottnar är ovanligare men starkare: tre försumade försök vid samma nivå är ett tydligare uttömmande av köp- eller säljtryck än två. Murphy påpekar att alla dessa mönster egentligen är variationer på stöd-motstånd-logiken från kapitel 4 — mönsterkunskapen är tillämpad nivåanalys."
+        },
+        {
+          "type": "text",
+          "content": "Rund botten (saucer) är långsam ackumulerings tysta signatur: en lång, U-formad kurva där volymen torkar ut i botten för att sedan öka gradvis när priset lämnar formationen. V-svängen är dess motsats — blixtsnabb, utlöst av panik eller nyhet, med få förvarningar. Murphy rekommenderar för V-svängar att använda divergens (kapitel 12) och dagarsantal för att överhuvudtaget hinna reagera; ön-vändningen (kapitel 9) är den extremaste V-varianten."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS-ekosystemet är dessa mönster Våg-dimensionens språk på Medellång-horisonten. En dubbeltopp med oscillator-divergens på andra toppen är i Elliott-termer ofta ett våg 5-försök som dör i förtid — kraften sinar (lägre volym, lägre momentum) även om priset närmar sig gamla nivåer. Dubbelbotten vid ett Fibonacci-stöd från kapitel 16 är dubbelt så intressant: två oberoende teorier pekar på samma nivå. Det är klustertänkandet i sin renaste form."
+        },
+        {
+          "type": "insikt",
+          "content": "Murphys viktigaste läxa om dubbeltoppar: diagnosen kommer först vid brottet av mellanbotten. Allt före det är anekdoter. Tålamod är mönsterhandlarens billigaste edge — marknsten delar ut straff för för tidiga diagnoser, aldrig för väntade."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en aktie som testat samma motstånd två gånger det senaste året utan att gå igenom. Markera mellanbotten och markera nivån. Notera volymen på varje topp — sinar den? Sätt en mental notis: stängning under mellanbotten ger dig ett mönster; annars har du bara två toppar och ett motstånd."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Reversalmönster i korthet\",\"rader\":[[\"Mönster\",\"Karaktär\",\"Bekräftelse\"],[\"Huvud-och-skuldra\",\"Tungt, klassiskt\",\"Nacklinjebrott + volym\"],[\"Dubbeltopp/botten\",\"Vanligt, lurigt\",\"Brott av mellanbotten\"],[\"Rund botten\",\"Långsam ackumulerings\",\"Volymvändning uppåt\"],[\"V-sväng\",\"Blixtsnabb\",\"Ofta bara i efterhand — använd divergens\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "När blir en till synes dubbeltopp ett äkta mönster enligt Murphy?", "alternativ": ["När andra toppen är lägre än den första", "Först när mellanbotten brutits på stängning", "När RSI når 70 på båda topparna", "Direkt när andra toppen formats"], "ratt": 1, "tips": "Samma logik som nacklinjen i H&S: vilket element utgör beviset?" },
-        { "q": "Vad är typiskt för volymen på den andra toppen i en dubbeltopp?", "alternativ": ["Högre än på den första", "Ofta lägre än på den första — kraften sinar", "Identisk med den första", "Orelevant enligt Murphy"], "ratt": 1, "tips": "Fråga dig om det finns färre eller fler motiverade köpare kvar vid andra försöket." },
-        { "q": "Hur skiljer sig en rund botten (saucer) från en V-sväng?", "alternativ": ["Rund botten är snabbare och kräver mer volym", "Rund botten är en långsam ackumuleringsfas, V-svängen en plötslig vändning", "De är identiska till funktionen", "V-svängen är alltid mer tillförlitlig"], "ratt": 1, "tips": "Tänk på tempot i formationen och hur mycket varning diagrammet ger i förväg." }
+        {
+          "q": "När blir en till synes dubbeltopp ett äkta mönster enligt Murphy?",
+          "alternativ": [
+            "När andra toppen är lägre än den första",
+            "Direkt när andra toppen formats",
+            "När RSI når 70 på båda topparna",
+            "Först när mellanbotten brutits på stängning"
+          ],
+          "ratt": 3,
+          "tips": "Samma logik som nacklinjen i H&S: vilket element utgör beviset?"
+        },
+        {
+          "q": "Vad är typiskt för volymen på den andra toppen i en dubbeltopp?",
+          "alternativ": [
+            "Högre än på den första",
+            "Orelevant enligt Murphy",
+            "Identisk med den första",
+            "Ofta lägre än på den första — kraften sinar"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig om det finns färre eller fler motiverade köpare kvar vid andra försöket."
+        },
+        {
+          "q": "Hur skiljer sig en rund botten (saucer) från en V-sväng?",
+          "alternativ": [
+            "Rund botten är snabbare och kräver mer volym",
+            "V-svängen är alltid mer tillförlitlig",
+            "De är identiska till funktionen",
+            "Rund botten är en långsam ackumuleringsfas, V-svängen en plötslig vändning"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på tempot i formationen och hur mycket varning diagrammet ger i förväg."
+        }
       ]
     },
     {
@@ -181,18 +621,69 @@
       "title": "Fortsättningsmönster — trianglar, flaggor och kilar",
       "intro": "Inte alla formationer vänder trender — de flesta ger trenden andrum. Fortsättningsmönstren är pauser där marknaden andas, konsoliderar och samlar kraft för nästa stöt i samma riktning. Murphy går igenom trianglar, flaggor, vimplar och kilar — och visar varför dessa mönster är trendhandlarens bästa vänner på Kort-horisonten.",
       "blocks": [
-        { "type": "text", "content": "Trianglarna kommer i tre skepnader. Den symmetriska har fallande toppar och stigande bottnar — volatiliteten krymper och marknaden gör sig av med energi. Den är neutral till formen men bryter statistiskt oftare med föregående trend än mot den. Den stigande triangeln har platt topp och högre bottnar: köparna pressar hårdare för varje test — Murphy klassar den som bullisk. Den fallande har platt botten och lägre toppar: säljarna vinner mark — bearisk. I alla tre sinar volymen inuti formationen och måste expandera vid brytningen; måttet är formationens bredaste del projicerad från brytpunkten." },
-        { "type": "text", "content": "Flaggor och vimplar är de kortaste och mest tillförlitliga fortsättningsmönstren. Först en brant, nästan vertikal prisrörelse — stången eller polen — sedan en kort konsolidering (1–3 veckor) som drar svagt mot trenden: en rektangulär flagga eller en liten symmetrisk triangel (vimpel). Volymen torkar i formationen och ökar vid brytningen. Murphy poängterar att flaggor kräver en föregående brant trend för att vara flaggor — utan pol finns ingen vila att ta." },
-        { "type": "text", "content": "Kilarna luras på namnet: en stigande kile (båda linjerna uppåt, men konvergerande) är normalt bearisk — priserna stiger allt långsammare och köpkraften töms; en fallande kile är bullisk. Kilarna dyker ofta upp som femte våg eller C-våg i Elliott-räkningar — trendens sista kramp innan vändning. Rektangeln (trading range) mellan horisontellt stöd och motstånd kan gå båda vägarna: den är en tvekanperiod som avgörs av brytningen, och Murphy råder att vänta ut brytningen i stället för att gissa." },
-        { "type": "text", "content": "I AK1TS-ekosystemet hör fortsättningsmönstren hemma på Kort-horisonten (flaggor och vimplar i dagsgrafen) och Medellång (trianglar i veckograf). Elliott-kopplingen är direkt: våg 4 är statistiskt oftast en sidledes konsolidering — triangel eller flagga — innan våg 5. Så när AK1TS-analytikern räknar en våg 4 i Våg-dimensionen letar han med Murphys ögon: sinande volym, motriktad trötthet, brytning i trendriktning som startsignal för nästa våg." },
-        { "type": "insikt", "content": "Fortsättningsmönster är trendens andetag. Den som säljer i flaggan gör marknadens vanligaste misstag — han förväxlar vila med svaghet. Murphy: formationens längd avgör dess vikt; tre dagars flagga bär tre dagars beslutsamhet." },
-        { "type": "utmaning", "content": "Öppna en starkt trendande svensk aktie i dagsgraf. Leta upp den senaste flaggan: en kraftig stigning (polen), sedan 3–10 dagars svagt motriktad konsolidering på torkande volym. Markera brytningen — kom den med volym? Notera hur lång tid flaggan tog jämfört med polen." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Trianglar — form och bias\",\"rader\":[[\"Typ\",\"Utseende\",\"Bias\"],[\"Symmetrisk\",\"Fallande toppar + stigande bottnar\",\"Neutral — följer oftast föregående trend\"],[\"Stigande\",\"Platt topp + högre bottnar\",\"Bullish\"],[\"Fallande\",\"Platt botten + lägre toppar\",\"Bearish\"],[\"Mått\",\"Breddaste delen projiceras från brytpunkten\",\"—\"]]}" }
+        {
+          "type": "text",
+          "content": "Trianglarna kommer i tre skepnader. Den symmetriska har fallande toppar och stigande bottnar — volatiliteten krymper och marknaden gör sig av med energi. Den är neutral till formen men bryter statistiskt oftare med föregående trend än mot den. Den stigande triangeln har platt topp och högre bottnar: köparna pressar hårdare för varje test — Murphy klassar den som bullisk. Den fallande har platt botten och lägre toppar: säljarna vinner mark — bearisk. I alla tre sinar volymen inuti formationen och måste expandera vid brytningen; måttet är formationens bredaste del projicerad från brytpunkten."
+        },
+        {
+          "type": "text",
+          "content": "Flaggor och vimplar är de kortaste och mest tillförlitliga fortsättningsmönstren. Först en brant, nästan vertikal prisrörelse — stången eller polen — sedan en kort konsolidering (1–3 veckor) som drar svagt mot trenden: en rektangulär flagga eller en liten symmetrisk triangel (vimpel). Volymen torkar i formationen och ökar vid brytningen. Murphy poängterar att flaggor kräver en föregående brant trend för att vara flaggor — utan pol finns ingen vila att ta."
+        },
+        {
+          "type": "text",
+          "content": "Kilarna luras på namnet: en stigande kile (båda linjerna uppåt, men konvergerande) är normalt bearisk — priserna stiger allt långsammare och köpkraften töms; en fallande kile är bullisk. Kilarna dyker ofta upp som femte våg eller C-våg i Elliott-räkningar — trendens sista kramp innan vändning. Rektangeln (trading range) mellan horisontellt stöd och motstånd kan gå båda vägarna: den är en tvekanperiod som avgörs av brytningen, och Murphy råder att vänta ut brytningen i stället för att gissa."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS-ekosystemet hör fortsättningsmönstren hemma på Kort-horisonten (flaggor och vimplar i dagsgrafen) och Medellång (trianglar i veckograf). Elliott-kopplingen är direkt: våg 4 är statistiskt oftast en sidledes konsolidering — triangel eller flagga — innan våg 5. Så när AK1TS-analytikern räknar en våg 4 i Våg-dimensionen letar han med Murphys ögon: sinande volym, motriktad trötthet, brytning i trendriktning som startsignal för nästa våg."
+        },
+        {
+          "type": "insikt",
+          "content": "Fortsättningsmönster är trendens andetag. Den som säljer i flaggan gör marknadens vanligaste misstag — han förväxlar vila med svaghet. Murphy: formationens längd avgör dess vikt; tre dagars flagga bär tre dagars beslutsamhet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en starkt trendande svensk aktie i dagsgraf. Leta upp den senaste flaggan: en kraftig stigning (polen), sedan 3–10 dagars svagt motriktad konsolidering på torkande volym. Markera brytningen — kom den med volym? Notera hur lång tid flaggan tog jämfört med polen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Trianglar — form och bias\",\"rader\":[[\"Typ\",\"Utseende\",\"Bias\"],[\"Symmetrisk\",\"Fallande toppar + stigande bottnar\",\"Neutral — följer oftast föregående trend\"],[\"Stigande\",\"Platt topp + högre bottnar\",\"Bullish\"],[\"Fallande\",\"Platt botten + lägre toppar\",\"Bearish\"],[\"Mått\",\"Breddaste delen projiceras från brytpunkten\",\"—\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "En stigande triangel med platt topp och successivt högre bottnar tolkas normalt som?", "alternativ": ["Bullish — köparna pressar hårdare för varje test", "Bearish — motståndet är för starkt", "Neutral — kan bara bryta nedåt", "Ett reversalmönster mot föregående trend"], "ratt": 0, "tips": "Fråga dig vem som blir mer otålig för varje svep: den som testar toppen eller den som värjer botten?" },
-        { "q": "Vad är flaggans kännetecken enligt Murphy?", "alternativ": ["En lång sidledes konsolidering över månader", "En brant föregående rörelse följd av kort motriktad paus på sinande volym", "Två toppar på samma nivå", "Ett gap som aldrig fylls"], "ratt": 1, "tips": "Namnet kommer av utseendet — men kom ihåg vad som måste finnas före själva duken." },
-        { "q": "Hur tolkas normalt en stigande kile (rising wedge)?", "alternativ": ["Som starkt bullish trendbrott", "Som en fortsättningsformation i upptrend", "Som ett omvänt huvud-och-skuldra", "Som bearisk — stigningarna tappar fart och köpkraften töms"], "ratt": 3, "tips": "Titta på avstånden mellan topparna och bottnarna: blir de större eller mindre? Vad säger det om impulsen?" }
+        {
+          "q": "En stigande triangel med platt topp och successivt högre bottnar tolkas normalt som?",
+          "alternativ": [
+            "Bullish — köparna pressar hårdare för varje test",
+            "Bearish — motståndet är för starkt",
+            "Neutral — kan bara bryta nedåt",
+            "Ett reversalmönster mot föregående trend"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vem som blir mer otålig för varje svep: den som testar toppen eller den som värjer botten?"
+        },
+        {
+          "q": "Vad är flaggans kännetecken enligt Murphy?",
+          "alternativ": [
+            "En lång sidledes konsolidering över månader",
+            "Ett gap som aldrig fylls",
+            "Två toppar på samma nivå",
+            "En brant föregående rörelse följd av kort motriktad paus på sinande volym"
+          ],
+          "ratt": 3,
+          "tips": "Namnet kommer av utseendet — men kom ihåg vad som måste finnas före själva duken."
+        },
+        {
+          "q": "Hur tolkas normalt en stigande kile (rising wedge)?",
+          "alternativ": [
+            "Som starkt bullish trendbrott",
+            "Som en fortsättningsformation i upptrend",
+            "Som ett omvänt huvud-och-skuldra",
+            "Som bearisk — stigningarna tappar fart och köpkraften töms"
+          ],
+          "ratt": 3,
+          "tips": "Titta på avstånden mellan topparna och bottnarna: blir de större eller mindre? Vad säger det om impulsen?"
+        }
       ]
     },
     {
@@ -201,18 +692,69 @@
       "title": "Gap — fönster i priset",
       "intro": "Ett gap är ett tomrum i diagrammet — en priszon där ingen handel ägde rum. Murphy delar in dem i fyra typer med olika budskap, från betydelselösa luckor inom handelsband till dramatiska ö-vändningar. Gap är Brytpunkt-dimensionen i sin renaste form: en hel zon utan ägare.",
       "blocks": [
-        { "type": "text", "content": "Gap uppstår när priset öppnar bortom föregående periods handelsintervall — över natten, på nyheter eller mellan stängning och öppning. Murphy listar fyra typer. Det vanliga gapet (area gap) uppträder inom handelsband och saknar prognostiskt värde — det fylls snabbt. Merparten av alla gap är av denna sort och dokumenterar bara en tråkig marknad. Regel nummer ett är alltså att inte jubla över varje lucka." },
-        { "type": "text", "content": "Brytningsgapet (breakaway gap) uppstår när priset lämnar en formation eller ett handelsband — och det känns igen på volymen. Ett brytningsgap på kraftig volym är startskottet på en ny trend och fylls ofta bara delvis eller inte alls på mycket lång tid. Murphy varnar för att satsa på att 'gap alltid fylls' — i starka trender kan brytningsgapet förbli öppet i månader, och den som väntar på fyllnaden blir påkörd." },
-        { "type": "text", "content": "Mätande gapet (runaway gap) dyker upp mitt i en etablerad trend på jämn volym — marknaden springer ifrån alla som vill in. Namnet kommer av dess funktion: avståndet från trendens start till det mätande gapet projiceras vidare bortom gapet för att uppskatta trendens återstående längd. Utmattninggapet (exhaustion gap) är den sista sucken: efter en lång trend gapar priset upp, stannar nära — kraften är slut. Det bekräftas först när nästa gap eller vändning kommer i motsatt riktning." },
-        { "type": "text", "content": "Ö-vändningen (island reversal) är gap-världens dramaturgi: ett utmattningsgap upp, några dagars handel på ön, sedan ett brytningsgap ned — kvar står en ö av inkilade handlare. Kraftfull vändningssignal. I AK1TS-ekosystemet är gap Brytpunkt-dimensionens renaste uttryck på Kort-horisonten: ingen har en brytpunkt att försvara i zonen, därför blir prisrörelser snabba när priset återvänder till den. Mikro-gap vid öppning — efter nattens USA och Asien — är den svenska vardagen av samma fenomen." },
-        { "type": "insikt", "content": "Ett gap är marknadens ärligaste överraskning: eftersom ingen har handlat i zonen finns inget stöd eller motstånd där — ingen har ett genomsnittligt inköp att försvara. Gapet fylls antingen snabbt (om det var tomt prat) eller inte alls på länge (om det var en ny verklighet). Volymen vid gapet avgör vilken av de två det är." },
-        { "type": "utmaning", "content": "Öppna dagsgrafer på fem svenska aktier och hitta årets tydligaste gap. Klassificera det: uppstod det ur en formation (brytnings-), mitt i en trend (mätande-) eller efter en lång rörelse (utmattning-)? Följdes det av volym? Hur lång tid tog eventuell fyllnad — eller fylls det fortfarande inte?" },
-        { "type": "tabell", "content": "{\"rubrik\":\"De fyra gap-typerna\",\"rader\":[[\"Gap\",\"Läge\",\"Volym\",\"Betydelse\"],[\"Vanligt\",\"Inom handelsband\",\"Låg\",\"Fylls snabbt — utan värde\"],[\"Brytnings-\",\"Ur formation eller band\",\"Hög\",\"Ny trend börjar\"],[\"Mätande\",\"Mittpå i trenden\",\"Jämn\",\"Mätstock för trendens längd\"],[\"Utmattning-\",\"Efter en lång trend\",\"Spik\",\"Kraften slut — vändning nära\"]]}" }
+        {
+          "type": "text",
+          "content": "Gap uppstår när priset öppnar bortom föregående periods handelsintervall — över natten, på nyheter eller mellan stängning och öppning. Murphy listar fyra typer. Det vanliga gapet (area gap) uppträder inom handelsband och saknar prognostiskt värde — det fylls snabbt. Merparten av alla gap är av denna sort och dokumenterar bara en tråkig marknad. Regel nummer ett är alltså att inte jubla över varje lucka."
+        },
+        {
+          "type": "text",
+          "content": "Brytningsgapet (breakaway gap) uppstår när priset lämnar en formation eller ett handelsband — och det känns igen på volymen. Ett brytningsgap på kraftig volym är startskottet på en ny trend och fylls ofta bara delvis eller inte alls på mycket lång tid. Murphy varnar för att satsa på att 'gap alltid fylls' — i starka trender kan brytningsgapet förbli öppet i månader, och den som väntar på fyllnaden blir påkörd."
+        },
+        {
+          "type": "text",
+          "content": "Mätande gapet (runaway gap) dyker upp mitt i en etablerad trend på jämn volym — marknaden springer ifrån alla som vill in. Namnet kommer av dess funktion: avståndet från trendens start till det mätande gapet projiceras vidare bortom gapet för att uppskatta trendens återstående längd. Utmattninggapet (exhaustion gap) är den sista sucken: efter en lång trend gapar priset upp, stannar nära — kraften är slut. Det bekräftas först när nästa gap eller vändning kommer i motsatt riktning."
+        },
+        {
+          "type": "text",
+          "content": "Ö-vändningen (island reversal) är gap-världens dramaturgi: ett utmattningsgap upp, några dagars handel på ön, sedan ett brytningsgap ned — kvar står en ö av inkilade handlare. Kraftfull vändningssignal. I AK1TS-ekosystemet är gap Brytpunkt-dimensionens renaste uttryck på Kort-horisonten: ingen har en brytpunkt att försvara i zonen, därför blir prisrörelser snabba när priset återvänder till den. Mikro-gap vid öppning — efter nattens USA och Asien — är den svenska vardagen av samma fenomen."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett gap är marknadens ärligaste överraskning: eftersom ingen har handlat i zonen finns inget stöd eller motstånd där — ingen har ett genomsnittligt inköp att försvara. Gapet fylls antingen snabbt (om det var tomt prat) eller inte alls på länge (om det var en ny verklighet). Volymen vid gapet avgör vilken av de två det är."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna dagsgrafer på fem svenska aktier och hitta årets tydligaste gap. Klassificera det: uppstod det ur en formation (brytnings-), mitt i en trend (mätande-) eller efter en lång rörelse (utmattning-)? Följdes det av volym? Hur lång tid tog eventuell fyllnad — eller fylls det fortfarande inte?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De fyra gap-typerna\",\"rader\":[[\"Gap\",\"Läge\",\"Volym\",\"Betydelse\"],[\"Vanligt\",\"Inom handelsband\",\"Låg\",\"Fylls snabbt — utan värde\"],[\"Brytnings-\",\"Ur formation eller band\",\"Hög\",\"Ny trend börjar\"],[\"Mätande\",\"Mittpå i trenden\",\"Jämn\",\"Mätstock för trendens längd\"],[\"Utmattning-\",\"Efter en lång trend\",\"Spik\",\"Kraften slut — vändning nära\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vilken ordning är korrekt för de tre signalgap som kan uppträda under en full trendcykel?", "alternativ": ["Utmattning, brytning, mätande", "Mätande, brytning, utmattning", "Brytning, mätande, utmattning", "Brytning, utmattning, mätande"], "ratt": 2, "tips": "Tänk på trendens livslängd: början, mittpunkt, slut — i den ordningen." },
-        { "q": "Vad används det mätande gapet till?", "alternativ": ["Att identifiera handelsband", "Att projicera trendens återstående längd från gapets läge", "Att mäta volymklimax", "Att sätta stopp exakt vid gapkanten"], "ratt": 1, "tips": "Namnet är programmet — Murphy kallar det också 'measuring gap'." },
-        { "q": "Vad utmärker ett äkta brytningsgap?", "alternativ": ["Kraftig volym och ofullständig fyllnad under lång tid", "Att det alltid fylls inom fem dagar", "Att det bara uppträder på månadsskiftet", "Att det alltid går nedåt"], "ratt": 0, "tips": "Jämför med det vanliga gapet — vad skiljer en ny verklighet från tomt prat?" }
+        {
+          "q": "Vilken ordning är korrekt för de tre signalgap som kan uppträda under en full trendcykel?",
+          "alternativ": [
+            "Utmattning, brytning, mätande",
+            "Mätande, brytning, utmattning",
+            "Brytning, mätande, utmattning",
+            "Brytning, utmattning, mätande"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på trendens livslängd: början, mittpunkt, slut — i den ordningen."
+        },
+        {
+          "q": "Vad används det mätande gapet till?",
+          "alternativ": [
+            "Att identifiera handelsband",
+            "Att projicera trendens återstående längd från gapets läge",
+            "Att mäta volymklimax",
+            "Att sätta stopp exakt vid gapkanten"
+          ],
+          "ratt": 1,
+          "tips": "Namnet är programmet — Murphy kallar det också 'measuring gap'."
+        },
+        {
+          "q": "Vad utmärker ett äkta brytningsgap?",
+          "alternativ": [
+            "Kraftig volym och ofullständig fyllnad under lång tid",
+            "Att det alltid fylls inom fem dagar",
+            "Att det bara uppträder på månadsskiftet",
+            "Att det alltid går nedåt"
+          ],
+          "ratt": 0,
+          "tips": "Jämför med det vanliga gapet — vad skiljer en ny verklighet från tomt prat?"
+        }
       ]
     },
     {
@@ -221,18 +763,69 @@
       "title": "Trendlinjer, kanaler och procentuella retracements",
       "intro": "Trendlinjen är teknikens mest använda — och mest missbrukade — verktyg. Murphy lär ut hantverket: när en linje är giltig, när den är bruten, och hur kanaler, fanlinjer och hastighetslinjer kompletterar. Här möts Dows egna retracements, Fibonacci-förfiningen och GANN-teorins vinklar i samma verkstad.",
       "blocks": [
-        { "type": "text", "content": "En giltig trendlinje kräver minst två toppar eller bottnar — men den bekräftas först vid tredje punkten. Murphy väger linjens betydelse efter två mått: antal tester och tidslängd. En linje som hållit fem tester under ett år bär mer vikt än en tvåpunktslinje från förra veckan. Vid bedömning av brott rekommenderar han tolerans: mindre intradagsöverskridanden är normala — det är stängningen utanför linjen som räknas, inte ett tillfälligt nålstick." },
-        { "type": "text", "content": "Kanaler byggs genom en parallell linje på motsatt sida av trenden — ovanför topparna i en upptrend. Kanalen gör trenden handelbar: köp vid undre linjen, realisera vid övre, tills strukturen bryts. Murphys fanprincip fångar trendens död i tre akter: när den branta första linjen bryts dras en flackare andra från samma botten; när den i sin tur bryts dras en tredje — och när även den faller är trenden över. Tre brutna linjer från samma punkt är en av de tyngsta vändningssignalerna i klassisk teknik." },
-        { "type": "text", "content": "Murphy knyter an till Dows eget mått: trender tenderar att retrace en tredjedel till två tredjedelar av föregående rörelse, med 50 procent som central jämviktsnivå. Gränsen går vid cirka 66 procent — ett djupare återtåg än så ifrågasätter hela trenden. Detta är bron till Fibonacci (kapitel 16), som förfinar nivåerna till 38,2 och 61,8 procent, och till GANN-teorins vinklar, där 45-graderslinjen (1×1) beskriver balansen mellan tid och pris. Hastighetslinjerna (1/3 och 2/3 från extremum) är samma tankesätt i strålar." },
-        { "type": "text", "content": "I AK1TS-ekosystemet är detta kapitlet där Pris-dimensionen och Brytpunkt-dimensionen möter Tid: trendlinjens lutning är pris per tidsenhet — GANN-teorins exakta definition. En 15-minuterslinje i Mikro-horisonten och en flerårig veckolinje i Lång-horisonten är samma verktyg i olika skalor. Ju fler horisonter som sammanfaller — veckotrendlinje vid samma nivå som en Fibonacci-retracement — desto starkare blir brytpunkten när den slutligen testas." },
-        { "type": "insikt", "content": "Murphys tvåtredjedelsregel är trendhandelns tabugräns: en korrigering djupare än cirka 66 procent är inte längre en korrigering utan en vändning. Och 50-procentnivån är jämviktspunkten — där har varken köpare eller säljare övertag, vilket är precis därför priset stannar där så ofta." },
-        { "type": "utmaning", "content": "Öppna en trendande aktie i dagsgraf. Dra trendlinjen från de två första bottnarna och låt den bekräftas av den tredje. Mät de två senaste korrigeringarna i procent med retracement-verktyget. Landar de kring 38–50 procent? Dra slutligen en 45-gradig Gann-linje från senaste större botten och notera var den korsar dagens pris." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Retracement-nivåerna\",\"rader\":[[\"Nivå\",\"Betydelse\"],[\"33 %\",\"Minimum för en stark trend\"],[\"50 %\",\"Jämvikten — Dows egna favorittal\"],[\"61,8 % (Fib)\",\"Det gyllene maximala djupet\"],[\"Över cirka 66 %\",\"Trenden ifrågasatt — räkna med vändning\"]]}" }
+        {
+          "type": "text",
+          "content": "En giltig trendlinje kräver minst två toppar eller bottnar — men den bekräftas först vid tredje punkten. Murphy väger linjens betydelse efter två mått: antal tester och tidslängd. En linje som hållit fem tester under ett år bär mer vikt än en tvåpunktslinje från förra veckan. Vid bedömning av brott rekommenderar han tolerans: mindre intradagsöverskridanden är normala — det är stängningen utanför linjen som räknas, inte ett tillfälligt nålstick."
+        },
+        {
+          "type": "text",
+          "content": "Kanaler byggs genom en parallell linje på motsatt sida av trenden — ovanför topparna i en upptrend. Kanalen gör trenden handelbar: köp vid undre linjen, realisera vid övre, tills strukturen bryts. Murphys fanprincip fångar trendens död i tre akter: när den branta första linjen bryts dras en flackare andra från samma botten; när den i sin tur bryts dras en tredje — och när även den faller är trenden över. Tre brutna linjer från samma punkt är en av de tyngsta vändningssignalerna i klassisk teknik."
+        },
+        {
+          "type": "text",
+          "content": "Murphy knyter an till Dows eget mått: trender tenderar att retrace en tredjedel till två tredjedelar av föregående rörelse, med 50 procent som central jämviktsnivå. Gränsen går vid cirka 66 procent — ett djupare återtåg än så ifrågasätter hela trenden. Detta är bron till Fibonacci (kapitel 16), som förfinar nivåerna till 38,2 och 61,8 procent, och till GANN-teorins vinklar, där 45-graderslinjen (1×1) beskriver balansen mellan tid och pris. Hastighetslinjerna (1/3 och 2/3 från extremum) är samma tankesätt i strålar."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS-ekosystemet är detta kapitlet där Pris-dimensionen och Brytpunkt-dimensionen möter Tid: trendlinjens lutning är pris per tidsenhet — GANN-teorins exakta definition. En 15-minuterslinje i Mikro-horisonten och en flerårig veckolinje i Lång-horisonten är samma verktyg i olika skalor. Ju fler horisonter som sammanfaller — veckotrendlinje vid samma nivå som en Fibonacci-retracement — desto starkare blir brytpunkten när den slutligen testas."
+        },
+        {
+          "type": "insikt",
+          "content": "Murphys tvåtredjedelsregel är trendhandelns tabugräns: en korrigering djupare än cirka 66 procent är inte längre en korrigering utan en vändning. Och 50-procentnivån är jämviktspunkten — där har varken köpare eller säljare övertag, vilket är precis därför priset stannar där så ofta."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en trendande aktie i dagsgraf. Dra trendlinjen från de två första bottnarna och låt den bekräftas av den tredje. Mät de två senaste korrigeringarna i procent med retracement-verktyget. Landar de kring 38–50 procent? Dra slutligen en 45-gradig Gann-linje från senaste större botten och notera var den korsar dagens pris."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Retracement-nivåerna\",\"rader\":[[\"Nivå\",\"Betydelse\"],[\"33 %\",\"Minimum för en stark trend\"],[\"50 %\",\"Jämvikten — Dows egna favorittal\"],[\"61,8 % (Fib)\",\"Det gyllene maximala djupet\"],[\"Över cirka 66 %\",\"Trenden ifrågasatt — räkna med vändning\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "När betraktas en trendlinje som bekräftad enligt Murphy?", "alternativ": ["Direkt vid den första punkten", "Först när den testats och hållit vid en tredje punkt", "När volymen överstiger genomsnittet", "När linjen korsar 200-dagarsmedelvärdet"], "ratt": 1, "tips": "Två punkter definierar en linje geometriskt — men hur många kontakter krävs för att visa att marknaden faktiskt respekterar den?" },
-        { "q": "Vad innebär fanprincipen?", "alternativ": ["Att man sprider risk över flera aktier", "Att tre successivt flackare trendlinjer dras från samma punkt — det tredje brottet avslutar trenden", "Att volymen ska bekräfta varje linje", "Att kanaler alltid är starkare än linjer"], "ratt": 1, "tips": "Namnet kommer av utseendet: brutna linjer som breder ut sig som en handflata från samma utgångspunkt." },
-        { "q": "Enligt Murphys (och Dows) riktlinje — hur djup får en korrigering vara innan den ifrågasätter trenden?", "alternativ": ["Max 25 procent", "Max 38,2 procent", "Max 50 procent", "Ungefär två tredjedelar — djupare än så är det troligen en vändning"], "ratt": 3, "tips": "Tänk i bråk: en tredjedel är normalminimum — vad är normalmaximum?" }
+        {
+          "q": "När betraktas en trendlinje som bekräftad enligt Murphy?",
+          "alternativ": [
+            "Direkt vid den första punkten",
+            "Först när den testats och hållit vid en tredje punkt",
+            "När volymen överstiger genomsnittet",
+            "När linjen korsar 200-dagarsmedelvärdet"
+          ],
+          "ratt": 1,
+          "tips": "Två punkter definierar en linje geometriskt — men hur många kontakter krävs för att visa att marknaden faktiskt respekterar den?"
+        },
+        {
+          "q": "Vad innebär fanprincipen?",
+          "alternativ": [
+            "Att man sprider risk över flera aktier",
+            "Att tre successivt flackare trendlinjer dras från samma punkt — det tredje brottet avslutar trenden",
+            "Att volymen ska bekräfta varje linje",
+            "Att kanaler alltid är starkare än linjer"
+          ],
+          "ratt": 1,
+          "tips": "Namnet kommer av utseendet: brutna linjer som breder ut sig som en handflata från samma utgångspunkt."
+        },
+        {
+          "q": "Enligt Murphys (och Dows) riktlinje — hur djup får en korrigering vara innan den ifrågasätter trenden?",
+          "alternativ": [
+            "Max 25 procent",
+            "Max 38,2 procent",
+            "Max 50 procent",
+            "Ungefär två tredjedelar — djupare än så är det troligen en vändning"
+          ],
+          "ratt": 3,
+          "tips": "Tänk i bråk: en tredjedel är normalminimum — vad är normalmaximum?"
+        }
       ]
     },
     {
@@ -241,18 +834,69 @@
       "title": "Moving averages — trendens puls",
       "intro": "Det glidande medelvärdet är världens mest använda tekniska indikator — och det mest missförstådda. Murphy lär ut att MA aldrig förutsäger, bara följer: den slätar bort bruset och tvingar dig att definiera trenden mekaniskt. Här byggs Pris-dimensionens ryggrad på Medellång och Lång horisont.",
       "blocks": [
-        { "type": "text", "content": "Ett glidande medelvärde är genomsnittet av de senaste N stängningarna, omräknat för varje period. Effekten är att bruset slätas ut och trenden framträder — till priset av fördröjning. Murphy är tydlig: medelvärden är eftersläpande trendindikatorer; de reagerar på det som hänt, de prognostiserar inte. Det är inte en svaghet utan en design — verktyget svarar på frågan vilken trend som råder, inte vart priset går imorgon." },
-        { "type": "text", "content": "Murphy går igenom varianterna: enkelt medelvärde (SMA, där alla perioder väger lika), viktat och exponentiellt (EMA, där nya data väger tyngre — därför bygger MACD:n i kapitel 13 på EMA). Ensamma medelvärden ger nivåer: 200-dagarsmedelvärdet på dagsgrafen är institutionellas klassiska skiljelinje mellan hausse och baisse — pris över ett stigande 200-dagarsmedelvärde innebär Lång-upptrend. 50-dagarsmedelvärdet fångar den medellånga trenden och fungerar som dynamiskt stöd i friska trender." },
-        { "type": "text", "content": "Kombinationen av två medelvärden ger signaler: när 50-dagars korsar över 200-dagars föds den berömda golden cross — hausse-signal; death cross är spegelbilden. Murphy varnar samtidigt för verktygets akilleshäl: i sidledes marknader piskar korsningarna fram och tillbaka (whipsaw) och små förluster ackumuleras till stora. Medelvärden är trendverktyg och ska användas i trender — i range bör de läggas åt sidan till förmån för oscillatorerna i kapitel 12 och 13. Verktyg efter regime, inte efter smak." },
-        { "type": "text", "content": "Som komplettering visar Murphy hur omslutningsband (envelopes) och Bollingerband (medelvärde plus/minus två standardavvikelser) låter kanalen anpassa sig efter volatiliteten — banden drar ihop sig i lugn marknad (squeeze) och expanderar vid utbrott. På veckografen är 10- och 30/40-veckors medelvärden klassiska på Lång-horisonten. I AK1TS-mappningen: MA 10 för Mikro/Kort-filter, MA 50 för Medellång, MA 200 för Lång, och månadsmedelvärden på decennieserier för Mega. Samma puls, fem klockor — Murphys universalitetsprincip omsatt i medelvärdesvärlden." },
-        { "type": "insikt", "content": "Ett medelvärde kan inte veta vart priset går — det förklarar bara vad som redan hänt. Kraften ligger i att det mekaniskt tvingar dig att definiera trenden på varje horisont: pris över medelvärdet, medelvärdet stigande, inga undantag. Disciplinen — inte prognosförmågan — är verktygets gåva." },
-        { "type": "utmaning", "content": "Lägg MA 50 och MA 200 på en svensk indexaktie i dagsgraf. Markera senaste golden cross eller death cross och följ aktien sex månader framåt. Lägg sedan MA 10 på en 15-minutersgraf och notera hur samma logik fungerar på Mikro-horisonten. Tre klockor, ett verktyg — Murphys universalitet i praktiken." },
-        { "type": "tabell", "content": "{\"rubrik\":\"MA per AK1TS-horisont\",\"rader\":[[\"Medelvärde\",\"Graf\",\"Horisont\"],[\"MA 10\",\"Intradag / dagsgraf\",\"Mikro / Kort\"],[\"MA 50\",\"Dagsgraf\",\"Medellång\"],[\"MA 200\",\"Dagsgraf\",\"Lång\"],[\"MA 10 månads / 40-veckors\",\"Månad / vecka\",\"Lång / Mega\"]]}" }
+        {
+          "type": "text",
+          "content": "Ett glidande medelvärde är genomsnittet av de senaste N stängningarna, omräknat för varje period. Effekten är att bruset slätas ut och trenden framträder — till priset av fördröjning. Murphy är tydlig: medelvärden är eftersläpande trendindikatorer; de reagerar på det som hänt, de prognostiserar inte. Det är inte en svaghet utan en design — verktyget svarar på frågan vilken trend som råder, inte vart priset går imorgon."
+        },
+        {
+          "type": "text",
+          "content": "Murphy går igenom varianterna: enkelt medelvärde (SMA, där alla perioder väger lika), viktat och exponentiellt (EMA, där nya data väger tyngre — därför bygger MACD:n i kapitel 13 på EMA). Ensamma medelvärden ger nivåer: 200-dagarsmedelvärdet på dagsgrafen är institutionellas klassiska skiljelinje mellan hausse och baisse — pris över ett stigande 200-dagarsmedelvärde innebär Lång-upptrend. 50-dagarsmedelvärdet fångar den medellånga trenden och fungerar som dynamiskt stöd i friska trender."
+        },
+        {
+          "type": "text",
+          "content": "Kombinationen av två medelvärden ger signaler: när 50-dagars korsar över 200-dagars föds den berömda golden cross — hausse-signal; death cross är spegelbilden. Murphy varnar samtidigt för verktygets akilleshäl: i sidledes marknader piskar korsningarna fram och tillbaka (whipsaw) och små förluster ackumuleras till stora. Medelvärden är trendverktyg och ska användas i trender — i range bör de läggas åt sidan till förmån för oscillatorerna i kapitel 12 och 13. Verktyg efter regime, inte efter smak."
+        },
+        {
+          "type": "text",
+          "content": "Som komplettering visar Murphy hur omslutningsband (envelopes) och Bollingerband (medelvärde plus/minus två standardavvikelser) låter kanalen anpassa sig efter volatiliteten — banden drar ihop sig i lugn marknad (squeeze) och expanderar vid utbrott. På veckografen är 10- och 30/40-veckors medelvärden klassiska på Lång-horisonten. I AK1TS-mappningen: MA 10 för Mikro/Kort-filter, MA 50 för Medellång, MA 200 för Lång, och månadsmedelvärden på decennieserier för Mega. Samma puls, fem klockor — Murphys universalitetsprincip omsatt i medelvärdesvärlden."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett medelvärde kan inte veta vart priset går — det förklarar bara vad som redan hänt. Kraften ligger i att det mekaniskt tvingar dig att definiera trenden på varje horisont: pris över medelvärdet, medelvärdet stigande, inga undantag. Disciplinen — inte prognosförmågan — är verktygets gåva."
+        },
+        {
+          "type": "utmaning",
+          "content": "Lägg MA 50 och MA 200 på en svensk indexaktie i dagsgraf. Markera senaste golden cross eller death cross och följ aktien sex månader framåt. Lägg sedan MA 10 på en 15-minutersgraf och notera hur samma logik fungerar på Mikro-horisonten. Tre klockor, ett verktyg — Murphys universalitet i praktiken."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"MA per AK1TS-horisont\",\"rader\":[[\"Medelvärde\",\"Graf\",\"Horisont\"],[\"MA 10\",\"Intradag / dagsgraf\",\"Mikro / Kort\"],[\"MA 50\",\"Dagsgraf\",\"Medellång\"],[\"MA 200\",\"Dagsgraf\",\"Lång\"],[\"MA 10 månads / 40-veckors\",\"Månad / vecka\",\"Lång / Mega\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Hur beskriver Murphy glidande medelvärden som indikatorklass?", "alternativ": ["Eftersläpande trendindikatorer som slätar data och reagerar", "Ledande indikatorer som förutsäger vändningar", "Volymbaserade klimaxmätare", "Oscillatorer som mäter överköpt/översålt"], "ratt": 0, "tips": "Fundera på vad genomsnittet av historiska priser rent matematiskt kan veta om framtiden." },
-        { "q": "Vad är en golden cross?", "alternativ": ["Priset korsar över MA 200", "MA 50 korsar uppåt MA 200", "MA 200 korsar uppåt MA 50", "Volymen korsar sitt medelvärde"], "ratt": 1, "tips": "Ordet 'gyllene' antyder en stark hausse-signal — vilka två linjer, och i vilken ordning?" },
-        { "q": "Varför genererar MA-korsningar dåliga signaler i sidledes marknad?", "alternativ": ["För att volymen alltid är låg i ranges", "För att korsningarna piskar fram och tillbaka utan trend att följa — whipsaw", "För att medelvärden slutar beräknas i ranges", "För att oscillatorer tar över priset"], "ratt": 1, "tips": "Verktyget är byggt för en viss marknadstyp — vad händer när den typen uteblir?" }
+        {
+          "q": "Hur beskriver Murphy glidande medelvärden som indikatorklass?",
+          "alternativ": [
+            "Eftersläpande trendindikatorer som slätar data och reagerar",
+            "Ledande indikatorer som förutsäger vändningar",
+            "Volymbaserade klimaxmätare",
+            "Oscillatorer som mäter överköpt/översålt"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad genomsnittet av historiska priser rent matematiskt kan veta om framtiden."
+        },
+        {
+          "q": "Vad är en golden cross?",
+          "alternativ": [
+            "Priset korsar över MA 200",
+            "MA 50 korsar uppåt MA 200",
+            "MA 200 korsar uppåt MA 50",
+            "Volymen korsar sitt medelvärde"
+          ],
+          "ratt": 1,
+          "tips": "Ordet 'gyllene' antyder en stark hausse-signal — vilka två linjer, och i vilken ordning?"
+        },
+        {
+          "q": "Varför genererar MA-korsningar dåliga signaler i sidledes marknad?",
+          "alternativ": [
+            "För att volymen alltid är låg i ranges",
+            "För att korsningarna piskar fram och tillbaka utan trend att följa — whipsaw",
+            "För att medelvärden slutar beräknas i ranges",
+            "För att oscillatorer tar över priset"
+          ],
+          "ratt": 1,
+          "tips": "Verktyget är byggt för en viss marknadstyp — vad händer när den typen uteblir?"
+        }
       ]
     },
     {
@@ -261,18 +905,69 @@
       "title": "Momentum och RSI — oscillatorernas klassiker",
       "intro": "Där trendverktygen ser riktning ser oscillatorerna hastighet: har rörelsen kraft kvar eller håller den på att tröttna? Murphy presenterar momentumfamiljen och dess mest kända medlem — Wilders RSI — med nivåerna 70/30 och hela begreppet divergens. Detta är Pris-dimensionens tidiga varningssystem.",
       "blocks": [
-        { "type": "text", "content": "Momentum mäter prisförändringens hastighet — rörelsen hos rörelsen. Oscillatorer är ledande i den meningen att de ofta vänder före priset, men det är också deras fallgrop. Murphys huvudregel: oscillatorer fungerar bäst i sidledes marknader och sämst i starka trender. I en kraftig upptrend kan en oscillator bli överköpt och förbli det i veckor medan priset fortsätter upp. Lösningen är hierarkin: trenden bestämmer riktning, oscillatorn bestämmer timing inom trenden." },
-        { "type": "text", "content": "RSI — Relative Strength Index, konstruerad av J. Welles Wilder 1978 — jämför storleken på uppgångar mot nedgångar under vanligtvis 14 perioder och skalar resultatet till 0–100. Murphy överför Wilders klassiska tolkning: över 70 är överköpt, under 30 är översålt. Men han understryker att nivåerna är kontextberoende — i mycket starka trender flyttas zonerna mot 80/20, och att sälja enbart för att RSI når 70 är det klassiska misstaget i en kraftig upptrend. Överköpt betyder stark — inte slut." },
-        { "type": "text", "content": "Oscillatorns största värde är divergensen: priset gör en ny högsta topp men RSI en lägre — kraften sinar trots högre pris. Murphy: divergensen är en varning, inte en signal i sig själv — den bekräftas först när oscillatorn bryter sin egen föregående svagpunkt (failure swing). Spegelbilden gäller i bottnar med bullish divergens. Här ligger också förklaringen till kapitel 7: en V-våg visar sällan varning i tid, en dubbeltopp nästan alltid — divergensen är mekanismen som skiljer dem åt." },
-        { "type": "text", "content": "I AK1TS-ekosystemet är RSI timingverktyget på Kort- och Mikro-horisonten och tidigvarnaren på Medellång. Den klassiska kombinationen är Elliott-våg 5: priset tar ny topp, men RSI divergerar nedåt — impulsen dör medan massan jublar. Ordningen i AK1TS-analysen är alltid: divergensen varnar (Pris-dimensionens momentum), brytpunkten bekräftar (Brytpunkt-dimensionen) — först då finns en signal värd namnet. Murphy-formulerat: oscillatorerna varnar, prisbrottet bevisar." },
-        { "type": "insikt", "content": "Divergens är inte en säljsignal — den är en varningsklocka. Skillnaden är avgörande: varningen säger att kraften sinar, beviset säger att vändningen är här. Den som agerar på varningar utan bevis piskas i starka trender; den som kräver bevis slipper de flesta fällorna." },
-        { "type": "utmaning", "content": "Öppna en aktie som nyligen tagit ny topp i dagsgraf. Jämför RSI-värdet vid förra toppen med RSI vid den nya toppen. Ser du lägre RSI-läsning på högre pris? Räkna därefter hur många dagar det dröjde innan priset bekräftade vändningen — det är tidskostnaden för att kräva bevis i stället för att gissa." },
-        { "type": "tabell", "content": "{\"rubrik\":\"RSI — zonerna\",\"rader\":[[\"RSI\",\"Läge\",\"Tolkning\"],[\"Över 70\",\"Överköpt\",\"Varning — men signal kräver bekräftelse\"],[\"Cirka 50\",\"Jämvikt\",\"Trendfilter — bulligt över, beariskt under\"],[\"Under 30\",\"Översålt\",\"Leta vändning uppåt i intakt upptrend\"],[\"80/20 i stark trend\",\"Extremzon\",\"Inte automatisk signal — trendstyrka\"]]}" }
+        {
+          "type": "text",
+          "content": "Momentum mäter prisförändringens hastighet — rörelsen hos rörelsen. Oscillatorer är ledande i den meningen att de ofta vänder före priset, men det är också deras fallgrop. Murphys huvudregel: oscillatorer fungerar bäst i sidledes marknader och sämst i starka trender. I en kraftig upptrend kan en oscillator bli överköpt och förbli det i veckor medan priset fortsätter upp. Lösningen är hierarkin: trenden bestämmer riktning, oscillatorn bestämmer timing inom trenden."
+        },
+        {
+          "type": "text",
+          "content": "RSI — Relative Strength Index, konstruerad av J. Welles Wilder 1978 — jämför storleken på uppgångar mot nedgångar under vanligtvis 14 perioder och skalar resultatet till 0–100. Murphy överför Wilders klassiska tolkning: över 70 är överköpt, under 30 är översålt. Men han understryker att nivåerna är kontextberoende — i mycket starka trender flyttas zonerna mot 80/20, och att sälja enbart för att RSI når 70 är det klassiska misstaget i en kraftig upptrend. Överköpt betyder stark — inte slut."
+        },
+        {
+          "type": "text",
+          "content": "Oscillatorns största värde är divergensen: priset gör en ny högsta topp men RSI en lägre — kraften sinar trots högre pris. Murphy: divergensen är en varning, inte en signal i sig själv — den bekräftas först när oscillatorn bryter sin egen föregående svagpunkt (failure swing). Spegelbilden gäller i bottnar med bullish divergens. Här ligger också förklaringen till kapitel 7: en V-våg visar sällan varning i tid, en dubbeltopp nästan alltid — divergensen är mekanismen som skiljer dem åt."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS-ekosystemet är RSI timingverktyget på Kort- och Mikro-horisonten och tidigvarnaren på Medellång. Den klassiska kombinationen är Elliott-våg 5: priset tar ny topp, men RSI divergerar nedåt — impulsen dör medan massan jublar. Ordningen i AK1TS-analysen är alltid: divergensen varnar (Pris-dimensionens momentum), brytpunkten bekräftar (Brytpunkt-dimensionen) — först då finns en signal värd namnet. Murphy-formulerat: oscillatorerna varnar, prisbrottet bevisar."
+        },
+        {
+          "type": "insikt",
+          "content": "Divergens är inte en säljsignal — den är en varningsklocka. Skillnaden är avgörande: varningen säger att kraften sinar, beviset säger att vändningen är här. Den som agerar på varningar utan bevis piskas i starka trender; den som kräver bevis slipper de flesta fällorna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en aktie som nyligen tagit ny topp i dagsgraf. Jämför RSI-värdet vid förra toppen med RSI vid den nya toppen. Ser du lägre RSI-läsning på högre pris? Räkna därefter hur många dagar det dröjde innan priset bekräftade vändningen — det är tidskostnaden för att kräva bevis i stället för att gissa."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"RSI — zonerna\",\"rader\":[[\"RSI\",\"Läge\",\"Tolkning\"],[\"Över 70\",\"Överköpt\",\"Varning — men signal kräver bekräftelse\"],[\"Cirka 50\",\"Jämvikt\",\"Trendfilter — bulligt över, beariskt under\"],[\"Under 30\",\"Översålt\",\"Leta vändning uppåt i intakt upptrend\"],[\"80/20 i stark trend\",\"Extremzon\",\"Inte automatisk signal — trendstyrka\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vad är Murphys huvudregel om oscillatorers användning?", "alternativ": ["Bäst i sidledes marknader, sämst i starka trender", "Bäst i starka trender, värdelösa i ranges", "Fungerar enbart på råvarumarknader", "Ska alltid kombineras med Gann-vinklar"], "ratt": 0, "tips": "Tänk på vad 'överköpt' betyder i en trend som inte slutar — blir signalen bättre eller sämre?" },
-        { "q": "Priset gör en ny högsta topp samtidigt som RSI gör en lägre topp. Vad kallas detta och vad betyder det?", "alternativ": ["Bearisk divergens — momentumet sinar, en varning om vändning", "Korrelation — fortsatt uppgång", "Golden cross — stark köpsignal", "Whipsaw — betydelselöst brus"], "ratt": 0, "tips": "Ordet du söker handlar om att pris och oscillator skiljer sig åt — och frågan är vad kraften gör när priset stiger." },
-        { "q": "Vilka är Wilders klassiska RSI-nivåer för överköpt respektive översålt?", "alternativ": ["80 och 20", "70 och 30", "60 och 40", "50 och 50"], "ratt": 1, "tips": "De är symmetriska kring mitten — och nämns som standardvärden i nästan varje teknisk analysartikel." }
+        {
+          "q": "Vad är Murphys huvudregel om oscillatorers användning?",
+          "alternativ": [
+            "Bäst i sidledes marknader, sämst i starka trender",
+            "Bäst i starka trender, värdelösa i ranges",
+            "Fungerar enbart på råvarumarknader",
+            "Ska alltid kombineras med Gann-vinklar"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad 'överköpt' betyder i en trend som inte slutar — blir signalen bättre eller sämre?"
+        },
+        {
+          "q": "Priset gör en ny högsta topp samtidigt som RSI gör en lägre topp. Vad kallas detta och vad betyder det?",
+          "alternativ": [
+            "Bearisk divergens — momentumet sinar, en varning om vändning",
+            "Korrelation — fortsatt uppgång",
+            "Golden cross — stark köpsignal",
+            "Whipsaw — betydelselöst brus"
+          ],
+          "ratt": 0,
+          "tips": "Ordet du söker handlar om att pris och oscillator skiljer sig åt — och frågan är vad kraften gör när priset stiger."
+        },
+        {
+          "q": "Vilka är Wilders klassiska RSI-nivåer för överköpt respektive översålt?",
+          "alternativ": [
+            "80 och 20",
+            "70 och 30",
+            "60 och 40",
+            "50 och 50"
+          ],
+          "ratt": 1,
+          "tips": "De är symmetriska kring mitten — och nämns som standardvärden i nästan varje teknisk analysartikel."
+        }
       ]
     },
     {
@@ -281,18 +976,69 @@
       "title": "Stokastik, MACD och ADX — verktygslådan bredvid",
       "intro": "RSI är inte ensam i momentumfamiljen. Murphy breddar verktygslådan med stokastiken (snabb och nervig), MACD (trend och momentum i en linje) och ADX (regimmätaren som avgör vilken av de andra du ens ska använda). Kapitlet är AK1TS verktygsväljare — innan du väljer teori, välj regime.",
       "blocks": [
-        { "type": "text", "content": "Stokastiken, utvecklad av George Lane, frågar var stängningen hamnar inom det senaste handelsintervallet (vanligen 14 perioder): %K är råvärdet, %D dess utjämnade version. Zonerna är 80/20 — över 80 är överköpt, under 20 är översålt — och signalerna kommer när %K korsar %D i extremzonen. Stokastiken är snabbare än RSI och ger fler signaler, men också mer brus; Murphy rekommenderar ofta den långsammare varianten (slow stochastics) som ytterligare utjämnar %K för att skära bort fällsignaler." },
-        { "type": "text", "content": "MACD — Moving Average Convergence/Divergence, skapad av Gerald Appel — kombinerar två exponentiella medelvärden: MACD-linjen är skillnaden mellan EMA 12 och EMA 26, signallinjen är ett 9-perioders EMA av MACD, och histogrammet är avståndet mellan de två. Köp- och säljsignaler kommer vid korsningar; nollinjen är trendfiltret — signaler över noll väger tyngre bullish, under noll bearish. Histogrammet vänder före linjekorsningen och är därmed tidigast av allt: i AK1TS är detta Tid-dimensionens mikromätare på Kort-horisonten." },
-        { "type": "text", "content": "ADX — Average Directional Index, också den från Wilder — svarar på en annan fråga än de övriga: inte riktning utan styrka. ADX mäter trendintensitet oavsett om trenden pekar upp eller ner. Murphy använder den som regimindikator: ADX över cirka 25 och stigande betyder stark trend — använd då trendföljande verktyg (medelvärden, brytpunkter, Elliott-vågräkning). ADX under 20 och fallande betyder ingen trend — använd då oscillatorer och retracement-verktyg. Frågan är aldrig vilken indikator som är bäst, utan vilket regime som råder." },
-        { "type": "text", "content": "I AK1TS-ekosystemet blir detta kapitlet verktygsväljaren mellan cellerna i matrisen: stark trend på Medellång ger vikt åt Elliott (Våg) och GANN (Tid och vinkel); svag trend på Kort ger vikt åt Fibonacci-retracements och mean reversion. ADX är alltså inte ännu en åsiktsmaskin utan en portvakt som släpper fram rätt teori i rätt marknadsläge — Murphys regime-tänk omsatt i 25 celler." },
-        { "type": "insikt", "content": "ADX avgör regimen; regimen väljer verktyget. I stark trend är 'överköpt' en kupong och oscillatorer en belastning; i range är medelvärdena piskor. Murphy-tänk i ren form: marknaden bestämmer verktyget — aldrig tvärtom." },
-        { "type": "utmaning", "content": "Välj tre aktier: en som starkt trendat upp, en som rört sig sidledes i månader och en som varit vild. Lägg ADX på alla tre och notera skillnaderna. Lägg sedan MACD på den trendande och stokastiken på den sidledes. Fråga dig: varför skulle du aldrig byta verktyg mellan dem?" },
-        { "type": "tabell", "content": "{\"rubrik\":\"Verktyg efter marknadsregim\",\"rader\":[[\"Regime\",\"ADX\",\"Verktyg som gynnas\"],[\"Stark trend\",\"Över 25 och stigande\",\"MA, brytpunkter, Elliott-vågor\"],[\"Övergång\",\"20–25\",\"Kombinera med bekräftelse\"],[\"Sidledes\",\"Under 20 och fallande\",\"RSI, stokastik, Fibonacci-retracement\"],[\"Trendbrott\",\"Fallande från hög nivå\",\"Divergens plus mönster\"]]}" }
+        {
+          "type": "text",
+          "content": "Stokastiken, utvecklad av George Lane, frågar var stängningen hamnar inom det senaste handelsintervallet (vanligen 14 perioder): %K är råvärdet, %D dess utjämnade version. Zonerna är 80/20 — över 80 är överköpt, under 20 är översålt — och signalerna kommer när %K korsar %D i extremzonen. Stokastiken är snabbare än RSI och ger fler signaler, men också mer brus; Murphy rekommenderar ofta den långsammare varianten (slow stochastics) som ytterligare utjämnar %K för att skära bort fällsignaler."
+        },
+        {
+          "type": "text",
+          "content": "MACD — Moving Average Convergence/Divergence, skapad av Gerald Appel — kombinerar två exponentiella medelvärden: MACD-linjen är skillnaden mellan EMA 12 och EMA 26, signallinjen är ett 9-perioders EMA av MACD, och histogrammet är avståndet mellan de två. Köp- och säljsignaler kommer vid korsningar; nollinjen är trendfiltret — signaler över noll väger tyngre bullish, under noll bearish. Histogrammet vänder före linjekorsningen och är därmed tidigast av allt: i AK1TS är detta Tid-dimensionens mikromätare på Kort-horisonten."
+        },
+        {
+          "type": "text",
+          "content": "ADX — Average Directional Index, också den från Wilder — svarar på en annan fråga än de övriga: inte riktning utan styrka. ADX mäter trendintensitet oavsett om trenden pekar upp eller ner. Murphy använder den som regimindikator: ADX över cirka 25 och stigande betyder stark trend — använd då trendföljande verktyg (medelvärden, brytpunkter, Elliott-vågräkning). ADX under 20 och fallande betyder ingen trend — använd då oscillatorer och retracement-verktyg. Frågan är aldrig vilken indikator som är bäst, utan vilket regime som råder."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS-ekosystemet blir detta kapitlet verktygsväljaren mellan cellerna i matrisen: stark trend på Medellång ger vikt åt Elliott (Våg) och GANN (Tid och vinkel); svag trend på Kort ger vikt åt Fibonacci-retracements och mean reversion. ADX är alltså inte ännu en åsiktsmaskin utan en portvakt som släpper fram rätt teori i rätt marknadsläge — Murphys regime-tänk omsatt i 25 celler."
+        },
+        {
+          "type": "insikt",
+          "content": "ADX avgör regimen; regimen väljer verktyget. I stark trend är 'överköpt' en kupong och oscillatorer en belastning; i range är medelvärdena piskor. Murphy-tänk i ren form: marknaden bestämmer verktyget — aldrig tvärtom."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj tre aktier: en som starkt trendat upp, en som rört sig sidledes i månader och en som varit vild. Lägg ADX på alla tre och notera skillnaderna. Lägg sedan MACD på den trendande och stokastiken på den sidledes. Fråga dig: varför skulle du aldrig byta verktyg mellan dem?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Verktyg efter marknadsregim\",\"rader\":[[\"Regime\",\"ADX\",\"Verktyg som gynnas\"],[\"Stark trend\",\"Över 25 och stigande\",\"MA, brytpunkter, Elliott-vågor\"],[\"Övergång\",\"20–25\",\"Kombinera med bekräftelse\"],[\"Sidledes\",\"Under 20 och fallande\",\"RSI, stokastik, Fibonacci-retracement\"],[\"Trendbrott\",\"Fallande från hög nivå\",\"Divergens plus mönster\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Hur konstrueras MACD-linjen?", "alternativ": ["Skillnaden mellan EMA 12 och EMA 26", "Genomsnittet av 14 perioders uppgångar", "Ett 9-perioders EMA av RSI", "Kvoten mellan pris och MA 200"], "ratt": 0, "tips": "Namnet berättar det: convergence/divergence — men mellan vad för två something?" },
-        { "q": "Vad mäter ADX — och vad mäter det INTE?", "alternativ": ["Riktning men inte styrka", "Varken riktning eller styrka", "Trendens styrka, inte dess riktning", "Volymens riktning"], "ratt": 2, "tips": "Bokstäverna D och X står för directional movement — men vad lämnas utanför mätningen?" },
-        { "q": "Vilka nivåer använder stokastiken traditionellt för överköpt respektive översålt?", "alternativ": ["80 och 20", "70 och 30", "60 och 40", "90 och 10"], "ratt": 0, "tips": "Jämför med RSI:s 70/30 — stokastiken är snabbare och dess extremzoner ligger lite längre ut." }
+        {
+          "q": "Hur konstrueras MACD-linjen?",
+          "alternativ": [
+            "Skillnaden mellan EMA 12 och EMA 26",
+            "Genomsnittet av 14 perioders uppgångar",
+            "Ett 9-perioders EMA av RSI",
+            "Kvoten mellan pris och MA 200"
+          ],
+          "ratt": 0,
+          "tips": "Namnet berättar det: convergence/divergence — men mellan vad för två something?"
+        },
+        {
+          "q": "Vad mäter ADX — och vad mäter det INTE?",
+          "alternativ": [
+            "Riktning men inte styrka",
+            "Varken riktning eller styrka",
+            "Trendens styrka, inte dess riktning",
+            "Volymens riktning"
+          ],
+          "ratt": 2,
+          "tips": "Bokstäverna D och X står för directional movement — men vad lämnas utanför mätningen?"
+        },
+        {
+          "q": "Vilka nivåer använder stokastiken traditionellt för överköpt respektive översålt?",
+          "alternativ": [
+            "80 och 20",
+            "70 och 30",
+            "60 och 40",
+            "90 och 10"
+          ],
+          "ratt": 0,
+          "tips": "Jämför med RSI:s 70/30 — stokastiken är snabbare och dess extremzoner ligger lite längre ut."
+        }
       ]
     },
     {
@@ -301,18 +1047,69 @@
       "title": "Cykler — marknadens hjärtslag",
       "intro": "Murphy ägnar ett helt part åt tiden själv: marknader rör sig i rytmiska mönster, från decennielånga Kondratieff-vågor ner till fyra veckors handelscykler. Detta är Tid-dimensionens födelsekapitel i AK1TS — och mötesplatsen mellan Lucas-talserien, GANN-cykler och Fibonacci-tid.",
       "blocks": [
-        { "type": "text", "content": "En cykel är ett mönster som upprepas med viss regelbundenhet. Murphy refererar den nominella cykelhierarkin: Kondratieff-vågan på 50–60 år (prissystemets långbölja), decennialmönstret på tio år, den fyraåriga börs- och presidentcykeln (nära Kitchins 41-månaderscykel), den årliga säsongscykeln, månadsrytm och handelscykeln på omkring fyra veckor. Inget av detta är klockrena urverk — Murphy betonar att cykler tenderar, inte tickar — men deras samspel förklarar varför vissa bottnar känns tunga av sammanfallande rytmer." },
-        { "type": "text", "content": "Cykelteorins tre principer: harmoni (cykler i samma familj har relaterade längder — halveringar och fördubblingar), synkronism (lågpunkter söker sig till varandra över cykelgrader) och proportionalitet (längre cykel, större amplitud). En praktisk tumregel är translation: i en upptrend tenderar cykeltoppar att komma sent i cykeln (högertranslation) och i nedtrender tidigt (vänstertranslation) — det ger en diagnos av trendriktning utifrån var i cykeln vändningarna landar." },
-        { "type": "text", "content": "Säsongsmönstren är de mest belagda: de bästa sex månaderna november–april, januareffekten för småbolag kring årsskiftet och årsslutsrallyt. Den fyraåriga cykeln sammanfaller ofta med presidentvalscykelns politiska rytm i USA — midtermvalen har historiskt lagt sig bottennära. Murphy visar också verktygen för att isolera cykler: centrerade medelvärden, detrendade serier och band som omsluter prisstrukturen för att synliggöra rytmerna utan trendens dominans." },
-        { "type": "text", "content": "Här knyter AK1TS samman sina tidsverktyg. Fibonacci-tidszoner räknar barer i sekvensen 5, 8, 13, 21, 34, 55 från en större sväng; Lucas-talserien (2, 1, 3, 4, 7, 11, 18, 29, 47, 76) kompletterar med sina egna klusterdatum; GANN-teorin bidrar med årsdagscykler och kvadrater av datum och pris. När flera tidsräkningar landar samma vecka som en Fibonacci-retracement-nivå och en trendlinje har du ett AK1TS-kluster i Tid, Pris och Brytpunkt samtidigt — ekosystemets mest kraftfulla konfiguration." },
-        { "type": "insikt", "content": "Cykler ger dig NÄR-förväntan men aldrig VAD — de är Tid-dimensionens karta, inte kursens. En tidskluster utan prisnivå är bara ett datum; en prisnivå utan tidskluster är bara en linje. Först tillsammans blir de en sannolikhet." },
-        { "type": "utmaning", "content": "Öppna OMXS30 i månadsgraf sedan 1990. Räkna antal år mellan de stora bottnarna (början av 1990-talet, 2003, 2009, 2020). Ser du ett ungefärligt mönster kring fyra till sju år? Räkna därefter Fibonacci-veckor (8, 13, 21, 34) framåt från senaste större botten — landade något av datumen nära en faktisk sväng?" },
-        { "type": "tabell", "content": "{\"rubrik\":\"Cykler → AK1TS-horisonter\",\"rader\":[[\"Cykel\",\"Längd\",\"Horisont\"],[\"Kondratieff\",\"50–60 år\",\"Mega\"],[\"Decennial\",\"10 år\",\"Lång\"],[\"Fyraårs (Kitchin/president)\",\"≈4 år\",\"Lång / Medellång\"],[\"Säsongs\",\"1 år\",\"Medellång\"],[\"Handelscykel\",\"≈4 veckor\",\"Kort\"]]}" }
+        {
+          "type": "text",
+          "content": "En cykel är ett mönster som upprepas med viss regelbundenhet. Murphy refererar den nominella cykelhierarkin: Kondratieff-vågan på 50–60 år (prissystemets långbölja), decennialmönstret på tio år, den fyraåriga börs- och presidentcykeln (nära Kitchins 41-månaderscykel), den årliga säsongscykeln, månadsrytm och handelscykeln på omkring fyra veckor. Inget av detta är klockrena urverk — Murphy betonar att cykler tenderar, inte tickar — men deras samspel förklarar varför vissa bottnar känns tunga av sammanfallande rytmer."
+        },
+        {
+          "type": "text",
+          "content": "Cykelteorins tre principer: harmoni (cykler i samma familj har relaterade längder — halveringar och fördubblingar), synkronism (lågpunkter söker sig till varandra över cykelgrader) och proportionalitet (längre cykel, större amplitud). En praktisk tumregel är translation: i en upptrend tenderar cykeltoppar att komma sent i cykeln (högertranslation) och i nedtrender tidigt (vänstertranslation) — det ger en diagnos av trendriktning utifrån var i cykeln vändningarna landar."
+        },
+        {
+          "type": "text",
+          "content": "Säsongsmönstren är de mest belagda: de bästa sex månaderna november–april, januareffekten för småbolag kring årsskiftet och årsslutsrallyt. Den fyraåriga cykeln sammanfaller ofta med presidentvalscykelns politiska rytm i USA — midtermvalen har historiskt lagt sig bottennära. Murphy visar också verktygen för att isolera cykler: centrerade medelvärden, detrendade serier och band som omsluter prisstrukturen för att synliggöra rytmerna utan trendens dominans."
+        },
+        {
+          "type": "text",
+          "content": "Här knyter AK1TS samman sina tidsverktyg. Fibonacci-tidszoner räknar barer i sekvensen 5, 8, 13, 21, 34, 55 från en större sväng; Lucas-talserien (2, 1, 3, 4, 7, 11, 18, 29, 47, 76) kompletterar med sina egna klusterdatum; GANN-teorin bidrar med årsdagscykler och kvadrater av datum och pris. När flera tidsräkningar landar samma vecka som en Fibonacci-retracement-nivå och en trendlinje har du ett AK1TS-kluster i Tid, Pris och Brytpunkt samtidigt — ekosystemets mest kraftfulla konfiguration."
+        },
+        {
+          "type": "insikt",
+          "content": "Cykler ger dig NÄR-förväntan men aldrig VAD — de är Tid-dimensionens karta, inte kursens. En tidskluster utan prisnivå är bara ett datum; en prisnivå utan tidskluster är bara en linje. Först tillsammans blir de en sannolikhet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna OMXS30 i månadsgraf sedan 1990. Räkna antal år mellan de stora bottnarna (början av 1990-talet, 2003, 2009, 2020). Ser du ett ungefärligt mönster kring fyra till sju år? Räkna därefter Fibonacci-veckor (8, 13, 21, 34) framåt från senaste större botten — landade något av datumen nära en faktisk sväng?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Cykler → AK1TS-horisonter\",\"rader\":[[\"Cykel\",\"Längd\",\"Horisont\"],[\"Kondratieff\",\"50–60 år\",\"Mega\"],[\"Decennial\",\"10 år\",\"Lång\"],[\"Fyraårs (Kitchin/president)\",\"≈4 år\",\"Lång / Medellång\"],[\"Säsongs\",\"1 år\",\"Medellång\"],[\"Handelscykel\",\"≈4 veckor\",\"Kort\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vilken cykel förknippas med den amerikanska börsens fyraårsrytm?", "alternativ": ["Kondratieff-vågan", "Presidentvalscykeln, nära Kitchins fyraåriga cykel", "Decennialmönstret", "Handelscykeln på fyra veckor"], "ratt": 1, "tips": "Tänk på vad som händer i amerikansk politik med exakt den perioden — och var midtermvalens bottnar historiskt lagt sig." },
-        { "q": "Vad betyder proportionalitet i cykelteorin?", "alternativ": ["Att alla cykler är lika långa", "Att längre cykler har större prisamplitud", "Att cykler alltid synkroniserar", "Att volymen växer med cykellängden"], "ratt": 1, "tips": "Jämför en månadsvågs prisrörelse med en flerårig vågs — vilken dimension skiljer sig mest?" },
-        { "q": "Vad är translation som praktisk tumregel?", "alternativ": ["Att cykler flyttar sig mellan marknader", "Att toppar i upptrender tenderar komma sent i cykeln och i nedtrender tidigt", "Att volymen översätts till pris", "Att långa grafer ska logaritmeras"], "ratt": 1, "tips": "Ordet syftar på var i cykeln vändningen hamnar — vänster eller höger om cykelns mittpunkt?" }
+        {
+          "q": "Vilken cykel förknippas med den amerikanska börsens fyraårsrytm?",
+          "alternativ": [
+            "Kondratieff-vågan",
+            "Presidentvalscykeln, nära Kitchins fyraåriga cykel",
+            "Decennialmönstret",
+            "Handelscykeln på fyra veckor"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som händer i amerikansk politik med exakt den perioden — och var midtermvalens bottnar historiskt lagt sig."
+        },
+        {
+          "q": "Vad betyder proportionalitet i cykelteorin?",
+          "alternativ": [
+            "Att alla cykler är lika långa",
+            "Att längre cykler har större prisamplitud",
+            "Att cykler alltid synkroniserar",
+            "Att volymen växer med cykellängden"
+          ],
+          "ratt": 1,
+          "tips": "Jämför en månadsvågs prisrörelse med en flerårig vågs — vilken dimension skiljer sig mest?"
+        },
+        {
+          "q": "Vad är translation som praktisk tumregel?",
+          "alternativ": [
+            "Att cykler flyttar sig mellan marknader",
+            "Att toppar i upptrender tenderar komma sent i cykeln och i nedtrender tidigt",
+            "Att volymen översätts till pris",
+            "Att långa grafer ska logaritmeras"
+          ],
+          "ratt": 1,
+          "tips": "Ordet syftar på var i cykeln vändningen hamnar — vänster eller höger om cykelns mittpunkt?"
+        }
       ]
     },
     {
@@ -321,19 +1118,73 @@
       "title": "Elliott-vågläran — fem vågor framåt, tre tillbaka",
       "intro": "Ralph Nelson Elliott tog Dows trendtänkande ett steg längre: marknaden rör sig inte bara i trender utan i vågor med inbyggd grammatik. Fem vågor i trendens riktning, tre tillbaka — samma mönster i alla skalor, för alltid. För AK1TS är detta Våg-dimensionens fundament och en av ekosystemets fem teorier i ren form.",
       "blocks": [
-        { "type": "text", "content": "Elliott publicerade på 1930-talet sin upptäckt att marknaden rör sig i en femvågsstruktur i huvudtrendens riktning (våg 1, 3 och 5 med trenden; våg 2 och 4 mot), följd av en trevågskorrigering (a-b-c) mot samma trend. Det revolutionära var fraktaliteten: varje våg består av mindre vågor av samma form, från Grand Supercycle över sekler ner till minutnivåer. I AK1TS-ekosystemet motsvarar våggraderna exakt horisonterna — en Mikro-vågsräkning lever inuti en Mega-vågsräkning, och Murphy betonar att samma principer gäller i alla skalor." },
-        { "type": "text", "content": "Elliotts tre hårda regler är icke förhandlingsbara: våg 2 retracerar aldrig mer än hundra procent av våg 1; våg 3 är aldrig den kortaste av impulsvågarna (ofta den längsta och mest lönsamma); våg 4 går aldrig in i våg 1:s prisområde (i kontanta marknader). Bryter din räkning mot en regel är räkningen fel — inte marknaden. Bredvid reglerna står riktlinjerna: alternation (våg 2 och våg 4 växlar former — är våg 2 djup och skarp blir våg 4 grund och sidledes) och jämlikhet (våg 5 blir ofta lika lång som våg 1 när våg 3 är den utdragen)." },
-        { "type": "text", "content": "Vågorna har personligheter. Våg 1 är den skeptiska starten ur en botten; våg 2 den djupa retrace som övertygar alla om att nedtrenden är tillbaka (ofta till 50–61,8 procent); våg 3 den kraftfulla och breda rörelsen där allmänheten kliver in — volymen är som störst här, Volym-teorins bekräftelse; våg 4 den tråkiga sidledes konsolideringen (ofta triangel, kapitel 8); våg 5 momentumets sista stöt — ofta med RSI-divergens (kapitel 12). I korrigeringen är b-vågen fällan som väcker hopp, och c-vågen den destruktiva som städar ut." },
-        { "type": "text", "content": "Elliott och Fibonacci är oskiljaktiga — Elliott själv pekade på förhållandena, och Frost & Prechter systematiserade dem: våg 2 retracerar ofta 50–61,8 procent av våg 1, våg 4 ofta 38,2 procent; våg 3 är ofta 1,618 gånger våg 1; når våg 3 den utdragen blir våg 5 ofta 0,618 av våg 1 eller lika lång; c-vågen speglar ofta a-vågen eller 1,618 av den. I AK1TS är detta Våg-dimensionen och Pris-dimensionens djupaste integration: räkningen ger formen, Fibonacci ger måtten." },
-        { "type": "insikt", "content": "Elliotts tre regler är vågräkningens fundament: den som improviserar bort dem har inte en räkning utan en berättelse. Och alternation-guiden är lika värdefull — marknaden hatar att upprepa sig: var våg 2 var djup bör våg 4 vara platt." },
-        { "type": "utmaning", "content": "Öppna en aktie som gått starkt i ett till två år. Försök räkna våg 1–5 från startrörelsen: markera våg 3 (störst, mest volym) och våg 4 (tråkigast, oftast sidledes). Mät retracements — ligger våg 2 kring 50–62 procent och våg 4 kring 38 procent? Det är Elliott-Fibonacci-mönstret i vildmarken." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Elliotts regler och riktlinjer\",\"rader\":[[\"Regel/Riktlinje\",\"Innehåll\"],[\"Regel 1\",\"Våg 2 retracerar aldrig 100 % av våg 1\"],[\"Regel 2\",\"Våg 3 är aldrig den kortaste impulsvågen\"],[\"Regel 3\",\"Våg 4 går aldrig in i våg 1:s prisområde\"],[\"Alternation\",\"Våg 2 och våg 4 växlar i form och djup\"],[\"Jämlikhet\",\"Våg 5 ≈ våg 1 när våg 3 är utdragen\"]]}" },
-        { "type": "visuell", "content": "cykel" }
+        {
+          "type": "text",
+          "content": "Elliott publicerade på 1930-talet sin upptäckt att marknaden rör sig i en femvågsstruktur i huvudtrendens riktning (våg 1, 3 och 5 med trenden; våg 2 och 4 mot), följd av en trevågskorrigering (a-b-c) mot samma trend. Det revolutionära var fraktaliteten: varje våg består av mindre vågor av samma form, från Grand Supercycle över sekler ner till minutnivåer. I AK1TS-ekosystemet motsvarar våggraderna exakt horisonterna — en Mikro-vågsräkning lever inuti en Mega-vågsräkning, och Murphy betonar att samma principer gäller i alla skalor."
+        },
+        {
+          "type": "text",
+          "content": "Elliotts tre hårda regler är icke förhandlingsbara: våg 2 retracerar aldrig mer än hundra procent av våg 1; våg 3 är aldrig den kortaste av impulsvågarna (ofta den längsta och mest lönsamma); våg 4 går aldrig in i våg 1:s prisområde (i kontanta marknader). Bryter din räkning mot en regel är räkningen fel — inte marknaden. Bredvid reglerna står riktlinjerna: alternation (våg 2 och våg 4 växlar former — är våg 2 djup och skarp blir våg 4 grund och sidledes) och jämlikhet (våg 5 blir ofta lika lång som våg 1 när våg 3 är den utdragen)."
+        },
+        {
+          "type": "text",
+          "content": "Vågorna har personligheter. Våg 1 är den skeptiska starten ur en botten; våg 2 den djupa retrace som övertygar alla om att nedtrenden är tillbaka (ofta till 50–61,8 procent); våg 3 den kraftfulla och breda rörelsen där allmänheten kliver in — volymen är som störst här, Volym-teorins bekräftelse; våg 4 den tråkiga sidledes konsolideringen (ofta triangel, kapitel 8); våg 5 momentumets sista stöt — ofta med RSI-divergens (kapitel 12). I korrigeringen är b-vågen fällan som väcker hopp, och c-vågen den destruktiva som städar ut."
+        },
+        {
+          "type": "text",
+          "content": "Elliott och Fibonacci är oskiljaktiga — Elliott själv pekade på förhållandena, och Frost & Prechter systematiserade dem: våg 2 retracerar ofta 50–61,8 procent av våg 1, våg 4 ofta 38,2 procent; våg 3 är ofta 1,618 gånger våg 1; når våg 3 den utdragen blir våg 5 ofta 0,618 av våg 1 eller lika lång; c-vågen speglar ofta a-vågen eller 1,618 av den. I AK1TS är detta Våg-dimensionen och Pris-dimensionens djupaste integration: räkningen ger formen, Fibonacci ger måtten."
+        },
+        {
+          "type": "insikt",
+          "content": "Elliotts tre regler är vågräkningens fundament: den som improviserar bort dem har inte en räkning utan en berättelse. Och alternation-guiden är lika värdefull — marknaden hatar att upprepa sig: var våg 2 var djup bör våg 4 vara platt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna en aktie som gått starkt i ett till två år. Försök räkna våg 1–5 från startrörelsen: markera våg 3 (störst, mest volym) och våg 4 (tråkigast, oftast sidledes). Mät retracements — ligger våg 2 kring 50–62 procent och våg 4 kring 38 procent? Det är Elliott-Fibonacci-mönstret i vildmarken."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Elliotts regler och riktlinjer\",\"rader\":[[\"Regel/Riktlinje\",\"Innehåll\"],[\"Regel 1\",\"Våg 2 retracerar aldrig 100 % av våg 1\"],[\"Regel 2\",\"Våg 3 är aldrig den kortaste impulsvågen\"],[\"Regel 3\",\"Våg 4 går aldrig in i våg 1:s prisområde\"],[\"Alternation\",\"Våg 2 och våg 4 växlar i form och djup\"],[\"Jämlikhet\",\"Våg 5 ≈ våg 1 när våg 3 är utdragen\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
       ],
       "quiz": [
-        { "q": "Vad är den grundläggande Elliott-strukturen?", "alternativ": ["Tre vågor upp, fem ner", "Fem vågor i trendens riktning följd av en trevågskorrigering (a-b-c)", "Sju vågor i cykler om åtta", "Fyra vågor följt av en triangel"], "ratt": 1, "tips": "Räkna impulsen först, sedan återhämtningen — hur många av varje?" },
-        { "q": "Vad säger Elliotts andra hårda regel?", "alternativ": ["Våg 2 retracerar aldrig hela våg 1", "Våg 4 får aldrig överlappa våg 1", "Våg 3 är aldrig den kortaste av impulsvågorna", "Korrigeringen har alltid tre vågor"], "ratt": 2, "tips": "Reglerna skyddar det mest karakteristiska draget vid varje våg — vilken våg är känd för att bära störst kraft?" },
-        { "q": "Vad innebär riktlinjen alternation?", "alternativ": ["Att våg 2 och våg 4 tenderar att växla i form — är den ena djup blir den andra platt", "Att alla vågor är lika långa", "Att korrigeringar alltid är snabbare än impluser", "Att våg 5 alltid divergerar"], "ratt": 0, "tips": "Ordet betyder växling — fråga dig vad marknaden skulle göra för att inte upprepa sig." }
+        {
+          "q": "Vad är den grundläggande Elliott-strukturen?",
+          "alternativ": [
+            "Tre vågor upp, fem ner",
+            "Fem vågor i trendens riktning följd av en trevågskorrigering (a-b-c)",
+            "Sju vågor i cykler om åtta",
+            "Fyra vågor följt av en triangel"
+          ],
+          "ratt": 1,
+          "tips": "Räkna impulsen först, sedan återhämtningen — hur många av varje?"
+        },
+        {
+          "q": "Vad säger Elliotts andra hårda regel?",
+          "alternativ": [
+            "Våg 2 retracerar aldrig hela våg 1",
+            "Våg 4 får aldrig överlappa våg 1",
+            "Våg 3 är aldrig den kortaste av impulsvågorna",
+            "Korrigeringen har alltid tre vågor"
+          ],
+          "ratt": 2,
+          "tips": "Reglerna skyddar det mest karakteristiska draget vid varje våg — vilken våg är känd för att bära störst kraft?"
+        },
+        {
+          "q": "Vad innebär riktlinjen alternation?",
+          "alternativ": [
+            "Att våg 2 och våg 4 tenderar att växla i form — är den ena djup blir den andra platt",
+            "Att alla vågor är lika långa",
+            "Att korrigeringar alltid är snabbare än impluser",
+            "Att våg 5 alltid divergerar"
+          ],
+          "ratt": 0,
+          "tips": "Ordet betyder växling — fråga dig vad marknaden skulle göra för att inte upprepa sig."
+        }
       ]
     },
     {
@@ -342,18 +1193,69 @@
       "title": "Fibonacci — marknadens dolda matematik",
       "intro": "Ur Elliotts vågor växer siffrorna: 38,2, 50 och 61,8 procent är teknikens mest citerade nivåer. Murphy ägnar Fibonacci ett eget kapitel — retracements, extensions, fans och tidszoner — och förklarar varför de fungerar. Detta är Fibonacci-teorins och Lucas-talseriens hem i AK1TS: Pris och Tid i samma verktygslåda.",
       "blocks": [
-        { "type": "text", "content": "Fibonacci-talserien (1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ...) genererar förhållandena som kommit att dominera teknisk analys: 0,618 (det gyllene snittets invers), 1,618, 0,382 (som är 1 minus 0,618 i kvadrat, och priset på en djup korrigering) och deras reciproker. Murphy, som bygger på Elliott, Frost och Prechter, konstaterar att nivåerna blivit så spridda att de delvis är självuppfyllande: när miljontals handlare tittar på samma linjer blir linjerna verkliga. Det är en kraft, inte en brist." },
-        { "type": "text", "content": "Retracements är kärnan. Efter en trendrörelse är de naturliga nivåerna 38,2 procent (grund korrigering i en stark trend), 50 procent (Dows egna jämviktsnivå — inte Fibonacci men ouppnåelig att utesluta) och 61,8 procent (det gyllene retracementet — bryts det nedåt är trenden i allvarligt fara). Murphy-praxis: ju starkare trend, desto grundare korrigering; och värdet av nivån växer när den sammanfaller med annat — ett medelvärde, ett gammalt motstånd, ett rungt tal. Där flera linjer läggs på varandra uppstår kluster, och kluster är där brytpunkter föds." },
-        { "type": "text", "content": "Extensions ger målen. Klassiska projektioner: våg 3 blir ofta 1,618 gånger våg 1; når våg 3 den längden blir våg 5 ofta lika lång som våg 1 eller 0,618 av den; c-vågen speglar ofta a-vågen eller 1,618 av den. Fibonacci-fans drar trendlinjer från en större sväng genom 38,2-, 50- och 61,8-procentsnivåerna och ger dynamiskt stöd som åldras med tiden. Tidszonerna räknar barer i talserien — 5, 8, 13, 21, 34, 55 — från en större sväng och markerar datum där vändningar blir sannolikare: Pris och Tid i samma verktyg." },
-        { "type": "text", "content": "AK1TS kompletterar med Lucas-talserien (2, 1, 3, 4, 7, 11, 18, 29, 47, 76) som alternativ tidsräkning — de två serierna landar ofta på närliggande datum, och där båda klustrar med en prisnivå uppstår ekosystemets starkaste signaler. Murphy skulle vara den förste att påminna om disciplinen: Fibonacci ger zoner, inte lasernivåer — kombinera med candlesticks och bekräftelse (Brytpunkt) snarare än att handla blint vid en procentsiffra. Fibonacci-teorin bär Pris-dimensionens måttstock på Medellång och Lång horisont." },
-        { "type": "insikt", "content": "Fibonacci fungerar inte för att universum är magiskt utan för att miljontals handlare tittar på samma linjer — självuppfylling är en kraft, inte en brist. Ju fler oberoende skäl som pekar på en nivå, desto starkare blir brytpunkten när den väl testas." },
-        { "type": "utmaning", "content": "Dra Fibonacci-retracement på den senaste större trendrörelsen i en svensk indexaktie (från botten till topp). Markera 38,2, 50 och 61,8 procent. Var vände priset? Räkna sedan 21 respektive 34 barer framåt från botten — landade något av datumen nära en faktisk sväng? Du har just kombinerat Pris- och Tid-dimensionen." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Fibonacci-verktygen\",\"rader\":[[\"Verktyg\",\"Användning\",\"AK1TS-dimension\"],[\"Retracement\",\"Korrigeringens slutnivå\",\"Pris\"],[\"Extension\",\"Mål för våg 3 och våg 5\",\"Pris\"],[\"Fan\",\"Dynamiskt stöd över tid\",\"Pris\"],[\"Tidszon\",\"Sannolika svängdatum\",\"Tid\"],[\"Kluster\",\"Fib + MA + rungt tal → zon\",\"Brytpunkt\"]]}" }
+        {
+          "type": "text",
+          "content": "Fibonacci-talserien (1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ...) genererar förhållandena som kommit att dominera teknisk analys: 0,618 (det gyllene snittets invers), 1,618, 0,382 (som är 1 minus 0,618 i kvadrat, och priset på en djup korrigering) och deras reciproker. Murphy, som bygger på Elliott, Frost och Prechter, konstaterar att nivåerna blivit så spridda att de delvis är självuppfyllande: när miljontals handlare tittar på samma linjer blir linjerna verkliga. Det är en kraft, inte en brist."
+        },
+        {
+          "type": "text",
+          "content": "Retracements är kärnan. Efter en trendrörelse är de naturliga nivåerna 38,2 procent (grund korrigering i en stark trend), 50 procent (Dows egna jämviktsnivå — inte Fibonacci men ouppnåelig att utesluta) och 61,8 procent (det gyllene retracementet — bryts det nedåt är trenden i allvarligt fara). Murphy-praxis: ju starkare trend, desto grundare korrigering; och värdet av nivån växer när den sammanfaller med annat — ett medelvärde, ett gammalt motstånd, ett rungt tal. Där flera linjer läggs på varandra uppstår kluster, och kluster är där brytpunkter föds."
+        },
+        {
+          "type": "text",
+          "content": "Extensions ger målen. Klassiska projektioner: våg 3 blir ofta 1,618 gånger våg 1; når våg 3 den längden blir våg 5 ofta lika lång som våg 1 eller 0,618 av den; c-vågen speglar ofta a-vågen eller 1,618 av den. Fibonacci-fans drar trendlinjer från en större sväng genom 38,2-, 50- och 61,8-procentsnivåerna och ger dynamiskt stöd som åldras med tiden. Tidszonerna räknar barer i talserien — 5, 8, 13, 21, 34, 55 — från en större sväng och markerar datum där vändningar blir sannolikare: Pris och Tid i samma verktyg."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS kompletterar med Lucas-talserien (2, 1, 3, 4, 7, 11, 18, 29, 47, 76) som alternativ tidsräkning — de två serierna landar ofta på närliggande datum, och där båda klustrar med en prisnivå uppstår ekosystemets starkaste signaler. Murphy skulle vara den förste att påminna om disciplinen: Fibonacci ger zoner, inte lasernivåer — kombinera med candlesticks och bekräftelse (Brytpunkt) snarare än att handla blint vid en procentsiffra. Fibonacci-teorin bär Pris-dimensionens måttstock på Medellång och Lång horisont."
+        },
+        {
+          "type": "insikt",
+          "content": "Fibonacci fungerar inte för att universum är magiskt utan för att miljontals handlare tittar på samma linjer — självuppfylling är en kraft, inte en brist. Ju fler oberoende skäl som pekar på en nivå, desto starkare blir brytpunkten när den väl testas."
+        },
+        {
+          "type": "utmaning",
+          "content": "Dra Fibonacci-retracement på den senaste större trendrörelsen i en svensk indexaktie (från botten till topp). Markera 38,2, 50 och 61,8 procent. Var vände priset? Räkna sedan 21 respektive 34 barer framåt från botten — landade något av datumen nära en faktisk sväng? Du har just kombinerat Pris- och Tid-dimensionen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fibonacci-verktygen\",\"rader\":[[\"Verktyg\",\"Användning\",\"AK1TS-dimension\"],[\"Retracement\",\"Korrigeringens slutnivå\",\"Pris\"],[\"Extension\",\"Mål för våg 3 och våg 5\",\"Pris\"],[\"Fan\",\"Dynamiskt stöd över tid\",\"Pris\"],[\"Tidszon\",\"Sannolika svängdatum\",\"Tid\"],[\"Kluster\",\"Fib + MA + rungt tal → zon\",\"Brytpunkt\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vad signalerar det när priset bryter nedåt genom 61,8-procentsretracementet av en uppgång?", "alternativ": ["Inget särskilt — nivån är kosmetisk", "Att korrigeringen sannolikt blir en vändning av hela trenden", "Att en ny våg 3 har startat", "Att volymen måste stiga"], "ratt": 1, "tips": "Det kallas det gyllene retracementet — vad säger det om trendens hälsa när till och med det ger vika?" },
-        { "q": "Vad är den klassiska Fibonacci-projektionen för våg 3?", "alternativ": ["0,382 gånger våg 1", "1,618 gånger våg 1", "3,14 gånger våg 2", "50 procent av våg 5"], "ratt": 1, "tips": "Våg 3 är känd för att bära störst kraft — vilket förhållande får bära den utsagan?" },
-        { "q": "Hur används Fibonacci-tidszoner?", "alternativ": ["För att sätta stopp exakt vid 38,2 procent", "Genom att räkna barer i talserien från en sväng och markera sannolika vändningsdatum", "Genom att multiplicera volymen med 1,618", "För att mäta trendlinjers lutning"], "ratt": 1, "tips": "Namnet säger allt: zoner i tid — vad räknas och från vilken punkt?" }
+        {
+          "q": "Vad signalerar det när priset bryter nedåt genom 61,8-procentsretracementet av en uppgång?",
+          "alternativ": [
+            "Inget särskilt — nivån är kosmetisk",
+            "Att korrigeringen sannolikt blir en vändning av hela trenden",
+            "Att en ny våg 3 har startat",
+            "Att volymen måste stiga"
+          ],
+          "ratt": 1,
+          "tips": "Det kallas det gyllene retracementet — vad säger det om trendens hälsa när till och med det ger vika?"
+        },
+        {
+          "q": "Vad är den klassiska Fibonacci-projektionen för våg 3?",
+          "alternativ": [
+            "0,382 gånger våg 1",
+            "1,618 gånger våg 1",
+            "3,14 gånger våg 2",
+            "50 procent av våg 5"
+          ],
+          "ratt": 1,
+          "tips": "Våg 3 är känd för att bära störst kraft — vilket förhållande får bära den utsagan?"
+        },
+        {
+          "q": "Hur används Fibonacci-tidszoner?",
+          "alternativ": [
+            "För att sätta stopp exakt vid 38,2 procent",
+            "Genom att räkna barer i talserien från en sväng och markera sannolika vändningsdatum",
+            "Genom att multiplicera volymen med 1,618",
+            "För att mäta trendlinjers lutning"
+          ],
+          "ratt": 1,
+          "tips": "Namnet säger allt: zoner i tid — vad räknas och från vilken punkt?"
+        }
       ]
     },
     {
@@ -362,19 +1264,73 @@
       "title": "Intermarket-analys — alla marknader hänger ihop",
       "intro": "Murphy var först ut med en hel bok om ämnet och sammanfattar det här: ingen marknad är en ö. Valutor, råvaror, räntor och aktier dansar tillsammans i en kedja där varje led påverkar nästa. Detta är AK1TS Mega-horisontens logik — den kontext som alla kortare analyser ska läsas mot.",
       "blocks": [
-        { "type": "text", "content": "Murphys kärna: alla marknader hänger samman. Den klassiska kedjan från 1980-talets disinflationsboom: dollarn stiger, råvarupriserna (CRB-indexet) faller, inflationen trycks ned, räntorna faller, obligationspriserna stiger — och aktierna gynnas. I 1970-talets och 2000-talets råvaruinflation löper kedjan åt motsatt håll: svag dollar, stigande råvaror, stigande räntor — och obligationer och aktier pressas. Samma mekanik, olika riktning:analytikerns jobb är att läsa vilken kedja som är aktiv." },
-        { "type": "text", "content": "Nyckelrelationerna är färre än de verkar. CRB-indexet och amerikanska obligationer har en tydlig invers relation: råvaror upp, obligationer ned. Obligationer och aktier är normalt positivt korrelerade — men när korrelationen bryts (som 1987, då obligationer föll medan aktier steg) är det en varning man sällan får två gånger. Vid stora vändningar roterar obligationer i allmänhet före aktier, och aktier före ekonomin — obligationsmarknaden är kedjans tidigaste led." },
-        { "type": "text", "content": "Metoden är ratio-grafer: råvaror delat med obligationer, sektor delat med index, en valuta delat med en annan — trenden i ratioen avslöjar vilken sida som leder. Murphy tillämpar även relativ styrka mellan länder och regioner: i en globaliserad värld synkroniseras börserna vid kriser (2008) men roterar ledarskap i uppgångar. För den svenska aktören är dollarn och råvarorna yttre vindar: svag dollar trycker exportörernas konkurrenskraft, råvarustyrs metaller och skog — Mega-horisontens väder-system, inte dagshandelns signaler." },
-        { "type": "text", "content": "I AK1TS-ekosystemet är intermarket-kedjan Mega-horisontens ekvationssystem: ändra en led och resten räknas om. Kedjan är också rotationslogikens (kapitel 18) bakgrund — när råvaror leder sent i cykeln roterar pengarna in i energi och material. Alla fyra dimensioner samverkar: valutor och råvaror är Pris, obligationsvändningar är Brytpunkt, kedjans ledtider är Tid, och mönstret i dess helhet är en Våg på Mega-nivå. Murphy-tänk: läs alltid utifrån och in." },
-        { "type": "insikt", "content": "Handelsfrågan är aldrig 'vad gäller för aktier' utan 'vad gör kedjan'. Murphys intermarket-kedja — dollar, råvaror, räntor, aktier — är Mega-horisontens ekvationssystem: förändra en led och resten räknas om." },
-        { "type": "utmaning", "content": "Öppna tre grafer: dollarindex (DXY), en råvarukorg eller CRB-proxy och amerikanska tioårsräntan. Backa tre år. Ser du kedjan röra sig i Murphys ordning? Rita sedan en ratiograf råvaror delat med räntor — vilken led har lett? Avsluta med OMXS30: gick indexet åt det håll kedjan antydde?" },
-        { "type": "tabell", "content": "{\"rubrik\":\"Intermarket-kedjan (disinflation)\",\"rader\":[[\"Länk\",\"Rörelse\",\"Effekt nedströms\"],[\"USD\",\"Stiger\",\"Råvaror trycks ned\"],[\"Råvaror (CRB)\",\"Fallar\",\"Inflationstrycket dämpas\"],[\"Räntor\",\"Faller\",\"Obligationspriser stiger\"],[\"Obligationer\",\"Stiger\",\"Aktier gynnas\"]]}" },
-        { "type": "visuell", "content": "bro" }
+        {
+          "type": "text",
+          "content": "Murphys kärna: alla marknader hänger samman. Den klassiska kedjan från 1980-talets disinflationsboom: dollarn stiger, råvarupriserna (CRB-indexet) faller, inflationen trycks ned, räntorna faller, obligationspriserna stiger — och aktierna gynnas. I 1970-talets och 2000-talets råvaruinflation löper kedjan åt motsatt håll: svag dollar, stigande råvaror, stigande räntor — och obligationer och aktier pressas. Samma mekanik, olika riktning:analytikerns jobb är att läsa vilken kedja som är aktiv."
+        },
+        {
+          "type": "text",
+          "content": "Nyckelrelationerna är färre än de verkar. CRB-indexet och amerikanska obligationer har en tydlig invers relation: råvaror upp, obligationer ned. Obligationer och aktier är normalt positivt korrelerade — men när korrelationen bryts (som 1987, då obligationer föll medan aktier steg) är det en varning man sällan får två gånger. Vid stora vändningar roterar obligationer i allmänhet före aktier, och aktier före ekonomin — obligationsmarknaden är kedjans tidigaste led."
+        },
+        {
+          "type": "text",
+          "content": "Metoden är ratio-grafer: råvaror delat med obligationer, sektor delat med index, en valuta delat med en annan — trenden i ratioen avslöjar vilken sida som leder. Murphy tillämpar även relativ styrka mellan länder och regioner: i en globaliserad värld synkroniseras börserna vid kriser (2008) men roterar ledarskap i uppgångar. För den svenska aktören är dollarn och råvarorna yttre vindar: svag dollar trycker exportörernas konkurrenskraft, råvarustyrs metaller och skog — Mega-horisontens väder-system, inte dagshandelns signaler."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS-ekosystemet är intermarket-kedjan Mega-horisontens ekvationssystem: ändra en led och resten räknas om. Kedjan är också rotationslogikens (kapitel 18) bakgrund — när råvaror leder sent i cykeln roterar pengarna in i energi och material. Alla fyra dimensioner samverkar: valutor och råvaror är Pris, obligationsvändningar är Brytpunkt, kedjans ledtider är Tid, och mönstret i dess helhet är en Våg på Mega-nivå. Murphy-tänk: läs alltid utifrån och in."
+        },
+        {
+          "type": "insikt",
+          "content": "Handelsfrågan är aldrig 'vad gäller för aktier' utan 'vad gör kedjan'. Murphys intermarket-kedja — dollar, råvaror, räntor, aktier — är Mega-horisontens ekvationssystem: förändra en led och resten räknas om."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna tre grafer: dollarindex (DXY), en råvarukorg eller CRB-proxy och amerikanska tioårsräntan. Backa tre år. Ser du kedjan röra sig i Murphys ordning? Rita sedan en ratiograf råvaror delat med räntor — vilken led har lett? Avsluta med OMXS30: gick indexet åt det håll kedjan antydde?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Intermarket-kedjan (disinflation)\",\"rader\":[[\"Länk\",\"Rörelse\",\"Effekt nedströms\"],[\"USD\",\"Stiger\",\"Råvaror trycks ned\"],[\"Råvaror (CRB)\",\"Fallar\",\"Inflationstrycket dämpas\"],[\"Räntor\",\"Faller\",\"Obligationspriser stiger\"],[\"Obligationer\",\"Stiger\",\"Aktier gynnas\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
       ],
       "quiz": [
-        { "q": "Vad är den normala relationen mellan råvarupriser (CRB) och amerikanska obligationer enligt Murphy?", "alternativ": ["Invers — råvaror upp, obligationer ned", "Positiv — de stiger tillsammans", "Oberoende av varandra", "Omvänd endast på årsbasis"], "ratt": 0, "tips": "Råvaror driver inflation, inflation driver räntor — och räntor gör vad med obligationspriser?" },
-        { "q": "Vilken ordning beskriver Murphys intermarket-kedja i en disinflationsmiljö?", "alternativ": ["Aktier, räntor, råvaror, dollar", "Dollar, råvaror, räntor, obligationer, aktier", "Råvaror, aktier, dollar, räntor", "Räntor, aktier, råvaror, dollar"], "ratt": 1, "tips": "Kedjan läses från valutan och inåt — börja med vad en stark dollar gör med råvarorna." },
-        { "q": "Vad var det särskilda med 1987 i intermarket-termer?", "alternativ": ["Råvaror och obligationer steg tillsammans", "Korrelationen mellan obligationer och aktier bröts — obligationer föll medan aktier steg, en klassisk varning", "Dollarn och aktier steg perfekt synkront", "Ingenting — kedjan var ur funktion hela decenniet"], "ratt": 1, "tips": "Murphy lyfter fram året som exempel på vad en bruten normalrelation brukar föregå." }
+        {
+          "q": "Vad är den normala relationen mellan råvarupriser (CRB) och amerikanska obligationer enligt Murphy?",
+          "alternativ": [
+            "Invers — råvaror upp, obligationer ned",
+            "Positiv — de stiger tillsammans",
+            "Oberoende av varandra",
+            "Omvänd endast på årsbasis"
+          ],
+          "ratt": 0,
+          "tips": "Råvaror driver inflation, inflation driver räntor — och räntor gör vad med obligationspriser?"
+        },
+        {
+          "q": "Vilken ordning beskriver Murphys intermarket-kedja i en disinflationsmiljö?",
+          "alternativ": [
+            "Aktier, räntor, råvaror, dollar",
+            "Dollar, råvaror, räntor, obligationer, aktier",
+            "Råvaror, aktier, dollar, räntor",
+            "Räntor, aktier, råvaror, dollar"
+          ],
+          "ratt": 1,
+          "tips": "Kedjan läses från valutan och inåt — börja med vad en stark dollar gör med råvarorna."
+        },
+        {
+          "q": "Vad var det särskilda med 1987 i intermarket-termer?",
+          "alternativ": [
+            "Råvaror och obligationer steg tillsammans",
+            "Korrelationen mellan obligationer och aktier bröts — obligationer föll medan aktier steg, en klassisk varning",
+            "Dollarn och aktier steg perfekt synkront",
+            "Ingenting — kedjan var ur funktion hela decenniet"
+          ],
+          "ratt": 1,
+          "tips": "Murphy lyfter fram året som exempel på vad en bruten normalrelation brukar föregå."
+        }
       ]
     },
     {
@@ -383,17 +1339,216 @@
       "title": "Sektorsrotation och relative strength",
       "intro": "Pengar lämnar sällan marknaden — de flyttar sig mellan sektorer. Murphys top-down-ansats börjar i börsindex, går via sektor och slutar i aktien, för en aktie är sällan starkare än sin sektor länge. Här förenas intermarket-kedjan med rotationsspelet på Medellång-horisonten.",
       "blocks": [
-        { "type": "text", "content": "Murphy är konsekvent: börja med marknaden, gå vidare till sektorn och först därefter till aktien. En stor del av en akties rörelse förklaras av dess sektor och den övergripande marknaden — att köpa rätt aktie i fel sektor är att simma mot strömmen med god teknik. Sektors ledarskap byts dessutom mellan cykler: vinnarna i en bullmarknad är sällan vinnarna i nästa — pengarna roterar, de försvinner inte." },
-        { "type": "text", "content": "Rotationen följer konjunkturcykeln. I tidig cykel leder finansbolag och cyklisk konsumtion — räntor faller och hushållens efterfrågan vänder. I mitten av cykeln tar industri och teknologi över — kapaciteten räcker inte och kapitalutgifterna ökar. I sen cykel leder energi och material — råvaruinflationen blommar, precis som intermarket-kedjan (kapitel 17) förutsäger. In i recessionen flyttar pengarna till försvarbart: konsumentbasvaror, bolag med stabilt kassaflöde, apotek och kraft — det som människor köper oavsett konjunktur." },
-        { "type": "text", "content": "Verktyget är relative strength: en ratio mellan aktien och dess index (aktie delat med index). Stigande ratio betyder utperformance — aktien slår marknaden; fallande betyder underprestation även om priset stiger. Murphy påpekar att en RS-ratio ofta bryter upp till nya höjder före själva priset: ledarskap avslöjar sig i relationen först. Lägg ett 50-dagarsmedelvärde på ratio-grafer — samma trendlogik som kapitel 11, tillämpad på en division." },
-        { "type": "text", "content": "Marknadens inre styrka — bredd — bekräftar eller varnar: advance/decline-linjen och andelen aktier över sitt 50-dagarsmedelvärde. Ny topp i index på krympande bredd är divergens på marknadsnivå (kapitel 12:s logik ett plan upp). I AK1TS är detta Medellång-horisontens tema, där Volym-teorin (penningflöde mellan sektorer, kapitel 19) och Pris-dimensionen (RS-trender) möts — och där GANN-liknande cykeltänk (kapitel 14) anger vilken rotationsfas marknaden befinner sig i." },
-        { "type": "insikt", "content": "En aktie är sällan starkare än sin sektor länge — sektorn är aktiens väder. Murphy: välj inte bara rätt aktie, välj rätt hav att fiska i. Halva aktiens rörelse kommer ovanifrån." },
-        { "type": "utmaning", "content": "Gör tre ratiografer mot OMXS30: en svensk bank, en industriaktie och en konsumentbasvara (till exempel livsmedel). Backa tre år. Vilken sektor ledde efter senaste större botten? Stämmer det med tidigcykel-skriptet — finans och cykliskt i ledning? Notera om någon ratio vände före själva priset." },
-        { "type": "tabell", "content": "{\"rubrik\":\"Rotation per konjunkturfas\",\"rader\":[[\"Fas\",\"Sektorer i ledning\",\"Logik\"],[\"Tidig cykel\",\"Finans, cyklisk konsumtion\",\"Räntor faller, efterfrågan vänder\"],[\"Mitcykel\",\"Industri, teknologi\",\"Kapitalutgifter ökar\"],[\"Sen cykel\",\"Energi, material\",\"Råvaruinflation\"],[\"Recession\",\"Konsumentbas, kraft, hälsovård\",\"Defensiva kassaflöden\"]]}" }
+        {
+          "type": "text",
+          "content": "Murphy är konsekvent: börja med marknaden, gå vidare till sektorn och först därefter till aktien. En stor del av en akties rörelse förklaras av dess sektor och den övergripande marknaden — att köpa rätt aktie i fel sektor är att simma mot strömmen med god teknik. Sektors ledarskap byts dessutom mellan cykler: vinnarna i en bullmarknad är sällan vinnarna i nästa — pengarna roterar, de försvinner inte."
+        },
+        {
+          "type": "text",
+          "content": "Rotationen följer konjunkturcykeln. I tidig cykel leder finansbolag och cyklisk konsumtion — räntor faller och hushållens efterfrågan vänder. I mitten av cykeln tar industri och teknologi över — kapaciteten räcker inte och kapitalutgifterna ökar. I sen cykel leder energi och material — råvaruinflationen blommar, precis som intermarket-kedjan (kapitel 17) förutsäger. In i recessionen flyttar pengarna till försvarbart: konsumentbasvaror, bolag med stabilt kassaflöde, apotek och kraft — det som människor köper oavsett konjunktur."
+        },
+        {
+          "type": "text",
+          "content": "Verktyget är relative strength: en ratio mellan aktien och dess index (aktie delat med index). Stigande ratio betyder utperformance — aktien slår marknaden; fallande betyder underprestation även om priset stiger. Murphy påpekar att en RS-ratio ofta bryter upp till nya höjder före själva priset: ledarskap avslöjar sig i relationen först. Lägg ett 50-dagarsmedelvärde på ratio-grafer — samma trendlogik som kapitel 11, tillämpad på en division."
+        },
+        {
+          "type": "text",
+          "content": "Marknadens inre styrka — bredd — bekräftar eller varnar: advance/decline-linjen och andelen aktier över sitt 50-dagarsmedelvärde. Ny topp i index på krympande bredd är divergens på marknadsnivå (kapitel 12:s logik ett plan upp). I AK1TS är detta Medellång-horisontens tema, där Volym-teorin (penningflöde mellan sektorer, kapitel 19) och Pris-dimensionen (RS-trender) möts — och där GANN-liknande cykeltänk (kapitel 14) anger vilken rotationsfas marknaden befinner sig i."
+        },
+        {
+          "type": "insikt",
+          "content": "En aktie är sällan starkare än sin sektor länge — sektorn är aktiens väder. Murphy: välj inte bara rätt aktie, välj rätt hav att fiska i. Halva aktiens rörelse kommer ovanifrån."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör tre ratiografer mot OMXS30: en svensk bank, en industriaktie och en konsumentbasvara (till exempel livsmedel). Backa tre år. Vilken sektor ledde efter senaste större botten? Stämmer det med tidigcykel-skriptet — finans och cykliskt i ledning? Notera om någon ratio vände före själva priset."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rotation per konjunkturfas\",\"rader\":[[\"Fas\",\"Sektorer i ledning\",\"Logik\"],[\"Tidig cykel\",\"Finans, cyklisk konsumtion\",\"Räntor faller, efterfrågan vänder\"],[\"Mitcykel\",\"Industri, teknologi\",\"Kapitalutgifter ökar\"],[\"Sen cykel\",\"Energi, material\",\"Råvaruinflation\"],[\"Recession\",\"Konsumentbas, kraft, hälsovård\",\"Defensiva kassaflöden\"]]}"
+        }
       ],
       "quiz": [
-        { "q": "Vad är korrekt ordning i Murphys top-down-ansats?", "alternativ": ["Aktie, sektor, marknad", "Marknad, sektor, aktie", "Sektor, aktie, marknad", "Valuta, aktie, sektor"], "ratt": 1, "tips": "Ordet 'top-down' är bokstavligt — var börjar man och var slutar man?" },
-        { "q": "Vilka sektorer leder klassiskt i en tidig konjunkturcykel?", "alternativ": ["Energi och material", "Kraft och konsumentbasvaror", "Finans och cyklisk konsumtion", "Teknik och telekom"], "ratt": 2, "tips": "Tidig cykel betyder fallande räntor och vändande hushållsefterfrågan — vilka verksamheter gynnas först?" },
-        { "q": "Vad betyder en stigande RS-ratio (aktie delat med index)?", "alternativ": ["Aktien slår marknaden — utperformance", "Index slår aktien", "Aktien faller", "Korrelationen är perfekt"], "ratt": 0, "tips": "Tänk på vad divisionen gör när täljaren växer snabbare än nämnaren." }
+        {
+          "q": "Vad är korrekt ordning i Murphys top-down-ansats?",
+          "alternativ": [
+            "Aktie, sektor, marknad",
+            "Marknad, sektor, aktie",
+            "Sektor, aktie, marknad",
+            "Valuta, aktie, sektor"
+          ],
+          "ratt": 1,
+          "tips": "Ordet 'top-down' är bokstavligt — var börjar man och var slutar man?"
+        },
+        {
+          "q": "Vilka sektorer leder klassiskt i en tidig konjunkturcykel?",
+          "alternativ": [
+            "Energi och material",
+            "Kraft och konsumentbasvaror",
+            "Finans och cyklisk konsumtion",
+            "Teknik och telekom"
+          ],
+          "ratt": 2,
+          "tips": "Tidig cykel betyder fallande räntor och vändande hushållsefterfrågan — vilka verksamheter gynnas först?"
+        },
+        {
+          "q": "Vad betyder en stigande RS-ratio (aktie delat med index)?",
+          "alternativ": [
+            "Aktien slår marknaden — utperformance",
+            "Index slår aktien",
+            "Aktien faller",
+            "Korrelationen är perfekt"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad divisionen gör när täljaren växer snabbare än nämnaren."
+        }
       ]
     },
+    {
+      "num": 19,
+      "minutes": 11,
+      "title": "Money flow — OBV och volymens vittnesmål",
+      "intro": "Volymkapitlet (kapitel 5) gav principen: volymen förgår priset. Här operationaliseras den. Joe Granvilles On-Balance Volume blev branschens första penningflödesinstrument, och Murphy räknar det till de mest använda volymindikatorerna. Detta är Volym-teorins praktiska hjärta i AK1TS.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "OBV — On-Balance Volume — är förödande enkelt: varje dag läggs hela dagens volym till den löpande summan om priset stängde upp, och dras ifrån om det stängde ned. Resultatet är en ackumulerad volymlinje vars riktning väger volymen mot prisrörelsens håll. Murphy poängterar att det är OBV:s trend och form som spelar roll, inte det absoluta talet — linjan ska tolkas som en kurva, inte som ett värde."
+        },
+        {
+          "type": "text",
+          "content": "OBV:s två signaler: bekräftelse och divergens. Bekräftelse: OBV bör röra sig i takt med priset — stigande pris på stigande OBV är en frisk trend. Divergens: priset gör ny topp men OBV en lägre — de stora volymerna stödjer inte längre uppgången; spegelbilden gäller i bottnar. Murphy lyfter fram att OBV ofta bryter sin egen konsolideringszon före priset — en ledande brytpunkt i volymens värld, bokstavligen 'volymen förgår priset' omsatt i en linje."
+        },
+        {
+          "type": "text",
+          "content": "Familjen bredvid: Accumulation/Distribution-linjen väger dagens volym med var i dagens intervall stängningen hamnar — stängning nära dagens höga ger full vikt, nära dagens låga ger negativ. Volym-ROC mätter tempot i flödet. Volymspikar markerar klimax: utmattningskopplingar vid toppar och panikbottnar; tystnad — uttorkad volym — i ackumuleringsfaser. Murphy sammanfattar: prisberättelsen blir trovärdig först när volymen intygar den."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS-ekosystemet är detta Volym-teorins fulla praktik på Kort och Medellång horisont. OBV bekräftar Våg-dimensionen: våg 3 känns igen på volymexpansion i trendriktningen, våg 5 på OBV-divergens mot priset — Elliott räknat i flöden i stället för bara pris. Vid tester av Brytpunkter är OBV den naturliga expeditionsfrågan: kom brytningen med flöde, eller var den tom? En nackdel att minnas: OBV ser bara riktning på stängningsbasis, inte var i intervallet handeln skedde — där kompletterar A/D-linjen."
+        },
+        {
+          "type": "insikt",
+          "content": "Priset säger vad marknaden gör, OBV säger vem som gör det. När de två berättar olika historier litar Murphy på volymen — flödet ljuger dyrt, åsikter inte."
+        },
+        {
+          "type": "utmaning",
+          "content": "Lägg OBV på en aktie som rört sig sidledes i några månader. Stiger OBV under ytan (tyst ackumulering) eller sjunker den (distribution)? Kontrollera historiken: vad hände priset efter tidigare sådana perioder — ledde OBV:s brytning priset? Upprepa övningen på OMXS30 för marknaden som helhet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Volymindikatorer i familjen\",\"rader\":[[\"Indikator\",\"Fråga\",\"Styrka\"],[\"OBV\",\"Ackumuleras eller distribueras?\",\"Simpel, ofta ledande\"],[\"A/D-linje\",\"Var i intervallet stängde priset?\",\"Fångar köp- och säljtryck\"],[\"Volymspik\",\"Klimax eller utbrott?\",\"Markerar utmattning\"],[\"Volym-ROC\",\"Tempot i flödet\",\"Kort timing\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur konstrueras OBV?",
+          "alternativ": [
+            "Genom att addera dagens volym vid stigande stängning och subtrahera den vid fallande — en löpande summa",
+            "Genom att multiplicera volym med pris",
+            "Som ett 14-dagars medelvärde av volymen",
+            "Som volymen delat med antalet affärer"
+          ],
+          "ratt": 0,
+          "tips": "Namnet On-Balance Volume antyder en våg — på vilken sida av vågen hamnar dagens volym?"
+        },
+        {
+          "q": "Priset gör ny topp men OBV gör en lägre topp. Vad är tolkningen?",
+          "alternativ": [
+            "Bekräftad hälsosam upptrend",
+            "Volymdivergens — flödet stödjer inte längre uppgången, en varning",
+            "En klassisk köpsignal",
+            "OBV är trasig och ska bytas ut"
+          ],
+          "ratt": 1,
+          "tips": "Vem gör jobbet med att lyfta priset om volymen inte är med?"
+        },
+        {
+          "q": "Hur ser volymprofilen typiskt ut i en tyst ackumuleringsfas?",
+          "alternativ": [
+            "Rekordhöga och växande volymer",
+            "Uttorkad, död volym medan priset går sidledes",
+            "Volymspikar varje vecka",
+            "Volymen exakt vid sitt genomsnitt"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad kloka köpare vill undvika medan de bygger positioner — uppmärksamhet."
+        }
+      ]
+    },
+    {
+      "num": 20,
+      "minutes": 11,
+      "title": "Handelssystem, risk och AK1TS-integrationen",
+      "intro": "Murphy avslutar bibeln med det som avgör om allt annat lönsamhet: systembygge och pengarhantering. Trendföljning eller mean reversion, stopp och pyramider, risk per trade — och integrationen av fundamentalt och tekniskt. Sista steget: att översätta hela boken till AK1TS 25-cellersmatris.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Systemfamiljerna är två. Trendföljning köper styrka: medelvärden, brytpunkter, nya höjder — låg träffsäkerhet men stora vinnare, och den kräver en stark trend för att fungera (ADX över 25, kapitel 13). Mean reversion köper svaghet: oscillatorer och Fibonacci-retracements i sidledes marknad — hög träffsäkerhet men svansrisk när extrema blir extremare. Murphy: matcha systemet mot regimen och — minst lika viktigt — mot din egen horisont. Mikro och Kort gynnar mean reversion; Medellång och Lång gynnar trendföljning."
+        },
+        {
+          "type": "text",
+          "content": "Murphys systemregler: håll det enkelt, testa det på historisk data innan riskkapital sätts in, och håll tidsramarna konsekventa — den som swingtradar på 15-minuterssignaler har inget system utan ett humör. Entréerna kräver definierad ogiltigförklaring: stoppet under mönstret, nacklinjen eller trendlinjen som gav signalen. Målen kommer från mätten — measured moves och Fibonacci-extensions (kapitel 6 och 16). Pyramidregeln är enkel: lägg till i vinnare, aldrig i förlorare — en regel som är lättare att uttala än att följa."
+        },
+        {
+          "type": "text",
+          "content": "Pengarhantering väger tyngst. Murphys budskap är obehagligt tydligt: ett medelmåttigt entresystem överlever med utmärkt riskkontroll, ett utmärkt entresystem dör utan. Praktiken: riskera en till två procent av kapitalet per trade, kräv minst dubbel belöning mot risk, beräkna positionsstorleken från stoppavståndet — aldrig tvärtom. Håll handelsjournal; den är systemets spegel. Tester först, riktiga pengar sedan: papperstrading existerar för att flytta misstagen till där de är billiga."
+        },
+        {
+          "type": "text",
+          "content": "Integrationen: fundamentala analyser avgör VAD du äger — värde, kvalitet, kassaflöde; teknisk analys avgör NÄR du köper och säljer. Murphy var tekniker men aldrig fundamentalofob: teknikens bidrag är timingen och riskkontrollen, inte förnekandet av verkligheten. Slutpunkten för hela kursen — och startpunkten för AK1TS: fem horisonter, fem teorier, fyra dimensioner ger tjugufem celler, och Murphys universalitetsprincip garanterar att verktygen fungerar i var och en. Kort plus Fibonacci plus Pris blir retracement-trades; Medellång plus Elliott plus Våg blir primärvågsräkning; Mega plus intermarket blir rotationskontext. Matrisen är kartan — Murphy lämnade dig alla instrument."
+        },
+        {
+          "type": "insikt",
+          "content": "Ditt entresystem avgör hur ofta du har rätt — din pengarhantering avgör om du överlever att ha fel. Först risken, sedan beloppet, alltid stoppet. Det är Murphys sista och viktigaste lektion."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ditt AK1TS-ur: välj en horisont, en teori och en dimension — till exempel Medellång plus Fibonacci plus Pris. Skriv tre regler enligt Murphy: entry (vilken nivå och bekräftelse), stopp (var ogiltigförklaras idén) och mål (vilket mått). Testa reglerna på tio historiska tillfällen i en chart. Hur många klarade kravet på dubbel belöning mot risk?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Systemfamiljerna\",\"rader\":[[\"Egenskap\",\"Trendföljande\",\"Mean reversion\"],[\"Köper\",\"Styrka\",\"Svaghet och extremer\"],[\"Regime\",\"ADX över 25\",\"ADX under 20\"],[\"Träffsäkerhet\",\"Låg\",\"Hög\"],[\"Största risken\",\"Whipsaw\",\"Svansförlust\"],[\"AK1TS-pass\",\"Medellång / Lång\",\"Mikro / Kort\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Murphys budskap om förhållandet entre och pengarhantering?",
+          "alternativ": [
+            "Entret är allt — pengarhantering är dekorativt",
+            "Ett medelmåttigt system överlever med god riskkontroll, ett utmärkt system dör utan",
+            "Pengarhantering ersätter entry-signaler",
+            "Båda är oviktiga om tidsramarna är långa"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vilken av de två som bestämmer storleken på dina förluster — och vilken som bestämmer om du får vara kvar i spelet."
+        },
+        {
+          "q": "Hur delar Murphy arbetsfördelningen mellan fundamental och teknisk analys?",
+          "alternativ": [
+            "Teknik avgör vad, fundamentalt avgör när",
+            "De är utbytbara och ger samma svar",
+            "Fundamentalt avgör vad du äger, tekniskt avgör när du köper och säljer",
+            "Teknik ska ersätta fundamentals helt"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad vardera disciplin faktiskt mäter — värde kontra timing."
+        },
+        {
+          "q": "Vilka förutsättningar kräver trendföljande system för att fungera?",
+          "alternativ": [
+            "En stark trend — annars piskas systemet sönder",
+            "Hög volatilitet i sidledes marknad",
+            "Fallande volym",
+            "ADX under 20"
+          ],
+          "ratt": 0,
+          "tips": "Systemet köper styrka — vad händer med den strategin när det inte finns någon styrka att köpa?"
+        }
+      ]
+    }
+  ]
+}

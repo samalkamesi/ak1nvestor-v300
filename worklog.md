@@ -3430,3 +3430,21 @@ Work Log:
 
 Stage Summary:
 - 232 kurser · 3834 quiz · 716 sidor · 100-böckers bibliotek live
+
+---
+Task ID: 117-VAG1-LEVERANS-2
+Agent: main + Murphy-agent ✓ (Fisher/Nison/Schilit/Marks/Damodaran/O'Neil kör)
+Task: Murphy-kursen + våg-självskattning (styrelsens beslut #3)
+
+Work Log:
+- MURPHY BOKMASTER (kurs #7): 20 kap, 60 quiz, varje kapitel mappat till
+  AK1TS (horisont × teori × dimension) — teknikbibeln komplett
+- VÅG-SJÄLVSKATTNING: VagSkattning-komponent i portföljens per-aktie-vy —
+  eleven väljer impulsvåg/korrigering/basbygge INNAN motorn visar sitt svar,
+  jämförelse med pedagogisk notering vid avvik ("diskutera med Short-Sellern")
+- Kanon: Murphy markerad kurs (7 av 100 har nu kurser)
+- 233 kurser · 3894 quiz · 717 sidor
+
+Stage Summary:
+- Alla 3 styrelsebeslut executerade: #2 fundamentdata ✓, #3 vågskattning ✓,
+  #1 bloggtakt kölagd

@@ -8,6 +8,7 @@ import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 import { KursQuiz } from "@/components/ak1a/kurs-quiz";
 import { LasProgress, KapitelBadge, InsiktPuls, VisaMetafor } from "@/components/ak1a/kurs-visuellt";
 import { KursSteg } from "@/components/ak1a/kurs-steg";
+import { RikText, SektionBryt } from "@/components/ak1a/rik-text";
 
 export const dynamic = "force-static";
 
@@ -185,9 +186,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                         );
                       }
                       return (
-                        <p key={i} className="text-sm leading-relaxed text-foreground/90">
-                          {p}
-                        </p>
+                        <RikText key={i} text={p} />
                       );
                     })}
                 </div>

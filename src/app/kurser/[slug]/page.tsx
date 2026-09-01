@@ -50,10 +50,20 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         </p>
         <h1 className="mt-2 font-serif text-4xl font-bold">{course.title}</h1>
         <p className="mt-3 text-muted-foreground leading-relaxed">{course.learn}</p>
-        <p className="mt-2 text-xs text-muted-foreground">
-          {course.chapters.length} kapitel · {course.totalMinutes || course.minutes} min ·{" "}
-          {course.xp ? `${course.xp} XP` : "Inkluderad i medlemskap"}
-        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {[
+            `📖 ${course.chapters.length} kapitel`,
+            `⏱ ${course.totalMinutes || course.minutes} min`,
+            course.xp ? `⚡ ${course.xp} XP` : null,
+            `🎓 ${course.level}`,
+            `⚖ Vikt: ${course.weight || "6%"}`,
+            `🏷 ${course.category}`,
+          ].filter(Boolean).map((chip: string) => (
+            <span key={chip} className="rounded-full border border-gold/30 bg-gold/5 px-3 py-1 text-xs font-medium text-gold">
+              {chip}
+            </span>
+          ))}
+        </div>
       </header>
 
       {course.why && (
@@ -65,26 +75,105 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         </section>
       )}
 
+      {/* Korstabell: kursens struktur och snabbval */}
+      <section className="mt-10">
+        <h2 className="font-serif text-2xl font-bold">Kursöversikt</h2>
+        <div className="mt-3 overflow-x-auto rounded-xl border border-gold/20">
+          <table className="w-full text-sm">
+            <thead className="bg-gold/10 text-left text-xs uppercase tracking-wide text-gold">
+              <tr>
+                <th className="p-3">Kapitel</th>
+                <th className="p-3">Fokus</th>
+                <th className="p-3 text-right">Tid</th>
+              </tr>
+            </thead>
+            <tbody>
+              {course.chapters.map((ch) => (
+                <tr key={ch.num} className="border-t border-gold/10 hover:bg-gold/5">
+                  <td className="p-3 font-medium">
+                    <a href={`#kap-${ch.num}`} className="text-gold hover:underline">
+                      {ch.num}. {ch.title}
+                    </a>
+                  </td>
+                  <td className="p-3 text-muted-foreground">{ch.intro?.slice(0, 90)}{(ch.intro?.length || 0) > 90 ? "…" : ""}</td>
+                  <td className="p-3 text-right font-mono text-xs text-muted-foreground">{ch.minutes || 9} min</td>
+                </tr>
+              ))}
+              <tr className="border-t-2 border-gold/30 bg-gold/5 font-semibold">
+                <td className="p-3" colSpan={2}>Totalt</td>
+                <td className="p-3 text-right font-mono text-xs">{course.totalMinutes || course.minutes} min</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Kapitel med strukturerade kort + INSIGHT-boxar */}
       <section className="mt-10">
         <h2 className="font-serif text-2xl font-bold">Kursinnehåll</h2>
         <div className="mt-4 space-y-6">
-          {course.chapters.map((ch) => (
-            <article key={ch.num} className="rounded-lg border border-gold/20 bg-card p-5">
-              <h3 className="font-serif text-xl font-semibold">
-                Kapitel {ch.num}: {ch.title}
-              </h3>
-              {ch.intro && <p className="mt-2 text-sm text-muted-foreground">{ch.intro}</p>}
-              <div className="mt-3 space-y-3">
-                {ch.blocks?.map((b, i) =>
-                  b.type === "text" ? (
-                    <p key={i} className="text-sm leading-relaxed whitespace-pre-line">
-                      {String(b.content)}
+          {course.chapters.map((ch) => {
+            const text = (ch.blocks || [])
+              .filter((b) => b.type === "text")
+              .map((b) => String(b.content))
+              .join("\n\n");
+            const stycken = text.split(/\n\n+/);
+            const insikt = stycken.length > 1
+              ? (stycken.find((p) => p.length > 80 && p.length < 350) || "").split(/[.!?] /)[0]
+              : "";
+            return (
+              <article key={ch.num} id={`kap-${ch.num}`} className="scroll-mt-24 rounded-xl border border-gold/20 bg-card p-5">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold font-serif text-base font-bold text-primary-foreground">
+                    {ch.num}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-serif text-xl font-semibold">{ch.title}</h3>
+                    <p className="mt-0.5 text-[11px] uppercase tracking-wide text-muted-foreground">
+                      Kapitel {ch.num} av {course.chapters.length} · {ch.minutes || 9} min läsning
                     </p>
-                  ) : null
+                  </div>
+                </div>
+                {ch.intro && (
+                  <p className="mt-3 border-l-2 border-gold/50 pl-3 text-sm italic text-muted-foreground">
+                    {ch.intro}
+                  </p>
                 )}
-              </div>
-            </article>
-          ))}
+                {insikt && (
+                  <div className="mt-3 rounded-lg border border-gold/40 bg-gold/10 px-4 py-3">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-gold">◆ Nyckelinsikt</p>
+                    <p className="mt-1 text-sm font-medium leading-relaxed">{insikt}.</p>
+                  </div>
+                )}
+                <div className="mt-3 space-y-3">
+                  {stycken
+                    .filter((p) => p !== insikt)
+                    .map((p, i) => {
+                      const rader = p.split("\n");
+                      const listRader = rader.filter((r) => /^[•\-*]\s/.test(r.trim()));
+                      if (listRader.length >= 2) {
+                        return (
+                          <ul key={i} className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-foreground/90">
+                            {rader.map((r, j) =>
+                              /^[•\-*]\s/.test(r.trim()) ? <li key={j}>{r.trim().replace(/^[•\-*]\s*/, "")}</li> : null
+                            )}
+                          </ul>
+                        );
+                      }
+                      return (
+                        <p key={i} className="text-sm leading-relaxed text-foreground/90">
+                          {p}
+                        </p>
+                      );
+                    })}
+                </div>
+                <div className="mt-4 flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
+                  <span className="h-px flex-1 bg-gold/20" />
+                  {ch.num < course.chapters.length ? `Nästa: ${course.chapters[ch.num]?.title || ""}` : "Kursen klar ⭐"}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 

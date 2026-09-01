@@ -216,6 +216,10 @@
         {
           "type": "visuell",
           "content": "cykel"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
         }
       ],
       "quiz": [

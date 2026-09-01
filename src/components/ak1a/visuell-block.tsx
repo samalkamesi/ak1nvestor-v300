@@ -8,6 +8,12 @@ import {
   Akm1Radar,
   PortfoljDonut,
 } from "@/components/ak1a/visuellt-bibliotek";
+import {
+  VagTidslinje,
+  BubbelHistorik,
+  RiskTermometer,
+  KonvergensKort,
+} from "@/components/ak1a/visuellt-bibliotek-2";
 
 /**
  * VISUELL BLOCK-RENDERER — väcker kursdata:ns `visuell`-block till liv.
@@ -80,6 +86,14 @@ export function VisuellBlock({ typ }: { typ: string }) {
         return <PortfoljDonut sektorer={EXEMPEL_SEKTORER} />;
       case "skala":
         return <VardeSkala />;
+      case "tidslinje":
+        return <VagTidslinje />;
+      case "bubbel":
+        return <BubbelHistorik />;
+      case "termometer":
+        return <RiskTermometer />;
+      case "konvergens":
+        return <KonvergensKort />;
       default:
         return (
           <p className="text-xs text-muted-foreground">

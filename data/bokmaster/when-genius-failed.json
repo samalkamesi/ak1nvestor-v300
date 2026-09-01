@@ -1,0 +1,336 @@
+{
+  "slug": "when-genius-failed",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "When Genius Failed — Lowenstein: KOMPLETT",
+  "summary": "Roger Lowensteins When Genius Failed (2000) är den definitiva berättelsen om Long-Term Capital Management — hedgefonden med två nobelpristagare som 1998 höll på att dra ner det globala finanssystemet med sig. Kursen följer drömlaget från Salomons handelsbord till Feds panikrum: konvergensstrategierna, hävstången över 25:1, Rysslands default, korrelationernas förräderi och räddningen på 3,625 miljarder dollar — och ställer den obekväma frågan: modellfel eller otur?",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven berätta LTCM-historien i dess rätta siffror — 1,25 miljarder dollar i startkapital 1994, nettoavkastningar kring 43 och 41 procent, en balansräkning på cirka 125 miljarder mot knappt fem i eget kapital, derivat-notional i biljonklassen, en endagsförlust på över en halv miljard den 21 augusti 1998 och räddningen den 23 september — och förklara mekanismerna bakom varje steg: konvergenshandel, swap-spreads, såld aktievolatilitet, repo-finansiering och den margin-spiral som dödade fonden; identifiera de tre dödliga ingredienserna i AKM1:s språk — V10 skuldsättningsgrad, V11 likviditet, V19 kapitalförbrukning i kristider — och varför korrelationerna gick mot ett precis när diversifieringen behövdes som mest; reda ut debatten modellfel mot otur, från Talebs ryska roulette-kritik till försvaret att statistiskt sunda strategier dödades av svansar och hävstång, samt moral hazard-problemet med Feds förmedlade räddning och dess linje till 2008 års systemkris; och tillämpa lärdomarna praktiskt genom positionstak, likviditetsstress-tester, svansscenarior och marginal of safety som princip utan siffra.",
+  "why": "När de mest dekorerade människorna i finanshistorien — Merton och Scholes med Nobelpriset på hyllan — förlorar 90 procent av kapitalet på nio månader finns ingen kompetensförsäkring att falla tillbaka på. Lowensteins bok, skriven med ovanlig närhet till aktörerna, är riskutbildningens skräckexempel i berättelseform: varje AKM1-varning om hävstång (V10), likviditet (V11) och kapitalförbrukning (V19) har sin blodiga illustration här. Kursen behövs eftersom lärdomarna inte slutar gälla: 2008 spelade hela systemet om samma logik på större skala, och varje generation återupptäcker att hävstång plus illikviditet plus överlappande risker är dödligt oavsett IQ. Dessutom tvingar boken en ärlig debatt som de flesta riskkurser duckar för: var det idioti, otur — eller en sund strategi med dödlig design?",
+  "chapters_list": [
+    "1. Prologen — mynten framför ångvälten",
+    "2. Salomon-arvet — när matematikerna erövrade handelsbordet",
+    "3. Drömlaget — nobelpristagare, Fed-stjärnan och 1,25 miljarder",
+    "4. Vetenskapen — Black-Scholes, slumpvandring och tron på att risk kan mätas",
+    "5. Strategierna — konvergenshandelns fem familjer",
+    "6. Maskinen — hävstång, repo och 1,25 biljoner i derivat",
+    "7. Guldtiden — 43 och 41 procent och myten som växte",
+    "8. Sommaren 1998 — Ryssland defaultar och allt rör sig fel samtidigt",
+    "9. Korrelationens förräderi — diversifieringen som försvann",
+    "10. Likviditetsdöden — margin calls och den onda spiralen",
+    "11. Rescuen — Feds rum, 14 banker och 3,625 miljarder",
+    "12. Moral hazard — när »too big to fail« föddes",
+    "13. Debatten — modellfel eller otur? Taleb mot försvararna",
+    "14. Arvet — från LTCM till 2008 och din egen checklista"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Prologen — mynten framför ångvälten",
+      "intro": "I februari 1994 startade världens mest hypade hedgefond med 1,25 miljarder dollar i kapital — fyra år senare höll samma fond på att kväva det globala finanssystemet. Roger Lowensteins When Genius Failed (2000) berättar historien om Long-Term Capital Management med ovanlig närhet till aktörerna. Det här är kursens karta: en tragedi i fjorton kapitel, läst genom AKM1:s riskglassögon.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med teamet, för det är hela poängen. John Meriwether var Wall Streets mest mytomspunna obligationshandlare, arvtagare till Salomon Brothers arbitragegrupp. Robert Merton och Myron Scholes fick Nobelpriset i ekonomi i oktober 1997 — knappt ett år innan fonden kollapsade — för den optionsteori som byggde modern finans. David Mullins Jr lämnade posten som vice ordförande i Federal Reserve för att bli partner. Runt dem: Lawrence Hilibrand, Victor Haghani, Greg Hawkins, Eric Rosenfeld och ett tjugotal doktorer. Om genialitet kunde mätas i examensbevis hade LTCM varit det säkraste finansexperimentet i historien. Det var det inte."
+        },
+        {
+          "type": "text",
+          "content": "Wall Street sammanfattade strategin med en metafor som Lowenstein fångar i boken: att plocka upp nickelpengar framför en ångvält. Fondens affärer var små, statistiskt gynnsamma och talrika — tusentals positioner där man satsade på att prisskillnader mellan i grunden likvärdiga tillgångar skulle krympa. Varje mynt var tjänat på rationell grund. Men hävstången förvandlade geometrin: med 25 delar skuld per del eget kapital raderar en rörelse på fyra procent i den underliggande boken hela kapitalet. Det är inte mynten som dödar — det är multiplikatorn den dagen välten kommer."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A:s del är det här riskutbildningens kärntext i berättelseform. Kursen läser LTCM genom tre variabler: V10 skuldsättningsgrad (hävstången som gjorde fonden till vad den var), V11 likviditet (finansieringen som kunde dras tillbaka över en natt) och V19 kapitalförbrukning och emissionsrisk (margin calls som brände kapitalet, och en räddning som spädde ägarna med 90 procent). Dessutom en princip utan nummer: marginal of safety — avståndet till ruin — som mäts i design, inte i intelligens."
+        },
+        {
+          "type": "text",
+          "content": "Kursens båg: kapitel 2-4 ger ursprunget — Salomon-kulturen, drömlaget och den vetenskapliga världsbilden. Kapitel 5-7 bygger maskinen och guldtiden: strategierna, hävstången, avkastningarna som gjorde myten självbärande. Kapitel 8-10 är kollapsen: Ryssland, korrelationens förräderi och likviditetsdöden. Kapitel 11-12 skildrar rescuen och födelsen av »too big to fail«. Kapitel 13-14 ställer de obekväma frågorna — modellfel eller otur? — och knyter arvet till 2008 och din egen checklista. Lowenstein citeras öppet genom hela kursen: kunskapen ska vara tillgänglig, inte begravd i fotnoter."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"LTCM i siffror — grundfakta att bära med dig\",\"rader\":[[\"Nyckeltal\",\"Siffra\",\"Notering\"],[\"Startkapital februari 1994\",\"1,25 miljarder USD\",\"Största hedgefondstarten någonsin\"],[\"Nettoavkastning 1995/1996\",\"cirka 43/41 procent\",\"Brutto 59/57 procent\"],[\"Eget kapital januari 1998\",\"cirka 4,7 miljarder USD\",\"Efter återlämnade 2,7 miljarder\"],[\"Balansräkning 1998\",\"cirka 125 miljarder USD\",\"Hävstång cirka 25-28:1\"],[\"Derivat-notional\",\"över 1 biljon USD\",\"Swappar och optioner utanför balansräkningen\"],[\"Endagsförlust 21 augusti 1998\",\"omkring 550 miljoner USD\",\"Flykten till trygghet efter Ryssland\"],[\"Räddningen 23 september 1998\",\"3,625 miljarder USD\",\"14 banker tog 90 procent av fonden\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Intelligens avgör hur bra dina affärer är i genomsnitt. Överlevnad avgörs av din värsta dag — och den värsta dagen bestäms av hävstång och likviditet, aldrig av IQ."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du läser vidare: skriv ner din största nuvarande finansiella exponering — bolån, marginal, koncentrerad aktieposition eller något annat. Uppskatta ärligt vad som händer med den om marknaden samtidigt faller 30 procent, likviditeten torkar ut och en motpart kräver säkerhet samma vecka. Spara pappret; kursen återkommer till det i kapitel 8 och 10."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gjorde LTCM:s start 1994 unik i finanshistorien?",
+          "alternativ": [
+            "Det var den första hedgefonden som använde derivat",
+            "Avgifterna var de högsta Wall Street sett",
+            "Sammansättningen — Wall Streets bästa handlare, två blivande nobelpristagare och en f d vice ordförande i Fed samlade med 1,25 miljarder dollar",
+            "Fonden var den första som handlade statsobligationer"
+          ],
+          "ratt": 2,
+          "tips": "Titta på personerna på stycklista — inte på instrumenten."
+        },
+        {
+          "q": "Vad fångar metaforen om att plocka upp mynt framför en ångvält?",
+          "alternativ": [
+            "Att handla ofta urholkar avkastningen genom avgifter",
+            "Att strategin ger många små vinster men en sällsynt, katastrofal förlust — och att hävstången förstorar just den dagen",
+            "Att småbolag ger högre avkastning än stora",
+            "Att man ska samla på fysiska mynt som inflationsskydd"
+          ],
+          "ratt": 1,
+          "tips": "Rita utfallet över tid: vad tjänar du per dag, och vad händer den enskilda dåliga dagen?"
+        },
+        {
+          "q": "Vilka AKM1-variabler är den här kursens röda tråd?",
+          "alternativ": [
+            "V04, V05 och V06 — värderingsmultiplarna",
+            "V13 och V14 — patent och varumärke",
+            "V16 och V17 — lanseringar och partnerskap",
+            "V10, V11 och V19 — skuldsättningsgrad, likviditet och kapitalförbrukning"
+          ],
+          "ratt": 3,
+          "tips": "Fråga inte vad fonden ägde, utan vad som dödade den."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Salomon-arvet — när matematikerna erövrade handelsbordet",
+      "intro": "På Salomon Brothers på 1980-talet skapade John Meriwether något nytt: en handelsgrupp av akademiker som spelade marknaderna med matematik i stället för magkänsla. Lowenstein skildrar kulturen — poker, prestige och siffror — som blev LTCM:s DNA. Och han berättar hur skandalen 1991 fällde Meriwether på Salomon, men gjorde honom fri att bygga om större.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "På 1970-talets Salomon var obligationshandeln ett hantverk av magkänsla och kundrelationer. Meriwether, en lärarson från Chicago somummeltalanger och hästkapplöpningar, förde in något främmande: akademiker. Eric Rosenfeld undervisade i finansiell ekonomi vid Harvard; Bill Krasker kom från MIT. Deras insikt var att obligationer, till skillnad från aktier, har exakta matematiska samband — en 29-årig och en 30-årig statsobligation är samma pengar och ska i grunden prissättas lika. När marknaden av rädsla eller bekvämlighet prissatte dem olika fanns en mätbar avvikelse att handla på: köp den billiga, sälj kort den dyra, vänta på konvergens. Ingen gissning om räntans riktning — bara relativ prissättning."
+        },
+        {
+          "type": "text",
+          "content": "Kulturen runt gruppen blev legendarisk. Meriwether tog sina doktorer med på pokerspel på huga insatser — Lowenstein öppnar sin skildring i den miljön — och lät dem satsa stora belopp på marknaden utan att själv pusta. Tryggheten byggde på att alla var smartare än motståndaren, en övertygelse som grupperna internaliserade. Den bar dem långt: under 1980- och 90-talet blev arbitragegruppen Salomons vinstmaskin, och år 1990 tjänade Lawrence Hilibrand 23 miljoner dollar — mer än någon annan anställd på Wall Street det året. Handelsbordet hade blivit stjärnfabrik, och stjärnorna trodde att systemet var derigt."
+        },
+        {
+          "type": "text",
+          "content": "Sedan kom fallet. I augusti 1991 avslöjades att handlaren Paul Mozer lämnat falska bud i amerikanska statsobligationsauktioner — och att ledningen dröjt med att rapportera övertrampet till staten. Warren Buffett, som just tagit över som tillförordnad chef efter ett misslyckat budövertagande, tvingade fram avgående för de ansvariga. Meriwether, som var högst ansvarig för Mozers bord, avgick — med anseende bland handlare oskadat, men med en fläck som gjorde vägen tillbaka till en storbank stängd. Lowenstein menar att det är då idén föds: bygga egen verksamhet — utan bankstyrning, utan ägare som bromsar."
+        },
+        {
+          "type": "text",
+          "content": "Här ligger kursens första systemläxa. Arbitragekanten — insikten att relativa prisskillnader konvergerar — var äkta, men extremt tunn: ofta bråkdelar av en procent per affär. En sådan kant kan aldrig förvandlas till stjärnavkastning med mer skicklighet, bara med mer hävstång. Salomon-bankens balansräkning satte taket; den stora bankens ägare och riskfunktioner var den broms som fanns. Hedgefonden som företeelse blev drömmen om samma affärer med frivillig hävstång och utan extern kontroll. Nästa kapitel visar hur drömmen finansierades."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från Salomon till LTCM — arvet i fyra punkter\",\"rader\":[[\"Arv\",\"På Salomon\",\"Hos LTCM\"],[\"Människor\",\"Akademiker som Rosenfeld och Hilibrand mitt bland grovhuggna säljare\",\"Samma kärna — utan säljkultur: bara forskare och handlare\"],[\"Metod\",\"Relativa spel: köp den billiga obligationen, sälj kort den dyra\",\"Samma metod, global skala och modellstyrka\"],[\"Kapital\",\"Bankens balansräkning och ägare som bromsade\",\"Oreglerad fond — hävstången blev ett fritt val, och den valdes hög\"],[\"Bromsar\",\"Ägare, riskfunktion, en VD ovanför\",\"Partners som granskade sig själva — kontrollen urgraduerad\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En kant som är äkta men ytterst tunn går inte att förvandla till stor avkastning med mer skicklighet — bara med mer hävstång. Det är inte kanten som är farlig; det är multiplikatorn."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera din egen tunnaste kant — en metod som ger dig små fördelar ofta. Räkna sedan på två versioner av den: utförd med noll belåning och med maximal belåning, under en period då du tvingas stå emot tre månaders tvång. Skriv ner vilken multiplikator du faktiskt kan bära fysiskt, inte intellektuellt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför avgick Meriwether från Salomon 1991?",
+          "alternativ": [
+            "Han hade förlorat bankens pengar i en hävstångsblåsa",
+            "En underordnad, Paul Mozer, hade lämnat falska bud i statsobligationsauktioner och ledningen dröjt med att rapportera — Meriwether var högst ansvarig",
+            "Han tackade nej till vd-posten och avgick i protest",
+            "Buffett avskedade alla handlare när han köpte banken"
+          ],
+          "ratt": 1,
+          "tips": "Skandalen handlade om själva råvaran i verksamheten: statsobligationsauktionerna."
+        },
+        {
+          "q": "Vad skilde Meriwethers grupp från tidigare tiders obligationshandlare?",
+          "alternativ": [
+            "De anställde akademiker och handlade på matematiska samband mellan obligationer i stället för magkänsla och makrospådomar",
+            "De spelade enbart på att räntan skulle falla",
+            "De var de första som använde optioner",
+            "De vägrade använda datorer"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad en doktor i finansiell ekonomi ser i en obligation som en säljare inte ser."
+        },
+        {
+          "q": "Vad var den avgörande skillnaden i riskkontroll mellan Salomon-tiden och LTCM?",
+          "alternativ": [
+            "LTCM hade strängare interna riskgränser än banken",
+            "Ingen — exakt samma system togs med",
+            "På Salomon fanns ägare, riskfunktion och en vd ovanför gruppen; i LTCM granskade partnerna sig själva",
+            "Finansinspektörer övervakade LTCM dagligen"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vem som kunde säga nej till en stor position — i respektive organisation."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Drömlaget — nobelpristagare, Fed-stjärnan och 1,25 miljarder",
+      "intro": "1993-1994 byggde Meriwether drömlaget: nobelpristagarna Merton och Scholes, Fed:s vice ordförande David Mullins som lämnade centralbanken för fonden, och Salomon-kärnan med Hilibrand, Haghani, Hawkins och Rosenfeld. Penninginsamlingen blev en triumf — och avgiftsstrukturen gjorde partnerna osedvanligt rika redan innan första affären var gjord.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Försäljningen av fonden 1993 var ett mästerverk i finansieringens historia. Målet sattes till 1,25 miljarder dollar — mer än någon hedgefond startat med — och trots att fonden krävde tre år bindningstid och en avgiftsstruktur på 2 procent förvaltningsavgift plus 25 procent av vinsten, det dubbla mot branschnorm, var efterfrågan enorm. Pitchbladet erbjöd inte avkastning på marknadsrisk utan nästan Statistical säkerhet: vi tar inte marknadsrisk, vi skördar avvikelser som historiskt alltid stängts. Bland investerarna fanns pensionsfonder, förmögenheter — och Italiens centralbank med omkring hundra miljoner dollar. Om centralbanker som övervakar systemet investerar, vilken institutionell ägare kan säga nej?"
+        },
+        {
+          "type": "text",
+          "content": "Merton och Scholes bidrog inte med daglig handel utan med världsbild och legitimitet. Merton, professor vid Harvard, var arkitekten bakom den kontinuerliga finansieringsteorin — marknader som flyter utan friktion, där priser alltid finns och handel alltid är möjlig. Scholes, vid Stanford, var medskapare av optionsteorin som gett honom Nobelpriset (och som hedrade den avlidne Fischer Black). I oktober 1997, ett år före kollapsen, krönte Svenska Akademien deras livsverk — och händelsen förvandlade LTCM:s marknadsföring från trovärdig till övernaturlig. Lowenstein noterar ironin: priset delades ut när fondens riskmätare redan visade att den satsade mer än någonsin."
+        },
+        {
+          "type": "text",
+          "content": "I maskinrummet satt Salomon-kärnan: Hilibrand, swaparbitragets mästare med kontor målade i svart och en personlig förmögenhet som gjorde honom till fondens tyngsta partner; Haghani och Hawkins på ränteboken och aktievolatiliteten; Rosenfeld som Meriwethers förtrogne sedan Harvard. David Mullins Jr:s avgång från Fed i februari 1994 — från att reglera marknaderna till att handla i dem — gav fonden centralbankskompetens och ett kontaktnät som skulle visa sig avgörande i september 1998. Partnerna återinvesterade stora delar av sina arvoden; vid krisens utbrott fanns nästan två miljarder dollar av deras egna pengar i fonden. Skin in the game — verkligt, men också maximal koncentration."
+        },
+        {
+          "type": "text",
+          "content": "Ett detaljerat exempel på hur myten spreds: UBS paketerade LTCM-avkastningen i kapitalskyddade noter och sålde till sina kunder — banken tog fondexponering och finansierade garantin genom att sälja optioner, en konstruktion som i sig borde varnat för att något var fel med en »riskfri« superegen. Fonden, skriver Lowenstein, betraktades som framtiden: en institution byggd på människor som visste mer än marknaden. Kursen noterar mönstret: ju mer oemotsagd en institution ser ut, desto mindre granskas mekanismerna under huven."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Drömlaget — nyckelpersoner\",\"rader\":[[\"Namn\",\"Bakgrund\",\"Roll i fonden\"],[\"John Meriwether\",\"Salomons bundlegend\",\"Grundare och strategisk ledare\"],[\"Robert Merton\",\"Harvard; Nobelpriset 1997\",\"Teorins fader — legitimitet och modellkultur\"],[\"Myron Scholes\",\"Chicago och Stanford; Nobelpriset 1997\",\"Prissättning och finansiella strukturer\"],[\"David Mullins Jr\",\"Vice ordförande i Federal Reserve\",\"Marknads- och centralbankskunskap; Fed-kontakter\"],[\"Lawrence Hilibrand\",\"Salomons stjärna i swaparbitrage\",\"Störst ansvar, störst positioner\"],[\"Eric Rosenfeld\",\"Harvardlärare och Salomonveteran\",\"Obligationer; Meriwethers förtrogne\"],[\"Victor Haghani och Greg Hawkins\",\"Salomon\",\"Aktievolatilitet och ränteboken\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En spalt med stjärnor är en marknadsföringstillgång — och en varningsflagga. Ju mer oemotsägligt teamet ser ut, desto mindre granskas mekanismerna under huven."
+        },
+        {
+          "type": "utmaning",
+          "content": "Anta att någon visar dig en placering där »världens främsta experter« är det enda riskargumentet. Skriv de tre sakfrågor du skulle ställa i stället. Ledning: en om finansieringen, en om positionernas storlek i förhållande till marknaden, en om vad som händer vid tvång."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken avgift kunde LTCM ta ut — och varför godtog investerarna den?",
+          "alternativ": [
+            "1 och 10 procent, branschnormen, eftersom fonden var oprövad",
+            "Fast arvode utan andel av vinsten",
+            "Ingen avgift alls — partnerna tog all risk själva",
+            "2 procent förvaltning och 25 procent av vinsten — dyrare än alla konkurrenter, för teamet sålde sig självt"
+          ],
+          "ratt": 3,
+          "tips": "Vad är det du egentligen betalar för när avgiften är dubbel mot normen?"
+        },
+        {
+          "q": "Vad symboliserade David Mullins Jr:s övergång till fonden?",
+          "alternativ": [
+            "Att Fed gav fonden ett officiellt mandat",
+            "Att centralbankens vice ordförande lämnade regleringen för handeln — ett tecken på den nya finansvärldens dragningskraft, och senare en tvetydig Fed-koppling",
+            "Att Mullins var tänkt att efterträda Greenspan",
+            "Att fonden behövde en jurist för sina avtal"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vilken signal det skickar när systemets spelare bör spela mot systemet."
+        },
+        {
+          "q": "När fick Merton och Scholes Nobelpriset i ekonomi?",
+          "alternativ": [
+            "1973, samma år som Black-Scholes-formeln publicerades",
+            "I oktober 1997 — knappt ett år innan fonden kollapsade",
+            "1991 i samband med Salomon-skandalen",
+            "2000, som en tröst efter kollapsen"
+          ],
+          "ratt": 1,
+          "tips": "Priset och kollapsen ligger paradoxalt nog närmare varandra än priset och fondens start."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Vetenskapen — Black-Scholes, slumpvandring och tron på att risk kan mätas",
+      "intro": "Bakom LTCM stod en världsbild: marknader är effektiva, priser rör sig som slumpvandringar och risk kan mätas i standardavvikelser. Lowenstein förklarar pedagogiskt hur Black-Scholes-matematiken blev en helhetstro. Detta är kursens viktigaste kapitel för den som vill förstå varför experterna inte såg vad som kom.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den intellektuuta grunden var tre byggstenar. Först den effektiva marknadshypotesen: priser återspeglar all tillgänglig information, och avvikelser är slumpbrus. Sedan slumpvandringen: prisförändringar följer en välartad fördelning där extrema utfall är extremt osannolika — svansarna är tunna och förutsägbara. Tre, arbitraget som mekanism: om en avvikelse uppstår kommer rationella aktörer att handela på den tills den försvinner. Black-Scholes-modellen från 1973 byggde exakt på denna värld och gjorde volatiliteten till något som kunde prissättas exakt. För Merton-skolan var finans inte längre hantverk utan naturvetenskap."
+        },
+        {
+          "type": "text",
+          "content": "För LTCM blev detta en affärsmodell. Tusentals små positioner, var och en med liten positiv förväntan, skulle enligt de stora talens lag jämna ut varandra till en jämn avkastningskurva. Diversifieringen mättes i historisk korrelation mellan marknader: amerikanska obligationer, japanska aktier, europeiska swapar — oberoende nok. Portföljrisken summerades i Value-at-Risk, VaR: med 95 procents konfidens förlorar vi inte mer än så mycket och så mycket på en dag. Eftersom varje enskild trade kunde visas »lågrisk« blev den logiska slutsatsen att hävstången inte ökade risken nämnvärt — bara avkastningen. Det var vetenskap, trodde man. Lowenstein beskriver hur Mertons världsbild — flytande, ständigt handelsbara marknader — gjorde likviditet till en fotnot snarare än en riskfaktor."
+        },
+        {
+          "type": "text",
+          "content": "Kursen lyfter fyra blinda fläckar som Lowensteins skildring lägger bare. Ett: feta svansar — verkliga prisförändringar är vildare än normalfördelningen; händelser som enligt modellen ska inträffa en gång på universums ålder inträffar i verkligen varje decennium. Två: icke-stationaritet — korrelationer uppmätta under lugna år säger inget om krisår, när just de förhållanden som skapade datamaterialet upphör. Tre: likviditeten — modellerna antar att du alltid kan handla dig ur; i panik finns inga bud vid modellpris. Fyra: trängsel — när andra kopierar samma konvergenshandel blir utgången trång, och det som var en statistisk fördel blir ett systemiskt beroende."
+        },
+        {
+          "type": "text",
+          "content": "Försvararna av fonden — och det är en seriös position som kapitel 13 tar på allvar — säger att modellerna hanterade 98 procent av alla utfall korrekt. Problemet var att de sista två procenten, i kombination med hävstång, räckte för att radera fonden. I augusti 1998 inträffade dagliga förluster som fondens riskmätare bedömde som statistiskt omöjliga — flera standardavvikelser bortom allt historiken visat. Poängen för AKM1: risk är inte volatilitet. Risk är ruin. Ett mått som säger hur mycket du förlorar 95 procent av dagarna säger ingenting om de dagar som avgör om du överlever."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre byggstenar i tron — och deras blinda fläckar\",\"rader\":[[\"Byggsten\",\"Tron\",\"Blinda fläcken\"],[\"Effektiva marknader\",\"Avvikelser är brus som alltid försvinner\",\"Bruset kan förstärkas och bli systemiskt\"],[\"Black-Scholes (1973)\",\"Risk och volatilitet kan prissättas exakt\",\"Fördelningen antas välartad — svansar göms\"],[\"VaR och diversifiering\",\"Historisk korrelation sprider risken\",\"Korrelationen går mot 1 i kris — precis som 1998\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En modell är en åsikt om vilka utfall som finns. VaR byggd på fem lugna år är inte ett mått på risk — det är ett mått på historien."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en modell du lever efter — »bostadspriser stiger i snitt fem procent«, »spreaden sluter sig alltid«, »jobbpropertyn är stabil«. Lista tre tillstånd som ligger utanför modellens data: krig, tvångsförsäljning, motpartsfall. Fråga sedan: vad gör modellen med dem? Svaret är inget — och det är poängen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken mekanism skulle enligt effektivitetstron göra att spreadar alltid konvergerar?",
+          "alternativ": [
+            "Centralbankernas ingripanden",
+            "Arbitragörer som handlar på avvikelser tills de försvinner",
+            "Reglerares prisreglering",
+            "Ren slump — ingen mekanism behövs"
+          ],
+          "ratt": 1,
+          "tips": "Vem tjänar pengar på att prisskillnaden finns — och vad gör den personen med den?"
+        },
+        {
+          "q": "Vad är VaR i sin kärna?",
+          "alternativ": [
+            "En garanti för maximal förlust",
+            "Ett mått på långsiktig avkastning",
+            "Ett stress-test för extrema dagar",
+            "Ett uppskattat förlustintervall vid given konfidens, beräknat på historisk data — med allt det innebär när historien varit lugn"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad modellen äter som input — och vad den därför inte kan veta."
+        },
+        {
+          "q": "Vilken av följande var INTE en av kursens blinda fläckar hos LTCM:s modellvärld?",
+          "alternativ": [
+            "Feta svansar i prisförändringar",
+            "Likviditet som försummad riskfaktor",
+            "Att datorerna räknade för långsamt",
+            "Trängsel när alla kopierar samma affärer"
+          ],
+          "ratt": 2,
+          "tips": "Tre av alternativen handlar om vad modellen missar i världen — ett handlar om verktyget självt."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Strategierna — konvergenshandelns fem familjer",
+      "intro": "LTCM:s portfölj kan förenklas till fem strategifamiljer: handel mellan nya och äldre statsobligationer, swap-spreads, aktievolatilitet, fusionarbitrage och tillväxtmarknader. Var och en statistiskt sund, var och en med millimetertunn avkastning. Och — som kollapsen skulle visa — var och en i grunden samma underliggande satsning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Familj ett: statsobligationer nya mot äldre. En nyligen utfärdad amerikansk tioårig obligation — »on the run« — handlas dyrare än en äldre, kemiskt nästan identig emission, för att institutioner vill ha just den mest omsatta papperet. LTCM köpte de äldre, illikvida papperen och sålde kort de nya, och tjänade på att preminmatural.. " 
+        }
+      ]
+    }
+  ]
+}

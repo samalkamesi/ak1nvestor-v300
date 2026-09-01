@@ -349,6 +349,10 @@
         {
           "type": "utmaning",
           "content": "Ta ett av dina innehav och betygsätt de fem förlustkällorna 1-5: bolagets belåning (V10), aktiens likviditet (V11), intäktsstabiliteten (V12), kapitalförbrukningen (V19) och din egen belåning. Bestäm dig för: vad är den värsta rimliga utgången — och överlever din portfölj och ditt psyke den? Om inte: vad är den första åtgärden?"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
         }
       ],
       "quiz": [

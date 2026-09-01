@@ -1,0 +1,1026 @@
+{
+  "slug": "encyclopedia-of-chart-patterns",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "Encyclopedia of Chart Patterns — Bulkowski: KOMPLETT",
+  "summary": "Thomas Bulkowski gjorde det ingen gjort före honom: han mätte diagrammönstren som om de vore maskinkomponenter — tusentals formationer, mönster för mönster, med snittstigningar, felfrekvenser och rankningar för varje enskild typ. Kursen går igenom hela den statistiska apparaten, från huvud-och-skuldror och Adam & Eve-dubbelbottnar till flaggor, koppar, throwbacks och gap, och avslutar med den kontroversiella ärligheten: varför moderna tester av samma mönster visar svagare resultat — och vad i Bulkowskis material som ändå överlever i algoritmernas tidevarv.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Du lär dig Bulkowskis hela statistiska system: hur han mätte mönster i bull- och björnmarknader och vad hans performanstabeller faktiskt säger; vändmönstren med siffror (huvud-och-skuldror topp och botten, trippelformationer, dubbelbottnar med hela Adam & Eve-systematiken); fortsättningsmönstren (stigande triangel, flaggor, vimplar, den berömda high and tight-flaggan, koppen med handtag, measured moves och dead-cat bounce); breakout-mekaniken — throwbacks, pullbacks, gap och volym; hur felfrekvenser blir stop-logik och hur mätregeln blir mål; samt den kontroversiella slutfrågan: mönstrens erosion i modern tid och vad som överlever. Ren teknisk analys med AK1TS Brytpunkt-dimensionen som pedagogisk ram.",
+  "why": "Detta är den statistiska motstyckheten till Edwards & Magees anatomibok — samma mönster, men mätta i stället för beskrivna. Varje gång du frågar hur ofta ett utbrott felar, hur ofta kursen kastas tillbaka till inträdesnivån eller vilket mönster som historiskt presterat bäst, ställer du Bulkowskis frågor. AK1TS Brytpunkt-dimension bygger på hans kärinsikt: ett mönster definierar objektivt var tesen dör, och felfrekvenstabellen talar om hur ofta det händer. Utan den statistiska disciplinen blir mönsterhandel anekdoter; med den blir det väntevärdesberäkning. Och kontroversen — att kanterna eroderar när alla ser mönstren — är precis den ärlighet som skiljer forskning från tro.",
+  "chapters_list": [
+    { "num": 1, "title": "Mannen som räknade diagram — metoden och materialet", "minutes": 10 },
+    { "num": 2, "title": "Statistikens grammatik — att läsa performanstabellerna", "minutes": 10 },
+    { "num": 3, "title": "Huvud-och-skuldror topp — ikonen får sina siffror", "minutes": 10 },
+    { "num": 4, "title": "Huvud-och-skuldror botten och trippelformationerna", "minutes": 10 },
+    { "num": 5, "title": "Dubbelbottnar — Adam & Eve-systematiken", "minutes": 10 },
+    { "num": 6, "title": "Trianglar — den stigande och hennes släkt", "minutes": 10 },
+    { "num": 7, "title": "Flaggor och vimplar — prestandaeliten", "minutes": 10 },
+    { "num": 8, "title": "Koppen med handtag — O'Neil möter räknemaskinen", "minutes": 10 },
+    { "num": 9, "title": "Measured moves och dead-cat bounce — fortsättningens logik", "minutes": 10 },
+    { "num": 10, "title": "Throwbacks och pullbacks — timingens dolda statistik", "minutes": 10 },
+    { "num": 11, "title": "Gap och volym — utbrottets kvalitetsmått", "minutes": 10 },
+    { "num": 12, "title": "Samma form, olika siffror — trend och marknadsläge", "minutes": 10 },
+    { "num": 13, "title": "Att handla mönstret — inträde, stopp, mål och felfrekvens", "minutes": 10 },
+    { "num": 14, "title": "Kontroversen — rankningar, erosion och vad som överlever", "minutes": 10 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Mannen som räknade diagram — metoden och materialet",
+      "intro": "Thomas Bulkowski är inte professor utan ingenjör och privat investerare som på 1990-talet bestämde sig för att göra det ingen gjort före honom: mäta diagrammönster som om de vore maskinkomponenter. Resultatet blev Encyclopedia of Chart Patterns, först utgiven 2000 och omarbetad 2005, ett verk där varje formation får exakta definitioner, stora urval och kalla siffror. Detta kapitel visar hur hela räknemaskinen är byggd — först när du förstår metoden kan du lita på, eller misstro, tabellerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Före Bulkowski fanns två sorters mönsterlitteratur: handritade klassiker som Edwards & Magee, fulla av vackra exempel men utan en enda utfallsfrekvens, och triviala kokböcker utan djup. Bulkowskis revolution var att behandla varje formation som ett statistiskt experiment. Han samlade ett arkiv av tusentals mätta formationer fördelade på flera dusin typer, identifierade varje enskilt fall enligt i förväg uppställda regler och noterade sedan vad som hände efter utbrottet — i genomsnitt, i bästa fall, i värsta fall och hur ofta det misslyckades. Ett mönster som ser ut som en huvud-och-skuldror och beter sig som en huvud-och-skuldror räcker inte; det måste vara mätbart definierat för att resultatet ska vara replikerbart."
+        },
+        {
+          "type": "text",
+          "content": "Metodens ryggrad är uppdelningen i marknadsläge. Bulkowski delar hela materialet i primära bull- och björnmarknader innan han räknar någonting alls, eftersom samma formation visar olika väntevärde beroende på det överliggande klimatet. Därifrån bygger han sina performanstabeller: genomsnittlig stigning eller nedgång från utbrott till den bästa respektive sämsta punkten under hans mäthorisont, andel fall som ger en motgång över vissa trösklar, hur ofta kursen kastas tillbaka till utbrottsnivån, hur lång tid rörelserna tar och en sammanvägd prestandarank som sorterar formationerna mot varandra. Tabellerna är bokens faktiska innehåll — prosan är bara förklaringen till siffrorna."
+        },
+        {
+          "type": "text",
+          "content": "Tre definitioner bör du låsa fast direkt. Ett utbrott är i regel en kursstängning genom en formations definierade nivå — konvergenslinje, nacklinje eller motstånd — inte ett intradagintrång som stängs tillbaka. Mätpunkten är utbrottsögonblicket, inte formationens start, vilket gör statistiken handelsbar: siffrorna beskriver vad som händer om du faktiskt köper signalen. Och felfrekvensen definieras som andelen mönster där kursen rör sig mindre än en fast tröskel — i storleksordningen 5 till 10 procent beroende på upplaga och formation — i förväntad riktning efter utbrottet. Allt i resten av kursen hänger på dessa tre bärande begrepp."
+        },
+        {
+          "type": "insikt",
+          "content": "Bulkowskis verkliga bidrag är inte mönstren utan byte av epistemologi: från anekdot till basfrekvens. Edwards & Magee gav oss anatomin; Bulkowski gav oss aktuartabellerna. När du vet att en formationstyp felar i, säg, en av fem fall slutar du fråga fungerar mönstret? och börjar i stället prisa setupet som ett försäkringsbolag priser en risk — och då blir stopp, positionsstorlek och väntevärde en konsekvens av siffrorna i stället för humöret."
+        },
+        {
+          "type": "utmaning",
+          "content": "Starta ditt eget mätlabb: välj en formation du tror på, skriv ner en exakt identifieringsregel och en tydlig definition av utbrott och misslyckande (till exempel mindre än 10 procent i väntad riktning). Samla sedan tjugo historiska fall från diagram du aldrig studerat tidigare, mät utfallet för varje — och räkna ut din egen snittrörelse och felfrekvens. Nu gör du exakt det Bulkowski gjorde, och du kommer att upptäcka hans första lärdom: att mäta är obehagligt mycket svårare än att känna igen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bulkowskis metod steg för steg\",\"rader\":[[\"Steg\",\"Vad han gjorde\",\"Varför det spelar roll\"],[\"Urval\",\"Tusentals formationer, bull- och björnmarknad åtskilda\",\"Blir inte marknadsläge ihopblandat med mönsterkvalitet\"],[\"Definition\",\"Exakta identifieringsregler per formation\",\"Gör resultatet replikerbart och testbart\"],[\"Utbrott\",\"Kursstängning genom definierad nivå\",\"Objektiv och handelsbar startpunkt\"],[\"Utfall\",\"Snitt till bästa och sämsta punkt, felfrekvens, throwbackfrekvens\",\"Jämförbar prestanda mellan formationer\"],[\"Rank\",\"Formationer sorterade efter prestanda\",\"Prioritering av bevakning och kapital\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Bulkowskis största unika bidrag jämfört med de klassiska mönsterböckerna?",
+          "alternativ": [
+            "Han testade mönstren statistiskt på stora urval med felfrekvenser och utfall",
+            "Han uppfann huvud-och-skuldror och dubbeltoppar",
+            "Han bevisade att diagrammönster alltid slår index",
+            "Han ersatte diagram med enbart fundamentala nyckeltal"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vad som skiljer en katalog av exempel från ett laboratorium med mätresultat."
+        },
+        {
+          "q": "Varför delar Bulkowski upp all statistik i bull- och björnmarknader innan han räknar?",
+          "alternativ": [
+            "För att björnmarknader innehåller fler formationer",
+            "För att samma formation kan ge olika väntevärde beroende på marknadsläge",
+            "För att mönster bara existerar i bullmarknader",
+            "För att hans dator inte klarade hela materialet samlat"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på om en vändbotten i en björnmarknad verkligen borde bete sig som i en bullmarknad."
+        },
+        {
+          "q": "Vad är ett utbrott i Bulkowskis mätvärld?",
+          "alternativ": [
+            "En ökning av volymen utan prisrörelse",
+            "Ett intradagintrång som stängs tillbaka samma dag",
+            "En kursstängning genom en definierad nivå som startar mätningen",
+            "Dagen då formationen först blir synbar i diagrammet"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad som gör en signal objektiv och går att handla på i efterhand."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Statistikens grammatik — att läsa performanstabellerna",
+      "intro": "Innan kursen går igenom enskilda mönster måste du lära dig språket: snittstigning, felfrekvens, throwbackfrekvens och rank. Utan denna grammatik blir bokens tabeller oförståeliga — eller värre, feltolkade som garantier. Kapitlet går också rakt på statistikens fallgropar: små urval, upplagedrift och vad ett genomsnitt egentligen döljer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens fyra nyckeltal gör följande. Snittstigningen eller snittnedgången mäts från utbrottet till den bästa eller sämsta punkten under mäthorisonten — i storleksordningen 20 till 40 procent för de flesta vändbottnar, med stora variationer mellan formationer och upplagor. Felfrekvensen är andelen fall där kursen inte ens når en minimal tröskelrörelse i väntad riktning; här spänner formationerna från låga enkelprocent upp till över tjugo procent — en hiskeligt stor skillnad i väntevärde. Throwbackfrekvensen talar om hur ofta kursen återvänder till utbrottszonen innan fortsättningen, och ranken sorterar formationerna mot varandra inom hans material."
+        },
+        {
+          "type": "text",
+          "content": "En genomsnittsstigning är ett historiskt faktum, inte en fysisk lag — och Bulkowski är själv den första att påpeka det. Siffrorna skiftar mellan upplagorna eftersom urval och perioder skiftar: flera genomsnitt sjönk när han gick från första till andra upplagans material, och han uppger öppet observationsantalet per formation så att läsaren själv kan bedöma osäkerheten. Några formationer vilar på hundratals fall; andra på betydligt färre, och deras tabellrader är därmed brusigare. Ranken är dessutom relativ: att vara etta i ett urval betyder inte att man är etta i nästa decennium eller på nästa marknad."
+        },
+        {
+          "type": "text",
+          "content": "Tre fallgropar värda att gravera in. För det första dras medelvärden upp av svansar — ett fåtal monstruösa rörelser kan lyfta ett genomsnitt som de flesta handlare aldrig får uppleva; medianen ligger ofta lägre. För det andra handlar siffrorna om råa prisrörelser före transaktionskostnader, glidning och skatt, vilket äter bruttomarginaler. Och slutligen finns det urvalsproblem och effekter av multipel testning: när dussintals formationer testas på samma historia kommer en del att se bra ut av ren slump. Bulkowskis discipl — redovisa urval, antal och definitioner — gör hans tabeller bättre än de flesta, men inte immuna mot detta."
+        },
+        {
+          "type": "insikt",
+          "content": "Den viktigaste omformuleringen i hela boken: frågan är aldrig om mönstret fungerar, utan hur fördelningen av utfall ser ut. En formation med 30 procent snittstigning och 5 procent felfrekvens är ett helt annat instrument än en med 35 procent snitt och 25 procent fel — den första är en sliten men pålitlig arbetshäst, den andra en lotteribiljett med vacker spalt. Basfrekvenstänkandet är skillnaden mellan mönsterhandlare som överlever och de som blir anekdoter."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta två formationstypers statistik — gärna en med högt snitt och hög felfrekvens, en med lägre snitt och låg felfrekvens — och räkna grovt på väntevärdet: sannolikheten för lyckat utfall gånger genomsnittlig vinst minus felfrekvensen gånger en skattad förlust vid stopp. Jämför sedan resultatet med din magkänsla om vilken formation som är bäst. De flesta som gör övningen upptäcker att magkänslan rankar efter skönhet, inte efter väntevärde."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Nyckeltalen förklarade\",\"rader\":[[\"Begrepp\",\"Betydelse\",\"Typisk nivå (hedged)\"],[\"Snittstigning\",\"Genomsnittlig rörelse från utbrott till bästa punkt\",\"Cirka 20–40 % för flertalet vändbottnar\"],[\"Felfrekvens\",\"Andel som inte når tröskelrörelsen i väntad riktning\",\"Från låga enkelprocent upp till över 20 %\"],[\"Throwbackfrekvens\",\"Hur ofta kursen återvänder till utbrottszonen\",\"Ofta en tredjedel till två tredjedelar\"],[\"Rank\",\"Relativ prestanda inom hans urval\",\"1 är bäst i klassen — men urvalsberoende\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad fångar felfrekvensen som snittstigningen döljer?",
+          "alternativ": [
+            "Hur hög den bästa enskilda rörelsen var",
+            "Risken att mönstret inte levererar någon meningsfull rörelse alls",
+            "Hur länge formationen varar i genomsnitt",
+            "Hur ofta volymen bekräftar utbrottet"
+          ],
+          "ratt": 1,
+          "tips": "Ett genomsnitt kan se fint ut även om var femte fall är helt dött — vad mäter du då?"
+        },
+        {
+          "q": "Varför ska en genomsnittsstigning från bokens tabeller tas med förbehåll?",
+          "alternativ": [
+            "Medelvärden dras upp av svansar och siffrorna är urvals- och tidsberoende",
+            "Bulkowski räknade fel i de flesta tabeller",
+            "Genomsnitt gäller bara för amerikanska räntor",
+            "Diagram med svenska aktier följer andra matematiska lagar"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad ett par extrema rörelser gör med ett medelvärde — och om nästa decennium är samma som det förra."
+        },
+        {
+          "q": "Vad beskriver en throwbackfrekvens?",
+          "alternativ": [
+            "Hur ofta en formation misslyckas helt",
+            "Hur ofta kursen återvänder till utbrottsnivån innan fortsättning",
+            "Hur ofta volymen avtar genom formationen",
+            "Hur ofta formationen upprepas hos samma aktie"
+          ],
+          "ratt": 1,
+          "tips": "Namnet kommer från golfvärlden — kastet som inte håller målet. Vad skulle det betyda för kursen?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Huvud-och-skuldror topp — ikonen får sina siffror",
+      "intro": "Världens mest kända vändformation, äntligen mätt. Bulkowski ger huvud-och-skuldror-toppen exakta kriterier — tre toppar där mitten är högst, nacklinje genom de två dalarna, signal vid stängning under nacklinjen — och därefter siffrorna. Resultatet är en formation som förtjänar sitt rykte, men med viktiga nyanser kring volym, form och tid.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen är strikt: tre tydliga toppar där den mellersta — huvudet — sticker upp över de två axlarna, som i sin tur bör ligga grovt på samma höjd. Nacklinjen dras genom bottnarna mellan topparna, och signalen kommer först när kursen stänger under den linjen. Bulkowski mäter också formens varianter: rak eller lutande nacklinje, breda eller smala formationer och komplexa varianter med dubbla axlar — och hans tabeller visar att dessa detaljer inte är kosmetik utan flyttar statistiken märkbart."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna — ärligt hedged, med utgångspunkt i andra upplagans material: genomsnittsnedgången efter ett bekräftat utbrott ligger i storleksordningen drygt 20 procent, och felfrekvensen är några få procent, vilket placerar formationen bland de mer pålitliga vändtopparna i hela boken. Tiden ner till botten räknas ofta i månader, inte veckor — detta är inget snabbt mönster. En av hans mer användbara iakttagelser är att kontexten väger tungt: toppar som bildas efter långa och platta upptrender tenderar att prestera bättre än de som följer direkt efter en brant spik, där utmattningen redan förbrukat mycket av rörelsen."
+        },
+        {
+          "type": "text",
+          "content": "Om volymen gäller något förvånande: den klassiska läran — vikande volym från vänster axel till höger — håller riktningen men inte som lag. Bulkowskis mätningar visar en mer nyanserad bild där volymprofilen varierar från fall till fall, och volymen är mer användbar som utbrottsbekräftelse än som formationsdiagnos. Därtill kommer pullbackstatistiken: efter nedgångsutbrottet återvänder kursen till nacklinjeområdet i grovt sett hälften eller fler av fallen, vilket frestar kortsidohandlare att vänta på bättre inträde — men som kursens kapitel 10 visar är den avvägningen ett dubbelseggat svärd."
+        },
+        {
+          "type": "insikt",
+          "content": "Nacklinjen är Brytpunkt-tänkandet avant la lettre: formationens hela tes lever på att linjen håller, och dess dom faller först vid stängning genom den. Bulkowskis egen stoppråd följer hans statistik — om kursen efter utbrottet återtar nacklinjen och stänger över den är det inte ett besvärligt drawdown, det är formationens misslyckande dokumenterat. En nivå som definierar både signal och död är det mest värdefulla ett mönster kan ge en riskhanterare."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta tre historiska huvud-och-skuldror-toppar på stora bolag — gärna en svensk och två amerikanska. Markera nacklinje, utbrottsstängning och eventuell pullback. Mät nedgången från utbrott till botten och jämför med Bulkowskis genomsnitt i storleksordningen drygt 20 procent. Notera också tiden: stämmer det att formationen är en månads- snarare än veckoaffär?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Huvud-och-skuldror topp i siffror (hedged)\",\"rader\":[[\"Mått\",\"Värde i storleksordningen\",\"Kommentar\"],[\"Snittnedgång\",\"Drygt 20 %\",\"Mätt från utbrott till botten\"],[\"Felfrekvens\",\"Några få procent\",\"Bland de lägre i hans tabeller\"],[\"Pullback efter utbrott\",\"Runt hälften eller fler av fallen\",\"Påverkar inträde och stopp\"],[\"Tid till botten\",\"Ofta månader\",\"Inget snabbt mönster\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad definierar handelssignalen i en huvud-och-skuldror-topp enligt Bulkowski?",
+          "alternativ": [
+            "Höger axel blir lägre än vänster axel",
+            "Kursen stänger under nacklinjen",
+            "Volymen stiger tre dagar i rad",
+            "Huvudet sticker upp minst tio procent över axlarna"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vilken enda nivå som hela formationens tes vilar på."
+        },
+        {
+          "q": "Vad säger kapitlet om formationens felfrekvens och tempo?",
+          "alternativ": [
+            "Hög felfrekvens och mycket snabb nedgång",
+            "Låg felfrekvens och nedgång som ofta tar månader",
+            "Noll felfrekvens och nedgång inom några dagar",
+            "Felfrekvensen är omöjlig att mäta för denna formation"
+          ],
+          "ratt": 1,
+          "tips": "Jämför med kapitlets bild av en pålitlig men långsam vändtopp."
+        },
+        {
+          "q": "Hur förhåller sig Bulkowskis volymlära till den klassiska regeln om vikande volym genom formationen?",
+          "alternativ": [
+            "Hans mätningar nyanserar regeln — volymprofilen varierar och volymen är mest värdefull vid utbrottet",
+            "Han bevisade att volymen alltid är högst på höger axel",
+            "Han fann att volymen är helt irrelevant för formationen",
+            "Han visade att volymen alltid är högst på huvudet"
+          ],
+          "ratt": 0,
+          "tips": "Skillnaden mellan en riktning och en lag — vad fann han när han faktiskt räknade?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Huvud-och-skuldror botten och trippelformationerna",
+      "intro": "Spegelmönstren uppåt — och den viktiga lärdomen att bottnar statistiskt inte är toppar upp-och-ner. Här behandlas huvud-och-skuldror-botten, trippelbottnar och trippeltoppar, med siffror, bekräftelseregler och fenomenet falska startar. Den bärande insikten: pålitlighet har ett pris i form av signalfrekvens.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Huvud-och-skuldror-botten är spegeln: tre dalar där den mellersta är djupast, signal vid stängning över nacklinjen. Statistiskt — i storleksordningen, med utgångspunkt i andra upplagan — ligger genomsnittsstigningen kring 35 till 40 procent med en felfrekvens i låga enkelprocent, och throwbacks är vanliga. Men kursens viktiga varning: bottnar och toppar är inte perfekta speglar. Marknader faller snabbare än de stiger, bottnar tenderar att ta längre tid att bygga och rullningar uppåt kräver mer övertygelse — därför måste du läsa botten-tabellerna separat, inte spegla topp-tabellerna i huvudet."
+        },
+        {
+          "type": "text",
+          "content": "Trippelformationerna är den puritanska kusinen: tre toppar eller bottnar på grovt samma nivå, med kravet att varje nivå faktiskt testas och håller. Statistiken ligger i samma band som huvud-och-skuldror — genomsnitt i 35-plus-klassens storleksordning och låga felfrekvenser, hedged mellan upplagor — men urvalet är mindre och signalerna färre. Det är den klassiska avvägningen i hela boken: ju striktare definition, desto högre tillförlitlighet per signal och desto färre signaler. Bulkowski dokumenterar också falska startar — att många formationer producerar ett eller flera för tidiga utbrott som stängs tillbaka innan det äkta — vilket är ytterligare ett skäl att kräva stängning, inte bara intrång."
+        },
+        {
+          "type": "text",
+          "content": "Bekräftelsens pris är kapitlets praktiska kärna. Att vänta på tredje botten och därefter nacklinjeövergången kostar inresetjänst — du köper högre än branten på lägsta kurs — men det köper den dramatiskt lägre felfrekvens som tabellerna visar. Bulkowskis data säger konsekvent att tålamod i bekräftelse är ett av de få gratis luncherna som faktiskt finns i mönsterhandeln, förutsatt att du accepterar att ibland missa rörelsen helt. Formationen som ger sig av utan dig är statistiskt vanligare än du tror."
+        },
+        {
+          "type": "insikt",
+          "content": "Sällan-men-pålitligt är en portföljfråga, inte en diagramfråga. En formation som signalerar någon gång per decennium och aktie kan inte bära en handelsstrategi utan bred bevakning — det är därför Bulkowski själv arbetar som skärmare genom hela börser, inte som betraktare av ett enda favoritdiagram. Mönsterhandel är i praktiken en statistisk screening-verksamhet: bredden i urvalet är vad som gör sällsynt pålitliga signaler handelsbara."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå till en större botten i marknadshistorien — till exempel 2022 eller 2009 års lågpunkter — och skanna en indexförteckning efter huvud-och-skuldror-bottnar eller trippelbottnar. Markera var signalen kom (nacklinjeövergången) och mät stigningen till efterföljande topp. Jämför dina fall med bokens genomsnitt: är dina bottnar brantare, långsammare, mer felande?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vändbottnar mot varandra (hedged)\",\"rader\":[[\"Formation\",\"Snittstigning i storleksordningen\",\"Felfrekvens\"],[\"Huvud-och-skuldror botten\",\"Cirka 35–40 %\",\"Låga enkelprocent\"],[\"Trippelbotten\",\"Cirka 35–40 %\",\"Enkelprocent till låga ton\"],[\"Dubbelbotten Eve & Eve\",\"Ofta högst i klassen\",\"Låg\"],[\"Dubbelbotten Adam-varianter\",\"Lägre\",\"Kan nå 15–20 %\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Är en huvud-och-skuldror-botten statistiskt en perfekt spegelbild av toppen?",
+          "alternativ": [
+            "Ja, siffrorna är identiska upp-och-ner",
+            "Nej — snitt, tider och beteende skiljer sig, bottnar måste läsas i sina egna tabeller",
+            "Nej, för att bottnar aldrig kan mätas statistiskt",
+            "Ja, förutom att volymen är omvänd"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på hur olika snabbt marknader faller respektive stiger."
+        },
+        {
+          "q": "Vad är den största praktiska nackdelen med trippelformationer trots god statistik?",
+          "alternativ": [
+            "De kräver alltid gap-bekräftelse",
+            "De är ovanliga — få signaler kräver bred bevakning för att bli handelsbara",
+            "De fungerar bara på råvarumarknader",
+            "Deras felfrekvens är den högsta i boken"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en strategi vars signal kommer en gång per decennie och aktie?"
+        },
+        {
+          "q": "Vad menas med ett för tidigt utbrott i Bulkowskis material?",
+          "alternativ": [
+            "Ett utbrott som sker på hög volym",
+            "En falsk start där kursen stängs tillbaka innan det äkta utbrottet kommer",
+            "Ett utbrott som sker innan formationen är helt färdigtecknad i veckodiagrammet",
+            "Ett utbrott som bara syns i dagdiagrammet"
+          ],
+          "ratt": 1,
+          "tips": "Nyckeln ligger i vad som krävs för att en signal ska räknas som äkta — stängning eller bara intrång?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Dubbelbottnar — Adam & Eve-systematiken",
+      "intro": "Bulkowskis mest originella taxonomi: fyra varianter av dubbelbotten, döpta efter de första människorna. Rund eller spetsig — Eve eller Adam — visar sig spela en förbluffande stor roll för statistiken. Här kommer hela systematiken, bekräftelseregeln och den obekväma sanningen att vissa varianter felar påfallande ofta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Systematiken är enkel men genial: en Adam-botten är spetsig, smal och snabbt gjord — ett V i diagrammet; en Eve-botten är rundad, bred och tar tid att bygga. Kombinera de två bottnarna i en dubbelbotten och du får fyra varianter: Adam & Adam, Adam & Eve, Eve & Adam och Eve & Eve. Chartister hade i generationer anat att runda bottnar känns tryggare; Bulkowski separerade intuitionen i mätbara kategorier och kunde därmed ranka dem mot varandra. Det är en av bokens renaste illustrationer av vad disciplinerad taxonomi tillför praktiken."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna, hedged mellan upplagor och urval: Eve & Eve ligger i topp — genomsnittsstigningar som i hans tabeller närmar sig de högsta i hela vändbottom-klassen, i storleksordningen uppemot och ibland över 50 procent beroende på material, med låga felfrekvenser. Adam & Adam ligger i botten med märkbart lägre snitt och felfrekvenser som i vissa tabeller närmar sig en av fem. Logiken bakom är värd mer än siffrorna: en rundad botten tar tid och skakar ut svaga händer medan utbudet absorberas långsamt; två snabba spetsar lämnar folkträngningen oberörd och publiken övertygad på fel grund. Dessutom gäller bekräftelseregeln: signalen kommer först när kursen stänger över toppen mellan de två bottnarna — att bara köpa vid andra botten är att gissa, inte att handla mönster."
+        },
+        {
+          "type": "text",
+          "content": "Detaljerna i formationen väger också. De två bottnarna bör ligga prismässigt nära varandra — i Bulkowskis praxis inom några få procent — och mellanliggande topp ska vara rejäl nog att skilja bottnarna åt. Tidsaspekten spelar in: bottnar som ligger för nära varandra i tiden tenderar att bli en enda kaotisk zon. På kortsidan gäller spegelbilden med dubbeltoppar, där Eve & Eve-toppar visar bäst statistik men där felfrekvenserna generellt är högre än för bottnar — i en stigande marknad arbetar gravitationen mot säljaren, och det syns i tabellerna."
+        },
+        {
+          "type": "insikt",
+          "content": "Adam och Eve är egentligen proxyvariabler för tid och deltagande: det de mäter är hur mycket utbud som hann absorberas innan spelet började om. Det är en fråga som gäller varje bas du någonsin kommer att läsa — dubbelbotten är bara det renaste laboratoriet. När du tvekar mellan två formationer, fråga inte vilken som är vackrare utan vilken som gav marknaden mer tid att överlämna aktien till nya ägare."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta fem dubbelbottnar i diagram du inte studerat tidigare. Klassificera varje botten som Adam eller Eve — spetsig och snabb eller rundad och bred — och mät stigningen från bekräftelsen (stängning över mellantoppen) till efterföljande högsta punkt. Räkna sedan ut om ditt lilla urval pekar åt samma håll som Bulkowskis stora: ligger Eve & Eve överst och Adam & Adam underst?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dubbelbottnar rankade (hedged)\",\"rader\":[[\"Variant\",\"Karaktär\",\"Prestanda\"],[\"Eve & Eve\",\"Båda bottnarna rundade och breda\",\"Bäst — högst snitt, lägst felfrekvens\"],[\"Adam & Eve\",\"Först spetsig, sedan rundad\",\"God — mittparti\"],[\"Eve & Adam\",\"Först rundad, sedan spetsig\",\"Svagare — mittparti\"],[\"Adam & Adam\",\"Båda spetsiga och snabba\",\"Sämst — högst felfrekvens\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken dubbelbottomsvariant presterar bäst enligt Bulkowskis tabeller?",
+          "alternativ": [
+            "Adam & Adam",
+            "Eve & Eve",
+            "Adam & Eve",
+            "Eve & Adam"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vilken variant som ger marknaden mest tid att absorbera utbud."
+        },
+        {
+          "q": "Vad kännetecknar en Adam-botten?",
+          "alternativ": [
+            "Rundad och bred, tar veckor att bygga",
+            "Spetsig, smal och snabbt gjord",
+            "Alltid följt av ett gap",
+            "En botten som bara syns i månadsdiagram"
+          ],
+          "ratt": 1,
+          "tips": "Namnet ska föra tanken till något vasst och plötsligt."
+        },
+        {
+          "q": "När är en dubbelbotten formellt bekräftad enligt Bulkowski?",
+          "alternativ": [
+            "När kursen stiger över toppen mellan de två bottnarna på stängning",
+            "Så snart den andra botten tagits ut",
+            "När volymen dubbleras vid andra botten",
+            "När de två bottnarna ligger exakt lika högt"
+          ],
+          "ratt": 0,
+          "tips": "Vad krävs för att skilja en dubbelbotten från en fortsatt nedtrend som bara pausat?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Trianglar — den stigande och hennes släkt",
+      "intro": "Tre trianglar, tre personligheter, tre olika statistiktabeller. Den stigande triangeln är familjens stjärna på långa sidan; den symmetriska är mer two-faced än ryktet; den fallande bär gravitationen. Kapitlet avslutas med mätregeln — formationshöjden som projektion — och vad Bulkowskis tester faktiskt säger om dess träffsäkerhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den stigande triangeln har plant tak och stigande golv: köparna accepterar allt högre priser medan ett distrikt av säljare håller taket. I Bulkowskis tabeller — andra upplagan, hedged — är det en av de bättre formationerna på långa sidan: genomsnittsstigning i storleksordningen kring 35 procent, felfrekvens i intervallet kring 10 till 15 procent och throwbacks i ungefär en tredjedel till hälften av fallen. Den är i grunden en fortsettningsformation som gillar att verka i upptrender, även om den ibland dyker upp som vändning efter nedtrender — med annan, svagare statistik, vilket kapitel 12 återkommer till."
+        },
+        {
+          "type": "text",
+          "content": "Den symmetriska triangeln — båda linjerna konvergerande — sägs förutsäga fortsättning av föregående trend. Bulkowskis data nyanserar bilden: den fortsätter föregående trend oftare än den vänder, men marginalen är mindre än vad handboksryktet påstår, och snittrörelserna är lägre än den stigande systerns. Lärdomen är att konvergerande linjer i sig inte är en riktning utan en hopspänning — riktningen avgörs av utbrottet, och därför blir bekräftelsekraven extra viktiga här. Den fallande triangeln — plant golv, sjunkande tak — är klassiskt bearish, och hans tabeller stödjer bilden med solida genomsnittliga nedgångar i storleksordningen 20 till 25 procent och relativt låga felfrekvenser när den uppträder som fortsettning i nedtrender."
+        },
+        {
+          "type": "text",
+          "content": "Mätregeln är trianglarnas viktigaste verktyg: mät formationens höjd vid dess bredaste och projicera den från utbrottsnivån. Bulkowskis tester av regeln är en av bokens mest nyttiga reality checks — full höjd nås i en majoritet av fallen i bäst fall, och ofta bara delvis. Hans praktiska anpassning är därför tvångsanständig mot siffrorna: sikta på hela höjden som optimistiskt mål men planera uttag delvis, och använd halva formationshöjden som konservativt delmål. En projektionsregel är en fördelning, inte ett löfte."
+        },
+        {
+          "type": "insikt",
+          "content": "Triangelfamiljen lär ut att en formation är två saker på en gång: en geometri och ett vänteläge. Den stigande triangelns plant tak är en gräns där säljarna är identifierade och räknade — när den släpps är motståndarlaget slut, och det är därför statistiken belönar just denna form. Geometrin berättar vem som tröttnar först; utbrottet bevisar det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Mät tio stigande trianglar: höjd vid bredaste punkten, utbrottsnivå och projicerat mål. Notera för varje fall hur långt kursen faktiskt kom — nådde den full höjd, halv höjd eller inget alls? Räkna ut träfffrekvensen på båda nivåerna och jämför med kapitlets bild: majoritet som bäst på full höjd, betydligt säkrare på halv."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Triangelfamiljen (hedged)\",\"rader\":[[\"Formation\",\"Typisk roll\",\"Snitt i storleksordningen\",\"Felfrekvens\"],[\"Stigande triangel\",\"Bullish, ofta fortsettning\",\"Cirka 35 % uppgång\",\"Kring 10–15 %\"],[\"Symmetrisk triangel\",\"Fortsettning oftare än vändning\",\"Något lägre snitt\",\"Varierar, ofta högre\"],[\"Fallande triangel\",\"Bearish, ofta fortsettning ned\",\"Cirka 20–25 % nedgång\",\"Låg till medel\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken triangel har den bästa statistiken på långa sidan enligt Bulkowski?",
+          "alternativ": [
+            "Den symmetriska",
+            "Den fallande",
+            "Den stigande",
+            "De är statistiskt identiska"
+          ],
+          "ratt": 2,
+          "tips": "Vilken form har ett synligt, plant tak där säljarna kan räknas av?"
+        },
+        {
+          "q": "Vad visar Bulkowskis data om den symmetriska triangelns riktning?",
+          "alternativ": [
+            "Den vänder trenden i de flesta fall",
+            "Den fortsätter trenden oftare än den vänder, men med mindre marginal än ryktet säger",
+            "Riktningen är alltid slumpmässig och ointressant",
+            "Den alltid bryter uppåt oavsett föregående trend"
+          ],
+          "ratt": 1,
+          "tips": "Rykten säger fortsettning nästan alltid — vad hittade han när han räknade?"
+        },
+        {
+          "q": "Hur tillförlitlig är mätregeln enligt hans tester?",
+          "alternativ": [
+            "Full höjd nås nästan alltid",
+            "Full höjd nås i majoritet som bäst och ofta bara delvis — halva höjden är säkrare delmål",
+            "Mätregeln fungerar bara på flaggor",
+            "Han avfärdade mätregeln som helt värdelös"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på hur en projektion borde behandlas om den bara träffar ibland — hela portionen eller delvis?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Flaggor och vimplar — prestandaeliten",
+      "intro": "Korta, branta och statistiskt överlägsna: flaggorna och vimplarna tillhör bokens prestandaelit, och en variant — high and tight-flaggan — bär de mest ögonpopande siffrorna i hela verket. Men eliten är kräsen: sällsynt, krävande på identifiering och hänsynslös mot den som tvekar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen är kort som formationen själv: en brant föregående rörelse — stången — följd av ett litet konsolideringsområde som lutar mot rörelsens riktning (flagga) eller smalnar av i en liten vimpel. Durationen ligger typiskt på någon till några veckor. I Bulkowskis tabeller återfinns de konsekvent i toppskiktet: korta, branta formationer med låga felfrekvenser och genomsnitt som ligger i övre delen av fortsettningsklassen. Mönstret i hans ranking är entydigt och viktigt att förstå — energi lagras i stången, och pausen är köpfönstret."
+        },
+        {
+          "type": "text",
+          "content": "Kronjuvelen är high and tight-flaggan: stången där kursen grovt fördubblas inom omkring två månader, följd av en konsolidering som ger tillbaka mindre än i storleksordningen en fjärdedel av stången. Bulkowskis berömda siffror — hedged och med hans egen varning om urvalets storlek: genomsnittsstigning efter utbrott i närheten av 70 procent och en felfrekvens som i hans material rapporterades som noll. Läs det igen och läs sedan varningen: noll fel i ett litet antal observationer är enastående men inte samma sak som en fysisk lag. Det är formationen alla vill hitta, och därför den som oftast förfalskas — brant och imponerande räcker inte, det måste vara en faktisk fördubbling på kort tid."
+        },
+        {
+          "type": "text",
+          "content": "Elitens pris är exekvering. Korta formationer ger grunda stoppavstånd och snabba rörelser efter utbrottet; slippage och sen reaktion äter mer av kanten än i en lugn bas. Throwbacks är grundare men snabbare, och den som väntar på rekylen riskerar att aldrig få den — här gäller delade inträden och förbestämda order snarare än aftertanke. Bulkowski påpekar också det uppenbara som ändå glöms: en flagga utan föregående brant stång är ingen flagga, bara ett trist rektangelblock — hela setupet köper sin statistik från rörelsen som föregår det."
+        },
+        {
+          "type": "insikt",
+          "content": "Bulkowskis rankningar berättar en sammanhängande historia om momentum som lagras i form: de mest belönade formationerna är de som föds ur korta, branta, dramatiska trender. Stången är kapitalet; flaggan är räntan du betalar för att få vara med på nästa ben. När du bedömer en formation, fråga alltid först vad som födde den — svaret förutsäger statistiken bättre än formationens egen silhuett."
+        },
+        {
+          "type": "utmaning",
+          "content": "Jaga en high and tight-flagga i modern marknadshistoria — gärna i biotech eller teknik under en brant uppgång. Kontrollera kraven stelbenat: fördubblades kursen grovt på omkring två månader? Höll sig konsolideringen grund? Vad hände efter utbrottet? Notera sedan hur många branta formationer du sorterade bort på vägen — sällsyntheten är en del av statistiken."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fortsettningens elit (hedged)\",\"rader\":[[\"Formation\",\"Snitt efter utbrott\",\"Felfrekvens\",\"Frekvens\"],[\"High and tight-flagga\",\"Cirka 65–70 % uppgång\",\"Noll i hans lilla urval\",\"Mycket sällsynt\"],[\"Flagga\",\"Hög prestanda\",\"Låg\",\"Vanligare\"],[\"Vimpel\",\"Hög prestanda\",\"Låg\",\"Vanligare\"],[\"Rektangel\",\"God, något lägre\",\"Medel\",\"Vanlig\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kräver definitionen av en high and tight-flagga?",
+          "alternativ": [
+            "Kursen fördubblas grovt på omkring två månader och konsolideringen är grund",
+            "Konsolideringen får ge tillbaka hälften av stången",
+            "Formationen måste vara minst ett halvår lång",
+            "Volymen måste vara fallande genom hela stången"
+          ],
+          "ratt": 0,
+          "tips": "Båda delarna i namnet är krav — hög och tajt. Vad betyder det i kurs och tid?"
+        },
+        {
+          "q": "Vad var felfrekvensen för high and tight-flaggan i Bulkowskis material?",
+          "alternativ": [
+            "Cirka 25 procent",
+            "Rapporterad som noll — men i ett litet urval, vilket han själv flaggar",
+            "Oklart eftersom formationen aldrig testades",
+            "Hälften av fallen"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg skillnaden mellan ett iögonfallande resultat och ett statistiskt säkert sådant."
+        },
+        {
+          "q": "Varför kräver flagghandel snabb och förbestämd exekvering?",
+          "alternativ": [
+            "Formationerna är korta med grunda stopp och snabba rörelser efter utbrottet",
+            "Flaggor gäller bara innevarande handelsdag",
+            "Mäklare nekar order på flaggor efter en vecka",
+            "Volymen är alltid för låg för marknadsorder"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad kort duration och grund stoppavstånd gör med tidsfönstret."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Koppen med handtag — O'Neil möter räknemaskinen",
+      "intro": "William O'Neil gjorde koppen med handtag berömd genom sitt CANSLIM-system; Bulkowski testade den kallt. Här möts två traditioner — fundamental katalysator och ren mönsterstatistik — och det visar sig att de förstärker varandra. Koppen är också kursens bästa exempel på hur en bas fungerar som utbytesmekanism.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formen är en rundad botten — koppen — ofta med ett djup i storleksordningen 12 till 33 procent, följt av ett grunt handtag som driver svagt nedåt i koppens övre halva, och signal vid utbrott över handtagets överkant. Bulkowskis siffror, hedged efter andra upplagans material: genomsnittsstigning i storleksordningen drygt 30 procent och en felfrekvens som ligger i de lägre regionerna bland basformationerna. Han testade också detaljerna — djupa kontra grunda koppar, handtagets placering och längd — och fann att handtag i övre delen av koppen, konsistent med O'Neils regel, hör ihop med bättre statistik."
+        },
+        {
+          "type": "text",
+          "content": "Mötet mellan traditionerna är lärorikt. O'Neil kopplar formen till fundamentala skärmar — vinstacceleration och nyhetsdrivna katalysatorer, i AKM1-V-termer bränsle i stil med V02 ARR-tillväxt eller V16 produktlanseringar — medan Bulkowskis rena statistik visar att formen bär en kant även utan fundamentala filter. Slutsatsen är inte antingen-eller utan både-och: mönstret är timinginstrumentet, fundamenten är bränslet, och volymbekräftat utbrott är tändningen. Bulkowskis tabeller visar genomgående att utbrott med volymexpansion förbättrar genomsnitt och sänker felfrekvens — koppen är inget undantag."
+        },
+        {
+          "type": "text",
+          "content": "Psykologiskt är koppen en utbytesmekanism i slow motion: den rundade botten ger ägare månad efter månad att tröttna och överlämna till nya händer, utan den dramatik som skulle signalera fel på aktien. Och handtaget — här kommer kursens favoritobservation — är i praktiken en misslyckad huvud-och-skuldror: ett grundat malande nedåt i basens övre del som skakar ut de senast tillkomna longarna precis innan markup. När du ser ett handtag ser du marknadens sista förhandling före uppgången."
+        },
+        {
+          "type": "insikt",
+          "content": "Koppen med handtag visar varför basdjup är ett prisvärt val, inte ett tecken på svaghet: en rejäl kopp skapar utrymme för mål och tvivel, och varje procent av djupet är andrahandsägare som byttes ut mot sådana som köper med övertygelse. Den bästa basen är inte den som aldrig faller — den som faller tillräckligt för att byta ägare och sedan håller handtagets nedre gräns intakt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta tre koppar med handtag på tillväxtaktier. Kontrollera varje kriterium separat — kopdjup, handtagets placering i övre halvan, utbrottets volym — och mät sedan resultatet mot Bulkowskis genomsnitt. Notera särskilt fallen där handtaget låg för djupt ner i koppen: skilde de sig i utfall?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Koppen — krav och siffror (hedged)\",\"rader\":[[\"Detalj\",\"Kriterium\",\"Bulkowski-fynd i korthet\"],[\"Koppdjup\",\"Ofta 12–33 %\",\"Båda extremerna fungerar; mittpartiet robust\"],[\"Handtagsläge\",\"Övre halvan av koppen\",\"Övre läge ger bättre statistik\"],[\"Utbrott\",\"Över handtagets överkant, gärna med volym\",\"Volymbekräftelse förbättrar snitt\"],[\"Snitt efter utbrott\",\"Drygt 30 % i storleksordningen\",\"Felfrekvens i låga procent\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Var i koppen ska handtaget ligga för bästa statistik?",
+          "alternativ": [
+            "I koppen nedre tredjedel",
+            "Precis i koppen mitt",
+            "I koppen övre halva",
+            "Under hela koppen"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på var den sista utskakningen bör ske för att lämna mest bränsle kvar till uppgången."
+        },
+        {
+          "q": "Vad tillför O'Neils tradition som Bulkowskis rena mönsterstatistik saknar?",
+          "alternativ": [
+            "En exaktare definition av koppen form",
+            "Fundamentala katalysatorer som bränsle — vinstacceleration och nya drivkrafter",
+            "En lägre felfrekvens genom bättre diagramskala",
+            "Bevis för att koppen alltid slår index"
+          ],
+          "ratt": 1,
+          "tips": "Vad är det som faktiskt får en aktie att rör på sig, utöver formen i diagrammet?"
+        },
+        {
+          "q": "Vad är handtaget i psykologisk mening enligt kapitlet?",
+          "alternativ": [
+            "En misslyckad huvud-och-skuldror som skakar ut sena köpare innan uppgången",
+            "En bekräftad dubbelbotten",
+            "Ett gap som fylls igen",
+            "En förlängning av huvudtrenden utan betydelse"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad ett grundat malande nedåt i övre halvan gör med de som köpte senast."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Measured moves och dead-cat bounce — fortsättningens logik",
+      "intro": "Alla mönster är inte baser eller vändningar; två strukturer handlar om trendens förlängning och om hoppets straff. Measured move-kedjan ger mål i löpande trender, och dead-cat bounce är bokens kallaste varning till alla som köper fallande knivar. Båda lär ut fortsettnings tänkandet som gör nedtrender handelsbara — och överlevbara.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "En mätt rörelse — measured move — är en trend i två ben: en impuls, en korrektion och en ny impuls som approximerar den första. Bulkowski testade den klassiska hälftesregeln, att korrektionen ofta stannar kring förra rörelsens mittpunkt, och fann att den håller riktningsvis med stor spridning — mittpunkten är ett statistiskt vanligt viloläge, inte en magnet. Hans test av andra benet visar samma mönster: det närmar sig det första i median, men med så bred spridning att regeln fungerar bäst som riktmärke för mål och risk, aldrig som mekanisk prognos. I nedtrender blir strukturen measured move down — praktiskt användbar för att projicera hur långt en björnbenta kan bära."
+        },
+        {
+          "type": "text",
+          "content": "Dead-cat bounce är bokens mest nykterläkande kapitel. Efter ett brant fall — ofta på en eller två dagar — kommer en teknisk studs, och Bulkowski studerar systematiskt hur stora och långa dessa studsar är och vad som händer sedan. I storleksordningen, hedged: studsen landar kring ett tiotal procent i median, med genomsnittet draget upp av kraftiga svansar, och den fullbordas oftast inom dagar till ett par veckor. Därpå den viktiga delen: i merparten av fallen gör kursen nya bottnar. Studsen är alltså ett exit-fönster för långsäljare och ett setup för korta — inte en botten att köpa."
+        },
+        {
+          "type": "text",
+          "content": "Tillsammans formar de två strukturerna fortsettningens logik: korrektioner inom trender är brus så länge de inte bygger kompletta vändmönster med bekräftat utbrott. Den som köper varje tillbakagång i en nedtrend, eller säljer varje utveckling i en upptrend, eftersom det redan rört sig så mycket — den handlar mot statistiken. Bulkowskis data ger det mest respektingivande argument som finns mot förhandlingsinstinkten: marknaden har inget prisminne och ingen känsla för vad som vore rimligt; den har bara utbud, efterfrågan och ben som följer på varandra."
+        },
+        {
+          "type": "insikt",
+          "content": "Dead-cat-statistiken är bokens kalla svar på den dyraste av alla instinkter: köpa-billigt-reflexen. Att en aktie redan fallit 20 procent på två dagar är inte ett argument om att den är billig — det är ett argument om att något har hänt som marknaden bedömer vara värt 20 procent, och historiken säger att merparten av sådana fall fortsätter nedåt. Statistiken kan inte berätta varför, men den kan berätta hur ofta — och det räcker för att avstå."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj tio tillfällen då en aktie fallit mer än 15 procent på två dagar. Markera studsens högsta punkt efter fallet och kontrollera om kursen gjorde en lägre botten inom följande kvartal. Räkna ut din egen andel nya bottnar och jämför med kapitlets bild av merparten — och notera hur många av fallen som såg ut som köplägen i stunden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fortsettningens statistik (hedged)\",\"rader\":[[\"Händelse\",\"Statistik i storleksordningen\",\"Handelsimplikation\"],[\"Dead-cat-studs\",\"Median kring ett tiotal procent\",\"Kortsidsetup eller exit-fönster\"],[\"Andel som gör nya bottnar\",\"Merparten av fallen\",\"Köp inte fallande knivar\"],[\"Mätt rörelse — andra benet\",\"Nära första benet i median, stor spridning\",\"Riktmål, ej garanti\"],[\"Korrektion till mittpunkten\",\"Vanligt viloläge, bred spridning\",\"Halva förra rörelsen som riktmärke\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en dead-cat bounce enligt Bulkowskis studier?",
+          "alternativ": [
+            "En studs efter brant fall där merparten av fallen sedan gör nya bottnar",
+            "En vändbotten som leder till ny upptrend i majoriteten av fallen",
+            "En formation som kräver minst tre månaders konsolidering",
+            "Ett mönster som bara uppträder i råvaror"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på fysikens bild i namnet — vad händer med en död katt som studsar?"
+        },
+        {
+          "q": "Vad säger mätregeln för measured moves enligt hans tester?",
+          "alternativ": [
+            "Andra benet är alltid exakt lika långt som det första",
+            "Andra benet approximerar det första i median men med stor spridning",
+            "Korrektionen återgår alltid till utgångsläget",
+            "Regeln fungerar bara i bullmarknader"
+          ],
+          "ratt": 1,
+          "tips": "Riktmärke eller garanti — vilket av orden passar en regel med bred spridning?"
+        },
+        {
+          "q": "När är en korrektion inom en trend mer än bara brus?",
+          "alternativ": [
+            "När den är djupare än fem procent",
+            "När den varar längre än en månad",
+            "När den bygger ett komplett vändmönster med bekräftat utbrott",
+            "När volymen är låg under korrektionen"
+          ],
+          "ratt": 2,
+          "tips": "Vad krävs för att bevisa att trenden vänt — i stället för att den bara pausat?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Throwbacks och pullbacks — timingens dolda statistik",
+      "intro": "Möjligen bokens praktiskt mest värdefulla tabeller: efter ett utbrott — hur ofta kommer kursen tillbaka? Denna enda variabel skriver om hela inträdestaktiken. Kapitlet ger frekvenserna, tiderna och den taktiska syntesen: delade inträden, stopp som tål normal rekyl och ett manus för när återkomsten aldrig kommer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionerna först: en throwback är kursens återkomst till utbrottsnivån efter ett uppåtutbrott; en pullback är samma fenomen efter ett nedåtutbrott. Bulkowskis tabeller visar att frekvensen varierar med formation och upplaga — från grovt en fjärdedel upp till två tredjedelar av fallen, med en tyngdpunkt kring hälften — och att utbrott med gap kastas tillbaka mer sällan. Detta är statistik som direkt berör två beslut: var du lägger ditt stopp och om du väntar med inträdet."
+        },
+        {
+          "type": "text",
+          "content": "Tidsdimensionen är lika viktig som frekvensen: återkomsterna fullbordas i regel snabbt — i storleksordningen dagar till ett par veckor till den djupaste punkten, följt av återhämtning — och ju längre tid som går utan throwback, desto starkare tenderar det underliggande utbrottet att vara. Grundtaktiken blir därmed: köp en del vid bekräftat utbrott, reservera en del för återkomsten till utbrottszonen, och om återkomsten uteblir inom det normala tidsfönstret kan den reserverade delen läggas in i den första grunda konsolideringen i stället. Men var ärlig mot avvägningen: de starkaste utbrotten är just de som aldrig ser tillbaka, och varje väntan kostar exakt dem."
+        },
+        {
+          "type": "text",
+          "content": "Stopplogiken hänger samman med throwbackdjupet. Ett stopp som ligger inom normalt rekylvdjup kommer att rensas ut statistiskt ofta — inte för att tesen var fel utan för att stoppet sattes utan hänsyn till formationens beteende. Bulkowskis datadrivna anvisning är att stoppet ska ligga under den nivå där utbrottszonen blir motstånd och support i praktiken byter sida, med marginal för det normala återbesöket. Kursens kapitel 13 knyter ihop detta med felfrekvenserna till ett komplett riskramverk."
+        },
+        {
+          "type": "insikt",
+          "content": "Throwbacktabellen förvandlar en av handelns mest känslosamma upplevelser — varför köpte jag precis på toppen av utbrottet? — till en planerad händelse. En återkomst till din inträdesnivå är inte bevis på att du hade fel; den är statistiskt normal och bör vara manusförsedd i förväg: detta är zonen där du antingen lägger på enligt plan eller konstaterar att stödet sviker. Känslan av att marknaden personligen riktar sig till dig ersätts av en fördel man kan handla på."
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska dina senaste tio utbrottshandelar: hur många kastades tillbaka till inträdesnivån inom två veckor? Hur djup var den djupaste återkomsten? Överlevde dina stopp det djupet? Om inte — räkna om stoppavståndet från den observerade rekylstatistiken i stället för från din bekvämlighetszon, och notera skillnaden i positionstorlek som följer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Utbrottets anatomi (hedged)\",\"rader\":[[\"Fenomen\",\"Frekvens i storleksordningen\",\"Konsekvens\"],[\"Throwback efter uppgångsutbrott\",\"Kring hälften, variationsrik\",\"Dela inträdet vid utbrottet\"],[\"Pullback efter nedgångsutbrott\",\"Liknande eller något högre\",\"Kortinträde på rekyl\"],[\"Utbrott med gap\",\"Kastas tillbaka mer sällan\",\"Prioritera gapbekräftade utbrott\"],[\"Tid till återkomst\",\"Ofta dagar till ett par veckor\",\"Stopp måste tåla normal rekyl\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en throwback?",
+          "alternativ": [
+            "Kursens återkomst till utbrottsnivån efter ett uppåtutbrott",
+            "En misslyckad dubbelbotten",
+            "Volymens avtagande genom en formation",
+            "Ett utbrott som sker i flera steg"
+          ],
+          "ratt": 0,
+          "tips": "Ordvalet kommer från golf — kastet som inte räcker till. Vad betyder det för kursen som just brutit ut?"
+        },
+        {
+          "q": "Hur förhåller sig gap till throwbackfrekvensen?",
+          "alternativ": [
+            "Gap ökar sannolikheten för throwback kraftigt",
+            "Utbrott med gap kastas tillbaka mer sällan",
+            "Gap har ingen som helst relation till throwbacks",
+            "Bara gap uppåt ökar throwbackfrekvensen"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad ett gap säger om brådska hos köparna — och på vad de som missade priset gör."
+        },
+        {
+          "q": "Vilken inträdestaktik föreslår throwbackstatistiken?",
+          "alternativ": [
+            "Vänta alltid på throwback innan hela positionen läggs",
+            "Lägg alltid hela positionen vid utbrottet oavsett",
+            "Dela inträdet — en del vid bekräftat utbrott, en del reserverad för återkomsten",
+            "Lägg inträdet före utbrottet för bättre pris"
+          ],
+          "ratt": 2,
+          "tips": "Väntan fångar återkomster men missar de starkaste utbrotten — vad väger upp båda riskerna?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Gap och volym — utbrottets kvalitetsmått",
+      "intro": "Alla utbrott är inte lika. Bulkowski mätte vad som skiljer de starka från de klenaste: gap vid utbrottet och volymexpansion på utbrottsdagen. Kapitlet sätter samman ett kvalitetspoängsystem — en direkt föregångare till hans berömda setup-score i uppföljningsböckerna — och visar att adjektiven flyttar väntevärdet lika mycket som substantivet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett utbrott med gap — när kursen öppnar bortom den definierade nivån i stället för att nöta sig igenom den — är ett rent informationslyft: ingen gav köparna priset de hade igår, vilket betyder att brådska övervägde bekvämlighet. I Bulkowskis tabeller visar gaputbrott genomgående bättre genomsnitt och lägre frekvens av throwbacks än utbrott som kryper över linjen. Samma mekanism förklarar varför gapet fungerar: det synliggör att efterfrågan var stark nog att tömma utbudet på en hel prisnivå över natten."
+        },
+        {
+          "type": "text",
+          "content": "Volymen är det andra kvalitetsmåttet, och Bulkowskis mätningar är tydliga: utbrott på volym över det senaste snittet hör samman med bättre genomsnitt och klart lägre felfrekvenser — i hans tabeller ofta grovt halverade, hedged. Volym är deltagandets bekräftelse; den talar om att rörelsen bär fler än en handfull aktörer. Men hans varning är värd att memorera: volym räddar inte en dålig formation. En slarvigt byggd bas med svag form och fel kontext blir inte bättre av hög volym — volymen bekräftar och förstärker en god setup, den skapar ingen."
+        },
+        {
+          "type": "text",
+          "content": "Bulkowski byggde småningom denna tankegång till ett explicit poängsystem i sina uppföljningsböcker: betygsätt varje setup på flera kvalitetsdimensjoner — stängning genom nivån, gap, volym, marknadsriktning, formationens egen rank och detaljer i dess utseende — och handla bara de som klarar en tröskelpoäng. Det är en pedagogiskt kraftfull övning i att skilja substantiv från adjektiv: formationens namn är substantivet, utbrottets egenskaper är adjektiven, och väntevärdet flyttas lika mycket av de senare som av det förra. Checklistan tvingar fram beslut innan känslorna hinner köra i diket."
+        },
+        {
+          "type": "insikt",
+          "content": "Två identiska koppar kan bära olika väntevärde: den som bröt ut med gap och dubbel volym i en stigande marknad är ett annat instrument än den som nötte sig över linjen på svag volym i en fallande. Detta är mönsterhandelns försiktiga versionsförklaring: formen ger dig kandidaten, men utbrottets kvaliteter avgör hur mycket du ska lita på den. Lär dig att läsa adjektiven — de betalar bättre än substantiven."
+        },
+        {
+          "type": "utmaning",
+          "content": "Betygssätt fem aktuella utbrott på en fempunktschecklista: stängning genom nivån, gap, volym jämfört med snittet, marknadens riktning, formationens rank i Bulkowskis tabeller. Följ sedan utfallet i en månad och jämför poäng mot resultat. Målet är inte att bevisa checklistan utan att träna ögat att se kvalitet skilt från form."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Utbrottets kvalitetscheck (hedged)\",\"rader\":[[\"Kvalitet\",\"Så mäts den\",\"Effekt i storleksordningen\"],[\"Stängning genom nivån\",\"Intradagpeta räcker inte\",\"Rena intradagförsök felar oftare\"],[\"Gap vid utbrott\",\"Öppning bortom nivån\",\"Bättre snitt, färre throwbacks\"],[\"Volymexpansion\",\"Utbrottsdag över senaste snitt\",\"Klart lägre felfrekvens\"],[\"Marknadsriktning\",\"Index i samma riktning\",\"Förstärkt väntevärde\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför förbättrar ett gap utbrottets statistik enligt kapitlet?",
+          "alternativ": [
+            "Gap fylls alltid igen vilket ger en andra chans",
+            "Gap visar verklig brådska — ingen fick köpa till gårdagens pris och utbudet tömdes",
+            "Mäklare belönar gap-handel med lägre courtage",
+            "Gap gör att formationen blir längre och starkare"
+          ],
+          "ratt": 1,
+          "tips": "Vad säger det om utbud och efterfrågan när ett helt prisområde hoppas över?"
+        },
+        {
+          "q": "Vad är Bulkowskis varning beträffande volym?",
+          "alternativ": [
+            "Volym bör alltid vara så låg som möjligt vid utbrott",
+            "Volym räddar inte en dåligt byggd formation med fel kontext",
+            "Volym ska bara mätas i veckodiagram",
+            "Hög volym är alltid ett säljsignal"
+          ],
+          "ratt": 1,
+          "tips": "Bekräftelse och skapande är två olika saker — vad kan volymen göra och inte göra?"
+        },
+        {
+          "q": "Vad är poängen med att betygsätta setup enligt ett poängsystem?",
+          "alternativ": [
+            "Att slippa tänka på formationens utseende alls",
+            "Att väga flera kvalitetsmått — stängning, gap, volym, marknad — innan inträdet",
+            "Att automatiskt dubbla positionen vid hög poäng",
+            "Att undvika att någonsin använda stopp"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på hur en checklista hjälper dig skilja en medelsetup från en utmärkt före pengarna är insatta."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Samma form, olika siffror — trend och marknadsläge",
+      "intro": "Bokens mest förbisedda genomslag: kontexten ändrar statistiken. Samma triangel i en upptrend är inte samma instrument som i en nedtrend, och en formation i en björnmarknad lever på andra siffror än i en bullmarknad. Kapitlet ger protokollet: klassifiera marknad, trend och formationens roll — och läs sedan den relevanta tabellen, inte genomsnittet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bulkowski rapporterar i princip varje nyckeltal separat för primära bull- och björnmarknader, och skillnaderna är inte kosmetiska. Vändningar i björnmarknader tenderar att ge skarpare rörelser — fallande går fortare än stigande, och det syns i snittabellerna — medan samma formationer i bullmarknader ofta kämpar mot en tröghet som gör bottnarna längre och mödosammare. En siffra utan etikett på marknadsläge är därför nästan värdelös: den blandar samman två olika fördelningar till en meningslös medelvärdsgröt."
+        },
+        {
+          "type": "text",
+          "content": "Formationens roll — fortsettning eller vändning — avgörs av föregående trend, och Bulkowski mäter hur ofta varje formation spelar den ena eller andra rollen. Den stigande triangeln visar sina bästa tabellvärden som fortsettning i upptrender; samma geometri som vändning efter en lång nedtrend bär högre felfrekvens och kräver större bekräftelse. Den symmetriska triangeln fortsätter trenden oftare än den vänder, men med mindre marginal än ryktet. Den praktiska regeln blir: innan du handlar någon formation, fastställ i tur och ordning marknadens riktning, aktiens föregående trend och formationens förväntade roll — läs sedan den specifika tabellraden, aldrig klassgenomsnittet."
+        },
+        {
+          "type": "text",
+          "content": "Samspel med marknaden är den tredje kontextvariabeln: utbrott som går marknadens riktning presterar bättre i hans material än utbrott mot strömmen. En vacker bas i en enskild aktie kan avlivas av ett index i fritt fall, och en medelmåttig formation kan bäras framåt av ett starkt index. I AK1TS-termer är detta det omgivande band som varje Brytpunkt måste läsas mot: nivån är primär, men nivån i ett vikande band är inte samma nivå. Detta är också varför bokens tabeller är uppbyggda som de är — kontexten är inte fotnot, den är axel i materialet."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett mönster är en villkorad sannolikhet, och villkoren skrivs av kontexten. Samma geometri rider på olika fördelningar beroende på vad marknaden och aktien gjorde innan den formades — det är därför som mönsterhandeln aldrig kan reduceras till formsökning i en bildbank. Formationen är frågan; trend, marknadsläge och samspel är grammatiken som avgör vad svaret är värt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Samla tjugo stigande trianglar: tio från klara upptrender, tio efter längre nedtrender. Mät andelen lyckade utbrott i varje grupp — stängning som håller och rörelse mot mätregelns halvhöjd. Återskapar ditt urval kontextgapet? Notera särskilt om skillnaden är större eller mindre än du förväntade dig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontextens effekter (hedged)\",\"rader\":[[\"Kontext\",\"Effekt på statistiken\",\"Praktisk regel\"],[\"Björnmarknad\",\"Vändningar skarpare, nedgångar större i snitt\",\"Räkna med våldsammare rörelser\"],[\"Upptrend som fortsettning\",\"Bästa tabellvärden för trianglar och flaggor\",\"Prioritera fortsettningssetup\"],[\"Nedtrend som vändning\",\"Högre felfrekvens\",\"Kräv mer bekräftelse\"],[\"Utbrott med marknaden\",\"Bättre väntevärde\",\"Kolla indexriktningen först\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför rapporterar Bulkowski varje nyckeltal separat för bull- och björnmarknader?",
+          "alternativ": [
+            "För att samma formation har olika väntevärde i olika marknadsläge",
+            "För att tabellerna annars blir för korta",
+            "För att mönster bara finns i bullmarknader",
+            "För att björnmarknader saknar volymdata"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad som händer om man blandar ihop två olika fördelningar till ett enda medelvärde."
+        },
+        {
+          "q": "Hur presterar utbrott som går i marknadens riktning jämfört med dem som går mot?",
+          "alternativ": [
+            "Sämre, eftersom marknaden tar emot vinsterna",
+            "Bättre i hans material",
+            "Identiskt — marknadsriktningen saknar betydelse",
+            "Omätbart eftersom det aldrig mättes"
+          ],
+          "ratt": 1,
+          "tips": "Medvind eller motvind — vilken segelbåt går fortast?"
+        },
+        {
+          "q": "Vad bör du göra med en vändningsformation som bildats efter en lång nedtrend?",
+          "alternativ": [
+            "Handla den med samma storlek som alla andra",
+            "Kräva mer bekräftelse — tabellerna visar högre felfrekvens för den kontexten",
+            "Avstå alltid — vändningar fungerar aldrig",
+            "Vänta tills formationen upprepats tre gånger"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 6 nämnde att stigande trianglar som vändningar bär svagare siffror — vad följer logiskt?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Att handla mönstret — inträde, stopp, mål och felfrekvens",
+      "intro": "Här blir statistiken till handelssystem: inträde vid bekräftat utbrott med reserver för throwbacken, stopp där formationens tes dör, mål från mätregeln med utskalning, och positionsstorlek styrd av felfrekvensen. Detta är kapitlet där AK1TS Brytpunkt-dimensionen hittar sin naturliga förlaga — diagrammet själv talar om var du har fel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Inträdet börjar i bekräftelsen: köp vid utbrottsstängningen, inte vid formationens gissade botten. Priset du betalar för denna beviskraft är inresetjänst — men Bulkowskis felfrekvenstabeller är prislappen på att hoppa över den: för tidiga inträden fångar just de fallen som aldrig blir utbrott. Raffineringen från kapitel 10 gör resten: dela positionen, en transaktion vid utbrottet och en reserverad för det statistiskt normala återbesöket av utbrottszonen, med ett manus för fallet då återbesöket aldrig kommer."
+        },
+        {
+          "type": "text",
+          "content": "Stoppet hör hemma där formationens tes dör — inte där din smärttröskel råkar ligga. För en bas betyder det under basens lägsta punkt eller under utbrottszonen när den återvandras och stängs under; för en kort position i en huvud-och-skuldrar-topp över nacklinjen när kursen tar sig tillbaka över den; gemensamt är att nivån kommer från diagrammet och har statistisk mening, eftersom den sammanfaller med definitionen av ett misslyckat mönster. Detta är AK1TS Brytpunkt-dimensionens kärna: en formation definierar objektivt var din tes är död, och felfrekvenstabellen talar om hur ofta det händer. Ett stopp satt med hänsyn till throwbackdjup — kapitel 10 — överlever den normala rekyl som rensar ut de för trånga stoppen."
+        },
+        {
+          "type": "text",
+          "content": "Målet kommer från mätregeln: formationshöjden projicerad från utbrottsnivån, med halva höjden som konservativt delmål eftersom full höjd nås bara i majoritet som bäst. Positionsstorleken kommer från felfrekvensen: en formation som felar i en av fyra tål en mindre position än en som felar i en av tjugo — samma riskbudget sprids över fler setup. Resultatet är ett komplett riskramverk där diagrammet själv räknar fram din R-multipel före köpet: inträde, stopp och mål hänger alla på samma struktur, och därför vet du relationen mellan risk och belöning innan du klickar. Det är Bulkowskis bortglömda gåva till praktiken — inte en formationstyp, utan en metod att beräkna risk ur form."
+        },
+        {
+          "type": "insikt",
+          "content": "Mönstrets geometri definierar risken — det är kursens mest praktiska enda mening. Inträde, stopp och mål sitter fast i samma struktur, vilket betyder att diagrammet talar om din R-multipel innan du har en position. När en setup inte kan visa var den har fel — ingen nivå, ingen tes, ingen R — är det inte ett mönster utan en åsikt med linjer på."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ett handelskort för en aktuell formation: inträdesnivå vid bekräftat utbrott, stopp vid formationens logiska dödsläge med marginal för normalt throwbackdjup, mål från mätregeln med halvhöjdsdelmål. Räkna ut R-multipeln och Para in formationens hedged felfrekvens från kursens tabeller. Skriv ner throwbackplanen — vad du gör vid återkomst till zonen inom två veckor, och vad du gör om den uteblir."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mönsterhandelns ramverk\",\"rader\":[[\"Element\",\"Regel\",\"Källa\"],[\"Inträde\",\"Stängning genom nivån; del av position reserverad för throwback\",\"Bekräftelsestatistiken\"],[\"Stopp\",\"Där formationens tes dör, med throwbackmargin\",\"Brytpunkt-logiken\"],[\"Mål\",\"Formationshöjd projicerad; halvhöjd som delmål\",\"Mätregeln\"],[\"Position\",\"Mindre vid högre felfrekvens\",\"Väntevärdetänkandet\"],[\"Uppföljning\",\"Definierat misslyckande stänger positionen\",\"Felfrekvenstabellerna\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Var ska stoppet ligga enligt mönsterlogiken?",
+          "alternativ": [
+            "En fast procent under inträdet oavsett formation",
+            "Där formationens tes dör — under dess logiska dödsläge med margin för normal rekyl",
+            "Alltid exakt på inträdesnivån",
+            "Där förlusten känns bekväm att bära"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vilken nivå som skulle bevisa att formationen misslyckats — och vad stoppet har med den att göra."
+        },
+        {
+          "q": "Varför ska målet delas upp i delmål?",
+          "alternativ": [
+            "För att mätregeln nås i full höjd bara i majoritet som bäst — halva höjden är säkrare",
+            "För att mäklare kräver flera ordrar",
+            "För att formationer alltid vänder vid halva höjden",
+            "För att skattenätet föredrar delvis uttag"
+          ],
+          "ratt": 0,
+          "tips": "Kapitel 6 testade mätregelns träffsäkerhet — vad innebär det för hur du tar ut en vinst?"
+        },
+        {
+          "q": "Vad bör styra positionsstorleken enligt kapitlet?",
+          "alternativ": [
+            "Hur vacker formationen är i diagrammet",
+            "Formationens felfrekvens och den resulterande R-multipeln",
+            "Hur länge du väntat på signalen",
+            "Aktiekursens absoluta nivå"
+          ],
+          "ratt": 1,
+          "tips": "Tänk som ett försäkringsbolag: vad avgör hur stor exponering en risk tål?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Kontroversen — rankningar, erosion och vad som överlever",
+      "intro": "Kursens ärliga slut: Bulkowskis egna rankningar, driften mellan upplagorna, och den obekväma sanningen att moderna tester av samma mönster visar svagare resultat. Algoritmhandel, decimalisering och trängsel bland mönsterjägare urholkar kanter. Men något överlever — och det viktigaste är inte mönstret utan metoden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Rankningarna först, som de ser ut i hans material: i topp återfinns konsekvent de korta och branta — high and tight-flaggan högst upp med sina i storleksordningen 65 till 70 procent och sitt nollresultat i felfrekvens, därefter vanliga flaggor och vimplar och de starka baserna som koppen med handtag och vändbottnar av Eve & Eve-typ. I botten hamnar breda, slarviga formationer och flera konsolideringstyper med höga felfrekvenser. Men — och detta är kapitlets poäng — rankningarna är relativa till hans urval, hans period och hans definitioner. Mellan upplagorna sjönk flera genomsnitt, vilket han redovisar öppet; en tabellrad är ett historiskt fotografi, inte en evighetsgaranti."
+        },
+        {
+          "type": "text",
+          "content": "Sedan den verkliga kontroversen. Oberoende replikationer och senare studier av klassiska mönster pekar genomgående mot svagare råkanter än Bulkowskis originaltabeller — hedged, med variation mellan studier och perioder. Förklaringarna är strukturella, inte mystiska: decimaliseringen 2001 minskade minimirörelserna, ETF:er och passiva flöden ändrade hur enskilda aktier rör sig, algoritmhandeln arbetar snabbare än någon formationsläsare, och framför allt trängseln — mönster fungerar tills alla ser dem. En formation som tusentals trader väntar på blir en arena för ogynnsam selektion: stoppen jagas, utbrotten förfalskas medvetet, och kanten betalas av de sena anländarna. Därtill kommer metodkritiken mot Bulkowskis eget material: urvals- och survivorshipfrågor, effekter av multipel testning över dussintals formationer och transaktionskostnader som inte finns i tabellerna."
+        },
+        {
+          "type": "text",
+          "content": "Vad överlever? Tre saker, bedömt med samma ärlighet. För det första volymbekräftade utbrott och gap — deltagandets bevis har eroderat minst och förblir meningsfulla filter. För det andra beteendemönstren kring utbrott: throwbacks, rekylers djup och mätregelns fördelning speglar hur människor och system fortfarande reagerar på nya prissidor. För det tredje — och viktigast — metoden själv: att mäta, ranka, kräva bekräftelse, sätta stoppet där tesen dör och prisa misslyckande vid dess basfrekvens. I AK1TS-termer: mönsterkunskapen behålls som ryggraden i Brytpunkt-dimensionen — nivåer, ogiltigförklaring, mätta mål — medan AKM1-V-variabler som V02 ARR-tillväxt eller V18 regulatoriska katalysatorer får leverera bränslet som ren form inte längre garanterar. Statistisk discipl är den enda komponent som är immun mot trängsel, för den är en process och inte en signal."
+        },
+        {
+          "type": "insikt",
+          "content": "Encyklopedins yttersta gåva är inte mönsterlistan utan förhållningssättet: mät innan du tror, vänta på bekräftelse, väntevärde framför skönhet, och en nivå — inte en berättelse — som avgör när du har fel. Specifika kanter eroderar när alla ser dem; disciplinen att prisa risk ur data är den enda position som inte kan trängas. Bulkowski skrev en uppslagsbok, men lämnade efter sig en metod — och metoden överlever bokens egna siffror."
+        },
+        {
+          "type": "utmaning",
+          "content": "Designa din egen replikationsstudie: välj en formation, samla tjugo moderna fall, betygsätt dem blint innan du kontrollerar utfallet — och räkna sedan ut träffsäkerhet och snitt mot bokens tabellvärden. Skriv ner tre lärdomar: en om erosionen, en om ditt urval, en om ditt eget bedömningsbias. Det är encyklopedins metod i miniatyr, och det är den metoden — inte siffrorna — som är arvet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vad överlever modern tid? (hedged)\",\"rader\":[[\"Element\",\"Status i modern tid\",\"Användning\"],[\"Volymbekräftade utbrott\",\"Bäst bevarad kant\",\"Behåll som hårt filter\"],[\"Gap-utbrott\",\"Fortfarande meningsfullt\",\"Behåll\"],[\"Throwbackstatistik\",\"Beteendet kvarstår\",\"Timing och stoppavstånd\"],[\"Råa formationer utan volym och kontext\",\"Försvagade\",\"Kräv extra bekräftelse\"],[\"Statistisk discipl\",\"Metod, inte kant\",\"Bär allt annat\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken formation toppar typiskt Bulkowskis prestandarankningar?",
+          "alternativ": [
+            "Den symmetriska triangeln",
+            "High and tight-flaggan",
+            "Den breda rektangeln",
+            "Den fallande kilen"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vilken formation som föds ur den mest extrema rörelsen."
+        },
+        {
+          "q": "Vad menas med att mönster fungerar tills alla ser dem?",
+          "alternativ": [
+            "Att populära mönster trängs när alla jagar samma signal — stoppen jagas och utbrott förfalskas, vilket urholkar kanten",
+            "Att mönster slutar fungera när börsen stänger",
+            "Att mönster bara syns för professionella handlare",
+            "Att diagram alltid är självuppfyllande på lång sikt"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vad som händer med en kant när tusentals väntar på exakt samma signal."
+        },
+        {
+          "q": "Vad beskriver kursen som bokens yttersta gåva?",
+          "alternativ": [
+            "Listan över de 63 bästa formationerna",
+            "Metoden — att mäta, kräva bekräftelse och låta en nivå avgöra när man har fel",
+            "Beviset att teknisk analys alltid slår fundamental",
+            "Genomsnittsstigningarna i andra upplagan"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vilken del av boken som förblir giltig även om siffrorna åldras."
+        }
+      ]
+    }
+  ]
+}

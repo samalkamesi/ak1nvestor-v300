@@ -3011,3 +3011,17 @@ Stage Summary:
 - Format bevisat: BOKMASTER-kurser med rikt innehåll + gamification
 - Kö: Lynch 'Mina bästa investeringar', Zero to One, Blue Ocean Strategy —
   samma format, grundarens foundation-böcker som kursmaterial
+---
+Task ID: 93-QUIZ-XP
+Agent: main (Z.ai Code)
+Task: Quiz-motor med autonom XP-förtjänst — LIVE (SSR-safe efter localStorage-fix)
+
+Work Log:
+- KursQuiz: rätt svar → auto +10 XP, en gång per fråga (localStorage-lås =
+  förtjänad kunskap, inte farmbar); fel → 💡 coachning utan spoiler; 🏆 trofé
+- SSR-krasch fixad: localStorage-access flyttad till useEffect
+- Graham: 24 quizfrågor, kapitelvis verifierade i data + prod
+
+Stage Summary:
+- XP-systemets kärnprincip live: bevisa → förtjäna. Kö: Lynch/Zero to One/
+  Blue Ocean i kapitel-för-kapitel-format med quiz + AI-lärarläge i chatwidget

@@ -3169,3 +3169,23 @@ Stage Summary:
 - 'All text ska vara visuell' — RikText tolkar och renderar automatiskt
 - Alla 227 kurser får visuell berikning utan manuell omskrivning
 - Kö: integrera även i KursSteg (Graham), lägga till fler mönster
+---
+Task ID: 102-KOGNITIV-PROFILER
+Agent: main (Z.ai Code)
+Task: F1 Kognitiv risk- och beteendeprofilering — LIVE
+
+Work Log:
+- /profil: interaktivt scenario-spel med 5 marknadssituationer
+  (krasch 09:02 måndag, tillväxtbolag 300%, förlust -30%, nyemission 40% rabatt,
+  vinst +80%)
+- Mäter: riskaptit (-2 till +4), kognitiva biases (förlustaversion, flock,
+  overconfidence, eufori, Mr Market-läsning, Graham-analys, tålamod)
+- Resultat-sida: personlighet + beskrivning + riskaptit-score + bias att vakta +
+  starka sidor + rekommenderad nivå 1-5 i läroplanen
+- Ingen LLM krävs — byggbar nu, AI-pluggbar senare
+- Beslut enligt grundaren: Z-ai för LLM, Supabase pgvector för vektordatabas,
+  ElevenLabs parkerad
+
+Stage Summary:
+- F1 (kognitiv profilering) är nu LIVE — grunden för adaptiv inlärning
+- Nästa: F2 adaptiv motor (DDA, multimodalt) eller F3 Adversarial AI

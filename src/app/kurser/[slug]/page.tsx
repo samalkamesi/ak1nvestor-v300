@@ -117,6 +117,8 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         <h2 className="font-serif text-2xl font-bold">Kursinnehåll</h2>
         <div className="mt-4 space-y-6">
           {course.chapters.map((ch) => {
+            const insiktBlock = (ch.blocks || []).find((b) => b.type === "insikt");
+            const utmaningBlock = (ch.blocks || []).find((b) => b.type === "utmaning");
             const text = (ch.blocks || [])
               .filter((b) => b.type === "text")
               .map((b) => String(b.content))
@@ -148,6 +150,21 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
                     <p className="text-[10px] font-bold uppercase tracking-widest text-gold">◆ Nyckelinsikt</p>
                     <p className="mt-1 text-sm font-medium leading-relaxed">{insikt}.</p>
                   </div>
+                )}
+                {insiktBlock && (
+                  <div className="mt-3 rounded-lg border-2 border-gold bg-gold/15 px-4 py-3">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-gold">◆ 10x-insikt</p>
+                    <p className="mt-1 text-sm font-semibold leading-relaxed">{String(utmaningBlock.content)}</p>
+                  </div>
+                )}
+                {utmaningBlock && (
+                  <details className="mt-3 rounded-lg border-2 border-gold/60 bg-paper px-4 py-3">
+                    <summary className="cursor-pointer text-xs font-bold uppercase tracking-widest text-gold">
+                      🎯 Utmaning — klicka när du vågar
+                    </summary>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/90">{String(utmaningBlock.content)}</p>
+                    <p className="mt-2 text-[11px] italic text-muted-foreground">Belöning: +10 XP och äkta förståelse — ingen fuskar sig till insikt.</p>
+                  </details>
                 )}
                 <div className="mt-3 space-y-3">
                   {stycken

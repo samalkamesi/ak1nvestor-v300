@@ -3112,3 +3112,22 @@ Stage Summary:
 - 'Var är visuella bilder beskrivningar' besvarat: datatabeller, tidslinjer och
   visuella metadata tillagda i nyckelkapitlen
 - Återstående 14 kapitel behöver samma expansion (kö)
+---
+Task ID: 99-MEGA-PROJEKT-START
+Agent: main (Z.ai Code)
+Task: MEGA PROJEKT plan + interaktiva verktyg A1-A3 — LIVE
+
+Work Log:
+- MEGA_PROJEKT.md: ärlig nulägesanalys (8/10 → inte 100x), 5 faser × 25 leveranser
+- A1 MarginalKalkylator: interaktiva reglage, visuell bro som reagerar,
+  marginal % live, färgkodad trygghet (grön≥30%, gul tunn, röd övervärderad)
+- A2 MrMarketSimulator: 30-dagars spel, slumpmässig kurs (mean-reverting),
+  Mr Market-kommenterar humöret, poäng för köp lågt/sälj högt
+- A3 InflationsJamforare: tre linjer (investering/kassa/inflation),
+  real avkastning, interaktiva reglage för alla parametrar
+
+Stage Summary:
+- Tre interaktiva verktyg redo att integreras i Graham-kursen
+- Plan dokumenterad med mätbara leveranser
+- Kö: integrera verktygen i kapitlen (A1→kap20, A2→kap8, A3→kap2),
+  sedan Fas B (automatisk grafdetektering), Fas C (systemkoppling)

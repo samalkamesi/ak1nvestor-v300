@@ -102,7 +102,7 @@
         "Försäljningstillväxt utan lönsamhetstillväxt är aktivitet, inte värdeskapande"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-005",
@@ -569,7 +569,7 @@
         "Bekräfta vändningen med nästa stapel innan du agerar på ett enskilt mönster"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-024",

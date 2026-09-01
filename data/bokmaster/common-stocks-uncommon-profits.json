@@ -1,0 +1,1078 @@
+{
+  "slug": "common-stocks-uncommon-profits",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 170,
+  "title": "Common Stocks and Uncommon Profits — Fisher: KOMPLETT",
+  "summary": "Common Stocks and Uncommon Profits (1958) av Philip A. Fisher är tillväxtinvesteringens grundtext — boken som lärde marknaden att ett bolags produkter, människor och moat går att undersöka systematiskt med femton punkter och scuttlebutt-metoden. Denna kompletta BOKMASTER-kurs går igenom alla femton punkterna, köp- och säljlogiken, masterinnehavets andel av förvaltat kapital och kopplar varje idé till AKM1-ekosystemets variabler för moat, förvaltningskapital och ägarstruktur.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven tillämpa Fishers femton punkter för att identifiera enastående tillväxtbolag, genomföra scuttlebutt-intervjuer med kunder, konkurrenter, leverantörer och före detta anställda, bedöma förvaltningskapitalet (V15) och ägarstrukturen (V16) bakom moaten (V13), samt resonera som Fisher om när ett köp och — framför allt — när en försäljning är motiverad enligt principen 'köp rätt och sitt still'. Eleven kan dessutom beräkna masterinnehavets andel av förvaltat kapital enligt Fisher-principen, analysera utspädningseffekter i tillväxtbolag och undvika de misstag Fisher varnade för.",
+  "why": "Common Stocks and Uncommon Profits är den bok som flyttade analysen från balansräkningens historik till företagets framtid: produkttorget, forskningen, säljorganisationen, marginalförsvaret och ledningens integritet. Warren Buffett beskrev sig själv som 85 procent Graham och 15 procent Fisher — och det är Fishers arv som förklarar varför AKM1 har egna variabler för moat (V13), förvaltningskapital (V15) och ägarstruktur (V16). Fisher ägde Motorola från 1955 till sin död 2004; boken är ett levande bevis på att tålamod är en strategi. Den tillhör utbildningens ryggrad.",
+  "chapters_list": [
+    "1. Fisher — mannen som lärde marknaden äga få och rätt",
+    "2. De 15 punkterna — kartan över enastående tillväxtbolag",
+    "3. Punkt 1–2: Produkttorget och innovationsviljan",
+    "4. Punkt 3: Forskning och utveckling — kronor mot resultat",
+    "5. Punkt 4: Säljorganisationen — världens mest underskattade fråga",
+    "6. Punkt 5–6: Vinstmarginaler och marginalförsvar",
+    "7. Punkt 7–9: Människorna — personalen, cheferna, djupet",
+    "8. Punkt 10–11: Kostnadskontroll och branschens egenheter",
+    "9. Punkt 12–13: Långsiktighet och nyemissionens pris",
+    "10. Punkt 14–15: Öppenhet och integritet — ledningens ägardialog",
+    "11. Scuttlebutt — informationen som inte finns i årsredovisningen",
+    "12. När köpa: tajming, bonanza-effekter och masterinnehavets andel",
+    "13. När sälja: tre skäl — och konsten att sitta still",
+    "14. Investerarens vanligaste fel — Fishers förbud mot vanlighet",
+    "15. Motorola, Apple och AKM1-syntesen — Fishers arv i praktiken"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "Fisher — mannen som lärde marknaden äga få och rätt",
+      "intro": "San Mateo, Kalifornien, 1958. En tillbakadragen rådgivare med en handfull klienter publicerar en bok som ska bli tillväxtinvesteringens grundtext. Philip A. Fisher hade sedan 1931 tjänat pengar på att lära känna få företag på ett djup som ingen på Wall Street matchade — och nu skrev han ner metoden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Philip A. Fisher (1907–2004) grundade sin rådgivningsfirma Fisher & Company redan 1931, mitt under depressionen, på amerikanska västkusten — långt bort från New York-bankarnas statisticer. Han tog medvetet emot bara ett litet antal klienter och vägrade de flesta som sökte sig till honom: hans metod krävde veckor av research per bolag, och den tiden ville han lägga på rätt företag. När Common Stocks and Uncommon Profits kom ut 1958 var Fisher knappast ett känt namn utanför Kalifornien — men boken har tryckts i över sextio år och räknas idag som en av de mest inflytelserika investeringsböckerna någonsin."
+        },
+        {
+          "type": "text",
+          "content": "Vad gjorde Fisher annorlunda? Benjamin Graham, hans samtida kollega på andra kusten, sökte säkerhetsmarginal i balansräkningen: statistik, net-nets, priset i förhållande till dokumenterade tillgångar. Fisher vände blicken mot framtiden: ett enastående bolag känns igen på produkternas marknadspotential, forsknings- och säljorganisationens kvalitet, marginalernas uthållighet och — viktigast av allt — människornas karaktär. Warren Buffett sammanfattade 1969 sitt eget arv med orden: ”Jag är 85 procent Graham och 15 procent Fisher.” Det är den fiskska femtondelen som förklarar Buffetts senare drag mot kvalitetsbolag med starka varumärken och permanent kapitalbindning."
+        },
+        {
+          "type": "text",
+          "content": "Fisher praktiserade det han predikade. Han köpte Motorola 1955, när bolaget var en radiotillverkare på väg in i transistorernas era, och behöll aktien till sin död 2004 — nästan femtio år. Han köpte Texas Instruments 1956. Hans portföljer var extremt koncentrerade, ofta tre till fyra kärninnehav, och hans mest citerade devis sammanfattar hela filosofin: ”Jag vill inte ha många bra investeringar. Jag vill ha ett fåtal enastående.” I en värld av diversifiering var det ett uppror — men Fisher menade att den som verkligen förstår ett bolag bärs av den förståelsen, och att den som inte förstår det inte ska äga det alls."
+        },
+        {
+          "type": "text",
+          "content": "Sonen Kenneth Fisher skriver förordet till de senare upplagorna och berättar hur fadern arbetade: anteckningsböcker fulla av intervjuer, resor till fabriker och mässor, långa samtal med ingenjörer långt ned i organisationen. Kenneth grundade själv Fisher Investments 1979 och myntade nyckeltalet pris/omsättning — men hans viktigaste bidrag till boken är vittnesmålet om att metoden funkade: faderns klienter som följde honom blev förmögna, inte genom aktiernas svängningar utan genom att de lärde sig lämna ifred det som var rätt köpt. I senare upplagor ingår även Fishers båda uppföljningar: Conservative Investors Sleep Well och Developing an Investment Philosophy."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fisher mot Graham — två traditioner, en syntes\",\"rader\":[[\"Fråga\",\"Graham (Security Analysis)\",\"Fisher (Common Stocks)\"],[\"Avkastningens källa\",\"Pris under dokumenterat värde\",\"Kvalitet som växer i decennier\"],[\"Antal innehav\",\"Brett urval, många positioner\",\"Koncentrerat: 3–4 kärninnehav\"],[\"Information\",\"Publicerad rapportdata\",\"Scuttlebutt + offentlig data\"],[\"Säljlogik\",\"När pris når värde\",\"När ursprungsköpet var fel eller bolaget förfaller\"],[\"Riskhantering\",\"Säkerhetsmarginal i priset (V19)\",\"Säkerhet i bolagets kvalitet (V13, V15)\"],[\"AKM1-arv\",\"V04, V08, V14, V17, V19\",\"V01, V12, V13, V15, V16\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fishers största omvälvande tanke: den verkliga risken är inte kurssvängningar — det är att äga medeltaliga bolag. Kvalitet är i sig en säkerhetsmarginal, och koncentration är inte våghalsighet utan konsekvensen av att vägra äga det man inte förstår på djupet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på din egen portfölj: hur stor andel utgör ditt största innehav? Hur många innehav har du? Skriv tre meningar om varför din koncentration passar (eller inte passar) Fishers krav på djupförståelse — och vad som skulle behöva ändras för att varje innehav ska bäras av research i stället för rutin."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknade Philip Fishers portföljförvaltning mest tydligt?",
+          "alternativ": [
+            "Extrem koncentration med tre till fyra kärninnehav",
+            "Bred diversifiering med minst 30 innehav för att sprida risken",
+            "Indexnära förvaltning med små aktiva avvikelser",
+            "Kort position i bolag vars produkter han ogillade"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på hur många bolag han hunnit lära känna på den djupnivå hans metod kräver."
+        },
+        {
+          "q": "Vad syftar Warren Buffetts berömda uttalande om att vara 85 procent av den ene och 15 procent av den andre?",
+          "alternativ": [
+            "85 procent Fisher och 15 procent Dodd",
+            "85 procent Graham och 15 procent Fisher",
+            "85 procent Munger och 15 procent Lynch",
+            "85 procent Keynes och 15 procent Graham"
+          ],
+          "ratt": 1,
+          "tips": "De två traditionerna är den statistiska värdeinvesteringen och den kvalitativa tillväxtinvesteringen."
+        },
+        {
+          "q": "Fisher köpte Motorola 1955. Vad hände därefter?",
+          "alternativ": [
+            "Han sålde med vinst inom två år och skrev om felet",
+            "Han växlade mellan Motorola och Texas Instruments årligen",
+            "Han höll aktien i nästan femtio år till sin död 2004",
+            "Han avstod från att köpa eftersom P/E-talet var högt"
+          ],
+          "ratt": 2,
+          "tips": "Affären blev bokens mest berömda levande bevis på hållbarhetsprincipen."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "De 15 punkterna — kartan över enastående tillväxtbolag",
+      "intro": "Bokens kärna är en enda övning: femton frågor som tillsammans avgör om ett bolag är enastående eller bara vanligt. Fisher menade att de flesta bolag faller redan på de första punkterna — och att den som lär sig listan på riktigt sparar år av misstag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fisher formulerade femton punkter att titta efter i en tillväxtaktie. Syftet var inte att hitta bolag som uppfyller allt mekaniskt — även de bästa bolagen missar någon punkt — utan att skilja de få enastående från de många tillräckliga. Fisher skriver att en aktie aldrig bör köpas om den inte klarar produktpunkterna, och att investeraren som ärligt granskar alla punkter snabbt upptäcker hur sällan ett köp egentligen är motiverat. Listan är en uteslutningsmaskin: den tar tid, men den utesluter det mesta."
+        },
+        {
+          "type": "text",
+          "content": "Punkterna grupperar sig naturligt. Punkterna 1–2 handlar om produkten och marknaden: finns tillräcklig tillväxtpotential, och har ledningen viljan att utveckla nästa generation? Punkterna 3–6 handlar om organisationens förmåga: forskning, sälj, marginaler. Punkterna 7–9 handlar om människorna: personalrelationer, chefsrelationer, ledningsdjup. Punkterna 10–13 handlar om disciplinen: kostnadskontroll, branschkunskap, tidshorisont och finansiering. Punkterna 14–15 handlar om karaktären: öppenhet mot ägarna och omutbar integritet. I AKM1 termer är detta moatens anatomi: V13 fångar produktsidorna, V15 förvaltningskapitalet fångar människorna, och V16 ägarstrukturen fångar karaktären mot ägarna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fishers 15 punkter — komplett karta\",\"rader\":[[\"Nr\",\"Frågan (svensk sammanfattning)\",\"Område\"],[\"1\",\"Har bolaget produkter eller tjänster med tillräcklig marknadspotential för betydande försäljningsökning i flera år?\",\"Produkt\"],[\"2\",\"Har ledningen beslutsamhet att fortsätta utveckla produkter som ökar potentialen när nuvarande linjer mättats?\",\"Produkt\"],[\"3\",\"Hur effektiv är forsknings- och utvecklingsverksamheten i förhållande till bolagets storlek?\",\"Organisation\"],[\"4\",\"Har bolaget en överlägsen säljorganisation?\",\"Organisation\"],[\"5\",\"Har bolaget en värd vinstmarginal?\",\"Organisation\"],[\"6\",\"Vad gör bolaget för att bibehålla eller förbättra vinstmarginalerna?\",\"Organisation\"],[\"7\",\"Har bolaget enastående relationer med sin personal?\",\"Människor\"],[\"8\",\"Har bolaget enastående relationer mellan cheferna?\",\"Människor\"],[\"9\",\"Har bolaget ledning med djup?\",\"Människor\"],[\"10\",\"Hur bra är bolagets kostnadsanalys och ekonomistyrning?\",\"Disciplin\"],[\"11\",\"Finns branschspecifika drag som avslöjar bolagets styrka mot konkurrenterna?\",\"Disciplin\"],[\"12\",\"Har ledningen kort eller lång sikte på vinsten?\",\"Disciplin\"],[\"13\",\"Kräver tillväxten så mycket nyemissionsekapital att utspädningen äter upp ägarnas vinst?\",\"Disciplin\"],[\"14\",\"Talar ledningen fritt med investerarna även när det går dåligt?\",\"Karaktär\"],[\"15\",\"Har bolaget en ledning av omutbar integritet?\",\"Karaktär\"]]}"
+        },
+        {
+          "type": "text",
+          "content": "Så använder du listan: gradera varje punkt 0–3 för bolaget — 0 betyder saknas helt, 3 betyder enastående och dokumenterat. Ett enastående bolag har en nästan heltäckande profil utan nollor på produktsidan. Två punkter är dock hierarkiskt överordnade: utan punkt 1 finns ingen tillväxtstory alls, och en tvekan på punkt 15 — integriteten — diskvalificerar bolaget oavsett hur briljant resten av profilen ser ut. Fisher var obeveklig här: en ledning som inte är absolut ärlig mot sina ägare kommer förr eller senare att skada dem, och det finns ingen marginal som skyddar mot oärlighet."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "insikt",
+          "content": "De femton punkterna är inte en checklista utan en hierarki: punkt 1 och punkt 15 är villkor för att överhuvudtaget få spela — alla andra punkter är graderbara och förhandlingsbara."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag du äger. Gradera alla femton punkterna 0–3 och rita profilen. Vilken punkt blev sämst? Skriv tre meningar: vad krävs för att den ska förbättras, vem i organisationen som äger frågan, och hur du via scuttlebutt kan verifiera att det faktiskt händer."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Fisher menade att ett bolag kan vara enastående även om det missar någon punkt. Vilken typ av punkt är dock diskvalificerande i sig?",
+          "alternativ": [
+            "Låg vinstmarginal i en tillväxtfas",
+            "Kortsiktig vinstsyn",
+            "Begränsad säljorganisation",
+            "Tveksam integritet hos ledningen"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vilken punkt som gör att ingen annan information kan litas på."
+        },
+        {
+          "q": "Vilken grupp av punkter fångar AKM1-variabeln för förvaltningskapital (V15) allra bäst?",
+          "alternativ": [
+            "Punkterna 7–9 om människorna",
+            "Punkterna 1–2 om produkttorget",
+            "Punkterna 5–6 om marginaler",
+            "Punkten 13 om nyemissioner"
+          ],
+          "ratt": 0,
+          "tips": "Förvaltningskapital handlar om kompetens, relationer och förmåga att leda — inte om produkten."
+        },
+        {
+          "q": "Vad är syftet med att gradera punkterna 0–3 i stället för att bara kryssa av ja/nej?",
+          "alternativ": [
+            "Att kunna jämföra bolagets P/E-tal historiskt",
+            "Att få en radarprofil som visar var bolaget är enastående och var det är sårbart",
+            "Att beräkna nettoskulden exakt",
+            "Att tajma köpet tekniskt"
+          ],
+          "ratt": 1,
+          "tips": "Fisher skilde på medelbra och enastående — det kräver en skala, inte en binär fråga."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Punkt 1–2: Produkttorget och innovationsviljan",
+      "intro": "Allt börjar med produkten. Fisher ställde två frågor som tillsammans skiljer en tillfällig modetrend från ett decennium av tillväxt: har produkten en marknad stor nog, och har ledningen viljan att bygga nästa produkt när den nuvarande mättats?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Punkt 1 lyder i svensk återgivning: ”Har bolaget produkter eller tjänster med tillräcklig marknadspotential för att möjliggöra en betydande ökning av försäljningen under åtminstone några år?” Fisher sökte bolag med flera års synlig tillväxt framför sig — inte ett års bonanza utan en marknad som expanderar i åratal. Han varnade samtidigt för att extrapolera en brant kurva: frågan är inte hur snabbt försäljningen växer just nu, utan hur länge den kan fortsätta växa innan marknaden mättas. Ett bolag med 15 procents tillväxt i tio år slår ett med 50 procents tillväxt i två år."
+        },
+        {
+          "type": "text",
+          "content": "Punkt 2: ”Har ledningen en beslutsamhet att fortsätta utveckla produkter eller processer som ytterligare ökar försäljningspotentialen när de nuvarande produktlinjernas tillväxtpotential till största delen utnyttjats?” Detta är tillväxtens andra kommando: alla produkter mättas förr eller senare — träd växer inte till himlen — och frågan är om nästa generation redan är på väg medan den nuvarande fortfarande säljer. Motorola under Galvin-familjen är Fishers eget exempel: bilradion mättades, transistorerna tog vid, halvledarna följde. Bolag som bara skördar sin nuvarande produkt dör långsamt; bolag som bygger nästa medan den nuvarande bär dem, compoundar i decennier."
+        },
+        {
+          "type": "text",
+          "content": "Här finns AKM1:s koppling mellan V01 tillväxt och V12 värderingstillväxt. V01 frågar hur länge tillväxten varar — det är exakt punkt 1 och 2. V12 frågar vad du betalar för den tillväxten: Fishers poäng var att marknaden systematiskt underskattar hur länge en verkligt enastående produkt fortsätter växa, och att därför ett högt P/E-tal kan vara billigt om punkterna 1–2 är starka. Omvänt: billigt P/E på ett bolag vars produkt mättas är en value trap. Priset betalar du för framtiden, och punkterna 1–2 är framtiden."
+        },
+        {
+          "type": "text",
+          "content": "Hur undersöker du detta i praktiken? Läs inte presentationer där ledningen talar om total adresserbar marknad i biljoner — TAM-tal drunknar lätt i hype. Fisher letade efter beställda, finansierade och tidsatta tillämpningar: vilka kunder har skrivit under, vilka produktlanseringar är daterade, vad säger kunderna själva om nästa generation? Scuttlebutt med kunder och distributörer avslöjar snabbt om nästa produkt är ett rykte eller en verklighet. Och glöm inte konkurrenternas pipeline — punkterna 1–2 gäller alltid relativt dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Punkt 1–2 i praktiken\",\"rader\":[[\"Fråga\",\"Punkt 1: marknadspotential\",\"Punkt 2: nästa generation\"],[\"Kärnfråga\",\"Hur många års tillväxt återstår?\",\"Finns nästa produkt på väg?\"],[\"Bästa källa\",\"Kundernas orderläge, tillämpningar\",\"Pipeline, FoU-andel av omsättning, lanseringskalender\"],[\"Varningstecken\",\"TAM-hype utan beställningar\",\"Ledning som endast talar om nuvarande produkt\"],[\"AKM1-länk\",\"V01 tillväxtens längd\",\"V12 priset på uthållig tillväxt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Tillväxt är en produktfråga innan den är en siffrefråga: om nästa generation produkt inte redan syns i pipelinen är din tillväxtprognos en extrapolering — och extrapolering är den dyraste av alla prognoser."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå till ett bolags IR-sida och läs de två senaste rapporterna plus presentationsmaterialet. Lista bolagets nästa generations produkter med namn och datum. Om du inte kan namnge dem har du hittat en svaghet i punkt 2 — skriv ner vad ledningen faktiskt talar om i stället för framtiden."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Fishers punkt 1?",
+          "alternativ": [
+            "Att bolaget har lägst P/E-tal i branschen",
+            "Att bolaget har störst marknadsandel just nu",
+            "Att produkterna har marknadspotential för betydande försäljningsökning under flera år",
+            "Att omsättningen växte snabbast senaste kvartalet"
+          ],
+          "ratt": 2,
+          "tips": "Nyckelorden är marknadspotential och flera år — inte senaste kvartalets fart."
+        },
+        {
+          "q": "Varför är punkt 2 lika viktig som punkt 1?",
+          "alternativ": [
+            "Eftersom konkurrenter aldrig hinner ikapp ett moat",
+            "Eftersom P/E-talet sjunker när produkten åldras",
+            "Eftersom punkt 2 mäter balansräkningens styrka",
+            "Eftersom alla produkter mättas måste nästa generation vara på väg redan medan den nuvarande säljer"
+          ],
+          "ratt": 3,
+          "tips": "Fisher såg Motorola byta produktgenerationer flera gånger under hans ägarskap."
+        },
+        {
+          "q": "Hur relaterar punkterna 1–2 till V12 värderingstillväxt?",
+          "alternativ": [
+            "Marknaden tenderar att underskatta hur länge enastående produkter växer — därav kan högt P/E vara rimligt",
+            "V12 mäter utdelningen och punkterna mäter tillväxten av den",
+            "Punkterna 1–2 ersätter behovet av värdering helt",
+            "V12 gäller bara råvarubolag"
+          ],
+          "ratt": 0,
+          "tips": "Fisher köpte sällan billigt på multiplen — han köpte rätt på varaktigheten."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Punkt 3: Forskning och utveckling — kronor mot resultat",
+      "intro": "Fisher flyttade forskningsfrågan från kostnadskolumnen till avkastningskolumnen. Punkt 3 handlar inte om hur mycket ett bolag lägger på FoU — utan om hur många saluföra produkter varje forskningsmiljon faktiskt genererar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Punkt 3: ”Hur effektiv är bolagets forsknings- och utvecklingsverksamhet i förhållande till dess storlek?” Fisher konstaterade att skillnaden i forskningseffektivitet mellan bolag är enorm: två företag i samma bransch kan lägga lika många procent av omsättningen på FoU och ändå få helt olika utfall. Effektivitet — inte budget — är det som avgör om punkten klaras. Ett medelstort, väl samordnat forskningsprogram slår regelbundet ett stort program som saknar koppling till marknaden."
+        },
+        {
+          "type": "text",
+          "content": "Fisher delade upp FoU-arbetet i tre delar: forskning (att uppfinna nytt), utveckling (att förädla uppfinningen till produkt) och ingenjörskonst (att få produktionen att fungera i volym). Den vanligaste orsaken till misslyckande är inte brist på idéer utan brist på koordinering: forskare som aldrig träffar säljarna, utvecklingsprojekt som marknadsavdelningen inte vet hur den ska sälja, produkter som är briljanta men som fabriken inte kan tillverka med marginal. Fisher letade efter organisationer där forskning, produktion och försäljning arbetar som en enda kedja."
+        },
+        {
+          "type": "text",
+          "content": "Den mest pålitliga mätaren är historisk träffsäkerhet: hur många kommersiella framgångar har bolagets FoU producerat det senaste decenniet, i förhållande till sin storlek? En stabil andel lyckade projekt hos ett större bolag är imponerande — skalning av innovation är svårt. Varningssignalerna är forskning för forskningens egen skull, projekt som aldrig når marknaden, och organisationer där FoU-chefen rapporterar långt ned i hierarkin. I AKM1 termer är punkt 3 en av moatens (V13) grundmotorer: en FoU-maskin som är svår att kopiera är en vallgrav i sig, eftersom den bygger på människor, kultur och processer — inte på pengar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"FoU-signaler enligt punkt 3\",\"rader\":[[\"Dimension\",\"Stark signal\",\"Svag signal\"],[\"Koordinering\",\"Forskare träffar kunder och säljare regelbundet\",\"FoU silo isolerad från marknad\"],[\"Historik\",\"Flera kommersiella produkter per decennium\",\"Projekt avslutas utan lansering\"],[\"Ledning\",\"FoU på VD-nivå i beslutsvägen\",\"FoU betraktas som kostnadspost\"],[\"Skalning\",\"Stabila andelar lyckade projekt allt eftersom bolaget växer\",\"Färre framgångar ju större budgeten blir\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte hur mycket bolaget lägger på forskning — fråga hur många gångbara produkter varje forskningsmiljon genererar. FoU är en avkastningskurva, inte en kostnadspost."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj två konkurrenter i en forskningsintensiv bransch. Hämta FoU-kostnad och omsättning för båda från de senaste tre åren. Räkna sedan ut antalet kommersiella lanseringar per FoU-miljon under perioden. Vems forskningsmaskin är effektivast — och vad säger det om punkt 3?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Fisher-frågan i punkt 3 exakt?",
+          "alternativ": [
+            "Lägger bolaget mest pengar på FoU i branschen?",
+            "Hur effektiv är FoU-verksamheten i förhållande till bolagets storlek?",
+            "Har bolaget flest patentadvokater?",
+            "Prioriterar bolaget grundforskning framför tillämpning?"
+          ],
+          "ratt": 1,
+          "tips": "Ordet effektiv bär hela poängen — det handlar om utfall per enhet insats."
+        },
+        {
+          "q": "Vilken faktor pekade Fisher ut som den vanligaste orsaken till FoU-misslyckande?",
+          "alternativ": [
+            "För liten forskningsbudget",
+            "För många anställda forskare",
+            "Brist på koordinering mellan forskning, produktion och försäljning",
+            "För hög utdelning som tömmer kassan"
+          ],
+          "ratt": 2,
+          "tips": "Problemet var sällan idébristen — det var kedjan mellan avdelningarna."
+        },
+        {
+          "q": "Hur hänger punkt 3 samman med V13 moat i AKM1?",
+          "alternativ": [
+            "FoU-budget är synonym med moat",
+            "Punkt 3 gäller enbart läkemedelsbolag",
+            "Moat mäts i antal patent oavsett kvalitet",
+            "En effektiv, svårkopierad FoU-maskin bygger på människor och processer och utgör i sig en vallgrav"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vad som krävs för att en konkurrent ska kunna efterapa en väloljad innovationskultur."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Punkt 4: Säljorganisationen — världens mest underskattade fråga",
+      "intro": "Investerare kan produkterna utan och in — men glömmer nästan alltid frågan som avgör om produkten når marknaden varje år igen. Fisher kallade säljorganisationen en av de mest underskattade framgångsfaktorerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Punkt 4: ”Har bolaget en överlägsen säljorganisation?” Fisher iakttog att investerare gärna analyserar produkter men nästan aldrig distributionen — trots att världens bästa produkt misslyckas utan kunniga säljare, fungerande återförsäljarnät och service som får kunden att komma tillbaka. Säljorganisationen är bolagets kontakt med verkligheten: den förmedlar inte bara produkten utan också marknadens återkoppling tillbaka till utvecklingen. Ett bolag med medelmåttig produkt och enastående distribution slår regelbundet ett bolag med enastående produkt och medelmåttig distribution."
+        },
+        {
+          "type": "text",
+          "content": "Vad är en överlägsen säljorganisation i praktiken? Fisher pekade på utbildning och kompetens hos säljkåren, ersättningssystem som belönar rätt beteende, ett återförsäljar- och distributionsnät som når kunderna, effektiv marknadsföring som skapar efterfrågan, och service efter köpet som bygger lojalitet. I AKM1-termer är detta en av de starkaste formerna av moat (V13): ett distributionsnät tar decennier att bygga, är svårt och dyrt att kopiera, och blir starkare för varje år — medan en produkt kan kopieras av en konkurrent med kapital och tid. Distribution är moatens arbetsmuskel."
+        },
+        {
+          "type": "text",
+          "content": "Ett modernt testfall är Apple — ett bolag Fisher aldrig skrev om, men vars case hans metod fångar fullständigt. Punkterna 1–2: ekosystemet av produkter och tjänster med årsatal av tillväxt. Punkt 4: butikskedjan, App Store som distributionskanal för tjänsteintäkter, och det faktum att kunderna själva drar varumärket. Punkt 5–6: marginaler som hållit genom prispress och konjunktursvängar. Applicera Fishers fjorton första punkter på Apple så förstår du varför kvalitetsinvesterare med Fisher-metoden ofta äger bolag vars P/E-tal skrämmer Graham-investerare."
+        },
+        {
+          "type": "text",
+          "content": "Hur granskar du punkt 4? Offentlig data ger halva svaret: försäljningskostnadernas utveckling i förhållande till tillväxten, kanalandelar, konverteringsgrad. Men Fishers eget redskap var scuttlebutt: prata med återförsäljare och distributörer, fråga kunder vem som faktiskt rekommenderar produkten, läs branschpressens rankningar av säljkårer. En säljorganisation som är känd och respekterad i branschen — men osynlig i årsredovisningen — är precis den typen av informationsövertag Fisher byggde sin metod på."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Säljorganisationens Fisher-test\",\"rader\":[[\"Del\",\"Fråga\",\"Källa\"],[\"Kompetens\",\"Är säljkåren branschens mest kunniga?\",\"Branschpress, återförsäljare\"],[\"Ersättning\",\"Belönar systemet långsiktiga kunder?\",\"Årsredovisning, proxy\"],[\"Nät\",\"Når distributionen kunderna effektivt?\",\"Distributörer, konkurrenter\"],[\"Service\",\"Kommer kunden tillbaka utan press?\",\"Kundrecensioner, NPS\"],[\"Synergi\",\"Flödar marknadsfeedback till FoU?\",\"Före detta anställda\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Produkten skapar efterfrågan första gången — säljorganisationen skapar den varje år igen. Distribution är den del av moaten som arbetar medan du sover."
+        },
+        {
+          "type": "utmaning",
+          "content": "Genomför en punkt 4-undersökning: kontakta eller läs forum och intervjuer med butikschefare och återförsäljare som säljer produktkategorin där ditt bolag ingår. Vems produkt rekommenderar de först, och vad är motiveringen? Skriv ner tre citat."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallade Fisher säljorganisationen en underskattad framgångsfaktor?",
+          "alternativ": [
+            "Eftersom investerare analyserar produkter men glömmer att distribution avgör om produkten når marknaden varje år",
+            "Eftersom säljkostnader sällan redovisas separat",
+            "Eftersom säljare alltid är bolagets bästa informationskälla om konkurrenter",
+            "Eftersom en bra produkt säljer sig själv"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på skillnaden mellan att lansera en gång och att sälja om varje år."
+        },
+        {
+          "q": "Hur beskriver kursen sambandet mellan punkt 4 och V13 moat?",
+          "alternativ": [
+            "Säljorganisation och moat är samma sak",
+            "Ett distributionsnät tar decennier att bygga och blir starkare medan en produkt kan kopieras — distribution är moatens arbetsmuskel",
+            "Moat gäller bara varumärket, inte distributionen",
+            "Punkt 4 tillhör karaktärsgruppens punkter"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på hur lång tid det tar att bygga om ett landsomfattande distributionsnät."
+        },
+        {
+          "q": "När kursen tillämpar Fisher-metoden på Apple, vilken punkt lyfter fram App Store och butikskedjan?",
+          "alternativ": [
+            "Punkt 1 om marknadspotential",
+            "Punkt 10 om kostnadskontroll",
+            "Punkt 4 om säljorganisationen",
+            "Punkt 13 om nyemissioner"
+          ],
+          "ratt": 2,
+          "tips": "App Store är i grunden en distributionskanal för tjänsteintäkter."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Punkt 5–6: Vinstmarginaler och marginalförsvar",
+      "intro": "Tillväxt utan marginaler är åskådarläktarens sport. Fisher skilde mellan bolag som växer och bolag som växer lönsamt — och mellan marginaler som var och marginaler som blir.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Punkt 5: ”Har bolaget en värd vinstmarginal?” Fisher var tydlig: försäljningstillväxt utan vinst är meningslös — det är bara en dyrare sätt att köpa marknadsandelar. Samtidigt nyanserade han frågan: ett litet bolag i tidig tillväxtfas kan ha tillfälligt pressade marginaler medan det bygger position, och det kan vara ett utmärkt köp om marginalerna är på väg upp. Frågan är alltså inte bara nivån utan strukturen: är marginalen låg för att bolaget investerar i framtiden, eller för att det saknar prissättningskraft och konkurrensfördelar? Det första är en övergång, det andra är en livstidsdom."
+        },
+        {
+          "type": "text",
+          "content": "Punkt 6: ”Vad gör bolaget för att bibehålla eller förbättra vinstmarginalerna?” Detta är Fishers rent framtidsinriktade marginalfråga — historiska marginaler berättar vem bolaget var, punkt 6 berättar vem det blir. Verktygen är kända: kostnadsprogram, prissättningsmakt, produktmix som flyttas mot mer lönsamma poster, automatisering och skalbarhet. Fisher observerade att inflationstider är marginalförsvarets ultimata test: alla kostnader stiger, och bara bolag med verklig prissättningskraft kan föra kostnaderna vidare till kunderna utan att tappa volym. Det är i exakt det läget moaten (V13) syns — moat är förmågan att behålla marginaler när konkurrens och inflation anfaller samtidigt."
+        },
+        {
+          "type": "text",
+          "content": "En viktig distinktion från boken: håll isär cykliska marginaler från strukturella. Ett råvarubolags marginaler svänger med varupriset — det är konjunktur, inte karaktär. Ett bolag med moat har marginaler som återkommer till samma eller högre nivå efter varje svacka. I AKM1:s analysgrid är detta kopplat till bruttomarginalens utveckling (V04) men Fisher-drivet: studera fem års marginaler tillsammans med ledningens kommentarer och avgör om svängningarna är priscykler eller positioner. Och lägg märke till ledningar som medvetet offrar kortsiktig marginal för långsiktig position — som tar en engångsförlust för att rädda en kundrelation — det är punkterna 6 och 12 i samspel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Marginalanalys enligt punkt 5–6\",\"rader\":[[\"Fråga\",\"Punkt 5: marginalens nivå\",\"Punkt 6: marginalens framtid\"],[\"Tidsperspektiv\",\"Historik och nutid\",\"Nästa cykel\"],[\"Nyckelfråga\",\"Är marginalen värd namnet?\",\"Vad gör ledningen aktivt för den?\"],[\"Bra tecken\",\"Marginal över branschsnitt eller stigande trend\",\"Kostnadskontroll, prissättningsmakt, mixskifte\"],[\"Dåligt tecken\",\"Permanent pressad marginal utan plan\",\"Väntar på att konjunkturen ska rädda dem\"],[\"AKM1-länk\",\"V04 bruttomarginal\",\"V13 moat mot prissättningskraft\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "Marginalfrågan är alltid två frågor: var marginalen står är historiens siffra — vad ledningen gör för att försvara den är framtidens. Tillväxt utan marginalförsvar är bara inflation i omsättning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita fem års utveckling av brutto- och rörelsemarginal för ett av dina innehav. Markera varje sväng med ledningens egen förklaring från rapporterna. Klassificera sedan varje svängning: cyklisk (pris, konjunktur) eller strukturell (position, moat)? Skriv en rad slutsats om punkt 5 och 6."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Fisher menade att tillväxt utan vinstmarginal är problematiskt. Vad är den viktiga nyansen för unga tillväxtbolag?",
+          "alternativ": [
+            "Unga bolag ska alltid ha högst marginal i branschen",
+            "Unga bolag bör undvikas helt tills marginalerna stabiliserats",
+            "Marginal spelar ingen roll om tillväxten överstiger 30 procent",
+            "Tillfälligt låga marginaler kan vara acceptabla om de beror på investeringar i framtida position"
+          ],
+          "ratt": 3,
+          "tips": "Skilj på marginal som är låg på väg upp och marginal som är låg för alltid."
+        },
+        {
+          "q": "Vad är kärnfrågan i punkt 6?",
+          "alternativ": [
+            "Vad gör bolaget aktivt för att bibehålla eller förbättra marginalerna?",
+            "Hur hög var marginalen historiskt?",
+            "Hur marginalen utvecklas hos konkurrenterna?",
+            "Om utdelningen växer snabbare än marginalen"
+          ],
+          "ratt": 0,
+          "tips": "Punkt 5 tittar bakåt — punkt 6 tittar framåt på ledningens handlande."
+        },
+        {
+          "q": "Enligt kursen är inflationstider marginalfrågans ultimata test. Varför?",
+          "alternativ": [
+            "Eftersom räntekostnaderna alltid stiger mest",
+            "Bara bolag med verklig prissättningskraft kan föra ökade kostnader vidare utan att tappa volym",
+            "Eftersom inflation gynnar alla bolag lika",
+            "Eftersom bokföringsreglerna ändras vid inflation"
+          ],
+          "ratt": 1,
+          "tips": "Testet handlar om vem som får betala kostnadshöjningarna — bolaget eller kunden."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Punkt 7–9: Människorna — personalen, cheferna, djupet",
+      "intro": "Fishers tre folkpunkter gräver där balansräkningen är blind: hur bolaget behandlar sina medarbetare, hur cheferna samspelar, och om bolaget kan leva vidare utan sin grundare. Det är här AKM1:s förvaltningskapital (V15) har sitt upphov.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Punkt 7: ”Har bolaget enastående relationer med sin personal?” Fisher tittade på personalomsättning, arbetsro, löne- och incitamentsystem och inte minst hur bolaget handlar i motgång: sköter uppsägningar humant och rättvist, eller klipper brutalt vid första tecknet av svaghet? Hans logik var kall och varm på samma gång: medarbetare som känner sig sedda och rättvist behandlade arbetar bättre, stannar längre och bidrar med idéer — hög personalomsättning är en dold kostnad som äter marginaler och FoU-kvalitet. Ett bolag som behandlar personalen som en kostnadspost behandlar förr eller senare sina kunder och ägare på samma sätt."
+        },
+        {
+          "type": "text",
+          "content": "Punkt 8: ”Har bolaget enastående relationer mellan cheferna?” Fisher frågade: vågar cheferna tala fritt med VD, eller är ledningen en envägskommunikation? Befordras internt innan man rekryterar utifrån? Skars chefernas löner mer än de anställdas i kriser — ett tecken Fisher värderade högt? Och talar ledningen med respekt om sina konkurrenter? Arbetsklimatet bland cheferna avslöjar om bolaget är en organisation eller en enfaldig krets kring en stark person. Punkt 9 kompletterar: ”Har ledningen djup?” Finns en andra nivå av kapabla ledare, kan bolaget fungera om grundaren försvinner imorgon? Succession och decentralisering är livförsäkringen för tillväxtinvesteringen — ett bolag som är oersättligt beroende av en person är ett bolag med en inbyggd förfallodag."
+        },
+        {
+          "type": "text",
+          "content": "Det är exakt detta AKM1 fångar i V15 förvaltningskapital: kompetens, kapital och karaktär som en förnybar tillgång i bolaget. Fishers folkpunkter handlar inte om att vara snäll — de handlar om att relationskapitalet är maskinen som gör det möjligt att rekrytera, behålla och delegera. Ett bolag med djup ledning och lojal personal compoundar sin organisationsförmåga år efter år, medan konkurrenter bygger om sin organisation vid varje VD-byte. I praktiken granskas detta via personalomsättningsstatistik, interna befordringar, optionprogrammens bredd och — framför allt — scuttlebutt med före detta anställda, som talar ärligare än någon som är kvar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Folkpunkterna 7–9 — frågor och evidens\",\"rader\":[[\"Punkt\",\"Kärnfråga\",\"Evidens att leta efter\"],[\"7 Personal\",\"Enastående personalrelationer?\",\"Låg omsättning, humanta uppsägningar, incitamentsbredd\"],[\"8 Chefer\",\"Öppen dialog mellan chefer?\",\"Frihet att tala med VD, intern befordran, löneoffer i kriser\"],[\"9 Djup\",\"Kan bolaget leva utan grundaren?\",\"Successionsplan, decentraliserat beslutsfattande, stark andranivå\"],[\"AKM1\",\"V15 förvaltningskapital\",\"Relationskapital som compoundar organisationsförmågan\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Med pengar kan man köpa fabriken, maskinerna och varumärket — men aldrig lojaliteten. Personal- och chefsrelationerna är den enda tillgången som saknas på balansräkningen men som avgör värdet av alla andra."
+        },
+        {
+          "type": "utmaning",
+          "content": "Sök på LinkedIn eller granska sajter med anställdas recensioner efter före detta anställda på ett bolag du analyserar. Läs tio recensioner och notera de tre mest återkommande orden. Skriv en mening om vad orden säger om punkterna 7–9 — och om det är kvarvarande eller före detta anställda som talar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken detalj i kriser värderade Fisher särskilt högt som tecken på chefsrelationer (punkt 8)?",
+          "alternativ": [
+            "Att bolaget inte sänkte några löner alls",
+            "Att alla löner sänktes exakt lika mycket i procent",
+            "Att chefernas löner sänktes mer än de anställdas",
+            "Att VD höjde sin lön för att visa förtroende"
+          ],
+          "ratt": 2,
+          "tips": "Fisher såg offervilja uppifrån som ett tecken på äkta gemenskap snarare än hierarki."
+        },
+        {
+          "q": "Vad är den praktiska risken Fisher pekar på om ett bolag saknar ledningsdjup (punkt 9)?",
+          "alternativ": [
+            "Bolaget kan inte betala utdelning",
+            "FoU-budgeten krymper automatiskt",
+            "Räntekostnaderna stiger",
+            "Bolaget är sårbart om en nyckelperson försvinner — en inbyggd förfallodag"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på skillnaden mellan en organisation och en person med medarbetare."
+        },
+        {
+          "q": "Hur beskriver kursen kopplingen mellan punkterna 7–9 och V15 förvaltningskapital?",
+          "alternativ": [
+            "Relationskapitalet är maskinen som gör det möjligt att rekrytera, behålla och delegera — en förnybar tillgång",
+            "V15 mäter omsättningen per anställd",
+            "V15 gäller endast styrelsens storlek",
+            "Punkterna 7–9 ersätter behovet av V16"
+          ],
+          "ratt": 0,
+          "tips": "Förvaltningskapital handlar om systemet av människor, inte om en enskild person."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 11,
+      "title": "Punkt 10–11: Kostnadskontroll och branschens egenheter",
+      "intro": "Bakom varje uthållig marginal står en styrningsmaskin som vet exakt vad allting kostar. Och bakom varje bransch finns ett hemligt prov som skiljer vinnarna från förlorarna — Fisher lärde läsaren lära sig provet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Punkt 10: ”Hur bra är bolagets kostnadsanalys och ekonomistyrning?” Fisher menade att ett bolag som inte vet exakt vad varje produkt kostar att tillverka och sälja inte heller kan veta vilka produkter som är värda att satsa på. Kostnadskunskap är förutsättningen för punkt 6: utan att veta var marginalerna skapas och läcker kan ingen föra ett marginalförsök. Tecknen att leta efter: fungerande budgetprocess med varningar vid avvikelser, ledning som citerar produktnivåkostnader i presentationer, och ett finansiellt språk som är lika naturligt hos operativa chefer som hos ekonomichefen. I AKM1 hänger detta samman med rapportkvalitet och styrning — siffrorna är bara så bra som maskinen som producerar dem."
+        },
+        {
+          "type": "text",
+          "content": "Punkt 11: ”Finns det andra förhållanden i verksamheten, särskilt för branschen ifråga, som ger investeraren viktiga ledtrådar om hur enastående bolaget är i förhållande till sin konkurrens?” Detta är Fishers mest underskattade punkt: varje bransch har sina egenheter — sitt hemliga prov. Inom detaljhandeln är det läge och hyresavtal. Inom läkemedel är det patentprocessen och den regulatoriska kalendern. Inom bygg är det projektordning och riskfördelning i kontrakt. Inom försäkring är det investmentbolagets förmåga. Investeraren som lär sig branschens prov kan tolcka information som utomstående ser men inte förstår; investeraren som bara läser resultatet kommer alltid ett steg efter."
+        },
+        {
+          "type": "text",
+          "content": "Poängen med punkt 11 är ödmjukheten inför branschkunskap: Fishers metod förutsätter att du specialiserar dig. Han uppmuntrade investerare att stanna i branscher de förstår och lära sig deras mekanik på djupet — inte att bredda sig tunt över branscher de bara kan läsa om. Det är därför AKM1 bygger branschadapter in i analysen: moaten (V13) formas olika i olika branscher, och nyckeltalet som avslöjar vinnaren skiljer sig därefter. Fråga dig själv: vad är det i den här branschen som alla insiders talar om som avgörande — och som nästan ingen utomstående ens nämner?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Branschens hemliga prov — exempel på egenheter\",\"rader\":[[\"Bransch\",\"Egenhet att behärska\",\"Vad den avslöjar\"],[\"Detaljhandel\",\"Läge, hyresvillkor, lageromsättning\",\"Skalbarhet och kapitalåtergång\"],[\"Läkemedel\",\"Patentprocess, regulatorisk kalender\",\"Pipelinevärde och FoU-effektivitet\"],[\"Bygg och anläggning\",\"Orderring, riskfördelning i kontrakt\",\"Cykelposition och marginalkvalitet\"],[\"Mjukvara\",\"Net revenue retention, churn\",\"Tillväxtens kvalitet och moat\"],[\"Tillverkning\",\"Kostnad per enhet, kapacitetsutnyttjande\",\"Punkt 10 i praktiken\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Varje bransch har ett eget hemligt prov. Investeraren som lär sig provet slår den som bara läser resultatet — branschexpertis är den mest underskattade formen av informationsövertag."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera en egenhet i en bransch du följer — ett nyckeltal eller en företeelse som insiders talar om men utomstående sällan nämner (exempel: hyresvillkor, regulatorisk kalender, orderring). Förklara den för en vän i två minuter och hur den skiljer vinnare från förlorare. Kunde du det? Då har du punkt 11."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är punkt 10 en förutsättning för punkt 6 (marginalförsvaret)?",
+          "alternativ": [
+            "Eftersom utdelningen beräknas från kostnaderna",
+            "Utan exakt kostnadskunskap per produkt vet bolaget inte var marginalerna skapas och läcker",
+            "Eftersom revisorer kräver det enligt lag",
+            "Kostnadskontroll och marginaler är samma sak"
+          ],
+          "ratt": 1,
+          "tips": "Man kan inte försvara en position man inte kan se på kartan."
+        },
+        {
+          "q": "Vad är kärnan i Fishers punkt 11?",
+          "alternativ": [
+            "Att jämföra P/E-tal inom branschen",
+            "Att alltid välja den största aktören i branschen",
+            "Att varje bransch har egenheter — ett hemligt prov — som avslöjar bolagets styrka relativt konkurrenterna",
+            "Att undvika branscher med reglering"
+          ],
+          "ratt": 2,
+          "tips": "Fisher ville att investeraren skulle lära sig branschens insiderspråk."
+        },
+        {
+          "q": "Vilken hållning uppmanar punkt 11 investeraren till?",
+          "alternativ": [
+            "Maximal bredd över många branscher",
+            "Att lita på experter i stället för egen research",
+            "Att endast använda makroprognoser",
+            "Specialisering i branscher man verkligen förstår på djupet"
+          ],
+          "ratt": 3,
+          "tips": "Fisher själv följde få branscher — men dem extremt noggrant."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Punkt 12–13: Långsiktighet och nyemissionens pris",
+      "intro": "Två frågor avslöjar ledningens karaktär på strukturell nivå: offrar hon kvartalsvinst för position, och vem betalar egentligen för tillväxten — bolaget eller ägarna?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Punkt 12: ”Har ledningen kort eller lång sikte på vinsten?” Fisher sökte ledningar som är beredda att offra omedelbar vinst för att stärka den långsiktiga positionen: att acceptera en engångsförlust för att rädda en viktig kundrelation, att investera i service och kvalitet även när ingen mäter det, att inte pumpa kvartalssiffror genom att skörda goodwill. Den kortsiktiga ledningen gör tvärtom: skördar nu på bekostnad av sedan. Skillnaden syns sällan i en enskild rapport — den syns i beskeden som inte togs, i kunder som stannar, i marginaler som håller genom cykler. Att läsa styrelsens och VD:s kommentarer över fem år är den enklaste metoden att skilja skördare från byggare."
+        },
+        {
+          "type": "text",
+          "content": "Punkt 13: ”Kommer bolagets tillväxt inom överskådlig framtid att kräva så mycket nytt eget kapital att det större antalet aktier sedan i stort sett tar bort befintliga aktieägares nytta av den förväntade tillväxten?” Fisher fångade här utspädningens mekanik: tillväxt som finansieras med ständiga nyemissioner tillfaller delvis de nya ägarna, inte de gamla. Räknaexempel: ett bolag som tredubblar sin totala vinst men fördubblar antalet aktier har bara ökat vinsten per aktie med 50 procent — resten läckte bort till nya ägare. Fisher sökte självgående tillväxt: bolag vars kassaflöde finansierar expansionen internt, alternativt ledningar som föredrar lånefinansiering i rimlig omfattning före att späda ut ägarna."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1 är detta kärnan i V16 ägarstruktur: spåra antalet aktier över tid som en grundserie i varje analys. Ett bolag med stark vinsttillväxt men konstant emissionsmaskin är en gående utspädning — och omvända fallet, återköp som verkligt minskar aktieantalet till rimliga priser, är negativ utspädning som compoundar ägarnas andel. Skillnaden mellan substansvärdestegring och värdesegring per aktie ligger exakt här. Fisher och Graham, som annars skiljde sig åt i metod, var helt eniga om denna mekanik — Graham varnade i Security Analysis för hur warrants och konvertibla urholkar ägarna, och Fishers punkt 13 är samma varning i tillväxtbolagens värld."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Utspädningsmatematik enligt punkt 13\",\"rader\":[[\"Scenario\",\"Total vinst\",\"Antal aktier\",\"Vinst per aktie\"],[\"Utgångsläge\",\"100\",\"10,0\",\"10,0\"],[\"Självgående tillväxt\",\"300\",\"10,0\",\"30,0\"],[\"Emissionsfinansierad\",\"300\",\"20,0\",\"15,0\"],[\"Återköp vid rimligt pris\",\"300\",\"9,0\",\"33,3\"],[\"Slutsats\",\"Vem finansierar tillväxten avgör vad som återstår till dig som ägare\",\"\",\"\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte bara om vinsten växer — fråga vems pengar som betalat tillväxten. Internfinansierad tillväxt tillfaller ägarna; emissionsfinansierad tillväxt delas med de nya aktieägarna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hämta tio års historik för antalet utestående aktier för ett innehav. Jämför årlig tillväxt i total vinst mot tillväxt i vinst per aktie. Skriv en rad: har ägarna fått del av tillväxten — och om inte, vart har den tagit vägen?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket beteende kännetecknar en ledning med långsiktig vinstsyn enligt punkt 12?",
+          "alternativ": [
+            "Att acceptera en engångsförlust för att rädda en viktig kundrelation",
+            "Att maximera varje kvartals resultat oavsett konsekvenser",
+            "Att undvika alla investeringar som inte betalar sig inom ett år",
+            "Att guida ned för att sedan slå prognosen"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på skillnaden mellan att skörda positionen och att bygga den."
+        },
+        {
+          "q": "Ett bolag tredubblar totala vinsten men fördubblar antalet aktier. Vad händer med vinsten per aktie?",
+          "alternativ": [
+            "Den tredubblas",
+            "Den ökar med 50 procent",
+            "Den fördubblas",
+            "Den är oförändrad"
+          ],
+          "ratt": 1,
+          "tips": "Räkna: tre gånger vinst delat på två gånger aktier."
+        },
+        {
+          "q": "Vilken typ av tillväxt sökte Fisher enligt punkt 13?",
+          "alternativ": [
+            "Tillväxt finansierad av återkommande nyemissioner",
+            "Tillväxt via förvärv betalade med aktier oavsett pris",
+            "Självgående tillväxt där kassaflödet finansierar expansionen internt",
+            "Tillväxt via höjd skuldsättning utan gräns"
+          ],
+          "ratt": 2,
+          "tips": "Fisher ville att ägarnas andel av framtidsvinsten skulle växa, inte delas."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Punkt 14–15: Öppenhet och integritet — ledningens ägardialog",
+      "intro": "Fisher avslutade sina femton punkter med karaktären. Punkt 14 handlar om vad ledningen säger när det gör ont, punkt 15 om vad den är värd när ingen ser på. Dessa två punkter är villkoret för att all annan analys ska vara möjlig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Punkt 14: ”Talar ledningen fritt med investerarna om sina angelägenheter när det går bra, men 'blir tyst som musslan' när problem och besvikelser uppstår?” Fisher menade att öppenheten i motgång avslöjar mer än någon framgångsrapport: en ledning som erkänner problem, förklarar orsakerna och redogör för åtgärder bygger en relation där du som ägare kan fatta beslut på fakta. En ledning som döljer dåliga nyheter — som låter varningarna sippra ut via undanflykter och omskrivningar — förvandlar din portföljpost till en svart låda. Du kan inte bedöma det du inte får se, och du kan inte sitta still i trettio år med en ledning du inte litar på."
+        },
+        {
+          "type": "text",
+          "content": "Punkt 15: ”Har bolaget en ledning av omutbar integritet?” Fisher var absolut på sin hårdaste punkt: om det finns ens en antydan av att ledningen inte är absolut ärlig mot sina aktieägare ska investeraren avstå — oavsett hur lockande alla andra punkter är. Integritet är bredare än ärlighet i redovisningen: det handlar om hur ledningen hanterar insider-affärer, transaktioner med närstående, optionprogrammens utfärdande, och hur minoritetsägare behandlas vid strukturella beslut. En ledning som lurar konkurrenter kanske bara är skicklig — en ledning som inte är rak mot sina egna ägare kommer förr eller senare att ta det ifrån dig."
+        },
+        {
+          "type": "text",
+          "content": "Här är AKM1:s V16 ägarstruktur som mest levande: ägarbilden avgör vem ledningen egentligen svarar inför. Grundare med stor ägarandel har ofta sitt livsverk och sitt kapital i bolaget — deras incitament sammanfaller med långsiktiga ägares, vilket var fallet i Motorola under Galvin-familjen under hela Fishers ägarskap. Spridd ägarbild med kortistiska fonder och generösa optionspaket kan skapa incitament att skördas kort sikt. A/B-aktiestrukturer, kontrollavtal och stämmobestämmelser är varken good eller ont i sig — de är maktfrågor som du som minoritetsägare måste förstå innan du köper, eftersom du investerar i ledningens integritet men kontrollerar inte makten över den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Öppenhetens och integritetens trafikljus\",\"rader\":[[\"Område\",\"Grönt ljus\",\"Rött ljus\"],[\"Dåliga nyheter\",\"Berättar, förklarar, åtgärdar\",\"Tystnad, omskrivningar, skuld på marknaden\"],[\"Insider-affärer\",\"Köp av grundare med egen ficka\",\"Kluvna program, försäljningar före besvikelser\"],[\"Närstående\",\"Marknadspriser, oberoende granskning\",\"Transaktioner till egna priser\"],[\"Optioner\",\"Utfärdande till ägarnừ gagn\",\"Ständiga ompriseringar till förmån för ledningen\"],[\"Ägarbild\",\"Långsiktiga huvudägare med kapital i bolaget\",\"Kontroll utan ägande, kortistisk dominans\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "All annan analys förutsätter punkt 15: med en ledning som inte talar sanning är varje siffra i årsredovisningen en hypotes, inte ett faktum. Integritet är inte en bland femton punkter — den är villkoret för de fjorton andra."
+        },
+        {
+          "type": "utmaning",
+          "content": "Läs de tre senaste pressmeddelanden eller rapporter där ditt bolag meddelade dåliga nyheter — missad prognos, nedskrivning, förlorad order. Hur ramades problemet in? Citera tre formuleringar och bedöm: talar ledningen fritt, eller blir det tyst om musslan? Skriv din punkt 14-bedömning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnfrågan i punkt 14?",
+          "alternativ": [
+            "Hur ofta ledningen köper egna aktier",
+            "Om bolaget anordnar investerarmöten",
+            "Hur snabbt kvartalsrapporterna publiceras",
+            "Om ledningen talar fritt när det går bra men tystnar när problem uppstår"
+          ],
+          "ratt": 3,
+          "tips": "Fisher mätte öppenheten i motvind — alla talar gärna i medvind."
+        },
+        {
+          "q": "Vad var Fishers hållning till ledningar med tveksam integritet men starka övriga punkter?",
+          "alternativ": [
+            "Avstå — även en antydan av tveksam integritet diskvalificerar bolaget",
+            "Köp om värderingen är låg nog",
+            "Vänta till ledningen bytits ut",
+            "Köp men övervaka noga"
+          ],
+          "ratt": 0,
+          "tips": "Fisher kallade integriteten den viktigaste och icke förhandlingsbara punkten."
+        },
+        {
+          "q": "Hur kopplar kursen punkterna 14–15 till V16 ägarstruktur?",
+          "alternativ": [
+            "V16 mäter endast antal aktieägare",
+            "Ägarbilden avgör vem ledningen svarar inför — incitamenten avgör om ägardialogen är äkta",
+            "Ägarstruktur och integritet är oberoende av varandra",
+            "Punkt 14–15 handlar enbart om utdelningspolicy"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på Motorola under Galvin-familjen — huvudägare med eget kapital i bolaget."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 11,
+      "title": "Scuttlebutt — informationen som inte finns i årsredovisningen",
+      "intro": "Fisher myntade en term för sin mest värdefulla informationskälla: scuttlebutt, företagsgrindvinden. Budskapet var radikalt — de bästa uppgifterna om ett bolag finns hos människor som arbetar med det varje dag, och de talar om du frågar rätt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fisher definierade scuttlebutt som näringslivets eget informationsnät — det han kallade the business grapevine. Källorna är kunder som använder produkten, konkurrenter som möter den i varje upphandling, före detta anställda som vet hur maskineriet fungerar inuti, leverantörer som ser orderläget och betalningsmoralen, samt branschfolk och forskare som ser teknikens riktning. Fishers iakttagelse var att de flesta människor talar gärna om sitt eget yrkesfält — om de känner sig säkra på att inte bli citerade och inte avslöja förtroligheter. Vardagskunskapen hos hundra personer i en bransch är ofta mer värdefull än alla analystäckningar tillsammans."
+        },
+        {
+          "type": "text",
+          "content": "Varför fungerar metoden? Årsredovisningen visar historien — vad som redan hänt. Scuttlebutt visar framtiden: produkterna i kundernas händer, orderläget nästa kvartal, humöret hos säljkåren, konkurrenternas respekt eller likgiltighet. Fisher hävdade att den som systematiskt samlar in och väger samman sådana samtal kan bygga en bild av ett bolag som är både djupare och mer framåtblickande än den offentliga informationen — och att det är precis där den rörliga fördelen finns, eftersom marknaden prissätter det som är publicerat. Moaten (V13) och förvaltningskapitalet (V15) verifieras aldrig i en PDF — de verifieras i samtal."
+        },
+        {
+          "type": "text",
+          "content": "Metodiken är en konst. Kunder: varför valde ni, vad saknas, skulle ni välja igen? Konkurrenter: vem fruktar ni mest och varför — Fishers favoritfråga, eftersom konkurrenternas respekt är den ärligaste komplimang ett bolag kan få. Leverantörer: hur är betalningsmoralen, hur förändras ordervolymen? Före detta anställda: varför slutade ni, vad skulle ni gjort annorlunda, hur var läget på riktigt? Forskare och mässbesökare: vart går tekniken? Idag finns digitala motstycken: kundrecensioner och appbutikens omdömen, branschforum och Reddit, anställdas recensioner, pods med branschfolk. Etiken är densamma som Fishers: fråga öppet, använd vardagskunskap, handla aldrig på insider — skillnaden mellan Research och olaglighet är exakt där."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Scuttlebutt-källorna — frågor och signaler\",\"rader\":[[\"Källa\",\"Fråga att ställa\",\"Signal du söker\"],[\"Kunder\",\"Varför valde ni? Vad saknas?\",\"Lojalitet, prispress, alternativ\"],[\"Konkurrenter\",\"Vem fruktar ni mest?\",\"Respekt = moat (V13)\"],[\"Leverantörer\",\"Hur är orderläget och betalningen?\",\"Konjunktur och likviditet i realtid\"],[\"Före detta anställda\",\"Varför slutade ni?\",\"Sanningen om punkterna 7–9 (V15)\"],[\"Branschfolk\",\"Vart går tekniken?\",\"Nästa generations riktning\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "Marknaden prissätter det som är publicerat. Den rörliga fördelen finns i det som hundra personer i branschen vet — men inte en enda analytiker har skrivit ner."
+        },
+        {
+          "type": "utmaning",
+          "content": "Genomför en mini-scuttlebutt denna vecka: läs fem kundrecensioner (positiva och negativa), läs en konkurrents senaste rapport för vad de säger om branschen, och läs tre anställdas eller före detta anställdas berättelser. Skriv tre rader mönster — vad säger källorna gemensamt om punkt 1, 4 och 7?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menade Fisher med termen scuttlebutt?",
+          "alternativ": [
+            "Rykten om aktiekurser på sociala medier",
+            "Confidential information från bolagsledningen",
+            "Näringslivets eget informationsnät — samtal med kunder, konkurrenter, leverantörer och före detta anställda",
+            "Teknisk analys av handelsvolymer"
+          ],
+          "ratt": 2,
+          "tips": "Ordet kommer från skvaller runt vatten pumpen ombord på fartyg — vardagskunskapen i nätverket."
+        },
+        {
+          "q": "Varför betraktade Fisher konkurrenterna som en särskilt värdefull källa?",
+          "alternativ": [
+            "Konkurrenter läcker alltid sina affärshemligheter",
+            "Konkurrenter delar prissättningsdata",
+            "Konkurrenternas rapporter är lättare att läsa",
+            "Konkurrenternas respekt är den ärligaste komplimangen — vem de fruktar mest avslöjar moaten"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vilken fråga som ger mest ärligt svar om ett bolags verkliga position."
+        },
+        {
+          "q": "Vad är den etiska gränsen i Fisher-metodens informationsinsamling?",
+          "alternativ": [
+            "Vardagskunskap från öppna samtal är tillåten — insiderinformation är olaglig och otillåten",
+            "All information är tillåten om den ger fördel",
+            "Endast publicerad information får användas",
+            "Samtal med konkurrenter är alltid förbjudna"
+          ],
+          "ratt": 0,
+          "tips": "Skillnaden mellan research och brott ligger i informationens status."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "När köpa: tajming, bonanza-effekter och masterinnehavets andel",
+      "intro": "Fisher avfärdade både diagramtajming och makroprognoser. Hans köplogik var operativ: köp när punkterna är starka och en ny intjäningsmotor är på väg in — och våga äga så få, så stort, att det du verkligen förstår får bära portföljen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fisher köpte inte på kursgrafens signaler eller på konjunkturprognoser. Han köpte när bolagets punktprofil var stark och en ny faktor var på väg in i intjäningen: en ny produkt nära volymproduktion, en ny anläggning nära driftsättning, en ny kundkrets nära landning. Det är bonanza-effekten: marknaden prissätter först bevisad intjäning — när den nya produkten syns i siffrorna. Väntar du på den säkerheten har du bytt osäkerhet mot pris: aktien har då ofta redan rusat, eftersom alla andra också fick beviset samtidigt. Fishers köptajming handlar om att köpa före intjäningen, när researchen bär övertygelsen."
+        },
+        {
+          "type": "text",
+          "content": "Men — och här är Fishers realism — nya produkter blir nästan alltid försenade. Tillverkningsproblem, kvalitetsstrul, trög kundmottagning: räkna med att volymstarten glider höger. Fisher menade att dessa förseningar ofta ger en andra och tredje köpchans när marknadens tålamod tar slut och kursen faller trots att affären är intakt. Lärdomen av hans misslyckanden är att bygga marginal i bedömningen: köp när produktionen nästan är igång och potentialen ännu är ospelad — men förvänta dig förseningar och låt dem inte skrämma dig ut ur en korrekt analys. Felköpen kommer när man tror att intjäningen är närmare än den är; feltankarna när man ger upp en intakt tes på grund av en försening."
+        },
+        {
+          "type": "text",
+          "content": "Masterinnehavets andel — Fisher-principen. Hur stor del av förvaltat kapital förtjänar ett enastående bolag? Fishers praktik ger svaret: koncentration. Tre till fyra kärninnehav, var och en stor nog att påverka totalresultatet. Principen är en konsekvenslogik: om din research inte bär en position som är väsentlig för portföljen — som rikt tumregel åtminstone en tiondel — har du antingen inte gjort researchen färdig eller så är bolaget inte tillräckligt enastående. Ett innehav på två procent kan aldrig lyfta portföljen, men det kan kosta precis lika mycket researchtid, uppmärksamhet och oro som ett på tio procent. Räkneexempel: portfölj 100 — tre kärninnehav à 25, 20 och 15, resten kassa och mindre positioner. Om det bästa innehavet dubbleras bidrar det 20 till totalen som 25-procentposition, men bara 4 som två-procentsposition. Fisher vägrade äga det som inte förtjänade att räknas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fisher-köpet — triggers och beredskap\",\"rader\":[[\"Element\",\"Fråga\",\"Fisher-hållning\"],[\"Punktprofil\",\"Klarar bolaget punkterna?\",\"Majoritet klarad, 1 och 15 obligatoriska\"],[\"Ny intjäningsmotor\",\"Vad träder in och när?\",\"Ny produkt/anläggning nära volym\"],[\"Försening\",\"Vad kan skjuta höger?\",\"Förvänta det — det ger köpchans\"],[\"Pris\",\"Vad prissätter marknaden?\",\"Ospelad potential = intresse\"],[\"Andel\",\"Vilken vikt förtjänar det?\",\"Väsentlig — annars är researchen inte klar\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "insikt",
+          "content": "Det finns ingen säker köptidpunkt. Den som väntar på bevisad intjäning har inte eliminerat risken — han har bara bytt den mot ett högre pris. Köp före intjäningen, med researchen som säkerhet och förväntan på förseningar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en Fisher-beredning: lista tre bolag vars nästa produkt, anläggning eller kundkrets går i volym inom tolv månader. Skriv för varje: vad som träder in i intjäningen, vad som kan försenas, och vilken portföljvikt det skulle förtjäna enligt Fisher-principen (väsentlig andel eller avstå). Lägg listan i mappen och återkom om ett halvår."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bonanza-effekten i Fishers köplogik?",
+          "alternativ": [
+            "Att köpa bolag som redan visat toppresultat",
+            "Att marknaden prissätter ny intjäning först när den är bevisad — därför kan köp före beviset vara kraftigt underprissatt",
+            "Att välja bolag med högst utdelning",
+            "Att använda hävstång i uppgångar"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på skillnaden mellan att se potentialen och att läsa om den i en rapport."
+        },
+        {
+          "q": "Vad menade Fisher om förseningar i nya produktlanseringar?",
+          "alternativ": [
+            "De är ett tecken på att bolaget bör avstås",
+            "De ska undvikas genom att vänta tills volymproduktionen är helt bevisad",
+            "De är nästan alltid återkommande och kan ge en andra köpchans när marknadens tålamod tar slut",
+            "De påverkar inte en långsiktig investerare"
+          ],
+          "ratt": 2,
+          "tips": "Fisher skilde på försenad tes och felaktig tes."
+        },
+        {
+          "q": "Vad är Fisher-principen för masterinnehavets andel?",
+          "alternativ": [
+            "Inget innehav bör överstiga fem procent oavsett kvalitet",
+            "Alla innehav ska vara exakt lika stora",
+            "Andelen bestäms av aktiens beta",
+            "Ett enastående bolag förtjänar en väsentlig andel — om researchen inte bär en stor position är den inte klar"
+          ],
+          "ratt": 3,
+          "tips": "Kom ihåg konsekvenslogiken: en position som inte kan påverka resultatet kostar samma research som en som kan."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "När sälja: tre skäl — och konsten att sitta still",
+      "intro": "Fisher formulerade bokens mest provocerande tes: om köpet gjordes rätt är tidpunkten att sälja — personliga nödsituationer undantaget — nästan aldrig. Men sitt still är inte samma sak som sluta undersöka.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fishers regel är berömd: ”Om jobbet gjorts rätt när en aktie köps är det bästa tillfället att sälja den — personliga nödsituationer undantaget — nästan aldrig.” Han medgav exakt tre skäl att sälja. För det första: ursprungsköpet var ett fel — premisserna höll inte, och varje dag av att behålla är en ny dag av att äga ett felaktigt beslut, oavsett om positionen gått plus eller minus. För det andra: bolaget håller inte längre punkterna — ledningen åldras eller byts ut, produkterna mättas utan arvtagare, moaten håller inte — då är det inte samma bolag som köptes. För det tredje: ett betydligt bättre alternativ dyker upp — och Fisher varnade för att detta skäl är sällsynt på riktigt, eftersom skatt och byteskostnad äter skillnaden mellan två bra bolag."
+        },
+        {
+          "type": "text",
+          "content": "Argumentet bakom regeln är aritmetiskt och psykologiskt. Aritmetiskt: de största förmögenheterna i aktier har byggts av ägande under decennier, inte av handel mellan decennier — Fishers eget Motorola-innehav från 1955 till 2004 är beviset, och skatten på realiserade vinster är en broms som de flesta underskattar. Psykologiskt: varje försäljning och omköp är två nya beslut att träffa fel, och hjärnans belöningssystem jagar känslan av aktivitet. Fisher sammanfattade hållningen i titeln på sin tredje bok: Conservative Investors Sleep Well — konservativa investerare sover gott. Konservativ betyder här inte försiktig i meningen trångsynt — det betyder att äga så rätt att portföljen inte kräver bevakning varje dag."
+        },
+        {
+          "type": "text",
+          "content": "Skillnaden mot Graham är grundläggande och pedagogiskt viktig: Graham köpte under värde och sålde när pris nådde värde — en cirkel som tar slut. Fisher köpte kvalitet och behöll så länge kvaliteten bestod — en linje som kan vara livslång. I Grahams värld är 'dyrt' ett säljskäl; i Fishers värld är priset en åsikt och punkterna är fakta: om bolaget fortfarande klarar punkterna är ett högt P/E-tal inget skäl att sälja. Men — och det är kursens varning — sitt still förutsätter att du omprövar punkterna varje år. Historien är full av ägare som fastnade i en gång duktiga bolag och vägrade se förändringen. Skillnaden mellan disciplin och dogm är precis den årliga omprövningen: sitta still är aktivt arbete, inte frånvaro av arbete."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fishers tre säljskäl\",\"rader\":[[\"Skäl\",\"Kärnfråga\",\"Test\"],[\"1. Felköp\",\"Höll premisserna?\",\"Skulle jag köpa bolaget idag om jag inte ägde det?\"],[\"2. Förfall\",\"Klarar bolaget fortfarande punkterna?\",\"Årlig 15-punktersgranskning — vilka punkter bröts?\"],[\"3. Bättre alternativ\",\"Hur mycket bättre — efter skatt?\",\"Betydligt bättre, inte marginellt\"],[\"Inte ett skäl\",\"Aktien har stigit\",\"Pris är åsikt — punkter är fakta\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "insikt",
+          "content": "Den vanligaste försäljningen är den som borde vara förbjuden: att sälja en vinnare för att den stigit. Kursen är inte ett skäl — punkterna är skäl. Och att sitta still är inte passivitet: det är den årliga omprövningens belöning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ett säljbrev till dig själv för varje innehav: vilka två punkter i Fisher-profilen måste brytas innan jag säljer? Vilka fakta skulle göra att jag medger ett felköp? Datera och signera breven — och läs dem igen vid varje årsskifte innan du ens tittar på kurserna."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket av följande är INTE ett av Fishers tre säljskäl?",
+          "alternativ": [
+            "Aktien har stigit kraftigt i värde",
+            "Bolaget klarar inte längre de femton punkterna",
+            "Ursprungsköpet var ett fel",
+            "Ett betydligt bättre alternativ har uppstått"
+          ],
+          "ratt": 0,
+          "tips": "Fisher skilde konsekvent mellan pris och punkter — vilken av dessa handlar bara om pris?"
+        },
+        {
+          "q": "Vad menar titeln på Fishers bok Conservative Investors Sleep Well?",
+          "alternativ": [
+            "Att konservativa investerare undviker aktier helt",
+            "Att äga så rätt bolag att portföljen inte kräver daglig bevakning — trygghet genom kvalitet",
+            "Att man ska sova på alla beslut i en vecka innan man handlar",
+            "Att konserverativa investerare använder stop-loss"
+          ],
+          "ratt": 1,
+          "tips": "Konservativ syftar på bolagskvalitet, inte på låg risk i kursvolatilitet."
+        },
+        {
+          "q": "Vad är den avgörande skillnaden mellan Fishers säljlogik och att fastna i en förfallen aktie?",
+          "alternativ": [
+            "Det finns ingen skillnad — Fisher rekommenderade envishet",
+            "Fisher rekommenderade automatisk försäljning efter tio år",
+            "Fisher förutsatte en årlig omprövning av punkterna — att sitta still är aktivt arbete, inte frånvaro av analys",
+            "Skillnaden är storleken på positionen"
+          ],
+          "ratt": 2,
+          "tips": "Disciplin utan omprövning blir till dogm — vad krävs för att undvika det?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "Investerarens vanligaste fel — Fishers förbud mot vanlighet",
+      "intro": "Fisher var inte bara en guru för vad man ska göra — han var lika skarp på vad man inte ska. Hans lista av förbud är en spegel där de flesta investerare känner igen sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fisher sammanfattade sina varningar i en lista av förbud — don'ts — som senare trycktes i Developing an Investment Philosophy. Det första och viktigaste: köp aldrig in i promotorbolag — företag som lever på berättelser, prospekt och stora löften, utan fungerande produkter eller intjäning. Där finns ingen grund att stå på, hur lockande historien än låter. Det andra: avfärda inte ett bra bolag bara för att det är litet eller handlas på en oreglerad marknad — Fishers OTC-varning från hans tid översätts idag till småbolagslistor och nischhandelsplatser; kvalitet avgör, inte handelsplats. Det tredje: köp inte en aktie bara för att du gillar tonen i årsredovisningen — vacker prosa är marknadsföring, inte analys."
+        },
+        {
+          "type": "text",
+          "content": "Fortsättningen är lika obekväm. Anta inte att ett högt P/E-tal automatiskt betyder att tillväxten redan är prissatt — detta är kärnan i V12 värderingstillväxt, och ett av historiens dyraste antaganden är att bolag med lågt P/E är billiga och bolag med högt P/E är dyra; frågan är alltid vad som händer med intjäningen därefter. Tjafsa inte om ören och kvartsprocent i in- och utgång — Fisher såg investerare missa enastående innehav för att vänta på en marginellt bättre kurs; det som ser ut som prisdisciplin är ofta bara obeslutsamhet. Överdriv inte diversifieringen — detta är listans mest provocerade punkt hos en man som ägde 3–4 innehav. Köp på krigsskräck och liknande paniker — historiskt har rädsla skapat de bästa inköpstillfällena för den vars tes är intakt. Och glöm inte Gilbert och Sullivan: modesvängen på marknaden — ”blommorna som slår ut i vår har inget med saken att göra” — det som är trendigt är sällan det som är enastående."
+        },
+        {
+          "type": "text",
+          "content": "Bakom alla förbud ligger samma psykologiska diagnos: de flesta investerare förlorar mer på sina egna handlingar — fel köp, fel försäljningar, fel timing av båda — än på marknadens svängningar. Fisher skilde mellan konservativ och försiktig: konservativ är att äga enastående bolag länge och veta varför; försiktig är att sprida sig tunt och diversifiera bort förståelsen. Den verkliga riskminskningen ligger i att köpa rätt och sedan låta bli att röra sig. AKM1 bygger vidare på detta med regelverk och disciplinvariabler — mekanismer som skyddar investeraren från sig själv när känslan som starkast argumenterar för att bryta reglerna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fishers förbud — då och nu\",\"rader\":[[\"Förbud\",\"Fishers formulering\",\"Modern motsvarighet\"],[\"Promotorbolag\",\"Köp inte bolag utan produkter eller intjäning\",\"Pre-revenue-aktier på löften om AI\"],[\"Handelsplats\",\"Avfärda inte bolag för att de är små eller OTC\",\"Småbolagslistor och nischade handelsplatser\"],[\"Årsberättelsens ton\",\"Köp inte för vacker prosa\",\"Säljande aktieägarbrev och influencers\"],[\"Högt P/E\",\"Anta inte att tillväxten är prissatt (V12)\",\"Kvalitetspremie är inte alltid överpris\"],[\"Örentjafs\",\"Tjafsa inte om små kursdifferenser\",\"Orderdjup- och limit-obsession\"],[\"Överdriven spridning\",\"Överdriv inte diversifieringen\",\"Indexliknande aktiv förvaltning utan tes\"],[\"Krigsskräck\",\"Köp på panik om tesen är intakt\",\"Krisköp när alla andra svär\"],[\"Mode\",\"Glöm inte Gilbert and Sullivan\",\"Trendaktier utan kassaflöde\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fisher-skiljelinjen mellan konservativ och försiktig: konservativt är att äga ett fåtal enastående bolag och veta exakt varför — försiktigt är att sprida sig tunt av rädsla. Det senare är den mest accepterade formen av risk som finns."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå igenom dina fem senaste affärer. Vilket av Fishers förbud bröt du — om något? Var det tjafs om kursen, mode, aversion mot högt P/E, eller ren tråkighet? Skriv en konkret regel som hindrar dig från att upprepa det mest frekventa felet vid nästa tillfälle."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menade Fisher med att inte tjafsa om ören och kvartsprocent?",
+          "alternativ": [
+            "Att man alltid ska betala marknadspris oavsett likviditet",
+            "Att commissions inte spelar någon roll",
+            "Att man ska använda market orders i alla lägen",
+            "Att investerare missar enastående innehav genom att vänta på marginellt bättre kurs — skev prisdisciplin är obeslutsamhet"
+          ],
+          "ratt": 3,
+          "tips": "Skillnaden mellan 100 och 101 i kurs är försumbar om aktien fördubblas — vad kostar väntetolen?"
+        },
+        {
+          "q": "Hur relaterar Fishers varning om höga P/E-tal till V12 värderingstillväxt?",
+          "alternativ": [
+            "Antagandet att högt P/E betyder att tillväxten redan prissatt är ofta fel — frågan är vad som händer med intjäningen därefter",
+            "Fisher menade att högt P/E alltid är farligt",
+            "V12 gäller bara bolag utan tillväxt",
+            "Fisher ignorerade värdering helt"
+          ],
+          "ratt": 0,
+          "tips": "Fisher värderade alltid varaktighet — priset är bara dyrt om tillväxten inte levererar."
+        },
+        {
+          "q": "Vad är kärndiagnosen bakom Fishers lista av förbud?",
+          "alternativ": [
+            "Att marknaden är effektisk och slår investeraren systematiskt",
+            "Att investerare förlorar mer på egna handlingar — fel köp, fel försäljningar — än på marknadens svängningar",
+            "Att mäklarkostnader är den största fienden",
+            "Att diversifiering alltid är skadlig"
+          ],
+          "ratt": 1,
+          "tips": "Fienden Fisher såg sällan låg utanför dig själv."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Motorola, Apple och AKM1-syntesen — Fishers arv i praktiken",
+      "intro": "En man, en aktie, fyrtionio år. Motorola-affären är Fishers metod i sitt mest rena format — och när metoden träffar moderna fall som Apple förstår du varför boken fortfarande trycks. Här knyts allt till AKM1.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Motorola-fallet. Fisher köpte aktien 1955, när bolaget främst förknippades med bilradioer och var på väg in i transistorernas tidevarv. Hans research var scuttlebutt i sin renaste form: samtal med ingenjörer, kunder och branschfolk som beskrev en teknikkultur med unik förmåga att flytta sig mellan produktgenerationer. Notera ägarbilden: Motorola leddes av Galvin-familjen — grundare med eget kapital och livsverk i bolaget — vilket gav ledningen långsiktiga incitament som sammanföll med ägarnas; här möts punkt 15 och V16 ägarstruktur i ett enda faktum. Fisher höll genom upp- och nedgångar, produktgenerationer och konjunkturcykler till sin död 2004. Affären är den levande motsatsen till dagens portföljturnover: ett köp, en analys som höll, och ett halvt sekel av compounding."
+        },
+        {
+          "type": "text",
+          "content": "Apple genom Fishers glasögon — ett tankexperiment han själv aldrig skrev om, men som hans metod fångar. Punkt 1–2: ekosystemet av hårdvara, mjukvara och tjänster med årsatal av marknadspotential och en tjänsteflykt som bygger nästa generation intjäning. Punkt 4: butikskedjan och App Store — distribution som ingen konkurrent kan kopiera i dagar. Punkt 5–6: marginaler som hölls genom priskrig och konjunkturer — prissättningskraften är moaten i siffra. Punkt 13: återköp som minskar aktieantalet — negativ utspädning, ägarnas andel växer. Punkt 7–9 och 14–15 är svårare och där ligger diskussionen: kritiker pekar på beroendet av nyckelpersoner under Jobs-eran och på frågor om öppenhets- och appstore-makt. Poängen med övningen är inte slutsatsen utan metoden: Fishers femton punkter tvingar dig att skilja mellan det som kan bedömas med fakta och det som är smaken — och de flesta Apple-debatter är rena punktförväxlingar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-syntesen — var Fishers arv lever i systemet. V01 tillväxt är punkterna 1–2: tillväxtens längd före dess hastighet. V12 värderingstillväxt är pris-frågan på den tillväxten: högt P/E är inte farligt om punkterna bär varaktigheten. V13 moat är punkterna 3–6 i samspel: FoU-maskin, distribution, marginalförsvar — moat är en maskin, inte ett ord. V15 förvaltningskapital är punkterna 7–10: relations- och organisationskapitalet som compoundar. V16 ägarstruktur är punkterna 13–15: vem finansierar tillväxten, vem kontrollerar bolaget och hur ledningen behandlar sina ägare. Masterlistan blir därmed: 15-punktersprofil med grader 0–3, scuttlebutt-anteckningar från minst tre källor per bolag, aktieutveckling som grundserie, och ett säljbrev som definierar vad som ska brytas innan innehavet avslutas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fishers punkter → AKM1-variabler — komplett koppling\",\"rader\":[[\"Fisher\",\"Tema\",\"AKM1-variabel\"],[\"Punkt 1–2\",\"Produkttorget, nästa generation\",\"V01 tillväxt, V12 värderingstillväxt\"],[\"Punkt 3\",\"FoU-effektivitet\",\"V13 moat\"],[\"Punkt 4\",\"Säljorganisation och distribution\",\"V13 moat\"],[\"Punkt 5–6\",\"Marginaler och marginalförsvar\",\"V13 moat, V04 marginal\"],[\"Punkt 7–9\",\"Personal, chefer, ledningsdjup\",\"V15 förvaltningskapital\"],[\"Punkt 10\",\"Kostnadsanalys och styrning\",\"V15, V17 rapportkvalitet\"],[\"Punkt 11\",\"Branschens egenheter\",\"Branschadapter, V13\"],[\"Punkt 12\",\"Långsiktig vinstsyn\",\"V15 karaktär\"],[\"Punkt 13\",\"Utspädning och finansiering\",\"V16 ägarstruktur\"],[\"Punkt 14–15\",\"Öppenhet och integritet\",\"V16 ägarstruktur, V17\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "Fisher byggde ingen formel — han byggde ett hantverk: håll standarden hög, gör researchen personlig, koncentrera dig till det du förstår och låt tiden arbeta. Moat-tänkandet är inte att hitta undervärderade wonderbolag — det är att vägra medelbolagen tills det enastående dyker upp."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen masterlista och kör den på två bolag — ett du äger och ett du överväger: 15 punkter graderade 0–3, scuttlebutt från minst tre olika källor, aktieutveckling tio år bakåt, säljbrev med de två punkter som måste brytas. Jämför sedan profilerna: vilket av de två förtjänar en Fisher-position — och vilket förtjänar att släppas?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken aspekt av Motorola-fallet illustrerar punkt 15 tillsammans med V16 ägarstruktur?",
+          "alternativ": [
+            "Bolagets långa P/E-historik",
+            "Bolagets höga utdelning",
+            "Galvin-familjens ägarskap — grundare med eget kapital och livsverk i bolaget gav långsiktiga incitament",
+            "Antalet analytiker som täckte aktien"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vem ledningen faktiskt svarar inför när huvudägarna bor i bolaget."
+        },
+        {
+          "q": "När kursen tillämpar Fisher-metoden på Apple, vad visas som koppling till punkt 13?",
+          "alternativ": [
+            "Apples höga FoU-budget",
+            "Ekosystemets låsningseffekt",
+            "Butikskedjans expansion",
+            "Återköp som minskar aktieantalet — negativ utspädning som växer ägarnas andel"
+          ],
+          "ratt": 3,
+          "tips": "Punkt 13 handlar om vad som händer med antalet aktier och vem tillväxten tillfaller."
+        },
+        {
+          "q": "Vilken AKM1-variabel fångar Fishers punkter 7–10 allra bäst?",
+          "alternativ": [
+            "V15 förvaltningskapital",
+            "V13 moat",
+            "V16 ägarstruktur",
+            "V01 tillväxt"
+          ],
+          "ratt": 0,
+          "tips": "Punkterna 7–10 handlar om människor, relationer och styrning — kompetensen som förnyas."
+        }
+      ]
+    }
+  ]
+}

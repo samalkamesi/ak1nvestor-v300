@@ -1,15 +1,15 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { getCourseList } from "@/lib/content";
 import { pageMetadata, websiteJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
+import { KursSok } from "@/components/ak1a/kurs-sok";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/kurser",
-  title: "Kurser i institutionell aktieanalys — 225 moduler | AK1A",
+  title: "Kurser i institutionell aktieanalys — 233 moduler | AK1A",
   description:
     "Lär dig institutionell aktieanalys steg för steg. 225 kurser: AKM1:s 20 variabler, teknisk analys, riskhantering, portföljhantering och praktiska case. Pedagogisk finansanalys.",
   keywords: [
@@ -43,38 +43,20 @@ export default function KurserPage() {
       </p>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_260px]">
-        <div className="space-y-10">
-        {[...byCategory.entries()].map(([category, list]) => (
-          <section key={category}>
-            <h2 className="font-serif text-2xl font-bold border-b border-gold/30 pb-2">
-              {category}
-              <span className="ml-2 text-sm font-normal text-muted-foreground">
-                {list.length} kurser
-              </span>
-            </h2>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {list.map((c) => (
-                <li key={c.slug}>
-                  <Link
-                    href={`/kurser/${c.slug}`}
-                    className="block rounded-lg border border-gold/20 bg-card p-4 hover:border-gold/60 transition-colors"
-                  >
-                    <span className="font-serif font-semibold">{c.title}</span>
-                    <span className="block mt-1 text-xs text-muted-foreground">
-                      {c.chapters.length} kapitel · {c.totalMinutes || c.minutes} min
-                    </span>
-                    <span className="block mt-2 text-xs text-muted-foreground leading-relaxed">
-                      {c.learn}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
-        </div>
+        <KursSok
+          kurser={courses.map((c) => ({
+            slug: c.slug,
+            title: c.title,
+            category: c.category,
+            kapitel: c.chapters.length,
+            minuter: c.totalMinutes || c.minutes,
+            learn: c.learn,
+            xp: c.xp,
+            quiz: c.chapters.reduce((s, k) => s + (k.quiz?.length || 0), 0),
+          }))}
+        />
         <aside className="h-fit"><FortsattPanel /></aside>
       </div>
-    </SeoPageShell>
+        </SeoPageShell>
   );
 }

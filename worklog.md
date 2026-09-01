@@ -3448,3 +3448,22 @@ Work Log:
 Stage Summary:
 - Alla 3 styrelsebeslut executerade: #2 fundamentdata ✓, #3 vågskattning ✓,
   #1 bloggtakt kölagd
+
+---
+Task ID: 118-VAG2-LEVERANS-1
+Agent: main + Fisher ✓ + Nison ✓ (Schilit/Marks/Damodaran/O'Neil/blogg kör)
+Task: Fisher + Nison (BOKMASTER #8-9) + kursindex-sök
+
+Work Log:
+- FISHER Common Stocks and Uncommon Profits: 15 kap, 45 quiz, alla 15 punkter
+  + scuttlebutt + Motorola 1955-2004 — V13/V15/V16-mappning
+- NISON Japanese Candlestick Charting: 16 kap, 48 quiz, mönster-bibeln
+- KURSINDEX-UPPGRADERING: KursSok (sök + kategorichips + quiz/XP i korten)
+  på /kurser — 235 kurser filtrerbara
+- Kanon: 9 av 100 böcker har nu kurser
+- 235 kurser · 3987 quiz · 721 sidor
+- NOTIS: Murphy-deployen (3b83826) fastnade på prod — denna commit
+  innehåller också om-deploy av allt
+
+Stage Summary:
+- BOKMASTER-biblioteket: 9 böcker komplettäckta (4+5 nya denna session)

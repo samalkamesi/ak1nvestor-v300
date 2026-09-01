@@ -36,7 +36,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Börja med teamet, för det är hela poängen. John Meriwether var Wall Streets mest mytomspunna obligationshandlare, arvtagare till Salomon Brothers arbitragegrupp. Robert Merton och Myron Scholes fick Nobelpriset i ekonomi i oktober 1997 — knappt ett år innan fonden kollapsade — för den optionsteori som bygggde modern finans. David Mullins Jr lämnade posten som vice ordförande i Federal Reserve för att bli partner. Runt dem: Lawrence Hilibrand, Victor Haghani, Greg Hawkins, Eric Rosenfeld och ett tjugotal doktorer. Om genialitet kunde mätas i examensbevis hade LTCM varit det säkraste finansexperimentet i historien. Det var det inte."
+          "content": "Börja med teamet, för det är hela poängen. John Meriwether var Wall Streets mest mytomspunna obligationshandlare, arvtagare till Salomon Brothers arbitragegrupp. Robert Merton och Myron Scholes fick Nobelpriset i ekonomi i oktober 1997 — knappt ett år innan fonden kollapsade — för den optionsteori som byggde modern finans. David Mullins Jr lämnade posten som vice ordförande i Federal Reserve för att bli partner. Runt dem: Lawrence Hilibrand, Victor Haghani, Greg Hawkins, Eric Rosenfeld och ett tjugotal doktorer. Om genialitet kunde mätas i examensbevis hade LTCM varit det säkraste finansexperimentet i historien. Det var det inte."
         },
         {
           "type": "text",
@@ -48,7 +48,7 @@
         },
         {
           "type": "text",
-          "content": "Kursens båg: kapitel 2-4 ger ursprunget — Salomon-kulturen, drömlaget och den vetenskapliga världsbilden. Kapitel 5-7 bygger maskinen och guldtiden: strategierna, hävstången, avkastningarna som gjorde myten självbärande. Kapitel 8-10 är kollapsen: Ryssland, korrelationens förräderi och likviditetsdöden. Kapitel 11-12 skildrar rescuen och födelsen av »too big to fail«. Kapitel 13-14 ställer de obekväma frågorna — modellfel eller otur? — och knyter arvet till 2008 och din egen checklista. Lowenstein citeras öppet genom hela kursen: kunskapen ska vara tillgänglig, inte begravd i fotnoter."
+          "content": "Kursens båge: kapitel 2-4 ger ursprunget — Salomon-kulturen, drömlaget och den vetenskapliga världsbilden. Kapitel 5-7 bygger maskinen och guldtiden: strategierna, hävstången, avkastningarna som gjorde myten självbärande. Kapitel 8-10 är kollapsen: Ryssland, korrelationens förräderi och likviditetsdöden. Kapitel 11-12 skildrar rescuen och födelsen av »too big to fail«. Kapitel 13-14 ställer de obekväma frågorna — modellfel eller otur? — och knyter arvet till 2008 och din egen checklista. Lowenstein citeras öppet genom hela kursen: kunskapen ska vara tillgänglig, inte begravd i fotnoter."
         },
         {
           "type": "visuell",
@@ -77,7 +77,7 @@
             "Fonden var den första som handlade statsobligationer"
           ],
           "ratt": 2,
-          "tips": "Titta på personerna på stycklistan — inte på instrumenten."
+          "tips": "Titta på personerna på laguppställningen — inte på instrumenten."
         },
         {
           "q": "Vad fångar metaforen om att plocka upp mynt framför en ångvält?",
@@ -115,7 +115,7 @@
         },
         {
           "type": "text",
-          "content": "Kulturen runt gruppen blev legendarisk. Meriwether tog sina doktorer med på pokerspel på höga insatser — Lowenheimers skildring av gruppen öppnar i den miljön — och lät dem satsa stora belopp på marknaden utan att själv blinka. Tryggheten byggde på att alla var smartare än motståndaren, en övertygelse gruppen internaliserade. Den bar dem långt: under 1980- och 90-talet blev arbitragegruppen Salomons vinstmaskin, och år 1990 tjänade Lawrence Hilibrand 23 miljoner dollar — mer än någon annan anställd på Wall Street det året. Handelsbordet hade blivit en stjärnfabrik, och stjärnorna trodde att systemet var deras."
+          "content": "Kulturen runt gruppen blev legendarisk. Meriwether tog sina doktorer med på pokerspel på höga insatser — Lowensteins skildring av gruppen öppnar i den miljön — och lät dem satsa stora belopp på marknaden utan att själv blinka. Tryggheten byggde på att alla var smartare än motståndaren, en övertygelse gruppen internaliserade. Den bar dem långt: under 1980- och 90-talet blev arbitragegruppen Salomons vinstmaskin, och år 1990 tjänade Lawrence Hilibrand 23 miljoner dollar — mer än någon annan anställd på Wall Street det året. Handelsbordet hade blivit en stjärnfabrik, och stjärnorna trodde att systemet var deras."
         },
         {
           "type": "text",
@@ -332,7 +332,7 @@
         },
         {
           "type": "text",
-          "content": "Familj två: swap-spreads. Bankerna betalar fast ränta i ränteswappar mot att ta emot flytande; skillnaden mellan swapräntan och statens långa ränta — swap-spreaden — pendlar med bankernas kreditkvalitet och emissionsvolymer. LTCM satsade på att spreaden skulle krympa: ta emot fast ränta i swapen, sälja kort statsobligationer. Kanten var några hundradelar procent per år — vilket betyder att positionerna måste byggas i enorma notionaler för att synas i resultatet. Här bodde stora delar av den biljondollarnotional som kompletterade balansräkningen: inget lånat kapital, men massiv känslighet."
+          "content": "Familj två: swap-spreads. Bankerna betalar fast ränta i ränteswappar mot att ta emot flytande; skillnaden mellan swapräntan och statens långa ränta — swap-spreaden — pendlar med bankernas kreditkvalitet och emissionsvolymer. LTCM satsade på att spreaden skulle krympa: ta emot fast ränta i swapen, sälja kort statsobligationer. Kanten var några hundradelar procent per år — vilket betyder att positionerna måste byggas i enorma notionaler för att synas i resultatet. Här bodde den derivatnotional i biljondollarklass som kompletterade balansräkningen: inget lånat kapital, men massiv känslighet."
         },
         {
           "type": "text",
@@ -403,7 +403,7 @@
         },
         {
           "type": "text",
-          "content": "Finansieringen sköttes via repomarknaden: fonden pantsatte sina obligationer som säkerhet och lånade kontanter, rullade över lånen och återinvesterade i nästa position. Här öppnade prestige dörrar som var stängda för andra: eftersom motparterna konkurrerade om relationen med världens mest hyllade fond fick LTCM finansiering till nästan självkostnad, i praktiken utan säkerhetsavdrag — haircut nära noll — och med möjlighet att i viss utsträckning själv värdera sina positioner. Villkoren var paradisiska i fredstid. Men de vilade på ett enda antagande: att motparterna aldrig skulle vilja ut. Vilket är kursens V11-poäng: finansieringsvillkor är förhandsläge som håller exakt till dess du behöver dem — generösa när risken är som minst, indragna när den är som störst."
+          "content": "Finansieringen sköttes via repomarknaden: fonden pantsatte sina obligationer som säkerhet och lånade kontanter, rullade över lånen och återinvesterade i nästa position. Här öppnade prestige dörrar som var stängda för andra: eftersom motparterna konkurrerade om relationen med världens mest hyllade fond fick LTCM finansiering till nästan självkostnad, i praktiken utan säkerhetsavdrag — haircut nära noll — och med möjlighet att i viss utsträckning själv värdera sina positioner. Villkoren var paradisiska i fredstid. Men de vilade på ett enda antagande: att motparterna aldrig skulle vilja ut. Vilket är kursens V11-poäng: finansieringsvillkor är villkorat förtroende som håller exakt till dess du behöver dem — generösa när risken är som minst, indragna när den är som störst."
         },
         {
           "type": "text",
@@ -482,7 +482,7 @@
         },
         {
           "type": "text",
-          "content": "I december 1997 beslutade fonden att lämna tillbaka 2,7 miljarder dollar till investerarna och behålla cirka 4,7. Det presenterades som omtanke: kapitalet var större än strategierna behövde. Men positionerna krympte inte i motsvarande grad, och därmed steg den effektiva hävstången — samma balansräkning bars nu av mindre kapital. Kursen noterar den besynnerla symmetrin med AKM1:s V20 (Återköp): att lämna ut kapital utan att avveckla risk är spegelbilden av ett återköp finansierat med skuld — båda höjer V10 och gör konstruktionen mer konjunkturkänslig, inte mindre. Kapitalåterlämning är i sigken varken bra eller dålig; den är bara bra om risken minskar i takt."
+          "content": "I december 1997 beslutade fonden att lämna tillbaka 2,7 miljarder dollar till investerarna och behålla cirka 4,7. Det presenterades som omtanke: kapitalet var större än strategierna behövde. Men positionerna krympte inte i motsvarande grad, och därmed steg den effektiva hävstången — samma balansräkning bars nu av mindre kapital. Kursen noterar den besynnerla symmetrin med AKM1:s V20 (Återköp): att lämna ut kapital utan att avveckla risk är spegelbilden av ett återköp finansierat med skuld — båda höjer V10 och gör konstruktionen mer konjunkturkänslig, inte mindre. Kapitalåterlämning är i sig varken bra eller dålig; den är bara bra om risken minskar i takt."
         },
         {
           "type": "text",
@@ -711,7 +711,7 @@
         },
         {
           "type": "text",
-          "content": "V11 Likviditet i AKM1:s system: likviditet är ingen egenskap hos en tillgång utan ett tillstånd hos en marknad — och det är förhandsvisat. Det finns i överflöd när du inte behöver det och försvinner exakt när du behöver det. Frågorna till vilken exponering som helst: hur är den finansierad, vem kan kräva den tillbaka, på vilken uppsägningstid, och vad händer den dag alla kräver samtidigt? Bolag som rullar företagsobligationer, hushåll som rullar bolåneräntor, fonder med daglig inlösen — alla bär samma mekanism som LTCM, i mindre skala."
+          "content": "V11 Likviditet i AKM1:s system: likviditet är ingen egenskap hos en tillgång utan ett tillstånd hos en marknad — och det är flyktigt. Det finns i överflöd när du inte behöver det och försvinner exakt när du behöver det. Frågorna till vilken exponering som helst: hur är den finansierad, vem kan kräva den tillbaka, på vilken uppsägningstid, och vad händer den dag alla kräver samtidigt? Bolag som rullar företagsobligationer, hushåll som rullar bolåneräntor, fonder med daglig inlösen — alla bär samma mekanism som LTCM, i mindre skala."
         },
         {
           "type": "visuell",
@@ -774,7 +774,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Veckorna före var en enda kapitaljakt. Soros och Quantum diskuterade ett tillskott om ett halvt miljardbelopp — men villkorade det på att LTCM först hämtade in betydligt större belopp av andra, vilket misslyckades. J.P. Morgan försökte sy ihop banker till en gemensam injektion. Och på rescuens morgon, den 23 september, kom en konkurrerande livlina: Warren Buffett, med Goldman Sachs och AIG, bjöd omkring 250 miljoner dollar för portföljen plus ett kapitaltillskott på 3,75 miljarder — totalt i storleksordningen fyra miljarder. Men budet krävde att Meriwether och partnerna lämnade, hade skattetkniska och strukturella problem, och föll ut vid lunchtid. Lowenstein skildrar morgonen som en pokerhand där LTCM satt med en klocka i stället för kort."
+          "content": "Veckorna före var en enda kapitaljakt. Soros och Quantum diskuterade ett tillskott om ett halvt miljardbelopp — men villkorade det på att LTCM först hämtade in betydligt större belopp av andra, vilket misslyckades. J.P. Morgan försökte sy ihop banker till en gemensam injektion. Och på rescuens morgon, den 23 september, kom en konkurrerande livlina: Warren Buffett, med Goldman Sachs och AIG, bjöd omkring 250 miljoner dollar för portföljen plus ett kapitaltillskott på 3,75 miljarder — totalt i storleksordningen fyra miljarder. Men budet krävde att Meriwether och partnerna lämnade, hade skattetekniska och strukturella problem, och föll ut vid lunchtid. Lowenstein skildrar morgonen som en pokerhand där LTCM satt med en klocka i stället för kort."
         },
         {
           "type": "text",

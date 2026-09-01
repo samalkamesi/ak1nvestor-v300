@@ -83,12 +83,12 @@ export function KursQuiz({ slug, kapitelNr, fragor }: { slug: string; kapitelNr:
                   );
                 })}
               </div>
-              {vald !== undefined && vald !== f.ratt && !klarad && (
+              {mitt !== undefined && mitt !== f.ratt && !klarad && (
                 <p className="mt-2 rounded-md bg-gold/10 px-3 py-2 text-xs italic text-gold">
                   💡 Läraren tipsar: {f.tips || "Gå tillbaka till kapitlet och leta ledtråden — svaret finns där."}
                 </p>
               )}
-              {vald === f.ratt && (
+              {mitt === f.ratt && (
                 <p className="mt-2 text-xs font-semibold text-green-700">✓ Rätt! +10 XP förtjänat.</p>
               )}
             </div>

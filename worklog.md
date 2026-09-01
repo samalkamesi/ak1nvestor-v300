@@ -3622,3 +3622,20 @@ Work Log:
 
 Stage Summary:
 - 30 BOKMASTER-böcker + 2 flaggskepp; kontrovers-direktivet i varje ny kurs
+
+---
+Task ID: 127-VAG9-LEVERANS — 260 KURSER
+Agent: main + Edwards&Magee ✓ + Kahneman ✓
+Task: BOKMASTER #31-32 — mönsterbibeln + beteendebibeln
+
+Work Log:
+- TECHNICAL ANALYSIS OF STOCK TRENDS (Edwards & Magee): 15 kap, 45 quiz —
+  alla klassiska mönster med exakta kriterier, Bulkowski-kontroversen
+  (vad moderna tester faktiskt fann), Brytpunkt-dimensionens ursprung
+- TÄNKA SNABBT OCH LÅNGSAMT (Kahneman): 15 kap, 45 quiz — System 1/2,
+  prospect theory, förankring, regression-mot-medel + replikationskris-
+  kapitlet (Kahnemans egna medgivanden)
+- Kanon 32/101 · 260 kurser · 5073 quiz · 749 sidor
+
+Stage Summary:
+- 32 BOKMASTER + 2 flaggskepp; beteende/teknik/fundamental triangeln komplett

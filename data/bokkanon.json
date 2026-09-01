@@ -546,7 +546,7 @@
         "Marknader rör sig i trender tills de gör det inte: definiera i förväg vad som bryter trenden"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-023",
@@ -786,7 +786,7 @@
         "Förlustaversion driver både för tidiga vinster och för länge hållna förlorare"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-033",

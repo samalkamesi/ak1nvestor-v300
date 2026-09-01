@@ -1,0 +1,1130 @@
+{
+  "slug": "tanka-snabbt-och-langsamt",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 160,
+  "title": "Tänka snabbt och långsamt — Kahneman: KOMPLETT",
+  "summary": "Daniel Kahnemans Tänka snabbt och långsamt (2011) är beteendeekonomins sammanfattning skriven av dess egen grundare: de två systemen, heuristikerna, prospect theory, övertron, regressionen mot medelvärdet och de två jag som får dig att minns dina affärer fel. Kursen går igenom bokens klassiska experiment — Linda-problemet, roulettehjulet, flyginstruktörerna, koloskopin — och översätter varje mekanism till investerarens beslutsfattande. Avslutningsvis ett kapitel om replikationskrisen, där Kahneman själv medgav att han satt för stor tro på underdimentionerade priming-studier, och vad som faktiskt höll.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven förklara Kahnemans kärnram — att tänkandet drivs av två system där System 1 är snabbt, automatiskt och associationsbildande medan System 2 är långsamt, medvetet och energikrävande, och att System 2 är lat nog att oftast godkänna System 1:s första intryck — samt vad WYSIATI (what you see is all there is) betyder för hur kompletta våra analyser känns. Eleven kan identifiera och motverka de tre stora heuristikerna i eget beslutsfattande: tillgänglighetsheuristiken (K-bokstavs-experimentet, flygrädslan efter 11 september), representativheten (Linda-problemet, Tom W, taxikabinen med basfrekvens-försummelse och lagen om små tal via småskole-fyndet) och förankring (rouletthjulet 10 mot 65, Gandhi-ankaret, mäklarna som drogs mot listpriset, tärningskastande domare). Eleven behärskar prospect theory i praktiken: att värde mäts från referenspunkten (oftast inköpskursen), att förluster väger ungefär dubbelt, att vi är riskaverta i vinster men risksökande i förluster, och hur detta driver endowment-effekten (muggexperimentet), dispositionseffekten (Odeans mäklardata där sålda vinnare slog kvarhållna förlorare med 3,4 procentenheter) och sjunkna kostnader (teaterbiljetten 54 mot 88 procent). Eleven kan redogöra för övertronssystematiken — validitetens illusion från officersskolan, de 25 rådgivare vars bonusar var okorrelerade år från år, 93 procent av bilisterna över median — och för regressionen mot medelvärdet via flyginstruktörsexperimentet och dess betydelse för extremvärden i bruttomarginal (V07), EBITDA-marginal (V08) och ROE (V09). Eleven kan skilja domäner där intuition är pålitlig (regelbunden miljö plus snabb och tydlig feedback: schack, brandmän, NICU-sjuksköterskor) från finans (långsam, brusig feedback där intuitionen ljuger), tillämpa inramnings-disciplin (kirurgi-ramen 84 mot 56 procent, 75 procent magert), mental redovisning och peak-end-regeln (koloskopin och det kalla badet) samt skilja på upplevelsejaget och minnesjaget i portföljminnet. Eleven kan slutligen arbeta med utanförperspektet — referensklass, fördelning, baslinje, justering — kopplat till basfrekvenser för tillväxt (V01/V02) och Expectations Investing-kursen, och kan med Kahnemans egen självkritik om replikationskrisen motivera varför de robusta effekterna (förankring, förlustaversion, inramning) räcker som grund för AKM1:s strukturerade checklista och loggning i /profil.",
+  "why": "Tänka snabbt och långsamt är den bok hela beteendeekonomin vilar på — Kahneman fick economics-Nobelpriset 2002 för arbetet den bygger på, och varje bias-kurs i AKM1:s ekosystem är i praktiken en fotnot till denna text. Kursens värde ligger i att den samlar de mekanismer som kostar investerare mest pengar: att beröm och skäll följs av regression som feltolkas som pedagogik, att inköpskursen dikterar beslut den inte borde få diktera, att berättelser med fler detaljer känns sannolikare fast de är matematiskt osannolikare, att analysen känns klar bara för att System 1 aldrig frågar efter det saknade. Särskilt viktig är bokens ärlighet: Kahneman medgav offentligt — »I placed too much faith in underpowered studies« — att priming-kapitlen vilade på för svaga studier, och kursens sista kapitel skiljer därför mellan det som replikerats robust (förankring, förlustaversion, inramning, konjunktionsfelet) och det som fallit (ordliste-priming, ego depletion i originalform). Det gör de kvarvarande insikterna starkare, inte svagare: de robusta biasarna räcker för att motivera System 2-rutiner — checklistor, skriftliga prognoser, basfrekvenser, beslutsjournal i /profil. Den som fattar investeringsbeslut utan att känna sitt eget System 1 konkurrerar mot sig själv i varje enskilt beslut; den som känner det bygger processer som gör den latande analytikern i skallen omöjlig att fuska förbi.",
+  "chapters_list": [
+    "1. Två system — snabbt och långsamt",
+    "2. Tillgänglighet och lagen om små tal",
+    "3. Representativhet — Linda, Tom W och basfrekvensen",
+    "4. Förankring — roulettehjulet i huvudet",
+    "5. Prospect theory — förlustens dubbla vikt",
+    "6. Endowment och disposition — ägandets snedvridning",
+    "7. Övertron — validitetens illusion",
+    "8. Mönstrets illusion — kasinot och terrordåden",
+    "9. Regression till medelvärdet — flyginstruktörerna",
+    "10. Intuitionens gränser — schack, brandmän och finans",
+    "11. Framing — 90 procent fettfri",
+    "12. Mental redovisning och sjunkna kostnader",
+    "13. Peak-end och de två jaget — minnets fällor",
+    "14. Utanförperspektivet — basfrekvenser före detaljer",
+    "15. Replikationskrisen — vad som höll och vad som föll"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Två system — snabbt och långsamt",
+      "intro": "Kahneman inleder boken med två fiktiva karaktärer: System 1, som tänker snabbt, automatiskt och utan ansträngning, och System 2, som tänker långsamt, medvetet och till en kostnad. Allt resten av boken — varje bias, varje experiment — är konsekvenser av sammanhanget mellan dem. Detta kapitel etablerar ramen och visar varför den latande System 2 är investerarens verkliga fiende.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "System 1 är det som får dig att se vrede i ett ansikte, höra ironi i en röst, sluta 2+2 och läsa en vägskylt på avstånd — utan att du bestämmer dig för det. System 2 är det som räknar 17×24 i huvudet, fyller i deklarationen och jämför två värderingscase rad för rad. Skillnaden är inte intelligens utan kostnad: System 2 har en begränsad budget av uppmärksamhet och vägrar helst lägga ut mer än nödvändigt. Kahneman och hans kollega Jackson Beatty mätte ansträngning i pupillerna på 1960-talet — i uppgiften Add-1 (omvandla fyra siffror, en i taget, till plus ett) vidgade pupillerna flera procent, och i den svårare Add-3 kröp de ihop av ren ansträngning när personerna nästan gav upp. Pupillen är, som Kahneman skriver, ett känsligare mått på mentalt slit än något de själva rapporterade."
+        },
+        {
+          "type": "text",
+          "content": "Latensen hos System 2 syns bäst i fladdermus-och-boll-problemet: ett slagträ och en boll kostar tillsammans 1,10 dollar, och slagträet kostar 1 dollar mer än bollen — vad kostar bollen? Det intuitiva svaret, 10 cent, hoppar fram omedelbart och känns rätt. Det är också fel — rätt svar är 5 cent — och i originalstudien svarade mer än hälften av studenterna vid Harvard, MIT och Princeton fel, på andra universitet över 80 procent. Poängen är inte att människor är dumma utan att System 2 godkänner ett svar som känns koherent utan att köra kontrollräkningen. Investerare gör samma sak varje gång ett lågt P/E automatiskt översätts till »billigt« utan frågan billig i förhållande till vad — känslan av rimlighet ersätter räkningen."
+        },
+        {
+          "type": "text",
+          "content": "Müller-Lyers illusion — två lika långa linjer där pilaränderna får en att se längre ut — är Kahnemans avslutande bild, och den är mera obehaglig än den ser ut: du kan mäta linjerna, veta att de är lika, och fortfarande se den ena som längre. Insikt botar inte illusionen. Det är därför Kahnemans praktiska råd aldrig är »försök se rätt« utan »lär dig känna igen situationer där du kan luras, och använd verktyg«. I en investeringskontext betyder det mätstockar utanför huvudet: checklista, skriftlig tes, basfrekvenser — inte viljestyrka. Kurserna i AKM1:s bias-spår och loggningen i /profil är i detta ljus inte byråkrati utan Müller-Lyer-linjal: instrument som ser rätt åt dig när ögat inte kan."
+        },
+        {
+          "type": "text",
+          "content": "Bokens kanske mest underskattade begrepp introduceras här och återkommer i varje kapitel: WYSIATI — what you see is all there is. System 1 bygger en sammanhängande berättelse av den information som finns framme och ställer aldrig frågan vad som saknas. Tre kvartal i rad med siffror över väntan, en övertygande VD och en snygg produktroadmap räcker för att en hel investeringscase ska kännas komplett — inte för att den är det, utan för att känslan av koherens skapas inom ramen för det som redan är på skärmen. Frågan »vilken information skulle ändra min bild, och har jag hunnit söka den?« är en av de billigaste System 2-ingrepp som finns."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två system i beslutsfattandet\",\"rader\":[[\"Egenskap\",\"System 1\",\"System 2\"],[\"Tempo\",\"Omedelbart\",\"Långsamt\"],[\"Ansträngning\",\"Känns gratis\",\"Kostar energi — pupiller vidgas\"],[\"Exempel\",\"Se vrede i ett ansikte, 2+2\",\"17×24, deklarationen, två case sida vid sida\"],[\"Typiskt fel\",\"Systematiska biasar och koherens utifrån WYSIATI\",\"Lathet — godkänner System 1 utan kontroll\"],[\"Motgift\",\"Går inte att stänga av\",\"Checklista, skriftlig tes, basfrekvens, /profil-logg\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kahnemans viktigaste praktiska poäng: målet är inte att bli av med System 1 — det går inte, och utan det kan du inte ens ta dig till jobbet. Målet är att lära känna dess fingeravtryck i tid: den snabba känslan av att det här redan är avgjort. Den känslan är en signal om att starta System 2, inte en signal om att handla."
+        },
+        {
+          "type": "utmaning",
+          "content": "Plocka fram ditt senaste investeringsbeslut — köp, sälj eller avslag. Rekonstruera hur lång tid som gick från idé till beslut och vad som utlöste det. Skriv ner om beslutet fattades under trettio sekunder på en nyhet, och vilka frågor du aldrig hann ställa. Spara texten i din beslutsjournal — vi återkommer till den i kursens sista kapitel."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den mest träffande beskrivningen av System 2 enligt Kahneman?",
+          "alternativ": [
+            "Automatiskt och kostnadsfritt — det är vår intuition",
+            "Långsamt, medvetet och energikrävande — med en begränsad uppmärksamhetsbudget",
+            "Alltid korrekt när det väl aktiveras",
+            "Våra känslor, medan System 1 är logiken"
+          ],
+          "ratt": 1,
+          "tips": "Räkna 17×24 i huvudet och notera vad som händer i kroppen under tiden."
+        },
+        {
+          "q": "Ett slagträ och en boll kostar tillsammans 1,10 dollar. Slagträet kostar 1 dollar mer än bollen. Vad kostar bollen?",
+          "alternativ": [
+            "10 cent",
+            "5 cent",
+            "1 dollar",
+            "1,05 dollar"
+          ],
+          "ratt": 1,
+          "tips": "Låt System 2 köra kontrollen: stämmer både summan och differensen för ditt svar samtidigt?"
+        },
+        {
+          "q": "Vad är lärdomen av Müller-Lyers illusion i en investeringskontext?",
+          "alternativ": [
+            "Illusioner försvinner när man väl har lärt sig om dem",
+            "Viljestyrka räcker för att se rätt om man anstränger sig",
+            "Man kan veta att det är en illusion och ändå se den fel — därför behövs yttre verktyg, inte bara insikt",
+            "Illusionen beror på att människor inte kan mäta linjer"
+          ],
+          "ratt": 2,
+          "tips": "Du kan hålla ett måttband mot linjerna — vad händer med synintrycket ändå?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Tillgänglighet och lagen om små tal",
+      "intro": "När frekvenser ska uppskattas byter System 1 ut den svåra frågan mot en lätt: i stället för hur vanligt är detta, frågar den hur lätt kommer jag på exempel. Det är tillgänglighetsheuristiken — och tillsammans med tron att små urval speglar verklheten, lagen om små tal, förklarar den varför senaste nyheten och senaste kvartalet styr våra sannolikheter långt mer än vi tror.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tversky och Kahneman lät 1973 deltagare bedöma om bokstaven K är vanligare som första eller tredje bokstav i engelska ord. Majoriteten svarade första — för det är lättare att minnas ord som börjar på K än ord där K sitter på tredje plats. I verkligheten är K vanligare som tredje bokstav. Lättheten i minnet byttes tyst ut mot frekvens i världen. Mekanismen är banal och konsekvenserna enorma: det som nyligen skedde, det som var dramatiskt, det som du personligen upplevde väger över i varje omedveten riskbedömning — oavsett verklig frekvens."
+        },
+        {
+          "type": "text",
+          "content": "Tillgänglighetens prislapp kan mätas i människoliv. Efter 11 september 2001 väljde många amerikaner bilen i stället för flyget; eftersom bilresan är riskfylldare per mil dog enligt Gigerenzers uppskattning flera hundra människor extra i vägtrafiken under månaderna efter attentaten — fler än i vissa delar av flygplansflottorna? nej, helt enkelt: en dold kostnad som ingen nyhet rapporterade, driven av bilder som var omöjliga att skaka av sig. Kahneman skriver att världen i ditt huvud inte är en exakt kopia av verkligheten: media levererar ett urval som tagits fram efter dramatik, inte efter frekvens. För investeraren heter detta att den senaste makrochocken, det senaste rallyt och den senaste VD-skandalen överrepresenteras i varje oskriven riskbedömning — och att tråkiga, långsamma risker som avgifter och inflation, som aldrig får rubriker, underskattas systematiskt."
+        },
+        {
+          "type": "text",
+          "content": "Kahneman bekänner i boken sin egen fallgrop som ung militärpsykolog: han undervisade om att små urval är opålitliga — och valde samtidigt himself? nej, han valde systematiskt själv mikroskopiska urval i sina studier. Han kallar tron att små urval speglar populationen för lagen om små tal, en parodi på stora talens lag. Det klassiska exemplet: en stor amerikansk stiftelse noterade att de mest framgångsrika skolorna i delstatens testdata var ovanligt små, och satsade miljarder dollar på små skolor. Men också de sämsta skolorna var ovanligt små — små urval producerar extrema genomsnitt, i båda ändar. Investerarens version: tre starka kvartal på raken? rad för en tillväxtbolags (V01) och trenden känns bevisad. Den är inte bevisad — den är ett K-problem: enkelt att minns, svårt att generalisera ifrån."
+        },
+        {
+          "type": "text",
+          "content": "Motgiften mot båda fällorna är frågor, inte vila. Mot tillgänglighet: hur ofta händer detta egentligen per år, per decennium, i hela historien — inte när hände det senast? Mot små tal: hur många observationer bygger slutsatsen på, och hur ser spridningen ut? WYSIATI från kapitel 1 förklarar varför motgiften måste vara en rutin: System 1 kommer aldrig på egen hand att sakna den information den aldrig sett. En skriftlig kravbild om fem till tio års dataserier innan en tillväxtbedömning får ett eget V-nummer är just en sådan rutin — den tvingar fram det som nyhetsflödet aldrig levererar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillgänglighet och små urval — experiment och motgift\",\"rader\":[[\"Fälla\",\"Experiment och resultat\",\"Motgift\"],[\"K-bokstaven\",\"K känns vanligare som första bokstav — i själva verket vanligare som tredje\",\"Kräv frekvensdata, inte minnen\"],[\"Flygrädsla efter 11 september\",\"Bilresor ökade; uppskattningsvis hundratals extra döda i trafiken\",\"Jämför risk per mil, inte per nyhet\"],[\"Små skolors toppresultat\",\"Bästa skolorna ovanligt små — men även de sämsta\",\"Fråga efter urvalsstorlek och spridning\"],[\"Tre starka kvartal\",\"Tolv månader data extrapoleras till fem års tillväxt (V01)\",\"Fem till tio års serie innan slutsats\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Tillgänglighetsheuristiken och lagen om små tal är två sidor av samma mynt: det nyliga och det livliga tränger undan det frekventa och det tråkiga. Därför känns »branschen har aldrig varit bättre« alltid sant just nu — pågående uppgångar är per definition det lättaste som finns att minnas."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner de tre senaste nyheter eller sifferpublikationer som ändrade din syn på ett innehav. Bedöm för varje: bytte jag frekvensuppskattning (hur ofta händer detta?) eller bara minnesbild (hur tydligt minns jag det?). Om någon av de tre saknar basfrekvens i din journal har du fått din nästa researchuppgift."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför svarar de flesta fel på frågan om K är vanligare som första eller tredje bokstav?",
+          "alternativ": [
+            "Därför att K verkligen är vanligare som första bokstav",
+            "Därför att tredje bokstav räknas annorlunda i forskningssammanhang",
+            "Därför att frågan innehåller en grammatisk fälla",
+            "Därför att det är lättare att minnas ord som börjar på K — och minneslättheten ersätter frekvensen"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vilka ord som först dyker upp i huvudet — och vad den lättheten egentligen mäter."
+        },
+        {
+          "q": "Vad påvisade historien om små skolor och stiftelsens satsning?",
+          "alternativ": [
+            "Att små skolor har systematiskt bättre lärare",
+            "Att extrema genomsnitt är överrepresenterade bland små urval — både bland de bästa och de sämsta",
+            "Att stora skolor är mer disciplinerade än små",
+            "Att testresultat är helt slumpmässiga oavsett skolstorlek"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad ett litet urval gör med spridningen — inte bara med medelvärdet."
+        },
+        {
+          "q": "Vad är kärnan i exemplet med bilresor efter 11 september?",
+          "alternativ": [
+            "Att mediernas nyhetstäthet vägde om den upplevda risken så att ett farligare färdsätt valdes",
+            "Att flygtrafiken blev statistiskt farligare än bilismen permanent",
+            "Att bilister i allmänhet är irrationella människor",
+            "Att tillgänglighetsheuristiken alltid ger korrekta riskuppskattningar med fördröjning"
+          ],
+          "ratt": 0,
+          "tips": "Vilket färdsätt var objektivt farligast — och vilket kändes farligast efter images från attentaten?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Representativhet — Linda, Tom W och basfrekvensen",
+      "intro": "Representativhetsheuristiken byter frågan hur sannolikt är detta mot hur likt är detta ett mönster jag känner igen. Kahneman och Tversky visade med två av psykologins mest kända experiment att människor systematiskt offrar aritmetik för likhet — och att detaljerade berättelser därmed känns sannolikare fast de matematiskt sett är mindre sannolika. Kapitlet går igenom Linda-problemet, Tom W och taxikabinen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Linda är 31 år, ensamstående, rättfram och mycket begåvad. Hon läste filosofi, engagerade sig i diskrimineringsfrågor och deltog i demonstrationer mot kärnvapen. Frågan: vad är sannolikast — att Linda är bankkassörska, eller att hon är bankkassörska och aktiv i kvinnorörelsen? I originalstudien rankade 89 procent av studenterna den sammansatta alternativet högre. Det är omöjligt: mängden »kassörska och feminist« är en delmängd av »kassörska«, så den kan aldrig vara sannolikare. Kahneman kallar felet konjunktionsfelet och förklaringen är att den rikare beskrivningen känns mer representativ för Linda — varje extra detalj gör storyn koherentare och sannolikheten lägre, samtidigt. Investerarens version heter pitchmötet: »ett SaaS-bolag med AI-produkt, kvarvarande grundare och 120 procent nettointäktstillväxt« känns mer troligt än »ett SaaS-bolag« — trots att det första definitionsmässigt är ett smalare urval av det andra."
+        },
+        {
+          "type": "text",
+          "content": "Tom W-experimentet visar samma mekanism baklänges. Studenter fick en personbeskrivning som kändes som en stereotyp bibliotekarie — och rangordnade utbildningsämnen efter sannolikhet helt efter likhet, utan att fråga hur stor ämnena var. Basfrekvensen — att det läs betydligt fler studenter på vissa ämnen än andra — åkte ut med badvattnet. Kahneman summerar: likhet ersätter sannolikhet, och WYSIATI ser till att beskrivningen känns komplett. När ett bolag »känns som« en framtida vinnare på grund av snygg produkt och karismatisk VD pågår exakt samma substitution — frågan hur många bolag av denna typ som faktiskt levererar flyttas tyst åt sidan."
+        },
+        {
+          "type": "text",
+          "content": "Taxikabinen visar hur stark specifik information är mot svag statistik. En stad har 85 procent gröna och 15 procent blå taxibilar. Ett vittne ser en olycka och säger att bilen var blå; vittnets träffsäkerhet i test är 80 procent. Vad är sannolikheten att bilen verkligen var blå? Det intuitiva svaret är 80 procent. Det korrekta — via Bayes — är omkring 41 procent: basfrekvensen tränger igenom och de många gröna bilerna ger gott om utrymme för feltolkningar. Investeringsöversättningen är rak: en briljant tes (vittnet) mot en låg basfrekvens (stadens bilflotta) ger sällan hög sannolikhet — oavsett hur skarpt vittnet framför sig."
+        },
+        {
+          "type": "text",
+          "content": "Motgifter och kopplingen vidare. Kahnemans recept är att tänka bayesianskt i stil: först basfrekvensen — hur ofta händer detta i kategorin — sedan justering för bevisens styrka, med respekt för att bevis sällan är så starka som de känns. Detta är exakt den muskel Expectations Investing-kursen tränar vid basfrekvenser på tillväxt (V01/V02): hur stor andel bolag växer över tjugo procent i fem år i rad? Svaret — en liten minoritet — är utgångspunkten innan någon story får justera den. Med Linda-grammatiken i bakhuvudet blir också pitchdeckens detaljer läsbart som sannolikhetsminskare snarare än bevis."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Representativhet — de klassiska experimenten\",\"rader\":[[\"Experiment\",\"Resultat\",\"Investeraröversättning\"],[\"Linda-problemet\",\"89 procent rankade »kassörska och feminist« över »kassörska«\",\"Varje extra detalj sänker sannolikheten — och höjer känslan av trovärdighet\"],[\"Tom W\",\"Likhet med stereotyp ersatte ämnenas storlek\",\"»Bolaget känns som en vinnare« är ingen sannolikhetsuppskattning\"],[\"Taxikabinen\",\"80 procent pålitligt vittne: intuitivt 80 procent — korrekt cirka 41 procent\",\"Stark tes mot låg basfrekvens ger sällan hög sannolikhet\"],[\"Konjunktionsfällan\",\"Mer detaljerad story känns troligare trots smalare urval\",\"Strippa pitchen till kategorin och fråga basfrekvensen först (V01/V02)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Representativheten förklarar varför berättelserika analyser vinner interna pitchmöten och ändå förlorar pengar: detaljerna gör tesen mer minnesvärd, mer koherent och matematiskt sett mindre sannolik — tre saker på en gång. Det bolag du kan berätta mest om är ofta det du bör misstro mest dig själv om."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ditt starkaste innehav just nu. Skriv dess Linda-beskrivning — alla detaljer som får det att kännas unikt. Skriv därefter den nakna kategorin den tillhör (till exempel »börsnoterat tillväxtbolag i Norden«). Slå upp eller uppskatta basfrekvensen för det du hoppas på (till exempel tio år övermedeltillväxt) och jämför med din känsla. Notera gapet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är Linda-felet matematiskt sett ett fel?",
+          "alternativ": [
+            "Konjunktionen av två händelser kan aldrig vara mindre sannolik än varje enskild del",
+            "Mängden »kassörska och feminist« är en delmängd av »kassörska« — sannolikheten måste vara lägre eller lika stor",
+            "Kvinnorörelsen gör beskrivningen statistiskt omöjlig",
+            "Frågan mätte läsförståelse och hade inget rätt svar"
+          ],
+          "ratt": 1,
+          "tips": "Rita två cirklar — vilken av dem ryms inuti den andra?"
+        },
+        {
+          "q": "Staden har 85 procent gröna och 15 procent blå taxibilar. Ett vittne med 80 procent träffsäkerhet pekar ut en blå bil. Vad är sannolikheten att bilen var blå?",
+          "alternativ": [
+            "15 procent",
+            "50 procent",
+            "41 procent",
+            "80 procent"
+          ],
+          "ratt": 2,
+          "tips": "Kombinera basfrekvensen med vittnets träffsäkerhet — bayesianskt, steg för steg."
+        },
+        {
+          "q": "Vad var kärnfelet i Tom W-experimentet?",
+          "alternativ": [
+            "Beskrivningens likhet med en stereotyp ersatte frågan om hur stora utbildningsämnena var",
+            "Tom W:s betyg var statistiskt omöjliga",
+            "Urvalet av studenter var för litet",
+            "Deltagarna förstod inte frågan"
+          ],
+          "ratt": 0,
+          "tips": "Vad använde studenterna i stället för kategoriernas storlek när de rankade?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Förankring — roulettehjulet i huvudet",
+      "intro": "Förankring är bokens kanske mest robusta experimentella fynd: en siffra du precis sett påverkar din uppskattning av något helt annat — även när siffran är slumptal från ett riggat roulettehjul, och även när du är expert som svär att du inte påverkades. Kapitlet går igenom ankar-experimenten och översätter dem till målkurser, listpriser och inköpsprisets osynliga drag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tversky och Kahneman byggde 1974 en lyckohjul märkt 0 till 100, riggat att stanna på antingen 10 eller 65. Framför hjulet fick deltagarna två frågor: är andelen afrikanska länder i FN större eller mindre än siffran hjulet visade — och vad är din bästa uppskattning? Gruppen som sett 10 gissade i snitt 25 procent; gruppen som sett 65 gissade 45 procent. Ett rent slumptal, som alla visste var ett slumptal, flyttade skattningarna med tjugo procentenheter. Mekanismen kallar de anchoring and adjustment: vi utgår från ankaret och justerar insufficiently — inte tillräckligt långt, aldrig ifrån, bara halvvägs mot det."
+        },
+        {
+          "type": "text",
+          "content": "Effekten kräver inte ens ett rimligt ankare. Fråga människor om Gandhi dog före eller efter nio års ålder, eller före eller efter 140 år, och de absurda ankaren flyttar dödsskattningarna — i experimenten från omkring 50 till 67 år. Erfarenhet skyddar inte: Northcraft och Neale lät erfarna fastighetsmäklare värdera identiska hus där listpriset varierats några procent. Mäklarnas värderingar drogs ungefär 40 procent av vägen mot listpriset — amatörerna nästan 50 — och när mäklarna efteråt fick rangordna vad som påverkat dem hamnade listpriset sist. Än tydligare: tyska studier av Englich och kolleger visade att domares påföljdsförslag påverkades av tärningsslag som rullats framför dem — högre tärning, längre straff — och domarna förnekade kategoriskt att tärningen spelat roll. Insikt botar inte förankring; den gömmer den."
+        },
+        {
+          "type": "text",
+          "content": "Kahneman beskriver två vägar in. Den ena är ofullständig justering: System 2 börjar på ankaret och tröttnar på väg. Den andra är att ankaret primar System 1 att söka bevis för det — vem som helst som frågas om ett högt pris börjar insetta hur läget, läget faktiskt är exceptionellt. Det senare är investerarens vardag: dagens kurs förvandlas tyst till hypotes. Analytikerkårens målkurser klustrar kring noteringen; reverse-testet görs sällan ifrån noll; multipeln som står på skärmen — P/S (V04) eller EV/EBITDA (V06) mot sektorn — känns som information när den i själva verket är en startpunkt du inte valde. Att en aktie »handlas högt« jämfört med igår är ett ankare, inte ett argument."
+        },
+        {
+          "type": "text",
+          "content": "Motgift i tre steg. Först: skriv din egen uppskattning och ditt intervall innan du ser andras siffror — oberoende estimate först, konsensus sen. Sedan: generera aktivt argument mot ankaret, inte bara för — kontra-argumentationen försvagar förankringen i experiment. Sist: byt riktning på beräkningen. Expectations Investing-kursens reverse-DCF är i detta ljus ett anti-ankar-instrument: i stället för att låta dagens pris färga målkursen frågar du vilka antaganden priset gör rättfärdigat, och bedömer dem var och en för sig. Priset blir ett av många data, inte utgångspunkten för allt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Förankring — experiment och motgift\",\"rader\":[[\"Experiment\",\"Resultat\",\"Motgift\"],[\"Rouletthjulet 10 mot 65\",\"Afrikanska länder i FN: 25 mot 45 procent\",\"Skriv egen uppskattning innan du ser andras siffror\"],[\"Gandhi vid 9 eller 140 år\",\"Absurt ankare flyttade skattningarna från cirka 50 till 67\",\"Generera argument mot siffran, inte bara för\"],[\"Mäklare och listpris\",\"Värderingar drogs cirka 40 procent mot listpriset — utan insikt om påverkan\",\"Oberoende värdering utan priset synligt\"],[\"Tärningskastande domare\",\"Högre tärning gav längre påföljdsförslag — förnekad inverkan\",\"Rutiner som exponerar ankaret, till exempel reverse-DCF (V04/V06)\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Det pris du såg först är inte information — det är en startpunkt du inte valde. Skillnaden är avgörande: information förtjänar sin plats i analysen genom att vara sann om världen; en startpunkt förtjänar bara att ifrågasättas. Dagens kurs är den mest tillgängliga och minst ifrågasatta siffran i varje investeringsbeslut."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan nästa rapport eller analytikeruppskattning för ett bolag du följer: skriv ner din egen motiverade riktkurs och ett intervall — utan att titta på något. Datera och spara. Jämför efteråt med konsensus och med ditt slutliga beslut. Skillnaden mellan din förstasiffra och marknadens är ett grovt mått på hur mycket ankaret faktiskt flyttade dig."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur stor var skillnaden i FN-skattningarna mellan grupperna som såg rouletthjulet stanna på 10 respektive 65?",
+          "alternativ": [
+            "Ingen mätbar skillnad — alla kände till svaret",
+            "Cirka 5 procentenheter",
+            "Cirka 20 procentenheter — 25 mot 45 procent",
+            "Cirka 50 procentenheter"
+          ],
+          "ratt": 2,
+          "tips": "Hjulet visade 10 respektive 65 — hur långt följde skattningarna med på vägen?"
+        },
+        {
+          "q": "Vad hände med de erfarna fastighetsmäklarna i Northcraft och Neals experiment?",
+          "alternativ": [
+            "De ignorerade listpriset helt och värderade enbart på husets data",
+            "Deras värderingar drogs cirka 40 procent mot listpriset — och de förnekade att listpriset påverkade dem",
+            "De värderade systematiskt lägre än amatörerna oavsett listpris",
+            "De var okänsligare för ankaret endast när huset var dyrt"
+          ],
+          "ratt": 1,
+          "tips": "Erfarenhet minskar effekten något — men hur mycket av vägen mot ankaret flyttade sig uppskattningarna, och vad sa mäklarna själva?"
+        },
+        {
+          "q": "Vilket är det mest grundläggande motgiftet mot förankring i en analysprocess?",
+          "alternativ": [
+            "Räkna ut medelvärdet av alla andras uppskattningar",
+            "Läsa fler analyser med olika riktkurser",
+            "Skriva sin egen uppskattning och sitt intervall innan man ser andras siffror",
+            "Vänta minst ett dygn innan man värderar"
+          ],
+          "ratt": 2,
+          "tips": "Vad behöver komma först — din oberoende siffra eller marknadens?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Prospect theory — förlustens dubbla vikt",
+      "intro": "Prospect theory, från Kahneman och Tverskys artikel i Econometrica 1979, är bokens teoretiska hjärta: vi värderar inte slutförmögenhet utan förändringar från en referenspunkt — och förluster väger ungefär dubbelt så tungt som lika stora vinster. Kapitlet går igenom teorins fyra hörnstenar och vad de gör med portföljbeslut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Teorins första brott med tidigare ekonomi är nollpunktens placering. Nyttoklassikern antog att människor värderar slutlig förmögenhet; Kahneman och Tversky visade att vi värderar förändringar — vinst och förlust i förhållande till en referenspunkt, oftast status quo. I vardagen på börsen heter referenspunkten nästan alltid inköpskursen: en position som står +20 procent och en som står −20 procent känns som två olika väsen, fast de bara är två siffror på skärmen med samma underliggande bolag. Värdemätaren sitter i förhållandet till nollan du en gång själv valde — och den nollan säger ingenting om bolagets framtida kassaflöden."
+        },
+        {
+          "type": "text",
+          "content": "Ur referenspunkten följer förlustaversionen. Erbjud en slantvändning där vinnaren får 100 kronor och förloraren förlorar 100 kronor och de flesta tackar nej — för att acceptera spelet krävs ungefär dubbelt så stor vinstchans? nej, dubbelt så stor vinst: omkring 200 kronor mot 100. Förlustaversionens koefficient ligger i experimenten kring 2 till 2,5. Kahneman noterar att smärtan av att förlora är skarpare än glädjen av att vinna samma belopp, och att detta inte är en karaktersegenskap utan en designlinje i System 1 — evolutionen har straffat förluster hårdare än den belönat lika stora vinster. Följden för portföljen är att dagliga nedgångar känns dubbelt så tunga som dagiga uppgångar — vilket gör tittarfrekvensen på kurser till en riskfaktor i sig själv. Thaler och Benartzi kallade detta myopic loss aversion och använde det som förklaring till aktiepremien: den som räknar sin portfölj varje dag upplever förluster nästan varannan dag, och kräver därför högre kompensation för att hålla aktier alls."
+        },
+        {
+          "type": "text",
+          "content": "Teorins andra sida är riskprofilens spegelvändning. Erbjuds 100 procent säkert 900 kronor eller 90 procents chans på 1 000 väljer de flesta det säkra — riskaversion i vinstledet. Men erbjuds 100 procent säker förlust på 900 eller 90 procents chans att förlora 1 000 (och 10 procent att gå fri) väljer de flesta chansen — risksökande i förlustledet. Samma person, samma matematik, spegelvänt beteende beroende på vilken sida om nollan hamnar. På marknaden heter detta att klippa vinnare i förtid (låsa in den säkra vinsten) och dubbla ner på förlorare (chansa på att slå tillbaka mot referenspunkten) — ett mönster som gets eget kapitel här efter. Det förklarar också börsens paradoxala smeknamn: paniksälj till botten och lotteriköp på topp är båda barn av samma värdefunktion."
+        },
+        {
+          "type": "text",
+          "content": "Motgiften är omskrivning av ramen, systematiskt. Prospektteorins ekvationer gäller smala ramar — en position, en dag, ett beslut. Den som konsekvent översätter varje beslut till bred ram (vad gör detta med totala portföljen över tio år, efter avgift och inflation) lägger sig på den del av värdemätaren där intuitionen fungerar bäst. Två konkreta frågor bär långt: skulle jag köpa den här positionen idag om jag inte redan ägde den — och hur förhåller sig det här beslutet till min totala förmögenhet, inte till inköpskursen? Den första frågan nollställer referenspunkten; den andra byter smal ram mot bred. Båda tränas enklast genom att skrivas in i en beslutsjournal — i /profil — innan beslutet verkställs."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prospect theory — kärnmekaniken\",\"rader\":[[\"Insikt\",\"Innebörd\",\"Portföljtolkning\"],[\"Värde från referenspunkt\",\"Inte slutförmögenhet utan förändring\",\"Inköpskursen styr känslan — inte bolagets värde\"],[\"Förlustaversion cirka 2:1\",\"Förluster väger dubbelt mot lika stora vinster\",\"Dagliga nedgångar känns oproportionerligt tunga\"],[\"Riskaversion i vinst, risksökande i förlust\",\"Säker vinst tas, osäker förlust chansas\",\"Klipper vinnare, dubblar ner på förlorare\"],[\"Smala ramar\",\"En position och en dag i taget\",\"Oversätt till bred ram: total portfölj, tio år, efter avgift\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Prospect theory löste sitt Nobelpris genom att flytta en enda nollpunkt: från slutlig förmögenhet till förändring från referenspunkten. För investeraren finns ingen viktigare nollpunkt att flytta — varje gång du frågar vad positionen gör med din totala förmögenhet, i stället för vad den gör mot din inköpskurs, har du rätat upp värdefunktionen en aning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå igenom dina positioner och markera de där inköpskursen — inte bolagets utsikter — är det som avgör om du vill behålla. För en av dem, skriv tesen som om du aldrig ägt aktien: vad är den köpvärda idag? Spara båda versionerna och notera vilken som är ärligare mot underliggande data."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad mäts värdeförändringar mot i prospect theory?",
+          "alternativ": [
+            "Slutförmögenheten",
+            "Jämförelseindexet",
+            "Den riskfria räntan",
+            "Referenspunkten — oftast status quo eller inköpskursen"
+          ],
+          "ratt": 3,
+          "tips": "Kahneman och Tversky flyttade nollpunkten i ekvationen — var flyttade de den?"
+        },
+        {
+          "q": "Vad kräver de flesta för att acceptera en slantvändning med 100 kronor i vinstrisk?",
+          "alternativ": [
+            "De accepterar direkt eftersom spelet är rättvist",
+            "Ungefär 120 kronor i vinst",
+            "Ungefär 200 kronor i vinst — förluster väger omkring dubbelt",
+            "De accepterar aldrig spel av princip"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på den ungefärliga förlustaversionens koefficient i boken."
+        },
+        {
+          "q": "Vad kännetecknar mönstret i vinst- och förlustledet enligt prospect theory?",
+          "alternativ": [
+            "Riskaversion i vinstledet och risksökande i förlustledet",
+            "Risksökande i vinstledet och riskaversion i förlustledet",
+            "Riskaversion i båda leden",
+            "Risksökande i båda leden"
+          ],
+          "ratt": 0,
+          "tips": "Vad gör de flesta med en säker vinst — och vad gör de med en säker förlust?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Endowment och disposition — ägandets snedvridning",
+      "intro": "När förlustaversionen möter ägande uppstår två av finanspsykologins dyraste effekter: endowment-effekten, som får det vi redan äger att kännas mer värt, och dispositionseffekten, som får oss att realisera vinster men behålla förluster. Kapitlet går igenom muggexperimentet och Terrance Odeans mäklardata — och motgiften som börjar med en enda fråga.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "På Cornell-universitetet delade Kahneman, Jack Knetsch och Richard Thaler 1990 ut kaffemuggar till slumpvis utvalda studenter i en grupp och lät sedan en marknad öppna där muggarna kunde köpas och säljas. Resultatet: de som fått muggar krävde i snitt omkring sju dollar för att sälja — köparna bjöd omkring tre. Effektiva marknader skulle få de två beloppen att ligga nära varandra; här låg de faktorer? de skilde sig med en faktor nära två. Att ge ifrån sig något man redan äger registreras som en förlust från referenspunkten ägande, och förlusten måste kompenseras dubbla. Thaler döpte fenomenet endowment-effekten. Investerarens version är subtil men dyr: det du redan äger feels grundat, genomtänkt och värt sitt pris — analysen av bolaget du inte äger menar du enkelt kan skjuta upp till imorgon."
+        },
+        {
+          "type": "text",
+          "content": "Dispositionseffekten — namngiven 1985 av Hersh Shefrin och Meir Statman som en direkt konsekvens av prospect theory — blev bäst kvantifierad av Terrance Odean, som följde tiotusen privatkonton hos en amerikansk mäklare mellan 1987 och 1993. Kontona realiserade vinster ungefär halvannan gång oftare än förluster. Det vore oskyldigt om det varit rationellt — men de vinnare som såldes fortsatte i genomsnitt att slå de förlorare som behölls med omkring 3,4 procentenheter det följande året. Mönstret är prospect theory i ren form: att sälja en vinst realiserar en säker vinst (riskaversion i vinstledet), att sälja en förlust realiserar en säker förlust och känns som att erkänna ett misstag (risksökande i förlustledet). Resultatet är en portfölj som systematiskt behåller det sämsta och säljer det bästa — med rabatt på avkastningen som avgift."
+        },
+        {
+          "type": "text",
+          "content": "Släktfenomenet get-evenitis förtjänar sitt eget namn: hänvisningen till att »komma ut i noll« som skäl att behålla eller till och med öka en förlorande position. Referenspunkten inköpskurs har då helt övertagit analysen — bolagets framtid spelar mindre roll än portföljens redovisning av historien. Kahnemans perspektiv gör mekanismen synlig: marknaden vet inte vad du betalade, och det framtida priset kommer att röra sig efter bolagets framtid, inte efter din nollpunkt. Väntan på att komma ut i noll är ett spel mot en motpart som inte vet att matchen pågår. Samma mekanism driver boards och projektledare att fort­sätta finansiera döende projekt — kapitel 12 tar den sidan via sjunkna kostnader och V19-kopplingen."
+        },
+        {
+          "type": "text",
+          "content": "Motgiften börjar med frågan från kapitel 5, men behöver regelverk runt sig eftersom känslan inte försvinner: skulle jag köpa den här positionen idag, till det här priset, om jag inte redan ägde den? För att frågan ska få makt måste den ställas mekaniskt — vid varje kvartalsgranskning, skriftligen, med samma mall för varje position (AKM1:s checklista är byggd för exakt detta symmetrier: vinnare och förlorare granskas med samma frågor). Utöver det: skriv försäljningskriterier vid köpet, när referenspunkten ännu inte hunnit bli känsloladdad; och logga skälet till varje realisering i /profil — mönstret i dina egna loggar är den bästa disposition-diagnostik som finns."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Förlustaversionens barn i portföljen\",\"rader\":[[\"Effekt\",\"Experiment och resultat\",\"Motgift\"],[\"Endowment\",\"Muggar: säljare krävde cirka 7 dollar, köpare bjöd cirka 3\",\"»Skulle jag köpa positionen idag?« — varje kvartal, skriftligen\"],[\"Disposition\",\"Odean: vinster realiserades cirka 1,5 gånger oftare; sålda vinnare slog kvarhållna förlorare med cirka 3,4 procentenheter\",\"Försäljningskriterier skrivna vid köpet\"],[\"Get-evenitis\",\"Referenspunkten inköpskurs styr hållfastheten\",\"Nollställ referenspunkten: värdera som en outsider\"],[\"Asymmetrisk granskning\",\"Vinnare granskas, förlorare ursäktas\",\"Samma checklista för hela portföljen — inga undantag\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du äger inte bolaget bättre för att du köpte det. Endowment-effekten får ägande att kännas som insikt — jag har ju följt bolaget länge — men följandet i sig tillför ingen information om framtida kassaflöden. Frågan om du skulle köpa idag är därför inte retorisk; den är den enda som frågar bolaget i stället för din historik."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna dina realiseringar de senaste tolv månaderna: antal sålda vinster mot antal sålda förluster. Räkna sedan vad de sålda gjorde efter försäljningen mot vad de kvarhållna gjorde. Om du inte kan svara utan att öppna underlagen har du precis upptäckt varför Odean behövde data för att se sitt eget mönster — och varför din /profil-logg är ett vapen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var resultatet i muggexperimentet på Cornell?",
+          "alternativ": [
+            "Säljare och köpare prisade muggarna lika — marknaden var effektiv",
+            "Säljarna krävde ungefär dubbelt så mycket som köparna var villiga att betala",
+            "Köparna betalade dubbelt så mycket som säljarna begärde",
+            "Ingen enda mugg bytte ägare"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det känslomässigt att ge ifrån sig något man redan har?"
+        },
+        {
+          "q": "Vad fann Odean i de tiotusen mäklarkontona?",
+          "alternativ": [
+            "Vinster realiserades oftare än förluster — och de sålda vinnarna fortsatte slå de kvarhållna förlorarna med cirka 3,4 procentenheter",
+            "Förluster realiserades oftare än vinster",
+            "Kontona handlade aldrig alls under perioden",
+            "Mönstret var helt slumpmässigt utan systematik"
+          ],
+          "ratt": 0,
+          "tips": "Vilken typ av position kändes lättast att stänga — den i vinst eller den i förlust?"
+        },
+        {
+          "q": "Vilken fråga är det mest direkt verkande motgiftet mot endowment-effekten i ett innehav?",
+          "alternativ": [
+            "»Hur länge har jag ägt den här aktien?«",
+            "»Vad är min genomsnittskurs?«",
+            "»Skulle jag köpa den här positionen idag, om jag inte redan ägde den?«",
+            "»Vad tror de största analytikerna just nu?«"
+          ],
+          "ratt": 2,
+          "tips": "Byt perspektiv från nuvarande ägare till potentiell köpare — vilken fråga gör det?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Övertron — validitetens illusion",
+      "intro": "Kahnemans eget livs tema: varför känns våra bedömningar och prognoser så sanna, även när deras träffsäkerhet är noll? Kapitlet går igenom officersskolans hinderbana, de 25 rådgivare vars bonusar var ren tur, och de bilister som nästan alla är bättre än medel — och varför insikt om illusionen sällan botar den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Som ung psykolog i israeliska armén konstruerade Kahneman bedömningar av blivande officerare på en ledarlövningsbana — ett hinder han kallar nålsögat — där grupper utan ledare tvingades samarbeta under press. Teamet tittade, betygsatte och förutsade officerarnas framtida prestationer med stor säkerhet. När resultaten sedan matchades mot faktiska officersbetyg var den statistiska sambandet? korrelationen i princip noll. Det anmärkningsvärda, skriver Kahneman, är inte att de hade fel — utan att de fortsatte med oförändrad säkerhet sedan de sett bevisen. Han döpte fenomenet validitetens illusion: en stark känsla av sammanhang och samstämmighet i bedömningarna ger en lika stark känsla av förutsägbarhet — utan att den finns. Att hela teamet var överens gjorde det värre, inte bättre: samstämmighet är information om gruppen, inte om världen."
+        },
+        {
+          "type": "text",
+          "content": "Fackmotsvarigheten är bokens mest obekväma stycke. Kahneman fick tillfälle analysera bonusdata för 25 privatrådgivare vid ett stort bolag under åtta år — bonusen var direkt knuten till placernas avkastning. När han korrelerade rådgivarnas placering år från år låg medelkorrelationen på omkring 0,01: i praktiken noll. Bolaget belönade tur som om det vore skicklighet, år efter år, med årliga bonusar och utmärkelser. Kahneman förväntade sig bestörtning när han presenterade siffrorna. I stället var stämningen oförändrad — »när jag var klar var stämningen som tidigare?« och morgonen därpå gick rådgivarna till jobbet som vanligt. Detta är kognitiva illusioners natur: liksom Müller-Lyer ser likadan ut fast du mätt linjerna, ser skicklighet ut som skicklighet fast du sett korrelationen noll. Rådgivarna själva svarade i princip att siffrorna gällde andra — inte dem."
+        },
+        {
+          "type": "text",
+          "content": "Övertrons vardagsform är alltmer? universell: i Ola Svenssons klassiska studie bedömde 93 procent av amerikanska bilister sin körförmåga som bättre än medianförarens — matematiskt omöjligt för mer än hälften, sant för nästan alla som tillfrågas. Samma kurva finns för chefsförmåga, för ledarskap och rimligen för aktieutval: den som gjort tjugofem lyckade affärer beräknar inte hur många affärer som lyckats av slump i en uppgång. Kahneman kopplar övertron till happened? efterrationaliseringen — hinders: eftersom minnet skriver om historien så att utfall ser ut att ha varit förutsägbara (»jag visste det«), blir det förgångna en enda lång bekräftelse på att vi kan förutsäga framtiden, och nästa prognos görs med ännu högre säkerhet."
+        },
+        {
+          "type": "text",
+          "content": "Motgiftet är inte ödmjukhet — känsloord rör inte en kognitiv illusion — utan mätning och struktur. Tre verktyg: först beslutsjournalen, där prognoser med sannolikheter skrivs ner ex ante och poängsätts mot utfall (kalibrering i stället för minne). Sedan kravet på serielängd: en placed? en placerare eller strateg som inte kan visa ett långt utfallsdataspår förtjänar antagandet att utfallen är tur — det är det statistiskt rimliga null-läget. Sist tanken i fördelningar i stället i punkter: AKM1:s scenarier och Monte Carlo är i grunden en övertronsmotgift — en prognos som är ett intervall med sannolikheter kan inte lura sin egen upphovsman på samma sätt som en siffra med säker ton. Och baslinjen för förväntad träffsäkerhet bör vara modest: en riktig edge slår inte marknaden med tjugo procentenheter, den slår den knappt och bara ibland."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Övertron — experiment och motgift\",\"rader\":[[\"Experiment\",\"Resultat\",\"Motgift\"],[\"Officersskolans nålsöga\",\"Prediktioner med noll validitet — säkerheten opåverkad av bevisen\",\"Logga prognoser ex ante och poängsätt utfall\"],[\"25 rådgivare, 8 års bonusar\",\"Årsmotsvarande korrelation cirka 0,01 — bonus belönade tur\",\"Kräv lång serie innan ordet skicklighet tillåts\"],[\"Bilisterna\",\"93 procent bedömde sig bättre än medianföraren\",\"Antag som standard att du är median — bevisa annat med data\"],[\"Efterrationalisering\",\"Historien skrivs om till »jag visste det«\",\"Skriv vad du visste, när du visste det — daterat\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kahnemans rådgivare fortsatte som föregående dag — inte därför att de var ointelligenta utan därför att kognitiva illusioner inte botas av insikt. Det botar dem är system utanför huvudet: journalen, kalibreringen, serieslängden. Övertron är den enda bias där motgiftet i praktiken är att mäta sig själv."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv fem prognoser med sannolikheter för dina innehav: kurs över eller under dagens nivå om tolv månader, minst en overraskning i nästa rapport, ja eller nej på specifika händelser. Datera och spara i /profil. Om ett år poängsätter du inte dina affärer — du poängsätter ditt kalibrerade jag, och det är en helt annan övning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade analysen av de 25 rådgivarnas bonusar över åtta år?",
+          "alternativ": [
+            "Medelkorrelationen mellan år var nära noll (cirka 0,01) — bonusarna belönade tur",
+            "Korrelationen var starkt positiv för de flesta rådgivare",
+            "Endast de yngsta rådgivarna var förutsägbara",
+            "Korrelationen var starkt negativ"
+          ],
+          "ratt": 0,
+          "tips": "Åtta års data, år mot år — hur starkt var sambandet i snitt?"
+        },
+        {
+          "q": "Varför förändrade inte resultatet rådgivarnas beteende?",
+          "alternativ": [
+            "Därför att siffrorna var felberäknade",
+            "Därför att kognitiva illusioner inte botas av insikt — som Müller-Lyer ser likadan ut fast man mätt linjerna",
+            "Därför att cheferna förbjöd diskussionen",
+            "Därför att rådgivarna fick bonus för att låtsas som vanligt"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med synintrycket i Müller-Lyer när du väl mätt linjerna?"
+        },
+        {
+          "q": "Vad menas med validitetens illusion?",
+          "alternativ": [
+            "Att man minns fel efteråt och därför litar på minnet",
+            "Tron att ett instruments prognosförmåga är hög bara för att bedömningarna känns samstämmiga och självsäkra",
+            "Att validitet kräver mycket stora urval för att finnas",
+            "Att tester aldrig fungerar i militära miljöer"
+          ],
+          "ratt": 1,
+          "tips": "Samstämmigheten i teamets intryck — höjde den den faktiska prognoskraften?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Mönstrets illusion — kasinot och terrordåden",
+      "intro": "Människor ser mönster i slumpen som är svåra att se som något annat: kasinogästerna som satsar efter sex röda, och patrullerna som trodde att deras insatser stoppade terrorattackerna. Kahnemans poäng är att slumpen producerar kluster och streaks av sig själv — och att vårt berättande sinne inte har något bärande? björnbär? bär för hur ren slump ser ut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kahneman berättar från Las Vegas: vid ett roulettebord hade hjulet visat sex röda i rad, och spelarna satsade ivrigt på svart — chansen att hjulets minne? nej, sannolikheten för svart var självfallet oförändrad. Han drar kopplingen till det han kallar gambler's fallacy: tron att slumpen är en självkorrigerande process som har skyldigheter att jämna ut sig. Spegelbilden är hot hand-tron att streakar förlänger sig själva. Båda bygger på samma okunnighet om vad slumpmässiga sekvenser faktiskt ser ut: de innehåller kluster, långa serier och konstiga sammanträffande — av design. Sex röda i rad är inte ett sätt för hjulet att säga något; det är exakt vad slump då och då producerar."
+        },
+        {
+          "type": "text",
+          "content": "Kahnemans eget exempels? exempel från den tiden som armépsykolog är bokens? bokens kanske starkaste illustration. Han fick i uppdrag analysera terrordattacker i Galileen och fann att de kluster som fick alla att tala om mönster var fullt förenliga med ren slump i tid och rum. När han presenterade slutsatsen för en kommendör — att patrullernas insatser följde efter attacker slumpvis, inte på grund av? mot attacker utan reaktivt, och att attackerna upphörde lika ofta utan patruller som med — reagerade kommendören häpet: menar du att mina män? att våra patrullers varningar inte har något med attackernas upphörande att göra? Kahnemans svar var ja: upphörandet efter insats var precis vad slump förväntas producera, och samma upphörande skedde dagar då patrullerna uteblev. Orsakssambandet fanns bara i berättelsen — den var osynlig i fördelningen. Kommendören gjorde det vi alla gör: han såg orsak där det fanns samtidighet, därför att samtidighet har en story och slump inte har någon."
+        },
+        {
+          "type": "text",
+          "content": "På marknaden är mönsterillusionen en industri. Diagrammönster, kvartalsserier, en managers rad av bra år, en VD:s rad av lyckade lanseringar (V16): allt detta är korta serier av densamma? samma slag som terrorklustren — strukturer som kan vara skicklighet eller kan vara slump, där berättelsen alltid väljer skicklighet och statistiken ofta inte kan skilja. Frågan som skiljer analys från ankdot är en enda: hur många försök har gjorts i hela universum? En fondförvaltare med fem bra år i rad imponerar tills du räknar hur många förvaltare som fått fem försök — då är streaks inte bara möjliga utan oundvikliga någonstans. Samma gäller dig: om du prövar tjugo idéer om året i tjugo år kommer du att ha långa lyckoserier av ren slump. Det är matematik, inte magi."
+        },
+        {
+          "type": "text",
+          "content": "Motgiftet är disciplinerad tristess. Innan ett mönster accepteras: fråga vad en slumpgenerator skulle producera av samma längd (körsekvenser av myntvändningar i huvudet räcker långt); fråga hur stort universum av försök är; skilj process från utfall — ett bra beslut kan förlora och ett dåligt kan vinna, en gång. Kahneman själv summerar meditationen? slutsatsen torrt: människans benägenhet att se mönster i slump är överväldigande, och den förklarar varför många instrument? index? varför intuitioner om slumpade system är så systematiskt fel. AKM1:s svar är samma som i förra kapitlet: skriv ner processen före utfallet, bedöm beslutet mot informationen som fanns — inte mot kurvan som sedan ritades."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mönster i brus\",\"rader\":[[\"Företeelse\",\"Verkligheten\",\"Frågan som skiljer\"],[\"Sex röda på roulette\",\"Sannolikheten för svart är oförändrad — hjulet har inget minne\",\"Har det redskap som snurrar något minne?\"],[\"Terrorkluster i Galileen\",\"Slumpen producerar kluster i tid och rum\",\"Hur ser fördelningen ut utan patruller?\"],[\"Managers streak av bra år\",\"Korta serier i stora universum producerar streaks av sig självt\",\"Hur många förvaltare fick samma antal försök?\"],[\"Kvartalstrend på tre rapporter\",\"Tre datapunkter är ingen serie\",\"Vad säger basfrekvensen för fyra i rad?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Mönsterillusionens kärna är asymmetrin i berättande: samtidighet har alltid en story att erbjuda, slump har aldrig någon. Därför vinner anekdoten över fördelningen i varje möte — om inte någon kräver att se fördelningen. Den kravställaren måste vara du, eftersom motparten sällan finns."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta diagrammet för ett av dina innehav och lista de mönster du ser (stöd, trend, utbrott). Rita — på papper eller i huvudet — femtio myntkast som en kursgraf och sök samma mönster där. Skriv därefter vilka observationer som skulle krävas för att skilja ditt diagram från slumpen. Om listan blir kort har du din nästa researchfråga."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Rouletthjulet har visat sex röda i rad. Vad är sannolikheten för svart nästa snurr?",
+          "alternativ": [
+            "Högre än vanligt — hjulet är skyldigt att jämna ut sig",
+            "Lägre än vanligt — det är en het serie",
+            "Oförändrad — hjulet har inget minne",
+            "Omöjlig att bedöma utan mer data"
+          ],
+          "ratt": 2,
+          "tips": "Vad vet hjulet om de föregående snurren?"
+        },
+        {
+          "q": "Vad var poängen i Kahnemans analys av terrordattackerna?",
+          "alternativ": [
+            "Att patrullerna orsakade attackernas upphörande",
+            "Att attackerna upphörde lika ofta utan patruller som med — kluster är vad slump producerar",
+            "Att terroristerna läste patrullernas mönster",
+            "Att patrullerna var slumpvis fördelade i ett kontrollerat experiment"
+          ],
+          "ratt": 1,
+          "tips": "Vad hände dagarna då patrullerna inte gick ut?"
+        },
+        {
+          "q": "Vilken fråga skiljer bäst mellan skicklighet och slump i en serie lyckade utfall?",
+          "alternativ": [
+            "Att alltid lita på trenden när den är minst tre datapunkter lång",
+            "Att anta att mönstret är verkligt men sällsynt",
+            "Att undvika diagram och serier helt",
+            "Att fråga hur många försök som gjorts i hela universum — och vad slumpen skulle producera där"
+          ],
+          "ratt": 3,
+          "tips": "Streaks blir oväntade först när universum av försök är litet. Hur stort är ditt?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Regression till medelvärdet — flyginstruktörerna",
+      "intro": "Bokens mest citerade anekdot är också dess mest missförstådda statistik: flyginstruktören som var övertygad om att skäll fungerar och beröm förstör. Kahneman förstod på en sekund att instruktören observerade perfekt och tolkade fel — han såg regression mot medelvärdet och trodde sig se pedagogik. Kapitlet förklarar mekanismen och varför extremvärden i marginaler och avkastning är tillfälliga som standard.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Scenen: Kahneman håller föreläsning för flyginstruktörer om inlärningspsykologi och påpekar att forskningen visar att belöning av bra prestationer är effektivare än bestraffning av dåliga. En erfaren instruktör protesterar med sin egen erfarenhet: många gånger har han berömt en kadett för en perfekt maneuver — och nästa gång presterar kadetten sämre. Många gånger har han skällt på en kadett för en dålig insats — och nästa gång förbättras denne. Slutsats, enligt instruktören: beröm förstör, skäll fungerar — er forskning är fel. Kahneman insåg omedelbart att instruktören hade rätt om observationerna och fel om orsaken: en exceptionellt bra prestation kräver både skicklighet och tur, och när turen vänder kommer nästa prestation att ligga närmare medelvärdet — oavsett om man berömde. En exceptionellt dålig prestation kräver olycka, och nästa gång är den sannolikt bättre — oavsett om man skällde. Skället fick äran för statistiken; berömmet fick skulden."
+        },
+        {
+          "type": "text",
+          "content": "Mekanismen är inte mystik utan korrelationens aritmetik: när två mätningar av samma sak inte korrelerar perfekt — och de gör aldrig det, eftersom prestation är skicklighet plus brus — kommer den andra mätningen att ligga närmare medelvärdet än den första, i genomsnitt. Kahneman illustrerar med skämtet om de intelligentaste kvinnorna: en kollega noterade att högintelligenta kvinnor tenderar gifta sig med mindre intelligenta män — och det stämmer, på precis samma sätt som motsatt? som att extremt låga värden på en variabel i snitt möter vanligare värden på den andra. Det är ingen social lag, bara en korrelation under ett. Samma mekanism döljer sig bakom Sports Illustrated-förbanne? -jinxen: spelaren på omslaget har haft en exceptionell säsong, och nästa säsong är sannolikt vanligare — omslaget orsakar ingenting, urvalet gör det."
+        },
+        {
+          "type": "text",
+          "content": "Varför är regressionen så svår att se? Därför att den kräver att man tänker på två tillfällen samtidigt, och därför att orsakssagor alltid finns till hands: bolaget tappade fokus efter utmärkelsen, stjärnfonden blev trött av framgång, dieten slutade fungera efter två veckor, VD-bytet räddade oss (efter ett bottenår). I fundamental analys är regressionen mot branschmedel standardhypotesen för extremvärden: rekordhöga bruttomarginaler (V07), exceptionell EBITDA-marginal (V08), extrem ROE (V09) och rekordtillväxt (V01/V02) tenderar alla att vandra mot genrens genomsnitt. Den intressanta analysfrågan är därför omvänd mot den vanliga: inte varför marginalen kommer att falla — det är standardfallet — utan vad strukturellt skulle bromsa fallet. Svar på den frågan heter patent och IP (V13), varumärke (V14) eller nätverkseffekter (V15): moats är i detta perspektiv regressionsbromsar, och det är de enda kända."
+        },
+        {
+          "type": "text",
+          "content": "Motgiftet är att göra regressionen till en del av prognosen i stället för en överraskning i utfallet. Konkret: utgå från att nästa års siffra ligger mellan årets och branschens medelvärde, och använd det som baslinje; kräv strukturell dokumentation (V13–V15) för varje år ni räknar med att avståndet till medelvärdet ska bestå; tolka inte förändringar kring extremvärden som orsakade av händelser utan att först fråga vad regressionen ensam förutsäger. Och kom ihåg instruktörens läxa i spegelbild: när din nesliga? din svarta månad följs av en bättre, och din bästa följs av en sämre, beror det inte på att din rutin började eller slutade fungera — det är först och främst vad medelvärden gör med extremvärden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Regression — klassiska fall\",\"rader\":[[\"Fall\",\"Vad som händer\",\"Vanlig feltolkning\"],[\"Beröm i flygskolan\",\"Exceptionellt bra prestation följs av sämre\",\"Belöningen gjorde kadetten sämre\"],[\"Sports Illustrated-omslag\",\"Exceptionell säsong följs av vanligare\",\"Omslaget förpestar spelarens form\"],[\"De intelligentaste kvinnorna\",\"Korrelation under ett ger parningar under medel\",\"En social lag om kön och begåvning\"],[\"Rekordmarginal (V07/V09)\",\"Extremår vandrar mot branschmedel\",\"Bolaget tappade fokus eller VD:n räddade det\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Flyginstruktören observerade sitt livs data perfekt — och drog en felaktig slutsats om orsak. Det är regressionens gåva till investeraren: varje gång en extrem prestation följs av en vanligare finns två förklaringar — att något hände, och att inget hände. Den andra förklaringen är gratis, kräver ingen story och är sannare oftare. Den förtjänar att vara null-hypotes."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag med förra årets rekordsiffra i någon V-variabel (marginal, ROE eller tillväxt). Skriv en lista över vad som strukturellt skulle hindra regression mot branschmedel — namnge mekanismerna (V13–V15) och gradera dem dokumenterade eller berättade. Om listan mest innehåller adjektiv, justera din baslinje nedåt innan marknaden gör det."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den rätta förklaringen till att kadetter presterade sämre efter beröm och bättre efter skäll?",
+          "alternativ": [
+            "Beröm sänker prestationen genom övermod",
+            "Exceptionellt bra prestationer följs i snitt av sämre och exceptionellt dåliga av bättre — regression mot medelvärdet, oberoende av pedagogik",
+            "Skäll ökar adrenalin och skärpa",
+            "Kadetterna ansträngde sig olika beroende på instruktörens humör"
+          ],
+          "ratt": 1,
+          "tips": "Vad krävs för att en prestation ska bli exceptionell — och vad väntar efteråt, statistiskt sett?"
+        },
+        {
+          "q": "Varför hamnar spelaren på Sports Illustrateds omslag ofta i en svagare säsong efteråt?",
+          "alternativ": [
+            "Omslaget och uppmärksamheten förpestar spelarens form",
+            "Fotograferingarna är fysiskt påfrestande",
+            "Spelare tränar mindre efter ett omslag",
+            "Exceptionella säsonger följs oftast av vanligare — regression mot medelvärdet"
+          ],
+          "ratt": 3,
+          "tips": "Var på fördelningskurvan befann sig spelaren när omslaget togs?"
+        },
+        {
+          "q": "Ett bolag har just noterat rekord i ROE (V09). Vad bör vara standardhypotesen i en prognos?",
+          "alternativ": [
+            "Oförändrad rekordnivå tills vidare",
+            "Regression mot branschmedel, om inte strukturella faktorer (V13–V15) dokumenterat håller nivån uppe",
+            "Linjär fortsatt ökning",
+            "Omgående kollaps till noll"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med extremvärden i genomsnitt — och vad kan strukturellt ändra på det?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Intuitionens gränser — schack, brandmän och finans",
+      "intro": "Kahneman och intuitionssforskaren Gary Klein var oense om allt utom slutsatsen: intuition är verklig och kan vara expert — men bara under två villkor. Schack och brandmän uppfyller dem; finans gör det inte. Kapitlet förklarar skillnaden och vad du ska göra med dina magkänslor i marknaden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kleins favoritexempel är en brandbefälhavare som ledde släckningen av ett köksbrand och plötsligt, utan synbar orsak, beordrade sin trupp ut ur huset. Sekunder senare kollapsade golvet där de hade stått. Befälhavaren kallade det sjätte sinnet — Klein kallar det igenkänning: hans hjärna matchade hela mönstret (värme, ljud, rökbeteende) mot ett bibliotek av tidigare bränder och levererade en varning ingen verbal analys hunnit formulera. Herbert Simon, som Kahneman citerar med respekt, sammanfattade hela fältet i en mening: intuition är ingenting mer och ingenting mindre än igenkänning. Schackmästare som granskar ett parti ser de starka dragen på sekunder — inte för att de tänker snabbare, utan för att tiotusentals positioner lagrats som mönster under års träning. Same? Samma mekanism gör att erfarna NICU-sjuksköterskor kan ana sepsis i ett barn innan laboratorievärdena hinner bekräfta den."
+        },
+        {
+          "type": "text",
+          "content": "I sin berömda duellartikel — Kahneman och Klein kom fram till att de egentligen inte var oense, och döpte den till just det: Conditions for intuitive expertise: a failure to disagree — formulerar de de två villkoren. För det första en miljö som är tillräckligt regelbunden för att vara förutsägbar: schackbrädet är det, liksom brandscener oftast. För det andra en möjlighet att lära sig dess regelbundenheter genom lång träning med snabb och tydlig feedback: brandmannen får veta på minuter om insatsen funkade, schackspelaren på sekunder om draget var fel. Finans som miljö manglas? hanterar båda villkoren uselt: sambanden är svaga och föränderliga, utfallen är dränkta i brus, och feedback kommer långsamt, förvrängt och förvanskat av tur — när den kommer alls. En bra aktieaffär kan ta år att värdera och kan aldrig värderas isolerat från marknadsläget. I en sådan miljö producerar System 1 samma känsla av säker igenkänning — men den har inget bibliotek att känna igen ifrån. Känslan är äkta; kunskapen är det inte."
+        },
+        {
+          "type": "text",
+          "content": "Kahneman är rak: det finns mycket litet bevis för pålitlig intuition i aktieval. Vad finns i stället? Affect heuristic — känslan av att man gillar en produkt eller en VD byts tyst ut mot en bedömning av aktien — och inlärning av fel lektioner: den som gjorde en lyckad spekulation i en nedgång lär sig att nedgångar är köptillfällen, av ren slump, och bär lektionen i tjugo år. Paul Meehls klassiska genomgång av kliniska mot statistiska förutsägelser — som Kahneman återkommer till ofta — visar att enkla formler i de flesta jämförelser slår experters intuition, även när experterna har all information formeln har. I lågvaliditetsmiljöer vinner rutinen hjärnan. Det är inte en förolämpning mot expertisen utan en beskrivning av vilken typ av expertis som är möjlig där."
+        },
+        {
+          "type": "text",
+          "content": "Vad gör man med sina magkänslor i marknaden? Man avskedar dem inte — man degraderar dem till hypoteser. En magkänsla är ett data om ditt eget sinne, inte om bolaget; den förtjänar att loggas, formuleras och testas — inte att lydas. Två konkreta regler: skilj domäner i ditt liv där du har snabb och tydlig feedback (ditt eget yrke, kanske) från domäner där du inte har det (aktieval, nästan säkert); och bygg medvetet långsam expertis där det går — smalt definierade domäner, loggade prognoser, kalibrering över tid. AKM1:s process — basfrekvenser, scenarier, skriftlig tes i /profil — är i grunden ett sätt att respektera Kleins och Kahnemans gemensamma slutsats: i en miljö som inte belönar intuition är den enda pålitliga expertisen expertisen på när man ska lita till processen i stället."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"När kan intuitionen litas på?\",\"rader\":[[\"Domän\",\"Miljö\",\"Feedback\",\"Dom\"],[\"Schack\",\"Stabila mönster i tiotusental\",\"Omedelbar\",\"Pålitlig efter års träning\"],[\"Brandmän\",\"Mönster ur erfarenhet\",\"Snabb och tydlig\",\"Ofta pålitlig\"],[\"NICU-sjuksköterskor\",\"Regelbundna symtommönster\",\"Verifieras efterhand\",\"Pålitlig med träning\"],[\"Aktieval\",\"Brusig, konkurrensutsatt, föränderlig\",\"Långsam, förvrängd, tur-färgad\",\"Degradera magkänslan till hypotes\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är inte om intuition existerar — den gör det, och den kan vara briljant. Frågan är vad den har för bibliotek att känna igen ifrån. Brandmannen har tusen bränder, schackmästaren femtiotusen positioner; investeraren har ett par decennier av händelser som aldrig upprepar sig och aldrig ger ren feedback. Utan bibliotek är intuition bara en känsla med självförtroende."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna upp domäner i ditt liv där du har snabb, tydlig feedback på dina bedömningar — och jämför med aktieval. Skriv därefter en magkänsla du bär på just nu om ett innehav, formulera den som en testbar hypotes med tidsram och vad som skulle vederlägga den. Logga den. Känslan förtjänar en rättegång, inte en avrättning eller en kröning."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur sammanfattade Herbert Simon intuition?",
+          "alternativ": [
+            "Intuition är ingenting mer och ingenting mindre än igenkänning",
+            "Intuition är förmedveten snabb beräkning",
+            "Intuition är en medfödd gåva hos vissa människor",
+            "Intuition är maskerad statistik"
+          ],
+          "ratt": 0,
+          "tips": "Vad gör schackmästarens hjärna med femtiotusel positioner?"
+        },
+        {
+          "q": "Vilka två villkor krävs enligt Kahneman och Klein för pålitlig expertisintuition?",
+          "alternativ": [
+            "Hög inkomst och genuint intresse för området",
+            "En tillräckligt regelbunden miljö plus lång träning med snabb och tydlig feedback",
+            "Förmåga till abstrakt tänkande och bra minne",
+            "Långa universitetsstudier inom området"
+          ],
+          "ratt": 1,
+          "tips": "Vad skiljer schackbrädet från aktiemarknaden på just de här två punkterna?"
+        },
+        {
+          "q": "Varför lyger intuitionen i finans enligt Kahneman?",
+          "alternativ": [
+            "Därför att kurserna är helt slumpmässiga och oförutsägbara i detalj",
+            "Därför att institutionella aktörer manipulerar priser",
+            "Därför att feedback kommer långsamt, brusigt och förvanskat av tur — fel lektioner lagras som igenkänning",
+            "Därför att privatpersoner saknar utbildning i finans"
+          ],
+          "ratt": 2,
+          "tips": "Hur snabbt och rent får du veta om ett köp var rätt?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Framing — 90 procent fettfri",
+      "intro": "Inramning är prospect theory tillämpad på språk: samma siffror, beskrivna som överlevnad i stället för dödlighet eller som magert i stället för fett, ger systematiskt olika beslut. Kapitlet går igenom kirurgi-experimentet, köttmärkningen och kalkylatorn mot jackan — och varför en professionell investerare behöver en standardram.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "McNeil, Pauker, Sox och Tversky lät 1982 patienter — och läkare — välja mellan kirurgi och strålbehandling vid lungcancer, med identisk statistik som enda skillnad var ordningen den presenterades i. I överlevnadsramen: av hundra patienter som opereras är nittio vid liv efter ingreppet, och så vidare nedåt. I dödlighetsramen: av hundra som opereras dör tio på operationsbordet. Samma siffror, spegelvänd nollpunkt. Andelen som valde kirurgi föll från 84 procent i överlevnadsramen till 56 procent i dödlighetsramen — och läkarna svängde lika mycket som patienterna. Detta är inramningens obekväma sanning: preferenser är inte stabila egenskaper i huvudet, de konstrueras i stunden utifrån hur frågan ser ut — och den som väljer ramar väljer beslut."
+        },
+        {
+          "type": "text",
+          "content": "Vardagsexemplen är lika täta. Levin och Gaeth lät försökspersoner bedöma och smaka på identiskt köttfärs märkt antingen 75 procent magert eller 25 procent fett — köttet med den positiva etiketten betygsattes som bättre och mindre fettigt, av människor som just hade ätit det. Thalers klassiska kalkylator-fråga: du ska köpa en kalkylator för 15 dollar och får höra att samma sak kostar 10 dollar mindre tjugo minuter bort — 68 procent kör dit. Samma person ska köpa en jacka för 125 dollar och får höra att den kostar 10 dollar mindre tjugo minuter bort — 29 procent kör. Besparingen är identisk, men den hamnar i olika mentala fack: mot en liten vara känns den enorm, mot en stor försumbar. Rationalitet per krona kräver att kronorna jämförs direkt — och det gör de sällan utan rutin."
+        },
+        {
+          "type": "text",
+          "content": "Investerarens ramar styr risktagandet mer än någon riskprofil enkät mäter. Att betala en avgift på en procent låter som ingenting; att höra att avgiften äter en tiondel av den förväntade realavkastningen låter som ett rån — samma kronor, olika ram. En daglig kursskrivning visar förlust nästan varannan dag; en årlig visar förlust ungeför vart fjärde år; en tioårsvisning knappt alls — samma portfölj, tre olika känslor, tre olika benägenheter att sälja i panik. Thaler och Benartzis forskning om valarkitektur visar samma mekanism: erbjuds anställda en färdig blandfond väljer de mer aktier än när de byggar portföljen linsk? linje för linje från ett tomt blad. Ramen avgör alltså inte bara hur det känns utan hur mycket risk som faktiskt tas — utan att någon ändrat en enda siffra i analysen."
+        },
+        {
+          "type": "text",
+          "content": "Motgiftet är en standardram, mekaniskt tillämpad — rakt av Kahnemans råd att beslutsfattare ska översätta allt till bred ram innan de beslutar. För varje beslut: översätt till andel av total portfölj; översätt till tioårshorisont; räkna efter avgift och inflation; formulera både vinst- och förlustsidan explicit (vad ser det här ut som om det blir ett misstag?). AKM1:s fasta analysmall fyller samma funktion mellan bolag: när varje bolag beskrivs i samma ram — samma V-variabler, samma tidsperioder, samma konservativa scenario — försvinner en hel kategori av omedvetna jämförelsefel. Standardramen är tråkig, och det är dess poäng: den tar framförandet ifrån den som vill sälja något."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ramar som styr\",\"rader\":[[\"Experiment\",\"Skillnad\",\"Investerarversionen\"],[\"Overlevnad mot dödlighet\",\"Kirurgivalet 84 mot 56 procent — bland läkare som bland patienter\",\"»Utdelning 4 procent« mot »inflationen äter 2 procent«\"],[\"75 procent magert mot 25 procent fett\",\"Samma kött bedömdes bättre och magrare med positiv etikett\",\"»Avgift 1 procent« mot »en tiondel av realavkastningen«\"],[\"Kalkylatorn mot jackan\",\"68 mot 29 procent kör för att spara samma 10 dollar\",\"Samma kronor i olika fack: courtage, courtage på stor? stora eller små affärer\"],[\"Dag mot år mot decennium\",\"Förlustfrekvens cirka 50 mot 25 mot under 10 procent\",\"Kort ram gör samma portfölj kännas farligare\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Inramning avslöjar att preferenser inte finns färdiga i huvudet — de tillverkas i mötet med formuleringen. Därför är den som väljer ramar mera mäktig än den som väljer argument: en förändring av nollpunkt kan flytta ett beslut som tjugo sidor analys inte rör. Professionella låter sig inte styras av den ram som råkar vara på skärmen; de översätter allt till sin egen, alltid."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta din nuvarande största portföljoro och formulerad? formulera den i tre ramar: vad den gör per dag, per år och per decennium, i kronor och i procent av total förmögenhet. Notera vid vilken ram din benägenhet att sälja eller köpa ändras. Den ramen — inte siffrorna — är din verkliga risktolerans just nu."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände i kirurgi-experimentet när statistiken beskrevs som dödlighet i stället för överlevnad?",
+          "alternativ": [
+            "Ingen skillnad — läkare och patienter räknade om siffrorna",
+            "Patienterna förstod inte statistiken och valde slumpvis",
+            "Läkarna påverkades inte alls, bara patienterna",
+            "Andelen som valde kirurgi föll från 84 till 56 procent — bland läkare som bland patienter"
+          ],
+          "ratt": 3,
+          "tips": "Samma tal — vad hände när nollpunkten i formuleringen byttes?"
+        },
+        {
+          "q": "Vad visade försöket med kött märkt 75 procent magert mot 25 procent fett?",
+          "alternativ": [
+            "Ingen skillnad alls i bedömning eller smak",
+            "Det identiska köttet betygsattes som bättre och mindre fettigt med den positiva etiketten",
+            "Etiketten försämrade smaken faktiskt",
+            "Försökspersonerna vägrade äta köttet med fettetikett"
+          ],
+          "ratt": 1,
+          "tips": "Vilken etikett satt på det kött som fick högst betyg?"
+        },
+        {
+          "q": "Vad är kärnan i motgiftet mot inramningseffekter i beslutsfattande?",
+          "alternativ": [
+            "Att alltid välja den positiva formuleringen eftersom den känns bäst",
+            "Att översätta varje beslut till en bred standardram — total portfölj, lång horisont, efter avgift och inflation",
+            "Att undvika alla procentsatser i analysen",
+            "Att följa magkänslan men snabbare"
+          ],
+          "ratt": 1,
+          "tips": "Vilken ram gör siffrorna jämförbara mellan olika beslut och tillfällen?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Mental redovisning och sjunkna kostnader",
+      "intro": "Hjärnan för inte ett konto — den för många: teaterfacket, semesterfacket, aktiefacket. Thaler kallade det mental redovisning, och det förklarar varför en förlorad biljett och ett förlorat sedelbunt? sedelknippe leder till olika beslut trots identisk kostnad. Tillsammans med sjunkna kostnader är det kapitlet om varför vi fortsätter betala för det som redan är förlorat.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tversky och Kahneman formulerade 1981 teaterförsöket: du ska se en föreställning och biljetten kostar tio dollar. Vid biljettkassetten upptäcker du att du tappat biljetten — köper du en ny? I det andra scenariot tappade du ett tiotalollar? en sedel på vägen till kassan — köper du biljetten? Kostnaden är identisk: tio dollar borta, föreställningen tio dollar. Ändå svarade 88 procent att de köper biljetten efter förlorade sedlar — men bara 54 procent efter en förlorad biljett. Skillnaden ligger i bokföringen: sedeln debiterade ett allmänt fack, biljetten redan det fulla teaterfacket, och ytterligare en biljett kändes som att betala dubbelpris för samma teater. Pengar är utbytbara i verkligheten och det? men inte i huvudets bokföring — och det är bokföringen som styr beslutet."
+        },
+        {
+          "type": "text",
+          "content": "Sjunkna kostnader är samma bokföringsfel i större skala: redan spenderade pengar får styra framtida beslut som de inte har något att göra med. Kahnemans exempel: en familj köper biljetter till en basketmatch långt bort, samma dag som en snöstorm drar in — de kör ändå, genom ovädret, därför att biljetterna redan är betalda. Skulle de köra om biljetterna varit gratis? Knappast. I företagsversionen heter fenomenet eskalation av åtagande och har sitt eget monument: Concorde-projektet, som britter och fransmän fortsatte finansiera långt efter att alla insåg olönsamheten — ekonomer kallar det Concordefallan. Kopplingen till V19 (kapitalförbrukning och emissionsrisk) är rak: bolag och styrelser som inte kan döda förlorande projekt bränner kapital tills marknaden tvingar fram emissioner. Kapitaldisciplin är i grunden en sjunkna kostnad-disciplin."
+        },
+        {
+          "type": "text",
+          "content": "Mental redovisning skapar också riskbeteenden i portföljen. House money-effekten: efter en stor vinst känns vinsten som husets pengar — fria att riskera — varför handeln blir vildare just när den borde vara försiktigare. Motsatsen: den som räknar utdelningen i ett förbrukningsfack vägrer samtidigt röra aktiens subs? substans, som om kontot vore heligt; samma krona, två helighetsgrader. Hedonic editing — att vilja separera vinster och bunta ihop förluster — gör att portföljen visar sig för behagligt i minnet och för fålt? för vant? för vasligt? för smått i verkligheten. Allt detta är varianter av samma grundfel: pengar som i verkligheten är perfekt utbytbara behandlas som olika sorters, med olika regler."
+        },
+        {
+          "type": "text",
+          "content": "Motgiften är en enda balansräkning och nollställd framtid. Konkret: för varje beslut — behålla, öka, avsluta, finansiera vidare — ställ den nollbaserade frågan: om jag inte redan ägde det här, skulle jag gå in idag på dessa villkor? Vid varje kvartal: räkna portföljen som en totalsumma i kronor och procent, inte som en samling fack med olika historia. Vid varje projekt eller position: skriv kill-kriterier vid start — nivåer och händelser där det avbryts — därför att kriterierna måste sättas innan pengarna spenderats och blev sjunkna. Pengar som redan är borta är borta; enda frågan som återstår är vad som ger bäst avkastning från och med nu. Det är hela disciplinen, och den är svårare än den låter exakt därför att den strider mot bokföringen i huvudet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mental redovisning — experiment och motgift\",\"rader\":[[\"Företeelse\",\"Experiment och resultat\",\"Motgift\"],[\"Teaterbiljetten\",\"Förlorad sedel: 88 procent köper; förlorad biljett: 54 procent\",\"Ett konto: total förmögenhet i kronor\"],[\"Snöovädret\",\"Betalda biljetter får familjen att köra i storm\",\"Nollbaserad fråga: vore det värt idag?\"],[\"Concordefallan\",\"Förlorande projekt finansieras vidare av redan gjorda satsningar\",\"Kill-kriterier vid start (V19-koppling)\"],[\"House money\",\"Efter vinst tas mer risk — vinsten känns fri\",\"Räkna allt som egna pengar, alltid\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Sjunkna kostnader är baklängesvänd rationalitet: pengar som redan spenderats ges rätten att styra framtida beslut, trots att ingen av dem kan fås tillbaka av att man fortsätter. Frågan vid varje beslut är därför alltid densamma — vad är bästa användning av kapitalet från och med nu? — och historiens enda legitim? legitima roll är att lära dig något om framtiden, aldrig att kräva upprättelse."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta ett innehav, projekt eller engagemang du den senaste tiden rättfärdigat med att du redan lagt ner så mycket tid eller pengar. Skriv ärendet som ett nytt förslag till en person utan historik: vad kostar det framåt, vad kan det ge, vad är alternativkostnaden? Låt den versionen rösta om saken — och notera hur annorlunda den röstar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade teaterbiljett-experimentet?",
+          "alternativ": [
+            "Båda grupperna var lika villiga att köpa — kostnaden var ju identisk",
+            "Ingen av grupperna köpte något efter en förlust",
+            "De som förlorat pengar köpte inte alls",
+            "De som förlorat sedlar köpte biljett oftare än de som förlorat biljetten — 88 mot 54 procent"
+          ],
+          "ratt": 3,
+          "tips": "Vilket mentalt fack debiteras av förlusten i de två fallen?"
+        },
+        {
+          "q": "Varför kör familjen till basketmatchen genom snöovädret?",
+          "alternativ": [
+            "Biljetternas kostnad är redan betald — den sjunkna kostnaden känns slösaktig att överge",
+            "Vägen är säkrare än den ser ut",
+            "De annars missar hela säsongen",
+            "Biljetterna går inte att sälja vidare"
+          ],
+          "ratt": 0,
+          "tips": "Skulle familjen kört samma resa om biljetterna hade varit gratis?"
+        },
+        {
+          "q": "Vad innebär kill-kriterier som motgift mot sjunkna kostnader?",
+          "alternativ": [
+            "Att budgeten höjs automatiskt när hälften är förbrukad",
+            "Att projektledaren ensam avgör när insatser ska avslutas",
+            "Att gränser för när ett projekt eller en position ska avbrytas sätts vid start — innan pengarna spenderats",
+            "Att ägarna röstar om varje fortsatt krona"
+          ],
+          "ratt": 2,
+          "tips": "När bestäms villkoren för att sluta — före eller efter att pengarna blivit sjunkna?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Peak-end och de två jaget — minnets fällor",
+      "intro": "Hur du minns en upplevelse bestäms inte av hur den var, utan av dess värsta ögonblick och dess slut. Det är peak-end-regeln, och bakom den ligger bokens djupaste idé: att det jag som upplever ditt liv och det jag som minns det är två olika. För portföljen betyder det att dina minnen av affärer är systematiskt felaktiga underlag för framtida beslut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Redelmeier och Kahneman följde på 1990-talet patienter genom koloskopi — då en utan bedövning ofta plågsam undersökning — och lät demlöpande? löpande skatta sitt obehag under ingreppet. Minnesbetyget efteråt förutsades av två punkter: smärttoppen och slutet. Längden spelade nästan ingen roll — duration neglect. Därför gjorde de det som låter omänskligt rationellt? nej, omänskligt etiskt? nej — de förlängde. I en randomiserad grupp lät man koloskopet ligga kvar omkring en extra minut i slutet, vilket var obekvämt men klart mildare än topparna. Patienterna i den förlängda gruppen — som objektivt fick mer totalt obehag — minns hela ingreppet som mindre plågsamt, och i uppföljningen flera år senare var det en tydligt större andel av dem som kom tillbaka till nästa kontroll. Slutet skrev om historien, och historien styrde beteendet."
+        },
+        {
+          "type": "text",
+          "content": "Laboratorieversionen är det kalla badet: försökspersoner höll handen i 14-gradigt vatten i sextio sekunder — och i andra omgången gjorde vissa detsamma plus trettio sekunder till i 15-gradigt vatten, något mildare men fortfarande obehagligt. Efteråt fick de välja vilket av de två baden de ville upprepa i ett tredje försök: nästan 70 procent valde det längre — femtio procent mer sammanlagt lidande — därför att det slutade lite bättre. Upplevelsejaget, som levde varje sekund, hade räknat tiden; minnesjaget, som valde, gjorde det inte. Kahneman drar slutsatsen utan omsvep: vi väljer inte mellan upplevelser — vi väljer mellan minnen av upplevelser. Och minnet är en partisk redaktör med tydliga preferenser: topp, slut, och en likgiltighet för längd som gränsar till förakt."
+        },
+        {
+          "type": "text",
+      "content": "För portföljen följer en obehaglig diagn? diagnos: ditt minne av en affär är en peak-end-komprimering, inte en avkastningsserie. Du minns köptillfällets eufori eller panik, den värsta drawdownen och utgångskursen — inte de sjutton lugna åren som utgjorde nästan hela avkastningen. Effekten är dokumenterad i stor skala av Malmendier och Nagel: generationer som upplevt dåliga aktietider bär med sig lägre risktagande i årtionden — det som kallas depression babies-effekten. Hela kohorter allokerar efter en topunkts- och slutregel de aldrig valt: 2008 års botten och rebound skriver om tio års historia i minnet, och beteendet 2028 styrs fortfarande av den redigeringen. Samma mekanism får en enda teknikkrasch att hålla en placerare borta från en tillgångsklass i tjugo år, och en enda lyckad spekulation att inge tjugo års övertagande? övermod."
+        },
+        {
+          "type": "text",
+          "content": "Motgiftet är att låta papperet minnas i stället för minnet. Det betyder konkret: logga beslut och utfall med siffror — realiserad avkastning, tidsvägd, mot jämförelseindex; skriv beslutsjournal i /profil vid varje transaktion; låt årsöversikten läsas ur underlagen, inte ur minnet; och granska externa förvaltare och strategier på helperiodens data, aldrig på deras berättelse om sig själva (som alltid är peak-end-redigerad). Kahneman summerar själv klyftan i en av bokens mest citerade meningar — jag är mitt minnesjag, och upplevelsejaget, som sköter mitt levande? lever mitt liv, är som en främling för mig. Portföljteknikens uppgift är att ge främlingen en röst: siffrorna är dess vittnesmål, och utan dem tiger det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Minnets räkenskap\",\"rader\":[[\"Experiment\",\"Resultat\",\"Portföljläxa\"],[\"Koloskopin med förlängt slut\",\"Hela ingreppet minns mildare — fler återkommer till kontrollen\",\"Sista intrycket dikterar historien om en affär\"],[\"Det kalla badet, 60+30 sekunder\",\"Nästan 70 procent valde att upprepa det längre badet\",\"Upplevelsejaget räknar tid — minnesjaget gör det inte\"],[\"Duration neglect\",\"Minnets betyg ignorerar längden\",\"Avkastning per år måste räknas, inte minns\"],[\"Depression babies\",\"Upplevda krascher sänker risktagande i årtionden\",\"Generationer allokerar efter peak-end-redigering\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Minnet av en affär är inte affären. Det är en komprimering av det värsta ögonblicket och slutet — och den komprimeringen sitter sedan i styrbåten för alla framtida beslut i samma tillgångsklass. Den enda kända motåtgärden är extern lagring: journal, siffror, daterade dokument. Minnet är en redaktör; se till att originalet finns arkiverat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ur minnet historien om din bästa och din sämsta affär: vad hände, hur kändes det, vad var felet eller vitsen? Öppna därefter underlagen: kurser, datum, realiserade siffror. Notera var minnet lagt till dramatik, tonat ner längd eller bytt orsak. Spara skillnaderna — de är din personliga peak-end-kalibrering."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var effekten av att förlänga koloskopin med en mildare minut i slutet?",
+          "alternativ": [
+            "Patienterna minns hela ingreppet som mindre obehagligt — och en större andel återkom till nästa kontroll",
+            "Patienterna minns mer totalt obehag eftersom ingreppet var längre",
+            "Ingen skillnad i minne, bara i längd",
+            "Patienterna vägrade delta igen oavsett grupp"
+          ],
+          "ratt": 0,
+          "tips": "Vad väger tyngst i minnet — total längd eller slutet?"
+        },
+        {
+          "q": "Vad valde majoriteten i det kalla bad-experimentet när de fick upprepa ett av två bad?",
+          "alternativ": [
+            "Alla valde det korta badet",
+            "Majoriteten kunde inte bestämma sig",
+            "Resultaten var rena slumptal",
+            "Nästan 70 procent valde det längre badet — trots mer sammanlagt obehag"
+          ],
+          "ratt": 3,
+          "tips": "Vilket av de två jag höll i pennan när valet gjordes — och vilket av dem räknade sekunderna?"
+        },
+        {
+          "q": "Vad är skillnaden mellan upplevelsejaget och minnesjaget?",
+          "alternativ": [
+            "Upplevelsejaget lever nuet och räknar varje sekund; minnesjaget berättar, bedömer och väljer — och ignorerar varaktighet",
+            "De är samma jag i två olika åldrar",
+            "Minnesjaget lever i nuet medan upplevelsejaget planerar",
+            "Upplevelsejaget fattar alla beslut medan minnesjaget bara minns"
+          ],
+          "ratt": 0,
+          "tips": "Vem av de två fattade beslutet i badexperimentet — och vem hade faktiskt upplevt mest?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Utanförperspektivet — basfrekvenser före detaljer",
+      "intro": "När Kahnemans team skulle skatta tiden för att skriva klart ett läromedel gissade alla omkring två år — trots att statistiken över liknande projekt sa sju år, och att gruppen själv kände till den statistiken. Detta är insidarperspektivets makt, och kapitlet handlar om motgifet: utanförperspektet, basfrekvenser före detaljer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Året var några decennier? vid det tillfället — Kahneman ledde ett team som skulle ta fram ett läromedel i omdömespsykologi, med kurriculum och text. Efter ett års arbete samlades gruppen för att skatta återstående tid. Alla — inklusive Kahneman — landade kring två till två och ett halvt år. Då ställde Kahneman den fråga som gett namn åt ett helt tankesätt till en kollega som skrivit liknande böcker: hur länge tog det för andra team som gjort motsvarande? Svaret: i genomsnitt omkring sju år — och omkring fyra av tio avslutade aldrig. Gruppen visste detta, hade just hört det, och fortsatte ändå arbeta på insidarantagandet att de var annorlunda. Boken tog åtta år att skriva klart. Alla i rummet begick samma fel: de behandlade sin egen story som information och fördelningen som irrelevant — WYSIATI i projektformat."
+        },
+        {
+          "type": "text",
+          "content": "Mönstret kallas planeringsfällen? planeringsfallet, och Kahneman noterar att det är standardhos? standard hos alla som gör prognoser i projekt: man gör ett bästa-scenario och läser det som mest sannolika, utan att fråga fördelningen av faktiska utfall. Effekten är mätbar i allt från köksrenoveringar till infrastruktur — Flyvbjergs forskning om megaprojekt visar systematiska överskridanden i tid och kostnad som referensklassbaserade prognoser kunnat minska, när man i stället för unik story använder utfallsfördelningen hos liknande projekt som baslinje. Paradoxen är att utifrånperspektet? utanförperspektet inte kräver mer information — det kräver bara att man frågar efter den som redan finns. Gruppen i Kahnemans projekt hade all data de behövde i rummet, från en medlem som bar på den. Ingen frågade på rätt sätt."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till fundamental analys är täta? tät: basfrekvenser före detaljer. Innan en tillväxtbedömning (V01/V02) formas av bolagets egen story — pipeline, orderingläge, expandionsplaner — ska frågan vara: hur stor andel bolag i denna kategori har faktiskt levererat den tillväxten i fem år? Mauboussins basfrekvenser, som Expectations Investing-kursen arbetar med systematiskt, ger svaret för de flesta kategorier: andelen är liten. Detta är också regressionens? regression-kapitlets budskap i prognosform: fördelningen är baslinjen, och avståndet från den kräver dokumenterade strukturella orsaker — moats (V13–V15), kapitaldisciplin — inte adjektiv. Samma logik gäller ens egna projekt: tiden för nästa djupdykning, nästa modell, nästa portföljomläggning skattas alltid bäst mot hur länge de tog sist — inte mot hur det känns denna gång."
+        },
+        {
+          "type": "text",
+          "content": "Metoden i fyra steg, Kahnemans egen formulering: identifiera referensklassen — vilken kategori av projekt eller bolag är detta egentligen en instans av? Hämta fördelningen av utfall i den klassen — tid, kostnad, avkastning, tillväxt, överlevnad. Sätt fördelningens medelvärde eller median som baslinje i prognosen. Justera därefter för det specifika — men med respekt för att specifika argument nästan aldrig förtjänar så stor justering som de känns värda. Två konkreta verktyg i AKM1-sammanhang: skriv alltid basfrekvensraden först i analysen, före bolagsbeskrivningen; och låt reverse-testet gå utanför? (från Expectations Investing) avgöra om marknadens inbakade krav ligger över eller under vad klassen historiskt levererat. Det är billigaste? den billigaste kända medicinen mot både planeringsfallet och tillväxtromantiken."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Insidarperspektiv mot utanförperspektiv\",\"rader\":[[\"Steg\",\"Insidarperspektivet\",\"Utanförperspektivet\"],[\"Startpunkt\",\"Egen story, egna detaljer\",\"Referensklassen och dess utfallsfördelning\"],[\"Läroboksprojektet\",\"Skattning cirka 2 år — medvetna om statistiken\",\"Klassen: i snitt 7 år, 40 procent avslutade aldrig\"],[\"Utfall\",\"8 år\",\"—\"],[\"Tillväxtbedömning\",\"Pipeline och story (V01/V02)\",\"Basfrekvens: hur många i kategorien levererar?\"],[\"Justering\",\"Storyn får styra\",\"Fördelningen är baslinje — moats (V13–V15) dokumenterar avstånd\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Utanförperspektet känns orättvist därför att det förnekar det unika i just ditt projekt, just ditt bolag, just din analys. Det är precis vad det ska göra: referensklassen säger inte att ni är som alla andra — den säger att sannolikheten för att ni inte är det måste bokföras som avstånd från en baslinje, inte som utgångspunkt. Det som känns som pessimism är bara aritmetik i rätt ordning: fördelningen först, storyn sen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en pågående uppskattning i ditt liv — tiden till nästa färdig analys, en portföljförändring eller ett projekt. Fråga tre personer? nej — fråga dig själv: när jag gjorde detta senast, hur lång tid tog det i verkligheten, och hur länge trodde jag då? Skriv baslinjen först, justera därefter med skäl — och behåll båda siffrorna synliga tills utfallet finns."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad sa utanförperspektet om läromedelsprojektet när Kahneman frågade kollegan med erfarenhet?",
+          "alternativ": [
+            "Cirka två år — gruppen hade rätt",
+            "Cirka fyra år",
+            "I genomsnitt omkring sju år för liknande team — och omkring 40 procent avslutade aldrig",
+            "Projektet borde avbrytas omedelbart"
+          ],
+          "ratt": 2,
+          "tips": "Vad sa statistiken över andra team som gjort motsvarande — och vad visste gruppen om den?"
+        },
+        {
+          "q": "Hur lång tid tog det i verkligheten för Kahnemans team att slutföra boken?",
+          "alternativ": [
+            "Tre år",
+            "Fem år",
+            "Åtta år",
+            "Projektet avbröts och publicerades aldrig"
+          ],
+          "ratt": 2,
+          "tips": "Gruppens egen skattning var omkring två år — och den kända statistiken sju."
+        },
+        {
+          "q": "Vad är den korrekta ordningen i utanförperspektet som metod?",
+          "alternativ": [
+            "Välj referensklass, hämta utfallsfördelningen, använd den som baslinje, justera därefter med det specifika",
+            "Börja i detaljerna och arbeta uppåt mot kategorin",
+            "Fråga experterna om deras känsla för projektet",
+            "Gör känslighetsanalys på de egna antagandena"
+          ],
+          "ratt": 0,
+          "tips": "Vad behöver komma först — din story eller fördelningen?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 10,
+      "title": "Replikationskrisen — vad som höll och vad som föll",
+      "intro": "Kahneman har öppet medgett att han satt för stor tro på underdimentionerade studier: »I placed too much faith in underpowered studies«. En bokmaster-kurs om Tänka snabbt och långsamt som inte berättar detta vore自身? själv ett exempel på bokens farkoster? — ett WYSIATI. Kapitlet skiljer mellan det som replikerats robust och det som fallit, och visar varför de robusta biasarna räcker för att motivera AKM1:s strukturerade checklista.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden är välkänd: under 2010-talet växte replikationskrisen när stora, förregistrerade projekt försökte upprepa klassiska psykologiska fynd och många misslyckades. Kahneman reagerade tidigt — redan 2012 varnade han i ett öppet brev till priming-forskare om »a train wreck looming« — och 2017 formulerade han sin egen dom över sina kapitel: »I placed too much faith in underpowered studies«, jag satte för stor tro på studier med för liten statistisk kraft. Det är en anmärkningsvärd gest: bokens egen författare identifierar vilka delar av sitt verk som inte bar. För en kursbyggare? för en investerare är det inte ett skäl att kasta boken — det är en masterklass i den intellektuella ärlighet boken själv predikar, och en påminnelse om att ens eget arbete ska granskas med samma hårda? samma hårdhet som andras."
+        },
+        {
+          "type": "text",
+          "content": "Vad föll då? Främst social priming — den gren som handlar om att subtila stimuli styr beteende omedvetet. Ordlistor med ålderdomliga ord som fått försökspersoner att gå långsammare (Bargh 1996) kunde inte upprepas när Doyen och kolleger styrde för förväntningar 2012; professor-priming som påverkade minnesprestation föll i replikationsförsök; penga-priming-studierna (Vohs) föll i en stor genomgång 2023. Ansiktsåterkopplingen — penn-i-munnen som skulle göra en gladare — föll i Wagenmakers stora replikering 2016, även om senare stora samarbetsstudier funnit små eller blandade effekter för poserade leenden. Ego depletion — idén att självkontroll är en muskel som tröttas, som Kahneman refererat till — föll i stort sett i den förregistrerade multisite-replikeringen 2016, där effekten var nära noll. Mönstret är tydligt: effekter som krävde subtil laboratoriepåverkan utan direkt mätning har det sämst."
+        },
+        {
+          "type": "text",
+          "content": "Vad höll? Kärnan i den här kursen. Förankring är ett av psykologins mest robusta fynd — i stora replikeringsprojekt som Many Labs hör ankareffekterna till de allra största och stabilaste resultaten, med effekter som upprepas över miljöer och populationer. Inramningseffekter (överlevnad mot dödlighet) replikerar starkt; konjunktionsfelet i Linda-problemet replikerar; basfrekvens-försummelsen replikerar; förlustaversion och endowment-effekten har stöd i upprepade experiment och fältdata (Odeans dispositionsmönster har bekräftats i flera marknader och decennier); gambler's fallacy, sunk cost-effekter och peak-end-mönster i minnesbedömningar har alla replikerats i väsentliga delar. Övertron är fältets? dess mest svårfalsifierade? nej — övertron är dessutom närmast meta-stabil: replikationskrisen själv, där forskare och lekmän länge vägrade tro att klassiska fynd kunde falla, är ett friskt exempel på hur svårt vi har att tro om vår egen? att vi kan ha fel om sådant vi känt oss säkra på."
+        },
+        {
+          "type": "text",
+          "content": "Vad betyder det för investeraren? Tre slutsatser. För det första: ignorera priming-kapitlen i praktisk tillämpning — de spelar ingen roll för din portfölj. För det andra: de robusta mekanismerna räcker gott för att motivera all struktur — förankringen motiverar egen uppskattning först och reverse-DCF; förlustaversionen och inramningen motiverar bred ram och standardmall; dispositionseffekten motiverar symmetriska försäljningskriterier; regressionen och utanförperspektet motiverar basfrekvenser före detaljer. AKM1:s checklista och /profil-loggen är byggda på exakt denna robusta kärna. För det tredje — och det är replikationskrisens egen gåva: utveckla kraven på evidens. Fråga om effekter som styr dina beslut är replikerade, hur stora de är (effektstorlek, inte bara signifikans), och om de mätts direkt i fältdata eller bara i subtila laboratorieuppsättningar. En investerare som gör det med beteendeforskning gör det sannolikt också med aktieforskning — och det är hela poängen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Replikationsstatus — vad som höll och vad som föll\",\"rader\":[[\"Fynd\",\"Status\",\"Investeringsrelevans\"],[\"Förankring (rouletthjul, listpris)\",\"Robust — bland de starkaste effekterna i stora replikationsprojekt\",\"Egen uppskattning först; reverse-DCF (V04/V06)\"],[\"Förlustaversion och endowment\",\"Robust i experiment och fältdata\",\"Bred ram; symmetriska kriterier; disposition-diagnostik\"],[\"Inramning (överlevnad mot dödlighet)\",\"Robust\",\"Standardmall; båda ramar explicit\"],[\"Konjunktionsfelet, basfrekvens-försummelse\",\"Robust\",\"Strippa pitchar; basfrekvens före story (V01/V02)\"],[\"Social priming (ålderdomliga ord, pengar)\",\"Föll i replikeringar\",\"Ignorera i praktiken\"],[\"Ego depletion i originalform\",\"Föll i stor förregistrerad replikering\",\"Bygg inte disciplin på viljestyrka — bygg den på rutiner\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kahnemans självkritik är inte bokens dödsdom utan dess sista bevis: när författaren själv pekar ut vilka kapitel som inte höll — och gör det med samma metodkritik han lärt ut — är resten mer trovärdig, inte mindre. Replikationskrisens läxa för investeraren är större än priming: kräv replikering, effektstorlek och fältdata — av forskningen och av dig själv."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå tillbaka till beslutsjournalen från kapitel 1 och prognoslistan från kapitel 7. Bedöm den som en replikationsstudie i skala: hur många beslut bygger på mönster du faktiskt sett upprepas i dina egna data — och hur många på en enda minnesbild? Skriv en rad om vad du skulle kräva för att lita på ditt eget signatur-mönster. Det är din privata Many Labs."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka av bokens effekter hör till de mest robusta i replikeringsforskningen?",
+          "alternativ": [
+            "Förankring, förlustaversion och inramning — bland de stabilaste resultaten i stora replikeringsprojekt",
+            "Social priming med ordlistor",
+            "Ego depletion i originalform",
+            "Penga-priming"
+          ],
+          "ratt": 0,
+          "tips": "Vilka effekter visade de största och mest upprepbara effektstorlekarna i Many Labs-studierna?"
+        },
+        {
+          "q": "Vilka fynd tillhör dem som i huvudsak föll i replikeringarna?",
+          "alternativ": [
+            "Konjunktionsfelet och Linda-problemet",
+            "Basfrekvens-försummelsen",
+            "Ordliste-priming och penga-priming samt ego depletion i originalform",
+            "Förankring och förlustaversion"
+          ],
+          "ratt": 2,
+          "tips": "Det som föll krävde subtil påverkan utan direkt mätning — vad i listan passar den beskrivningen?"
+        },
+        {
+          "q": "Vad var Kahnemans egen hållning till bokens svagare kapitel?",
+          "alternativ": [
+            "Han försvarade priming-kapitlen till det sista",
+            "Han medgav offentligt att han satt för stor tro på underdimentionerade studier — »I placed too much faith in underpowered studies«",
+            "Han drog tillbaka hela boken från försäljning",
+            "Han skyllde på översättningar och media"
+          ],
+          "ratt": 1,
+          "tips": "Han varnade tidigt om en förestående tågolycka — och dömde sedermera sina egna kapitel."
+        }
+      ]
+    }
+  ]
+}

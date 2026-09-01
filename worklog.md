@@ -3189,3 +3189,23 @@ Work Log:
 Stage Summary:
 - F1 (kognitiv profilering) är nu LIVE — grunden för adaptiv inlärning
 - Nästa: F2 adaptiv motor (DDA, multimodalt) eller F3 Adversarial AI
+---
+Task ID: 103-QUIZ-ALLA-KURSER
+Agent: main (Z.ai Code)
+Task: Quiz för ALLA 227 kurser — 3573 frågor — KursSteg aktiverad överallt
+
+Work Log:
+- Automatisk quiz-generator: läser kapiteltext, matchar 25+ finansbegrepp
+  (omsättning, ROE, moat, marginal of safety, ARR, backlog, net-nets, CAGR...),
+  genererar 3 frågor per kapitel (definition + tillämpning + konceptuell)
+- 226 kurser som saknade quiz har nu fått det automatiskt
+- TOTALT i systemet: 3573 quizfrågor → +10 XP per rätt = 35 730 XP möjliga
+- KursSteg aktiveras för alla: progress-ring, kapitelpunkter, quiz-knapp,
+  troféer, 'Nästa kapitel'-knapp
+- Byggt: 708 statiska sidor grönt, prod verifierad
+
+Stage Summary:
+- FRÅN: 1 kurs med quiz (Graham) → TILL: 227 kurser med quiz
+- FRÅN: 63 frågor → TILL: 3573 frågor (57x ökning)
+- Alla kurser får nu: kapitel-för-kapitel stepper + visuell progress + quiz
+- Nästa: F2 adaptiv motor (DDA, multimodalt) eller F3 Adversarial AI

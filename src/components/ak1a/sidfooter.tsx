@@ -26,6 +26,7 @@ const KOLUMNER: FooterKolumn[] = [
     ikon: "🔬",
     punkter: [
       { text: "AKM1-kalkylatorn", lank: "/kalkylator" },
+      { text: "Vågfundamentet", lank: "/vagfundament" },
       { text: "Superanalysen", lank: "/superanalys" },
       { text: "Min portfölj", lank: "/min-portfolj" },
       { text: "Analyser", lank: "/analyser" },

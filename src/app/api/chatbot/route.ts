@@ -17,7 +17,7 @@ export const dynamic = "force-dynamic";
 
 type Intent = {
   typ: "navigering" | "utbildning" | "analys" | "portfölj" | "inspiration" | "hjälp" | "system";
-  handlings: Array<{ text: string; lank: string; ikon: string }>;
+  handlings: Array<{ text: string; lank: string; ikon: string; beskrivning?: string }>;
 };
 
 function byggKontext(sokvag: string): Record<string, unknown> {
@@ -132,6 +132,78 @@ function navigera(fraga: string): Intent | null {
   return null;
 }
 
+/**
+ * VÅGFUNDAMENT — fundamentalvågor enligt P7-protokollet (VAGFUNDAMENT-SPEC).
+ * P8-sekretess: här lever ENDAST terminologi, svarsstruktur och beteenden —
+ * inga klassificeringströsklar, formler eller bekräftelseregler (de stannar i motorn).
+ */
+function vagfundamentSvar(
+  fraga: string
+): { svar: string; handlings: Array<{ text: string; lank: string; ikon: string }> } | null {
+  const q = fraga.toLowerCase();
+
+  const triggar =
+    /vågfundament|fundamentalvåg|fundamental våg|variabelns våg|vågklass|vågmatris|våg-matris|divergens|20\s*[×x]\s*5/.test(q) ||
+    (/våg/.test(q) && (/v\d{2}/.test(q) || /mikro|medellång|mega|horisont/.test(q)));
+  if (!triggar) return null;
+
+  const VF_VARIABLER: Record<string, string> = {
+    V01: "Försäljningstillväxt", V02: "ARR-tillväxt", V03: "Intäktsdiversifiering",
+    V04: "P/S", V05: "P/B", V06: "EV/EBITDA",
+    V07: "Bruttomarginal", V08: "EBITDA-marginal", V09: "ROE",
+    V10: "Skuldsättningsgrad", V11: "Likviditet", V12: "Intäktsstabilitet",
+    V13: "Patent & IP", V14: "Varumärke & Kundlojalitet", V15: "Nätverkseffekter",
+    V16: "Produktlanseringar", V17: "Avtal & Partnerskap", V18: "Regulatoriska katalysatorer",
+    V19: "Kapitalförbrukning & Emission-risk", V20: "Återköp",
+  };
+
+  const vMatch = q.match(/v(\d{2})/);
+  const vId = vMatch ? `V${vMatch[1]}` : null;
+  const vNamn = vId ? VF_VARIABLER[vId] : undefined;
+
+  // Obs: "medellång" innehåller "lång" — testa i rätt ordning
+  const horisont = /medellång/.test(q)
+    ? "medellång"
+    : /mikro/.test(q)
+      ? "mikro"
+      : /mega/.test(q)
+        ? "mega"
+        : /kort/.test(q)
+          ? "kort"
+          : /lång/.test(q)
+            ? "lång"
+            : null;
+
+  const rad = vId
+    ? `Du frågar om ${vNamn ? `${vId} ${vNamn}` : `variabeln ${vId}`}${horisont ? ` på horisonten ${horisont}` : " — den har en egen våg per horisont"}.`
+    : horisont
+      ? `Du frågar om horisonten ${horisont} — varje variabel har sin egen våg där.`
+      : `Varje AKM1-variabel (V01–V20) har sin egen våg på fem horisonter: mikro, kort, medellång, lång och mega.`;
+
+  const divergensText = /divergens/.test(q)
+    ? `\nDivergens: när fundamentalvågen och prisvågen pekar olika (t.ex. fundamental ▲ men pris ▼) är det en värde-signal att studera — aldrig en köp- eller säljsignal.`
+    : "";
+
+  const svar = `[VÅGFUNDAMENT] Källa: Vågfundamentet — AKM1:s 20 variabler som tidsserier (20×5-matrisen).
+${rad}
+Vågklasser (varje cell = variabel × horisont):
+• ▲ impulsvåg — fundamentalen rör sig uppåt: variabeln förbättras
+• ▼ korrigering — fundamentalen rör sig nedåt: variabeln försvagas
+• ◼ basbygge — fundamentalen ligger still och samlar kraft
+• · osatt — för lite historik för att vågen ska kunna klassas; ärlig utdata, aldrig påhittad${divergensText}
+Exakta celler läser du i matrisen på /vagfundament — jag citerar bara det som redovisas, aldrig mer.
+Pedagogisk analys — inte investeringsråd.`;
+
+  return {
+    svar,
+    handlings: [
+      { text: "Öppna 20×5-matrisen →", lank: "/vagfundament", ikon: "🌊" },
+      ...(vId ? [{ text: `Se ${vId} i kalkylatorn →`, lank: "/kalkylator", ikon: "🧮" }] : []),
+      { text: "Ekosystem-kursen →", lank: "/kurser/portfolj-ekosystemet", ikon: "📊" },
+    ],
+  };
+}
+
 /** AKM1-variabel svar med handlings-knappar */
 function akm1Svar(fraga: string): { svar: string; handlings: Array<{ text: string; lank: string; ikon: string }> } | null {
   const q = fraga.toLowerCase();
@@ -195,13 +267,19 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 1) AKM1-variabel svar — alltid deterministiskt (exakta formler, noll hallucination)
+    // 1) VÅGFUNDAMENT — fundamentalvågor enligt P7 (citera exakt, aldrig extrapolera)
+    const vf = vagfundamentSvar(q);
+    if (vf) {
+      return NextResponse.json({ ...vf, kalla: "Vågfundamentet — P7-protokollet", typ: "utbildning" });
+    }
+
+    // 2) AKM1-variabel svar — alltid deterministiskt (exakta formler, noll hallucination)
     const akm1 = akm1Svar(q);
     if (akm1) {
       return NextResponse.json({ ...akm1, kalla: "AKM1-ekosystem", typ: "utbildning" });
     }
 
-    // 2) Navigering
+    // 3) Navigering
     const nav = navigera(q);
     if (nav) {
       return NextResponse.json({
@@ -212,7 +290,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 3) Varumärke
+    // 4) Varumärke
     if (/vem är|vad är.*(sam|ak1|alkamesi|nvestor)/i.test(q)) {
       return NextResponse.json({
         svar: `Sam Alkamesi är grundaren av AK1nvestor.com. AK1A Research Lab (lab.ak1nvestor.com) är plattformen: ${Object.keys(getCourses()).length} kurser, analyser, portföljsystem och AI-mentor — allt bygger på AKM1 + AK1TS-ekosystemet. Fas 1 är alltid gratis.`,
@@ -225,7 +303,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 4) Proaktivt nästa steg
+    // 5) Proaktivt nästa steg
     const kurser = Object.values(getCourses());
     const ord = q.toLowerCase().split(/\s+/).map((w) => w.replace(/[^a-z0-9åäö\/\-]/g, "")).filter((w) => w.length > 2);
     const poang = new Map<string, number>();
@@ -242,7 +320,7 @@ export async function POST(req: NextRequest) {
     const topp = [...poang.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
     const relevanta = topp.map(([slug]) => kurser.find((k) => k.slug === slug)!).filter(Boolean);
 
-    // 4b) Z.ai GLM-läge — fritt formulerat pedagogiskt svar, GROUNDAT i kurserna
+    // 5b) Z.ai GLM-läge — fritt formulerat pedagogiskt svar, GROUNDAT i kurserna
     if (zaiAktiv()) {
       const kurserKontext = relevanta.length > 0
         ? relevanta.map((k) => `- /kurser/${k.slug} — ${k.title}: ${(k.learn || "").slice(0, 200)}`).join("\n")
@@ -259,6 +337,7 @@ REGELVERK:
 3. HITTA PÅ ALDRIG formler eller siffror du inte är säker på — säg istället "räkna exakt i kalkylatorn".
 4. Avsluta med en konkret nästa handling (kurs, kalkylatorn, quiz eller portföljen).
 5. Eleven befinner sig nu på: ${sokvag || "/"} — anpassa svaret.
+6. VÅGFUNDAMENT (fundamentalvågor/vågklass/våg för en V-variabel): källan är "Vågfundamentet — AKM1:s 20 variabler som tidsserier" — AKM1-variabeln är en tidsserie med en egen våg per horisont (mikro, kort, medellång, lång, mega) i 20×5-matrisen. Vågklasser: impulsvåg ▲ (fundamentalen förbättras), korrigering ▼ (försvagas), basbygge ◼ (samlar kraft), osatt · (för lite historik). P7-regler att följa: (a) citera celler exakt som de redovisas i matrisen; (b) extrapolera ALDRIG utanför osatta celler — osatt betyder osatt; (c) påtala divergens mellan fundamental våg och prisvåg när båda nämns (värde-signal att studera, aldrig köp/sälj); (d) avsluta alltid med disclaimern "pedagogisk analys — inte investeringsråd" och hänvisa till /vagfundament.
 
 KURSMATCHNINGAR (grounding — lär dig från dessa, länka dem):
 ${kurserKontext}`,
@@ -304,7 +383,7 @@ ${kurserKontext}`,
       });
     }
 
-    // 5) Fallback med proaktiva förslag
+    // 6) Fallback med proaktiva förslag
     return NextResponse.json({
       svar: "Jag kan hjälpa dig med allt på sajten. Här är nästa steg baserat på var du är:",
       handlings: [

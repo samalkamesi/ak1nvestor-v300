@@ -2,22 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { besok, titelFranSida } from "@/lib/navigationsminne";
 
 type Post = { path: string; t: number };
-
-function titelFranPath(path: string): string {
-  const d = path.replace(/^\//, "").split("/");
-  if (d[0] === "kurser" && d[1]) {
-    const slug = d[1].replace(/-/g, " ");
-    return `Kurs: ${slug.charAt(0).toUpperCase() + slug.slice(1)}`;
-  }
-  if (d[0] === "blogg" && d[1]) return `Artikel: ${d[1].replace(/-/g, " ").slice(0, 40)}`;
-  if (d[0] === "analyser" && d[1]) return `Analys: ${d[1].toUpperCase()}`;
-  if (d[0] === "labb" && d[1]) return "Case i labbet";
-  if (d[0] === "kalkylator") return "AKM1-kalkylatorn";
-  if (d[0] === "min-portfolj") return "Min portfölj";
-  return path;
-}
 
 function ikonFranPath(path: string): string {
   if (path.startsWith("/kurser")) return "📚";
@@ -29,29 +16,28 @@ function ikonFranPath(path: string): string {
   return "🔹";
 }
 
-/** "Fortsätt där du slutade" — läser lokal besökshistorik (endast i din browser). */
+/** "Fortsätt där du slutade" — läser navigationsminnet (fallback: äldre ak1a-senaste). */
 export function FortsattPanel({ exkluderaAktuell = false }: { exkluderaAktuell?: boolean }) {
   const [poster, setPoster] = useState<Post[]>([]);
 
   useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
+    try {
+      // Nya minnet först (har läsbara titlar), sedan äldre format som fallback
+      const nya = besok().map((b) => ({ path: b.sida, t: b.tid }));
+      let lista: Post[] = nya;
+      if (nya.length === 0) {
         const rå = localStorage.getItem("ak1a-senaste");
-        let lista: Post[] = rå ? JSON.parse(rå) : [];
-        // unika paths, senaste först, aktuell sida exkluderad
-        const ses = new Map<string, number>();
-        for (const p of lista) if (!exkluderaAktuell || p.path !== location.pathname) ses.set(p.path, p.t);
-        const ut = [...ses.entries()]
-          .sort((a, b) => b[1] - a[1])
-          .slice(0, 4)
-          .map(([path, t]) => ({ path, t }));
-        if (!cancelled) setPoster(ut);
-      } catch {}
-    })();
-    return () => {
-      cancelled = true;
-    };
+        lista = rå ? JSON.parse(rå) : [];
+      }
+      // unika paths, senaste först, aktuell sida exkluderad
+      const ses = new Map<string, number>();
+      for (const p of lista) if (!exkluderaAktuell || p.path !== location.pathname) ses.set(p.path, p.t);
+      const ut = [...ses.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4)
+        .map(([path, t]) => ({ path, t }));
+      setPoster(ut);
+    } catch {}
   }, [exkluderaAktuell]);
 
   if (poster.length === 0) return null;
@@ -69,7 +55,7 @@ export function FortsattPanel({ exkluderaAktuell = false }: { exkluderaAktuell?:
               className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-gold/10"
             >
               <span>{ikonFranPath(p.path)}</span>
-              <span className="min-w-0 flex-1 truncate">{titelFranPath(p.path)}</span>
+              <span className="min-w-0 flex-1 truncate">{titelFranSida(p.path)}</span>
               <span className="text-[10px] text-muted-foreground">
                 {new Date(p.t).toLocaleDateString("sv-SE")}
               </span>

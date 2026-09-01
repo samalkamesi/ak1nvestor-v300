@@ -1171,6 +1171,18 @@ Task: Kapacitets-checkpoint — spara fortsättningsinfo för ny konversation
 
 ## ⚡ FORTSÄTT HÄR (ny konversation: läs bara detta block)
 
+### UPPDATERAT 2026-09-01 (sent) — meny-vågen + Vågfundament
+
+**Skala:** 285 kurser · 6 108 quiz · 779 sidor · 56/101 kanon · 58 BOKMASTER + 2 EKOSYSTEM-flaggskepp.
+
+**Senaste landat (commits c4c5335 + 0bb9d3d, pushade main+develop):**
+1. **Världsklass-menysystem:** Kommandopalett ⌘K/Ctrl+K+`/` (global i layout.tsx — söker alla sidor+verktyg+285 kurser, grupperat, tangentravigering, "senast besökta"); `src/lib/navigationsminne.ts` (mönsterigenkänning, localStorage ak1a:navigationsminne); Fortsätt-chip i huvudmenyn; NastaSteg-kort på alla SeoPageShell-sidor; Mobilmeny (fullskärmsdrawer, XP/streak-chips); Sidfooter (4-kolumners sitemap); FortsattPanel läser nu navigationsminnet (fallback ak1a-senaste). SPA-headerns ⌘K+ikon → `ak1a:oppna-sok`-event (ENHETLIG palett hela sajten).
+2. **VÅGFUNDAMENT LEVERERAT E2E** (storvisionen "indikatorer är tidsserier"): `scripts/vagfundament.py` (795 r, Yahoo fundamentals-timeseries, deterministisk vågklass per P2, 20×5-matris, portföljaggregering P6) + `/api/vagfundament` (GET+POST max 12) + `vagfundament-matris.tsx` (värmematris ▲▼◼·) + `/vagfundament` (demo VOLV-B). E2E: VOLV 16I/8K/17B/59osatt; portfölj VOLV+SWED+ATCO 100% täckning. **portfolio-system.tsx** har nu sektionen "Fundamentalvågor" (POST vikter=antal×pris, portföljkort + kollapsbara per-innehav). **Chatboten** (api/chatbot/route.ts) svarar strukturerat på vågfundament-termer + P7-beteenden i GLM-prompten. SEKRETESS P8: trösklar ALDRIG i UI/prompt.
+3. **Kö/aktuellt vid skrivandet:** våg 15-kursagent pågår (tier-1 ur bokkanon utan kurs → data/bokmaster/, integrera med verktyg/integrera-bokmaster.mjs + kanon-status när den landar). Deploy-följd: /vagfundament 404 vid skrivandet = Hobby-kö (vänta 5–25 min, EN hook).
+
+**Standing regler (korta):** agent-protokoll = egna filer, Write-verktyg ALDRIG python; src/-ändringar via Write/Edit (Mimosa); tmp_*.py bort innan commit (`cmd //c del`); deploy = push båda branches + EN hook + tålamod; V-mappning mot src/lib/ekosystem.ts; kontrovers-direktivet i alla kurser; chatbot-test via node fetch (curl manglar åäö).
+
+### (Historik: Task 45 — föråldrat, se ovan)
 ### Projekt: AK1A Research Lab (ak1nvestor.com)
 Next.js 16 + TypeScript + Tailwind + shadcn/ui + Prisma/SQLite. Dev server kör på port 3000. `bun run dev` i bakgrunden.
 

@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { RefreshCw, Plus, Trash2 } from "lucide-react";
 import { VagSkattning } from "@/components/ak1a/vag-skattning";
+import { VagfundamentMatris } from "@/components/ak1a/vagfundament-matris";
 
 type Medlem = { id: string; email: string; name: string | null; member_type: string };
 type Portfolj = { id: string; name: string; total_value: number; cash_position: number; holdings: any[] };
@@ -36,6 +37,15 @@ type Rapport = {
 
 const VAGALTERNATIV = ["impulsvåg", "korrigering", "basbygge"];
 
+type VagfundamentSvar = {
+  portfolj?: {
+    totalText: string;
+    radTexter: string[];
+    tackningProcent: number;
+    notering?: string;
+  };
+};
+
 /** Medlemssida: bygg portfölj, få AKM1-analys, vågprofil, risk och tips. */
 export function PortfolioSystem() {
   const [email, setEmail] = useState("");
@@ -53,6 +63,10 @@ export function PortfolioSystem() {
   const [djup, setDjup] = useState<any | null>(null);
   const [djupBusy, setDjupBusy] = useState(false);
   const [begaranStatus, setBegaranStatus] = useState("");
+  const [vagfundament, setVagfundament] = useState<VagfundamentSvar | null>(null);
+  const [vagfundamentRader, setVagfundamentRader] = useState<Rad[]>([]);
+  const [vagfundamentBusy, setVagfundamentBusy] = useState(false);
+  const [vagfundamentFel, setVagfundamentFel] = useState("");
 
   const hittaMedlem = async () => {
     setMeddelande("");
@@ -103,6 +117,49 @@ export function PortfolioSystem() {
       setDjup({ fel: "Nätverksfel" });
     } finally {
       setDjupBusy(false);
+    }
+  };
+
+  // ── Fundamentalvågor (Vågfundamentet) — portföljens 20×5-matris, viktad per innehav ──
+  const korVagfundament = async () => {
+    const rensade: Rad[] = [];
+    for (const r of rader) {
+      const t = r.ticker.trim();
+      if (!t || !/^[A-Za-z0-9.\-]{1,12}$/.test(t) || rensade.some((x) => x.ticker === t)) continue;
+      rensade.push({ ...r, ticker: t });
+    }
+    if (rensade.length === 0) {
+      setVagfundament(null);
+      setVagfundamentFel("Fyll i minst en ticker i portföljen ovan — fundamentalvågor läses per bolag.");
+      return;
+    }
+    const urval = rensade.slice(0, 12);
+    const ravarde = urval.map((r) => (Number(r.antal.replace(",", ".")) || 0) * (Number(r.pris.replace(",", ".")) || 0));
+    const summa = ravarde.reduce((a, b) => a + b, 0);
+    const vikter: Record<string, number> = {};
+    urval.forEach((r, i) => {
+      vikter[r.ticker] = summa > 0 ? ravarde[i] / summa : 1 / urval.length;
+    });
+    setVagfundamentBusy(true);
+    setVagfundamentFel("");
+    setVagfundament(null);
+    try {
+      const res = await fetch("/api/vagfundament", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tickers: urval.map((r) => r.ticker), vikter }),
+      });
+      const data = (await res.json().catch(() => null)) as VagfundamentSvar | null;
+      if (res.ok && data?.portfolj) {
+        setVagfundamentRader(urval);
+        setVagfundament(data);
+      } else {
+        setVagfundamentFel("Vågfundamentet kunde inte läsas just nu — kontrollera tickarna och försök igen. Motorn gissar aldrig: utan underlag visas ingen våg.");
+      }
+    } catch {
+      setVagfundamentFel("Nätverksfel — fundamentalvågorna kunde inte hämtas. Försök igen om en stund.");
+    } finally {
+      setVagfundamentBusy(false);
     }
   };
 
@@ -377,6 +434,64 @@ export function PortfolioSystem() {
             <div className="mt-3 flex flex-wrap gap-3 text-[10px] text-muted-foreground">
               <span>🟩 impulsvåg</span><span>🟨 basbygge</span><span>🧧 korrigering</span><span>⬜ osatt</span>
             </div>
+          </section>
+
+          {/* Fundamentalvågor — Vågfundamentet */}
+          <section className="rounded-xl border border-gold/20 bg-card p-5">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h3 className="font-serif text-xl font-bold text-gold">🌊 Fundamentalvågor — Vågfundamentet</h3>
+                <p className="mt-1 max-w-xl text-xs text-muted-foreground">
+                  AKM1-variablerna som tidsserier — varje fundamentalvariabel har sin egen vågklass per tidshorizont (mikro/kort/medellång/lång/mega).
+                </p>
+              </div>
+              <Button onClick={korVagfundament} disabled={vagfundamentBusy} className="bg-gold text-background hover:bg-gold/90">
+                {vagfundamentBusy ? "Analyserar fundamentalvågor…" : "Analysera fundamentalvågor"}
+              </Button>
+            </div>
+
+            {vagfundamentFel && <p className="mt-3 text-sm text-red-600">{vagfundamentFel}</p>}
+
+            {vagfundament?.portfolj && (
+              <div className="mt-5 space-y-5">
+                <div className="rounded-lg border border-gold/30 bg-paper p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                    Portföljens fundamentalvåg · täckning {vagfundament.portfolj.tackningProcent} %
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed">{vagfundament.portfolj.totalText || ""}</p>
+                  <ul className="mt-3 space-y-1.5">
+                    {(vagfundament.portfolj.radTexter || []).map((t, i) => (
+                      <li key={i} className="flex gap-2 text-sm leading-relaxed">
+                        <span className="text-gold">◆</span>
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {vagfundament.portfolj.notering && (
+                    <p className="mt-2 text-[11px] italic text-muted-foreground">{vagfundament.portfolj.notering}</p>
+                  )}
+                </div>
+
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    Per innehav — öppna för hela 20×5-matrisen
+                  </p>
+                  <div className="mt-2 space-y-2">
+                    {vagfundamentRader.map((rad) => (
+                      <details key={rad.ticker} className="rounded-lg border border-gold/20 p-3">
+                        <summary className="cursor-pointer text-sm">
+                          <strong>{rad.ticker}</strong>
+                          {rad.bolag.trim() ? <span className="text-xs text-muted-foreground"> — {rad.bolag.trim()}</span> : null}
+                        </summary>
+                        <div className="mt-3">
+                          <VagfundamentMatris ticker={rad.ticker} />
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </section>
 
           {/* DJUPANALYS */}

@@ -3230,3 +3230,19 @@ Stage Summary:
   Agent 1 (Behavioral): 70%
   Agent 2 (Live Market): 70%
   Agent 3 (Short-Seller): 40%
+---
+Task ID: 105-EKOSYSTEM-INTEGRERING
+Agent: main (Z.ai Code)
+Task: AKM1 + AK1TS ekosystemintegrering i alla agenter — LIVE
+
+Work Log:
+- src/lib/ekosystem.ts: central referens (AKM1 20 variabler i 7 kategorier,
+  AK1TS 5×5×4=100 datapunkter, principer, rekommendationsskala)
+- Oljeanalys Brent+WTI (99 sidor, 6 källor) sparad som referens
+- Chatbot + Short-Seller + Kognitiv profiler: alla refererar till AKM1/AK1TS
+- PRINCIP: ALLA agenter använder AKM1 och AK1TS — aldrig generiska termer
+
+Stage Summary:
+- Ekosystemet är nu ryggraden i hela plattformen
+- Alla framtida komponenter MÅSTE importera från src/lib/ekosystem.ts
+- Oljeanalysen visar hur 5×5×4 fungerar på råvaror (Brent+WTI)

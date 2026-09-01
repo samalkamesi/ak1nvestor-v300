@@ -1182,6 +1182,12 @@ Task: Kapacitets-checkpoint — spara fortsättningsinfo för ny konversation
 
 **Standing regler (korta):** agent-protokoll = egna filer, Write-verktyg ALDRIG python; src/-ändringar via Write/Edit (Mimosa); tmp_*.py bort innan commit (`cmd //c del`); deploy = push båda branches + EN hook + tålamod; V-mappning mot src/lib/ekosystem.ts; kontrovers-direktivet i alla kurser; chatbot-test via node fetch (curl manglar åäö).
 
+### ⚠️ DEPLOY-LÄGE vid sessionens slut (2026-09-01 natt)
+- **PROD = c4c5335** (meny-vågen: ⌘K-palett, mobil-drawer, Sidfooter, NastaSteg, Fortsätt-chip — VERIFIERAT LIVE).
+- **KÖADE men inte befordrade (Vercel Hobby, ~100+ min):** 0bb9d3d (Vågfundament-motor+sida+API), 22fa918 (portföljsektion+chatbot P7+FortsattPanel), d289344 (⌘K-race-fix), 4179a05 (Ferri+blogg+sitemap), 3ae6703 (flaggskepp #3). Alla gröna lokalt (next build ×5). Epok-bevis: prod /deep-courses.json frisk = 285 kurser (Ferri/flaggskepp saknas), /vagfundament 404, sitemap utan raden.
+- **OM kö inte lossnar inom ~1 h:** kolla Vercel-dashboarden (projekt ak-1) — om byggen efter c4c5335 är Failed, läs loggen; misstänk build-minne/storlek (787+ statiska sidor) eller nåt i 0bb9d3d+. Om kö bara Latens: rör inget, den tömmer sig (skett 2 ggr tidigare).
+- **ALLT ÄR I GIT på main+develop (3ae6703) — ingen kod förlorad.**
+
 ### (Historik: Task 45 — föråldrat, se ovan)
 ### Projekt: AK1A Research Lab (ak1nvestor.com)
 Next.js 16 + TypeScript + Tailwind + shadcn/ui + Prisma/SQLite. Dev server kör på port 3000. `bun run dev` i bakgrunden.

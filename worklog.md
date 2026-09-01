@@ -3584,3 +3584,23 @@ Work Log:
 
 Stage Summary:
 - Kontrovers-direktivet fullt implementerat i ekosystemets kärna
+
+---
+Task ID: 125-VAG7-LEVERANS
+Agent: main + Soros ✓ + Staley ✓ (Elliott/Dreman/Elder kör)
+Task: BOKMASTER #26-27 + 40 flaggskepps-flashcards + dynamiska antal
+
+Work Log:
+- THE ALCHEMY OF FINANCE (Soros): 14 kap, 42 quiz — reflexivitet,
+  prickbubblor, kontroverskapitlet (jämviktsteori vs feedback-loop)
+- THE ART OF SHORT SELLING (Staley): 13 kap, 39 quiz — kontroverskapitlet
+  (bear raids vs kvalitetskontroll), alla utmaningar kör Short-Seller-widgeten
+- 40 NYA FLASHCARDS (140 totalt): 20 AKM1-kontroversiell + 20 AK1TS-hierarki —
+  motorns regler och V-mappningen nu i minnesträningen
+- Chatbotens kursantal dynamiskt + megamenu-beskrivning uppdaterad
+- Kanon 27/101 · läroplan Nivå 3: 28 kurser
+- 255 kurser · 4851 quiz · 744 sidor
+
+Stage Summary:
+- 27 böcker + 2 flaggskepp komplettäckta; kontrovers-direktivet genomgår
+  alla nya kurser

@@ -94,6 +94,8 @@ const NIVAER = [
       { slug: "what-works-on-wall-street", syfte: "O'Shaughnessy: kvantfaktorernas sanningar — P/S och tillväxtfällan", tid: 140, xp: 1800 },
       { slug: "market-wizards", syfte: "Schwager: tradrarnas disciplin — risk före avkastning", tid: 140, xp: 1800 },
       { slug: "the-essays-of-warren-buffett", syfte: "Cunningham/Buffett: breven — owner earnings, Mr Market, ärlighet", tid: 160, xp: 2000 },
+      { slug: "the-alchemy-of-finance", syfte: "Soros: reflexivitet — marknaden som feedback-loop (AK1TS:s ideologiska anförvant)", tid: 150, xp: 2000 },
+      { slug: "the-art-of-short-selling", syfte: "Staley: kortförsäljningens hantverk — läs risk, granska som en short", tid: 140, xp: 1800 },
       { slug: "a-random-walk-down-wall-street", syfte: "Malkiel: motståndarträning — EMH vs ekosystemet", tid: 200, xp: 2000 },
       { slug: "zero-to-one", syfte: "Thiel: monopol, nätverkseffekter (V15) och framtidens bolag", tid: 130, xp: 2000 },
       { slug: "blue-ocean-strategy", syfte: "Kim & Mauborgne: skapa obestridlig moat (V13–V15)", tid: 135, xp: 2000 },

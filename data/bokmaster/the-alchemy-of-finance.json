@@ -72,11 +72,11 @@
           "q": "Vilket idéarv från Karl Popper blev mest bestämmande för Soross handel?",
           "alternativ": [
             "Att marknader alltid tenderar mot jämvikt om inget hindrar dem",
-            "Att all mänsklig kunskap är fallibel och hypoteser ska formuleras så att de kan falsifieras",
+            "Att centralbanker alltid vinner över spekulanter i längden",
             "Att värdesättning bör bygga på diskonterade kassaflöden",
-            "Att centralbanker alltid vinner över spekulanter i längden"
+            "Att all mänsklig kunskap är fallibel och hypoteser ska formuleras så att de kan falsifieras"
           ],
-          "ratt": 1,
+          "ratt": 3,
           "tips": "Popper skrev om vetenskapens logik — Soros läste den som en handbok i att positionera och avgå."
         },
         {
@@ -146,12 +146,12 @@
         {
           "q": "Vad hävdar den effektiva marknadshypotesen (EMH) i sin klassiska form?",
           "alternativ": [
-            "Att priser alltid överdriver fundamenten i bubbelperioder",
             "Att priset avspeglar all tillgänglig information och att prisförändringer därför i stort sett är slumpmässiga",
+            "Att priser alltid överdriver fundamenten i bubbelperioder",
             "Att myndigheter bör styra prisbildningen genom intervention",
             "Att teknisk analys är enda vägen till överavkastning"
           ],
-          "ratt": 1,
+          "ratt": 0,
           "tips": "Formuleringen kretsar kring informationsinnehållet i priset — och vad som då återstår att lura."
         },
         {
@@ -233,11 +233,11 @@
           "q": "Varför leder reflexivitet till sviktning (overshooting) istället för jämvikt?",
           "alternativ": [
             "Eftersom transaktionskostnader fördröjer alla prisändringar",
-            "Eftersom uppfattningar och fundament påverkar varandra ömsesidigt och kan driva varandra långt bort från varje vilopunkt",
             "Eftersom centralbanker alltid ingripper för sent",
+            "Eftersom uppfattningar och fundament påverkar varandra ömsesidigt och kan driva varandra långt bort från varje vilopunkt",
             "Eftersom aktörer är perfekt rationella och priserna exakta"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Fundera på vad som händer när orsak och verkan blir en sluten slinga utan broms."
         },
         {
@@ -297,11 +297,11 @@
           "q": "Vad är en position i Soross metod?",
           "alternativ": [
             "En tro som ska försvaras till varje pris",
-            "En hypotes som marknaden får testa — med pengarna som mätinstrument",
             "En slumpmässig satsning med positiv förväntan",
+            "En hypotes som marknaden får testa — med pengarna som mätinstrument",
             "En positionsstorlek som aldrig ändras efter köpet"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Popper-arvet: vad händer med en teori som inte kan misslyckas synligt?"
         },
         {
@@ -382,12 +382,12 @@
         {
           "q": "Soros: »ju värre situationen blir, desto mindre krävs för att vända den — och desto större är uppsidan«. Vad är poängen?",
           "alternativ": [
-            "Att man alltid ska köpa fallande knivar utan analys",
             "Att katastrofscenarier prissätter så mycket elände att varje marginell förbättring kan vända helheten — där ligger uppsidan",
+            "Att man alltid ska köpa fallande knivar utan analys",
             "Att länder och bolag aldrig går i konkurs",
             "Att likviditet saknar betydelse i kriser"
           ],
-          "ratt": 1,
+          "ratt": 0,
           "tips": "Tänk på hur mycket dåliga nyheter som redan ligger i priset i fas åtta."
         },
         {
@@ -596,12 +596,12 @@
         {
           "q": "Vad enades G5-länderna om på Plaza Hotel i september 1985?",
           "alternativ": [
-            "Att stärka dollarn genom koordinerad intervention",
             "Att försvaga dollarn genom koordinerad intervention",
+            "Att stärka dollarn genom koordinerad intervention",
             "Att införa globala kapitalkontroller",
             "Att fastställa ett fast guldpris"
           ],
-          "ratt": 1,
+          "ratt": 0,
           "tips": "Tänk på vad som hade hänt med dollarn de tre åren före mötet — och med handelsbalansen."
         },
         {
@@ -844,11 +844,11 @@
           "q": "Vad menar Soros (halvt på skämt) med sitt »ryggtest«?",
           "alternativ": [
             "En teknisk analysmetod med trendlinjer",
-            "Att kroppen signalerar när positionerna känns fel — en falsifikationskälla att lyssna på när intellektet försvarar tesen",
             "Ett årligt värdesättningsmöte med analytiker",
+            "Att kroppen signalerar när positionerna känns fel — en falsifikationskälla att lyssna på när intellektet försvarar tesen",
             "En backtest av fondens strategi"
           ],
-          "ratt": 1,
+          "ratt": 2,
           "tips": "Vilken informationskanal använder han när den intellektuella kanalen är blockerad?"
         }
       ]

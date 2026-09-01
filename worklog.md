@@ -3280,3 +3280,27 @@ Stage Summary:
 - Chatboten är nu en AI-MENTOR som tar eleven VIDARE (inte bara svarar)
 - Alla svar följer AKM1/AK1TS-ekosystemet
 - Handlingsknappar = eleven KAN agera direkt från chatten
+---
+Task ID: 108-AI-MENTOR-PRO
+Agent: main (Z.ai Code)
+Task: AI-Mentor PRO — kontextmedveten superintelligent guide — LIVE
+
+Work Log:
+- chat-widget.tsx komplett omskriven till AI-Mentor PRO
+- Känner eleven: nivå, XP, kurser, stjärnor, inloggning
+- Känner plats: 10 sidtyper detekteras automatiskt
+- Proaktiv hälsning: tidsmedveten + platsmedveten + elevstatus
+- Följer med: nya förslag när eleven navigerar
+- Handlingsknappar: ikon + text + beskrivning → klick → navigera/scroll
+- Snabbkommandon: 5 knappknappar för snabb åtkomst
+- Auto-navigation: ett alternativ = automatisk redirect
+- AKM1/AK1TS-struktur i alla svar
+- Elev-status i chattens header
+
+Stage Summary:
+- AI-Mentorn är inte längre en chattbot — den är en GUIDE som:
+  1. Vet vem eleven är
+  2. Vet var eleven befinner sig
+  3. Vet vad eleven behöver göra härnäst
+  4. TAR eleven dit med ett klick
+  5. Följer med mellan sidor

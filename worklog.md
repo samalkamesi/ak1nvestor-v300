@@ -2932,3 +2932,18 @@ Stage Summary:
 - Retention-orga­nets köpunkt #1 klart; nästa i kön: övningsuppgifter per kurs,
   bloggplanering, F2 fortsättning (kundcache server-side + retention-mätning
   i analytics vid >10 medlemmar)
+---
+Task ID: 89-OVNINGAR
+Agent: main (Z.ai Code)
+Task: Övningsuppgifter per kurs (rundans beslut #2) — 226 kurser, live
+
+Work Log:
+- 3 genererade övningar per kurssida: begrepp (learn+vikt), räkneövning för
+  numeriska variabler (kopplad till kalkylatorns formler/trösklar) alt.
+  tillämpningsövning för kvalitativa, + reflektion mot egen portfölj
+- Fällbar ledning via details/summary
+- Verifierat lokalt (V09: Övningsuppgifter ×2, V13: Tillämpning ×2) + prod
+
+Stage Summary:
+- Rundans kö: #1 fortsättnings-lista ✓ #2 övningar ✓ → nästa: bloggplanering
+  + F2 kundcache/retention-mätning

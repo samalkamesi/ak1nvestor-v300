@@ -1,0 +1,1038 @@
+{
+  "slug": "margin-of-safety",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "Margin of Safety — Klarman: KOMPLETT",
+  "summary": "Margin of Safety (1991) är Seth Klarmans slutsålda handbok i riskavert värdeinvestering — skriven med junk bond-erans kollaps och krachen 1987 i färskt minne. Kursen gör den svåråtkomliga kunskapen tillgänglig: marginal of safety som princip, bottoms-up-analys, konträrt tänkande vid pendelns extremlägen, jaktmarkerna där fynd verkligen finns och mekaniken i special situations steg för steg. Ingen »den här gången är det annorlunda«-berättelse överlever den här boken.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven förklara värdeinvesteringens tre pelare — marginal of safety, bottoms-up-analys och konträrt tänkande — och tillämpa dem på verkliga situationer; skilja permanent kapitalförlust från volatilitet och identifiera förlustkällorna belåning (V10), likviditet (V11), ostadiga intäkter (V12) och kapitalförbränning (V19); känna igen bubblors rationaliseringar från Milken-erans junk bonds och 1987 års portföljförsäkring och översätta dem till dagens mekanismer; kartlägga jaktmarkerna — kriser, tvångsförsäljningar, komplexitet, spin-offs och post-reorganisation — och steg för steg analysera arbitrage, merger securities, liquidations, rights offerings och thrift-konverteringar; samt hantera kassa som en medveten position, undvika spekulativa verktyg med negativ kompoundering och tänka som ägare med katalysatorer (V16-V18) och återköp (V20) som bonus.",
+  "why": "Klarmans bok är värdeinvesteringens svåråtkomliga ark — slutsåld sedan 1991, med begagnade exemplar som handlas för tusentals dollar medan Klarman själv har föreslagit att pengarna hellre borde gå till välgörenhet. Den är också den tydligaste bryggan mellan Grahams marginal of safety och en modern riskförståelse: permanent kapitalförlust är risken, inflationen den osynliga fienden och kassan ett aktivt val. För AKM1-ekosystemet levererar kursen både ramverket (V10-V12 stabilitet, V19 risk, katalysatorfamiljen V16-V18, V20 återköp) och historiens varnande exempel — Milken-eran och krachen 1987 — som gör teorin levande. Margin of safety självt är en princip utan V-nummer: den styr hur alla V-mått ska användas.",
+  "chapters_list": [
+    "1. Kasinot — där de flesta investerare går fel",
+    "2. Marginal of safety — principen som gett boken dess namn",
+    "3. Bottoms-up och konträrt — pelare två och tre",
+    "4. Inre värde — konsten att räkna på osäkerhet",
+    "5. Risk — permanent kapitalförlust, inte volatilitet",
+    "6. Inflationen — den osynliga fienden",
+    "7. Junk bonds och Milken — när dåliga idéer blev institution",
+    "8. 1987 — portföljförsäkring och mekanismen som förstorade fallet",
+    "9. Jaktmarker I: panik, kriser och tvångsförsäljningar",
+    "10. Jaktmarker II: komplexitet, spin-offs och post-reorganisation",
+    "11. Special situations I: arbitrage och merger securities",
+    "12. Special situations II: liquidations, rights offerings och thrift-konverteringar",
+    "13. Kassa är en position — tålamod som strategi",
+    "14. Ägartänkande, katalysatorer och Klarmans regler — syntesen"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Kasinot — där de flesta investerare går fel",
+      "intro": "Seth Klarman grundade The Baupost Group i Boston 1982, efter lärlingsår hos Max Heine och Michael Price på Mutual Shares, och skrev Margin of Safety 1991 med 80-talets kollapser som bakgrund. Boken vägrar han trycka om — begagnade exemplar handlas för tusentals dollar, och han har föreslagit att pengarna hellre borde gå till välgörenhet. Därför citerar den här kursen boken öppet: kunskapen ska vara tillgänglig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens undertitel är »Risk-Averse Value Investing Strategies for the Thoughtful Investor« — strategier för den eftertänksamma investeraren. Klarman öppnar med en diagnos: de flesta investerare går fel innan de köpt något alls. De söker avkastning först och betraktar risk som en fotnot. Spekulanten köper i hopp om att någon annan betalar mer; investeraren köper en andel av ett företag till ett pris under dess beräknade värde. Skillnaden är inte grad av skicklighet utan själva spelet som spelas."
+        },
+        {
+          "type": "text",
+          "content": "Wall Streets natur är det andra problemet: gatans företag tjänar på aktivitet, inte på din avkastning. Nya produkter lanseras när efterfrågan finns — inte när de är bra för köparen. Junk bonds på 80-talet, portföljförsäkring, derivat och senare tiders strukturerade produkter och indexprodukter följer samma mönster: innovation som svar på girighet, förpackad som tjänst. Klarman påminner om Grahams bild: marknaden är kortsiktigt en röstningsmaskin, långsiktigt en vågmaskin. Kasinots deltagare spelar på röstningen; investeraren väntar på vågningen."
+        },
+        {
+          "type": "text",
+          "content": "Det institutionella problemet: pensionsförvaltare och fonder mäts kvartalsvis mot index och mot kollegor. Den som avviker och har fel förlorar jobbet; den som följer flocken och har fel behåller den. Därför blir institutioner strukturellt konformistiska — de måste äga det alla andra äger och får inte äga det ingen annan tittar på. Det kortsiktiga prestationsderbyt tvingar fram fullt investerade portföljer även när fynd saknas, vilket i sin tur skapar de missprisningar som värdeinvesteraren sedan utnyttjar."
+        },
+        {
+          "type": "text",
+          "content": "Klarmans motbild är tänkt och fåtalig: analys av enskilda företag, köp med marginal, tålamod att vänta och mod att agera när andra är paralyserade. Baupost byggdes på den kulturen — få, ojämlika positioner, hög kassa när utbudet var dåligt, och en beredskap att köpa det andra var tvungna att sälja. Resten av kursen bygger ut den metoden: kapitel 2-6 ger filosofin, kapitel 7-8 historiens varningar, kapitel 9-12 jaktmarkerna och mekaniken, kapitel 13-14 kassan, ägarskapet och reglerna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Spekulant eller investerare — Klarmans skiljelinjer\",\"rader\":[[\"Fråga\",\"Spekulanten\",\"Investeraren\"],[\"Vad köper du?\",\"En förväntad prisrörelse\",\"En andel av ett företag till under beräknat värde\"],[\"Vad skyddar dig?\",\"Timing, trend, stop-loss\",\"Marginal of safety — priset under värdet\"],[\"Hur mäts du?\",\"Kvartal mot index och kollegor\",\"Få beslut, långsiktigt resultat\"],[\"Hur möter du en nyhet?\",\"Handlar på den direkt\",\"Frågar om priset redan innehåller den\"],[\"Vad är din fiende?\",\"Att gå miste om uppgången\",\"Att permanent förlora kapital\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Wall Street tjänar på din aktivitet, inte på din avkastning — varje produkt som kräver omsättning ska granskas extra noga."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå igenom dina senaste tio affärer. Klassificera varje köp som investering (värde under pris, med marginal) eller spekulation (hopp om uppgång) — och skriv ett avgörande skäl per affär. Var ärlig: vad skulle ha gjort varje affär till en spekulation, och vad saknade du för att kunna kalla den investering?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför vägrar Klarman trycka en ny upplaga av boken?",
+          "alternativ": [
+            "Förlaget äger rättigheterna och säger nej",
+            "Han anser att innehållet är inaktuellt sedan 1990-talet",
+            "Han vill inte att den ska läsas som en receptsamling — undertiteln kräver eftertänksamhet, och han har föreslagit att pengar hellre borde gå till välgörenhet",
+            "Han skriver en helt ny bok istället"
+          ],
+          "ratt": 2,
+          "tips": "Titta på undertiteln: vilken sorts investerare vänder han sig till?"
+        },
+        {
+          "q": "Vad är enligt Klarman huvudorsaken till att de flesta investerare misslyckas?",
+          "alternativ": [
+            "De saknar tillgång till information",
+            "De fokuserar på avkastning först och ignorerar risken — de spelar kasinots spel",
+            "De investerar för långsiktigt",
+            "De använder fel mäklare"
+          ],
+          "ratt": 1,
+          "tips": "Vad frågar sig spekulenten först — och vad frågar sig värdeinvesteraren först?"
+        },
+        {
+          "q": "Hur bidrar det institutionella problemet till felprisade aktier?",
+          "alternativ": [
+            "Institut saknar kapital för att påverka kurser",
+            "Institut får enligt lag inte äga obetydliga aktier",
+            "Institut mäts kort-siktigt mot kollegor och kan därför sällan avvika — konformismen skapar både övervärderade favoriter och ignorerade fynd",
+            "Institut analyserar alltid grundligare än privatpersoner"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med den som avviker och har fel — jämfört med den som följer flocken och har fel?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Marginal of safety — principen som gett boken dess namn",
+      "intro": "Bokens kärna är en enda princip: köp till ett pris så lågt att fel, otur och marknadens humör kan absorberas. Klarman formulerar det som att marginalen alltid är beroende av priset — stor vid ett pris, liten vid ett högre, obefintligt vid ett högre ännu. I AKM1 är marginal of safety en princip utan V-nummer: den bestämmer hur alla V-mått ska tolkas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Klarman ärver Graham-traditionens kärnsats: »Margin of safety is always dependent on the price paid« — marginalen är alltid beroende av det pris du betalar (fritt översatt). Den är stor vid ett lågt pris, liten vid ett högre och obefintlig vid ett högre ännu. En perfektformulerad signal: marginalen är en funktion av priset, aldrig av hur spännande bolaget är. Ett utmärkt företag till fel pris ger ingen marginal; ett tråkigt företag till hälften av substansvärdet ger massiv sådan."
+        },
+        {
+          "type": "text",
+          "content": "Vad skyddar marginalen mot? Tre saker: för det första dina egna fel — att du räknat för högt eller missat en risk. För det andra att bolagets fundamenta försämras — konjunktur, konkurrens, avtalsbortfall. För det tredje marknadens humör — att priset förblir depressivt längre än du tål. Bokens bild är dockan i leksaksaffären: är den värd tio dollar och priset tre, behöver du inte veta exakt om den är värd nio eller elva — marginalen gör grovheten i uppskattningen ofarlig."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1-ekosystemet är marginal of safety en princip — och skrivs därför utan V-nummer. Den är meta-regeln som avgör när övriga mått betyder något: ett lågt P/B (V05) utan stabila tillgångar och ärlig balansräkning är en värdefälla; ett högt P/B kan ändå innehålla marginal om det inre värdet är mångfalt högre än kursen. Marginalen kompletteras aldrig av multiplar — multiplar är genvägar som bara fungerar när en oberoende värdeberäkning redan finns."
+        },
+        {
+          "type": "text",
+          "content": "Marginalens tre källor i praktiken: situationens tvång (kapitel 9-10 — köp av prisokänsliga säljare), instrumentets struktur (senioritet, säkerhet, återbetalningstrappa — obligationsinnehavare står före aktieägare) och diversifiering som sista skydd när den enskilda analysen är osäker. Utan tålamod förbrukas marginalen ändå: den som är tvungen att sälja i panik äger aldrig sitt eget beslut. Därför hör marginalen ihop med kassan (kapitel 13) — och med att aldrig belåna sig till marginalkrav."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "Marginalen är alltid en funktion av priset — aldrig av bolagets kvalitet. Det bästa bolaget till fel pris är en spekulation."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en aktie du äger. Uppskatta värdet i tre scenarier: pesimist, bas och optimist. Räkna ut marginalen (värde minus pris, i procent av priset) i varje scenario. Om marginalen är negativ i basfallet — varför äger du den då? Om den bara är positiv i optimistscenariot — vad kallar Klarman det?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Klarman med att marginalen »alltid är beroende av priset«?",
+          "alternativ": [
+            "Att bra bolag alltid har marginal",
+            "Att marginalen är densamma oavsett ingångspris",
+            "Att marginalen växer med bolagets tillväxttakt",
+            "Att marginalen är stor vid ett lågt pris, liten vid ett högre och obefintlig vid ett högre ännu — priset avgör, inte kvaliteten"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vad som händer med marginalen om du betalar allt mer för exakt samma bolag."
+        },
+        {
+          "q": "Vilka tre fel ska marginalen skydda mot?",
+          "alternativ": [
+            "Fel i den egna analysen, försämrade fundamenta och marknadens humör",
+            "Inflation, skatt och courtage",
+            "Konkurrenter, vd-byte och valutarisk",
+            "Ränta, BNP och oljepris"
+          ],
+          "ratt": 0,
+          "tips": "En av tre handlar om dig, en om bolaget, en om marknaden."
+        },
+        {
+          "q": "Hur förhåller sig marginal of safety till AKM1:s V-mått?",
+          "alternativ": [
+            "Den är ett V-mått bland andra",
+            "Den är en princip utan V-nummer som avgör hur V-måtten ska tolkas",
+            "Den motsvarar V06",
+            "Den gäller bara i analysdelen, inte i portföljen"
+          ],
+          "ratt": 1,
+          "tips": "Vissa saker är mått — andra är principer som avgör när måtten betyder något."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Bottoms-up och konträrt — pelare två och tre",
+      "intro": "Värdeinvesterarens tre pelare är marginal of safety, bottoms-up-analys och konträrt tänkande vid pendelns extremlägen. Pelare två och tre hänger ihop: den som inte behöver prognostisera makron kan också våga agera annorlunda än konsensus. Kursen kopplar pendeln till AKM1:s cykeltänkande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Top-down-investeraren börjar med prognoser: ekonomi, räntor, valutor, marknadsnivå — och väljer sedan innehav som passar bilden. Klarman avvisar metoden av två skäl: prognoser är oftast fel, och även när de är rätt är de oftast redan prissatta — ingen betalar dig för att veta det alla vet. Bottoms-up är motsatsen: börja med ett enskilt värdepapper, räkna dess värde oberoende av makro och köp när priset ligger under. Du behöver aldrig veta var marknaden är på väg — bara vad ett företag är värt."
+        },
+        {
+          "type": "text",
+          "content": "Konträrt tänkande är pelare tre, men Klarman är noggrann: det handlar inte om att mekaniskt tro motsatsen mot konsensus. Det handlar om att känna igen pendelns extremlägen — när girighet eller rädslag slagit i topp — och inse att priset då innehåller en extrem förväntan som ger asymmetri. Vid paniken är risken i priset redan prissatt; vid euforin är den totalt oprissatt. Konsensus kan aldrig ge marginal, eftersom alla redan handlat på det."
+        },
+        {
+          "type": "text",
+          "content": "Rationellt konträrt kräver tre saker: en oberoende värdeberäkning som visar marginalen, förmåga att skilja information från åsikt (kursens fall är inte information om värdet) och psykologisk uthållighet att se fel ut en period — det konträra är ofta att man tidigt ser ut att ha fel. Grahams vågmaskin tröstar: på lång sikt tenderar priset mot värde. På kort sikt röstar deltagarna i kasinot (kapitel 1)."
+        },
+        {
+          "type": "text",
+          "content": "I bottoms-up-arbetet börjar du i affären, inte i makron: hur förutsägbar är efterfrågan — alltså intäktsstabiliteten (V12)? Ett bolag med stabila, återkommande intäkter kan värderas med större säkerhet och därmed mindre marginal, medan ett bolag med cykliska intäkter kräver bredare intervall och djupare rabatt. Först därefter kommer multiplar och katalysatorer. Analysen av det enskilda bolaget är pelaren — makroprognosen är dess motsats."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "Bottoms-up-analysen befriar dig från prognosens tvång: du behöver inte veta var marknaden är på väg — bara vad ett enskilt företag är värt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en sektor som alla älskar just nu. Skriv konsensustesen i en mening. Konstruera sedan den konträra mottesen: vad måste vara sant för att priset ska vara fel? Formulera slutligen ett bekräftelsekrav — vad konkret skulle få dig att överge mottesen? Utan det är konträrhet bara trots."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför avvisar Klarman top-down-investerande?",
+          "alternativ": [
+            "Makro är oviktigt för avkastning",
+            "Prognoser är oftast fel — och även när de är rätt är de redan prissatta",
+            "Institut har förbjudits att använda det",
+            "Det kräver för dyr data"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med din överavkastning om marknaden redan känner till det du tror dig veta?"
+        },
+        {
+          "q": "När är konträrt tänkande som mest lönsamt enligt bokens logik?",
+          "alternativ": [
+            "När trenden är stark och stabil",
+            "Vid bolagsrapporter",
+            "När pendeln slagit i extrem — panik eller eufori — och priset innehåller en extrem förväntan",
+            "Varje handelsdag"
+          ],
+          "ratt": 2,
+          "tips": "Var i pendelns sväng finns asymmetrin mellan risk och belöning?"
+        },
+        {
+          "q": "Vad krävs för att en konträrt position ska vara rationell, inte bara trotsig?",
+          "alternativ": [
+            "En oberoende värdeberäkning som visar marginal — annars är avvikelsen bara åsikt",
+            "Hög belåning för att förstärka övertygelsen",
+            "Att media bekräftar tesen",
+            "Att positionen är liten nog att glömmas"
+          ],
+          "ratt": 0,
+          "tips": "Vad skiljer den som tänker annorlunda och har rätt från den som bara gör motsatsen?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Inre värde — konsten att räkna på osäkerhet",
+      "intro": "Inre värde är bokens mest missförstådda begrepp: inte ett exakt tal utan ett intervall av uppskattningar. Klarman räknar med tre vägar — kassaflödesvärde, substansvärde och summan av delarna — och använder relativa mått som V04-V06 endast som genvägar. Kursen kopplar lönsamhetens kvalitet (V07-V09) och moat-tänket (V13-V15) till värdeintervallets säkerhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Inre värde är det diskonterade värdet av framtida kassaflöden — men Klarman understryker att det är en uppskattning, inte ett faktum. Arbeta alltid med intervall och låt marginalen växa när osäkerheten växer. Tre vägar: (1) kassaflödesvärde (NPV) — vad verksamheten genererar framåt i tiden; (2) substans- och likvidationsvärde — vad tillgångarna är värda vid nedmontering, ofta Graham-inspirerat nedre gränsvärde; (3) börsvärde av delarna — summan av publikt handlade dotterbolag, observerbara priser. Bäst är när metoderna överlappar och pekar på värde vida över kursen."
+        },
+        {
+          "type": "text",
+          "content": "Relativa mått är genvägar, inte svar. P/S (V04), P/B (V05) och EV/EBITDA (V06) säger ingenting utan kontext: jämför med bolagets egen historia, med konkurrenter och med kapitalbehov. Ett lågt P/S på ett bolag med negativ bruttomarginal (V07) är meningslöst — varje omsatt krona förstör värde. Ett lågt P/B på en bank med dåliga krediter är en värdefälla — bokvärdet är en åsikt, inte ett tak. Ett lågt EV/EBITDA (V06) på en industri med ständigt kapitalbehov är en fälla av annat slag — kapitalförbränningen (V19) äter det värde som multiplens lovar."
+        },
+        {
+          "type": "text",
+          "content": "Lönsamhetens kvalitet förfinar intervallet: bruttomarginalen (V07) avslöjar prissättningskraft, EBITDA-marginalen (V08) kostnadsdisciplin och ROE (V09) kapitalets effektivitet. Men hög ROE med hög skuldsättningsgrad (V10) är en belåningsillusion — separera operativ och finansierad avkastning innan du litar på siffran. Omvänt kan bolag med tillfälligt deprimerade marginaler — efter en kris eller omstrukturering — vara just där normaliserade marginaler ger kraftigt undervärderat kassaflödesvärde."
+        },
+        {
+          "type": "text",
+          "content": "Moat-tänket avgör intervallets uthållighet: hållbara fördelar som varumärke (V14), patent och IP (V13) och — i moderna bolag — nätverkseffekter (V15) förtjänar längre och tryggare kassaflödesantaganden. Men Klarman varnar för att betala för vallgraven: en moat som håller på att fyllas igen är värre än ingen, eftersom marknaden fortfarande prissätter den som evig. Moat stärker intervallet; marginalen kräver fortfarande att priset ligger under intervallets nedre del."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre vägar till inre värde\",\"rader\":[[\"Metod\",\"Vad du räknar\",\"Styrka\",\"Svaghet\"],[\"Kassaflödesvärde (NPV)\",\"Diskonterade framtida flöden\",\"Fångar affärens värde\",\"Extremt känsligt för antaganden — använd intervall\"],[\"Substans-/likvidationsvärde\",\"Tillgångar minus skulder vid nedmontering\",\"Nedre gräns som tål fel\",\"Ignorerar framtida värdeskapande\"],[\"Börsvärde av delar\",\"Summan av publikt handlade dotterbolag\",\"Bygger på observerbara priser\",\"Delarna kan alla vara övervärda\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Värde är ett intervall, inte en punkt — marginalen är det som finns kvar när du räknar på intervallets pessimistiska ände."
+        },
+        {
+          "type": "utmaning",
+          "content": "Värdera ett bolag med alla tre metoderna: NPV i tre scenarier, substansvärde som nedre gräns och sum-of-the-parts om delar är noterade. Notera var intervallen överlappar. Ligger dagens pris under överlappningens nedre del med marginal, inom, eller över — och vad säger det om hur du ska förhålla dig till bolaget?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur ser Klarman på beräkning av inre värde?",
+          "alternativ": [
+            "Som ett exakt tal som går att slå i kalkylbladet",
+            "Som senaste aktiekursens rimlighet",
+            "Som ett intervall av uppskattningar — där osäkerheten kräver större marginal",
+            "Som bokföringsvärdet i balansräkningen"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med precisionen när utfallet beror på framtiden?"
+        },
+        {
+          "q": "Varför är ett lågt P/S (V04) meningslöst om bruttomarginalen (V07) är negativ?",
+          "alternativ": [
+            "P/S gäller bara banker",
+            "Negativ bruttomarginal betyder alltid konkurs inom ett år",
+            "Omsättningen är irrelevant för värderingen",
+            "Varje omsatt krona förstör värde — låg multipel på destruktiv omsättning är ingen marginal"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med varenda försäljningskrona när marginalen är negativ?"
+        },
+        {
+          "q": "Hög ROE (V09) kan vilseleda — när?",
+          "alternativ": [
+            "När den drivs av hög skuldsättningsgrad (V10) snarare än operativ kvalitet",
+            "När bolaget betalar utdelning",
+            "När omsättningen växer",
+            "När bolaget har många anställda"
+          ],
+          "ratt": 0,
+          "tips": "Räkna upp avkastningen på totalt kapital — vad äger dig skillnaden?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Risk — permanent kapitalförlust, inte volatilitet",
+      "intro": "Klarman definierar om risk från grunden: risken är möjligheten till permanent kapitalförlust — inte volatilitet i kursen. Kursen går igenom de fem konkreta förlustkällorna (V10-V12, V19) och riskhanteringens tre verktyg: positionstorlek, diversifiering som sista skydd och försäkring av portföljen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Modern finans teori likställer risk med volatilitet — ju mer kursen svänger, desto riskigare. Klarman avfärdar det som begreppsförvirring: en aktie som fallit 40 procent under sitt värde är inte mer riskabel — den är billigare. Risken som spelar roll är möjligheten till permanent förlust: att kapitalet aldrig kommer tillbaka. Konkurs, utspädning till intet, belåning som exploderar, instrumentets juridiska svaghet. Volatilitet är ett pris på vägen; permanent förlust är resans slut."
+        },
+        {
+          "type": "text",
+          "content": "Fem konkreta vägar till permanent förlust: (1) bolagets belåning (V10 skuldsättningsgrad) — räntekostnader och tvångsåtgärder äter allt utrymme i en nedgång; (2) din egen belåning — margin call gör dig till tvångssäljare i exakt det läge då tålamodet är ditt värdefullaste vapen; (3) likviditetsrisk (V11) — när ingen köper krossas priset av din egen försäljning; (4) affärsrisk med ostadiga intäkter (låg V12 intäktsstabilitet) — kassaflödet bryts i precis det läget då omvärlden inte förlåter; (5) kapitalförbränning (V19) — bolaget täcker luckan med emissioner och utspädar dig till signifikant mindre ägande."
+        },
+        {
+          "type": "text",
+          "content": "Riskhantering enligt boken: storleksätt positioner efter nedside — inte efter förväntad avkastning; diversifiering är det sista skyddet när den enskilda analysen är osäker, aldrig en ersättning för marginal; och vid extrema lägen kan portföljen försäkras — billiga put-optioner eller korta positioner som skyddar nedside. Baupost hedgar svansrisk när försäkringens pris är lågt, inte som permanent kostnad. Dessutom: förstå instrumentets struktur — senioritet, säkerhet, återbetalningstrappan. En säker obligation i ett dåligt bolag slår en aktie i ett bra."
+        },
+        {
+          "type": "text",
+          "content": "Balansen mellan koncentration och spridning: för mycket koncentration gör att ett enda fel blir katastrofalt, för mycket diversifiering späder ut edge tills portföljen är ett dyrt index. Klarmans hållning: positioner ska vara ojämnt storleksordnade efter marginal och risk — störst där det inre värdet är säkrast och tvångssituationen starkast, och obefintligt där marginalen saknas. Riskhantering börjar med vad du vägrar äga."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fem vägar till permanent förlust\",\"rader\":[[\"Källa\",\"Mekanism\",\"AKM1-mått\"],[\"Belåning hos bolaget\",\"Ränta och tvångsåtgärder i nedgång äter handlingsutrymmet\",\"V10 skuldsättningsgrad\"],[\"Belåning hos dig\",\"Margin call gör dig till tvångssäljare i botten\",\"Egen hävstång\"],[\"Likviditet\",\"Ingen köpare när du behöver sälja — priset krossas\",\"V11 likviditet\"],[\"Affärsrisk\",\"Ostadiga intäkter bryter kassaflödet när det gör mest ont\",\"V12 intäktsstabilitet\"],[\"Kapitalförbränning\",\"Luckan täcks med emissioner — utspädning\",\"V19 emission-risk\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig först hur hög avkastningen kan bli — fråga först hur du kan förlora kapitalet permanent."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett av dina innehav och betygsätt de fem förlustkällorna 1-5: bolagets belåning (V10), aktiens likviditet (V11), intäktsstabiliteten (V12), kapitalförbrukningen (V19) och din egen belåning. Bestäm dig för: vad är den värsta rimliga utgången — och överlever din portfölj och ditt psyke den? Om inte: vad är den första åtgärden?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definierar Klarman risk?",
+          "alternativ": [
+            "Som volatilitet i kursen",
+            "Som betavärdet mot index",
+            "Som möjligheten till permanent kapitalförlust",
+            "Som avvikelsen från riktkurs"
+          ],
+          "ratt": 2,
+          "tips": "Vilken förlust kan du aldrig återhämta dig från?"
+        },
+        {
+          "q": "Varför är belåning hos investeraren själv så farlig?",
+          "alternativ": [
+            "Räntekostnaden blir alltid högre än avkastningen",
+            "Margin call tar ifrån dig tålamodet — du tvingas sälja i exakt det läge då väntan var din största fördel",
+            "Det är olagligt vid värdeinvestering",
+            "Belåning ökar courtaget"
+          ],
+          "ratt": 1,
+          "tips": "Vad kräver en margin call dig att göra — och till vilket pris?"
+        },
+        {
+          "q": "Vilken roll ska diversifiering spela enligt boken?",
+          "alternativ": [
+            "Ersätta marginalen när tiden är knapp",
+            "Alltid maximeras — 100 innehav är minimum",
+            "Vara det sista skyddet när den enskilda analysen är osäker — aldrig en ursäkt för att köpa utan marginal",
+            "Endast gälla obligationer"
+          ],
+          "ratt": 2,
+          "tips": "Vad skyddar dig bäst: fler aktier utan marginal — eller färre med?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Inflationen — den osynliga fienden",
+      "intro": "Efter 70-talets inflation och 80-talets svängningar ägnar Klarman ett helt spår åt vad inflationen gör med spararen: den beskattar kassan och alla fasta fordringar utan att synas i någon kursgraf. Kursen går igenom mekanismen, 72-regeln och skyddet — indexlänkade obligationer och bolag med prissättningskraft.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Volatilitet syns i varje graf; inflationen syns ingenstans — förrän den redan ätit din köpkraft. Klarman skriver med 70-talets tvåsiffriga inflation i minnet: ett konto med 3 procent ränta vid 6 procent inflation förlorar hälften av köpkraften på tolv år. 72-regeln ger känslan: dividera 72 med inflationstakten och du får antal år till halverad köpkraft. Realavkastning — avkastning minus inflation — är den enda som räknas."
+        },
+        {
+          "type": "text",
+          "content": "Inflationen träffar olika hårt: fasta obligationer drabbas värst eftersom både kupong och nominellt värde är låsta; kassa förlorar direkt men åtminstone synligt; aktier med prissättningskraft kan höja priser i takt med kostnaderna och hålla bruttomarginalen (V07) — inflationen blir ett test av företagets makt på sin marknad; fastigheter och andra reala tillgångar kan skydda värdet men är inte immuna mot priset du betalar. Nyckeln är skilja på tillgångens reala natur och det pris du köper den till — inflation skyddar ingen från att betala för mycket."
+        },
+        {
+          "type": "text",
+          "content": "Skyddet enligt boken: inflationsskyddade obligationer — Klarman förespråkade på sin tid indexlänkade statspapper som ett viktigt alternativ, eftersom de eliminerar inflationsrisken och lämnar bara realräntan kvar som förhandlingsbar; bolag med stabil efterfrågan (V12) och prissättningskraft; samt återhållsamhet med långa nominella obligationer när realräntan är låg. Notera vilka som är motparter: den som emitterar nominerad skuld vinner på oväntad inflation — den som äger den förlorar."
+        },
+        {
+          "type": "text",
+          "content": "Paradoxen kassa mot inflation: kassan förlorar köpkraft varje år — men Baupost höll ändå hög kassa när alternativet var dåliga investeringar. Klarmans lösning på spänningen: valet är alltid relativt. Kassans kostnad är känd och långsam (inflationen); en dålig investerings kostnad är okänd och kan bli permanent (kapitel 5). Därför är kassa rätt val även i en inflationär tid — förutsatt att den betraktas som väntan på bättre utbud, inte som permanent hemvist."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vad inflationen gör med olika tillgångar\",\"rader\":[[\"Tillgång\",\"Mekanism vid oväntad inflation\",\"Skyddsvärde\"],[\"Kassa\",\"Köpkraften urholkas direkt och synligt\",\"Svagt — endast som väntan på bättre utbud\"],[\"Fast ränta (obligation)\",\"Realräntan faller och kursen sjunker\",\"Svagast — undvik när realräntan redan är låg\"],[\"Indexlänkad obligation\",\"Kupong och värde följer indexet\",\"Starkt — direkt kompensation\"],[\"Aktier med prissättningskraft\",\"Priser kan höjas i takt med kostnaderna — bruttomarginalen (V07) hålls\",\"Beroende av bolagets makt på sin marknad\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Räkna alltid realt: inflationen är den enda fiende som beskattar dig utan att synas i kontoutdraget."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på din portföljs reala femårsavkastning: totalavkastning minus faktisk ackumulerad inflation under perioden. Vilka innehav bidrog realt — och vilka var nominella illusioner? Testa sedan en obligation med 4 procent kupong vid inflation på 2, 6 respektive 10 procent: vad händer med realvärdet?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallar Klarman inflationen för osynlig?",
+          "alternativ": [
+            "Den publiceras aldrig i statistik",
+            "Den påverkar bara utländska valutor",
+            "Den syns inte i kursgrafen men urholkar kassa och fasta fordran — förlusten är verklig utan att rapporteras",
+            "Den kan bara mätas i KPI-X"
+          ],
+          "ratt": 2,
+          "tips": "Var i dina kontoutdrag syns köpkraftens fall?"
+        },
+        {
+          "q": "Vad ger bäst direkt skydd mot inflation enligt boken?",
+          "alternativ": [
+            "Långa nominella obligationer med hög kupong",
+            "Indexlänkade obligationer samt bolag som kan häva priser och hålla bruttomarginalen (V07)",
+            "Kontanter på räntekonto",
+            "Preferensaktier med fast utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Vilka tillgångar har en inbyggd mekanism som följer prisnivån upp?"
+        },
+        {
+          "q": "Enligt 72-regeln: vid 6 procents inflation halveras köpkraften på ungefär...",
+          "alternativ": [
+            "6 år",
+            "36 år",
+            "12 år",
+            "24 år"
+          ],
+          "ratt": 2,
+          "tips": "Dividera 72 med inflationstakten."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Junk bonds och Milken — när dåliga idéer blev institution",
+      "intro": "Klarman följde junk bond-eran på nära håll: Michael Milken och Drexel Burnham byggde en marknad som finansierade uppköp med skuld och sålde den som hög avkastning utan extra risk. När recessionen kom kollapsade allt — Drexel gick i konkurs 1990 och Milken dömdes samma år. Kapitlet dissekerar rationaliseringarna, för var och en har en modern arvtagare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Michael Milken på Drexel Burnham Lambert byggde på 80-talet en komplett finansieringsmaskin: emittera högavkastande skuldebrev (junk) till företag och uppköpsbolag som bankerna vägrade låna ut till, och finansiera därmed LBO-vågen. Säljargumentet var att högre ränta mer än väl kompenserade default-risken — »studierna visar det«. Klarman sågar studie efter studie: de mätte en period utan hård recession, de antog att obestånd aldrig anlände samtidigt och att allt alltid kunde refinansieras. Risken hade helt enkelt inte testats."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken bakom kollapsen: LBO-bolagen belånades till skuldsättningsgrader (V10) utan historisk motsvarighet, med tunn räntetäckning — EBITDA-marginalen (V08) räckte nätt och jämnt till räntan i goda tider. När tillväxten sinade och refinansieringsfönstret stängdes kom default-vågen: Revco, Campeaus varuhuskonglomerat, Integrated Resources. Köparna var ofta själva belånade institut — spar- och livbolag som Lincoln Savings under Charles Keating — som höll koncentrerade junk-portföljer. Drexel Burnham gick i konkurs i februari 1990; Milken dömdes 1990 för värdepappersbrott."
+        },
+        {
+          "type": "text",
+          "content": "Klarmans generella lärdom: när en tillgångsklass »aldrig haft en förlust« — fråga över vilken period den testats. Junk hade inte mött en recession. De fyra farligaste orden är »den här gången är det annorlunda«. Detta betyder inte att hög avkastande kredit är fel i sig — fel är priset mot risken och strukturen: senioritet, säkerhet, återbetalningstrappan och låntagarens intäktsstabilitet (V12) och belåning (V10). Kredit kan vara värdefull — endast med marginal."
+        },
+        {
+          "type": "text",
+          "content": "Dagens översättning: varje era har sin »risklösa högavkastning« — efter Klarman har privat kredit, strukturerade produkter och katastrofobligationer fått samma stämpel av säkerhet. Testet är alltid Klarmans tre frågor: Vad händer i en riktig recession? Vem är motparten och hur belåad är den? Vad händer när refinansieringsfönstret stängs? Om svaret är »det vet vi inte — men hittills har det gått bra« har du hittat junk-erans arvtagare."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Junk-erans rationaliseringar — och svaret\",\"rader\":[[\"Rationalisering\",\"Svaret\"],[\"»Diversifiering eliminerar risken«\",\"Obestånd kommer korrelerat — i just den recession som utlöser dem\"],[\"»Historiska defaulttakter är låga«\",\"Mätta under en period utan recession — urvalet är partiskt\"],[\"»Bolagen kan alltid refinansiera«\",\"När fönstret stängs blir utebliven refinansiering till default\"],[\"»Köparna är proffs«\",\"Köparna var belånade spar- och livbolag med samma blindfläck\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "En tillgångsklass som aldrig visat en förlust har bara inte mött sitt test än — fråga alltid över vilken period »historien« är mätt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj dagens mest hyllade »höga avkastning utan hög risk«-produkt. Skriv ner dess tre viktigaste rationaliseringar och formulera Klarman-svaret till varje: vilket scenario har den ännu inte mött, vem är motparten när det inträffar och vad händer när refinansieringen sinar?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var det grundläggande felet i Milken-epokens »historiskt hög avkastning«-studier?",
+          "alternativ": [
+            "De räknade fel på kupongerna",
+            "De mätte en period utan recession och antog oändlig refinansiering — risken var aldrig testad",
+            "De glömde courtageavgifterna",
+            "De använde fel jämförelseindex"
+          ],
+          "ratt": 1,
+          "tips": "Vilken händelse hade studiens datumintervall aldrig innehållit?"
+        },
+        {
+          "q": "Vilka blev junk-erans största förlorare?",
+          "alternativ": [
+            "Daytraders på börsen",
+            "Centralbanker",
+            "Belånade institut — spar- och livbolag — med koncentrerade junk-portföljer",
+            "Utländska turister"
+          ],
+          "ratt": 2,
+          "tips": "Vem hade både obestånd och egen belåning på en gång?"
+        },
+        {
+          "q": "Vad är den bärande lärdomen från kapitlet?",
+          "alternativ": [
+            "Hög avkastning utan risk existerar ibland — det gäller att hitta den i tid",
+            "Junk bonds är förbjudna och ska förbli det",
+            "All kredit är dålig kredit",
+            "»Den här gången är det annorlunda« är de farligaste orden — testa varje tes mot det scenario den ännu inte mött"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med »historisk säkerhet« när historien är kort?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "1987 — portföljförsäkring och mekanismen som förstorade fallet",
+      "intro": "Den 19 oktober 1987 föll Dow med 22,6 procent på en dag — 508 poäng. Bakom fallet fanns en mekanism som var tänkt som skydd: portföljförsäkring, som sålde aktiefutures allt eftersom marknaden föll. Klarman använder kraschen som bevis på hur institutionaliserad spekulation klär ut sig som riskhantering.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Portföljförsäkring — mest förknippat med Leland, O'Brien och Rubinstein — var en strategi som skulle ge institutioner ett skyddat nedside: sälj aktiefutures i takt med att marknaden faller, så att portföljen beter sig som en köpt put-option. Fördelen: ingen premie. Nackdelen: mekanismen förutsatte att du alltid kunde sälja till fungerande priser. När marknaden föll skulle alla portföljförsäkrare sälja samma instrument samtidigt — den 19 oktober 1987 fanns ingen köpare. Likviditeten (V11) — som alla antog vara given — försvann exakt när den behövdes."
+        },
+        {
+          "type": "text",
+          "content": "Resultatet blev självuppfyllande: ju mer marknaden föll, desto mer tvingades mekanismen sälja, vilket fick marknaden att falla mer. Dow föll 508 poäng, 22,6 procent, på en enda dag — och strategin som skulle skydda kapitalet blev katalysatorn till dess förstörelse. Klarman poäng: institutionerna hade rationaliserat sin spekulation som riskhantering — de hade en modell som fungerade i normala dagars små rörelser och kollapsade vid extremet, när korrelationen mellan alla deltagare gick mot ett."
+        },
+        {
+          "type": "text",
+          "content": "Efterdyningarna — och möjligheten: dagarna efter kraschen fanns fynd överallt, för tvångsförsäljningarna (kapitel 9) skapade priser vida under värde. De som hade kassa och marginal — och psyket att köpa när alla andra sålde — fick decenniets tillfällen. Bauposts filosofi i praktik: kassan från kapitel 13 och modet från kapitel 3 lönar sig i exakt dessa dagar. Kraschen lär också att marknadslikviditet är en feg variabel: den finns när ingen behöver den och försvinner när alla gör det."
+        },
+        {
+          "type": "text",
+          "content": "Dagens paralleller: mekanismer som automatiskt minskar risk när marknaden faller — volatilitetsmål, riskparitet, trendföljande stop-loss-system och enorma passiva flöden — har samma struktur som portföljförsäkringen: de reagerar på prisets rörelse, inte på värde, och de gör samma sak samtidigt. Frågan är alltid Klarman-frågan: vem är motparten när alla utlöser samma signal? Om svaret är »marknaden« — är det 1987 igen, i ny förpackning."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "Försäkring som alla köper samtidigt slutar som brand — fråga inte bara vad som skyddar dig, utan vad som händer när alla utlöser samma skydd på samma gång."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kartlägg ett av dagens populära automatiska riskskydd: stop-loss, volatilitetsmål eller trendfilter. Beskriv exakt vad mekanismen gör när marknaden faller 10 procent snabbt — och vilka miljontals andra som gör samma sak samtidigt. Identifiera en konkret situation där mekanismen blir sin egen katalysator — och vad du som värdeinvesterare kan göra med den informationen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur fungerade portföljförsäkring?",
+          "alternativ": [
+            "Genom att köpa put-optioner på marknaden",
+            "Genom diversifiering i guld och valutor",
+            "Genom att sälja aktiefutures i takt med att marknaden föll — en syntetisk put utan premie",
+            "Genom att korta företagsobligationer"
+          ],
+          "ratt": 2,
+          "tips": "Vilken position efterliknade strategin — och hur byggdes den upp?"
+        },
+        {
+          "q": "Varför blev strategin sin egen katalysator?",
+          "alternativ": [
+            "Premien blev för hög över tid",
+            "Datorerna var för långsamma för ordrarna",
+            "Regulatorn stoppade försäljningen",
+            "Alla skulle sälja samma instrument samtidigt — likviditeten försvann och fallet förstorades"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer när tusentals portföljer har exakt samma säljorder på samma instrument?"
+        },
+        {
+          "q": "Vilken modern mekanism bäst liknar portföljförsäkring?",
+          "alternativ": [
+            "Värdeinvesterare som håller kassa i väntan på fynd",
+            "Volatilitetsmål och riskparitet som automatiskt minskar risk vid fall — och kan förstärka samma självförstärkande loop",
+            "Centralbankers styrräntor",
+            "Aktiesplit och omvända split"
+          ],
+          "ratt": 1,
+          "tips": "Leta efter system som reagerar på prisets rörelse istället för på värde."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Jaktmarker I: panik, kriser och tvångsförsäljningar",
+      "intro": "Fynd uppstår inte i fundamentens värld utan i människors tvång: den som måste sälja idag säljer utanför värdet. Klarman kartlägger tvångssäljarna — indexfonder, likviderande fonder, margin-tagare och konkursförvaltare — och kursen tränar frågan som avgör allt: vem måste sälja, och hur länge varar tvånget?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första jaktmarken är tvångsförsäljningens. Priset på en aktie sätts av marginalköparen och marginalsäljaren — när säljaren är prisokänslig, för att regler, likvidation eller panik tvingar honom, hamnar priset vida under värdet. Klarman kategoriserar: indexfonder som måste sälja när ett bolag faller ur index; fonder som likvideras och måste sälja hela portföljer; investerare på margin som måste täcka; fondförvaltare som vädrar portföljen före kvartalsslut (window dressing); och konkursförvaltare som måste realisera tillgångar enligt processens tidsplan, inte marknadens."
+        },
+        {
+          "type": "text",
+          "content": "Krisens mekanik: panik sänker priser under värde eftersom säljarna är prisokänsliga och köparna få. Dagarna efter 1987 (kapitel 8) var tvångssäljarnas pris så lågt att köpare med kassa och marginal — inte mod, utan kassa — kunde köpa decenniens affärer. Nyckeln till att kunna agera är beredskap: värdeberäkningar gjorda i lugn, kassa som finns (kapitel 13), och positioner med marginal så att du själv aldrig blir tvångssäljare."
+        },
+        {
+          "type": "text",
+          "content": "Analysdisiplinen står kvar: att tvångssäljaren är orsak till priset bevisar inte värdet. Om bolaget samtidigt har hög belåning (V10), svag likviditet i aktien (V11) och ostadiga intäkter (V12) kan det vara en fallande kniv som når noll. Skillnaden mellan fynd och fallande kniv är marginalen: köp under konservativt beräknat värde, med utrymme för att priset faller ytterligare, och storleksätt efter nedside (kapitel 5). Tvånget är din rabatt — inte din analys."
+        },
+        {
+          "type": "text",
+          "content": "Institutionella tvång är lagboken du måste kunna bättre än säljarna: mandat som förbjuder vissa tillgångar (delade, insolventa, för små bolag), ratingregler som tvingar försäljning vid nedgradering, indexregler som säljer vid avnotering, och fondernas likviditetsregler som säljer det som är säljbart — inte det som är sämst. Ditt jobb är att veta vilken regel som skapar säljtrycket och när regeln slutar gälla: överhäng med slutdatum är bättre än överhäng utan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tvångssäljare — vem säljer och varför\",\"rader\":[[\"Säljare\",\"Tvång\",\"Vad du får\"],[\"Indexfond\",\"Bolaget faller ur index — reglerna tvingar försäljning\",\"Massiva innehav sålda utan prissättning\"],[\"Likviderande fond\",\"Inlösen från andelsägare\",\"Hela portföljer sålda på en gång, oavsett värde\"],[\"Investerare på margin\",\"Krav på täckning\",\"Prisokänsliga säljorder i panik\"],[\"Window dressing\",\"Kvartals-/årsslut ska se bra ut\",\"Säljtryck utan fundamental orsak — återkommande och förutsägbar\"],[\"Konkursförvaltare\",\"Processens tidsplan kräver realisation\",\"Illikvida tillgångar sålda under värde\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte »varför är aktien billig?« — fråga »vem måste sälja, och hur länge varar tvånget?«."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera ett nyligen indexbordfall eller en avnotering. Ta reda på: vilka måste sälja, sedan när, och hur stort överhäng som återstår — har det ett slutdatum? Uppskatta sedan bolagets konservativa värde (V10 belåning, V11 likviditet, V12 intäktsstabilitet). Finns marginal när tvångsförsäljningen ebbat ut — och vad är nedside om affären blir fel?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför skapar tvångsförsäljningar fynd?",
+          "alternativ": [
+            "För att bolagen samtidigt förbättrar sina fundamenta",
+            "För att kursen alltid studsar direkt efteråt",
+            "För att media överdriver risken",
+            "För att säljaren är prisokänslig — priset sätts av tvånget, inte av värdet"
+          ],
+          "ratt": 3,
+          "tips": "Vad styr priset när säljaren inte kan vänta på ett bättre?"
+        },
+        {
+          "q": "Vad skiljer ett fynd från en fallande kniv enligt kursen?",
+          "alternativ": [
+            "Diagrammets form i dagliga grafen",
+            "Marginalen: köp under konservativt beräknat värde — och storleksätt så att fortsatt fall inte tvingar dig att sälja",
+            "Aktiens betavärde mot index",
+            "Hur många analyser som täcker bolaget"
+          ],
+          "ratt": 1,
+          "tips": "Vad avgör om ett fortsatt fall är obehagligt eller katastrofalt för dig?"
+        },
+        {
+          "q": "Vad är ett exempel på institutionellt tvång?",
+          "alternativ": [
+            "Analysters riktkursändringar",
+            "VD:ns aktieoptioner",
+            "Indexregler som tvingar försäljning vid bortfall eller nedgradering — oberoende av värde",
+            "Utdelningsbeslut i bolaget"
+          ],
+          "ratt": 2,
+          "tips": "Vilken regel kan sälja aktier utan att ens titta på priset?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Jaktmarker II: komplexitet, spin-offs och post-reorganisation",
+      "intro": "Den andra jaktmarken är det svåranalyserade och det okända: bolag ingen täcker, konglomerat ingen orkar räkna på, nyblivna spin-offs som hamnar hos ägare som inte vill ha dem och aktier i bolag som lämnat konkurs. Gemensamt: säljarna är strukturellt motiverade och »rampen motemot« — att köpa när trenden vänt sig — är ofta priset du får betala.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Komplexitet och okändhet är fyndets vän: när ett papper är svårt att analysera — eller bara ouppmärksammat — överger instituten det. Små, oledade och olästa bolag handlas ofta under värde av samma skäl: ingen institution får äga dem (för litet för mandatet) och ingen analys täcker dem. Konglomeratets rabatt hör hit: när intäkterna är spridda över många verksamheter (V03 intäktsdiversifiering i överflöd) blir värderingsarbetet så trögt att summan av delarna säljs med rabatt — ibland djup sådan."
+        },
+        {
+          "type": "text",
+          "content": "Spin-offs är bokens paradexempel: moderbolaget gör en dotterverksamhet fristående — ofta för att den inte passar (»diworsification«) eller för att avla värdetillväxt. Mekaniken skapar automatiskt tvångssäljare: aktierna delas ut till ägare som aldrig bad om dem, som inte får äga den sektorn eller som tycker den är för liten. Informationsläget är dessutom gynnsamt — omstruktureringsdokumenten (Form 10 i USA) innehåller detaljerad information som vanliga prospekt sällan matchar. Rabatten är strukturell, inte fundamental."
+        },
+        {
+          "type": "text",
+          "content": "Post-reorganisation-aktier: när ett bolag lämnar konkurs har gamla aktieägare utplånats och nya aktier hamnat hos kreditörerna — som ville ha pengar tillbaka, inte onoterat aktieägande. De är motiverade säljare utan intresse för bolaget, och bolaget saknar analyshistoria och institutionsförankring — okändheten förstärker rabatten. Samtidigt kan balansräkningen efter rekonstruktionen vara ren: skulderna bortförhandlade, och värdefulla tillgångar — fastigheter, patent och IP (V13), etablerade varumärken (V14) — finns kvar till strukturerade låga priser."
+        },
+        {
+          "type": "text",
+          "content": "Rampen motemot — att köpa när prisrampen vänt sig mot dig — är denna jaktmarks pris: du köper när momentum och media pekar nedåt och ser fel ut i månader. Skyddet är kapitel 2-3: oberoende värdeberäkning med marginal och uthållighet att vänta på vågmaskinen. Operativa vändkatalysatorer — nya produktlanseringar (V16) eller nya avtal (V17) — kan påskynda värdeskiftet men ska behandlas som bonus: grunden är att priset ligger under värdet även utan dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Jaktmarken — varför säljaren är motiverad\",\"rader\":[[\"Situation\",\"Vem säljer\",\"Varför motiverad\"],[\"Spin-off\",\"Ägare av moderbolaget\",\"Fel mandat eller för litet — de ville aldrig äga dotterbolaget\"],[\"Post-reorganisation\",\"Kreditörer som fick aktier\",\"De ville ha kontanter — inte aktier i ett okänt bolag\"],[\"Komplex konglomeratdel\",\"Institut utan analystäckning\",\"Ingen räknar på bolaget — okändheten blir säljsignal\"],[\"Småbolag under radarn\",\"Större institut\",\"För litet för mandaten — oavsett värde\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den bästa jaktmarken är där analysen är svår — din vilja att gräva är i sig marginalen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en nyligen genomförd eller pågående spin-off. Läs omstruktureringsdokumenten: vem får aktierna, vilka mandat har mottagarna och när kan de sälja? Uppskatta dotterbolagets fristående värde enligt kapitel 4 (kassaflödesvärde och substansvärde). Ligger priset under värdet med marginal — och vem kommer att sälja till dig de kommande månaderna?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är nyskapade spin-offs ofta fynd?",
+          "alternativ": [
+            "De är alltid billigare än moderbolaget",
+            "Moderbolaget brukar köpa tillbaka dem billigt",
+            "De saknar konkurrenter på sin marknad",
+            "Aktiekvittot hamnar hos ägare som inte får eller vill äga dem — strukturellt tvångssäljande är inbyggt i mekaniken"
+          ],
+          "ratt": 3,
+          "tips": "Vad gör mottagarna av de nya aktierna — och varför?"
+        },
+        {
+          "q": "Varför säljs post-reorganisation-aktier billigt?",
+          "alternativ": [
+            "De är olagliga att inneha för institut",
+            "Nya aktier hamnar hos kreditörer som hellre vill ha kontanter än aktier — motiverade säljare utan analysintresse",
+            "Kursen är alltid högre än värdet efter konkurs",
+            "De handlas aldrig på börsen"
+          ],
+          "ratt": 1,
+          "tips": "Vad ville kreditörerna ha från rekonstruktionen — aktier eller pengar?"
+        },
+        {
+          "q": "Vad menas med att köpa »rampen motemot«?",
+          "alternativ": [
+            "Att korta aktier i stark upptrend",
+            "Att handela så ofta att trenden spelar mindre roll",
+            "Att köpa när prisrampen och sentimentet vänt nedåt — med oberoende värdeberäkning och marginal som skydd",
+            "Att köpa dyra tillväxtaktier i eufori"
+          ],
+          "ratt": 2,
+          "tips": "Vad skyddar dig när trenden och media pekar mot dig i månader?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Special situations I: arbitrage och merger securities",
+      "intro": "Klarman älskade special situations eftersom mekaniken — inte marknadshumöret — styr utfallet. Kapitlet går igenom merger arbitrage steg för steg: sannolikhet, tid och nedside vid spricker — och doldisarna merger securities, där icke-aktiedelen av budet tvingas säljas av strukturella skäl.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Merger arbitrage i sin enkla form: ett bolag budas, målbolagets aktie handlas strax under budpriset — spreaden är din avkastning om affären genomförs, din förlust om den spricker. Analysen är tre frågor: (1) Genomförs affären? — avtalets struktur och konditioner (V17 avtal och partnerskap): bindning, brytvillkor, finansieringens trygghet, aktieägarnas och myndigheternas godkännanden (V18 regulatoriska katalysatorer). (2) När? — tiden till stängning avgör den annualiserade avkastningen. (3) Vad händer om den spricker? — målbolagets fristående värde definierar nedside."
+        },
+        {
+          "type": "text",
+          "content": "Affärens struktur avgör risken: kontantbud ger ren spread; aktiebud ger förhållandet (ratio) mellan bolagen och därmed risk i båda aktierna; brytpunkter (collars) kan flytta priset; och finansieringsvillkoren kopplar affären till kreditmarknadens hälsa — en affär som är beroende av skuldmarknaden i stress har högre sprickrisk (junk-erans parallell, kapitel 7). Konkurrerande bud kan höja priset och ge oväntad uppsida, medan myndighetsstopp (V18) och finansieringskollaps är de vanliga dödsorsakerna. Räkna alltid med förväntat värde: sannolikhet gånger avkastning minus sannolikhet sprick gånger nedside."
+        },
+        {
+          "type": "text",
+          "content": "Merger securities är kapitlets doldis: i genomförda affärer får säljande aktieägare ofta en blandning av kontant, aktier och — mindre känt — obligationer och konvertibler. Institutioner som bara får eller förväntas äga aktier säljer icke-aktiedelen omedelbart, och många privata ägare förstår inte vad de fått. Resultatet: obligationer och konvertibler från en färsk affär kan köpas under värde. De är ofta små och illikvida (V11) — exakt där värdeinvesterarens analys betalar, för konkurrensen är strukturellt frånvarande."
+        },
+        {
+          "type": "text",
+          "content": "Diskretionär — inte mekanisk — arbitrage: de flesta arbitrageörer äger varje affär i index, för att inte avvika från konkurrenterna (kapitel 1:s institutionella problem igen). Klarman gör motsatsen: äg bara affärer där du har en dokumenterad edge — där du förstår tvånget, strukturen eller juridiken bättre än marknaden — och stå utanför de övriga. I special situations är selektering hela skillnaden mellan affär och hasard."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Merger arbitrage — analysmatrisen\",\"rader\":[[\"Fråga\",\"Vad du analyserar\",\"Exempel på varning\"],[\"Genomförs den?\",\"Avtalets konditioner och finansiering (V17)\",\"Finansiering kopplad till skuldmarknad i stress\"],[\"När?\",\"Tid till stängning — annualisera spreaden\",\"Långa myndighetsprocesser (V18) äter avkastningen\"],[\"Vad om den spricker?\",\"Målets fristående värde\",\"Sprickkurs vida över värdet före bud — djupt nedside\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Spreaden är inte marginal — den är priset på din analys: du tjänar på att veta mer om genomförandet än marknaden, inte på att hoppas."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en pågående offentlig budaffär. Uppskatta: sannolikhet för genomförande (i procent), tid till stängning (månader), nuvarande spread och nedside vid sprick (målets fristående värde). Räkna förväntat värde: p × spread minus (1 − p) × nedside. Annualisera. Vid vilken spread blir affären attraktiv för dig — och vilken information skulle flytta din sannolikhet?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är spreaden i merger arbitrage?",
+          "alternativ": [
+            "Skillnaden mellan budpris och aktuellt pris — kompensation för risk och tid",
+            "Courtaget som mäklaren tar",
+            "Skillnaden mellan dina och analytikernas riktkurser",
+            "Utdelningen fram till stängning"
+          ],
+          "ratt": 0,
+          "tips": "Vad betyder det att målbolaget handlas strax under budet?"
+        },
+        {
+          "q": "Varför kan merger securities bli fynd?",
+          "alternativ": [
+            "De är alltid säkrare än aktier",
+            "De är skattefria för mottagaren",
+            "De har alltid högst ränta på marknaden",
+            "Icke-aktiedelen hamnar hos ägare som inte får eller vill äga den typen av papper — strukturella säljare trycker priset"
+          ],
+          "ratt": 3,
+          "tips": "Vad gör en aktiefond med de obligationer den får i en affär?"
+        },
+        {
+          "q": "Vilken fråga definierar risken bäst i en budaffär?",
+          "alternativ": [
+            "Hur stor spreaden är just idag",
+            "Vad målbolaget är värt om affären spricker — nedside, inte spreaden, definierar risken",
+            "Vilken investeringsbank som rådgiver",
+            "Hur media skriver om affären"
+          ],
+          "ratt": 1,
+          "tips": "Vad förlorar du om affären faller — och hur djupt är det hålet?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Special situations II: liquidations, rights offerings och thrift-konverteringar",
+      "intro": "Tre mekaniska situations där strukturen gör jobbet: likvidationer där du räknar på tillgångar minus skulder minus tid, rights offerings där emissionens rabatt skapar värde, och thrift-konverteringar där sparbanker börsnoteras kraftigt under bokvärdet. Gemensam nämnare: katalysatorn är inbyggd — du behöver inte gissa marknadens humör.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Liquidationsanalysen steg för steg: (1) värdera tillgångarna konservativt — fastigheter till påvisade värden (inte bokförda), lager med avdrag, fordringar med hänsyn till indrivbarhet; (2) dra bort alla skulder och avvecklingskostnader — förvaltare, jurister, tid; (3) resultatet är aktieägarnas andel — som du diskonterar för tid och osäkerhet. Komplettera alltid med strukturen: vissa avvecklingar — exempelvis bolag med myndighetsreglerade tillgångar — kräver regulatoriskt godkännande (V18) som avgör både tid och utfall. Klarman visar fall där aktien handlades till en bråkdel av konservativt beräknat likvidationsvärde — mekaniken, inte humöret, stängde gapet."
+        },
+        {
+          "type": "text",
+          "content": "Rights offerings — teckningserbjudanden till befintliga ägare, ofta till rabatt mot marknadspris. Mekaniken: teckningsrätten handlas separat fram till sista dag; ägare som inte vill teckna säljer sina rättigheter; efter genomförd emission är aktierna utspädda och kursen kan tryckas av överhäng (V19 emission-risk — utspädningen är en risk att räkna, inte att bortse ifrån). Värdeskapandet uppstår när rabatten är djup, bolaget är fundamentalt friskt och emissionen stärker balansräkningen — i paniktider (finanskriser) har banker och fastighetsbolag gett deltagare marginal, medan vägran att delta betalade utspädningspriset."
+        },
+        {
+          "type": "text",
+          "content": "Thrift-konverteringar — bokens tidsdokument och eviga mönster: sparinstitut som ägdes av insättare (mutual) omvandlades till aktiebolag genom nyemission. Klarman 1991: aktierna erbjöds kraftigt under bokvärdet (V05 P/B), dels för att utbudet av aktier översteg den omedelbara efterfrågan, dels för att emissionslikviden strömmade in i balansräkningen och gjorde P/B ännu lägre efter noteringen — dubbel effekt. När det nya kapitalet sattes i arbete kunde ROE (V09) överraska uppåt. Mönstret lever: strukturellt tvångssäljande i nyemissioner — oavsett sektor — är samma jaktmark idag."
+        },
+        {
+          "type": "text",
+          "content": "Gemensam nämnare: i alla tre situations sitter katalysatorn i strukturen — beslutad avveckling med tidsplan, emission med deadline, konvertering med notering. Det är därför Klarman kallar special situations värdeinvesterarens hemmaplan: utfallet drivs av mekanik och juridik, som går att analysera, snarare än av marknadens humör, som bara går att gissa. Ditt arbete är att räkna mekaniken noggrannare än de strukturellt motiverade säljarna — och att kräva marginal även här, för mekanik kan fastna, skjutas upp eller stämmas i domstol."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre special situations — mekanik och katalysator\",\"rader\":[[\"Situation\",\"Mekanik\",\"Inbyggd katalysator\"],[\"Liquidation\",\"Tillgångar realiseras, skulder betalas, rest utdelas\",\"Beslutad avveckling med tidsplan — myndighetsgodkännande (V18) kan styra\"],[\"Rights offering\",\"Teckningsrätter till rabatt — utspädning att räkna (V19)\",\"Teckningskurs och deadline — rabatten stängs vid genomförande\"],[\"Thrift-konvertering\",\"Mutual ägande börsnoteras via nyemission\",\"Emissionspris under bokvärde (V05) plus nytt kapital in i balansräkningen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "I special situations är katalysatorn inbyggd i strukturen — din uppgift är att räkna mekaniken, inte att spå marknadens humör."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en likvidationsanalys för ett bolag som handlas under substans: (1) konservativt värde på alla tillgångar, (2) minus skulder och avvecklingskostnader på 10-30 procent, (3) diskonto för förväntad tid till utbetalning. Jämför med börsvärdet. Gör samma övning mentalt för en bank eller fastighetsägare — vad krävs för att rabatten ska vara ett fynd snarare än en värdefälla?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i en likvidationsanalys?",
+          "alternativ": [
+            "Att multiplicera vinsten med en historisk multipel",
+            "Att konservativt värdera tillgångar, dra bort skulder och avvecklingskostnader — och diskontera för tid",
+            "Att titta på P/E och riktkurser",
+            "Att räkna på omsättningstillväxten framåt"
+          ],
+          "ratt": 1,
+          "tips": "Vad äger aktieägarna kvar när allt sålts och allt betalats — och när?"
+        },
+        {
+          "q": "Varför kunde thrift-konverteringar bli fynd?",
+          "alternativ": [
+            "Bankerna var i konkursmässigt skick",
+            "De betalade alltid hög utdelning",
+            "De var statligt garanterade mot förluster",
+            "Överskottet av aktier vid emissionen plus den nya emissionslikviden gjorde att aktien såldes kraftigt under bokvärdet (V05)"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med P/B när emissionen görs under bokvärde — och kapitalet strömmar in i bolaget?"
+        },
+        {
+          "q": "Vad måste köparen förstå i en rights offering?",
+          "alternativ": [
+            "Att utspädning är en relevant risk (V19) och att deltagande till rabatt kan ge marginal — medan vägran kostar utspädningspriset",
+            "Att rätter aldrig kan säljas vidare",
+            "Att emission alltid är positivt för gamla ägare",
+            "Att teckningskursen saknar betydelse"
+          ],
+          "ratt": 0,
+          "tips": "Vad händer med ditt ägarande om du står utanför — och vad ger rabatten dig om du går in?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Kassa är en position — tålamod som strategi",
+      "intro": "Klarmans mest provocerande budskap: kassa är inte passiv väntan utan en aktiv position — en option på framtida fynd. Kapitlet förklarar varför fullt investerad är ett val, inte ett tvång, hur negativ kompoundering förstör spelare i options och futures, och hur Baupost använt kassan genom decenniernas paniker.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Klarman formulerar sin kassa-lära i en mening: kombinationen av tillgänglig kassa och ett konträrt sinnelag är den bästa förutsättningen för investeringsframgång (fritt översatt). Kassan är en option på framtida fynd — utan löptid och utan premien till en utfärdare. Att hålla den är svårt: i uppgång känns varje procent försummad avkastning som en förlust, och för professionella skapar den karriärrisk. Just därför är kassa ett val som få gör — och som betalar dem som gör det."
+        },
+        {
+          "type": "text",
+          "content": "Negativ kompoundering är kassans onda tvilling: instrument med negativt förväntat värde — options, futures och warrants — spelar matematiken mot dig. Varje liten förlust i premie och tidsvärde kompounderas i takt med att du fortsätter spela; Klarman varnar för alla spekulativa verktyg där motparten förstår instrumentet bättre än du. Regeln är enkel: den som inte kan räkna på instrumentets förväntade värde är inte investerare i det — han är motpart. Undvik negativa kompounderare, hur spännande de må se ut."
+        },
+        {
+          "type": "text",
+          "content": "Baupost-praxis genom historien: ofta 20-50 procent kassa när utbudet av fynd varit dåligt — inte av prognos om nedgång, utan för att alternativen inte var tillräckligt bra. Kassan är sedan det som gjort det möjligt att köpa kraftigt i panikerna — 1987, 1990 och senare 2008 — när tvångssäljarna (kapitel 9) öppnade dörren. »Cash drag« i lugna tider är kostnaden för optionen att slå till i kaos. Tålamod är inte passivitet: det är beredskap med uträknade värden och väntande köpordrar."
+        },
+        {
+          "type": "text",
+          "content": "Fullt investerad-tvånget är den kulturella normen — att vara fullt investerad uppfattas som flit, och kassa som lathet. Klarman vänder på det: alternativkostnaden för kassa är känd och begränsad (uppgången du missar, inflationen ur kapitel 6), medan kostnaden för dåliga investeringar — gjorda för att »vara med« — är okänd och kan bli permanent (kapitel 5). Håll kassa hellre än att äga det tveksamma: bolag som bränner kapital och måste emittera (V19) eller verksamheter med ostadiga intäkter (V12) köpta utan marginal."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "insikt",
+          "content": "Kassans kostnad är känd och begränsad — dåliga investeringars kostnad är okänd och kan bli permanent: välj alltid det kända onda."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv en kassa-policy för dig själv: en miniminivå (till exempel 10 procent) och triggervillkor — vid vilken marginal under beräknat värde får kassan användas, och hur mycket per position? Tillämpa den nästa gång marknaden panikar: fick regeln dig att agera beslutsamt — eller avslöjade den att du inte hade några färdiguträknade värden att agera på?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med att »kassa är en position«?",
+          "alternativ": [
+            "Att alltid vara 100 procent investerad",
+            "Att kassa är ett aktivt val — en option på framtida fynd som ska jämföras med utbudet, inte en passiv rest",
+            "Att kassa alltid är den bästa placeringen",
+            "Att man ska sluta investera helt"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan du göra i en panik som den fullt investerade inte kan?"
+        },
+        {
+          "q": "Varför varnar Klarman för options, futures och warrants?",
+          "alternativ": [
+            "De är olagliga i de flesta jurisdiktioner",
+            "De ger för hög avkastning jämfört med aktier",
+            "De är för svåra att köpa tekniskt",
+            "Negativt förväntat värde: premier och tidsvärde kompounderas mot dig — och motparten förstår instrumentet bättre"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med små, återkommande förluster över tid när de får ränta-på-ränta verka?"
+        },
+        {
+          "q": "Varför höll Baupost ofta 20-50 procent kassa?",
+          "alternativ": [
+            "För att de trodde aktiemarknaden alltid skulle falla",
+            "För att regelverket krävde det",
+            "För att kunderna betalade för att få exponering mot kassa",
+            "För att när fynd saknades var kassa det bästa alternativet — och kassan gjorde det möjligt att köpa stort i nästa panik"
+          ],
+          "ratt": 3,
+          "tips": "Vad förvandlar en krash från hot till möjlighet?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Ägartänkande, katalysatorer och Klarmans regler — syntesen",
+      "intro": "Kursens sista kapitel binder ihop allt: det entreprenöriella tänkandet — att köpa som om du köpte hela bolaget — katalysatorfamiljen i AKM1 (V16-V18), återköp (V20) som kapitalallokering och Klarmans tio regler. Från Bauposts grundande 1982 till boken 1991: eftertänksamhet är metoden, marginalen är verktyget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Entreprenöriellt tänkande är Klarmans aktiva sida: köp aktien som om du köpte hela bolaget — vad skulle du betala för hela verksamheten, dess kassaflöden och dess kontrollmöjligheter? Som ägare kan du skapa katalysatorn själv: samla en betydande post, föra dialog med styrelsen och driva värdeskapande åtgärder genom proxy-kontroll — frigöra dolda tillgångar, sälja icke-kärnor och återköpa aktier (V20) under inre värde. Ägarskapet är marginalens sista försvar: även om marknaden är långsam kan värdet tvingas fram."
+        },
+        {
+          "type": "text",
+          "content": "Katalysatorfamiljen i AKM1: produktlanseringar (V16), avtal och partnerskap (V17) och regulatoriska förändringar (V18) kompletterar de strukturella katalysatorerna från kursens kapitel 10-12 — spin-offs, budaffärer, likvidationer och konverteringar. Klarmans hierarki är tydlig: katalysatorn är bonus. Om affären inte är värd sitt pris utan katalysatorn är den en spekulation — du spelar på att någon annan ska göra jobbet. Om affären däremot är säker förvandlar katalysatorn en lång väntan till en planerad händelse. V20 återköp är dessutom ett test av ledningens kapitalallokering: återköp under inre värde gagnar ägarna — återköp över inre värde förstör dem."
+        },
+        {
+          "type": "text",
+          "content": "Klarmans tio regler — kursens sammandrag: (1) marginal of safety först, alltid en funktion av priset; (2) bottoms-up-analys — ingen makroprognos behövs; (3) var konträrt när pendeln slår i extrem; (4) köp tvångssäljares papper, inte trendens; (5) älska special situations där mekaniken är din vän; (6) risk är permanent förlust — aldrig volatilitet; (7) räkna realt — inflationen är osynlig; (8) undvik spekulativa verktyg och negativa kompounderare; (9) kassa är ett aktivt val; (10) tänk som ägare — katalysator är bonus. Bakom reglerna står historien: junk-erans kollaps och 1987 visar vad som händer när de bryts."
+        },
+        {
+          "type": "text",
+          "content": "Syntesen med AKM1: kursen har mappat boken till ekosystemet — V10-V12 för stabilitetsriskerna (belåning, likviditet, intäktsstabilitet), V19 för kapitalförbränning och emissionsrisk, V16-V18 för katalysatorerna, V20 för återköpen, V04-V06 för värderingsgenvägarna, V07-V09 för lönsamhetens kvalitet, V13-V15 för moats. Och den viktigaste skrivregeln: marginal of safety självt är en princip utan V-nummer — den styr hur alla V-mått ska tolkas och när de överhuvudtaget betyder något. Bokens sista ord är dess första: var en eftertänksam investerare — riskavert, tålmodig och beredd när tvångets timme kommer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Klarmans tio regler — snabbreferens\",\"rader\":[[\"Nr\",\"Regel\",\"Kursreferens\"],[\"1\",\"Marginal of safety först — alltid en funktion av priset\",\"Kapitel 2\"],[\"2\",\"Bottoms-up-analys — ingen makroprognos behövs\",\"Kapitel 3\"],[\"3\",\"Var konträrt när pendeln slår i extrem\",\"Kapitel 3 och 9\"],[\"4\",\"Köp tvångssäljares papper — inte trendens\",\"Kapitel 9-10\"],[\"5\",\"Special situations när mekaniken är din vän\",\"Kapitel 11-12\"],[\"6\",\"Risk = permanent förlust — aldrig volatilitet\",\"Kapitel 5\"],[\"7\",\"Räkna realt — inflationen är osynlig\",\"Kapitel 6\"],[\"8\",\"Undvik spekulativa verktyg och negativa kompounderare\",\"Kapitel 7 och 13\"],[\"9\",\"Kassa är ett aktivt val\",\"Kapitel 13\"],[\"10\",\"Tänk som ägare — katalysator är bonus\",\"Kapitel 14\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "insikt",
+          "content": "Köp aldrig något där du behöver katalysatorn för att inte förlora — katalysatorn ska förhöja en redan säker affär, inte rädda en osäker."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget Klarman-testamente: en sida med dina tio regler från kursen, formulerade i jag-form och anpassade till din portfölj. Datera och häng upp den. Nästa gång en bubbla bjuder in dig — en »risklös högavkastning«, en mekanism alla tror på, en nyhet du känner tvång att handla på — läs testamentet innan du klickar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär entreprenöriellt tänkande enligt kursen?",
+          "alternativ": [
+            "Att starta eget företag istället för att investera",
+            "Att daytradera aktivt med belåning",
+            "Att köpa aktier som om du köpte hela bolaget — med ägarskapets möjligheter att själv skapa katalysatorn (dialog, proxy-kontroll, återköp)",
+            "Att äga indexfonder och låta tiden jobba"
+          ],
+          "ratt": 2,
+          "tips": "Vad kan en ägare göra med ett bolag som en passiv kursvaktare inte kan?"
+        },
+        {
+          "q": "Hur förhåller sig katalysatorn till marginalen?",
+          "alternativ": [
+            "Katalysatorn ersätter marginalen när den är stark nog",
+            "Katalysatorn är samma sak som marginalen",
+            "Katalysatorn behövs aldrig i värdeinvestering",
+            "Katalysatorn är bonus — affären ska vara värt sitt pris även utan den"
+          ],
+          "ratt": 3,
+          "tips": "Vad återstår av affären om katalysatorn uteblir — vinst eller förlust?"
+        },
+        {
+          "q": "Vad säger V20 (återköp) om ett bolags ledning?",
+          "alternativ": [
+            "Återköp är alltid bra oavsett pris",
+            "Återköp är alltid dåligt eftersom kapitalet försvinner",
+            "Återköp under inre värde gagnar ägarna — återköp över inre värde förstör värde; det är ett test av kapitalallokeringen",
+            "Återköp säger inget alls om ledningen"
+          ],
+          "ratt": 2,
+          "tips": "Vad köper bolaget egentligen när det köper tillbaka egna aktier — och till vilket pris?"
+        }
+      ]
+    }
+  ]
+}

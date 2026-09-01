@@ -5,12 +5,12 @@
   "chapterCount": 18,
   "totalMinutes": 200,
   "title": "Investment Valuation — Damodaran: KOMPLETT",
-  "summary": "Investment Valuation av Aswath Damodaran (NYU Stern) är modern värderingsläras standardverk — den bok AKM1 V14 bygger på. Kursen går från värderingens filosofi och dividendmodellen via FCFE/FCFF, justerade räkenskaper, tillväxtekvationen g = ROIC × återinvesteringsgrad, terminal value och WACC till relativa multipeler, specialfall som banker och unga bolag samt real options, montecarlo och värderingens psykologi.",
+  "summary": "Investment Valuation av Aswath Damodaran (NYU Stern) är modern värderingsläras standardverk — den bok AKM1:s värderingsvariabler (V04–V06) bygger på. Kursen går från värderingens filosofi och dividendmodellen via FCFE/FCFF, justerade räkenskaper, tillväxtekvationen g = ROIC × återinvesteringsgrad, terminal value och WACC till relativa multipeler, specialfall som banker och unga bolag samt real options, montecarlo och värderingens psykologi.",
   "minutes": 11,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan eleven bygga en komplett DCF i tre varianter (DDM, FCFE, FCFF), justera räkenskaper till verkliga kassaflöden (R&D-kapitalisering, arbetskapital, engångsposter), beräkna fundamentalt driven tillväxt med g = ROIC × återinvesteringsgrad, sätta terminal value med evig tillväxt högst lika med riskfri ränta, härleda kapitalkostnad via CAPM med bottom-up-beta och WACC samt använda och justera multipeler (PEG, EV/EBIT(1-t)) utan att falla för multipelfällorna. Eleven kan dessutom värdera cykliska bolag med normaliserat resultat, banker med utdelningsmodell och rättvisad P/B, unga tillväxtbolag med överlevnadsviktning samt resonera kring real options, scenarier och value gap — grunden för AKM1 V19:s marginal mellan pris och intrinsiskt värde.",
-  "why": "Damodaran är världens mest citerade värderingslärare och Investment Valuation det verk som varje seriös DCF bygger på. Utan denna bok är AKM1 V10 (kassaflöde), V12 (värderingstillväxt), V14 (värdering) och V19 (marginal: pris mot intrinsikt värde) halva sanningar — med den blir värdering ett hantverk med exakta formler istället för en känsla.",
+  "learn": "Efter kursen kan eleven bygga en komplett DCF i tre varianter (DDM, FCFE, FCFF), justera räkenskaper till verkliga kassaflöden (R&D-kapitalisering, arbetskapital, engångsposter), beräkna fundamentalt driven tillväxt med g = ROIC × återinvesteringsgrad, sätta terminal value med evig tillväxt högst lika med riskfri ränta, härleda kapitalkostnad via CAPM med bottom-up-beta och WACC samt använda och justera multipeler (PEG, EV/EBIT(1-t)) utan att falla för multipelfällorna. Eleven kan dessutom värdera cykliska bolag med normaliserat resultat, banker med utdelningsmodell och rättvisad P/B, unga tillväxtbolag med överlevnadsviktning samt resonera kring real options, scenarier och value gap — grunden för AKM1:s marginalprövning (margin of safety) mellan pris och intrinsiskt värde.",
+  "why": "Damodaran är världens mest citerade värderingslärare och Investment Valuation det verk som varje seriös DCF bygger på. Utan denna bok är AKM1:s värderingsvariabler (V04–V06), kassaflödesmodellerna (FCFF/FCFE) och margin of safety (marginal: pris mot intrinsikt värde) halva sanningar — med den blir värdering ett hantverk med exakta formler istället för en känsla.",
   "chapters_list": [
     "1. Värderingens filosofi — pris, värde och varför skillnaden betalar",
     "2. Modellernas karta — absolut, relativ och optionellt värde",
@@ -40,7 +40,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Damodaran börjar där Graham slutade: priset sätts av utbud och efterfrågan och drivs av hopp och rädsla — värdet drivs av kassaflöden, tillväxt och risk. Hela värderingsdisciplinen bygger på den skillnaden. Hans mest citerade tes, från Narrative and Numbers (2017), lyder ungefär: en värdering är en bro mellan berättelser och siffror. Utan berättelse blir siffrorna datalek; utan siffror blir berättelsen en saga. AKM1 V19 (marginal: pris mot intrinsikt värde) är rakt av operationaliseringen av detta gap: kurs 152 kronor mot beräknat värde 120 kronor ger ingen köpsignal förrän du förstår varför marknaden betalar mer — och vem som har rätt."
+          "content": "Damodaran börjar där Graham slutade: priset sätts av utbud och efterfrågan och drivs av hopp och rädsla — värdet drivs av kassaflöden, tillväxt och risk. Hela värderingsdisciplinen bygger på den skillnaden. Hans mest citerade tes, från Narrative and Numbers (2017), lyder ungefär: en värdering är en bro mellan berättelser och siffror. Utan berättelse blir siffrorna datalek; utan siffror blir berättelsen en saga. AKM1:s margin of safety (marginal: pris mot intrinsikt värde) är rakt av operationaliseringen av detta gap: kurs 152 kronor mot beräknat värde 120 kronor ger ingen köpsignal förrän du förstår varför marknaden betalar mer — och vem som har rätt."
         },
         {
           "type": "text",
@@ -52,7 +52,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Rationalitet → konsekvens för värderaren\",\"rader\":[[\"Syn på marknaden\",\"Konsekvens\",\"Värderarens roll\"],[\"Perfekt rationalitet\",\"Pris = värde omedelbart\",\"Förklara pris; inget utrymme för systematiskt alfa\"],[\"Praktisk rationalitet\",\"Rätt oftast — fel ibland, ibland länge\",\"Hitta gap, kräv marginal (V19), ha tålamod\"],[\"Irrationellt kaos\",\"Allt kan hända när som helst\",\"Värdering överflödig — ren speculation\"]]}"
+          "content": "{\"rubrik\":\"Rationalitet → konsekvens för värderaren\",\"rader\":[[\"Syn på marknaden\",\"Konsekvens\",\"Värderarens roll\"],[\"Perfekt rationalitet\",\"Pris = värde omedelbart\",\"Förklara pris; inget utrymme för systematiskt alfa\"],[\"Praktisk rationalitet\",\"Rätt oftast — fel ibland, ibland länge\",\"Hitta gap, kräv marginal (margin of safety), ha tålamod\"],[\"Irrationellt kaos\",\"Allt kan hända när som helst\",\"Värdering överflödig — ren speculation\"]]}"
         },
         {
           "type": "insikt",
@@ -107,11 +107,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Absoluta modeller (DCF) härleder värdet ur bolaget självt: uppskatta kassaflöden, tillväxt och risk och diskontera. Relativa modeller (multipeler) sätter ett pris genom jämförelse med andra bolag — Damodaran kallar det pricing, prissättning, till skillnad från valuation, värdering. Optionella modeller slutligen prissätter osäkerhet och flexibilitet med optionsteori. Tre familjer, tre frågor: vad är bolaget värt i sig, vad kostar det mot jämförbara, och vad är flexibiliteten värd? Ett moget hantverk innebär att kunna alla tre — och veta att multipeln ger pris medan DCF:n ger värde (V14 resonerar på samma sätt)."
+          "content": "Absoluta modeller (DCF) härleder värdet ur bolaget självt: uppskatta kassaflöden, tillväxt och risk och diskontera. Relativa modeller (multipeler) sätter ett pris genom jämförelse med andra bolag — Damodaran kallar det pricing, prissättning, till skillnad från valuation, värdering. Optionella modeller slutligen prissätter osäkerhet och flexibilitet med optionsteori. Tre familjer, tre frågor: vad är bolaget värt i sig, vad kostar det mot jämförbara, och vad är flexibiliteten värd? Ett moget hantverk innebär att kunna alla tre — och veta att multipeln ger pris medan DCF:n ger värde (AKM1:s värderingsvariabler V04–V06 resonerar på samma sätt)."
         },
         {
           "type": "text",
-          "content": "DCF-familjen har tre huvudvarianter. Utdelningsmodellen (DDM) värderar bara det som faktiskt betalas ut — den passar mogna bolag med stabil utdelningspolicy, som banker och kraftbolag. FCFE värderar kassaflödet som kunde betalas till ägarna — rätt när utdelningen avviker från kapaciteten, exempelvis när bolaget samlar kontanter eller återköper aktier. FCFF värderar flödet till allt kapital och ger företagsvärdet (EV) — rätt när skuldstrukturen förändras eller vid kapitalintensiva bolag. Damodaran tillfogar excess return-modeller: värde = investerat kapital + nuvärde av framtida överavkastning — elegant just när ROIC är kärnan i historien (V12)."
+          "content": "DCF-familjen har tre huvudvarianter. Utdelningsmodellen (DDM) värderar bara det som faktiskt betalas ut — den passar mogna bolag med stabil utdelningspolicy, som banker och kraftbolag. FCFE värderar kassaflödet som kunde betalas till ägarna — rätt när utdelningen avviker från kapaciteten, exempelvis när bolaget samlar kontanter eller återköper aktier. FCFF värderar flödet till allt kapital och ger företagsvärdet (EV) — rätt när skuldstrukturen förändras eller vid kapitalintensiva bolag. Damodaran tillfogar excess return-modeller: värde = investerat kapital + nuvärde av framtida överavkastning — elegant just när ROIC är kärnan i historien (moat-variablerna V13–V15 i AKM1)."
         },
         {
           "type": "text",
@@ -186,7 +186,7 @@
         },
         {
           "type": "text",
-          "content": "DDM:s styrka är renheten: utdelningar är verkliga kontanta flöden som inte kan målas om. Svagheten är den speglade: modellen förutsätter att utdelningen speglar bolagets förmåga. Ett bolag som betalar ut 20 men kunde betala 80 undervärderas systematiskt av DDM — skillnaden är potential till framtida utdelningar eller återköp som modellen inte ser. Damodaran listar därför DDM som huvudverktyg för mogena utdelningsbetalare och banker, medan FCFE tar över när utdelning och kapacitet glider isär (V10 kompletterar med kassaflödesperspektivet). Notera även begränsningen g ≤ riskfri ränta för den eviga fasen — ingen utdelning växer snabbare än ekonomin i evighet."
+          "content": "DDM:s styrka är renheten: utdelningar är verkliga kontanta flöden som inte kan målas om. Svagheten är den speglade: modellen förutsätter att utdelningen speglar bolagets förmåga. Ett bolag som betalar ut 20 men kunde betala 80 undervärderas systematiskt av DDM — skillnaden är potential till framtida utdelningar eller återköp som modellen inte ser. Damodaran listar därför DDM som huvudverktyg för mogena utdelningsbetalare och banker, medan FCFE tar över när utdelning och kapacitet glider isär (kassaflödesperspektivet kompletterar). Notera även begränsningen g ≤ riskfri ränta för den eviga fasen — ingen utdelning växer snabbare än ekonomin i evighet."
         },
         {
           "type": "tabell",
@@ -253,7 +253,7 @@
         },
         {
           "type": "text",
-          "content": "När är FCFE rätt val? När utdelningen avviker från förmågan — i bägge riktningar. FCFE överstiger utdelningen: bolaget samlar krut, värdet ligger i framtida utdelningar, återköp eller förvärv. FCFE understiger utdelningen: utdelningen är osund och håller på att äta kapital — en varning Graham hade släppt igenom med råge. FCFE diskonteras alltid med ke, aldrig WACC, eftersom flödet redan ligger efter räntor och skuldrörelser. I AKM1 är detta V10:s analys i värderingsform: frikt kassaflöde till ägarna, prissatt."
+          "content": "När är FCFE rätt val? När utdelningen avviker från förmågan — i bägge riktningar. FCFE överstiger utdelningen: bolaget samlar krut, värdet ligger i framtida utdelningar, återköp eller förvärv. FCFE understiger utdelningen: utdelningen är osund och håller på att äta kapital — en varning Graham hade släppt igenom med råge. FCFE diskonteras alltid med ke, aldrig WACC, eftersom flödet redan ligger efter räntor och skuldrörelser. I AKM1 är detta kassaflödesanalysen i värderingsform: frikt kassaflöde till ägarna, prissatt."
         },
         {
           "type": "tabell",
@@ -320,7 +320,7 @@
         },
         {
           "type": "text",
-          "content": "Damodarans konsistensregler är hårda: FCFF diskonteras med WACC, FCFE och utdelningar med ke — aldrig tvärtom. Glömmer du att dra bort nettoskulden från EV värderar du verksamheten men låtsas att den tillhör aktieägarna gratis. Tänk också på icke-rörelseposter: dotterbolagsminoriteter, överskottskassa och icke-rörelsetillgångar justeras innan du delar med antalet aktier. I AKM1 termer är FCFF V10:s företagsperspektiv: kassaflöde genererat av all kapital, innan finansieringen får sin andel."
+          "content": "Damodarans konsistensregler är hårda: FCFF diskonteras med WACC, FCFE och utdelningar med ke — aldrig tvärtom. Glömmer du att dra bort nettoskulden från EV värderar du verksamheten men låtsas att den tillhör aktieägarna gratis. Tänk också på icke-rörelseposter: dotterbolagsminoriteter, överskottskassa och icke-rörelsetillgångar justeras innan du delar med antalet aktier. I AKM1 termer är FCFF kassaflödesanalysens företagsperspektiv: kassaflöde genererat av all kapital, innan finansieringen får sin andel."
         },
         {
           "type": "tabell",
@@ -454,7 +454,7 @@
         },
         {
           "type": "text",
-          "content": "Den disciplinerande frågan är ekonomin i tillväxten: varje procent tillväxt måste köpas med återinvestering i capex, arbetskapital eller FoU. Tillväxt är inte gratis — den är en transaktion där bolaget byter kapital idag mot kassaflöden imorgon. Därför testar AKM1 V12 varje tillväxtantagande mot två frågor: har bolaget kapacitet (ROIC och marginal) att leverera, och har det kapital (återinvesteringsgrad) att finansiera? Historia och konsensus får bara svara om framtiden i den mån de klarar det testet."
+          "content": "Den disciplinerande frågan är ekonomin i tillväxten: varje procent tillväxt måste köpas med återinvestering i capex, arbetskapital eller FoU. Tillväxt är inte gratis — den är en transaktion där bolaget byter kapital idag mot kassaflöden imorgon. Därför testar AKM1:s tillväxtvariabler (V01–V03) varje tillväxtantagande mot två frågor: har bolaget kapacitet (ROIC och marginal) att leverera, och har det kapital (återinvesteringsgrad) att finansiera? Historia och konsensus får bara svara om framtiden i den mån de klarar det testet."
         },
         {
           "type": "tabell",
@@ -509,7 +509,7 @@
       "num": 8,
       "minutes": 11,
       "title": "Tillväxt II — den fundamentala ekvationen g = ROIC × återinvesteringsgrad",
-      "intro": "Här är bokens mittpunkt: tillväxten är inte en extern prognos utan en funktion av kapital. g = ROIC × återinvesteringsgrad binder samman tillväxt, lönsamhet och kapitalbindning — och avgör om tillväxt skapar eller förstör värde. Detta är AKM1 V12 i ren form.",
+      "intro": "Här är bokens mittpunkt: tillväxten är inte en extern prognos utan en funktion av kapital. g = ROIC × återinvesteringsgrad binder samman tillväxt, lönsamhet och kapitalbindning — och avgör om tillväxt skapar eller förstör värde. Detta är AKM1:s tillväxtvariabler (V01–V03) i ren form.",
       "blocks": [
         {
           "type": "text",
@@ -521,7 +521,7 @@
         },
         {
           "type": "text",
-          "content": "Ekvationens viktigaste konsekvens: tillväxtens kvalitet avgörs av spreaden mellan ROIC och WACC. Tillväxt med ROIC över WACC skapar värde — varje återinvesterad krona tjänar mer än den kostar. Tillväxt med ROIC under WACC förstör värde även när intäkterna växer. Effektivitetstillväxt kallar Damodaran fallet då ROIC stiger utan nytt kapital: återinvesterar bolaget 50 procent av resultatet vid ROIC 8 procent växer det 4 procent; stiger ROIC till 16 procent med oförändrad återinvesteringsgrad växer det 8 procent — dubbelt så snabbt utan en enda ny investerad krona. Därför är moat och marginal (AKM1 V12) inte dekoration utan tillväxtens motorrum."
+          "content": "Ekvationens viktigaste konsekvens: tillväxtens kvalitet avgörs av spreaden mellan ROIC och WACC. Tillväxt med ROIC över WACC skapar värde — varje återinvesterad krona tjänar mer än den kostar. Tillväxt med ROIC under WACC förstör värde även när intäkterna växer. Effektivitetstillväxt kallar Damodaran fallet då ROIC stiger utan nytt kapital: återinvesterar bolaget 50 procent av resultatet vid ROIC 8 procent växer det 4 procent; stiger ROIC till 16 procent med oförändrad återinvesteringsgrad växer det 8 procent — dubbelt så snabbt utan en enda ny investerad krona. Därför är moat (AKM1 V13–V15) och marginal inte dekoration utan tillväxtens motorrum."
         },
         {
           "type": "tabell",
@@ -998,7 +998,7 @@
         },
         {
           "type": "text",
-          "content": "För banker tillkommer tre discipliner: kreditförlustprovisioner är cykliskt färgade och ska normaliseras på samma sätt som gruvresultat; kapitaltäckningskrav sätter ett hårt tak för utdelning och tillväxt (regulatorn är en osynlig ägare); och hävstången gör ekvitetsmultiplern extra känslig för små ROE-förändringar — en bank med ROE strax under ke kan se billig på P/B 0,8 och ändå vara korrekt prissatt. AKM1 V19 har här en naturlig roll: pris under beräknat värde är inte nog — marginalen måste täcka att banks ROE är svårare att prognostisera än de flesta bolags."
+          "content": "För banker tillkommer tre discipliner: kreditförlustprovisioner är cykliskt färgade och ska normaliseras på samma sätt som gruvresultat; kapitaltäckningskrav sätter ett hårt tak för utdelning och tillväxt (regulatorn är en osynlig ägare); och hävstången gör ekvitetsmultiplern extra känslig för små ROE-förändringar — en bank med ROE strax under ke kan se billig på P/B 0,8 och ändå vara korrekt prissatt. AKM1:s margin of safety har här en naturlig roll: pris under beräknat värde är inte nog — marginalen måste täcka att banks ROE är svårare att prognostisera än de flesta bolags."
         },
         {
           "type": "tabell",
@@ -1195,7 +1195,7 @@
       "num": 18,
       "minutes": 11,
       "title": "Värderingens psykologi och value gap — Appleförsäljningen och marknadens tålamod",
-      "intro": "Bokens sista lärdom är personlig: den svåraste variabeln i varje värdering är värderaren själv. Här möter du Appleförsäljningen 2012, biasens bakdörrar och value gap — den smärtsamma sanningen att marknaden kan ha fel länge, och att det är just därför V19 kräver marginal.",
+      "intro": "Bokens sista lärdom är personlig: den svåraste variabeln i varje värdering är värderaren själv. Här möter du Appleförsäljningen 2012, biasens bakdörrar och value gap — den smärtsamma sanningen att marknaden kan ha fel länge, och att det är just därför AKM1 kräver marginal (margin of safety).",
       "blocks": [
         {
           "type": "text",
@@ -1207,11 +1207,11 @@
         },
         {
           "type": "text",
-          "content": "Value gap är kursens slutkläm: avståndet mellan pris och intrinsikt värde kan bestå i åratal — marknaden kan ha fel länge, och Keynes ord, ofta citerade av Damodaran, står sig: marknaden kan förbli irrationell längre än du kan förbli solvent. Konsekvensen är inte fatalism utan konstruktion: utan katalysator stängs gapet kanske inte alls, och rätt för tidigt är fortfarande fel. Därför kräver AKM1 V19 margin — köp aldrig gapet utan marginal som skyddar mot att din värdering, inte marknadens, är fel. Och därför slutar kursen där den började: värdering är en bro mellan berättelse och siffror. Historien utan siffror är en saga; siffrorna utan historia är datalek; och gapet mellan pris och värde är platsen där tålamod och marginal tillsammans betalar lönen."
+          "content": "Value gap är kursens slutkläm: avståndet mellan pris och intrinsikt värde kan bestå i åratal — marknaden kan ha fel länge, och Keynes ord, ofta citerade av Damodaran, står sig: marknaden kan förbli irrationell längre än du kan förbli solvent. Konsekvensen är inte fatalism utan konstruktion: utan katalysator stängs gapet kanske inte alls, och rätt för tidigt är fortfarande fel. Därför kräver AKM1 margin (margin of safety) — köp aldrig gapet utan marginal som skyddar mot att din värdering, inte marknadens, är fel. Och därför slutar kursen där den började: värdering är en bro mellan berättelse och siffror. Historien utan siffror är en saga; siffrorna utan historia är datalek; och gapet mellan pris och värde är platsen där tålamod och marginal tillsammans betalar lönen."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Bias → yttring → motgift\",\"rader\":[[\"Bias\",\"Yttring\",\"Motgift\"],[\"Förankring\",\"Startar från kursen eller målpris\",\"Värdera innan du ser kursen\"],[\"Bekräftelse\",\"Söker stöd, sorterar bort motbevis\",\"Skriv björnens bästa case\"],[\"Halo\",\"Bra produkt = bra aktie\",\"Håll pris och värde isär (V19)\"],[\"Commitment-eskalering\",\"Dubblar när kursen faller\",\"Pre-mortem och fördefinierade omprövningskriterier\"]]}"
+          "content": "{\"rubrik\":\"Bias → yttring → motgift\",\"rader\":[[\"Bias\",\"Yttring\",\"Motgift\"],[\"Förankring\",\"Startar från kursen eller målpris\",\"Värdera innan du ser kursen\"],[\"Bekräftelse\",\"Söker stöd, sorterar bort motbevis\",\"Skriv björnens bästa case\"],[\"Halo\",\"Bra produkt = bra aktie\",\"Håll pris och värde isär (margin of safety)\"],[\"Commitment-eskalering\",\"Dubblar när kursen faller\",\"Pre-mortem och fördefinierade omprövningskriterier\"]]}"
         },
         {
           "type": "insikt",
@@ -1219,7 +1219,7 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Skriv ner din mest bevakade akties investmenttes med de tre bärande antagandena (tillväxt, ROIC, WACC). Byt sedan sida: formulera björnens bästa argument mot varje antagande. Fråga slutligen V19-frågan: hur stor rabatt mot ditt beräknade värde kräver du för att björnens scenario ska vara prissatt — och vad i din tes dör först om kursen faller 30 procent utan att någon nyhet kommit?"
+          "content": "🎯 Skriv ner din mest bevakade akties investmenttes med de tre bärande antagandena (tillväxt, ROIC, WACC). Byt sedan sida: formulera björnens bästa argument mot varje antagande. Fråga slutligen marginalfrågan (margin of safety): hur stor rabatt mot ditt beräknade värde kräver du för att björnens scenario ska vara prissatt — och vad i din tes dör först om kursen faller 30 procent utan att någon nyhet kommit?"
         },
         {
           "type": "visuell",
@@ -1242,7 +1242,7 @@
           "q": "Vad är 'value gap' och dess praktiska konsekvens?",
           "alternativ": [
             "Skillnaden mellan budget och utfall — konsekvensen är att räkna om bokslutet",
-            "Avståndet mellan pris och intrinsikt värde — gapet kan bestå länge utan katalysator, därför krävs marginal (V19) och tålamod",
+            "Avståndet mellan pris och intrinsikt värde — gapet kan bestå länge utan katalysator, därför krävs marginal (margin of safety) och tålamod",
             "Skillnaden mellan P/E och PEG — konsekvensen är att alltid välja lägst PEG",
             "Skillnaden mellan WACC och ke — konsekvensen är att minimera skulden"
           ],

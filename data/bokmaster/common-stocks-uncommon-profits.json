@@ -9,8 +9,8 @@
   "minutes": 11,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan eleven tillämpa Fishers femton punkter för att identifiera enastående tillväxtbolag, genomföra scuttlebutt-intervjuer med kunder, konkurrenter, leverantörer och före detta anställda, bedöma förvaltningskapitalet (V15) och ägarstrukturen (V16) bakom moaten (V13), samt resonera som Fisher om när ett köp och — framför allt — när en försäljning är motiverad enligt principen 'köp rätt och sitt still'. Eleven kan dessutom beräkna masterinnehavets andel av förvaltat kapital enligt Fisher-principen, analysera utspädningseffekter i tillväxtbolag och undvika de misstag Fisher varnade för.",
-  "why": "Common Stocks and Uncommon Profits är den bok som flyttade analysen från balansräkningens historik till företagets framtid: produkttorget, forskningen, säljorganisationen, marginalförsvaret och ledningens integritet. Warren Buffett beskrev sig själv som 85 procent Graham och 15 procent Fisher — och det är Fishers arv som förklarar varför AKM1 har egna variabler för moat (V13), förvaltningskapital (V15) och ägarstruktur (V16). Fisher ägde Motorola från 1955 till sin död 2004; boken är ett levande bevis på att tålamod är en strategi. Den tillhör utbildningens ryggrad.",
+  "learn": "Efter kursen kan eleven tillämpa Fishers femton punkter för att identifiera enastående tillväxtbolag, genomföra scuttlebutt-intervjuer med kunder, konkurrenter, leverantörer och före detta anställda, bedöma förvaltningskapitalet och ägarstrukturen bakom moat-variablerna (V13–V15), samt resonera som Fisher om när ett köp och — framför allt — när en försäljning är motiverad enligt principen 'köp rätt och sitt still'. Eleven kan dessutom beräkna masterinnehavets andel av förvaltat kapital enligt Fisher-principen, analysera utspädningseffekter i tillväxtbolag och undvika de misstag Fisher varnade för.",
+  "why": "Common Stocks and Uncommon Profits är den bok som flyttade analysen från balansräkningens historik till företagets framtid: produkttorget, forskningen, säljorganisationen, marginalförsvaret och ledningens integritet. Warren Buffett beskrev sig själv som 85 procent Graham och 15 procent Fisher — och det är Fishers arv som förklarar varför AKM1 har egna moat-variabler (V13–V15) samt granskningspunkter för förvaltningskapital och ägarstruktur. Fisher ägde Motorola från 1955 till sin död 2004; boken är ett levande bevis på att tålamod är en strategi. Den tillhör utbildningens ryggrad.",
   "chapters_list": [
     "1. Fisher — mannen som lärde marknaden äga få och rätt",
     "2. De 15 punkterna — kartan över enastående tillväxtbolag",
@@ -53,7 +53,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fisher mot Graham — två traditioner, en syntes\",\"rader\":[[\"Fråga\",\"Graham (Security Analysis)\",\"Fisher (Common Stocks)\"],[\"Avkastningens källa\",\"Pris under dokumenterat värde\",\"Kvalitet som växer i decennier\"],[\"Antal innehav\",\"Brett urval, många positioner\",\"Koncentrerat: 3–4 kärninnehav\"],[\"Information\",\"Publicerad rapportdata\",\"Scuttlebutt + offentlig data\"],[\"Säljlogik\",\"När pris når värde\",\"När ursprungsköpet var fel eller bolaget förfaller\"],[\"Riskhantering\",\"Säkerhetsmarginal i priset (V19)\",\"Säkerhet i bolagets kvalitet (V13, V15)\"],[\"AKM1-arv\",\"V04, V08, V14, V17, V19\",\"V01, V12, V13, V15, V16\"]]}"
+          "content": "{\"rubrik\":\"Fisher mot Graham — två traditioner, en syntes\",\"rader\":[[\"Fråga\",\"Graham (Security Analysis)\",\"Fisher (Common Stocks)\"],[\"Avkastningens källa\",\"Pris under dokumenterat värde\",\"Kvalitet som växer i decennier\"],[\"Antal innehav\",\"Brett urval, många positioner\",\"Koncentrerat: 3–4 kärninnehav\"],[\"Information\",\"Publicerad rapportdata\",\"Scuttlebutt + offentlig data\"],[\"Säljlogik\",\"När pris når värde\",\"När ursprungsköpet var fel eller bolaget förfaller\"],[\"Riskhantering\",\"Säkerhetsmarginal i priset (margin of safety)\",\"Säkerhet i bolagets kvalitet (moat V13–V15 + förvaltningskapital)\"],[\"AKM1-arv\",\"V07, V08, V04–V06, källkritik, margin of safety\",\"V01, V04–V06, V13–V15, förvaltningskapital, ägarstruktur\"]]}"
         },
         {
           "type": "insikt",
@@ -116,7 +116,7 @@
         },
         {
           "type": "text",
-          "content": "Punkterna grupperar sig naturligt. Punkterna 1–2 handlar om produkten och marknaden: finns tillräcklig tillväxtpotential, och har ledningen viljan att utveckla nästa generation? Punkterna 3–6 handlar om organisationens förmåga: forskning, sälj, marginaler. Punkterna 7–9 handlar om människorna: personalrelationer, chefsrelationer, ledningsdjup. Punkterna 10–13 handlar om disciplinen: kostnadskontroll, branschkunskap, tidshorisont och finansiering. Punkterna 14–15 handlar om karaktären: öppenhet mot ägarna och omutbar integritet. I AKM1 termer är detta moatens anatomi: V13 fångar produktsidorna, V15 förvaltningskapitalet fångar människorna, och V16 ägarstrukturen fångar karaktären mot ägarna."
+          "content": "Punkterna grupperar sig naturligt. Punkterna 1–2 handlar om produkten och marknaden: finns tillräcklig tillväxtpotential, och har ledningen viljan att utveckla nästa generation? Punkterna 3–6 handlar om organisationens förmåga: forskning, sälj, marginaler. Punkterna 7–9 handlar om människorna: personalrelationer, chefsrelationer, ledningsdjup. Punkterna 10–13 handlar om disciplinen: kostnadskontroll, branschkunskap, tidshorisont och finansiering. Punkterna 14–15 handlar om karaktären: öppenhet mot ägarna och omutbar integritet. I AKM1 termer är detta moatens anatomi: moat-variablerna (V13–V15) fångar produktsidorna, förvaltningskapitalet fångar människorna, och ägarstrukturen fångar karaktären mot ägarna."
         },
         {
           "type": "tabell",
@@ -152,7 +152,7 @@
           "tips": "Tänk på vilken punkt som gör att ingen annan information kan litas på."
         },
         {
-          "q": "Vilken grupp av punkter fångar AKM1-variabeln för förvaltningskapital (V15) allra bäst?",
+          "q": "Vilken grupp av punkter fångar granskningen av förvaltningskapital allra bäst?",
           "alternativ": [
             "Punkterna 7–9 om människorna",
             "Punkterna 1–2 om produkttorget",
@@ -191,7 +191,7 @@
         },
         {
           "type": "text",
-          "content": "Här finns AKM1:s koppling mellan V01 tillväxt och V12 värderingstillväxt. V01 frågar hur länge tillväxten varar — det är exakt punkt 1 och 2. V12 frågar vad du betalar för den tillväxten: Fishers poäng var att marknaden systematiskt underskattar hur länge en verkligt enastående produkt fortsätter växa, och att därför ett högt P/E-tal kan vara billigt om punkterna 1–2 är starka. Omvänt: billigt P/E på ett bolag vars produkt mättas är en value trap. Priset betalar du för framtiden, och punkterna 1–2 är framtiden."
+          "content": "Här finns AKM1:s koppling mellan V01 tillväxt och värderingsvariablerna (V04–V06). V01 frågar hur länge tillväxten varar — det är exakt punkt 1 och 2. Prisfrågan — vad du betalar för den tillväxten — hör hemma i V04–V06: Fishers poäng var att marknaden systematiskt underskattar hur länge en verkligt enastående produkt fortsätter växa, och att därför ett högt P/E-tal kan vara billigt om punkterna 1–2 är starka. Omvänt: billigt P/E på ett bolag vars produkt mättas är en value trap. Priset betalar du för framtiden, och punkterna 1–2 är framtiden."
         },
         {
           "type": "text",
@@ -199,7 +199,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Punkt 1–2 i praktiken\",\"rader\":[[\"Fråga\",\"Punkt 1: marknadspotential\",\"Punkt 2: nästa generation\"],[\"Kärnfråga\",\"Hur många års tillväxt återstår?\",\"Finns nästa produkt på väg?\"],[\"Bästa källa\",\"Kundernas orderläge, tillämpningar\",\"Pipeline, FoU-andel av omsättning, lanseringskalender\"],[\"Varningstecken\",\"TAM-hype utan beställningar\",\"Ledning som endast talar om nuvarande produkt\"],[\"AKM1-länk\",\"V01 tillväxtens längd\",\"V12 priset på uthållig tillväxt\"]]}"
+          "content": "{\"rubrik\":\"Punkt 1–2 i praktiken\",\"rader\":[[\"Fråga\",\"Punkt 1: marknadspotential\",\"Punkt 2: nästa generation\"],[\"Kärnfråga\",\"Hur många års tillväxt återstår?\",\"Finns nästa produkt på väg?\"],[\"Bästa källa\",\"Kundernas orderläge, tillämpningar\",\"Pipeline, FoU-andel av omsättning, lanseringskalender\"],[\"Varningstecken\",\"TAM-hype utan beställningar\",\"Ledning som endast talar om nuvarande produkt\"],[\"AKM1-länk\",\"V01 tillväxtens längd\",\"V04–V06 priset på uthållig tillväxt\"]]}"
         },
         {
           "type": "insikt",
@@ -234,12 +234,12 @@
           "tips": "Fisher såg Motorola byta produktgenerationer flera gånger under hans ägarskap."
         },
         {
-          "q": "Hur relaterar punkterna 1–2 till V12 värderingstillväxt?",
+          "q": "Hur relaterar punkterna 1–2 till priset på tillväxt (V04–V06)?",
           "alternativ": [
             "Marknaden tenderar att underskatta hur länge enastående produkter växer — därav kan högt P/E vara rimligt",
-            "V12 mäter utdelningen och punkterna mäter tillväxten av den",
+            "V04–V06 mäter utdelningen och punkterna mäter tillväxten av den",
             "Punkterna 1–2 ersätter behovet av värdering helt",
-            "V12 gäller bara råvarubolag"
+            "V04–V06 gäller bara råvarubolag"
           ],
           "ratt": 0,
           "tips": "Fisher köpte sällan billigt på multiplen — han köpte rätt på varaktigheten."
@@ -262,7 +262,7 @@
         },
         {
           "type": "text",
-          "content": "Den mest pålitliga mätaren är historisk träffsäkerhet: hur många kommersiella framgångar har bolagets FoU producerat det senaste decenniet, i förhållande till sin storlek? En stabil andel lyckade projekt hos ett större bolag är imponerande — skalning av innovation är svårt. Varningssignalerna är forskning för forskningens egen skull, projekt som aldrig når marknaden, och organisationer där FoU-chefen rapporterar långt ned i hierarkin. I AKM1 termer är punkt 3 en av moatens (V13) grundmotorer: en FoU-maskin som är svår att kopiera är en vallgrav i sig, eftersom den bygger på människor, kultur och processer — inte på pengar."
+          "content": "Den mest pålitliga mätaren är historisk träffsäkerhet: hur många kommersiella framgångar har bolagets FoU producerat det senaste decenniet, i förhållande till sin storlek? En stabil andel lyckade projekt hos ett större bolag är imponerande — skalning av innovation är svårt. Varningssignalerna är forskning för forskningens egen skull, projekt som aldrig når marknaden, och organisationer där FoU-chefen rapporterar långt ned i hierarkin. I AKM1 termer är punkt 3 en av moatens grundmotorer — närmast V13 (patent & FoU): en FoU-maskin som är svår att kopiera är en vallgrav i sig, eftersom den bygger på människor, kultur och processer — inte på pengar."
         },
         {
           "type": "tabell",
@@ -301,7 +301,7 @@
           "tips": "Problemet var sällan idébristen — det var kedjan mellan avdelningarna."
         },
         {
-          "q": "Hur hänger punkt 3 samman med V13 moat i AKM1?",
+          "q": "Hur hänger punkt 3 samman med V13 (patent & FoU) i AKM1?",
           "alternativ": [
             "FoU-budget är synonym med moat",
             "Punkt 3 gäller enbart läkemedelsbolag",
@@ -325,7 +325,7 @@
         },
         {
           "type": "text",
-          "content": "Vad är en överlägsen säljorganisation i praktiken? Fisher pekade på utbildning och kompetens hos säljkåren, ersättningssystem som belönar rätt beteende, ett återförsäljar- och distributionsnät som når kunderna, effektiv marknadsföring som skapar efterfrågan, och service efter köpet som bygger lojalitet. I AKM1-termer är detta en av de starkaste formerna av moat (V13): ett distributionsnät tar decennier att bygga, är svårt och dyrt att kopiera, och blir starkare för varje år — medan en produkt kan kopieras av en konkurrent med kapital och tid. Distribution är moatens arbetsmuskel."
+          "content": "Vad är en överlägsen säljorganisation i praktiken? Fisher pekade på utbildning och kompetens hos säljkåren, ersättningssystem som belönar rätt beteende, ett återförsäljar- och distributionsnät som når kunderna, effektiv marknadsföring som skapar efterfrågan, och service efter köpet som bygger lojalitet. I AKM1-termer är detta en av de starkaste formerna av moat — närmast V14 (varumärke & kundlojalitet): ett distributionsnät tar decennier att bygga, är svårt och dyrt att kopiera, och blir starkare för varje år — medan en produkt kan kopieras av en konkurrent med kapital och tid. Distribution är moatens arbetsmuskel."
         },
         {
           "type": "text",
@@ -361,7 +361,7 @@
           "tips": "Tänk på skillnaden mellan att lansera en gång och att sälja om varje år."
         },
         {
-          "q": "Hur beskriver kursen sambandet mellan punkt 4 och V13 moat?",
+          "q": "Hur beskriver kursen sambandet mellan punkt 4 och moat-variablerna (V13–V15)?",
           "alternativ": [
             "Säljorganisation och moat är samma sak",
             "Ett distributionsnät tar decennier att bygga och blir starkare medan en produkt kan kopieras — distribution är moatens arbetsmuskel",
@@ -396,15 +396,15 @@
         },
         {
           "type": "text",
-          "content": "Punkt 6: ”Vad gör bolaget för att bibehålla eller förbättra vinstmarginalerna?” Detta är Fishers rent framtidsinriktade marginalfråga — historiska marginaler berättar vem bolaget var, punkt 6 berättar vem det blir. Verktygen är kända: kostnadsprogram, prissättningsmakt, produktmix som flyttas mot mer lönsamma poster, automatisering och skalbarhet. Fisher observerade att inflationstider är marginalförsvarets ultimata test: alla kostnader stiger, och bara bolag med verklig prissättningskraft kan föra kostnaderna vidare till kunderna utan att tappa volym. Det är i exakt det läget moaten (V13) syns — moat är förmågan att behålla marginaler när konkurrens och inflation anfaller samtidigt."
+          "content": "Punkt 6: ”Vad gör bolaget för att bibehålla eller förbättra vinstmarginalerna?” Detta är Fishers rent framtidsinriktade marginalfråga — historiska marginaler berättar vem bolaget var, punkt 6 berättar vem det blir. Verktygen är kända: kostnadsprogram, prissättningsmakt, produktmix som flyttas mot mer lönsamma poster, automatisering och skalbarhet. Fisher observerade att inflationstider är marginalförsvarets ultimata test: alla kostnader stiger, och bara bolag med verklig prissättningskraft kan föra kostnaderna vidare till kunderna utan att tappa volym. Det är i exakt det läget moaten (V13–V15) syns — moat är förmågan att behålla marginaler när konkurrens och inflation anfaller samtidigt."
         },
         {
           "type": "text",
-          "content": "En viktig distinktion från boken: håll isär cykliska marginaler från strukturella. Ett råvarubolags marginaler svänger med varupriset — det är konjunktur, inte karaktär. Ett bolag med moat har marginaler som återkommer till samma eller högre nivå efter varje svacka. I AKM1:s analysgrid är detta kopplat till bruttomarginalens utveckling (V04) men Fisher-drivet: studera fem års marginaler tillsammans med ledningens kommentarer och avgör om svängningarna är priscykler eller positioner. Och lägg märke till ledningar som medvetet offrar kortsiktig marginal för långsiktig position — som tar en engångsförlust för att rädda en kundrelation — det är punkterna 6 och 12 i samspel."
+          "content": "En viktig distinktion från boken: håll isär cykliska marginaler från strukturella. Ett råvarubolags marginaler svänger med varupriset — det är konjunktur, inte karaktär. Ett bolag med moat har marginaler som återkommer till samma eller högre nivå efter varje svacka. I AKM1:s analysgrid är detta kopplat till bruttomarginalens utveckling (V07) men Fisher-drivet: studera fem års marginaler tillsammans med ledningens kommentarer och avgör om svängningarna är priscykler eller positioner. Och lägg märke till ledningar som medvetet offrar kortsiktig marginal för långsiktig position — som tar en engångsförlust för att rädda en kundrelation — det är punkterna 6 och 12 i samspel."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Marginalanalys enligt punkt 5–6\",\"rader\":[[\"Fråga\",\"Punkt 5: marginalens nivå\",\"Punkt 6: marginalens framtid\"],[\"Tidsperspektiv\",\"Historik och nutid\",\"Nästa cykel\"],[\"Nyckelfråga\",\"Är marginalen värd namnet?\",\"Vad gör ledningen aktivt för den?\"],[\"Bra tecken\",\"Marginal över branschsnitt eller stigande trend\",\"Kostnadskontroll, prissättningsmakt, mixskifte\"],[\"Dåligt tecken\",\"Permanent pressad marginal utan plan\",\"Väntar på att konjunkturen ska rädda dem\"],[\"AKM1-länk\",\"V04 bruttomarginal\",\"V13 moat mot prissättningskraft\"]]}"
+          "content": "{\"rubrik\":\"Marginalanalys enligt punkt 5–6\",\"rader\":[[\"Fråga\",\"Punkt 5: marginalens nivå\",\"Punkt 6: marginalens framtid\"],[\"Tidsperspektiv\",\"Historik och nutid\",\"Nästa cykel\"],[\"Nyckelfråga\",\"Är marginalen värd namnet?\",\"Vad gör ledningen aktivt för den?\"],[\"Bra tecken\",\"Marginal över branschsnitt eller stigande trend\",\"Kostnadskontroll, prissättningsmakt, mixskifte\"],[\"Dåligt tecken\",\"Permanent pressad marginal utan plan\",\"Väntar på att konjunkturen ska rädda dem\"],[\"AKM1-länk\",\"V07 bruttomarginal\",\"V13–V15 moat mot prissättningskraft\"]]}"
         },
         {
           "type": "visuell",
@@ -459,7 +459,7 @@
       "num": 7,
       "minutes": 11,
       "title": "Punkt 7–9: Människorna — personalen, cheferna, djupet",
-      "intro": "Fishers tre folkpunkter gräver där balansräkningen är blind: hur bolaget behandlar sina medarbetare, hur cheferna samspelar, och om bolaget kan leva vidare utan sin grundare. Det är här AKM1:s förvaltningskapital (V15) har sitt upphov.",
+      "intro": "Fishers tre folkpunkter gräver där balansräkningen är blind: hur bolaget behandlar sina medarbetare, hur cheferna samspelar, och om bolaget kan leva vidare utan sin grundare. Det är här AKM1:s granskning av förvaltningskapitalet har sitt upphov.",
       "blocks": [
         {
           "type": "text",
@@ -471,11 +471,11 @@
         },
         {
           "type": "text",
-          "content": "Det är exakt detta AKM1 fångar i V15 förvaltningskapital: kompetens, kapital och karaktär som en förnybar tillgång i bolaget. Fishers folkpunkter handlar inte om att vara snäll — de handlar om att relationskapitalet är maskinen som gör det möjligt att rekrytera, behålla och delegera. Ett bolag med djup ledning och lojal personal compoundar sin organisationsförmåga år efter år, medan konkurrenter bygger om sin organisation vid varje VD-byte. I praktiken granskas detta via personalomsättningsstatistik, interna befordringar, optionprogrammens bredd och — framför allt — scuttlebutt med före detta anställda, som talar ärligare än någon som är kvar."
+          "content": "Det är exakt detta AKM1 fångar i granskningen av förvaltningskapital: kompetens, kapital och karaktär som en förnybar tillgång i bolaget. Fishers folkpunkter handlar inte om att vara snäll — de handlar om att relationskapitalet är maskinen som gör det möjligt att rekrytera, behålla och delegera. Ett bolag med djup ledning och lojal personal compoundar sin organisationsförmåga år efter år, medan konkurrenter bygger om sin organisation vid varje VD-byte. I praktiken granskas detta via personalomsättningsstatistik, interna befordringar, optionprogrammens bredd och — framför allt — scuttlebutt med före detta anställda, som talar ärligare än någon som är kvar."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Folkpunkterna 7–9 — frågor och evidens\",\"rader\":[[\"Punkt\",\"Kärnfråga\",\"Evidens att leta efter\"],[\"7 Personal\",\"Enastående personalrelationer?\",\"Låg omsättning, humanta uppsägningar, incitamentsbredd\"],[\"8 Chefer\",\"Öppen dialog mellan chefer?\",\"Frihet att tala med VD, intern befordran, löneoffer i kriser\"],[\"9 Djup\",\"Kan bolaget leva utan grundaren?\",\"Successionsplan, decentraliserat beslutsfattande, stark andranivå\"],[\"AKM1\",\"V15 förvaltningskapital\",\"Relationskapital som compoundar organisationsförmågan\"]]}"
+          "content": "{\"rubrik\":\"Folkpunkterna 7–9 — frågor och evidens\",\"rader\":[[\"Punkt\",\"Kärnfråga\",\"Evidens att leta efter\"],[\"7 Personal\",\"Enastående personalrelationer?\",\"Låg omsättning, humanta uppsägningar, incitamentsbredd\"],[\"8 Chefer\",\"Öppen dialog mellan chefer?\",\"Frihet att tala med VD, intern befordran, löneoffer i kriser\"],[\"9 Djup\",\"Kan bolaget leva utan grundaren?\",\"Successionsplan, decentraliserat beslutsfattande, stark andranivå\"],[\"AKM1\",\"Förvaltningskapital (kvalitativ granskning)\",\"Relationskapital som compoundar organisationsförmågan\"]]}"
         },
         {
           "type": "insikt",
@@ -510,12 +510,12 @@
           "tips": "Tänk på skillnaden mellan en organisation och en person med medarbetare."
         },
         {
-          "q": "Hur beskriver kursen kopplingen mellan punkterna 7–9 och V15 förvaltningskapital?",
+          "q": "Hur beskriver kursen kopplingen mellan punkterna 7–9 och förvaltningskapitalet?",
           "alternativ": [
             "Relationskapitalet är maskinen som gör det möjligt att rekrytera, behålla och delegera — en förnybar tillgång",
-            "V15 mäter omsättningen per anställd",
-            "V15 gäller endast styrelsens storlek",
-            "Punkterna 7–9 ersätter behovet av V16"
+            "Förvaltningskapital mäter omsättningen per anställd",
+            "Förvaltningskapital gäller endast styrelsens storlek",
+            "Punkterna 7–9 ersätter behovet av ägarstruktursanalys"
           ],
           "ratt": 0,
           "tips": "Förvaltningskapital handlar om systemet av människor, inte om en enskild person."
@@ -538,7 +538,7 @@
         },
         {
           "type": "text",
-          "content": "Poängen med punkt 11 är ödmjukheten inför branschkunskap: Fishers metod förutsätter att du specialiserar dig. Han uppmuntrade investerare att stanna i branscher de förstår och lära sig deras mekanik på djupet — inte att bredda sig tunt över branscher de bara kan läsa om. Det är därför AKM1 bygger branschadapter in i analysen: moaten (V13) formas olika i olika branscher, och nyckeltalet som avslöjar vinnaren skiljer sig därefter. Fråga dig själv: vad är det i den här branschen som alla insiders talar om som avgörande — och som nästan ingen utomstående ens nämner?"
+          "content": "Poängen med punkt 11 är ödmjukheten inför branschkunskap: Fishers metod förutsätter att du specialiserar dig. Han uppmuntrade investerare att stanna i branscher de förstår och lära sig deras mekanik på djupet — inte att bredda sig tunt över branscher de bara kan läsa om. Det är därför AKM1 bygger branschadapter in i analysen: moaten (V13–V15) formas olika i olika branscher, och nyckeltalet som avslöjar vinnaren skiljer sig därefter. Fråga dig själv: vad är det i den här branschen som alla insiders talar om som avgörande — och som nästan ingen utomstående ens nämner?"
         },
         {
           "type": "tabell",
@@ -605,7 +605,7 @@
         },
         {
           "type": "text",
-          "content": "I AKM1 är detta kärnan i V16 ägarstruktur: spåra antalet aktier över tid som en grundserie i varje analys. Ett bolag med stark vinsttillväxt men konstant emissionsmaskin är en gående utspädning — och omvända fallet, återköp som verkligt minskar aktieantalet till rimliga priser, är negativ utspädning som compoundar ägarnas andel. Skillnaden mellan substansvärdestegring och värdesegring per aktie ligger exakt här. Fisher och Graham, som annars skiljde sig åt i metod, var helt eniga om denna mekanik — Graham varnade i Security Analysis för hur warrants och konvertibla urholkar ägarna, och Fishers punkt 13 är samma varning i tillväxtbolagens värld."
+          "content": "I AKM1 är detta kärnan i granskningen av ägarstruktur — med V19 för emissionsrisk och V20 för återköp: spåra antalet aktier över tid som en grundserie i varje analys. Ett bolag med stark vinsttillväxt men konstant emissionsmaskin är en gående utspädning — och omvända fallet, återköp som verkligt minskar aktieantalet till rimliga priser, är negativ utspädning som compoundar ägarnas andel. Skillnaden mellan substansvärdestegring och värdesegring per aktie ligger exakt här. Fisher och Graham, som annars skiljde sig åt i metod, var helt eniga om denna mekanik — Graham varnade i Security Analysis för hur warrants och konvertibla urholkar ägarna, och Fishers punkt 13 är samma varning i tillväxtbolagens värld."
         },
         {
           "type": "tabell",
@@ -672,7 +672,7 @@
         },
         {
           "type": "text",
-          "content": "Här är AKM1:s V16 ägarstruktur som mest levande: ägarbilden avgör vem ledningen egentligen svarar inför. Grundare med stor ägarandel har ofta sitt livsverk och sitt kapital i bolaget — deras incitament sammanfaller med långsiktiga ägares, vilket var fallet i Motorola under Galvin-familjen under hela Fishers ägarskap. Spridd ägarbild med kortistiska fonder och generösa optionspaket kan skapa incitament att skördas kort sikt. A/B-aktiestrukturer, kontrollavtal och stämmobestämmelser är varken good eller ont i sig — de är maktfrågor som du som minoritetsägare måste förstå innan du köper, eftersom du investerar i ledningens integritet men kontrollerar inte makten över den."
+          "content": "Här är AKM1:s ägarstrukturgranskning som mest levande: ägarbilden avgör vem ledningen egentligen svarar inför. Grundare med stor ägarandel har ofta sitt livsverk och sitt kapital i bolaget — deras incitament sammanfaller med långsiktiga ägares, vilket var fallet i Motorola under Galvin-familjen under hela Fishers ägarskap. Spridd ägarbild med kortistiska fonder och generösa optionspaket kan skapa incitament att skördas kort sikt. A/B-aktiestrukturer, kontrollavtal och stämmobestämmelser är varken good eller ont i sig — de är maktfrågor som du som minoritetsägare måste förstå innan du köper, eftersom du investerar i ledningens integritet men kontrollerar inte makten över den."
         },
         {
           "type": "tabell",
@@ -711,9 +711,9 @@
           "tips": "Fisher kallade integriteten den viktigaste och icke förhandlingsbara punkten."
         },
         {
-          "q": "Hur kopplar kursen punkterna 14–15 till V16 ägarstruktur?",
+          "q": "Hur kopplar kursen punkterna 14–15 till ägarstrukturen?",
           "alternativ": [
-            "V16 mäter endast antal aktieägare",
+            "Ägarstruktur mäter endast antal aktieägare",
             "Ägarbilden avgör vem ledningen svarar inför — incitamenten avgör om ägardialogen är äkta",
             "Ägarstruktur och integritet är oberoende av varandra",
             "Punkt 14–15 handlar enbart om utdelningspolicy"
@@ -735,7 +735,7 @@
         },
         {
           "type": "text",
-          "content": "Varför fungerar metoden? Årsredovisningen visar historien — vad som redan hänt. Scuttlebutt visar framtiden: produkterna i kundernas händer, orderläget nästa kvartal, humöret hos säljkåren, konkurrenternas respekt eller likgiltighet. Fisher hävdade att den som systematiskt samlar in och väger samman sådana samtal kan bygga en bild av ett bolag som är både djupare och mer framåtblickande än den offentliga informationen — och att det är precis där den rörliga fördelen finns, eftersom marknaden prissätter det som är publicerat. Moaten (V13) och förvaltningskapitalet (V15) verifieras aldrig i en PDF — de verifieras i samtal."
+          "content": "Varför fungerar metoden? Årsredovisningen visar historien — vad som redan hänt. Scuttlebutt visar framtiden: produkterna i kundernas händer, orderläget nästa kvartal, humöret hos säljkåren, konkurrenternas respekt eller likgiltighet. Fisher hävdade att den som systematiskt samlar in och väger samman sådana samtal kan bygga en bild av ett bolag som är både djupare och mer framåtblickande än den offentliga informationen — och att det är precis där den rörliga fördelen finns, eftersom marknaden prissätter det som är publicerat. Moat-variablerna (V13–V15) och förvaltningskapitalet verifieras aldrig i en PDF — de verifieras i samtal."
         },
         {
           "type": "text",
@@ -743,7 +743,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Scuttlebutt-källorna — frågor och signaler\",\"rader\":[[\"Källa\",\"Fråga att ställa\",\"Signal du söker\"],[\"Kunder\",\"Varför valde ni? Vad saknas?\",\"Lojalitet, prispress, alternativ\"],[\"Konkurrenter\",\"Vem fruktar ni mest?\",\"Respekt = moat (V13)\"],[\"Leverantörer\",\"Hur är orderläget och betalningen?\",\"Konjunktur och likviditet i realtid\"],[\"Före detta anställda\",\"Varför slutade ni?\",\"Sanningen om punkterna 7–9 (V15)\"],[\"Branschfolk\",\"Vart går tekniken?\",\"Nästa generations riktning\"]]}"
+          "content": "{\"rubrik\":\"Scuttlebutt-källorna — frågor och signaler\",\"rader\":[[\"Källa\",\"Fråga att ställa\",\"Signal du söker\"],[\"Kunder\",\"Varför valde ni? Vad saknas?\",\"Lojalitet, prispress, alternativ\"],[\"Konkurrenter\",\"Vem fruktar ni mest?\",\"Respekt = moat (V13–V15)\"],[\"Leverantörer\",\"Hur är orderläget och betalningen?\",\"Konjunktur och likviditet i realtid\"],[\"Före detta anställda\",\"Varför slutade ni?\",\"Sanningen om punkterna 7–9 (förvaltningskapital)\"],[\"Branschfolk\",\"Vart går tekniken?\",\"Nästa generations riktning\"]]}"
         },
         {
           "type": "visuell",
@@ -948,7 +948,7 @@
         },
         {
           "type": "text",
-          "content": "Fortsättningen är lika obekväm. Anta inte att ett högt P/E-tal automatiskt betyder att tillväxten redan är prissatt — detta är kärnan i V12 värderingstillväxt, och ett av historiens dyraste antaganden är att bolag med lågt P/E är billiga och bolag med högt P/E är dyra; frågan är alltid vad som händer med intjäningen därefter. Tjafsa inte om ören och kvartsprocent i in- och utgång — Fisher såg investerare missa enastående innehav för att vänta på en marginellt bättre kurs; det som ser ut som prisdisciplin är ofta bara obeslutsamhet. Överdriv inte diversifieringen — detta är listans mest provocerade punkt hos en man som ägde 3–4 innehav. Köp på krigsskräck och liknande paniker — historiskt har rädsla skapat de bästa inköpstillfällena för den vars tes är intakt. Och glöm inte Gilbert och Sullivan: modesvängen på marknaden — ”blommorna som slår ut i vår har inget med saken att göra” — det som är trendigt är sällan det som är enastående."
+          "content": "Fortsättningen är lika obekväm. Anta inte att ett högt P/E-tal automatiskt betyder att tillväxten redan är prissatt — detta är kärnan i prisfrågan på tillväxt (V04–V06), och ett av historiens dyraste antaganden är att bolag med lågt P/E är billiga och bolag med högt P/E är dyra; frågan är alltid vad som händer med intjäningen därefter. Tjafsa inte om ören och kvartsprocent i in- och utgång — Fisher såg investerare missa enastående innehav för att vänta på en marginellt bättre kurs; det som ser ut som prisdisciplin är ofta bara obeslutsamhet. Överdriv inte diversifieringen — detta är listans mest provocerade punkt hos en man som ägde 3–4 innehav. Köp på krigsskräck och liknande paniker — historiskt har rädsla skapat de bästa inköpstillfällena för den vars tes är intakt. Och glöm inte Gilbert och Sullivan: modesvängen på marknaden — ”blommorna som slår ut i vår har inget med saken att göra” — det som är trendigt är sällan det som är enastående."
         },
         {
           "type": "text",
@@ -956,7 +956,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fishers förbud — då och nu\",\"rader\":[[\"Förbud\",\"Fishers formulering\",\"Modern motsvarighet\"],[\"Promotorbolag\",\"Köp inte bolag utan produkter eller intjäning\",\"Pre-revenue-aktier på löften om AI\"],[\"Handelsplats\",\"Avfärda inte bolag för att de är små eller OTC\",\"Småbolagslistor och nischade handelsplatser\"],[\"Årsberättelsens ton\",\"Köp inte för vacker prosa\",\"Säljande aktieägarbrev och influencers\"],[\"Högt P/E\",\"Anta inte att tillväxten är prissatt (V12)\",\"Kvalitetspremie är inte alltid överpris\"],[\"Örentjafs\",\"Tjafsa inte om små kursdifferenser\",\"Orderdjup- och limit-obsession\"],[\"Överdriven spridning\",\"Överdriv inte diversifieringen\",\"Indexliknande aktiv förvaltning utan tes\"],[\"Krigsskräck\",\"Köp på panik om tesen är intakt\",\"Krisköp när alla andra svär\"],[\"Mode\",\"Glöm inte Gilbert and Sullivan\",\"Trendaktier utan kassaflöde\"]]}"
+          "content": "{\"rubrik\":\"Fishers förbud — då och nu\",\"rader\":[[\"Förbud\",\"Fishers formulering\",\"Modern motsvarighet\"],[\"Promotorbolag\",\"Köp inte bolag utan produkter eller intjäning\",\"Pre-revenue-aktier på löften om AI\"],[\"Handelsplats\",\"Avfärda inte bolag för att de är små eller OTC\",\"Småbolagslistor och nischade handelsplatser\"],[\"Årsberättelsens ton\",\"Köp inte för vacker prosa\",\"Säljande aktieägarbrev och influencers\"],[\"Högt P/E\",\"Anta inte att tillväxten är prissatt (V04–V06)\",\"Kvalitetspremie är inte alltid överpris\"],[\"Örentjafs\",\"Tjafsa inte om små kursdifferenser\",\"Orderdjup- och limit-obsession\"],[\"Överdriven spridning\",\"Överdriv inte diversifieringen\",\"Indexliknande aktiv förvaltning utan tes\"],[\"Krigsskräck\",\"Köp på panik om tesen är intakt\",\"Krisköp när alla andra svär\"],[\"Mode\",\"Glöm inte Gilbert and Sullivan\",\"Trendaktier utan kassaflöde\"]]}"
         },
         {
           "type": "insikt",
@@ -980,11 +980,11 @@
           "tips": "Skillnaden mellan 100 och 101 i kurs är försumbar om aktien fördubblas — vad kostar väntetolen?"
         },
         {
-          "q": "Hur relaterar Fishers varning om höga P/E-tal till V12 värderingstillväxt?",
+          "q": "Hur relaterar Fishers varning om höga P/E-tal till priset på tillväxt (V04–V06)?",
           "alternativ": [
             "Antagandet att högt P/E betyder att tillväxten redan prissatt är ofta fel — frågan är vad som händer med intjäningen därefter",
             "Fisher menade att högt P/E alltid är farligt",
-            "V12 gäller bara bolag utan tillväxt",
+            "V04–V06 gäller bara bolag utan tillväxt",
             "Fisher ignorerade värdering helt"
           ],
           "ratt": 0,
@@ -1011,7 +1011,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Motorola-fallet. Fisher köpte aktien 1955, när bolaget främst förknippades med bilradioer och var på väg in i transistorernas tidevarv. Hans research var scuttlebutt i sin renaste form: samtal med ingenjörer, kunder och branschfolk som beskrev en teknikkultur med unik förmåga att flytta sig mellan produktgenerationer. Notera ägarbilden: Motorola leddes av Galvin-familjen — grundare med eget kapital och livsverk i bolaget — vilket gav ledningen långsiktiga incitament som sammanföll med ägarnas; här möts punkt 15 och V16 ägarstruktur i ett enda faktum. Fisher höll genom upp- och nedgångar, produktgenerationer och konjunkturcykler till sin död 2004. Affären är den levande motsatsen till dagens portföljturnover: ett köp, en analys som höll, och ett halvt sekel av compounding."
+          "content": "Motorola-fallet. Fisher köpte aktien 1955, när bolaget främst förknippades med bilradioer och var på väg in i transistorernas tidevarv. Hans research var scuttlebutt i sin renaste form: samtal med ingenjörer, kunder och branschfolk som beskrev en teknikkultur med unik förmåga att flytta sig mellan produktgenerationer. Notera ägarbilden: Motorola leddes av Galvin-familjen — grundare med eget kapital och livsverk i bolaget — vilket gav ledningen långsiktiga incitament som sammanföll med ägarnas; här möts punkt 15 och ägarstrukturen i ett enda faktum. Fisher höll genom upp- och nedgångar, produktgenerationer och konjunkturcykler till sin död 2004. Affären är den levande motsatsen till dagens portföljturnover: ett köp, en analys som höll, och ett halvt sekel av compounding."
         },
         {
           "type": "text",
@@ -1019,11 +1019,11 @@
         },
         {
           "type": "text",
-          "content": "AKM1-syntesen — var Fishers arv lever i systemet. V01 tillväxt är punkterna 1–2: tillväxtens längd före dess hastighet. V12 värderingstillväxt är pris-frågan på den tillväxten: högt P/E är inte farligt om punkterna bär varaktigheten. V13 moat är punkterna 3–6 i samspel: FoU-maskin, distribution, marginalförsvar — moat är en maskin, inte ett ord. V15 förvaltningskapital är punkterna 7–10: relations- och organisationskapitalet som compoundar. V16 ägarstruktur är punkterna 13–15: vem finansierar tillväxten, vem kontrollerar bolaget och hur ledningen behandlar sina ägare. Masterlistan blir därmed: 15-punktersprofil med grader 0–3, scuttlebutt-anteckningar från minst tre källor per bolag, aktieutveckling som grundserie, och ett säljbrev som definierar vad som ska brytas innan innehavet avslutas."
+          "content": "AKM1-syntesen — var Fishers arv lever i systemet. V01 tillväxt är punkterna 1–2: tillväxtens längd före dess hastighet. Värderingsvariablerna (V04–V06) är pris-frågan på den tillväxten: högt P/E är inte farligt om punkterna bär varaktigheten. Moat-variablerna (V13–V15) är punkterna 3–6 i samspel: FoU-maskin, distribution, marginalförsvar — moat är en maskin, inte ett ord. Förvaltningskapitalet är punkterna 7–10: relations- och organisationskapitalet som compoundar. Ägarstrukturen — med V19 för emissionsrisk och V20 för återköp — är punkterna 13–15: vem finansierar tillväxten, vem kontrollerar bolaget och hur ledningen behandlar sina ägare. Masterlistan blir därmed: 15-punktersprofil med grader 0–3, scuttlebutt-anteckningar från minst tre källor per bolag, aktieutveckling som grundserie, och ett säljbrev som definierar vad som ska brytas innan innehavet avslutas."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fishers punkter → AKM1-variabler — komplett koppling\",\"rader\":[[\"Fisher\",\"Tema\",\"AKM1-variabel\"],[\"Punkt 1–2\",\"Produkttorget, nästa generation\",\"V01 tillväxt, V12 värderingstillväxt\"],[\"Punkt 3\",\"FoU-effektivitet\",\"V13 moat\"],[\"Punkt 4\",\"Säljorganisation och distribution\",\"V13 moat\"],[\"Punkt 5–6\",\"Marginaler och marginalförsvar\",\"V13 moat, V04 marginal\"],[\"Punkt 7–9\",\"Personal, chefer, ledningsdjup\",\"V15 förvaltningskapital\"],[\"Punkt 10\",\"Kostnadsanalys och styrning\",\"V15, V17 rapportkvalitet\"],[\"Punkt 11\",\"Branschens egenheter\",\"Branschadapter, V13\"],[\"Punkt 12\",\"Långsiktig vinstsyn\",\"V15 karaktär\"],[\"Punkt 13\",\"Utspädning och finansiering\",\"V16 ägarstruktur\"],[\"Punkt 14–15\",\"Öppenhet och integritet\",\"V16 ägarstruktur, V17\"]]}"
+          "content": "{\"rubrik\":\"Fishers punkter → AKM1-variabler — komplett koppling\",\"rader\":[[\"Fisher\",\"Tema\",\"AKM1-variabel\"],[\"Punkt 1–2\",\"Produkttorget, nästa generation\",\"V01 tillväxt, V04–V06 priset på tillväxten\"],[\"Punkt 3\",\"FoU-effektivitet\",\"V13 (patent & FoU)\"],[\"Punkt 4\",\"Säljorganisation och distribution\",\"V14 kundlojalitet & distribution\"],[\"Punkt 5–6\",\"Marginaler och marginalförsvar\",\"V13–V15 moat, V07 marginal\"],[\"Punkt 7–9\",\"Personal, chefer, ledningsdjup\",\"Förvaltningskapital (kvalitativt)\"],[\"Punkt 10\",\"Kostnadsanalys och styrning\",\"Förvaltningskapital + källkritik (V12)\"],[\"Punkt 11\",\"Branschens egenheter\",\"Branschadapter, V13–V15\"],[\"Punkt 12\",\"Långsiktig vinstsyn\",\"Förvaltningskapital (karaktär)\"],[\"Punkt 13\",\"Utspädning och finansiering\",\"V19 emission + ägarstruktur\"],[\"Punkt 14–15\",\"Öppenhet och integritet\",\"Ägarstruktur + källkritik (V12)\"]]}"
         },
         {
           "type": "visuell",
@@ -1040,7 +1040,7 @@
       ],
       "quiz": [
         {
-          "q": "Vilken aspekt av Motorola-fallet illustrerar punkt 15 tillsammans med V16 ägarstruktur?",
+          "q": "Vilken aspekt av Motorola-fallet illustrerar punkt 15 tillsammans med ägarstrukturen?",
           "alternativ": [
             "Bolagets långa P/E-historik",
             "Bolagets höga utdelning",
@@ -1062,11 +1062,11 @@
           "tips": "Punkt 13 handlar om vad som händer med antalet aktier och vem tillväxten tillfaller."
         },
         {
-          "q": "Vilken AKM1-variabel fångar Fishers punkter 7–10 allra bäst?",
+          "q": "Vilken del av AKM1-analysen fångar Fishers punkter 7–10 allra bäst?",
           "alternativ": [
-            "V15 förvaltningskapital",
-            "V13 moat",
-            "V16 ägarstruktur",
+            "Förvaltningskapitalet — människor, relationer och styrning som förnyas",
+            "Moat-variablerna (V13–V15)",
+            "Ägarstrukturen",
             "V01 tillväxt"
           ],
           "ratt": 0,

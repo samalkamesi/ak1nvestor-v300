@@ -1,0 +1,1030 @@
+{
+  "slug": "poor-charlies-almanack",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "Poor Charlie's Almanack — Munger: KOMPLETT",
+  "summary": "Peter Kaufmans Poor Charlie's Almanack samlar Charlie Mungers tal, essäer och bonmot — mentalmodellernas bok. Kursen täcker latticework of mental models, inversionsprincipen, de kognitiva tendenserna i The Psychology of Human Misjudgment, Lollapalooza-effekten, See's Candies och sit-on-your-ass-investing. Målet är inte fler nyckeltal utan ett bättre omdöme — att konsekvent undvika dumhet istället för att jaga briljans.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Du lär dig Mungers latticework av mentalmodeller från många discipliner, inversionsprincipen (»Säg mig var jag dör, så går jag dit aldrig«), de viktigaste kognitiva tendenserna med mekanism och motgift, Lollapalooza-effekten när flera krafter verkar samma håll, skillnaden mellan cigarrbuttar och kvalitetsbolag (See's Candies), samt varför den stora pengen ligger i väntandet — och hur du kopplar allt till din egen profil, riskmatris och positionering.",
+  "why": "Warren Buffett har beskrivit Munger som den som gett honom den viktigaste läxan sedan Graham: att köpa underbara bolag till rimliga priser snarare än rimliga bolag till underbara priser. Utan Munger hade det moderna Berkshire knappast funnits. Men bokens verkliga värde är metaplanet — den lär dig tänka bättre och, ännu viktigare, undvika att tänka dåligt, vilket enligt Munger är den mest underskattade källan till långsiktig fördel.",
+  "chapters_list": [
+    "1. Mannen och almanackan — vem var Charlie Munger?",
+    "2. Latticework — tankemodellernas fackverk",
+    "3. Invertera, alltid invertera",
+    "4. Circle of competence och sit-on-your-ass-investing",
+    "5. Misjudgment I — incitament, förnekelse, konsekvens och deprival",
+    "6. Misjudgment II — social proof, kontrast, tillgänglighet, auktoritet",
+    "7. Misjudgment III — ömsesidighet, association, sympati och avund",
+    "8. Misjudgment IV — självöverskattning, optimism, skäl-tro och inramning",
+    "9. Lollapalooza-effekten — när krafterna pekar samma håll",
+    "10. Cigarrbuttar mot kvalitet — See's Candies",
+    "11. Ränta-på-ränta, sannolikhet och förväntansvärde",
+    "12. Evolution, moats och kapitalismens kreativa förstörelse",
+    "13. Psykologin i praktiken — checklistor, flygplan, kreditkort och Perc",
+    "14. Mungers arv — rationalitet som livshållning"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Mannen och almanackan — vem var Charlie Munger?",
+      "intro": "Peter Kaufman sammanställde 2005 Charlie Mungers tal och essäer i Poor Charlie's Almanack, en blinkning till Benjamin Franklins Poor Richard's Almanack. Det är ingen vanlig investingbok utan en bruksanvisning för tänkandet. Munger var Berkshires vice ordförande i över fyrtio år — och den person Buffett gång på gång pekat ut som den klokaste han känner.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Charles T. Munger föddes 1924 i Omaha, Nebraska — samma stad som Warren Buffett, i vars farfars livsmedelsbutik han arbetade som ung. Under andra världskriget tjänstgjorde han som meteorolog i flygvapnet, sedan tog han sig in på Harvard Law School utan ens en färdig college-examen, blev advokat i Los Angeles och så småningom investerare. Hans investeringspartnerskap Wheeler, Munger & Co. levererade 1962–1975 en årlig avkastning i storleksordningen tjugo procent, mot grovt räknat fem procent för Dow — med en portfölj som var koncentrerad till ett fåtal positioner, långt innan det var modernt."
+        },
+        {
+          "type": "text",
+          "content": "Boken är uppbyggd i tre huvuddelar: en biografi över Munger, elva av hans tal och essäer — med The Psychology of Human Misjudgment och Elementary Worldly Wisdom som kärnor — samt samlingen Mungerisms, hans rappformade citat. Kaufmans redaktörsarbete är osynligt men medvetet: almanackformatet, med maximer och marginalnotiser, är en direkt hyllning till Benjamin Franklin, Mungers skyddshelgon när det gäller självdisciplin, nyfikenhet och livslångt lärande."
+        },
+        {
+          "type": "text",
+          "content": "Munger-stilen är rapp, rak och rolig. På Berkshires årsstämmor satt han bredvid Buffett och vägrade artigt att spela ut sig: när någon försökte locka ur honom en rekommendation eller få honom att upprepa sig kom svaret ofta i en enda rad — »Jag har inget att tillägga.« Han drev med »frothy professionals«, konsultvokabulär och analytiker som förväxlar aktivitet med tänkande. Humorn är inte dekoration; den är en del av metoden — att se världen så rak som möjligt inklusive sin egen dumhet."
+        },
+        {
+          "type": "text",
+          "content": "Varför lyfter AK1 boken som KRITISK BOKMASTER? För att den levererar tankemodellerna bakom hela plattformens ekosystem: teorier som olika linser, scenarier och riskmatris som tillämpad inversion, bayesiansk omviktning som ödmjuk sannolikhetsuppdatering, och den kognitiva profileringen som en personlig biaskarta. Munger refererar själv sällan nyckeltal — hans bidrag är metaplanet: hur du tänker innan du räknar. Det är precis därför han bör läsas före böckerna om multiplar."
+        },
+        {
+          "type": "insikt",
+          "content": "Munger blev rik på att tänka bättre, inte på att räkna snabbare. Bokens största tillgång är inte en enda aktietips — det är ett operativsystem för omdömet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du går vidare: skriv tre ord som beskriver hur DU brukar fatta investeringsbeslut. Spara dem — i kapitel 8 ska du jämföra dem med den tendens som sannolikt styr dig mest."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken historisk förlaga blinkar titeln Poor Charlie's Almanack åt?",
+          "alternativ": [
+            "Benjamin Franklins Poor Richard's Almanack",
+            "Adam Smiths The Wealth of Nations",
+            "Benjamin Grahams The Intelligent Investor",
+            "Charles Darwins On the Origin of Species"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vilken sorts publikation Franklin gav ut — och varför Kaufman valde just almanackformens maximer."
+        },
+        {
+          "q": "Vad utgör bokens kärna innehållsmässigt?",
+          "alternativ": [
+            "Mungers handelssystem med tekniska signaler",
+            "En samling nyckeltalsmallar för värdering",
+            "Elva tal och essäer, varav The Psychology of Human Misjudgment",
+            "Sammanfattningar av Buffetts årsbrev"
+          ],
+          "ratt": 2,
+          "tips": "Boken är strukturerad kring det Munger faktiskt höll föredrag om under decennier."
+        },
+        {
+          "q": "Hur svarade Munger typiskt i Q&A när någon försökte få honom att säga för mycket?",
+          "alternativ": [
+            "Han höll långa föredrag om varje bolag",
+            "Han läste upp sin köplista",
+            "Han hänvisade alltid till sin fond",
+            "Han svarade »Jag har inget att tillägga«"
+          ],
+          "ratt": 3,
+          "tips": "Tystnad kan vara ett svar — särskilt från någon som vet priset på orden."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Latticework — tankemodellernas fackverk",
+      "intro": "Mungers mest citerade idé är latticework of mental models: ett fackverk av modeller från många discipliner som all erfarenhet organiseras på. Utan fackverket blir kunskap isolerade fakta som skramlar runt utan att bli insikt. Med det blir varje ny erfarenhet en spik att hänga något på.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "I talet Elementary Worldly Wisdom (USC 1994) formulerar Munger principen: »You've got to have models in your head. And you've got to array your experience — both vicarious and direct — on this latticework of your models.« Isolerade fakta räcker inte: »You can't really know anything if you just remember isolated facts and try and bang 'em back.« Poängen är att modellerna måste bilda ett sammanhängande raster — inte en verktygslåda där du plockar en i taget."
+        },
+        {
+          "type": "text",
+          "content": "Vad händer annars? Mannen med hammaren. »To the man with only a hammer, every problem looks pretty much like a nail.« Ekonomer som bara kan ekonomi ser allt som utbud och efterfrågan; psykologer som bara kan psykologi ser allt som barndom; kvantitativa analytiker ser allt som multiplar. Munger menar att detta är ett deterministiskt sätt att åstadkomma fel — inte för att modellerna är dåliga utan för att de används ensamma."
+        },
+        {
+          "type": "text",
+          "content": "Vilka discipliner? Fysik (jämvikt, kritisk massa, redundans och back-up-system), biologi (evolution och utdöende), psykologi (biaser och motgift), matematik (sannolikhet, compounding, grundläggande statistik), historia och ekonomi. Munger räknar med att ungefär 80–90 kraftfulla modeller bär nästan hela lasten — man behöver inte tusen. Men de måste komma från flera områden, för verkliga problem lyder inte under några ämnesgränser."
+        },
+        {
+          "type": "text",
+          "content": "AK1-kopplingen är direkt: ekosystemet med fem tidshorisonter × fem teorier × fyra dimensioner är i grunden ett latticework där teorivikter uppdateras bayesianskt. När en teori — till exempel nätverkseffekter (V15) — får samstämmigt stöd från flera modeller, ekonomisk kritisk massa såväl som biologisk ekologi, blir signalen starkare än någon enstaka modell kan ge. Mönstret mellan modellerna är insikten; enskilda modeller är bara råmaterial."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Disciplin → modell → i investering\",\"rader\":[[\"Disciplin\",\"Modell hos Munger\",\"Tillämpning\"],[\"Fysik\",\"Kritisk massa, redundans\",\"Nätverkseffekter (V15) och back-up-system i verksamheten\"],[\"Biologi\",\"Evolution och utdöende\",\"Kreativ förstörelse, moats som eroderar\"],[\"Psykologi\",\"Biaser och motgift\",\"Bubblor, motgångsköp, kvartalspanik\"],[\"Matematik\",\"Sannolikhet och compounding\",\"Förväntansvärde, ränta-på-ränta, Kelly\"],[\"Historia\",\"Maniaer och mönster\",\"Tulpaner till dotcom — vad som återkommer\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En-modell-människan har ett hammare och ser spikar överallt. Flermodells-människan ser samma verklighet från flera håll — och det som ser ut som en spik från ett håll visar sig vara en skruv från ett annat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Vilken disciplin saknas helt i ditt eget beslutsfattande — biologi, psykologi, historia eller matematik? Välj en och läs trettio minuter i veckan om den, kopplat till ett av dina innehav. Notera efter en månad: vilken fråga kunde du ställa som du inte kunnat innan?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Munger med »latticework of mental models«?",
+          "alternativ": [
+            "En teknisk analysmodell med trendlinjer",
+            "En checklista med köpkriterier",
+            "Ett fackverk av modeller från många discipliner som erfarenheten organiseras på",
+            "En databas över historisk börsdata"
+          ],
+          "ratt": 2,
+          "tips": "Nyckeln ligger i ordet fackverk — något som håller samman flera delar samtidigt."
+        },
+        {
+          "q": "Vad blir konsekvensen av att bara behärska en enda modell?",
+          "alternativ": [
+            "Allt börjar likna en spik",
+            "Man blir automatiskt mer diversifierad",
+            "Man slutar använda modeller helt",
+            "Man fattar snabbare beslut utan bias"
+          ],
+          "ratt": 0,
+          "tips": "Munger låter ett verktyg förklara hela fenomenet."
+        },
+        {
+          "q": "Hur många modeller anser Munger bära nästan hela lasten?",
+          "alternativ": [
+            "Minst tusen specialiserade modeller",
+            "Inga — erfarenhet räcker",
+            "Endast en: kassaflödesdiskontering",
+            "Ungefär 80–90 kraftfulla modeller"
+          ],
+          "ratt": 3,
+          "tips": "Det handlar om ett hanterbart antal — men från många olika discipliner."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Invertera, alltid invertera",
+      "intro": "Munger lånade av matematikern Carl Gustav Jacobi: »man muss immer umkehren« — man måste alltid invertera. I stället för att fråga hur man lyckas frågar man hur man garanterat misslyckas — och undviker sedan det. Det låter enkelt, men det förändrar varje analys.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mungers version av Jacobi är beryktad: »All I want to know is where I'm going to die, so I'll never go there« — säg mig var jag dör, så går jag dit aldrig. Munger berättar att han som ung insåg att han inte var smart nog att bli marknadens bästa — men han kunde bli marknadens minst dumma. Inversion blev hans vapen: lista det som säkert förstör, och backa därifrån."
+        },
+        {
+          "type": "text",
+          "content": "Invertera livet först. Frågan är inte »hur blir jag lycklig?« utan »hur blir jag garanterat eländig?« — och svaren är tröttsamt välbekanta: hasard och spel, alkohol och droger, avundsjuka, bitterhet, att bära agg mot andras framgångar, att leva över tillgångarna. Munger: »The safest way to get what you want is to try to deserve what you want.« Världen är ännu inte galen nog att belöna en massa ovärdiga människor — förtjänst är strategin, inte lurendrejeri."
+        },
+        {
+          "type": "text",
+          "content": "Invertera sedan investerandet. Fråga inte »hur hittar jag nästa mångdubblerare?« utan »vad dödar kapital permanent?«: att betala för mycket och ignorera marginal of safety, hävstång som tvingar försäljning i kristider, bedrägerier och partners med fel incitament, tunn likviditet, glömd teknologisk disruption — och i tillväxtbolag: kapitalförbränning som tvingar fram utspädande emissioner (V19). Om listan med dödsorsaker är lång och sannolik, är svaret pass — oavsett hur spännande berättelsen är. AK1:s riskmatris och scenariorum är byggda exakt så: kartlägg först vad som kan gå fel, prissätt sedan."
+        },
+        {
+          "type": "text",
+          "content": "Och då blir den mest underskattade meningen i boken logisk: »It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid, instead of trying to be very intelligent.« Att undvika dumhet är billigare, mer pålitligt och mer upprepningsbart än att söka briljans. Det är också Short-Sellerns hela logik i AK1: analytikern som systematiskt frågar »var dör det här bolaget?« tillämpar Munger på uppgångsidén — samma verktyg, omvänd riktning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Inverterad due diligence — frågorna som kommer först\",\"rader\":[[\"Område\",\"Fråga\"],[\"Kapital\",\"Hur kan bolaget tvingas emittera och späda ut mig? (V19)\"],[\"Moat\",\"Vad äter vallgraven om fem år?\"],[\"Pris\",\"Vad händer om multiplen halveras medan verksamheten är intakt?\"],[\"Förtroende\",\"Vilket incitament har den som sålde mig berättelsen?\"],[\"Själv\",\"Vilken bias gör att jag vill se det här?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är sällan »hur vinner jag?« utan »hur undviker jag de uppenbara sätten att förlora?«. Kapital som överlever får ränta-på-ränta på köpet — dödligheten sitter i få, återkommande misstag."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ditt största innehav. Skriv ner fem realistiska vägar till en permanent förlust på femtio procent. Kan du inte lista fem är antingen bolaget magnifikt — eller känner du det inte tillräckligt väl för att äga det i den storleken."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vem myntade »Invert, always invert« som Munger lånade principen ifrån?",
+          "alternativ": [
+            "Isaac Newton",
+            "Carl Gustav Jacobi",
+            "Benjamin Graham",
+            "Charles Darwin"
+          ],
+          "ratt": 1,
+          "tips": "En matematiker — som löste problem genom att vända på dem."
+        },
+        {
+          "q": "Vad är poängen med »Säg mig var jag dör, så går jag dit aldrig«?",
+          "alternativ": [
+            "Att identifiera och undvika dödliga misstag istället för att söka perfektion",
+            "Att hitta den bästa exit-strategin för varje aktie",
+            "Att korta bolag som är i kris",
+            "Att tajma marknadscyklerna"
+          ],
+          "ratt": 0,
+          "tips": "Det handlar om var du inte ska befinna dig — inte om att hitta guldkornen."
+        },
+        {
+          "q": "Vad menar Munger med »consistently not stupid«?",
+          "alternativ": [
+            "Att aldrig ta några risker alls",
+            "Att bara köpa indexfonder",
+            "Att lita på experter i alla beslut",
+            "Att undvika stora misstag ger mer varaktig fördel än att jaga genialitet"
+          ],
+          "ratt": 3,
+          "tips": "Jämför kostnaden för ett stort misstag med vinsten av en briljant träff."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Circle of competence och sit-on-your-ass-investing",
+      "intro": "Munger visste vad han inte visste — och byggde sin stil på att sitta still. Kunskapen om var din cirkel slutar är värdefullare än en stor cirkel. Och när du väl hittat rätt bolag inom cirkeln är aktiviteten din fiende, inte din vän.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Cirkeln: »You have to figure out what your own aptitudes are. If you play games where other people have the aptitudes and you don't, you're going to lose.« Det avgörande är inte hur intressant ett bolag är utan om du förstår det bättre än den som säljer aktien till dig. Munger igen: »Knowing what you don't know is more useful than being brilliant.« Att erkänna cirkelns kant är inte svaghet — det är den billigaste riskhantering som finns."
+        },
+        {
+          "type": "text",
+          "content": "Sit-on-your-ass-investing är Mungers självironiska namn på stilen: köp mycket sällan, köp rätt, sitt sedan still. »The big money is not in the buying and the selling, but in the waiting.« Varför? För att varje beslut är en ny exponering för biaser, kostnader och slitage — för många beslut sliter ut dig. Få, genomtänkta beslut i bolag du verkligen förstår slår många halvbra. Berkshire gjorde sin förmögenhet på ungefär ett dussin avgöranden på fyrtio år, inte på fyrtio avgöranden om året."
+        },
+        {
+          "type": "text",
+          "content": "Men sittande är inte gratis — det är bara rationellt om stolen är rätt. Förutsättningen är bolag vars intäkter är tillräckligt förutsägbara för att inte kräva omvärdering varje kvartal; i AK1:s vokabulär är intäktsstabilitet (V12) den naturliga mätbaren för om du får lov att sitta still. Har bolaget ingen stabil intäktsbas, ingen ärlig kapitalallokering och en moat som beror på nästa kvartals mirakel, då är stillasittandet inte tålamod utan förnekelse."
+        },
+        {
+          "type": "text",
+          "content": "Koncentration hör till samma logik. Munger ansåg tvångsmässig överdiversifiering vara i grunden galenskap när man faktiskt förstår en verksamhet: den skyddar okunnighet men kväver övertaget. Samtidigt kräver koncentration genuint edge — annars är bredd säkrare. AK1-kopplingen: Kelly-logiken dimensionerar positionen efter övertag och osäkerhet; sit-stilla fungerar när edge är stor och sannolikheten stabil, och Monte Carlo-simuleringen visar vad tålamodet är värt i kronor."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "Aktivitet är en skatt du betalar i courtage, biasar och slitage. Den stora pengen ligger i väntandet — men bara om du sitter på rätt stol."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna dina affärer de senaste tolv månaderna. Sortera varje affär i två högar: driven av en genuint ny insikt, eller driven av tristess, ånger eller andras kursrörelser? Andra högen är ren aktivitet — sätt som mål att halvera den nästa år."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med circle of competence?",
+          "alternativ": [
+            "Den sektor som gått bäst det senaste året",
+            "Allt du läst en forskningsrapport om",
+            "Din mäklares rekommendationslista",
+            "Områden där din förståelse överstiger marknadens — och du vet var kanten går"
+          ],
+          "ratt": 3,
+          "tips": "Det viktiga är inte bara vad som finns i cirkeln utan att du kan se dess gräns."
+        },
+        {
+          "q": "Vad betyder »The big money is in the waiting«?",
+          "alternativ": [
+            "Värdet skapas i att behålla rätt bolag länge, inte i aktiv handel",
+            "Man ska vänta på det perfekta inträdet innan köp",
+            "Man ska ligga i kontanter mellan bubblorna",
+            "Daytrading lönar sig på lång sikt"
+          ],
+          "ratt": 0,
+          "tips": "Ordet waiting syftar på tiden efter köpet, inte innan."
+        },
+        {
+          "q": "Varför varnar Munger för för många beslut?",
+          "alternativ": [
+            "Courtagekostnaderna blir alltid förhöga",
+            "Analytiker ogillar aktiva handlare",
+            "Fler beslut sliter, aktiverar biaser och ökar slitet — få genomtänkta val slår många halvbra",
+            "Det är olagligt att handla för ofta i vissa jurisdiktioner"
+          ],
+          "ratt": 2,
+          "tips": "Varje beslut kostar mer än courtaget — fundera på vad som händer med omdömet vid hög beslutstakt."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Misjudgment I — incitament, förnekelse, konsekvens och deprival",
+      "intro": "1995 höll Munger sitt mest kända föredrag: The Psychology of Human Misjudgment, en katalog över cirka tjugofem kognitiva tendenser som systematiskt vränger mänskligt omdöme. Vi börjar med de fyra som gör mest skada i affärslivet: incentiv bias, förnekelse, konsekvens/första-slutsats och deprival super-reaction.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Incentive-caused bias är först och kraftigast: »Show me the incentive and I will show you the outcome.« Mungers klassiska exempel är Federal Express, där nattskiftet länge misslyckades med att sortera paketen i tid. Problemet var inte personalen utan systemet: betalades skiftet per timme fanns ingen anledning att bli klar. När bolaget i stället betalade per avslutat partipass löstes problemet i princip över en natt. Slutsats för investeraren: lita aldrig blint på prognoser från den som tjänar på att du tror på dem — säljare, IR-chefer, sponsrade analytiker. Fråga alltid vem som betalar för din information."
+        },
+        {
+          "type": "text",
+          "content": "Pain-avoiding psychological denial: när verkligheten är för smärtsam förvrängs den. Alkoholisten är övertygad om att han kan sluta när han vill; den sörjande kan förneka det självklara. I portföljen tar sig förnekelsen ett diskret språk: innehav som gått dåligt omdefinieras som »långsiktiga«, thesis som spruckit kallas »för tidigt«. Förnekelsen är bekväm i veckan och dyr i decenniet — därför behöver du fördefinierade villkor, bestämda innan smärtan finns där."
+        },
+        {
+          "type": "text",
+          "content": "First-conclusion bias och consistency: »The mind is a lot like the human egg. When one sperm gets in, it shuts down so the next one can't get in.« Hjärnan låser sig vid sin första slutsats och försvarar den sedan mot allt. Munger pekar på Darwin som motgift: hans storhet låg inte i att ha rätt först utan i att jaga sitt eget misstag — han antecknade omedelbart observationer som talade mot hans teori, innan de hann glömmas bort. Övningen för dig: skriv alltid det bästa argumentet MOT din tes innan du agerar på den."
+        },
+        {
+          "type": "text",
+          "content": "Deprival super-reaction syndrome är Mungers namn på det vi i dag skulle kalla förlustaversion på steroider: när vi berövas något vi äger — eller nästan äger — reagerar vi disproportionerligt starkt. Därför eskalerar auktioner, därför blir arbetskonflikter våldsamma över små förmåner, och därför vägrar investerare sälja på förlust »tills det kommer tillbaka«. Köppriset blir en ägodel att försvara. Motgiftet är regler som inte är knutna till ditt ankarpris: varför du äger, till vilken sannolikhet, och vad som måste gälla för att du ska ha fel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tendens → mekanism → motgift\",\"rader\":[[\"Tendens\",\"Mekanism\",\"Motgift\"],[\"Incentiv bias\",\"Den som betalar styr slutsatsen\",\"Kartlägg vem som finansierar källan\"],[\"Förnekelse\",\"Smärtsam information filtreras bort\",\"Fördefinierade exit-villkor i lugnt läge\"],[\"Första slutsats / konsekvens\",\"Hjärnan låser sig vid slutsats nummer ett\",\"Skriv bästa motargumentet först\"],[\"Deprival super-reaktion\",\"Förlust av det egna känns överdrivet stor\",\"Regler utan anknytning till inköpspris\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "De flesta dåliga beslut är inte dumma — de är logiska svar på fel incitament. Rätta incitamentet och »dumheten« försvinner: Visa mig incitamentet, så visar jag resultatet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Vilket innehav vägrar du sälja »tills det kommer tillbaka«? Skriv ner priset du köpte för — och stryk sedan det. Utan din ankarpunkt: vad är bolaget värt, och skulle du köpa det i dag?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar Federal Express-exemplet?",
+          "alternativ": [
+            "Att nattarbetare är mindre motiverade som grupp",
+            "Att teknik alltid slår psykologi",
+            "Att rätt incitament löste ett omöjligt logistikproblem nästan omedelbart",
+            "Att bonusar aldrig fungerar"
+          ],
+          "ratt": 2,
+          "tips": "Personalen var densamma före och efter — det var något annat som ändrades."
+        },
+        {
+          "q": "Vad illustrerar Munger med ägg-och-spermie-liknelsen?",
+          "alternativ": [
+            "Att idéer befruktar varandra i team",
+            "Att kreativitet kräver många parallella idéer",
+            "Att minnet selekterar information automatiskt",
+            "Att hjärnan låser sig vid första slutsatsen och stänger för nästa"
+          ],
+          "ratt": 3,
+          "tips": "Det handlar om vad som händer efter att den första slutsatsen kommit in."
+        },
+        {
+          "q": "Deprival super-reaction syndrome förklarar främst varför …",
+          "alternativ": [
+            "… vi köper mer av en fallande aktie",
+            "… förluster av det egna känns överdrivet stora och auktioner drivs upp",
+            "… vi gillar gratis saker och gåvor",
+            "… vi lyssnar på auktoriteter"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på känslan när något du nästan hade glider dig ur händerna."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Misjudgment II — social proof, kontrast, tillgänglighet, auktoritet",
+      "intro": "Fyra tendenser som styr oss utan att vi märker det: vi följer gruppen, vi mäter mot fel referens, vi väger det lättillgängliga för tungt och vi lystrar till rocken. Tillsammans förklarar de en förvånansvärt stor andel av marknadens beteende.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Social-proof tendency: vi är evolutionärt programmerade att påverkas av vad andra gör, för i tusentals år var gruppen överlevnad. Mungers exempel är Kitty Genovese-fallet, där ett antal ögonvittnen påstått hörde och såg ett överfall utan att ingripa — alla antog att någon annan skulle agera. På marknaden tar sig samma mekanik form som momentum, FOMO och »alla analyser har ju köp på det«. Social proof är som mest kraftfull just när informationen är som mest osäker — vilket är exakt när börsen som helhet svänger som mest."
+        },
+        {
+          "type": "text",
+          "content": "Contrast-misreaction tendency: vi uppfattar inte absoluta nivåer utan förändringar mot det senaste — grodan som inte hoppar ur långsamt uppvärmt vatten. Munger varnar för alla som kontrollerar din referenspunkt: mäklaren som visar tre usla objekt före det »rimliga«, bolaget som sänker marginalerna en procent i taget tills moaten är borta. Motgiftet är att alltid titta på absoluta serier — nivåer och trender från ett nolläge — aldrig bara på skillnaden mot förra kvartalet."
+        },
+        {
+          "type": "text",
+          "content": "Availability-misweighing tendency: det lättillgängliga vägs för tungt — det senaste kvartalet, den chockerande rubriken, kompisens tiodubblade case. Munger: en idé är inte värd mer bara för att den är lättillgänglig. Det som är lätt att minnas känns sant, och det som är levande känns sannolikt. Motgiftet är basfrekvenser och lång historik: hur ofta händer det här egentligen, över tio år, inte hur levande känns det senaste exemplet?"
+        },
+        {
+          "type": "text",
+          "content": "Authority-misinfluence tendency: Milgrams experiment visade att helt vanliga människor ger (det de tror är) farliga elektriska stötar när en person i labbrock instruerar dem att fortsätta. I finans heter rocken CFA-titel, »toppickad analytiker«, grundar-VD eller TV-studio. Kopplingen till AK1: den kognitiva profileringen via /profil mäter bland annat din benägenhet för social proof och auktoritetstro — ditt resultat visar var din personliga checklista måste börja. Och för Short-Sellern är auktoritet + social proof bränslet i nästan varje uppumpad historia: en beundrad talesman plus en stigande kurs är inte evidens, det är mekanik."
+        },
+        {
+          "type": "insikt",
+          "content": "När alla ser samma sak är det inte längre information — det är sällskap. Konsensus känns tryggt precis för att det är konsensus, och börsen betalar inte för trygghet utan för avvikelse som visar sig rätt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ditt senaste köp och spåra källan bakåt: kom impulsen från en egen analys eller från att »alla« pratade om bolaget? Gör sedan /profil och se hur din social proof-poäng stämmer med svaret — det är ingen skam att vara normal, bara dyrt att inte veta om det."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängen med Kitty Genovese-fallet i Mungers föredrag?",
+          "alternativ": [
+            "Att städer är farliga miljöer",
+            "Att social proof skapar ansvarsdiffusion — alla väntar på att någon annan ska agera",
+            "Att media överdriver brottslighet",
+            "Att polisen svarar långsamt"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad var och en trodde att de andra gjorde."
+        },
+        {
+          "q": "Vad varnar grodliknelsen för?",
+          "alternativ": [
+            "Att gradvisa försämringar upptäcks inte för att kontrasten mot det senaste är för låg",
+            "Att man ska hoppa mellan bolag oftare",
+            "Att uppvärmning är farlig för avkastningen",
+            "Att grodor kan luras av oss"
+          ],
+          "ratt": 0,
+          "tips": "Problemet är inte hastigheten i sig utan vad vi jämför med."
+        },
+        {
+          "q": "Vad är finansvärldens variant av Milgrams labbrock?",
+          "alternativ": [
+            "Att vi handlar via appar i stället för mäklare",
+            "Att vi följer kursdiagram blint",
+            "Att vi litar mer på family än på främlingar",
+            "Att titlar och expertetiketter ger påbud övertaget de inte förtjänat"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vad som får dig att acceptera ett påstående utan evidens."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Misjudgment III — ömsesidighet, association, sympati och avund",
+      "intro": "De sociala tendenserna är de svåraste att se hos sig själv, eftersom de klär sig som dygder: generositet, lojalitet, vänlighet. Munger visar hur var och en köper ditt omdöme utan att du märker affären.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Reciprocation tendency: att ge och ta skapar skuld djupare än vi tror. Mäklarens lunch, researchrapporten med bolagets logga, konferensen i Alperna, det »gratis« webbinariet — små gåvor ger stor konformitet, för den som fått känner att den är skyldig. Munger noterar att tendensen är så stark att den fungerar även när gåvan är oönskad och när den som ger har ett uppenbart intresse. Motgiftet är att bestämma i förväg vad en relation får kosta dig i omdöme — och att tacka nej till gåvor från part med intresse i din slutsats."
+        },
+        {
+          "type": "text",
+          "content": "Influence-from-merely-association: känslor flyttas automatiskt till orelaterade objekt. Därför fungerar kändisreklam — Porsche-reklamen associerar bilen med något vackert, inte med mekanik — och därför straffas budbäraren med dåliga nyheter. I portföljen: bolag du tjänat pengar på förr känns trygga oavsett dagens pris, och en trevlig produkt associeras med en bra aktie. Notera nyansen: varumärke (V14) är associationens kommersiella kusin — skillnaden är att ett moat-varumärke är association som konkurrenter inte kan replikera med reklampengar. Association som går att köpa för en kampanj är inte moat."
+        },
+        {
+          "type": "text",
+          "content": "Liking/distorting tendency och doubt-avoidance: vi köper av dem vi tycker om och gillar automatiskt det de säljer — charmiga grundare, trevliga IR-avdelningar, snygga presentationer. Och tvivel är obekvämt, evolutionärt har tvekan varit farlig, så hjärnan skyndar att fylla luckorna med berättelse i stället för att stå ut med osäkerheten. Motgiften är tråkiga och verkliga: bedöm siffrorna innan personen, och tillåt »jag vet inte« som en fullgod position — i väntan på bättre information är det en position, inte ett misslyckande."
+        },
+        {
+          "type": "text",
+          "content": "Envy/jealousy tendency fick Mungers hårdaste dom: »Envy is the stupidest sin. Well, there's no upside to it at all. It's 100 % destructive.« Det är den enda synden utan någon som helst njutning — och börsens mest lönsamma att släppa. Avunden aktiveras av jämförelser: grannens avkastning, årets vinnare, index i år. Resultatet blir mekaniskt: köpa det som redan sprungit, sälja det som legat stilla. I AK1-termer är motgiftet att välja sin tidshorisont bland de fem — och mätas enbart mot den. Jämförelser på fel horisont är avundens språngbräda; jämförelse på rätt horisont är lärande."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sociala tendenser → mekanism → motgift\",\"rader\":[[\"Tendens\",\"Mekanism\",\"Motgift\"],[\"Ömsesidighet\",\"Gåvor och tjänster skapar skuldkänsla\",\"Bestäm kostnaden i förväg; tacka nej\"],[\"Association\",\"Känslor flyttas till orelaterade objekt\",\"Skilj känslan från substansen\"],[\"Sympati\",\"Vi köper av dem vi gillar\",\"Bedöm siffrorna före personen\"],[\"Avund\",\"Jämförelse aktiverar vilja att hinna ifatt\",\"Mät enbart mot egen horisont\"],[\"Tvivelundvikande\",\"Obekväma luckor fylls med berättelse\",\"Tillåt 'jag vet inte' som position\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Avund är hundra procent destruktiv — den enda synden utan njutning. Börsens version av den heter »köpa det som redan sprungit«, och den drivs alltid av att jämföra sig med fel människor på fel tidshorisont."
+        },
+        {
+          "type": "utmaning",
+          "content": "Vilket innehav äger du mest för att du tycker om bolaget, grundaren eller berättelsen? Testet: beskriv moaten utan att nämna en enda människa eller känsla. Om beskrivningen blir tom har du en relation, inte en analys."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför varnar Munger för mäklarnas gåvor och luncher?",
+          "alternativ": [
+            "De är olagiga i de flesta länder",
+            "Ömsesidighetstendensen skapar skuldkänsla som köper ditt omdöme",
+            "De alltid är dyra för mäklaren",
+            "De innehåller dolda avgifter"
+          ],
+          "ratt": 1,
+          "tips": "Fråga inte vad gåvan kostar — fråga vad den skapar."
+        },
+        {
+          "q": "Vad är skillnaden mellan ren association och ett moat-varumärke (V14)?",
+          "alternativ": [
+            "Ingen — båda är reklam",
+            "Association bara fungerar i konsumentledet",
+            "Ett moat-varumärke är association som konkurrenter inte kan replikera med reklampengar",
+            "Varumärken mäts i antal anställda"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad som händer om en konkurrent lägger samma summa på marknadsföring."
+        },
+        {
+          "q": "Varför kallar Munger avund för den dummaste synden?",
+          "alternativ": [
+            "Den är den enda utan någon som helst upside — hundra procent destruktiv",
+            "Den bryter mot religiösa regler",
+            "Den är svårast att dölja",
+            "Den leder alltid till brott"
+          ],
+          "ratt": 0,
+          "tips": "Jämför med girigheten, som åtminstone har ett täckmoment av nöje."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Misjudgment IV — självöverskattning, optimism, skäl-tro och inramning",
+      "intro": "De sista tendenserna i katalogen viker mot egot och språket: vi överskattar oss själva, tror det vi önskar, låter oss stillas av ett vilket som helst skäl och fattar olika beslut beroende på hur frågan är inramad. Här sitter också det viktigaste motgiftet: att veta vilken tendens som är din egen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Excess self-regard tendency: Munger älskar studien där nittio procent av svenska bilförare ansåg sig köra bättre än medelföraren — matematiskt omöjligt, mänskligt helt normalt. I portföljen heter det att de flesta privata sparare och de flesta förvaltare tror sig slå index, och att varje analys man själv skriver känns objektiv. Motgiftet är brutalt enkelt: mät ditt utfal över hela cykler, räkna dina misstag, och kom ihåg Munger om grannen till föraren — alla kan inte vara bättre än medel, och sannolikheten att just du är undantaget kräver bevis, inte känsla."
+        },
+        {
+          "type": "text",
+          "content": "Over-optimism tendency med Demosthenes klassiker: »What a man wishes, that he will believe« — vad mannen önskar tror han på. Proforma-prognoser, exekutiva presentationer och aktieägarbrev är skrivna av optimister som belönas för optimism. Naturlig koppling: jämför alltid ledningens tillväxtfantasi med tio år realiserad försäljningstillväxt (V01) — gapet mellan guidance och historia är optimismmåttet. Munger: det är anmärkningsvärt hur mycket som kan förklaras av att människor tror det de önskar."
+        },
+        {
+          "type": "text",
+          "content": "Reason-respecting tendency: vi går med på saker bara en »orsak« ges, även när skälet är tomt. Munger refererar Langers kopieringsexperiment: bara ordet »because« — därför att jag behöver kopiera — ökade andelen som lät en person gå före i kön, även när skälet var rent innehållslöst. I investering är berättelsen orsaken: en elegant historia (»plattform«, »AI-moat«, »nästa generation«) fungerar som moralisk tillåtelse att betala vilken multiplar som helst. Motgiftet: kräv att skälet visar sig i siffror — prissättningsmakt som håller över tiden syns i bruttomarginalen (V07), inte i adjektiven."
+        },
+        {
+          "type": "text",
+          "content": "Twaddle tendency och tillståndsfaktorer: Munger avskydde twaddle — tomt prat som låter klokt — och hans eget svar på det var tystnad: »Jag har inget att tillägga.« Dessutom påminde han om de triviala men verkliga tillstånd som vränger omdöme: trötthet, stress, dehydration och droger. Slutsatsen är praktisk: fatta inga beslut om portföljen sent på natten, i panik, i sjukdom eller påverkad — det är inte karaktär som skyddar dig i de tillstånden, det är rutin."
+        },
+        {
+          "type": "text",
+          "content": "Frame dependence och simplicity-bias: samma beslut vänds av inramning. »Vinst« mot »förlust«, »billig efter halveringen« mot »dyr innan«, kvartalsrapportens inramning mot tioårsserien — substansen är oförändrad, beslutet skiljer sig. Och Munger var en övertygad enkelhetstilbedjare: om något är för svårt att förstå går han vidare — inte för att han är lat utan för att cirkeln har en kant och livet är kort. Om du inte kan förklara varför du tjänar pengar på bolaget i tre meningar, äger du en berättelse, inte en position."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Egot och språket → mekanism → motgift\",\"rader\":[[\"Tendens\",\"Mekanism\",\"Motgift\"],[\"Självöverskattning\",\"Alla tror sig vara över medel\",\"Mät utfall över hela cykler; räkna misstag\"],[\"Överoptimism\",\"Vi tror det vi önskar (Demosthenes)\",\"Jämför guidance med tioårig historik (V01)\"],[\"Skäl-tro\",\"Ett godtyckligt 'därför att' ökar eftergivenhet\",\"Kräv att skälet syns i siffror (V07)\"],[\"Twaddle\",\"Tomt prat låter klokt\",\"Tystnad och korta svar\"],[\"Inramning\",\"Inramning avgör beslut trots samma substans\",\"Omformulera frågan i absoluta tal först\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Optimism är gratis att skriva och dyr att läsa som sanning. Berättelsen är inte beviset — den är priset du betalade för att slippa granska siffrorna."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta ditt senaste »skäl-köp«: en berättelse som fick dig att godta en värdering du annars skrattat åt. Vilken enda siffra hade kunnat avslöja berättelsen — och varför tittade du inte på den då? Jämför nu med de tre orden du skrev i kapitel 1."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar studien om svenska bilförare som Munger gillar att citera?",
+          "alternativ": [
+            "Att svenskar kör sämre än andra",
+            "Att självöverskattning är systematisk — nittio procent trodde sig vara bättre än medelföraren",
+            "Att trafiken är säkrare i Sverige",
+            "Att undersökningar är opålitliga"
+          ],
+          "ratt": 1,
+          "tips": "Räkna på siffran — alla kan inte vara över medel."
+        },
+        {
+          "q": "Vad är Demosthenes-poängen (»What a man wishes, that he will believe«)?",
+          "alternativ": [
+            "Att önskningar påverkar vad vi tror är sant",
+            "Att gamla greker var klokare",
+            "Att man ska önska sig framgång i livet",
+            "Att retorik är starkare än fakta i offentlig debatt"
+          ],
+          "ratt": 0,
+          "tips": "Fundera på vem som skrivit den där köprekommendationen och vad den önskar."
+        },
+        {
+          "q": "Vad betyder reason-respecting tendency i en värderingskontext?",
+          "alternativ": [
+            "Att vi kräver goda skäl innan vi köper",
+            "Att vi respekterar analytikers rekommendationer",
+            "Att rationella argument alltid vinner",
+            "Att en berättelse räcker som 'därför att' för att vi ska acceptera orimliga multiplar"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på kopieringskön: själva ordet »because« räckte — innehållet spelade mindre roll."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Lollapalooza-effekten — när krafterna pekar samma håll",
+      "intro": "Mungers favoritfenomen: när två, tre, fyra eller fem krafter verkar samtidigt i samma riktning blir resultatet inte additivt utan extremt. Ekonomböckerna missar detta, menar han, eftersom de antar separata, additiva effekter. Verkligheten konvergerar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen är Munger själv på lite grand: när flera psykologiska krafter — social proof, reciprocation, deprival, commitment, auktoritet — samtidigt drar åt samma håll uppstår lollapalooza-effekter: resultat som ingen enskild kraft kan förklara och som ser irrationella ut i efterhand men var fullständigt mekaniska i stunden. Munger menade att de största extremerna på marknaden — upp som ner — nästan alltid är konvergensfenomen, inte enskilda misstag."
+        },
+        {
+          "type": "text",
+          "content": "Tupperware-partiet är hans paradexempel. Varför säljer hushållsproduker bättre i någons vardagsrum än i varuhus? Därför att partiet staplar tendenserna: reciprocation (värdinnan bjuder på spel, fest och fika — gästen känner skuld), social proof (alla grannar köper, synligt), commitment och konsekvens (offentlig demonstration av produkten), liking (värdinnan är en vän, inte en säljare) och deprival/scarcity (erbjudandet gäller bara ikväll). Försäljning per minut når nivåer ingen butik någonsin når — inte för att produkten är bättre utan för att krafterna pekar samma håll."
+        },
+        {
+          "type": "text",
+          "content": "Open outcry-auktioner visar samma konvergens i ren form: social proof (motbudsgivarnas synliga entusiasm), deprival super-reaction (»det var nästan mitt« — att förlora det man nästan äger känns som att förlora det man äger), commitment (öppna bud måste försvaras) och auktoritet (auktoritativ auktionsförrättare som styr tempot). Resultatet är priser vida över vad deltagaren i ett lugnt läge skulle betala. Samma mekanik driver budstrider på bolag och övertecknade börsintroduktioner."
+        },
+        {
+          "type": "text",
+          "content": "Och i omvänd riktning: Short-Sellerns dekomposition. När ett bolag har en beundrad grundare (auktoritet), sponsorad forskning och omtalare med intresse (reciprocation), stark kurs-trend (social proof), en berättelse som ger skäl (reason-respecting) och troende ägare som aldrig sålt (deprival + förnekelse), då är alla bitarna på plats för ett fall som blir djupare än någon enskild kraft motiverar. När trenden vänder verkar samma krafter nedåt: förnekelse blockerar exit, deprival håller kvar, tvångsförsäljningar accelererar. Manierna — tulpaner, dotcom 1999, tillväxt/premiär 2021 — är alla lollapalooza-mönster. Shorts-säljaren behöver sällan hitta ny information; det räcker att se konvergensen och ha tålamod."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Lollapalooza-dekomposition — krafter som konvergerar\",\"rader\":[[\"Situation\",\"Kraft 1\",\"Kraft 2\",\"Kraft 3\"],[\"Tupperware-party\",\"Reciprocation (festen)\",\"Social proof (alla köper)\",\"Sympati (värdinnan är vän)\"],[\"Auktion/open outcry\",\"Deprival (nästan mitt)\",\"Commitment (öppna bud)\",\"Social proof (motbud)\"],[\"Högbubbla\",\"Social proof (trenden)\",\"Auktoritet (gurun)\",\"Skäl-tro (berättelsen)\"],[\"Krasch\",\"Förnekelse\",\"Deprival (vägrar realisera)\",\"Tvångsförsäljning\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En ensam bias är dyr. Tre som pekar samma håll är förödande — i båda riktningarna. Leta alltid konvergens av krafter, aldrig enskilda skäl: mönstret mellan dem är det som flyger planet in i berget."
+        },
+        {
+          "type": "utmaning",
+          "content": "Beskriv en mania du själv deltog i eller åsåg — dotcom, krypto 2021, meme-aktier. Lista minst tre krafter som verkade samtidigt på dig eller omgivningen. Vilken enda fråga, ställd i rätt tid, hade kunnat bryta trollformeln?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en lollapalooza-effekt?",
+          "alternativ": [
+            "En enskild kraft som är exceptionellt stark",
+            "Flera krafter som verkar samtidigt i samma riktning och ger ett extremt, icke-additivt utfall",
+            "En slumpmässig svart svan-händelse",
+            "Ett statistiskt uteliggare utan förklaring"
+          ],
+          "ratt": 1,
+          "tips": "Nyckeln är inte styrkan i en kraft utan att de pekar åt samma håll samtidigt."
+        },
+        {
+          "q": "Varför fungerar Tupperware-partier så bra försäljningsmässigt?",
+          "alternativ": [
+            "Produkterna är objektivt överlägsna butikens",
+            "Priserna är alltid lägre än i detaljhandeln",
+            "Festen staplar reciprocation, social proof, sympati och konsekvens i samma riktning",
+            "Värdinnor har särskild säljutbildning"
+          ],
+          "ratt": 2,
+          "tips": "Titta på situationens sociala mekanik, inte på plastskålarna."
+        },
+        {
+          "q": "Hur använder Short-Sellern lollapalooza-tänkandet?",
+          "alternativ": [
+            "Genom att hitta bolag med en enda stor svaghet",
+            "Genom att korta alla bolag med hög multipl",
+            "Genom att korta index vid toppar",
+            "Genom att se när flera krafter konvergerat uppåt — och därmed kan konvergera nedåt"
+          ],
+          "ratt": 3,
+          "tips": "Samma krafter som bygger berättelsen vräker den när trenden vänder."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Cigarrbuttar mot kvalitet — See's Candies",
+      "intro": "Mungers kanske största bidrag till Buffett var att flytta honom från Grahams cigarrbuttar till underbara bolag till rimliga priser. Köpet av See's Candies 1972 blev skiljelinjen — och beviset för att moat och prissättningsmakt är värt att betala för.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Graham-skolan letade cigar butts — bolag som handlades så billigt att sista blosset var gratis, som en cigarrfimp på trottoaren. Strategin fungerade på marknaderna vid mitten av seklet, men den var statistisk och kapitalineffektiv: man köpte måttliga bolag till fantastiska priser, sålde när värde realiserats och gjorde om. Munger, som kom från utanför Graham-traditionen, pressade Buffett i en annan riktning: varför inte betala för kvalitet och låta tiden arbeta? Genom Blue Chip Stamps köpte de 1972 chokladtillverkaren See's Candies — och historien vände."
+        },
+        {
+          "type": "text",
+          "content": "Siffrorna: köpeskillingen var 25 MUSD för ett bolag med omkring 32 MUSD i årsförsäljning och — avgörande — bara cirka 1 MUSD rullande kapital i verksamheten. Sees var ett kaliforniskt varumärke med enastående prissättningsmakt: prisökningar föll nästan rakt igenom till resultatet, och överskottskapital kunde lyftas ut och återinvesteras i annat inom Berkshire. De betalade tre gånger bokvärdet — otänkbart enligt Graham. Buffett har senare sammanfattat läxan: »It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price.« Utan See's, har han antytt, hade Berkshires senare storaffärer som Coca-Cola knappast skett."
+        },
+        {
+          "type": "text",
+          "content": "Hur ser kvaliteten ut i siffror? Prissättningsmakt som håller visar sig i en stabil bruttomarginal (V07) och en ROE (V09) som inte behöver hävstång. Ett varumärke (V14) som See's är association med försvar — kunderna betalar för kalifornisk tradition, inte för råchokladens kilopris. Och marginal of safety behöver inte bara vara rabatt mot bokvärde: för ett kvalitetsbolag är skyddet moaten plus ett rimligt pris. P/B (V05) är nästan meningslöst för See's — bokvärdet fångar inte prissättningsmakten, och det var just därför Graham-skolan missade bolaget."
+        },
+        {
+          "type": "text",
+          "content": "Mungers varning hör också till historien: kapitalismen är en förstörelsemaskin för fördelar. Underbara bolag blir så småningom ordinära — moats eroderar, konkurrenter anfaller, konsumenter tröttnar. Därför äger man See's-bolag länge men övervakar moaten: när prissättningsmakten sinar, syns det först i marginalerna. Att betala premium för kvalitet är rätt när kvaliteten är sann och prisvärd — och en fälla när det är en kvalitetsillusion: ett medelbra bolag med snygg berättelse och hög multipl. Skillnaden syns i historiken, inte i presentationen."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Cigarrbutt mot kvalitetsbolag\",\"rader\":[[\"Aspekt\",\"Cigarrbutt (Graham)\",\"Kvalitetsbolag (Munger/Buffett)\"],[\"Prislogik\",\"Djup rabatt, ofta under bokvärde (V05)\",\"Rimligt pris för moat och prissättningsmakt\"],[\"Kapital\",\"Kapitalbundet tills värde realiseras\",\"Liten balansräkning, överskott lyfts ut\"],[\"Avkastning\",\"Engångskick vid realisering\",\"Compounding i årtionden (V09)\"],[\"Risk\",\"Värdesänkning, value traps\",\"Moat-erosion, kvalitetsillusioner\"],[\"Exempel\",\"Klassiska Graham-netton\",\"See's Candies, Coca-Cola\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Det är bättre att köpa ett underbart bolag till ett rimligt pris än ett rimligt bolag till ett underbart pris. Munger lärde Buffett det — och det byggde det moderna Berkshire."
+        },
+        {
+          "type": "utmaning",
+          "content": "Klassificera dina fem största innehav: cigarrbutt (statistiskt billigt), kvalitet (moat plus rimligt pris) eller kvalitetsillusion (premiumpris utan moat)? Låt historisk bruttomarginal — inte berättelsen — avgöra kategorin."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en »cigar butt« i Graham-traditionen?",
+          "alternativ": [
+            "Ett bolag med stigande utdelning",
+            "Ett bolag som handlas så billigt att sista blosset är gratis — som en cigarrfimp på trottoaren",
+            "Ett litet bolag med hög belåning",
+            "Ett nystartat bolag utan intäkter"
+          ],
+          "ratt": 1,
+          "tips": "Metaforen handlar om att plocka upp något kastat och röka det färdigt."
+        },
+        {
+          "q": "Vad gjorde See's Candies så exceptionellt i 1972?",
+          "alternativ": [
+            "Extremt lågt P/B-tal",
+            "Höga utdelningar varje år",
+            "Varumärke med prissättningsmakt och bara cirka 1 MUSD rullande kapital på 32 MUSD i försäljning",
+            "Stor exportandel till Europa"
+          ],
+          "ratt": 2,
+          "tips": "Titta på förhållandet mellan försäljning och kapital i verksamheten — och vem som bestämde priserna."
+        },
+        {
+          "q": "Hur sammanfattas Mungers läxa till Buffett oftast?",
+          "alternativ": [
+            "»Det är bättre att köpa ett underbart bolag till ett rimligt pris än ett rimligt bolag till ett underbart pris«",
+            "»Diversifiera brett och köp index«",
+            "»Köp alltid under bokvärdet«",
+            "»Timing är allt i investering«"
+          ],
+          "ratt": 0,
+          "tips": "Ordföljden vrider på vad som ska vara underbart och vad som ska vara rimligt."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Ränta-på-ränta, sannolikhet och förväntansvärde",
+      "intro": "Munger kräver ingen avancerad matematik — han kräver grundläggande matematik bemästrad: sannolikhet, förväntansvärde och ränta-på-ränta. De flesta investerares fel är inte bristande kännedom om stokastisk kalkyl utan att de ignorerar de första principerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ränta-på-ränta är den tysta kraften. »The first rule of compounding is to never interrupt it unnecessarily« — den första regeln i compounding är att aldrig avbryta den i onödan. Och om att börja: »The first $100,000 is a bitch, but you gotta do it« — de första hundratusen är ett helvete men måste göras. Kurvan är trött i början och explosiv i slutet; därför är tid, inte avkastning i procent, den mest underskattade variabeln. Se kapitel 10: See's litet kapital och decenniers återinvesteringsutrymme var compounding i sin renaste form."
+        },
+        {
+          "type": "text",
+          "content": "Mungers marknadsmodell är hastävlingen. Banan tar en andel av varje spel — motsvarigheten i aktiemarknaden är courtage, spread och marknadens misstag. På en bana där vinstchansen finns i varje program är frågan inte »vilken häst är vackrast?« utan »är oddset fel?«. De flesta analyserar bolaget (hästen) och glömmer priset (oddset). Investerarens enda fråga: hur fel är priset mot sannolikheten? Det är förväntandevärdet som betalar — sannolikhet gånger vinst minus risk gånger förlust — och ingenting annat."
+        },
+        {
+          "type": "text",
+          "content": "Koncentration eller diversifiering? Munger: överdriven diversifiering är ett skydd för okunnighet — om du vet vad du gör är den ett hinder. Men koncentration utan edge är arrogans. AK1 löser ekvationen med Kelly-logik: positionens storlek ska vara en funktion av övertaget och osäkerheten, och Monte Carlo-simulering visar utfallsrummet istället för en enda gissning. Det är Mungers recept i systematiserad form: stor position när sannolikheten och oddset båda är på ditt håll, liten eller ingen när de inte är det."
+        },
+        {
+          "type": "text",
+          "content": "Sannolikhetsuppdatering: ny information — en produktlansering som lyckas, ett avtal som signeras, ett regulatoriskt beslut som faller ut — ändrar sannolikheten, inte känslan. Munger tänkte i Bayes termer långt innan det blev modernt: håll dig till basfrekvensen som startpunkt och uppdatera steg för steg när ny data kommer. AK1:s bayesianska omviktning av teorivikter är exakt denna princip: fem teorier har var sin sannolikhet, varje ny kvartalsrapport flyttar vikterna lite grann, och ingen enskild händelse vrider hela världsbilden."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "insikt",
+          "content": "Sannolikhet utan pris är casino; pris utan sannolikhet är gissning. Förväntansvärdet är det enda som betalar — och ränta-på-ränta är dess tålmodiga trotjänare som aldrig får avbrytas i onödan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Beräkna CAGR för ditt största innehav sedan köpet. Räkna sedan ut i procent vad en enda onödig avslutning och omköp kostat dig i avbruten compounding. När avbröts kedjan — och vilken bias drev den avslutningen?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den första regeln i compounding enligt Munger?",
+          "alternativ": [
+            "Att aldrig avbryta den i onödan",
+            "Att alltid återinvestera utdelningar",
+            "Att börja med små belopp",
+            "Att undvika hävstång"
+          ],
+          "ratt": 0,
+          "tips": "Regeln handlar om tiden — och vad du gör med den."
+        },
+        {
+          "q": "Vad är poängen med Mungers hastävlingsmodell?",
+          "alternativ": [
+            "Att man ska satsa på fler händer samtidigt",
+            "Att banan alltid vinner i längden",
+            "Att frågan inte är vilken häst som är bäst utan om oddset är fel",
+            "Att man ska undvika spel helt"
+          ],
+          "ratt": 2,
+          "tips": "Banan tar sin andel oavsett — vad avgör om du gör vinst?"
+        },
+        {
+          "q": "Vad är förväntansvärdet i AK1:s bemärkelse?",
+          "alternativ": [
+            "Sannolikhet gånger vinst minus risk gånger förlust",
+            "Genomsnittet av dina tidigare affärer",
+            "Analystkonsensus för nästa kvartal",
+            "Kursmålet multiplicerat med Kelly-fraktionen"
+          ],
+          "ratt": 0,
+          "tips": "Det är en formel med både chance och risk — på båda sidan av minus tecknet."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Evolution, moats och kapitalismens kreativa förstörelse",
+      "intro": "Från biologi lånar Munger de kraftfullaste modellerna: evolution, utdöende och anpassning. Bolag är organismer i ett ekosystem, moats är evolutionära fördelar — och evolutionen tar alltid tillbaka fördelarna förr eller senare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Munger beundrade Darwin djupt — inte bara för teorin utan för metoden: Darwins disciplin att omedelbart anteckna observationer som talade emot hans egen teori är en av historiens bästa exempel på bias-motgift. Evolutionär ekonomi ser marknader som ekosystem: bolag som organismer, nischer att fylla, symbios, parasitism och utdöendehändelser. Frågan till varje bolag blir ekologisk: vilken nisch, vilket försprång, och vilket tryck från omvärlden?"
+        },
+        {
+          "type": "text",
+          "content": "Moats är evolutionära fördelar. Nätverkseffekter (V15) är kritisk massa i renekölogisk mening — varje ny användare gör systemet mer värdefullt, tills positionen låses. Avtal och partnerskap (V17) är mutualism: två arter som lever tillsammans av gemensamt intresse — men symbios kan glida över i parasitism när en part tar nästan hela värdet, som när en plattform ändrar villkoren för sina applikationsutvecklare. Fråga alltid vilken part i ett partnerskap som kontrollerar kunden och värdet."
+        },
+        {
+          "type": "text",
+          "content": "Utdöende och disruption: teknologiska utdöendehändelser utplånar arter som var perfekt anpassade — tills anpassningen blev meningslös. Tidningarna hade vallgravar som såg ointagliga ut; inom ett par decennier var de torra. Munger-principen: kanibalisera dig själv innan någon annan gör det — bolag som aktivt förstör sin egen gårdagens kassakos (destroy your own business) överlever teknologiskift; de som skyddar den blir skyddade alltför länge. Kodak är skolboksexemplet: ägaren av framtiden som fastnade i nuet."
+        },
+        {
+          "type": "text",
+          "content": "Incentiv är ekosystemets selektionstryck: det som belönas replikeras, det som befordras blir organisationens DNA. Ett bolag som belönar volym, korta kvarter och interna mål odlar fram exakt det beteendet — »visa mig incitamentet och jag visar resultatet« gäller även internt. I AK1:s analys är ledningens incitamentsstruktur därför en strukturell riskfaktor på samma nivå som skuldsättning och kapitalbehov: kultur är inte mjuk — den är arvsmassa som avgör vilka beteenden som överlever i bolaget."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett moat är inte en slott — det är en evolutionär fördel, och evolutionen tar tillbaka alla fördelar förr eller senare. Fråga inte bara hur stark vallgraven är, utan om den håller på att torka."
+        },
+        {
+          "type": "utmaning",
+          "content": "Vilket av dina innehav har en fördel som håller på att selekteras bort — av teknik, vanor eller regler? Skriv en mening om hur bolagets nisch ser ut om tio år. Om meningen blir vag har du svaret."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Darwins metod som Munger beundrade?",
+          "alternativ": [
+            "Att publicera snabbt och ofta",
+            "Att omedelbart anteckna observationer som talade emot hans egen teori",
+            "Att hålla teorin hemlig tills den var färdig",
+            "Att förlita sig på auktoriteter inom biologin"
+          ],
+          "ratt": 1,
+          "tips": "Det handlar om relationen till sina egna misstag — ett tidigt motgift mot en tendens från kapitel 5."
+        },
+        {
+          "q": "Vad betyder »destroy your own business« i praktiken?",
+          "alternativ": [
+            "Att ligga nära konkurs för skattefördelar",
+            "Att aktivt kanibalisera sin egen produkt innan konkurrenter gör det",
+            "Att sälja av divisioner löpande",
+            "Att korta det egna bolagets aktie"
+          ],
+          "ratt": 1,
+          "tips": "Bättre att äta sitt eget framework än att låta någon annan göra det."
+        },
+        {
+          "q": "Varför jämför Munger incitament med evolutionärt selektionstryck?",
+          "alternativ": [
+            "Därför att incitament förändras långsamt som DNA",
+            "Därför att belöningssystem bestämmer vilka beteenden som överlever och replikeras i organisationen",
+            "Därför att alla bolag utvecklas mot perfektion",
+            "Därför att löner är genetiskt bestämda"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad som händer med beteenden som aldrig belönas."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Psykologin i praktiken — checklistor, flygplan, kreditkort och Perc",
+      "intro": "Munger avslutar sin psykologi med det praktiska spörsmålet: vad gör man åt biaserna? Svaret är inte viljestyrka utan system. Hans favoritexempel kommer från flyget — och hans varnande exempel från kreditkort och kemtvätt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Flygplans-metaforen: flygindustrin gjorde flygning till världens säkraste transportslag — inte genom att rekrytera smartare piloter utan genom system: obligatoriska checklistor, simulatorträning på fel, redundanta system och en kultur där fel rapporteras utan straff. Munger frågar retoriskt: om piloter med tusentals flygtimmar behöver checklistor inför varje flygning, varför skulle investerare fatta sina största beslut utan? Skillnaden är att piloten som hoppar över checklistan dör själv — investeraren överlever med sin bias intakt, vilket gör systemen ännu viktigare."
+        },
+        {
+          "type": "text",
+          "content": "Bygg din bias-checklista. Innan varje köp: Vem betalar för informationen jag läser? (incentiv) Har jag skrivit det bästa argumentet mot? (första-slutsats) Verkar tre eller fler krafter samtidigt? (lollapalooza) Tittar jag på absolut serier eller senaste kontrast? Skulle jag köpa om jag inte redan ägde och inte såg mitt genomsnittspris? (deprival) Vem är auktoriteten bakom tron? Och trivialt men verkligt: har jag sovit, ätit och druckit vatten? Koppla till /profil: din kognitiva profilering säger vilka av de här punkterna DU ska dubbelkolla hårdast — checklistan ska vara personlig, inte generisk."
+        },
+        {
+          "type": "text",
+          "content": "Kreditkortsexemplet: kreditkortsaffärens design är en lollapalooza av tendenser. Att betala senare döljer smärtan (pain-avoiding denial), minimibeloppet ramar in skulden som liten (contrast och frame dependence), belönningspoängen associerar kortet med glädje (influence-from-merely-association), och tillgänglig kredit gör varje avstående till en deprival. Kunden känner sig rik, bolaget skördar räntan. Lärdomen för analys: när ett bolag tjänar på att dess kunder missdömer — kreditkort, betting och snabblån — fråga då om förtjänsten är en moat som håller eller en mekanik som reglering eller konkurrens kan slå sönder."
+        },
+        {
+          "type": "text",
+          "content": "Perc-exemplet: perkloretylen var kemtvättsbranschens standardlösning länge efter att bevisen för allvarliga hälsorisker växte. Munger beskriver hur en hel bransch — ägare, konsulter, organisationer — höll fast: incitamenten (ombyggnad kostar), första-slutsats-bias (»det har alltid fungerat«), social proof (»alla andra använder det«) och förnekelse (skadan är osynlig och dröjer år) samverkade. Samma mönster som tobak och asbest: när en hel bransch tjänar på status quo kommer den negativa informationen sent och möts av organiserat motstånd. Bra att veta vare sig du är lång och undrar varför uppgången drar ut på tiden, eller kort och vill veta varför marknaden intalar sig fel saker så länge."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fall → verkande krafter → lärdom\",\"rader\":[[\"Fall\",\"Verkande krafter\",\"Lärdom\"],[\"Flygplan\",\"Checklistor, simulator, redundans\",\"System besegrar dumdristighet — bygg checklistan\"],[\"Kreditkort\",\"Förnekelse + kontrast + association + deprival\",\"Om affären bygger på kunders missdöme — hur varaktig är den?\"],[\"Perc\",\"Incitament + första slutsats + social proof + förnekelse\",\"Branschens konsensus fördröjer sanningen — räkna med det\"],[\"Tupperware\",\"Reciprocation + social proof + sympati + konsekvens\",\"Konvergens förklarar extrema utfall\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du kan inte träna bort biaser med vilja — men du kan bygga system som fångar dem. Piloterna löste det med checklistor. Frågan är om din portfölj är mer eller mindre värd än ett plan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din tio-punkters checklista nu — tre punkter från boken, tre från din /profil, fyra från dina egna ärr. Använd den vid nästa köpbeslut innan du ens tittar på kursen. Riv och skriv om den varje halvår."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför blev flygning så säkert enligt Mungers läsning?",
+          "alternativ": [
+            "För att piloterna blev allt smartare över tid",
+            "För att system — checklistor, simulatorer, redundans — kuvar det mänskliga felet",
+            "För att tekniken eliminerade piloterna",
+            "För att regleringar förbjöd alla misstag"
+          ],
+          "ratt": 1,
+          "tips": "Ordet att leta efter är inte intelligens utan system."
+        },
+        {
+          "q": "Vad är kreditkortsexemplets kärna?",
+          "alternativ": [
+            "Att kort är dyra för kunden i alla lägen",
+            "Att kortbolag saknar moat",
+            "Att designen staplar biaser — förnekelse, kontrast, association, deprival — mot kunden",
+            "Att cashback aldrig lönar sig"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på varför det känns så lätt att swipa och så svårt att se slutsumman."
+        },
+        {
+          "q": "Vad lär Perc-fallet en analytiker?",
+          "alternativ": [
+            "Att kemtvätt är en dålig sektor",
+            "Att enskilda chefer ofta är korrumperade",
+            "Att miljöregleringar alltid kommer snabbt",
+            "Att när en hel bransch tjänar på status quo kommer negativ information sent och möts av förnekelse"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på incitamenten hos alla inblandade — vem skulle förlora på att veta?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Mungers arv — rationalitet som livshållning",
+      "intro": "Poor Charlie's Almanack slutar inte med kapital utan med karaktär. Munger betraktade rationalitet som en moralisk plikt och inlärning som ett livsuppdrag. Sista kapitlet knyter ihop boken med AK1 — från mentalmodeller till profil, riskmatris och Short-Seller.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Livsfilosofin är Franklinsk: »To get what you want, you have to deserve what you want. The world is not yet a crazy enough place to reward a whole bunch of undeserving people.« Att förtjäna är strategin — i portföljen som i livet. Och inlärningen är en plikt, inte ett hobbyprojekt: wisdom acquisition is a moral duty — går du och lägger dig klokare än du gick upp, varje dag i decennier, blir resultatet inte bara en bättre portfölj utan ett bättre liv. Munger avled 2023, nittionio år gammal, fortfarande läsande och svarande skarpare än de flesta hälften så unga."
+        },
+        {
+          "type": "text",
+          "content": "Stilen var del av innehållet. Munger-citatens rapphet — »Jag har inget att tillägga«, »Visa mig incitamentet så visar jag resultatet«, torrheten om avunden som enda synd utan njutning — är inte bara underhållning: den tvingar fram det Kaufman kallar hans mest upprepade läxa, att se världen så rak som möjligt. Bokens avslutande bonmot sammanfattar hela programmet: tillbringa varje dag med att försöka bli lite klokare än du var när du vaknade — slå dig fram en tum i taget, dag för dag, och i slutet på dagen — om du lever tillräckligt länge — får du ut av livet det du förtjänar."
+        },
+        {
+          "type": "text",
+          "content": "Från bok till ekosystem — AK1 i Mungers ljus. Latticework-idealet lever i de fem teorierna: olika linser på samma verklighet, vikta efter sannolikhet. Inversionsprincipen lever i riskmatrisen och scenariorummet — vad som kan gå fel först, prissättning efteråt. Sannolikhetstänkandet lever i Monte Carlo och Kelly. De kognitiva tendenserna lever i profileringen via /profil: vilka av de tjugofem som är dina, mätta och uppföljda. Lollapalooza-tänkandet lever i Short-Sellerns dekomposition av pumpade berättelser. Och sit-on-your-ass lever i den längsta av de fem tidshorisonterna — den där ränta-på-ränta gör jobbet medan du gör annat."
+        },
+        {
+          "type": "text",
+          "content": "Slutövningen är strukturerad ödmjukhet: du kan inte bemästra tjugofem tendenser. Välj tre som kostar dig mest — profileringen och din affärslogg ger ledningen — och bygg system mot just dem: checklistepunkter, fördefinierade villkor, en logg. Resten hanterar du med omvänt tänkande: försök inte vara smart, undvik bara att vara dum på samma sätt två gånger. Munger blev inte rik på att ha rätt ofta; han blev rik på att sällan ha katastrofalt fel, och på att sitta still när han väl hade rätt."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "insikt",
+          "content": "Gå till sängs klokare än du gick upp — varje dag, i decennier. Det är hela hemligheten, och den är bara underskattad av dem som aldrig provat."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj EN tendens att 'äga' detta kvartal — till exempel deprival, social proof eller första-slutsats. Varje gång den dyker upp i ditt beslutsfattande skriver du en rad i en logg. Efter fyra veckor: gör /profil igen och jämför. Medvetenhet utan mätning är bara en åsikt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Munger med att förtjänst är strategin?",
+          "alternativ": [
+            "Att man ska förtjäna sina vinster — världen belönar inte ett helt gäng ovärdiga människor",
+            "Att man ska förtjäna respekt hos analytiker",
+            "Att lönen ska vara förtjänstbaserad",
+            "Att man ska förtjäna sina förluster genom att lära sig av dem"
+          ],
+          "ratt": 0,
+          "tips": "Citatet börjar med »to get what you want« — hur gör man det på det säkraste sättet?"
+        },
+        {
+          "q": "Vad är den bayesianska kopplingen mellan Munger och AK1?",
+          "alternativ": [
+            "Att båda använder samma nyckeltal",
+            "Att ny information uppdaterar teorivikter och sannolikheter stegvis — inte känslan",
+            "Att båda förutspår marknadens toppar",
+            "Att profiler ersätter analyser helt"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad en kvartalsrapport bör ändra — och vad den inte bör ändra."
+        },
+        {
+          "q": "Vad är den strukturerade ödmjukhetens slutövning i kursen?",
+          "alternativ": [
+            "Att bemästra alla tjugofem tendenserna",
+            "Att läsa boken en gång till per år",
+            "Att aldrig göra om något misstag genom att sluta handla",
+            "Att välja tre tendenser som kostar dig mest och bygga system och mätning mot just dem"
+          ],
+          "ratt": 3,
+          "tips": "Tjugofem är för många — vilka är dina?"
+        }
+      ]
+    }
+  ]
+}

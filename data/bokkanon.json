@@ -127,7 +127,7 @@
         "Noterna är där bolaget talar sannare om sina siffror än i resultaträkningen"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-006",
@@ -299,7 +299,7 @@
         "Om marginalen saknas i priset är kassan rätt: att inte handla är ett aktivt beslut"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-013",
@@ -689,7 +689,7 @@
         "Undvik dumhet istället för att jaga genialitet: de enkla felen är de dyraste"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-029",

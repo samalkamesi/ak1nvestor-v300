@@ -3489,3 +3489,22 @@ Work Log:
 
 Stage Summary:
 - 10 BOKMASTER-böcker totalt (4+6 denna session), bokkanon-uttagning igång
+
+---
+Task ID: 120-VAG3-LEVERANS
+Agent: main + Klarman ✓ + Munger ✓ + Graham-1937 ✓ (+ /om-oss byggd)
+Task: BOKMASTER #14-16 + om-oss
+
+Work Log:
+- MARGIN OF SAFETY (Klarman): 14 kap, 42 quiz — special situations-mekanik,
+  kassa-som-position, marginal UTAN V-nummer (korrekt)
+- POOR CHARLIE'S ALMANACK (Munger): 14 kap, 42 quiz — 25 biaser med motgift,
+  Lollapalooza, See's Candies
+- INTERPRETATION OF FINANCIAL STATEMENTS (Graham 1937): 13 kap, 39 quiz —
+  era-översatt till svenska årsredovisningar, koherenta räkneexempel
+- /om-oss byggd (chatbotens 404-länk fixad)
+- KANON: 16 av 100 böcker har kurser
+- 242 kurser · 4299 quiz · 731 sidor
+
+Stage Summary:
+- 16 BOKMASTER-böcker komplettäckta (4 + 12 denna session)

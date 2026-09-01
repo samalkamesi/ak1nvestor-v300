@@ -9,8 +9,8 @@
   "minutes": 12,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan eleven tillämpa Graham & Dodds urvalsmetodik: beräkna räntetäckning, normalisera resultat över en konjunkturcykel, genomskåda intäktsredovisningens vanligaste trick, värdera balansräkningar med netto cirkulerande medel och kräva en prisvärd säkerhetsmarginal (V19) före varje köp. Eleven kan dessutom skilja investering från spekulering med bokens tre kriterier och strukturera analyser i lönsamma kontra farliga situationer.",
-  "why": "Security Analysis är den djupaste rotkällan till hela AKM1-ekosystemet: variabler som bruttomarginal (V04), kassaflöde (V08), moat (V13), värdering (V14), rapportkvalitet (V17) och margin of safety (V19) är rakt av operationaliseringar av Graham & Dodds frågor från 1934. Utan denna bok finns ingen modern värdeinvestering — den tillhör helt enkelt utbildningens ryggrad.",
+  "learn": "Efter kursen kan eleven tillämpa Graham & Dodds urvalsmetodik: beräkna räntetäckning, normalisera resultat över en konjunkturcykel, genomskåda intäktsredovisningens vanligaste trick, värdera balansräkningar med netto cirkulerande medel och kräva en prisvärd säkerhetsmarginal (margin of safety) före varje köp. Eleven kan dessutom skilja investering från spekulering med bokens tre kriterier och strukturera analyser i lönsamma kontra farliga situationer.",
+  "why": "Security Analysis är den djupaste rotkällan till hela AKM1-ekosystemet: variabler som bruttomarginal (V07), EBITDA-marginal (V08), moat (V13–V15), värdering (V04–V06) och rapportkvalitet samt principen margin of safety är rakt av operationaliseringar av Graham & Dodds frågor från 1934. Utan denna bok finns ingen modern värdeinvestering — den tillhör helt enkelt utbildningens ryggrad.",
   "chapters_list": [
     "1. Analysens uppgift — boken som lär marknaden läsa fakta",
     "2. Investering eller spekulering — definitionen med tre villkor",
@@ -46,7 +46,7 @@
         },
         {
           "type": "text",
-          "content": "Bokens kanske mest föraktfulla uppgift är att skilja analys från förutsägelse. Graham & Dodd insisterade på att analytikerns styrka inte ligger i att spå framtiden utan i att fastställa nuvarande fakta och köpa dem med rabatt. Historiskt, menade de, är analysen som mest lönsam när marknaden som helhet är deprimerad och stora bolag handlas under dokumenterat värde — och som minst lönsam när allt redan är dyrt och framgång kräver att prognosen blir bättre än marknadens.\n\nDet är exakt denna ansats AKM1 bygger vidare på: variabler som V14 (värdering) och V19 (margin of safety) finns bara för att Graham & Dodd visade att skillnaden mellan pris och värde går att mäta. Kursens resten är en enda lång tillämpning av deras första kapitel."
+          "content": "Bokens kanske mest föraktfulla uppgift är att skilja analys från förutsägelse. Graham & Dodd insisterade på att analytikerns styrka inte ligger i att spå framtiden utan i att fastställa nuvarande fakta och köpa dem med rabatt. Historiskt, menade de, är analysen som mest lönsam när marknaden som helhet är deprimerad och stora bolag handlas under dokumenterat värde — och som minst lönsam när allt redan är dyrt och framgång kräver att prognosen blir bättre än marknadens.\n\nDet är exakt denna ansats AKM1 bygger vidare på: variabler som V04–V06 (värdering) och principen margin of safety finns bara för att Graham & Dodd visade att skillnaden mellan pris och värde går att mäta. Kursens resten är en enda lång tillämpning av deras första kapitel."
         },
         {
           "type": "text",
@@ -58,11 +58,11 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Välj ett bolag du äger eller bevakar. Skriv en ren faktagrid utan en enda prognos: senaste fem årens intäkter, bruttomarginal (V04), räkenskapsåret resultat, utdelning, nettoskuld och kassa per aktie. Jämför sedan kursen mot din grid — vad säger fakta, inte feeling?"
+          "content": "🎯 Välj ett bolag du äger eller bevakar. Skriv en ren faktagrid utan en enda prognos: senaste fem årens intäkter, bruttomarginal (V07), räkenskapsåret resultat, utdelning, nettoskuld och kassa per aktie. Jämför sedan kursen mot din grid — vad säger fakta, inte feeling?"
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Analysens tre funktioner enligt Graham & Dodd\",\"rader\":[[\"Funktion\",\"Fråga\",\"Modern AKM1-motsvarighet\"],[\"Beskrivande\",\"Vad äger, tjänar och betalar bolaget?\",\"Faktagrid: V04, V08, V09\"],[\"Kritiskt värderande\",\"Stämmer siffrorna, och hur har de skapats?\",\"Rapportkvalitet: V17\"],[\"Selektiv\",\"Är priset lägre än värdet med marginal?\",\"Värdering och marginal: V14, V19\"]]}"
+          "content": "{\"rubrik\":\"Analysens tre funktioner enligt Graham & Dodd\",\"rader\":[[\"Funktion\",\"Fråga\",\"Modern AKM1-motsvarighet\"],[\"Beskrivande\",\"Vad äger, tjänar och betalar bolaget?\",\"Faktagrid: V07, V08, V09\"],[\"Kritiskt värderande\",\"Stämmer siffrorna, och hur har de skapats?\",\"Rapportkvalitet: källkritik (V12 som stöd)\"],[\"Selektiv\",\"Är priset lägre än värdet med marginal?\",\"Värdering och marginal: V04–V06 + marginalprövning\"]]}"
         }
       ],
       "quiz": [
@@ -113,7 +113,7 @@
         },
         {
           "type": "text",
-          "content": "Graham & Dodd varnade särskilt för det farligaste mellanrummet: spekulering förklädd till investering via analysens språk. En tjock rapport med prognoser är inte analys om slutsatsen vilar på en enda osäker antagande — till exempel att tillväxten fortsätter i evighet. De flesta stora förluster i historien, menade de, drabbade dem som trodde sig investera men i sak spelade på trenden. I AKM1 termer: utan margin of safety (V19) är din bruttomarginal (V04) och ditt kassaflöde (V08) bara vackra siffror på en väg mot obestånd eller överpris."
+          "content": "Graham & Dodd varnade särskilt för det farligaste mellanrummet: spekulering förklädd till investering via analysens språk. En tjock rapport med prognoser är inte analys om slutsatsen vilar på en enda osäker antagande — till exempel att tillväxten fortsätter i evighet. De flesta stora förluster i historien, menade de, drabbade dem som trodde sig investera men i sak spelade på trenden. I AKM1 termer: utan margin of safety är din bruttomarginal (V07) och ditt kassaflöde bara vackra siffror på en väg mot obestånd eller överpris."
         },
         {
           "type": "text",
@@ -129,7 +129,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Tre villkor — investering eller spekulering\",\"rader\":[[\"Villkor\",\"Investering uppfyller genom\",\"Spekulering känns igen på\"],[\"Grundlig analys\",\"Dokumenterade fakta, granskad rapportkvalitet (V17)\",\"Berättelse, prognoser, andras entusiasm\"],[\"Kapitalets säkerhet\",\"Täckning, tillgångar, margin of safety (V19)\",\"Tron att någon betalar mer senare\"],[\"Tillfredsställande avkastning\",\"Rimlig ersättning mot betalt pris (V14)\",\"Lotteriförhoppning om mångdubbling\"]]}"
+          "content": "{\"rubrik\":\"Tre villkor — investering eller spekulering\",\"rader\":[[\"Villkor\",\"Investering uppfyller genom\",\"Spekulering känns igen på\"],[\"Grundlig analys\",\"Dokumenterade fakta, granskad rapportkvalitet (källkritik)\",\"Berättelse, prognoser, andras entusiasm\"],[\"Kapitalets säkerhet\",\"Täckning, tillgångar, margin of safety (Grahams princip)\",\"Tron att någon betalar mer senare\"],[\"Tillfredsställande avkastning\",\"Rimlig ersättning mot betalt pris (V04–V06)\",\"Lotteriförhoppning om mångdubbling\"]]}"
         }
       ],
       "quiz": [
@@ -180,7 +180,7 @@
         },
         {
           "type": "text",
-          "content": "Graham & Dodd var samtidigt ödmjuka inför analysens gränser. Marknaden kan förbli irrationell längre än analysen förefaller rätt, och kollektiva missuppfattningar kan bära ett pris i åratal. Därför kräver de inte att analytikern förutsäger kurser — bara att denne köper med ett sådant avstånd mellan pris och värde att även ogynnsamma överraskningar kan absorberas. Det är embryot till hela margin of safety-tanken (V19) som kursen återkommer till i kapitel 19.\n\nEtt andra villkor för framgång var att värdepapperet är 'slankare' än berättelsen: enkel struktur, begriplig balansräkning, kontrollerbara uppgifter. Ju fler lager av dotterbolag, konvertibler och warranties kring ett bolag, desto svagare blir analysens slagkraft. I AKM1 speglas detta av V17 — sårbärhet och kvalitet i rapporterna — där komplexitet i sig är ett riskmått."
+          "content": "Graham & Dodd var samtidigt ödmjuka inför analysens gränser. Marknaden kan förbli irrationell längre än analysen förefaller rätt, och kollektiva missuppfattningar kan bära ett pris i åratal. Därför kräver de inte att analytikern förutsäger kurser — bara att denne köper med ett sådant avstånd mellan pris och värde att även ogynnsamma överraskningar kan absorberas. Det är embryot till hela margin of safety-tanken (Grahams princip) som kursen återkommer till i kapitel 19.\n\nEtt andra villkor för framgång var att värdepapperet är 'slankare' än berättelsen: enkel struktur, begriplig balansräkning, kontrollerbara uppgifter. Ju fler lager av dotterbolag, konvertibler och warranties kring ett bolag, desto svagare blir analysens slagkraft. I AKM1 speglas detta av V12 — intäktsstabilitet och verifierbarhet i intäkterna — där komplexitet i sig är ett riskmått."
         },
         {
           "type": "text",
@@ -247,7 +247,7 @@
         },
         {
           "type": "text",
-          "content": "Den mest mot-intuitiva lärdomen gäller avkastningens lockelse. Graham & Dodd påpekade att en högre ränta inte kompenserar risken för förlust, eftersom förlusten vid falliment slukar flera års extra kuponger på en gång. Extra yield är därför sällan en riskpremie i praktiken — den är en frestelse. I AKM1:s språk: värdet av en kassaflödesström (V08) står och faller med sannolikheten att den betalas, och en engångsförlust kan inte balanseras av marginellt högre kuponger (V19 är marginalen, inte kupongen)."
+          "content": "Den mest mot-intuitiva lärdomen gäller avkastningens lockelse. Graham & Dodd påpekade att en högre ränta inte kompenserar risken för förlust, eftersom förlusten vid falliment slukar flera års extra kuponger på en gång. Extra yield är därför sällan en riskpremie i praktiken — den är en frestelse. I AKM1:s språk: värdet av en kassaflödesström står och faller med sannolikheten att den betalas, och en engångsförlust kan inte balanseras av marginellt högre kuponger (margin of safety är marginalen, inte kupongen)."
         },
         {
           "type": "text",
@@ -314,7 +314,7 @@
         },
         {
           "type": "text",
-          "content": "Metoden har en djupare poäng: den flyttar bevisbördan. I stället för att leta skäl att äga ett papper letar analytikern skäl att inte äga det — och kräver att varje undantag motiveras med extra marginal, inte med extra hopp. Ett nytt bolag kan vara utmärkt, men då ska köparen kompensera den kortare historien med större säkerhetsmarginal (V19). En garanti från ett kreditinstitut kan vara värd något — men bara om garanten själv står stark, annars är ordet 'garanterad' ren dekoration. Boken ägnar flera sider åt hur lockord som garanterad, första prioritet och säker vid gränsen missledde köpare under 1920-talet.\n\nI AKM1 termer är detta V17:s såll: en rapportstruktur eller kapitalstruktur som kräver förtroende i stället för verifiering ska strykas. Kvalitet är inte bara lönsamhet (V09) utan verifierbarhet."
+          "content": "Metoden har en djupare poäng: den flyttar bevisbördan. I stället för att leta skäl att äga ett papper letar analytikern skäl att inte äga det — och kräver att varje undantag motiveras med extra marginal, inte med extra hopp. Ett nytt bolag kan vara utmärkt, men då ska köparen kompensera den kortare historien med större säkerhetsmarginal (margin of safety). En garanti från ett kreditinstitut kan vara värd något — men bara om garanten själv står stark, annars är ordet 'garanterad' ren dekoration. Boken ägnar flera sider åt hur lockord som garanterad, första prioritet och säker vid gränsen missledde köpare under 1920-talet.\n\nI AKM1 termer är detta intäktsstabilitetens (V12) såll: en rapportstruktur eller kapitalstruktur som kräver förtroende i stället för verifiering ska strykas. Kvalitet är inte bara lönsamhet (V09) utan verifierbarhet."
         },
         {
           "type": "text",
@@ -377,11 +377,11 @@
         },
         {
           "type": "text",
-          "content": "Vid preferensaktier och företag med flera senioritetsnivåer räknar man totaltäckning: intjäning dividerat med ränta plus preferensutdelning. Graham & Dodd menade att preferensutdelningen bör täckas med åtminstone samma marginal som räntan — helst större, eftersom den saknar förfallodag. I AKM1 termer är täckningsberäkningen en direkt föregångare till hur V08 (kassaflöde) och V04 (bruttomarginal) används: bruttomarginalens stabilitet över cykeln avslöjar hur mycket av täckningen som är konjunkturgåva, och kassaflödets kvalitet avgör om den teoretiska täckningen också blir betalning."
+          "content": "Vid preferensaktier och företag med flera senioritetsnivåer räknar man totaltäckning: intjäning dividerat med ränta plus preferensutdelning. Graham & Dodd menade att preferensutdelningen bör täckas med åtminstone samma marginal som räntan — helst större, eftersom den saknar förfallodag. I AKM1 termer är täckningsberäkningen en direkt föregångare till hur V08 (EBITDA-marginal) och V07 (bruttomarginal) används: bruttomarginalens stabilitet över cykeln avslöjar hur mycket av täckningen som är konjunkturgåva, och kassaflödets kvalitet avgör om den teoretiska täckningen också blir betalning."
         },
         {
           "type": "text",
-          "content": "En sista punkt från boken: täckning ska räknas på intäktsanalyser som är granskade. En räntetäckning byggd på uppblåst resultat through lagertrick eller för låga avskrivningar (kapitel 15 och 18) är ingen täckning alls. Kedjan är: rapportkvalitet (V17) före täckning, täckning före kupong."
+          "content": "En sista punkt från boken: täckning ska räknas på intäktsanalyser som är granskade. En räntetäckning byggd på uppblåst resultat through lagertrick eller för låga avskrivningar (kapitel 15 och 18) är ingen täckning alls. Kedjan är: rapportkvalitet (källkritik) före täckning, täckning före kupong."
         },
         {
           "type": "insikt",
@@ -421,7 +421,7 @@
             "För att industrin har fler anställda"
           ],
           "ratt": 1,
-          "tips": "Täckningen speglar intäkternas stabilitet — V04:s variation över cykeln är ledtråden."
+          "tips": "Täckningen speglar intäkternas stabilitet — V07:s variation över cykeln är ledtråden."
         },
         {
           "q": "Vad är totaltäckning (aggregate coverage)?",
@@ -452,7 +452,7 @@
         },
         {
           "type": "text",
-          "content": "Depressionens lärdom sammanfattas i boken som en dubbel slutsats: dels höll väl utvalda obligationer hos stora, etablerade gäldenärer med dokumenterad täckning — deras priser föll men kupongerna betalades; dels straffades systematiskt de papper som valts för avkastningens skull. Det är samma budskap som i AKM1:s stressscenario-modul: testa portföljen mot 1929–1932 (och 2008), inte mot gårdagens bull-marknad — sårbärheten (V17) mäts i bottenåret."
+          "content": "Depressionens lärdom sammanfattas i boken som en dubbel slutsats: dels höll väl utvalda obligationer hos stora, etablerade gäldenärer med dokumenterad täckning — deras priser föll men kupongerna betalades; dels straffades systematiskt de papper som valts för avkastningens skull. Det är samma budskap som i AKM1:s stressscenario-modul: testa portföljen mot 1929–1932 (och 2008), inte mot gårdagens bull-marknad — intäktsstabiliteten (V12) mäts i bottenåret."
         },
         {
           "type": "insikt",
@@ -523,7 +523,7 @@
         },
         {
           "type": "text",
-          "content": "Varför existerar de då? Skatt och kapitalstruktur. Företag kunde emittera preferensaktier utan att öka sin formella skuld, och vissa perioder gav det fördelar i beskattning och reglering. För analytikern är slutsatsen densamma i dag: en preferensliknande struktur — exempelvis hybridkapital i banker — ska bedömas med obligationens täckningskrav plus en extra marginal för att anspråket aldrig förfaller (V19), och dess verkliga premi vid likvidation granskas noga i balansräkningen (V17)."
+          "content": "Varför existerar de då? Skatt och kapitalstruktur. Företag kunde emittera preferensaktier utan att öka sin formella skuld, och vissa perioder gav det fördelar i beskattning och reglering. För analytikern är slutsatsen densamma i dag: en preferensliknande struktur — exempelvis hybridkapital i banker — ska bedömas med obligationens täckningskrav plus en extra marginal (margin of safety) för att anspråket aldrig förfaller, och dess verkliga premi vid likvidation granskas noga i balansräkningen."
         },
         {
           "type": "insikt",
@@ -535,7 +535,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Obligation, preferensaktie och vanlig aktie\",\"rader\":[[\"Egenskap\",\"Obligation\",\"Preferensaktie\",\"Vanlig aktie\"],[\"Avkastning\",\"Fast ränta\",\"Fast utdelning\",\"Ostadig, potential\"],[\"Kapitalåterbetalning\",\"Förfallodag\",\"Saknas\",\"Aldrig\"],[\"Andel i uppgång\",\"Nej\",\"Nästan aldrig\",\"Ja\"],[\"Täckningskrav\",\"Hög (t.ex. 3x industri)\",\"Högre än obligationens\",\"Resterande\"],[\"AKM1-koppling\",\"V08, V19\",\"V19 extra marginal\",\"V13, V14\"]]}"
+          "content": "{\"rubrik\":\"Obligation, preferensaktie och vanlig aktie\",\"rader\":[[\"Egenskap\",\"Obligation\",\"Preferensaktie\",\"Vanlig aktie\"],[\"Avkastning\",\"Fast ränta\",\"Fast utdelning\",\"Ostadig, potential\"],[\"Kapitalåterbetalning\",\"Förfallodag\",\"Saknas\",\"Aldrig\"],[\"Andel i uppgång\",\"Nej\",\"Nästan aldrig\",\"Ja\"],[\"Täckningskrav\",\"Hög (t.ex. 3x industri)\",\"Högre än obligationens\",\"Resterande\"],[\"AKM1-koppling\",\"V08, V10\",\"V08, V10 + extra marginal\",\"V13–V15, V04–V06\"]]}"
         }
       ],
       "quiz": [
@@ -586,11 +586,11 @@
         },
         {
           "type": "text",
-          "content": "Boken varnar samtidigt för konvertibelns baksidor. Bolag emitterar konvertibler när ledningen bedömer att aktien är fullvärdig eller dyr — annars hade de lånat billigt utan privilegium. Finansiören som ständigt säljer konvertibler 'billigt' skickar en signal om prisbildningen. Vidare innehåller villkoren fällor: inlösenrätten (call) gör att bolaget kan tvångslösa papperet precis när konverteringen blivit värdefull, och antidilutionsklausuler täcker sällan alla sätt att späda ut aktien på. Varje konvertibel ska alltså granskas på V17-manér: läggdelen i resultaträkningen och balansräkningen, optionsdelen i emissionshistoriken."
+          "content": "Boken varnar samtidigt för konvertibelns baksidor. Bolag emitterar konvertibler när ledningen bedömer att aktien är fullvärdig eller dyr — annars hade de lånat billigt utan privilegium. Finansiören som ständigt säljer konvertibler 'billigt' skickar en signal om prisbildningen. Vidare innehåller villkoren fällor: inlösenrätten (call) gör att bolaget kan tvångslösa papperet precis när konverteringen blivit värdefull, och antidilutionsklausuler täcker sällan alla sätt att späda ut aktien på. Varje konvertibel ska alltså granskas på samma källkritiska manér: läggdelen i resultaträkningen och balansräkningen, optionsdelen i emissionshistoriken."
         },
         {
           "type": "text",
-          "content": "I ett AKM1-perspektiv är konvertibeln ett tidigt exempel på vad som i dag kallas asymmetrisk utbetalning: betala litet för en option med begränsad nedsida och öppen uppsida. Men notera ordningen — Graham & Dodd krävde att obligationsdelen står på egna ben. En konvertibel från ett svagt bolag är ingen säker placering med bonus, det är en svag placering med dekoration (V19 först, V14 på optionsdelen)."
+          "content": "I ett AKM1-perspektiv är konvertibeln ett tidigt exempel på vad som i dag kallas asymmetrisk utbetalning: betala litet för en option med begränsad nedsida och öppen uppsida. Men notera ordningen — Graham & Dodd krävde att obligationsdelen står på egna ben. En konvertibel från ett svagt bolag är ingen säker placering med bonus, det är en svag placering med dekoration (margin of safety först, V04–V06 på optionsdelen)."
         },
         {
           "type": "insikt",
@@ -657,7 +657,7 @@
         },
         {
           "type": "text",
-          "content": "För dagens analytiker är budskapet tre följder. Räkna alltid med full utspädning (V14): warrants, optioner och konvertibler är framtida aktier och ska in i antalet aktier och i värdet per aktie — annars är din värdering en illusion. Granska emissionens logik (V17): betalar bolaget med papper vars kostnad inte syns, köper det med aktieägarnas marginal. Prissätt instrumentet korrekt: en warrant är en option och ska värderas som en — med dess faktiska sannolikhetsprofil, inte med hoppets matte."
+          "content": "För dagens analytiker är budskapet tre följder. Räkna alltid med full utspädning (V04–V06): warrants, optioner och konvertibler är framtida aktier och ska in i antalet aktier och i värdet per aktie — annars är din värdering en illusion. Granska emissionens logik (V19): betalar bolaget med papper vars kostnad inte syns, köper det med aktieägarnas marginal. Prissätt instrumentet korrekt: en warrant är en option och ska värderas som en — med dess faktiska sannolikhetsprofil, inte med hoppets matte."
         },
         {
           "type": "insikt",
@@ -665,11 +665,11 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Ta ett bolag med utestående warrants, optioner eller konvertibler. Beräkna två värden per aktie: (1) utan hänsyn till utspädning, (2) med full utspädning inklusive all framtida emission till lösenpriserna. Hur stor är skillnaden i procent? Skriv en mening om vad den gör med din köpkurs och margin of safety (V19)."
+          "content": "🎯 Ta ett bolag med utestående warrants, optioner eller konvertibler. Beräkna två värden per aktie: (1) utan hänsyn till utspädning, (2) med full utspädning inklusive all framtida emission till lösenpriserna. Hur stor är skillnaden i procent? Skriv en mening om vad den gör med din köpkurs och margin of safety (Grahams princip)."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Warrants — tre variabler och tre fallgropar\",\"rader\":[[\"Variabel\",\"Påverkar\",\"Fallgrop\"],[\"Aktiekurs mot lösen\",\"Warrantens innervärde\",\"Glömma överhängande utbud\"],[\"Återstående tid\",\"Optionens tidsvärde\",\"Låta lång löptid värderas som gratis\"],[\"Antal aktier\",\"Total utspädning\",\"Exkludera ur värderingen (V14)\"],[\"Emissionslogik\",\"Vem som betalar\",\"Kostnad syns ej i resultaträkningen (V17)\"]]}"
+          "content": "{\"rubrik\":\"Warrants — tre variabler och tre fallgropar\",\"rader\":[[\"Variabel\",\"Påverkar\",\"Fallgrop\"],[\"Aktiekurs mot lösen\",\"Warrantens innervärde\",\"Glömma överhängande utbud\"],[\"Återstående tid\",\"Optionens tidsvärde\",\"Låta lång löptid värderas som gratis\"],[\"Antal aktier\",\"Total utspädning\",\"Exkludera ur värderingen (V04–V06)\"],[\"Emissionslogik\",\"Vem som betalar\",\"Kostnad syns ej i resultaträkningen (V19)\"]]}"
         }
       ],
       "quiz": [
@@ -724,7 +724,7 @@
         },
         {
           "type": "text",
-          "content": "Den moderna AKM1-analogin är pair-trades och strukturerad arbitrage, men Graham & Dodds varning står kvar: hedgen skyddar mot prisrisk, inte mot kreditrisk. Om gäldenären själv kollapsar kan båda benen slå fel. Därför alltid gäldenäranalys först (V17), konstruktion sedan — aldrig omvänt."
+          "content": "Den moderna AKM1-analogin är pair-trades och strukturerad arbitrage, men Graham & Dodds varning står kvar: hedgen skyddar mot prisrisk, inte mot kreditrisk. Om gäldenären själv kollapsar kan båda benen slå fel. Därför alltid gäldenäranalys först (V12), konstruktion sedan — aldrig omvänt."
         },
         {
           "type": "insikt",
@@ -791,7 +791,7 @@
         },
         {
           "type": "text",
-          "content": "Efter 1929 stod frågan: är aktier överhuvud taget möjliga som investeringar? Graham & Dodds svar i bokens fjärde del är ja — men tre villkor måste vara uppfyllda. Priset måste stå i rimligt förhållande till dokumenterad intjäningskraft och tillgångar, inte till trendens förlängning. Värderingen måste erkänna att framtiden är osäker och därför kräva en marginal. Och inflationsargumentet — att aktier automatiskt skyddar mot inflation — är en halvsanning: aktier skyddar bara om de köps till rätt pris och om bolaget har verklig konkurrenskraft (i AKM1: moat, V13). Köpta till toppriser besegrar inte ens bra bolag inflationen (V14)."
+          "content": "Efter 1929 stod frågan: är aktier överhuvud taget möjliga som investeringar? Graham & Dodds svar i bokens fjärde del är ja — men tre villkor måste vara uppfyllda. Priset måste stå i rimligt förhållande till dokumenterad intjäningskraft och tillgångar, inte till trendens förlängning. Värderingen måste erkänna att framtiden är osäker och därför kräva en marginal. Och inflationsargumentet — att aktier automatiskt skyddar mot inflation — är en halvsanning: aktier skyddar bara om de köps till rätt pris och om bolaget har verklig konkurrenskraft (i AKM1: moat, V13–V15). Köpta till toppriser besegrar inte ens bra bolag inflationen (V04–V06)."
         },
         {
           "type": "insikt",
@@ -850,11 +850,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Enligt Graham & Dodd är intjäningskraft (earning power) det centrala värdemåttet för aktier — men intjäningskraft är genomsnittet över en representativ period, normaliserat för engångsposter, inte senaste årets siffror och definitivt inte trendens slutpunkt. Trenden är frestande därför att den ser ut som ett faktum: sju år av stadig vinsttillväxt är dokumenterad historia. Felet är att marknaden under euforin prissätter trendens fortsättning i oändligheten, varvid även en perfekt verklig fortsättning ger otillräcklig avkastning — priset har redan ätit framtiden. I AKM1:s språk: V14 kräver att värdet vilar på normaliserad intjäning och att moatens (V13) hållbarhet prövas, inte antas."
+          "content": "Enligt Graham & Dodd är intjäningskraft (earning power) det centrala värdemåttet för aktier — men intjäningskraft är genomsnittet över en representativ period, normaliserat för engångsposter, inte senaste årets siffror och definitivt inte trendens slutpunkt. Trenden är frestande därför att den ser ut som ett faktum: sju år av stadig vinsttillväxt är dokumenterad historia. Felet är att marknaden under euforin prissätter trendens fortsättning i oändligheten, varvid även en perfekt verklig fortsättning ger otillräcklig avkastning — priset har redan ätit framtiden. I AKM1:s språk: värderingsvariablerna (V04–V06) kräver att värdet vilar på normaliserad intjäning och att moatens (V13–V15) hållbarhet prövas, inte antas."
         },
         {
           "type": "text",
-          "content": "Framtidsutsikter kan visserligen motivera värde — boken skiljer på bestämda utsikter (signerade kontrakt, patent, reservtillgångar) och spekulativa förhoppningar. Men ju större del av värdet som ligger i framtiden, desto bredare måste marginalen mellan värde och pris vara (V19). En annan ödmjuk observation från boken: marknaden är oftast duktig på att prissätta synlig kvalitet. Ett erkänt välstärbart bolag handlas sällan billigt; det finns sällan skäl att tro att man ser kvalitet som marknaden missar — däremot ser marknaden emellanåt värde i tråkiga, komplicerade eller omoderna bolag som ingen orkar analysera. Därför letar Graham & Dodd-analytikern hellre där analysen kan addera fakta: i balansräkningar, emissioner och kapitalstrukturer."
+          "content": "Framtidsutsikter kan visserligen motivera värde — boken skiljer på bestämda utsikter (signerade kontrakt, patent, reservtillgångar) och spekulativa förhoppningar. Men ju större del av värdet som ligger i framtiden, desto bredare måste marginalen mellan värde och pris vara (margin of safety). En annan ödmjuk observation från boken: marknaden är oftast duktig på att prissätta synlig kvalitet. Ett erkänt välstärbart bolag handlas sällan billigt; det finns sällan skäl att tro att man ser kvalitet som marknaden missar — däremot ser marknaden emellanåt värde i tråkiga, komplicerade eller omoderna bolag som ingen orkar analysera. Därför letar Graham & Dodd-analytikern hellre där analysen kan addera fakta: i balansräkningar, emissioner och kapitalstrukturer."
         },
         {
           "type": "text",
@@ -988,15 +988,15 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Enligt Graham & Dodd är rapporterat resultat inte ett faktum utan produkten av en rad val. Lagermetoden: i tider av stigande priser ger först-in-först-ut högre redovisad vinst än senare metoder — men den extra vinsten är en pappersprodukt som inte är kontant och som kräver återinvestering i dyrare lager (därför ska V04-bruttomarginal alltid läsas mot V08-kassaflödet). Avskrivningarna: en sänkning av avskrivningsprocenten, motiverad av 'längre livslängder', lyfter resultatet i varje period utan att en enda dollar förändras i verkligheten. Reserverna: avsättningar för garantier, tvister och pensioner är resultatregleringar i miniatyr — höj under goda år för att spara till dåliga, eller vända på metoden när en bonus behövs. Konsolideringen: välj om dotterbolag med och resultatet dansar — och minoritetsintressen kan gömma att den vanliga aktieägarens andel av vinsten är mindre än rapporten antyder."
+          "content": "Enligt Graham & Dodd är rapporterat resultat inte ett faktum utan produkten av en rad val. Lagermetoden: i tider av stigande priser ger först-in-först-ut högre redovisad vinst än senare metoder — men den extra vinsten är en pappersprodukt som inte är kontant och som kräver återinvestering i dyrare lager (därför ska V07-bruttomarginal alltid läsas mot kassaflödesanalysen). Avskrivningarna: en sänkning av avskrivningsprocenten, motiverad av 'längre livslängder', lyfter resultatet i varje period utan att en enda dollar förändras i verkligheten. Reserverna: avsättningar för garantier, tvister och pensioner är resultatregleringar i miniatyr — höj under goda år för att spara till dåliga, eller vända på metoden när en bonus behövs. Konsolideringen: välj om dotterbolag med och resultatet dansar — och minoritetsintressen kan gömma att den vanliga aktieägarens andel av vinsten är mindre än rapporten antyder."
         },
         {
           "type": "text",
-          "content": "Bokens mest bestående lärdomar gäller engångsposter och intäktsperiodisering. Vinster på försäljning av tillgångar kan redovisas som rörelseresultat; subventioner och retroaktiva skatteåterbäringar kan dyka upp som vanliga intäkter; kontrakt kan faktureras i förskott. Enligt Graham & Dodd ska analytikern alltid skilja på återkommande driftsintäkter och poster som inte kan upprepas, och normalisera resultatet därefter. De varnade också för den omvända manipulationen — resultat som medvetet trycks ner under kriser (stora avskrivningar, utgiftstopp, reservuppbyggnad) för att skapa ett lågt jämförelsetal och sedan leverera 'spektakulär förbättring'. Bolag som jämnar ut resultaten (income smoothing) ger sken av stabilitet som förfalskar bild av risk (V17)."
+          "content": "Bokens mest bestående lärdomar gäller engångsposter och intäktsperiodisering. Vinster på försäljning av tillgångar kan redovisas som rörelseresultat; subventioner och retroaktiva skatteåterbäringar kan dyka upp som vanliga intäkter; kontrakt kan faktureras i förskott. Enligt Graham & Dodd ska analytikern alltid skilja på återkommande driftsintäkter och poster som inte kan upprepas, och normalisera resultatet därefter. De varnade också för den omvända manipulationen — resultat som medvetet trycks ner under kriser (stora avskrivningar, utgiftstopp, reservuppbyggnad) för att skapa ett lågt jämförelsetal och sedan leverera 'spektakulär förbättring'. Bolag som jämnar ut resultaten (income smoothing) ger sken av stabilitet som förfalskar bild av risk (en falsk V12-signal)."
         },
         {
           "type": "text",
-          "content": "Arbetssättet är systematiskt: läs resultaträkningen från botten uppåt, rad för rad, och ställ samma fråga till varje rad — är detta kontant, återkommande och rörelsenaturligt? Tre ja krävs för att raden ska få ligga kvar i earning power. Allt annat betraktas som justeringar eller varningar. I AKM1 är detta själva ryggraden i V17 och grunden till att V09 (ROE) bara är meningsfullt när täljaren är rensad."
+          "content": "Arbetssättet är systematiskt: läs resultaträkningen från botten uppåt, rad för rad, och ställ samma fråga till varje rad — är detta kontant, återkommande och rörelsenaturligt? Tre ja krävs för att raden ska få ligga kvar i earning power. Allt annat betraktas som justeringar eller varningar. I AKM1 är detta själva ryggraden i granskningen av intäktsstabiliteten (V12) och grunden till att V09 (ROE) bara är meningsfullt när täljaren är rensad."
         },
         {
           "type": "insikt",
@@ -1008,7 +1008,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fallgropar i intäktsredovisningen enligt boken\",\"rader\":[[\"Metod\",\"Effekt\",\"Fråga till bolaget\"],[\"Lagermetod vid stigande priser\",\"Uppblåst bruttomarginal (V04)\",\"Är vinsten kontant (V08)?\"],[\"Sänkta avskrivningsprocent\",\"Resultatlyft utan real förändring\",\"Vad är branschstandard?\"],[\"Reservförändringar\",\"Resultatreglering över cykeln\",\"Hur rör sig saldot över tiden?\"],[\"Kapitalvinster som driftsintäkt\",\"Sken av lönsamhet\",\"Kan posten upprepas?\"],[\"Jämnad resultatserie\",\"Förfalskad stabilitet\",\"Vad döljs i dåriga år?\"]]}"
+          "content": "{\"rubrik\":\"Fallgropar i intäktsredovisningen enligt boken\",\"rader\":[[\"Metod\",\"Effekt\",\"Fråga till bolaget\"],[\"Lagermetod vid stigande priser\",\"Uppblåst bruttomarginal (V07)\",\"Är vinsten kontant?\"],[\"Sänkta avskrivningsprocent\",\"Resultatlyft utan real förändring\",\"Vad är branschstandard?\"],[\"Reservförändringar\",\"Resultatreglering över cykeln\",\"Hur rör sig saldot över tiden?\"],[\"Kapitalvinster som driftsintäkt\",\"Sken av lönsamhet\",\"Kan posten upprepas?\"],[\"Jämnad resultatserie\",\"Förfalskad stabilitet\",\"Vad döljs i dåriga år?\"]]}"
         }
       ],
       "quiz": [
@@ -1055,11 +1055,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Earning power — bolagets varaktiga intjäningsförmåga — är enligt Graham & Dodd det centrala värdemåttet, och det konstrueras inte ur ett års siffror utan ur ett normaliserat flerårsutfall: genomsnitt över fem till tio år, rensat från engångsposter, med avskrivningar och reserver justerade till försiktiga nivåer. För cykliska bolag betyder det att toppåret och bottenåret ska vägas samman till ett genomsnitt som representerar en hel affärsomgång. I AKM1: V09 (ROE) och V04 (bruttomarginal) ska alltid presenteras som flerårsgenomsnitt med spridning — ett enskilt årsresultat är inte earning power, det är en nyhet."
+          "content": "Earning power — bolagets varaktiga intjäningsförmåga — är enligt Graham & Dodd det centrala värdemåttet, och det konstrueras inte ur ett års siffror utan ur ett normaliserat flerårsutfall: genomsnitt över fem till tio år, rensat från engångsposter, med avskrivningar och reserver justerade till försiktiga nivåer. För cykliska bolag betyder det att toppåret och bottenåret ska vägas samman till ett genomsnitt som representerar en hel affärsomgång. I AKM1: V09 (ROE) och V07 (bruttomarginal) ska alltid presenteras som flerårsgenomsnitt med spridning — ett enskilt årsresultat är inte earning power, det är en nyhet."
         },
         {
           "type": "text",
-          "content": "Men earning power bygger på att siffrorna är sanna, och här gör boken en av sina viktigaste insatser: granskningen av revisionens gränser. Enligt Graham & Dodd är revisorns intyg en försäkran om att rapporterna är upprättade enligt gällande regler i väsentliga delar — inte en försäkran om att inga bedrägerier förekommer och inte en värdering av bolaget. Skandalen McKesson & Robbins 1938 blev beviset: ledningen hade fabricerat cirka tjugo miljoner dollar i påhittade tillgångar — däribland ett påhittat lager och fiktiva kundfordringar hos skenbara leverantörer — och revisorerna hade inte fysiskt inventerat lagret, eftersom rutiner saknades. Händelsen tvingade fram ändrade revisionsstandarder med krav på observation av lager och bekräftelser av fordringar, och den illustrerar fortfarande gränsen för vad en extern granskning kan garantera. Bokens samtid hade också det europeiska fallet Kreuger & Toll 1932, där Ivar Kreugers komplexa kontrakt och belåningar hölls utanför ljuset ända till kollapsen — samma lärdom: ju mindre som kan verifieras, desto större risk (V17)."
+          "content": "Men earning power bygger på att siffrorna är sanna, och här gör boken en av sina viktigaste insatser: granskningen av revisionens gränser. Enligt Graham & Dodd är revisorns intyg en försäkran om att rapporterna är upprättade enligt gällande regler i väsentliga delar — inte en försäkran om att inga bedrägerier förekommer och inte en värdering av bolaget. Skandalen McKesson & Robbins 1938 blev beviset: ledningen hade fabricerat cirka tjugo miljoner dollar i påhittade tillgångar — däribland ett påhittat lager och fiktiva kundfordringar hos skenbara leverantörer — och revisorerna hade inte fysiskt inventerat lagret, eftersom rutiner saknades. Händelsen tvingade fram ändrade revisionsstandarder med krav på observation av lager och bekräftelser av fordringar, och den illustrerar fortfarande gränsen för vad en extern granskning kan garantera. Bokens samtid hade också det europeiska fallet Kreuger & Toll 1932, där Ivar Kreugers komplexa kontrakt och belåningar hölls utanför ljuset ända till kollapsen — samma lärdom: ju mindre som kan verifieras, desto större risk."
         },
         {
           "type": "text",
@@ -1075,7 +1075,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Att bygga earning power\",\"rader\":[[\"Steg\",\"Åtgärd\",\"AKM1-koppling\"],[\"1. Samla\",\"Resultat för 5–10 år\",\"V09, V04 som serier\"],[\"2. Rensa\",\"Ta bort engångsposter och kapitalvinster\",\"V17 rapportkvalitet\"],[\"3. Justera\",\"Normalavskrivningar, konservativa reserver\",\"Samspel med balansräkningen\"],[\"4. Väg\",\"Snitt över cykeln, inte senaste året\",\"V14 värderingsbas\"],[\"5. Pröva\",\"Kan resultatet återinvesteras till bra avkastning?\",\"V13 moat\"]]}"
+          "content": "{\"rubrik\":\"Att bygga earning power\",\"rader\":[[\"Steg\",\"Åtgärd\",\"AKM1-koppling\"],[\"1. Samla\",\"Resultat för 5–10 år\",\"V09, V07 som serier\"],[\"2. Rensa\",\"Ta bort engångsposter och kapitalvinster\",\"källkritik (rapportkvalitet)\"],[\"3. Justera\",\"Normalavskrivningar, konservativa reserver\",\"Samspel med balansräkningen\"],[\"4. Väg\",\"Snitt över cykeln, inte senaste året\",\"V04–V06 värderingsbas\"],[\"5. Pröva\",\"Kan resultatet återinvesteras till bra avkastning?\",\"V13–V15 moat\"]]}"
         }
       ],
       "quiz": [
@@ -1130,7 +1130,7 @@
         },
         {
           "type": "text",
-          "content": "Bakom metoden ligger ett kallt hantverk: likvidationstänkandet. Varje tillgångsklass diskonteras grovt — kassa till fullt värde, kundfordringar med avdrag, lager kraftigt, anläggning till bråkdelar. Det ger en undre gräns för värdet (V14) som inte vilar på en enda prognos, och därför är net-nets den renaste tillämpningen av margin of safety (V19): ju större gapet mellan pris och likvidationsvärde, desto mer fel kan analytikern ha utan att förlora. I dag är renodlade net-nets sällsynta, men principen lever: betala aldrig mer än du måste för tillgångar som redan finns, och låt balansräkningen sätta golvet under analysen."
+          "content": "Bakom metoden ligger ett kallt hantverk: likvidationstänkandet. Varje tillgångsklass diskonteras grovt — kassa till fullt värde, kundfordringar med avdrag, lager kraftigt, anläggning till bråkdelar. Det ger en undre gräns för värdet (V05, pris/bokvärde) som inte vilar på en enda prognos, och därför är net-nets den renaste tillämpningen av margin of safety (Grahams princip): ju större gapet mellan pris och likvidationsvärde, desto mer fel kan analytikern ha utan att förlora. I dag är renodlade net-nets sällsynta, men principen lever: betala aldrig mer än du måste för tillgångar som redan finns, och låt balansräkningen sätta golvet under analysen."
         },
         {
           "type": "insikt",
@@ -1197,11 +1197,11 @@
         },
         {
           "type": "text",
-          "content": "Den omvända manövern — uppskrivning — blomstrade under 1920-talets slut. Tillgångar togs upp till 'aktuellt värde', varefter realisationsvinster kunde tas genom att sälja och leasa tillbaka, eller avsättningar kunde byggas som senare släpptes tillbaka till resultatet. Enligt Graham & Dodd är både ned- och uppskrivningar legitima endast när de speglar verifierbara värden och tillämpas konsekvent — annars är de resultatreglering i balansräkningens dräkt. Analytikerns motdrag är normalisering: räkna om resultatet med enhetliga, branschnormala avskrivningar oavsett vad bolaget skrivit, och jämför bolag på räkenskapslogik i stället för redovisad nivå (V17, V04)."
+          "content": "Den omvända manövern — uppskrivning — blomstrade under 1920-talets slut. Tillgångar togs upp till 'aktuellt värde', varefter realisationsvinster kunde tas genom att sälja och leasa tillbaka, eller avsättningar kunde byggas som senare släpptes tillbaka till resultatet. Enligt Graham & Dodd är både ned- och uppskrivningar legitima endast när de speglar verifierbara värden och tillämpas konsekvent — annars är de resultatreglering i balansräkningens dräkt. Analytikerns motdrag är normalisering: räkna om resultatet med enhetliga, branschnormala avskrivningar oavsett vad bolaget skrivit, och jämför bolag på räkenskapslogik i stället för redovisad nivå (källkritik och V07)."
         },
         {
           "type": "text",
-          "content": "Här knyts bokens trådar ihop: intäktsanalysen (del V) kan bara bedömas mot bakgrund av balansräkningen (del VI), och tvärtom. Resultatets kvalitet avgörs av hur tillgångarna värderats; tillgångarnas trovärdighet avgörs av vad de faktiskt tjänar. I AKM1 är detta därför en enda variabelkedja: V09 (ROE) blir meningsfullt först när täljaren är normaliserad (V17) och nämnaren — kapitalbasen — inte är godtyckligt skriven. Priset på en aktie ska stå i förhållande till denna rensade helhet (V14), med marginal (V19)."
+          "content": "Här knyts bokens trådar ihop: intäktsanalysen (del V) kan bara bedömas mot bakgrund av balansräkningen (del VI), och tvärtom. Resultatets kvalitet avgörs av hur tillgångarna värderats; tillgångarnas trovärdighet avgörs av vad de faktiskt tjänar. I AKM1 är detta därför en enda variabelkedja: V09 (ROE) blir meningsfullt först när täljaren är normaliserad och nämnaren — kapitalbasen — inte är godtyckligt skriven. Priset på en aktie ska stå i förhållande till denna rensade helhet (V04–V06), med säkerhetsmarginal."
         },
         {
           "type": "insikt",
@@ -1256,7 +1256,7 @@
       "num": 19,
       "minutes": 12,
       "title": "Margin of safety — säkerhetsmarginalen och situationernas karta",
-      "intro": "Allt boken byggt landar i ett begrepp: margin of safety. Och en praktisk karta över vilka situationer som alls är värda att analysera. Detta är Graham & Dodds testamente — och AKM1:s V19 i urform.",
+      "intro": "Allt boken byggt landar i ett begrepp: margin of safety. Och en praktisk karta över vilka situationer som alls är värda att analysera. Detta är Graham & Dodds testamente — och margin of safety i urform.",
       "blocks": [
         {
           "type": "text",
@@ -1268,7 +1268,7 @@
         },
         {
           "type": "text",
-          "content": "Notera ödmjukheten i systemet: Graham & Dodd lovar inte att marginalen garanterar vinst — enskilda köp med marginal kan utfalla dåligt. Vad de hävdar, med historien som stöd, är att en portfölj av köp med marginal över tiden slår en portfölj av köp utan, eftersom felbarheten är inbyggd i metoden. Det är exakt därför AKM1 gör V19 till en variabel bland andra — marginalen är nödvändig men inte ensam tillräcklig; den ska kombineras med kvalitet (V04, V08, V09, V13) och prissättning (V14)."
+          "content": "Notera ödmjukheten i systemet: Graham & Dodd lovar inte att marginalen garanterar vinst — enskilda köp med marginal kan utfalla dåligt. Vad de hävdar, med historien som stöd, är att en portfölj av köp med marginal över tiden slår en portfölj av köp utan, eftersom felbarheten är inbyggd i metoden. Det är exakt därför AKM1 kombinerar marginalen med övriga variabler — marginalen är nödvändig men inte ensam tillräcklig; den ska kombineras med kvalitet (V07, V08, V09, V13–V15) och prissättning (V04–V06)."
         },
         {
           "type": "insikt",
@@ -1280,7 +1280,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Situationernas karta enligt Graham & Dodd\",\"rader\":[[\"Situation\",\"Vad som skapar värdet\",\"Vad analysen fokuserar på\"],[\"Undervärderat värdepapper\",\"Kurs under beräknat värde (intjäning/netto cirkulerande medel)\",\"Normaliserad intjäning, balansräkning, marginal (V19)\"],[\"Special situation\",\"Händelse realiserar värdet (fusion, rekonstruktion, inlösen)\",\"Tid, sannolikhet för genomförande, kvarvarande rabatt mot händelsevärdet\"],[\"Skyddad konstruktion\",\"Gap mellan två papper från samma gäldenär\",\"Paritet, kreditkvalitet, transaktionskostnader\"],[\"Köp på marknadspris\",\"Inget dokumenterat gap\",\"Ej analysens domän — spekulation\"]]}"
+          "content": "{\"rubrik\":\"Situationernas karta enligt Graham & Dodd\",\"rader\":[[\"Situation\",\"Vad som skapar värdet\",\"Vad analysen fokuserar på\"],[\"Undervärderat värdepapper\",\"Kurs under beräknat värde (intjäning/netto cirkulerande medel)\",\"Normaliserad intjäning, balansräkning, marginal (Grahams princip)\"],[\"Special situation\",\"Händelse realiserar värdet (fusion, rekonstruktion, inlösen)\",\"Tid, sannolikhet för genomförande, kvarvarande rabatt mot händelsevärdet\"],[\"Skyddad konstruktion\",\"Gap mellan två papper från samma gäldenär\",\"Paritet, kreditkvalitet, transaktionskostnader\"],[\"Köp på marknadspris\",\"Inget dokumenterat gap\",\"Ej analysens domän — spekulation\"]]}"
         },
         {
           "type": "visuell",
@@ -1335,7 +1335,7 @@
         },
         {
           "type": "text",
-          "content": "Därmed är cirkeln sluten, och det är värt att skriva ut kedjan explicit: undersökning (del I) — fast värde-täckning (del II–III) — intäkts- och balansanalys (del V–VI) — margin of safety och situationer (del VII). Det är inte en historikuriosa utan en arbetsorder som AKM1 operationaliserar variabel för variabel: V04 bruttomarginalens stabilitet är bokens krav på dokumenterad intjäningskraft; V08 kassaflödet är dess genomskåda av icke-kontanta vinster; V09 ROE på rensad kapitalbas dess earning power; V13 moat dess varning för att kvalitet utan marginal bara är dyrt; V14 värdering dess förbud mot trendens förlängning; V17 rapportkvalitet dess hela katalog av fallgropar; V19 margin of safety själva slutstenen. Bokens lärdom att fakta slår känslor på sikt är därför inte trosarförklaring utan metod — och den metoden är testad i hundra år av marknader sedan dess."
+          "content": "Därmed är cirkeln sluten, och det är värt att skriva ut kedjan explicit: undersökning (del I) — fast värde-täckning (del II–III) — intäkts- och balansanalys (del V–VI) — margin of safety och situationer (del VII). Det är inte en historikuriosa utan en arbetsorder som AKM1 operationaliserar variabel för variabel: V07 bruttomarginalens stabilitet är bokens krav på dokumenterad intjäningskraft; kassaflödesanalysen dess genomskåda av icke-kontanta vinster; V09 ROE på rensad kapitalbas dess earning power; moat-variablerna (V13–V15) dess varning för att kvalitet utan marginal bara är dyrt; värderingsvariablerna (V04–V06) dess förbud mot trendens förlängning; rapportkvaliteten dess hela katalog av fallgropar; och margin of safety (Grahams princip) själva slutstenen. Bokens lärdom att fakta slår känslor på sikt är därför inte trosarförklaring utan metod — och den metoden är testad i hundra år av marknader sedan dess."
         },
         {
           "type": "text",
@@ -1347,11 +1347,11 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Bygg din egen case-historia: välj ett bolag, dokumentera pris, normaliserad intjäning, netto cirkulerande medel, rapportkvalitet och beräknad marginal (V19). Skriv analysen som om den skulle publiceras — med argument, källor och slutsats. Låt den vila i tre månader och utvärdera sedan: stämde faktakedjan, och betalade marknaden tålamodet?"
+          "content": "🎯 Bygg din egen case-historia: välj ett bolag, dokumentera pris, normaliserad intjäning, netto cirkulerande medel, rapportkvalitet och beräknad marginal (margin of safety). Skriv analysen som om den skulle publiceras — med argument, källor och slutsats. Låt den vila i tre månader och utvärdera sedan: stämde faktakedjan, och betalade marknaden tålamodet?"
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Från Security Analysis till AKM1\",\"rader\":[[\"Bokens begrepp\",\"Del\",\"AKM1-variabel\"],[\"Intjäningskraft, stabil bruttomarginal\",\"V, II\",\"V04, V09\"],[\"Kontant bakom varje krona resultat\",\"V\",\"V08\"],[\"Konkurrenskraftens hållbarhet\",\"IV\",\"V13\"],[\"Pris mot normaliserat värde\",\"IV, VII\",\"V14\"],[\"Rapportkvalitet, revisionsgränser\",\"V, VI\",\"V17\"],[\"Täckning, margin of safety\",\"II, VII\",\"V19\"]]}"
+          "content": "{\"rubrik\":\"Från Security Analysis till AKM1\",\"rader\":[[\"Bokens begrepp\",\"Del\",\"AKM1-variabel\"],[\"Intjäningskraft, stabil bruttomarginal\",\"V, II\",\"V07, V09\"],[\"Kontant bakom varje krona resultat\",\"V\",\"V12 + kassaflödeskontroll\"],[\"Konkurrenskraftens hållbarhet\",\"IV\",\"V13–V15\"],[\"Pris mot normaliserat värde\",\"IV, VII\",\"V04–V06\"],[\"Rapportkvalitet, revisionsgränser\",\"V, VI\",\"V12 + källkritik\"],[\"Täckning, margin of safety\",\"II, VII\",\"Grahams princip\"]]}"
         }
       ],
       "quiz": [

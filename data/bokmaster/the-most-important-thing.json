@@ -5,18 +5,18 @@
   "chapterCount": 15,
   "totalMinutes": 150,
   "title": "The Most Important Thing — Marks: KOMPLETT",
-  "summary": "The Most Important Thing (2011) är Howard Marks destillat av tjugo års memos från Oaktree Capital — en av vår tids mest lästa böcker om risk och marknadscyklar. Kursen går igenom alla de tjugo 'viktigaste sakerna': andranivåtänkande, värde, pris, risk, cykler, pendeln och konträr tro, och kopplar varje tema till AKM1 V19 (margin of safety), V20 (risk) och AK1TS Marknadscykel. Målet är inte att förutsäga marknaden utan att förbereda sig för den.",
+  "summary": "The Most Important Thing (2011) är Howard Marks destillat av tjugo års memos från Oaktree Capital — en av vår tids mest lästa böcker om risk och marknadscyklar. Kursen går igenom alla de tjugo 'viktigaste sakerna': andranivåtänkande, värde, pris, risk, cykler, pendeln och konträr tro, och kopplar varje tema till AKM1:s margin of safety, riskmatrisen och AK1TS Marknadscykel. Målet är inte att förutsäga marknaden utan att förbereda sig för den.",
   "minutes": 10,
   "xp": 2000,
   "level": "",
-  "learn": "Efter kursen kan eleven skilja första- från andranivåtänkande och formulera icke-konsensusteser med definierad felmekanism; uppskatta inneboende värde som intervall och kräva säkerhetsmarginal (V19) vid varje köp; känna igen högt och lågt riskläge i marknadsbeteendet och skilja volatilitet från permanent förlust (V20); placera marknaden i kredit-, mentalitets- och vinstcykeln samt på AK1TS sentimentvåg mellan girig och rädd; och bygga en konfigurerad portfölj där alpha kommer från dokumenterad avvikelse — med det tålamod och den lägeskänsla som krävs för att ligga tidigt utan att förväxlas med att ha fel.",
-  "why": "Marks bok är den moderna bryggan mellan Grahams värdeinvestering och dagens beteendefinansiering: hans definition av risk som permanent förlust (inte volatilitet), pendeln mellan girighet och rädsla och läran om cykler som är regelbundna men aldrig mekaniska är direkt operationaliserade i AKM1 V19, V20 och AK1TS Marknadscykel. Bokens memo-kultur — skriv, ifrågasätt, uppdatera — är dessutom utbildningens eget arbetssätt. Att läsa Marks är att lära sig den ödmjukhet som krävs för att bli en gammal investerare.",
+  "learn": "Efter kursen kan eleven skilja första- från andranivåtänkande och formulera icke-konsensusteser med definierad felmekanism; uppskatta inneboende värde som intervall och kräva säkerhetsmarginal (margin of safety) vid varje köp; känna igen högt och lågt riskläge i marknadsbeteendet och skilja volatilitet från permanent förlust (riskmatrisen); placera marknaden i kredit-, mentalitets- och vinstcykeln samt på AK1TS sentimentvåg mellan girig och rädd; och bygga en konfigurerad portfölj där alpha kommer från dokumenterad avvikelse — med det tålamod och den lägeskänsla som krävs för att ligga tidigt utan att förväxlas med att ha fel.",
+  "why": "Marks bok är den moderna bryggan mellan Grahams värdeinvestering och dagens beteendefinansiering: hans definition av risk som permanent förlust (inte volatilitet), pendeln mellan girighet och rädsla och läran om cykler som är regelbundna men aldrig mekaniska är direkt operationaliserade i AKM1:s margin of safety och riskmatris samt AK1TS Marknadscykel. Bokens memo-kultur — skriv, ifrågasätt, uppdatera — är dessutom utbildningens eget arbetssätt. Att läsa Marks är att lära sig den ödmjukhet som krävs för att bli en gammal investerare.",
   "chapters_list": [
     "1. Second-level thinking — tanken bakom tanken",
     "2. Effektiva marknader — och var edge ändå finns",
     "3. Värde — fundamentet allt vilar på",
     "4. Pris och värde — affären avgörs vid köpet",
-    "5. Att förstå risk — volatilitet är inte risk (V20)",
+    "5. Att förstå risk — volatilitet är inte risk",
     "6. Att känna igen risk — risken sitter i priset",
     "7. Att kontrollera risk — konsten att spela försvar",
     "8. Cykler — regelbundna men aldrig mekaniska",
@@ -120,7 +120,7 @@
         },
         {
           "type": "text",
-          "content": "Praktisk konsekvens: leta där få letar. Stora, heta och välbevakade tillgångar är nästan alltid effektivast prissatta. Små bolag, krångliga kapitalstrukturer, omoderna sektorer och obegripliga situationer är däremot glest bevakade — där kan andranivåtänkande faktiskt betala. I AKM1-ekosystemet är det här som arbetet med exempelvis V17 (rapportkvalitet) i övergivna namn får sin rimlighet: du letar där ingen annan orkar."
+          "content": "Praktisk konsekvens: leta där få letar. Stora, heta och välbevakade tillgångar är nästan alltid effektivast prissatta. Små bolag, krångliga kapitalstrukturer, omoderna sektorer och obegripliga situationer är däremot glest bevakade — där kan andranivåtänkande faktiskt betala. I AKM1-ekosystemet är det här som arbetet med exempelvis källkritiken (V12, redovisningskvalitet) i övergivna namn får sin rimlighet: du letar där ingen annan orkar."
         },
         {
           "type": "insikt",
@@ -183,7 +183,7 @@
         },
         {
           "type": "text",
-          "content": "Kvantitativt billigt blir en value trap om fundamenten ruttnar: billigt mot historien, ja — men historien gäller inte längre. Omvänt bygger riktig värdeanalys på framtidsförmågan: moat, priskraft, återinvestering till hög avkastning. Här möter boken AKM1:s variabler: V08 (kassaflöde) och V13 (moat) är den moderna operationaliseringen av Marks fråga om vad bolaget faktiskt kommer att leverera."
+          "content": "Kvantitativt billigt blir en value trap om fundamenten ruttnar: billigt mot historien, ja — men historien gäller inte längre. Omvänt bygger riktig värdeanalys på framtidsförmågan: moat, priskraft, återinvestering till hög avkastning. Här möter boken AKM1:s variabler: kassaflödesanalysen och moat-variablerna (V13–V15) är den moderna operationaliseringen av Marks fråga om vad bolaget faktiskt kommer att leverera."
         },
         {
           "type": "text",
@@ -199,7 +199,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fundamentalt värde kontra kvantitativt billigt\",\"rader\":[[\"Fråga\",\"Fundamentalt värde\",\"Kvantitativt billigt\"],[\"Kärnfråga\",\"Vad kommer bolaget generera i kassaflöde?\",\"Vad är P/E och P/B mot historien?\"],[\"Fara\",\"Fel antaganden om framtiden\",\"Value trap — billigt mot ett försvunnet då\"],[\"Koppling AKM1\",\"V08, V13, scenarioträd\",\"V14 nyckeltalsskärm\"],[\"När det fungerar\",\"Varaktig förmåga till fel pris\",\"Tillfällig och överdriven pessimism\"]]}"
+          "content": "{\"rubrik\":\"Fundamentalt värde kontra kvantitativt billigt\",\"rader\":[[\"Fråga\",\"Fundamentalt värde\",\"Kvantitativt billigt\"],[\"Kärnfråga\",\"Vad kommer bolaget generera i kassaflöde?\",\"Vad är P/E och P/B mot historien?\"],[\"Fara\",\"Fel antaganden om framtiden\",\"Value trap — billigt mot ett försvunnet då\"],[\"Koppling AKM1\",\"kassaflödesanalys, V13–V15, scenarioträd\",\"V04–V06 nyckeltalsskärm\"],[\"När det fungerar\",\"Varaktig förmåga till fel pris\",\"Tillfällig och överdriven pessimism\"]]}"
         },
         {
           "type": "utmaning",
@@ -246,7 +246,7 @@
       "num": 4,
       "minutes": 10,
       "title": "Pris och värde — affären avgörs vid köpet",
-      "intro": "Förra kapitlet gav värdet; nu kommer det som faktiskt avgör avkastningen: priset. Marks kärncitat om pris och värde hör till bokens mest citerade, och det förbinder boken rakt med Grahams säkerhetsmarginal — AKM1 V19.",
+      "intro": "Förra kapitlet gav värdet; nu kommer det som faktiskt avgör avkastningen: priset. Marks kärncitat om pris och värde hör till bokens mest citerade, och det förbinder boken rakt med Grahams säkerhetsmarginal — AKM1:s margin of safety.",
       "blocks": [
         {
           "type": "text",
@@ -254,7 +254,7 @@
         },
         {
           "type": "text",
-          "content": "Tekniken blir en tre-stegsrutin: uppskatta värdet (kapitel 3), jämför med priset, och kräv en rabatt som är stor nog att utgöra säkerhetsmarginal — V19 i AKM1. Marginalen finns där för att skydda mot tre saker: analysfel, otur och oväntade händelser. Ju osäkrare värdet, desto större marginal krävs. En precis värdering med tunn marginal är farligare än en grov värdering med tjock."
+          "content": "Tekniken blir en tre-stegsrutin: uppskatta värdet (kapitel 3), jämför med priset, och kräv en rabatt som är stor nog att utgöra säkerhetsmarginal — margin of safety i AKM1. Marginalen finns där för att skydda mot tre saker: analysfel, otur och oväntade händelser. Ju osäkrare värdet, desto större marginal krävs. En precis värdering med tunn marginal är farligare än en grov värdering med tjock."
         },
         {
           "type": "text",
@@ -270,7 +270,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Bra bolag kontra bra affär\",\"rader\":[[\"Aspekt\",\"Bra bolag\",\"Bra affär\"],[\"Fråga\",\"Hur god är verksamheten?\",\"Hur stort är gapet pris–värde?\"],[\"Risk\",\"Kan verksamheten bli sämre?\",\"Vad händer om jag har fel eller otur?\"],[\"Kännetecken\",\"Stark moat, bra kassaflöde\",\"Pris med margin of safety (V19)\"],[\"Fälla\",\"Att tro att kvalitet ersätter pris\",\"Att köpa skräp bara för att det är billigt\"]]}"
+          "content": "{\"rubrik\":\"Bra bolag kontra bra affär\",\"rader\":[[\"Aspekt\",\"Bra bolag\",\"Bra affär\"],[\"Fråga\",\"Hur god är verksamheten?\",\"Hur stort är gapet pris–värde?\"],[\"Risk\",\"Kan verksamheten bli sämre?\",\"Vad händer om jag har fel eller otur?\"],[\"Kännetecken\",\"Stark moat, bra kassaflöde\",\"Pris med margin of safety (Grahams princip)\"],[\"Fälla\",\"Att tro att kvalitet ersätter pris\",\"Att köpa skräp bara för att det är billigt\"]]}"
         },
         {
           "type": "utmaning",
@@ -290,7 +290,7 @@
           "tips": "Citatet sätter kvalitet och pris i relation, inte i motsats."
         },
         {
-          "q": "Vad är säkerhetsmarginalens uppgift enligt kapitlet — kopplat till AKM1 V19?",
+          "q": "Vad är säkerhetsmarginalens uppgift enligt kapitlet — kopplat till AKM1:s margin of safety?",
           "alternativ": [
             "Att maximera avkastningen när marknaden stiger snabbt",
             "Att garantera att aktien stiger inom tolv månader",
@@ -316,8 +316,8 @@
     {
       "num": 5,
       "minutes": 10,
-      "title": "Att förstå risk — volatilitet är inte risk (V20)",
-      "intro": "Här kommer bokens mest originella bidrag. Där akademin definierar risk som volatilitet slår Marks fast: verklig risk är risken för permanent förlust och risken att inte nå sina mål. Detta är kärnan i AKM1 V20.",
+      "title": "Att förstå risk — volatilitet är inte risk",
+      "intro": "Här kommer bokens mest originella bidrag. Där akademin definierar risk som volatilitet slår Marks fast: verklig risk är risken för permanent förlust och risken att inte nå sina mål. Detta är kärnan i AKM1:s riskmatris.",
       "blocks": [
         {
           "type": "text",
@@ -329,11 +329,11 @@
         },
         {
           "type": "text",
-          "content": "Det mest obevekliga: risken kan inte mätas ex ante. Det finns ingen frekvenstabell och inget laboratorium; varje risksiffra vilar på antaganden om en framtid som inte kan verifieras. Och ex post är den lika svår: att inget hände bevisar inte att risken var låg — kanske var det tur. En investering som gick bra var inte nödvändigtvis säker; den var kanske bara lyckosam. Det är V20:s första hårvita sanning: riskmått är skattningar med okänd fördelning."
+          "content": "Det mest obevekliga: risken kan inte mätas ex ante. Det finns ingen frekvenstabell och inget laboratorium; varje risksiffra vilar på antaganden om en framtid som inte kan verifieras. Och ex post är den lika svår: att inget hände bevisar inte att risken var låg — kanske var det tur. En investering som gick bra var inte nödvändigtvis säker; den var kanske bara lyckosam. Det är risktänkandets första hårvita sanning: riskmått är skattningar med okänd fördelning."
         },
         {
           "type": "text",
-          "content": "Praktiskt översätter AKM1 V20 detta till verktyg: sannolikhet gånger konsekvens i en riskmatris, scenarier istället för punktskattningar, och en tydlig åtskillnad mellan tillfälligt kursfall (volatilitet) och permanent kapitalförlust (till exempel överbelåning, konkurs, utspädning). Frågan vid varje position: på vilka tre vägar kan kapitalet försvinna för gott?"
+          "content": "Praktiskt översätter AKM1 detta till verktyg: sannolikhet gånger konsekvens i riskmatrisen, scenarier istället för punktskattningar, och en tydlig åtskillnad mellan tillfälligt kursfall (volatilitet) och permanent kapitalförlust (till exempel överbelåning, konkurs, utspädning). Frågan vid varje position: på vilka tre vägar kan kapitalet försvinna för gott?"
         },
         {
           "type": "insikt",
@@ -404,7 +404,7 @@
         },
         {
           "type": "text",
-          "content": "Och korrelationen förråder i krisen: tillgångar som »aldrig faller tillsammans« gör det ändå, just när det spelar roll. Diversifiering bygger på korrelationer uppmätta i lugna tider; i paniken går korrelationerna mot ett och skyddet krymper. Räkna därför med att det värsta händer samtidigt — det är där portföljen stressas, och det är där V20:s scenarioscenario har sin plats."
+          "content": "Och korrelationen förråder i krisen: tillgångar som »aldrig faller tillsammans« gör det ändå, just när det spelar roll. Diversifiering bygger på korrelationer uppmätta i lugna tider; i paniken går korrelationerna mot ett och skyddet krymper. Räkna därför med att det värsta händer samtidigt — det är där portföljen stressas, och det är där riskmatrisens scenariostress har sin plats."
         },
         {
           "type": "insikt",
@@ -475,7 +475,7 @@
         },
         {
           "type": "text",
-          "content": "Slutmålet är asymmetri: att tjäna proportionellt mer i uppgångarna än du förlorar i nedgångarna. Det är beviset på verklig skicklighet — inte avsaknad av nedgångar. Marks påminner med ett älskat talesätt: »Det finns gamla investerare och djärva investerare, men få gamla, djärva investerare.« Livslängd i branschen byggs med försvar, marginal (V19) och respekt för det okända (V20)."
+          "content": "Slutmålet är asymmetri: att tjäna proportionellt mer i uppgångarna än du förlorar i nedgångarna. Det är beviset på verklig skicklighet — inte avsaknad av nedgångar. Marks påminner med ett älskat talesätt: »Det finns gamla investerare och djärva investerare, men få gamla, djärva investerare.« Livslängd i branschen byggs med försvar, marginal (margin of safety) och respekt för det okända (riskmatrisen)."
         },
         {
           "type": "insikt",
@@ -483,7 +483,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Riskverktygslådan — strukturell kontroll\",\"rader\":[[\"Verktyg\",\"Fråga\",\"Skyddar mot\"],[\"Belåningsgränser\",\"Hur mycket hävstång tål portföljen?\",\"Tvångsförsäljning i panik\"],[\"Likviditetskoll\",\"Kan jag sälja utan att flytta priset?\",\"Låsning i illikvida lägen\"],[\"Motparts- och strukturkoll\",\"Vem är skyldig mig och var i kapitalstrukturen?\",\"Permanent förlust vid default\"],[\"Scenario- och stresstest\",\"Vad händer vid en 2008-liknande chock?\",\"Överraskningsförlamning\"],[\"Margin of safety (V19)\",\"Hur stor är rabatten mot värdet?\",\"Analysfel och otur\"]]}"
+          "content": "{\"rubrik\":\"Riskverktygslådan — strukturell kontroll\",\"rader\":[[\"Verktyg\",\"Fråga\",\"Skyddar mot\"],[\"Belåningsgränser\",\"Hur mycket hävstång tål portföljen?\",\"Tvångsförsäljning i panik\"],[\"Likviditetskoll\",\"Kan jag sälja utan att flytta priset?\",\"Låsning i illikvida lägen\"],[\"Motparts- och strukturkoll\",\"Vem är skyldig mig och var i kapitalstrukturen?\",\"Permanent förlust vid default\"],[\"Scenario- och stresstest\",\"Vad händer vid en 2008-liknande chock?\",\"Överraskningsförlamning\"],[\"Margin of safety (Grahams princip)\",\"Hur stor är rabatten mot värdet?\",\"Analysfel och otur\"]]}"
         },
         {
           "type": "utmaning",
@@ -700,7 +700,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Sex krafter och deras motgift\",\"rader\":[[\"Kraft\",\"Yttring\",\"Motgift\"],[\"Girighet\",\"»Bara en gång till — det går så bra«\",\"Förut satta krav på marginal (V19)\"],[\"Rädsla\",\"»Jag vågar inte — jag väntar«\",\"Regelbaserad omfördelering vid extrema lägen\"],[\"Avund\",\"Jämförelse med andras resultat\",\"Egen målsättning, egen horisont\"],[\"Ego\",\"Att ha rätt inför andra\",\"Processmått framför utfallsmått\"],[\"Överoptimism\",\"»Det drabbar inte mig«\",\"Worst case-scenario i varje beslut\"],[\"Grupptryck\",\"»Alla köper — jag kan inte vara den ende som avstår«\",\"Skriven tes som motiverar avvikelse\"]]}"
+          "content": "{\"rubrik\":\"Sex krafter och deras motgift\",\"rader\":[[\"Kraft\",\"Yttring\",\"Motgift\"],[\"Girighet\",\"»Bara en gång till — det går så bra«\",\"Förut satta krav på marginal (margin of safety)\"],[\"Rädsla\",\"»Jag vågar inte — jag väntar«\",\"Regelbaserad omfördelering vid extrema lägen\"],[\"Avund\",\"Jämförelse med andras resultat\",\"Egen målsättning, egen horisont\"],[\"Ego\",\"Att ha rätt inför andra\",\"Processmått framför utfallsmått\"],[\"Överoptimism\",\"»Det drabbar inte mig«\",\"Worst case-scenario i varje beslut\"],[\"Grupptryck\",\"»Alla köper — jag kan inte vara den ende som avstår«\",\"Skriven tes som motiverar avvikelse\"]]}"
         },
         {
           "type": "utmaning",
@@ -763,7 +763,7 @@
         },
         {
           "type": "text",
-          "content": "I AKM1-praktik blir det konkret: när din analys — V17 rapportkvalitet som avslöjar en fasad, V19 marginal som marknaden ignorerar — pekar mot konsensus, dokumentera tesen, storleka positionen efter övertygelse och acceptera att den kommer att kännas fel ett tag. Det är inte ett tecken på att du har fel; det är priset för det du försöker köpa: överavkastning."
+          "content": "I AKM1-praktik blir det konkret: när din analys — källkritiken (V12, rapportkvalitet) som avslöjar en fasad, margin of safety som marknaden ignorerar — pekar mot konsensus, dokumentera tesen, storleka positionen efter övertygelse och acceptera att den kommer att kännas fel ett tag. Det är inte ett tecken på att du har fel; det är priset för det du försöker köpa: överavkastning."
         },
         {
           "type": "visuell",
@@ -834,7 +834,7 @@
         },
         {
           "type": "text",
-          "content": "Här knyter boken ihop med V19 och V17: margin of safety är fyndets kärnbegrepp — rabatten mot värdet är både avkastningskällan och skyddet — och rapportkvaliteten är försäkringen mot att fyndet är en redovisningsfasad. En checklista för fyndjakt: varför finns detta fynd, vem säljer och varför, vad är värdet per scenario, hur stor är marginalen och vad är tidsaspekten?"
+          "content": "Här knyter boken ihop margin of safety och källkritiken: margin of safety är fyndets kärnbegrepp — rabatten mot värdet är både avkastningskällan och skyddet — och rapportkvaliteten är försäkringen mot att fyndet är en redovisningsfasad. En checklista för fyndjakt: varför finns detta fynd, vem säljer och varför, vad är värdet per scenario, hur stor är marginalen och vad är tidsaspekten?"
         },
         {
           "type": "insikt",
@@ -873,7 +873,7 @@
           "tips": "Ett fynd kräver ett fel — frågan är vilket fel och hur stort."
         },
         {
-          "q": "Hur förhåller sig margin of safety (V19) till fyndbegreppet?",
+          "q": "Hur förhåller sig margin of safety till fyndbegreppet?",
           "alternativ": [
             "Marginen är både skyddet och källan till avkastningen — rabatten mot värdet gör affären till ett fynd",
             "Marginen ersätter behovet av värderingsarbete",
@@ -984,7 +984,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Vetbart kontra ej vetbart\",\"rader\":[[\"Område\",\"Karaktär\",\"Verktyg\"],[\"Bolagets verklighet (mikro)\",\"Vetbart med arbete\",\"V08, V13, V17, balansräkning\"],[\"Pris och värde (mikro)\",\"Vetbart med skattning\",\"V14, V19, scenarioträd\"],[\"Marknadens läge\",\"Skattbart\",\"AK1TS cykel- och sentimentvåg\"],[\"Ekonomi, räntor, valutor (makro)\",\"I praktiken inte pålitligt\",\"Robusthet istället för prognos\"]]}"
+          "content": "{\"rubrik\":\"Vetbart kontra ej vetbart\",\"rader\":[[\"Område\",\"Karaktär\",\"Verktyg\"],[\"Bolagets verklighet (mikro)\",\"Vetbart med arbete\",\"V07, V08, V13–V15, källkritik, balansräkning\"],[\"Pris och värde (mikro)\",\"Vetbart med skattning\",\"V04–V06, margin of safety, scenarioträd\"],[\"Marknadens läge\",\"Skattbart\",\"AK1TS cykel- och sentimentvåg\"],[\"Ekonomi, räntor, valutor (makro)\",\"I praktiken inte pålitligt\",\"Robusthet istället för prognos\"]]}"
         },
         {
           "type": "utmaning",
@@ -1051,7 +1051,7 @@
         },
         {
           "type": "text",
-          "content": "Att dra ihop allt: när Marks frågas vad som är det viktigaste blir svaret en loop — värde, pris, känsla, cykler, risk, marginal — där varje kapitel visat ett nödvändigt men inte tillräckligt svar. Memo-kulturen är bokens sista läxa: skriv ner dina teser, ifrågasätt dem regelbundet och uppdatera utan ego. I AKM1-ekosystemet står kopplingen klar: V19 marginalen, V20 riskmatrisen, AK1TS cykeln och sentimentvågen — Marks hela bok är en längre fotnot till dem."
+          "content": "Att dra ihop allt: när Marks frågas vad som är det viktigaste blir svaret en loop — värde, pris, känsla, cykler, risk, marginal — där varje kapitel visat ett nödvändigt men inte tillräckligt svar. Memo-kulturen är bokens sista läxa: skriv ner dina teser, ifrågasätt dem regelbundet och uppdatera utan ego. I AKM1-ekosystemet står kopplingen klar: margin of safety, riskmatrisen, AK1TS cykeln och sentimentvågen — Marks hela bok är en längre fotnot till dem."
         },
         {
           "type": "visuell",

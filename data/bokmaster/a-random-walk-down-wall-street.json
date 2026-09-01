@@ -120,11 +120,11 @@
         },
         {
           "type": "text",
-          "content": "Malkiels poäng är inte att den ena teorin är sann och den andra falsk — utan att marknaden ständigt svävar mellan dem. Det smarta pengarna försöker räkna på fast grund, men när en berättelse blir stark nog börjar även rationella investerare köpa luftslott, medvetna om att de kan sälja dyrare till någon ännu mer hoppfull. Det är därför som värderingsdisciplin (AKM1 V14) alltid måste paras med en förståelse för vad marknadens humör gör med multipeln. Multipeln är inte bara matte — den är också ett humörmätare."
+          "content": "Malkiels poäng är inte att den ena teorin är sann och den andra falsk — utan att marknaden ständigt svävar mellan dem. Det smarta pengarna försöker räkna på fast grund, men när en berättelse blir stark nog börjar även rationella investerare köpa luftslott, medvetna om att de kan sälja dyrare till någon ännu mer hoppfull. Det är därför som värderingsdisciplin (AKM1 V04–V06) alltid måste paras med en förståelse för vad marknadens humör gör med multipeln. Multipeln är inte bara matte — den är också ett humörmätare."
         },
         {
           "type": "text",
-          "content": "Denna kurs är brobygget mellan AKM1 och AK1TS. Från Malkiel lär du dig att ställa den obekväma frågan till varje metod: vilken information bygger din kant på, och vad skulle visa att du har fel? När du i AKM1 räknar på V14-värdering, V19 marginal of safety och V13 moat kommer Malkiel att stå vid din axel och fråga: är den här kanten redan prissatt? När du i AK1TS studerar vågteori och mönster frågar han: har du testat regeln utanför ditt eget urval, med kostnader? Boken kryssar avsiktligt i frågorna — kapitel för kapitel, bubbla för bubbla."
+          "content": "Denna kurs är brobygget mellan AKM1 och AK1TS. Från Malkiel lär du dig att ställa den obekväma frågan till varje metod: vilken information bygger din kant på, och vad skulle visa att du har fel? När du i AKM1 räknar på värdering (V04–V06), margin of safety (Grahams princip) och moat (V13–V15) kommer Malkiel att stå vid din axel och fråga: är den här kanten redan prissatt? När du i AK1TS studerar vågteori och mönster frågar han: har du testat regeln utanför ditt eget urval, med kostnader? Boken kryssar avsiktligt i frågorna — kapitel för kapitel, bubbla för bubbla."
         },
         {
           "type": "insikt",
@@ -136,7 +136,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Malkiels två teorier om aktievärde\",\"rader\":[[\"Teori\",\"Kärna\",\"Typiskt verktyg\",\"Tidshorisont\",\"AK1-koppling\"],[\"Fasta grunden\",\"Pris söker mot verkligt värde: kassaflöde, tillväxt, risk, ränta\",\"DCF, multipel, utdelningsmodeller\",\"År\",\"AKM1 V14, V19, V13\"],[\"Luftslott\",\"Priset styrs av vad andra tror att tredje part betalar\",\"Trender, humör, berättelser, momentum\",\"Veckor–månader\",\"AK1TS signaler, marknadspsykologi\"],[\"Slumpvandringen\",\"Korttidens steg är oförutsägbara oavsett teori\",\"Index, låga kostnader, rebalansering\",\"Långsikt\",\"Båda — som prövning av kanten\"]]}"
+          "content": "{\"rubrik\":\"Malkiels två teorier om aktievärde\",\"rader\":[[\"Teori\",\"Kärna\",\"Typiskt verktyg\",\"Tidshorisont\",\"AK1-koppling\"],[\"Fasta grunden\",\"Pris söker mot verkligt värde: kassaflöde, tillväxt, risk, ränta\",\"DCF, multipel, utdelningsmodeller\",\"År\",\"AKM1 V04–V06, V13–V15 + margin of safety\"],[\"Luftslott\",\"Priset styrs av vad andra tror att tredje part betalar\",\"Trender, humör, berättelser, momentum\",\"Veckor–månader\",\"AK1TS signaler, marknadspsykologi\"],[\"Slumpvandringen\",\"Korttidens steg är oförutsägbara oavsett teori\",\"Index, låga kostnader, rebalansering\",\"Långsikt\",\"Båda — som prövning av kanten\"]]}"
         },
         {
           "type": "visuell",
@@ -167,7 +167,7 @@
           "tips": "Tänk på skönhetstävlingen i tidningen — du ska inte välja det vackraste, utan det som flest andra väljer."
         },
         {
-          "q": "Kopplat till AKM1 V14: vad säger Malkiels ramverk att en multipel egentligen innehåller?",
+          "q": "Kopplat till AKM1:s värderingsvariabler (V04–V06): vad säger Malkiels ramverk att en multipel egentligen innehåller?",
           "alternativ": [
             "Ett pris på marknadens förväntningar — inte bara på bolagets kvalitet",
             "Ett mått på bolagets skuldsättning",
@@ -199,7 +199,7 @@
         },
         {
           "type": "text",
-          "content": "Koppla till AKM1 V19: marginal of safety är ditt bubbelskydd. Den som köper med stor rabatt mot beräknat värde tål att luften läcker langsamt ut ur berättelsen. Den som köper på toppen med hävstång tål inte ens en ofarlig milispåret av tvivel. Malkiel kommer senare i boken att visa att varje generation är övertygad om att just dess bubbla vilar på fast grund — därför hör historiekunskap till analysverktygen, inte bara till underhållningen."
+          "content": "Koppla till AKM1: margin of safety är ditt bubbelskydd. Den som köper med stor rabatt mot beräknat värde tål att luften läcker langsamt ut ur berättelsen. Den som köper på toppen med hävstång tål inte ens en ofarlig milispåret av tvivel. Malkiel kommer senare i boken att visa att varje generation är övertygad om att just dess bubbla vilar på fast grund — därför hör historiekunskap till analysverktygen, inte bara till underhållningen."
         },
         {
           "type": "insikt",
@@ -274,7 +274,7 @@
         },
         {
           "type": "text",
-          "content": "Här är Malkiels viktigaste gåva till AKM1-eleven: moat (V13) är värd något — men bara vid rätt pris. En fantastisk vallgrav, stark varumärkeskraft och hög ROIC motiverar en multipel över genomsnittet, inte vilken multipel som helst. Värdering (V14) är disciplinen som sätter tak på berättelsen, och marginal of safety (V19) är förbehållet att din moat-bedömning kan vara fel. Kursen tillåter dig att älska bolaget — den tillåter dig inte att älska det vid vilket pris som helst."
+          "content": "Här är Malkiels viktigaste gåva till AKM1-eleven: moat (V13–V15) är värd något — men bara vid rätt pris. En fantastisk vallgrav, stark varumärkeskraft och hög ROIC motiverar en multipel över genomsnittet, inte vilken multipel som helst. Värdering (V04–V06) är disciplinen som sätter tak på berättelsen, och margin of safety (Grahams princip) är förbehållet att din moat-bedömning kan vara fel. Kursen tillåter dig att älska bolaget — den tillåter dig inte att älska det vid vilket pris som helst."
         },
         {
           "type": "insikt",
@@ -313,7 +313,7 @@
           "tips": "Räkna från 5 048 ner mot drygt 1 100 — det är betydligt mer än en vanlig korrektion."
         },
         {
-          "q": "Vad är den rätta kopplingen mellan moat (AKM1 V13) och pris enligt Malkiels bubbelhistorier?",
+          "q": "Vad är den rätta kopplingen mellan moat (AKM1 V13–V15) och pris enligt Malkiels bubbelhistorier?",
           "alternativ": [
             "En stark moat gör aktien köpvärd oavsett pris",
             "Moat gäller bara småbolag utan analytiker",
@@ -345,7 +345,7 @@
         },
         {
           "type": "text",
-          "content": "För AK1A-eleven är 2008 tre konkreta lärdomar. För det första: korrelationen mellan tillgångar stiger när det gäller som mest — diversifiering hjälper, men den skyddar inte mot systemrisk (kapitel 9–10 fördjupar). För det andra: hävstång är en flödesfråga, inte en övertygelsefråga — du kan ha rätt i sak och ändå tvingas sälja vid botten. För det tredje: V19 marginal of safety är lika relevant för bolån och balansräkningar som för aktieköp. Fråga dig alltid: vad händer om den här tillgången måste säljas om ett år — inte om tio?"
+          "content": "För AK1A-eleven är 2008 tre konkreta lärdomar. För det första: korrelationen mellan tillgångar stiger när det gäller som mest — diversifiering hjälper, men den skyddar inte mot systemrisk (kapitel 9–10 fördjupar). För det andra: hävstång är en flödesfråga, inte en övertygelsefråga — du kan ha rätt i sak och ändå tvingas sälja vid botten. För det tredje: margin of safety är lika relevant för bolån och balansräkningar som för aktieköp. Fråga dig alltid: vad händer om den här tillgången måste säljas om ett år — inte om tio?"
         },
         {
           "type": "insikt",
@@ -542,7 +542,7 @@
       "num": 7,
       "minutes": 11,
       "title": "Hur proffsen spelar II: fundamental analys",
-      "intro": "Nu byter proffs sida: fundamentalisten bryr sig inte om flocken utan om fabriken — vinst, tillväxt, kassaflöde och risk. Malkiel presenterar de fyra determinanter som styr allt verkligt värde, och det är samma fysik som AKM1:s V14-värdering vilar på.",
+      "intro": "Nu byter proffs sida: fundamentalisten bryr sig inte om flocken utan om fabriken — vinst, tillväxt, kassaflöde och risk. Malkiel presenterar de fyra determinanter som styr allt verkligt värde, och det är samma fysik som AKM1:s värderingsvariabler (V04–V06) vilar på.",
       "blocks": [
         {
           "type": "text",
@@ -550,15 +550,15 @@
         },
         {
           "type": "text",
-          "content": "Den mest underskattade av de fyra är varaktigheten — för den verkar exponentiellt. En liten tillväxtförbättring som varar i tjugo år är värd mer än en stor förbättring som varar i tre. Det är därför marknaden betalar orimligt mycket för bolag vars tillväxt den tror ska vara permanent, och därför misslyckandet är så grovt när trots allt inget växer för alltid. Här ligger också P/E-logikens kärna: en multipel är inget mystiskt — den är den komprimerade formen av förväntad tillväxt, varaktighet, utdelning, risk och ränta. AKM1 V14 lär dig räkna ut multipeln; Malkiel lär dig veta vad som gömmer sig inuti den."
+          "content": "Den mest underskattade av de fyra är varaktigheten — för den verkar exponentiellt. En liten tillväxtförbättring som varar i tjugo år är värd mer än en stor förbättring som varar i tre. Det är därför marknaden betalar orimligt mycket för bolag vars tillväxt den tror ska vara permanent, och därför misslyckandet är så grovt när trots allt inget växer för alltid. Här ligger också P/E-logikens kärna: en multipel är inget mystiskt — den är den komprimerade formen av förväntad tillväxt, varaktighet, utdelning, risk och ränta. AKM1:s värderingsvariabler (V04–V06) lär dig räkna ut multipeln; Malkiel lär dig veta vad som gömmer sig inuti den."
         },
         {
           "type": "text",
-          "content": "Malkiel varnar för räkneverkstans begränsningar: resultatet blir aldrig bättre än antagandena. Om avkastningskravet är 9 procent och tillväxten 8 procent ger Gordons modell ett enormt värde; flytta tillväxten till 8,5 och värdet exploderar; sjunk den till 7 och det kollapsar. Smalla förändringar i antaganden ger svallvågor i värdet — och ju längre horisont, desto värre. Därför är fundamental analys en disciplin i rimlighet, inte i precision: använd känslighetsanalyser, arbeta med intervall och kräv att slutsatsen överlever pessimistiska antaganden. Det är AKM1 V19:s marginal of safety i praktisk handling: bygg in utrymme för att du har fel om tillväxten."
+          "content": "Malkiel varnar för räkneverkstans begränsningar: resultatet blir aldrig bättre än antagandena. Om avkastningskravet är 9 procent och tillväxten 8 procent ger Gordons modell ett enormt värde; flytta tillväxten till 8,5 och värdet exploderar; sjunk den till 7 och det kollapsar. Smalla förändringar i antaganden ger svallvågor i värdet — och ju längre horisont, desto värre. Därför är fundamental analys en disciplin i rimlighet, inte i precision: använd känslighetsanalyser, arbeta med intervall och kräv att slutsatsen överlever pessimistiska antaganden. Det är AKM1:s margin of safety i praktisk handling: bygg in utrymme för att du har fel om tillväxten."
         },
         {
           "type": "text",
-          "content": "Koppla samman med AKM1:s övriga delar: V13 moat är det som gör tillväxtens varaktighet trovärdig — en vallgrav är ett argument för att hög ROIC får lov att bestå, vilket är samma sak som att diskonteringen av kassaflödena sträcker sig långt fram i tiden. Värdering utan moat-tänkande blir en projektion av det förflutna; moat-tänkande utan värdering blir en berättelse utan prislapp. Fundamental analys som helhet: förstå värdets fyra determinanter, argumentera för moatens varaktighet, diskontera med ärlig risk, och kräv marginal mellan pris och värde."
+          "content": "Koppla samman med AKM1:s övriga delar: moat-variablerna (V13–V15) är det som gör tillväxtens varaktighet trovärdig — en vallgrav är ett argument för att hög ROIC får lov att bestå, vilket är samma sak som att diskonteringen av kassaflödena sträcker sig långt fram i tiden. Värdering utan moat-tänkande blir en projektion av det förflutna; moat-tänkande utan värdering blir en berättelse utan prislapp. Fundamental analys som helhet: förstå värdets fyra determinanter, argumentera för moatens varaktighet, diskontera med ärlig risk, och kräv marginal mellan pris och värde."
         },
         {
           "type": "insikt",
@@ -570,7 +570,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"De fyra determinanterna av aktiens värde\",\"rader\":[[\"Determinant\",\"Riktning\",\"Kännetecken\",\"AKM1-koppling\"],[\"Förväntad tillväxttakt\",\"Högre → högre värde\",\"Vinst- och utdelningstillväxt\",\"V14, tillväxtblokken\"],[\"Tillväxtens varaktighet\",\"Längre → kraftigt högre värde\",\"Moat gör varaktighet trovärdig\",\"V13 moat\"],[\"Utdelningsandel\",\"Högre (vid samma tillväxt) → högre värde\",\"Kassa tillbaka till ägaren\",\"Utdelningsanalys\"],[\"Risk och räntenivå\",\"Lägre → högre värde\",\"Avkastningskrav, diskonteringsränta\",\"Riskbedömning, V19\"],[\"Resultatets precision\",\"Aldrig bättre än antagandena\",\"Känslighetsanalys obligatorisk\",\"V19 marginal of safety\"]]}"
+          "content": "{\"rubrik\":\"De fyra determinanterna av aktiens värde\",\"rader\":[[\"Determinant\",\"Riktning\",\"Kännetecken\",\"AKM1-koppling\"],[\"Förväntad tillväxttakt\",\"Högre → högre värde\",\"Vinst- och utdelningstillväxt\",\"V04–V06, tillväxtblokken (V01–V03)\"],[\"Tillväxtens varaktighet\",\"Längre → kraftigt högre värde\",\"Moat gör varaktighet trovärdig\",\"V13–V15 moat\"],[\"Utdelningsandel\",\"Högre (vid samma tillväxt) → högre värde\",\"Kassa tillbaka till ägaren\",\"Utdelningsanalys\"],[\"Risk och räntenivå\",\"Lägre → högre värde\",\"Avkastningskrav, diskonteringsränta\",\"Riskbedömning, riskmatrisen\"],[\"Resultatets precision\",\"Aldrig bättre än antagandena\",\"Känslighetsanalys obligatorisk\",\"Margin of safety\"]]}"
         }
       ],
       "quiz": [
@@ -629,7 +629,7 @@
         },
         {
           "type": "text",
-          "content": "Men kritiken ska inte läsas som att fundamental analys är värdelös — Malkiel själv använder den, och kursen AKM1 bygger på den. Den ska läsas som en specificering av vad kanten måste vara: en avvikelse från konsensus som du kan argumentera för med bättre information, bättre modell eller bättre tålamod. V19 marginal of safety blir här analytikerns försäkring: den skyddar dig inte bara mot att bolaget går dåligt, utan mot att din prognos — som i snitt blir för optimistisk — är fel. Kombinationen V14 plus V19 är Malkiel-kritikens praktiska svar: räkna, men kräv rabatt."
+          "content": "Men kritiken ska inte läsas som att fundamental analys är värdelös — Malkiel själv använder den, och kursen AKM1 bygger på den. Den ska läsas som en specificering av vad kanten måste vara: en avvikelse från konsensus som du kan argumentera för med bättre information, bättre modell eller bättre tålamod. Margin of safety blir här analytikerns försäkring: den skyddar dig inte bara mot att bolaget går dåligt, utan mot att din prognos — som i snitt blir för optimistisk — är fel. Kombinationen värdering (V04–V06) plus margin of safety är Malkiel-kritikens praktiska svar: räkna, men kräv rabatt."
         },
         {
           "type": "insikt",
@@ -641,7 +641,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Tre skäl analytiker misslyckas — och vad de betyder för dig\",\"rader\":[[\"Skäl\",\"Mekanism\",\"Konsekvens för dig\"],[\"Informationen sprids direkt\",\"All offentlig info sitter i priset inom minuter\",\"Kanten kan inte vara offentlig och uppenbar\"],[\"Framtiden är svår\",\"Oväntade händelser slår alla prognoser\",\"Räkna med intervall — kräv marginal (V19)\"],[\"Flock-incitament\",\"Avvikande fel straffas hårt, rekommendationer snedvrids mot köp\",\"Läs säljargon med misstänksamhet; leta den information som är svår att se\"],[\"Överoptimism\",\"Femårsprognoser historiskt kraftigt för höga\",\"Diskontera konsensus innan du bygger på det\"]]}"
+          "content": "{\"rubrik\":\"Tre skäl analytiker misslyckas — och vad de betyder för dig\",\"rader\":[[\"Skäl\",\"Mekanism\",\"Konsekvens för dig\"],[\"Informationen sprids direkt\",\"All offentlig info sitter i priset inom minuter\",\"Kanten kan inte vara offentlig och uppenbar\"],[\"Framtiden är svår\",\"Oväntade händelser slår alla prognoser\",\"Räkna med intervall — kräv marginal (margin of safety)\"],[\"Flock-incitament\",\"Avvikande fel straffas hårt, rekommendationer snedvrids mot köp\",\"Läs säljargon med misstänksamhet; leta den information som är svår att se\"],[\"Överoptimism\",\"Femårsprognoser historiskt kraftigt för höga\",\"Diskontera konsensus innan du bygger på det\"]]}"
         }
       ],
       "quiz": [
@@ -668,7 +668,7 @@
           "tips": "Riktningen på felen var konsekvent åt ett håll — och det var inte nedåt."
         },
         {
-          "q": "Hur blir AKM1 V19 marginal of safety rätt svar på Malkiels kritik?",
+          "q": "Hur blir AKM1:s margin of safety rätt svar på Malkiels kritik?",
           "alternativ": [
             "Genom att kräva rabatt mot beräknat värde så att fel prognoser inte ruinerar",
             "Genom att köpa med hävstång för att maximera kant",
@@ -1351,7 +1351,7 @@
         },
         {
           "type": "text",
-          "content": "Bokens arv till AKM1: V14 värdering är inte ett räkneövning utan en disciplin mot multipeln — fråga alltid vad den prissätter, och om förväntningarna är realistiska. V19 marginal of safety är Malkiels egen medicin i förklädnad: han visade att prognoser är systematiskt överoptimistiska, och marginalen är priset du betalar för att ha fel utan att bli ruinerad. V13 moat är argumentet för varaktighet — men kapitel 3 slog fast att ingen moat motiverar vilken multipel som helst. Kärnan: AKM1 utan Malkiel blir naivt — värdering som inte vet att förväntningarna redan sitter i priset är bara konsensus med decimaler."
+          "content": "Bokens arv till AKM1: värderingsvariablerna (V04–V06) är inte ett räkneövning utan en disciplin mot multipeln — fråga alltid vad den prissätter, och om förväntningarna är realistiska. Margin of safety är Malkiels egen medicin i förklädnad: han visade att prognoser är systematiskt överoptimistiska, och marginalen är priset du betalar för att ha fel utan att bli ruinerad. Moat-variablerna (V13–V15) är argumentet för varaktighet — men kapitel 3 slog fast att ingen moat motiverar vilken multipel som helst. Kärnan: AKM1 utan Malkiel blir naivt — värdering som inte vet att förväntningarna redan sitter i priset är bara konsensus med decimaler."
         },
         {
           "type": "text",

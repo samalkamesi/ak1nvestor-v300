@@ -1,0 +1,974 @@
+{
+  "slug": "interpretation-of-financial-statements",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 130,
+  "title": "The Interpretation of Financial Statements — Graham: KOMPLETT",
+  "summary": "The Interpretation of Financial Statements (1937) är Benjamin Grahams korta, praktiska handbok i konsten att läsa bokslut — skriven i fråga-och-svar-format för den vanlige investeraren, som en bro mellan hans tunga Security Analysis och verklighetens årsredovisningar. Denna BOKMASTER-kurs går igenom hela boken: balansräkningens byggnad, netto cirkulerande medel, net-net-beräkningen, bokfört värdes fallgropar, resultaträkningens anatomi, nyckeltalen, redovisningsprincipernas spelrum, femårsjämförelserna och varningstecknen — allt översatt till svenska årsredovisningar och AKM1-ekosystemets variabler.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven öppna vilken svensk årsredovisning som helst och med Grahams metod beräkna netto cirkulerande medel, aktuellt förhållande (V11), snabbförhållandet, skuldsättningsgraden (V10), substansvärde och NCAV per aktie, samt P/B (V05) mot tangibla tillgångar. Eleven kan läsa en resultaträkning rad för rad till bruttomarginal (V07) och EBITDA-marginal (V08), rensa bort engångsposter till en normaliserad förtjänst, genomskåda utspädning, utdelningstäckning och återköp (V20), ställa Graham-villkoren om konservatism och konsekvens på avskrivningspolicy, lagermetoder och kapitalisering, genomföra femårsjämförelser (V01, V12, V09) mot bransch — och avgöra när varningstecknen är allvarliga nog för att kräva en marginal of safety före köp.",
+  "why": "Detta är kanonens snabbaste vinst: på små 130 sidor lär Graham (tillsammans med Spencer Meredith) exakt det som hela AKM1-ekosystemet vilar på — att läsa balansräkningen (V10, V11, V05), resultaträkningen (V07, V08) och rörelserna mellan dem (V12) innan ett enda pris bestäms. Varje variabel i plattformens faktagrid härstammar i praktiken från frågorna i denna bok, och dess varningstecken — goodwill-spiraler, lager som sväller mot försäljning, kortfristig skuldexpansion (V19) — är fortfarande de mest lönsamma signalsystemen som finns. Ingen annan bok ger så mycket analysförmåga per läst minut.",
+  "chapters_list": [
+    "1. Boken och ekvationen — vad en årsredovisning egentligen visar",
+    "2. Tillgångssidan — hur snabbt blir tillgångarna kassa?",
+    "3. Skulder och eget kapital — netto cirkulerande medel",
+    "4. Likviditet — aktuellt förhållande och snabbtestet (V11)",
+    "5. Bokfört värde, goodwill och net-net (V05)",
+    "6. Resultaträkningen — från intäkt till vinst rad för rad",
+    "7. Engångsposter och återkommande förtjänst — vinstens kvalitet",
+    "8. Vinst per aktie och utspädning — ägandets aritmetik",
+    "9. Utdelning, täckning och balanserade vinstmedel (V20)",
+    "10. Avskrivningar, lager och kapitalisering — principernas spelrum",
+    "11. När vinst och kassa skiljer sig — att härleda kassaflödet",
+    "12. Femårsjämförelser — trend, stabilitet och bransch",
+    "13. Varningstecken och marginal of safety — syntesen"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Boken och ekvationen — vad en årsredovisning egentligen visar",
+      "intro": "Året är 1937. Benjamin Graham, fyra år efter Security Analysis, ger ut en kort handbok i frågeform tillsammans med Spencer B. Meredith — en bok för människor som inte är revisorer men som äger, eller överväger att äga, aktier. Syftet är rakt på sak: ge investeraren ett praktiskt grepp om bokslutens siffror. I denna kurs läser vi boken mot svenska förhållanden, där motsvarigheten heter årsredovisning och detaljerna bor i noterna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Graham skriver i förordet att boken avser att ge läsaren en praktisk förståelse för de siffror som återfinns i boksluten — inte att utbilda revisorer, utan att utbilda ägare. Detta är en avgörande distinktion. Revisorn frågar: är siffrorna rätt upprättade enligt reglerna? Ägaren frågar: vad säger siffrorna om värdet på det jag äger, och vad döljer de? Boken föddes ur 1930-talets ruiner, då miljontals amerikaner upptäckt att de köpt aktier i bolag de inte förstod, betalade med pengar de inte hade. Grahams svar var inte att varna för aktier — det var att lära folk läsa. I Sverige är källan idag den årliga årsredovisningen: förvaltningsberättelsen, resultaträkningen, balansräkningen, kassaflödesanalysen, noterna och revisionsberättelsen. Verktygen är fler än 1937, men uppgiften är oförändrad."
+        },
+        {
+          "type": "text",
+          "content": "Bokens första kapitel levererar den ekvation som hela ämnet vilar på: tillgångar är lika med skulder plus eget kapital. Ett konkret exempel i svensk tappning: ett tillverkningsbolag redovisar tillgångar om 1 350 miljoner kronor — maskiner, fastigheter, lager, fordringar och kassa. Av detta är 600 finansierat med skulder och 750 med ägarnas eget kapital. Notera vad ekvationen inte säger. Den balanserar alltid, per konstruktion, för varje bokslut som någonsin upprättats — även för bolag som senare gick i konkurs med ägarna tomma. Balansräkningen visar därför aldrig sanningen om värdet, bara strukturen av anspråk. Analysarbetet är att fråga vad som gömmer sig bakom varje post: är fordringarna värda sitt nominella belopp? Är lagret säljbart? Är goodwill en tillgång eller en önskedröm?"
+        },
+        {
+          "type": "text",
+          "content": "Grahams mest användbara bild är att balansräkningen är som ett fotografi och resultaträkningen som en film. Balansräkningen fångar ett ögonblick — den 31 december finns kassa 80, fordringar 220, lager 260. Resultaträkningen fångar ett förlopp — under hela året såldes varor för 1 000 och efter alla kostnader återstod 94 i vinst. Fotografiet kan arrangeras inför helgen (fönsterputsning kallas det idag: betala leverantörer i förväg så att kortfristiga skulder ser lägre ut på balansdagen). Filmen kan klippas (engångsposter, avskrivningsval, kapitaliseringar). Därför kräver Graham att de läses tillsammans: resultatet måste kunna spåras i balansräkningen, annars är något fel. Den moderna kassaflödesanalysen — som inte fanns 1937 — är i grunden en institutionalisering av just den kontrollen."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk läsordning enligt Graham: börja i balansräkningen, inte i storyn. Han tvingar läsaren att först fastställa soliditet och likviditet — kan bolaget överleva en dålig period? — innan resultaträkningens frestande vinstsiffror får styra. Den svenska årsredovisningens notsystem är sedan Grahams lyckligaste jaktmark: i noterna finns avskrivningsprinciper, utslagna fordringar, antal aktier, stora kunder, rörelsesegment och jämförelsestörande poster. Graham uttrycker det som att fotnoterna är där bolaget talar sanning motvilligt. En regel att göra till vana: aldrig acceptera en rubriksiffra i resultaträkningen eller balansräkningen utan att först ha läst den not som posten hänvisar till. Notnumret inom parentes är en inbjudan, inte dekoration."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Balansräkningen balanserar alltid per konstruktion — därför avslöjar den aldrig sanningen, bara strukturen. Sanningen finns i vad som rör sig mellan raderna år från år, och i noterna dit bolaget helst inte vill att du ska titta."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ladda ner en svensk årsredovisning (Volvo B, H&M eller ett bolag du äger — de ligger gratis på bolagens hemsidor under finans/investor relations). Bläddra fram balansräkningen och skriv upp ekvationen i klartext: totala tillgångar, totala skulder, eget kapital. Kontrollera att den balanserar. Markera sedan de tre poster du minst förstår — det är din studieplan för resten av kursen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Grahams karta 1937 mot svensk årsredovisning i dag\",\"rader\":[[\"Fråga\",\"Graham 1937\",\"Svensk årsredovisning 2026\"],[\"Vad äger bolaget?\",\"Balance Sheet — Assets\",\"Balansräkning, tillgångssida + noter\"],[\"Vad är bolaget skyldigt?\",\"Liabilities\",\"Balansräkning, skulder och eget kapital + noter\"],[\"Vad tjänade bolaget?\",\"Income Statement\",\"Resultaträkning + förvaltningsberättelse\"],[\"Varifrån kom kassan?\",\"(saknades — härledd ur två balansräkningar)\",\"Kassaflödesanalys\"],[\"Vilka antaganden gjordes?\",\"Schedules and footnotes\",\"Noter, redovisningsprinciper\"],[\"Kan vi lita på det?\",\"Auditor's certificate\",\"Revisionsberättelse\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Graham liknar balansräkningen vid ett fotografi och resultaträkningen vid en film. Vilken praktisk svaghet hos balansräkningen pekar bilden på?",
+          "alternativ": [
+            "Att den bara visar engångsposter och aldrig de löpande kostnaderna",
+            "Att den fångar ett enda ögonblick och därmed kan arrangeras inför balansdagen",
+            "Att den aldrig innehåller kassa, bara poster utan värde",
+            "Att den enligt lag måste upprättas för sent för att vara användbar"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad en bild kan förråda om ett enda ögonblick — vad kan ett bolag göra dagarna före ett fotografi som det inte kan hålla genom en hel film?"
+        },
+        {
+          "q": "Tillgångar = skulder + eget kapital gäller för varje bokslut som någonsin upprättats, även för bolag som gick i konkurs. Vad följer logiskt av det?",
+          "alternativ": [
+            "Att ekvationen är bevis på att bolaget är solvent",
+            "Att ekvationen i sig inte säger något om värdet — den visar bara finansieringsstrukturen",
+            "Att eget kapital alltid motsvarar marknadsvärdet på aktierna",
+            "Att skulder per definition är farligare än tillgångar"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad ekvationen bevisar och vad den bara beskriver. Ett bolag kan balansera perfekt och ändå vara värdelöst."
+        },
+        {
+          "q": "I en svensk årsredovisning — var hittar du enligt kursens Graham-tolkning detaljerna om avskrivningsprinciper, antal aktier och jämförelsestörande poster?",
+          "alternativ": [
+            "I rubriksiffrorna på resultaträkningens första rad",
+            "I noterna och redovisningsprinciperna — där bolaget talar sanning motvilligt",
+            "I aktiekursen, som sammanfattar all information effektivt",
+            "I förvaltningsberättelsens vision och strategiavsnitt"
+          ],
+          "ratt": 1,
+          "tips": "Graham älskade det som ligger närmast siffrorna men längst ner i hierarkin av läsarnas uppmärksamhet."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Tillgångssidan — hur snabbt blir tillgångarna kassa?",
+      "intro": "Grahams första genomgång av balansräkningen börjar på tillgångssidan, och hans sorteringnyckel är enkel: hur snabbt kan varje post förvandlas till pengar? Svaret skiljer omsättningstillgångar från anläggningstillgångar — och skiljer sen ganska sorter från dåliga sorter inom varje grupp. Detta kapitel bygger taxan rad för rad med ett genomgående räkneexempel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Omsättningstillgångar (Grahams current assets) förväntas bli kassa inom ett år: kassa och bank, kortfristiga placeringar (omräkningsbara värdepapper), kundfordringar, lagrade produkter och förskott till leverantörer. Anläggningstillgångar (fixed assets) är bundna längre: fastigheter, maskiner och inventarier, goodwill och övriga immateriella rättigheter samt långfristiga finansiella placeringar. Graham påpekar att gränsdragningen är en redovisningskonvention, inte en fysisk lag — en snabbt omsatt maskinpark i ett bemannat bolag och en förfallen fabrik kan bokföras likadant. I vårt genomgående exempel (balansomslutning 1 350) består tillgångssidan av: kassa 80, kortfristiga placeringar 40, kundfordringar 220, lager 260 — sammanlagt omsättningstillgångar 600 — samt maskiner och fastigheter med 500, goodwill och immateriella med 150 och långfristiga placeringar med 100 — sammanlagt anläggningstillgångar 750."
+        },
+        {
+          "type": "text",
+          "content": "Sedan börjar det riktiga arbetet: kvalitetsbedömningen post för post. Kassa är kassa — den enda posten utan tolkningsutrymme (även om den kan vara pantsatt eller intagen på ett konto i en bank som är på väg att gå omkull, något Grahams samtida läsare visste allt om). Kundfordringar på 220 är värda 220 bara om kunderna betalar: läs noten om nedskrivningar och osäkra fordringar, och räkna förhållandet mellan fordringar och årsförsäljning. Lager på 260 kan delas i råvaror, pågående arbeten och färdigvaror — färdigvaror är den farligaste sorten, för den kan vara omodern, felprissatt eller redan så gott som såld till förlust. Maskiner på 500 är, som Graham framhäver, bara värda vad de producerar: en press i en fabrik med full orderbok är en tillgång, samma press i en avvecklad bransch är skrotpris. Bokfört värde är en historisk kostnad minus avskrivningar — inte en notis om vad någon skulle betala."
+        },
+        {
+          "type": "text",
+          "content": "Grahams egen hjärnfil för tillgångsvärdering låter så här i översätt: värdet av en anläggningstillgång beror på dess förtjänstkraft, inte på dess bokförda kostnad. En kraftstation bokförd till 100 kan vara värd 300 om den producerar ström lönsamt, och noll om kunden lämnat. Detta är skälet till att han senare (kapitel 5) rensar bort goodwill helt från sitt substansvärde: goodwill är den post vars förtjänstkraft är svårast att verifiera och vars bokförda värde oftast är en artefakt av ett förvärvspris, inte av en kassaflödesberäkning. För omsättningstillgångarna gäller omvänd logik — deras värde är som mest trovärdigt och deras omvandling till kassa är fråga om månader. Därför blir förhållandet mellan de två grupperna ett första mått på bolagets riskprofil: ett bolag vars tillgångar nästan helt är anläggningstillgångar (gruvbolag, sjöfart, fastigheter) kräver helt andra marginaler än ett handelsbolag vars tillgångar mest är lager och fordringar."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk rutin att lägga på minnet — tillgångssidans tre frågor: (1) Sortera posterna efter hur snabbt de blir kassa och hur säkert de blir kassa. (2) För varje post, hitta noten som beskriver dess ålder, värdering eller pantsättning (svenska noter om upplupna fordringar, inventeringsvärdering enligt lägsta värdets princip, pantsatta tillgångar). (3) Jämför med förra året: växer fordringar och lager snabbare än försäljningen? Då har fotografiet förändrats på ett sätt filmen måste förklara — det är startpunkten för kapitel 11 om kassaflödeshärledning. Graham sammanfattar det hela med att en balansräkning inte ska läsas som en lista utan som en berättelse om hur kapital är bundet och hur väl det omsätts."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En tillgång är bara värd vad den kan generera i kassa — bokfört värde är en historisk kostnad, inte ett faktum om dagens värde. Ju längre ner på kassakonverteringsskalan, desto större marginal måste värderingen ha."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Öppna tillgångssidan i din årsredovisning. Sortera alla poster i tre spalter: blir kassa inom ett år, blir kassa inom fem år, blir aldrig kassa av sig själv (maskiner som bara har värde i drift, goodwill). Uppskatta sedan andelen av balansomslutningen som du personligen skulle kunna förvandla till pengar inom nittio dagar om du var tvungen — det är din känsla för tillgångskvalitet på två minuter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillgångssidans poster — kassakonvertering och Grahamsfrågor\",\"rader\":[[\"Post\",\"Exempel (mkr)\",\"Blir kassa\",\"Grahamsfråga i noten\"],[\"Kassa och bank\",\"80\",\"Omedelbart\",\"Är den pantsatt eller insatt i samma bank som lånat bolaget pengar?\"],[\"Kortfristiga placeringar\",\"40\",\"Dagar\",\"Till marknadspris? Räntebärande eller aktier?\"],[\"Kundfordringar\",\"220\",\"30–90 dagar\",\"Växer de snabbare än försäljningen? Hur stora nedskrivningar?\"],[\"Lager\",\"260\",\"Säsongsberoende\",\"Färdigvaror eller råvaror? Värderade enligt lägsta värdets princip?\"],[\"Maskiner och fastigheter\",\"500\",\"Aldrig av sig självt\",\"Vad producerar de? Räcker underhållet till?\"],[\"Goodwill och immateriella\",\"150\",\"Aldrig\",\"Vad betyder posten utan det förvärv som skapade den?\"],[\"Långfristiga placeringar\",\"100\",\"År\",\"Marknadsnoterade? Onoterade dotterbolag till övervärden?\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Två bolag bokför varsin maskinpark till 500 miljoner kronor. Vilken princip från detta kapitel avgör om posten är värd något?",
+          "alternativ": [
+            "Bokfört värde är alltid det bästa värdemåttet eftersom det är granskat",
+            "En anläggningstillgångs värde beror på dess förtjänstkraft, inte på dess bokförda kostnad",
+            "Maskiner ska alltid skrivas ned till hälften vid varje årsskifte",
+            "Värdet bestäms av hur många år posten funnits i balansräkningen"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på skillnaden mellan samma press i en fabrik med full orderbok och i en avvecklad bransch."
+        },
+        {
+          "q": "Vilken av följande lagerposter är enligt Graham den farligaste ur tillgångskvalitetssynpunkt?",
+          "alternativ": [
+            "Råvaror som kan säljas på en råvarumarknad",
+            "Förskottsbetalda leveranser från leverantörer",
+            "Färdigvaror som kan vara omoderna eller felprissatta",
+            "Kassalikvider på ett rörelsekonto"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vilken post som kräver en kund som vill ha just den varan, till just det priset, just nu."
+        },
+        {
+          "q": "Du jämför två år och ser att kundfordringar växt 25 procent medan försäljningen växt 5 procent. Vad är din första tolkning enligt Grahams metod?",
+          "alternativ": [
+            "Ett positivt tecken — bolaget har byggt en större kundstock",
+            "Ett neutralt tecken — fordringar och försäljning har ingen koppling",
+            "Ett frågetecken som filmen måste förklara — betalar kunderna, eller har fotografiet arrangerats?",
+            "Ett säkert tecken på att resultatet är understatement"
+          ],
+          "ratt": 2,
+          "tips": "Vad betyder det att en allt större andel av årets försäljning fortfarande bara existerar som en fordran på papper?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Skulder och eget kapital — netto cirkulerande medel",
+      "intro": "Skuldsidan är balansräkningens anklagelsesida: här står alla som har företräde till bolagets tillgångar före dig som aktieägare. Graham går systematiskt igenom skuldernas löptid, ränta och senioritet — och landar i begreppet netto cirkulerande medel (working capital), en av hans mest använda byggstenar. Kapitlet bygger vidare på exempeltillgångarna på 600 i omsättningsposter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kortfristiga skulder (current liabilities) förfaller inom ett år: leverantörsskulder, skatteskulder, upplupna löner och den inom tolv månader förfallande delen av långfristiga lån. Långfristig räntebärande skuld förfaller senare och kostar ränta varje år den lever: obligationslån, banklån och hybridkapital. Eget kapital är resten — aktiekapital, överkursfonder, omvärderingsreserver och balanserade vinstmedel (Grahams earned surplus, de vinster som ackumulerats och stannat kvar i bolaget). I exemplet: kortfristiga skulder 250, långfristig räntebärande skuld 130, övriga långfristiga skulder 220, eget kapital 750. Ordningen i hierarkin är analysens kärna: skulder är säkra anspråk med ränta, aktier är osäkra anspråk med hopp. Graham formulerar det som att obligationsägaren säger till aktieägaren: du tar risken, jag tar räntan."
+        },
+        {
+          "type": "text",
+          "content": "Nu kommer bokens viktigaste enkelberäkning: netto cirkulerande medel (net working capital) är lika med omsättningstillgångar minus kortfristiga skulder. I exemplet: 600 minus 250 är 350 miljoner kronor. Detta är det kapital som är fritt från dagligt betalningstryck — bufferten som gör att bolaget kan köpa lager, ge kredit och hämta sig från en dålig kvartal utan att tigga. Graham jämför det med hushållets marginal mellan inkomst och utgifter: litet netto cirkulerande medel betyder att varje motvind blir en likviditetskris. Storleken ska bedömas relativt: mot omsättningen (i exemplet 1 000 — alltså 35 procent av årsförsäljningen, frisk täckning), mot branschens behov (ett varuhus behöver mer än ett konsultbolag) och mot den långfristiga skulden. Grahams tumregel från senare skrifter: för ett investmentgrade industriellt bolag bör de totala skulderna inte överstiga netto cirkulerande medel — det säkrar att den långa skulden har en motpart i verkligt cirkulerande värden."
+        },
+        {
+          "type": "text",
+          "content": "Räntebärande skuld förtjänar egen behandling eftersom den är fast kostnad mot variabel inkomst. Två beräkningar per läsning: skuldsättningsgraden (V10) — räntebärande skuld dividerat med eget kapital, i exemplet 130/750 som ger 0,17, lågt och tryggt — och räntetäckningen: rörelseresultat dividerat med räntekostnad. Om rörelseresultatet är 150 och räntekostnaden 25 är täckningen 6 gånger, väl ovanför Grahams krav; hans varning gäller täckningar nära 1 i cykliska bolag, där ett normalår med sämre resultat räcker för att räntan ska äta allt. Det svenska nyckeltalet soliditet — eget kapital dividerat med balansomslutning, här 750/1 350 som ger 56 procent — fångar samma sak från andra hållet och är utmärkt för snabb screening. Notera att IFRS-baserade balansräkningar (större bolag) skiljer från K3 (mindre) i detaljer som leasing: en leasing kan vara skuld i den ena och operationell kostnad i den andra — alltid läs redovisningsprincipnoten innan du jämför två bolags V10."
+        },
+        {
+          "type": "text",
+          "content": "Balanserade vinstmedel förtjänar sin egen rad i analysen. De är bolagets sparade historia: vinst som inte betalats ut utan behållits. Graham älskade dem av två skäl. För det första är de en buffert — utdelningar och förluster kan finansieras ur dem i motgångar, vilket gör utdelningspolitiken stabil. För det andra är de en lögnindikator: ständigt växande balanserade vinstmedel trots måttliga utdelningar väcker frågan varför kapitalet får stå oanvänt (eller om det överhuvudtaget existerar som kassa — jämför med kapitel 11). En svensk detalj värd att bära med sig: bolagsstämman beslutar om utdelning ur fria egna medel, och noten om ändringar i eget kapital visar exakt hur årets resultat rör sig mellan vinst, utdelning och reserver. Det är balanserade vinstmedels kassaflödesdagbok."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Skulder är säkra anspråk med ränta, aktier är osäkra anspråk med hopp. Netto cirkulerande medel — omsättningstillgångar minus kortfristiga skulder — är det fria utrymme mellan dem, och där bör en stor del av din säkerhetsmarginal bokföras."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Hämta fram din årsredovisnings skuldsida och eget kapital. Beräkna i klartext: (1) netto cirkulerande medel, (2) netto cirkulerande medel som andel av omsättningen, (3) skuldsättningsgraden V10 för räntebärande skuld, (4) soliditeten. Bestäm dig sedan: ser skuldsidan ut som en buffert eller en klena replik? Skriv en mening om vad som händer med bolaget om omsättningen faller 20 procent."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skuldsidans nyckeltal — formel och Graham-riktmärke\",\"rader\":[[\"Nyckeltal\",\"Formel\",\"Riktmärke enligt Graham-traditionen\"],[\"Netto cirkulerande medel\",\"Omsättningstillgångar − kortfristiga skulder\",\"Positivt; starkt om skulderna totalt understiger det\"],[\"Netto cirkulerande medel / omsättning\",\"(OmsT − KfS) / intäkter\",\"Ca 20–50 % för industri och handel, branschberoende\"],[\"Skuldsättningsgrad (V10)\",\"Räntebärande skuld / eget kapital\",\"Lågt och stabilt; totala skulder under netto cirk. medel\"],[\"Räntetäckning\",\"Rött rörelseresultat / räntekostnad\",\"God marginal även i ett normalårs sämre resultat\"],[\"Soliditet\",\"Eget kapital / balansomslutning\",\"Svenskt snabbmått; över 40 % torrt för de flesta branscher\"],[\"Balanserade vinstmedel\",\"Not: ändring i eget kapital\",\"Växande historia av behållna vinster är en buffert\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är netto cirkulerande medel och varför gör Graham det till en central beräkning?",
+          "alternativ": [
+            "Eget kapital minus långfristig skuld — mäter hur mycket ägarna riskerar",
+            "Omsättningstillgångar minus kortfristiga skulder — den buffert som är fri från omedelbart betalningstryck",
+            "Balansomslutning minus goodwill — mäter företagets substans",
+            "Kassa minus totala skulder — mäter konkursrisken exakt"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vilka poster som måste betalas inom ett år och vilka som är fria att arbeta vidare efter att de betalats."
+        },
+        {
+          "q": "Ett bolag har räntetäckning på 1,2 i ett toppår och verkar i en cyklisk bransch. Vad är Grahams rimliga oro?",
+          "alternativ": [
+            "Ingen — hög omsättning kompenserar alltid låg täckning",
+            "Att räntan är en fast kostnad mot en variabel inkomst, så ett normalår kan radera vinsten helt",
+            "Att täckningen bör vara under 1 för att bolaget ska vara lönsamt",
+            "Att bolaget betalar för lite ränta och därmed saknar skattemyssno fördelar"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad som händer med täckningen när toppårets resultat blir ett normalårs — och sedan ett bottenårs."
+        },
+        {
+          "q": "Vad kännetecknar balanserade vinstmedel (earned surplus) i Grahams läsning?",
+          "alternativ": [
+            "Ett lån från bolaget till ägarna som ska betalas tillbaka",
+            "Ackumulerad och kvarhållen vinst — en buffert i motgångar och en fråga om kapitalanvändning när den växer utan ansvar",
+            "Samma sak som aktiekapital och kan bara användas vid nyemission",
+            "En post som enligt lag måste betalas ut varje år"
+          ],
+          "ratt": 1,
+          "tips": "Följ noten om ändringar i eget kapital: vinst in, utdelning ut — vad blir kvar och vad gör det kvarvarande?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Likviditet — aktuellt förhållande och snabbtestet (V11)",
+      "intro": "Likviditet är frågan om bolaget kan betala sina närmaste räkningar, och den har i AKM1-ekosystemet sin egen variabel: V11. Graham behandlar den med två klassiska nyckeltal — det aktuella förhållandet (current ratio) och snabbförhållandet (acid-test) — och med en varning: siffran är bara så bra som tillgångarna den bygger på. Kapitlet räknar igenom båda måtten på exempelbalansräkningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Aktuellt förhållande (current ratio, på svenska ofta likviditetsgrad K/I) är omsättningstillgångar dividerat med kortfristiga skulder. I exempelbalansen: 600 dividerat med 250 ger 2,4. Den traditionella bankregeln — som Graham anslöt sig till för industriella bolag — var 2:1: varje krona kortfristig skuld borde backas av två kronor i omsättningsposter. Logiken är inte magisk utan en buffertberäkning: i en nedgång kan fordringar bli osäkra och lager behöva säljas med rabatt, så det skyddande värdet på omsättningstillgångarna kan realistiskt halveras. Värden runt 1 betyder att inget utrymme finns; värden under 1 betyder att bolaget är strukturellt beroende av att allt löper på — och en finanskris eller en strejk i hamnen räcker för att bryta kedjan."
+        },
+        {
+          "type": "text",
+          "content": "Snabbförhållandet (quick ratio, acid-test) tar Grahams egen invändning på allvar: lagret är den osäkraste omsättningsposten, så stryk det. Formeln: kassa plus kortfristiga placeringar plus kundfordringar, dividerat med kortfristiga skulder. I exemplet: 80 + 40 + 220 = 340, dividerat med 250 ger 1,36 — varje krona kortfristig skuld täcks alltså av 1,36 i tillgångar som rimligen blir pengar inom en månad eller två. Tumregeln är ungefär 1. Återigen tillbakahållsamhet hos Graham: han vill inte se 3 i snabbförhållande bara för siffrans egen skull. Osäkra fordringar kan nämligen vara lika värdefulla som mögelaktiga färdigvaror — noten om nedskrivna fordringar avgör. Ett bolag med stort snabböverskott men åldrande fordringar har bara bytt ut en osäker post mot en annan. Därför ska V11 alltid läsas tillsammans med noternas åldersfördelning, inte som en fristående siffra."
+        },
+        {
+          "type": "text",
+          "content": "Fotografimetaforen får här sin konkreta tillämpning: balansdagen är ett ögonblick och årsskiftet kan vara arrangerat. Svenska säsongsbolag är klassiska exempel — detaljhandeln bygger upp lager under hösten för att tömma det i december, ett byggföretags balans den 31 december kan visa helt annan likviditet än i maj. Två försäkringar: jämför alltid med samma balansdag föregående år, och komplettera med mellanhelårsrapporter om bolaget har uttalad säsong. Ännu en mekanism Graham kände till och som fortfarande lever: fönsterputsning — leverantörsskulder pressas ned precis före årsskiftet (ibland med fakturor som betalas i förtid, ibland med att inköpet ligger kvar som förskott hos säljaren) för att V11 ska se bättre ut på fotograferingsdagen. Kontrollen är enkel: läs kassaflödesanalysens rörelsedel och se om förändringar i rörelsekapital ser normala ut, och jämför leverantörsskulder med kostnadsvolymen över flera år."
+        },
+        {
+          "type": "text",
+          "content": "V11 i AKM1-sammanhang: likviditet är en överlevnadsvariabel, ingen prestationsvariabel. Den blir avgörande i kombination: ett bolag med låg V11 och samtidigt kapitalförbrukning (V19) — kassan sinar, verksamheten kräver mer pengar än den producerar — står inför emission eller upplåning på ofördelaktiga villkor, och då urholkas befintliga ägare. Omvänt är extremt hög likviditet inte gratis godhet: en balansräkning där hälften är kassa väcker Grahams kapitalanvändningsfråga — varför står ägarnas kapital och sover? Väntar bolaget på ett stort förvärv? På att betala en dold skuld? Graham noterade att stora kassor ibland är en reträttplats för en ledning utan plan, och att marknaden då tenderar att prissätta kassan till rabatt. Lagom högt, stabilt över fem år, med bra underliggande postkvalitet — det är V11:s trivselområde."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Likviditet handlar inte om att vara rik — det handlar om att hinna. Aktuellt förhållande runt 2 och snabbförhållande runt 1 är tumregler just för att omsättningstillgångarnas verkliga realisationsvärde i en nedgång är ungefär hälften av det bokförda."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Beräkna V11 för ditt bolag: aktuellt förhållande och snabbförhållande, och jämför med samma balansdag förra året. Gå sedan in i kassaflödesanalysen och noten om fordringar: växer fordringarna snabbare än intäkterna? Ser leverantörsskulderna normala ut mot kostnadsmassan? Avsluta med en bedömning i en mening: är likviditeten en buffert, en belastning eller arrangerad?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V11 — likviditetens två klassiska mått\",\"rader\":[[\"Nyckeltal\",\"Formel\",\"Tumregel\",\"Swan-song att kontrollera\"],[\"Aktuellt förhållande (K/I)\",\"Omsättningstillgångar / kortfristiga skulder\",\"Cirka 2 för industri; lägre för handel med snabb omsättning\",\"Lagrets kvalitet — ingår i nämnarens täckning\"],[\"Snabbförhållande (acid-test)\",\"(Kassa + placeringar + fordringar) / kortfristiga skulder\",\"Cirka 1\",\"Fordringarnas ålder och nedskrivningar\"],[\"Kassatäckning\",\"Kassa / kortfristiga skulder\",\"Bara diagnostiskt\",\"Om nära 1 saknas helt rörelsekapital\"],[\"Netto cirk. medel / omsättning\",\"(OmsT − KfS) / intäkter\",\"20–50 % beroende bransch\",\"Säsongsarrangemang kring balansdagen\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför utesluter snabbförhållandet (acid-test) lagret ur numeratorn?",
+          "alternativ": [
+            "Eftersom lager alltid är värdelöst i en konkurs",
+            "Eftersom lagret är den osäkraste omsättningsposten att realisera till bokfört värde",
+            "Eftersom lager redan finns i nämnaren och skulle dubbelräknas",
+            "Eftersom lagret tillhör anläggningstillgångarna per definition"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på hur snabbt och till vilket pris olika omsättningsposter kan förvandlas till pengar i en pressad situation."
+        },
+        {
+          "q": "Ett bolag visar aktuellt förhållande 2,1 den 31 december, men 1,3 vid halvåret — och det är verksamt inom säsongsberoende detaljhandel. Vad gör du enligt Graham?",
+          "alternativ": [
+            "Litar på årssiffran eftersom den är reviderad och halvåret inte är det",
+            "Jämför med samma balansdag året innan och kompletterar med mellanhelårsdata — fotograferingsdagen kan vara arrangerad",
+            "Slutar använda nyckeltalet för säsongsbolag överhuvudtaget",
+            "Räknar om allt enbart på årsbalansen eftersom säsongsvariationer slås ut automatiskt"
+          ],
+          "ratt": 1,
+          "tips": "Fotografi eller film? Välj det mätögonblick som inte kan arrangeras."
+        },
+        {
+          "q": "Hur ska V11 (likviditet) vägas in för ett tillväxtbolag med pågående kapitalförbrukning (V19)?",
+          "alternativ": [
+            "V11 är irrelevant för tillväxtbolag eftersom de alltid emitterar",
+            "Låg V11 i kombination med kapitalförbrukning pekar mot emission eller dyr upplåning — en direkt risk för befintliga ägare",
+            "V11 och V19 mäter samma sak och kan slås ihop till ett nyckeltal",
+            "Hög V11 garanterar automatiskt att kapitalförbrukningen upphör"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med ägandet när kassan siner men verksamheten kräver mer pengar än den producerar?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Bokfört värde, goodwill och net-net (V05)",
+      "intro": "Här når kursen Grahams mest citerade tankespår: vad är ett bokfört värde värt när goodwill och immateriella poster rensats bort — och vad betyder det när marknaden prissätter bolaget under dess netto cirkulerande medel minus alla skulder? Kapitlet bygger substansvärde, NCAV och net-net-tröskeln steg för steg, och vänder sedan frågan mot varumärkesålderns invändning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokfört värde per aktie är eget kapital dividerat med antal aktier. Ta ett fristående exempel: eget kapital 750, varav goodwill och immateriella 150, antal aktier 30 miljoner. Rått bokfört värde blir 750/30 = 25 kronor per aktie. Graham rensar sedan fram substansvärdet (tangible book value): stryk goodwill och övriga immateriella — 750 − 150 = 600 — vilket ger 20 kronor per aktie. Anledningen är historisk och blodig: under 1920-talet skrev bolag upp goodwill till fantasivärden (och kallade det ibland bara tillgångar), aktierna prissattes mot de uppblåsta balanserna, och i kraschen 1929–1932 skrevs samma poster ner till nästan noll medan ägarna förlorade allt. Grahams slutsats: goodwill är den post i balansräkningen som mest lättvindigt blir vad en optimist vill att den ska vara. Hans definition av försiktighet: när du inte kan verifiera, stryk."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s språk kopplas detta till V05, pris mot bokfört värde. Om aktien handlas till 14 kronor är P/B mot substansvärde 14/20 = 0,7 — marknaden betalar 70 öre per krona verifierbart ägande. Graham köpte gärna sådana fall, men hans verkligt berömda tröskel ligger djupare: netto cirkulerande tillgångsvärde (NCAV, net current asset value) är omsättningstillgångar minus totala skulder — inte bara de kortfristiga. I exempelbolaget: 600 − (250 + 130 + 220) = 0 — bolaget är för skuldsatt för att NCAV ska säga något, vilket är lärorikt i sig: måttet blir intressant först för bolag med stora omsättningstillgångar och måttliga skulder. Grahams klassiska fall ser ut så här: omsättningstillgångar 700, totala skulder 350 (varav kortfristiga 180), NCAV = 700 − 350 = 350, med 30 miljoner aktier ger 11,7 kronor per aktie. Net-net-tröskeln var två tredjedelar av NCAV: köp bara under cirka 7,8 kronor. Då betalar du ingenting alls för fabriker, varumärke eller framtida vinster — marknaden ger dig hela verksamheten gratis och rabatterar dessutom cirkulerande medel. Sådana tillfällen var vanliga i depressionen, sällsynta i dag — men beräkningen är fortfarande disciplinerande: hur många kronor av kursen betalar du för det du kan räkna?"
+        },
+        {
+          "type": "text",
+          "content": "Invändningen från varumärkesåldern måste besvaras ärligt, för den är riktig. Svenska och internationella regelverk bokför inte internt skapade varumärken (V14) eller egenutvecklade patent (V13) i balansräkningen — bara förvärvad goodwill (övervärden) tas upp, till det pris som betalades vid företagsförvärv. Ett bolag som byggt ett oslagbart varumärke under fyrtio år kan därför visa ett eget kapital på en bråkdel av det ekonomiska värdet, och V05 blir missledande lågt. Graham kände till resonemanget — han kallade sådant värde onoterat — och hans svar var inte förnekande utan metod: okvantifierbart värde får inte betalas med investerarpengar, det får komma som överraskning. Skillnaden mellan Grahams hållning och senare generationers (där bland annat Buffett, hans elev, kom att betala för kvalitet) är just var gränsen för det kvantifierbara går. I AKM1: V05 är ett fakta-mått på substans; V14 är ett moat-mått på osäker men verklig fördel — använd dem separat, aldrig som substitut för varandra."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk rutin för V05-arbetet i en svensk årsredovisning: hämta eget kapital från balansräkningen, läs noten om goodwill (där framgår både beloppet och hur det fördelar sig på förvärvade verksamheter) samt noten om övriga immateriella (utvecklingsprojekt, kundrelationer, varumärken från förvärv). Beräkna substansvärdet per aktie och P/B mot det. Kontrollera sedan goodwillens ålder: en goodwill från ett förvärv 2015 som aldrig skrivits ned, i en bransch som krympt, är en skugga på balansräkningen som en dag kan materialiseras som nedskrivning mot eget kapital — i svenska årsredovisningar sker nedskrivning av goodwill via resultaträkningen, inte som avsättning. Skillnaden mellan 25 och 20 kronor per aktie i exemplet är alltså inte akademisk: det är avståndet mellan en siffra och en säkerhetsmarginal."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ När kursen ligger under två tredjedelar av omsättningstillgångarna minus totala skulder betalar marknaden ingenting för verksamheten — net-net-logikens kärna. Goodwill får inte köpas för investerarpengar; det får komma som överraskning."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Beräkna för ditt bolag: (1) rått bokfört värde per aktie, (2) substansvärde per aktie efter att goodwill och immateriella strukits, (3) NCAV per aktie, (4) P/B (V05) mot substansvärdet. Läs sedan goodwill-noten: hur gammal är goodwillen, från vilka förvärv, och har den testats för nedskrivning någon gång? Skriv en mening: hur stor del av din kurs betalar du för det du kan räkna?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Substansberäkningen steg för steg — Grahams trappa\",\"rader\":[[\"Steg\",\"Formel\",\"Exempel\",\"Tolkning\"],[\"Bokfört värde/aktie\",\"Eget kapital / antal aktier\",\"750/30 = 25 kr\",\"Råsiffra, ej köpbar\"],[\"Substansvärde/aktie\",\"(Eget kapital − immateriella) / antal aktier\",\"600/30 = 20 kr\",\"Verifierbart ägande\"],[\"NCAV\",\"Omsättningstillgångar − totala skulder\",\"700 − 350 = 350 mkr\",\"Likvidationsnära värde\"],[\"NCAV/aktie\",\"NCAV / antal aktier\",\"350/30 = 11,7 kr\",\"Marknadens gratis-gräns\"],[\"Net-net-tröskel\",\"2/3 × NCAV/aktie\",\"7,8 kr\",\"Grahams köpzon\"],[\"P/B (V05)\",\"Kurs / substansvärde per aktie\",\"14/20 = 0,7\",\"Under 1 = rabatt mot verifierbart\"],[\"P/B rå\",\"Kurs / bokfört värde per aktie\",\"14/25 = 0,56\",\"Missledande om goodwill är stor\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför stryker Graham goodwill och immateriella poster när han beräknar substansvärde?",
+          "alternativ": [
+            "För att goodwill alltid är noll efter tre års avskrivning",
+            "För att goodwill lätt blir vad en optimist vill att den ska vara — hans definition av försiktighet blev att stryka det som inte kan verifieras",
+            "För att svenska regelverk förbjuder goodwill i balansräkningar",
+            "För att goodwill tillhör kortfristiga skulder och inte tillgångar"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på 1920-talets uppskrivna goodwill och vad som hände med den — och dess ägare — efter 1929."
+        },
+        {
+          "q": "Vad innebär Grahams net-net-tröskel på två tredjedelar av NCAV?",
+          "alternativ": [
+            "Att man betalar två tredjedelar av bolagets årliga vinst",
+            "Att man betalar två tredjedelar av omsättningstillgångarna minus totala skulder — och alltså ingenting för själva verksamheten",
+            "Att man betalar två tredjedelar av börsvärdet på goodwill",
+            "Att man kräver att utdelningen täcks två tredjedelar av resultatet"
+          ],
+          "ratt": 1,
+          "tips": "Räkna baklänges: om allt annat är gratis — vad återstår av kursen att betala för?"
+        },
+        {
+          "q": "Ett bolag har byggt ett starkt varumärke internt under fyrtio år. Varför kan P/B (V05) missleda lågt här, och vad var Grahams hållning?",
+          "alternativ": [
+            "Regelverken bokför inte internt skapade varumärken — Graham medgav att sådant värde finns men vägrade betala för det med investerarpengar",
+            "Varumärken skrivs alltid upp årligen, vilket gör P/B vilseledande högt",
+            "Graham ansåg att varumärke alltid ska värderas till goodwillpostens belopp",
+            "P/B fungerar bara för bolag som går med förluster"
+          ],
+          "ratt": 0,
+          "tips": "Skilj på det som kan verifieras i balansräkningen och det som är verkligt men okvantifierbart — vilken av dem fick pengar från Graham?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Resultaträkningen — från intäkt till vinst rad för rad",
+      "intro": "Balansräkningen visade vad bolaget är; resultaträkningen visar vad bolaget gör. Graham går igenom den rad för rad, från nettoomsättning ner till årets resultat, och kursen följer honom med ett genomgående räkneexempel som levererar bruttomarginalen (V07), rörelsemarginalen och EBITDA-marginalen (V08) på köpet. Målet är att varje rad i en svensk resultaträkning ska få en röst som talar om konkurrenskraft.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Svenska resultaträkningens stomme (K3 för mindre bolag, IFRS för noterade och större) är: nettoomsättning, minskat med kostnad för sålda varor och tjänster (inklusive lagervärdesförändringar), ger bruttoresultat. Bruttoresultatet minskat med försäljningskostnader, administrationskostnader och övriga rörelsekostnader — inklusive avskrivningar — ger rörelseresultatet. Därifrån går vägen via finansiella intäkter och kostnader till resultat före skatt, och efter skatt står årets resultat. Grahams varning redan på första raden: nettoomsättning är inte alltid bara försäljning — noterna ska visa om intäkterna netto-/bruttoredovisas (handelsbolag som redovisar provision istället för varuvärde), hur mycket som är engångsförsäljningar och om intäkterna innehåller valutaeffekter eller förändrade lagervärden. En intäktsrad är en sammansatt produkt, inte ett faktum."
+        },
+        {
+          "type": "text",
+          "content": "Genomgående exempel i klartext. Nettoomsättning: 1 000. Kostnad sålda varor: 620. Bruttoresultat: 380 — bruttomarginalen (V07) blir 380/1 000 = 38 procent. Försäljnings- och adminkostnader: 170. Avskrivningar: 60. Övrigt: 0. Rörelseresultat: 150 — rörelsemarginal 15 procent. Finansiella kostnader netto: 25. Resultat före skatt: 125. Skatt (20 procent): 25. Årets resultat: 100. Nu till V08: EBITDA-marginalen är rörelseresultatet plus avskrivningar, dividerat med omsättningen — 150 + 60 = 210, dividerat med 1 000 ger 21 procent. Notera att EBITDA inte är en rad i den svenska resultaträkningen utan en konstruktion — och notera vad konstruktionen gör: den flyttar avskrivningarna, som är en verklig kostnad för att maskinerna slits, utanför bilden. Graham, som skrev innan EBITDA fanns på ord, hade varit dess skarpaste kritiker — hans hela kapitel om avskrivningar (kapitel 10 här) handlar om varför de är en verklig, återkommande kostnad."
+        },
+        {
+          "type": "text",
+          "content": "Bruttomarginalen (V07) är för Graham konkurrenskraftens termometer. En stabil marginal runt 38 procent genom en femårsperiod med olika valutakurser, råvarupriser och konjunkturer tyder på prissättningsmakt — bolaget kan föra över kostnadsökningar på kunderna, vilket är den mest pålitliga formen av vallgrav. En klingande marginal, från 38 till 34 till 31, är en tidig signal om prispress (nya konkurrenter, substitutprodukter) eller om att kostnadsbasen stiger snabbare än priserna. Den svaga punkten med en engångsmätning är att marginaler är cykliska — i konjunkturomgångar sjunker alla marginaler, och det säger inget om strukturen. Därför: mät V07 som en femårsserie (kapitel 12), och läs den gärna mot ett par konkurrenters serie i samma bransch. V08 följer samma logik men högre upp i resultaträkningen, där administrationskostnadernas disciplin syns — en bolagsledning som låter admin växa snabbare än omsättningen avslöjar sig i gapet mellan V07 och V08."
+        },
+        {
+          "type": "text",
+          "content": "Två praktiska detaljer från svenska årsredovisningar som Graham omedelbart skulle ha gjort till rutin. För det första: resultaträkningens botten innehåller ofta en rad som heter resultat från skillnader mellan bokfört och verkligt värde, värdeändringar på tillgångar eller liknande — poster som inte är sålda och därför inte är intjänade pengar. De kan vara legitima (onoterade placeringars värde, valutaskillnader) men ska hållas isär från lönsamheten i kärnverksamheten. För det andra: noter om personalkostnader, medelantalet anställda och styrelse- och vd-kostnader låter dig räkna lönsamhet per anställd och kostnadskultur — Graham rekommenderade att hålla driftskostnaderna mot omsättningen konstanta över tiden; stigande andel driftskostnader är en tyst men pålitlig erosionsindikator. Resultaträkningen är en maskin av kostnadsdisciplin — läs den som en teknisk kontroll, inte som en vinstreklam."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Resultaträkningen är en konkurrensrapport förklädd till bokföring: bruttomarginalen mäter prissättningsmakt, gapet mellan brutto- och rörelsemarginal mäter kostnadsdisciplin, och avskrivningarna är alltid en verklig kostnad — hur gärna EBITDA (V08) än vill glömma dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Skriv av din årsredovisnings resultaträkning i klartext (som exemplet ovan) och beräkna V07 och V08 själv. Notera vilka rader som inte är löpande försäljning (värdeändringar, engångsposter). Jämför därefter V07 mot två konkurrenter i samma bransch — vem har prissättningsmakten, och vad händer med marginalerna genom fem år? Femårsdata finns i bolagets faktabok eller årsredovisningarnas jämförelseuppgifter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Resultaträkningen rad för rad — exempel i klartext\",\"rader\":[[\"Rad\",\"Exempel (mkr)\",\"AKM1-koppling\",\"Fråga att ställa\"],[\"Nettoomsättning\",\"1 000\",\"V01, V12\",\"Vad är engångs- vad är löpande? Valutaeffekt?\"],[\"Kostnad sålda varor\",\"620\",\"V07-indirekt\",\"Råvarupris, lagermetod, kapitalisering?\"],[\"Bruttoresultat\",\"380 → V07 = 38 %\",\"V07\",\"Stabil genom cykeln = prissättningsmakt\"],[\"Förs.- och adminkostnader\",\"170\",\"Gap V07→V08\",\"Växer de långsammare än omsättningen?\"],[\"Avskrivningar\",\"60\",\"V06-varning\",\"Verklig kostnad — matchar underhållet?\"],[\"Rörelseresultat\",\"150 → 15 %\",\"V08 nära\",\"Rörelsemarginalens femårstrend\"],[\"Finansiellt netto\",\"−25\",\"V10\",\"Räntetäckning: 150/25 = 6x\"],[\"Skatt\",\"25\",\"20 %\",\"Varför under svensk bolagsskattesats 20,6 %?\"],[\"Årets resultat\",\"100\",\"V09-grund\",\"Normaliserat: utan engångsposter?\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallar kursen bruttomarginalen (V07) för konkurrenskraftens termometer?",
+          "alternativ": [
+            "Eftersom den visar hur stor del av intäkterna som går till staten",
+            "Eftersom en stabil bruttomarginal genom konjunkturcykler tyder på prissättningsmakt — förmågan att föra över kostnadsökningar på kunderna",
+            "Eftersom den mäter hur många anställda bolaget har per omsatt miljon",
+            "Eftersom den avgör hur mycket bolaget kan låna"
+          ],
+          "ratt": 1,
+          "tips": "Vad måste stämma i omvärlden för att marginalen ska få förbli stabil när råvaror och valutor rör sig?"
+        },
+        {
+          "q": "Vad är det viktigaste kritiska att minnas om EBITDA-marginalen (V08) ur Grahams perspektiv?",
+          "alternativ": [
+            "Att EBITDA är en rad i den svenska resultaträkningen och alltid korrekt",
+            "Att konstruktionen flyttar avskrivningarna utanför bilden — men maskinerna slits oavsett, så avskrivning är en verklig kostnad",
+            "Att EBITDA per aktie alltid överstiger vinsten per aktie",
+            "Att EBITDA tar hänsyn till alla finansiella kostnader och skatter"
+          ],
+          "ratt": 1,
+          "tips": "Räkna var avskrivningarna finns i EBITDA-beräkningen — och fråga sedan vad som händer med maskinparken under tiden."
+        },
+        {
+          "q": "En intäktsrad i en svensk resultaträkning är enligt kursen 'en sammansatt produkt, inte ett faktum'. Vad ska du kontrollera?",
+          "alternativ": [
+            "Att omsättningen är exakt lika med kassaflödet",
+            "Netto-/bruttoredovisning, engångsförsäljningar, valutaeffekter och lagervärdesförändringar i noterna",
+            "Att intäkterna aldrig innehåller tjänster, bara varor",
+            "Att revisionsberättelsen är undertecknad"
+          ],
+          "ratt": 1,
+          "tips": "Tre olika krafter kan få samma intäktsrad att se olika stor ut — vilka mekanismer i noterna förklarar sammansättningen?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Engångsposter och återkommande förtjänst — vinstens kvalitet",
+      "intro": "Grahams centrala begrepp i resultatanalysen är earning power — återkommande förtjänstkraft, det resultat ett bolag rimligen kan förväntas leverera år från år. Allt annat — fastighetsförsäljningar, skatteåterbäringar, uppskov, reavinstflimmer — är brus som ska rensas bort innan någon värdering. Kapitlet bygger en normaliseringsmetod och översätter den till svenska noters jämförelsestörande poster.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Exempel: bolaget redovisar årets resultat till 120. I noterna och förvaltningsberättelsen finns: vinst på försäljning av en fastighet 40, engångsrestaurering av skatt 10, samt en kostnad för en avvecklad verksamhet −15. Grahams fråga är inte om dessa är sant — det är de — utan om de är återkommande. Fastighetsförsäljningen är engång: bolaget äger inte fastigheten längre. Skatteåterbäringen är retroaktiv och upprepas inte. Avvecklingskostnaden däremot är åt fel håll engång: den kommer inte igen, men den hörde hemma i verksamheten medan den pågick. Normaliserad återkommande förtjänst: 120 − 40 − 10 + 15 = 85. Skillnaden mellan 120 och 85 är skillnaden mellan att köpa en story och att köpa en förtjänst — vid P/E 15 motsvarar den 525 kronor per aktie i värderingsskillnad (multiplen 15 × skillnaden 35), vilket är ett pris på ovarsamhet."
+        },
+        {
+          "type": "text",
+          "content": "Engångsposter kommer i två riktningar och båda är farliga. Uppåtriktade engångsvinster gör att bolagets lönsamhet översäljs — klassikern är bolag som städar upp balansräkningen med återkommande fastighetsförsäljningar och kallar resultatet rörelsevinst. Nedåtriktade engångskostnader är subtilare: en omstruktureringskostnad som återkommer varje eller vartannat år är per definition inte engång — Graham skulle ha sagt att den tillhör den återkommande förtjänsten, och att ledningen som varje år hittar en ny särskild post för dåliga nygörelser egentligen visar bolagets verkliga kostnadsnivå. Senare decenniers redovisningsforskning har gett fenomenet namn (big bath, klassificeringsglidning), men mekanismen är Grahams: rubriken på posten är mindre viktig än dess återkommande karaktär. Den svenska årsredovisningens motsvarigheter heter jämförelsestörande poster (förklaras ofta i förvaltningsberättelsen) och finner man dessutom som utgiftsposter med förklaringar i noterna — plocka fram dem."
+        },
+        {
+          "type": "text",
+          "content": "Med rensad förtjänst kommer stabilitetsfrågan — V12 i AKM1. Räkna femårsserien för normaliserat resultat och gradera stabiliteten: med vilken spridning rör sig förtjänsten? Ett cykliskt industritolag kan visa 100, 140, 20, −30, 80 — femårsmedeltal 62, men spridningen är fientlig mot varje värdemätning som bygger på ett enskilt år. Grahams lösning är att normalisera över cykeln: ta medelvärdet (eller medianen) av fem till tio år och värdera mot det, inte mot toppåret. Komplettera med V03 (intäktsdiversifiering): en kund som utgör 40 procent av omsättningen (svenska noter uppges ofta segment och stora kunder) ger en V12-profil som ser lugn ut tills kunden försvinner. Återkommande förtjänst handlar inte bara om poster utan om koncentrationer: vad återkommer, från vem, och hur många är de?"
+        },
+        {
+          "type": "text",
+          "content": "Slutligen den viktigaste varningen: normalisering är inte prognos. Graham poängterade att den återkommande förtjänsten är ett utgångsläge — historiens vittnesmål om vad verksamheten kan producera under normala förhållanden — inte en försäkran om att nästa år blir normalt. När du i kapitel 13 sätter värdering mot normaliserad förtjänst och kräver marginal of safety, är det just gapet mellan historiens fakta och framtidens osäkerhet som marginalen betalar för. Därför är arbetet i detta kapitel kursens mest värdeskapande minuti: femton minuter med fem års resultaträkningar och en penna flyttar felaktiga köpbeslut oftare än vilken makroprognos som helst."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En engångspost känns igen inte på sin rubrik utan på sin återkomst: det som händer varje år är återkommande förtjänst, det som händer en gång är brus — och värdera alltid mot det återkommande, normaliserat över en hel konjunkturcykel."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Plocka fram tre års resultat för ditt bolag. Lista alla poster som inte är löpande verksamhet: fastighetsvinster, skatteeffekter, omstruktureringar, värdeändringar. Beräkna normaliserat resultat per år. Hur stor är skillnaden mot redovisat? Om bolaget värderas till P/E 15 mot redovisad vinst — hur mycket av börsvärdet består av engångsposter?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Normaliseringen — från redovisad till återkommande förtjänst\",\"rader\":[[\"Post i exemplet\",\"Belopp (mkr)\",\"Återkommande?\",\"Justering\"],[\"Redovisat årsresultat\",\"120\",\"—\",\"Utgång\"],[\"Vinst fastighetsförsäljning\",\"+40\",\"Nej — tillgången borta\",\"−40\"],[\"Skatteåterbäring retroaktiv\",\"+10\",\"Nej — sker en gång\",\"−10\"],[\"Kostnad avvecklad verksamhet\",\"−15\",\"Nej — men verklig för sin tid\",\"+15\"],[\"Normaliserad förtjänst\",\"85\",\"Ja\",\"Värdera mot detta\"],[\"Femårsmedian (cykelbolag)\",\"t.ex. 62\",\"Ja, över cykeln\",\"Bästa grund för V12\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den avgörande frågan som avgör om en post tillhör återkommande förtjänsten?",
+          "alternativ": [
+            "Om posten är större än fem procent av omsättningen",
+            "Om posten återkommer — återkommande kostnader är återkommande förtjänst, engångshändelser är brus oavsett rubrik",
+            "Om posten är positiv eller negativ",
+            "Om revisorn har kommenterat posten i revisionsberättelsen"
+          ],
+          "ratt": 1,
+          "tips": "En omstruktureringskostnad som upprepas vartannat år — vilket villkor uppfyller den?"
+        },
+        {
+          "q": "Ett cykliskt bolag visar femårsresultat 100, 140, 20, −30, 80. Hur hanterar Graham denna V12-utmaning vid värdering?",
+          "alternativ": [
+            "Värdera mot det senaste årets resultat som det mest aktuella",
+            "Värdera mot toppåret eftersom det visar potentialen",
+            "Normalisera över cykeln — medelvärde eller median över fem till tio år — och kräv marginal mot det",
+            "Värdera mot bottenåret för maximal säkerhet"
+          ],
+          "ratt": 2,
+          "tips": "Vilket enskilt år i serien är representativt? Om inget — vad återstår att värdera mot?"
+        },
+        {
+          "q": "Hur hänger normaliserad förtjänst och marginal of safety ihop i kursens-logik?",
+          "alternativ": [
+            "De är oberoende — marginalen bestäms av grafanalys",
+            "Marginalen betalar för gapet mellan historiens normaliserade fakta och framtidens osäkerhet",
+            "Normaliseringen ersätter behovet av marginal eftersom osäkerheten eliminerats",
+            "Marginalen är den procentuella andelen engångsposter i resultatet"
+          ],
+          "ratt": 1,
+          "tips": "Om normaliseringen beskriver det normala — vad betalar då marginalen för?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Vinst per aktie och utspädning — ägandets aritmetik",
+      "intro": "Bolagets vinst är en sak; din andel av den är en annan. Graham ägnar återkommande uppmärksamhet åt skillnaden — åt vad som händer per aktie när antalet aktier förändras, när optioner löses in och när konvertibla lån gör sig påminda. Kapitlet bygger EPS-beräkningen, utspädningsaritmetiken och kopplar till V19: kapitalförbrukning och emissionsrisk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vinst per aktie är årets resultat dividerat med antal aktier — i Sverige vägt medelantal under året, som noteras i noten om resultat per aktie. Exempel: årets resultat 100, vägt antal aktier 50 miljoner, ger EPS 2,00. Redan här finns en fallgrop Graham känner till: samma 100 i resultat kan ge EPS 2,00 eller 1,82 beroende på när under året en emission skedde — vägt antal är en ärligare men också en mjukare storhet än periodens slutliga antal. Rutin: läs alltid noten, notera både vägt genomsnitt och fullt utspädda antal, och se till att jämföra samma definitioner mellan bolag. En EPS-siffra utan fotnot är en annons."
+        },
+        {
+          "type": "text",
+          "content": "Utspädning är ägandets tysta skatt. Tre klassiska källor i svenska årsredovisningar: personaloptioner (redovisas i noten om aktiebaserade ersättningar), teckningsoptioner (omvandlingsrätter vid nyemissioner) och konvertibla lån (obligationer som kan bytas mot aktier). Räkneexempel: bolaget emitterar 5 miljoner nya aktier (10 procent fler) och resultatet oförändrat 100 — EPS faller från 2,00 till 100/55 = 1,82. För konvertibler gäller den fullt utspädda beräkningen: om lånet konverteras försvinner dess räntekostnad (vilket ökar resultatet) samtidigt som aktieantalet ökar (vilket sprider resultatet på fler) — noten visar båda stegen, och den ärliga jämförelsen mot andra bolag görs med fullt utspädd EPS. Grahams bottenregel: köparen av aktien betalar för hela det framtida aktieantalet, inte för gårdagens."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1 är detta V19:s territorium: kapitalförbrukning och emissionsrisk. Graham såg under sin samtid hur investmentbolag och kraftkoncerner växte genom att ständigt ge ut nya aktier och optioner — befintliga ägare urholkades medan bolaget kunde berätta en tillväxthistoria i brutto. Mönstret lever: ett bolag vars försäljning (V01) växer 10 procent per år men vars aktieantal växer 15 procent har en negativ tillväxt per aktie — och den som bara tittar på intäktsraden ser det aldrig. Rutinen är Grahams egna: räkna upp antal aktier över fem år. Om aktieantalet årligen ökar betydligt (över några procent) ska det finnas en motprestation i siffrorna — vinsttillväxt per aktie som är högre än utspädningen. Saknas det är ägarna finansiärer, inte ägare. Konkret exempel i klartext: fem år sedan fanns 40 miljoner aktier, idag 55; EPS då 1,80, idag 2,00. Bolagets totala resultat växte 53 procent (72 → 110), men din andel växte bara 11 procent — utspädningen åt resten."
+        },
+        {
+          "type": "text",
+          "content": "Utspädningssignalen blir som starkast i kombination: ett bolag med återkommande emissioner och samtidigt klingande kassa (kapitel 11) och ingen utdelningstäckning (kapitel 9) driver på V19-skalans röda ände. Omvänt är ett stabilt eller minskande aktieantal i kombination med återköp (V20, kapitel 9) och täckta utdelningar ägandets motsatta tecken. Ett litet tekniskt minne på vägen: svenska bolag redovisor antal aktier vid årets slut i noten om eget kapital, och många noterar även utspädningsberäkningen enligt IAS 33. Graham behövde ingen standard — han behövde fem års balansräkningar och fem minuter. Metoden har inte föråldrats: anteckna aktieantalet för varje år i din femårsgrid (kapitel 12) som en obligatorisk kolumn."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Din avkastning är inte bolagets vinst utan din andel av den: ett bolag kan växa i brutto med tio procent om året och ändå lämna ägarna fattigare per aktie — aktieantalets trend är den ärligaste tillväxtrapporten."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Hitta antalet aktier vid årets slut för de fem senaste åren (noten om eget kapital). Räkna ut den årliga förändringen i procent. Räkna sedan EPS-tillväxten per år. Jämför: växer resultatet per aktie snabbare än aktieantalet? Om inte — vart tar skillnaden vägen, och vad får befintliga ägare för det?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ägandets aritmetik — EPS och utspädning\",\"rader\":[[\"Mått\",\"Formel\",\"Exempel\",\"Vad det avslöjar\"],[\"EPS\",\"Resultat / vägt antal aktier\",\"100/50 = 2,00\",\"Din andel av årets förtjänst\"],[\"Fullt utspädd EPS\",\"Justerat resultat / fullt antal\",\"Se not IAS 33\",\"Det ärliga jämförelsetalet\"],[\"Utspädning vid emission\",\"Resultat / nytt antal\",\"100/55 = 1,82\",\"Fall 9 % vid 10 % emission\"],[\"Tillväxt per aktie\",\"EPS-tillväxt − aktietillväxt\",\"11 % − 37 % (5 år)\",\"Negativt = ägarna betalar tillväxten\"],[\"Aktieantals-trend\",\"Antal år för år, 5 år\",\"40 → 55 mkr\",\"Obligatorisk kolumn i femårsgriden\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför ska man jämföra bolag på fullt utspädd EPS snarare än redovisad EPS?",
+          "alternativ": [
+            "Eftersom redovisad EPS alltid är felberäknad",
+            "Eftersom köparen betalar för hela det framtida aktieantalet — optioner och konvertibler kommer att bli aktier",
+            "Eftersom fullt utspädd EPS alltid är lägre och därmed säkrare",
+            "Eftersom vägt antal aktier inte får användas enligt IFRS"
+          ],
+          "ratt": 1,
+          "tips": "Vad äger du egentligen: gårdagens aktieantal eller alla anspråk som kan förvandlas till aktier?"
+        },
+        {
+          "q": "Försäljningen växer 10 procent per år, aktieantalet 15 procent. Vad är rätt tolkning?",
+          "alternativ": [
+            "Ett utmärckt bolag — bruttotillväxten är imponerande",
+            "En negativ tillväxt per aktie: ägarna urholkas trots att bolaget växer (V19-mönster)",
+            "Ett neutral utveckling eftersom siffrorna tar ut varandra",
+            "Ett tecken på att bolaget snart kommer betala högre utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Dela resultatet med antalet aktier för två på varandra följande år och se åt vilket håll andelen rör sig."
+        },
+        {
+          "q": "Vad gör en konvertibel obligation med beräkningen av fullt utspädd EPS?",
+          "alternativ": [
+            "Ingenting — konvertibler är alltid skulder",
+            "Två saker samtidigt: räntekostnaden försvinner (resultatet ökar) och aktieantalet ökar (resultatet sprids på fler)",
+            "Den halverar alltid det redovisade resultatet",
+            "Den ökar EPS eftersom skulden försvinner från balansräkningen"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på både täljaren och nämnaren i bråket — konverteringen rör båda."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Utdelning, täckning och balanserade vinstmedel (V20)",
+      "intro": "Vinsten har två vägar ut ur bolaget: utdelning och återköp. Graham analyserar den första med täckningsberäkningar och med earned surplus-reservoarens logik; den andra fick han knappt uppleva, men hans principer täcker den fullständigt. Kapitlet bygger utdelningstäckning, utdelningsgrad och den moderna V20-analysen — och slutar med den viktigaste kolumnen av alla: antalet aktier över tid.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utdelnings-täckning är normaliserad vinst per aktie dividerat med utdelning per aktie. Exempel: normaliserad EPS 2,00 (kapitel 7), utdelning 1,10 — täckningen är 1,8 gånger, utdelningsgraden (utdelning dividerat med vinst) är 55 procent. Graham ställer två krav. För det första ska täckningen vara bekväm i förhållande till resultatets stabilitet (V12): ett stabilt bolag (el, vatten, livsmedel) kan betala ut 70–80 procent av vinsten utan risk; ett cykliskt bolag som betalar 80 procent i toppår tvingas skära utdelningen i bottenåret — och marknaden straffar utdelningskärningar osymmetriskt. För det andra ska utdelningen betalas ur intjänade medel: noten om ändringar i eget kapital visar om utdelningen tas ur årets resultat, ur balanserade vinstmedel, eller — farligast — ur lånat kapital. En utdelning som inte täcks av resultat är ingen utdelning; det är en partiell likvidation betald med lånat kapital."
+        },
+        {
+          "type": "text",
+          "content": "Balanserade vinstmedel (earned surplus) fungerar som utdelningspolitikkens reservoar. Ett bolag med stora balanserade vinstmedel kan hålla utdelningen jämn genom en tillfällig svacka — och Graham värderade den jämnheten högt, eftersom den bevisar att ledningen tänker på ägarna som mottagare av kontanter, inte bara som källa till kapital. Men reservoaren kan också missbrukas: en utdelning som i flera år överstiger den normaliserade vinsten tömmer reservoaren och avslöjar en ledning som köper aktieägars förtroende med bolagets substans. Räkna därför utdelningens andel av den ackumulerade balanserade vinsten under en femårsperiod: ligger den nära 100 procent av normaliserade vinster är politiken sund; ligger den över töms reservoaren och substansen krymper — V05:s substansvärde per aktie faller med varje obetald utdelning."
+        },
+        {
+          "type": "text",
+          "content": "V20 — återköp — är i princip utdelning i aktieform: bolaget köper tillbaka sina egna aktier istället för att betala ut kontanter, andelen av framtida vinster ökar per kvarvarande aktie, EPS stiger mekaniskt. Grahams två villkor, som inte föråldrats: återköp skapar bara värde om aktien köps under inneboende värde (att köpa tillbaka en övervärderad aktie förstör värde för kvarvarande ägare — exakt samma logik som utspädning i kapitel 8, men spegelvänd), och återköpet måste vara äkta — minskar antalet aktier på riktigt. Här finns en klassisk modern illusion: ett bolag köper tillbaka aktier för 5 miljarder samtidigt som personaloptioner löser in nya aktier för 4 miljarder — nettoförändringen i aktieantal blir nära noll, och återköpet är i praktiken en omfördelning från ägare till anställda. Grahams kontroll är densamma som i kapitel 8: räkna antalet aktier år från år. Aktieantalets trend är V20:s enda ärliga redovisning."
+        },
+        {
+          "type": "text",
+          "content": "Sammanhang till värdering: Grahams totalavkastningsperspektiv är att aktiens långsiktiga avkastning kommer från bolagets resultat — i form av utdelningar och tillväxt i återstående förtjänst per aktie. En vinst per aktie på 2,00 med kurs 30 ger en vinstavkastning (inversen av P/E) på 6,7 procent; betalas 1,10 ut blir direktavkastningen 3,7 procent och återstående 0,90 per aktie (45 procent av vinsten) behålls för tillväxt — Graham kallar det återinvestering och frågar: är den återinvesteringen värd något, det vill säga kan bolaget åstadkomma avkastning på kapital (V09 i kapitel 12) som överstiger vad du kan få själv? Förlorar bolaget på att behålla vinsten — avkastning på eget kapital understiger avkastningen du kan få i en statlig obligation — är det bättre att få den utbetald. Det är utdelningspolitikens djupaste fråga, och den ställs inte i förvaltningsberättelsen utan i nyckeltalen."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En utdelning som inte täcks av normaliserad vinst är inte en utdelning — det är en partiell likvidation. Och ett återköp är bara äkta om aktieantalet faktiskt minskar: räkna aktierna, inte pressreleaserna."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Beräkna för ditt bolag: normaliserad EPS (kapitel 7-metoden), utdelning per aktie, täckning och utdelningsgrad. Läs noten om ändringar i eget kapital: betalas utdelningen ur årets vinst eller ur balanserade vinstmedel? Kontrollera sedan aktieantalet fem år tillbaka — har återköp minskat det på riktigt? Avsluta med Grahams fråga: är den återhållna vinsten värd mer i bolaget än i din ficka?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Utdelningens och återköpets täckning (V20)\",\"rader\":[[\"Mått\",\"Formel\",\"Exempel\",\"Riktmärke\"],[\"Utdelningstäckning\",\"Normaliserad EPS / utdelning\",\"2,00/1,10 = 1,8\",\"Bekväm i förhållande till V12-stabilitet\"],[\"Utdelningsgrad\",\"Utdelning / normaliserad EPS\",\"55 %\",\"Stabilt bolag: 60–80 %; cykliskt: lägre\"],[\"Utdelning ur\",\"Not: ändring eget kapital\",\"Årets resultat\",\"Inte ur lånat kapital\"],[\"Balanserade vinstmedel, trend\",\"Not, fem år\",\"Växande\",\"Buffert — ej långsiktig utdelningskälla\"],[\"Äkta återköp\",\"Förändring aktieantal, 5 år\",\"40 → 38 mkr\",\"Netto minskande = äkta; flat = optioner äter\"],[\"Återinvesteringens värde\",\"Kvarhållen vinst × V09\",\"0,90 × ROE\",\"Värd det bara om avkastningen överstiger alternativkostnaden\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den djupaste invändningen mot en utdelning som inte täcks av normaliserad vinst?",
+          "alternativ": [
+            "Att den är olaglig enligt aktiebolagslagen",
+            "Att den i praktiken är en partiell likvidation — betald ur substans eller lån, inte ur förtjänst",
+            "Att den alltid leder till lägre P/E-multipel",
+            "Att den minskar antalet aktier och därmed utspäddar ägarna"
+          ],
+          "ratt": 1,
+          "tips": "Följ pengarna: från vilken källa betalas utdelningen om inte årets förtjänst räcker?"
+        },
+        {
+          "q": "Bolaget meddelar återköp för 5 mdr samtidigt som optioner löser in aktier för 4 mdr. Vad är den korrekta Grahamska kontrollen?",
+          "alternativ": [
+            "Lita på återköpsmeddelandet — optioner är en personalfråga",
+            "Räkna nettoförändringen i aktieantal över flera år — bara en faktisk minskning är ett äkta återköp (V20)",
+            "Räkna om EPS manuellt utan hänsyn till optioner",
+            "Jämför återköpet med konkurrenters återköp i absoluta tal"
+          ],
+          "ratt": 1,
+          "tips": "Vad säger pressreleasen, och vad säger balansräkningen? Vilken av dem kan inte arrangeras?"
+        },
+        {
+          "q": "När skapar ett återköp värde enligt Graham-traditionens logik?",
+          "alternativ": [
+            "Alltid — lägre antal aktier höjer EPS mekaniskt",
+            "När aktien köps tillbaka under inneboende värde; köps den över förstörs värde för kvarvarande ägare",
+            "Endast när bolaget samtidigt höjer utdelningen",
+            "Endast när återköpet finansieras med nyemission"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad bolaget får för pengarna: mycket förtjänst per krona, eller lite?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Avskrivningar, lager och kapitalisering — principernas spelrum",
+      "intro": "Två bolag i samma bransch kan redovisa olika vinster utan att ett enda faktiskt förhållande skiljer dem — bara redovisningsprinciperna. Grahams villkor på rapportkvalitet är två: principerna ska vara konservativa och de ska tillämpas konsekvent år från år. Kapitlet går igenom de tre största spelrummen: avskrivningspolicy, lagermetoder och kapitalisering.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Avskrivningar är maskinernas sätt att säga att de slits. I svenska årsredovisningar anges principerna i noten om redovisningsprinciper: linjär avskrivning (jämn årlig kostnad över nyttjandeperioden), degressiv (högre i början), komponentavskrivning (delade livslängder på delar av anläggningen) samt antagna restvärden och nyttjandeperioder. Graham skrev med 1920-talets kraftkoncerner i minnet — den tidens största redovisningsskandal var bolag som avskrev för lite, rapporterade för hög vinst och betalade ut pengar som egentligen behövdes för att byta ut utrustningen. När verkligheten kom i fatt återstod en gammal maskinpark och en skuld. Kontrollen är fortfarande densamma: jämför avskrivningskostnaden med underhålls- och servicekostnaden i noterna (i Sverige ofta hittad i noten om rörelsekostnader eller anläggningstillgångar). Under lång tid avskrivningar som understiger underhållet betyder att resultatet är köpt på bekostnad av framtiden — eller att anläggningen inte underhålls alls, vilket är värre."
+        },
+        {
+          "type": "text",
+          "content": "Lagermetoden kan förändra en bruttomarginal (V07) utan att något affärsmässigt händer. FIFO (först in, först ut) tillåter att gamla, billiga inköp matchas mot dagens försäljningspriser — vid stigande priser ger FIFO högre vinst och högre lager; LIFO (sist in, först ut) matchar dyraste inköp mot försäljningen — lägre vinst, lägre lager. Detta är ingen historisk fotnot: boken skrevs 1937, precis när LIFO blivit tillåtet i amerikansk skatterätt och Graham diskuterade metoden som en färskhet. I dag är LIFO förbjudet enligt IFRS och svenska K-regelverk (men används av en del amerikanska bolag), och svenska lager värderas enligt lägsta värdets princip — inköpspris eller nettoförsäljningsvärde, det lägre. Konsekvensen för jämförelser (kapitel 12): en amerikansk LIFO-konkurrent och en svensk FIFO-konkurrent kan visa bruttomarginaler som inte är jämförbara utan justering. Inom ett och samma bolag är det värre: byten av lagermetod (eller av avskrivningsperioder, eller av redovisningsprinciper i övrigt) bryter Grahams konsekvenskrav — noten om förändrade redovisningsprinciper avslöjar, och bytet ska åtminstone föranleda frågan vad som motiverar det just nu."
+        },
+        {
+          "type": "text",
+          "content": "Kapitalisering är konsten att flytta en kostnad från resultaträkningen till balansräkningen. Kostnaden blir en tillgång som avskrivs över flera år — dagens vinst stiger, framtida avskrivningar skapas. Klassiska svenska exempel: aktiverade utvecklingskostnader (i Sverige mer generöst tillåtet än i många länder — noten om immateriella tillgångar visar tillförda belopp, avskrivningar och restvärde), aktiverad ränta vid egenproduktion av anläggningar, aktiverade förvärvskostnader och prospekteringskostnader i gruv- och oljebolag (Grahams samtids store syndare: kapitaliserade borrhål som skulle visa sig vara torra). Kontrollfrågan att lägga på minnet: hur hade marginalerna sett ut om allt som kapitaliserats kostnadsförts? Om skillnaden är stor är bolagets redovisade lönsamhet delvis en redovisningsprodukt, och den verkliga kapitalförbrukningen (V19) är högre än resultatet antyder. En snabb hälsokontroll: avskrivningar och aktiveringar i förhållande till rörelseresultatet, fem år i rad — växande avskrivningar utan växande intäkter är en ränta som småningom betalas."
+        },
+        {
+          "type": "text",
+          "content": "Grahams två villkor på rapportkvalitet — konservatism och konsekvens — kan operationaliseras som en checklista på fem frågor: (1) Vilka avskrivningsprinciper gäller, och är de striktare eller mildare än branschens? (2) Värderas lagret enligt lägsta värdets princip, och har metoden ändrats? (3) Vad kapitaliseras — utveckling, ränta, prospektering — och hur stora är posterna i förhållande till resultatet? (4) Har redovisningsprinciperna ändrats under de senaste fem åren, och i så fall i vilken riktning (mot högre vinst är roligare att förklara än mot lägre)? (5) Är noter om pensioner, garantier och uppskjutna skatter konservativt upplagda? Kopplingen till V06 (EV/EBITDA) är den moderna missen: EBITDA räknar inte avskrivningar som kostnad, men maskinerna slits — ju mer kapitalintensiv bransch, desto mer vilseledande blir EV/EBITDA som jämförelsemått. Graham hade varit dess mest högljudda kritiker; hans lösning är att ständigt läsa avskrivningarna intill rörelseresultatet, inte under det."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Två bolag kan redovisa olika vinster utan att verkligheten skiljer dem — bara principerna. Konservativa och konsekvent tillämpade principer är inte kreativitetens motsats; de är förutsättningen för att femårsjämförelser (kapitel 12) ska betyda något alls."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Gå till noten om redovisningsprinciper i din årsredovisning och besvara femfrågechecklistan: avskrivningsprinciper och nyttjandeperioder, lagervärdering, aktiverade poster, principförändringar de senaste fem åren, pensions- och garantionoter. Jämför avskrivningarna med underhållskostnaderna i noterna. Betygsätt rapporten: konservativ och konsekvent — eller kreativ och växlande?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Redovisningsprincipernas spelrum — kontrollfrågor\",\"rader\":[[\"Princip\",\"Spelrum\",\"Kontrollfråga i noterna\"],[\"Avskrivningar\",\"Period, metod, restvärde\",\"Överstiger avskrivningarna underhållet? Ändras perioder?\"],[\"Lagermetod\",\"FIFO/LIFO/LVP; svensk LVP\",\"Har metoden ändrats? Jämförbar med branschens?\"],[\"Aktivering av utveckling\",\"Tillfört belopp, avskrivningstid\",\"Hur ser marginalerna ut om allt kostnadsförs?\"],[\"Aktiverad ränta\",\"Egenproduktion\",\"Hur stor andel av investeringarna?\"],[\"Prospektering/gruvor\",\"Kapitaliserade kostnader\",\"Vad har hittats — och till vilket värde?\"],[\"Goodwill-nedskrivning\",\"Årligt test i resultaträkningen\",\"Har testet någonsin slagit ut? Varför inte?\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken praktisk kontroll föreslår Graham-traditionen för att testa om avskrivningarna är ärliga?",
+          "alternativ": [
+            "Jämför avskrivningarna med konkurrenternas aktiekurser",
+            "Jämför avskrivningskostnaden med underhålls- och servicekostnaden i noterna",
+            "Kontrollera att avskrivningarna exakt motsvarar EBITDA",
+            "Räkna avskrivningarna per anställd"
+          ],
+          "ratt": 1,
+          "tips": "Avskrivning är en uppskattning av verkligt slitage — vad i noterna mäter det verkliga slitaget mest direkt?"
+        },
+        {
+          "q": "Vad är effekten av FIFO jämfört med LIFO vid stigande inköpspriser?",
+          "alternativ": [
+            "FIFO ger lägre vinst och lägre lagervärde än LIFO",
+            "FIFO ger högre vinst och högre lagervärde än LIFO",
+            "Metoderna ger alltid identiskt resultat",
+            "LIFO är förbjudet i Sverige men krävs inom EU"
+          ],
+          "ratt": 1,
+          "tips": "Matcha gamla billiga inköp mot dagens priser — åt vilket håll rör sig vinsten?"
+        },
+        {
+          "q": "Vad är den rätta huvudinvändningen mot EV/EBITDA (V06) i kapitalintensiva branscher ur Grahams perspektiv?",
+          "alternativ": [
+            "Att EBITDA inte innehåller intäkter",
+            "Att måttet räknar avskrivningar utanför kostnaderna trots att maskinerna slits — ju mer kapitalintensivt, desto mer vilseledande",
+            "Att EBITDA bara får användas för banker",
+            "Att måttet kräver kunskap om aktieantalet"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att hålla en maskinpark igång år efter år — och var hamnar den kostnaden i EBITDA?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "När vinst och kassa skiljer sig — att härleda kassaflödet",
+      "intro": "1937 fanns ingen kassaflödesanalys i årsredovisningarna — den blev ett krav först decennier senare. Graham och hans läsare var därför tvungna att härleda kassarörelserna med en metod som fortfarande är bland de skarpaste: att jämföra två på varandra följande balansräkningar och fråga var vinsten tog vägen. Kapitlet bygger den metoden och möter den moderna kassaflödesanalysen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Metoden i sin enklaste form: ta årets redovisade resultat och ställ det mot förändringarna i balansräkningens rörelseposter. Räkneexempel: bolaget redovisar vinst 100. Jämfört med förra året har kassan minskat 30, kundfordringarna ökat 80 och lagret ökat 40. Summa förändringar i rörelsekapital: −150 — och vinsten på 100 är helt borta i rörelsekapitalet, plus 50 som måste ha kommit någon annanstans ifrån (ökad skuld eller minskad investering). Slutsatsen är inte automatiskt dålig: ett växande bolag ska ha växande fordringar och lager. Frågan är proportionen. Om försäljningen (V01) växte 5 procent men fordringarna växte 25 procent är något fel: kunderna betalar sämre, försäljningen kan vara påtryckt mot kanaler som inte säljer vidare (channel stuffing), eller har en engångskund låsts in i årsbilden. Om försäljningen växte 25 procent är samma fordringsökning naturlig. Graham härledde hela detta av två balansräkningar — i dag har vi kassaflödesanalysen som gör det åt oss, men bedömningen av proportionerna är fortfarande vår."
+        },
+        {
+          "type": "text",
+          "content": "Den moderna svenska kassaflödesanalysen är uppdelad i tre delar: kassaflöde från löpande verksamhet (resultat justerat för avskrivningar och förändringar i rörelsekapital), från investeringsverksamheten (capex, förvärv, försäljningar av tillgångar) och från finansieringsverksamheten (lån, amorteringar, emissioner, utdelningar, återköp). Tre beräkningar per läsning: (1) rörelsekassa minus capex — det fria kassaflödet, pengarna som faktiskt blir kvar åt ägarna efter att verksamheten underhållit och byggts ut; (2) rörelsekassa i förhållande till redovisat resultat — ligger den strukturellt under, år från år, är resultatkvaliteten svag; (3) finansieringsdelen — är den dominerad av nya lån och emissioner (V19-varning) eller av utdelningar och återköp (V20-tecken)? Graham-visdomen är densamma i modern tappning: ett bolag som rapporterar vinster men aldrig kassa lever på att sälja varor på kredit och på att övertyga banker. Det håller tills det en dag inte gör det."
+        },
+        {
+          "type": "text",
+          "content": "Varje klyfta mellan vinst och kassa har en av fyra förklaringar, och att klassificera dem är analysens kärna. (1) Tillväxt: rörelsekapitalet växer med affären — naturligt, bra, men kräver kapital och visar sig som kassaflödeskil under expansionsår. (2) Kvalitetsproblem: fordringar som åldras, lager som bygger, försäljning utan betalning — dåligt, föregriper nedskrivningar. (3) Redovisningskonstruktioner: intäktssättning enligt procent av färdigställande, kapitaliserade utvecklingskostnader (kapitel 10), aktiverad ränta — vinsten är delvis en principprodukt, kassan saknas. (4) Timing: kvartalsgränser, säsongsutjämningsarbeten, skatteinbetalningar — oskyldigt, jämnar ut sig över året. Den svenska not som avslöjar (1) och (2) är noten om rörelsekapitalförändringar i kassaflödesanalysen tillsammans med fordrings- och lagernoterna med åldersfördelning. Kursens tumregel: en engångsklyfta är timing eller tillväxt; en återkommande klyfta genom fem år är kvalitet eller konstruktion — och då är det normaliserade resultatet (kapitel 7) för optimistiskt."
+        },
+        {
+          "type": "text",
+          "content": "V19-kopplingen: kapitalförbrukning och emissionsrisk blir påtaglig när tre mönster sammanfaller — kassaflödet från löpande verksamhet är negativt eller svagt, capex överstiger avskrivningarna kraftigt (verklig expansion betalas kontant medan resultatet bara märker av avskrivningen), och finansieringsdelen domineras av upprepad emission. Detta är ett bolag som konsumerer kapital för att växa — vilket kan vara en helt legitim strategi (bygg nu, tjäna sen), men som investerare betalar du för utfallet och äger risken: varje ny emission (kapitel 8) sänker din andel, och varje ny skuld (V10) höjer det fasta trycket. Grahams hållning till sådana situationer var rak: de kan vara goda spekulationer men de är inga investmentkvaliteter, för säkerhetsmarginalen (kapitel 13) saknar fäste i något som kan räknas. Vinnarbolagen i hans värld finansierar sin tillväxt internt: rörelsekassa större än capex, utdelningar täckta, aktieantal stabilt."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Vinst är en åsikt, kassa är ett faktum. Graham härledde kassaflödet ur två balansräkningar därför att han inte litade på en resultaträkning ensam — och klyftan mellan dem, klassad som tillväxt, kvalitet, konstruktion eller timing, är resultaträkningens sanningsprov."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Gå till kassaflödesanalysen i din årsredovisning. Beräkna: rörelsekassa minus capex (fritt kassaflöde) för de tre senaste åren, och rörelsekassa i procent av redovisat resultat. Klassa eventuella klyftor: tillväxt, kvalitet, konstruktion eller timing? Avsluta med att läsa finansieringsdelen: lån och emissioner (V19) eller utdelningar och återköp (V20)?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Klyftan mellan vinst och kassa — fyra förklaringar\",\"rader\":[[\"Förklaring\",\"Tecken i rapporten\",\"Bedömning\"],[\"Tillväxt\",\"Fordringar/lager växer i takt med V01; klyftan återkommer under expansion\",\"Naturlig — kräver kapital\"],[\"Kvalitetsproblem\",\"Fordringar växer snabbare än försäljning; åldrande fordringar i not\",\"Dålig — föregriper nedskrivningar\"],[\"Redovisningskonstruktion\",\"Kapitaliseringar, procent av färdigställande; klyfta utan rörelsekapitalförändring\",\"Vinsten delvis principprodukt\"],[\"Timing\",\"Kvartalsgränser, säsongsarbeten; jämnar ut sig över året\",\"Oskyldig\"],[\"V19-mönster\",\"Negativ rörelsekassa + capex över avskrivningar + upprepade emissioner\",\"Kapitalförbrukning — emissionsrisk\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Graham kunde 1937 inte läsa en kassaflödesanalys. Vilken metod använde han i stället för att testa vinstens kvalitet?",
+          "alternativ": [
+            "Han jämförde aktiekursen med det egna kapitalet",
+            "Han jämförde två på varandra följande balansräkningar och följde vinsten genom förändringarna i kassa, fordringar och lager",
+            "Han läste revisionsberättelsen från första till sista rad",
+            "Han beräknade bolagets P/E mot branschindex"
+          ],
+          "ratt": 1,
+          "tips": "Om vinsten är en film och du bara har fotografier — vad kan du göra med två fotografier tagna ett år isär?"
+        },
+        {
+          "q": "Försäljningen växer 5 procent, kundfordringarna 25 procent. Vilken är den mest angelägna tolkningen?",
+          "alternativ": [
+            "Bolaget har blivit effektivare på inkassering",
+            "Frågetecken kring resultatkvaliteten: kunderna betalar sämre eller försäljningen kan vara påtryckt",
+            "Fordringar och försäljning saknar samband i alla lägen",
+            "Bolaget bör omedelbart höja sin utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Vad betyder det att allt mer av försäljningen finns kvar som papper i stället för som pengar?"
+        },
+        {
+          "q": "Vilken kombination utgör V19-mönstret kapitalförbrukning och emissionsrisk?",
+          "alternativ": [
+            "Positiv rörelsekassa, lågt capex, utdelningshöjningar",
+            "Negativ eller svag rörelsekassa, capex över avskrivningarna, finansieringsdel dominerad av upprepade emissioner",
+            "Stabilt aktieantal, täckt utdelning, växande balanserade vinstmedel",
+            "Hög V11 och fallande skuldsättningsgrad"
+          ],
+          "ratt": 1,
+          "tips": "Fråga tre delar samtidigt: vad genererar verksamheten, vad konsumerar investeringarna, och varifrån kommer skillnaden?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Femårsjämförelser — trend, stabilitet och bransch",
+      "intro": "Ett enskilt år är väder, fem år är klimat. Graham insisterar på flerårsserier innan någon slutsats om förtjänstkraft dras, och han varnar samtidigt för trendens frestelse — att extrapolera en upåtgående linje är ingen analys. Kapitlet bygger femårsgriden, mäter stabilitet (V12) och lönsamhet (V09) och sätter reglerna för ärlig branschjämförelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Femårsgriden är kursens mest användbara artefakt: en tabell med ett år per rad och följande kolumner — nettoomsättning, bruttomarginal (V07), rörelsemarginal (V08), normaliserat resultat, antal aktier, EPS, utdelning per aktie, kassaflöde från löpande verksamhet och capex. I svenska årsredovisningar finns femårsöversikter ofta i slutet av årsredovisningen eller i bolagets faktabok; saknas den byggs griden av fem års rapporter — vilket i sig är den bästa investeringsutbildningen som finns. Exempel i klartext: intäkter 800, 860, 940, 990 och 1 070 — en årlig försäljningstillväxt (V01) på ungefär 7,5 procent; V07: 34, 35, 35, 34 och 33 procent; EPS: 1,60, 1,75, 1,90, 1,95 och 2,00. Tolkningen skriver sig nästan själv: prissättningsmakten är stabil men matt avslutande, EPS-tillväxten avtar — och nästa kontroll är given: växte antalet aktier under samma period (kapitel 8)? Om aktierna växte 3 procent per år är den verkliga tillväxten per aktie bara hälften av vad EPS-raden i absoluta tal antyder."
+        },
+        {
+          "type": "text",
+          "content": "Trendens fälla. Graham varnade uttryckligen för att anta att en trend fortsätter bara därför att den funnits — en trend beskriver det förflutna men garanterar inte framtiden, och ju rakare och längre den varit, desto mer har marknaden benägenhet att prissätta den som en försäkran. Praktisk tillämpning på griden: beräkna först trenden (medeltillväxt per år), beräkna sedan stabiliteten — spridningen mellan bästa och sämsta året. Ett bolag med jämn V12-profil (till exempel V07 som varierar mindre än ett par procentenheter och resultat som aldrig varit negativt) förtjänar högre värdering än ett bolag med samma medelresultat men vilda svängningar, för det förra kan prognostiseras med marginal och det senare inte alls. Graham kompletterade därför alltid trenden med nivåfrågan: är dagens resultat och marginaler nära, över eller under femårsmedelvärdet? Ett bolag som handlas till ett pris baserat på toppårets marginal, medan marginalen håller på att återgå till medelvärdet, är en statistisk fälla — inte en tillväxtberättelse."
+        },
+        {
+          "type": "text",
+          "content": "V09 — avkastning på eget kapital — är gridens lönsamhetskolumn och förtjänar en Graham-sk brytning. Formeln: normaliserat resultat dividerat med eget kapital. Exempel: 85/600 ger drygt 14 procent — bra i de flesta branscher. Men Graham delar upp den (föregångaren till det som senare kallats DuPont-analys): ROE är lika med vinstmarginal (resultat per omsatt krona) gånger kapitalomsättningshastighet (omsättning per sysselsatt krona) gånger hävstång (tillgångar per ägd krona, alltså balansräkningens spegel av V10). Två bolag med ROE 14 procent kan vara radikalt olika: det ena når dit med 14 procents marginal och låg omsättningshastighet utan skulder (kvalitet), det andra med 2 procents marginal, hög omsättning och massiv skuldsättning (volatilitet). Femårsgridens V09-kolumn ska därför läsas tillsammans med V10-kolumnen — hög ROE som bygger på hög skuldsättning är inte förtjänst utan belåning, och i en nedgång blir hävstången en press mot ägarna istället för en hiss uppåt."
+        },
+        {
+          "type": "text",
+          "content": "Branschjämförelsens tre regler. För det första: jämför bara bolag vars redovisning är jämförbar — samma bransch, och kontrollera avskrivningsprinciper, lagermetod och kapitaliseringspraxis (kapitel 10) innan en marginalskillnad tolkas som skillnad i konkurrenskraft. För det andra: jämför nyckeltalen (V07, V08, V09, V10, V11) som femårsmedelvärden, inte som ögonblicksbilder — branschens cykel kan befinna sig på olika punkter för olika bolag. För det tredje: använd värderingsmåtten V04 (pris per omsättning) och V06 (EV/EBITDA) inom branschen för att hitta avvikelsen — men kom ihåg Graham-villkoret: en billig multipel mot en bransch vars samtliga medlemmar visar klingande marginaler är ingen trygghet utan ett pris på döende förtjänst, och en hög multipel mot ett bolag vars substansvärde och netto cirkulerande medel överstiger kursen kan ändå vara det konservativa valet. Griden slutar alltid i samma fråga: vad är normaliserad förtjänst värd med marginal — och det är kapitel 13:s ämne."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Ett år är väder, fem år är klimat — men trenden är inget öde: Grahams fråga till en upåtgående linje är alltid densamma. Är dagens nivå över, på eller under sitt eget femårsmedelvärde, och vad betalar jag för antagandet att det fortsätter?"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg femårsgriden för ditt bolag: intäkter, V07, V08, normaliserat resultat, antal aktier, EPS, utdelning, rörelsekassa och capex — fem rader, nio kolumner. Beräkna V01 (årlig intäktstillväxt), V12 (spridningen i resultatet) och V09 (resultat/eget kapital) med V10 vid sidan. Jämför därefter tre nyckeltal mot två konkurrenter. Vad visar klimatet som väderåret gömde?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Femårsgriden — kolumner, formel och fråga\",\"rader\":[[\"Kolumn\",\"Formel/källa\",\"Fråga till serien\"],[\"Nettoomsättning\",\"Resultaträkningen, 5 år\",\"V01: årlig tillväxt i procent\"],[\"Bruttomarginal (V07)\",\"Bruttoresultat / intäkter\",\"Stabil? Klingande? Prissättningsmakt\"],[\"Rörelsemarginal / V08\",\"Rörelseresultat (+ avskr.) / intäkter\",\"Kostnadsdisciplin, trend\"],[\"Normaliserat resultat\",\"Kap. 7: utan engångsposter\",\"V12: spridning, tecken på svaghet\"],[\"Antal aktier\",\"Not eget kapital\",\"Utspädning eller återköp (V20)\"],[\"EPS\",\"Resultat / vägt antal\",\"Tillväxt per aktie — brutto eller netto\"],[\"Utdelning/aktie\",\"Not ändring eget kapital\",\"Täckning, jämnhet\"],[\"Rörelsekassa och capex\",\"Kassaflödesanalysen\",\"Fritt kassaflöde; V19-mönster\"],[\"V09 och V10\",\"Resultat/EK; räntebärande skuld/EK\",\"Är ROE förtjänst eller belåning?\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Grahams huvudinvändning mot att extrapolera en vinsttrend?",
+          "alternativ": [
+            "Att trender bara finns i teknisk analys",
+            "Att trenden beskriver det förflutna men inte garanterar framtiden — därför ska den alltid kombineras med nivåfrågan mot femårsmedelvärdet",
+            "Att trender alltid är manipulerade av ledningar",
+            "Att trendberäkning kräver tio års data minimum"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan en historisk linje säga om morgondagen — och vad måste den kompletteras med?"
+        },
+        {
+          "q": "Två bolag visar båda ROE (V09) på 14 procent. Vad avgör kvalitetsskillnaden?",
+          "alternativ": [
+            "Ingenting — samma ROE är samma kvalitet",
+            "Vägen dit: marginal × kapitalomsättningshastighet × hävstång — hög marginal utan skulder är kvalitet, hög hävstång (V10) är belåning",
+            "Vilket bolag som har högst P/E-multipel",
+            "Vilket bolag som har störst balansomslutning"
+          ],
+          "ratt": 1,
+          "tips": "Bryt ner ROE i sina delar och titta på var 14-procenten kommer ifrån."
+        },
+        {
+          "q": "Vilka tre villkor måste gälla innan en branschjämförelse blir ärlig enligt kapitlet?",
+          "alternativ": [
+            "Samma VD-ålder, samma antal anställda och samma balansomslutning",
+            "Jämförbara redovisningsprinciper, femårsmedelvärden istället för ögonblicksbilder, och värderingsmått (V04, V06) som läses inom branschen",
+            "Samma revisionsbyrå, samma skattesats och samma grundår",
+            "Samma aktieantal, samma utdelningspolitik och samma P/B"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på allt du lärt i kapitel 10 om principer och i detta kapitel om serier — vad krävs för att en marginalskillnad ska betyda något?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Varningstecken och marginal of safety — syntesen",
+      "intro": "Bokens sista gåva är en lista över tecken som borde få investeraren att sänka boken och lämna aktien ifred — och en princip som samlar allt: marginal of safety. Kapitlet sammanfattar kursens verktyg i en genomgångsrutin, listar varningssignalerna på ett ställe och för in Grahams arv i AKM1-ekosystemet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grahams varningstecken, sammanförd på ett ställe. För det första: goodwill som växer snabbt. Goodwill uppstår när bolag köper andra bolag för mer än substansvärdet — i värsta fall betalat med nya aktier, vilket betyder att ägarna emitterar ifrån sig ägande mot en post (kapitel 5) som Graham rensade bort från substansberäkningen. En goodwill som vuxit från 100 till 600 på fem år medan vinsten stått stilla är en balansräkning som väntar på sin nedskrivning. För det andra: lager som växer snabbare än försäljningen. I kapitel 11:s terminologi är det en klyfta av den dåliga sorten — färdigvaror som ingen köper, prissatta enligt lägsta värdets princip men fortfarande optimistiskt värderade. För det tredje: kortfristig skuldexpansion — att finansiera långfristiga behov (maskiner, expansion) med kortfristiga krediter är att bygga ett hus på lånad tid; när krediten förnyas varje månad räcker en tilltäppt kreditmarknad för att kedjan ska brista. Detta är V19:s kärna: kapitalförbrukning som till slut måste mötas av emission på ofördelaktiga villkor — och ägarna betalar."
+        },
+        {
+          "type": "text",
+          "content": "Kompletterande signaler från kursens kapitel: avskrivningar som under lång tid understiger underhållskostnaderna (kapitel 10) — vinst köpt på maskinparkens bekostnad; återkommande omstruktureringskostnader som ledningen kallar engångsposter (kapitel 7); intäktskoncentration där en kund utgör en fjärdedel av omsättningen och V12 ändå rapporteras som stabil (kapitel 7); aktieantal som växer snabbare än EPS (kapitel 8); utdelning som inte täcks av normaliserad vinst (kapitel 9); och kassaflödesklyftor som återkommer år från år utan förklaring (kapitel 11). Inget av dessa tecken är ensamt ett veto — Graham var empiriker, inte dogmatiker. Men två eller tre samtidigt, i kombination med en värdering som förutsätter att allt går bra, är definitionen av en investering utan marginal. Notera symmetrin: varje varningstecken har i kursen fått både ett kapitel och en mätmetod — från V05-substans till V11-likviditet till V19-kapitalförbrukning. Tecknen är inte intuition; de är nyckeltal som avviker från sina egna femårstrender."
+        },
+        {
+          "type": "text",
+          "content": "Genomgångsrutinen — kursens hela metod i en sekvens, som kan genomföras på en svensk årsredovisning på en eftermiddag. Steg 1, balansräkningen: netto cirkulerande medel, aktuellt förhållande och snabbtest (V11), skuldsättningsgrad (V10), substansvärde och NCAV per aktie (V05). Steg 2, resultaträkningen: bruttomarginal (V07) och rörelsemarginal, normaliserad utan engångsposter, med notkontroll av principerna (kapitel 6–7, 10). Steg 3, per aktie: EPS, fullt utspädd, aktieantalstrend, utdelningstäckning och äkthet i återköp (V20). Steg 4, femårsgriden: V01, V12, V09 och V10 i serie, mot två konkurrenter (kapitel 12). Steg 5, kassaflödet: fritt kassaflöde, klyftornas klassificering, V19-mönster (kapitel 11). Steg 6, värdering: kursen mot substansvärde (V05), mot normaliserad förtjänst, mot branschens V04 och V06 — och först då frågan: finns det marginal? Rutinens ordning är medvetet Grahamsk: fakta före pris, balansräkning före story, stabilitet före tillväxt."
+        },
+        {
+          "type": "text",
+          "content": "Marginal of safety — säkerhetsmarginalen — är det begrepp som i AKM1-ekosystemet avsiktligt saknar V-nummer, därför att det inte är en variabel bland andra utan det villkor som varje variabel ska möta. Grahams formulering i sitt senare författarskap: säkerhetsmarginalens funktion är att absorbera följderna av felkalkyler och sämre än genomsnittlig tur. I denna kurs konkretiseras den i bokslutsläsningens termer: marginalen är skillnaden mellan priset du betalar och det du kunnat verifiera — substansvärdet som grund (kapitel 5), den normaliserade förtjänsten som flöde (kapitel 7), likviditeten och skuldstrukturen som överlevnad (V10, V11), aktieantalet som ägandets sanning (kapitel 8). Ju mer av kursen som en aktie står sig emot, desto mindre marginal krävs — och tvärtom. Bokens arv lever i varje modern analysplattform, och dess praktiska kärna är densamma som 1937: skydda dig själv med fakta, för marknaden och bolagsledningen kommer inte att göra det."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Bokslutsläsningens syfte är inte att hitta rätt bolag — det är att skydda dig mot fel pris. Varje varningstecken i kursen är ett nyckeltal som avviker från sin egen trend; marginal of safety är villkoret som alla nyckeltal till slut ska möta."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Genomför hela genomgångsrutinen (steg 1–6) på din svenska årsredovisning och sammanfatta på en enda sida: tre nyckeltal som talar för bolaget, tre varningstecken, normaliserad förtjänst, substansvärde och NCAV per aktie, samt en slutsats — finns det marginal of safety vid dagens kurs, och vad skulle kursen behöva vara för att marginalen vara bekväm? Spara sidan: den är din första Graham-analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Varningstecknen — var i rapporten och vad du gör\",\"rader\":[[\"Varningstecken\",\"Var det syns\",\"Åtgärd\"],[\"Goodwill som växer snabbt\",\"Not goodwill + not eget kapital\",\"Jämför goodwill-tillväxt mot vinst-tillväxt; beräkna substansvärde utan goodwill\"],[\"Lager växer > försäljning\",\"Lagernot + kassaflödesanalys\",\"Klassa klyftan (kap. 11); kontrollera färdigvaruandel och LVP\"],[\"Kortfristig skuldexpansion\",\"Balansräkningen + finansieringsdelen\",\"Räkna V11-trenden; fråga vad den kortfristiga skulden finansierar (V19)\"],[\"Avskrivningar < underhåll\",\"Noter rörelsekostnader/anläggningar\",\"Testa resultatet med underhållet som avskrivning\"],[\"Återkommande engångsposter\",\"Noter + förvaltningsberättelse\",\"Normalisera fem år (kap. 7); värdera mot normaliserat\"],[\"Aktieantal växer > EPS\",\"Not eget kapital, 5 år\",\"Räkna tillväxt per aktie; klassa V19-mönster\"],[\"Utdelning utan täckning\",\"Not ändring eget kapital\",\"Kontrollera källa: vinst, balanserade medel eller lån\"],[\"Återkommande vinst-kassa-klyfta\",\"Kassaflödesanalys, 3–5 år\",\"Klassa och justera den normaliserade förtjänsten nedåt\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Goodwill har vuxit från 100 till 600 på fem år, betald med nya aktier, medan vinsten stått stilla. Vad är kärnan i varningen?",
+          "alternativ": [
+            "Att goodwill är olagligt över 500",
+            "Att ägarna emitterat ifrån sig ägande mot en post som inte är verifierbar substans — och som väntar på sin nedskrivning",
+            "Att goodwill alltid ska skrivas av på tio år",
+            "Att bolaget har för få anställda i förhållande till goodwill"
+          ],
+          "ratt": 1,
+          "tips": "Vad betalades goodwillen med, och vad skulle substansberäkningen i kapitel 5 göra med posten?"
+        },
+        {
+          "q": "Varför får kortfristig skuldexpansion en särskild varning i Grahams system?",
+          "alternativ": [
+            "Kortfristig skuld är alltid dyrare än långfristig",
+            "Den finansierar långfristiga behov med förnyelsekrav varje månad — en tilltäppt kreditmarknad räcker för att kedjan ska brista (V19)",
+            "Kortfristig skuld räknas inte med i balansomslutningen",
+            "Den sänker automatiskt bruttomarginalen"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vad skulden finansierar och hur ofta den måste förnyas — vad händer den dagen förnyelsen nekas?"
+        },
+        {
+          "q": "Varför saknar marginal of safety V-nummer i AKM1-ekosystemet?",
+          "alternativ": [
+            "Eftersom begreppet är föråldrat sedan 1937",
+            "Eftersom det inte är en variabel bland andra utan villkoret som varje variabel ska möta — skillnaden mellan priset och det verifierade",
+            "Eftersom det bara gäller obligationer",
+            "Eftersom marginalen alltid är 50 procent av substansvärdet"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på förhållandet mellan ett enstaka nyckeltal och det som avgör om nyckeltalets skydd räcker."
+        }
+      ]
+    }
+  ]
+}

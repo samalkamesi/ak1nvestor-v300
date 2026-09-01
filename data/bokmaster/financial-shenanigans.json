@@ -5,12 +5,12 @@
   "chapterCount": 14,
   "totalMinutes": 150,
   "title": "Financial Shenanigans — Schilit: KOMPLETT",
-  "summary": "Howard Schilit, redovisningsprofessorn som kallats redovisningens Sherlock Holmes, katalogiserar i Financial Shenanigans (första upplagan 1993) sju sätt för ledningar att lura med siffror — från för tidiga intäkter till dolda skulder och fejkad kassa. Kursen går igenom alla sju kategorierna med äkta fall (Enron, WorldCom, Sunbeam, HealthSouth, Luckin, Wirecard), bygger Schilits detektorsystem och kopplar allt till AKM1:s V17, V08, V04 och V05.",
+  "summary": "Howard Schilit, redovisningsprofessorn som kallats redovisningens Sherlock Holmes, katalogiserar i Financial Shenanigans (första upplagan 1993) sju sätt för ledningar att lura med siffror — från för tidiga intäkter till dolda skulder och fejkad kassa. Kursen går igenom alla sju kategorierna med äkta fall (Enron, WorldCom, Sunbeam, HealthSouth, Luckin, Wirecard), bygger Schilits detektorsystem och kopplar allt till AKM1:s källkritik (V12), kassaflödesanalysen, bruttomarginal (V07) och P/B (V05).",
   "minutes": 10,
   "xp": 2000,
   "level": "",
-  "learn": "Schilits sju shenanigan-kategorier: för tidiga intäkter (channel stuffing, bill-and-hold), fiktiva intäkter (Luckin, ZZZZ Best), intäktsöverföringar (engångsvinster som löpande intäkt), underskattade kostnader (avskrivningar, reservfonder, pension), kostnadsförskjutningar (kapitalisering — WorldCom 3,8 Md USD, big bath — Sunbeams cookie jar), dolda skulder (Enrons SPE:s) och missbruk av kassaflödesredovisningen; detektorsystemet: vinst mot kassaflöde (V08), DSO, lageromsättning, bruttomarginalens kvalitet (V04), fotnotsläsning, non-recurring-analys och mjuka varningssignaler (revisorsbyte, CFO-avgångar, aggressivitet mot kritiker); historikens största fall med mekanik och årtal; samt integrationen i AKM1 där V17 gör redovisningskvaliteten till ett mätbart såll.",
-  "why": "Utan Schilit läser du AKM1:s nyckeltal som sanningar: V04-marginaler, V08-kassaflöden och V05-balansräkningar blir vackra siffror även när de är fabricerade. Varje val du gör i AKM1 bygger på rapportens kvalitet — Schilit är det som gör V17 till mer än en åsikt och som skiljer en aktieanalys från en beskrivning av en berättelse. Den som kan shenanigans vägrar vara den som betalar för nästa Enron.",
+  "learn": "Schilits sju shenanigan-kategorier: för tidiga intäkter (channel stuffing, bill-and-hold), fiktiva intäkter (Luckin, ZZZZ Best), intäktsöverföringar (engångsvinster som löpande intäkt), underskattade kostnader (avskrivningar, reservfonder, pension), kostnadsförskjutningar (kapitalisering — WorldCom 3,8 Md USD, big bath — Sunbeams cookie jar), dolda skulder (Enrons SPE:s) och missbruk av kassaflödesredovisningen; detektorsystemet: vinst mot kassaflöde, DSO, lageromsättning, bruttomarginalens kvalitet (V07), fotnotsläsning, non-recurring-analys och mjuka varningssignaler (revisorsbyte, CFO-avgångar, aggressivitet mot kritiker); historikens största fall med mekanik och årtal; samt integrationen i AKM1 där källkritiken (med V12 som närmaste variabel) gör redovisningskvaliteten till ett mätbart såll.",
+  "why": "Utan Schilit läser du AKM1:s nyckeltal som sanningar: V07-marginaler, kassaflöden och V05-balansräkningar blir vackra siffror även när de är fabricerade. Varje val du gör i AKM1 bygger på rapportens kvalitet — Schilit är det som gör redovisningskvalitetsgranskningen till mer än en åsikt och som skiljer en aktieanalys från en beskrivning av en berättelse. Den som kan shenanigans vägrar vara den som betalar för nästa Enron.",
   "chapters_list": [
     { "num": 1, "title": "Schilits detektivarbete — sju sätt att lura med siffror", "minutes": 10 },
     { "num": 2, "title": "Shenanigan 1: Intäkter för tidigt — channel stuffing och bill-and-hold", "minutes": 10 },
@@ -20,12 +20,12 @@
     { "num": 6, "title": "Shenanigan 5: Kostnadsförskjutningar — kapitalisering och big bath", "minutes": 10 },
     { "num": 7, "title": "Shenanigan 6: Dolda skulder — Enrons SPE:s och off-balance-sheet", "minutes": 10 },
     { "num": 8, "title": "Shenanigan 7: Missbruk av kassaflödesredovisningen", "minutes": 10 },
-    { "num": 9, "title": "Detektör I: Vinst mot kassaflöde — V08 som lögndetektor", "minutes": 10 },
-    { "num": 10, "title": "Detektör II: DSO, lageromsättning och marginalradarn (V04)", "minutes": 10 },
+    { "num": 9, "title": "Detektör I: Vinst mot kassaflöde — kassaflödesanalysen som lögndetektor", "minutes": 10 },
+    { "num": 10, "title": "Detektör II: DSO, lageromsättning och marginalradarn (V07)", "minutes": 10 },
     { "num": 11, "title": "Detektör III: Fotnoter, engångsposter och mjuka signaler", "minutes": 10 },
     { "num": 12, "title": "Fallstudier I: Enron, WorldCom, Sunbeam och HealthSouth", "minutes": 10 },
     { "num": 13, "title": "Fallstudier II: Luckin Coffee och Wirecard — nya erans bedrägerier", "minutes": 10 },
-    { "num": 14, "title": "Schilit i AKM1: checklista, V17-integration och 30-sekunderstestet", "minutes": 10 }
+    { "num": 14, "title": "Schilit i AKM1: checklista, källkritik-integration och 30-sekunderstestet", "minutes": 10 }
   ],
   "chapters": [
     {
@@ -48,7 +48,7 @@
         },
         {
           "type": "text",
-          "content": "Detektivens arbetssätt är Schilits egentliga gåva till investeraren. Steg ett: förstå verksamheten så väl att du vet vilka marginaler, kassaflöden och balansposter som är normala. Steg två: känna igen tidiga varningssignaler — aggressiva redovisningsval, konstiga transaktioner, svag internkontroll. Steg tre: känna spelen, det vill säga kategorierna i denna kurs. Steg fyra: tillämpa verktygen — läsa hela rapporten inklusive fotnoter, jämföra vinst med kassa, följa fordringar och lager över tid. I AKM1 är detta exakt V17:s uppdrag: sårbärhet och kvalitet i rapporterna, där komplexitet i sig är ett riskmått."
+          "content": "Detektivens arbetssätt är Schilits egentliga gåva till investeraren. Steg ett: förstå verksamheten så väl att du vet vilka marginaler, kassaflöden och balansposter som är normala. Steg två: känna igen tidiga varningssignaler — aggressiva redovisningsval, konstiga transaktioner, svag internkontroll. Steg tre: känna spelen, det vill säga kategorierna i denna kurs. Steg fyra: tillämpa verktygen — läsa hela rapporten inklusive fotnoter, jämföra vinst med kassa, följa fordringar och lager över tid. I AKM1 är detta exakt källkritikens uppdrag — med V12 (intäktsstabilitet) som närmaste variabel: kvaliteten i rapporterna, där komplexitet i sig är ett riskmått."
         },
         {
           "type": "insikt",
@@ -64,7 +64,7 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Ta fram en årsredovisning för ett bolag du äger eller bevakar. Räkna sidorna: hur många sidor är resultatrapport och balansräkning, och hur många sidor är noter? Bläddra sedan till revisorsutlåtandet och läs de tre sista meningarna — där framgår om revisorn haft något att invända. Notera din magekänsla före och efter: det är V17-arbetets första repetition."
+          "content": "🎯 Ta fram en årsredovisning för ett bolag du äger eller bevakar. Räkna sidorna: hur många sidor är resultatrapport och balansräkning, och hur många sidor är noter? Bläddra sedan till revisorsutlåtandet och läs de tre sista meningarna — där framgår om revisorn haft något att invända. Notera din magekänsla före och efter: det är källkritikarbetets första repetition."
         }
       ],
       "quiz": [
@@ -194,7 +194,7 @@
         },
         {
           "type": "text",
-          "content": "Den indiska IT-jättens grundare Ramalinga Raju lämnade 2009 ett av finanshistoriens mest kända bekännelsebrev efter att Satyams kassa visat sig till övervägande del påhittad: han beskrev bedrägeriet som en ridtur på en tiger — utan att veta hur man hoppar av utan att bli uppäten. Det är kategoriens sanning i en mening: fiktiva intäkter kan inte realiseras, och därför måste de förbli i balansräkningen som kundfordringar eller — värre — som kassa som inte finns. Det är därför V08-testet och en enkel fråga om ränteavkastning på kassan fångar nästan alla påhittade intäkter förr eller senare."
+          "content": "Den indiska IT-jättens grundare Ramalinga Raju lämnade 2009 ett av finanshistoriens mest kända bekännelsebrev efter att Satyams kassa visat sig till övervägande del påhittad: han beskrev bedrägeriet som en ridtur på en tiger — utan att veta hur man hoppar av utan att bli uppäten. Det är kategoriens sanning i en mening: fiktiva intäkter kan inte realiseras, och därför måste de förbli i balansräkningen som kundfordringar eller — värre — som kassa som inte finns. Det är därför vinst-mot-kassaflöde-testet och en enkel fråga om ränteavkastning på kassan fångar nästan alla påhittade intäkter förr eller senare."
         },
         {
           "type": "insikt",
@@ -257,7 +257,7 @@
         },
         {
           "type": "text",
-          "content": "Dell-fallet är kategoriens skolbild. Enligt SEC:s utredning (2010) var Dell mellan 2002 och 2006 i praktiken beroende av hemliga betalningar från Intel — exklusivitetsavgifter för att enbart använda Intels processorer — för att möta sina vinstmål. Under en period motsvarade dessa betalningar en betydande del av operativresultatet, samtidigt som bolaget presenterade en bild av en extremt lönsam pc-tillverkare. När betalningarna upphörde framförhandlades en förlikning med SEC 2010. Lärdomen är V04-kopplad: en bruttomarginal eller rörelsemarginal som ser för bra ut mot konkurrenter kan bero på intäkter av helt fel slag — här leverantörsbetalningar bokförda i rörelsen, i det tysta."
+          "content": "Dell-fallet är kategoriens skolbild. Enligt SEC:s utredning (2010) var Dell mellan 2002 och 2006 i praktiken beroende av hemliga betalningar från Intel — exklusivitetsavgifter för att enbart använda Intels processorer — för att möta sina vinstmål. Under en period motsvarade dessa betalningar en betydande del av operativresultatet, samtidigt som bolaget presenterade en bild av en extremt lönsam pc-tillverkare. När betalningarna upphörde framförhandlades en förlikning med SEC 2010. Lärdomen är V07-kopplad: en bruttomarginal eller rörelsemarginal som ser för bra ut mot konkurrenter kan bero på intäkter av helt fel slag — här leverantörsbetalningar bokförda i rörelsen, i det tysta."
         },
         {
           "type": "text",
@@ -336,7 +336,7 @@
         },
         {
           "type": "text",
-          "content": "Hur hittar du kategorin? Tre verktyg. För det första: jämför avskrivningsprinciper med konkurrenter — en lastbilsflotta med längre nyttjandetid än branschens förklarar bort en marginalfördel. För det andra: följ kvoten avskrivningar/capex över fem år; sjunker den utan förklaring kan något hålls vid liv i balansräkningen i stället för att kostnadsföras. För det tredje: läs reservnoterna baklänges — öppningsbalans, tillägg, användning, avslutande balans — och se om reserverna släpps tillbaka till resultatet. Det är kopplat direkt till AKM1 V04: en bruttomarginal som stiger utan prisökningar, mixskifte eller kostnadsprogram kan vara ett avskrivnings- eller reservtrick."
+          "content": "Hur hittar du kategorin? Tre verktyg. För det första: jämför avskrivningsprinciper med konkurrenter — en lastbilsflotta med längre nyttjandetid än branschens förklarar bort en marginalfördel. För det andra: följ kvoten avskrivningar/capex över fem år; sjunker den utan förklaring kan något hålls vid liv i balansräkningen i stället för att kostnadsföras. För det tredje: läs reservnoterna baklänges — öppningsbalans, tillägg, användning, avslutande balans — och se om reserverna släpps tillbaka till resultatet. Det är kopplat direkt till AKM1 V07: en bruttomarginal som stiger utan prisökningar, mixskifte eller kostnadsprogram kan vara ett avskrivnings- eller reservtrick."
         },
         {
           "type": "insikt",
@@ -411,7 +411,7 @@
         },
         {
           "type": "text",
-          "content": "Detektionen har tre ben. För det första raden kapitaliserade utvecklingskostnader i balansräkningen — följ dess storlek och avskrivningstakt; växer den snabbare än intäkterna är något fel. För det andra kvoten capex/avskrivningar över en konjunkturcykel: ligger den systematiskt högt i ett moget bolag frågar du vad som egentligen byggs. För det tredje restruktureringsnotens rollforward: öppningsreserv, tillägg, förbrukning, avslut. Om reserver släpps tillbaka till resultatet kvartal efter kvartal — utan att verksamheten syns förändras — har du hittat en kakburk. Detta är en av de direkaste operationaliseringarna av V17 i AKM1: frågan är aldrig om siffrorna är rätt utan om de är rätt för rätt skäl."
+          "content": "Detektionen har tre ben. För det första raden kapitaliserade utvecklingskostnader i balansräkningen — följ dess storlek och avskrivningstakt; växer den snabbare än intäkterna är något fel. För det andra kvoten capex/avskrivningar över en konjunkturcykel: ligger den systematiskt högt i ett moget bolag frågar du vad som egentligen byggs. För det tredje restruktureringsnotens rollforward: öppningsreserv, tillägg, förbrukning, avslut. Om reserver släpps tillbaka till resultatet kvartal efter kvartal — utan att verksamheten syns förändras — har du hittat en kakburk. Detta är en av de direkaste operationaliseringarna av källkritiken i AKM1: frågan är aldrig om siffrorna är rätt utan om de är rätt för rätt skäl."
         },
         {
           "type": "insikt",
@@ -482,7 +482,7 @@
         },
         {
           "type": "text",
-          "content": "Detektorns angreppssätt är tre notstopp. Först noten om kopplade parter: varje transaktion med styrelseledamöters, VD:s eller CFO:s egna bolag är en varning i sig. Sedan noten om åtaganden och kontingenser: garantier, köplovan, outtagna kapitalåtaganden och leasingåtaganden — summera dem och jämför med den redovisade nettoskulden; om åtagandena är av samma storleksordning som skulderna vet du att balansräkningen bara visar en del av sanningen. Slutligen kontrollfrågan om konsolidering: finns strukturer som bolaget inte äger men som det ändå kontrollerar eller bär risk i? Detta är kärnan i AKM1 V17: komplexitet i sig är ett riskmått — en struktur som kräver förtroende i stället för verifiering är inte en tillgång utan ett frågetecken."
+          "content": "Detektorns angreppssätt är tre notstopp. Först noten om kopplade parter: varje transaktion med styrelseledamöters, VD:s eller CFO:s egna bolag är en varning i sig. Sedan noten om åtaganden och kontingenser: garantier, köplovan, outtagna kapitalåtaganden och leasingåtaganden — summera dem och jämför med den redovisade nettoskulden; om åtagandena är av samma storleksordning som skulderna vet du att balansräkningen bara visar en del av sanningen. Slutligen kontrollfrågan om konsolidering: finns strukturer som bolaget inte äger men som det ändå kontrollerar eller bär risk i? Detta är kärnan i AKM1:s källkritik: komplexitet i sig är ett riskmått — en struktur som kräver förtroende i stället för verifiering är inte en tillgång utan ett frågetecken."
         },
         {
           "type": "insikt",
@@ -557,7 +557,7 @@
         },
         {
           "type": "text",
-          "content": "Detektionen är hanterbar. För det första: läs fotnoterna till kassaflödesanalysen — där redovisas icke-kontanta transaktioner och förändringar i klassificering; en not om leverantörsfinansieringsprogram är idag ett måste att fråga efter. För det andra: följ DPO kvartalsvis och se efter toppar i kvartal fyra. För det tredje: jämför trenden i driftskassaflöde med trenden i nettoresultat och med historien — ett driftskassaflöde som stiger just när förlusterna växer är alltid en fråga om klassificering, inte om verksamhet. I AKM1 V08 är detta redan inbyggt: vinstens kvalitet kontrolleras mot kassan, men kassans kvalitet kontrolleras mot noterna. Båda testerna ska genomföras — alltid."
+          "content": "Detektionen är hanterbar. För det första: läs fotnoterna till kassaflödesanalysen — där redovisas icke-kontanta transaktioner och förändringar i klassificering; en not om leverantörsfinansieringsprogram är idag ett måste att fråga efter. För det andra: följ DPO kvartalsvis och se efter toppar i kvartal fyra. För det tredje: jämför trenden i driftskassaflöde med trenden i nettoresultat och med historien — ett driftskassaflöde som stiger just när förlusterna växer är alltid en fråga om klassificering, inte om verksamhet. I AKM1:s kassaflödesanalys är detta redan inbyggt: vinstens kvalitet kontrolleras mot kassan, men kassans kvalitet kontrolleras mot noterna. Båda testerna ska genomföras — alltid."
         },
         {
           "type": "insikt",
@@ -611,8 +611,8 @@
     {
       "num": 9,
       "minutes": 10,
-      "title": "Detektör I: Vinst mot kassaflöde — V08 som lögndetektor",
-      "intro": "Nu bygger vi Schilits detektorsystem, och det första instrumentet är det kraftfullaste: att ställa räkenskapsårets resultat mot kassaflödet från löpande verksamhet, år efter år. Det är samtidigt kärnan i AKM1 V08 — och det test som i efterhand fångar nästan vartenda stort bedrägeri.",
+      "title": "Detektör I: Vinst mot kassaflöde — kassaflödesanalysen som lögndetektor",
+      "intro": "Nu bygger vi Schilits detektorsystem, och det första instrumentet är det kraftfullaste: att ställa räkenskapsårets resultat mot kassaflödet från löpande verksamhet, år efter år. Det är samtidigt kärnan i AKM1:s kassaflödesanalys — och det test som i efterhand fångar nästan vartenda stort bedrägeri.",
       "blocks": [
         {
           "type": "text",
@@ -620,7 +620,7 @@
         },
         {
           "type": "text",
-          "content": "WorldCom visar testets gränser — och dess mogna version. Kapitaliseringstricket gjorde både vinsten och driftskassaflödet snygga: kostnaderna togs inte bara ur resultaträkningen, de hamnade i investeringsdelen av kassaflödesanalysen. Driftskassan såg därför stark ut! Lösningen är att aldrig stanna vid driftskassaflödet, utan gå vidare till fritt kassaflöde: driftskassa minus investeringar (capex). När du drar ifrån kapitaliseringarna — som var WorldComs gömställe — försvinner miraklet. I AKM1 V08 är detta operativregel: presentera alltid nettoresultat, driftskassaflöde och fritt kassaflöde sida vid sida, minst fem år."
+          "content": "WorldCom visar testets gränser — och dess mogna version. Kapitaliseringstricket gjorde både vinsten och driftskassaflödet snygga: kostnaderna togs inte bara ur resultaträkningen, de hamnade i investeringsdelen av kassaflödesanalysen. Driftskassan såg därför stark ut! Lösningen är att aldrig stanna vid driftskassaflödet, utan gå vidare till fritt kassaflöde: driftskassa minus investeringar (capex). När du drar ifrån kapitaliseringarna — som var WorldComs gömställe — försvinner miraklet. I AKM1:s kassaflödesanalys är detta operativregel: presentera alltid nettoresultat, driftskassaflöde och fritt kassaflöde sida vid sida, minst fem år."
         },
         {
           "type": "text",
@@ -628,7 +628,7 @@
         },
         {
           "type": "text",
-          "content": "Så operationaliseras V08-detektorn i praktiken. Steg ett: tabell med fem kolumner för fem år — nettoresultat, driftskassaflöde, fritt kassaflöde, kvot driftskassa/resultat och ackumulerad summa. Steg två: markera varje år då vinsten överstiger driftskassan utan rimlig förklaring (tillväxt i arbetskapital är en förklaring — en gång; inte för evigt). Steg tre: om kvoten under fem år systematiskt understiger ett — eller om gapet vidgas medan tillväxten accelererar — är rapporten en V17-fråga fram till att bolaget själv förklarar gapet. Det är då inte köpargumentet som gäller, utan urvalsfrågan: vad betalar jag för — vinst eller en berättelse om vinst?"
+          "content": "Så operationaliseras kassaflödesdetektorn i praktiken. Steg ett: tabell med fem kolumner för fem år — nettoresultat, driftskassaflöde, fritt kassaflöde, kvot driftskassa/resultat och ackumulerad summa. Steg två: markera varje år då vinsten överstiger driftskassan utan rimlig förklaring (tillväxt i arbetskapital är en förklaring — en gång; inte för evigt). Steg tre: om kvoten under fem år systematiskt understiger ett — eller om gapet vidgas medan tillväxten accelererar — är rapporten en källkritikfråga (V12-flagga) fram till att bolaget själv förklarar gapet. Det är då inte köpargumentet som gäller, utan urvalsfrågan: vad betalar jag för — vinst eller en berättelse om vinst?"
         },
         {
           "type": "insikt",
@@ -636,7 +636,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"V08: scenarier — tolkning och åtgärd\",\"rader\":[[\"Scenario\",\"Trolig tolkning\",\"Åtgärd\"],[\"Vinst och kassa i paritet över 5 år\",\"Hög resultatkvalitet\",\"Normal analys — fortsätt till V04/V05\"],[\"Vinst överstiger kassa, ett år\",\"Tillväxt i arbetskapital\",\"Kontrollera DSO/lager nästa rapport\"],[\"Vinst överstiger kassa, år efter år\",\"Periodiseringstrick eller dålig affär\",\"Kräv förklaring; sätt ned V17-betyget\"],[\"Vinst fin, kassa fin, fritt kassaflöde svagt\",\"Kapitaliseringstrick (WorldCom-mönster)\",\"Granska capex/avskrivning och kapitaliserade poster\"],[\"Jättekassa, knappt någon ränteavkastning\",\"Fejkad eller låst kassa\",\"Begär logik för bankbekräftelser; omvärdera hela tesen\"]]}"
+          "content": "{\"rubrik\":\"Vinst mot kassaflöde: scenarier — tolkning och åtgärd\",\"rader\":[[\"Scenario\",\"Trolig tolkning\",\"Åtgärd\"],[\"Vinst och kassa i paritet över 5 år\",\"Hög resultatkvalitet\",\"Normal analys — fortsätt till V07/V05\"],[\"Vinst överstiger kassa, ett år\",\"Tillväxt i arbetskapital\",\"Kontrollera DSO/lager nästa rapport\"],[\"Vinst överstiger kassa, år efter år\",\"Periodiseringstrick eller dålig affär\",\"Kräv förklaring; sätt ned redovisningskvalitetsbetyget\"],[\"Vinst fin, kassa fin, fritt kassaflöde svagt\",\"Kapitaliseringstrick (WorldCom-mönster)\",\"Granska capex/avskrivning och kapitaliserade poster\"],[\"Jättekassa, knappt någon ränteavkastning\",\"Fejkad eller låst kassa\",\"Begär logik för bankbekräftelser; omvärdera hela tesen\"]]}"
         },
         {
           "type": "visuell",
@@ -644,7 +644,7 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Bygg V08-tabellen för ett bolag du överväger att köpa: fem år, tre rader (nettoresultat, driftskassaflöde, fritt kassaflöde) och en rad kvot. Markera åren med kvot under 1,0. Skriv därefter en enda mening som förklarar gapet. Om du inte kan skriva meningen med stöd i rapporterna har du precis hittat kursens viktigaste fynd."
+          "content": "🎯 Bygg kassaflödestabellen för ett bolag du överväger att köpa: fem år, tre rader (nettoresultat, driftskassaflöde, fritt kassaflöde) och en rad kvot. Markera åren med kvot under 1,0. Skriv därefter en enda mening som förklarar gapet. Om du inte kan skriva meningen med stöd i rapporterna har du precis hittat kursens viktigaste fynd."
         }
       ],
       "quiz": [
@@ -686,8 +686,8 @@
     {
       "num": 10,
       "minutes": 10,
-      "title": "Detektör II: DSO, lageromsättning och marginalradarn (V04)",
-      "intro": "Schilits andra instrument är balansräkningen som lögndetektor: fordringar och lager rör sig inte lika lätt som resultatrader. Här bygger vi nyckeltalsradarn — DSO, lageromsättning och bruttomarginal — och kopplar den till AKM1 V04, där marginalens stabilitet är ett krav på dokumenterad kvalitet.",
+      "title": "Detektör II: DSO, lageromsättning och marginalradarn (V07)",
+      "intro": "Schilits andra instrument är balansräkningen som lögndetektor: fordringar och lager rör sig inte lika lätt som resultatrader. Här bygger vi nyckeltalsradarn — DSO, lageromsättning och bruttomarginal — och kopplar den till AKM1 V07, där marginalens stabilitet är ett krav på dokumenterad kvalitet.",
       "blocks": [
         {
           "type": "text",
@@ -699,11 +699,11 @@
         },
         {
           "type": "text",
-          "content": "Bruttomarginalen är den tredje raden och binder det hela till AKM1 V04. En marginal som är stabilt högre än konkurrenternas är antingen en moat (V13) eller ett redovisningsval. V04:s krav på flerårsgenomsnitt och marginalstabilitet är därför i sig ett shenaniganskydd: kolla tre saker. För det första nivån mot två till tre konkurrenter — skillnader över fem procentenheter utan förklaring (teknik, varumärke, skala) är en fråga, inte en komplimang. För det andra trenden — en plötslig marginalförbättring utan prisökning, mixförbättring eller kostnadsprogram är ofta ett avskrivnings- eller reservtrick (kategori fyra). För det tredje sambandet: en marginal som stiger samtidigt som DSO och lager stiger är den farligaste kombinationen i hela kursen — bolaget påstår lönsamhet samtidigt som varor och fordringar hopas."
+          "content": "Bruttomarginalen är den tredje raden och binder det hela till AKM1 V07. En marginal som är stabilt högre än konkurrenternas är antingen en moat (V13–V15) eller ett redovisningsval. V07:s krav på flerårsgenomsnitt och marginalstabilitet är därför i sig ett shenaniganskydd: kolla tre saker. För det första nivån mot två till tre konkurrenter — skillnader över fem procentenheter utan förklaring (teknik, varumärke, skala) är en fråga, inte en komplimang. För det andra trenden — en plötslig marginalförbättring utan prisökning, mixförbättring eller kostnadsprogram är ofta ett avskrivnings- eller reservtrick (kategori fyra). För det tredje sambandet: en marginal som stiger samtidigt som DSO och lager stiger är den farligaste kombinationen i hela kursen — bolaget påstår lönsamhet samtidigt som varor och fordringar hopas."
         },
         {
           "type": "text",
-          "content": "För den som vill komplettera Schilits hantverk med kvantitet finns Beneish M-Score (1999), en konstruktion av åtta index som väger exakt dessa signaler — DSO-index, marginalindex, avskrivningsindex, tillgångstillväxt med flera — till en siffra för manipulationsrisk. Indexen bygger på samma logik som denna kurs: fordringar, lager, marginaler och mjuka kostnader rör sig inte utan att lämna spår. Du behöver inte minnas formeln — du behöver komma ihåg att varje index i den motsvarar en av Schilits kategorier. När du i AKM1:s V04 registrerar bruttomarginalen som en serie (inte som ett enskilt års värde) gör du redan halva Beneish-jobbet."
+          "content": "För den som vill komplettera Schilits hantverk med kvantitet finns Beneish M-Score (1999), en konstruktion av åtta index som väger exakt dessa signaler — DSO-index, marginalindex, avskrivningsindex, tillgångstillväxt med flera — till en siffra för manipulationsrisk. Indexen bygger på samma logik som denna kurs: fordringar, lager, marginaler och mjuka kostnader rör sig inte utan att lämna spår. Du behöver inte minnas formeln — du behöver komma ihåg att varje index i den motsvarar en av Schilits kategorier. När du i AKM1:s V07 registrerar bruttomarginalen som en serie (inte som ett enskilt års värde) gör du redan halva Beneish-jobbet."
         },
         {
           "type": "insikt",
@@ -711,7 +711,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Nyckeltalsradarn\",\"rader\":[[\"Nyckeltal\",\"Beräkning\",\"Varning\",\"Kopplad kategori\"],[\"DSO\",\"Kundfordringar/intäkt × 365\",\"Stiger snabbare än intäkten\",\"1 och 2\"],[\"DIO\",\"Lager/kostnad sålda varor × 365\",\"Växer utan försäljningstillväxt\",\"1, 2 och 4\"],[\"Bruttomarginal (V04)\",\"Bruttovinst/intäkt\",\"Plötsligt hopp utan förklaring\",\"4 och 5\"],[\"Avskrivningar/capex\",\"Avskrivningar ÷ capex\",\"Systematiskt lågt i moget bolag\",\"5\"],[\"Vinst/driftskassa (V08)\",\"Nettoresultat ÷ driftskassaflöde\",\"Kvot under 1,0 år efter år\",\"Alla\"]]}"
+          "content": "{\"rubrik\":\"Nyckeltalsradarn\",\"rader\":[[\"Nyckeltal\",\"Beräkning\",\"Varning\",\"Kopplad kategori\"],[\"DSO\",\"Kundfordringar/intäkt × 365\",\"Stiger snabbare än intäkten\",\"1 och 2\"],[\"DIO\",\"Lager/kostnad sålda varor × 365\",\"Växer utan försäljningstillväxt\",\"1, 2 och 4\"],[\"Bruttomarginal (V07)\",\"Bruttovinst/intäkt\",\"Plötsligt hopp utan förklaring\",\"4 och 5\"],[\"Avskrivningar/capex\",\"Avskrivningar ÷ capex\",\"Systematiskt lågt i moget bolag\",\"5\"],[\"Vinst/driftskassa\",\"Nettoresultat ÷ driftskassaflöde\",\"Kvot under 1,0 år efter år\",\"Alla\"]]}"
         },
         {
           "type": "visuell",
@@ -746,7 +746,7 @@
           "tips": "Det var en detaljhandelskedja — den post som samlar nästan allt kapital hos en återförsäljare."
         },
         {
-          "q": "Enligt V04-kopplingen: vilken kombination är den farligaste?",
+          "q": "Enligt V07-kopplingen: vilken kombination är den farligaste?",
           "alternativ": [
             "Stigande bruttomarginal samtidigt som DSO och lager stiger",
             "Fallande bruttomarginal med fallande lager",
@@ -778,7 +778,7 @@
         },
         {
           "type": "text",
-          "content": "Samla signalerna i ett V17-protokoll. Tre hårda frågor: ändrades redovisningsprinciper det senaste året? Finns kopplade-parter-transaktioner? Summerar åtagandena i noterna mer än en femtedel av balansräkningen? Tre mjuka frågor: har CFO eller revisor bytts nyligen? Hur bemöts kritiker? Säljer insiderna medan multipeln byggts på justerade mått? Sex nej-svar är en ren rapport; två eller fler ja-svar är inte köp — det är arbete: läs om, fråga IR, jämför med konkurrenter. Om svaren inte håller är slutsatsen inte att justera multipeln — den är att gå vidare. Nästa aktie är en knapptryckning bort; nästa Wirecard kan äta en hel portfölj."
+          "content": "Samla signalerna i ett redovisningskvalitetsprotokoll. Tre hårda frågor: ändrades redovisningsprinciper det senaste året? Finns kopplade-parter-transaktioner? Summerar åtagandena i noterna mer än en femtedel av balansräkningen? Tre mjuka frågor: har CFO eller revisor bytts nyligen? Hur bemöts kritiker? Säljer insiderna medan multipeln byggts på justerade mått? Sex nej-svar är en ren rapport; två eller fler ja-svar är inte köp — det är arbete: läs om, fråga IR, jämför med konkurrenter. Om svaren inte håller är slutsatsen inte att justera multipeln — den är att gå vidare. Nästa aktie är en knapptryckning bort; nästa Wirecard kan äta en hel portfölj."
         },
         {
           "type": "insikt",
@@ -790,7 +790,7 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Ge dig själv 30 minuter med en årsredovisning: anteckna varje förekomst av orden ändring, omräkning, kopplad, engångs och värdering i noterna. Räkna ihop fynden. Fem eller fler — skriv ett V17-protokoll med tre frågor till bolaget. Noll fynd efter 30 minuters läsning — du har förmodligen inte läst noterna, utan bara resultaträkningen."
+          "content": "🎯 Ge dig själv 30 minuter med en årsredovisning: anteckna varje förekomst av orden ändring, omräkning, kopplad, engångs och värdering i noterna. Räkna ihop fynden. Fem eller fler — skriv ett redovisningskvalitetsprotokoll med tre frågor till bolaget. Noll fynd efter 30 minuters läsning — du har förmodligen inte läst noterna, utan bara resultaträkningen."
         }
       ],
       "quiz": [
@@ -916,11 +916,11 @@
         },
         {
           "type": "text",
-          "content": "Vad lär de två fallen? För det första: kassa fordrar bevis, inte beskrivningar. Wirecards 1,9 miljarder kunde inte verifieras med oberoende bankbekräftelser — den äldsta och enklaste revisionshandlingen. För det andra: struktur med opacitet är en varning i sig. TPA-modellen — halva lönsamheten hos partner som inte granskades — är V17:s komplexitetsargument i ren form. För det tredje: angrepp på kritiker är information. Både Luckin och Wirecard svarade på frågor med hot; Wirecards svar blev påtryckningar mot journalister och myndigheter. För det fjärde: kortförsäljare och journalister är marknadens röda blodkroppar — Muddy Waters och FT producerade i båda fallen det underlag som revisorer och styrelser inte levererade. Du behöver inte gilla blankare för att använda deras research: deras incitament — fallande kurser — är i alla fall ärligare än ledningens guidance."
+          "content": "Vad lär de två fallen? För det första: kassa fordrar bevis, inte beskrivningar. Wirecards 1,9 miljarder kunde inte verifieras med oberoende bankbekräftelser — den äldsta och enklaste revisionshandlingen. För det andra: struktur med opacitet är en varning i sig. TPA-modellen — halva lönsamheten hos partner som inte granskades — är källkritikens komplexitetsargument i ren form. För det tredje: angrepp på kritiker är information. Både Luckin och Wirecard svarade på frågor med hot; Wirecards svar blev påtryckningar mot journalister och myndigheter. För det fjärde: kortförsäljare och journalister är marknadens röda blodkroppar — Muddy Waters och FT producerade i båda fallen det underlag som revisorer och styrelser inte levererade. Du behöver inte gilla blankare för att använda deras research: deras incitament — fallande kurser — är i alla fall ärligare än ledningens guidance."
         },
         {
           "type": "text",
-          "content": "För AKM1-användaren blir slutsatsen konkret. Regel ett: äg aldrig ett bolag vars kassa inte kan förklaras med namngivna banker och konton (fråga till IR: vilka banker förvaltar bolagets kassa och kan ni visa oberoende bekräftelser?). Regel två: om en betydande andel av vinsten kommer från en struktur du inte kan räkna hem — partnerskap, agentnät, relaterade parter — är det en V17-flagga oavsett hur vackra marginalerna är. Regel tre: när ett bolag har fallen kritiker och svarar med advokater i stället för siffror — ställ dig på samma sida som dem som gräver, inte som dem som hotar. Schilit skrev sina kategorier före internet; Luckin och Wirecard visar att de bara behöver nya kulisser för att spelas igen."
+          "content": "För AKM1-användaren blir slutsatsen konkret. Regel ett: äg aldrig ett bolag vars kassa inte kan förklaras med namngivna banker och konton (fråga till IR: vilka banker förvaltar bolagets kassa och kan ni visa oberoende bekräftelser?). Regel två: om en betydande andel av vinsten kommer från en struktur du inte kan räkna hem — partnerskap, agentnät, relaterade parter — är det en källkritikflagga oavsett hur vackra marginalerna är. Regel tre: när ett bolag har fallen kritiker och svarar med advokater i stället för siffror — ställ dig på samma sida som dem som gräver, inte som dem som hotar. Schilit skrev sina kategorier före internet; Luckin och Wirecard visar att de bara behöver nya kulisser för att spelas igen."
         },
         {
           "type": "insikt",
@@ -978,24 +978,24 @@
     {
       "num": 14,
       "minutes": 10,
-      "title": "Schilit i AKM1: checklista, V17-integration och 30-sekunderstestet",
-      "intro": "Sista kapitlet bygger bron från bokens kategorier till AKM1:s variabler: V17 gör redovisningskvaliteten till ett såll, V08 kontrollerar vinsten mot kassan, V04 binder marginalens stabilitet till dess äkthet, V05 gör balansräkningens trovärdighet till förutsättning för P/B. Kursen avslutas med ett test du kan köra på trettio sekunder.",
+      "title": "Schilit i AKM1: checklista, källkritik-integration och 30-sekunderstestet",
+      "intro": "Sista kapitlet bygger bron från bokens kategorier till AKM1:s variabler: källkritiken (med V12 som närmaste variabel) gör redovisningskvaliteten till ett såll, kassaflödesanalysen kontrollerar vinsten mot kassan, V07 binder marginalens stabilitet till dess äkthet, V05 gör balansräkningens trovärdighet till förutsättning för P/B. Kursen avslutas med ett test du kan köra på trettio sekunder.",
       "blocks": [
         {
           "type": "text",
-          "content": "V17 — rapportkvalitet och sårbärhet — är Schilit-kursens naturliga hem i AKM1. Operationalisera volymen som ett fem punkters protokoll. Ett: komplexitet — hur många sidor noter, hur många dotterbolag, hur många länder; komplexitet i sig är ett riskmått. Två: redovisningsval — ändrade principer, kapitaliseringar, aggressiva antaganden (kategori ett till fem). Tre: struktur — kopplade parter, SPE:s, partnerlösningar som Wirecards TPA (kategori sex). Fyra: granskning — revisorns oberoende, utlåtandets reservationer, byten av byrå. Fem: kultur — hur bemöts kritiker, hur styrs bonusar, vad säger visselblåsarspåren. Poängen är att V17 inte blir en magkänsla utan en checklista som kan dokumenteras i varje analys — det är den dokumentationen frågorna i denna kurs har tränat dig på."
+          "content": "Redovisningskvalitet och sårbärhet — källkritiken, med V12 (intäktsstabilitet) som närmaste variabel — är Schilit-kursens naturliga hem i AKM1. Operationalisera volymen som ett fem punkters protokoll. Ett: komplexitet — hur många sidor noter, hur många dotterbolag, hur många länder; komplexitet i sig är ett riskmått. Två: redovisningsval — ändrade principer, kapitaliseringar, aggressiva antaganden (kategori ett till fem). Tre: struktur — kopplade parter, SPE:s, partnerlösningar som Wirecards TPA (kategori sex). Fyra: granskning — revisorns oberoende, utlåtandets reservationer, byten av byrå. Fem: kultur — hur bemöts kritiker, hur styrs bonusar, vad säger visselblåsarspåren. Poängen är att redovisningskvalitetsbedömningen inte blir en magkänsla utan en checklista som kan dokumenteras i varje analys — det är den dokumentationen frågorna i denna kurs har tränat dig på."
         },
         {
           "type": "text",
-          "content": "De övriga volymerna blir stödet runt V17. V08 är lögndetektorn: fem år av nettoresultat, driftskassaflöde och fritt kassaflöde sida vid sida; kvot under ett år efter år är en granskningssignal, inte en köpsignal. V04 är marginalens kvalitetskontroll: bruttomarginalen som serie, jämförd med två till tre konkurrenter; ett hopp utan förklaring är kategori fyra eller fem tills motsatsen bevisats. V05 — P/B — är kursens tysta lärdom: ett lågt P/B är bara billigt om balansräkningen är sann. Enrons balansräkning, Satyams kassa, Wirecards konton — när boken (eget kapital) är påhittad blir multipeln på den meningslös. Därför hamnar Schilit-testet före multipeln i analysflödet: först verifiera, sedan värdera. Och V19 — margin of safety — ska innehålla redovisningsrisk: en aktie med otydlig rapport kräver större rabatt, eller ingen position alls."
+          "content": "De övriga volymerna blir stödet runt källkritiken. Kassaflödesanalysen är lögndetektorn: fem år av nettoresultat, driftskassaflöde och fritt kassaflöde sida vid sida; kvot under ett år efter år är en granskningssignal, inte en köpsignal. V07 är marginalens kvalitetskontroll: bruttomarginalen som serie, jämförd med två till tre konkurrenter; ett hopp utan förklaring är kategori fyra eller fem tills motsatsen bevisats. V05 — P/B — är kursens tysta lärdom: ett lågt P/B är bara billigt om balansräkningen är sann. Enrons balansräkning, Satyams kassa, Wirecards konton — när boken (eget kapital) är påhittad blir multipeln på den meningslös. Därför hamnar Schilit-testet före multipeln i analysflödet: först verifiera, sedan värdera. Och margin of safety (Grahams princip) ska innehålla redovisningsrisk: en aktie med otydlig rapport kräver större rabatt, eller ingen position alls."
         },
         {
           "type": "text",
-          "content": "Här är 30-sekunderstestet — fem frågor, ja eller nej. Ett: växer kundfordringarna (DSO) snabbare än intäkterna? Två: har nettoresultatet överstigit driftskassaflödet två år i rad eller mer? Tre: återkommer poster som kallas engångs år efter år? Fyra: växer kapitaliserade poster eller avskrivningsbasen snabbare än intäkterna? Fem: finns kopplade parter, komplexa partnerstrukturer eller påstådda kassor utan namngivna banker? Fem nej: rapporten tål ljuset — fortsätt till värderingen. Ett ja: läs noterna igen och ställ frågan till bolaget. Två ja eller fler: kräv ett V17-betyg som sänker positionen till noll tills frågorna besvarats. Testet är avsiktligt grovt — det är en brandvarnare, inte en utredning. Men den som kör det på varje kandidat utesluter i praktiken risken att sitta kvar i nästa kapitel tolv."
+          "content": "Här är 30-sekunderstestet — fem frågor, ja eller nej. Ett: växer kundfordringarna (DSO) snabbare än intäkterna? Två: har nettoresultatet överstigit driftskassaflödet två år i rad eller mer? Tre: återkommer poster som kallas engångs år efter år? Fyra: växer kapitaliserade poster eller avskrivningsbasen snabbare än intäkterna? Fem: finns kopplade parter, komplexa partnerstrukturer eller påstådda kassor utan namngivna banker? Fem nej: rapporten tål ljuset — fortsätt till värderingen. Ett ja: läs noterna igen och ställ frågan till bolaget. Två ja eller fler: kräv ett redovisningskvalitetsbetyg som sänker positionen till noll tills frågorna besvarats. Testet är avsiktligt grovt — det är en brandvarnare, inte en utredning. Men den som kör det på varje kandidat utesluter i praktiken risken att sitta kvar i nästa kapitel tolv."
         },
         {
           "type": "text",
-          "content": "Schilits slutmaning till investeraren är vardaglig och sträng: lita, men verifiera — och läs allt. Bokens kärna är inte misstro mot företag i allmänhet utan respekt för att redovisning görs av människor under press, och att pressen inte försvinner. Din kappa i AKM1 är därför dubbelt: använd systemets nyckeltal (V04, V08, V05, V13) för att hitta kvalitet — och använd Schilit (V17) för att avslöja dess fejk. Det är också en etisk position: bedrägerier kan inte förhindras av enskilda investerare, men de kan förnekas bränsle — det kapital som stannar hemma hos den som läst noterna. Kursens examen är enkel: nästa gång en rapport känns för bra för att vara sann — vilka tre sidor läser du först, och vilken fråga ställer du?"
+          "content": "Schilits slutmaning till investeraren är vardaglig och sträng: lita, men verifiera — och läs allt. Bokens kärna är inte misstro mot företag i allmänhet utan respekt för att redovisning görs av människor under press, och att pressen inte försvinner. Din kappa i AKM1 är därför dubbelt: använd systemets nyckeltal (V07, V12, V05, V13–V15) för att hitta kvalitet — och använd Schilit (källkritiken) för att avslöja dess fejk. Det är också en etisk position: bedrägerier kan inte förhindras av enskilda investerare, men de kan förnekas bränsle — det kapital som stannar hemma hos den som läst noterna. Kursens examen är enkel: nästa gång en rapport känns för bra för att vara sann — vilka tre sidor läser du först, och vilken fråga ställer du?"
         },
         {
           "type": "insikt",
@@ -1003,7 +1003,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Sju kategorier × AKM1-variabler\",\"rader\":[[\"Kategori\",\"AKM1-koppling\",\"Fråga du ställer\",\"Åtgärd vid flagg\"],[\"1. För tidiga intäkter\",\"V04/V08\",\"Växer DSO snabbare än intäkten?\",\"Läs intäktsnoten; fråga om returrätter\"],[\"2. Fiktiva intäkter\",\"V08/V17\",\"Kommer intäkten som kassa?\",\"Kontrollera kassa från kunder; bankbekräftelser\"],[\"3. Intäktsöverföringar\",\"V04\",\"Återkommer engångsvinster?\",\"Rekonstruera resultaten tre år\"],[\"4. Underskattade kostnader\",\"V04/V05\",\"Avviker avskrivningar och reserver från konkurrenter?\",\"Jämför noter med 2-3 konkurrenter\"],[\"5. Kostnadsförskjutningar\",\"V08\",\"Växer kapitaliserade poster? Vart tar capex vägen?\",\"Fritt kassaflöde fem år; reservnotens rollforward\"],[\"6. Dolda skulder\",\"V17/V05\",\"Hur stora är åtagandena och de kopplade parterna?\",\"Summa noter mot balansräkning; sänk V17-betyget\"],[\"7. Kassaflödesmissbruk\",\"V08\",\"Vad säger fotnoterna om klassificering?\",\"DPO-trend; not om leverantörsfinansiering\"]]}"
+          "content": "{\"rubrik\":\"Sju kategorier × AKM1-variabler\",\"rader\":[[\"Kategori\",\"AKM1-koppling\",\"Fråga du ställer\",\"Åtgärd vid flagg\"],[\"1. För tidiga intäkter\",\"V12/V07\",\"Växer DSO snabbare än intäkten?\",\"Läs intäktsnoten; fråga om returrätter\"],[\"2. Fiktiva intäkter\",\"V12 + källkritik\",\"Kommer intäkten som kassa?\",\"Kontrollera kassa från kunder; bankbekräftelser\"],[\"3. Intäktsöverföringar\",\"V07\",\"Återkommer engångsvinster?\",\"Rekonstruera resultaten tre år\"],[\"4. Underskattade kostnader\",\"V07/V05\",\"Avviker avskrivningar och reserver från konkurrenter?\",\"Jämför noter med 2-3 konkurrenter\"],[\"5. Kostnadsförskjutningar\",\"V08 (EBITDA-marginal)\",\"Växer kapitaliserade poster? Vart tar capex vägen?\",\"Fritt kassaflöde fem år; reservnotens rollforward\"],[\"6. Dolda skulder\",\"V10/V05\",\"Hur stora är åtagandena och de kopplade parterna?\",\"Summa noter mot balansräkning; sänk redovisningskvalitetsbetyget\"],[\"7. Kassaflödesmissbruk\",\"källkritik\",\"Vad säger fotnoterna om klassificering?\",\"DPO-trend; not om leverantörsfinansiering\"]]}"
         },
         {
           "type": "visuell",
@@ -1030,7 +1030,7 @@
           "q": "I 30-sekunderstestet: vad är rätt åtgärd vid två ja eller fler?",
           "alternativ": [
             "Köpa mer eftersom marknaden överdriver risken",
-            "Kräva dokumenterat V17-betyg som sänker positionen till noll tills frågorna besvarats",
+            "Kräva dokumenterat redovisningskvalitetsbetyg som sänker positionen till noll tills frågorna besvarats",
             "Vänta på nästa kvartalsrapport innan någon åtgärd",
             "Justera multipeln nedåt med tio procent"
           ],

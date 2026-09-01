@@ -25,6 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/superanalys`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/badges`, changeFrequency: "weekly", priority: 0.7, lastModified: now },
     { url: `${baseUrl}/fas2-ansok`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${baseUrl}/min-sida`, changeFrequency: "daily", priority: 0.8, lastModified: now },
+    { url: `${baseUrl}/dagens-pass`, changeFrequency: "daily", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${baseUrl}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${baseUrl}/terms`, changeFrequency: "yearly", priority: 0.2 },

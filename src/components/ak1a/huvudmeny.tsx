@@ -40,6 +40,8 @@ const PANELER: MenyPanel[] = [
     titel: "Träna",
     ikon: "🎯",
     punkter: [
+      { text: "Min Sida", lank: "/min-sida", ikon: "🏠", beskrivning: "Din dashboard — allt på ett ställe" },
+      { text: "Dagens Pass", lank: "/dagens-pass", ikon: "⚡", beskrivning: "5 minuters daglig marknadsträning" },
       { text: "Topplistan", lank: "/topplista", ikon: "🏆", beskrivning: "Eleverna rankade på XP" },
       { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "28 troféer att förtjäna" },
       { text: "Fas 2-ansökan", lank: "/fas2-ansok", ikon: "✉️", beskrivning: "Utbildning med grundaren — ansök kostnadsfritt" },

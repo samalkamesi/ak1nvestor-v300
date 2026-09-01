@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "AK1A Research Lab — Finansutbildning",
     short_name: "AK1A",
     description:
-      "230 kurser, AI-Mentor, kalkylator och portföljsystem — pedagogisk finansanalys enligt AKM1/AK1TS. Fas 1 alltid gratis.",
+      "240 kurser, AI-Mentor, kalkylator och portföljsystem — pedagogisk finansanalys enligt AKM1/AK1TS. Fas 1 alltid gratis.",
     lang: "sv",
     dir: "ltr",
     start_url: "/?kalla=pwa",

@@ -9,7 +9,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/kurser",
-  title: "Kurser i institutionell aktieanalys — 233 moduler | AK1A",
+  title: "Kurser i institutionell aktieanalys — 240 moduler | AK1A",
   description:
     "Lär dig institutionell aktieanalys steg för steg. 225 kurser: AKM1:s 20 variabler, teknisk analys, riskhantering, portföljhantering och praktiska case. Pedagogisk finansanalys.",
   keywords: [

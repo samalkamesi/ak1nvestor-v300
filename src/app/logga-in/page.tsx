@@ -9,7 +9,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/logga-in",
   title: "Logga in — gratis konto, alla kurser upplåsta | AK1A",
   description:
-    "Logga in med e-post eller skapa gratis konto: alla 226 kurser, kalkylatorn och portföljsystemet — helt kostnadsfritt, för alltid.",
+    "Logga in med e-post eller skapa gratis konto: alla 240 kurser, kalkylatorn och portföljsystemet — helt kostnadsfritt, för alltid.",
   keywords: ["logga in", "gratis konto", "aktieutbildning gratis", "AK1A"],
 });
 

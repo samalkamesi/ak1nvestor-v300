@@ -52,6 +52,10 @@ function navigera(fraga: string): Intent | null {
       { text: "Förtjäna XP: läs en kurs", lank: "/kurser", ikon: "📚" },
       { text: "Logga in gratis", lank: "/logga-in", ikon: "🔑" },
     ]};
+    if (/bibliotek|bok|böcker|bokkanon|läslista/.test(q)) return { typ: "navigering", handlings: [
+      { text: "Biblioteket 📖 (100 böcker)", lank: "/bibliotek", ikon: "📖", beskrivning: "Kanon kopplad till AKM1/AK1TS" },
+      { text: "Bokmaster-kurser", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "13 böcker kapitel för kapitel" },
+    ]};
     if (/kalkylator|räkna|beräkna/.test(q)) return { typ: "navigering", handlings: [
       { text: "AKM1-kalkylatorn (20 variabler)", lank: "/kalkylator", ikon: "🧮" },
       { text: "Var hittar jag siffrorna?", lank: "/kalkylator", ikon: "📖" },
@@ -211,7 +215,7 @@ export async function POST(req: NextRequest) {
     // 3) Varumärke
     if (/vem är|vad är.*(sam|ak1|alkamesi|nvestor)/i.test(q)) {
       return NextResponse.json({
-        svar: "Sam Alkamesi är grundaren av AK1nvestor.com. AK1A Research Lab (lab.ak1nvestor.com) är plattformen: 227 kurser, analyser, portföljsystem och AI-mentor — allt bygger på AKM1 + AK1TS-ekosystemet. Fas 1 är alltid gratis.",
+        svar: "Sam Alkamesi är grundaren av AK1nvestor.com. AK1A Research Lab (lab.ak1nvestor.com) är plattformen: 240 kurser, analyser, portföljsystem och AI-mentor — allt bygger på AKM1 + AK1TS-ekosystemet. Fas 1 är alltid gratis.",
         handlings: [
           { text: "Se medlemskap →", lank: "/medlemskap", ikon: "💛" },
           { text: "Läs mer om oss →", lank: "/om-oss", ikon: "🏛️" },
@@ -247,7 +251,7 @@ export async function POST(req: NextRequest) {
         [
           {
             role: "system",
-            content: `Du är "AI-Mentorn" i AK1A Research Lab (lab.ak1nvestor.com) — svensk finansutbildning med 230 kurser, kalkylator (AKM1: 20 fundamentalvariabler V01-V20, 0-5 poäng, max 100), portföljsystem (AK1TS: 5 tidshorisonter × 5 teorier × 4 dimensioner), quiz med +10 XP, flashcards med spaced repetition, certifikat.
+            content: `Du är "AI-Mentorn" i AK1A Research Lab (lab.ak1nvestor.com) — svensk finansutbildning med 240 kurser, kalkylator (AKM1: 20 fundamentalvariabler V01-V20, 0-5 poäng, max 100), portföljsystem (AK1TS: 5 tidshorisonter × 5 teorier × 4 dimensioner), quiz med +10 XP, flashcards med spaced repetition, certifikat.
 
 REGELVERK:
 1. Svara på svenska — varm, rak, pedagogisk. Max ~150 ord.

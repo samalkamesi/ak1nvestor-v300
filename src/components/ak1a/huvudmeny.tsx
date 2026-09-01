@@ -18,7 +18,7 @@ const PANELER: MenyPanel[] = [
     punkter: [
       { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker" },
       { text: "Alla kurser", lank: "/kurser", ikon: "📚", beskrivning: "Hela biblioteket med quiz" },
-      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "Graham · Lynch · Thiel · Kim & Mauborgne" },
+      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "28 böcker kapitel för kapitel + ekosystem-flaggskeppen" },
       { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — 100 böcker mot AKM1/AK1TS" },
       { text: "Certifikat", lank: "/certifikat", ikon: "🏅", beskrivning: "Ditt intyg på kompetens" },
     ],

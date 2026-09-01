@@ -3131,3 +3131,25 @@ Stage Summary:
 - Plan dokumenterad med mätbara leveranser
 - Kö: integrera verktygen i kapitlen (A1→kap20, A2→kap8, A3→kap2),
   sedan Fas B (automatisk grafdetektering), Fas C (systemkoppling)
+---
+Task ID: 100-LAROPLAN
+Agent: main (Z.ai Code)
+Task: Läroplanen — 5 nivåer mot oberoende aktieanalytiker — LIVE
+
+Work Log:
+- /laroplan: komplett läroplan med 62 kurser i 5 nivåer, varje kurs med syfte
+  och tidsåtgång; progress kopplad till XP-systemet; färgkodade nivå-block
+- Nivå 1 Grunderna: V01-V20 (20 kurser) — alla byggstenar
+- Nivå 2 Fördjupning: bokföring 6 + teknisk 2 + risk 3 + praktik 1 (12 kurser)
+- Nivå 3 Bokmaster: Graham 21 kap + ekosystem 6 kap (2 kurser, 2000+500 XP)
+- Nivå 4 Praktik: case studies + portfölj (5 kurser)
+- Nivå 5 Självständighet: sektor + makro + beteende (5 kurser)
+- Meny: 'Läroplan' nu först (före Kurser) på alla sidor
+- Certifierings-mål deklarerat på sidan
+
+Stage Summary:
+- 'Kurser fyller ett syfte mot oberoende analytiker' implementerat som
+  strukturerad läroplan med tydlig progression
+- Varje kurs answerar: VARFÖR just denna + VAD du kan efter
+- Kö: integrera läroplanen i kurs-sidor (visar var i resan du är),
+  fler nivåer med kurser, certifierings-system

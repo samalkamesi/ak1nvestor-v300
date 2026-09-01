@@ -49,13 +49,47 @@ export function lasStjarnor(): number {
   }
 }
 
-/** Lägger till XP; returnerar ny nivå (1–100). */
+/** Lägger till XP; returnerar ny nivå (1–100). Varje XP-förtjänad aktivitet
+ *  matar också streak-räknaren (glömskekurvan älskar daglig närvaro). */
 export function addXP(delta: number): number {
   const ny = lasXP() + delta;
   try {
     localStorage.setItem(XP_KEY, String(ny));
   } catch {}
+  rapporteraAktivitet();
   return nivaFranXP(ny);
+}
+
+// ── Streak (daglig aktivitetskedja, Duo-stil) ───────────────────────────────
+
+const STREAK_KEY = "ak1a-streak";
+
+export type Streak = { antal: number; basta: number; senast: string };
+
+export function lasStreak(): Streak {
+  if (typeof window === "undefined") return { antal: 0, basta: 0, senast: "" };
+  try {
+    return JSON.parse(localStorage.getItem(STREAK_KEY) || "null") || { antal: 0, basta: 0, senast: "" };
+  } catch {
+    return { antal: 0, basta: 0, senast: "" };
+  }
+}
+
+/** Registrera dagens aktivitet: igår → +1, idag → oförändrat, gap → nollställ. */
+export function rapporteraAktivitet(): Streak {
+  const s = lasStreak();
+  const idag = new Date().toISOString().slice(0, 10);
+  const igår = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  let antal = s.antal;
+  if (s.senast === idag) {
+    return s; // redan räknad idag
+  }
+  antal = s.senast === igår ? s.antal + 1 : 1;
+  const ny: Streak = { antal, basta: Math.max(antal, s.basta), senast: idag };
+  try {
+    localStorage.setItem(STREAK_KEY, JSON.stringify(ny));
+  } catch {}
+  return ny;
 }
 
 export function addStjarna(): number {

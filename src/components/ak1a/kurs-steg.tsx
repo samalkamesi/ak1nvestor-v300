@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { addXP, lasXP, lasStjarnor } from "@/lib/member-local";
 import { InsiktPuls } from "@/components/ak1a/kurs-visuellt";
+import { VisuellBlock } from "@/components/ak1a/visuell-block";
 
 type Kapitel = {
   num: number;
@@ -84,6 +85,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
 
   const insiktBlock = kap.blocks?.find((b) => b.type === "insikt");
   const utmaningBlock = kap.blocks?.find((b) => b.type === "utmaning");
+  const visuellBlock = kap.blocks?.find((b) => b.type === "visuell");
   const textBlocks = kap.blocks?.filter((b) => b.type === "text") || [];
   const text = textBlocks.map((b) => String(b.content)).join("\n\n");
   const stycken = text.split(/\n\n+/);
@@ -191,6 +193,9 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
               <p className="mt-3 text-sm leading-relaxed">{String(utmaningBlock.content)}</p>
             </details>
           )}
+
+          {/* Visuell interaktiv graf (VIL-biblioteket) */}
+          {visuellBlock && <VisuellBlock typ={String(visuellBlock.content)} />}
 
           {/* Quiz */}
           {kap.quiz && kap.quiz.length > 0 && (

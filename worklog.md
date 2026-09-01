@@ -3660,3 +3660,19 @@ Work Log:
 Stage Summary:
 - 35 BOKMASTER + 2 flaggskepp · Fas 2-attraktion integrerad (medlemskap +
   chatbot-nudge nivå 25 + certifikat + läroplan) — generöst, aldrig låst
+
+---
+Task ID: 129-VISUELLT-AKTIVERAT + STREAK
+Agent: main (5 agenter kör: Bulkowski, Lefèvre, Lowenstein, Greenblatt, VIL-2)
+Task: 304 grafer vaknar + gamification-streak
+
+Work Log:
+- KRITISK FIX: VIL-biblioteket (6 interaktiva SVG-komponenter) fanns men var
+  ALDRIG kopplat — 304 visuell-block i 34 kurser renderades som tomt.
+  Ny VisuellBlock-renderer (skala/compound/cykel/donut/bro/radar) wired i
+  KursSteg → ALLA kurser med visuell-block får nu interaktiva grafer.
+  + NY komponent: VardeSkala (interaktiv P/E-skala SÄLJ/BEAKTA/KÖP)
+- STREAK-SYSTEM (gamification): addXP matar nu rapporteraAktivitet() —
+  daglig kedja i localStorage (igår→+1, gap→nollställ, bästa spåras).
+  🔥 N-badge i AI-Mentorns header
+- Våg 11: 5 agenter parallellt (4 BOKMASTER + VIL-2 med 4 nya grafer)

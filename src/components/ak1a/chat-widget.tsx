@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor, addXP } from "@/lib/member-local";
+import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor, addXP, lasStreak } from "@/lib/member-local";
 import {
   forfallnaKort,
   bedomKort,
@@ -366,6 +366,14 @@ export function ChatWidget() {
               <span className="rounded-full bg-primary-foreground/20 px-2 py-0.5 text-[10px]">
                 Nivå {ctx.niva} · {ctx.xp} XP
               </span>
+              {hydrerad && lasStreak().antal > 0 && (
+                <span
+                  className="rounded-full bg-primary-foreground/20 px-2 py-0.5 text-[10px] font-bold"
+                  title={`Daglig kedja: ${lasStreak().antal} dag${lasStreak().antal > 1 ? "ar" : ""} (bästa: ${lasStreak().basta})`}
+                >
+                  🔥 {lasStreak().antal}
+                </span>
+              )}
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] opacity-80">{ctx.sidTyp}</span>

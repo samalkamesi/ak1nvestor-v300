@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/ak1a/theme-provider";
 import { Ak1aStoreProvider } from "@/components/ak1a/store-provider";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
+import { ChatWidget } from "@/components/ak1a/chat-widget";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -146,6 +147,7 @@ export default function RootLayout({
           <Ak1aStoreProvider>
             {children}
             <Toaster />
+            <ChatWidget />
           </Ak1aStoreProvider>
         </ThemeProvider>
       </body>

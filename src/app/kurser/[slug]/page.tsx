@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getCourses, getCourse } from "@/lib/content";
 import { courseMetadata, courseJsonLd, breadcrumbJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
+import { KursGate, NivaBar } from "@/components/ak1a/kurs-gate";
 
 export const dynamic = "force-static";
 
@@ -66,6 +67,8 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         </div>
       </header>
 
+      <div className="mt-4"><NivaBar slug={slug} /></div>
+
       {course.why && (
         <section className="mt-8">
           <h2 className="font-serif text-2xl font-bold">Varför denna variabel är avgörande</h2>
@@ -109,6 +112,7 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
       </section>
 
       {/* Kapitel med strukturerade kort + INSIGHT-boxar */}
+      <KursGate slug={slug} titel={course.title}>
       <section className="mt-10">
         <h2 className="font-serif text-2xl font-bold">Kursinnehåll</h2>
         <div className="mt-4 space-y-6">
@@ -176,6 +180,8 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
           })}
         </div>
       </section>
+
+      </KursGate>
 
       {(course.lynchSection || course.grahamSection || course.ak1Section) && (
         <section className="mt-10">

@@ -120,6 +120,48 @@ export default async function KursPage({ params }: { params: Promise<{ slug: str
         </section>
       )}
 
+      {(() => {
+        const num = ["v04", "v05", "v06", "v07", "v08", "v09", "v10", "v19"].includes(slug.slice(0, 3));
+        const ovningar = [
+          {
+            q: `Förklara med egna ord: vad mäter ${course.title} och varför väger den ${course.weight || "6%"} i AKM1?`,
+            a: course.learn || "",
+          },
+          num
+            ? {
+                q: `Räkneövning: hämta senaste siffrorna från ett bolags årsredovisning (se "Var hittar jag siffrorna" i kalkylatorn) och beräkna ${course.title}. Vilken poäng (0-5) ger din uträkning?`,
+                a: "Facit är din egen uträkning — kontrollera mot kalkylatorns automatpoäng på /kalkylator.",
+              }
+            : {
+                q: `Tillämpning: hitta ett bolag där ${course.title.toLowerCase()} är starkt — och ett där den är svag. Vad skiljer dem?`,
+                a: `Ledning: se kapitel ${course.chapters?.[2]?.num ?? 3} ("${course.chapters?.[2]?.title ?? "beräkning i praktiken"}").`,
+              },
+          {
+            q: `Reflektion: hur skulle din portfölj påverkas om ditt största innehav svek på just ${course.title.toLowerCase()}?`,
+            a: "Testa i Min portfölj (/min-portfolj) eller diskutera i labbet.",
+          },
+        ];
+        return (
+          <section className="mt-10 rounded-xl border border-gold/30 bg-card p-6">
+            <h2 className="font-serif text-2xl font-bold">Övningsuppgifter</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Tre övningar för att fästa variabeln — fäll ut för ledning.
+            </p>
+            <div className="mt-4 space-y-3">
+              {ovningar.map((o, i) => (
+                <details key={i} className="rounded-lg border border-gold/20 p-3">
+                  <summary className="cursor-pointer text-sm font-medium">
+                    Övning {i + 1}. {o.q.slice(0, 110)}{o.q.length > 110 ? "…" : ""}
+                  </summary>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{o.q}</p>
+                  <p className="mt-2 text-xs italic text-gold">Ledning: {o.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
+
       <section className="mt-12 rounded-lg border border-gold/40 bg-paper p-6">
         <h2 className="font-serif text-2xl font-bold">Fortsätt läroplanen</h2>
         <p className="mt-2 text-sm text-muted-foreground">

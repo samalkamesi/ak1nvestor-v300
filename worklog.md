@@ -3025,3 +3025,22 @@ Work Log:
 Stage Summary:
 - XP-systemets kärnprincip live: bevisa → förtjäna. Kö: Lynch/Zero to One/
   Blue Ocean i kapitel-för-kapitel-format med quiz + AI-lärarläge i chatwidget
+---
+Task ID: 94-QUIZ-FIX
+Agent: main (Z.ai Code)
+Task: Quiz-krasch fixad (scoping) — Masterquiz live på produktion
+
+Work Log:
+- Symptom: /kurser/the-intelligent-investor kraschade i error boundary trots grönt
+  SSG-bygge; bisect (quiz av/på) + dev-server + webbläsare lokaliserade felet:
+  ReferenceError 'vald is not defined' — variabel definierad i inre
+  alternativ-map men använd i yttre fråge-scope; rätt variabel: 'mitt'
+- Efter fix webbläsarverifierat: sidan renderar (20k tecken snapshot), 8
+  Masterquiz-block, klick på svarsalternativ skyddas korrekt av KursGate-låset
+  (inte inloggad i testsession = smakprovs-läge — portallen gör jobbet)
+- Deployat + prod-kontroll
+
+Stage Summary:
+- 10x-gamification komplett: 24 quizfrågor i Graham-masterkursen, autonom
+  +10 XP per bevisad kunskap, coachning vid fel, kapitel-troféer
+- Kö oförändrad: Lynch/Zero to One/Blue Ocean kapitel-för-kapitel + AI-lärarläge

@@ -1,0 +1,954 @@
+{
+  "slug": "the-theory-of-investment-value",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 140,
+  "title": "The Theory of Investment Value — Williams: KOMPLETT",
+  "summary": "The Theory of Investment Value (1938) av John Burr Williams är boken som födde DCF-värderingen — historiens kanske viktigaste finansbok som nästan ingen läst. Kursen går från depressionens kontext och den refuserade Harvard-avhandlingen via nuvärdesformeln, evig tillväxt (Gordons föregångare) och utdelningsprofilerna till evaluative value mot speculative value, räntans roll, kontroverserna om utdelning kontra återinvestering samt DCF:s eviga problem — och arvet till Graham, Buffett, Damodaran och AKM1.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven härleda och tillämpa Williams nuvärdesformel V0 = Σ Dt/(1+r)^t i alla varianter — evig utdelning V = D/r, evig tillväxt V = D1/(r - g), tvåfasmodellen med terminalvärde och självlikviderande investeringar — samt resonera kring intäktsbegreppet (varje kvarhållen krona är en framtida utdelning som måste tjäna ägarnas avkastningskrav), evaluative value mot speculative value och konvergensen mellan dem, räntans genomgripande effekt på alla värden, varför multipeler bara är förkortad DCF och varför terminalvärdet och skräp-in-skräp-ut är DCF:s eviga problem. Eleven kan dessutom placera Williams i traditionen Graham-Buffett-Damodaran och koppla hans lära till AKM1:s variabler och principen margin of safety.",
+  "why": "Utan Williams finns ingen modern värdering: ingen DCF, ingen Gordon-tillväxtmodell, ingen motivering till varför pris skiljer sig från värde. Boken tillkom mitt i depressionen för att bevisa att värde existerar även när marknaden kollapsat — och dess radikala slutsatser (utdelning är kungen, värdering är ren sifferprognos) är fortfarande kontroversiella åttio år senare. Den som vill förstå varifrån AKM1:s värderingsvariabler och marginalprövning kommer måste läsa Williams — historiens viktigaste finansbok som nästan ingen läst.",
+  "chapters_list": [
+    "1. Depressionen och den refuserade dissertationen — värde mitt i ruinerna",
+    "2. Kärnaxiomet — värdet är summan av diskonterade kassaflöden",
+    "3. Nuvärdesformeln — diskonteringens matematik",
+    "4. Evigt värde — Gordon-föregångaren V = D1/(r - g)",
+    "5. Fyra utdelningsprofiler — partial och complete DCF",
+    "6. Intäktsbegreppet — varje kvarhållen krona är en framtida utdelning",
+    "7. Evaluative value mot speculative value — det räknade mot det gissade",
+    "8. Räntan och diskontot — kapitalets pris",
+    "9. Dividend är kungen — kontroversen med Amazon och Berkshire",
+    "10. Siffror mot berättelser — prognos-värdering mot story-värdering",
+    "11. DCF:s eviga problem — skräp in, skräp ut och terminalvärdets tyranni",
+    "12. Multipeln är förkortad DCF — flykten som leder tillbaka",
+    "13. Arvet — Graham, Buffett, Damodaran och AKM1"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Depressionen och den refuserade dissertationen — värde mitt i ruinerna",
+      "intro": "1938 låg Dow över 80 procent under sin topp från 1929 och aktier betraktades av många som hasard. Mitt i detta skrev John Burr Williams en bok med ett enda mål: att bevisa att en akties värde går att beräkna. Kapitlet sätter scenen — depressionen, Harvard och den avhandling som refuserades.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "John Burr Williams arbetade som värdepappersanalytiker på Wall Street när han i början av 1930-talet återvände till Harvard för att doktorera. Han sökte ett vetenskapligt svar på vad en aktie egentligen är värd — och upptäckte att ingen hade något. Allt handlade om pris: kurser, diagram, rykten och sentiment. Williams slutsats var radikal i sin enkelhet: om ingen kan säga vad en aktie är värd, då är hela marknaden en tjänstehörnan för gissningar, och kraschen 1929 är inte ett bevis för att aktier är lotter — bara ett bevis för att priserna hade lämnat värdet. För att finna värdet letade han efter något som inte beror av marknadens humör: det bolaget faktiskt betalar till sina ägare."
+        },
+        {
+          "type": "text",
+          "content": "Resultatet blev en doktorsavhandling som Harvard refuserade — i efterhand har skälet beskrivits som att arbetet var för matematiskt och tog in för mycket från andra discipliner för ekonomiska institutionens smak. Williams publicerade den i stället som bok: The Theory of Investment Value (1938), ett verk på över 600 sidor där ena halvan behandlar obligationer och den andra bygger värderingsteorin från grunden. Ironin är total — akademin tackade nej till grunden för all modern värdering. En samtida anekdot berättar dessutom att Williams förutsåg kraschen 1937 och att hans chef förbjöd honom att ytterligare gå ut med nedslående prognoser: kunderna betalade för optimism, inte för sanning. Det är den värld boken föddes i."
+        },
+        {
+          "type": "text",
+          "content": "Williams projekt var lika mycket filosofiskt som matematiskt: bevisa att värde existerar mitt i ruinerna. Om en akties värde är summan av vad bolaget kommer betala till ägarna, då har varje aktie ett värde som varken bubblor eller krascher kan utplåna — priset kan lämna värdet, aldrig tvärtom. Depressionen fungerade också som ett laboratorium: den visade vilka bolag vars kassaflöden överlevde och vilka som visade sig vara hävertshistorier. AKM1:s variabel V12 (intäktsstabilitet) är i sak depressionens lärdom formaliserad — stabila intäkter är det som skiljer en investering från en insats när konjunkturen vänder. Williams skriver i förordet i sak att boken tillkom i depressionens djup för att återge aktien dess värdighet som investering, inte som spelbiljett."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Världen 1938 — kontexten som formade boken\",\"rader\":[[\"Fenomen\",\"Vad som hände\",\"Betydelse för Williams\"],[\"Dow Jones industrimedel\",\"381 (1929) till 41 (1932), drygt -89 procent\",\"Aktier = hasard blev den dominerande synen\"],[\"Bank- och företagskonkurser\",\"Tusentals banker och bolag kollapsade\",\"Utan förtroende för kassaflöden råder ren rädsla\"],[\"Reversed yield gap\",\"Aktiers utdelningsavkastning översteg obligationsavkastningen\",\"Marknaden prissatte utdelningar som döende\"],[\"Williams avhandling\",\"Refuserad av Harvard, utgiven som bok 1938\",\"Akademin ratade grunden till all modern DCF\"],[\"Kraschen 1937\",\"Markneden föll kraftigt efter Williams varning\",\"Anekdoten: analytiker fick inte vara björniskt\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Williams skrev inte för att förutsäga marknaden utan för att bevisa att det finns något att mäta — i depressionens botten var det mest kontroversiella påståendet i finans inte en prognos utan påståendet att värde existerar."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett hyreshus ger 10 000 kronor per år i hyresöverskott som ägaren kan ta ut, för all framtid, och du kräver 8 procents avkastning. Räkna värdet med evig-summa-logiken: 10 000/0,08 = 125 000 kronor. Kontrollera sedan med tre år för hand — 10 000/1,08 + 10 000/1,08^2 + 10 000/1,08^3 ≈ 9 259 + 8 573 + 7 938 = 25 770 kronor — och se att summan växer mot 125 000 men aldrig passerar det. Det är Williams hela världsbild i en multiplikation."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför refuserades Williams avhandling enligt kursen?",
+          "alternativ": [
+            "Den saknade matematik och formler",
+            "Den var för matematisk och tvärvetenskaplig för ekonomiska institutionen",
+            "Den handlade uteslutande om teknisk analys",
+            "Den publicerades redan av en annan författare"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som gjorde hans ansats ovanlig inom 1930-talets nationalekonomi."
+        },
+        {
+          "q": "Vad var Williams huvudsyfte med boken?",
+          "alternativ": [
+            "Att bevisa att aktier har ett beräkningsbart värde även mitt i depressionen",
+            "Att förutsäga nästa börsboom",
+            "Att visa att alla aktier är värdelösa",
+            "Att ersätta värdering med diagramteknik"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vad som var mest kontroversiellt att hävda 1938."
+        },
+        {
+          "q": "Vad kännetecknade samtidens syn på aktier efter kraschen 1929?",
+          "alternativ": [
+            "Aktier prisades alltid till fundamentalt värde",
+            "Aktiers utdelningsavkastning var generellt lägre än obligationsavkastningen",
+            "Aktier sågs som lotter där kursen styrdes av sentiment och chans",
+            "Värdering med diskonterade kassaflöden var standardmetod"
+          ],
+          "ratt": 2,
+          "tips": "Kom ihåg fenomenet reversed yield gap och vad det säger om förtroendet för utdelningar."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Kärnaxiomet — värdet är summan av diskonterade kassaflöden",
+      "intro": "Här är finanshistoriens viktigaste mening. Williams definierar värdet på en tillgång — aktie, obligation eller företag — som summan av dess framtida kassaflöden diskonterade till nutid. Warren Buffett citerade formuleringen rakt av i sitt aktieägarbrev 1992, och hela modern värdering står på den. Kapitlet går igenom vad definitionen faktiskt säger — och vad den utesluter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Williams kärnformulering, i översättning: värdet idag av vilken aktie, obligation eller rörelse som helst bestäms av de kassaflöden in och ut — diskonterade till en lämplig ränta (discounted at an appropriate interest rate) — som kan förväntas inträffa under tillgångens återstående liv. Buffett valde just detta citat i aktieägarbrevet 1992 när han skulle förklara varför Berkshire värderar bolag med nutidsvärde istället för i trend. Lägg märke till tre saker i definitionen: alla kassaflöden (inte bara nästa års), hela återstående livet (inte en femårshorisont), och en ränta som är lämplig (inte vilken ränta som helst). Var och en av de tre blir senare ett eget kapitel i denna kurs."
+        },
+        {
+          "type": "text",
+          "content": "Williams djupare poäng är att ett investeringsköp är ett byte: du byter nutida konsumtion mot framtida kassaflöden. En obligation är det tydligaste fallet — du betalar idag och får kuponger plus inlösen på bestämda datum. En aktie är exakt samma transaktion, med en enda skillnad: kupongerna är inte tryckta på något papper utan bestäms av bolagets styrelse år för år. Därför säger Williams i sak att en aktie är som en obligation med obestämda kuponger — det är inte vinsten i sig som är värdet, utan utbetalningarna. Liknelsen gör verktygslådan gemensam för obligationer och aktier, vilket förklarar varför halva hans bok handlar om obligationer: det är samma teori, bara säkrare kuponger."
+        },
+        {
+          "type": "text",
+          "content": "Följ logiken i miniatyr. En tillgång betalar 100 kronor om ett år och sedan inget mer. Om du kräver 10 procent är den idag värd 100/1,10 ≈ 90,91 kronor — betalar du 90 kronor får du omkring 11 procent i avkastning, betalar du 95 får du cirka 5,3 procent. Priset du betalar bestämmer din avkastning, och värdet bestäms av kassaflödet och ditt krav — aldrig av vad någon annan tror att papperet är värt nästa vecka. Detta är skiljelinjen mellan investering och spekulering i Williams värld, och grunden för AKM1:s åtskillnad mellan pris (multipelerna V04–V06) och värde (nutidsvärdet av kassaflöden): multipeln är vad marknaden betalar, nuvärdet är vad tillgången ger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kärnaxiomet — vad definitionen kräver\",\"rader\":[[\"Del av definitionen\",\"Krav\",\"Vanligt fel\"],[\"Alla kassaflöden\",\"Utdelning, slutvärde, allt ägaren erhåller\",\"Räkna bara nästa års utdelning\"],[\"Hela återstående livet\",\"Till evigheten eller till tillgången upphör\",\"Stanna vid femårig horisont\"],[\"Lämplig ränta\",\"Avkastningskrav som speglar alternativkostnad och risk\",\"Använd bankens låneränta eller inflationen\"],[\"Endast kontanta flöden\",\"Utbetalningar som kan tas ut av ägaren\",\"Värdera bokföringsvinster och omvärderingar\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Williams flyttade värdet från marknaden till bolaget — priset frågar marknaden, värdet frågar kassaflödena. Hela AKM1:s marginalprövning (margin of safety) bygger på att dessa två kan skilja sig åt."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 En obligation betalar 50 kronor per år i tio år och återbetalas med 1 000 kronor år tio. Grannen hävdar att den är värd exakt 1 500 kronor eftersom den totalt betalar ut 50 × 10 + 1 000 = 1 500 kronor. Räkna nuvärdet vid 8 procent: de årliga 50 kronorna har nutidsvärde 50 × (1 - 1/1,08^10)/0,08 ≈ 50 × 6,71 ≈ 335 kronor och inlösen 1 000/1,08^10 ≈ 463 kronor — totalt cirka 798 kronor. Förklara för dig själv varför grannens summering utan diskontering misslyckas: han lägger ihop kronor från tio olika år som om de vore dagens."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger Williams definition av investeringsvärde?",
+          "alternativ": [
+            "Värdet bestäms av den senaste köpkursen",
+            "Värdet bestäms av alla förväntade kassaflöden under återstående livet, diskonterade till en lämplig ränta",
+            "Värdet bestäms av börsvärdet hos jämförbara bolag",
+            "Värdet bestäms av bokfört eget kapital"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på de tre byggstenarna: alla flöden, hela livet, rätt ränta."
+        },
+        {
+          "q": "Hur beskriver kursen Williams liknelse om aktien?",
+          "alternativ": [
+            "Aktien är en lott med fast pris",
+            "Aktien är som en obligation med obestämda kuponger",
+            "Aktien är en realtillgång likt guld",
+            "Aktien är en option på framtida diagram"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad som motsvarar kupongen hos en aktie."
+        },
+        {
+          "q": "En tillgång betalar 100 kronor om ett år och inget mer. Du kräver 10 procent. Vad är nuvärdet?",
+          "alternativ": [
+            "110 kronor",
+            "100 kronor",
+            "90,91 kronor",
+            "10 kronor"
+          ],
+          "ratt": 2,
+          "tips": "Dela framtida kronor med en plus räntan."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Nuvärdesformeln — diskonteringens matematik",
+      "intro": "Williams formler är elementära — det var också poängen. Kapitlet bygger diskonteringsmatematiken steg för steg i klartext: diskonteringsfaktorn, summeringen över tiden och vad räntan gör med avlägsna kassaflöden. Matematiken tar fem minuter att lära; att fylla den med ärliga tal är ett livsverk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundformeln lyder V0 = D1/(1+r) + D2/(1+r)^2 + D3/(1+r)^3 + …, i kompakt form V0 = Σ Dt/(1+r)^t för alla år t från 1 till återstående livets slut. Varje utbetalning Dt divideras med (1+r)^t — diskonteringsfaktorn — och alla nuvärden summeras. Räkneexempel: kassaflödena 100 kronor om ett år och 100 kronor om två år vid r = 8 procent ger 100/1,08 = 92,59 kronor respektive 100/1,08^2 = 100/1,1664 = 85,73 kronor, totalt 178,32 kronor. Att äga framtida kronor är att äga färre nutida kronor — det är hela mekaniken, och det är ingen åsikt utan en konsekvens av ränta på ränta."
+        },
+        {
+          "type": "text",
+          "content": "Räntan fungerar som en tyngdlag för pengar i tiden. Vid 8 procent är en krona om tio år värd 1/1,08^10 ≈ 0,46 kronor idag, och en krona om trettio år värd 1/1,08^30 ≈ 0,10 kronor. Därför spelar avlägsna kassaflöden i princip ingen roll för värdet — och samtidigt kan eviga tillgångar med växande utbetalningar vara så värdefulla: tillväxten håller serien vid liv. Williams betonade att diskonteringsräntan måste motsvara ägarens alternativkostnad och risken i kassaflödena — en osäker krona om fem år ska diskonteras hårdare än en säker. Vilken ränta du väljer är därmed ingen teknikalitet utan ett av de två stora besluten i varje värdering; det andra är prognoserna själva."
+        },
+        {
+          "type": "text",
+          "content": "Williams insåg vad varje praktiker lär sig förr eller senare: formeln är trivial, prognoserna är allt. Ingen har någonsin misslyckats med att dividera med 1,08 — däremot har generationer misslyckats med att gissa rätt Dt. Kursen sammanfattar hans poäng som att det inte är diskonteringen som är svårt, det är prognoserna (It is the discounting, not the forecasting, i kursens fria återgivning) — Williams formulerar samma sak med allvarsamma tabellverk och hundratals sidor räkneexempel. Därför ägnar hans bok — och denna kurs — lika mycket utrymme åt varifrån talen ska komma som åt formeln som bearbetar dem. När du senare möter kritiken att DCF är skräp in, skräp ut (kapitel 11) är Williams eget svar att modellen pekar ut var osäkerheten bor: i prognosen, inte i diskonteringen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Diskonteringstabell — 100 kronor vid olika räntor\",\"rader\":[[\"När betalas 100 kronor\",\"Värde idag vid 5 procent\",\"Värde idag vid 8 procent\",\"Värde idag vid 12 procent\"],[\"Om 1 år\",\"95,24\",\"92,59\",\"89,29\"],[\"Om 5 år\",\"78,35\",\"68,06\",\"56,74\"],[\"Om 10 år\",\"61,39\",\"46,32\",\"32,20\"],[\"Om 30 år\",\"23,14\",\"9,94\",\"3,34\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Diskonteringen är inte en åsikt utan en konsekvens av ränta på ränta — däremot är varje tal du stopper in i formeln en åsikt, och Williams var ärlig nog att placera slaget där: i prognoserna."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Räkna själv: en tillgång betalar 1 000 kronor om tre år och inget mer, och ditt avkastningskrav är 10 procent. Nämnaren blir 1,10^3 = 1,331 och nuvärdet 1 000/1,331 ≈ 751,31 kronor. Räkna sedan om med 7 procent: 1,07^3 = 1,225043 och nuvärdet 1 000/1,225043 ≈ 816,30 kronor. Notera hur mycket tre procentenheters lägre ränta höjer värdet — en försmak av kapitel 8."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är nuvärdet av 100 kronor om två år vid 8 procent?",
+          "alternativ": [
+            "116,64 kronor",
+            "100 kronor",
+            "92,59 kronor",
+            "85,73 kronor"
+          ],
+          "ratt": 3,
+          "tips": "Dividera två gånger — en gång per år."
+        },
+        {
+          "q": "Vad betecknar r i formeln V0 = Σ Dt/(1+r)^t enligt Williams?",
+          "alternativ": [
+            "Bolagets avskrivningstakt",
+            "Det avkastningskrav — den lämpliga räntan — som speglar alternativkostnad och risk",
+            "Utdelningstillväxten g",
+            "Börsmultipeln"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vems pengar och vems risk formeln diskonterar."
+        },
+        {
+          "q": "Vad var Williams hållning till formeln kontra prognoserna?",
+          "alternativ": [
+            "Formeln var det svåra — prognoserna enkla",
+            "Båda var omöjliga att bemästra",
+            "Formeln var trivial — svårigheten ligger helt i prognoserna",
+            "Prognoserna var oviktiga om formeln var korrekt"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på var felet brukar uppstå i verkliga värderingar."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Evigt värde — Gordon-föregångaren V = D1/(r - g)",
+      "intro": "När utdelningen växer med fast takt för evigt kollapsar den oändliga summan till en enda bråkdel. Formeln V = D1/(r - g) bär idag Myron Gordons namn men stod färdig i Williams bok arton år före Gordon och Shapiros artikel 1956. Kapitlet går igenom formeln, dess villkor och dess farliga känslighet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln: V0 = D1/(r - g), där D1 är nästa års utdelning, r ägarnas avkastningskrav och g den årliga tillväxttakten — i evighet. Villkoret är absolut: r måste överstiga g, annars är serien divergent och värdet oändligt, vilket är nonsens. Räkneexempel: D1 = 10 kronor, r = 8 procent och g = 3 procent ger V0 = 10/(0,08 - 0,03) = 10/0,05 = 200 kronor. Tänk så: den eviga summan av 10 × 1,03^(t-1) kronor, diskonterad vid 8 procent, är exakt 200 kronor — tillväxten behåller seriens värde vid liv och bråkdelen fångar hela den mekanismen i ett enda streck."
+        },
+        {
+          "type": "text",
+          "content": "Känsligheten är formelns mörka sida. Samma bolag med g = 4 procent ger 10/0,04 = 250 kronor och med g = 5 procent ger 10/0,03 ≈ 333 kronor — två procentenheters mer tillväxt ökar värdet med två tredjedelar. Tänk också på räntan: höjs kravet till 9 procent faller värdet vid g = 3 procent till 10/0,06 ≈ 166,67 kronor. Williams efterlämnade ingen modern tillväxtekvation, men hans eget skyddräcke är i sak att g på sikt aldrig kan överstiga ekonomin som helhet — bolag växer inte snabbare än världen i evighet — och Damodaran-kursen formulerar samma gräns som g högst lika med den riskfria räntan. I AKM1:s termer testas varje g av försäljningstillväxten (V01) och hur länge den är försvarbar: ett g utan mekanism är inte ett antagande utan en önskan."
+        },
+        {
+          "type": "text",
+          "content": "Formeln kallas Gordons tillväxtmodell efter att Myron Gordon och Eli Shapiro 1956 publicerade den i den form som spred den till varje finansutbildning — men ekvationen står tryckt i Williams bok 1938: Gordon gjorde den känd, Williams födde den. Eftersom formeln kräver utdelning som växer jämnt i evighet passar den renodlat mogna kassaflöden: kraftbolag, infrastruktur, väletablerade varumärken med stadig utdelningspolicy. För bolag med tung återinvestering eller ojämna utdelningar är tvåfasmodellen i nästa kapitel Williams eget svar. Och notera vad formeln egentligen säger i sin kärna: värdet är noll om bolaget aldrig betalar ut något — en tanke som leder rakt in i kapitel 9:s kontrovers om Amazon och Berkshire."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Känslighetstabell — V0 = D1/(r - g) med D1 = 10 kronor\",\"rader\":[[\"Evig tillväxt g\",\"Värde vid r = 7 procent\",\"Värde vid r = 8 procent\",\"Värde vid r = 9 procent\"],[\"0 procent\",\"142,86\",\"125,00\",\"111,11\"],[\"2 procent\",\"200,00\",\"166,67\",\"142,86\"],[\"3 procent\",\"250,00\",\"200,00\",\"166,67\"],[\"4 procent\",\"333,33\",\"250,00\",\"200,00\"],[\"6 procent\",\"1 000,00\",\"500,00\",\"333,33\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Formeln är som mest farlig när den är som mest bekväm — en enda procentenhet i g flyttar värdet mer än all noggrannhet du kan åstadkomma i åren närmast idag."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett kraftbolag delar ut 6 kronor nästa år, tillväxten är 4 procent för evigt och ditt krav är 10 procent. Räkna: V0 = 6/(0,10 - 0,04) = 6/0,06 = 100 kronor. Testa sedan gränsen: vad händer om du frestas sätta g = 8 procent? V0 = 6/0,02 = 300 kronor — förklara för dig själv varför en evig tillväxt på 8 procent i praktiken är ett brott mot Williams villkor i det långa loppet, och vem som egentligen betalar för den tilltron."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "D1 = 6 kronor, r = 10 procent, g = 4 procent. Vad är det eviga värdet?",
+          "alternativ": [
+            "60 kronor",
+            "100 kronor",
+            "150 kronor",
+            "42,86 kronor"
+          ],
+          "ratt": 1,
+          "tips": "Räkna på nämnaren innan du dividerar."
+        },
+        {
+          "q": "Vad gäller för formeln V = D1/(r - g)?",
+          "alternativ": [
+            "r måste överstiga g, annars divergerar serien och värdet blir oändligt",
+            "g måste överstiga r",
+            "g måste vara exakt noll",
+            "r måste vara ett heltal"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vad som händer med nämnaren om tillväxten springer ifrån kravet."
+        },
+        {
+          "q": "Vad är förhållandet mellan Williams och Gordon-modellen?",
+          "alternativ": [
+            "Gordon publicerade formeln först 1938 och Williams populariserade den 1956",
+            "Williams publicerade den 1938; Gordon och Shapiro formaliserade och spred den 1956",
+            "De utvecklade den oberoende av varandra samma år",
+            "Formeln kommer från Graham och Dodd 1934"
+          ],
+          "ratt": 1,
+          "tips": "Titta på årtalet på bokens titelblad."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Fyra utdelningsprofiler — partial och complete DCF",
+      "intro": "Williams genomgår systematiskt hur nuvärdet beräknas för olika former av framtida utbetalningar: självlikviderande investeringar, konstant utdelning i evighet, växande utdelning i evighet och kombinationen av faserna. Här finns också hans skiljelinje mellan partiell och komplett värdering — och tvåfasmodellen som blev modern DCF:s skelett.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Profil ett: den självlikviderande investeringen — en tillgång som betalar ut under en period och sedan upphör, som en amorterande obligation eller ett gruvschakt med känd malmkropp. Värdet är summan av utbetalningarna plus det avslutande beloppet, alla diskonterade: V0 = Σ Ct/(1+r)^t + S/(1+r)^n, där S är slutvärdet år n. Profil två: konstant utdelning i evighet — konsolen — som ger V0 = D/r, alltså hyreshuset från kapitel 1. Profil tre: växande utdelning i evighet, V0 = D1/(r - g), föregående kapitel. Profil fyra kombinerar: en explicit period med egna tal per år följt av ett evigt sluttillstånd — tvåfasmodellen, som är hela den moderna DCF:ns grundstruktur och Williams mest varaktiga bidrag till praktiken."
+        },
+        {
+          "type": "text",
+          "content": "Räkna en komplett tvåfas i klartext. Utdelningen är 5,00 kronor nästa år och växer med 10 procent i fem år — 5,00, 5,50, 6,05, 6,66 och 7,32 kronor — varefter tillväxten faller till 3 procent för evigt; avkastningskravet är 9 procent. Terminalvärdet vid slutet av år fem är D6/(r - g) = 7,32 × 1,03/(0,09 - 0,03) = 7,54/0,06 ≈ 125,67 kronor. Diskontera nu allt: nuvärdena av de fem utdelningarna är 4,59 + 4,63 + 4,67 + 4,71 + 4,76 ≈ 23,36 kronor och terminalvärdet 125,67/1,09^5 ≈ 125,67 × 0,6499 ≈ 81,68 kronor. Totalt värde: 105,04 kronor — och notera att terminalvärdet svarar för ungefär 78 procent av helheten. Kom ihåg den siffran till kapitel 11."
+        },
+        {
+          "type": "text",
+          "content": "Här ligger Williams skiljelinje mellan partiell och komplett värdering. En partiell DCF diskonterar bara en del av ägarens kassaflöden — till exempel utdelningarna under en femårsperiod — och låtsas att resten inte existerar; resultatet underskattar systematiskt, som om bolaget vid horisontens slut vore värdelöst. Den kompletta värderingen fångar allt: varje utbetalning under hela livet inklusive slutvärdet, och — som nästa kapitel visar — även vinster som behålls och blir framtida utdelningar. Det är grunden till Williams duala sätt att värdera utdelande mot icke-utdelande bolag: hos det utdelande bolaget syns kassaflödet direkt år för år; hos det icke-utdelande måste du identifiera när de kvarhållna medlen förvandlas till utbetalningar. Gör du det fullständigt når de två vägarna samma värde; gör du det partiellt hamnar du snett — åt endera hållet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra profiler — Williams kartblad\",\"rader\":[[\"Profil\",\"Kassaflöde\",\"Formel\",\"Exempeltyp\"],[\"Självlikviderande\",\"Utbetalningar i n år, sedan slut\",\"V0 = Σ Ct/(1+r)^t + S/(1+r)^n\",\"Amorterande obligation, gruva\"],[\"Konstant i evighet\",\"Samma utdelning för alltid\",\"V0 = D/r\",\"Konsol, hyreshus, preferensaktie\"],[\"Växande i evighet\",\"Utdelningen växer med g för alltid\",\"V0 = D1/(r - g)\",\"Mogt kraft- eller infrastrukturbolag\"],[\"Två fas\",\"Explicit år för år, sedan evigt sluttillstånd\",\"V0 = Σ Dt/(1+r)^t + TVn/(1+r)^n\",\"Modern standard-DCF\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En DCF utan terminalvärde är inte försiktig — den är fel: den förutsätter att företaget dör värdelöst det år din kalkyl slutar."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg din egen tvåfas: utdelning 4,00 kronor nästa år, tillväxt 8 procent i fyra år, därefter 2 procent för evigt, krav 9 procent. Utdelningarna blir 4,00, 4,32, 4,67 och 5,04 kronor; D5 = 5,04 × 1,02 = 5,14 kronor och terminalvärdet vid år fyra är 5,14/(0,09 - 0,02) = 5,14/0,07 ≈ 73,42 kronor. Diskontera allt vid 9 procent: utdelningarnas nuvärden är 3,67 + 3,64 + 3,60 + 3,57 ≈ 14,48 kronor och terminalvärdet 73,42 × 0,7084 ≈ 52,01 kronor — totalt cirka 66,49 kronor. Räkna ut terminalandelen (omkring 78 procent) och förklara varför den är så hög."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en självlikviderande investering?",
+          "alternativ": [
+            "Den betalar ut för evigt",
+            "Den betalar ut under en period och avslutas med ett slutbelopp",
+            "Den betalar aldrig ut något",
+            "Den växer med fast takt i evighet"
+          ],
+          "ratt": 1,
+          "tips": "Namnet talar om vad tillgången gör med sig själv."
+        },
+        {
+          "q": "I tvåfas-exemplet med 9 procents krav — ungefär hur stor andel av värdet kom från terminalvärdet?",
+          "alternativ": [
+            "Cirka 20 procent",
+            "Cirka 50 procent",
+            "Cirka 78 procent",
+            "Cirka 99 procent"
+          ],
+          "ratt": 2,
+          "tips": "Jämför 81,68 kronor med totalen 105,04 kronor."
+        },
+        {
+          "q": "Vad är en partiell DCF enligt kursen?",
+          "alternativ": [
+            "En DCF med för hög ränta",
+            "En DCF som bara fångar en del av kassaflödena och struntar i resten — exempelvis utan terminalvärde",
+            "En DCF med multipelkontroll",
+            "En DCF på en del av verksamheten"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som händer med alla år efter din kalkylhorisont."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Intäktsbegreppet — varje kvarhållen krona är en framtida utdelning",
+      "intro": "Vad är egentligen en avkastning för en ägare? Williams svar är stringent: det är det bolaget betalar ut i kontanter — nu eller senare. En kvarhållen vinst är ingen förspilld avkastning utan en uppskjuten utdelning, förutsatt att kapitalet förvaltas väl. Kapitlet binder samman vinst, utdelning och återinvestering till ett enda begrepp: intäkt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Williams tanke, i kursens sammanfattning: a dollar retained is a future dividend — en behållen krona är en framtida utdelning. Vinsten i resultaträkningen är bara ett redovisningsmässigt mellansteg; värdet för ägaren uppstår när kontanterna lämnar bolaget. Om bolaget behåller vinsten i stället för att dela ut den har ägaren inte förlorat sin avkastning — den har flyttats fram i tiden, under förutsättning att den återinvesterade kronan tjänar minst det avkastningskrav ägarna skulle ha ställt på sina pengar. Frågan är alltså inte utdelning eller inte — frågan är: vad tjänar de kvarhållna medlen?"
+        },
+        {
+          "type": "text",
+          "content": "Räkna på återinvesteringens villkor. Ett bolag tjänar 20 kronor per aktie, delar ut 10 kronor och behåller 10 kronor som återinvesteras till 15 procent avkastning på eget kapital (AKM1:s V09, ROE), medan ägarnas avkastningskrav är 10 procent. De behållna 10 kronorna ger 1,50 kronor i extra årsinkomst för all framtid, med nuvärde 1,50/0,10 = 15 kronor — mer än de 10 kronor som behölls, alltså skapar retentionen värde. Vänd på det: tjänar det kvarhållna kapitalet bara 8 procent blir den extra inkomsten 0,80 kronor per år, värd 0,80/0,10 = 8 kronor — mindre än de 10 kronor ägarna avstod, och bolaget har förstört 2 kronor av värde genom att behålla i stället för att dela ut. Detta är kärnan i hela utdelningsdebatten och förklaringen till varför gränslös återinvestering är farlig (V19, kapitalförbränning): behållna medel som bränns i projekt under avkastningskravet är ingen framtida utdelning utan en förlorad sådan."
+        },
+        {
+          "type": "text",
+          "content": "Härmed är också den duala värderingen från förra kapitlet löst i teorin: ett bolag som aldrig delar ut men återinvesterar allt till avkastningar över ägarnas krav har i princip samma värde som ett bolag som delar ut allt — Williams kompletta kassaflödesbegrepp räknar båda vägarna till samma svar, och tiden avgör vilken väg som är snabbast. Begreppet kräver dock att redovisningen är ärlig: intäkten måste vara kontant. Bokföringsvinster, omvärderingar och intäkter utan motvärde i kassan är inga kassaflöden — ett tema Quality of Earnings-kursen utvecklar. Även intäktsstabiliteten (V12) får en andra dimension här: en intäktsström som svänger kraftigt är svårare att prognostisera och därmed svårare att värdera, vilket slutligen slår tillbaka på diskonteringsräntan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Återinvesteringens aritmetik — 10 behållna kronor, krav 10 procent\",\"rader\":[[\"Avkastning på behållet kapital\",\"Extra årsinkomst\",\"Nuvärde av extra inkomsten\",\"Dom\"],[\"6 procent\",\"0,60 kronor\",\"6,00 kronor\",\"Förstör 4 kronor av värde\"],[\"8 procent\",\"0,80 kronor\",\"8,00 kronor\",\"Förstör 2 kronor av värde\"],[\"10 procent\",\"1,00 kronor\",\"10,00 kronor\",\"Neutral\"],[\"15 procent\",\"1,50 kronor\",\"15,00 kronor\",\"Skapar 5 kronor av värde\"],[\"20 procent\",\"2,00 kronor\",\"20,00 kronor\",\"Skapar 10 kronor av värde\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Fråga aldrig bara hur mycket bolaget delar ut — fråga vad den outdelade vinsten tjänar. Utdelningsgraden är ett beslut, inte en dygd i sig."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett bolag tjänar 50 kronor per aktie och delar ut ingenting; styrelsen lovar att all vinst återinvesteras till 12 procent medan ägarnas krav är 10 procent. Räkna vad första årets retention är värd: 50 kronor som tjänar 12 procent ger 6,00 kronor per år i all evighet, nuvärde 6,00/0,10 = 60 kronor — retentionen skapar 10 kronor i värde utöver det som behölls. Antag sedan att avkastningen istället är 9 procent: nuvärdet blir 4,50/0,10 = 45 kronor och varje outdelat år kostar ägarna 5 kronor. Skriv ner din dom: ska bolaget börja dela ut — och vid vilken avkastningsskillnad växlar svaret?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med att en kvarhållen krona är en framtida utdelning?",
+          "alternativ": [
+            "Att bolaget är skyldigt att dela ut inom fem år",
+            "Att kvarhållen vinst är en uppskjuten avkastning — om kapitalet förvaltas väl",
+            "Att bokförd vinst alltid är kontant",
+            "Att utdelning är skattefritt"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på villkoret om den återinvesterade kronans avkastning."
+        },
+        {
+          "q": "Bolaget behåller 10 kronor som tjänar 8 procent; ägarnas krav är 10 procent. Vad är retentionen värd?",
+          "alternativ": [
+            "10 kronor",
+            "8 kronor",
+            "12,50 kronor",
+            "1,25 kronor"
+          ],
+          "ratt": 1,
+          "tips": "Räkna nuvärdet av 0,80 kronor per år för evigt."
+        },
+        {
+          "q": "När har ett icke-utdelande bolag samma värde som ett utdelande enligt Williams logik?",
+          "alternativ": [
+            "Aldrig — utan utdelning är värdet noll",
+            "Alltid — värdet beror bara på vinsten",
+            "När de kvarhållna medlen tjänar minst ägarnas avkastningskrav",
+            "Bara om börsen stiger"
+          ],
+          "ratt": 2,
+          "tips": "Kom ihåg den kompletta kassaflödesberäkningens två vägar."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Evaluative value mot speculative value — det räknade mot det gissade",
+      "intro": "Williams delar marknadspriset i två beståndsdelar: det evaluativa värdet — vad tillgången är värd beräknat ur kassaflödena — och det spekulativa värdet, som vilar på förväntningar om vad andra kommer betala. Mellan dem spänner konvergensen: marknadens pris dras över tiden mot det räknade värdet. Detta är värdeinvesteringens kärna, formulerad innan uttrycket fanns.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Williams term för det beräknade värdet är i boken evaluative value — också kallat investment value — alltså det värde som framgår av en fullständig DCF. Spekulationsvärdet är resten av priset: den del som inte kan motiveras av kassaflöden utan bara av tron på att någon annan betalar mer. Mekaniken är enkel och sträng: marknadspris = evaluativt värde + spekulativt värde. Räkneexempel: en aktie står i 180 kronor medan en komplett DCF av utdelningarna ger 125 kronor; den spekulativa delen är då 180 - 125 = 55 kronor, knappt en tredjedel av priset. Ingen av delarna är i sig fel — men 55 kronor av priset vilar på något annat än bolagets ekonomi."
+        },
+        {
+          "type": "text",
+          "content": "Konvergensen är tesen som gör skillnad: över tiden tenderar priset att dras mot det evaluativa värdet, eftersom kassaflödena förr eller senare realiseras och omprövas i priset — utdelningar betalas ut, resultat syns, och gissningarnas livslängd är kortare än kassaflödenas. Detta är också grunden för tålamodet i värdeinvestering: du blir inte rik på konvergensen imorgon, men den står på din sida om du köpt under det räknade värdet — spekulativa svängningar blir då din vän i stället för din fiende. Notera släktskapet med Keynes skönhetstävling, där priset sätts av förväntningar om andras förväntningar: Keynes och Williams beskriver samma spekulativa element från varsin sida — Keynes analyserar dess psykologi, Williams dess aritmetik. I AKM1 blir skillnaden operativ genom intäktsstabiliteten (V12): ju stabilare kassaflöden, desto snabbare och hårdare konvergens, eftersom verkligheten då knappast kan tolkas på annat sätt."
+        },
+        {
+          "type": "text",
+          "content": "En varning är inbyggd i uppdelningen. Konvergensen förutsätter att det evaluativa värdet är rätt räknat — om din DCF bygger på felslagna prognoser konvergerar priset inte mot ditt tal utan mot verklighetens, och det spekulativa värdet visar sig ha bott i din egen kalkyl. Därför hör kapitel 11:s problem (skräp in, skräp ut) hemma här: evaluativt värde är en anspråkslös titel, inte en garanti. Den praktiska disciplinen är att räkna omvänt också: vilket kassaflöde krävs för att motivera dagens pris? Om svaret förutsätter omöjliga utdelningar ligger det spekulativa värdet tungt i priset — och köpet är en vadhållning om andra köpares humör, inte om bolagets ekonomi. Det omvända resonemanget är grunden för AKM1:s marginalprövning (margin of safety): köp inte bara under det räknade värdet — köp så pass mycket under att dina egna prognosfel inte äter upp skillnaden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prisets två beståndsdelar — exempel\",\"rader\":[[\"Situation\",\"Marknadspris\",\"Evaluativt värde (DCF)\",\"Spekulativt värde\"],[\"Hyreshusaktie med stabil utdelning\",\"125 kronor\",\"125 kronor\",\"0 kronor\"],[\"Samma aktie i eufri\",\"180 kronor\",\"125 kronor\",\"55 kronor\"],[\"Tillväxtberättelse utan utdelning\",\"300 kronor\",\"75 kronor\",\"225 kronor\"],[\"Kraschat cykelbolag\",\"40 kronor\",\"85 kronor\",\"-45 kronor (ren rädsla)\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Frågan är inte om priset innehåller spekulation — det gör det nästan alltid — utan hur stor andelen är, och åt vilket håll den lutar när du köper."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 En aktie handlas till 140 kronor. Utdelningen nästa år är 8 kronor, tillväxten 2 procent för evigt och ditt avkastningskrav är 9 procent. Räkna det evaluativa värdet: D1/(r - g) = 8/(0,09 - 0,02) = 8/0,07 ≈ 114,29 kronor. Det spekulativa värdet är då 140 - 114,29 ≈ 25,71 kronor, cirka 18 procent av priset. Upprepa med kursen 200 kronor — det spekulativa värdet stiger till 85,71 kronor, över 40 procent — och notera vid vilken kurs andelen passerar hälften."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är speculative value enligt Williams uppdelning?",
+          "alternativ": [
+            "Värdet av bolagets tillgångar vid en konkurs",
+            "Den del av priset som vilar på förväntan om vad andra kommer betala, inte på kassaflöden",
+            "Värdet av optioner och derivat",
+            "Skillnaden mellan bokvärde och börsvärde"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad som bärs upp av kassaflöden och vad som inte är det."
+        },
+        {
+          "q": "Vad betyder konvergens i detta kapitel?",
+          "alternativ": [
+            "Att alla kurser går mot noll",
+            "Att priset över tiden dras mot det evaluativa värdet när kassaflödena realiseras",
+            "Att DCF:n anpassas till marknadspriset",
+            "Att multipeler och DCF ger samma tal"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vem som har sista ordet — gissningarna eller kassaflödena."
+        },
+        {
+          "q": "Pris 180 kronor, evaluativt värde 125 kronor. Hur stort är det spekulativa värdet?",
+          "alternativ": [
+            "125 kronor",
+            "55 kronor",
+            "305 kronor",
+            "-55 kronor"
+          ],
+          "ratt": 1,
+          "tips": "Priset är summan av de två beståndsdelarna."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Räntan och diskontot — kapitalets pris",
+      "intro": "Allt i Williams system hänger på nämnaren. En lämplig ränta byggs upp av en säker grundränta plus påslag för risk, och varje förändring i den rullar genom varje värde i ekonomin. Kapitlet behandlar räntans roll, känsligheten i siffror och depressionens paradox: aktier som gav högre utdelningsavkastning än obligationer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Williams diskonto — the appropriate interest rate — är inget godtyckligt tal: det är det avkastningskrav som speglar alternativkostnaden för kapital och risken i just de kassaflöden du diskonterar. Grundprincipen är byggstenslogik: börja med den säkra långa räntan (statens obligationsränta) och lägg på riskpremie för kassaflödets osäkerhet — osäkra utdelningar diskonteras hårdare än säkra. Halva Williams bok handlar om obligationer av just denna anledning: obligationen med sina fasta kuponger är referenspunkten, och aktien är samma instrument med rörliga kuponger. Den som förstår hur en obligations pris faller när räntan stiger, förstår också varför alla värden faller när diskontot stiger."
+        },
+        {
+          "type": "text",
+          "content": "Räntans genomslagskraft i siffror — evig utdelning på 10 kronor: vid diskonto 6 procent är värdet 10/0,06 = 166,67 kronor, vid 8 procent 125 kronor och vid 10 procent 100 kronor. Två procentenheter flyttar värdet en tredjedel; fyra procentenheter nästan halverar det. Med tillväxt blir känsligheten ännu våldsammare eftersom nämnaren (r - g) är en differens: D1 = 10 och g = 3 procent ger 250 kronor vid r = 7 procent men 166,67 kronor vid r = 9 procent — samma bolag, en tredjedels värdeminskning på två procentenheter. Räntan är finansens tyngdlag: när den stiger dras alla tillgångars värden mot marken och inget undgår. I AKM1:s värld slår detta mot värderingsvariablerna (V04–V06) samtidigt, medan skuldsättningsgraden (V10) avgör hur hårt ett högt diskonto pressar just ditt bolag — högt belåtade kassaflöden känns räntetrycket först."
+        },
+        {
+          "type": "text",
+          "content": "Depressionen gav en paradox som Williams fann belysande: den omvända avkastningsklyftan (reversed yield gap). Efter kraschen prissattes aktier så lågt att deras utdelningsavkastning översteg obligationsavkastningen — det omvända av det normala — eftersom marknaden helt enkelt inte trodde på utdelningarnas bestånd. För den som accepterade Williams syn var detta ett av historiens köplägen: priset var satt som om kassaflödena vore döende, och konvergensen från kapitel 7 stod på köparens sida. Lärdomen är tidslös: när marknaden diskonterar för undergång och du kan påvisa överlevande kassaflöden, då är gapet mellan pris och värde betalt av någon annans rädsla — och rädslan betalar inte utdelningen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Diskontots makt — evig utdelning 10 kronor\",\"rader\":[[\"Diskonto\",\"Värde utan tillväxt\",\"Värde med g = 3 procent\",\"Kommentar\"],[\"6 procent\",\"166,67 kronor\",\"333,33 kronor\",\"Lågränteläge — långa kassaflöden blommar\"],[\"8 procent\",\"125,00 kronor\",\"200,00 kronor\",\"Historisk normalnivå\"],[\"10 procent\",\"100,00 kronor\",\"142,86 kronor\",\"Högt diskonto pressar allt\"],[\"12 procent\",\"83,33 kronor\",\"111,11 kronor\",\"Krisnivå — endast det säkra är dyrt\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Räntan är inte en parameter i värderingen — den är klimatet värderingen sker i: samma bolag har två olika värden i två olika räntelägen, och båda är korrekta."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 En preferensaktie betalar 12 kronor per år för evigt. Räkna dess värde vid diskonto 8 procent: 12/0,08 = 150 kronor. Centralbanken höjer och ditt diskonto stiger till 10 procent: 12/0,10 = 120 kronor. Notera att aktien inte förändrats ett dygn — endast kapitalets pris har det. Räkna den procentuella värdeförändringen: (150 - 120)/150 = 20 procent, och fundera över vilka bolag som har längst duration — de vars kassaflöden ligger längst bort i tiden."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur byggs den lämpliga räntan upp enligt kursen?",
+          "alternativ": [
+            "Säker lång grundränta plus riskpremie för kassaflödets osäkerhet",
+            "Slumpmässigt efter känsla",
+            "Bolagets genomsnittliga bankränta de senaste tio åren",
+            "Alltid 5 procent"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på obligationen som utgångspunkten och aktien som den med osäkra kuponger."
+        },
+        {
+          "q": "Evig utdelning 10 kronor: vad händer med värdet när diskontot sjunker från 8 till 6 procent?",
+          "alternativ": [
+            "Fall från 125 till 100 kronor",
+            "Stiger från 125 till 166,67 kronor",
+            "Förblir oförändrat 125 kronor",
+            "Stiger till 250 kronor"
+          ],
+          "ratt": 1,
+          "tips": "Dela med den nya, mindre nämnaren."
+        },
+        {
+          "q": "Vad var den omvända avkastningsklyftan (reversed yield gap)?",
+          "alternativ": [
+            "Obligationer gav högre avkastning än aktier",
+            "Aktiers utdelningsavkastning översteg obligationsavkastningen",
+            "Realräntan var negativ",
+            "Utdelningsavkastningen var lika med tillväxten"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad marknaden trodde om utdelningarnas överlevnad."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Dividend är kungen — kontroversen med Amazon och Berkshire",
+      "intro": "Här är kursens första raka konfrontation med nutiden. Williams radikala slutsats var att utdelningen är allt — men vår epoks mest respekterade kapitalförvaltare har delat ut exakt en gång, och dess största tillväxtbolag aldrig. Är Williams falsifierad, eller har vi läst honom fel?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Williams hållning var obönhörlig: vinsten har bara värde i den mån den blir utbetalning — utdelningen är slutmålet för all investering. Slutföljden är sträng: ett bolag som aldrig betalar ut, aldrig återköper och aldrig likvideras har ett nollvärde i modellen, hur snabbt vinsten än växer. Historien sedan dess har inte varit snäll mot bokstaven. Berkshire Hathaway har delat ut kontanter en enda gång — 1967, tio cent per aktie — och Buffett har skämtat om att han måste ha varit på toaletten när beslutet togs; sedan dess har varje krona behållits och återinvesterats. Amazon har aldrig delat ut en enda cent. Ändå har dessa bolag skapat bland de största aktievärdena i historien. Bokstavligt läst är Williams formel falsifierad — och kursen ska vara ärlig med det."
+        },
+        {
+          "type": "text",
+          "content": "Räddningen — och Williams eget försvar — ligger i hans bredare begrepp från kapitel 6: det som räknas är ägarkassaflöden, inte utdelningsraden i sig. Återköp (AKM1:s V20) är utdelning i förklädnad: bolaget köper dina aktier och du tar ut värdet som realiserad kapitalvinst när du säljer — kontanterna lämnar bolaget till ägarna, vilket är hela poängen. Williams skrev innan återköp blev en kanal, men logiken är hans. Kvarhållningen är den andra länken: en behållen krona som återinvesteras över avkastningskravet är en uppskjuten utdelning som växer under vägen — Berkshire och Amazon är, på Williams egna villkor, maskiner för att förvandla dagens utdelning till större framtida utdelningar. Läst så är Williams inte död utan missförstådd: hans formel kräver att du räknar fram NÄR kassaflödena når ägaren — inte att det sker varje år."
+        },
+        {
+          "type": "text",
+          "content": "Men ärligheten kräver att varningen också tas på allvar — här är Williams mest obekväma arv idag. Utan kravet att kassaflödena någon gång blir ägarkassaflöde saknar värderingen sitt ankare: bolag kan förklara att de återinvesterar, år efter år, medan det kvarhållna kapitalet arbetar under avkastningskravet eller rinner bort i projekt som aldrig betalar (V19, kapitalförbränning och emissionsrisk). Aktiemarknadens perioder av ren berättelse — 1999, 2021 — var exakt detta: evig återinvesteringsretorik utan utdelningshorisont, prissatt som om horisonten redan var i hand. Williams test är stringent: namn året och beloppet då ägarna får sina kontanter, eller erkänn att du köper en berättelse. Berkshire-ironin till sist: Buffett, som åberopar Williams med respekt, har antytt att Berkshire så småningom kan komma att dela ut — för att kassaflödena med tiden blir för stora för att förnuftigt återinvesteras. Det är Williams tes som i slutändan segrar, till och med hos Buffett."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ägarkassaflödens kanaler — Williams breda läsning\",\"rader\":[[\"Kanal\",\"Mekanik\",\"Williams-bedömning\"],[\"Direkt utdelning\",\"Kontanter per aktie varje år\",\"Det ursprungliga och renaste flödet\"],[\"Återköp (V20)\",\"Bolaget köper aktier — värdet ut till den som säljer\",\"Utdelning i förklädnad; räkna som ägarkassaflöde\"],[\"Kvarhållen vinst\",\"Återinvestering som ska bli framtida utdelning\",\"Gyllene om avkastningen överstiger kravet\"],[\"Likvidation eller avyttring\",\"Slututbetalning vid försäljning eller upphörande\",\"Självlikviderande profil — allt räknas\"],[\"Aldrig någonsin något\",\"Varken utdelning, återköp eller slut\",\"Nollvärde i modellen — ren berättelse\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Modellen dör inte av Amazon — den tvingar dig att namnge dagen då kassaflödena blir dina. Bolag som inte kan det berättar; bolag som kan det räknar."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Två bolag, samma vinst 40 kronor per aktie. A delar ut allt: värde = 40/0,10 = 400 kronor. B delar ut 20 kronor och återinvesterar resten, vilket ger utdelningstillväxten 6 procent för evigt: V = 20/(0,10 - 0,06) = 20/0,04 = 500 kronor. B är värd mest — men räkna om med tillväxten 2 procent: 20/(0,10 - 0,02) = 250 kronor, plötsligt värst av ett bra tag. Skriv ner din slutsats: återinvestering är bara kung om den köper tillväxt över avkastningskravet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur många gånger har Berkshire Hathaway delat ut kontanter enligt kursen?",
+          "alternativ": [
+            "Aldrig",
+            "Varje år sedan 1980",
+            "Tio gånger",
+            "En gång, 1967"
+          ],
+          "ratt": 3,
+          "tips": "Siffran är berömd just för att den är så liten."
+        },
+        {
+          "q": "Hur förenas Williams utdelningsfokus med återköp (V20)?",
+          "alternativ": [
+            "Återköp är förbjudna i hans teori",
+            "Återköp är utdelning i förklädnad — kontanterna lämnar bolaget till ägarna",
+            "Återköp räknas som tillväxt",
+            "Återköp gäller bara banker"
+          ],
+          "ratt": 1,
+          "tips": "Följ kontanterna: vem tar emot dem?"
+        },
+        {
+          "q": "Vad är Williams varning med bolag som aldrig betalar ut?",
+          "alternativ": [
+            "De är alltid bäst långsiktigt",
+            "Utan ankare i ägarkassaflöde kan värderingen bli ren berättelse och kapital förbrukas (V19)",
+            "De betalar för hög skatt",
+            "Deras bokvärde är alltid fel"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som saknas i modellen när ingen utbetalning någonsin kommer."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Siffror mot berättelser — prognos-värdering mot story-värdering",
+      "intro": "Williams andra kontrovers: värdering är en rent kvantitativ övning — berätta inte, räkna. Men en generation värderare, med Damodaran i spetsen, har svarat att siffror utan berättelse är trendextrapolering. Kapitlet ställer Williams prognos-ideal mot berättelsens försvar och visar var gränsen går.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Williams ideal var att värderingen skulle vara prognos-bara: identifiera kassaflödena, uppskatta deras bana i siffror, diskontera — och låta berättelsen vila. Detta var 1938 djupt rationellt: han hade just sett hur 1920-talets berättelser — radion, den nya eran — prissattes utan siffror alls. Hans bok är därför nästan rent matematisk, med tabeller, serier och formler, och enligt berättelsen är det just därför Harvard tvekade. Budskapet: berättelsen är inte evidens — hon är förklaring, och i värsta fall reklam. Att fråga vad en aktie är värd är en sifferfråga, inte en fråga om vältalighet."
+        },
+        {
+          "type": "text",
+          "content": "Damodaran-kursen (Investment Valuation) formulerar korrektivet: värdering är en bro mellan berättelse och siffror — berättelsen utan siffror är en saga, och siffrorna utan berättelse är en tom beräkning. En tillväxtprognos är nämligen inte ett tal utan en påstådd mekanism: VARFÖR växer intäkterna? För att varumärket (V14) bär prissättning, nätverkseffekter (V15) binder kunderna, nya lanseringar (V16) öppnar intäktsvägar och avtal (V17) säkrar volymen. Williams formel diskonterar given vilken mekanism som helst — men prognosens trovärdighet avgörs av mekanismen. Här möts kurserna: Damodarans story-test är det som gör Williams siffror värda att stoppa in i formeln. En DCF vars tillväxt bara förlänger förra årets trend är inte neutral — det är en berättelse i förklädnad, och dessutom den minst genomtänkta."
+        },
+        {
+          "type": "text",
+          "content": "Den kontroversiella sanningen ligger i ändarna av skalan. Williams har rätt om att berättelser kan prissättas långt över varje försvarlig kassaflödesbana — 1999 och 2021 bevisade det på nytt, och berättelsebolagens kollaps när räntan stiger (kapitel 8) är mekaniken demonstrerad i realtid. Damodaran har rätt om att rena sifferprognoser utan kausal mekanism är trendextrapolering i kostym — ett g som ingen kan försvara men alla kan mata in. Den praktiska syntesen för AKM1: använd berättelsen för att sätta tak och golv för prognoserna, använd siffrorna för att testa berättelsen — och när de två inte kan förenas, lita aldrig på den som lät bäst. Notera slutligen att Williams egen bok trots allt innehåller en berättelse — depressionens: att värde överlever. Han räknade för att bevisa den. Även puristen har en story; skillnaden är att hans gick att falsifiera — och överlevde."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Berättelse mot siffror — två sätt att motivera samma prognos\",\"rader\":[[\"Fråga\",\"Berättelsens svar\",\"Siffrornas svar\",\"Krav för syntes\"],[\"Varför växer intäkterna?\",\"Varumärke, nätverk, lanseringar (V14-V16)\",\"Historisk tillväxt och försäljningsbana (V01)\",\"Mekanismen måste synas i bokslutet\"],[\"Hur länge?\",\"Så länge försprånget håller\",\"Till g närmar sig ekonomins tillväxt\",\"Explicit faslängd i modellen\"],[\"Hur säkert?\",\"Tro och förväntan\",\"Intäktsstabilitet (V12) och känslighetstabell\",\"Scenarier med värden, inte ord\"],[\"Vad betyder felet?\",\"En ny story skrivs\",\"Margin of safety mot prognosfel\",\"Köp under det räknade värdet\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Siffrorna utan berättelse är trendextrapolering; berättelsen utan siffror är en saga. Värderingen börjar först när de två översätts till varandra."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta ett bolag du känner och skriv dess försäljningstillväxt (V01) som en mekanismkedja i tre steg: vad driver volym, vad driver pris, vad bromsar båda. Översätt sedan kedjan till siffror: antag kassaflöde till ägare nästa år på 8 kronor, evig tillväxt 3 procent och krav 9 procent — V = 8/(0,09 - 0,03) = 8/0,06 ≈ 133,33 kronor. Testa berättelsens makt: vilken kurs motiveras om g = 5 procent? 8/0,04 = 200 kronor. Notera att skillnaden — 66,67 kronor — är priset på en berättelse om tillväxt, och avgör vilken del av den som bärs av mekanism och vilken av hopp."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Williams ideal för värdering enligt kursen?",
+          "alternativ": [
+            "Kombinera story och siffror lika",
+            "Ren kvantitativ prognos — berättelsen skulle ersättas av siffror",
+            "Bara berättelser utan siffror",
+            "Teknisk analys av kurser"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på hur hans bok ser ut — och varför den sades vara refuserad."
+        },
+        {
+          "q": "Vad är Damodarans korrektiv till rena sifferprognoser?",
+          "alternativ": [
+            "Att beräkna fler decimaler",
+            "Att värdering är en bro mellan berättelse och siffror — mekanismen ger prognosen trovärdighet",
+            "Att bara använda multipeler",
+            "Att ignorera tillväxt helt"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig varför ett tal är trovärdigt."
+        },
+        {
+          "q": "Vad kallas en DCF vars tillväxt bara förlänger den historiska trenden?",
+          "alternativ": [
+            "Komplett värdering",
+            "Konsol-modellen",
+            "Självlikviderande DCF",
+            "Trendextrapolering i förklädnad"
+          ],
+          "ratt": 3,
+          "tips": "Vad saknas i prognosen om ingen mekanism anger varför den håller?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "DCF:s eviga problem — skräp in, skräp ut och terminalvärdets tyranni",
+      "intro": "Williams metod är idag standard — och dess svagheter med den. Formeln är exakt, men indata är gissningar; och som kapitel 5 visade ligger majoriteten av värdet i terminalvärdet, där antagandena är som svagast. Detta kapitel är kursens ärlighetsdeklaration om DCF:s eviga problem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första problemet: skräp in, skräp ut (trash in, trash out). Formeln V0 = Σ Dt/(1+r)^t har ingen åsikt om sanningen i dina Dt — den behandlar en noggrant researchad utdelning och en slurvigt gissad helt identiskt. Resultatet blir ofta pseudoprecision: ett värde på 104,87 kronor med fem värdesiffror, byggt på prognoser som ingen kan känna till. Williams själv var tydlig med att slaget stås i prognoserna, inte i algebran — kursen sammanfattar hans hållning som att det inte är diskonteringen som är svårt, det är prognoserna. Disciplinen är att visa osäkerheten i stället för att gömma den: räkna tre banor (pesimist, bas, optimist), känslighetstabeller för r och g, och behandla resultatet som ett intervall med en mittpunkt — aldrig som ett pris."
+        },
+        {
+          "type": "text",
+          "content": "Andra problemet: terminalvärdets tyranni. I tvåfas-exemplet i kapitel 5 svarade terminalvärdet för cirka 78 procent av totalvärdet — och det är normalfallet, inte undantaget. Allt som händer under den explicita fasen flyttar värdet med några procent, medan en enda procentenhet i evig tillväxt g eller i diskontot r flyttar tiotals procent (kapitel 4:s känslighetstabell). Damodaran-kursen landar i samma slutsats i sitt kapitel om terminal value: din DCF är i praktiken en åsikt om evigheten med lite detaljer kring år ett till fem. Ironin är att modellens mest osäkra komponent — vad som händer om trettio, femtio, hundra år — är den som väger tyngst. Därför gäller Damodarans husregel också här: evig tillväxt högst lika med den riskfria räntan, för inget bolag växer snabbare än ekonomin i evighet."
+        },
+        {
+          "type": "text",
+          "content": "Tredje problemet är det mänskliga: modellen kan köras baklänges. Eftersom varje önskat värde kan framtvingas med en liten justering av g eller r, blir DCF ibland ett redskap för att motivera beslut som redan är tagna — analytikern börjar med kursen och hittar sedan antagandena. Det finns inget matematiskt försvar mot detta, endast disciplin: fäst antagandena innan du ser målet, dokumentera dem och låt känslighetsanalysen visa hur skör slutsatsen är. Och ändå — kursens slutsats är inte att överge DCF utan att äga dess begränsningar. Williams modell tvingar dig att säga i klartext vad du tror om framtiden, vilket ingen multipel gör. Intäktsstabilitet (V12) är här det bästa försvaret: bolag med stabila, återkommande intäkter har prognoser som tål tryck, och deras DCF:er är därför mer än dekor. Hos bolag med ostadiga intäkter blir DCF:en en scenariomaskin, inte en kalkylator — och även det är användbart, om man är ärlig med det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"DCF:s eviga problem — och motgiften\",\"rader\":[[\"Problem\",\"Mekanism\",\"Motgift\"],[\"Skräp in, skräp ut\",\"Formeln behandlar gissningar som fakta\",\"Tre banor, känslighetstabell, intervall i stället för punkt\"],[\"Terminaltyranni\",\"Majoriteten av värdet ligger i evighetsantagandet\",\"g högst lika med riskfri ränta; testa terminalandelens storlek\"],[\"Baklängeskörning\",\"Önskat värde framtvingas med justerade antaganden\",\"Fäst antaganden före målet; dokumentera och låt någon granska\"],[\"Pseudoprecision\",\"Fem värdesiffror på osäker input\",\"Rapportera med grov avrundning\"],[\"Modellförblindelse\",\"Snygg kalkyl förklädd till kunskap\",\"Kräv mekanism bakom varje tal (kapitel 10)\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ DCF gör inte framtiden säker — den gör dina antaganden synliga. Det är dess verkliga gåva: den enda modellen som tvingar dig att skriva ut, i siffror, vad du tror."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta kapitel 5:s tvåfasvärde 105,04 kronor och stressa det. Höj det eviga g från 3 till 4 procent: D6 = 7,32 × 1,04 = 7,61 kronor, TV5 = 7,61/(0,09 - 0,04) = 7,61/0,05 = 152,20 kronor och PV = 152,20 × 0,6499 ≈ 98,92 kronor — totalt cirka 98,92 + 23,36 = 122,28 kronor, en ökning med knappt 17 procent på en enda procentenhet. Sänk sedan r till 8 procent och räkna om grovt: diskonteringsfaktorn för år fem blir 1/1,08^5 ≈ 0,6806, utdelningarnas nuvärden stiger något och terminalvärdet väger ännu tyngre. Skriv ner din slutsats: varför är en DCF utan känslighetsanalys inte en analys?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför domineras en typisk DCF av terminalvärdet?",
+          "alternativ": [
+            "Eftersom utdelningarna de första åren är noll",
+            "Eftersom majoriteten av nutidsvärdet ligger långt fram i tiden, där evighetsantagandet bor",
+            "Eftersom räntan alltid är för hög",
+            "Eftersom multipeler saknas i modellen"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på hur stor del av bolagets liv som återstår efter år fem."
+        },
+        {
+          "q": "Vad är pseudoprecision i DCF-sammanhang?",
+          "alternativ": [
+            "Att presentera exakta tal byggda på osäkra antaganden",
+            "Att använda för få decimaler",
+            "Att räkna i kronor i stället för dollar",
+            "Att använda känslighetsanalys"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vad de fem siffrorna bakom kommat vilar på."
+        },
+        {
+          "q": "Vad är Damodarans husregel för evig tillväxt i terminalvärdet?",
+          "alternativ": [
+            "g måste alltid vara över 10 procent",
+            "g ska vara högst lika med den riskfria räntan",
+            "g ska vara exakt lika med inflationen minus ett",
+            "g spelar ingen roll för värdet"
+          ],
+          "ratt": 1,
+          "tips": "Inget bolag växer snabbare än ekonomin — i evighet."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Multipeln är förkortad DCF — flykten som leder tillbaka",
+      "intro": "DCF:s problem har en frestande lösning: sluta räkna nuvärden, använd multipeler. Men det är en flykt som leder tillbaka — varje multipel är en förkortad DCF med antagandena gömda i snedstrecket. Kapitlet härleder sambandet och visar varför det inte finns någon kant att fly till.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Härledningen utgående från Williams evighetsformel: V0 = D1/(r - g), och eftersom D1 = vinst × utdelningsgrad blir den rättvisa P/E:n = utdelningsgrad × (1 + g)/(r - g). Räkneexempel: utdelningsgrad 50 procent, g = 4 procent och r = 9 procent ger P/E = 0,50 × 1,04/0,05 = 10,4. Vänd på den: varje gång du säger att ett bolag bör handlas till tolv gånger vinsten, har du i samma andetag sagt utdelningsgrad, tillväxt och riskkrav — du har bara inte skrivit upp dem. På samma sätt bärs P/B (V05) av förhållandet (ROE - g)/(r - g) — lönsamheten på bokfört kapital (V09) minus tillväxt, delat med kravet minus tillväxt — medan EV/EBITDA (V06) gömmer skatt, kapitalintensitet och återinvesteringsbehov, och P/S (V04) dessutom hela marginalstrukturen (V07–V08). Multipeln är en DCF komprimerad till en enda division: ingenting försvinner, det syns bara inte."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen är obekväm: jämförelsebolagets multipel är dess DCF i starkt förkortad form. När du prisar ditt bolag till fjorton gånger EBITDA för att liknande bolag gör det, lånar du deras underliggande antaganden om tillväxt, risk och återinvesteringsbehov — utan att känna till dem, och utan att veta om marknaden just nu har fel om dem. Därför har multipeler sina egna fallgropar, som Damodaran-kursen detaljerar: bolag med olika kapitalintensitet ska inte jämföras rakt av i EV/EBITDA; tillväxtlösa och tillväxtstarka bolag har olika rättvisa P/E trots samma bokslut; och en P/S (V04) säger ingenting utan bruttomarginalen (V07) — samma multipel på två procent och fyrtio procent marginal är två olika bolag. Multipeltabellen är inte en åsiktsfri zon; det är en zon där åsikterna är osynliga."
+        },
+        {
+          "type": "text",
+          "content": "Vad är då multipelerna bra för — och det är de? De är snabba, de sammanfattar marknadens samlade dom i ett tal, och de utgör en utmärkt grovsikt och korskontroll av en DCF. Damodarans arbetsgång — värdera först med nuvärde, kontrollera sedan vad värdet implicerar för multipeln — är rätt ordning, ty den tvingar antagandena fram i ljuset i stället för att gömma dem i ett snedstreck. Williams test avslutar kapitlet: varje gång du använder en multipel, skriv ut de tre dolda antagandena — tillväxt, risk och utdelnings- eller återinvesteringsgrad — och fråga om du köper dem. Gör du inte det är multipeln inte ett argument utan ett citat från någon annans kalkyl. Och kom ihåg omvändningen: säger någon att DCF är opålitlig men multipeler pålitliga, svarar Williams-logiken att det är samma maskin — den ena med synliga rattar, den andra med osynliga."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Multipelens dolda antaganden\",\"rader\":[[\"Multipel\",\"AKM1-variabel\",\"Vad som döljs i snedstrecket\",\"Känsligast för\"],[\"P/E\",\"—\",\"Utdelningsgrad, g och r\",\"g och r tillsammans\"],[\"P/B\",\"V05\",\"(ROE - g)/(r - g)\",\"Lönsamheten på bokfört kapital (V09)\"],[\"EV/EBITDA\",\"V06\",\"Skatt, kapitalintensitet, återinvesteringsbehov\",\"Skillnader i investeringsbehov\"],[\"P/S\",\"V04\",\"Hela marginalstrukturen\",\"Bruttomarginalen (V07)\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Det finns inget multipelalternativ till DCF — bara DCF med osynliga antaganden. Frågan är inte om du använder antaganden, utan om du ser dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Härled en rättvis P/E själv: utdelningsgrad 60 procent, evig tillväxt 3 procent, avkastningskrav 8 procent. P/E = 0,60 × 1,03/(0,08 - 0,03) = 0,618/0,05 = 12,36. Räkna sedan om med g = 1 procent: 0,60 × 1,01/0,07 = 0,606/0,07 ≈ 8,66 — samma utdelningsgrad, två helt olika rättvisa multiplar. Avsluta med att slå ut vilken multipel en aktie du följer handlas till idag, och baklänges läsa vilka g och r den implicerar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad härleds den rättvisa P/E:n ur enligt kursen?",
+          "alternativ": [
+            "Ur bokvärdet och skulden",
+            "Ur Williams evighetsformel: utdelningsgrad × (1 + g)/(r - g)",
+            "Ur grafiska mönster",
+            "Ur börsens genomsnitt sedan 1900"
+          ],
+          "ratt": 1,
+          "tips": "Skriv D1 som vinst gånger utdelningsgrad och se vad som ryms kvar."
+        },
+        {
+          "q": "Utdelningsgrad 50 procent, g = 4 procent, r = 9 procent. Vad blir rättvis P/E?",
+          "alternativ": [
+            "5,2",
+            "8,0",
+            "10,4",
+            "20,8"
+          ],
+          "ratt": 2,
+          "tips": "0,50 × 1,04 dividerat med nämnaren."
+        },
+        {
+          "q": "Vad menas med att multipeln är en förkortad DCF?",
+          "alternativ": [
+            "Att multipeln bara gäller kort sikt",
+            "Att multipeln packar tillväxt, risk och utdelningsgrad i ett enda tal — med antagandena osynliga",
+            "Att multipeln aldrig kan feltas",
+            "Att DCF är föråldrad teknik"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad du indirekt håller med om när du accepterar en multipel."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Arvet — Graham, Buffett, Damodaran och AKM1",
+      "intro": "Williams bok sålde blygsamt och citerades flitigt. Detta sista kapitel spårar arvet från Grahams och Dodds krets över Buffetts aktieägarbrev till Damodarans läroböcker — och slutar i AKM1:s variabler och principen margin of safety. Frågan att besvara: vad lever vidare, och vad ska en moderne analytiker behålla?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Arvslinjen är rak. Williams byggde delvis på Graham och Dodd (Security Analysis, 1934), som han citerar — men deras verk levererade ingen samlad kassaflödesteori, och Williams fyllde hålet med formeln. Buffetts aktieägarbrev 1992 citerar sedan Williams definition rakt av när Berkshire ska förklara varför bolag värderas med nutidsvärde och inte i trend — hela stycket är i sak en hyllning till 1938. Damodarans författarskap — och kursen Investment Valuation, som är AKM1:s värderingsbibel — är en utbyggnad av Williams skelett: FCFF och FCFE är generaliserade utdelningar, WACC är den lämpliga räntan operationaliserad, och terminal value är Williams evighet med husregler. Modern värdering är Williams med bättre data, bredare kassaflödesbegrepp och fler varningar — inte något bortom Williams."
+        },
+        {
+          "type": "text",
+          "content": "Vad ska vi behålla — och vad vara försiktiga med? Behåll axiomat: värde är summan av diskonterade kassaflöden. Behåll intäktsbegreppet: varje behållen krona är en framtida utdelning som ska tjäna sitt krav (V09, V20). Behåll konvergensen: priset dras över tiden mot det räknade värdet — grunden för margin of safety, ty köper du under det evaluativa värdet blir de spekulativa svängningarna din vän i stället för din fiende. Behåll räntans roll: samma bolag är olika värden i olika räntelägen. Var försiktig med tre saker: prognos-tron (kapitel 11), den bokstavliga utdelningsdogmen utan återköp och kvarhållen vinst som kanaler (kapitel 9), och tron att berättelser inte behövs (kapitel 10). Williams eget bästa försvar var hans ärlighet — han visste att formeln var det lätta och framtiden det svåra."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1:s spegel blir Williams platsen där allt börjar. Försäljnings- och ARR-tillväxten (V01–V02) och intäktsdiversifieringen (V03) matar prognoserna; P/S, P/B och EV/EBITDA (V04–V06) är hans DCF i förkortad form (kapitel 12); marginalerna (V07–V08) och ROE (V09) bestämmer hur mycket av tillväxten som blir kassaflöde; skuldsättningsgraden och likviditeten (V10–V11) prissätter risken i kassaflödena; intäktsstabiliteten (V12) avgör prognosernas hållbarhet; moat-variablerna (V13–V16) är mekanismerna som gör tillväxten mer än en trend (kapitel 10); avtalen och den regulatoriska utvecklingen (V17–V18) är katalysatorer som kan förskynda eller bromsa konvergensen; kapitalförbränningen (V19) varnar för det bolag där framtida utdelningar bränns bort på vägen; och återköpen (V20) är den kanal som fullbordar hans ägarkassaflödesbegrepp i vår era. Margin of safety är slutligen Williams konvergens omsatt i praktik: eftersom priset med tiden dras mot det räknade värdet, och eftersom ditt räknade värde är en prognos med felmarginal, köper du med avstånd — marginalen är inte pessimism utan måttet på din egen osäkerhet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Williams → eftervärlden\",\"rader\":[[\"Arvtagare\",\"Vad som togs\",\"Vad som lades till\"],[\"Graham och Dodd-kretsen\",\"Skiljelinjen pris-värde\",\"Konservatism och säkerhetsmarginal som metod\"],[\"Buffetts aktieägarbrev\",\"Definitionen citerad rakt av (1992)\",\"Kapitalallokering och återköpslogik (V20)\"],[\"Damodaran\",\"Skelettet: DCF, evighet, diskonto\",\"FCFF/FCFE, WACC och bron berättelse-siffror\"],[\"AKM1\",\"Hela kartan\",\"Variabler, katalysatorer och marginalprövning\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Boken nästan ingen läst innehåller idén som alla använder: varje gång någon säger intrinsikt värde — i en analys, en budgivning eller en räkenskapsdiskussion — sitter Williams i rummet."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Slutövningen: ett stabilt bolag delar ut 5 kronor nästa år och växer 3 procent för evigt; ditt krav är 9 procent. Evaluativt värde: 5/(0,09 - 0,03) = 5/0,06 ≈ 83,33 kronor. Kursen är 60 kronor — skillnaden är 23,33 kronor, motsvarande 28 procent rabatt mot räknat värde. Bestäm om marginalen räcker mot dina prognosfel: vad händer om g visar sig vara 1 procent (V = 5/0,08 = 62,50 kronor, knappt över kursen) och om r stiger till 10 procent vid g = 3 procent (V = 5/0,07 ≈ 71,43 kronor)? Skriv din investeringsdom och namnge den enda variabel som hela fallet vilar på."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket dokument citerar Williams definition rakt av enligt kursen?",
+          "alternativ": [
+            "Grahams Security Analysis 1934",
+            "Buffetts aktieägarbrev 1992",
+            "Damodarans första lärobok",
+            "Gordons artikel 1956"
+          ],
+          "ratt": 1,
+          "tips": "Brevet förklarade varför Berkshire använder nutidsvärde i stället för trend."
+        },
+        {
+          "q": "Hur kopplas margin of safety till Williams i kursen?",
+          "alternativ": [
+            "Konvergensen gör att köp under det räknade värdet ger marginal för prognosfel",
+            "Som en multipelregel från Graham utan koppling",
+            "Som krav på utdelning varje år",
+            "Som en teknisk stop-loss"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på skillnaden mellan pris och räknat värde som en försäkring."
+        },
+        {
+          "q": "Vad är Williams största arv enligt kursen?",
+          "alternativ": [
+            "Den tekniska analysens grunder",
+            "Att allt hänger på diagrammets form",
+            "Idén att värde är summan av diskonterade kassaflöden — grunden för all modern värdering",
+            "Den effektiva marknadshypotesen"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vad varje modern värderingsmodell har gemensamt."
+        }
+      ]
+    }
+  ]
+}

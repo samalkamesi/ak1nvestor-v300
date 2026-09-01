@@ -1,0 +1,1081 @@
+{
+  "slug": "irrational-exuberance",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 150,
+  "title": "Irrational Exuberance — Shiller: KOMPLETT",
+  "summary": "Robert Shillers Irrational Exuberance (2000, 2005, 2015) är beteendebubblornas bibel — boken som publicerades veckor före Nasdaqs topp 2000 och vars andra upplaga varnade för bostadsmarknaden tre år före kraschen 2008, och som gav Shiller Nobelpriset 2013 (delat med ärkefienden Eugene Fama). Kursen går igenom excess volatility-beviset från 1981, de tolv strukturfaktorerna, feedback-looparna och berättelseepidemierna, ankarna, hela CAPE-historiken 1881 till 2020-talet samt bostadsbubblan — och ägnar ett helt kapitel åt fejden mot Fama med båda sidors starkaste argument och en ärlig redovisning av CAPE:s prognossvaghet.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för bokens kärnbevis: Shillers artikel från 1981 (»Do Stock Prices Move Too Much to be Justified by Subsequent Changes in Dividends?«), där det fullkomliga förutseendepriset — nutidsvärdet av de verkliga framtida utdelningarna 1871–1979 — visade sig vara en smidig, nästan rak linje medan den faktiska kursen var omkring fem gånger mer volatil, och vad denna brutna variansbindning betyder: att större delen av marknadens kortsvängningar inte kan vara information om fundamenta. Eleven kan förklara varför de klassiska fundamentalförklaringarna — räntan (diskonteringsräntan i Gordontypens formler), real vinsttillväxt (som låg stabil kring 1,5–2 procent per år under seklet) och utdelningspolitiken (styrelser utjämnar medvetet) — tillsammans inte förklarar 1900-talets multiplikateursvängningar, och därmed varför det beteendemässiga gapet återstår som huvudspår. Eleven behärskar bokens strukturanalys: de tolv precipiterande strukturfaktorerna (internet, kapitalismens triumf, kulturella förändringar, födelsekohorter, mediebevakning, analytikeroptimism, 401(k)-planer, handelsvolymexpansion, hasardspelkulturen, låg inflation och penningillusionen, fondexpansionen och den allmänna ny-eran-optimismen), feedback-looparnas mekanik (pris-till-pris-förväntningar, naturligt uppkomna Ponzi-scheman utan bedragare, och varför bubblor måste ta slut), berättelseepidemi-modellen (smittsamhet, återhämtning, mutation, vektorer — grunden till Shillers senare narrativa ekonomi), samt de psykologiska ankarna: kvantitativa (gamla toppar, inköpskursen, jämna tal) och moraliska (förtroende, »det säkra«, hemma-hos-metaforen). Eleven kan arbeta med CAPE — realpris över tioårigt genomsnitt av reala vinster, en idé Shiller spårar till Graham & Dodd 1934 — inklusive historiken 1881 till 2020-talet (genomsnitt cirka 16–17; toppar 1929 omkring 33, 2000 omkring 44, 2007 omkring 27, 2021 nära 40; bottnar 1921, 1932 och 1982 kring 5–7), vad höga och låga lägen sagt om real tioårsavkastning, och de ärliga gränserna: förklarad varians kring en tredjedel på tio år, nästan noll på ett år, och ett decennium av höga lägen med goda avkastningar under 2010-talet. Eleven kan redogöra för finanshistoriens största fejd — Shiller mot Fama, som delade Nobelpriset 2013 — med båda sidors argument: joint hypothesis-problemet, att volatilitetsprognoser inte är avkastningsprognoser, Famas invändning att en felaktig marknad inte är lätt att slå (förvaltares bristande uthållighet), Shillers svar om arbitragens gränser, Samuelsons skämt om nio förutsagda av de senaste fem recessionerna, samt räntekonditioneringen av berättigad CAPE. Eleven kan koppla ramverket till AK1TS: sentiment som cykelvariabel för att lokalisera fasen och dosera exponering — med kursens medgivna prognossvaghet — samt till AKM1:s V-variabler: att aldrig kapitalisera toppmarginaler (V07, V08), att normalisera före multiplar (V04, V05, V06), att läsa emissioner vid toppar genom V19 och återköp genom V20, och att hantera marginal of safety utan siffra som bredare krav vid extrema sentiment. Eleven kan slutligen tillämpa bostadsbubblans läxa (reala amerikanska bostadspriser i princip platta 1890–1997, myten om att bostäder alltid stiger, feedback- och hävstångsmekaniken) och verktygslådan för individen — diversifiering, mekanisk balansering, avstånd från hävstång, samt DCA med dess ärliga gränser (lump sum vinner i omkring två av tre historiska perioder; DCA:s värde är beteendemässigt) — i en trelagersmodell där fundament (V01–V20) avgör vad man äger, cykel och sentiment (AK1TS) hur mycket, och narrativ hur det känns.",
+  "why": "Ingen annan levande bok har förutsagt både 2000 och 2008 — och ingen annan ekonom har tvingat ämnet att ta psykologin på allvar med samma empiriska tyngd. Irrational Exuberance är grundvalen för allt i AK1A som handlar om sentiment, cykler och berättelser: AK1TS:s sentimentskala är i praktiken Shillers katedral byggd i mätbar form, och AKM1:s krav på normaliserade fundament (V07–V08 före V04–V06) är CAPE-tänkandet tillämpat per aktie. Samtidigt kräver kursens heder att kontroversen tas på allvar: samma kommitté som gav Shiller priset 2013 gav det också Fama, och CAPE:s svaghet som tidtagare — hög i decennier utan krasch, ifrågasatt av räntenivån och redovisningsvalen — är ingen fotnot utan huvudfakt. Den som förstår både Shillers bevis och Famas invändningar vet varför AK1A varken tajmar marknaden eller dyrkar den: pris är en signal, aldrig en sanning.",
+  "chapters_list": [
+    "1. Irrationell entusiasm — frasen, boken och de två varningarna",
+    "2. Överflödig volatilitet — 1981 års bomb",
+    "3. Fundamentalens stillhet — ränta, vinster och utdelningar räcker inte",
+    "4. De tolv strukturfaktorerna — vad som blåste upp ballongen",
+    "5. Feedback-loopar och naturliga Ponzi-scheman",
+    "6. Berättelseepidemier — hur stories smittar som sjukdomar",
+    "7. Ankarna — kvantitativa tal och moralisk förankring",
+    "8. CAPE — den cykliskt justerade multipeln och 140 år av historik",
+    "9. Fejden — Shiller mot Fama och 2013 års Nobelpris",
+    "10. AK1TS och sentimentet — Shillers katedral, medgivet ofullständig",
+    "11. Bostadsbubblan — myten om att bostäder alltid stiger",
+    "12. Bubblans konsekvenser — välståndseffekter och snedfördelat kapital",
+    "13. Vad individen kan göra — diversifiering, DCA och deras gränser",
+    "14. Arvet — Nobel, narrativ ekonomi och trelagersmodellen"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Irrationell entusiasm — frasen, boken och de två varningarna",
+      "intro": "Den 3 december 1996 vittnade Robert Shiller (tillsammans med John Campbell) inför Federal Reserve om att aktiemarknadens värdering saknade fundamental grund. Två dagar senare ställde Greenspan sin berömda fråga — »hur vet vi när irrationell entusiasm har oskäligt eskalerat tillgångsvärden?« — och kvällens börs i Tokyo föll märkbart. Shiller lånade frasen som titel på boken som utkom i mars 2000, veckor före Nasdaqs topp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Timing som denna har gjort boken till legend, men den är också dess mest missförstådda del. Shiller själv har varit noga med att påpeka att han inte förutsåg ett kraschdatum: han beskrev en diagnos — att marknadens priser bar på en beteendemässig övertryck — inte en prognos om när den skulle släppa. första upplagan av Irrational Exuberance kom i mars 2000; den 10 mars 2000 stängde Nasdaq på 5048, och föll därefter 78 procent till oktober 2002. S&P 500 föll 49 procent från topp till botten. Det Shiller beskrev i förväg var mekanismen som sedan vecklades ut: feedback, berättelser och ankare snarare än diskonterade kassaflöden."
+        },
+        {
+          "type": "text",
+          "content": "Andra upplagan kom 2005 och tillförde det som i efterhand ser ut som bokens andra fullträff: ett kapitel om bostadsmarknaden i historiskt perspektiv. Shiller hade byggt långa prisserier på amerikanska bostäder sedan 1890 (tillsammans med Karl Case, senare Case-Shiller-indexen) och visade att reala bostadspriser varit i princip platta i ett sekel — medan den då pågående fördubblingen förklarades av en kulturövertygelse: »bostäder stiger alltid«. Nationella toppen kom sommaren 2006; 20-stadsindexet föll cirka 27 procent till 2012, och bolånekapitalet bakom drog med sig det finansiella systemet. Tredje upplagan (2015) lade till obligationsmarknaden och nya narrative exempel — och 2019 formaliserade Shiller berättelsespåret i Narrative Economics."
+        },
+        {
+          "type": "text",
+          "content": "Mannen bakom: Yaleprofessor sedan decennier, elev till den empiriska traditionen, mest känd för två saker — variansbundentestet från 1981 och CAPE. 2013 tilldelades han Nobelpriset i ekonomi tillsammans med Eugene Fama och Lars Peter Hansen, »för den empiriska analysen av tillgångspriser«. Att kommittén lät Shiller och Fama — finanshistoriens största rivaler — dela priset är ingen kuriosa utan själva poängen: utskottet hedrade två oförenliga bilder av marknaden samtidigt, och kapitel 9 i denna kurs ägnas helt åt den fejden."
+        },
+        {
+          "type": "text",
+          "content": "Bokens kärna kan sammanfattas i Shillers egen definition av en spekulativ bubbla: en situation där nyheter om stigande kurser sporrar investerarentusiasm, som sprids genom psykologisk smitta från person till person, på vägen förstärker de berättelser som skulle kunna motivera prisökningarna, och drar in en allt större klass av investerare som — trots tvivel om det verkliga värdet — lockas delvis av avund över andras framgångar och delvis av en spelares spänning. Notera vad definitionen inte innehåller: ingen bedragare, ingen konspiration, inget krav på irrationalitet hos varje enskild deltagare. Bubblor är kollektiva fenomen som uppstår ur helt mänskliga reaktioner — det är därför de återkommer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre upplagor, tre tillgångar, ett ramverk\",\"rader\":[[\"Upplaga\",\"År\",\"Tillskott\",\"Vad som hände därefter\"],[\"Första\",\"2000\",\"Huvudargumentet om 1990-talets aktiemanie\",\"Nasdaq föll 78 procent 2000–2002\"],[\"Andra\",\"2005\",\"Bostadskapitlet och den långa prisserien\",\"USA:s bostadspriser föll cirka 27 procent 2006–2012\"],[\"Tredje\",\"2015\",\"Obligationsmarknaden och nya narrativ\",\"Långa räntor förblev låga — och steg sedan kraftigt 2022\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Shillers metod är kursens viktigaste förhållningssätt: skilj på diagnos och prognos. Han har aldrig gjort anspråk på att tajma marknaden — hans genomslag kom från att beskriva mekanismen rätt, två gånger, före att den fullbordades. För investeraren innebär det att förstå varför ett system är skört är ett annat och bättre Handlag än att gissa när det knäcks. Den som kräver ett datum innan hon agerar har redan missat poängen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner, daterat, vad du tror att den breda aktiemarknaden avkastar realt de kommande tio åren — en siffra och en motivering. Formulera därefter vilken berättelse motiveringen bygger på (uttryckt i en mening, som en rubrik). Lägg svaret i din journal: kapitel 8 återkommer till det när du sett CAPE-historiken, och kapitel 5 när du sett hur förväntningar extrapoleras."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Shiller med en spekulativ bubbla i bokens kärndefinition?",
+          "alternativ": [
+            "En kursökning som korrekt prissätter förbättrade fundamenta i förväg",
+            "En medvetet konstruerad pyramid som en bedragare driver",
+            "En situation där stigande kurser skapar entusiasm som sprids genom psykologisk smitta och drar in allt fler som tvivlar men ändå köper",
+            "Ett kursfall som blir djupare än vad fundamenta motiverar"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på mekanismen — hur sprids entusiasm — snarare än på vem som styr den."
+        },
+        {
+          "q": "När utkom första upplagan och vad hände kort därefter?",
+          "alternativ": [
+            "1996, dagarna före Greenspans tal om irrationell entusiasm",
+            "2005, samma år som den amerikanska bostadspristoppen",
+            "2008, i samband med Lehman-kollapsen",
+            "Mars 2000, strax före Nasdaqs topp den 10 mars och det efterföljande fallet på 78 procent"
+          ],
+          "ratt": 3,
+          "tips": "Bokens titel togs från ett tal 1996 — men publiceringsåret är ett annat."
+        },
+        {
+          "q": "Vad kännetecknar Shillers position i sina båda kända varningar (2000 och 2005)?",
+          "alternativ": [
+            "Han beskrev mekanismer och sårbarheter snarare än exakta tidpunkter",
+            "Han datumerade krascherna med månaders precision",
+            "Han rekommenderade korta positioner i båda topparna",
+            "Han menade att all aktieinvestering var ovetenskaplig och skulle undvikas"
+          ],
+          "ratt": 0,
+          "tips": "Skilj på att veta att en bro är skör och att veta vilken dag den rasar."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Överflödig volatilitet — 1981 års bomb",
+      "intro": "Innan boken fanns artikeln: »Do Stock Prices Move Too Much to be Justified by Subsequent Changes in Dividends?« i American Economic Review 1981. Shiller testade en enkel konsekvens av effektiv marknad — att kursens variation inte får överstiga variationen hos det pris som motiveras av de verkliga framtida utdelningarna — och fann att den överträddes med råge. Detta är hela den moderna beteendefinansens empiriska ursprung.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Metoden var elegant i sin enkelhet. Shiller beräknade det han kallade det fullkomliga förutseendepriset: nutidsvärdet av de utdelningar som faktiskt betalades efter varje tidpunkt, diskonterat med en konstant real ränta. Det är priset som en investerare med fullständig kunskap om framtida utdelningar — men oförvitlig i allt annat — skulle vara beredd att betala. Om marknaden är effektiv ska det faktiska priset avvika från detta motiverat pris endast med ett oförutsägbart brus. Då gäller en enkel ojämlikhet: den faktiska kursens varians kan inte överstiga det motiverade prisets varians."
+        },
+        {
+          "type": "text",
+          "content": "Resultatet, med S&P-data 1871–1979, var slående: det motiverade priset visade sig vara en smidig, nästan tråkig linje — utdelningar växer ju stadigt och diskonteringen är konstant — medan den faktiska kursen svängde som en berg-och-dalbana. Den faktiska kursen var i storleksordningen fem gånger mer volatil än något som kunde motiveras av efterföljande utdelningar. Slutsatsen: marknadens rörelser kan inte, ens i efterhand, härledas till nyheter om fundamenta. Större delen av det vi ser i ett kursdiagram är inte information — det är beteende."
+        },
+        {
+          "type": "text",
+          "content": "Artikeln möttes av hård kritik, och ärligheten kräver att den nämns. Kleidon (1986) och Marsh–Merton invände mot småurvalsegenskaper och urvalsperiodens inverkan; Flavin (1983) visade att mått på variansbundningar kan vinklas i ändliga urval. Shiller och andra justerade metoderna (avvikelser från trender, logaritmiska formuleringar), och parallella resultat hade oberoende publicerats av LeRoy och Porter samma år. Den kvantitativa storleksordningen omdebatteras fortfarande — men den kvalitativa poängen överlevde alla angrepp: priserna är väsentligt mer volatila än de underliggande utdelningsströmmarna, och volatiliteten är dessutom själv förutsägbar (den klustrar och återgår mot medel), vilket senare blev en egen forskningsgren."
+        },
+        {
+          "type": "text",
+          "content": "Investeraröversättningen för AKM1: fundamenta — det som V01 till och med V20 mäter — förändras långsamt. Försäljningstillväxten (V01), marginalerna (V07, V08) och intäktsstabiliteten (V12) rör sig i kvartalstakt med trendsteg; kursen rör sig i minuttakt med hopp. När kursen på en dag rör sig tre procent och inget i V-listan har ändrats vet du — tack vare Shiller — att rörelsen med stor sannolikhet inte var information om bolaget. Den var feedback, humör och flöden. Det är inte ett argument för att ignorera priset; det är ett argument för att inte dyrka det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Variansbundentestet — beviset steg för steg\",\"rader\":[[\"Element\",\"Innebörd\",\"Observation 1871–1979\"],[\"Fullkomligt förutseendepris\",\"Nutide av verkliga framtida utdelningar\",\"En smidig, nästan rak linje\"],[\"Faktiskt pris\",\"Noterad kurs, samma period\",\"Omkring fem gånger mer volatilt\"],[\"Variansbindning\",\"Effektivitet kräver att faktisk varians är högst motiverad varians\",\"Bruten — med god marginal\"],[\"Kritiken\",\"Småurvalsbias, periodval\",\"Storleksordningen omdebatterad, grundbudskapet kvar\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den djupaste läxan av excess volatility är inte att marknaden ibland har fel — utan att den har fel på ett strukturerat sätt: för rörlig i förhållande till allt den rimligen kan hålla reda på. Därför är »marknaden har röstat« aldrig ett argument i AKM1. Priset är en signal bland andra, vägd mot V01–V20 och mot marginal of safety — aldrig en sanning i sig själv. Den som internaliserar detta blir immun mot den vanligaste av alla argument: »kursen vet något jag inte vet«. Ofta — statistiskt sett, i korta fönster — vet den ingenting alls."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ditt största innehav. Räkna antal handelsdagar med rörelser om minst tre procent (i vilken riktning som helst) under det senaste kvartalet. Räkna därefter antal dagar där något som berör V01–V20 faktiskt publicerades och var nytt — rapport, avtal (V17), lansering (V16), regulatoriskt beslut (V18). Skriv upp kvoten och reflektera över vad den säger om vilken information kurserna bär."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är det fullkomliga förutseendepriset i Shillers studie från 1981?",
+          "alternativ": [
+            "Nutidsvärdet av de utdelningar som faktiskt betalades efter varje tidpunkt, diskonterat med konstant real ränta",
+            "Analytikernas genomsnittliga riktkurs tolv månader framåt i tiden",
+            "Det högsta pris som noterats under hela mätperioden",
+            "Priset justerat för överlevnadsskevhet och utbildningseffekter"
+          ],
+          "ratt": 0,
+          "tips": "Namnet avslöjar det: fullständig kunskap om exakt en sak."
+        },
+        {
+          "q": "Vad innebar variansbindningen som Shiller testade?",
+          "alternativ": [
+            "Att prisvolatiliteten måste vara symmetrisk i upp- och nedgångar",
+            "Att utdelningarnas varians måste överstiga kursens",
+            "Att en effektiv marknads faktiska kursvariation inte får överstiga variationen hos det motiverade priset",
+            "Att reala och nominella kurser måste sammanfalla i längden"
+          ],
+          "ratt": 2,
+          "tips": "Fundera på vad brus får lov att göra mot en signal i en effektiv marknad."
+        },
+        {
+          "q": "Ungefär hur mycket mer volatil var den faktiska kursen än det motiverade priset enligt Shillers beräkning?",
+          "alternativ": [
+            "Omkring hälften så volatil",
+            "I storleksordningen fem gånger mer volatil",
+            "Exakt lika volatil — det var poängen",
+            "Omkring fem procent mer volatil"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden var inte marginell — den var av en storleksordning."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Fundamentalens stillhet — ränta, vinster och utdelningar räcker inte",
+      "intro": "Innan psykologin kommer uteslutningsmetoden. Bokens inledande kapitel ställer frågan: kan 1900-talets enorma kurssvängningar motiveras av det som enligt standardteorin ska bestämma priser — räntan, vinsttillväxten och utdelningspolitiken? Svaret är ett genomgående nej: fundamenta är förvånansvärt stilla, priserna är förvånansvärt oroliga, och gapet är beteendets territorium.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Räntan är den mest åberopade förklaringen — och den mest överskattade. I Gordontypens värderingsformler (P = D/(r−g)) ger en lägre diskonteringsränta högre motiverat pris, och på marginalen stämmer det: räntefall på 1990-talet motiverade en del av multipleökningen. Men Shiller visar att de historiska ränteförändringarna är alldeles för små för att förklara de observerade svängningarna i priser och multiplar. De stora boomen kom utan dramatiska ränterörelser, och den populära »Fed-modellen« (jämför vinstavkastning med obligationsavkastning) saknar historisk hållbarhet som förklaringsmodell. Räntan kan flytta den motiverade multipeln med en plats eller två — inte fördubbla den."
+        },
+        {
+          "type": "text",
+          "content": "Vinsttillväxten — den andra kandidaten — visar sig ännu stillare. Det reala vinstflödet för det breda amerikanska indexet växte under det långa seklet med i storleksordningen 1,5 till 2 procent per år, med anmärkningsvärt liten variation mellan decennier. Vinsterna accelererade inte under boomen på 1920-talet eller 1990-talet på det sätt priserna gjorde; enskilda årsvinster är dessutom kraftigt cykliska och återgår mot trend. Om priserna speglade förväntad vinsttillväxt borde de röra sig som en förstärkt och förskjuten kopia av vinstserien — i stället ser de ut som en helt annan serie. Det är kapitel 2:s resultat omformulerat: fundamenten är tråkiga, priserna är det inte."
+        },
+        {
+          "type": "text",
+          "content": "Utdelningspolitiken — den tredje kandidaten — lider av sitt eget lugn. Styrelser sätter utdelningar medvetet utjämnade: de höjer motvilligt och skär hellre investeringar än utdelningar i motgångar, och förändringarna i utdelningsandel är historiskt små. En teori där 1900-talets börssvängningar vore rationella reaktioner på omfördelningar mellan utdelning och återinvestering får därför föga att arbeta med. Shillers slutsats efter genomgången: de grunder som enligt teorin ska bära priset — ränta, vinsttillväxt, utdelningspolitik — rör sig för sakta och för litet. Något annat rör priserna."
+        },
+        {
+          "type": "text",
+          "content": "För AKM1 blir översättningen en hierarki av hastigheter. V01, V02, V07, V08 och V09 (tillsammans med V12) är långsamma variabler som förklarar decenniers kompounderande; multiplarna V04, V05 och V06 är snabba variabler som dansar kring fundamenta i åratal utan att varje steg vara information. Den som läser varje multiplerrörelse som ny kunskap om bolaget gör samma misstag som den som läste varje kurssteg 1929 som bevis för det nya seklet. Fundamenten avgör vad du äger — och det är detta kapitels poäng att de sällan är det som flyttade priset den här veckan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kandidatförklaringarna för 1900-talets svängningar\",\"rader\":[[\"Kandidat\",\"Teori\",\"Empiri enligt boken\",\"Dom\"],[\"Räntan\",\"Lägre diskonteringsränta ger högre motiverat pris\",\"För liten variation, fel timing\",\"Förklarar marginellt\"],[\"Vinsttillväxt\",\"Högre g i värderingsformeln ger högre pris\",\"Real tillväxt stabil kring 1,5–2 procent per år\",\"Förklarar knappt\"],[\"Utdelningspolicy\",\"Ändrad utdelningsandel flyttar värdet\",\"Utdelningar medvetet utjämnade, små förändringar\",\"Förklarar marginellt\"],[\"Beteende\",\"Feedback, berättelser och ankare\",\"Fyller gapet mellan stilla grund och oroligt pris\",\"Kvarstår som huvudspår\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fundamentalens stillhet är inte en statistisk kuriosa utan en påminnelse om var bevisbördan ligger. När en kurs rör sig är default-antagandet inte att världen förändrats utan att stämningen gjort det — och den som ändå menar att ny information kommit måste kunna peka på den: ett rörligt V-tal, en konkret händelse. AKM1:s checklista är byggd som ett sådant krav på pekpinning. Utan den blir varje kursrörelse sin egen förklaring, och cirkeln sluts."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett innehav du haft i minst tre år. Ställ tre serier sida vid sida: omsättningstillväxten (V01), EBITDA-marginalen (V08) och EV/EBITDA-multipeln (V06) per år. Vilken serie rörde sig mest? Vilken reagerade du på vid varje tillfälle? Anteckna en mening om vad övningen lärde dig om vilken information som faktiskt fanns i prisrörelserna."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad fann Shiller om den reala vinsttillväxten under det långa seklet?",
+          "alternativ": [
+            "Den accelererade kraftigt under varje börsboom",
+            "Den följde kurserna med några månaders fördröjning",
+            "Den var förvånansvärt stabil, kring 1,5–2 procent per år",
+            "Den var negativ i genomsnitt på grund av inflation"
+          ],
+          "ratt": 2,
+          "tips": "Jämför en kurva som dansar med en som nästan går rakt."
+        },
+        {
+          "q": "Varför förklarar inte räntan de stora multiplikateursvängningarna enligt boken?",
+          "alternativ": [
+            "De historiska ränteförändringarna är för små och kommer ofta vid fel tidpunkt för att motivera svängningarnas storlek",
+            "Räntan påverkar bara obligationsmarknaden, inte aktiepriser",
+            "Räntan och aktiepriser har historiskt rört sig åt samma håll alltid",
+            "Gordons formel innehåller ingen ränta alls"
+          ],
+          "ratt": 0,
+          "tips": "Räkna på vad en räntesänkning på en procentenhet gör mot P = D/(r−g) — och jämför med en fördubblad multipel."
+        },
+        {
+          "q": "Vad är utdelningspolitikens roll i Shillers genomgång av förklaringarna?",
+          "alternativ": [
+            "Utdelningskapningar är den främsta orsaken till börssvängningar",
+            "Utdelningar växer alltid snabbare än vinster i boomer",
+            "Utdelningsandelen varierar så kraftigt att den förklarar nästan all variation",
+            "Utdelningar utjämnas medvetet av styrelser och förändras för lite för att förklara svängningarna"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig vad en styrelse gör med utdelningen i en recession — och varför."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "De tolv strukturfaktorerna — vad som blåste upp ballongen",
+      "intro": "Bokens tredje kapitel listar tolv strukturfaktorer som väsentligen utlöste och närde 1990-talets mani — faktorer som alla förändrar uppmärksamhet, förtroende och penningflöden, men ingen av dem framtida kassaflöden. Shiller kallar dem precipitating: de utlöser, de motiverar inte.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första och starkaste faktorn var internet. Webbläsaren och Netscape-epoken gjorde den nya tekniken påtaglig för varje hushåll, och upplevelsen av en teknisk revolution — rätt nog! — förvandlades till slutsatsen att vinsterna skulle strömma till de noterade bolag som råkade kalla sig rätt saker. Historien är perfekt återanvänd: 1920-talets radio (RCA var seklets ursprungliga berättelseaktie) spelade exakt samma roll. AKM1-översättningen är V15 nätverkseffekter som narrativ kostym: argumentet »vinnaren tar allt« användes för att motivera vilken P/S-multipel (V04) som helst på bolag som ännu inte visat varken nätverk eller effekt — en multiplikator på en förhoppning, två gånger om: först på försäljningen, sedan på att försäljningen skulle bli vinst."
+        },
+        {
+          "type": "text",
+          "content": "Den politiska och kulturella vallen: kalla krigets slut och kapitalismens tillsynes triumf gav upplevelsen av att den stora risken tagits ur systemet — en riskpremiesänkning utan grund i data. Företagskulturen firade stjärnchefer, och börsnyheter blev underhållning (mediefaktorn). Analytikernas långsiktiga tillväxtprognoser kröp uppåt — symtomatiskt nog blev böcker som Dow 36,000 (1999), som menade att riskpremien borde vara noll, bästsäljare i toppen. Födelsekohorternas berättelse — att babyboomernas toppsinkomstår skulle pressa priserna uppåt — behandlar Shiller med skepsis: kohortstorlekens historiska grepp om aktiepriser är svagt, men tron på greppet var stark, och tron räcker som faktor."
+        },
+        {
+          "type": "text",
+          "content": "Rörledningarna: 401(k)-planerna och den explosionsartade fondexpansionen skapade månadsflöden som köpte oavsett pris — efterfrågan utan priskänslighet, en mekanisk uppgångsmotor så länge löner rinner in. Rabattmäklare, daghandel och dygnet-runt-handel höjde omsättningsvolymen (i sig en signal, och dessutom en nybörjarfabrik: daghandlaren lärde sig risk som underhållning). Hasardspelkulturen — kasinon, lotterier, pokern — normaliserade risksökandet. Och den låga inflationen bidrog genom penningillusionen: när inflationen sjönk kändes aktierna trygga på ett sätt som inte var motiverat av någon reel förändring — Modigliani–Cohn-effekten, där investerare blandar ihop reala och nominella storleter. Den tolfte faktorn är själva ny-eran-optimismen: den allmänna känslan av att den här gången är allt annorlunda."},
+        {
+          "type": "text",
+          "content": "Det avgörande är vad dessa faktorer inte är. Ingen av dem ökar ett bolags framtida kassaflöden med en enda dollar — de ökar köplusten, berättarnas trovärdighet och penningmängden som jagar aktier. En faktor som höjer priset utan att höja kassaflöden är per definition ett bubbelinput, hur plausibel dess yta än är. Faktorerna verkar dessutom inte additivt utan multiplicerande: internet gav storyn, medien spred den, 401(k) finansierade den, analytikerna motiverade den, spelkulturen gjorde spänningen önskvärd. Därför känns bubblemiljöer inifrån självklara: varje kanal pekar samma håll."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De tolv strukturfaktorerna (bokens kapitel 3)\",\"rader\":[[\"Faktor\",\"Mekanism\",\"AKM1-översättning\"],[\"Internet och webben\",\"Teknikrevolutionens berättelse\",\"V15 som narrativ kostym på V04\"],[\"Kapitalismens triumf\",\"Upplevd systemrisk sjönk\",\"Riskpremiesänkning utan grund\"],[\"Kulturella förändringar\",\"Företagandet firades\",\"V14 varumärke på topp\"],[\"Födelsekohorter\",\"Boomers i toppinkomstår\",\"Svagt datastöd men stark tro\"],[\"Mediebevakning\",\"Börsnyheter blev underhållning\",\"Narrativets förstärkare\"],[\"Analytikeroptimism\",\"Tillväxtprognoser steg\",\"V01-konsensus influerat\"],[\"401(k)-planer\",\"Månadsflöden utan priskänsla\",\"Efterfrågemotor utan broms\"],[\"Handelsvolymexpansion\",\"Daghandel, online, dygnet runt\",\"Omsättning som sentimentsignal\"],[\"Hasardspelkulturen\",\"Kasino, lotteri, poker\",\"Riskaptit normaliserad\"],[\"Låg inflation\",\"Penningillusionen\",\"Realt mot nominellt blandat\"],[\"Ny-eran-optimism\",\"»Den här gången är allt annorlunda«\",\"Marginal of safety i nöd\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Listans verkliga användning är inte historisk utan diagnostisk. De tolv faktorerna är en checklista för att skilja fundamental förändring från uppmärksamhetens förändring: kör dagens dominerande sektornarrativ genom raderna och markera vilka som är V01–V20-underbyggda och vilka som enbart är precipiterande. I en toppmiljö visar det sig alltid att de flesta punkter som känns ödesdigra att missa — tekniken, kulturen, flödena — bor i den högra kolumnen. Det som känns självklart är sällan det som betalar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta dagens starkaste sektornarrativ (i Sverige eller globalt). Rita två kolumner på papper: vänster »fundamentalt stöd« (konkreta V01–V20-förändringar du kan peka på), höger »enbart precipiterande« (matchning mot tabellens tolv rader). Var ärlig med vilka drivkrafter som bara är storyns dragkraft. Spara listan — den är din egen tidsmaskin för nästa topp."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med att de tolv faktorerna är precipiterande snarare än motiverande?",
+          "alternativ": [
+            "Att de sänker bolagens kapitalkostnader permanent",
+            "Att de utlöser och närder uppmärksamhet och köplust utan att öka framtida kassaflöden",
+            "Att de förklarar varför multiplar måste stiga över tid",
+            "Att de enbart gäller växelkursmarknaden"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vad faktorn gör med efterfrågan respektive med bolagets kassaflöde."
+        },
+        {
+          "q": "Vilken av de tolv faktorerna bygger på penningillusionen — förväxlingen av reala och nominella storleter?",
+          "alternativ": [
+            "Hasardspelkulturen",
+            "Födelsekohorterna",
+            "Handelsvolymexpansionen",
+            "Den låga inflationen"
+          ],
+          "ratt": 3,
+          "tips": "Vilken faktor handlar om vad pengarna gör med måttbandet?"
+        },
+        {
+          "q": "Hur påverkade 401(k)-planerna aktiemarknaden enligt boken?",
+          "alternativ": [
+            "De skapade återkommande månadsflöden som köpte aktier med likgiltighet för priset",
+            "De höjde bolagens vinster genom skattelättnader",
+            "De minskade volatiliteten genom långa låsningar",
+            "De kanaliserade kapital till obligationer i stället"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad efterfrågekurvan gör när köparen inte tittar på priset."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Feedback-loopar och naturliga Ponzi-scheman",
+      "intro": "Här är maskinrummet: pris-till-pris-feedback. Stigande kurser producerar förväntan om fortsatt stigning, förväntan producerar köp, köpen producerar stigningen som bekräftar förväntan. Shiller kallar strukturen ett naturligt uppkommet Ponzi-skeema — utan bedragare, utan plan, med uppriktiga deltagare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Beviset ligger i förväntningarna. Shillers egna enkätstudier — och samtida UBS/Gallup-mätningar — visade att investerares förväntade avkastningar steg med de senaste årens realiserade avkastningar: vid 2000-toppens närhet förväntade sig allmänheten kring femton procent per år under ett decennium, extrapolerat ur det senaste. Detta är rationellt sett omöjligt som samhällsgenomsnitt — alla kan inte sälja till alla till stigande priser — men det är psykologiskt oundvikligt: den tillgängligaste informationen om framtida avkastning är den förflutna. Feedback-loopen behöver därför ingen dumhet, bara minne och avund."
+        },
+        {
+          "type": "text",
+          "content": "Uttrycket naturligt Ponzi-skeema är Shillers mest träffande mynt. En klassisk Ponzi-plan betalar tidiga investerare med senares insatser; en börsbubbel gör samma sak — de som köpte tidigt får sina vinster betalda av dem som strömmar in sent — men utan att någon dirigerar det. Ingen ljuger (de flesta är uppriktigt övertygade), ingen planerar utfaset, och strukturen är dessutom laglig och decentraliserad. Just därför är den stabilare än bedragarens variant: den kräver bara att tillräckligt många oprövat samma slutsats — att kursen stigit, alltså kommer den att stiga."
+        },
+        {
+          "type": "text",
+          "content": "Varför måste en bubbla ta slut? Inte för att den når ett magiskt tak, utan för att feedbacken kräver allt större inflöden av nya troende för att ge samma avkastning — och inflödesbasen är ändlig. En bubbla är inte ett oändligt pris utan ett pris som växer snabbare än tron som bär det kan rekryteras. Vid något skede anar alla deltagare detta (Shiller betonar att tvivlet finns med hela vägen — definitionen i kapitel 1 talar om investerare som tvivlar men köper ändå), och när inflödena sinar räcker ett normalt bakslag för att vända loopen. Då spelar samma mekanism nedåt: fallande kurser producerar rädsla, rädsla produktion utförsäljning, utförsäljning produktion fallet. 1929, 2000 och 2008 är samma loop med ombyggda tecken."
+        },
+        {
+          "type": "text",
+          "content": "Förstärkarna bestämmer amplituden. Hävstång — privat (margin) och institutionell (V10 på bolagsnivå, derivat på systemnivå) — gör att samma förtroendeförändring flyttar mer kapital. Benchmark-huggna förvaltare kan inte avvika från en galen indexvikt utan att riskera jobbet: deras rationella herdebeteende är den irrationella aggregeringen. Optionsbaserad ersättning ger bolagsledningar ett personligt intresse i volatiliteten. För AKM1 är loopen därför en exponeringsfråga: feedbackens existens motiverar aldrig marknadstiming, men den motiverar hävstångstak (V10-disciplin också hemma), likviditetsreserver (V11) och ett medvetande om att din egen förväntan är loopens yttersta led."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Feedback-cykeln — faser och gatusignaler\",\"rader\":[[\"Fas\",\"Vad som händer\",\"Signatur på gatan\"],[\"Uppbyggnad\",\"Kursökningar väcker intresse som väcker köp\",\"Man pratar avkastning, inte risk\"],[\"Eufori\",\"Nya kohorter strömmar in, enkäter stiger\",\"Nybörjare ger råd till nybörjare\"],[\"Mättad topp\",\"Inflödena sinar, volatiliteten stiger\",\"»Det känns annorlunda nu«\"],[\"Vändning\",\"Första större fallet testar tron\",\"»Köp dipp« är den sista storyn\"],[\"Kollaps\",\"Loopen spelar nedåt\",\"Berättelsen byts till skuld\"],[\"Efterverkning\",\"Kohorten är traumatiserad\",\"»Aldrig mer aktier« i årtionden\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den mest praktiska tillämpningen kräver ingen prognos alls: jämför din förväntade framtida avkastning med din senaste realiserade. Om de två sammanfaller har loopen redan skrivit sitt namn i din panna — du extrapolerar, vilket är exakt det feedbacken livnär sig på. Shillers enkäter visade att de som var som mest övertygade vid toppen var de som sett den största stigningen. Det du kallar din analys kan i det läget vara ditt minnes utskrift."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner din förväntade reala femårsavkastning för din portfölj. Skriv därefter de senaste fem årens realiserade avkastning. Hur stort är överlappet? Om förväntningen i princip är det förflutna fast framlänges, notera det i journalen och formulerom vad som skulle kunna göra framtiden annorlunda än det som var — i termer av V01–V20 eller av värderingsstartpunkten, inte av storys."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är ett naturligt uppkommet Ponzi-skeema enligt Shiller?",
+          "alternativ": [
+            "En plan som en enskild bedragare konstruerar och dirigerar",
+            "En struktur där tidiga köpare betalas av senares inflöden — men som uppstår av sig själv, utan bedragare och med uppriktiga deltagare",
+            "En centralbanksdriven kreditexpansion",
+            "En investeringsstrategi byggd på återköp av aktier"
+          ],
+          "ratt": 1,
+          "tips": "Fokus ligger på mekanismen — inte på vem som står bakom den."
+        },
+        {
+          "q": "Varför måste en bubbels uppgång enligt boken ta slut?",
+          "alternativ": [
+            "Därför att regleringar alltid ingriper vid definierade nivåer",
+            "Därför att feedbacken kräver allt större inflöden av nya troende och inflödesbasen är ändlig",
+            "Därför att vinsterna alltid växer långsammare än priserna i exakt tio år",
+            "Därför att utdelningar tvingas upp när kurserna stiger"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som krävs av nästa kohort för att ge samma avkastning som den förra fick."
+        },
+        {
+          "q": "Vad visade Shillers enkätstudier om förväntningar kring 2000-toppens närhet?",
+          "alternativ": [
+            "Att allmänheten förväntade sig kring noll avkastning efter kraschen",
+            "Att förväntningarna var oförändrade sedan 1980-talet",
+            "Att institutionella investerare vägrade svara på enkäter",
+            "Att förväntade avkastningar steg med realiserade — kring femton procent per år extrapolerades ur det förflutna"
+          ],
+          "ratt": 3,
+          "tips": "Vad är den lättillgängligaste informationen om framtida avkastning för de flesta?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Berättelseepidemier — hur stories smittar som sjukdomar",
+      "intro": "För att förklara hur entusiasm sprids från person till person lånar Shiller modellen från epidemiologin: berättelser beter sig som smittoämnen, med smittsamhet, återhämtning och mutation. Marknadspriset är i denna läsning en förteckning över vilka berättelser som är epidemiska just nu.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Modellen (Shiller refererar till klassisk epidemiteori, bland andra Baileys matematiska teori för smittsamma sjukdomar) har två kärnhastigheter: smittsamheten — sannolikheten att en exponerad person vidarebefordrar berättelsen — och återhämtningen — hastigheten med vilken smittade blir immuna eller förlorar intresset. En berättelse som är lätt att vidarebefordra och långsam att tröttna på blir epidemi; en som kräver eftertanke eller saknar känsloladdning dör stilla. Börsens stora berättelser — 1920-talets radio och »permanent hög nivå«, 1960-talets konglomerat, 1990-talets internet, 2000-talets bostäder, 2010-talets krypto, 2020-talets AI — har alla samma epidemiologiska profil: konkreta, mänskliga, känsloladdade och bestyckade med en ska-handla-moral."
+        },
+        {
+          "type": "text",
+          "content": "Smittvärdarna är mänskliga intressen, inte medieredaktioner. Den farligaste vektorn är grannen som blev rik — någon som liknar lyssnaren i allt utom ett beslut, vilket gör berättelsen både smittsam och tillämpbar. Familjemiddagen, korridoren, poddflödet: varje kanal där någon berättar vad som hände honom är en smittbärare. Medias roll (kapitel 4:s mediefaktor) är inte konspiration utan selektion: redaktioner publicerar det som sprids, och det som sprids är det känsloladdade — förstärkningsloopen mellan medieutbud och berättelsekön är mekanisk. Shiller är noga med att berätta inte behöver vara falsk för att vara farlig; den behöver bara vara smittsam i förhållande till sitt sanningsinnehåll."
+        },
+        {
+          "type": "text",
+          "content": "Mutationen är epidemins försäkring. En berättelse som motbevisas dör inte — den anpassar sig: nya bevis vävs in, äldre detaljer tyst faller bort, och slutsatsen — köp — bevaras medan motiveringarna byts ut. Det är därför debatter mot bubblor är så fruktlösa: motståndaren bemöter berättelsens förra generation och möter redan den nya. Tjugo år senare formaliserade Shiller spåret i Narrative Economics (2019): ekonomiska berättelser är historier med förmåga att förändra beslut, och ekonomiämnet måste mäta dem — med textbrytning, sökdata och frekvensanalyser — i stället för att förväxla deras frånvaro med deras obetydlighet."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är en omvänd prioritering: mät prevalens, inte plausibilitet. En berättelses marknadskraft är en funktion av hur många som bär den och hur länge de burit den — inte av hur vettig den låter i ett mötesrum. Den praktiska disciplinen: räkna exponeringar (gårdagens genomläsning av flödet: hur många gånger dök temet upp?), notera bärande moral (»vinnaren tar allt«, »de slutar inte göra mer mark«, »den här gången är annorlunda«) och kräv falsifierbarhet — skriv ner vad som skulle visa att berättelsen är fel, i förväg, när den fortfarande känns sann. Det du inte kan falsifiera är inte en analys utan en infektion du bär."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Epidemimodellens delar och deras marknadsöversättning\",\"rader\":[[\"Epidemibegrepp\",\"Modellens betydelse\",\"Marknadsöversättning\"],[\"Smittsamhet\",\"Sannolikhet att vidarebefordra vid kontakt\",\"Hur gladlynt berättelsen är att reproducera\"],[\"Återhämtning\",\"Immunitet och glömska\",\"Trötthet — temat känns förbrukat\"],[\"Inkubation\",\"Tid från exponering till symptom\",\"Från att höra storyn till att köpa aktien\"],[\"Mutation\",\"Berättelsen anpassas till motbevis\",\"Nya motiveringar, samma slutsats\"],[\"Vektorer\",\"Smittbärande kanaler\",\"Grann, familj, kollega, flöde, media\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Du kan inte vara o-smittad — du lever i berättelsebassängen och din portfölj är delvis en immunförteckning. Frågan är om du räknat bassängen. Prevalens slår plausibilitet: en story du hört elva gånger denna månad kräver elva oberoende motbevis för att väga lika tungt som en story du hörde en gång — inte ett elfte bevis i samma riktning. Den som mäter frekvens i stället för att bedöma innehåll har epidemiologins fördel gentemot debattörens."
+        },
+        {
+          "type": "utmaning",
+          "content": "Lista de tre marknadsberättelser du mött oftast den senaste månaden (familj, media, flöden). Uppskatta för varje: antal exponeringar, bärande moral (en mening), och ett falsifierande observationstest. Markera den berättelse du inte kan falsifiera — det är din residenta virus, och nu vet du vilket."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka två hastigheter är kärnan i Shillers epidemimodell för berättelser?",
+          "alternativ": [
+            "Smittsamhet och återhämtning",
+            "Inflation och tillväxt",
+            "Utdelningsandel och återköpstakt",
+            "Volym och likviditet"
+          ],
+          "ratt": 0,
+          "tips": "Modellen är lånad från en vetenskap om hur sjukdomar sprids och klingar av."
+        },
+        {
+          "q": "Vad menas med att en berättelse muterar?",
+          "alternativ": [
+            "Att den byter tillgångsklass från aktier till råvaror",
+            "Att den förbjuds av reglerare och går under jorden",
+            "Att den anpassar sina motiveringar till nya bevis medan slutsatsen — köp — bevaras",
+            "Att den kortas ner till en rubrik i sociala medier"
+          ],
+          "ratt": 2,
+          "tips": "Varför är det så svårt att vinna en debatt mot en bubbla?"
+        },
+        {
+          "q": "Hur bör en berättelses marknadskraft värderas enligt kursens AKM1-översättning?",
+          "alternativ": [
+            "Genom hur väl den håller i en intern diskussion om rimlighet",
+            "Genom prevalens och falsifierbarhet — hur många som bär den och vad som skulle visa den fel",
+            "Genom hur ursprunglig källan är",
+            "Genom hur väl den överrensstämmer med analytikerkonsensus"
+          ],
+          "ratt": 1,
+          "tips": "Epidemiologen räknar fall — han granskar inte patientens argument."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Ankarna — kvantitativa tal och moralisk förankring",
+      "intro": "Feedbacken förklarar rörelsen; ankarna förklarar orörligheten. Shiller delar upp det psykologiska underlaget i kvantitativa ankare — tal som kurser döms mot — och moraliska ankare — känslor av att ett val är riktigt och tryggt. Ingen av dem har något kassaflödesinnehåll, och båda sitter stadigt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det kvantitativa ankaret är ett tal som känns betydelsefullt utan att vara det. Klassikerna: den gamla toppen, jämna nivåer som Dow 10 000, 52-veckorshöjden — och din egen inköpskurs. Människor dömer »dyr« och »billig« inte mot normaliserade kassaflöden utan mot det tal de såg först eller senast. Historiens tydligaste exempel: Dow Jones 1929 års topp blev en generations riktmärke — indexet återtog den först 1954, och under alla de åren bedömdes marknaden mot ett minne av ett tal. Nasdaqs 5048 från mars 2000 spelade samma roll: femton år senare firades återtagandet (2015) som en berättelse om att »allt kommer tillbaka« — vilket bara var sant för den som köpte just toppen och väntade ett och ett halvt decennium, och bara i nominella termer."
+        },
+        {
+          "type": "text",
+          "content": "Det moraliska ankaret är känslan av att investeringen är riktig: förtroende för institutioner, upplevelsen att »alla jag litar på redan äger«, och — i bostadsfallet — hemma-hos-metaforen: övertygelsen att bostaden är det trygga, att hemmet är en fundamental annorlunda tillgång än en aktie. Detta moraliska pansar är orsaken till att bostadsbubblor är svårare att argumentera mot än aktiebubblor: att ifrågasätta bostadspriser upplevs som att ifrågasätta hemmet, familjen och det vuxna livet självt. På samma sätt gör arbetsgivarens aktie (i 401(k)-portföljer, se Enron) anspråk på lojalitetens ankare: att sälja den känns som otrohet, inte som balansering."
+        },
+        {
+          "type": "text",
+          "content": "Ankaren ljuger inte medvetet — de är koordinationspunkter, och som sådana användbara i vardagen. Problemet är vad de saknar: koppling till framtida utdelningar. Ett pris bedömt mot den gamla toppen kan vara dubbelt så högt som det motiverade och ändå kännas »på väg tillbaka«; ett pris under inköpskursen kan kännas som en förlust även när bolaget är bättre än vid köpet. Efter en krasch producerar ankaret återhämtningsstoryn (»den kommer tillbaka till toppen«) — vilket kan hålla kvar kapital i en tillgång vars fundament förändrats permanent. Omvänd gäller: nya toppnoteringar efter lång tid känns som bevis, trots att de bara är aritmetik plus inflation."
+        },
+        {
+          "type": "text",
+          "content": "AKM1:s roll i detta är att tvinga kassaflödesankare att konkurrera med storyankare. Checklistan (V01–V20) existerar för att inköpskursen, toppen och jämna tal ska få motstånd från normaliserade vinster och kassaflöden; marginal of safety — utan siffra — är disciplinen att låta kassaflödesankaret dominera när de två slår sig. Praktiskt: skriv alltid upp de tal som styr din känsla för en position, och skriv därefter det normaliserade fundamentet bredvid. Beslutet ska falla på den senare kolumnen — annars faller det på minne."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ankartyper och deras problem\",\"rader\":[[\"Ankartyp\",\"Exempel\",\"Problem\"],[\"Kvantitativ\",\"Den gamla toppen\",\"Bär minne, inte kassaflöden\"],[\"Kvantitativ\",\"Inköpskursen\",\"Referenspunkt som feltolkas som värde\"],[\"Kvantitativ\",\"Jämna nivåer, 52-veckorsmaximum\",\"Aritmetik utan ekonomi\"],[\"Moralisk\",\"»Alla jag litar på äger«\",\"Socialt bevis i stället för analys\"],[\"Moralisk\",\"»Hemmet är tryggt«\",\"Trygghetskänsla som prissättningsargument\"],[\"Fundamental\",\"Normaliserade vinster och kassaflöden\",\"AKM1-standard — den enda med innehåll\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ankaren förklarar två av marknadens mest motstridiga känslor: varför bubblor känns trygga på toppen (alla ankare — toppen, berättelsen, omgivningen — pekar uppåt) och varför krascher känns över vid bottnen (det gamla toppvärdet står kvar som mått). Byt måttstock till normaliserade kassaflöden och samma marknad ser helt annorlunda ut — ofta är det enda som förändrats inte världen utan talet du jämför med."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå igenom dina innehav. Skriv för varje de tre tal som dominerar din känsla för det (inköpskursen? högsta notering? första kurs du såg? en riktkurs?). Skriv därefter en CAPE-liknande normaliserad fundamental (till exempel genomsnittlig EBITDA-marginal V08 under en konjunkturcykel multiplicerad med normaliserad omsättning). Vilken kolumn styr dina verkliga beslut — och vad ska du ändra på?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar ett kvantitativt ankar i Shillers terminologi?",
+          "alternativ": [
+            "En känsla av att omgivningen godkänner investeringen",
+            "En beräkning av framtida utdelningars nutidsvärde",
+            "Ett tal — som en gammal topp eller inköpskurs — som kursen omedvetet döms mot",
+            "En teknisk indikator med statistisk signifikans"
+          ],
+          "ratt": 2,
+          "tips": "Ordet själv pekar på något numeriskt men oreflekterat."
+        },
+        {
+          "q": "Vad är hemma-hos-metaforen — det moraliska ankaret i bostadskontexten?",
+          "alternativ": [
+            "Upplevelsen av att bostaden är den trygga tillgången, vilket gör prisfrågan känslomässigt oantastlig",
+            "Metoden att värdera bostäder med jämförbara transaktioner",
+            "Tanken att bostadspriser följer hyresutvecklingen i längden",
+            "En skatteregel som gynnar ägt boende"
+          ],
+          "ratt": 0,
+          "tips": "Det handlar om vad ifrågasättandet av priset känns som — inte om vad det kostar."
+        },
+        {
+          "q": "Varför missleder gamla toppar som riktmärke?",
+          "alternativ": [
+            "Därför att de alltid ligger för lågt",
+            "Därför att de är justerade för inflation",
+            "Därför att de aldrig återuppnås i nominella termer",
+            "Därför att de bär minnen i stället för kassaflöden — och att »återkomsten« känns som ett bevis fast den bara är aritmetik"
+          ],
+          "ratt": 3,
+          "tips": "Vad innehåller talet 5048 — utöver ett datum och en känsla?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "CAPE — den cykliskt justerade multipeln och 140 år av historik",
+      "intro": "Verktyget Shiller blivit mest förknippad med är CAPE — cyclically adjusted price earnings: realpris dividerat med tioårigt genomsnitt av reala vinster. Idén är inte ny; Shiller spårar den till Graham och Dodd 1934, som krävde att vinster ska genomsnittbildas över inte mindre än fem, helst sju till tio år. Med ett sekel data blev den en historiebok i ett enda tal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen löser ett specifikt problem: ettåriga P/E är gisslan åt cykeln. I lågkonjunkturens botten kollapsar vinsterna och P/E kan se enormt ut fast aktierna är billiga; i toppen blommar vinsterna och P/E kan se måttligt ut fast allt är dyrt. Illustrationen är 2009: ettårs-P/E sköt i höjden (vinster kollapsade) medan CAPE föll mot historiskt låga nivåer — och de följande tio åren levererade stark avkastning. Tioåriga genomsnittliga reala vinster suddar ut konjunkturtoppar och bottnar; att dividera reala priser med dem ger en multipel som kan jämföras över sekel. Det är samma disciplin som AKM1 kräver per bolag: normalisera marginalerna (V07, V08) innan multipeln (V04, V05, V06) läses av."
+        },
+        {
+          "type": "text",
+          "content": "Historiken, månadsvis från 1881, har en tydlig anatomi. Långt genomsnitt ligger kring 16–17. De stora topparna: 1929 omkring 33, 2007 omkring 27, 2021 nära 40 — och 2000 omkring 44, den högsta läsningen i hela serien, dubbelt så hög som 1929. De djupa bottnarna: 1921 och 1932 kring 5–6, 1982 omkring 7. Mellan extremiterna ligger decennier av normalvariation. Serien är offentlig (Shillers data vid Yale uppdateras månadsvis) — och det är värt att lära sig den utantill, inte som ett tal att agera på utan som en karta över vad som är normalt."
+        },
+        {
+          "type": "text",
+          "content": "Vad har CAPE då sagt om framtiden? Det ärliga svaret: något, på lång horisont, med stor osäkerhet. Höga CAPE-lägen har historiskt följts av svagare real tioårsavkastning och låga av starkare — sambandet är synligt i USA och har bekräftats i tvärsnitt över länder — men den förklarade variansen på tio års horisont ligger i storleksordningen en tredjedel, och på ett års horisont är den i praktiken noll. Värst av allt för timing: 2010-talet levererade starka avkastningar med CAPE mellan 25 och 40 nästan hela vägen. CAPE är en förväntanssättare, inte en tidtagare — och det är kapitel 9:s uppgift att ta den invändningen på fullaste allvar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-tillämpningen är dubbelt. Makro: CAPE kalibrerar vilken real avkastning den breda marknaden rimligen kan bära av — vid genomsnittligt läge historiskt cirka 6–7 procent realt, vid extrema lägen betydligt mindre — vilket sätter taket för vad en portfölj ska förväntas leverera utan hävstång. Per aktie: CAPE-tänkandet är kravet att aldrig kapitalisera toppmarginaler. En P/S på tolv (V04) på cykliskt maxade försäljningar, eller en EV/EBITDA (V06) räknad på EBITDA-marginaler (V08) som ligger tiopoäng över trend, är inte en multipel — det är två förhoppningar staplade på varandra. Marginal of safety utan siffra: ju mer normaliseringsgrad som måste hoppas fram, desto bredare marginal krävs."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CAPE-historik och vad som följde (real tioårsavkastning, ungefärliga nivåer)\",\"rader\":[[\"CAPE-läge\",\"Exempel\",\"Vad som följde\"],[\"Mycket lågt 5–7\",\"1921, 1932, 1982\",\"Höga reala avkastningar, ofta i dubbla siffror\"],[\"Lågt 8–12\",\"1950, 2009\",\"Över genomsnittet\"],[\"Normalt 14–17\",\"Det långa genomsnittet\",\"Ungefär genomsnittlig real avkastning\"],[\"Högt 25–27\",\"1929 nära; 2007\",\"Svagt, ofta nära noll realt\"],[\"Extremt 33–44\",\"1929; 2000; 2021\",\"Negativ till svag real tioårsavkastning\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "CAPE:s verkliga gåva är inte prognosen utan förväntningshanteringen: den omvandlar frågan »vad kan jag få?« från en berättelse till en fördelning. Och dess svaghet är symmetrisk med gåvan: den har varit »för hög« i årtionden utan krasch — Paul Samuelsons skämt om att börsen förutsagt nio av de senaste fem recessionerna tillämpas med rätta på CAPE-varningar. Använd termometern för att klä dig efter väderlek, inte för att förutsäga regnets minut."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slå upp aktuell CAPE (Shillers data publiceras månadsvis och är fritt tillgänglig). Skriv ner vad nivån historiskt implicerat för real tioårsavkastning, och vad som skulle kunna göra den slutsatsen fel — räntenivå (kapitel 9), marginaler (V07/V08) eller redovisningsval. Jämför därefter med det svar du skrev i kapitel 1. Notera skillnaden eller överensstämmelsen, daterat."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur beräknas CAPE?",
+          "alternativ": [
+            "Realpris dividerat med tioårigt genomsnitt av reala vinster",
+            "Nominellt pris dividerat med fjolårets vinst",
+            "Realpris dividerat med högsta årliga vinst i historien",
+            "Totalavkastning dividerat med utdelning"
+          ],
+          "ratt": 0,
+          "tips": "Namnet cyclically adjusted avslöjar vad som suddas ut."
+        },
+        {
+          "q": "Vad kännetecknade CAPE-läget vid 2000-toppens jämfört med 1929?",
+          "alternativ": [
+            "Ungefär 44 mot omkring 33 — den högsta läsningen i hela serien",
+            "Ungefär 15 mot omkring 20 — lägre än 1929",
+            "Båda låg kring 25 — ingen skillnad",
+            "Serierna börjar först 1950 så ingen jämförelse finns"
+          ],
+          "ratt": 0,
+          "tips": "En av dessa toppar står ut i hela 140-årsserien."
+        },
+        {
+          "q": "Vad är den ärliga begränsningen i CAPE:s prognosförmåga?",
+          "alternativ": [
+            "Att den förklarar nästan all variation även på ett år",
+            "Att den fungerar bra för timing men dåligt på tio år",
+            "Att den är kraftlös för timing — förklarad varians kring en tredjedel på tio år, nästan noll på ett, och hög i decennier utan krasch",
+            "Att den endast fungerar på den japanska marknaden"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på 2010-talet: hög CAPE, god avkastning, i ett decennium."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Fejden — Shiller mot Fama och 2013 års Nobelpris",
+      "intro": "2013 hedrade Nobelkommittén tre forskare för empirisk analys av tillgångspriser: Eugene Fama, Lars Peter Hansen och Robert Shiller — där de två förstnämnda representerar var sin vetenskaplig världsbild. Kommitténs diplomatiska sammanfattning: priserna är delvis förutsägbara på lång sikt och marknaden samtidigt svår att slå. Fejden förtjänar ett eget kapitel, med båda sidors starkaste argument — och med kursens åtagande att vara lika hård mot Shillers vapen som mot Famas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Famas sida, på sina bästa dagar. För det första joint hypothesis-problemet: varje test av marknadseffektivitet är ett sammanlagt test av effektivitet och en prismodell — visar sig priser »fel« kan det lika gärna vara modellen som är fel (att rätt avkastningskrav varierar på sätt vi inte fångar). För det andra: volatilitetsprognoser är inte avkastningsprognoser. Att volatiliteten klustrar och är förutsägbar (Shillers eget fält) säger ingenting om vilken riktning väntade avkastningar har — en förutsägbar risk är inte en exploaterbar möjlighet. För det tredje: även där utdelningsavkastning eller CAPE förklarar långhorisontsvariation statistiskt är oberoende tioårsfönster få, konfidensintervallen breda och den ekonomiskt utnyttjbara kanterna efter kostnader och risk tunna. För det fjärde, det mest obekväma: om marknaden är så fel — varför slår då nästan ingen den? Famas studier av aktiv förvaltning visar liten uthållighet i skicklighet och ett genomsnitt som underpresterar sina avgifter, år efter år."
+        },
+        {
+          "type": "text",
+          "content": "Shillers sida. Variansbundentestet från 1981 — att priserna rör sig mer än något de rimligen kan spegla — kräver ingen prismodell för att verka bekymmersam. Enkätdata visar att förväntade avkastningar extrapoleras ur förflutna, vilket är svårt att förena med rationella förväntningar. CAPE:s tvärsnittsresultat över länder bekräftar den amerikanska bilden. Och den beteendemässiga mekanismen — feedback, ankare, berättelser — förklarar det som är Famas lägsta poäng: varför missprissättning kan bestå utan att bli mjölkad. Arbitragens gränser (Shleifer–Vishny): den som tidigt har rätt skiljs inte från den som sent har fel; kapitalet överger rätt position innan marknaden gör det. En marknad kan alltså vara både fel och svår att slå — och det är fejdens egentliga svar, inte dess upplösning."
+        },
+        {
+          "type": "text",
+          "content": "Ärligheten som kursen lovat, tillämpad på CAPE. Den har varit hög under större delen av tiden sedan början av 1990-talet utan att krascher följt (2000–02 undantagen), och 2010-talet förstörde naiv CAPE-timing fullständigt: höga lägen, stark avkastning, ett decennium. Samuelsons skämt — börsen har förutsagt nio av de senaste fem recessionerna — passar CAPE-varningarna som handsken. Räntekonditioneringen är reell: vid reala räntor nära noll stiger den berättigade multipeln (tangentvillkoret i värderingen: när avkastningskravet närmar sig tillväxttakten går motiven mot oändligheten), och Siegel har visat att CAPE:s historia förändras om GAAP-vinster byts mot nationalräkenskapsvinster. Slutsatsen är inte att CAPE är värdelös utan att den är vad den är: en svag tidtagare och en hygglig förväntanssättare — och den senare funktionen kräver ingen timing för att vara värd något."
+        },
+        {
+          "type": "text",
+          "content": "AKM1:s syntes, som kursen ställer sig bakom: Fama vinner korta spelet — du kan inte tajma, och den som försöker betalar avgifter och risk för ett brus. Shiller vinner långa beskrivningen — priser avlägsnar sig från kassaflöden i åratal, på sätt som feedback och berättelser förklarar. Därför: ingen marknadstiming i AK1A, men värderingskonditionerade förväntningar och exponering — CAPE sätter förhoppningarnas tak, AK1TS sätter doseringens marginal, och marginal of safety utan siffra blir bredare vid ytterlighetslägen. Den som tar båda Nobelpristagarna på allvar gör det enda som fungerar: äger marknaden, prisar cykeln i förväntningarna, och kräver marginal när världen kräver ingen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fejdens huvudfrågor — båda sidorna\",\"rader\":[[\"Fråga\",\"Fama\",\"Shiller\"],[\"Är priserna rätt?\",\"I praktiken ja — anomalier kan vara modellfel\",\"Nej — excess volatility visar avvikelse\"],[\"Förutsägbarhet?\",\"Statistiskt svag, svår att utnyttja efter kostnader\",\"Långsiktig: CAPE förklarar tioårsspridning\"],[\"Varför slå marknaden?\",\"Det gör inte förvaltarna heller\",\"Missprissättning är svår att arbitrera — gränserna\"],[\"Praktisk slutsats\",\"Index, handla inte\",\"Index — men justera förväntningar och dosering\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fejdens djupaste produkt är ödmjukhet på båda håll: Famas läger måste förklara varför priserna rör sig så mycket mer än något de rimligen kan spegla, och Shillers läger måste förklara varför det ändå inte går att mjölka. Investera- ren som tar båda på allvar gör det enda som bevisligen fungerar: avstår från timing, behåller disciplinen, och låter marginal of safety utan siffra uttrycka respekt för båda. Det är ingen kompromissens feghet — det är att läsa två nobelpris som ett."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv det starkaste argumentet mot din egen nuvarande marknadssyn — i Famas röst: modellfel, varierande riskpremie, icke-utnyttjbar anomaly, förvaltarnas misslyckande. Poängsätt argumentet uppriktigt. Om du inte kan skriva det trovärdigt äger du inte din åsikt — berättelsen från kapitel 6 äger den."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är joint hypothesis-problemet i Famas kritik?",
+          "alternativ": [
+            "Att alla test av effektivitet samtidigt testar en prismodell — syns missprissättning kan det vara modellen som är fel",
+            "Att två forskare aldrig kan komma fram till samma slutsats",
+            "Att aktier och obligationer alltid röra sig tillsammans",
+            "Att Nobelkommittén alltid delar priset mellan opponenter"
+          ],
+          "ratt": 0,
+          "tips": "Problemet handlar om vad ett test egentligen testar — två saker på en gång."
+        },
+        {
+          "q": "Varför är volatilitetsprognoser inte samma sak som avkastningsprognoser?",
+          "alternativ": [
+            "Därför att volatilitet bara finns på obligationsmarknaden",
+            "Att veta att risken klustrar och är förutsägbar säger ingenting om vilken riktning väntade avkastningar har",
+            "Därför att volatilitet alltid är noll i effektiva marknader",
+            "Därför att avkastning bara kan prognostiseras av enkäter"
+          ],
+          "ratt": 1,
+          "tips": "En förutsägbar risk är inte detsamma som en exploaterbar möjlighet."
+        },
+        {
+          "q": "Hur kan Fama och Shiller båta ha rätt enligt kursens syntes?",
+          "alternativ": [
+            "Kort sikt är marknaden svår att slå; på lång sikt kan priserna ändå avlägsna sig från kassaflöden — fel och svår att mjölka är inte motsatser",
+            "De kan inte — en av dem måste ha fel om allt",
+            "Fama har rätt om aktier och Shiller om bostäder",
+            "Nobelkommittén visade att de egentligen sagt samma sak"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på skillnaden mellan att en bro är felbyggd och att kunna bevisa det i tid."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "AK1TS och sentimentet — Shillers katedral, medgivet ofullständig",
+      "intro": "AK1TS mäter sentiment som sin cykelvariabel — i shillersk ande är kursen skyldig till att erkänna släktskapet: mycket av ramverket är hans katedral i mätbar form. Men kursen kräver också att vi är ärliga med vad katedralen inte innehåller: någon förmåga att förutsäga vändningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vad mäter AK1TS? Panelen bygger på kapitel 4–7:s verktyg: berättelseprevalens (epidemistatus i flöden och familjemiddagar), IPO-fönstrens öppningsgrad och förstahandspoppar (utfärdarnas och köparnas riskaptit), marginalskuldens trend (hävstångsengagemanget), marknadens bredd och koncentration till toppar, samt enkätbaserade förväntade avkastningar — den renaste feedbackproben som finns. Shillers egna instrument är en mönsterbild: hans värderingsförtroendeindex (enkätbaserat, från Yale) fångade 2000-toppens mest upplysande paradox — institutionella investerares förtroende för värderingen stod på rekordlåga nivåer: de trodde själva att marknaden var övervärderad, och stannade ändå kvar. Sentiment handlar inte om dumhet utan om positionering trots bättre vetande."
+        },
+        {
+          "type": "text",
+          "content": "Vad är sentimentet till? Att lokalisera fasen i feedbackcykeln (kapitel 5) och att dosera — aldrig att tajma. Högt sentiment sänker väntade framtida avkastningar (kapitel 8:s CAPE-logik) och höjer systemets känslighet för störningar: samma bakslag slår hårdare när hävstång och koncentration redan är höga. Men timingdistributionen är fettsvansad åt båda hållen — en mani kan leva i åratal, och den som säljer för tidigt får stå ut med att ha fel i åratal innan hon får rätt. Därför översätts sentiment i AK1TS till exponeringsband och marginal of safety-krav, inte till binära in- och utgångar."
+        },
+        {
+          "type": "text",
+          "content": "Vilka regler överlever svagheten? De som inte innehåller en prognos. Mekanisk balansering: sälja det som stigit relativt, köpa det som fallit — utan en enda förutsägelse, bara band och disciplin. I förväg definierade extremer: skriv ner ex ante vad »extremt« betyder för varje sentimentvariabel, annars omdefinierar euforin måtten i efterhand. Journalföring av berättelser (kapitel 6): den enda databas som växer sig starkare för varje cykel du överlever. Hävstångstak: V10-disciplinen tillämpad hemma — sentimentets enda säkert dyra sida är att vara hävstångad när loopen vänder. Likviditetsreserv (V11): alternativkostnaden för alternativ."
+        },
+        {
+          "type": "text",
+          "content": "Det ärliga självförhållandet är kursens signum. Shillers egna varningar var åratal »för tidiga« innan de var rätt — CAPE var hög 1996 när Greenspan höll sitt tal, och börsen fördubblades därefter. En AK1TS-utövare som respekterar data behandlar sentiment som termostaten i huset: den talar om hur varmt det är och om elementet arbetar för hårt — den talar inte om vilken minut kylan kommer. Skillnaden mellan att veta var man är i cykeln och att veta när den vänder är skillnaden mellan dosering och spådom, och bara den förra är vetenskaplig nog att bygga en portfölj på."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sentimentpanelen — variabler, innebörd, fallgrop\",\"rader\":[[\"Variabel\",\"Vad den mäter\",\"Fallgrop\"],[\"IPO-fönster och förstahandspop\",\"Utfärdarnas och köparnas riskaptit\",\"Låg frekvens — få observationer per cykel\"],[\"Marginalskuld\",\"Hävstångsengagemang i systemet\",\"Trendig — följer, leder inte toppar\"],[\"Berättelseprevalens\",\"Narrativets epidemistatus\",\"Kvalitativ — kräver journal för jämförbarhet\"],[\"Förväntade avkastningar (enkäter)\",\"Extrapoleringens grad\",\"Sällan mätt i realtid för Sverige\"],[\"Bredd och toppkoncentration\",\"Marknadens enighet\",\"Bra för momentumläge, dåligt för toppdatering\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Sentiment är den enda variabeln som talar om var du befinner dig, medan fundamenten talar om vad du äger. Att blanda dem — att köpa storybolaget för att V-checklistan gick igenom, eller att behålla kvalitetsbolaget för att marknadshumöret är gott — är bubbel-erans klassiska feltillämpning av två system som är byggda för olika frågor. Checklistan avgör vad; sentimentet hjälper till att avgöra hur mycket. Den som kan hålla isär de två frågorna har redan de flesta slag."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din sentimentspanel: välj fem indikatorer du kan kontrollera månadsvis (tillräckligt: berättelseräkning i ditt eget flöde, marginalskuld trend, IPO-kalender, förväntade avkastningar från någon enkät, marknadsbredd). Definiera nu — ex ante, i dag — vad »extremt« betyder för varje (en tröskel per variabel). Logga definitionerna i /profil; om de saknas omvinner nästa eufori dem åt dig."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad används sentiment till i AK1TS — och vad används det uttryckligen inte till?",
+          "alternativ": [
+            "Att lokalisera cykelfasen och dosera exponering — inte att förutsäga vändningsdagen",
+            "Att förutsäga exakta kraschdatum",
+            "Att ersätta den fundamentala checklistan",
+            "Att generera kort- och långsignaler med veckovis precision"
+          ],
+          "ratt": 0,
+          "tips": "Termostaten talar om temperaturen — inte när kylan kommer."
+        },
+        {
+          "q": "Vilken prognossvaghet medger kursen uttryckligen om sentimentmätning?",
+          "alternativ": [
+            "Ingen — sentiment förutsäger vändningar med hög träffsäkerhet",
+            "Att manier kan leva i åratal och att varningar kan vara tidiga under lång tid — därför dosering i stället för timing",
+            "Att sentiment bara fungerar på räntemarknaden",
+            "Att alla sentimentvariabler är ogiltiga efter 2008"
+          ],
+          "ratt": 1,
+          "tips": "CAPE var hög 1996 — och börsen fördubblades innan den föll."
+        },
+        {
+          "q": "Vad visade Shillers värderingsförtroendeindex om institutionella investerare vid 2000-toppens närhet?",
+          "alternativ": [
+            "Att de trodde själva att marknaden var övervärderad — men stannade kvar ändå",
+            "Att de var övertygade om att värderingarna var rimliga",
+            "Att de flyttade kapital till kontanter i stor skala",
+            "Att indexet inte kunde mätas före 2010"
+          ],
+          "ratt": 0,
+          "tips": "Paradoxen är poängen: vetskap utan position."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "Bostadsbubblan — myten om att bostäder alltid stiger",
+      "intro": "Andra upplagans bostadskapitel (2005) börjar med det fakt som ingen ville höra: de reala amerikanska bostadspriserna hade varit i princip oförändrade sedan 1890 — och hade därefter fördubblats på åtta år, förklarat med en kulturell sanning: bostäder stiger alltid. Det var samma feedback, samma ankare och samma berättelseepidemi som i aktiemanin — men med hävstång och hemma-hos-metaforen inbyggd.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Shillers data (senare världskända genom Case-Shiller-indexen) visade: 1890–1997 var de reala priserna på amerikanska småhus i princip en platt linje med vågor — fall under 1890-talets depression, kraftiga regionala fall på 1930-talet, boomen efter kriget, regionala krascher i Boston och Los Angeles i början av 1990-talet, oljebustens Houston. Internationella exempel som Shiller åberopar: Japan, där reala bostadspriser föll omkring hälften från 1991 och aldrig återhämtat sig; Sverige, där den tidiga 1990-talskrisen sänkte reala bostadspriser kraftigt (i storleksordningen en fjärdedel till en tredjedel). Sedan 1997 fördubblades de nationella amerikanska priserna i nominala termer till 2006 — avvikelsen från ett sekel av platthet var extrem, och den förklarades inte av inkomster eller hyror."
+        },
+        {
+          "type": "text",
+          "content": "Mytens anatomi. »Bostäder stiger alltid« bygger på tre illusioner. Den första är inflationsskevhet: nominellt stiger hus nästan alltid (som allt med inflation), realt gjorde de det inte — och efter kostnader (ränta, underhåll, skatt, avgifter) var den reala nettoavkastningen för en genomsnittlig ägare under seklet historiskt nära noll. Den andra är »man slutar inte göra mer mark« — men mark är inte flaskhalsen för småhus; byggandet svarar på pris, och utbudet kommer. Den tredje är den moraliska pansaret från kapitel 7: hemma-hos-metaforen, känslan av att hemmet är det trygga — vilket gjorde prisfrågan känslomässigt oantastlig och kritiken till något nästan oartigt."
+        },
+        {
+          "type": "text",
+          "content": "Maskineriet förstärkte feedbacken. Låga kortsiktiga räntor, teaser-räntor och subprime-securitisering gjorde köpkraften till en variabel som kreditmarknaden kunde producera i stället för inkomsterna; värderingsinflation gjorde låneunderlaget självförstärkande; tv-program om flipping gjorde spekulationen till underhållning; skatteavdrag och de statligt stödda bolåneinstitutens efterfrågan stärkte helheten. Loopen var identisk med aktiemarknadens (kapitel 5) men med två skillnader som gjorde den värre: transaktionerna var långsammare och skulden inbyggd — hushållen köpte med hävstång det de trodde var den tryggaste tillgången, vilket är den exakta kombination som gör krascher till katastrofer i stället för korrigeringar."
+        },
+        {
+          "type": "text",
+          "content": "Efterspelet: den nationella toppen kom sommaren 2006, 20-stadsindexet föll omkring 27 procent till 2012, och bolånesäkerheterna bakom drog med sig det finansiella systemet — den senaste finanskrisens kärna. Shillers varning (2005) var återigen en diagnos: den kulturella tron saknade datagrund, den prisnivå som byggdes på tron var sårbar. Sverige under 2020-talet spelade en lokal replik: när räntan vände 2022 föll lägenhetspriser i storstäderna kraftigt (i Stockholm innerstad omkring en femtedel och mer) — samma mekanism, mindre skala, kortare feedbackcykel. AKM1-läxan: bostadsmarknadens CAPE är pris-till-hyra och pris-till-inkomst — och en tillgång vars berättelse är att den inte kan falla har redan fallit i berättelsen, om inte i priset."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bostadsmyterna mot historien\",\"rader\":[[\"Påstående\",\"Historien 1890–1997\",\"Verkligheten\"],[\"»Bostäder stiger alltid«\",\"Reala priser i princip platta\",\"Real nettoavkastning efter kostnader nära noll\"],[\"»Man slutar inte göra mer mark«\",\"Byggbar mark är sällan flaskhalsen\",\"Utbudet svarar på priset över tid\"],[\"»Tryggare än aktier«\",\"Falla i 1890-tal, 1930-tal, 1990-tal\",\"Regionala fall på 25–35 procent väl dokumenterade\"],[\"»Alla tjänar på sitt boende«\",\"Real räntekostnad, underhåll, skatt\",\"Ofta negativ real nettoavkastning att bära\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Bostadsbubblan bevisade att Shillers ramverk är generellt: byt ticker mot adress och varje mekanism — feedback, ankare, berättelseepidemi — fungerar likadant. Det som gjorde bostadsversionen farligare var kombinationen hävstång plus moraliskt pansar: de farligaste bubblorna bär de mest respektabla berättelserna, eftersom det som känns tryggast är det som köps med mest lånade pengar och ifrågasätts av minst människor."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kolla nivån på pris-till-hyra eller pris-till-inkomst där du bor (eller för en ort du överväger) och jämför med dess genomsnitt de senaste tjugo åren — bostadsmarknadens CAPE. Skriv därefter vilka av kapitel 7:s ankare som styr din egen bostadsuppfattning: den gamla prisnivån, omgivningens story, känslan av trygghet? Notera vad som skulle behöva ändras för att du skulle omvärdera — i data, inte i känsla."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade Shillers långa prisserie för amerikanska bostäder 1890–1997?",
+          "alternativ": [
+            "En stadig real uppgång med omkring tre procent per år",
+            "Reala priser som varit i princip oförändrade — en platt linje med vågor",
+            "Kraftiga reala fall vart tjugonde år, annars uppgång",
+            "Att data inte fanns före 1950 i någon form"
+          ],
+          "ratt": 1,
+          "tips": "Överraskningen ligger i ordet platt — under ett sekel."
+        },
+        {
+          "q": "Varför håller inte argumentet »man slutar inte göra mer mark« som förklaring till ständigt stigande bostadspriser?",
+          "alternativ": [
+            "Därför att befolkningen alltid minskar",
+            "Därför att mark aldrig påverkar fastighetspriser",
+            "Därför att argumentet bara gäller jordbruksmark",
+            "Därför att byggbart utbud svarar på priser — flaskhalsen för småhus är sällan marken utan byggandet"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med utbudet av nya hus när priserna stiger?"
+        },
+        {
+          "q": "Vad gjorde bostadsbubblan farligare än en vanlig aktiebubbla enligt kursen?",
+          "alternativ": [
+            "Den saknade feedback-loopar helt",
+            "Kombinationen inbyggd hävstång och bostadens moraliska pansar — trygghetsberättelsen",
+            "Bostäder kan inte ägas av fondbolag",
+            "Regleringar förbjöd all spekulation i tid"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på hur köpkraften skapades och vad kritiken känns som."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Bubblans konsekvenser — välståndseffekter och snedfördelat kapital",
+      "intro": "Bubblor är inte förlöjliga fyrverkerier utan verkliga samhällsföreteelser med verkliga kostnader. Bokens senare kapitel handlar om hur de sprider sig in i ekonomin — genom välståndseffekter, felallokerat kapital och ärrade kohorter — och den här kursen om vad det betyder för den som bygger en portfölj.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Välståndseffekten: konsumtionen följer den upplevda förmögenheten, inte bara den realiserade. När aktierna stiger känns pensionen närmare och konsumtionen ökar; när de faller dras den tillbaka — även för hushåll som inte sålt en enda aktie. Effekten är mätbart blygsam (några cent per dollar över några år), men dess riktning är pålitlig och dess förstärkning via förtroendet omedelbar: Shiller betonar konsumtionskanalen via attityd — storyvändningen slår mot konsumentförtroendet innan den slår mot saldot. Så blev både 2000 och 2008 efterkrigsrecessioner med börskrasch som förlaga: förmögenheten föll, men det var berättelsen om fallet som stängde plånboken."
+        },
+        {
+          "type": "text",
+          "content": "Kapitalfelallokeringen är bubblans varaktiga minnesmärke. 1990-talets fiberbygge byggde kapacitet för decennier — större delen av fibern låg mörk i åratal efter kraschen, och telekomsektorns förlustvärden räknades i biljonbelopp. Samma mönster: 2021 års SPAC-våg och det förbränningsglada tillväxtkapitalet (V19-perspektivet: när kapital är gratis firas förbränning som vision). Börsens roll i detta är central och dubbel: den prisar storyn högt, vilket gör kapitalet billigt — och de kloka emitterar då. Nettoemissioner vid toppvärderingar är bubbelns ärligaste signal (V19 i AKM1:s läsning): bolag säljer andelar när de är som dyrast, och köparen betalar premie för att få finansiera expansionen av det som redan är överbyggt. V20 återköp, spegelvänt, klustrar historiskt mot låga värderingar och depressionsstämningar — nettoflödet är en av de mest användbara cykelvariablerna som finns."
+        },
+        {
+          "type": "text",
+          "content": "Människokostnaderna. Koncentrerade 401(k)-portföljer i arbetsgivarens aktie gjorde Enron-anställda till dubbla förlorare: jobbet och pensionen i samma krasch. Optionsrika karriärer som aldrig vestades. Och kohortärrningen: Malmendier och Nagel visade att generationer som upplevt svaga marknader tar mindre risk i decennier — depressionsbarnen var försiktigare hela livet, oavsett hur marknaden såg ut när de frågades. Det politiska efterspelet: krascher föder populism och snabba regulatoriska svar som ofta lagar förra bubblan och förbereder nästa. Den stora samhällsläxan: bubblans kostnad är inte bara nedskrivningen — det är att en lärdom om priser förväxlas med en lärdom om tillgångsslag."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-portföljöversättningen: bubblerisiko är mer än drawdown. Det är sekvensrisk — att gå i pension vid toppen och kombinera utförsäljning med kohortens pessimism; det är berättelsekoncentration — 1999 var »internet«, 2021 var »SaaS och AI«: en portfölj kan vara sektordiversifierad på pappret och narrativt koncentrerad i verkligheten; och det är checklistans egen korruption — vid toppen poängsätts V15 nätverkseffekter och V16 produktlanseringar generöst, för att berättelsen kräver det. Motgiftet är procedurellt: poängsätt alltid björncaset först, sära berättelsekategorierna i portföljen (vilken enskild story förklarar merparten av bokvärdet?), och läs nettoemissioner (V19) mot återköp (V20) som cykeldata — inte som attribut."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bubbelns konsekvenskanaler och AKM1:s motgift\",\"rader\":[[\"Kanal\",\"Mekanism\",\"Åtgärd i AKM1\"],[\"Välståndseffekt\",\"Konsumtionen följer upplevd förmögenhet\",\"Sequencerisk: dosera exponering efter behovshorisont\"],[\"Kapitalfelallokering\",\"Kapital söker storyn, inte avkastningen\",\"V19-källning: nettoemissioner vid toppar\"],[\"Kohortärr\",\"En generation blir riskavert i decennier\",\"Journal — skilj erfarenhet från trauma\"],[\"Checklistkorruption\",\"Narrativet dikterar V-poängen\",\"Poängsätt björncaset först\"],[\"Berättelsekoncentration\",\"En story bär hela portföljen\",\"Kartlägg narrativexponeringen explicit\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Bubblans mest varaktiga skada är kunskapsmässig. Efter kraschen äger kohorten inte bara mindre — den vet mindre, eftersom den lärt sig fel läxa: »aldrig aktier« i stället för »aldrig det priset för den storyn«. AKM1:s beslutsjournal finns exakt för att förhindra det substitutet: den som loggat vad hon trodde, varför, till vilket pris och med vilken falsifierbarhet kan efter en krasch sortera vad som var cykel och vad som var analys. Utan journal blir varje krasch en omvänd berättelseepidemi — samma smittvägar, motsatt moral."
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska din portfölj för berättelsekoncentration: om du måste namna EN story som förklarar mer än hälften av din bokvärdesökning de senaste tre åren — vilken är den? Skriv därefter vad som händer varje innehav om den storyn dör (intäktsutfall i V01/V03, marginaltryck i V07/V08, finansieringsrisk i V19). Logga svaret som din berättelseexponeringsrapport."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är välståndseffekten och hur stor är den grovt sett?",
+          "alternativ": [
+            "Att konsumtionen följer upplevd förmögenhet — mätbart blygsam, några cent per dollar över några år, men pålitligt riktad",
+            "Att konsumtionen är helt oberoende av förmögenhet",
+            "Att varje förlorad dollar minskar konsumtionen med en dollar omedelbart",
+            "Att endast realiserade vinster påverkar konsumtionen"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad som händer med känslan av pensionen — inte med saldot."
+        },
+        {
+          "q": "Vad signalerar stora nettoemissioner (V19-perspektivet) vid höga värderingar?",
+          "alternativ": [
+            "Att bolagen saknar tilltro till sina aktier och förbereder återköp",
+            "Att kapital är billigt och att utspädning säljs när aktierna är som dyrast — en klassisk toppsignal",
+            "Att värderingarna med säkerhet är låga",
+            "Att emissioner bara sker i botten på recessioner"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig när kloka ägare helst säljer andelar av sitt bolag."
+        },
+        {
+          "q": "Vad menas med kohortärr (Malmendier och Nagel)?",
+          "alternativ": [
+            "Att generationer som upplevt svaga marknader tar mindre risk i decennier därefter",
+            "Att alla generationer tar samma risk oavsett erfarenhet",
+            "Att unga alltid är mest riskaverta",
+            "Att riskaptiten bara beror ålder, aldrig upplevelser"
+          ],
+          "ratt": 0,
+          "tips": "Depressionsbarnen är det klassiska exemplet — hela livet."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Vad individen kan göra — diversifiering, DCA och deras gränser",
+      "intro": "Bokens avslutande kapitel vänder sig till politiken (makromarknader, indexerad skuld, bättre institutioner) och till individen. Detta kapitel plockar verktygslådan för individen — och håller kursens ton: ärligt om varje verktygs gränser, särskilt DCA:s.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Diversifiering är det enda gratis-lunch som överlever båda nobelpristagarnas världar. Är marknaden effektiv är diversifiering fortfarande optimal — du får systemavkastning till låg kostnad. Är den ineffektiv på Shillers sätt är diversifiering ännu viktigare — den skyddar dig mot att ha fel tillsammans med hävstång och berättelsekoncentration. Asset-, geografi- och tidsdiversifiering tillsammans; och med kapitel 12:s tillägg: diversifiering över berättelser, inte bara över sektorer. En portfölj av åtta AI-exponerade bolag är inte diversifierad — den är en story med åtta tickers."
+        },
+        {
+          "type": "text",
+          "content": "DCA — dollar cost averaging, månadsvis sparande i fasta belopp — förtjänar kursens ärligaste behandling. Mekaniskt är det inte en avkastningshöjare: i ungefär två av tre historiska perioder slår att investera hela beloppet på en gång (lump sum), av det enkla skälet att marknader stiger oftare än de faller. Den som sprider insättningarna betalar i förväntad avkastning för det skyddet. DCA:s verkliga värde är beteendemässigt: det minimerar ångern (du köpte aldrig allt på toppen), det gör fortsatt sparande till en procedur i stället för ett modigt beslut varje månad, och det bryter feedback-loopens grepp vid inträdet — den som DCA:ar genom en topp förlorar på ett antal månadsinköp, inte sitt kapital eller sitt deltagande. Det är en beteendeförsäkring, inte en alphakälla. Shiller själv betonar riskkontroll och att hålla sig kvar i marknaden genom cykler — inte timing."
+        },
+        {
+          "type": "text",
+          "content": "Resten av lådan. Ingen hävstång: V10-disciplinen tillämpad på dig själv — loopen från kapitel 5 spelar nedåt, och den som är hävstångad då tvingas sälja på bottnen. Ingen koncentration i arbetsgivarens aktie: din inkomst och ditt kapital ska inte sitta i samma krasch (Enron-läxan, kapitel 12). Mekanisk balansering: sälj det som vuxit, köp det som krympt, efter i förväg satta band — det är den enda strategin som systematiskt säljer dyrt och köper billigt utan en enda prognos. Berättelsejournal vid varje köp (kapitel 6:s falsifieringstest). Checklistan som ankarresistent instans (kapitel 7). CAPE som förväntanssättare (kapitel 8). Inget av detta är svårt att förstå — allt är svårt att göra under eufori eller panik, vilket är varför procedurerna skrivs i fredstid."
+        },
+        {
+          "type": "text",
+          "content": "Marginal of safety utan nummer — AKM1:s implementation av Shillers försiktighet. Inte en fast rabatt utan ett förhållningssätt: ju lägre kvalitet (svagare V01–V20-profil), ju mer normaliseringsgrad som måste antas (V07/V08 över trend) och ju högre sentiment (AK1TS extremläge) — desto bredare marginal fordras, uttryckt som hårdare multipelkrav (V04–V06), mindre position och ett tydligare nedskrivningsscenario (vad är värdet om storyn dör). Vid mid-range-sentiment och normaliserade fundament får marginalen vara normal. Detta översätter Shillers vishet — köp inte det som beror på att någon annan köper — till en doserbar praxis utan att för den skull förutsäga något alls."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Verktygslådan — vad varje verktyg löser och var det slutar\",\"rader\":[[\"Verktyg\",\"Löser\",\"Ärlig gräns\"],[\"Diversifiering\",\"Koncentrations- och storyrisk\",\"Skyddar inte mot systematiska fall\"],[\"DCA\",\"Ånger och stress vid inträdet\",\"Underpresterar lump sum i omkring två av tre perioder\"],[\"Mekanisk balansering\",\"Säljer dyrt, köper billigt — utan prognos\",\"Kräver disciplin just när det känns värst\"],[\"Ingen hävstång\",\"Överlevnad när loopen vänder\",\"Kostar avkastning på vägen upp\"],[\"CAPE-förväntningar\",\"Kalibrerar tioårshopp\",\"Nästan ingen tidssignaling\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Varje verktyg i lådan fungerar genom att ta bort en förutsägelse du ändå inte skulle ha gjort rätt — när du köper, hur mycket som är topp, när loopen vänder. Det är kursens tysta syntes av Shiller och Fama för den privata investeraren: ge upp timingen, behåll disciplinen, och låt strukturen göra det som prognoser inte kan. Skillnaden mellan en strategi och en förhoppning är att strategin fungerar även när du har fel."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din regler-kort: tre i förväg förbundna regler — ett balanseringsband (i procentenheter), ett hävstångstak (helst noll), och kravet på berättelsejournal före varje ny position. Datera kortet och lägg det där du genomför dina affärer. Provets betyg sätts inte i dag utan vid nästa extrem — den gången du helst vill göra undantag."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den ärliga mekaniska sanningen om DCA jämfört med att investera allt på en gång?",
+          "alternativ": [
+            "DCA ger alltid högre avkastning tack vare genomsnittspris",
+            "Lump sum vinner i ungefär två av tre historiska perioder — DCA:s värde är beteendemässigt: mindre ånger och fortsatt deltagande",
+            "De är statistiskt identiska i alla avseenden",
+            "DCA fungerar bara på obligationsmarknaden"
+          ],
+          "ratt": 1,
+          "tips": "Marknader stiger oftare än de faller — vad gör det med genomsnittet?"
+        },
+        {
+          "q": "Varför fungerar mekanisk balansering utan några prognoser?",
+          "alternativ": [
+            "Därför att den förutsäger vändningar i termer av band i stället för datum",
+            "Därför att den systematiskt säljer det som vuxit relativt och köper det som fallit — vilket kräver ingen förutsägelse alls",
+            "Därför att den bara handlar vid nya toppnoteringar",
+            "Därför att den litar på analytikerkonsensus"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad regeln gör — inte på vad den vet."
+        },
+        {
+          "q": "Hur implementerar AKM1 marginal of safety (utan siffra) enligt kursen?",
+          "alternativ": [
+            "Som en fast rabatt på riktkursen om tjugo procent oavsett läge",
+            "Som en multiplicer på portföljens beta",
+            "Som enbart en sentimentindikator med numerisk tröskel",
+            "Som bredare fordran — hårdare multipelkrav, mindre position, tydligare nedskrivningsscenario — när kvalitet eller normaliseringsgrad är sämre och sentiment högt"
+          ],
+          "ratt": 3,
+          "tips": "Marginalen är ett avstånd i termer av krav — inte ett fast tal."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Arvet — Nobel, narrativ ekonomi och trelagersmodellen",
+      "intro": "Bågen från 1981 års artikel till 2013 års Nobelpris och vidare till Narrative Economics (2019) är en enda rörelse: att göra psykologin till en mätbar del av nationalekonomin. Kursens sista kapitel slår samman boken med AKM1:s trelagersmodell — och levererar den ärliga balansräkningen över Shillers eget rekord.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tredje upplagan (2015) vidgade blicken till obligationsmarknaden: de långa räntornas nivåer väckte frågan om också obligationer bar en irrationell komponent — en varning som visade sig delvis rätt (2022 års historiska räntechock och obligationsfall) men, återigen, åratal för tidig. Shillers reformagenda — makromarknader med BNP-länkade värdepapper, trygghetsförsäkring för livsinkomster, jämnare exponering för bostadsägare — förblir mestadels oimplementerad. Det är en reformators ärliga balansräkning: diagnostiken vann, policyförslagen väntar fortfarande på sin tid."
+        },
+        {
+          "type": "text",
+          "content": "Det intellektuella arvet är större än verktyget. Tillsammans med Kahneman och Tverskys experiment och Thalers tillämpningar gav Shillers empiri beteendefinansen dess legitimitet: det gick inte längre att avfärda prisernas överrörlser som statistiskt trick. Och berättelsespåret fick sin formella fortsättning i Narrative Economics (2019): ekonomiska berättelser är historier med förmåga att förändra beslut, de följer epidemiers dynamik, och ämnet måste mäta dem — med textbrytning, sökdata och frekvensanalys. Det Shiller 2000 beskrev anekdotiskt (grannen, frisören, familjemiddagen) mäts i dag med instrument han själv hjälpte till att legitimera."
+        },
+        {
+          "type": "text",
+          "content": "Trelagersmodellen är kursens sammanfattning av allt ovan. Lager ett — fundamenten (V01–V20): vad äger du? De avgör decenniers kompounderande och är checklistans domän. Lager två — cykel och sentiment (AK1TS, kapitel 5 och 10): hur mycket? Feedbackloopen och dess mätning avgör var i cykeln du befinner dig och doseringen av exponering. Lager tre — narrativ (kapitel 6): varför känns det som det känns? Berättelseepidemierna sätter årets stämning och marknadens fel. Priset är summan av de tre — och därför är priset ensamt aldrig en analys: det vet inte ens vilket lager som talar."
+        },
+        {
+          "type": "text",
+          "content": "Balansräkningen över Shillers eget rekord, kursens sista ärlighetsövning. Rätt: mekanismen två gånger (2000, 2008), beskriven i förväg, med data — och Nobelpriset delat med motståndaren, vilket är vetenskapens eget sätt att säga att båda behövs. Begränsat: CAPE:s tidssignal (hög i decennier, förstörd av 2010-talet), varningarnas tidighet (femton år av »för tidigt« mellan 1995 och 2010), enkätmetodens grovhet. Och ändå: ramverket presterade — inte genom att förutsäga utan genom att tala om vad man inte skulle göra (hävstång, koncentration, extrapolation) vid de tillfällen då det kostade som mest. Bokens sista ord till eleven: irrationell entusiasm är alltid uppenbar i efterhand och alltid förnekad i nuet — din enda varaktiga fördel är struktur."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Trelagersmodellen — fråga, verktyg, tidsfönster\",\"rader\":[[\"Lager\",\"Fråga\",\"Verktyg\",\"Tidsfönster\"],[\"Fundament\",\"Vad äger jag?\",\"V01–V20, checklistan\",\"Decennier\"],[\"Cykel och sentiment\",\"Hur mycket?\",\"AK1TS, exponeringsband\",\"År\"],[\"Narrativ\",\"Varför känns det så?\",\"Berättelsejournal\",\"Månader\"],[\"Pris\",\"Vad kostar det just nu?\",\"V04–V06 normaliserat, CAPE\",\"Ögonblick\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Shillers djupaste läxa är inte bearishness — det är att marknader är samtal, och samtal överdriver åt båda hållen. Investeraren som vet vilket lager som talar — kassaflöde, cykel eller story — kan lyssna utan att lyda. Det är hela skillnaden mellan att höra marknaden och att följa den; och det är skillnaden mellan en portfölj och en position i någon annans berättelse."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din bubbeljournal för i dag, daterad: aktuell CAPE (kapitel 8), din sentimentspanel med ex ante-trösklar (kapitel 10), den dominerande berättelsen och dess prevalens (kapitel 6), dina exponeringsband (kapitel 13) och en falsifierbar mening om varje innehav. Lägg undan den. Om fem år läser du den som ditt eget fallstudie — och betygar vilken sorts elev du var vid det här lagret av cykeln."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad lade tredje upplagan (2015) till bokens bevismaterial?",
+          "alternativ": [
+            "En teori om valutakriser",
+            "Obligationsmarknaden och nya narrative exempel — frågan om också långa räntor bar irrationell entusiasm",
+            "En metod för daghandel",
+            "En genomgång av råvarumarknadens cykler"
+          ],
+          "ratt": 1,
+          "tips": "Upplagan vidgade blicken från aktier och bostäder till ännu en tillgångsklass."
+        },
+        {
+          "q": "Vilka är trelagersmodellens tre lager och deras frågor?",
+          "alternativ": [
+            "Fundament (vad äger jag?), cykel och sentiment (hur mycket?), narrativ (varför känns det så?)",
+            "Teknisk analys, fundamental analys, makroanalys",
+            "Ränta, inflation, tillväxt",
+            "Utdelning, återköp, emissioner"
+          ],
+          "ratt": 0,
+          "tips": "Tre lager, tre frågor — från decennier till månader."
+        },
+        {
+          "q": "Vad är kursens ärliga summering av Shillers eget rekord?",
+          "alternativ": [
+            "Han förutsade exakta kraschdatum två gånger och CAPE fungerar som klocka",
+            "Han hade fel om mekanismerna men rätt om timingen",
+            "Rätt om mekanismen två gånger (2000, 2008) men med svag tidssignal — ramverket presterade genom att säga vad man inte skulle göra när det kostade som mest",
+            "Hans arbeten har ingen koppling till AKM1 eller AK1TS"
+          ],
+          "ratt": 2,
+          "tips": "Värdet sattes i vad ramverket förbjöd — inte i vad det daterade."
+        }
+      ]
+    }
+  ]
+}

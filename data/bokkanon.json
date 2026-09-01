@@ -275,7 +275,7 @@
         "Om ingen aktie möter ditt avkastningskrav är kassan en position"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-012",
@@ -907,7 +907,7 @@
         "Berättelsen efteråt är nästan alltid en konstruerad narrative, inte förklaring"
       ],
       "tier": 1,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-038",
@@ -1764,7 +1764,7 @@
         "Narrativet om en ny tid är bubbels bränsle: fråga vad som saknas i storyn"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-074",

@@ -3701,3 +3701,20 @@ Work Log:
 
 Stage Summary:
 - 39 BOKMASTER + 2 flaggskepp · 10 graf-typer live · streak + levelup
+
+---
+Task ID: 131-VAG12-1 — 270 KURSER
+Agent: main + Williams ✓ + Shiller ✓ + Bernstein ✓ + Taleb ✓ (Silver kör)
+Task: BOKMASTER #40-43 — prognos/risk/eufori/DCF-genens rötter
+
+Work Log:
+- THEORY OF INVESTMENT VALUE (Williams 1938): 13 kap, 39 quiz — DCF:s
+  födelse, kontroverserna: utdelningens död (V20-räddningen),
+  prognos-bara vs story, terminalvärdets tyranni
+- IRRATIONAL EXUBERANCE (Shiller): 14 kap, 42 quiz — CAPE, excess
+  volatility, Shiller-vs-Fama-kapitlet (Nobel-fejden)
+- AGAINST THE GODS (Bernstein): 14 kap, 42 quiz — riskens kulturhistoria,
+  normalfördelningens gränser (Mandelbrot/Taleb-kapitlet)
+- FOOLED BY RANDOMNESS (Taleb): 14 kap, 42 quiz — survivorship, alternativa
+  historier, Short-Seller-agentens andlige fader
+- 270 kurser · 5502 quiz · 760 sidor · kanon 43/101

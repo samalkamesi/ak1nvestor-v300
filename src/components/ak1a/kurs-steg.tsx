@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { addXP, lasXP, lasStjarnor } from "@/lib/member-local";
+import { addXP, lasXP, lasStjarnor, niva } from "@/lib/member-local";
 import { InsiktPuls } from "@/components/ak1a/kurs-visuellt";
 import { VisuellBlock } from "@/components/ak1a/visuell-block";
 
@@ -36,6 +36,14 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
   const [xp, setXp] = useState(0);
   const [stjarnor, setStjarnor] = useState(0);
   const [visaQuiz, setVisaQuiz] = useState(false);
+  const [nivaUpp, setNivaUpp] = useState<number | null>(null);
+
+  // Nivå-upp-firande försvinner efter 4 s av dopamin
+  useEffect(() => {
+    if (nivaUpp == null) return;
+    const t = setTimeout(() => setNivaUpp(null), 4000);
+    return () => clearTimeout(t);
+  }, [nivaUpp]);
 
   useEffect(() => {
     setXp(lasXP());
@@ -61,9 +69,11 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
     if (localStorage.getItem(nyckel) === "1") return;
     setSvar((p) => ({ ...p, [nyckel]: val }));
     if (val === kap.quiz[qi].ratt) {
+      const nivaFore = niva();
       localStorage.setItem(nyckel, "1");
-      addXP(10);
+      const nivaEfter = addXP(10);
       setXp(lasXP());
+      if (nivaEfter > nivaFore) setNivaUpp(nivaEfter);
       // Kolla om hela kapitlet är klarat
       const alla = kap.quiz.every((_, i) => localStorage.getItem(`ak1a-quiz-${kurs.slug}-${kap.num}-${i}`) === "1");
       if (alla) {
@@ -92,6 +102,17 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
 
   return (
     <div className="relative">
+      {/* Nivå-upp-firande */}
+      {nivaUpp != null && (
+        <div className="pointer-events-none fixed inset-x-0 top-24 z-50 flex justify-center">
+          <div className="animate-[fadeIn_0.3s_ease-out] rounded-2xl border-2 border-gold bg-card px-6 py-4 shadow-2xl">
+            <p className="text-center font-serif text-2xl font-black text-gold">🎉 Nivå {nivaUpp}!</p>
+            <p className="mt-1 text-center text-xs text-muted-foreground">
+              {nivaUpp >= 25 ? "Fas 2-porten står öppen — ansök när du är redo." : "100 XP per nivå — poängen förtjänas."}
+            </p>
+          </div>
+        </div>
+      )}
       {/* Progress-topprad */}
       <div className="sticky top-0 z-30 border-b border-gold/20 bg-paper/95 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center gap-4 px-4 py-3">

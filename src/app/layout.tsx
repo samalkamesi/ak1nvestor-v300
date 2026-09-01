@@ -8,6 +8,7 @@ import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { ChatWidget } from "@/components/ak1a/chat-widget";
 import { ShortSeller } from "@/components/ak1a/short-seller";
 import { PwaRegistrerare } from "@/components/ak1a/pwa-registrerare";
+import { Kommandopalett } from "@/components/ak1a/kommandopalett";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -91,7 +92,7 @@ function PageViewBeacon() {
         __html: `(${(function () {
           try {
             var hk = "ak1a-senaste";
-            var hist = [];
+            var hist: any[] = [];
             try { hist = JSON.parse(localStorage.getItem(hk) || "[]"); } catch (e) {}
             hist = hist.filter(function (x) { return x && x.path !== location.pathname; });
             hist.unshift({ path: location.pathname, t: Date.now() });
@@ -171,6 +172,7 @@ export default function RootLayout({
             <ChatWidget />
             <ShortSeller />
             <PwaRegistrerare />
+            <Kommandopalett />
           </Ak1aStoreProvider>
         </ThemeProvider>
       </body>

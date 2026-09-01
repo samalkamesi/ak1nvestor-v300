@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { TemaVaxlare } from "@/components/ak1a/tema-vaxlare";
 import { Huvudmeny } from "@/components/ak1a/huvudmeny";
+import { Mobilmeny } from "@/components/ak1a/mobilmeny";
+import { NastaSteg } from "@/components/ak1a/nasta-steg";
+import { Sidfooter } from "@/components/ak1a/sidfooter";
 
 /**
  * Enkelt skal för crawlbara SEO-sidor (server components).
- * Sticky header med HUVUDMENY (megamenu) — samma DNA: paper, serif, guld.
+ * Sticky header med HUVUDMENY (megamenu) + mobil-drawer + ⌘K.
+ * NastaSteg = personlig mönsterigenkänning, Sidfooter = hel sitemap.
  */
 export function SeoPageShell({
   breadcrumb,
@@ -25,16 +29,11 @@ export function SeoPageShell({
           >
             AK1<span className="text-gold">A</span> Research Lab
           </Link>
-          <Huvudmeny />
+          <div className="hidden md:flex">
+            <Huvudmeny />
+          </div>
+          <Mobilmeny />
           <div className="ml-auto flex items-center gap-2 text-sm">
-            <Link
-              href="/topplista"
-              className="rounded-md px-1.5 py-1 text-sm text-muted-foreground hover:text-foreground"
-              title="Topplistan"
-              aria-label="Topplistan"
-            >
-              🏆
-            </Link>
             <Link
               href="/logga-in"
               className="rounded-md bg-gold px-3 py-1.5 text-xs font-bold text-primary-foreground hover:opacity-90"
@@ -63,27 +62,12 @@ export function SeoPageShell({
           </nav>
         )}
         <main>{children}</main>
-        <footer className="mt-16 border-t border-gold/30 pt-6 text-xs text-muted-foreground">
-          <p>
-            AK1A Research Lab — pedagogisk finansanalys, inte investeringsråd.{" "}
-            <Link href="/privacy-policy" className="underline hover:text-foreground">
-              Integritetspolicy
-            </Link>{" "}
-            ·{" "}
-            <Link href="/terms" className="underline hover:text-foreground">
-              Villkor
-            </Link>{" "}
-            ·{" "}
-            <Link href="/blogg" className="underline hover:text-foreground">
-              Blogg
-            </Link>{" "}
-            ·{" "}
-            <Link href="/finansiell-policy" className="underline hover:text-foreground">
-              Finansiell policy
-            </Link>
-          </p>
-        </footer>
+        {/* Personlig mönsterigenkänning — nästa steg för just denna elev */}
+        <div className="pt-10">
+          <NastaSteg />
+        </div>
       </div>
+      <Sidfooter />
     </div>
   );
 }

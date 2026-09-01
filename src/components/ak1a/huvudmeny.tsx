@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { besok } from "@/lib/navigationsminne";
 
 /**
- * HUVUDMENY — megamenu med samma AK1A-DNA: paper, guld, serif.
- * Desktop: hover-panels. Mobil: klicka för panel + stäng vid navigation.
+ * HUVUDMENY — megamenu i AK1A-DNA: paper, guld, serif.
+ * Desktop: hover-panels medFördröjning + ⌘K-sökning + personligt
+ * "Fortsätt"-chip (mönsterigenkänning). Mobil: klicka för panel.
  */
 
 type MenyPunkt = { text: string; lank: string; ikon: string; beskrivning?: string };
@@ -19,7 +22,7 @@ const PANELER: MenyPanel[] = [
       { text: "Manifestet", lank: "/manifest", ikon: "🏛️", beskrivning: "Vår vision: världens bästa finansutbildning" },
       { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker" },
       { text: "Alla kurser", lank: "/kurser", ikon: "📚", beskrivning: "Hela biblioteket med quiz" },
-      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "28 böcker kapitel för kapitel + ekosystem-flaggskeppen" },
+      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "Böckerna kapitel för kapitel + ekosystem-flaggskeppen" },
       { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — 100 böcker mot AKM1/AK1TS" },
       { text: "Certifikat", lank: "/certifikat", ikon: "🏅", beskrivning: "Ditt intyg på kompetens" },
     ],
@@ -43,10 +46,9 @@ const PANELER: MenyPanel[] = [
       { text: "Min Sida", lank: "/min-sida", ikon: "🏠", beskrivning: "Din dashboard — allt på ett ställe" },
       { text: "Dagens Pass", lank: "/dagens-pass", ikon: "⚡", beskrivning: "5 minuters daglig marknadsträning" },
       { text: "Topplistan", lank: "/topplista", ikon: "🏆", beskrivning: "Eleverna rankade på XP" },
-      { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "28 troféer att förtjäna" },
+      { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "29 troféer att förtjäna" },
+      { text: "Repetera", lank: "/min-sida", ikon: "🃏", beskrivning: "100 flashcards med SM-2" },
       { text: "Fas 2-ansökan", lank: "/fas2-ansok", ikon: "✉️", beskrivning: "Utbildning med grundaren — ansök kostnadsfritt" },
-      { text: "Repetera", lank: "/kurser", ikon: "🃏", beskrivning: "Flashcards med SM-2 (i AI-mentorn)" },
-      { text: "Short-Seller", lank: "/kurser", ikon: "🔴", beskrivning: "Sokratisk grillning (röd widget)" },
       { text: "Blogg", lank: "/blogg", ikon: "✍️", beskrivning: "Guider + marknadskommentarer" },
       { text: "Medlemskap", lank: "/medlemskap", ikon: "💛", beskrivning: "Fas 1 gratis · Fas 2 · Fas 3" },
     ],
@@ -55,7 +57,16 @@ const PANELER: MenyPanel[] = [
 
 export function Huvudmeny() {
   const [oppad, setOppad] = useState<string | null>(null);
+  const [fortsatt, setFortsatt] = useState<{ sida: string; titel: string } | null>(null);
   const behallare = useRef<HTMLDivElement>(null);
+  const stallning = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pathname = usePathname();
+
+  // Mönsterigenkänning: senaste besökta sida (som inte är aktuell)
+  useEffect(() => {
+    const senaste = besok().find((b) => b.sida !== pathname && b.sida !== "/");
+    setFortsatt(senaste ? { sida: senaste.sida, titel: senaste.titel } : null);
+  }, [pathname]);
 
   // Stäng vid klick utanför + Escape
   useEffect(() => {
@@ -71,12 +82,22 @@ export function Huvudmeny() {
     };
   }, []);
 
+  // Hover med fördröjning så panelerna inte flimrar
+  function hoverIn(titel: string) {
+    if (stallning.current) clearTimeout(stallning.current);
+    setOppad(titel);
+  }
+  function hoverUt() {
+    if (stallning.current) clearTimeout(stallning.current);
+    stallning.current = setTimeout(() => setOppad(null), 180);
+  }
+
   return (
-    <div ref={behallare} className="relative flex items-center gap-0.5">
+    <div ref={behallare} className="relative flex items-center gap-0.5" onMouseLeave={hoverUt}>
       {PANELER.map((p) => (
         <div key={p.titel} className="relative">
           <button
-            onMouseEnter={() => setOppad(p.titel)}
+            onMouseEnter={() => hoverIn(p.titel)}
             onClick={() => setOppad(oppad === p.titel ? null : p.titel)}
             aria-expanded={oppad === p.titel}
             aria-haspopup="true"
@@ -91,7 +112,7 @@ export function Huvudmeny() {
           {oppad === p.titel && (
             <div
               className="absolute left-0 top-full z-50 mt-1 w-72 overflow-hidden rounded-xl border border-gold/30 bg-card shadow-xl"
-              onMouseLeave={() => setOppad(null)}
+              onMouseEnter={() => stallning.current && clearTimeout(stallning.current)}
             >
               <div className="border-b border-gold/15 bg-gold/5 px-3 py-2 font-serif text-xs font-bold tracking-wide text-gold">
                 {p.ikon} {p.titel.toUpperCase()}
@@ -116,6 +137,30 @@ export function Huvudmeny() {
           )}
         </div>
       ))}
+
+      {/* ⌘K-sökning */}
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent("ak1a:oppna-sok"))}
+        aria-label="Sök (Ctrl+K)"
+        title="Sök — Ctrl+K / ⌘K"
+        className="ml-1 flex items-center gap-1.5 rounded-md border border-gold/25 px-2 py-1.5 text-xs text-muted-foreground transition-colors hover:border-gold/50 hover:text-gold"
+      >
+        <span>🔎</span>
+        <span className="hidden font-mono text-[10px] lg:inline">⌘K</span>
+      </button>
+
+      {/* Fortsätt-chip — personlig mönsterigenkänning */}
+      {fortsatt && (
+        <Link
+          href={fortsatt.sida}
+          className="ml-1 hidden max-w-[170px] items-center gap-1 rounded-md border border-gold/25 bg-gold/5 px-2 py-1.5 text-[11px] text-gold transition-colors hover:bg-gold/15 xl:flex"
+          title={`Fortsätt: ${fortsatt.titel}`}
+        >
+          <span className="shrink-0">⚡</span>
+          <span className="truncate font-semibold">{fortsatt.titel}</span>
+          <span className="shrink-0 text-[9px]">▸</span>
+        </Link>
+      )}
     </div>
   );
 }

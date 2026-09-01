@@ -3044,3 +3044,21 @@ Stage Summary:
 - 10x-gamification komplett: 24 quizfrågor i Graham-masterkursen, autonom
   +10 XP per bevisad kunskap, coachning vid fel, kapitel-troféer
 - Kö oförändrad: Lynch/Zero to One/Blue Ocean kapitel-för-kapitel + AI-lärarläge
+---
+Task ID: 95-GRAHAM-KOMPLETT
+Agent: main (Z.ai Code)
+Task: The Intelligent Investor — KOMPLETT (alla 20 kapitel + eftegerskrift) — LIVE
+
+Work Log:
+- 8-kapitelversionen utbyggd till 21 kapitel 1:1 mot boken: inflation, fonder,
+  rådgivare, fallgropar, fyra listor, konvertibler/warrant, Penn Central/LTV/AAA-
+  fallhistorier, åtta par, aktieägare-aktivism, eftegerskrift
+- 63 quizfrågor (3/kapitel) — alla med autonom +10 XP
+- 21 insikter + 21 utmaningar; 180 min total läsning, 2000 XP
+- Prod verifierad: kapitelposter levererade
+
+Stage Summary:
+- 'Exakt lika omfattande som boken' uppfyllt: varje kapitel täckt med eget
+  författat innehåll + full källhänvisning
+- Kö: Lynch 'Mina bästa investeringar' (25+ kapitel), Zero to One, Blue Ocean —
+  samma kompletta format

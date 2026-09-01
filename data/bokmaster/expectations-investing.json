@@ -5,11 +5,11 @@
   "chapterCount": 13,
   "totalMinutes": 140,
   "title": "Expectations Investing — Rappaport & Mauboussin: KOMPLETT",
-  "summary": "Expectations Investing (2001, reviderad 2021) av Alfred Rappaport och Michael Mauboussin vänder på hela värderingsproblemet: i stälder för att spåra framtiden med osäkra DCF-gissningar läser kursen av vilka förväntningar som redan ligger inbakade i aktiepriset. Genom reverse-DCF steg för steg, residual income-formeln, P&G-fallet, benchmark-metoden, katalysatoranalys, återköpsmatematik och Mauboussins base rates lär du dig att fråga inte »vad tror jag?« utan »vad måste vara sant för att priset ska rimma?«.",
+  "summary": "Expectations Investing (2001, reviderad 2021) av Alfred Rappaport och Michael Mauboussin vänder på hela värderingsproblemet: i stället för att spåra framtiden med osäkra DCF-gissningar läser kursen av vilka förväntningar som redan ligger inbakade i aktiepriset. Genom reverse-DCF steg för steg, residual income-formeln, P&G-fallet, benchmark-metoden, katalysatoranalys, återköpsmatematik och Mauboussins base rates lär du dig att fråga inte »vad tror jag?« utan »vad måste vara sant för att priset ska rimma?«.",
   "minutes": 10,
   "xp": 1800,
   "level": "",
-  "learn": "Efter kursen kan eleven förklara Rappaport och Mauboussins tes — att aktiepriset är marknadens samlade prognos och att analysens uppgift är att läsa ut price-implied expectations (PIE) och bedöma om de är för låga — och skillnaden mot traditionell DCF, där prognosfelet sitter i råvarorna. Eleven kan genomföra en reverse-DCF steg för steg i klartext: enterprise value, NOPAT, värde i vila, värdet av framtida tillväxt som gapet däremellan, och därefter lösa ut marknadens kravbild i försäljningstillväxt (V01/V02), marginaler (V07/V08) och avkastning på investerat kapital (V09). Eleven behärskar residual income-formeln — värde skapas bara när rörelsevinsten efter skatt överstiger kapitalkostnaden, vilket knyter ROE (V09) till P/B (V05) och gör spreaden ROIC minus WACC till bolagets verkliga vinstmarginal — samt value-to-sales-matematiken som visar vilken kombination av NOPAT-marginal, kapitalomsättning och varaktighet en given EV/försäljningsmultipl kräver. Eleven kan tillämpa benchmark-metoden på jämförbara bolag, följa Procter & Gamble-falet i bokens arbetsgång, identifiera katalysatorer som kan tvinga marknaden att revidera (produktlanseringar V16, moat-förändringar V13–V15, avtal V17, regulatoriskt V18) och värdera återköp (V20) och utdelning med regeln att kapitalåterlämning skapar värde bara när priset ligger under inre värde — spegelvänt mot emissionsrisken (V19). Eleven kan slutligen använda Mauboussins base rates och tur-mot-skicklighet-tänkande som motvikt till egna kravbilder, räkna nuvärdematematik i klartext (diskonteringsfaktorer, Gordons formel, slutvärdets dominans) och formulera marginal of safety (utan V-nummer) som avståndet mellan marknadens krav och ett konservativt scenario i en dokumenterad AKM1-analys.",
+  "learn": "Efter kursen kan eleven förklara Rappaport och Mauboussins tes — att aktiepriset är marknadens samlade prognos och att analysens uppgift är att läsa ut price-implied expectations (PIE) och bedöma om de är för låga — och skillnaden mot traditionell DCF, där prognosfelet sitter i råvarorna. Eleven kan genomföra en reverse-DCF steg för steg i klartext: enterprise value, NOPAT, värde i vila, värdet av framtida tillväxt som gapet däremellan, och därefter lösa ut marknadens kravbild i försäljningstillväxt (V01/V02), marginaler (V07/V08) och avkastning på investerat kapital (V09). Eleven behärskar residual income-formeln — värde skapas bara när rörelsevinsten efter skatt överstiger kapitalkostnaden, vilket knyter ROE (V09) till P/B (V05) och gör spreaden ROIC minus WACC till bolagets verkliga vinstmarginal — samt value-to-sales-matematiken som visar vilken kombination av NOPAT-marginal, kapitalomsättning och varaktighet en given EV/försäljningsmultipl kräver. Eleven kan tillämpa benchmark-metoden på jämförbara bolag, följa Procter & Gamble-fallet i bokens arbetsgång, identifiera katalysatorer som kan tvinga marknaden att revidera (produktlanseringar V16, moat-förändringar V13–V15, avtal V17, regulatoriskt V18) och värdera återköp (V20) och utdelning med regeln att kapitalåterlämning skapar värde bara när priset ligger under inre värde — spegelvänt mot emissionsrisken (V19). Eleven kan slutligen använda Mauboussins base rates och tur-mot-skicklighet-tänkande som motvikt till egna kravbilder, räkna nuvärdematematik i klartext (diskonteringsfaktorer, Gordons formel, slutvärdets dominans) och formulera marginal of safety (utan V-nummer) som avståndet mellan marknadens krav och ett konservativt scenario i en dokumenterad AKM1-analys.",
   "why": "Expectations Investing skrevs av Alfred Rappaport — mannen som tog DCF-värderingen till aktiemarknaden med Creating Shareholder Value — och Michael Mauboussin, och bokens poäng är just därför så stark: metodens egen skapare visar var den traditionella användningen brister. När Rappaport vänder modellen baklänges löses prognosproblemet: marknadspriset är den mest informationsrika prognos som finns, och frågan »vad måste vara sant för att priset ska rimma?« är både lättare att besvara och mer lukrativ att ha rätt om än »vad tror jag om framtiden?«. För AKM1-ekosystemet är boken ett grundläggande ramverk: varje V-variabel — tillväxt (V01/V02), marginaler (V07/V08), ROE (V09), skuldsättningsgrad (V10) — är en värderingsdrivare vars inbakade nivå kan mätas ur priset, och katalysatorkapitlet ger V16–V18 en direkt praktisk roll. Residual income-formeln ger V09 dess teoretiska innehåll, återköpskapitlet gör V20 till en prissättningsfråga i stället för en sentimentfråga, och Mauboussins base rates från 2021-upplagan är den bästa medicinen mot både tillväxtromantik och eget övermod. Den som kan läsa priset inbakade förväntningar slutar jaga kvartalsprognoser och börjar jämföra krav mot verklighet — kanske den mest varaktiga edge en fundamental analytiker kan bygga.",
   "chapters_list": [
     "1. Revolutionen — vänd på DCF:n",
@@ -39,7 +39,7 @@
         },
         {
           "type": "text",
-          "content": "Expectations Investing löser problemet genom att vända på räkningen. Marknadspriset är inte brus — det är den vägda medelpunkten av miljontals aktörers köp och försäljning, och därmed den mest informationsrika prognos som finns. Frågan blir inte »vad är bolaget värt enligt mina gissningar?« utan »vad måste vara sant — i tillväxt, marginaler och kapitalåterbetalning — för att dagens pris ska rimma?«. Rappaport och Mauboussin kallar svaret price-implied expectations, PIE. Analysens uppgift är sedan att bedöma om dessa inbakade förväntningar är för låga, rimliga eller för höga — ett betydligt lägre och oftare korrekt krav på aktievalet än att själv träffa med egna prognoser."
+          "content": "Expectations Investing löser problemet genom att vända på räkningen. Marknadspriset är inte brus — det är den vägda medelpunkten av miljontals aktörers köp och försäljning, och därmed den mest informationsrika prognos som finns. Frågan blir inte »vad är bolaget värt enligt mina gissningar?« utan »vad måste vara sant — i tillväxt, marginaler och kapitalåterbetalning — för att dagens pris ska rimma?«. Rappaport och Mauboussin kallar svaret price-implied expectations, PIE. Analysens uppgift är sedan att bedöma om dessa inbakade förväntningar är för låga, rimliga eller för höga — ett betydligt lägre och oftare korrekt krav på aktievalet än att själv träffa rätt med egna prognoser."
         },
         {
           "type": "text",
@@ -197,7 +197,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Reverse-DCF steg för steg — exempel Nordenkronan\",\"rader\":[[\"Steg\",\"Beräkning\",\"Resultat (miljarder)\"][\"1. Enterprise value\",\"Börsvärde 50 + nettoskuld 5\",\"55\"],[\"2. NOPAT\",\"EBIT 3 × (1 − 0,25)\",\"2,25\"],[\"3. Värde i vila\",\"2,25 / 0,08\",\"28,1\"],[\"4. Tillväxtens värde\",\"55 − 28,1\",\"26,9\"],[\"5. Kravbild\",\"6 % årlig tillväxt, ROIC 15 %, 10 år\",\"≈ 26,9\"],[\"6. Domslut\",\"Jämför med base rates och katalysatorer\",\"Köp / Bevaka / Avstå\"]]}"
+          "content": "{\"rubrik\":\"Reverse-DCF steg för steg — exempel Nordenkronan\",\"rader\":[[\"Steg\",\"Beräkning\",\"Resultat (miljarder)\"],[\"1. Enterprise value\",\"Börsvärde 50 + nettoskuld 5\",\"55\"],[\"2. NOPAT\",\"EBIT 3 × (1 − 0,25)\",\"2,25\"],[\"3. Värde i vila\",\"2,25 / 0,08\",\"28,1\"],[\"4. Tillväxtens värde\",\"55 − 28,1\",\"26,9\"],[\"5. Kravbild\",\"6 % årlig tillväxt, ROIC 15 %, 10 år\",\"≈ 26,9\"],[\"6. Domslut\",\"Jämför med base rates och katalysatorer\",\"Köp / Bevaka / Avstå\"]]}"
         },
         {
           "type": "insikt",
@@ -331,11 +331,11 @@
         },
         {
           "type": "text",
-          "content": "Varaktigheten är den andra halvan av frågan. Ekonomisk teori och empiri säger att konkurrens nöter ned extraordinära avkastningar: högre ROIC än WACC attraherar kapital och imitatörer, och spreaden tonar ut — hur snabbt beror på skyddet runt den. Rappaport och Mauboussin kallar tiden då bolaget kan skapa värde genom tillväxt för investeringsperioden, och den är direkt kopplad till AKM1:s moat-variabler: patent och IP (V13) ger tidsbegränsat lagligt skydd, varumärke (V14) ger prissättningsutrymme som nötning långsamt, och nätverkseffekter (V15) kan förlänga perioden genom att fördelen växer med användarbasen. Intäktsstabilitet (V12) är den mjuka indikatorn: stabila, återkommande intäkter vittnar om en fördel som lever."
+          "content": "Varaktigheten är den andra halvan av frågan. Ekonomisk teori och empiri säger att konkurrens nöter ned extraordinära avkastningar: högre ROIC än WACC attraherar kapital och imitatörer, och spreaden tonar ut — hur snabbt beror på skyddet runt den. Rappaport och Mauboussin kallar tiden då bolaget kan skapa värde genom tillväxt för investeringsperioden, och den är direkt kopplad till AKM1:s moat-variabler: patent och IP (V13) ger tidsbegränsat lagligt skydd, varumärke (V14) ger prissättningsutrymme som nöts ned långsamt, och nätverkseffekter (V15) kan förlänga perioden genom att fördelen växer med användarbasen. Intäktsstabilitet (V12) är den mjuka indikatorn: stabila, återkommande intäkter vittnar om en fördel som lever."
         },
         {
           "type": "text",
-          "content": "Räkneexempel på varaktighetens pris. Antag att ett bolag skapar en restinkomst på 1 miljard kronor per år under sin fördelperiod. Vid WACC 8 procent är nuvärdet av fem år av den prestationen ungefär 4,0 miljarder — en annuitet på 3,99. Femton år ger ungefär 8,6 miljarder — mer än dubbla värdet av exakt samma årsprestation, enbart genom längre varaktighet. Detta är varför små ändringar i antagda fördelår kan rubba ett DCF-värde mer än en hel procentenhet marginal, och det är varför reverse-DCF:n alltid ska tolkas som en krav på varaktighet: »priset kräver att fördelen består tolv år« är en påstående som kan diskuteras, medan »värdet är 156 kronor« inte kan diskuteras alls."
+          "content": "Räkneexempel på varaktighetens pris. Antag att ett bolag skapar en restinkomst på 1 miljard kronor per år under sin fördelperiod. Vid WACC 8 procent är nuvärdet av fem år av den prestationen ungefär 4,0 miljarder — en annuitet på 3,99. Femton år ger ungefär 8,6 miljarder — mer än dubbla värdet av exakt samma årsprestation, enbart genom längre varaktighet. Detta är varför små ändringar i antagda fördelår kan rubba ett DCF-värde mer än en hel procentenhet marginal, och det är varför reverse-DCF:n alltid ska tolkas som en krav på varaktighet: »priset kräver att fördelen består tolv år« är ett påstående som kan diskuteras, medan »värdet är 156 kronor« inte kan diskuteras alls."
         },
         {
           "type": "text",
@@ -493,7 +493,7 @@
         },
         {
           "type": "insikt",
-          "content": "P&G-falets viktigaste lärdom är anspråkslösheten i metoden: marknaden för mogna bolag begär sällan mirakel — den begär uthållighet. Spekulationen ligger inte i om bolaget kan växa, utan i hur länge varumärke (V14) och intäktsstabilitet (V12) bär. Den frågan avgörs av konkurrens och base rates, aldrig av en enskild kvartalsrapport."
+          "content": "P&G-fallets viktigaste lärdom är anspråkslösheten i metoden: marknaden för mogna bolag begär sällan mirakel — den begär uthållighet. Spekulationen ligger inte i om bolaget kan växa, utan i hur länge varumärke (V14) och intäktsstabilitet (V12) bär. Den frågan avgörs av konkurrens och base rates, aldrig av en enskild kvartalsrapport."
         },
         {
           "type": "utmaning",
@@ -526,7 +526,7 @@
         {
           "q": "Vilken utveckling skulle kunna tvinga marknaden att revidera P&G-förväntningarna nedåt?",
           "alternativ": [
-            "Varumärkesstyrkan nötning av privatmärkeskonkurrens och svag volymtillväxt (V14, V12)",
+            "Varumärkesstyrkan nöts ned av privatmärkeskonkurrens och svag volymtillväxt (V14, V12)",
             "En enskild kvartalsrapport med valutafördel",
             "En aktiesplit",
             "En höjning av styrräntan med 25 punkter"
@@ -552,7 +552,7 @@
         },
         {
           "type": "text",
-          "content": "Marknaden själv är den tredje benchbilden. Jämför alltid kravbilden med branschens och ekonomin(real)tillväxt: om en sektors bolag kollektivt prissätts med krav på åtta procents årlig tillväxt i evighet medan sektorns historiska reala tillväxt är tre procent, är det kollektiva förväntningsgapet negativt — oavsett hur fint de enskilda bolagen är. Mauboussin har i sin forskning återkommande visat att marknadens samlade krav på tillväxt historiskt varit svår att leva upp till för breda index. AKM1-kopplingen: intäktsstabilitet (V12) och intäktsdiversifiering (V03) är de variabler som avgör hur mycket av branschkravbilden som överförs till det enskilda bolaget."
+          "content": "Marknaden själv är den tredje benchbilden. Jämför alltid kravbilden med branschens och ekonomins realtillväxt: om en sektors bolag kollektivt prissätts med krav på åtta procents årlig tillväxt i evighet medan sektorns historiska reala tillväxt är tre procent, är det kollektiva förväntningsgapet negativt — oavsett hur fint de enskilda bolagen är. Mauboussin har i sin forskning återkommande visat att marknadens samlade krav på tillväxt historiskt varit svår att leva upp till för breda index. AKM1-kopplingen: intäktsstabilitet (V12) och intäktsdiversifiering (V03) är de variabler som avgör hur mycket av branschkravbilden som överförs till det enskilda bolaget."
         },
         {
           "type": "text",
@@ -639,7 +639,7 @@
         },
         {
           "type": "insikt",
-          "content": "Katalysatorn är tålamodets försäkring: förväntningsgap plus katalysator är en position med klocka. Utan katalysator är du bara tidigare än marknaden — och tid är en positions kostnad som räntas dagligen, medan kapital bindning väntar på ett skifte som ingen utlöser."
+          "content": "Katalysatorn är tålamodets försäkring: förväntningsgap plus katalysator är en position med klocka. Utan katalysator är du bara tidigare än marknaden — och tid är en positions kostnad som räntas dagligen, medan kapitalbindning väntar på ett skifte som ingen utlöser."
         },
         {
           "type": "utmaning",
@@ -706,7 +706,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Återköp till olika kurser — värde per kvarvarande aktie\",\"rader\":[[\"Köp Kurs vid inre värde 100\",\"Värde per kvarvarande aktie\",\"Domslut\"],[\"70 kronor\",\"≈ 103,3\",\"Skapar värde\"],[\"80 kronor\",\"≈ 102,2\",\"Skapar värde\"],[\"100 kronor\",\"100,0\",\"Neutral\"],[\"120 kronor\",\"≈ 97,8\",\"Förstör värde\"]]}"
+          "content": "{\"rubrik\":\"Återköp till olika kurser — värde per kvarvarande aktie\",\"rader\":[[\"Köpkurs vid inre värde 100\",\"Värde per kvarvarande aktie\",\"Domslut\"],[\"70 kronor\",\"≈ 103,3\",\"Skapar värde\"],[\"80 kronor\",\"≈ 102,2\",\"Skapar värde\"],[\"100 kronor\",\"100,0\",\"Neutral\"],[\"120 kronor\",\"≈ 97,8\",\"Förstör värde\"]]}"
         },
         {
           "type": "insikt",
@@ -765,7 +765,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "En base rate är den historiska andelen av en referensklass som uppnått ett visst utfall: av alla bolag som växte tjugo procent ett år, hur många gjorde om det fem år senare? Av alla bolag med EBIT-marginal över tjugo procent, hur många behöll den ett decennium? Mauboussins genomgång av långa dataserier pekar i samma riktning: bland större bolag är ensiffrig tillväxt normen, uthållig dubbelsiffrig tillväxt är sällsynt, och övergång från medel till exceptionell lönsamhet är ovanligare än priserna antar. Samtidigt reverterar lönsamhet: höga ROIC nötning av konkurrens långsammare än många tror — starka moater (V13–V15) är just förklaringen till de undantag som finns. Base rates ersätter inte analysen; de sätter prior på den."
+          "content": "En base rate är den historiska andelen av en referensklass som uppnått ett visst utfall: av alla bolag som växte tjugo procent ett år, hur många gjorde om det fem år senare? Av alla bolag med EBIT-marginal över tjugo procent, hur många behöll den ett decennium? Mauboussins genomgång av långa dataserier pekar i samma riktning: bland större bolag är ensiffrig tillväxt normen, uthållig dubbelsiffrig tillväxt är sällsynt, och övergång från medel till exceptionell lönsamhet är ovanligare än priserna antar. Samtidigt reverterar lönsamhet: höga ROIC nöts ned av konkurrens långsammare än många tror — starka moater (V13–V15) är just förklaringen till de undantag som finns. Base rates ersätter inte analysen; de sätter prior på den."
         },
         {
           "type": "text",
@@ -781,7 +781,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Base rates som motvikt till kravbilder\",\"rader\":[[\"Kravbild i priset\",\"Base-rate-fråga\",\"Varning\"],[\"10 % årlig tillväxt i 10 år\",\"Hur många bolag i klassen klarade det historiskt?\",\"Få — dubbelsiffrig uthållig tillväxt är överrepresenterad i priser\"],[\"Evig ROIC över 20 %\",\"Hur snabbt nötting hög ROIC ned?\",\"Långsamt men säkert — räkna med utplaning\"],[\"Marginalhöjning på obestämd tid\",\"Hur ofta består en ny höj nivå?\",\"Konkurrens och imitation äter marginen\"],[\"Andelsvinnande varje år\",\"Hur fort växer marknaden totalt?\",\"Marknadsandelarna summerar till hundra procent\"]]}"
+          "content": "{\"rubrik\":\"Base rates som motvikt till kravbilder\",\"rader\":[[\"Kravbild i priset\",\"Base-rate-fråga\",\"Varning\"],[\"10 % årlig tillväxt i 10 år\",\"Hur många bolag i klassen klarade det historiskt?\",\"Få — dubbelsiffrig uthållig tillväxt är överrepresenterad i priser\"],[\"Evig ROIC över 20 %\",\"Hur snabbt nöts hög ROIC ned?\",\"Långsamt men säkert — räkna med utplaning\"],[\"Marginalhöjning på obestämd tid\",\"Hur ofta består en ny hög nivå?\",\"Konkurrens och imitation äter marginen\"],[\"Andelsvinnande varje år\",\"Hur fort växer marknaden totalt?\",\"Marknadsandelarna summerar till hundra procent\"]]}"
         },
         {
           "type": "insikt",
@@ -848,7 +848,7 @@
         },
         {
           "type": "text",
-          "content": "Tillämpning på tillväxtens värde. Skillnaden mellan sex och åtta procents årlig tillväxt i tio år är 1,06 upphöjt till 10 = 1,79 mot 1,08 upphöjt till 10 = 2,16 — tjugoen procentenheter skillnad i slutnivå. Det är därför priset är så känsligt för några procentenheter tillväxt i kravbilden, och varför base rates (kapitel 11) är den naturliga domaren: om referensklassen sällan växer åtta procent per år i ett decennium, då innehåller ett pris som kräver det en lånsam optimism. Diskontera alltid samma kassaflöde vid två räntor och två tillväxttakter — sex nuvärden i en känslighetstabell — och du har reverse-DCF:n i miniatyr: börsvärdet faller någonstans i rutnätet, och dess position är marknadens budskap."
+          "content": "Tillämpning på tillväxtens värde. Skillnaden mellan sex och åtta procents årlig tillväxt i tio år är 1,06 upphöjt till 10 = 1,79 mot 1,08 upphöjt till 10 = 2,16 — omkring tjugo procent högre slutnivå. Det är därför priset är så känsligt för några procentenheter tillväxt i kravbilden, och varför base rates (kapitel 11) är den naturliga domaren: om referensklassen sällan växer åtta procent per år i ett decennium, då innehåller priset mer optimism än historien stödjer. Diskontera alltid samma kassaflöde vid två räntor och två tillväxttakter — sex nuvärden i en känslighetstabell — och du har reverse-DCF:n i miniatyr: börsvärdet faller någonstans i rutnätet, och dess position är marknadens budskap."
         },
         {
           "type": "tabell",

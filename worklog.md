@@ -3246,3 +3246,20 @@ Stage Summary:
 - Ekosystemet är nu ryggraden i hela plattformen
 - Alla framtida komponenter MÅSTE importera från src/lib/ekosystem.ts
 - Oljeanalysen visar hur 5×5×4 fungerar på råvaror (Brent+WTI)
+---
+Task ID: 106-DJUP-EKOSYSTEM
+Agent: main (Z.ai Code)
+Task: Djup ekosystemintegrering — chatbot svarar STRUKTURERAT efter AKM1
+
+Work Log:
+- 30+ AKM1-termer mappade till strukturerade svar (V01-V20 + koncept)
+- Varje svar innehåller: variabelnummer + formel + poängskala + kurslänk
+- kalla='AKM1-ekosystem' + modell='AKM1' på alla ekosystem-svar
+- Verifierat: ROE→V09, moat→V13-V15, ekosystem→AKM1+AK1TS, v07→V07,
+  marginal of safety→Graham, kalkylator→20 variabler
+- Prod verifierad
+
+Stage Summary:
+- Chatbot är nu en AKM1/AK1TS-strukturerad guide (inte generisk sökmotor)
+- Alla svar följer ekosystemets riktlinjer: variabel + formel + poäng + länk
+- Kvar: samma djupintegration i Short-Seller + quiz + profilering

@@ -1270,7 +1270,7 @@
         "Äg hela marknaden billigt: bredd och låg kostnad slår aktieplockning för de flesta"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-053",
@@ -1317,7 +1317,7 @@
         "Historisk avkastning är en dålig guide: använd försiktiga antaganden och återbalansera disciplinerat"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-055",
@@ -2140,7 +2140,7 @@
         "Hastighet är en fördel du inte kan slå, men du kan vägra spela spelet"
       ],
       "tier": 3,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-090",
@@ -2186,7 +2186,7 @@
         "Känn din roll som spelare eller sparare och blanda inte ihop dem"
       ],
       "tier": 3,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-092",

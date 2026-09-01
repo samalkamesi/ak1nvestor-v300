@@ -1,0 +1,990 @@
+{
+  "slug": "common-sense-on-mutual-funds",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 140,
+  "title": "Common Sense on Mutual Funds — Bogle: KOMPLETT",
+  "summary": "John Bogle — mannen som uppfann indexfonden — bygger i Common Sense on Mutual Funds (1999) ett vattentätt fall för att kostnader, tid och ägarskap styr din långsiktiga avkastning, inte fondval och timing. Kursen går igenom kostnads-determinismens matematik (2 % avgift äter 44 % av real avkastning på 30 år och över 60 % på 50 år), reversion to the mean för fondstjärnor, fondindustrins intressekonflikter, asset allocation som största beslutet — och den obligatoriska kontroversen: Bogles passiva evangelium mot de få koncentrerade värdeinvesterare (Buffett/Munger) som faktiskt slagit index, inklusive AK1A:s egen syntes: index som baseline, aktiva positioner som kunskapstillämpning.",
+  "minutes": 10,
+  "xp": 1800,
+  "level": "",
+  "learn": "Kostnads-determinismens matematik: hur 2 % avgift äter 44 % av real avkastning på 30 år och över 60 % på 50 år; Sharpes ödmjuka aritmetik (genomsnittet kan inte slå sig själv efter kostnader); indexfondens mekanik (TER, tracking difference, omsättning, skatteeffektivitet); reversion to the mean för fonder och varför stjärnor faller; fondindustrins agentproblem (marknadsföring vs ägarintresse); tålamodets och tidens kraft (ränta-på-ränta, beteendegapet); asset allocation och åldersanpassad portfölj med återbalansering; investering vs spekulation och Bogles två källor till aktieavkastning; kontroversen passivt vs aktivt med SPIVA-data och Buffett-vadet; AK1A-syntesen: index som baseline, aktiva positioner som AKM1-tillämpning med margin of safety.",
+  "why": "Utan Bogle kan du lära dig hela AKM1-ramverket och ändå missa den enda variabel som är hundraprocentigt förutsägbar i din portfölj: kostnaden. Bogle lär dig ödmjukheten som gör varje analys kompetent — att veta att genomsnittet inte kan slå sig själv, att gårdagens stjärnor faller och att tiden är den enda kraften som inte kräver att du har rätt om framtiden. För AK1A:s aktiva analytiker är Bogle inte en avvisning av analys utan dess ärliga baslinje: du mäter dina aktiva positioner mot indexet, och om du inte slår det vet du det.",
+  "chapters_list": [
+    { "num": 1, "title": "Bogle, Vanguard och indexfondens födelse", "minutes": 10 },
+    { "num": 2, "title": "Kostnads-determinismen — matematiken som inte kan förhandlas", "minutes": 10 },
+    { "num": 3, "title": "Den ödmjuka aritmetiken — genomsnittet kan inte slå sig själv", "minutes": 10 },
+    { "num": 4, "title": "Indexfondens mekanik — att äga hela marknaden", "minutes": 10 },
+    { "num": 5, "title": "Reversion to the mean — när stjärnfonder faller", "minutes": 10 },
+    { "num": 6, "title": "Fondindustrin — marknadsföring kontra ägarintresse", "minutes": 10 },
+    { "num": 7, "title": "Tidens kraft — ränta-på-ränta och tålamodets strategi", "minutes": 10 },
+    { "num": 8, "title": "Asset allocation — portföljens största beslut", "minutes": 10 },
+    { "num": 9, "title": "Risk, ballast och konsten att återbalansera", "minutes": 10 },
+    { "num": 10, "title": "Investering kontra spekulation — två källor till avkastning", "minutes": 10 },
+    { "num": 11, "title": "KONTROVEREN: Bogles passiva evangelium mot de aktiva", "minutes": 10 },
+    { "num": 12, "title": "AKM1-tillämpning — analys i en Bogle-värld", "minutes": 10 },
+    { "num": 13, "title": "The majesty of simplicity — Stay the course", "minutes": 10 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Bogle, Vanguard och indexfondens födelse",
+      "intro": "År 1976 lanserade John C. Bogle världens första indexfond för privatinvesterare — och blev utskrattad av hela Wall Street. I Common Sense on Mutual Funds (1999) samlade han fyrtio års bevis för att skrattet hamnade fel. Detta kapitel ger dig mannen, den unika bolagsstrukturen och idén som förändrade finanshistorien.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "John Clifton Bogle (1929–2019) skrev sin examensuppsats vid Princeton 1951 om investmentbolagens ekonomiska roll — och förutspådde där att branschens största problem skulle bli att den tjänade mer på att sälja förväntan än att förvalta kapital. Efter karriären vid Wellington-fonden blev han i januari 1974 avskedad som chef efter en misslyckad fusion. Han kallade det senare för den bästa dagen i sitt liv: utan nederlaget hade Vanguard aldrig funnits. Vanguard inledde sin verksamhet 1974–1975 med en struktur som saknade motstycke: fonderna äger förvaltningsbolaget, inte tvärtom."
+        },
+        {
+          "type": "text",
+          "content": "Ägarstrukturen är hela poängen. Ett vanligt fondbolag ägs av utomstående aktieägare som kräver vinst — och vinsten kommer från dina avgifter. Vanguards mutual-struktur betyder att överskottet returneras till fondägarna som lägre kostnader. När Bogle senare argumenterar mot fondindustrin (kapitel 6) är det denna fråga han ställer: vems intresse tjänar bolaget som förvaltar dina pengar? Hans svar blev att bygga ett bolag som strukturellt inte kan tjäna på sina ägare."
+        },
+        {
+          "type": "text",
+          "content": "Den 31 augusti 1976 öppnade First Index Investment Trust — senare omdöpt till Vanguard 500 Index Fund. Målet var att samla in 150 miljoner dollar; resultatet blev 11,3 miljoner. Konkurrenter hånade fonden som ”Bogle’s folly” och kallade idén un-American: att bara acceptera marknadens avkastning istället för att försöka slå den tedde sig som ett angrepp på själva idén om amerikansk kapitalism. Fyrtio år senare förvaltar indexfonder tusentals miljarder dollar, och den initialt hånade lanseringen blev finanshistoriens mest framgångsrika produkt. Common Sense on Mutual Funds utkom 1999 med en uppdaterad tioårsjubileumsupplaga 2009 — titeln anspelar medvetet på Thomas Paines radikalt enkla pamflett Common Sense från 1776."
+        },
+        {
+          "type": "text",
+          "content": "Bogle var sedan 30-årsåldern allvarligt hjärtsjuk och genomgick hjärttransplantation 1996 — han beskrev sina återstående år som lånat tid och använde dem till att skriva, föreläsa och bygga. Han dog i januari 2019, 89 år gammal, med ”Stay the course” som livsmotto. Kursen du nu läser följer bokens kärnbana: kostnadens aritmetik, marknadens obevekliga medelvärde, industrins incitament, tidens kraft — och avslutas med den spänning som är AK1A:s egen: vad ska en aktiv analytiker göra med Bogles sanning?"
+        },
+        {
+          "type": "insikt",
+          "content": "Struktur slår intention. När fonderna äger förvaltningsbolaget försvinner intressekonflikten mekaniskt — när utomstående ägare äger det blir din avgift deras vinst. Innan du bedömer en fonds framtid, fråga först vem som tjänar på den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gå till din bank eller plattform och granska en fond du äger eller funderar på: Vem äger förvaltningsbolaget (börsbolag, bank, konsumentägda)? Vart går vinsten? Hitta förvaltningsavgiften i faktabladet — och räkna sedan ut vad den kostar i kronor per år på din insats. Spara svaret; du återkommer till det i kapitel 2."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Indexfondens födelse — nyckeldata\",\"rader\":[[\"Händelse\",\"År\",\"Detalj\"],[\"Princeton-uppsatsen\",\"1951\",\"Bogle förutspår branschens incitamentsproblem\"],[\"Avskedad från Wellington\",\"1974\",\"Bogle kallar det senare den bästa dagen i sitt liv\"],[\"Vanguard grundas\",\"1974–1975\",\"Fonderna äger bolaget — vinst blir lägre avgifter\"],[\"First Index Investment Trust\",\"1976\",\"Mål 150 MUSD, fick 11,3 MUSD — hånad som Bogle’s folly\"],[\"Common Sense on Mutual Funds\",\"1999\",\"Tioårsjubileumsupplaga 2009\"],[\"Bogle dör\",\"2019\",\"89 år — Stay the course som livsmotto\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur mycket kapital lyckades Bogle samla in till den första indexfonden 1976?",
+          "alternativ": [
+            "Cirka 11 miljoner dollar av ett mål på 150 miljoner",
+            "Exakt 150 miljoner — enligt plan",
+            "1,3 miljarder på en dag",
+            "Noll — fonden lanserades aldrig"
+          ],
+          "ratt": 0,
+          "tips": "Wall Street skrattade — och skillnaden mellan mål och utfall var mer än tiofalt."
+        },
+        {
+          "q": "Vad är strukturellt unikt med Vanguard som bolag?",
+          "alternativ": [
+            "Det är ett statligt bolag",
+            "Fonderna äger förvaltningsbolaget, så överskottet returneras som lägre avgifter",
+            "Det ägs av fondförvaltarna personligen",
+            "Det är börsnoterat med aktieutdelning"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vems intresse ett bolag som ägs av utomstående aktieägare rimligen tjänar."
+        },
+        {
+          "q": "Vilken händelse ledde indirekt till att Vanguard grundades?",
+          "alternativ": [
+            "Bogle vann en aktieplockningstävling",
+            "Bogle sålde sin Princeton-uppsats till Fidelity",
+            "Bogle avskedades som chef på Wellington efter en misslyckad fusion",
+            "Bogle ärvde bolaget"
+          ],
+          "ratt": 2,
+          "tips": "Nederlaget 1974 tvingade fram den struktur som gjorde indexfonden möjlig."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Kostnads-determinismen — matematiken som inte kan förhandlas",
+      "intro": "Bogles centrala tes är en enda rad subtraktion: din avkastning är marknadens bruttoavkastning minus dina kostnader. Allt annat är osäkert — kostnaden är det enda talet i din portfölj som är hundraprocentigt förutsägbart, och det är negativt. Detta kapitel räknar på vad två procents avgift verkligen gör över trettio år.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bogle sammanfattade sin livsinsikt i en mening: ”In investing, you get what you don’t pay for” — i investing får du det du INTE betalar för. Logiken är deterministisk: aktiemarknadens samlade bruttoavkastning tillfaller alla investerare tillsammans, och den är given. Vad som skiljer dig från din granne är inte marknaden utan raden under: kostnaderna. En aktiv fonds verkliga kostnad är inte bara förvaltningsavgiften utan allt-i-ett: transaktionskostnader vid köp och försäljning, omsättningens spreadar och courtage, kontantpositionernas avkastningsfall och eventuell prestationsavgift. Bogle räknade i sina analyser fram att allt-i-ett-kostnaden för en genomsnittlig aktiv aktiefond historiskt legat runt 2–2,5 procent per år — att jämföra med cirka 0,05–0,4 procent för en billig indexfond."
+        },
+        {
+          "type": "text",
+          "content": "Varför är detta determinism och inte bara en detalj? Eftersom kostnaden bunkerar sig. En engångskostnad på två procent vore strunt; en ÅRLIG kostnad på två procent arbetar med ränta-på-ränta-mekaniken emot din förmögenhet. Titta på tabellen nedan: 100 000 kr som växer med 7 procent brutto i 30 år blir 761 000 kr utan kostnad — men bara 432 000 kr med 2 procents årlig kostnad. Kostnaden äter 329 000 kr, hela 43 procent av slutförmögenheten. Räknar du i reala termer (med inflationen borträknad) passerar förlusten hälften vid Bogles allt-i-ett-kostnad på 2,5 procent — och på 50 års horisont äter 2 procents avgift över 60 procent av den reala avkastningen. Det är detta kursen kallar kostnads-determinismen: slutfallet följer av aritmetiken, inte av tur eller skicklighet."
+        },
+        {
+          "type": "text",
+          "content": "Bogle formulerade mekanismen i en av sina mest citerade meningar: ”The miracle of compounding returns has been overwhelmed by the tyranny of compounding costs” — ränta-på-räntans mirakel har överväldigats av kostnadernas tyranni. I svensk kontext: en typisk aktiv global aktiefond tar 1,2–1,8 procent i förvaltningsavgift, plus dolda transaktionskostnader vid hög omsättning; en global indexfond ligger på 0,1–0,4 procent. Skillnaden — grovt räknat en till två procentenheter per år — är exakt den subtraktion som avgör hur stor del av marknadens avkastning som når ditt konto."
+        },
+        {
+          "type": "text",
+          "content": "Kopplat till AKM1: alla V-variabler handlar om att bedöma osäkra framtida tal — försäljningstillväxt (V01), marginaler (V07–V08), ROE (V09). Kostnaden är den enda variabel du känner exakt i förväg. En disciplinerad analytiker börjar därför med det säkra talet: vad kostar strategin, fonden eller positionen mig per år, allt inkluderat? Först därefter är det meningsfullt att resonera om avkastning. Bogle kallade detta ”the relentless rules of humble arithmetic” — den ödmjuka aritmetikens obevekliga regler."
+        },
+        {
+          "type": "insikt",
+          "content": "Avkastningen är osäker, kostnaden är säker — det enda garanterat förutsägbara talet i din portfölj är negativt, och det avgör mer än hälften av slutförmögenheten på lång sikt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på din egen portfölj: ta fram förvaltningsavgift för varje fond, plattformsavgift och uppskattade transaktionskostnader. Beräkna din vägda allt-i-ett-kostnad. Räkna sedan två scenario: (avkastning minus din kostnad) upphöjt till 30 jämfört med (avkastning minus 0,2 procent) upphöjt till 30, på ditt aktuella sparande. Skillnaden är vad kostnadsdeterminismen betyder i kronor för dig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"100 000 kr · 7 % bruttoavkastning · 30 år\",\"rader\":[[\"Årlig kostnad\",\"Slutförmögenhet\",\"Andel av kostnadsfritt utfall\",\"Förlorat\"],[\"0 % (teoretiskt)\",\"761 000 kr\",\"100 %\",\"—\"],[\"0,05 % (indexfond)\",\"661 000 kr\",\"87 %\",\"100 000 kr\"],[\"1,0 % (billig aktiv fond)\",\"574 000 kr\",\"75 %\",\"187 000 kr\"],[\"2,0 % (typisk aktiv fond)\",\"432 000 kr\",\"57 %\",\"329 000 kr\"],[\"2,5 % (allt-i-ett, Bogle)\",\"375 000 kr\",\"49 %\",\"386 000 kr\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Bogle att den genomsnittliga aktiva fondens allt-i-ett-kostnad ligger på?",
+          "alternativ": [
+            "Cirka 0,2 procent per år",
+            "Cirka 10 procent per år",
+            "Cirka 2–2,5 procent per år inklusive transaktionskostnader och omsättning",
+            "Kostnaden går inte att uppskatta"
+          ],
+          "ratt": 2,
+          "tips": "Räkna ihop mer än förvaltningsavgiften — även det som händer inuti fonden kostar."
+        },
+        {
+          "q": "100 000 kr, 7 procent brutto per år i 30 år och 2 procents årlig kostnad — ungefär hur stor andel av den kostnadsfria slutförmögenheten försvinner?",
+          "alternativ": [
+            "Ungefär 2 procent",
+            "Ungefär 43 procent",
+            "Ungefär 10 procent",
+            "Ingenting — kostnaden är redan inräknad i avkastningen"
+          ],
+          "ratt": 1,
+          "tips": "Kostnaden dras inte en gång utan varje år — och den bunkerar sig."
+        },
+        {
+          "q": "Vad är poängen med uttrycket ”In investing, you get what you don’t pay for”?",
+          "alternativ": [
+            "Billiga produkter är alltid sämre kvalitet",
+            "Dyrare fonder har högre förväntad avkastning",
+            "Avgiften spelar ingen roll om förvaltaren är duktig",
+            "Låga kostnader är den enda fördelen som är garanterad i förväg"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på vilken del av ekvationen du kan styra själv — och veta i förväg."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Den ödmjuka aritmetiken — genomsnittet kan inte slå sig själv",
+      "intro": "Detta kapitel innehåller argumentet som gör indexfondens överlägsenhet till matematik istället för åsikt. Nobelpristagaren William Sharpes artikel från 1991, ihopvävd med Bogles formuleringar, visar varför den genomsnittligt aktiva dollarn måste underprestera den genomsnittligt passiva — utan någon som helst tro på perfekt marknadseffektivitet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Börja med den viktigaste identiteten i finans: alla investerare tillsammans ÄR marknaden. Den viktade genomsnittsavkastningen för alla aktieägare måste exakt vara aktiemarknadens totala avkastning — före kostnader. Dela upp ägarna i två grupper, aktiva och passiva: om den aktiva gruppen samlat slår marknaden måste den passiva gruppen samlat underprestera den, eftersom de tillsammans är marknaden. Före kostnader är aktiv förvaltning alltså ett nollsummespel: varje vinnare har en förlorare på andra sidan."
+        },
+        {
+          "type": "text",
+          "content": "Sharpe sammanfattade det 1991 i The Arithmetic of Active Management: efter kostnader måste den genomsnittligt aktiva dollarn underprestera den genomsnittligt passiva dollarn. Resonemanget kräver ingen psykologi och ingen tro på effektiva marknader: den aktiva andelen av marknaden får marknadens bruttoavkastning precis som den passiva, men den aktiva betalar kostnader (kapitel 2:s 2–2,5 procent) medan den passiva betalar nästan ingenting. Efter kostnader blir spelet minussummespel för de aktiva — kollektivt, alltid, oavsett hur smarta de är. Bogle kallade detta den ödmjuka aritmetikens regler och kontrasterade sin Costs Matter Hypothesis mot den berömda Efficient Markets Hypothesis: du behöver INTE tro att priser alltid är korrekta för att index ska vinna — du behöver bara kunna subtrahera."
+        },
+        {
+          "type": "text",
+          "content": "Empirin bekräftar aritmetiken. SPIVA (S&P Indices Versus Active), som jämför aktiva fonder mot sina index, visar år efter år att på 15-årsperioder underpresterar typiskt 85–95 procent av amerikanska large-cap-fonder sitt index — i många årsrapporter ligger siffran runt 90 procent. Ännu mer avslöjande är persistensen: den andel av årets topplaceringar som även hamnar i topp några år senare är knappast bättre än slantsingling. Aritmetiken dödar inte möjligheten att en minoritet vinner (se kontroversen i kapitel 11) — den dödar påståendet att alla kan, eller att genomsnittet kan."
+        },
+        {
+          "type": "text",
+          "content": "Vad betyder detta för dig som pluggar AKM1? Inte att analys är värdelös — utan att indexets avkastning är baslinjen som all aktiv analys måste mätas mot, netto efter kostnad. Varje gång du väljer en aktiv position eller fond gör du ett påstående: jag kommer att slå den som äger allt och inte gör nästan något. Det påståendet kan vara sant — men det är ett matematiskt faktum att alla inte kan ha det sant samtidigt. Ödmjukheten är därför inte blyghet utan aritmetik."
+        },
+        {
+          "type": "insikt",
+          "content": "Aktiv förvaltning är ett nollsummespel före kostnader och ett minussummespel efter — detta är inte en åsikt om skicklighet utan en bokföringsidentitet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bevisa aritmetiken för dig själv: rita en cirkel som representerar alla aktieägare. Försök konstruera ett scenario där den aktiva majoriteten slår index netto. Vad krävs? En motpart som systematiskt förlorar — men alla äger redan allt som finns att äga. Skriv ner varje krumbukt du behöver göra för att rädda idén; det är exakt argumentationen Bogle bemöter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre hypoteser om varför index vinner\",\"rader\":[[\"Hypotes\",\"Kärna\",\"Kräver effektiv marknad?\",\"Konsekvens för dig\"],[\"EMH (Fama)\",\"Priser återspeglar all information\",\"Ja\",\"Aktivt urval är meningslöst\"],[\"CMH — Costs Matter (Bogle)\",\"Kostnaden gör att aktivt genomsnitt måste ligga under marknaden\",\"Nej\",\"Låga kostnader är kanten oavsett effektivitet\"],[\"RTM — Reversion to the mean (Bogle)\",\"Förvaltarresultat återgår gång på gång till medelvärde\",\"Nej\",\"Gårdagens stjärnor är inget framtidstecken\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Sharpes aritmetik om aktiv förvaltning?",
+          "alternativ": [
+            "Alla aktiva förvaltare underpresterar alltid utan undantag",
+            "Passiv förvaltning garanterat ger högst avkastning av alla strategier",
+            "Efter kostnader måste den genomsnittligt aktiva dollarn underprestera den genomsnittligt passiva",
+            "Marknaden kan slå sig själv om den är tillräckligt effektiv"
+          ],
+          "ratt": 2,
+          "tips": "Det är ett viktat medelvärde — summan av alla delars avkastning måste bli marknadens."
+        },
+        {
+          "q": "Hur skiljer sig Bogles Costs Matter Hypothesis från den effektiva marknadshypotesen (EMH)?",
+          "alternativ": [
+            "CMH gäller bara utanför USA",
+            "CMH kräver ingen tro på priseffektivitet — bara subtraktion av kostnader",
+            "CMH säger att priser är slumpmässiga",
+            "EMH gäller bara obligationer"
+          ],
+          "ratt": 1,
+          "tips": "En av hypoteserna handlar om information i priser; den andra om vad som blir kvar efter avgiften."
+        },
+        {
+          "q": "Vad visar SPIVA-data typiskt för amerikanska large-cap-fonder på 15 års sikt?",
+          "alternativ": [
+            "Cirka 10 procent underpresterar index",
+            "Cirka 75 procent slår index",
+            "Cirka hälften slår index",
+            "Runt 90 procent underpresterar index"
+          ],
+          "ratt": 3,
+          "tips": "Fonderna jagar — men fler fastnar än de flesta investerare tror."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Indexfondens mekanik — att äga hela marknaden",
+      "intro": "Vad köper du egentligen när du köper en indexfond? Hela marknaden, vägd per börsvärde, med nästan noll omsättning — och därmed nästan noll kostnad och uppskjuten skatt. Detta kapitel går igenom mekaniken som gör enkelheten så effektiv.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bogles råd i en mening: ”Don’t look for the needle in the haystack. Just buy the haystack.” — leta inte efter nålen i höstacken, köp hela höstacken. En indexfond äger samtliga (eller ett representativt urval av) bolag i ett index, vägda per börsvärde. Du äger per definition de bolag som vinner — de som växer sig störst får automatiskt större vikt — utan att ha förutsett dem. I AKM1:s språk: du äger alla vallgravar (V13–V15: patent och IP, varumärke, nätverkseffekter) samtidigt, vägda efter hur marknaden redan prissatt deras storlek, och du eliminerar den idiosynkratiska risken att ha allt på fel bolag."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken bygger på att nästan inget görs. En totalmarknadsfond omsätter kanske några procent per år — det som tillkommer, försvinner eller fusioneras — medan en aktiv fond ofta omsätter 50–150 procent av portföljen per år. Varje affär kostar courtage, spread och drift; varje realiserad vinst triggar skatt. Detta ger den andra pelaren: skatteeffektiviteten. När en aktiv fond byter innehav realiseras vinster som ofta delas ut till andelsägarna som beskattningsbar inkomst — du betalar skatt på vinster du inte valde att realisera. Indexfonden realiserar sällan, vilket skjuter upp skatten: pengar som annars gått till staten får växa hos dig, i praktiken ett räntefritt lån från skattemyndigheten."
+        },
+        {
+          "type": "text",
+          "content": "Hur väljer du en indexfond? Bogle själv varnade för att index som konstruktion kan ha avgifter också. Tre nyckeltal: TER (den redovisade årliga avgiften), tracking error (hur mycket fonden svänger runt index — den säger dock lite om verklig kostnad) och framför allt tracking difference — indexets avkastning minus fondens faktiska avkastning efter alla avgifter. Tracking difference är ditt verkliga pris; en fond kan ha låg TER men mjölka av avkastning genom aktieutlåning eller valutaswappar. Kontrollera också fondens storlek (större ger lägre fixkostnad per andel) och hur utlåningen kompenseras."
+        },
+        {
+          "type": "text",
+          "content": "I svensk praxis: en global indexfond (all-world eller motsvarande brett index) med TER under 0,4 procent är kärnan i de flesta couch potato-upplägg; nordisk eller Sverige-exponering läggs vid behov. Skillnaden mot kapitel 2:s matematik: här väljer du mellan 0,1 och 0,3 procent — strunt i det korta loppet, men aritmetiken gör även det till verkliga pengar över 40 år. Hela idén är att eliminera varje beslut som kostar utan att ge förutsägbar fördel: valet av fondförvaltare, sektorer, tidpunkter."
+        },
+        {
+          "type": "insikt",
+          "content": "En indexfond vinner inte för att den är smart utan för att den gör nästan ingenting — och ingetande är det enda på börsen som är i princip gratis."
+        },
+        {
+          "type": "utmaning",
+          "content": "Jämför två indexfonder med samma index (till exempel två globala): hitta TER, tracking difference för de senaste tre åren och policyn för aktieutlåning. Avgör vilken som är billigast i praktiken — och om skillnaden är större än den redovisade avgiften skiljer sig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Indexfond kontra aktiv fond — mekaniken sida vid sida\",\"rader\":[[\"Egenskap\",\"Indexfond\",\"Aktiv fond\"],[\"Innehav\",\"Hela marknaden, vägt per börsvärde\",\"Förvaltarens urval\"],[\"Omsättning\",\"Cirka 0–5 % per år\",\"Ofta 50–150 % per år\"],[\"Kostnad (TER)\",\"Cirka 0,05–0,4 %\",\"Ofta 1–2 % plus dolda transaktionskostnader\"],[\"Skatt\",\"Få realiseringar — skatten skjuts upp\",\"Frekventa realiseringar — utdelad vinst beskattas\"],[\"Resultatmål\",\"Marknadens avkastning minus låg kostnad\",\"Slå marknaden minus hög kostnad\"],[\"Vem avgör utfallet\",\"Aritmetiken\",\"Förvaltarens skicklighet minus kostnaden\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är en indexfond skatteeffektiv jämfört med en aktiv fond med hög omsättning?",
+          "alternativ": [
+            "Indexfonder är skattebefriade",
+            "Den realiserar sällan vinster, så skatten skjuts upp och kapitalet får växa",
+            "Aktiva fonder betalar dubbel skatt",
+            "Skatt spelar ingen roll för avkastningen"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad som händer med pengar som annars gått till skatt men får stanna kvar och växa."
+        },
+        {
+          "q": "Vad är tracking difference för en indexfond?",
+          "alternativ": [
+            "Skillnaden mellan fondens och indexets risknivå",
+            "Skillnaden mellan indexets avkastning och fondens faktiska avkastning",
+            "Skillnaden i förvaltningsavgift mellan två fonder",
+            "Hur mycket fonden svänger kring indexet"
+          ],
+          "ratt": 1,
+          "tips": "Det är ett mått på ditt verkliga pris — vad som faktiskt når ditt konto."
+        },
+        {
+          "q": "Vad menas med att en indexfond väger bolag per börsvärde?",
+          "alternativ": [
+            "Alla bolag köps lika mycket oavsett storlek",
+            "Bolagen köps i omvänd ordning till hur lönsamma de är",
+            "Större bolag får automatiskt större vikt i portföljen",
+            "Förvaltaren väljer vikt efter tycke"
+          ],
+          "ratt": 2,
+          "tips": "Hur blir vinnarnas andel av portföljen större utan att någon behöver förutsäga dem?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Reversion to the mean — när stjärnfonder faller",
+      "intro": "Bogles tredje vapen är statistikens äldsta lag: extrema resultat återgår till medelvärdet. Fondbranschens stjärnor — gårdagens Go-Go-fonder, nittiotalets teknikfavoriter — är inte undantag utan regelbundna offer. Detta kapitel förklarar varför stjärnbetyg är bakåtblickande medaljer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Reversion to the mean (RTM) är bokens kanske mest praktiska kapitel: förvaltarresultat återgår gång på gång till medelvärdet. Mekanismen är treklövern: (1) turen jämnar ut sig — en förvaltare som haft en bra period på grund av rätt stil vid rätt tillfälle har inte byggt någon bestående kant; (2) tillgångstillväxten dödar alfan — när en framgångsrik fond får in miljarder blir den tvungen att handla stora, likvida bolag, positionerna späds ut och skillnaden mot index försvinner; (3) stilcykler — tillväxt, värde, stora och små bolag roterar, och fem år av toppresultat bygger ofta på en stil som just är på väg att vända."
+        },
+        {
+          "type": "text",
+          "content": "Historien levererar exemplen. Sextiotalets Go-Go-tillväxtfonder var 1968 branschens stolthet — och kollapsade på sjuttiotalet. Nittiotalets tekniktunga fonder toppade alla listor 1999 och förlorade 50–80 procent mellan 2000 och 2002. Och i tioårsjubileumsupplagan visar Bogle den brutala överlevnadsstatistiken: av 355 amerikanska aktiefonder som existerade 1970 hade lite mer än hälften (189 stycken) överlevt till 2009 — resten var nedlagda eller uppslukade — och bland överlevarna slog bara ett litet fåtal index över huvud taget, ännu färre med beveklig marginal. Prestationsjakten (performance chasing) bygger på att gårdagens extrem ska upprepas; RTM säger att det är just det den statistiskt inte gör."
+        },
+        {
+          "type": "text",
+          "content": "Branschens eget betygsystem förvärrar problemet. Stjärnbetyg delas ut för historisk prestanda, de syns i annonser, pengar strömmar in — och tillväxten är i sig en av krafterna som pressar ned framtida resultat (mekanism 2 ovan). Branschens affärsmodell är att marknadsföra det som redan hänt; investerarens uppgift är att köpa det som väntas hända. Gapet mellan dessa två är RTM."
+        },
+        {
+          "type": "text",
+          "content": "Kopplat till AKM1: RTM gäller inte bara fonder utan enskilda bolag och deras nyckeltal. En extermultipel (V04 P/S, V05 P/B, V06 EV/EBITDA) innehåller ofta inbakad fortsatt excellens — och vinstmarginaler (V07–V08) långt över branschens har historisk tendens att konkurreras ned. Det närmaste ett motgift du kan hitta i AKM1 är intäktsstabiliteten (V12): bolag vars intäkter är stabila över konjunkturcykler faller mindre hårt när mean reversion slår till. RTM är därför inte ett skäl att avstå från analys — det är ett skäl att kräva att analysen besvarar varför detta tillfället INTE ska återgå till medel."
+        },
+        {
+          "type": "insikt",
+          "content": "Fondens stjärna är en bakåtblickande medalj — marknaden belönar inte gårdagens stil, den återgår till sitt medelvärde."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en fond som topprankades 2021 (typ tekniktung tillväxt) och följ den till och med 2022. Notera stjärnbetyg före och efter, samt in- och utflöden. Skriv tre meningar om varför investerare köpte på toppen — och vilken av RTM:s tre mekanismer som var mest ansvarig för fallet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"RTM — tre krafter som får stjärnfonder att faller\",\"rader\":[[\"Kraft\",\"Mekanism\",\"Typiskt förlopp\"],[\"Turen jämnar ut sig\",\"Bra period beror på rätt stil vid rätt tillfälle\",\"Förra årets topp tre hamnar mitt i packen\"],[\"Tillgångstillväxt\",\"Nyinkomna miljarder tvingar fram stora, indexlika positioner\",\"Stjärnfonden dubblar i storlek — sedan sjunker utfallet\"],[\"Stilcykel\",\"Tillväxt, värde, stora och små bolag roterar\",\"Fem år i topp följs av fem år i botten\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken av följande är EN av Bogles förklaringar till varför stjärnfonders resultat återgår mot medelvärdet?",
+          "alternativ": [
+            "Att stjärnfonder alltid bedrar sina ägare medvetet",
+            "Att tillgångstillväxten tvingar fonden att handla stora, indexlika positioner som späder ut alfan",
+            "Att indexfonderna aktivt saboterar de aktiva",
+            "Att börsen blir allt mer effektiv för varje år"
+          ],
+          "ratt": 1,
+          "tips": "En av krafterna handlar om vad som händer med en strategi när den får för mycket kapital att jobba med."
+        },
+        {
+          "q": "Vad visar Bogles överlevnadsstatistik för de 355 amerikanska aktiefonder som fanns 1970?",
+          "alternativ": [
+            "Alla överlevde och slog index",
+            "Ingen överlevde till 2009",
+            "Lite mer än hälften överlevde till 2009 och bara ett litet fåtal slog index med marginal",
+            "Tre av fyra slog index med bred marginal"
+          ],
+          "ratt": 2,
+          "tips": "Kombinationen av nedlagda fonder och underpresterande överlevare är brutalare än de flesta tror."
+        },
+        {
+          "q": "Hur kopplar du RTM till AKM1:s nyckeltal när du analyserar ett bolag?",
+          "alternativ": [
+            "RTM gäller bara fonder och aldrig enskilda bolag",
+            "En extermultipel innehåller ofta inbakad fortsatt excellens — fråga vad som hindrar återgången till medel",
+            "Höga marginaler är alltid beständiga eftersom de redan bevisats",
+            "Intäktsstabilitet (V12) har inget med RTM att göra"
+          ],
+          "ratt": 1,
+          "tips": "Frågan en analytiker måste besvara är varför just detta extrema tal ska förbli extremt."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Fondindustrin — marknadsföring kontra ägarintresse",
+      "intro": "Bogle ägnar bokens längsta parti åt branschens interna konflikt: fondbolagen är agenter som tjänar på förvaltat kapital, inte på ditt resultat. Detta kapitel kartlägger intressekonfliktens mekanik — från 1999 års teknikfondslanseringar till reklamens handslagna tidsfönster.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Agentproblemet i klartext: du är ägaren, fondbolaget är din agent — men bolagets intäkt är en procent av dina tillgångar, inte en andel av ditt resultat. Incitamentet är att samla förvaltningskapital, inte att maximera din nettokostnadsoptimerade avkastning. Bogle menade att branschen glidit från att vara en profession med ett uppdrag till att vara en marknadsföringsmaskin med produkter — en kulturkrock han återkom till i hela sitt författarskap. Kapitel 1:s ägarstruktur (fonderna äger bolaget) är hans botemedel; här ser du varför det behövs."
+        },
+        {
+          "type": "text",
+          "content": "Marknadsföringsteknikerna är systematiska. Lansera fonder i årets hetaste stil: 1999–2000 startades rekordmånga teknik- och internetfonder i USA — precis vid toppen — och majoriteten av dem var försvunna inom några år, efter att deras köpare förlorat hälften eller mer. Seeda ett dussin fonder i olika stilar och marknadsför bara de som slog rätt: överlevnadsbias inbyggt i sortimentet. Välj prestandafönster som börjar i en botten. Reklam med gårdagens vinnare. Small print som i princip alla prospekt bär — historisk avkastning är ingen garanti för framtida resultat — motstyrs av allt i annonsens design. Bogle påpekade det giftiga i kombinationen: fonderna säljer RTM (kapitel 5) som om det vore en rekommendation."
+        },
+        {
+          "type": "text",
+          "content": "Den svenska kartan ser likadan ut i strukturen: avgiftskulturer där 1,2–1,8 procent fortfarande är normalt för aktiva globalfonder, utgivarens egna fonder som standardalternativ i rådgivningen, prestandamätningar med välvilligt valda perioder. Motgiftet är detsamma oavsett land: läs faktabladet (avgift, omsättning, förvaltat kapital), fråga vem som äger utgivaren, och jämför alltid mot ett billigt index efter kostnad. Bogles fråga är enkel: om produkten är till för mig — varför är den designad för bolagets intäktsräkning?"
+        },
+        {
+          "type": "text",
+          "content": "Kopplat till AKM1: samma granskarkompetens som avslöjar fondbolagens incitament avslöjar bolagsledningars — styrelser som belönar omsättningstillväxt (V01) medan ROE (V09) urholkas, eller emissioner som räddar balansräkningen (V19) men späder ut dig som ägare. Agentanalys är en generell färdighet: varje gång någon förvaltar dina pengar — fond, bolagsledning, rådgivare — frågar du hur de betalas och vad de maximerar. Det är därför Bogle-kursen är obligatorisk även för den som aldrig tänkt köpa en indexfond."
+        },
+        {
+          "type": "insikt",
+          "content": "När fonden säljer dig gårdagens vinnare tjänar bolaget på din prestationsjakt — din impuls är deras intäktskälla."
+        },
+        {
+          "type": "utmaning",
+          "content": "Besök en banks fondutbud. Hitta tre fonder som exponeras på framsidan. Notera vilket tidsfönster som används i presentationen, kolla tioårsresultatet mot ett billigt index och ta reda på vem som äger utgivaren. Skriv en kort rapport: vems intresse är sidan designad för?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Agentproblemet — vems intresse tjänar fondbranschen?\",\"rader\":[[\"Fråga\",\"Fondbolagets incitament\",\"Ditt incitament som ägare\"],[\"Avgifter\",\"Höga — varje krona är intäkt\",\"Låga — varje krona är förlorad avkastning\"],[\"Fondstorlek\",\"Större = mer förvaltningskapital\",\"Storlek späder ut möjligheten att slå index\"],[\"Omsättning\",\"Aktiv handel ser professionell ut\",\"Kostnad och beskattad realisering\"],[\"Reklam\",\"Gårdagens vinnare säljer\",\"Framtida utfall är okänt — RTM lurar\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i agentproblemet som Bogle beskriver?",
+          "alternativ": [
+            "Att fondförvaltare alltid är oärliga",
+            "Att fondbolaget betalas på förvaltat kapital, inte på ditt resultat",
+            "Att banker är förbjudna att sälja egna fonder",
+            "Att indexfonder saknar förvaltare"
+          ],
+          "ratt": 1,
+          "tips": "Fråga hur kompensationen är kopplad — till dig eller till volymen?"
+        },
+        {
+          "q": "Vad hände med de tekniktunga fonder som lanserades i USA 1999–2000?",
+          "alternativ": [
+            "De slog index med bred marginal i tio år",
+            "Rekordmånga lanserades nära toppen och majoriteten försvann inom några år efter stora förluster",
+            "De omvandlades automatiskt till indexfonder",
+            "Inga teknikfonder lanserades förrän 2005"
+          ],
+          "ratt": 1,
+          "tips": "Branschen marknadsförde det som redan stigit — precis innan det föll."
+        },
+        {
+          "q": "Vilken granskarkompetens överförs från fondbranschen till AKM1:s bolagsanalys?",
+          "alternativ": [
+            "Att alltid lita på ledningens prognoser",
+            "Att bara titta på omsättningstillväxt (V01)",
+            "Att fråga hur beslutsfattare betalas och vad de maximerar — i bolagsstyrelser likaväl som i fondbolag",
+            "Att ROE (V09) är det enda nyckeltalet som behövs"
+          ],
+          "ratt": 2,
+          "tips": "Agentanalysen är en generell färdighet — inte en fråga om en specifik bransch."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Tidens kraft — ränta-på-ränta och tålamodets strategi",
+      "intro": "Bogles mest älskade mening lyder: ”Time is your friend; impulse is your enemy.” Detta kapitel visar varför tidens aritmetik är den enda kraften i din portfölj som inte kräver att du har rätt om framtiden — bara att du stannar kvar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Citatet i sin helhet, som Warren Buffett återger det i bokens introduktion: ”Time is your friend; impulse is your enemy. Take advantage of compound interest and don’t be captivated by the siren song of the market.” — Tid är din vän; impuls är din fiende. Utnyttja ränta-på-ränta och låt dig inte betagas av marknadens sirensång. Ränta-på-ränta är ingen känsla utan en mekanik: vid 7 procents avkastning fördubblas kapitalet ungefär var tionde år (72-regeln: 72 dividerat med avkastningen). Tiden gör därför mer av jobbet än du gör — om du låter den."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexemplet i tabellen nedan: 24 000 kronor per år (2 000 i månaden) vid 7 procent. Efter tio år har du satt in 240 000 och har 332 000 — tiden har knappt kommit igång. Efter 30 år har 720 000 insatta blivit 2 267 000. Efter 40 år har 960 000 insatta blivit nästan 4,8 miljoner — en femdubbling av det insatta. Notera kurvans form: den sista tiårsperioden skapar mer värde än alla tidigare tillsammans. Detta är skälet att börja tidigt och avsluta sent — och skälet till att den som avslutar sitt sparande i en krasch väljer portföljens värsta tidpunkt: de dyraste åren att sälja."
+        },
+        {
+          "type": "text",
+          "content": "Impulsens kostnad är mätbar. Studier av avkastningsgapet mellan fonder och fondägare (bland andra Morningstars årliga Mind the Gap) visar att investerare i genomsnitt förlorar 1,5–2 procentenheter per år på dålig timing: de köper efter uppgångar och säljer efter fall. Bogle visade samma mönster i bubbelåren — fondägarnas faktiska avkastning släpade fondernas med ansenlig marginal, eftersom pengarna strömmade in 1999–2000 och ut 2002–2003. Marknadens historia gör budskapet hårt men tröstande: amerikanska aktier föll cirka 48 procent 1973–74, 49 procent 2000–02 och 57 procent 2007–09 — och återhämtade sig varje gång. ”Buy right and hold tight” — köp rätt och håll hårt."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk Bogle-disciplin: skriv ett beteendeprotokoll FÖRE kraschen. Exempel: Om portföljen faller 35 procent gör jag (a) ingenting utom att återbalansera enligt min policy (kapitel 9), (b) fortsätter månadssparandet automatiskt, (c) läser om min investeringspolicy. Impulsen är fienden just för att den alltid känns rationell i stunden; protokollet är ditt förebyggande motgift. Detta är hela skillnaden mellan att ha en strategi och att ha en historia."
+        },
+        {
+          "type": "insikt",
+          "content": "Tiden är den enda kraften i din portfölj som inte kräver att du har rätt om framtiden — den kräver bara att du stannar kvar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på ditt eget månadssparande: insatt kapital mot slutvärde vid 6–7 procent på din horisont (annuitetsformeln eller en kalkylator). Skriv sedan ditt kraschprotokoll: exakt vad du gör dagen portföljen är nere 35 procent. Signera och datera det. Läs om det årligen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tidens kraft — 24 000 kr per år vid 7 procent\",\"rader\":[[\"Period\",\"Insatt totalt\",\"Slutvärde\",\"Multipel mot insatt\"],[\"10 år\",\"240 000 kr\",\"332 000 kr\",\"1,4x\"],[\"20 år\",\"480 000 kr\",\"984 000 kr\",\"2,0x\"],[\"30 år\",\"720 000 kr\",\"2 267 000 kr\",\"3,1x\"],[\"40 år\",\"960 000 kr\",\"4 791 000 kr\",\"5,0x\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur lyder Bogles mest citerade mening om tid och impuls?",
+          "alternativ": [
+            "”Time is your friend; impulse is your enemy.”",
+            "”Timing the market beats time in the market.”",
+            "”Impulse is information in disguise.”",
+            "”Time heals all portfolios eventually without risk.”"
+          ],
+          "ratt": 0,
+          "tips": "Buffett citerar den i bokens introduktion — vänskapen gäller en dimension, fientligheten en annan."
+        },
+        {
+          "q": "Vad visar Morningstars Mind the Gap-studier typiskt?",
+          "alternativ": [
+            "Att fondägare tjänar mer än sina fonder genom smart timing",
+            "Att timing inte går att mäta",
+            "Att investerare förlorar cirka 1,5–2 procentenheter per år mot sina egna fonder genom dålig timing",
+            "Att gapet är exakt noll för indexfonder och därför oviktigt"
+          ],
+          "ratt": 2,
+          "tips": "Att köpa högt och sälja lågt har ett pris — och priset är mätbart per år."
+        },
+        {
+          "q": "Vad innebär tumregeln ”Buy right and hold tight” i praktiken?",
+          "alternativ": [
+            "Att köpa rätt från början och sedan behålla genom svängningarna istället för att handla på impuls",
+            "Att aldrig sälja någonsin oavsett policy",
+            "Att bara köpa fonder med höga stjärnbetyg",
+            "Att använda stop-loss på allt"
+          ],
+          "ratt": 0,
+          "tips": "Regeln kopplar ihop köpet (rätt pris och produkt) med beteendet (att stanna kvar)."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Asset allocation — portföljens största beslut",
+      "intro": "Innan du väljer fond ska du välja andel aktier. Bogle härleder varför balansen mellan aktier och räntor — inte fondvalet — dominerar portföljens risk och avkastning på lång sikt, och hur åldern bör styra den balansen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Klassiska studier (Brinson med flera, 1986, om institutionella portföljer) fann att allocationspolicyn förklarade merparten av variationen i portföljernas avkastning mellan plan — inte valet av enskilda förvaltare eller värdepapper. Bogle drog den praktiska slutsatsen: den mest fundamentala placeringen du gör är inte VILKEN aktiefond, utan HUR stor andel av portföljen som ska vara aktier. Historiskt har amerikanska aktier avkastat cirka 10 procent nominellt (cirka 7 procent realt) sedan 1926, långfristiga statsobligationer cirka 5 procent — med betydligt lägre svängningar i den senare. Aktieandelen är portföljens gaspedal; allt annat är trim."
+        },
+        {
+          "type": "text",
+          "content": "Bogles grova tumregel, med betoning på grov: håll ungefär din ålder i obligationer. En 30-åring: 70/30 aktier/räntor. En 50-åring: 50/50. Regeln är ingen fysik — den tvingar fram det viktiga samtalet mellan horisont (yngre har längre tid att återhämta sig) och risktolerans (vad gör du verkligt när det faller 40 procent?). Bogle själv betonade att den rätta allocationen är den du faktiskt kan hålla genom en björnmarknad; den teoretiskt optimala spelar ingen roll om du överger den i mars 2009."
+        },
+        {
+          "type": "text",
+          "content": "Räntedelen har två jobb. Kortsiktigt: ballast — obligationer har historiskt stigit eller fallit lite när aktier rasat (2008: amerikanska statsobligationer upp medan aktier föll 37 procent), vilket gör fallen tolererbara. Långsiktigt: räntans egen fiende är inflationen — vid 3 procent inflation halveras penningvärdet på cirka 23 år (72-regeln), så den som sparar 30 år i kontantliknande instrument förlorar köpkraft. Aktier är därför långsiktighetens inflationsskydd; räntan är kortsiktighetens stabilisator. Båda behövs — men i olika proportioner över livet."
+        },
+        {
+          "type": "text",
+          "content": "I svensk tillämpning: kärnan av globala aktieindex (kapitel 4) plus räntedel av statsobligationsfond eller kort ränta efter behov; den egna bostaden och bufferten hör till privatekonomin men räknas utanför placeringsportföljen. Det avgörande dokumentet är en skriftlig investeringspolicy med målandel, tillåtna band och rebalanseringsregel (kapitel 9). Väljer du sedan aktiva fonder eller aktier är det satelliter till denna kärna — aldrig tvärtom."
+        },
+        {
+          "type": "insikt",
+          "content": "Aktieandelen är portföljens gas och broms — fondvalet är bara valet av motorolja. Den bästa allocationen är inte den optimala, utan den du faktiskt håller när det gör ont."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din investeringspolicy på en sida: målandel aktier (med motiveringen ålder, horisont och tolerans), tillåtna avvikelseband (till exempel plus/minus 5 procentenheter), vilka instrument som får ingå och när policyn får ändras (svar: vid förändrad livssituation — aldrig på grund av marknadsläge)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ålder som utgångspunkt — Bogles tumregel\",\"rader\":[[\"Ålder\",\"Ungefärlig aktieandel\",\"Ränta/ballast\",\"Kommentar\"],[\"30\",\"70 %\",\"30 %\",\"Lång horisont — tid att återhämta krascher\"],[\"40\",\"60 %\",\"40 %\",\"Balanserad tillväxt\"],[\"50\",\"50 %\",\"50 %\",\"Balans mellan tillväxt och stabilitet\"],[\"60\",\"40 %\",\"60 %\",\"Nära pension — förmögenhetsbevarande\"],[\"70\",\"30 %\",\"70 %\",\"Kortare horisont, uttagsfas\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket beslut menar Bogle dominerar portföljens risk och avkastning på lång sikt?",
+          "alternativ": [
+            "Valet av enskild aktiefond",
+            "Balansen mellan aktier och obligationer — asset allocation",
+            "Valet av mäklare eller plattform",
+            "Tidpunkten för insättningarna"
+          ],
+          "ratt": 1,
+          "tips": "Det är valet av andel, inte av produkt, som sätter portföljens karaktär."
+        },
+        {
+          "q": "Vad är Bogles grova tumregel för aktieandel efter ålder?",
+          "alternativ": [
+            "Håll ungefär din ålder i obligationer — 30-åringen runt 70/30 i aktier",
+            "Håll alltid 100 procent aktier oavsett ålder",
+            "Håll din ålder i aktier och resten i guld",
+            "Tumregeln finns inte — allocation ska alltid optimeras matematiskt"
+          ],
+          "ratt": 0,
+          "tips": "Regeln kopplar åldern till horisonten — och den är avsiktligt grov."
+        },
+        {
+          "q": "Vilken är obligationernas främsta långsiktiga svaghet enligt Bogle?",
+          "alternativ": [
+            "De är mer volatila än aktier",
+            "De saknar utdelning",
+            "Inflationen urholkar deras reala värde över tid",
+            "De kan aldrig förlora värde"
+          ],
+          "ratt": 2,
+          "tips": "Vid 3 procent inflation halveras penningvärdet på cirka 23 år — räkna med 72-regeln."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Risk, ballast och konsten att återbalansera",
+      "intro": "Risk är inte bara volatilitet — det är fel risk vid fel horisont. Detta kapitel förenar Bogles riskmått med praktiken: hur mycket aktier du tål, varför ballasten finns och hur mekanisk återbalansering gör dig till kontrarian utan att kräva mod.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bogles varningsklocka är rakt på sak: ”If you have trouble imagining a 20% loss in the stock market, you shouldn’t be in stocks.” — om du har svårt att föreställa dig en tjugoprocentig förlust på börsen ska du inte äga aktier. Historien ger skäl till ödmjukhet: amerikanska aktier föll cirka 48 procent 1973–74, 49 procent 2000–02 och 57 procent 2007–09. Riskkapacitet (hur mycket du OBJEKTIVT kan bära, sett till horisont och ekonomi) och risktolerans (hur mycket du KÄNNER att du kan bära) är olika saker — och det är den känslomässiga som avgör om du stannar kvar. Därför kapitel 8:s tumregel: den bästa allocationen är den du håller."
+        },
+        {
+          "type": "text",
+          "content": "Riskens två ansikten styrs av horisonten. Kortsiktigt (1–3 år) är volatiliteten fienden: aktier kan halveras; då hör sparkapitalet hemma i kort ränta. Långsiktigt (20+ år) är inflationen fienden: kontanter och obligationer förlorar köpkraft medan aktieindex historiskt återhämtat varje krasch. Mellan dem: en blandning. Detta resonemang gör allocationen (kapitel 8) till en tidsfråga, inte en modfråga — och förklarar varför en 30-åring och en 70-åring rationellt bär olika risk trots samma marknad."
+        },
+        {
+          "type": "text",
+          "content": "Återbalansering är Bogle-portföljens enda aktiva handslag med marknaden. Mekaniken: sätt ett mål (exempelvis 60/40) och tillåtna band (plus/minus 5 procentenheter). När aktiedelen växt över 65: sälj av överskottet och köp ränta; när den sjunkit under 55: gör tvärtom. Detta tvingar dig mekaniskt att sälja högt och köpa lågt — kontrarianism utan analys, mod eller prognos. Bogle pekade på att återbalanseringens bidrag till avkastning är blygsamt; dess värde är beteendemässigt: den konverterar marknadens svängningar till en regel du kan följa istället för en känsla du måste strida mot."
+        },
+        {
+          "type": "text",
+          "content": "Räntedelen i praktiken: statsobligationer med kort till medellång löptid ger bäst ballast per risk (låg kreditrisk, begränsad ränterisk); high yield och långa obligationer beter sig mer aktieliknande och ger mindre skydd precis när det behövs. Kontrollera duration och kreditkvalitet i fondens faktablad — det är kärnan av den analys en räntedel kräver; resten är att hålla den."
+        },
+        {
+          "type": "insikt",
+          "content": "Återbalansering är det enda system som mekaniskt gör dig till kontrarian — utan att kräva mod, bara kalender och band."
+        },
+        {
+          "type": "utmaning",
+          "content": "Tankedrama: anta att din 60/40-portfölj år ett faller 30 procent totalt (aktier minus 45, räntor plus 5). Räkna ut vad återbalanseringsregeln beordrar dig att göra. Skriv sedan exakt varifrån pengarna ska tas (månadssparande, utdelning, försäljning) — och vad som INTE får hända (att gripas av panik och sälja av aktiedelen)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riskens två ansikten — horisonten avgör fienden\",\"rader\":[[\"Horisont\",\"Största risken\",\"Lämplig dominerande placering\"],[\"0–3 år\",\"Volatilitet — aktier kan falla 30–50 %\",\"Kort ränta, buffertkonto\"],[\"3–10 år\",\"Blandat — sekvensrisk före uttag\",\"Obligationer plus globala aktieindex\"],[\"20+ år\",\"Inflation plus eget beteende\",\"Brett globalt aktieindex med ballast\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger Bogle om den som har svårt att föreställa sig en tjugoprocentig börsförlust?",
+          "alternativ": [
+            "Att personen ska köpa fler aktier på kredit",
+            "Att personen inte ska äga aktier",
+            "Att personen ska välja hedgefonder",
+            "Att 20 procents fall är omöjliga på börsen"
+          ],
+          "ratt": 1,
+          "tips": "Citatet är en toleranstestfråga — inte en avkastningsprognos."
+        },
+        {
+          "q": "Vad är återbalanseringens främsta värde enligt Bogle?",
+          "alternativ": [
+            "Den garanterar högre avkastning än index",
+            "Den eliminerar all risk i portföljen",
+            "Den tvingar dig mekaniskt att sälja högt och köp lågt — beteendet, inte avkastningen, är poängen",
+            "Den ersätter behovet av asset allocation"
+          ],
+          "ratt": 2,
+          "tips": "Bidraget till avkastning är blygsamt; det beteendemässiga värdet är det centrala."
+        },
+        {
+          "q": "Vilken är den största långsiktiga risken (20+ år) enligt kapitlets horisontresonemang?",
+          "alternativ": [
+            "Dagsvolatiliteten i aktierna",
+            "Inflationen som urholkar realt värde — följt av investerarens eget beteende",
+            "Valutarisken i svenska kronor",
+            "Aktiernas utdelningar"
+          ],
+          "ratt": 1,
+          "tips": "På längre horisonter byter fienden skepnad från svängningar till något långsamt och nedbrytande."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Investering kontra spekulation — två källor till avkastning",
+      "intro": "Bogles viktigaste analysverktyg för att skilja investing från gambling: aktieavkastningen har två källor — företagens verkliga resultat och multipelns svängningar. Detta kapitel lär dig räkna på båda, och att bara den första är investering.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bogle deklarerade: ”The stock market is a giant distraction from the business of investing.” — aktiemarknaden är ett jättestort avbrott från investerandets egentliga arbete. Hans ramverk delar aktieavkastningen i två källor. Investeringsavkastning: utdelningsavkastning plus vinsttillväxt — det företagen faktiskt tjänar och delar ut till ägare. Spekulativ avkastning: förändringen av multipeln (P/E) — hur mycket mer eller mindre marknaden är beredd att betala per krona vinst. Historiskt (USA, cirka 1926–2009) var utdelningen i snitt runt 3,5 procent per år och vinsttillväxten runt 5 procent — investeringsavkastning ungefär 8,5 procent årligen. Resten av de historiska cirka 10 procenten kom från multipelökningar: spekulation."
+        },
+        {
+          "type": "text",
+          "content": "Poängen är inte att spekulation är omöjlig att tjäna på — utan att den är ett spel mot andra om vad någon tredje betalar imorgon, medan investeringsavkastningen är bolagens faktiska kassaflöde till dig som ägare. Multipelns bidrag kan inte förutsägas och svänger våldsamt: under IT-bubblan betalade marknaden över 30 gånger vinsten; efter kraschen föll multipeln till under 20. Bogle använde ramverket som prognosverktyg — när utdelning plus tillväxt är lågt och multipeln hög är den framtida avkastningen aritmetiskt låg — men även som etikett: den som köper utan syn på kassaflöden spekulerar, oavsett vad det kallas."
+        },
+        {
+          "type": "text",
+          "content": "Marknadens omsättning avslöjar hur mycket spekulation som pågår. Den årliga omsättningshastigheten på NYSE steg från cirka 15–20 procent på femtiotalet till över 100 procent under IT-bubblan — aktier handlas allt mer som samlarbilder, allt mindre som ägarskap. Bogle noterade att daghandeln och prestationsjakten blommar i uppgångar och lämnar ruinerna efter sig i fall. Hans linje: ju kortare horisont och ju mer priset styrs av berättelsen istället för resultatet, desto mer är du i spekulationsbransch — och desto mer behöver du en förklaring till varför du ska vinna spelet mot dem du köper av."
+        },
+        {
+          "type": "text",
+          "content": "Kopplat till AKM1: den fundamentala analysen är investeringsavkastningens vetenskap — att uppskatta utdelning, tillväxt (V01–V02) och stabilitet (V12) i bolagets resultat, och att betala en multipel (V04–V06) som inte förutsätter att spekulationen fortsätter gynna dig. Margin of safety — Grahams princip, utan fast nummer — är exakt avståndet mellan priset och det beräknade värdet: ett skydd mot att den spekulativa källan vänder. När du hör ett aktietips utan kassaflödesresonemang har du sett spekulation i kapitel 6:s marknadsföringsdräkt."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte vad aktien är värd imorgon — fråga vad bolaget tjänar de närmaste tio åren. Pris är spekulation; ägarskap är investering."
+        },
+        {
+          "type": "utmaning",
+          "content": "Plocka en aktie i ditt intressefält. Beräkna dagens utdelningsavkastning, uppskatta vinsttillväxten (V01–V02) fem år framåt, och läs av multipeln (V04–V06) mot tioårssnittet. Addera: det är din förväntade investeringsavkastning. Fråga sedan: hur mycket av de senaste fem årens totalavkastning kom från multipelförändring? Om svaret är merparten — vad äger du egentligen?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bogles två källor till aktieavkastning (USA ca 1926–2009)\",\"rader\":[[\"Källa\",\"Komponent\",\"Historiskt snitt\",\"Förutsägbarhet\"],[\"Investeringsavkastning\",\"Utdelningsavkastning\",\"Cirka 3,5 % per år\",\"Hög — utdelningen är känd vid köp\"],[\"Investeringsavkastning\",\"Vinsttillväxt\",\"Cirka 5 % per år\",\"Medel — historiskt ganska stabil\"],[\"Spekulativ avkastning\",\"Multipelförändring (P/E)\",\"Cirka +1,5 % per år\",\"Mycket låg — svänger kraftigt åt båda håll\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är Bogles två källor till aktieavkastning?",
+          "alternativ": [
+            "Utdelningspolitik och centralbankens ränta",
+            "Investeringsavkastning (utdelning plus vinsttillväxt) och spekulativ avkastning (multipelförändring)",
+            "Teknisk analys och momentum",
+            "Köpkurs och courtage"
+          ],
+          "ratt": 1,
+          "tips": "En källa kommer från bolaget; den andra från vad marknaden känner sig benägen att betala."
+        },
+        {
+          "q": "Ungefär hur såg den historiska fördelningen ut för USA cirka 1926–2009?",
+          "alternativ": [
+            "Cirka 8,5 procentenheter investeringsavkastning och cirka 1,5 procentenheter multipelpåverkan",
+            "Cirka 2 procent utdelning och 8 procent multipel",
+            "Allt kom från multipelförändringar",
+            "Allt kom från utdelningar"
+          ],
+          "ratt": 0,
+          "tips": "Den tråkiga källan — bolagens resultat — har historiskt gjort huvudjobbet."
+        },
+        {
+          "q": "Vad menar Bogle med att aktiemarknaden är ett avbrott från investerandet?",
+          "alternativ": [
+            "Att man ska sluta följa kurser och i stället fokusera på bolagens resultat och ägandet",
+            "Att börsen borde stängas ner",
+            "Att aktier inte kan köpas på börsen",
+            "Att kurser är olagliga att följa"
+          ],
+          "ratt": 0,
+          "tips": "Prisflödet under dagens drama säger inget om bolagens tioårsresultat."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "KONTROVEREN: Bogles passiva evangelium mot de aktiva",
+      "intro": "Detta är kursens obligatoriska kontroverskapitel. Å ena sidan Bogles evangelium och SPIVA-siffrorna; å andra sidan de få som faktiskt slagit index — koncentrerade värdeinvesterare som Buffett och Munger. Och mitt i dramat: AK1A:s egen spänning, eftersom vi utbildar aktiva analytiker samtidigt som vi lär ut Bogle-sanningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bogles sida är obeveklig: aritmetiken (kapitel 3) plus data. SPIVA visar 15-årsunderpresterande runt 90 procent för amerikanska large-cap-fonder; persistensmätningarna visar att toppkvartilens chans att stanna kvar i topp är knappast bättre än slantsingling; aktivt genomsnitt kostar 2–2,5 procent allt-i-ett (kapitel 2). Buffetts berömda vad 2008–2017 — indexfond på S&P 500 mot en korg av fem hedgefond-of-funds valda av Protégé Partners — slutade cirka 126 procent mot cirka 36 procent, och Buffetts val var naturligt nog indexet. Slutsatsen verkar stängd: index som baseline är ingen åsikt utan aritmetik."
+        },
+        {
+          "type": "text",
+          "content": "Aktiva sidan har dock ett verkligt försvar — och det är inte ”jag känner en duktig förvaltare”. För det första: aritmetiken säger att GENOMSNITTET underpresterar, inte att INGEN kan slå index; någon minoritet måste per definition ligga över medel. För det andra: utanför stora, hårt bevakade marknader — småbolag, mindre likvida marknader — är informations- och likviditetsbrister större, vilket historiskt lämnat mer utrymme för aktiv analys. För det tredje, och viktigast för AK1A: de som historiskt slagit index varaktigt har varit koncentrerade värdeinvesterare — Buffett, Munger, Ruane, Simpson — med gemensam metod: få positioner, köp under verkligt värde med margin of safety, lång horisont, och ett temperament som värdesätter att inte agera. Det är Buffett/Munger-kurserna på den här plattformen. Buffett formulerade själv paradoxen: diversifiering är ett skydd mot okunnighet — men för den som vet vad den gör är koncentration rationell; SAMTIDIGT som han sa att för de allra flesta är index det bästa valet, och lade därtill sitt tioåriga index-vad."
+        },
+        {
+          "type": "text",
+          "content": "Och här är AK1A:s egen spänning — vi utbildar AKTIVA analytiker (AKM1) men lär ut Bogle-sanningen att kosten äter avkastningen. Är det inte att sälja båda sidor? Det ärliga svaret: nej, för tre skäl. (1) Kompetens är värd oavsett: att kunna läsa balansräkning, värdera bolag och genomskåda marknadsföring (kapitel 6) gör dig bättre på att välja indexfond, förstå vad som ligger i index, bedöma risk och skydda dig själv — oavsett om du plockar aktier. (2) Oddsen ska vara kända: den som inte känner SPIVA-siffrorna och kostnadsaritmetiken vet inte vilket spel den spelar; kunskapen är villkoret för att alls försöka. (3) Mätbarheten: AKM1:s aktiva positioner kan och ska mätas mot index netto efter kostnad — annars är aktivismen en känsla, inte en strategi."
+        },
+        {
+          "type": "text",
+          "content": "SYNTESEN — AK1A:s Bogle-lag: index är baslinjen i portföljen, inte dess motsats. Bygg kärnan i billigt globalt index (vanligtvis större delen av portföljen). Lägg därefter — om du vill tillämpa din kunskap — en satellit av aktiva positioner valda med AKM1 (värdering, kvalitet, stabilitet, margin of safety) och med dokumenterad tes. Krav: satelliten ska vara liten nog att ett fel inte är katastrofalt och mätas årligen mot indexet. Om satelliten under tre till fem år inte slagit index netto — indexera mer och analysera mindre. Det är inte halvhjärtad kompromiss utan exakt vad Bogle-sanningen föreskriver för den som vill spela spelet ändå: ärlighet om oddsen, mätetal på utfallet, och baslinjen som domare. Buffett skulle nicka: för de flesta index — för de få med kunskap, temperament och disciplin, koncentrerat värde."
+        },
+        {
+          "type": "insikt",
+          "content": "En aktiv position är ett påstående om att du vet något marknaden missat — det ska gå att skriva på en rad, mätas mot index, och avvecklas när det visar sig falskt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din 80/20-blåkopia (procent kan variera): Kärnan — global indexfond med TER under 0,4 procent. Satelliten — maximalt tre positioner, var och en med en en-raders tes (vilken missuppskattning handlar det om?), AKM1-motivering (V04–V09, V12, V20 där relevant) och margin of safety-resonemang. Definiera avvecklingskriterier i förväg: tre år under index, eller tesen bruten. Spara dokumentet — det är ditt kontrakt med sanningen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — argument och motargument\",\"rader\":[[\"Fråga\",\"Bogles passiva sida\",\"Aktivt försvar\"],[\"Kan alla slå index?\",\"Nej — aritmetiskt omöjligt efter kostnader\",\"Aritmetiken hindrar inte att en minoritet vinner varaktigt\"],[\"Vad säger datan?\",\"SPIVA: cirka 90 % underpresterar på 15 år\",\"De som vunnit är koncentrerade värdeinvesterare — Buffett, Munger, Ruane, Simpson\"],[\"Incitament\",\"Fondbranschen tjänar på flöden, inte resultat\",\"Ägare-analytiker utan agentproblem kan agera koncentrerat\"],[\"Vad bör man göra?\",\"Index som baseline — billigt, långsiktigt\",\"Index som baseline; aktiva positioner för den med kunskap, temperament och mätning\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur slutade Buffetts tioåriga vad mot hedgefonds-korgen 2008–2017?",
+          "alternativ": [
+            "Hedgefonds-korgen vann med tiofaldig marginal",
+            "Oavgjort — båda cirka noll",
+            "Indexfonden steg cirka 126 procent mot cirka 36 procent för hedgefonds-korgen",
+            "Vadet avbröts efter ett år"
+          ],
+          "ratt": 2,
+          "tips": "Buffett valde indexet — och vann med god marginal efter avgifter."
+        },
+        {
+          "q": "Vilken gemensam metod har de få som historiskt slagit index varaktigt?",
+          "alternativ": [
+            "Hög omsättning och teknisk timing",
+            "Bred spridning över tusen aktier",
+            "Koncentrerat värde: få positioner, köp under verkligt värde med margin of safety, lång horisont",
+            "Algoritmisk handel på korta signaler"
+          ],
+          "ratt": 2,
+          "tips": "Det är stilarna du möter i Buffett- och Munger-kurserna — inte kvartalsrapporternas stjärnfonder."
+        },
+        {
+          "q": "Vad är den ärliga syntesen i AK1A:s spänning mellan aktiv utbildning och Bogle-sanningen?",
+          "alternativ": [
+            "Att index är för lata och analys är för eliten",
+            "Att man antingen indexerar eller analyserar — aldrig båda",
+            "Att Bogle-sanningen är en myt som AKM1 motbevisar",
+            "Att lära sig analys (värd oavsett), vara ärlig om oddsen, ha index som baseline och aktiva positioner som mätbar kunskaps tillämpning"
+          ],
+          "ratt": 3,
+          "tips": "Tre beståndsdelar: kompetens, oddsen, och en baslinje som dömer utfallet."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "AKM1-tillämpning — analys i en Bogle-värld",
+      "intro": "Nu blir Bogle operativ: hur används AKM1-ramverket när index är kärnan och aktivismen är satellit? Detta kapitel översätter varje Bogle-princip till specifika V-verktyg — och sätter villkoren för när en aktiv position alls är motiverad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kärnan kräver ingen fundamental analys — men den kräver en slags granskning. Fem punkter när du väljer indexfond: TER (lägre är bättre, allt annat lika), tracking difference (ditt faktiska pris), fondstorlek (tillräckligt stor för låga fixkostnader), aktieutlåning (vems vinst?) och indexkonstruktion (total market versus smalare index med färre bolag). Detta är Bogle-analysens mikronivå: ödmjuk, mekanisk, kostnadsfokuserad — och den utförs på en timme, inte en månad."
+        },
+        {
+          "type": "text",
+          "content": "Satelliten är där AKM1 levererar fullt ut. Värderingsblocket: P/S (V04), P/B (V05) och EV/EBITDA (V06) — multipeln ska stå i proportion till kvaliteten, och frågan är alltid vad som redan är inbakat (kapitel 10:s spekulativa källa). Kvalitetsblocket: bruttomarginal (V07) och EBITDA-marginal (V08) visar prissättningskraft och kostnadskontroll; ROE (V09) visar om kapitalet arbetar hållbart; intäktsstabilitet (V12) är RTM-motgiftet (kapitel 5). Moatblocket: patent och IP (V13), varumärke (V14) och nätverkseffekter (V15) förklarar varför marginerna skulle bestå. Tillväxt och katalysatorer: försäljningstillväxt (V01) och ARR-tillväxt (V02), produktlanseringar (V16), avtal och partnerskap (V17), regulatoriska katalysatorer (V18). Riskblocket: skuldsättningsgrad (V10), likviditet (V11) och kapitalförbrukning med emissionsrisk (V19) — bolaget ska klara sina planer utan att späda ut dig."
+        },
+        {
+          "type": "text",
+          "content": "Ägarvänlighet är den mest bortglömda delen — och den mest Bogleska. V20 (återköp) och utdelningspolicyn visar om ledningen returnerar kapital till ägare istället för att bygga imperium: återköp till rätt pris är skatteffektiv utdelning; återköp till överpris är värdeförstöring i aktivitetens dräkt. Bogle påminner: aktiemarknadens långsiktiga avkastning kommer från utdelningar, vinsttillväxt och — via återköp — minskat antal andelar; allt annat är omfördelning mellan handlare. En bolagsledning som agerar som ägare (kapitel 1:s struktur-tanke tillämpad på bolagsnivå) är samma fenomen som ett fondbolag som agerar som förvaltare: incitamenten avslöjar utfallet."
+        },
+        {
+          "type": "text",
+          "content": "Villkoren för satelliten — själva disciplinen: (1) Tes på en rad (vilken missuppskattning?). (2) Margin of safety — avståndet mellan pris och beräknat värde, utan fast procentsiffra: ju osäkrare estimaten, desto större marginal krävs. (3) Storlek som gör ett fel överlevbart. (4) Kostnadsdisciplin även här: courtage, spread och din tid är satellitens egen TER. (5) Ärlighetsrapporten: varje år jämförs satelliten mot indexet netto — och med tre raka förlustår mot indexet är standardsvaret att krympa satelliten. Detta gör AKM1 till ett arbetsverktyg, inte en tro."
+        },
+        {
+          "type": "insikt",
+          "content": "AKM1 gör dig inte till vinnare per automatik — det gör dig till en analytiker som vet varför du vann eller förlorade. Indexet är facit; utan facit är aktivism bara aktivitet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en aktie och kör hela listan: V04–V06 (värdering), V07–V09 (kvalitet), V10–V12 (risk och stabilitet), V13–V15 (moat där relevant), V16–V18 (katalysatorer), V19 (emissionsrisk) och V20 (återköp). Svara skriftligt: Motiverar kvaliteten multipeln? Var är margin of safety — alltså avståndet mellan pris och ditt beräknade värde? Skriv sedan ärlighetsrapporten: vad måste hända för att positionen ska slå index?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bogle-princip översatt till AKM1-verktyg\",\"rader\":[[\"Bogle-princip\",\"AKM1-verktyg\",\"Fråga du ska besvara\"],[\"Kostnad äter avkastning\",\"TER plus tracking difference\",\"Vad kostar portföljens kärna egentligen per år?\"],[\"Äga bolag, inte papper\",\"V07–V09 marginaler och ROE\",\"Tjänar bolaget pengar hållbart och kapitaleffektivt?\"],[\"Investerings- kontra spekulativ avkastning\",\"V04–V06 multipel plus V12 stabilitet\",\"Är multipeln buren av resultat — eller av förväntan?\"],[\"Reversion to the mean\",\"V07–V08 plus V12\",\"Varför ska extrema marginaler och tal bestå?\"],[\"Ägandekultur\",\"V20 återköp plus utdelning\",\"Kommer kapitalet tillbaka till ägarna — till rätt pris?\"],[\"Margin of safety\",\"Pris mot beräknat värde, utan fast nummer\",\"Hur stort är skyddet om jag har fel?\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den mest Bogleska tolkningen av V20 (återköp)?",
+          "alternativ": [
+            "Återköp är alltid värdeförstörande",
+            "Återköp till rätt pris är ägarvänlig kapitalreturn — till fel pris är det värdeförstöring i aktivitetens dräkt",
+            "Återköp har ingen koppling till ägarvärde",
+            "Återköp ska alltid föredras framför investeringar i rörelsen"
+          ],
+          "ratt": 1,
+          "tips": "Priset som återköpet sker till avgör om kapitalet kommer ägarna till godo."
+        },
+        {
+          "q": "Vilken AKM1-variabel fungerar som motgift mot reversion to the mean enligt kapitlet?",
+          "alternativ": [
+            "V12 intäktsstabilitet — intäkter som är stabila över cykler faller mindre hårt",
+            "V04 P/S — låg multipel skyddar alltid",
+            "V11 likviditet — hög likviditet stoppar RTM",
+            "V16 produktlanseringar"
+          ],
+          "ratt": 0,
+          "tips": "Det är variabeln som mäter beständighet i det som driver marginaler och multiplar."
+        },
+        {
+          "q": "Vad bör ärlighetsrapporten för satelliten innehålla enligt kapitlet?",
+          "alternativ": [
+            "En känsla av förtroende för förvaltaren",
+            "Jämförelse mot indexet netto efter kostnad — med standard att krympa satelliten efter tre raka förlustår",
+            "Endast hur många positioner som sålts med vinst",
+            "En prognos över nästa kvartal"
+          ],
+          "ratt": 1,
+          "tips": "Baslinjen är domaren — och regeln för avveckling bestäms i förväg, inte i efterhand."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "The majesty of simplicity — Stay the course",
+      "intro": "Bogles avslutning är inte en gimmick utan en arkitektur: äga marknaden, hålla kostnaden nere, stanna kvar. Detta sista kapitel sammanfattar pelarna, möter kritiken mot index — och lämnar dig med bokens två sista ord.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "I bokens jubileumsupplagor sammanfattar Bogle tolv pelare av visdom — urvalet här är kärnan: invest you must (att inte spara är det riskfyllda valet, eftersom inflationen äter obevarade pengar); time is your friend, impulse is your enemy; costs matter; buy right and hold tight; och slutpelaren: stay the course — håll kursen. Han talade om ”the majesty of simplicity”: värdigheten i det enkla. Tre beslut — andel aktier, en billig indexfond, återkommande automatiserat sparande med återbalansering — slår historiskt de flesta portföljer byggda på trettio beslut, eftersom varje extra beslut är en extra kostnad och en extra chans att agera på impuls."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighet kräver att även kritiken mot index får utrymme. Kritiker har menat att indexeringen skapar koncentration — när de största bolagen växer väger de allt tyngre i index, utan att någon aktiv investerare ens behövt välja dem (topplistans dominans i S&P 500 har under 2020-talet varit historiskt hög); att passiva ägare röstar sämre i bolagsstyrelser; och att om alla indexerar försvinner prissättningen. Bogle själv svarade att index återspeglar marknaden snarare än skapar den — men han höjde ett varnande finger när aktieandel och värderingar drivits långt, och hans sista år ägnades åt att påminna om att förväntad avkastning från höga multipler är aritmetiskt låg. Kritiken är ett skäl till vaksamhet, inte till att överge baslinjen — och ett skäl att ibland låta satelliten (kapitel 11) mäta koncentrationen med AKM1:s verktyg."
+        },
+        {
+          "type": "text",
+          "content": "Bogles eget test av rikedom formulerade han i boken Enough (2009): frågan är inte hur mycket du har, utan hur mycket som är nog — och vad pengarna är till för. Det är samma fråga din investeringspolicy (kapitel 8) ska svara på. Han dog i januari 2019; de sista orden i boken är de två han också valde som livsmotto: ”Stay the course.” — håll kursen. Inte för att marknaden alltid är snäll — den föll hälften eller mer flera gånger under hans livstid — utan för att aritmetiken belöñar den som äger billigt, brett och länge."
+        },
+        {
+          "type": "text",
+          "content": "Bogle-testet — kursens slutprov åt dig själv: Kan du förklara för en vän på fem minuter (1) varför kostnaden är den enda säkra prognosen i portföljen, (2) varför index är baslinjen som aktiv kompetens mäts mot, och (3) vilka villkor som måste gälla för dina aktiva positioner? Kan du det — och har du din policy på ett A4 — har du fått ut av denna bok det Bogle avsåg: inte en metod att slå marknaden, utan ett sätt att inte bli slagen av den. Sedan: stay the course."
+        },
+        {
+          "type": "insikt",
+          "content": "Enkelhet är inte fromhet hos Bogle — det är aritmetik. Ju färre rörelser, ju lägre kostnad, ju längre tid: desto mer av marknadens avkastning når dig."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din investeringspolicy på ett A4: aktieandel med motivering, kärnans indexfonder med TER, satellitregler (max antal positioner, tes-krav, ärlighetsrapport), rebalanseringsband, kraschprotokoll vid minus 35 procent. Datera, signera och läs högt för någon. Läs om dokumentet en gång om året — det är ditt Stay the course på papper."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bogles pelare — urval med praktisk översättning\",\"rader\":[[\"Pelare (Bogle)\",\"Praktisk översättning\"],[\"Invest you must\",\"Att inte spara är det riskfyllda valet — inflationen äter obevarade pengar\"],[\"Time is your friend; impulse is your enemy\",\"Automatisera månadssparande; protokoll före kraschen\"],[\"Costs matter\",\"Allt-i-ett-kostnaden är portföljens säkraste prognos\"],[\"Buy right and hold tight\",\"Köp billigt, brett och rätt — och behåll genom svängningarna\"],[\"Stay the course\",\"Skriftlig policy som hålls — särskilt när det gör ont\"]]}"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Bogle med ”the majesty of simplicity”?",
+          "alternativ": [
+            "Att enkelt alltid är fult men nödvändigt",
+            "Att enkelhetens värdighet ligger i att varje extra beslut är en extra kostnad och en extra impulsmöjlighet",
+            "Att komplex analys är den enda vägen",
+            "Att indexfonder är enkla att lura"
+          ],
+          "ratt": 1,
+          "tips": "Få beslut med låg kostnad slår historiskt många beslut med hög kostnad."
+        },
+        {
+          "q": "Hur förhåller sig Bogle till kritiken att index skapar koncentration i de största bolagen?",
+          "alternativ": [
+            "Han förnekade att koncentration överhuvudtaget kan förekomma",
+            "Han menade att index återspeglar marknaden snarare än skapar den — men varnade själva när värderingar drivits långt",
+            "Han ansåg att kritikerna skulle indexera ännu mer",
+            "Han bytte sida och blev aktiv förvaltare"
+          ],
+          "ratt": 1,
+          "tips": "Svaret kombinerar respekt för mekaniken med vaksamhet på värderingar."
+        },
+        {
+          "q": "Vad är Bogle-testet som kursens slutprov?",
+          "alternativ": [
+            "Att slå index tre år i rad",
+            "Att kunna förklara kostnadsaritmetiken, index som baslinje och villkoren för aktiva positioner — samt ha sin policy skriven",
+            "Att minnas alla tolv pelarformuleringar ordagrant",
+            "Att räkna ut tracking difference i huvudet"
+          ],
+          "ratt": 1,
+          "tips": "Målet är inte en metod att slå marknaden — utan att inte bli slagen av den."
+        }
+      ]
+    }
+  ]
+}

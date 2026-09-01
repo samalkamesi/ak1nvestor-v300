@@ -1,0 +1,906 @@
+{
+ "slug": "the-money-game",
+ "category": "BOKMASTER",
+ "weight": "KRITISK",
+ "chapterCount": 12,
+ "totalMinutes": 130,
+ "title": "The Money Game — Adam Smith: KOMPLETT",
+ "summary": "George J. W. Goodman — under pseudonymen Adam Smith — publicerade The Money Game 1968 och skrev finansjournalistikens klassiker om vad börsen egentligen är: ett spel som spelas med pengar men om identitet. Poor Grenvilles ångest, Scarsdale Fats lunchbord, Charleys eviga timing-fel och go-go-Kidsens performance-race är samma diagnos 2026 som 1968. AK1A läser boken som plattformens psykologiska grundurkund: spelet är på riktigt — och just därför måste verktygen vara rationella.",
+ "minutes": 10,
+ "xp": 1800,
+ "level": "",
+ "learn": "Efter kursen kan eleven redogöra för The Money Games kärna: bokens tes att börsen är ett spel som spelas mot dig själv — 'you are trying to beat yourself' — och varför 'If you don't know who you are, the stock market is an expensive place to find out'; identifikationen med positionen och motgiftet 'the stock doesn't know you own it'; karaktärsgalleriet från Poor Grenvilles ångestfyllda telefonsamtal till Scarsdale Fats lunchbord och Charleys marknadsbrev; informationsspelet och varför tipset redan är prissatt; timing-fällan i Charley mot Kidsen; tekniker mot fundamentalister och AK1A:s tredje väg; förväntningarnas ekonomi via Keynes skönhetstävling och multiplar som förväntningsmätare; go-go-erans performance-race och konglomeratens aritmetik; fondförvaltarens karriärrisk; frågan om tillräckligt och Marginal of safety; samt den obligatoriska kontroversen — Institutionens allvar mot spelets sanning och AK1A-syntesen där Kahneman- och Munger-kurserna möter AKM1:s V-variabler, från V01 Försäljningstillväxt, V03 Intäktsdiversifiering och V04 P/S till V12 Intäktsstabilitet, V18 Regulatoriska katalysatorer och V19 Kapitalförbrukning & Emission-risk — som det rationella svaret på ett psykologiskt spel.",
+ "why": "Ingen bok fångar bättre varför en analysmodell ens behövs. Goodman skrev med humor det Kahneman senare bevisade i laboratoriet: marknaden drivs av identitet, ångest och socialt bevis — inte av kalkylblad. Han skrev det också på toppen av go-go-eran, och allt han skrattade åt kollapsade inom två år, vilket gör boken till både spegel och varning. För AK1A är The Money Game grunddiagnosen: spelet är psykologiskt, verktygen måste vara rationella — därför existerar AKM1. Eleven som läst denna kurs läser alla andra kurser i plattformen med ett par extra ögon: den som förstår spelet ser också varför strukturen behövs.",
+ "chapters_list": [
+  "1. Spelet och mannen bakom Adam Smith",
+  "2. Identiteten — en dyr plats att lära känna sig själv",
+  "3. Poor Grenville — ångesten som förvaltar kapitalet",
+  "4. Scarsdale Fats beställer lunch — informationsspelet",
+  "5. Charley och Kidsen — timingens eviga nederlag",
+  "6. Teknikerna mot fundamentalisterna",
+  "7. Förväntningarnas ekonomi — Keynes tävling och crowden",
+  "8. Go-go! Performance-racet och konglomeratens aritmetik",
+  "9. Förvaltarens jag — karriärrisk, bonus och storlek",
+  "10. Tillräckligt — Marginal of safety och spelets verkliga vinst",
+  "11. Kontroversen — Institutionens allvar mot spelets sanning",
+  "12. Slutspelet — 1968, Supermoney och AKM1:s svar"
+ ],
+ "chapters": [
+  {
+   "num": 1,
+   "minutes": 10,
+   "title": "Spelet och mannen bakom Adam Smith",
+   "intro": "1968, mitt under go-go-erans toppår, publicerar en finansjournalist under pseudonymen Adam Smith en bok som blir etta på bestsellerlistorna och stannar där i över ett år. Mannen heter George Goodman och boken heter The Money Game. Tesen är enkel och explosiv: börsen är ett spel — spelat med pengar, men om identitet.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "George J. W. Goodman — Rhodes-stipendiat, essäist och en av grundarna bakom tidningen Institutional Investor — valde pseudonymen 'Adam Smith' som en blinkning till nationalekonomen bakom The Wealth of Nations. Skämtet var på fullt allvar: boken skulle beskriva marknaden med samma systematik som 1776, men med reporterns öga och satirikerns penna. The Money Game (1968) blev en enorm framgång: nummer ett på New York Times bestsellerlista, översatt till en lång rad språk, läst av fondförvaltare och nybörjare på samma gång. Goodman skrev senare uppföljaren Supermoney (1972), men The Money Game förblev hans signum — finansjournalistikens klassiker om spelet och spelarna."
+    },
+    {
+     "type": "text",
+     "content": "Bokens tes. Goodman öppnar inte med balansräkningar utan med en fråga av typen: vad spelar du för? Svetet 'pengarna' godtas inte — 'money is just a way of keeping score', pengarna är bara sättet att räkna poäng på. Spelet spelas om verkliga insatser: identitet, status, spänning och rätten att ha haft rätt. Det är därför titeln lyder The Money Game — spelet om pengarna — och det är därför Goodman kan skratta åt sina figurer utan att förakta dem. Han tecknar marknadens män (det var nästan bara män 1968) med en värme och ironi som gör att Poor Grenville, Scarsdale Fats och Charley lever kvar som arketyper mer än ett halvsekel senare."
+    },
+    {
+     "type": "text",
+     "content": "1968-kontexten. Boken skrevs vid toppen av efterkrigstidens första stora glödkittel: go-go-fonderna jagade momentum, konglomeraten byggde imperier genom uppköp, och 'performance' — kvartalets avkastningstabell — hade blivit branschens nya gud. Dow Jones nuddade 1 000-gränsen i december 1968; inom arton månader hade go-go-eran kollapsat och boken framstod i efterhand som en fälld beskrivning av ett system på väg att rasa. Goodman skrev ingen lärobok i värdeinvestering — han skrev en reportagebok inifrån spelhålan, med humor som både spegel och vapen. Just därför håller den: cyklerna byter teknik men behåller spelare."
+    },
+    {
+     "type": "text",
+     "content": "För AK1A är The Money Game psykologispårets grundurkund. Poängen är logisk: om marknaden vore en aritmetikuppgift behövdes ingen modell — en miniräknare räckte. Att en checklista som AKM1 med sina tjugo V-variabler överhuvudtaget behövs är Goodmans poäng i praktiken: spelare som inte vet vad de spelar om förlorar åt dem som vet. Notera redan nu att varje AKM1-variabel, från V01 Försäljningstillväxt till V20 Återköp, är ett försök att flytta uppmärksamheten från jaget till bolaget — från spelet till verksamheten. Det är hela kursens röda tråd."
+    },
+    {
+     "type": "insikt",
+     "content": "Goodmans första och viktigaste fynd: frågan 'vad spelar du för?' föregår alla tekniska frågor. Den som inte kan svara spelar inte sina egna matcher utan andras — och betalar avgiften till dem som kan svara. Pengar är score, inte syfte; den som glömmer det har redan tappat kontrollen över spelet."
+    },
+    {
+     "type": "utmaning",
+     "content": "Skriv ner i tre rader: (1) Vad vill du få ut av din kapitalförvaltning — avkastning, trygghet, spänning, status? (2) Hur mäter du om du är på väg dit? (3) Vad skulle få dig att sluta? Goodman ställde frågan 1968. Den som aldrig ställt den till sig själv har ingen resultattavla alls — bara oro."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Boken på en minut — The Money Game 1968\",\"rader\":[[\"Del\",\"Innehåll\",\"AK1A-länk\"],[\"Författaren\",\"George Goodman, pseudonymen Adam Smith\",\"Finansjournalistikens klassiker\"],[\"Tes\",\"Börsen är ett spel — pengar är poäng\",\"Psykologin före verktyget\"],[\"Karaktärer\",\"Poor Grenville, Scarsdale Fats, Charley, Kidsen\",\"Arketyper du möter i dig själv\"],[\"Kontext\",\"Go-go-era, konglomerat, performance-race\",\"1968 som varning för 2026\"],[\"Efterspel\",\"Supermoney (1972), Buffett-porträttet\",\"Från spel till förvaltarskap\"],[\"AK1A-läsning\",\"Diagnos bakom hela modellen\",\"AKM1:s V01–V20 som motgift\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "skala"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Varför valde George Goodman att skriva under pseudonymen Adam Smith?",
+     "alternativ": [
+      "Han var under utredning av SEC och behövde skydda sitt namn",
+      "Som en blinkning till nationalekonomen bakom The Wealth of Nations — ett skämt med marknadens egen vetenskap",
+      "Hans förläggare krävde en engelskt klingande pseudonym",
+      "Namnet var arv efter hans far som också var finansskribent"
+     ],
+     "ratt": 1,
+     "tips": "Pseudonymen är ett skämt med en poäng — vem lade grunden för nationalekonomin?"
+    },
+    {
+     "q": "Vad menar Goodman med att pengar bara är 'a way of keeping score'?",
+     "alternativ": [
+      "Att pengar saknar verkligt värde och att guld är enda riktiga valuta",
+      "Att börsens verkliga insatser är psykologiska — identitet, status, rätten att ha rätt — medan pengarna bara räknar poäng",
+      "Att man bör träna aktiespel med låtsaspengar innan man skjuter in riktiga",
+      "Att avkastning inte går att mäta objektivt"
+     ],
+     "ratt": 2,
+     "tips": "Fråga dig vad som driver en redan rik förvaltare att fortsätta spela."
+    },
+    {
+     "q": "Vilken roll spelar 1968-kontexten för hur boken ska läsas?",
+     "alternativ": [
+      "Boken skrevs vid go-go-erans topp — och det den skrattar åt kollapsade inom några år",
+      "Boken skrevs i en björnmarknad och är därför skriven i ren försvarsmodus",
+      "1968 spelar ingen roll — boken behandlar enbart mellankrigstidens aktiemarknad",
+      "Boken skrevs som direkt svar på 1929 års krasch"
+     ],
+     "ratt": 0,
+     "tips": "Timing är ironisk även för böcker — var i cykeln publicerades den?"
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "minutes": 10,
+   "title": "Identiteten — en dyr plats att lära känna sig själv",
+   "intro": "Bokens första stora part handlar inte om aktier utan om den som äger dem. Goodmans berömda diagnos lyder: 'If you don't know who you are, the stock market is an expensive place to find out.' I detta kapitel läser vi identifikationen med positionen — och motgiftet 'the stock doesn't know you own it'.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Goodman lät boken börja med identitet eftersom det är spelets första villkor. En aktieposition är aldrig neutral information — den blir en förlängning av jaget. När aktien stiger är du smart; när den faller är det personligt. Köp och försäljning blir därmed inte beslut om bolag utan beslut om självbild, och självbilden försvaras med samma envishet som en belägrad stad. Goodman kallar detta för identifikation: investeraren identifierar sig med sin position, och varje attack på aktien upplevs som en attack på investeraren. Terapin är dyr — börsen tar betalt per lektion, och kursen sätts av marknaden, inte av eleven."
+    },
+    {
+     "type": "text",
+     "content": "Identifikationens mekanik har tre former. Första: identifiering med inköpspriset — priset blir ett minne och en gräns, som om marknaden visste vad du en gång betalade. Andra: identifiering med tesen — att överge en tes känns som att överge sig själv, därför genomsnittas förlorare ner i all evighet med motiveringen att 'det är ju en bra aktie'. Tredje: identifiering med bolaget — kärlek till produkten ersätter analys av siffrorna. Goodmans motgift står att läsa i boken och är värt att memorera: 'The stock doesn't know you own it.' Aktien vet inte att du äger den. Den bryr sig inte om ditt inköpspris, din tes eller din historia. Sårad stolthet är därför den dyraste av alla känslor i en portfölj — den är helt och hållet egenproducerad."
+    },
+    {
+     "type": "text",
+     "content": "Hos fondförvaltaren förstärks allt. Prestationen mäts offentligt kvartalsvis, nästa bonus och nästa jobb hänger på tabellen, och förvaltarens jag smälter samman med fondens kurva. Därför rusar förvaltaren in i det som redan stigit — att sakna årets vinnaraktie är en identitetsskada, inte bara en avkastningsförlust — och backar för sent i det som faller, för att sälja är att signera ett fel. Goodman såg detta på nära håll 1968 och hans porträtt gäller lika fullt i alla performance-kulturer: där resultat är självbild blir besluten självförsvar."
+    },
+    {
+     "type": "text",
+     "content": "Här ligger den djupaste motiveringen bakom AKM1:s struktur. Variablerna V01–V20 är externaliserade ankare: en checklista som frågar efter V07 Bruttomarginal, V09 ROE och V12 Intäktsstabilitet flyttar samtalet från 'vad säger detta om mig' till 'vad säger siffrorna om bolaget'. Marginal of safety — som i AKM1:s värld är en hållning utan nummer, inte en variabel — ger dessutom ett språk för att ha fel på förhand: om inköpspriset redan innehåller en rabatt kan ett misstag överlevas utan att egot kollapsar. Strukturen är alltså inte byrokrati — den är identitetsskydd."
+    },
+    {
+     "type": "insikt",
+     "content": "Fråga inte bara 'är detta en bra aktie' utan 'vad i mig gör att jag vill äga den just nu'. Goodman: den som inte skiljer på position och identitet kommer förr eller senare att betala för insikten — börsen är en dyr plats att lära känna sig själv, och terminsräkningen skickas alltid."
+    },
+    {
+     "type": "utmaning",
+     "content": "Välj din största position. Skriv tre meningar om bolaget utan att använda orden 'jag', 'min' eller 'köpte'. Skriv därefter tre meningar om varför du behåller den — och räkna hur många som handlar om bolaget och hur många som handlar om dig. Andelen som handlar om dig är din identifikationsgrad: Goodmans första och mest obehagliga mått."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Identifikationens tre former — och botemedlet\",\"rader\":[[\"Form\",\"Yttring\",\"Botemedel i AKM1\"],[\"Priset\",\"'Jag kan inte sälja under inköpspriset'\",\"V04 P/S och V06 EV/EBITDA mot grundläget — priset är data, inte minne\"],[\"Tesen\",\"'Jag har rätt, marknaden har fel'\",\"Omtest av V01 Försäljningstillväxt och V08 EBITDA-marginal — lever tesen fortfarande?\"],[\"Bolaget\",\"'Det är en fin aktie' (kärlek)\",\"Kall V12 Intäktsstabilitet och V10 Skuldsättningsgrad — känsla är ingen kassaflödesmodell\"],[\"Självbilden\",\"Positionen som spegel av jaget\",\"Logg och checklista — beslutet ska överleva att du byter humör\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "radar"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad betyder citatet 'the stock doesn't know you own it'?",
+     "alternativ": [
+      "Att aktier saknar registrerad ägare i depån fram till avräkning",
+      "Att aktiesidor visar priser för alla utom den som äger aktien",
+      "Att aktien är likgiltig för ditt inköpspris, din tes och dina känslor — sårade känslor är ett dåligt beslutsunderlag",
+      "Att bolaget inte känner till sina aktieägare och därför inte betalar utdelning"
+     ],
+     "ratt": 2,
+     "tips": "Vad i din position existerar objektivt för marknaden — och vad existerar bara i ditt huvud?"
+    },
+    {
+     "q": "Varför inleder Goodman boken med identitet snarare än med analys?",
+     "alternativ": [
+      "Därför att spelare som inte känner sina drivkrafter tappar kontrollen över besluten innan någon analys hinner spela roll",
+      "Därför att identitetsfrågor var en modeström inom förlagsvärlden 1968",
+      "Därför att boken ursprungligen var en självhjälpsbok somomstöptes till finanslitteratur",
+      "Därför att Goodman saknade ekonomutbildning och inte kunde skriva om analys"
+     ],
+     "ratt": 0,
+      "tips": "Vad kommer först i orsaksordning — felaktiga beräkningar eller felaktiga motiv?"
+    },
+    {
+     "q": "Hur fungerar AKM1-variablerna som motgift mot identifikation?",
+     "alternativ": [
+      "De ersätter all fundament analys med tekniska signaler",
+      "De lovar högre avkastning om man följer checklistan troget",
+      "De mäter investerarens känsloläge och ger varningar vid stress",
+      "De flyttar uppmärksamheten från jaget till bolagets mätbara verklighet — siffrorna känner ingen stolthet"
+     ],
+     "ratt": 3,
+     "tips": "Vem eller vad står i centrum för frågan 'hur är bruttomarginalen'?"
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "minutes": 10,
+   "title": "Poor Grenville — ångesten som förvaltar kapitalet",
+   "intro": "I kapitlet 'Poor Grenville's Capital' tecknar Goodman arketypen för rädsla och ångest: en rik man med allt utom ro. Grenville ringer och ringer; frågan är alltid densamma och svaret kan aldrig bli rätt. Här analyserar vi ångesten som portföljförvaltare — och vad som faktiskt lugnar den.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Scenen återkommer genom boken. Grenville ringer efter en uppgång: är det för sent att komma in, han har ju missat hela rörelsen — rädslan att hamna på efterkälken biter. Grenville ringer efter en nedgång: ska han sälja nu innan det blir värre — rädslan att förlora biter hårdare. Han köper högt och säljer lågt, inte av dumhet utan av ångest, och Goodman skildrar honom med öm humor: Grenville har kapital nog för flera liv och oron för samtliga. Hans telefonsamtal är kurslistan i ljudformat — varje samtal dokumenterar exakt var marknadens humör befinner sig, för humöret är hans."
+    },
+    {
+     "type": "text",
+     "content": "Mekanismen är värd att ta på fullt allvar, för den är Grenvilles verkliga problem: han söker visshet. Han vill att någon — mäklaren, vännen, marknaden själv — ska bekräfta att allt kommer att gå bra. Men marknaden säljer priser, inte garantier, och därför kan inget svar stilla frågan; ångesten flyttar bara till nästa telefonsamtal. Modern beteendepsykologi, som AK1A:s Kahneman-kurs redogör för, ger fenomenet namn: förlustaversion gör att förluster gör dubbelt så ont som vinster gör gott, och under osäkerhet vänder rörligheten inåt. Grenville är inte ett karikatyrporträtt — han är en mycket noggrant observerad människa."
+    },
+    {
+     "type": "text",
+     "content": "AK1A-läxan är att ångest inte botas med mod utan med struktur. Bolagets lugn mäts i AKM1:s V11 Likviditet och V10 Skuldsättningsgrad — kan verksamheten gå i vila genom en recession? Ägarens lugn mäts framför allt av V12 Intäktsstabilitet: en intäktsbas som inte sviktar gör det möjligt att behålla en position genom det som får Grenville att ringa. Positionens storlek gör resten — den som är rätt stor i förhållande till sitt kapital kan tillåta sig att inte veta vad marknaden gör imorgon. Det är inte feghet; det är att konstruera portföljen så att ångesten aldrig får förvaltningsmandat."
+    },
+    {
+     "type": "insikt",
+     "content": "Grenville-lärdomen: den som vill ha visshet får den aldrig av marknaden. Vad du kan få är en process som tål osäkerhet. Du kan inte bestämma över dina känslor, men du kan bestämma i förväg vad de får bestämma över — det är hela skillnaden mellan att ha en modell och att ha ett humör."
+    },
+    {
+     "type": "utmaning",
+     "content": "Känn igen din egen Grenville. Dokumentera varje tillfälle de senaste tre månaderna då du velat köpa 'för att den stigit' eller sälja 'för att den fallit'. Skriv vid varje tillfälle vilken information — inte känsla — som fanns. Om listan blir lång har du kartlagt var din ångest handlar. Lägg därtill en AKM1-spärr: ingen transaktion utan att en variabel (till exempel V12 Intäktsstabilitet eller V11 Likviditet) ändrats värde."
+    },
+    {
+     "type": "visuell",
+     "content": "cykel"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad kännetecknar Poor Grenville i boken?",
+     "alternativ": [
+      "En rik, ångestfylld investerare som ringer ständigt och alltid agerar efter att marknaden redan rört sig",
+      "En ung fondförvaltare som Jagar kvartalsprestanda utan riskkontroll",
+      "En chartist som läser formationer i diagrammen åt rika kunder",
+      "En gammal bankman som vägrar lämna sina statsobligationer"
+     ],
+     "ratt": 0,
+     "tips": "Titta på telefonen — vem ringer och vad har hänt på marknaden just då?"
+    },
+    {
+     "q": "Varför kan inget svar från marknaden lugna Grenville?",
+     "alternativ": [
+      "Därför att hans mäklare systematiskt ger honom fel råd",
+      "Därför att han söker visshet — och marknaden erbjuder bara priser, inga garantier; ångesten flyttar till nästa fråga",
+      "Därför att han saknar kapital att agera med",
+      "Därför att han aldrig får någon information alls om sina innehav"
+     ],
+     "ratt": 2,
+     "tips": "Vilken vara säljer marknaden egentligen — priser eller löften?"
+    },
+    {
+     "q": "Vilken AKM1-variabel fungerar mest direkt som lugn-variabel för ägaren med Grenville-tendenser?",
+     "alternativ": [
+      "V16 Produktlanseringer",
+      "V15 Nätverkseffekter",
+      "V04 P/S",
+      "V12 Intäktsstabilitet"
+     ],
+     "ratt": 3,
+     "tips": "Vad gör att en position kan hållas genom svängningar utan att telefonen används?"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "minutes": 10,
+   "title": "Scarsdale Fats beställer lunch — informationsspelet",
+   "intro": "'Scarsdale Fats Orders Lunch' är bokens mest kärleksfulla porträtt: ett lunchbord som är marknadens verkliga börs — inte för aktier, utan för information. I detta kapitel läser vi informationsspelet, varför tipset redan är prissatt, och vad lunchbordet heter år 2026.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Scarsdale Fats leder Wall Streets viktigaste lunchbord. Han har gjort sina pengar, han behöver inte marknaden, och därför äger han rummet: mäklare, förvaltare och analytiker kommer till honom för att få sitta vid bordet. Där kokas veckans konventionella visdom — vilka som är inne, vilka som är ute, vad alla 'vet'. Goodman förstår att detta bord är marknadens sociala motor: kurser flyttas inte bara av rapporter utan av berättelser som formas, testas och sprids mellan män med chopstick... nej, med bestick i handen. Scarsdale-bordet är informationsprisets födelserum: det är här som skvaller blir konsensus och konsensus blir kurs."
+    },
+    {
+     "type": "text",
+     "content": "Informationsspelets logik är obeveklig. När ett tips når dig har bordet redan handlat — priset är konsensus av allt som sagts vid alla bord. Att köpa på goda nyheter man hör andra viska om är därför att köpa gammal konsensus till nytt pris. Goodmans ironi är dubbelp botad: de bästa spelarna vet detta mycket väl, och därför spelar de informationsspelet medan de låtsas att den egna informationen är färsk. De lever på att det ständigt anländer nya gäster till bordet — generation efter generation som tror att skvallret är edge. 1968 hette bordet Scarsdale; logiken har inget annat namn än mänsklig natur."
+    },
+    {
+     "type": "text",
+     "content": "AK1A:s skiljelinje är mellan nyhet och fundament. Katalysator-nyheterna — V16 Produktlanseringar, V17 Avtal & Partnerskap och V18 Regulatoriska katalysatorer — är triggers: de kan förskjuta en fundamental tes och ska därför testas mot den, aldrig bli positioner själva. Basen är AKM1:s fundament: V01 Försäljningstillväxt, V07 Bruttomarginal, V09 ROE och resten av variablerna som mäter vad verksamheten faktiskt levererar. En nyhet utan bas är bara skvaller med ticker; en bas utan trigger är tålamod utan kalender. Goodman visar varför första benet aldrig räcker — och AK1TS visar varför det andra behövs."
+    },
+    {
+     "type": "text",
+     "content": "Notera också detaljen som gör kapitlet rörande: Fats själv spelar inte om pengarna längre. Han äger sitt bord därför att han har nog. Den som ser spelet klarast sitter ofta utanför tvånget att spela — ett av bokens tystaste budskap, som kapitel 10 återkommer till i frågan om vad tillräckligt är. Lunchbordet är dessutom evigt: 2026 heter det sociala medier, chattkanaler och videoflöden, men gästerna är desamma och skvallret säljs fortfarande som alfa."
+    },
+    {
+     "type": "insikt",
+     "content": "Priset är lunchbordets anteckningsblock: allt bordet sagt är redan inpriset. Din edge ligger aldrig i informationen du delar med bordet — bara i vad du gör med det som bordet är för otåligt för: att räkna på fundamenten och vänta."
+    },
+    {
+     "type": "utmaning",
+     "content": "Ta tre nyheter du reagerat på den senaste månaden. Klassifiera varje: (a) lunchbordsskvaller — redan i priset, (b) trigger — ändrar faktiskt en AKM1-variabel, till exempel V16 Produktlanseringar eller V17 Avtal & Partnerskap, (c) brus. Räkna kvoten. Goodman skulle gissa att (a) dominerar — stämde det? Skriv därefter en regel för dig själv: ingen position utan namngiven variabel som förändrats."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Från Fats bord till din mobil — informationens värde\",\"rader\":[[\"Information\",\"Vad den är värd\",\"AK1A-hantering\"],[\"Skvaller vid bordet\",\"Redan prissatt — du är sen\",\"Ingen position på grund av skvaller\"],[\"Tips från mäklare/kollegor\",\"Bordets gamla konsensus\",\"Fråga: vilken V-variabel har ändrats?\"],[\"Kvartalsrapport\",\"Ny fundamental data\",\"Uppdatera V01–V12 i modellen\"],[\"Katalysator (V16/V17/V18)\",\"Kan förskjuta tesen\",\"Trigger i AK1TS — med bas först\"],[\"Eget räkneverk\",\"Det enda bordet saknar\",\"Din faktiska edge\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "bro"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är Scarsdale Fats lunchbord i boken?",
+     "alternativ": [
+      "En restaurang där börsens maklarhus håller sina årsstämmor",
+      "En matlagningsklubb för traders som byter recept på tekniska formationer",
+      "Marknadens sociala mittpunkt där konventionell visdom och skvaller kokas och sprids",
+      "En bankförenings representationslokal för utdelningsbeslut"
+     ],
+     "ratt": 2,
+     "tips": "Vad samlas där för vara — mat, eller något betydligt mer handlingsbart?"
+    },
+    {
+     "q": "Vad händer i regel med ett tips när det når dig?",
+     "alternativ": [
+      "Det är i princip redan prissatt — alla vid bordet har hunnit handla före dig",
+      "Det ger automatiskt avkastning inom tre handelsdagar",
+      "Det är olagligt att handla på och ska rapporteras",
+      "Det gäller bara obligationsmarknaden"
+     ],
+     "ratt": 0,
+      "tips": "Hur många människor har hört det innan dig — och vad har de redan gjort?"
+    },
+    {
+     "q": "Hur hanterar AK1A nyheter enligt kursen?",
+     "alternativ": [
+      "Alla nyheter ska omedelbart bli positioner",
+      "Nyheter är triggers — de ska testas mot fundamentet i AKM1:s V-variabler, aldrig bli positioner själva",
+      "Nyheter ska alltid ignoreras eftersom marknaden är slumpmässig",
+      "Nyheter värderas enbart med teknisk analys"
+     ],
+     "ratt": 1,
+      "tips": "Vad är ett larm utan underlag — och vad ska underlaget heta i AK1A?"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "minutes": 10,
+   "title": "Charley och Kidsen — timingens eviga nederlag",
+   "intro": "Charley skriver marknadsbrev med elegans och övertygelse: han förutspår korrigeringsben, toppar och krascher — och har alltid en förklaring när inget av det inträffar. Goodman ställer den evige varnaren mot de unga go-go-förvaltarna, Kidsen, och levererar bokens bästa lektion om timing.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Charley är en av Goodmans bästa skapelser: begåvad, inläst och oerhört välformulerad. Hans marknadsbrev förutsäger börsens kommande korrigeringsben och stora krasch med samma skärpa år efter år — och medan han väntar på att få rätt stiger marknaden. Mot honom sätter Goodman Kidsen, de unga performance-förvaltare som inte analyserar utan deltar: de rider momentum och vinner, år ut och år in, tills modellen vänder. Goodmans poäng är illvilligt dubbelp: Charley har alltid fel i sitt utfall och alltid rätt i sina förklaringar — efteråt. En marknadssyn är ingen position; den som predikar istället för att handla med regler står bara vid bordet och talar."
+    },
+    {
+     "type": "text",
+     "content": "Varför låser timing-försök så många? Charley söker det stora sammanhanget — den stora kraschen — och missar därför allt som händer däremellan. Hans analys är en berättelse som låter förträfflig vid middagsbordet, men den är inte handlingsbar: den innehåller inget villkor som talar om när han har fel, ingen storlek, ingen exit. Rätt om riktning men fel om tidpunkt är fortfarande en förlust — det är Livermores gamla läxa i Reminiscences-kursen, och Goodman visar dess sociala form: martyren som hellre förklarar än vinner. Kidsen är spegelbilden: de har timing utan analys och dör när musiken tystnar. Två diken, samma vägsträcka."
+    },
+    {
+     "type": "text",
+     "content": "AK1A:s timing-svar heter AK1TS: timing erkänns — men bara som trigger med bas och konfluens, aldrig som marknadssyn. Och fundamentet som gör 'time in the market' uthärdligt heter V12 Intäktsstabilitet: den som äger en intäktsbas som inte svikter, en balansräkning som håller (V10 Skuldsättningsgrad, V11 Likviditet), kan tillåta sig att vara exponerad genom svängningarna utan Charleys panik. Räntan-på-ränta-logiken gör resten åt honom: de bästa dagarna kommer i klungor precis runt de värsta, och den som står utanför i väntan på kraschen betalar för sitt voyereri. Charley hade rätt en gång, så småningom — efter att ha missat allt som betalade."
+    },
+    {
+     "type": "insikt",
+     "content": "Charleys fel är inte att han analyserar fel utan att han ersätter position med predikan. En marknadssyn är ingen position; en position är bas plus trigger plus storlek. Saknar du trigger står du bara vid bordet och talar — vältaligt, övertygande och fattigare för varje år."
+    },
+    {
+     "type": "utmaning",
+     "content": "Skriv ner din nuvarande marknadssyn i en mening. Granska den: är den handlingsbar — finns en bas i AKM1 (V-variabler) och en trigger i AK1TS kopplad till den? Om inte har du skrivit ett Charley-brev. Omformulera enligt mallen: 'Jag äger X därför att variablerna A, B, C håller måttet; jag agerar om villkor Y inträffar.' Spara formuleringen och använd den vid nästa åtstramning."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Charley mot Kidsen — timingens två diken\",\"rader\":[[\"Spelare\",\"Strategi\",\"Utfall\",\"AK1A-läxa\"],[\"Charley\",\"Ständigt varnad för kraschen\",\"Missar årsvisa uppgångar\",\"Marknadssyn är ingen position\"],[\"Kidsen\",\"Momentum utan ankare\",\"Vinner tills modellen dör\",\"Utan bas blir trigger hasard\"],[\"Båda\",\"Söker ha rätt\",\"Förklarar i efterhand\",\"Villkor som visar när man har fel\"],[\"AK1TS\",\"Bas + trigger + konfluens\",\"Tål att vara fel i tid, rätt i sak\",\"Timing med regler, inte med ryggmärg\"],[\"Fundamentet\",\"V12 Intäktsstabilitet + V10/V11\",\"Uthållighet genom svängningar\",\"Stabilitet gör 'time in the market' möjlig\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "compound"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är Charleys främsta kännetecken i boken?",
+     "alternativ": [
+      "En ständigt försiktig marknadskommentator med vackra förklaringar som missar rallyna han varnar för",
+      "En teknisk analytiker som programmerar de första datoriserade signalsystemen",
+      "En arbitragör som handlar mellan New York och Chicago",
+      "En centralbanksman som styr räntan med marknadsbrev"
+     ],
+     "ratt": 0,
+      "tips": "Han är alltid rätt — i efterhand. Vad gör han aldrig?"
+    },
+    {
+     "q": "Vad är bokens dubbelpoäng med Kidsen som motvikt till Charley?",
+     "alternativ": [
+      "Att ungdom alltid slår erfarenhet på börsen",
+      "Att teknisk analys är överlägsen fundamental analys",
+      "Att Kidsen bevisar att Charley hade rätt hela tiden",
+      "Att motsatsen till Charley ingen strategi heller är — Kidsen vinner på momentum tills modellen vänder; båda spelar utan fundament"
+     ],
+     "ratt": 3,
+      "tips": "Ett dik på var sida om vägen — vad saknar båda för att komma fram?"
+    },
+    {
+     "q": "Vad säger compound-logiken om kostnaden för att stå utanför marknaden i väntan på kraschen?",
+     "alternativ": [
+      "Ingenting — avkastningen fördelas jämnt över alla handelsdagar",
+      "De mest lönsamma dagerna kommer i klungor nära de sämsta; den som väntar på nedgången missar dem",
+      "Att utfallet är detsamma eftersom krascher äter upp all avkastning",
+      "Atttiming bara fungerar med små belopp"
+     ],
+     "ratt": 1,
+      "tips": "Kalendern är inte grym — den koncentrerar belöningarna till mycket få dagar."
+    }
+   ]
+  },
+  {
+   "num": 6,
+   "minutes": 10,
+   "title": "Teknikerna mot fundamentalisterna",
+   "intro": "Goodman skildrar kriget mellan diagrammet och balansräkningen med samma tvivel om båda lägren. Teknikerna läser formationer som om priserna talade; fundamentalisterna räknar som om priset vore en detalj. I detta kapitel läser vi skolorna — och AK1A:s tredje väg.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Goodman möter teknikerna med fascination och skepsis i samma penna. Hos dem finns formationer, trender, stöd och motstånd — mönster som ser meningsfulla ut och som ibland fungerar, åtminstone tillräckligt länge för att nästa formation ska tecknas. Hans ironi är mjuk men effektiv: diagrammen ger vackra berättelser om det som hänt, men de ger inget att hålla i när mönstret bryts. Vad säger ett brutet stöd om bolagets värde? Ingenting. Vad säger det om hur många som just förlorade sin tro? Allt. Goodman förstår att diagrammet är känslornas karta — den visar vad lunchborden och karaktärerna har gjort med priset, men den förutsäger inte vilken grund kartan vilar på."
+    },
+    {
+     "type": "text",
+     "content": "Fundamentalisterna får inte starkare medhåll. Deras tro — arvet från Graham — är att priset är vad du betalar och värdet är vad du får: räkna på verksamheten, köp med rabatt, låt tiden arbeta. Goodman respekterar skolan men påpekar dess 1968-realitet: man kan ha rätt om värdet i åratal medan marknaden dansar vidare utan en, och performance-racet dömer inte på sanning utan på kvartal. Den fundamentala skolan svarar på frågan vad — inte när. Båda kyrkorna är ofullständiga exakt på varandras område, och Goodman reportar deras krig med samma leende som han reportar lunchbordet: två troende som var för sig tror att den andra är galen."
+    },
+    {
+     "type": "text",
+     "content": "AK1A:s tredje väg är ingen medelväg utan en arbetsfördelning. AKM1 besvarar vad: fundamentet i variablerna V01–V20, från V01 Försäljningstillväxt och V07 Bruttomarginal till V09 ROE och V12 Intäktsstabilitet — vad är verksamheten värd, oberoende av humör? AK1TS besvarar när: bas, trigger och konfluens — diagrammet som emotionernas karta får ge tidpunkten, men bara när fundamentet redan gett tillstånd. Trigger utan bas är spådom; bas utan trigger är för tidigt. Konfluens — att flera oberoende villkor pekar samma håll — är kravet som varken chartisternas formationer eller fundamentalisternas övertygelse klarar på egen hand."
+    },
+    {
+     "type": "insikt",
+     "content": "Diagrammet berättar vad crowdens förväntningar har gjort; balansräkningen vad verkligheten har levererat. Priset ligger i skärningen mellan de två — och den som bara bär en av kartorna navigerar alltid halvt blind, oavsett hur vackert han ritar eller hur noggrant han räknar."
+    },
+    {
+     "type": "utmaning",
+     "content": "Ta en aktie du följer. Skriv två analyser: (1) en ren teknisk — trend, stöd, motstånd, volym; (2) en ren fundamental — tre AKM1-variabler, till exempel V01 Försäljningstillväxt, V07 Bruttomarginal och V09 ROE. Fråga sedan: säger de samma sak? Om de konflikter har du hittat det enda som är verkligt intressant — punkten där förväntningarna och verkligheten går isär. Det är där AK1TS väntar på konfluens."
+    },
+    {
+     "type": "visuell",
+     "content": "skala"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är Goodmans hållning till teknisk analys?",
+     "alternativ": [
+      "Han avvisar den helt som ovetenskapligt trams",
+      "Han fascineras av den men är skeptisk — den saknar svar när mönstret bryts och säger inget om värde",
+      "Han anser den överlägsen all fundamental analys",
+      "Han grundade själv en skola för chartister på 1950-talet"
+     ],
+     "ratt": 1,
+      "tips": "Två känslor styr pennan — vilka?"
+    },
+    {
+     "q": "Vilken svaghet ser Goodman hos fundamentalisterna?",
+     "alternativ": [
+      "Att de aldrig kan räkna på något alls",
+      "Att deras modeller bara fungerar i räntestigande miljöer",
+      "Att de föredrar obligationer framför aktier av princip",
+      "Att de kan ha rätt om värdet i åratal medan marknaden dansar utan dem — svaret på vad men inte när"
+     ],
+     "ratt": 3,
+      "tips": "Vilken fråga lämnar kalkylatorn obesvarad — och vilken gärning dömer performance-racet på?"
+    },
+    {
+     "q": "Hur löser AK1A konflikten mellan skolorna?",
+     "alternativ": [
+      "Genom arbetsfördelning: AKM1 ger vad (bas) och AK1TS ger när (trigger) — konfluens kräver båda",
+      "Genom att välja teknisk analys vid kort horisont och fundamental vid lång",
+      "Genom att låta eleven själv välja skola och hålla sig till den",
+      "Genom att kombinera alla signaler till en enda poäng oavsett vilken fråga som ställs"
+     ],
+     "ratt": 0,
+      "tips": "Fråga inte vilken karta som är bäst — fråga vad varje karta svarar på."
+    }
+   ]
+  },
+  {
+   "num": 7,
+   "minutes": 10,
+   "title": "Förväntningarnas ekonomi — Keynes tävling och crowden",
+   "intro": "Goodman återberättar Keynes berömda skönhetstävling: priset speglar inte vad som är, utan vad alla tror att alla tror. I förväntningarnas ekonomi blir multiplar humörets mätinstrument — och det gamla talesättet om att crowden alltid har rätt får sin sanna, men begränsade, betydelse.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Keynes tävling, som Goodman lät sina läsare möta på nytt: en tidning publicerar porträtt och läsaren ska inte välja de vackraste ansiktena, utan de som genomsnittet av läsarna kommer att välja — och den sluga spelaren väljer de hon tror att genomsnittet tror att genomsnittet väljer. På börsen blir det: du tjänar inte på att ha rätt om världen; du tjänar på att ha rätt om vad andra tror om världen — och att lämna positionen före dem. Detta är spelets andra grad: det räcker inte att analysera bolaget, du måste analysera analysen. Goodman tillämpar det med förkärlek på go-go-åren: alla visste att multiplerna var galna, men alla visste också att alla andra fortfarande köpte — och det sistnämnda var det enda som prissattes."
+    },
+    {
+     "type": "text",
+     "content": "Det gamla talesättet att 'the crowd is always right' får här sin exakta innebörd — och sina gränser. Crowden är rätt om nuet: priset sammanfattar i varje ögonblick allt som sagts vid alla lunchbord, alltsedan Goodman formulerade det. Men crowden är hjälplös inför svängen: den är rätt ända tills den är fel, och när den vänder gör den det samtidigt, i klump, i panik. Goodmans go-go-tid är själva beviset — crowden hade 'rätt' i åratal, ända till december 1968. Skillnaden mellan att läsa crowden och att bli crowden är därför kurskritisk: den första är en analys av förväntningar, den andra är att låta förväntningar ersätta analys."
+    },
+    {
+     "type": "text",
+     "content": "AKM1:s multiplar är förväntningsmätare — rationella mått på irrationellt innehåll. V04 P/S och V06 EV/EBITDA visar hur mycket framtid marknaden redan betalat för: en hög multipl mot svag V01 Försäljningstillväxt (eller svag V02 ARR-tillväxt för prenumerationsbolag) är tro utan underlag; en låg multipl mot stabil V12 Intäktsstabilitet är besvikelse som redan prissatts. Kontrasten mot verkligheten gör resten: V07 Bruttomarginal och V08 EBITDA-marginal visar vad verksamheten faktiskt levererar, V05 P/B vad som betalas per bokfört kapital. Förväntningar utan marginal för besvikelse är — Goodmans vokabulär — en position i andra gradens känslor: den betalar bara så länge alla fortsätter tro att alla tror."
+    },
+    {
+     "type": "text",
+     "content": "Och förväntningarna är inte harmlösa åskådare — de påverkar verkligheten, det tredje gradens fenomen som Soros-kursen (The Alchemy of Finance) utvecklar till reflexivitet: en hög multipl ger bolaget en dyr valuta som kan köpa verklig tillväxt, vilket höjer vinsten, vilket höjer multiplen — tills loopen bryts och valutan dör med den. Konglomeratens 1968, som nästa kapitel visar, är den mekanismens renaste demonstration. Goodman skrattar åt den; Soros formaliserade den; AK1A mäter den med multiplarna mot fundamenten."
+    },
+    {
+     "type": "insikt",
+     "content": "Multipeln är marknadens tryckmätare: V04 P/S och V06 EV/EBITDA mäter inte kvalitet utan förväntningens tryck. Högt tryck med svag V01 Försäljningstillväxt är inte ett köp — det är en bomb med längre lunt. Fråga alltid hur mycket av priset som är berättelse och hur mycket som är leverans."
+    },
+    {
+     "type": "utmaning",
+     "content": "Välj en bransch som hetsas just nu. För två bolag i den: notera V04 P/S och V06 EV/EBITDA. Mät mot V01 Försäljningstillväxt (eller V02 ARR-tillväxt för prenumerationsbolag) och V07 Bruttomarginal. Ställ Goodmans fråga: hur mycket av priset är berättelsen, hur mycket är leveransen? Skriv en mening om var förväntningarna och verkligheten går isår — det är din karta över var besvikelsen och möjligheten bor."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Förväntningens grader — från Keynes tävling till din portfölj\",\"rader\":[[\"Grad\",\"Fråga\",\"Verktyg\"],[\"Nollte\",\"Vad är bolaget värt?\",\"AKM1: V05 P/B, V06 EV/EBITDA mot fundament\"],[\"Första\",\"Vad tror marknaden om bolaget?\",\"Multipeln som förväntningsmätare\"],[\"Andra\",\"Vad tror marknaden att marknaden tror?\",\"Keynes tävling — spelets kärna hos Goodman\"],[\"Tredje\",\"Vad gör förväntningarna med verkligheten?\",\"Reflexivitet — multipl som valuta (Soros-kursen)\"],[\"Praktik\",\"Var går förväntning och leverans isär?\",\"V04/V06 mot V01, V07, V08 — kursens kärnfråga\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "radar"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är poängen med Keynes skönhetstävling i marknadssammanhang?",
+     "alternativ": [
+      "Att skönhet är en relevant faktor vid bolagsstyrning",
+      "Att priset styrs av vad genomsnittet tror att genomsnittet tror — inte av vad som är objektivt bäst",
+      "Att man ska investera i tidningsbolag",
+      "Att alla tävlingar slutar med att alla förlorar"
+     ],
+     "ratt": 1,
+      "tips": "Räkna grader av tro på tro — hur många led ut från verkligheten?"
+    },
+    {
+     "q": "Hur ska V04 P/S och V06 EV/EBITDA läsas enligt kursen?",
+     "alternativ": [
+      "Som direkta mått på bolagets kvalitet och framgång",
+      "Som garantier för framtida avkastning",
+      "Som mätare på hur mycket framtid marknaden redan betalat för — förväntningstryck, inte kvalitet",
+      "Som mått på bolagets skuldsättning"
+     ],
+     "ratt": 2,
+      "tips": "Vad köper du egentligen när multipeln är hög — verksamhet eller berättelse?"
+    },
+    {
+     "q": "Vad gäller för talesättet 'crowden är alltid rätt' enligt kursen?",
+     "alternativ": [
+      "Crowden är rätt om nuet — priset sammanfattar allas kunskap — men hjälplös inför svängningar",
+      "Crowden har alltid rätt om framtiden på fem års sikt",
+      "Crowden har alltid fel och bör handlas mot i alla lägen",
+      "Crowden är ett begrepp som Goodman myntade för dagtraders"
+     ],
+     "ratt": 0,
+      "tips": "Skilj på att förklara dagens pris och att förutsäga morgondagens."
+    }
+   ]
+  },
+  {
+   "num": 8,
+   "minutes": 10,
+   "title": "Go-go! Performance-racet och konglomeratens aritmetik",
+   "intro": "Go-go kallade Goodman den era han själv reportade från: fonder som jagade kvartalsprestanda, unga förvaltare som blev kändisar och konglomerat som växte genom att köpa tillväxt med övervärderade aktier. Här nedmonterar vi aritmetiken — och översätter den till AKM1.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Go-go var ljudet av en era. Fondfloden växte, momentum-stilen segrade och 'performance' blev ett skällsord bland de gamla och en hedersbeteckning bland de unga. Goodman myntade inte bara epitetet — han höll i det som sedelärande reportage: Kidsen byggde portföljer av säsongens hetaste namn, tabellerna publicerades som idolranking, och racet tvingade snart även de trovärdiga att delta — den som stod vid sidan ett år stod inte bara efter index utan efter kollegorna, och det var kollegorna som satte lönen. Gerald Tsais Manhattan Fund, tidernas största fondlansering när den öppnades, blev epokens symbol — och dess varning, när prestandan fadeade och glansen såldes vidare."
+    },
+    {
+     "type": "text",
+     "content": "Konglomeratens aritmetik var tidens mest eleganta maskin, och Goodman beskrev den med something av beundran. Receptet: handla med en aktie som värderas till en hög vinstmultipel — säg fyrtio gånger vinsten — och använd den aktien som betalning vid uppköp av bolag som värderas lågt — säg tio gånger vinsten. Vinsten per aktie stiger automatiskt vid varje affär, helt utan synergier: köparen tjänar på multiplskillnaden som bokförd tillväxt, marknaden läser serien som förvaltarskick, multiplen håller — och valutan kan användas igen. Ling-Temco-Vought byggde under James Ling ett imperium som sträckte sig från flyg till konservkött; ITT:s Harold Geneen sväljde bolag i industriell takt; Litton Industries levererade åratal av oavbruten vinsttillväxt — tills serien bröts 1968 och aktien rasade. Då insåg marknaden plötsligt det Goodman påpekat hela vägen: tillväxten var köpt, inte skapad."
+    },
+    {
+     "type": "text",
+     "content": "AK1A-översättningen är rak. V01 Försäljningstillväxt måste rensas för förvärv — organisk tillväxt är den enda som bevisar att verksamheten skapar värde; köpt tillväxt är aritmetik. V03 Intäktsdiversifiering är äkta när enheterna förstärker varandra — delar kanaler, teknik, varumärke (V14), nätverk (V15) — och falsk när de bara delar bokslut. V12 Intäktsstabilitet avslöjar seriens beroende av ständigt nya affärer: konglomeratets intäkter var 'stabila' endast så länge maskinen matades. V19 Kapitalförbrukning & Emission-risk fångar finansieringen — konglomeraten levde på att emittera aktier, och emissioner är alltid en skatt på befintliga ägare. Och V18 Regulatoriska katalysatorer: när bokföringsreglerna om så kallad pooling drogs åt kring 1970 dog berättelsen formellt — maskinen förbjöds, inte bara misslyckades."
+    },
+    {
+     "type": "text",
+     "content": "1968 till 2026 är sträckan kortare än den ser ut. Varje era har sin go-go-varietà och sin multipl-valuta: dagens premie på V02 ARR-tillväxt i prenumerationsbolag kan skapa exakt samma mekanik — köp tillväxt med dyr valuta, bokför tillväxten, njut av multiplen — tills loopen vänder. Skillnaden är att AKM1 kan separera äkta mjukvarumoats (V15 Nätverkseffekter, V13 Patent & IP) från köpt ARR och emitterad tillväxt. Goodman skulle känt igen lukten omedelbart; frågan är om branschen känner igen den före vändningen, eller som 1968 — i efterhand, vid lunchbordet, med god aptit och tomma portföljer."
+    },
+    {
+     "type": "insikt",
+     "content": "Konglomeratens aritmetik visar varför V01 Försäljningstillväxt aldrig får läsas ensam: tillväxt genom emissioner är inte tillväxt utan ett lån mot framtida multiplar. Fråga alltid: är tillväxten skapad, köpt — eller bara bokförd? Svaret avgör om du äger en verksamhet eller en maskin med begränsad bränsle."
+    },
+    {
+     "type": "utmaning",
+     "content": "Ta ett bolag som växt genom förvärv. Separera i två kolumner: organisk tillväxt (V01) och förvärvad tillväxt. Kontrollera sedan V19 Kapitalförbrukning & Emission-risk — har bolaget emitterat eller återköpt aktier under perioden (V20 Återköp)? Ställ Goodmans fråga från 1968: bygger bolaget värde — eller bygger det berättelsen om värde? Skriv nedslag av svaret i din logg och läs det om ett år."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Konglomerat-maskinen — aritmetiken som fungerade tills den inte gjorde det\",\"rader\":[[\"Steg\",\"Affärsidén 1968\",\"AKM1-kontroll\"],[\"1\",\"Handla till multiplen 40\",\"V04/V06: multipl som förväntningstryck\"],[\"2\",\"Köp bolag till multiplen 10 med aktier som betalning\",\"V01: tillväxten organisk eller köpt?\"],[\"3\",\"Vinst per aktie stiger automatiskt\",\"V08 EBITDA-marginal: rörs marginalen? Nej — ren aritmetik\"],[\"4\",\"Marknaden kallar serien för förvaltarskick\",\"V12 Intäktsstabilitet: serien kräver ständigt nya affärer\"],[\"5\",\"Nya emissioner finansierar nästa steg\",\"V19 Kapitalförbrukning & Emission-risk\"],[\"6\",\"Reglerna dras åt — multiplen och maskinen dör\",\"V18 Regulatoriska katalysatorer (i negativ riktning)\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "cykel"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad var go-go i Goodmans vokabulär?",
+     "alternativ": [
+      "En dansmusikgenr som fondförvaltare lyssnade på efter börsstängning",
+      "En teknisk indikator baserad på rörliga medelvärden",
+      "Ett regulationspaket för investmentbolag",
+      "Den prestationsjagande fondkulturen — unga förvaltare som jagade säsongens hetaste aktier och kvartalets racetabeller"
+     ],
+     "ratt": 3,
+      "tips": "Ordet beskriver tempot i en kultur — vilken kultur och vilket tempo?"
+    },
+    {
+     "q": "Varför stiger vinsten per aktie automatiskt i konglomerat-tricket?",
+     "alternativ": [
+      "Därför att uppköpta bolag alltid är bättre skötta än förvärvaren",
+      "Därför att betalning sker med aktier värderade till hög multipl som köper bolag med låg — räknematiken bokförs som tillväxt utan synergier",
+      "Därför att konglomerat alltid betalar mer utdelning",
+      "Därför att bokföringsreglerna krävde att vinster konsolideras uppåt"
+     ],
+     "ratt": 1,
+      "tips": "Multipl gånger multipl — följ valutafrågan: vem betalar med vad?"
+    },
+    {
+     "q": "Vilka AKM1-kontroller fångar konglomerat-fällan most direkt?",
+     "alternativ": [
+      "V16 Produktlanseringar och V17 Avtal & Partnerskap",
+      "V14 Varumärke och V15 Nätverkseffekter",
+      "Rensning av V01 för förvärvad tillväxt plus kontroll av V19 Kapitalförbrukning & Emission-risk",
+      "V11 Likviditet och V20 Återköp"
+     ],
+     "ratt": 2,
+      "tips": "En fråga om varifrån tillväxten kommer — och en om vem som betalade den."
+    }
+   ]
+  },
+  {
+   "num": 9,
+   "minutes": 10,
+   "title": "Förvaltarens jag — karriärrisk, bonus och storlek",
+   "intro": "Bokens förvaltare hanterar inte bara pengar utan karriärer, bonusar och spelet om att vara smartast i rummet. Goodman tecknar branschens incitament med öm ironi — och ger AK1A skäl att fråga vem din förvaltare egentligen arbetar för.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Goodmans porträtt av fondvärlden är en studie i institutionaliserad identifikation. Performance-tabellerna fungerar som offentlig rankning; förvaltarens jag och fondens kurva smälter samman; att missa säsongens favoritaktie är att hamna bakom inte bara index utan kollegorna — och kollegorna är löneförhandlingen. Resultatet är flockbeteende på institutionsnivå: ingen blev klandrad för att äga det som alla andra ägde, hur dyrt det än var. Goodman såg 1968 att crowden inte var en massa småsparare utan branschen själv — de största, bäst betalda, mest självsäkra spelarna, alla i samma positioner, alla med samma berättelse om varför det var rationellt."
+    },
+    {
+     "type": "text",
+     "content": "Karriärriskens logik är värd att respektera innan den klandras. Den anställdes optimala spel är att minimera spårbar avvikelse: häng med flocken, ta ut bonusen, byt jobb innan musiken tystnar. Det är inte fegt — det är rationellt inom fel incitament, och det är därför incitament är AK1A:s ämne och inte bara psykologi. Munger, som Poor Charlie's Almanack-kursen utvecklar, sammanfattade det i en av sina mest citerade satser: 'Show me the incentive and I will show you the outcome.' Goodmans bogstäver gör satsen till berättelse: läs performance-tabellen så vet du vad förvaltaren kommer att köpa — och vad han aldrig kommer att erkänna att han misslyckats med."
+    },
+    {
+     "type": "text",
+     "content": "Storleken är det tredje tvånget. Miljardfonder kan bara jaga stora, likvida aktier — det som kan köpas utan att flytta kursen — vilket utesluter precis de bolag där en grundlig AKM1-analys ger störst övertag. Kvartalspoängen gör resten: en tes som kräver tjugofyra månader är en karriärrisk, även om den är rätt. Här skiljer sig den oberoende analysen från institutionens: AKM1:s moat-variabler — V13 Patent & IP, V14 Varumärke, V15 Nätverkseffekter — är det enda som gör en avvikande position försvarbar när den granskas, eftersom ett försprång som inte kan kopieras på ett kvartal är det enda som overlever ett kvartal av misstag."
+    },
+    {
+     "type": "text",
+     "content": "Ägarsynen är den sista kontrollen. V20 Återköp frågar rakt om kapitalflödet: skickar bolaget tillbaka pengar till ägarna — eller spenderar det på imperiebygge och berättelser? V09 ROE frågar om kapitaldisciplinen håller: skapar förvaltningen värde per immunitet krona, eller bara omsättning per krona? Goodman skrattade 1968 åt bransch som belönade aktivitet framför ägarskap; AKM1 gör ägarskapet mätbart — och lämnar eleven med en enkel regel: välj förvaltare och bolag där incitamenten pekar mot långsiktigt ägande, för där pekar också utfallen."
+    },
+    {
+     "type": "insikt",
+     "content": "Institutionens ägare är dess karriär, inte du. Därför är moat-variablerna — V13 Patent & IP, V14 Varumärke, V15 Nätverkseffekter — din försäkring: det enda som gör det tryggt att avvika från flocken är ett försprång som flocken inte kan kopiera på ett kvartal."
+    },
+    {
+     "type": "utmaning",
+     "content": "Granska din fonds största innehav. Fråga: liknar portföljen index och kollegorna (karriärrisk-spel) eller vittnar den om oberoende teser? Kontrollera ägarsynen i de största innehaven med V20 Återköp och kapitaldisciplinen med V09 ROE. Skilj sedan på avvikelse med moat och avvikelse med momentum — Goodmans Kidsen avvek också, och det fanns ingen bas under avvikelsen."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Förvaltarens incitamentsmatris — vem tjänar på vad?\",\"rader\":[[\"Beslut\",\"Bra för ägaren\",\"Bra för karriären\",\"AKM1-kontroll\"],[\"Häng med flocken\",\"Ofta mediokert\",\"Tryggt — alla äger samma\",\"V09 ROE: kvalitet i det gemensamma\"],[\"Avvika med moat\",\"Kan slå index\",\"Riskabelt vid kort horisont\",\"V13–V15: hållbart försprång\"],[\"Jaga momentum\",\"Glädje i uppgången\",\"Bonus i uppgången\",\"V12 Intäktsstabilitet: vad händer i nedgången?\"],[\"Återköp av aktier\",\"Direkt ägarsyn\",\"Neutral\",\"V20 Återköp\"],[\"Stor fond, stora aktier\",\"Likviditet\",\"Karriärsäkert\",\"Mindre bolag med AKM1-fundament kan bli edge\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "donut"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Varför är det institutionellt 'tryggt' att äga samma aktier som kollegorna?",
+     "alternativ": [
+      "Därför att avvikelse är spårbar och gemensamt ägande inte kan klandras enskilt — karriärrisken minimeras",
+      "Därför att kollegorna har bättre information än analytikerna",
+      "Därför att börsen belönar konsensus med lägre avgifter",
+      "Därför att indexbolag alltid har lägst risk"
+     ],
+     "ratt": 0,
+      "tips": "Vem kan klandras när alla gjorde likadant — och vem när en enda gjorde annorlunda?"
+    },
+    {
+     "q": "Vad menar Munger om incitament, som kursen refererar?",
+     "alternativ": [
+      "Att incitament är irrelevant om analysen är god nog",
+      "Att incitament bara spelar roll för daytraders",
+      "Att gode incitament skapar goda människor",
+      "'Show me the incentive and I will show you the outcome' — incitamenten förutsäger beteendet"
+     ],
+     "ratt": 3,
+      "tips": "Vad ska du titta på om du vill veta vad någon kommer att göra?"
+    },
+    {
+     "q": "Vilka AKM1-variabler gör avvikelse från flocken försvarbar enligt kursen?",
+     "alternativ": [
+      "V04 P/S och V05 P/B",
+      "Moat-variablerna V13 Patent & IP, V14 Varumärke och V15 Nätverkseffekter — försprång som inte kopieras på ett kvartal",
+      "V16 Produktlanseringar och V17 Avtal & Partnerskap",
+      "V10 Skuldsättningsgrad och V11 Likviditet"
+     ],
+     "ratt": 1,
+      "tips": "Vad krävs för att en avvikande position ska overleva granskning — nyheter eller försprång?"
+    }
+   ]
+  },
+  {
+   "num": 10,
+   "minutes": 10,
+   "title": "Tillräckligt — Marginal of safety och spelets verkliga vinst",
+   "intro": "Scarsdale Fats sitter gott; Poor Grenville har miljoner och ett oroligt hjärta. Skillnaden är inte kapitalet utan svaret på frågan: vad är tillräckligt? Goodman ställer frågan på allvar — och den leder rakt in i Marginal of safety.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Den fråga Goodman återkommer till — vad är nog? — är bokens stilla centrum. Den som inte vet vad som är tillräckligt spelar ett spel utan slut: scoren kan alltid bli högre och ro kan aldrig infinna sig. Grenville är rik nog för flera liv och kan inte sova; Fats har nog och äger sitt bord. Pengar som poäng gör att spelet aldrig tar slut — det är spelets tjusning och samtidigt dess fälla, för en spelare utan mållinje springer tills benen inte bär, oavsett resultat. Goodman dömer ingen — han konstaterar att den som inte har svar på frågan har lämnat svaret åt spelet, och spelet är en hård förmyndare."
+    },
+    {
+     "type": "text",
+     "content": "Marginal of safety — i AKM1:s värld en hållning utan nummer, inte en variabel — är det strukturerade svaret. Grahams arv är det yttre ledet: skillnaden mellan pris och värde som skydd mot misstag; köp med rabatt så att ett fel kan överlevas. Goodmans karaktärer visar det inre ledet: skillnaden mellan vad du behöver och vad du riskerar. Marginalen måste alltså finnas i två plan — i priset mot fundamenten och i livet mot insatserna. Den som spelar med lånade pengar eller pengar som behövs till nästa månads hyra har ingen inre marginal, och då spelar den yttre ingen roll: han kan inte låta tiden och rabatten arbeta, för han har inte tiden."
+    },
+    {
+     "type": "text",
+     "content": "AK1A gör dubbelt-skyddet operativt. Fundamental marginal granskas med AKM1: V11 Likviditet och V10 Skuldsättningsgrad avgör om bolaget tål en dålig period; V12 Intäktsstabilitet om perioden skadar tesen; köpmarginalen mot V05 P/B och V06 EV/EBITDA om priset lämnar utrymme för fel. Existensiell marginal granskas med positionstorlek — Kelly-tanken i AK1A:s analysverktyg: den som satsar rätt storlek överlever att ha fel och kan därför våga ha rätt. Spelets verkliga vinst är inte scoren — det är friheten att inte behöva spela om nödvändigheterna. Den vinsten kan bara realiseras av den som vet sitt 'nok'."
+    },
+    {
+     "type": "insikt",
+     "content": "Goodmans djupaste fråga är inte 'hur vinner jag spelet?' utan 'varför spelar jag?'. Marginal of safety är svaret på båda: med marginal i priset overlever du marknadens humör — med marginal i livet overlever du spelet självt."
+    },
+    {
+     "type": "utmaning",
+     "content": "Skriv din siffra: hur mycket kapital gör att du aldrig mer behöver ta onödig risk? Skriv den inte i portföljen — skriv den på papper, daterad. Mät sedan din nuvarande risk mot den: är positionerna, hävstången och koncentrationen byggda för att skydda den siffran — eller för att göra scoren vackrare? Detta är bokens examen, inte dess bilaga. Läs svaret igen nästa gång marknaden blir spännande."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Tillräckligt — spelets fyra spelare och frågan om ro\",\"rader\":[[\"Spelare\",\"Kapital\",\"Ro\",\"Hemlighet\"],[\"Scarsdale Fats\",\"Nog\",\"Ja\",\"Äger sitt bord — spelar inte om pengar\"],[\"Poor Grenville\",\"Mer än nog\",\"Nej\",\"Söker visshet marknaden inte säljer\"],[\"Charley\",\"Oklart\",\"Nej\",\"Vill hellre förklara än vinna\"],[\"Kidsen\",\"Växande\",\"Tillförlig\",\"Mäter livet i kvartal — tills kvartalet mäter tillbaka\"],[\"Du\",\"?\",\"?\",\"Frågan kursen lämnar öppen — med papper och penna\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "skala"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad skiljer Fats från Grenville enligt kursen?",
+     "alternativ": [
+      "Fats har bättre information från sitt lunchbord",
+      "Fats spelar med högre hävstång och därmed bättre avkastning",
+      "Fats är yngre och kan ta större risker",
+      "Inte kapitalets storlek utan svaret på vad som är tillräckligt — Fats spelar inte om pengar, Grenville kan aldrig få nog"
+     ],
+     "ratt": 3,
+      "tips": "Båda är rika — varför sover den ene och inte den andre?"
+    },
+    {
+     "q": "Vad innebär Marginal of safety i kursens AKM1-tolkning?",
+     "alternativ": [
+      "Skydd i två led: rabatt i priset mot värde — och livsmarginal som gör att tiden och rabatten får arbeta",
+      "En teknisk stopploss tio procent under inköpspriset",
+      "En fasta buffer av guld i portföljen",
+      "Att alltid behålla kontanter för nya emissioner"
+     ],
+     "ratt": 0,
+      "tips": "Två plan: ett mot marknadens humör, ett mot livets nödtider."
+    },
+    {
+     "q": "Varför är frågan 'how much is enough' en riskfråga och inte bara filosofi?",
+     "alternativ": [
+      "Därför att målsättningar alltid ökar avkastningen",
+      "Därför att den som saknar gränssiffra tvingas ta onödig risk — spelet får aldrig slut",
+      "Därför att börsen straffar dem som har mål",
+      "Det är en filosofisk fråga — risken påverkas inte"
+     ],
+     "ratt": 1,
+      "tips": "Vad händer med risktagandet när ingen mållinje existerar?"
+    }
+   ]
+  },
+  {
+   "num": 11,
+   "minutes": 10,
+   "title": "Kontroversen — Institutionens allvar mot spelets sanning",
+   "intro": "Bokens tes är provocerande: börsen är ett spel — spelat mot dig själv. Detta utmanar allt fundamentalt allvar. I kursens obligatoriska kontroverskapitel ställs Institutionens syn mot spelets sanning — och AK1A:s syntes förklarar varför modellen ser ut som den gör.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Tesen. Goodmans mest citerade påstående är också hans mest provocerande: börsen är ett spel — och spelet spelas inte mot marknaden utan mot dig själv, 'you are trying to beat yourself'. Bevisen är karaktärerna. Grenville slåss inte mot bolag utan mot sin ångest. Charley slåss inte mot kurser utan mot sin stolthet. Kidsen slåss mot varandra i ett poängrace där poängen är identitet. Fats bord slåss mot skvaller. Ingen av dem slåss mot balansräkningar. Om börsen vore ren allokering vore prisrörelserna rationella — de är det inte; de är känslor med kurva, och Goodman tillbringade en hel bok med att visa att kurvorna kan vara långa, våldsamma och kollektivt framkallade."
+    },
+    {
+     "type": "text",
+     "content": "Institutionens syn. AK1A:s institution — allvarslinjen från Graham och Buffett — invänder med skäl: aktier är ägande i verkliga bolag som sysselsätter människor och bygger samhällen; analys är kapitalens allokering; förvaltaren bär fiduciärt ansvar för andras pengar. Att kalla detta spel är respektlöst mot spararna och en inbjudan till hasard. Institutionen har rätt om det som betalar: på lång sikt bestäms avkastning av kassaflöden och fundament, inte av psykologi, och den som spelar istället för att analysera betalar för underhållningen. Priset är vad du betalar, värdet är vad du får — och skillnaden är ingen lek. Detta är positionen som gör börsen till en institution och inte ett kasino, och AK1A avfärdar den inte."
+    },
+    {
+     "type": "text",
+     "content": "Spelets sanning. Men Goodmans karaktärer är på riktigt, och det är de också hos oss. Identifikationen, ångesten, informationsspelet, performance-racet — det psykologiska är inte brus kring den fundamentala analysen; det är marknadens drivmedel, särskilt kort sikt. Kahneman visade i laboratoriet vad Goodman sett i lunchrummen: system 1, förlustaversion, anknytnings till inköpspris, socialt bevis — Tänk, snabbt och långsamt-kursen ger hela kartan. Munger tillade incitamenten: Poor Charlie's Almanack-kursen visar hur rationalisering blir institutionell policy. Spelet är ingen metafor — det är marknadens mikromekanik, och den som förnekar den blir spelad av den."
+    },
+    {
+     "type": "text",
+     "content": "AK1A-syntesen. Slutsatsen är inte en medelväg utan en arbetsfördelning mellan två sanningar: spelet är psykologiskt — verktygen är rationella. Det är därför AKM1 existerar med sina tjugo V-variabler: checklistan är ett ratt mot egot. Den skyddar Grenville mot ångest (regler i förväg), Charley mot stolthet (omtest av tesen), Kidsen mot momentum utan bas (fundamentet som villkor), och lunchbordet mot skvaller som analys (nyheten som trigger, aldrig som position). Institutionen har rätt om vad som betalar; spelet har rätt om vad som driver. AKM1 är konstruerad för att du ska kunna göra det ena med det andra — att förstå spelet psykologiskt och besluta rationellt. Därför existerar modellen, och därför börjar den inte med siffror utan med denna kurs: karaktärerna först, checklistan sedan."
+    },
+    {
+     "type": "insikt",
+     "content": "Kontroversens lösning: frågan 'är börsen ett spel?' har svaret ja och nej — ja i drivkrafterna, nej i verktygen. Den som förnekar spelet blir spelad av det; den som accepterar spelet utan verktyg blir det. AKM1 är byggd för att du ska kunna göra det ena med det andra."
+    },
+    {
+     "type": "utmaning",
+     "content": "Skriv din egen position i kontroversen i tre rader: (1) Vad har Institutionen rätt om? (2) Vad har spelet rätt om? (3) Var ligger din största risk — i övertron på analys eller i underskattningen av spelet? Jämför sedan med hur du hanterade din senaste förlust: var det analysen eller egot som avgjorde beslutet? Svara ärligt — Grenville och Charley svarar också ärligt, de bara inte vet om det."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Kontroversens tre läger — fråga för fråga\",\"rader\":[[\"Fråga\",\"Institutionen\",\"Spelet (Goodman)\",\"AK1A-syntes\"],[\"Vad är en aktie?\",\"Ägande i verklig verksamhet\",\"Pokermarker i ett socialt spel\",\"Ägande — prissatt av spelare\"],[\"Vad driver kurser kort sikt?\",\"Fundament (i teorin)\",\"Identitet, ångest, skvaller\",\"Psykologi — därför finns AK1TS\"],[\"Vad betalar lång sikt?\",\"Kassaflöden och värde\",\"Inget — spelet är allt\",\"V01–V20: fundamenten\"],[\"Vad ska verktyget vara?\",\"Analys och tålamod\",\"Instinkt och stil\",\"Checklista mot jaget\"],[\"Kurs-länk\",\"Graham/Buffett-kurserna\",\"The Money Game\",\"Kahneman + Munger + AKM1\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "radar"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är bokens tes i kontroversen?",
+     "alternativ": [
+      "Att börsen följer nationalekonomins lagar exakt",
+      "Att aktiehandel bör förbjudas som hasardspel",
+      "Att teknisk analys är den enda sanna vetenskapen",
+      "Att börsen är ett spel som spelas mot dig själv — du försöker slå dig själv, inte marknaden"
+     ],
+     "ratt": 3,
+      "tips": "Vem är motståndaren i Grenvilles, Charleys och Kidsens matcher — egentligen?"
+    },
+    {
+     "q": "Vad har Institutionen rätt om enligt AK1A-syntesen?",
+     "alternativ": [
+      "Att långsiktig avkastning bestäms av fundamenten — den som bara spelar betalar för underhållningen",
+      "Att psykologi är det enda som betalar på börsen",
+      "Att alla derivat bör förbjudas",
+      "Att aktieanalytiker alltid har fel"
+     ],
+     "ratt": 0,
+      "tips": "Skilj på vad som driver kurserna en kvartal och vad som betalar ett årtionde."
+    },
+    {
+     "q": "Varför existerar AKM1 enligt kursen?",
+     "alternativ": [
+      "För att ersätta mänskligt omdöme helt och hållet",
+      "För att maximera avkastningen i varje kvartal",
+      "Därför att spelet är psykologiskt och verktygen måste vara rationella — checklistan är ett ratt mot egot",
+      "För att efterlikna go-go-fondernas metodik med moderna medel"
+     ],
+     "ratt": 2,
+      "tips": "Vilken fiende konstruerar en checklista egentligen — bolaget eller åskådaren?"
+    }
+   ]
+  },
+  {
+   "num": 12,
+   "minutes": 10,
+   "title": "Slutspelet — 1968, Supermoney och AKM1:s svar",
+   "intro": "Boken publicerades vid toppen; inom två år var go-go-eran historia. Goodman återkom 1972 med Supermoney — med ett av finanslitteraturens mest kända porträtt. Kursens sista kapitel knyter ihop 1968 med 2026 och visar varför The Money Game är AK1A:s psykologiska grundurkund.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Efterspelet blev bokens bästa recension. Marknaden toppade i december 1968 strax under 1 000 på Dow; fram till maj 1970 föll den till strax över 630. Go-go-fonderna tömdes på innehav och trovärdighet, konglomeraten kollapsade — LTV räddades inte av sin storlek, Littons oavbrutna vinstserie visade sig vara just en serie — och när bokföringsreglerna om pooling drogs åt dog berättelsen formellt. Kidsen försvann ut i branschen eller ut ur den. Goodman behövde inte skratta åt dem i efterhand; historien gjorde det åt honom. The Money Game stod sig just därför: den beskrev inte en säsong utan spelets cykel, och cykler har den obehagliga egenskapen att de upprepas med nya rekvisita."
+    },
+    {
+     "type": "text",
+     "content": "I Supermoney (1972) följde Goodman upp med ett av finanslitteraturens mest kända porträtt: den unge Warren Buffett i Omaha — hjältexemplet på den som stod utanför spelet han beskrev. Buffett hade byggt kapital på fundament, vägrade betala go-go-priser och upplöste sitt partnerskap 1969 när spelet blev tokigt — mitt i euforin, med perfekt tajming som bara var… tålamod. Bokens titelbegrepp förklarar varför konglomeraten kunde falla så djupt: supermoney är papperskapitalet som skapas när börsen värderar framtida vinster — multiplens valuta. Konglomeraten levde på supermoney; när multiplen dog dog valutan, och med den faller som mätts i samma valuta. Det är Keynes andra grad, konglomerat-maskinen och Grenvilles nedgång i ett enda begrepp."
+    },
+    {
+     "type": "text",
+     "content": "Vad består 2026? Allt. Identifikationen lever i community-aktier där positionen blir medlemskap. Lunchbordet är digitalt och avgiftsfritt, öppet dygnet runt, med oändligt många bord och samma skvaller. Performance-racet lever i kvartalsruset och i fondbranschens tabeller. Förvärvs-maskinerna lever — bara med andra etiketter; dagens multipl-valuta heter ibland ARR och risken mäts bäst med V02 ARR-tillväxt mot V19 Kapitalförbrukning & Emission-risk. Skillnaden mot 1968 är verktygen: AK1A:s elevation — AKM1:s tjugo variabler plus Marginal of safety, AK1TS trigger med bas, psykologikurserna från Kahneman till Munger — finns tillgänglig för varje enskild spelare, inte bara för institutioner. Det fanns inte 1968. Det är hela skillnaden."
+    },
+    {
+     "type": "text",
+     "content": "Boken slutar inte med en formel — den slutar med en spegel, och det är också kursens slutpoäng: du har nu mött Grenville, Charley, Kidsen och Fats, och du vet var de bor. AKM1:s formel är vad du gör med spegeln: mät bolaget, inte dig själv; mät dig själv bara när det gäller processen. Goodman skrev att den som inte vet vem han är har funnit en dyr plats för upptäckten — kursens ambition är den omvända: den som vet vem han är — känner sina Grenville-stunder, sina Charley-brev, sina Kids-impulser — kan spela spelet med verktyg i stället för hopp. Det är inte längre ett dyrt ställe. Det är en arbetsplats."
+    },
+    {
+     "type": "insikt",
+     "content": "The Money Games slutgång: boken som skrattade åt spelet blev en av dess bästa läroböcker — humor är den mest ärliga formen av analys. När du kan skratta åt Grenville utan att släppa honom ur sikket, också hos dig själv, har du förstått boken. Då är verktygen inte längre utsmyckning — de är arbetsredskap."
+    },
+    {
+     "type": "utmaning",
+     "content": "Kursens examen: skriv ditt eget Money Game-kapitel på en halv sida. Titel: 'Den jag möter i spelet'. Beskriv en verklig händelse från ditt sparande där du var Grenville, Charley eller en av Kidsen — och formulera den AKM1-fråga (till exempel V12 Intäktsstabilitet före panik, V01 före jakt) som skulle ha stoppat dig. Spara texten daterad; läs den nästa gång marknaden blir spännande."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Goodmans diagnos — AKM1:s svar\",\"rader\":[[\"Diagnos 1968\",\"Mekanism\",\"AKM1:s svar\"],[\"Identifikation med positionen\",\"Egot försvarar tesen\",\"V-variabler som externa ankare\"],[\"Grenvilles ångest\",\"Sökande efter visshet\",\"V11 Likviditet, V12 Intäktsstabilitet — och regler i förväg\"],[\"Charleys timing\",\"Marknadssyn utan bas\",\"AK1TS: bas + trigger + konfluens\"],[\"Lunchbordets skvaller\",\"Information redan prissatt\",\"Nyheter som triggers, aldrig som positioner\"],[\"Konglomeratens aritmetik\",\"Köpt tillväxt som berättelse\",\"V01 organisk, V19 emission-risk, V18 regler\"],[\"Performance-racet\",\"Karriärrisk före ägarrisk\",\"V20 Återköp, V09 ROE — och Marginal of safety\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "compound"
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad hände på marknaden efter bokens publicering 1968?",
+     "alternativ": [
+      "Marknaden toppade i december 1968 och föll till 1970 — go-go-eran och konglomeraten kollapsade",
+      "Marknaden steg oavbrutet i tio år och go-go-fonderna blev institutioner",
+      "Ingenting — boken hade ingen koppling till marknadens cykel",
+      "Konglomeraten förbjöds omedelbart vid publiceringen"
+     ],
+     "ratt": 0,
+      "tips": "Bokens timing var slumpmässigt perfekt — åt vilket håll?"
+    },
+    {
+     "q": "Vad är 'supermoney' i Goodmans uppföljning?",
+     "alternativ": [
+      "En bonusform för fondförvaltare med topprestanda",
+      "Pengar som trycks av centralbanken under kriser",
+      "En särskild valuta för konglomeratens interna affärer",
+      "Papperskapitalet som skapas när börsen värderar framtida vinster — en valuta som försvinner när multiplen dör"
+     ],
+     "ratt": 3,
+      "tips": "Vad ägde konglomeraten sina imperier i — och vad hände med det när multiplen vände?"
+    },
+    {
+     "q": "Vilket porträtt i Supermoney sammanfattar kursens kontrast?",
+     "alternativ": [
+      "Jesse Livermore, dagen-handlarens förebild",
+      "John Maynard Keynes, som spekulativ författare",
+      "Warren Buffett i Omaha — den som vägrade spela go-go-spelet och lät fundamenten betala",
+      "Gerald Tsai, go-go-erans förvaltarikon"
+     ],
+     "ratt": 2,
+      "tips": "Vem stängde sitt partnerskap 1969 medan alla andra Jagade?"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1006 @@
+{
+  "slug": "stocks-for-the-long-run",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 140,
+  "title": "Stocks for the Long Run — Siegel: KOMPLETT",
+  "summary": "Jeremy Siegels Stocks for the Long Run (första upplagan 1994, sjätte upplagan 2021 med data till och med coronaåret) är det mest citerade datamemoaret i modern finanshistoria: 1802–2020 avkastade amerikanska aktier realt omkring 6,5–7 procent per år mot obligationers 3,5, statskuldbrevs 2,5 och gulds 0,5 — medan dollarn förlorade 95 procent av sin köpkraft. Kursen går igenom hela datakroppen: den kumulativa reala avkastningsgrafen i prosa, innehavstidsanalysen där risken krymper med horisonten, inflationen som den tysta fienden, räntans grepp om multiplerna, tillväxtbolagens paradox (IBM mot Standard Oil — hög tillväxt körd mot betald multipel, kopplad till V04–V06), utdelningens halva av avkastningen, börsens försprång mot konjunkturen, bubblorna och beteendefällorna, den globala portföljen och Japan 1989, TIPS mot guld samt livscykelstrategin efter ålder. Kursen avslutas med ett obligatoriskt kontroverskapitel där CAPE-kritiken (Shiller — den långa sikten kan vara längre än ditt liv), survivorship-invändningen (USA är den vinnare som valdes i efterhand) och säkerhetspremie-gåtan (Mehra–Prescott) förs fram med båda sidors starkaste argument, med Siegels egna svar — innan AK1A formulerar sin hållning: lång horisont (Mega i AK1TS) kräver marginal of safety och riskhantering, inte blint köp.",
+  "minutes": 10,
+  "xp": 1800,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för kärnbeviset i Jeremy Siegels Stocks for the Long Run: den amerikanska totalavkastningsserien 1802–2020, där aktier realt (efter inflation) avkastat omkring 6,5–7 procent per år, långa statsobligationer omkring 3,5, statskuldbrev omkring 2,5 och guld omkring 0,5 — medan kontanter förlorat 95 procent av köpkraften, ungefär minus 1,4 procent per år i två sekel. Eleven kan berätta diagrammet i prosa: en dollar 1802 blev år 2020 i real köpkraft mer än en miljon dollar i aktier med återinvesterade utdelningar, knappt tvåtusen i långa obligationer, ett par hundra i statskuldbrev och omkring tre dollar i guld — och kan förklara hur underlaget byggdes (Siegel lade grunden i artikeln »The Equity Premium: Stock and Bond Returns Since 1802« i Journal of Finance 1992, med tidiga index sammanställda av Schwert och vinster från Cowles-kommissionen) samt varför real avkastning är det enda ärliga måttet över sekel. Eleven behärskar innehavstidsanalysen: aktier slog obligationer i omkring tre av fem ettårsperioder men praktiskt taget i samtliga trettioårsperioder 1802–2020, aktiers sämsta trettioårsperiod gav fortfarande positiv real avkastning medan obligationers kunde bli negativ, standardavvikelsen i genomsnittlig årsavkastning faller under obligationernas efter omkring 15–20 år (Siegels tidsdiversifiering) — och eleven känner invändningen om sequence risk och att längre horisont inte är en garanti utan en sannolikhetsfördelning. Eleven kan förklara inflationen som fiende: obligationernas förlorade generation 1946–1981 (realt minus i 35 år när räntan steg från 2,4 till 15 procent), Tysklands hyperinflation 1923 där obligationsvärden utplånades medan aktieägandet i reala tillgångar behöll delar av sitt värde, guldets 1970-tal (över 20 procent realt per år) och dess efterföljande kvartssekel i minus, samt Modigliani–Cohns penningillusion: varför hög inflation förvränger marginaler (V07, V08) och ROE (V09) och varför normalisering krävs innan multipler sätts. Eleven behärskar räntans grepp om värderingen: att aktiens multiplel är högst vid låg och stabil inflation och pressas av både deflation (reala skuldbördor växer — V10) och stigande inflation, att Feds modell kritiserats av Siegel för att den jämför ett realt mått (vinstavkastning) med ett nominellt (ränta) och att hans råd är att jämföra med reala räntor. Eleven kan redogöra för tillväxtbolagens paradox — totalavkastning är ungefär direktavkastning plus tillväxt plus multipelförändring minus utspädning (V19) — med Siegels eget exempel IBM mot Standard Oil of New Jersey 1950–2003 (tillväxt 12,2 mot 8,0 procent per år; totalavkastning 13,8 mot 14,4 procent — direktavkastningen och den lägre multipeln vann) samt Kina-mönstret: den snabbast växande ekonomin gav sina aktieägare sämst avkastning. Eleven kan väga utdelningens historiska roll (omkring hälften av totalavkastningen fram till 1980; 1929: prisindexet tillbaka först november 1954, totalavkastningen med återinvesterade utdelningar omkring 1945) och läsa återköp (V20) som utdelningens skatteflexibla kusin — värdelös när den sker vid toppvärderingar. Eleven kan beskriva börsens försprång mot konjunkturen (Samuelsons skämt om nio förutsagda av de senaste fem recessionerna; kraschen 1987 utan recession; botten april 1942; covidfallet −34 procent februari–mars 2020 med nytt toppvärde i augusti samma år) samt bubbelelanatomin och beteendefällorna (överförtrödan, Barber–Odeans män som handlade 45 procent mer och avkastade cirka en procentenhet sämre per år; Siegel i Wall Street Journal i mars 2000: »Big-Cap Tech Stocks Are a Sucker's Bet« veckor före Nasdaqs topp). Eleven kan resonera globalt (Dimson–Marsh–Staunton: aktier över obligationer i samtliga studerade länder men med lägre global genomsnittpremie; Japan 1989: Nikkei från 38 916 till 7 054, −82 procent, toppen återtagen först 2024), känner TIPS konstruktion (KPI-indexerat huvudstal, real kupong, lanserade 1997) som Siegels försiktiga inflationsskydd mot guldets 0,5 procent, samt livscykellogiken: hög aktieandel i ung ålder, enligt Siegel även högre än konventionen i pensionsåldern, 4-procentsregeln (Bengen 1994) med dess beroende av reala räntor och sekvensrisk, och debatten om hävstång tidigt i livet. Eleven kan slutligen redogöra för de tre stora angreppen på bokens tes — Shillers CAPE (hög startmultipel förutsäger svag tioårsavkastning; japoner som köpte 1989 väntar fortfarande), survivorship-kritiken (USA:s 200 år är det bästa landet i efterhand; Ryssland 1917 och Kina 1949 blev totalförluster) och säkerhetspremie-gåtan (Mehra–Prescott 1985: en premie kring sex procentenheter kräver orimlig riskaversion) — tillsammans med Siegels svar (redovisningsförvrängda vinstserier i CAPE, låga reala räntor, en globalt positiv men lägre ex-ante-premie) och kan formulera AK1A:s syntes: aktiens historiska överlägsenhet är ett väntevärdsutfall med feta svansar, därför kräver Mega-horisonten i AK1TS marginal of safety utan siffra, diversifiering över länder och tid, en likviditetsbuffert och positioner anpassade till att den långa sikten kan vara längre än ens liv.",
+  "why": "Ingen annan bok har format den moderna tron på aktiesparande så mycket som Stocks for the Long Run — den är källan bakom varje pensionsbolags glide path, varje argument om att »på lång sikt alltid aktier« och hela idén om att risk minskar med innehavstid. För AK1A är Siegel fundamentet i den änden av ekosystemet: Mega-horisonten i AK1TS vilar på exakt hans data, och AKM1:s hållning att multipler (V04–V06) bara betyder något mot normaliserade fundament (V07–V09) är Siegels tillväxtparadox omsatt per aktie. Samtidigt kräver kursens heder att kontroversen tas på fullt allvar: samma 200-årsdata som bevisar aktiens seger är enkel överlevnadsbias enligt kritikerna, CAPE-varnarna har Japans 34 år som motbevis i kroppen, och Mehra–Prescott visade att premien är för stor för att ens vara rationell. Den som förstår både Siegels bevis och dess gränser vet varför AK1A varken dyrkar index eller tajmar marknaden: aktien för längden, marginal of safety för svansen — och aldrig mer tro på en genomsnittssiffra än på fördelningen bakom den.",
+  "chapters_list": [
+    "1. Boken, mannen och de 200 åren — varifrån datakroppen kommer",
+    "2. Segrarna på två sekel — 6,5–7 procent mot 3,5 och 0,5",
+    "3. Horisontens makt — risken som krymper med innehavstiden",
+    "4. Inflationen — den tysta fienden och aktiens långsamma skydd",
+    "5. Räntans grepp om multipeln — P/E, deflation och Feds modell",
+    "6. Tillväxtens paradox — varför det bästa bolaget inte ger bäst avkastning",
+    "7. Utdelningen — halva avkastningen och kraschens livlina",
+    "8. Börsen som sjätte sinne — konjunktur, krig och covid",
+    "9. Bubblor och beteende — NASDAQ, sucker's bet och V19-emissionerna",
+    "10. Världen bortom USA — Japan 1989 och gränserna för hemmamarknadsbias",
+    "11. TIPS mot guld — inflationsskydd på riktiga villkor",
+    "12. Livscykeln — portfölj efter ålder och AK1TS Mega-horisont",
+    "13. Kontroversen — CAPE, survivorship och säkerhetspremie-gåtan"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Boken, mannen och de 200 åren — varifrån datakroppen kommer",
+      "intro": "Jeremy Siegels Stocks for the Long Run, först utgiven 1994 och i sjätte upplagan 2021, är med stor sannolikhet den mest citerade enskilda källan för påståendet att aktier på lång sikt slagit alla andra tillgångsslag. Underlaget — amerikanska marknadsdata från 1802 till 2020 — gjorde Siegel till 1900-talets viktigaste finansdatahistoriker och formade en hel generations tilltro till aktiesparande. Kursen bygger på den sjätte upplagan, med coronaåret inkluderat.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mannen bakom är professor i finans vid Wharton School, University of Pennsylvania, och hans väg till boken gick genom forskningen: artikeln »The Equity Premium: Stock and Bond Returns Since 1802« i Journal of Finance 1992 sammanställde och förlängde de amerikanska pris- och utdelningsserierna bakåt till 1802 och visade att aktiens historiska riskpremie var större än nästan alla dåtida modeller kunde förklara — en hårfön som senare får sitt eget kapitel i denna kurs. Boken 1994 populariserade samma data och blev en internationell framgång; Siegel har sedan dess varit rådgivare åt bland annat WisdomTree, vilket gör honom öppen om kopplingen mellan sin forskning och fondbranschen. Sex upplagor har successivt lagt till 1990-talets tjurmarknad, dot-com-fallet, finanskrisen 2008 och covidkraschen 2020 — boken har alltså hunnit bli vittne till fyra börssekler och lika många stora krascher utan att kärnslutsatsen ändrats."
+        },
+        {
+          "type": "text",
+          "content": "Hur bygger man en aktieindexserie för 1802? Perioden före 1871 vilar på tidiga prisindex som ekonomhistorikern G. William Schwert sammanställde — aktiehandel före den moderna börsen skedde i bankirhus och på prägla marknadsplatser, men priserna finns dokumenterade. Från 1871 finns Cowles-kommissionens berömda serie med både kurser och utdelningar, och från 1957 övergår beräkningen till S&P 500. Två metodval är avgörande för att siffrorna ska betyda något: Siegels serier mäter totalavkastning, alltså med alla utdelningar återinvesterade, och de redovisas realt, det vill säga efter inflation. Utan det första måttet förlorar du mer än hälften av aktiens långa avkastning; utan det andra jämför du äpplen med sedelmynt över tvåhundra år av penningförstörelse."
+        },
+        {
+          "type": "text",
+          "content": "Diagrammet i prosa — förmodligen den mest reproducerade grafen i modern finanslitteratur. En dollar investerad 1802 och jämförd år 2020 i real köpkraft: i en bred aktieportfölj med återinvesterade utdelningar blev den mer än en miljon dollar; i långa statsobligationer knappt tvåtusen; i korta statskuldbrev ett par hundra; i guld omkring tre dollar — och i kontanter återstod fem cent, för dollarn förlorade 95 procent av sin köpkraft. På logaritmisk skala är aktiens linje nästan rak och stadigt stigande genom inbördeskrig, depressioner och världskrig; obligationernas linjer är flacka och brutsna av långa platåer; guldet ligger i princip stilla. Siegel sammanfattar: över alla tillräckligt långa perioder har inget tillgångsslag i hans data slagit aktier."
+        },
+        {
+          "type": "text",
+          "content": "Vad boken inte är: en anvisning om att bli snabbt rik, en tajmningsmanual eller en utfästelse. Det är en historiebok med portföljslogik, och dess kärntes är Avvägd: aktien — ägande i produktivt kapital som får sätta priser — har historiskt varit det mest pålitliga skyddet av köpkraft över generationer, medan fordringar på nominella belopp (obligationer, kontanter) betalats fuller och fuller i urholkad valuta. Att titeln samtidigt blivit ett slagord och en måltavla — föremål för finanshistoriens skarpaste kritik — är inte bokens svaghet utan dess bevis på betydelse, och kapitel 13 ägnas helt åt den fejden. Kursen citerar Siegel öppet genomgående: när hans egna tal återges markeras de som hans formuleringar eller parafraser, och när siffrorna är hans gäller den sjätte upplagans dataperiod 1802–2020."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sex upplagor, fyra decennier av tillägg\",\"rader\":[[\"Upplaga\",\"År\",\"Dataperiod\",\"Tillskott\"],[\"Första\",\"1994\",\"1802–1992\",\"grundbeviset och ramverket\"],[\"Andra\",\"1998\",\"–1997\",\"1990-talets tjurmarknad\"],[\"Tredje\",\"2002\",\"–2001\",\"dot-com-fallets analys\"],[\"Fjärde\",\"2005\",\"–2004\",\"tillväxtparadoxen vävs in\"],[\"Femte\",\"2014\",\"–2012\",\"finanskrisen 2008\"],[\"Sjätte\",\"2021\",\"–2020\",\"covidkraschen och Fed-åtgärderna\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Det viktigaste metodvallet i hela boken är redan på titelsidan: att mäta realt. Varje nominal siffra över ett sekel är en illusion — den amerikanska aktiemarknadens nominella sekelavkastning ser fantastisk ut tills du inser att kontanterna förlorade 95 procent av köpkraften under samma tid. För AK1A: varje avkastningsmål, varje multipel och varje räntejämförelse ska ställas i köpkraftsenheter innan den betyder något. Siegel tvingar oss att hålla isär två frågor som marknadsretoriken ständigt blandar ihop: hur många kronor du får — och vad kronorna då kan köpa."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör din egen köpkraftsövning: ta en fast utgift (hyra, enkelt levnadsindex eller en korg varor du köper månadsvis) och jämför kostnaden för tjugo år sedan med idag. Räkna ut den implicita inflationen per år. Jämför därefter med avkastningen på ditt buffertkonto — realt. Skriv ner siffran i din journal: den är din personliga version av Siegels fem cent, och du återkommer till den i kapitel 4 och 12."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken tidsperiod och vilka huvudsiffror utgör bokens kärndata?",
+          "alternativ": [
+            "1900–2020: aktier omkring 4 procent realt, obligationer 3 procent",
+            "1802–2020: aktier omkring 6,5–7 procent realt, obligationer 3,5 procent, guld 0,5 procent",
+            "1926–2020: aktier 10 procent nominellt, obligationer 5 procent",
+            "1871–2020: aktier 8 procent realt, guld 2 procent"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på perioden före S&P-indexen — Siegel går längre bak än de flesta."
+        },
+        {
+          "q": "Varför insisterar Siegel på att redovisa avkastningen realt snarare än nominellt?",
+          "alternativ": [
+            "Därför att nominella serier är svårare att beräkna för 1800-talet",
+            "Därför att skattemyndigheterna kräver reala mått",
+            "Därför att inflationen urholkar köpkraften och gör nominella jämförelser vilseledande över sekel",
+            "Därför att nominell avkastning bara spelar roll på kort sikt"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vad en sedel från 1802 kan köpa idag."
+        },
+        {
+          "q": "Vilket är Siegel kopplat till dataunderlagets ursprung?",
+          "alternativ": [
+            "Artikeln »The Equity Premium: Stock and Bond Returns Since 1802« i Journal of Finance 1992",
+            "Han ärvde serien direkt från Graham och Dodds Security Analysis",
+            "Han konstruerade S&P 500 år 1957",
+            "Serien togs över från Shillers CAPE-data 1981"
+          ],
+          "ratt": 0,
+          "tips": "Boken var inte första gången Siegels 200-årsdata publicerades."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Segrarna på två sekel — 6,5–7 procent mot 3,5 och 0,5",
+      "intro": "Bokens kärntabell är värd att memorera, inte för att imponera utan för att den sätter måttstocken för alla avkastningsdiskussioner. Mellan 1802 och 2020 avkastade amerikanska aktier realt omkring 6,5–7 procent per år — ränta-på-ränta i 218 år skiljer tillgångarna åt mer än någon årsutfall någonsin gör. Detta kapitel går igenom siffrorna, deras innebörd och den geometriska aritmetik som gör skillnaden mellan tillgångsslagen astronomisk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Huvudtabellen, med Siegels egna avrundningar: aktier omkring 6,5–7 procent real avkastning per år; långa amerikanska statsobligationer omkring 3,5 procent; korta statskuldbrev omkring 2,5 procent; guld omkring 0,5 procent; kontanter minus 1,4 procent — den procentsats per år som på 218 år förvandlar en dollar till fem cent. En avgörande detalj i tabellen är att skillnaden mellan aktier och obligationer, drygt tre procentenheter per år, kan framstå som modest — men över två sekel är den skillnaden mellan en miljon och knappt tvåtusen. Kortsiktiga utfall roar; långsiktig sammansättning avgör."
+        },
+        {
+          "type": "text",
+          "content": "Varför vann aktierna? Siegels svar är den volatilitetspremien: aktieägaren tar svängningarna — enskilda år med fall på fyrtio procent, decennier av stillastående — och belönas därför historiskt med en varaktig extra avkastning över fordringsägaren. Men premien är inte bara ersättning för obehag; den är också, enligt Siegel, en strukturell egenskap hos ägande: aktien är en fordran på verkliga tillgångar och verkliga kassaflöden som växer med ekonomin och omprissätts med inflationen, medan obligationen är en fordran på ett fast antal dollar. Aktiens kassaflöde har en kort fiat-längd; obligationens är dess hela löptid. Där ligger grunden till både aktiens seger och dess vånda — och till kapitel 4:s fiende."
+        },
+        {
+          "type": "text",
+          "content": "Geometriens makt: vid 6,6 procent realt fördubblas kapitalet i köpkraft ungefär vart elfte år. Trettio år ger en faktor kring 6,8; femtio år kring 24. Samma femtio år vid 3,5 procent — obligationens takt — ger knappt 5,6. GAPET mellan tillgångsslagen alltså inte konstant utan växer med horisonten: efter tio år är skillnaden en semester; efter femtio är den skillnaden mellan finansiell oberoende och en trött Buffert. Det är därför Siegel kallar innehavstiden för investerarens viktigaste beslutsvariabel, och det är därför nästa kapitel ägnas helt åt den."
+        },
+        {
+          "type": "text",
+          "content": "Och de som förlorade? Kontanten är den tystaste förloraren i tabellen — fem cent på dollarn utan ett enda dåligt årsutfall, bara 218 måttligt dåliga. Guldet, som vi återkommer till i kapitel 11, höll knappt jämna steget med inflationen över två sekel men med en volatilitet i klass med aktiens: guldägaren tog aktiens svängningar och fick obligationsliknande avkastning, en olycklig kombination. Siegel drar den berömda slutsatsen: den som äger fordran på nominella dollar har historiskt tagit en säker men säkert långsam väg till förlorad köpkraft — säkerheten är skenbar, bara dess tempo är lugnt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Real avkastning 1802–2020 — bokens kärntabell\",\"rader\":[[\"Tillgång\",\"Real avkastning per år\",\"En dollar 1802 blev 2020 (realt)\"],[\"Amerikanska aktier, totalavkastning\",\"omkring 6,5–7 procent\",\"mer än en miljon dollar\"],[\"Långa statsobligationer\",\"omkring 3,5 procent\",\"knappt tvåtusen dollar\"],[\"Statskuldbrev, kort ränta\",\"omkring 2,5 procent\",\"ett par hundra dollar\"],[\"Guld\",\"omkring 0,5 procent\",\"omkring tre dollar\"],[\"Kontanter, mätt mot KPI\",\"minus 1,4 procent\",\"fem cent — 95 procent förlorade\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den djupaste läxan av tabellen är att den enda tillgång som med historisk regularitet bevarat och växt köpkraften över generationer också är den enda som kräver att du tolererar periodvis halverade kurser. Det finns ingen historisk gratislunch mellan avkastning och svängningar på lång sikt — däremot en kronisk förväxling av vad som är risk: på ett år är volatiliteten risken, på trettio år är det att inte äga produktivt kapital. AK1A:s hela horisonttänk (AK1TS) bygger på den omvända riskbilden: frågan är aldrig bara hur mycket portföljen kan falla, utan vad den kan falla ifrån och under vilken tid."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på din egen horisont: ta ditt nuvarande långsiktiga sparkapital och multiplicera med faktorerna för 6,6 respektive 3,5 procent realt över din faktiska återstående sparhorisont (använd faktor 6,8 för trettio år och 24 för femtio år som riktmärke). Skriv upp båda sluten och skillnaden mellan dem — det är prislappen på den där procentenhetens beteende, och den återkommer i kapitel 12 när du ska fördela kapital per horisont."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad blev en dollar från 1802 värd år 2020 i real köpkraft enligt Siegels serier?",
+          "alternativ": [
+            "Guldet blev störst: tiotusentals dollar",
+            "Aktier och obligationer blev i princip lika: omkring hundra tusen dollar",
+            "Kontanter blev störst i nominella termer och therefore redovisas de störst",
+            "Aktier mer än en miljon dollar, obligationer knappt tvåtusen, guld omkring tre dollar"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad en liten procentenhets skillnad gör över 218 år av ränta-på-ränta."
+        },
+        {
+          "q": "Vad kallar Siegel den extra avkastning som aktier historiskt givit som kompensation för svängningarna?",
+          "alternativ": [
+            "Volatilitetspremien — ersättningen för korta perioders förluster och kraftiga svängningar",
+            "Likviditetspremien — ersättning för svårsålda papper",
+            "Valutapremien — ersättning för dollarrisk",
+            "Buffertpremien — ersättning för inlånat kapital"
+          ],
+          "ratt": 0,
+          "tips": "Namnet kommer från det aktieägaren faktiskt uthärdar på vägen."
+        },
+        {
+          "q": "Ungefär hur stor blir skillnaden mellan 6,6 och 3,5 procent real avkastning över femtio år?",
+          "alternativ": [
+            "Båda fördubblar kapitalet ungefär lika många gånger",
+            "Omkring faktor 24 mot omkring faktor 5,6 — gapet växer med horisonten",
+            "Gapet minskar med tiden eftersom avkastningen återgår mot medel",
+            "3,5-procentaren blir störst eftersom den är säkrare"
+          ],
+          "ratt": 1,
+          "tips": "Ränta-på-ränta belönar inte beloppet utan tiden."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 10,
+      "title": "Horisontens makt — risken som krymper med innehavstiden",
+      "intro": "Siegels mest omtalade — och mest omstridda — bidrag är tabellen över rullande innehavstidsperioder: ju längre du håller aktier, desto mer försvinner deras underläge i risk. På ett år är aktier ett hasardspel; på trettio år har de i hela den amerikanska serien aldrig förlorat mot obligationer. Detta kapitel går igenom analysen, dess förutsättningar och den viktigaste invändningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tabellen som förändrade rådgivningsbranschen: över alla rullande ettårsperioder 1802–2020 slog aktier obligationer i omkring tre av fem fall; över femårsperioder i omkring sju av tio; över tioårsperioder i omkring fyra av fem; över tjugoårsperioder i mer än nio av tio; över trettioårsperioder praktiskt taget alltid. Än mer väsentligt: aktiens sämsta trettioårsperiod i hela serien gav fortfarande positiv real avkastning — knappt tre procent per år — medan obligationernas sämsta trettioårsperioder blev negativa. Siegel formulerar slutsatsen som en omkastning av den gängse bilden: för den långsiktige spararen har aktier historiskt varit mindre riskfyllda än obligationer."
+        },
+        {
+          "type": "text",
+          "content": "Mekanismen bakom tabellen är vad Siegel kallar åtstramning mot medelvärde i aktiens långa avkastning: dåliga decennier har historiskt följts av bättre, eftersom nedgångar sänker startpriserna och därmed framtida avkastningar. Därför faller standardavvikelsen i genomsnittlig årsavkastning när horisonten förlängs, och efter omkring femton till tjugo år understiger aktiernas osäkerhet obligationernas i hans data. Detta är tidsdiversifieringen — tanken att tiden sprider risk ungefär som antalet innehav — och den är omstridd: om avkastningar är oberoende över tid, som den klassiska kritiken (med Samuelson i spetsen) anför, försvinner effekten i teorin oavsett horisont. Siegels empiriska svar är att data visar återgång mot medel; kritikernas svar är att 200 år är ett enda utfall av en osäker process. Båda har rätt på varsin nivå, och kapitel 13 återkommer till striden."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk översättning för AK1TS: horisonten är en av de få variabler du själv väljer, och den styr allt annat. Kapital du behöver inom ett till tre år har ingen affär att göra i aktier — det korta tidfönstret gör dig till en tvingad säljare vid eventuella bottenkurser. Kapital med tiotals års horizon — pensionskapital i tjugoårsåldern, arv avsett för nästa generation — har historiskt belönats just för att ägaren kunnat vänta ut tioårsperioder av plattgång. AK1TS fem horisonter, där Mega är den längsta, är i praktiken Siegels tabell omsatt i beslutsregler: exponeringen doseras efter när kapitalet ska konsumeras, inte efter hur man känner."
+        },
+        {
+          "type": "text",
+          "content": "Den viktigaste varningen — och den Siegel-hypotesens kritiker framhäver: sekvensrisken. För den som tar ut kapital ur portföljen är inte genomsnittet av trettio åren avgörande utan ordningen på dem; en djup svacka tidigt i uttagsfasen urholkar kapitalbasen även om genomsnittet sedan blir bra. En tjugoårsperiod som historiskt aldrig förlorat är alltså ingen garanti för en tjugoårsperiod framåt, och särskild inte för en portfölj som blöder uttag samtidigt. Tidsdiversifiering gäller kapital som får vara kvar; för konsumeringskapital är horisonten kortare än kalendern antyder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rullande innehavstidsperioder 1802–2020 (Siegels kärnanalys, avrundat)\",\"rader\":[[\"Innehavstid\",\"Aktier slog obligationer\",\"Aktiers sämsta reala utfall, årligen\"],[\"1 år\",\"cirka 60 procent av perioderna\",\"kraftigt negativt\"],[\"5 år\",\"cirka 70 procent\",\"negativt\"],[\"10 år\",\"cirka 80 procent\",\"svagt negativt\"],[\"20 år\",\"mer än nio av tio\",\"i princip noll\"],[\"30 år\",\"praktiskt taget alltid\",\"positivt — knappt tre procent per år\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Tabellens dolda kolumn är tålamodets pris: skillnaden mellan sextio och hundra procent vinnarandel ligger inte i vilka aktier du äger utan i hur länge du orkar. Marknadens sätt att betala ut volatilitetspremien är att först ta ifrån dig den — genom år då allt ser förlorat ut — och sedan återbetala med råge till den som inte sålde. Därför är den farligaste meningen i sparande den som börjar med »den här gången är det annorlunda« riktad mot sig själv: att man denna gång behöver pengarna. Horisonten deklareras bäst innan kraschen, aldrig under den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Dela ditt totala kapital i tre grupper efter när det faktiskt ska konsumeras: inom tre år, inom tio år, senare än tio år. Skriv ner beloppen. Jämför sedan din faktiska aktieexponering i varje grupp med vad Siegels tabell motiverar — och notera var du tar obetald kort horisontrisk, eller obetald lång orbete (onödigt låg exponering för kapital med Mega-horisont)."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar Siegels analys av rullande innehavstidsperioder 1802–2020?",
+          "alternativ": [
+            "Att aktier aldrig förlorat pengar på något enskilt år",
+            "Att aktier och obligationer vunnit lika ofta oavsett horisont",
+            "Att aktier slog obligationer i omkring tre av fem ettårsperioder men praktiskt taget i samtliga trettioårsperioder",
+            "Att obligationer med längre horisont blivit allt säkrare i reala termer"
+          ],
+          "ratt": 2,
+          "tips": "Följ vinnarandelen allt eftersom antalet år i perioden växer."
+        },
+        {
+          "q": "Vad händer med standardavvikelsen i genomsnittlig årsavkastning när innehavstiden förlängs, enligt Siegel?",
+          "alternativ": [
+            "Den ökar linjärt med antalet år",
+            "Den faller för aktier och understiger obligationernas efter omkring 15–20 år",
+            "Den är konstant eftersom åren är oberoende",
+            "Den faller endast för obligationer"
+          ],
+          "ratt": 1,
+          "tips": "Siegels uttryck är återgång mot medelvärde — dåliga perioder sänker startpriserna."
+        },
+        {
+          "q": "Vad är den viktigaste invändningen mot att tolka långa historiska perioder som garanti?",
+          "alternativ": [
+            "Att historiska genomsnitt alltid är högre än framtida",
+            "Att aktier inte kan köpas på margin längre",
+            "Att trettio års genomsnitt inte säger något om enskilda år",
+            "Att sekvensrisken — ordningen på avkastningsåren — kan slå ut en portfölj som redan tar uttag, även om genomsnittet håller"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på en portfölj som blöder uttag samtidigt som den sviktar."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 10,
+      "title": "Inflationen — den tysta fienden och aktiens långsamma skydd",
+      "intro": "Om aktien är bokens hjälte är inflationen dess skurk: den tysta skatt som ingen röstar för och ingen kan tajma. Siegel ägnar inflationen några av bokens viktigaste kapitel — från Weimar-tysklands hyperinflation till 1970-talets oljechocker — och visar att den förklarar både obligationernas sämsta sekel och aktiens korta svagheter. Kärnslutsatsen är kluven: aktien är inget kort-siktigt inflationsskydd, men det bästa långsiktiga.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Skadan i siffror: den amerikanska dollarn förlorade 95 procent av sin köpkraft 1802–2020, och det värsta halvseklet var det senaste fullständiga: från 1945 till 1981 steg konsumentpriserna månatligt synliga medan den långa statsobligationen genomlevde sin förlorade generation. Den som köpte långa obligationer vid krigsslutet 1946, med en ränta kring 2,4 procent, såg avkastningen stiga till 15 procent hösten 1981 — priserna på obligationer föll decennium efter decennium, och den reala totalavkastningen blev negativ i 35 år. En hel generation av föregivna riskfria sparare förlorade köpkraft långsammare men säkrare än någon aktiekrasch någonsin åstadkom. Siegel driver hem poängen: obligationens risk är inte volatiliteten utan att den låser fast nominella fordringar i en värld av föränderliga penningvärde."
+        },
+        {
+          "type": "text",
+          "content": "Ytterligheten är Tyskland 1923, som Siegel använder som tankeexperiment: när pappersmarken förstördes utplånades nominella fordringar — obligationer, livförsäkringar, bankkonton — i princip helt, medan aktieägandet behöll en del av sitt realvärde: bolagen ägde fabriker, lager och fastigheter som omprissattes i ny valuta. Skyddet var långtifrån perfekt och kom först efter år av förlust, men hierarkin stod klar: fordran på fasta belopp dör med valutan; ägande av produktivt kapital överlever i någon form. Mellan 1802 och 2020 har guldets historia varit det omvända beviset: friställt från sin dollarlåsning 1971 steg priset från 35 till 850 dollar per uns vid toppen i januari 1980 — över 20 procent real avkastning per år under 1970-talet — för att sedan falla omkring 70 procent och hålla på att bli en kvartssekelskuld för de som köpte toppen."
+        },
+        {
+          "type": "text",
+          "content": "Men aktien är inget kort-siktigt skydd — en av bokens mest motstridiga slutsatser. När oväntad inflation slår till faller aktier initialt: multipeln pressas av stigande räntor, och rapporterade vinster förvrängs av penningillusionen. Siegel bygger här på Modigliani–Cohns klassiska analys från 1979: under hög inflation överdrives bolagens vinster av FIFO-lagervinster och underavskrivningar samtidigt som marknaden diskonterar nominellt — resultatet är att aktier systematiskt missprissattes under 1970-talet. För AKM1 är översättningen direkt: V07 (bruttomarginal) och V08 (EBITDA-marginal) kan svälla av ren inflationsluft utan att verksamheten förbättrats, och V09 (ROE) kan se strålande ut när gamla tillgångar omvärderas — normalisera fundamenta i hög- och låginflationsmiljöer innan V04–V06 multipler tolkas."
+        },
+        {
+          "type": "text",
+          "content": "Per decennium blir mönstret åskådligt: 1970-talet var obligationernas och aktiernas gemensamma öken (realt kring minus ett respektive minus två procent) medan guldet steg över 20 procent realt per år; 1980- och 1990-talen vände allt (aktier kring 12 respektive 15 procent realt, guldet djupt minus); 2000-talet var aktiens förlorade decennium (realt runt minus tre) med guldets hämnd (över 10 procent realt per år); 2010-talet återgav tronen (aktier över 10 procent realt). Ingen tillgång vinner alla decennier — men bara aktien har positivt sammanlagt realt genomsnitt genom dem alla. Det är i decenniernas rotation som både längden och riskerna med Siegels tes syns som tydligast."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Realt årsmedel per decennium, avrundat (Siegel samt Ibbotson-data)\",\"rader\":[[\"Decennium\",\"Aktier\",\"Långa obligationer\",\"Guld\"],[\"1970-talet\",\"cirka minus 1 procent\",\"cirka minus 2 procent\",\"över plus 20 procent\"],[\"1980-talet\",\"cirka plus 12 procent\",\"cirka plus 7 procent\",\"cirka minus 8 procent\"],[\"1990-talet\",\"cirka plus 15 procent\",\"cirka plus 6 procent\",\"cirka minus 6 procent\"],[\"2000-talet\",\"cirka minus 3 procent\",\"cirka plus 3 procent\",\"över plus 10 procent\"],[\"2010-talet\",\"över plus 10 procent\",\"cirka plus 2 procent\",\"cirka plus 2 procent\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Inflationen lär oss att det finns två sätt att förlora pengar: dramatiskt, genom kursfall, och diskret, genom köpkraft. Det dramatiska sättet får rubriker och skapar beteende; det diskreta sättet får ingenting och skapar självtillfredsställelse. AK1A:s delfråga till varje tillgång är därför alltid: skyddad mot vad, mätt i vilken enhet? En svensk buffert på ett par procents ränta är inte ett skydd utan ett långsamt läckage — dess risk är bara osynlig nog att kallas säker. Siegel förtjänar beröm för att ha gjort den osynliga risken mätbar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på en tioårig obligation med två procents kupong, köpt idag och hållen till förfall, under två scenarier:_genomsnittlig inflation 2 procent respektive 6 procent. Beräkna den reala slutkursen i båda fallen. Skriv ner skillnaden — det är obligationens dolda svans — och lägg sedan samma fråga på ditt största fastighetslån: vad gör 6-procentsinflationen med lånets reala värde?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med den långa amerikanska statsobligationen under perioden 1946–1981?",
+          "alternativ": [
+            "Den gav negativ real totalavkastning i en hel generation när räntor och inflation steg",
+            "Den avkastade över 10 procent realt per år",
+            "Den behöll exakt sin köpkraft tack vare kupongen",
+            "Den förbjöds tillsammans med guldstandardens avskaffande"
+          ],
+          "ratt": 0,
+          "tips": "Räntan gick från cirka 2,4 till 15 procent — tänk på vad det gör med gamla obligationers pris."
+        },
+        {
+          "q": "Hur fungerar aktien som inflationsskydd enligt Siegel?",
+          "alternativ": [
+            "Perfekt på kort sikt eftersom kurserna stiger med KPI samma kvartal",
+            "Inte alls — aktier och inflation saknar samband i hans data",
+            "Dåligt på kort sikt men väl på lång sikt: bolag äger reala tillgångar och kan omprissätta med tiden",
+            "Bara om bolaget betalar utdelning i guld"
+          ],
+          "ratt": 2,
+          "tips": "Skilj på chocken när inflationen kommer och anpassningen efter den."
+        },
+        {
+          "q": "Varför kan hög inflation förvränga AKM1:s marginaler och ROE?",
+          "alternativ": [
+            "Därför att marginaler inte får redovisas under hög inflation",
+            "FIFO-lagervinster och underavskrivningar kan överdriva vinsterna — Modigliani–Cohns penningillusion",
+            "Därför att ränta på ränta alltid höjer EBITDA",
+            "ROE blir oberoende av inflation per definition"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad gamla lager och gamla maskiner kostar att ersätta när priserna stiger."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Räntans grepp om multipeln — P/E, deflation och Feds modell",
+      "intro": "Aktiers värdering står inte fri från räntan — den hänger vid den. Siegel ägnar bokens värderingskapitel åt sambandet mellan inflation, ränta och P/E, och landar i en karta över var aktiens multiplar varit högst och lägst. Budskapet till AKM1-användaren är obekvämt men nödvändigt: en multipel i sig (V04, V05, V06) säger ingenting förrän den sätts i sitt ränte- och inflationsklimat.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Feds modell — att aktiens vinstavkastning (vinst per aktie delat med kursen) rimligen ska stå i paritet med den tioåriga statsobligationsräntan — blev under 1990-talet ett standardargument för att höga P/E var berättigade när räntan var låg. Siegel går igenom modellens historia och dess blygsamma ursprung (ett namn givet av strateger efter att Fed publicerat en jämförelse i ett mandatråd) och framför sitt huvudinvändning: jämförelsen haltar eftersom den ställer ett realt mått mot ett nominellt. Vinsterna — och därmed vinstavkastningen — växer med inflationen, medan obligationskupongen är fast; en aktie är i grunden en real tillgång, obligationen en nominell. Siegels eget råd är därför att jämföra aktiens vinstavkastning med den reala räntan, sedan 1997 mätbar direkt genom TIPS — en tanke som fullföljs i kapitel 11."
+        },
+        {
+          "type": "text",
+          "content": "Siegels inflationskarta över multiplarna: aktiens P/E har historiskt varit högst när inflationen varit låg och stabil — det lilla fönstret kring noll till tre procent där planering är möjlig och avkastningskravet lägst — och lägst under både hög inflation och deflation. Deflationens mekanism är särskilt viktig och ofta förbisedd: fallande priser höjer de reala skulderna (V10 — skuldsättningsgradens verkliga tyngd dubblas av fallande priser, inte bara av stigande räntor) och pressar marginalerna, medan inflationens mekanism verkar genom penningillusion och osäkerhet. Portföljen drabbas alltså av svansar på båda håll: det finns ett sweet spot, och det är smalt."
+        },
+        {
+          "type": "text",
+          "content": "1930-talet och Japan efter 1989 är bokens deflationsfall: kombinationen av fallande priser och hög skuldsättning är den giftigaste miljö en aktiemarknad kan hamna i, eftersom fordringsägarna klipper företagens kassaflöden medan intäkterna faller. Här gör AKM1:s balansräkningsvariabler verklig skillnad: V10 (skuldsättningsgrad) och V11 (likviditet) avgör vem som överlever en deflations- eller åtstramningscykel med intakt äganderätt, och V12 (intäktsstabilitet) avgör hur fort marginalerna gröps ut. Siegel visar att marknaden som helhet inte kan fly räntklimatet — men att enskilda balansräkningar kan fly det bättre eller sämre."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till AKM1 är en arbetsordning: multipel först, sedan kontext. Påståendet att en aktie är billig till 1,2 gångor försäljningen (V04) eller 6 gångor EBITDA (V06) är ofullständigt tills det sätts mot ränteläget vid köpetillfället och mot kvaliteten på det som multipliceras (V07–V09, V12–V15). Samma P/E var en övervärdering 1981 med femtonprocentränta och en undervärdering 2020 med nollränta — inte för att företag var bättre 2020, utan för att det alternativa priset på kapital hade fallit. Multipeln är en funktion av två variabler, och den ena äger du inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Inflationsläge och aktiens multiplel (Siegels karta)\",\"rader\":[[\"Inflations- och räntläge\",\"Typisk multiplelnivå\",\"Mekanism\"],[\"Deflation\",\"låg\",\"reala skuldbördor växer (V10), marginaler pressas\"],[\"Låg, stabil inflation, cirka 0–3 procent\",\"högst\",\"lägst avkastningskrav, stabil planering\"],[\"Stigande hög inflation\",\"fallande\",\"penningillusion, osäkerhet, högt avkastningskrav\"],[\"Oregelbundna svängningar i inflation och ränta\",\"låg\",\"osäkerheten i sig pressar multiplerna\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Multipelns två variabler — företagets kvalitet och kapitalets pris — behandlas ofta som en. Det vanligaste felet i värderingsdiskussioner är att jämföra dagens V04–V06 med gårdagens utan att fråga vad räntan var då. Den näst vanligaste är det omvända: att rättfärdiga vilken multipel som helst med att räntan är låg — vilket var exakt argumentet 1999 och 2021. AK1A:s hållning: räntenivån förklarar en del av multipeln, berättigar aldrig hela, och margin of safety (utan siffra) ska alltid vara bredare än räntargumentet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta tre aktier du följer: notera deras nuvarande V04 (P/S) och V06 (EV/EBITDA). Hitta sedan deras multipler vid två tidigare tidpunkter — 2007 och 2015 — och ställ dem mot den tioåriga statsräntan vid respektive tillfälle. Skriv ner i vilket läge de var billigast mot sitt ränteklimat, inte bara mot sig själva. Frågan att besvara: betalade du för kvalitet eller för kapitalpris?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Siegel huvudinvändning mot Feds modell?",
+          "alternativ": [
+            "Att vinstavkastningen är omöjlig att beräkna historiskt",
+            "Att modellen bara fungerar på bolagsobligationer",
+            "Att P/E inte ska jämföras med något alls",
+            "Att den jämför ett realt mått (vinstavkastning) med ett nominellt (obligationsräntan) — och att jämförelsen bör göras mot reala räntor"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig vilken av de två storheterna som växer med inflationen."
+        },
+        {
+          "q": "I vilket inflationsklimat har aktiens multiplar historiskt varit högst enligt Siegel?",
+          "alternativ": [
+            "Vid deflation, eftersom kapital då är som mest värdefullt",
+            "Vid låg och stabil inflation, cirka 0–3 procent",
+            "Vid mycket hög inflation, eftersom vinster då exploderar",
+            "Multipeln är oberoende av inflationen i Siegels data"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på planerbarhet och avkastningskrav, inte på inflationsvinster."
+        },
+        {
+          "q": "Varför är deflation särskilt farlig för aktier enligt Siegel?",
+          "alternativ": [
+            "Fallande priser höjer reala skuldbördor och pressar marginalerna",
+            "Deflation gör att utdelningar beskattas hårdare",
+            "Deflation förbjuder återköp enligt SEC-regler",
+            "Centralbanker måste då höja räntan kraftigt"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad skulden väger när alla priser faller men lånet består."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Tillväxtens paradox — varför det bästa bolaget inte ger bäst avkastning",
+      "intro": "Bokens mest omvälvande kapitel för aktieägare handlar om att tillväxt och avkastning inte är samma sak. Siegel — som utvecklar temat fullt ut i uppföljaren The Future for Investors — visar med både bolags- och landsdata att den som betalar toppmultiplen för topp-tillväxten historiskt fått sämst utfall. Här knyts kursen hårdast till AKM1: V01–V02 utan V04–V06 är en halv ekvation.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ekvationen som styr allt: en akties totalavkastning är ungefär lika med direktavkastning, plus tillväxt i fundamentet (försäljning och vinster, V01–V02), plus förändringen i den multipel du betalade (V04–V06), minus utspädning genom emissioner (V19). Tre av de fyra termerna handlar inte om hur bra bolaget är utan om priset och ägandet. En högtekonomi som växer tio procent om året kan därför ge sina aktieägare noll om marknaden redan betalat för femton procents tillväxt och bolagen finansierar sig med ständiga nyemissioner. Detta är tillväxtens paradox: tillväxten är nödvändig i ekvationen men ingen garanti för avkastningen, eftersom priset är den andra sidan av myntet."
+        },
+        {
+          "type": "text",
+          "content": "Siegels klassiska exempel — IBM mot Standard Oil of New Jersey (senare Exxon), 1950 till 2003: IBM växte snabbare på varje enskilt sätt som gick att mäta, försäljningstillväxt 12,2 mot 8,0 procent per år, och var tekniksektorn stolta framtidsbolag; Standard Oil var den tråkiga oljejätten med vilande rykte. Ändå avkastade Standard Oil 14,4 procent per år mot IBMs 13,8 — och tusen dollar blev marginellt mer i oljebolaget, trots att IBM vann varje tillväxtmått. Skillnaden låg helt i de andra termerna: Standard Oil betalade i genomsnitt 5,2 procent i direktavkastning mot IBMs 2,2, och köparen betalade en lägre multipel från början. Siegel sammanfattar: det är inte bolaget du köper utan priset du betalar som avgör — den bästa aktien är inte det bästa bolaget utan det bästa köpet."
+        },
+        {
+          "type": "text",
+          "content": "Paradoxen skalas upp på landsnivå i bokens och uppföljarens Kina-analys: mellan 1992 och 2003 växte Kinas ekonomi snabbast i världen — och den kinesiska aktiemarknaden avkastade sina ägare negativt, medan Brasilien, med klart långsammare tillväxt, avkastade starkt positivt. Mekanismerna är desamma på nationell nivå: tillväxtbubblor betalar framtiden i förväg, nyemissioner späder ut ägarna ( hela V19-logiken: när kapital behöver fly in i en bransch är det förlorar de som redan äger den), och upphovsrätts- och konkurrensförhållanden gör att tillväxtens värde ofta tillfaller konsumenter och konkurrenter snarare än aktieägare. Den ekonomiska tillväxten är inte aktieavkastningen — ett av bokens viktigaste budskap i kursens AK1TS-språk: cykel- och prisläge slår trendläge."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-översättningen är arbetsordning, inte bara varning: hög V01 (försäljningstillväxt) och V02 (ARR-tillväxt) ska vägas mot V04 (P/S), V05 (P/B) och V06 (EV/EBITDA) i en enda fråga — vad måste inträffa för att dagens multipel ska vara rättvist om tio år? Krävs det att tillväxten ligger kvar på rekordnivå i ett decennium utan ett enda avbrott, då är köpet inte ett köpe utan ett vädjan. Kombinationen hög tillväxt och toppmultipel är därför i AK1A:s språk en strukturell risk — inte för att bolagen är dåliga utan för att förväntningarna är bra. Margin of safety utan siffra betyder här: avståndet mellan det som måste hända och det som troligen händer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"IBM mot Standard Oil of New Jersey, 1950–2003 (Siegels exempel)\",\"rader\":[[\"Mått\",\"IBM\",\"Standard Oil (Exxon)\"],[\"Försäljningstillväxt per år (V01)\",\"12,2 procent\",\"8,0 procent\"],[\"Genomsnittlig direktavkastning\",\"2,2 procent\",\"5,2 procent\"],[\"Totalavkastning per år\",\"13,8 procent\",\"14,4 procent\"],[\"Tusen dollar 1950 blev 2003\",\"omkring 1,5 miljoner dollar\",\"marginellt mer — trots lägre tillväxt på varje mått\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den svåraste insikten i Siegels tillväxtparadox är att den ger dig en falsk känsla av säkerhet när du äger det bästa bolaget. Kvalitet känns som skydd men är det först vid rätt pris — annars är kvalitet bara den dyraste formen av berättelse. Omvänt är det tråkiga bolaget till låg multipel inte en värdegrund i sig utan en väntan på att ekvationens övriga termer ska arbeta för dig. Frågan vid varje köp är därför aldrig hur bra bolaget är, utan vad som redan står i priset. AKM1 gör frågan mätbar: V01–V02 för tillväxten, V04–V06 för priset, V19 för det som läcker ut på vägen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj marknadens för tillfället mest hyllade tillväxtaktie. Skriv ner dess V01/V02 de senaste tre åren och dess nuvarande V04 och V06. Gör sedan baklängesräkningen: vilken årlig tillväxt krävs i tio år för att dagens multipel ska vara oförändrad om multiplerna normaliserar mot branschgenomsnitt? Skriv upp svaret som en procentsats och ett rimlighetsomdöme — och återkom till övningen i kapitel 9."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad blev utgången i Siegels jämförelse mellan IBM och Standard Oil 1950–2003?",
+          "alternativ": [
+            "IBM vann med stor marginal tack vare snabbare tillväxt",
+            "Båda avkastade identiskt eftersom marknaden är effektiv",
+            "Standard Oil avkastade mer trots lägre tillväxt på varje mått — direktavkastningen och den lägre multipeln vann",
+            "Ingen av dem slog index under perioden"
+          ],
+          "ratt": 2,
+          "tips": "Kom ihåg att direkta utdelningar är en del av totalavkastningen."
+        },
+        {
+          "q": "Vilken ekvation förklarar tillväxtens paradox?",
+          "alternativ": [
+            "Totalavkastning är ungefär direktavkastning plus tillväxt plus multipelförändring minus utspädning",
+            "Avkastning är lika med tillväxt gånger marginal",
+            "Avkastning bestäms enbart av multipeln",
+            "Avkastning är oberoende av priset på lång sikt"
+          ],
+          "ratt": 0,
+          "tips": "Fyra termer — varav tre handlar om pris och ägande, inte om verksamhetens kvalitet."
+        },
+        {
+          "q": "Hur kopplar kursen tillväxtparadoxen till AKM1?",
+          "alternativ": [
+            "V13–V15 avgör alltid avkastningen oavsett pris",
+            "Tillväxtvariablerna ersätter multiplarna vid lång horisont",
+            "Multiplerna V04–V06 ska alltid maximeras",
+            "V01–V02 måste vägas mot V04–V06: hög tillväxt till toppmultipel är en strukturell risk, inte ett köpe"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad som redan står i priset när multipeln är på topp."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Utdelningen — halva avkastningen och kraschens livlina",
+      "intro": "I Siegels data är utdelningen inte dekoration utanmotor: under större delen av två sekel stod direktavkastningen för omkring hälften eller mer av aktiens totalavkastning. Kapitlet går igenom utdelningens aritmetik, dess roll under depressionen — när återinvesterade utdelningar köpte aktier för usla priser — och dess moderna kusin i AKM1: återköpet, V20.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Aritmetiken: aktiens totalavkastning är kursförändring plus direktavkastning, och historically var den senare termen inte en detalj. Från 1871 fram till 1980 låg den amerikanska marknadens genomsnittliga direktavkastning kring 4,5–5 procent — ibland högre — vilket betyder att mer än hälften av den reala sex-sju-procentavkastning Siegels serie visar kom in som kontanter och återinvesterades. Först under 1980- och 1990-talets stiga multiplershöjd sjönk direktavkastningen mot tre, och under 2000-talet mot två procent, då kurskomponenten tog över — delvis på goda grunder (lägre räntor och skatter), delvis som en moda som lämnade investerare osedvanligt exponerade för multiplernas svängningar istället för för kassaflödenas stadighet."
+        },
+        {
+          "type": "text",
+          "content": "Depressionens läxa, som Siegel lyfter fram som bokens kanske mest praktiska: Dow Jones-prisindexet återfann sin topp från september 1929 först i november 1954 — tjugofem år av väntan för den som bara följde kursen. Men den som återinvesterade utdelningarna köpte under kraschen och depressionen aktier till historiskt låga priser och var tillbaka på 1929 års totalavkastningsnivå omkring 1945 — en drygt decennium kortare väntan, helt skapad av utdelningarnas återinvestering. Utdelningen är alltså inte bara avkastning utan mekanik: den tvingar fram köp när marknaden är som billigast, vilket är den enda form av mekanisk kontrarianism som fungerar utan ett enda beslut."
+        },
+        {
+          "type": "text",
+          "content": "Vad utdelningen signalerar och kräver: en utdelning är en kontantförpliktelse som inte går att fejka särskilt länge, och bolag som betalt genom cykler uppvisar därmed ofta det som AKM1 mäter som V12 (intäketsstabilitet) och V14 (varumärke) — kassaflöden som står sig även i dåliga år. Siegel varnar samtidigt för avkastningsfällan: en direktavkastning på tio procent som inte kan hållas är en nedskrivning på avbetalning, inte en avkastning. Hela hållbarhetsfrågan landar i marginalerna (V07–V08) och balansräkningen (V10–V11) — utdelningen är en slutfaktura på allt annat i modellen."
+        },
+        {
+          "type": "text",
+          "content": "Återköpen — V20 — är utdelningens moderna form: bolaget köper tillbaka aktier istället för att dela ut, skattemässigt ofta flexiblare och logiskt ekvivalent när aktien köps till rättvist pris. Siegel behandlar dem välvilligt men med samma villkor som utdelningar: återköp skapar värde när aktien är underprissatt, är neutralt vid rätt pris och ren förstörelse vid toppvärderingar — ett bolag som återköper sina egna aktier för att trycka upp måttet, samtidigt som multiplerna är rekordhöga, omfördelar från kvarvarande ägare till säljare och optionshavare. AK1A:s läsning av V20 är därför alltid prismässig: återköpets värde avgörs av vad som betalas, aldrig av att det görs."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Direktavkastningens roll genom epoker\",\"rader\":[[\"Epok\",\"Genomsnittlig direktavkastning\",\"Utdelningens roll\"],[\"1871–1920\",\"över 5 procent\",\"dominerande delen av avkastningen\"],[\"1921–1970\",\"4–5 procent\",\"omkring hälften av totalavkastningen\"],[\"1971–2000\",\"cirka 3 procent\",\"kurstillväxten tar över\"],[\"2001–2020\",\"cirka 2 procent\",\"återköp (V20) tar över delar av rollen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Utdelningen är den enda avkastningskomponent som betalas ut i kontanter oavsett marknadens humör — och därför den enda som inte kan tas tillbaka av en notering. Kursen är en åsikt, multiplern är en väderprognos, men utdelningen som landat på kontot är en faktum som kan återinvesteras beslutsfritt. Siegel visar att denna mekaniska detalj gjort mer för långsiktig förmögenhet än de flesta strategier: automatiskt köp av aktier när ingen annan ville ha dem. Bygg därför portföljer där kassaflödet — inte noteringen — är det du faktiskt äger."
+        },
+        {
+          "type": "utmaning",
+          "content": "För ditt största innehav: räkna ut hur stor andel av den totala avkastningen de senaste tio åren som kom från utdelningar respektive kursförändring. Räkna sedan ut vad som händer med en tioårsavkastning om multipeln halveras men utdelningen bibehålls och återinvesteras. Skriv ner vid vilken multipel utdelningen ensam bär din avkastning — det är ditt verkliga marginal of safety-mått för innehavet."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur stor del av aktiens långsiktiga totalavkastning kom historiskt från utdelningar enligt Siegel?",
+          "alternativ": [
+            "Nästan ingenting — utdelningar är skatteondöda",
+            "Omkring hälften eller mer under större delen av perioden fram till 1980",
+            "Allt — kursförändringar nettar ut till noll över sekel",
+            "Exakt en tredjedel i alla decennier"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på hur hög den genomsnittliga direktavkastningen var innan 1980."
+        },
+        {
+          "q": "Vad hände efter 1929 för den som återinvesterade utdelningar jämfört med den som bara följde prisindexet?",
+          "alternativ": [
+            "Båda var tillbaka på 1929 års nivå samtidigt, 1954",
+            "Utdelningsinvesteraren förlorade mer eftersom utdelningarna sänktes",
+            "Prisindexet behövde vänta till november 1954 — med återinvesterade utdelningar var totalavkastningen tillbaka redan omkring 1945",
+            "Utdelningarna suspenderades till 1945 av regeringen"
+          ],
+          "ratt": 2,
+          "tips": "Under kraschen köpte utdelningarna aktier till bottenpriser."
+        },
+        {
+          "q": "Hur ska återköp (V20) bedömas enligt kursen?",
+          "alternativ": [
+            "Återköp kan ersätta utdelning skatteflexibelt — men återköp vid toppvärderingar skapar inget värde",
+            "Alla återköp är alltid bra oavsett pris",
+            "Återköp är alltid sämre än utdelning",
+            "Återköp räknas som intäkt i resultaträkningen"
+          ],
+          "ratt": 0,
+          "tips": "Vad bolaget betalar för sina egna aktier avgör om köpet skapar värde."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Börsen som sjätte sinne — konjunktur, krig och covid",
+      "intro": "Börsen är inte ekonomin — den är vad marknaden tror om ekonomin om ett halvår. Siegel ägnar flera kapitel åt hur aktiemarknaden förhåller sig till konjunkturer, krig och katastrofer, och budskapet är paradoxalt: de värsta nyheterna har ofta varit de bästa köptillfällena, och de lugnaste åren de farligaste. Detta är AK1TS-cykelkapitlet i boken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Marknaden leder ekonomin — vanligtvis. Sedan andra världskriget har den amerikanska aktiemarknaden i de flesta fall toppat några månader före recessionens start, eftersom kurserna diskonterar framtida vinster, inte aktuella. Men ledarskapet är opålitligt i båda riktningar: Paul Samuelsons berömda pilumin att aktiemarknaden förutsagt nio av de senaste fem recessionerna fångar problemet — marknaden faller ofta utan att recession följer, och har också varit på väg upp medan recessionen inletts. Siegel räknar upp fallen där kraftiga fall (1962, 1987) helt saknade konjunkturföljd. För den som vill tjäna pengar på att läsa börsen som ekonomisk barometer är alltså huvudläxan att den är barometer för förväntningar, inte för utfall — förväntningar som marknaden sedan själv kan ångra."
+        },
+        {
+          "type": "text",
+          "content": "Krigens paradox: den amerikanska aktiemarknadens botten under andra världskriget kom i april 1942 — månader före vändpunkterna i Stilla havet och Nordafrika, medan krigslyckan fortfarande såg mörk ut — och aktier steg därefter genom krigets återstående år. Den gamla klingsparksregeln köp på kanoner, sälj på trumpeter har i Siegel data ett visst stöd, med förklaringen att kriser och krig pressar kurserna till nivåer där även fasansfulla framtider är inprisade. Mekanismen är inte patriotism utan aritmetik: när priset förutser det värsta blir det bara bättre än förväntat som krävs för att kursen ska stiga. Det är samma mekanik som gör att kvartalsrapporter kan falla på goda nyheter — marknaden handlar överraskningar, inte nivåer."
+        },
+        {
+          "type": "text",
+          "content": "Covidfallet — bokens sjätte upplagas levande exempel och den snabbaste kraschen i amerikansk historia: S&P 500 föll 34 procent på tjugoish handelsdagar mellan 19 februari och 23 mars 2020, på nyheter som var objektivt värre än vad marknaden prissatt. Sedan vände allt: på centralbankernas och statens kraftpaket återtog index sitt toppvärde redan i augusti 2020 — en fullständig tur-och-retur på under sex månader, mitt i en recession som för aktieägare aldrig blev lång. Siegel använder fallet för att both bekräfta sin tes (den som höll köpaktierna belönades snabbt) och varna för dess moderna villkor: när centralbanker intervenarer i denna skala blir fallens djup delvis politiskt styrda — en slags Fed-put som gör historiska kraschmönster till opålitliga guider, något kursen återkommer till i kontroverskapitlet."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till AK1TS är att marknaden diskonterar i förväg och att din informationsförsprång därför är negativ på nyheter: när rubriken finns finns den i priset. AKM1:s katalysatorer — V16 (produktlanseringar), V17 (avtal och partnerskap), V18 (regulatoriska beslut) — ska därför bedömas som prisrörliga endast när de avviker från vad multiplern redan betalat för. Att vänta på att lugnet återvänder innan man köper är i Siegels data den dyraste av alla strategier: majoriteten av de bästa dagarna inträffar i anslutning till de värsta, och den som missar dem kapar volatilitetspremien precis när den betalas ut."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Händelser och vad börsen gjorde mot vad ekonomin gjorde\",\"rader\":[[\"Händelse\",\"Börsen\",\"Ekonomin\"],[\"Kraschen 1987\",\"DJIA minus 22,6 procent på en enda dag\",\"ingen recession följde\"],[\"Andra världskriget\",\"botten i april 1942, stigande under kriget\",\"krigsekonomi med prisreglering\"],[\"Dot-com\",\"S&P 500 minus 49 procent 2000–2002\",\"mild recession 2001\"],[\"Finanskrisen\",\"S&P 500 minus 57 procent 2007–2009\",\"djup recession 2008–2009\"],[\"Covid-19\",\"minus 34 procent februari–mars 2020, nytt toppvärde i augusti\",\"kort men djup nedstängningsrecession\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Börsens förhållande till nyheter är inte spegling utan vadslagning: den handlar inte det som händer utan det som händer mot vad som prissatts. Det är därför katastrofer kan vara köptillfällen (det värsta är redan betalt) och framgångar kan vara fällor (det bästa är redan betalt). Den praktiska regeln för AK1A: innan en nyhet får flytta din uppskattning, fråga om nyheten ändrar V01–V20 eller bara stämningsläget — och om marknadens reaktion ändrade multiplerna (V04–V06) eller bara dagen. Det mesta av det som känns avgörande tillhör den senare kategorin."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen händelsejournal: anteckna datum, rubrik och första dagens kursreaktion för de fem största makronyheterna det senaste året. Låt posterna ligga i tre månader och bedöm sedan för varje: förändrade nyheten företagens fundamenta (V01–V20) eller bara priset? Skriv ner träffsäkerheten hos dag-ett-reaktionerna — övningen tränar skillnaden mellan överraskning och information."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad fångar Samuelsons skämt om att aktiemarknaden förutsagt nio av de senaste fem recessionerna?",
+          "alternativ": [
+            "Att marknaden alltid har rätt om konjunkturen",
+            "Att marknadens fall ofta är falska signaler — den ropar varg oftare än recessionen kommer",
+            "Att recessioner varar i fem månader i genomsnitt",
+            "Att ekonomin leder börsen med nio månader"
+          ],
+          "ratt": 1,
+          "tips": "Räkna: fler förutsagda recessioner än det funnits recessioner."
+        },
+        {
+          "q": "Vad kännetecknar kraschen 1987 i Siegel data?",
+          "alternativ": [
+            "Att den följdes av en djup depression",
+            "Att den orsakades av en centralbankshöjning av elva procent",
+            "Att den skedde under guldstandardens sista år",
+            "Att DJIA föll 22,6 procent på en enda dag utan att någon recession följde"
+          ],
+          "ratt": 3,
+          "tips": "Det var börsens värsta enskilda dag — men inte ekonomins."
+        },
+        {
+          "q": "Hur forlöpte covidfallet 2020 enligt bokens sjätte upplaga?",
+          "alternativ": [
+            "S&P 500 föll 34 procent februari–mars 2020 och återtog sitt toppvärde redan i augusti samma år",
+            "Marknaden föll 60 procent och återhämtade sig först 2023",
+            "Marknaden steg eftersom recessionen uteblev",
+            "Utdelningarna suspenderades landsomfattande"
+          ],
+          "ratt": 0,
+          "tips": "Det var den snabbaste kraschen — och en av de snabbaste återhämtningarna."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Bubblor och beteende — NASDAQ, sucker's bet och V19-emissionerna",
+      "intro": "Bokens beteendekapitel förklarar varför intelligent folk köper dyrt och säljer billigt: överförtrödan, förlustaversion och berättelsens makt. Siegel hann själva leverera en av finanshistoriens bäst tajmade varningar — en debattartikel i Wall Street Journal dagarna före Nasdaqs topp i mars 2000. Kapitlet binder samman bubblornas anatomi med AKM1:s V19: emissionerna som överför värde från kvarvarande ägare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dot-com-bubblan i siffror: Nasdaq Composite topped den 10 mars 2000 på 5 048 och föll 78 procent till oktober 2002; S&P 500 föll 49 procent; tekniktungt ledarskap bar hela fallet. Veckor före toppen publicerade Siegel debattartikeln »Big-Cap Tech Stocks Are a Sucker's Bet« i Wall Street Journal — hans argument var inte att internet var overdrivet som fenomen utan att de stora teknikbolagens multiplar (över 100 gånger vinsten) var matematiskt omöjliga att rättfärdiga: för att motivera sådana priser måste tillväxten ligga på rekordnivå i decennier utan ett enda avbrott, medan historien visar att konkurrens och normalisering alltid kommer. Det är samma baklängesräkning som kapitel 6 övar på — multipel mot nödvändig tillväxt — nu applicerad på en hel marknad."
+        },
+        {
+          "type": "text",
+          "content": "Beteendefällorna Siegel räknar upp är väl dokumenterade: överförtrödan (Barber och Odeans studier visade att män handlade omkring 45 procent mer än kvinnor och avkastade ungefär en procentenhet sämre per år — de mest aktiva privat_handlarna avkastade sämst av alla), förlustaversionen som gör att förluster väger dubbelt mot vinster och förklarar varför ägare fastnar i förlustpositioner, anknytningen till inköpspris och gamla toppar, och berättelsens makt: när nya mått (sidvisningar, rörelser,眼球) ersätter vinster som värderingsgrund har bubblan nått sitt språkliga stadium. Gemensamt för alla fällor är att de känns rationella inifrån — ingen i februari 2000 upplevde sig spekulera, man investerade i det uppenbara."
+        },
+        {
+          "type": "text",
+          "content": "V19 — kapitalförbränning och emissionsrisk — är bubbelmarknadens dolda överföringsmekanism. Under dot-com-åren finansierade sig de nya bolagen med ständiga aktieemissioner: när en hel sektor behöver fly in kapital för att växa säljs ägande till topppriser — och värdet överförs från de kvarvarande ägarna till de som fick sälja och till optionshavarna, medan utspädningen äter den tillväxt som skulle rättfärdiga priserna. Omvänt är det i AKM1:s läsning ett kraftigt positivt tecken när ett bolag kan växa utan att återkommande emittera (V19 låg), särskilt i kombination med V11 (likviditet) som bär hela cykler. Emissionsfrekvensen hos en sektor är därmed en cykelindikator i sig — mest emissioner sker alltid när multiplerna är högst."
+        },
+        {
+          "type": "text",
+          "content": "Vad gjorde då Siegel för skyddemi? Hans recept är mindre romantiskt än man kan tro: bred diversifiering (bubblor är koncentrerade till sektorer och berättelser), disciplin i värderingen (multiplens mot nödvändig tillväxt), och ett beteende som kan sammanfattas som att äga marknaden men aldrig äga berättelsen fullt ut. Han argumenterar också för indexets kraft — men påpeker samtidigt ett av sin tids viktigaste problem: när de största bubbelbolagen väger tungt i index (Cisco var vid årsskiftet 1999/2000 världens värdefullaste bolag) blir indexköparen en passiv bubbelägare. Detta är spänningen i all indexdebatt som kursen återkommer till i kapitel 10 och 12: mellan diversifieringens logik och koncentrationsriskens verklighet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Stora bubblor och deras återhämtningstider\",\"rader\":[[\"Bubbla\",\"Topp\",\"Fall\",\"Återhämtning av prisnivå\"],[\"USA 1929\",\"DJIA september 1929\",\"minus 89 procent till 1932\",\"först november 1954\"],[\"Japan 1989\",\"Nikkei 38 916 i december 1989\",\"minus 82 procent till 7 054 år 2009\",\"först 2024 — 34 år\"],[\"Dot-com 2000\",\"Nasdaq 5 048 den 10 mars 2000\",\"minus 78 procent till oktober 2002\",\"april 2015 — 15 år\"],[\"Finanskrisen 2007\",\"S&P 500 oktober 2007\",\"minus 57 procent till mars 2009\",\"nytt toppvärde 2013\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Bubblans naturliga livslängd bestäms av hur länge berättelsen kan växa snabbare än verkligheten hinner ifatt den. Därför känns varje bubbla annorlunda och fungerar alla varningar lika dåligt: problemet är aldrig att folket är dumt utan att berättelsen är tillräckligt sann — internet förändrade verkligen världen, och det var därför det gick att betala 100 gånger vinsten för den. AK1A:s enda hållbara försvar är därför inte att genomskåda berättelsen utan att räkna på priset: när ekvationens nödvändiga tillväxt överskrider det historiskt möjliga är berättelsens sanning ovidkommande. Du behöver inte veta att det är en bubbla — bara vad som måste hända för att det inte ska vara det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör Siegelövningen från mars 2000 på dagens marknad: ta den mest värdefulla bolaget i ditt hemindex och räkna baklänges — vilken årlig vinsttillväxt i tio år krävs för att dagens V04 och V06 ska vara oförändrade om multiplerna samtidigt normaliseras till tioårsgenomsnitt? Jämför kravet med bolagets faktiska tillväxt de senaste tio åren. Skriv en tio-raders promemoria med slutsatsen köp, behåll eller avstå — motiverad enbart i siffror."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad argumenterade Siegel för i Wall Street Journal i mars 2000?",
+          "alternativ": [
+            "Att internet som fenomen var en overdriven bluff",
+            "Att alla teknikaktier skulle nationaliseras",
+            "I »Big-Cap Tech Stocks Are a Sucker's Bet«: att multiplars över 100 gånger vinsten inte gick att rättfärdiga med någon historiskt möjlig tillväxt",
+            "Att Federal Reserve skulle sänka räntan till noll"
+          ],
+          "ratt": 2,
+          "tips": "Argumentet var aritmetiskt — om nödvändig tillväxt — inte ett uttalande om tekniken."
+        },
+        {
+          "q": "Vad visade Barber och Odeans studier om handelsbeteende?",
+          "alternativ": [
+            "Att män handlade omkring 45 procent mer än kvinnor och avkastade ungefär en procentenhet sämre per år",
+            "Att frekvent handel förbättrade avkastningen med två procent per år",
+            "Att kvinnor handlade mest och förlorade mest",
+            "Att handelsfrekvensen saknade samband med avkastning"
+          ],
+          "ratt": 0,
+          "tips": "Aktiviteten hade ett pris — och det syntes i nettoavkastningen."
+        },
+        {
+          "q": "Hur fungerar emissioner (V19) som bubblornas mekanism?",
+          "alternativ": [
+            "Emissioner sänker multiplerna och gör marknaden billig",
+            "Emissioner sker alltid vid bottenkurser",
+            "Emissioner är neutrala eftersom kapitalmängden är konstant",
+            "När en hel sektor emitterar vid topp multiplar överförs värde från kvarvarande ägare genom utspädning"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vem som säljer ägande och vem som står kvar som ägare."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Världen bortom USA — Japan 1989 och gränserna för hemmamarknadsbias",
+      "intro": "Siegels data är amerikanska — men hans slutsatser publicerades i en värld där Japan just visat hur lång den långa sikten kan bli och där tillväxtekonomiernas börsar stod för en allt större del av kapitalet. Kapitlet behandlar den globala portföljen, Japans 34-åriga återhämtning och den demografiska fråga Siegel ställer men inte kan besvara: vem köper babyboomernas tillgångar?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Japans varnande exempel: i december 1989 stängde Nikkei på 38 916 och det japanska börsvärdet var som mest i nivå med det amerikanska — omkring fyrtio procent av världens samlade börsvärde — på multiplar som fick till och med dot-com-åren att se blygsamma ut. Sedan föll indexet 82 procent till 7 054 år 2009, och toppen återtogs inte förrän 2024: trettiofyra år. En japansk långsiktssparare som köpte vid toppen och höll — troget Siegels mantra — väntade i över tre decennier på att ens komma tillbaka till noll, och en livsformål hann ta slut på vägen. Detta är det enskilda kraftigaste motargumentet mot att läsa amerikanska 200-årsdata som en naturlag, och det driver hela kontroverskapitlet: den långa sikten kan vara längre än ditt liv."
+        },
+        {
+          "type": "text",
+          "content": "Det globala dataläget: Dimson, Marsh och Staunton sammanställde i Triumph of the Optimists (2002)aktieavkastningen i sexton länder 1900–2000 och fann att aktier besegrade obligationer i samtliga studerade länder — men att den globala genomsnittsprenien låg lägre än den amerikanska, och att USA tillhörde de bäst presterande marknaderna. Vissa marknader förstördes helt på vägen: ryska aktieägare nationaliserades utan ersättning 1917, kinesiska 1949; tyska och japana ägare genomlevde krig, hyperinflation och förlorade decennier men återuppbyggdes. Budskapet är kluvet på ett sätt som gör båda sidorna i kontroversen rätt: aktiens premie verkar vara en global egenskap, inte ett amerikanskt_lyckokast — men den amerikanska seriens magnitud är sannolikt priset på att studera vinnaren, en invändning kapitel 13 utvecklar."
+        },
+        {
+          "type": "text",
+          "content": "Demografifrågan — Siegel nya spår i senare upplagor: när stora kohorter går i pension och börjar sälja av sina tillgångar, vem köper? Hans svar är att köparna finns i tillväxtekonomierna, vars sparande och medelklass växer, samt i Immigration och kapitalflöden — men att övergången kan vara skakig och påtryckande på multiplerna. Frågan har en direkt AKM1-analogi på bolagsnivå: V03 (intäktsdiversifiering) avgör vem som köper bolagets produkter när en marknad mattas, och på nationell nivå blir frågan densamma för hela index. En åldrande hemmamarknad är en fundamentalt negativ variabel som marknadsdebatten sällan prissätter."
+        },
+        {
+          "type": "text",
+          "content": "Den praktiska slutsatsen är den globala portföljen. Hemmamarknadsbias — att nästan alla sparare är överviktade sitt eget land — är i Siegels data en av de dyraste beteendemässiga overheadkostnaderna, för den blandar två beslut: var du bor och vad du äger. Den globala portföljen är dock ingen garanti: den japanska viktningen av världen 1989 visade att marknadsvikterna själva kan vara bubblor. AK1A:s hållning blir därför dubbelt: diversifiera över länder som erkännande av att du inte vet vilken vinnare som väljs i efterhand — men behåll multipeldisciplinen (V04–V06) per marknad, för global exponering till lokala toppmultiplar är bara diversified dyra köp."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den globala bilden 1900–2000 (Dimson–Marsh–Staunton)\",\"rader\":[[\"Land eller region\",\"Real aktieavkastning, ungefär\",\"Not\"],[\"USA\",\"bland de högsta, omkring 6–7 procent\",\"vinnaren som i efterhand studerats mest\"],[\"Storbritannien\",\"kring 5,5–6 procent\",\"längsta sammanhängande serie\"],[\"Tyskland och Japan\",\"kraftiga svängningar\",\"krig, hyperinflation, återuppbyggnad\"],[\"Globalt snitt, sexton länder\",\"kring 5 procent\",\"aktier över obligationer i samtliga länder\"],[\"Ryssland 1917, Kina 1949\",\"totalförlust\",\"nationalisering utan ersättning\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Japan 1989 lär oss att tålamodets aritmetik har en dold startpunkt: multipln köpt. Den som köpte Japan till 60–80 gånger vinsten och den som köpte till 15 gånger gjorde samma akt — köpte ett brett index och höll i decennier — men levde i två olika världar. Horisontens makt (kapitel 3) och prismässighet (kapitel 6) är alltså inte två ämnen utan ett: vad du betalar avgör hur lång den långa sikten faktiskt behöver bli. Global diversifiering är det rimliga svaret på att vi inte vet vilka USA eller Japan som finns i framtiden — men den gör ingenting åt att vi betalade för mycket."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ut din faktiska vikt mot din hemmarknad: andel av din aktieportfölj som är inhemska titlar. Jämför med hemmamarknadens andel av världens börsvärde. Skriv ner skillnaden som en procentenhet och formulera en mening om varför den finns — information, skatt, känsla eller bekvämlighet. Lägg sedan till en rad om vad Japons 1989-köpare skulle ha behövt i portföljen för att klara trettiofyra år: vikt, multiplar eller horisont."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med Nikkei efter december 1989?",
+          "alternativ": [
+            "Index föll 20 procent och återhämtade sig på två år",
+            "Index avvecklades och ersattes av TOPIX",
+            "Index föll från 38 916 till 7 054 — minus 82 procent — och återtog sin topp först 2024",
+            "Index steg ytterligare i trettio år utan avbrott"
+          ],
+          "ratt": 2,
+          "tips": "Räkna åren mellan 1989 och 2024."
+        },
+        {
+          "q": "Vad var huvudfyndet i Dimson–Marsh–Stauntons globala studie?",
+          "alternativ": [
+            "Att aktier besegrade obligationer i samtliga studerade länder — men att USA låg över det globala snittet",
+            "Att bara amerikanska aktier gett positiv real avkastning",
+            "Att obligationer slagit aktier i majoriteten av länder",
+            "Att data före 1950 är oanvändbart"
+          ],
+          "ratt": 0,
+          "tips": "Premien finns globalt — men magenta är inte den amerikanska."
+        },
+        {
+          "q": "Vilken demografisk fråga ställer Siegel i senare upplagor?",
+          "alternativ": [
+            "Om unga kohorter kan tänkas köpa aktier alls",
+            "Om pensionsåldern borde höjas till sjuttio",
+            "Om bytesbalansen styr aktiekurser",
+            "Vem som köper babyboomernas tillgångar när kohorterna säljer av — med svaret att köparna finns i tillväxtekonomier och kapitalflöden"
+          ],
+          "ratt": 3,
+          "tips": "Säljare i åldrande ekonomier, köpare någon annanstans."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "TIPS mot guld — inflationsskydd på riktiga villkor",
+      "intro": "När USA lanserade TIPS 1997 fick sparare för första gången en statlig garanti i reala termer — och Siegel tog definitivt ställning: för den försiktige spararen är indexobligationer överlägset inflationsskydd. Kapitlet ställer TIPS mot guld och nominella obligationer, och knyter an till kapitel 5:s viktigaste jämförelse: aktiens vinstavkastning mot den reala räntan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "TIPS — Treasury Inflation-Protected Securities — fungerar så att huvudstalet indexeras mot konsumentprisindex och kupongen betalas på det uppräkningade beloppet: innehavaren får en real avkastning som staten garanterar oavsett vad inflationen blir. Vid lanseringen i januari 1997 erbjöd tioåriga TIPS en real ränta kring 3,5 procent — en enligt Siegel enastående gåva: riskfri real avkastning på historiskt hög nivå. Sedan dess har de reala räntan sjunkit i flera steg, via finanskrisen och pandemin ner till under noll 2020. Utvecklingen är i sig en föreläsning i kapitel 5:s tema: TIPS priset är den reala räntan, och den räntan är den mest informationsbärande enskilda variabeln i hela värderingssystemet."
+        },
+        {
+          "type": "text",
+          "content": "Guldets rekord är redan känt från kapitel 2 och 4: omkring 0,5 procent realt på tvåhundra år, med en volatilitet i klass med aktiernas — guldtroyouncen steg från 35 dollar 1971 till 850 dollar vid toppen i januari 1980, föll omkring 70 procent fram till sekelskiftet, och hade så sent som 2020 fortfarande inte återtagit 1980 års reala toppvärde. Guldet skyddar inte mot inflation på kort sikt (reala svängningar på fyrtio procent är vanliga), producerar inget kassaflöde som kan återinvesteras, och dess långa reala avkastning är i praktiken inflation minus förvaringskostnader. Siegel summerar bilden: guldets främsta tillgångsgrensning är att det historiskt varit en inflationsskyddsberättelse snarare än ett inflationsskydd — dess pris styrs lika mycket av räntor, dollar och oro som av konsumentpriser."
+        },
+        {
+          "type": "text",
+          "content": "Den nominella obligationen är kontrastfallet: dess skydd är explicit begränsat till att betala fastställda dollar — vilket är fullständigt skydd mot default och noll skydd mot penningförstörelse. Penningillusionen gör resten: den nominella kupongen känns som avkastning även när den är en real förlust, vilket var en hel generations erfarenhet 1946–1981. Siegel ger därför den försiktige spararen en hierarki av skydd: för kapital som måste behålla köpkraft utan svängningar är TIPS förstavalet; för kapital som ska växa i köpkraft över längre horisonter är aktier historiska vinnare; guldet intar en mellanställning som katastrof- och valutaförsäkring snarare än som avkastande tillgång — och dess andel bör motiveras av försäkringslogik, inte av avkastningsförväntan."
+        },
+        {
+          "type": "text",
+          "content": "Och kopplingen till värderingen: med TIPS finns sedan 1997 en observerbar real riskfri ränta — och därmed den jämförelse Siegel föreslog i kapitel 5 som ersättning för Feds modell. Aktiens rimliga multipel står mot den reala räntan: när tioåriga TIPS erbjuder tre procent realt krävs mer av aktien; när de erbjuder noll är en给定 vinstavkastning mer värdefull. För AKM1 blir detta den rentånkta värderingsdisziplinen: V04–V06 ska ses mot TIPS-kurvan, och hela portföljens bygge blir en enda fråga — hur mycket real riskfri avkastning finns det att välja bort, och vad får jag för det? Det är säkerhetspremien i praktisk form, och den återkommer i kontroverskapitlet som dess mest omdebatterade storhet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre sätt att skydda köpkraft\",\"rader\":[[\"Egenskap\",\"TIPS\",\"Nominell statsobligation\",\"Guld\"],[\"Inflationsskydd\",\"ja — huvudstalet indexeras mot KPI\",\"nej\",\"opålitligt på kort sikt\"],[\"Kassaflöde\",\"real kupong, återinvesterbart\",\"nominell kupong\",\"inget\"],[\"Real avkastning historiskt\",\"finns bara sedan 1997 — 3,5 procent vid lansering, under noll 2020\",\"omkring 3,5 procent 1802–2020\",\"omkring 0,5 procent 1802–2020\"],[\"Siegel för den försiktige\",\"förstahandsval\",\"nej\",\"försäkring, inte avkastning\"]]}"
+        },
+        {
+          "type": "insikt": null,
+          "content": "Den viktigaste frågan vid varje tillgång är den som sällan ställs: säker i vilken enhet? En statlig obligation är riskfri i dollar men riskabel i köpkraft; en aktie är riskabel i dollar men historiskt pålitlig i köpkraft över decennier; TIPS är det enda instrument som är riskfritt i köpkraft och ingenting annat. När någon kallar något riskfritt utan att ange enheten har de avgivit en halv sanning — och halva sanningen om risk är den farligaste som finns, eftersom den låter dig sova gott medan köpkraften läcker ut."
+        },
+        {
+          "type": "utmaning",
+          "content": "Sätt ett realt mål: skriv ner vilken köpkraftsavkastning ditt kapital faktiskt måste producera för att bära din plan (till exempel två, fyra eller sex procent realt). Leta reda på dagens reala ränta på indexobligationer i din hemvaluta. Skillnaden mellan målet och den riskfria reala räntan är det du måste förtjäna med risk — skriv upp hur mycket aktieexponering du historiskt behövt för den skillnaden, och vad du skulle göra om TIPS erbjöd hela målet."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur är TIPS konstruerade?",
+          "alternativ": [
+            "Med fast guldväxel på huvudstaelet",
+            "Huvudstalet indexeras mot konsumentprisindex och kupongen betalas på det uppräkningade beloppet — vilket ger en garanterad real avkastning",
+            "Med kupong som stiger med aktieindex",
+            "De betalar bara ut vid deflation"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med huvudstaelet när KPI stiger?"
+        },
+        {
+          "q": "Vad är guldets långsiktiga reala rekord enligt Siegel data?",
+          "alternativ": [
+            "Omkring fem procent realt — bättre än aktier",
+            "Noll procent — guld är ett perfekt köpkraftslås utan svängningar",
+            "Omkring 0,5 procent realt på 200 år, med aktielik volatilitet och utan återigång av 1980 års reala topp vid 2020",
+            "Tio procent nominellt per år sedan 1971"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på både nivån och svängningarna."
+        },
+        {
+          "q": "Vilken jämförelse föreslår Siegel som ersättning för Feds modell?",
+          "alternativ": [
+            "Att jämföra aktiens vinstavkastning med den reala räntan — sedan 1997 observerbar via TIPS",
+            "Att jämföra P/B med guldkursen",
+            "Att jämföra direktavkastningen med korträntan",
+            "Att jämföra BNP-tillväxten med obligationsräntan"
+          ],
+          "ratt": 0,
+          "tips": "Båda storheterna ska mätas i samma enhet — köpkraft."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "Livscykeln — portfölj efter ålder och AK1TS Mega-horisont",
+      "intro": "Bokens praktiska krön är livscykelkappitlet: hur aktieandelen ska åldras med ägaren. Siegel slutsats är kontroversiell — att konventionella råd ger för låg aktieandel även för äldre — och den moderna debatten om hävstång i ung ålder gör den inte mindre kontroversiell. Här knyts kursen till AK1TS: horisonten som variabel och Mega som dess längsta värde.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Siegels livscykellogik följer direkt från kapitel 3: aktiers risk minskar med innehavstiden, och ungårens största tillgång är tiden själv — förtjänster som flyter in över decennier kan bära hög aktieexponering eftersom innehavstiden sträcker sig bortom pensionen. Därur den klassiska glide pathen: maximal aktieandel i ung ålder, successivt ökad skyddsandel allt eftersom kapitalet närmar sig konsumtion. Siegel kontroversiella tillskott är slutsatsen på andra änden: eftersom pensionen kan sträcka sig över trettio år — och arvet över ännu längre — bör även pensionärers aktieandel enligt honom ligga högre än konventionella råd (regelverket hundra minus ålder och liknande) anger, åtminstone för den del av kapitalet som inte är nödvändigt för de närmaste årens utgifter."
+        },
+        {
+          "type": "text",
+          "content": "Uttagsteori — 4-procentsregeln: William Bengen visade 1994 att en portfölj som tagit ut fyra procent av startkapitalet (därefter indexerat) historiskt överlevt trettio år i nästan alla amerikanska perioder, och Trinity-studierna bekräftade mönstret. Siegel kopplar regeln till reala räntor: dess hållbarhet vilar på att kapitalet kan växa realt, och när reala räntor faller — som de gjort sedan 1990-talet — blir historiska fyra procent en allt skörare utgångspunkt. Åter igen sekvensrisken: två djupa år i början av uttagsfasen kan förstöra en plan som klara sig utifrån genomsnittet, vilket motiverar flexibla uttagsregler snarare än mekaniska — sänk uttaget i dåliga år, behåll det i goda."
+        },
+        {
+          "type": "text",
+          "content": "Den modernaste debatten — hävstång i ung ålder: Ayres och Nalebuff argumenterar i Lifecycle Investing för att unga, vars kapital ligger i framtida inkomster, bör kunna låna för att jämna ut sin livstids aktieexponering — logiken är densamma som spread-smooth konsumtion. Siegel visar förståelse för argumentet, men bokens försiktiga hållning och AK1A:s regel säger motsatsen: hävstång på variabel avkastning introducerar exakt den mekanism V19 varnar för på bolagsnivå — kapitalförbrukning som tvingar fram försäljning vid botten. För AK1A är hävstångens avgörande egenskap att den förkortar din faktiska horisont oavsett din ålder: marginalkrav och löptider gör att den långa sikten slutar fungera just när den behövs. Mega-horisonten kräver att ingen mellanhand kan stänga positionen på vägen."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS-syntesen: Siegels livscykel och AK1TS fem horisonter är samma tänk i olika upplösning — kapital sorteras efter tid till konsumtion, och exponeringen följer horisonten, inte humöret. Mega-horisonten (den längsta) motiverar den högsta aktieandelen men två villkor: att kapitalet verkligen får vara kvar (ingen hävstång, ingen予定 konsumtion mitt i), och att svansen hanteras — genom diversifiering över länder, en likviditetsbuffert som gör att du aldrig är tvingad säljare, och multiplardisciplin så att Mega-kapitalet inte köper toppvärderingar. Margin of safety utan siffra gäller här på portföljnivå: avståndet mellan din plan och de förhållanden under vilka planen går sönder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Illustrativ livscykel enligt Siegels logik — inte råd\",\"rader\":[[\"Ålder\",\"Aktieandel, illustrativt intervall\",\"Skydd och buffert\"],[\"20–40\",\"75–100 procent\",\"nödbuffert samt TIPS för korta mål\"],[\"40–60\",\"65–85 procent\",\"växande obligations- och TIPS-andel\"],[\"60–75\",\"55–75 procent\",\"högre än konventionellt råd — Siegels poäng\"],[\"75+\",\"45–65 procent\",\"TIPS för nödvändiga utgifter, aktier för tillväxtdelen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Livscykelns viktigaste sanning är att portföljfrågan egentligen är en tidsfråga: inte vilka tillgångar utan vems tid. Samma aktieandel som är hänsynslös för en 65-åring med tre års livslängd i kapitalet är försiktig för en 25-åring med fyrtio. Därför är varje generell syn på rätt aktieandel meningslös utan två uppgifter: när kapitalet behövs och hur stor del av din framtida inkomster som återstår att omvandla. Siegel bidrag var att sätta mått på tiden — din uppgift är att vara ärlig med den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen glide path på en sida: för var och en av AK1TS horisonter (med Mega som den längsta), vilken aktieandel, vilket skydd och vilken buffert? Markera uttryckligen vad som händer med Mega-kapitalet vid en femtioprocents fall — varken hävstång, planned uttag eller panik ska kunna tvinga fram försäljning. Datera dokumentet; det är din livscykelplan och den ska kunna läsas högt i en dålig vecka."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Siegel kontroversiella slutsats om äldres portföljer?",
+          "alternativ": [
+            "Att alla över sextio bör sälja alla aktier",
+            "Att aktieandelen bör vara noll efter pension på grund av sekvensrisk",
+            "Att aktieandelen bör vara lika hög hela livet oavsett allt",
+            "Att aktieandelen bör ligga högre än konventionella råd ger — pensionen är en trettioårsperiod och aktien behåller sin köpkraftsroll"
+          ],
+          "ratt": 3,
+          "tips": "Trettio års pension är fortfarande en lång horisont."
+        },
+        {
+          "q": "Vad är 4-procentsregeln och vart hör den hemma?",
+          "alternativ": [
+            "Bengen 1994 — uttag som historiskt överlevt trettio år, med hållbarhet beroende av reala räntor och sekvensrisk",
+            "En SEC-regel om max avgift i fonder",
+            "Regeln om att aldrig ha mer än fyra procent i en aktie",
+            "Grahams regel om obligationsandel"
+          ],
+          "ratt": 0,
+          "tips": "Den handlar om hur mycket du kan ta ut — inte hur du placerar."
+        },
+        {
+          "q": "Hur förhåller sig AK1A till idén med hävstång tidigt i livet?",
+          "alternativ": [
+            "Med entusiastiskt stöd eftersom tiden ändå läker allt",
+            "Med avvisande eftersom aktier aldrig bör köpas i ung ålder",
+            "Med likgiltighet eftersom hävstång inte påverkar risken",
+            "Med förståelse för logiken men en V19-varning: hävstång förkortar den faktiska horisonten genom kapitalförbrukning och tvingad försäljning"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med den långa sikten om någon kan stänga positionen på vägen?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Kontroversen — CAPE, survivorship och säkerhetspremie-gåtan",
+      "intro": "Bokens tes har tre allvarliga motståndare, och hederligheten kräver att alla tre får lägga fram sitt starkaste fall. Kapitlet redogör rättvist för kritiken — att den långa sikten kan vara längre än ditt liv, att USA:s 200 år kan vara överlevnadsdata, att premien är för stor för att vara rationell — för Siegels egna svar, och landar i AK1A:s slutsats: lång horisont kräver marginal of safety och riskhantering, inte blint köp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Angrepp ett — Shillers CAPE: den cykliskt justerade vinstmultipeln (aktiepris delat med tioårsmedelvärdet av reala vinster) har historiskt genomsnitt kring 16–17, och höga startlägen har följts av undergenomsnittlig real tioårsavkastning. Kritikens kärna mot Siegel formuleras bäst i en mening: den långa sikten kan vara längre än ditt liv. Japanerna som köpte Nikkei vid 38 916 i december 1989 gjorde exakt vad Siegel rekommenderar — köpte brett och höll — och väntade trettiofyra år på noll. Shillers egen varning i Irrational Exuberance var publicerad veckor före Nasdaqs topp 2000, och CAPE:s prognosförmåga är verklig på tio års sikt även om den är nästan noll på ett års — argumentet är alltså inte att CAPE tajmar marknaden, utan att startmultipeln flyttar hela fördelningen av långsiktiga utfall, och att en köpare vid hög CAPE-historyriskerar en väntan som överstiger hans livstid."
+        },
+        {
+          "type": "text",
+          "content": "Siegels svar på CAPE är dels metodiskt, dels räntemässigt. Methodiskt: han ifrågasätter vinstserien i CAPE — moderna redovisningsregler med stora nedskrivningar gör att trailing vinster blir onaturligt låga, vilket blåser upp multipeln; med justerade vinster (bland annat mot nationalräkenskapernas företagsvinster) ser övervärderingen mindre dramatisk ut. Räntemässigt: hans kapitel 5-argument — när reala räntor är låga berättigar högre multiplar, och att jämföra dagens CAPE med 1920-talets utan att räkna med räntskillnaden är att jämföra ofullständiga ekvationer. Kritikerna replikerar att detta är just vilket-smart-det-syns: ränteargumentet användes också 1999 och 2021, och beroendet av låga räntor gör aktiens säkerhetsmarginal beroende av något aktieägaren inte kontrollerar. Striden är olöst — och den är värd att hålla olöst, eftersom bägge sidor har historien på sin sida."
+        },
+        {
+          "type": "text",
+          "content": "Angrepp två — survivorship-bias: USA:s 200 år är, som kritiker i kölvattnet av Dimson–Marsh–Staunton framfört, det bästa landet retrospektivt — serien som studeras är den vinnande deltagarens, vald efter att loppet sprungits. Globala data visar en lägre genomsnittlig premie, och några marknader (Ryssland 1917, Kina 1949) gav totalförlust. Angrepp tre — säkerhetspremie-gåtan: Mehra och Prescott visade 1985 att den historiska premien, kring sex procentenheter, inte kan förklaras av någon rimlig grad av riskaversion inom den rådande teorin — för att motivera den måste investerare vara orimligt rädda, vilket strider mot allmänna observationer av deras beteende. Följden är minst två obehagliga möjligheter: att historien innehåller mer tur än teorin tillåter, eller att premien varit högre än aktörernas ex-ante-förväntan — vilket i så fall betyder att framtiden inte behöver likna historien. Siegel, som själv skrivit om premiens historia, har medgett att den framtida premien sannolikt är lägre än det historiska utfallet."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — den hållning kursen landar i: Siegels tes är ett väntevärdsutfall med feta svansar, inte en naturlag. Därför tillämpas Mega-horisonten i AK1TS aldrig som blint köp utan med fyra riskhanteringspelare: för det första margin of safety utan siffra — multipelavstånd (V04–V06) mot normaliserade fundament (V07–V09) på köptillfället, eftersom Japan 1989 visar att horisontens aritmetik börjar i priset; för det andra diversifiering över länder och tider — eftersom survivorship-kritiken gör att vi inte vet vilka USA som finns i framtiden, och eftersom periodvis inköp (DCA) sprider startmultipel-risken; för det tredje överlevnad — ingen hävstång (V19-logiken tillämpad på portföljen), en likviditetsbuffert (V11-analog) som gör att ingen kan tvinga dig att sälja Mega-kapital; för det fjärde planering mot intervall, inte punktestimat — eftersom säkerhetspremie-gåtan betyder att framtida avkastning är en fördelning vars lägre halva måste kunna bära planen. Slutsatsen är varken dyrkan eller förkastande: aktien för längden, marginal of safety för svansen, och aldrig mer tro på en genomsnittssiffra än på fördelningen bakom den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre angrepp, tre svar, en hållning\",\"rader\":[[\"Angrepp\",\"Kärnargument\",\"Siegels svar\",\"AK1A:s hållning\"],[\"CAPE (Shiller)\",\"hög startmultipel ger svaga decennier — Japan 1989\",\"redovisningen förvränger vinstserien; låga reala räntor berättigar högre multipler\",\"margin of safety utan siffra — Mega är ingen garanti\"],[\"Survivorship (DMS med flera)\",\"USA är den vinnare som valts i efterhand\",\"premien finns i nästan alla länders data, om än lägre\",\"räkna med lägre ex-ante-premie och diversifiera globalt\"],[\"Säkerhetspremiegåtan (Mehra–Prescott)\",\"sex procentenheter kan inte förklaras av rationell riskaversion\",\"delvis tur och reviderade förväntningar; framtida premie sannolikt lägre\",\"planera för intervall, inte punktestimat\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kontroversens bärande läxa är att påståenden om 200 år ofta läses som 200 års bevis, fast de är ett enda utfall av en osynlig serie världar. Siegel har sannolikt rätt om väntevärdet — aktiens structurativa övertag är verkligt och globalt — men kritikerna har rätt om svansen: startmultiplen, landsvalet och premiens rimlighet kan göra den långa sikten längre än ett liv. Därför är AK1A:s Mega-horisont inte en uppmaning att köpa utan en uppmaning att kunna köpa: att ha kvar kapital, likviditet och nerver när multiplerna äntligen är låga. Den som förstår båda sidorna förstår varför vi varken dyrkar index eller tajmar marknaden."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ett brev på en sida till dig själv med rubriken »Varför jag äger aktier trots Shiller och Mehra–Prescott«: argumentera först som kritikern (CAPE-läget, survivorship, premiens gåta — så starkt du kan), svara sedan som Siegel, och landa i din egen hållning med de fyra riskpelare från detta kapitel konkret nailda mot din portfölj. Datera och arkivera brevet — det är kursens slutprov, skrivet till den framtida version av dig som står mitt i en krasch."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i CAPE-kritiken mot Siegels tes?",
+          "alternativ": [
+            "Att hög startmultipel historiskt följts av undergenomsnittlig real tioårsavkastning — och att Japan 1989 visar att den långa sikten kan överstiga ett liv",
+            "Att CAPE kan tajma krascher till månaden",
+            "Att aktier alltid förlorar mot obligationer på tio år",
+            "Att vinstdata inte existerar före 1957"
+          ],
+          "ratt": 0,
+          "tips": "Det handlar om startpunktens pris — inte om tidtagning."
+        },
+        {
+          "q": "Vad är Siegels främsta svar på CAPE-kritiken?",
+          "alternativ": [
+            "Att CAPE är förbjudet att använda av regulatoriska skäl",
+            "Att Nedskrivningar och redovisningsregler förvränger CAPE:s vinstserie, och att låga reala räntor berättigar högre multipler",
+            "Att Japan inte är ett relevant exempel",
+            "Att tioårsperioder är för korta för att mäta något"
+          ],
+          "ratt": 2,
+          "tips": "Svaget ligger i nämnaren — vinstserien — och i ränteklimatet."
+        },
+        {
+          "q": "Vad är säkerhetspremie-gåtan (Mehra–Prescott 1985)?",
+          "alternativ": [
+            "Att premien mellan aktier och obligationer historiskt är så stor att den inte kan förklaras av rationell riskaversion",
+            "Att obligationer alltid slår aktier efter skatt",
+            "Att premien exakt kan förutsägas med CAPE",
+            "Att aktier och obligationer har identisk risk"
+          ],
+          "ratt": 1,
+          "tips": "Gåtan är gapet mellan teorins förklaring och historiens utfall."
+        }
+      ]
+    }
+  ]
+}

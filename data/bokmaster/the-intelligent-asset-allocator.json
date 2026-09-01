@@ -1,0 +1,688 @@
+{
+  "slug": "the-intelligent-asset-allocator",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 140,
+  "title": "The Intelligent Asset Allocator — Bernstein: KOMPLETT",
+  "summary": "William Bernstein — neurologen från Oregon som blev finansvetenskapens mest pedagogiska läromästare — publicerade The Intelligent Asset Allocator år 2000 och gjorde Markowitz portföljteori till något en vanlig placerare kan räkna på själv. Kursen går från riskens prislista via korrelationens magi — finansens enda fria lunch, med hela räkneexemplet — till den effektiva fronten, tolv tillgångsklasser, Fama-French faktorpremier, obligationsmatematik, återbalanseringens bonus och beteendets fällor. Kursen kulminerar i Kontrovers-kapitlet där Bernsteins skepticism mot aktieplockande möter AKM1:s aktivism — och där 2008 års korrelationskollaps, kopplad till Soros och Kindleberger, ställer hans eget kärnbegrepp mot väggen.",
+  "minutes": 10,
+  "xp": 1800,
+  "level": "",
+  "learn": "Bernsteins riskhistoria (1929-1932, 1973-1974, 1966-1982, Japans decennium); geometrisk mot aritmetisk avkastning med räkneexempel; Gordon-ekvationen; standardavvikelsen som riskmått och återhämtningens asymmetri; korrelationsmatematiken — hur två tillgångar med ofullständig korrelation sänker risken utan avkastningskostnad, steg för steg; Markowitz effektiva frontier och minimalvariansportföljen; tolv tillgångsklasser och deras inbördes korrelationer; marknadseffektivitet, myntkastturneringen och varför aktiv förvaltning saknar belägg; Fama-French tre-faktormodell, small- och value-premier samt tracking error regret; REITs och ädelmetaller; obligationsmatematik med duration och kredit; återbalanseringsbonusen — räkneexemplet som ger drygt 4 procent per år ur två tillgångar som avkastar noll; 3-fondsportföljen, Coward's Portfolio och åldersregeln; kostnads- och skattematematik (1 procent per år = 25 procent av slutförmögenheten); samt Kontrovers-kapitlet: Bernstein mot AKM1 och korrelationskritiken från 2008.",
+  "why": "Utan Bernstein bygger du portföljer på intuition — och intuitionen köper alltid det som steg senast. The Intelligent Asset Allocator är matematiken bakom varje hållbar allokering: den lär dig räkna ut vad diversifiering faktiskt köper, vad aktiv förvaltning faktiskt kostar och varför din egen spegelbild är den farligaste motparten. AKM1-aktivismen blir också bättre av Bernstein: en kant som inte får plats inom en diversifierad ryggrad är ingen kant utan en satsning. Den som kan både Bernstein aritmetik och AKM1:s variabler vet exakt var analysen hör hemma — och var den slutar.",
+  "chapters_list": [
+    { "num": 1, "title": "Riskens prislista — varför avkastning aldrig är gratis", "minutes": 11 },
+    { "num": 2, "title": "Riskens anatomi — standardavvikelsen och smärtans asymmetri", "minutes": 11 },
+    { "num": 3, "title": "Korrelationens magi — finansens enda fria lunch", "minutes": 11 },
+    { "num": 4, "title": "Markowitz maskin — den effektiva fronten", "minutes": 11 },
+    { "num": 5, "title": "Byggstenarna — aktieklasser, länder, REITs och guld", "minutes": 11 },
+    { "num": 6, "title": "Marknadseffektivitet — myntkast, kostnader och bevisbördan", "minutes": 10 },
+    { "num": 7, "title": "Small och value — Fama-French och premierna som vägrar dö", "minutes": 11 },
+    { "num": 8, "title": "Beteendeläran — din värsta fiende bär ditt eget ansikte", "minutes": 10 },
+    { "num": 9, "title": "Obligationerna — löptid, kredit och portföljens dämpare", "minutes": 10 },
+    { "num": 10, "title": "Återbalanseringen — disciplinens rabatt på panik och eufori", "minutes": 11 },
+    { "num": 11, "title": "KONTROVERS — Bernstein mot AKM1 och korrelationens mörka sida", "minutes": 11 },
+    { "num": 12, "title": "Portföljbygget — 3-fonden, Coward's Portfolio och åldersregeln", "minutes": 11 },
+    { "num": 13, "title": "Kostnader, skatt och Bernsteins slutkod", "minutes": 11 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "Riskens prislista — varför avkastning aldrig är gratis",
+      "intro": "Bernstein var praktiserande neurolog i Oregon när han skrev boken — amatör i ordets ursprungliga, käraste bemärkelse. Kanske är det därför The Intelligent Asset Allocator förblir den mest pedagogiska av alla portföljböcker: den börjar inte med tips utan med prislistan. Avkastning har ett pris, och priset heter risk.",
+      "blocks": [
+        { "type": "text", "content": "Bokens första och viktigaste påstående: avkastning och risk är oskiljaktigt sammanflätade. Historiens prislista är entydig — amerikanska aktier avkastade omkring 11 procent per år nominellt mellan 1926 och 1998, långa statsobligationer omkring 5, korta statspapper omkring 4, inflationen åt 3. Skillnaden är ingen gåva från marknaden utan betalning för att du får finna dig i svängningarna. Bernstein formulerar kärnan rakt, i svensk översättning: »portföljförvaltningens essens är hanteringen av risker, inte hanteringen av avkastningar«. Avkastningen sköter sig själv om risken hanteras — omvänt gäller det aldrig." },
+        { "type": "text", "content": "Historiekapitlet är bokens vaccin. Åren 1929-1932 föll amerikanska aktier över 80 procent och återhämtade sig först ett decennium senare. Åren 1973-1974 föll storbolagen över en tredjedel och småbolagen betydligt mer, mitt i oljekris och recession. Mellan 1966 och 1982 stod Dow stilla i nominella termer medan inflationen åt omkring 6 procent per år — realt förlorade en köpare som höll kvar ungefär två tredjedelar av köpkraften. Och Japan: Nikkei föll över 60 procent under 1990-talet och återhämtade sig inte på ett decennium. Bernstein citerar gärna Templetons varning om investeringens fyra farligaste ord: »den här gången är det annorlunda«. Varje generation är övertygad om att den slipper betala." },
+        { "type": "text", "content": "Här finns också bokens första matematiska nyckel: skillnaden mellan aritmetiskt och geometriskt genomsnitt. En portfölj som stiger 50 procent ett år och faller 50 procent nästa har aritmetiskt medelvärde noll — men har förlorat en fjärdedel, eftersom 1,50 gånger 0,50 blir 0,75. Det geometriska genomsnittet, det som faktiskt driver förmögenheten, ligger alltid under det aritmetiska, och avståndet växer med volatiliteten. Bernstein sammanfattar approximationen: den långsiktiga realiserade avkastningen är ungefär det aritmetiska medelvärdet minus hälften av variansen. Därför är en riskminskning i sig själv en avkastningsförbättring — en insikt hela boken vilar på." },
+        { "type": "text", "content": "Bernsteins favoritverktyg för att sia om framtiden är Gordon-ekvationen: aktiernas långsiktiga avkastning är ungefär utdelningsavkastningen plus tillväxten i utdelningarna. Vid sekelskiftet gav den ett obehagligt svar — 1,5 procent utdelning plus 5 procent tillväxt blev 6,5 procent, långt under de historiska 11 — och Bernstein varnade alldeles rätt inför IT-kraschen. För AKM1-användaren är lärden dubbel. På bolagsnivå måste V01 Försäljningstillväxt och V02 ARR-tillväxt i slutänden betala utdelningar eller återköp för att ha värde, och margin of safety — att köpa under beräknat värde — är den enda kudden när Gordon-ekvationen slår fel. Notera ordningen: Bernstein bygger kudden portföljvis, AKM1 bolagvis. Kursens uppgift är att visa hur lagren passar ihop." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Historiens prislista 1926-1998 (USA, ungefärliga årsdata)\",\"rader\":[[\"Tillgångsslag\",\"Geometrisk avkastning\",\"Standardavvikelse\",\"Värsta episod\"],[\"Stora amerikanska aktier\",\"ca 11 procent\",\"ca 20 procent\",\"-80 procent 1929-1932\"],[\"Små amerikanska aktier\",\"ca 12 procent\",\"ca 30 procent\",\"-85 procent 1929-1932\"],[\"Långa statsobligationer\",\"ca 5 procent\",\"ca 8 procent\",\"Realt negativt 1946-1981\"],[\"Korta statspapper\",\"ca 4 procent\",\"ca 3 procent\",\"Noll real avkastning under ränteregleringen\"],[\"Inflation\",\"ca 3 procent\",\"ca 5 procent\",\"13 procent 1979-1980\"]]}" },
+        { "type": "insikt", "content": "Avkastning är inte något du väljer — den är priset du tar emot för risk du accepterar. Frågan är aldrig hur mycket du vill tjäna utan hur mycket smärta du konstruktionsmässigt kan bära." },
+        { "type": "utmaning", "content": "Räkna på din egen portfölj: (1) Vad blev den geometriska årsavkastningen de senaste tio åren — slutvärde genom roten ur antal år? (2) Vilket var värsta kalenderåret och hur stor återhämtning krävdes? (3) Testa Gordon-logiken på en aktie du äger: utdelningsavkastning plus tillväxt — räcker det för ditt avkastningskrav? Om siffrorna överraskar dig har du just lärt känna din verkliga riskprofil." },
+        { "type": "visuell", "content": "compound" }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bokens mest centrala tes om förhållandet mellan risk och avkastning?",
+          "alternativ": [
+            "De är oskiljaktiga — högre förväntad avkastning kräver att man accepterar högre risk",
+            "Att aktier alltid slår obligationer på fem år",
+            "Att risk kan elimineras genom noggrann bolagsanalys",
+            "Att historisk avkastning är en pålitisk prognos för framtiden"
+          ],
+          "ratt": 0,
+          "tips": "Titta på prislistan igen: de högre siffrorna för aktier kommer aldrig utan en motprestation från hållaren."
+        },
+        {
+          "q": "Vad står Gordon-ekvationen för hos Bernstein?",
+          "alternativ": [
+            "Aktiepris gånger P/E-tal ger rättvist värde",
+            "Utdelningsavkastning plus tillväxt i utdelningarna ger framtida avkastning",
+            "Senaste tre årens avkastning upprepas",
+            "Räntan minus inflationen ger aktiernas premie"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på vad aktieägaren i slutänden faktiskt får ut av sitt ägande — det börjar med ett u och delas ut."
+        },
+        {
+          "q": "Två år med +50 respektive -50 procent: vad visar räkningen?",
+          "alternativ": [
+            "Att det aritmetiska medelvärdet alltid understiger det geometriska",
+            "Att det geometriska genomsnittet ljuger om den långsiktiga avkastningen",
+            "Att portföljen totalt förlorat 25 procent trots aritmetiskt medelvärde noll",
+            "Att skillnaden beror på skatter och avgifter"
+          ],
+          "ratt": 2,
+          "tips": "Multiplicera år för år — 1,50 gånger 0,50 — och se vad som blir kvar av startkapitalet."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Riskens anatomi — standardavvikelsen och smärtans asymmetri",
+      "intro": "Bernstein väljer ett kompromisslöst enkelt riskmått: standardavvikelsen, spridningen kring det genomsnittliga utfallet. Det är ingen perfekt mätare av lidande — men den är mätbar, matematisk och den blir byggstenen i allt som följer. Framför allt översätts den omedelbart till verklig smärta.",
+      "blocks": [
+        { "type": "text", "content": "Standardavvikelsen beskriver hur långt ett typiskt årsutfall avviker från medelvärdet. För amerikanska aktier — omkring 11 procents aritmetisk genomsnittsavkastning och 20 procents standardavvikelse — betyder det: ett vanligt år landar inom plus minus 20 procent, två av tre år gör det, och 19 av 20 år inom plus minus 40 procent. Det tjugonde året — 1929-1932, 1973-1974, 1987 — lever i svansen. Bernstein vet att fördelningarna har feta svansar och att normalfördelningen underskattar katastroferna; han använder den ändå, för den är det enklaste språk i vilket risk kan räknas, jämföras och byggas in i portföljer. Det grova måttets styrka är att det fungerar i formler; känslans mått fungerar bara i terapi." },
+        { "type": "text", "content": "Smärtan ligger i asymmetrin mellan förlust och återhämtning. En förlust på 20 procent kräver 25 procent återhämtning; 50 procent kräver 100; 80 procent kräver 400. Med en normal återhämtningstakt på 8 procent per år tar den sista resan omkring 21 år — räkna själv: logaritmen av 5 dividerat med logaritmen av 1,08. Detta är skälet till att Bernstein behandlar åttioprocents-scenariot som något portföljen ska konstrueras för att överleva, inte något som kan diskonteras bort med bra analys. Den som förlorade 80 procent 1929 behövde inte bara rätt kurs utan ett halvt yrkesliv av tålamod — och det är en portföljfråga, inte en aktiefråga." },
+        { "type": "text", "content": "Bernsteins andra varning: nominella siffror döljer inflationen. Mellan 1966 och 1982 var aktiernas nominella avkastning nära noll och den reala en katastrof; obligationernas reala utfall under efterkrigstidens inflation var ännu värre. Därför räknar boken konsekvent i reala termer: en avkastning som inte överstiger inflationen är ingen avkastning utan en försliten insats. Risk är också relativt målet — för den som måste betala en fast utgift om tio år är ett svajande sparkapital en fara även om det stiger i genomsnitt. Riskpremien, aktiernas historiska överskott över statspapper på ungefär 5-7 procent per år, är marknadens betalning för just svansrisk och tålamodspris." },
+        { "type": "text", "content": "Bernstein känner kritiken mot standardavvikelsen — ingen lider av uppsvängningar, bara av nedsvängningar — och medger delvis dess berättigande. Men alternativen (värsta fall, sannolikhetsvikter, känsloutvärdering) är antingen omöjliga att uppskatta eller oanvändbara i algebra. I AKM1:s värld finns en exakt motsvarighet på bolagsnivå: V12 Intäktsstabilitet är företagets standardavvikelse — ett bolag med återkommande, förutsägbara intäkter har lägre kassaflödesvolatilitet och tål högre värdering — medan V19 Kapitalförbränning & Emissionsrisk är svansrisken i miniatyr: bolag som måste emittera nya aktier i en kris förvandlar tillfällig svaghet till permanent utspädning. Portföljens sigma och bolagets intäktsstabilitet är samma tänk i två skalor." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Förlustens asymmetri — vad återhämtningen kräver\",\"rader\":[[\"Förlust\",\"Nödvändig återhämtning\",\"Tid vid 8 procent per år\"],[\"-10 procent\",\"+11 procent\",\"ca 1,4 år\"],[\"-20 procent\",\"+25 procent\",\"ca 3 år\"],[\"-33 procent\",\"+50 procent\",\"ca 5 år\"],[\"-50 procent\",\"+100 procent\",\"ca 9 år\"],[\"-80 procent\",\"+400 procent\",\"ca 21 år\"]]}" },
+        { "type": "insikt", "content": "Standardavvikelsen underskattar svansarna men överskattar ingenting annat. Utan ett mätbart riskbegrepp är resten av boken omöjlig — med det kan risken prissättas, blandas och sänkas." },
+        { "type": "utmaning", "content": "Räkna på ditt eget sparande: vilken återhämtning krävde ditt värsta år, och hur lång tid tog den i verkligheten? Omvandla sedan din senaste tioårsperiod till reala termer med konsumentprisindex. Fråga dig ärligt: var det nominala siffrorna eller de reala som fick dig att behålla strategin? Svaret avgör om du behöver kuddar — eller mer kuddar." }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder standardavvikelsen 20 procent för aktier i praktiken?",
+          "alternativ": [
+            "Att aktien med 20 procents sannolikhet går i konkurs",
+            "Att ett typiskt år landar inom plus minus 20 procent och två av tre år gör det",
+            "Att aktien högst faller 20 procent per år",
+            "Att den förväntade avkastningen är 20 procent"
+          ],
+          "ratt": 1,
+          "tips": "Spridningsmått handlar om avståndet till medelvärdet, inte om nivån på medelvärdet."
+        },
+        {
+          "q": "Hur stor återhämtning krävs efter en förlust på 50 procent?",
+          "alternativ": [
+            "+50 procent",
+            "+75 procent",
+            "+80 procent",
+            "+100 procent"
+          ],
+          "ratt": 3,
+          "tips": "Från hälften återstår att fördubbla det som är kvar — annars är du inte tillbaka på noll."
+        },
+        {
+          "q": "Varför insisterar Bernstein på reala i stället för nominella avkastningar?",
+          "alternativ": [
+            "Eftersom reala avkastningar alltid är högre",
+            "Eftersom avkastning minus inflation är det som faktiskt kan konsumeras",
+            "Eftersom nominell avkastning är försvårad att beräkna",
+            "Eftersom centralbanken enbart styr reala räntor"
+          ],
+          "ratt": 1,
+          "tips": "Perioden 1966-1982 är bokens exempel: nominellt stillastående, realt förödande."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Korrelationens magi — finansens enda fria lunch",
+      "intro": "Här är bokens hjärta. Markowitz insåg på 1950-talet att hela portföljteorin kan komprimeras i en enda insikt: två tillgångar som inte rör sig i perfekt synkroni kan sänka risken utan att röra den förväntade avkastningen. Bernstein ägnar kapitlet åt att visa räkningen — och kallar konsekvensen finansvärldens enda fria lunch.",
+      "blocks": [
+        { "type": "text", "content": "Korrelationskoefficienten ρ fångar hur synkroniserat två tillgångars avkastningar svänger. ρ = +1 betyder perfekt synkroni — de rör sig som en kropp. ρ = 0 betyder oberoende. ρ = -1 betyder spegelvända rörelser. Historiska exempel: amerikanska och europeiska aktier korrelerar runt 0,5; aktier och korta obligationer runt 0,3; guld och aktier nära noll. Det viktiga — och det felbegripna — är att korrelationen inte behöver vara negativ för att hjälpa. Den behöver bara vara ofullständig. Allt under +1 köper riskreduktion; ju lägre, desto kraftigare verkan." },
+        { "type": "text", "content": "Hela tricket sitter i portföljformeln. För två tillgångar med vikterna w1 och w2, riskerna σ1 och σ2 och korrelationen ρ gäller: portföljrisken är roten ur (w1²σ1² + w2²σ2² + 2·w1·w2·ρ·σ1·σ2). Ta nu räkneexemplet som Bernstein bygger boken på. Två tillgångar, båda med förväntad avkastning 10 procent och standardavvikelse 20 procent, blandade 50/50. Med ρ = +1: roten ur (100 + 100 + 200) = 20 procent — ingen hjälp alls. Med ρ = +0,5: roten ur (100 + 100 + 100) = 17,3 procent. Med ρ = 0: roten ur (100 + 100) = 14,1 procent. Med ρ = -1: roten ur (100 + 100 - 200) = 0 procent — risken är borta. Notera vad som inte förändras: den förväntade avkastningen är fortfarande 10 procent i samtliga fall. Risken sjönk från 20 till 14,1 procent utan att en enda avkastningsprocent offrades. Det är gratis — och det är därför Bernstein, med Markowitz i ryggen, kallar diversifiering finansens enda fria lunch." },
+        { "type": "text", "content": "Magin ligger i den tredje termen, den som innehåller ρ. Varje gång korrelationen är lägre än +1 blir termen mindre än vad perfekt synkroni skulle ge, och portföljrisken hamnar under det viktade genomsnittet av delriskerna. Följden låter omöjlig för intuitionen: en portfölj kan ha lägre risk än någon av sina beståndsdelar. Bernstein tillägger torrt att investerare reser jorden runt och betalar dyrt för att hitta övermänskliga förvaltare, medan den verkliga gratispengen ligger stilla i korrelationsmatrisen och väntar på att bli räknad på. Den som förstår tredje termen förstår hela modern portföljteori — och varför kursens titel lyder som den gör: den intelligenta allokatorn äger inte de bästa tillgångarna utan de minst lika." },
+        { "type": "text", "content": "Den praktiska konsekvensen: diversifiera inte bara mellan många bolag utan mellan faktorer som inte rör sig i takt — geografi, bolagsstorlek, stil, tillgångsslag. Här möter AKM1 Bernstein på djupet, för mekaniken är identisk på bolagsnivå. V03 Intäktsdiversifiering — kunder, segment, geografier — och V17 Avtal & Partnerskap över regioner är bolagets egna lilla korrelationsmatris: oberoende intäktskällor med ofullständig korrelation sänker kassaflödesrisken utan att sänka kassaflödets nivå. Företagsfinansiell diversifiering och portföljdiversifiering är samma matematik i olika skalor. Skillnaden är disciplinen: Bernstein kräver att du räknar på den; AKM1 ger variablerna namn." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Korrelationens pris — två tillgångar med vardera 20 procent risk, vikt 50/50\",\"rader\":[[\"Korrelation ρ\",\"Portföljens standardavvikelse\",\"Riskreduktion\"],[\"+1,0\",\"20,0 procent\",\"0 procent — ingen hjälp\"],[\"+0,5\",\"17,3 procent\",\"ca 14 procent\"],[\"0,0\",\"14,1 procent\",\"ca 30 procent\"],[\"-0,5\",\"10,0 procent\",\"50 procent\"],[\"-1,0\",\"0,0 procent\",\"100 procent — risken försvinner\"]]}" },
+        { "type": "insikt", "content": "Diversifiering är finansens enda fria lunch — men läs menyn: lunchen gäller bara tillgångar med ofullständig korrelation, och den betalas i tålmodighet när en del av portföljen underpresterar år efter år." },
+        { "type": "utmaning", "content": "Gör Bernsteins räkning själv med två fonder du äger: uppskatta deras inbördes korrelation grovt (hur ofta faller de samma månad?) och stoppa in värdena i formeln med era faktiska standardavvikelser. Hur mycket lägre är 50/50-portföljens risk än medelvärdet av riskerna? Om svaret ligger nära noll äger du samma risk två gånger — och betalar avgift för att inte se det." },
+        { "type": "visuell", "content": "radar" }
+      ],
+      "quiz": [
+        {
+          "q": "Två tillgångar med korrelationen +1 blandas 50/50. Vad händer med portföljrisken?",
+          "alternativ": [
+            "Den blir exakt lika hög som riskerna var för sig — ingen hjälp alls",
+            "Den halveras",
+            "Den blir lägre än den lägsta delrisken",
+            "Den beror enbart på avkastningarna"
+          ],
+          "ratt": 0,
+          "tips": "Perfekt synkroni betyder att den tredje termen är som störst — då finns inget att spara."
+        },
+        {
+          "q": "I räkneexemplet: korrelation 0, samma risk 20 procent vardera, vikt 50/50 — vad blir portföljens standardavvikelse?",
+          "alternativ": [
+            "20,0 procent",
+            "17,3 procent",
+            "14,1 procent",
+            "10,0 procent"
+          ],
+          "ratt": 2,
+          "tips": "Båda kvadratbidragen är 100 — roten ur summan 200 blir ungefär fjorton."
+        },
+        {
+          "q": "Varför kallar Bernstein diversifiering för en fri lunch?",
+          "alternativ": [
+            "Eftersom den ökar den förväntade avkastningen samtidigt som risken sjunker",
+            "Eftersom den sänker risken utan att den förväntade avkastningen behöver sjunka",
+            "Eftersom den eliminerar all risk vid korrelation noll",
+            "Eftersom den gör aktiv förvaltning onödig"
+          ],
+          "ratt": 1,
+          "tips": "Gratis betyder här: betalningen sker i avstånd från vinnarposten, inte i avkastning."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Markowitz maskin — den effektiva fronten",
+      "intro": "Med korrelationsmatematiken i ryggen bygger Bernstein upp Markowitz apparat: rita alla möjliga blandningar av två tillgångar i en risk-avkastningsgraf, och en båge framträder — den effektiva fronten. Allt portföljbygge, från enkel 3-fond till Coward's Portfolio, är i grunden en position på den bågen.",
+      "blocks": [
+        { "type": "text", "content": "Konstruktionen är mekanisk och avslöjande. Ta aktier med förväntad avkastning 10 procent och risk 20 procent, obligationer med 6 och 8 procent, och en korrelation mellan dem på 0,3. Plotta sedan varje blandning. Ren obligation: 6,0 procent avkastning vid 8,0 procents risk. Tjugofem procent aktier: avkastningen stiger till 7,0 procent medan risken bara stiger till 8,9 — räkningen: roten ur (25 + 36 + 18), där 25 är aktiervikten i kvadrat gånger aktierisken i kvadrat, 36 motsvarande för obligationer och 18 korstermen. Femtio procent aktier: 8,0 procent avkastning vid 11,8 procents risk — fortfarande långt under hälften av aktiernas ensamma risk. Kurvan som alla punkter bildar är den effektiva fronten: vid varje risknivå den högsta tänkbara avkastningen." },
+        { "type": "text", "content": "Frontens vänsterkant har en egen hjälte: minimalvariansportföljen, blandningen med lägst möjlig total risk — den ligger ofta överraskande nog till vänster om ren obligation, eftersom en liten tillsats av det riskigare pappret kan sänka den totala risken under det tryggares ensamma risk. Bernsteins finurliga iakttagelse gäller frontens första steg: den inledande kvarten aktier i en obligationsportfölj köper nästan en hel procentenhet avkastning för nästan noll extra risk. Marknaden tar inte betalt för korrelation — det är resterna av fria lunchen. På högersidan blir det sedan dyrt: de sista tio procenten aktie ger liten extra avkastning men betydande extra svängningar. Fronten finns inte för att den ska optimeras till sista decimalen utan för att visa var sluttningen vänder." },
+        { "type": "text", "content": "Bernstein varnar också för att tillbe maskinen. Fronten är bara så bra som sina indata — förväntade avkastningar, risker och korrelationer är skattningar med stora felmarginaler, och små ändringar i indata kan flytta den optimala portföljen kraftigt. Hans torra slutsats: den som optimerar med tjugo år av 1990-talsdata får en portfölj perfekt anpassad för ett decennium som inte kommer tillbaka. Därför föredrar han breda, robusta portföljer framför matematiskt optimala — maskinen är ett tänkverktyg, inte en gps. Det är också därför boken slutar i enkla fonder och åldersregler i stället för optimeringsutskrift: precision i skattningar är en illusion, robusthet är en egenskap." },
+        { "type": "text", "content": "För AKM1-användaren är fronten ramen där aktivismen ska rymmas. En satellit med 15 procent av kapitalet kan påverka totalavkastningen men ska aldrig kunna spränga fronten — om en position kan det är den felstorlekat, oavsett hur övertygande analysen är. Samma logik gäller på bolagsnivå: V10 Skuldsättningsgrad och V11 Likviditet bestämmer hur djupt ner i svansen ett enskilt bolag kan dra en portfölj, ungefär som obligationernas vikt bestämmer portföljens totala svans. Att tänka i front betyder att varje riskkälla mäts i sitt bidrag till helheten — inte i sin isolerade attraktivitet. Det är mentalitetsväxlingen Bernstein kräver av analytikern: sluta fråga hur bra en tillgång är, börja fråga vad den gör." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Exempel på fronten — aktier (10 procent avkastning, 20 risk) och obligationer (6 procent, 8 risk), korrelation 0,3\",\"rader\":[[\"Aktieandel\",\"Förväntad avkastning\",\"Portföljrisk (SD)\",\"Observation\"],[\"0 procent\",\"6,0 procent\",\"8,0 procent\",\"Ren obligation\"],[\"25 procent\",\"7,0 procent\",\"8,9 procent\",\"+1 punkt avkastning för +0,9 punkt risk\"],[\"50 procent\",\"8,0 procent\",\"11,8 procent\",\"Risken under 60 procent av aktiernas\"],[\"75 procent\",\"9,0 procent\",\"15,7 procent\",\"Här börjar sluttningen vända\"],[\"100 procent\",\"10,0 procent\",\"20,0 procent\",\"Ren aktie\"]]}" },
+        { "type": "insikt", "content": "Den första tjugo procenten aktier i en obligationsportfölj är nästan gratis — marknaden glömmer ta betalt för korrelation. Frontens vänstra del är där aritmetiken ler bredast." },
+        { "type": "utmaning", "content": "Rita din egen front: uppskatta avkastning, risk och korrelation för din aktie- och obligationsdel, räkna ut punkterna vid 0, 25, 50, 75 och 100 procent aktie med formeln från kapitel 3, och markera var du själv står. Fråga sedan: köpte jag min position på fronten — eller på känslan? Avståndet mellan de två svaren är kursens praktiska vinst." },
+        { "type": "visuell", "content": "skala" }
+      ],
+      "quiz": [
+        {
+          "q": "Vad definierar den effektiva fronten?",
+          "alternativ": [
+            "Portföljerna som vid varje risknivå ger högst förväntad avkastning",
+            "Portföljerna med högst förväntad avkastning oavsett risk",
+            "Alla tänkbara kombinationer av två tillgångar",
+            "Portföljen med lägst möjliga kostnader"
+          ],
+          "ratt": 0,
+          "tips": "Ordet effektiv pekar på att ingenting längs bågen kan slås på ena axeln utan att förlora på den andra."
+        },
+        {
+          "q": "Vad är minimalvariansportföljen?",
+          "alternativ": [
+            "Portföljen med högst avkastning per riskenhet",
+            "Den likaviktade portföljen",
+            "Blandningen med lägst möjlig total risk",
+            "Portföljen där korrelationen är exakt noll"
+          ],
+          "ratt": 2,
+          "tips": "Namnet är programmet — den punkten på fronten där riskmåttet når sin botten."
+        },
+        {
+          "q": "Varför avrånder Bernstein från att optimera portföljen med maskinen i botten?",
+          "alternativ": [
+            "Eftersom beräkningarna är för svåra för privatpersoner",
+            "Eftersom fronten enbart gäller obligationer",
+            "Eftersom korrelationer är negativa i optimum",
+            "Eftersom skattningarna är osäkra och små fel flyttar optimum kraftigt"
+          ],
+          "ratt": 3,
+          "tips": "Maskinen är högst avhängig sina indata — och historiska medelvärden är just skattningar."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Byggstenarna — aktieklasser, länder, REITs och guld",
+      "intro": "Med maskinen på plats inventerar Bernstein byggmaterialet: amerikanska stora och små bolag, value och growth, Europa, Japan, Stilla havet, tillväxtmarknader, fastighetsaktier och ädelmetaller — plus obligationer i olika längder. Kapitlet är bokens varukatalog, och varje varas pris sätts av dess korrelation till allt annat.",
+      "blocks": [
+        { "type": "text", "content": "Aktiebyggstenarna sorteras efter hur lite de liknar varandra. Amerikanska stora och små bolag korrelerar omkring 0,8 — de hjälper, men bara blygsamt; Europa och Stilla havet mot USA omkring 0,5, tillräckligt olika för att bära tyngd i portföljen; tillväxtmarknader bär högre beta men ändå ofullständig synkroni; value- och small-segmenten har egna riskpremier och egna svängningar. Bernsteins poäng är inte att hitta den bästa tillgången utan den minst lika: korgen ska innehålla tillgångar som turas om att vara bättre och sämre, för det är omkastningarna som ger återbalanseringen material att arbeta med. En korg där allt stiger samtidigt är ingen portfölj utan en enda stor position i förklädning." },
+        { "type": "text", "content": "REITs — fastighetsbolag med tvångsutdelning av sina kassaflöden — ger exponering mot kommersiella fastigheter med aktiens handelbarhet och likviditet. De korrelerar omkring 0,6 med vanliga aktier och ännu högre med små value-bolag, men deras drivkrafter — hyresnivåer, vakansgrader, ränteläge, lokal marknad — skiljer sig från företagsvinster i allmänhet. Bernstein placerar dem som en egen byggsten med egen riskpremie, inte som dekoration: en fjärdedel eller femtedel av aktiedelen kan motiveras av deras bidrag till den samlade korrelationsmatrisen. De lär också en blygsam läxa: en tillgång kan förtjäna sin plats genom vad den inte gör tillsammans med resten." },
+        { "type": "text", "content": "Ädelmetallerna är katalogens mest paradoxala vara: historiskt usel långsiktig avkastning — under inflationen till och med, med svängningar i klass med aktiernas — men korrelation nära noll mot allt annat. Bernstein är ovanligt tydlig med handelsvillkoret: låg korrelation är inte gratis, den köps med låg förväntad avkastning. En liten andel guldaktier kan höja portföljens geometriska avkastning genom den riskreduktion den köper — mindervärdiga tillgångar kan förbättra en portfölj, vilket är svårt att svälja men sant — men andelen är krydda, inte huvudrätt. Detta är diversifieringens ärliga formular: man betalar för olikhet med förväntan, och ibland är priset rätt." },
+        { "type": "text", "content": "På bolagsnivå är detta exakt AKM1:s domän: V03 Intäktsdiversifiering (kunder, segment, geografier, valutor), V12 Intäktsstabilitet (återkommande och kontrakterade intäkter) och V17 Avtal & Partnerskap (låsta relationer över regioner) är bolagets egen mikrokorrelationsmatris. Ett bolag med intäkter från tio länder, olika branscher och olika valutor svänger mindre i kassaflöde än ett bolag med en kund och en produkt — samma mekanik Bernstein kör portföljvis, fast utan multiplar. Skillnaden är att AKM1 dessutom vill veta vad olikheten kostar i värdering (V04 P/S, V05 P/B, V06 EV/EBITDA): portföljteorin betalar för låg korrelation med förväntad avkastning, aktieanalysen kan ibland få den på rea. Det är en finess värd att minnas — inte en lag." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Korrelationskatalog — ungefärliga värden ur Bernsteins material\",\"rader\":[[\"Korrelation\",\"US stora\",\"US små\",\"Europa-Asien\",\"REITs\",\"Ädelmetall\"],[\"US stora\",\"1,00\",\"0,78\",\"0,48\",\"0,60\",\"0,10\"],[\"US små\",\"0,78\",\"1,00\",\"0,50\",\"0,70\",\"0,15\"],[\"Europa-Asien\",\"0,48\",\"0,50\",\"1,00\",\"0,45\",\"0,10\"],[\"REITs\",\"0,60\",\"0,70\",\"0,45\",\"1,00\",\"0,15\"],[\"Ädelmetall\",\"0,10\",\"0,15\",\"0,10\",\"0,15\",\"1,00\"]]}" },
+        { "type": "insikt", "content": "Fråga aldrig vad en tillgång avkastar — fråga vad den gör med resten av portföljen. En medelmåttig tillgång med låg korrelation kan vara värdefullare än en stjärna med hög." },
+        { "type": "utmaning", "content": "Bygg din egen varukatalog: lista de fem fonder du äger, deras inbördes korrelationer (de flesta fondbolag redovisar dem) och deras avgifter. Räkna sedan hur många oberoende riskkällor du faktiskt äger. Om alla fem är amerikanska tillväxtbolagsfonder äger du en enda riskkälla fyra gånger — och betalar fyra avgifter för att inte se det." }
+      ],
+      "quiz": [
+        {
+          "q": "Varför äger Bernstein utländska aktier trots att deras historiska avkastning liknar de amerikanska?",
+          "alternativ": [
+            "Eftersom utländska aktier alltid är billigare i värdering",
+            "Eftersom den lägre korrelationen sänker portföljens totala risk",
+            "Eftersom valutarisken elimineras automatiskt",
+            "Eftersom utländska marknader har högre utdelningar"
+          ],
+          "ratt": 1,
+          "tips": "Tillgångens egenskaper i portföljen — inte dess egen lista på siffror — är vad som motiverar en plats."
+        },
+        {
+          "q": "Vad är Bernsteins villkor för att äga ädelmetallaktier?",
+          "alternativ": [
+            "Att deras långsiktiga avkastning överstiger aktiernas",
+            "Att de hedgear valutrisken",
+            "Att den nära noll-korrelationen köper riskreduktion som överväger den dåliga förväntade avkastningen",
+            "Att guldpriset befinner sig under produktionskostnaden"
+          ],
+          "ratt": 2,
+          "tips": "Han kallar dem krydda, inte huvudrätt — och priset för olikhet är avkastning."
+        },
+        {
+          "q": "Vilken roll spelar REITs i Bernsteins byggkatalog?",
+          "alternativ": [
+            "En egen byggsten med egna kassaflödesdrivkrafter och ofullständig korrelation mot vanliga aktier",
+            "En ersättning för obligationer",
+            "En ren hedging mot inflation utan aktierisk",
+            "Ett spekulativt tillägg utan portföljteoretisk funktion"
+          ],
+          "ratt": 0,
+          "tips": "Hyresnivåer och vakansgrader är inte samma motor som företagsvinster — och det är poängen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 10,
+      "title": "Marknadseffektivitet — myntkast, kostnader och bevisbördan",
+      "intro": "Innan portföljbygget kommer golfborgen. Bernstein reser marknadseffektivitetens krav: om priserna återspeglar tillgänglig information finns ingen systematisk anledning att plocka aktier alls. Hans slutsats är bokens mest provocerande mening: det finns inget bevis för att aktiv förvaltning fungerar.",
+      "blocks": [
+        { "type": "text", "content": "Den effektiva marknadshypotesen säger inte att priserna är rätta i någon filosofisk mening — bara att de återspeglar allt som är känt, så att ingen systematiskt kan utnyttja det som är kvar. Bernsteins bevisning börjar med myntkaststurneringen: om tusen personer singlar slant kommer ungefär trettio att träffa krona fem gånger i rad — och de kommer att framstå som begåvningar. Vore de anställda som förvaltare med avgift skulle deras historik se hypnotisk ut. Fondförvaltarpopulationen är samma population: antalet som ser briljanta ut per år stämmer nästan exakt med vad slumpen kräver. Utan en kontroll mot vad tärningarna måste producera går det inte att skilja skicklighet från överlevande krona-sidan." },
+        { "type": "text", "content": "Sedan kommer aritmetiken, som är värre. Marknaden är alla investerares sammanlagda hållning — därför måste den genomsnittliga aktivt förvaltade kronan, före kostnader, matcha marknaden exakt. Efter kostnader — förvaltningsavgift, handel, spread, skatt — slås den av den, varje år, med matematisk nödvändighet. Det är inget omdöme om förvaltarnas begåvning utan addition. De amerikanska undersökningarna Bernstein bygger på visar att på 10-15 år slår omkring en av fem aktiva fonder sitt index — och vilka det blir är inte förutsägbart i förväg. Hans slutsats står att läsa i klartext: det finns inget bevis för att aktiv förvaltning fungerar, och kostnaden är säker medan kanten är hypotetisk. Därför är indexförvaltning inte lättja utan basfall." },
+        { "type": "text", "content": "Men Bernstein är ingen dogmatiker, och det är kursens tur att vara noggrann. Han medger att marknader kan bli kollektivt galna — 1929, 1960-talets Nifty Fifty, 1999 års teknologi — och att vissa anomalier, small och value främst, kan vara både riskkompensation och bestående missprissättning. Skillnaden mot aktieplockaren är bevisbördan: en anomali måste vara systematisk, dokumenterad över lång tid och överleva kostnader, skatt och egen överbelåtenhet. Han noterar också paradoxen i sin egen slutsats — om alla indexerade skulle prisernas informationsinnehåll försämras och luckor öppnas igen; marknadseffektivitet är ett ekosystem, inte en evig sanning. Det lämnar ett litet, otrevligt utrymme: kanten är inte omöjlig — den är bara aldrig gratis och nästan aldrig där man letar." },
+        { "type": "text", "content": "AKM1:s kantpåståenden — V13 Patent & IP, V14 Varumärke, V15 Nätverkseffekter som vallgravar, V09 ROE som kapitaldisciplin, V01 och V02 som tillväxtkriterier — är exakt de argument Bernstein kräver belägg för. Hans motfrågor är tre: Är vallgraven redan prissatt? Överlever kanten avgifter, skatt och dina egna misstag? Kan du skilja den från myntkastets krona-serier? Bernstein skulle nicka åt AKM1 som utbildning — bolagsförståelse gör även indexplaceraren bättre — men han skulle kräva att varje aktivt förvaltad krona redovisas mot sitt index, brutto som netto, år för år. Det är inte fientlighet utan den vetenskapliga minimalstandard han själv tillämpar på alla påståenden, inklusive sina egna." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Bevisbördan — Bernsteins material i sammandrag\",\"rader\":[[\"Iakttagelse\",\"Resultat\",\"Lärdom\"],[\"Andel aktiva fonder som slår index på 10-15 år\",\"ca 10-20 procent\",\"Majoriteten slås — och vilka som lyckas går inte att förutsäga\"],[\"Genomsnittligt eftersläpande mot index\",\"1-2 procent per år\",\"Kostnaden är systematisk, inte otur\"],[\"Myntkast med 1 000 deltagare\",\"ca 30 träffar krona fem gånger i rad\",\"Slumpen producerar med nödvändighet skenbara mästare\"],[\"Den som ändå vill plocka aktier\",\"Bevisbördan ligger hos plockaren\",\"Kanten måste visas, inte antas\"]]}" },
+        { "type": "insikt", "content": "Alla kan inte slå genomsnittet — det är inte en åsikt utan addition. Före kostnader är den aktiva kronan genomsnittet; efter kostnader är den under." },
+        { "type": "utmaning", "content": "Räkna din egen scoreboard: jämför dina senaste fem års aktiva resultat mot ett relevant index, efter avgifter och skatt. Om du slår det — var det positionstorlek, tur eller process? Skriv ner vilket. Om du inte slår det: vad kostar skillnaden per år på din kapitalbas? Siffran är priset för din utbildning. Betala den medvetet eller sluta betala." }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Bernsteins samlade slutsats om aktiv förvaltning?",
+          "alternativ": [
+            "Att det finns inget bevis för att den fungerar som systematisk strategi",
+            "Att den fungerar för den som är tillräckligt flitig",
+            "Att den fungerar bara med AKM1:s variabler",
+            "Att den fungerar i nedgångar men inte i uppgångar"
+          ],
+          "ratt": 0,
+          "tips": "Han skiljer noga på vad slumpen måste producera och vad skicklighet kan läggas till."
+        },
+        {
+          "q": "Vad illustrerar myntkaststurneringen med tusen deltagare?",
+          "alternativ": [
+            "Att marknaden är slumpmässig på lång sikt",
+            "Att index saknar informationsinnehåll",
+            "Att index slår aktiv förvaltning på grund av skatter",
+            "Att slumpen med nödvändighet skapar investerare som ser briljanta ut"
+          ],
+          "ratt": 3,
+          "tips": "Räkna på fem krona i rad — och vad en till synes felfri historik då bevisar."
+        },
+        {
+          "q": "Vad säger Sharpe-artimetiken om den genomsnittliga aktiva kronan?",
+          "alternativ": [
+            "Att den före kostnader matchar marknaden och efter kostnader slås av den",
+            "Att den slår marknaden om förvaltaren är tillräckligt stor",
+            "Att den matchar marknaden även efter kostnader",
+            "Att kostnaderna betalas av fondbolaget"
+          ],
+          "ratt": 0,
+          "tips": "Marknaden är alla tillsammans — därför kan genomsnittet inte sticka från sig själv."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Small och value — Fama-French och premierna som vägrar dö",
+      "intro": "Bernstein tillhör de första författarna som översatte Fama-French tre-faktormodell till praktisk portföljteori. Budskapet: marknaden är inte den enda riskkällan — bolagsstorlek och värderingsgrad bär egna, separata premier. Här möter AKM1:s multipler sin akademiska mor.",
+      "blocks": [
+        { "type": "text", "content": "Fama och French (1993) förklarade aktieavkastningar med tre faktorer: markaden själv (betan), SMB — small minus big — och HML — high book-to-market minus low, alltså value mot growth. Historiskt 1926-1998 låg small-premien kring 1-2 procent per år och value-premien kring 2-4, vid sidan av aktiernas egen riskpremie. Räkneexemplet som Bernstein låter tala: 2 procent extra per år innebär att 1,12 upphöjt till 25 mot 1,10 upphöjt till 25 ger 17,0 mot 10,8 — femtiosju procent mer slutförmögenhet efter ett kvarts sekel, utan att en enda ytterligare aktieanalys görs. Faktorerna är inte dekoration i en regressionsutskrift; de är separata motorer som kan fungera när huvudmotorn står stilla." },
+        { "type": "text", "content": "Varför består premierna? Två läger, och Bernstein ställer sig på båda samtidigt. Riskberättelsen: value-bolag är trängda och sköra, små bolag illikvida och sårbara — premien är kompensation för verklig svansrisk, och då följer den med utan att bli arbitrage. Beteendeläran: investerare systematiskt överreagerar, betalar för glans och glömmer det glanslösa — premien är en förutsägbar felprisning, och sådana borde egentligen ätas upp. Om det senare gäller konkurrerar du med alla andra som läst samma papper; om det förra gäller betalar marknaden dig för att bära obehaget. Bernstein replikerar att skillnaden spelar mindre roll än man tror: i båda fallen är premien kronologiskt ostadig, och den som vill ha den måste köpa hela paketet — inklusive åren av underpresterande." },
+        { "type": "text", "content": "Ostadieten har ett namn som Bernstein varnar för: tracking error regret — smärtan i att äga det som underpresterar grannens portfölj. Value underpresterade growth i femton år fram till 1999; small hade decennier av tystnad. Den som tiltade mot value och sedan såg teknologin dubbla år efter år led inte främst ekonomiskt utan socialt — vid lunchbordet, i årsredovisningen, i egna tvivel. Bernsteins regel: sätt aldrig en tilt du inte kan bära genom dess sämsta historiska decennium, ty tiltens pris är just det decenniet. Faktorpremier är klimat, inte väderprognos — de betalar den som stannar, och straffar den som byter." },
+        { "type": "text", "content": "Här är AKM1-kopplingen som är allra tajtast. HML är V05 P/B i akademisk förklädning: hög bokvärdesandel av pris är vad high book-to-market betyder, ordagrant. V04 P/S och V06 EV/EBITDA är syskonmått som fångar samma fattig-rikt-axel med olika känslighet för kapitalstruktur, och V09 ROE plus V12 Intäktsstabilitet fångar kvalitetssidan som skiljer värdefällor från värdefynd. Bernsteins varning till AKM1 är dock skarp: en multipel är ingen kant förrän den kombineras med förmåga att utesluta fallgropen — ett lågt P/B-bolag med instabila intäkter och kapitalförbränning är inte billigt utan döende. Value-premiens historia betalas ut till den som köper billigt med tråkig stabilitet, inte till den som köper billigt med stil." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Tre-faktormodellen — motorer och AKM1-koppling\",\"rader\":[[\"Faktor\",\"Vad den mäter\",\"Historisk premie per år\",\"AKM1-koppling\"],[\"Marknad (beta)\",\"Aktiernas riskpremie över ränta\",\"ca 5-7 procent\",\"Portföljens ryggrad\"],[\"SMB (small)\",\"Små bolag minus stora\",\"ca 1-2 procent\",\"Positionstorlek och likviditet i satelliten\"],[\"HML (value)\",\"Hög bokvärdesandel av pris (B/P) minus låg\",\"ca 2-4 procent\",\"V05 P/B, V04 P/S, V06 EV/EBITDA\"],[\"Kvalitetsvariabler\",\"Stabilitet och lönsamhet i faktorerna\",\"Samarbetar med HML\",\"V09 ROE, V12 Intäktsstabilitet\"]]}" },
+        { "type": "insikt", "content": "Faktorer är risk som betalar — inte knep som lurar. Den som inte kan bära ett decennium av underpresterande tilt har aldrig ägt tilten, bara teorin om den." },
+        { "type": "utmaning", "content": "Mät din portfölj mot tre faktorer: medel-V05 P/B och medelbolagstorlek mot ditt index, plus andelen utländska aktier. Skriv en mening om vilka faktorer du faktiskt äger — och en till om vilket belägg du har för att de betalar just dig och inte bara den som sålde dem." }
+      ],
+      "quiz": [
+        {
+          "q": "Vad mäter faktorn HML i Fama-French modell?",
+          "alternativ": [
+            "Utdelningsavkastning minus ränta",
+            "Mindre bolag minus större",
+            "Bolag med hög bokvärdesandel av pris mot de med låg — value mot growth",
+            "Senaste årets momentum mot treårs"
+          ],
+          "ratt": 2,
+          "tips": "Namnet är high minus low — och det som mäts är förhållandet mellan bokvärde och börsvärde."
+        },
+        {
+          "q": "Vad menar Bernstein med tracking error regret?",
+          "alternativ": [
+            "Måttet på hur mycket en fond avviker från sitt index i risk",
+            "Smärtan i att äga en strategi som underpresterar jämförelseportföljen i åratal",
+            "Kostnaden för att byta fonder ofta",
+            "Skillnaden mellan brutto- och nettoavkastning"
+          ],
+          "ratt": 1,
+          "tips": "Ordet regret är nyckeln — det är en känsla vid lunchbordet, inte en statistik i faktabladet."
+        },
+        {
+          "q": "Vilken är Bernsteins balanserade förklaring till att value-premien består?",
+          "alternativ": [
+            "Att den enbart är riskkompensation och därför laglig",
+            "Att den enbart är ett beteendefel som ännu inte arbritrerats bort",
+            "Att den är ett datafel som försvinner i längre serier",
+            "Att den sannolikt är både riskkompensation och bestående beteendestörning"
+          ],
+          "ratt": 3,
+          "tips": "Han nöjer sig sällan med ett läge när två kan vara sanna samtidigt."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Beteendeläran — din värsta fiende bär ditt eget ansikte",
+      "intro": "Bokens psykologiska hjärta. Bernstein ägnar ett helt kapitel åt investerarens beteende och formulerar saken med kirurgisk torrhet: din värsta fiende inom investering är du själv i spegeln. All matematik hittills hjälper inte om den som trycker på köp- och säljknappen är systemets minst rationella del.",
+      "blocks": [
+        { "type": "text", "content": "Den farligaste instinkten har ett namn: recency — tendensen att extrapolera den närmaste historien in i evigheten. Köparna 1999 var övertygade om att teknologin skrivit om ekonomin, eftersom tre års data sa det; säljarna 1974 var lika övertygade om att kapitalismen var slut, av samma skäl. Bernstein behandlar recency som kanske den starkaste av alla krafter på marknaden, starkare än analys, starkare än utbildning — den slår till och med proffs som borde veta bättre. Motgiftet är historiemedvetande: den som verkligen kan 1929, 1973, 1987 och 1990-talets Japan känner igen känslan av slutgiltighet som ett återkommande väderfenomen, inte som information. Historien är inte en spådom — den är en vaccination." },
+        { "type": "text", "content": "Sedan kommer övertron, och den har aritmetik emot sig: de flesta placerare tror sig vara bättre än genomsnittet, vilket är omöjligt eftersom genomsnittet är genomsnittet. Beteendeglappet kan mätas. Om genomsnittsfonden avkastar 10 procent men den genomsnittlige fondägaren — som byter, tajmar och jagar — får 8, kostar beteendet 2 procent per år. På 25 år är skillnaden mellan 1,10 upphöjt till 25 och 1,08 upphöjt till 25 lika med 10,8 mot 6,9: trettiosju procent av slutförmögenheten, uppätet av känslor. Samma storleksordning som en hel faktorpremie, fast med omvänt tecken. Kursens koppling till tanka-snabbt-och-langsamt och misbehaving är rak: system ett levererar berättelsen, system två skulle leverera policyn — och marknaden belönar bara det ena." },
+        { "type": "text", "content": "Bernsteins kur är inte viljestyrka utan konstruktion. Skriv en placeringspolicy — allokering i procent, regler för återbalansering, kriterier för när du får avvika — innan marknaden testar dig, inte under testet. Automatisera månadssparandet så att beslutet inte ska fattas om och om igen. Låt återbalanseringsregeln fatta de kontratida besluten åt dig, mekaniskt och utan hjärta. Mät portföljen sällan — kvartalsvis räcker; hyppigare mätning är ren recency-föda. Och håll historien levande: läs om 1973-74 då och då, som man underhåller ett vaccin. Bernstein säger i sak: den som planerar för sin egen svaghet har en chans; den som förlitar sig på sitt rätta sinnelag har ingen." },
+        { "type": "text", "content": "AKM1-användarens variant av recency heter berättelsetro, och den är svårare eftersom den klär sig i analys. V16 Produktlanseringar och storstilade megatrender känns alltid viktigast just innan de är prissatta tre gånger om; V13 Patent & IP och V15 Nätverkseffekter beskrivs gärna med sådan glöd att multiplarna glöms. Bernsteins disciplin mot detta är dubbel: multipelkontrollen — V04 P/S, V05 P/B, V06 EV/EBITDA mot historik och sektor — och kravet att skriva ner, i förväg, exakt vad som måste hända för att dagens pris ska vara rimligt. Där beteendelärans motgift är policyn är analysens motgift marginal of safety: kudden som gör att du har råd att ha fel. Båda är skrivna dokument — det är inte en slump." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Beteendets fällor och motgiften\",\"rader\":[[\"Beteende\",\"Symptom\",\"Motgift\"],[\"Recency\",\"Extrapolera senaste tre åren in i evigheten\",\"Historiekunskap: 1929, 1973, 1987, Japan\"],[\"Övertron\",\"Jag är skickligare än genomsnittet\",\"Räkna egen historik efter kostnader — år för år\"],[\"Flockbeteende\",\"Köper det alla andra redan köpt\",\"Skriven placeringspolicy före testet\"],[\"Tracking error regret\",\"Portföljen avviker från grannens — och det gör ont\",\"Bestäm avvikelsen i förväg — den är poängen\"],[\"Förlustaversion\",\"Säljer i botten av ren smärta\",\"Automatiserad rebalansering utan mjuk start\"]]}" },
+        { "type": "insikt", "content": "Marknaden behöver inte slå dig — du gör det själv, genom att byta, tajma och tro. Konstruera systemet så att den sämsta versionen av dig aldrig når knapparna." },
+        { "type": "utmaning", "content": "Skriv din placeringspolicy på en sida: allokering i procent, rebalanseringsregel, kriterier för när du får avvika — och datum för nästa årliga genomgång. Signera den. Vid nästa tjugo procents fallmånad är det inte mod utan kontraktet som avgör — och då förstår du varför Bernstein betraktar dokumentet som din viktigaste position." },
+        { "type": "visuell", "content": "cykel" }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Bernstein med recency?",
+          "alternativ": [
+            "Att man köper det senaste fondutbudet",
+            "Att man sparar för lite i ung ålder",
+            "Att man håller kvar vid gamla köpkurser",
+            "Att man extrapolerar den närmaste historien in i framtiden"
+          ],
+          "ratt": 3,
+          "tips": "De senaste tre årens kurser känns som sanningen — och just därör den farlig."
+        },
+        {
+          "q": "Vem identifierar Bernstein som investerarens värsta fiende?",
+          "alternativ": [
+            "Fondbranschens avgifter",
+            "Den egna spegelbilden — investeraren själv",
+            "Centralbanken",
+            "Aktieanalytikerna"
+          ],
+          "ratt": 1,
+          "tips": "All matematik i boken utförs av en person som också kan vara dess svagaste länk."
+        },
+        {
+          "q": "Vilket botemedel betonar Bernstein starkast mot beteendefällorna?",
+          "alternativ": [
+            "Mer information och bättre datakällor",
+            "Högre förväntad avkastning som kompenserar",
+            "Skriven placeringspolicy kombinerad med automatiserade regler",
+            "Att undvika finansnyheter helt"
+          ],
+          "ratt": 2,
+          "tips": "Hans svar är konstruktion före krisen — dokument och mekanik i stället för karaktär."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Obligationerna — löptid, kredit och portföljens dämpare",
+      "intro": "Aktier får rubrikerna; obligationerna gör jobbet. Bernstein behandlar räntepappret som portföljens stötdämpare och dess matematik — löptidsrisk och kreditrisk — som en egen ingenjörskonst. Här besvaras också frågan alla ställer: varför äga något som avkastar sämre?",
+      "blocks": [
+        { "type": "text", "content": "Löptidsrisken är obligationsmatematikens första lag: ju längre löptid, desto kraftigare reagerar priset på ränteförändringar. Räkneexemplet: en obligationsfond med duration fem år förlorar ungefär 5 procent i värde när marknadsräntan stiger en procentenhet — och tvärtom när den sjunker. Historien visar båda riktningarna. År 1981 nådde amerikanska tioåriga statsobligationer nära 16 procent i avkastning; den som då köpte och höll låste in en generation av säker avkastning, och den fyrtioåriga obligationsboomen som följde är på sitt sätt lika anmärkningsvärd som aktiernas. Duration är alltså inte en egenskap att undvika utan en ratt att välja — medvetet, efter vad portföljen behöver." },
+        { "type": "text", "content": "Kreditrisken är aktierisk i kostym. Företagsobligationer betalar mer än statspapper eftersom de kan defaulta, och när konjunkturen vänder stiger spreaderna samtidigt som aktierna faller — 2008 sjönk high yield med omkring 26 procent, vilket avslöjade att den delen av portföljen inte var någon räntedel alls utan aktier med fel etikett. Bernsteins praktiska hållning är därför häpnadsväckande enkel: i obligationsdelen ska kvalitet råda. Korta statsobligationer som stabilisator, investment grade-företagspapper som smaksättning, high yield som det det är — en aktieposition med räntekostnad. Han reserverar dessutom den skattemässigt smartaste platsen för räntedelen, eftersom kupongerna beskattas hårdare än aktievinster; i svensk kontext är investeringssparkontot och pensionskuvertet det naturliga hemmet." },
+        { "type": "text", "content": "Så varför äga något med lägre förväntad avkastning? Därför att obligationerna köps för sitt jobb, inte för sin avkastning. De är frontens vänsterkant: den vikt som gör att portföljen — och investeraren — överlever aktiernas dåliga decennier. Och i kriser har de en nästan monotont pålitlig egenskap: flykten till kvalitet. År 2008 steg långa amerikanska statsobligationer med omkring 26 procent samtidigt som allt annat föll — den enda stora tillgångsklassen som betalade för sitt levererade trygghet just när tryggheten behövdes som mest. Bernstein delar upp ränteuppgiften i tre poster: korta papper som kontantnära stabilisator, långa statsobligationer som krishedge, och realränteobligationer som inflationsskydd — tre olika jobb, tre olika löptider, inget av dem en skrytfond." },
+        { "type": "text", "content": "AKM1:s kreditvariabler är byggda för exakt den här analysen, på bolagsnivå. V10 Skuldsättningsgrad mäter hur mycket löptids- och ränterisk bolaget självt bär — höger sidan av balansräkningen är bolagets egen duration. V11 Likviditet avgör om bolaget överlever en kredittorka utan att bränna värde. V19 Kapitalförbränning & Emissionsrisk är svansens exakta mekanism: bolag som måste emittera nytt kapital 2009 gjorde det vid de värsta priserna i en generation och förvandlade kris till permanent utspädning. De bolag som klämde igenom hade låg skuld, hög likviditet och stabila intäkter (V12) — precis de variabler en obligationsanalytiker betalar för. En obligationsanalytiker är nämligen en AKM1-analytiker utan känslor, och det är ibland en fördel." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Obligationens tre jobb\",\"rader\":[[\"Segment\",\"Löptidsrisk\",\"Kreditrisk\",\"Roll i portföljen\"],[\"Korta statsobligationer (1-2 år)\",\"Låg\",\"Statskredit\",\"Stabilisator och kontant ersättare\"],[\"Långa statsobligationer (10+ år)\",\"Hög\",\"Statskredit\",\"Krishedge — steg 2008\"],[\"Företagsobligationer investment grade\",\"Medel\",\"Gradad via V10-V11\",\"Avkastningspick med disciplin\"],[\"High yield\",\"Medel\",\"Hög — följer aktier i kris\",\"Ej riktig räntedel — aktieposition i kostym\"],[\"Realränteobligationer\",\"Real löptid\",\"Statskredit\",\"Inflationsskydd\"]]}" },
+        { "type": "insikt", "content": "Obligationer köps inte för avkastningens skull utan för vad de gör med korrelationen — de är motvikten som gör att du står ut med aktiernas svängningar och finns kvar när geometrin spelar in." },
+        { "type": "utmaning", "content": "Räkna på räntekänslan: ta din obligationsfond, leta upp durationen, och räkna tre scenarier — räntan plus 1, plus 3 och minus 2 procentenheter. Räkna sedan motsvarande för aktiedelen med en grov beta. Fråga: när aktier faller 30 procent, vilken del av portföljen då köper tryggheten? Om svaret är ingen äger du ingen räntedel — bara en paus." }
+      ],
+      "quiz": [
+        {
+          "q": "Vad händer en obligationsfond med duration fem år om marknadsräntan stiger en procentenhet?",
+          "alternativ": [
+            "Den stiger omkring 5 procent",
+            "Den faller omkring 5 procent",
+            "Den påverkas inte förrän löptiden löper ut",
+            "Den faller omkring 1 procent"
+          ],
+          "ratt": 1,
+          "tips": "Durationen är just det talet — prisförändringen i procent per räntepoäng."
+        },
+        {
+          "q": "Varför insisterar Bernstein på hög kvalitet i obligationsdelen?",
+          "alternativ": [
+            "Eftersom statsobligationer alltid ger högst avkastning",
+            "Eftersom räntedelen ska vara den del som fungerar när allt annat faller",
+            "Eftersom företagsobligationer är olagliga för privatpersoner",
+            "Eftersom kreditrisk alltid ger positiv avkastning"
+          ],
+          "ratt": 1,
+          "tips": "2008 visade vad high yield gör i kris — och vad långa statsobligationer gjorde."
+        },
+        {
+          "q": "Vad visar 2008 om high yield-obligationers roll i en portfölj?",
+          "alternativ": [
+            "Att de steg när aktier föll och därför diversifierar",
+            "Att de är immun mot konjunktur",
+            "Att de föll tillsammans med aktier — alltså ingen riktig diversifiering",
+            "Att deras duration var noll"
+          ],
+          "ratt": 2,
+          "tips": "Kreditrisk är närbesläktad med aktierisk — etiketten på pappret ändrar inte beteendet."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Återbalanseringen — disciplinens rabatt på panik och eufori",
+      "intro": "Korrelationen gör diversifieringen möjlig; återbalanseringen gör den verklig. Bernstein visar att regeln — sälj av det som vuxit, köp av det som fallit, tillbaka till målvikterna — under vissa förhållanden ger en bonus som ser ut som alkemi. Räkneexemplet är bokens vackraste.",
+      "blocks": [
+        { "type": "text", "content": "Ta två tillgångar. A stiger 33,33 procent ett år och faller 25 procent nästa; B gör motsatsen — faller 25 och stiger 33,33. Efter två år har varje enskild tillgång avkastat exakt noll, eftersom 1,3333 gånger 0,75 blir 1,0000. Men den som varje år rebalanserar tillbaka till 50/50 tjänar: år ett ger halva A plus halva B, alltså 0,5 gånger 1,3333 plus 0,5 gånger 0,75 = 1,0417 — en pluspost på 4,17 procent. År två upprepas trick et i omvänd ordning. Totalt: 1,0417 i kvadrat = 1,085, alltså åtta och en halv procent på två år, drygt 4 procent per år — frambringat ur två tillgångar som var och en avkastade noll. Inga avgifter, ingen analys, ingen timing. Bara disciplin och aritmetik. Detta är den berömda rebalanseringsbonusen, och Bernstein presenterar den med den neurologens förvåning han behärskar: miraklet är regelbundet." },
+        { "type": "text", "content": "Mekanismen är värd att förstå, inte bara beundra. Den rebalanserade portföljen realiserar det aritmetiska medelvärdet av de båda tillgångarnas svängningar i stället för deras geometriska — och eftersom geometriskt alltid ligger under aritmetiskt när det svänger, uppstår en differens i din favör. Bonusens storlek styrs av samma två ingredienser som i kapitel 3: svängningarnas omfattning och korrelationens låghet. Oberoende, svängande tillgångar ger generös rebalanseringsbonus; synkrona eller envist stigande ger ingen. Därav den viktiga varningen: mot en ensidigt stigande tillgång — amerikanska aktier 1982-1999 — kostar återbalanseringen avkastning år efter år, och den smärta som då uppstår är priset för det framtida återhämtningsövertaget. Bernstein beskriver den som en försäkringspremie: betald kontinuerligt, inkasserad när mönstret vänder." },
+        { "type": "text", "content": "Praktiken är mindre glamorös än matematiken. Rebalansera årsvis på ett fast datum, eller med band — till exempel när en tillgång avviker mer än fem procentenheter från målvikten; bägge fungerar, ingen är magiskt överlägsen. I beskattade konton tillkommer att affärerna skapar realiserade vinster, därför den hierarkiska ordningen: rebalansera först med nya insättningar (fria från skatt), sedan i schablonbeskattade eller uppskjutna kuvert, sist i den ordinarie depån. Varje såld vinnare och varje köpt förlorare ska helst göras där skatten inte tar del av disiplinen. Och frekvensen? Bernstein avfärdar halvår och kvartal som mer ritual än förtjänst — svängningarna mellan åren är stora nog för att en årscykel ska räcka för att maskinen ska få material." },
+        { "type": "text", "content": "Återbalanseringen är beteendekapitlets praktik, dess laboratorium. Regeln tvingar dig systematiskt att köpa det som just föll och sälja det som just steg — exakt det recency skriker emot — och den gör det utan att du behöver vara modig, bara lydig. Det är samma muskel som AKM1:s margin of safety: köp under värde, med kudden. Skillnaden är nivån: Bernstein mekaniserar den på portföljplan med aritmetik, AKM1 tillämpar den på bolagsplan med analys via V04-V06-multiplerna. Det bästa är inte att välja utan att skikta: rebalansera ryggraden mekaniskt en gång om året, och handla satelliten på marginalen av säkerhet när analysen — inte humöret — säger att kudden är tjock nog. Två lager samma dygd, olika verktyg." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Rebalansering — regler och egenskaper\",\"rader\":[[\"Metod\",\"Regel\",\"Fördel\",\"Risk\"],[\"Årsvis\",\"Fast datum en gång per år\",\"Enkel, skattemässigt planerbar\",\"Kan släpa efter snabba svängningar\"],[\"Band\",\"Avida mot målvikt över tröskel (t ex 5 poäng)\",\"Fångar svängningar bättre\",\"Kräver bevakning och is i magen\"],[\"Med nya medel\",\"Spara in till den underviktade posten\",\"Skattefri och smärtfri\",\"Långsam vid stora glapp\"],[\"Ingen alls\",\"Låt vinnarna löpa\",\"Ingen handling i euforin\",\"Portföljen förvandlas till senaste vinnaren — blir till en enda position\"]]}" },
+        { "type": "insikt", "content": "Återbalansering förvandlar volatilitet från fiende till råvara: utan svängningar ingen bonus. De dåliga åren är inte bekostnad — de är materialet maskinen förädlar." },
+        { "type": "utmaning", "content": "Sätt en rebalanseringsregel du faktiskt kan följa — fast årlig dag eller fem procents band — och skriv in den i placeringspolicyn från kapitel 8. Testa den sedan baklänges: vad hade den krävt av dig 2008 (köpa allt i mars 2009) och 1999 (sälja IT-vinnare)? Om du inte kan föreställa dig att genomföra den i båda riktningarna är regeln fel skriven — skriv om den tills den är obehaglig men görbar." },
+        { "type": "visuell", "content": "bro" }
+      ],
+      "quiz": [
+        {
+          "q": "I Bernsteins exemplet: A ger +33,33 sedan -25, B det omvända, båda noll på två år. Vad avkastar den rebalanserade 50/50-portföljen per år?",
+          "alternativ": [
+            "Exakt noll — som delarna",
+            "Cirka 2 procent",
+            "Cirka 3 procent",
+            "Cirka 4,2 procent"
+          ],
+          "ratt": 3,
+          "tips": "Räkna år ett: hälften av 1,3333 plus hälften av 0,75 — och notera vad som händer när det upprepas."
+        },
+        {
+          "q": "Vilka två egenskaper hos tillgångarna driver rebalanseringsbonusen?",
+          "alternativ": [
+            "Hög korrelation och stabil uppgång",
+            "Ofullständig korrelation och kraftiga svängningar",
+            "Samma valuta och liknande duration",
+            "Låga avgifter och hög utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Samma två ingredienser som gjorde korrelationskapitlet magiskt återkommer här."
+        },
+        {
+          "q": "Vad kräver återbalanseringen av dig som investerare i praktiken?",
+          "alternativ": [
+            "Att köpa det som just fallit och sälja det som just stigit",
+            "Att öka risken när marknaden stiger",
+            "Att byta till de fonder som presterat bäst",
+            "Att tajka insättningar efter recensioner"
+          ],
+          "ratt": 0,
+          "tips": "Regeln är kontratid per konstruktion — den köper alltid det som blivit relativt billigare."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 11,
+      "title": "KONTROVERS — Bernstein mot AKM1 och korrelationens mörka sida",
+      "intro": "Varje BOKMASTER-kurs har ett kapitel där boken sätts mot vårt eget ramverk, och Bernstein är den tuffaste motståndare AKM1 kan få. Två konfliktfält står på programmet: hans bevisning mot aktiv förvaltning — och den motbevis som 2008 gav hans eget kärnbegrepp, korrelationen.",
+      "blocks": [
+        { "type": "text", "content": "Första striden. Bernsteins position känner vi från kapitel 6: det finns inget bevis för att aktiv förvaltning fungerar — myntkastens statistik och kostnadsaritmetiken talar sitt entydiga språk. AKM1 säger motsatsen: med rätt variabler — V01 Försäljningstillväxt och V02 ARR-tillväxt för kvalitet, V05 P/B och V06 EV/EBITDA för värdering, V13 Patent & IP, V14 Varumärke och V15 Nätverkseffekter för vallgravar — kan analysören bygga en repeterbar process med kant. Konflikten är äkta och ska inte bortförklaras. Bernstein har aritmetiken och den långa evidensen på sin sida; AKM1 har processens logik och en genre av dokumenterade fall där strukturerad analys med marginal of safety presterat. Ärligheten kräver att säga som det är: AKM1:s starkaste argument är lärandet i sig — att förstå bolag, värdering och beteende — inte en garanterad överavkastning. Den som glömmer det har inte en modell utan en önskan." },
+        { "type": "text", "content": "Syntesen som den här kursen föreslår är dock inte kapitulation utan arkitektur. AKM1 som kompetens- och utbildningsramverk, inte som löfte: ryggraden — 80-90 procent av kapitalet — kan vara Bernsteins diversifierade, billig, mekaniskt rebalanserade kärna. Satelliten — 10-20 procent — är AKM1-labbet: där tillåts aktiv selection med hela V01-V20-variabeluppsättningen, margin of safety och ställda krav på mätning mot index, brutto som netto. Om satelliten bevisar sin kant över en hel marknadscykel, växer den; om inte, har ryggraden burit försöket utan skada. Detta är inte feghet utan Bayes: fördela tron efter belägg. Bernstein skulle i grunden godta konstruktionen — hans invändning gäller den som handlar mycket, betalar avgifter och inbildar sig plocka vinnare — inte den som använder bolagsförståelse på en avgränsad, mätbar och diversifierad minoritet av kapitalet." },
+        { "type": "text", "content": "Andra striden gäller Bernsteins eget kärnbegrepp. År 2008 såldes allt samtidigt. S&P 500 föll 37 procent, utvecklade marknader utom USA 43, tillväxtmarknader 53, REITs 38, high yield 26 — och den som trott att geografi och tillgångsslag räckte som olikhet fick se korrelationerna gå mot ett. Kritikens formulering är hård: diversifieringen sviker när den behövs som mest; de procent risk som sparades i fredstid visade sig vara ett fredstidsfenomen. Kursen When Genius Failed bär det matematiska monumentet: LTCM:s arbitragemodeller byggde på historiska korrelationer som exploderade i det ögonblick alla positioner måste avvecklas samtidigt — korrelationen mellan strategier blir ett när alla tvingas sälja allt. Korrelationen är alltså inte en egenskap hos tillgångarna utan hos regimen." },
+        { "type": "text", "content": "Förklaringen finns i våra grannkurser, och den förtjänar namnen. Soros reflektivitet (the-alchemy-of-finance): marknadsvariablerna påverkar det de mäter — positioner skapar berättelser som skapar positioner, och när hävstångarna vänder blir dekorrelationen ett minne. Kindleberger (manias-panics-and-crashes): panikfasen i varje mani definieras av att alla söker likviditet samtidigt — kontanter är den enda tillgången ingen säljer, och därför stiger bara den. Vad överlevde 2008? Långa amerikanska statsobligationer, plus 26 procent, och korta statspapper — flykten till kvalitet, statistiskt tråkig men monetärt avgörande. Vad dog var diversifiering med korrelerad kreditrisk, inte diversifiering som princip. Och AKM1:s krislexikon är här precist: V10 Skuldsättningsgrad, V11 Likviditet och V12 Intäktsstabilitet är variablerna som skilde de bolag som tvångssålde från de som köpte — margin of safety är inte bara värderingskudd utan överlevnadskudd. Slutsatsen är inte att överge Bernsteins matematik utan att läsa det fina trycket: diversifiera över faktorer som inte alla bär kreditleverans, behåll statsobligationsankaret, och räkna med att korrelationsmatrisen ser annorlunda ut precis när du läser den." },
+        { "type": "tabell", "content": "{\"rubrik\":\"2008 — året då allt såldes samtidigt\",\"rader\":[[\"Tillgång\",\"Avkastning 2008\",\"Vad den avslöjar\"],[\"S&P 500\",\"-37 procent\",\"Stora bolag var ingen safe haven\"],[\"Utvecklade marknader utom USA\",\"-43 procent\",\"Geografi räddade inte — korrelation mot ett\"],[\"Tillväxtmarknader\",\"-53 procent\",\"Mer beta blev mer fall\"],[\"REITs\",\"-38 procent\",\"Fastigheter följde med ner\"],[\"High yield-företagsobligationer\",\"-26 procent\",\"Kreditrisk är aktierisk i kostym\"],[\"Långa amerikanska statsobligationer\",\"+26 procent\",\"Flykten till kvalitet fungerade — vallgraven höll\"],[\"Korta statspapper\",\"+2 procent\",\"Frid i kaos\"],[\"Guld\",\"ca +5 procent\",\"Låg korrelation höll — knappt\"]]}" },
+        { "type": "insikt", "content": "Diversifiering är inte ett vaccin som ger immunitet — det är en försäkring med undantag i det fina trycket. Läs villkoret: korrelationen är regimberoende, och krisen är regimen." },
+        { "type": "utmaning", "content": "Gör dubbeltestet. (1) Leta fram 2008 års utfall för dina tillgångsklasser — hur många höll vad du trodde att de skulle hålla, och vad var den gemensamma nämnaren hos de som föll? (2) Definiera din AKM1-satellit i procent av totalen: hur stort får den vara innan en total förlust skadar ryggradens geometri? Skriv ner båda talen — de är din verkliga risktolerans, mätt i procent i stället i humör." }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är 2008 års främsta läxa om korrelation?",
+          "alternativ": [
+            "Att korrelationer är konstanta och pålitliga över tid",
+            "Att negativ korrelation alltid håller i kriser",
+            "Att korrelationer är regimberoende och tenderar mot ett när alla söker likviditet",
+            "Att geografisk spridning eliminerar svansrisk"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vad alla positioner har gemensamt när hävstångarna tvingar dem till försäljning samtidigt."
+        },
+        {
+          "q": "Vilken syntes föreslår kursen för konflikten Bernstein mot AKM1?",
+          "alternativ": [
+            "Att AKM1 ersätter index som grundplåt i alla portföljer",
+            "Att AKM1 hanteras som kompetensramverk och satellit, med en diversifierad ryggrad som bär huvudvikten",
+            "Att Bernstein-matematiken enbart gäller amerikanska marknader",
+            "Att aktiv och passiv förvaltning ger samma avkastning efter kostnader"
+          ],
+          "ratt": 1,
+          "tips": "Fördela tron efter belägg — och se till att ett laboratorium aldrig kan spränga huset."
+        },
+        {
+          "q": "Vad bär LTCM-historien (When Genius Failed) för likviditetsläxa?",
+          "alternativ": [
+            "Att deras modeller saknade matematisk formalism",
+            "Att deras hävstång var för låg för att fungera",
+            "Att statlig reglering orsakade deras fall",
+            "Att historiska korrelationer kan explodera när alla tvingas avveckla samtidigt"
+          ],
+          "ratt": 3,
+          "tips": "Deras statistik byggde på förfluten samvariation — som upphörde att finnas just när den behövdes."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Portföljbygget — 3-fonden, Coward's Portfolio och åldersregeln",
+      "intro": "Nu monteras hela maskinen. Bernstein avslutar boken med att bygga portföljer för verkliga människor: först aktie- och obligationsdelningen efter ålder och riskmage, sedan aktiedelens inre diversifiering. Hans finaste insikt är att enkelhet är en dygd — den portfölj du faktiskt håller slår den optimala du överger.",
+      "blocks": [
+        { "type": "text", "content": "Steg ett är den grova allokeringen, och Bernsteins tumregel är generationsgammal: låt obligationsandelen växa med åldern. En 25-åring med fyrtio års horisont kan bära 80-90 procent aktier — tiden är hans djupaste kudde; en 60-åring med fem år kvar till pension har ingen moralisk rätt att riskera maten på marknadsväder. Men regeln är värd ingenting om den inte överlever sina egna ord: den verkliga allokeringen är den som hölls under 2008, inte den som skrevs 2007. Två tillägg gör regeln ärligare. Pengar som behövs inom tre år hör inte hemma i aktier alls — kortsiktig horisont är inte risk utan spel. Och den som har stabil yrkesinkomst kan bära mer aktier än den vars inkomst svänger som börsen — arbete är i praktiken en obligationsposition." },
+        { "type": "text", "content": "Steg två: aktiedelens inre arkitektur. Bernsteins enklaste förslag är treskiktat: en bred global aktiefond, en internationell, och en kort obligationsfond — tre byggstenar som täcker kapitalismens huvuddelar med tre avgifter och en halvtimme per år. Den mer sinnrika varianten, som Bernstein namngav Coward's Portfolio i uppföljaren The Four Pillars of Investing, skär aktiedelen i många lika bitar — amerikanska stora, små, value, utländska, tillväxtmarknader, REITs, en aning ädelmetaller — och låter antalet skikt arbeta: fler korrelationer, mer rebalanseringsmaterial, bredare faktortäckning. Kostnaden är inte avgiften utan tracking error regret — ju rikare portföljen är, desto oftare och längre avviker den från grannens. Valet mellan tre fonder och tolv är temperamentfråga, inte matematikfråga — och båda är bättre än den optimala portfölj du överger i februari." },
+        { "type": "text", "content": "Steg tre: mål och glidbana. Bernstein skiljer på portföljer efter sitt ändamål — sparkapital med bestämd utgiftsdatum ska matchas med korta papper, inte jagas med aktier; pensionskapital glider från aktietungt mot räntetungt allteftersom uttagsåret nalkas; arvs- och evighetskapital kan bära mer risk än ägarens nerver tror. Utmärkande för hela bokens bygglåda är dess villkor: allokeringen bestäms av horisont och behov, inte av årets marknadsprognos — ingen av portföljerna innehåller någon åsikt om nästa år. Det är dess hemliga styrka: en portfölj utan prognos kan inte ha fel prognos, och den som inte spelar tajmingsspelet inte heller kan förlora det." },
+        { "type": "text", "content": "Var sitter AKM1 i bilden? I satelliten inom aktiedelen — aldrig i obligationsdelen, aldrig på hela kapitalet. En 35-åring med 85 procent aktier kan avsätta 15 procent av totalen som AKM1-labb: där blir V01 Försäljningstillväxt och V02 ARR-tillväxt intagskriterier — vad som alls får flyttas in — och V04-V06-multiplerna tillsammans med margin of safety som prisregel. Ryggradens fonder väljs efter avgift och bredd; satellitens bolag väljs efter variabler och kuddar. Placeringspolicyn från kapitel 8 är dokumentet som håller ihop bygget: allokering, band, satellitens storlek, mätpunkt mot index, datum för revision. En sida, underskriven — den billigaste riskhantering som finns, och den enda Bernstein betraktar som oersättlig." },
+        { "type": "tabell", "content": "{\"rubrik\":\"Åldersregeln i praktiken — exempelportföljer\",\"rader\":[[\"Ålder\",\"Aktier\",\"Obligationer\",\"Varav utlandet av aktierna\",\"Drivande hänsyn\"],[\"25\",\"85 procent\",\"15 procent\",\"30-40 procent\",\"Fyrtio års horisont — tid är kudden\"],[\"40\",\"70 procent\",\"30 procent\",\"30-40 procent\",\"Bolån, barn, karriärtopp — inkomsten bär\"],[\"55\",\"55 procent\",\"45 procent\",\"25-35 procent\",\"Fem till tio år till uttag — glidbanan börjar\"],[\"70\",\"35 procent\",\"65 procent\",\"20-30 procent\",\"Försörjningsfasen — uttag och sömn i natt\"]]}" },
+        { "type": "insikt", "content": "Den bästa portföljen är inte den med högst förväntad avkastning utan den du aldrig överger. Enkelhet är riskhanteringens sista försvarslinje." },
+        { "type": "utmaning", "content": "Bygg tre portföljer på papper: din nuvarande, Bernsteins 3-fond för din ålder, och Coward's variant. Räkna för varje portfölj grov risk, antal fonder och tid per år i skötsel — och svara ärligt: vilken hade du hållit i mars 2009? Skillnaden mellan den du beundrar och den du skulle ha hållit är den enda skillnad som betyder något." },
+        { "type": "visuell", "content": "donut" }
+      ],
+      "quiz": [
+        {
+          "q": "Vad består Bernsteins enklaste portföljförslag av?",
+          "alternativ": [
+            "En global aktiefond, en internationell och en kort obligationsfond",
+            "Tio aktivt förvaltade sektorsfonder",
+            "Enbart statsobligationer och guld",
+            "En aktiefond och en hedgefond"
+          ],
+          "ratt": 0,
+          "tips": "Tre byggstenar, tre avgifter, en halvtimme per år — enkelheten är medveten."
+        },
+        {
+          "q": "Vad säger åldersregeln Bernstein bygger vid på?",
+          "alternativ": [
+            "Att aktieandelen ska öka med åldern",
+            "Att obligationsandelen växer med åldern och att treårspengar inte ska stå i aktier",
+            "Att alla åldrar ska ha 60 procent aktier",
+            "Att ålder saknar betydelse om man har hög inkomst"
+          ],
+          "ratt": 1,
+          "tips": "Horitsonten — inte modet — avgör hur mycket svansrisk som hinner växa bort."
+        },
+        {
+          "q": "Vad är kännetecknande för Coward's Portfolio?",
+          "alternativ": [
+            "Den undviker alla utländska tillgångar",
+            "Den består enbart av obligationer med olika löptider",
+            "Den lånar pengar för att öka avkastningen",
+            "Den skär aktiedelen i många ungefär lika stora delar över tillgångsklasser"
+          ],
+          "ratt": 3,
+          "tips": "Namnet skämttar om fegheten — men fegheten ligger i spridningen, inte i undvikandet."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Kostnader, skatt och Bernsteins slutkod",
+      "intro": "Bokens sista fiende är den mest undanskymda: kostnaden, som tas varje år oavsett utfall och därför ränta-på-ränta-kapitaliseras lika obevekligt som avkastningen. Bernstein avslutar med implementeringen — fonder, avgifter, skatt, disciplin — och kursen avslutar med att sy ihop Bernsteins matematik med AKM1:s variabler.",
+      "blocks": [
+        { "type": "text", "content": "Räkneexemplet som borde tryckas på varje depåutdrag: 100 000 som växer med 7 procent i 30 år blir omkring 760 000; med 6 procent — alltså en enda procentenhet högre sammanlagd kostnad — blir det omkring 575 000. En enda procent i avgift, spread, omsättningsskada och rådgivarkommission äter ungefär en fjärdedel av slutkapitalet. Själva mekanismen är att kostnaden, till skillnad från avkastningen, är säker och jämn — den uppträder exakt som en negativ, garanterad avkastning och kapitaliseras därför lika starkt som den goda. Bernstein drar den logiska slutsatsen: kostnaden är den enda variabeln i hela ekvationen som du kontrollerar fullständigt, och den som inte kontrollerar den kontrollerar ingenting. Billiga, breda indexfonder är därför inte sparsamhet utan riskhantering — precis lika mycket som allokeringen." },
+        { "type": "text", "content": "Skatten är den andra tysta partnern, och den arbetar på samma sätt: liten andel per år, fördärvlig i förlängningen. Varje onödig realisering är en skattepliktig händelse som kapitalstarkt borde ha fått ligga kvar och jobba. Bernsteins amerikanska rådgivning — håll omsättningen låg, realisera medvetet, placera räntedelen där den beskattas mildast — översätts i svensk kontext till: investeringssparkonto för schablonskattens lugn, pensionskuvert för uppskovet, aktier med orealiserade vinster i vanlig depå där grundavdrag och egna kapitalvinster får jobba. Omsättningsskadan — spread och marknadspåverkan i varje affär — är den tredje posten, och den är som gjord för att underskattas: den syns aldrig som en rad på fakturan, bara som en frånvaro i utfallet. Sammanfattningen: tre tysta partners — avgift, skatt, omsättning — tar sitt varje år oavsett marknadens humör." },
+        { "type": "text", "content": "Implementationen blir därför en fråga om hierarki. Ryggraden: breda, billiga indexfonder över globala aktier, små bolag, value-segment och obligationer, med totala kostnader som ligger långt under en halv procent — i Sverige är det en realistisk, närmast tråkig standard. Satelliten: AKM1-labbet, där de sista variablerna får arbeta. V20 Återköp — äkta återköp till låga kurser, inte utspädningskompenserade optioner — är kapitaldisciplinens signum; V18 Regulatoriska katalysatorer ger händelsestruktur med definierade utlösare; V16 Produktlanseringar driver intäktsrotationen — men alltid inramat av multiplardisciplinen V04-V06 och den namnlösa kudden, margin of safety. Kursens arkitektur i en mening: V-variablerna gör satelliten begriplig, Bernstein gör ryggraden okrossbar — och gränsen dem emellan är skriven, mätt och signerad." },
+        { "type": "text", "content": "Bernsteins slutkod är kursens och värd att låta stå sista gång, i svensk översättning: »portföljförvaltningens essens är hanteringen av risker, inte hanteringen av avkastningar«. Med den följer de övriga: din värsta fiende sitter i spegeln — skriv policyn och automatisera; diversifiera över tillgångar med ofullständig korrelation — och läs det fina trycket om regimen; rebalansera mekaniskt — volatiliteten är råvara; håll kostnaderna i botten — de är den enda säkra avkastningen du kan styra; och var ödmjuk mot historien, som har fler överraskningar än din fantasi. Vägar vidare i biblioteket: against-the-gods för riskens idéhistoria, when-genius-failed och manias-panics-and-crashes för korrelationens och panikens anatomi, the-alchemy-of-finance för reflektiviteten — och akm1-den-kontroversiella-modellen för satelliten. Slutexamen är tre saker: en sida placeringspolicy, en uträkning av din egen fria lunch, och ett ärligt svar på frågan om du är bättre än din spegelbild." },
+        { "type": "tabell", "content": "{\"rubrik\":\"De tysta partnerna — kostnader och var de bor\",\"rader\":[[\"Kostnad\",\"Typisk storlek\",\"Vem som får den\",\"Åtgärd\"],[\"Förvaltningsavgift\",\"0,05-2 procent per år\",\"Fondbolaget\",\"Ryggraden under 0,2 procent\"],[\"Köp- och säljavgifter\",\"Per affär\",\"Mäklaren\",\"Få och stora affärer\"],[\"Omsättningsskada\",\"Dold — spread och marknadspåverkan\",\"Marknaden\",\"Låg omsättning, tålmodiga order\"],[\"Skatt på realisering\",\"Från vinsten vid varje försäljning\",\"Staten\",\"ISK eller pensionskuvert, medvetna realiseringar\"],[\"Rådgivarkommission\",\"0,5-1 procent per år\",\"Säljaren\",\"Kolla incitamenten före råden\"]]}" },
+        { "type": "insikt", "content": "Du kan inte kontrollera marknadens avkastning — bara kostnader, allokering och ditt eget beteende. Lyckligtvis är det exakt där den långsiktiga förmögenheten bestäms." },
+        { "type": "utmaning", "content": "Skriv Bernsteins testamente över din egen portfölj: (1) ryggradens allokering och fonder, med totala kostnader under 0,2 procent; (2) satellitens storlek i procent och AKM1-kriterierna — V01-V20 plus margin of safety — för intag och uttrag; (3) rebalanseringsregeln med band och datum; (4) policyns datering och ditt signerade löfte. Behåll dokumentet. Om fem år är det antingen din bästa investering eller din dyraste läxa — sannolikt båda på en gång." },
+        { "type": "visuell", "content": "compound" }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kostar en sammanlagd avgift på en procent per år under 30 år vid 7 procents avkastning?",
+          "alternativ": [
+            "Ungefär en tjugondel av slutförmögenheten",
+            "Ungefär en fjärdedel av slutförmögenheten",
+            "Ungefär hälften av avkastningen det sista året",
+            "Ingenting — avgiften betalas av avkastningen"
+          ],
+          "ratt": 1,
+          "tips": "Jämför 1,07 upphöjt till 30 med 1,06 upphöjt till 30 — och se på skillnaden i kronor, inte procent per år."
+        },
+        {
+          "q": "Var hör AKM1:s katalysatorvariabler hemma i kursens arkitektur?",
+          "alternativ": [
+            "I hela portföljen, som ersättning för allokeringen",
+            "Enbart i obligationsdelen som kreditfilter",
+            "Ickanvändbara tillsammans med indexfonder",
+            "I satelliten inom aktiedelen, omslutna av multiplardisciplin och margin of safety"
+          ],
+          "ratt": 3,
+          "tips": "Ryggraden gör det grova jobbet — labbet är litet, mätbart och kuddat."
+        },
+        {
+          "q": "Vilken är kursens samlade slutsats av Bernsteins slutkod?",
+          "alternativ": [
+            "Att maximera avkastningen genom att välja rätt aktier i rätt tid",
+            "Att tajma marknadens svängningar med tekniska signaler",
+            "Att jaga årets hetaste tillgång och rebalansera dit",
+            "Att hantera risk — diversifierat, billigt, mekaniskt återbalanserat och disciplinerat över tid"
+          ],
+          "ratt": 3,
+          "tips": "Tre alternativ handlar om avkastningsjakt; leta det som handlar om riskens hantering."
+        }
+      ]
+    }
+  ]
+}

@@ -3263,3 +3263,20 @@ Stage Summary:
 - Chatbot är nu en AKM1/AK1TS-strukturerad guide (inte generisk sökmotor)
 - Alla svar följer ekosystemets riktlinjer: variabel + formel + poäng + länk
 - Kvar: samma djupintegration i Short-Seller + quiz + profilering
+---
+Task ID: 107-AI-MENTOR
+Agent: main (Z.ai Code)
+Task: AI-Mentor — chatbot med handlingsknappar + AKM1-struktur — LIVE
+
+Work Log:
+- HELA chattboten omskriven: inte bara text-svar utan HANDLINGS-KNAPPAR
+- Varje svar: typ + 3 klickbara länkar + [AKM1]-struktur
+- Navigering, utbildning, analys, portfölj, inspiration, system, hjälp
+- AKM1-termer: V01-V20 + koncept → variabel + formel + poäng + kurslänk
+- Proaktiv fallback: 4 nästa steg baserat på elevens kontext
+- Verifierat: 6 test-frågor alla gav typ + 3 handlings
+
+Stage Summary:
+- Chatboten är nu en AI-MENTOR som tar eleven VIDARE (inte bara svarar)
+- Alla svar följer AKM1/AK1TS-ekosystemet
+- Handlingsknappar = eleven KAN agera direkt från chatten

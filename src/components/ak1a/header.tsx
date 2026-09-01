@@ -49,17 +49,8 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => setMounted(true), []);
 
-  // ⌘K / Ctrl+K öppnar den GLOBALA kommandopaletten (sök alla sidor + kurser)
-  React.useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        window.dispatchEvent(new CustomEvent("ak1a:oppna-sok"));
-      }
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, []);
+  // ⌘K sköts GLOBALT av Kommandopaletten (layout.tsx) — ingen lokal lyssnare här
+  // (dubbla lyssnare race:togglear paletten stängd på startsidan)
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/70 bg-background/85 backdrop-blur-md">

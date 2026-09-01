@@ -3062,3 +3062,19 @@ Stage Summary:
   författat innehåll + full källhänvisning
 - Kö: Lynch 'Mina bästa investeringar' (25+ kapitel), Zero to One, Blue Ocean —
   samma kompletta format
+---
+Task ID: 96-KURSVISUALISERING
+Agent: main (Z.ai Code)
+Task: Visuell kursupplevelse — SVG-metaforer, progress, tidslinje — LIVE
+
+Work Log:
+- kurs-visuellt.tsx: LasProgress (scroll-bar), KapitelBadge (tidslinje),
+  InsiktPuls (pulserande guldcirkel), VisaMetafor (SVG: mr-market/bro/skala),
+  QuizRing (progressring), Term (hover-ordlista)
+- Graham-sidan: Mr Market-figur (kap 2), 30-tonsbron (kap 3), rek-skala (kap 8)
+- Prod verifierad: SVG-element levererade
+
+Stage Summary:
+- 'Nr 1 i världen'-riktning: visuella metaforer + progress + pulserande insikter
+  gör varje kurssida mer levande och engagerande
+- Kö: metaforer för fler kurser, Lynch-bok komplett, AI-lärarläge i chatwidget

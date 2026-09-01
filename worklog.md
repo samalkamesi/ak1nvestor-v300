@@ -3735,3 +3735,24 @@ Work Log:
 Stage Summary:
 - 44 BOKMASTER + 2 flaggskepp; motståndar-biblioteket lika komplett som
   vårt eget — den mest ärliga finansutbildningen som finns
+
+---
+Task ID: 133-TRE-FOKUS — SUPERANALYS + BADGES + MANIFEST
+Agent: main + 3 specialagenter ✓
+Task: aktieanalys-flaggskepp + gamification-lager + exceptionell branding
+
+Work Log:
+- /SUPERANALYS: 24-stegs guidad bolagsanalys (V01-V20 med trösklar +
+  AK1TS-korsläsning per horisont) → resultat med SVG-spindelnät, viktad
+  poäng/100 (Tillv 15/Värd 20/Löns 20/Stab 15/Moat 15/Kat 5/Risk 10),
+  rekommendationsband (pedagogiskt, aldrig köp/sälj), autosparande,
+  delning, +100 XP vid första sparad analys
+- /BADGES: 28 troféer i 5 kategorier (Start/Kurser/Streak/XP/Ekosystem),
+  trophies-grid med låsta/upplåsta + framsteg, triggade i verkliga händelser
+  (quiz, kurs klarad, flashcard, nivåer, streak, BOKMASTER-kanon)
+- /MANIFEST: varumärkes-mastodonten — "Vi bygger världens bästa finans-
+  utbildning": sex löften, metodik-pelarna, ärlighetens test (egen
+  disclaimer citerad som styrka), levande mätetal, vägen Fas1→Fas2,
+  signatur
+- Meny: Superanalysen + Badges + Manifestet inlagda; sitemap +3
+- 271 kurser · 5544 quiz · 763 sidor

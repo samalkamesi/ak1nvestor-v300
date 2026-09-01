@@ -16,6 +16,7 @@ const PANELER: MenyPanel[] = [
     titel: "Lär",
     ikon: "🎓",
     punkter: [
+      { text: "Manifestet", lank: "/manifest", ikon: "🏛️", beskrivning: "Vår vision: världens bästa finansutbildning" },
       { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker" },
       { text: "Alla kurser", lank: "/kurser", ikon: "📚", beskrivning: "Hela biblioteket med quiz" },
       { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "28 böcker kapitel för kapitel + ekosystem-flaggskeppen" },
@@ -28,6 +29,7 @@ const PANELER: MenyPanel[] = [
     ikon: "🔬",
     punkter: [
       { text: "AKM1-kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20" },
+      { text: "Superanalysen", lank: "/superanalys", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
       { text: "Min portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)" },
       { text: "Analyser", lank: "/analyser", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser" },
       { text: "AI-Diagnos", lank: "/diagnos", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter" },
@@ -39,6 +41,7 @@ const PANELER: MenyPanel[] = [
     ikon: "🎯",
     punkter: [
       { text: "Topplistan", lank: "/topplista", ikon: "🏆", beskrivning: "Eleverna rankade på XP" },
+      { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "28 troféer att förtjäna" },
       { text: "Repetera", lank: "/kurser", ikon: "🃏", beskrivning: "Flashcards med SM-2 (i AI-mentorn)" },
       { text: "Short-Seller", lank: "/kurser", ikon: "🔴", beskrivning: "Sokratisk grillning (röd widget)" },
       { text: "Blogg", lank: "/blogg", ikon: "✍️", beskrivning: "Guider + marknadskommentarer" },

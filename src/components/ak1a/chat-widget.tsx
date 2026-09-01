@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor, addXP, lasStreak } from "@/lib/member-local";
+import { geBadge } from "@/lib/badges";
 import {
   forfallnaKort,
   bedomKort,
@@ -227,6 +228,7 @@ export function ChatWidget() {
     const kort = srKo[srIndex];
     if (!kort) return;
     bedomKort(kort.id, kvalitet);
+    geBadge("forsta-flashcard");
 
     let xpFortjanat = 0;
     if (kvalitet >= 4 && forjanaXP(kort.id)) {

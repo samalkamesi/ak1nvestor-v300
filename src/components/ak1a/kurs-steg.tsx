@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { addXP, lasXP, lasStjarnor, niva } from "@/lib/member-local";
+import { addXP, lasXP, lasStjarnor, niva, lasStreak, lasKlaraKurser, markeraKursKlar } from "@/lib/member-local";
+import { geBadge, ORIGINAL_BOKMASTER, FLAGGSKEPP } from "@/lib/badges";
 import { InsiktPuls } from "@/components/ak1a/kurs-visuellt";
 import { VisuellBlock } from "@/components/ak1a/visuell-block";
 
@@ -69,16 +70,33 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
     if (localStorage.getItem(nyckel) === "1") return;
     setSvar((p) => ({ ...p, [nyckel]: val }));
     if (val === kap.quiz[qi].ratt) {
+      geBadge("forsta-quiz-ratt");
       const nivaFore = niva();
       localStorage.setItem(nyckel, "1");
       const nivaEfter = addXP(10);
       setXp(lasXP());
       if (nivaEfter > nivaFore) setNivaUpp(nivaEfter);
+      [5, 10, 25, 50].forEach((n) => { if (nivaEfter >= n) geBadge(`niva-${n}`); });
+      [1000, 10000].forEach((m) => { if (lasXP() >= m) geBadge(`xp-${m}`); });
+      const st = lasStreak();
+      [3, 7, 14, 30, 100].forEach((d) => { if (st.antal >= d) geBadge(`streak-${d}`); });
       // Kolla om hela kapitlet är klarat
       const alla = kap.quiz.every((_, i) => localStorage.getItem(`ak1a-quiz-${kurs.slug}-${kap.num}-${i}`) === "1");
       if (alla) {
         setKlaradeKap((p) => new Set([...p, kap.num]));
         setStjarnor(lasStjarnor());
+        if (klaradeKap.size + 1 >= total) {
+          // Hela kursen klarad → kurs-meriter
+          const nysynkad = markeraKursKlar(kurs.slug);
+          if (nysynkad) {
+            geBadge("forsta-kurs-klar");
+            const klara = lasKlaraKurser().length;
+            [5, 10, 25, 50, 100].forEach((m) => { if (klara >= m) geBadge(`kurser-${m}`); });
+            if (ORIGINAL_BOKMASTER.includes(kurs.slug)) geBadge("forsta-bokmaster");
+            if (ORIGINAL_BOKMASTER.every((s) => lasKlaraKurser().includes(s))) geBadge("kanon-kannaren");
+            if (FLAGGSKEPP.every((s) => lasKlaraKurser().includes(s))) geBadge("flaggskeppen");
+          }
+        }
       }
     }
   };

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 import { SankeyPortfolj } from "@/components/ak1a/sankey-portfolj";
@@ -660,6 +661,46 @@ export function Portfoljbyggare() {
       <p className="mt-6 rounded-xl border border-gold/30 bg-gold/10 p-3 text-center text-xs italic text-gold">
         Pedagogiskt verktyg — inte investeringsråd. Poängen är didaktiska, aldrig rekommendationer.
       </p>
+
+      {/* Nästa steg — från tänkt portfölj till riktig förståelse */}
+      <div className="mt-6 rounded-xl border border-gold/30 bg-card p-5">
+        <h3 className="font-serif text-lg font-bold">Nästa steg</h3>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Portföljen är byggd — så här växer den till verklig kompetens:
+        </p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          <Link
+            href="/min-portfolj"
+            className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+          >
+            <p className="font-serif text-base font-bold text-gold">Min portfölj →</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+              Lägg in dina faktiska innehav och kör djupanalysen (5×5×4) — jämför med den
+              portfölj du just byggt på skräpminnet.
+            </p>
+          </Link>
+          <Link
+            href="/superanalys"
+            className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+          >
+            <p className="font-serif text-base font-bold text-gold">Superanalysen →</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+              AKM1-reglaget var en gissning — byt den mot ett riktigt betyg: kör 24 steg på
+              bolaget bakom positionen.
+            </p>
+          </Link>
+          <Link
+            href="/kurser/pf-01-portfoljbyggande"
+            className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+          >
+            <p className="font-serif text-base font-bold text-gold">Kursen Portfölj-byggande →</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+              Teorin bakom färdscenerna: kärna-satellit, Ferri-ryggraden och dold
+              korrelation — varningarnas ursprung.
+            </p>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

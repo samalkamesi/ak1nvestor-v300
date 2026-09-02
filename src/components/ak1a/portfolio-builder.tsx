@@ -172,7 +172,7 @@ type ScenarioKey = keyof typeof SCENARIOS;
 type TrendKey = "stigande" | "sidled" | "fallande";
 type MacdKey = "positiv" | "negativ";
 type MaCrossKey = "golden" | "death" | "ingen";
-type VolumeKey = "ökande" | "svagande";
+type VolumeKey = "ökande" | "svågande";
 
 interface TechnicalAnalysis {
   trend: TrendKey;
@@ -257,7 +257,7 @@ function defaultTechnical(): TechnicalAnalysis {
     rsi: 50,
     macd: "negativ",
     maCross: "ingen",
-    volume: "svagande",
+    volume: "svågande",
     support: "",
     resistance: "",
     candlestick: "",
@@ -580,7 +580,7 @@ function TechnicalLayer({
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="ökande">Ökande</SelectItem>
-              <SelectItem value="svagande">Svagande</SelectItem>
+              <SelectItem value="svågande">Svågande</SelectItem>
             </SelectContent>
           </Select>
         </div>

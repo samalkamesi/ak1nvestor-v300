@@ -3,7 +3,7 @@
   "category": "BOKMASTER",
   "weight": "KRITISK",
   "chapterCount": 14,
-  "totalMinutes": 150,
+  "totalMinutes": 140,
   "title": "Financial Shenanigans — Schilit: KOMPLETT",
   "summary": "Howard Schilit, redovisningsprofessorn som kallats redovisningens Sherlock Holmes, katalogiserar i Financial Shenanigans (första upplagan 1993) sju sätt för ledningar att lura med siffror — från för tidiga intäkter till dolda skulder och fejkad kassa. Kursen går igenom alla sju kategorierna med äkta fall (Enron, WorldCom, Sunbeam, HealthSouth, Luckin, Wirecard), bygger Schilits detektorsystem och kopplar allt till AKM1:s källkritik (V12), kassaflödesanalysen, bruttomarginal (V07) och P/B (V05).",
   "minutes": 10,
@@ -12,20 +12,76 @@
   "learn": "Schilits sju shenanigan-kategorier: för tidiga intäkter (channel stuffing, bill-and-hold), fiktiva intäkter (Luckin, ZZZZ Best), intäktsöverföringar (engångsvinster som löpande intäkt), underskattade kostnader (avskrivningar, reservfonder, pension), kostnadsförskjutningar (kapitalisering — WorldCom 3,8 Md USD, big bath — Sunbeams cookie jar), dolda skulder (Enrons SPE:s) och missbruk av kassaflödesredovisningen; detektorsystemet: vinst mot kassaflöde, DSO, lageromsättning, bruttomarginalens kvalitet (V07), fotnotsläsning, non-recurring-analys och mjuka varningssignaler (revisorsbyte, CFO-avgångar, aggressivitet mot kritiker); historikens största fall med mekanik och årtal; samt integrationen i AKM1 där källkritiken (med V12 som närmaste variabel) gör redovisningskvaliteten till ett mätbart såll.",
   "why": "Utan Schilit läser du AKM1:s nyckeltal som sanningar: V07-marginaler, kassaflöden och V05-balansräkningar blir vackra siffror även när de är fabricerade. Varje val du gör i AKM1 bygger på rapportens kvalitet — Schilit är det som gör redovisningskvalitetsgranskningen till mer än en åsikt och som skiljer en aktieanalys från en beskrivning av en berättelse. Den som kan shenanigans vägrar vara den som betalar för nästa Enron.",
   "chapters_list": [
-    { "num": 1, "title": "Schilits detektivarbete — sju sätt att lura med siffror", "minutes": 10 },
-    { "num": 2, "title": "Shenanigan 1: Intäkter för tidigt — channel stuffing och bill-and-hold", "minutes": 10 },
-    { "num": 3, "title": "Shenanigan 2: Fiktiva intäkter — påhittade kunder och falsk kassa", "minutes": 10 },
-    { "num": 4, "title": "Shenanigan 3: Intäktsöverföringar — engångsvinster i löpande drift", "minutes": 10 },
-    { "num": 5, "title": "Shenanigan 4: Underskattade kostnader — avskrivningar och reservfonder", "minutes": 10 },
-    { "num": 6, "title": "Shenanigan 5: Kostnadsförskjutningar — kapitalisering och big bath", "minutes": 10 },
-    { "num": 7, "title": "Shenanigan 6: Dolda skulder — Enrons SPE:s och off-balance-sheet", "minutes": 10 },
-    { "num": 8, "title": "Shenanigan 7: Missbruk av kassaflödesredovisningen", "minutes": 10 },
-    { "num": 9, "title": "Detektör I: Vinst mot kassaflöde — kassaflödesanalysen som lögndetektor", "minutes": 10 },
-    { "num": 10, "title": "Detektör II: DSO, lageromsättning och marginalradarn (V07)", "minutes": 10 },
-    { "num": 11, "title": "Detektör III: Fotnoter, engångsposter och mjuka signaler", "minutes": 10 },
-    { "num": 12, "title": "Fallstudier I: Enron, WorldCom, Sunbeam och HealthSouth", "minutes": 10 },
-    { "num": 13, "title": "Fallstudier II: Luckin Coffee och Wirecard — nya erans bedrägerier", "minutes": 10 },
-    { "num": 14, "title": "Schilit i AKM1: checklista, källkritik-integration och 30-sekunderstestet", "minutes": 10 }
+    {
+      "num": 1,
+      "title": "Schilits detektivarbete — sju sätt att lura med siffror",
+      "minutes": 10
+    },
+    {
+      "num": 2,
+      "title": "Shenanigan 1: Intäkter för tidigt — channel stuffing och bill-and-hold",
+      "minutes": 10
+    },
+    {
+      "num": 3,
+      "title": "Shenanigan 2: Fiktiva intäkter — påhittade kunder och falsk kassa",
+      "minutes": 10
+    },
+    {
+      "num": 4,
+      "title": "Shenanigan 3: Intäktsöverföringar — engångsvinster i löpande drift",
+      "minutes": 10
+    },
+    {
+      "num": 5,
+      "title": "Shenanigan 4: Underskattade kostnader — avskrivningar och reservfonder",
+      "minutes": 10
+    },
+    {
+      "num": 6,
+      "title": "Shenanigan 5: Kostnadsförskjutningar — kapitalisering och big bath",
+      "minutes": 10
+    },
+    {
+      "num": 7,
+      "title": "Shenanigan 6: Dolda skulder — Enrons SPE:s och off-balance-sheet",
+      "minutes": 10
+    },
+    {
+      "num": 8,
+      "title": "Shenanigan 7: Missbruk av kassaflödesredovisningen",
+      "minutes": 10
+    },
+    {
+      "num": 9,
+      "title": "Detektör I: Vinst mot kassaflöde — kassaflödesanalysen som lögndetektor",
+      "minutes": 10
+    },
+    {
+      "num": 10,
+      "title": "Detektör II: DSO, lageromsättning och marginalradarn (V07)",
+      "minutes": 10
+    },
+    {
+      "num": 11,
+      "title": "Detektör III: Fotnoter, engångsposter och mjuka signaler",
+      "minutes": 10
+    },
+    {
+      "num": 12,
+      "title": "Fallstudier I: Enron, WorldCom, Sunbeam och HealthSouth",
+      "minutes": 10
+    },
+    {
+      "num": 13,
+      "title": "Fallstudier II: Luckin Coffee och Wirecard — nya erans bedrägerier",
+      "minutes": 10
+    },
+    {
+      "num": 14,
+      "title": "Schilit i AKM1: checklista, källkritik-integration och 30-sekunderstestet",
+      "minutes": 10
+    }
   ],
   "chapters": [
     {

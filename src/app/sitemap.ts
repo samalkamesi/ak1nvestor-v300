@@ -3,63 +3,95 @@ import { getCourses, getAnalyses, getCaseStudies, getBlogPosts } from "@/lib/con
 
 export const dynamic = "force-dynamic";
 
-/** /sitemap.xml — alla crawlbara sidor genererade från statiskt innehåll */
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://lab.ak1nvestor.com";
-  const now = new Date();
+const BASE_URL = "https://lab.ak1nvestor.com";
 
+/** Säker ISO-datumparsning — ogiltiga/missing värden faller tillbaka på "nu". */
+function safeDate(value: unknown, fallback: Date): Date {
+  if (typeof value === "string" && value.trim()) {
+    const d = new Date(value);
+    if (!isNaN(d.getTime())) return d;
+  }
+  return fallback;
+}
+
+/** /sitemap.xml — alla crawlbara sidor genererade från statiskt innehåll.
+ *  Mål: maximal indexering. Varje kurs (BOKMASTER 0.9, övriga 0.8),
+ *  varje labb-case, varje bloggpost, varje analys + variabelsida,
+ *  alla verktygssidor och flaggskepp (1.0). */
+export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+  const courses = getCourses();
+  const courseSlugs = Object.keys(courses);
+
+  // ── Flaggskepp (1.0) + statiska sidor + alla verktygssidor ────────────────
   const entries: MetadataRoute.Sitemap = [
-    { url: baseUrl, changeFrequency: "weekly", priority: 1, lastModified: now },
-    { url: `${baseUrl}/kurser`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/analyser`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/labb`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
-    { url: `${baseUrl}/blogg`, changeFrequency: "daily", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/kalkylator`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/vagfundament`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/portfoljbyggare`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
-    { url: `${baseUrl}/netnet`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
-    { url: `${baseUrl}/konfluens`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/laroplan`, changeFrequency: "weekly", priority: 1, lastModified: now },
-    { url: `${baseUrl}/profil`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/certifikat`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
-    { url: `${baseUrl}/topplista`, changeFrequency: "daily", priority: 0.8, lastModified: now },
-    { url: `${baseUrl}/bibliotek`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/om-oss`, changeFrequency: "monthly", priority: 0.5, lastModified: now },
-    { url: `${baseUrl}/manifest`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/superanalys`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/badges`, changeFrequency: "weekly", priority: 0.7, lastModified: now },
-    { url: `${baseUrl}/fas2-ansok`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
-    { url: `${baseUrl}/min-sida`, changeFrequency: "daily", priority: 0.8, lastModified: now },
-    { url: `${baseUrl}/dagens-pass`, changeFrequency: "daily", priority: 0.9, lastModified: now },
-    { url: `${baseUrl}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
-    { url: `${baseUrl}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${baseUrl}/terms`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${baseUrl}/finansiell-policy`, changeFrequency: "yearly", priority: 0.4 },
+    // Flaggskepp — sajtens kärna
+    { url: BASE_URL, changeFrequency: "daily", priority: 1, lastModified: now },
+    { url: `${BASE_URL}/kurser`, changeFrequency: "daily", priority: 1, lastModified: now },
+    { url: `${BASE_URL}/laroplan`, changeFrequency: "weekly", priority: 1, lastModified: now },
+    { url: `${BASE_URL}/konfluens`, changeFrequency: "weekly", priority: 1, lastModified: now },
+    { url: `${BASE_URL}/vagfundament`, changeFrequency: "weekly", priority: 1, lastModified: now },
+    { url: `${BASE_URL}/manifest`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
+
+    // Innehållsnav
+    { url: `${BASE_URL}/analyser`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/labb`, changeFrequency: "weekly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/blogg`, changeFrequency: "daily", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/bibliotek`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/topplista`, changeFrequency: "daily", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/badges`, changeFrequency: "weekly", priority: 0.7, lastModified: now },
+    { url: `${BASE_URL}/dagens-pass`, changeFrequency: "daily", priority: 0.9, lastModified: now },
+
+    // Alla verktygssidor
+    { url: `${BASE_URL}/kalkylator`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/portfoljbyggare`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/netnet`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/superanalys`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/profil`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/certifikat`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/rapporter`, changeFrequency: "monthly", priority: 0.7, lastModified: now },
+
+    // Medlems- och företagssidor
+    { url: `${BASE_URL}/pro`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
+    { url: `${BASE_URL}/medlemskap`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/fas2-ansok`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/fas3`, changeFrequency: "monthly", priority: 0.6, lastModified: now },
+    { url: `${BASE_URL}/min-sida`, changeFrequency: "daily", priority: 0.8, lastModified: now },
+    { url: `${BASE_URL}/min-portfolj`, changeFrequency: "weekly", priority: 0.5, lastModified: now },
+    { url: `${BASE_URL}/logga-in`, changeFrequency: "yearly", priority: 0.3 },
+
+    // Om & juridik
+    { url: `${BASE_URL}/om-oss`, changeFrequency: "monthly", priority: 0.5, lastModified: now },
+    { url: `${BASE_URL}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${BASE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${BASE_URL}/finansiell-policy`, changeFrequency: "yearly", priority: 0.4 },
   ];
 
-  // 307 kurser (Uppdaterad 2026-09-01 — loopen är dynamisk)
-  for (const slug of Object.keys(getCourses())) {
+  // ── VARJE kurs-slug: BOKMASTER 0.9, övriga kurser 0.8 ─────────────────────
+  for (const slug of courseSlugs) {
+    const course = courses[slug];
     entries.push({
-      url: `${baseUrl}/kurser/${slug}`,
+      url: `${BASE_URL}/kurser/${slug}`,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: course?.category === "BOKMASTER" ? 0.9 : 0.8,
+      // Kapiteldata innehåller inga datumfält — lastModified = genereringstillfället
       lastModified: now,
     });
   }
 
-  // Analyser (PREC.ST, VOLCAR-B, …) + variabel-landningssidor per analys
-  const vslugs = Object.keys(getCourses()).filter((s) => /^v\d{2}-/.test(s));
+  // ── Analyser (PREC.ST, VOLCAR-B, …) + variabel-landningssidor per analys ──
+  const vslugs = courseSlugs.filter((s) => /^v\d{2}-/.test(s));
   for (const a of getAnalyses()) {
     const t = a.ticker.toLowerCase().replace(/\.st$/, "-st");
     entries.push({
-      url: `${baseUrl}/analyser/${encodeURIComponent(a.ticker)}`,
+      url: `${BASE_URL}/analyser/${encodeURIComponent(a.ticker)}`,
       changeFrequency: "monthly",
       priority: 0.8,
-      lastModified: now,
+      lastModified: safeDate(a.analysisDate || a.verified, now),
     });
     for (const v of vslugs) {
       entries.push({
-        url: `${baseUrl}/analyser/${t}/${v}`,
+        url: `${BASE_URL}/analyser/${t}/${v}`,
         changeFrequency: "monthly",
         priority: 0.6,
         lastModified: now,
@@ -67,23 +99,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // 201 case studies
+  // ── VARJE labb-case med lastModified ur createdAt ─────────────────────────
   for (const c of getCaseStudies()) {
     entries.push({
-      url: `${baseUrl}/labb/${c.id}`,
+      url: `${BASE_URL}/labb/${c.id}`,
       changeFrequency: "monthly",
-      priority: 0.6,
-      lastModified: now,
+      priority: 0.7,
+      lastModified: safeDate(c.createdAt, now),
     });
   }
 
-  // Blogginlägg
+  // ── VARJE bloggpost med lastModified ur publicerings-/uppdateringsdatum ───
   for (const p of getBlogPosts()) {
     entries.push({
-      url: `${baseUrl}/blogg/${p.slug}`,
+      url: `${BASE_URL}/blogg/${p.slug}`,
       changeFrequency: "monthly",
       priority: 0.8,
-      lastModified: new Date(p.updatedAt || p.publishedAt),
+      lastModified: safeDate(p.updatedAt || p.publishedAt, now),
     });
   }
 

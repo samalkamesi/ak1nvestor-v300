@@ -3,7 +3,7 @@
   "category": "BOKMASTER",
   "weight": "KRITISK",
   "chapterCount": 15,
-  "totalMinutes": 160,
+  "totalMinutes": 150,
   "title": "Tänka snabbt och långsamt — Kahneman: KOMPLETT",
   "summary": "Daniel Kahnemans Tänka snabbt och långsamt (2011) är beteendeekonomins sammanfattning skriven av dess egen grundare: de två systemen, heuristikerna, prospect theory, övertron, regressionen mot medelvärdet och de två jag som får dig att minns dina affärer fel. Kursen går igenom bokens klassiska experiment — Linda-problemet, roulettehjulet, flyginstruktörerna, koloskopin — och översätter varje mekanism till investerarens beslutsfattande. Avslutningsvis ett kapitel om replikationskrisen, där Kahneman själv medgav att han satt för stor tro på underdimensionerade priming-studier, och vad som faktiskt höll.",
   "minutes": 10,
@@ -917,7 +917,7 @@
         },
         {
           "type": "text",
-      "content": "För portföljen följer en obehaglig diagnos: ditt minne av en affär är en peak-end-komprimering, inte en avkastningsserie. Du minns köptillfällets eufori eller panik, den värsta drawdownen och utgångskursen — inte de sjutton lugna åren som utgjorde nästan hela avkastningen. Effekten är dokumenterad i stor skala av Malmendier och Nagel: generationer som upplevt dåliga aktietider bär med sig lägre risktagande i årtionden — det som kallas depression babies-effekten. Hela kohorter allokerar efter en topunkts- och slutregel de aldrig valt: 2008 års botten och rebound skriver om tio års historia i minnet, och beteendet 2028 styrs fortfarande av den redigeringen. Samma mekanism får en enda teknikkrasch att hålla en placerare borta från en tillgångsklass i tjugo år, och en enda lyckad spekulation att inge tjugo års övermod."
+          "content": "För portföljen följer en obehaglig diagnos: ditt minne av en affär är en peak-end-komprimering, inte en avkastningsserie. Du minns köptillfällets eufori eller panik, den värsta drawdownen och utgångskursen — inte de sjutton lugna åren som utgjorde nästan hela avkastningen. Effekten är dokumenterad i stor skala av Malmendier och Nagel: generationer som upplevt dåliga aktietider bär med sig lägre risktagande i årtionden — det som kallas depression babies-effekten. Hela kohorter allokerar efter en topunkts- och slutregel de aldrig valt: 2008 års botten och rebound skriver om tio års historia i minnet, och beteendet 2028 styrs fortfarande av den redigeringen. Samma mekanism får en enda teknikkrasch att hålla en placerare borta från en tillgångsklass i tjugo år, och en enda lyckad spekulation att inge tjugo års övermod."
         },
         {
           "type": "text",

@@ -3,7 +3,7 @@
   "category": "BOKMASTER",
   "weight": "KRITISK",
   "chapterCount": 13,
-  "totalMinutes": 140,
+  "totalMinutes": 130,
   "title": "Common Sense on Mutual Funds — Bogle: KOMPLETT",
   "summary": "John Bogle — mannen som uppfann indexfonden — bygger i Common Sense on Mutual Funds (1999) ett vattentätt fall för att kostnader, tid och ägarskap styr din långsiktiga avkastning, inte fondval och timing. Kursen går igenom kostnads-determinismens matematik (2 % avgift äter 44 % av real avkastning på 30 år och över 60 % på 50 år), reversion to the mean för fondstjärnor, fondindustrins intressekonflikter, asset allocation som största beslutet — och den obligatoriska kontroversen: Bogles passiva evangelium mot de få koncentrerade värdeinvesterare (Buffett/Munger) som faktiskt slagit index, inklusive AK1A:s egen syntes: index som baseline, aktiva positioner som kunskapstillämpning.",
   "minutes": 10,
@@ -12,19 +12,71 @@
   "learn": "Kostnads-determinismens matematik: hur 2 % avgift äter 44 % av real avkastning på 30 år och över 60 % på 50 år; Sharpes ödmjuka aritmetik (genomsnittet kan inte slå sig själv efter kostnader); indexfondens mekanik (TER, tracking difference, omsättning, skatteeffektivitet); reversion to the mean för fonder och varför stjärnor faller; fondindustrins agentproblem (marknadsföring vs ägarintresse); tålamodets och tidens kraft (ränta-på-ränta, beteendegapet); asset allocation och åldersanpassad portfölj med återbalansering; investering vs spekulation och Bogles två källor till aktieavkastning; kontroversen passivt vs aktivt med SPIVA-data och Buffett-vadet; AK1A-syntesen: index som baseline, aktiva positioner som AKM1-tillämpning med margin of safety.",
   "why": "Utan Bogle kan du lära dig hela AKM1-ramverket och ändå missa den enda variabel som är hundraprocentigt förutsägbar i din portfölj: kostnaden. Bogle lär dig ödmjukheten som gör varje analys kompetent — att veta att genomsnittet inte kan slå sig själv, att gårdagens stjärnor faller och att tiden är den enda kraften som inte kräver att du har rätt om framtiden. För AK1A:s aktiva analytiker är Bogle inte en avvisning av analys utan dess ärliga baslinje: du mäter dina aktiva positioner mot indexet, och om du inte slår det vet du det.",
   "chapters_list": [
-    { "num": 1, "title": "Bogle, Vanguard och indexfondens födelse", "minutes": 10 },
-    { "num": 2, "title": "Kostnads-determinismen — matematiken som inte kan förhandlas", "minutes": 10 },
-    { "num": 3, "title": "Den ödmjuka aritmetiken — genomsnittet kan inte slå sig själv", "minutes": 10 },
-    { "num": 4, "title": "Indexfondens mekanik — att äga hela marknaden", "minutes": 10 },
-    { "num": 5, "title": "Reversion to the mean — när stjärnfonder faller", "minutes": 10 },
-    { "num": 6, "title": "Fondindustrin — marknadsföring kontra ägarintresse", "minutes": 10 },
-    { "num": 7, "title": "Tidens kraft — ränta-på-ränta och tålamodets strategi", "minutes": 10 },
-    { "num": 8, "title": "Asset allocation — portföljens största beslut", "minutes": 10 },
-    { "num": 9, "title": "Risk, ballast och konsten att återbalansera", "minutes": 10 },
-    { "num": 10, "title": "Investering kontra spekulation — två källor till avkastning", "minutes": 10 },
-    { "num": 11, "title": "KONTROVEREN: Bogles passiva evangelium mot de aktiva", "minutes": 10 },
-    { "num": 12, "title": "AKM1-tillämpning — analys i en Bogle-värld", "minutes": 10 },
-    { "num": 13, "title": "The majesty of simplicity — Stay the course", "minutes": 10 }
+    {
+      "num": 1,
+      "title": "Bogle, Vanguard och indexfondens födelse",
+      "minutes": 10
+    },
+    {
+      "num": 2,
+      "title": "Kostnads-determinismen — matematiken som inte kan förhandlas",
+      "minutes": 10
+    },
+    {
+      "num": 3,
+      "title": "Den ödmjuka aritmetiken — genomsnittet kan inte slå sig själv",
+      "minutes": 10
+    },
+    {
+      "num": 4,
+      "title": "Indexfondens mekanik — att äga hela marknaden",
+      "minutes": 10
+    },
+    {
+      "num": 5,
+      "title": "Reversion to the mean — när stjärnfonder faller",
+      "minutes": 10
+    },
+    {
+      "num": 6,
+      "title": "Fondindustrin — marknadsföring kontra ägarintresse",
+      "minutes": 10
+    },
+    {
+      "num": 7,
+      "title": "Tidens kraft — ränta-på-ränta och tålamodets strategi",
+      "minutes": 10
+    },
+    {
+      "num": 8,
+      "title": "Asset allocation — portföljens största beslut",
+      "minutes": 10
+    },
+    {
+      "num": 9,
+      "title": "Risk, ballast och konsten att återbalansera",
+      "minutes": 10
+    },
+    {
+      "num": 10,
+      "title": "Investering kontra spekulation — två källor till avkastning",
+      "minutes": 10
+    },
+    {
+      "num": 11,
+      "title": "KONTROVEREN: Bogles passiva evangelium mot de aktiva",
+      "minutes": 10
+    },
+    {
+      "num": 12,
+      "title": "AKM1-tillämpning — analys i en Bogle-värld",
+      "minutes": 10
+    },
+    {
+      "num": 13,
+      "title": "The majesty of simplicity — Stay the course",
+      "minutes": 10
+    }
   ],
   "chapters": [
     {

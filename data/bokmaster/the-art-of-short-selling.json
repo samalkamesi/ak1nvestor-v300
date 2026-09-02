@@ -3,7 +3,7 @@
   "category": "BOKMASTER",
   "weight": "KRITISK",
   "chapterCount": 13,
-  "totalMinutes": 140,
+  "totalMinutes": 130,
   "title": "The Art of Short Selling — Staley: KOMPLETT",
   "summary": "Kathryn F. Staley skrev 1996 den bok som fortfarande räknas som standardverket i kortförsäljningens hantverk — mekanik, checklista och fallstudier från Crazy Eddie till 1990-talets bankkris och Comstock-erans manipulation. Kursen bygger Staleys varningssystem (V12 intäktskvalitet, V19 kapitalförbränning, V10 skuldsättning), tar hatet mot shorts på fullt allvar — och slutar i riskens asymmetri: squeezar dödar även rätt shorts. Detta är pedagogik i att LÄSA risk, inte en uppmaning att korta.",
   "minutes": 10,
@@ -12,19 +12,71 @@
   "learn": "Kortförsäljningens fulla mekanik: låna, sälja, täcka — borrow-fee, utdelningsskyldighet, recall och buy-in, short squeeze och days to cover; vem som faktiskt kortar (research-drivna fundamental shorts, hedgar, market makers, momentum-shorts) och varför majoriteten av alla kortade aktier stiger — timing och katalysator är allt; Staleys checklista för short-kandidater: redovisningskvalitet med V12 intäktsstabilitet som närmaste AKM1-variabel (onormal fordrings- och lagertillväxt, återkommande engångsposter, kapitaliserade kostnader, V07-marginaler utan förklaring), finansieringsrisk (V19 kapitalförbränning och emission-risk, V10 tung skuld, V11 likviditet, bygg-och-impairment-mönstret, V05 P/B som nedskrivningsfälla) och de mjuka signalerna (lockprepositioner, insiderförsäljning, äkta mot kosmetiska återköp V20, ”kan inte misslyckas”-kulturen); fallstudierna: Crazy Eddie med påhittat lager och familjekultur, detaljhandeln som expanderar sig till döds (Balbek och de försvunna kedjorna), bankkrisen 1990 med tomma see-through-byggnader och kapitaliserad ränta, samt Comstock-erans corners och bear raids; den kontroversiella ärligheten: motståndarnas argument (bear raids, bolagsförstörande, obegränsad förlust, un-Swedish) och svaret — shorts som marknadens kvalitetskontroll, de gör läxan ingen annan gör; riskhanteringens asymmetri: stop-loss på shorts är annorlunda, positionstorlek som verkligt skydd, ”marknaden kan förbli irrationell längre än du kan förbli solvent”; kopplingen till Schilit och den kombinerade detektorn med fotnoter-först-läsordning; samt integrationen i AK1A där Short-Seller-agenten ger ALDRIG tips — bara motfrågor — och marginal of safety på kortsidan är process, inte pris.",
   "why": "Utan Staley är din analys halv: du kan poängsätta kvalitet (AKM1:s V01–V20) men inte skörhet — och varje gång du köper en berättelse betalar du priset för att någon annan gjorde det arbete du struntade i. Staley lär dig att läsa en rapport som en anklagad skriver den: fordringar, lager, engångsposter, emissioner, insiderhänder och kultur avslöjar vad resultaträkningen vill dölja. Hon tvingar dig också till vuxen riskförståelse: förlusten på en short är obegränsad, squeezar dödar rätt shorts, och därför är detta kursen i att LÄSA risk — inte en uppmaning att korta. Den som kan kortförsäljarens läxa väljer bättre aktier på långsidan — och vägrar vara den som betalar för nästa Crazy Eddie.",
   "chapters_list": [
-    { "num": 1, "title": "Staley och det hatade hantverket — boken mellan två kriser", "minutes": 10 },
-    { "num": 2, "title": "Mekaniken: låna, sälja, täcka — ränta, utdelning, recall och squeeze", "minutes": 10 },
-    { "num": 3, "title": "Vem kortar — och varför majoriteten av kortade aktier stiger", "minutes": 10 },
-    { "num": 4, "title": "Checklistan I: Redovisningskvalitet — lager, fordringar, engångsposter (V12)", "minutes": 10 },
-    { "num": 5, "title": "Checklistan II: Kapitalförbränning och tung skuld — V19 och V10", "minutes": 10 },
-    { "num": 6, "title": "Checklistan III: Lockprepositioner, insiders och ”kan inte misslyckas”", "minutes": 10 },
-    { "num": 7, "title": "Fallstudie: Crazy Eddie — ”insane” priser och påhittat lager", "minutes": 10 },
-    { "num": 8, "title": "Fallstudie: Detaljhandeln som dör — expansion, skuld och Balbek", "minutes": 10 },
-    { "num": 9, "title": "Fallstudie: Bankkrisen 1990 och Comstock-eran — tomma byggnader, gammal skepsis", "minutes": 10 },
-    { "num": 10, "title": "Det kontroversiella kapitlet: hatet mot shorts — och svaret", "minutes": 10 },
-    { "num": 11, "title": "Riskhanteringens asymmetri — stop-loss på shorts är annorlunda", "minutes": 10 },
-    { "num": 12, "title": "Från Staley till Schilit — den kombinerade detektorn", "minutes": 10 },
-    { "num": 13, "title": "Staley i AKM1: Short-Seller-agenten, motfrågorna och marginal of safety", "minutes": 10 }
+    {
+      "num": 1,
+      "title": "Staley och det hatade hantverket — boken mellan två kriser",
+      "minutes": 10
+    },
+    {
+      "num": 2,
+      "title": "Mekaniken: låna, sälja, täcka — ränta, utdelning, recall och squeeze",
+      "minutes": 10
+    },
+    {
+      "num": 3,
+      "title": "Vem kortar — och varför majoriteten av kortade aktier stiger",
+      "minutes": 10
+    },
+    {
+      "num": 4,
+      "title": "Checklistan I: Redovisningskvalitet — lager, fordringar, engångsposter (V12)",
+      "minutes": 10
+    },
+    {
+      "num": 5,
+      "title": "Checklistan II: Kapitalförbränning och tung skuld — V19 och V10",
+      "minutes": 10
+    },
+    {
+      "num": 6,
+      "title": "Checklistan III: Lockprepositioner, insiders och ”kan inte misslyckas”",
+      "minutes": 10
+    },
+    {
+      "num": 7,
+      "title": "Fallstudie: Crazy Eddie — ”insane” priser och påhittat lager",
+      "minutes": 10
+    },
+    {
+      "num": 8,
+      "title": "Fallstudie: Detaljhandeln som dör — expansion, skuld och Balbek",
+      "minutes": 10
+    },
+    {
+      "num": 9,
+      "title": "Fallstudie: Bankkrisen 1990 och Comstock-eran — tomma byggnader, gammal skepsis",
+      "minutes": 10
+    },
+    {
+      "num": 10,
+      "title": "Det kontroversiella kapitlet: hatet mot shorts — och svaret",
+      "minutes": 10
+    },
+    {
+      "num": 11,
+      "title": "Riskhanteringens asymmetri — stop-loss på shorts är annorlunda",
+      "minutes": 10
+    },
+    {
+      "num": 12,
+      "title": "Från Staley till Schilit — den kombinerade detektorn",
+      "minutes": 10
+    },
+    {
+      "num": 13,
+      "title": "Staley i AKM1: Short-Seller-agenten, motfrågorna och marginal of safety",
+      "minutes": 10
+    }
   ],
   "chapters": [
     {

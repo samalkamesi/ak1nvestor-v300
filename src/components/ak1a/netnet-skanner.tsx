@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { NetnetRad } from "@/lib/netnet-motor";
 
@@ -438,6 +439,46 @@ export function NetnetSkanner() {
         ur 1949, men en träff är en fråga, inte ett svar: kontrollera alltid färsk rapport,
         kassaflöde och varför marknaden prissätter bolaget under rörelsekapitalet.
       </p>
+
+      {/* Fördjupa dig — från träff till förståelse */}
+      <div className="mt-6 rounded-xl border border-gold/30 bg-card p-5">
+        <h3 className="font-serif text-lg font-bold">Fördjupa dig</h3>
+        <p className="mt-1 text-xs text-muted-foreground">
+          En net-net-träff är början på läxan, inte slutet:
+        </p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          <Link
+            href="/kurser/the-intelligent-investor"
+            className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+          >
+            <p className="font-serif text-base font-bold text-gold">Grahams original →</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+              Kursen The Intelligent Investor — kapitlen bakom cigar-butts, NCAV och
+              marginal of safety, från källan själv.
+            </p>
+          </Link>
+          <Link
+            href="/konfluens"
+            className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+          >
+            <p className="font-serif text-base font-bold text-gold">Konfluensradarn →</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+              Ett billigt bolag är inte nog — korsläs mot radarns fem källor: värdegolvet
+              möter vändande vågor?
+            </p>
+          </Link>
+          <Link
+            href="/superanalys"
+            className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+          >
+            <p className="font-serif text-base font-bold text-gold">Superanalysen →</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+              Kör hela 24-stegsanalysen på träffen: V01–V20 med formel och trösklar —
+              är det en värdefälla eller ett fynd?
+            </p>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

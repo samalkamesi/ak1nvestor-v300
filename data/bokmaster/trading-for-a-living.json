@@ -1,1054 +1,1054 @@
 {
- "slug": "trading-for-a-living",
- "category": "BOKMASTER",
- "weight": "KRITISK",
- "chapterCount": 14,
- "totalMinutes": 150,
- "title": "Trading for a Living — Elder: KOMPLETT",
- "summary": "Alexander Elders Trading for a Living (1993) är en av världens mest sålda tradingböcker — skriven av en sovjetiskfödd psykiater som menade att marknaden är en folkmassa och att de flesta förlorar därför att de aldrig lär sig psykologi, disciplin och riskkontroll. Kursen täcker hela kärnan: individens hopp och fruktan, masspsykologin, de klassiska fällorna, de tre M, journalen, glidande medelvärden, MACD, Force Index, triple screen, Elder-ray samt 2- och 6-procentsreglerna. Kursen är också öppet kontroversiell: ett helt kapitel ägnas åt daytrading-statistiken — Barber & Odean, Taiwan och Brasilien — och åt AK1A:s position: vi utbildar analys, vi ger aldrig handelstips.",
- "minutes": 10,
- "xp": 2000,
- "level": "",
- "learn": "Efter kursen kan eleven redogöra för Alexander Elders grundtes — att marknaden är en folkmassa och att trading är ett psykologiskt hantverk snarare än ett intellektuellt — samt för bokens tre M: Mind (psykologi), Method (analys och system) och Money (riskhantering), och varför alla tre krävs. Eleven kan återge individpsykologin (hur hopp håller kvar i förlorare och fruktan stänger vinnare för tidigt), masspsykologin med Gustave Le Bon (pris som massans humör, volym som massans röststyrka, stöd och motstånd som massans minne) och de klassiska tradarfällorna: att handla för aktivitetens skull, hämnd-handel, överbelåning, att flytta stoppet och att medelfela i förlorande positioner. Eleven kan tillämpa Elders disciplinverktyg: handelsjournalen med känsleregistrering och disciplinbetyg, 2-procentsregeln per affär, 6-procentsregeln per månad och positionsstorlek beräknad baklänges från stoppavståndet. Eleven kan förklara verktygen: glidande medelvärden som rörande konsensus, MACD med signallinje och histogram som acceleration, Force Index som volymviktad drivkraft, triple screen (skärm ett: högre tidsramens trend via MACD-histogrammets lutning; skärm två: oscillatorisk motgång på lägre tidsram; skärm tre: utförande med stopp och trailing) samt Elder-ray med tjurkraft och björnkraft runt 13-dagars-EMA. Eleven kan slutligen redogöra för kontroversen: forskningen om frekvent trading (Barber & Odeans 66 465 hushåll, Taiwansstudierna med färre än en procent förutsägbart lönsamma, Brasiliensstudien där 97 procent av de uthålliga daytraders förlorade), Elders svar — att de flesta aldrig lär sig risk, psykologi och system — samt AK1A:s position: vi utbildar analys och beslutsramar, ger aldrig handelstips och uppmuntrar inte daytrading. Eleven kan översätta boken till ekosystemet: journalen som datakälla till /profil, stoppet och 2-procentsregeln som AK1TS Brytpunkts-dimension, massfaserna som sentimentlager för Short-Sellern med AKM1-flaggorna V19 Kapitalförbrukning & Emission-risk, V12 Intäktsstabilitet och V10 Skuldsättningsgrad.",
- "why": "Trading for a Living är den mest sålda tradingpsykologiska boken i världen och sammanfattar hela den disciplintradition som AK1A:s ekosystem vilar på: journal, små risker, definierade stopp och respekt för massan. För AK1A är den kritisk av tre skäl: den levererar beteendeskiktet till /profil (Elders fällor är mätbara personlighetsdrag), den ger AK1TS dess riskmotor — Brytpunkten definierar stoppet och stoppet definierar positionsstorleken — och den kopplar masspsykologins topp- och bottenfaser till Short-Sellerns fundamentalflaggor i AKM1. Samtidigt kräver bokens löfte — att man kan lära sig leva på trading — kontroversiell ärlighet: forskningen visar att de allra flesta privata traders förlorar pengar, och AK1A:s position är därför tydlig: vi undervisar i analys och disciplin, vi ger aldrig handelstips och vi uppmuntrar inte daytrading. Kursen läses bäst som en beslutsbok — reglerna gäller varje horisont, också långsiktig aktieanalys.",
- "chapters_list": [
-  "1. En psykiater i massan — Elders utgångspunkt",
-  "2. Individens psykologi — hopp och fruktan",
-  "3. Masspsykologi — marknaden som folkmassa",
-  "4. Klassiska tradarfällor — katalogen",
-  "5. De tre M — Mind, Method, Money",
-  "6. Disciplinen och handelsjournalen",
-  "7. Trenden — glidande medelvärden som konsensus",
-  "8. Oscillatorer — MACD och Force Index",
-  "9. Triple Screen — tre vågor, ett beslut",
-  "10. Elder-ray — tjur- och björnkraft",
-  "11. 2-procentsregeln — taket per affär",
-  "12. 6-procentsregeln — storlek från stoppavståndet",
-  "13. Kontroversen — statistiken mot löftet",
-  "14. Från bok till ekosystem — /profil, Short-Sellern och AK1TS"
- ],
- "chapters": [
-  {
-   "num": 1,
-   "minutes": 10,
-   "title": "En psykiater i massan — Elders utgångspunkt",
-   "intro": "Alexander Elder föddes i Sovjet, utbildade sig till psykiater och hoppade av ett fartyg i Västafrika innan han hamnade i New York — som läkare och sedan som trader. Trading for a Living (1993) blev en av världens mest sålda böcker om trading, och dess grundtes är radikal: marknaden är inte en mekanism utan en folkmassa, och de flesta som förlorar gör det inte av okunnighet om diagram utan av okunnighet om sig själva. Detta kapitel introducerar mannen, boken och kursens kritiska läsning.",
-   "blocks": [
+  "slug": "trading-for-a-living",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 140,
+  "title": "Trading for a Living — Elder: KOMPLETT",
+  "summary": "Alexander Elders Trading for a Living (1993) är en av världens mest sålda tradingböcker — skriven av en sovjetiskfödd psykiater som menade att marknaden är en folkmassa och att de flesta förlorar därför att de aldrig lär sig psykologi, disciplin och riskkontroll. Kursen täcker hela kärnan: individens hopp och fruktan, masspsykologin, de klassiska fällorna, de tre M, journalen, glidande medelvärden, MACD, Force Index, triple screen, Elder-ray samt 2- och 6-procentsreglerna. Kursen är också öppet kontroversiell: ett helt kapitel ägnas åt daytrading-statistiken — Barber & Odean, Taiwan och Brasilien — och åt AK1A:s position: vi utbildar analys, vi ger aldrig handelstips.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för Alexander Elders grundtes — att marknaden är en folkmassa och att trading är ett psykologiskt hantverk snarare än ett intellektuellt — samt för bokens tre M: Mind (psykologi), Method (analys och system) och Money (riskhantering), och varför alla tre krävs. Eleven kan återge individpsykologin (hur hopp håller kvar i förlorare och fruktan stänger vinnare för tidigt), masspsykologin med Gustave Le Bon (pris som massans humör, volym som massans röststyrka, stöd och motstånd som massans minne) och de klassiska tradarfällorna: att handla för aktivitetens skull, hämnd-handel, överbelåning, att flytta stoppet och att medelfela i förlorande positioner. Eleven kan tillämpa Elders disciplinverktyg: handelsjournalen med känsleregistrering och disciplinbetyg, 2-procentsregeln per affär, 6-procentsregeln per månad och positionsstorlek beräknad baklänges från stoppavståndet. Eleven kan förklara verktygen: glidande medelvärden som rörande konsensus, MACD med signallinje och histogram som acceleration, Force Index som volymviktad drivkraft, triple screen (skärm ett: högre tidsramens trend via MACD-histogrammets lutning; skärm två: oscillatorisk motgång på lägre tidsram; skärm tre: utförande med stopp och trailing) samt Elder-ray med tjurkraft och björnkraft runt 13-dagars-EMA. Eleven kan slutligen redogöra för kontroversen: forskningen om frekvent trading (Barber & Odeans 66 465 hushåll, Taiwansstudierna med färre än en procent förutsägbart lönsamma, Brasiliensstudien där 97 procent av de uthålliga daytraders förlorade), Elders svar — att de flesta aldrig lär sig risk, psykologi och system — samt AK1A:s position: vi utbildar analys och beslutsramar, ger aldrig handelstips och uppmuntrar inte daytrading. Eleven kan översätta boken till ekosystemet: journalen som datakälla till /profil, stoppet och 2-procentsregeln som AK1TS Brytpunkts-dimension, massfaserna som sentimentlager för Short-Sellern med AKM1-flaggorna V19 Kapitalförbrukning & Emission-risk, V12 Intäktsstabilitet och V10 Skuldsättningsgrad.",
+  "why": "Trading for a Living är den mest sålda tradingpsykologiska boken i världen och sammanfattar hela den disciplintradition som AK1A:s ekosystem vilar på: journal, små risker, definierade stopp och respekt för massan. För AK1A är den kritisk av tre skäl: den levererar beteendeskiktet till /profil (Elders fällor är mätbara personlighetsdrag), den ger AK1TS dess riskmotor — Brytpunkten definierar stoppet och stoppet definierar positionsstorleken — och den kopplar masspsykologins topp- och bottenfaser till Short-Sellerns fundamentalflaggor i AKM1. Samtidigt kräver bokens löfte — att man kan lära sig leva på trading — kontroversiell ärlighet: forskningen visar att de allra flesta privata traders förlorar pengar, och AK1A:s position är därför tydlig: vi undervisar i analys och disciplin, vi ger aldrig handelstips och vi uppmuntrar inte daytrading. Kursen läses bäst som en beslutsbok — reglerna gäller varje horisont, också långsiktig aktieanalys.",
+  "chapters_list": [
+    "1. En psykiater i massan — Elders utgångspunkt",
+    "2. Individens psykologi — hopp och fruktan",
+    "3. Masspsykologi — marknaden som folkmassa",
+    "4. Klassiska tradarfällor — katalogen",
+    "5. De tre M — Mind, Method, Money",
+    "6. Disciplinen och handelsjournalen",
+    "7. Trenden — glidande medelvärden som konsensus",
+    "8. Oscillatorer — MACD och Force Index",
+    "9. Triple Screen — tre vågor, ett beslut",
+    "10. Elder-ray — tjur- och björnkraft",
+    "11. 2-procentsregeln — taket per affär",
+    "12. 6-procentsregeln — storlek från stoppavståndet",
+    "13. Kontroversen — statistiken mot löftet",
+    "14. Från bok till ekosystem — /profil, Short-Sellern och AK1TS"
+  ],
+  "chapters": [
     {
-     "type": "text",
-     "content": "Alexander Elders historia är som en kallkrigsthriller. Han föddes i Leningrad, utbildade sig till läkare i Sovjet och arbetade som psykiater ombord på ett fartyg — tills han en dag 1974 hoppade av i Abidjan på Elfenbenskusten, tog sig till den amerikanska ambassaden och fick politisk asyl. I New York kombinerade han psykiatrin med ett nytt intresse: aktie- och terminsmarknaden. Resultatet blev en bok som ingen annan kunde ha skrivit — en tradingbok av någon vars yrke var att diagnostisera människor. Där andra författare såg diagram såg Elder patienter: rädsla, girighet, förnekelse och mani — i varje order."
+      "num": 1,
+      "minutes": 10,
+      "title": "En psykiater i massan — Elders utgångspunkt",
+      "intro": "Alexander Elder föddes i Sovjet, utbildade sig till psykiater och hoppade av ett fartyg i Västafrika innan han hamnade i New York — som läkare och sedan som trader. Trading for a Living (1993) blev en av världens mest sålda böcker om trading, och dess grundtes är radikal: marknaden är inte en mekanism utan en folkmassa, och de flesta som förlorar gör det inte av okunnighet om diagram utan av okunnighet om sig själva. Detta kapitel introducerar mannen, boken och kursens kritiska läsning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Alexander Elders historia är som en kallkrigsthriller. Han föddes i Leningrad, utbildade sig till läkare i Sovjet och arbetade som psykiater ombord på ett fartyg — tills han en dag 1974 hoppade av i Abidjan på Elfenbenskusten, tog sig till den amerikanska ambassaden och fick politisk asyl. I New York kombinerade han psykiatrin med ett nytt intresse: aktie- och terminsmarknaden. Resultatet blev en bok som ingen annan kunde ha skrivit — en tradingbok av någon vars yrke var att diagnostisera människor. Där andra författare såg diagram såg Elder patienter: rädsla, girighet, förnekelse och mani — i varje order."
+        },
+        {
+          "type": "text",
+          "content": "Elder öppnar med lockelsen som drar folk till tradingen — friheten att arbeta varifrån som helst, svara mot ingen, vara sin egen — och parerar den med bokens kallaste sanning: marknaden behöver förlorare. Elder skriver att marknaden behöver en ständig tillförsel av förlorare, liksom pyramidbyggarna behövde en ständig tillförsel av slavar — det är förlorarnas pengar som betalar branschens blomstring. Urvalet är brutalt: den som söker spänning betalar för den, och den som söker snabba pengar lånar ut dem. Psykiatern Elder menar att många som handlar skulle kunna ha vilket beroende som helst — skillnaden är att marknaden är den dyraste av dem alla."
+        },
+        {
+          "type": "text",
+          "content": "Därför är bokens program tre delar psykologi för en del teknik. Elder ägnar bokens första tredjedel åt individens inre — hopp, fruktan, ansvaret för sina egna resultat — och nästan lika mycket åt masspsykologin, innan han överhuvudtaget presenterar en enda indikator. Det var en ovanlig prioritering 1993, mitt i den tekniska analysens glansdagar, och den förklarar varför boken fortfarande läses när de flesta indikatorböcker från samma årtionde är glömda. Själva programmet sammanfattar Elder i tre M — Mind, Method, Money — som kursen återkommer till i kapitel 5 och som blir bokens ryggrad."
+        },
+        {
+          "type": "text",
+          "content": "AK1A läser boken med respekt och med skepsis. Respekt, för dess beteendelära — journal, små förluster, definierade stopp — har stått sig väl och bekräftas av senare forskning om just beteende. Skepsis, för bokens löfte att man kan lära sig leva på trading krockar med en forskning som visar att de allra flesta som försöker förlorar pengar. Detta kapitel och kapitel 13 tar den spänningen på fullt allvar: vi citerar Elder när han har rätt om mekanismerna, och vi citerar studierna när de har rätt om utfallet. Vår hållning står fast genom hela kursen: vi utbildar analys och beslutsramar — vi ger aldrig handelstips och uppmuntrar inte daytrading."
+        },
+        {
+          "type": "insikt",
+          "content": "Elders metod är bokens metod: han diagnostiserar tradern innan han behandlar systemet. En perfekt metod i ett odisciplinerat psyke är ett vapen riktat mot det egna kapitalet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Myten och psykiatern — två bilder av trading\",\"rader\":[[\"Fråga\",\"Myten\",\"Elders bild\"],[\"Vad är marknaden?\",\"En mekanism att pricka\",\"En folkmassa att läsa\"],[\"Vad krävs för att lyckas?\",\"Intelligens och fart\",\"Psykologi, disciplin och riskkontroll\"],[\"Vem förlorar?\",\"De olyckliga\",\"De som inte känner sig själva\"],[\"Vad är en förlust?\",\"Ett nederlag\",\"Hyran för att få vara med — om den är liten\"],[\"Vad lovar boken?\",\"Snabb frihet\",\"Frihet efter en lång hantverksskola\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner ärligt varför du är intresserad av trading och aktier: vinst, spänning, bevis på skärpa, frihet, något annat? Svara två gånger — en gång som du skulle säga till dig själv och en gång som du skulle säga till en psykiater. Elders test är om de två svaren matchar varandra. Spara dem; kursen återkommer till dem i kapitel 13."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket yrkesperspektiv förde Alexander Elder in i tradinglitteraturen?",
+          "alternativ": [
+            "Advokatens — kontrakt och prospekt",
+            "Psykiaterns — diagnoser av beteende",
+            "Aktieanalytikerns — nyckeltal och rapporter",
+            "Matematikerns — sannolikhetsteori"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på varför boken börjar med känslor och inte med diagram."
+        },
+        {
+          "q": "Vad menar Elder att marknaden behöver en ständig tillförsel av?",
+          "alternativ": [
+            "Regulatorer",
+            "Nya listnoteringar",
+            "Förlorare",
+            "Market makers"
+          ],
+          "ratt": 2,
+          "tips": "Hans pyramidliknelse är bokens kallaste mening."
+        },
+        {
+          "q": "Hur fördelar Elder bokens tyngd?",
+          "alternativ": [
+            "Nästan allt på tekniska indikatorer",
+            "Psykologi först, sedan teknik och riskhantering",
+            "Riskhantering först och psykologi i appendix",
+            "Enbart mekaniska dagshandelssystem"
+          ],
+          "ratt": 1,
+          "tips": "Vilken del av boken kommer före den första indikatorn?"
+        }
+      ]
     },
     {
-     "type": "text",
-     "content": "Elder öppnar med lockelsen som drar folk till tradingen — friheten att arbeta varifrån som helst, svara mot ingen, vara sin egen — och parerar den med bokens kallaste sanning: marknaden behöver förlorare. Elder skriver att marknaden behöver en ständig tillförsel av förlorare, liksom pyramidbyggarna behövde en ständig tillförsel av slavar — det är förlorarnas pengar som betalar branschens blomstring. Urvalet är brutalt: den som söker spänning betalar för den, och den som söker snabba pengar lånar ut dem. Psykiatern Elder menar att många som handlar skulle kunna ha vilket beroende som helst — skillnaden är att marknaden är den dyraste av dem alla."
+      "num": 2,
+      "minutes": 10,
+      "title": "Individens psykologi — hopp och fruktan",
+      "intro": "I bokens första del vrider Elder psykiaterns soffa mot läsaren: vad händer i ditt huvud när du har en öppen position? Svaret är systematiskt — hoppet och fruktan byter plats — och det förklarar varför traders utan system gör allt baklänges. Detta kapitel går igenom individpsykologin och dess mest obehagliga slutsats: din värste motståndare sitter i ditt eget psyke.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Elders iakttagelse är enkel och förödande. Innan en affär är känslorna girighet och rädsla att missa läget; i en förlorande position tar hoppet över — hoppet om att det vänder; i en vinnande position tar fruktan över — fruktan att förlora den obokade vinsten. Resultatet blir den klassiska inverteringen: traders stänger vinnare för tidigt och sitter kvar i förlorare för länge. De rycker upp blommorna och vattnar ogräset. Beteendet är inte slumpmässigt — det är hur psyket är byggt, och det är därför reglerna måste skrivas när man är kall och följas när man är varm."
+        },
+        {
+          "type": "text",
+          "content": "Elder ställer också den viktigaste diagnostiska frågan: varför handlar du? Den som handlar för spänningens skull betalar för underhållning; den som handlar för att bevisa något bär på en skuld som marknaden gärna inkasserar; den som flyr tristess har hittat ett kasino med bättre diagram. Elder lånar till och med från Anonyma Alkoholister med idén om ett möte för förlorare — där den som vill bli bra först måste erkänna, inför sig själv, att man är en förlorare. Poängen är inte självförödmjukelse utan ansvar: den som skyller på marknaden, mäklaren, stoppjägare eller insidere kan inte lära sig något, eftersom det alltid är någon annans fel."
+        },
+        {
+          "type": "text",
+          "content": "Ansvaret är bokens etik. Marknaden vet inte att du existerar, menar Elder — den är inte ute efter dig, den struntar fullkomligt i dig. Därför är dina resultat dina och bara dina. Detta är frigörande i stället för deprimerande: om resultaten är dina kan de också tränas fram. Psykiaterns recept är prosaiskt: registrera känslorna, skilj på känsla och handling, och bygg rutiner som gör det rätta beteendet lättare än det felaktiga. Här ansluter journalen — kapitel 6 — men redan nu gäller principen: känslan är data, inte order."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A-eleven är detta kapitel grunden i profildiagnostiken. Fällorna i nästa kapitel är inga karaktärsfel utan mätbara drag: hur reagerar du på förlust, hur stor blir frestelsen att ta igen, hur länge kan du bära en obekväm position? Svaren varierar mellan personer — och det är just den variationen som gör att en och samma metod ger olika resultat för olika människor. Hos Elder är metoden privat i en annan mening än hos Schwager: du kan kopiera en metod, men du kan inte kopiera ett psyke. Därför börjar utbildningen inifrån och ut."
+        },
+        {
+          "type": "insikt",
+          "content": "Hopp hör hemma i förlorande positioner och fruktan i vinnande — psyket gör allt baklänges. Därför skrivs reglerna kallt och följs varmt: beslutet fattas innan känslan finns där."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Psyket vid tre lägen — känsla, beteende, motgift\",\"rader\":[[\"Läge\",\"Rådande känsla\",\"Typiskt beteende\",\"Motgiftet\"],[\"Innan ingång\",\"Rädsla att missa\",\"Jaga läget uppåt\",\"Plan med stopp klar i förväg\"],[\"I förlust\",\"Hopp om vändning\",\"Flytta stoppet, medelfela\",\"Mekanisk exit — stoppet ägs av planen\"],[\"I vinst\",\"Fruktan att förlora vinsten\",\"Klippa vinnaren tidigt\",\"Trailing stop — målet ägs av planen\"],[\"Efter förlust\",\"Skam och revanschlust\",\"Dubbla storleken\",\"Paus, journal, 6-procentsregeln\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Beskriv i dagboken din senaste förlorande affär eller analys — men skriv bara om känslorna: vad kände du innan, under och efter? I vilken rad i kapitlets tabell hamnar du? Gör samma övning på en vinnare och jämför: var var din känsla som starkast — och vad gjorde du då?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken känsla får enligt Elder traders att sitta kvar i förlorande positioner?",
+          "alternativ": [
+            "Vrede",
+            "Hopp",
+            "Äckel",
+            "Lättnad"
+          ],
+          "ratt": 1,
+          "tips": "Vad är det som viskar att det vänder?"
+        },
+        {
+          "q": "Varför stänger många traders sina vinnare för tidigt?",
+          "alternativ": [
+            "Fruktan att förlora den obokade vinsten",
+            "Deras system har fel target",
+            "De har räknat fel i storleken",
+            "Deras stopp ligger för nära"
+          ],
+          "ratt": 0,
+          "tips": "Vad är en vinst som inte bokats, psykologiskt sett?"
+        },
+        {
+          "q": "Vad är poängen med Elders Loser Anonymous-liknelse?",
+          "alternativ": [
+            "Att handlare ska skämmas",
+            "Att beroendet måste erkännas innan det kan tränas",
+            "Att man ska byta mäklare",
+            "Att förluster alltid beror på mäklaren"
+          ],
+          "ratt": 1,
+          "tips": "Vad är första steget i varje förändringsprogram?"
+        }
+      ]
     },
     {
-     "type": "text",
-     "content": "Därför är bokens program tre delar psykologi för en del teknik. Elder ägnar bokens första tredjedel åt individens inre — hopp, fruktan, ansvaret för sina egna resultat — och nästan lika mycket åt masspsykologin, innan han överhuvudtaget presenterar en enda indikator. Det var en ovanlig prioritering 1993, mitt i den tekniska analysens glansdagar, och den förklarar varför boken fortfarande läses när de flesta indikatorböcker från samma årtionde är glömda. Själva programmet sammanfattar Elder i tre M — Mind, Method, Money — som kursen återkommer till i kapitel 5 och som blir bokens ryggrad."
+      "num": 3,
+      "minutes": 10,
+      "title": "Masspsykologi — marknaden som folkmassa",
+      "intro": "Från det enskilda psyket till gruppen: Elder lånar masspsykologin från Gustave Le Bon och menar att en aktiemarknad är världens största folkmassa. Priset är inte information — det är humör. Detta kapitel går igenom hur massan bildas, hur stöd och motstånd är massans kollektiva minne och vad det innebär att handla mot massan i stället för som den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Gustave Le Bon skrev 1895 att en grupp människor inte är summan av sina delar utan något annat: en massa som är impulsiv, påverkbar, känsloladdad och oförmögen att skjuta upp belöningar. Elder tillämpar detta rakt av på börsen: när miljontals köpare och säljare möts via skärmar och ordrar uppstår samma varelse — marknaden — som tänker med magen, inte med hjärnan. En trend är massan som håller med varandra längre än rimligt; en topp är maximal enighet; en botten är maximal misstro. Prisrörelser är massans sinnesstämning uppmätt i realtid."
+        },
+        {
+          "type": "text",
+          "content": "Därifrån följer konkreta verktygsläror. Stöd och motstånd är massans minne: nivåer där många köpte eller sålt blir platser som massan minns och återvänder till. Volymen är massans röststyrka — hög volym betyder starkt känslomässigt engagemang, låg volym ointresse. Och divergensen mellan pris och oscillator — kursen gör ny topp men indikatorn orkar inte följa med — är massan som tröttnar, en av Elders viktigaste signaler. Din uppgift är att läsa massan, inte att bli den: den som söker bekräftelse i forum och kommentarsfält söker massans röst i massans eget kök."
+        },
+        {
+          "type": "text",
+          "content": "Professionella mot massan: Elder skiljer på proffs som handlar på plan och publik som handlar på känsla. De bästa affärerna finns vid ytterligheterna — när massan är som mest desperat att sälja vid botten eller som mest euforisk att köpa vid toppen — men ytterligheterna är också när det känns som värst att agera mot strömmen. Därför behövs båda delarna: verktyg för att se att massan är extrem, och psykologi för att stå ut med att agera ensam. Fram till ytterligheterna är den disciplinerade vägen att handla med trenden — med massan när den har rätt, mot den när den är extrem."
+        },
+        {
+          "type": "text",
+          "content": "I AK1A:s ekosystem lever masspsykologin på två ställen. I /profil mäter vi hur mottaglig du är för gruppens känslor — medföljare eller naturlig konträr — eftersom det avgör vilka regler du behöver runt omkring dig. Och i Short-Sellerns värld är toppfasen — auktoriteter som hyllar, trenden som bevisar, trogna ägare som aldrig sålt — massteriologi i praktiken: euforin är bränslet i varje uppumpad berättelse. Kom ihåg det när kapitel 14 knyter ihop hela säcken."
+        },
+        {
+          "type": "insikt",
+          "content": "Priset är massans humör. Volymen är dess röststyrka. Ditt jobb är att läsa båda — utan att känna dem själv."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Masscykelns fyra faser\",\"rader\":[[\"Fas\",\"Massans känsla\",\"Prisbeteende\",\"Vad den disciplinerade gör\"],[\"Botten\",\"Vånda, förnekelse, uttröttning\",\"Låg volym, sidledes\",\"Köper av trötta säljare — med stopp\"],[\"Tidig uppgång\",\"Skepsis — det här håller inte\",\"Högre toppar och dalar\",\"Handlar med trenden\"],[\"Topp\",\"Eufori — alla är med nu\",\"Brant kurs, rekordvolym\",\"Säljer till euforiska köpare\"],[\"Nedgång\",\"Förnekelse som blir panik\",\"Accelererande fall\",\"Skyddar kapitalet — 6-procentsregeln\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en svensk tillväxtberättelse från åren runt 2021: placera massan i de fyra faserna, månad för månad. När var skepsisen som störst (det var under den tidiga uppgången)? När var euforin som störst (det var nära toppen)? Skriv en mening om vad du själv kände i varje fas — om du minns det."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken tänkare lånar Elder sin masspsykologi ifrån?",
+          "alternativ": [
+            "Sigmund Freud",
+            "Gustave Le Bon",
+            "Carl Jung",
+            "John Maynard Keynes"
+          ],
+          "ratt": 1,
+          "tips": "En fransk sociolog som skrev om massan 1895."
+        },
+        {
+          "q": "Vad är pris enligt Elder?",
+          "alternativ": [
+            "En oberoende mekanism",
+            "En algoritm",
+            "Massans humör uppmätt",
+            "En centralbanksprodukt"
+          ],
+          "ratt": 2,
+          "tips": "Vad är det som rör sig när inget fundamentalt händer?"
+        },
+        {
+          "q": "Vad signalerar en divergens mellan pris och oscillator enligt Elder?",
+          "alternativ": [
+            "Att massan tröttnar",
+            "Att volymen kommer att öka",
+            "Att trenden precis har börjat",
+            "Att rapporten är bra"
+          ],
+          "ratt": 0,
+          "tips": "Ny topp — men orkar drivkraften lika högt?"
+        }
+      ]
     },
     {
-     "type": "text",
-     "content": "AK1A läser boken med respekt och med skepsis. Respekt, för dess beteendelära — journal, små förluster, definierade stopp — har stått sig väl och bekräftas av senare forskning om just beteende. Skepsis, för bokens löfte att man kan lära sig leva på trading krockar med en forskning som visar att de allra flesta som försöker förlorar pengar. Detta kapitel och kapitel 13 tar den spänningen på fullt allvar: vi citerar Elder när han har rätt om mekanismerna, och vi citerar studierna när de har rätt om utfallet. Vår hållning står fast genom hela kursen: vi utbildar analys och beslutsramar — vi ger aldrig handelstips och uppmuntrar inte daytrading."
+      "num": 4,
+      "minutes": 10,
+      "title": "Klassiska tradarfällor — katalogen",
+      "intro": "Elder katalogiserar tradernas klassiska självskador med samma systematik som psykiatern katalogiserar symptom: att handla för handlandets skull, hämnd-handel efter förlust, överbelåning, att flytta stoppet och att medelfela i förlorare. Fällorna är inte dumheter — de är mycket logiska reaktioner som råkar kosta pengar. Detta kapitel ger dig katalogen och motgiften.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första fällan är aktivitetsbehovet. Marknaden rör sig hela tiden och skärmen bjuder in till handling, men marknaden betalar inte för aktivitet — den betalar för tålamod och korrekta beslut. Elder drar parallellen till jakten: amatören skjuter på allt som rör sig, proffset väntar på det rätta skottet. En affär utan setup är inte analys utan underhållning — och räkningen skickas i efterhand. Aktivitet är dessutom den fälla som ser mest oskyldig ut: den är socialt accepterad, den låter som arbete, och den ruinerar lika metodiskt som de andra."
+        },
+        {
+          "type": "text",
+          "content": "Den andra fällan är hämnden. Efter en förlust känner handlaren sig slagen och vill vinna tillbaka — inte bara pengarna, utan stoltheten. Farligast är det när storleken höjs för att täcka hålet: det som var två procent av kapitalet riskerat blir plötsligt tio. Elder påpekar det absurda i situationen: marknaden vet inte att du förlorade. Den hedrar inte dina försök att ta igen. Hämnaren håller revanschmatch mot en motståndare som inte vet att matchen pågår — och därför aldrig kan förlora den."
+        },
+        {
+          "type": "text",
+          "content": "Den tredje fällan är belåningen. Marginal multiplicerar både vinsten och psyket: en position som är för stor gör att normala svängningar känns som hot mot existensen, och då fattas besluten av reptilhjärnan. Den fjärde fällan är att flytta stoppet — att flytta det i förlustriktning är att förneka att planen existerar. Den femte är att medelfela i en förlorande trade: att addera till det som redan bevisar att man hade fel. En hederlig nyansering: en värdeinvesterare kan mycket medvetet köpa mer av en aktie som fallit — men det är ett annat beslut, med längre horisont och en värderesoning, och det kräver att det skrivs som ett sådant beslut. Inom en trade med stopp är medelfel förbjudet."
+        },
+        {
+          "type": "text",
+          "content": "Notera att alla fem fällorna har samma rot: önskan att ha rätt eller att få tillbaka. De uppträder när planen saknas eller när känslan får fatta beslutet. Därför är motgiften alltid detsamma: skriv planen innan affären — ingång, stopp, storlek, exit — och behandla varje ändring efteråt som ett misstag att dokumentera i journalen, inte som snabbtänkthet. I /profil mäter vi din dominanta fälla; den är värd att känna till innan du ens öppnar ett depåkonto."
+        },
+        {
+          "type": "insikt",
+          "content": "Fem fällor, en rot: att vilja ha rätt eller att vilja ha tillbaka. Båda är känslor — och varje känsla som får fatta ett positionsbeslut arbetar för massan, mot dig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fällkatalogen — mekanism och motgift\",\"rader\":[[\"Fälla\",\"Mekanism\",\"Motgift\"],[\"Handla för aktiviteten\",\"Uttråkning söker stimulus\",\"Max antal affärer per period\"],[\"Hämnd-handel\",\"Förlusten sårar stoltheten\",\"Paus efter förlust — 6-procentsregeln\"],[\"Överbelåning\",\"Girighet multipliceras\",\"2-procentsregeln per affär\"],[\"Flytta stoppet\",\"Hoppet tar kommandot\",\"Stoppet skrivs i journalen och ändras aldrig i förlust\"],[\"Medelfel i förlorare\",\"Att sänka genomsnittet känns klokt\",\"Addera bara vinnare inom en trade\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ranka de fem fällorna efter hur farliga de är för dig — ärligt. Skriv ditt farligaste motgift på en lapp och placera den synlig vid nästa beslut. Om du inte vet din fälla än: bevara frågan till kapitel 6 — journalen kommer att berätta det inom en månad."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar hämnd-handel?",
+          "alternativ": [
+            "Att man handlar samma aktie igen",
+            "Att man ökar risktagandet för att vinna tillbaka efter förlust",
+            "Att man tar för små positioner",
+            "Att man använder stopp"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med storleken när stoltheten är sårad?"
+        },
+        {
+          "q": "Varför är det absurd att hämnas på marknaden, enligt kursens läsning av Elder?",
+          "alternativ": [
+            "Marknaden vet inte att du förlorade",
+            "Marknaden är stängd om nätterna",
+            "Hämnd är statistiskt lönsamt",
+            "Mäklaren stoppar sådana affärer"
+          ],
+          "ratt": 0,
+          "tips": "Vet motståndaren att en match pågår?"
+        },
+        {
+          "q": "När kan det ändå vara rimligt att köpa mer av en fallande aktie?",
+          "alternativ": [
+            "När man vill sänka genomsnittet i en trade med stopp",
+            "Aldrig under några omständigheter",
+            "När det är ett medvetet värdebeslut med lång horisont och egen analys",
+            "När forumet rekommenderar det"
+          ],
+          "ratt": 2,
+          "tips": "Skillnaden ligger i beslutets logik — och i vem som äger den."
+        }
+      ]
     },
     {
-     "type": "insikt",
-     "content": "Elders metod är bokens metod: han diagnostiserar tradern innan han behandlar systemet. En perfekt metod i ett odisciplinerat psyke är ett vapen riktat mot det egna kapitalet."
+      "num": 5,
+      "minutes": 10,
+      "title": "De tre M — Mind, Method, Money",
+      "intro": "Bokens ryggrad är en trestavig ekvation: Mind, Method, Money. Psykologin, metoden och riskhanteringen — alla tre krävs, och den som saknar en av dem förlorar på det sätt som saknaden avgör. Detta kapitel går igenom de tre M, deras inbördes ordning och deras plats i AK1A:s ekosystem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mind är allt som försiggår i dig: dina känslor inför vinst och förlust, din förmåga att följa egna regler, din motivation. Method är hur du hittar och bekräftar affärer: trend, oscillatorer, setup, ingång, utgång — det traditionella bokämnet. Money är riskhanteringen: hur mycket du riskerar per affär och per månad, hur stor varje position får bli. Elders poäng är att böcker och kurser nästan uteslutande lär ut Method — medan förlorarna förlorar på Mind och Money. Det är bokens mest citerade struktur och kursens organisering i praktik."
+        },
+        {
+          "type": "text",
+          "content": "Varför räcker inte Method? Ett system med bevisad positiv förväntan ger fortfarande förlust i händerna på en rädd, hämndlysten eller uttråkad handlare — eftersom systemet exekveras av ett psyke. Tänk på en pall med tre ben: den som sågar bort ett ben faller, oavsett hur fint de andra två är snickrade. Elder menar att de flesta förlorare inte saknar signaler — de saknar förmågan att göra det signalerna säger när känslorna säger något annat. Det är också därför boken heter vad den heter: att leva på trading är ett helt liv, inte en teknik. De tre M är tre ben på samma pall."
+        },
+        {
+          "type": "text",
+          "content": "Ordningen mellan de tre är också en arbetsordning. Börja med Mind: journal och självkännedom ger data om vem du är. Bygg sedan Method: välj ett system — för AK1A-eleven ofta AK1TS:s våg- och prisverktyg — och testa det mekaniskt. Sist kommer Money: reglerna i kapitel 11 och 12 dimensionerar allt du gör. Hos AK1A översätts de tre M direkt till ekosystemet: Mind bor i /profil, Method i AK1TS, Money i Brytpunkts-logiken — stoppet definierar storleken. Tre M, tre hem, ett beslut."
+        },
+        {
+          "type": "text",
+          "content": "Slutligen den tredje handen: förbättring. Elder betonar att framgång inte är ett mål man når utan en process man underhåller; journalen är verktyget som gör processen synlig och mätbar. Varje månad: vad fungerade, vad fungerade inte, vad ändras till nästa månad? Små ständiga förbättringar, hela tiden. En kurs kan ge kartan; journalen ger kilometrarna. Utan den tredje handen blir de tre M en fin föreläsning i stället för en praktik."
+        },
+        {
+          "type": "insikt",
+          "content": "Method utan Mind är en bil utan förare. Money utan Mind är en bil med airbagen urkopplad. Elder lär ut hela fordonet — och körkortet tar år."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De tre M — fråga, verktyg, AK1A-hem\",\"rader\":[[\"M\",\"Frågan\",\"Verktyg\",\"Var det bor hos AK1A\"],[\"Mind\",\"Varför gör jag som jag gör?\",\"Journal, känsloregistrering\",\"/profil\"],[\"Method\",\"Var och hur hittar jag beslut?\",\"Trend, oscillator, setup\",\"AK1TS\"],[\"Money\",\"Hur mycket riskerar jag?\",\"2- och 6-procentsreglerna\",\"Brytpunkten → positionsstorlek\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "utmaning",
+          "content": "Betygsätt dig själv, 1–10, på varje M — inte hur du önskar att du var, utan hur du har varit det senaste halvåret. Den lägst betygsatta M är din kursplan framöver. Spara betygen och upprepa övningen efter kursens journalövningar i kapitel 6."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är Elders tre M?",
+          "alternativ": [
+            "Marknad, Momentum, Modell",
+            "Mind, Method, Money",
+            "Margin, Median, Method",
+            "Metod, Matematik, Magi"
+          ],
+          "ratt": 1,
+          "tips": "Hjärna, verktyg, pengar — i vilken ordning som helst."
+        },
+        {
+          "q": "Varför räcker det inte med ett bra system enligt Elder?",
+          "alternativ": [
+            "System blir snabbt föråldrade",
+            "Mäklare ändrar kurserna",
+            "Systemet exekveras av ett psyke — och psyket kan sabota allt",
+            "Marknaden anpassar sig till systemet"
+          ],
+          "ratt": 2,
+          "tips": "Vem är det som faktiskt trycker på köpknappen?"
+        },
+        {
+          "q": "Vilken AK1TS-dimension bär Money-rollen i kursens översättning?",
+          "alternativ": [
+            "Vågen",
+            "Priset",
+            "Tiden",
+            "Brytpunkten"
+          ],
+          "ratt": 3,
+          "tips": "Var finns siffran som bestämmer hur stor affären får bli?"
+        }
+      ]
     },
     {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Myten och psykiatern — två bilder av trading\",\"rader\":[[\"Fråga\",\"Myten\",\"Elders bild\"],[\"Vad är marknaden?\",\"En mekanism att pricka\",\"En folkmassa att läsa\"],[\"Vad krävs för att lyckas?\",\"Intelligens och fart\",\"Psykologi, disciplin och riskkontroll\"],[\"Vem förlorar?\",\"De olyckliga\",\"De som inte känner sig själva\"],[\"Vad är en förlust?\",\"Ett nederlag\",\"Hyran för att få vara med — om den är liten\"],[\"Vad lovar boken?\",\"Snabb frihet\",\"Frihet efter en lång hantverksskola\"]]}"
+      "num": 6,
+      "minutes": 10,
+      "title": "Disciplinen och handelsjournalen",
+      "intro": "Marknaden straffar odisciplinerade — och journalen är Elders disciplinmaskin. En handlare utan journal saknar den viktigaste utbildningen: dokumentationen av sig själv. Detta kapitel går igenom hur en handelsjournal byggs, hur den granskas och hur den förvandlar anekdoter till statistik — i grunden samma logik som hela AK1A-labbet bygger på.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Journalens minimikrav: för varje affär skrivs instrument, datum, ingång, stopp, mål och exit — och därtill det som gör den till en Elder-journal: tesen (varför affären togs), känslan (ett enkelt betyg före och under) och disciplinen (följdes planen?). Elder ritade i sin egen dagbok diagram med köp- och säljpilar och skriver utkast till affärer innan de genomfördes, så att han kunde jämföra plan mot utfall. Poängen är densamma hos oss: betygsätt processen, inte resultatet. En A-affär som förlorar pengar är fortfarande en A-affär — och en C-affär som råkar vinna är fortfarande ett misstag som upprepas tills det kostar."
+        },
+        {
+          "type": "text",
+          "content": "Granskningen är journalens hjärta. Veckovis: vilka affärer togs, följdes planen, vilka känslor dominerade? Månadsvis: mönster — förlorarna klustrar ofta vid vissa tillfällen, marknadslägen eller humör. Efter några månader börjar statistiken tala: träffprocent, genomsnittlig vinst och genomsnittlig förlust, och förväntan per affär — träffprocenten gånger den genomsnittliga vinsten minus förlustprocenten gånger den genomsnittliga förlusten. Det är ditt eget lilla forskningslabb om dig själv. Anekdoter blir data, och data kan förbättras. Utan journal förblir allt känsla och minne — och minnet är den mest självgoda datakällan som finns."
+        },
+        {
+          "type": "text",
+          "content": "Disciplin definieras här konkret: att göra det tråkiga rätt varje gång. Elder liknar goda handelsvanor vid hygien — tandborstning varje dag, oavsett humör. Regler skrivs när du är kall och följs när du är varm; journalen är dokumentet som visar om det skedde. Hans mest citerade formulering om prioritering fångar hela kapitlet: målet för en framgångsrik trader är att göra de bästa affärerna — pengarna är sekundärt. Det är också journalen som gör 6-procentsregeln verkbar: när månaden stängs förtidigt är det journalen — inte känslan — som avgör vad som var fel och vad som ändras."
+        },
+        {
+          "type": "text",
+          "content": "I AK1A:s värld är journalen ingen parentes utan hela plattformsidén: labbets analyser, rapporter och uppföljningar är en gemensam journal — dokumenterade beslut med tes, brytpunkt och efterhand. Skillnaden mot en tradingjournal är horisonten; likheten är principen: inget beslut utan dokumentation, ingen dokumentation utan granskning. Den som vill äga sin utveckling — som investor eller som trader — börjar där. Boken ger mallen; labbet ger systemet."
+        },
+        {
+          "type": "insikt",
+          "content": "Betygsätt disciplinen, inte dagens resultat. Kanter byggs av hundratalet A-beslut — vissa av dem förlorar pengar, alla bygger kapital."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Journalens minsta kolumner\",\"rader\":[[\"Kolumn\",\"Exempel\",\"Varför den finns\"],[\"Instrument och datum\",\"XYZ 2026-08-14\",\"Kontext\"],[\"Ingång, stopp, mål\",\"102 / 96 / 118\",\"Planen synliggörs\"],[\"Tes\",\"Veckotrend upp, daglig motgång\",\"Metod-logiken\"],[\"Känsla 1–5\",\"3 — revanschlust\",\"Psykedata\"],[\"Disciplinbetyg A–E\",\"B — följde planen\",\"Process före resultat\"],[\"Exit och lärdom\",\"Stoppad; stoppet ändrades aldrig\",\"Utfall och lärdom\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Starta en minijournal idag — tre rader per beslut under en vecka: tes, känslotal, disciplinbetyg. Krav: tesen skrivs innan du agerar. Efter sju dagar: räkna andelen beslut som följde planen, och notera vilket känsloläge som dominerade dina avvikelser."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad ska betyget i en Elder-journal mäta?",
+          "alternativ": [
+            "Dagens resultat i kronor",
+            "Marknadens volatilitet",
+            "Om planen följdes — disciplinen",
+            "Aktiens nyckeltal"
+          ],
+          "ratt": 2,
+          "tips": "Vad är det enda du har full kontroll över?"
+        },
+        {
+          "q": "Varför skrivs känslan ner i journalen?",
+          "alternativ": [
+            "För att det är terapeutiskt",
+            "För att mäklaren kräver det",
+            "För att hitta mönster mellan känsloläge och misstag",
+            "För att känslor förutsäger kursen"
+          ],
+          "ratt": 2,
+          "tips": "Två kolumner brevid varandra — vad kan de visa tillsammans?"
+        },
+        {
+          "q": "Vilken statistik kan journalen så småningom ge dig?",
+          "alternativ": [
+            "Ingen — journalen är bara en dagbok",
+            "Din egen förväntan per affär — träffprocent och genomsnittlig vinst och förlust",
+            "Företagsstyrning och nyckeltal",
+            "Centralbankens möteskalender"
+          ],
+          "ratt": 1,
+          "tips": "Tre rader data per beslut blir med tiden matematik."
+        }
+      ]
     },
     {
-     "type": "utmaning",
-     "content": "Skriv ner ärligt varför du är intresserad av trading och aktier: vinst, spänning, bevis på skärpa, frihet, något annat? Svara två gånger — en gång som du skulle säga till dig själv och en gång som du skulle säga till en psykiater. Elders test är om de två svaren matchar varandra. Spara dem; kursen återkommer till dem i kapitel 13."
+      "num": 7,
+      "minutes": 10,
+      "title": "Trenden — glidande medelvärden som konsensus",
+      "intro": "Elders tekniska verktygslåda börjar med det enklaste och mest missförstådda: det glidande medelvärdet. För Elder är det inte en signalmaskin utan en värdestickare — genomsnittet av massans konsensus under en period. Detta kapitel går igenom medelvärdenas logik, tidsramarnas hierarki och verktygens ärliga begränsningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett glidande medelvärde är genomsnittspriset under en period — Elder tolkar det som konsensus: massans gemensamma uppskattning av värde. Kursen över ett stigande medelvärde betyder att massan hoppas; under ett fallande att den fruktar. Medelvärdet blir ett rörligt stöd- eller motståndsområde — inte en magisk linje utan platsen där konsensus senast enades. Lutningen är budskapet: ett stigande medelvärde säger att tjurarna vinner, ett fallande att björnarna gör det, ett plant att ingen av dem gör det."
+        },
+        {
+          "type": "text",
+          "content": "Tidsramarna är hierarkiska. Ett tiotal dagar fångar korta svängningar, femtio dagar en medellång våg, tvåhundra dagar en hel marknadsregim. Ju längre period, desto tyngre och långsammare massa — och desto mer krävs för att vända den. Elder varnar för det vanligaste misstaget: att använda ett enda medelvärde som komplett köp- och säljsignal. I en trendlös, sidledes marknad piskar medelvärdet affär efter affär — små förluster som tär på både konto och psyke. Verktyget är gjort för trend, och det älskar att bevisa det genom att straffa den som använder det fel."
+        },
+        {
+          "type": "text",
+          "content": "Elder kompletterar därför medelvärdena med kanaler — band några procent över och under medelvärdet — för att se när kursen drivit iväg från sitt konsensus. Handeln nära kanalens överkant i en trött, platt marknad är uttjänad; i en ung trend betyder stort avstånd till medelvärdet snarare styrka. Samma verktyg, olika budskap beroende på regime — och det är just därför nästa kapitel finns: oscillatorerna mäter det inre tryck som medelvärdena inte ser."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetsdeklarationen är densamma som AK1TS gör om vågläran: medelvärden släpar efter. De beskriver vad massan gjorde, inte vad den kommer att göra. De har ingen vetenskapligt belagd förmåga att förutsäga — deras värde är disciplinärt: de tvingar användaren att ställa en definierad fråga (vem har initiativet?) i stället för att följa magkänsla. Använd dem som beskrivning och filter — aldrig som spådom. Det är skillnaden mellan termometer och spåkvinna: termometern kan inte lova sol, men den ljuger aldrig om hur varmt det är."
+        },
+        {
+          "type": "insikt",
+          "content": "Medelvärdet är massans konsensus på hjul. Det säger inte var kursen ska — det säger vem som äger rummet just nu."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Medelvärdenas hierarki\",\"rader\":[[\"Verktyg\",\"Period\",\"Massan det fångar\",\"Styrka\",\"Svaghet\"],[\"Kort medelvärde\",\"cirka 10–20 dagar\",\"Svängningsvågen\",\"Reagerar tidigt\",\"Piskas i sidled\"],[\"Medellångt medelvärde\",\"cirka 50 dagar\",\"Medellång våg\",\"Bra trendfilter\",\"Sent vid vändningar\"],[\"Långt medelvärde\",\"cirka 200 dagar\",\"Hel marknadsregim\",\"Regimindikator\",\"Väldigt trög\"],[\"Kanal runt medelvärdet\",\"Procentband\",\"Avstånd till konsensus\",\"Markerar uttjänning\",\"Missar unga trender\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en aktie du följer. Notera: var står kursen mot 50- och 200-dagarsmedelvärdena, och vilken lutning har de? Skriv en mening: vem äger rummet — tjurarna, björnarna eller ingen? Upprepa om en månad. Detta är skärm ett i slow motion."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är ett glidande medelvärde enligt Elder?",
+          "alternativ": [
+            "En köpsignal",
+            "Ett genomsnittligt konsensus om värde",
+            "En centralbanksränta",
+            "En volymprognos"
+          ],
+          "ratt": 1,
+          "tips": "Vad är ett genomsnitt av priser, om inte vad massan gemensamt tyckt?"
+        },
+        {
+          "q": "Vad betyder ett plant medelvärde?",
+          "alternativ": [
+            "Stark uptrend",
+            "Stark downtrend",
+            "Balans — ingen har initiativet",
+            "Att volymen ökar"
+          ],
+          "ratt": 2,
+          "tips": "Vem vinner om ingen av sidorna vinner?"
+        },
+        {
+          "q": "Varför blir medelvärden piskade i en sidledes marknad?",
+          "alternativ": [
+            "De beräknas fel",
+            "Kursen pendlar kring medelvärdet och ger många små falska signaler",
+            "De fungerar bara på veckodata",
+            "De kräver volymdata"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med korsningarna när kursen går fram och tillbaka över linjen?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Oscillatorer — MACD och Force Index",
+      "intro": "Medelvärdena ser riktningen men inte trycket. Oscillatorerna mäter massans inre drivkraft — hur starka tjurarna och björnarna är inuti rörelsen. Elder presenterar flera, men två står ut: MACD, tradingvärldens favorit, och hans egen Force Index. Detta kapitel går igenom båda och deras viktigaste signal: divergensen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "MACD — moving average convergence divergence — bygger på skillnaden mellan ett kortare (12 dagar) och ett längre (26 dagar) exponentiellt medelvärde. MACD-linjen stiger när den korta tidens konsensus driver ifrån den långa — momentumet ökar. En signallinje (nio perioders medelvärde av MACD) ger korsningar, och histogrammet — MACD minus signallinje — mäter accelerationen: stigande histogram betyder att köparna inte bara leder utan ökar försprånget. Elder kallar MACD tradingcommunityts favoritverktyg, med viss rätt: det är trendigt nog att fungera i trender och tydligt nog att läsas av nybörjare."
+        },
+        {
+          "type": "text",
+          "content": "Force Index är Elders egen konstruktion och kombinerar tre saker: riktning (förändringen i stängningskurs), styrka (storleken på rörelsen) och volym — massans röststyrka. Ett kort glidande medelvärde av Force Index (två dagar) används för timing av ingångar och utgångar; ett längre (tretton dagar) för att mäta den underliggande kraften i trenden. En kraftig rörelse på svag volym är misstänkt; en liten rörelse på enorm volym bär information om engagemang. Volymen skiljer en sann trend från en kulisshow — det är hela poängen med indexet."
+        },
+        {
+          "type": "text",
+          "content": "Oscillatorernas främsta signal är divergensen: kursen gör ny topp men MACD eller Force Index orkar inte upp till sin förra nivå. Elder läsning: massan pressar priset högre men med svagare inre tryck — som en motor som varvar högre på färre cylindrar. Divergensen säger dock inte när vändningen kommer; den säger att drivkraften sinar. Den som säljer på själva divergensen kan få vänta länge; den som väntar in en motgång på lägre tidsram får bättre pris men riskerar att missa. Det är exakt detta dilemma triple screen löser — nästa kapitel."
+        },
+        {
+          "type": "text",
+          "content": "Oscillatorernas svaghet är spegelbilden av deras styrka: i en stark trend ropar de överköpt dag efter dag medan kursen fortsätter upp. Överköpt är ingen säljsignal — det är ett mått på styrka. Regeln som räddar dig: oscillatorn används bara i riktning med den högre tidsramens trend, och aldrig ensam. Ingen oscillator förutsäger; de mäter. Termostaten vet inte när våren kommer — men den säger när elementet kyls av. Så även här: verktyget beskriver, hierarkin bestämmer."
+        },
+        {
+          "type": "insikt",
+          "content": "Divergensen är utmattelsebevis, inte tidtagarur. Massan orkar mindre — men ingen vet när den somnar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"MACD och Force Index — komponenter och användning\",\"rader\":[[\"Indikator\",\"Komponenter\",\"Fråga den besvarar\",\"Varning\"],[\"MACD-linje\",\"EMA12 minus EMA26\",\"Vart pekar momentumet?\",\"Släpar i snabba marknader\"],[\"Signallinje\",\"Medelvärde av MACD, 9 perioder\",\"Är läget mätt eller fräscht?\",\"Många korsningar i sidled\"],[\"Histogram\",\"MACD minus signallinje\",\"Ökar eller minskar drivkraften?\",\"Bäst med trendfilter\"],[\"Force Index\",\"Volym gånger prisförändring\",\"Hur starkt engagerar massan sig?\",\"Extremvärden kan bli extremare\"],[\"Divergens\",\"Pris mot indikator\",\"Siner drivkraften?\",\"Inte en tidpunkt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Lägg MACD under en index- eller aktiegraf du gillar. Hitta de två senaste divergenserna (kursen nya toppar, MACD svagare). Vad hände efter — och hur lång tid tog det innan priset följde efter? Skriv ner vad en ren divergens-handlare hade vunnit respektive förlorat under väntetiden."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad bygger MACD-linjen på?",
+          "alternativ": [
+            "Volym och öppningskurs",
+            "Högsta och lägsta kurs",
+            "Skillnaden mellan två exponentiella medelvärden (12 och 26 dagar)",
+            "Räntan och inflationen"
+          ],
+          "ratt": 2,
+          "tips": "Konvergens och divergens — mellan vad?"
+        },
+        {
+          "q": "Vad mäter histogrammet (MACD minus signallinje)?",
+          "alternativ": [
+            "Volymen",
+            "Priset",
+            "Accelerationen i drivkraften",
+            "Antalet affärer"
+          ],
+          "ratt": 2,
+          "tips": "När linjen ligger över signalen och glappet växer — vad ökar?"
+        },
+        {
+          "q": "Vad betyder det när oscillatorn visar överköpt i en stark trend?",
+          "alternativ": [
+            "Sälj omedelbart",
+            "Det är ett styrkemått — ingen säljsignal",
+            "Vändningen är garanterad",
+            "Indikatorn är trasig"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med överköpta värden i trender som bara fortsätter?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Triple Screen — tre vågor, ett beslut",
+      "intro": "Här är Elders mest kända bidrag: triple screen — systemet som föddes ur ett erkännande: ingen indikator fungerar överallt. Trendverktygen arbetar i trender, oscillatorerna i svängningar, och de säger emot varandra precis när man behöver dem. Elders lösning är inte en ny indikator utan en hierarki av tidsramar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Problemet först: en trendindikator som medelvärdet signerar köp först när rörelsen redan gått långt; en oscillator som ropar köp i en nedtrend varje gång marknaden blivit oversold. Använd dem tillsammans på samma tidsram och de tar ut varandra. Elder ansluter till Charles Dows gamla metafor — tidvattnet, vågen och krusningen: en sjöman som ser på krusningarna missar vågen, och den som ser på vågen missar tidvattnet. Hans tidsramsfaktor är ungefär fem: veckografen är den högre tidsramen till en dagsgraf, som dagsgrafen är till en timmesgraf. Tre skärmar, tre nivåer av samma hav."
+        },
+        {
+          "type": "text",
+          "content": "Skärm ett — den högre tidsramen — avgör riktningen: vilken sida av marknaden du överhuvudtaget får handla på. I boken använder Elder veckografens MACD-histogram: en stigande histogramlutning är en lång trend, en fallande är en kort — endast long i det första fallet, endast short i det andra. Senare versioner av systemet använder även lutningen på ett längre medelvärde; principen är densamma. Skärm ett svarar inte på när — bara på vilken sida som är tillåten. Det är en fråga de flesta aldrig ställer innan de agerar."
+        },
+        {
+          "type": "text",
+          "content": "Skärm två — den lägre tidsramens oscillator — avgör tillfället: vänta på en motgång inom den tillåtna riktningen. I en lång trend betyder det att en daglig oscillator (stochastic, MACD-histogram eller Force Index) ska ha fallit och börjat vända uppåt — köp dippen, inte toppen. I en kort trend tvärtom: sälj rallyt, inte botten. Skärm tre är själva utförandet: en order nära stöd, ett stopp omedelbart på plats — och därefter ett trailing stopp som följer trenden så länge den lever. Tre skärmar, en beslutsordning: sida, tillfälle, utförande."
+        },
+        {
+          "type": "text",
+          "content": "Det viktigaste med triple screen är inte indikatorvalen utan hierarkin. De flesta misstag i trading är tidsramsförbistringar: att handla en signal på dagbasis mot en veckotrend, att drömma om månadshorisontens vinst men stoppas ut på dagens brus. AK1TS bygger samma princip: den högre tidshorisonten betjänar och väger tyngre än den lägre — korta vågor betjänar de långa. För AK1A-eleven är triple screen därför inte bara ett tradingssystem utan ett beslutsramverk: definiera regimen först, agera inom den senare. Indikatorerna kan bytas ut; ordningen kan det inte."
+        },
+        {
+          "type": "insikt",
+          "content": "Skärm ett väljer sida, skärm två väljer tillfälle, skärm tre gör affären. Hoppar du över skärm ett blir oscillatorn en slumptalsgenerator."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Triple screen — tre steg, tre frågor\",\"rader\":[[\"Skärm\",\"Tidsram\",\"Fråga\",\"Typiskt verktyg\",\"Handling\"],[\"1 — Våg ett\",\"Högre (t.ex. vecka)\",\"Vilken sida är tillåten?\",\"MACD-histogrammets lutning\",\"Endast long eller endast short\"],[\"2 — Våg två\",\"Lägre (t.ex. dag)\",\"När är tillfället?\",\"Stochastic, Force Index, histogram\",\"Vänta in en motgång inom trenden\"],[\"3 — Utförande\",\"Ingångsnivå\",\"Var exakt och till vilket pris?\",\"Limit-order, stopp, trailing\",\"Affären genomförs och förvaltas\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör ett pappers-triple-screen: välj en aktie, bestäm veckotrendens riktning (skärm ett), identifiera en daglig motgång (skärm två), skriv upp hypotetiskt entry, stopp och storlek (skärm tre). Följ positionen en månad i journalform — utan att riskera en krona. Målet är processen, inte resultatet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är skärm ett:s uppgift i triple screen?",
+          "alternativ": [
+            "Att hitta exakt ingångspris",
+            "Att avgöra trendriktningen på högre tidsram — vilken sida som är tillåten",
+            "Att mäta volymen",
+            "Att sätta trailing stopp"
+          ],
+          "ratt": 1,
+          "tips": "Innan man frågar när, frågar man vilken sida."
+        },
+        {
+          "q": "Vad väntar skärm två på?",
+          "alternativ": [
+            "En bekräftelse på högre tidsram",
+            "En nyhet",
+            "En motgång på lägre tidsram inom den högre trenden",
+            "Att oscillatorn blir överköpt"
+          ],
+          "ratt": 2,
+          "tips": "Köp dippen i en uptrend — vad är dippen?"
+        },
+        {
+          "q": "Vad är den vanligaste formen av tidsramsförbistring?",
+          "alternativ": [
+            "Att använda veckodata på dagar",
+            "Att handla en signal på lägre tidsram mot trenden på högre",
+            "Att rita fel diagram",
+            "Att glömma volymen"
+          ],
+          "ratt": 1,
+          "tips": "Vems trend slår vems signal?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Elder-ray — tjur- och björnkraft",
+      "intro": "Elder-ray är Elders egna indikator — namngiven efter röntgenstrålen som ser genom ytan till skelettet. Poängen: se förbi dagens pris till krafterna under det — hur hårt tjurarna pressar uppåt och hur djupt björnarna pressar nedåt, mätt mot massans genomsnitt. Detta kapitel går igenom konstruktion, läsning och en ärlig bedömning av vad indikatorn faktiskt visar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen är elementär: ta ett tretton dagars exponentiellt medelvärde — konsensus — och mät dagens högsta och lägsta kurs mot det. Tjurkraft (bull power) är dagens högsta kurs minus medelvärdet: hur långt massan lyckades lyfta över sitt eget genomsnitt. Björnkraft (bear power) är dagens lägsta kurs minus medelvärdet: hur djupt den pressade under. Två histogram kring en nollinje. Positiv tjurkraft visar att köparna var igång, negativ björnkraft att säljarna var det — och ofta är båda sanna samma dag, eftersom en handelsdag innehåller båda faserna."
+        },
+        {
+          "type": "text",
+          "content": "Läsningen kombineras alltid med trenden. I en upptrend är den klassiska köpsituationen när björnkraften är negativ men stigande — dipparna blir grundare, björnarna tappar greppet medan tjurarna behåller regimen. I en nedtrend är spegelbilden säljsituationen: tjurkraft fallande, rallyn svagare. Mest information ger Elder-ray när den läses mot prisets beteende: nya kurstoppar med sjunkande tjurkraft är en intern divergens — samma utmattelsebudskap som i förra kapitlet, fast mätt direkt mot konsensus i stället för mot en egen linje."
+        },
+        {
+          "type": "text",
+          "content": "Elder-ray passar utmärkt som skärm två-verktyg i triple screen: den högre tidsramen ger riktningen, och björnkraftens beteende under dipparna ger tillfället. Indikatorn fungerar också som utgångshjälp: när björnkraften i en upptrend plötsligt växer kraftigt är det en varning om att motståndssidan fått fotfäste. Som allt hos Elder underordnas verktyget strukturen — regimen först, indikatorn sen. Det är samma hierarki som triple screen, bara med ett annat instrument på skärm två."
+        },
+        {
+          "type": "text",
+          "content": "Den ärliga bedömningen: Elder-ray är ingen röntgen. Den ser inte orderflödet eller stora aktörers positioner — den packar om information som redan finns i diagrammet: avståndet mellan dagens ytterligheter och ett medelvärde. Det är ändå inte värdelöst — tvärtom: att mäta krafterna mot konsensus varje dag gör något som priset ensamt inte gör, åtminstone inte lika tydligt. Men den som tror att namnet ger superkraften har missat bokens hela poäng: verktyget är det minsta av de tre M. Kirurgen är mer än skalpellen."
+        },
+        {
+          "type": "insikt",
+          "content": "Elder-ray mäter hur långt massan pressar över och under sitt eget genomsnitt — inte framtiden, utan dagens interna maktkamp mätt mot konsensus."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Elder-ray — begrepp och läsning\",\"rader\":[[\"Begrepp\",\"Definition\",\"Tolkning\"],[\"Tjurkraft\",\"Dagens högsta kurs minus EMA13\",\"Hur högt tjurarna lyfter över konsensus\"],[\"Björnkraft\",\"Dagens lägsta kurs minus EMA13\",\"Hur djupt björnarna pressar under\"],[\"Köpsetup\",\"Upptrend och björnkraft negativ men stigande\",\"Motgång som tappar kraft i en lång trend\"],[\"Säljsetup\",\"Nedtrend och tjurkraft fallande\",\"Rally som inte orkar\"],[\"Divergens\",\"Nya pristoppar med sjunkande tjurkraft\",\"Intern utmattelse — ingen tidpunkt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ett litet kalkylblad: EMA13, dagens högsta och lägsta kurs, tjur- och björnkraft för 20 handelsdagar i en aktie. När var björnkraften som djupast — och vad gjorde kursen dagarna efter? Du har nu byggt din första indikator med grundskolans matematik. Det är hela poängen: det finns ingen magi i verktygen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är tjurkraft (bull power) i Elder-ray?",
+          "alternativ": [
+            "Volym gånger kurs",
+            "Dagens högsta kurs minus EMA13",
+            "MACD minus signallinjen",
+            "Kursens avstånd till 200-dagarsmedelvärdet"
+          ],
+          "ratt": 1,
+          "tips": "Mät det som lyfts — och mät det mot vad?"
+        },
+        {
+          "q": "Vad är den klassiska köpsituationen i Elder-ray?",
+          "alternativ": [
+            "Upptrend och djupt fallande björnkraft",
+            "Nedtrend och positiv tjurkraft",
+            "Upptrend och björnkraft negativ men stigande",
+            "Platt marknad och noll tjurkraft"
+          ],
+          "ratt": 2,
+          "tips": "Trenden säger riktning — vad händer med motgångarnas djup?"
+        },
+        {
+          "q": "Vad är EMA13 i modellen?",
+          "alternativ": [
+            "Ett prisområde",
+            "Massans genomsnittliga värde — referenspunkten",
+            "En volymmätare",
+            "En signal från bolaget"
+          ],
+          "ratt": 1,
+          "tips": "Allt i Elder-ray mäts mot denna linje — vad föreställer den?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 10,
+      "title": "2-procentsregeln — taket per affär",
+      "intro": "Här börjar Money-delen, och ingen regel har räddat fler konton än den första: riskera aldrig mer än två procent av kontot i en enda affär. Elders 2-procentsregel, formulerad i sin klassiska form i uppföljaren Come Into My Trading Room, är enkel att räkna ut, svår att följa — och det är just därför den finns.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen först: risken i en affär är avståndet från ingång till stopp gånger antalet aktier. 2-procentsregeln säger att denna summa aldrig får överstiga två procent av kontots ekvitet. Exempel: kontot är 100 000 kronor och stoppavståndet fem kronor — då är den högsta risken 2 000 kronor och positionen högst 400 aktier. Notera ordningen: stoppet bestämmer storleken, inte tvärtom. Man börjar med var man har fel — brytpunkten — och räknar baklänges därifrån. Det är samma ordning som AK1A:s riskmatris: definiera kostnaden för att ha fel innan man räknar på fördelen med att ha rätt."
+        },
+        {
+          "type": "text",
+          "content": "Varför just två procent? Första svaret: förlustserier. Tio förluster i rad vid två procents risk kostar omkring arton procent av kontot; vid tio procents risk kostar de nästan två tredjedelar — och skillnaden avgör om du får en inlärningsperiod eller inte. Andra svaret: återvinningens asymmetri. Ett konto som fallit tjugo procent måste stiga tjugofem för att komma tillbaka; ett som fallit femtio måste dubbla sig. Risken handlar inte om att maximera vinsten utan om att hålla återvinningsaritmetiken på din sida — att överleva tillräckligt länge för att lära dig något. Elders poäng, rakt sagt: den som inte kan förlora litet kommer förr eller senare att förlora stort."
+        },
+        {
+          "type": "text",
+          "content": "Den ärliga tillämpningen kräver marginal. Glapp och slippage gör att ett stopp ibland utförs sämre än tänkt, avgifter tillkommer, och i extraordinära lägen — handelsstopp, gap vid öppning — kan den verkliga förlosten vida överstiga den planerade. Erfarna elever använder därför två procent som absolut tak, inte som standard: normal risk lägre, högre endast när setupen motiverar det och likviditeten är god. En aktie som kan stängas för handelsstopp ska aldrig bära full positionsstorlek — det verkliga stoppavståndet är okänt, alltså är den verkliga risken det också. Regeln skyddar bara den som räknar ärligt."
+        },
+        {
+          "type": "text",
+          "content": "Den psykologiska effekten är minst lika viktig som den matematiska: positionens storlek bestämmer din IQ i affären. Med liten risk kan du tänka — ligga kvar i planen och låta stoppet arbeta. Med stor risk börjar du övervaka varje tick, och varje tick blir ett argument; snart fattar du inte beslut utan reagerar. 2-procentsregeln är därmed också en psykologiregel: den köper det lugn som Method kräver för att fungera. Det är de tre M i praktik — Money som skydd för Mind, så att Method får verka."
+        },
+        {
+          "type": "insikt",
+          "content": "Storleken bestämmer din IQ i affären. Med två procents risk kan du tänka; med tjugo kan du bara känna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Storlek från stoppavstånd — konto 100 000 kronor\",\"rader\":[[\"Stoppavstånd\",\"Maxrisk 2 procent\",\"Max antal aktier\",\"Notera\"],[\"2 kronor\",\"2 000 kr\",\"1 000\",\"Tätt stopp — många aktier\"],[\"5 kronor\",\"2 000 kr\",\"400\",\"Standardexemplet\"],[\"10 kronor\",\"2 000 kr\",\"200\",\"Bredare stopp — färre aktier\"],[\"20 kronor\",\"2 000 kr\",\"100\",\"Risken i kronor är alltid densamma\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på tre hypotetiska affärer i ett 100 000-konto: ett tätt stopp (2 kr), ett normalt (5 kr) och ett brett (20 kr). Bestäm antal aktier i varje fall. Räkna sedan baklänges på din nuvarande eller senaste position: vad var din faktiska risk i procent av kontot? Siffran brukar överraska."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras risken i en affär enligt 2-procentsregeln?",
+          "alternativ": [
+            "Procentandel av positionens värde",
+            "Avståndet till stoppet gånger antalet aktier",
+            "Dagens volatilitet",
+            "Mäklaravgiften"
+          ],
+          "ratt": 1,
+          "tips": "Vad förlorar du om stoppet slår i?"
+        },
+        {
+          "q": "Kontot är 200 000 kronor, stoppavståndet 8 kronor. Hur många aktier som mest?",
+          "alternativ": [
+            "500",
+            "1 000",
+            "250",
+            "800"
+          ],
+          "ratt": 0,
+          "tips": "Två procent av kontot — delat med avståndet."
+        },
+        {
+          "q": "Varför håller regeln kontot vid förlustserier?",
+          "alternativ": [
+            "Den ökar sannolikheten för vinst",
+            "Förlusterna hålls små nog att återvinnas — aritmetiken förblir på din sida",
+            "Den stoppar förluster helt",
+            "Den minskar avgifterna"
+          ],
+          "ratt": 1,
+          "tips": "Tio minus två procent i rad — varför är det överlevbart?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 10,
+      "title": "6-procentsregeln — storlek från stoppavståndet",
+      "intro": "Tak två skyddar dig inte mot en affär utan mot en månad. 6-procentsregeln säger: när kontot fallit sex procent under en månad — stäng, sluta handla, granska. Tillsammans med positionsstorleken från stoppavståndet utgör den Money-delen av de tre M — och det är här bokens alla trådar knyts till AK1TS Brytpunkt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "6-procentsregeln har två ansikten. Det första är månadstaket: sjunker kontot sex procent från månadens start upphör handeln — resten av månaden ägs av journalen: vad gick fel, var det metod eller disciplin, vad ändras? Det andra är det totala taket för öppen risk: summan av alla öppna positioners risk — avståndet till respektive stopp gånger storleken — bör inte överstiga sex procent av kontot. Tre positioner med full två procents risk var fyller taket exakt: ett fjärde setup betyder att något gammalt måste stängas eller att det nya avstås. Disciplin är också att inte ta varenda bra idé samtidigt."
+        },
+        {
+          "type": "text",
+          "content": "Regelns funktion är kretsbrytare. Den värsta av alla spiraler är inte en enskild stor förlust utan kedjan: förlust, revansch, större position, ny förlust, djupare revansch — kapitel 4:s katalog i snabbmotion. Månadstaket bryter kedjan tvångsmässigt: oavsett hur det känns finns en definierad punkt där aktiviteten upphör. Den som får en paus påtvingad kan inte förstöra mer just nu — och kommer svalare tillbaka nästa månad. Det är samma logik som en säkring i elsystemet: den finns inte för att strömmen ska bli bättre, utan för att huset ska stå kvar."
+        },
+        {
+          "type": "text",
+          "content": "Positionsstorlek är systemet bakom reglerna: först stoppet (var är tesen fel — brytpunkten), sedan risken i kronor (högst två procent av kontot), sist antalet aktier (risk delat med stoppavstånd). Det är en bakvänd värld för de flesta: utgången definierar ingången. Men det är exakt samma logik som AK1TS Brytpunkts-dimension och AK1A:s riskmatris: definiera först vad som gör tesen fel och vad det kostar — därefter blir allt annat, storlek och förväntan, aritmetik. En analys utan brytpunkt är en åsikt; med brytpunkt är den en affär."
+        },
+        {
+          "type": "text",
+          "content": "Slutligen räkneverkets finess: eftersom reglerna uttrycks i procent anpassar sig storleken automatiskt — kontot växer, positionerna växer; kontot krymper, positionerna krymper. Det är antimartingal tillämpat: öka exponeringen när kontot växer, minska när det blöder — raka motsatsen till hämnd-handelns logik. Så här ser disciplin ut som system: inte karaktär i stormen, utan regler som gör stormen mindre. Karaktär är bra; en kretsbrytare är pålitlig."
+        },
+        {
+          "type": "insikt",
+          "content": "Stoppet först, storleken sen. Elders ordning — utgången definierar ingången — är Brytpunkts-tänk i ren form."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Money-systemet i praktik\",\"rader\":[[\"Situation\",\"Regel\",\"Effekt\"],[\"Ny position\",\"Max 2 procent risk, räknat från stoppavståndet\",\"Ingen enskild affär kan göra riktigt ont\"],[\"Tre positioner öppna\",\"Total öppen risk 6 procent\",\"Tak nått — fjärde setup avstås\"],[\"Kontot ned 6 procent under månaden\",\"Handeln stoppas, journalen öppnas\",\"Kretsbrytare mot revanschspiralen\"],[\"Kontot växer\",\"2 procent räknas på nytt saldo\",\"Antimartingal — storleken följer kapitalet\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "utmaning",
+          "content": "Simulera en dålig månad på pappret: fyra A-affärer med två procents risk var, alla stoppade. Rita ekvitetsutvecklingen dag för dag. När triggas 6-procentsregeln — och vad gör du med resten av månaden? Skriv det som en instruktion till dig själv, daterad och undertecknad."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad händer när 6-procentsregeln triggas under en månad?",
+          "alternativ": [
+            "Positionerna dubbleras",
+            "Handeln upphör resten av månaden — granskningen tar över",
+            "Man byter strategi direkt",
+            "Regeln gäller bara för daytraders"
+          ],
+          "ratt": 1,
+          "tips": "Vad behöver du mer av när det går dåligt — aktivitet eller eftertanke?"
+        },
+        {
+          "q": "Tre positioner med två procents risk var — vad gäller för en fjärde?",
+          "alternativ": [
+            "Den tas om setupen är bra",
+            "Den tas med halverad storlek",
+            "Total öppen risk har nått taket — den avstås eller något stängs",
+            "Regeln saknar koppling till öppen risk"
+          ],
+          "ratt": 2,
+          "tips": "Summera riskerna — vad blir det?"
+        },
+        {
+          "q": "Varför räknas positionsstorleken från stoppavståndet?",
+          "alternativ": [
+            "För att mäklaren kräver det",
+            "För att maximera antalet aktier",
+            "För att stoppet är det enda man vet i förväg",
+            "Därför att det är det man faktiskt kontrollerar — risken definieras där tesen dör"
+          ],
+          "ratt": 3,
+          "tips": "Vad är det du bestämmer själv — kursens väg, eller avståndet till ditt eget fel?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 10,
+      "title": "Kontroversen — statistiken mot löftet",
+      "intro": "Trading for a Living — titeln är ett löfte: att man kan leva på trading. Forskningen säger något annat om de flesta som försöker. Detta är kursens viktigaste kapitel: vi tar statistiken på fullt allvar, vi låter Elder svara, och vi är ärliga med vad ingen av dem kan bevisa. AK1A:s slutsats står redan fast: vi utbildar, vi tipsar aldrig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Statistiken först. Brad Barber och Terrance Odean studerade 66 465 amerikanska hushåll 1991–1996 och fann att de som handlade mest också tjänade sämst — omkring sex och en halv procentenhet per år under marknaden, mest på grund av transaktionskostnader och köp av sensationsaktier. I Taiwan, där komplett dagshandelsdata finns, visade samma forskargrupp att färre än en procent av daytraders kunde visa förutsägbart lönsamma resultat netto över tid. I Brasilien — i en studie som bär den träffande titeln Day Trading for a Living — följde forskarna daytraders på E-mini-terminen: av dem som höll ut mer än 300 dagar förlorade 97 procent pengar, och bara omkring en procent tjänade mer än en brasiliansk minimilön. EU:s CFD-uppgifter visar samma mönster: omkring tre av fyra detaljhandelskonton förlorar pengar. Talet om att 80–95 procent av privata traders förlorar är alltså inte retorik — det är den försiktiga sammanfattningen."
+        },
+        {
+          "type": "text",
+          "content": "Vad visar inte statistiken? Den mäter framför allt frekvent korttidshandel med kostnader och ofta hävstång. Den säger inte att ingen vinner — Taiwandata visar att en liten grupp gör det, år ut och år in — den visar att de är extremt få. Den mäter inte heller jämna, långsamma, systematiska investerare. Men den räcker för en slutsats som varje tradingbok måste förhålla sig till: grundfrekvensen för misslyckande bland dem som försöker leva på detta är överväldigande. Och mot den statistiken står bokens metod: berättelser från dem som klarade det. Det är survivorship-urval — ett urval skevt till förmån för överlevarna — i sin renaste form: vi hör Elder, som lyckades; vi hör inte tusentals som läste boken och förlorade ändå. En akademiker skulle säga att hela genren vilar på den skevan."
+        },
+        {
+          "type": "text",
+          "content": "Elders svar är ändå värt att ta på allvar, för det är ingen bortförklaring. Han skulle säga: de 80–95 procenten som förlorar gör det exakt av de skäl boken beskriver — ingen journal, inga stopp, överbelåning, hämnd, handlande utan system. De flesta som förlorar behandlar trading som hasard och inte som kirurgi; boken finns just för att konvertera hasardare till hantverkare. Det är ett rimligt svar på mekanismen — men det saknar bevis på utfallet. Ingen har mätt en grupp som faktiskt följde alla tre M och journalen under år och jämfört den med en kontrollgrupp. Kanske finns försvaret; kanske är det bara en längre väg till samma statistik. Ärligheten kräver att båda möjligheterna får finnas samtidigt — mekanismen kan vara rätt även om grundfrekvensen förblir brutal."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s position blir därför dubbelt tydlig. För det första: vi undervisar i analys, ramverk och disciplin — vi ger aldrig handelstips, vi uppmuntrar inte daytrading, och vi betraktar frekvent korttidshandel som en aktivitet där sannolikheten talar emot eleven. För det andra: bokens värde ligger inte i löftet utan i pedagogiken — journal, liten risk, definierat stopp, masspsykologi. Dessa verktyg gäller alla horisonter. En långsiktig investerare som inte kan läsa sin egen rädsla i en nedgång har användning av Elder, även om hen aldrig lägger en enda kort position. Kursens slutpoäng: läs boken för processen — och låt statistiken, inte löftet, sätta dina förväntningar."
+        },
+        {
+          "type": "insikt",
+          "content": "Brasilienstudien heter Day Trading for a Living och visade att 97 procent av de uthålliga förlorade. Elder har förmodligen rätt om mekanismerna; statistiken har helt rätt om grundfrekvensen. Båda sanningarna måste rymmas i samma huvud — det är vad kontroversiell ärlighet betyder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bevisläget — vad forskningen visat\",\"rader\":[[\"Studie\",\"Vad den fann\",\"Innebörd för eleven\"],[\"Barber & Odean (USA, 2000)\",\"De mest aktiva hushållen cirka 6,5 procentenheter per år under marknaden\",\"Aktivitet och kostnader äter avkastning\"],[\"Taiwan-studierna (Barber m.fl.)\",\"Färre än 1 procent av daytraders förutsägbart lönsamma\",\"Färdighet finns — men är extremt sällsynt\"],[\"Brasilien (Chague m.fl., 2020)\",\"97 procent av uthålliga daytraders förlorade pengar\",\"Uthållighet utan dokumenterad kant räcker inte\"],[\"ESMA och EU:s CFD-uppgifter\",\"Majoriteten av kontona förlorar pengar\",\"Hävstång förstorar psykets svagheter\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv en halv sida med rubriken: Varför skulle just jag klara det? Krav: varje påstående måste hänvisa till något du kan belägga — journaldata, testade regler, mätt träffprocent — inte till motivation eller intelligens. Om du saknar belägg, skriv det. Det är den viktigaste texten du skriver i kursen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var huvudfyndet hos Barber & Odean (2000)?",
+          "alternativ": [
+            "Att daytraders slår marknaden",
+            "Att de mest aktiva handlarna avsevärt underpresterade — kostnader och överhandande",
+            "Att teknisk analys fungerar",
+            "Att korta affärer alltid är lönsamma på sikt"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att handla mycket, förutom avgifterna?"
+        },
+        {
+          "q": "Vad visade den brasilianska studien om uthålliga daytraders?",
+          "alternativ": [
+            "Att hälften tjänade minimilön",
+            "Att utbildning garanterade vinst",
+            "Att 97 procent av dem som handlade mer än 300 dagar förlorade pengar",
+            "Att terminer var säkrare än aktier"
+          ],
+          "ratt": 2,
+          "tips": "Studiens titel är kursens torftigaste skämt."
+        },
+        {
+          "q": "Vilken är AK1A:s position i kontroversen?",
+          "alternativ": [
+            "Att daytrading rekommenderas för den som lärt sig de tre M",
+            "Att Elder garanterar vinst om reglerna följs",
+            "Att statistiken är bluff",
+            "Att vi utbildar analys och disciplin — aldrig handelstips, och ingen uppmuntran till daytrading"
+          ],
+          "ratt": 3,
+          "tips": "Vad är det ett utbildningsföretag kan lova — och aldrig lova?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 10,
+      "title": "Från bok till ekosystem — /profil, Short-Sellern och AK1TS",
+      "intro": "Sista översättningen: vad gör en klassisk tradingbok i ett ekosystem som aldrig ger handelstips? Svaret: AK1A läser Elder som en besluts- och beteendebok. Journalen blir profildata, stoppet blir Brytpunkt, masspsykologin blir sentimentlager — och Short-Sellern får sina viktigaste verktyg. Detta kapitel knyter ihop hela kursen med systemet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "/profil: Elder som diagnostiker. Hans katalog av fällor — aktivitetsbehov, hämnd, medelfel, stoppflyttning — är i praktiken en matris för personlighetsdiagnostik. När labbet mäter din profil handlar det om samma frågor: hur reagerar du på förlust, hur länge kan du bära obekväma positioner, hur mottaglig är du för gruppens känslor? Skillnaden är att journalen ger längsgående data — dina verkliga beslut över tid — och profilen ger strukturen att tolka dem. En aktivitetstyp behöver hårda tak i antal beslut per period; en mottaglig medföljare behöver kontraindikeras mot forum och momentum-aktier; en naturlig konträr behöver varningen för att shorta för tidigt. Elder ger ordvecken; profilen ger mätningen."
+        },
+        {
+          "type": "text",
+          "content": "Short-Sellern är kursens mest konkreta koppling. Elders masspsykologi ger shortforskningen dess timinglager: en berättelse behöver både försämrande fundamenta och euforiskt sentiment för att bli en utmärkt short — annars kortar man bara en bra berättelse i förtid. Fundamentalflaggorna kommer från AKM1-modellen: V19 Kapitalförbrukning & Emission-risk (kassan blöder och emissioner väntar), V12 Intäktsstabilitet (intäkterna visar sig vara cykliska eller engångsartade när berättelsen spricker) och V10 Skuldsättningsgrad (skulden som var osynlig i uppgången blir förlamande i nedgången). Sentimentlagret kommer från kapitel 3:s masscykel — toppfasen känns igen på hyllande auktoriteter, ägare som aldrig sålt och rekordvolym. Elder-reglerna styr sedan förvaltningen: shorts dimensioneras med 2-procentsregeln och stopp, för korttäckningar kan pressa kursen högre precis när det känns mest rätt. Samma tre M — även på shortsidan."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS som helhetsram: Vågen är skärm ett — den högre tidshorisontens trend väljer sida; Pris och Tid sätter horisont och förväntan; Brytpunkten är Money — stoppet som definierar storleken via 2-procentsregeln. En vågjournal utan känsloregistrering är halvfärdig — Elder kompletterar matrisen med det mänskliga lagret. Omvänt gäller att Elderteknik utan AK1TS-struktur kan urarta i signaljakt; determinismen — samma regler varje gång — är vad som gör att journalen överhuvudtaget kan mätas och jämföras. Boken och systemet är komplement: den ena ger beteendet, det andra repeterbarheten. Tillsammans ger de det Elder sökte och AK1TS bygger: ett beslutsflöde som är likadant varje gång och ändå lärs av varje avvikelse."
+        },
+        {
+          "type": "text",
+          "content": "Slutmanifestet. AK1A lär ut analys — inte signaler. Vi anser att Elder-processen — journal, små risker, definierade brytpunkter, respekt för massan — är utmärkt pedagogik oavsett horisont, och att löftet om att leva på trading ska mötas av statistiken i kapitel 13 — inte av entusiasm. Den dagen marknaden faller trettio procent och din plan håller dig kvar medan massan panikerar, har du använt boken på rätt sätt. Det är skillnaden mellan att läsa en tradingbok och att utbilda ett omdöme. Kursen är slut — journalen börjar."
+        },
+        {
+          "type": "insikt",
+          "content": "Elder skrev en tradingbok; AK1A läser den som en beslutsbok. Journal, liten risk, definierat stopp — regler som gäller varje horisont, från daytrade till buy-and-hold."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från bok till ekosystem — översättningstabellen\",\"rader\":[[\"Verktyg hos Elder\",\"AK1A-översättning\",\"Bor i\"],[\"Handelsjournalen\",\"Känslodisciplindata och beslutshistorik\",\"/profil\"],[\"2- och 6-procentsreglerna\",\"Positionsstorlek beräknad från brytpunkt\",\"Risk och Brytpunkten\"],[\"Triple screen\",\"Vågen — högre tidshorisont före signal\",\"AK1TS\"],[\"Masscykelns toppfas\",\"Sentimentlager i shortforskning\",\"Short-Sellern\"],[\"V19, V12, V10\",\"Fundamentala short-flaggor\",\"AKM1-modellen\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din personliga tre M-checklista inför nästa beslut — oavsett om det är en analys eller en affär. Mind: vad känner jag och vilken är min kända fälla? Method: vad säger strukturen — trend, horisont, brytpunkt? Money: vad är stoppet eller brytpunkten, och hur stor får positionen bli? Tre rader, varje gång, tills det är en vana."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka AKM1-variabler lyfts i kursen som short-flaggor?",
+          "alternativ": [
+            "V01, V02 och V03",
+            "V19 Kapitalförbrukning, V12 Intäktsstabilitet och V10 Skuldsättningsgrad",
+            "V04 P/S, V05 P/B och V06 EV/EBITDA",
+            "V20 Återköp"
+          ],
+          "ratt": 1,
+          "tips": "Vad blir farligt för ett bolag när uppgången vänder — kassa, intäkter, skuld?"
+        },
+        {
+          "q": "Vad motsvarar skärm ett i AK1TS-översättningen?",
+          "alternativ": [
+            "Brytpunkten",
+            "Priset",
+            "Vågen — den högre tidshorisontens trend",
+            "Radar-diagrammet"
+          ],
+          "ratt": 2,
+          "tips": "Vilken dimension väljer sida innan något annat får hända?"
+        },
+        {
+          "q": "Vad är kursens slutståndpunkt om boken?",
+          "alternativ": [
+            "Ett bevis på att alla kan leva på trading",
+            "Ett verktyg för att generera köp- och säljsignaler",
+            "En föråldrad bok utan värde idag",
+            "En besluts- och beteendebok — pedagogik som gäller alla horisonter, utan handelstips"
+          ],
+          "ratt": 3,
+          "tips": "Vad behåller sitt värde när signalerna bleknar?"
+        }
+      ]
     }
-   ],
-   "quiz": [
-    {
-     "q": "Vilket yrkesperspektiv förde Alexander Elder in i tradinglitteraturen?",
-     "alternativ": [
-      "Advokatens — kontrakt och prospekt",
-      "Psykiaterns — diagnoser av beteende",
-      "Aktieanalytikerns — nyckeltal och rapporter",
-      "Matematikerns — sannolikhetsteori"
-     ],
-     "ratt": 1,
-     "tips": "Tänk på varför boken börjar med känslor och inte med diagram."
-    },
-    {
-     "q": "Vad menar Elder att marknaden behöver en ständig tillförsel av?",
-     "alternativ": [
-      "Regulatorer",
-      "Nya listnoteringar",
-      "Förlorare",
-      "Market makers"
-     ],
-     "ratt": 2,
-     "tips": "Hans pyramidliknelse är bokens kallaste mening."
-    },
-    {
-     "q": "Hur fördelar Elder bokens tyngd?",
-     "alternativ": [
-      "Nästan allt på tekniska indikatorer",
-      "Psykologi först, sedan teknik och riskhantering",
-      "Riskhantering först och psykologi i appendix",
-      "Enbart mekaniska dagshandelssystem"
-     ],
-     "ratt": 1,
-     "tips": "Vilken del av boken kommer före den första indikatorn?"
-    }
-   ]
-  },
-  {
-   "num": 2,
-   "minutes": 10,
-   "title": "Individens psykologi — hopp och fruktan",
-   "intro": "I bokens första del vrider Elder psykiaterns soffa mot läsaren: vad händer i ditt huvud när du har en öppen position? Svaret är systematiskt — hoppet och fruktan byter plats — och det förklarar varför traders utan system gör allt baklänges. Detta kapitel går igenom individpsykologin och dess mest obehagliga slutsats: din värste motståndare sitter i ditt eget psyke.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Elders iakttagelse är enkel och förödande. Innan en affär är känslorna girighet och rädsla att missa läget; i en förlorande position tar hoppet över — hoppet om att det vänder; i en vinnande position tar fruktan över — fruktan att förlora den obokade vinsten. Resultatet blir den klassiska inverteringen: traders stänger vinnare för tidigt och sitter kvar i förlorare för länge. De rycker upp blommorna och vattnar ogräset. Beteendet är inte slumpmässigt — det är hur psyket är byggt, och det är därför reglerna måste skrivas när man är kall och följas när man är varm."
-    },
-    {
-     "type": "text",
-     "content": "Elder ställer också den viktigaste diagnostiska frågan: varför handlar du? Den som handlar för spänningens skull betalar för underhållning; den som handlar för att bevisa något bär på en skuld som marknaden gärna inkasserar; den som flyr tristess har hittat ett kasino med bättre diagram. Elder lånar till och med från Anonyma Alkoholister med idén om ett möte för förlorare — där den som vill bli bra först måste erkänna, inför sig själv, att man är en förlorare. Poängen är inte självförödmjukelse utan ansvar: den som skyller på marknaden, mäklaren, stoppjägare eller insidere kan inte lära sig något, eftersom det alltid är någon annans fel."
-    },
-    {
-     "type": "text",
-     "content": "Ansvaret är bokens etik. Marknaden vet inte att du existerar, menar Elder — den är inte ute efter dig, den struntar fullkomligt i dig. Därför är dina resultat dina och bara dina. Detta är frigörande i stället för deprimerande: om resultaten är dina kan de också tränas fram. Psykiaterns recept är prosaiskt: registrera känslorna, skilj på känsla och handling, och bygg rutiner som gör det rätta beteendet lättare än det felaktiga. Här ansluter journalen — kapitel 6 — men redan nu gäller principen: känslan är data, inte order."
-    },
-    {
-     "type": "text",
-     "content": "För AK1A-eleven är detta kapitel grunden i profildiagnostiken. Fällorna i nästa kapitel är inga karaktärsfel utan mätbara drag: hur reagerar du på förlust, hur stor blir frestelsen att ta igen, hur länge kan du bära en obekväm position? Svaren varierar mellan personer — och det är just den variationen som gör att en och samma metod ger olika resultat för olika människor. Hos Elder är metoden privat i en annan mening än hos Schwager: du kan kopiera en metod, men du kan inte kopiera ett psyke. Därför börjar utbildningen inifrån och ut."
-    },
-    {
-     "type": "insikt",
-     "content": "Hopp hör hemma i förlorande positioner och fruktan i vinnande — psyket gör allt baklänges. Därför skrivs reglerna kallt och följs varmt: beslutet fattas innan känslan finns där."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Psyket vid tre lägen — känsla, beteende, motgift\",\"rader\":[[\"Läge\",\"Rådande känsla\",\"Typiskt beteende\",\"Motgiftet\"],[\"Innan ingång\",\"Rädsla att missa\",\"Jaga läget uppåt\",\"Plan med stopp klar i förväg\"],[\"I förlust\",\"Hopp om vändning\",\"Flytta stoppet, medelfela\",\"Mekanisk exit — stoppet ägs av planen\"],[\"I vinst\",\"Fruktan att förlora vinsten\",\"Klippa vinnaren tidigt\",\"Trailing stop — målet ägs av planen\"],[\"Efter förlust\",\"Skam och revanschlust\",\"Dubbla storleken\",\"Paus, journal, 6-procentsregeln\"]]}"
-    },
-    {
-     "type": "utmaning",
-     "content": "Beskriv i dagboken din senaste förlorande affär eller analys — men skriv bara om känslorna: vad kände du innan, under och efter? I vilken rad i kapitlets tabell hamnar du? Gör samma övning på en vinnare och jämför: var var din känsla som starkast — och vad gjorde du då?"
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vilken känsla får enligt Elder traders att sitta kvar i förlorande positioner?",
-     "alternativ": [
-      "Vrede",
-      "Hopp",
-      "Äckel",
-      "Lättnad"
-     ],
-     "ratt": 1,
-     "tips": "Vad är det som viskar att det vänder?"
-    },
-    {
-     "q": "Varför stänger många traders sina vinnare för tidigt?",
-     "alternativ": [
-      "Fruktan att förlora den obokade vinsten",
-      "Deras system har fel target",
-      "De har räknat fel i storleken",
-      "Deras stopp ligger för nära"
-     ],
-     "ratt": 0,
-     "tips": "Vad är en vinst som inte bokats, psykologiskt sett?"
-    },
-    {
-     "q": "Vad är poängen med Elders Loser Anonymous-liknelse?",
-     "alternativ": [
-      "Att handlare ska skämmas",
-      "Att beroendet måste erkännas innan det kan tränas",
-      "Att man ska byta mäklare",
-      "Att förluster alltid beror på mäklaren"
-     ],
-     "ratt": 1,
-     "tips": "Vad är första steget i varje förändringsprogram?"
-    }
-   ]
-  },
-  {
-   "num": 3,
-   "minutes": 10,
-   "title": "Masspsykologi — marknaden som folkmassa",
-   "intro": "Från det enskilda psyket till gruppen: Elder lånar masspsykologin från Gustave Le Bon och menar att en aktiemarknad är världens största folkmassa. Priset är inte information — det är humör. Detta kapitel går igenom hur massan bildas, hur stöd och motstånd är massans kollektiva minne och vad det innebär att handla mot massan i stället för som den.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Gustave Le Bon skrev 1895 att en grupp människor inte är summan av sina delar utan något annat: en massa som är impulsiv, påverkbar, känsloladdad och oförmögen att skjuta upp belöningar. Elder tillämpar detta rakt av på börsen: när miljontals köpare och säljare möts via skärmar och ordrar uppstår samma varelse — marknaden — som tänker med magen, inte med hjärnan. En trend är massan som håller med varandra längre än rimligt; en topp är maximal enighet; en botten är maximal misstro. Prisrörelser är massans sinnesstämning uppmätt i realtid."
-    },
-    {
-     "type": "text",
-     "content": "Därifrån följer konkreta verktygsläror. Stöd och motstånd är massans minne: nivåer där många köpte eller sålt blir platser som massan minns och återvänder till. Volymen är massans röststyrka — hög volym betyder starkt känslomässigt engagemang, låg volym ointresse. Och divergensen mellan pris och oscillator — kursen gör ny topp men indikatorn orkar inte följa med — är massan som tröttnar, en av Elders viktigaste signaler. Din uppgift är att läsa massan, inte att bli den: den som söker bekräftelse i forum och kommentarsfält söker massans röst i massans eget kök."
-    },
-    {
-     "type": "text",
-     "content": "Professionella mot massan: Elder skiljer på proffs som handlar på plan och publik som handlar på känsla. De bästa affärerna finns vid ytterligheterna — när massan är som mest desperat att sälja vid botten eller som mest euforisk att köpa vid toppen — men ytterligheterna är också när det känns som värst att agera mot strömmen. Därför behövs båda delarna: verktyg för att se att massan är extrem, och psykologi för att stå ut med att agera ensam. Fram till ytterligheterna är den disciplinerade vägen att handla med trenden — med massan när den har rätt, mot den när den är extrem."
-    },
-    {
-     "type": "text",
-     "content": "I AK1A:s ekosystem lever masspsykologin på två ställen. I /profil mäter vi hur mottaglig du är för gruppens känslor — medföljare eller naturlig konträr — eftersom det avgör vilka regler du behöver runt omkring dig. Och i Short-Sellerns värld är toppfasen — auktoriteter som hyllar, trenden som bevisar, trogna ägare som aldrig sålt — massteriologi i praktiken: euforin är bränslet i varje uppumpad berättelse. Kom ihåg det när kapitel 14 knyter ihop hela säcken."
-    },
-    {
-     "type": "insikt",
-     "content": "Priset är massans humör. Volymen är dess röststyrka. Ditt jobb är att läsa båda — utan att känna dem själv."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Masscykelns fyra faser\",\"rader\":[[\"Fas\",\"Massans känsla\",\"Prisbeteende\",\"Vad den disciplinerade gör\"],[\"Botten\",\"Vånda, förnekelse, uttröttning\",\"Låg volym, sidledes\",\"Köper av trötta säljare — med stopp\"],[\"Tidig uppgång\",\"Skepsis — det här håller inte\",\"Högre toppar och dalar\",\"Handlar med trenden\"],[\"Topp\",\"Eufori — alla är med nu\",\"Brant kurs, rekordvolym\",\"Säljer till euforiska köpare\"],[\"Nedgång\",\"Förnekelse som blir panik\",\"Accelererande fall\",\"Skyddar kapitalet — 6-procentsregeln\"]]}"
-    },
-    {
-     "type": "visuell",
-     "content": "cykel"
-    },
-    {
-     "type": "utmaning",
-     "content": "Ta en svensk tillväxtberättelse från åren runt 2021: placera massan i de fyra faserna, månad för månad. När var skepsisen som störst (det var under den tidiga uppgången)? När var euforin som störst (det var nära toppen)? Skriv en mening om vad du själv kände i varje fas — om du minns det."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vilken tänkare lånar Elder sin masspsykologi ifrån?",
-     "alternativ": [
-      "Sigmund Freud",
-      "Gustave Le Bon",
-      "Carl Jung",
-      "John Maynard Keynes"
-     ],
-     "ratt": 1,
-     "tips": "En fransk sociolog som skrev om massan 1895."
-    },
-    {
-     "q": "Vad är pris enligt Elder?",
-     "alternativ": [
-      "En oberoende mekanism",
-      "En algoritm",
-      "Massans humör uppmätt",
-      "En centralbanksprodukt"
-     ],
-     "ratt": 2,
-     "tips": "Vad är det som rör sig när inget fundamentalt händer?"
-    },
-    {
-     "q": "Vad signalerar en divergens mellan pris och oscillator enligt Elder?",
-     "alternativ": [
-      "Att massan tröttnar",
-      "Att volymen kommer att öka",
-      "Att trenden precis har börjat",
-      "Att rapporten är bra"
-     ],
-     "ratt": 0,
-     "tips": "Ny topp — men orkar drivkraften lika högt?"
-    }
-   ]
-  },
-  {
-   "num": 4,
-   "minutes": 10,
-   "title": "Klassiska tradarfällor — katalogen",
-   "intro": "Elder katalogiserar tradernas klassiska självskador med samma systematik som psykiatern katalogiserar symptom: att handla för handlandets skull, hämnd-handel efter förlust, överbelåning, att flytta stoppet och att medelfela i förlorare. Fällorna är inte dumheter — de är mycket logiska reaktioner som råkar kosta pengar. Detta kapitel ger dig katalogen och motgiften.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Den första fällan är aktivitetsbehovet. Marknaden rör sig hela tiden och skärmen bjuder in till handling, men marknaden betalar inte för aktivitet — den betalar för tålamod och korrekta beslut. Elder drar parallellen till jakten: amatören skjuter på allt som rör sig, proffset väntar på det rätta skottet. En affär utan setup är inte analys utan underhållning — och räkningen skickas i efterhand. Aktivitet är dessutom den fälla som ser mest oskyldig ut: den är socialt accepterad, den låter som arbete, och den ruinerar lika metodiskt som de andra."
-    },
-    {
-     "type": "text",
-     "content": "Den andra fällan är hämnden. Efter en förlust känner handlaren sig slagen och vill vinna tillbaka — inte bara pengarna, utan stoltheten. Farligast är det när storleken höjs för att täcka hålet: det som var två procent av kapitalet riskerat blir plötsligt tio. Elder påpekar det absurda i situationen: marknaden vet inte att du förlorade. Den hedrar inte dina försök att ta igen. Hämnaren håller revanschmatch mot en motståndare som inte vet att matchen pågår — och därför aldrig kan förlora den."
-    },
-    {
-     "type": "text",
-     "content": "Den tredje fällan är belåningen. Marginal multiplicerar både vinsten och psyket: en position som är för stor gör att normala svängningar känns som hot mot existensen, och då fattas besluten av reptilhjärnan. Den fjärde fällan är att flytta stoppet — att flytta det i förlustriktning är att förneka att planen existerar. Den femte är att medelfela i en förlorande trade: att addera till det som redan bevisar att man hade fel. En hederlig nyansering: en värdeinvesterare kan mycket medvetet köpa mer av en aktie som fallit — men det är ett annat beslut, med längre horisont och en värderesoning, och det kräver att det skrivs som ett sådant beslut. Inom en trade med stopp är medelfel förbjudet."
-    },
-    {
-     "type": "text",
-     "content": "Notera att alla fem fällorna har samma rot: önskan att ha rätt eller att få tillbaka. De uppträder när planen saknas eller när känslan får fatta beslutet. Därför är motgiften alltid detsamma: skriv planen innan affären — ingång, stopp, storlek, exit — och behandla varje ändring efteråt som ett misstag att dokumentera i journalen, inte som snabbtänkthet. I /profil mäter vi din dominanta fälla; den är värd att känna till innan du ens öppnar ett depåkonto."
-    },
-    {
-     "type": "insikt",
-     "content": "Fem fällor, en rot: att vilja ha rätt eller att vilja ha tillbaka. Båda är känslor — och varje känsla som får fatta ett positionsbeslut arbetar för massan, mot dig."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Fällkatalogen — mekanism och motgift\",\"rader\":[[\"Fälla\",\"Mekanism\",\"Motgift\"],[\"Handla för aktiviteten\",\"Uttråkning söker stimulus\",\"Max antal affärer per period\"],[\"Hämnd-handel\",\"Förlusten sårar stoltheten\",\"Paus efter förlust — 6-procentsregeln\"],[\"Överbelåning\",\"Girighet multipliceras\",\"2-procentsregeln per affär\"],[\"Flytta stoppet\",\"Hoppet tar kommandot\",\"Stoppet skrivs i journalen och ändras aldrig i förlust\"],[\"Medelfel i förlorare\",\"Att sänka genomsnittet känns klokt\",\"Addera bara vinnare inom en trade\"]]}"
-    },
-    {
-     "type": "utmaning",
-     "content": "Ranka de fem fällorna efter hur farliga de är för dig — ärligt. Skriv ditt farligaste motgift på en lapp och placera den synlig vid nästa beslut. Om du inte vet din fälla än: bevara frågan till kapitel 6 — journalen kommer att berätta det inom en månad."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vad kännetecknar hämnd-handel?",
-     "alternativ": [
-      "Att man handlar samma aktie igen",
-      "Att man ökar risktagandet för att vinna tillbaka efter förlust",
-      "Att man tar för små positioner",
-      "Att man använder stopp"
-     ],
-     "ratt": 1,
-     "tips": "Vad händer med storleken när stoltheten är sårad?"
-    },
-    {
-     "q": "Varför är det absurd att hämnas på marknaden, enligt kursens läsning av Elder?",
-     "alternativ": [
-      "Marknaden vet inte att du förlorade",
-      "Marknaden är stängd om nätterna",
-      "Hämnd är statistiskt lönsamt",
-      "Mäklaren stoppar sådana affärer"
-     ],
-     "ratt": 0,
-     "tips": "Vet motståndaren att en match pågår?"
-    },
-    {
-     "q": "När kan det ändå vara rimligt att köpa mer av en fallande aktie?",
-     "alternativ": [
-      "När man vill sänka genomsnittet i en trade med stopp",
-      "Aldrig under några omständigheter",
-      "När det är ett medvetet värdebeslut med lång horisont och egen analys",
-      "När forumet rekommenderar det"
-     ],
-     "ratt": 2,
-     "tips": "Skillnaden ligger i beslutets logik — och i vem som äger den."
-    }
-   ]
-  },
-  {
-   "num": 5,
-   "minutes": 10,
-   "title": "De tre M — Mind, Method, Money",
-   "intro": "Bokens ryggrad är en trestavig ekvation: Mind, Method, Money. Psykologin, metoden och riskhanteringen — alla tre krävs, och den som saknar en av dem förlorar på det sätt som saknaden avgör. Detta kapitel går igenom de tre M, deras inbördes ordning och deras plats i AK1A:s ekosystem.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Mind är allt som försiggår i dig: dina känslor inför vinst och förlust, din förmåga att följa egna regler, din motivation. Method är hur du hittar och bekräftar affärer: trend, oscillatorer, setup, ingång, utgång — det traditionella bokämnet. Money är riskhanteringen: hur mycket du riskerar per affär och per månad, hur stor varje position får bli. Elders poäng är att böcker och kurser nästan uteslutande lär ut Method — medan förlorarna förlorar på Mind och Money. Det är bokens mest citerade struktur och kursens organisering i praktik."
-    },
-    {
-     "type": "text",
-     "content": "Varför räcker inte Method? Ett system med bevisad positiv förväntan ger fortfarande förlust i händerna på en rädd, hämndlysten eller uttråkad handlare — eftersom systemet exekveras av ett psyke. Tänk på en pall med tre ben: den som sågar bort ett ben faller, oavsett hur fint de andra två är snickrade. Elder menar att de flesta förlorare inte saknar signaler — de saknar förmågan att göra det signalerna säger när känslorna säger något annat. Det är också därför boken heter vad den heter: att leva på trading är ett helt liv, inte en teknik. De tre M är tre ben på samma pall."
-    },
-    {
-     "type": "text",
-     "content": "Ordningen mellan de tre är också en arbetsordning. Börja med Mind: journal och självkännedom ger data om vem du är. Bygg sedan Method: välj ett system — för AK1A-eleven ofta AK1TS:s våg- och prisverktyg — och testa det mekaniskt. Sist kommer Money: reglerna i kapitel 11 och 12 dimensionerar allt du gör. Hos AK1A översätts de tre M direkt till ekosystemet: Mind bor i /profil, Method i AK1TS, Money i Brytpunkts-logiken — stoppet definierar storleken. Tre M, tre hem, ett beslut."
-    },
-    {
-     "type": "text",
-     "content": "Slutligen den tredje handen: förbättring. Elder betonar att framgång inte är ett mål man når utan en process man underhåller; journalen är verktyget som gör processen synlig och mätbar. Varje månad: vad fungerade, vad fungerade inte, vad ändras till nästa månad? Små ständiga förbättringar, hela tiden. En kurs kan ge kartan; journalen ger kilometrarna. Utan den tredje handen blir de tre M en fin föreläsning i stället för en praktik."
-    },
-    {
-     "type": "insikt",
-     "content": "Method utan Mind är en bil utan förare. Money utan Mind är en bil med airbagen urkopplad. Elder lär ut hela fordonet — och körkortet tar år."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"De tre M — fråga, verktyg, AK1A-hem\",\"rader\":[[\"M\",\"Frågan\",\"Verktyg\",\"Var det bor hos AK1A\"],[\"Mind\",\"Varför gör jag som jag gör?\",\"Journal, känsloregistrering\",\"/profil\"],[\"Method\",\"Var och hur hittar jag beslut?\",\"Trend, oscillator, setup\",\"AK1TS\"],[\"Money\",\"Hur mycket riskerar jag?\",\"2- och 6-procentsreglerna\",\"Brytpunkten → positionsstorlek\"]]}"
-    },
-    {
-     "type": "visuell",
-     "content": "donut"
-    },
-    {
-     "type": "utmaning",
-     "content": "Betygsätt dig själv, 1–10, på varje M — inte hur du önskar att du var, utan hur du har varit det senaste halvåret. Den lägst betygsatta M är din kursplan framöver. Spara betygen och upprepa övningen efter kursens journalövningar i kapitel 6."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vilka är Elders tre M?",
-     "alternativ": [
-      "Marknad, Momentum, Modell",
-      "Mind, Method, Money",
-      "Margin, Median, Method",
-      "Metod, Matematik, Magi"
-     ],
-     "ratt": 1,
-     "tips": "Hjärna, verktyg, pengar — i vilken ordning som helst."
-    },
-    {
-     "q": "Varför räcker det inte med ett bra system enligt Elder?",
-     "alternativ": [
-      "System blir snabbt föråldrade",
-      "Mäklare ändrar kurserna",
-      "Systemet exekveras av ett psyke — och psyket kan sabota allt",
-      "Marknaden anpassar sig till systemet"
-     ],
-     "ratt": 2,
-      "tips": "Vem är det som faktiskt trycker på köpknappen?"
-    },
-    {
-     "q": "Vilken AK1TS-dimension bär Money-rollen i kursens översättning?",
-     "alternativ": [
-      "Vågen",
-      "Priset",
-      "Tiden",
-      "Brytpunkten"
-     ],
-     "ratt": 3,
-     "tips": "Var finns siffran som bestämmer hur stor affären får bli?"
-    }
-   ]
-  },
-  {
-   "num": 6,
-   "minutes": 10,
-   "title": "Disciplinen och handelsjournalen",
-   "intro": "Marknaden straffar odisciplinerade — och journalen är Elders disciplinmaskin. En handlare utan journal saknar den viktigaste utbildningen: dokumentationen av sig själv. Detta kapitel går igenom hur en handelsjournal byggs, hur den granskas och hur den förvandlar anekdoter till statistik — i grunden samma logik som hela AK1A-labbet bygger på.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Journalens minimikrav: för varje affär skrivs instrument, datum, ingång, stopp, mål och exit — och därtill det som gör den till en Elder-journal: tesen (varför affären togs), känslan (ett enkelt betyg före och under) och disciplinen (följdes planen?). Elder ritade i sin egen dagbok diagram med köp- och säljpilar och skriver utkast till affärer innan de genomfördes, så att han kunde jämföra plan mot utfall. Poängen är densamma hos oss: betygsätt processen, inte resultatet. En A-affär som förlorar pengar är fortfarande en A-affär — och en C-affär som råkar vinna är fortfarande ett misstag som upprepas tills det kostar."
-    },
-    {
-     "type": "text",
-     "content": "Granskningen är journalens hjärta. Veckovis: vilka affärer togs, följdes planen, vilka känslor dominerade? Månadsvis: mönster — förlorarna klustrar ofta vid vissa tillfällen, marknadslägen eller humör. Efter några månader börjar statistiken tala: träffprocent, genomsnittlig vinst och genomsnittlig förlust, och förväntan per affär — träffprocenten gånger den genomsnittliga vinsten minus förlustprocenten gånger den genomsnittliga förlusten. Det är ditt eget lilla forskningslabb om dig själv. Anekdoter blir data, och data kan förbättras. Utan journal förblir allt känsla och minne — och minnet är den mest självgoda datakällan som finns."
-    },
-    {
-     "type": "text",
-     "content": "Disciplin definieras här konkret: att göra det tråkiga rätt varje gång. Elder liknar goda handelsvanor vid hygien — tandborstning varje dag, oavsett humör. Regler skrivs när du är kall och följs när du är varm; journalen är dokumentet som visar om det skedde. Hans mest citerade formulering om prioritering fångar hela kapitlet: målet för en framgångsrik trader är att göra de bästa affärerna — pengarna är sekundärt. Det är också journalen som gör 6-procentsregeln verkbar: när månaden stängs förtidigt är det journalen — inte känslan — som avgör vad som var fel och vad som ändras."
-    },
-    {
-     "type": "text",
-     "content": "I AK1A:s värld är journalen ingen parentes utan hela plattformsidén: labbets analyser, rapporter och uppföljningar är en gemensam journal — dokumenterade beslut med tes, brytpunkt och efterhand. Skillnaden mot en tradingjournal är horisonten; likheten är principen: inget beslut utan dokumentation, ingen dokumentation utan granskning. Den som vill äga sin utveckling — som investor eller som trader — börjar där. Boken ger mallen; labbet ger systemet."
-    },
-    {
-     "type": "insikt",
-     "content": "Betygsätt disciplinen, inte dagens resultat. Kanter byggs av hundratalet A-beslut — vissa av dem förlorar pengar, alla bygger kapital."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Journalens minsta kolumner\",\"rader\":[[\"Kolumn\",\"Exempel\",\"Varför den finns\"],[\"Instrument och datum\",\"XYZ 2026-08-14\",\"Kontext\"],[\"Ingång, stopp, mål\",\"102 / 96 / 118\",\"Planen synliggörs\"],[\"Tes\",\"Veckotrend upp, daglig motgång\",\"Metod-logiken\"],[\"Känsla 1–5\",\"3 — revanschlust\",\"Psykedata\"],[\"Disciplinbetyg A–E\",\"B — följde planen\",\"Process före resultat\"],[\"Exit och lärdom\",\"Stoppad; stoppet ändrades aldrig\",\"Utfall och lärdom\"]]}"
-    },
-    {
-     "type": "utmaning",
-     "content": "Starta en minijournal idag — tre rader per beslut under en vecka: tes, känslotal, disciplinbetyg. Krav: tesen skrivs innan du agerar. Efter sju dagar: räkna andelen beslut som följde planen, och notera vilket känsloläge som dominerade dina avvikelser."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vad ska betyget i en Elder-journal mäta?",
-     "alternativ": [
-      "Dagens resultat i kronor",
-      "Marknadens volatilitet",
-      "Om planen följdes — disciplinen",
-      "Aktiens nyckeltal"
-     ],
-     "ratt": 2,
-     "tips": "Vad är det enda du har full kontroll över?"
-    },
-    {
-     "q": "Varför skrivs känslan ner i journalen?",
-     "alternativ": [
-      "För att det är terapeutiskt",
-      "För att mäklaren kräver det",
-      "För att hitta mönster mellan känsloläge och misstag",
-      "För att känslor förutsäger kursen"
-     ],
-     "ratt": 2,
-     "tips": "Två kolumner brevid varandra — vad kan de visa tillsammans?"
-    },
-    {
-     "q": "Vilken statistik kan journalen så småningom ge dig?",
-     "alternativ": [
-      "Ingen — journalen är bara en dagbok",
-      "Din egen förväntan per affär — träffprocent och genomsnittlig vinst och förlust",
-      "Företagsstyrning och nyckeltal",
-      "Centralbankens möteskalender"
-     ],
-     "ratt": 1,
-     "tips": "Tre rader data per beslut blir med tiden matematik."
-    }
-   ]
-  },
-  {
-   "num": 7,
-   "minutes": 10,
-   "title": "Trenden — glidande medelvärden som konsensus",
-   "intro": "Elders tekniska verktygslåda börjar med det enklaste och mest missförstådda: det glidande medelvärdet. För Elder är det inte en signalmaskin utan en värdestickare — genomsnittet av massans konsensus under en period. Detta kapitel går igenom medelvärdenas logik, tidsramarnas hierarki och verktygens ärliga begränsningar.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Ett glidande medelvärde är genomsnittspriset under en period — Elder tolkar det som konsensus: massans gemensamma uppskattning av värde. Kursen över ett stigande medelvärde betyder att massan hoppas; under ett fallande att den fruktar. Medelvärdet blir ett rörligt stöd- eller motståndsområde — inte en magisk linje utan platsen där konsensus senast enades. Lutningen är budskapet: ett stigande medelvärde säger att tjurarna vinner, ett fallande att björnarna gör det, ett plant att ingen av dem gör det."
-    },
-    {
-     "type": "text",
-     "content": "Tidsramarna är hierarkiska. Ett tiotal dagar fångar korta svängningar, femtio dagar en medellång våg, tvåhundra dagar en hel marknadsregim. Ju längre period, desto tyngre och långsammare massa — och desto mer krävs för att vända den. Elder varnar för det vanligaste misstaget: att använda ett enda medelvärde som komplett köp- och säljsignal. I en trendlös, sidledes marknad piskar medelvärdet affär efter affär — små förluster som tär på både konto och psyke. Verktyget är gjort för trend, och det älskar att bevisa det genom att straffa den som använder det fel."
-    },
-    {
-     "type": "text",
-     "content": "Elder kompletterar därför medelvärdena med kanaler — band några procent över och under medelvärdet — för att se när kursen drivit iväg från sitt konsensus. Handeln nära kanalens överkant i en trött, platt marknad är uttjänad; i en ung trend betyder stort avstånd till medelvärdet snarare styrka. Samma verktyg, olika budskap beroende på regime — och det är just därför nästa kapitel finns: oscillatorerna mäter det inre tryck som medelvärdena inte ser."
-    },
-    {
-     "type": "text",
-     "content": "Ärlighetsdeklarationen är densamma som AK1TS gör om vågläran: medelvärden släpar efter. De beskriver vad massan gjorde, inte vad den kommer att göra. De har ingen vetenskapligt belagd förmåga att förutsäga — deras värde är disciplinärt: de tvingar användaren att ställa en definierad fråga (vem har initiativet?) i stället för att följa magkänsla. Använd dem som beskrivning och filter — aldrig som spådom. Det är skillnaden mellan termometer och spåkvinna: termometern kan inte lova sol, men den ljuger aldrig om hur varmt det är."
-    },
-    {
-     "type": "insikt",
-     "content": "Medelvärdet är massans konsensus på hjul. Det säger inte var kursen ska — det säger vem som äger rummet just nu."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Medelvärdenas hierarki\",\"rader\":[[\"Verktyg\",\"Period\",\"Massan det fångar\",\"Styrka\",\"Svaghet\"],[\"Kort medelvärde\",\"cirka 10–20 dagar\",\"Svängningsvågen\",\"Reagerar tidigt\",\"Piskas i sidled\"],[\"Medellångt medelvärde\",\"cirka 50 dagar\",\"Medellång våg\",\"Bra trendfilter\",\"Sent vid vändningar\"],[\"Långt medelvärde\",\"cirka 200 dagar\",\"Hel marknadsregim\",\"Regimindikator\",\"Väldigt trög\"],[\"Kanal runt medelvärdet\",\"Procentband\",\"Avstånd till konsensus\",\"Markerar uttjänning\",\"Missar unga trender\"]]}"
-    },
-    {
-     "type": "utmaning",
-     "content": "Välj en aktie du följer. Notera: var står kursen mot 50- och 200-dagarsmedelvärdena, och vilken lutning har de? Skriv en mening: vem äger rummet — tjurarna, björnarna eller ingen? Upprepa om en månad. Detta är skärm ett i slow motion."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vad är ett glidande medelvärde enligt Elder?",
-     "alternativ": [
-      "En köpsignal",
-      "Ett genomsnittligt konsensus om värde",
-      "En centralbanksränta",
-      "En volymprognos"
-     ],
-     "ratt": 1,
-     "tips": "Vad är ett genomsnitt av priser, om inte vad massan gemensamt tyckt?"
-    },
-    {
-     "q": "Vad betyder ett plant medelvärde?",
-     "alternativ": [
-      "Stark uptrend",
-      "Stark downtrend",
-      "Balans — ingen har initiativet",
-      "Att volymen ökar"
-     ],
-     "ratt": 2,
-     "tips": "Vem vinner om ingen av sidorna vinner?"
-    },
-    {
-     "q": "Varför blir medelvärden piskade i en sidledes marknad?",
-     "alternativ": [
-      "De beräknas fel",
-      "Kursen pendlar kring medelvärdet och ger många små falska signaler",
-      "De fungerar bara på veckodata",
-      "De kräver volymdata"
-     ],
-     "ratt": 1,
-     "tips": "Vad händer med korsningarna när kursen går fram och tillbaka över linjen?"
-    }
-   ]
-  },
-  {
-   "num": 8,
-   "minutes": 10,
-   "title": "Oscillatorer — MACD och Force Index",
-   "intro": "Medelvärdena ser riktningen men inte trycket. Oscillatorerna mäter massans inre drivkraft — hur starka tjurarna och björnarna är inuti rörelsen. Elder presenterar flera, men två står ut: MACD, tradingvärldens favorit, och hans egen Force Index. Detta kapitel går igenom båda och deras viktigaste signal: divergensen.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "MACD — moving average convergence divergence — bygger på skillnaden mellan ett kortare (12 dagar) och ett längre (26 dagar) exponentiellt medelvärde. MACD-linjen stiger när den korta tidens konsensus driver ifrån den långa — momentumet ökar. En signallinje (nio perioders medelvärde av MACD) ger korsningar, och histogrammet — MACD minus signallinje — mäter accelerationen: stigande histogram betyder att köparna inte bara leder utan ökar försprånget. Elder kallar MACD tradingcommunityts favoritverktyg, med viss rätt: det är trendigt nog att fungera i trender och tydligt nog att läsas av nybörjare."
-    },
-    {
-     "type": "text",
-     "content": "Force Index är Elders egen konstruktion och kombinerar tre saker: riktning (förändringen i stängningskurs), styrka (storleken på rörelsen) och volym — massans röststyrka. Ett kort glidande medelvärde av Force Index (två dagar) används för timing av ingångar och utgångar; ett längre (tretton dagar) för att mäta den underliggande kraften i trenden. En kraftig rörelse på svag volym är misstänkt; en liten rörelse på enorm volym bär information om engagemang. Volymen skiljer en sann trend från en kulisshow — det är hela poängen med indexet."
-    },
-    {
-     "type": "text",
-     "content": "Oscillatorernas främsta signal är divergensen: kursen gör ny topp men MACD eller Force Index orkar inte upp till sin förra nivå. Elder läsning: massan pressar priset högre men med svagare inre tryck — som en motor som varvar högre på färre cylindrar. Divergensen säger dock inte när vändningen kommer; den säger att drivkraften sinar. Den som säljer på själva divergensen kan få vänta länge; den som väntar in en motgång på lägre tidsram får bättre pris men riskerar att missa. Det är exakt detta dilemma triple screen löser — nästa kapitel."
-    },
-    {
-     "type": "text",
-     "content": "Oscillatorernas svaghet är spegelbilden av deras styrka: i en stark trend ropar de överköpt dag efter dag medan kursen fortsätter upp. Överköpt är ingen säljsignal — det är ett mått på styrka. Regeln som räddar dig: oscillatorn används bara i riktning med den högre tidsramens trend, och aldrig ensam. Ingen oscillator förutsäger; de mäter. Termostaten vet inte när våren kommer — men den säger när elementet kyls av. Så även här: verktyget beskriver, hierarkin bestämmer."
-    },
-    {
-     "type": "insikt",
-     "content": "Divergensen är utmattelsebevis, inte tidtagarur. Massan orkar mindre — men ingen vet när den somnar."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"MACD och Force Index — komponenter och användning\",\"rader\":[[\"Indikator\",\"Komponenter\",\"Fråga den besvarar\",\"Varning\"],[\"MACD-linje\",\"EMA12 minus EMA26\",\"Vart pekar momentumet?\",\"Släpar i snabba marknader\"],[\"Signallinje\",\"Medelvärde av MACD, 9 perioder\",\"Är läget mätt eller fräscht?\",\"Många korsningar i sidled\"],[\"Histogram\",\"MACD minus signallinje\",\"Ökar eller minskar drivkraften?\",\"Bäst med trendfilter\"],[\"Force Index\",\"Volym gånger prisförändring\",\"Hur starkt engagerar massan sig?\",\"Extremvärden kan bli extremare\"],[\"Divergens\",\"Pris mot indikator\",\"Siner drivkraften?\",\"Inte en tidpunkt\"]]}"
-    },
-    {
-     "type": "utmaning",
-     "content": "Lägg MACD under en index- eller aktiegraf du gillar. Hitta de två senaste divergenserna (kursen nya toppar, MACD svagare). Vad hände efter — och hur lång tid tog det innan priset följde efter? Skriv ner vad en ren divergens-handlare hade vunnit respektive förlorat under väntetiden."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vad bygger MACD-linjen på?",
-     "alternativ": [
-      "Volym och öppningskurs",
-      "Högsta och lägsta kurs",
-      "Skillnaden mellan två exponentiella medelvärden (12 och 26 dagar)",
-      "Räntan och inflationen"
-     ],
-     "ratt": 2,
-     "tips": "Konvergens och divergens — mellan vad?"
-    },
-    {
-     "q": "Vad mäter histogrammet (MACD minus signallinje)?",
-     "alternativ": [
-      "Volymen",
-      "Priset",
-      "Accelerationen i drivkraften",
-      "Antalet affärer"
-     ],
-     "ratt": 2,
-     "tips": "När linjen ligger över signalen och glappet växer — vad ökar?"
-    },
-    {
-     "q": "Vad betyder det när oscillatorn visar överköpt i en stark trend?",
-     "alternativ": [
-      "Sälj omedelbart",
-      "Det är ett styrkemått — ingen säljsignal",
-      "Vändningen är garanterad",
-      "Indikatorn är trasig"
-     ],
-     "ratt": 1,
-     "tips": "Vad händer med överköpta värden i trender som bara fortsätter?"
-    }
-   ]
-  },
-  {
-   "num": 9,
-   "minutes": 10,
-   "title": "Triple Screen — tre vågor, ett beslut",
-   "intro": "Här är Elders mest kända bidrag: triple screen — systemet som föddes ur ett erkännande: ingen indikator fungerar överallt. Trendverktygen arbetar i trender, oscillatorerna i svängningar, och de säger emot varandra precis när man behöver dem. Elders lösning är inte en ny indikator utan en hierarki av tidsramar.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Problemet först: en trendindikator som medelvärdet signerar köp först när rörelsen redan gått långt; en oscillator som ropar köp i en nedtrend varje gång marknaden blivit oversold. Använd dem tillsammans på samma tidsram och de tar ut varandra. Elder ansluter till Charles Dows gamla metafor — tidvattnet, vågen och krusningen: en sjöman som ser på krusningarna missar vågen, och den som ser på vågen missar tidvattnet. Hans tidsramsfaktor är ungefär fem: veckografen är den högre tidsramen till en dagsgraf, som dagsgrafen är till en timmesgraf. Tre skärmar, tre nivåer av samma hav."
-    },
-    {
-     "type": "text",
-     "content": "Skärm ett — den högre tidsramen — avgör riktningen: vilken sida av marknaden du överhuvudtaget får handla på. I boken använder Elder veckografens MACD-histogram: en stigande histogramlutning är en lång trend, en fallande är en kort — endast long i det första fallet, endast short i det andra. Senare versioner av systemet använder även lutningen på ett längre medelvärde; principen är densamma. Skärm ett svarar inte på när — bara på vilken sida som är tillåten. Det är en fråga de flesta aldrig ställer innan de agerar."
-    },
-    {
-     "type": "text",
-     "content": "Skärm två — den lägre tidsramens oscillator — avgör tillfället: vänta på en motgång inom den tillåtna riktningen. I en lång trend betyder det att en daglig oscillator (stochastic, MACD-histogram eller Force Index) ska ha fallit och börjat vända uppåt — köp dippen, inte toppen. I en kort trend tvärtom: sälj rallyt, inte botten. Skärm tre är själva utförandet: en order nära stöd, ett stopp omedelbart på plats — och därefter ett trailing stopp som följer trenden så länge den lever. Tre skärmar, en beslutsordning: sida, tillfälle, utförande."
-    },
-    {
-     "type": "text",
-     "content": "Det viktigaste med triple screen är inte indikatorvalen utan hierarkin. De flesta misstag i trading är tidsramsförbistringar: att handla en signal på dagbasis mot en veckotrend, att drömma om månadshorisontens vinst men stoppas ut på dagens brus. AK1TS bygger samma princip: den högre tidshorisonten betjänar och väger tyngre än den lägre — korta vågor betjänar de långa. För AK1A-eleven är triple screen därför inte bara ett tradingssystem utan ett beslutsramverk: definiera regimen först, agera inom den senare. Indikatorerna kan bytas ut; ordningen kan det inte."
-    },
-    {
-     "type": "insikt",
-     "content": "Skärm ett väljer sida, skärm två väljer tillfälle, skärm tre gör affären. Hoppar du över skärm ett blir oscillatorn en slumptalsgenerator."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Triple screen — tre steg, tre frågor\",\"rader\":[[\"Skärm\",\"Tidsram\",\"Fråga\",\"Typiskt verktyg\",\"Handling\"],[\"1 — Våg ett\",\"Högre (t.ex. vecka)\",\"Vilken sida är tillåten?\",\"MACD-histogrammets lutning\",\"Endast long eller endast short\"],[\"2 — Våg två\",\"Lägre (t.ex. dag)\",\"När är tillfället?\",\"Stochastic, Force Index, histogram\",\"Vänta in en motgång inom trenden\"],[\"3 — Utförande\",\"Ingångsnivå\",\"Var exakt och till vilket pris?\",\"Limit-order, stopp, trailing\",\"Affären genomförs och förvaltas\"]]}"
-    },
-    {
-     "type": "visuell",
-     "content": "radar"
-    },
-    {
-     "type": "utmaning",
-     "content": "Kör ett pappers-triple-screen: välj en aktie, bestäm veckotrendens riktning (skärm ett), identifiera en daglig motgång (skärm två), skriv upp hypotetiskt entry, stopp och storlek (skärm tre). Följ positionen en månad i journalform — utan att riskera en krona. Målet är processen, inte resultatet."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vad är skärm ett:s uppgift i triple screen?",
-     "alternativ": [
-      "Att hitta exakt ingångspris",
-      "Att avgöra trendriktningen på högre tidsram — vilken sida som är tillåten",
-      "Att mäta volymen",
-      "Att sätta trailing stopp"
-     ],
-     "ratt": 1,
-     "tips": "Innan man frågar när, frågar man vilken sida."
-    },
-    {
-     "q": "Vad väntar skärm två på?",
-     "alternativ": [
-      "En bekräftelse på högre tidsram",
-      "En nyhet",
-      "En motgång på lägre tidsram inom den högre trenden",
-      "Att oscillatorn blir överköpt"
-     ],
-     "ratt": 2,
-     "tips": "Köp dippen i en uptrend — vad är dippen?"
-    },
-    {
-     "q": "Vad är den vanligaste formen av tidsramsförbistring?",
-     "alternativ": [
-      "Att använda veckodata på dagar",
-      "Att handla en signal på lägre tidsram mot trenden på högre",
-      "Att rita fel diagram",
-      "Att glömma volymen"
-     ],
-     "ratt": 1,
-     "tips": "Vems trend slår vems signal?"
-    }
-   ]
-  },
-  {
-   "num": 10,
-   "minutes": 10,
-   "title": "Elder-ray — tjur- och björnkraft",
-   "intro": "Elder-ray är Elders egna indikator — namngiven efter röntgenstrålen som ser genom ytan till skelettet. Poängen: se förbi dagens pris till krafterna under det — hur hårt tjurarna pressar uppåt och hur djupt björnarna pressar nedåt, mätt mot massans genomsnitt. Detta kapitel går igenom konstruktion, läsning och en ärlig bedömning av vad indikatorn faktiskt visar.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Konstruktionen är elementär: ta ett tretton dagars exponentiellt medelvärde — konsensus — och mät dagens högsta och lägsta kurs mot det. Tjurkraft (bull power) är dagens högsta kurs minus medelvärdet: hur långt massan lyckades lyfta över sitt eget genomsnitt. Björnkraft (bear power) är dagens lägsta kurs minus medelvärdet: hur djupt den pressade under. Två histogram kring en nollinje. Positiv tjurkraft visar att köparna var igång, negativ björnkraft att säljarna var det — och ofta är båda sanna samma dag, eftersom en handelsdag innehåller båda faserna."
-    },
-    {
-     "type": "text",
-     "content": "Läsningen kombineras alltid med trenden. I en upptrend är den klassiska köpsituationen när björnkraften är negativ men stigande — dipparna blir grundare, björnarna tappar greppet medan tjurarna behåller regimen. I en nedtrend är spegelbilden säljsituationen: tjurkraft fallande, rallyn svagare. Mest information ger Elder-ray när den läses mot prisets beteende: nya kurstoppar med sjunkande tjurkraft är en intern divergens — samma utmattelsebudskap som i förra kapitlet, fast mätt direkt mot konsensus i stället för mot en egen linje."
-    },
-    {
-     "type": "text",
-     "content": "Elder-ray passar utmärkt som skärm två-verktyg i triple screen: den högre tidsramen ger riktningen, och björnkraftens beteende under dipparna ger tillfället. Indikatorn fungerar också som utgångshjälp: när björnkraften i en upptrend plötsligt växer kraftigt är det en varning om att motståndssidan fått fotfäste. Som allt hos Elder underordnas verktyget strukturen — regimen först, indikatorn sen. Det är samma hierarki som triple screen, bara med ett annat instrument på skärm två."
-    },
-    {
-     "type": "text",
-     "content": "Den ärliga bedömningen: Elder-ray är ingen röntgen. Den ser inte orderflödet eller stora aktörers positioner — den packar om information som redan finns i diagrammet: avståndet mellan dagens ytterligheter och ett medelvärde. Det är ändå inte värdelöst — tvärtom: att mäta krafterna mot konsensus varje dag gör något som priset ensamt inte gör, åtminstone inte lika tydligt. Men den som tror att namnet ger superkraften har missat bokens hela poäng: verktyget är det minsta av de tre M. Kirurgen är mer än skalpellen."
-    },
-    {
-     "type": "insikt",
-     "content": "Elder-ray mäter hur långt massan pressar över och under sitt eget genomsnitt — inte framtiden, utan dagens interna maktkamp mätt mot konsensus."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Elder-ray — begrepp och läsning\",\"rader\":[[\"Begrepp\",\"Definition\",\"Tolkning\"],[\"Tjurkraft\",\"Dagens högsta kurs minus EMA13\",\"Hur högt tjurarna lyfter över konsensus\"],[\"Björnkraft\",\"Dagens lägsta kurs minus EMA13\",\"Hur djupt björnarna pressar under\"],[\"Köpsetup\",\"Upptrend och björnkraft negativ men stigande\",\"Motgång som tappar kraft i en lång trend\"],[\"Säljsetup\",\"Nedtrend och tjurkraft fallande\",\"Rally som inte orkar\"],[\"Divergens\",\"Nya pristoppar med sjunkande tjurkraft\",\"Intern utmattelse — ingen tidpunkt\"]]}"
-    },
-    {
-     "type": "utmaning",
-     "content": "Bygg ett litet kalkylblad: EMA13, dagens högsta och lägsta kurs, tjur- och björnkraft för 20 handelsdagar i en aktie. När var björnkraften som djupast — och vad gjorde kursen dagarna efter? Du har nu byggt din första indikator med grundskolans matematik. Det är hela poängen: det finns ingen magi i verktygen."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vad är tjurkraft (bull power) i Elder-ray?",
-     "alternativ": [
-      "Volym gånger kurs",
-      "Dagens högsta kurs minus EMA13",
-      "MACD minus signallinjen",
-      "Kursens avstånd till 200-dagarsmedelvärdet"
-     ],
-     "ratt": 1,
-     "tips": "Mät det som lyfts — och mät det mot vad?"
-    },
-    {
-     "q": "Vad är den klassiska köpsituationen i Elder-ray?",
-     "alternativ": [
-      "Upptrend och djupt fallande björnkraft",
-      "Nedtrend och positiv tjurkraft",
-      "Upptrend och björnkraft negativ men stigande",
-      "Platt marknad och noll tjurkraft"
-     ],
-     "ratt": 2,
-     "tips": "Trenden säger riktning — vad händer med motgångarnas djup?"
-    },
-    {
-     "q": "Vad är EMA13 i modellen?",
-     "alternativ": [
-      "Ett prisområde",
-      "Massans genomsnittliga värde — referenspunkten",
-      "En volymmätare",
-      "En signal från bolaget"
-     ],
-     "ratt": 1,
-     "tips": "Allt i Elder-ray mäts mot denna linje — vad föreställer den?"
-    }
-   ]
-  },
-  {
-   "num": 11,
-   "minutes": 10,
-   "title": "2-procentsregeln — taket per affär",
-   "intro": "Här börjar Money-delen, och ingen regel har räddat fler konton än den första: riskera aldrig mer än två procent av kontot i en enda affär. Elders 2-procentsregel, formulerad i sin klassiska form i uppföljaren Come Into My Trading Room, är enkel att räkna ut, svår att följa — och det är just därför den finns.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Definitionen först: risken i en affär är avståndet från ingång till stopp gånger antalet aktier. 2-procentsregeln säger att denna summa aldrig får överstiga två procent av kontots ekvitet. Exempel: kontot är 100 000 kronor och stoppavståndet fem kronor — då är den högsta risken 2 000 kronor och positionen högst 400 aktier. Notera ordningen: stoppet bestämmer storleken, inte tvärtom. Man börjar med var man har fel — brytpunkten — och räknar baklänges därifrån. Det är samma ordning som AK1A:s riskmatris: definiera kostnaden för att ha fel innan man räknar på fördelen med att ha rätt."
-    },
-    {
-     "type": "text",
-     "content": "Varför just två procent? Första svaret: förlustserier. Tio förluster i rad vid två procents risk kostar omkring arton procent av kontot; vid tio procents risk kostar de nästan två tredjedelar — och skillnaden avgör om du får en inlärningsperiod eller inte. Andra svaret: återvinningens asymmetri. Ett konto som fallit tjugo procent måste stiga tjugofem för att komma tillbaka; ett som fallit femtio måste dubbla sig. Risken handlar inte om att maximera vinsten utan om att hålla återvinningsaritmetiken på din sida — att överleva tillräckligt länge för att lära dig något. Elders poäng, rakt sagt: den som inte kan förlora litet kommer förr eller senare att förlora stort."
-    },
-    {
-     "type": "text",
-     "content": "Den ärliga tillämpningen kräver marginal. Glapp och slippage gör att ett stopp ibland utförs sämre än tänkt, avgifter tillkommer, och i extraordinära lägen — handelsstopp, gap vid öppning — kan den verkliga förlosten vida överstiga den planerade. Erfarna elever använder därför två procent som absolut tak, inte som standard: normal risk lägre, högre endast när setupen motiverar det och likviditeten är god. En aktie som kan stängas för handelsstopp ska aldrig bära full positionsstorlek — det verkliga stoppavståndet är okänt, alltså är den verkliga risken det också. Regeln skyddar bara den som räknar ärligt."
-    },
-    {
-     "type": "text",
-     "content": "Den psykologiska effekten är minst lika viktig som den matematiska: positionens storlek bestämmer din IQ i affären. Med liten risk kan du tänka — ligga kvar i planen och låta stoppet arbeta. Med stor risk börjar du övervaka varje tick, och varje tick blir ett argument; snart fattar du inte beslut utan reagerar. 2-procentsregeln är därmed också en psykologiregel: den köper det lugn som Method kräver för att fungera. Det är de tre M i praktik — Money som skydd för Mind, så att Method får verka."
-    },
-    {
-     "type": "insikt",
-     "content": "Storleken bestämmer din IQ i affären. Med två procents risk kan du tänka; med tjugo kan du bara känna."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Storlek från stoppavstånd — konto 100 000 kronor\",\"rader\":[[\"Stoppavstånd\",\"Maxrisk 2 procent\",\"Max antal aktier\",\"Notera\"],[\"2 kronor\",\"2 000 kr\",\"1 000\",\"Tätt stopp — många aktier\"],[\"5 kronor\",\"2 000 kr\",\"400\",\"Standardexemplet\"],[\"10 kronor\",\"2 000 kr\",\"200\",\"Bredare stopp — färre aktier\"],[\"20 kronor\",\"2 000 kr\",\"100\",\"Risken i kronor är alltid densamma\"]]}"
-    },
-    {
-     "type": "visuell",
-     "content": "skala"
-    },
-    {
-     "type": "utmaning",
-     "content": "Räkna på tre hypotetiska affärer i ett 100 000-konto: ett tätt stopp (2 kr), ett normalt (5 kr) och ett brett (20 kr). Bestäm antal aktier i varje fall. Räkna sedan baklänges på din nuvarande eller senaste position: vad var din faktiska risk i procent av kontot? Siffran brukar överraska."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Hur definieras risken i en affär enligt 2-procentsregeln?",
-     "alternativ": [
-      "Procentandel av positionens värde",
-      "Avståndet till stoppet gånger antalet aktier",
-      "Dagens volatilitet",
-      "Mäklaravgiften"
-     ],
-     "ratt": 1,
-     "tips": "Vad förlorar du om stoppet slår i?"
-    },
-    {
-     "q": "Kontot är 200 000 kronor, stoppavståndet 8 kronor. Hur många aktier som mest?",
-     "alternativ": [
-      "500",
-      "1 000",
-      "250",
-      "800"
-     ],
-     "ratt": 0,
-     "tips": "Två procent av kontot — delat med avståndet."
-    },
-    {
-     "q": "Varför håller regeln kontot vid förlustserier?",
-     "alternativ": [
-      "Den ökar sannolikheten för vinst",
-      "Förlusterna hålls små nog att återvinnas — aritmetiken förblir på din sida",
-      "Den stoppar förluster helt",
-      "Den minskar avgifterna"
-     ],
-     "ratt": 1,
-     "tips": "Tio minus två procent i rad — varför är det överlevbart?"
-    }
-   ]
-  },
-  {
-   "num": 12,
-   "minutes": 10,
-   "title": "6-procentsregeln — storlek från stoppavståndet",
-   "intro": "Tak två skyddar dig inte mot en affär utan mot en månad. 6-procentsregeln säger: när kontot fallit sex procent under en månad — stäng, sluta handla, granska. Tillsammans med positionsstorleken från stoppavståndet utgör den Money-delen av de tre M — och det är här bokens alla trådar knyts till AK1TS Brytpunkt.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "6-procentsregeln har två ansikten. Det första är månadstaket: sjunker kontot sex procent från månadens start upphör handeln — resten av månaden ägs av journalen: vad gick fel, var det metod eller disciplin, vad ändras? Det andra är det totala taket för öppen risk: summan av alla öppna positioners risk — avståndet till respektive stopp gånger storleken — bör inte överstiga sex procent av kontot. Tre positioner med full två procents risk var fyller taket exakt: ett fjärde setup betyder att något gammalt måste stängas eller att det nya avstås. Disciplin är också att inte ta varenda bra idé samtidigt."
-    },
-    {
-     "type": "text",
-     "content": "Regelns funktion är kretsbrytare. Den värsta av alla spiraler är inte en enskild stor förlust utan kedjan: förlust, revansch, större position, ny förlust, djupare revansch — kapitel 4:s katalog i snabbmotion. Månadstaket bryter kedjan tvångsmässigt: oavsett hur det känns finns en definierad punkt där aktiviteten upphör. Den som får en paus påtvingad kan inte förstöra mer just nu — och kommer svalare tillbaka nästa månad. Det är samma logik som en säkring i elsystemet: den finns inte för att strömmen ska bli bättre, utan för att huset ska stå kvar."
-    },
-    {
-     "type": "text",
-     "content": "Positionsstorlek är systemet bakom reglerna: först stoppet (var är tesen fel — brytpunkten), sedan risken i kronor (högst två procent av kontot), sist antalet aktier (risk delat med stoppavstånd). Det är en bakvänd värld för de flesta: utgången definierar ingången. Men det är exakt samma logik som AK1TS Brytpunkts-dimension och AK1A:s riskmatris: definiera först vad som gör tesen fel och vad det kostar — därefter blir allt annat, storlek och förväntan, aritmetik. En analys utan brytpunkt är en åsikt; med brytpunkt är den en affär."
-    },
-    {
-     "type": "text",
-     "content": "Slutligen räkneverkets finess: eftersom reglerna uttrycks i procent anpassar sig storleken automatiskt — kontot växer, positionerna växer; kontot krymper, positionerna krymper. Det är antimartingal tillämpat: öka exponeringen när kontot växer, minska när det blöder — raka motsatsen till hämnd-handelns logik. Så här ser disciplin ut som system: inte karaktär i stormen, utan regler som gör stormen mindre. Karaktär är bra; en kretsbrytare är pålitlig."
-    },
-    {
-     "type": "insikt",
-     "content": "Stoppet först, storleken sen. Elders ordning — utgången definierar ingången — är Brytpunkts-tänk i ren form."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Money-systemet i praktik\",\"rader\":[[\"Situation\",\"Regel\",\"Effekt\"],[\"Ny position\",\"Max 2 procent risk, räknat från stoppavståndet\",\"Ingen enskild affär kan göra riktigt ont\"],[\"Tre positioner öppna\",\"Total öppen risk 6 procent\",\"Tak nått — fjärde setup avstås\"],[\"Kontot ned 6 procent under månaden\",\"Handeln stoppas, journalen öppnas\",\"Kretsbrytare mot revanschspiralen\"],[\"Kontot växer\",\"2 procent räknas på nytt saldo\",\"Antimartingal — storleken följer kapitalet\"]]}"
-    },
-    {
-     "type": "visuell",
-     "content": "compound"
-    },
-    {
-     "type": "utmaning",
-     "content": "Simulera en dålig månad på pappret: fyra A-affärer med två procents risk var, alla stoppade. Rita ekvitetsutvecklingen dag för dag. När triggas 6-procentsregeln — och vad gör du med resten av månaden? Skriv det som en instruktion till dig själv, daterad och undertecknad."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vad händer när 6-procentsregeln triggas under en månad?",
-     "alternativ": [
-      "Positionerna dubbleras",
-      "Handeln upphör resten av månaden — granskningen tar över",
-      "Man byter strategi direkt",
-      "Regeln gäller bara för daytraders"
-     ],
-     "ratt": 1,
-     "tips": "Vad behöver du mer av när det går dåligt — aktivitet eller eftertanke?"
-    },
-    {
-     "q": "Tre positioner med två procents risk var — vad gäller för en fjärde?",
-     "alternativ": [
-      "Den tas om setupen är bra",
-      "Den tas med halverad storlek",
-      "Total öppen risk har nått taket — den avstås eller något stängs",
-      "Regeln saknar koppling till öppen risk"
-     ],
-     "ratt": 2,
-     "tips": "Summera riskerna — vad blir det?"
-    },
-    {
-     "q": "Varför räknas positionsstorleken från stoppavståndet?",
-     "alternativ": [
-      "För att mäklaren kräver det",
-      "För att maximera antalet aktier",
-      "För att stoppet är det enda man vet i förväg",
-      "Därför att det är det man faktiskt kontrollerar — risken definieras där tesen dör"
-     ],
-     "ratt": 3,
-     "tips": "Vad är det du bestämmer själv — kursens väg, eller avståndet till ditt eget fel?"
-    }
-   ]
-  },
-  {
-   "num": 13,
-   "minutes": 10,
-   "title": "Kontroversen — statistiken mot löftet",
-   "intro": "Trading for a Living — titeln är ett löfte: att man kan leva på trading. Forskningen säger något annat om de flesta som försöker. Detta är kursens viktigaste kapitel: vi tar statistiken på fullt allvar, vi låter Elder svara, och vi är ärliga med vad ingen av dem kan bevisa. AK1A:s slutsats står redan fast: vi utbildar, vi tipsar aldrig.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "Statistiken först. Brad Barber och Terrance Odean studerade 66 465 amerikanska hushåll 1991–1996 och fann att de som handlade mest också tjänade sämst — omkring sex och en halv procentenhet per år under marknaden, mest på grund av transaktionskostnader och köp av sensationsaktier. I Taiwan, där komplett dagshandelsdata finns, visade samma forskargrupp att färre än en procent av daytraders kunde visa förutsägbart lönsamma resultat netto över tid. I Brasilien — i en studie som bär den träffande titeln Day Trading for a Living — följde forskarna daytraders på E-mini-terminen: av dem som höll ut mer än 300 dagar förlorade 97 procent pengar, och bara omkring en procent tjänade mer än en brasiliansk minimilön. EU:s CFD-uppgifter visar samma mönster: omkring tre av fyra detaljhandelskonton förlorar pengar. Talet om att 80–95 procent av privata traders förlorar är alltså inte retorik — det är den försiktiga sammanfattningen."
-    },
-    {
-     "type": "text",
-     "content": "Vad visar inte statistiken? Den mäter framför allt frekvent korttidshandel med kostnader och ofta hävstång. Den säger inte att ingen vinner — Taiwandata visar att en liten grupp gör det, år ut och år in — den visar att de är extremt få. Den mäter inte heller jämna, långsamma, systematiska investerare. Men den räcker för en slutsats som varje tradingbok måste förhålla sig till: grundfrekvensen för misslyckande bland dem som försöker leva på detta är överväldigande. Och mot den statistiken står bokens metod: berättelser från dem som klarade det. Det är survivorship-urval — ett urval skevt till förmån för överlevarna — i sin renaste form: vi hör Elder, som lyckades; vi hör inte tusentals som läste boken och förlorade ändå. En akademiker skulle säga att hela genren vilar på den skevan."
-    },
-    {
-     "type": "text",
-     "content": "Elders svar är ändå värt att ta på allvar, för det är ingen bortförklaring. Han skulle säga: de 80–95 procenten som förlorar gör det exakt av de skäl boken beskriver — ingen journal, inga stopp, överbelåning, hämnd, handlande utan system. De flesta som förlorar behandlar trading som hasard och inte som kirurgi; boken finns just för att konvertera hasardare till hantverkare. Det är ett rimligt svar på mekanismen — men det saknar bevis på utfallet. Ingen har mätt en grupp som faktiskt följde alla tre M och journalen under år och jämfört den med en kontrollgrupp. Kanske finns försvaret; kanske är det bara en längre väg till samma statistik. Ärligheten kräver att båda möjligheterna får finnas samtidigt — mekanismen kan vara rätt även om grundfrekvensen förblir brutal."
-    },
-    {
-     "type": "text",
-     "content": "AK1A:s position blir därför dubbelt tydlig. För det första: vi undervisar i analys, ramverk och disciplin — vi ger aldrig handelstips, vi uppmuntrar inte daytrading, och vi betraktar frekvent korttidshandel som en aktivitet där sannolikheten talar emot eleven. För det andra: bokens värde ligger inte i löftet utan i pedagogiken — journal, liten risk, definierat stopp, masspsykologi. Dessa verktyg gäller alla horisonter. En långsiktig investerare som inte kan läsa sin egen rädsla i en nedgång har användning av Elder, även om hen aldrig lägger en enda kort position. Kursens slutpoäng: läs boken för processen — och låt statistiken, inte löftet, sätta dina förväntningar."
-    },
-    {
-     "type": "insikt",
-     "content": "Brasilienstudien heter Day Trading for a Living och visade att 97 procent av de uthålliga förlorade. Elder har förmodligen rätt om mekanismerna; statistiken har helt rätt om grundfrekvensen. Båda sanningarna måste rymmas i samma huvud — det är vad kontroversiell ärlighet betyder."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Bevisläget — vad forskningen visat\",\"rader\":[[\"Studie\",\"Vad den fann\",\"Innebörd för eleven\"],[\"Barber & Odean (USA, 2000)\",\"De mest aktiva hushållen cirka 6,5 procentenheter per år under marknaden\",\"Aktivitet och kostnader äter avkastning\"],[\"Taiwan-studierna (Barber m.fl.)\",\"Färre än 1 procent av daytraders förutsägbart lönsamma\",\"Färdighet finns — men är extremt sällsynt\"],[\"Brasilien (Chague m.fl., 2020)\",\"97 procent av uthålliga daytraders förlorade pengar\",\"Uthållighet utan dokumenterad kant räcker inte\"],[\"ESMA och EU:s CFD-uppgifter\",\"Majoriteten av kontona förlorar pengar\",\"Hävstång förstorar psykets svagheter\"]]}"
-    },
-    {
-     "type": "visuell",
-     "content": "cykel"
-    },
-    {
-     "type": "utmaning",
-     "content": "Skriv en halv sida med rubriken: Varför skulle just jag klara det? Krav: varje påstående måste hänvisa till något du kan belägga — journaldata, testade regler, mätt träffprocent — inte till motivation eller intelligens. Om du saknar belägg, skriv det. Det är den viktigaste texten du skriver i kursen."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vad var huvudfyndet hos Barber & Odean (2000)?",
-     "alternativ": [
-      "Att daytraders slår marknaden",
-      "Att de mest aktiva handlarna avsevärt underpresterade — kostnader och överhandande",
-      "Att teknisk analys fungerar",
-      "Att korta affärer alltid är lönsamma på sikt"
-     ],
-     "ratt": 1,
-     "tips": "Vad kostar det att handla mycket, förutom avgifterna?"
-    },
-    {
-     "q": "Vad visade den brasilianska studien om uthålliga daytraders?",
-     "alternativ": [
-      "Att hälften tjänade minimilön",
-      "Att utbildning garanterade vinst",
-      "Att 97 procent av dem som handlade mer än 300 dagar förlorade pengar",
-      "Att terminer var säkrare än aktier"
-     ],
-     "ratt": 2,
-     "tips": "Studiens titel är kursens torftigaste skämt."
-    },
-    {
-     "q": "Vilken är AK1A:s position i kontroversen?",
-     "alternativ": [
-      "Att daytrading rekommenderas för den som lärt sig de tre M",
-      "Att Elder garanterar vinst om reglerna följs",
-      "Att statistiken är bluff",
-      "Att vi utbildar analys och disciplin — aldrig handelstips, och ingen uppmuntran till daytrading"
-     ],
-     "ratt": 3,
-     "tips": "Vad är det ett utbildningsföretag kan lova — och aldrig lova?"
-    }
-   ]
-  },
-  {
-   "num": 14,
-   "minutes": 10,
-   "title": "Från bok till ekosystem — /profil, Short-Sellern och AK1TS",
-   "intro": "Sista översättningen: vad gör en klassisk tradingbok i ett ekosystem som aldrig ger handelstips? Svaret: AK1A läser Elder som en besluts- och beteendebok. Journalen blir profildata, stoppet blir Brytpunkt, masspsykologin blir sentimentlager — och Short-Sellern får sina viktigaste verktyg. Detta kapitel knyter ihop hela kursen med systemet.",
-   "blocks": [
-    {
-     "type": "text",
-     "content": "/profil: Elder som diagnostiker. Hans katalog av fällor — aktivitetsbehov, hämnd, medelfel, stoppflyttning — är i praktiken en matris för personlighetsdiagnostik. När labbet mäter din profil handlar det om samma frågor: hur reagerar du på förlust, hur länge kan du bära obekväma positioner, hur mottaglig är du för gruppens känslor? Skillnaden är att journalen ger längsgående data — dina verkliga beslut över tid — och profilen ger strukturen att tolka dem. En aktivitetstyp behöver hårda tak i antal beslut per period; en mottaglig medföljare behöver kontraindikeras mot forum och momentum-aktier; en naturlig konträr behöver varningen för att shorta för tidigt. Elder ger ordvecken; profilen ger mätningen."
-    },
-    {
-     "type": "text",
-     "content": "Short-Sellern är kursens mest konkreta koppling. Elders masspsykologi ger shortforskningen dess timinglager: en berättelse behöver både försämrande fundamenta och euforiskt sentiment för att bli en utmärkt short — annars kortar man bara en bra berättelse i förtid. Fundamentalflaggorna kommer från AKM1-modellen: V19 Kapitalförbrukning & Emission-risk (kassan blöder och emissioner väntar), V12 Intäktsstabilitet (intäkterna visar sig vara cykliska eller engångsartade när berättelsen spricker) och V10 Skuldsättningsgrad (skulden som var osynlig i uppgången blir förlamande i nedgången). Sentimentlagret kommer från kapitel 3:s masscykel — toppfasen känns igen på hyllande auktoriteter, ägare som aldrig sålt och rekordvolym. Elder-reglerna styr sedan förvaltningen: shorts dimensioneras med 2-procentsregeln och stopp, för korttäckningar kan pressa kursen högre precis när det känns mest rätt. Samma tre M — även på shortsidan."
-    },
-    {
-     "type": "text",
-     "content": "AK1TS som helhetsram: Vågen är skärm ett — den högre tidshorisontens trend väljer sida; Pris och Tid sätter horisont och förväntan; Brytpunkten är Money — stoppet som definierar storleken via 2-procentsregeln. En vågjournal utan känsloregistrering är halvfärdig — Elder kompletterar matrisen med det mänskliga lagret. Omvänt gäller att Elderteknik utan AK1TS-struktur kan urarta i signaljakt; determinismen — samma regler varje gång — är vad som gör att journalen överhuvudtaget kan mätas och jämföras. Boken och systemet är komplement: den ena ger beteendet, det andra repeterbarheten. Tillsammans ger de det Elder sökte och AK1TS bygger: ett beslutsflöde som är likadant varje gång och ändå lärs av varje avvikelse."
-    },
-    {
-     "type": "text",
-     "content": "Slutmanifestet. AK1A lär ut analys — inte signaler. Vi anser att Elder-processen — journal, små risker, definierade brytpunkter, respekt för massan — är utmärkt pedagogik oavsett horisont, och att löftet om att leva på trading ska mötas av statistiken i kapitel 13 — inte av entusiasm. Den dagen marknaden faller trettio procent och din plan håller dig kvar medan massan panikerar, har du använt boken på rätt sätt. Det är skillnaden mellan att läsa en tradingbok och att utbilda ett omdöme. Kursen är slut — journalen börjar."
-    },
-    {
-     "type": "insikt",
-     "content": "Elder skrev en tradingbok; AK1A läser den som en beslutsbok. Journal, liten risk, definierat stopp — regler som gäller varje horisont, från daytrade till buy-and-hold."
-    },
-    {
-     "type": "tabell",
-     "content": "{\"rubrik\":\"Från bok till ekosystem — översättningstabellen\",\"rader\":[[\"Verktyg hos Elder\",\"AK1A-översättning\",\"Bor i\"],[\"Handelsjournalen\",\"Känslodisciplindata och beslutshistorik\",\"/profil\"],[\"2- och 6-procentsreglerna\",\"Positionsstorlek beräknad från brytpunkt\",\"Risk och Brytpunkten\"],[\"Triple screen\",\"Vågen — högre tidshorisont före signal\",\"AK1TS\"],[\"Masscykelns toppfas\",\"Sentimentlager i shortforskning\",\"Short-Sellern\"],[\"V19, V12, V10\",\"Fundamentala short-flaggor\",\"AKM1-modellen\"]]}"
-    },
-    {
-     "type": "visuell",
-     "content": "bro"
-    },
-    {
-     "type": "utmaning",
-     "content": "Bygg din personliga tre M-checklista inför nästa beslut — oavsett om det är en analys eller en affär. Mind: vad känner jag och vilken är min kända fälla? Method: vad säger strukturen — trend, horisont, brytpunkt? Money: vad är stoppet eller brytpunkten, och hur stor får positionen bli? Tre rader, varje gång, tills det är en vana."
-    }
-   ],
-   "quiz": [
-    {
-     "q": "Vilka AKM1-variabler lyfts i kursen som short-flaggor?",
-     "alternativ": [
-      "V01, V02 och V03",
-      "V19 Kapitalförbrukning, V12 Intäktsstabilitet och V10 Skuldsättningsgrad",
-      "V04 P/S, V05 P/B och V06 EV/EBITDA",
-      "V20 Återköp"
-     ],
-     "ratt": 1,
-     "tips": "Vad blir farligt för ett bolag när uppgången vänder — kassa, intäkter, skuld?"
-    },
-    {
-     "q": "Vad motsvarar skärm ett i AK1TS-översättningen?",
-     "alternativ": [
-      "Brytpunkten",
-      "Priset",
-      "Vågen — den högre tidshorisontens trend",
-      "Radar-diagrammet"
-     ],
-     "ratt": 2,
-     "tips": "Vilken dimension väljer sida innan något annat får hända?"
-    },
-    {
-     "q": "Vad är kursens slutståndpunkt om boken?",
-     "alternativ": [
-      "Ett bevis på att alla kan leva på trading",
-      "Ett verktyg för att generera köp- och säljsignaler",
-      "En föråldrad bok utan värde idag",
-      "En besluts- och beteendebok — pedagogik som gäller alla horisonter, utan handelstips"
-     ],
-     "ratt": 3,
-     "tips": "Vad behåller sitt värde när signalerna bleknar?"
-    }
-   ]
-  }
- ]
+  ]
 }

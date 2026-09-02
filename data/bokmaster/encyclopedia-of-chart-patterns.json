@@ -3,7 +3,7 @@
   "category": "BOKMASTER",
   "weight": "KRITISK",
   "chapterCount": 14,
-  "totalMinutes": 150,
+  "totalMinutes": 140,
   "title": "Encyclopedia of Chart Patterns — Bulkowski: KOMPLETT",
   "summary": "Thomas Bulkowski gjorde det ingen gjort före honom: han mätte diagrammönstren som om de vore maskinkomponenter — tusentals formationer, mönster för mönster, med snittstigningar, felfrekvenser och rankningar för varje enskild typ. Kursen går igenom hela den statistiska apparaten, från huvud-och-skuldror och Adam & Eve-dubbelbottnar till flaggor, koppar, throwbacks och gap, och avslutar med den kontroversiella ärligheten: varför moderna tester av samma mönster visar svagare resultat — och vad i Bulkowskis material som ändå överlever i algoritmernas tidevarv.",
   "minutes": 10,
@@ -12,20 +12,76 @@
   "learn": "Du lär dig Bulkowskis hela statistiska system: hur han mätte mönster i bull- och björnmarknader och vad hans performanstabeller faktiskt säger; vändmönstren med siffror (huvud-och-skuldror topp och botten, trippelformationer, dubbelbottnar med hela Adam & Eve-systematiken); fortsättningsmönstren (stigande triangel, flaggor, vimplar, den berömda high and tight-flaggan, koppen med handtag, measured moves och dead-cat bounce); breakout-mekaniken — throwbacks, pullbacks, gap och volym; hur felfrekvenser blir stop-logik och hur mätregeln blir mål; samt den kontroversiella slutfrågan: mönstrens erosion i modern tid och vad som överlever. Ren teknisk analys med AK1TS Brytpunkt-dimensionen som pedagogisk ram.",
   "why": "Detta är den statistiska motstyckheten till Edwards & Magees anatomibok — samma mönster, men mätta i stället för beskrivna. Varje gång du frågar hur ofta ett utbrott felar, hur ofta kursen kastas tillbaka till inträdesnivån eller vilket mönster som historiskt presterat bäst, ställer du Bulkowskis frågor. AK1TS Brytpunkt-dimension bygger på hans kärinsikt: ett mönster definierar objektivt var tesen dör, och felfrekvenstabellen talar om hur ofta det händer. Utan den statistiska disciplinen blir mönsterhandel anekdoter; med den blir det väntevärdesberäkning. Och kontroversen — att kanterna eroderar när alla ser mönstren — är precis den ärlighet som skiljer forskning från tro.",
   "chapters_list": [
-    { "num": 1, "title": "Mannen som räknade diagram — metoden och materialet", "minutes": 10 },
-    { "num": 2, "title": "Statistikens grammatik — att läsa performanstabellerna", "minutes": 10 },
-    { "num": 3, "title": "Huvud-och-skuldror topp — ikonen får sina siffror", "minutes": 10 },
-    { "num": 4, "title": "Huvud-och-skuldror botten och trippelformationerna", "minutes": 10 },
-    { "num": 5, "title": "Dubbelbottnar — Adam & Eve-systematiken", "minutes": 10 },
-    { "num": 6, "title": "Trianglar — den stigande och hennes släkt", "minutes": 10 },
-    { "num": 7, "title": "Flaggor och vimplar — prestandaeliten", "minutes": 10 },
-    { "num": 8, "title": "Koppen med handtag — O'Neil möter räknemaskinen", "minutes": 10 },
-    { "num": 9, "title": "Measured moves och dead-cat bounce — fortsättningens logik", "minutes": 10 },
-    { "num": 10, "title": "Throwbacks och pullbacks — timingens dolda statistik", "minutes": 10 },
-    { "num": 11, "title": "Gap och volym — utbrottets kvalitetsmått", "minutes": 10 },
-    { "num": 12, "title": "Samma form, olika siffror — trend och marknadsläge", "minutes": 10 },
-    { "num": 13, "title": "Att handla mönstret — inträde, stopp, mål och felfrekvens", "minutes": 10 },
-    { "num": 14, "title": "Kontroversen — rankningar, erosion och vad som överlever", "minutes": 10 }
+    {
+      "num": 1,
+      "title": "Mannen som räknade diagram — metoden och materialet",
+      "minutes": 10
+    },
+    {
+      "num": 2,
+      "title": "Statistikens grammatik — att läsa performanstabellerna",
+      "minutes": 10
+    },
+    {
+      "num": 3,
+      "title": "Huvud-och-skuldror topp — ikonen får sina siffror",
+      "minutes": 10
+    },
+    {
+      "num": 4,
+      "title": "Huvud-och-skuldror botten och trippelformationerna",
+      "minutes": 10
+    },
+    {
+      "num": 5,
+      "title": "Dubbelbottnar — Adam & Eve-systematiken",
+      "minutes": 10
+    },
+    {
+      "num": 6,
+      "title": "Trianglar — den stigande och hennes släkt",
+      "minutes": 10
+    },
+    {
+      "num": 7,
+      "title": "Flaggor och vimplar — prestandaeliten",
+      "minutes": 10
+    },
+    {
+      "num": 8,
+      "title": "Koppen med handtag — O'Neil möter räknemaskinen",
+      "minutes": 10
+    },
+    {
+      "num": 9,
+      "title": "Measured moves och dead-cat bounce — fortsättningens logik",
+      "minutes": 10
+    },
+    {
+      "num": 10,
+      "title": "Throwbacks och pullbacks — timingens dolda statistik",
+      "minutes": 10
+    },
+    {
+      "num": 11,
+      "title": "Gap och volym — utbrottets kvalitetsmått",
+      "minutes": 10
+    },
+    {
+      "num": 12,
+      "title": "Samma form, olika siffror — trend och marknadsläge",
+      "minutes": 10
+    },
+    {
+      "num": 13,
+      "title": "Att handla mönstret — inträde, stopp, mål och felfrekvens",
+      "minutes": 10
+    },
+    {
+      "num": 14,
+      "title": "Kontroversen — rankningar, erosion och vad som överlever",
+      "minutes": 10
+    }
   ],
   "chapters": [
     {

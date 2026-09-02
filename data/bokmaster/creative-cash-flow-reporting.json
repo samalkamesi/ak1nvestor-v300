@@ -3,7 +3,7 @@
   "category": "BOKMASTER",
   "weight": "KRITISK",
   "chapterCount": 15,
-  "totalMinutes": 170,
+  "totalMinutes": 165,
   "title": "Creative Cash Flow Reporting — Mulford & Comiskey: KOMPLETT",
   "summary": "Charles W. Mulford och Eugene E. Comiskey — redovisningsprofessorerna vid Georgia Tech som i skuggan av Enron och WorldCom skrev kassaflödesanalysens motsvarighet till Financial Shenanigans. Kursen går igenom deras metod: att kassaflödesanalysen är en härledd, konstruerad rapport — inte ett bankutdrag — och att det operativa kassaflödet kan skrulas upp genom securitization av fordringar, utsträckta leverantörsbetalningar, engångsposter och klassificeringsflyttar mellan löpande, investerande och finansierande verksamhet. Med fri kassaflödes alla definitioner, svultet capex som FCF-tillväxtens genväg, bokens checklista för anpassad FCF-analys och ett kontrollprogram kopplat till V19 kapitalförbränning.",
   "minutes": 10,
@@ -12,21 +12,81 @@
   "learn": "Efter kursen kan eleven förklara Charles Mulfords och Eugene Comiskeys huvudtes från Creative Cash Flow Reporting — att inte alla kassaflöden är skapade lika, och att den hållbara finansiella prestationen (bokens undertitel: Uncovering Sustainable Financial Performance) bara framträder när kassaflödesanalysen räknas om — samt skilja denna tes från Schilits bredare vinstkvalitetskatalog och O'Gloves resultaträkningshantverk. Eleven kan läsa kassaflödesanalysens tre fack (IAS 7 och K3), förstå den indirekta metoden som gör det operativa kassaflödet till en härledd storhet, och identifiera de fem dörrar där kassaflödet ändå ljuger: definitionsval, working capital-knip, engångsposter, klassificeringsflyttar och svultet capex. Eleven kan beräkna fri kassaflöde i flera varianter (OCF minus capex, underhållsnivå, tillväxtjusterad) och visa med räkneexempel hur FCF-tillväxt fabriceras genom att capex svälts (klassiskt exempel: capex 100 till 25 Mkr ger FCF 40 till 115 Mkr medan maskinparken förfaller), hur fakturaförsäljning på 150 Mkr till 98,5 procent lyfter OCF med cirka 148 Mkr en enda period, och hur DPO-förlängning från 30 till 60 dagar vid 2 400 Mkr inköp ger en engångsboost på cirka 197 Mkr. Eleven kan vidare känna igen engångsposter i det operativa kassaflödet (skatteåterbäringar, tvisteförlikningar, pension holidays), genomföra klassificeringsanalysen (aktiverade utvecklingskostnader, WorldCom-mekaniken, securitization-inflöden i löpande facket), och tillämpa svenska fall [illustrativt]: fakturaförsäljande tillväxtbolag och IFRS 16:s mekaniska OCF-lyft när leasingbetalningar flyttas till finansieringsfacket. Eleven kan köra bokens checklista för anpassad FCF-analys — omklassificera, rensa engångsposter, normalisera capex, beräkna hållbart OCF och hållbar FCF — sammanställa hela red flags-systemet, och köra kontrollprogrammet mot V19 (kapitalförbränning och emissionrisk): operativt kassaflöde, capex och emissioner lästa tillsammans, aldrig en enskild rad. Eleven kan slutligen redogöra för kontroversen — myten att kassaflödet inte kan manipuleras och marknadens rop på FCF som universalbotemedel — inklusive medgivandet att detektering kräver noter och kvartalsdata, jobbigt men nödvändigt.",
   "why": "Creative Cash Flow Reporting (Wiley; undertiteln Uncovering Sustainable Financial Performance) är skriven av Charles W. Mulford och Eugene E. Comiskey, två redovisningsprofessorer vid Georgia Institute of Technology som ledde universitetets Financial Analysis Lab och dessförinnan skrivit Financial Warnings (1996) och The Financial Numbers Game (2002) — boken kom i skuggan av Enron och WorldCom, där WorldCom:s kapitaliserade driftkostnader är historiens största exempel på att det operativa kassaflödet kan skrulas upp genom ren klassificering. För AKM1-ekosystemet fyller boken det tomrum som varken O'Glove (resultaträkningens hantverk, 1987) eller Schilit (vinstschablonernas katalog, 1993) fyller: manipulationen av KASSAFLÖDESET som eget systematiskt fält. Bokens första kapitel heter Seeking Sustainable Cash Flow — hela AKM1:s V19 (kapitalförbränning och emissionrisk, vikt KRITISK) är i praktiken en driftsäker version av samma fråga: hur mycket av kassaflödet upprepas nästa år, och vem finansierar gapet? Bokens genomgående bidrag är tre: (1) demonstrationen att FCF är en konstruktion vars värde styrs av definitionsval, klassificering och capex-beslut; (2) katalogen över knep — securitization, stretched payables, engångsposter, klassificeringsflyttar — med amerikanska fall och räknelogik som eleven här översätter till svenska förhållanden med K3, IAS 7, IFRS 16 och noter; (3) checklistan som gör omräkningen till hantverk: omklassificera, rensa, normalisera, beräkna hållbar FCF. Kursen citerar och återges öppet; tillsammans med Quality of Earnings-kursen (vinstens kvalitet) och Financial Shenanigans (schablonerna) bildar den AKM1:s fulla redovisningskällkritik — och dess kontrovers (kapitel 14) är kursens hjärta: marknadens 'titta på FCF istället' är halvsanning, och V19:s tre-raders-disciplin är svaret.",
   "chapters_list": [
-    { "num": 1, "title": "Mulford & Comiskey — professorerna som jäktade det hållbara kassaflödet", "minutes": 11 },
-    { "num": 2, "title": "Kassaflödesanalysens anatomi — tre fack och en härledd sanning", "minutes": 11 },
-    { "num": 3, "title": "Varför kassaflödet ljuger mindre än vinsten — och när det ändå ljuger", "minutes": 11 },
-    { "num": 4, "title": "Free cash flow-definitionerna — OCF minus capex och traktandets konst", "minutes": 11 },
-    { "num": 5, "title": "Fabricerad FCF-tillväxt via svultet capex — starvationens aritmetik", "minutes": 11 },
-    { "num": 6, "title": "Working capital-knep I — securitization och fakturaförsäljning", "minutes": 11 },
-    { "num": 7, "title": "Working capital-knep II — stretched payables och leverantörskrediten som kusk", "minutes": 11 },
-    { "num": 8, "title": "Engångsposter i det operativa kassaflödet — one-offs som inte är one", "minutes": 11 },
-    { "num": 9, "title": "Klassificeringsmanipulering — att flytta poster mellan facken", "minutes": 11 },
-    { "num": 10, "title": "Svenska fall [illustrativt] — fakturaklipp och IFRS 16:s mekaniska OCF-lyft", "minutes": 11 },
-    { "num": 11, "title": "Bokens checklista — den anpassade FCF-analysen steg för steg", "minutes": 11 },
-    { "num": 12, "title": "Red flags — det kompletta varningssystemet", "minutes": 11 },
-    { "num": 13, "title": "Kontrollprogrammet — V19 kapitalförbränning och tre-raders-disciplinen", "minutes": 11 },
-    { "num": 14, "title": "Kontroversen — myten att kassaflödet inte kan manipuleras", "minutes": 11 },
-    { "num": 15, "title": "Slutsats — den tre-raders-edsvurne analytikern", "minutes": 11 }
+    {
+      "num": 1,
+      "title": "Mulford & Comiskey — professorerna som jäktade det hållbara kassaflödet",
+      "minutes": 11
+    },
+    {
+      "num": 2,
+      "title": "Kassaflödesanalysens anatomi — tre fack och en härledd sanning",
+      "minutes": 11
+    },
+    {
+      "num": 3,
+      "title": "Varför kassaflödet ljuger mindre än vinsten — och när det ändå ljuger",
+      "minutes": 11
+    },
+    {
+      "num": 4,
+      "title": "Free cash flow-definitionerna — OCF minus capex och traktandets konst",
+      "minutes": 11
+    },
+    {
+      "num": 5,
+      "title": "Fabricerad FCF-tillväxt via svultet capex — starvationens aritmetik",
+      "minutes": 11
+    },
+    {
+      "num": 6,
+      "title": "Working capital-knep I — securitization och fakturaförsäljning",
+      "minutes": 11
+    },
+    {
+      "num": 7,
+      "title": "Working capital-knep II — stretched payables och leverantörskrediten som kusk",
+      "minutes": 11
+    },
+    {
+      "num": 8,
+      "title": "Engångsposter i det operativa kassaflödet — one-offs som inte är one",
+      "minutes": 11
+    },
+    {
+      "num": 9,
+      "title": "Klassificeringsmanipulering — att flytta poster mellan facken",
+      "minutes": 11
+    },
+    {
+      "num": 10,
+      "title": "Svenska fall [illustrativt] — fakturaklipp och IFRS 16:s mekaniska OCF-lyft",
+      "minutes": 11
+    },
+    {
+      "num": 11,
+      "title": "Bokens checklista — den anpassade FCF-analysen steg för steg",
+      "minutes": 11
+    },
+    {
+      "num": 12,
+      "title": "Red flags — det kompletta varningssystemet",
+      "minutes": 11
+    },
+    {
+      "num": 13,
+      "title": "Kontrollprogrammet — V19 kapitalförbränning och tre-raders-disciplinen",
+      "minutes": 11
+    },
+    {
+      "num": 14,
+      "title": "Kontroversen — myten att kassaflödet inte kan manipuleras",
+      "minutes": 11
+    },
+    {
+      "num": 15,
+      "title": "Slutsats — den tre-raders-edsvurne analytikern",
+      "minutes": 11
+    }
   ],
   "chapters": [
     {

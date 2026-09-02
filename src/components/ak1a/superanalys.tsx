@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { addXP } from "@/lib/member-local";
 import {
@@ -678,6 +679,46 @@ export function Superanalys() {
             <pre className="mt-4 overflow-x-auto whitespace-pre-wrap rounded-lg border border-gold/20 bg-paper p-4 font-mono text-[11px] leading-relaxed text-muted-foreground">
               {byggDelText(data)}
             </pre>
+          </div>
+
+          {/* Nästa steg i ekosystemet — analysen ska inte sluta här */}
+          <div className="rounded-xl border border-gold/30 bg-card p-6">
+            <h3 className="font-serif text-xl font-bold">Nästa steg i ekosystemet</h3>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Analysen är ett kapitel, inte slutet på boken. Fortsätt flödet:
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              <Link
+                href="/konfluens"
+                className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+              >
+                <p className="font-serif text-base font-bold text-gold">Konfluensradarn →</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                  Har ditt bolag också ett värdegolv och vändande vågor? Korsläs analysen mot
+                  radarns fem oberoende källor.
+                </p>
+              </Link>
+              <Link
+                href="/portfoljbyggare"
+                className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+              >
+                <p className="font-serif text-base font-bold text-gold">Portföljbyggaren →</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                  Ge poängen ett sammanhang: vikten in i en tänkt portfölj och se risk och
+                  sektorspridning förändras i realtid.
+                </p>
+              </Link>
+              <Link
+                href="/rapporter"
+                className="rounded-xl border border-gold/30 bg-paper p-4 transition-colors hover:border-gold/60"
+              >
+                <p className="font-serif text-base font-bold text-gold">Dina rapporter →</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                  Väv samman sparade analyser till en utskriftbar redovisningsrapport —
+                  omslagsband, nyckeltal och metodik på ett blad.
+                </p>
+              </Link>
+            </div>
           </div>
         </section>
       )}

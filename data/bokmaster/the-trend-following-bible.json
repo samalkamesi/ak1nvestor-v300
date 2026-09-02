@@ -1,0 +1,1082 @@
+{
+  "slug": "the-trend-following-bible",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 170,
+  "title": "The Trend Following Bible — Abraham: KOMPLETT",
+  "summary": "Andrew Abraham — råvaru-CTA, grundare av Abraham Investment Management och handlare för eget och klients räkning sedan mitten av 1990-talet — skrev The Trend Following Bible (Wiley Trading, utgiven i slutet av 2012, med förord av trendföljarkollegan David Druz) som den praktiska manualen i hur en privathandlare kör en CTA-strategi: handla alla marknader likadant, köp styrka via utbrott och rankning, riskera en halv till en och en kvarts procent av kärnekviteten per affär, tak per sektor och riktning — och överlev de fleråriga svackor som är metodens andning. Kursen går igenom metoden systematiskt: vad trendföljning är (köp högt, sälj högre — rakt mot intuitionen), varför marknader trendar (herding och anchoring — mänsklig natur, inte mystik), de stora namnen och deras track records (Dennis, Dunn, Campbell, Mulvaney — med deras krascher), absolut mot relativ momentum, positionsstorleks-matematiken med kärnekvitet i svenska kronor, breakout- och retratement-planerna med MACD-filter och 39-ATR-trailing, riskhanteringens tak-hierarki, drawdown-psykologin (där tålamodet när det går DÅLIGT är det verkliga testet), diversifiering över sex marknadsgrupper, den specifika översättningen till aktier (IBD50-universum, 200-dagars EMA-regim, prisklassfilter) — och kontroversen trendföljning mot mean-reversion, där AK1A:s syntes står sist: AK1TS mäter vågor deterministiskt — impulsvåg-trend på kort horisont plus basbygge-värde på lång = Konfluens förenar skolorna.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för bokens ursprung och upphovsman — Andrew Abraham, CTA och grundare av Abraham Investment Management, handlare sedan mitten av 1990-talet, med förord av David Druz — och differentiera den mot syskonkurserna: Way of the Turtle är experimentet, Covel är historien, Pring är momentum-BEGREPPET, Abraham är metoden systematiskt — trendföljning som livsstil och investeringsfilosofi · förklara vad trendföljning ÄR och INTE är: ingen prognos, ingen berättelse — köp när priset bevisar styrka, exit när trenden bryts, med låg träffkvot och asymmetrin som bär resultatet · härleda trender ur beteendeekonomin — herding, anchoring, underreaktion, förlustaversion — och koppla till forskningen: Moskowitz–Ooi–Pedersens Time Series Momentum (2012) och Jegadeesh–Titman (1993) · återge de stora namnens track records med deras krascher: Dennis, Dunn, Campbell, Mulvaney — och bokens egna profiler (Druz, Eckhardt, Parker, Cheval, Seidler m.fl.) · skilja absolut mot relativ momentum och visa hur Abrahams plan använder BÅDA — rankat universum på snittat ROC som relativt urval, breakout-entryn som absolut trigger · räkna positionsstorlek från kärnekvitet i svenska kronor: 0,75–1,25 procent per affär, risk per kontrakt, termostaten när volatiliteten stiger — Turtle-N-matematikens rakt släktskap · köra entry- och exit-mekaniken som checklista: X-dagars utbrott med MACD-filter (kurvan, inte histogrammet), initialt stopp, 39-perioders ATR-trailing — och retratement-planen där veckan styr över dagen · tillämpa riskhanteringens tak-hierarki: max 5 procent per sektor, öppen handelsrisk högst 20 procent av kärnekviteten, marginal högst 15 procent, max tio marknader långa och tio korta · möta drawdowns med plan i stället för panik: Dunn fem raka förlustår, Abrahams egna 2009–2011, ruin-formeln e upphöjt till minus två my per sigma — och bokens mest motstridiga råd: köp trendföljare I drawdown · förklara diversifieringens roll: sex marknadsgrupper, jämn ekvitetsutveckling kräver spridning över marknader och tid · översätta metoden till aktiemarknaden specifikt: rankat aktieuniversum, aldrig köpa under tio dollar eller korta under tjugo, S&P lång bara över 200-dagars EMA · värdera kontroversen trendföljning mot mean-reversion med båda skolornas akademi och krascher — och formulera AK1A:s syntes: impulsvåg-trend kort, basbygge-värde lång, Konfluens förenar · samt bygga sin egen mekaniska plan på ett A4 med daterad tålamodsplan, mappad mot V03, V11, V12, V19 och AK1TS Pris och Tid.",
+  "why": "Bokkanon-post bk-067 (tier 2, status kanon) sammanfattar uppdraget: Abraham visar hur en privathandlare kan köra CTA-strategin — risk per affär, utveckling av ekviteten och tålamodets matematik — med ts-variablerna Pris och Tid. Kursernas differentiering gör valet självklart: Faiths Way of the Turtle är experimentets inrikesrapport (KAN trading läras ut?), Covels Complete TurtleTrader är den journalistiska historien, Prings momentum-bok äger BEGREPPET hastighet — The Trend Following Bible är METODEN systematiskt: hela livsstilen som en yrkesverksam CTA kör den, skriven för att en privatperson ska kunna replikera strukturen hemma. För AK1A-ekosystemet är boken kritisk av fyra skäl: den levererar den kompletta riskhierarkin (per affär, per kontrakt, per sektor, öppen exponering, marginal, riktning) som AK1TS Brytpunkts-aritmetik är en pedagogisk klon av; den ger aktieöversättningen (200-dagars EMA-regim, rankat universum, prisklassfilter) som ligger närmast analysmotorns egna rader (MA200, momentum 63, momentum 5); den är brutalt ärlig om drawdowns — med Dunn, Dennis, Niederhoffer och Abraham själv som belägg — vilket är motgiftet mot varje trendflirt utan bukförmåga; och kontroverskapitlet tvingar fram den avgörande frågan för hela ekosystemet: hur förhåller sig trend (impulsvåg) till värde (basbygge) — och svaret, Konfluens, är kursens bidrag till AK1A:s teoretiska ryggrad. En källkritisk not, öppet redovisad: kursuppdraget angav initialt Sarah Ripingilles som författare — verifiering mot Wiley och bokkanon visar att rätt upphovsman är Andrew Abraham, Wiley Trading (e-bok november 2012, inbunden december 2012; kanonposten daterar utgåvan 2013). Kursen citerar boken öppet, inklusive dess svaghet: löftet om en exakt plan utan dolda parameter — och de recensioner som påpekat att exakta X- och Y-värden ändå lämnas till läsaren.",
+  "chapters_list": [
+    "1. Boken och mannen — CTA:n som skrev manualen",
+    "2. Vad trendföljning är — köp högt, sälj högre (mot intuitionen)",
+    "3. Varför marknader trendar — herding, anchoring, mänsklig natur",
+    "4. De stora namnen — Dennis, Dunn, Campbell, Mulvaney",
+    "5. Absolut mot relativ momentum — två motorer i en plan",
+    "6. Risk per enhet — kärnekvitets-matematiken i SEK",
+    "7. Entry och exit — utbrott, MACD-filtret och 39-ATR-trailingen",
+    "8. Riskhanteringens tak — sektor, exponering, marginal, riktning",
+    "9. Drawdowns — tålamodet när det går DÅLIGT är testet",
+    "10. Diversifiering — sex marknadsgrupper, en ekvitetskurva",
+    "11. Trendföljning på aktier — IBD50, 200-dagars EMA och prisklasser",
+    "12. Kontroversen — trendföljning mot mean-reversion",
+    "13. Syntesen — impulsvåg kort, basbygge lång: Konfluens förenar",
+    "14. Sammanfattning — hela metoden på ett A4 (V + AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Boken och mannen — CTA:n som skrev manualen",
+      "intro": "Före reglerna, före risken — mannen och löftet. Andrew Abraham är inte journalist och inte tidigare elev som skriver memoarer: han är en yrkesverksam råvaru-CTA som skrev manualen han själv hade saknat. Kursen inleds med vem han är, vad boken lovar — och hur den förhåller sig till Turtle-kursen, Pring-kursen och resten av bokmasterns trendfamilj.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Upphovsmannen, citerat öppet från bokens eget presentationsmaterial: Andrew Abraham är commodity trading advisor och grundare av Abraham Investment Management, och har handlat för egetkonto och sida vid sida med andra CTA:er sedan mitten av 1990-talet. Han är dessutom skribent — Technical Analysis of Stocks & Commodities, Investment Advisor och SeekingAlpha bland utgivarna — och talar regelbundet på Traders Expo. Boken kom i Wiley Trading-serien i slutet av 2012, knappt 220 sidor, med förord av David Druz — själv en erfaren trendföljare och därmed en kollegas parafv på innehållet. Det är den bakgrunden som ger boken dess particularitet i litteraturen: den är skriven inifrån yrket, av någon vars eget kapital följer reglerna."
+        },
+        {
+          "type": "text",
+          "content": "Bokens löfte, som Abraham formulerar det själv: han ger läsaren sin exakta handelsplan — inget dolt, inget undanhållet. Manualen täcker hela livscykeln: universum och rankning, två entry-planer (utbrott och retratement), stopp och trailing, risk per affär, tak per sektor och riktning — och den psykologiska utrustning som krävs för att sitta kvar genom svackorna. Löftet ska kursen hålla mot: vi går igenom planen komplett, men också med den ärlighet recensionerna kräver — exakta parameter-värden (antal dagar X och Y, MACD-inställningar) specificeras tunnare i texten än löftet antyder, och kapitel 7 hanterar hur eleven själv sätter kalibreringen. En manuals värde ligger inte i att varje skruv är måttangiven — det ligger i att motorn är komplett."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot syskonkurserna, som kursens uppdrag kräver. Way of the Turtle (bk-065) är EXPERIMENTET: Faiths inrikesrapport om hur Dennis satsning att lära ut trading till vem som helst — regelverket fanns där, men bokens ämne var människorna. Covels The Complete TurtleTrader (bk-066) är HISTORIEN: den journalistiska kartläggningen av samma berättelse utifrån. Prings momentum-bok (bk-060) är BEGREPPET: en hel bok om hastighet, divergens och tre klockor. The Trend Following Bible är METODEN systematiskt — trendföljning som livsstil och investeringsfilosofi: hela paketet från universum till psyke, skrivet för att en privathandlare ska kunna köra en CTA-strategi i egen regi. Där Turtle-kursen slutade med att reglerna kan publiceras i tidningen men disciplinen inte kan tryckas, börjar den här: här är tidningen — nu återstår att förstå varför den fungerar och vad den kostar."
+        },
+        {
+          "type": "insikt",
+          "content": "Turtle-kursen besvarade om trading kan läras ut. Abrahams bok besvarar hur man lever det som lärs ut — en yrkesutövares komplett dokumenterade livsstil. Information mot livsstil: det är hela skillnaden mellan experimentet och manualen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Trendfamiljen i bokmastern — fyra böcker, fyra uppdrag\",\"rader\":[[\"Bok\",\"Uppdrag\",\"Vad den lämnar\",\"Kursens släktskap\"],[\"Way of the Turtle (Faith, bk-065)\",\"experimentet — kan trading läras ut?\",\"det kompletta Turtle-regelverket + psykologin\",\"reglernas ursprung; samma 20/10-logik\"],[\"The Complete TurtleTrader (Covel, bk-066)\",\"den journalistiska historien\",\"intervjuer, eftermäle, branschperspektiv\",\"kontext och överlevnads-selektion\"],[\"Martin Pring on Market Momentum (bk-060)\",\"begreppet — hastighet, tid, rörelsemängd\",\"ROC, KST, divergens, tre tidsdimensioner\",\"teoriavdelningen bakom Abrahams ROC-rankning\"],[\"The Trend Following Bible (Abraham, bk-067)\",\"metoden systematiskt — livsstilen\",\"hela CTA-planen: universum, entry, risk, tak, psyke\",\"den operativa manualen — kursens ämne\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget löfte innan du börjar: en mening på formatet — jag följer en skriven plan och riskerar aldrig mer än X procent per beslut — där X är en siffra du faktiskt kan leva med efter tio raka förluster. Datera meningen. Vid kursens slutprojekt (kapitel 14) jämför du löftet med den plan du byggt: om siffran och planen inte stämmer har du skrivit en önskan, inte ett löfte."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — bokens hela projekt kan enas med AKM1:s i en rad: temperamentet ska byggas in i dokumentet. Abrahams plan är CTA-versionen av samma princip som AKM1:s tjugo variabler tvingar fram — beslutet fattas av en skriven struktur, inte av stundens känsla. AK1TS lägger till Pris och Tid (kanonpostens ts-variabler): när strukturen gäller och horisonten är utsatt kan vågmotorn läsas utan tro."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vem skrev The Trend Following Bible och vilken bakgrund har författaren?",
+          "alternativ": [
+            "Sarah Ripingilles, ekonomijournalist på Wall Street Journal",
+            "Andrew Abraham — CTA och grundare av Abraham Investment Management, handlare sedan mitten av 1990-talet",
+            "Michael Covel, författare och trendföljningshistoriker",
+            "Curtis Faith, tidigare Turtle-lärling"
+          ],
+          "ratt": 1,
+          "tips": "Kursuppdragets ursprungliga författaruppgift verifierades mot Wiley — rätt svar är yrkesverksam CTA, inte journalist."
+        },
+        {
+          "q": "Vad är den viktigaste differentieringen mot Way of the Turtle-kursen?",
+          "alternativ": [
+            "Turtle-boken är experimentet; Abrahams bok är metoden systematiskt — trendföljning som komplett livsstil med hela planen",
+            "Turtle-boken handlar om aktier; Abrahams om optioner",
+            "De beskriver samma experiment från två håll",
+            "Abrahams bok är en biografi om Richard Dennis"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vad varje bok lämnar i handen: en berättelse om människor — eller en manual från universum till psyke?"
+        },
+        {
+          "q": "Vem skrev förordet till boken och varför spelar det roll?",
+          "alternativ": [
+            "Warren Buffett — värdeinvesterarens välsignelse",
+            "Benjamin Graham — postumt",
+            "David Druz — själv erfaren trendföljare, alltså en yrkeskollegas parafv på innehållet",
+            "Richard Dennis — experimentets arkitekt"
+          ],
+          "ratt": 2,
+          "tips": "Förordet kommer inifrån yrket — vem av dessa fyra lever av trendföljning själv?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Vad trendföljning är — köp högt, sälj högre (mot intuitionen)",
+      "intro": "Om metoden skulle sammanfattas i fyra ord vore det dessa: köp högt, sälj högre. Kursens andra kapitel visar varför det är rakt motsatt intuitionen — och varför just det är poängen. Trendföljning är inte att förutsäga; det är att infinna sig när priset lägger fram bevis, och att lämna när beviset dementeras.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen först, utan försköning. Trendföljning är en systematisk strategi som köper när priset visar styrka — bryter genom ett tidigare högstahögsta, noteras på 52-veckors-höga — och som lämnar när trenden bryts, genom trailing stopp eller motbrott. Ingen analys av utbud och efterfrågan, ingen berättelse om bolaget, ingen uppfattning om vad priset BÖR vara. Priset är all information systemet använder. Det låter enkelt. Det är emot varje instinkt den mänskliga hjärnan har: vi är tränade att köpa billigt och sälja dyrt — lämna pengar på bordet genom att köpa det dyraste på listan känns som ett misstag redan innan affären är gjord."
+        },
+        {
+          "type": "text",
+          "content": "Och det är precis därför det fungerar, säger trendföljningstraditionen: obehaget är barriären. Kahneman–Tversky-traditionens förklaringsmodeller — förankring vid gamla priser, ångern över att köpa högre än grannen, aversionen mot att realisera små förluster — stänger ute det stora flertalet från att handla systematiskt på styrka. Turtle-kursens E-värde-matematik fullbordar bilden: ett system med 35–45 procents träffkvot kan vara en pengamaskin om snittvinsten är flera gånger snittförlusten. Trendföljningens impopuläraste sanning, som boken delar med hela genren: man ska INTE ha rätt ofta — man ska tjäna mycket när man har rätt. Förlusterna är avgiften för att få vara med när de få stora trenderna kommer; utan dem finns ingen möjlighet att heller finnas."
+        },
+        {
+          "type": "text",
+          "content": "Vad trendföljning INTE är, lika viktigt: det är inte att plocka botten eller toppen (som vore prognos); inte att ha åsikt om råvaror, valutor eller bolag (som vore fundamental analys); inte att handla mycket (Abrahams plan ligger ofta still — vi kommer till tristessen i kapitel 9); och inte ett system för att slå index varje år (det underpresterar i åratal — också kapitel 9). Vad det ÄR: en disciplinerad närvaro i det som redan rör sig. Bäst formulerat som bokens genrens gamla maxim: låt inte de stora vinsterna komma undan — don't let the big profits get away. Allt annat i manualen — rankningen, stoppen, taken — finns för att den ena regeln ska kunna följas."
+        },
+        {
+          "type": "insikt",
+          "content": "Trendföljningens fyra ord att memorera: köp högt, sälj högre. Obehaget du känner vid tanken är inte ett varningstecken — det är barriären som håller konkurrensen ute och som gör att edge:en inte arbitreras bort av att alla kan skriva den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Intuitionen mot metoden — sex brytningar\",\"rader\":[[\"Fråga\",\"Intuitionens svar\",\"Trendföljningens svar\"],[\"Vad köper jag?\",\"det som fallit — billigt, på rea\",\"det som stiger — styrka, bevisat i rörelse\"],[\"När köper jag?\",\"när det känns tryggt efter nedgång\",\"när priset bryter genom motstånd — även på års-höga\"],[\"Hur ofta har jag rätt?\",\"ofta — gärna 70 %\",\"sällan — 35–45 % räcker med asymmetri\"],[\"Vad sätter exiten?\",\"vinstmål — ta hem när det räcker\",\"trendens brott — aldrig mål, aldrig mage\"],[\"Vad är priset på metoden?\",\"att köpa dyrt ibland\",\"många små förluster + år av tålamod\"],[\"Vad är kanten?\",\"att veta mer än marknaden\",\"att marknader trendar av mänskliga skäl\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör 52-veckors-testet på dig själv: ta dina fem senaste aktieköp. Låg priset nära sitt 52-veckors-högsta eller nära sitt 52-veckors-lägsta vid köptillfället (grovt via graf)? Notera varje köp som H (nära höga) eller L (nära låga). Räkna andelen L — för de flesta privata investerare är den överväldigande, och det är exakt därför den här boken känns som en björntjänst att läsa: den föreslår motsatsen mot reflekset du just mätte."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — i AK1TS:s språk är köp-högt-regeln impulsvågens logik: en impulsvåg är prisets bevis på trend, och inträdet definieras av beviset — aldrig av önskan om en botten. AKM1:s V19 Kapitalförbränning & Emission-risk är fundamentalens motsvarande obehagsregel: bolaget som BRINNER kassa ser ofta billigt ut — och det är samma intuitionens fälla, nu i bokslutsformat. Köp bevis, inte önskan — på båda nivåerna."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är trendföljningens kärnuppfattning om när man ska köpa?",
+          "alternativ": [
+            "Köp när priset fallit minst 50 procent från toppen",
+            "Köp när priset visar styrka — bryter motstånd eller noteras på nya höjder — oavsett hur dyrt det känns",
+            "Köp när fundamentals förbättras i en billig aktie",
+            "Köp på månadsskiftet för statistisk fördel"
+          ],
+          "ratt": 1,
+          "tips": "Metoden handlar bevis i prisrörelsen — inte rabatter i prisnivån."
+        },
+        {
+          "q": "Vilken träffkvot är typisk för trendföljning — och varför fungerar den ändå?",
+          "alternativ": [
+            "70–80 procent — systemet har nästan alltid rätt",
+            "Cirka 50 procent — vinster och förluster balanserar",
+            "35–45 procent — snittvinsten är flera gånger snittförlusten, så asymmetrin bär resultatet",
+            "100 procent — stoppen eliminerar förluster"
+          ],
+          "ratt": 2,
+          "tips": "Minns Turtle-kursens E-värde: låg träffkvot med asymmetri kan slå hög träffkvot med blodiga stopp."
+        },
+        {
+          "q": "Vad är den maximering boken delar med hela trendföljningstraditionen?",
+          "alternativ": [
+            "Köp billigt och sitt tyst — tiden är din vän",
+            "Låt inte de stora vinsterna komma undan — don't let the big profits get away",
+            "Dubblera positionen efter varje förlust",
+            "Handla bara när nyhetsflödet bekräftar trenden"
+          ],
+          "ratt": 1,
+          "tips": "Allt i manualen — stopp, tak, tålamod — finns för att en enda regel ska kunna följas. Vilken?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Varför marknader trendar — herding, anchoring, mänsklig natur",
+      "intro": "Om metoden vore bara regler vore den magi. Kapitlet gräver i grundfrågan: VARFÖR trendar marknader överhuvudtaget? Abrahams svar — och trendföljningstraditionens — är beteendeekonomiskt: marknader trendar för att människor är människor. Herding, förankring, underreaktion och förlustaversion är inte brus i systemet — de är systemet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Byggstenarna, citerat öppet ur beteendeekonomins kanon. HERDING — flockbeteende: vi gör som de andra gör, särskilt under osäkerhet; när en rörelse börjar flockas kapitalet in i den och förstärker den. ANCHORING — förankring: vi fastnar vid gamla priser och gamla sanningar; en aktie som stigit från 50 till 80 känns fortfarande dyr för den som förankrats vid 50 — varför marknaden underreagerar på ny information och trender föds långsamt. FÖRLUSTAVERSION: den som redan sitter på vinst vägrar realisera, den som sitter på förlust vägrar erkänna — positioner hålls och släpas, vilket förlänger rörelserna. Tillsammans producerar dessa drag det trendföljaren exploaterar: information sprids ojämnt, beslut fattas långsamt och flockat — priset glider i stället för att hoppa till jämvikt."
+        },
+        {
+          "type": "text",
+          "content": "Den akademiska förankringen, öppet redovisad. Moskowitz, Ooi och Pedersen publicerade 2012 Time Series Momentum — tidsseriemomentum: instrumentets avkastning förutsäger dess EGEN framtida avkastning, dokumenterat på 58 terminsinstrument — aktieindex, valutor, råvaror och obligationer — över decennier av data. Det är den absoluta momentumens (kapitel 5) vetenskapliga fot: trender i tidsserie är inte anekdoter utan ett tvärvetenskapligt mönster. Den relativa sidan har Jegadeesh–Titman (1993): aktier som slagit sina kollegor de senaste 3–12 månaderna tenderar fortsätta slå dem. Turtle-kursen tillade balansen: Park och Irwins översikt (2007) visar att tekniska reglers lönsamhet mattats på modern data — kantens existens och kantens storlek är två olika frågor. Bokens hållning: marknader trendar av mänskliga skäl; därför försvinner inte trenderna för att strategin är känd — kunskapen om felen botar dem inte (Montiers ord, via Quantitative Value-kursen)."
+        },
+        {
+          "type": "text",
+          "content": "Den institutionella långsamheten — trendens tredje ben. Kapitalförvaltningens organisation förstärker det mänskliga: förvaltare utvärderas kvartalsvis, karriärrisken gör att positioner bygggs försiktigt och successivt; indexregler, mandat och compliance gör att stora pengar rör sig långsamt. Det är därför en trend som börjar i energi kan pågå i ett halvår innan den är fullt prissatt — de stora pengarna KAN inte vara med från första dagen. Den privata trendföljarens oansenlighet är därmed en strukturell fördel: du kan gå in och ut utan att flytta marknaden (V11-logik). Slutsatsen som kursen vill att du bär med dig: trender är inte marknadens sjukdom — de är dess normala tillstånd, producerat av hjärtat i systemet: oss."
+        },
+        {
+          "type": "insikt",
+          "content": "Trendföljningens edge är inte matematisk utan antropologisk: den köper det långsamma, flockade, förankrade sättet människor fattar beslut på. Så länge människor flockas, förankras och avskyr förluster — kommer trenderna, och med dem metodens råmaterial."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra beteendedrag — hur de skapar och förlänger trender\",\"rader\":[[\"Beteendedrag\",\"Mekanism\",\"Effekt på pris\",\"Vad trendföljaren gör\"],[\"Herding (flock)\",\"vi gör som andra under osäkerhet\",\"rörelser förstärks och självmatar\",\"följer rörelsen — emot flockens tvekan\"],[\"Anchoring (förankring)\",\"gamla priser styr uppfattningen\",\"underreaktion — trender föds långsamt\",\"köper utbrottet som flocken avfärdat\"],[\"Förlustaversion\",\"vinster realiseras, förluster bäras\",\"trender sträcks i båda riktningar\",\"sitter kvar till trailing-stoppets bevis\"],[\"Institutionell tröghet\",\"kvartalstänk, karriärrisk, mandate\",\"stort kapital rör sig långsamt\",\"utnyttjar att små pengor är snabba pengar (V11)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör herding-testet på en aktuell markberättelse: välj en tillgång som media pratat mycket om det senaste halvåret. Skriv ned när du första gången hörde talas om den — och vad priset gjort sedan dess. Fråga sedan: förväntades rörelsen när DU hörde om den, eller började du följa flocken in i en trend som redan var ett faktum? En mening om vad testet lärde dig om din egen förankring."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — V12 Intäktsstabilitet är den fundamentala versionen av samma underreaktion: bolag med återkommande intäkter rörs långsamt och förutsägbart — deras kurser trendar renare. AK1TS Pris-dimensionen mäter rörelsens fakta utan förankringens brus: ingen vågklass frågar vad priset BÖR vara. Beteendegrunden är därmed kursens bro tillbaka till Quantitative Value: värde och trend är två sidor av samma mänskliga mynt — överreaktion skapar billighet, underreaktion skapar trender."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken roll spelar anchoring — förankring — i trendernas uppkomst?",
+          "alternativ": [
+            "Den får marknaden att överreagera direkt på ny information",
+            "Den gör att investerare fastnar vid gamla priser och underreagerar — trenderna föds långsamt",
+            "Den får alla att sälja samtidigt",
+            "Den påverkar bara råvarumarknader"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig varför en aktie som stigit kraftigt fortfarande kan kännas dyr — vad jämför hjärnan med?"
+        },
+        {
+          "q": "Vad dokumenterade Moskowitz–Ooi–Pedersens Time Series Momentum (2012)?",
+          "alternativ": [
+            "Att aktiers inbördes rankning förutsäger framtida avkastning",
+            "Att instrumentets egen historik förutsäger dess framtid — absolut momentum — dokumenterat på 58 terminsinstrument",
+            "Att trender inte existerar på valutor",
+            "Att teknisk analys är ovetenskaplig"
+          ],
+          "ratt": 1,
+          "tips": "Time series = instrumentet mot sitt eget förflutna. Hur många instrument och vilken jämförelse?"
+        },
+        {
+          "q": "Varför försvinner inte trenderna för att strategin är publicerad och känd?",
+          "alternativ": [
+            "Därför att strategin är hemligt skyddad av CTA-branschen",
+            "Därför att kanten bygger på djupt mänskliga beteenden — herding, anchoring, förlustaversion — som kunskap inte botar",
+            "Därför att börsen är ineffektiv för alltid utan mänsklig inblandning",
+            "Därför att utbrotten är slumpmässigt lönsamma"
+          ],
+          "ratt": 1,
+          "tips": "Montiers regel från Quantitative Value-kursen gäller här också: att VETA om sina fällor eliminerar dem inte."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "De stora namnen — Dennis, Dunn, Campbell, Mulvaney",
+      "intro": "Ingen strategi är trovärdigare än sina utövare. Kapitlet går igenom de trendföljare vars track records blivit metodens bevisning — och vars krascher blivit dess prislista. Dennis, Dunn, Campbell, Mulvaney: fyra namn, fyra decennier, fyra olika varianter av samma filosofi — och bokens eget galleri av samtida utövare bakom dem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fyra huvudnamnen, med öppet redovisade och grovt hållna siffror från offentligt rapporterade källor. RICHARD DENNIS — Turtle-experimentets arkitekt: förvandlade några tusen lånta dollar till en av Chicagos största förmögenheter i råvaruterminerna på ett drygt decennium; lärde ut reglerna till drygt tjugo lärlingar som tillsammans tjänade över 150 miljoner dollar — men sårades själv svårt av förluster i kölvattnet av 1987 (offentligt rapporterat i storleksordningen hälften av kapitalet) och drog sig undan klientförvaltning. WILLIAM DUNN — Dunn Capital, grundat 1974: decennier av renodlad mekanisk trendföljning utan diskretion; boken själv belägger uthålligheten med dess baksida — fem raka förlustår och en drawdown över sjuttio procent, följt av återhämtning. Dennis visar hur man vinner; Dunn visar hur man överlever att vinna."
+        },
+        {
+          "type": "text",
+          "content": "KEITH CAMPBELL — Campbell & Company, grundat 1972 och därmed bland de äldsta trendföljande CTA-husen: byggde en institution på diversifierad, regelbaserad trendföljning över valutor, räntor och råvaror — beviset på att metoden kan organiseras, skalas och kombineras (huset har även integrerat fundamental signaler i vissa program — diversifiering i metoden, inte bara i marknader). PAUL MULVANEY — Mulvaney Capital, brittisk och renodlat långsiktig: grovt rapporterat över hundra procent avkastning år 2008 — det år de flesta förlorade — genom att konsekvent ha varit med i årets våldsamma trender i energi, valutor och obligationer. Mulvaneys pris: år av platt eller negativ kurva mellan kriserna; hans hus är metodens renaste fade — extrem uthållighet, extrem avkastning, extrema svackor. Tillsammans bildar de fyra metodens hela register: snabbhet (Dennis), överlevnad (Dunn), institution (Campbell), renhet (Mulvaney)."
+        },
+        {
+          "type": "text",
+          "content": "Bokens eget galleri är bredare än de fyra ikonerna: i profiler och exempel återfinns David Druz (förordsförfattaren), William Eckhardt, Jerry Parker, Elizabeth Cheval, Howard Seidler, Tom Shanks, Michael Clarke, Bernard Drury med flera — Turtle-barnen och CTA-generationen som byggde egna hus på samma filosofi (Way of the Turtle-kursen, kapitel 11, är deras historia). Den gemensamma nämnaren är slående och är kapitlets egentliga budskap: mekaniska regler, bred diversifiering, risk per affär i bråkdelar av procenten — och tidsrymden decennier, inte år. Men kursen håller Turtle-kursens varning levande: track recordsoffran survivorship — vi minns de som lever. Boken är själv ärlig nog att visa motexemplen — Dennis fall, Niederhoffers två sprängda konton, Dightons åttio procent på en enda valutaposition — och det galleriet tillhör kapitel 9. Metodens bevisning är stark; ingen enskild utövare är beviset."
+        },
+        {
+          "type": "insikt",
+          "content": "Läs inte track records som ranking — läs dem som prislistor. Dennis visar vinstens tak, Dunn visar svackans djup, Campbell visar att institutionen kan bära metoden, Mulvaney visar vad ren uthållighet betalar. Frågan till dig är inte vem som är bäst — utan vilket pris du är beredd att betala för vilken avkastning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra ikoner — fyra priser på samma filosofi\",\"rader\":[[\"Namn\",\"Hus\",\"Kännetecken\",\"Läxa (grovt, offentligt rapporterat)\"],[\"Richard Dennis\",\"C&D Commodities\",\"utbrottshandel i råvaror; Turtle-experimentets arkitekt\",\"hur man vinner — och hur diskretion kan förstöra (−ca 50 % efter 1987)\"],[\"William Dunn\",\"Dunn Capital (1974—)\",\"renodlat mekanisk, ingen diskretion\",\"fem raka förlustår och 70 %+ drawdown — och återhämtning: överlevnaden\"],[\"Keith Campbell\",\"Campbell & Company (1972—)\",\"diversifierad trendföljning som institution\",\"metoden skalas och organiseras — i decennier\"],[\"Paul Mulvaney\",\"Mulvaney Capital\",\"renodlat långsiktig, få justeringar\",\"+ca 100 % år 2008 — mot priset av år av platt kurva\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj din läromästare bland de fyra — inte den med bäst siffror, utan den vars PRIS du bäst tål. Skriv tre meningar: vilket utfall skulle få dig att överge en strategi (djup drawdown, lång platt period, underprestation mot index)? Matcha sedan ditt svar mot ikonen vars svacka du just beskrev — och notera om det var Dennis-, Dunn-, Campbell- eller Mulvaney-profilen. Det är din trendföljar-DNA-test."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — galleriet är bokens version av V19 Kapitalförbränning & Emission-risk: varje hus som överlevt decennier har gjort det genom att aldrig låta en enskild position eller sektor kunna tvinga fram en kapitalbränning. AK1TS Tid-dimensionen ställer samma fråga till varje våg: hur länge förtjänar den ditt tålamod — och vilket pris i väntan kostar det? Track record-frågan är alltid densamma, fundamental som teknisk: överlevde utövaren sitt eget systems värsta år?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är William Dunns viktigaste bidrag till metodens trovärdighet?",
+          "alternativ": [
+            "Att han aldrig hade en förlust på över tio procent",
+            "Att hans mekaniska program överlevde fem raka förlustår och en drawdown över sjuttio procent — och återhämtade",
+            "Att han handlade utan stopp",
+            "Att han övergav trendföljning för värdeinvestering"
+          ],
+          "ratt": 1,
+          "tips": "Dunns bevisning handlar inte om avkastningens topp utan om svackans botten."
+        },
+        {
+          "q": "Vad kännetecknar Mulvaneys track record enligt kursen?",
+          "alternativ": [
+            "Jämn avkastning varje år utan svackor",
+            "Renodlad korttidshandel med hög träffkvot",
+            "Grovt rapporterat över hundra procent 2008 — mot priset av år av platt eller negativ kurva mellan kriserna",
+            "Endast aktiehandel sedan 1972"
+          ],
+          "ratt": 2,
+          "tips": "Renhet har ett pris — vad betalar extrema krisår för extrem uthållighet mellan dem?"
+        },
+        {
+          "q": "Vilken varning knyter kursen till läsningen av track records?",
+          "alternativ": [
+            "Att alla track records är offentligt granskade och opartiska",
+            "Att sammanställningarna präglas av överlevnads-selektion — vi minns de som lever; boken själv visar motexemplen Dennis, Niederhoffer och Dighton",
+            "Att CTA-branschen är förbjuden i Europa",
+            "Att historisk avkastning garanterar framtida resultat"
+          ],
+          "ratt": 1,
+          "tips": "Vem saknas i varje sammanställning över vinnare — och varför?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Absolut mot relativ momentum — två motorer i en plan",
+      "intro": "Momentum är inte ett begrepp utan två. Kapitlet skiljer absolut momentum (instrumentet mot sitt eget förflutna) från relativt momentum (instrument mot varandra) — och visar hur Abrahams plan bygger in båda: rankningen väljer VAR, utbrottet bestämmer NÄR. Här möter också Pring-kursens teori sin praktiska konsument.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionerna, rent. ABSOLUT momentum — tidsseriemomentum: instrumentet jämförs med sitt eget förflutna. Stiger det? Ligger det över nollinjen, över sitt medelvärde, genom sitt utbrott? Moskowitz–Ooi–Pedersens studie från 2012 är dess akademiska fundament: den egna historiken förutsäger framtiden, över instrumentgränser. RELATIVT momentum — tvärsnittsmomentum: instrumenten jämförs MED VARANDRA. Vilka är starkastast de senaste månaderna? Köp de starkaste, korta de svagaste. Jegadeesh–Titman (1993) är dess fundament: vinnare slår förlorare i 3–12 månaders perspektiv. Skillnaden är avgörande i praktiken: absolut momentum kan köpa ALLT som stiger (och står utanför när inget gör det); relativt momentum köper alltid NÅGOT — även i en fallande marknad väljer det det som faller minst, vilket är en helt annan risk."
+        },
+        {
+          "type": "text",
+          "content": "Abrahams plan använder båda, i två steg — det är kapitlets kärna. Steg ett, URVAL: universumet rankas på snittad förändringstakt — ett utjämnat ROC, grovt snittet av korta perioder (bokens exempel arbetar med genomsnitt av 2-, 5- och 7-dagars ROC) — och listan kompletteras med 52-veckors- och tidshöjder: de starkaste köps, de svagaste kortas. Det är relativt momentum som urvalsmekanik. Steg två, TRIGGER: själva köpet sker först när priset gör ett absolut bevis — bryter sitt X-dagars högsta (kapitel 7). Det är absolut momentum som timing-mekanik. Konstruktionen är elegant: rankningen ser till att hantera det som REDAN är starkast (kanten enligt Jegadeesh–Titman), utbrottet ser till att köpet sker på ny styrka i stället för mitt i en reaktion. För en svensk aktie-elev: ranka SOM-listan eller sektorn relativt — men köp först på absolut utbrott."
+        },
+        {
+          "type": "text",
+          "content": "Pring-kopplingen, som kursuppdraget kräver. Martin Pring on Market Momentum äger BEGREPPET hastighet: ROC som kvot, nollinjekorsningar, divergenser, tre tidsdimensioner (kopplade till AK1TS fem horisonter). Abraham är begreppets konsument, inte dess teoretiker: ROC används som urvalsrankning, nollinjen genom MACD-filtret (kapitel 7) — och divergenser, Prings starkaste signal, används INTE alls: planen köper styrka och ignoreringar varningar om utmattning, eftersom exiten sköts av trailingstopp. Skillnaden är pedagogiskt viktig: Pring lär ut ATT läsa hastighet; Abraham lär ut ATT satsa på den mekaniskt. Den som kan båda vet vad hon hoppar över — och varför. Riskprofilerna skiljer sig också: relativt momentum är utsatt för momentum-krascher (2009, dokumenterat av Daniel–Moskowitz) när vinnare och förlorare byter plats våldsamt; absolut momentum betalar whipsaw-kostnad i trendlösa marknader men kan stå helt utanför när inget stiger."
+        },
+        {
+          "type": "insikt",
+          "content": "Rankningen svarar på VAR — bland det som redan är starkt. Utbrottet svarar på NÄR — på ny bevisad styrka. Relativt momentum utan absolut trigger köper reaktioner; absolut trigger utan rankning köper slumpen. Abrahams plan — och AK1TS — behöver båda."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Absolut mot relativt momentum — och Abrahams användning\",\"rader\":[[\"Fråga\",\"Absolut (tidsserie)\",\"Relativt (tvärsnitt)\"],[\"Jämförelse\",\"instrumentet mot sitt eget förflutna\",\"instrument mot varandra\"],[\"Akademisk grund\",\"Moskowitz–Ooi–Pedersen 2012 — 58 instrument\",\"Jegadeesh–Titman 1993 — vinnare slår förlorare\"],[\"Kan stå utanför?\",\"ja — när inget stiger\",\"nej — väljer alltid bland det som finns\"],[\"Karaktäristisk risk\",\"whipsaw i trendlösa marknader\",\"momentum-krascher när ledarna byts (2009)\"],[\"I Abrahams plan\",\"utbrottet + MACD-filtret — triggern\",\"ROC-rankningen av universumet — urvalet\"],[\"I AK1TS\",\"momentum-raderna 5/63/252 per horisont\",\"sektorer och aktier rankas mot varandra\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör en mini-rankning: ta tio aktier ur din bevakningslista. Beräkna grovt 3-månaders-ROC (dagens kurs delat med kursen för tre månader sedan, minus ett). Ranka listan. Ring in de tre starkaste — och notera: hur många av dem har du redan? Hur många av dina innehav ligger i BOTTEN av rankningen? Om din portfölj domineras av rankningens svaga halva har du data på din egen mean-reversion-reflex — vilket inte är fel (värdeskolan hälsar) men som är ett medvetet val du nu har gjort synligt."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — analysmotorn räknar momentum-raderna (5, 63, 252 dagar) som ABSOLUTA mått per horisont: stiger vågen mot sitt eget förflutna? V01 Försäljningstillväxt är fundamentalens absoluta momentum — omsättningen mot sitt förflutna. Relativa rangen mellan aktier ger AK1A:s konfluens andra handtag: en impulsvåg i en aktie som också leder sin sektors rankning är två oberoende röster — exakt Abrahams två steg i AK1A-format."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är skillnaden mellan absolut och relativt momentum?",
+          "alternativ": [
+            "Absolut jämför instrumentet med sitt eget förflutna; relativt jämför instrument med varandra",
+            "Absolut gäller aktier; relativt gäller råvaror",
+            "Absolut mäter volym; relativt mäter pris",
+            "Absolut är långsiktigt; relativt är samma sak fast kortare"
+          ],
+          "ratt": 0,
+          "tips": "Fråga vad som jämförs med vad — sig självt eller grannen?"
+        },
+        {
+          "q": "Hur använder Abrahams plan de två momentum-formerna?",
+          "alternativ": [
+            "Relativ rankning (snittat ROC, 52-veckorslistor) väljer universumets starkaste; absolut utbrott triggar själva köpet",
+            "Endast relativt — han köper alltid de starkaste oavsett läge",
+            "Endast absolut — han handlar alla utbrott utan rankning",
+            "Han använder divergenser som huvudsignal"
+          ],
+          "ratt": 0,
+          "tips": "VAR bestämmer rankningen; NÄR bestämmer utbrottet."
+        },
+        {
+          "q": "Vilken risk är karaktäristisk för RELATIVT momentum enligt kapitlet?",
+          "alternativ": [
+            "Whipsaw-kostnaden i trendlösa marknader",
+            "Momentum-krascher när ledare byts våldsamt — som 2009, dokumenterat av Daniel–Moskowitz",
+            "Att strategin måste stå helt utanför fallande marknader",
+            "Att den bara fungerar på obligationer"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer när marknaden tvärt byter preferenser och gårdagens vinnare säljs av allt på en gång?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Risk per enhet — kärnekvitets-matematiken i SEK",
+      "intro": "Här är manualens motorrum: risk per affär. Abrahams siffror är konkreta — 0,75 till 1,25 procent av KÄRNEKVITETEN per handel, maximalt 2 500 dollar per kontrakt — och bakom dem ligger en definition som skiljer yrkesfolk från amatörer: kärnekvitet, inte kontots totalvärde. Kapitlet räknar hela kedjan i svenska kronor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kanons första lärdom, citerad rakt ur bokkanon-post bk-067: riskera en halv till en procent per position — överlevnaden är förutsättningen för avkastning. Abrahams egen manual specificerar 0,75–1,25 procent per handel — och det centrala är inte procentsiffran utan Nämnaren: KÄRNEKVITETEN, alltså kontots kassa plus realiserade positioner — öppna, orealiserade vinster räknas INTE. Skillnaden ser akademisk ut och är i praktiken en hel filosofi. Den som dimensionerar efter total ekvitet (inklusive paper-vinster) bygger automatiskt större positioner ju längre en trend löpt — alltså just när återhämtningen närmast sig. Kärnekvitets-regeln gör motsatsen: eftersom orealiserad vinst inte får användas som riskbas konsolideras risken successivt under en lång trend — vinsterna på pappret får aldrig öka det du satsar. Till det ett tak per kontrakt (bokens exempel: max 2 500 dollar i risk per kontrakt oavsett kontostorlek) som skydd mot att en enda illikvid position exploderar."
+        },
+        {
+          "type": "text",
+          "content": "Matematiken som gör siffran begriplig — förlustserier är multiplikativa. Tio raka stopp à 1 procent: 0,99 upphöjt till 10 är cirka 0,90 — kontot står kvar på 90 procent. Tjugo raka: cirka 82 procent. Fyrtio raka: cirka 67 procent. Läs det igen med trendföljningens träffkvot i minnet (35–45 procent från kapitel 2): fyrtio stopp i rad är inte en statistisk katastrof — det är en dålig vår. Vid 2 procent per affär är samma fyrtio stopp en förlust på över hälften av kontot; vid 5 procent är det död. Det är hela skillnaden mellan en svacka man återhämtar sig från och en man inte gör det — och det är därför Abraham och hela CTA-traditionen (och Turtle-kursens 1N = 1 procent) räknar risk i bråkdelar. Överlevnad är inte en dygd i systemet; det är en matematisk nödvändighet för att lagen om stora tal ska få verka."
+        },
+        {
+          "type": "text",
+          "content": "Hela kedjan i svenska kronor, som checklista: konto 100 000 kronor; kärnekvitet = 100 000 kronor (inga öppna vinster ännu). Riskbudget 1 procent = 1 000 kronor per affär. Aktien noteras 100 kronor och systemets stopp ligger 4 kronor under ingången (grovt en ATR-nivå): antal aktier = 1 000 delat med 4 = 250 aktier. Förlusten vid stopp: 250 × 4 = exakt 1 000 kronor. Nu termostaten: dubblas volatiliteten så att stoppavståndet blir 8 kronor — då halveras positionen automatiskt till 125 aktier. Ingen känsla, ingen förhandling — divisionen sköter det, exakt som Turtle-kursens N-matematik: storlek är inte en åsikt utan risk i kronor dividerat med avståndet till stoppet. Notera vad som händer efter en vinstsvit: har du realiserat 20 000 kronor blir kärnekviteten 120 000 — riskbudgeten växer till 1 200 kronor — men under en löpande trend med stora orealiserade vinster förblir basen densamma. Risken andas med det realiserade, inte med det hoppade."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera skillnaden som skiljer yrkesfolk från amatörer: dimensionera efter KÄRNEKVITET — kassa plus realiserat — aldrig efter total ekvitet. Orealiserade vinster är marknadens pengar tills du tagit hem dem; att satsa dem i ny risk är att låna av en trend för att bekämpa den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riskhierarkins nivåer — siffrorna samlade\",\"rader\":[[\"Nivå\",\"Regel (bokens exempel)\",\"Syfte\"],[\"Per affär\",\"0,75–1,25 % av KÄRNEKVITETEN\",\"ingen förlustserie får bli dödlig\"],[\"Per kontrakt\",\"max ca 2 500 dollar i risk\",\"enkelt position får aldrig explodera kontot\"],[\"Kärnekvitet\",\"kassa + realiserat; öppna vinster exkluderas\",\"o-realiserad vinst ökar aldrig riskbasen\"],[\"Termostaten\",\"stoppavståndet (ATR) i nämnaren\",\"dubbel volatilitet = halverad position, automatiskt\"],[\"Per sektor\",\"max 5 % av kontot\",\"korrelation är dold koncentration (kapitel 8)\"],[\"Öppen handelsrisk\",\"max 20 % av kärnekviteten\",\"portföljens samlade värsta fall begränsas\"],[\"Marginal\",\"max 15 % av kontot\",\"utrymme för rörelse utan tvingad likvidation\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din egen risk-täckning: ta din tre största positioner. Skriv för varje: antal aktier, inköpskurs, DIN faktiska eller tänkta stoppnivå (om du saknar stopp — skriv den nu, kapitel 9 förklarar varför). Beräkna kronförlusten vid stopp och andelen av KONTOT. Hur många procent riskerar du per position? Jämför med Abrahams 0,75–1,25 procent. Om dina siffror är fyra-fem gånger större har du hittat orsaken till varför andras svackor känns abstrakta och dina absoluta — och varför den här kursens matematik inte är pedagogik utan livräddning."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — kärnekvitets-tänket har en direkt fundamental syster i V19 Kapitalförbränning & Emission-risk: bolag som bränner kassa lever på orealiserade förhoppningar och tvingas_emittera när verkligheten inhämtar — exakt den mekanism som förstör privatportföljer som dimensionerat efter pappersvärden. AK1TS Brytpunkt är divisionen själv: storlek = risk i kronor delat med avståndet till nivån där tesen är fel. Samma nämnare, två adresser."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnekvitet — core equity — i Abrahams plan?",
+          "alternativ": [
+            "Kontots totala värde inklusive alla öppna vinster",
+            "Kassa plus realiserade positioner — öppna, orealiserade vinter exkluderas från riskbasen",
+            "Årets högsta kontonivå",
+            "Insatt kapital plus låneutrymme"
+          ],
+          "ratt": 1,
+          "tips": "Vilka pengar är dina — och vilka är fortfarande marknadens?"
+        },
+        {
+          "q": "Ungefär hur mycket står kontot på efter 20 raka förluster à 1 procent?",
+          "alternativ": [
+            "Cirka 82 procent — 0,99 upphöjt till 20",
+            "Exakt 80 procent — förlusterna adderas",
+            "Cirka 50 procent",
+            "100 procent — stoppen skyddar helt"
+          ],
+          "ratt": 0,
+          "tips": "Förlustserier är multiplikativa, inte additiva — vad blir 0,99 gånger sig självt tjugo gånger?"
+        },
+        {
+          "q": "Varför dimensioneras positionen efter stoppavståndet — inte som fast antal aktier?",
+          "alternativ": [
+            "För att courtage blir lägre vid små positioner",
+            "För att divisionen gör positionen volatilitetsjusterad — dubbel andning halverar enheten automatiskt",
+            "För att börsen kräver det i regelverket",
+            "För att det ger högre träffkvot"
+          ],
+          "ratt": 1,
+          "tips": "Turtle-kursens termostat: när N fördubblas halveras enheten. Vilken mekanism gör det?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Entry och exit — utbrott, MACD-filtret och 39-ATR-trailingen",
+      "intro": "Nu själva planen: två entry-system — utbrott och retratement — med gemensam exit-filosofi och gemensamt trailing-stopp. Kapitlet går igenom båda som checklistor, översätter MACD-filtret till klartext — och är öppet ärligt med bokens mest kända svaghet: löftet om exakta parametrar som texten ändå lämnar ospecificerade.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "PLAN ETT — breakout-planen, i tur och ordning. Universum rankas (kapitel 5) och handlas på bevis: LÅNG när priset bryter upp genom sitt X-dagars högsta — bokens genomgång exemplifierar med Turtle-standard 20 dagar — med ett extra filter: MACD-kurvan (INTE histogrammet) ska ligga över noll OCH stiga. Filtrets funktion är att sortera bort utbrott mot trenden: ett 20-dagarsbrott rakt upp i en fallande makrotrend är statistiskt sett mer pisksnärt än trendstart. KORT spegelvänt: brytning under X-dagars lägsta med MACD under noll och fallande. Initialt stopp: Y-dagars motbrott (i Turtle-exemplet 10-dagars lägsta för en lång position) — samma skelett som Way of the Turtle-kursen kapitel 3: inträdet på bevis, utgången på dementi."
+        },
+        {
+          "type": "text",
+          "content": "PLAN TVÅ — retracement-planen, för den som inte vill jaga utbrott. Principen: en HÖGRE tidsram styr över en lägre — veckan har företräde framför dagen (vecko-MACD:ns riktning, alternativt ett 20-perioders EMA på veckodata, definierar den tillåtna riktningen). LÅNG kräver: vecko-MACD positiv, DAGLIG pullback i den uptrenden — mätt med en oscillator som stiger och sedan faller (boken hänvisar till exempel som Elders Force Index som korsar under noll), och slutligen ett köp-stopp en tick över de två senaste staplarnas högsta: affären träder i kraft bara om priset återtar styrka. Initial stopp: en tick under de två staplarnas lägsta. Notera vad retratement-planen INTE är: den köper inte fallande knivar. Den köper en reaktion INOM en redan bevisad trend — trendbeviset (veckan) måste ligga rätt först. Det är värdeinvesterarnas djupaste missförstånd om trendföljning: även de som köper dippar kan göra det trendföljande — förutsatt att dippen är en paus i en styrka, inte en början på ett fall."
+        },
+        {
+          "type": "text",
+          "content": "Exiten — och här båda planerna gemensamt: inga vinstmål, någonsin. Det initiala stoppet hanterar FELET; därefter tar ett TRAILING-stopp över: bokens standard är ett 39-perioders ATR-baserat stopp som följer priset på avstånd — brett nog att överleva normal andning, snävt nog att värsta fall per position förblir definierat (kapitel 6). Filosofin är E-värdets från Turtle-kursen: lönsamheten bor i de få extremvinnare som får löpa, och ett vinstmål kapar exakt dem. Nu den öppna kritiken, som kursen lovar i kapitel 1: boken FÖRSÄKRAR att läsaren får den exakta planen — inget dolt — men recensioner har med rätta påpekat att centrala parametrar (X och Y i antal dagar, MACD:s inställningar, oscillator-val) lämnas som exempel snarare än bestämda mått. Kursens hantering: det är en svaghet i löftet, inte i metoden. Välj kalibrering själv — Donchian 20/10 eller 55/20 som beprövade standarder — backtesta, skriv ner den, håll den. Manualens poäng är strukturen; skruvarna får du själv sätta och själv äga."
+        },
+        {
+          "type": "insikt",
+          "content": "Två planer, en filosofi: köp aldrig utan bevis — breakouten Är beviset, retracementens återtagning är beviset, veckans riktning är beviset. Och avsluta aldrig på mål — bara på dementi. Entry avgör när du börjar; EXIT avgör om du tjänar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De två planerna — checklista sida vid sida\",\"rader\":[[\"Komponent\",\"Breakout-planen\",\"Retracement-planen\"],[\"Urval\",\"rankat universum — starkaste köps, svagaste kortas\",\"samma universum\"],[\"Riktningstyrning\",\"MACD-kurvan (ej histogrammet) över noll och stigande — lång; under noll och fallande — kort\",\"vecko-MACD (eller 20-EMA veckovis) definierar tillåten riktning\"],[\"Trigger\",\"brott över X-dagars högsta (ex. 20 dagar); kort spegelvänt\",\"daglig pullback: oscillator (ex. Force Index) under noll; köp-stopp en tick över två staplars högsta\"],[\"Initial stopp\",\"Y-dagars motbrott (ex. 10 dagar)\",\"en tick under de två staplarnas lägsta\"],[\"Trailing\",\"39-perioders ATR-stopp\",\"39-perioders ATR-stopp\"],[\"Personlighet\",\"köper styrka öppet — sen in, tydligt\",\"köper reaktion i bevisad trend — tidigare in, mer tålmodig\"],[\"Gemensam lag\",\"inga vinstmål — exiten är regel, aldrig känsla\",\"inga vinstmål — trailingen låter vinnarna springa\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör breakout-skelettet på ett grafblad: välj en svensk aktie. Rita 20-dagars högsta och 10-dagars lägsta för de senaste tolv månaderna (kalkylblad räcker: dagens högsta av senaste 20 dagarnas högsta). Markera var planen köpt och sålt. Räkna affärerna: hur många små förluster, hur många platta, hur många stora vinster? Om grafen saknar en stor trend — prova en råvaru- eller index-ETF också. Du har just upplevt E-värdets anatomi i egen hand: systemet SER dumt ut i nio månader och FÖRKLARAR sig i en."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — MACD-filtret är en enkel regimindikator: handla utbrott bara med vinden, inte mot den — exakt vad AK1TS gör när impulsvågar bara räknas som signal i sin horisonts riktning (momentum 63 som trend-filter för korta signaler). ATR-trailingen är Brytpunktens flytande kusin: en dementi-nivå som flyttas med priset istället för med fundamentet. V19 är den statiska varianten — emissionen är bolagets 39-ATR, men den står still."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gör MACD-filtret i breakout-planen?",
+          "alternativ": [
+            "Det förutsäger hur länge trenden varar",
+            "Det kräver att MACD-KURVAN (inte histogrammet) ligger över noll och stiger för lång — utbrott mot trenden sorteras bort",
+            "Det ersätter trailing-stoppet",
+            "Det mäter volymen bakom utbrottet"
+          ],
+          "ratt": 1,
+          "tips": "Filtret är en riktningskontroll — vilket villkor måste gälla UTÖVER själva utbrottet?"
+        },
+        {
+          "q": "Vad är nyckelprincipen i retracement-planen?",
+          "alternativ": [
+            "Köp varje dippen oavsett riktning",
+            "En högre tidsram styr över en lägre — veckans riktning måste ligga rätt innan dagens pullback köps",
+            "Kort och långt samtidigt för att neutralisera risken",
+            "Köp när oscillatorn nått sitt maximum"
+          ],
+          "ratt": 1,
+          "tips": "Vad skiljer en köpbar reaktion från en fallande kniv?"
+        },
+        {
+          "q": "Vilken svaghet påpekar kursen öppet om bokens entry-kapitel?",
+          "alternativ": [
+            "Att planerna är hemliga",
+            "Att boken lovar en exakt plan utan dolda parameter — men centrala mått som X, Y och MACD-inställningar lämnas som exempel snarare än bestämda värden",
+            "Att breakout-handel är olaglig i Sverige",
+            "Att ATR inte existerar"
+          ],
+          "ratt": 1,
+          "tips": "Löftet och texten har inte samma precision — vad saknas i texten?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Riskhanteringens tak — sektor, exponering, marginal, riktning",
+      "intro": "Risk per affär skyddar mot den enskilda positionen. Tak-hierarkin skyddar mot det som faktiskt dödar: korrelerade positioner som stoppas SAMTIDIGT. Kapitlet samlar Abrahams tak — sektor, öppen exponering, marginal, riktning — och översätter dem till en aktieportföljs språk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Taken, i storleksordning. SEKTORTAK: maximalt 5 procent av kontot i risk per sektor — guld och silver, råolja och bensin, svenska banker och fastigheter är i praktiken EN position i förklädning; fyra separata stopp skadar inte, men fyra korrelerade förluster på samma nyhet kan det. Turtle-kursen kapitel 4 formulerade samma fysik i enhetstaken 4/6/10/12 — Abrahams sektortak är aktie- och terminsvärldens enklare kusin. ÖPPEN HANDELSRISK: summan av alla initiala stopp-risker i öppna positioner får aldrig överstiga 20 procent av kärnekviteten — portföljens värsta fall, om ALLT stoppas samtidigt, är därmed takat. MARGINALTAK: högst 15 procent av kontot i marginalanvändning — utrymme att andas utan tvingad likvidation. RIKTNINGSTAK: maximalt tio marknader LÅNGA och tio KORTA — portföljen får aldrig bli ett enda vågrakt bets."
+        },
+        {
+          "type": "text",
+          "content": "Bokens viktigaste riskobservation är inte en regel utan en mönster-varning: de största drawdowns tenderar att följa de största uppgångarna — biggest drawdowns tend to follow the biggest run-ups. Mekanismen är korrelationens grymma ironi: i en het trendresa korrelerar allt — de positioner som en efter en byggts under uppgången rör sig som EN position just när svängen kommer. Den privata investerarens version känner alla: efter ett starkt år är portföljen full, tät och samtidigt utsatt; efter ett svagt år är den tom och defensiv — maximal risk när vi mår som bäst, minimal när marknaden som bäst. Därför sitter taken på den ÖPPNA exponeringen — inte bara på varje enskild affär: systemet frågar aldrig hur många instrument du äger, utan hur mycket risk du bär och hur mycket av den som rör sig tillsammans. Det är portföljens andning man begränsar, inte antalet andetag."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till en svensk aktieportfölj, rad för rad. SEKTORTAK 5 procent: räkna din exponering per sektor — energi, finans, industri, teknologi, konsument, hälsa — i RISK (avstånd till stopp gånger antal aktier) eller grovt i kapital; sex-fyra sektorer med tak är början till en jämn ekvitetskurva (kanonpostens tredje lärdom: jämn ekvitetsutveckling kräver spridning över marknader och tid). RIKTNINGSTAK 10/10: motsvarar i aktievärlden att ALDRIG vara allt-långt eller allt-kortt — nettoexponeringen begränsas. MARGINALTAK 15 procent: för en obelånad aktiesparare är regeln nästan fri — men dess logik är belåningsgränsens mor: aldrig så belånad att en veckas rörelse tvingar affärer. Och den öppna handelsriskens 20 procent: om alla dina stopp utlöstes på måndag — hur många procent av kontot står kvar? Om svaret är under 80 har du ingen portfölj; du har ett bets med biroller."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig hur många positioner du har — fråga hur många BETS du bär. Tio korrelerade positioner är ett bets; tre oberoende är tre. Taken finns för att räkna bets åt dig på dagarna du helst skulle räkna vinster."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tak-hierarkin — från affär till riktning\",\"rader\":[[\"Tak\",\"Nivå (bokens exempel)\",\"Skyddar mot\",\"Aktie-översättning\"],[\"Per affär\",\"0,75–1,25 % av kärnekviteten\",\"den enskilda positionen\",\"stoppavstånd × antal aktier ≤ 1 %\"],[\"Per kontrakt\",\"ca 2 500 dollar\",\"illikvida explosiva positioner\",\"max-belopp per enskild aktie\"],[\"Per sektor\",\"5 % av kontot\",\"korrelerade stopp på samma nyhet\",\"sektorvikter i portföljen\"],[\"Öppen handelsrisk\",\"≤ 20 % av kärnekviteten\",\"totalt portföljvärsta-fall\",\"summan av alla stopprisker\"],[\"Marginal\",\"≤ 15 %\",\"tvingad likvidation vid marginal-call\",\"belåningsgrad — helst noll för privatperson\"],[\"Riktning\",\"max 10 långa + 10 korta\",\"ett enda vågrätt bets\",\"nettoexponering lång minus kort\"],[\"Mönstervarning\",\"största drawdown följer största run-up\",\"euforins dolda korrelation\",\"rebalansera EFTER starka år — inte efter svaga\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din tak-granskning i tre steg: ETT — lista dina positioner med risk (antal aktier × avstånd till ditt stopp) och sektor. TVÅ — summera risken per sektor; någon sektor över 20 procent av din totala risk? TRE — summera ALL stopprisk; vad står kontot på om allt utlöses imorgon? Skriv svaren i procent. Siffran för steg tre är din portföljs faktiska värsta-fall — och för de flesta är den den mest obehagliga siffra kursen producerar. Den är också den som gör alla andra kapitel begripliga."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — V03 Intäktsdiversifiering är sektortakets fundamentala spegel: bolagets intäkter spridda över kunder, produkter och marknader är bolagets sätt att inte vara ETT bets — portföljtaket är ditt. V10 Skuldsättningsgrad är marginaltaket i balansräkningsformat: bolag som är tätt belånat likvideras av sina kreditorer precis som konton av sina marginal-krav. AK1TS aggregerar vågor till portföljnivå av samma skäl: tio samtidiga impulsvågor är EN våg."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför finns ett sektortak — max 5 procent — utöver taket per enskild affär?",
+          "alternativ": [
+            "För att spara courtage",
+            "För att korrelerade positioner — guld och silver, råolja och bensin — i praktiken är EN position som kan stoppas samtidigt",
+            "För att sektorer är olagna att handla",
+            "För att tak per affär räcker alltid"
+          ],
+          "ratt": 1,
+          "tips": "Fyra separata stopp skadar inte — vad gör fyra korrelerade förluster på samma nyhet?"
+        },
+        {
+          "q": "Vad menar bokens mönster-varning — de största drawdowns följer de största run-ups?",
+          "alternativ": [
+            "Att man ska sluta handla efter vinster",
+            "Att en het uppgång bygger korrelerad exponering — portföljen är som tätast och mest utsatt just när den ser som bäst ut",
+            "Att drawdowns är slumpade utan mönster",
+            "Att uppgångar alltid följs av nya uppgångar"
+          ],
+          "ratt": 1,
+          "tips": "Vad har hänt med korrelationen mellan dina positioner efter ett starkt år?"
+        },
+        {
+          "q": "Vad svarar den öppna handelsriskens tak — max 20 procent av kärnekviteten — på?",
+          "alternativ": [
+            "Hur många affärer man får göra per dag",
+            "Portföljens värsta fall om ALLA initiala stopp utlöses samtidigt",
+            "Hur mycket courtage man får betala per månad",
+            "Hur stor enskild vinst som får realiseras"
+          ],
+          "ratt": 1,
+          "tips": "Summera alla stopp-risker i öppna positioner — vad representerar summan?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Drawdowns — tålamodet när det går DÅLIGT är testet",
+      "intro": "Alla kan vara tålmodiga i en uppgång. Kursens psykologiska centrum visar vad metoden KOSTAR: fleråriga negativa perioder — hos de bästa. Bokens katastrofgalleri är dess mest värdefulla kapitel: Dennis fall, Dunns fem år, Niederhoffers två sprängda konton — och Abrahams egen platta period 2009–2011, redovisad utan smink.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Galleriet, som boken själv presenterar — trendföljningens stora misslyckanden, citerat öppet. RICHARD DENNIS: arkitekten till Turtle-miljonerna förlorade offentligt rapporterat omkring hälften av sitt kapital i kölvattnet av 1987 och lade ned sin förvaltning — reglernas skapare sårades av sin egen diskretion (Way of the Turtle-kursen kapitel 11). BILL DUNN: fem RAKA förlustår och en drawdown över sjuttio procent — följt av återhämtning; programmet ändrades inte under vägen. NIEDERHOFFER: sprängde sitt konto — två gånger — på strategier som sålde små premiar för stor katastrofrisk: den omvända filosofin som visar var trendföljningens köp av styrka och breda stopp står i motsatsförhållande till att sälja trygghet. ROBERTSON: tunga förluster på valutepositioner (yen-carrien); DIGHTON: åttio procent borta på en enda schweizerfranc-position; PAULSON: fyrtio procent och mer efter den epok som gjorde honom legendarisk. Mönstret: marknaden frågar inte hur duktig du VAR — den frågar hur din risk är organiserad NÄR oväntat kommer."
+        },
+        {
+          "type": "text",
+          "content": "Och Abraham själv — bokens viktigaste bevis, för det är FÖRFATTARENS eget konto: hans redovisade resultat omfattar de fleråriga svaga åren 2009–2011, då strategin gick sideways-till-negativt medan aktiemarknaden återhämtade sig kraftigt. Att publicera det — i boken vars syfte är att övertyga om metoden — är manualens trovärdigaste drag. Abraham gör dessutom ruinmatematiken explicit genom ruinformeln: sannolikheten att förlora en standardavvikelse av ekviteten är proportionell mot e upphöjt till minus två gånger den genomsnittliga avkastningen delat med volatiliteten. Uppgiftens kärna i klartext: positiv förväntan och rimligt låg volatilitet gör ruin exponentiellt osannolik — men formelen förutsätter att man fortfarande ÄR kvar i spelet när den statistiska fördelen får verka. Drawdownen är därför inte systemets fel — den är systemets andning: Turtle-kursens kapitel 9 visade att en enda +9R-affär kan bära ett helt år; den mekanismen KOSTAR motsvarande tålmod i svackor."
+        },
+        {
+          "type": "text",
+          "content": "Bokens mest motstridiga — och mest genomtänkta — råd: köp trendföljare I drawdown. Logiken: om en förvaltares process är bevisat sund (mekaniska regler, risk per affär i bråkdelar, diversifiering, decenniers historia) är en djup svacka inte en varning utan en REA — den statistiska återhämtningen tenderar komma, och den som köper i botten av svackan köter andelarna av samma process till rabatt. Analogin för den som driver systemet själv: svackan är också den punkt där den stora frestelsen finns — att BYTA system i botten, exakt som den värsta december-tidpunkten att säga upp en livförsäkring är på väg in på akuten. Därför är kursens test — kursens formulering, värd att haka upp på väggen: tålamodet när det går DÅLIGT är testet. Alla kan följa en plan som just gjort +40 procent; trendföljarens karaktär mäts i juli det tredje platta året, när grannen visar indexgraf och man själv visar en vågrät linje och en plan som inte får ändras."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte vad en strategi AVKASTAR — fråga vad den KOSTAR att äga. Abrahams redovisade 2009–2011 är priset; Dunns fem år är priset; din kommande svacka är priset. En strategi du inte kan bära genom dess värsta år är inte en strategi för dig — oavsett dess backtest."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Katastrofgalleriet — och vad varje fall lär\",\"rader\":[[\"Fall\",\"Händelse (offentligt rapporterat, grovt)\",\"Läxa\"],[\"Richard Dennis\",\"ca −50 % efter 1987; lade ned klientförvaltning\",\"skaparen av regler sårades av egen diskretion\"],[\"Bill Dunn\",\"fem raka förlustår; drawdown 70 %+\",\"programmet ändrades inte — återhämtningen kom\"],[\"Niederhoffer\",\"sprängde kontot — två gånger\",\"att sälja trygghet är trendföljningens spegelbild — och dess baksida\"],[\"Robertson\",\"tunga förluster på valutapositioner\",\"storhet värjer inte mot koncentrerad risk\"],[\"Dighton\",\"−80 % på en enda schweizerfranc-position\",\"en position kan döda om taken saknas\"],[\"Paulson\",\"−40 %+ efter epokgörande framgång\",\"gårdagens edge är ingen försäkring\"],[\"Abraham själv\",\"2009–2011 svag medan börsen steg\",\"författaren publicerar sitt pris — manualens trovärdighetsbevis\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din drawdown-plan med siffror, Turtle-kursens format: hur många månader av underprestation mot omvärlden tål jag? Hur djup svacka i procent? Hur många raka förluster? Vad — utöver LIVSFÖRÄNDRING, aldrig marknadsläge — får bryta planen? Datera dokumentet. Jämför sedan med hur länge din nuvarande strategi faktiskt fick chans. Om planens siffror är mindre än verklighetens har du förklarat varför du byter strategier i botten av svackor — och att dokumentet, inte magkänslan, måste få äga det kommande svackbottnen."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — V19 Kapitalförbränning är återigen förbindelsen: bolagets drawdown-tålmodhet bestäms av kassan — bränner den kapital försvinner tålamodet strukturellt, emissionen tvingas fram och återhämtningen utspädar ägaren. AK1TS Tid-dimensionen formaliserar ditt: varje våg-läsning tillhör en horisont och utvärderas vid daterat datum — inte i svackans mitt. Köp trendföljare i drawdown och bolag med V19-grönt: samma tro på process framför kurva."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bokens mest motstridiga råd — och vad är logiken bakom?",
+          "alternativ": [
+            "Köp trendföljare i drawdown — en sund process på rea; den statistiska återhämtningen tenderar komma",
+            "Sälj alltid trendföljare vid ny drawdown",
+            "Byt system varje gång det underpresterar ett kvartal",
+            "Lägg mer kapital efter varje förlust för att återvinna"
+          ],
+          "ratt": 0,
+          "tips": "Vad ska man bedöma — KURVAN som sjunker eller PROCESSEN som fortfarande andas?"
+        },
+        {
+          "q": "Vad uttrycker ruinformeln — sannolikhet proportionell mot e upphöjt till minus två µ per sigma — i klartext?",
+          "alternativ": [
+            "Att ruin är omöjlig med trendföljning",
+            "Att positiv förväntan och låg volatilitet gör ruin exponentiellt osannolik — förutsatt att man stannar kvar tills lagen om stora tal får verka",
+            "Att volatilitet är ointressant för överlevnaden",
+            "Att man ska maximera medelavkastningen oavsett sigma"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med sannolikheten när förhållandet medel/standardavvikelse växer — och vad kräver formeln av dig under tiden?"
+        },
+        {
+          "q": "Varför är Abrahams egen redovisning av 2009–2011 bokens viktigaste bevis?",
+          "alternativ": [
+            "Därför att den visar att strategin aldrig har dåliga år",
+            "Därför att författaren publicerar sin strategis pris — multiårig svaghet medan börsen steg — i boken som ska övertyga om metoden",
+            "Därför att den visar att aktier alltid slår terminer",
+            "Därför att den bevisar att stopp inte behövs"
+          ],
+          "ratt": 1,
+          "tips": "Vad är värt mer än ett snyggt track record — ett som aldrig visar sina dåliga år, eller ett som visar dem?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Diversifiering — sex marknadsgrupper, en ekvitetskurva",
+      "intro": "Abrahams svar på frågan vilka marknader man ska handla är den vägledande principen i hela manualen: handla dem LIKA. Kapitlet går igenom de sex marknadsgrupperna, mekaniken bakom varför spridning över marknader — och över tid — är det som gör ekvitetskurvan jämn, och översätter det hela till en svensk aktie-elevs verklighet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Universum, som boken disponerar det: VALUTOR (dollar mot yen, euro, franc med flera), SPANNMÅL och BOSKAP (majs, vete, sojabönor, nöt och svin), METALLER (guld, silver, koppar), ENERGI (råolja, bensin, naturgas), AKTIEINDEX (S&P 500, Nasdaq) och RÄNTEPRODUKTER (amerikanska statsobligationer och växlar). Sex grupper med delvis olika drivkrafter — och därmed delvis olika trendkalendrar: när spannmålen vischar kan energin trenda; när aktierna faller tenderar obligationer och dollar att röra sig. Bokens bevekelsegrund, citerat i egen anda: den som specialiserar sig på EN marknad bedriver självbedräri — marknader går igenom döda perioder och perioder av överdriven volatilitet; en diversifierad korg handlas därför för att man ALDRIG kan veta vilken marknad som ska röra sig. Det är inte en åsikt om råvaror eller valutor — det är ett erkännande av okunnighet, organiserat."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken, för den som vill förstå VARFÖR spridningen fungerar: trendföljarens år består av ett fåtal stora vinster och många små förluster (kapitel 2) — men de stora trenderna kommer ojämnt fördelade mellan grupper och mellan år. Energikrisens år är inte jordbruksårets; valutornas decennier är inte indexens. Genom att alltid VARA med i sex oberoende chansflöden per år omvandlas lagen om stora tal från teori till praktik: varje enskild marknad levererar brus — portföljen av marknader levererar trendernas samlade, glesa men återkommande bidrag. Det är också den tredje kanonlärdomens innersta, citerad ur bk-067: jämn ekvitetsutveckling kräver spridning över marknader och tid — spridning över MARKNADER eftersom trenderna kommer olika håll, spridning över TID eftersom de kommer olika år. Den jämna kurvan är inte tur; den är arkitektur. Urvalsmekaniken är enkel och hålls enkel: 52-veckors-höjder och tidshöjderlistor identifierar var styrman finns just nu (kapitel 5) — universumet bestämmer VAR man kan söka, rankningen visar VAR det just nu lönar sig."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen för en svensk aktie-elev — för kursen är inte skriven för terminshandlare utan för AK1A-användaren. Direkt handel i sex terminsgrupper är sällan elevens verklighet; men LOGIKEN översätts utan terminer: bygg bevakningen som en korg av oberoende chansflöden — svenska och utländska aktier över olika sektorer, guld- och råvaru-ETF:er, obligation- och räntefonder, valutexponering via börsen — med V11 Likviditet som tröskel före allt (ett villkor som Turtle-kursen kapitel 3 satte först och Abraham delar: endast marknader du kan lämna utan att flytta priset). Färre oberoende källor = mer koncentrerad portfölj = djupare svackor. Och en varning som hör hemma här: diversifiering genom MÅNGA namn i samma sektor är ingen diversifiering — det är kapitel 8:s korrelationsfälla i portföljformat. Sex grupper betyder sex grupper — inte sexton teknologibolag."
+        },
+        {
+          "type": "insikt",
+          "content": "Diversifiering är trendföljarens erkännande av egen okunnighet, organiserat: du vet aldrig vilken marknad som rör sig — så du handlar dem lika och låter statistiken samla trenderna åt dig. Kurvans jämnhet är inte gåvan från marknaden; den är priset du betalar med bredd."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sex marknadsgrupper — och den svenska aktie-elevens korg\",\"rader\":[[\"Grupp\",\"Exempel i boken\",\"Oberoende drivkraft\",\"Elevens översättning (V11 först)\"],[\"Valutor\",\"dollar/yen, euro, franc\",\"räntor, handelsbalanser, flyktingkapital\",\"valutexponering via börsen/fonder\"],[\"Spannmål och boskap\",\"majs, vete, soja, nöt, svin\",\"skördar, väder, efterfrågan\",\"råvaru-ETF med jordbruksinriktning\"],[\"Metaller\",\"guld, silver, koppar\",\"inflation, tillväxt, dollar\",\"gyllene och industriella metall-ETF:er\"],[\"Energi\",\"råolja, bensin, naturgas\",\"geopolitik, konjunktur, lager\",\"energi-ETF:er eller energisektor aktier\"],[\"Aktieindex\",\"S&P 500, Nasdaq\",\"tillväxt, räntor, riskaptit\",\"index-ETF:er — med 200-EMA-regim (kapitel 11)\"],[\"Räntor\",\"statsobligationer, växlar\",\"inflation, centralbanker\",\"obligationsfonder\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Korg-granskningen: mappa hela din portfölj mot de sex grupperna (valuta, jordbruk, metaller, energi, aktier, räntor — plus kontant Insats som sjunde). Skriv procent per grupp. Frågor: finns grupper med NOLL exponering? Finns en grupp med mer än hälften? Vilka två innehav rör sig mest troligt SAMTIDIGT (korrelationsgissning räcker)? Om hela portföljen ryms inom en grupp — eller två korrelerade — har du en chansflödes-portfölj utan chansflöden: svackorna kommer att vara djupare än nödvändigt."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — V03 Intäktsdiversifiering och V11 Likviditet är kapitlets fundamental tvillingar: bolagets intäktsbas är bolagets marknadskorg — en kund, en produkt, en valuta är en-chansflödes-bolaget, medan V11 avgör om du själv kan delta i och lämna flödet. AK1TS aggregerar vågor till portföljnivå efter samma arkitektur: en jämn vågbild byggs av oberoende horisonter och marknader — inte av många namn i samma våg."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför handlar Abraham en diversifierad korg istället för att specialisera sig?",
+          "alternativ": [
+            "Därför att han vet vilken marknad som kommer trenda nästa år",
+            "Därför att specialisering på en marknad är självbedräri — man vet aldrig vilken marknad som rör sig, och korgen fångar trenderna var de än kommer",
+            "Därför att terminer bara finns i sex grupper",
+            "Därför att diversifiering höjer träffkvoten per affär"
+          ],
+          "ratt": 1,
+          "tips": "Vad är erkännandet bakom korgen — kunskap eller organiserad okunnighet?"
+        },
+        {
+          "q": "Vad är den tredje kanonlärdomen från bk-067?",
+          "alternativ": [
+            "Att trendföljning bara fungerar på råvaror",
+            "Att jämn ekvitetsutveckling kräver spridning över marknader och tid",
+            "Att man ska koncentrera portföljen till de bästa trenderna",
+            "Att utdelning är källan till avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Varför kommer trenderna olika år — och vad kräver det av korgen?"
+        },
+        {
+          "q": "Vilken typ av »diversifiering« är INTE diversifiering enligt kapitlet?",
+          "alternativ": [
+            "Spridning över valutor och obligationer",
+            "Många namn inom samma sektor — korrelationsfällan i portföljformat",
+            "Spridning över marknader och tidsperioder",
+            "Att kombinera långa och korta positioner"
+          ],
+          "ratt": 1,
+          "tips": "Sexton teknologibolag — hur många oberoende chansflöden är det?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Trendföljning på aktier — IBD50, 200-dagars EMA och prisklasser",
+      "intro": "Kursens mest direkt användbara kapitel för AK1A-eleven: vad händer när metoden möter aktiemarknaden? Bokens aktieöversättning är kort men principfast — rankat universum, prisklassfilter, och en indexregim som avgör när lång och kort alls är tillåtet. Och AK1TS:s egen 200-dagars-rad visar sig vara samma idé.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens aktieplan, som den presenteras — kort, men med hela filosofin intakt. UNIVERSUM: ett rankat aktieuniversum (bokens exempel: IBD50-listan — aktier rankade på styrka), som sedan rankas vidare på samma utjämnade förändringstakt som terminsplanen (kapitel 5): de starkaste köps, de svagaste kortas. 52-veckors-höjder och tidshöjder är urvalskällan — styrka, inte rea. PRISLASSFILTER: köp aldrig aktier under tio dollar; korta aldrig aktier under tjugo — under de nivåerna dominerar kostnader, spreadar och (för shorts) utlåningsproblem, och bolagen är ofta bolag med V19-problem (kapitalförbränning — de är billiga av skäl). INDEXREGIMEN, planens viktigaste rad: S&P 500 köps LÅNG bara över 200-dagars EMA; kortas bara under. Aktiemarknadens breda regim avgör alltså vilken riktning som ens är tillåten — precis som veckan styrde över dagen i retratement-planen, styr marknaden över aktien."
+        },
+        {
+          "type": "text",
+          "content": "Vad som är ANNORLUNDA med aktier — och varför det inte är en bagatell. Aktier har en inbyggd uppåtdrift (vinsttillväxt, inflation, återköp — V20:s mekanik), vilket gör kortsidan till en motvindsaffär: trendföljning på aktier blir därför i praktiken ett LÅNGT system med kort som biroll — i björnmarknader gör regimfiltret (stå utanför under 200-EMA) mer nytta än själva shortsen. KVARTALSRAPPORTER skapar gap: ett stopp som ligger fyra procent under fredagens kurs kan hoppas över av en måndagsrapport med åtta procents fall — aktiemarknadens stopp måste därför antingen acceptera gaprisken eller hanteras med positionsstorlek (kapitel 6) som förutsätter den. KORRELATIONEN med index är högre än mellan terminsgrupper: i en aktieportfölj bär dussinet namn ofta EN faktor — kapitel 8:s sektortak är därför viktigare, inte mindre viktig, bland aktier. Och låne- och utlåningskostnaderna gör svaga aktier dyra att korta: därav taket på 20 dollar."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen, som kursen gör till sin egen: aktieöversättningen är i praktiken ANALYSMOTORNNS rader, klädda i CTA-språk. 200-dagars EMA-regimen är MA200-klassificeraren — bolagets eller indexets regim — som avgör om impulsvågor ens får räknas som köpsignaler; momentum-raderna (5, 63, 252 dagar) är samma styrkerankning som bokens ROC-snitt; och 52-veckorslistan är Pris-dimensionens råmaterial. Skillnaden i AK1A är att grundplåten är fundamental: där Abraham bara läser priset, poängsätter eleven först AKM1:s tjugo variabler (V19 som KRITISK grind) — och använder sedan trendverktyget som TIMING och REGIM, inte som analys. Det är kursens arbetsfördelning i en mening: AKM1 avgör VAD som är vägt att äga; Abraham (och AK1TS) avgör NÄR och I VILKEN MARKNADSRIKTNING. Varken priset ensamt eller bokslutet ensamt — båda, med olika roller."
+        },
+        {
+          "type": "insikt",
+          "content": "Aktier är terminernas trängre kusin: uppåtdriften gynnar långa, kvartalsgapen äter stopp, och korrelationen till index gör sektortaket avgörande. Aktie-trendföljningens viktigaste rad är därför inte entryn — det är regimfiltret: över 200 dagar lång, under 200 dagar borta."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Aktieplanen — checklista med AK1A-översättning\",\"rader\":[[\"Komponent\",\"Bokens regel\",\"AK1A-översättning\"],[\"Universum\",\"rankad styrkelista (ex. IBD50) + 52-veckors-höjder\",\"bevakningslista rankad på momentum-raderna\"],[\"Urval\",\"starkaste köps, svagaste kortas\",\"AKM1 V01–V20 först — trenden rankar bland GRÖNA bolag\"],[\"Prisklass\",\"aldrig köp under 10 USD; aldrig kort under 20 USD\",\"V11 Likviditet + V19 — billigt av skäl handlas inte\"],[\"Indexregim\",\"S&P lång bara över 200-dagars EMA; kort bara under\",\"MA200-klassificeraren: regim avgör tillåten riktning\"],[\"Entry\",\"utbrott/trailing enligt kapitel 7\",\"impulsvåg + momentum 63 i linje\"],[\"Risk\",\"0,75–1,25 % av kärnekviteten; gap-risk i storlek\",\"Brytpunkts-aritmetik med V19-grind före köp\"],[\"Sektor\",\"5 % per sektor — viktigare bland aktier\",\"V03 + sektorvikter i portföljpampen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör regimtestet bakåt: ta ett brett index (OMX Stockholm 30 eller S&P 500 via en ETF). Rita 200-dagars medelvärde för de senaste tio åren. Markera alla perioder indexet låg UNDER linjen. Räkna: hur många procent av kalenderdagarna var regimen negativ? Hur många av marknadens största nedgångsveckor skedde under linjen? Räkna sedan grovt: vad kostade det att stå utanför under falska signaler (whipsaw) mot vad det sparade i 2008/2020? En tabell med två kolumner — det är aktieplanens hela kärna i egen hand."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — kapitlets bro är kursens tydligaste: V19 Kapitalförbränning & Emission-risk är prisklassfiltrets fundamental version (aktier under tio dollar är ofta bolag som bränner kassa — trendverktyget STÄNGER dem, AKM1 förklarar VARFÖR), V11 Likviditet är genomförbarhetens tröskel, och AK1TS Pris + Tid (kanonpostens ts-variabler) gör 200-dagars-regimen till en deterministisk rad i analysmotorn — inte en känsla i diagrammet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger bokens indexregim för aktiehandeln?",
+          "alternativ": [
+            "Att S&P 500 köps lång bara över 200-dagars EMA och kortas bara under — marknadens regim avgör tillåten riktning",
+            "Att man alltid ska köpa aktier oavsett läge",
+            "Att 200-dagars EMA är en utförsäljningssignal när den korsas uppåt",
+            "Att indexregimen bara gäller terminer"
+          ],
+          "ratt": 0,
+          "tips": "Precis som veckan styr över dagen — vad styr över den enskilda aktien?"
+        },
+        {
+          "q": "Varför kortas aldrig aktier under tjugo dollar?",
+          "alternativ": [
+            "Därför att de alltid stiger",
+            "Därför att kostnader, spreadar och utlåningsproblem dominerar där — och bolagen ofta är kapitalbrännare",
+            "Därför att det är olagligt",
+            "Därför att de saknar 52-veckors-höjder"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar en short utöver priset — och vilken sorts bolag hittas under taket?"
+        },
+        {
+          "q": "Hur delar kursen arbetsfördelningen mellan AKM1 och trendverktyget?",
+          "alternativ": [
+            "AKM1 avgör NÄR man köper; trenden avgör VAD",
+            "AKM1 avgör VAD som är vägt att äga — trenden och regimen avgör NÄR och i vilken riktning",
+            "Trenden ersätter AKM1 helt",
+            "AKM1 används bara på terminer"
+          ],
+          "ratt": 1,
+          "tips": "Bokslut eller pris — vem svarar på vilken fråga?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Kontroversen — trendföljning mot mean-reversion",
+      "intro": "Kursens viktigaste kapitel. Trendföljning och mean-reversion — i finanspraktiken oftast trend mot VÄRDE — är finanshistoriens mest låsta skolstrid. Värdeinvesteraren ser trendföljaren köpa dyrt utan marginal; trendföljaren ser värdeinvesteraren köpa fallande knivar. Båda har akademin på sin sida. Båda har krascherna också. Kursen väger anklagelserna — och AK1A:s syntes står sist: Konfluens förenar skolorna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelserna, först som parodi och sedan på allvar. VÄRDEINVETERARENS anklagelse: trendföljning köper DYRT — ingen säkerhetsmarginal, inget bokslut, köper det som redan stigit och betalar överpris för berättelsen om rörelsen; när trenden vänder finns inget värde att falla tillbaka på — bara stopp och tomrum. Det är Graham-traditionens hela väckelse: köp aldrig det du inte kan värdera, och köp det aldrig i toppen. TRENDFÖLJARENS svar: värde köper FALLANDE KNIVAR — den billiga aktien är ofta billig för att något är på väg att gå sönder; värdefällan (Quantitative Value-kursens kapitel 8) är värdets drawdown-fabrik; och medan värdeinvesteraren i genomsnitt slår marknaden över decennier gör den det ibland genom att förlora i ÅRATAL (värde underpresterade grovt 2018–2020) — samtidigt som aktie-marknadens värsta perioder (2008) var trendföljningens bästa. Skolstriden är verklig — men den förs ofta om SAMMA aktie på SAMMA horisont, och där ligger felet."
+        },
+        {
+          "type": "text",
+          "content": "Vad forskningen faktiskt säger — båda sidor har kant, båda har krascher, citerat öppet. VÄRDE: Fama–French (1992) dokumenterade värdepremien — billiga bolag (hög B/M) slår dyra över decennier; Quantitative Value-kursen backtestade 1976–2011 med cirka 17,7 mot 11 procent. TREND: Jegadeesh–Titman (1993) — momentum; Moskowitz–Ooi–Pedersen (2012) — absolut momentum över 58 instrument; och Greyserman–Kaminskis forskningstradition om trendföljning som kris-alfa — bästa åren kommer när allt annat faller. KRASCHERNA: value kantade i decennier men brann 2018–2020 (billigt underpresterade dyrt brutalt); momentum-kraschen 2009 (Daniel–Moskowitz) — ledarna byttes våldsamt när FED vände, och relativt momentum straffades hårt. Upplösningen, som båda skolornas mogna företrädare känner till: de är inte motstridiga utan KOMPLEMENTÄRA på olika horisonter — kort sikt (veckor till månader): momentum dominerar, priserna glider långsamt och underreaktionen lever; lång sikt (år till decennier): mean reversion i värdering, det dyra blir billigt och omvänt. Kahnemans båda verkan — underreaktion OCH överreaktion — bor i samma hjärna, bara på olika tidsskalor."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes, kursens kärnformulering och uppgiftens direktiv: AK1TS mäter vågor DETERMINISTISKT — samma data ger alltid samma vågklass — och därmed blir skolornas förenande inte kompromiss utan metod. IMPULSVÅG-TREND PÅ KORT HORISONT: en bevisad impulsvåg i momentum 5/63 är trendföljningens territorium — köp styrka, trailing-stopp, ingen berättelse behövs; BASBYGGE-VÄRDE PÅ LÅNG HORIZONT: en aktie som i årsformat bygger bas (ackumuleras, V19-grönt, värderingskompositen låg enligt V04–V06) är värdeskolans territorium — margin of safety i tid. Vår KONFLUENS förenar skolorna: när den korta impulsvågen inträffar I ett fundamentalt grönt, basbyggande bolag — trend som bekräftar värde — är det den starkaste konfiguration AK1A känner; när impulsvågen uppträder i ett V19-rött, dyrt bolag är den en momentum-handel med stopp, inte en investering. Trenden ger timing och bevis; bokslutet ger vad och ryggrad. Skolornas krig är en fråga om tidshorisont — och tidshorisont är exakt det AK1TS har fem av."
+        },
+        {
+          "type": "insikt",
+          "content": "Trend och värde är inte fiender — de är samma beteendekvant (underreaktion och överreaktion) fångad på olika tidsskalor. Konfluens är konsten att låta impulsvågen ge timingen och basbygget ge ryggraden: trend på kort horisont, värde på lång — i samma aktie, med olika regler."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skolorna sida vid sida — och Konfluens\",\"rader\":[[\"Fråga\",\"Trendföljning\",\"Mean-reversion/Värde\"],[\"Premiss\",\"underreaktion — trender lever i månader\",\"överreaktion — pris återvänder till värde i år\"],[\"Köp när\",\"pris bevisar styrka (utbrott, 52v-höjder)\",\"pris under inneboende värde (V04–V06 komposit)\"],[\"Akademisk kant\",\"JT 1993; MoOP 2012; kris-alfa\",\"Fama–French 1992; QV-backtest 1976–2011\"],[\"Karaktäristisk krasch\",\"whipsaw i trendlösa år; momentum-kraschen 2009\",\"värdefällor; 2018–2020 djup underprestation\"],[\"Exit\",\"regel — trailing-stopp, motbrott\",\"mål — när priset nått värde eller tesen bröts\"],[\"Psykologiskt pris\",\"tålamod i svackor; köpa dyrt KÄNNS fel\",\"tålamod i väntan; köpa nederlag KÄNNS fel\"],[\"I AK1A\",\"impulsvåg kort horisont — timing och bevis\",\"basbygge lång horisont — ryggrad och marginal\"],[\"Syntes\",\"KONFLUENS: impulsvåg i grönt bolag = starkaste konfigurationen\",\"KONFLUENS: basbygge + impulsvåg = värde med timing\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Klassificera din portfölj i skolmatrisen: för varje innehav, notera (a) köpt på trend eller på värdering? (b) angiven horisont när du köpte — månader eller år? (c) exitregel — stopp eller mål? Räkna sedan matchningar: trend-köp med stopp och månaders horisont; värde-köp med mål och års horisont. Varje innehav som är trend-köp med ÅRS-horisont utan stopp — eller värde-köp med MÅNADERS-horisont och mål — är en skolblandning där du betalat för en skola och fått en annan. Listan är Konfluens-arbetet börjar."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — Konfluens i en rad: AKM1 avgör om bolaget är värt att äga (V01–V20, V19 som grind); AK1TS avgör när vågen ger bevis (impulsvåg, momentum 5/63) och när basbygget förtjänar tålamod (lång horisont). Skolornas krig slutar inte med att en vinner — det slutar med att varje horisont får sin skola."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är värdeinvesterarens klassiska anklagelse mot trendföljning?",
+          "alternativ": [
+            "Att trendföljning köper dyrt — ingen säkerhetsmarginal och inget bokslut som fallskydd",
+            "Att trendföljning alltid förlorar mot index",
+            "Att trendföljning inte går att backtesta",
+            "Att trendföljning kräver för mycket kapital"
+          ],
+          "ratt": 0,
+          "tips": "Frågan handlar om marginal — vad saknar trendköpet enligt Graham-traditionen?"
+        },
+        {
+          "q": "Vad är trendföljarens svar — och vilket empiriskt stöd har det?",
+          "alternativ": [
+            "Att värde köper fallande knivar — värdefällan — medan trendens bästa år (2008) kom när allt annat föll",
+            "Att värde aldrig fungerat historiskt",
+            "Att value-investerare saknar akademiskt stöd helt",
+            "Att börsen inte trendar"
+          ],
+          "ratt": 0,
+          "tips": "Vilken strategi hade sitt bästa år just i finanskrisen — och vad kallas det fenomenet?"
+        },
+        {
+          "q": "Hur löser AK1A:s Konfluens skolstriden?",
+          "alternativ": [
+            "Genom att förklara trendföljning förkastligt och värde rätt",
+            "Genom att mäta vågor deterministiskt: impulsvåg-trend på kort horisont och basbygge-värde på lång — olika horisonter får olika skola i samma aktie",
+            "Genom att blanda båda slumpmässigt per affär",
+            "Genom att undvika aktier och bara handla terminer"
+          ],
+          "ratt": 1,
+          "tips": "Kriget förs om samma aktie på samma horisont — vad händer om man skiljer horisonterna åt?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Syntesen — impulsvåg kort, basbygge lång: Konfluens förenar",
+      "intro": "Vad gör AK1A med en hel CTA-manual? Svaret är en syntes i tre led — planen som dokument, risken som matematik, tålamodet som design — och en tydlig gräns: Abrahams livsstil är AK1TS:s släktskap, men vågmotorn förblir pedagogik, aldrig pengamaskin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre verktyg tar AK1A-eleven från Abraham — tre, inte fler. ETT — PLANEN SOM DOKUMENT: universum (sex grupper, V11-tröskel), rankning (ROC/momentum-raderna), entry (utbrott eller retracement, regimfilter), initial stopp, ATR-trailing, risk 0,75–1,25 procent av kärnekviteten, tak per sektor och riktning, daterad utvärdering. Abrahams löfte — den exakta planen, inget dolt — är idéns poetik: den som har allt på papper kan inte förhandla med sig själv i stormen. TVÅ — RISKEN SOM MATEMATIK: kärnekvitet i stället för total ekvitet; storlek som division (risk delat med stoppavstånd); tak-hierarkin som räknar bets, inte positioner. TRE — TÅLAMODET SOM DESIGN: drawdown-planen med siffror, kunskapen om att de största svackorna följer de största uppgångarna, dokumentet — inte humöret — som avgör när utvärdering sker. Det är Dennis-miljön hembyggd (Turtle-kursen kapitel 13): coaching blev journal, sanktion blev portföljpamp, gemensam tro blev daterade regler."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS-länken, kursens släktträd i en mening: Abrahams manual är Turtle-tänket i CTA-format, och AK1TS är Turtle-tänket för vågor — pedagogiskt. Determinismen är samma: X-dagarsbrottet ger samma signal varje dag för samma data, som vågmotorns division-subtraktion-jämförelse ger samma vågklass. Regimen är samma: MACD-filtret och 200-EMA-regimen är horisontens riktning — impulsvågar räknas bara som signal i linje med sin horisont. Riskmatematiken är samma: storlek från stoppavstånd, tak på korrelerad exponering. Och differentieringen mot AKM1: AKM1 är strukturerad SUBJEKTIVITET (tjugo variabler poängsatta av en människa, V19 som kritisk grind); Abrahams plan och AK1TS är strukturerad OBJEKTIVITET (samma data, samma svar). Way of the Turtle-kursens triangel gäller alltjämt: avståndet mellan struktur och resultat heter disciplin — och Abraham visar LIVSSTILEN som håller ihop dem: plan, risk, tålamod, dokument."
+        },
+        {
+          "type": "text",
+          "content": "Och medgivandet, oförkortat, för det är syntesens andra hälft och Turtle-kursens arv: AK1TS är PEDAGOGIK — ett studieobjekt och en besluts-hygien för att läsa struktur i priser, aldrig ett trading-system. De flesta som försöker mekanisk trading underpresterar — inte för att reglerna är hemliga utan för att disciplinen är sällsynt; Abraham, Dunn och Mulvaney är yrkesmänniskor vars HELA arbetsdag är miljön som reglerna kräver. För eleven är därför den här kursens utbyte inte en strategi att kopiera utan en karaktär att bygga: skriv stoppet, räkna enheten, datera utvärderingen, håll taken — och låt Konfluens avgöra vilken horisont som får trendens regler och vilken som får värdets. Själva Abraham (via bokens löfte): här är planen, inget dolt. AK1A lägger till det boken inte kan ge: verkstaden — AKM1:s variabler, AK1TS:s vågor, journalen och datumet. Manualen och verkstaden tillsammans: det är den kompletta trendföljaren som livsstil — och det är kursens slutbild."
+        },
+        {
+          "type": "insikt",
+          "content": "Abraham gav planen, risken och tålamodet. AK1A lägger verkstaden: fundamental ryggrad (AKM1), deterministiska vågor (AK1TS) och Konfluens — trend på kort horisont, värde på lång. Manualen räcker inte; verkstaden räcker inte; tillsammans bildar de livsstilen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Abraham till AK1A — översättningstabellen\",\"rader\":[[\"Abrahams bygge\",\"AKM1\",\"AK1TS\",\"Läxa\"],[\"Universum: sex marknadsgrupper, likvida\",\"V11 Likviditet\",\"Våg — får tesen en chans?\",\"genomförbarhet och bredd före signal\"],[\"Rankning: snittat ROC + 52-veckorslistor\",\"V01 tillväxt som fundamental rang\",\"momentum-raderna 5/63/252\",\"starkaste först — relativt urval\"],[\"Entry: utbrott + MACD/200-EMA-regim\",\"V16–V18 katalysatorer som fundamental timing\",\"impulsvåg i linje med horisonten\",\"köp bevis, aldrig önskan\"],[\"Risk: 0,75–1,25 % av kärnekviteten\",\"V19 KRITISK — kapitalförbränning & emission\",\"Brytpunkt → storlek\",\"storlek är division, inte mod\"],[\"Tak: sektor 5 %, riktning 10/10\",\"V03 + V10\",\"portfölj-aggregerade vågor\",\"räkna bets, inte positioner\"],[\"Trailing: 39 ATR\",\"säljregler skrivna i förväg\",\"Tid — utvärdera vid daterat datum\",\"exit är regel, aldrig känsla\"],[\"Drawdown-plan\",\"tålamod med V19-gröna bolag\",\"Tid + dokument\",\"utvärdera aldrig i svackans mitt\"],[\"Skolstrid\",\"—\",\"impulsvåg kort + basbygge lång\",\"KONFLUENS förenar trend och värde\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din Abrahamska plan på ett A4 — för DITT universum, inte hans: 1) universum och V11-tröskel; 2) rankningsmått (ex. momentum 63); 3) regimfilter (MA200); 4) entryregel (ex. 20-dagarsbrott i linje med regim); 5) initial stopp och trailing; 6) risk per affär i procent av kärnekvitet; 7) tak: sektor, riktning, öppen risk; 8) drawdown-plan med siffror; 9) utvärderingsdatum — daterat. Håll planen under tolv punkter. Om den inte ryms på ett A4 är den inte din plan — den är din önskan om en plan."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — syntesen i en rad: Abrahams manual ger livsstilen (plan, risk, tålamod), AKM1 ger vadet (V01–V20 med V19 som grind), AK1TS ger när och hur fel (impulsvåg, momentum, Brytpunkt) — och Konfluens förenar skolorna genom att ge varje horisont sin regel. Det är AK1A:s svar på bokens löfte: här är planen — och här är verkstaden."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka tre verktyg tar AK1A-eleven från Abrahams manual enligt syntesen?",
+          "alternativ": [
+            "Prognoser, signaler och hemliga indikatorer",
+            "Planen som dokument, risken som matematik, tålamodet som design",
+            "Belåning, hävstång och frekvent handel",
+            "Fundamental analys, DCF och utdelningsdiskontering"
+          ],
+          "ratt": 1,
+          "tips": "Tre ord börjar på P, R och T i kursens svenska formulering — vad är manualens tre bärande delar?"
+        },
+        {
+          "q": "Vad är AK1TS:s förhållande till Abrahams plan?",
+          "alternativ": [
+            "AK1TS är en förbättrad kommersiell version av planen",
+            "AK1TS är samma tänk — determinism, regim, risk i enheter — men för vågor, pedagogiskt och aldrig som trading-system",
+            "AK1TS motsäger planen helt",
+            "AK1TS ersätter behovet av riskhantering"
+          ],
+          "ratt": 1,
+          "tips": "Turtle-tänk för vågor — vad är gränsen kursen sätter?"
+        },
+        {
+          "q": "Vad är Konfluens i syntesens formulering?",
+          "alternativ": [
+            "Att trend och värde förenas genom olika horisonter — impulsvåg-trend kort, basbygge-värde lång",
+            "Att man alltid köper det billigaste bolaget",
+            "Att man handlar alla utbrott utan filter",
+            "Att teknisk analys ersätter fundamental"
+          ],
+          "ratt": 0,
+          "tips": "Skolkriget slutar inte med segrare — det slutar med en fördelning av horisonter."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Sammanfattning — hela metoden på ett A4 (V + AK1TS)",
+      "intro": "Sista kapitlet sätter ihop allt: Abrahams hela manual som en checklista på ett A4, kanonpostens tre lärdomar citerade — och porträttet av den elev kursen formats mot: den som äger en plan i stället för en åsikt, och en horisont för varje skola.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Systemet, i sin helhet, som din checklista — tolv rader. ETT: universum — sex marknadsgrupper (aktie-elevens korg via sektorer och ETF:er), alla likvida nog att lämna utan att flytta priset (V11). TVÅ: rankning — snittad förändringstakt; 52-veckors-höjder identifierar styrka; starkaste köps, svagaste kortas. TRE: regim — index/aktie över 200-dagars medel: lång tillåten; under: stå utanför (aktieportföljen kortas försiktigt eller borta). FYRA: entry — X-dagars utbrott med MACD-filter (kurvan över noll och stigande), eller retracement med veckan som herre. FEM: initial stopp — Y-dagars motbrott (eller två staplars lägsta i retracement). SEX: trailing — 39-perioders ATR; inga vinstmål. SJU: risk per affär — 0,75–1,25 procent av KÄRNEKVITETEN; tak per kontrakt. ÅTTA: sektorstak — 5 procent. NIO: öppen handelsrisk — max 20 procent av kärnekviteten; marginal max 15 procent. TIO: riktningstak — max tio marknader långa och tio korta. ELVA: drawdown-plan — siffror för djup, längd och förlustserier. TOLV: utvärderingsdatum — daterade, skrivna, heliga. Där — på ett A4 — finns hela manualen. Inte en rad av den är hemlig. Allt av den är svårt."
+        },
+        {
+          "type": "text",
+          "content": "Kanonpostens tre lärdomar, citerade rakt ur bk-067 — och varje lärdoms hem i kursen. RISKERA EN HALV TILL EN PROCENT PER POSITION: ÖVERLEVNADEN ÄR FÖRUTSÄTTNINGEN FÖR AVKASTNING — kapitel 6: kärnekvitets-matematiken, de multiplikativa förlustserierna, termostaten. EN TREND FÖLJS TILLS DEN BRYTS: VARKEN VINSTMÅL ELLER MAGKÄNSLA SÄTTER EXITEN — kapitel 7: trailingen, E-värdets anatomi, Don't let the big profits get away. JÄMN EKVITETSUTVECKLING KRÄVER SPRIDNING ÖVER MARKNADER OCH TID — kapitel 8 och 10: tak-hierarkin och sex marknadsgrupper, korrelationen som dold koncentration. Triangeln AKM1–AK1TS–Abraham: AKM1 avgör VAD (tjugo variabler, V19 som KRITISK grind); AK1TS avgör NÄR och VAR FEL (impulsvåg, momentum-raderna, Brytpunkt, fem horisonter); Abraham avgör HUR MAN LEVER DET (planen, risken, tålamodet). Tre verktyg, en investerare — och Konfluens, kapitel 12:s arv, som ger varje horisont sin skola: trend på den korta, värde på den långa."
+        },
+        {
+          "type": "text",
+          "content": "Slutporträttet — den trendföljande AK1A-eleven, i sex drag. ETT: hon skriver planen innan hon köper — universum, rankning, entry, stopp, risk, tak, datum — och kan förklara varje beslut utan att nämna hur hon kände. TVÅ: han räknar risk i bråkdelar och bets, inte i positioner och övertygelser — kärnekvitet, sektortak, öppen exponering. TRE: hon köper bevis, inte önskan — utbrott, impulsvåg, 52-veckors-styrka — och betalar med obehaget som barriären. FYRA: han vet vad metoden kostar — Dunn fem år, Abraham 2009–2011 — och har en drawdown-plan med siffror som skrevs i solsken. FEM: hon skiljer skolorna åt i tid — trendens regler på kort horisont, värdets tålamod på lång — och läser Konfluens när de möts i samma aktie. SEX: han utvärderar vid daterat datum, aldrig i svackans mitt, och välkomnar kantens bäst-före-datum som information. Bokens sista gåva är dess löfte — här är planen, inget dolt; kursens sista tillägg är det löftets kappa: miljön. Ingen nedladdad manual gör någon till Abraham — men ett stopp skrivet idag, en enhet räknad idag och ett utvärderingsdatum satt idag är början av allt som skiljer. Skriv stoppet. Datera planen. Börja där."
+        },
+        {
+          "type": "insikt",
+          "content": "The Trend Following Bible i en mening: trendföljning är inte en strategi man har — det är en livsstil man bygger: planen före affären, risken före vinsten, tålamodet före allt. Boken gav manualen; verkstaden är din."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Manualen på ett A4 — hela checklistan\",\"rader\":[[\"Rad\",\"Regel\",\"Kapitel\",\"AK1A-koppling\"],[\"1. Universum\",\"sex grupper; endast likvida marknader\",\"10\",\"V11\"],[\"2. Rankning\",\"snittat ROC; 52-veckors-höjder; starkaste köps\",\"5\",\"AK1TS momentum-rader\"],[\"3. Regim\",\"över 200-EMA: lång; under: borta/kort\",\"11\",\"MA200-klassificeraren\"],[\"4. Entry\",\"X-dagars utbrott + MACD-filter; eller retracement i veckans riktning\",\"7\",\"impulsvåg i linje med horisont\"],[\"5. Initial stopp\",\"Y-dagars motbrott / två staplars lägsta\",\"7\",\"Brytpunkten\"],[\"6. Trailing\",\"39-perioders ATR; INGA vinstmål\",\"7\",\"Tid — exit är regel\"],[\"7. Risk per affär\",\"0,75–1,25 % av kärnekviteten\",\"6\",\"V19 + Brytpunkts-division\"],[\"8. Sektortak\",\"max 5 % per sektor\",\"8\",\"V03\"],[\"9. Exponering\",\"öppen risk ≤ 20 %; marginal ≤ 15 %\",\"8\",\"V10\"],[\"10. Riktningstak\",\"max 10 långa + 10 korta\",\"8\",\"nettoexponering\"],[\"11. Drawdown-plan\",\"siffror för svickdjup, längd, förlustserier\",\"9\",\"daterad i portföljpampen\"],[\"12. Utvärdering\",\"daterade datum — aldrig i svackans mitt\",\"9, 13\",\"AK1TS Tid\"],[\"13. Konfluens\",\"trendregler kort, värde-regler lång — per horisont\",\"12\",\"AKM1 + AK1TS\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din trendföljar-spegel och dokumentera den: 1) kör A4-checklistan mot ETT befintligt innehav: har den en skriven exitregel (rad 5–6)? 2) räkna dess risk i procent av kärnekviteten till stoppet (rad 7); 3) räkna din sektor- och riktningsexponering (rad 8–10); 4) kör V19-granskningen — kapitalförbränning, emissionsrisk inom tolv månader; 5) klassificera innehavet i Konfluens-matrisen — trend eller värde, och stämmer horisonten med skolan? 6) datera dokumentet och boka nästa granskning. Om ett år är dokumentet antingen en spegel eller ett alibi — och det valet görs nu, i solsken."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — slutraderna: V19 är din risk per affär, AK1TS Brytpunkt ditt stopp, momentum-raderna din rankning, MA200 din regim, Konfluens din skolfred — och Abrahams manual den livsstil som håller ihop allt: planen före affären, risken före vinsten, tålamodet före allt. Skriv stoppet idag."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta komprimerade ordningen i manualens A4-checklista?",
+          "alternativ": [
+            "Prognostisera, köp dippar, addera på förlorare, sälj på mål",
+            "Universum → rankning → regim → entry → initial stopp → trailing → risk per affär → sektor-, exponerings- och riktningstak → drawdown-plan → daterad utvärdering",
+            "Värdering först, trend sedan, stopp aldrig",
+            "Köp billigt, sitt tyst, rebalansera årsvis"
+          ],
+          "ratt": 1,
+          "tips": "Börja med var du får handla — och sluta med när du får utvärdera."
+        },
+        {
+          "q": "Vilken av kanonposten bk-067:s tre lärdomar handlar om exiten?",
+          "alternativ": [
+            "Riskera en halv till en procent per position",
+            "Jämn ekvitetsutveckling kräver spridning över marknader och tid",
+            "En trend följs tills den bryts — varken vinstmål eller magkänsla sätter exiten",
+            "Köp aldrig över tio dollar"
+          ],
+          "ratt": 2,
+          "tips": "Vad sätter utgången enligt boken — målet, magen eller trendens brott?"
+        },
+        {
+          "q": "Vad är kursens slutgiltiga råd till eleven som vill bära Abrahams arv vidare?",
+          "alternativ": [
+            "Kopiera hans exakta aktielista",
+            "Skaffa tillgång till CTA-branschens signaler",
+            "Bygga livsstilen själv: skriv stoppet, räkna enheten, datera utvärderingen — idag",
+            "Vänta på nästa trendföljnings-boom"
+          ],
+          "ratt": 2,
+          "tips": "Vad går att kopiera från en manual — reglerna eller miljön som följer dem? Vilken kan du bygga?"
+        }
+      ]
+    }
+  ]
+}

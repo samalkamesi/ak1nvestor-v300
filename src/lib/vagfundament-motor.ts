@@ -77,6 +77,7 @@ const TS_TYPER = [
   "annualTotalDebt", "quarterlyTotalDebt",
   "annualCurrentAssets", "quarterlyCurrentAssets",
   "annualCurrentLiabilities", "quarterlyCurrentLiabilities",
+  "annualLongTermDebt",
   "annualCashFlowFromOperating", "quarterlyCashFlowFromOperating",
   "annualCapitalExpenditure", "quarterlyCapitalExpenditure",
   "annualFreeCashFlow", "quarterlyFreeCashFlow",
@@ -1031,4 +1032,33 @@ export async function körVagfundament(payload: { tickers: string[]; vikter?: Re
     ut.portfolj = portfoljaggregera(resultat, vikter);
   }
   return ut;
+}
+
+/**
+ * Balansposter för externa verktyg (t.ex. netnet-skannern): senaste ÅRS-
+ * värdet per post via samma timeseries-flöde som motorn — en gemensam
+ * Yahoo-väg (query2, 30+ typer i ett anrop, crumb-reserv vid 401/403).
+ */
+export async function hamtaBalansPoster(
+  ticker: string
+): Promise<{
+  currentAssets: number | null;
+  currentLiabilities: number | null;
+  longTermDebt: number | null;
+  shareIssued: number | null;
+  valuta: string | null;
+} | null> {
+  const [data, valuta] = await hamtaFundament(ticker);
+  if (!data) return null;
+  const sista = (namn: string): number | null => {
+    const arr = _ar(data, namn);
+    return arr.length > 0 ? arr[arr.length - 1] : null;
+  };
+  return {
+    currentAssets: sista("CurrentAssets"),
+    currentLiabilities: sista("CurrentLiabilities"),
+    longTermDebt: sista("LongTermDebt"),
+    shareIssued: sista("ShareIssued"),
+    valuta,
+  };
 }

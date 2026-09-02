@@ -6,15 +6,17 @@
  * då betalar marknaden mindre än rörelsekapitalet och resten av bolaget
  * är gratis. Formeln är offentlig (Graham 1949) och får visas i UI.
  *
- * Datahämtning: Yahoos quoteSummary med cookie+crumb-flödet som i
- * src/lib/analys-motor.ts (fc.yahoo.com → getcrumb → quoteSummary) —
- * mönstret är HITKOPIERAT, modulen är fristående och importerar inget
- * från analys-motorn. Allow-list: query1/query2.finance.yahoo.com.
+ * Datahämtning: balansposter via vagfundament-motorns gemensamma
+ * fundamentals-timeseries-flöde (hamtaBalansPoster — query2, alla typer i
+ * ett anrop, crumb-reserv vid 401/403); kurs/nyckeltal via quoteSummary med
+ * cookie+crumb-flödet som i src/lib/analys-motor.ts (fc.yahoo.com →
+ * getcrumb → quoteSummary). Allow-list: query1/query2.finance.yahoo.com.
  * Allt är graceful: varje rad som inte fick data får fel-text och null,
  * skanningen kastar aldrig.
  *
  * Server-side only ("dns" för SSRF-kontroll) — anropas via server action.
  */
+import { hamtaBalansPoster } from "./vagfundament-motor";
 import { promises as dns } from "dns";
 
 /** En screeningsrad — kurs mot NCAV per aktie, plus bonusnyckeltal. */
@@ -171,42 +173,14 @@ async function hamtaNetnet(ticker: string): Promise<NetnetRad> {
       return { ...tom, fel: "ogiltig ticker" };
     }
 
-    // ── 1) Balansposter via fundamentals-timeseries (ingen crumb krävs) ──
-    const tsTyper = [
-      "annualCurrentAssets",
-      "annualCurrentLiabilities",
-      "annualLongTermDebt",
-      "annualShareIssued",
-    ].join(",");
-    const nu = Math.floor(Date.now() / 1000);
-    // OBS: Yahoo timeseries returnerar tomma serier om period1 fönstras —
-    // hela historik (period1=0) är det enda mönster som levererar data.
-    const tsUrl =
-      `https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/` +
-      `${urlKoda(ticker)}?type=${tsTyper}&period1=0&period2=${nu}&merge=false`;
-    const tsRes = await fetch(tsUrl, {
-      headers: { "User-Agent": "Mozilla/5.0 (AK1A)" },
-      redirect: "error",
-      cache: "no-store",
-      signal: AbortSignal.timeout(8000),
-    });
-    const tsJson: any = await tsRes.json();
-    const tsResultat: Array<Record<string, any>> = tsJson?.timeseries?.result ?? [];
-    const sistaVardet = (typ: string): number | null => {
-      // OBS: meta.type levereras som ARRAY (["annualX"]) — läs första elementet
-      const serie = tsResultat.find((x) => String(x?.meta?.type?.[0] ?? x?.meta?.type ?? "") === typ);
-      const punkter = serie?.[typ];
-      if (!Array.isArray(punkter)) return null;
-      for (let i = punkter.length - 1; i >= 0; i--) {
-        const rå = punkter[i]?.reportedValue?.raw;
-        if (typeof rå === "number" && Number.isFinite(rå)) return rå;
-      }
-      return null;
-    };
-    const omsattningstillgangar = sistaVardet("annualCurrentAssets");
-    const rorelseskulder = sistaVardet("annualCurrentLiabilities");
-    const langfristigSkuld = sistaVardet("annualLongTermDebt");
-    const aktierUrSerie = sistaVardet("annualShareIssued");
+    // ── 1) Balansposter via VÅGFUNDAMENT-MOTORNS gemensamma timeseries-flöde ──
+    // (query2, alla typer i ett anrop, crumb-reserv — det bevisat fungerande
+    // mönstret på Vercel; netnets egna 4-typs-anrop servades tomt från datacenter-IP)
+    const poster = await hamtaBalansPoster(ticker);
+    const omsattningstillgangar = poster?.currentAssets ?? null;
+    const rorelseskulder = poster?.currentLiabilities ?? null;
+    const langfristigSkuld = poster?.longTermDebt ?? null;
+    const aktierUrSerie = poster?.shareIssued ?? null;
     const totalaSkulder =
       rorelseskulder !== null ? rorelseskulder + (langfristigSkuld ?? 0) : null;
 

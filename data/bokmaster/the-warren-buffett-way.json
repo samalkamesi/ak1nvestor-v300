@@ -1,0 +1,1210 @@
+{
+  "slug": "the-warren-buffett-way",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 16,
+  "totalMinutes": 180,
+  "title": "The Warren Buffett Way — Hagstrom: KOMPLETT",
+  "summary": "Robert Hagstroms The Warren Buffett Way (1994, omarbetad 2005 och 2013) är den mest spridda systematiseringen av Buffetts investeringsprocess — boken som förvandlade en legend till en checklista. Kursen går igenom hela boken: utbildningen hos Graham, Fisher och Munger; de tolv eviga principerna i fyra grupper (företag, ledning, finans, marknad); franchisen och moaten; owners earnings-formeln; retained earnings-dollartestet; värderingsaritmetiken med tvåstegsmodellen; de nio fallen från Washington Post 1973 till H.J. Heinz 2013; portföljmatematiken med Kelly-kriteriet och volatilitetens falska riskmått; samt beteendepsykologin och tålamodet. Kursen ägnar också ett helt kapitel åt kontroversen: är Buffett en statistisk outlier — ett myntkast som lyckades — och vad koncentrationsforskningen från Notre Dame och AQR egentligen säger om saken.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för Robert Hagstroms projekt — att ur brev, köp och offentligt material rekonstruera Buffetts process som en lärbart system, första gången 1994 och uppdaterat i två upplagor till 2013 — och skilja den från biografin (Snöbollskursen) och källtexterna (Essays-kursen). Eleven behärskar de tre hörnstenarna från Graham (aktien som andel av ett företag, Mr Market, säkerhetsmarginalen), Fisher-Munger-komplementet (scuttlebutt, tillväxt, underbart företag till rimligt pris) och framför allt de tolv eviga principerna: tre företagsprinciper (cirkeln, den konsekventa historien, franchisen), tre ledningsprinciper (rationalitet i kapitalallokeringen, candor, motstånd mot det institutionella imperativet), fyra finansprinciper (ROE i stället för EPS, owners earnings-formeln, höga marginaler, retained earnings-dollartestet) och två marknadsprinciper (intrinsic value genom diskonterade kassaflöden, köp med betydande marginal). Eleven kan räkna owners earnings (nettovinst plus icke-kontanta poster minus nödvändigt underhållskapex), tillämpa dollartestet på återhållna vinster, bygga en tvåstegs-värderingsmodell och beräkna en köp-korridor med säkerhetsmarginal — med bokens fall Coca-Cola, Wells Fargo, Washington Post, GEICO och IBM som sifferbärande exempel. Eleven kan dessutom redogöra för koncentrerad portföljförvaltning: Keynes Chest Fund, Lou Simpsons resultat, Kelly-kriteriets matematik, varför volatilitet inte är risk och varför Hagstrom avvisar modern portföljteori. Slutligen kan eleven ärligt återge kontroversen om EMH och slumpen — myntkastargumentet och tärningsargumentet mot Buffett — liksom motforskningen om koncentration och aktiv andel från Martijn Cremers vid Notre Dame och Jordan Brooks vid AQR, samt formulera AK1A:s egen syntes: att AKM1 gör Buffetts kriterier mätbara (V01-V20, 0-5 poäng) i stället för karismatiska.",
+  "why": "The Warren Buffett Way har sålt i över en miljon exemplar och är den bok som faktiskt formulerade Buffett-metoden som principsystem — inte som sviter av anekdoter. För AK1A-ekosystemet fyller kursen den tredje luckan i Buffett-triangeln: Snöbollen ger historien, Essays-kursen ger källtexterna, Hagstrom ger metoden — de tolv principerna som i praktiken är en företagschecklista långt innan checklists blev moda. Boken är också den enda i kanon som visar hela räknekedjan: från owners earnings via tvåstegsdiskontering till en köp-korridor med sifferexempel, och den som tar koncentrationsargumentet på allvar med Kelly-matematik och senare akademisk forskning. Kursens kontroverskapitel är obligatorisk läsning för vem som helst som vill veta om Buffett är skicklighet eller statistik — och hur AKM1:s poängsättning (V07-V09 lönsamhet, V13-V15 moat, V20 återköp och kapitalallokering) gör svaret mätbart i stället för fromt.",
+  "chapters_list": [
+    "1. Fem sigma — boken och rekordet den måste förklara",
+    "2. Utbildningen I — Graham: isbergets tre hörnstenar",
+    "3. Utbildningen II — Fisher och Munger: det kvalitativa komplementet",
+    "4. Företagsprinciperna — cirkeln, historien och franchisen",
+    "5. Moaten — överlägsenhet, prissättningsmakt, varumärke, byteskostnader",
+    "6. Ledningsprinciperna — rationalitet, candor och det institutionella imperativet",
+    "7. Finansprinciperna I — ROE, owners earnings-formeln och marginalerna",
+    "8. Finansprinciperna II — retained earnings och dollartestet",
+    "9. Marknadsprinciperna — intrinsic value och köp-korridoren",
+    "10. Fallen I — Washington Post 1973 och GEICO",
+    "11. Fallen II — Coca-Cola 1988: aritmetiken i värderingen",
+    "12. Fallen III — Wells Fargo 1990 och American Express",
+    "13. Fallen IV — General Dynamics, IBM, Heinz (och BYD utanför boken)",
+    "14. Portföljen — koncentration, Kelly och volatilitetens bluff",
+    "15. Kontroversen — tärningar, mynt och Notre Dame-forskningen",
+    "16. Psykologin och tålamodet — att finna sin egen väg"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "Fem sigma — boken och rekordet den måste förklara",
+      "intro": "När Robert Hagstrom gav ut The Warren Buffett Way 1994 fanns det ingen bok som systematiskt redovisade hur Buffett egentligen arbetade — bara legender. Hagstrom, analytiker och sedermera fokusinvesterare själv, skrev boken utifrån offentligt material: årsbrev, köp, tal och räkenskaper. Detta kapitel presenterar bokens projekt, de tre upplagorna och det rekord som boken måste förklara — enligt Hagstrom en fem-sigma-händelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens introduktion börjar med en fråga som kursen behåller livet ut: är Warren Buffett ett undantag som inte kan kopieras, eller är hans process en disciplin som vem som helst kan lära sig — även om resultatet aldrig blir detsamma? Hagstroms svar är att processen är lärbart men att den kräver ett temperament de flesta saknar. För att bevisa det delar han upp sitt material i fyra delar: utbildningen som formade Buffett, tolv principer för att köpa företag, portföljmatematiken och psykologin. Företalet i tredje upplagan (2013) är skrivet av Howard Marks, i den andra (2005) av Bill Miller, i den första av Peter Lynch — tre namn som själva förvaltat miljarder och som alla delar samma slutsats: rekordet är extremt, men metoden är offentlig."
+        },
+        {
+          "type": "text",
+          "content": "Rekordet är bokens belägg och dess problem. Buffett Partnership, som startade 1956 med lite mer än hundratusen dollar av familjens och vänners pengar, avkastade under tretton år i genomsnitt över trettio procent per år mot Dow Jones knappt tio — utan ett enda förlustår. Därefter höll det bokförda värdet per aktie i Berkshire Hathaway från 1965 en årlig takt på nästan tjugo procent och aktiekursen strax däröver, mot index nio till tio procent inklusive utdelningar — i nästan ett halvt sekel. En sådan kurva, skriver Hagstrom, är en fem sigma-avvikelse: i en normalfördelning ska den inträffa ungefär en gång på tre och en halv miljon. Kursens kontroverskapitel (kapitel 15) kommer att ta den siffran på allvar — dels som hyllning, dels som anklagelse."
+        },
+        {
+          "type": "text",
+          "content": "Boken finns i tre versioner och kursen täcker dem som en helhet. Upplagan 1994 etablerade de tolv principerna och de fem ursprungliga fallen: Washington Post, GEICO, Capital Cities/ABC, Coca-Cola och General Dynamics. Upplagan 2005 lade till bland annat Wells Fargo och American Express efter 1990-talets bankkris och tog in portföljmatematiken med Kelly-kriteriet. Upplagan 2013 — den kursen främst följer — lade till IBM 2011 och H.J. Heinz 2013 samt uppdaterade forskningen om koncentration. Hagstrom skriver ingen biografi: om sockret, fadern och Susie hänvisar kursen till Snöbollskursen; om själva breven till Essays-kursen. Här är det processen: vad gjorde han, i vilken ordning och med vilka siffror."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A-ekosystemet är den här boken särskilt användbar av ett skäl: Hagstrom formulerade en checklista ett kvartssekel innan checklistor blev investeringens modeord. De tolv principerna — tre om företaget, tre om ledningen, fyra om finanserna, två om marknaden — är i praktiken en strukturerad fundamentalmodell. Kursen kommer därför vid varje princip att visa var den landar i AKM1:s tjugo variabler: lönsamheten i V07-V09, moaten i V13-V15, kapitalallokeringen i V20 och kapitalförbränningen i V19. Det är kursens egen tes: Hagstrom visade att Buffett är en process; AKM1 gör processen mätbar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens tre upplagor och vad de lade till\",\"rader\":[[\"Upplaga\",\"År\",\"Tillskott\",\"Kursens kapitel\"],[\"Första\",\"1994\",\"Tolv principerna; fallen Post, GEICO, Cap Cities, Coke, General Dynamics\",\"2-11\"],[\"Andra\",\"2005\",\"Wells Fargo, American Express; Kelly-matematiken; MPT-kritiken\",\"12-14\"],[\"Tredje\",\"2013\",\"IBM 2011, Heinz 2013; uppdaterad koncentrationsforskning\",\"13-15\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hagstroms viktigaste val är att skriva om processen i stället för personen: det som kan kopieras är ordningen på frågorna — först företaget, sedan ledningen, sedan finanserna, sist priset — inte listan på kontakter eller epoken med undervärderade medieaktier."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner i vilken ordning du hittills ställer frågorna när du tittar på en aktie. Börjar listan med priset, kurvan eller nyheten — eller med företaget, ledningen och kassaflödet? Ordningen är i sig en diagnos: lägg den bredvid de tolv principernas ordning och notera avståndet."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Hagstrom med att Buffetts rekord är en »fem sigma-händelse«?",
+          "alternativ": [
+            "Att den statistiskt sett inträffar ungefär en gång på tre och en halv miljon i en normalfördelning",
+            "Att avkastningen överstigit femtio procent fem år i rad",
+            "Att Berkshire haft fem förlustår på femtio år",
+            "Att fem tidningar samtidigt kallade honom världens bästa investerare"
+          ],
+          "ratt": 0,
+          "tips": "Sigma betyder standardavvikelse — frågan är hur sannolikt en sådan kurva är om marknaden vore ren slump."
+        },
+        {
+          "q": "Vilket är Hagstroms svar på frågan om Buffett kan kopieras?",
+          "alternativ": [
+            "Nej, resultatet är oåterkalleligt knutet till en epok och en person",
+            "Ja, vem som helst kan nå samma avkastning med rätt nyckeltal",
+            "Frågan är meningslös eftersom marknaden blivit effektiv sedan 1994",
+            "Processen är lärbart men temperamentet sällan kopierat"
+          ],
+          "ratt": 3,
+          "tips": "Tänk på vad som kan överföras — frågeordning, checklista, tålamod — och vad som inte kan det: hundratalet kontakter och ett halvt sekel av compounding."
+        },
+        {
+          "q": "Vilken roll spelar den här boken i förhållande till Snöbollen och Essays-kursen?",
+          "alternativ": [
+            "Den ersätter dem genom att sammanfatta båda i tolv punkter",
+            "Den är en biografi skriven med tillgång till Buffetts arkiv",
+            "Den ger processen och principsystemet, medan Snöbollen ger historien och Essays ger källtexterna",
+            "Den kritiserar Buffett och rekommenderar passivt indexsparande i stället"
+          ],
+          "ratt": 2,
+          "tips": "Tre böcker, tre funktioner: historia, brev, metod. Hagstrom står för den tredje."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Utbildningen I — Graham: isbergets tre hörnstenar",
+      "intro": "Bokens andra kapitel börjar med utbildningen, och utbildningen börjar med Benjamin Graham — mannen som definierade värdeinvestering i Security Analysis 1934 och The Intelligent Investor 1949. Buffett läste den senare 1949, studerade för Graham på Columbia och fick som enda elev något i stil med högsta betyg. Hagstrom lyfter fram tre hörnstenar ur arvet och kallar dem Buffett-utanpå-filosofins isberg: synen på aktien, marknadens humör och marginalen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första hörnstenen är den mest banala och den svåraste: en aktie är inte en lottsedel utan en andel av ett företag. När Graham och Dodd skrev Security Analysis mitt under depressionen var tanken radikal — marknaden behandlade aktier som prisstämplat papper som steg och föll på sentiment. Grahams motbild var att varje aktie representerar en ägarandel i en löpande verksamhet med tillgångar, kassaflöde och förmåga att generera vinst. Buffett komprimerade det till en rad som Hagstrom citerar: priset är vad du betalar, värdet är vad du får. Allt annat i metoden — analyser, tålamod, koncentration — är konsekvenser av den meningen."
+        },
+        {
+          "type": "text",
+          "content": "Den andra hörnstenen är Mr Market, allegorin från åttonde kapitlet i The Intelligent Investor. Föreställ dig, skriver Graham, en medägare som varje dag dyker upp och erbjuder dig att köpa eller sälja andelen till ett pris han just då känner för. Han är hjälpsam, inte ond: ena dagen är han upprymd och priset högt, andra dagar deprimerad och priset lågt. Hans humör är din möjlighet, inte din uppmaning. Hagstrom noterar att allegorin samtidigt är beteendevetenskaplig före sin tid — kapitel 16 återkommer till den som psykologisk apparat — men poängen här är operativ: kurserna existerar för att utnyttjas, inte för att lydas. Den som mäler sitt värde efter Mr Markets dagsprissedlar har bytt roll från ägare till passagerare."
+        },
+        {
+          "type": "text",
+          "content": "Den tredje hörnstenen är säkerhetsmarginalen — den tanke Buffett sagt att han bara behövde två kapitel av Grahams bok för att lära sig: denna och den om Mr Market. Köp aldrig en tillgång till sitt beräknade värde — köp den med marginal, så att aritmetiska fel, ändrade förutsättningar och egna misstag kan sväljas utan permanent förlust. Grahams eget kvantitativa utförande var fimpan: bolag som handlades under sina nettotillgångar, gärna under två tredjedelar av omsättningskapitalet, »cigar butts« med ett sista gratis bloss. Buffett fyllde unga år med fimpor och kursen ska inte sticka under stol med att det var här han började — men Hagstrom gör redan här klart att fimpmatematiken är Grahams strängaste tillämpning, och att Buffetts senare utveckling mot kvalitet kom att kräva andra lärare (kapitel 3)."
+        },
+        {
+          "type": "text",
+          "content": "Hagstrom lyfter dessutom fram Grahams efterlämnade varningar som Buffett behöll livet ut: marknaden kan förbli irrationell längre än investeraren kan förbli likvid; agera aldrig på andras åsikter; och den som inte kan tolerera att en aktie faller femtio procent utan att panikslå bör inte äga aktier alls. Ur dessa tre hörnstenar — aktien som andel, Mr Market, säkerhetsmarginalen — kommer sedan hela byggnaden: företagsprinciperna är aktien-som-andel, marknadsprinciperna är Mr Market, och köp-korridoren i kapitel 9 är marginalen med siffror. Isberget är detsamma; Hagstroms bidrag är att visa hur långt ner det når."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Grahams tre hörnstenar och deras fortlevnad i metoden\",\"rader\":[[\"Hörnsten\",\"Grahams formulering\",\"Blir i Hagstroms system\"],[\"Aktien som andel\",\"Varje aktie är en ägarandel i en verksamhet\",\"Företagsprinciperna; tolv frågorna innan priset\"],[\"Mr Market\",\"Dagligt erbjudande från en humörsvajande medägare\",\"Marknadsprinciperna; köp när humöret är lågt\"],[\"Säkerhetsmarginalen\",\"Köp med avstånd mellan pris och värde\",\"Köp-korridoren; diskonteringsräntan och marginalprocenten\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hörnstenarna är tre beskrivningar av samma val: vill du vara ägare till företag eller ägare till kurser? Graham valde företag — och allt som ser ut som tålamod, koncentration eller kallsinne i Buffetts metod är bara det valet, konsekvent genomfört."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram en aktie du äger eller bevakar. Beskriv den i två meningar utan att nämna kurs, diagram eller nyheter — bara verksamhet, kunder och kassaflöde. Om det inte går har du hittills ägt en lottsedel, inte en andel. Det är Grahams första hörnsten som praktiskt prov."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i allegorin om Mr Market?",
+          "alternativ": [
+            "Marknaden styrs av en osynlig institution som alltid har rätt i längden",
+            "En medägare erbjuder dagligen pris efter humör — hans sinnesstämning är en möjlighet, inte en order",
+            "Aktiepriser följer konjunkturcykler som kan förutsägas med hjälp av diagram",
+            "Börserna är stängda när risken är som störst"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg att Mr Market är hjälpsam — det farliga är att förväxla hans erbjudande med ett omdöme om värdet."
+        },
+        {
+          "q": "Vad menas med säkerhetsmarginal i Grahams mening?",
+          "alternativ": [
+            "Att köpa med avstånd mellan pris och beräknat värde, så att misstag kan sväljas",
+            "Att alltid behålla kontanter för att kunna köpa mer vid fall",
+            "Att sprida riskerna över många branscher",
+            "Att sälja en fjärdedel vid varje ny topp"
+          ],
+          "ratt": 0,
+          "tips": "Fråga dig vad marginalen skyddar mot: inte prisfall i sig, utan fel i din egen analys."
+        },
+        {
+          "q": "Vilken av följande är Grahams kvantitativa variant av säkerhetsmarginal — fimpan?",
+          "alternativ": [
+            "Att köpa tillbaka egna aktier när börsen faller",
+            "Att endast köpa bolag med tio års vinsttillväxt",
+            "Att investera i indexfonder med låga avgifter",
+            "Att köpa bolag under sina nettotillgångar, gärna under två tredjedelar av omsättningskapitalet"
+          ],
+          "ratt": 3,
+          "tips": "Fimpan — cigar butten — är den sista blessen: bolag värt mer döda än handlade."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Utbildningen II — Fisher och Munger: det kvalitativa komplementet",
+      "intro": "Graham gav strukturen men inte kvalitetsfrågorna. Hagstrom ägnar utbildningskapitlets andra hälft åt de två som kompletterade: Philip Fisher, tillväxtinvesteringens fader väster om Rockies, och Charlie Munger, advokaten som lärde Buffett att ett underbart företag till rimligt pris slår ett rimligt företag till underbart pris.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Philip Fishers Common Stocks and Uncommon Profits (1958) är i Hagstroms läsning motstycket till Grahams statistik. Där Graham räknade balansräkningar, Fisher frågade efter tillväxtens kvalitet: kan bolaget sälja mer av sitt sortiment, drivs det av en ärlig och kompromisslös ledning, har det en forsknings- och utvecklingskultur som skapar nya produkter, och behandlas de anställda så att företaget behåller de bästa? Fishers berömda metod var scuttlebutt — ryktessoppan: prata med kunder, konkurrenter, tidigare anställda och leverantörer tills bilden blir tredimensionell. Buffett tog metoden men skalade den; Munger tog den och byggde sitt informationsnätverk i Los Angeles affärskretsar."
+        },
+        {
+          "type": "text",
+          "content": "Fishers viktigaste praktiska arv är dock portföljformen: han ägde få aktier och höll dem länge, i decennier, och menade att diversifiering av ren vana är bekvämlighet i stället för noggrannhet. Motorola och Texas Instruments var hans standardexempel — kvalitetsbolag som skulle få växa ostört. Här finns en direkt linje till Hagstroms portföljkapitel (kursens kapitel 14): det var Fisher som lossade Grahams breda kurva och gjorde koncentration intellektuellt acceptabel i Buffetts värld. Buffett har sammanfattat arvet med att han i grunden är Graham och bara till en mindre del Fisher — men den mindre delen är den som förklarar Coca-Cola i stället för fimpor."
+        },
+        {
+          "type": "text",
+          "content": "Charlie Munger blev den tredje läraren och den korrigerande röst som saknades. Hagstrom återkommer gång på gång till See's Candies 1972 — prislappen runt tjugofem miljoner dollar för en godisfabrik med en vinst på strax över fyra miljoner före skatt, betald trots att tillgångarna i balansräkningen var små och Grahams kriterier saknades. Vad Munger såg och Buffett lärde sig var prissättningskraften: ett varumärke som kunde höja priserna varje år utan att kunderna bytte bort sig. Snöbollskursen berättar historien om förhandlingen; här är det analysen som betyder något — See's lärde Buffett att betala för kvalitet, och därmed uppstod franchisen som begrepp (kursens kapitel 4 och 5) och den koncentrerade portföljen (kapitel 14). Munger-formuleringen som Hagstrom citerar: det är bättre att köpa ett underbart företag till ett rimligt pris än ett rimligt företag till ett underbart pris."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms slutsats är inte att Buffett valde en av skolorna utan att han band samman dem: Grahams struktur och marginal, Fishers kvalitet och scuttlebutt, Mungers prislogik och koncentration. Boken skvallrar redan här om de tolv principernas indelning: företagsprinciperna bär Fishers spår, finansprinciperna Grahams, portföljkapitlet Mungers. Buffett har beskrivit sig själv som till största delen Graham med en skvätt Fisher — men Hagstroms poäng är att det var Munger som bestämde i vilka frågor Fishers röst skulle gälla. Kompositionen är inte en kompromiss utan en syntes: isberget består, men på isberget står ett franchisebolag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre lärare och deras spår i de tolv principerna\",\"rader\":[[\"Lärare\",\"Fokus\",\"Metod\",\"Spår i systemet\"],[\"Graham\",\"Värde och marginal\",\"Statistik; balansräkningar; net-nets\",\"Finansprinciperna; marknadsprinciperna\"],[\"Fisher\",\"Tillväxtens kvalitet\",\"Scuttlebutt; djupstudie av ledning\",\"Företagsprinciperna; ledningsprinciperna\"],[\"Munger\",\"Kvalitet till rimligt pris\",\"Prissättningskraft; få stora satsningar\",\"Franchisen; den koncentrerade portföljen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "See's Candies är utbildningens slutpunkt och metodens startpunkt: det köp som bevisade att en balansräkning kan beräkna vad ett företag äger, men bara ett varumärke kan beräkna vad det är värt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag du tycker om och Fisher-testa det: samla tre scuttlebutt-källor — en kund, en anställd eller före detta anställd, och en konkurrents uttalande. Skriv ner vad de säger om prissättningskraften. Om ingen av dem nämner priser eller lojalitet har du en råvara, inte en franchise."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär Fishers metod »scuttlebutt«?",
+          "alternativ": [
+            "Att läsa alla årsredovisningar baklänges från sista sidan",
+            "Att följa insiderköp i offentliga register",
+            "Att samla information från kunder, konkurrenter och anställda tills bilden blir tredimensionell",
+            "Att endast handla på tekniska brytpunkter"
+          ],
+          "ratt": 2,
+          "tips": "Ordet betyder ryktessoppa — informationen samlas utanför pressrummen, i verksamhetens utkanter."
+        },
+        {
+          "q": "Vad var See's Candies avgörande bidrag till Buffetts metod?",
+          "alternativ": [
+            "Bolaget köptes under nettotillgångarna som en klassisk fimp",
+            "Det lärde honom att betala för kvalitet och prissättningskraft snarare än för tillgångar",
+            "Det visade att detaljhandel alltid är en dålig affär",
+            "Det var det första bolaget Buffett köpte helt med hjälp av optionsstrategier"
+          ],
+          "ratt": 1,
+          "tips": "Tjugofem miljoner för en fabrik med fyra miljoner i vinst är dyrt för en fimp — men billigt för en franchise."
+        },
+        {
+          "q": "Hur sammanfattar Buffett själv arvet från Graham och Fisher?",
+          "alternativ": [
+            "Han är till största delen Graham med en mindre del Fisher",
+            "Han är hälften Fisher och hälften Graham",
+            "Han har övergivit båda till förmån för Munger",
+            "Han nekar till att ha påverkats av någon av dem"
+          ],
+          "ratt": 0,
+          "tips": "Strukturen är Grahams — men den mindre andelen förklarar kvalitetsvalen."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Företagsprinciperna — cirkeln, historien och franchisen",
+      "intro": "Bokens tredje kapitel — dess kärna — presenterar de tolv eviga principerna. De första tre gäller företaget självt: är verksamheten enkel och begriplig, har den en konsekvent historia och har den gynnsamma långsiktiga utsikter? Bakom den första frågan döljer sig en av metodens mest missförstådda idéer: cirkeln av kompetens.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första principen — enkelhet och begriplighet — är inte en egenskap hos bolaget utan hos förhållandet mellan analytiker och bolag. Hagstrom redovisar hur Buffett genom åren höll sig inom media, banker, försäkring och konsumtionsvaror: inte för att han saknade intelligens för teknik, utan för att han vägrade äga det han inte kunde räkna på. Risken, som Buffett formulerar det och Hagstrom citerar, kommer från att inte veta vad man gör. Cirkeln behöver inte vara stor — den behöver ha en tydlig kant och en ägare som känner igen den. Kursens koppling till AKM1 är rak: att poängsätta V12 intäktsstabilitet eller V13 patentkrav kräver cirkelkunskap; utan den blir poängen gissningar med decimalsymboler."
+        },
+        {
+          "type": "text",
+          "content": "Den andra principen — konsekvent operativ historia — handlar om förutsägbarhet. Ett företag som tjänat stabilt pengar på samma sak i ett decennium erbjuder något som inget nyckeltal kan ersätta: ett urval av verkliga utfall. Buffett är enligt Hagstrom skeptisk till turnarounds och nyskapelser just därför att historien saknas — att prognostisera framtiden för ett företag utan förflutet är att spå utan data. Här skiljer Hagstroms Buffett från båda grannskapen: mot value-traditionens konkursjägare och mot tillväxtskolans nystartade bolag. Den konsekventa historien är i AKM1:s språk V12: intäktsstabilitet, återkommande intäkter, förutsägbarhet — principens mätbara namn."
+        },
+        {
+          "type": "text",
+          "content": "Den tredje principen — gynnsamma långsiktiga utsikter — är franchisefrågan och inleder kursens moat-spår. Buffett definierade i sitt brev 1991 en riktig produkt med tre villkor: den behövs eller önskas, kunden tror att den saknar nära substitut, och den prissätts inte av regleringen. Uppfylls alla tre uppstår prissättningsmakt — förmågan att höja priser utan att förlora kunder — och därmed en verksamhet som kan tänjas i stället för att slitas. Hagstrom kontrasterar mot råvarubolaget, där priset sätts av konkurrenter och konjunktur och där lönsamheten förhandlas bort av omvärlden. Råvaran kan vara utmärkt men den är ingen franchise; skillnaden avgör om långsiktiga utsikter finns att köpa."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms pedagogiska poäng med de tre första principerna är att de är frågor, inte formler. De kan besvaras felaktigt och ändå strukturerar de arbetet: först bedöm cirkeln, sedan historien, sedan franchisen — och först därefter är det meningsfullt att öppna en kalkylmodell. Den som börjar med multipeln har hoppat över det enda som avgör om multipeln är hög eller låg: nämligen om bolaget har en vallgrav som skyddar avkastningen i tjugo år. Det är moaten, och den får ett eget kapitel här i kursen (kapitel 5) eftersom boken behandlar den både i företagsprinciperna och i fallen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De tre företagsprinciperna som frågor\",\"rader\":[[\"Princip\",\"Fråga till bolaget\",\"AKM1-översättning\"],[\"1. Enkelt och begripligt\",\"Kan jag förklara verksamheten utan att ljuga?\",\"Cirkeln som förutsättning för all poängsättning\"],[\"2. Konsekvent historia\",\"Har den tjänat pengar på samma sak i tio år?\",\"V12 intäktsstabilitet\"],[\"3. Långsiktiga utsikter\",\"Finns prissättningsmakt — behövs, saknar substitut, oreglerad?\",\"V13-V15 moat; V14 varumärke\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Cirkeln är metodens mest demokratiska verktyg: den växer inte med IQ utan med år av uppmärksamhet inom ett område — och den enda vägen att förstora den är att erkänna var den slutar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita din kompetenscirkel: tre områden där du kan beskriva affärsmodellen, prissättningen och konkurrensen utan att googla. Ranka därefter din nuvarande portfölj eller bevakningslista efter hur många innehav som faller utanför. Siffran utanför cirkeln är din exakta risknivå — oavsett vad någon volatilitetsmodell påstår."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menas med cirkeln av kompetens?",
+          "alternativ": [
+            "Att endast investera i bolag vars diagram man läst i fem år",
+            "Att äga bara bolag inom branscher som historiskt slagit index",
+            "Att kopiera de tio största ägarna i varje bolag",
+            "Att hålla sig inom områden där man själv förstår verksamheten och kan räkna på den"
+          ],
+          "ratt": 3,
+          "tips": "Cirkeln är subjektiv — den definieras av förståelsen, inte av bolagets storlek eller sektor."
+        },
+        {
+          "q": "Vilka tre villkor utgör Buffetts definition av en franchise-produkt (brevet 1991)?",
+          "alternativ": [
+            "Hög utdelning, låg skuld och stark styrelse",
+            "Låg P/E, hög direktavkastning och stabil omsättning",
+            "Behövs eller önskas, kunden ser inget nära substitut, prissätts inte av reglering",
+            "Stor marknadsandel, låg beta och hög omsättningshastighet"
+          ],
+          "ratt": 2,
+          "tips": "Tre villkor som tillsammans skapar utrymme för prissättningsmakt — det som råvaran aldrig får."
+        },
+        {
+          "q": "Varför är Buffett enligt Hagstrom skeptisk till turnarounds och helt nya bolag?",
+          "alternativ": [
+            "De har sällan lågt bokfört värde",
+            "Utan konsekvent historia saknas data att prognostisera ifrån",
+            "De går alltid sämre än index",
+            "De kräver för mycket portföljomsättning"
+          ],
+          "ratt": 1,
+          "tips": "Principen om den konsekventa historien är i grunden en fråga om urval av utfall — historia är den billigaste databasen."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Moaten — överlägsenhet, prissättningsmakt, varumärke, byteskostnader",
+      "intro": "Hagstrom ägnar bokens tredje kapitel en lång passage åt det som gör en franchise till en franchise: vallgraven — moaten — som skyddar lönsamheten mot konkurrenternas kapital. Detta kapitel samlar bokens moat-material: prissättningsmakten, varumärket, byteskostnaderna, nätverket och kostnadsfördelen, och kopplar varje källa till AKM1:s moat-variabler V13-V15.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Buffetts eget bildspråk, som Hagstrom återger, är slottet och vallgraven: ett vackert ekonomiskt slott med en bred och djup vallgrav som håller konkurrenterna borta. Frågan till bolaget är inte om vallgraven finns, utan om den breddas eller krymper. Moaten är också den enda försvarsanordning som ett franchisebolag verkligen äger: prissättningsmakten. Ett bolag som kan höja priser i takt med inflationen utan att tappa kunder besitter något som ingen balansräkning fångar och som ingen ny aktör kan köpa för pengar — det måste byggas under decennier av konsekvent leverans. I AKM1 är detta kärnan i kategorin Moat: V13 patent och immateriella rättigheter, V14 varumärke och kundlojalitet, V15 nätverkseffekter."
+        },
+        {
+          "type": "text",
+          "content": "Den första och renaste moatkällan är varumärket — V14. Hagstroms exempel är Coca-Cola och See's: ingen betalar en extra krona för sackaros och koffein, men miljarder betalar för den specifika smaken, minnet och tryggheten i flaskan. Buffetts test, som kursen låter eleven göra själv: om du fick hundra miljarder dollar och uppdraget att slå Coca-Cola — skulle du klara det? Svaret är nej, och det är svaret som avgör att varumärket är en moat och inte en sentimentbubbla. Varumärket gör också det svåraste i affärslivet lagligt: prishöjningar utan volymförlust. See's kunde höja priserna år efter år; en godisfabrik utan varumärke kan bara konkurrera med pris, vilket är en annan och betydligt sämre sport."
+        },
+        {
+          "type": "text",
+          "content": "Den andra källan är byteskostnader — switching costs. När kunden har integrerat en produkt i sin verksamhet, utbildat personal och byggt processer kring den, blir bytet dyrt nog att motivera ett något högre pris. Hagstrom kommer senare att visa detta i IBM-fallet (kursens kapitel 13): storföretags IT-avdelningar byter inte huvudleverantör av bekvämlighetsskäl, och just trögheten är värd pengar. Den tredje källan är nätverkseffekter — V15: tjänstens värde växer med antalet användare, som för American Express betalningsnät eller för en börs. Den fjärde är kostnadsfördelen: GEICO sålde försäkring direkt, utan återförsäljarled, och kunde därför erbjuda lägre pris med bibehållen marginal — en moat byggd på struktur i stället för sentiment."
+        },
+        {
+          "type": "text",
+          "content": "Moaten är inte bara en kvalitativ historieskrivning; den har en mätbar signatur. Ett moat-skyddat bolag visar det i marginalerna: bruttomarginal (V07) och EBITDA-marginal (V08) som håller sig stabilt höga över en konjunkturcykel, och en avkastning på eget kapital (V09) som inte eroderar när konkurrenter kapitaliseras in i branschen. Kursens arbetsmetod är därför dubbel: identifiera moatkällan kvalitativt — varumärke, byteskostnad, nätverk, kostnadsfördel — och verifiera den kvantitativt i marginalserien över tio år. Om historien om vallgraven inte syns i siffrorna är det ingen vallgrav; det är en saga med en VD som berättar den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Moatkällor och deras mätbara signatur\",\"rader\":[[\"Källa\",\"Mekanism\",\"Exempel i boken\",\"AKM1-variabel\"],[\"Varumärke\",\"Prishöjningar utan volymförlust\",\"Coca-Cola, See's\",\"V14\"],[\"Byteskostnader\",\"Bytet kostar mer än premien\",\"IBM, Capital Cities\",\"V13-V15 gränslandet\"],[\"Nätverkseffekt\",\"Värdet växer med antalet användare\",\"American Express betalnät\",\"V15\"],[\"Kostnadsfördel\",\"Strukturellt lägre kostnadsläge\",\"GEICO:s direktförsäljning\",\"V07-V08 som bevis\"],[\"Patent och IP\",\"Juridiskt skydd med löptid\",\"Läkemedel, teknikportföljer\",\"V13\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "En moat är inte att bolaget är bäst idag, utan att det är svårt att ta ifrån det överlägsenheten imorgon — testet är därför alltid omgivningens kapital och inte det egna omdömet: vad skulle hundra miljarder dollars konkurren åstadkomma?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör hundra-miljarder-testet på ett bolag i din bevakningslista: anta att en konkurrent med obegränsat kapital och fem års tålamod anfaller. Skriv ner de tre starkaste skälen till att anfallet misslyckas. Om skänen inte kan omvandlas till siffror — marginaler, volymandel, kontraktslängd — har du hittat en råvara."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Buffetts slott-och-vallgrav-bild?",
+          "alternativ": [
+            "Att frågan är huruvida vallgraven runt lönsamheten breddas eller krymper över tid",
+            "Att bolagets huvudkontor bör ligga i en historisk byggnad",
+            "Att bolag ska byggas nära floder för billig transport",
+            "Att aktien ska köpas när slottet står lågt i brand"
+          ],
+          "ratt": 0,
+          "tips": "Slottet är lönsamheten; vallgraven är det som skyddar den. Dynamiken — breddas eller krymper — är poängen."
+        },
+        {
+          "q": "Vilken moatkälla bygger GEICO:s konkurrenskraft enligt boken?",
+          "alternativ": [
+            "Varumärket från reklamfilmerna",
+            "Patent på försäkringsmatematik",
+            "Regulatoriskt skydd mot nya konkurrenter",
+            "Strukturell kostnadsfördel genom direktförsäljning utan återförsäljarled"
+          ],
+          "ratt": 3,
+          "tips": "Moaten sitter i distributionsstrukturen — samma premie, lägre kostnad, högre marginal."
+        },
+        {
+          "q": "Hur verifierar kursen att en moat är verklig och inte bara en berättelse?",
+          "alternativ": [
+            "Genom att läsa VD:ns brev till aktieägarna",
+            "Genom att räkna antalet omnämnanden i media",
+            "Genom att kontrollera att marginaler och ROE håller sig stabilt höga över en hel konjunkturcykel",
+            "Genom att jämföra P/E med branschgenomsnittet"
+          ],
+          "ratt": 2,
+          "tips": "En vallgrav som inte syns i marginalserien (V07-V09) skyddar ingenting — historien och siffrorna måste stämma överens."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Ledningsprinciperna — rationalitet, candor och det institutionella imperativet",
+      "intro": "De tre ledningsprinciperna handlar inte om karisma utan om beteende: allokerar ledningen kapitalet rationellt, talar den ärligt med ägarna, och motstår den det institutionella imperativet — driften att imitera omvärlden? Han bygger kapitlet på Buffetts årsbrev, där kapitalallokeringen kallas VD:ns viktigaste uppgift.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den fjärde principen — rationalitet — är i Hagstroms framställning den mest underskattade. Ett företag som år efter år tjänar pengar har ett problem de flesta avundas: överskott. Vad gör ledningen med den? Buffett, som Hagstrom citerar från årsbreven, listar alternativen i ordning: återinvestera i den egna verksamheten — rimligt om avkastningen på investerat kapital är hög; förvärva andra bolag — farligt om multiplarna drivs upp av prestige; återköpa egna aktier — rationellt endast när kursen ligger under det beräknade värdet; och utdela pengarna till ägarna — ärligt när de första alternativen inte klarar avkastningskraven. Rationalitet är alltså inte smartighet utan en jämförelse: var skapar kapitalet mest värde per dollar, räknat kallt och utan tanke på ledningens bekvämlighet?"
+        },
+        {
+          "type": "text",
+          "content": "Återköpen är kursens tydligaste länk till AKM1:s V20. Buffett köper tillbaka aktier i Berkshire bara när kursen ligger under intrinsic value — återköp under värde ökar varje kvarvarande akties andel av verksamheten och är i praktiken en värdeskapande placering; återköp över värde för över pengar från kvarvarande ägare till säljare och är ren värdeförstörelse, hur moderna presentationer än målar det som disciplin. I AKM1 poängsätts därför V20 efter prisförhållandet: återköp från fritt kassaflöde under rimlig värdering ger höga poäng; skuldfinansierade återköp på toppen ger låga. Case-studierna i kursens kapitel 13 — General Dynamics återköpsauktion 1992 och IBMs återköpsprogram — visar båda utförningarna i boken."
+        },
+        {
+          "type": "text",
+          "content": "Den femte principen är candor — ledningens vilja att rapportera fullt ut. Buffetts måttstock, som Hagstrom lyfter fram, är ömsesidigheten: skulle ledningen vilja veta detta om bolaget om rollerna var ombytta, det vill säga om den vore ägare i stället för förvaltare? Candor visar sig i redovisning som visar kostnader som de är, i fel som erkänns innan de upptäcks, och i vägledning som beskriver verksamheten i stället för att sminka den. Kursen noterar samtidigt kopplingen till Essays-kursens kapitel om ärlighetens räkenskap: Hagstrom läser breven som ledarskapsdokument; Cunningham ger dem som källtext. Båda landar i samma diagnos — bolag som talar sanning om misstag är lättare att värdera, och värdebarhet är i sig en tillgång."
+        },
+        {
+          "type": "text",
+          "content": "Den sjätte principen — motstånd mot det institutionella imperativet — är den mest nyttiga för den som vill skilja bra ledningar från medbra. Buffett beskriver i årsbreven en osynlig kraft som får bolag att bete sig som varandra: ledare imiterar omvärldens beteende oavsett om det är klokt, verksamheter växer in i allt tillgängligt kapital, och förändring motas därför att den implicerar att det förra var fel. Hagstrom översätter kraften till testfrågor: gör ledningen uppköp därför att konkurrenterna gör uppköp? Byggs organisationer och projekt därför att kapital finns, inte därför att avkastning kräver det? Vågar ledningen rapportera avvikelser från branschens konsensus? Den ledning som kan svara ja på sista frågan och nej på de två förra har passerat den svåraste av de tre ledningsprinciperna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Överskottskapitalets fyra vägar och deras villkor\",\"rader\":[[\"Alternativ\",\"Rationellt när\",\"Fallgrop\",\"AKM1-länk\"],[\"Återinvestera i verksamheten\",\"Avkastning på investerat kapital förblir hög\",\"Att investera för investerandets skull\",\"V09\"],[\"Förvärva andra bolag\",\"Köps under värde med moat\",\"Prestigeuppköp på toppmultipler\",\"V06\"],[\"Återköpa aktier\",\"Kursen under intrinsic value\",\"Återköp över värde — värdeförstörelse\",\"V20\"],[\"Utdela till ägarna\",\"Ingen reinvestering når avkastningskravet\",\"Att behålla kapital av bekvämlighet\",\"V12 V19\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Buffetts hårda slutsats, som Hagstrom understryker, är att kapitalallokering är VD:ns viktigaste jobb — för de flesta VD:ar är det den uppgift de tränats minst på: de har avancerat genom försäljning, produktion eller juridik, inte genom att placera kapital."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta reda på vad ett bolag du äger gjorde med sitt senaste års överskott: hur mycket återinvesterades, förvärvades, återköptes och delades ut? Sätt andelar i procent och döm varje krona mot villkoren i tabellen ovan. Om du inte hittar svaret i redovisningen har ledningen dessutom fallit på candor-provet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "När är återköp av egna aktier rationellt enligt boken?",
+          "alternativ": [
+            "Alltid, eftersom antalet aktier minskar och EPS stiger",
+            "När kursen ligger under det beräknade inneboende värdet",
+            "Bara när bolaget saknar utdelningsutrymme",
+            "När konkurrenterna genomför återköpsprogram"
+          ],
+          "ratt": 1,
+          "tips": "Frågan är var kapitalet skapar mest värde — under värde är återköpet en placering, över värde en gåva till säljarna."
+        },
+        {
+          "q": "Vad är det institutionella imperativet?",
+          "alternativ": [
+            "En osynlig kraft som får ledare att imitera omvärldens beteende, hur klokt eller oklokt det än är",
+            "Bolagsskyltigheten att följa lagar och förordningar",
+            "Styrelsens skyldighet att följa aktieägarnings direktiv",
+            "Incitamentsprogram som knyter VD-lön till aktiekursen"
+          ],
+          "ratt": 0,
+          "tips": "Nyckeln är imitationen: beslut fattas därför att andra fattar dem, inte därför att analysen kräver det."
+        },
+        {
+          "q": "Vilken måttstock använder Buffett för ledningens candor?",
+          "alternativ": [
+            "Om aktiekursen steg efter senaste rapporten",
+            "Om redovisningen följer alla rekommendationer från branschorganisationen",
+            "Om VD medverkar på investerarkonferenser varje kvartal",
+            "Om ledningen skulle vilja veta samma information om rollerna vore ombytta — om den vore ägare i stället för förvaltare"
+          ],
+          "ratt": 3,
+          "tips": "Ömsesidigheten är testet: ägarens behov av information sätter standarden, inte förvaltarens bekvämlighet."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Finansprinciperna I — ROE, owners earnings-formeln och marginalerna",
+      "intro": "De fyra finansprinciperna är bokens tekniska kärna: mät lönsamhet som avkastning på eget kapital, inte som vinst per aktie; räkna owners earnings i stället för att luras av redovisad vinst; kräv höga marginaler; och pröva de återhållna vinsterna med dollartestet. Detta kapitel tar de tre första — och owners earnings-formeln är Buffetts eget bidrag till finansieringslitteraturen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den sjunde principen: ROE i stället för EPS. Vinst per aktie är enligt Hagstrom det mest missbrukade lönsamhetsmåttet, eftersom det växer av två helt olika skäl — ökad lönsamhet eller bara ackumulerat kapital. Ett bolag som behåller alla vinster och stoppar dem i obligationer till noll ränta ökar EPS varje år, utan att skapa ett enda öre värde. Avkastning på eget kapital — V09 i AKM1 — tvingar fram frågan: hur mycket tjänar bolaget per krona kvarvarande ägarkapital? Hagstrom kompletterar med Grahams gamla varning som Buffett upprepar: mät ROE utan att stirra blindt på skuldsättningen, ty en uppluckrad balansräkning (V10) kan köpa vilken ROE-siffra som helst för en säsong. Först när hög ROE och låg skuld kombineras är lönsamheten äkta."
+        },
+        {
+          "type": "text",
+          "content": "Den åttonde principen är bokens mest berömda tekniska bidrag: owners earnings — ägarkassaflödet. Formeln, hämtad från Buffetts brev 1986 och som Hagstrom lyfter till central princip, lyder: nettovinst plus avskrivningar, amorteringar och övriga icke-kontanta kostnader, minus nödvändigt underhållskapital — det kapex som krävs för att hålla konkurrenskraften och volymen intakt. Skillnaden mot EBITDA är avgörande och kursen understryker den hårt: EBITDA lägger avskrivningarna tillbaka men glömmer att maskiner slits ut och måste ersättas; owners earnings drar av priset för att fortleva. Buffett har kallat EBITDA-värderingar för dårskap som banker omfamnar därför att de låter gäldenären glömma underhållet — Essays-kursens kapitel tretton ägnar samma ämne en egen genomgång."
+        },
+        {
+          "type": "text",
+          "content": "En viktig ärlighet i sammanhanget, som Hagstrom inte duckar för: owners earnings är inte exakt beräkningsbart. Buffett skriver själv att ingen av de tre komponenterna — särskilt inte underhållskapex — kan prickas in med precision, och att olika analytiker kommer fram till olika tal för samma bolag. Det är ingen svaghet utan en medveten avvägning: ungefärligt rätt är bättre än exakt fel. Kursens hantverksregel: uppskatta underhållskapex som historisk genomsnittlig kapex under en cykel minus tydliga expansionssatsningar, och lägg en osäkerhetsmarginal på resultatet. I AKM1:s värld ryms denna disciplin i poängsättningen av V08 (EBITDA-marginal med add-back-varning) och i kravet på kassaflödeslogik bakom varje lönsamhetspoäng."
+        },
+        {
+          "type": "text",
+          "content": "Den nionde principen — höga marginaler — är inte en from önskan utan en fråga om förmåga: bolag med moat visar det genom bruttomarginal (V07) och lönsamhetsmarginal per omsättningskrona, hårt och stabilt över konjunkturer. Hagstrom kopplar marginalerna till ledningen: marginalerna är kulturens sifferskrift, för de avslöjar om kostnadskontroll är en vana eller en kampanj. GEICO:s administration kostade en bråkdel av konkurrenternas, och det syntes i kvoterna varje år. Om de föregående kapitlen besvarat vad bolaget äger och vem som styr det, besvarar finansprinciperna den fråga investerare ställer sist men börsen belönar mest: hur mycket av varje omsättningskrona stannar kvar hos ägaren — och får den stanna kvar nästa år också?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Owners earnings-formeln komponent för komponent\",\"rader\":[[\"Komponent\",\"Riktning\",\"Kommentar\"],[\"Nettovinst\",\"Plus\",\"Redovisat resultat efter skatt\"],[\"Avskrivningar och amorteringar\",\"Plus\",\"Icke-kontant kostnad — lägg tillbaka\"],[\"Övriga icke-kontanta poster\",\"Plus\",\"Till exempel fördröjda skatter i vissa fall\"],[\"Nödvändigt underhållskapex\",\"Minus\",\"Priset för att hålla positionen — EBITDA glömmer denna rad\"],[\"Förändring i rörelsekapital\",\"Plus eller minus\",\"Justera efter tillväxttakten\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Owners earnings-formeln är en enda mening värd ihärdighet: en vinst är inte vad som redovisas, utan vad som kan tas ut ur verksamheten år efter år utan att den förlorar sin konkurrenskraft."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ladda ner fem års kassaflödesanalyser för ett bolag du följer och räkna owners earnings per år: nettovinst plus avskrivningar minus genomsnittlig kapex. Jämför serien med den redovisade vinsten. Om owners earnings ligger stadigt under vinsten har du hittat skillnaden mellan berättelsen och verksamheten — räkna också ut hur många procent den utgör."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför föredrar Buffett ROE framför vinst per aktie (EPS)?",
+          "alternativ": [
+            "EPS är svårare att hitta i rapporterna",
+            "ROE fungerar även för bolag utan eget kapital",
+            "EPS kan växa enbart av att bolaget behåller kapital, utan att skapa värde",
+            "EPS påverkas för mycket av räntor och skatt"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vad som driver EPS-tillväxten: bättre rörelse — eller bara mer ackumulerat kapital i balansräkningen?"
+        },
+        {
+          "q": "Vilken post skiljer owners earnings från EBITDA?",
+          "alternativ": [
+            "Räntekostnaderna",
+            "Avskrivningarna, som EBITDA lägger tillbaka men owners earnings justerar mot underhållskapex",
+            "Skatten på periodens resultat",
+            "Utdelningen till minoritetsägare"
+          ],
+          "ratt": 1,
+          "tips": "EBITDA glömmer att maskiner slits; owners earnings betalar priset för att verksamheten ska överleva."
+        },
+        {
+          "q": "Vad är bokens ärliga reservation om owners earnings?",
+          "alternativ": [
+            "Att värdet inte är exakt beräkningsbart — särskilt underhållskapex — och kräver omdöme",
+            "Att formeln bara fungerar för banker",
+            "Att den enbart gäller amerikanska bolag",
+            "Att den måste diskonteras med inflationen före användning"
+          ],
+          "ratt": 0,
+          "tips": "Buffetts eget förbehåll: ungefärligt rätt slår exakt fel — men omdömet måste redovisas, inte döljas."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 11,
+      "title": "Finansprinciperna II — retained earnings och dollartestet",
+      "intro": "Den tionde principen är kursens kortaste och längsta på en gång: för varje dollar bolaget behåller — ska bolaget ha skapat åtminstone en dollar i marknadsvärde. Dollartestet mäter om den återhållna vinsten är en tillgång eller en belastning, och det är samtidigt det mest koncentrerade mått på ledningens kapitalallokering som finns.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken är enkel och Hagstrom redovisar den steg för steg. Om ett bolag behåller en dollar och den återinvesteras till hög avkastning, kommer marknadsvärdet på sikt att stiga med mer än en dollar — och tvärtom: behålls dollarn och läggs i statsobligationer eller förvärvas trendiga bolag på toppen, skapas mindre än en dollar, och ägarna hade varit bättre tjänade med utdelning. Buffetts formulering i årsbreven — som Hagstrom gjort till princip nummer tio — är att varje återhållen dollar ska motsvaras av minst en dollar i marknadsvärdesökning. Testet behöver tid, fem år eller en konjunkturcykel, för att skilja allokeringsförmåga från börsens svängningar; korta fönster säger ingenting om annat än om sentiment."
+        },
+        {
+          "type": "text",
+          "content": "Dollartestet är också det enda finansmått som direkt fångar emissionens baksida — och därmed AKM1:s V19. Ett bolag som i stället för att behålla pengar kontinuerligt emitterar nya aktier gör det omvända testet: varje ny aktie ska tillföra minst en dollars marknadsvärde, annars är emissionen ett skattebelagt lån från gamla ägare till nya. V19 poängsätter kapitalförbränning och emissionsrisk; dollartestet är tidsaxeln som visar hur länge ägarna har betalat för den. Kursens tumregel från boken: bolag som år ut och år in behåller vinster utan motsvarande värdeskapning är i praktiken en fond med avgift — fast utan återbäring och utan rätt att rösta bort förvaltaren på fem år."
+        },
+        {
+          "type": "text",
+          "content": "Hagstrom gör också kopplingen som kursen behöver för värderingskapitlet: återhållna vinster är bara värdefulla om de återinvesteras över bolagets avkastningskrav — annars är de värdefullare i ägarens ficka. Därmed blir dollartestet en brygga mellan finans- och marknadsprinciperna: det berättar huruvida tillväxten i owners earnings är äkta (driven av hög avkastning på nytt kapital) eller köpt (driven av volym kapital till sjunkande avkastning). I fallen kommer testet till användning: Coca-Cola och Washington Post behöll kapital i decennier och skapade mångdubbelt en dollar per dollar; textildivisionen i Berkshire — som Snöbollskursen skildrar som det dyraste misstaget — behöll kapital i generationer och skapade i princip noll."
+        },
+        {
+          "type": "text",
+          "content": "En pedagogisk varning från kursens sida, i Hagstroms anda: marknadsvärdet är ett brusigt mått, och dollartestet kan missleda i tider då hela börsen stiger eller faller kraftigt. Därför två regler. För det första: mät över en hel cykel, inte från botten till toppen. För det andra: justera för utdelningar — dollarn som delades ut skapade värde hos ägaren även om den aldrig syns i bolagets börsvärde. Den som applicerar testet på hela portföljen får dessutom en portföljfråga gratis: hur många av mina bolag passerar testet — och vad säger det samlade svaret om hur allvarligt jag menar med ägandet?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dollartestets tre utfall\",\"rader\":[[\"Utfall\",\"Vad som hänt\",\"Dom\"],[\"Mer än en dollar per återhållen dollar\",\"Kapitalet återinvesterat över avkastningskravet\",\"Äkta värdeskapande — behåll och låt compoundera\"],[\"Cirka en dollar per dollar\",\"Kapitalet placerat neutralt\",\"Varken värt att behålla eller sälja — men bevakas\"],[\"Mindre än en dollar per dollar\",\"Kapitalet behållet utan hem — värdeförstörelse som utdelning skulle ha stoppat\",\"Kräv utdelning eller återköp under värde — V20\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Dollartestet översätter ägandet till en enda rad bokföring: vinsten tillhör ägaren, och om ledningen behåller den har ledningen lånat pengar av dig — lånet ska förräntas, inte bara förvaltas."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag, ta femårsfönstret och räkna: summa behållen vinst (vinst minus utdelning) mot förändring i börsvärde. Dela det senare med det förra. Vilket av de tre utfallen i tabellen träffar resultatet — skriv en mening om vad du som ägare borde kräva av ledningen nästa fem år."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är dollartestet?",
+          "alternativ": [
+            "Att bolagets kassa ska motsvara minst en dollar per aktie",
+            "Att utdelningen ska växa minst en dollar per år",
+            "Att återköp ska ske till max en dollar över bokvärdet",
+            "Att varje återhållen vinstdollar ska ha skapat minst en dollar i marknadsvärde över tiden"
+          ],
+          "ratt": 3,
+          "tips": "Testet gäller de pengar ledningen behåller — de är ett lån från ägaren som ska förräntas."
+        },
+        {
+          "q": "Vilken typ av bolag enligt kursen är i praktiken »en fond med avgift«?",
+          "alternativ": [
+            "Ett bolag med hög utdelningsandel",
+            "Ett bolag med låg omsättning i portföljen",
+            "Ett bolag som år efter år behåller vinster utan motsvarande värdeskapning",
+            "Ett bolag som emitterar nya aktier varje år"
+          ],
+          "ratt": 2,
+          "tips": "Vinsterna behålls men skapar under en dollar per dollar — avgiften betalas av ägarna i form av utebliven avkastning."
+        },
+        {
+          "q": "Vilka två försiktighetsregler ger kursen för testets tillförlitlighet?",
+          "alternativ": [
+            "Använd senaste kvartalet och justera för valutakurser",
+            "Mät över en hel konjunkturcykel och justera för utdelningar",
+            "Jämför bara med branschgenomsnitt och räkna i euro",
+            "Beräkna i nominala termer och bortse från återköp"
+          ],
+          "ratt": 1,
+          "tips": "Korta fönster mäter sentiment; utdelningen är värde hos ägaren även om den inte syns i bolagets börsvärde."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Marknadsprinciperna — intrinsic value och köp-korridoren",
+      "intro": "De två sista principerna återför oss till Mr Market och marginalen, nu med siffror: vad är bolaget värt, och kan det köpas med betydande rabatt? Hagstrom presenterar här Buffetts värderingsdefinition och sin egen favoritmetod — tvåstegsmodellen — och kursen bygger köp-korridoren som blir kursens praktiska verktyg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den elfte principen börjar med en definition som Buffett formulerat i årsbreven och som Hagstrom ställer som fundament: värdet av en aktie, en obligation eller ett företag är summan av de kassaflöden som kan tas ut ur verksamheten under dess återstående livstid, diskonterade till nutid med en lämplig räntesats. Notera orden: inte de kassaflöden som redovisas, utan de som kan tas ut — vilket är owners earnings från kapitel sju, och inte EBITDA, inte vinsten, inte kassaflödet från löpande verksamhet rakt av. Notera också att definitionen innehåller två okända: kassaflödets tillväxt och diskonteringsräntan. All värdering är därför en övning i att hantera dessa två okända ärligt, i stället för att låtsas att de är kända."
+        },
+        {
+          "type": "text",
+          "content": "Som diskonteringsränta använder Buffett enligt Hagstrom den långa statsobligationsräntan som utgångspunkt — med förbehållet att den är en minimitröskel och att en extra riskpremie kan tas för osäkerhet i kassaflödet. Kursen tillägger metodkravet från AKM1:s värderingskategori (V04-V06): multipelerna används inte som värde utan som grov kontroll av att diskonteringsmodellen inte springit iväg. En tvåstegsmodell som ger ett värde som motsvarar fyrtio års vinster medan bolaget historiskt handlats kring tjugo är en modell som behöver justeras — inte en marknad som behöver förklaras."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms favoritverktyg är tvåstegsmodellen. Steg ett: en hög tillväxtperiod, ofta tio år, där owners earnings eller utdelningar växer i linje med historisk förmåga. Steg två: en perpetuitet, där tillväxten sänks till grovt branschens eller ekonomin långsiktiga takt — fem procent är Hagstroms standardantagande — och kassaflödet kapitaliseras vid diskonteringsräntan. Modellen är medvetet enkel och dess styrka är just det: den tvingar analytikern att skilja mellan den extraordinära perioden (som motiveras av moaten) och det ordinära (som antas gälla när vallgraven planat ut). Komplexitet i värderingsmodeller är sällan tecken på noggrannhet — oftare på att antagandena gömts."
+        },
+        {
+          "type": "text",
+          "content": "Den tolfte principen — köp med betydande marginal — förvandlar värdet till en köp-korridor. Räkna intrinsic value under tre scenarier: ett försiktigt, ett bas och ett optimistiskt. Marginalen är avståndet mellan pris och det lägre spannet, uttryckt i procent. Hagstrom återger Buffetts eget arbetssätt: agera bara när avståndet är betydande — i fallen som följer handlar det om allt från tjugofem till över sjuttio procent — och låt korridoren, inte nyheten, bestämma timingen. Kursens formulering: köp-korridoren är det prisintervall inom vilket Mr Markets humör blir en möjlighet i stället för en signal. Under korridorens undre gräns köper analytiker mer av samma företag; över övre gränsen är det dags att fråga sig varför man äger det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tvåstegsmodellen steg för steg\",\"rader\":[[\"Steg\",\"Åtgärd\",\"Typiskt antagande\"],[\"1\",\"Prognostisera owners earnings eller utdelningar under högtilväxtperioden\",\"Tio år med tillväxt i linje med historik och moat\"],[\"2\",\"Diskontera årens kassaflöden till nutid\",\"Diskonto kring obligationsräntan plus vid behov premie\"],[\"3\",\"Beräkna slutvärdet vid periodens slut\",\"Perpetuitet med cirka fem procents tillväxt\"],[\"4\",\"Diskontera slutvärdet och summera\",\"Detta är intrinsic value\"],[\"5\",\"Bygg tre scenarier och läs av marginalen\",\"Köp först när pris ligger väsentligt under basscenariot\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Värderingens två okända — tillväxt och diskonto — kan aldrig elimineras, bara hanteras: tvåstegsmodellen är därför mindre en räknemaskin än en disciplin för att skilja extraordinär tid från ordinär tid innan första siffran skrivs."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en egen tvåstegsmodell för ett bolag du kan räkna owners earnings för: tio års tillväxt enligt historiken, därefter fem procent i perpetuitet, diskonto enligt tioårig statsobligation plus vid behov en premie. Kör tre scenarier genom att variera tillväxten med tre procentenheter. Skriv upp köp-korridoren och jämför med dagens kurs — hur många procent marginal har du just nu?"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definierar Buffett ett företags intrinsic value?",
+          "alternativ": [
+            "Som summan av de kassaflöden som kan tas ut ur verksamheten under dess återstående liv, diskonterade till nutid",
+            "Som bokfört eget kapital plus goodwill",
+            "Som genomsnittet av de tolv senaste månadernas slutkurser",
+            "Som nästa års EBITDA multiplicerat med branschmultiplen"
+          ],
+          "ratt": 0,
+          "tips": "Nyckelorden är kan tas ut — inte redovisas — vilket för oss tillbaka till owners earnings."
+        },
+        {
+          "q": "Vad kännetecknar andra steget i tvåstegsmodellen?",
+          "alternativ": [
+            "Bolaget antas växa trettio procent i femton år",
+            "Alla utdelningar antas nollställas",
+            "Diskonteringsräntan sätts till noll",
+            "Tillväxten sänks till en långsiktig ordinär nivå, cirka fem procent, och kassaflödet kapitaliseras"
+          ],
+          "ratt": 3,
+          "tips": "Första steget fångar den extraordinära perioden; andra steget frågar vad som gäller när vallgraven planat ut."
+        },
+        {
+          "q": "Vad är en köp-korridor i kursens mening?",
+          "alternativ": [
+            "Ett tekniskt stödområde beräknat på glidande medelvärden",
+            "Spannet mellan dagens köp- och säljkurs hos market makern",
+            "Prisintervallet där kursen ligger under intrinsic value med betydande marginal enligt scenarierna",
+            "Korridoren mellan bolagets vägledning låg och hög"
+          ],
+          "ratt": 2,
+          "tips": "Korridoren härleds från värdet och marginalen — inte från diagram eller vägledning."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Fallen I — Washington Post 1973 och GEICO",
+      "intro": "Bokens fjärde kapitel är dess bevisdel: nio inköp genomgångna med metoden. De två första fallen visar säkerhetsmarginalen i dess ytterligheter — Washington Post, där marginalen var så stor att feilen fick plats på löpande band, och GEICO, där moaten och krisen sammanföll i samma aktie.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Washington Post, 1973. Börsen låg i ras och marknaden prissatte mediekoncernen till mellan åttio och hundra miljoner dollar. Buffett, som hämtat kapital från sina tidningsrutters år (historien i Snöbollskursen), räknade intrinsic value till mellan fyra och fem hundra miljoner — fyra till fem gånger noteringen. Han köpte in cirka tio procent av bolaget för omkring tio miljoner dollar. Marginalen var grovt sjuttiofem procent: även om hans värdering felat med hälften fanns kraftig rabatt kvar. Hagstrom lyfter sedan resultatet som bokens första compounding-exempel: under de följande decennierna steg värdet till över en miljard dollar — utan att Buffett investerat ett enda nytt dollarbelopp — medan utdelningarna fortsatte att ticka in. Snöbollskursen berättar historien om Kay Graham; här är det siffrorna som bär tesen: marginal, moat, och ett företag Buffett förstod sedan barndomen."
+        },
+        {
+          "type": "text",
+          "content": "GEICO-fallet sträcker sig över hela bokens historia och visar två olika slags marginal. 1976 stod försäkringsbolaget på ruinens brant efter åratals felaktig prissättning och expansion; aktien hade fallit omkring nittio procent och marknaden betraktade bolaget som döende. Buffett, som delvis vuxit upp med bolaget — Graham-Newman ägde halva GEICO på fyrtiotalet och unge Buffett åkte buss till huvudkontoret en lördag 1951 — läste om kostnadsbilden: bolagets affärsmodell, direktförsäljning utan återförsäljare, var intakt, det var prissättningen som rasat. Han köpte aktier 1976, utökade 1980, och när Berkshire 1996 förvärvade resterande halva av bolaget betalade det omkring två och en halv miljard dollar — ett pris få kunnat föreställa sig två decennier tidigare."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms analys av GEICO är kursens renaste exempel på hur moat och kris hänger ihop. Den strukturella kostnadsfördelen — att sälja direkt och därmed billigare — försvann inte i krisen; det som kollapsade var prissättningsdisciplinen, och den kunde återinföras av en ledning (John Byrne) som återställde underwriting-kulturen. Buffett testade alltså inte om bolaget var billigt — han testade om vallgraven fanns kvar under vattnet som stigit. Det är också fallet som visar cirkelns värde: Buffett förstod försäkringens mekanik bättre än marknaden, förstod kostnadsstrukturen, och kunde därför skilja tillfälligt fel på prissättningen från permanent fel på modellen. I AKM1:s språk: V07-V08 marginalerna återhämtade sig, V12 intäktsstabiliteten höll, och moaten visade sig i V09:s återkomst."
+        },
+        {
+          "type": "text",
+          "content": "Ett gemensamt tema i de båda fallen, som Hagstrom drar och kursen understryker: marginalen kom inte från att marknaden hade fel om företagen — den kom från att marknaden hade fel om situationen. Posten var inte ett dåligt företag som blev billigt, utan ett bra företag i en panikperiod; GEICO var inte ett värdelöst bolag, utan ett bra bolag med ett tillfälligt trasigt prissättningssystem. Det är skillnaden mellan value traps och value cases, och den avgörs inte av P/E utan av frågan om vallgraven överlevde det som gjorde aktien billig. Den frågan — finns moaten kvar under krisen? — är den enda som gör contrarian-köp till något annat än hasard."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två fall i siffror\",\"rader\":[[\"Variabel\",\"Washington Post 1973\",\"GEICO 1976-1996\"],[\"Situation\",\"Börskrasch; mediepanik\",\"Kollapsad prissättning; aktien nittio procent ner\"],[\"Buffetts värde\",\"Cirka 400-500 MUSD\",\"Moat intakt — kostnadsfördelen bestod\"],[\"Pris\",\"Cirka 80-100 MUSD\",\"Köpt i omgångar; 1996 cirka 2,5 miljarder USD för resterande halva\"],[\"Marginal\",\"Grovt 75 procent\",\"Marginalen satt i att affärsmodellen överlevde krisen\"],[\"Moatkälla\",\"Varumärke och monopolliknande marknad\",\"Strukturell kostnadsfördel genom direktförsäljning\"],[\"AKM1-signatur\",\"V09 V14\",\"V07 V08 V12\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Båda fallen visar samma hemlighet: marginalen uppstår när marknaden förväxlar ett tillfälligt problem med en permanent skada — och endast cirkelkunskapen kan avgöra vilken av de två det är."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta en aktie som fallit minst hälften på ett år och ställ Hagstroms GEICO-fråga: är det affärsmodellen eller prissättningen som brutits? Skriv tre rader — vilken moat fanns före fallet, vilken del av moaten är skadad, och vad ledningen konkret gör för att laga den. Om du inte kan svara på den tredje raden är det ingen GEICO-situation."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur stor var den ungefärliga säkerhetsmarginalen i Washington Post-fallet?",
+          "alternativ": [
+            "Cirka tio procent under beräknat värde",
+            "Grovt sjuttiofem procent — värdet beräknades till fyra-fem gånger noteringen",
+            "Cirka tjugofem procent",
+            "Det fanns ingen marginal; köpet motiverades av tillväxtprognoser"
+          ],
+          "ratt": 1,
+          "tips": "Fyrahundra till femhundra miljoner i värde mot åttio till hundra i pris — räkna baklänges."
+        },
+        {
+          "q": "Vad var kvar av GEICO när aktien fallit omkring nittio procent?",
+          "alternativ": [
+            "Den strukturella kostnadsfördelen i direktförsäljningsmodellen",
+            "Ingenting — Buffett köpte som ren turnaround-spekulation",
+            "Bara varumärket",
+            "En stor kassa som skulle delas ut"
+          ],
+          "ratt": 0,
+          "tips": "Krisen gällde prissättningsdisciplinen, inte affärsmodellen — vallgraven fanns under vattnet."
+        },
+        {
+          "q": "Vad är skillnaden mellan ett value trap och ett äkta värdefall enligt kursen?",
+          "alternativ": [
+            "Value traps har alltid högre direktavkastning",
+            "Äkta värdefall finns bara i banksektorn",
+            "Value traps uppstår när ledningen är för ärlig",
+            "Om vallgraven överlevde det som gjorde aktien billig — cirkelkunskapen avgör, inte P/E"
+          ],
+          "ratt": 3,
+          "tips": "Frågan om moaten överlevde krisen är det enda som skiljer contrarian-köp från hasard."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Fallen II — Coca-Cola 1988: aritmetiken i värderingen",
+      "intro": "Om Washington Post visade marginalen i dess renaste form visar Coca-Cola-fallet hela räknekedjan: moat i V14:s betydelse, owners earnings, tvåstegsdiskontering och en köp-korridor som faktiskt användes. Detta är kursens räknekapitel — ta fram papper och penna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden: när Rob Goizueta tog över 1981 hade Coca-Cola rensat sortimentet, fokuserat på kärnrörelsen och byggt ut den globala distributionen. Buffett följde bolaget i decennier — han drack produkten och läste årsredovisningarna — men väntade. 1988 och 1989 köpte Berkshire sammanlagt omkring 1,3 miljarder dollars aktier i Coca-Cola, motsvarande strax över sex procent av bolaget, till multiplar kring femton gånger vinsten. Hösten innan köpet hade aktien redan stigit; Buffett köpte ändå, och Hagstrom förklarar varför: korridoren — inte kurvan — bestämde. Bolagets ROE låg på omkring trettio procent, moaten var världens starkaste varumärke, och owners earnings hade vuxit i linje med det."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms räkneverk i boken är en tvåstegsmodell av det slag kursen byggde i kapitel nio. Med antagandena hög tillväxt under tio år — historiken gav goda skäl för antaganden i riktning femton procent — därefter fem procent i perpetuitet, diskonterat med nio procent, landade intrinsic value på mer än tjugo miljarder dollar, mot ett börsvärde som vid köpen låg kring femton. Marginalen blev därmed grovt tjugofem till fyrtio procent — betydande, om än inte Washington Post-klass. Kursen understryker det pedagogiska: marginalen behövde inte vara extrem för att köpet skulle vara rätt; den behövde vara betydande i förhållande till säkerheten i kassaflödet. Ett varumärke av Coca-Colas kaliber ger en precision i owners earnings-prognosen som en cykeltillverkare saknar."
+        },
+        {
+          "type": "text",
+          "content": "Utfallet känner alla: aktien mångdubblade sig under det följande decenniet, utdelningen höjdes varje år — bolaget hade betalat utdelning sedan 1893 — och positionen blev med tiden värd mer än tio gånger insatsen. Men Hagstroms poäng, och kursens, är inte resultatet utan räknekedjans inre logik: eftersom owners earnings kunde växa femton procent med bibehållen kapitalinsats behövde Buffett inte göra något antagande om multipelutvidgning. Värdet skapades i verksamheten, inte i omvärderingen. Om multipeln förblir densamma och owners earnings växer femton procent om året, stiger aktiekursen femton procent om året — det är compounding-matematik, ingen hoppfullhet."
+        },
+        {
+          "type": "text",
+          "content": "Från fallet drar kursen tre regler som gäller alla köp. För det första: kvalitet köper precision — ju stabilare owners earnings, desto snävare scenarioklyfta och desto mindre marginal krävs. För det andra: tillväxten måste ha en moatförankring — femton procent i tio år motiveras av varumärke och distribution, inte av en trendkurva. För det tredje: fallet visar dollartestet i praktiken (kapitel åtta) — Coca-Cola behöll kapital och återinvesterade det globalt till hög avkastning, vilket innebar att varje återhållen dollar skapade långt mer än en dollar i marknadsvärde. Hade bolaget i stället behållit kapital utan hem hade inte ens världens starkaste varumärke räddat köpet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Coca-Cola-fallet i siffror\",\"rader\":[[\"Rad\",\"Värde vid köpen 1988-1989\",\"Kommentar\"],[\"Insats\",\"Cirka 1,3 miljarder USD\",\"Strax över sex procent av bolaget\"],[\"Multipel\",\"Cirka femton gånger vinsten\",\"I linje med — inte under — marknadens\"],[\"ROE\",\"Okring trettio procent\",\"V09 i toppskiktet\"],[\"Modellvärde\",\"Mer än tjugofem miljarder USD\",\"Tvåstegs: femton procents tillväxt tio år, därefter fem, diskonto nio\"],[\"Börsvärde\",\"Cirka femton miljarder USD\",\"Marginal grovt tjugofem till fyrtio procent\"],[\"Utfall\",\"Positionen mångdubblad på ett decennium\",\"Utdelning höjd varje år; utdelning sedan 1893\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Coca-Cola lär att marginalen inte behöver vara maximal — den behöver stå i proportion till säkerheten i kassaflödet: ju starkare moat, desto mer sannolika antaganden, och desto mindre rabatt krävs för att köpet ska vara rationellt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör om Hagstroms räkning på ett varumärkesbolag du följer: antag tio år av tillväxt i linje med de senaste tio årens owners earnings, därefter fem procent i perpetuitet, diskonto nio procent. Jämför med dagens börsvärde. Skriv därefter en mening om varför just dina tillväxtantaganden är moatförankrade — eller varför de inte är det."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken marginal hade Buffett cirka i Coca-Cola-fallet?",
+          "alternativ": [
+            "Ingen — han betalade marknadspris för kvaliteten",
+            "Nittio procent, som i GEICO",
+            "Grovt tjugofem till fyrtio procent under modellvärdet",
+            "Cirka fem procent, kompenseras av utdelningen"
+          ],
+          "ratt": 2,
+          "tips": "Modellvärde över tjugo miljarder mot börsvärde kring femton — betydande, men inte extremt."
+        },
+        {
+          "q": "Varför kunde Buffett enligt kursen godta en mindre marginal i Coca-Cola än i Washington Post?",
+          "alternativ": [
+            "För att aktien redan stigit och trenden var hans vän",
+            "För att kvaliteten i kassaflödet gav mer precisa owners earnings-antaganden",
+            "För att Goizueta personligen garanterat utdelningen",
+            "För att positionen finansierades med float"
+          ],
+          "ratt": 1,
+          "tips": "Marginalen ska stå i proportion till osäkerheten i antagandena — moat köper precision."
+        },
+        {
+          "q": "Vad menas med att värdet skapades i verksamheten och inte i omvärderingen?",
+          "alternativ": [
+            "Att owners earnings-tillväxten ensam driver avkastningen om multipeln förblir oförändrad",
+            "Att Buffett räknade med att P/E skulle expandera kraftigt",
+            "Att bokvärdet växte snabbare än aktiekursen",
+            "Att utdelningarna skattades lägre än kurstillgången"
+          ],
+          "ratt": 0,
+          "tips": "Multipel oförändrad plus femton procent owners earnings-tillväxt ger femton procents kursutveckling — compounding, inte hoppfullhet."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Fallen III — Wells Fargo 1990 och American Express",
+      "intro": "Två fall från 1990-talet visar metoden under press: Wells Fargo, där Buffett räknade på ett katastrofscenario i stället för en konsensusprognos, och American Express, där varumärket och betalningsnätet skulle vägas mot en förvirrad koncernstrategi.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Wells Fargo, 1990. Kaliforniens fastighetsmarknad fruktades kollapsa och bankaktier halverades. Buffett köpte aktier för knappt trehundra miljoner dollar — omkring en tiondel av banken — till multiplar som gick att räkna på en hand. Hagstrom framhäver att Buffetts analys inte var en optimistisk prognos utan ett stress-test: han räknade på ett scenario där kreditförlusterna under tre år blev i storleksordningen tre miljarder dollar — ett svartare utfall än de flesta vågade skriva — och fann att bankens resultatkraft och kapitalisering skulle svälja även det. När värsta fallet inte gör bolaget värdelöst är aktien inte farlig, bara obegripligt billig. Det är säkerhetsmarginalens mest praktiska form: räkna på katastrofen, inte på konsensus."
+        },
+        {
+          "type": "text",
+          "content": "Metodmässigt är Wells Fargo kursens exempel på scenarioanalys som komplement till tvåstegsmodellen. Banker är balansräkningsmaskiner — V10 skuldsättning och V11 likviditet blir här huvudvariabler, inte bisatser — och en punktskattning av intrinsic value ger falsk precision. Buffetts övning var därför strukturerad som tre frågor: hur stort kan förlusterna bli, tjänar banken igen kapital under tiden, och kräver katastrofen nyemission? Om svaret på den sista frågan är ja aktiveras V19 och marginalen försvinner oavsett hur billigt banken ser ut. I Wells Fargos fall var svaret nej — och därmed var priset på aktien i praktiken en option på överlevnad, betald till undervärde."
+        },
+        {
+          "type": "text",
+          "content": "American Express, 1994-1995, är varumärkesfallet. Koncernen hade under det tidiga nittio-talet svällt till en finansiell stormarknad — försäkring, mäklarverk, bank — och marknaden straffade otydligheten. Buffett köpte för omkring 1,4 miljarder dollar, motsvarande omkring en tiondel av bolaget. Analysen, som Hagstrom återger, var en sortering: inom koncernen fanns ett extraordinärt kortväsende med ett varumärke (V14) och ett betalnät (V15) som täckte världen, och en hop bredvidliggande verksamheter som diskonterats av förvirring. När nya ledningen under Harvey Golub sålde ut perifera delar och fokuserade kärnan, återkom värderingen — återigen ett case där marknaden straffade struktur snarare än substans."
+        },
+        {
+          "type": "text",
+          "content": "Kursen drar gemensam lärdom av 1990-talets fall: konjunkturen och skuldstrukturen skapar pris, men det är fortfarande franchisen som skapar värde. Wells Fargo var inte ett billigt bankköp — det var ett franchisebolag (depositioner och marknadsandel i Kalifornien) som handlades som om den statiska balansräkningen varit hela historien. American Express var ingen förvirrad konglomeratberättelse — det var ett betalningsnät som handlades som en. Fallen tränar alltså förmågan som kursen anser svårast: att se igenom den legala och finansiella formen till den ekonomiska verksamheten. Det är också därför AKM1-poängsättningen skiljer på kategori — moat och lönsamhet mäts på rörelsen, skuldsättning och likviditet på balansräkningen, och ingen av dem får stå för helheten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Wells Fargo 1990 — Buffetts stress-test i tre scenarier\",\"rader\":[[\"Scenario\",\"Antagande om kreditförluster\",\"Slutsats\"],[\"Bas\",\"Konjunkturnedgång utan kollaps\",\"Banken tjänar igen förlusterna på två till tre år\"],[\"Negativ\",\"Fastighetskris i Kalifornien\",\"Resultatkraften täcker; kapitaliseringen står pall\"],[\"Katastrof\",\"Cirka tre miljarder USD på tre år\",\"Även då: överlevnad utan nyemission — aktien fortfarande köpvärd\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Säkerhetsmarginalens mest praktiska form är inte en procentsiffra utan en fråga: vad är värsta fallet, och överlever bolaget det utan att be ägarna om nytt kapital?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ett Wells Fargo-test för ett skuldsatt bolag i din bevakningslista: uppskatta katastrofscenariots förluster under tre år, sätt dem mot resultatkraften, och avgör om scenariot kräver nyemission. Frågan om V19 aktiveras är den enda som avgör om aktien är billig eller bara farlig."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket arbetssätt kännetecknar Buffetts analys av Wells Fargo 1990?",
+          "alternativ": [
+            "Han prognostiserade konsensustillväxten noggrant",
+            "Han teknisanalyserade bottenformationer i banksektorn",
+            "Han väntade på att aktien skulle stabiliseras i tio veckor",
+            "Han räknade på ett katastrofscenario med omkring tre miljarder i kreditförluster och fann att banken överlevde"
+          ],
+          "ratt": 3,
+          "tips": "Metoden var stress-test, inte prognos — frågan var överlevnad, inte tillväxt."
+        },
+        {
+          "q": "Vad var kärnan i Buffetts analys av American Express 1994-95?",
+          "alternativ": [
+            "Att koncernens samtliga delar var undervärderade lika mycket",
+            "Att kortverksamheten höll på att trängas ut av ny teknik",
+            "Att ett världsomspännande varumärke och betalningsnät fanns begravet i en förvirrad koncernstruktur",
+            "Att bolaget borde brytas upp och börsnoteras i delar omedelbart"
+          ],
+          "ratt": 2,
+          "tips": "Kursen kallar det att se igenom den finansiella formen till den ekonomiska verksamheten."
+        },
+        {
+          "q": "Varför blir V19 (emissionsrisk) avgörande i ett bankscenario?",
+          "alternativ": [
+            "Banker får enligt lag inte emittera aktier under kriser",
+            "Om katastrofscenariot kräver nyemission försvinner marginalen oavsett hur billigt bolaget handlas",
+            "Emissioner ökar alltid direktavkastningen",
+            "V19 mäter bara småbolag och gäller inte banker"
+          ],
+          "ratt": 1,
+          "tips": "Ny aktieutgivning betyder att förlusterna betalas av gamla ägare — marginalen var en illusion."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Fallen IV — General Dynamics, IBM, Heinz (och BYD utanför boken)",
+      "intro": "Bokens sista fall visar metoden i rörelse: General Dynamics, där en återköpsauktion blev katalysatorn, IBM, där en livslång cirkel slutligen öppnades, och H.J. Heinz, där säkerhetsmarginalen byggdes in i själva dealstrukturen. Kursen avslutar med BYD — ett köp boken inte behandlar men som bokens ramverk prövas mot.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "General Dynamics, 1992, är bokens märkligaste fall. Efter kalla krigets slut var försvarsindustrin dödsdömd i marknadens ögon, och bolaget handlades under allt. VD:n William Anders — en rationalitetens praktiker i ledningsprincipernas mening — lanserade en holländsk auktion: bud på egna aktier till fast pris. Buffett köpte inte för att bolaget var en franchise utan för att strukturen garanterade värde: för varje återköpt aktie steg de kvarvarandes andel av kassan och tillgångarna, och auktionen fungerade som en medvind som förvandlade djupt rabatterade tillgångar till utdelningar. Hagstrom återger poängen utan krusiduller: vad som började som en special situation — ett arbitrage på en återköpsauktion — blev, när Buffett sett Anders hantera kapitalet, en permanent post. V20-kopplingen är slående: återköpet var katalysatorn, och katalysatorn var värdeskapande därför att den skedde under intrinsic value."
+        },
+        {
+          "type": "text",
+          "content": "IBM, 2011, är tredje upplagans bevis på att cirkeln kan byggas — även sent i livet. Buffett hade i femtio år läst IBMs årsredovisningar utan att agera; det som fick honom att agera var att tjänstedelen växt till mer än hälften av resultatet, att IT-avdelningar världen över var låsta i långa relationer — byteskostnader, moaten från kapitel fem — och att bolaget kontinuerligt köpte tillbaka aktier och höjde utdelningen, som betalats sedan 1910-talet. Berkshire köpte aktier för omkring elva miljarder dollar, knappt sex procent av bolaget, till multiplar nära historiskt snitt. Hagstrom använder fallet till att vända på princip ett: enkelt och begripligt betyder inte att vissa branscher är förbjudna — det betyder att investeraren själv måste bygga förståelsen. Cirkeln är en variabel, inte en konstant."
+        },
+        {
+          "type": "text",
+          "content": "H.J. Heinz, 2013, tillkom i sista upplagan och visar säkerhetsmarginalen i modern deal-dräkt. Berkshire och 3G Capital köpte tillsammans livsmedelsbolaget; Berkshire lade in cirka fyra och en halv miljard dollar i en kumulativ förmånsaktie med nio procents fast ränta och lika mycket i aktierna. Förmånsaktien är kursernas poäng: en stabil kassaflödsström (V12) från ett varumärkesbolag (V14) med utdelningsrätt som står före vanliga aktier — marginalen konstruerad i kontraktet i stället för i köpkursen. Hagstrom visar därmed att tolv principer inte bara kan styra när man köper aktier på börsen, utan hur man strukturerar en affär när man är börsen."
+        },
+        {
+          "type": "text",
+          "content": "Kursen tillägger — med tydlig markering att detta står utanför boken — fallet BYD, där ramverket kan prövas mot en senare tid. Berkshire köpte 2008, på Mungers initiativ, cirka en tiondel av det kinesiska batteri- och fordonsbolaget för omkring tvåhundratrettio miljoner dollar. Prövningen mot Hagstroms principer: enkelt och begripligt? Elbilar och batteri, moat främst i kostnadsfördel och skala (V01 tillväxt, V07-V08 marginaler, V15 nätverk av laddning)? Konsekvent historia? Svagare — teknologisk omställning ger ingen trettioårig serie. Marginal? Köpet var litet i förhållande till Berkshire och priset extremt lågt. AK1A:s läsning: BYD visar ramverkets gräns — det fångar inte teknologisprång, men fångar att positionen dimensionerades efter osäkerheten. Det är i sig en Buffett-lektion från boken: när marginalen inte kan beräknas, storleksätt positionen som om den vore noll."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Nya fall och deras signatur\",\"rader\":[[\"Fall\",\"År\",\"Katalysator eller struktur\",\"Princip i fokus\"],[\"General Dynamics\",\"1992\",\"Holländsk återköpsauktion under värde\",\"V20; special situation blir permanent post\"],[\"IBM\",\"2011\",\"Tjänsteandel; byteskostnader; återköp och utdelning\",\"Cirkeln kan byggas; V12 V20\"],[\"H.J. Heinz\",\"2013\",\"Förmånsaktie med fast ränta i dealen\",\"Marginal i kontraktet; V12 V14\"],[\"BYD (utanför boken)\",\"2008\",\"Munger-driven; litet köp till lågt pris\",\"Positionstorlek efter osäkerhet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fallen lär att katalysatorn inte är en femte princip utan en konsekvens av de fyra första: köper man under värde i bolag som återköper och återinvesterar rationellt, skapas medvinden på köpet — man behöver inte förutsäga den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Lista tre bolag i din bevakningslista som idag har en pågående återköpsauktion av Hagstroms typ: återköp under intrinsic value, finansierat av fritt kassaflöde, med ledning som dollartestet gillar. Jämför med tre bolag som återköper på topp med lånade pengar. Vilka av de sex passerar V20 med god marginal?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gjorde General Dynamics-fallet till något mer än ett vanligt undervärderingsköp?",
+          "alternativ": [
+            "En holländsk återköpsauktion under värde garanterade värdeöverföring till kvarvarande ägare",
+            "Bolaget hade en patentskyddad produkt",
+            "Buffett fick en plats i styrelsen med vetorätt",
+            "Försvarsindustrin återreglerades till Buffetts fördel"
+          ],
+          "ratt": 0,
+          "tips": "Återköpet under intrinsic value var både katalysator och bevis på ledningens rationalitet."
+        },
+        {
+          "q": "Vad var avgörande för att Buffett vågade köpa IBM 2011 efter decennier av teknikuvillighet?",
+          "alternativ": [
+            "Att aktien hade fallit och beta var låg",
+            "Att han fick tillgång till interna prognoser",
+            "Att konkurrenterna Apple och Google var dyrare",
+            "Att tjänsteandelen, byteskostnaderna och det disciplinerade återköps- och utdelningsmönstret gjorde bolaget begripligt inom cirkeln"
+          ],
+          "ratt": 3,
+          "tips": "Cirkeln är en variabel, inte en konstant — femtio års läsning byggde förståelsen som krävdes."
+        },
+        {
+          "q": "Hur byggdes säkerhetsmarginalen in i Heinz-affären 2013?",
+          "alternativ": [
+            "Genom att köpet leasades med avdragsrätt",
+            "Genom att Berkshire förhandlade sig till rabatt mot 3G",
+            "Genom en kumulativ förmånsaktie med nio procents fast ränta — marginal i kontraktet i stället för i kursen",
+            "Genom en option på att återlämna aktierna efter fem år"
+          ],
+          "ratt": 2,
+          "tips": "Kursen: när man är börsen kan marginalen konstrueras — förmånsaktien står före vanligt aktiekapital."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Portföljen — koncentration, Kelly och volatilitetens bluff",
+      "intro": "Bokens femte kapitel byter nivå: från att välja bolag till att äga dem. Hagstrom kallar metoden fokusinvestering och attackerar därmed direkt modern portföljteori: få, stora, noggrant valda positioner — inte femtio namn i en effektiv front. Kapitlet tar matematiken på allvar: sannolikhetstänkande, Kelly-kriteriet och den avgörande distinktionen mellan volatilitet och risk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Modern portföljteori, formulerad av Markowitz på femtiotalet och vidareutvecklad av Sharpe och Fama, har en kärna Hagstrom inte fördöljer: spridning utjämnar utfallet, och samvariationen — betan — mäter risk. Hans invändning är att betan mäter fel sak. En aktie som fallit hälften och nu handlas med sjuttiofem procents marginal till värdet har hög risk enligt betamåttet om den svänger kraftigt — och nästan ingen risk enligt Buffetts mått, som är risken för permanent kapitalförlust. Volatilitet är inte risk; det är pris på informationens och känslornas rörelse. Kursen formulerar det som Hagstrom gjort känd: risken sitter i bolaget och i priset du betalar, inte i kurvans formulär."
+        },
+        {
+          "type": "text",
+          "content": "Fokusinvesteringsregeln, som kursen hämtar från kapitlet och från Buffett-citatet om diversifiering: bred spridning är ett skydd mot okunnighet och ger föga mening för den som förstår vad den gör. Buffett har ägt få och stora positioner — Coca-Cola, American Express, Wells Fargo var under många år hälften av Berkshires börsvärde — och Hagstrom anger riktlinjen fem till tio bolag som går att övervaka på djupet. De historiska beläggen i boken är två: Keynes förvaltade King's College Chest Fund med koncentrerad portfölj och uppnådde under knappt två decennier en avkastning på över tolv procent per år medan den brittiska marknaden stod still eller föll; och Lou Simpson, GEICO:s förvaltare, slog index med bred marginal under ett kvartssekel med en portfölj som sällan innehöll fler än tio aktier."
+        },
+        {
+          "type": "text",
+          "content": "Kelly-kriteriet är kapitlets matematiska nerv, och kursen redovisar det som boken gör: vid jämna odds är optimal insats två gånger sannolikheten minus ett — det vill säga att en vinstchans på sextio procent mot femtio ger en teoretisk insats på tio procent av kapitalet, vägd mot möjligheten att förlora allt. Kriteriet befaller koncentration när övertaget är stort, men Hagstrom varnar samtidigt för dess antaganden: det gäller exakt bara när hela insatsen kan gå förlorad och när sannolikheterna är kända — vilket de sällan är på börsen. Praktisk lärdom blir därför halva Kelly och aldrig full insats: öka andelen av portföljen när marginalen är stor och cirkelkunskapen djup, men räkna alltid med att sannolikheten var fel. AK1A-ekosystemet använder samma logik i sin Kelly-modul i Monte Carlo-rutan: sannolikhet och utfall, inte magkänsla."
+        },
+        {
+          "type": "text",
+          "content": "Kursen tillägger den fysik som koncentrationen kräver, för Hagstrom är tydlig med att metoden inte är gratis. En koncentrerad portfölj kommer att ligga under index under perioder — det är priset för att positionerna är stora nog att spela roll när de träffar. Den som inte tål att se portföljen falla fyrtio procent medan index faller tjugo, ska inte fokusanalysera — detta är temperamentet som kapitel sexton återkommer till. Men om ettan är att välja rätt bolag och tvåan är att betala rätt pris, är trean den som avgör utfallet: att äga tillräckligt mycket av det man verkligen förstår. En tjugofemte position som tiodubblas flyttar inte kursen på någons liv — en femte position som tiodubblas gör det."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Modern portföljteori kontra fokusinvestering\",\"rader\":[[\"Fråga\",\"MPT:s svar\",\"Fokusinvesterings svar\"],[\"Vad är risk?\",\"Samvariation med marknaden — beta\",\"Permanent kapitalförlust; pris i förhållande till värde\"],[\"Hur sprida?\",\"Bred sektorspridning nära efficient frontier\",\"Fem till tio bolag som gås på djupet\"],[\"Hur stor position?\",\"Lika vikt eller riskparity\",\"Efter övertag — Kelly-logik med halva styrka\"],[\"Hur mäta resultat?\",\"Riskjusterat mot beta\",\"Owners earnings och intrinsic value över en cykel\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Koncentration är inte våghet utan konsekvens av analysen: den som verkligen förstår fem bolag och kan beräkna deras värde har inget rationellt skäl att späda ut övertaget med fyrtiofem namn hon inte förstår — diversifiering skyddar mot okunnighet, men den fjärmar också belöningen från kunskap."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på din egen Kelly: ta din största position och uppskatta sannolikheten att den slår index över fem år, samt utfallet vid rätt och fel. Vad säger kriteriet om positionens storlek? Om svaret är att positionen borde vara dubbelt så stor — fråga dig då vad som stoppar dig: bristande marginal, bristande cirkelkunskap eller bristande nerv? Tre olika svar, tre olika botemedel."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Hagstroms huvudinvändning mot beta som riskmått?",
+          "alternativ": [
+            "Beta fungerar bara på amerikanska aktier",
+            "Beta mäter samvariation med marknaden — inte risken för permanent kapitalförlust",
+            "Beta är för svår att beräkna för privatpersoner",
+            "Beta gäller bara derivat och fonder"
+          ],
+          "ratt": 1,
+          "tips": "En djupt undervärderd aktie kan svänga vilt i kurs och ha hög beta — och ändå vara nästan riskfri på Buffetts måttstock."
+        },
+        {
+          "q": "Vad säger Kelly-kriteriet vid jämna odds?",
+          "alternativ": [
+            "Att optimal insats är två gånger sannolikheten minus ett",
+            "Att alltid satsa tio procent oavsett övertag",
+            "Att satsningen ska fördubblas efter varje förlust",
+            "Att insatsen ska minimeras då vinstsannolikheten överstiger femtio procent"
+          ],
+          "ratt": 0,
+          "tips": "Sextio procents vinstchans ger (2×0,6−1)=0,2 — tjugo procent av kapitalet i teorin, halva Kelly i praktiken."
+        },
+        {
+          "q": "Vilka två historiska belägg för koncentration redovisas i boken?",
+          "alternativ": [
+            "Grahams Newman-fond och Fishers Motorola-portfölj",
+            "Harvard- och Yale-begåvningarna",
+            "Fama och Frenchs faktorstudie",
+            "Keynes Chest Fund och Lou Simpson på GEICO"
+          ],
+          "ratt": 3,
+          "tips": "En akademiker som förvaltade ett collegekapital under kriser — och en förvaltare som slog index ett kvartssekel med få aktier."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Kontroversen — tärningar, mynt och Notre Dame-forskningen",
+      "intro": "Kursens kontroverskapitel ställer den fråga boken vänder sig från men aldrig kan besvara slutgiltigt: är Warren Buffett världens bästa investerare — eller världens mest lyckosamma myntkastare? Kursen redogör ärligt för båda sidor och slutar med AK1A:s egen syntes.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den effektiva marknadshypotesen, formulerad av Eugene Fama, har en tydlig implication: överavkastning som varar i årtionden kan inte förekomma systematiskt, ty den skulle vara förutsägbar och därmed redan prissatt. Sagt med sannolikhetsläran: om tusentals fonter kastar mynt varje år under femtio år kommer en handfull att visa femtio raka krona — och dessa fonter kommer att förklara sin konst med principer, moater och disciplin. Det är tärningsargumentet: ge tillräckligt många människor tillräckligt många tärningar, och någon kommer att slå sexor hela kvällen. Skeptikerna — från akademiker som Burton Malkiel till probability-traditionen kring Ed Thorp, som Michael Lewis hjälpt göra allmänt känd — påpekar att just Thorps matematik bevisar båda delarna: kortleken kan besegras, men en lång vinstserie bevisar inte att den gjorde det."
+        },
+        {
+          "type": "text",
+          "content": "Buffetts eget svar kom 1984 i Columbia, i efterhand kallat Superinvestors of Graham-and-Doddsville, och Hagstrom refererar det: föreställ er 225 miljoner amerikaner som paras ihop och kastar mynt varje morgon. Efter tio morgnar finns omkring 220 000 kvar, efter tjugo omkring 215. Om 40 av dessa 215 kommer från en och samma lilla ort — Omaha, Graham-and-Doddsville — är det inte längre rimligt att tala om slump: orten har en metod. Det är ett vackert argument, men kursen är skyldig att visa svagheten, för den är uppenbar: argumentet är post hoc. Efteråt kan man alltid hitta en ort som ser ut som en möjstad — bland tusentals orter och dussintals investeringsskolor blir någon grupp vinnare av ren slump. Myntkastanalogin kan vändas: att just Omahas investerare vann är precis vad slumphypotesen förutsäger att någon ska påstå."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms motståndsrörelse — och anledningen till att koncentrationen fått ett eget forskningslär — är att frågan kan studeras på data i stället för i anekdoter. Martijn Cremers, professor vid University of Notre Dame, utvecklade tillsammans med Antti Petajisto måttet aktiv andel — hur mycket en portföljs innehåll faktiskt avviker från index — och forskningen har sedan visat att förvaltare med hög aktiv andel som handlar sällan och håller länge, i genomsnitt slår index, medan hög omsättning förknippas med underprestation. Det är ett indirekt stöd för fokusinvesteringshypotesen: koncentration och tålighet, inte snabbhet, är förknippat med övertag. Jordan Brooks, förvaltningsdirektör vid AQR, har i studier av superstjärnor — bland dem Buffett — dekonstruerat deras alfa i identifierbara komponenter: kvalitet, värde, låg belåning och tålighet. Slutsatsen är dubbel och obekväm för båda lägren: resultatet är delvis förklarbart med systematiska egenskaper — men egenskaperna går att replikera, vilket innebär att det som var Buffett-specifikt snävare än legenden, och det som var metod är öppet för alla."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — kursens eget svar, och skälet till att denna kurs finns. EMH-lägret har rätt om en sak: att vörda en investerare som vore han ett lotteri är ingen strategi, och karisma är inte en förklaringsmodell. Hagstrom har rätt om en annan: processen är lärbar, mätbar och regelstyrd. Vägen mellan lägren är att poängsätta principerna i stället för att prisa mannen: AKM1 operationaliserar Hagstroms tolv principer som tjugo variabler — V07-V09 för lönsamheten, V13-V15 för moaten, V12 för intäktsstabiliteten, V19-V20 för kapitalets vägar — var och en 0-5 poäng, max hundra. Frågan »är Buffett skicklig eller lyckosam« är då inte längre metafysisk: den blir mätbar per bolag, per år, med reproducerbara källor — enligt ekosystemets egen princip om reproducerbarhet. Boken som började med fem sigma slutar, för kursens del, med en skala."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversens läger\",\"rader\":[[\"Fråga\",\"EMH-skeptikerna\",\"Hagstrom och fokusinvesterarna\"],[\"Buffetts rekord?\",\"En extrem slumpordination — myntet föll rätt\",\"Resultatet av en process: cirkel, moat, marginal, koncentration\"],[\"Bevis?\",\"Tärningar och mynt: någon måste vinna\",\"Cremers aktiva andel: koncentrerade tåliga portföljer slår index i genomsnitt\"],[\"Implikation?\",\"Kopiera inte — indexa\",\"Kopiera processen — aldrig personen\"],[\"AK1A:s svar\",\"Mät principerna per bolag — AKM1 V01-V20, 0-5 poäng, max 100\",\"Därmed upphör frågan om guru och blir en fråga om skala\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Myntkastet kan aldrig avgöra om vinnaren hade en metod — men det finns ett test som kan: kan metoden formuleras, mätas och tillämpas av någon annan? Hagstrom skrev boken för att svara ja; AKM1 finns för att göra svaret mätbart."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör AKM1-testet själv: ta ett av Buffetts klassiska bolag från kursen — Coca-Cola eller GEICO — och poängsätt V07, V08, V09, V12, V13, V14, V15, V19 och V20 vid köptillfället, 0-5 per variabel, utifrån det kapitlet beskriver. Vilket totalt ur antalet fina variabler fick Buffett egentligen? Jämför sedan med ett hyllat tillväxtbolag idag. Det är den enda vettiga fortsättningen på guru-debatten."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i tärningsargumentet mot Buffett?",
+          "alternativ": [
+            "Att hans avkastning var för låg för att motivera ryktet",
+            "Att Berkshire drivs med för mycket skuld",
+            "Att bland tillräckligt många fonter och år kommer outlier-serier av ren slump — och att vinnarna alltid har en förklaringsberättelse",
+            "Att försäkringsfloaten gör resultatet ointressant"
+          ],
+          "ratt": 2,
+          "tips": "Sannolikhetsläran garanterar att någon slår sixor hela kvällen — frågan är om den som gjorde det kanvisa metoden."
+        },
+        {
+          "q": "Vad visar Buffetts myntkast-analogi från Superinvestors-föreläsningen?",
+          "alternativ": [
+            "Att 225 miljoner amerikaner inte kan ha fel",
+            "Att när en oproportionerlig andel vinnare kommer från samma ort — samma metod — är slump en dålig förklaring",
+            "Att mynt alltid landar krona i Nebraska",
+            "Att aktiemarknaden styrs av fysiska lagar"
+          ],
+          "ratt": 1,
+          "tips": "Poängen är ursprunget: metodens by, inte det enskilda kastet."
+        },
+        {
+          "q": "Hur bidrar Martijn Cremers forskning till debatten?",
+          "alternativ": [
+            "Genom måttet aktiv andel visar den att koncentrerade förvaltare som handlar sällan i genomsnitt slår index — indirekt stöd för fokusinvestering",
+            "Den visar att alla värdeinvesterare slår index med bred marginal",
+            "Den bevisar att EMH gäller i alla dess former",
+            "Den visar att Berkshire underpresterat jämfört med indexfonder"
+          ],
+          "ratt": 0,
+          "tips": "Cremers, professor vid Notre Dame, gjorde koncentrationen studerbar — data i stället för anekdoter."
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 10,
+      "title": "Psykologin och tålamodet — att finna sin egen väg",
+      "intro": "Bokens avslutande kapitel förenar Mr Market med beteendevetenskapen: varför intelligent människor fattar dåliga investeringsbeslut, varför tålamod är en strategi och inte en dyg, och hur eleven ska finna sin egen väg — med Buffett som lärare, inte som måttstock.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hagstrom sammanställer beteendefinansens fyra huvudfynd och visar hur de ramar in varje princip i boken. Överdriven självsäkerhet: studier av privatpersoners handel visar att de som handlar mest tjänar sämst — när grupper delats efter omsättningshastighet har den mest aktiva fjärdedelen avkastat påfallande mycket sämre än marknaden, medan de som höll sig stilla följt den. Förlustaversion: Kahneman och Tversky visade att förluster väger ungefär dubbelt så tungt som lika stora vinster, vilket gör att investerare säljer vinnare för tidigt och behåller förlorare för länge. Förankring: det pris vi en gång betalat blir ett mentalt ankare som stör värderingen av det framtida kassaflödet. Bekräftelse: vi söker information som bekräftar det beslut vi redan fattat. Mr Market, skriven 1949, var en beteendeekonom före beteendeekonomin — kapitel två i kursen var alltså psykologi redan."
+        },
+        {
+          "type": "text",
+          "content": "Motgiftet är långsamhet. Buffett har beskrivit sin stil som lättja gränsande till sysslolöshet — inte som polemik utan som princip: inaktiviteten är själva intelligensen, ty varje onödig transaktion är ett beslut som sätter cirkelkunskapen på spel och bjuder Mr Market att stå för omdömet. Kahneman skiljer mellan det snabla, intuitiva system ett och det långsamma, resonerande system två; Hagstrom lånar begreppet från psykologen Keith Stanovich om mindwaregapet — bristen på rätt tankeverktyg snarare än brist på intelligens. En checklista, tolv principer eller tjugo variabler är mindware: yttre struktur som tvingar system två att arbeta innan system ett hinner köpa. Tålamodet är därför ingen karaktärsegenskap utan en arkitektonisk fråga: hur många beslut per år tillåter din process dig att fatta?"
+        },
+        {
+          "type": "text",
+          "content": "Bokens sista rörelse är den mest personliga: Buffett är oöverträffad, men eleven ska inte bli Buffett. Hans cirkel byggdes under en epok av tidningar, banker och försäkring; din epok har andra moater och andra byar. Uppgiften, skriver Hagstrom, är att investera som om du ägde bolaget helt och skulle behålla det i tio år — att fråga: skulle jag köpa hela bolaget till detta pris om börsen stängde i fem år? I en privat företag-värld finns inga kurvor att reagera på, bara verksamheter att förstå. Kursen har låtit eleven översätta den frågan till sina egna variabler: AKM1-poäng, owners earnings, köp-korridor, positionstorlek. Warren Buffetts sätt är inte en hemlighet — det är en checklista, ett temperament och ett kvartssekel. Boken heter The Warren Buffett Way; vägen som kursen avslutar med är din egen, byggd med hans verktyg."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"System ett och system två i investering\",\"rader\":[[\"Situation\",\"System ett (snabbt)\",\"System två med checklista\"],[\"Aktien rasar\",\"Sälj — smärtan kräver handling\",\"Räkna: finns moaten kvar? Marginal nu? V19-status?\"],[\"Alla köper\",\"Köp med — rädslan att hamna utanför\",\"Är bolaget inom cirkeln och priset inom korridoren?\"],[\"Vinst realiserad\",\"Sälj — ta hem vinsten\",\"Sälj bara om intrinsic value förändrats eller kapitalet behövs bättre\"],[\"Kvartalsrapport missar\",\"Reagera på rubriken\",\"Läs owners earnings-serien: engångseffekt eller trend?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Tålamod är inte att vilja vänta — det är att ha byggt en process med så få beslutstillfällen att väntandet blir strukturellt: checklista i stället för karaktär, mindware i stället om vilja."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen investeringschecklista — tolv rader eller tjugo variabler, som du vill — och använd den nästa gång du vill köpa eller sälja något. Notera efteråt: vilket beslut ville system ett fatta, och vilket fattade system två? Räkna också hur många gånger per år din checklista faktiskt tillåter dig att handla. Om siffran är hög är det ingen checklista utan bara en rutin."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar forskningen om överdriven självsäkerhet i Hagstroms sammanställning?",
+          "alternativ": [
+            "Att självsäkerhet korrelerar med högre avkastning",
+            "Att bara professionella fonter drabbas",
+            "Att handel på natten ger bättre resultat",
+            "Att de som handlar mest avkastar sämre än de som handlar lite"
+          ],
+          "ratt": 3,
+          "tips": "När hushåll delats efter omsättningshastighet har den mest aktiva fjärdedelen avkastat sämst."
+        },
+        {
+          "q": "Vad är ett mindwaregap?",
+          "alternativ": [
+            "Glappet mellan kurs och bokfört värde",
+            "Skillnaden mellan ingress och analys i årsredovisningar",
+            "Bristen på rätt tankeverktyg — strukturer som tvingar fram långsamt tänkande — snarare än brist på intelligens",
+            "Tiden mellan börsens stängning och öppning"
+          ],
+          "ratt": 2,
+          "tips": "Stanovichs poäng, som Hagstrom tar till sig: checklistor är yttre struktur som låter system två hinna ifatt."
+        },
+        {
+          "q": "Vad blir kursens svar på frågan om eleven ska bli som Buffett?",
+          "alternativ": [
+            "Ja — kopiera hans portfölj offentligt",
+            "Nej — använd hans verktyg: cirkel, moat, owners earnings, korridor, positionstorlek, och bygg din egen väg",
+            "Nej — hans epok går inte att upprepa, ge upp",
+            "Ja — men bara inom tekniksektorn"
+          ],
+          "ratt": 1,
+          "tips": "Bokens titel är en väg, inte en identitet: processen är kopierbar, resultatet och cirkeln är dina egna."
+        }
+      ]
+    }
+  ]
+}

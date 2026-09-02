@@ -1,0 +1,1098 @@
+{
+  "slug": "quantitative-value",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 170,
+  "title": "Quantitative Value — Gray & Carlisle: KOMPLETT",
+  "summary": "Wesley Gray och Tobias Carlisle publicerade 2012 den mest systematiska blåkopian hittills för att automatisera värdeinvesterandet: ranka hela börsen på en komposit av sex värderingsmultiplar (P/E, P/B, EV/EBIT, EV/EBITDA, P/FCF och P/S), filtrera bort värdefällorna med Piotroski F-score, Altman Z och kreditmarknadens signaler — och låta reglerna, inte magen, fatta beslutet. Backtesten 1976–2011 gav cirka 17,7 procent per år mot cirka 11 för S&P 500. Kursen går igenom beteendefelen som gör strategin nödvändig, kompositerna VC1 och VC2, F-scorens nio punkter som checklista, shortsidan som värdefällsradar, backtesten, universumen, säljdisciplinerna, Deere & Co-fallet — och akademikernas hårdaste kritik: är hela faktorhuset datamining?",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå varför aktiv förvaltning förlorar — Lake Wobegon-effekten, avgifternas aritmetik och dumb money-paradoxen · Känna igen dina egna kognitiva fällor (konservatism och sample-size neglect) och koppla dem till din AI-Diagnos-profil · Se varför reglerna slår karisman — jedis kontra clones och 13F-kloningen · Bygga value composite-rankningen VC1/VC2 med sex multiplar mappade mot V04–V06 · Köra Piotroski F-score som checklista — nio kontroller mappade mot V07–V12 · Rena bort värdefällor med Altman Z, Beneish M, CDS-spreaden och kort ränta · Läsa backtesten 1976–2011 med ärliga ögon — inklusive Harvey–Liu–Zhus datamining-kritik och replikationskrisen · Sätta positionsstorlekar, säljdiscipliner och universumtrösklar (V11) · Tillämpa hela checklistan på ett riktigt bolag — Deere & Co · Syntetisera AKM1 (strukturerad subjektivitet) med QV (strukturerad objektivitet) till den systematiske värdeinvesteraren.",
+  "why": "Det här är AKM1:s operativa manual: där Graham och O'Shaughnessy lär ut VARFÖR värde fungerar, visar Gray och Carlisle exakt HUR en värderingsmodell byggs steg för steg — kompositrankning, kvalitetsfilter, värdefällsrens och portföljregler. Kursen är den systematiska ryggraden i V04–V06 (värderingskompositen) och V07–V12 (bokslutets kvalitetsbevis), och kontroverskapitlet om datamining och replikationskrisen ger den intellektuella ärlighet som krävs för att inte förvandla en kantfunktion till en trosfråga. Utan den här boken är AKM1:s screen-logik åsikt — med den är den en replikerbar process.",
+  "chapters_list": [
+    "1. Bokens kärna — beteendefel är råvaran",
+    "2. Lake Wobegon — där alla förvaltare är över genomsnittet",
+    "3. Konservatism och sample-size neglect — koppla till AI-Diagnos",
+    "4. Jedis kontra clones — reglerna slår karisman",
+    "5. Priset först — value composite VC1 och VC2 (V04–V06)",
+    "6. Kvalitetsfiltret — Piotroski F-score som checklista (V07–V12)",
+    "7. Financial strength och earnings quality — Z, M och kassaflödet",
+    "8. Undvik värdefällan — CDS-signalen och shortsidan",
+    "9. Korroboration — återköp, insiders och aktivister (V20)",
+    "10. Backtesten — QV-portföljen mot S&P 500 (1976–2011)",
+    "11. Universum-transaktioner — large, mid och all caps",
+    "12. Positionsstorlekar och säljdiscipliner",
+    "13. Deere & Co — checklistan på ett riktigt bolag",
+    "14. Kontroversen — datamining, p-hacking och replikationskrisen",
+    "15. Sammanfattning — den systematiske värdeinvesteraren (V01–V20)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "Bokens kärna — beteendefel är råvaran",
+      "intro": "Quantitative Value (2012) skrevs av Wesley Gray — marinveteran, Drexel-professor och senare grundare av Alpha Architect — och Tobias Carlisle, advokat och senare förvaltare hos Acquirers Funds. Bokens undertitel lovar hela programmet: en praktikers guide till automatiserad, intelligent investering som eliminerar beteendefel. Kursen börjar där boken börjar: med varför människan är problemet och modellen är lösningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tesen är enkel och djup. Marknadens felprissättningar skapas av investerares systematiska beteendefel — övermod, rädsla, girighet, trötthet. Det gör beteendefelen till värdeinvesterarens RÅVARA: utan dem finns ingen säkerhetsmarginal att köpa. Men här kommer vändningen som ger boken dess titel: samma fel som skapar möjligheten drabbar även den som försöker plocka den. James Montier, som boken citerar öppet, sammanfattar det: kunskap är inte beteende — att VETA att man är benägen att sälja i panik eliminerar inte paniken. Lösningen är därför inte mer kunskap utan en process som tål felet: en modell som fattar beslutet innan magen hinner göra det. Temperamentet, skriver Gray och Carlisle, ska byggas IN i modellen."
+        },
+        {
+          "type": "text",
+          "content": "Bokens öppningsbevis är Benjamin Graham själv — kvantinvesterarens urfadern. Graham föreslog i The Intelligent Investor enkla mekaniska regler: köp minst trettio aktier med P/E under tio och skuld per eget kapital under femtio procent, sälj när en aktie stigit femtio procent eller efter två år — vilket som kommer först. Graham uppskattade att reglerna borde ge runt femton procent per år. När Gray och Carlisle backtestade dem från 1976 till 2011 slog de hans egen prognos med ungefär två procentenheter — runt sjutton procent per år — av en enda anledning: reglerna följdes utan rädsla och utan girighet, år efter år, genom bubblor och krascher. Det är hela boken i ett enda experiment: enkelheten är inte begränsningen — den är kanten."
+        },
+        {
+          "type": "text",
+          "content": "Bokens arkitektur, som kursen följer kapitel för kapitel: först varför aktiv förvaltning och mänskligt omdöme förlorar (kapitel 1–3 i kursen), sedan byggstenarna — hur man mäter pris (value composite), hur man mäter kvalitet (Piotroski F-score), hur man undviker värdefällor (Z-score, M-Score, CDS, kort ränta) — och till sist portföljregler, backtest och den fullständiga checklistan tillämpad på Deere & Co. För AK1A är det här kursens tydligaste släktskap: AKM1:s tjugo variabler är en checklista av exakt samma skäl — att tvinga analysen genom samma hål varje gång. Skillnaden, som kontroverskapitlet återkommer till, är att AKM1 poängsätts av en människa och QV exekveras av en regel."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera bokens kärnidé innan du går vidare: felprissättningen kommer från beteendefel — och eftersom du har samma hjärna som marknaden, kommer din kant bara från regler som fattar beslutet ÅT dig. I AK1A:s språk: analysen gör du med AKM1, men beslutet ska kunna förklaras utan att referera till hur du kände dig den dagen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens arkitektur — fem mekaniska steg\",\"rader\":[[\"Steg\",\"Fråga\",\"Verktyg\",\"AKM1-koppling\"],[\"1. Universum\",\"Är aktien handlingsbar?\",\"exkludera finans, utilities och ADR; minimistorlek och likviditet\",\"V11\"],[\"2. Pris\",\"Är den billig?\",\"VC2: sex multiplar + aktieägaravkastning\",\"V04–V06\"],[\"3. Kvalitet\",\"Är den frisk?\",\"Piotroski F-score, nio kontroller\",\"V07–V12\"],[\"4. Värdefällor\",\"Är det en fälla?\",\"Altman Z, Beneish M, CDS-spread, kort ränta\",\"V10, V11, V19\"],[\"5. Portfölj\",\"Hur stor? När sälja?\",\"bredd, tak per aktie, mekanisk rebalansering\",\"V01–V20 helhet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör Grahams experiment på dig själv innan du lär dig modellen: skriv ner tre regler du anser dig följa i ditt investerande (till exempel aldrig köpa över viss värdering, alltid sova på beslutet, sälja när anledningen försvunnit). Granska sedan dina senaste tio affärer: hur många följde reglerna exakt? För varje brott, notera känslan som bröt regeln. Det är den listan — inte aktierna — som boken är skriven för att bota."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bokens grundtes om varför felprissättningar uppstår?",
+          "alternativ": [
+            "Centralbankernas räntebeslut skapar alla felprissättningar",
+            "Investerarnas systematiska beteendefel skapar dem — och samma fel drabbar även värdeinvesteraren som plockar dem",
+            "Felprissättningar beror enbart på datafel i databaserna",
+            "Marknaden är alltid effektiv och felprissättningar finns inte"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vem som säljer dig en aktie till hälften av värdet — och varför samma mekanism kan få dig att göra det."
+        },
+        {
+          "q": "Vad visade backtestens av Grahams enkla regler (P/E under 10, skuld under 50 procent, sälj vid 50 procent vinst eller två år) från 1976 till 2011?",
+          "alternativ": [
+            "De slog Grahams egen prognos på runt femton procent per år med ungefär två procentenheter",
+            "De gick med förlust eftersom reglerna var för enkla",
+            "De gav exakt noll avkastning efter inflation",
+            "De fungerade bara under 1990-talet"
+          ],
+          "ratt": 0,
+          "tips": "Nyckeln är inte regelens komplexitet utan att den följdes mekaniskt genom alla väder."
+        },
+        {
+          "q": "Vad menar James Montier med att kunskap inte är beteende?",
+          "alternativ": [
+            "Att utbildning är värdelös i finans",
+            "Att teoretisk kunskap om värde räcker för att slå marknaden",
+            "Att bara akademiker kan investera rationellt",
+            "Att VETA om sina biases eliminerar dem inte — lösningen är en process som skyddar mot felet"
+          ],
+          "ratt": 3,
+          "tips": "Fundera på skillnaden mellan att kunna en regel och att följa den i panikens mitt."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Lake Wobegon — där alla förvaltare är över genomsnittet",
+      "intro": "Bokens första kapitel heter The Paradox of Dumb Money — dumb money-paradoxen: kapitalet strömmar systematiskt till fel ställen, till förvaltare som redan presterat, efter att prestationen skett. Här möter du också Lake Wobegon, Garrison Keillors fiktiva lilla stad där alla barn är över genomsnittet. Det är aktiv förvaltnings sanningsserum.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lake Wobegon-effekten är övermodets statistiska självporträtt: i undersökningar av aktiva förvaltare anser en stor majoritet att de kommer att prestera bättre än genomsnittet — vilket är matematiskt omöjligt, eftersom genomsnittet per definition är genomsnittet av dem själva. Boken använder detta som ingång till den bredare bilden: aktiv förvaltning är, som William Sharpe formulerade sin berömda aritmetik (The Arithmetic of Active Management, 1991), ett nollsumspel före kostnader — och ett negativt nollsumspel efter dem. En förvaltare kan bara slå index om någon annan hamnar under det, och alla kan inte vara den någon annan."
+        },
+        {
+          "type": "text",
+          "content": "Dumb money-paradoxen förklarar varför flödet inte ens lär sig av det. Enkelt: pengar strömmar in i fonder efter bra år — det vill säga efter att prestationen redan skett — och lämnar efter dåliga, precis när framtidsförväntningen statistiskt förbättrats. Studiesuccén som boken refererar till visar att investerare i genomsnitt fångar en bråkdel av fondernas avkastning eftersom timingen på in- och utflödena är bakvänd. Lägg till avgifter, transaktionskostnader och det faktum att en stor fond rent fysiskt inte kan äga det som är för litet eller illikvidt — och den aktiva majoritetens underpresterande är inte ett mysterium utan en aritmetisk nödvändighet."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen är bokens ödmjukaste och starkaste drag: att välja en kvantitativ strategi är inte ett påstående om att man är smartare än marknaden — det är ett erkännande av att man sannolikt INTE är det. Reglerna är Lake Wobegons motgift: de kräver ingen tro på egen överlägsenhet, bara ett åtagande att följa en beprövad process. I AK1A:s värld är det här skillnaden mellan att leta efter nästa stora aktie och att systematiskt ranka framgångsrik statistik. Nästa kapitel visar vilka två kognitiva fällor som gör erkännandet så svårt — och vad AI-Diagnosen kan och inte kan säga om dem."
+        },
+        {
+          "type": "insikt",
+          "content": "Skriv ner Lake Wobegon-provet och applicera det på dig själv: om alla i rummet tror sig slå index, vem är sedan genomsnittet? Den systematiske värdeinvesteraren börjar med att anta att han eller hon ÄR genomsnittet — och låter därför en beprövad regel, inte självbilden, fatta besluten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Varför aktiv förvaltning förlorar — fem strukturella skäl\",\"rader\":[[\"Skäl\",\"Mekanism\"],[\"Avgifter\",\"förvaltningsarvodet äter kanten innan första affären\"],[\"Beteende\",\"dumb money — köp efter toppar, försäljning efter bottnar\"],[\"Storlek\",\"stora fonder kan inte äga det som är för litet eller illikvidt\"],[\"Omsättning\",\"transaktionskostnader och skatter maler ned avkastningen\"],[\"Lake Wobegon\",\"alla tror sig vara över genomsnittet — matematiskt omöjligt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Testa dumb money-paradoxen på ditt eget konto: ta dina fem senaste köp och fem senaste sälj. För varje affär, notera vad aktien gjort de tolv månaderna dessförinnan. Köpte du mest efter uppgångar och sålde mest efter nedgångar? Räkna ut andelen affärer som följde momentum i stället för värdering. Om majoriteten gör det har du producerat din egen personliga dumb money-studie — och exakt där behövs reglerna i resten av kursen."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är dumb money-paradoxen enligt bokens första kapitel?",
+          "alternativ": [
+            "Att kvantitativa fonder alltid är billigare",
+            "Att kapitalet strömmar in till förvaltare efter att deras goda prestation redan skett — och lämnar precis när framtidsförväntningen förbättrats",
+            "Att småsparare alltid köper indexfonder",
+            "Att institutioner aldrig gör förluster"
+          ],
+          "ratt": 1,
+          "tips": "Fundera på timingen i in- och utflödena — före eller efter prestationen?"
+        },
+        {
+          "q": "Vad är Lake Wobegon-effekten?",
+          "alternativ": [
+            "En teknik för att mäta volatilitet",
+            "En teori om att små bolag alltid slår stora",
+            "Att en majoritet av förvaltare tror sig bli bättre än genomsnittet — vilket är matematiskt omöjligt",
+            "Att sjöar är en bra metafor för likviditet"
+          ],
+          "ratt": 2,
+          "tips": "Keillors stad ligger i Minnesota — och i varje fondförvaltares självbild."
+        },
+        {
+          "q": "Vad säger Sharpes aritmetik om aktiv förvaltning?",
+          "alternativ": [
+            "Att aktiv förvaltning är ett nollsumspel före kostnader och ett förlorarspel efter dem",
+            "Att alla kan slå index om de bara försöker",
+            "Att index är omöjliga att mäta",
+            "Att avgifter inte spelar någon roll på lång sikt"
+          ],
+          "ratt": 0,
+          "tips": "Om en förvaltare köper måste någon sälja — räkna samman båda sidor och dra sedan av kostnaderna."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Konservatism och sample-size neglect — koppla till AI-Diagnos",
+      "intro": "Bokens tredje kapitel — hur kvantitativt investerande skyddar mot beteendefel — går igenom psykologin bakom varför experter och enkla medelmåttor misslyckas lika förutsägbart. Kursen plockar fram de två viktigaste biasarna för en fundamental analys: konservatism och sample-size neglect. Och kopplar dem rakt till den profil du får på AK1A:s AI-Diagnos-sida.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konservatism (i den kognitiva betydelsen, från Edward Edwards experiment och Tversky–Kahnemans tradition) är underuppdatering av tro: när ny information kommer väger människor den för lätt och håller fast för länge vid sin gamla uppskattning. För en fundamental analys är det förödande i båda riktningarna: du håller kvar din gamla vinstprognos trots att tre kvartal visat annat, och du håller kvar din gamla uppfattning om ett moat (V13–V15) trots att marginalerna eroderar. Marknaden gör samma fel — det är därför värde fungerar — men om du gör felet SAMTIDIGT som marknaden köper du ingen marginal, du köper bara din egen självbild av konservativ stabilitet."
+        },
+        {
+          "type": "text",
+          "content": "Sample-size neglect — urvalsstorlekens försummande — är tendensen att dra säkra slutsatser ur för små urval, det Tversky och Kahneman (1971) kallade de små talens lag. Två bra kvartal blir en trend. En ensam tiobagare blir ett system. En kort segersvit i screenen blir bevis på kanten. För en aktieanalytiker är detta den farligaste av alla biasar, eftersom finans data är brusig: över ett år är skillnaden mellan skick och tur nästan omätlig, och den som protesterar med två års data protesterar med ett urval som statistiken skrattar åt. Bokens motgift är samma som forskningens: kräv långa serier, hela universum och regler som inte nödvändigtvis imponeras av det senaste kvartalet."
+        },
+        {
+          "type": "text",
+          "content": "Nu kopplingen till AK1A:s AI-Diagnos (sidan /diagnos — sex scenarier, tre minuter). Diagnosen mäter din inlärningsstil, din tidsallokering, din drivkraft, din kunskapsnivå och din riskprofil: konservativ, balanserad eller aggressiv. AK1A:s syntes, öppet formulerad: diagnosen kartlägger dig, men den BOTAR dig inte. En konservativ riskprofil går hand i hand med konservatism-bias — benägenheten att hålla fast vid gamla siffror och gamla favoriter. En hög tävlingsdrivkraft går hand i hand med sample-size neglect — lusten att förklara varje kort serie av vinster som system. Känn din profil, alltså, men skriv inte ut dig själv från systematiken: precis som Montier sa, kunskap är inte beteende. Diagnosen talar om VAR du behöver reglerna som mest."
+        },
+        {
+          "type": "insikt",
+          "content": "Använd din AI-Diagnos-profil som en bias-karta: konservativ profil → din huvudfiende är konservatismen (gamla uppskattningar, gamla favoriter); tävlingsdriv → din huvudfiende är de små talens lag (kvartal blir trender). I båda fallen är motgifet detsamma: rankningar som uppdateras mekaniskt och urval som spänner över år, inte minnesbilder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två biasar och deras motgift\",\"rader\":[[\"Bias\",\"Symptom i analysen\",\"Motgift i QV\",\"AI-Diagnos-signal\"],[\"Konservatism\",\"nya kvartal vägs för lätt, gamla uppskattningar får styra\",\"modellen uppdaterar ranken mekaniskt när data uppdateras\",\"konservativ riskprofil — extra känslig\"],[\"Sample-size neglect\",\"tre kvartal blir en trend, en vinnare blir ett system\",\"reglerna kräver långa serier och hela universum\",\"hög tävlingsdrivkraft — extra känslig\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en bias-självprofil: öppna din AI-Diagnos-profil (eller gör diagnosen om du inte gjort den). Skriv sedan ned dina tre senaste analysuppgifter — en vinstprognos, en moat-bedömning, en säljbeslutsgrund. Fråga per punkt: innehåller denna uppskattning information som kom EFTER att jag formar den — och vägdes den då? Där svaret är nej har konservatismen arbetat. Fråga sedan: vilar min tro på fler än tio observationer? Där svaret är nej har de små talens lag arbetat. Notera vilken av de två som dominerar din profil."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär kognitiv konservatism i fundamental analys?",
+          "alternativ": [
+            "Att man investerar konservativt med låg risk",
+            "Att man underväger ny information och håller fast för länge vid gamla uppskattningar",
+            "Att man bara köper statsobligationer",
+            "Att man konservative räknar avskrivningar hårdare"
+          ],
+          "ratt": 1,
+          "tips": "Det handlar om uppdatering av ÖVERTYGGELSER, inte om risknivå i portföljen."
+        },
+        {
+          "q": "Vad är sample-size neglect — de små talens lag?",
+          "alternativ": [
+            "Att små bolag alltid är bättre investeringar",
+            "Att urval under viss storlek är förbjudna i forskning",
+            "Att man använder för små skärmar vid screening",
+            "Att man drar säkra slutsatser ur för få observationer — två kvartal blir en trend"
+          ],
+          "ratt": 3,
+          "tips": "Fråga alltid: hur många observationer vilar denna tro på?"
+        },
+        {
+          "q": "Hur bör en AI-Diagnos-profil med konservativ riskprofil användas enligt kursens syntes?",
+          "alternativ": [
+            "Som en ursäkt att handla mer aktivt",
+            "Som en frihetsförklaring från all systematik",
+            "Som en bias-karta: konservativ profil hänger ihop med konservatism-bias — där behövs mekaniska uppdateringar som mest",
+            "Som bevis på att man är immun mot beteendefel"
+          ],
+          "ratt": 2,
+          "tips": "Diagnosen kartlägger — modellen botar. Vilken bias bor hos den konservative?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Jedis kontra clones — reglerna slår karisman",
+      "intro": "Kan man inte bara hitta mästarna och följa dem? Boken tar frågan på allvar: genomgårng av superinvesterare — jedis, i bokens språkbruk — och vad som händer när man klonar dem mekaniskt via deras 13F-depositioner. Svaret är kursens kanske viktigaste karaktärsdrag: processen, inte personen, bär resultatet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lockelsen är frestande: Buffett, Klarman, Greenblatt och de andra stora värdejediserna har slagit marknaden i decennier. Boken ställer frågan empiriskt: vad händer om man klonar dem — det vill säga kopierar de positioner de måste avslöja offentligt i amerikanska 13F-depositioner? Svaret: kloning KAN slå marknaden — det finns forskning som visar att portföljer sammansatta av värdeinriktade förvaltares avslöjade positioner presterat väl. Men — och det är bokens poäng — bara om du i förväg kan identifiera de förvaltare som kommer att FORTSÄTTA vinna. Persistensen är svag: gång på gång visar studierna att de som vunnit nyligen inte vinner mer än andra de kommande åren. Att klona en jedi i efterhand är att köpa gårdagens prestation — dumb money-paradoxen igen, nu med käpp."
+        },
+        {
+          "type": "text",
+          "content": "Här kommer vändningen som förtjänar kursens titel. Om inte ens mästarnas pickar kan klonas med tillförlitlighet, vad bar då deras resultat? Svaret: PROCESSERNA. En jedi är inte en övernaturlig vinnarväljare utan en människa som under lång tid följt en disciplinerad process — köpa värde med marginal, undvika permanent kapitalförlust, vänta. Processen kan skrivas ned, reglerna kan automatiseras — och en regel exekverad som en maskin är något en människa aldrig kan bli: den blir aldrig trött, rädd eller girig, den åldras inte, och den tappar aldrig fokus efter framgång. Jim Simons, som boken citerar, sa om sina egna modeller: använd dem slaviskt — gör exakt vad modellen säger. Det är karisma bytt mot regelverk, och regelverket vinner på disciplinens punkt."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A är det här grunden för hela kurskatalogen: AKM1-kalkylatorn är en klon av institutionellt tänkande — samma tjugo frågor, samma skala, varje gång. Och Quantitative Value-boken är den mest fullständiga publika klonen av värdeinvesteringsprocessen som finns: varje regel i bokens modell är publicerad, öppen och möjlig att replikera hemma. Det är också bokens största etiska poäng, citerad öppet: en strategi som bara fungerar om den hålls hemlig är en strategi som inte litar på sin egen förklaring. Value bygger på beteendefel som inte försvinner för att reglerna är kända — kunskapen om felen botar dem inte — och det är exakt därför en publicerad strategi kan förbli lönsam."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga aldrig vem som är marknadens bästa investerare — fråga vilka regler som bäst överlever utan investeraren. En jedi med en regel är värdefull; regeln utan jedin är bättre: den kan aldrig mista fokus, och den kan aldrig övertyga dig om att den har slutat gilla regeln."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Jedi kontra klon — varför regeln vinner\",\"rader\":[[\"Egenskap\",\"Jedi (mästaren)\",\"Klonen (regeln)\"],[\"Tillgång\",\"kräver rätt person\",\"vem som helst med en checklista\"],[\"Känslor\",\"människa — rädd, girig, trött\",\"modellen känner inget\"],[\"Kapacitet\",\"stora pengar urholkar kanten\",\"regeln skalas efter universum\"],[\"Kostnad\",\"arvode — eller omöjlig att nå\",\"nästan gratis\"],[\"Åldrande\",\"mästaren tappar fokus med åren\",\"processen åldras inte\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en klon-check av dina idoler: skriv ned de tre investerare du helst kopierade. Sök upp deras publika regler — böcker, brev, intervjuer — och skriv ned vilka MEKANISKA regler de faktiskt följer (värderingströsklar, positionsantal, säljregler). Fråga sedan dig själv: vilka av dessa regler kan du köra i din AKM1-screen i dag? Du kommer upptäcka att det du beundrar hos jedin till största delen är en checklista — och checklistan kan du bygga själv."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hittar boken om att klona stora investerares 13F-depositioner?",
+          "alternativ": [
+            "Att kloning alltid slår marknaden utan risk",
+            "Att kloning kan slå marknaden — men bara om du i förväg identifierar de förvaltare som fortsätter vinna, vilket är svårt",
+            "Att 13F aldrig innehåller användbar information",
+            "Att alla värdeinvesterare presterar identiskt"
+          ],
+          "ratt": 1,
+          "tips": "Persistens är nyckelordet — hur förutsägbart är gårdagens vinnare?"
+        },
+        {
+          "q": "Vad är bokens svar på vad som bär mästarnas resultat?",
+          "alternativ": [
+            "Medfödd talang som inte kan beskrivas",
+            "Processen — reglerna kan skrivas ned, automatiseras och överlever utan personen",
+            "Tillgång till insiderinformation",
+            "Ren tur"
+          ],
+          "ratt": 1,
+          "tips": "Vad återstår när karisman avlägsnas men resultatet består?"
+        },
+        {
+          "q": "Vad menar Jim Simons-citatet som boken förmedlar?",
+          "alternativ": [
+            "Att modeller bara är vägledning när magen håller med",
+            "Att man ska använda modellerna slaviskt och göra exakt vad de säger",
+            "Att mänsklig intuition alltid ska ha sista ordet",
+            "Att modeller är overksamma utan känslor"
+          ],
+          "ratt": 1,
+          "tips": "Ordningen mellan modell och mage är hela skillnaden mellan system och åsikt."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Priset först — value composite VC1 och VC2 (V04–V06)",
+      "intro": "Nu börjar byggandet. Steg ett i modellen: mät priset. Boken testar först alla klassiska multiplar var för sig — och visar sedan varför en KOMPOSIT av flera multiplar slår vilken enskild multipl som helst. Det är value composite: VC1 och VC2, kursens kärna och AKM1:s V04–V06 i ett enda bygge.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Singeltesterna först. Gray och Carlisle testar sex sätt att mäta billighet — E/P (vinstavkastning), EBIT/EV, EBITDA/EV, FCF/EV, bruttovinst per EV och bokvärde/marknadsvärde — på hela börsen. Resultatet bekräftar värdearvet: den billigaste decilen slår marknaden och den dyraste förlorar, decil för decil uppåt. De mest robusta enskilda måtten var EBIT/EV (det som senare fått namnet acquirer's multiple), EBITDA/EV och bruttovinst per EV. En ensam EBIT/EV-skärm på den billigaste decilen gav historiskt runt sexton procent per år — OBS: redan bättre än Greenblatts magiska formel, som fick ungefär fjorton. Och en central negativ upptäckt: att normalisera vinsten över flera år förbättrade INTE resultatet — ettåriga mått fungerade utmärkt. Enklast möjliga mått, bäst möjlig träff."
+        },
+        {
+          "type": "text",
+          "content": "Men boken går vidare: enskilda multiplar har alla sin blindzon — P/B missar immateriella tillgångar, P/E masseras av bokföringsval, P/S säger inget om lönsamheten — och vilken multipl som är starkast skiftar mellan perioder (du minns från What Works-kursen hur P/B:s kant försvann efter 1990). Lösningen är därför value composite: ranka varje aktie på varje multipl för sig, lägg samman rangerna och låt summan bli aktiens värdepoäng. VC1 byggs av sex multiplar — P/E, P/B, EV/EBIT, EV/EBITDA, P/FCF och P/S. VC2 lägger till en sjunde komponent: aktieägaravkastningen, alltså utdelning plus återköp (V20-kopplingen). Aktien måste inte vara billigast på något enskilt mått — den måste vara billig MÅNGA GÅNGER SAMTIDIGT. Det är diversifiering mellan mått i stället för mellan aktier."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-mappningen är rak: P/S är V04, P/B är V05, och EV/EBITDA är V06 — med P/E, EV/EBIT och P/FCF i V06:s bekräftande familj, exakt som What Works-kursen lärde. Differentieringen mot grannkurserna är lika viktig: O'Shaughnessy RANKAR enskilda faktorer i deciler och letar den starkaste; Greenblatt KOMBINERAR två rankningar (billig på EBIT/EV plus bra på ROIC); Gray och Carlisle bygger en enda kompositrankning av sex-sju mått och lägger kvalitetsfiltret OVANPÅ — inte inuti — värderingen. Det är som en tentamen med sex delmoment där summan av poängn — inte bästa enskilda provet — avgör. Vilket mått som helst kan ha ett dåligt decennium; kompositen kräver att alla sex tar fel samtidigt för att misslyckas."
+        },
+        {
+          "type": "insikt",
+          "content": "Regeln för AKM1: mät aldrig billighet med en enda multiplikator. V04 är huvudmåttet, V05 och V06-familjen är bekräftelser — och först när flera oberoende mått pekar samma håll har du en bred marginal. Kompositen är värderingsdimensionens egen diversifiering."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"VC2 — kompositens sju komponenter\",\"rader\":[[\"Komponent\",\"Mäter\",\"AKM1\"],[\"P/E\",\"pris per vinstkrona\",\"V06-familjen\"],[\"P/B\",\"pris per bokförd krona\",\"V05\"],[\"EV/EBIT\",\"pris på driftens resultat, skuldjusterat\",\"V06\"],[\"EV/EBITDA\",\"pris före avskrivningar, skuldjusterat\",\"V06\"],[\"P/FCF\",\"pris per fritt kassaflöde\",\"V06-familjen\"],[\"P/S\",\"pris per intäktskrona\",\"V04\"],[\"Aktieägaravkastning (VC2-tillägget)\",\"utdelning plus återköp\",\"V20\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en egen VC2-rankning i miniatyr: ta tjugo aktier ur ditt bevakningsuniversum. Ranka dem var för sig på P/S (V04), P/B (V05) och EV/EBITDA (V06) — billigast får rang 1. Addera de tre rangerna till en kompositpoäng. Vilka tre aktier leder kompositen? Jämför med om du bara rankat på P/S: hur många nya namn kliver in när flera mått måste säga billig samtidigt? Skillnaden mellan listorna är kompositens whole point — notera den."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka enskilda värderingsmått var mest robusta i bokens singeltester?",
+          "alternativ": [
+            "P/B och direktavkastning",
+            "E/P och P/S",
+            "EBIT/EV, EBITDA/EV och bruttovinst per EV",
+            "Peg-ratio och momentum"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vilka mått som ligger närmast verksamhetens kassaflöde och långt ifrån bokföringsvalen."
+        },
+        {
+          "q": "Vad är den avgörande skillnaden mellan VC1 och VC2?",
+          "alternativ": [
+            "VC2 normaliserar vinsterna över fem år",
+            "VC2 lägger till aktieägaravkastningen — utdelning plus återköp — som sjunde komponent",
+            "VC2 rankar bara de största bolagen",
+            "VC1 gäller bara för banker"
+          ],
+          "ratt": 1,
+          "tips": "Vilken V-variabel (V20) är kopplad till kapital som flödar tillbaka till ägarna?"
+        },
+        {
+          "q": "Hur differentierar sig QV:s ansats från O'Shaughnessys och Greenblatts?",
+          "alternativ": [
+            "O'Shaughnessy bygger komposit, Greenblatt rankar enskilda faktorer, QV normaliserar allt",
+            "O'Shaughnessy rankar enskilda faktorer i deciler, Greenblatt kombinerar två rankningar — QV bygger en enda kompositrankning av sex-sju mått och lägger kvalitetsfiltret därefter",
+            "Alla tre använder exakt samma metod",
+            "QV använder bara teknisk analys"
+          ],
+          "ratt": 1,
+          "tips": "Räkna antalet rankningar och var kvalitetsfiltret sitter — inuti eller utanför värderingen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Kvalitetsfiltret — Piotroski F-score som checklista (V07–V12)",
+      "intro": "Billigt räcker inte — billigt och sjukt är en värdefälla. Bokens kvalitetsfilter är Joseph Piotroskis F-score från år 2000: nio ja/nej-kontroller på bokslutet som tillsammans skiljer friska billiga bolag från döende. Det är den mest checklistaliknande konstruktionen i hela värdeinvesteringslitteraturen — och den mappar nästan ett till ett mot AKM1:s V07–V12.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden citeras öppet: Joseph Piotroski, Value Investing: The Use of Historical Financial Statement Information to Separate Winners from Losers (2000). frågan var rak — bland billiga bolag (lågt P/B), vilka slår marknaden? Svaret: de vars bokslut visar förbättrad hållbar fundamentalt hälsa. F-scoren ger ett poäng för varje uppfylld kontroll, nio totalt, i tre grupper: lönsamhet, kapitalstruktur och driftseffektivitet. Ett bolag med åtta eller nio poäng är fundamentalt friskt; ett med noll eller ett är på väg utför. Bokens test: att bland de billigaste aktierna behålla bara de med god F-score — grovt sagt minst fem av nio poäng — förbättrade avkastningen mätbart. Notera också vad boken hittar om karaktären: F-skärmar skevar mot små och medelstora bolag — precis där analystäckningen är svagast och felprissättningen störst."
+        },
+        {
+          "type": "text",
+          "content": "Här är de nio kontrollerna som checklista, med V-koppling. Lönsamhet: ett — positiv avkastning på tillgångar (V09). Två — positivt operativt kassaflöde (V08: kontant lönsamhet). Tre — stigande ROA mot föregående år (V09 som trend, inte nivå). Fyra — kassaflödet överstiger resultatet (accruals-kontrollen: riktig kassa slår bokförd vinst — V12 och V06-familjens P/FCF-logik). Kapitalstruktur: fem — minskande belåning (V10). Sex — stigande kvickkvot (V11). Sju — inget nyemissionerande år (V19: utspädning är värdeinvesterarens tysta fiende). Driftseffektivitet: åtta — stigande brutomarginal (V07). Nio — stigande kapitalomsättningshastighet (V09: mer intäkter per tillgångskrona). Räkna poängn — klart."
+        },
+        {
+          "type": "text",
+          "content": "Poängen med konstruktionen är dess OBEROENDE av omdöme. Varje kontroll är en binär fråga som en dator kan besvara utan tolkning — och det är hela skillnaden mot en kvalitativ kvalitetsbedömning, där samma analytiker som gillar aktien också råkar tycka att dess moat är stark. F-scoren frågar inte om du TROR att bolaget förbättras — den kontrollerar om bokslutet VISAR det, på nio oberoende sätt. Det är också här boken skiljer sig från What Works-kursens stabilitetsmått (V12 som femårig vinststabilitet): Piotroski mäter RIKTNING — är bolaget bättre eller sämre än förra året? — medan O'Shaughnessy mätter KONSISTENS. I AKM1 användern båda: V12 för nivån, F-score-logik för trenden."
+        },
+        {
+          "type": "insikt",
+          "content": "F-scorens briljans är dess format: nio ja/nej-frågor i stället för en öppen essätillfrågan om kvalitet. Varje gång du instinktivt vill skriva bolaget är ett kvalitetsbolag — översätt till F-format: vilka nio mätbara kontroller skulle visa det? Om du inte kan formulera dem har du en känsla, inte en analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Piotroski F-score — nio kontroller som checklista\",\"rader\":[[\"Grupp\",\"Kontroll\",\"Poäng vid\",\"AKM1\"],[\"Lönsamhet\",\"1. Positiv ROA\",\"ROA över noll\",\"V09\"],[\"Lönsamhet\",\"2. Positivt operativt kassaflöde\",\"CFO över noll\",\"V08\"],[\"Lönsamhet\",\"3. Stigande ROA\",\"bättre än förra året\",\"V09\"],[\"Lönsamhet\",\"4. Kassaflöde slår resultatet\",\"CFO högre än ROA — accruals-kontroll\",\"V12\"],[\"Struktur\",\"5. Minskande belåning\",\"skulder per tillgång ned\",\"V10\"],[\"Struktur\",\"6. Stigande kvickkvot\",\"upp mot förra året\",\"V11\"],[\"Struktur\",\"7. Inga nya aktier\",\"inget nyemissionerande år\",\"V19\"],[\"Effektivitet\",\"8. Stigande brutomarginal\",\"upp mot förra året\",\"V07\"],[\"Effektivitet\",\"9. Stigande kapitalomsättning\",\"intäkter per tillgång upp\",\"V09\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör F-scoren på ett billigt bolag i din bevakningslista — gärna ett som känns spännande billigt. Ta de två senaste årsredovisningarna och besvara alla nio kontrollerna med ja eller nej, med siffror som belägg. Hur många poäng? Om bolaget hamnar under fem av nio: vilka kontroller faller — och är det lönsamhet, struktur eller effektivitet som sviker? Skriv en mening om huruvida din känsla för bolaget förändrades av att tvingas räkna."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var syftet med Piotroskis originalstudie från 2000?",
+          "alternativ": [
+            "Att förutsäga konjunkturen med bokslutsdata",
+            "Att med nio historiska bokslutskontroller skilja vinnare från förlorare bland billiga bolag",
+            "Att hitta de bästa tillväxtaktierna",
+            "Att ersätta värdering med teknisk analys"
+          ],
+          "ratt": 1,
+          "tips": "Studiens titel talar om vad den gör — separera vinnare från förlorare med historisk bokslutsinformation."
+        },
+        {
+          "q": "Vad kontrollerar den fjärde punkten — att kassaflödet överstiger resultatet?",
+          "alternativ": [
+            "Att bolaget betalar utdelning",
+            "Att brutomarginalen stiger",
+            "Att belåningen minskar",
+            "Accruals — att den bokförda vinsten backas av riktig kassa"
+          ],
+          "ratt": 3,
+          "tips": "Vinst är en åsikt, kassaflöde är ett faktum — kontrollen prövar skillnaden."
+        },
+        {
+          "q": "Vilken kontroll kopplar direkt till V19 Kapitalförbränning och Emission-risk?",
+          "alternativ": [
+            "Den sjunde — att bolaget inte emitterat nya aktier under året",
+            "Den första — positiv ROA",
+            "Den åttonde — stigande brutomarginal",
+            "Den nionde — stigande kapitalomsättning"
+          ],
+          "ratt": 0,
+          "tips": "V19 handlar om utspädning — vilken av de nio kontrollerna bestraffar nyemissioner?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Financial strength och earnings quality — Z, M och kassaflödet",
+      "intro": "Innan kvaliteten ens räknas gäller en hårdare fråga: kommer bolaget att överleva — och ljuger bokslutet? Bokens screening mot permanent kapitalförlust bygger på tre varningssystem: nettoresultatets förhållande till kassaflödet, Beneishs M-Score för resultatmanipulation och Altmans Z-Score för konkursrisk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vinstkvalitet i grunden: jämför nettoresultatet med det operativa kassaflödet. En bokförd vinst utan motsvarande kassa är den äldsta varningssignalen i bokföringen — den fångar både laglig resultatmanipulation (aggressiva avsättningar, uppskattade intäkter) och olaglig manipulation, och forskning boken refererar till visar att skillnaden mellan vinst och kassaflöde förutsäger framtida avkastning. Det är samma logik som F-scorens fjärde kontroll och som V06-familjens P/FCF — men här använd den som RENS, inte som rankning. Bolag där vinst och kassa går isär får inte ens delta i tävlingen om att vara billiga."
+        },
+        {
+          "type": "text",
+          "content": "Beneish M-Score, citerat öppet från Messod Beneish (1999): ett mått byggt på profilen hos bolag som åtalats för resultatmanipulation — åtta kontroller av sådant som ökande dagsförsäljningar (DSRI), sjunkande avskrivningstakt och stigande icke-kontanta intäkter. M-Score flaggar inte att ett bolag ljuger — den uppskattar sannolikheten att bokslutets form liknar dömda manipulatörers form. Altmans Z-Score (Edward Altman, 1968) gör samma sak för konkurs: fem kvoter — rörelsekapital, balanserade vinstmedel, EBIT, börsvärde och omsättning, alla delat med tillgångar respektive skulder — vägs samman till ett Z. Under 1,81 är nödzonen, mellan 1,81 och 2,99 gråzonen, över 2,99 tryggt. Bokens egna varning citeras lika öppet: Z-modellen byggdes för amerikanska TILLVERKNINGSBOLAG — på banker och tjänstebolag ska den användas med skepsis."
+        },
+        {
+          "type": "text",
+          "content": "Boken listar också profilen hos det bolag som faktiskt går i konkurs: högre belåning, lägre lönsamhet, mindre börsvärde, svagare och volatilare avkastning, mindre kassa, lägre P/B — och lägre aktiepris. Läs listan igen och se kurvan: det är värdefällans anatomi. Ett bolag som ser billigt ut (lågt P/B!) och är litet och belåat uppfyller profilens alla punkter — billigheten är inte en möjlighet, den är en prissatt dödsrisk. Det är exakt därför AKM1 har V10 Skuldsättningsgrad, V11 Likviditet och V19 Kapitalförbränning som SJÄLVSTÄNDIGA riskfilter — och exakt därför som nästa kapitel tillägger kreditmarknadens och blankarnas realtidsröst."
+        },
+        {
+          "type": "insikt",
+          "content": "Ordningen är regeln: först överlevnad, sedan äkthet, sedan billighet. En aktie som är billig men bränner Z- eller M-varningarna är inte ett tillfälle — den är en lott i en konkursauktion. V10 och V11 står före V04 i varje seriös process."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre varningssystem mot permanent kapitalförlust\",\"rader\":[[\"Signal\",\"Vad den mäter\",\"Gräns eller varning\",\"AKM1\"],[\"Resultat mot kassaflöde\",\"vinstkvalitet — skiljer bokföring från kassa\",\"vinst utan kassa är en röd flagga\",\"V12, V06-familjen\"],[\"Beneish M-Score\",\"sannolikhet för resultatmanipulation\",\"byggd på dömda manipulatörers profil\",\"V19\"],[\"Altman Z-Score\",\"konkursrisk i fem kvoter\",\"Z under 1,81 nöd; byggd för tillverkare\",\"V10, V11\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Värdefälle-anatomi-övningen: ta det bolag i ditt universum som har lägst P/B (V05). Granska det mot konkursprofilen: belåning (V10), lönsamhet (V08, V09), kassa och likviditet (V11), P/S (V04) och aktieprisnivå. Räkna hur många av profilens sju punkter bolaget uppfyller. Räkna sedan ut Altman Z grovt om du hittar alla fem kvoter i årsredovisningen. Skriv ned: billighet eller dödsrisk — och vad som avgör skillnaden."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den äldsta och enklaste varningssignalen för vinstkvalitet?",
+          "alternativ": [
+            "Att aktien har stigit mer än index",
+            "Att direktavkastningen är låg",
+            "Att bokförd vinst inte backas av motsvarande operativt kassaflöde",
+            "Att bolaget har många anställda"
+          ],
+          "ratt": 2,
+          "tips": "Vinst är en åsikt — vad är ett faktum?"
+        },
+        {
+          "q": "Vad flaggar Beneish M-Score för?",
+          "alternativ": [
+            "Konkursrisk inom två år",
+            "Sannolikheten att bokslutets form liknar dömda manipulatörers profil",
+            "Att aktien är överköpt",
+            "Att bolaget betalar för lite utdelning"
+          ],
+          "ratt": 1,
+          "tips": "M-Score är en diagnos av bokslutets FORM, inte en prognos om kursen."
+        },
+        {
+          "q": "Vilken varning ger boken om Altman Z-Score?",
+          "alternativ": [
+            "Att den bara gäller i Japan",
+            "Att den enbart bygger på aktiekurser",
+            "Att modellen byggdes för amerikanska tillverkningsbolag och ska användas med skepsis utanför dem",
+            "Att Z över 3 är farligt"
+          ],
+          "ratt": 2,
+          "tips": "Fem kvoter från 1968 — vilken bransch var den amerikanska börsen då?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 11,
+      "title": "Undvik värdefällan — CDS-signalen och shortsidan",
+      "intro": "Värdefällan är värdeinvesterarens existentiella fasa: aktien är billig, fundamentalen förblir billigare — och aktionen fortsätter ned. Bokens kapitel om value traps letar realtidssignaler som varnar innan fällan slagit igen. Två hittas utanför bokslutet: kreditmarknadens CDS-spread och blankarnas positioner.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den mest innovativa signal boken testar kommer från kreditmarknaden: CDS-spreaden — priset på att försäkra sig mot att bolaget väljer att inte betala. Logiken är elegant: aktiemarknaden pratar mycket, men kreditmarknaden SATSER pengar på bolagets överlevnad. En vidgande CDS-spread betyder att de som granskat bolaget närmast — obligationköparna — höjer sin riskbedömning i realtid. Forskningen boken refererar till visar att aktier vars CDS-spreadar vidgar sig underpresterar framöver: kreditmarknaden ser problemet före aktiemarknaden. Det är en realtidsvärdefälle-varning av exakt det slag bokslutet aldrig kan ge — bokslut talar om vad som HÄNT, CDS om vad som HÅLLER PÅ att hända."
+        },
+        {
+          "type": "text",
+          "content": "Men — och boken är ärlig med detta — signalen har två svagheter som till sist gav F-scoren företräde: CDS handlas bara i större bolag med omsatta kreditderivat, vilket lämnar stora delar av värdeuniversumet (särskilt små och medelstora bolag) utan täckning; och historiken är kort jämfört med bokslutens decennier. F-scoren är krångligare att räkna men universal: varje börsbolag har ett bokslut, hur litet som helst, hur länge som helst. Slutsatsen blir praktisk: F-scoren som huvudvapen mot värdefällor, CDS-signalen som tilläggsradar där den finns — särskilt för storbolag i pressade sektorer."
+        },
+        {
+          "type": "text",
+          "content": "Shortsidan är den tredje rösten. Bokens genomgång av forskning om kort ränta visar ett monotont mönster: högt shortade aktier underpresterar marknaden och lågt shortade överpresterar. Blankörna är — mätt i träffsäkerhet — en av de vassaste analystgrupper som finns, och deras positioner är offentliga data. För långa värdeportföljer blir användningen ren bekräftelse: en billig aktie med hög F-score OCH låg kort ränta är omgärdad av samstämmiga signaler; en billig aktie där blankarna byggt stora positioner förtjänar en extra genomgång — vad ser de som skärmen missar? Koppla rakt till AK1A:s Short-Sellern-modul: samma data, spegelvänd användning. Och minns grundregeln från tillhörande kurser: hög kort ränta kan också betyda squeeze — signalen pekar ut risk, inte timing."
+        },
+        {
+          "type": "insikt",
+          "content": "Värdefällan har tre oberoende röster — bokslutet (F-score), kreditmarknaden (CDS) och blankarna (kort ränta). Ingen röst ensam räcker; när alla tre är lugna kan du köpa billighet med ryggrad; när minst en larmar är billigheten en fråga och inte ett svar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Värdefällan — tre sätt att se den i förväg\",\"rader\":[[\"Signal\",\"Källa\",\"Styrka\",\"Svaghet\"],[\"Piotroski F-score\",\"bokslutets nio kontroller\",\"allmän, billig, lång historia\",\"historisk — ser inte framtidsfiffel\"],[\"CDS-spreadens rörelse\",\"kreditmarknadens reella pengar\",\"realtid, svår att fejka\",\"bara större bolag, kort historik\"],[\"Kort ränta\",\"blankarnas sammanlagda position\",\"bevisat monotont mönster\",\"riskabel signal vid squeeze\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Triangel-övning: välj en billig aktie (låg VC2-rank) ur ditt universum. Besvara tre frågor: ett — F-score, minst fem av nio? Två — finns handlade CDS på bolaget (eller dess närmaste obligationer), och har spreaden vidgats det senaste halvåret? Tre — hur hög är den öppna korta räntan, och har den ökat? Skriv din triangel-bedömning: grönt (tre lugna), gult (ett larm) eller rött (två eller flera). Endast gröna aktier går vidare till din köplista i kursens slutprojekt."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är CDS-spreaden en tidig varningssignal?",
+          "alternativ": [
+            "Därför att den styrs av centralbankerna",
+            "Därför att kreditmarknaden satsar riktiga pengar på bolagets betalningsförmåga och reagerar i realtid",
+            "Därför att den alltid följer aktiekursen",
+            "Därför att CDS alltid är billigare än aktier"
+          ],
+          "ratt": 1,
+          "tips": "Vem granskar ett bolags överlevnad hårdast — de som must prata eller de som måste betala?"
+        },
+        {
+          "q": "Varför valde boken till slut F-scoren som huvudvapen mot värdefällor framför CDS-signalen?",
+          "alternativ": [
+            "Därför att CDS är olagligt i USA",
+            "Därför att F-scoren är mer exakt i varje enskilt fall",
+            "Därför att CDS bara handlas i större bolag och har kort historik — F-scoren täcker alla bolag med bokslut",
+            "Därför att blankarna använder F-scoren"
+          ],
+          "ratt": 2,
+          "tips": "Universumtäckning och historiens längd — två praktiska krav en strategi måste uppfylla."
+        },
+        {
+          "q": "Vad visar forskningen om högt shortade aktier?",
+          "alternativ": [
+            "Att de alltid stiger snabbast",
+            "Att de i genomsnitt underpresterar marknaden — blankarnas positioner är en informativ signal",
+            "Att de är omöjliga att låna",
+            "Att de alltid går i konkurs"
+          ],
+          "ratt": 1,
+          "tips": "Vem lägger mest analysresurser på att hitta övervärderade aktier — och vad säger deras sammanlagda insats?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Korroboration — återköp, insiders och aktivister (V20)",
+      "intro": "När priset, kvaliteten och risken klara testet ställer boken en sista bekräftande fråga: vad gör de som känner bolaget bäst? Återköp, insiderköp och aktivisters intåg är de tre starkaste korroberande signalerna — och den första av dem sitter redan inuti VC2.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Återköpens logik är rak och kraftfull: bolag som minskar sitt aktieantal slår i genomsnitt marknaden, bolag som emitterar stora mängder nya aktier underpresterar. Det är V20:s hela idé — och det är inget mystiskt: ledningen har koll på kassan, ordning och reda och full insyn i verksamheten; när den köper tillbaka EGNA aktier satsar den bolagets pengar på att de är undervärderade. Kapital som återvänder till ägarna (utdelning plus återköp — tillsammans aktieägaravkastningen) är därför både en värderingskomponent (VC2:s sjunde del) och en kvalitetssignal. Notera asymmetrin: utfärdare av aktier — motsatsen — är en av de mest robusta NEGATIVA signalerna, vilket är V19:s rapp över fingrarna och F-scorens sjunde kontroll i ett."
+        },
+        {
+          "type": "text",
+          "content": "Insiderköp graderas. Alla insideraffärer är inte lika: schemalagda, rutinmässiga köp säger inget. Bokens genomgång visar att OPPORTUNISTISKA köp — oregelbundna, stora i förhållande till insiderns förmögenhet, upprepade, gjorda samtidigt som bolaget återköper aktier eller när aktien är billig — ger marknadsslagande avkastning. Mönstret är trovärdighet: en chef som köper för bonuspengar två dagar efter låsningens upphörande är en mall; en chef som frivilligt, upprepade gånger, lägger en betydande andel av sin privata förmögenhet i den aktie han eller hon redan har stora insatslägen i — det är ett vittnesmål med prislapp. Samma logik gäller aktivister: när en stor ägare lämnar en Schedule 13D-deposition — jag har köpt över fem procent och tänker pressa på för förändring — har historiskt målbolagen slagit marknaden efter depositionen, med en effekt som kan fortgå in på det andra året."
+        },
+        {
+          "type": "text",
+          "content": "Men kursens varning, rakt från bokens anda: korroboration är KRYDDA, altså huvudrätt. En insiderköpare kan ha fel; en aktivist kan tappa tålamodet; återköp till fel pris förstör värde (minns V20:s egen skala — återköp med skulder till övervärderade kurser poängsätts lågt). Signalerna ska bekräfta en aktie som redan klippt pris (VC2), kvalitet (F-score) och risk (Z, M, CDS, kort ränta) — aldrig ersätta dem. En dyr aktie med entusiastiska insiders är fortfarande en dyr aktie. I AKM1:s språk: V20, V17-karaktär (avtal och partnerskap) och V18-karaktär (katalysatorer) rangordnar bland aktier som redan är billiga och friska — de är aldrig själva köpskälet."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga alltid VEM som agerar med pengar — inte ord: återköper bolaget, köper insiderna opportunistiskt, bygger aktivisten en position? Pengar från de som vet mest är den äldsta korroberande signalen — men de bekräftar billighet, de skapar den inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra korroberande signaler\",\"rader\":[[\"Signal\",\"Vad den betyder\",\"AKM1\"],[\"Återköp och minskat aktieantal\",\"ledningen anser aktien billig — och bevisar det med bolagets pengar\",\"V20\"],[\"Opportunistiskt insiderköp\",\"oregelbundna, stora, upprepade köp av de som känner bolaget bäst\",\"bekräftelse, aldrig huvudskäl\"],[\"Aktivist med 13D\",\"stor ägare pressar på för förändring — historisk outperformance efter depositionen\",\"V18-karaktär\"],[\"Låg kort ränta\",\"blankarna har gett upp eller hittat annat\",\"bekräftelse, aldrig huvudsignal\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Korroborationsspolingen: ta en grön aktie från kapitel 8:s triangel. Kontrollera tre saker i offentliga källor: har aktieantalet minskat det senaste året (V20)? Har någon insider gjort ett opportunistiskt köp — oregelbundet, stort, upprepat? Finns en aktivist med position över fem procent? Poängsätt: en poäng per ja. Skriv ned hur många poäng din kandidat fick — och om noll: saknar den bevis eller är den bara outforskad?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den historiskt starkaste signalen om återköp?",
+          "alternativ": [
+            "Bolag som emitterar nya aktier slår marknaden",
+            "Bolag som minskar aktieantalet slår marknaden — och stora utfärdare underpresterar",
+            "Återköp har ingen koppling till avkastning",
+            "Endast utdelning spelar roll, inte återköp"
+          ],
+          "ratt": 1,
+          "tips": "Vad är motsatsen till att späda ut ägarna — och vad signalerar det?"
+        },
+        {
+          "q": "Vad kännetecknar ett OPPORTUNISTISKT insiderköp?",
+          "alternativ": [
+            "Ett schemalagt rutinköp efter låsningens upphörande",
+            "Ett köp gjort på anställningsdag av företagspolicy",
+            "Oregelbundet, stort, upprepat — gärna samtidigt med återköp eller i en billig aktie",
+            "Ett köp av en konkurrents aktier"
+          ],
+          "ratt": 2,
+          "tips": "Ordet opportunistisk betyder här frivilligt och valt — inte på schema."
+        },
+        {
+          "q": "Vilken roll ska korroberande signaler ha enligt kursen?",
+          "alternativ": [
+            "De kan ersätta värderingen när signalerna är starka",
+            "De ska bekräfta aktier som redan klippt pris, kvalitet och risk — aldrig vara huvudskälet",
+            "De gäller bara vid blankning",
+            "De ska användas för att tajma marknaden"
+          ],
+          "ratt": 1,
+          "tips": "Krydda eller huvudrätt — vad är signalens roll i menyn?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Backtesten — QV-portföljen mot S&P 500 (1976–2011)",
+      "intro": "Nu resultatet. Gray och Carlisle simulerar den färdiga modellen — VC2-rankning, F-score-filter, värdefällsrens — på amerikanska börsen från 1976 till 2011: över tre decennier med inflation, disco, krascher, IT-bubbla och finanskris. Siffrorna är starka. Och kapitel 14 kommer att visa varför de ändå ska läsas med båda händerna på bordet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Huvudresultatet i klartext: QV-modellen avkastade ungefär 17,7 procent per år under perioden, mot cirka 11 procent per år för S&P 500 med återinvesterad utdelning — runt sex till sju procentenheters årlig överavkastning i trettiofem år, vilket i slutkapital är skillnaden mellan miljoner och mångfaldigt fler miljoner. Sharpe-kvoten — avkastning per enhet svängning — landade runt 0,7 för modellen mot ungefär 0,5 för index: mer avkastning OCH jämnare kurva. Maxfallet var något lägre än marknadens. De historiskt värsta åren fanns där, som de alltid finns — värdestrategier underpresterade kraftigt under IT-bubblans sista år när allt utom glansaktier förklarades dött — och modellen höll regimen genom alla."
+        },
+        {
+          "type": "text",
+          "content": "De interna jämförelserna är minst lika viktiga som totalen. Ensam EBIT/EV-skärm (billigaste decilen): runt 16 procent per år — redan bättre än Greenblatts magiska formel, som i bokens jämförelse klarade ungefär 14 procent. Hela QV-modellen: 17,7 procent — cirka 3,7 procentenheter per år över magic formula, med bättre Sharpe (0,74 mot 0,55 i den jämförelsen). Läs det som kursens differentiering: varje tillsatt lager — kompositen i stället för ensam multipel, F-scoren ovanpå, värdefällsrensen därtill — bidrog med mätbar avkastning och jämnare kurva. Och Grahams enkla regler från kapitel 1, backtestade på samma period, gav runt 17 procent: det mesta av kanten fångas av enkla billighetsregler; det sista lagret kommer från att inte köpa döende billiga bolag."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetslistan — boken är ovanligt transparent, och kursen kräver samma ärlighet. Simuleringen är före avgifter, före transaktionskostnader, före slippage, och den förutsätter att investeraren höll regimen vid varje rebalansering i trettiofem år, inklusive de år då strategien underpresterade ordentligt. Data är amerikansk — CRSP/Compustat-universum — och den kritiken ska tas på allvar: kapitel 14 ägnas åt akademikernas hårdaste angrepp mot hela faktorforskningens metod. Men observera också vad backtestens SVAGHET inte är: de senast utvecklade nischfynden. Kompositen bygger på multiplar som var kända decennier före periodens början, och F-scoren publicerades som forskning år 2000 — bokens test inkluderar alltså decennier där reglerna INTE var någon hemlighet. Det är det starkaste indirekta svaret på datamining-anklagelsen, och vi återkommer till det."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig läsa backtester som en rigorös revisor: tre frågor — vilka kostnader är dragna? vad krävdes av investeraren under de värsta åren? och var reglerna kända FÖRE perioden de testas på? En strategi som bara ser bra ut när svaret på den tredje frågan är nej är marknadsföring, inte forskning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Backtesten i sammandrag — USA, före avgifter\",\"rader\":[[\"Strategi\",\"Avkastning per år (ca)\",\"Notering\"],[\"S&P 500 totalavkastning\",\"cirka 11 %\",\"baseline genom alla väder\"],[\"Grahams enkla regler\",\"cirka 17 %\",\"slår Grahams egna femton procents prognos\"],[\"Ensam EBIT/EV-skärm\",\"cirka 16 %\",\"redan över magic formula\"],[\"Greenblatts magiska formel\",\"cirka 14 %\",\"två rankningar — billig plus bra\"],[\"QV-modellen\",\"cirka 17,7 %\",\"Sharpe cirka 0,7 mot 0,5 — högre avkastning, jämnare kurva\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på avståndet själv: ta 100 000 kronor och räkna ut slutvärdet efter trettiofem år vid 11 procent per år och vid 17,7 procent per år (enklast med exp(ln(1,177) x 35) respektive exp(ln(1,11) x 35), eller en ränta-på-ränta-kalkylator). Notera kvoten mellan beloppen. Skriv sedan ned vad som krävs för att hin dit: hur många års underpresterande mot index är du beredd att sitta igen utan att överge systemet? Talet är viktigare än slutbeloppet."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var QV-modellens ungefärliga årliga avkastning mot S&P 500 under 1976–2011?",
+          "alternativ": [
+            "Cirka 17,7 procent mot cirka 11 procent — med högre Sharpe-kvot",
+            "Cirka 11 procent mot 17,7 procent — modellen förlorade",
+            "Båda cirka 11 procent — ingen skillnad",
+            "Cirka 40 procent mot 11 procent"
+          ],
+          "ratt": 0,
+          "tips": "Sex till sju procentenheter per år i trettiofem år — och dessutom jämnare kurva."
+        },
+        {
+          "q": "Hur mycket slog QV-modellen Greenblatts magiska formel med i bokens jämförelse?",
+          "alternativ": [
+            "Cirka 0,5 procentenheter per år",
+            "Cirka 3,7 procentenheter per år",
+            "Ingen skillnad alls",
+            "Magiska formeln vann med bred marginal"
+          ],
+          "ratt": 1,
+          "tips": "Ensam EBIT/EV låg över två procentenheter över magic formula — hela modellen ytterligare drygt en och en halv därutöver."
+        },
+        {
+          "q": "Vilket är det starkaste indirekta argumentet MOT datamining-anklagelsen i just den här backtesten?",
+          "alternativ": [
+            "Att avkastningen var som högst på 1990-talet",
+            "Att strategin aldrig hade förlustår",
+            "Att multiplarna var kända decennier före perioden och F-scoren publicerades 2000 — stora delar av testet skedde med kända, publicerade regler",
+            "Att boken sålde många exemplar"
+          ],
+          "ratt": 2,
+          "tips": "Datamining söker hemliga mönster bakåt — vad händer om reglerna inte var hemliga?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 11,
+      "title": "Universum-transaktioner — large, mid och all caps",
+      "intro": "Var någonstans på börsen bor kanten? Boken kör hela modellen på tre universum — stora bolag, medelstora bolag och hela börsen — och svaret är nyckeln till hur du implementerar den i praktiken. Här möter du också den mest försummade V-variabeln av alla: V11.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De tre universumen, grovt: stora bolag — ungefär de femtio största, motsvarande ett large cap-index; medelstora — nästa våg av bolag i storleksordningen topp 500 till 1000; alla bolag — upp mot ett par tusen aktier, med undantag. För modellen gäller genomgående exkluderingar: finansbolag och utilities (annan bokföring, andra balansräkningar — jämförbarheten bryts) samt ADR:er (utländska bolag i amerikansk förpackning, dubbelräknade risker) och minimikrav på storlek och likviditet för att handeln ska vara praktiskt möjlig."
+        },
+        {
+          "type": "text",
+          "content": "Resultatmönstret är klassiskt och viktigt: kanten är starkast i medelstora och mindre bolag och svagast bland de största. Orsaken är strukturell, inte mystisk — de största bolagen har tiotals analytiker, oändlig mediauppmärksamhet och djup likviditet: felprissättningar rättas snabbt. Små och medelstora bolag är dåligt täckta, dåligt omsatta och dåligt älskade — där bor felprissättningarna som värdestrategier lever av (minns What Works-kursens lärdom om small-cap-premien och dess baksida). F-scoren bidrar dessutom ytterligare: boken noterar att F-skärmar skevar mot små och medelstora bolag, vilket förstärker exponeringen mot just det segment där kanten är störst."
+        },
+        {
+          "type": "text",
+          "content": "Men — och det är V11:s eviga premiär — papperskant är inte genomförbar kant. En strategi som tekniskt vinner mest i mikrobolag men som kräver att du köper tjugo procent av dagens omsättning i varje position är ingen strategi; du blir själv marknaden och spreaden äter premien. Därför har bokens modell minimi-trösklar för storlek och likviditet inbyggda från början — och därför slutar kursens implementation alltid med V11-frågan: kan jag bygga OCH lämna positionen utan att flytta kursen? Den som förvaltar mycket kapital får nöja sig med medelstora och stora bolag och acceptera en (på pappret) svagare kant — vilket fortfarande, historiskt, var en kant. Den som förvaltar lite kan gå bredare. Universumvalet är därför personligt: det bestäms av ditt kapital, inte av andras backtester."
+        },
+        {
+          "type": "insikt",
+          "content": "Kanten bor där uppmärksamheten inte bor — men genomförbarheten bor där likviditeten bor. Universumvalet är förhandlingen mellan de två: V11-tröskeln först, VC2-rankningen därefter. Omvänt ordning blir papperstrading."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre universum — samma regler, olika kant\",\"rader\":[[\"Universum\",\"Storlek (ca)\",\"Kant\",\"Genomförbarhet\"],[\"Large caps\",\"topp 500\",\"minst — mest analyserat\",\"utmärkt likviditet\"],[\"Mid caps\",\"cirka 500–1000\",\"stark\",\"god likviditet\"],[\"All caps\",\"upp mot ett par tusen\",\"starkast totalt\",\"kräver V11-tröskel\"],[\"Exkluderingar\",\"finans, utilities, ADR\",\"—\",\"annan bokföring, dubbelrisk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Sätt din egen universumgräns: beräkna den dagliga omsättningen i pengar för tio aktier i varje storleksled på din börs. Räkna sedan ut hur stor position du kan bygga utan att utgöra mer än någon procent av en normal dags omsättning — och vad det innebär för att lämna positionen under stress. Skriv ned din personliga minimiomsättning per aktie. Det är din V11-tröskel, och den bestämmer vilket av bokens tre universum som är DITT."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Var är kanten starkast enligt bokens universumtester?",
+          "alternativ": [
+            "Bland de största bolagen",
+            "Bland medelstora och mindre bolag, där analystäckningen är svagast",
+            "Bara bland mikrobolag oavsett likviditet",
+            "Kanten är identisk i alla universum"
+          ],
+          "ratt": 1,
+          "tips": "Var bor felprissättningarna — där alla tittar eller där ingen tittar?"
+        },
+        {
+          "q": "Varför exkluderar modellen finansbolag och utilities?",
+          "alternativ": [
+            "Därför att de aldrig är billiga",
+            "Därför att de är olagliga att screena",
+            "Därför att deras bokföring och balansräkningar bryter jämförbarheten med övriga bolag",
+            "Därför att de saknar aktieägaravkastning"
+          ],
+          "ratt": 2,
+          "tips": "Multiplar och kvoter förutsätter att räkenskaperna är byggda likadant — vad händer om de inte är det?"
+        },
+        {
+          "q": "Vad är den avgörande praktiska frågan (V11) vid universumval?",
+          "alternativ": [
+            "Har bolaget en spännande berättelse?",
+            "Kan jag bygga och lämna positionen utan att själv flytta kursen?",
+            "Är aktien med i något index?",
+            "Har bolaget hög direktavkastning?"
+          ],
+          "ratt": 1,
+          "tips": "En position du inte kan lämna är ett förvar, inte en investering."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Positionsstorlekar och säljdiscipliner",
+      "intro": "Vilka aktier man köper är hälften av strategin — hur stora positionerna är och när de säljs är den andra hälften, och den som avgör om kanten överlever kontakt med verkligheten. Boken behandlar portföljbygget som en naturlig förlängning av reglerna: mekaniskt, breddburet och med säljregler som skrivits i förväg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först Grahams system, som boken backtestar med alla detaljer i behåll: minst trettio aktier — bredd, för att enskilda konkursfall inte får döda portföljen — och säljregler med både vinstmål och DEADLINE: sälj när aktien stigit femtio procent ELLER efter två år, vilket som inträffar först. Deadline-delen är den underskattade halvan: den tvingar kapitalet att lämna gamla idéer och söka ny billighet, vilket är värdeinvesterarens motsvarighet till att erkänna att man inte kan veta när ett undervärdering realiseras. Utan deadline blir portföljen en samling favoriter med ålderns rättigheter."
+        },
+        {
+          "type": "text",
+          "content": "QV-modellen tillämpar samma anda med modernare portföljverktyg: positionerna sprids över tiotals aktier med tak per position — ingen enskild aktie får växa sig dominant — och rebalanseringen sker mekaniskt, inte när magen lovar. Säljsignalen är rankbaserad: en aktie säljs när den lämnar toppen av rankningen — för att den blivit för dyr (multiplarna stigit), tappat kvalitet (F-score fallit) eller utlöst en varningssignal (Z, M, kort ränta). Notera vad säljregeln INTE innehåller: ingen åsikt om framtiden, ingen känsla för bolaget, ingen tro på återhämtning. Precis som köpet var en regel är säljet en regel — och därmed är dispositionseffekten (sälja vinnare för tidigt, behålla förlorare för länge) och det envisa hoppet om återhämtning bortplanerade ur processen."
+        },
+        {
+          "type": "text",
+          "content": "Koppla till AK1A:s portföljsida och rekommendationsskala: positionstorleken är riskens röst i portföljen — en STARKT KÖP-kandidat med alla gröna lampor kan motivera större vikt, men aldrig taket igenom, för regeln att ingen enskild aktie får avgöra utfallet gäller alla. Och minns Greenblatt-kursens parallella lärdom: trettio positioner och tolv månaders holdingtid var hans mekanik; Gray och Carlisle visar att bredden också är det statistiska skyddet — en kant på några procentenheter per år är en sannolikhetsfordel som bara visar sig över många positioner och många år, inte i den enskilda aktien. Koncentration är ett uttryck för tillit till sin egen stockpicking — och tillit till stockpicking är precis det den här boken lägger ned röster på."
+        },
+        {
+          "type": "insikt",
+          "content": "Skriv säljreglerna i lugnet — de prövas i stormen. Vinstmål, deadline, rankfall, kvalitetsfall: fyra mekaniska skäl att sälja, alla formulerade FÖRE köpet. Om du efter köpet upptäcker att du argumenterar för att få behålla en aktie som brutit en regel — är det analys eller dispositionseffekt?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Portföljregler — Grahams system mot QV-modellen\",\"rader\":[[\"Regel\",\"Grahams enkla system\",\"QV-modellen\"],[\"Antal aktier\",\"minst 30\",\"tiotals — bredd bär kantfunktionen\"],[\"Maxvikt\",\"likaviktande\",\"tak per aktie, ingen dominans\"],[\"Köpregel\",\"P/E under 10 och skuld under 50 %\",\"toppen av VC2-ranken med god F-score\"],[\"Säljregel\",\"50 % vinst eller två år\",\"aktien lämnar topp-ranken eller bränner checklistan\"],[\"Rebalansering\",\"regelstyrd\",\"mekaniskt, utan omdöme\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din mekaniska portföljpamp: ett dokument med fem rader — universumtröskel (V11), maxvikt per aktie, köpregel (VC2 plus F-score), säljregler (rankfall, kvalitetsfall, vinstmål eller deadline) och rebalanseringsdatum. Datera det. Jämför sedan dokumentet mot din faktiska portfölj: hur många innehav bryter mot din egen pamp? Listan över brott är din behavioral to-do-list."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängn med deadline i Grahams säljregel — femtio procent eller två år?",
+          "alternativ": [
+            "Att maximera vinsten i varje position",
+            "Att tvinga kapitalet att lämna gamla idéer och söka ny billighet — värde kan inte tidssättas",
+            "Att aktier alltid stiger inom två år",
+            "Att undvika skatt"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en portfölj av undervärderade aktier utan tidsgräns?"
+        },
+        {
+          "q": "Vad är den rankbaserade säljsignalen i QV-modellen?",
+          "alternativ": [
+            "Sälj när aktien stigit tio procent",
+            "Sälj när tidningen skriver om bolaget",
+            "Sälj när aktien lämnar toppen av rankningen — dyrare, sämre kvalitet eller varningssignal",
+            "Sälj aldrig — allt är långsiktigt"
+          ],
+          "ratt": 2,
+          "tips": "Samma mått som tog aktien in ska kunna ta ut den — vilket var det?"
+        },
+        {
+          "q": "Varför kräver bredd — tiotals positioner — enligt kursen?",
+          "alternativ": [
+            "Därför att alla enskilda aktier är bedrägerier",
+            "Därför att courtage är gratis vid många affärer",
+            "Därför att en kant på några procentenheter är en sannolikhetsfordel som bara syns över många positioner och år",
+            "Därför att index alltid slår strategier"
+          ],
+          "ratt": 2,
+          "tips": "En kant i procentenheter är en statistisk fördel — var visar statistik sig?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Deere & Co — checklistan på ett riktigt bolag",
+      "intro": "Bokens mest pedagogiska parti: hela modellen tillämpas på ett enda, verkligt, tråkigt bolag — Deere & Co, traktorernas och jordbruksmaskinernas världsjätte. Fallet visar vad en kvantitativ värdeportfölj faktiskt köper: inte berättelser, utan stabil billighet med friska siffror — och varför magen often protesterar när modellen säger köp.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Deere-bilden i bokens fallstudie: ett globalt jordbruks- och anläggningsmaskinsbolag med över hundra år på nacken, slingrande resultat beroende av cykler i jordbrukspriser och byggkonjunktur — alltså INTE ett bolag med vass berättelse, hype eller moat-signaler som får analytikerhögtalarna att gå varma. Det är precis därför fallet är valt. På VC-kompositen var Deere billigt: lågt P/E, lågt P/B, lågt EV/EBIT — tråkiga cykliska bolag handlas alltid med rabatt när cykeln ser ut att vika. Och på kvalitetssidan visade bokslutet det som aktiemarknadens humör inte såg: lönsamt, kassagenererande, måttligt belåtat — en god F-score-profil med trygg balansräkning."
+        },
+        {
+          "type": "text",
+          "content": "Kör checklistan, som den ser ut i bokens avslutande kapitel och som kursen nu formaliserar för AKM1. Ett — universum: stort, omsatt, ej finans. Ja. Två — pris: billig på kompositen (V04–V06)? Ja — tråkigheten är rabattens källa. Tre — kvalitet: F-score god (V07–V12)? Ja — siffrorna förbättras eller håller stånd genom cykeln. Fyra — varningar: Z trygg, ingen M-flagg, ingen stigande kort ränta, inga vidgande kreditspreadar? Ja — Deere är kapitalstarkt. Fem — korroboration: bolaget köpte tillbaka aktier och delade ut till ägarna (V20)? Ja. Sex — portföljregeln: normal vikt, sälj när ranken lämnas. Klart. Observera vad som ALDRIG efterfrågades i checklistan: vad tycker jag om traktormarknaden? Det är hela skillnaden mellan att utvärdera en affär och att ha en åsikt om den."
+        },
+        {
+          "type": "text",
+          "content": "Fallets djupare lära är KISS-principen — keep it simple — som boken driver hårt med stöd i forskning: mer information ökar förtroendet mer än träffsäkerheten, vilket rent definitionsmässigt producerar övermod. Åtta checklistefrågor på ett traktorbolag slår fyrtio sidor produktkatalog på ett hypat teknikbolag, inte för att informationen är bättre utan för att den RÄKNAS. Deere-fallet är också motgiftet mot AKM1:s egen mest frestande frestelse: storyblocket (V13–V18) — moat, patent, lanseringar, katalysatorer — är rankning bland aktier som redan klippt pris, kvalitet och risk. Varken traktorernas teknikläge eller jordbrukets trend behövdes för att motivera köpet. Billighet och friska siffror räckte — och historiskt var det de som betalade."
+        },
+        {
+          "type": "insikt",
+          "content": "Tråkighet är en feature, inte en bug: berättelselösa bolag handlas med rabatt eftersom ingen vill berätta om dem — och rabatten är just kanten. När magen protesterar mot ett bolag som Deere är frågan inte vad magen vet, utan vad den tröttnat på. Modellen svarar på det magen inte kan: är det billigt och friskt?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Deere & Co genom QV-checklistan\",\"rader\":[[\"Steg\",\"Fråga\",\"Deere-bilden\"],[\"Universum\",\"stort, omsatt, ej finans?\",\"ja — global maskinjätte\"],[\"Pris\",\"billig på kompositen?\",\"ja — tråkig, cyklisk, låga multiplar\"],[\"Kvalitet\",\"F-score god?\",\"ja — lönsamt, kassagenererande, måttligt belånat\"],[\"Varningar\",\"Z, M, kort ränta, CDS?\",\"inga röda flaggor\"],[\"Korroboration\",\"återköp, utdelning, insiders?\",\"ja — återköpte aktier och delade ut\"],[\"Slutsats\",\"magen eller modellen?\",\"magen rycker åt cyklisk tristess — modellen köper\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta din egen Deere: skanna ditt universum efter det mest TRÅKIGA bolag som klarar alla sex checklistasteg — storlekskrav, kompositbillighet, god F-score, noll varningar, någon korroborande signal. Skriv en beskrivning av bolaget på max tre meningar UTAN adjektiv om framtiden. Om du inte kan låta bli att propagera för dess potential — leta vidare: du har hittat en story, inte en Deere."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför valde boken Deere & Co som fallstudie?",
+          "alternativ": [
+            "Därför att Deere var börsens hetaste aktie",
+            "Därför att bolaget visar vad modellen faktiskt köper — billigt, friskt, tråkigt — när magen protesterar",
+            "Därför att Deere är ett teknikbolag i förklädnad",
+            "Därför att författarna satt i bolagets styrelse"
+          ],
+          "ratt": 1,
+          "tips": "Vad saknas i Deere-fallet som finns i alla hype-aktier — och vad fanns i stället?"
+        },
+        {
+          "q": "Vad är KISS-principens forskningsstöd enligt boken?",
+          "alternativ": [
+            "Att mer information ökar träffsäkerheten proportionerligt",
+            "Att enbart kvantitativa bolag bör analyseras",
+            "Att mer information höjer FÖRTROENDET mer än TRÄFFSÄKERHETEN — vilket producerar övermod",
+            "Att enkelhet alltid är billigast"
+          ],
+          "ratt": 2,
+          "tips": "Vad ökar när du läser mer — precisionen eller känslan av att veta?"
+        },
+        {
+          "q": "Vad krävdes INTE för att motivera köpet av Deere i checklistan?",
+          "alternativ": [
+            "Att bolaget var billigt på kompositen",
+            "Att bokslutet var friskt",
+            "En åsikt om traktormarknadens framtid — storyblocket behövs aldrig som köpskäl",
+            "Att bolaget återköpte aktier och delade ut"
+          ],
+          "ratt": 2,
+          "tips": "Räkna upp checklistans sex steg — leta efter den fråga som aldrig ställdes."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "Kontroversen — datamining, p-hacking och replikationskrisen",
+      "intro": "Nu kursens viktigaste kapitel — mot bakgrund av allt du just lärt. Sedan 2012 har akademikerna riktat den hårdaste kritiken i finansforskningens historia mot just den typ av faktorresultat Quantitative Value bygger på. Är värdekompositen och F-scoren verkliga kantfunktioner — eller statistiska illusioner skapade av massiv testning av samma data? Bokens svar, kritikens styrka och AK1A:s syntes, öppet och utan skyddslinjer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kritiken, citerad öppet. Harvey, Liu och Zhu, i den banbrytande artikeln … and the Cross-Section of Expected Returns (Review of Financial Studies, 2016): katalogiserade 316 publicerade faktorer som alla påståtts förklara aktieavkastning. Med så många testningar på samma historiska data blir slumpmässiga signifikanser matematiskt garanterade — signifikanta fynd hittas och publiceras, ofynd glöms (publikationsbias), och forskare testar medvetet eller omedvetet hundratals specifikationer tills en ger p-värde under noll komma fem (p-hacking). Deras slutsats: tröskeln för statistisk signifikans i faktorforskning bör höjas från det konventionella t-värdet runt 2 till cirka 3 — och under den ribban faller en stor del av det publicerade faktorzoot som utgör branschens självbild. På det följer replikationskrisen: studier av samma data (bland annat McLean och Pontiff, Does Academic Research Destroy Stock Return Predictability?, 2016) visar att anormala avkastningar klingar av betydligt när perioden och datamängden noggrant granskas och ytterligare när strategin publicerats — grovt en fjärdedel lägre utanför originalurvalet och mer än hälften lägre efter publicering. Faktorn är med andra ord som svagast precis när den är som mest populär."
+        },
+        {
+          "type": "text",
+          "content": "Bokens försvar — och det är starkare än det låter. För det första: SIMPELHET. QV bygger inte på ett nischfynd ur en hörna av datan, utan på multiplar som var kända och publicerade decennier före testperioden (Graham 1949) och på en F-score som publicerades som forskning år 2000 — modellen i boken innehåller alltså testperioder då reglerna var fullständigt publika. P-hacking letar hemliga mönster bakåt; QV:s byggstenar var öppna när de testades. För det andra: MEKANISM. Värde bygger på beteendefel — överreaktion, aversion mot förluster, berättelsers makt — som inte försvinner för att en artikel skrivs om dem; de är djupt mänskliga och strukturellt förankrade i hur kapitalförvaltning är organiserad. För det tredje: KOMPOSITENS ROBUSTHET — sex multiplar och en F-score måste SAMTIDIGT felaktiga för att modellen ska falla, vilket är ett högre beviskrav än för någon enskild faktor. Och för det fjärde, ödmjukheten: boken visar sina egna svaga år — underpresterandet under IT-bubblan — och räknar ärligt med att kanten svänger."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s medgivanden och syntes. Medgivandena först, utan krumbukter: datan är amerikansk och CRSP/Compustat-världen har sina egna biaser — survivorship-problem i äldre data, backfill-bias när historik lagts in i efterhand, och en amerikansk marknad som under just 1900-talet var världshistoriens mest framgångsrika — survivorship på nationsnivå. Transaktionskostnader, skatter och slippage gör den verkliga kanten smalare än den simulerade. Och värdefaktorns svaga perioder efter bokens publicering — inte minst 2018 till 2020, då billigt systematiskt underpresterade dyrt — påminner om att en kant är en sannolikhetsfordel, inte en lag. Syntesen därefter, kursens kärna: AKM1 är STRUKTURERAD SUBJEKTIVITET — en människa poängsätter tjugo variabler på en skala noll till fem, vilket tvingar fram konsekvens och bredd men förblir ett omdöme, med all flexibilitet och all sårbarhet det innebär. QV är STRUKTURERAD OBJEKTIVITET — regler exekverar utan omdöme, med all disciplin och all stelhet det innebär. BÅDA behövs: AKM1 för att förstå, väga och kontextualisera; QV som rigoröst test av att förståelsen inte är självtillit. Den kompletta investeraren kan köra båda — och läser avståndet mellan dem som information: när modellen och analysen säger olika är det inte ett av dem som har fel — det är platsen där arbetet börjar."
+        },
+        {
+          "type": "insikt",
+          "content": "Använd Harvey–Liu–Zhus ribba som din egen publiceringströskel: innan en faktor, signal eller V-variabel får kapital i ditt system — kräv mekanism (varför betalar marknaden för felet?), enkelhet (kan den förklaras på en rad?), förkunskap (var den känd före perioden?) och replikbarhet (fungerar den utanför sitt originalurval?). Tål den inte alla fyra är den en kandidat för p-hackets museum."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritik, svar och AK1A:s hållning\",\"rader\":[[\"Kritik\",\"Innebörd\",\"Bokens svar\",\"AK1A:s hållning\"],[\"Multipel testning (Harvey–Liu–Zhu)\",\"316 publicerade faktorer; tröskeln bör höjas till cirka t 3\",\"enkla, gamla mått med känd mekanism — inte nischfynd\",\"kräv mekanism och förkunskap\"],[\"Replikingskris och publikationseffekt (McLean–Pontiff)\",\"avkastningen klingar av utanför urvalet och efter publicering\",\"reglerna var publika före och under stora delar av testperioden\",\"förvänta avklingning — dimensionera därefter\"],[\"Databiaser\",\"survivorship och backfill i CRSP/Compustat; USA-centrism\",\"medges öppet\",\"internationell spridning och ödmjukhet\"],[\"Subjektivitetens fall\",\"människor poängsätter fel under stress\",\"AKM1 = strukturerad subjektivitet; QV = strukturerad objektivitet\",\"båda behövs — läs avståndet som information\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör Harvey–Liu–Zhu-ribban på din egen senaste investeringsidé: skriv ned mekanismen (vilket beteendefel eller strukturell miss prisas fel?), enkelheten (en rad), förkunskapen (var regeln känd före den period du bedömer?) och replikbarheten (fungerar den i andra tider, marknader eller universum?). Fyra ja ger grönt ljus; varje nej är en brasklapp du ska bära med dig — och helst skriva in i din portföljpamp från kapitel 12."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är huvudpoängn i Harvey, Liu och Zhus … and the Cross-Section of Expected Returns?",
+          "alternativ": [
+            "Att värde är den enda giltiga faktorn",
+            "Att 316 publicerade faktorer gör slumpmässig signifikans matematiskt garanterad — tröskeln bör höjas till cirka t 3",
+            "Att alla faktorer är stronger efter publicering",
+            "Att CRSP-datan är felfri"
+          ],
+          "ratt": 1,
+          "tips": "Räkna hur många gånger samma data kan testas — vad händer med sannolikheten för minst ett skenfynd?"
+        },
+        {
+          "q": "Vilket är bokens starkaste svar mot datamining-anklagelsen?",
+          "alternativ": [
+            "Att backtestens avkastning var mycket hög",
+            "Att multiplarna och F-scoren var kända och publicerade decennier före och under stora delar av testperioden — inget var hemligt",
+            "Att kritikerna inte läst boken",
+            "Att datamining är omöjligt i finans"
+          ],
+          "ratt": 1,
+          "tips": "P-hacking kräver ett hemligt mönster — vad händer om mönstret aldrig var hemligt?"
+        },
+        {
+          "q": "Vad är AK1A:s syntes i kontroversen?",
+          "alternativ": [
+            "AKM1 bör ersättas helt av QV",
+            "QV bör förbjudas eftersom allt är datamining",
+            "AKM1 är strukturerad subjektivitet och QV strukturerad objektivitet — båda behövs, och avståndet mellan dem är information",
+            "Subjektivitet och objektivitet är samma sak"
+          ],
+          "ratt": 2,
+          "tips": "Vad är styrkan hos ett mänskligt ramverk — och vad hos en maskinregel — och vad kan avståndet mellan dem berätta?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Sammanfattning — den systematiske värdeinvesteraren (V01–V20)",
+      "intro": "Sista kapitlet sätter ihop allt: bokens modell som en enda AKM1-process — från universumtröskel till säljregel — och den personliga bilden av den investerare kursen har formats mot: den systematiske värdeinvesteraren, som äger regler i stället för övertygelser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Processen i sex steg, som din egen checklista. Ett: universumtröskel — V11 avgör vad du kan handla; exkludera finans, utilities och ADR; sätt minimistorlek och omsättning efter DITT kapital. Två: pris — VC2-kompositen (V04 huvudvikt, V05 och V06-familjen bekräftelser); aktien måste vara billig på flera sätt samtidigt, aldrig på ett. Tre: kvalitet — Piotroski F-score som nio kontroller (V07–V12); minst fem av nio, gärna högre. Fyra: risk och äkthet — Z och M plus CDS-signal och kort ränta (V10, V11, V19, Short-Sellern-modulen); en röd flagga stopp. Fem: korroboration — återköp och aktieägaravkastning (V20), opportunistiska insiderköp, aktivister (V17–V18-karaktär); krydda, aldrig huvudrätt. Sex: portfölj — bredd med tak per aktie, mekanisk rebalansering, säljregler skrivna före köpet. Där är hela modellen — och den får plats på ett A4."
+        },
+        {
+          "type": "text",
+          "content": "Mappningen till AKM1:s alla tjugo variabler, hela vägen runt. Värderingsblocket V04–V06 är VC-kompositen — kursens kärna. Lönsamhetsblocket V07–V09 och stabilitetsblocket V10–V12 är F-scorens hem. V13–V15 (patent, varumärke, nätverk) och katalysatorblocket V16–V18 är rankning bland redan billiga och friska — aldrig köpskäl, Deere-läran. V19 är värdefällsrensningens skarpaste filter — emissioner späder, kapitalförbränning dödar. V20 är aktieägaravkastningen, korroboration och VC2-komponent. V01–V03 (tillväxt och diversifiering) är kontexten: tillväxt är värdefull till rätt pris — bokens hela bidrag till det arvet från What Works-kursen är att priset ALLTID går först. AKM1:s poängskala noll till fem per variabel gör samma arbete som kompositrankningen — men med en människa som operatör; QV gör det med en regel. Skillnaden är kursens sistabild: två strukturer, ett syfte."
+        },
+        {
+          "type": "text",
+          "content": "Den systematiske värdeinvesteraren, porträtterad i sex drag. Ett: han eller hon antar sig vara genomsnittet (Lake Wobegon) och letar därför kanten i processen, inte i självbilden. Två: hon känner sina biasar (konservatism, de små talens lag — kartlagda i AI-Diagnos) men LITAR inte på att känedom botar dem — reglerna gör jobbet. Tre: han köper regler, inte karisman (jedis är människor; klonen blir aldrig trött). Fyra: hon betalar med pris och bevis — komposit och F-score — och låter berättelser ranka, aldrig välja. Fem: han rensar bort döden och fiffet före allt annat (Z, M, CDS, kort ränta) — överlevnad före billighet. Sex: hon skriver säljreglerna i solsken och följer dem i regn, med bredd i portföljen och tålamod i åren. Det är hela personen: inte smartare om framtiden än någon annan — bara disciplinerad med historien. Gray och Carlisles bok är manualen; AK1A är din verkstad. Bygg skärmen i dag."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista mening är bokens första: temperamentet ska byggas in i modellen. Varje regel du skriver ner är ett beslut du slipper fatta i panik; varje poäng i AKM1 och varje rang i kompositen är en röstsedd mot din egen övertygelse. Den systematiske värdeinvesteraren äger inte de bästa idéerna — han äger de mest följda."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Quantitative Value till AKM1 — översättningstabellen\",\"rader\":[[\"Bokens byggsten\",\"AKM1\",\"Roll\"],[\"VC2-kompositen (P/E, P/B, EV/EBIT, EV/EBITDA, P/FCF, P/S, aktieägaravkastning)\",\"V04 huvud; V05 och V06-familjen\",\"värderingskärna — aldrig enskild multipel\"],[\"Piotroski F-score\",\"V07–V12\",\"kvalitetsbevis på bokslutet\"],[\"Altman Z och Beneish M\",\"V10, V11, V19\",\"risk- och äkthetsrens\"],[\"CDS-signal och kort ränta\",\"Short-Sellern-modulen\",\"värdefälle-varning i realtid\"],[\"Återköp och aktieägaravkastning\",\"V20\",\"korroberande signal och kompositkomponent\"],[\"Insiderköp och aktivister\",\"V17, V18\",\"katalysatorer — aldrig huvudskäl\"],[\"Universumtrösklar\",\"V11\",\"genomförbarhet före allt\"],[\"Tillväxt och story\",\"V01–V03, V13–V18\",\"kontext och rankning — aldrig köpskäl\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din QV-screen i AK1A och dokumentera den: steg ett, universumtröskel (V11) — notera siffran för ditt kapital. Steg två, VC2-rankning på minst tre multiplar (V04, V05, V06). Steg tre, F-score på de tjugo högst rankade — minst fem av nio. Steg fyra, varningsrens (Z, M grovt; kort ränta). Steg fem, notera återköp och insiderköp. Steg sex, skriv portföljpampen med maxvikter och säljregler. Spara listan med datum — och bokmärk den till nästa års mekaniska rebalansering. Från och med nu har du en process, inte en åsikt."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta ordningen i den sexstegsprocess kursen sammanfattar?",
+          "alternativ": [
+            "Berättelse, tillväxt, pris, kvalitet, portfölj, lucka",
+            "Universumtröskel (V11), VC2-prisrankning, F-score-kvalitet, varningsrens, korroboration, portföljregler",
+            "Köp på magkänsla, kontrollera efteråt, sälj på känsla",
+            "Pris, portfölj, korroboration, universum, kvalitet, rens"
+          ],
+          "ratt": 1,
+          "tips": "Vad måste avgöras FÖRE du ens får titta på multiplarna — och vad kommer allra sist?"
+        },
+        {
+          "q": "Vilken roll ska tillväxt- och storyblocket (V01–V03, V13–V18) ha i den systematiske värdeinvesterarens process?",
+          "alternativ": [
+            "Driva köpbesluten — story är kanten",
+            "Ersätta F-scoren när berättelsen är stark nog",
+            "Kontext och rankning bland aktier som redan är billiga, friska och rensade — aldrig köpskäl",
+            "Användas bara vid blankning"
+          ],
+          "ratt": 2,
+          "tips": "Minns Deere: vad behövdes INTE för att motivera köpet?"
+        },
+        {
+          "q": "Vad är den systematiske värdeinvesterarens förhållning till sin egen hjärna?",
+          "alternativ": [
+            "Han antar att han är smartare än marknaden och agerar därefter",
+            "Hon känner sina biasar men litar på att kännedomen botar dem",
+            "Han ignorerar psykologin helt",
+            "Hon känner sina biasar, kartlägger dem i AI-Diagnos — och överlåter besluten till regler eftersom kunskap inte är beteende"
+          ],
+          "ratt": 3,
+          "tips": "Montiers ord är kursens ledstång hela vägen: kunskap är inte beteende."
+        }
+      ]
+    }
+  ]
+}

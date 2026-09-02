@@ -1,0 +1,1066 @@
+{
+  "slug": "foretagsvardering-med-fundamental-analys",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 190,
+  "title": "Företagsvärdering: med fundamental analys — Hjelström, Isaksson & Nilsson: KOMPLETT",
+  "summary": "Företagsvärdering: med fundamental analys (Hjelström, Isaksson & Nilsson, Studentlitteratur, 2:a upplagan 2022) är det svenska standardverket i företagsvärdering — boken bakom svensk bolagspraxis för värderingsutlåtanden. Kursen går från bokens treklang — strategisk, redovisningsmässig och finansiell analys — via årsredovisningen enligt K3/IFRS, svenska nyckeltal (soliditet, kassalikviditet, räntetäckningsgrad) och kassaflödesanalys till kapitalkostnad med svensk riskpremie, WACC i SEK, DCF steg för steg, utdelningsmodellen, multipler på Stockholmsbörsen, EVA, substansvärde med holdingrabatter och värderingsrapportens struktur.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven läsa en svensk årsredovisning enligt K3/IFRS med kritiska ögon: plocka isär resultaträkning, balansräkning och kassaflödesanalys, beräkna justerat eget kapital (obeskattade reserver x (1 - skattesats)) och de svenska nyckeltalen soliditet, kassalikviditet och räntetäckningsgrad — mappade mot AKM1:s variabler V07-V12. Eleven kan härleda kapitalkostnaden med svensk riskpremie och beta mot Stockholmsbörsen, bygga WACC i SEK, genomföra en komplett DCF (FCFF, terminalvärde, känslighetsmatris), värdera med utdelningsmodellen, EV/EBIT-multipler mot peer-grupp samt EVA och substansvärde med holdingrabatt — och slutligen samla allt i ett strukturerat värderingsutlåtande med poängsättning istället för rekommendationer.",
+  "why": "Detta är värdering på svenska. Damodaran och Graham ger teorin, men Företagsvärdering: med fundamental analys ger praxis: K3 och IFRS, obeskattade reserver, A/B-aktier, svensk utdelningspolicy, bolagsskatten 20,6 procent och investmentbolagens holdingrabatter. Utan denna bok blir AKM1:s stabilitets- och lönsamhetsvariabler (V07-V12) översättningar av amerikanska förhållanden; med den blir de svenska bolagslivet som det faktiskt ser ut på Stockholmsbörsen.",
+  "chapters_list": [
+    "1. Tre analyser blir en värdering — bokens svenska hantverk",
+    "2. Årsredovisningen — K3, IFRS och de tre rapporterna",
+    "3. Resultatanalys — vinstens kvalitet och engångsposten",
+    "4. Balansräkningen och justerat eget kapital",
+    "5. Nyckeltal på svenska — soliditet, kassalikviditet, räntetäckning (AKM1 V07-V12)",
+    "6. Kassaflödesanalys — från bokföring till kontanter",
+    "7. Kapitalkostnad I — riskfri ränta, svensk riskpremie och CAPM",
+    "8. Kapitalkostnad II — beta och WACC i SEK",
+    "9. DCF steg för steg — FCFF till aktievärde i svenskt exempel",
+    "10. Terminalvärde och känsligheten — DCF:ns akilleshäl",
+    "11. Utdelningsmodellen och svensk utdelningspolicy — A/B-aktier",
+    "12. Relativ värdering — EV/EBIT och multipler på Stockholmsbörsen",
+    "13. EVA, substansvärde och holdingrabatter — investmentbolagens logik",
+    "14. Kontroversen — analytikerbias, DCF-kritik och AK1A:s svar",
+    "15. Värderingsrapporten — från analys till utlåtande"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Tre analyser blir en värdering — bokens svenska hantverk",
+      "intro": "Företagsvärdering: med fundamental analys (Hjelström, Isaksson & Nilsson, Studentlitteratur) är den bok svenska ekonomie studenter och analytiker utbildats i i decennier. Dess grundidé är en treklang: innan någon värderingsmodell får köras måste strategisk, redovisningsmässig och finansiell analys lägga grund — värdering är slutledningen, inte startpunkten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens kärna är processen, inte formeln. En värdering som börjar i en DCF-modell är enligt boken värderingsmässigt husbygge på träskmark: siffrorna ser ut att bära men grunden saknas. Först den strategiska analysen — bransch, konkurrenskraft, moat — avgör om framtida kassaflöden ens är trovärdiga. Sedan den redovisningsmässiga analysen: stämmer resultaten med verkligheten, eller är vinsten målad med skattemässiga och redovisningsmässiga penslar? Därefter den finansiella analysen — nyckeltal och kassaflöde. Först då är det dags för värderingsmodellerna: kassaflödesbaserade (DCF, DDM), substansvärdesbaserade och multiplarbaserade ansatser."
+        },
+        {
+          "type": "text",
+          "content": "Detta är exakt logiken i AKM1:s 20 fundamentalvariabler: kategorierna Tillväxt (V01-V03) och Moat (V13-V15) svarar mot bokens strategiska analys, Lönsamhet och Stabilitet (V07-V12) mot den redovisningsmässiga och finansiella analysen, och Värdering (V04-V06) mot själva värderingssteget. Skillnaden mot en amerikansk lärobok är att allt här är översatt till svenska förhållanden: årsredovisningslagen, K3 och IFRS, svenska skatteregler, A/B-aktiers rösträttsstruktur och Stockholmsbörsens konventioner. När boken räknar exempel räknar den i kronor, på bolag du kan slå upp på Nasdaq Stockholm."
+        },
+        {
+          "type": "text",
+          "content": "Boken är också öppen med värderingens roll: ett värderingsutlåtande är en strukturerad, motiverad och reproducierbar bedömning av ett bolags värde — aldrig en sanning. Därför kräver den att varje antagande kan granskas och att osäkerheten hanteras med känslighetsanalys och intervall istället för en enda punktsiffra. Det är samma princip som AK1A:s krav på reproducerbarhet: varje slutsats har en källa, och varje siffra en härledning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens tre analysnivåer — och var de hamnar i AKM1\",\"rader\":[[\"Nivå\",\"Fråga\",\"Verktyg\",\"AKM1-länk\"],[\"Strategisk\",\"Är värdeskapandet hållbart?\",\"Bransch, konkurrens, moat\",\"V01-V03, V13-V15\"],[\"Redovisningsmässig\",\"Är siffrorna sanna?\",\"Årsredovisning, nyckeltal, kassaflöde\",\"V07-V12\"],[\"Finansiell\",\"Vad är bolaget värt?\",\"DCF, DDM, multipler, substansvärde\",\"V04-V06\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Värderingsmodellen är slutledningen, inte startpunkten — strategisk, redovisningsmässig och finansiell analys är de tre grundpelare som svensk värderingspraxis vilar på."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj ett svenskt börsbolag du känner (t.ex. H&M eller Atlas Copco). Skriv tre meningar: en om strategisk position (moat), en om vinstens kvalitet och en om kassaflödet. Bedöm sedan vilken av de tre som är svagast — det är där din värdering kommer att vara mest osäker, oavsett vilken modell du väljer i kapitel 9-13."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är grundprincipen i bokens värderingsprocess?",
+          "alternativ": [
+            "Börja alltid i DCF-modellen och arbeta baklänges",
+            "Strategisk, redovisningsmässig och finansiell analys ska läggga grunden innan värderingsmodellen körs",
+            "Värdering är en känsla som tränas genom erfarenhet",
+            "Multipler räcker alltid — djupare analys är onödig"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på bokens byggmetafor: vad händer med ett hus byggt utan grund?"
+        },
+        {
+          "q": "Vad utmärker just denna bok jämfört med amerikanska standardverk?",
+          "alternativ": [
+            "Den avfärdar fundamental analys som oanvändbar",
+            "Den är skriven för svenska förhållanden — ÅRL, K3/IFRS, svenska skatteregler och Stockholmsbörsens konventioner",
+            "Den behandlar enbart onoterade familjebolag",
+            "Den ersätter redovisningsanalys med teknisk analys"
+          ],
+          "ratt": 1,
+          "tips": "Vad översätts när en amerikansk lärobok förs över till svensk praxis? Tänk lagstiftning, skatt och ägarstruktur."
+        },
+        {
+          "q": "Hur förhåller sig bokens tre analysnivåer till AKM1:s variabler?",
+          "alternativ": [
+            "De har ingen koppling — AKM1 ersätter analysen",
+            "Strategisk analys motsvarar V01-V03 och V13-V15, redovisningsmässig/finansiell motsvarar V07-V12 och värderingssteget V04-V06",
+            "AKM1 använder bara V04-V06",
+            "Boken rekommenderar enbart teknisk analys för V01-V20"
+          ],
+          "ratt": 1,
+          "tips": "Matcha frågorna: moat-frågor, sanningsfrågor och prisfrågor — vilka V-kategorier bär varje fråga?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Årsredovisningen — K3, IFRS och de tre rapporterna",
+      "intro": "Den svenska årsredovisningen är värderarens råmaterial. Boken går igenom dess delar enligt årsredovisningslagen: förvaltningsberättelse, resultaträkning, balansräkning, kassaflödesanalys och noter — och skillnaden mellan K3 för onoterade bolag och IFRS för de noterade. Vem som helst kan läsa en resultatrad; värderaren läser strukturen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Svenska bolag redovisar enligt årsredovisningslagen (ÅRL). Noterade bolag ska enligt EU-förordning tillämpa IFRS för koncernredovisningen, medan onoterade bolag väljer mellan K2 (enkelt, normativt) och K3 (BFNAR 2012:1, huvudregel för större bolag med fler valfriheter). Skillnaden är praktisk: K3 ger utrymme för komponentavskrivningar, uppskjuten skatt och verkligt värde som liknar IFRS, medan K2 tvingar fram enklare lösningar. Värderar du ett onoterat bolag i K2 kan dolda värden (fastigheter till gamla anskaffningsvärden) och dolda skulder (leasing) kräva omjustering innan jämförelse med börsen."
+        },
+        {
+          "type": "text",
+          "content": "Den svenska resultaträkningen har en särart som boken betonar: rörelseresultatet redovisas före finansiella poster. Strukturen är intäkter, rörelsens kostnader, rörelseresultat, finansiella poster, resultat före skatt, skatt och årsresultat. Det gör rörelseresultatet (EBIT) renare i svensk praxis än i amerikansk — räntor och valutakursförändringar ligger i finansnettot. Balansräkningen täcker sedan en svensk specialitet som kapitel 4 fördjupar: obeskattade reserver, där skatt och eget kapital är blandat i samma post."
+        },
+        {
+          "type": "text",
+          "content": "I noterade bolags årsredovisningar ingår också bolagsstyrningsrapporten (enligt den svenska koden) och hållbarhetsrapporten — ingen källa är mer lättnavigerad men mindre läst än noterna. Där bor redovisningsprinciperna, nedskrivningsprövningarna, finansiella instrumentens värderingshierarki (nivå 1-3) och segmentuppgifterna. Bokens råd är bokstavligt: läs noterna före resultaträkningen. AKM1:s V12 (intäktsstabilitet) och V19 (risk) matas i praktiken mest från just noter och förvaltningsberättelse — inte från sluglines på finanssajter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Årsredovisningens delar — vad varje rapport svarar på\",\"rader\":[[\"Del\",\"Svarar på\",\"Svensk praxis\"],[\"Förvaltningsberättelse\",\"Hur gick det, och varför?\",\"Verksamhet, risker, hållbarhet, bolagsstyrning\"],[\"Resultaträkning\",\"Vad tjänade bolaget?\",\"Rörelseresultat före finansiella poster\"],[\"Balansräkning\",\"Vad äger bolaget och vad är det skyldigt?\",\"Obeskattade reserver, justerat eget kapital\"],[\"Kassaflödesanalys\",\"Vilka kontanter rörde sig faktiskt?\",\"Löpande, investerings- och finansieringsverksamhet\"],[\"Noter\",\"Var finns detaljerna?\",\"Principer, nedskrivningar, instrument, segment\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Läs noterna före resultaträkningen — den svenska årsredovisningen berättar sin sanning i omvänd ordning mot hur den läses."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ladda ner senaste årsredovisningen för ett noterat svenskt bolag. Hitta: (1) rörelseresultatet före finansiella poster, (2) en nedskrivningsprövning i noterna och (3) obeskattade reserver i balansräkningen. Notera vilken del som tog längst tid — och vilken som ändrade din bild av bolaget mest."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken redovisningsstandard gäller för koncernredovisningen hos noterade svenska bolag?",
+          "alternativ": [
+            "K2 enligt BFN",
+            "IFRS enligt EU-förordning",
+            "Amerikanska US GAAP",
+            "K3 är obligatoriskt för alla noterade bolag"
+          ],
+          "ratt": 1,
+          "tips": "Noterade koncerner i EU följer en förordning — vilken standard nämndes för just dem?"
+        },
+        {
+          "q": "Vad är den svenska resultaträkningens särart?",
+          "alternativ": [
+            "Räntekostnader ingår alltid i rörelseresultatet",
+            "Rörelseresultatet redovisas före finansiella poster — räntor och valutor hamnar i finansnettot",
+            "Utdelning bokförs som kostnad i resultaträkningen",
+            "Skatten redovisas före rörelseresultatet"
+          ],
+          "ratt": 1,
+          "tips": "Var i den svenska resultaträkningen ligger räntor och valutakursförändringar?"
+        },
+        {
+          "q": "Varför bör noterna läsas före resultaträkningen enligt bokens logik?",
+          "alternativ": [
+            "Noterna är kortare och snabbare att läsa",
+            "Där bor principerna, nedskrivningarna och riskuppgifterna som avgör om resultatrakensiffrorna är pålitliga",
+            "Noterna innehåller alltid aktiekursprognoser",
+            "Resultaträkningen är endast ett sammandrag av noterna enligt lag"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan förändra din tolkning av en resultatrads trovärdighet — talet självt eller detaljerna bakom det?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Resultatanalys — vinstens kvalitet och engångsposten",
+      "intro": "Rörelseresultatet är svenska analysters favoritmått — men boken varnar: resultatet är en skattad och redovisad åsikt, kassaflödet en transaktion. Här skiljer du strukturell lönsamhet från engångseffekter, och tränar ögat som ser genom nedskrivningar, restruktureringar och IFRS 16.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vinstens kvalitet handlar om hur mycket av resultatet som är återkommande och kassaflödesgrundat. Bokens checklista: separera strukturell lönsamhet (kärnverksamhetens marginaler) från engångsposter (omstruktureringar, avyttringar, nedskrivningar, valutakursförändringar). Räkneexempel [illustrativt]: ett bolag rapporterar rörelseresultat 1 500 miljoner kronor innehållande en omstruktureringskostnad på 200 och en engångsvinst på 100. Justerat rörelseresultat = 1 500 + 200 - 100 = 1 600. Skillnaden är 6-7 procent — nog för att flytta en DCF eller en multipliceringsjämförelse från köp till sälj. Regeln: justera alltid bort engångsposter, men dokumentera varje justering — en justering du inte kan motivera är en bias du gett dig själv."
+        },
+        {
+          "type": "text",
+          "content": "Nedskrivningar är svensk resultatanalys vanligaste stridsfråga. En nedskrivning av goodwill är inte en kontant händelse — men den är information: ledningen medger att förvärvade tillgångar inte betalar sig. Bokens nyans: nedskrivning är bakåtblickande erkännande av framtida sämre kassaflöden, vilket gör den till input i den strategiska analysen snarare än bara en redovisningspost. IFRS 16 (leasing) är den andra moderna förvrängningen: leasingavtal kapitaliseras som tillgång och skuld, vilket höjer EBITDA men också skuldsättningen — jämför du ett bolags EBITDA före och efter 2019 jämför du äpplen med päron."
+        },
+        {
+          "type": "text",
+          "content": "För AKM1 är detta V07 (bruttomarginal) och V08 (EBITDA-marginal) i sin rörliga form: en marginal som stiger genom engångsvinster poängsätts inte som en marginal som stigit genom prisformningskraft. Skillnaden mellan 3 och 5 poäng på V07-V08 ska vara strukturell, inte bokföringsmässig — därför kräver ekosystemet att poängen motiveras mot treårsutveckling, inte enstaka år. Bruttomarginalen är dessutom ofta det tidigaste moat-måttet: kan bolaget hålla marginalen när konkurrensen ökar (V14), eller eroderar den?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vinstens kvalitet — vanliga justeringar\",\"rader\":[[\"Post\",\"Problem\",\"Åtgärd\"],[\"Engångskostnader\",\"Döljer strukturell lönsamhet\",\"Lägg tillbaka, dokumentera\"],[\"Engångsvinster\",\"Överdriver årets resultat\",\"Ta bort ur basen\"],[\"Nedskrivning goodwill\",\"Bakåtblickande erkännande\",\"Input i strategisk analys — ej engångspost att bara addera\"],[\"IFRS 16-leasing\",\"Höjt EBITDA, höjd skuld\",\"Jämför poster konsekvent före/efter 2019\"],[\"Valutakursförändringar\",\"Ligger i finansnettot\",\"Särskild från rörelsen i svensk rapport\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Justerat resultat är en bedömning, dokumenterat resultat är en handling — varje justering du gör av vinsten ska tåla samma granskning som vinsten själv."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Räkneexempel [illustrativt]: rörelseresultat 1 500, omstruktureringskostnad 200, engångsvinst 100. Beräkna justerat rörelseresultat (svar: 1 600) och EBIT-marginalen på omsättning 12 000 (svar: 13,3 procent). Leta sedan i ett verkligt svenskt bokslut efter en post som borde justeras — och formulera motiveringen i en mening."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Rörelseresultat 1 500 innehåller engångskostnad 200 och engångsvinst 100. Vad är justerat rörelseresultat?",
+          "alternativ": [
+            "1 400",
+            "1 600",
+            "1 500",
+            "1 800"
+          ],
+          "ratt": 1,
+          "tips": "Kostnaden läggs tillbaka, vinsten dras bort: 1 500 + 200 - 100."
+        },
+        {
+          "q": "Hur bör en goodwillnedskrivning tolkas enligt bokens logik?",
+          "alternativ": [
+            "Som en engångspost som alltid adderas tillbaka utan eftertanke",
+            "Som information — ett bakåtblickande erkännande att framtida kassaflöden blivit sämre, input i den strategiska analysen",
+            "Som ett tecken på att bolaget är konkursklart",
+            "Som en ren skattefråga utan värderingsrelevans"
+          ],
+          "ratt": 1,
+          "tips": "Nedskrivningen kostar inga kontanter — men vad medger ledningen om framtiden med den?"
+        },
+        {
+          "q": "Vad är huvudeffekten av IFRS 16 för jämförelser av EBITDA?",
+          "alternativ": [
+            "Ingen effekt alls — EBITDA påverkas inte",
+            "EBITDA höjs samtidigt som skuldsättningen ökar — jämförelser före och efter 2019 blir missvisande",
+            "EBITDA sänks kraftigt för alla bolag",
+            "Leasing får inte längre bokföras alls"
+          ],
+          "ratt": 1,
+          "tips": "Leasingkostnaden ersätts av avskrivning och ränta — vilka av dessa sitter i EBITDA?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 13,
+      "title": "Balansräkningen och justerat eget kapital",
+      "intro": "I balansräkningen bor svensk redovisnings märkligaste post: obeskattade reserver — en blandning av eget kapital och latent skuld. Här lär du dig räkna justerat eget kapital, skilja bundet från fritt eget kapital och förstå varför svensk soliditet aldrig får räknas på rått eget kapital.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Obeskattade reserver uppstår när bolag skjuter upp beskattning — genom periodiseringsfonder eller uppskov med beskattning av t.ex. fastighetsvinster. Posten innehåller både en skattedel (som vid realisering blir en skuld till staten) och en ekvitetsdel. Bokens lösning är justerat eget kapital: eget kapital plus obeskattade reserver multiplicerat med (1 - skattesatsen). Vid svensk bolagsskatt 20,6 procent blir faktorn 0,794. Räkneexempel [illustrativt]: eget kapital 3 500 plus obeskattade reserver 756 ger justerat eget kapital = 3 500 + 756 x 0,794 = 3 500 + 600 = 4 100 miljoner kronor. Det är denna korrigering som gör nyckeltal som soliditet jämförbara mellan bolag — den som hoppar över den straffar bolag som använt skattemässiga friktioner."
+        },
+        {
+          "type": "text",
+          "content": "Aktiebolagslagen skiljer också bundet eget kapital (aktiekapital, uppskrivningsfond) från fritt eget kapital. Utdelningsbara medel är i princip det fria eget kapitalet — ett bolag kan visa stort eget kapital och ändå ha litet utrymme för utdelning. För värderaren betyder det två saker: DDM:s och utdelningspolicens tak sits i det fria kapitalet, och återköp (AKM1 V20) blir intressanta just när det fria kapitalet växt stort i förhållande till behov. Svenska börsbolag med berg av fritt kapital och ingen utdelningspolicy är en klassisk aktivistkatalysator (V16-V17)."
+        },
+        {
+          "type": "text",
+          "content": "Balansräkningens tillgångssida avgör också vilken värderingsansats som är rimlig — bokens tråd: ett bolag vars värde mest ligger i anläggningstillgångar (fastigheter, skog, fartyg) bjuder in substansvärdesansatsen (kapitel 13), medan ett bolag vars värde ligger i kassaflödesmaskineriet bjuder in DCF. Goodwillens andel av balansomslutningen är en egen riskpost: hög andel betyder att värdet vilar på förvärvade förhoppningar — samma post som kapitel 3 visade vara nedskrivningsbenägen. AKM1:s V19 (risk) får här sitt balansräkningsunderlag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Justerat eget kapital — steg för steg [illustrativt]\",\"rader\":[[\"Post\",\"Belopp (Mkr)\",\"Logik\"],[\"Eget kapital\",\"3 500\",\"Enligt balansräkningen\"],[\"Obeskattade reserver\",\"756\",\"Blandad post: kapital + latent skatt\"],[\"Latent skatt (20,6%)\",\"-156\",\"756 x 0,206 — framtida skuld\"],[\"Justerat eget kapital\",\"4 100\",\"3 500 + 756 x 0,794\"],[\"Balansomslutning\",\"8 200\",\"Soliditet = 4 100 / 8 200 = 50%\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Obeskattade reserver är halva sanningen: 79,4 procent är kapital, 20,6 procent är statens — justerat eget kapital är svenska värderares grundhygien."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett onoterat bolag visar eget kapital 2 000 och obeskattade reserver 500. Beräkna justerat eget kapital (svar: 2 000 + 500 x 0,794 = 2 397 miljoner). Räkna sedan soliditeten vid balansomslutning 6 000 med och utan justering (svar: 40,0 procent mot 33,3 procent). Vilken siffra skulle du presentera i ett värderingsutlåtande — och varför?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Eget kapital 3 500, obeskattade reserver 756, skattesats 20,6 procent. Vad är justerat eget kapital?",
+          "alternativ": [
+            "4 256",
+            "4 100",
+            "3 944",
+            "3 500"
+          ],
+          "ratt": 1,
+          "tips": "Endast skattefria delen av reserverna är kapital: 3 500 + 756 x (1 - 0,206)."
+        },
+        {
+          "q": "Varför justeras obeskattade reserver ner med skattesatsen?",
+          "alternativ": [
+            "För att reserverna är en skuld till leverantörer",
+            "För att posten blandar eget kapital med en latent skatteskuld som realiseras vid utdelning eller försäljning",
+            "För att bokföringslagen förbjuder reserver",
+            "För att egen kapital alltid är övervärderat"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med obeskattade reserver om bolaget realiserar vinsterna och delar ut?"
+        },
+        {
+          "q": "Vad styr i princip hur mycket ett aktiebolag får dela ut?",
+          "alternativ": [
+            "Hela det egna kapitalet",
+            "Det fria egna kapitalet — bundet kapital som aktiekapital får inte delas ut",
+            "Årets resultat enbart",
+            "Obeskattade reserver i sin helhet"
+          ],
+          "ratt": 1,
+          "tips": "Aktiebolagslagen skyddar borgenärer med en nedre gräns — vilken del av kapitalet ligger över den?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "Nyckeltal på svenska — soliditet, kassalikviditet, räntetäckning (AKM1 V07-V12)",
+      "intro": "Här är kursens svenska kärna: nyckeltalen som generationer av svenska ekonomer räknat — soliditet, kassalikviditet, balanslikviditet och räntetäckningsgrad — mappade rakt mot AKM1:s lönsamhets- och stabilitetsvariabler V07-V12. Tabell för tabell bygger du nyckeltalsprofilen för ett illustrativt bolag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Svensk nyckeltalstradition betonar struktur snarare än bara lönsamhet. Soliditet = justerat eget kapital / balansomslutning — hur stor del av balansräkningen ägarna själva finansierar. Kassalikviditet (kvickkvot) = (omsättningstillgångar - varulager) / kortfristiga skulder — kan bolaget betala sina korta förpliktelser utan att röra lagret? Räntetäckningsgrad = rörelseresultat / räntekostnader (ibland inklusive finansiella intäkter) — hur stort fall i resultatet tål bolaget innan räntan äter det? Dessa tre är kärnan i den finansiella analysen i boken, och var och en är en svensk förenkling av samma frågor som internationella traditioner ställer med andra namn."
+        },
+        {
+          "type": "text",
+          "content": "I AKM1 blir översättningen direkt: bruttomarginal är V07, EBITDA-marginal V08, ROE V09, skuldsättningsgrad V10, likviditet V11 och intäktsstabilitet V12. Poängskalan 0-5 per variabel bygger på tröskelvärden från svensk bolagsstatistik: kassalikviditet under 0,5 är en varningsnivå, över 2 är stark; räntetäckning under 2 är skör, över 10 är robust. Notera nyansen: ett bolag kan ha full poäng på lönsamheten (V07-V09) och samtidigt vara nära att bryta mot sina kreditvillkor (V10-V11) — cykliska industribolag under lågkonjunktur är det klassiska svenska exemplet. Därför poängsätts kategorierna separat innan de summeras till max 100 poäng — summan utan profilen säger inget."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexemplet nedan [illustrativt, bolaget Nordisk Industri AB] visar hela kedjan från rådata till AKM1-poäng. Observera hur soliditeten räknas på justerat eget kapital (kapitel 4) och hur bruttomarginalen på 42 procent motsvarar 3 poäng på V07:s skala (zon 40-60 procent). En fullständig nyckeltalsprofil är inte en lista siffror — den är en berättelse om bolagets motståndskraft: hur många procent får omsättningen falla innan resultatet, sedan räntetäckningen och slutligen soliditeten får men? Det är den frågan ett bra värderingsutlåtande svarar på."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Nyckeltal → AKM1-variabel — mappningen\",\"rader\":[[\"Svenskt nyckeltal\",\"Formel\",\"AKM1\"],[\"Bruttomarginal\",\"Bruttovinst / omsättning\",\"V07\"],[\"EBITDA-marginal\",\"EBITDA / omsättning\",\"V08\"],[\"Räntabilitet på eget kapital\",\"Resultat / genomsnittligt eget kapital\",\"V09 (ROE)\"],[\"Skuldsättningsgrad\",\"Räntebärande skulder / eget kapital\",\"V10\"],[\"Kassalikviditet\",\"(Omsättningstillgångar - lager) / kortfristiga skulder\",\"V11\"],[\"Räntetäckningsgrad\",\"Rörelseresultat / räntekostnader\",\"V10-V12 (stabilitetszonen)\"]]}"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Räkneexempel: Nordisk Industri AB [illustrativt]\",\"rader\":[[\"Rådata (Mkr)\",\"Värde\",\"Nyckeltal\",\"Resultat\"],[\"Omsättning\",\"10 000\",\"Bruttomarginal (V07)\",\"4 200 / 10 000 = 42%\"],[\"EBITDA\",\"1 700\",\"EBITDA-marginal (V08)\",\"17,0%\"],[\"Resultat efter skatt\",\"780\",\"ROE (V09)\",\"780 / 3 900 = 20%\"],[\"Räntebärande skulder\",\"2 000\",\"Skuldsättningsgrad (V10)\",\"2 000 / 3 900 = 0,51\"],[\"Lager / kortfr. skulder\",\"1 400 / 2 400\",\"Kassalikviditet (V11)\",\"(3 600 - 1 400) / 2 400 = 0,92\"],[\"Rörelseresultat / ränta\",\"1 200 / 90\",\"Räntetäckningsgrad\",\"13,3 gånger\"],[\"Justerat e. kap. / balansomsl.\",\"4 100 / 8 200\",\"Soliditet\",\"50,0%\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Lönsamhet utan struktur är en fart utan bromsar: ROE på 20 procent med kassalikviditet 0,92 och skuldsättningsgrad 0,51 är en saga som en räntehöjning kan avsluta."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Använd Nordisk Industri AB:s rådata och beräkna: (1) balanslikviditeten omsättningstillgångar / kortfristiga skulder (svar: 3 600 / 2 400 = 1,50), (2) hur många procent räntekostnaden får stiga innan räntetäckningen faller under 3 (svar: rörelseresultat 1 200 / 3 = 400; 400 / 90 = 4,4 gånger högre ränta), (3) vilken AKM1-poäng 0-5 du ger V10-V12 sammantaget — motivera med siffrorna."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kassalikviditeten för ett bolag med omsättningstillgångar 3 600, varulager 1 400 och kortfristiga skulder 2 400?",
+          "alternativ": [
+            "1,50",
+            "0,92",
+            "1,17",
+            "0,58"
+          ],
+          "ratt": 1,
+          "tips": "Lagret dras av från omsättningstillgångarna innan division med de kortfristiga skulderna."
+        },
+        {
+          "q": "Rörelseresultat 1 200 och räntekostnader 90. Vad är räntetäckningsgraden?",
+          "alternativ": [
+            "7,5 gånger",
+            "10,8 gånger",
+            "13,3 gånger",
+            "0,08 gånger"
+          ],
+          "ratt": 2,
+          "tips": "Dividera resultatet med räntekostnaden: hur många gånger om betalar bolaget sin ränta?"
+        },
+        {
+          "q": "Vilken AKM1-variabel motsvarar soliditeten och skuldsättningsgraden närmast?",
+          "alternativ": [
+            "V07 Bruttomarginal",
+            "V10 Skuldsättningsgrad (stabilitetskategorin)",
+            "V16 Produktlanseringar",
+            "V04 P/S"
+          ],
+          "ratt": 1,
+          "tips": "Soliditet handlar om finansieringsstruktur — vilken kategori i AKM1 fångar det?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Kassaflödesanalys — från bokföring till kontanter",
+      "intro": "Bokens finansiella analys slutar alltid i kassaflödet: resultaträkningen kan justeras och balansräkningen kan sminkas, men kontanter som lämnar och kommer in i banken är transaktioner. Här bryter du ner det svenska kassaflödesutlåtandets tre delar och deriverar det fria kassaflödet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den svenska kassaflödesanalysen delar upp året i tre verksamheter: löpande (kassaflöde från drift), investering (köp och försäljning av anläggningstillgångar och finansiella placeringar) och finansiering (nyemissioner, lån, amorteringar, utdelningar och återköp). Summan är förändringen i likvida medel. Logiken är rättesnöret i all värdering: löpande kassaflöde finansierar investeringar; det som blir över kan föras till ägarna. Ett bolag vars utdelning under åratal finansieras av nylåning eller emissioner har inte en utdelningspolicy — det har en nedbrytningsprocess i slow motion."
+        },
+        {
+          "type": "text",
+          "content": "Fri kassaflöde (FCF) deriveras ur strukturen: FCF = kassaflöde från löpande verksamhet minus investeringar i rörelsen (capex). Räkneexempel [illustrativt]: löpande kassaflöde 2 100 minus capex 750 ger FCF = 1 350 miljoner kronor — det är poolen som kan betala utdelning, återköp, avbetalning eller förvärv. Jämför FCF med utdelningen: utdelning 600 av FCF 1 350 ger en utdelningskvot på 44 procent av det fria flödet — en hållbar nivå med marginal. Utdelning över FCF flera år i rad är bokens och AKM1:s V20-varning: antingen faller utdelningen, eller faller något annat."
+        },
+        {
+          "type": "text",
+          "content": "Kassaflödesanalysen är också vinstkvalitetens domstol. Bokens tumregel: löpande kassaflöde (före förändringar i arbetskapital) bör över tid ligga nära rörelseresultatet plus avskrivningar; glider resultaten ifrån kassan är något strukturellt fel — aggressiv intäktsredovisning, upplagrade lager, växande kundfordringar. AKM1:s V12 (intäktsstabilitet) väger in just detta: intäkter som inte konverterar till kassa får inte poängsättas som stabila. I nästa steg av kursen blir kassaflödet själva värderingsobjektet: DCF värderar inget annat än just detta flödes framtid."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kassaflödesanalysens tre delar [illustrativt]\",\"rader\":[[\"Verksamhet\",\"Innehåll\",\"Exempel (Mkr)\"],[\"Löpande\",\"Driftens kassaflöde före ränta och skatt, arbetskapital\",\"+2 100\"],[\"Investering\",\"Capex, avyttringar, finansiella placeringar\",\"-750\"],[\"Finansiering\",\"Ränta, skatt, lån, amortering, utdelning, emission\",\"-1 000\"],[\"Förändring likvida medel\",\"Summan av de tre\",\"+350\"],[\"Fritt kassaflöde\",\"Löpande minus capex\",\"2 100 - 750 = 1 350\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Resultat är en åsikt, kassaflöde en transaktion — den som läser årets tre kassaflödesrader före resultaträkningen börjar analysen vid sanningen."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ett bolag visar löpande kassaflöde 1 800, investeringskassaflöde -500 och finansieringskassaflöde -900. Beräkna årets kassaändring (svar: +400) och FCF (svar: 1 300). Om utdelningen är 800 — är den hållbar? Motivera med utdelningskvot av FCF (svar: 62 procent) och diskutera vad som händer om det löpande flödet sjunker 20 procent i en lågkonjunktur."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka tre delar ingår i den svenska kassaflödesanalysen?",
+          "alternativ": [
+            "Intäkter, kostnader, resultat",
+            "Löpande verksamhet, investeringsverksamhet, finansieringsverksamhet",
+            "Eget kapital, skulder, tillgångar",
+            "Brutto, EBIT, netto"
+          ],
+          "ratt": 1,
+          "tips": "Följ kontanterna: drift, investeringar, finansiering — i vilken ordning betalar bolaget?"
+        },
+        {
+          "q": "Löpande kassaflöde 2 100 och capex 750. Vad är det fria kassaflödet?",
+          "alternativ": [
+            "2 850",
+            "1 350",
+            "750",
+            "1 400"
+          ],
+          "ratt": 1,
+          "tips": "FCF är det som återstår av driftens kassa efter nödvändiga investeringar."
+        },
+        {
+          "q": "Vad betyder det om utdelningen år efter år överstiger det fria kassaflödet?",
+          "alternativ": [
+            "Bolaget är värdefullt eftersom det vågar dela ut",
+            "Utdelningen finansieras av låneupptag, emissioner eller minerar balansräkningen — en varning för hållbarheten",
+            "Kassaflödesanalysen är felaktig enligt K3",
+            "Ingenting — utdelning och FCF är oberoende"
+          ],
+          "ratt": 1,
+          "tips": "Vilken källa återstår när driftens kassa inte räcker till utdelningen?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 13,
+      "title": "Kapitalkostnad I — riskfri ränta, svensk riskpremie och CAPM",
+      "intro": "Innan någon kassaflödesmodell får köras måste avkastningskravet sättas — och det görs i svensk praxis med svenska data: riskfri ränta på statsobligationer i kronor och en riskpremie byggd på svensk aktiehistorik. Här bygger du CAPM:s svenska variant, med anslutning till bokens kapitel om diskonteringsräntan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den riskfria räntan i en svensk värdering är inte den amerikanska tioåraren — det är svenska statsobligationer i kronor med löptid matchad mot värderingens horisont (typ tio år). Valutan måste bära hela vägen: kassaflöden i kronor diskonteras med en ränta byggd på svenska obligationer, annars blandar du in valutarisk utan att veta om det. Bokens princip är densamma som Damodarans men med svensk datakälla: Riksgälden, inte den amerikanska statskassen."
+        },
+        {
+          "type": "text",
+          "content": "Aktiernas riskpremie (ERP) i svenskt utförande bygger historiskt på svenska aktiers överavkastning mot svenska statsobligationer under långa perioder — de klassiska beräkningarna (bl.a. från forskning vid Handelshögskolan) landar historiskt i storleksordningen 4-6 procent per år beroende på period och metod [illustrativt intervall — exakt nivå beror på mättidsfönster och om aritmetiskt eller geometriskt medelvärde används]. Två varningar från boken: historiska premier är känsliga för periodvalet (en enda sekelsluta kan flytta procentenheten), och överlevnadsbias — den svenska börsen överlevde krig och kriser, vilket pressar ner den uppmätta risken. Därför kompletteras historia med förväntansbild: vilken premie motiverar dagens indexnivå givet framtida utdelningar? I kursexemplen används 5,0 procent [illustrativt]."
+        },
+        {
+          "type": "text",
+          "content": "CAPM binder ihop det hela: ke = riskfri ränta + beta x riskpremie. Räkneexempel [illustrativt]: rf 2,5 procent, beta 1,0 mot Stockholmsbörsen (OMX Stockholm) och ERP 5,0 procent ger ke = 2,5 + 1,0 x 5,0 = 7,5 procent. En defensiv svensk konsumentbolagsaktie med beta 0,7 ger ke = 2,5 + 3,5 = 6,0 procent; ett cykliskt verkstadsbolag med beta 1,3 ger 9,0 procent. Skillnaden — tre procentenheter — är inte en teknikalitet: i kapitel 10 ser du att den ensam kan flytta ett DCF-värde med mer än hälften. Kapitalkostnaden är värderingens växel, och svensk beta beräknas mot svenskt index — inte S&P 500."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CAPM med svensk data — tre exempel [illustrativt]\",\"rader\":[[\"Ingång\",\"Defensivt konsumentbolag\",\"Medelbolag\",\"Cykliskt verkstadsbolag\"],[\"Riskfri ränta (Sv statsobligation)\",\"2,5%\",\"2,5%\",\"2,5%\"],[\"Beta mot OMX Stockholm\",\"0,7\",\"1,0\",\"1,3\"],[\"Riskpremie (svensk)\",\"5,0%\",\"5,0%\",\"5,0%\"],[\"ke = rf + beta x ERP\",\"6,0%\",\"7,5%\",\"9,0%\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Värdera i kronor med svenska räntor och svensk beta — valutan ska bära hela vägen från kassaflöde till diskonteringsränta, annars har du en dold valutaposition i din DCF."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Räkna ke för ett svenskt bolag med rf 2,0 procent, beta 1,2 och ERP 5,0 procent (svar: 2,0 + 6,0 = 8,0 procent). Testa sedan betans makt: vad blir ke om beta är 0,8 (svar: 6,0 procent)? Diskutera slutligen varför ett bolag som H&M (global konsumentcykel) kan ha högre beta än ett bolag som läkemedelsbolaget Mölnlycke — trots att bägge är 'svenska'."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken riskfri ränta hör hemma i en värdering av ett svenskt bolag med kassaflöden i kronor?",
+          "alternativ": [
+            "Amerikanska tioåriga statsobligationer",
+            "Svenska statsobligationer i kronor med löptid matchad mot horisonten",
+            "Riksbankens styrränta direkt",
+            "Bolagets egen utlåningsränta"
+          ],
+          "ratt": 1,
+          "tips": "Vad ska stå på andra sidan valutapariteten? Kassaflöden i SEK diskonteras med en ränta i SEK."
+        },
+        {
+          "q": "rf 2,0 procent, beta 1,2, svensk riskpremie 5,0 procent. Vad är ke enligt CAPM?",
+          "alternativ": [
+            "6,0 procent",
+            "7,0 procent",
+            "8,0 procent",
+            "9,2 procent"
+          ],
+          "ratt": 2,
+          "tips": "Beta multiplicerar premien före addition: 2,0 + 1,2 x 5,0."
+        },
+        {
+          "q": "Varför är historisk svensk riskpremie inte en färdig sanning att bara citera?",
+          "alternativ": [
+            "För att svenska aktier aldrig föll under 1900-talet",
+            "För att den är känslig för periodval, mätmetod (aritmetiskt/geometriskt) och innehåller överlevnadsbias",
+            "För att Riksbanken bestämmer premien politiskt",
+            "För att riskpremier är förbjudna i värderingsutlåtanden"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med ett medelvärde om start- och slutpunkt väljs bland ett sekel av krig och kriser — och om den mätta börsen överlevt?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "Kapitalkostnad II — beta och WACC i SEK",
+      "intro": "WACC är DCF:ns växel mellan ägare och långivare — och räknas här i svenska kronor med svensk bolagsskatt på 20,6 procent. Steg för steg: beta mot Stockholmsbörsen, skuldhävning, skuldkostnad efter skatt och viktningen som ger kapitalets totala pris.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Beta mäter bolagets kursrörelse mot index — i svenskt perspektiv mot OMX Stockholm. Regressionsbeta är brusig och bakåtblickande; boken lär därför samma discipl som modern värderingspraxis: rensa betan för engångseffekter, använd längre perioder med veckodata, eller bygg bottom-up från branschens skuldfria betor vikta efter verksamhetsmix och hävda sedan med bolagets skuldkvot. Skuldhävningen (Hamada): hävdbeta = skuldfri beta x (1 + (1 - skattesats) x skuldkvot). Räkneexempel [illustrativt]: skuldfri beta 0,95, skuldkvot D/E 0,25, skatt 20,6 procent ger 0,95 x (1 + 0,794 x 0,25) = 0,95 x 1,199 = 1,14. Skulden höjer ägarnas risk — betan stiger."
+        },
+        {
+          "type": "text",
+          "content": "Skuldkostnaden är inte kupongräntan utan marknadens pris på bolagets kreditrisk: kd = riskfri ränta + kreditspread (från rating eller räntetäckningsgrad enligt kapitel 5). Efter skatt — räntan är avdragsgill vid svenska bolagsskatten 20,6 procent — blir effekten att staten bär en femtedel av kostnaden. WACC = (E/V) x ke + (D/V) x kd x (1 - 0,206), med vikter på marknadsvärden. Tabellen nedan visar hela räkneexemplet i SEK: ett bolag med börsvärde 16 000 miljoner och räntebärande skuld 4 000 (V = 20 000, vikter 80/20), ke 8,0 procent och kd 4,0 procent får WACC = 7,0 procent — avrundat för försiktighetens skull till 8,0 procent i kapitel 9:s DCF-exempel, en marginal i linje med margin of safety-tänkandet."
+        },
+        {
+          "type": "text",
+          "content": "WACC-fällan är densamma i Sverige som annars: skuld är billigare än eget kapital, men maximera skulden och spreaden stiger, betan hävs och konkursrisken växer in i priset. Optimal kapitalstruktur är en balanspunkt. Svensk praxis tillför en egen nyans: många svenska börsbolag med starka balansräkningar (bolag som Atlas Copco eller Volvo efter omstruktureringarna) bär nettokassa snarare än skuld — för dem blir frågan inte minsta WACC utan hur överskottskapitalet återförs till ägarna (utdelning eller återköp, AKM1 V20). I värderingen justeras överskottskassa ut ur rörelsen och värdet läggs till separat."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"WACC i SEK — räkneexempel [illustrativt]\",\"rader\":[[\"Post\",\"Ingång\",\"Beräkning\",\"Resultat\"],[\"Börsvärde eget kapital (E)\",\"16 000 Mkr\",\"E / V\",\"80,0%\"],[\"Räntebärande skuld (D)\",\"4 000 Mkr\",\"D / V\",\"20,0%\"],[\"ke via CAPM\",\"rf 2,5% + beta 1,1 x ERP 5,0%\",\"2,5 + 5,5\",\"8,0%\"],[\"kd före skatt\",\"rf 2,5% + spread 1,5%\",\"—\",\"4,0%\"],[\"kd efter skatt\",\"4,0% x (1 - 0,206)\",\"4,0 x 0,794\",\"3,2%\"],[\"WACC\",\"0,80 x 8,0 + 0,20 x 3,2\",\"6,40 + 0,64\",\"7,0%\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ WACC är kapitalets demokrati: ägare och långivare röstar med sina marknadsvärden — och svenska staten subventionerar skuldrösten med 20,6 procent."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Räkna WACC med avrundad skatt på 20 procent: E/V 80 procent, ke 9,0 procent, kd 4,0 procent (svar: 0,80 x 9,0 + 0,20 x 4,0 x 0,80 = 7,2 + 0,64 = 7,8 procent). Vad händer om skuldkvoten stiger till 50/50 och ke samtidigt stiger till 10 procent? (svar: 0,50 x 10 + 0,50 x 3,2 = 6,6 procent — men vilka två effekter saknas i beräkningen?)"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "E/V 80 procent, ke 9,0 procent, kd 4,0 procent, skatt 20 procent (avrundad). Vad är WACC?",
+          "alternativ": [
+            "6,4 procent",
+            "7,8 procent",
+            "8,4 procent",
+            "9,0 procent"
+          ],
+          "ratt": 1,
+          "tips": "Skulddelen räknas efter skatt: 0,80 x 9,0 + 0,20 x (4,0 x 0,80)."
+        },
+        {
+          "q": "Varför används skuldkostnaden efter skatt i WACC?",
+          "alternativ": [
+            "För att skatten är frivillig för svenska bolag",
+            "För att räntekostnader är avdragsgivande — staten bär en del av skuldens pris via lägre bolagsskatt",
+            "För att obligationer är riskfria",
+            "För att banken bestämt det"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med bolagets skatt när räntekostnaden dras av?"
+        },
+        {
+          "q": "Skuldfri beta 0,95, skuldkvot D/E 0,25, skatt 20,6 procent. Vad är den hävda betan?",
+          "alternativ": [
+            "0,95",
+            "1,14",
+            "1,19",
+            "1,33"
+          ],
+          "ratt": 1,
+          "tips": "Hamada: 0,95 x (1 + 0,794 x 0,25) = 0,95 x 1,199."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "DCF steg för steg — FCFF till aktievärde i svenskt exempel",
+      "intro": "Nu byggs den kompletta DCF:n på svenska: FCFF från ett illustrativt verkstadsbolag (Atlas Copco-liknande), svensk bolagsskatt 20,6 procent, WACC från kapitel 8 och vägen via företagsvärde och nettoskuld till värde per aktie. Åtta steg, en tabell, noll hopp över beräkningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fri kassaflöde till företaget (FCFF) är flödet till allt kapital — före räntor: FCFF = EBIT x (1 - skattesats) + avskrivningar - capex - ökning av arbetskapital. Med svensk bolagsskatt 20,6 procent blir NOPAT-faktorn 0,794. Räkneexemplet [illustrativt, ett Atlas Copco-liknande industribolag]: EBIT 2 000 miljoner ger NOPAT = 2 000 x 0,794 = 1 588; addera avskrivningar 560, dra ifrån capex 540 och ökning av arbetskapital 88 — FCFF = 1 588 + 560 - 540 - 88 = 1 520 miljoner kronor. Notera vad som saknas: räntor och utdelning. Räntorna bor i WACC, utdelningen i nästa stegs brygga till ekviteten — att blanda in dem både i flödet och i räntan är dubbelräkning."
+        },
+        {
+          "type": "text",
+          "content": "Värdet av en evig serie som växer med g: EV = FCFF nästa år / (WACC - g). Med FCFF 1 520 (nästa års prognos), WACC 8,0 procent (kapitel 8:s 7,0 avrundat uppåt för marginal) och evig tillväxt 3,0 procent blir EV = 1 520 / (0,08 - 0,03) = 1 520 / 0,05 = 30 400 miljoner kronor. Därifrån är vägen till aktien ren aritmetik: dra bort nettoskuld (räntebärande skuld minus kassa) 4 000 → ekvitetsvärde 26 400; dela med 1 600 miljoner aktier → 16,50 kronor per aktie. Detta är kärnan i bokens kassaflödesbaserade ansats — hela värdet härleds ur tre ingångar: flöde, ränta och tillväxt."
+        },
+        {
+          "type": "text",
+          "content": "Tre svenska praktiska frågor avslutar bygget. För det första skatten: svenska bolagsskatten 20,6 procent (tidigare 21,4 och 22 procent) — använd gällande sats konsekvent genom hela modellen, inklusive justerat eget kapital. För det andra överskottskassa: kassa utöver driftens behov är inte en del av rörelsen — justera ut den och lägg till den separat, annars värderar du en sovande bankbok med verkstadsrisk. För det tredje A/B-aktier (kapitel 11): beräkna värdet per aktie efter eventuell split mellan aktieklasser — värdet per krona utdelning ska vara detsamma, men rösträtten gör att A-aktien ofta handlas med premie. Kursen 16,50 kronor är ett illustrativt aktievärde — inte en kursrekommendation, vilket kapitel 14 och 15 utvecklar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"DCF steg för steg — svenskt exempel [illustrativt]\",\"rader\":[[\"Steg\",\"Post\",\"Beräkning\",\"Värde (Mkr)\"],[\"1\",\"EBIT\",\"Rapporterat [illustrativt]\",\"2 000\"],[\"2\",\"NOPAT\",\"2 000 x (1 - 0,206)\",\"1 588\"],[\"3\",\"+ Avskrivningar\",\"—\",\"+560\"],[\"4\",\"- Capex\",\"—\",\"-540\"],[\"5\",\"- Ökning arbetskapital\",\"—\",\"-88\"],[\"6\",\"= FCFF\",\"1 588 + 560 - 540 - 88\",\"1 520\"],[\"7\",\"Företagsvärde EV\",\"1 520 / (0,08 - 0,03)\",\"30 400\"],[\"8\",\"Ekvitet per aktie\",\"(30 400 - 4 000) / 1 600 M aktier\",\"16,50 kr\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Hela DCF:n är tre tal — flöde, ränta, tillväxt — men varje tal är en analys: kassaflödet ett kapitel, räntan två, tillväxten en hel strategisk diskussion."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg om modellen själv: EBIT 1 500, skatt 20,6 procent, avskrivningar 400, capex 420, arbetskapitalökning 60. Kontrollera FCFF = 1 191 + 400 - 420 - 60 = 1 111 miljoner. Räkna sedan EV med WACC 9 procent och g 2,5 procent (svar: 1 111 / 0,065 = 17 092) och ekvitetsvärdet per aktie vid nettoskuld 2 000 och 500 miljoner aktier (svar: 15 092 / 500 = 30,18 kronor). Vilket steg känns minst säkert — och vad gör du åt det?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "EBIT 2 000 och svensk bolagsskatt 20,6 procent. Vad är NOPAT?",
+          "alternativ": [
+            "1 588 miljoner",
+            "1 600 miljoner",
+            "1 500 miljoner",
+            "2 000 miljoner"
+          ],
+          "ratt": 0,
+          "tips": "NOPAT = EBIT x (1 - 0,206) = EBIT x 0,794."
+        },
+        {
+          "q": "FCFF 1 520, WACC 8 procent, evig tillväxt 3 procent. Vad är företagsvärdet?",
+          "alternativ": [
+            "19 000 miljoner",
+            "24 320 miljoner",
+            "30 400 miljoner",
+            "50 667 miljoner"
+          ],
+          "ratt": 2,
+          "tips": "Dividera med (WACC - g) = 0,05 — nämnaren gör hela skillnaden."
+        },
+        {
+          "q": "EV 30 400, nettoskuld 4 000, 1 600 miljoner aktier. Vad är värdet per aktie?",
+          "alternativ": [
+            "19,00 kronor",
+            "16,50 kronor",
+            "21,50 kronor",
+            "14,20 kronor"
+          ],
+          "ratt": 1,
+          "tips": "Ekvitetsvärde = EV - nettoskuld; dividera sedan med antalet aktier: 26 400 / 1 600."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Terminalvärde och känsligheten — DCF:ns akilleshäl",
+      "intro": "Mer än hälften av varje DCF-värde ligger i terminalvärdet — evigheten efter den explicita perioden. Här möter du DCF:ns ömmaste punkt: känsligheten för WACC och evig tillväxt. Bokens medicin är inte att förneka skörheten utan att mäta den — och det är här kursens kontroversskapitel (14) anknyter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Terminalvärdet beräknas i slutet av den explicita perioden: TV = FCFF(n+1) / (WACC - g), diskonterat till idag. Bokens hårdhetsregler är tre: den eviga tillväxten får aldrig överstiga riskfri ränta (i evigheten kan inget bolag växa snabbare än ekonomin); bolaget i terminalfasen ska återinvestera konsistent med g (återinvesteringsgrad = g / ROIC); och kapitalstrukturen ska ha stabiliserats. Med bokens exempel [illustrativt]: fortsätter FCFF 1 520 i evig serie med WACC 8 och g 3 bär terminaldelen cirka två tredjedelar av värdet — de tio explicita åren är bara inledningen."
+        },
+        {
+          "type": "text",
+          "content": "Känslighetsmatrisen nedan [illustrativ] visar akilleshälen i siffror: samma bolag, samma flöde — men WACC 7-9 procent och g 2-4 procent ger aktievärden mellan 11,07 och 29,17 kronor. En enda procentenhet i WACC flyttar värdet med en sjättedel; en procentenhet i g kan flytta det med hälften. Detta är den svaghet som DCF-kritiker (kapitel 14) med rätta pekar på: modellen är exakt i varje steg men skör i sitt hjärta. Bokens svar är hantverksregler: presentera aldrig en punktsiffra utan intervall, sätt g mot BNP-tillväxtens nominella nivå, och låt WACC-valet motiveras kapitel 7-8:s data — inte av vilket svar du önskar."
+        },
+        {
+          "type": "text",
+          "content": "En svensk praktregel tillför disciplinen: för mogna, utdelningsbetonade svenska bolag (skog, fastighet, kraft, mogen verkstad) är låg evig tillväxt (1,5-2,5 procent) standardantagandet i analyspraxis [illustrativt span], medan tillväxtbolag motiveras med tvåstegs- eller trestegsmodeller där hög tillväxt avtar mot terminalnivån. AKM1 operationaliserar skepsisen genom kravet på känslighetsanalys i varje värderingsutlåtande (kapitel 15): slutsatsen ska stå kvar också i det pessimistiska hörnet av matrisen — annars är det ingen slutsats, utan ett antagande klätt i decimaler. Margin of safety (AK1A:s princip) är just avståndet mellan ditt värde och matrisens värsta hörn."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Känslighet: aktievärde i kronor [illustrativt] — FCFF 1 520, nettoskuld 4 000, 1 600 M aktier\",\"rader\":[[\"WACC \\\\ g\",\"g = 2%\",\"g = 3%\",\"g = 4%\"],[\"WACC 7%\",\"16,50\",\"21,25\",\"29,17\"],[\"WACC 8%\",\"13,33\",\"16,50\",\"21,25\"],[\"WACC 9%\",\"11,07\",\"13,33\",\"16,50\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ DCF:s precision är ärlig aritmetik på osäkra ingångar — publicera matrisen, inte punktsiffran, och låt marginalen mäta avståndet till matrisens sämsta hörn."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Använd känslighetsmatrisen: bolaget handlas till 13,50 kronor [illustrativt]. I vilka kombinationer av WACC och g är aktien undervärderad? Räkna ut marginalen mot mittenvärdet 16,50 (svar: cirka 18 procent uppsida) och mot värsta hörnet 11,07 (svar: cirka 22 procent nedsida). Kräver du 30 procents marginal — vad blir då din slutsats?"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "FCFF 1 520, WACC 8 procent, g 3 procent ger EV 30 400. Vad händer vid WACC 9 procent (g oförändrat)?",
+          "alternativ": [
+            "EV stiger till 38 000",
+            "EV faller till cirka 25 333 — en minskning med en sjättedel på en procentenhet",
+            "EV förblir 30 400",
+            "EV faller till hälften"
+          ],
+          "ratt": 1,
+          "tips": "Nämnaren ändras från 0,05 till 0,06 — vad gör det med kvoten 1 520 / nämnare?"
+        },
+        {
+          "q": "Vilken regel gäller för den eviga tillväxten i terminalvärdet?",
+          "alternativ": [
+            "g får aldrig överstiga riskfri ränta — inget bolag växer snabbare än ekonomin i evighet",
+            "g ska alltid sättas till 5 procent",
+            "g får vara högre än WACC om bolaget är ungt",
+            "g spelar ingen roll eftersom terminalvärdet är litet"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på bolaget som del av ekonomin: kan delen växa snabbare än helheten för alltid?"
+        },
+        {
+          "q": "Vad är den rätta presentationen av ett DCF-värde enligt boken och AK1A?",
+          "alternativ": [
+            "En exakt punktsiffra med två decimaler",
+            "Ett intervall med känslighetsmatris — slutsatsen ska hålla också i det pessimistiska hörnet",
+            "Bara högsta värdet som motiv för köp",
+            "Endast terminalvärdet utan explicita år"
+          ],
+          "ratt": 1,
+          "tips": "Vad skyddar dig när en ingång visar sig fel — decimalen eller marginalen?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 13,
+      "title": "Utdelningsmodellen och svensk utdelningspolicy — A/B-aktier",
+      "intro": "Utdelningsmodellen (DDM) är värderingslärans äldsta ansats — och passar svenska förhållanden ovanligt väl: en börs full av mogna, utdelningsvänliga bolag och en lång kultur av utdelningspolicy. Här möter du också den svenska särarten A/B-aktier.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Gordonmodellen: V = D1 / (ke - g), där D1 är nästa års utdelning per aktie. Räkneexempel [illustrativt, ett H&M-liknande konsumentbolag]: utdelning 6,50 kronor växer 2 procent, avkastningskrav 8 procent ger D1 = 6,50 x 1,02 = 6,63 och V = 6,63 / (0,08 - 0,02) = 6,63 / 0,06 = 110,50 kronor. Direktavkastningen vid den kursen: 6,50 / 110,50 = 5,9 procent. Modellen passar bolag med mogen, stabil utdelning — och varnar för sig själv: ett bolag som betalar ut mindre än det förmår (kapitel 6:s FCF-jämförelse) undervärderas systematiskt av DDM, eftersom behållna kontanter och återköp inte syns."
+        },
+        {
+          "type": "text",
+          "content": "Svensk utdelningskultur är kursens USP: många börsbolag — från Volvo till Atlas Copco — har decennielånga traditioner av stabil eller stigande utdelning, och svenska institutionella ägare värderar utdelningspolicy som en del av bolagets kontrakt med ägarna. Politiken har tre klassiska former: fast utdelning (nivå hålls), fast stigande (nivå höjs varje år) och utdelning i proportion till resultat (pro-cyklisk). För värderaren avgör policyn modellval: fast utdelning passar Gordon med låg g; pro-cyklisk utdelning kräver normaliserat resultat innan modellen körs. Nedsättning av utdelning är en av börsens hårdaste signaler — men ur värderingssynpunkt är det ibland det rätta beslutet när FCF inte längre bär."
+        },
+        {
+          "type": "text",
+          "content": "A/B-aktier är den svenska ägarstrukturens signum: A-aktier bär fler röster (t.ex. ett tiotal gånger B:ts röstvärde eller mer) och ges ofta av grundare och familjer för att behålla kontrollen med litet kapital — H&M, Volvo och Investor är klassiska exempel. Värderingsmässigt innebär det tre saker. Först: samma rätt till utdelning ger samma fundamentala värde per krona, men A-aktien handlas ofta med premie tack vare rösträtten (styrrätt har ett pris — företag med kontrollövergångar betalar den). Andra: DDM värderar utdelningen, inte rösträtten — värdet per aktieklass skiljer sig först när kontroll spelar in. Tredje: den som jämför direktavkastning mellan aktieklasser måste använda rätt kurs per klass. AKM1:s V20 (återköp) kompletterar bilden: återköp är dold utdelning — bolaget köper tillbaka B-aktier och höjer därmed varje kvarvarande akties andel av framtida utdelningar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Svensk utdelningspolicy — värderingskonsekvenser\",\"rader\":[[\"Policy\",\"Uttryck\",\"Lämplig modell\",\"Varning\"],[\"Fast nivå\",\"Samma utdelning år från år\",\"Gordon med låg g\",\"Nedskärning slår hårt mot kursen\"],[\"Fast stigande\",\"Höjs årligen\",\"Tvåstegs-DDM\",\"Kan bli oåterkalleligt löfte\"],[\"Pro-cyklisk\",\"Andel av resultatet\",\"Normalisera resultatet först\",\"Utdelningen svänger med konjunkturen\"],[\"Utan utdelning\",\"Tillväxtbolag\",\"FCFE/DCF eller multiplicer\",\"DDM underkänner bolaget\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ I Sverige är utdelningspolicyn en del av bolagets kontrakt med ägarna — DDM värderar kontraktet, A/B-strukturen avgör vem som får sätta dess villkor."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 En aktie betalar 4,00 kronor i utdelning som växer 3 procent, och du kräver 9 procent avkastning. Beräkna värdet (svar: D1 = 4,12; V = 4,12 / 0,06 = 68,67 kronor). Aktien handlas till 75 kronor — vad är direktavkastningen (svar: 4,00 / 75 = 5,3 procent) och vad säger jämförelsen mot modellvärdet? Diskutera slutligen: vad händer med DDM-värdet om bolaget har en A- och en B-aktie med samma utdelning?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Utdelning 4,00 kronor, tillväxt 3 procent, ke 9 procent. Vad är värdet enligt Gordonmodellen?",
+          "alternativ": [
+            "57,10 kronor",
+            "68,70 kronor",
+            "100,00 kronor",
+            "44,40 kronor"
+          ],
+          "ratt": 1,
+          "tips": "D1 = 4,00 x 1,03 = 4,12; dividera med (0,09 - 0,03) = 0,06."
+        },
+        {
+          "q": "Vad är den främsta systematiska svagheten hos utdelningsmodellen?",
+          "alternativ": [
+            "Utdelningar är förutsägbara och gör modellen värdelös",
+            "Den missar värde hos bolag som betalar ut mindre än de förmår — behållna kontanter och återköp syns inte",
+            "Den fungerar bara på amerikanska bolag",
+            "Den kräver negativ tillväxt"
+          ],
+          "ratt": 1,
+          "tips": "Vad hände med skillnaden mellan FCF och utdelning i kapitel 6 — syns den i DDM?"
+        },
+        {
+          "q": "Vad innebär A/B-aktiestruktur värderingsmässigt?",
+          "alternativ": [
+            "A-aktien har alltid rätt till högre utdelning",
+            "Samma utdelningsrätt ger samma fundamentala värde per krona, men rösträtten ger A-aktien ofta en handelspremie",
+            "B-aktier är alltid värdelösa",
+            "A/B-strukturen förbjuder DDM-värdering"
+          ],
+          "ratt": 1,
+          "tips": "Vad skiljer aktieklasserna åt — utdelningen eller rösträtten? Vilken del är prissatt?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 13,
+      "title": "Relativ värdering — EV/EBIT och multipler på Stockholmsbörsen",
+      "intro": "Multiplar är börsens vardagsspråk: EV/EBIT, P/E, P/B. Boken lär både deras snabbhet och deras fällor — och en svensk peer-grupp på verkstads- och industrisidan visar hur relativ värdering egentligen görs: inte en multipel, utan en motiverad jämförelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Multipelns logik: priset sätts i jämförelse med jämförbara bolag. P/E = kurs / vinst per aktie — enkelt, men straffat av skuldstruktur och engångsposter i resultatet. EV/EBIT = (börsvärde + nettoskuld) / rörelseresultat — kapitalstrukturneutral och svensk praxis favorit, eftersom svenska resultaträkningen lämnar EBIT rent före finansiella poster (kapitel 2). EV/EBITDA lägger till avskrivningarna och gör internationella jämförelser lättare — men bortser från kapitalintensiteten. P/B = kurs / eget kapital per aktie kopplar till balansräkningen och passar bank- och finansbolag. Regeln: multipeln är en komprimerad DCF — alla antaganden finns kvar, fast osynliga (AKM1 V04-V06 poängsätter dem)."
+        },
+        {
+          "type": "text",
+          "content": "Peer-gruppen är konsten. Räkneexempel [illustrativt]: ett börsnoterat verkstadsbolag ska värderas med EV/EBIT mot fem jämförbara svenska industri- och verkstadsbolag (Atlas Copco-, Sandvik-, SKF- och Trelleborg-liknande) med multiplar 14,0x, 11,0x, 16,0x, 10,0x och 12,0x. Medianen — inte medelvärdet, som dras av extremen 16,0x — är 12,0x. Bolagets EBIT 2 000 ger EV = 12,0 x 2 000 = 24 000; minus nettoskuld 4 000 ger ekvitet 20 000 och 12,50 kronor per aktie vid 1 600 miljoner aktier. Jämför DCF-värdet 16,50 kronor (kapitel 9): intervallet 12,50-16,50 är inte ett svek utan information — antingen är peer-gruppen konservativ eller DCF:ns antaganden generösa."
+        },
+        {
+          "type": "text",
+          "content": "Bokens multipelfällor är fyra och vardera värd en kontrollfråga. Jämförbarhet: är bolagen verkligen jämförbara i tillväxt, risk och marginaler — annars är multipeln äpplen mot päron. Cyklicitet: svenska industrisiffror räknade på topp-EBIT köper botten-multipeln framåt — normalisera resultatet över en konjunkturcykel. Kapitalstruktur: P/E straffar skuldsatta bolag; EV-multipeln neutraliserar — välj medvetet. Engångsposter: en engångsvinst på 100 i EBIT (kapitel 3) sänker multiplar som beräknas på den — justera först, multiplicera sedan. På Stockholmsbörsen tillkommer en svensk bonus: sektorns struktur — få, stora, internationella bolag per bransch — gör peer-valen färre och avgörande: en felaktig peer på en tunn sektor förvränger hela bilden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Peer-grupp EV/EBIT — svenskt exempel [illustrativt]\",\"rader\":[[\"Jämförbart bolag\",\"EV/EBIT\",\"Kommentar\"],[\"Verkstad A (Atlas Copco-liknande)\",\"14,0x\",\"Hög marginal, bred moat\"],[\"Verkstad B (Sandvik-liknande)\",\"11,0x\",\"Cykliskt, materialexponering\"],[\"Industri C (Alfa Laval-liknande)\",\"16,0x\",\"Premiummotiverad tillväxt\"],[\"Verkstad D (SKF-liknande)\",\"10,0x\",\"Kapitalintensivt\"],[\"Industri E (Trelleborg-liknande)\",\"12,0x\",\"Mediankandidat\"],[\"Median\",\"12,0x\",\"EV = 12,0 x 2 000 = 24 000 Mkr\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En multipel är en DCF med osynliga antaganden — medianen i en motiverad peer-grupp är svensk värderingspraxis ärligaste genväg."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Peer-multiplar 14, 11, 16, 10 och 12. Beräkna median (12,0x) och medelvärde (12,6x) — vilken använder du och varför? Räkna sedan: EBIT 1 000, EV/EBIT 10x, nettoskuld 2 000, 400 miljoner aktier (svar: EV 10 000; ekvitet 8 000; 20,00 kronor per aktie). Vad händer med värdet om en engångsvinst på 50 fanns i EBIT — och du glömde justera den?"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför föredrar svensk praxis ofta EV/EBIT framför P/E?",
+          "alternativ": [
+            "EV/EBIT är alltid lägre och ser billigare ut",
+            "EV/EBIT är kapitalstrukturneutral och svenska resultaträkningen lämnar EBIT rent före finansiella poster",
+            "P/E är förbjuden i värderingsutlåtanden",
+            "EV/EBIT kräver ingen information om skulder"
+          ],
+          "ratt": 1,
+          "tips": "Vad påverkar P/E men inte EV/EBIT — och var ligger räntorna i den svenska resultaträkningen?"
+        },
+        {
+          "q": "Peer-multiplar 14, 11, 16, 10, 12. EBIT 1 000, EV/EBIT 10x, nettoskuld 2 000, 400 M aktier. Vad är värdet per aktie?",
+          "alternativ": [
+            "20,00 kronor",
+            "25,00 kronor",
+            "28,00 kronor",
+            "18,00 kronor"
+          ],
+          "ratt": 0,
+          "tips": "EV = 10 x 1 000; dra bort nettoskulden; dividera med antalet aktier: 8 000 / 400."
+        },
+        {
+          "q": "Varför används median hellre än medelvärde i peer-gruppen?",
+          "alternativ": [
+            "Medianen är alltid lägre",
+            "Medianen dras inte av en extrem multiplicer som en enskild premiumpeer kan dra upp medelvärdet",
+            "Medelvärde är svårare att räkna",
+            "Medianen kompenserar automatiskt för skatt"
+          ],
+          "ratt": 1,
+          "tips": "Vad gjorde multipeln 16,0x med medelvärdet i exemplet jämfört med medianen?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "EVA, substansvärde och holdingrabatter — investmentbolagens logik",
+      "intro": "Boken kompletterar kassaflödes- och multipelansatserna med två perspektiv: EVA — är vinsten större än kapitalets kostnad? — och substansvärdesansatsen, som i Sverige får sin särskilda form i investmentbolagens holdingrabatt. Här knyts lönsamhet, balansräkning och börspraxis samman.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "EVA (economic value added) = NOPAT - WACC x investerat kapital. Räkneexempel [illustrativt, kapitel 9:s bolag]: NOPAT 1 588, investerat kapital 18 000 och WACC 7 procent ger kapitalkostnad 1 260 och EVA = 1 588 - 1 260 = +328 miljoner — bolaget skapar värde, varje krona tjänar mer än den kostar. Vänd siffran: hade NOPAT varit 1 100 skulle EVA vara -160 — positivt resultat, förstört värde. Detta är EVA:s pedagogiska kraft: det synliggör kapitalets alternativkostnad, vilket resultaträkningen aldrig gör. AKM1:s länk är V09 (ROE) tolkad genom spridningen ROIC - WACC: tillväxt är bara bra om spridningen är positiv — annars förstorar tillväxten värdeförstörelsen."
+        },
+        {
+          "type": "text",
+          "content": "Substansvärdesansatsen värderar bolaget uppifrån balansräkningen: justerade tillgångars värde minus skulder. I svensk praxis betyder det ofta att tillgångar skrivs upp till verkligt värde (fastigheter, skog, fartyg, onoterade innehav) — bokfört värde är sällan substansvärde. Metoden passar holdingstrukturer, fastighetsbolag och onoterade bolag med låga kassaflöden men värdefulla tillgångar. För börsbolag med stark rörelse är substansvärdet en golvindikator snarare än huvudvärde: ingen köper en kassaflödesmaskin för att demolera den och sälja delarna — skillnaden mellan substans och DCF är just värdet av rörelsens framtida kassaflöden (goodwill i ekonomisk mening)."
+        },
+        {
+          "type": "text",
+          "content": "Svensk börs har en egen gren av substansvärdering: investmentbolagen (Investor, Latour, Industrivärden med flera). Deras substansvärde (NAV) är summan av innehavens börsvärden — och de handlas notoriskt under substansen: holdingrabatten [illustrativt exempel: substans 100 miljarder, börsvärde 75 miljarder — 25 procents rabatt]. Rabatten motiveras med dubbelkostnad (ägare betalar bolagsledning och innehavens ledning), skattefrihetens frånvaro (innehavens utdelning beskattas i holdingbolaget) och illikviditet i exponeringen. Motargumentet: en pådrivarkatalysator (förändrad ägarledning, aktivist, nedmontering) kan slå rabatten till premie. AKM1:s V16-V18 (katalysatorer) är byggda för exakt denna analys: substansen är värdet, katalysatorn är vägen dit."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre värderingslinser — och när de leder\",\"rader\":[[\"Ansats\",\"Fråga\",\"Passar bäst för\",\"Svenskt exempel\"],[\"DCF/FCFF\",\"Vad är rörelsens framtid värde?\",\"Kassaflödesdrivna bolag\",\"Verkstad, konsument, läkemedel\"],[\"Multipel\",\"Vad kostar det mot jämförbara?\",\"Börsnoterade med peer-grupp\",\"Industri- och verkstadssektorn\"],[\"Substansvärde\",\"Vad är tillgångarna värda?\",\"Holdings, fastighet, skog\",\"Investmentbolag, fastighetsbolag\"],[\"EVA\",\"Skapar bolaget värde?\",\"Resultatstarka kapitalintensiva bolag\",\"Komplement i samtliga fall\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Ett bolag kan visa vinst och ändå förstöra värde — EVA gör kapitalets kostnad synlig, och holdingrabatten gör börsens misstro mot dubbla ägarled synlig."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Räkna EVA: NOPAT 500 miljoner, investerat kapital 4 000, WACC 10 procent (svar: 500 - 400 = +100). Vad händer om WACC stiger till 13 procent (svar: 500 - 520 = -20 — värdeförstörelse utan att rörelsen förändrats)? Räkna sedan holdingrabatten: substans 100 miljarder, börsvärde 75 miljarder (svar: 25 procent). Vilken typ av händelse skulle kunna vända rabatten till premie — och vilken AKM1-katalysator (V16-V18) är det?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "NOPAT 500, investerat kapital 4 000, WACC 10 procent. Vad är EVA?",
+          "alternativ": [
+            "+500",
+            "+100",
+            "-100",
+            "0"
+          ],
+          "ratt": 1,
+          "tips": "Kapitalkostnaden är 10 procent av 4 000 — dra den från NOPAT."
+        },
+        {
+          "q": "Vad är holdingrabatten hos investmentbolag?",
+          "alternativ": [
+            "En avgift som förvaltaren tar",
+            "Att börsvärdet ligger under substansvärdet (NAV) — ofta motiverad av dubbelkostnad, beskattning och illikviditet",
+            "En premie för aktiv förvaltning",
+            "Skillnaden mellan A- och B-aktiens kurs"
+          ],
+          "ratt": 1,
+          "tips": "Substans 100, börsvärde 75 — vad kallas gapet och varför finns det?"
+        },
+        {
+          "q": "När är substansvärdesansatsen mest relevant?",
+          "alternativ": [
+            "För snabbväxande mjukvarubolag",
+            "För holdings, fastighets- och skogsbolag där värdet sitter i tillgångarna snarare än rörelsens kassaflöde",
+            "För alla bolag alltid",
+            "Endast för banker med statligt stöd"
+          ],
+          "ratt": 1,
+          "tips": "Var i bolaget ligger värdet — i maskinen som genererar flöden eller i det den äger?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 13,
+      "title": "Kontroversen — analytikerbias, DCF-kritik och AK1A:s svar",
+      "intro": "Svensk och internationell forskning har i decennier visat två besvärande mönster: analytikerkonsensus är systematiskt optimistisk och säljrekommendationer är sällsynta. Samtidigt gör DCF:ns WACC-känslighet (kapitel 10) modellen skör i händerna på den som vill ha ett visst svar. Det här kapitlet redogör för kritiken på allvar — och presenterar AK1A:s svar: poängsättning istället för rekommendationer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kritiken del ett: rekommendationsbias. Forskning om analytikerekommendationer — internationellt och på svenska börsen — visar ett ihållande mönster: köp- och ackumulera-rekommendationer dominerar kraftigt, medan sälj historiskt utgjort en liten minoritet av alla rekommendationer [generellt belagt mönster; exakt andel varierar över perioder]. Förklaringarna är strukturella: analytiker vid bankerna tjänar på relationer med bolag (emissioner, rådgivning), informationsåtkomsten kräver goda relationer till ledningar, och få har incitament att vara börsens björn. Konsekvensen för användaren: konsensus är ett sammanvägt genomsnitt av optimister — inte en neutral utgångspunkt. Svensk forskning om vinstprognoser pekar i samma riktning: prognoser tenderar att vara optimistiska och revideras nedåt när rapportdagen nalkas."
+        },
+        {
+          "type": "text",
+          "content": "Kritiken del två: DCF:ns skörhet. Kapitel 10 visade det i siffror: samma bolag, rimliga kombinationer av WACC och g, gav aktievärden mellan 11 och 29 kronor. Med sådan känslighet kan en viljestark analys justera två procentsiffror och producera vilket slutvärde som helst — DCF blir inte ett mätinstrument utan ett argument för en redan tagen position. Boken själv medger detta genom kravet på känslighetsanalys och intervall: osäkerheten är inte en bugg i metoden utan en egenskap hos framtiden. AK1A:s medgivande är av samma slag: vi publicerar därför aldrig en DCF-punkt utan matris, och margin of safety (marginal mellan pris och värde) existerar just för att värderaren kan ha fel."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s svar på kritiken är konstruktion snarare än förnekelse. För det första: poängsättning 0-5 per AKM1-variabel (20 variabler, max 100 poäng) istället för rekommendationer — en poäng är en granskbar bedömning av ett avgränsat faktum (t.ex. V11 kassalikviditet ur kapitel 5:s data), medan en rekommendation (SÄLJ till STARKT KÖP) är en uppmaning som smyger in analystens incitament. För det andra: reproducerbarhet — varje poäng motiveras med källa och beräkning, så att två personer som gör samma analys når samma poäng eller kan peka på exakt var de skiljer. För det tredje: känslighetsmatris och intervall som standard, aldrig punktsiffror. Metoden eliminerar inte bias — den gör den synlig och granskningsbar, vilket är allt en hederlig metod lovar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritik → mekanism → AK1A:s svar\",\"rader\":[[\"Kritik\",\"Mekanism\",\"AK1A:s svar\"],[\"Konsensus optimistiskt\",\"Bankrelationer, incitament, informationsåtkomst\",\"0-5 poäng per variabel — granskbar bedömning, inte rekommendation\"],[\"Sälj sällsynt\",\"Få tjänar på att vara björn\",\"Poängskala utan köp/sälj-implikation; margin of safety som skydd\"],[\"DCF skör\",\"WACC- och g-känslighet ger styrbart svar\",\"Känslighetsmatris och intervall som standardpublicering\"],[\"Vinstprognoser biased\",\"Uppåtgående tryck, sen revidering\",\"V12 intäktsstabilitet poängsätts mot historik och kassa — ej konsensus\"],[\"Förankring i kursen\",\"Värderingen backar ur givet svar\",\"Värdera med data för kursen visas; ekosystemets princip 'reproducerbarhet'\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Metod eliminerar inte bias — den gör den synlig: poäng med källor och känslighetsmatriser kan granskas, rekommendationer kan bara troddas."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Testa dig själv: öppna en analys av ett svenskt bolag och räkna rekommendationsfördelningen (köp/behåll/sälj). Beräkna sedan bolagets räntetäckningsgrad ur senaste rapporten (kapitel 5). Vilken av de två övningarna gav dig något du kan granska och motstå med? Formulera svaret som en AKM1-poäng 0-5 med en motivering — det är hela ekosystemets kärna."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar forskning om analytikerekommendationer på börsen?",
+          "alternativ": [
+            "Rekommendationer är jämnt fördelade mellan köp och sälj",
+            "Köp dominerar kraftigt och sälj är en liten minoritet — ett mönster med strukturella incitamentsförklaringar",
+            "Analytiker är systematiskt pessimistiska",
+            "Rekommendationer saknar koppling till bolagens finansiering"
+          ],
+          "ratt": 1,
+          "tips": "Vilka relationer gör det dyrt för en analytiker att bli börsens björn?"
+        },
+        {
+          "q": "Vad är AK1A:s huvudsvar på analytikerbias-kritiken?",
+          "alternativ": [
+            "Att följa konsensus ännu närmare",
+            "Att publicera fler köprekommendationer med längre motiv",
+            "Poängsättning 0-5 per variabel med källor och beräkningar — granskbara bedömningar istället för rekommendationer",
+            "Att helt avstå från fundamental analys"
+          ],
+          "ratt": 2,
+          "tips": "Vad kan en utomstående kontrollera — en uppmaning eller en motiverad poäng på ett avgränsat faktum?"
+        },
+        {
+          "q": "På vilket sätt medger AK1A själv att DCF är skör?",
+          "alternativ": [
+            "Genom att aldrig använda DCF",
+            "Genom att publicera känslighetsmatris och intervall istället för punktsiffror — osäkerheten är en egenskap hos framtiden",
+            "Genom att låsa WACC på en fast nivå",
+            "Genom att endast värdera med P/E"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 10 visade spridningen 11-29 kronor — vad är det ärliga sättet att publicera ett sådant resultat?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Värderingsrapporten — från analys till utlåtande",
+      "intro": "Bokens sista länk i kedjan är värderingsutlåtandet: dokumentet som samlar strategisk, redovisningsmässig och finansiell analys till en motiverad värdering. Här byggs rapportens struktur — och kursen landar i AK1A:s slutprodukt: ett 100-poängs utlåtande med marginal, aldrig ett råd.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett värderingsutlåtande är enligt boken en strukturerad helhet: sammanfattning med värdeintervall, bolags- och branschbeskrivning (strategisk analys), redovisnings- och nyckeltalsanalys, kassaflödesanalys, värdering med flera ansatser (DCF, multipler, substans) som trianguleras, känslighetsanalys och en slutsats. Varje del svarar mot ett kapitel i denna kurs — utlåtandet är kursen i dokumentform. Trianguleringen är poängen: när DCF (16,50 kr), multiplicer (12,50 kr) och substansvärde pekar på olika nivåer är inte uppgiften att välja den bekväma, utan att förklara skillnaden — varje gap mellan ansatserna är en analysfråga, inte ett brus."
+        },
+        {
+          "type": "text",
+          "content": "Slutsatsen formuleras som intervall med motivering, aldrig som en punktsiffra eller en uppmaning. AK1A:s variant av utlåtandet är AKM1-poängsättningen: 20 variabler, 0-5 poäng vardera, max 100 — där lönsamhet och stabilitet (V07-V12) bär kapitel 3-6:s siffror, värderingsvariablerna (V04-V06) kapitel 9-13:s modeller, moat (V13-V15) den strategiska analysen och katalysatorer (V16-V18) vad som kan sluta gapet. Poängsumman är en strukturerad sammanfattning av 20 granskningsbara bedömningar — inte en köpsignal. Här ligger skillnaden mot sell-side-analysen: ekosystemets princip lyder 'Pedagogisk finansanalys — ALDRIG investeringsråd'."
+        },
+        {
+          "type": "text",
+          "content": "Sista punkten på checklistan är margin of safety — marginalen mellan beräknat värde och kurs. Kursens exempel [illustrativt]: DCF 16,50 kronor, multipel 12,50 kronor, kurs 13,00 kronor. Mittenvärde cirka 14,50 ger cirka 11 procents uppsida — tunn marginal; mot känslighetsmatrisens sämsta hörn (11,07) är nedsidan 15 procent. En AKM1-bedömning skulle parkera bolaget i 'FÖRSIKTIGT KÖP'-zonen och kräva antingen lägre kurs eller starkare katalysator (V16-V18) innan marginalen motiverar en högre poäng. Det är värderingens slutprodukt: inte sanningen om bolaget, utan en disciplinerad, reproducerbar och granskningsbar bedömning — med osäkerheten ärligt redovisad och marginalen som skydd mot den egna felbarheten. Det är också den svenska standardverkets sista läxa: värderingen är aldrig bättre än sin dokumentation."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Värderingsutlåtandets struktur — och kursens kapitel\",\"rader\":[[\"Avsnitt\",\"Innehåll\",\"Kursens kapitel\"],[\"1. Sammanfattning\",\"Värdeintervall, slutsats, marginal\",\"9-13, 15\"],[\"2. Strategisk analys\",\"Bransch, moat, konkurrens\",\"1\"],[\"3. Redovisningsanalys\",\"Årsredovisning, vinstkvalitet\",\"2-4\"],[\"4. Nyckeltal och kassaflöde\",\"Soliditet, likviditet, FCF\",\"5-6\"],[\"5. Värdering\",\"DCF + multipler + substans, triangulering\",\"7-13\"],[\"6. Känslighet\",\"WACC x g-matris, scenarier\",\"10\"],[\"7. Slutsats\",\"Poäng, intervall, margin of safety\",\"14-15\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Triangulera alltid tre ansatser och redovisa gapen mellan dem — ett värderingsutlåtande är inte sanningen om bolaget, utan dokumentationen av en disciplinerad bedömning."
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg ett minirutlåtande (en A4) för ett svenskt bolag du följer: fem nyckeltal med AKM1-mappning (V07-V12), en WACC-motivering, ett DCF-intervall med känslighetsmatris, en peer-multipel och en slutsats med margin of safety. Avsluta med 20 AKM1-variabler poängsatta 0-5 med enradiga motiveringar — totalt max 100 poäng. Den som kan läsa din rapport och komma fram till samma poäng har du tränat kursen rätt."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär triangulering i värderingsutlåtandet?",
+          "alternativ": [
+            "Att använda tre DCF-modeller med samma antaganden",
+            "Att låta DCF, multipler och substansvärde belysa värdet och förklara gapen mellan ansatserna",
+            "Att tre analytiker röstar om slutsatsen",
+            "Att välja den högsta värderingen av tre"
+          ],
+          "ratt": 1,
+          "tips": "Tre linser på samma bolag — vad är varje avvikelse mellan dem i analysen?"
+        },
+        {
+          "q": "DCF-värde 16,50 kr, multipelvärde 12,50 kr, kurs 13,00 kr. Vad är den rimliga slutsatsen?",
+          "alternativ": [
+            "Starkt köp — DCF-värdet visar 27 procents uppsida",
+            "Tunn marginal — mittenvärdet ger cirka 11 procents uppsida och känslighetsmatrisens sämsta hörn ligger under kursen; försiktighet eller krav på katalysator",
+            "Sälj omedelbart",
+            "Värdering är omöjlig när ansatserna skiljer sig"
+          ],
+          "ratt": 1,
+          "tips": "Räkna mot mittenvärdet 14,50 — och kontrollera sedan mot kapitel 10:s matris."
+        },
+        {
+          "q": "Hur formuleras slutsatsen i ett AK1A-värderingsutlåtande?",
+          "alternativ": [
+            "Som en rekommendation på SÄLJ till STARKT KÖP-skalan",
+            "Som poängsättning 0-5 per AKM1-variabel (max 100) med intervall och margin of safety — pedagogisk analys, aldrig investeringsråd",
+            "Som en exakt målkurs med två decimaler",
+            "Som en känsla framförallt"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 14:s svar återkommer här: vad är granskningsbart — en uppmaning eller 20 motiverade poäng?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { spawn } from "child_process";
+import { körVagfundament } from "@/lib/vagfundament-motor";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -9,7 +9,8 @@ export const maxDuration = 60;
  * VÅGFUNDAMENT — fundamentalvågornas ekosystem (VAGFUNDAMENT-SPEC P7).
  * GET  ?ticker=VOLV-B.ST        → enskild akties 20×5-matris
  * POST {tickers, vikter?}       → per aktie + portföljaggregering (P6)
- * Python-motor: scripts/vagfundament.py (python3 med python-fallback, som djupanalys).
+ * Motor: src/lib/vagfundament-motor.ts (TS-port av python-motorn —
+ * bitidentiskt verifierad; python saknas i Vercel Node-runtime).
  */
 
 type Indikator = {
@@ -50,47 +51,6 @@ type VagfundamentPortfolj = {
 
 type MotorSvar = { tickers: VagfundamentAnalys[]; portfolj?: VagfundamentPortfolj };
 
-function körPython(payload: Record<string, unknown>): Promise<MotorSvar | null> {
-  return new Promise((resolve) => {
-    // python3 (Vercel/Linux) med python-fallback (Windows) — kedjat utan race
-    const forsok = (bin: string, next?: () => void) => {
-      let barn: ReturnType<typeof spawn>;
-      try {
-        barn = spawn(bin, ["scripts/vagfundament.py"], { cwd: process.cwd() });
-      } catch {
-        if (next) next();
-        else resolve(null);
-        return;
-      }
-      let ut = "";
-      let fickData = false;
-      barn.on("error", () => {
-        if (!fickData && next) next();
-        else if (!fickData) resolve(null);
-      });
-      barn.stdin?.on("error", () => {});
-      barn.stdout!.on("data", (d: any) => {
-        ut += d;
-        fickData = true;
-      });
-      barn.on("close", () => {
-        if (!fickData && next) {
-          next();
-          return;
-        }
-        try {
-          resolve(JSON.parse(ut));
-        } catch {
-          resolve(null);
-        }
-      });
-      barn.stdin!.write(JSON.stringify(payload));
-      barn.stdin!.end();
-    };
-    forsok("python3", () => forsok("python"));
-  });
-}
-
 const TICKER_RE = /^[A-Za-z0-9.\-]{1,12}$/;
 
 /** GET /api/vagfundament?ticker=VOLV-B.ST — enskild akties fundamentalvågsmatris. */
@@ -100,7 +60,7 @@ export async function GET(req: NextRequest) {
     if (!ticker || !TICKER_RE.test(ticker)) {
       return NextResponse.json({ error: "Ogiltig eller saknad ticker" }, { status: 400 });
     }
-    const svar = await körPython({ tickers: [ticker] });
+    const svar = await körVagfundament({ tickers: [ticker] });
     const analys = svar?.tickers?.[0];
     if (!analys) {
       return NextResponse.json({ error: "Motorn kunde inte köras" }, { status: 500 });
@@ -134,7 +94,7 @@ export async function POST(req: NextRequest) {
           )
         : {};
     const payload = Object.keys(vikter).length > 0 ? { tickers, vikter } : { tickers };
-    const svar = await körPython(payload);
+    const svar = await körVagfundament(payload);
     if (!svar || !Array.isArray(svar.tickers)) {
       return NextResponse.json({ error: "Motorn kunde inte köras" }, { status: 500 });
     }

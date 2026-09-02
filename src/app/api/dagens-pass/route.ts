@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { spawn } from "child_process";
+import { körAnalysMotor, type TickerAnalys as Analys } from "@/lib/analys-motor";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -9,9 +9,9 @@ export const maxDuration = 60;
  * DAGENS PASS — flaggskeppet: daglig 5-minuters marknadsträning på RIKTIG data.
  *
  * Deterministiskt urval (datum-hash % listlängd) ur en roterande lista på 12
- * svenska storbank-/industri-tickers → python-motorn anropas EXAKT som
- * djupanalys-routen gör → kompletteras vid behov med ett lätt Yahoo-tillskott
- * (chart-endpoint, ingen crumb krävs) — misslyckas det är motor-datatat sole.
+ * svenska storbank-/industri-tickers → TS-motorn (bitidentisk port av
+ * python-motorn) → kompletteras vid behov med ett lätt Yahoo-tillskott
+ * (chart-endpoint, ingen crumb krävs) — misslyckas det är motor-datat sole.
  */
 
 const ROTATION: readonly string[] = [
@@ -29,75 +29,7 @@ const ROTATION: readonly string[] = [
   "ALFA.ST",
 ];
 
-type Fundament = {
-  pe?: number | null;
-  peFwd?: number | null;
-  pb?: number | null;
-  utdelning?: number | null;
-  vinstmarginal?: number | null;
-  roe?: number | null;
-  tillvaxt?: number | null;
-  skuldEk?: number | null;
-} | null;
-
-type Analys = {
-  ticker: string;
-  fel?: string;
-  kallor?: number;
-  namn?: string;
-  bors?: string;
-  valuta?: string;
-  fundament?: Fundament;
-  data?: { pris: number; hojd52: number; lag52: number; pos52: number; sigma_ar: number | null; atr14: number | null; voltrend: number | null; ma50?: number | null; ma200?: number | null };
-  momentum?: Record<string, number | null>;
-  vager?: Record<string, string>;
-  matris25?: Record<string, number>;
-  sammanfattning?: { bull: number; bear: number; neutral: number };
-  notering?: string;
-};
-
-/** Kör python-motorn — identiskt mönster som djupanalys-routen (python3 → python-fallback, kedjat utan race). */
-function körPython(tickers: string[]): Promise<Analys[]> {
-  return new Promise((resolve) => {
-    const forsok = (bin: string, next?: () => void) => {
-      let barn: ReturnType<typeof spawn>;
-      try {
-        barn = spawn(bin, ["scripts/analysis_engine.py"], { cwd: process.cwd() });
-      } catch {
-        if (next) next();
-        else resolve([]);
-        return;
-      }
-      let ut = "";
-      let fickData = false;
-      barn.on("error", () => {
-        if (!fickData && next) next();
-        else if (!fickData) resolve([]);
-      });
-      barn.stdin?.on("error", () => {});
-      barn.stdout?.on("data", (d: any) => {
-        ut += d;
-        fickData = true;
-      });
-      barn.on("close", () => {
-        if (!fickData && next) {
-          next();
-          return;
-        }
-        try {
-          resolve(JSON.parse(ut).tickers || []);
-        } catch {
-          resolve([]);
-        }
-      });
-      barn.stdin?.write(JSON.stringify({ tickers }));
-      barn.stdin?.end();
-    };
-    forsok("python3", () => forsok("python"));
-  });
-}
-
-/** FNV-1a-hash med salt — ger ett stabilt, deterministigt index per dag och salt. */
+/** FNV-1a-hash med salt — ger ett stabilt, deterministiskt index per dag och salt. */
 function datumHash(datum: string, salt: number): number {
   const s = `${salt}:${datum}`;
   let h = 2166136261 >>> 0;
@@ -264,8 +196,8 @@ export async function GET() {
     const ticker = ROTATION[datumHash(datum, 1) % ROTATION.length];
     const akm1 = AKM1_FRAGOR[datumHash(datum, 2) % AKM1_FRAGOR.length];
 
-    const analyser = await körPython([ticker]);
-    const analys: Analys | undefined = analyser[0];
+    const svar = await körAnalysMotor({ tickers: [ticker] });
+    const analys: Analys | undefined = svar.tickers[0];
 
     if (!analys || analys.fel || !analys.data) {
       return NextResponse.json(
@@ -274,7 +206,7 @@ export async function GET() {
       );
     }
 
-    // ValfriYahoo-komplettering — enbart berikning, aldrig felkälla
+    // Valfri Yahoo-komplettering — enbart berikning, aldrig felkälla
     const senaste = await hamtaYahooTillskott(ticker);
 
     const namn = analys.namn || ticker;
@@ -307,7 +239,7 @@ export async function GET() {
       },
       akm1Fraga: akm1,
       notering:
-        "Signaler beräknade av AK1A Analysis Engine (Python) från live pris/volym-data — pedagogiskt verktyg, inte investeringsråd.",
+        "Signaler beräknade av AK1A Analysis Engine från live pris/volym-data — pedagogiskt verktyg, inte investeringsråd.",
     });
   } catch (e: any) {
     return NextResponse.json({ error: e.message || "Internt fel" }, { status: 500 });

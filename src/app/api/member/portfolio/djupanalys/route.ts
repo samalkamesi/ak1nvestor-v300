@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { spawn } from "child_process";
+import { körAnalysMotor } from "@/lib/analys-motor";
 import { getSupabaseRest } from "@/lib/supabase-rest";
 
 export const runtime = "nodejs";
@@ -32,47 +32,6 @@ type Analys = {
   sammanfattning?: { bull: number; bear: number; neutral: number };
   notering?: string;
 };
-
-function körPython(tickers: string[]): Promise<Analys[]> {
-  return new Promise((resolve) => {
-    // python3 (Vercel/Linux) med python-fallback (Windows) — kedjat utan race
-    const forsok = (bin: string, next?: () => void) => {
-      let barn: ReturnType<typeof spawn>;
-      try {
-        barn = spawn(bin, ["scripts/analysis_engine.py"], { cwd: process.cwd() });
-      } catch {
-        if (next) next();
-        else resolve([]);
-        return;
-      }
-      let ut = "";
-      let fickData = false;
-      barn.on("error", () => {
-        if (!fickData && next) next();
-        else if (!fickData) resolve([]);
-      });
-      barn.stdin.on("error", () => {});
-      barn.stdout.on("data", (d: any) => {
-        ut += d;
-        fickData = true;
-      });
-      barn.on("close", () => {
-        if (!fickData && next) {
-          next();
-          return;
-        }
-        try {
-          resolve(JSON.parse(ut).tickers || []);
-        } catch {
-          resolve([]);
-        }
-      });
-      barn.stdin.write(JSON.stringify({ tickers }));
-      barn.stdin.end();
-    };
-    forsok("python3", () => forsok("python"));
-  });
-}
 
 const TEORIER = ["elliott", "fibonacci", "gann", "lucas", "volym"];
 const HORIZONTER = ["mikro", "kort", "medellang", "lang", "mega"];
@@ -111,7 +70,7 @@ export async function GET(req: NextRequest) {
     const attAnalysera = sorterade.slice(0, 10);
     const overskott = sorterade.slice(10);
 
-    const analyser = await körPython(attAnalysera.map((r) => r.ticker));
+    const analyser = (await körAnalysMotor({ tickers: attAnalysera.map((r) => r.ticker) })).tickers;
     const perTicker = new Map(analyser.map((a) => [a.ticker.toUpperCase(), a]));
 
     // Portföljens viktade 25-cellmatris + vågprofil (5 horisonter)
@@ -193,7 +152,7 @@ export async function GET(req: NextRequest) {
       teorier: TEORIER,
       horisonter: HORIZONTER,
       notering:
-        "Signaler beräknade av AK1A Analysis Engine (Python) från pris/volymdata via oberoende källor (Yahoo Finance primärt, Stooq sekundärt). Heuristiska proxy-mätare — pedagogiskt verktyg, inte investeringsråd.",
+        "Signaler beräknade av AK1A Analysis Engine från pris/volymdata via oberoende källor (Yahoo Finance primärt, Stooq sekundärt). Heuristiska proxy-mätare — pedagogiskt verktyg, inte investeringsråd.",
     });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });

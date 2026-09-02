@@ -955,7 +955,7 @@
         "Köp när marknaden är deprimerad och sitt stilla när den är euforisk"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-040",
@@ -1003,7 +1003,7 @@
         "En systematisk process skyddar mot de emotionella undantag som förstör strategin"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-042",
@@ -1197,7 +1197,7 @@
         "Sensitivitetsanalys är obligatorisk: visa hur värdet beror av tillväxt och diskonteringsränta"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-050",

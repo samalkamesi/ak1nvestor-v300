@@ -1,0 +1,1054 @@
+{
+  "slug": "the-complete-turtletrader",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 168,
+  "title": "The Complete TurtleTrader — Covel: KOMPLETT",
+  "summary": "Michael W. Covel publicerade 2007 The Complete TurtleTrader — samma år som Curtis Faiths Way of the Turtle — och skrev därmed den YTTRE biografin om finanshistoriens mest berömda experiment. Där Faith är en Turtles inrikesrapport med hela systemet som checklista, är Covel journalisten som intervjuade ett drygt dussin Turtles, grävde i arkiv och offentliga CTA-register och skrev HELA historien: Richard Dennis väg från 1 600 långa dollar till Prince of the Pits och 200 miljoner, William Eckhardts invändning att stora traders är födda inte gjorda, annonsen och urvalet av över tusen sökande, de två veckornas klassrum, personligheterna och de kulturella krockarna mellan unga rebeller och handelsgolvets etablissemang, de över 150 miljoner dollar gruppen rapporteras ha tjänat, spridningen — att samma regler gav både miljonärer och sparkade — Dennis eget fall 1987–1988, experimentets nedstängning och Turtles efter-spår: Jerry Parker, Liz Cheval, Paul Rabar, Howard Seidler och Faith själv. KursenDifferentierar öppet mot Faith-kursen, citerar båda böckerna sida vid sida och ägnar ett helt kapitel åt kontroversen Covel mot Faith — två versioner av samma historia där detaljerna skiljer sig (annonsen, Faiths 31,5 miljoner, vem som var bäst, varför Dennis föll) — med AK1A:s slutsats: flera källor, sanningen däremellan.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för Michael Covels The Complete TurtleTrader (2007) som den yttre, journalistiska biografin om Turtle-experimentet — och skilja den från Faiths inre, systemfokuserade Way of the Turtle: Faith = en Turtles berättelse plus regelverket; Covel = hela historien med urval, personligheter, kulturella krockar, Dennis fall och Turtles efter-spår · återge Richard Dennis bakgrund — de lånade 1 600 dollar som växte till omkring 200 miljoner, smeknamnet Prince of the Pits och den politiska aktivism som småningom tärde på hans kapital och uppmärksamhet · förklara satsningen mot William Eckhardt i Covels ram: nature mot nurture — är stora traders födda eller gjorda, och vad experimentet faktiskt bevisade · beskriva urvalet som Covel grävde fram: över tusen sökande, ett fyrtiotal till intervju, psykologiska test på förhållande till förluster och regler — och kontroversen om var annonsen faktiskt stod (Faith minns Wall Street Journal; Covel kunde inte verifiera den i arkiven) · redogöra för klassrummet och avtalet: två veckors undervisning, konton i miljonklassen, 15 procent av vinsten till eleven och sekretessavtal som band klassen · sammanfatta regelverket i Covels komprimerade tappning — risk 2 procent per enhet, N-baserad storlek, enhetstak 4/6/10/12 — och hänvisa till Faith-kursen för den fullständiga checklistan med räkneexempel i kronor · skildra personligheterna och de kulturella krockarna: nittonåriga spelexperter och akademiker utan terminserfarenhet mitt i Chicagos handelskultur, med Dennis som anti-etablissemangsanarkist i spetsen · förklara spridningen i utfall med Covels egna intervjuer: samma regler gav stjärnor, medelmåttor och avstängda — disciplinen, inte intelligensen, bar skillnaden · berätta Dennis fall 1987–1988 enligt samtida rapporter: tunga förluster, politiskt engagemang, tillbakadragande från klientkapital — och den öppna frågan om orsakerna som Faith och Covel tolkar olika · följa Turtles efter-spår: Jerry Parker och Chesapeake Capital (den kommersiellt största), Liz Cheval och EMC Capital, Paul Rabar, Howard Seidler — en hel trendföljarbransch odlad ur ett klassrum — samt Faiths egen väg mot regel-publiceringen 2007 · värdera kontroversen Covel mot Faith punkt för punkt — annonsen, Faiths påstådda 31,5 miljoner dollar i vinster, vem som var den främsta Turtle, orsakerna till Dennis fall, båda författares intressekonflikter — och tillämpa AK1A:s metod: flera källor, sanningen däremellan, arkivet vinner över minnet tills minnet bevisas · samt syntetisera experimentets bevisvärde med forskningen om trendföljningens avklingning (Park och Irwin 2007; Sullivan, Timmermann och White 1999; McLean och Pontiff 2016) mot AK1TS:s determinism som Turtle-tänk för vågor — pedagogiskt, aldrig trading-system — kopplat till AKM1 V19 Kapitalförbränning och Emission-risk.",
+  "why": "Way of the Turtle-kursen gav experimentet inifrån: systemet, E-värdet, N-matematiken, psykologin. The Complete TurtleTrader ger det den andra halvan saknar: historierna. Vem Dennis var och varför han kunde hålla ett sådant vad, vem som sökte och gallrades bort, vad som hände när unga rebeller krockade med handelsgolvets kultur, varför skaparen av världshistoriens mest disciplinerade regelverk själv föll — och vad ett dussin Turtles sagt till en utomstående journalist att de aldrig skrivit i sina egna böcker. För AK1A-ekosystemet är boken kritisk av tre skäl: den är kurskatalogens tydligaste lärobok i källkritik — två böcker om samma experiment som inte håller med om detaljerna, där AK1A:s svar är att flera källor ger sanningen däremellan; den visar att ett system lever och dör med sin miljö (urval, incitament, sanktioner, kulturell bärkraft) — samma slutsats som Quantitative Value-kursens jedis kontra clones men på organisationsnivå; och den levererar efter-spåret — hur ett tvåårigt experiment sådde en hel trendföljarbransch — som är det starkaste beviset för att metoden, inte turen, bar resultaten. Utan den här boken är Turtle-sagan en regelbok; med den är den en historia om människor, makt och pengar som förklarar varför regelboken verkade.",
+  "chapters_list": [
+    "1. Boken och experimentet — hela historien utifrån",
+    "2. Richard Dennis — Prince of the Pits",
+    "3. Eckhardt — matematikern som trodde på det medfödda",
+    "4. Annonsen, testet och urvalet — tusen sökande blir ett dussin",
+    "5. Klassrummet — två veckor, ett kontrakt och 15 procent",
+    "6. Systemet i Covels tappning — risk före signal",
+    "7. Personligheter och kulturella krockar — rebeller i handelsgolvet",
+    "8. Guldpokalen — 150 miljoner dollar på fyra år",
+    "9. Samma regler, olika utfall — stjärnor, medelmåttor och sparkade",
+    "10. Dennis fall — 1987–1988 och slutet på experimentet",
+    "11. Efter spåret — vad Turtles blev",
+    "12. Kontroversen — Covel mot Faith: två versioner av samma historia",
+    "13. Vad bevisade experimentet? — trendföljning, disciplin och kanter som klingar av",
+    "14. Sammanfattning — hela Turtle-sagan på ett A4 (V19 + AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Boken och experimentet — hela historien utifrån",
+      "intro": "Michael W. Covel — författare, dokumentärskapare och sedan 1990-talet drivande av webbplatsen TurtleTrader.com, ett av nätets skarpaste offentliga arkiv om trendföljning — publicerade The Complete TurtleTrader 2007. Samma år debuterade Curtis Faith med Way of the Turtle. Två böcker, ett experiment — och två olika sanningar om det. Kursen börjar med att skilja dem åt, för den som läst Faith-kursen först: detta är berättelsen utifrån.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Påminnelsen först, kort — den fullständiga genomgången finns i Way of the Turtle-kursen. Richard Dennis, Chicagos mest framgångsrike unge råvaruhandlare, och hans partner William Eckhardt hade ett återkommande gräl: Dennis hävdade att hans framgång var en metod som kunde läras ut till vem som helst med normal begåvning och vilja; Eckhardt trodde på en medfödd fallenhet. Grälet blev ett vad, vadet blev ett experiment: rekrytera noviser, lär ut reglerna på två veckor, ge dem riktiga pengar. Namnet föddes när Dennis sett en sköldpaddsfarm i Singapore och sade att de skulle odla traders som man odlar sköldpaddor. Klass ett i december 1983, klass två 1984 — sammanlagt drygt tjugo Turtles. Gruppen rapporteras ha tjänat över 150 miljoner dollar på knappt fem år, med en spridning i utfall som är hela saga poäng: samma regler, olika människor, olika resultat."
+        },
+        {
+          "type": "text",
+          "content": "Nu skillnaden, som kursen håller fast vid hela vägen. Faiths Way of the Turtle är INRIKESRAPPORTEN: en Turtles egen berättelse, med hela regelverket publicerat som checklista — Donchian-utbrott, N-matematik, 2N-stopp, enhetstak — och med det psykologiska avsnittet (E-värdet, tålamodet, regelföljandet) som kärna. Covels The Complete TurtleTrader är UTANFÖRPERSPEKTIVET: journalistiken kring experimentet. Covel intervjuade under åratal ett drygt dussin Turtles, deras familjer och kollegor, grävde i arkiv och offentliga CTA-register — och byggde HELA historien: Dennis biografi och politiska aktivism, Eckhardts filosofi, annonsen och urvalsprocessen, klassrummets kontrakt, personligheternas krockar mot handelsgolvet, pengaflödena, maktkampen om riskgränserna, Dennis fall 1987–1988, nedstängningen — och efter-spåret: vad varje Turtle blev. Regelverket behandlas komprimerat (kapitel 6 i kursen); människorna behandlas uttömligt."
+        },
+        {
+          "type": "text",
+          "content": "Och en metodologisk brasklapp, som Covel själv är ärlig med och som kontroverskapitlet (kapitel 12) återkommer till: Dennis tackade nej att medverka i boken — arkitekten avvek från sin egen historia — och Eckhardt medverkade inte heller. Boken vilar alltså på Turtles minnen och offentliga dokument, och minnen är fallbara källor. Det är inte bokens svaghet i första hand; det är dess villkor — och för AK1A är det själva läroboksexemplet: när två böcker om samma händelse inte håller med om detaljer är lösningen inte att välja den med bäst story, utan att triangelera. Flera källor, sanningen däremellan. Kursen citerar därför båda böckerna öppet, sida vid sida, och flaggar var de skiljer sig."
+        },
+        {
+          "type": "insikt",
+          "content": "Faith vet hur det kändes inuti rummet; Covel vet vad ett dussin deltagare sagt efteråt. Ingen av dem äger sanningen ensam — Turtle-experimentets fulla bild kräver båda böckerna, och avståndet mellan dem är i sig information om hur historia skrivs."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två böcker om samma experiment — Covel mot Faith\",\"rader\":[[\"Fråga\",\"Covel (2007)\",\"Faith (2007)\"],[\"Författarens roll\",\"utomstående journalist och trendföljningsdokumentatör\",\"deltagare — yngste Turtle, 19 år vid starten\"],[\"Källor\",\"intervjuer med ett drygt dussin Turtles plus arkiv och offentliga register\",\"egna minnen, egna siffror, egna handelsrapporter\"],[\"Dennis och Eckhardt medverkar\",\"nej — båda tackade nej\",\"ja — som lärare i Faiths berättelse\"],[\"Fokus\",\"hela historien: urval, personligheter, krockar, Dennis fall, efter-spåret\",\"systemet som checklista plus psykologin inifrån\"],[\"Styrka\",\"flera röster, extern spridning, dokumentation\",\"komplett regelverk, inre detaljer, räkneexempel\"],[\"Svaghet\",\"skaparna saknas; minnen hos andra\",\"enskild källa; påstådda siffror ifrågasatta av andra Turtles\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Källkritikövning, hemmaversion: välj ett beslut du var med för några år sedan — en affär, ett byte av jobb, en flytt. Skriv din version i tio rader. Be sedan någon annan som var närvarande skriva sin version — utan att titta på din. Jämför: stämmer datumen? Beloppen? Ordningen? Värsta avvikelsen? Det du just hittade är avståndet mellan Faith och Covel — och anledningen till att AK1A kräver flera källor innan något får kallas sant."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den väsentligaste skillnaden mellan Covels och Faiths böcker om Turtle-experimentet?",
+          "alternativ": [
+            "Covel är inrikesrapporten och Faith den journalistiska granskningen",
+            "Faith är inrikesrapporten från en deltagare med systemet i fokus; Covel är den utomstående journalistik som bygger hela historien med flera röster",
+            "De handlar om två olika experiment",
+            "Det finns ingen skillnad — böckerna är identiska"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vem som skriver: den som satt i klassrummet eller den som intervjuade klassen efteråt?"
+        },
+        {
+          "q": "Vilken metodologisk brasklapp förmedlas om Covels källmaterial?",
+          "alternativ": [
+            "Att Dennis och Eckhardt tackade nej att medverka — boken vilar på Turtles minnen och offentliga dokument",
+            "Att boken är översatt från kinesiska",
+            "Att alla intervjuer gjordes under hypnos",
+            "Att Covel skrev boken tillsammans med Dennis"
+          ],
+          "ratt": 0,
+          "tips": "Vems röst saknas när arkitekten avstår — och vad återstår då som källa?"
+        },
+        {
+          "q": "Vad är AK1A:s hållning när två böcker om samma händelse inte håller med om detaljerna?",
+          "alternativ": [
+            "Välj den bok med bäst story",
+            "Välj den äldsta boken",
+            "Triangelera — flera källor, sanningen däremellan, och avståndet mellan dem är information",
+            "Avfärda båda böckerna som värdelösa"
+          ],
+          "ratt": 2,
+          "tips": "Källkritik handlar inte om att utse en vinnare utan om att arbeta med avståndet."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Richard Dennis — Prince of the Pits",
+      "intro": "Ingen förstår experimentet utan att förstå mannen som satte det i verket. Covels bok ägnar hela tidiga kapitel åt Richard Dennis — hans väg från lånta pengar till att vid trettiofem års ålder ha förvandlat några hundradollar till en av Chicagos största förmögenheter, sitt smeknamn Prince of the Pits och den politiska activism som småningom skulle kosta honom både kapital och koncentration.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Numbers först, som Covel citerar dem: Dennis började handla som tonåring med omkring 1 600 lånade dollar av sin familj — småpengar som bara räckte eftersom han började på MidAmerica Commodity Exchange, där kontrakten var små nog för ett tonårsdeck. Därifrån är banan utan motstycke i råvaruterminernas historia: genom 1970-talet och in på 1980-talet växte kapitalet till vad Covel och andra sammanfattar som omkring 200 miljoner dollar. På handelsgolvet kallades han Prince of the Pits — prinsen av groparna. Poängen för kursen är inte rikedomens storlek utan dess KARAKTÄR: Dennis var en systematiker som köpte styrka och lät trender löpa, pyramiderade i medgång och skar förluster hårt — en metod han själv hävdade var fullt möjlig att skriva ned och lära ut. Det var den övertygelsen, snarare än girigheten, som bar experimentet."
+        },
+        {
+          "type": "text",
+          "content": "Covel målar också upp DEN ANDRA Dennis: den politiske aktivisten. Dennis var öppet engagerad till vänster i amerikansk politik — han finansierade kampanjer, byggde upp nätverk av unga aktivister och kandiderade till sist själv två gånger till USA:s kongress, utan framgång, med tunga egna utgifter. För en handelsman av hans kaliber var politiken inte hobby utan passion: han ansåg marknadsframgången mest vara ett verktyg — medel att finansiera den världsbild han ville förverkliga. Kontrasten är berättelsens djupaste ironi, och Covel låter den stå ostraffad: världens mest konsekventa regelföljare på marknaden var i politiken en motsträbs idealist som brände mångmiljondollar på primärval han inte kunde vinna. Same man, two disciplines, två helt olika resultat — och en förvarning om det kapitel som heter Dennis fall."
+        },
+        {
+          "type": "text",
+          "content": "Och en tredje sida, avgörande för experimentets design: Dennis som LÄRARE. Covel återger honom som en man som älskade att förklara — kritisk mot handelsetsablissemangets hemlighetsmakeri, övertygad om att guldet låg i att demokratisera metoden. När han selekterade Turtles valde han medvetet bort handelsgolvets veteraner och toppstudenterna: han ville visa att reglerna, inte bakgrunden, bar resultatet. Dennis berömda sammanfattning av hela experimentet, citerad i båda böckena: reglerna kunde publiceras i tidningen och ändå skulle ingen följa dem — nyckeln är konsekvens och disciplin. Lägg märke till vad citatet gör med hjältebilden: Dennis tar ifrån sig själv äran i samma mening som han tar ifrån reglerna den. Arkitekten är slutproduktens minsta komponent — det är hans största påstående."
+        },
+        {
+          "type": "insikt",
+          "content": "Dennis dubbelliv är kursens första fallstudie i domänspecifik disciplin: samma person kan vara obetingad regelbok på en marknad och impulsiv visionär i politiken. Disciplin är inte en personlighet — det är ett kontrakt man skriver med sig själv per område. Fråga inte om du är disciplinerad; fråga var."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Richard Dennis — tre ansikten\",\"rader\":[[\"Roll\",\"Uttryck\",\"Läxa för eleven\"],[\"Handlaren\",\"från 1 600 lånade dollar till omkring 200 miljoner; Prince of the Pits; köp styrka, pyramid i medgång, skär förluster\",\"metoden var mekanisk — och påstådd lärlig\"],[\"Aktivisten\",\"finansierade kampanjer; kandiderade två gånger till kongressen utan framgång; tunga egna utgifter\",\"disciplin är domänspecifik — regelboken gick inte att exportera\"],[\"Läraren\",\"ville demokratisera metoden; valde bort veteraner för att bevisa att reglerna bär resultatet\",\"reglerna kan publiceras — efterlevnaden kan inte tryckas\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Din egen domänkarta: gör två kolumner — område där jag följer skrivna regler och område där jag Improviserar. Fyll i minst fem rader vardera: sparande, träning, kost, jobb, relationer, hobbyer. Markera sedan var du är bäst och var du är Dennis-i-politiken (många resurser, lite system). Valet av nästa förbättringsområde ska tas från DEN kolumnen — inte från den som redan fungerar."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — Dennis väg från 1 600 dollar till 200 miljoner är compound-matematik i ren form: små, jämma risker byggt på trender som fick löpa. Men fallstudien i hans politiska utgifter är V19 Kapitalförbränning & Emission-risk på mänsklig nivå: kapital som bränns utan stopp tvingar fram beslut man inte ville fatta. Även en förmögenhet behöver en riskgräns — den som saknar den har en emissionsrisk i personlig format."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Med hur mycket startkapital började Dennis enligt den berättelse Covel förmedlar?",
+          "alternativ": [
+            "Omkring 1 600 lånade dollar av hans familj",
+            "En miljon dollar från en bank",
+            "Femtio miljoner ärvt",
+            "Han började utan kapital alls"
+          ],
+          "ratt": 0,
+          "tips": "Summan var så liten att den bara fungerade på en börs med små kontrakt — vilken?"
+        },
+        {
+          "q": "Vilken roll spelade politiken i Dennis liv enligt boken?",
+          "alternativ": [
+            "Ingen — han var helt opolitisk",
+            "Han var finansminister en period",
+            "Han finansierade kampanjer och kandiderade själv två gånger till kongressen utan framgång — med tunga egna utgifter",
+            "Han använder politiken för att tipsa om råvaror"
+          ],
+          "ratt": 2,
+          "tips": "Kontrasten till marknadsdisciplinen är poängen — vad kostade idealismen?"
+        },
+        {
+          "q": "Vad uttrycker Dennis berömda sammanfattning — att reglerna kunde publiceras i tidningen utan att någon följde dem?",
+          "alternativ": [
+            "Att reglerna var fel och måste hållas hemliga",
+            "Att informationen är gratis men efterlevnaden är flaskhalsen — konsekvens och disciplin är nyckeln",
+            "Att tidningar är bäst på tradingtips",
+            "Att bara han själv kunde handla systemet"
+          ],
+          "ratt": 1,
+          "tips": "Vad återstår av en metod när alla får se den — och vad saknas fortfarande?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Eckhardt — matematikern som trodde på det medfödda",
+      "intro": "Vadets andra hälft: William Eckhardt, Dennis barndomsvän och partner, matematiker med Chicago-traditionens tyngd — och den som hävdade att stora traders inte kan tillverkas utan är födda. Covel ägnar honom de kapitel han sällan får i andras berättelser: filosofen som förlorade vadet och vann eftermälet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Covel tecknar Eckhardt som motpolen i varje avseende: där Dennis var handelsbordets snille och offentliga gestalt, var Eckhardt den reserverade matematikern — Chicago-skolans anda, hemma i sannolikheter och spelteori, misstänksam mot att skicklighet kan reduceras till en manual. Hans invändning mot Dennis påstående var inte att reglerna var dåliga utan att DE ALDRIG VAR DET VIKTIGASTE: om trading vore enbart metod skulle börsens matematiklärare vara rika, sa han i princip — någonting i sinnet, en fallenhet för beslut under osäkerhet, måste till, och det går inte att lära ut. Satsningen mellan vännerna var alltså inte ett bråk om pengar utan en tvist om MÄNNISKAN: är framgång en egenskap hos metoden eller hos människan som kör den?"
+        },
+        {
+          "type": "text",
+          "content": "Här gör Covel en poäng som Faith-kursen bara antyder: vadet var värd att hållas för att BÅDA hade något på spel som var sant. Experimentet kom — som kapitel 9 och 13 visar — att bekräfta bägge halvorna: Turtles som följde reglerna tjänade miljoner (metoden kunde alltså läras ut — Eckhardt hade fel om att det var omöjligt), men Turtles som bröt mot reglerna förlorade eller kördes ut (människan, inte reglerna, var den aktiva komponenten — Dennis hade för optimistisk syn på vem som helst). Eckhardts fel var graden, inte riktningen: fallenheten som krävdes var inte matematisk begåvning utan något mycket enklare och mycket sällsyntare — förmågan att göra samma sak igen efter en förlust."
+        },
+        {
+          "type": "text",
+          "content": "Och eftermälet, som är Eckhardts kapitel i sagan. När experimentet var över och Dennis fallit (kapitel 10), fortsatte Eckhardt att handla — mekaniskt, tyst, decennium efter decennium genom Eckhardt Trading Company — och förblev enligt offentliga CTA-register en stabil förvaltare medan skaparen av reglerna gick i diket. Ironin är total och Covels framställning av den är bokens finaste bidrag till ledarskapslitteraturen: den som ansåg att traders inte kan göras visade sig vara den som bäst kunde följa det system han trodde krävde medfött stoff. Slutsatsen för en AKM1-elev: frågan är inte om förmåga kan läras — frågan är vilken förmåga som krävs. Eckhardt hade rätt om att det krävs något. Dennis hade rätt om att det kan tränas. Vadet var oavgjort — och det är det mest lärorika resultatet av alla."
+        },
+        {
+          "type": "insikt",
+          "content": "Eckhardts paradox: mannen som inte trodde på att traders kan göras blev det bästa beviset på att det går — genom att själv följa systemet i fyra decennier. Fallenheten som krävdes var inte begåvning utan karaktär. Det går att träna karaktär. Det går inte att läsa sig till den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vadet — nature mot nurture, punkt för punkt\",\"rader\":[[\"Stridsfråga\",\"Dennis (nurture)\",\"Eckhardt (nature)\"],[\"Kan trading läras ut?\",\"ja — till vem som helst med normal begåvning och vilja\",\"nej — det krävs en medfödd fallenhet för beslut under osäkerhet\"],[\"Vad bär resultatet?\",\"metoden — reglerna går att skriva ned\",\"människan — reglerna är aldrig det viktiga\"],[\"Experimentets facit\",\"de som följde reglerna tjänade miljoner — metoden gick att lära ut\",\"de som bröt mot reglerna slogs ut — människan var den aktiva komponenten\"],[\"Eftermälet\",\"fall 1987–1988 enligt samtida rapporter\",\"mekanisk handel i decennier via Eckhardt Trading Company\"],[\"Kursens dom\",\"rätt om att det kan tränas\",\"rätt om att något krävs — karaktär, inte begåvning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Vad-test på dig själv: välj en regel du säger dig följa i investerandet (till exempel aldrig addera på förlorare, alltid ha en Brytpunkt skriven). För varje månad det senaste halvåret, notera ja eller nej på om regeln följdes. Varje nej är en Eckhardt-poäng (människan bröt), varje ja en Dennis-poäng (metoden bar). Vilken sida vinner hos dig — och vad heter det nekade tillfället då du bröt? Skriv ner det, för det är din personliga version av vadet."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Eckhardts invändning mot Dennis påstående?",
+          "alternativ": [
+            "Att reglerna var dåliga och måste bytas",
+            "Att något i sinnet — en fallenhet för beslut under osäkerhet — krävs och inte kan skrivas ned och läras ut",
+            "Att råvarumarknader borde förbjudas",
+            "Att Dennis borde handla aktier i stället"
+          ],
+          "ratt": 1,
+          "tips": "Eckhardt attackerade inte reglerna — han attackerade idén om att regler räcker."
+        },
+        {
+          "q": "Hur förhåller sig experimentets utfall till vadet enligt kursen?",
+          "alternativ": [
+            "Dennis vann totalt — Eckhardt hade fel i allt",
+            "Eckhardt vann totalt — reglerna var värdelösa",
+            "Oavgjort — metoden gick att lära ut, men människan som körde den var den avgörande komponenten",
+            "Vadet avgjordes aldrig"
+          ],
+          "ratt": 2,
+          "tips": "Samma regler gav både miljonärer och sparkade — vilken sida av vadet bekräftar det?"
+        },
+        {
+          "q": "Vad är ironin i Eckhardts eftermäle?",
+          "alternativ": [
+            "Han blev börsens första miljardär",
+            "Han som inte trodde på att traders kan göras följde själv systemet mekaniskt i decennier — och förblev stabil medan Dennis föll",
+            "Han slutade handla direkt efter experimentet",
+            "Han skrev en bästsäljande bok om intuition"
+          ],
+          "ratt": 1,
+          "tips": "Vem av de två behöll maskinen efter 1988 — och vad trodde han från början om maskiner?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Annonsen, testet och urvalet — tusen sökande blir ett dussin",
+      "intro": "Ett experiment är bara så starkt som sitt urval — och Covels grävning i urvalet är bokens mest belönande journalistik. Här finns formulären, intervjufrågorna, gallringskriterierna — och redan här den första sprickan mellan de två böckerna: minns Faith att annonsen stod i Wall Street Journal, men Covel, som sökte arkiven, kunde inte verifiera den där.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Siffrorna först, i den form båda böckerna i stort stämmer om: hösten 1983 annonserades en lärlingsutbildning hos Dennis firma C&D Commodities — gratis utbildning, inga avgifter, och sedan riktiga pengar att handla med. Reaktionen blev enorm: över tusen sökande. Efter gallring — formulär, uppsatser och intervjuer — stannade ett fyrtiotal till samtal, och ett drygt dussin utvaldes till klass ett i december 1983; en andra klass rekryterades 1984. Urvalet var, som Way of the Turtle-kursen visade, inte en sökning efter finansiell kunskap utan ett psykologiskt gallringsverk: frågorna rörde förhållningssätt till risk, till förluster och till regler — spelmännens och matematikernas psykologi, handelsgolvets meriter."
+        },
+        {
+          "type": "text",
+          "content": "Nu Covel-tillskottet — detaljen Faith-kursen inte kan ge, för den handlar om arkivet, inte om minnet. I efterhand har annonsen fått en nästan mytologisk ställning i berättelsen: annonsen i Wall Street Journal, som hela legenden sägs utgå ifrån. Covel, som grävt i saken, redovisar att han inte kunde hitta den i Wall Street Journals arkiv — den kan ha stått i Barron's eller någon annan publikation, eller spridits på det sätt legenden inte exakt minns. Faith håller fast vid Wall Street Journal i sin bok. Vem har rätt? Kursens svar är AK1A:s metod i praktiken: minnet är en källa, arkivet är en annan — arkivet vinner tills minnet bevisas. Det heroiska i detaljen är att den är helt irrelevant för experimentets resultat och ändå omtvistad: så skapas historier, av människor som minns stolt och dokumenterar slarvigt. Notera det mönstret — det återkommer i kontroverskapitlet med större belopp på spel."
+        },
+        {
+          "type": "text",
+          "content": "Och urvalets strukturella poäng, som kontroversen i kapitel 13 väger: de utvalda var INTE vem som helst — de var (a) självvalda, över tusen personer som aktivt sökte sig till ett trading-experiment, och (b) gallrade på precis den egenskap — regel-följning under press — som experimentet sedan krävde av dem. Påståendet vi kan lära vem som helst blev i praktiken vi kan lära dem som klarar ett urval designat för att hitta dem som kan läras. Det förminskar inte fyndet — en grupp revisorer, programmerare och nyutexaminerade som tjänar över hundrafemtio miljoner dollar på ett regelverk är anmärkningsvärt oavsett gallring — men det sätter gränsen för hur långt generaliseringen bär. Vetenskaplig ärlighet och marknadsföring skiljs åt av exakt den skillnaden."
+        },
+        {
+          "type": "insikt",
+          "content": "Legendens mest citerade dokument — annonsen — är dess minst verifierbara. Lärdomen för varje analytiker: skilj på minne och arkiv. Ett påstående utan källa är en berättelse; en källa utan påstående är fotnot; först tillsammans blir det fakta."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Urvalet i siffror och källkritik\",\"rader\":[[\"Fråga\",\"Svar\",\"Källa och tvivel\"],[\"Annons\",\"lärlingar sökes till Dennis firma C&D Commodities, gratis utbildning\",\"Faith: Wall Street Journal; Covel kunde inte verifiera den i WSJ:s arkiv — kanske Barron's\"],[\"Sökande\",\"över 1 000\",\"båda böckerna, i stort överensstämmelse\"],[\"Till intervju\",\"ett fyrtiotal\",\"båda böckerna\"],[\"Klass 1 (december 1983)\",\"ett drygt dussin\",\"båda böckerna\"],[\"Klass 2 (1984)\",\"cirka tio ytterligare\",\"båda böckerna\"],[\"Gallringskriterium\",\"förhållande till risk, förluster och regler — inte finansiell meriter\",\"båda böckerna\"],[\"Svaghet i generaliseringen\",\"självvalda plus aktivt gallrade — inte vem som helst\",\"kursens och kontroverskapitlets hållning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Arkiv-och-minne-testet: ta tre påståenden om din egen investeringshistoria som du ofta återberättar (köpkurs, avkastning, tidpunkt). Leta upp sanningen i kontoutdraget eller deklarationen. Hur många stämde exakt? Hur många avvek — och åt vilket hånn överdriver minnet: vinsterna eller timingen? Anteckna avvikelserna. Nu vet du varför Covel letar i arkiv och Faith litar till minnet — och vilken av dem du är."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gällde kontroversen om annonsen?",
+          "alternativ": [
+            "Att den var för dyr för Dennis",
+            "Att Faith minns att den stod i Wall Street Journal medan Covel inte kunde verifiera den i tidningens arkiv — kanske stod den i Barron's",
+            "Att den aldrig fanns i någon tidning alls",
+            "Att den publicerades i Sverige"
+          ],
+          "ratt": 1,
+          "tips": "Två källor, ett dokument — vilken av dem vilar på arkiv och vilken på minne?"
+        },
+        {
+          "q": "Vilken egenskap gallrades urvalet främst efter?",
+          "alternativ": [
+            "Tidigare erfarenhet av terminshandel",
+            "Ekonomexamen från toppuniversitet",
+            "Förhållande till risk, förluster och förmåga att följa regler",
+            "Nätverk inom råvarubranschen"
+          ],
+          "ratt": 2,
+          "tips": "Dennis trodde inte kunskap var flaskhalsen — vad gallrar man på om inte kunskap?"
+        },
+        {
+          "q": "Vilken begränsning i generaliseringen vi kan lära vem som helst påpekar kursen?",
+          "alternativ": [
+            "Att alla deltagare var kvinnor",
+            "Att de utvalda var självvalda och aktivt gallrade på regel-följning — alltså inte ett slumpmässigt urval",
+            "Att klasserna var för stora",
+            "Att experimentet pågick för kort tid för att någon skulle lära sig något"
+          ],
+          "ratt": 1,
+          "tips": "Vem var det som faktiskt testades — vem som helst från gatan eller ett dubbelt förvalt urval?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Klassrummet — två veckor, ett kontrakt och 15 procent",
+      "intro": "December 1983: ett torrt klassrum i Chicago, två lärare, ett drygt dussin nybörjare — och ett avtal som gjorde experimentet till ett riktigt A/B-test. Covel ägnar klassrummet flera kapitel: vad som lärdes ut, men framför allt VILLKOREN — kontot, andelen av vinsten och sanktionerna. Systemets hemliga tredje ben var nämligen inte en signal utan ett incitament.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Undervisningen varade cirka två veckor och täckte, i den ordning Faith minns den och Covel bekräftar i grova drag: trendföljningens grundidé — köp styrka, sälj svaghet, exitera på motbrott; riskmatematiken — positionsstorlek normaliserad efter volatiliteten (N), stopp på 2N, enhetstak per marknad och riktning; och psykologin — förlustserier är systemets andning, vinsterna bor i få stora trender. Inga hemliga signaler, ingen fundamental analys, ingen makro: regelverket ryms på några sidor. Covel poängterar det som är hans signum: enkelheten VAR påståendet. Dennis ville demonstrera att en kort utbildning och ett strängt kontrakt kunde ersätta år av handelsgolvsindoktrinering — att metoden var portabel, som en bruksanvisning."
+        },
+        {
+          "type": "text",
+          "content": "Kontraktet är Covels eget bidrag till förståelsen, och det är viktigare än någon enskild regel. Turtles fick inte en skoluppgift utan ett JOBB med asymmetrisk upside: egna konton i storleksordningen en miljon dollar att handla med (vissa i andra klassen mindre), och — avgörande — en överenskommelse om att de behöll omkring 15 procent av vinsterna de genererade; resten till Dennis. Enligt båda böckerna tillkom sanktionen: den som bröt mot riskgränserna eller regelverket kunde få sitt konto draget ned eller indraget. Räkna på incitamentet: 15 procent av en miljonkontots vinster är en årslön i veckan för den som lyckas — och noll kronor för den som trilskas. Systemet var alltså tre saker samtidigt: regler (vad man gör), riskgränser (hur mycket man får riskera) och miljö (vad som händer om man följer eller bryter). De flesta som försöker kopiera Turtles kopierar det första, beundrar det andra — och saknar det tredje helt."
+        },
+        {
+          "type": "text",
+          "content": "Och sekretessen, som kommit att definiera saga tredje akt. Turtles skrev på sekretessavtal om regelverket — Dennis affärsidé var trots demokratiseringen fortfarande en kant som gick att urholka, och klassen band sig att inte sprida reglerna. Vad som sedan hände med det löftet — Faith publicerade hela regelverket gratis 2003, tjugo år senare, med argumentet att avtalet spelat ut sin roll — är en av finanshistoriens mest omdiskuterade tystnadsbrott, och det delar Turtle-kåren än i dag: somliga tackade honom för historiseringen, andra ansåg att han sålde deras levebröd. Notera ännu en gång att det system som skulle bevisa att information är värdelös utan efterlevnad — Dennis egna ord — i praktiken skyddades som värdefull information i tjugo år. Människor är konsekventa bara när incitamenten är det."
+        },
+        {
+          "type": "insikt",
+          "content": "Turtle-systemets tredje ben var inte en regel utan ett kontrakt: konto, 15 procent av vinsten, indraget konto vid brott. Regler utan incitament är påbud; regler med sanktioner är system. Kopiera aldrig ett system utan att fråga: var är mitt kontrakt?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Klassrummets tre ben — regler, riskgränser, miljö\",\"rader\":[[\"Ben\",\"Innehåll\",\"Roll\"],[\"Regler\",\"trendföljning: utbrott, N-storlek, 2N-stopp, enhetstak, exit på motbrott\",\"vad man gör — portabelt, ryms på några sidor\"],[\"Riskgränser\",\"2 procent per enhet; tak 4/6/10/12 per marknad och riktning\",\"hur mycket man får riskera — kontraktets hårda del\"],[\"Miljö och incitament\",\"konton i miljonklassen; cirka 15 procent av vinsten till eleven; indraget konto vid brott; sekretessavtal\",\"varför man följer — sanktioner och belöning, det ben kopiatorna glömmer\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget Turtle-kontrakt — tre rader, daterat och påskrivet: 1) mina regler (köp- och säljkriterier, max antal positioner); 2) mina riskgränser (max procent av kapitalet i risk per position och totalt); 3) mina sanktioner och belöningar (vad händer med månadens sparande om jag bryter — och vad får jag om jag håller tolv månader?). Visa det för en person som får fråga dig om det om ett år. Det är miljön Dennis byggde — hembyggd."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — incitamentsstrukturen är anledningen till att AK1A talar om portföljpamp och daterade granskningar som DELAR av metoden, inte som administrativa detaljer. Ett AKM1-uttan konsekvens vid avvikelse är åsikt med siffror; V19 Kapitalförbränning & Emission-risk fungerar bara om något faktiskt händer när den blinkar rött. Regeln, gränsen och sanktionen — annars är analysen underhållning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur var Turtles incitament uppbyggda?",
+          "alternativ": [
+            "Fast lön utan bonus — ren lärosituation",
+            "De fick behålla cirka 15 procent av vinsterna de genererade på konton i miljonklassen — med risken att kontot drogs in vid regelbrott",
+            "De fick hela vinsten men betalade alla förluster själva",
+            "De betalade Dennis för utbildningen i efterhand"
+          ],
+          "ratt": 1,
+          "tips": "Vilken struktur gör regelbrott dyrt och regel-följande lönsamt — redan före första affären?"
+        },
+        {
+          "q": "Vad var systemets tredje ben enligt kursen — det som de flesta kopiatorer saknar?",
+          "alternativ": [
+            "Inträdesreglerna",
+            "Positionsstorleksmatematiken",
+            "Miljön: incitament, sanktioner och kontrakt som gör reglerna värda att följa",
+            "Exitreglerna"
+          ],
+          "ratt": 2,
+          "tips": "Regler säger vad, riskgränser hur mycket — vad säkerställer att man ens gör det?"
+        },
+        {
+          "q": "Vad hände med sekretessavtalen om regelverket?",
+          "alternativ": [
+            "De gällde fortfarande år 2020",
+            "Faith publicerade hela regelverket gratis 2003 med argumentet att avtalet spelat ut sin roll — ett tystnadsbrott som delar Turtle-kåren än i dag",
+            "Alla Turtles publicerade varsin bok 1985",
+            "Dennis publicerade reglerna själv i Wall Street Journal"
+          ],
+          "ratt": 1,
+          "tips": "Vem bröt tystnaden — och vad är ironin givet Dennis citat om tidningen?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Systemet i Covels tappning — risk före signal",
+      "intro": "Covel publicerar inte systemet som checklista — det gör Faith, och Way of the Turtle-kursen går igenom det komplett med räkneexempel i kronor. Detta kapitel ger Covels komprimerade version med hans specifika vinkel: att systemets kärna inte är signalerna utan riskmatematiken — och att det är därför samma regler kunde skrivas på några sidor och ändå dela klassen i miljonärer och avstängda.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Systemet i en andning, för den som inte kommer direkt från Faith-kursen: handla endast likvida marknader; köp när priset gör ett 20- respektive 55-dagars utbrott uppåt (sälj kort spegelvänt); exitera på 10- respektive 20-dagars motbrott; dimensionsstorleken så att en rörelse på 1N — marknadens genomsnittliga dagliga svängning, en 20-dagars ATR — ändrar kontot med en procent; stoppa på 2N från ingången, vilket kostar exakt 2 procent per enhet; pyramidera tillägg i medgång; och håll enhetstaken — högst 4 enheter per marknad, 6 i nära korrelerade, 10 i löst korrelerade, 12 totalt per riktning. Inget filter, ingen diskretion, inga undantag för nyheter. Den som vill räkna kedjan i svenska kronor — konto, N, enhet, stopp, pyramid — gör det i Way of the Turtle-kursens kapitel 7; här nöjer vi oss med strukturen."
+        },
+        {
+          "type": "text",
+          "content": "Covels egen läsning av systemet — och det är här han skiljer sig från Faith — är att SIGNALERNA är systemets minst intressanta del. Två veckors undervisning räckte eftersom inträdesreglerna är triviala att lära; det som krävde resten av livet att bemästra var riskmatematiken och framför allt att FÖLJA den. Covel kopplar till den bredare trendföljningstradition han dokumenterat sedan 1990-talet: Dunn, Campbell, Mulvaney, Abraham — stilarna skiljer sig i detaljer men delar skelettet: mekaniska utbrott, definierad risk per affär, korrelationstak, och förmågan att sitta still genom svackor. Turtle-reglerna var ingen singulär uppfinning utan den mest renodlade, mätbara formuleringen av ett hantverk som redan existerade — därför kunde experimentet ens göras: metoden var tillräckligt formell för att läras ut på två veckor och tillräckligt krävande för att skilja människor åt på två år."
+        },
+        {
+          "type": "text",
+          "content": "Och notera vad systemet INTE innehåller — den negativa rymden är Covels poetiska poäng: ingen fundamental analys, ingen prognos om råvarupriser, ingen makro, ingen åsikt om vad som är rimlig nivå, inga undantag. Medan Chicagos handelsgolv surrade av åsikter om skördar, OPEC och räntor handlade Turtles en mekanisk överlevnadskonst: var med när trender föds, ute när de dör, liten när det är fel, större när det är rätt. Dennis hade byggt sin förmögenhet på samma askesis — och den askesen är anledningen till att AK1TS-kursen kallar determinismen för Turtle-tänk för vågor: samma data, samma svar, varje dag. Skillnaden mellan att förstå den meningen och att leva den är, som kapitel 9 visar, ungefär trettio miljoner dollar per person."
+        },
+        {
+          "type": "insikt",
+          "content": "I Turtle-systemet är signalerna gratis och riskmatematiken dyr — inte i beräkning utan i efterlevnad. Två veckor räcker för att lära sig reglerna; två år krävs för att visa om man äger dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Turtle-systemet i Covels komprimering — och vad som saknas\",\"rader\":[[\"Komponent\",\"Regel (grov)\",\"Vad som krävs av människan\"],[\"Universum\",\"endast likvida marknader\",\"motståndskraft mot frestelsen i exotiska marknader\"],[\"Inträde\",\"20- och 55-dagars Donchian-utbrott\",\"köpa när det känns dyrast — varje signal, också efter förlustserier\"],[\"Storlek\",\"1N = 1 procent av kontot per enhet\",\"acceptera att termostaten krymper positionen när det blåser\"],[\"Stopp\",\"2N = 2 procent per enhet; flyttas aldrig åt fel håll\",\"betala stoppet utan att förhandla\"],[\"Exit\",\"10- och 20-dagars motbrott; inga vinstmål\",\"sitta kvar i vinnaren när varje instinkt vill ta vinst\"],[\"Enhetstak\",\"4 per marknad; 6/10 korrelerade; 12 per riktning\",\"räkna exponering, inte instrument — guld och silver är en position\"],[\"Saknas helt\",\"prognoser, fundamenta, makro, undantag\",\"leva utan berättelser — för de flesta omöjligt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Negativa rymden-övningen: skriv ner DIN investeringsprocess regler — och sedan, i en andra kolumn, allt processen INTE innehåller (prognoser du avstår från, undantag du förbjuder, nyheter du ignorerar). Vilken kolumn är längst? Hos Turtles är den negativa kolumnen överlägsen — och det är den som skiljer system från aktivitet. Om din första kolumn är längst har du en aktivitetslista, inte ett system."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — systemets kärna är risk före signal, och det är exakt AK1TS:s grammatik: Brytpunkten (stoppet) definieras före ingången, storleken kommer från divisionen risk dividerat med avstånd, och Våg-regimen avgör om tesen ens får en chans. I AKM1 är V19 Kapitalförbränning & Emission-risk den fundamentala 2N-regeln — bolagets kassaflöde sätter nivån där tillväxttesen är fel, och emissionen är dess stopp. Två adresser, en matematik."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Covels specifika läsning av Turtle-systemet?",
+          "alternativ": [
+            "Att signalerna är det viktigaste och riskmatematiken sekundär",
+            "Att signalerna är triviala att lära — det som skilde klassen åt var riskmatematiken och framför allt efterlevnaden av den",
+            "Att systemet var för komplext för två veckors undervisning",
+            "Att systemet saknade riskhantering helt"
+          ],
+          "ratt": 1,
+          "tips": "Vad KAN tas på två veckor — och vad visade sig kräva två år?"
+        },
+        {
+          "q": "Vad menas med systemets negativa rymd?",
+          "alternativ": [
+            "Att det handlar om rymdmönster i grafer",
+            "Att systemet aldrig hade förlustår",
+            "Allt systemet INTE innehåller — prognoser, fundamenta, makro och undantag är helt borta",
+            "Att Turtles handlade i mörka rum"
+          ],
+          "ratt": 2,
+          "tips": "Askesen är poängen: vad fick Turtles leva UTAN som golvet omgav sig med?"
+        },
+        {
+          "q": "Var fullständig positionsstorleksmatematik med räkneexempel i svenska kronor finns i ekosystemet?",
+          "alternativ": [
+            "I den här kursens kapitel 10",
+            "I Way of the Turtle-kursens kapitel 7 — N, enhet, stopp och pyramid i SEK",
+            "Nuvarande kursen räcker — det finns inget mer att lära",
+            "I Market Wizards-kursens appendix"
+          ],
+          "ratt": 1,
+          "tips": "Covel komprimerar; Faith-kursen räknar. Vilket kapitel i den kursen ägnas åt N-matematiken?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Personligheter och kulturella krockar — rebeller i handelsgolvet",
+      "intro": "Covels mest underhållande kapitel är de som ingen annan kunnat skriva: personligheterna. Ett dussin tjugoåringar utan terminserfarenhet — spelteoretiker, programmerare, nyutexaminerade — kastades in i Chicagos handelskultur med en kedjerökande miljonär som anti-etablissemangsöversättare. Krockarna var inte biverkningar; de var experimentets andra halva.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sätt ihop gruppen igen, som Covel portätterar den: Curtis Faith, nitton år, den yngste — schackhjärna och spelare, uppvuxen med datorer. Jerry Parker, ungefären lika ung, metodiskt lugn, senare gruppens kommersiella storhet. Liz Cheval — en av få kvinnor på Chicago-golvet, matematiskt skarp, med vilja av stål. Paul Rabar, Howard Seidler, Mike Shannon, Jim DiMaria — olika åldrar, olika bakgrunder, gemensam nämnare att INGEN av dem var handelsetsablissemangets produkt. De flesta var unga nog att inte ha hunnit bygga egna sanningar om marknader — och det var kanske det viktigaste urvalskriteriet av alla: oskrivna tavlor tar bättre emot en bruksanvisning."
+        },
+        {
+          "type": "text",
+          "content": "Krocken med handelsgolvet var kulturell och nästan komisk: Chicagos terminsbörser var en värld av aktiemäklare i slips, lokalpatriotism, muntliga avtal och århundradens hantverksstolthet — och in i den världen installerade Dennis ett gäng ungar som handlade ur en PDF-filens förfader, med regler en dator kunde köra, klädda som studenter, utan intresse för skördeskador eller OPEC-möten. Veteraner avfärdade dem som Dennis dockor — och hade delvis rätt, vilket var hela poängen: dockorna tjänade mer än veteranerna. Dennis egen person förstärkte krocken: miljonären som drog jämnt med golvet men ogillade dess kultur, engagerad i vänsterpolitik, finansierande aktivister med handelsvinster. Att han sedan kandiderade till kongressen med samma pengar gjorde honom omöjlig att placera i Chicagos ekosystem — en fri kanin som bevisade att system, inte stamträning, bär handel."
+        },
+        {
+          "type": "text",
+          "content": "Och de inre krockarna, som Covel fångar i intervjuerna och som är kursens organisatoriska läxa: klassen var inte en harmonisk cell utan en grupp tävlande individer med olika konton, olika frustrationer och olika tålamod. Somliga tyckte riskgränserna kvävde dem — de begärde större konton och fick delvis det efter framgångar; somliga aggades åt att klasskamrater handlade större; klass två fick mindre konton än klass ett och noterade det; när vissa lämnade programmet i förtid — Jerry Parker bland de första, för att grunda eget — lämnades resten med frågan om lojalitet kontra karriär. Det är en påminnelse om att ett system exekveras av en ORGANISATION, och organisationer läcker: genom avund, genom ego, genom konkurrens om begränsade resurser. AK1A:s organstruktur är byggd på samma insikt — separata roller, definierade gränssnitt — men Turtle-klassen visar vad som händer när incitament och känslor inte längre pekar samma väg: reglerna blir förhandlingsbara inifrån, inte bara utifrån."
+        },
+        {
+          "type": "insikt",
+          "content": "Turtles var doktorandstudenter i ett hantverksghetto: yngre, oskolade i golvet kultur — och just därför lämpliga. Oskrivna tavlor tar emot bruksanvisningar; skrivna försvarar sina anteckningar. Välj lärplan efter vad du är villig att radera."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kulturella krockar — tre nivåer\",\"rader\":[[\"Nivå\",\"Krock\",\"Läxa\"],[\"Mot handelsgolvet\",\"regelstyrda tjugoåringar utan slips mot hantverkets veteraner — de blev hånade som dockor och överträffade hånarna\",\"system, inte stamträning, bär handel\"],[\"Inom gruppen\",\"olika konton och storlekar skapade avund och förhandlingar om riskgränser\",\"organisationer läcker genom ego — incitament måste peka samma väg\"],[\"Mot läraren\",\"somliga lämnade programmet i förtid för eget; Dennis politik skilde honom från golvets värld\",\"lojalitet konterar karriär — programmet designades för att överleva avfarter\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Krockinventering: fyll i tabellen för ditt eget investerande. Rad ett — kultur: vilken skola är du produkt av (bank, forum, familj, böcker) och vilka delar av den försvarar du emotionellt? Rad två — grupp: vem avundas du i ditt investerande, och har avunden förändrat din risk? Rad tre — läromästare: vilken regel har du övergivit för att en mästare bröt den? Tre rader, tre namngivna känslor. Det är din inre Turtle-klass — och den läcker precis som originalet."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den kanske viktigaste gemensamma nämnaren i urvalet, enligt kursens läsning av Covels portätt?",
+          "alternativ": [
+            "Alla hade tio års erfarenhet av handelsgolvet",
+            "De flesta var unga och oskolade i golvet kultur — oskrivna tavlor som kunde ta emot en bruksanvisning",
+            "Alla kom från samma universitet",
+            "Alla var släkt med Dennis"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en bruksanvisning när tavlan redan är fullskriven med egna sanningar?"
+        },
+        {
+          "q": "Hur bemöttes Turtles av handelsgolvet?",
+          "alternativ": [
+            "Som kungligheter med omedelbar respekt",
+            "Som Dennis dockor — hånade för sitt regelstyrka, klädda som studenter, ointresserade av golvet hantverkskunskap",
+            "De arbetade anonymt utan att någon märkte dem",
+            "De förbjöds att handla på börsen"
+          ],
+          "ratt": 1,
+          "tips": "Vad kallar ett stolt hantverk dem som ersätter hantverk med manual?"
+        },
+        {
+          "q": "Vad visar de inre krockarna i Turtle-klassen enligt kursen?",
+          "alternativ": [
+            "Att reglerna var felkonstruerade",
+            "Att ett system exekveras av en organisation — och organisationer läcker genom avund, ego och konkurrens om resurser",
+            "Att Dennis borde anställt äldre människor",
+            "Att klasserna borde ha haft samma konton från början, vilket löste allt"
+          ],
+          "ratt": 1,
+          "tips": "Varifrån gjorde reglerna förhandlingsbara — bara utifrån, eller också inifrån gruppen?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Guldpokalen — 150 miljoner dollar på fyra år",
+      "intro": "Utfallet, i siffror och enligt båda böckerna i stort överensstämmande: gruppen tjänade över 150 miljoner dollar på knappt fem år. Men Covel är den som sätter siffrorna i tidssammanhang — och kurserna i ärlighet måste därför ställa frågan: hur mycket var system, hur mycket var epoken?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Åren 1984 till 1988 var trendföljningens guldålder, och Covel säger det rakt: Volckers desinflation hade skapat långsamma, kraftfulla rörelser i räntor och valutor; dollarn trendade som en kult och råvarorna svängde i breda bågar. Ett system som köper utbrott och låter vinnare löpa är konstruerat för exakt en sådan värld — Turtles hamnade i en tiokamp med medvind. Inom den medvinden: enskilda Turtles red trender som guld nedåt 1983–85, oljans svängningar, räntekollapsen och börskraschen 1987 — den klass av händelser där utbrottssystem vinner som mest medan marknadens övriga delar flyger i bitar. Faith gör i sin bok anspråk på drygt 31 miljoner dollar i vinst för Dennis räkning; Jerry Parker blev enligt flera berättelser den som förvaltade sitt resultat bäst över tid; och klassen som helhet passerade, som sagt, 150 miljoner dollar. Siffrorna är spektakulära — och de ska nu paras med sin motsiffra i kapitel 9: inte alla delade pokalen."
+        },
+        {
+          "type": "text",
+          "content": "Räkna på incitamentet igen, för det förklarar dynamiken under pokalåren: 15 procent av vinsterna på ett konton i miljonklassen gör en duktig Turtle till en välbetald professionell på bromsad tid — och Dennis skala upp kontona för dem som visade disciplin. Framgång alltså belönades med mer kapital att vara disciplinerad med: systemet växte inuti experimentet, från engångsförsök till fabrik. Covel fångar fascinerande detalj i detta: själva framgången skapade experimentets första strukturerade problem — hur hantera interna stjärnor som ville ha större konton, yttre spekulanter som ville in, och riskgränser som sattes efter individens historik snarare än efter klassens gemensamma optimum. Här föds det kapitalförvaltningsproblem som sedan definierade Turtle-eftermålet: när metoden visar sig skalbar blir organisationen — inte signalen — flaskhalsen."
+        },
+        {
+          "type": "text",
+          "content": "Och ärlighetsredovisningen, som kursen kräver av varje backtest och därför av varje legend: ett system testat bara i sin bästa epok är ett system otestat (Way of the Turtle-kursens kontroverskapitel gör samma punkt). Turtles MEDVIND är därför inte ett argument MOT systemet — den som presterar i medvind bevisar ingenting om sig själv, men den som dessutom PRESTERAR i motvind bevisar något. Efter experimentets slut fick världen den kompletterande prövningen: Eckhardt och eleverna fortsatte genom decennier av tuffare, mer crowdat marknad — vissa med bravur (Parker, Rabar, Cheval), Dennis själv med fall (kapitel 10), och hela trendföljarbranschen med mattade resultat när alla handlar samma signaler (kapitel 13). Lärdomen är strukturell, inte pessimistisk: närvaron av en guldålder i en resultathistoria är inte ett kryss — den är en fråga: vad hände när guldåldern tog slut? Turtle-sagan har, som få andra, ett svar."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga alltid en resultathistoria om dess väder: vilken epok körde systemet i? Medvind bevisar ingenting — men den som också lämnar in ett facit från motvind har levererat ett bevis. Turtle-sagan är sällsynt därför att den har båda."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Guldpokalen — resultat, epok och ärlighetsredovisning\",\"rader\":[[\"Post\",\"Siffra eller svar\",\"Källa och tvivel\"],[\"Gruppens vinst\",\"över 150 miljoner dollar på knappt fem år\",\"båda böckerna, i stort överensstämmande\"],[\"Faiths anspråk\",\"drygt 31 miljoner dollar för Dennis räkning\",\"Faiths egen bok — ifrågasatt av andra Turtles, se kapitel 12\"],[\"Epoken\",\"1984–1988: desinflation, dollartrender, räntekollaps, kraschen 1987 — trendföljningens guldålder\",\"Covel och senare forskning om teknisk handels avklingning\"],[\"Systemets andel\",\"okänd i exakta tal — medvind är konfirmerande men inte bevisande\",\"kursens hållning: epoken är en fråga, inte ett kryss\"],[\"Kompletterande prövning\",\"efter 1988: vissa elever fortsatte briljera, Dennis föll, branschen mattades\",\"kapitel 10–13\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Väder-testet på din egen historik: ta din avkastning de senaste fem åren och ställ den mot index och ränta för samma period. Fråga: vilka år hade du medvind (fallande ränta, uppmarknad) och vilka motvind? Om dina bästa år sammanfaller med marknadens bästa år vet du ännu inget om din metod — bara om dess temperatur. Skriv en mening om vad du skulle behöva visa upp för att bevisa metod i motvind. Det är din kompletterande prövning, precis som Turtle-sagans."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken epok föll Turtle-experimentets resultatår inom?",
+          "alternativ": [
+            "1930-talet depression",
+            "Trendföljningens guldålder — desinflation, dollartrender, räntekollaps och kraschen 1987",
+            "En helt trendlös sidledsmarknad",
+            "Andra världskrigets ransonering"
+          ],
+          "ratt": 1,
+          "tips": "Vilken sorts marknadsmiljö gynnar utbrottssystem som köper styrka och låter löpare löpa?"
+        },
+        {
+          "q": "Vad är kursens hållning till medvinden i resultathistorien?",
+          "alternativ": [
+            "Medvind bevisar att systemet är ointressant",
+            "Medvind bevisar ingenting om systemet — men den som också levererar facit från motvind har bevisat något",
+            "Medvind ska raderas ur alla berättelser",
+            "Epoken är irrelevant för resultat"
+          ],
+          "ratt": 1,
+          "tips": "Fråga alltid om väder — och om historien innehåller åtminstone en vinter."
+        },
+        {
+          "q": "Vilket strukturerat problem skapade framgången inom programmet?",
+          "alternativ": [
+            "Att Dennis slutade betala ut vinster",
+            "Att stjärnorna begärde större konton, yttre kapital ville in — organisationen, inte signalen, blev flaskhalsen",
+            "Att alla Turtles presterade identiskt",
+            "Att börsen stängde terminshandeln"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med ett experiment som visar sig skalbart — vad blir nästa begränsning?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Samma regler, olika utfall — stjärnor, medelmåttor och sparkade",
+      "intro": "Experimentets kärnfynd, nu i Covels version: med identiska regler, identisk utbildning och i stort identiskt kapital blev somliga Turtles förmögna för livet — medan andra underpresterade, bröt mot reglerna eller kördes ut. Faith skriver om det inifrån; Covel har intervjuerna med dem som såg det utifrån — och de som inte längre vill prata.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mönstret, som båda böckerna bekräftar från var sin sida: spridningen i utfall var dramatisk. Samma system, samma lärare, samma två veckors kurs — och ändå: vissa tjänade tiotals miljoner dollar medan andra tappade fotfästet eller sparkades. Avvikelserna var, enligt Covels intervjuer, av precis de slag Faith beskriver inifrån: den som tog vinster i förtid och kapade löparna; den som hoppade över signaler efter förlustserier; den som handlade över riskgränserna och fick sitt konto draget ned; den som vägrade acceptera systemets dom och förhandlade med varje stopp. Notera kausaliteten: det var inte så att de misslyckade FÖR ATT de bröt reglerna — det var så att de bröt regler FÖR ATT de inte tålde det systemet utsatte dem för: förlustserier, tristess, frånvaron av berättelser. Reglerna testade inte kunskapen; de testade karaktären — och karaktären var det enda i klassrummet som inte fick två veckors undervisning."
+        },
+        {
+          "type": "text",
+          "content": "Covel tillför perspektivet ingen annan kan ge: VAD STORA SKILLNADER I RESULTAT SKAPAR I EN GRUPP. De som lyckades fick större konton, mer uppmärksamhet, mer självförtroende — förstärkningen byggde in sig själv. De som underpresterade fick minskade konton, misstro och i sämsta fall en dörr — och deras exit berättelser är i Covels bok de mest mänskliga: skam, förnekelse, omprövning av hela experimentet i efterhand (några av de mindre framgångsrika Turtles har i efterhand förminskat experimentets betydelse — gissa vilka). Det är en pedagogisk guldådra för AK1A:s diagnos-tänk: den som misslyckas med ett system har sällan uttrycket »jag följde inte reglerna« i sitt minne; minnet formulerar det som »reglerna fungerade inte för mig«. Utfallsbias och självbild skriver historien om — och därför krävs utomstående journalister som Covel för att alls få fram spridningen, och innehavare av systemet som Faith för att få fram mekanismen."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till ekosystemet är rak och dubbel. Mot Quantitative Value-kursen: jedis kontra clones — reglerna slår karisman där, men Covel tillför att INOM klonerna finns det ändå en spridning, eftersom klonen har en människa i ryggen. Mot Market Wizards-kursen: Van Tharps fördelning 60 psykologi, 30 positionsstorlek, 10 system är här dess experimentella underlag — systemet (10 procent) var identiskt för alla, psykologin (60) skilde miljonärerna från de sparkade. Och mot AK1TS: samma data, samma svar, varje dag är detsamma som att säga samma frestelse, samma avstånd, varje dag — determinismens pris är att den inte förhandlar om just din dag. Ingen i klassrummet misslyckades med att FÖRSTÅ systemet. Alla misslyckades — de som misslyckades — med att vara maskinen när det gjorde ont."
+        },
+        {
+          "type": "insikt",
+          "content": "Spridningen är fyndet: med identiska regler var den enda fria variabeln människan. Turtle-experimentet är därför historiens renaste bevis på Tharps 60/30/10 — och en varning: det som testades i Chicago 1984 testas varje dag i din portfölj, med dig som enda försöksperson."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Samma regler — beteenden som skilde utfallen\",\"rader\":[[\"Situation\",\"Regelföljaren\",\"Regelbrytaren\"],[\"Efter förlustserie\",\"tar nästa signal orubbligt\",\"hoppar över — och missar årets löpare\"],[\"Vinnande position\",\"sitter kvar till exitregeln\",\"tar vinst i förtid — kapar löparna\"],[\"Riskgränser\",\"räknar exponering; håller taken\",\"handlar över — och får kontot draget ned\"],[\"Stopp\",\"betalar 2N utan förhandling\",\"förhandlar, flyttar, hoppas\"],[\"Efteråt, i minnet\",\"jag följde systemet — vintern var dess andning\",\"reglerna fungerade inte för mig\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Spridnings-testet, hemmaversion: ta de fem senaste avvikelserna du gjort från dina egna skrivna regler (eller från din plats-pamp, om du har en). Klassificera var och en: förtida vinsttagning? överhoppad signal? flyttat stopp? för stor position? Räkna sedan kronor per kategori — vilken avvikelse har kostat dig mest? Den kategorin är din klasskämpe — och den behöver inte mer information, den behöver en sanktion. Skriv den (se kapitel 5:s kontraktsövning)."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — V19 Kapitalförbränning & Emission-risk är fundamentala sidans spridningsvariabel: två bolag med liknande V01–V18 kan skilja sig som miljonär-Turtle och sparkad Turtle enbart på hur länge kassan räcker genom vintern. En analys som inte väger V19 är en klasslista utan betyg på det enda provet som avgjorde."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den avgörande skillnaden mellan Turtles som lyckades och de som misslyckades?",
+          "alternativ": [
+            "Intelligens och utbildningsnivå",
+            "Tidigare erfarenhet av terminer",
+            "Disciplinen — de följde reglerna medan andra tog vinster i förtid, hoppade över signaler och bröt mot riskgränserna",
+            "Storleken på deras startkonton"
+          ],
+          "ratt": 2,
+          "tips": "Alla hade samma regler, lärare och kapital — vilken variabel återstår?"
+        },
+        {
+          "q": "Vilken mekanism beskriver kursen i de mindre framgångsrika Turtles efterhandsberättelser?",
+          "alternativ": [
+            "De berömmer systemet och skyller sig själva",
+            "Minnet formulerar misslyckandet som att reglerna fungerade inte för mig — i stället för att jag följde inte reglerna — utfallsbias och självbild skriver historien",
+            "De har alla blivit Dennis bäste vänner",
+            "De vägrar tala om saken helt och hållet"
+          ],
+          "ratt": 1,
+          "tips": "Vem skriver historien när den som förlorade får pennan — och vad förlorar precisionen?"
+        },
+        {
+          "q": "Vad är kopplingen till Van Tharps 60/30/10-fördelning?",
+          "alternativ": [
+            "Turtle-experimentet motsäger Tharp",
+            "Systemet (10 procent) var identiskt för alla medan psykologin (60) skilde utfallen — experimentet är fördelningens experimentella underlag",
+            "Tharps fördelning gäller bara värdeinvesterare",
+            "Positionsstorlek var allt — 10 och 60 spelar ingen roll"
+          ],
+          "ratt": 1,
+          "tips": "Vad var konstanthalten i experimentet — och vad blev då den enda variabeln?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Dennis fall — 1987–1988 och slutet på experimentet",
+      "intro": "Saga mörkaste kapitel, och det som gör Covel nödvändig: skaparen av världens mest disciplinerade regelverk föll själv — tunga förluster i kölvattnet av 1987 års krasch, enligt samtida rapporter, följt av tillbakadragandet från klientkapital och experimentets nedstängning. Faith och Covel är inte ense om orsakerna. Det här kapitlet skiljer på siffrorna, tolkningarna och vad fallet bevisar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fakta i den mån offentliga källor ger: efter kraschen i oktober 1987 och genom 1988 red Dennis stora förluster — samtida rapporter talar om tiotals miljoner dollar i förlorat eget kapital och svåra nedgångar i de fonder han förvaltade; vissa skildringar sammanfattar att han förlorade i storleksordningen hälften av sin förmögenhet. Han drog sig tillbaka från att förvalta andras pengar, och Turtle-programmet — som redan tappat flera av sina bästa elever till egna bolag — stängdes i praktiken ned kring 1988. Kontexten gör fallet större än siffrorna: samma år som hans maskin-elever byggde sina CTA-bolag, och hans partner Eckhardt fortfor att handla mekaniskt med stabila resultat, föll arkitekten. Ordningen i den meningen är hela kapitlet."
+        },
+        {
+          "type": "text",
+          "content": "Orsakerna — här delar sig källorna, och kursen redovisar båda lägren öppet. FAITHS TOLKNING, inifrån: Dennis föll därför att han bröt mot sina egna regler — han handlade diskretionärt, tog för stor risk och tappade den discipl han lärt ut; fallet bevisar regelverkets nödvändighet, inte dess brister. COVELS BILD, utifrån: mer komplex — förlusterna satt i en blandning av tunga positioner, hävstång och marknadens extrema väder, POLITISKA engagemang tog tid och kapital (två kongresskampanjer med stora egenutgifter låg bakom honom), och klientkapital tenderar att lämna just när strategin som bäst behöver få vara kvar — mekanismen som Valuesidans kurs kallar dumb money-paradoxen, nu på förvaltarsidan. Vad faller BEVISAR det? Kursens svar: ingetdera ledet ensamt. Dennis fall bevisar inte att reglerna var dåliga (Eckhardt körde vidare), inte heller att miljön är allt (Dennis hade miljön och föll ändå). Det bevisar att discipl är en egenskap som gäller per domän och per säsong — och att den inte är förpansrad i ryggraden ens hos den som uppfunnit den."
+        },
+        {
+          "type": "text",
+          "content": "Och comebacks, för fullständighetens skull: under 1990-talet återkom Dennis till förvaltning i omgångar, med resultat som beskrivs som blandade; han fortsatte att handla för eget räkning och förblev en offentlig röst om marknader och politik. Lärdomen för en AKM1-elev är ödmjuk och strukturell: fallet förändrade inte experimentets fynd — samma regler, olika människor, olika utfall, ARKITEKTEN INKLUDERAD. Dennis själv blev experimentets sista datare: mannen som bevisade att metoden kan läras ut bevisade med sitt eget fall att efterlevnaden inte kan delegeras. Eckhardt — som inte trodde på att traders kan göras — förblev maskinens trognaste operatör. Världshistorien skriver inte bättre ironier."
+        },
+        {
+          "type": "insikt",
+          "content": "Dennis fall bevisar inte att reglerna var fel — hans elev och partner körde dem vidare i decennier. Det bevisar att discipl är per domän och per säsong, och att den som uppfunnit den inte äger den automatiskt. Arkitekten var experimentets sista försöksperson."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dennis fall — fakta, tolkningar, bevisvärde\",\"rader\":[[\"Post\",\"Innehåll\",\"Källa och tvivel\"],[\"Förlusterna 1987–1988\",\"tiotals miljoner dollar eget kapital enligt samtida rapporter; vissa skildringar omkring hälften av förmögenheten\",\"offentliga rapporter — exakta tal osäkra\"],[\"Konsekvenserna\",\"tillbakadragande från klientkapital; Turtle-programmet nedlagt kring 1988\",\"båda böckerna\"],[\"Faiths tolkning\",\"Dennis bröt mot sina egna regler — diskretion, för stor risk; fallet bevisar regelverkets nödvändighet\",\"Way of the Turtle, inifrån-perspektiv\"],[\"Covels bild\",\"blandning av tunga positioner, hävstång, extrema marknader, politiskt engagemang och kapitalutflöden\",\"The Complete TurtleTrader, utifrån-perspektiv\"],[\"Bevisvärde\",\"reglerna var inte dåliga (Eckhardt körde vidare) och miljön räcker inte (Dennis hade den) — discipl är per domän och säsong\",\"kursens dom\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Arkitektens test: identifiera den regel du själv SKAPAT för ditt investerande — den du är mest stolt över, den du lär ut till andra (om så bara till din partner). Granska sedan dina senaste tolv månader: följde DU den? Med vad för avvikelser? Det du hittar är Dennis-spegeln: reglernas upphovsman är inte deras bästa kund. Skriv avvikelserna bredvid regeln — och välj en av dem att sanktionera (se kapitel 5)."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — Dennis fall är V19 Kapitalförbränning & Emission-risk i mänsklig edition: en förmögenhet utan riskgräns är ett bolag utan kassaflödeskontroll — politiska utgifter och hävstång blev hans emission, utspädningen av hans frihet. Ett system som inte överlever sin skapares sämsta säsong är inget system; det var det experimentet bevisade — i positiv och negativ riktning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka förlustsiffror för Dennis 1987–1988 förmedlas?",
+          "alternativ": [
+            "Inga förluster alls — han slutade innan kraschen",
+            "Tiotals miljoner dollar i förlorat eget kapital enligt samtida rapporter; vissa skildringar omkring hälften av förmögenheten",
+            "Exakt tusen dollar",
+            "Endast klientpengar förlorades, ingen egen"
+          ],
+          "ratt": 1,
+          "tips": "Siffrorna är osäkra i exakta tal — men ordningen tiotals miljoner och andelen av förmögenheten återkommer i rapporterna."
+        },
+        {
+          "q": "Vad är den väsentliga skillnaden mellan Faiths och Covels tolkningar av Dennis fall?",
+          "alternativ": [
+            "Faith skyller Eckhardt; Covel skyller Turtles",
+            "Faith: Dennis bröt mot sina egna regler — diskretion och för stor risk. Covel: mer komplext — tunga positioner, hävstång, extrema marknader, politik och kapitalutflöden",
+            "Båda håller med om att politik var enda orsaken",
+            "Båda anser att reglerna var felkonstruerade från början"
+          ],
+          "ratt": 1,
+          "tips": "Inifrån ser ett fall ut som regelbrott; utifrån som en orsakskedja — vad ser journalisten som eleven inte kan?"
+        },
+        {
+          "q": "Vad bevisar Dennis fall enligt kursen?",
+          "alternativ": [
+            "Att reglerna var dåliga",
+            "Att miljön är allt",
+            "Att discipl är per domän och per säsong — och att den som uppfunnit en regel inte äger den automatiskt",
+            "Att trading är omöjligt att lära ut"
+          ],
+          "ratt": 2,
+          "tips": "Eckhardt körde samma regler vidare stabilt — vilken förklaring återstår?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Efter spåret — vad Turtles blev",
+      "intro": "Experimentets sista akt är dess starkaste replikationsbevis: klassrummet blev en bransch. Covel följer Turtles efter programmet — Jerry Parker och Chesapeake Capital, Liz Cheval och EMC, Paul Rabar, Howard Seidler, Mike Shannon — och Faith på sin egen, krokigare väg. Efter-spåret är anledningen att saga inte kan avfärdas som en lyckos omgång.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Namnen, som Covel redovisar med den kärlek ett dussin år av intervjuer ger: JERRY PARKER — klassens kommersiella storhet. Han lämnade programmet i förtid och grundade Chesapeake Capital, som under decennier växte till en av USA:s största trendföljande CTA-förvaltare med miljarder dollar under förvaltning. Parkers hemlighet var enligt flera berättelser just det experimentet lärde: han skalade DISCIPLINEN, inte storslåtheten — en metodiskt lagom man som vann genom att aldrig vara intressant. LIZ CHEVAL — grundade EMC Capital Management och förblev i decennier en av branschens mest respekterade trendföljare. PAUL RABAR — Rabar Market Research, samma mönster: mekaniskt, ihärdigt, decennielångt. HOWARD SEIDLER — Saxon Investment. MIKE SHANNON — egen CTA-verksamhet. Och sedan de många som lämnade branschen, med varierande utfall och varierande berättelser om experimentet — deras röster är Covels ensamrätt och gör boken rikare än någon hjälteberättelse."
+        },
+        {
+          "type": "text",
+          "content": "Faiths väg är den mest krokiga och mest omskrivna: efter experimentet lämnade han handeln, arbetade med mjukvara och teknikentreprenad i Kalifornien, försvann ur offentligheten — och återkom 2003 med publiceringen av hela Turtle-regelverket gratis på nätet, med argumentet att sekretessavtalet spelat ut sin roll. Gesten retade en del klasskamrater, vars levebröd var just systemen. 2007 utkom hans Way of the Turtle — och därmed stod två böcker om samma experiment på marknaden samtidigt, vilket födde den offentliga duell som nästa kapitel går igenom. Faiths påstådda resultat — drygt 31 miljoner dollar åt Dennis — är experimentets mest omdiskuterade enskilda siffra: han själv står för den, andra Turtles har ifrågasatt den, och ingen extern revision finns. Notera mönstret från kapitel 4: legendens största påståenden saknar oftast arkiv — och det gör dem inte falska, bara mån om tro."
+        },
+        {
+          "type": "text",
+          "content": "Och helhetsläsan av efter-spåret, som är kursens argument för experimentets bevisvärde: OM resultaten 1984–1988 hade varit en lyckos omgång skulle klassrummet ha producerat ETT decennielångt förvaltningsliv — slumpen slår inte igen genom tjugo olika liv. I stället grundades ett halvdussin självständiga bolag på samma regler, med varaktiga karriärer och offentligt rapporterade track records, medan Dennis — reglernas upphovsman — föll. Replikeringen är experimentets starkaste ben: klass två replikerade klass ett, eleverna replikerade systemet i egna bolag, och branschen replikerade dem. Way of the Turtle-kursen sammanfattade den mekanism som nu mattar den (Morton-Davis: kanter urholkas när alla handlar samma signal) — men det är en annan fråga än om fyndet var sant. Fyndet var sant. Kanten var en resurs. Båda kan gälla — det är skillnaden mellan en legend och en lärobok."
+        },
+        {
+          "type": "insikt",
+          "content": "Efter-spåret är beviset: slumpen skapar inte sex decennielånga förvaltningsbolag ur ett klassrum. Om ett experiment ska tas på allvar, fråga inte efter dess bästa år — fråga efter vad deltagarna blev. Turtles blev en bransch."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Efter spåret — huvudpersonerna och deras vägar\",\"rader\":[[\"Huvudperson\",\"Väg efter experimentet\",\"Läxa\"],[\"Jerry Parker\",\"Chesapeake Capital — lämnade programmet i förtid; en av USA:s största trendföljande CTA:er med miljarder under förvaltning\",\"skala disciplinen, inte storslåtheten\"],[\"Liz Cheval\",\"EMC Capital Management — respekterad trendföljare i decennier\",\"kvinnan som handelsgolvet avfärdade blev en av dess bästa\"],[\"Paul Rabar / Howard Seidler / Mike Shannon\",\"Rabar Market Research; Saxon Investment; egen CTA-verksamhet\",\"klassrummet blev en bransch\"],[\"Curtis Faith\",\"lämnade handeln; mjukvaruentreprenad; publicerade reglerna gratis 2003; boken 2007\",\"historikern med de omdiskuterade siffrorna\"],[\"Richard Dennis\",\"föll 1987–1988; tillbaka från klientkapital; comeback-försök med blandade resultat\",\"arkitekten var experimentets sista försöksperson\"],[\"William Eckhardt\",\"Eckhardt Trading Company — mekanisk trendföljning i decennier\",\"maskinen trampar vidare\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Efter-spår-testet, tillämpat på dig: vilka är de tre bästa beslut du någonsin fattat i investerandet? För varje beslut, ställ den avgörande frågan: vad BLEV det — alltså vilken återkommande förmåga, vilket återanvänt verktyg, vilken varaktig process uppstod ur det? Om svaret är ingenting — engångsvinster utan avkomma — var det slump, inte skick. Räkna andelen av dina bästa beslut som producerade varaktiga processer. Det är din personliga replikeringsgrad."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vem blev den kommersiellt störste Turtle?",
+          "alternativ": [
+            "Curtis Faith",
+            "Jerry Parker — som lämnade programmet i förtid och byggde Chesapeake Capital till en av USA:s största trendföljande CTA-förvaltare",
+            "Richard Dennis själv",
+            "William Eckhardt"
+          ],
+          "ratt": 1,
+          "tips": "Vem skalade disciplinen under decennier med miljarder under förvaltning?"
+        },
+        {
+          "q": "Vad gör Faiths påstådda 31 miljoner dollar i vinster så omdiskuterade?",
+          "alternativ": [
+            "De är externt reviderade och bevisade",
+            "Siffran kommer från Faith själv, saknar extern revision och har ifrågasatts av andra Turtles",
+            "De gäller en annan persons handel",
+            "Ingen har någonsin ifrågasatt dem"
+          ],
+          "ratt": 1,
+          "tips": "Vem äger siffran — och vem kan kontrollera den?"
+        },
+        {
+          "q": "Varför är efter-spåret experimentets starkaste bevis?",
+          "alternativ": [
+            "Därför att alla Turtles blev miljardärer",
+            "Därför att slumpen inte skapar ett halvdussin självständiga, decennielånga förvaltningsbolag ur ett klassrum — replikeringen bekräftar fyndet",
+            "Därför att Dennis gick i konkurs",
+            "Därför att böckerna sålde bra"
+          ],
+          "ratt": 1,
+          "tips": "Vad krävs för att ett enskilt resultat ska få anses vara mer än en lyckos omgång?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Kontroversen — Covel mot Faith: två versioner av samma historia",
+      "intro": "Kursens viktigaste kapitel: 2007 utkom två böcker om samma experiment — och författarna är inte ense. Annonsen, Faiths 31,5 miljoner, vem som var den främsta Turtle, orsakerna till Dennis fall. Kapitlet går igenom tvisterna punkt för punkt, redovisar bägge parts intressekonflikter öppet — och slår fast AK1A:s metod: flera källor, sanningen däremellan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tvisterna, en efter en, som kursen löper dem: ETT — ANNONSEN. Faith: den stod i Wall Street Journal. Covel: han sökte tidningens arkiv och kunde inte hitta den — kanske Barron's, kanske legendens förgyllning. Bedömning: arkivet vinner tills minnet bevisas; betydelsen för experimentets resultat är noll, betydelsen för historiemetoden är allt. TVÅ — FAITHS 31,5 MILJONER. Faith: han tjänade över 31 miljoner dollar åt Dennis. Covel: andra Turtles ifrågasätter eller småskrattar åt siffran, och ingen extern revision finns. Bedömning: möjlig men obevisad — en källas eget påstående om egen storhet vägs lägre än motstridiga vittnen, men högre än inga vittnen alls; ärligheten ligger i att bokföra den som just det. TRE — DEN FRÄMSTA TURTLE. Faith: sig själv (i vinst per handlare). Covel och konsensus: Parker (i varaktig storhet). Bedömning: ingen av dem ljuger — de mäter olika saker: enskild topp kontra byggd institution. Lärdomen: definiera måttet före du utser vinnaren."
+        },
+        {
+          "type": "text",
+          "content": "Fyra — DENNIS FALL. Faith: han bröt mot sina egna regler. Covel: en orsakskedja av tunga positioner, hävstång, extrema marknader, politiskt engagemang och kapitalutflöden. Bedömning: båda kan vara sanna samtidigt — regelbrott och orsakskedja är beskrivningar på olika nivåer (agentens handling, systemets väder) — och mogen analys håller båda. FEM — RÖSTERNAS SAKNAS: Dennis och Eckhardt medverkade inte i Covels bok; deras version av flera händelser finns alltså inte på bordet. En berättelse där huvudpersonerna tiger är en berättelse med hål — inte en falsk berättelse, men en ofullständig. OCH SEX — INTRESSEKONFLIKTERNA, som kursen kräver att även böckerna om källkritiken redovisar: Faith säljer sig själv som leverantör av tradingutbildning och böcker — hans berättelse har honom som hjälte. Covel byggde sitt varumärke på trendföljning och TurtleTrader.com, säljer böcker och utbildning i precis den tradition han skriver historia om — hans berättelse har legenden som motor. Ingendera ljuger för det; båda har snedvridande krafter — och därför behöver varandra som motvikter. Det är inte cinism; det är metod."
+        },
+        {
+          "type": "text",
+          "content": "Och AK1A:s hållning, sammanfattad i tre regler som gäller ALL källhantering i ekosystemet — analyser, kurser, nyheter, tips. ETT:Triangelprincipen — två oberoende källor som inte håller med varandra är bättre än en källa som håller med sig själv; använd deras avstånd som information, inte som irritationsmoment. TVÅ: Arkiv före minne — ett dokument slår ett återberättat intryck tills återberättelsen får dokument; minnet har demonstrerat sina svagheter i exakt den här sagan (annonsen, beloppen). TRE: Definiera måttet före vinnaren utses — de flesta tvister (vem var bäst, vilken strategi vann) är i grunden mätproblem, och de löses inte med mer övertygelse utan med definierade mått (vinst per handlare, varaktig förvaltning, riskjusterat resultat). Med de tre reglerna behöver du aldrig välja sida mellan Covel och Faith — du kan använda båda, tydligt märkta, och låta sanningen bo däremellan. Det är vad flera källor betyder i AK1A:s värld."
+        },
+        {
+          "type": "insikt",
+          "content": "Två böcker om samma experiment som inte håller med om detaljerna är inte ett problem att lösa utan ett verktyg att använda: deras avstånd visar var historien är mjuk. Triangelera, lita på arkiv före minne, definiera måttet före vinnaren — sanningen bor mellan källorna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Covel mot Faith — tvisterna punkt för punkt\",\"rader\":[[\"Tvist\",\"Faith (2007)\",\"Covel (2007)\",\"AK1A:s bedömning\"],[\"Annonsen\",\"Wall Street Journal\",\"kunde inte verifiera den i WSJ:s arkiv — kanske Barron's\",\"arkiv vinner tills minnet bevisas\"],[\"Faiths 31,5 miljoner\",\"han tjänade över 31 miljoner dollar åt Dennis\",\"andra Turtles ifrågasätter siffran; ingen extern revision\",\"möjlig men obevisad — en källas påstående om egen storhet\"],[\"Den främsta Turtle\",\"sig själv — vinst per handlare\",\"Parker — varaktig institution\",\"olika mått, olika vinnare — definiera måttet först\"],[\"Dennis fall\",\"bröt mot egna regler — diskretion och risk\",\"orsakskedja: positioner, hävstång, marknad, politik, utflöden\",\"båda sanna på olika nivåer — handling kontra väder\"],[\"Huvudrösterna\",\"Dennis och Eckhardt som lärare i berättelsen\",\"medverkade inte — deras version saknas\",\"en berättelse där huvudpersonerna tiger har hål\"],[\"Intressekonflikt\",\"säljer böcker och utbildning med sig själv som hjälte\",\"byggde varumärke på legenden; säljer trendföljning\",\"båda har snedvridande krafter — därför behövs varandra\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Triangelövningen på din egen källkedja: ta din nuvarande favoritaktie eller favoritstrategi. Lista de tre viktigaste källorna du byggt din tro på. För varje källa, notera: (1) är den dokument eller minne/åsikt; (2) har upphovsmannen ekonomiskt eller känslomässigt intresse i din tro; (3) finns en MOTKÄLLA som säger annorlunda — och vad gör du med den? Fyra frågor, tre källor. Om ingen motkälla finns har du inte sökt — börja där."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — kontroversen är skälet till att AK1A:s analys kräver källor redovisade öppet och att motargument ska sökas aktivt innan en rekommendation landar: V01–V20 poängsätts efter underlag, inte efter övertygelse, och Short-Sellern-modulen är ekosystemets inbyggda Covel — den röst som letar efter det som saknas i den egna berättelsen. En analys utan fiendeargument är en Faith utan Covel: sann, kanske — men omöjlig att veta."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gäller tvisten om annonsen?",
+          "alternativ": [
+            "Båda böckerna anger Barron's",
+            "Faith minns Wall Street Journal; Covel kunde inte hitta den i WSJ:s arkiv — kanske stod den i Barron's eller är en förgyllning",
+            "Covel bevisade att den stod i Wall Street Journal",
+            "Det finns ingen tvist om annonsen"
+          ],
+          "ratt": 1,
+          "tips": "Vilken av de två författarna letade i arkiv — och vad hittade han inte?"
+        },
+        {
+          "q": "Hur bedömer kursen Faiths påstående om 31,5 miljoner dollar i vinster?",
+          "alternativ": [
+            "Som bevisat bortom rimligt tvivel",
+            "Som helt falskt och därför oväsentligt",
+            "Som möjligt men obevisat — en källas påstående om egen storhet, utan extern revision, ifrågasatt av andra Turtles",
+            "Som irrelevant för historien"
+          ],
+          "ratt": 2,
+          "tips": "Vem äger påståendet, vem kan kontrollera det — och vad gör avsaknad av revision med dess bevisvärde?"
+        },
+        {
+          "q": "Vilken intressekonflikt redovisar kursen för BÅDA författarna?",
+          "alternativ": [
+            "Ingen av dem har några intressen alls",
+            "Båda säljer böcker och utbildning i traditionen de skriver om — Faith med sig själv som hjälte, Covel med legenden som motor för sitt varumärke",
+            "Endast Covel har intressekonflikt",
+            "Endast Faith har intressekonflikt"
+          ],
+          "ratt": 1,
+          "tips": "Vad säljer en författare vars bok har honom själv som hjälte — och vad säljer en vars varumärke är legenden?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Vad bevisade experimentet? — trendföljning, disciplin och kanter som klingar av",
+      "intro": "Samlingskapitlet: vad lärde Turtle-sagan faktiskt — och hur håller lärdomen i dag? Covel blev trendföljningens evangelist; forskningen om teknisk handel och kantoners avklingning ger motstycket. Kursen väger båda och landar i AK1TS:s syntes: determinism som grammatik — pedagogiskt, aldrig trading-system.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Experimentets bevis, som Covel sammanfattar det och kursen accepterar med sina förbehåll: trading KAN läras ut — ett dussin gallrade nybörjare odlade över 150 miljoner dollar på ett regelverk, och ett halvdussin av dem byggde varaktiga bolag på det. Det är nurture-fyndet, och det är historiskt unikt i sitt slag. Förbehållen, som kursen tillsatt ur kontroverslärorna: urvalet var dubbelgallrat (kapitel 4), epoken var guldåldern (kapitel 8), och miljön — kapital, sanktioner, kamratskap — följde inte med reglerna ut (kapitel 5). Fyndet står: metoden var lärlig. Gränsen står också: vem som helst bevisades aldrig. Båda halvorna behövs för att inte göra en lärobok till en annons — i vilken riktning än annonsen pekar."
+        },
+        {
+          "type": "text",
+          "content": "Och sedan avklingningen, öppet citerad: Park och Irwins genomgång från 2007 (What Do We Really Know About the Profitability of Technical Analysis?) sammanväger cirka 95 studier och finner blandade resultat — tidiga data, särskilt före 1987, visar ofta lönsamma tekniska regler medan nyare data ger svagare eller inga resultat efter transaktionskostnader. Sullivan, Timmermann och White (1999) visade att den historiskt bästa regeln på S&P 500 förlorade det mesta av sin kraft när man korrigerade för data-snooping — att man testat hundratals regler på samma data och behållit vinnaren. McLean och Pontiff (2016) visar att publicerade anormala avkastningar klingar av kraftigt efter publicering. Way of the Turtle-kursen kallade mekanismen Morton-Davis: en kant är en resurs — ju fler som utvinner den, desto snabbare urholkas den. Covel, som evangelist, välkomnar motstycket som bevis: att trendföljningens premier mattats när alla handlar den är det starkaste tecknet på att premien var reell. En falsk kant lockar inget kapital."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes, tre led. ETT — för AKM1: Turtle-sagan är det historiska beviset för ekosystemets djupaste hållning, att processen bär resultatet och att människan i processen är den aktiva risken (jedis kontra clones; strukturerad subjektivitet möter strukturerad objektivitet). V19 Kapitalförbränning & Emission-risk är den fundamentala 2N-regeln; V11 Likviditet är universumregeln; V12 Intäktsstabilitet är fördelningskännedomen som gör tålamod rationellt. TVÅ — för AK1TS: determinismen är Turtle-tänk för vågor — samma data, samma svar, varje dag — som grammatik och besluts-hygien, ALDRIG som trading-system; med medgivandet fullt synligt: de flesta som försöker mekanisk trading underpresterar, inte för att reglerna är hemliga utan för att disciplinen är sällsynt, och därför är vågmotorn pedagogik. TRE — för KÄLLKRITIKEN: sagan levererar ekosystemets renaste exempel på att flera källor behövs — två böcker, oeniga om detaljer, båda behövliga, sanningen däremellan. Ingen annan kurs i katalogen kan visa det på levande material: häri ligger Turtle-sagans unika pedagogiska värde för AK1A — den är en lärobok i metod som råkar handla om pengar."
+        },
+        {
+          "type": "insikt",
+          "content": "Turtle-sagan bevisade tre saker, inte en: metoden kan läras ut; människan som kör den är den aktiva risken; och kanter har bäst-före-datum. De tre hänger ihop — den som glömmer det tredje gör en religion av de två första."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bevis, förbehåll, forskning — och AK1A:s översättning\",\"rader\":[[\"Post\",\"Innehåll\",\"AK1A-översättning\"],[\"Bevis\",\"ett dussin gallrade nybörjare odlade över 150 miljoner dollar; ett halvdussin varaktiga bolag\",\"processen bär resultatet — jedis kontra clones\"],[\"Förbehåll\",\"dubbelgallrat urval; trendföljningens guldålder; miljön följde inte reglerna ut\",\"generalisera med ärlighet — lärobok, inte annons\"],[\"Avklingning\",\"Park och Irwin 2007; Sullivan, Timmermann och White 1999; McLean och Pontiff 2016\",\"förvänta avklingning — dimensionera därtill; Morton-Davis\"],[\"Disciplinfyndet\",\"samma regler, olika människor, olika utfall\",\"V19 som fundamentala 2N; daterade regler; miljö med sanktioner\"],[\"Syntes\",\"AK1TS = Turtle-tänk för vågor, pedagogiskt\",\"determinism som grammatik — aldrig trading-system\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bäst-före-inventeringen: lista de regler, skärmar eller sanningar som styr ditt investerande. Ge varje rad två datum — när den skapades och när den senast utvärderades mot data. För varje rad utan utvärderingsdatum, skriv nu ett sådant (om tolv månader). En kant utan bäst-före-datum är inte en kant — den är en vana med självförtroende. Morton-Davis gäller även dig."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var experimentets kärnbevis enligt Covel och kursen?",
+          "alternativ": [
+            "Att bara medfött begåvade kan handla lönsamt",
+            "Att trading kan läras ut — ett dussin gallrade nybörjare odlade över 150 miljoner dollar på ett regelverk, och flera byggde varaktiga bolag på det",
+            "Att fundamental analys är den enda vägen",
+            "Att ingen strategi fungerar mer än en månad"
+          ],
+          "ratt": 1,
+          "tips": "Vad kunde läras ut — och vad byggde eleverna på det?"
+        },
+        {
+          "q": "Vad visar forskningen om tekniska reglers lönsamhet över tid?",
+          "alternativ": [
+            "Att den är konstant genom historien",
+            "Att den ökar för varje år",
+            "Blandade resultat — tidiga data visar ofta lönsamhet, nyare data svagare eller inga resultat efter kostnader; kanter klingar av (Park och Irwin; Sullivan med flera; McLean och Pontiff)",
+            "Att forskning saknas helt på området"
+          ],
+          "ratt": 2,
+          "tips": "Morton-Davis-mekanismen — vad händer med en guldådra när alla gräver i den?"
+        },
+        {
+          "q": "Vad är AK1A:s syntes av Turtle-sagan för ekosystemet?",
+          "alternativ": [
+            "Att alla ska handla terminer mekaniskt",
+            "Att AK1TS:s determinism är Turtle-tänk för vågor — grammatik och besluts-hygien, pedagogiskt, aldrig trading-system — och att sagan är katalogens renaste lärobok i källkritik",
+            "Att regler är värdelösa och intuition allt",
+            "Att Covel har rätt och Faith fel i allt"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör ekosystemet med en legend — kopierar den eller läser den som metod?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Sammanfattning — hela Turtle-sagan på ett A4 (V19 + AK1TS)",
+      "intro": "Sista kapitlet sätter ihop allt: hela Turtle-sagan som en tidslinje på ett A4, översättningen till AKM1:s variabler och AK1TS:s dimensioner — och porträttet av den elev kursen format mot: den som läser flera källor, äger daterade regler och skriver stoppet före köpet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sagan på ett A4, som din checklista. FÖRDEL: Dennis — från 1 600 långa dollar till omkring 200 miljoner — slår vad med Eckhardt: trading kan läras ut. URVAL: annonsen (var den nu stod), över tusen sökande, psykologisk gallring, ett drygt dussin till klass ett 1983, cirka tio till klass två 1984. KLASSRUMMET: två veckors regler, konton i miljonklassen, 15 procent av vinsten, indraget konto vid brott, sekretessavtal. SYSTEMET: likviditetsuniversum, 20/55-dagars utbrott, N-storlek, 2N-stopp, 10/20-dagarsexit, enhetstak 4/6/10/12 — ingenting annat. UTFALLET: över 150 miljoner dollar på knappt fem år — med dramatisk spridning: samma regler gav miljonärer och sparkade. FALLET: Dennis tunga förluster 1987–1988, programmet stängt, tillbakadragande från klientkapital. EFTER-SPORET: Parker, Cheval, Rabar, Seidler, Shannon bygger en bransch; Eckhardt trampar vidare mekaniskt; Faith publicerar reglerna 2003 och boken 2007 — och duellen med Covel samma år levererar katalogens bästa lektion i källkritik. Tre bevis: metoden var lärlig; människan var risken; kanten mattades när den blev känd. Två böcker, en sanning — däremellan."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till ditt ekosystem, rad för rad. V11 LIKVIDITET är universumregeln — Turtles handlade bara marknader de kunde lämna; din analys börjar samma ställe. V19 KAPITALFÖRBRÄNING & EMISSION-RISK är den fundamentala 2N-regeln — bolagets kassaflöde sätter nivån där tesen är fel, emissionen är dess stopp, och Dennis eget fall är regeln i mänsklig edition. V12 INTÄKTSSTABILITET är fördelningskännedomen — tålamod utan kännedom om fördelningen är hopp, och Turtles visste exakt hur många förlustserier systemet andades. V03 INTÄKTSDIVERSIFIERING är enhetstaken — korrelation är dold koncentration. AK1TS VÅG är regimfrågan — får tesen ens en chans; BRYTPUNKT är stoppet före köpet och storleken ur divisionen; TID är utvärderingsdatumen. Och källkritiken är ekosystemets nya organ från den här kursen: arkiv före minne, triangelprincipen, definierat mått före utsedd vinnare — tre regler som gäller allt från en kvartalsrapport till en legend."
+        },
+        {
+          "type": "text",
+          "content": "Slutporträttet — den källkritiske eleven, i sex drag. ETT: han eller hon läser ALDRIG en enda källa om en stridsfråga — minst två, gärna oeniga, med avståndet som information. TVÅ: hon skiljer på dokument och minne — i andras berättelser och i sin egen (hon har gjort annonsövningen och vet var hennes minne förgyller). TRE: han äger regler med DATUM — skapade, daterade, med bäst-före och sanktioner vid brott; kontraktet är halva systemet. FYRA: hon skriver stoppet före köpet — Brytpunkten är en del av tesen, och storleken kommer från divisionen, inte från modet. FEM: han definierar måttet före han utser vinnaren — i strategival, i jämförelser, i självbedömning. SEX: hon välkomnar avklingningen som information — en kant utan bäst-före-datum är en vana med självförtroende, och Morton-Davis gäller även henne. Covel gav oss historien; Faith gav oss systemet; AK1A ger dig metoden att använda båda — utan att tro på någon av dem mer än dokumenten tillåter. Det är hela kursen: flera källor, sanningen däremellan — och ett stopp, skrivet idag."
+        },
+        {
+          "type": "insikt",
+          "content": "The Complete TurtleTrader i en mening: historien om experimentet visar att metoden kan läras ut och att människan är den aktiva risken — och tvisten om historien lär att sanningen kräver flera källor. Reglerna kan publiceras; efterlevnaden och källkritiken kan inte tryckas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Turtle-sagan till AK1A — översättningstabellen\",\"rader\":[[\"Sagans bygge\",\"AKM1\",\"AK1TS\",\"Läxa\"],[\"Likvida marknader endast\",\"V11 Likviditet\",\"Våg — får tesen en chans?\",\"genomförbarhet före signal\"],[\"Konton, 15 procent, indraget konto\",\"portföljpamp med sanktioner\",\"daterade utvärderingar\",\"kontraktet är halva systemet\"],[\"2N-stopp = 2 procent per enhet\",\"V19 Kapitalförbränning & Emission-risk (KRITISK)\",\"Brytpunkten\",\"stoppet skrivs före köpet — emissionen är bolagets stopp\"],[\"N-baserad storlek\",\"riskbudget i pampen\",\"Brytpunkt → storlek\",\"division, inte mod\"],[\"Enhetstak 4/6/10/12\",\"V03 Intäktsdiversifiering\",\"portfölj-aggregerade vågor\",\"korrelation är dold koncentration\"],[\"Förlustserier som andning\",\"V12 Intäktsstabilitet som fördelningsunderlag\",\"Tid\",\"tålamod utan kännedom om fördelningen är hopp\"],[\"Dennis fall 1987–1988\",\"V19 som personlig förmögenhetsregel\",\"regim-tänk\",\"discipl är per domän och säsong\"],[\"Covel mot Faith 2007\",\"källor redovisade öppet; Short-Sellern som motröst\",\"—\",\"flera källor, sanningen däremellan\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din Turtle-fil i AK1A och dokumentera den: 1) välj ett innehav; skriv Brytpunkten i kronor (AK1TS) — nivån som bevisar tesen fel; 2) kör V19-granskningen: kapitalförbränning och emissionsrisk inom tolv månader; 3) räkna positionens storlek ur divisionen risk dividerat med avstånd till Brytpunkten — jämför med faktisk vikt; 4) kör annonsövningen mot din egen tes: vilket påstående om innehavet vilar på dokument och vilket på minne eller forum?; 5) skriv kontraktet — vad händer om du bryter din egen regel?; 6) datera dokumentet och boka nästa granskning. Om ett år är filen antingen en spegel eller ett alibi — valet görs nu."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — slutraderna: Faith gav systemet, Covel gav historien, forskningen gav bäst-före-datum. Ditt arbete är att föra samman dem: V19 som 2N, AK1TS Brytpunkt som stopp, källkritiken som vana. Och när nästa legend når dig — nästa annons, nästa garanti, nästa geni — ställ de tre frågorna den här kursen lärt: var står arkivet, vem har intresse, vilket mått avgör? Sedan skriver du ett stopp, också för det."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta komprimerade ordningen i Turtle-sagan?",
+          "alternativ": [
+            "Regler, vad, urval, fall, system, urval",
+            "Vad → annons och urval → klassrum med kontrakt → system med riskgränser → dramatisk spridning i utfall → Dennis fall → efter-spår med en bransch och två böcker",
+            "Fall, vad, system, klassrum, urval, böcker",
+            "Böcker, system, vad — resten är oväsentligt"
+          ],
+          "ratt": 1,
+          "tips": "Börja med grälet mellan vännerna och sluta med branschen och bokduellen."
+        },
+        {
+          "q": "Vilken AKM1-variabel fungerar som den fundamentala 2N-regeln — bolagets eget stopp?",
+          "alternativ": [
+            "V04 P/S",
+            "V14 Varumärke & Kundlojalitet",
+            "V19 Kapitalförbränning & Emission-risk",
+            "V16 Produktlanseringar"
+          ],
+          "ratt": 2,
+          "tips": "Vad dementerar tillväxttesen när kassan tar slut och emissionen tvingas fram?"
+        },
+        {
+          "q": "Vad är den källkritiske elevens första drag när en stridsfråga når honom eller honom?",
+          "alternativ": [
+            "Välja den källa med bäst story",
+            "Leta minst två källor — gärna oeniga — och använda deras avstånd som information, med arkiv före minne",
+            "Tro på den äldsta källan",
+            "Avfärda alla källor och följa magkänsla"
+          ],
+          "ratt": 1,
+          "tips": "Vad gjorde kursen med Covel och Faith — valde den sida eller använde den avståndet?"
+        }
+      ]
+    }
+  ]
+}

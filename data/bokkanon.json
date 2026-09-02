@@ -1531,7 +1531,7 @@
         "Setup, countdown och exit: systemet tvingar dig definiera risken före belöningen"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-064",
@@ -1601,7 +1601,7 @@
         "Mekaniska system går att lära ut men inte alla kan följa dem"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-067",
@@ -1811,7 +1811,7 @@
         "Sov på beslutet: regler som bestämts i förväg neutraliserar hjärnans feltendenser"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-076",
@@ -1929,7 +1929,7 @@
         "Den farligaste meningen i finans är att denna gången är det annorlunda"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-081",

@@ -1,0 +1,1026 @@
+{
+  "slug": "your-money-and-your-brain",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 168,
+  "title": "Your Money and Your Brain — Zweig: KOMPLETT",
+  "summary": "Jason Zweig — finansjournalist vid Money magazine, senare kolumnist i Wall Street Journal och redaktör för de reviderade upplagorna av Benjamin Grahams The Intelligent Investor — publicerade 2007 den första boken som översatte neuroekonomins laboratoriefynd till vanliga investerares verkliga beslut. Tesen är radikal i sin enkelhet: marknaden bor i din hjärna. Nucleus accumbens tänds av förväntan på vinst — inte av vinsten själv; dopaminets prediktionsfel gör förutsägelser beroendeframkallande oavsett om de stämmer; amygdalan hinner reagera på en nedgång innan du hunnit tänka en enda tanke; framre insulan bromsar risktagandet efter förluster; ångern registreras som kroppslig smärta i samma kretslopp som äckel. Zweigs egen terminologi delar hjärnan i ett reflexivt system (snabbt, automatiskt, dopaminstyrt) och ett reflekterande (långsamt, medvetet, prefrontalt) — och boken ägnas åt hur det reflexiva systemet kapar det reflekterande vid just de beslut som kostar mest pengar. Kursen följer bokens känslsystem kapitel för kapitel — girighet, förutsägelse, självförtroende, risk, rädsla, överraskning, ånger, lycka och emotionens nödvändighet — med forskarna öppet citerade (Berns, Schultz, Montague, Knutson, Kuhnen, LeDoux, Lerner, Damasio, Bechara, Shiv, Berridge, Gilbert, Odean) och varje system tillämpat på AKM1:s tjugo variabler. Kontroverserna tas på fullt allvar: neuroekonomins replikeringskris — voodoo-korrelationer, döda laxar i skannern och omvänd slutledning — och frågan om allt är hjärnans fel: Libet, Sapolsky och determinismen mot kompatibilismen, och vad ansvaret blir om impulserna är medfödda kretslopp. AK1A:s syntes är kursens kärna: pedagogiken är medvetenhet om biaserna genom träning — kunskapen räcker inte, men träning med återkoppling, yttre struktur och AKM1:s checklista gör den reflekterande hjärnan till chef över den reflexiva.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för Jason Zweigs väg från finansjournalistik (Money magazine, senare Wall Street Journal och redaktör för Grahams The Intelligent Investor) till neuroekonomin, och för bokens centrala ram: den reflexiva hjärnan (snabb, automatisk, dopaminstyrd — amygdala, accumbens, insula) mot den reflekterande (långsam, medveten, prefrontal) — samt skilja Zweigs ansats från syskonen: Kahneman = experiment i laboratoriet, Coates = hormoner i kroppen på handelsgolvet, Zweig = hjärnan skannad under verkliga finansiella beslut. Eleven kan förklara girighetens kretslopp: att nucleus accumbens aktiveras av förväntan på belöning starkare än av belöningen själv (Knutson 2001), att pengar triggas av samma system som droger (Berns), och hur detta prissätter berättelseaktier och bubblor (Dow 36 000, Glassman–Hassett 1999) kopplat till V04–V06. Eleven behärskar dopaminets prediktionsfel (Schultz apexperiment: oväntad belöning avfyrar, förutsagd tystnar, utebliven röner nedåt) och förutsägelseberoendet: att prognoser känns bra oavsett träffsäkerhet — kopplat till katalysatorblocket V16–V18 och kalibreringsträning. Eleven kan redogöra för övermodets tre källor — handelsfrekvens (Barber–Odean: män handlade cirka 45 procent mer och tjänade mindre), vanans trygghet (Zajoncs blotta-exponering, French–Poterbas hemmarknadsbias) och varumärkets makt (McClure–Montagues Coke–Pepsi-studie, V14) — samt tillämpa riskens två pedaler (Kuhnen–Knutson 2005: accumbens föregår risktagande, framre insula föregår riskundvikande) på positionsstorlek och V10–V11. Eleven kan förklara amygdalans snabba rädslöväg (LeDoux: talamus till amygdala snabbare än cortex), känslors spill-over i neutrala beslut (Lerners sorg- och äckelfilmer: köpa dyrt, sälja billigt), närsynt förlustaversion (Thaler–Benartzi 1995) och motgiftet: V12-stabila intäkter, fast granskningsfrekvens, automatisering. Eleven kan redogöra för överraskningens roll (Black Monday 1987 som förväntningsgap; inkomstöverraskningars eftersläpning enligt Bernard–Thomas 1989), ångerns anatomi (insula, near-miss, dispositionseffekt enligt Shefrin–Statman och Odean, Gilovich–Medvecs asymmetri mellan handling och underlåtenhet), wanting kontra liking (Berridge), lotterivinnarnas hedoniska trampmöl (Brickman 1978) och Gilberts impact bias — samt emotionens nödvändighet: Damasios patient Elliot, Iowa Gambling Task, och Shiv–Loewenstein–Bechara 2005, där patienter med känslodämpande hjärnskador spelade mer rationellt och vann mer. Eleven kan slutligen värdera kontroverserna: replikationskrisen i neuroimaging (små urval, Vul m.fl. 2009 voodoo-korrelationer, Bennetts döda lax och multipel testning, Poldracks omvända slutledning — och vad som faktiskt håller: förlustaversion, beteendedata, belöningssystemets grundfysiologi), determinismdebatten (Libet 1983, Schurgers kritik 2012, Harris och Sapolsky mot Dennetts kompatibilism), neuroplasticiteten som träningens grund (Maguires Londontaxiförare 2000) och dess gränser (hjärnträningsappar överför inte — Lumositys FTC-vite 2016) — och syntetisera AK1A:s hållning: medvetenhet om biaserna genom träning — repetitiv AKM1-poängsättning, beslutsjournal i /profil, post-mortems och kalibrering — med regler som sätts i lugn och följs i storm.",
+  "why": "Alla beteendeböcker i AK1A:s ekosystem svarar på frågan varför investerare gör fel — men bara Zweig visar maskineriet som gör det, på riktiga finansiella beslut, med hjärnan i skannern. Detta är nödvändigt av tre skäl. För det första differentieringen: Kahneman-kursen gav kartan över felen i laboratoriet (Linda, förankring, basfrekvenser) och Coates-kursen gav kroppens hormoner på handelsgolvet — Zweig ger hjärnan på marknaden: girighetens, rädslans och ångerns kretslopp mätta medan försökspersoner fattar penningbeslut. Det gör biasarna fysiska: de slutar vara footnote-personlighetsdrag och blir kretslopp du kan lära dig känna igen på fingertopparna. För det andra praktiken: boken avslutar varje system med konkreta motgift som AK1A bygger vidare på — tjugofyra timmarsregeln, fast granskningsfrekvens, automatisering, förhandsregler, beslutsjournal — vilket är exakt strukturen i /profil och AKM1:s checklista. För det tredje den intellektuella heder som kursens kontroverskapitel tvingar fram: neuroekonomin har en replikationskris (voodoo-korrelationer, döda laxar, omvänd slutledning) och en fri-vilja-debatt (är det hjärnans fel?) — och AK1A:s svar är varken scientism eller ursäkt: pedagogiken är medvetenhet om biaserna genom träning. Det är inte ditt fel att hjärnan är byggd som den är — men det är ditt ansvar att bygga systemet runt den. Den som fattar investeringsbeslut utan att känna sitt eget belöningssystem konkurrerar mot sig själv; den som känner det kan träna den reflekterande hjärnan att bli chef.",
+  "chapters_list": [
+    "1. Zweig och den neuroekonomiska vändningen — hjärnan på marknaden",
+    "2. Girighet — nucleus accumbens och förväntansdopaminet",
+    "3. Förutsägelseberoendet — dopaminets prediktionsfel",
+    "4. Självförtroende — övermod, information och vanans trygghet",
+    "5. Risk — accumbens gasar, insulan bromsar",
+    "6. Rädsla — amygdalan och den snabba vägen",
+    "7. Överraskning — förväntan kontra nyhet",
+    "8. Ånger — insulan och tänk-om-smärtan",
+    "9. Lycka — wanting, liking och rikedomens syfte",
+    "10. Emotionens nödvändighet — Damasio och de känslolösa",
+    "11. Kontrovers I — voodoo-korrelationer och döda laxar",
+    "12. Kontrovers II — är det hjärnans fel?",
+    "13. Zweigs verktygslåda — reglerna före känslan",
+    "14. Sammanfattning — den medvetne investeraren (V01–V20)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Zweig och den neuroekonomiska vändningen — hjärnan på marknaden",
+      "intro": "Jason Zweig hade tillbringat ett decennium som finansjournalist — Money magazine, och senare kolumnist i Wall Street Journal och redaktör för de reviderade upplagorna av Benjamin Grahams The Intelligent Investor — när han gjorde något ingen finansskribent gjort före honom: han lade sig själv i hjärnskannern. Your Money and Your Brain (2007) blev den första boken som översatte neuroekonomins fynd till vanliga investerares verkliga beslut. Kursen börjar där boken börjar: med tesen att marknaden bor i din hjärna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden, citerad öppet. Under tidigt 2000-tal växte neuroekonomin fram som forskningsfält: Read Montague vid Baylor, Colin Camerer och George Loewenstein vid Caltech, Brian Knutson vid Stanford lät människor fatta ekonomiska beslut i magnetskannern och tittade på vad som hände inuti. Zweig skrev om forskningen och blev så småningom försöksperson själv — vid flera tillfällen, bland annat vid Stanford, lade han sig i skannern och iakttog sitt eget belöningssystem tändas i förväntan och sina förlustkretsar reagera på nedgångar. Boken som kom 2007 är unik i litteraturen: journalistens tal för att fråga obekvämt, kombinerat med översättningen av en helt ny vetenskap till investerarens vardag — med varje studie och forskare öppet citerad."
+        },
+        {
+          "type": "text",
+          "content": "Ramverket som bär boken är Zweigs egen terminologi: den reflexiva hjärnan och den reflekterande hjärnan. Den reflexiva är snabb, automatisk och kostnadsfri i drift — den känner igen ett ansikte, hukar för ett ljud och drar mot en het aktie innan du hunnit formulera en tanke; den drivs av de gamla systemen (amygdalan, nucleus accumbens, insulan, dopaminet). Den reflekterande är långsam, medveten och energikrävande — den bor i prefrontala cortex och är den som fyller i en AKM1-kalkyl rad för rad. Zweigs tes är inte att den reflexiva hjärnan är ond — den är genial i en värld av rovdjur och bär — utan att den är byggd för en annan värld än finansmarknaden, och att den därför systematiskt feltolkar vinst, förlust, risk och sannolikhet."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot syskonkurserna måste formuleras hårt, för överlappningen är verklig men ansatsen är olika. Kahnemans Tänka snabbt och långsamt är laboratoriet: kontrollerade experiment på omdöme och val — Linda-problemet, förankringen, basfrekvenserna — en karta över felen. Coates The Hour Between Dog and Wolf är kroppen: hormoner mätta i saliv på riktiga traders — testosteronets eufori, kortisolens panik. Zweig är hjärnan på marknaden: skannrar på människor som fattar finansiella beslut om riktiga pengar — vilka kretslopp som tänds av vinstförväntan, vilka som släcks av förlust, vad som händer i huvudet när risken blir påtaglig. De tre är komplementära: Kahneman ger kartan, Zweig motorrummet, Coates bränslet. AK1A-vinklingen, rakt från Coates-kursens underrubrik: den här kursen handlar inte om bolaget — alla tjugo AKM1-variabler förblir desamma — utan om instrumentet som mäter dem. Graham-formuleringen Zweig själv gav nytt liv i sin reviderade upplaga av The Intelligent Investor gäller mer än någonsin: investerarens värsta fiende sitter troligen inte i marknaden utan i hans eget huvud."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera bokens ram innan du går vidare: den reflexiva hjärnan avfyrar FÖRE den reflekterande — alltid. Du kan inte stänga av den och du ska inte vilja det. Målet är att lära dig dess fingeravtryck — den där snabba känslan av att det här är avgjort — och bygga system som ger den reflekterande tiden att komma ikapp. Kunskap räcker inte, citeras det i Quantitative Value-kursen med Montier; Zweigs tillägg är varför: för känslan är inte åsikt utan kemi, och kemin svarar inte på föreläsningar — den svarar på struktur."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre böcker om samma fiende — Kahneman, Zweig, Coates\",\"rader\":[[\"Bok\",\"Kärnfråga\",\"Metod\",\"Data\"],[\"Tänka snabbt och långsamt (Kahneman 2011)\",\"Hur feltolkar tänkandet risk och sannolikhet?\",\"kontrollerade experiment\",\"laboratorieuppgifter, studenter\"],[\"Your Money and Your Brain (Zweig 2007)\",\"Vad händer i hjärnan när vi fattar riktiga penningbeslut?\",\"neuroekonomi — skanning under finansiella beslut\",\"hjärnaktivitet hos människor som spelar, satsar och handlar om pengar\"],[\"The Hour Between Dog and Wolf (Coates 2012)\",\"Vad gör vinst och förlust med kroppen — och kroppen med marknaden?\",\"fysiologisk mätning\",\"salivhormoner och prestation på riktiga handelsgolv\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen skanner-protokoll innan kursen går vidare: för dina nästa fem investeringsbeslut — köp, sälj eller avslag — skriv ned Vilken känsla som fanns i kroppen FÖRE beslutet (förväntan? rädsla? irritation? ryck i magen?) och hur många sekunder som gick från impulsen till beslutet. Du återskapar Zweigs experiment i pappersformat: dina känslor är data om ditt eget kretslopp. Spara listan — kapitel 14 använder den som råmaterial till din hjärn-audit."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skiljer Zweigs ansats från Kahnemans och Coates'?",
+          "alternativ": [
+            "Zweig bygger på enkätundersökningar om riskattityder",
+            "Kahneman = experiment i laboratoriet, Coates = hormoner i kroppen, Zweig = hjärnan skannad under verkliga finansiella beslut",
+            "Det finns ingen skillnad — alla tre mätte salivhormoner",
+            "Zweig simulatorade marknaden med datormodeller utan mänskliga försökspersoner"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig VAR varje författare mätte: i labbet, i salivet eller i skannern under penningbeslut?"
+        },
+        {
+          "q": "Vad kallar Zweig bokens två system?",
+          "alternativ": [
+            "System 1 och System 2",
+            "Det giriga systemet och det rädda systemet",
+            "Den reflexiva hjärnan och den reflekterande hjärnan",
+            "Det limbiska systemet och det logaritmiska systemet"
+          ],
+          "ratt": 2,
+          "tips": "Zweig väljer egen terminologi — anatomisk och funktionell snarare än numrerad."
+        },
+        {
+          "q": "Varför lade sig Zweig själv i hjärnskannern?",
+          "alternativ": [
+            "För att han var tvungen av tidningen han arbetade på",
+            "För att han sökte vård för huvudvärk",
+            "För att bevisa att journalister är bättre investerare",
+            "För att visa att maskineriet inte är teoretiskt — han ville se sitt eget belöningssystem reagera på vinst och förlust"
+          ],
+          "ratt": 3,
+          "tips": "Budskapet till läsaren: det här handlar om DIN hjärna, inte om försökspersoners i artiklar."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Girighet — nucleus accumbens och förväntansdopaminet",
+      "intro": "Bokens första känslasystem är girigheten — och Zweigs första slag är att flytta den från moral till biologi. Girighet är inte en karaktärsbrist: den är ett kretslopp, nucleus accumbens, och det som tänder det är inte pengarna du får utan pengarna du FÖRVÄNTAR dig. Det förklarar varför jakten känns bättre än fången och varför bubblor kan växa långt efter att fundamentalt vett lämnat bygget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Forskningen, citerad öppet. Brian Knutson (Stanford) visade i studier från 2001 att förväntan på ökande monetär belöning selektivt aktiverar nucleus accumbens — hjärnans motor för förväntan. Greg Berns (Emory), som Zweig refererar, drog slutsatsen att pengar triggas av samma kretslopp som droger: inte metaforiskt utan bokstavligt — belöningssystemet som kokain och amfetamin utnyttjar är det som aktiveras av siffror som stiger. Det avgörande är ordningen: accumbens tänds starkast i FÖRVÄNTAN på vinsten, inte i mottagandet av den. Hjärnan belönar jakten mer än bytet — vilket i en finansiell kontext betyder att känslan av att den här aktien kommer gå upp är starkare, och mer beroendeframkallande, än själva uppgången någonsin blir."
+        },
+        {
+          "type": "text",
+          "content": "På marknaden får detta ett pris. Om accumbens köper berättelsen, inte kassaflödet, kommer berättelseaktien att prissättas högre än sina kassaflöden motiverar — förväntansdopaminet blir en del av multipeln. Zweigs eget exempel är Dow 36 000: Kevin Hassett och James Glassman förutsåg 1999 att Dow Jones skulle tredubblas eftersom aktier egentligen inte var riskigare än obligationer — boken kom ut månader innan IT-bubblan sprack. Det är girighet som kollektivt tillstånd: en marknad där förväntan matar förväntan. (Kursen korsrefererar Irrational Exuberance-kursen för bubblans mekanik — här är poängen den kemiska: bubblor är inte möjliga trots att hjärnan belönar förväntan; de är möjliga därför att den gör det.)"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-kopplingen är rak och operativ. V04 (P/S), V05 (P/B) och V06 (EV/EBITDA) mäter inte bara billighet — de mäter hur mycket av ANDRA människors dopamin du betalar för. En multipel på fyrtio är ett pris på förväntan; en multipel på åtta är ett pris där förväntningen kylts av. Värdeinvesterarens säkerhetsmarginal är i Zweigs ljus en dopamin-marginal: du köper där crowdens belöningssystem är kallt. Därför Zweigs obehagliga husregel, som kursen gör till din: om en aktie känns spännande att köpa — om själva tanken ger dig en kick — är det inte ett argument mot köpet men ett argument för att skriva ned siffrorna FÖRE du trycker. Känslan är data, inte analys."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig girighetens fingeravtryck: den sitter i förväntan, inte i resultatet. När du märker att du njuter av ATT TÄNKA på en investering mer än av att äga den — när researchen känns som jakt — är accumbens i farten. Regel: ingen köporder samma dag som känslan kommer. Skriv ned fallen V04–V06 och invänta tjugofyra timmar; dopaminet har kort halveringstid, siffrorna har inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Girighetens anatomi — från signal till köp\",\"rader\":[[\"Länk\",\"Vad som händer\",\"Forskning\",\"Marknadsbeteende\"],[\"Signal\",\"förväntan på belöning aktiverar accumbens starkare än belöningen\",\"Knutson 2001; Berns — pengar på drogens kretslopp\",\"jakten känns bättre än bytet\"],[\"Förstärkning\",\"berättelsen om vinst matar ny förväntan\",\"Glassman–Hassett, Dow 36 000 (1999)\",\"multipeln sväller — förväntan prissätts\"],[\"Pris\",\"du betalar för andras dopamin\",\"AKM1 V04–V06\",\"höga multiplar på berättelseaktier\"],[\"Motgift\",\"siffror före känsla; tjugofyra timmarsregel\",\"Zweigs verktygslåda (kapitel 13)\",\"dopamin-marginal i stället för story-marginal\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör dopamin-testet på din egen portfölj: välj det innehav som känns mest spännande att äga — det du gillar att berätta om på middagen. Skriv ned dina egna siffror för vad den kommer leverera på fem år: tillväxt (V01), marginaler (V07–V08) och nuvarande multiplar (V04–V06). Jämför sedan: hur mycket av din tro står i siffrorna och hur mycket står i känslan av berättelsen? Notera gapet skriftligen. Om gapet är stort har du hittat ditt personliga Dow 36 000 — i miniatyr."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är det mest korrekta påståendet om nucleus accumbens och pengar?",
+          "alternativ": [
+            "Accumbens aktiveras starkast när vinsten bokförs på kontot",
+            "Accumbens aktiveras starkast av FÖRVÄNTAN på belöning — jakten, inte bytet",
+            "Accumbens aktiveras bara av fysisk kontant betalning",
+            "Accumbens är hjärnans centrum för långsiktigt sparande"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på när känslan är som starkast: före köpet, under uppgången — eller efter försäljningen?"
+        },
+        {
+          "q": "Vad var Dow 36 000 (Glassman och Hassett, 1999) ett exempel på i kursens läsning?",
+          "alternativ": [
+            "En välskriven riskanalys som höll måttet",
+            "Ett bevis på att obligationer är riskigare än aktier",
+            "Kollektiv girighet — förväntan som matar förväntan, publicerad månader före IT-bubblans spricka",
+            "En tidig varning om finanskrisen 2008"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vad boken förutsåg och vad som hände med marknaden strax efter."
+        },
+        {
+          "q": "Hur kopplas V04–V06 till girighetens kretslopp?",
+          "alternativ": [
+            "Multiplarna mäter bolagets dopaminproduktion",
+            "Höga multiplar är ett pris på förväntan — säkerhetsmarginalen är en dopamin-marginal där du köper där crowdens belöningssystem är kallt",
+            "V04–V06 gäller bara för räntefonder",
+            "Girighet spelar ingen roll för värderingen"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att köpa där alla andra redan är upphetsade?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Förutsägelseberoendet — dopaminets prediktionsfel",
+      "intro": "Girighetens motor har en ännu farligare funktion: den lär sig. Wolfram Schultz apexperiment vid Cambridge visade att dopaminneuroner inte signalerar belöning utan PREDIKTIONSFEL — skillnaden mellan vad som hände och vad som väntades. Det gör hjärnan till en förutsägelsemaskin som belönar sig själv för att gissa rätt. Zweig kallar fenomenet förutsägelseberoende — och förklarar varför prognoser känns så bra även när de är fel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Schultz experiment, citerat öppet: när apan får en oväntad saftbelöning avfyras dopaminneuronerna; när belöningen kommer exakt som förutsagd tystnar de — den är inlärd, ingen nyhet; när en förutsagd belöning uteblir sjunker aktiviteten under noll — neuronerna registrerar felet negativt. Dopaminet är alltså inte ett njutningsmolekyl utan ett lärandesignal: det mäter gapet mellan väntat och verkligt. Read Montague (Baylor) byggde matematiska modeller på detta och visade att samma signal styr mänskligt beslutsfattande — hjärnan uppdaterar sina förväntningar med dopaminets felrapporter, ögonblick för ögonblick."
+        },
+        {
+          "type": "text",
+          "content": "Här ligger förutsägelseberoendet. Eftersom dopaminet belönar TRÄFFEN — att ha gissat rätt — blir själva prognosakten stimulerande, oberoende av om prognoserna är tillförlitliga i stort. På en brusig marknad, där utfallet till största delen styrs av slump (kursen i Fooled by Randomness-kursen och svansarna i The Black Swan-kursen), kan träffsäkerheten inte bli hög — men belöningen för träffarna kommer ändå, och det räcker för att beroendet ska sättas igång. Det förklarar televisionens prognosformat: experter som gissar åt oss levererar dopaminträffar åt oss. Kursen differentierar mot Coates-kursen, som visade dopaminets vinstcykel i kroppen — här är samma systems roll för själva förutsägandena: vi blir inte bara euforiska av vinster; vi blir beroende av att gissa."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen för fundamental analys är obehaglig och praktisk. Katalysatorblocket V16–V18 (produktlanseringar, avtal, regulatoriska förändringar) är maskineriets favoritföda: en katalysator är ett datum för nästa dopaminträff, och analysen kan utan att man märker det förvandlas från att bedöma värde till att jaga spännande förutsägelser. AKM1:s regel är därför rangordning, aldrig köpskäl — exakt som Quantitative Value-kursen lärde om storyblocket. Och prediktionsfelet förklarar något du möter igen i kapitel 7: att kurserna rör sig på GAPET mellan förväntan och utfall — börsen handlar inte nyheter, den handlar överraskningar. Motgiften är pedagogisk och är kursens första träningstillfälle: skriv prognoser ned, datera dem, och poängsätt dem sedan — kalibrering är träning av den reflekterande hjärnan, och den börjar här."
+        },
+        {
+          "type": "insikt",
+          "content": "Skilj på prognosens njutning och prognosens värde. Känslan av att veta vad som kommer — den lilla kick du får när din tes ser ut att börja stämma — är dopaminets belöning för prediktionsträffen, och den kommer oavsett om du har en kant. Fråga vid varje tes: baserar jag mig på en kant som går att formulera, eller på att gissa kännas bra? Skrivet svar krävs."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dopaminets tre fall — Schultzs apexperiment\",\"rader\":[[\"Situation\",\"Dopaminrespons\",\"Känsla\",\"Marknadsbeteende\"],[\"Oväntad belöning\",\"avfyras kraftigt\",\"positiv överraskning — kick\",\"kastar sig på det nya; överraskningsjakt\"],[\"Förutsagd belöning\",\"tystnar — inget nytt att lära\",\"rutin; tristess\",\"säljer det stabila, letar ny spänning\"],[\"Utebliven belöning\",\"aktiviteten sjunker under baseline\",\"besvikelse — känns som förlust\",\"överger tesen i panik; disposition och imageförlust\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Starta din kalibreringslogg — den återkommer i kapitel 12 som bevis på träningens effekt. Skriv ned tio konkreta prognoser med tidsram och konfidens i procent (till exempel: index över eller under en nivå om tre månader, 70 procent; en rapport slår konsensus, 60 procent). Datera sidan. Poängsätt när svaren finns. Målet är inte att ha rätt — det är att LÄRA KÄNNA din egen över- eller underkonfidens. Det är medvetenhet genom träning, i praktiken."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad signalerar dopaminneuronerna i Schultzs experiment?",
+          "alternativ": [
+            "Storleken på belöningen som mottas",
+            "Belöningens behaglighet, oavsett om den väntats",
+            "Prediktionsfelet — skillnaden mellan väntat och verkligt utfall",
+            "Risken i nästa val"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med signalen när belöningen kommer exakt som förutsagd — och när den uteblir?"
+        },
+        {
+          "q": "Varför kallar Zweig fenomenet förutsägelseberoende?",
+          "alternativ": [
+            "Därför att dopaminet belönar träffen — prognosakten känns bra även när prognoserna i stort inte är tillförlitliga",
+            "Därför att alla prognoser alltid slår in",
+            "Därför att marknaden följer prognoserna mekaniskt",
+            "Därför att internet skapat tillgång till prognoser"
+          ],
+          "ratt": 0,
+          "tips": "På en brusig marknad kan träffsäkerheten inte bli hög — men vad belönas ändå?"
+        },
+        {
+          "q": "Hur bör katalysatorblocket V16–V18 hanteras enligt kursen?",
+          "alternativ": [
+            "Som köpskäl — katalysatorer är kanten",
+            "Som ersättning för värderingen när berättelsen är tillräckligt spännande",
+            "Som rankning bland aktier som redan klippt pris och kvalitet — aldrig som köpskäl",
+            "Som enda använda variabler vid kort handel"
+          ],
+          "ratt": 2,
+          "tips": "Minns QV-kursens Deere-lära: vad behövdes aldrig som köpskäl?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Självförtroende — övermod, information och vanans trygghet",
+      "intro": "Girigheten får oss att köpa; övermodet får oss att köpa MER, OFTARE och i FEL bolag — och att tro att vi vet mer än vi gör. Zweigs tredje system är självsäkerheten, och bokens bevisning är den dyraste i hela kursen: övermodet har en mätbar avgift, transaktion för transaktion.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Prislappen, citerad öppet. Brad Barber och Terrance Odean (UC Davis/Berkeley) följde tiotusentals privatkonton: de som handlade mest tjänade sämst — i deras studie från 2000, Trading Is Hazardous to Your Wealth, underpresterade de mest aktiva kontona marknaden kraftigt, medan de mest passiva låg närmast index. Uppföljningen från 2001 visade könsdimensionen: männen handlade cirka fyrtiofem procent mer än kvinnorna — och tjänade mindre; ogifta män sämst av alla. Orsaken är inte att män är sämre analytiker utan att övermod driver handelsfrekvens, och varje affär bär kostnad. Kursen skiljer sig medvetet från Kahneman-kursen, som tog övermodet i laboratoriet (officersskolan, bilisterna över median) — Zweig visar vad det kostar i faktiska affärer."
+        },
+        {
+          "type": "text",
+          "content": "Övermodets andra källa är vanan — det bekanta. Robert Zajoncs blotta-exponeringseffekt: det vi sett många gånger tycker vi bättre om, utan att vi märker det. I finans får det ett geopolitiskt namn — hemmarknadsbias: Kenneth French och James Poterba visade 1991 att amerikanska investerare höll runt nittiofem procent av sina aktieportföljer i amerikanska aktier, medan japanska och brittiska investerare uppvisade samma hemmainriktning i sina respektive börser. Vi KÄNNER de svenska bolagen — de står på mjölkpaketet och i löpsedeln — och det bekanta registreras som det säkra. Det är det inte. Välbekant är en känsla, inte en riskbedömning; bolaget du känner bäst kan vara det du analyserat sämst, just för att känslan av insikt ersätter granskningen."
+        },
+        {
+          "type": "text",
+          "content": "Tredje källan är varumärket — och här finns bokens snyggaste experiment, Read Montagues Coke–Pepsi-studie (McClure med flera, 2004). I blindtest smakar kolarna lika och preferenserna delar sig jämnt; när deltagarna vet vilket märke de dricker vänder preferensen kraftigt mot Coke — och hjärnaktiviteten förändras i områden för minne och emotion. Kunskapen om varumärket ändrar upplevelsen av drycken. För AKM1 är detta dubbelklingat. Det bekräftar V14 (varumärke och kundlojalitet) som reell kraft — konsumenten upplever smaken annorlunda — bokstavligen. Men det varnar analytikern: samma effekt gör att DU som föredrar Apples produkter överskattar Apples moat. Varumärkesstyrkan ska mätas i prispremie och marginaler (V07, V14), inte i din egen förtjusning. Regel: din favoritprodukt är en kandidat för särskilt kall granskning, inte ett analysresultat."
+        },
+        {
+          "type": "insikt",
+          "content": "Övermodet har tre ingångar — frekvens (jag handlar för att jag kan), det bekanta (jag äger det för jag känner det) och varumärket (jag köper det för jag älskar det) — och alla tre känns som kunskap men är känslor. Testet är alltid detsamma: kan du skriva ned siffrorna som backar känslan? Om inte har du en preferens, inte en analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Övermodets tre källor och deras prislapp\",\"rader\":[[\"Källa\",\"Forskning\",\"Marknadsbeteende\",\"Motgift\"],[\"Frekvens — handla mer\",\"Barber–Odean 2000 och 2001: männen handlade cirka 45 procent mer och tjänade mindre\",\"overtrading; avgifter och timing äter avkastningen\",\"handelstak i portföljpampen; tjugofyra timmarsregeln\"],[\"Vanan — det bekanta tryggt\",\"Zajonc blotta-exponering; French–Poterba 1991: cirka 95 procent hemmamarknad\",\"hemmarknadsbias; bekant förväxlas med säkert\",\"geografisk och sektorsspridning; granska favoriter extra kallt\"],[\"Varumärket — känt är skönt\",\"McClure–Montague 2004: etiketten ändrade smaken och hjärnsvaret\",\"egen favoritprodukt överskattar moaten (V14)\",\"mät moaten i marginaler och prispremie — aldrig i förtjusning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör övermodets tre auditsteg på ditt eget konto. Ett: räkna dina affärer det senaste året — ligger du närmare Barber–Odeans passiva vinnare eller aktiva förlorare? Två: räkna andelen av portföljen som är noterad på din hemmabörs — vad säger French–Poterba om dig? Tre: lista de bolag vars produkter du själv använder och äger — för varje, skriv om V14-bedömningen bygger på marginaldata eller på din egen upplevelse av produkten. Tre skrivna rader per steg. Resultatet är din övermodsprofil."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade Barber och Odeans studier om handelsfrekvens?",
+          "alternativ": [
+            "Att de som handlade mest tjänade mest",
+            "Att handelsfrekvens inte hade något samband med avkastning",
+            "Att de mest aktiva kontona underpresterade kraftigt — och att män handlade cirka 45 procent mer än kvinnor och tjänade mindre",
+            "Att bara institutioner bör handla aktivt"
+          ],
+          "ratt": 2,
+          "tips": "Titeln på en av studierna säger allt: att handla är farligt för din förmögenhet."
+        },
+        {
+          "q": "Vad är hemmarknadsbias och vad driver den enligt kursen?",
+          "alternativ": [
+            "Att man investerar iindexfonder; den drivs av låga avgifter",
+            "Att man håller nästan allt på hemmabörsen — driven av det bekantas trygghet (blotta-exponeringen), inte av bättre riskbedömning",
+            "Att man köper utländska aktier via mäklare; den drivs av valutavinst",
+            "Att man äger sitt eget bolags aktier; den drivs av insiderregler"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad känslan av att känna bolaget gör med granskningen av det."
+        },
+        {
+          "q": "Vad är den rätta AKM1-slutsatsen av Coke–Pepsi-studien för V14?",
+          "alternativ": [
+            "Varumärke är en illusion och ska aldrig poängsättas",
+            "Varumärket är en reell kraft — men din egen förtjusning är inte ett mått på den; mät i marginaler och prispremie",
+            "Man bör bara investera i bolag man ogillar",
+            "Smaktester är bästa sättet att värdera moat"
+          ],
+          "ratt": 1,
+          "tips": "Studien visade att etiketten bokstavligen ändrade upplevelsen — vem mer än kunden påverkas av den effekten?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Risk — accumbens gasar, insulan bromsar",
+      "intro": "Zweigs fjärde system är risken — och bokens kanske viktigaste empiriska fynd: riskupplevelse har två pedaler i hjärnan, en gas och en broms, och vilken som trycks beror på din omedelbara historik. Den som nyss vunnit blir en annan människa än den som nyss förlorat — och ingen av dem är den som skrev din riskprofil.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fyndet, citerat öppet. Camelia Kuhnen och Brian Knutson (Stanford) lät 2005 försökspersoner välja mellan säkra och riskabla tillgångar i en finansskanner: aktivering i nucleus accumbens FÖREGICK val av risk, aktivering i framre insula — hjärnans obehags- och äckelregion — föregick val av säkerhet. Två pedaler: accumbens gasar, insulan bromsar. Zweig tog sin egen medicin i skannern och beskriver hur det känns: att se sitt eget belöningssystem rycka åt spakarna medan den reflekterande hjärnan fortfarande letar efter argument. Poängen är inte lokaliseringsmyten att girighet bor i en punkt — kursen 11 tar den kritiken — utan att risktagande är ett TILLSTÅND, inte en egenskap. Din risktolerans i eftermiddag är en funktion av vad som hände i förmiddags."
+        },
+        {
+          "type": "text",
+          "content": "Sekvenseffekterna är det praktiskt farliga. Efter vinster växer risktagandet — vinstpengar känns som spelmarker som ändå var bonus (Thaler och Johnsons house money-effekt, citerad via beteendeekonomin) — accumbens-pedalen är redan nedtryckt. Efter förluster kan två saker hända: den vanliga är att insulan bromsar hårt och man varken köper eller säljer utan fryser; den farligare är break-even-effekten — förlusten jagas med ökad risk för att bli hel igen. Båda är tillstånd, inte strategi. Kursen kopplar till AK1A:s portföljfilosofi: positionsstorlekar som sätts EFTER en vinstsvit eller en förlustsvit sätts av dopaminet respektive insulan — inte av dig. Därför ska de sättas i förväg, mekaniskt, och aldrig omförhandlas i samma sinneslag som orsakade dem."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-kopplingen handlar om mätt mot upplevd risk. V10 (skuldsättningsgrad) och V11 (likviditet) mäter bolagets faktiska bärförmåga under stress — siffror, desamma i eufori och panik. Men den upplevda risken rör sig omvänd mot läget: när allt är lugnt och VIX ligger lågt känns marknaden säker — det är då accumbens har bilen i högsta växeln och forceringen sker; när blodet rinner på skärmarna känns allt dödsfarligt — det är då de bästa priserna finns. Zweigs formulerade det som att den värsta risken ofta är den som inte känns alls. Regel för den medvetne investeraren: när risken KÄNNS som noll — kontrollera V10 och V11 i portföljen. När risken känns outhärdlig — kontrollera V04–V06. Känslan är en bakvänd kompass: den pekar bort från det som borde göras."
+        },
+        {
+          "type": "insikt",
+          "content": "Skriv ned detta och bära det i varje beslut: din riskprofil är inte en siffra i en enkät — den är en funktion av din senaste tid på marknaden. Efter vinst: du är nu en dopaminstyrd risktagare som tror dig vara densamme. Efter förlust: du är nu en insulastyrd försvarare som tror dig vara försiktig av princip. I båda fallen är lösningen densamma — beslutet väntar tjugofyra timmar och jämförs med reglerna som skrevs i lugn."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Gas och broms — hjärnans risksystem\",\"rader\":[[\"System\",\"Region\",\"Aktiveras av\",\"Föregerår val av\",\"Marknadsbeteende\"],[\"Gasen\",\"nucleus accumbens\",\"vinstförväntan; vinstsviter\",\"risk (Kuhnen–Knutson 2005)\",\"ökar insatser efter uppgång; forcering vid låg volatilitet\"],[\"Bromsen\",\"framre insula\",\"förlust; obehag; äckel\",\"säkerhet\",\"fryser efter nedgång; avstår från goda köp; säljer i botten\"],[\"Reflekterande\",\"prefrontala cortex\",\"regler; siffror; checklista\",\"det som står i planen\",\"positionsstorlek satt i förväg; V10–V11 före känslan\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör din tillstånds-audit: rekonstruera dina fem senaste större beslut och klassificera vartdera efter föregående veckas resultat — kom det efter vinstsvit, förlustsvit eller neutralt läge? Skriv vid varje beslut: ökade eller minskade risken jämfört med din plan? Om du hittar ett mönster — större positioner efter vinster, frysning eller jakt efter förluster — har du kartlagt vilken pedal som styr dig. Skriv nästa steg: vilken typ av beslut ska från och med nu alltid sova en natt?"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade Kuhnen och Knutson (2005) om riskbeslut i skannern?",
+          "alternativ": [
+            "Att accumbens-aktivering föregick risktagande val och aktivering i framre insula föregick val av säkerhet",
+            "Att alla rationella beslut sker i amygdala",
+            "Att risktagande inte går att mäta i hjärnan",
+            "Att insulan aktiveras av vinst och accumbens av förlust"
+          ],
+          "ratt": 0,
+          "tips": "Två pedaler — vilken region är gas och vilken är broms?"
+        },
+        {
+          "q": "Vad menas med att risktolerans är ett tillstånd, inte en egenskap?",
+          "alternativ": [
+            "Att risktoleransen är medfödd och fast för livet",
+            "Att den bara beror av ålder och pensionstidspunkt",
+            "Att den svänger med den omedelbara historiken — efter vinster växer risktagandet, efter förluster bromsar det eller jagar förlusten",
+            "Att enkätbaserade riskprofiler alltid stämmer"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vem som skrev dagens beslut — planen eller förmiddagens kurssiffra?"
+        },
+        {
+          "q": "Vad är kursens regel när risken känns som noll?",
+          "alternativ": [
+            "Öka belåningen — lugn marknad är säker marknad",
+            "Kontrollera V10 och V11 — för känslan av säkerhet är som lägst när forceringen sker",
+            "Sälja allt direkt",
+            "Sluta titta på fundamentalen — den spelar ingen roll nu"
+          ],
+          "ratt": 1,
+          "tips": "Kompassen pekar bakochfram: när känslan säger noll risk, vad säger skulder och likviditet?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Rädsla — amygdalan och den snabba vägen",
+      "intro": "Om girigheten är snabb är rädslan snabbare. Joseph LeDoux (NYU) kartlade rädslans kretslopp och fann en genväg från talamus rakt till amygdala som hinner KÄNNA färdigt innan cortex hunnit FÖRSTÅ. Zweigs sjätte system förklarar varför panikförsäljning sker på millisekunder och varför en nedgång känns som ett rovdjur — och ger det mest praktiska motgåvet i hela boken: titta mindre ofta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "LeDoux upptäckt, citerad öppet: sensorisk information tar två vägar — den långsamma via cortex, där informationen analyseras och förstås, och den snabba från talamus direkt till amygdalan, som svarar FÖRE medvetandet hinner tolka. Därför rycker du till för pinne som kan vara en orm — och hinner lugna dig efteråt. Amygdalan lär sig dessutom rädsla i ett enda försök (ett möte med orm räcker livet ut) och glömmer aldrig riktigt: utsläckning av rädsla är inte radering utan ny inlärning ovanpå den gamla — under stress kan den gamla rädslan återvända. Översätt till finans: kraschen 2008, IT-bubblans fall eller ens en personlig förlustaktie kan skapa ett amygdalaminne som gör att hela KATEGORIER av investeringar känns farliga i årtionden — och att nästa krash säljs av kroppen innan tanken hinner ikapp."
+        },
+        {
+          "type": "text",
+          "content": "Rädslan läcker också mellan sammanhang — det är Jennifer Lerners experiment (Carnegie Mellon, 2004, tillsammans med Small och Loewenstein), som Zweig refererar: deltagare som visats sorgsna filmer prissatte sedermera objekt HÖGRE vid köp (ville ersätta det förlorade) och sålde LÄGRE; deltagare som visats äckliga filmer ville bli av med allting till underpris. Känslan aktiverad av en film — helt irrelevant för uppgiften — flyttade in i den ekonomiska värderingen. Investerarens morgonnyhet, grälen hemma, marknadens veckas blödning: allt som aktiverar rädsla, sorg eller äckel innan ett beslut prutar eller driver priset på sätt ingen analys motiverar. Frågan vid varje beslut borde därför vara: vad kände jag den senaste timmen — och har det med saken att göra?"
+        },
+        {
+          "type": "text",
+          "content": "Motgåvet är bokens mest berömda och mest motbevisade-av-praktiken: granska mer sällan. Thaler och Benartzi (1995) myntade närsynt förlustaversion: eftersom förluster väger ungefär dubbelt så tungt som vinster (prospect theory — korsreferens Kahneman-kursen, som lärde mekanismen), avgör GRANSKNINGSFREKVENSEN hur smärtsamt sparandet känns. Thaler, Tversky, Kahneman och Schwartz visade 1997 experimentellt: de som såg utfallet ofta valde betydligt försiktigare — och sämre — portföljer än de som såg det sällan. Den som kollar portföljen dagligen upplever förluster ungefär hälften av dagarna, fast den långsiktiga trenden är uppåt; den som kollar kvartalsvis ser det senare. AKM1-koppling: V12 (intäktsstabilitet) är bolagets eget rädslomotgift — stabila, återkommande intäkter ger färre amygdalautlösande överraskningar — men ditt eget V12 är granskningsfrekvensen: automatiska insättningar, automatisk rebalansering, notiser avstängda, utvärdering en gång per kvartal. Tråkighet är skyddet."
+        },
+        {
+          "type": "insikt",
+          "content": "Rädslan hinner alltid först — det är ingen brist utan en design, och den går inte att stänga av. Därför är frågan aldrig hur du slutar känna rädsla vid -8 procent på en förmiddag; frågan är vad som är på AUTOMAT vid det tillfället: rebalanseringsregeln, köplistan, frekvensen du redan bestämt. Mod definieras här som att ha bestämt i förväg — inte som att känna lite."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rädslans vägar — snabb, långsam och läckande\",\"rader\":[[\"Väg\",\"Rutt\",\"Hastighet\",\"Finansiellt uttryck\",\"Motgift\"],[\"Snabba vägen\",\"talamus direkt till amygdala\",\"millisekunder — före medvetandet\",\"panikförsäljning på första röda candles\",\"regler på automat; inga impulsköp i storm\"],[\"Långsamma vägen\",\"via cortex — analys och tolkning\",\"sekunder till minuter\",\"torsdagsoro; analytisk ångest kring positionen\",\"AKM1-checklista; V12-stabilitet som underlag\"],[\"Läckan\",\"känsla från ETT sammanhang bär in i ett annat\",\"tills den ersätts\",\"sorg och äckel prutar portföljen (Lerner 2004)\",\"fråga vad jag kände senaste timmen — och skilj det från saken\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Konfigurera din granskningsfrekvens som ett experiment: stäng av alla push-notiser för kurser och ekonominyheter i trettio dagar. Sätt EN fast utvärdering per kvartal i kalendern — datum och klockslag redan nu — där du kör AKM1-poängsättning och rebalanseringsregler. Logga efter trettio dagar: hur många gånger bröt du frekvensen, och vilken känsla utlöste brottet? Du håller på att träna din reflekterande hjärna i konsten att inte rycka till för pinnar."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den snabba vägen i LeDoux rädslakretslopp?",
+          "alternativ": [
+            "Från cortex till hippocampus — medveten analys först",
+            "Från talamus direkt till amygdalan — rädslan svarar innan medvetandet hunnit tolka",
+            "Från amygdala till hjärnstammen via ryggmärgen",
+            "Från retina till prefrontala cortex på sekunder"
+          ],
+          "ratt": 1,
+          "tips": "Vilken rutt är kortast — och vad betyder det för vem som hinner först?"
+        },
+        {
+          "q": "Vad visade Lerners filmexperiment om känslor och prissättning?",
+          "alternativ": [
+            "Att filmer inte påverkar ekonomiska beslut alls",
+            "Att glada filmer gör människor mer rationella",
+            "Att känslor aktiverade av helt annat — sorg och äckel — läcker in i neutrala värderingar: sorg gör att man köper dyrt, äckel att man säljer billigt",
+            "Att bara rädsla påverkar priser"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig vad känslan vill GÖRA — sorgen ersätta, äklet städa ut — och vad det gör med priset."
+        },
+        {
+          "q": "Varför är granskningsfrekvensen ett motgift enligt boken?",
+          "alternativ": [
+            "Därför att daglig granskning ger bättre data",
+            "Därför att närsynt förlustaversion gör att den som tittar ofta upplever förluster ofta — och väljer sämre, försiktigare portföljer",
+            "Därför att kurserna bara uppdateras en gång per kvartal",
+            "Därför att mäklare rekommenderar det"
+          ],
+          "ratt": 1,
+          "tips": "Förluster väger dubbelt — vad händer om du bjuder dem på plats fem dagar i veckan?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Överraskning — förväntan kontra nyhet",
+      "intro": "Kapitel tre lärde att dopaminet mäter gapet mellan väntat och verkligt. Här följer konsekvensen som rör kurslistan: marknaden rör sig inte på NYHETER utan på ÖVERRASKNINGAR — skillnaden mellan nyheten och vad som redan prissatts. Zweigs överraskningssystem förklarar både varför det svartaste måndagen i historien inte hade någon förklaring — och varför du alltid blir förvånad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Svarta måndagen, den 19 oktober 1987: Dow föll tjugotvå komma sex procent på en enda dag — och efter decennier av forskning finns ingen ensam nyhet som förklarar fallet. Zweig använder episoden till sin poäng: hjärnans överraskningsdetektor (amygdalan och angränsande system) reagerar på BETYDELSE och NYHET, inte på orsakskedjor — och marknaden gör samma sak. Priset är marknadens samlade förväntan; kurserna rör sig när utfallet avviker från den förväntningen. En utmärkvinst som är sämre än en ännu högre förväntan kan falla; en katastrofrapport som väntats kan stiga. Nyheten är data; överraskningen är rörelsen."
+        },
+        {
+          "type": "text",
+          "content": "Detta är förstås Expectations Investing-kursens kärna (Mauboussin och Rappaport) och här möts beteendeneuro och fundamental: att läsa en rapport utan att veta vad som PRISATTS är att läsa rätt bok med fel nyckel. Beteendedatan bekräftar: Richard Thaler och Werner De Bondt visade 1985 att förloraraktier överpresterar och vinnaraktier underpresterar i åren som följer — marknaden överextrapolerar; Victor Bernard och Jacob Thomas (1989) dokumenterade att kurserna fortsätter GLIDA i överraskningens riktning veckor och månader efter rapporter — eftersom informationen tar tid att sugas upp av miljontals tröga hjärnor, var och en med sin egen amygdala och sitt eget dopamin. Kursen 3 kopplade prediktionsfelet till lärandet; här är det portföljens version: eftersom alla lär i olika takt blir överraskningar inte prissatta på en millisekund utan i en svans."
+        },
+        {
+          "type": "text",
+          "content": "Det praktiska är dubbelt. För det första förväntansdisciplinen: V16–V18 (lanseringar, avtal, regulatorik) ska i din analys alltid åtföljas av frågan VAD ÄR REDAN PRISAT? — en katalysator som marknaden väntat sig ger ingen överraskning, och därmed ingen rörelse, även om den blir verklighet. För det andra överrasknings-skyddet: Zweigs poäng är att du KOMMER bli förvånad — av storleken, timingen eller riktningen — därför att förväntningar är osynliga och utfallet brusigt. Motgåvet heter premortem (Gary Klein, citerad öppet): FÖRE köpet, skriv ned berättelsen om hur det här kan gå åt skogen — om två år, den här positionen förlorade hälften, vad hände? Premortemet kan inte förhindra överraskningar; det kan förhindra att de blir chocker — amygdalan hanterar ett scenario den sett före helt annorlunda än ett den aldrig föreställt sig. AK1A:s scenariometodik i aktieanalysen är samma struktur: bas, bull och bear skrivna i lugn, granskade i storm."
+        },
+        {
+          "type": "insikt",
+          "content": "Byt fråga vid varje nyhet: inte vad hände — utan vad väntades? Skillnaden mellan de två är hela kursen för dagen och halva förklaringen till varför nyhetstjänande investerare slås av index: de handlar nyheter som redan prissatts och blir överraskade av överraskningar de aldrig frågat efter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Förväntan kontra nyhet — vad som faktiskt rör kursen\",\"rader\":[[\"Situation\",\"Nyhet\",\"Förväntan\",\"Kursrespons\",\"Lärdom\"],[\"Svarta måndagen 1987\",\"ingen enskild\",\"okänd — panik band\",\"minus 22,6 procent på en dag\",\"rörelsen styrs av förväntningsgap, inte av förklaringar\"],[\"Bra rapport, högt restade förväntan\",\"positiv\",\"ännu högre\",\"faller trots goda siffror\",\"läs alltid vad som prissatts först\"],[\"Sämre rapport, redan prissatt\",\"negativ\",\"ännu sämre\",\"stiger\",\"katastrof som väntats är ingen överraskning\"],[\"Rapportöverraskning\",\"positiv eller negativ\",\"medelsexpertens\",\"kursen glider i överraskningens riktning (Bernard–Thomas 1989)\",\"svansen är portföljmöjligheten\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör ett premortem på ditt största innehav, i skrivande form: datum om två år, rubriken positionen halverades — skriv sedan berättelsen i förfluten tid med så många konkreta detaljer du förmår (marginalkollaps, emission, katalysator som uteblev, konjunktur, nyckelperson). Läs därefter din AKM1-analys: vilka av riskerna i premortemet har variabler och vilka saknar? Minst en risk utan variabel ska få en övervakningsrad i din beslutsjournal."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängen med Svarta måndagen 1987 i kursens sammanhang?",
+          "alternativ": [
+            "Att programhandel ensam förklarar fallet",
+            "Att kurserna rör sig på förväntningsgap och överraskning — inte på nyheter med tydliga orsakskedjor",
+            "Att börsen alltid återhämtar sig på en vecka",
+            "Att dagens reglering förhindrar alla krascher"
+          ],
+          "ratt": 1,
+          "tips": "Vad saknade historiens största endagsfall — och vad reagerade ändå?"
+        },
+        {
+          "q": "Vad visade Bernard och Thomas (1989) om rapportöverraskningar?",
+          "alternativ": [
+            "Att kurserna reagerar ögonblickligen och fullständigt — inget mer händer",
+            "Att överraskningar alltid är tillfälliga och återgår samma dag",
+            "Att kurserna fortsätter glida i överraskningens riktning veckor och månader efteråt",
+            "Att bara stora bolag har överraskningar"
+          ],
+          "ratt": 2,
+          "tips": "Miljontals tröga hjärnor lär i olika takt — vad gör det med prissättningen av ny information?"
+        },
+        {
+          "q": "Vad är syftet med ett premortem enligt kursen?",
+          "alternativ": [
+            "Att förhindra alla överraskningar",
+            "Att hitta en ursäkt för att inte investera",
+            "Att förutsäga exakt när bolaget misslyckas",
+            "Att skriva ned undergångsscenariot i förväg så att överraskningar inte blir chocker — amygdalan hanterar sedda scenario annorlunda än oföreställliga"
+          ],
+          "ratt": 3,
+          "tips": "Vad är skillnaden i kroppslig reaktion mellan det övervägda och det otänkta?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Ånger — insulan och tänk-om-smärtan",
+      "intro": "Girigheten jagar vinster; rädslan flyr förluster — men det som verkligen håller investerare vakna om natten är ångern: smärtan av det som KUNDE ha hänt. Zweig placerar ångern i samma kretslopp som fysisk smärta och visar att den är skickligast av alla system på att frysa en portfölj: den som inte vågar realisera en förlust förblir sittande i den, år efter år.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ångerns anatomi är kontrafaktisk — den jämför verkligheten med en alternativ verklighet som aldrig inträffade, och smärtan av det nedslag i ångest-regioner (framre insulan igen) kan mätas. Nära-ögonblicken är dess bränsle: spelmissbruksforskning (bland annat Clark med flera, 2009) visar att NÄSTAN-vinster — skraplotter med tre rätt av fyra, spelautomaten som stannar en ikon från vinst — aktiverar samma vinstrelaterade kretslopp som riktiga vinster och ökar lusten att spela vidare. Översätt: aktien som steg strax EFTER att du sålde, fonden du ALDRIG köpte som tredubblades — de bjuder på nästan-vinster som dopaminet räknar som vinster, och ångern som din. Det förklarar också varför den som sålt med vinst men för tidigt kan känna sämre än den som höll en förlust — det kontrafaktiska jämförelsetalet avgör smärtan, inte bokföringen."
+        },
+        {
+          "type": "text",
+          "content": "Beteendedatan är entydig och kursen korsrefererar Kahneman-kursen, som redan gick igenom den: dispositionseffekten — Shefrin och Statman myntade den 1985, Terrance Odean mätte den 1998 på tiotusentals konton: investerare realiserar vinster för ivrigt och sitter kvar i förluster för länge. Zweigs neurotillägg är MEKANISMEN: att sälja förloraren är inte ett neutralt bokföringsbeslut utan att KÄNNA förlusten — pappersförlusten blir verklig, insulan skriker, och underlåtenheten att sälja är flykt från skriket. Till det kommer asymmetrin i tid: Gilovich och Medvec (1994) fann att på kort sikt ångrar vi mest det vi GJORDE (tog chansen, förlorade), på lång sikt det vi UNDLÄT (köpte inte, höll inte kvar). Den långsiktiga investeraren borde alltså rationellt vara mer rädd för underlåtenhet — men hjärnan väger kort sikt högst, alltså fryser den i förlorare för att undvika den omedelbara realiseringssmärtan."
+        },
+        {
+          "type": "text",
+          "content": "Motgåvet är att ta ångern ur beslutet genom att flytta det i tiden och sprida det i bredd. Regler skrivna i förväg — Quantitative Value-kursens säljdiscipliner är mallen: vinstmål, deadline, rankfall, kvalitetsfall — gör varje försäljning till ett regelbeslut i stället för en känslobeslutning; automatisk rebalansering går ett steg längre och SÄLJER ÅT DIG, mekaniskt, vad som är för mycket av vinnaren — den tar skulden, du tar beslutet. Diversifiering är den tredje ångerdämparen: en position på tre procent av portföljen kan aldrig producera den sortens kontrafaktisk katastrof som en på trettio bjuder på. Och minnesregeln från boken, kursad som din: den enda frågan till en gammal förloraraktie är — skulle jag KÖPA den i dag, om jag inte ägde den? Om svaret är nej och du ändå behåller den, äger du inte en aktie; aktien äger dig, via insulan."
+        },
+        {
+          "type": "insikt",
+          "content": "Ångern är den enda av hjärnans signalsystem som kan hålla dig fast i ett beslut du redan fattat fel — den bestraffar korrigeringen hårdare än felet. Därför är ånger-skydd alltid REGELSKYDD: beslutet om försäljning ska vara skrivet, daterat och mekaniskt innan känslan finns. Att fuska mot en regel syns; att fuska mot en känsla gör det inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ångerns fyra ansikten — och deras motgift\",\"rader\":[[\"Variant\",\"Mekanism\",\"Forskning\",\"Marknadsbeteende\",\"Motgift\"],[\"Nästan-vinst\",\"nära-förluster aktiverar vinstkretsloppet\",\"Clark m.fl. 2009\",\"jakt på det som strax missades; hämndaffärer\",\"tjugofyra timmarsregel; ingen ny affär samma dag\"],[\"Disposition\",\"realisering känns som att göra förlusten verklig\",\"Shefrin–Statman 1985; Odean 1998\",\"säljer vinnare, sitter i förlorare\",\"säljregler i förväg; automatisk rebalansering\"],[\"Underlåtenhet\",\"kort sikt ångrar handling, lång sikt ångrar underlåtenhet\",\"Gilovich–Medvec 1994\",\"frysning — att inte välja känns säkert\",\"beslutsjournal; skrivna avslagsorsaker\"],[\"Kontrafaktisk jakt\",\"jämförelsen med det som kunde ha varit styr smärtan\",\"Zweigs neurologi\",\"sover dåligt av sålda vinnare\",\"mät process, inte utfall — varje kvartal\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör ånger-provet på din portfölj: hitta den position du haft längst i röd siffra. Skriv ned sanningsenligt: skulle jag köpa den här aktien i dag, till dagens kurs, om jag inte ägde den — ja eller nej? Om nej: vilken regel saknades när jag köpte den, och vilken regel saknas nu som gör att jag inte säljer? Skriv den regeln — med siffra och datum — i din portföljpamp. Upprepa provet för din största sålda vinnare-så-i-för-tidigt-historia: vad är den lärda regeln där?"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en nästan-vinst och vad gör den enligt spelmissbruksforskningen?",
+          "alternativ": [
+            "En vinst som kom efter lång tid — den minskar lusten att spela",
+            "En förlust som aktiverar samma vinstkretslopp som en riktig vinst och ökar lusten att fortsätta spela",
+            "En vinst exakt vid insatsen — den är neutral",
+            "En typ av utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Tre rätt av fyra på lotter — vad gör det med tron på nästa skrap?"
+        },
+        {
+          "q": "Varför är det så svårt att sälja en förloraraktie enligt Zweigs neurologi?",
+          "alternativ": [
+            "Därför att courtage är för högt på förlustaffärer",
+            "Därför att att sälja gör pappersförlusten verklig — det utlöser den kroppsliga förlustsmärtan som underlåtenheten skyddar mot",
+            "Därför att mäklare vägrar ta sådana ordrar",
+            "Därför att förloraraktier alltid återhämtar sig"
+          ],
+          "ratt": 1,
+          "tips": "Vad KÄNNS det som att trycka på sälj — bokföring eller erkännande?"
+        },
+        {
+          "q": "Vad fann Gilovich och Medvec om ångern över tid?",
+          "alternativ": [
+            "Vi ångrar alltid mest vad vi gjorde, både kort och lång sikt",
+            "Vi ångrar inget på lång sikt",
+            "På kort sikt ångrar vi mest handlingar, på lång sikt mest underlåtenhet — vilket gör frysning i beslut till en dyr strategi",
+            "Ånger är jämnt fördelad över alla beslutstyper"
+          ],
+          "ratt": 2,
+          "tips": "Vilka ångrar den åldrade mest — chanserna som togs eller de som aldrig togs?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Lycka — wanting, liking och rikedomens syfte",
+      "intro": "Bokens näst sista känslasystem vänder på hela frågan: vad ska pengarna TILL? Med Kent Berridges forskning om wanting och liking, lotterivinnarna som inte blev lyckligare och Gilberts upptäckt att vi överskattar hur länge känslor varar, visar Zweig att investerarens mål sannolikt är feldefinierat — och att rattat rätt gör det hela enklare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kent Berridge (Michigan), citerad öppet: dopaminet driver WANTING — viljan, jakten, begäret — medan LIKING — njutningen av det som faktiskt erhålls — till stor del drivs av andra system. De två kan skiljas helt åt: man kan vilja något intensivt och inte gilla det när man får det — beroendets fullständiga mekanik. Det förklarar investingens konstigaste fenomen: jakten på nästa affär kan vara mer tillfredsställande än portföljens faktiga utfall. Och njutningens trampmöl: Philip Brickman och medarbetare (1978) jämförde stora lotterivinnare med kontrollpersoner — vinnarna var inte märkbart lyckligare i vardagen efter anpassningen; hedonisk anpassning gör att både lyftet och smällen i nivå slits bort och man återgår till baslinjen. Ränta-på-ränta-kalkylen lovar allt större belopp; trampmölen lovar att känslan av dem inte växer i samma takt."
+        },
+        {
+          "type": "text",
+          "content": "Daniel Gilbert (Harvard) tillför den andra halvan: vi är dåliga på att förutsäga våra känslor — impact bias. Vi ÖVERSKATTAR hur länge och hur kraftigt framtida händelser kommer kännas: både euforin efter den lyckade affären och misären efter förlusten är kortlivade — och vi fattar beslut som om de vore permanenta. Kursen korsrefererar Kahneman-kursens peak-end-regel (minnet av en upplevelse styrs av toppen och slutet, inte genomsnittet) utan att repetera den; Zweigs tillämpning är portföljminnet: den som upplevt en svart månad minns portföljåret som svart även om tolv månader var gröna — och fattar nästa års beslut utifrån det snedvridna minnet. Gilberts medicin går ut på tidsmarkörer: hur viktig kommer den här känslan att vara om tre månader? — fråga den FÖRE beslutet, inte efter."
+        },
+        {
+          "type": "text",
+          "content": "Och då: vad är rikedomens syfte? Zweig citerar Barry Schwartz satisficer-kontra-maximerare: den som söker det TILLRÄCKLIGA är nöjdare än den som maximerar varje val — och i en brusig miljö som börsen är maximeringen dessutom dyr (den driver frekvenshandeln från kapitel 4). Psychology of Money-kursen (korsreferens) formulerar slutmålet: rikedom är alternativ och tid, inte siffror i sig. AK1A:s översättning är pedagogisk: mät PROCESS inte utfall — varje kvartal, i din beslutsjournal, poängsätt FÖLJDE JAG MINA REGLER, inte vad kurserna gjorde. Utfallet är brusigt (Fooled by Randomness, korsreferens); processen är det enda du äger helt. Automatiskt sparande blir i det ljuset inte tråkighet utan befrielse: när sparmålet dras automatiskt och rebalanseringen sköter sig själv blir jakten (wanting) stilla och ägandet (liking) återstår — portföljen som lugn följeslagare i stället för dopaminkälla."
+        },
+        {
+          "type": "insikt",
+          "content": "Skriv ner den obekväma frågan från boken: om jakten känns bättre än ägandet — vad jagar du då? Ett portföljmål som inte går att njuta av förrän vid pensionen har byggts av wanting, för wanting. Ett mål som ökar din autonomi månad för månad (buffers, alternativ, tid) kan byggas av liking — och den portföljen håller längre, för den överges inte när dopaminet svalnar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Wanting mot liking — dopaminets dubbelspel\",\"rader\":[[\"Begrepp\",\"System\",\"Känns som\",\"I portföljen\",\"Designa för\"],[\"Wanting\",\"dopamin (Berridge)\",\"jakt; spänning; mer!\",\"nästa affär; nästa tips; uppdaterad kurs varje minut\",\"regler som gör jakten overksam — automatisering\"],[\"Liking\",\"njutningssystem\",\"närvaro; nog; tackar\",\"betalda räntor; växande buffert; sover gott\",\"mål i tid och alternativ — inte siffror i avstånd\"],[\"Hedonisk anpassning\",\"baslinjens trampmöl (Brickman 1978)\",\"det nya blir normalt\",\"multiplar som passar på; belopp som aldrig räcker\",\"mät process varje kvartal — utfallet trampar alltid\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt syftesdokument — fem rader, daterat: ett, vad är pengarna TILL (tre konkreta saker i termer av tid och alternativ — inte belopp)? Två, vilket belopp motsvarar det? Tre, vad är MIN processregel per kvartal (inte utfallsmål)? Fyra, hur ofta ska processen poängsättas i beslutsjournalen? Fem, vad får jag INTE göra även om en affär känns jätterolig? Lägg dokumentet tillsammans med portföljpampen — det är motgiftet mot att jaga rätt på fel mål."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är skillnaden mellan wanting och liking enligt Berridge?",
+          "alternativ": [
+            "De är samma system i olika styrka",
+            "Wanting — jakten — drivs av dopamin, medan liking — njutningen — till stor del drivs av andra system; de kan helt skiljas åt",
+            "Liking drivs av dopamin och wanting av kortisol",
+            "Wanting gäller bara fysiska behov"
+          ],
+          "ratt": 1,
+          "tips": "Man kan vilja något intensivt — och inte gilla det när man får det. Vilket system gör vad?"
+        },
+        {
+          "q": "Vad visade Brickmans lotterivinnarstudie från 1978?",
+          "alternativ": [
+            "Att lotterivinnare blev dramatiskt lyckligare för resten av livet",
+            "Att lycka inte kan mätas",
+            "Att stora vinster inte gjorde vinnarna märkbart lyckligare i vardagen — hedonisk anpassning niväller både lyft och smällar",
+            "Att vinna gjorde vinnarna olyckliga permanent"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med känslan av det nya när det nya blivit vardag?"
+        },
+        {
+          "q": "Vad är impact bias (Gilbert) och dess portföljkonsekvens?",
+          "alternativ": [
+            "Att vi underskattar alla känslor — därför bör vi ta mer risk",
+            "Att vi korrekt förutsäger våra känslor men inte andras",
+            "Att vi bara minns toppar och slut",
+            "Att vi överskattar hur länge framtida känslor varar — både euforin efter vinst och misären efter förlust — och fattar beslut som om de vore permanenta"
+          ],
+          "ratt": 3,
+          "tips": "Fråga dig hur viktig den här känslan är om tre månader — varför hjälper den frågan?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Emotionens nödvändighet — Damasio och de känslolösa",
+      "intro": "Efter åtta kapitel om hur känslorna saboterar kommer bokens vändning — dess viktigaste och mest förbisedda: utan emotion fungerar inte förnuftet alls. Antonio Damasios patienter visade att skadat känslokretslopp förlamar beslut; men experiment där hjärnskadade spelade finansspel visade också det omvända: utan rädsla satsade de mer rationellt än de friska. Känslan är inte förnuftets fiende — den är dess råmaterial, och doseringen är allt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Damasios patient Elliot, citerat öppet: hjärntumör i prefrontala cortex opererades bort — intelligens, minne och logik intakta — men beslutsförmågan kollapsade. Elliot kunde resonera klockrent om varje alternativ i timmar och sedan inte VÄLJA; hans liv föll samman i en följd av kassa beslut. Damasios slutsats blev den somatiska markörhypotesen: känslorna taggar alternativen med kroppsliga värden — det här känns rätt, det här varnar — och utan taggarna blir varje val en oändlig uträkning. Iowa Gambling Task (Bechara, Damasio, Tranel) bekräftade mekanismen: friska deltagares hudledningar reagerade på de riskabla kortleckarna INNAN de själva kunde formulera varför — kroppen visste före medvetandet. Kursen korsrefererar Coates-kursen, som använde samma experiment för magkänsla-som-statistik; Zweigs vinkel är omvänd och större: emotion är inte bruset kring beslutet — det är en del av beslutsapparaten själv."
+        },
+        {
+          "type": "text",
+          "content": "Sedan vändningen inom vändningen: Baba Shiv, George Loewenstein och Antoine Bechara (2005) lät tre grupper spela ett enkelt investeringsspel med positiv väntvärdet — satsa en dollar med chans till mer, upprepat tjugo gånger: helt friska, patienter med hjärnskador UTANFÖR känslokretsloppet, och patienter med skador just i de emotionella regionerna (ventromediala prefrontala cortex). Resultatet som förändrade synen på finansintuition: de med känslokretsloppet avstängt satsade mer konsekvent — de blev inte rädda av förlusterna — och vann mer. De friska slutade satsa efter förluster fast spelet var gynnsamt; rädslan kostade dem pengar. Slutsatsen är dubbel och Zweig tar den på fullt allvar: för mycket känsla saboterar (kapitel 5–8), men på rätt sida av sannolikheten är FRITT FÖR KÄNSLA den dyraste defekten av alla — kanske det neurologiska ansiktet på värdeinvesterarens gamla vishet att man måste orka köpa när det blöder."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes, kursens kärnregel för magen. Intuition är komprimerad erfarenhet från en regelbunden miljö med snabb återkoppling — Kahneman-kursens brandmän och schackspelare; finansens återkoppling är långsam och brusig, DÄRFÖR är magen där en varningsradar, inte en prognos (Coates-kursens formulering). Men Shiv-experimentet visar att en helt känslobefriad analys också är fattig — känslan av att NÅGOT är fel i en årsredovisning (V19-kapitalförbränning, V12-intäktskvalitet) är ofta snabbare än medvetandet och förtjänar en lyssning. Arbetsordningen som kursen fastställer: ett — kör AKM1-checklistan FÖRST, utan mage; två — läs sedan av magen och skriv ned den; tre — om magen avviker från checklistan ska avvikelsen FORMULERAS SKRIFTLIGEN (vad vet den som siffrorna inte visar?) innan den får röra en enda poäng. Magen är rådgivare med en röst — aldrig verkställande direktör."
+        },
+        {
+          "type": "insikt",
+          "content": "Målet är inte en känslolös investerare — den finns inte, och skulle den finnas vore den sämre (Elliot). Målet är en känslo-ARKITEKTUR: checklistan får det kognitiva jobbet, magen får varningsjobbet, reglerna får beslutsjobbet — och var och en skriver sitt underlag i journalen. Känsla utan struktur är dyk utför backen; struktur utan känsla är Elliot framför två väggar av aktier som inte kan välja."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Känsla som data — när emotion hjälper och skadar\",\"rader\":[[\"Roll\",\"Källa\",\"Hjälper\",\"Skadar\",\"AK1A-placering\"],[\"Beslutsapparatens bränsle\",\"Damasio — somatiska markörer\",\"ger energi och riktning åt valet\",\"utan den: beslutsförlamning (Elliot)\",\"acceptera att känslan finns — designa runt den\"],[\"Varningsradar\",\"Bechara — kroppen vet först\",\"flaggar anomalier i rapporten snabbare än medvetandet\",\"som PROGNOS i brusig miljö — inlärda rädslor spökar\",\"magen läses EFTER checklistan; avvikelse skriftligt\"],[\"Rädsla i gynnsamt spel\",\"Shiv–Loewenstein–Bechara 2005\",\"skyddar i verkligt farliga lägen\",\"de friska slutade satsa i ett gynnsamt spel — rädslan kostade pengar\",\"regler som garanterar köp när V04–V06 säger billigt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Installera magprotokollet i din nästa AKM1-analys: poängsätt först alla tjugo variabler KALLT — ingen mage. Skriv därefter en rad: vad känner jag om det här bolaget — exakt, med namn på känslan (obehag? fascination? trötthet?). Om känslan strider mot någon poäng: formulera skriftligt VAD magen vet som siffrorna inte visar — och leta sedan efter den informationen i årsredovisningen. Om den inte finns: känslan var inlärd rädsla eller dopamin, och poängen står. Logga båda raderna i journalen."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade Damasios patient Elliot om känsla och beslut?",
+          "alternativ": [
+            "Att emotion alltid stör rationaliteten och bör undertryckas",
+            "Att hans logik och minne skadades av tumören — därav beslutsproblemen",
+            "Att intakt intellekt utan känslomässiga markörer förlamar beslutsfattandet — han kunde resonera om allt men inte välja",
+            "Att känslor bara spelar roll i sociala situationer"
+          ],
+          "ratt": 2,
+          "tips": "Vad SAKNADE Elliot som gjorde varje val till en oändlig uträkning?"
+        },
+        {
+          "q": "Vad var det uppseendeväckande resultatet i Shiv, Loewenstein och Becharas spel från 2005?",
+          "alternativ": [
+            "Alla grupper spelade identiskt",
+            "Patienter med skador i emotionella regioner satsade mer konsekvent och vann mer — de friska slutade satsa efter förluster trots gynnsamma odds",
+            "De friska vann mest tack vare sin försiktighet",
+            "Spelet hade negativ väntvärdet för alla"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med den som INTE kan bli rädd — i ett spel där rädsla är dyr?"
+        },
+        {
+          "q": "Vilken arbetsordning mellan checklista och mage fastställer kursen?",
+          "alternativ": [
+            "Magen först — checklistan bekräftar det magen sagt",
+            "Checklista och mage samtidigt — de får gärna blanda sig i varandra",
+            "Endast checklistan — magen ska aldrig lyssnas på",
+            "Checklistan först och kallt; sedan magen läsas av skriftligt — och varje avvikelse mot poängen måste formuleras vad den vet som siffrorna inte visar"
+          ],
+          "ratt": 3,
+          "tips": "Magen är rådgivare med en röst — vem är verkställande direktör?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Kontrovers I — voodoo-korrelationer och döda laxar",
+      "intro": "Nu kursens viktigaste kontrovers, mot bakgrund av allt du just lärt. Neuroekonomins tidiga fMRI-studier — flera av dem citerade i Zweigs bok — har mött en av vetenskapshistoriens hårdaste metodkritik. Hur mycket av det du lärt i kapitel 2–10 står kvar? Kursen svarar ärligt, med kritikerna vid namn, och skiljer mellan det som fallit och det som håller.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kritiken, citerad öppet. Ed Vul och medarbetare (2009) — artikeln som blev känd som voodoo-korrelationerna — visade att en stor andel publicerade studier som korrelerade hjärnaktivitet med personlighet eller beteende rapporterade misstänkt höga korrelationer, delvis som en konsekvens av att forskare valde ut de mest extrema voxlar ur hundratusentals möjliga och sedan korrelerade med beteende — ett slags dubbelurval som blåser upp sambanden. I samma anda: Craig Bennetts (o)berömda studie med en död atlantisk lax i skannern, som visade tydlig hjärnaktivitet i fisken när man inte korrigerade för multipel testning — arbetet tilldelades Ig Nobelpriset 2012 och blev synonymt med hela problemet: med nog många jämförelser hittas mönster i vad som helst, inklusive döda fiskar. Grundproblemet är strukturellt: typiska fMRI-studier har femton–tjugo försökspersoner, och med små urval blir slumpens röst hög."
+        },
+        {
+          "type": "text",
+          "content": "Den djupare metodologiska invändningen är omvänd slutledning — formulerad skarpt av Russell Poldrack: att en region aktiveras i ett visst sammanhang betyder INTE att aktiviteten är signatur för den mentala processen. Nucleus accumbens aktiveras av pengar, ja — men också av skämt, välgörenhet, musik och godis; att kalla den girighetens centrum är som att kalla hamnarvattnet för handelsvaruhus därför att fartyg lastas där. Zweigs bok — skriven 2007, före denna kritikvåg — använder ibland just den typen av lokaliseringspräglade formuleringar (girighetens punkt, rädslans hem) och den ärliga läsningen är att de ska förstås som pedagogiska bilder av system, inte som adresser. Det är samma självkritik Kahneman själv framförde om sin bokens priming-kapitel (korsreferens Kahneman-kursen, kapitel 15: jag satte för stor tro på underdimensionerade studier) — en era av små urval, inte fusk, och fälten har rensat sig själva i olika takt."
+        },
+        {
+          "type": "text",
+          "content": "Vad håller då? Kursens ärliga redovisning, med källorna skilda åt. Fältdata — beteendet mätt i verkliga konton och beslut — håller: förlustaversionen (prospect theory, replikerad i tusentals sammanhang), dispositionseffekten (Shefrin–Statman, Odean — replikerad på kontodata världen runt), överhandelns kostnad (Barber–Odean), hemmarknadsbias (French–Poterba), granskningsfrekvensens effekt (Thaler–Benartzi och experimenten 1997). Grundfysiologin håller i metaanalyser: att belöningens förväntan engagerar ventrala striatum (där accumbens ligger), att dopaminneuroner bär prediktionsfel (Schultz), att amygdalan är central i rädslainlärning (LeDoux). Det som vacklar är de precisa ETT-TILL-ETT-påståendena: den här regionen aktiverad vid det här tillfället förutsäger det enskilda beslutet hos den enskilda personen. Skillnaden är avgörande för hur kursen ska läsas: Zweigs MEKANISMER är välgrundade hypoteser; hans BETEENDEPÅSTÅENDEN står på fältdata, inte på skanningar — och hans PRAKTISKA RÅD (titta mer sällan, vänta tjugofyra timmar, automatisera, diversifiera) är motiverade av beteendedatan och logik, oberoende av om någon skanner tänds. Neuroberättelserna är färgen; beteendet är beviset; reglerna är slutsatsen. Så läser AK1A neuroekonomi — med respekt och utan helgonförklaring."
+        },
+        {
+          "type": "insikt",
+          "content": "Använd kursens tre-skikts-test när du möter vilken neuro-anspråk som helst — i boken, i föreläsningar, i säljmaterial: ett — är påståendet om MEKANISM (ett system engageras) eller om SPÅDOM (den här aktiviteten förutsäger ditt nästa beslut)? två — vilar det på skanning eller fältdata? tre — vore rådet rimligt även om skanningen aldrig gjorts? Endast skikt tre behöver vara sant för att du ska följa rådet — men var och en som säger sig VINNA på att sälja dig skannade slutsatser måste klara alla tre."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vad som håller och vad som vacklar i neuroekonomin\",\"rader\":[[\"Påståendetyp\",\"Exempel\",\"Status\",\"Källa\"],[\"Beteendefenomen\",\"förlustaversion; disposition; överhandelns kostnad; hemmarknadsbias\",\"håller — replikerad i fältdata\",\"prospect theory; Odean; Barber–Odean; French–Poterba\"],[\"Grundfysiologi\",\"dopamin bär prediktionsfel; striatum i belöning; amygdala i rädsla\",\"håller i metaanalyser\",\"Schultz; LeDoux\"],[\"Precisa kopplingar\",\"denna aktivering förutsäger detta enskilda beslut\",\"vacklar — små urval; dubbelurval; multipel testning\",\"Vul m.fl. 2009; Bennetts döda lax (Ig Nobel 2012)\"],[\"Lokaliseringsspråk\",\"girighetens centrum; rädslans hem\",\"pedagogisk bild, inte adress — omvänd slutledning\",\"Poldrack\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör tre-skikts-testet på ett eget neuro-övertygelse: skriv ned ETT påstående du tror på från den här kursen eller från media (till exempel: mitt belöningssystem gör mig girig vid uppgångar). Klassificera: mekanism eller spådom? Skanning eller fältdata? Vore rådet rimligt utan skanning? Samma övning på en annan källa: hitta en populär artikels neuro-påstående och kör testet. Logga båda — kalibrering av din neuro-skepsis är del av träningen."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var poängen med studien med den döda laxen i skannern?",
+          "alternativ": [
+            "Att fiskar har mer komplext nervsystem än man trott",
+            "Att lakan kan flyga i skannrar",
+            "Att utan korrigering för multipel testning hittas hjärnaktivitet — mönster — i vad som helst, till och med i en död fisk",
+            "Att fMRI är oanvändbart i all forskning"
+          ],
+          "ratt": 2,
+          "tips": "Ig Nobelpriset 2012 — hur många jämförelser görs samtidigt i en hjärna med hundratusentals voxlar?"
+        },
+        {
+          "q": "Vad är omvänd slutledning (Poldrack)?",
+          "alternativ": [
+            "Att slutsatser dras baklänges i tiden",
+            "Att en regions aktivering tolkas som bevis för en specifik mental process — fast regionen aktiveras av många olika saker",
+            "En statistisk modell för riskprognoser",
+            "Att experimentet upprepas i omvänd ordning"
+          ],
+          "ratt": 1,
+          "tips": "Accumbens aktiveras av pengar, skämt, musik och godis — vad kan man då INTE säga om en aktivering?"
+        },
+        {
+          "q": "Vilket påstående bäst sammanfattar kursens ärliga läsning av Zweig efter kritiken?",
+          "alternativ": [
+            "Neuroekonomin har fallit och boken ska läggas ned",
+            "Mekanismerna är välgrundade hypoteser och beteendepåståendena står på fältdata — men de precisa skanningskopplingarna och lokaliseringspråket ska läsas med skepsis",
+            "Alla fMRI-studier har replikerats perfekt",
+            "Beteendedata är mindre pålitliga än skanningsdata"
+          ],
+          "ratt": 1,
+          "tips": "Skilj på tre skikt: mekanism, beteende, spådom — vilket skikt är bevisat var?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Kontrovers II — är det hjärnans fel?",
+      "intro": "Om girigheten bor i accumbens, rädslan i amygdalan och ångern i insulan — är du då ansvarig för dina dåliga affärer? Kontroversen om fri vilja har ryckt på sig neurovetenskapens kläder: Libets mätningar, Sam Harris och Robert Sapolsky som förklarar att valet är en illusion — mot Daniel Dennetts kompatibilism. Kursen tar debatten på allvar och landar i AK1A:s pedagogik: medvetenhet om biaserna genom träning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Argumentet, citerat öppet. Benjamin Libet (1983) mätte readiness potential — hjärnans förberedande aktivitet — och fann att den började cirka en tredjedels sekund FÖRE försökspersonen rapporterade att han beslutat sig; hjärnan verkar röra sig innan jag bestämmer. Sam Harris (Free Will, 2012) och Robert Sapolsky (Determined, 2023) har dragit den hårdaste slutsatsen: fri vilja är en illusion — tankar och impulser uppstår ur orsakkedjor du inte valt (gener, hormoner, uppväxt, senaste veckans kurser). Tillämpat på kursen: dopaminet du föddes med, amygdalan som lärde sig 2008 — sälja i botten var, strängt taget, hjärnans fel. Det är en frestande ursäkt och den ska tas på allvar, inte avfärdas: impulserna ÄR äldre än tankarna, och LeDoux snabba väg (kapitel 6) är bokstavligen snabbare än medvetandet."
+        },
+        {
+          "type": "text",
+          "content": "Motargumenten är också starka. Aaron Schurger (2012) visade att readiness potentialen i Libets experiment kan förklaras som stokastiskt brus som när som helst passerar ett tröskelvärde — alltså inte ett beslut som görs i hemlighet, utan en hjärna som mumlar innan den talar; Libets tidslinje är inte det bevis den togs för. Daniel Dennett (Freedom Evolves) formulerar kompatibilismen: frihet är inte frihet FRÅN orsaker — den är förmågan att ordna sina egna begränsningar: att bygga system som framtida-du inte kan fuska förbi. Och notera ironin som kursen ska minnas: även Sapolsky, determinismens mest hörda röst, argumenterar för att ansvar och konsekvenser måste finnas kvar i samhällets orsaksvävar — uteslutandet av fri vilja innebär inte uteslutandet av ansvar som praktik. Rättssystemet har mött samma diskussion (neurojuridik: hjärntumörer och skador åberopats som förklaringsgrunder till impulskontrollbrott) och lärdomen är densamma: förklaring minskar skuld men ökar kravet på struktur."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s hållning, kursens pedagogiska kärna: det är inte ditt fel att hjärnan är byggd som den är — men det är ditt ansvar att bygga systemet runt den. Det finns ett verkligt vetenskapligt stöd för att träning förändrar hjärnan: Eleanor Maguire (2000) fann att Londons taxiförare — som memorerat stadens gatuflätning i åratal — hade förstorad posterior hippocampus relativt till kontrollgrupper; expertis är en strukturell förändring. Men ärligheten kräver begränsningen: övertygad evidens för att SKRÄDDARSYDDA hjärnträningar (appar och spel) överförs till verkliga beslut saknas — Lumosity fick 2016 betala viten i USA för överdrivna påståenden om prestationshöjningar. AK1A:s träning är därför procedurmässig, inte neurologiskt mirakel: repetitiv AKM1-poängsättning (samma hål varje gång), beslutsjournal i /profil (återkoppling på processen), kalibreringsloggen från kapitel 3 (konfidens mot utfall), post-mortems och dessa quiz. Det är medvetenhet om biaserna genom träning — pilotens modell: piloter tränar inte för att slutar känna rädsla i turbulens; de tränar checklistor tills checklistan flyger planet när rädslan finns. Medvetandet gör inte dig immun — det gör dig i stånd att träna rätt saker."
+        },
+        {
+          "type": "insikt",
+          "content": "Fri vilja-debattens praktiska slutpoäng för investeraren: valet sker inte i ögonblicket av impulsen — det skedde månaden före, när du skrev regeln. Determinismens bästa motgift är därför tidsförskjutning: besluta NU vad framtida-du ska göra när dopaminet står högt och insulan låg. Det är inte en filosofisk ståndpunkt; det är en Ulysses-lösning — och den fungerar oavsett vad man anser om metafysiken."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Determinismens argument — och vad AK1A gör av dem\",\"rader\":[[\"Argument\",\"Källa\",\"SVAR: kritik\",\"AK1A:s praktik\"],[\"Hjärnan före medvetandet\",\"Libet 1983\",\"Schurger 2012: readiness potential kan vara brus, inte beslut\",\"bygg besluten i förväg — impulsen får aldrig vara beslutstillfället\"],[\"Fri vilja är illusion\",\"Harris 2012; Sapolsky 2023\",\"Dennett: frihet = att ordna egna begränsningar; även Sapolsky behåller ansvaret som praktik\",\"regler, automatisering, portföljpamp — strukturen är friheten\"],[\"Träning förändrar hjärnan\",\"Maguire 2000 — taxiförarnas hippocampus\",\"men hjärnappar överför inte (Lumositys FTC-vite 2016)\",\"procedurträning: checklistor, journal, kalibrering, post-mortem\"],[\"Kunskap räcker inte\",\"Montier: kunskap är inte beteende\",\"Kahneman: Müller-Lyer stannar trots insikt\",\"medvetenhet om biaserna genom träning — med yttre struktur\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Designa din träningsslinga — på papper, daterat, med datum redan bokade i kalendern: VECKA — en full AKM1-poängsättning (samma hål, nytt bolag). MÅNAD — genomgång av beslutsjournalen: känsla före beslut, regel följd eller bruten. KVARTAL — kalibreringsloggen poängsätts; premortem på största positionen; processen (inte utfallet) betygsätts. Skriv sedan en mening: vad är den tröskel där jag TYCKER jag behöver träna mer — och vad gör jag då? Slingan är kursens slutprodukt i miniatyr: medvetenhet genom träning, i tre frekvenser."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var Libets fynd från 1983?",
+          "alternativ": [
+            "Att medvetandet aktiveras före varje handling med en sekund",
+            "Att readiness potentialen började cirka en tredjedels sekund innan försökspersonen rapporterade sitt beslut — hjärnan före jaget",
+            "Att fri vilja går att mäta i millisekunder",
+            "Att amygdalan styr alla ekonomiska beslut"
+          ],
+          "ratt": 1,
+          "tips": "Vilken signal mättes — och i vilken ordning gentemot den rapporterade avsikten?"
+        },
+        {
+          "q": "Vad är Dennetts kompatibilistiska svar i kursens sammanfattning?",
+          "alternativ": [
+            "Att frihet är frihet från alla orsaker och måste vara övernaturlig",
+            "Att determinismen är fel och fri vilja är mystisk",
+            "Att frihet är förmågan att ordna sina egna begränsningar — att bygga system som framtida-jag inte kan fuska förbi",
+            "Att ansvar ska avskaffas eftersom allt är orsakat"
+          ],
+          "ratt": 2,
+          "tips": "Vad kallas Ulysses lösning med sirenerna — vad byggde han innan frestelsen kom?"
+        },
+        {
+          "q": "Vad menar AK1A med medvetenhet om biaserna genom träning?",
+          "alternativ": [
+            "Att läsa en bok om biases gör dig immun",
+            "Att hjärnträningospel överför kända biases till verkligheten",
+            "Att biases försvinner med åldern",
+            "Att medvetandet inte botar — men visar vad som ska tränas: repetitiv checklistträning, journal, kalibrering och post-mortem ger struktur som fungerar även när impulsen kommer"
+          ],
+          "ratt": 3,
+          "tips": "Pilotens modell: slutar piloter känna rädsla — eller slutar rädslan flyga planet?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Zweigs verktygslåda — reglerna före känslan",
+      "intro": "Bokens praktiska hjärta — och kursens näst sista kapitel — samlar motgåven från varje känslasystem till en verktygslåda. Principen är en enda, citerad rakt ur bokens anda och Odyséen: förbind dig i förväg. Ulysses lät binda sig vid masten FÖRE sirenerna hördes; investeraren skriver regler FÖRE dopaminet och amygdalan vaknar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förbindelsen i förväg — precommitment — är verktygslådans spiksade princip, och den har en anatomi: regeln ska vara skriftlig, daterad, mätbar och tekniskt svår att bryta. Automatiserat sparande (månatlig automatisk överföring till portföljen) är den starkaste formen — beslutet fattas EN gång och gäller sedan i åratal, varje månad, oavsett nyhetsflöde; det är dollar cost averaging som dopaminneutral praktik. Nästa nivå är regelverken: portföljpampen från Quantitative Value-kursen (universumtröskel, maxvikt, köpregler, säljregler, rebalanseringsdatum) kompletteras här med HJÄRN-reglerna: tjugofyra timmars vilan varje affär som känns spännande; fast granskningsfrekvens (kapitel 6); inga beslut samma dag som de utlösts av vinstsvit eller förlustsvit (kapitel 5). Graham-formuleringen som Zweig återupplivade i sin upplaga av The Intelligent Investor gäller fortfarande: investerarens värsta fiende är troligen inte marknaden utan han själv — och pampen är fredsfördraget med den fienden."
+        },
+        {
+          "type": "text",
+          "content": "Verktygen mot varje system, i tabellform nedan — men notera de två som kursen lyfter som underskattade. Diversifiering är i Zweigs ljus inte bara riskmotiv utan ÖDMJUKHETSMASKIN: Lake Wobegon-logiken från QV-kursen (alla tror sig vara över genomsnittet — matematiskt omöjligt) gör bredden till ett erkännande av att varje enskild tes kan ha fel, och bredden skär också ångerns kraft (kapitel 8: en position på tre procent kan inte producera en livsavgörande kontrafaktisk smärta). Automatisk rebalansering är den andra: den SÄLJER vinnaren och KÖPER förloraren enligt regel — exakt det som dispositionseffekten förbjuder dig att göra med känsla — och den tar därmed både skammen och beslutet ur dina händer. Regler gör det känslan inte klarar; det är hela poängen med dem."
+        },
+        {
+          "type": "text",
+          "content": "Och sedan integrationen i AKM1:s arbetsflöde, som kursen sätter samman till ett beslutsprotokoll i sju steg. Ett — TILLSTÅNDSKONTROLL (från Coates-kursen: utvilad, inte efter vinstsvit eller förlustsvit; annars avböjs bordet). Två — KALL POÄNGSÄTTNING: AKM1:s tjugo variabler utan mage. Tre — MAGPROTOKOLLET (kapitel 10): känslan läses av skriftligt efteråt; avvikelser formuleras. Fyra — VÄRDERINGS-DISCIPLIN (kapitel 2): V04–V06 dopamin-marginal; spännande känsla → tjugofyra timmar. Fem — FÖRVÄNTANSDISCIPLIN (kapitel 7): vad är prissatt i V16–V18? premortem skrivs. Sex — PORTFÖLJ-BESLUT: storlek efter förskriven maxvikt; aldrig efter känslans storlek. Sju — JOURNAL: beslut, känsla, regel — loggas i /profil för månadens genomgång. Sju steg, en sida, alla kapitel i kursen som numrerade verktyg — och noll beslut som fattas i samma ögonblick som känslan som födde dem."
+        },
+        {
+          "type": "insikt",
+          "content": "Samla verktygslådans essens i en mening: KÄNSLAN FÅR ALDRIG VARA BESLUTSTIDSPUNKT. Den får vara signal, rådgivare, varningsradar — men tidpunkten ägs alltid av regeln, tjugofyra timmars vilan eller kalenderns rebalanseringsdag. Frågan vid varje beslut är därför inte vad jag känner utan VARIFRÅN tidpunkten kommer — från mig i dag eller från mig i lugn?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Zweigs verktygslåda mot AK1A — åtta motgift\",\"rader\":[[\"Verktyg\",\"Skyddar mot\",\"Kapitel\",\"AK1A-placering\"],[\"Tjugofyra timmarsregeln\",\"girighet; impulsköp\",\"2, 8\",\"krav i beslutsprotokoll steget fyra\"],[\"Fast granskningsfrekvens\",\"närsynt förlustaversion; panik\",\"6\",\"kalender; notiser av; kvartalsutvärdering\"],[\"Automatiserat sparande\",\"prokrastinering; timing-jakt\",\"9\",\"månatlig autogiro till portföljen\"],[\"Positionsregler i förväg\",\"risk efter vinstsvit; freeze efter förlust\",\"5\",\"maxvikt i portföljpampen; aldrig omförhandlad i storm\"],[\"Automatisk rebalansering\",\"dispositionseffekten; ånger\",\"8\",\"regel säljer vinnaren och köper förloraren\"],[\"Diversifiering\",\"övermod; ångerkoncentration\",\"4, 8\",\"Lake Wobegon-ödmjukhet; minst 15–30 positioner\"],[\"Beslutsjournal\",\"allt — minnet skriver om historien\",\"1, 12\",\"/profil: känsla, regel, beslut — månatlig granskning\"],[\"Premortem\",\"chocköverraskningar\",\"7\",\"bull- och bear-scenario före varje köp\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din HJÄRNFÖRSÄKRING — ett dokument på max tio rader, daterat och signerat: de fem regler från tabellen ovan som passar din profil (välj med utgångspunkt från kapitel 5:s tillstånds-audit och kapitel 8:s ångerprov). För varje regel: vad den skyddar mot (vilket system) och VAD som händer om du bryter den (förbestämd konsekvens — till exempel: en veckas handelsstopp). Lägg dokumentet tillsammans med portföljpampen. Granska det om nittio dagar — brotten mot det är din träningsplan."
+        },
+        {
+          "type": "visuell",
+          "content": "sankey"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är precommitment — förbindelsen i förväg — i bokens praktik?",
+          "alternativ": [
+            "Att lova sig själv att göra sitt bästa nästa gång",
+            "Att fatta beslutet i lugn innan känslan kommer — skriftligt, daterat och tekniskt svårt att bryta, som Ulysses vid masten",
+            "Att anlita en personlig coach",
+            "Att handla snabbare än känslan hinner Ikapp"
+          ],
+          "ratt": 1,
+          "tips": "När binds Ulysses — före eller under sångerna?"
+        },
+        {
+          "q": "Varför kallar kursen diversifiering för en ödmjukhetsmaskin?",
+          "alternativ": [
+            "Därför att den alltid ger högst avkastning",
+            "Därför att indexfonder är enklast att förstå",
+            "Därför att bredden är ett erkännande att varje tes kan ha fel — Lake Wobegon-logik — och den skär också ångerns koncentrationskraft",
+            "Därför att mäklare rekommenderar det"
+          ],
+          "ratt": 2,
+          "tips": "Vad säger positionens storlek om hur säker du tror dig vara?"
+        },
+        {
+          "q": "I det sjustegs beslutsprotokollet — vad är steget MAGPROTOKOLLET?",
+          "alternativ": [
+            "Magen poängsätter variablerna först, checklistan bekräftar",
+            "Magen läsas av SKRIFTLIGT EFTER den kalla poängsättningen — och varje avvikelse mot poängen måste formuleras vad den vet som siffrorna inte visar",
+            "Alla beslut fattas på magkänsla om checklistan är lång",
+            "Magen kontrolleras med blodtrycksmätning"
+          ],
+          "ratt": 1,
+          "tips": "Ordningen är allt: vem poängsätter först — och vem skriver avvikelsen?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Sammanfattning — den medvetne investeraren (V01–V20)",
+      "intro": "Sista kapitlet sätter ihop allt: bokens nio känslosystem som en enda träningsplan, Zweigs verktygslåda som dess struktur — och AK1A:s porträtt av den investerare kursen formats mot: den medvetne investeraren, som inte har en annan hjärna än du, men ett annat förhållande till den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Boken i en process. Känslasystemen i följd — girigheten (accumbens och förväntansdopaminet), förutsägelseberoendet (prediktionsfelet), övermodet (frekvens, vana, varumärke), risken (gas och broms), rädslan (amygdalans snabba väg), överraskningen (förväntansgapet), ångern (tänk-om-smärtan), lyckan (wanting mot liking) och emotionens nödvändighet (Damasio, Shiv) — är inte nio separata fiender utan ett system: känslan tänds först, lär sig snabbt, vägs dubbelt och minns snedvridet. Därför är motgåven inte nio knep utan en arkitektur i fyra lager, kursens trappsteg: MEDVETENHET (känna igen fingeravtrycket — kapitel 1–10), TRÄNING (kalibrering, journal, checklist-drills — kapitel 3, 12), STRUKTUR (regler, automatisering, rebalansering — kapitel 13) och ÅTERKOPPLING (post-mortems, kvartalsgranskning av process — kapitel 7, 12). Trappstegen bygger på varandra: medvetenhet utan träning är underhållning; träning utan struktur är viljestyrka vid masten utan rep; struktur utan återkoppling rostar."
+        },
+        {
+          "type": "text",
+          "content": "Mappningen till AKM1:s alla tjugo variabler — bokens sista översättningstabell, kursad nedan i sin helhet. Principen från Coates-kursen gäller alltjämt: den här boken flyttar inte en enda variabels innebörd — den specificerar I VILKET TILLSTÅND och MED VILKEN ORDNING de ska mätas. Värderingsblocket V04–V06 mäts med dopamin-marginal som mått (kapitel 2). Tillväxtblocket V01–V03 poängsätts med basfrekvenser och förväntansdisciplin (kapitel 7 — vad är prissatt?). Lönsamheten V07–V09 och stabiliteten V10–V12 mäts kallt, i detalj mot upplevd risk (kapitel 5–6: V12 är både bolagets och ditt eget rädslomotgift). Moat-blocket V13–V15 granskas med varumärkesfällan i minnet (kapitel 4: din favoritprodukt är inte ett moat-bevis). Katalysatorerna V16–V18 rankas — köps aldrig — och premortem (kapitel 3, 7). V19 kontrolleras av magens varningsradar likaväl som av siffrorna (kapitel 10). V20 — tålamodets variabel — är wanting-liking-lärans hem (kapitel 9): bolag som återköper aktier tålmodigt med fritt kassaflöde är ägare som gillar; daghandlaren är en som jagar."
+        },
+        {
+          "type": "text",
+          "content": "Porträttet av den medvetne investeraren, i sex drag. Ett: han känner sina system vid namn — när förväntan kickar, när rädslan hinner först, när ångern fryser — och kallar dem vad de är: data, inte orden. Två: hon fattar inga beslut i känslans ögonblick — tidpunkten ägs av regeln, vilan eller kalendern. Tre: han tränar procedurmässigt och mäter process per kvartal — aldrig självbild, aldrig enskilda utfall. Fyra: hennes portfölj är byggd för den hjärna hon har — breddad, automatiserad, rensad från koncentrerade ångerfällor. Fem: han läser neuroanspråk med tre-skikts-testet — mekanism, data, regel — och behåller vördnaden utan helgonförklaring (kapitel 11). Sex: hon har gjort fred med konstruktionen — det är inte hjärnans fel att den är som den är, men det är hennes ansvar att bygga systemet runt den (kapitel 12). Det är hela personen: inte en annan hjärna — ett annat avtal med den. Zweigs bok, läst på AK1A:s sätt, är avtalets manual; träningsslingan från kapitel 12 är dess signatur. Skriv under i dag — kalibreringsloggen från kapitel 3 väntar på sitt första datum."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista mening är bokens djupaste: emotion är inte investerarens fiende — den är dess äldsta rådgivare, anställd evolutionens HR-avdelning, med brasklapp: aldrig verkställande. Den medvetne investeraren avskedar inte rådgivaren; han bygger om bolagsstyrningen — checklistan poängsätter, reglerna beslutar, journalen granskar — och låter känslan behålla sin stol i styrelsen: en röst, protokollförd, aldrig röstande ensam."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Your Money and Your Brain till AKM1 — översättningstabellen\",\"rader\":[[\"Bokens system\",\"AKM1-variabler\",\"Regel för den medvetne\"],[\"Girighet — förväntansdopamin\",\"V04, V05, V06\",\"dopamin-marginal: köp där crowdens belöningssystem är kallt; tjugofyra timmar vid kick\"],[\"Förutsägelse — prediktionsfel\",\"V01–V03, V16–V18\",\"katalysatorer rankas, köps aldrig; kalibreringslogg; basfrekvens före berättelse\"],[\"Övermod — frekvens, vana, varumärke\",\"V13–V15; hela portföljen\",\"mät moat i marginaler; granska favoriter kallast; handelstak; geografisk spridning\"],[\"Risk — gas och broms\",\"V10, V11; positionsstorlek\",\"maxvikter i förväg; inga nyförhandlingar efter vinst- eller förlustsvit\"],[\"Rädsla — snabba vägen\",\"V12; granskningsfrekvens\",\"stabil intäkt under lugn; fast kvartalsutvärdering; notiser av\"],[\"Överraskning — förväntansgap\",\"V16–V18; scenarier\",\"vad är prissatt?; premortem före varje köp\"],[\"Ånger — tänk-om-smärtan\",\"säljdisciplin; bredd\",\"säljregler skrivna i förväg; automatisk rebalansering; skulle jag köpa den i dag?\"],[\"Lycka — wanting och liking\",\"V20; målsättning\",\"automatiserat sparande; mät process kvartalsvis; mål i tid och alternativ\"],[\"Emotionens nödvändighet\",\"V19; magprotokollet\",\"checklista kallt först; magen läses skriftligt efteråt — en röst, aldrig VD\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — din HJÄRN-AUDIT, full storlek: ta listan från kapitel 1 (känslor före beslut) och dina tio senaste affärer. Mappa varje affär mot kursens nio system — vilken känsla drev den (girighet, förutsägelse, övermod, risk-gas, rädsla, överraskningsjakt, ånger, wanting, eller magkänsla som inte fick formuleras)? Räkna histogram: vilket system dominerar? Skriv sedan EN regel per dominerande system — från verktygslådan i kapitel 13 — i din hjärnförsäkring, datera, och boka granskning om nittio dagar. Bilaga: kör AKM1-poängsättning på ett nytt bolag med det sjustegs beslutsprotokollet, och logga magprotokollet. Från och med nu har du inte bara en portfölj — du har en träningsplan."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är trappstens-lagren i kursens sammanfattning?",
+          "alternativ": [
+            "Intuition, mod, tur, timing",
+            "Medvetenhet, träning, struktur, återkoppling — de bygger på varandra",
+            "Information, prognos, handel, utvärdering",
+            "Girighet, rädsla, ånger, lycka"
+          ],
+          "ratt": 1,
+          "tips": "Kunskap utan träning är underhållning; träning utan struktur är viljestyrka utan rep — vad saknas sist?"
+        },
+        {
+          "q": "Hur förhåller sig bokens system till AKM1:s tjugo variabler?",
+          "alternativ": [
+            "Boken ändrar variablernas innebörd — V04 mäter nu dopamin",
+            "Boken ersätter fundamental analys med skanningar",
+            "Boken flyttar inte en variabels innebörd — den specificerar i vilket tillstånd och i vilken ordning de ska mätas",
+            "Boken gäller bara teknisk analys"
+          ],
+          "ratt": 2,
+          "tips": "Instrumentet eller partituret — vad ändrade Coates-kursen och den här kursen?"
+        },
+        {
+          "q": "Vad är kursens slutståndpunkt om emotionens roll?",
+          "alternativ": [
+            "Emotion ska elimineras helt — det är bokens huvudbudskap",
+            "Emotion är fienden och rationaliteten räcker",
+            "Emotion ska ersättas med algoritmer i alla lägen",
+            "Emotion är inte fienden utan den äldsta rådgivaren — en röst i styrelsen, protokollförd, aldrig röstande ensam: checklistan poängsätter, reglerna beslutar"
+          ],
+          "ratt": 3,
+          "tips": "Minns Elliot — hur gick det för den som saknade rådgivaren helt?"
+        }
+      ]
+    }
+  ]
+}

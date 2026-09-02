@@ -1,0 +1,1082 @@
+{
+  "slug": "the-new-science-of-technical-analysis",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 170,
+  "title": "The New Science of Technical Analysis — DeMark: KOMPLETT",
+  "summary": "Thomas R. DeMark — karriären börjad 1971 hos pensionsförvaltaren National Investment Services i Wisconsin, rådgivare åt Goldman Sachs, Dean Witter, Citibank, IBM:s pensionsfond och Paul Tudor Jones, senare i närmare trettio år särskild rådgivare till Steven A. Cohen på SAC/Point72 (dokumenterat av Washington Post 2012 och Fortune 2016) — publicerade 1994 i Wiley Finance-serien den mest systematiska uppgörelsen med den subjektiva tekniska analysen: trendlinjer utan ögonmått (TD Points, TD Lines, kvalificerade brytningar), prisprojektioner ur rörelsens egna mått i stället för Fibonacci-tal, tryckoscillatorn DeMarker, regimfrågan TD REI och framför allt utmattningsmotorn TD Sequential — nio setup-stängningar mot stängningen fyra barar tidigare, tretton countdown-counts mot lägsta två barar tidigare — med syskonet TD Combo som strängare variant. Kursen går igenom hela mekaniken, demaskeringen av Elliott, Gann och Fibonacci, institutionella översättningen (Jason Perls Bloomberg Press-manual från 2008) — och kontroversen där akademikernas kurvningsanklagelse (frihetsgrader, multipel testning i Harvey–Liu–Zhu och Park–Irwins anda) möter utövarnas trettioåriga adoption: AK1A:s dom är att mätbara regler är nödvändiga men otillräckliga, och kursen avslutar med overfitting-vakten — fem regler — och Konfluens-syntesen där DeMarks timing möter AKM1:s värde.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för bokens ursprung och upphovsman — Thomas R. DeMark, karriär från National Investment Services 1971 via DeMark Investment Advisory 1982 till Market Studies 1994, med konsultuppdrag för Goldman Sachs, Dean Witter, Citibank, IBM:s pensionsfond och Paul Tudor Jones och närmare trettio år som rådgivare till Steven A. Cohen — och differentiera den mot syskonkurserna: Bulkowski är statistiken, Pring är momentumbegreppet, Bollinger är adaptiv volatilitet, Abraham är regimen på månader, DeMark är den mekaniska timingen på dagar och veckor · förklara filosofin objektiv kontra subjektiv: replikerbarhet som kriterium, uttömmande permutationer, regler som fungerar över marknader och tidsramar — och kursens ärliga distinktion: objektivitet gör regeln testbar, bara tester gör den sann · rita TD Lines mekaniskt: TD Points på nivå 1–3 (omgivande barar per sida), supply- och demand-linjer genom de två senaste punkterna höger till vänster · tillämpa de tre brytningskvalificerarna — motstängning före brytning, öppning bortom linjen, gap-och-fortsätt — och DeMarks maxim: uppenbara brytningar misslyckas, oväntade håller · sätta prisMÅL med ankarprojektion och TD-retracements ur svängets egna mått i stället för Fibonacci-tal · räkna köp- och säljtryck med DeMarker I och II (taklyft mot golvnedstryck, 0–1) och tolka extremerna endast i regimkontext · använda TD REI:s två skikt — trendvillkor före avläsning — som kursens arkitekturlektion: regimfrågan före signalfrågan · köra TD Sequential komplett: prisväxling, nio stängningar mot stängningen fyra barar tidigare, perfektion (bar 8/9 mot 6/7), TDST-linjen, tretton countdown-counts mot lägsta två barar tidigare — icke-konsekutiva — med avbokning och recycling, samt växeln-inte-ordern-logiken · skilja TD Combo (dubbel bevising per count, tidigare och färre signaler) från Sequential och använda konvergensen · återge demaskeringen av Elliott (ofalsifierbar räkning), Gann (geometri utan mekanism) och Fibonacci (arbiträra tal) samt TD Wave som mekanisk vågidentifiering — och relatera till AK1TS:s diversifierade femteorimotor · värdera kontroversen med båda lägren: akademikernas kurvanpassnings- och multipeltestnings-anklagelse (Harvey–Liu–Zhu, Park–Irwin) mot utövarnas trettioåriga Cohen-adoption och Bloomberg-distribution — adoption bevisar efterfrågan, inte kant · tillämpa AK1A:s syntes: Konfluens (AKM1:s V04–V06 väljer varan, DeMarks utmattningstiming väljer tidpunkten, horisonterna avgör vem som talar) och overfitting-vakten — max tre indikatorer, förhandsspecifikation, out-of-sample, fundamental förankring, loggning · samt bygga sitt eget DeMark-A4 med frysta parametrar, Konfluens-köpvillkor, TDST-stopprad och loggformat — mappat mot V04–V06, V12, V19 och AK1TS horisonter.",
+  "why": "Kursuppdraget placerar boken i teknikfamiljens mest omstridda position, och ekosystemet behöver den av tre skäl. För det första är DeMark den renodlade systematikern: där syskonkurserna mäter fenomen (Bulkowski), begrepp (Pring), volatilitet (Bollinger) och regimen (Abraham), specificerar DeMark REGLER — och hans krav på replikerbarhet (två främlingar, samma linje, samma count) är identisk med AKM1:s grundtes att bedömningen ska byggas in i definitionen; TD Sequential är den mest kodvänliga konstruktionen i hela bokmastern. För det andra levererar boken ekosystemets skarpaste internkritik: demaskeringen av Elliott, Gann och Fibonacci (kapitel 11) tvingar AK1TS-motorn att försvara sin egen femteoristruktur — och försvaret (diversifierade, mätbara linser, ingen ensam facit) gör motorn ärligare. För det tredje, och viktigast, är kontroversen ett mjöd utan motstycke: akademiker åberopar kurvanpassning och multipel testning i Harvey–Liu–Zhu och Park–Irwins anda — frihetsgrader som växer med varje indikator, magiska tal (fyra, nio, tretton, två) valda med historien i handen — medan utövarna åberopar Steven A. Cohens närmare trettioåriga dagliga rådgivning (Washington Post 2012, Fortune 2016), Goldman Sachs-uppdragen och licensieringen på Bloomberg-terminaler (Market Studies; Jason Perls manual, Bloomberg Press 2008). AK1A:s dom — mätbara regler är nödvändiga men otillräckliga; overfitting-risken är real och växer med biblioteket — omsätts i overfitting-vaktens fem regler och Konfluens-syntesen (AKM1 väljer varan, DeMark väljer tidpunkten), vilket gör kursen till ekosystemets modellfall för hur en hel teknisk skola ska konsumeras: med beundran för mekaniken, respekt för kritiken och ett testprotokoll emellan. Kursen citerar boken och dess källor öppet — inklusive svagheten: att dussintals indikatorer med fria parametrar är samma verkstad som datamining-kritiken beskriver, och att adoption aldrig är evidens.",
+  "chapters_list": [
+    "1. Boken och mannen — konsulten som skulle göra teknisk analys till vetenskap",
+    "2. Filosofin — subjektiv konst blir objektiv vetenskap",
+    "3. TD Points och TD Lines — trendlinjer utan ögats godtycke",
+    "4. Kvalificerade brytningar — tre tester innan en trendlinje får handlas",
+    "5. Prisprojektioner — måttstocken i stället för magiska tal",
+    "6. Köp- och säljtryck — TD DeMarker I och II",
+    "7. TD REI — oscillatorn som frågar om marknaden trendar",
+    "8. TD Sequential I — setup: nio stängningar mot gårdagen fyra barar bak",
+    "9. TD Sequential II — countdown: tretton steg till utmattning",
+    "10. TD Combo — strängare räkning, färre och tidigare signaler",
+    "11. Vågornas demaskering — Elliott, Gann, Fibonacci och TD Wave",
+    "12. Kontroversen — kurvanpassning mot institutionell adoption",
+    "13. AK1A:s syntes — mätbara regler med overfitting-vakten",
+    "14. Sammanfattning — hela DeMark på ett A4 (V + AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Boken och mannen — konsulten som skulle göra teknisk analys till vetenskap",
+      "intro": "Före indikatorerna, mannen och löftet. Thomas DeMark skrev inte en lärobok i klassisk chartläsning — han skrev uppgörelsen med den. Kursen inleds med vem han är, vilka institutioner som betalat för hans regler, och hur boken förhåller sig till bokmasterns övriga tekniska familj.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Upphovsmannen, citerat öppet från bokens eget presentationsmaterial och den officiella biografin på demark.com: Thomas R. DeMark började sin karriär 1971 som värdepappersanalytiker i investmentenheten på National Investment Services — en pensions- och förvaltningskoncern i Wisconsin med miljarder under förvaltning. Där, i början av 1970-talet, väcktes frågan som kom att definiera hans liv: när portföljen är full av aktier och börsen börjar vika — exakt NÄR säljer man? Fundamentala rapporter gav inget svar på timingfrågan, och den tidens tekniska analys gav bara svar av typen rita en linje och se. År 1982 grundade han DeMark Investment Advisory, rådgivare åt några av de största fonderna och förvaltarna — och karriären som institutionens rådgivare var igång."
+        },
+        {
+          "type": "text",
+          "content": "Boken kom ut i Wiley Finance-serien i september 1994, omkring 264 sidor, med undertitelens hela program i titeln: The New Science of Technical Analysis — den NYA VETENSKAPEN. Samma år som boken publicerades var DeMark särskild rådgivare till Leon Cooperman på Omega Advisors och grundade Market Studies, företag som distribuerade hans marknadstiming-mjukvara till datavendors som Bloomberg och CQG. Före boken hade han konsultat åt några av världens största handelsinstitutioner — Goldman Sachs, Dean Witter, Citibank, IBM:s pensionsfond och Paul Tudor Jones nämns i den officiella biografin. Och efter boken kom den mest berömda relationen: Steven A. Cohen på SAC Capital (sedermera Point72) — Washington Post profilerade 2012 samarbetet under rubriken The math of God, och Fortune kunde 2016 berätta att Cohen konsulterar DeMark dagligen, ett samarbete som varat i närmare trettio år. Det är den bakgrunden som gör boken unik i litteraturen: den är skriven inifrån institutionella handelsrum, av någon vars indikatorer användes med riktiga pengar innan de publicerades."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot syskonkurserna i bokmastern, som kursuppdraget kräver. Encyclopedia of Chart Patterns (Bulkowski) är STATISTIKEN över subjektiva mönster — frekvens och fejkfrekvens uppmätta i efterhand. Martin Pring on Market Momentum (bk-060) är BEGREPPET momentum — hastighet, divergens, tre klockor. Bollinger on Bollinger Bands är den ADAPTIVA volatiliteten — band som andas med marknaden. The Trend Following Bible (Abraham, bk-067) är REGIMEN — utbrott och risk över månader. The New Science of Technical Analysis är MEKANIKEN — timingregler som ska kunna exekveras utan ett enda ögonmått: TD Points, TD Lines, kvalificerade brytningar, DeMarker, REI, Sequential, Combo. Där de andra böckerna beskriver fenomen, specificerar DeMark regler. Och där han inte kan specificera — Elliott-vågor, Gann-vinklar, Fibonacci-nivåer — attackerar han, vilket kapitel 11 ägnas åt."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera bokens position innan du går vidare: DeMark är den ende i bokmasterns tekniska familj som lovar OBJEKTIVITET som produkt — regler så mekaniska att två analytiker på två kontinenten måste rita samma linje och räkna samma signal. Löftet är också kursens mätstock: varje verktyg som följer ska hållas mot frågan — kan två främlingar replicera detta utan att prata med varandra?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"DeMarks väg — från Wisconsin-pension till Cohen-rådgivning\",\"rader\":[[\"År\",\"Händelse\",\"Betydelse för boken\"],[\"1971\",\"Analytiker på National Investment Services, Wisconsin\",\"timingfrågan föds: NÄR säljer en pensionsportfölj?\"],[\"1982\",\"Grundar DeMark Investment Advisory\",\"rådgivare åt stora fonder och förvaltare\"],[\"1970–90-tal\",\"Konsultuppdrag: Goldman Sachs, Dean Witter, Citibank, IBM:s pensionsfond, Paul Tudor Jones\",\"indikatorerna testas med institutionella pengar före publicering\"],[\"1994\",\"Boken utges i Wiley Finance-serien; Market Studies grundas; rådgivare åt Leon Cooperman, Omega Advisors\",\"reglerna blir offentliga — samtidigt som de licensieras\"],[\"2008\",\"Jason Perl: DeMark Indicators (Bloomberg Press)\",\"institutionell kodifiering av Sequential och Combo\"],[\"2012–2016\",\"Washington Post (The math of God) och Fortune: rådgivare åt Steven A. Cohen i närmare 30 år, daglig kontakt\",\"utövarnas starkaste bevis — och kontroversens bränsle (kapitel 12)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör objektivitetstestet på dig själv innan du lär dig reglerna: öppna en graf på valfri aktie och rita din trendlinje i nedre kanten av kurvan. Be sedan någon annan — kollega, vän, familj — rita sin linje i samma graf utan att titta på din. Jämför. Avståndet mellan era linjer är ögats godtycke, och det är exakt det avstånd DeMark ägnade boken åt att eliminera. Spara grafen: kapitel 3 ger dig den mekaniska regeln att rita om den med."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — bokens hela projekt kan formuleras i AKM1:s språk: bedömningen ska byggas in i definitionen. Där AKM1:s tjugo variabler tvingar fundamental analys genom samma hål varje gång, tvingar DeMarks TD-regler teknisk analys genom samma hål varje gång. Skillnaden är råvaran: AKM1 poängsätter bokslut, DeMark poängsätter prisstängningar. Kursens kontroverskapitel (12) kommer att visa varför den skillnaden — testbarhet mot anpassningsbarhet — är hela avgörandet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Var började DeMark karriär 1971 — och vilken fråga föddes där?",
+          "alternativ": [
+            "Som mäklare på NYMEX — frågan om orderflöden",
+            "Som analytiker på National Investment Services i Wisconsin — frågan om NÄR en pensionsportfölj ska sälja",
+            "Som professor i statistik — frågan om regressionsmodeller",
+            "Som programhandlare på Goldman Sachs — frågan om algoritmer"
+          ],
+          "ratt": 1,
+          "tips": "Pensionsförvaltning i Wisconsin på 1970-talet — fundamentalt stöd, men ingen timing."
+        },
+        {
+          "q": "Vad är bokens grundlöfte, enligt titeln och inledningen?",
+          "alternativ": [
+            "Att teknisk analys ska bli en ny vetenskap — objektiva, mekaniskt genererade regler i stället för ögats godtycke",
+            "Att fundamental analys är den enda vetenskapen",
+            "Att alla indikatorer ska kombineras med Gann-vinklar",
+            "Att marknaden är helt slumpmässig och inte kan tajmas"
+          ],
+          "ratt": 0,
+          "tips": "Ordvalet new science är programförklaringen: replikerbarhet är kriteriet."
+        },
+        {
+          "q": "Vilken relation blev det starkaste praktiska beviset för indikatorernas institutionella användning?",
+          "alternativ": [
+            "Warren Buffetts brevkorrespondens om TD Lines",
+            "Samarbetet med Steven A. Cohen på SAC/Point72 — daglig rådgivning i närmare trettio år enligt Washington Post och Fortune",
+            "Ett forskningssamarbete med University of Chicago",
+            "Samarbetet med SEC om tillsynsalgoritmer"
+          ],
+          "ratt": 1,
+          "tips": "Washington Post kallade profilen The math of God — vem var den trogne?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Filosofin — subjektiv konst blir objektiv vetenskap",
+      "intro": "DeMarks bok är lika mycket en polemik som en manual. Kapitel två går igenom filosofin: vad som är fel med traditionell teknisk analys enligt boken, vad ordet objektiv betyder i praktiken — och vilka krav en regel måste uppfylla för att få kallas vetenskaplig. Kursen håller licenserna åtskilda: DeMarks metoder är mekaniska — om de är SANNINGAR är en annan fråga, som kapitel 12 tar på allvar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelsen, som boken driver igenom hela texten: den traditionella tekniska analysen är subjektiv konst klätt som vetenskap. Trendlinjer dras där ögat tycker att de passar — samma graf, två analytiker, två linjer. Huvud-och-skuldror mönster känns igen i efterhand men sällan i förväg. Elliott-vågor kan räknas minst tre sätt på samma kurva. Fibonacci-retracements appliceras med en handfull fasta tal som ingen någonsin härlett från marknadens mekanik. DeMarks fråga är inte om mönstren finns — den är: kan regeln skrivas så exakt att en dator kan följa den och två främlingar får samma svar? Om inte, säger han i sak, är verktyget ingen analys utan en projektionsyta."
+        },
+        {
+          "type": "text",
+          "content": "Programmet han formulerar — och som hela boken implementerar: för det första ska signaler genereras mekaniskt, utan analystens omdöme. För det andra ska definitionerna vara uttömmande: han eftersträvar, i bokens egen anda, att tälla prisrörelsens permutationer — alla kombinationer av toppar, bottnar, gap och stängningar ska ha en regel, inte ett behag. För det tredje ska reglerna gälla över marknader och tidsramar: samma Sequential-logik på terminer, valutor, index och aktier, på dag- som veckobars. Och för det fjärde: priset är den enda råvaran — ingen macro, ingen nyhet, ingen känsla. Det är därför boken trots sin ålder fortfarande läses: den är en helmetod för att omvandla prisdata till beslutsregler."
+        },
+        {
+          "type": "text",
+          "content": "Kursens ärlighetsnot, som kontroverskapitlet kommer att fullfölja: objektivitet är inte detsamma som sanning. En regel kan vara perfekt mekanisk och ändå värdelös — slantkasta mekaniskt vid varje nionde stängning är också objektivt. Vetenskapen i titeln gäller regelverket (replikerbarheten), inte kantens existens (prognospoängen). Den akademiska granskningen av tekniska handelsregler — Park och Irwins översikt från 2007 är standardreferensen — finner dokumenterad lönsamhet i vissa studier men påpekar samtidigt datasnooping-risken: när tusentals regler testas på samma historia blir några signifikanta av ren slump. DeMarks bibliotek med dussintals indikatorer är exakt den typ av verkstad den kritiken beskriver. Håll båda sanningarna levande genom hela kursen: mekaniken beundras här, evidensen prövas i kapitel 12."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig åtskillnaden som bär hela kursen: OBJEKTIV betyder replikerbar — två främlingar, samma regel, samma signal. Det säger ingenting om att signalen är LÖNSAM. Objektivitet gör en regel testbar; bara tester gör den sann. DeMark levererar det första — det andra är ditt ansvar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Subjektiv konst mot objektiv vetenskap — sex kriterier\",\"rader\":[[\"Kriterium\",\"Subjektiv skola\",\"DeMarks krav\"],[\"Definition\",\"ögonmått och behag\",\"exakt regel, varje term definierad\"],[\"Replikbarhet\",\"två analytiker, två svar\",\"två analytiker, ETT svar\"],[\"Testbarhet\",\"kan backtestas bara vagt\",\"kan kodas och testas rad för rad\"],[\"Utbreddhet\",\"möjlig — subjektivitet kan läras ut\",\"varje signal kan loggas i förväg\"],[\"Misslyckande\",\"regeln ritades fel\",\"regeln följdes och förlorade — synligt och mätbart\"],[\"Ansvar\",\"analytikerns öga\",\"regelverket — och den som valde det\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör permutationstestet på din egen verktygslåda: skriv ned de tre tekniska verktyg du faktiskt använder (trendlinje, RSI, stödnivå, vad som helst). Bedöm varje verktyg mot kriterierna i tabellen: kan du skriva regeln så att en främring skulle få samma signal? Var svaret är nej — markera verktyget som subjektivt och notera hur ofta du handlar på det. Listan är din personliga DeMark-agenda: det är där kursens regler ska ersätta dina ögonmått."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — filosofin är identisk med AKM1:s: samma analys genom samma hål varje gång. AKM1 löser det med tjugo definierade variabler och en femgradig skala; DeMark löser det med räknebara definitioner (fyra barar bak, nio stängningar, tretton steg). Notera också syskonskapet med Quantitative Value-kursen: Gray och Carlisle krävde att modellen — inte magen — fattar beslutet; DeMark krävde att definitionen — inte ögat — drar linjen. Samma idé, två råvaror: bokslut och pris."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är DeMarks huvudanklagelse mot traditionell teknisk analys?",
+          "alternativ": [
+            "Att den är för matematisk och borde bli mer intuitiv",
+            "Att den är subjektiv — trendlinjer, mönster och vågor dras och räknas olika av olika analytiker",
+            "Att den bara fungerar på råvarumarknader",
+            "Att den ignorerar börspsychologin"
+          ],
+          "ratt": 1,
+          "tips": "Fråga sig vad två analytiker oberoende av varandra ser i samma graf."
+        },
+        {
+          "q": "Vilka krav ställer boken på en regel som ska få kallas objektiv?",
+          "alternativ": [
+            "Att den bygger på Fibonacci-tal",
+            "Att den alltid ger vinst",
+            "Att den godkänts av regulatorn",
+            "Att den är mekaniskt genererad, uttömmande över prisrörelsens permutationer och giltig över marknader och tidsramar"
+          ],
+          "ratt": 3,
+          "tips": "Tre krav från bokens programförklaring: mekanik, uttömmande, generell."
+        },
+        {
+          "q": "Vad är kursens distinktion mellan objektivitet och sanning?",
+          "alternativ": [
+            "Objektiva regler är per definition lönsamma",
+            "Objektivitet gör regeln REPLIKERBAR — men bara utomstående test kan visa om den är lönsam",
+            "Sanning är subjektiv och objektivitet omöjlig",
+            "Backtests bevisar alltid sanning"
+          ],
+          "ratt": 1,
+          "tips": "Slantkast vid varje nionde stängning är också objektivt — men knappast en kant."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "TD Points och TD Lines — trendlinjer utan ögats godtycke",
+      "intro": "Bokens första byggsten angriper den mest älskade av alla subjektiva verktyg: trendlinjen. DeMarks svar är TD Points och TD Lines — svängpunkter definierade bar för bar och linjer dragna enligt regel, inte enligt behag. Här börjar den mekaniska kursen på allvar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grunden är TD Pointen — svängpunkten som definition. En TD Point-hög (motståndspunkt) på nivå ett kräver att de ENSTAKA barerna på ömse sidor har lägre högsta: en bar vars topp sticker upp över grannarnas toppar på båda sidor, omgiven av en bar till vänster och en till höger. En TD Point-låg kräver spegelbilden: grannbars lägsta är högre. Nivåerna skalar upp: en nivå-två-punkt kräver att DE två barerna på varje sida hålls under (eller över) punktens extrem, en nivå-tre-punkt de tre närmaste barerna på varje sida. Ju högre nivå, desto viktigare punkt — och desto längre tidslinje den definierar. Poängen är radikal i sin enkelhet: en svängpunkt är inte längre något man TYCKER sig se — den är ett villkor som antingen gäller eller inte gäller, bar för bar, kontrollerbart av vem som helst."
+        },
+        {
+          "type": "text",
+          "content": "Med punkterna definierade blir linjerna regelverk. TD Supply Line — motståndslinjen — dras genom de två senaste TD Point-höga, räknat från grafens högra kant inåt (höger till vänster, aldrig tvärtom): den närmaste punkten först, den näst senaste därefter. TD Demand Line — stödlinjen — dras genom de två senaste TD Point-låga på samma sätt. Inget ögonmått, ingen justering för att linjen ska se bra ut, ingen tredje eller fjärde punkt för att linjen ska få sällskap. Vad de flesta analytiker gör — att välja bland många möjliga linjer tills en passar historien — är enligt DeMarks logik kurvanpassning i miniatyr: med tillräckligt många tänkbara linjer kan vilken graf som helst ges vilken berättelse som helst. Regeln om de två senaste punkterna stänger den frihetsgraden."
+        },
+        {
+          "type": "text",
+          "content": "Användningen följer av konstruktionen. En nivå-ett-linje ger korta, aggressiva signaler — den bryts ofta och håller kort. Nivå två och tre ger linjer med längre hållbarhet — brytningar av dem är viktigare eftersom punkterna bakom dem var starkare. Notera också vad regelverket gör med den klassiska klagomålet på trendlinjer — att de alltid verkar gälla tills de inte gör det: DeMark flyttar frågan från GÄLLER linjen? till BRÖT linjen på ett kvalificerat sätt? Det är nästa kapitels ämne: en brytning utan kvalifikation är, i bokens språk, ingenting alls."
+        },
+        {
+          "type": "insikt",
+          "content": "TD Pointens disciplin i en mening: en svängpunkt är ett VILLKOR, inte en känsla. Bararna på varje sida avgör — inte ditt minne av hur grafen såg ut förra gången du tittade. Varje gång du instinktivt säger där är en botten — översätt till TD-format: hur många barar på varje sida håller definitionen?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"TD Points och TD Lines — regelverket som checklista\",\"rader\":[[\"Objekt\",\"Definition\",\"Regel\"],[\"TD Point-hög nivå 1\",\"topp med lägre högstahögsta i de närmaste bararna på båda sidor\",\"en bar per sida räcker\"],[\"TD Point-hög nivå 2 och 3\",\"samma, men de två (tre) närmaste bararna per sida ska hålla under\",\"starkare punkt, längre linje\"],[\"TD Point-låg\",\"spegeln — högre lägsta på varje sida\",\"samma nivåskala\"],[\"TD Supply Line\",\"motstånd — genom de två SENASTE TD Point-höga\",\"dras höger till vänster, aldrig omvänt\"],[\"TD Demand Line\",\"stöd — genom de två senaste TD Point-låga\",\"samma riktning, samma regel\"],[\"Frihetsgrader\",\"noll — linjen följer av punkterna\",\"ingen justering för skönhet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta fram grafen från kapitel 1:s utmaning. Rensa din gamla linje. Markera nu varje nivå-ett TD Point-hög och låga enligt definitionen — en bar på varje sida som hålls under (över). Rita sedan TD Demand Line genom de två senaste TD Point-låga, räknat från höger. Jämför med din ögonmåttade linje från kapitel 1: hur stort är avståndet? Notera slutligen om de två linjerna skiljer sig åt i SLUTSATS — om den ena säger brytning och den andra inte — för det avståndet är skillnaden mellan åsikt och analys."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — TD Pointen är prisets motsvarighet till en mätbar bokslutsvariabel: V05 P/B är inte vad du TYCKER bolaget är värt — det är börsvärde delat med eget kapital, kontrollerbart av vem som helst. DeMarks poäng är samma för grafen: när definitionen är mekanisk kan granskaren följa efter rad för rad. AK1TS Brytpunkt-aritmetik är en direkt pedagogisk släkting: nivåer definierade i förväg, inte i efterhand."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad krävs för en nivå-ett TD Point-hög?",
+          "alternativ": [
+            "Att barens högsta är högre än de närmaste bararnas högsta på BÅDA sidor",
+            "Att barens volym är högst på året",
+            "Att baran stänger över 50-dagars medelvärdet",
+            "Att tre analytiker enas om toppen"
+          ],
+          "ratt": 0,
+          "tips": "En bar per sida som hålls under — det är hela nivå ett."
+        },
+        {
+          "q": "Hur dras en TD Supply Line enligt regelverket?",
+          "alternativ": [
+            "Genom de tre punkter som ger snyggast linje",
+            "Genöm alla toppar som linjen kan röra vid",
+            "Genom de två SENASTE TD Point-höga, räknat från grafens högra kant",
+            "Från årets högsta till årets lägsta"
+          ],
+          "ratt": 2,
+          "tips": "Riktningen är regeln: höger till vänster, de två senaste kvalificerade punkterna."
+        },
+        {
+          "q": "Varför insists på nivå två och tre-punkter för längre linjer?",
+          "alternativ": [
+            "De innehåller mer volym",
+            "Punkter omgivna av fler barar är starkare — brytningar av deras linjer är viktigare",
+            "De är lättare att hitta för nybörjare",
+            "De ger färre signaler och därmed lägre risk per automatik"
+          ],
+          "ratt": 1,
+          "tips": "Ju fler grannbar som respekterar extremet, desto mer bevisad är punkten."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Kvalificerade brytningar — tre tester innan en trendlinje får handlas",
+      "intro": "Att en linje bryts betyder ingenting — pris stänger utanför linjer hela dagarna. DeMarks andra byggsten är därför kvalifikationerna: objektiva testar som avgör om en brytning får handlas. Här levererar boken en av sina mest citerade maximer — och en av sina mest testbara.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Problemet först. En vanlig trendlinje bryts en gång, priset vänder tillbaka, linjen byter sida, historien skrivs om. DeMarks diagnos: marknaden och dess deltagare utsätter varje uppenbar nivå för just den behandlingen — uppenbara brytningar lockar till sig fel folk vid fel tidpunkt. Hans berömda maxim, som sammanfattar hela kapitlet och ofta citeras ur boken: när en trendlinjebrytning är förväntad och uppenbar misslyckas den som regel — men när brytningen är OVÄNTAD är den i allmänhet äkta. Med andra ord: kvaliteten på en brytning beror på vad marknaden gjorde STRAX FÖRE den. En brytning ur ett lugn är brus; en brytning ur ett motstånd är signal."
+        },
+        {
+          "type": "text",
+          "content": "Regelverket — kvalificerarna — översätter maximen till tre testbara villkor, här för en UPPLINJEBRYTNING (spegelvänd för nedlinjer). KVALIFICERARE ETT: brytningsbarets FÖREGÅENDE bar ska ha stängt NEDÅT — alltså stänga lägre än sin egen föregångare. Marknaden rörde sig emot brytningsriktningen in i brytningen: den var oväntad, och folk som borde ha varit med missade den. KVALIFICERARE TVÅ: brytningsbarets ÖPPNING ska ligga BORTOM linjen — marknaden gapar eller öppnar på andra sidan och ger ingen reträtt att köpa. KVALIFICERARE TRE: brytningsbarets öppning följt av handel i brytningsriktningen bortom föregående bars extrem — gap-och-fortsätt-mönstret, där öppningens styrka konfirmeras av att priset aldrig ser tillbaka. Uppfyller brytningen minst ett av de tre: kvalificerad. Uppfyller den inget: brus, och brus handlas inte."
+        },
+        {
+          "type": "text",
+          "content": "Vad regelverket egentligen gör — och varför det förtjänar respekt även från skeptikern: det omvandlar den klassiska falska brytningen från en ursäkt (linjen ritades fel) till en utesluten händelse (brytningen var inte kvalificerad). Det är samma rörelse som Piotroski F-score gjorde med begreppet kvalitet i Quantitative Value-kursen: från essäfråga till ja/nej-kontroller. Notera också förhandsspecifikationen: alla tre villkoren är avgjorda på baren FÖRE och på öppningen AV brytningsbaren — inget av dem kräver att du vet hur veckan slutar. Det är filosofin från kapitel två i praktik: regeln är avgjord i förväg, inte i efterhand."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera maximen och du har kapitlet: uppenbara brytningar misslyckas, oväntade brytningar håller. Testet är alltid detsamma — vad gjorde marknaden strax före? Stängde den EMOT brytningsriktningen eller öppnade den BORTOM linjen är äkta; brytning ur behaglig förväntan är brus."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre kvalificerare — när en upplinjebrytning får handlas\",\"rader\":[[\"Kvalificerare\",\"Villkor (uppbrytning)\",\"Logik\"],[\"1 — motstängning\",\"brytarens föregående bar stängde lägre än sin föregångare\",\"brytningen var oväntad — marknaden gick emot in i brottet\"],[\"2 — öppning bortom\",\"brytningsbarets öppning ligger över linjen\",\"ingen reträtt att köpa — prisets start bekräftar brottet\"],[\"3 — gap och fortsätt\",\"öppning upp följt av handel bortom föregående bars extrem\",\"öppningens styrka konfirmeras av fortsatt köp\"],[\"Ingen uppfylld\",\"brytningen är okvalificerad — brus\",\"handlas inte, loggas som falsk kandidat\"],[\"Spegelvändning\",\"samma tre test med omvänt tecken för nedlinjer\",\"symmetrisk regelverk — ingen ny frihetsgrad\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kvalificeringslogg: välj en aktie du följer och identifiera de tre senaste brytningarna av en TD Supply- eller Demand Line (kapitel 3:s regler). Bedöm varje brytning mot de tre kvalificerarna: vilka uppfylldes? Notera sedan — helt ärligt, i efterhand — vad priset gjorde fem och tio barar efter varje brytning. Jämför träffkvoten för kvalificerade mot okvalificerade brytningar. Tre observationer är ingen statistik, men du har nu byggt ditt första DeMark-testbäcke — kapitel 12 och 13 lär dig skala upp det ärligt."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — kvalificerarna är trendlinjens V10 Skuldsättningsgrad: ett JA/NEJ-filter som en aktie måste passera FÖRE att den ens får delta i tävlingen om din kapital. Brytningen är köpet; kvalificeraren är risken som måste vara kontrollerad först. Samma ordning som i AKM1: risk före belägg, alltid."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger DeMarks maxim om trendlinjebrytningar?",
+          "alternativ": [
+            "Att alla brytningar förtjänar en positions alltid",
+            "Att volymen avgör allt",
+            "Att brytningar bara gäller på veckografen",
+            "Att uppenbara och förväntade brytningar som regel misslyckas — oväntade brytningar är i allmänhet äkta"
+          ],
+          "ratt": 3,
+          "tips": "Nyckeln är vad marknaden gjorde STRAX FÖRE brytningen."
+        },
+        {
+          "q": "Vad är kvalificerare ett för en upplinjebrytning?",
+          "alternativ": [
+            "Brytningsbarens föregående bar stängde LÄGRE än sin egen föregångare",
+            "Brytningen skedde på hög volym",
+            "Linjen var en nivå-tre-linje",
+            "Priset stängt över linjen tre dagar i rad"
+          ],
+          "ratt": 0,
+          "tips": "Oväntadhet är kärnan — marknaden ska ha rört sig NEDÅT in i uppbrytningen."
+        },
+        {
+          "q": "Varför är kvalificerarna särskilt respektabla ur ett testperspektiv?",
+          "alternativ": [
+            "De kräver dyr mjukvara",
+            "De eliminerar all förlustrisk",
+            "De fungerar bara på index",
+            "Alla villkor är avgjorda på baren före och på brytningsbarets öppning — regeln är specificerad i förväg"
+          ],
+          "ratt": 3,
+          "tips": "Förhandsspecifikation är skillnaden mellan regel och efterklokhet."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Prisprojektioner — måttstocken i stället för magiska tal",
+      "intro": "När en brytning är kvalificerad följer frågan hur långt den bär. DeMarks svar är en måttstock hämtad ur rörelsen själv: projicera linjens ankaravstånd från brytpunkten, och härled retracement-nivåer ur det föregående svängets eget beteende. Kapitel fem visar matte före mystik — och förbereder demaskeringen av Fibonacci i kapitel elva.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Projektionen först — den mekaniskt renaste regeln i boken. När pris kvalificerat bryter en TD Line är målet: avståndet mellan linjens två ankarpunkter (de två TD Points som linjen dras genom), projicerat från brytpunkten. En uppbrytning av en Supply Line vars ankare ligger tio procent isär siktar tio procent över brytpunkten. Logiken är measured move — samma tanke som i klassisk teknisk analys, men med en avgörande skillnad: avståndet är härlett ur två REGLVERKSNIVÅER, inte ur två toppar du valde med ögat. Målet är alltså lika replikerbart som linjen själv — två analytiker, samma siffra. Och målet har en funktion bortom girigheten: det är där stoppen flyttas, vinster tas hem halvt och brutna indicier vägs."
+        },
+        {
+          "type": "text",
+          "content": "Retracements — där DeMark är som mest polemisk. Den etablerade skolan mäter återgångar med Fibonacci-talen: 38,2, 50, 61,8 procent av föregående sväng. DeMarks invändning, som han driver hårt: talen är ARBITRÄRA — härledda ur kaninhierarkier och pyramidgeometri, inte ur marknadens beteende. Ditt alternativ i boken är att härleda nivåerna ur svänget SJÄLVT: mät det större motstånd rörelsen övervann internt — den djupaste återgången under uppsteget — och projicera den andelen framåt från nya extremer. Nivån som betydde något FÖR DENNA rörelse antas betyda något för nästa. Det är en premiss, öppet erkänt — men till skillnad från Fibonacci-talen är den åtminstone en premiss OM marknaden, inte om matematikens estetik."
+        },
+        {
+          "type": "text",
+          "content": "Ordningen i verktyget, sammanfattad som checklista: ett — identifiera TD Points och TD Line (kapitel 3). Två — invänta brytning OCH kvalificering (kapitel 4). Tre — projicera ankaravståndet från brytpunkten för målet; använd svängets egna retracement-mått för mellanliggande nivåer. Fyra — placera stoppet på fel sida om närmaste TD Point, aldrig på slumpens avstånd. Fem — logga. Vad du har då är en komplett affär med definierad entry (kvalificerad brytning), definierat mål (projektion) och definierad risk (TD Point) — tre ben som varje AK1A-analys sedan Trend Following-kursen känner igen som ryggraden i varje mekanisk plan."
+        },
+        {
+          "type": "insikt",
+          "content": "Måttstocken före magin: varje målnivå du använder ska kunna svara på frågan VAR KOMMER SIFFRAN IFRÅN? Ankaravstånd och svängets egna retracement har ett svar — Fibonacci-tal har en historia. Det är skillnaden mellan projection och prediction."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två måttstockar — TD-projektion mot Fibonacci\",\"rader\":[[\"Fråga\",\"TD-måttstocken\",\"Fibonacci-skolan\"],[\"Varifrån kommer nivån?\",\"ur rörelsens egna mått — ankaravstånd, svängets retracement\",\"ur fasta tal — 38,2 / 50 / 61,8 procent\"],[\"Replicerbar?\",\"ja — nivån följer av definierade punkter\",\"ja — men vilken retracement som GÄLLER väljs i efterhand\"],[\"Källa till auktoritet\",\"marknadens uppmätta beteende\",\"matematisk tradition utan marknadsmekanik\"],[\"Testbar premiss?\",\"ja — antagandet kan falsifieras per marknad\",\"svårt — rätt tal hittas alltid i efterhand\"],[\"DeMarks dom\",\"måttstock att kalibrera\",\"arbiträr — diskvalificerad som regelverk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Måttstocksduellen: ta den kvalificerade brytningen från kapitel 4:s logg. Räkna ut två mål: ett med ankaravståndet projicerat från brytpunkten, ett med 61,8-procents Fibonacci-retracement av föregående sväng. Notera vilket mål priset nådde — eller inget. Upprepa på tre brytningar till. Du söker inte sanningen om Fibonacci här — du söker din egen känsla för hur olika måttstockar producerar olika bilder av samma rörelse. En mening per brytning: vilken nivån kändes mest meningsfull — och vad DET säger om dig."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — projektionslogiken är analysmotorns köpmått i omvänd form: där TD-projektionen sätter prisMÅL uppåt ur rörelsens egna mått, sätter AKM1 säkerhetsmarginalen nedåt ur värderingens egna mått (V04–V06). Båda vägrar måla siffror från önsketänkande — båda härleder dem ur data som redan finns på bordet. Kapitel 13 knyter ihop dem till Konfluens."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur sätts prisMÅLET vid en kvalificerad TD Line-brytning?",
+          "alternativ": [
+            "Ankaravståndet — avståndet mellan linjens två TD Points — projiceras från brytpunkten",
+            "Alltid +10 procent från brytningen",
+            "Nästa heliga Fibonacci-nivå",
+            "Målet sätts när vinsten känns tillräcklig"
+          ],
+          "ratt": 0,
+          "tips": "Measured move — men med regelbundet mätt avstånd."
+        },
+        {
+          "q": "Vad är DeMarks huvudinvändning mot Fibonacci-retracements?",
+          "alternativ": [
+            "Att de är svåra att beräkna",
+            "Att de bara fungerar på råvaror",
+            "Att talen är arbiträra — härledda ur tradition, inte ur marknadens beteende",
+            "Att de kräver för lång dataserie"
+          ],
+          "ratt": 2,
+          "tips": "Kaninhierarki och pyramidgeometri — vad har det med prisdata att göra?"
+        },
+        {
+          "q": "Var placerar regeln stoppet i en TD Line-affär?",
+          "alternativ": [
+            "På fel sida om närmaste TD Point",
+            "Ett fast antal procent under köpkursen",
+            "Vid 50-dagars medelvärdet",
+            "Stoppen slopas när målet är projicerat"
+          ],
+          "ratt": 0,
+          "tips": "Risken definieras av samma regelverk som entryn — punkten som definierade linjen."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Köp- och säljtryck — TD DeMarker I och II",
+      "intro": "Trendlinjerna bygger på svängpunkter; oscillatorerna bygger på tryck. DeMark konstruerar egna mått på köp- och säljtryck — DeMarker I och II — och gör därmed något få gör: ger en oscillator vars delar är lika tydligt definierade som dess kurva.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Byggstenarna, som boken definierar innan den ritar något. KÖPTRYCK (buying pressure) på en bar: dennas högsta minus FÖREGÅENDE bars högsta — men bara om differensen är positiv; annars noll. SÄLJTRYCK (selling pressure): föregående bars lägsta minus dennas lägsta — återigen bara om positiv. Tanken är att mäta hur mycket marknaden LYFTER sitt tak respektive trycker ner sitt golv, bar för bar. Räkna sedan andelen: jämnat köptryck delat med jämnat köptryck plus jämnat säljtryck — en oscillator mellan noll och ett, där höga värden betyder att taklyftet dominerar och låga att golvet trycks ned. Det är TD DeMarker I — och det är samma konstruktion som än i dag ligger i varje plattform under namnet DeMarker eller DeM."
+        },
+        {
+          "type": "text",
+          "content": "Tolkningen är kontextberoende — och det är bokens poäng, inte svaghet. Höga värden (i praktiken nära överstrecket, ofta cirka 0,7 och uppåt) betyder starkt köptryck — men OM marknaden samtidigt stiger trendartat är överköpt ingen säljsignal utan ett uttryck för att trenden är frisk. Låga värden i fallande trend likaså. Oscillatorn SÄLJER inget svar själv — den mäter förhållandet mellan två krafter, och frågan om svaret är handlingsbart avgörs av om marknaden befinner sig i trend eller sidled. (Precis den frågan bygger DeMark en hel indikator för — TD REI, nästa kapitel.) DeMarker II är bokens variant med modifierade jämförelser för att fånga trycket tidigare i baren — samma logik, andra termer, ettRegister av definierade alternativ i stället för en enda helig kurva."
+        },
+        {
+          "type": "text",
+          "content": "Det värd att stanna kvar vid är konstruktionens ärlighet mot kapitel två: varje term i formeln — högsta, lägsta, föregående bar, positiv differens, jämningsperiod — är specificerad. Jämför med hur oscillatorer ofta presenteras: en kurva, två streck, och en fotnot om att justera efter känsla. DeMarks oscillator kan ifrågasättas — gör den? mäter rätt sak? är perioden rimlig? — men den kan inte MISSFÖRSTÅS. Det är distinktionen mellan att argumentera mot en regel och att argumentera mot en vågsvag känsla. Kursens ständiga mätstock igen: två främlingar, samma data, samma kurva. DeMarker uppfyller det; de flesta oscillator-historier gör det inte."
+        },
+        {
+          "type": "insikt",
+          "content": "Oscillatorns fråga är KRAFT, inte riktning: DeMarker mäter hur mycket taket lyfts mot hur mycket golvet trycks ner. Överköpt betyder inte sälj — det betyder starkt köptryck. Om det är hälsosamt eller dödligt avgörs av regimen — och regimen mäts av nästa kapitels verktyg."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"TD DeMarker I — byggstenarna\",\"rader\":[[\"Del\",\"Definition\",\"Tolkning\"],[\"Köptryck\",\"denna bars högsta minus föregående bars högsta, om positivt — annars noll\",\"hur mycket lyfts taket?\"],[\"Säljtryck\",\"föregående bars lägsta minus denna bars lägsta, om positivt — annars noll\",\"hur mycket trycks golvet ned?\"],[\"Oscillatorn\",\"jämnat köptryck / (jämnat köptryck + jämnat säljtryck)\",\"0–1 — andel som är köptryck\"],[\"Högt värde\",\"nära överstrecket (cirka 0,7 och uppåt)\",\"köptryck dominerar — ingen säljsignal i trend\"],[\"Lågt värde\",\"nära understrecket\",\"säljtryck dominerar — ingen köpsignal i trend\"],[\"DeMarker II\",\"variant med modifierade jämförelser\",\"samma logik, tidigare fångst\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita en DeMarker för hand — en gång, bara för att känna mekaniken: ta tio dagar av kurser för en aktie du känner väl. Räkna per dag köptryck och säljtryck enligt definitionen (föregående bar som referens, negativa differenser blir noll). Jämna grovt genom att summera fem dagar. Dividera. Plotta de sex-tio värdena. Fråga sedan: på vilka dagar visade DIN kurva extrema värden — och vad hände efteråt? Du har nu byggt en DeMark-indikator från grunden, och den mekaniska känslan den lämnar är hela kapitel två på praktik."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — DeMarker är prisets V08 EBITDA-marginal: ett FÖRHÅLLANDE mellan två krafter som säger något om kvaliteten i rörelsen, inte om dess riktning. Hög marginal utan stabil intäktsbas (V12) är ingen investering — högt köptryck utan regimkontext är ingen signal. Förhållanden tolkas alltid i sammanhang; det gäller bokslut och grafer lika."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras KÖPTRYCKET i TD DeMarker I?",
+          "alternativ": [
+            "Volymen på stigande barer",
+            "Stängning minus öppning",
+            "Denna bars högsta minus föregående bars högsta — om positivt, annars noll",
+            "Bokens högsta minus årets lägsta"
+          ],
+          "ratt": 2,
+          "tips": "Taklyft: hur mycket höjer denna bar sitt tak mot gårdagen?"
+        },
+        {
+          "q": "Vad betyder ett högt DeMarker-värde?",
+          "alternativ": [
+            "Att marknaden kommer att falla inom kort",
+            "Att säljtrycket dominerar",
+            "Att köptrycket dominerar — vilket i en trend är hälsotecken, inte säljsignal",
+            "Att volymen är låg"
+          ],
+          "ratt": 2,
+          "tips": "Oscillatorn mäter kraft, inte riktning — kontexten avgör om extremen är farlig."
+        },
+        {
+          "q": "Vad skiljer DeMarkers oscillator-konstruktion från den subjektiva skolan enligt kursen?",
+          "alternativ": [
+            "Den använder längre historik",
+            "Varje term — jämförelser, period, gränser — är specificerad i förväg, så två främlingar får samma kurva",
+            "Den visas bara på Bloomberg-terminaler",
+            "Den kräver ingen data alls"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel två: replikerbarhet är kriteriet — gäller även oscillatorer."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "TD REI — oscillatorn som frågar om marknaden trendar",
+      "intro": "DeMarks kanske mest underskattade idé finns inte i signalen utan i förfrågan: innan TD REI (Range Expansion Index) får säga något kontrollerar den om marknaden överhuvudtaget är i skick att lyssna. En indikator med inbyggd regimfråga — trettio år innan regime-thinking blev mainstream.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Problemet REI löser känner varje handlare: oscillatorer fungerar fantastiskt i sidleds marknader och katastrofalt i trender. I en trendritNING blir överköpt läget normalt — oscillatorn pinnar vid överstrecket medan priset går sin väg, och den som säljer på signalen lämnar den bästa rörelsen. I sidled är samma extrema värden guld. Konventionell lära löser det med tumregler (handla bara oscillatorer i range) — en subjektiv bedömning som förutsätter att du redan VET regimen, vilket ofta är det du sökte svaret på. DeMarks drag: GÖR regimen till en del av indikatorn."
+        },
+        {
+          "type": "text",
+          "content": "TD REI i två skikt, enligt boken. Skikt ett — TRENDVILLKORET: innan någon läsning får tolkas krävs att villkoret för en icke-trendartad marknad är uppfyllt inom det senaste fönstret av barar (villkoret kontrollerar i huvudsak att nyliga högsta och lägsta INTE stiger eller faller monotont — att rörelsen inte varit en ren enhetlig expansion). Är villkoret inte uppfyllt: marknaden trendar, oscillatorn suspenderas, inga överköpta eller översålda avläsningar får handlas. Skikt två — själva indexet: en normaliserad summa av priset genomgångna avstånd till närliggande barers extremer, skalad till mellan minus hundra och plus hundra, där extrema värden i ett icke-trendartat läge flaggar utmattat tryck — och därmed en möjlig vändpunkt i sidled. Detaljerna i normaliseringen är tekniska — poängen är arkitekturen: fråga först OM, sedan VAD."
+        },
+        {
+          "type": "text",
+          "content": "Varför detta kapitel förtjänar sin plats i en kurs som annars handlar om Sequential och Combo: REI introducerar den avgörande idén att ingen signal existerar i vakuum — varje verktyg har en marknadstyp det är byggt för, och att använda det utanför den är inte en svag signal utan en MENINGSLÖS sådan. Modern forskning har hunnit i kapp: momentum verkar bära i vissa avseenden och perioder och mean-reversion i andra, och strategier som inte frågar regimen har fått lämna ifrån sig pengar i övergången. AK1TS kör samma arkitektur — fem teorier på fem tidshorisonter, ingen ensam. DeMark var tidigt ute med att inbygga frågan i själva indikatorn. Även den som tvivlar på REI:s kalibrering kan behålla arkitekturen: regimfrågan FÖRE signalfrågan."
+        },
+        {
+          "type": "insikt",
+          "content": "REI:s arkitektur i en mening: fråga OM marknaden lyssnar innan du frågar VAD den säger. En signal från rätt verktyg i fel marknadstyp är inte svag — den är meningslös. Bygg regimfrågan först, signalfrågan sedan, i varje verktygslåda du äger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Oscillatorn och regimen — REI:s två skikt\",\"rader\":[[\"Skikt\",\"Fråga\",\"Regel\",\"Konsekvens\"],[\"1 — trendvillkoret\",\"trendar marknaden?\",\"kontrollera att senaste fönstrets högsta/lägsta INTE rört sig monotont\",\"trendar det: inga REI-avläsningar får handlas\"],[\"2 — indexet\",\"hur uttänjt är trycket?\",\"normaliserad summa av prisavstånd, skala ±100\",\"extremvärden i sidled flaggar möjlig vändpunkt\"],[\"Symmetri\",\"fungerar uppåt och nedåt?\",\"samma villkor spegelvänt\",\"ingen extra frihetsgrad\"],[\"Användning\",\"när handlas REI?\",\"endast som icke-trendartad bekräftelse\",\"i trend: använd Trendföljningsverktyg (kapitel 3–5)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Regim-auditing av din verktygslåda: lista de tre signaler du handlar mest på. För varje, skriv ned regimen den är byggd för — trend, sidled eller båda — och HUR du avgör regimen innan du handlar (svaret jag känner det är inte ett svar). Om något verktyg saknar regimfråga har du hittat din REI-uppgift: formulera ett ja/nej-villkor (till exempel: har de senaste fem barernas högsta fallit eller stigit var för sig?) som ska vara uppfyllt innan verktyget ens får tala."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — regimfrågan är ekosystemets egen ryggrad: AK1A:motorerna skiljer på impulsvåg-regim och basbygge-regim, trendföljning på månader och utmattningstiming på dagar. REI är den tidigaste renodlade formuleringen av samma princip i bokmastern: verktyg och marknadstyp måste matchas — Annars är signalen brus. Konfluens-modellen (kapitel 13) är i grunden REI-arkitekturen utvidgad till hela analysen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket problem är TD REI byggt för att lösa?",
+          "alternativ": [
+            "Att oscillatorer fungerar i sidled men sviker i trender — REI kontrollerar regimen före avläsningen",
+            "Att volymdata är opålitlig",
+            "Att trendlinjer är svåra att rita",
+            "Att räntebeslut inte backtestas"
+          ],
+          "ratt": 0,
+          "tips": "Överköpt i en stark trend är normaltillstånd, inte signal — vem frågar om det?"
+        },
+        {
+          "q": "Vad gör REI:s trendvillkor när marknaden trendar kraftigt?",
+          "alternativ": [
+            "Genererar dubbla signaler",
+            "Byter automatiskt till veckografen",
+            "Ändrar skalan till ±200",
+            "Suspenderar tolkningen — överköpta och översålda avläsningar får inte handlas"
+          ],
+          "ratt": 3,
+          "tips": "Fråga OM först — om svaret är trend ska VAD-frågan inte ens ställas."
+        },
+        {
+          "q": "Vad är kursens slutsats om REI för den som tvivlar på dess kalibrering?",
+          "alternativ": [
+            "Att hela indikatorn är värdelös",
+            "Att arkitekturen — regimfrågan före signalfrågan — är värd att behålla oberoende av kalibreringen",
+            "Att REI bara gäller för råvaror",
+            "Att REI ska ersättas med Fibonacci"
+          ],
+          "ratt": 1,
+          "tips": "Vilken idé överlever även om siffrorna ifrågasätts?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "TD Sequential I — setup: nio stängningar mot gårdagen fyra barar bak",
+      "intro": "Nu till bokens kärna — indikatorn som blev DeMarks signum och som institutionella handelsrum licensierat i över tre decennier. Kapitel åtta bygger första fasen: setup, de nio stängningarna. Räknereglerna är den mest replikerbara konstruktion teknisk analys producerat.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förutsättningen kallas PRICE FLIP — prissvängen som aktiverar räkneverket. En BJÄRNPRISVÄXLING (förutsättningen för köpsidan) inträffar när en stängning ligger ÖVER stängningen fyra barar tidigare — och nästa stängning ligger UNDER stängningen fyra barar tidigare. Momentum vände från upp till ned på den specifika horisonten, och i samma vända börjar setupet räkna. Spegelbilden — tjurprisväxling — aktiverar säljsidan. Detaljen är viktigare än hon ser ut: Sequential jämför aldrig dag med gårdagen, utan varje bar med sitt jag fyra arbetsdagar tidigare. fyra barar är en kort veckas minne — lagom för att skilja sväng från brus."
+        },
+        {
+          "type": "text",
+          "content": "Sedan SETUPPETS KÄRNREGLER. Köpsetup: NIO STÄNGNINGAR I FÖLJD, där varje stängning ligger lägre än stängningen FYRA BARAR TIDIGARE. Varje bar som bryter serien — en enda stängning över sitt eget fyra-barars-jag — nollställer räkningen och processen börjar om. Säljsetup spegelvänt: nio raka stängningar högre än stängningen fyra barar tidigare. Nio är, i bokens testande, lagom många barar för att en rörelse ska ha uppnått en ålder där trötthet blir statistiskt märkbar — tillräckligt länge för att ha slitit ut löftena, tillräckligt kort för att signalen ska komma medan den fortfarande är användbar. När nionde stängningen printas är setupet klart: en MOGEN rörelse, men inget köpsläge ännu — det förbehålls nästa kapitel."
+        },
+        {
+          "type": "text",
+          "content": "Två fördjupningar som boken lägger på setupet. PERFEKTION: ett köpsetup anses perfekt om lägsta på bar ÅTTA eller bar NIO ligger UNDER (eller på) lägsta på bar sex och bar sju — alltså om rörelsens allra sista del gjorde ett nytt djupare utfall innan setupet fullbordades; det yttersta säljet är då uttryckt, inte bara antytt. TDST — TD SETUP TREND: när ett setup fullbordats dras en linje vid rörelsens extrema (lägsta under köpsetupet, högsta under säljsetupet) — en objektiv referensnivå som enligt bokens erfarenhet ofta håller vid första testet och som LEVER vidare efter att setupet spelat ut sin roll. TDST är därmed Sequential-gården av kapitel tre: en regelbaserad nivå, ej ett ögonmått."
+        },
+        {
+          "type": "insikt",
+          "content": "Sequential i ett stycke: nio stängningar mot mitt eget jag fyra barar tidigare — en rörelse som tillräckligt länge tryckts ned av sitt eget förflutna har åldrats nog för att börja förhöras. Setupet är MOGHETSMÄTAREN; köpet är inte här, det är i nästa kapitel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Köpsetup — reglerna som checklista\",\"rader\":[[\"Steg\",\"Regel\",\"Notering\"],[\"0 — prisväxling\",\"en stängning över stängningen 4 barar tidigare följd av en under\",\"aktiverar räkneverket\"],[\"1 — räknevilkor\",\"nio STÄNGNINGAR I FÖLJD lägre än stängningen 4 barar tidigare\",\"jämförelse alltid 4 barar bak, aldrig mot gårdagen\"],[\"2 — avbrott\",\"en enda stängning över sitt eget 4-barars-jag nollställer räkningen\",\"serien måste vara obruten\"],[\"3 — perfektion\",\"bar 8 eller 9:s lägsta under (eller på) bar 6 och 7:s lägsta\",\"det yttersta säljet är uttryckt\"],[\"4 — TDST\",\"linje vid lägsta under setupet\",\"regelbaserad nivå som ofta håller vid första testet\"],[\"Spegeln\",\"säljsetup: nio raka stängningar över 4-barars-jaget\",\"samma regler, omvänt tecken\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ett setup för hand — en gång i livet måste det göras manuellt: ta en aktie eller ett index som fallit under de senaste månaderna och markera varje stängning. Räkna från senaste björnprisväxlingen: för varje bar, jämför stängningen med stängningen fyra barar tidigare. Notera talet (1–9) ovanför varje kvalificerande bar, nollställ vid varje brott. Fullbordades ett nio-setup? Perfekterat? Rita TDST-linjen vid lägsta. Slutfråga: vad gjorde priset vid FÖRSTA testet av TDST — och var det värt att veta nio barar i förväg? Logga svaret; kapitel 12 behöver din data."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — setupet är prisets V12 Intäktsstabilitet i omvänd belysning: V12 frågar hur förutsägbar en RÖRELSE är, Sequential frågar hur gammal. Ett bolag kan ha stabil intäkt men vara uttjänt i kursen — och en aktie kan falla stabilt i nio stängningar. MOGHET är en variabel i båda världar, och i ingen av dem är den samma sak som köpsignal."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är räknevilkoret i ett TD-köpsetup?",
+          "alternativ": [
+            "Nio stängningar I FÖLJD där varje stängning ligger lägre än stängningen FYRA BARAR TIDIGARE",
+            "Nio barer med stigande volym",
+            "Nio stängningar under 50-dagarsmedelvärdet",
+            "Tre lägre bottnar på rad"
+          ],
+          "ratt": 0,
+          "tips": "Jämförelsen är alltid mot det egna förflutna fyra barar bak — och serien får inte brytas."
+        },
+        {
+          "q": "Vad krävs FÖRE att ett setup får börja räkna?",
+          "alternativ": [
+            "En kvalificerad trendlinjebrytning",
+            "Ett räntebeslut",
+            "En björn- eller tjurprisväxling — en stängning som byter sida mot stängningen fyra barar tidigare",
+            "Hög volym på års-högsta"
+          ],
+          "ratt": 2,
+          "tips": "Price flip — vändan som slår på räknaren."
+        },
+        {
+          "q": "Vad betecknar PERFEKTION i ett köpsetup?",
+          "alternativ": [
+            "Att alla nio stängningarna är röda barer",
+            "Att bar 8:s eller 9:s lägsta ligger under (eller på) lägsta på bar 6 och 7",
+            "Att setupet följdes av en gap-upp-öppning",
+            "Att volymen sjönk under setupet"
+          ],
+          "ratt": 1,
+          "tips": "Det yttersta säljet ska vara uttryckt i rörelsens slutskede — vilka barar visa det?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "TD Sequential II — countdown: tretton steg till utmattning",
+      "intro": "Setupet mäter åldern; countdown mäter utmattningen. Andra fasen av Sequential kräver tretton count — inte i följd — av stängningar som pressas under vad som hänt två barar tidigare. Här mynnar bokens utmattningsfilosofi i sin mest renodlade signal: 9–13.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Reglerna för köpcountdown, direkt efter fullbordat köpsetup. Räkneverket byter jämförelse: från stängning mot stängning fyra barar tidigare (setupet) till STÄNGNING MOT LÄGSTA TVÅ BARAR TIDIGARE (countdownet). En bar kvalificerar en count när dess stängning ligger på eller under lägsta-priset två barar tidigare — det vill säga när köparna inte ens lyckas stänga ovanför golvet som etablerades två dagar innan. TRETTON sådana counts krävs — och avgörande: de behöver INTE vara i följd. Barar som inte kvalificerar hoppar över utan att nollställa; räkneverket väntar. Skillnaden mot setupet är filosofisk och fundamental: setupet mäter rörelsens ÅLDER i obruten serie, countdownet mäter hur många gånger markneden FÖRSÖKT trycka igenom sitt eget golv och lyckats — utmattning som ackumulerad belastning, inte som svit."
+        },
+        {
+          "type": "text",
+          "content": "Regelverket har två ventilationsöppningar som håller räkningen ärlig. AVBOKNING: sker en stängning ÖVER högsta-priset under setupets nio barar (eller ovanför TDST-linjen, i senare versioner) avbryts och avbokas countdownet — rörelsen bevisade kraft nog att ta bort sig från utmattningskandidaturen; nytt setup krävs innan ny countdown. RECYKLING: når countdownet hög count men avstannar utan att slå igenom golv efter golv kan räkningen, enligt bokens Hanteringsregler, återanvändas om ett nytt setup i samma riktning fullbordas — det nya setupet startar om countdownfasen vid behållen (eller delvis behållen) räkning. Precis som i kapitel åtta är detaljerna fler än kursen — praxis, som Perls institutionella manual (Bloomberg Press, 2008) visar, är att räkna strikt och logga varje avbokning: förhandsspecifikation igen."
+        },
+        {
+          "type": "text",
+          "content": "Så signalen — och vad den INTE är. När trettonde counten printas är rörelsen statistiskt uttjänad enligt DeMarks kalibrering: sannolikheten för fortgång har fallit och marknaden är en kandidat för vändning eller åtminstone paus. Men Sequential är EN VÄXEL, inte en order: DeMark själv inträder i allmänhet inte på count 13 i fritt fall, utan inväntar bekräftelse — nästa bars prisväxling, en kvalificerad motlinjebrytning (kapitel 4) eller ett REI-extrem (kapitel 7) — innan kapital flyttas. Stoppen logiskt nog ovanför setupets högsta: det är priset som avbokar countdownet som skulle avboka affären. Sequential 9–13 är därmed ett helt system: mogna (9) + utmattade (13) + bekräftade (växel) + riskdefinierade (TDST) — men observera vad som saknas: en target-logik och en beprövad förväntansberäkning. Det kommer i kapitel 10 och 12."
+        },
+        {
+          "type": "insikt",
+          "content": "9–13 i mening: nio stängningar åldrar rörelsen, tretton golv-genombrott utmattar den. Men counten är VÄXELN, inte ordern — bekräfta, definiera risken mot setupets extrem, och minns att ingen av siffrorna säger hur MYCKET marknaden vänder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Setup mot countdown — Sequentialens två faser\",\"rader\":[[\"Egenskap\",\"Setup (fas 1)\",\"Countdown (fas 2)\"],[\"Villkor\",\"stängning < stängning 4 barar tidigare\",\"stängning ≤ LÄGSTA 2 barar tidigare\"],[\"Antal\",\"9\",\"13\"],[\"I följd?\",\"JA — en avbrytande bar nollställer\",\"NEJ — kvalificerande barar räknas, andra hopas över\"],[\"Mäter\",\"rörelsens ÅLDER i obruten svit\",\"ACKUMULERAD belastning — golv som trycks igenom\"],[\"Avbokning\",\"bruten svit nollställer\",\"stängning över setupets högsta (TDST) avbokar\"],[\"Färdigt = \",\"mogen rörelse — INGET köp\",\"utmattning — VÄXEL som kräver bekräftelse\"],[\"Risk vid trade\",\"—\",\"stopp ovanför setupets högsta\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Fullör en 9–13:a: fortsätt från kapitel åtts manuella setup. Räkna countdownet bar för bar: varje stängning på eller under lägsta två barar tidigare = en count; andra barar väntar; stängning över setupets högsta = avbokning, notera den. Hur många counts samlades innan antingen tretton nåddes eller avbokning skedde? Vid tretton: vad hände de följande fem bararna — och vad hade bekräftelsekravet (prisväxling nästa bar) kostat i entry kontra att köpa blint på 13? Skriv en rad: var växeln värd sitt pris?"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — countdownet är kursens V19 Kapitalförbränning & Emission-risk: bolaget som BRÄNT kassa genom tolv kvartal ser ofta billigt ut på P/S (V04), men variabeln frågar efter just den ackumulerade belastningen som prisstängningarna gör i countdownet. Utmattning är en riskvariabel — i bokslut som i grafer — och den köps ALDRIG oskyddad."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är räknevilkoret för en count i köp-countdownen?",
+          "alternativ": [
+            "Stängningen ligger på eller under LÄGSTA två barar tidigare",
+            "Stängningen ligger under gårdagens stängning",
+            "Volymen överstigar 20-dagarsmedelvärdet",
+            "Priset gör ett nytt 52-veckors-lägst"
+          ],
+          "ratt": 0,
+          "tips": "Jämförelsen byter från fyra barar (setup) till två barar och från stängning till LÄGSTA (countdown)."
+        },
+        {
+          "q": "Vilken är den stora skillnaden i sekvenskrav mellan setup och countdown?",
+          "alternativ": [
+            "Countdownen kräver tio raka stigande barer",
+            "Båda kräver obruten svit",
+            "Setupet kräver obruten svit om nio; countdownens tretton counts behöver INTE vara i följd",
+            "Setupet tillåter avbrott om volymen stiger"
+          ],
+          "ratt": 2,
+          "tips": "Ålder mäts i svit; belastning mäts ackumulerat."
+        },
+        {
+          "q": "Vad avbokar en countdown enligt regelverket?",
+          "alternativ": [
+            "En volymspik",
+            "Tre raka gröna barer",
+            "En stängning över köpsetupets högsta pris (TDST-nivån)",
+            "Ingenting — countdownen kan aldrig avbrytas"
+          ],
+          "ratt": 2,
+          "tips": "Vad skulle bevisa att rörelsen INTE är utmattad? Att den tar sig över sitt eget setup-extrem."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "TD Combo — strängare räkning, färre och tidigare signaler",
+      "intro": "Sequential har en syskonindikator med samma nio och tretton men hårdare villkor per count: TD Combo. Färre signaler, tidigare i rörelsen — och en läxa i hur man handlar avvägningen mellan kräsenhet och träffkvot som varje systembyggare känner.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Combo delar stommen med Sequential: ett setup — samma nio stängningar mot stängningen fyra barar tidigare — följt av en countdown till tretton. Skillnaden sitter i VILKOREN PER COUNT. Där Sequentialens countdown kräver en enda relation (stängning på eller under lägsta två barar tidigare) kräver Combo dubbelt upp: stängningen ska ligga under lägsta två barar tidigare OCH under FÖREGÅENDE barars stängning (för köpsidan; spegelvänt för sälj). Två oberoende bevis per bar i stället för ett — en bar som trycker genom golvet men som ändå stänger över gårdagen är för DJÄRV för Combo och räknas inte."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen är dubbel och speglar varandra. Å ena sidan FÄRRARE signaler: de tuffaste bararna släpps aldrig igenom filtret, och en del rörelser som Sequential märker utmattning på avslutar Combo aldrig med att räkna klart. Å andra sidan TIDIGARE läge: eftersom villkoren är strängare räcker ett mindre djupt utfall för att kvalificera när det väl händer, och i praktiken (som Perls manual från Bloomberg-husen 2008 redovisar) tenderar Combo att fullborda tidigare i rörelsen — vilket ger bättre entry-priser men också fler falska starter eftersom utmattningen hejdades på lägre ålder. Det är inte ett bättre-verktyg och ett sämre-verktyg — det är två punkter på samma kurva: känslighet mot precision."
+        },
+        {
+          "type": "text",
+          "content": "Bokens egna användningsriktningar, som institutionell praxis formats efter: SEQUENTIAL för mogna, långa rörelser — där åldersbeviset (nio) och belastningsbeviset (tretton) hinner arbeta och där signalens sällsynthet är en dygd; COMBO för pågående trender där du vill positionera tidigare och accepterar fler fel per träff. Enligt samma praxis körs de sida vid sida: när BÅDA räknar klart på samma rörelse är konvergensen starkast av allt — kursens konvergens-logik igen — och när bara den ena slår är sanningsen svagare och positionen mindre. Notera slutligen kuriosa som kursens kapitel tolv ska förvandla till allvar: att två indikatorer med TIOTAL fria parametrar (4, 9, 13, 2, plus avbokningsregler) kan anpassas till nästan vilken historia som helst — det ärCombo-kapitlets mörka tvilling, och den ska inte lämnas orörd."
+        },
+        {
+          "type": "insikt",
+          "content": "Combos handel i en mening: dubbel bevising per bar — stängning under golvet två barar bak OCH under gårdagens stängning — köper precision med känslighet. Färre signaler, tidigare läge, fler falska starter. Det finns inget gratis mellan känslighet och träffkvot — bara val."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sequential mot Combo — syskonen jämförda\",\"rader\":[[\"Egenskap\",\"TD Sequential\",\"TD Combo\"],[\"Setup\",\"9 stängningar < stängning 4 barar tidigare\",\"samma 9-regel\"],[\"Count-villkor\",\"stängning ≤ lägsta 2 barar tidigare\",\"stängning < lägsta 2 barar tidigare OCH < föregående stängning\"],[\"Signalantal\",\"fler\",\"färre — strängare filter\"],[\"Läge i rörelsen\",\"senare — fullvuxen utmattning\",\"tidigare — pågående trend\"],[\"Falska starter\",\"färre\",\"fler\"],[\"Bästa användning\",\"mogna långa rörelser\",\"tidig positionering i trend\"],[\"Båda klara samtidigt\",\"starkast konvergens — större tilltro\",\"—\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Filtrera din kapitel 9-räkning med Combokravet: ta samma barsekvens och stryk varje countdown-count vars stängning INTE låg under föregående bars stängning. Hur många counts överlevde? Fullbordades Combo, och i så fall hur många barar FÖRE eller EFTER Sequentialens tretton? Om du kan, utvärdera det samtidiga fallet: fanns ett läge där båda var klara — och vad hände där? Notera på en rad: för din stil — mogna signaler eller tidiga — vilket syskon ska du äga?"
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — känslighet-precision-handeln är V12:s gamla historia: ett bolag med perfekt ARR-tillväxt men två kunders intäktsbas har hög potential och låg pålitlighet. Combo och V12-bolaget är samma typ av val — tidigt och riktigt ofta nog, eller sent och träffsäkert. AKM1:s svar är kompositen; DeMarks praktikers svar är konvergensen. Samma idé, två världar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skiljer Combos count-villkor från Sequentialens?",
+          "alternativ": [
+            "Combo kräver stängning under lägsta två barar tidigare OCH under föregående barars stängning",
+            "Combo räknar till arton i stället för tretton",
+            "Combo använder volymvillkor",
+            "Det är exakt samma villkor"
+          ],
+          "ratt": 0,
+          "tips": "Dubbel bevising: golvet två barar bak plus gårdagens stängning."
+        },
+        {
+          "q": "Vad är den typiska avvägningen mellan Combo och Sequential?",
+          "alternativ": [
+            "Combo ger fler och senare signaler",
+            "Combo ger färre och tidigare signaler med fler falska starter; Sequential senare och säkrare",
+            "Sequential fungerar bara på index",
+            "De ger identiska signaler vid samma tillfälle"
+          ],
+          "ratt": 1,
+          "tips": "Strängare per-bar-filter släpper igenom mindre — men når sitt antal tidigare."
+        },
+        {
+          "q": "När är signalen enligt praxis starkast?",
+          "alternativ": [
+            "När Combo ensam räknat klart",
+            "När Sequential ensam räknat klart",
+            "När BÅDA räknat klart på samma rörelse — konvergens",
+            "När ingen av dem registrerats"
+          ],
+          "ratt": 2,
+          "tips": "Kursens återkommande lag: oberoende bevis som pekar samma håll väger tyngst."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Vågornas demaskering — Elliott, Gann, Fibonacci och TD Wave",
+      "intro": "Ingen bokruta gör DeMark argare än mystiken. I bokens kritiska avsnitt går han till angrepp på det heligaste inom den äldre tekniska skolan — Elliotts vågräkning, Gann-vinklar och Fibonacci-nivåer — och ersätter vågräkningen med en mekanisk klon: TD Wave. Ett kapitel som tvingar AK1A att tänka om sin egen vågmotor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelserna, som boken formulerar dem med ordentlig skärpa. ELLIOTT: samma graf kan räknas som trevågskorrektion eller femvågsmönster beroende på vem som räknar — och när marknaden gör något som bryter räkningen FINNS en inbyggd utväg (vågen var en B, räkningen börjar om), vilket gör teorin ofalsifierbar i praktiken: den kan aldrig ha fel, och det som aldrig kan ha fel kan inte heller ha rätt på ett meningsfullt sätt. GANN: vinklar om 45 grader och kvadrater av pris och tid har en geometrisk skönhet men ingen känd koppling till hur order matchas; om en Gann-linje håller är det, frågar DeMark i sak, inte för att marknaden läser geometri. FIBONACCI: som kapitel fem visade — gudomliga proportioner är inte en marknadsmekanism, och att ett 61,8-procents retracement ibland håller bevisar bara att NÅGOT alltid håller vid någon nivå."
+        },
+        {
+          "type": "text",
+          "content": "Men DeMark avfärdar inte VÅGOR — han avmekanisiserar dem. Hans iakttagelse är den rätta: att marknader rör sig i svängar av olika storlek är en robust observation; det är RÄKNINGEN som är problemet. Svaret heter TD Wave — hans objektiva vågidentifiering, där vågmarkeringar härleds ur regelverket (svängpunkter, momentumförhållanden och prisjämförelser definierade bar för bar i samma anda som TD Points) i stället för ur analytikerns berättarbegåvning. Två TD Wave-användare ska kunna markera samma toppar och bottnar i samma kurva — vilket är hela skillnaden mellan att vågorna ÄR i grafen och att du LA dem där. Bokens poäng, kapitel två igen: observationen kan vara utmärkt och verktyget ändå ovetenskapligt."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s ärliga hantering, för kursen ska inte smyga förbi sitt eget hus: AK1TS-motorn kör FEM vågteorier — Elliott, Fibonacci, Gann, Lucas och Volym — och bokmastern hyser kurser i flera av dem. DeMarks kritik träffar det naiva BRUKET: att lägga hela sin tillit till ETT antal, EN vinkel, EN räkning. AK1A:s svar är inte att överge vågorna utan att diversifiera dem — fem teorier, fem tidshorisonter, fyra dimensioner, ingen ensam bär rättigheten — och att hålla varje teori mätbar och loggad. DeMark skulle halvhjärtat godta diversifieringen och kräva mätbarheten; Elliott-puristerna skulle kalla det fegt. Kursens ståndpunkt, redan lagd i konvergensfilosofin: en vågteori är en lins, aldrig ett facit — och DeMarks bidrag är att han visade hur en lins slipas mekaniskt."
+        },
+        {
+          "type": "insikt",
+          "content": "DeMarks demaskering i en mening: att marknader SVÄNGAR är en observation — att de lyder FEM vågor eller GUDOMLIGA tal är en tro. Vetenskapen börjar där observationen slutar lyda på nåd: vid räknbara regler som kan ha fel. En teori som aldrig kan ha fel har inte heller någon rätt att ha rätt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre subjektiva skolor och DeMarks mekaniska svar\",\"rader\":[[\"Skola\",\"Kärna\",\"DeMarks invändning\",\"Det mekaniska svaret\"],[\"Elliott\",\"fem vågor, tre korrektion\",\"samma graf, flera räkningar — inbyggda utvägar gör teorin ofalsifierbar\",\"TD Wave — vågmarkeringar härledda ur regler\"],[\"Gann\",\"vinklar, pris-tid-kvadrater\",\"geometri utan koppling till ordermatchning\",\"TD Lines — nivåer ur definierade punkter\"],[\"Fibonacci\",\"38,2 / 50 / 61,8 procent\",\"arbiträra tal — något håller alltid vid någon nivå\",\"retracements ur svängets egna mått (kapitel 5)\"],[\"AK1TS-positionen\",\"fem teorier × fem horisonter\",\"—\",\"diversifierade linser, mätbara, loggade — ingen ensam facit\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Falsifieringstestet på din egen favoritteori: välj den våg- eller nivåteori du helst lutar mot (Fibonacci, Elliott, Gann — eller TD själv). Skriv ned en förutsägelse den gör om en aktie du följer: en nivå, en vågslut, en vinkel — med datum. Formulera sedan PÅ FÖRHAND vad som skulle visa teorin FEL den här gången (exempel: stängning genom nivån, våg som överstiger sitt antal). Om du inte kan skriva felvillkoret har DeMark just demonstrerat sitt åtal mot dig — och det är kapitlets poäng, inte en hädelse."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — demaskeringskapitlet är skälet till att AK1TS-motorn är byggd som den är: Elliott-variabeln i motorn är mätbar (impuls- eller korrektionsstruktur per horisont), Fibonacci-variabeln mätbar (retracement-andel), aldrig en berättelse. V13–V15 (moat-variablerna) är det fundamentalas motsvarighet till DeMarks krav: påståenden om PATENT, VARUMÄRKEN och NÄTVERK som måste kunna beläggas — inte bara kännas."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är DeMarks huvudinvändning mot Elliott-vågräkning?",
+          "alternativ": [
+            "Att vågor inte finns i marknadsdata",
+            "Att räkningen är subjektiv och har inbyggda utvägar — den kan aldrig ha fel och är därmed praktiskt ofalsifierbar",
+            "Att Elliott var en dålig matematiker",
+            "Att den bara fungerar på obligationsmarknaden"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med räkningen när marknaden gör något annat — finns det då ett undantag?"
+        },
+        {
+          "q": "Vad är TD Wave?",
+          "alternativ": [
+            "En ny Fibonacci-kurva",
+            "En volymindikator",
+            "En Gann-vinkel om 63 grader",
+            "DeMarks mekaniska vågidentifiering — vågmarkeringar härledda ur regler i stället för berättelser"
+          ],
+          "ratt": 3,
+          "tips": "Samma observation — svängar — men räknad enligt regelverk."
+        },
+        {
+          "q": "Hur förhåller sig AK1TS till DeMarks kritik enligt kursen?",
+          "alternativ": [
+            "AK1TS har övergett alla vågteorier",
+            "AK1TS diversifierar fem teorier över horisonter och håller dem mätbara — ingen ensam bär facit",
+            "AK1TS följer enbart Elliott",
+            "AK1TS ignorerar kursens hela argument"
+          ],
+          "ratt": 1,
+          "tips": "Lins eller facit — hur är motorn byggd?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Kontroversen — kurvanpassning mot institutionell adoption",
+      "intro": "Här möts akademiker och utövare över samma indikatorer — och ingen av dem har helt fel. Akademikerna pekar på frihetsgrader, multipel testning och utelmnade publikationer; utövarna på trettio år av daglig konsultation till Steve Cohen och licenserade terminaler. Kursens kontroverskapitel tvingar fram en position — och AK1A:s ligger redan på bordet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Akademikernas åtal, som kursen ska ta lika seriöst som DeMark tog sina egna regler. KURVANPASSNING: DeMarks bibliotek omfattar dussintals indikatorer, var och en med fria parametrar — jämförelseavståndet fyra, setupet nio, countdownet tretton, golvet två, plus avbokningsregler, perfektionsvillkor, kvalificerare på flera nivåer och flera tidsramar. Med tillräckligt många rattar kan nästan vilken historisk serie som helst anpassas till att se signifikant ut — och Sequential, med sina magiska tal NIO och TRETTON, är den typ av struktur som uppstår misstänkt enkelt när man får välja fritt i efterhand. MULTIPEL TESTNING: Harvey, Liu och Zhu — vars granskning av aktiefaktorforskningen varnade att med tusentals hypoteser testade på samma historia krävs betydligt hårdare signifikansnivåer än konventionella — formulerade problemet för faktor-zoon; detsamma gäller indikator-zoon: när en bransch testat tiotusentals regler sedan 1990-talet blir vissa SLUMPMÄSSIGT till synes profetiska. Park och Irwins översikt (2007) av tekniska handelsregler kom till liknande slutsatser: viss lönsamhet finns dokumenterad i litteraturen, men datasnooping och publikationsbias gör evidensen skör. Och nyligen har granskningen nått själva kärnan — akademiska dekonstruktioner testar numera TD-setupet direkt mot tidsserier, med den fråga DeMark själv borde älska: håller nio-och-tretton-mönstret sitt eget som prediktor, eller är det magiska tal och marknadsbrus?"
+        },
+        {
+          "type": "text",
+          "content": "Utövarnas motbevis — som inte är bevis i vetenskaplig mening men heller inte strunt. Washington Post kunde 2012 berätta att Steven A. Cohen på SAC — en av sin generations mest framgångsrika handlare — under närmare trettio år konsulterat DeMark dagligen, och Fortune bekräftade 2016 att relationen levde vidare på Point72. Före boken konsultade DeMark åt Goldman Sachs, Dean Witter, Citibank, IBM:s pensionsfond och Paul Tudor Jones. Efter boken distribuerades indikatorerna kommersiellt via Bloomberg-terminaler och CQG genom hans företag Market Studies, och Jason Perls manual från Bloomberg Press (2008) dokumenterar hur Sequential och Combo används på institutionella handelsrum. De pengar — och det tålamod — som institutionella hus lägger på en leverantör under decennier är den starkaste form av praktisk validering branschen känner. Men — och kursen ska säga det rakt — adoption bevisar EFTERSPORGAN, inte KANT: hedgefonder köper också datorkraft, nyhetsflöden och motstridiga signaler; skarp kapitalism förutsätter inte skarp vetenskap."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s position, formulerad i uppdragets egna termer och fullt ut dragen: mätbara regler är ett NÖDVÄNDIGT villkor för att ens kunna veta något — DeMarks hela bidrag är att han gjorde teknisk analys REPLIKERBAR, och det är ett verkligt och bestående bidrag oavsett om nio och tretton är talen. Men varje indikator som läggs till verktygslådan ökar frihetsgraderna, och därför är OVERFITTING-RISKEN reell och växer med bibliotekets storlek. Slutsatsen blir varken avvisning eller tro utan HANTERING: få indikatorer, förhandsspecifierade regler, ärliga tester utanför urvalet — och kombination med fundamental analys, som är en oberoende informationskälla snarare än ytterligare en omgjordning av samma prisdata. Nästa kapitel gör det till en checklista; det här kapitlet nöjer sig med domslutet: Sequential och Combo är bland de bäst definierade verktygen i hela den tekniska litteraturen — och bland de mest riskfyllda att TRA på blint, av exakt det skälet att de är så lätta att anpassa."
+        },
+        {
+          "type": "insikt",
+          "content": "Kontroversens avgörande rad: adoption bevisar efterfrågan, replikerbarhet bevisar möjlighet — men bara förhandsspecifierade, out-of-sample test bevisar kant. DeMark levererade replikerbarheten; institutionerna levererade efterfrågan; evidensen återstår att leverera själv, en loggad signal i taget."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — tre läger, ett domslut\",\"rader\":[[\"Läge\",\"Starkaste argument\",\"Svagaste punkt\",\"AK1A:s dom\"],[\"Akademiker\",\"dussintals indikatorer × fria parametrar = kurvanpassning; multipel testning (Harvey–Liu–Zhu) gör signifikans skenbar; Park–Irwin: evidens skör\",\"bevisar inte att EN specifik regel saknar värde — bara att bevisbördan är hög\",\"kritiken är berättigad och växer med bibliotekets storlek\"],[\"Utövare\",\"Cohen/SAC: daglig rådgivning i ~30 år (WaPo 2012, Fortune 2016); Goldman, Paul Tudor Jones, Bloomberg-distribution, Perl-manualen\",\"adoption bevisar efterfrågan, inte kant\",\"respekterat som praktisk validering — ej som evidens\"],[\"AK1A\",\"mätbara regler är nödvändiga för vetande; overfitting-vakten hanterar resten\",\"kräver disciplin som de flesta inte har\",\"få regler, förhandsspecifierat, out-of-sample, fundamental förankring\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna dina egna frihetsgrader — kontroversens praktiska övning: skriv ned varje parameter du faktiskt rör dig när du använder din nuvarande strategi (jämförelseavstånd, antal, period, trösklar, tidsram, vilka tillgångar, när du slutar). Räkna ihop dem till ett tal. Multiplicera sedan med antalet idéer du testat de senaste tolv månaderna. Talet du ser är din egen multipel-testnings-maskin — och förklaringen till varför din senaste upptäckt såg bättre ut i backtesten än i verkligheten. Skriv därefter en mening: vilka parametrar är du beredd att frysa i tolv månader, med logg, för att få veta något?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — kontroversen är Quantitative Value-kursens datamining-kapitel omklätt till grafvärlden: Harvey–Liu–Zhu gällde faktor-zoon, här gäller den indikator-zoon — och AKM1 skyddar sig identiskt: få variabler, förhandsspecifierade skalor (1–5), fundamental förankring, loggning. Skillnaden i råvara (bokslut mot pris) ändrar ingenting i bevisbördan: oberoende källor väger, omgjordningar av samma data adderar bara frihetsgrader."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är akademikernas huvudinvändning mot DeMarks indikatorbibliotek?",
+          "alternativ": [
+            "Att indikatorerna är för enkla för institutioner",
+            "Kurvanpassning och multipel testning — många indikatorer med fria parametrar gör skenbar signifikans nästan oundviklig",
+            "Att prisdata inte finns för råvaror",
+            "Att DeMark saknar akademisk examen"
+          ],
+          "ratt": 1,
+          "tips": "Räkna rattarna: fyra, nio, tretton, två, tidsramar, avbokningsregler — vad gör de med historien?"
+        },
+        {
+          "q": "Vad UTÖVARNA:s starkaste praktiska bevis?",
+          "alternativ": [
+            "En peer-reviewad studie i Journal of Finance",
+            "Att SEC godkänt indikatorerna",
+            "Att boken sålt många exemplar",
+            "Steven A. Cohen på SAC/Point72 — daglig rådgivning i närmare trettio år, dokumenterad av Washington Post och Fortune"
+          ],
+          "ratt": 3,
+          "tips": "Vilken relation varar i trettio år och beskrivs som daglig?"
+        },
+        {
+          "q": "Vad är AK1A:s dom i kontroversen?",
+          "alternativ": [
+            "Att utövarna har rätt och akademikerna är avundsjuka",
+            "Att akademikerna har rätt och indikatorerna ska förbjudas",
+            "Att mätbara regler är nödvändiga men otillräckliga — overfitting-vakten (få regler, förhandsspecifierat, out-of-sample, fundamental förankring) hanterar resten",
+            "Att frågan är olöslig och ska ignoreras"
+          ],
+          "ratt": 2,
+          "tips": "Replikerbarhet är nödvändigt villkor — vad krävs dessutom?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "AK1A:s syntes — mätbara regler med overfitting-vakten",
+      "intro": "Kontroversen kräver en praktisk utväg, inte bara ett domslut. Kapitel tretton bygger den: DeMarks timing möter AKM1:s fundamentals i Konfluens — och overfitting-vakten blir fem konkreta regler som gör hela ekosystemet ärligare för varje ny indikator det släpper in.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första byggnstenen: TIMING PÅ VÄRDE — Konfluens. DeMarks indikatorer bearbetar pris och bara pris; AKM1:s variabler bearbetar bokslut och bara bokslut — det gör dem till OBEROENDE informationskällor, vilket är den ädlaste kombinationen i hela analysvärlden (kapitel tolv: oberoende källor väger, omgjordningar adderar frihetsgrader). Konstruktionen, rakt ur ekosystemets egen modell: när AKM1 ger ett högt betyg i V04–V06 — en aktie som är FUNDAMENTALT billig — och den tekniska sidan samtidigt visar en MOGEN utmattning (Sequential-köpsetup, countdown nära eller klar, TDST som håller), då är det Konfluens: värde ger varan, DeMark ger tidpunkten. Utmattningstiming på en fundamental botten är inte två signaler som säger samma sak — det är två vittnen som inte kan ha samröre, vilket är den enda konvergens som är värd extra tilltro."
+        },
+        {
+          "type": "text",
+          "content": "Andra byggnstenen: HORIZONTERNA. Sequential och Combo räknas i dagar och veckor — de hör hemma på AK1TS korta och medellånga horisonter, inte på de långa där basbyggen och värde formas. Ett nio-setup på daggrafen säger INGET om ett bolag är en tioårsinvestering; det säger att en nedtrappning kan vara nära sitt slut — ett ENTRY-läge, inte en avhandling. På Mega-horisonten styr AKM1 ensamt; på Mikro-horisonten kan DeMark ensam; mellan dem möts de, och Konfluens är mötesplatsen. Ekosystemets fem tidshorisonter är inte dekoration — de är overfitting-vaktens första sluss: en indikator som inte deklarerar sin horisont får inte heller deklarera sina signaler."
+        },
+        {
+          "type": "text",
+          "content": "Tredje byggnstenen: OVERFITTING-VAKTEN — fem regler, kursens praktiska utfall. ETT: MAX TRE indikatorer i aktivt bruk — Sequential, en linjeregel och en oscillator räcker; varje tillägg skal frihetsgrader. TVÅ: FÖRHANDSSPECIFIKATION — reglerna och parametrarna fryses skriftligt innan test eller handel; inget justeras i efterhand utan att klockan nollställs. TRE: UTANFÖR URVALET — testa på data som inte formade regeln; en annan börs, en annan period, walk-forward. FYRA: FUNDAMENTAL FÖRANKRING — teknisk timing på fundamental selection (V04–V06 för värde, V19 för risk), aldrig teknisk signal på teknisk signal på teknisk signal i samma råvara. FEM: LOGGNING — varje signal noteras med datum, regel, utfall; utan logg finns inget att lära, bara minnen att försköna. Fem regler, femton minuter att införa — och ett ekosystem som kan ta till sig DeMark utan att drunkna i honom."
+        },
+        {
+          "type": "insikt",
+          "content": "Syntesen i en mening: låt AKM1 välja VARA (billig, frisk, V04–V06), låt DeMark välja TID (mogen utmattning vid TDST), låt horisonten avgöra vem som talar — och låt overfitting-vakten bestämma hur många röster som någonsin får tala samtidigt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Overfitting-vakten — fem regler för mätbara regler\",\"rader\":[[\"Regel\",\"Innebörd\",\"Skyddar mot\"],[\"1 — max tre indikatorer\",\"få aktiva verktyg i taget\",\"frihetsgrader som växer med biblioteket\"],[\"2 — förhandspecifikation\",\"regler och parametrar frysta skriftligt före test\",\"efterhandsanpassning, p-hacking\"],[\"3 — utanför urvalet\",\"test på data som inte formade regeln\",\"in-sample-seger, datamining\"],[\"4 — fundamental förankring\",\"timing på värde (V04–V06), aldrig teknik-på-teknik-på-teknik\",\"omgjordning av samma prisdata\"],[\"5 — loggning\",\"varje signal med datum, regel och utfall\",\"minnen som förskönar, omdömen som glider\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din första Konfluens-väkning: välj en aktie du fundamental tror på (gärna en du AKM1-poängsatt i en tidigare kurs — V04–V06 som grund). Kontrollera den tekniska sidan: finns ett köpsetup (nio stängningar under 4-barars-jaget)? Hur nära är countdownen? Håller TDST? Skriv en tre-radig väkning: fundamental dom (V-poäng), teknisk dom (setup/count/TDST), Konfluens-dom (grön — teknisk mogenhet på fundamental billighet; gul — ena sidan saknas; röd — signaler i konflikt). Gröna domar går till bevakningslistan med övervakning; gula och röda loggas med datum — kapitel tolv ska få sin statistik."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — slutkopplingen till ekosystemets hjärta: Konfluens är inte en ny teori utan en ARBETSFÖRDELNING — AKM1 äger VILKET, DeMark äger NÄR, AK1TS äger HUR LÅNGT, overfitting-vakten äger HUR MYCKET. Trendföljningskursen (Abraham) lärde ut motsatta mötet: impulsvåg-trend kort horisont på basbygge-värde lång — DeMark kompletterar med utmattingsvändan: där Abraham köper styrkan, köper DeMark tröttheten. Två halvor av samma Konfluens."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är kombinationen AKM1 + DeMark särskilt värdefull?",
+          "alternativ": [
+            "För att båda använder samma data och bekräftar varandra",
+            "För att AKM1 innehåller TD Sequential",
+            "För att DeMark ersätter fundamental analys",
+            "För att de är OBEROENDE källor — bokslut och pris — så konvergens mellan dem väger tyngre än teknisk-på-teknisk"
+          ],
+          "ratt": 3,
+          "tips": "Vilka två vittnen har minst möjlighet att samröre?"
+        },
+        {
+          "q": "Vilken roll spelar tidshorisonterna i syntesen?",
+          "alternativ": [
+            "Ingen — Sequential gäller alla horisonter lika",
+            "Sequential och Combo hör hemma på kort och medellång horisont — entry-timing — medan Mega-horisonten styrs av AKM1",
+            "DeMark gäller bara Mega-horisonten",
+            "Horisonter är bara dekoration"
+          ],
+          "ratt": 1,
+          "tips": "Dagar och veckor är inte år — var slutar indikatorns mandat?"
+        },
+        {
+          "q": "Vad är regel FYRA i overfitting-vakten?",
+          "alternativ": [
+            "Max tio indikatorer",
+            "Handla bara på Bloomberg-data",
+            "Backtesta varje månad",
+            "Fundamental förankring — teknisk timing på fundamental selection, aldrig teknik-på-teknik-på-teknik i samma råvara"
+          ],
+          "ratt": 3,
+          "tips": "Vad skyddar mot omgjordningar av samma prisdata?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Sammanfattning — hela DeMark på ett A4 (V + AK1TS)",
+      "intro": "Fyrtiton kapitel senare återstår det DeMark själv värdesatte högst: reglerna på ett papper. Sista kapitlet komprimerar hela kursen till en checklista — från TD Point till overfitting-vakt — och lämnar över ansvaret där boken lämnade det: hos den som följer reglerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Coursens hela innehåll som en enda rad verktygslogg: BÖRJA med definitionerna (kapitel 2) — objektivitet är replikerbarhet, inte sanning. RITA mekaniskt (3): TD Points enligt nivåregel, linjer genom de två senaste, höger till vänster. KVALIFICERA (4): motstängning, öppning bortom linjen, gap-och-fortsätt — brytning utan kvalificerare är brus. MÄT (5): ankaravstånd projicerat från brytpunkten, retracements ur svängets egna mått. VÄG TRYCK (6): DeMarker — andel köptryck, tolkad bara i regimkontext. FRÅGA REGIMEN (7): REI — trendar marknaden är alla oscillatorsignaler suspenderade. RÄKNA (8–10): prisväxling, nio setup, perfektion, TDST, tretton countdown med avbokning — och Combo som strängare syskon. DEMASKERA (11): vågor utan regler är berättelser. VAKTA (12–13): few parameters, out-of-sample, fundamental förankring, logg. Det är hela boken — och den får plats bakom ett kreditkort."
+        },
+        {
+          "type": "text",
+          "content": "A4:an som beslutsdokument — samma format som Trendföljnings-kursens slutprov, för ekosystemet älskar syskonriktighet. TRE FÖRBEREDELSEFRÅGOR: vilka tre indikatorer äger jag (vaktr regel ett)? vilka parametrar är frysta och sedan när (regel två)? vilken horisont talar de på? TRE KÖPVILLKOR: fundamental billighet i V04–V06 (AKM1), teknisk mogenhet (setup klart, countdown klar eller nära), växel bekräftad (prisväxling eller kvalificerad motbrytning). TRE RISKREGLER: stopp ovanför setupets högsta (TDST-styrning), position efter overfitting-vaktens egen litenhet (få regler = liten tilltro tills loggen talar), ingen pyramid utan loggad fortsättningssignal. ETT UTVECKLINGSPROTOKOLL: varje signal loggas med datum, regel, horisont och utfall — tjugo signaler senare har du din första ärliga vitsedel, och den är värd mer än alla böcker om TD som skrivits."
+        },
+        {
+          "type": "text",
+          "content": "Kursens avslutande omdöme, med båda händerna på bordet: DeMark är den mest konsekventa systematikern i den tekniska litteraturen — han tog yrkets mest böjliga verktyg (linjer, svängar, utmattning) och gav dem ryggrad nog att bäras av en främling. Samme man byggde ett bibliotek så rikt på rattar att hans största arv riskerar att ätas av sitt eget omfång — och hans egna institutionskunder visade vägen ut av den fällan utan att säga det: Cohen och husen använde honom DAGLIGEN i decennier, vilket inte bevisar att nio och tretton är sanningens tal — men visar att regelbundna, mätbara samtal om marknadens ålder och utmattning är värdefulla nog att betalas för i en generation. Det är kursens sista paradoks och dess frikostigaste lärdom: den som lärt sig DeMarks DISCIPLIN kan undvara hans siffror; den som lär sig hans siffror utan disciplinen har bara köpt nya ögonmått med bättre hulling. Välj disciplinen."
+        },
+        {
+          "type": "insikt",
+          "content": "Slutinsikten att bära med dig från kursen: objektivitet är inte en produkt du köper — det är en praxis du håller. DeMarks regler gör dig inte objektiv; att frysa dem, logga dem och leva med deras domar gör dig det. Boken heter The New Science — vetenskapen, som alltid, sitter i metoden, inte i indikatorn."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"DeMark på ett A4 — hela verktygslådan som checklista\",\"rader\":[[\"Steg\",\"Fråga\",\"Verktyg\",\"Kapitel\"],[\"1. Definitioner\",\"kan två främlingar få samma svar?\",\"objektivitetskravet — replikerbarhet\",\"2\"],[\"2. Nivåer\",\"var är motstånd och stöd?\",\"TD Points nivå 1–3, TD Lines, TDST\",\"3, 8\"],[\"3. Brytning\",\"är brytningen äkta?\",\"kvalificerare 1–3 — motstängning, öppning bortom, gap-och-fortsätt\",\"4\"],[\"4. Mått\",\"hur långt bär den?\",\"ankarprojektion, retracements ur svänget\",\"5\"],[\"5. Tryck\",\"vem dominerar — tak eller golv?\",\"DeMarker I/II — endast i regimkontext\",\"6\"],[\"6. Regim\",\"trendar marknaden?\",\"TD REI — trendvillkoret före avläsningen\",\"7\"],[\"7. Mogenhet\",\"är rörelsen gammal?\",\"prisväxling + 9 setup + perfektion\",\"8\"],[\"8. Utmattning\",\"är den trött?\",\"13 countdown, avbokning, Combo som strängare syskon\",\"9–10\"],[\"9. Konvergens\",\"talar oberoende källor tillsammans?\",\"AKM1 V04–V06 + TD-timing = Konfluens\",\"13\"],[\"10. Vakt\",\"hur många röster får tala?\",\"overfitting-vakten — tre indikatorer, fruset, out-of-sample, loggat\",\"12–13\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — ditt DeMark-A4: ta fram ett papper. Skriv de TRE indikatorer du väljer (rekommendation: en linjeregel, Sequential, en oscillator), deras FRYSTA parametrar med dagens datum, tillgångarna och horisonten de gäller, entry-villkoren (inklusive Konfluens-kravet på AKM1-poäng), stopregeln (TDST/setup-extrem) och loggformatet (datum, signal, horisont, utfall efter tio barar). Datera och signera. Det papperet — inte boken, inte kursen — är den nya vetenskapen: en regel du kan bryta mot synligt, och därför kan följa. Om tio månader har du den statistik ingen guru kan sälja dig: din egen."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — slutraderna: V04–V06 väljer varan, V19 mäter belastningen i bokslutet som countdown mäter den i grafen, V12 påminner om att stabilitet är en regim och AK1TS håller horisonterna isär. DeMarks bidrag till ekosystemet är rent och bestående: han visade att DISCIPLINEN kan definieras bar för bar — och att den som vill veta något om marknaden måste börja med att göra sina påståenden räknebara. Skriv A4:an idag. Frys parametrarna. Logga första signalen ikväll."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den korrekta ARBETSORDNINGEN i DenMarks verktygslåda enligt kursens A4?",
+          "alternativ": [
+            "Köp på count 13 direkt — de andra stegen är dekoration",
+            "Definitioner → nivåer → kvalificerad brytning → mått → tryck → regim → mogenhet → utmattning → konvergens → vakt",
+            "Rita Fibonacci först, räkna sedan",
+            "Börja alltid med oscillatorsignalen"
+          ],
+          "ratt": 1,
+          "tips": "Följ A4:ans tio steg från topp till botten — var börjar och slutar ansvaret?"
+        },
+        {
+          "q": "Vilka TRE köpvillkor ska A4:en innehålla enligt kursen?",
+          "alternativ": [
+            "Hög volym, stigande kurs, positiv nyhet",
+            "God känsla, bra berättelse, känd varumärke",
+            "Tre stigande bottnar på tre tidsramar",
+            "Fundamental billighet (V04–V06), teknisk mogenhet (setup/countdown), bekräftad växel"
+          ],
+          "ratt": 3,
+          "tips": "Konfluens: oberoende källor plus bekräftad vända."
+        },
+        {
+          "q": "Vad är kursens avslutande omdöme om DeMarks arv?",
+          "alternativ": [
+            "Att hans siffror (9 och 13) är bevisade och ska följas troget",
+            "Att hela biblioteket är värdelöst på grund av overfitting-risken",
+            "Att DISCIPLINEN — regelbundna, mätbara, loggade regler — är det bestående arvet; siffrorna utan disciplinen är bara nya ögonmått",
+            "Att bara institutioner bör använda teknisk analys"
+          ],
+          "ratt": 2,
+          "tips": "Vad kan den lärling behålla även om talet nio byts ut?"
+        }
+      ]
+    }
+  ]
+}

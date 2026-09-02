@@ -1,0 +1,1098 @@
+{
+  "slug": "this-time-is-different",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 180,
+  "title": "This Time Is Different — Reinhart & Rogoff: KOMPLETT",
+  "summary": "Carmen Reinhart och Kenneth Rogoff publicerade i januari 2009 — mitt under den pågående finanskrisen — den mest omfattande krisdatabasen i ekonomisk historieskrivning: 66 länder, åtta århundraden, kris för kris nedtecknad i bilagor som går från engelska defaulter på 1300-talet till Island 2008. Bokens tes är fångad i titeln: this-time-is-different-syndromet — tron att finansiella kriser händer andra människor, i andra länder, vid andra tidpunkter, för att vi är smartare nu — är historiens dyraste fyra ord. Kursen går igenom de fem krisetyperna (suverän extern default, inhemsk default, bankkris, valutakrasch och inflation), serial default (Spanien tretton gånger före 1800, Grekland i default hälften av åren sedan 1832), defaultböljorna, skuldintoleransen och den dolda inhemska skulden, bankkrisernas frekvens, efterdyningarnas brutala siffror (BNP minus nio procent, arbetslöshet plus sju procentenheter, statsskuld plus 86 procent), inflationen som mjuk default och USA 2008 som den andra stora kontraktionen. Kursen differentierar öppet mot Kindleberger (berättande cykelhistoria) och Galbraith (en enda händelse): Reinhart och Rogoff är DATAN — grundfrekvenserna. Och kontroverskapitlet ägnas åt det som hände efter boken: deras eget 90-procentströskelresultat, Excel-felet som Thomas Herndon hittade 2013 och som underminerade austerity-erans intellektuella grundval — plus korrelations-kausalitetsproblemet och AK1A:s svar: datadrivet men alltid verifierbar.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå this-time-is-different-syndromet och varför de fyra orden är en kontraindikator · Skilja R&R:s kvantitativa ansats från Kindlebergers berättande cykel och Galbraiths enkelfallshistoria · Känna databasen: 66 länder, åtta århundraden, fem krisetyper och deras definitioner · Memorera serial default-historien: Spanien, Frankrike, Grekland, Venezuela, Argentina mot Storbritanniens noll · Se hur default kommer i böljor drivna av centrumländernas räntor och kapitalflöden · Räkna med skuldintolerans och det dolda isberget av inhemsk skuld · Förstå varför 1945–1971 var anomalin i bankkrishistorien och inte omvänt · Bära med sig efterdyningstabellen: BNP -9 %, arbetslöshet +7 pp, bostäder -35 %, aktier -56 %, statsskuld +86 % · Behandla inflation och finansiell repression som mjuka default-former (USA 1933) · Känna igen tvillingkriser — bankkris plus valutakrasch — och valutamismatchens mekanism · Läsa USA 2008 som den andra stora kontraktionen, skriven i realtid · Förstå 90-procentströskeln från Growth in a Time of Debt (2010) och dess politiska användning · Redogöra för Herndon–Ash–Pollin 2013: Excel-felet, de uteslutna landsåren, viktningen och den korrigerade siffran +2,2 procent · Tillämpa korrelation kontra kausalitet på skuld-tillväxt-data · Syntetisera AK1A:s dataetik — datadrivet men verifierbar — med R&R:s grundfrekvenser som bas för scenarier, Monte Carlo och riskmatris (V10, V11, V19).",
+  "why": "Det här är krisbibliotekets empiriska ryggrad. Kindleberger-kursen ger mekanismen (Minskys fem faser, berättat), Galbraith-kursen ger känslan (ett enda fall, tick för tick) — men ingen av dem svarar på frågorna en kvantitativ investerare måste ställa: hur OFTA händer det, hur DJUPGT blir det och hur LÄNGE varar det? Reinhart och Rogoff svarar med tabeller: åtta århundraden av kriser omvandlade till frekvenser och genomsnitt, exakt det AK1A:s scenariomodul och riskmatris behöver som grundfrekvenser. Samtidigt är boken förknippad med finanshistoriens mest berömda replikeringskris — Herndons Excel-fynd 2013 — och den kontroversen är inte ett bihang utan kursens kärna: den lär AK1A:s dataetik (öppen data, replikering, outliers, korrelation är inte kausalitet) bättre än något annat fall i ekonomins historia. Utan den här kursen är krisbiblioteket berättelser; med den är det en frekvenstabell du kan mata dina scenarier med.",
+  "chapters_list": [
+    "1. Boken, databasen och de två författarna — 800 år i tabellform",
+    "2. Syndromet — historiens dyraste fyra ord",
+    "3. Verktygslådan — hur räknar man en kris?",
+    "4. Serial default — Spanien tretton gånger",
+    "5. Defaultböljorna — kriser kommer i klungor",
+    "6. Skuldintolerans — och det dolda isberget av inhemsk skuld",
+    "7. Bankkriser — tystnaden 1945–1971 var anomalin",
+    "8. Efterdyningarna — siffrorna som gör ont",
+    "9. Inflation — default via tryckpressen",
+    "10. Valutakrascher och tvillingkriser",
+    "11. Andra stora kontraktionen — USA 2008 i realtid",
+    "12. Efter boken — 90-procentströskeln och austerity",
+    "13. KONTROVERS — Excel-felet som skakade världspolitiken",
+    "14. Korrelation, kausalitet — AK1A:s svar",
+    "15. Sammanfattning — grundfrekvensernas bok (V10, V11, V19)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Boken, databasen och de två författarna — 800 år i tabellform",
+      "intro": "This Time Is Different: Eight Centuries of Financial Folly publicerades av Princeton University Press i januari 2009 — alltså skriven medan den finanskris den analyserade fortfarande pågick. Författarna var två av världens mest meriterade krisforskare: Carmen Reinhart, född i Havanna, professor vid University of Maryland och senare Harvard Kennedy School, och Kenneth Rogoff, Harvard-professor, IMF:s chefsekonom 2001–2003 — och i en annan karriär schackstormästare. Kursen börjar med vad som gör boken unik: inte berättelsen, utan databasen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utgångspunkten är ett enkelt konstaterande som ingen tidigare gjort kvantitativt: krislitteraturen vimlar av berättelser men saknar räkenskaper. Reinhart och Rogoff — i fortsättningen R&R — byggde under åtta år en databas som spänner över 66 länder och åtta århundraden, från medeltida monarkers pennalism till Islands bankkollaps 2008, och nedtecknade varje kris med start- och slutår i land-för-land-bilagor. Bokens kärna är inte en tes om en mekanism utan en frekvenstabell: hur ofta har suveräna defaulter, bankkriser, valutakrascher och inflationsepisoder faktiskt inträffat, i vilka klungor, med vilka följder? Titeln är hånfull avsikt: de fyra orden »this time is different« är, skriver författarna, historiens dyraste mening — citerad av policyutövare och investerare precis före varje stora kollaps."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot grannkurserna i AK1A:s bibliotek är kursens viktigaste ramar, därför säger vi den direkt och öppet. Kindlebergers Manias, Panics, and Crashes är BERÄTTANDE HISTORIA: Minskys femfascykkel ger mekanismen — displacement, boom, eufori, vinsttagning, panik — men bygger på utvalda fall studerade i narrativ ordning. Galbraiths The Great Crash 1929 är ETT ENDA FALL berättat med vass penna: känslan, dårskapen, tick för tick. This Time Is Different är DATAN: ingen huvudberättelse, ingen enskild hjälte, utan tabeller och bilagor som gör hela den ekonomiska krishistorien sökbar, räknbar och — i sin anda — replikerbar. De tre böckerna motsäger inte varandra; de svarar på olika frågor. Kindleberger svarar VARFÖR kriser uppstår. Galbraith svarar HUR det känns när de gör det. R&R svarar HUR OFTA och HUR DJUPT — grundfrekvenserna som varje seriös riskmodell behöver."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A är just frekvenserna nyckeln. Ett scenarioarbete utan grundfrekvenser är gissning; en riskmatris utan historiska magnituder är dekoration. R&R:s tabeller ger både: sannolikhetsunderlaget (hur vanligt är en svår bankkris i ett rikt land? — vida vanligare än 2006 års konsensus trodde) och magnitudunderlaget (kapitel 8:s efterdyningssiffror). Men kursen har också en andra, mörkare tråd som avslöjas i kapitel 12 och 13: samma två författare, samma databas — och ändå hamnade de 2010 i en av ekonomins största replikeringskriser när ett Excel-fel i en uppföljningsartikel blev intellektuell grundval för austerity-politik världen över, tills en doktorand hittade felet 2013. Lärdomen för AK1A är dubbelt viktig av just den anledningen: databasen är guld — och data utan verifierbarhet är en tro. Båda lärdomarna ska få fullt utrymme."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera skillnaden innan du går vidare: Kindleberger ger mekanismen, Galbraith ger känslan, R&R ger frekvenserna. I AK1A:s språk: förstå cykeln med Kindleberger, frukta den med Galbraith — och dimensionera den med R&R. En riskmatris utan R&R-siffror är litteratur, inte riskhantering."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens fem krisetyper — databasens byggstenar\",\"rader\":[[\"Kristyp\",\"Vad som händer\",\"Exempel från boken\"],[\"Extern suverän default\",\"staten betalar inte sin utlandsskuld\",\"Spanien 1500–1800, Argentina 2001\"],[\"Inhemsk suverän default\",\"staten struntar i eller skriver om skuld till egna medborgare\",\"USA:s guldbytesklausul 1933, tvångskonverteringar\"],[\"Bankkris\",\"större banker kollapsar, fusioneras eller tas över av staten\",\"USA 1907, Sverige 1991, Island 2008\"],[\"Valutakrasch\",\"kraftig nominell försvagning mot dollar eller guld\",\"Storbritannien 1931, Asien 1997\"],[\"Inflationkris\",\"årlig inflation över tröskeln — mjuk default\",\"Tyskland 1923, Latinamerika 1980-tal\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör databasen personlig innan du lär dig den: öppna bokens appendix (eller sök upp land-för-land-kronologierna som R&R publicerat) och hitta ditt eget land eller det du bor i. Skriv ner varje kris landet räknas ha haft sedan 1800 med årtal och typ — default, bankkris, valuta, inflation. Räkna ihop: hur många kriser under din livstid? Hur många under de senaste hundra åren? Jämför listan med din intuitiva bild av landet som trygg eller krisbenägen. Klyftan mellan intuition och kronologi är syndromet i miniatyr — din egen."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur omfattande är R&R:s krisdatabas?",
+          "alternativ": [
+            "66 länder och åtta århundraden",
+            "20 länder och 50 år",
+            "200 länder och 800 år med dagliga data",
+            "Endast USA och Storbritannien sedan 1900"
+          ],
+          "ratt": 0,
+          "tips": "Undertexten på omslaget är Eight Centuries of Financial Folly — och länderna är sextiosex stycken."
+        },
+        {
+          "q": "Vad är den avgörande skillnaden mellan R&R:s bok och Kindlebergers Manias, Panics, and Crashes?",
+          "alternativ": [
+            "R&R behandlar bara modern tid medan Kindleberger tar historien",
+            "Kindleberger bygger på data medan R&R berättar",
+            "Kindleberger är berättande cykelhistoria med mekanism — R&R är frekvensdata: hur ofta och hur djupt kriser slår",
+            "Det är samma bok med olika titlar"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad varje bok kan svara på: varför krisen kommer — eller hur ofta den kommer?"
+        },
+        {
+          "q": "Vilken bakgrund hade Kenneth Rogoff utöver professorsposten vid Harvard?",
+          "alternativ": [
+            "Han var centralbankschef i Tyskland",
+            "Han var finansminister i USA",
+            "Han grundade en hedgefond på 1980-talet",
+            "Han var IMF:s chefsekonom 2001–2003 och schackstormästare"
+          ],
+          "ratt": 3,
+          "tips": "Två karriärer till — en på IMF, en vid schackbrädet."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Syndromet — historiens dyraste fyra ord",
+      "intro": "Bokens psykologiska kärna: this-time-is-different-syndromet, formulerat i förordet som tron att finansiella kriser är saker som händer andra människor, i andra länder, vid andra tidpunkter — för vi gör saker bättre nu, vi är smartare, vi har lärt av tidigare misstag. Här möter boken Kindlebergers euforifas, Shillers överdrivna optimism och Galbraiths permanently high plateau — men R&R svarar inte med psykologi utan med motfrekvenser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Syndromets anatomi, som R&R beskriver den: varje generation är övertygad om att DEN aktuella finansiella innovationen, institutionen eller tekniken förtrollat risken bort. På 1820-talet: de nybildade latinamerikanska staternas obligationer är säkra — gruvor och tillväxt betalar räntan. På 1920-talet: nu har vi en centralbank — Federal Reserve grundad 1913 — så panikerna av 1873 och 1907 kan inte upprepas. På 1990-talet: informationsåldern har avskaffat konjunkturen. På 2000-talet: securitisering och riskmodeller har skivat och tärnat risken så att bolån är säkra — subprime är ju bara en strö av i stort sett riskfria betalningsflöden. Sedan 1825, 1929, 2001 och 2008. R&R:s varje kapitelvåning vilar på samma grund: påståendet om att denna gång är annorlunda, följt av frekvenstabellen som visar att det inte var det."
+        },
+        {
+          "type": "text",
+          "content": "Koppla öppet till grannkurserna. Kindlebergers femfascykel förklarar mekanismen bakom tron: i euforifasen börjar alla — inklusive erfarna investerare — förklara prisstegringen med en ny paradigmberättelse, och Kindleberger citerar själv hur 1920-talets Sverige och USA trodde att federala myndigheter och centralbank gjort kriser omöjliga. Galbraith fångar känslan i permanently high plateau — Irving Fishers ödesdigra försäkran oktober 1929. Shillers Irrational Exuberance ger sifferunderlaget. R&R tillför den brutala frekvenspoängen: det påståendet du just hörde är inte nytt — det är en mall som upprepas före varje kris i databasen, i åtta århundraden. Skillnaden mot Kindleberger är alltså inte psykologin utan beviset: där Kindleberger visar sex historier som stödjer mönstret, visar R&R hela registret. Frasen »den här gången är det annorlunda« blir därmed något helt konkret för investeraren: en kontraindikator med frekvensunderlag."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-tillämpningen är dubbel. För det första scenarioideologin: när du bygger bull-scenarier i AK1A:s scenariomodul är syndromet din huvudfiende — förväntan om strukturell nyhet (den här gången gäller det AI, den här gången har centralbankerna verktyg) ska alltid prissättas mot grundfrekvenserna, inte mot berättelsens övertygande kraft. För det andra tidsindikatorn: R&R visar att påståendena blossar upp systematiskt i euforifasen — när finanspressen förklarar att gamla mått inte gäller längre är det en datapunkt, inte bara en åsikt. Kursens kontroverskapitel kommer att visa den bittra ironin: de som 2013 visade att R&R:s eget tröskelresultat vilade på ett kalkylfel, och de som röstats ner av den eran som citerade R&R, använder exakt bokens eget vapen mot bokens uppföljning — det är syndromets sista skickelse — och det som ger kursen dess dataetik."
+        },
+        {
+          "type": "insikt",
+          "content": "Skriv ner syndromets grammatik och lär dig känna den: alltid en ny struktur (centralbank, teknik, securitisering, AI) plus ett gammalt mått som förklarats föråldrat (prisintäkter, skuldkvoter, kredittillväxt). När en mening innehåller båda delarna — ny struktur, föråldrat mått — har du hört det. Historiens frekvenstabell säger att du bör agera som om det inte var sant, till dess att data visar något annat."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Syndromets klassiska varianter — påstående mot utfall\",\"rader\":[[\"Era\",\"Påstående\",\"Utfall\"],[\"1820-tal\",\"nya stater och råvaror gör latinobligationer säkra\",\"defaultvåg på 1820-talet\"],[\"1860–1873\",\"järnväg och telegraf förändrar ekonomin för alltid\",\"börskrascher 1873, tjugofem års stagnation i USA\"],[\"1920-tal\",\"nu finns Federal Reserve — panikerna kan inte upprepas\",\"1929 och depressionen\"],[\"1960–70-tal\",\"petrodollar och utvecklingslån — tillväxt betalar skulden\",\"Latinamerikas skuldkris 1982\"],[\"1990-tal\",\"informationsåldern avskaffar konjunkturen\",\"IT-bubblan 2000\"],[\"2000-tal\",\"securitisering har skivat risken — bostäder kan inte falla nationellt\",\"den globala finanskrisen 2008\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Syndromjägaren: samla tre aktuella den-här-gången-påståenden från finansiell press eller makroanalyser — kandidater: AI-produktivitet, centralbankernas nya verktygslåda, strukturerat statspapper. Skriv för varje: vilken ny struktur åberopas, vilket gammalt mått förklaras föråldrat, och vilken frekvens R&R:s tabeller skulle förutsäga om påståendet är falskt. Spara listan — du kommer att använda den i slutprojektets krisvakt (kapitel 15)."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definierar R&R this-time-is-different-syndromet?",
+          "alternativ": [
+            "Att aktiemarknaden alltid återhämtar sig",
+            "Tron att finansiella kriser händer andra människor, i andra länder, vid andra tidpunkter — för att vi är smartare nu",
+            "Att inflation alltid är tillfällig",
+            "Att centralbanker kan förhindra alla kriser"
+          ],
+          "ratt": 1,
+          "tips": "Förordet formulerar det som en trossats: det händer inte oss, här och nu."
+        },
+        {
+          "q": "Vilken variant av syndromet användes på 1920-talet?",
+          "alternativ": [
+            "Att securitisering gjort bolån säkra",
+            "Att järnvägar förändrat ekonomin för alltid",
+            "Att den nya centralbanken Federal Reserve gjort paniker som 1873 och 1907 omöjliga",
+            "Att guldstandardens återinförande stabiliserar allt"
+          ],
+          "ratt": 2,
+          "tips": "Fed grundades 1913 — femton år senare kom seklets värsta krasch."
+        },
+        {
+          "q": "Vad bör »den här gången är det annorlunda« vara för en AK1A-investerare?",
+          "alternativ": [
+            "Ett köptillästånd om den nya tekniken är verklig",
+            "En kontraindikator med frekvensunderlag — påståendet upprepas i euforifasen före varje kris i databasen",
+            "En irrelevant retorisk fras utan information",
+            "Ett tecken på att gamla mått ska kastas ut ur analysen"
+          ],
+          "ratt": 1,
+          "tips": "Frågan är inte om påståendet är sant — frågan är vad historien säger om sannolikheten."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Verktygslådan — hur räknar man en kris?",
+      "intro": "Innan frekvenserna kommer definitionerna. En krisdatabas är bara så bra som sina kriterier: var börjar en bankkris, hur försvagad måste en valuta bli för att räknas som krasch, hur hög inflation krävs för kris? Bokens appendix redogör öppet för varje tröskel — och just öppenheten är det som senare ska ställas mot deras eget 90-procentsresultat. Kursens metodkapitel, och AK1A:s dataetik i miniatur.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionerna, citerade öppet från bokens appendix. Extern suverän default: staten misslyckas med betalning på utlandsskuld — antingen full default, räntestoppsavtal med fordringsägare eller omförhandlingar under press; datumen i databasen är start- och slutår för varje episod. Inhemsk default: staten inte fullföljer åtaganden mot egna medborgare — tvångskonverteringar, avskaffade indexklausuler, finansiell repression. Bankkris: händelsebaserad och kvalitativ — bankkörningar, stängningar, tvångsfusioner eller statliga ingripanden i större finansiella institut; ingen kvantitativ tröskel eftersom störningar i data gör det omöjligt, en medgivning som är vetenskapligt hedrande. Valutakrasch: en årlig nominell försvagning mot dollar — eller före dollarns era mot pund respektive guld — på minst 15 procent. Inflationkris: årlig inflation på minst 20 procent, med högre nivåer för svårare episoder."
+        },
+        {
+          "type": "text",
+          "content": "Poängen med sådana definitioner är inte att de är de enda rätta — det är att de är EXPLICITA. En definition som står tryckt kan testas, ifrågasättas och räknas om av andra; en outtalad definition kan inte misslyckas ett test och är därför inte en definition utan en åsikt. R&R publicerade sina land-kronologier i appendix just för att andra forskare skulle kunna bygga vidare — och de gjorde det: Jordà–Schularick–Taylors makrohistordatabas är en direkt arvtagare som bygger vidare på R&R:s systematik med fler länder och längre serier. Det är så vetenskap ska fungera — och det är kontrasten som gör Herndon-fallet så svart: när en doktorand 2013 bad om kalkylarket bakom R&R:s uppföljningsartikel om skuld och tillväxt, gick det trögt. Bokens metod och artikelns metod är två olika etiska kapitel i samma författarskap — en skillnad kursen återkommer till med full kraft."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-kopplingen är rak: dina tjugo AKM1-variabler har precis samma struktur som R&R:s krisdefinitioner — en formel eller tröskel (V04 P/S, V06 EV/EBITDA, V10 skuldsättningsgrad) som gör en bedömning omrättningbar. När du poängsätter V10 med 2 i stället för 4 kan en annan person med samma bokslut räkna efter och invända — det är hela skillnaden mellan en checklista och en magkänsla, exakt samma dygd som R&R:s appendix. Och varningen är spegelvänd lika rak: en definition är alltid en avvägning. Bankkrisens kvalitativa kriterier gör den svårare att falsifiera än valutakraschens 15-procentströskel. Fråga alltid om en klassifikation: vad skulle ha varit sant för att denna episod INTE hade räknats? Om svaret är oklart är definitionen för mjuk — och mjuka definitioner överlever kritik för lätt."
+        },
+        {
+          "type": "insikt",
+          "content": "Regeln från R&R:s metodkapitel, värd att memorera ordagrant: en definition som inte står skriven kan inte testas — och vad som inte kan testas kan inte veta sig ha fel. Krav på varje siffra i din analys: källa, urval och tröskel, tre saker, skrivna. Om någon av de tre saknas har du inte ett faktum utan en historia."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Databasens krisdefinitioner — trösklar och karaktär\",\"rader\":[[\"Kristyp\",\"Kriterium\",\"Karaktär\"],[\"Extern default\",\"utebliven betalning eller omförhandling på utlandsskuld\",\"datumbaserad, hård\"],[\"Inhemsk default\",\"tvångskonvertering, brutna klausuler, repression mot inhemska fordringsägare\",\"händelsebaserad, mjukare\"],[\"Bankkris\",\"körningar, stängningar, tvångsfusioner, statligt ingripande i större institut\",\"kvalitativ — medges öppet\"],[\"Valutakrasch\",\"årlig försvagning mot dollar eller guld på minst 15 procent\",\"tröskelbaserad, hård\"],[\"Inflationkris\",\"årlig inflation på minst 20 procent\",\"tröskelbaserad, hård\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Testa definitionerna på Sverige: R&R:s databas räknar Sverige 1991–93 som svår bankkris och 1992 som valutakrasch. Kontrollera varje kriterium: vilka institut föll eller togs över (Nordbanken, Gota, sparbankerna)? Hur mycket försvagades kronan 1992–93 — klarar den 15-procentströskeln? Uppfyller händelserna bankkrisens kvalitativa kriterier? Skriv ditt svar rad för rad. Övningens poäng: när definitionerna är skrivna kan DU avgöra om en episod kvalificerar — det är hela metodkapitlets mening."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras en valutakrasch i R&R:s databas?",
+          "alternativ": [
+            "En nominell försvagning på minst 15 procent mot dollar eller guld under ett år",
+            "All avreglering av valutan",
+            "En realvärdeförändring på 5 procent",
+            "All försvagning över hundra procent"
+          ],
+          "ratt": 0,
+          "tips": "Tröskeln är tvåsiffrig — och mätningen görs mot reservvalutan, historiskt även guld och pund."
+        },
+        {
+          "q": "Varför är bankkrisdefinitionen kvalitativ snarare än tröskelbaserad?",
+          "alternativ": [
+            "Därför att bankkriser är sällsynta",
+            "Därför att centralbankerna förbjuder datalämnande",
+            "Därför att bankkriser inte kan inträffa i rika länder",
+            "Därför att bankdata är brusiga och störda — R&R medger öppet att de använder händelser som körningar, stängningar och statliga ingripanden"
+          ],
+          "ratt": 3,
+          "tips": "Att medge en definitions svaghet är en dygd — vad är konsekvensen för hur lätt resultaten kan testas?"
+        },
+        {
+          "q": "Vad är poängen med att publicera krisdefinitioner och land-kronologier i appendix?",
+          "alternativ": [
+            "Att fylla sidantal",
+            "Att visa hur många länder författarna besökt",
+            "Att försvåra kritik genom massiv detalj",
+            "Att andra ska kunna testa, kritisera och bygga vidare — replikerbarhet"
+          ],
+          "ratt": 3,
+          "tips": "Vetenskapens immunsystem heter replikering — och det kräver att reglerna är skrivna."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Serial default — Spanien tretton gånger",
+      "intro": "Databasens första chocksanning: default är inte ett anomalt engångsdrama utan för många stater ett återkommande verktyg. Spanien gick i default tretton gånger mellan 1500 och 1800 — och fler gånger till under 1800-talet. Frankrike åtta gånger före 1800. Grekland har sedan självständigheten 1832 befunnit sig i default eller omstrukturering ungefär hälften av alla år. Mot detta: Storbritannien, som aldrig defaultade trots en skuldtopp omkring 260 procent av BNP efter Napoleonkrigen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Faktakärnan, rak från bokens kronologier. Spanien: tretton defaults mellan 1500 och 1800 under habsburgarna och bourbonerna — silverfloderna från Amerika räckte inte till krigen, och varje fred slöts med fordringsägarna om och om igen; ytterligare sju episoder följde under 1800-talet. Frankrike: åtta defaults före 1800 — monarken som störtades 1789 hade en skuldhistoria lika lång som krigshistorien. Grekland: självständigt 1832, i default eller omstrukturering ungefär hälften av samtliga år sedan dess — episoderna 1826, 1843, 1860, 1893 och 1932, och när PSI-omstruktureringen 2012 genomfördes var det historiens största suveräna skuldomförhandling, och Greklands sjätte gång. Latinamerika: Venezuela har defaultat omkring tio gånger sedan självständigheten, Argentina sju gånger sedan 1800-talet, senast med 2001 års default — fram till dess den största i historien. R&R:s tabell är inte kuriosa — den är beviset på att default är ett REGELVERK, inte en olycka."
+        },
+        {
+          "type": "text",
+          "content": "Kontrasten är bokens viktigaste nyans: serial default är inte universell. Storbritannien bar efter Napoleonkrigen en skuld nära 260 procent av BNP — och betalade, decennium efter decennium, med skatter, gold standard-åtagandet och en trovärdig statsapparat; ingen extern default på tre århundraden och ingen inhemsk default av betydelse. USA betalade sina inbördeskrigsskulder och sin andra världskrigsskuld på över 110 procent av BNP — via tillväxt, primära överskott och, som kapitel 9 visar, en rejäl dos finansiell repression. Skillnaden mellan Storbritannien och Spanien är inte resurser — Spanien hade världens silver, Frankrike Europas största ekonomi — utan institutioner och trovärdighetens ackumulerade historia. Det är den mekanism R&R senare formaliserar som skuldintolerans (kapitel 6): ett lands tolerabla skuldnivå bestäms av dess historia, inte av en universell siffra."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen är nästan pinsamt direkt: vad gäller för en stat gäller för ett bolag. Ett företag med tre kapitalanskaffningar och två emissioner bakom sig har inte samma kreditvärdighet som ett med tjugo år av utdelning och noll utspädningar — historien är en variabel, inte bara balansräkningen. V19 Kapitalförbränning och Emission-risk är precis denna dimension i AKM1: har bolaget historiskt »defaultat» mot sina ägare genom utspädningar när det blev trångt? Och på nationell nivå är R&R:s poäng för din portfölj kraftfullare: en stats defaulthistoria är den mest undervärderade fundamenten i val av marknadsexponering. Den som 2010 trodde att Grekland inte kunde defaulta — för att det var i euron, för att det var Europa — ignorerade en frekvenstabell som sa: det här landet har varit i default varannat år sedan 1832. Bokens första leverans till investeraren är just den tabellen."
+        },
+        {
+          "type": "insikt",
+          "content": "Default är inte en händelse utan en vana. Innan du bedömer en stats eller ett bolags förmåga att bära skuld, ställ den enda fråga R&R:s kronologi besvarar: vad har subjektet gjort VARJE GÅNG det blev trångt tidigare? Svaret finns i historien — och historien är nästan alltid längre än marknadens minne."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Serial defaulters — och kontrasten\",\"rader\":[[\"Land\",\"Defaults\",\"Notering\"],[\"Spanien\",\"13 före 1800, fler på 1800-talet\",\"silvret räckte aldrig till krigen\"],[\"Frankrike\",\"8 före 1800\",\"monarkens skuld- och krigshistoria lika långa\"],[\"Grekland\",\"5 sedan 1832 — i default ca hälften av åren\",\"2012: sjätte gången, historiens största omstrukturering\"],[\"Venezuela\",\"ca 10 sedan självständigheten\",\"Latinamerikas serial default-ikon\"],[\"Argentina\",\"7 sedan 1800-talet\",\"2001 den största före 2012\"],[\"Storbritannien\",\"ingen default sedan Napoleonkrigen\",\"skuldtopp ca 260 % av BNP — betalades ändå\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Greklandsövningen: räkna själv på frekvensen. Ta R&R:s grekiska episodlista (1826, 1843, 1860, 1893, 1932) och räkna ut hur stor andel av åren 1832–2008 Grekland tillbringat i default eller omstrukturering — bokens svar är ungefär hälften. Skriv sedan ner vad du själv trodde om grekisk kreditvärdighet 2009–2012, och vad tabellen sa. Avsluta med en mening: vad borde en obligationsköpare ha krävt i ränta med denna frekvenstabell i handen — och vad betydde euron för sannolikheten att tabellen skulle gälla även den här gången?"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur många gånger gick Spanien i default mellan 1500 och 1800?",
+          "alternativ": [
+            "Tretton gånger",
+            "Tre gånger",
+            "En enda gång, under Filip II",
+            "Aldrig — Spanien betalade alltid"
+          ],
+          "ratt": 0,
+          "tips": "Silverfloderna från Amerika räckte inte till — fordringsägarna slöt fred om och om igen."
+        },
+        {
+          "q": "Vad är sant om Grekland enligt R&R:s kronologi?",
+          "alternativ": [
+            "Aldrig default sedan självständigheten",
+            "I default eller omstrukturering ungefär hälften av alla år sedan 1832",
+            "Endast default 2012",
+            "Default en gång, 1893"
+          ],
+          "ratt": 1,
+          "tips": "Fem episoder fram till 1932 — räkna åren däremellan."
+        },
+        {
+          "q": "Vad visar Storbritanniens kontrast — skuld kring 260 procent av BNP utan default?",
+          "alternativ": [
+            "Att skuldnivå är irrelevant",
+            "Att alla länder borde låna maximalt",
+            "Att institutioner och trovärdighetens historia — inte resurser — avgör vilken skuldbörda som är bärbär",
+            "Att gold standard alltid fungerar"
+          ],
+          "ratt": 2,
+          "tips": "Spanien hade silvret och Frankrike storleken — vad saknade de som Storbritannien hade?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Defaultböljorna — kriser kommer i klungor",
+      "intro": "Databasens andra mönster: kriser klumpar sig i tiden. Defaultepisoderna kommer i vågor som sveper över världen — 1820-talet, 1873, 1890, 1930-talet, 1982, slutet av 1990-talet — och vågorna faller samman med händelser i centrumländerna: räntetoppar, råvarukrascher och kreditkontraktioner i London och senare New York. 1930-talet är det enda tillfälle då mer än var tredje land i världen befann sig i default samtidigt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vågornas mekanik, som R&R beskriver den: kapitalet flyter från centrum till periferin i optimistiska perioder — London finansierar Latinamerika på 1820-talet, järnvägarna på 1860-talet, Amerika och Argentina på 1880-talet; petrodollar återvänder till Latinamerika som syndikerade lån på 1970-talet; globala banker finansierar Asien på 1990-talet. Sedan kommer vändningen i CENTRUM: räntor stiger, råvarupriser faller, krediten dras tillbaka — och periferin, som lånat i centrumvalutan, står med betalningsbalanskriser i kluster. Bokens klassiska exempel: 1825 års London-krasch följdes av en defaultvåg bland de nyligen självständiga latinamerikanska staterna; Baring-krisen 1890 fastnade i Argentina; Volckers räntetopp 1979–81 knäckte Latinamerika 1982 med Mexicos helgkollaps i augusti som startpunkt; Fed-topp och Asien-krisen 1997–98 med Ryssland 1998 och Argentina 2001 som efterskalv. Default är ett LÄNDS beslut — men vågen är en VÄRLDS cykel."
+        },
+        {
+          "type": "text",
+          "content": "1930-talet är vågornas rekord och bokens mörka referenspunkt: den stora depressionen är den enda perioden i databasen då en betydande andel av världens alla länder — mer än var tredje — samtidigt befann sig i default eller omstrukturering. Den mekanismen är också varför R&R senare döpte 2008 till den andra stora kontraktionen: globala kriser som utgår från centrumländerna — Storbritannien 1825 och 1931, USA 1929 och 2007 — slår hårdare, synkroniserar fler länder och ger längre efterdyningar än kriser som börjar i periferin. Skillnaden mot en lokal kris är mekanisk: centrumlandet är världens bankir och kredithärledning; när bankiren själv kollapsar torkar finansieringen ut överallt samtidigt. Det är också kursens första direkta bro till moderna riskmodeller: sannolikheten för att många länder defaultar SAMTIDIGT är inte produkten av enskilda sannolikheter — det finns en gemensam faktor, och gemensamma faktorer dödar naiv diversifiering."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-tillämpningen är portföljteoretisk och dubbel. För det första: landsdiversifiering är svagare än den ser ut, just för att krisvågorna är korrelerade genom centrumländernas cykel — en aktieportfölj spridd över tio tillväxtmarknader är i en dollarkris ett och samma innehav, som 1997 lärde. För det andra: vågindikatorn är användbar i tid. R&R:s vågutlösare — räntetoppar i centrum, fallande råvarupriser, snabb kredittillväxt i periferin följt av stopp — är precis de variabler du kan lägga i din krisvakt (kapitel 15). Kindleberger- och Galbraith-kurserna lär dig se bubblan i ett land; R&R lär dig se NÄR klungan av länder står i kö till samma utgång. Båda behövs — berättelsen för mekanismen, frekvenstabellen för sannolikheten."
+        },
+        {
+          "type": "insikt",
+          "content": "En default är ett beslut i ett land; en defaultvåg är en cykel i centrum. För din portfölj är den gemensamma faktorn det enda som betyder något: fråga inte hur många länder din portfölj spänner över — fråga hur många GEMENSAMMA FAKTORER den är exponerad mot. Tio marknader, en dollarcykel, är en marknad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Defaultvågorna — åtta århundraden av klungor\",\"rader\":[[\"Våg\",\"Episoder\",\"Utlösare från centrum\"],[\"1820-talet\",\"nya latinamerikanska stater defaultar\",\"London-kraschen 1825\"],[\"1873\",\"Östeuropa och Latinamerika\",\"Wien- och New York-krascherna, järnvägsboomen vänder\"],[\"1890\",\"Argentina, Uruguay — Baring-krisen\",\"London-handelshus kollapsar\"],[\"1930-talet\",\"mer än var tredje land i default — enda globala vågen\",\"depressionen från USA 1929\"],[\"1982\",\"Mexiko, Brasilien, Argentina m.fl.\",\"Volckers räntetopp 1979–81, råvarufall\"],[\"1997–2001\",\"Asien, Ryssland 1998, Argentina 2001\",\"dollarcykel och kapitalstopp\"],[\"2008–2012\",\"Island, europeriferin, Grekland 2012\",\"den andra stora kontraktionen från USA\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen vågtidslinje: rita en axel 1970–2025 och markera R&R:s vågor (1982, 1997, 1998, 2001, 2008, 2012). Lägg ovanpå: amerikanska styrräntans toppar (1981, 1989, 2000, 2007), dollarindexets toppar och fall, samt S&P 500:s krascher. Titta på mönstret: hur många default- eller krisvågor kom utan en föregående räntetopp eller dollartopp i centrum? Skriv ner siffran — den är din empiriska grundfrekvens för mekanismen centrum slår, periferin blöder."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utlöste Latinamerikas skuldkris 1982 enligt bokens vågmönster?",
+          "alternativ": [
+            "Inhemsk politik i Mexiko",
+            "Volckers räntetopp 1979–81 och fallande råvarupriser — krediten i centrum drogs tillbaka",
+            "Euron infördes",
+            "Järnvägsboomen vände"
+          ],
+          "ratt": 1,
+          "tips": "Lånen var tagna i dollar — vad händer när dollarn blir dyr och räntan hög?"
+        },
+        {
+          "q": "Vad är unikt med 1930-talet i R&R:s databas?",
+          "alternativ": [
+            "Inga defaults alls ägde rum",
+            "Bara Europa drabbades",
+            "USA var ensamt om att defaulta",
+            "Det är den enda perioden då mer än var tredje land i världen var i default samtidigt"
+          ],
+          "ratt": 3,
+          "tips": "En våg kan vara regional — den här var global, och därför refereras den i namnet på 2008-talet."
+        },
+        {
+          "q": "Vad menar R&R med att kriser från centrumländerna är värre?",
+          "alternativ": [
+            "Att centrumlandet är världens bankir — när det kollapsar torkar finansieringen ut överallt samtidigt, mer synkroniserat och med djupare efterdyningar",
+            "Att bara USA kan ha kriser",
+            "Att periferin alltid klarar sig",
+            "Att guldstandarden skyddar centrum"
+          ],
+          "ratt": 0,
+          "tips": "1929 och 2007 utgick från USA — jämför djupet med kriser som börjat i ett litet land."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Skuldintolerans — och det dolda isberget av inhemsk skuld",
+      "intro": "Två av bokens mest inflytelserika begrepp i ett kapitel. Skuldintolerans: samma skuldnivå är inte samma risk — länder med serial default-historia får kris vid skuldnivåer där rika länder sover gott. Och isberget: standarddatabaserna mätte bara EXTERN skuld, medan R&R byggde den första omfattande databasen över INHEMSK skuld — som visade sig vara stor, viktig och ibland det som gör statsfinanserna ohållbara när ingen tittar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Skuldintolerans, som R&R formulerar den: det finns ingen universell säker skuldkvot. Avancerade ekonomer med lång betalningshistoria bär skulder på hundratalet procent av BNP utan kris — Storbritanniens 260 procent efter Napoleonkrigen, USA:s över 110 procent efter andra världskriget. Ekonomier med tät defaulthistoria drabbas av betalningskriser redan vid yttre skulder på tjugo till fyrtio procent av BNP, som många afrikanska och latinamerikanska länder gjorde under 1980- och 1990-talen. Förklaringen är inte irrationella marknader utan rationellt minne: fordringsägare som bränts gång på gång kräver högre ränta och flyr tidigare, vilket själv höjer default-risken — en självförstärkande spiral där historien är den viktigaste fundamentan. Konsekvensen är obehaglig för varje enkel tumregel: samma 60-procentströskel som är harmlös i Tyskland är kritisk för ett land med fem defaults på meritlistan."
+        },
+        {
+          "type": "text",
+          "content": "Isberget: när R&R byggde sin databas upptäckte de att den etablerade statistiken — Världsbankens och fondens serier — nästan uteslutande mätte EXTERN statsköld. Den inhemska skulden, lånen hos egna banker och medborgare, fanns inte i de standardserier som policy och forskning vilar på. R&R byggde därför en egen databas över inhemsk skuld, och fynden förändrade bilden: i många tillvägtekonomer var den inhemska skulden stor — ofta i nivå med eller över den externa — vilket betyder att länder som såg måttligt belånade utåt i själva verket bar betydligt tyngre bördor. Det förklarar två mysterier: varför vissa länder fick kris vid låga externa skuldkvoter, och varför inhemsk default — som inte syns i externstatistiken — är historiskt vanligare än man trott. Formerna är mjuka men verkliga: tvångskonverteringar av inlåning till statspapper, räntetak kombinerade med inflation (finansiell repression, kapitel 9), avskaffade indexklausuler."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen är kursens tydligaste bolagsparallell. I bolagsanalysen heter isberget: dolda skulder — pensionsskulder, operativ och finansiell leasing, garantier, förlagsbolagens skulder, obetalda restskatter — och V10 Skuldsättningsgrad är bara så bra som dess nämnare och täljarinnehåll. R&R-läran för AKM1: räkna ALLTID om skuldsättningen med samtliga åtaganden inkluderade innan du poängsätter; den synliga skulden är inte hela skulden, och det var just den som sjönk fartygen. På nationell nivå heter samma läxa för portföljen: när du bedömer en marknads risk, kräv total statsköld — extern plus inhemsk — plus implicita åtaganden (bankgarantier, pensionslöften). Länder, som bolag, defaultar inte på den skuld du ser — de defaultar på den de har."
+        },
+        {
+          "type": "insikt",
+          "content": "Två R&R-regler att bära med dig: för det första — den säkra skuldnivån är ett landspecifik variabel, bestämd av defaulthistorien, inte en universell konstant; för det andra — räkna alltid om skulden inklusive allt det som inte syns i huvudserien. Staten, som bolaget, defaultar på den totala skulden. Översatt till AKM1: V10 utan dolda åtaganden är inte en analys utan en kuliss."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skuldintolerans och isberget — två fynd i tabellform\",\"rader\":[[\"Begrepp\",\"Innebörd\",\"Exempel eller form\"],[\"Skuldintolerans\",\"samma kvot, olika risk — historien är fundamentan\",\"Storbritannien 260 % utan kris; vissa tillvägtekonomer i kris vid 20–40 %\"],[\"Extern skuld\",\"lån hos utländska fordringsägare — det standarddata mätte\",\"Latinamerika 1982\"],[\"Inhemsk skuld\",\"lån hos egna medborgare — det standarddata missade\",\"stor, ofta lika tung som den externa\"],[\"Mjuk inhemsk default\",\"tvångskonvertering, räntetak plus inflation, brutna klausuler\",\"finansiell repression efter 1945, USA 1933\"],[\"AKM1-parallell\",\"dolda åtaganden\",\"pension, leasing, garantier — räkna om V10 innan poäng\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Isbergsräkningen: välj ett bolag i ditt bevakningsuniversum. Ta fram senaste rapporten och räkna om skuldsättningsgraden (V10) inklusive: pensionsåtaganden, leasing (operativ som finansiell), garantier och eventuell restskuld. Jämför med den officiella skuldsättningen. Hur många procent tyngre blev bolaget när isberget räknades in? Om skillnaden är mer än en tredjedel: vilken poäng på V10:s skala förtjänar bolaget EGENTLIGEN? Notera svaret — det är R&R:s metodik tillämpad på en balansräkning."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder skuldintolerans i R&R:s användning?",
+          "alternativ": [
+            "Att alla länder bör ha noll skuld",
+            "Att rika länder alltid defaultar först",
+            "Att den tolerabla skuldnivån är landspecifik — länder med defaulthistoria får kris vid mycket lägre skuldkvoter",
+            "Att skuld är irrelevant för tillväxt"
+          ],
+          "ratt": 2,
+          "tips": "Samma kvot, olika historia — vad minns fordringsägarna?"
+        },
+        {
+          "q": "Vad var nyckelfyndet i R&R:s databas över inhemsk skuld?",
+          "alternativ": [
+            "Att inhemsk skuld är försumbar i alla länder",
+            "Att inhemsk skuld bara finns i Afrika",
+            "Att inhemsk och extern skuld alltid är lika stora",
+            "Att standardstatistiken bara mätte extern skuld — den inhemska var stor och gjorde totalskulden tyngre än bilden visade"
+          ],
+          "ratt": 3,
+          "tips": "Isberget: det som inte syns i huvudserien sjunker fartygen."
+        },
+        {
+          "q": "Vilken är den rakaste AKM1-parallellen till det dolda isberget?",
+          "alternativ": [
+            "V07 bruttomarginal",
+            "V04 P/S",
+            "V10 skuldsättningsgrad räknad utan dolda åtaganden som pension, leasing och garantier",
+            "V20 återköp"
+          ],
+          "ratt": 2,
+          "tips": "Vilken variabel mäter skuld — och vad händer med den när isberget räknas in?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Bankkriser — tystnaden 1945–1971 var anomalin",
+      "intro": "Bokens tredje chocksanning: bankkriser är inte ett fattiglandsfenomen. De är minst lika vanliga i avancerade ekonomier som i tillvägtekonomier — sett till hela 1800- och 1900-talet. Den tysta period som gett eftervärlden falskt minne — nästan inga bankkriser i rika länder 1945 till tidigt 1970-tal — var anomalin, skapad av Bretton Woods: kapitalkontroller, reglering och finansiell repression. När liberaliseringen kom på 1970-talet återkom kriserna omedelbart.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Frekvensbilden från databasen: 1800-talet och början av 1900-talet vimlar av bankpaniker i det som i dag är världens rikaste länder — USA:s paniker 1819, 1837, 1857, 1873 och 1907; Storbritanniens kriser 1825 och 1866 med Overend Gurneys fall; Skandinavien 1857; Australien 1893. Sedan tystnaden: från slutet av andra världskriget till början av 1970-talet uppvisar de avancerade ekonomierna nästan inga systembankkriser — den period då finanssektorn var som mest reglerad, kapitalflödena kontrollerade och räntenivåerna nedtryckta (den finansiella repressionen från kapitel 9). Sedan liberaliseringen: Spanien 1977, Storbritanniens sekundärbankskris 1974, Chile 1981, USA:s sparbanker 1984–91, och de fem som blev bokens jämförelsegrupp: de stora fem — Spanien 1977, Norge 1987, Finland 1991, Sverige 1991 och Japan 1992. Sveriges egen plats i tabellen är kursens lokala ankare: bankgaranti 1992, nordbankernas fall, bad banks, fastighetsbubblan som sprack."
+        },
+        {
+          "type": "text",
+          "content": "Poängen R&R driver — och som 2009 låg som ett slags korsförhör av den samtida debatten — är att 2000-talets före-kris-konsensus vilade på ett selektivt minne. Eftersom ingen i västvärlden med maktposition hade upplevt en systembankkris i ett rikt land inom minnets räckvidd (utom Japans, som avfärdades som kulturellt särskilt), trodde man att bankkriser var ett utvecklingslands problem, drivet av dåliga institutioner. R&R:s tabell visade det omvända: kriserna är regelbundna besökare i rika länder så snart finanssektorn är liberaliserad, och det var repressionen — inte modernitet — som höll dem borta. Implikationen är obehaglig och konkret: avreglerade finanssystem med fria kapitalflöden och skenande kredittillväxt producerar bankkriser med ungefär samma mekanik 1800 som 2000. Det är exakt den frekvensen som gör 2008 till statistik i stället för överraskning: USA 2007 var inte en svart svan i R&R:s mening — den var en vit svan, sedd av alla som läst tabellen."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-kopplingen: V11 Likviditet och modulen för kris-mekanik. En bankkris i grunden är alltid en likviditetskris klädd i solvensfråga: inlåning är kort och utlåning lång, och när förtroendet sviktar är löpningen snabbare än någon balansräkning. Här möter vi Bagehot (citerad öppet, från Lombard Street 1873): lender of last resort ska utlåna frikostigt mot säkerhet och mot straffränta till institutioner som är illikvida men solvent — och låta insolventa falla. Kindleberger- och When-Genius-Failed-kurserna bygger vidare på samma mekanik. R&R:s bidrag är frekvensen: hur ofta blir det allvar (per kapitel 8), och vad som föregår det (kredittillväxt långt över BNP, fastighetspriser långt över trend). För din AKM1-analys av banker och bolag med banker som motpart är slutsatsen direkt: V11 och V10 är livförsäkringen, och kredittillväxt-till-BNP är den makro-varning som föregår nästan varje tabellrad."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera omvändningen: det moderna väst var inte immun mot bankkriser — det var REGGLERAT bort från dem i en generation, och minnet av tystnaden förväxlades med överlägsenhet. När du hör att bankkriser bara drabbar länder med dåliga institutioner, slå upp 1907, 1991 och 2008 i kronologin. Regelverket är variabeln; karaktären är konstant."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bankkrisernas rytm — era mot frekvens\",\"rader\":[[\"Period\",\"Bankkriser i rika länder\",\"Drivkraft\"],[\"1800-tal–1913\",\"täta — USA 1819, 1837, 1857, 1873, 1907; Storbritannien 1825, 1866\",\"mindre reglerade finanssystem, guldkoppling\"],[\"1920-tal–1930-tal\",\"svåra — 1929 och depressionens bankfall\",\"bubblor, guldkopplingens kollaps\"],[\"1945–ca 1971\",\"nästan inga — anomalin\",\"Bretton Woods: kapitalkontroller, reglering, repression\"],[\"1977–1992\",\"de stora fem: Spanien 1977, Norge 1987, Finland 1991, Sverige 1991, Japan 1992\",\"liberalisering, kredittillväxt, fastighetsbubblor\"],[\"2007–2008\",\"den globala krisen — USA, Storbritannien, Irland, Island, Spanien\",\"securitisering, skenande privatekonomisk skuld\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Sverigekoll på de stora fem: R&R räknar Sverige 1991–93 i tabellen. Rekonstruera mekaniken i tre steg: ett — kredittillväxt och fastighetspriser före 1990 (deregleringen 1985, låntaget mot fastighet); två — utlösaren (räntetopp, fastighetsfall, kreditförluster, valutastryck 1992); tre — politikens svar (bankgarantin, stödpaketet, bad banks). Bedöm sedan med Bagehots mall: utlåningsfrihet mot säkerhet, straffränta, insolventa får falla — följde Sverige mallen? Skriv tre rader. Du har nu använt R&R:s frekvenstabell som checklista på ett verkligt fall."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är de stora fem — de avancerade ekonomiernas svåra bankkriser som boken använder som jämförelsegrupp?",
+          "alternativ": [
+            "Spanien 1977, Norge 1987, Finland 1991, Sverige 1991, Japan 1992",
+            "USA 1929, Tyskland 1931, Storbritannien 1931, Frankrike 1931, Sverige 1932",
+            "Mexiko 1982, Brasilien 1983, Argentina 1984, Chile 1985, Peru 1986",
+            "Thailand 1997, Korea 1997, Indonesien 1997, Ryssland 1998, Argentina 2001"
+          ],
+          "ratt": 0,
+          "tips": "Tre nordiska grannar, en iberisk och en japansk — alla efter liberaliseringen."
+        },
+        {
+          "q": "Varför var perioden 1945–början av 1970-talet nästan fri från bankkriser i rika länder?",
+          "alternativ": [
+            "Därför att Bretton Woods-regleringen — kapitalkontroller, sträng tillsyn och finansiell repression — höll kriserna borta; det var anomalin",
+            "Därför att finanssektorn hade blivit modern och effektiv",
+            "Därför att guldstandarden rådde",
+            "Därför att det inte fanns banker"
+          ],
+          "ratt": 0,
+          "tips": "Tystnaden sammanföll med finanshistoriens mest reglerade era — och upphörde med avregleringen."
+        },
+        {
+          "q": "Vad är Bagehots klassiska recept för lender of last resort?",
+          "alternativ": [
+            "Rädda alla banker utan villkor",
+            "Låt alla banker falla — moral hazard i övrigt",
+            "Utlåna frikostigt mot god säkerhet och mot straffränta till illikvida men solventa institut — låt insolventa falla",
+            "Sänk alltid styrräntan till noll"
+          ],
+          "ratt": 2,
+          "tips": "Frikostighet i volym, hårdhet i pris och i gränsdragning solvent mot insolvent."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Efterdyningarna — siffrorna som gör ont",
+      "intro": "Bokens mest citerade tabell — den som gör This Time Is Different till ett praktverk för riskchefer. För svåra bankkriser i avancerade ekonomier, historiskt genomsnitt från topp till botten: BNP faller cirka nio procent, arbetslösheten stiger sju procentenheter, bostadspriserna faller cirka trettiofem procent under runt sex år, aktiemarknaden faller över hälften, och statsskulden — noteras detta — stiger i genomsnitt med 86 procent.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tabellens innehåll, så som R&R redovisar den för svåra systembankkriser i avancerade ekonomier — de stora fem och deras historiska föregångare. BNP: fall från topp till botten i storleksordningen nio procent, med en genomsnittlig varaktighet på omkring två år nedåt. Arbetslöshet: stiger i genomsnitt sju procentenheter från cykeltopp, och tar i genomsnitt nästan fem år att nå topp. Bostadspriser: faller i genomsnitt cirka trettiofem procent och nedgången varar i storleksordningen sex år. Aktiemarknad: faller i genomsnitt över hälften — cirka femtiosex procent — med en botten efter ungefär tre och ett halvt år. Statsskuld: stiger i genomsnitt med 86 procent av sin utgångsnivå inom tre år — inte främst genom räddningspaketen, som ofta är modesta i jämförelse, utan genom recessionens mekanik: fallande skatteintäkter, stigande utgifter, automatiska stabilisatorer. Det är kursens tyngsta enskilda sifferblock — memorera det."
+        },
+        {
+          "type": "text",
+          "content": "Det sublima med tabellen är att R&R publicerade den medan USA:s kris pågick — och att efterdyningarna följde mallen. Bostadspriser fallande i åratal, arbetslöshet som steg just mot en sjuprocentenheters ökning, aktiemarknad som förlorade över hälften från topp 2007 till botten 2009, federal skuld som nästan fördubblades — 86-procentsmönstret i praktiken. Bokens ironiska slutsats skrevs därför i nästan realtid: this time is different — nej, den här gången var INTE annorlunda. För AK1A är detta kursens renaste leverans till riskmodulen: de här fem siffrorna är INTE känslor utan grundfrekvenser för ett scenario — aktieportfölj minus femtiosex procent, bostad minus trettiofem, arbetslöshet plus sju procentenheter, i fyra till sex år. En Monte Carlo-simulering utan dessa svanser är inte konservativ — den är ett försvar byggt på hopp. Bygg dem in, och fråga sedan vad de kräver av dig: buffert, tålamod, ingen tvångsförsäljning."
+        },
+        {
+          "type": "text",
+          "content": "Nyanserna, som alltid i R&R:s värld. Tabellen gäller SVÅRA SYSTEMKRISSER i avancerade ekonomier — inte varje recession, inte varje begränsad bankhändelse; att applicera nio procents BNP-fall på en vanlig konjunkturnedgång är att missbruka frekvensen. Urvalet är litet — de stora fem plus historiska fall — vilket betyder breda konfidensintervall: enskilda kriser avviker åt båda håll (Sverige återhämtade sig snabbt, Japan tappade decennier). Och kausaliteten i skuldsiffran går från kris till skuld, inte omvänt — precis den distinktionen som blir avgörande i kontroverskapitlet: det är EN sak att säga att bankkriser spränger statsfinanserna (bokens tabell, väl underbyggd), och en ANNAN att säga att hög skuld orsakar låg tillväxt (2010 års påstående, som vilar på betydligt tunnare is). Håll de två isär — då gör du redan det som austerity-debattens sämsta halva misslyckades med."
+        },
+        {
+          "type": "insikt",
+          "content": "Fem siffror att bära i riskmatrisen: BNP -9, arbetslöshet +7 pp, bostäder -35 på sex år, aktier -56, statsskuld +86 procent. De är grundfrekvenser, inte prognoser. En krisplan som inte fungerar under de fem siffrorna samtidigt — under minst fyra år — är en plan förväntad vädret, inte ett väder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Efterdyningar av svåra bankkriser — historiskt genomsnitt, avancerade ekonomier\",\"rader\":[[\"Storhet\",\"Genomsnittlig förändring\",\"Typisk varaktighet\"],[\"BNP, topp till botten\",\"ca -9 %\",\"ca 2 år nedåt\"],[\"Arbetslöshet\",\"ca +7 procentenheter\",\"nästan 5 år till topp\"],[\"Bostadspriser\",\"ca -35 %\",\"ca 6 år\"],[\"Aktiemarknad\",\"ca -56 %\",\"ca 3,5 år till botten\"],[\"Statsskuld\",\"ca +86 % av utgångsnivån\",\"ca 3 år\"],[\"Drivkraft till skuldtoppen\",\"recessionens mekanik — intäkter faller, utgifter stiger\",\"räddningspaket oftast mindre än myten\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Krisplanen under de fem siffrorna: skriv ner din egen hushållnings- och portföljplan om AKTIE-KOLLEN -56 procent, BOENDE -35 procent, ARBETSLÖSHET +7 procentenheter och FYRA ÅRS återhämtning inträffar SAMTIDIGT. Hur många månaders likvid buffert krävs för att undvika tvångsförsäljning? Vilka poster i portföljen skulle du — skrivet nu, i lugn — behålla, och vilka skulle mekaniskt triggas? Jämför planen med AK1A:s riskmatris. Om planen inte går att skriva på en sida är den inte en plan utan en förhoppning."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur mycket stiger statsskulden i genomsnitt tre år efter en svår bankkris, enligt R&R?",
+          "alternativ": [
+            "Med cirka 10 procent",
+            "Inte alls — räddningspaketen är gratis",
+            "Med cirka 86 procent av utgångsnivån",
+            "Med exakt 250 procent"
+          ],
+          "ratt": 2,
+          "tips": "Det är inte främst räddningspaketen — det är recessionens mekanik: intäkter faller, utgifter stiger."
+        },
+        {
+          "q": "Vad händer med bostadspriser och aktiemarknad i genomsnitt efter svåra bankkriser?",
+          "alternativ": [
+            "Bostäder -35 procent under cirka sex år; aktier cirka -56 procent med botten efter tre och ett halvt år",
+            "Båda stiger omedelbart",
+            "Bostäder -3 procent; aktier -8 procent",
+            "Bostäder faller 90 procent på ett kvartal"
+          ],
+          "ratt": 0,
+          "tips": "Bostäder faller långsamt och länge; aktier faller djupt och snabbare."
+        },
+        {
+          "q": "Vilken kausalitetsriktning har skuldökningen i efterdyningstabellen?",
+          "alternativ": [
+            "Hög skuld orsakar bankkrisen",
+            "Bankkrisen orsakar skuldökningen — fallande intäkter och stigande utgifter spränger statsfinanserna",
+            "Skuld och kris är orelaterade",
+            "Skulden minskar alltid efter krisen"
+          ],
+          "ratt": 1,
+          "tips": "Håll den här riktningen i minnet — den ska ställas mot 2010 års motsatta påstående i kontroverskapitlet."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Inflation — default via tryckpressen",
+      "intro": "Fjärde krisetypen, och bokens historiskt bredaste: inflationen. Med pappersmynt och fractional reserve fick staterna ett vapen som guldmyntfotens monarker saknade — att betala skulderna med tryckt peng, alltså mjuk default. R&R:s databas visar att inflationkriser är vanligare än hårda defaulter i modern tid — och att de rikaste länderna, inklusive USA, inte är oskyldiga: 1933 bröts guldbytesklausulen och dollarn devalverades från 20,67 till 35 dollar per uns — en inhemsk default räknad i R&R:s tabell.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken är urgammal men tog fart med pengasedeln: en stat som inte kan eller vill betala kan antingen suspendera betalning — hård default — eller betala med pengar som successivt förlorar värde — mjuk default via inflation. Databasen räknar inflationkris vid årlig inflation på minst tjugo procent, och kronologierna visar att dessa episoder genom historien är vida vanligare än hård default — särskilt efter att guldmyntfoten övergavs för gott. Klassikerna: Frankrikes assignater på 1790-talet, kontinentala dollarn, Tysklands hyperinflation 1923, Latinamerikas tvåsiffriga decennier på 1980-talet. Men — och det är bokens poäng mot syndromet — inflation som default är inte ett fattiglandsfenomen: krig och efterkrigstider har fällt även de mest respekterade valutor, och skillnaden mot hård default är grad, inte art: båda är brott mot fordringsägarens förväntan."
+        },
+        {
+          "type": "text",
+          "content": "USA 1933, som R&R räknar som inhemsk default i databasen: depressionen djup, Roosevelt tillträder — och Rooseveltorder 6102 och guldbytesklausulens upphävande gör att obligationsinnehavare som lånat ut i guldnotation inte längre kan fordra guld; i stället betalades de i dollar som strax därefter devalverades från 20,67 till 35 dollar per uns guld — en realförlust för fordringsägarna i storleksordningen fyrtio procent räknat i guld. Det är en fullgod inhemsk default — laglig, ordnad, men ett brott mot kontraktets ursprungliga innebörd. I samma familj hör finansiell repression hemma, förloppet som efter 1945 präglade USA och Storbritannien: räntetak och köptvång höll statslåneräntan under inflationen i decennier, medan inflationen successivt malde ned krigsskulden — USA från över 110 procent av BNP 1945 till en bråkdel på trettio år, utan en enda formell default. Realavkastningen på statsobligationer var under dessa decennier negativ efter inflation — fordringsägarna betalade notan utan att det stod så på kvittot."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-tillämpningen är köpkraftens parad: din avkastning, din utdelning och din portföljs nominella avkastning är meningslösa utan inflationen bredvid. R&R-läran för analysen är tre variabler: realräntan på statspapper (är repression på gång? — ränta under inflation är en skatt på sparare), valutaregimens flexibilitet (flytande kurser gör mjuk default lättare — och är därför vanligare än hårda restanda bland rika länder), och historik (länder som defaultat via tryckpressen förr — Latinamerika, men även Storbritanniens devalveringar 1931, 1949 och 1967 — tenderar att göra det igen). I AKM1:s språk: V10 och V11 på nationell nivå plus en tredje fråga som ingen AKM1-variabel fångar — i vilken valuta, och mot vilken inflation, är bolagets kassa och skuld denominerad? 1923-tyskar och 2001-argentinare med nominellt positiva bankkonton var ändå ruinerade. Nominellt är inte reellt; R&R:s hela inflationkapitel är en fotnot till den meningen."
+        },
+        {
+          "type": "insikt",
+          "content": "Default har två ansikten: det hårda — betalning uteblir — och det mjuka — betalning sker med pengar som köper mindre. Det mjuka är vanligare, svårare att se i stunden och historiskt hur rika länder behandlat sina fordringsägare. Kontrollera alltid din portföljs fiende: realavkastningen efter inflation och valutan — en negativ realränta i decennier är en default som aldrig förklarades."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Defaultens spektrum — från hård till mjuk\",\"rader\":[[\"Form\",\"Mekanik\",\"Historiskt exempel\"],[\"Hård extern default\",\"betalning på utlandsskuld uteblir\",\"Spanien 1500–1800, Argentina 2001\"],[\"Hård inhemsk default\",\"tvångskonvertering, brutna klausuler\",\"USA:s guldbytesklausul 1933 — devalvering 20,67 till 35 dollar per uns\"],[\"Inflation\",\"betalning med penningar som förlorar värde — tröskel 20 % i databasen\",\"Tyskland 1923, Latinamerika 1980-tal\"],[\"Finansiell repression\",\"räntetak och köptvång medan inflationen maler ned skulden\",\"USA och Storbritannien efter 1945 — realförlust utan formell default\"],[\"Devalvering\",\"valutans värde halveras mot guld eller reservvaluta\",\"Storbritannien 1931, 1949, 1967\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Realränte-kollen: ta fram årlig statslåneränta och inflation för Sverige och USA de senaste tio åren. Beräkna realräntan varje år. Hur många år var den negativ — alltså reparation? Räkna sedan på din egen portfölj: senaste femårs nominell avkastning minus ackumulerad inflation — vad blev den reala? Avsluta med en mening om vad R&R:s tröskel skulle kalla en värld där inflationen under ett år överskrider tjugo procent, och hur din portfölj skulle klara den."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför räknar R&R USA 1933 som en inhemsk default?",
+          "alternativ": [
+            "Därför att USA inte betalade sina utlandsskulder",
+            "Därför att guldbytesklausulen bröts och dollarn devalverades från 20,67 till 35 dollar per uns — fordringsägare fick betalt i pengar värda cirka fyrtio procent mindre i guld",
+            "Därför att Federal Reserve stängdes",
+            "Därför att aktiemarknaden stängdes en vecka"
+          ],
+          "ratt": 1,
+          "tips": "Kontraktet lovade guld; betalningen kom i devalverade dollar — brott mot klausulen är default."
+        },
+        {
+          "q": "Vad är finansiell repression i R&R:s användning?",
+          "alternativ": [
+            "Förbud mot all kreditgivning",
+            "Att banker tvingas bötnotas",
+            "Valutareservkrav på banker",
+            "Räntetak och köptvång som håller statslåneräntan under inflationen — skulden males ned utan formell default"
+          ],
+          "ratt": 3,
+          "tips": "Efter 1945: hur försvann USA:s krigsskuld på över 110 procent av BNP utan någon default?"
+        },
+        {
+          "q": "Vad är skillnaden mellan hård och mjuk default?",
+          "alternativ": [
+            "Hård gäller företag, mjuk gäller stater",
+            "Det är exakt samma sak",
+            "Hård är utebliven betalning; mjuk är betalning med pengar som förlorat värde — inflation, devalvering, repression",
+            "Mjuk default är alltid olaglig"
+          ],
+          "ratt": 2,
+          "tips": "Båda är brott mot fordringsägarens förväntan — skillnaden är grad och synlighet."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Valutakrascher och tvillingkriser",
+      "intro": "Femte krisetypen: valutan. Definitionen är tröskelbaserad — en årlig försvagning på minst femton procent mot dollar eller guld. Men databasens viktigaste fynd på området är samspelet: kriserna kommer sällan ensamma. När bankkris och valutakrasch slår samtidigt — tvillingkrisen — förstärker de varandra, och Asien 1997 är laboratoriet: Thailand, Indonesien och Korea förlorade både banksystem och valuta på samma sommar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Valutakraschens historia är kopplingsmekanikens historia. Under metallmyntfotens era tog sig valutasystemkriser uttryck som suspenderade inlösen — staten stängde guld- eller silverfönstret, som Storbritannien 1797 och vid återkommande tillfällen genom 1800-talet. I modern tid är kraschen en försvagning över tröskeln, och R&R:s definition är avsiktligt enkel: minst femton procent nominellt mot dollarn — eller före dollarns era mot pundet eller gentemot guld — under ett år. Tröskeln gör frekvensen räknbar: valutakrascher är historiken vanligaste kristyp, och de klumpar sig exakt som defaulterna — 1931, 1949, 1982, 1994–95, 1997–98. I fattigare ekonomier med svaga centralbanker kan försvagningar över tröskeln inträffa nästan årligen; i rika sällan — men när de gör det, som Storbritannien 1931 eller Sverige 1992, är de krisens offentliga ansikte."
+        },
+        {
+          "type": "text",
+          "content": "Tvillingkrisen — bankkris och valutakrasch samtidigt — är databasens finaste fynd på samspelet, och 1990-talet dess paradigma. Mekaniken, i tre steg: bankerna i det drabbade landet har lånat ut i lokal valuta men finansierat sig i dollar (eller lånat ut i dollar till bolag som tjänar i lokal valuta) — valutamismatch; kapitalflykt eller förtroendekross pressar valutan; centralbanken väljer mellan att höja räntan för att försvara valutan — vilket knäcker bankerna och bolagen med dollarskulder — eller släppa valutan — vilket exploderar det reala värdet av dollarskulderna och knäcker bankerna ändå. Fällan stängs från båda håll: Thailand sommaren 1997 tvingades flytta bathens band och bankerna föll; Indonesien följde med rupiah i fritt fall och banksystemet i statliga händer; Koreas konjunktur och valuta gick om varandra utför. R&R:s kategorisering: ju mer bankkrisen och valutakrisen sammanfaller, desto djupare och mer synkroniserad blir kontraktionen — och 1990-talets data visar att tvillingkriser systematiskt slår hårdare än kriserna var för sig."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-tillämpningen är bolagsnivåns spegel av nationens mismatch. Frågan till varje bolag i din AKM1-analys: i vilken valuta intjänas kassan, och i vilken valuta betalas skulden och räntan? Ett bolag med intäkter i lokal valuta och nettoskuld i dollar är en:miniversion av Thailand 1997 — vid en femtonprocentig försvagning växer reala skuldbördan med just de femton procenten (medan marginaler och V10 försämras stegvis), och vid tjugo till trettio är det dödligt. V19 Kapitalförbränning möter V10: bolag som tvingas refinansiera i en krisvaluta betalar straffränta eller går inte att refinansiera alls — kapitalstoppets mikromekanik. Blankare och krisinvesterare gör samma analys öppet; AKM1 gör den till två rader i poängsättningen. R&R:s femtonprocentströskel blir här en praktisk stressfråga att skriva in i varje analys: vad händer med V10, V11 och V19 om valutan försvagas femton procent — och trettio?"
+        },
+        {
+          "type": "insikt",
+          "content": "En valutakrasch är aldrig bara en växlingskurs — den är en omfördelning från låntagare till fordringsägare, från mismatchade till matchade. Genomsök varje bolag med en enda fråga: vilken valuta sover skulden i, och vilken valuta vaknar intäkterna i? Om svaret är två olika valutor har du hittat en miniversion av Asien 1997 — och du vet redan från R&R hur den filmen slutar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tvillingkrisen Asien 1997 — mekaniken i tabellform\",\"rader\":[[\"Steg\",\"Händelse\",\"Effekt\"],[\"1. Uppbyggnad\",\"dollarkopplade valutor, kort dollarfinansiering, kredittillväxt och fastighetsbubblor\",\"mismatchen byggs i goda år\"],[\"2. Utlösare\",\"kapitalflykt från Thailand sommaren 1997\",\"bandet för bathen sprängs\"],[\"3. Fällan\",\"centralbanken väljer: höj räntan och knäck bankerna, eller släppa valutan och explodera dollarskulderna\",\"valutan och bankerna faller tillsammans\"],[\"4. Spridning\",\"Indonesien, Korea — tvillingkriser i kluster\",\"djupare och mer synkroniserade fall än enkla kriser\"],[\"5. AKM1-fråga\",\"vilken valuta sover skulden i, vilken vaknar intäkterna i?\",\"stress: -15 % och -30 % valuta på V10, V11, V19\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Mismatch-jakten: gå igenom tre bolag i ditt bevakningsuniversum — gärna ett med utlandsexponering, ett med dollar-noterad skuld och ett rent inhemska. For varje: nämn intäktsvaluta och skuldvaluta, och kör R&R-stressen — vad händer med skuldsättningsgraden (V10) och räntetäckningsgraden om valutan försvagas femton respektive trettio procent? Skriv en rad per bolag: matchat, delvis matchat eller miniversion av Thailand 1997. Bonus: samma fråga för ditt eget hushåll — sover ditt lån i samma valuta som din lön?"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras en valutakrasch i R&R:s databas?",
+          "alternativ": [
+            "En årlig nominell försvagning på minst femton procent mot dollar eller guld",
+            "All räntehöjning över tio procent",
+            "När en valuta lämnar euron",
+            "En realförsvagning på fem procent"
+          ],
+          "ratt": 0,
+          "tips": "Tröskeln är nominell, årlig och mätt mot reservvalutan — historiskt även pund och guld."
+        },
+        {
+          "q": "Vad kännetecknar en tvillingkris?",
+          "alternativ": [
+            "Inflation och deflation samtidigt",
+            "Två kriser i samma land med tio års mellanrum",
+            "En kris som drabbar två grannländer",
+            "Bankkris och valutakrasch samtidigt — de förstärker varandra och slår systematiskt hårdare än kriserna var för sig"
+          ],
+          "ratt": 3,
+          "tips": "Asien 1997 är mallen — bankerna och valutan föll tillsammans."
+        },
+        {
+          "q": "Vad gör valutamismatchen så farlig vid en krasch?",
+          "alternativ": [
+            "Inget — valutan spelar ingen roll för skulder",
+            "Skulden i stark valuta växer i reala termer när hemvalutan försvagas — låntagaren knäcks oavsett om centralbanken höjer räntan eller släpper valutan",
+            "Den gör exporten olönsam",
+            "Den ökar alltid utdelningen"
+          ],
+          "ratt": 1,
+          "tips": "Fällan stängs från båda håll — det är därför tvillingkrisen är djupare än summan av delarna."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Andra stora kontraktionen — USA 2008 i realtid",
+      "intro": "Bokens sista och mest dramatiska kapitel handlar om krisen som pågick medan den skrevs. R&R döpte 2008 till den andra stora kontraktionen — den enda jämförelse som enligt databasen håller: global, finansdriven, utgående från centrum. Och bokens centrala påstående formulerades i realtid: USA:s efterdyningar kommer att följa det historiska mönstret — this time is NOT different.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Diagnosen USA 2007–09, som R&R ställde den: världens största ekonomi — utgivare av världens reservvaluta och mottagare av världens kapitalflöden — byggde en klassisk bubbla efter receptet: kredittillväxt långt över BNP-tillväxten, realt stigande bostadspriser till rekordnivåer mot inkomster, aktuellt kontots underskott av en storlek som historiskt bara setts i krisdrabbade tillvägtekonomier, och ett finanssystem som intermediarade risken via securitisering med en accepterad finansiell innovation som garant. Syndromet hade sin tids typiska formulering: risken är skivad, tärnad och fördelad — bostadsmarknaden kan inte falla nationellt. R&R:s svar var tabellerna: bostadspriser FALLER nationellt i nästan varje svår bankkris i databasen, och centrumländernas kriser är de värsta. Därmed var prognosen — i bokens bemärkelse frekvensen — redan skriven: fallande bostäder i åratal, stigande arbetslöshet, fallande produktion, skenande federal skuld. Sedan kom verkligheten och följde mallen, punkt för punkt, i åratal."
+        },
+        {
+          "type": "text",
+          "content": "Namnet den andra stora kontraktionen är noga valt och bokens mest berömda bidrag till språket: kontraktion, för att detta inte är en vanlig recession utan en finansdriven kollaps av kredit; den andra, för att den enda historiska motsvarigheten i en avancerad ekonomi av denna typ och skala är depressionen 1929. R&R drog med samma pennadrag jämförelsen som politiker helst undvek: detta är inte en vanlig nedgång som vänder på ett år — efterdyningarna av svåra finanskriser varar i åratal, med bostadspriser nedåt i sex år och arbetslöshet uppåt i fem (kapitel 8). Implikationen för politiken var kritisk och kontroversiell: om krisen är av depressionstyp, är svaret på krisen inte enbart stimulans — det är också att rädda kreditsystemet och att acceptera att återhämtningen blir lång. Bokens metodistiska varning till övriga världen gällde synkroniseringen: när krisen utgår från centrum påverkas alla — Island och Irland, som R&R noterade i realtid, följde tabellens värsta kolumn, med kollapsade bankersystem, valutakriser och enorma skuldökningar, och europeriferin skulle följa efter att boken gått i tryck."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A är detta kapitlet om att använda historien framåt, inte bakåt. R&R skrev ingen prognos i vanlig mening — de skrev en frekvenstabell och påstod att USA hamnade i den rad som heter svår bankkris i centrumland. Det är exakt strukturen i AK1A:s scenario-metodik: identifiera regimen (svår finanskris, centrum), hämta grundfrekvenserna (kapitel 8:s fem siffror), generera scenarier (V-formad återhämtning nej — L-formad ja), och dimensionera portföljen efter scenariot, inte efter hoppet. Att boken hade rätt — att arbetslöshet, bostäder och skuld utvecklades i linje med tabellen — är därför mindre intressant än METODEN varför den hade rätt: den prognostiserade inte händelserna, den letade upp händelsernas kusiner i databasen. Det är också kursens bro tillbaka till kontrasterna: Kindleberger kunde förklara bubblan, Galbraith kunde beskriva kraschen — bara databasen kunde säga, med ryggrad, hur länge och hur djupt. Det är skillnaden mellan att förstå en kris och att dimensionera för den."
+        },
+        {
+          "type": "insikt",
+          "content": "En bra krisprognos är ingen spådom — det är ett arkivsök. Identifiera regimen, hitta dess historiska kusiner, anta grundfrekvenserna tills data säger annat. När någon 2009 frågar hur djupt och hur länge, är svaret inte en åsikt — det är en tabell med fem siffror. Så dimensionerar AK1A scenarier; så skrev R&R sitt mest profetiska kapitel — i realtid, med ryggraden mot syndromet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"USA 2007–12 mot den historiska mallen — i realtid\",\"rader\":[[\"Storhet\",\"Historisk mall (kapitel 8)\",\"USA:s förlopp — i linje?\"],[\"BNP\",\"ca -9 % topp till botten\",\"djup fall 2008–09 — ja\"],[\"Arbetslöshet\",\"ca +7 procentenheter\",\"från ca 4,5 till 10 procent — ja\"],[\"Bostadspriser\",\"ca -35 % i ca 6 år\",\"Case-Shiller föll ca en tredjedel, i åratal — ja\"],[\"Aktiemarknad\",\"ca -56 %, botten ca 3,5 år\",\"S&P 500 -57 procent 2007–09 — ja\"],[\"Statsskuld\",\"ca +86 % på 3 år\",\"federal skuld nästan fördubblad — ja\"],[\"Slutsats\",\"this time is different — nej\",\"den här gången var INTE annorlunda\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör R&R-övningen själv, med svenskt perspektiv: hämta data för Sverige 2008–2013 — BNP-fall, arbetslöshet, bostadspriser, statskuld, börsfall — och ställ mot mallen i tabellen ovan. Sverige avvek på flera punkter (snabbare återhämtning, ingen fastighetskollaps i linje med mallen). Skriv tre orsaker till avvikelserna — kandidater: bankgarantin 2008, kronans försvagning som stödde exporten, stabila offentliga finanser i utgångsläget, bostadsmarknadens struktur. Avsluta med en bedömning: när mallen inte stämmer — vad säger det om mallen och om fallet? Det är kursens sista lektion i att läsa frekvenser utan att bli fundamentalist."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallar R&R krisen 2008 för den andra stora kontraktionen?",
+          "alternativ": [
+            "Därför att det var den andra krisen det året",
+            "Därför att den är finansdriven och global, utgående från centrum — den enda historiska motsvarigheten i skala och typ är depressionen 1929",
+            "Därför att BNP föll två kvartal",
+            "Därför att den var den näst största i USA:s historia till och med 2009"
+          ],
+          "ratt": 1,
+          "tips": "Ordet kontraktion är valt mot recession — och den första var på trettiotalet."
+        },
+        {
+          "q": "Hur förhöll sig USA:s förlopp 2007–12 till den historiska efterdyningstabellen?",
+          "alternativ": [
+            "USA avvek kraftigt — återhämtningen var omedelbar",
+            "Ingen jämförelse var möjlig att göra",
+            "USA klarade sig utan bostadsprisfall",
+            "USA följde mallen nästan punkt för punkt — arbetslöshet, bostäder, aktier och skuld i linje med genomsnitten"
+          ],
+          "ratt": 3,
+          "tips": "Bokens påstående skrevs i realtid — och höll: this time var INTE different."
+        },
+        {
+          "q": "Vad är den metodiska lärdomen av att boken träffade så väl?",
+          "alternativ": [
+            "Att R&R hade tur",
+            "Att spådomar i finans är möjliga med tillräcklig talang",
+            "Att en bra krisprognos är ett arkivsök — identifiera regimen, hämta grundfrekvenserna från dess historiska kusiner, dimensionera efter dem",
+            "Att man alltid ska sälja allt vid varje kris"
+          ],
+          "ratt": 2,
+          "tips": "Boken förutsade inte händelserna — den letade upp händelsernas kusiner i databasen."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Efter boken — 90-procentströskeln och austerity",
+      "intro": "Boken slutar 2009 — men kursen gör det inte, för det som hände sedan är minst lika lärorikt. I maj 2010 publicerade Reinhart och Rogoff uppföljningsartikeln Growth in a Time of Debt i American Economic Review, med den tabell som skulle bli austerity-erans mest citerade siffra: länder med statsskuld över 90 procent av BNP växer i genomsnitt med minus 0,1 procent. Tabellen vandrade in i budgettal i London, Bryssel och Washington — till dess att en doktorand bad om kalkylarket. Det kapitlet blir nästa. Först: siffran och dess karriär.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Artikelns innehåll, citerat öppet. Growth in a Time of Debt (American Economic Review, Papers & Proceedings, 2010) delade observationer av avancerade ekonomier 1946–2009 i fyra skuldklasser och beräknade genomsnittlig real BNP-tillväxt per klass: skuld under 30 procent av BNP — cirka 4,1 procents tillväxt; 30 till 60 procent — cirka 2,8; 60 till 90 procent — cirka 2,8; och över 90 procent — minus 0,1 procent. Slutsatsen som lästes ut ur tabellen: vid 90 procent finns en tröskel där tillväxten i princip upphör. Skillnaden i formulering är kursens kärnpunkt: artikeln presenterade ett SAMBAND — korrelation i fyra klasser — men världen läste en ORSAK och ett TAK: över 90 procent slutar ekonomin växa. R&R:s offentliga retorik underlättade den läsningen; deras senare invändning, att de aldrig hävdat kausalitet, är formellt korrekt men praktiskt tandlös mot hur tabellen användes. Kursen noterar också, med samma öppenhet: 90-procentsresultatet står inte i boken från 2009 — det är en senare, fristående artikel på samma data. Boken och artikeln ska hållas isär, även när världens ledare inte gjorde det."
+        },
+        {
+          "type": "text",
+          "content": "Karriären. Tabellen blev på tre år frikopplad från sina förbehåll och använd som kvantitativ grundval för austerity — alltså för politik med snabba konsolideringar av offentliga finanser i djup lågkonjunktur. George Osborne i Storbritannien åberopade R&R:s forskning som intellektuell grund för sitt austerity-program 2010; EU-kommissionens Olli Rehn citerade 90-procentströskeln i brev och tal som motivering för konsolideringskrav mot medlemsstater; Paul Ryan i USA:s kongress höll tabellen som grundval för budgetförslag; IMF:s ekonomiska utvärderingar refererade sambandet. Det är svårt att hitta ett parallellfall i ekonomins historia där en enda tabellcell — minus 0,1 — fått så stor policytyngd. Kritikerna fanns hela vägen: keynesianska ekonomer ifrågasatte riktningen i sambandet — låg tillväxt orsakar hög skuld, inte omvänt — och påpekade att austerity i lågkonjunktur höjer skuldkvoten genom att krympa nämnaren. Men kritiken saknade tyngd mot tabellens prestige — tills den som borde ha funnits där hela tiden dök: replikeringen. Våren 2013 publicerade Thomas Herndon, Michael Ash och Robert Pollin vid University of Massachusetts Amherst sin analys av R&R:s kalkylblad. Nästa kapitel."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-stannar upp vid tre distinktioner som denna historia kräver, och som kursen kommer att använda som prov i nästa kapitel. För det första: korrelation kontra kausalitet — tabellen visade att hög skuld och låg tillväxt samvarierar; den visade inte i vilken riktning pilen pekar, och det fanns goda skäl — kapitel 8! — att pilen i hög grad pekar från kris till skuld. För det andra: klassindelningens bräcklighet — att dela kontinuerliga data i klasser och läsa genomsnitt per klass är känsligt för enstaka observationer och viktningar, vilket visade sig vara precis hur felet gömde sig. För det tredje: prestige kontra verifierbarhet — argumentets auktoritet (Harvard, IMF, AER) hade inget att göra med dess replikerbarhet, och först när en doktorand fick kalkylarket gick det att testa. Dessa tre är inte krumbukter i efterhand — de är procedurer du kan köra FÖRE du litar på en siffra. Kursens nästa kapitel visar exakt vad som hände när någon gjorde det."
+        },
+        {
+          "type": "insikt",
+          "content": "En tabellcell — minus 0,1 procent — bars i tre år som skälet till att miljontals människors välfärd konsoliderades i lågkonjunktur. Innan du citerar en siffra, ställ de tre frågor historien kräver: vilken riktning pekar pilen, hur känslig är klassindelningen för enskilda observationer — och har någon oberoende fått räkna efter? prestige är inte replikering."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Growth in a Time of Debt — originaltabellen 2010\",\"rader\":[[\"Statsskuld som andel av BNP\",\"Genomsnittlig real BNP-tillväxt (original)\",\"Läst av politiken som\"],[\"Under 30 %\",\"ca 4,1 %\",\"—\"],[\"30–60 %\",\"ca 2,8 %\",\"—\"],[\"60–90 %\",\"ca 2,8 %\",\"—\"],[\"Över 90 %\",\"-0,1 %\",\"ett tak där tillväxten upphör\"],[\"Formulering i artikeln\",\"korrelation i fyra skuldklasser\",\"orsak och tröskel\"],[\"Källa\",\"R&R, AER Papers & Proceedings 2010\",\"Osborne, Rehn, Ryan m.fl. 2010–2013\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Formuleringsklyftan: sök upp abstractet av Growth in a Time of Debt (finns fritt tillgängligt). Skriv först vad artikeln EXAKT hävdar — notera ordvalet: samband, association, korrelation, inte kausalitet. Sök sedan två politiska tal eller budgettexter från 2010–2013 som citerar 90 procent (Osborne, Rehn och Ryan är dokumenterade användare). Skriv hur formuleringen förändrats från artikel till tal — från samband till orsak, från klass till tröskel. Klyftan mellan de två kolonnerna är det påstådda felets verkliga storlek — oberoende av Excel."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade originaltabellen i Growth in a Time of Debt för länder med skuld över 90 procent av BNP?",
+          "alternativ": [
+            "Genomsnittlig real tillväxt på minus 0,1 procent",
+            "Genomsnittlig real tillväxt på 4,1 procent",
+            "Att skulden automatiskt föll",
+            "Genomsnittlig real tillväxt på exakt 2,0 procent"
+          ],
+          "ratt": 0,
+          "tips": "Siffran som citerades i budgettal på två kontinenter — minus noll komma ett."
+        },
+        {
+          "q": "Vilken typ av påstående presenterade artikeln — och hur lästes den?",
+          "alternativ": [
+            "Den presenterade en kausalitet och lästes som korrelation",
+            "Den presenterade ett samband — korrelation mellan skuldklasser och tillväxt — men lästes som en orsak och ett tröskeltak",
+            "Den presenterade ett experiment",
+            "Den presenterade en prognosmodell"
+          ],
+          "ratt": 1,
+          "tips": "Klyftan mellan vad som stod och vad som citerades är historiens kärna."
+        },
+        {
+          "q": "Vilken roll spelade tabellen i politiken 2010–2013?",
+          "alternativ": [
+            "Ingen — den ignorerades av politiker",
+            "Den användes som intellektuell grundval för austerity — Osborne i Storbritannien, Rehn i EU och Ryan i USA citerade den",
+            "Den användes för att motivera mer stimulans",
+            "Den användes bara i akademiska seminars"
+          ],
+          "ratt": 1,
+          "tips": "Tre namn, tre huvudstäder, en tabellcell."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "KONTROVERS — Excel-felet som skakade världspolitiken",
+      "intro": "Våren 2013: Thomas Herndon, doktorand vid University of Massachusetts Amherst, får en klassuppgift — replikera en känd empirisk artikel. Han väljer Growth in a Time of Debt, och hans siffror stämmer inte. Han begär kalkylarket från Reinhart och Rogoff, får det efter påstötningar — och hittar det ingen annan hade tittat efter: ett Excel-formelfel, uteslutna landsår och en ovanlig viktning. Tillsammans förvandlar de minus 0,1 procent till plus 2,2. Kanske finanshistoriens mest berömda replikeringsfall — och kursens kärna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fyndet, som Herndon, Ash och Pollin dokumenterade i PERI-rapporten Does High Public Debt Consistently Stifle Economic Growth? A Critique of Reinhart and Rogoff (2013). Tre separata problem i kalkylarket. Ett: ett Excel-formelfel — den cell som beräknade genomsnittlig tillväxt för en skuldklass drog bara in en del av raderna; fem landsår som låg i kalkylarket missades av formeln och påverkade aldrig resultatet. Det är exakt den typ av fel alla som arbetat i kalkylark känner igen — och anledningen till att kalkylark inte är forskningsmiljöer. Två: selektiva uteslutningar — flera landsår med hög skuld och god tillväxt fanns i underlaget men togs inte med i genomsnitten, däribland det enskilt mest betydelsefulla: Nya Zeeland 1951, med skuld väl över 100 procent av BNP och solid positiv tillväxt. Med så få observationer i klassen över 90 procent väger varje enskild högskuld-observation tungt — att plocka bort de mest tillväxtstarka av dem förändrar genomsnittet dramatiskt. Tre: viktningen — R&R vägde ländernas delperiods-genomsnitt lika i stället för att slå ihop alla landsår, vilket ytterligare pressade ned högskuldklassens tillväxt. Ingen av de tre är en anklagelse om fusk; samtliga är metodsvep — men tillsammans, i den mest policytyngda tabellen i generationen, nog för att vända tecknet."
+        },
+        {
+          "type": "text",
+          "content": "Resultatet av korrigeringarna: med de fem landsåren inkluderade, uteslutningarna återförda och landsåren slagna ihop växer högskuldklassen — över 90 procent — i genomsnitt med plus 2,2 procent, inte minus 0,1. Tröskelkanten, tillväxtens död vid 90, försvinner helt; kvar står ett mjukt samband — 2,2 mot 4,1 procent för de lägsta skuldklasserna — det vill säga fortfarande lägre tillväxt, men i en helt annan värld av magnitud, och långt ifrån en klippa. R&R:s reaktion var, i sin ordning, en läxa i sig: de erkände formelfelet öppet som ett slarvfel — och höll samtidigt fast vid att sambandet mellan hög skuld och lägre tillväxt består även i korrigerad data, vilket det formellt gör; kritikerna, och i synnerhet Paul Krugmans kommentarer, svarade att skillnaden mellan minus 0,1 och plus 2,2 är skillnaden mellan ett skäl att brådskande kapa offentliga utgifter i lågkonjunktur och inget sådant skäl alls. Politiskt kom korrigeringen mitt i austerity-eran och användes omedelbart av dess kritiker; någon omedelbar policyvändning innebar den inte, men den intellektuella grundvalen — tröskeln vid 90 — var borta. Den som vill minnas fallet i en mening: en klassuppgift plockade ned austerity-erans mest citerade siffra, tre år efter att den blivit kanon."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s lärdomar — och de är kursens varumärke: data-driven men alltid verifierbar. Ett: öppen data är inte en teknisk detalj utan själva skyddet; hade kalkylarket legat publikt från dag ett hade felet upptäckts 2010, inte 2013 — tre års policy byggde på en cellreferens. Två: enstaka observationer kan bära en hel tabell — Nya Zeeland 1951 är ett enskilt landsår som räcker för att flytta en klass betydligt; när n är liten är outliersens inflytande inte ett tekniskt problem utan huvudresultatet. Tre: viktning är resultat — samma data ger olika slutsats beroende på hur räknas; varje genomsnitt du citerar bör visas med sin viktning. Fyra: replikering är vetenskapens immunsystem, och den som replikerar ska bemötas med data, inte med prestige. Fem — och den svåraste: felet satt hos de skickligaste datainsamlarna i fältet; R&R:s databas är ett monumentalverk och deras metod i boken öppen. Kompetens immuniserar inte mot slarv; bara processen gör det. I AK1A:s praktik översätts det till en levande regel: varje nyckeltal i en analys — multiplicator, margin, skuldkvot — ska ha en källa som någon annan kan nå och räkna om. Annars är det inte ett tal; det är en uppmaning att tro."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera kedjan: fem missade landsår i en cellformel plus några uteslutna högskuldsår plus en ovanlig viktning — och minus 0,1 procent blir plus 2,2. Inte fusk — process. Lärdomen för varje datadriven investerare: din process är bara så bra som dess svagaste cellreferens, och den enda försäkringen heter publicerat underlag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Herndon–Ash–Pollin 2013 — tre fynd och deras effekt\",\"rader\":[[\"Fynd\",\"Vad det var\",\"Effekt\"],[\"Excel-formelfel\",\"cellen missade fem landsår som låg i kalkylarket\",\"högskuldklassens genomsnitt påverkades aldrig av dem\"],[\"Selektiva uteslutningar\",\"högskuldsår med god tillväxt togs inte med — däribland Nya Zeeland 1951\",\"klassens genomsnitt pressades ned ytterligare\"],[\"Viktning\",\"delperiods-genomsnitt per land vägdes lika i stället för alla landsår\",\"samma data, lägre tillväxt i högskuldklassen\"],[\"Korrigerat resultat\",\"tillväxt över 90 procent skuld\",\"plus 2,2 procent — inte minus 0,1\"],[\"R&R:s svar\",\"erkände slarvfelet, höll fast vid sambandet\",\"samband kvarstår svagt — tröskeln borta\"],[\"Policy-effekt\",\"austerity-erans mest citerade siffra underminerad\",\"ingen omedelbar väändning — men grundvalen borta\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Herndon-provet på egen hand: välj en siffra du litar på i din investeringsprocess — till exempel en Expected-return-antagning, en favoriserad multipel eller en screenregel som »hög direktavkastning slår index«. Spåra den till källan. Tre frågor, skrivna: är underlaget publicerat så att någon annan kan räkna om det? hur många observationer bär slutsatsen — och vad händer om du tar bort den enskilt viktigaste? vem har faktiskt räknat efter sedan publicering? Om någon av svaren är tomma har du hittat din egen 90-procentströskel — en siffra du brukar men som ingen prövat."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vem var Thomas Herndon och hur upptäckte han felet?",
+          "alternativ": [
+            "En hedgefondchef som granskade R&R:s portfölj",
+            "En journalist på Financial Times",
+            "En kollega till Rogoff vid Harvard",
+            "En doktorand vid University of Massachusetts Amherst som fick replikera artikeln i en klassuppgift — och efter att ha begärt kalkylarket hittade formelfelet"
+          ],
+          "ratt": 3,
+          "tips": "Det började som läxor — och siffrorna ville inte stämma."
+        },
+        {
+          "q": "Vad blev den korrigerade genomsnittliga tillväxten för länder med skuld över 90 procent av BNP?",
+          "alternativ": [
+            "Plus 2,2 procent — inte minus 0,1",
+            "Minus 5 procent",
+            "Oförändrat minus 0,1 procent",
+            "Plus 4,1 procent"
+          ],
+          "ratt": 0,
+          "tips": "Tecknet vänder — och tröskelkanten försvinner, även om ett svagt samband består."
+        },
+        {
+          "q": "Vilket av följande var INTE ett av de tre problem som Herndon, Ash och Pollin identifierade?",
+          "alternativ": [
+            "Ett Excel-formelfel som missade fem landsår",
+            "Selektiva uteslutningar av högskuldsår med god tillväxt — däribland Nya Zeeland 1951",
+            "En ovanlig viktning av delperiods-genomsnitt i stället för alla landsår",
+            "Medvetet datafusk för att gynna austerity-politik"
+          ],
+          "ratt": 3,
+          "tips": "Kritiken gällde metodsvep och slarv — inte fusk; det är också därför fallet är en processläxa."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Korrelation, kausalitet — AK1A:s svar",
+      "intro": "Kontroversens filosofiska kärna, och kursens syntes. Även den korrigerade tabellen visar ett samband: hög skuld, lägre tillväxt. Vad visar det? Inte nödvändigtvis att skuld dödar tillväxt — kanske att död tillväxt driver skuld, att en gemensam tredje faktor — en finanskris — skapar båda, eller att sambandet är äkta men svagt. Här skiljer sig den datadrivna investeraren från datadyrkaren: korrelationen är arbetsmaterial, kausalitetspåståendet kräver mer. AK1A:s fyra prov.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Problemet i tre skepnader. Omvänd kausalitet: låg tillväxt orsakar hög skuld — recessioner spränger underskotten precis som kapitel 8 visade att bankkriser höjer statsskulden med i genomsnitt 86 procent; att sedan läsa samma data baklänges — att skulden orsakade krisen — är att förväxla brandslangen med branden. Gemensam orsak: en finanskris kan både krama tillväxten och explodera skulden samtidigt, utan att skulden som sådan skadar tillväxten mer än marginellt. Selektion och simultanitet: observationsmängden — avancerade ekonomer efter kriget — domineras av efterkrigstidens nedmalning av skuld och av enstaka djupkriser, vilket gör klassgenomsnitten sköra. Notera nyansen som skiljer en ärlig läsare från en propagandist: R&R:s korrigerade resultat — 2,2 mot 4,1 procent — är fortfarande ett faktiskt samband, och samband är information. Felet i austerity-debatten var inte att använda sambandet som underlag utan att presentera det som klippa och orsak, och bygga policy på den starkaste läsningen av det svagaste beviset."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s fyra prov — kursens varaktiga bidrag, tillämpbara på varje siffra från R&R:s tabeller till din egen backtest. Ett: KÄLLA OCH URVAL — vems data, vilka länder och år, vem är med och vem saknas, finns survivorship? Bokens kronologier klarar provet (publicerade, land-för-land); 2010-artikelns urval var diskutabelt och dokumenterat först vid replikeringen. Två: REPLIKERING — kan en oberoende part räkna om allt från underlaget? Herndon-fallet visar vad som händer när svaret är nej: tre års feltolkning. Tre: OUTLIER-KÄNSLIGHET — vad händer med resultatet om den enskilt viktigaste observationen tas bort? Nya Zeeland 1951 är sekelskiftets — ja, decenniets — pedagogiska exempel: en enda rad flyttade en klass från plus 2,2 till minus 0,1. Fyra: RIKTNING — finns en mekanism som pekar ut kausalitetens pil, eller är pilen en gissning? Kapitel 8:s tabell har en trovärdig pil — från kris till skuld; 2010-tabellens pil pekade enligt bevisen mest åt andra hållet. Samma fyra prov som Quantitative Value-kursen formulerar för faktorforskning (mekanism, enkelhet, förkunskap, replikerbarhet) — AK1A tillämpar dem på allt från krisfrekvenser till favoritmultipeln."
+        },
+        {
+          "type": "text",
+          "content": "Syntesen — AK1A: data-driven men verifierbar, i fyra levande regler. Ett: varje tal i en analys har en spårbar källa; om du inte kan visa var det kommer ifrån har du inte ett tal utan en tro. Två: varje nyckelresultat ska tåla att någon annan räknar om det — skriv därför underlag, definitioner och viktningar uttryckligen, på bokens appendix vis. Tre: outliers är inte buller utan budbärare — kör alltid känslighetstestet: ta bort den viktigaste observationen och se vad som händer med slutsatsen; om den vänder tecken är din slutsats en enskild händelse klädd som ett mönster. Fyra: uppdatera, försvara inte — när Herndons korrigering kom var det korrekta svaret för en bayesiansk aktör att justera ned tröskeltron och upp osäkerheten, inte att argumentera för att minus 0,1 ändå var nästan rätt; AK1A:s bayesianska omviktning existerar just för att välkomna nya data i stället för att strida mot dem. R&R-databasen förblir, trots allt, ett av finanshistoriens största byggen — och dess svagaste enskilda resultat höll på att dra hela bygget i gruset. Det är paradoxalt bara till ytan: det är när data är viktig som den måste vara öppen. Äran och felet kommer från samma träd — och lärdomen är inte att överge data utan att älska den tillräckligt mycket för att granska den."
+        },
+        {
+          "type": "insikt",
+          "content": "Fyra prov, fyra frågor — skriv dem på väggen vid varje analys: vems data och vems urval? kan någon annan räkna om det? vad händer utan den viktigaste observationen? och var pekar mekanismens pil? Ett tal som klarar alla fyra är underlag; ett som inte gör det är en åsikt med decimaler."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"AK1A:s fyra prov — tillämpade på R&R:s två tabeller\",\"rader\":[[\"Prov\",\"Fråga\",\"Efterdyningstabellen (kapitel 8)\",\"90-procentstabellen (2010)\"],[\"1. Källa och urval\",\"vems data, vilka länder och år?\",\"publicerade land-kronologier — starkt\",\"urvalet ifrågasatt, dokumenterat först vid replikeringen\"],[\"2. Replikering\",\"kan oberoende räkna om?\",\"ja — bland andra Jordà–Schularick–Taylor bygger vidare\",\"nej i praktiken — kalkylarket delades först 2013\"],[\"3. Outlier-känslighet\",\"vad händer utan viktigaste observationen?\",\"n är litet — Sverige och Japan rycker genomsnitten; medges\",\"Nya Zeeland 1951 vänder en hel klass — avgörande\"],[\"4. Riktning\",\"var pekar mekanismens pil?\",\"från kris till skuld — trovärdig\",\"mest åt andra hållet — låg tillväxt driver skuld\"],[\"Dom\",\"—\",\"stark — men breda intervall\",\"svag — samband ja, tröskel nej\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör de fyra proven på båda tabellerna själv — och skriv dom. Efterdyningstabellen (BNP -9, arbetslöshet +7, skuld +86): källa och urval — vilka länder, vilka kriser? klarar den replikering — har oberoende forskare byggt vidare (de gjorde det: Jordà–Schularick–Taylor)? outlier-känslighet — vad gör Sverige och Japan med genomsnitten, och hur litet urvalet egentligen är? riktning — finns pilen? 90-procentstabellen: samma fyra frågor, med Herndon-rapporten som facit. Avsluta med en mening: vilka av de åtta svaren stärker din tillit — och vilka manar till ödmjukhet?"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är omvänd kausalitet i skuld-tillväxt-sammanhang?",
+          "alternativ": [
+            "Att skuld och tillväxt är orelaterade",
+            "Att låg tillväxt orsakar hög skuld — till exempel via recessionens underskott — i stället för att hög skuld orsakar låg tillväxt",
+            "Att kausalitet alltid är korrelation",
+            "Att skuld alltid är bra för tillväxten"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 8 visade riktningen: krisen spränger skulden — inte tvärtom."
+        },
+        {
+          "q": "Vad är outlier-känslighetsprovets fråga?",
+          "alternativ": [
+            "Finns mekanismen som pekar ut pilen?",
+            "Vems data och vems urval?",
+            "Vad händer med slutsatsen om den enskilt viktigaste observationen tas bort — vänder den tecken?",
+            "Kan artikeln publiceras i en fin tidskrift?"
+          ],
+          "ratt": 2,
+          "tips": "Nya Zeeland 1951 — en enda rad som flyttade en hel klass."
+        },
+        {
+          "q": "Vilket är det korrekta bayesianska förhållningssättet när en siffra du använt korrigeras?",
+          "alternativ": [
+            "Försvara originalsiffran tills den motbevisas ytterligare",
+            "Överge all kvantitativ analys som opålitlig",
+            "Justera tron i ljuset av ny data och öka osäkerheten — uppdatera i stället för att strida",
+            "Ignorera korrigeringen om originalförfattarna är berömda"
+          ],
+          "ratt": 2,
+          "tips": "AK1A:s bayesianska omviktning existerar för att välkomna korrigeringar — inte för att bemöta dem."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Sammanfattning — grundfrekvensernas bok (V10, V11, V19)",
+      "intro": "Sista kapitlet sätter ihop allt: R&R som AK1A-bibliotekets makro-överbyggnad — frekvenstabellen bakom Kindlebergers berättelse och Galbraiths drama — och den personliga arsenalen: krisvaktens fem indikatorer, riskmatrisens fem siffror och dataetikens fyra prov. Plus den sista differentieringen: vad den datadrivna investeraren gör som berättaren aldrig kan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Placeringen i biblioteket, en sista gång, nu med allt på plats. Kindleberger ger MEKANISMEN: Minskys fem faser förklarar varför bubblor formas, brinner ut och kollapsar — den narrativa kärnan. Galbraith ger KÄNSLAN: hur det var att leva 1929, när alla visste och ingen agerade — dramat och dårskapen i närbild. R&R ger FREKVENSERNA: hur ofta kriser kommer (takt i 800 år — bankkriser i rika länder ungefär per generation när finanssektorn är liberaliserad, default i klungor med decenniers mellanrum), hur djupa de är (kapitel 8:s fem siffror) och hur långa (bostäder sex år nedåt, arbetslöshet fem år uppåt). Tillsammans: mekanismen bygger scenarioberättelsen, frekvenserna dimensionerar den, känslan håller dig ärlig om vad dimensioneringen kostar psykologiskt. AKM1 poängsätter bolaget — R&R poängsätter världen bolaget lever i. En aktieanalys utan makro-överbyggnad är en vägg utan hus: snygg, men den står inte ensam."
+        },
+        {
+          "type": "text",
+          "content": "Krisvaktens fem indikatorer — R&R:s data destillerat till en övervakningslista, byggd för AK1A:s scenario- och riskmoduler. Ett: KREDITTILLVÄXT — total kredit till privat sektor som andel av BNP, i förhållande till trend; snabb avvikelse uppåt är den enskilt starkaste förelöparen till bankkriser i databasen. Två: BOSTADSPRISER — reala priser mot inkomster och mot trend; bostäder faller nationellt i svåra kriser, vilket syndromet förnekar och tabellen bevisar. Tre: CURRENT ACCOUNT — stora underskott i avancerade ekonomer är historiskt sällsynta utanför krisförlopp; USA:s underskott före 2007 var en storvarning. Fyra: STATSSKULD OCH DEFAULTHISTORIA — total skuld, extern plus inhemsk, läst mot landets serial default-meritlista; skuldintolerans är landspecifik, och historien är fundamentan. Fem: SYNDROMET SJÄLVT — när ledare och press förklarar att nya strukturer gjort gamla mått föråldrade, är påståendet i sig en datapunkt med frekvensunderlag. Vid varje indikator: sätt trösklar i dag, skriv ned vad du gör när de slås, och låt riskmatrisen bära kapitel 8:s fem siffror som grundfrekvens för svan-scenariot. En krisvakt utan förbestämda svar är bara en samling kurser du kommer att rationalisera bort i euforifasen."
+        },
+        {
+          "type": "text",
+          "content": "Arvet, dubbelt. Det ljusa: This Time Is Different är finanshistoriens största argument för att historien — som data — är investerarens mest undervärderade informationskälla; ingen annan bok har omvandlat åtta århundraden av kollapser till användbara grundfrekvenser, och bokens appendix, med sina publicerade kronologier, är en modell för hur öppen forskning ser ut. Det mörka: samma författares svagaste resultat höll i tre år som skäl till politik som djupade recessioner för miljontals, tills en doktorands läxor vände tecknet — från minus 0,1 till plus 2,2. Båda arven tillhör kursen, och tillsammans är de AK1A:s program: data kan misslyckas, missbrukas och dominera — men svaret på bristfällig data är aldrig mindre data. Svaret är mer öppen data, hårdare replikering, outliers som respekteras och korrelationer som hålls på armlängds avstånd från orsakssatser. Den investerare som bär bokens fem siffror i riskmatrisen och Herndons tre fynd i metodiken — öppenhet, replikering, ödmjukhet — bär R&R:s hela arv: grundfrekvensernas kraft och deras gränser. Det är AK1A:s sätt att läsa This Time Is Different: som en varning mot fyra ord — och som en manual för att aldrig behöva tro i stället för att veta."
+        },
+        {
+          "type": "insikt",
+          "content": "Bokens titel är dess egen varning och dess eget bevis: i åtta århundraden har de fyra orden this time is different kostat mer än alla krig tillsammans — och den som sa dem om R&R:s egen 90-procentssiffra hade också fel. Sista regeln: när du hör frasen — i marknaden, i politiken eller i ditt eget huvud — slå upp frekvenstabellen innan du slår till. Grundfrekvenser kontra fyra ord; det är hela kursen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"This Time Is Different till AK1A — översättningstabellen\",\"rader\":[[\"Bokens byggsten\",\"AKM1 / modul\",\"Roll\"],[\"Efterdyningstabellen (BNP -9, arbetslöshet +7, bostäder -35, aktier -56, skuld +86)\",\"riskmatris + Monte Carlo\",\"grundfrekvenser för svan-scenariot\"],[\"Krisvaktens fem indikatorer\",\"scenario-modulen\",\"tidig förvarning — kredittillväxt, bostäder, current account, skuld, syndromet\"],[\"Serial default och skuldintolerans\",\"V10 med historiens vikt\",\"samman kvot, olika risk — historien är fundamentan\"],[\"Likviditetsmekanik och bankkriser\",\"V11\",\"bankkris = likviditetskris klädd i solvensfråga; Bagehots mall\"],[\"Valutamismatch och tvillingkriser\",\"V19 + V10-stress\",\"vilken valuta sover skulden i, vilken vaknar intäkterna i?\"],[\"Dold inhemisk skuld\",\"V10 totalräkning\",\"pension, leasing, garantier — isberget räknas in\"],[\"Herndon-fallet\",\"dataetikens fyra prov\",\"källa och urval, replikering, outlier-känslighet, riktning\"],[\"Inflation och repression\",\"realavkastnings-kontroll\",\"nominellt är inte reellt — mjuk default finns även i rika länder\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din krisvakt: en sida, daterad. Kolumn ett: de fem indikatorerna för din hemmamarknad med aktuell nivå och din tröskel (kredittillväxt mot trend, reala bostadspriser mot inkomster, current account, total statsköld och defaulthistoria, plus senaste den-här-gången-påståendet du stötte på). Kolumn två: kapitel 8:s fem siffror som svan-scenario i din riskmatris — och den skrivna planen från kapitel 8:s utmaning. Kolumn tre: Herndon-provet — välj en siffra från kolumn ett och kör de fyra proven. Avsluta med din slutsats i en mening: vilken grundfrekvens förvånade dig mest — och vad gör den skillnad för din portfölj i dag? Datera och spara dokumentet till nästa års omprövning."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den korrekta arbetsfördelningen mellan Kindleberger, Galbraith och R&R i AK1A:s bibliotek?",
+          "alternativ": [
+            "Alla tre är berättelser och utbytbara",
+            "Kindleberger ger mekanismen (fem faserna), Galbraith ger känslan (ett fall i närbild) — R&R ger frekvenserna (hur ofta, hur djupt, hur länge)",
+            "R&R ger mekanismen och Kindleberger frekvenserna",
+            "Galbraith ger frekvenserna och R&R känslan"
+          ],
+          "ratt": 1,
+          "tips": "Berättelsen bygger scenariot, frekvenserna dimensionerar det, känslan håller dig ärlig om priset."
+        },
+        {
+          "q": "Vilken av följande ingår INTE i krisvaktens fem indikatorer?",
+          "alternativ": [
+            "Kredittillväxt mot trend",
+            "Reala bostadspriser mot inkomster",
+            "Aktiens direktavkastning",
+            "Statsskuld läst mot landets defaulthistoria"
+          ],
+          "ratt": 2,
+          "tips": "Vakten övervakar systemet bolaget lever i — inte enskilda aktiers värdering."
+        },
+        {
+          "q": "Vad är kursens sista lärdom av hela R&R-historien — bok och kontrovers tillsammans?",
+          "alternativ": [
+            "Att kvantitativ data inte kan lita på och bör undvikas",
+            "Att berömda forskares resultat alltid stämmer",
+            "Att svaret på bristfällig data är mer öppen data, hårdare replikering och ödmjukhet — data-driven men alltid verifierbar",
+            "Att austerity alltid är rätt politik"
+          ],
+          "ratt": 2,
+          "tips": "Båda arven tillhör kursen: grundfrekvensernas kraft — och deras gränser."
+        }
+      ]
+    }
+  ]
+}

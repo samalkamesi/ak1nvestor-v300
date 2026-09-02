@@ -71,7 +71,9 @@
    • .marin-panel (ljus): text #EDE6D6 på #0E1B2E = 13.9:1; guld #E8C766 =
      10.5:1 ✓. Inuti paneler flippar guldfamiljen till luminöst (se regel
      nedan): text-gold → #c9a84c = 7.6:1 mot marin — annars skulle mörkare
-     --gold bli oläslig på marin botten.
+     --gold bli oläslig på marin botten. 2026-09-01: flippen är RADIKALT
+     utökad till .marin-scope + ALLA inline bg-[#0E1B2E]/bg-[#081120]-ytor
+     (se "RADIKAL MARIN GOLD-FLIP" längre ner i filen).
    • --ring/--sidebar-ring: #c9a84c → #785c13 (2.0:1 → 5.58:1 som focus-yta) ✓
    • --accent/--sidebar-primary/--chart-1 följer --gold för palett-koherens;
      accent-foreground #fffdf7 på #785c13 = 6.18:1 ✓ (var 3.4:1).
@@ -308,15 +310,73 @@
     background: linear-gradient(160deg, var(--djup-marin, #0E1B2E), var(--djup-marin-morkare, #081120));
     color: #EDE6D6;
   }
-  /* LJUSA TEMAT (2026-09-02): Inuti en marin-panel är botten mörk — därför
-     flippar guldfamiljen till luminöst för hela panelens subträd. Utan denna
-     regel skulle nya mörka --gold (#785c13) ge text-gold ≈ 3.0:1 på marin.
-     Efter flip: text-gold #c9a84c = 7.6:1, .gold-text #E8C766 = 10.5:1 ✓.
-     Mörkt läge påverkas ej (har egna ljusa guldvärden). */
-  html:not(.dark) .marin-panel {
+  /* .marin-scope — NY universell marin-yta (2026-09-01): ingen egen bakgrund
+     (para den med t.ex. bg-[#0E1B2E]), men sätter cream-text så oskyddad
+     text aldrig blir mörk-på-mörk. Gold-flipen nedan gäller automatiskt. */
+  .marin-scope {
+    color: #EDE6D6;
+  }
+  /* ══ RADIKAL MARIN GOLD-FLIP (2026-09-01) — CSS-driven, täcker ALLA ytor ══
+     ROT-ORSAK: :root --gold är mörk (#785c13, WCAG-optimerad mot cream) men
+     text-gold PÅ marin botten blev mörkt-guld-på-mörk-marin = osynligt.
+     Tidigare flip täckte ENBART .marin-panel — inte inline-marinen.
+
+     FÅNGAS SIMULTANT (hela subträdet via CSS-variabler — 0 komponentfiler
+     rördes):
+       1. .marin-panel ............... 41 användningar i 26 filer
+       2. .marin-scope ............... NY universell klass för framtida
+                                        marin-ytor (samma flip, ingen egen bg)
+       3. [class~="bg-[#0E1B2E]"] .... 12 inline-ytor: bibliotek ×4,
+                                        chat-widget ×2, kurs-sok ×2,
+                                        laroplan ×4 (därav 5 dekorativa
+                                        divider-streck — flip = visuell no-op)
+       4. [class~="bg-[#081120]"] .... 0 solida idag; de 2 hover:bg-[#081120]
+                                        ligger på ytor som redan fångas av 3.
+
+     VARFÖR ~= (exakt klass-ord) och INTE *= (delsträng): tints
+     bg-[#0E1B2E]/10 och bg-[#0E1B2E]/[0.04] (laroplan ×3) är marin på LJUS
+     paper-botten — delsträngsmatchning hade flippat guldt till LJUST DÄR =
+     regression. hover:bg-[#081120] matchas ej heller (viloläget kan vara ljust).
+
+     FLIP (alla gold-varianter):
+       --gold .......................... → #c9a84c (text-gold = 7.6:1 på #0E1B2E ✓ AA)
+       --gold-text / --guld-djup ....... → #E8C766 (.gold-text = 10.5:1 ✓)
+       --gold-soft ..................... → #E8C766 (linjer/dekor = 10.5:1 ✓)
+       --gold-deep (skyddsnät*) ........ → #E8C766
+       * --gold-deep definieras ALDRIG i :root — endast fallback för äldre
+         referenser (se .ak1a-source-link-historik 2026-09-02).
+     Obs: attribut-ytorna (3–4) flippar ENBART variablerna — inget tvingat
+     `color` — så komponenternas egna text-*-utilities fortsätter gälla.
+     .marin-panel/.marin-scope sätter cream-text i sina basregler ovan.
+     Kombinationen "samma element" (t.ex. FAB-knappen bg-[#0E1B2E] text-gold)
+     täcks av variabel-flipen; "barn-element" täcks dessutom av de explicita
+     pinning-reglerna längst ner i filen.
+
+     .dark: ALLA regler här är html:not(.dark)-scope:ade → mörkt läge
+     dubbelflippas INTE (.dark har redan ljusguld: --gold #c9a84c,
+     --guld-djup #c9a84c, --gold-soft #d8b85e). Koppar (--koppar-lys) är
+     medvetet oförändrad i denna flip.
+     Återställnings-lucka: .marin-unscope (nedan) återställer :root-guldet
+     för nästlade ljusa ytor inuti marin-scope. */
+  html:not(.dark) .marin-panel,
+  html:not(.dark) .marin-scope,
+  html:not(.dark) [class~="bg-[#0E1B2E]"],
+  html:not(.dark) [class~="bg-[#081120]"] {
     --gold: #c9a84c;
     --gold-text: #E8C766;
+    --gold-soft: #E8C766;
     --guld-djup: #E8C766;
+    --gold-deep: #E8C766;
+  }
+  /* Återställnings-lucka: nästlad LJUS yta (t.ex. cream-kort) inuti en
+     marin-scope får tillbaka :root:s mörka WCAG-guld. Lägg .marin-unscope
+     på den ljusa ytan. (Används av ingen komponent ännu — verktygslåda.) */
+  html:not(.dark) .marin-unscope {
+    --gold: #785c13;
+    --gold-text: #7A5E14;
+    --gold-soft: #c9a84c;
+    --guld-djup: #7A5E14;
+    --gold-deep: #7A5E14;
   }
   /* LJUSA TEMAT (2026-09-02): Garanterad kant mot paper-botten — brons-
      hårlinje #8a6d1f syns mot både paper (4.3:1) och marin (3.5:1) ✓,
@@ -348,10 +408,38 @@
 html:not(.dark) .bg-gold.text-primary-foreground {
   color: var(--paper, #f5f1e8);
 }
-/* Inuti marin-panel flippar --gold till ljusguld #c9a84c — där är ink-text
-   rätt (8.6:1 ✓), så räddningen motverkas lokalt. */
-html:not(.dark) .marin-panel .bg-gold.text-primary-foreground {
+/* Inuti marin-scope (panel, .marin-scope ELLER inline bg-[#0E1B2E]/bg-[#081120])
+   flippar --gold till ljusguld #c9a84c — där är ink-text rätt (8.6:1 ✓),
+   så cream-räddningen motverkas lokalt. (2026-09-01: generaliserad till
+   ALLA marin-ytor, inte enbart .marin-panel.) */
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) .bg-gold.text-primary-foreground {
   color: var(--ink, #0a0b0d);
+}
+
+/* ══ RADIKAL MARIN GOLD-FLIP — pinning (2026-09-01) ══
+   Bälte+hängslemen: guldklasserna fästs explicit (medvetet OLAGERADE så de
+   slår Tailwinds @layer utilities utan !important) så att text-gold ALDRIG
+   kan rendera mörkt guld inuti en marin-yta, även om variabelkedjan bryts.
+   Fångade klasser under .marin-panel / .marin-scope /
+   [class~="bg-[#0E1B2E]"] / [class~="bg-[#081120]"]:
+     • .text-gold ....... → #c9a84c (7.6:1 på #0E1B2E ✓ AA)
+     • .text-gold-soft .. → #E8C766 (10.5:1 ✓)
+     • .text-[#E8C766] .. → #E8C766 (10.5:1 ✓ — no-op-förstärkning)
+   Obs: "samma element"-fallet (bg-[#0E1B2E] text-gold på ETT element) täcks
+   av variabel-flipen ovan; dessa regler täcker barnen. .marin-unscope
+   avpinning: sista regeln återställer .text-gold på nästlade ljusa ytor. */
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) .text-gold {
+  color: #c9a84c;
+}
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) .text-gold-soft {
+  color: #E8C766;
+}
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) .text-\[\#E8C766\] {
+  color: #E8C766;
+}
+/* Avpinning för .marin-unscope: specifitet (0,4,1) > pinning (0,3,1). */
+html:not(.dark) :is(.marin-panel, .marin-scope, [class~="bg-[#0E1B2E]"], [class~="bg-[#081120]"]) .marin-unscope .text-gold {
+  color: var(--gold, #785c13);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

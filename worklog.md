@@ -1171,7 +1171,21 @@ Task: Kapacitets-checkpoint — spara fortsättningsinfo för ny konversation
 
 ## ⚡ FORTSÄTT HÄR (ny konversation: läs bara detta block)
 
-### UPPDATERAT 2026-09-01 (sent) — meny-vågen + Vågfundament
+### UPPDATERAT 2026-09-02 — python-fri arkitektur + våg 15-16 (298 kurser)
+
+**Skala:** 298 kurser · 6 675 quiz · 68/101 kanon · 64 BOKMASTER + 3 EKOSYSTEM-flaggskepp.
+
+**Dagens storhändelser (commits a1b9ad4→3f685db, alla live+verifierade):**
+1. **PYTHON-FRI ARKITEKTUR:** Vercels Node-runtime saknar python → ALLA tre analytiska routes bröt på prod. Båda motorerna portade till TS och bitidentiskt verifierade: `src/lib/vagfundament-motor.ts` + `src/lib/analys-motor.ts`. E2E prod: /api/vagfundament (VOLV 16 impulsvågor = lokalt), /api/dagens-pass 200, djupanalys. **REGLE'R: (a) ingen runtime-python, (b) extern datahämtning ENDAST via API-routes — server actions kan inte hämta Yahoo timeseries (endast routes fungerar), (c) Yahoo: quoteSummary-balansmoduler pensionerade → fundamentals-timeseries query2 med period1=0, meta.type är ARRAY.**
+2. **11 nya BOKMASTER** (Buffett Way, QV, Företagsvärdering SVENSK, Acquirer's Multiple, Five Rules, Greenwald, Creative Cash Flow, Little Book Browne, Buffett Portfolio, Distress, Fooling Some) — alla kontrovers-direktivet + verktygslänkor.
+3. **MEGA PLAN fas A KLAR:** A4 Portföljbyggaren (/portfoljbyggare) + A5 Net-net-skannern (/netnet, E2E: NCC NCAV 41,46 kr/aktie — /api/netnet-routen, ALDRIG server action).
+4. Blogg ×2 (skuld-som-våg, divergens).
+
+**Nästa kö:** tier-2 böcker utan kurs (bl.a. Warren Buffett Portfolio klar — kvar: bk-047 Financial Statement Analysis Penman, bk-049-röran klar, Little Book Value klar... lista i data/bokkanon.json med status≠kurs), server-syncad progress, Fas 2-tratt.
+
+### (Historik: 2026-09-01 natt — se nedan)
+### (Historik: Task 45 — föråldrat, se ovan)
+### Projekt:
 
 **Skala:** 285 kurser · 6 108 quiz · 779 sidor · 56/101 kanon · 58 BOKMASTER + 2 EKOSYSTEM-flaggskepp.
 

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { lasStreak, lasXP, niva } from "@/lib/member-local";
 
 /**
@@ -126,8 +127,10 @@ export function Mobilmeny() {
         />
       </button>
 
-      {/* Fullskärms-drawer */}
-      {oppad && (
+      {/* Fullskärms-drawer — PORTAL till body: headerns backdrop-blur skapar
+          en containing block som annars klipper fixed inset-0 till 56px */}
+      {oppad &&
+        createPortal(
         <div
           role="dialog"
           aria-modal="true"
@@ -248,7 +251,7 @@ export function Mobilmeny() {
             </div>
           </div>
         </div>
-      )}
+        , document.body)}
     </>
   );
 }

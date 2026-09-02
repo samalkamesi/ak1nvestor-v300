@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import {
   Search,
@@ -355,8 +356,11 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobil drawer — fullskärm i samma design som Mobilmenyn (paper, guld, serif) */}
-      {mobileOpen && (
+      {/* Mobil drawer — fullskärm i samma design som Mobilmenyn (paper, guld, serif).
+          PORTAL till body: headerns backdrop-blur skapar containing block som
+          annars klipper fixed inset-0 till headerns 56px. */}
+      {mobileOpen &&
+        createPortal(
         <div
           role="dialog"
           aria-modal="true"
@@ -514,7 +518,7 @@ export function Header() {
             </div>
           </div>
         </div>
-      )}
+        , document.body)}
 
     </header>
   );

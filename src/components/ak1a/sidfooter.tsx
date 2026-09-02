@@ -28,6 +28,7 @@ const KOLUMNER: FooterKolumn[] = [
       { text: "AKM1-kalkylatorn", lank: "/kalkylator" },
       { text: "Vågfundamentet", lank: "/vagfundament" },
       { text: "Portföljbyggaren", lank: "/portfoljbyggare" },
+      { text: "Konfluensradarn", lank: "/konfluens" },
       { text: "Net-net-skannern", lank: "/netnet" },
       { text: "Superanalysen", lank: "/superanalys" },
       { text: "Min portfölj", lank: "/min-portfolj" },

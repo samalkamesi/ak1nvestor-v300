@@ -23,11 +23,12 @@ const STATISKA: SokPost[] = [
   { titel: "Alla kurser", lank: "/kurser", kategori: "Sida", ikon: "📚", beskrivning: "Hela biblioteket med quiz", nycklar: "bibliotek 285 kurser" },
   { titel: "Biblioteket — bokkanon", lank: "/bibliotek", kategori: "Sida", ikon: "📖", beskrivning: "100 böcker mappade mot AKM1/AK1TS", nycklar: "bokkanon bocker lasning" },
   { titel: "Certifikat", lank: "/certifikat", kategori: "Sida", ikon: "🏅", beskrivning: "Ditt intyg på kompetens", nycklar: "intyg betyg diplom" },
-  // — ANALYSERA —
+  // — ANALYSERA — (samma logiska stig som menypanelen: grund → skannar → fördjupning)
   { titel: "AKM1-kalkylatorn", lank: "/kalkylator", kategori: "Verktyg", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20", nycklar: "V01 V02 V03 fundamental variabler kalkylera" },
   { titel: "Vågfundamentet", lank: "/vagfundament", kategori: "Verktyg", ikon: "🌊", beskrivning: "Fundamentalvågor — 20×5-matris per aktie & portfölj", nycklar: "vagfundament fundamentalvagor vagklass indikatorer tidsserie matris impulsvag korrigering basbygge" },
-  { titel: "Portföljbyggaren", lank: "/portfoljbyggare", kategori: "Verktyg", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live", nycklar: "portfolj bygg allokering sektor spridning koncentration risk donut" },
+  { titel: "Konfluensradarn", lank: "/konfluens", kategori: "Verktyg", ikon: "📡", beskrivning: "Där värde möter vågor — fem källor måste tala samman", nycklar: "konfluens radar samverkan fem kallor varde vagor skanning signal" },
   { titel: "Net-net-skannern", lank: "/netnet", kategori: "Verktyg", ikon: "🔍", beskrivning: "Grahams cigar-butts — NCAV-screening live", nycklar: "netnet ncav cigar butt screening graham billigt under bokvardt" },
+  { titel: "Portföljbyggaren", lank: "/portfoljbyggare", kategori: "Verktyg", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live", nycklar: "portfolj bygg allokering sektor spridning koncentration risk donut" },
   { titel: "Superanalysen", lank: "/superanalys", kategori: "Verktyg", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS", nycklar: "wizard guide 24 steg analysflode" },
   { titel: "Min portfölj", lank: "/min-portfolj", kategori: "Verktyg", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)", nycklar: "portfolj innehav djupanalys matris" },
   { titel: "Analyser", lank: "/analyser", kategori: "Sida", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser", nycklar: "bolag aktie rapport" },

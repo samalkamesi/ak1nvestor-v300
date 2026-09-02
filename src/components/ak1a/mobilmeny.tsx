@@ -12,7 +12,10 @@ import { lasStreak, lasXP, niva } from "@/lib/member-local";
  */
 
 type MenyPunkt = { text: string; lank: string; ikon: string; beskrivning?: string };
-type MenyPanel = { titel: string; ikon: string; punkter: MenyPunkt[] };
+/** Icke-klickbar sektionsrubrik inuti en panel — renderas som guld-versaler. */
+type MenyAvdelare = { avdelare: string };
+type MenyRad = MenyPunkt | MenyAvdelare;
+type MenyPanel = { titel: string; ikon: string; punkter: MenyRad[] };
 
 // Samma paneler som HUVUDMENYN — spegla innehållet exakt.
 const PANELER: MenyPanel[] = [
@@ -23,7 +26,7 @@ const PANELER: MenyPanel[] = [
       { text: "Manifestet", lank: "/manifest", ikon: "🏛️", beskrivning: "Vår vision: världens bästa finansutbildning" },
       { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker" },
       { text: "Alla kurser", lank: "/kurser", ikon: "📚", beskrivning: "Hela biblioteket med quiz" },
-      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "78 böcker kapitel för kapitel + ekosystem-flaggskeppen" }, // Uppdaterad 2026-09-01: 78 BOKMASTER-kurser
+      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "82 böcker kapitel för kapitel" }, // 2026-09-01: 82 BOKMASTER-kurser i deep-courses.json; kurs-sök läser ännu ej ?kategori=
       { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — böcker mappade mot AKM1/AK1TS" },
       { text: "Certifikat", lank: "/certifikat", ikon: "🏅", beskrivning: "Ditt intyg på kompetens" },
     ],
@@ -31,13 +34,20 @@ const PANELER: MenyPanel[] = [
   {
     titel: "Analysera",
     ikon: "🔬",
+    // Logisk stig: GRUNDÄNKNING → SKANNAR → FÖRDJUPNING — speglar huvudmenyn exakt.
     punkter: [
+      { avdelare: "Grundänkning" },
       { text: "AKM1-kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20" },
+      { text: "Vågfundamentet", lank: "/vagfundament", ikon: "🌊", beskrivning: "Fundamentalvågor · 20×5-matris per aktie & portfölj" },
+      { avdelare: "Skannar" },
+      { text: "Konfluensradarn", lank: "/konfluens", ikon: "📡", beskrivning: "Där värde möter vågor — fem källor måste tala samman" },
+      { text: "Net-net-skannern", lank: "/netnet", ikon: "🔍", beskrivning: "Grahams cigar-butts — NCAV-screening live" },
+      { text: "Portföljbyggaren", lank: "/portfoljbyggare", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live" },
+      { avdelare: "Fördjupning" },
       { text: "Superanalysen", lank: "/superanalys", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
       { text: "Min portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)" },
       { text: "Analyser", lank: "/analyser", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser" },
-      { text: "AI-Diagnos", lank: "/diagnos", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter" },
-      { text: "Labbar", lank: "/labb", ikon: "🧪", beskrivning: "Forskningsärenden" },
+      { text: "AI-Diagnos", lank: "/profil", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter" },
     ],
   },
   {
@@ -211,22 +221,31 @@ export function Mobilmeny() {
                     {p.ikon} {p.titel.toUpperCase()}
                   </h2>
                   <div className="mt-2">
-                    {p.punkter.map((punkt) => (
-                      <Link
-                        key={punkt.lank + punkt.text}
-                        href={punkt.lank}
-                        onClick={stang}
-                        className="flex items-start gap-3 border-b border-gold/10 py-3 last:border-b-0 hover:bg-gold/5 active:bg-gold/10"
-                      >
-                        <span className="mt-0.5 text-lg">{punkt.ikon}</span>
-                        <span className="min-w-0">
-                          <span className="block text-sm font-bold text-foreground">{punkt.text}</span>
-                          {punkt.beskrivning && (
-                            <span className="block text-xs leading-tight text-muted-foreground">{punkt.beskrivning}</span>
-                          )}
-                        </span>
-                      </Link>
-                    ))}
+                    {p.punkter.map((punkt) =>
+                      "avdelare" in punkt ? (
+                        <div
+                          key={`avdelare-${punkt.avdelare}`}
+                          className="border-b border-gold/10 bg-gold/5 px-1 pb-1 pt-3 text-[10px] font-bold uppercase tracking-widest text-gold"
+                        >
+                          {punkt.avdelare}
+                        </div>
+                      ) : (
+                        <Link
+                          key={punkt.lank + punkt.text}
+                          href={punkt.lank}
+                          onClick={stang}
+                          className="flex items-start gap-3 border-b border-gold/10 py-3 last:border-b-0 hover:bg-gold/5 active:bg-gold/10"
+                        >
+                          <span className="mt-0.5 text-lg">{punkt.ikon}</span>
+                          <span className="min-w-0">
+                            <span className="block text-sm font-bold text-foreground">{punkt.text}</span>
+                            {punkt.beskrivning && (
+                              <span className="block text-xs leading-tight text-muted-foreground">{punkt.beskrivning}</span>
+                            )}
+                          </span>
+                        </Link>
+                      )
+                    )}
                   </div>
                 </section>
               ))}

@@ -50,19 +50,21 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
 
   return (
     <div>
-      {/* Sök + filter */}
+      {/* Sök + filter — samma chip-kit som läroplanen: aktiv marin med guldtext, inaktiv guldkant */}
       <div className="sticky top-14 z-20 -mx-1 mb-6 flex flex-wrap items-center gap-2 bg-background/95 px-1 py-3 backdrop-blur-md">
         <input
           value={sok}
           onChange={(e) => setSok(e.target.value)}
           placeholder={`Sök bland ${kurser.length} kurser…`}
-          className="w-60 rounded-lg border border-gold/30 bg-card px-3 py-2 text-xs outline-none focus:border-gold"
+          className="w-60 rounded-lg border border-gold/30 bg-card px-3 py-2 text-xs outline-none transition-colors focus:border-[#0E1B2E] focus:ring-1 focus:ring-[#0E1B2E]/30 dark:focus:border-gold-soft dark:focus:ring-gold-soft/30"
           aria-label="Sök kurser"
         />
         <button
           onClick={() => setKat("alla")}
           className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors ${
-            kat === "alla" ? "bg-gold text-primary-foreground" : "border border-gold/30 bg-card text-muted-foreground hover:border-gold/60"
+            kat === "alla"
+              ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+              : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
           }`}
         >
           Alla ({kurser.length})
@@ -72,7 +74,9 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
             key={k}
             onClick={() => setKat(kat === k ? "alla" : k)}
             className={`rounded-full px-3 py-1.5 text-[11px] font-bold transition-colors ${
-              kat === k ? "bg-gold text-primary-foreground" : "border border-gold/30 bg-card text-muted-foreground hover:border-gold/60"
+              kat === k
+                ? "bg-[#0E1B2E] text-[#E8C766] dark:bg-[#16263D]"
+                : "border border-gold/30 text-muted-foreground hover:bg-gold/10"
             }`}
           >
             {k} ({n})
@@ -98,10 +102,11 @@ export function KursSok({ kurser }: { kurser: KursKort[] }) {
                 <li key={c.slug}>
                   <Link
                     href={`/kurser/${c.slug}`}
-                    className="block rounded-lg border border-gold/20 bg-card p-4 transition-colors hover:border-gold/60"
+                    className="block rounded-lg border border-gold/20 bg-card p-4 transition-all hover:border-gold/50 hover:shadow-lg"
                   >
                     <span className="font-serif font-semibold">{c.title}</span>
-                    <span className="mt-1 block text-xs text-muted-foreground">
+                    {/* Metadata med tabular-nums — siffrorna står still i bankmatrisen */}
+                    <span className="mt-1 block text-xs tabular-nums text-muted-foreground">
                       {c.kapitel} kapitel · {c.minuter} min · {c.quiz} quiz · {c.xp} XP
                     </span>
                     <span className="mt-2 block text-xs leading-relaxed text-muted-foreground">

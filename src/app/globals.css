@@ -622,3 +622,68 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 .ak1a-dna-bg > * { position: relative; z-index: 1; }
+
+/* ═══ GRAVÖR-KIT — institutionella signaturdetailjer (2026-09-02 MEGA-våg) ═══ */
+
+/* Certifikatsram: dubbel ram i guldhårlinje — privatabanksdokument */
+.gravor-ram {
+  border: 1px solid rgba(197, 165, 114, 0.45);
+  box-shadow:
+    inset 0 0 0 1px rgba(232, 199, 102, 0.12),
+    inset 0 0 0 5px rgba(14, 27, 46, 0);
+  position: relative;
+}
+.gravor-ram::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(232, 199, 102, 0.18);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Guld-hårlinje-divider med mittornament-plats */
+.hjarlinje {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(197, 165, 114, 0.55) 20%,
+    rgba(232, 199, 102, 0.75) 50%,
+    rgba(197, 165, 114, 0.55) 80%,
+    transparent 100%
+  );
+}
+
+/* Tabulära siffror — bankens räkenskaps-typografi */
+.tabular,
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+/* Signaturknappar — harmoni över hela sajten */
+.btn-marin {
+  background: var(--djup-marin, #0e1b2e);
+  color: #e8c766;
+  border: 1px solid rgba(232, 199, 102, 0.35);
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background 150ms ease, transform 150ms ease;
+}
+.btn-marin:hover {
+  background: var(--djup-marin-morkare, #081120);
+}
+.btn-guld-signatur {
+  background: #e8c766;
+  color: #081120;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: filter 150ms ease, transform 150ms ease;
+}
+.btn-guld-signatur:hover {
+  filter: brightness(1.06);
+}
+.dark .btn-guld-signatur {
+  color: #081120;
+}

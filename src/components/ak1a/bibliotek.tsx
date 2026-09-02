@@ -7,6 +7,8 @@ import type { Bok } from "@/lib/content";
 /**
  * BIBLIOTEKET — AK1A-bokkanon (100 böcker) mot AKM1/AK1TS.
  * Sök + filtrera på kategori/tier/nivå/AKM1-variabel. Tier 1 = full BOKMASTER.
+ * Design: institutionellt kort-kit — marin axel-rad ovanför rubriker,
+ * kortstandard rounded-xl + gold/25, primärknapp i marin med guldstext.
  */
 
 const KATEGORIER: Record<string, { etikett: string; ikon: string }> = {
@@ -63,7 +65,7 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
 
   if (bocker.length === 0) {
     return (
-      <div className="rounded-2xl border border-gold/30 bg-card p-8 text-center text-sm text-muted-foreground">
+      <div className="rounded-xl border border-gold/25 bg-card p-8 text-center text-sm text-muted-foreground">
         Bokkanonen håller på att forskas fram — återkommer inom kort.
       </div>
     );
@@ -71,9 +73,10 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
 
   return (
     <div className="space-y-6">
-      {/* Intro */}
-      <div className="rounded-2xl border border-gold/30 bg-card p-6">
-        <h1 className="font-serif text-3xl font-bold">
+      {/* Intro — kortstandard med marin axel-rad ovanför rubriken */}
+      <div className="rounded-xl border border-gold/25 bg-card p-6">
+        <div className="h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
+        <h1 className="mt-3 font-serif text-3xl font-bold">
           Biblioteket <span className="text-gold">📖</span>
         </h1>
         <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
@@ -85,18 +88,18 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
         </p>
       </div>
 
-      {/* Filterrad */}
+      {/* Filterrad — sekundär stil: diskreta gold/25-ramar mot kortbakgrund */}
       <div className="flex flex-wrap items-center gap-2">
         <input
           value={sok}
           onChange={(e) => setSok(e.target.value)}
           placeholder="Sök titel, författare, ämne…"
-          className="w-56 rounded-lg border border-gold/30 bg-card px-3 py-2 text-xs outline-none focus:border-gold"
+          className="w-56 rounded-lg border border-gold/25 bg-card px-3 py-2 text-xs outline-none transition-colors focus:border-gold"
         />
         <select
           value={kat}
           onChange={(e) => setKat(e.target.value)}
-          className="rounded-lg border border-gold/30 bg-card px-2 py-2 text-xs"
+          className="rounded-lg border border-gold/25 bg-card px-2 py-2 text-xs"
           aria-label="Kategori"
         >
           <option value="alla">Alla kategorier ({bocker.length})</option>
@@ -109,7 +112,7 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
         <select
           value={tier}
           onChange={(e) => setTier(Number(e.target.value))}
-          className="rounded-lg border border-gold/30 bg-card px-2 py-2 text-xs"
+          className="rounded-lg border border-gold/25 bg-card px-2 py-2 text-xs"
           aria-label="Tier"
         >
           <option value={0}>Alla tiers</option>
@@ -120,7 +123,7 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
         <select
           value={akFilter}
           onChange={(e) => setAkFilter(e.target.value)}
-          className="rounded-lg border border-gold/30 bg-card px-2 py-2 text-xs"
+          className="rounded-lg border border-gold/25 bg-card px-2 py-2 text-xs"
           aria-label="AKM1-variabel"
         >
           {akVariabler.map((v) => (
@@ -129,12 +132,18 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
             </option>
           ))}
         </select>
-        <span className="ml-auto text-xs text-muted-foreground">
+        <span className="ml-auto text-xs tabular-nums text-muted-foreground">
           {filtrerade.length} av {bocker.length} böcker
         </span>
       </div>
 
-      {/* Bokkorten */}
+      {/* Sektionshuvud — bokhyllan, axel-rad som institutionell signatur */}
+      <div>
+        <div className="h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
+        <h2 className="mt-2 font-serif text-lg font-bold">Bokhyllan</h2>
+      </div>
+
+      {/* Bokkorten — standardkort: rounded-xl, gold/25, hover-lyft */}
       <div className="grid gap-4 sm:grid-cols-2">
         {filtrerade.map((b) => {
           const k = KATEGORIER[b.kat] || { etikett: b.kat, ikon: "📕" };
@@ -142,18 +151,19 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
           return (
             <div
               key={b.id}
-              className="flex flex-col rounded-2xl border border-gold/25 bg-card p-5 transition-colors hover:border-gold/50"
+              className="flex flex-col rounded-xl border border-gold/25 bg-card p-5 transition hover:border-gold/50 hover:shadow-md"
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
-                  <h2 className="font-serif text-base font-bold leading-tight">{b.titel}</h2>
-                  <p className="text-xs text-muted-foreground">
+                  <h3 className="font-serif text-base font-bold leading-tight">{b.titel}</h3>
+                  <p className="text-xs tabular-nums text-muted-foreground">
                     {b.author} · {b.year}
                   </p>
                 </div>
+                {/* Tier 1-markering — marin chip med guldstext (ej guldbakgrund) */}
                 <span
-                  className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                    b.tier === 1 ? "bg-gold/15 text-gold" : "bg-secondary text-muted-foreground"
+                  className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tabular-nums ${
+                    b.tier === 1 ? "bg-[#0E1B2E] text-[#E8C766]" : "bg-secondary text-muted-foreground"
                   }`}
                 >
                   {b.tier === 1 ? "◆ Tier 1" : `Tier ${b.tier}`}
@@ -188,15 +198,16 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
               </div>
 
               <div className="mt-auto pt-3">
+                {/* Primär action — marin knapp med guldstext */}
                 {kursSlug ? (
                   <Link
                     href={`/kurser/${kursSlug}`}
-                    className="inline-flex items-center gap-1 rounded-lg bg-gold px-3 py-1.5 text-[11px] font-bold text-primary-foreground hover:opacity-90"
+                    className="inline-flex items-center gap-1 rounded-lg bg-[#0E1B2E] px-3 py-1.5 text-[11px] font-semibold text-[#E8C766] transition-colors hover:bg-[#081120]"
                   >
                     📚 Läs hela kursen →
                   </Link>
                 ) : (
-                  <span className="text-[10px] text-muted-foreground">
+                  <span className="text-[10px] tabular-nums text-muted-foreground">
                     {b.tier === 1 ? "BOKMASTER-kurs i byggkön" : `Nivå ${b.niva}/5 läsning`}
                   </span>
                 )}
@@ -207,7 +218,7 @@ export function Bibliotek({ bocker }: { bocker: Bok[] }) {
       </div>
 
       {filtrerade.length === 0 && (
-        <div className="rounded-2xl border border-gold/20 bg-card p-8 text-center text-sm text-muted-foreground">
+        <div className="rounded-xl border border-gold/25 bg-card p-8 text-center text-sm text-muted-foreground">
           Inga böcker matchade filtret — prova att bredda sökningen.
         </div>
       )}

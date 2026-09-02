@@ -10,7 +10,6 @@ import {
   ScrollText,
   Menu,
   X,
-  ChevronDown,
   Sparkles,
   Zap,
   Home,
@@ -28,6 +27,14 @@ import {
   Briefcase,
   Landmark,
   BookOpen,
+  Award,
+  LayoutDashboard,
+  Medal,
+  Microscope,
+  Puzzle,
+  ScanSearch,
+  Target,
+  Trophy,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useAk1aStore, levelLabel, type Level, type SectionId } from "@/lib/ak1a-store";
@@ -84,6 +91,51 @@ const FLER_SIDER: { text: string; href: string; beskrivning: string; ikon: typeo
   { text: "Dagens pass", href: "/dagens-pass", beskrivning: "5 minuters daglig marknadsträning", ikon: Zap },
 ];
 
+// ── Megameny i EXAKT huvudmeny-stil (Lär/Analysera/Träna) ─────────────────
+// EN meny-upplevelse på hela sajten: samma typografi, marin-paneltoppar med
+// guldtext och 180 ms hover-fördröjning som undersidornas huvudmeny.
+// Skillnaden: "Lär" öppnar SPA-sektioner (button) medan "Analysera"/"Träna"
+// länkar riktiga routes (Link) — plus labb-sektionen i Träna.
+type MegaPunkt =
+  | { typ: "sektion"; text: string; sektion: SectionId; ikon: typeof Home; beskrivning: string }
+  | { typ: "lank"; text: string; href: string; ikon: typeof Home; beskrivning: string };
+
+const MEGA_PANELER: { titel: string; ikon: typeof Home; punkter: MegaPunkt[] }[] = [
+  {
+    titel: "Lär",
+    ikon: GraduationCap,
+    punkter: [
+      { typ: "sektion", text: "Hem", sektion: "hem", ikon: Home, beskrivning: "Startsidan — allt på ett ställe" },
+      { typ: "sektion", text: "Kurser", sektion: "kurser", ikon: GraduationCap, beskrivning: "200+ moduler · 4 flikar" },
+      { typ: "sektion", text: "Labb", sektion: "labb", ikon: FlaskConical, beskrivning: "Case + faror + historia" },
+      { typ: "sektion", text: "Om oss", sektion: "om-oss", ikon: Users, beskrivning: "Meta-system (organ + visioner)" },
+    ],
+  },
+  {
+    titel: "Analysera",
+    ikon: Microscope,
+    punkter: [
+      { typ: "lank", text: "AKM1-kalkylatorn", href: "/kalkylator", ikon: Calculator, beskrivning: "20 fundamentalvariabler · V01–V20" },
+      { typ: "lank", text: "Vågfundamentet", href: "/vagfundament", ikon: Landmark, beskrivning: "Fundamentalvågor · 20×5-matris per aktie" },
+      { typ: "lank", text: "Portföljbyggaren", href: "/portfoljbyggare", ikon: Puzzle, beskrivning: "Bygg visuellt — se risk & spridning live" },
+      { typ: "lank", text: "Net-net-skannern", href: "/netnet", ikon: ScanSearch, beskrivning: "Grahams cigar-butts — NCAV-screening live" },
+      { typ: "lank", text: "Min portfölj", href: "/min-portfolj", ikon: Briefcase, beskrivning: "Innehav + djupanalys (5×5×4)" },
+      { typ: "lank", text: "Superanalysen", href: "/superanalys", ikon: Award, beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
+    ],
+  },
+  {
+    titel: "Träna",
+    ikon: Target,
+    punkter: [
+      { typ: "lank", text: "Dagens pass", href: "/dagens-pass", ikon: Zap, beskrivning: "5 minuters daglig marknadsträning" },
+      { typ: "lank", text: "Min sida", href: "/min-sida", ikon: LayoutDashboard, beskrivning: "Din dashboard — allt på ett ställe" },
+      { typ: "lank", text: "Topplistan", href: "/topplistan", ikon: Trophy, beskrivning: "Eleverna rankade på XP" },
+      { typ: "lank", text: "Badges", href: "/badges", ikon: Medal, beskrivning: "Troféer & meriter att förtjäna" },
+      { typ: "sektion", text: "Labb", sektion: "labb", ikon: FlaskConical, beskrivning: "Case + faror + historia (SPA)" },
+    ],
+  },
+];
+
 export function Header() {
   const {
     section,
@@ -100,10 +152,38 @@ export function Header() {
   const visibleNavSections = NAV_SECTIONS.filter((s) => s.id !== "styrelse" || isAdmin);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
-  const [moreOpen, setMoreOpen] = React.useState(false);
+  const [oppad, setOppad] = React.useState<string | null>(null); // öppen megamenu-panel
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [intrad, setIntrad] = React.useState(false); // för tonad drawer-entré
   React.useEffect(() => setMounted(true), []);
+
+  // Megameny — hover med 180 ms fördröjning så panelerna inte flimrar
+  // (exakt samma mönster som huvudmenyn på undersidorna).
+  const megamenyRef = React.useRef<HTMLElement>(null);
+  const fordrojning = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function hoverIn(titel: string) {
+    if (fordrojning.current) clearTimeout(fordrojning.current);
+    setOppad(titel);
+  }
+  function hoverUt() {
+    if (fordrojning.current) clearTimeout(fordrojning.current);
+    fordrojning.current = setTimeout(() => setOppad(null), 180);
+  }
+
+  // Stäng megamenyn vid klick utanför + Escape (samma beteende som huvudmenyn).
+  React.useEffect(() => {
+    const klick = (e: MouseEvent) => {
+      if (megamenyRef.current && !megamenyRef.current.contains(e.target as Node)) setOppad(null);
+    };
+    const stang = (e: KeyboardEvent) => e.key === "Escape" && setOppad(null);
+    document.addEventListener("mousedown", klick);
+    document.addEventListener("keydown", stang);
+    return () => {
+      document.removeEventListener("mousedown", klick);
+      document.removeEventListener("keydown", stang);
+    };
+  }, []);
 
   // ⌘K sköts GLOBALT av Kommandopaletten (layout.tsx) — ingen lokal lyssnare här
   // (dubbla lyssnare race:togglear paletten stängd på startsidan)
@@ -148,55 +228,106 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:px-6">
         <Ak1aLogo onClick={() => setSection("hem")} size="md" />
 
-        {/* Desktop nav */}
-        <nav className="ml-4 hidden items-center gap-0.5 lg:flex" aria-label="Huvudnavigation">
-          {visibleNavSections.map((s) => (
-            <button
-              key={s.id}
-              onClick={() => setSection(s.id)}
-              className={cn(
-                "px-2.5 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors",
-                section === s.id
-                  ? "text-gold"
-                  : "text-foreground/70 hover:text-foreground hover:bg-muted"
-              )}
-            >
-              {s.label}
-            </button>
-          ))}
-          <div className="relative">
-            <button
-              onClick={() => setMoreOpen((v) => !v)}
-              onBlur={() => setTimeout(() => setMoreOpen(false), 150)}
-              className="flex items-center gap-0.5 px-2.5 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-sm text-foreground/70 hover:text-foreground hover:bg-muted"
-            >
-              MER
-              <ChevronDown className="h-3 w-3" />
-            </button>
-            {moreOpen && (
-              <div className="absolute left-0 top-full mt-1 w-64 rounded-md border border-border bg-popover p-1 shadow-lg">
-                {FOOTER_NAV.slice(0, 6).map((item) => (
-                  item.section === "admin" as any ? (
-                    <a
-                      key={item.label}
-                      href="/admin"
-                      className="block w-full text-left px-2 py-1.5 text-xs hover:bg-muted rounded-sm"
-                    >
-                      {item.label}
-                    </a>
-                  ) : (
-                    <button
-                      key={item.label}
-                      onMouseDown={() => setSection(item.section as any)}
-                      className="block w-full text-left px-2 py-1.5 text-xs hover:bg-muted rounded-sm"
-                    >
-                      {item.label}
-                    </button>
-                  )
-                ))}
+        {/* Desktop nav — megameny i EXAKT huvudmeny-stil: EN meny-upplevelse på hela sajten */}
+        <nav
+          ref={megamenyRef}
+          aria-label="Huvudnavigation"
+          className="relative ml-4 hidden items-center gap-0.5 lg:flex"
+          onMouseLeave={hoverUt}
+        >
+          {MEGA_PANELER.map((p) => {
+            // Guldmarkera knappen om en av panelens SPA-sektioner är aktiv.
+            const aktivIPanel = p.punkter.some(
+              (pk) => pk.typ === "sektion" && pk.sektion === section
+            );
+            return (
+              <div key={p.titel} className="relative">
+                <button
+                  onMouseEnter={() => hoverIn(p.titel)}
+                  onClick={() => setOppad(oppad === p.titel ? null : p.titel)}
+                  aria-expanded={oppad === p.titel}
+                  aria-haspopup="true"
+                  className={cn(
+                    "flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs font-semibold transition-colors",
+                    oppad === p.titel
+                      ? "bg-gold/15 text-gold"
+                      : aktivIPanel
+                        ? "text-gold"
+                        : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {p.titel}
+                  <span
+                    className={cn(
+                      "text-[8px] transition-transform",
+                      oppad === p.titel && "rotate-180"
+                    )}
+                  >
+                    ▼
+                  </span>
+                </button>
+
+                {oppad === p.titel && (
+                  <div
+                    className="absolute left-0 top-full z-50 mt-1 w-72 overflow-hidden rounded-xl border border-gold/30 bg-card shadow-xl"
+                    onMouseEnter={() =>
+                      fordrojning.current && clearTimeout(fordrojning.current)
+                    }
+                  >
+                    {/* Paneltopp — marin med guldtext, identisk med huvudmenyn */}
+                    <div className="marin-panel flex items-center gap-1.5 border-b border-gold/30 px-3 py-2 font-serif text-xs font-bold tracking-wide text-[#E8C766]">
+                      <p.ikon className="h-3.5 w-3.5" />
+                      {p.titel.toUpperCase()}
+                    </div>
+                    {p.punkter.map((punkt) =>
+                      punkt.typ === "sektion" ? (
+                        <button
+                          key={`sektion-${punkt.sektion}`}
+                          onClick={() => {
+                            setSection(punkt.sektion);
+                            setOppad(null); // stäng vid val
+                          }}
+                          className="flex w-full items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 text-left last:border-b-0 hover:bg-gold/10"
+                        >
+                          <punkt.ikon className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+                          <span className="min-w-0">
+                            <span
+                              className={cn(
+                                "block text-xs font-bold",
+                                section === punkt.sektion ? "text-gold" : "text-foreground"
+                              )}
+                            >
+                              {punkt.text}
+                            </span>
+                            <span className="block text-[10px] leading-tight text-muted-foreground">
+                              {punkt.beskrivning}
+                            </span>
+                          </span>
+                        </button>
+                      ) : (
+                        <Link
+                          key={`lank-${punkt.href}`}
+                          href={punkt.href}
+                          onClick={() => setOppad(null)} // stäng vid val
+                          className="flex items-start gap-2.5 border-b border-gold/10 px-3 py-2.5 last:border-b-0 hover:bg-gold/10"
+                        >
+                          <punkt.ikon className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+                          <span className="min-w-0">
+                            <span className="block text-xs font-bold text-foreground">
+                              {punkt.text}
+                            </span>
+                            <span className="block text-[10px] leading-tight text-muted-foreground">
+                              {punkt.beskrivning}
+                            </span>
+                          </span>
+                        </Link>
+                      )
+                    )}
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+            );
+          })}
         </nav>
 
         <div className="ml-auto flex items-center gap-1.5">
@@ -466,14 +597,14 @@ export function Header() {
         </div>
       )}
 
-      {/* Level context strip */}
-      <div className="hidden sm:flex border-t border-border/60 bg-muted/40">
-        <div className="mx-auto flex max-w-7xl w-full items-center gap-2 px-4 sm:px-6 py-1">
-          <Sparkles className="h-3 w-3 text-gold" />
-          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-            Nivå: <span className="text-foreground font-semibold">{levelLabel(level)}</span>
+      {/* Level context strip — institutionellt marin band med guldtext */}
+      <div className="marin-panel hidden h-[28px] items-center border-t border-gold/30 sm:flex">
+        <div className="mx-auto flex h-full w-full max-w-7xl items-center gap-2 px-4 sm:px-6">
+          <Sparkles className="h-3 w-3 shrink-0 text-[#E8C766]" />
+          <span className="text-[10px] uppercase tracking-wider text-[#EDE6D6]/70">
+            Nivå: <span className="font-semibold text-[#E8C766]">{levelLabel(level)}</span>
           </span>
-          <span className="text-[10px] text-muted-foreground hidden md:inline">
+          <span className="hidden text-[10px] text-[#EDE6D6]/60 md:inline">
             · {LEVELS.find((l) => l.id === level)?.subtitle}
           </span>
         </div>

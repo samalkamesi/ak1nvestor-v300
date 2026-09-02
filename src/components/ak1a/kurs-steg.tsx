@@ -131,28 +131,29 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
           </div>
         </div>
       )}
-      {/* Progress-topprad */}
-      <div className="sticky top-0 z-30 border-b border-gold/20 bg-paper/95 backdrop-blur">
-        <div className="mx-auto flex max-w-3xl items-center gap-4 px-4 py-3">
+      {/* Progress-topprad — institutionellt marin bandhuvud med guldtext (bank-harmoni) */}
+      <div className="marin-panel sticky top-0 z-30 border-b border-gold/30 shadow-md">
+        <div className="mx-auto flex h-[52px] max-w-3xl items-center gap-4 px-4">
           <svg viewBox="0 0 44 44" className="h-10 w-10 shrink-0">
-            <circle cx="22" cy="22" r="18" fill="none" stroke="#a8862a" strokeWidth="3" opacity="0.15" />
-            <circle cx="22" cy="22" r="18" fill="none" stroke="#a8862a" strokeWidth="3"
+            <circle cx="22" cy="22" r="18" fill="none" stroke="#E8C766" strokeWidth="3" opacity="0.15" />
+            <circle cx="22" cy="22" r="18" fill="none" stroke="#E8C766" strokeWidth="3"
               strokeDasharray={2 * Math.PI * 18}
               strokeDashoffset={2 * Math.PI * 18 - (2 * Math.PI * 18 * procent) / 100}
               strokeLinecap="round" transform="rotate(-90 22 22)" />
-            <text x="22" y="26" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#a8862a">
+            <text x="22" y="26" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#E8C766">
               {procent}%
             </text>
           </svg>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-xs font-semibold text-gold">{kurs.title}</p>
+            <p className="truncate font-serif text-xs font-semibold tracking-wide text-[#EDE6D6]">{kurs.title}</p>
+            {/* Kapitel-dots: spår i porslin (#EDE6D6), fyllning i guld (#E8C766), klarade i grönt */}
             <div className="mt-1 flex gap-1">
               {kurs.chapters.map((ch, i) => (
                 <button
                   key={ch.num}
                   onClick={() => { setSteg(i); setVisaQuiz(false); }}
                   className={`h-1.5 flex-1 rounded-full transition-all ${
-                    i === steg ? "bg-gold" : klaradeKap.has(ch.num) ? "bg-green-500" : i < steg ? "bg-gold/40" : "bg-gold/10"
+                    i === steg ? "bg-[#E8C766]" : klaradeKap.has(ch.num) ? "bg-green-400" : i < steg ? "bg-[#E8C766]/40" : "bg-[#EDE6D6]/15"
                   }`}
                   aria-label={`Kapitel ${ch.num}`}
                   title={ch.title}
@@ -160,10 +161,11 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
               ))}
             </div>
           </div>
-          <div className="text-right text-[10px] leading-tight text-muted-foreground">
-            <p className="font-bold text-gold">{xp} XP</p>
-            <p>⭐ {stjarnor}</p>
-            <p className="text-green-700">{klaraTotalt}/{total} 🏆</p>
+          {/* XP/streak-chips — guldtext på marin, tabular-nums för bank-kolumn känsla */}
+          <div className="flex shrink-0 items-center gap-1.5 text-[10px] font-bold leading-none">
+            <span className="rounded-full border border-[#E8C766]/40 bg-[#E8C766]/10 px-2 py-1 tabular-nums text-[#E8C766]">{xp} XP</span>
+            <span className="rounded-full border border-[#E8C766]/40 bg-[#E8C766]/10 px-2 py-1 tabular-nums text-[#E8C766]">⭐ {stjarnor}</span>
+            <span className="rounded-full border border-[#E8C766]/40 bg-[#E8C766]/10 px-2 py-1 tabular-nums text-[#E8C766]">{klaraTotalt}/{total} 🏆</span>
           </div>
         </div>
       </div>
@@ -298,26 +300,26 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
             </div>
           )}
 
-          {/* Navigation */}
+          {/* Navigation — primär signatur: guld-knapp på papper; sekundär: diskret guldkant */}
           <div className="mt-10 flex items-center justify-between">
             <button
               onClick={() => { if (steg > 0) { setSteg(steg - 1); setVisaQuiz(false); window.scrollTo({top:0,behavior:"smooth"}); } }}
               disabled={steg === 0}
-              className="rounded-lg border border-gold/30 px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-gold/50 disabled:opacity-30"
+              className="rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:bg-gold/5 disabled:opacity-30"
             >
               ← Föregående
             </button>
             {steg < total - 1 ? (
               <button
                 onClick={naasta}
-                className="rounded-xl bg-gold px-8 py-3 text-sm font-bold text-primary-foreground shadow-lg hover:opacity-90 transition-all hover:shadow-gold/20"
+                className="rounded-xl bg-[#E8C766] px-8 py-3 text-sm font-bold text-[#081120] shadow-lg transition-all hover:opacity-90 hover:shadow-[#E8C766]/30"
               >
                 Nästa kapitel →
               </button>
             ) : (
               <Link
                 href="/kurser"
-                className="rounded-xl bg-green-600 px-8 py-3 text-sm font-bold text-white shadow-lg hover:opacity-90"
+                className="rounded-xl bg-[#E8C766] px-8 py-3 text-sm font-bold text-[#081120] shadow-lg transition-all hover:opacity-90 hover:shadow-[#E8C766]/30"
               >
                 🏆 Kursen klar! →
               </Link>

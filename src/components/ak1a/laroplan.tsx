@@ -7,6 +7,8 @@ import { lasMedlem, lasKlaraKurser, niva, lasXP } from "@/lib/member-local";
 /**
  * Läroplanen — resan från nybörjare till oberoende aktieanalytiker.
  * 5 nivåer, varje kurs har ett syfte i resan mot självständighet.
+ * Design: institutionellt kort-kit — marin axel-rad ovanför rubriker,
+ * kortstandard rounded-xl + gold/25, aktiv accordion får marin vänsterkant.
  */
 
 const NIVAER = [
@@ -15,7 +17,6 @@ const NIVAER = [
     namn: "Grunderna",
     beskrivning: "Bygg din fundamentala bas — de 20 byggstenarna i AKM1",
     mal: "Du förstår vad varje variabel mäter och varför den finns",
-    farg: "border-blue-300 bg-blue-50",
     badge: "🌱",
     kurser: [
       { slug: "v01-forsaljningstillvaxt", syfte: "Lär dig den viktigaste tillväxtindikatorn", tid: 15 },
@@ -45,7 +46,6 @@ const NIVAER = [
     namn: "Fördjupning",
     beskrivning: "Gå djupare på värdering, riskhantering och teknisk analys",
     mal: "Du kan kombinera variabler till en helhetsbild",
-    farg: "border-yellow-300 bg-yellow-50",
     badge: "📖",
     kurser: [
       { slug: "km-001-arsredovisningens-grunder", syfte: "Läs en årsredovisning från pärm till pärm", tid: 20 },
@@ -67,7 +67,6 @@ const NIVAER = [
     namn: "Bokmaster",
     beskrivning: "Läs mästarna — 13 kompletta böckers visdom, kapitel för kapitel",
     mal: "Du har böckernas visdom integrerad i ditt eget tänkande",
-    farg: "border-purple-300 bg-purple-50",
     badge: "🏛️",
     kurser: [
       { slug: "akm1-den-kontroversiella-modellen", syfte: "EKOSYSTEMET: alla 20 variabler superdjupt — vad mainstream säger och varför vi avviker", tid: 240, xp: 2500 },
@@ -108,7 +107,6 @@ const NIVAER = [
     namn: "Praktik",
     beskrivning: "Tillämpa på riktiga bolag och din egen portfölj",
     mal: "Du kan genomföra en komplett analys på egen hand",
-    farg: "border-green-300 bg-green-50",
     badge: "🔬",
     kurser: [
       { slug: "pc-002-case-hm", syfte: "Analysera ett konsumentbolag steg för steg", tid: 20 },
@@ -123,7 +121,6 @@ const NIVAER = [
     namn: "Självständighet",
     beskrivning: "Bli en oberoende aktieanalytiker — Fas 2 och bortom",
     mal: "Du kan analysera, värdera och bygga portföljer helt på egen hand",
-    farg: "border-gold bg-gold/5",
     badge: "🎓",
     kurser: [
       { slug: "se-001-sektoranalys-grunder", syfte: "Förstå en hel bransch", tid: 16 },
@@ -153,35 +150,40 @@ export function Laroplan() {
 
   return (
     <div className="mx-auto max-w-4xl">
-      {/* Header */}
+      {/* Sidhuvud — marin axel-rad som institutionell signatur ovanför rubriken */}
       <div className="text-center">
-        <h1 className="font-serif text-4xl font-bold">Läroplanen</h1>
+        <div className="mx-auto h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
+        <h1 className="mt-3 font-serif text-4xl font-bold">Läroplanen</h1>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
           Från nybörjare till oberoende aktieanalytiker. {totalKurser} kurser i 5 nivåer —
           varje kurs bygger mot målet: att du kan analysera, värdera och förvalta på egen hand.
         </p>
       </div>
 
-      {/* Progress */}
-      <div className="mx-auto mt-6 max-w-md rounded-2xl border-2 border-gold/40 bg-card p-5">
+      {/* Progress — kortstandard, marin spår med behållen guldfyllnad */}
+      <div className="mx-auto mt-6 max-w-md rounded-xl border border-gold/25 bg-card p-5">
         <div className="flex items-center justify-between text-xs">
           <span className="font-bold text-gold">Din resa</span>
-          <span className="text-muted-foreground">{klaraKurser}/{totalKurser} kurser ({procent}%)</span>
+          <span className="tabular-nums text-muted-foreground">{klaraKurser}/{totalKurser} kurser ({procent}%)</span>
         </div>
-        <div className="mt-2 h-3 overflow-hidden rounded-full bg-gold/15">
+        <div className="mt-2 h-3 overflow-hidden rounded-full bg-[#0E1B2E]/10">
           <div className="h-full rounded-full bg-gold transition-all" style={{ width: `${procent}%` }} />
         </div>
-        <p className="mt-2 text-center text-xs text-muted-foreground">
+        <p className="mt-2 text-center text-xs tabular-nums text-muted-foreground">
           Nivå {niva()}/100 · {xp} XP · {medlem ? "✅ Inloggad" : "⚠️ Inte inloggad"}
         </p>
+        {/* Primär action — marin knapp med guldstext (ej guldknapp) */}
         {!medlem && (
-          <Link href="/logga-in" className="mt-2 block rounded-lg bg-gold px-4 py-2 text-center text-xs font-bold text-primary-foreground">
+          <Link
+            href="/logga-in"
+            className="mt-2 block rounded-lg bg-[#0E1B2E] px-4 py-2 text-center text-xs font-semibold text-[#E8C766] transition-colors hover:bg-[#081120]"
+          >
             Logga in gratis för att spara din progress →
           </Link>
         )}
       </div>
 
-      {/* Nivåer */}
+      {/* Nivåer — accordions i enhetlig kortstandard */}
       <div className="mt-10 space-y-8">
         {NIVAER.map((niv) => {
           const klaraINivan = niv.kurser.filter((k) => klara.includes(k.slug)).length;
@@ -189,50 +191,62 @@ export function Laroplan() {
           const oppen = oppnadNiva === niv.id;
 
           return (
-            <div key={niv.id} className={`rounded-2xl border-2 ${niv.farg} p-5`}>
+            <section
+              key={niv.id}
+              className="overflow-hidden rounded-xl border border-gold/25 bg-card transition-colors hover:border-gold/50"
+            >
+              {/* Nivåhuvud — öppen accordion markerar med marin vänsterkant + svagt marin ton */}
               <button
                 onClick={() => setOppnadNiva(oppen ? null : niv.id)}
-                className="flex w-full items-center gap-4 text-left"
+                className={`flex w-full items-center gap-4 border-l-2 px-5 py-4 text-left transition-colors ${
+                  oppen
+                    ? "border-[#0E1B2E] bg-[#0E1B2E]/[0.04] dark:border-gold"
+                    : "border-transparent hover:bg-gold/5"
+                }`}
               >
                 <span className="text-3xl">{niv.badge}</span>
                 <div className="min-w-0 flex-1">
-                  <div className="flex items-baseline justify-between">
+                  {/* Marin axel-rad ovanför rubriken */}
+                  <div className="h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
+                  <div className="mt-2 flex items-baseline justify-between">
                     <h2 className="font-serif text-xl font-bold">
                       Nivå {niv.id}: {niv.namn}
                     </h2>
-                    <span className="text-xs font-bold text-muted-foreground">
+                    <span className="text-xs font-bold tabular-nums text-muted-foreground">
                       {klaraINivan}/{niv.kurser.length} ✓
                     </span>
                   </div>
                   <p className="mt-0.5 text-xs text-muted-foreground">{niv.beskrivning}</p>
                   <p className="mt-1 text-[11px] italic text-gold">🎯 {niv.mal}</p>
-                  <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-black/10">
+                  {/* Nivå-progress — guldfyllnad behållen, spår i marin ton */}
+                  <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#0E1B2E]/10">
                     <div className="h-full rounded-full bg-gold" style={{ width: `${procentNiva}%` }} />
                   </div>
                 </div>
                 <span className="text-lg text-muted-foreground">{oppen ? "−" : "+"}</span>
               </button>
 
+              {/* Kurser — standardkort med hover-lyft */}
               {oppen && (
-                <div className="mt-4 space-y-2">
+                <div className="space-y-2 px-5 pb-5 pt-4">
                   {niv.kurser.map((kurs, i) => {
                     const klar = klara.includes(kurs.slug);
                     return (
                       <Link
                         key={kurs.slug}
                         href={`/kurser/${kurs.slug}`}
-                        className={`flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors ${
-                          klar ? "bg-green-50 border border-green-200" : "bg-paper border border-gold/15 hover:border-gold/40"
+                        className={`flex items-center gap-3 rounded-xl border bg-card px-3 py-2.5 transition hover:shadow-md ${
+                          klar ? "border-bull/40" : "border-gold/25 hover:border-gold/50"
                         }`}
                       >
-                        <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
-                          klar ? "bg-green-500 text-white" : "bg-gold/10 text-gold"
+                        <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold tabular-nums ${
+                          klar ? "bg-bull text-white" : "bg-gold/10 text-gold"
                         }`}>
                           {klar ? "✓" : i + 1}
                         </span>
                         <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-medium">{kurs.syfte}</p>
-                          <p className="text-[10px] text-muted-foreground">
+                          <p className="truncate font-serif text-sm font-semibold">{kurs.syfte}</p>
+                          <p className="text-[10px] tabular-nums text-muted-foreground">
                             {kurs.tid} min {kurs.xp ? `· ${kurs.xp} XP` : ""}
                           </p>
                         </div>
@@ -242,19 +256,20 @@ export function Laroplan() {
                   })}
                 </div>
               )}
-            </div>
+            </section>
           );
         })}
       </div>
 
-      {/* Certification */}
-      <div className="mt-10 rounded-2xl border-2 border-gold bg-gradient-to-br from-gold/10 to-transparent p-6 text-center">
-        <p className="text-3xl">🎓</p>
+      {/* Certifiering — avslutande sektion med axel-rad */}
+      <div className="mt-10 rounded-xl border border-gold/25 bg-card p-6 text-center">
+        <div className="mx-auto h-[3px] w-10 rounded-full bg-[#0E1B2E] dark:bg-gold/60" />
+        <p className="mt-3 text-3xl">🎓</p>
         <h2 className="mt-2 font-serif text-2xl font-bold">Målet: Oberoende aktieanalytiker</h2>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
           När du klarat alla 5 nivåer har du verktygen för att analysera bolag,
           värdera aktier, bygga portföljer och fatta egna beslut — utan att
-          bero på andras tips eller rekommendationer.
+          bero av andras tips eller rekommendationer.
         </p>
         <p className="mt-3 text-xs font-bold text-gold">
           Detta är Fas 1 — alltid gratis, alltid öppet. Fundamental-analys är en rättighet.

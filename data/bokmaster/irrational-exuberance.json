@@ -10,7 +10,7 @@
   "xp": 2000,
   "level": "",
   "learn": "Efter kursen kan eleven redogöra för bokens kärnbevis: Shillers artikel från 1981 (»Do Stock Prices Move Too Much to be Justified by Subsequent Changes in Dividends?«), där det fullkomliga förutseendepriset — nutidsvärdet av de verkliga framtida utdelningarna 1871–1979 — visade sig vara en smidig, nästan rak linje medan den faktiska kursen var omkring fem gånger mer volatil, och vad denna brutna variansbindning betyder: att större delen av marknadens kortsvängningar inte kan vara information om fundamenta. Eleven kan förklara varför de klassiska fundamentalförklaringarna — räntan (diskonteringsräntan i Gordontypens formler), real vinsttillväxt (som låg stabil kring 1,5–2 procent per år under seklet) och utdelningspolitiken (styrelser utjämnar medvetet) — tillsammans inte förklarar 1900-talets multiplikateursvängningar, och därmed varför det beteendemässiga gapet återstår som huvudspår. Eleven behärskar bokens strukturanalys: de tolv precipiterande strukturfaktorerna (internet, kapitalismens triumf, kulturella förändringar, födelsekohorter, mediebevakning, analytikeroptimism, 401(k)-planer, handelsvolymexpansion, hasardspelkulturen, låg inflation och penningillusionen, fondexpansionen och den allmänna ny-eran-optimismen), feedback-looparnas mekanik (pris-till-pris-förväntningar, naturligt uppkomna Ponzi-scheman utan bedragare, och varför bubblor måste ta slut), berättelseepidemi-modellen (smittsamhet, återhämtning, mutation, vektorer — grunden till Shillers senare narrativa ekonomi), samt de psykologiska ankarna: kvantitativa (gamla toppar, inköpskursen, jämna tal) och moraliska (förtroende, »det säkra«, hemma-hos-metaforen). Eleven kan arbeta med CAPE — realpris över tioårigt genomsnitt av reala vinster, en idé Shiller spårar till Graham & Dodd 1934 — inklusive historiken 1881 till 2020-talet (genomsnitt cirka 16–17; toppar 1929 omkring 33, 2000 omkring 44, 2007 omkring 27, 2021 nära 40; bottnar 1921, 1932 och 1982 kring 5–7), vad höga och låga lägen sagt om real tioårsavkastning, och de ärliga gränserna: förklarad varians kring en tredjedel på tio år, nästan noll på ett år, och ett decennium av höga lägen med goda avkastningar under 2010-talet. Eleven kan redogöra för finanshistoriens största fejd — Shiller mot Fama, som delade Nobelpriset 2013 — med båda sidors argument: joint hypothesis-problemet, att volatilitetsprognoser inte är avkastningsprognoser, Famas invändning att en felaktig marknad inte är lätt att slå (förvaltares bristande uthållighet), Shillers svar om arbitragens gränser, Samuelsons skämt om nio förutsagda av de senaste fem recessionerna, samt räntekonditioneringen av berättigad CAPE. Eleven kan koppla ramverket till AK1TS: sentiment som cykelvariabel för att lokalisera fasen och dosera exponering — med kursens medgivna prognossvaghet — samt till AKM1:s V-variabler: att aldrig kapitalisera toppmarginaler (V07, V08), att normalisera före multiplar (V04, V05, V06), att läsa emissioner vid toppar genom V19 och återköp genom V20, och att hantera marginal of safety utan siffra som bredare krav vid extrema sentiment. Eleven kan slutligen tillämpa bostadsbubblans läxa (reala amerikanska bostadspriser i princip platta 1890–1997, myten om att bostäder alltid stiger, feedback- och hävstångsmekaniken) och verktygslådan för individen — diversifiering, mekanisk balansering, avstånd från hävstång, samt DCA med dess ärliga gränser (lump sum vinner i omkring två av tre historiska perioder; DCA:s värde är beteendemässigt) — i en trelagersmodell där fundament (V01–V20) avgör vad man äger, cykel och sentiment (AK1TS) hur mycket, och narrativ hur det känns.",
-  "why": "Ingen annan levande bok har förutsagt både 2000 och 2008 — och ingen annan ekonom har tvingat ämnet att ta psykologin på allvar med samma empiriska tyngd. Irrational Exuberance är grundvalen för allt i AK1A som handlar om sentiment, cykler och berättelser: AK1TS:s sentimentskala är i praktiken Shillers katedral byggd i mätbar form, och AKM1:s krav på normaliserade fundament (V07–V08 före V04–V06) är CAPE-tänkandet tillämpat per aktie. Samtidigt kräver kursens heder att kontroversen tas på allvar: samma kommitté som gav Shiller priset 2013 gav det också Fama, och CAPE:s svaghet som tidtagare — hög i decennier utan krasch, ifrågasatt av räntenivån och redovisningsvalen — är ingen fotnot utan huvudfakt. Den som förstår både Shillers bevis och Famas invändningar vet varför AK1A varken tajmar marknaden eller dyrkar den: pris är en signal, aldrig en sanning.",
+  "why": "Ingen annan levande bok har förutsagt både 2000 och 2008 — och ingen annan ekonom har tvingat ämnet att ta psykologin på allvar med samma empiriska tyngd. Irrational Exuberance är grundvalen för allt i AK1A som handlar om sentiment, cykler och berättelser: AK1TS:s sentimentskala är i praktiken Shillers katedral byggd i mätbar form, och AKM1:s krav på normaliserade fundament (V07–V08 före V04–V06) är CAPE-tänkandet tillämpat per aktie. Samtidigt kräver kursens heder att kontroversen tas på allvar: samma kommitté som gav Shiller priset 2013 gav det också Fama, och CAPE:s svaghet som tidtagare — hög i decennier utan krasch, ifrågasatt av räntenivån och redovisningsvalen — är ingen fotnot utan huvudfaktum. Den som förstår både Shillers bevis och Famas invändningar vet varför AK1A varken tajmar marknaden eller dyrkar den: pris är en signal, aldrig en sanning.",
   "chapters_list": [
     "1. Irrationell entusiasm — frasen, boken och de två varningarna",
     "2. Överflödig volatilitet — 1981 års bomb",
@@ -243,7 +243,7 @@
         {
           "q": "Vad är utdelningspolitikens roll i Shillers genomgång av förklaringarna?",
           "alternativ": [
-            "Utdelningskapningar är den främsta orsaken till börssvängningar",
+            "Utdelningsnedskärningar är den främsta orsaken till börssvängningar",
             "Utdelningar växer alltid snabbare än vinster i boomer",
             "Utdelningsandelen varierar så kraftigt att den förklarar nästan all variation",
             "Utdelningar utjämnas medvetet av styrelser och förändras för lite för att förklara svängningarna"
@@ -269,10 +269,11 @@
         },
         {
           "type": "text",
-          "content": "Rörledningarna: 401(k)-planerna och den explosionsartade fondexpansionen skapade månadsflöden som köpte oavsett pris — efterfrågan utan priskänslighet, en mekanisk uppgångsmotor så länge löner rinner in. Rabattmäklare, daghandel och dygnet-runt-handel höjde omsättningsvolymen (i sig en signal, och dessutom en nybörjarfabrik: daghandlaren lärde sig risk som underhållning). Hasardspelkulturen — kasinon, lotterier, pokern — normaliserade risksökandet. Och den låga inflationen bidrog genom penningillusionen: när inflationen sjönk kändes aktierna trygga på ett sätt som inte var motiverat av någon reel förändring — Modigliani–Cohn-effekten, där investerare blandar ihop reala och nominella storleter. Den tolfte faktorn är själva ny-eran-optimismen: den allmänna känslan av att den här gången är allt annorlunda."},
+          "content": "Rörledningarna: 401(k)-planerna och den explosionsartade fondexpansionen skapade månadsflöden som köpte oavsett pris — efterfrågan utan priskänslighet, en mekanisk uppgångsmotor så länge löner rinner in. Rabattmäklare, daghandel och dygnet-runt-handel höjde omsättningsvolymen (i sig en signal, och dessutom en nybörjarfabrik: daghandlaren lärde sig risk som underhållning). Hasardspelkulturen — kasinon, lotterier, pokern — normaliserade risksökandet. Och den låga inflationen bidrog genom penningillusionen: när inflationen sjönk kändes aktierna trygga på ett sätt som inte var motiverat av någon reell förändring — Modigliani–Cohn-effekten, där investerare blandar ihop reala och nominella storlekar. Den tolfte faktorn är själva ny-eran-optimismen: den allmänna känslan av att den här gången är allt annorlunda."
+        },
         {
           "type": "text",
-          "content": "Det avgörande är vad dessa faktorer inte är. Ingen av dem ökar ett bolags framtida kassaflöden med en enda dollar — de ökar köplusten, berättarnas trovärdighet och penningmängden som jagar aktier. En faktor som höjer priset utan att höja kassaflöden är per definition ett bubbelinput, hur plausibel dess yta än är. Faktorerna verkar dessutom inte additivt utan multiplicerande: internet gav storyn, medien spred den, 401(k) finansierade den, analytikerna motiverade den, spelkulturen gjorde spänningen önskvärd. Därför känns bubblemiljöer inifrån självklara: varje kanal pekar samma håll."
+          "content": "Det avgörande är vad dessa faktorer inte är. Ingen av dem ökar ett bolags framtida kassaflöden med en enda dollar — de ökar köplusten, berättarnas trovärdighet och penningmängden som jagar aktier. En faktor som höjer priset utan att höja kassaflöden är per definition ett bubbelinput, hur plausibel dess yta än är. Faktorerna verkar dessutom inte additivt utan multiplicerande: internet gav storyn, medierna spred den, 401(k) finansierade den, analytikerna motiverade den, spelkulturen gjorde spänningen önskvärd. Därför känns bubblemiljöer inifrån självklara: varje kanal pekar samma håll."
         },
         {
           "type": "tabell",
@@ -304,7 +305,7 @@
           "tips": "Fråga vad faktorn gör med efterfrågan respektive med bolagets kassaflöde."
         },
         {
-          "q": "Vilken av de tolv faktorerna bygger på penningillusionen — förväxlingen av reala och nominella storleter?",
+          "q": "Vilken av de tolv faktorerna bygger på penningillusionen — förväxlingen av reala och nominella storlekar?",
           "alternativ": [
             "Hasardspelkulturen",
             "Födelsekohorterna",
@@ -331,7 +332,7 @@
       "num": 5,
       "minutes": 10,
       "title": "Feedback-loopar och naturliga Ponzi-scheman",
-      "intro": "Här är maskinrummet: pris-till-pris-feedback. Stigande kurser producerar förväntan om fortsatt stigning, förväntan producerar köp, köpen producerar stigningen som bekräftar förväntan. Shiller kallar strukturen ett naturligt uppkommet Ponzi-skeema — utan bedragare, utan plan, med uppriktiga deltagare.",
+      "intro": "Här är maskinrummet: pris-till-pris-feedback. Stigande kurser producerar förväntan om fortsatt stigning, förväntan producerar köp, köpen producerar stigningen som bekräftar förväntan. Shiller kallar strukturen ett naturligt uppkommet Ponzi-schema — utan bedragare, utan plan, med uppriktiga deltagare.",
       "blocks": [
         {
           "type": "text",
@@ -339,7 +340,7 @@
         },
         {
           "type": "text",
-          "content": "Uttrycket naturligt Ponzi-skeema är Shillers mest träffande mynt. En klassisk Ponzi-plan betalar tidiga investerare med senares insatser; en börsbubbel gör samma sak — de som köpte tidigt får sina vinster betalda av dem som strömmar in sent — men utan att någon dirigerar det. Ingen ljuger (de flesta är uppriktigt övertygade), ingen planerar utfaset, och strukturen är dessutom laglig och decentraliserad. Just därför är den stabilare än bedragarens variant: den kräver bara att tillräckligt många oprövat samma slutsats — att kursen stigit, alltså kommer den att stiga."
+          "content": "Uttrycket naturligt Ponzi-schema är Shillers mest träffande mynt. En klassisk Ponzi-plan betalar tidiga investerare med senares insatser; en börsbubbel gör samma sak — de som köpte tidigt får sina vinster betalda av dem som strömmar in sent — men utan att någon dirigerar det. Ingen ljuger (de flesta är uppriktigt övertygade), ingen planerar utfasningen, och strukturen är dessutom laglig och decentraliserad. Just därför är den stabilare än bedragarens variant: den kräver bara att tillräckligt många oprövat samma slutsats — att kursen stigit, alltså kommer den att stiga."
         },
         {
           "type": "text",
@@ -368,7 +369,7 @@
       ],
       "quiz": [
         {
-          "q": "Vad är ett naturligt uppkommet Ponzi-skeema enligt Shiller?",
+          "q": "Vad är ett naturligt uppkommet Ponzi-schema enligt Shiller?",
           "alternativ": [
             "En plan som en enskild bedragare konstruerar och dirigerar",
             "En struktur där tidiga köpare betalas av senares inflöden — men som uppstår av sig själv, utan bedragare och med uppriktiga deltagare",
@@ -422,7 +423,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-översättningen är en omvänd prioritering: mät prevalens, inte plausibilitet. En berättelses marknadskraft är en funktion av hur många som bär den och hur länge de burit den — inte av hur vettig den låter i ett mötesrum. Den praktiska disciplinen: räkna exponeringar (gårdagens genomläsning av flödet: hur många gånger dök temet upp?), notera bärande moral (»vinnaren tar allt«, »de slutar inte göra mer mark«, »den här gången är annorlunda«) och kräv falsifierbarhet — skriv ner vad som skulle visa att berättelsen är fel, i förväg, när den fortfarande känns sann. Det du inte kan falsifiera är inte en analys utan en infektion du bär."
+          "content": "AKM1-översättningen är en omvänd prioritering: mät prevalens, inte plausibilitet. En berättelses marknadskraft är en funktion av hur många som bär den och hur länge de burit den — inte av hur vettig den låter i ett mötesrum. Den praktiska disciplinen: räkna exponeringar (gårdagens genomläsning av flödet: hur många gånger dök temat upp?), notera bärande moral (»vinnaren tar allt«, »de slutar inte göra mer mark«, »den här gången är annorlunda«) och kräv falsifierbarhet — skriv ner vad som skulle visa att berättelsen är fel, i förväg, när den fortfarande känns sann. Det du inte kan falsifiera är inte en analys utan en infektion du bär."
         },
         {
           "type": "tabell",
@@ -781,7 +782,7 @@
       "num": 11,
       "minutes": 10,
       "title": "Bostadsbubblan — myten om att bostäder alltid stiger",
-      "intro": "Andra upplagans bostadskapitel (2005) börjar med det fakt som ingen ville höra: de reala amerikanska bostadspriserna hade varit i princip oförändrade sedan 1890 — och hade därefter fördubblats på åtta år, förklarat med en kulturell sanning: bostäder stiger alltid. Det var samma feedback, samma ankare och samma berättelseepidemi som i aktiemanin — men med hävstång och hemma-hos-metaforen inbyggd.",
+      "intro": "Andra upplagans bostadskapitel (2005) börjar med det faktum som ingen ville höra: de reala amerikanska bostadspriserna hade varit i princip oförändrade sedan 1890 — och hade därefter fördubblats på åtta år, förklarat med en kulturell sanning: bostäder stiger alltid. Det var samma feedback, samma ankare och samma berättelseepidemi som i aktiemanin — men med hävstång och hemma-hos-metaforen inbyggd.",
       "blocks": [
         {
           "type": "text",
@@ -872,7 +873,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-portföljöversättningen: bubblerisiko är mer än drawdown. Det är sekvensrisk — att gå i pension vid toppen och kombinera utförsäljning med kohortens pessimism; det är berättelsekoncentration — 1999 var »internet«, 2021 var »SaaS och AI«: en portfölj kan vara sektordiversifierad på pappret och narrativt koncentrerad i verkligheten; och det är checklistans egen korruption — vid toppen poängsätts V15 nätverkseffekter och V16 produktlanseringar generöst, för att berättelsen kräver det. Motgiftet är procedurellt: poängsätt alltid björncaset först, sära berättelsekategorierna i portföljen (vilken enskild story förklarar merparten av bokvärdet?), och läs nettoemissioner (V19) mot återköp (V20) som cykeldata — inte som attribut."
+          "content": "AKM1-portföljöversättningen: bubblerisk är mer än drawdown. Det är sekvensrisk — att gå i pension vid toppen och kombinera utförsäljning med kohortens pessimism; det är berättelsekoncentration — 1999 var »internet«, 2021 var »SaaS och AI«: en portfölj kan vara sektordiversifierad på pappret och narrativt koncentrerad i verkligheten; och det är checklistans egen korruption — vid toppen poängsätts V15 nätverkseffekter och V16 produktlanseringar generöst, för att berättelsen kräver det. Motgiftet är procedurellt: poängsätt alltid björncaset först, sära berättelsekategorierna i portföljen (vilken enskild story förklarar merparten av bokvärdet?), och läs nettoemissioner (V19) mot återköp (V20) som cykeldata — inte som attribut."
         },
         {
           "type": "tabell",

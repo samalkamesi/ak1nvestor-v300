@@ -676,7 +676,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Öppenhetens och integritetens trafikljus\",\"rader\":[[\"Område\",\"Grönt ljus\",\"Rött ljus\"],[\"Dåliga nyheter\",\"Berättar, förklarar, åtgärdar\",\"Tystnad, omskrivningar, skuld på marknaden\"],[\"Insider-affärer\",\"Köp av grundare med egen ficka\",\"Kluvna program, försäljningar före besvikelser\"],[\"Närstående\",\"Marknadspriser, oberoende granskning\",\"Transaktioner till egna priser\"],[\"Optioner\",\"Utfärdande till ägarnừ gagn\",\"Ständiga ompriseringar till förmån för ledningen\"],[\"Ägarbild\",\"Långsiktiga huvudägare med kapital i bolaget\",\"Kontroll utan ägande, kortistisk dominans\"]]}"
+          "content": "{\"rubrik\":\"Öppenhetens och integritetens trafikljus\",\"rader\":[[\"Område\",\"Grönt ljus\",\"Rött ljus\"],[\"Dåliga nyheter\",\"Berättar, förklarar, åtgärdar\",\"Tystnad, omskrivningar, skuld på marknaden\"],[\"Insider-affärer\",\"Köp av grundare med egen ficka\",\"Kluvna program, försäljningar före besvikelser\"],[\"Närstående\",\"Marknadspriser, oberoende granskning\",\"Transaktioner till egna priser\"],[\"Optioner\",\"Utfärdande till ägarnas gagn\",\"Ständiga ompriseringar till förmån för ledningen\"],[\"Ägarbild\",\"Långsiktiga huvudägare med kapital i bolaget\",\"Kontroll utan ägande, kortistisk dominans\"]]}"
         },
         {
           "type": "insikt",

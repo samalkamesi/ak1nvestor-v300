@@ -64,7 +64,7 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Ta fram en årsredovisning för ett bolag du äger eller bevakar. Räkna sidorna: hur många sidor är resultatrapport och balansräkning, och hur många sidor är noter? Bläddra sedan till revisorsutlåtandet och läs de tre sista meningarna — där framgår om revisorn haft något att invända. Notera din magekänsla före och efter: det är källkritikarbetets första repetition."
+          "content": "🎯 Ta fram en årsredovisning för ett bolag du äger eller bevakar. Räkna sidorna: hur många sidor är resultatrapport och balansräkning, och hur många sidor är noter? Bläddra sedan till revisorsutlåtandet och läs de tre sista meningarna — där framgår om revisorn haft något att invända. Notera din magkänsla före och efter: det är källkritikarbetets första repetition."
         }
       ],
       "quiz": [
@@ -190,7 +190,7 @@
         },
         {
           "type": "text",
-          "content": "Luckin Coffee är kategoriens moderna standardfall. Bolaget grundades 2017, noterades på Nasdaq i maj 2019 och växte snabbare än någon kafakedja före den. Den 31 januari 2020 publicerades en anonym kortrapport (som Muddy Waters ställde sig bakom och själv blankade) med bland annat CCTV-räknade kundflöden och kvitton från butiker. Den 2 april 2020 erkände bolaget att COO:n och medarbetare fabricerat cirka 2,2 miljarder yuan — omkring 310 miljoner dollar — i försäljning under andra till fjärde kvartalet 2019, bland annat genom kopongförsäljning till bolag kopplade till anställda. I juni 2020 avnoterades aktien. Mekaniken: falska transaktioner genom relaterade parter, som ser ut som försäljning men aldrig blir kassa."
+          "content": "Luckin Coffee är kategoriens moderna standardfall. Bolaget grundades 2017, noterades på Nasdaq i maj 2019 och växte snabbare än någon kafakedja före den. Den 31 januari 2020 publicerades en anonym kortrapport (som Muddy Waters ställde sig bakom och själv blankade) med bland annat CCTV-räknade kundflöden och kvitton från butiker. Den 2 april 2020 erkände bolaget att COO:n och medarbetare fabricerat cirka 2,2 miljarder yuan — omkring 310 miljoner dollar — i försäljning under andra till fjärde kvartalet 2019, bland annat genom kupongförsäljning till bolag kopplade till anställda. I juni 2020 avnoterades aktien. Mekaniken: falska transaktioner genom relaterade parter, som ser ut som försäljning men aldrig blir kassa."
         },
         {
           "type": "text",
@@ -202,7 +202,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Fiktiva intäkter: fall, mekanik och avslöjande\",\"rader\":[[\"Fall\",\"Mekanik\",\"Avslöjades genom\"],[\"ZZZZ Best 1987\",\"Påhittade restaureringskontrakt\",\"Revisor godtog förfalskade kontoutdrag i stället för bankbekräftelser\"],[\"HealthSouth 1996-2003\",\"Toppenstyrda poster som stängde gapet mot estimates\",\"CFO-visselblåsare, FBI, SEC 2003\"],[\"Luckin 2019\",\"Kopongsförsäljning till kopplade bolag; falska order\",\"Anonym rapport med butiksdata; bolagets egen utredning 2020\"],[\"Satyam 2009\",\"Fejkad kassa och kundfordringar\",\"Grundarens eget bekännelsebrev när bluffen inte längre kunde rullas\"]]}"
+          "content": "{\"rubrik\":\"Fiktiva intäkter: fall, mekanik och avslöjande\",\"rader\":[[\"Fall\",\"Mekanik\",\"Avslöjades genom\"],[\"ZZZZ Best 1987\",\"Påhittade restaureringskontrakt\",\"Revisor godtog förfalskade kontoutdrag i stället för bankbekräftelser\"],[\"HealthSouth 1996-2003\",\"Toppenstyrda poster som stängde gapet mot estimates\",\"CFO-visselblåsare, FBI, SEC 2003\"],[\"Luckin 2019\",\"Kupongförsäljning till kopplade bolag; falska order\",\"Anonym rapport med butiksdata; bolagets egen utredning 2020\"],[\"Satyam 2009\",\"Fejkad kassa och kundfordringar\",\"Grundarens eget bekännelsebrev när bluffen inte längre kunde rullas\"]]}"
         },
         {
           "type": "utmaning",
@@ -214,7 +214,7 @@
           "q": "Hur fabricerade Luckin Coffee i huvudsak sin försäljning 2019?",
           "alternativ": [
             "Genom att kapitalisera butikskostnader",
-            "Genom kopong- och orderförsäljning till bolag kopplade till anställda",
+            "Genom kupong- och orderförsäljning till bolag kopplade till anställda",
             "Genom att sälja tilläggsförsäkringar till kunder",
             "Genom att förlänga avskrivningstider på kaffemaskiner"
           ],
@@ -233,7 +233,7 @@
           "tips": "Frågan är vem som producerade underlaget — bolaget självt eller banken?"
         },
         {
-          "q": "HealthSouths falska poster kallades internt poster som skulle ”fylla gapet”. Vad säger det om mekaniken?",
+          "q": "HealthSouths falska poster kallades internt för poster som skulle ”fylla gapet”. Vad säger det om mekaniken?",
           "alternativ": [
             "Bedrägeriet styrdes uppifrån med target first — siffran sattes först, dokumenten sen",
             "Posterna var slumpmässiga datafel",
@@ -293,7 +293,7 @@
           "tips": "Tänk på vad marknaden gör med en intäkt den tror återkommer varje år."
         },
         {
-          "q": "Vad var kärnan i Dells enligt SEC granskade intäktsöverföring?",
+          "q": "Vad var kärnan i Dells av SEC granskade intäktsöverföring?",
           "alternativ": [
             "Försäljning av datorer som inte levererats",
             "Hemliga Intel-betalningar som täckte vinstmål men inte exponerades som beroende",
@@ -565,7 +565,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Kategori 7: teknik, mekanik och signal\",\"rader\":[[\"Teknik\",\"Mekanik\",\"Signal\"],[\"Leverantörsfinansiering\",\"Bank betalar leverantör; bolaget betalar banken senare\",\"Not om leverantörsprogram; DPO stiger strukturellt\"],[\"Betalningsdröjsel i Q4\",\"Leverantörer betalas efter kvartalsskiftet\",\"DPO-topp i Q4 som återställs i Q1\"],[\"Ständig fordringsförsäljning\",\"Ford ringar säljs löpande till bank\",\"Not om factoring; DSO faller utan att kunderna betalar snabbare\"],[\"Felaktig rubrik\",\"Investering/finansiering kallas drift\",\"Klassificeringsändringar i fotnoter mellan år\"]]}"
+          "content": "{\"rubrik\":\"Kategori 7: teknik, mekanik och signal\",\"rader\":[[\"Teknik\",\"Mekanik\",\"Signal\"],[\"Leverantörsfinansiering\",\"Bank betalar leverantör; bolaget betalar banken senare\",\"Not om leverantörsprogram; DPO stiger strukturellt\"],[\"Betalningsdröjsel i Q4\",\"Leverantörer betalas efter kvartalsskiftet\",\"DPO-topp i Q4 som återställs i Q1\"],[\"Ständig fordringsförsäljning\",\"Fordringar säljs löpande till bank\",\"Not om factoring; DSO faller utan att kunderna betalar snabbare\"],[\"Felaktig rubrik\",\"Investering/finansiering kallas drift\",\"Klassificeringsändringar i fotnoter mellan år\"]]}"
         },
         {
           "type": "utmaning",
@@ -908,7 +908,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Luckin Coffee grundades 2017, noterades på Nasdaq i maj 2019 och lovade att slå Starbucks i Kina med appar, koponger och upphämtningsbutiker i kontor och gallerior. I januari 2020 publicerades en anonym kortrapport — med Muddy Waters som mest kända spridare och blankare — byggd på täckande butiksbesök, CCTV-räknade kunder och insamlade kvitton. Rapporten hävdade att butiksnivåförsäljningen var kraftigt uppblåst. Den 2 april 2020 meddelade bolaget att en intern utredning funnit att COO Jian Liu och medarbetare fabricerat transaktioner för cirka 2,2 miljarder yuan (omkring 310 miljoner dollar) under 2019 — bland annat kopongförsäljning genom bolag kopplade till anställda, som skickade falska orderflöden tillbaka in i resultaträkningen. I juni 2020 avnoterades aktien. Kategori två, exekverad i en app-ekonomi: volymen fanns i systemet men inte i kassan."
+          "content": "Luckin Coffee grundades 2017, noterades på Nasdaq i maj 2019 och lovade att slå Starbucks i Kina med appar, kuponger och upphämtningsbutiker i kontor och gallerior. I januari 2020 publicerades en anonym kortrapport — med Muddy Waters som mest kända spridare och blankare — byggd på täckande butiksbesök, CCTV-räknade kunder och insamlade kvitton. Rapporten hävdade att butiksnivåförsäljningen var kraftigt uppblåst. Den 2 april 2020 meddelade bolaget att en intern utredning funnit att COO Jian Liu och medarbetare fabricerat transaktioner för cirka 2,2 miljarder yuan (omkring 310 miljoner dollar) under 2019 — bland annat kupongförsäljning genom bolag kopplade till anställda, som skickade falska orderflöden tillbaka in i resultaträkningen. I juni 2020 avnoterades aktien. Kategori två, exekverad i en app-ekonomi: volymen fanns i systemet men inte i kassan."
         },
         {
           "type": "text",
@@ -928,7 +928,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Luckin och Wirecard: mekanik och spegling\",\"rader\":[[\"Inslag\",\"Luckin 2020\",\"Wirecard 2020\"],[\"Fabricerat\",\"2,2 Md RMB (~310 M USD) falsk försäljning\",\"1,9 Md EUR påstådda escrow-konton\"],[\"Mekanik\",\"Kopongförsäljning via kopplade bolag (kat. 2)\",\"Påstådd TPA-kassa som inte existerade (kat. 2+7)\"],[\"Detektor\",\"Anonym rapport: butiksdata, CCTV, kvitton\",\"FT-journalistik; KPMG kunde inte bekräfta kassan\"],[\"Ledningens svar\",\"Intern utredning; COO avskedad\",\"Hot om stämningar; BaFin förbjöd blankning\"],[\"Slut\",\"Avnoterad juni 2020\",\"Insolvens juni 2020; VD greps; COO försvann\"]]}"
+          "content": "{\"rubrik\":\"Luckin och Wirecard: mekanik och spegling\",\"rader\":[[\"Inslag\",\"Luckin 2020\",\"Wirecard 2020\"],[\"Fabricerat\",\"2,2 Md RMB (~310 M USD) falsk försäljning\",\"1,9 Md EUR påstådda escrow-konton\"],[\"Mekanik\",\"Kupongförsäljning via kopplade bolag (kat. 2)\",\"Påstådd TPA-kassa som inte existerade (kat. 2+7)\"],[\"Detektor\",\"Anonym rapport: butiksdata, CCTV, kvitton\",\"FT-journalistik; KPMG kunde inte bekräfta kassan\"],[\"Ledningens svar\",\"Intern utredning; COO avskedad\",\"Hot om stämningar; BaFin förbjöd blankning\"],[\"Slut\",\"Avnoterad juni 2020\",\"Insolvens juni 2020; VD greps; COO försvann\"]]}"
         },
         {
           "type": "visuell",
@@ -946,7 +946,7 @@
             "Kapitaliserade butikshyror",
             "Dolda skulder i specialbolag",
             "Underskattade garantikostnader",
-            "Fabricerad försäljning — cirka 2,2 miljarder yuan — bland annat via kopongförsäljning till bolag kopplade till anställda"
+            "Fabricerad försäljning — cirka 2,2 miljarder yuan — bland annat via kupongförsäljning till bolag kopplade till anställda"
           ],
           "ratt": 3,
           "tips": "Sök mekanismen bland kategorierna: volym som fanns i systemen men aldrig blev pengar."

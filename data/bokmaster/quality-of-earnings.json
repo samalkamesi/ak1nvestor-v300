@@ -12,18 +12,66 @@
   "learn": "Efter kursen kan eleven förklara Thornton O'Gloves huvudtes från Quality of Earnings (1987) — att resultaträkningen aldrig får läsas ensam, utan alltid tillsammans med kassaflödesdata och de förklarande noterna — och tillämpa hela hans detektorsystem på riktiga svenska årsredovisningar (K3). Eleven kan beräkna och tolka försäljning/fordringar-kvoten och DSO (kundfordringarnas omsättningsdagar) och känna igen O'Gloves varning nummer ett: att kundfordringar växer markant snabbare än försäljningen (V01). Eleven kan analysera lagret via inventory/sales-kvoten och lageromsättningsdagar, läsa hela rörelsekapitalet (fordringar, lager, leverantörsskulder) som en avvikelseanalys mot försäljningstillväxten (stöd: V12 intäktsstabilitet) och skilja hälsosam negativ kassacykel från stress, samt tolka bruttomarginalens trend (V07) och EBITDA-marginalens (V08) relation till avskrivningsvalen. Eleven kan vidare identifiera återkommande 'engångsposter' (jämförelsestörande poster) och själv bygga kärnvinst — O'Gloves 'core earnings' avant la lettre — beräkna hur livslängdsval i avskrivningar och pensionsantaganden (V10 skuldsättningsgrad, V11 likviditet) flyttar vinst utan att röra en enda krona kassa, samt pröva utdelningens och återköpens (V20) kvalitet mot det operativa kassaflödet och kapitalförbrukningen (V19). Eleven kan slutligen köra O'Gloves masterchecklista — fem frågor på tio år av siffror, alltid i jämförelse med konkurrenter — som kvalitetsgrind före all värdering i AKM1, med marginal of safety (utan V-nummer) som principen att ett rättvist pris på dåliga siffror fortfarande är en dålig affär.",
   "why": "Quality of Earnings (1987) är boken som gav fenomenet dess namn: Thornton O'Glove — tidigare securitiesanalytiker och utgivare av nyhetsbrevet med samma namn — skrev den i junkbond- och LBO-erans USA, fem år före Schilits Financial Shenanigans och fjorton år före Enron, och lärde en hel generation att fråga inte 'hur mycket' ett bolag tjänar utan 'hur'. För AKM1-ekosystemet är boken den historiska roten till all redovisningskällkritik: Schilit byggde vidare på O'Glove, och efterföljarnas berömda formulering — att om man bara fick äga en enda finansiell rapport skulle det vara kassaflödesanalysen — är bara en komprimering av O'Gloves paradigm, medan mästaren själv betonade kombinationen av alla tre rapporterna. Där Schilit katalogiserar manipulationen levererar O'Glove hantverket: försäljning/fordringar-kvoten som varning nummer ett, inventory/sales, marginaltrenden (V07), de återkommande engångsposterna (stöd: V12), avskrivnings- och pensionsgranskning (V08, V10, V11) och utdelningens kvalitet (V19, V20) — allt med S&P-rapporternas tioåriga dataserier som verktyg, här översatt till svenska förhållanden med K3, notsystemet och offentliga årsredovisningar. Boken citeras och återges öppet i kursen; en 1987-metod som fortfarande fångar moderna fall är den starkaste möjliga grundvalen under varje nyckeltal i AKM1.",
   "chapters_list": [
-    { "num": 1, "title": "O'Glove 1987 — pionjären som gav earnings quality dess namn", "minutes": 10 },
-    { "num": 2, "title": "Huvudtesen: tre rapporter, aldrig en — vinst, kassa och noter", "minutes": 10 },
-    { "num": 3, "title": "S&P-rapporten — detektivens dataunderlag och earnings-opinioner", "minutes": 10 },
-    { "num": 4, "title": "Varning nummer 1: kundfordringar, försäljningskvoten och DSO", "minutes": 10 },
-    { "num": 5, "title": "Lagret som lögndetektor — inventory/sales och lageromsättningsdagar", "minutes": 10 },
-    { "num": 6, "title": "Rörelsekapitalanalysen — balansräkningen avslöjar resultaträkningen", "minutes": 10 },
-    { "num": 7, "title": "Marginaltrenden — bruttomarginalens berättelse (V07)", "minutes": 10 },
-    { "num": 8, "title": "Engångsposternas återkommande natur — one-time som årsvana", "minutes": 10 },
-    { "num": 9, "title": "Avskrivningar — livslängdsvalet som tyst vinstmaskin (V08)", "minutes": 10 },
-    { "num": 10, "title": "Pension, avsättningar och gömda åtaganden (V10, V11)", "minutes": 10 },
-    { "num": 11, "title": "Utdelning, återköp och kassans kvalitet (V19, V20)", "minutes": 10 },
-    { "num": 12, "title": "Detektivens masterchecklista — noter, konkurrenter och AKM1", "minutes": 10 }
+    {
+      "num": 1,
+      "title": "O'Glove 1987 — pionjären som gav earnings quality dess namn",
+      "minutes": 10
+    },
+    {
+      "num": 2,
+      "title": "Huvudtesen: tre rapporter, aldrig en — vinst, kassa och noter",
+      "minutes": 10
+    },
+    {
+      "num": 3,
+      "title": "S&P-rapporten — detektivens dataunderlag och earnings-opinioner",
+      "minutes": 10
+    },
+    {
+      "num": 4,
+      "title": "Varning nummer 1: kundfordringar, försäljningskvoten och DSO",
+      "minutes": 10
+    },
+    {
+      "num": 5,
+      "title": "Lagret som lögndetektor — inventory/sales och lageromsättningsdagar",
+      "minutes": 10
+    },
+    {
+      "num": 6,
+      "title": "Rörelsekapitalanalysen — balansräkningen avslöjar resultaträkningen",
+      "minutes": 10
+    },
+    {
+      "num": 7,
+      "title": "Marginaltrenden — bruttomarginalens berättelse (V07)",
+      "minutes": 10
+    },
+    {
+      "num": 8,
+      "title": "Engångsposternas återkommande natur — one-time som årsvana",
+      "minutes": 10
+    },
+    {
+      "num": 9,
+      "title": "Avskrivningar — livslängdsvalet som tyst vinstmaskin (V08)",
+      "minutes": 10
+    },
+    {
+      "num": 10,
+      "title": "Pension, avsättningar och gömda åtaganden (V10, V11)",
+      "minutes": 10
+    },
+    {
+      "num": 11,
+      "title": "Utdelning, återköp och kassans kvalitet (V19, V20)",
+      "minutes": 10
+    },
+    {
+      "num": 12,
+      "title": "Detektivens masterchecklista — noter, konkurrenter och AKM1",
+      "minutes": 10
+    }
   ],
   "chapters": [
     {
@@ -405,7 +453,7 @@
         },
         {
           "type": "text",
-          "content": "Kassacykeln (cash conversion cycle) samlar de tre posterna i ett enda mått: DSO + lageromsättningsdagar − betaltid till leverantörer (DPO, leverantörsskulder / inköp eller försäljning × 365). Måttet säger hur många dagar som passerar mellan att bolaget betalar sina leverantörer och tar emot kundernas pengar — kortare cykel är i regel bättre. Räkneexempel: DSO 62 + lagerdagar 85 − DPO 38 = kassacykel 109 dagar. Året därpå: DSO 74 + lagerdagar 95 − DPO 30 = 139 dagar. Cykeln har förlängts med 30 dagar — vid en daglig driftskostnad på exempelvis 1,2 Mkr är det 36 Mkr kassa som bundits under året, helt osynligt i resultaträkningen men fullt synligt i kassaflödet och i bolagets ökade beroende av kassakrediten. Följ kassacykeln år från år som en enda detektor: en trend uppåt två år i rad, utan branschförklaring, är en av de starkaste helhetssignalerna i O'Gloves system (stöd: V12 — intäkternas kvalitet visar sig i hur stabilt de konverteras till kassa)."
+          "content": "Kassacykeln (cash conversion cycle) samlar de tre posterna i ett enda mått: DSO + lageromsättningsdagar − betaltid till leverantörer (DPO, leverantörsskulder / inköp eller försäljning × 365). Måttet säger hur många dagar som passerar mellan att bolaget betalar sina leverantörer och tar emot kundernas pengar — kortare cykel är i regel bättre. Räkneexempel: DSO 62 + lagerdagar 85 − DPO 38 = kassacykel 109 dagar. Året därpå: DSO 74 + lagerdagar 95 − DPO 30 = 139 dagar. Cykeln har förlängts med 30 dagar — vid en daglig driftskostnad på exempelvis 1,2 Mkr är det 36 Mkr kassa som bunds under året, helt osynligt i resultaträkningen men fullt synligt i kassaflödet och i bolagets ökade beroende av kassakrediten. Följ kassacykeln år från år som en enda detektor: en trend uppåt två år i rad, utan branschförklaring, är en av de starkaste helhetssignalerna i O'Gloves system (stöd: V12 — intäkternas kvalitet visar sig i hur stabilt de konverteras till kassa)."
         },
         {
           "type": "text",
@@ -476,7 +524,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Bruttomarginalen (V07 i AKM1) — bruttovinsten delat med omsättningen — är enligt O'Gloves anda den mest ärliga raden i resultaträkningen. Den ligger långt ifrån finansiella poster, engångsvinster och skatteeffekter; den mäter en enda sak: vad bolaget får behålla av varje såld krona efter varans kostnad. Därför är trenden så informativ. Räkneexempel, tre år: År 1: omsättning 1 000, varukostnad 580 — bruttomarginal 42,0 procent. År 2: omsättning 1 120, varukostnad 627 — 44,0 procent. År 3: omsättning 1 254, varukostnad 683 — 45,5 procent. Marginalhöjningen på 3,5 procentenheter kan verka liten, men effekten är enorm: bruttovinsten har vuxit från 420 till 571 Mkr (+36 procent) medan omsättningen vuxit 25 procent. En stigande bruttomarginal komposterar — varje ny procentenhet landar direkt i rörelseresultatet. Omvänt: en fallande bruttomarginal är en varning långt innan vinsten synker, eftersom volymen kan dölja försämringen i år, men inte i morgon."
+          "content": "Bruttomarginalen (V07 i AKM1) — bruttovinsten delat med omsättningen — är enligt O'Gloves anda den mest ärliga raden i resultaträkningen. Den ligger långt ifrån finansiella poster, engångsvinster och skatteeffekter; den mäter en enda sak: vad bolaget får behålla av varje såld krona efter varans kostnad. Därför är trenden så informativ. Räkneexempel, tre år: År 1: omsättning 1 000, varukostnad 580 — bruttomarginal 42,0 procent. År 2: omsättning 1 120, varukostnad 627 — 44,0 procent. År 3: omsättning 1 254, varukostnad 683 — 45,5 procent. Marginalhöjningen på 3,5 procentenheter kan verka liten, men effekten är enorm: bruttovinsten har vuxit från 420 till 571 Mkr (+36 procent) medan omsättningen vuxit 25 procent. En stigande bruttomarginal kompounderar — varje ny procentenhet landar direkt i rörelseresultatet. Omvänt: en fallande bruttomarginal är en varning långt innan vinsten sjunker, eftersom volymen kan dölja försämringen i år, men inte i morgon."
         },
         {
           "type": "text",

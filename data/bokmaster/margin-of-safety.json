@@ -5,12 +5,12 @@
   "chapterCount": 14,
   "totalMinutes": 150,
   "title": "Margin of Safety — Klarman: KOMPLETT",
-  "summary": "Margin of Safety (1991) är Seth Klarmans slutsålda handbok i riskavert värdeinvestering — skriven med junk bond-erans kollaps och krachen 1987 i färskt minne. Kursen gör den svåråtkomliga kunskapen tillgänglig: marginal of safety som princip, bottoms-up-analys, konträrt tänkande vid pendelns extremlägen, jaktmarkerna där fynd verkligen finns och mekaniken i special situations steg för steg. Ingen »den här gången är det annorlunda«-berättelse överlever den här boken.",
+  "summary": "Margin of Safety (1991) är Seth Klarmans slutsålda handbok i riskavert värdeinvestering — skriven med junk bond-erans kollaps och kraschen 1987 i färskt minne. Kursen gör den svåråtkomliga kunskapen tillgänglig: marginal of safety som princip, bottoms-up-analys, konträrt tänkande vid pendelns extremlägen, jaktmarkerna där fynd verkligen finns och mekaniken i special situations steg för steg. Ingen »den här gången är det annorlunda«-berättelse överlever den här boken.",
   "minutes": 10,
   "xp": 2000,
   "level": "",
   "learn": "Efter kursen kan eleven förklara värdeinvesteringens tre pelare — marginal of safety, bottoms-up-analys och konträrt tänkande — och tillämpa dem på verkliga situationer; skilja permanent kapitalförlust från volatilitet och identifiera förlustkällorna belåning (V10), likviditet (V11), ostadiga intäkter (V12) och kapitalförbränning (V19); känna igen bubblors rationaliseringar från Milken-erans junk bonds och 1987 års portföljförsäkring och översätta dem till dagens mekanismer; kartlägga jaktmarkerna — kriser, tvångsförsäljningar, komplexitet, spin-offs och post-reorganisation — och steg för steg analysera arbitrage, merger securities, liquidations, rights offerings och thrift-konverteringar; samt hantera kassa som en medveten position, undvika spekulativa verktyg med negativ kompoundering och tänka som ägare med katalysatorer (V16-V18) och återköp (V20) som bonus.",
-  "why": "Klarmans bok är värdeinvesteringens svåråtkomliga ark — slutsåld sedan 1991, med begagnade exemplar som handlas för tusentals dollar medan Klarman själv har föreslagit att pengarna hellre borde gå till välgörenhet. Den är också den tydligaste bryggan mellan Grahams marginal of safety och en modern riskförståelse: permanent kapitalförlust är risken, inflationen den osynliga fienden och kassan ett aktivt val. För AKM1-ekosystemet levererar kursen både ramverket (V10-V12 stabilitet, V19 risk, katalysatorfamiljen V16-V18, V20 återköp) och historiens varnande exempel — Milken-eran och krachen 1987 — som gör teorin levande. Margin of safety självt är en princip utan V-nummer: den styr hur alla V-mått ska användas.",
+  "why": "Klarmans bok är värdeinvesteringens svåråtkomliga ark — slutsåld sedan 1991, med begagnade exemplar som handlas för tusentals dollar medan Klarman själv har föreslagit att pengarna hellre borde gå till välgörenhet. Den är också den tydligaste bryggan mellan Grahams marginal of safety och en modern riskförståelse: permanent kapitalförlust är risken, inflationen den osynliga fienden och kassan ett aktivt val. För AKM1-ekosystemet levererar kursen både ramverket (V10-V12 stabilitet, V19 risk, katalysatorfamiljen V16-V18, V20 återköp) och historiens varnande exempel — Milken-eran och kraschen 1987 — som gör teorin levande. Margin of safety självt är en princip utan V-nummer: den styr hur alla V-mått ska användas.",
   "chapters_list": [
     "1. Kasinot — där de flesta investerare går fel",
     "2. Marginal of safety — principen som gett boken dess namn",
@@ -202,7 +202,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Välj en sektor som alla älskar just nu. Skriv konsensustesen i en mening. Konstruera sedan den konträra mottesen: vad måste vara sant för att priset ska vara fel? Formulera slutligen ett bekräftelsekrav — vad konkret skulle få dig att överge mottesen? Utan det är konträrhet bara trots."
+          "content": "Välj en sektor som alla älskar just nu. Skriv konsensustesen i en mening. Konstruera sedan den konträra mot-tesen: vad måste vara sant för att priset ska vara fel? Formulera slutligen ett bekräftelsekrav — vad konkret skulle få dig att överge mottesen? Utan det är konträrhet bara trots."
         }
       ],
       "quiz": [
@@ -549,7 +549,7 @@
         },
         {
           "type": "text",
-          "content": "Resultatet blev självuppfyllande: ju mer marknaden föll, desto mer tvingades mekanismen sälja, vilket fick marknaden att falla mer. Dow föll 508 poäng, 22,6 procent, på en enda dag — och strategin som skulle skydda kapitalet blev katalysatorn till dess förstörelse. Klarman poäng: institutionerna hade rationaliserat sin spekulation som riskhantering — de hade en modell som fungerade i normala dagars små rörelser och kollapsade vid extremet, när korrelationen mellan alla deltagare gick mot ett."
+          "content": "Resultatet blev självuppfyllande: ju mer marknaden föll, desto mer tvingades mekanismen sälja, vilket fick marknaden att falla mer. Dow föll 508 poäng, 22,6 procent, på en enda dag — och strategin som skulle skydda kapitalet blev katalysatorn till dess förstörelse. Klarman poäng: institutionerna hade rationaliserat sin spekulation som riskhantering — de hade en modell som fungerade i normala dagars små rörelser och kollapsade vid extremen, när korrelationen mellan alla deltagare gick mot ett."
         },
         {
           "type": "text",
@@ -683,11 +683,11 @@
       "num": 10,
       "minutes": 10,
       "title": "Jaktmarker II: komplexitet, spin-offs och post-reorganisation",
-      "intro": "Den andra jaktmarken är det svåranalyserade och det okända: bolag ingen täcker, konglomerat ingen orkar räkna på, nyblivna spin-offs som hamnar hos ägare som inte vill ha dem och aktier i bolag som lämnat konkurs. Gemensamt: säljarna är strukturellt motiverade och »rampen motemot« — att köpa när trenden vänt sig — är ofta priset du får betala.",
+      "intro": "Den andra jaktmarken är det svåranalyserade och det okända: bolag ingen täcker, konglomerat ingen orkar räkna på, nyblivna spin-offs som hamnar hos ägare som inte vill ha dem och aktier i bolag som lämnat konkurs. Gemensamt: säljarna är strukturellt motiverade och »rampen mot dig« — att köpa när trenden vänt sig — är ofta priset du får betala.",
       "blocks": [
         {
           "type": "text",
-          "content": "Komplexitet och okändhet är fyndets vän: när ett papper är svårt att analysera — eller bara ouppmärksammat — överger instituten det. Små, oledade och olästa bolag handlas ofta under värde av samma skäl: ingen institution får äga dem (för litet för mandatet) och ingen analys täcker dem. Konglomeratets rabatt hör hit: när intäkterna är spridda över många verksamheter (V03 intäktsdiversifiering i överflöd) blir värderingsarbetet så trögt att summan av delarna säljs med rabatt — ibland djup sådan."
+          "content": "Komplexitet och okändhet är fyndets vän: när ett papper är svårt att analysera — eller bara ouppmärksammat — överger instituten det. Små, oledda och olästa bolag handlas ofta under värde av samma skäl: ingen institution får äga dem (för litet för mandatet) och ingen analys täcker dem. Konglomeratets rabatt hör hit: när intäkterna är spridda över många verksamheter (V03 intäktsdiversifiering i överflöd) blir värderingsarbetet så trögt att summan av delarna säljs med rabatt — ibland djup sådan."
         },
         {
           "type": "text",
@@ -738,7 +738,7 @@
           "tips": "Vad ville kreditörerna ha från rekonstruktionen — aktier eller pengar?"
         },
         {
-          "q": "Vad menas med att köpa »rampen motemot«?",
+          "q": "Vad menas med att köpa »rampen mot dig«?",
           "alternativ": [
             "Att korta aktier i stark upptrend",
             "Att handela så ofta att trenden spelar mindre roll",

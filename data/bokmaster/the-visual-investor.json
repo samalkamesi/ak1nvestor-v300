@@ -146,7 +146,7 @@
       "quiz": [
         {
           "q": "Vad definierar en upptrend enligt Murphy?",
-            "alternativ": [
+          "alternativ": [
             "Kursen över 100-dagarsmedelvärdet",
             "Tre dagar i rad med stigande kurser",
             "En sekvens av högre toppar och högre lågpunkter",
@@ -371,7 +371,7 @@
       "quiz": [
         {
           "q": "Vad skiljer en stigande triangel från en dubbeltopp?",
-            "alternativ": [
+          "alternativ": [
             "Ingenting — båda är vändningsmönster",
             "Triangeln gäller bara råvaror; dubbeltoppen bara aktier",
             "Dubbeltoppen kräver tre toppar; triangeln ett",
@@ -521,7 +521,7 @@
       "quiz": [
         {
           "q": "Hur beräknas OBV?",
-            "alternativ": [
+          "alternativ": [
             "Genomsnittet av dagens volym över tio dagar",
             "Dagens volym delat med kursförändringen",
             "Endast köpvolymen räknas",
@@ -607,7 +607,7 @@
         },
         {
           "q": "Vad är en bearisk divergens?",
-            "alternativ": [
+          "alternativ": [
             "Kursen och oscillatorn stiger tillsammans",
             "Kursen faller och oscillatorn faller",
             "Kursen gör ny topp men oscillatorn en lägre topp — trenden tappar fart inifrån",
@@ -681,8 +681,8 @@
           "tips": "Fyra tal: öppning, topp, botten, stängning — kroppen håller två, skuggorna de andra."
         },
         {
-          "q": "När är en hammare ett giltig köp-signaler?",
-            "alternativ": [
+          "q": "När är en hammare en giltig köp-signal?",
+          "alternativ": [
             "Bara vid en betydande stödzon — kontexten gör ljuset",
             "Alltid när den dyker upp",
             "Bara på månadsgraf",
@@ -757,7 +757,7 @@
         },
         {
           "q": "Vad varnar en bearisk divergens mellan index och A/D-linje för?",
-            "alternativ": [
+          "alternativ": [
             "Att räntorna snart faller",
             "Att volymen ökat kraftigt",
             "Att indexet är underprisat",
@@ -817,7 +817,7 @@
       "quiz": [
         {
           "q": "Vad visar en stigande RS-linje?",
-            "alternativ": [
+          "alternativ": [
             "Att aktien stigit mer än något fast tal",
             "Att aktien har hög direktavkastning",
             "Att aktien slår indexet — stiger mer, eller faller mindre",
@@ -989,7 +989,7 @@
         },
         {
           "q": "Vad är grafens unika bidrag som bokslutet inte kan ge?",
-            "alternativ": [
+          "alternativ": [
             "Värderingsmultiplar",
             "Utdelningshistorik",
             "En definierad plats där analysen är fel — stoppet i pris",
@@ -1064,7 +1064,7 @@
         },
         {
           "q": "Vad är AK1A:s svar på mönsterläsningens subjektivitet?",
-            "alternativ": [
+          "alternativ": [
             "Att förbjuda diagram",
             "Att lita på erfarna chartisters öga",
             "Att bara använda candlesticks",

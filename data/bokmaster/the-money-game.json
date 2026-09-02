@@ -121,7 +121,7 @@
     },
     {
      "type": "text",
-     "content": "Här ligger den djupaste motiveringen bakom AKM1:s struktur. Variablerna V01–V20 är externaliserade ankare: en checklista som frågar efter V07 Bruttomarginal, V09 ROE och V12 Intäktsstabilitet flyttar samtalet från 'vad säger detta om mig' till 'vad säger siffrorna om bolaget'. Marginal of safety — som i AKM1:s värld är en hållning utan nummer, inte en variabel — ger dessutom ett språk för att ha fel på förhand: om inköpspriset redan innehåller en rabatt kan ett misstag överlevas utan att egot kollapsar. Strukturen är alltså inte byrokrati — den är identitetsskydd."
+     "content": "Här ligger den djupaste motiveringen bakom AKM1:s struktur. Variablerna V01–V20 är externaliserade ankare: en checklista som frågar efter V07 Bruttomarginal, V09 ROE och V12 Intäktsstabilitet flyttar samtalet från 'vad säger detta om mig' till 'vad säger siffrorna om bolaget'. Marginal of safety — som i AKM1:s värld är en hållning utan nummer, inte en variabel — ger dessutom ett språk för att ha fel på förhand: om inköpspriset redan innehåller en rabatt kan ett misstag överlevas utan att egot kollapsar. Strukturen är alltså inte byråkrati — den är identitetsskydd."
     },
     {
      "type": "insikt",
@@ -677,7 +677,7 @@
       "V10 Skuldsättningsgrad och V11 Likviditet"
      ],
      "ratt": 1,
-      "tips": "Vad krävs för att en avvikande position ska overleva granskning — nyheter eller försprång?"
+      "tips": "Vad krävs för att en avvikande position ska överleva granskning — nyheter eller försprång?"
     }
    ]
   },
@@ -772,7 +772,7 @@
     },
     {
      "type": "text",
-     "content": "AK1A-syntesen. Slutsatsen är inte en medelväg utan en arbetsfördelning mellan två sanningar: spelet är psykologiskt — verktygen är rationella. Det är därför AKM1 existerar med sina tjugo V-variabler: checklistan är ett ratt mot egot. Den skyddar Grenville mot ångest (regler i förväg), Charley mot stolthet (omtest av tesen), Kidsen mot momentum utan bas (fundamentet som villkor), och lunchbordet mot skvaller som analys (nyheten som trigger, aldrig som position). Institutionen har rätt om vad som betalar; spelet har rätt om vad som driver. AKM1 är konstruerad för att du ska kunna göra det ena med det andra — att förstå spelet psykologiskt och besluta rationellt. Därför existerar modellen, och därför börjar den inte med siffror utan med denna kurs: karaktärerna först, checklistan sedan."
+     "content": "AK1A-syntesen. Slutsatsen är inte en medelväg utan en arbetsfördelning mellan två sanningar: spelet är psykologiskt — verktygen är rationella. Det är därför AKM1 existerar med sina tjugo V-variabler: checklistan är en ratt mot egot. Den skyddar Grenville mot ångest (regler i förväg), Charley mot stolthet (omtest av tesen), Kidsen mot momentum utan bas (fundamentet som villkor), och lunchbordet mot skvaller som analys (nyheten som trigger, aldrig som position). Institutionen har rätt om vad som betalar; spelet har rätt om vad som driver. AKM1 är konstruerad för att du ska kunna göra det ena med det andra — att förstå spelet psykologiskt och besluta rationellt. Därför existerar modellen, och därför börjar den inte med siffror utan med denna kurs: karaktärerna först, checklistan sedan."
     },
     {
      "type": "insikt",
@@ -819,7 +819,7 @@
      "alternativ": [
       "För att ersätta mänskligt omdöme helt och hållet",
       "För att maximera avkastningen i varje kvartal",
-      "Därför att spelet är psykologiskt och verktygen måste vara rationella — checklistan är ett ratt mot egot",
+      "Därför att spelet är psykologiskt och verktygen måste vara rationella — checklistan är en ratt mot egot",
       "För att efterlikna go-go-fondernas metodik med moderna medel"
      ],
      "ratt": 2,
@@ -839,7 +839,7 @@
     },
     {
      "type": "text",
-     "content": "I Supermoney (1972) följde Goodman upp med ett av finanslitteraturens mest kända porträtt: den unge Warren Buffett i Omaha — hjältexemplet på den som stod utanför spelet han beskrev. Buffett hade byggt kapital på fundament, vägrade betala go-go-priser och upplöste sitt partnerskap 1969 när spelet blev tokigt — mitt i euforin, med perfekt tajming som i själva verket var tålamod. Bokens titelbegrepp förklarar varför konglomeraten kunde falla så djupt: supermoney är papperskapitalet som skapas när börsen värderar framtida vinster — multiplens valuta. Konglomeraten levde på supermoney; när multiplen dog dog valutan, och med den alla förmögenheter som mätts i samma valuta. Det är Keynes andra grad, konglomerat-maskinen och Grenvilles nedgång i ett enda begrepp."
+     "content": "I Supermoney (1972) följde Goodman upp med ett av finanslitteraturens mest kända porträtt: den unge Warren Buffett i Omaha — hjältexemplet på den som stod utanför spelet han beskrev. Buffett hade byggt kapital på fundament, vägrade betala go-go-priser och upplöste sitt partnerskap 1969 när spelet blev tokigt — mitt i euforin, med perfekt tajming som i själva verket var tålamod. Bokens titelbegrepp förklarar varför konglomeraten kunde falla så djupt: supermoney är papperskapitalet som skapas när börsen värderar framtida vinster — multiplens valuta. Konglomeraten levde på supermoney; när multiplen dog, dog valutan, och med den alla förmögenheter som mätts i samma valuta. Det är Keynes andra grad, konglomerat-maskinen och Grenvilles nedgång i ett enda begrepp."
     },
     {
      "type": "text",

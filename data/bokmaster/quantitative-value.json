@@ -9,7 +9,7 @@
   "minutes": 11,
   "xp": 2000,
   "level": "",
-  "learn": "Förstå varför aktiv förvaltning förlorar — Lake Wobegon-effekten, avgifternas aritmetik och dumb money-paradoxen · Känna igen dina egna kognitiva fällor (konservatism och sample-size neglect) och koppla dem till din AI-Diagnos-profil · Se varför reglerna slår karisman — jedis kontra clones och 13F-kloningen · Bygga value composite-rankningen VC1/VC2 med sex multiplar mappade mot V04–V06 · Köra Piotroski F-score som checklista — nio kontroller mappade mot V07–V12 · Rena bort värdefällor med Altman Z, Beneish M, CDS-spreaden och kort ränta · Läsa backtesten 1976–2011 med ärliga ögon — inklusive Harvey–Liu–Zhus datamining-kritik och replikationskrisen · Sätta positionsstorlekar, säljdiscipliner och universumtrösklar (V11) · Tillämpa hela checklistan på ett riktigt bolag — Deere & Co · Syntetisera AKM1 (strukturerad subjektivitet) med QV (strukturerad objektivitet) till den systematiske värdeinvesteraren.",
+  "learn": "Förstå varför aktiv förvaltning förlorar — Lake Wobegon-effekten, avgifternas aritmetik och dumb money-paradoxen · Känna igen dina egna kognitiva fällor (konservatism och sample-size neglect) och koppla dem till din AI-Diagnos-profil · Se varför reglerna slår karisman — jedis kontra clones och 13F-kloningen · Bygga value composite-rankningen VC1/VC2 med sex multiplar mappade mot V04–V06 · Köra Piotroski F-score som checklista — nio kontroller mappade mot V07–V12 · Rensa bort värdefällor med Altman Z, Beneish M, CDS-spreaden och kort ränta · Läsa backtesten 1976–2011 med ärliga ögon — inklusive Harvey–Liu–Zhus datamining-kritik och replikationskrisen · Sätta positionsstorlekar, säljdiscipliner och universumtrösklar (V11) · Tillämpa hela checklistan på ett riktigt bolag — Deere & Co · Syntetisera AKM1 (strukturerad subjektivitet) med QV (strukturerad objektivitet) till den systematiske värdeinvesteraren.",
   "why": "Det här är AKM1:s operativa manual: där Graham och O'Shaughnessy lär ut VARFÖR värde fungerar, visar Gray och Carlisle exakt HUR en värderingsmodell byggs steg för steg — kompositrankning, kvalitetsfilter, värdefällsrens och portföljregler. Kursen är den systematiska ryggraden i V04–V06 (värderingskompositen) och V07–V12 (bokslutets kvalitetsbevis), och kontroverskapitlet om datamining och replikationskrisen ger den intellektuella ärlighet som krävs för att inte förvandla en kantfunktion till en trosfråga. Utan den här boken är AKM1:s screen-logik åsikt — med den är den en replikerbar process.",
   "chapters_list": [
     "1. Bokens kärna — beteendefel är råvaran",
@@ -191,7 +191,7 @@
         },
         {
           "type": "insikt",
-          "content": "Använd din AI-Diagnos-profil som en bias-karta: konservativ profil → din huvudfiende är konservatismen (gamla uppskattningar, gamla favoriter); tävlingsdriv → din huvudfiende är de små talens lag (kvartal blir trender). I båda fallen är motgifet detsamma: rankningar som uppdateras mekaniskt och urval som spänner över år, inte minnesbilder."
+          "content": "Använd din AI-Diagnos-profil som en bias-karta: konservativ profil → din huvudfiende är konservatismen (gamla uppskattningar, gamla favoriter); tävlingsdriv → din huvudfiende är de små talens lag (kvartal blir trender). I båda fallen är motgiftet detsamma: rankningar som uppdateras mekaniskt och urval som spänner över år, inte minnesbilder."
         },
         {
           "type": "tabell",
@@ -826,7 +826,7 @@
         },
         {
           "type": "text",
-          "content": "Koppla till AK1A:s portföljsida och rekommendationsskala: positionstorleken är riskens röst i portföljen — en STARKT KÖP-kandidat med alla gröna lampor kan motivera större vikt, men aldrig taket igenom, för regeln att ingen enskild aktie får avgöra utfallet gäller alla. Och minns Greenblatt-kursens parallella lärdom: trettio positioner och tolv månaders holdingtid var hans mekanik; Gray och Carlisle visar att bredden också är det statistiska skyddet — en kant på några procentenheter per år är en sannolikhetsfordel som bara visar sig över många positioner och många år, inte i den enskilda aktien. Koncentration är ett uttryck för tillit till sin egen stockpicking — och tillit till stockpicking är precis det den här boken lägger ned röster på."
+          "content": "Koppla till AK1A:s portföljsida och rekommendationsskala: positionstorleken är riskens röst i portföljen — en STARKT KÖP-kandidat med alla gröna lampor kan motivera större vikt, men aldrig taket igenom, för regeln att ingen enskild aktie får avgöra utfallet gäller alla. Och minns Greenblatt-kursens parallella lärdom: trettio positioner och tolv månaders holdingtid var hans mekanik; Gray och Carlisle visar att bredden också är det statistiska skyddet — en kant på några procentenheter per år är en sannolikhetsfördel som bara visar sig över många positioner och många år, inte i den enskilda aktien. Koncentration är ett uttryck för tillit till sin egen stockpicking — och tillit till stockpicking är precis det den här boken lägger ned röster på."
         },
         {
           "type": "insikt",
@@ -873,7 +873,7 @@
           "alternativ": [
             "Därför att alla enskilda aktier är bedrägerier",
             "Därför att courtage är gratis vid många affärer",
-            "Därför att en kant på några procentenheter är en sannolikhetsfordel som bara syns över många positioner och år",
+            "Därför att en kant på några procentenheter är en sannolikhetsfördel som bara syns över många positioner och år",
             "Därför att index alltid slår strategier"
           ],
           "ratt": 2,
@@ -968,7 +968,7 @@
         },
         {
           "type": "text",
-          "content": "AK1A:s medgivanden och syntes. Medgivandena först, utan krumbukter: datan är amerikansk och CRSP/Compustat-världen har sina egna biaser — survivorship-problem i äldre data, backfill-bias när historik lagts in i efterhand, och en amerikansk marknad som under just 1900-talet var världshistoriens mest framgångsrika — survivorship på nationsnivå. Transaktionskostnader, skatter och slippage gör den verkliga kanten smalare än den simulerade. Och värdefaktorns svaga perioder efter bokens publicering — inte minst 2018 till 2020, då billigt systematiskt underpresterade dyrt — påminner om att en kant är en sannolikhetsfordel, inte en lag. Syntesen därefter, kursens kärna: AKM1 är STRUKTURERAD SUBJEKTIVITET — en människa poängsätter tjugo variabler på en skala noll till fem, vilket tvingar fram konsekvens och bredd men förblir ett omdöme, med all flexibilitet och all sårbarhet det innebär. QV är STRUKTURERAD OBJEKTIVITET — regler exekverar utan omdöme, med all disciplin och all stelhet det innebär. BÅDA behövs: AKM1 för att förstå, väga och kontextualisera; QV som rigoröst test av att förståelsen inte är självtillit. Den kompletta investeraren kan köra båda — och läser avståndet mellan dem som information: när modellen och analysen säger olika är det inte ett av dem som har fel — det är platsen där arbetet börjar."
+          "content": "AK1A:s medgivanden och syntes. Medgivandena först, utan krumbukter: datan är amerikansk och CRSP/Compustat-världen har sina egna biaser — survivorship-problem i äldre data, backfill-bias när historik lagts in i efterhand, och en amerikansk marknad som under just 1900-talet var världshistoriens mest framgångsrika — survivorship på nationsnivå. Transaktionskostnader, skatter och slippage gör den verkliga kanten smalare än den simulerade. Och värdefaktorns svaga perioder efter bokens publicering — inte minst 2018 till 2020, då billigt systematiskt underpresterade dyrt — påminner om att en kant är en sannolikhetsfördel, inte en lag. Syntesen därefter, kursens kärna: AKM1 är STRUKTURERAD SUBJEKTIVITET — en människa poängsätter tjugo variabler på en skala noll till fem, vilket tvingar fram konsekvens och bredd men förblir ett omdöme, med all flexibilitet och all sårbarhet det innebär. QV är STRUKTURERAD OBJEKTIVITET — regler exekverar utan omdöme, med all disciplin och all stelhet det innebär. BÅDA behövs: AKM1 för att förstå, väga och kontextualisera; QV som rigoröst test av att förståelsen inte är självtillit. Den kompletta investeraren kan köra båda — och läser avståndet mellan dem som information: när modellen och analysen säger olika är det inte ett av dem som har fel — det är platsen där arbetet börjar."
         },
         {
           "type": "insikt",

@@ -108,7 +108,7 @@
       "num": 2,
       "minutes": 10,
       "title": "Tillgänglighet och lagen om små tal",
-      "intro": "När frekvenser ska uppskattas byter System 1 ut den svåra frågan mot en lätt: i stället för hur vanligt är detta, frågar den hur lätt kommer jag på exempel. Det är tillgänglighetsheuristiken — och tillsammans med tron att små urval speglar verklheten, lagen om små tal, förklarar den varför senaste nyheten och senaste kvartalet styr våra sannolikheter långt mer än vi tror.",
+      "intro": "När frekvenser ska uppskattas byter System 1 ut den svåra frågan mot en lätt: i stället för hur vanligt är detta, frågar den hur lätt kommer jag på exempel. Det är tillgänglighetsheuristiken — och tillsammans med tron att små urval speglar verkligheten, lagen om små tal, förklarar den varför senaste nyheten och senaste kvartalet styr våra sannolikheter långt mer än vi tror.",
       "blocks": [
         {
           "type": "text",
@@ -262,7 +262,7 @@
         },
         {
           "type": "text",
-          "content": "Kahneman beskriver två vägar in. Den ena är ofullständig justering: System 2 börjar på ankaret och tröttnar på väg. Den andra är att ankaret primar System 1 att söka bevis för det — vem som helst som frågas om ett högt pris börjar insetta hur läget, läget faktiskt är exceptionellt. Det senare är investerarens vardag: dagens kurs förvandlas tyst till hypotes. Analytikerkårens målkurser klustrar kring noteringen; reverse-testet görs sällan ifrån noll; multipeln som står på skärmen — P/S (V04) eller EV/EBITDA (V06) mot sektorn — känns som information när den i själva verket är en startpunkt du inte valde. Att en aktie »handlas högt« jämfört med igår är ett ankare, inte ett argument."
+          "content": "Kahneman beskriver två vägar in. Den ena är ofullständig justering: System 2 börjar på ankaret och tröttnar på väg. Den andra är att ankaret primerar System 1 att söka bevis för det — vem som helst som frågas om ett högt pris börjar inse hur läget faktiskt är exceptionellt. Det senare är investerarens vardag: dagens kurs förvandlas tyst till hypotes. Analytikerkårens målkurser klustrar kring noteringen; reverse-testet görs sällan ifrån noll; multipeln som står på skärmen — P/S (V04) eller EV/EBITDA (V06) mot sektorn — känns som information när den i själva verket är en startpunkt du inte valde. Att en aktie »handlas högt« jämfört med igår är ett ankare, inte ett argument."
         },
         {
           "type": "text",
@@ -333,7 +333,7 @@
         },
         {
           "type": "text",
-          "content": "Ur referenspunkten följer förlustaversionen. Erbjud en slantvändning där vinnaren får 100 kronor och förloraren förlorar 100 kronor och de flesta tackar nej — för att acceptera spelet krävs ungefär dubbelt så stor vinst: omkring 200 kronor mot 100. Förlustaversionens koefficient ligger i experimenten kring 2 till 2,5. Kahneman noterar att smärtan av att förlora är skarpare än glädjen av att vinna samma belopp, och att detta inte är en karaktersegenskap utan en designlinje i System 1 — evolutionen har straffat förluster hårdare än den belönat lika stora vinster. Följden för portföljen är att dagliga nedgångar känns dubbelt så tunga som dagliga uppgångar — vilket gör tittarfrekvensen på kurser till en riskfaktor i sig själv. Thaler och Benartzi kallade detta myopic loss aversion och använde det som förklaring till aktiepremien: den som räknar sin portfölj varje dag upplever förluster nästan varannan dag, och kräver därför högre kompensation för att hålla aktier alls."
+          "content": "Ur referenspunkten följer förlustaversionen. Erbjud en slantvändning där vinnaren får 100 kronor och förloraren förlorar 100 kronor och de flesta tackar nej — för att acceptera spelet krävs ungefär dubbelt så stor vinst: omkring 200 kronor mot 100. Förlustaversionens koefficient ligger i experimenten kring 2 till 2,5. Kahneman noterar att smärtan av att förlora är skarpare än glädjen av att vinna samma belopp, och att detta inte är en karaktärsegenskap utan en designlinje i System 1 — evolutionen har straffat förluster hårdare än den belönat lika stora vinster. Följden för portföljen är att dagliga nedgångar känns dubbelt så tunga som dagliga uppgångar — vilket gör tittarfrekvensen på kurser till en riskfaktor i sig själv. Thaler och Benartzi kallade detta myopic loss aversion och använde det som förklaring till aktiepremien: den som räknar sin portfölj varje dag upplever förluster nästan varannan dag, och kräver därför högre kompensation för att hålla aktier alls."
         },
         {
           "type": "text",
@@ -499,7 +499,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Skriv fem prognoser med sannolikheter för dina innehav: kurs över eller under dagens nivå om tolv månader, minst en overraskning i nästa rapport, ja eller nej på specifika händelser. Datera och spara i /profil. Om ett år poängsätter du inte dina affärer — du poängsätter ditt kalibrerade jag, och det är en helt annan övning."
+          "content": "Skriv fem prognoser med sannolikheter för dina innehav: kurs över eller under dagens nivå om tolv månader, minst en överraskning i nästa rapport, ja eller nej på specifika händelser. Datera och spara i /profil. Om ett år poängsätter du inte dina affärer — du poängsätter ditt kalibrerade jag, och det är en helt annan övning."
         }
       ],
       "quiz": [
@@ -534,7 +534,7 @@
             "Att tester aldrig fungerar i militära miljöer"
           ],
           "ratt": 1,
-          "tips": "Samstämmigheten i teamets intryck — höjde den den faktiska prognoskraften?"
+          "tips": "Samstämmigheten i teamets intryck — höjde den faktiska prognoskraften?"
         }
       ]
     },
@@ -550,11 +550,11 @@
         },
         {
           "type": "text",
-          "content": "Kahnemans eget exempel från tiden som armépsykolog är bokens kanske starkaste illustration. Han fick i uppdrag analysera terrordattacker i Galileen och fann att de kluster som fick alla att tala om mönster var fullt förenliga med ren slump i tid och rum. När han presenterade slutsatsen för en kommendör — att patrullerna sattes in reaktivt efter attacker, och att attackerna upphörde lika ofta utan patruller som med — reagerade kommendören häpet: menar du att våra patrullers varningar inte har något med attackernas upphörande att göra? Kahnemans svar var ja: upphörandet efter insats var precis vad slump förväntas producera, och samma upphörande skedde dagar då patrullerna uteblev. Orsakssambandet fanns bara i berättelsen — den var osynlig i fördelningen. Kommendören gjorde det vi alla gör: han såg orsak där det fanns samtidighet, därför att samtidighet har en story och slump inte har någon."
+          "content": "Kahnemans eget exempel från tiden som armépsykolog är bokens kanske starkaste illustration. Han fick i uppdrag analysera terrorattacker i Galileen och fann att de kluster som fick alla att tala om mönster var fullt förenliga med ren slump i tid och rum. När han presenterade slutsatsen för en kommendör — att patrullerna sattes in reaktivt efter attacker, och att attackerna upphörde lika ofta utan patruller som med — reagerade kommendören häpet: menar du att våra patrullers varningar inte har något med attackernas upphörande att göra? Kahnemans svar var ja: upphörandet efter insats var precis vad slump förväntas producera, och samma upphörande skedde dagar då patrullerna uteblev. Orsakssambandet fanns bara i berättelsen — den var osynlig i fördelningen. Kommendören gjorde det vi alla gör: han såg orsak där det fanns samtidighet, därför att samtidighet har en story och slump inte har någon."
         },
         {
           "type": "text",
-          "content": "På marknaden är mönsterillusionen en industri. Diagrammönster, kvartalsserier, en managers rad av bra år, en VD:s rad av lyckade lanseringar (V16): allt detta är korta serier av samma slag som terrorklustren — strukturer som kan vara skicklighet eller kan vara slump, där berättelsen alltid väljer skicklighet och statistiken ofta inte kan skilja. Frågan som skiljer analys från ankdot är en enda: hur många försök har gjorts i hela universum? En fondförvaltare med fem bra år i rad imponerar tills du räknar hur många förvaltare som fått fem försök — då är streaks inte bara möjliga utan oundvikliga någonstans. Samma gäller dig: om du prövar tjugo idéer om året i tjugo år kommer du att ha långa lyckoserier av ren slump. Det är matematik, inte magi."
+          "content": "På marknaden är mönsterillusionen en industri. Diagrammönster, kvartalsserier, en managers rad av bra år, en VD:s rad av lyckade lanseringar (V16): allt detta är korta serier av samma slag som terrorklustren — strukturer som kan vara skicklighet eller kan vara slump, där berättelsen alltid väljer skicklighet och statistiken ofta inte kan skilja. Frågan som skiljer analys från anekdot är en enda: hur många försök har gjorts i hela universum? En fondförvaltare med fem bra år i rad imponerar tills du räknar hur många förvaltare som fått fem försök — då är streaks inte bara möjliga utan oundvikliga någonstans. Samma gäller dig: om du prövar tjugo idéer om året i tjugo år kommer du att ha långa lyckoserier av ren slump. Det är matematik, inte magi."
         },
         {
           "type": "text",
@@ -586,7 +586,7 @@
           "tips": "Vad vet hjulet om de föregående snurren?"
         },
         {
-          "q": "Vad var poängen i Kahnemans analys av terrordattackerna?",
+          "q": "Vad var poängen i Kahnemans analys av terrorattackerna?",
           "alternativ": [
             "Att patrullerna orsakade attackernas upphörande",
             "Att attackerna upphörde lika ofta utan patruller som med — kluster är vad slump producerar",
@@ -696,7 +696,7 @@
         },
         {
           "type": "text",
-          "content": "I sin berömda duellartikel — Kahneman och Klein kom fram till att de egentligen inte var oense, och döpte den till just det: Conditions for intuitive expertise: a failure to disagree — formulerar de de två villkoren. För det första en miljö som är tillräckligt regelbunden för att vara förutsägbar: schackbrädet är det, liksom brandscener oftast. För det andra en möjlighet att lära sig dess regelbundenheter genom lång träning med snabb och tydlig feedback: brandmannen får veta på minuter om insatsen funkade, schackspelaren på sekunder om draget var fel. Finans som miljö hanterar båda villkoren uselt: sambanden är svaga och föränderliga, utfallen är dränkta i brus, och feedback kommer långsamt, förvrängt och förvanskat av tur — när den kommer alls. En bra aktieaffär kan ta år att värdera och kan aldrig värderas isolerat från marknadsläget. I en sådan miljö producerar System 1 samma känsla av säker igenkänning — men den har inget bibliotek att känna igen ifrån. Känslan är äkta; kunskapen är det inte."
+          "content": "I sin berömda duellartikel — Kahneman och Klein kom fram till att de egentligen inte var oense, och döpte den till just det: Conditions for intuitive expertise: a failure to disagree — formulerar de två villkoren. För det första en miljö som är tillräckligt regelbunden för att vara förutsägbar: schackbrädet är det, liksom brandscener oftast. För det andra en möjlighet att lära sig dess regelbundenheter genom lång träning med snabb och tydlig feedback: brandmannen får veta på minuter om insatsen funkade, schackspelaren på sekunder om draget var fel. Finans som miljö hanterar båda villkoren uselt: sambanden är svaga och föränderliga, utfallen är dränkta i brus, och feedback kommer långsamt, förvrängt och förvanskat av tur — när den kommer alls. En bra aktieaffär kan ta år att värdera och kan aldrig värderas isolerat från marknadsläget. I en sådan miljö producerar System 1 samma känsla av säker igenkänning — men den har inget bibliotek att känna igen ifrån. Känslan är äkta; kunskapen är det inte."
         },
         {
           "type": "text",
@@ -704,7 +704,7 @@
         },
         {
           "type": "text",
-          "content": "Vad gör man med sina magkänslor i marknaden? Man avskedar dem inte — man degraderar dem till hypoteser. En magkänsla är ett data om ditt eget sinne, inte om bolaget; den förtjänar att loggas, formuleras och testas — inte att lydas. Två konkreta regler: skilj domäner i ditt liv där du har snabb och tydlig feedback (ditt eget yrke, kanske) från domäner där du inte har det (aktieval, nästan säkert); och bygg medvetet långsam expertis där det går — smalt definierade domäner, loggade prognoser, kalibrering över tid. AKM1:s process — basfrekvenser, scenarier, skriftlig tes i /profil — är i grunden ett sätt att respektera Kleins och Kahnemans gemensamma slutsats: i en miljö som inte belönar intuition är den enda pålitliga expertisen expertisen på när man ska lita till processen i stället."
+          "content": "Vad gör man med sina magkänslor i marknaden? Man avskedar dem inte — man degraderar dem till hypoteser. En magkänsla är ett data om ditt eget sinne, inte om bolaget; den förtjänar att loggas, formuleras och testas — inte att lydas. Två konkreta regler: skilj domäner i ditt liv där du har snabb och tydlig feedback (ditt eget yrke, kanske) från domäner där du inte har det (aktieval, nästan säkert); och bygg medvetet långsam expertis där det går — smalt definierade domäner, loggade prognoser, kalibrering över tid. AKM1:s process — basfrekvenser, scenarier, skriftlig tes i /profil — är i grunden ett sätt att respektera Kleins och Kahnemans gemensamma slutsats: i en miljö som inte belönar intuition är den enda pålitliga expertisen på när man ska lita till processen i stället."
         },
         {
           "type": "tabell",
@@ -733,7 +733,7 @@
             "Intuition är maskerad statistik"
           ],
           "ratt": 0,
-          "tips": "Vad gör schackmästarens hjärna med femtiotusel positioner?"
+          "tips": "Vad gör schackmästarens hjärna med femtiotusen positioner?"
         },
         {
           "q": "Vilka två villkor krävs enligt Kahneman och Klein för pålitlig expertisintuition?",
@@ -747,7 +747,7 @@
           "tips": "Vad skiljer schackbrädet från aktiemarknaden på just de här två punkterna?"
         },
         {
-          "q": "Varför lyger intuitionen i finans enligt Kahneman?",
+          "q": "Varför ljuger intuitionen i finans enligt Kahneman?",
           "alternativ": [
             "Därför att kurserna är helt slumpmässiga och oförutsägbara i detalj",
             "Därför att institutionella aktörer manipulerar priser",
@@ -783,7 +783,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Ramar som styr\",\"rader\":[[\"Experiment\",\"Skillnad\",\"Investerarversionen\"],[\"Overlevnad mot dödlighet\",\"Kirurgivalet 84 mot 56 procent — bland läkare som bland patienter\",\"»Utdelning 4 procent« mot »inflationen äter 2 procent«\"],[\"75 procent magert mot 25 procent fett\",\"Samma kött bedömdes bättre och magrare med positiv etikett\",\"»Avgift 1 procent« mot »en tiondel av realavkastningen«\"],[\"Kalkylatorn mot jackan\",\"68 mot 29 procent kör för att spara samma 10 dollar\",\"Samma kronor i olika fack: courtage, courtage på stor? stora eller små affärer\"],[\"Dag mot år mot decennium\",\"Förlustfrekvens cirka 50 mot 25 mot under 10 procent\",\"Kort ram gör samma portfölj kännas farligare\"]]}"
+          "content": "{\"rubrik\":\"Ramar som styr\",\"rader\":[[\"Experiment\",\"Skillnad\",\"Investerarversionen\"],[\"Överlevnad mot dödlighet\",\"Kirurgivalet 84 mot 56 procent — bland läkare som bland patienter\",\"»Utdelning 4 procent« mot »inflationen äter 2 procent«\"],[\"75 procent magert mot 25 procent fett\",\"Samma kött bedömdes bättre och magrare med positiv etikett\",\"»Avgift 1 procent« mot »en tiondel av realavkastningen«\"],[\"Kalkylatorn mot jackan\",\"68 mot 29 procent kör för att spara samma 10 dollar\",\"Samma kronor i olika fack: courtage, courtage på stor? stora eller små affärer\"],[\"Dag mot år mot decennium\",\"Förlustfrekvens cirka 50 mot 25 mot under 10 procent\",\"Kort ram gör samma portfölj kännas farligare\"]]}"
         },
         {
           "type": "insikt",

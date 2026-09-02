@@ -38,7 +38,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "O'Neil var 30 år när han köpte en plats på NYSE, yngst på sin tid, efter att ha byggt sin förmögenhet på exakt den typ av aktier han senare kom att beskriva i How to Make Money in Stocks (första upplagan 1988, fjärde upplagan 2009). Hans metod var empirisk till skillnad från de flesta börsböcker: han och hans team gick tillbaka till 1953 och katalogiserade de största vinnarna cykel för cykel — vad hade resultuträkningen, produkten, aktieantalet, kursgrafen och fondernas beteende sett ut innan den stora kursrusningen började? Samma sju mönster återkom igen och igen, och tillsammans bildar de akronymen CAN SLIM: Current quarterly earnings, Annual earnings increases, New products/management/highs, Supply and demand, Leader or laggard, Institutional sponsorship, Market direction."
+          "content": "O'Neil var 30 år när han köpte en plats på NYSE, yngst på sin tid, efter att ha byggt sin förmögenhet på exakt den typ av aktier han senare kom att beskriva i How to Make Money in Stocks (första upplagan 1988, fjärde upplagan 2009). Hans metod var empirisk till skillnad från de flesta börsböcker: han och hans team gick tillbaka till 1953 och katalogiserade de största vinnarna cykel för cykel — vad hade resultaträkningen, produkten, aktieantalet, kursgrafen och fondernas beteende sett ut innan den stora kursrusningen började? Samma sju mönster återkom igen och igen, och tillsammans bildar de akronymen CAN SLIM: Current quarterly earnings, Annual earnings increases, New products/management/highs, Supply and demand, Leader or laggard, Institutional sponsorship, Market direction."
         },
         {
           "type": "text",
@@ -54,11 +54,11 @@
         },
         {
           "type": "insikt",
-          "content": "◆ O'Neil studerade inte börsen för att ta reda på vad han trodde — han studerade vinnarna för att ta reda på vad som redan var sant. Regelverket kommer efteråt, inte före. Det är samma princip som AK1A:s reproducierbarhetskrav: varje slutsats har en källa i data."
+          "content": "◆ O'Neil studerade inte börsen för att ta reda på vad han trodde — han studerade vinnarna för att ta reda på vad som redan var sant. Regelverket kommer efteråt, inte före. Det är samma princip som AK1A:s reproducerbarhetskrav: varje slutsats har en källa i data."
         },
         {
           "type": "utmaning",
-          "content": "🎯 Öppna en långtidsgraf (veckoläge, 10 år) på Cisco eller ett eget favoritbolag. Leta reda på den period då kursen steg som mest, och notera datumet. Leta sedan upp bolagets resultuträkning för kvartalet FÖRE det datumet. Såg kvartalsvinsten accelerera mot ≥ +25 %? Detta är övning nummer ett i O'Neils metod: börja alltid i vinnarnas data, inte i dina preferenser."
+          "content": "🎯 Öppna en långtidsgraf (veckoläge, 10 år) på Cisco eller ett eget favoritbolag. Leta reda på den period då kursen steg som mest, och notera datumet. Leta sedan upp bolagets resultaträkning för kvartalet FÖRE det datumet. Såg kvartalsvinsten accelerera mot ≥ +25 %? Detta är övning nummer ett i O'Neils metod: börja alltid i vinnarnas data, inte i dina preferenser."
         },
         {
           "type": "visuell",
@@ -243,7 +243,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Gå tillbaka till O'Neils egna exempel: Sybase hade en ny relationsdatabasmotor, Cisco byggde routrar som knöt ihop växande nätverk, Price Club uppfann i princip lagerklubbsformatet. I nästan varje stor vinnare i hans studier fanns en nyprodukt, en ny tjänst, en ny distributionskanal eller en ny ledning som förändrade bolagets ekonomi. Det nya är katalysatorn som gör att kvartalsvinster kan accelerera (C) och som ger funderna ett skäl att börja bygga positioner (I). Utan det nya är tillväxt en prognos; med det nya är tillväxt en pågående händelse. I AKM1 är detta moat-blockets och katalysator-blockets värld: V13 Patent & IP fångar när det nya är skyddat och svårkopierat, och V16 Produktlanseringar fångar själva utlösaren."
+          "content": "Gå tillbaka till O'Neils egna exempel: Sybase hade en ny relationsdatabasmotor, Cisco byggde routrar som knöt ihop växande nätverk, Price Club uppfann i princip lagerklubbsformatet. I nästan varje stor vinnare i hans studier fanns en nyprodukt, en ny tjänst, en ny distributionskanal eller en ny ledning som förändrade bolagets ekonomi. Det nya är katalysatorn som gör att kvartalsvinster kan accelerera (C) och som ger fonderna ett skäl att börja bygga positioner (I). Utan det nya är tillväxt en prognos; med det nya är tillväxt en pågående händelse. I AKM1 är detta moat-blockets och katalysator-blockets värld: V13 Patent & IP fångar när det nya är skyddat och svårkopierat, och V16 Produktlanseringar fångar själva utlösaren."
         },
         {
           "type": "text",
@@ -377,7 +377,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Relativ styrka mäter hur en aktie presterar mot alla andra aktier under en period (IBD räknar på tolv månader, viktat mot de senaste kvartalen). En RS på 85 betyder att aktien slagit 85 % av marknaden. O'Neils studier visade att de stora vinnarna hade RS 80 eller högre före utbrottet — snittet låg kring 87 — och hans tumregel är därför att inte köpa aktier med RS under 80, helst 85–90 eller bättre. Logiken: marknaden röstar med fötterna kontinuerligt, och en aktie som redan slår index bär med sig en bevisad efterfråga. I AK1TS:s språk är detta Pris-dimensionens kärna: för varje horisont (Mikro till Mega) frågar systemet vad prisbilden säger — och RS är prissvaret på frågan 'vem leder?'."
+          "content": "Relativ styrka mäter hur en aktie presterar mot alla andra aktier under en period (IBD räknar på tolv månader, viktat mot de senaste kvartalen). En RS på 85 betyder att aktien slagit 85 % av marknaden. O'Neils studier visade att de stora vinnarna hade RS 80 eller högre före utbrottet — snittet låg kring 87 — och hans tumregel är därför att inte köpa aktier med RS under 80, helst 85–90 eller bättre. Logiken: marknaden röstar med fötterna kontinuerligt, och en aktie som redan slår index bär med sig en bevisad efterfrågan. I AK1TS:s språk är detta Pris-dimensionens kärna: för varje horisont (Mikro till Mega) frågar systemet vad prisbilden säger — och RS är prissvaret på frågan 'vem leder?'."
         },
         {
           "type": "text",
@@ -519,7 +519,7 @@
         },
         {
           "type": "text",
-          "content": "M-kriteriet är också kursens tydligaste cykelperspektiv. Marknaden rör sig i återkommande rytm — ackumulation, upptrend, distribution, nedtrend — och AK1TS fångar detta i Tid-dimensionen: vilken fas är vi i, hur länge har den varat, och vad säger volymen om fasens hälsa? O'Neils praktiska konsekvens är obekväm men befriande: i en distributionsfas köper du inte nya positioner, oavsett hur många bokstäver aktien uppfyller; i en bekräftad upptrend är du agressiv med ledare som bryter ut ur baser. Detta är marknadstiming utan spåkula — inte en profetia om imorgon, utan en mätning av efterfrågan vs utbud på indexnivå, med tydliga regler för vad mätningen tillåter dig att göra."
+          "content": "M-kriteriet är också kursens tydligaste cykelperspektiv. Marknaden rör sig i återkommande rytm — ackumulation, upptrend, distribution, nedtrend — och AK1TS fångar detta i Tid-dimensionen: vilken fas är vi i, hur länge har den varat, och vad säger volymen om fasens hälsa? O'Neils praktiska konsekvens är obekväm men befriande: i en distributionsfas köper du inte nya positioner, oavsett hur många bokstäver aktien uppfyller; i en bekräftad upptrend är du aggressiv med ledare som bryter ut ur baser. Detta är marknadstiming utan spåkula — inte en profetia om imorgon, utan en mätning av efterfrågan vs utbud på indexnivå, med tydliga regler för vad mätningen tillåter dig att göra."
         },
         {
           "type": "text",
@@ -535,7 +535,7 @@
         },
         {
           "type": "utmaning",
-          "content": "🎯 Öppna en daggraf på ett brett index (S&P 500 eller en index-ETF som iShares Core S&P 500) med volymstaplar. Gå igenom de senaste fem veckorna dag för dag och markera varje distributionsdag (index ned på högre volym). Räkna ihop. Leta sedan bakåt i tiden till senaste stora botten: hittar du en dag 4–7 med +1,7 %+ på ökad volym efter ett rallyförsök? Skriv slutsats om aktuell marknadsfas."
+          "content": "🎯 Öppna en dagsgraf på ett brett index (S&P 500 eller en index-ETF som iShares Core S&P 500) med volymstaplar. Gå igenom de senaste fem veckorna dag för dag och markera varje distributionsdag (index ned på högre volym). Räkna ihop. Leta sedan bakåt i tiden till senaste stora botten: hittar du en dag 4–7 med +1,7 %+ på ökad volym efter ett rallyförsök? Skriv slutsats om aktuell marknadsfas."
         },
         {
           "type": "visuell",
@@ -665,7 +665,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Basformationerna jämförda\",\"rader\":[[\"Formation\",\"Form\",\"Typisk längd\",\"Typiskt djup\",\"Pivot\"],[\"Cup with handle\",\"U-botten plus handtag\",\"7+ veckor, ofta 3–6 mån\",\"≤ 12–15 % (normal marknad)\",\"Handtagets topp\"],[\"Double bottom\",\"W, andra benet lägre\",\"Flera månader\",\"20–35 %\",\"mellantoppens högsta kurs\"],[\"Flat base\",\"Platt sidledes\",\"Minst 5 veckor\",\"≤ 15 %\",\"Formationens topp\"],[\"Saucer with handle\",\"Brett grundt bassin\",\"Många månader\",\"Grund\",\"Handtagets topp\"],[\"Ascending base\",\"Tre högre bottnar\",\"Veckor–månader\",\"15–20 % per steg\",\"Senare toppen\"]]}"
+          "content": "{\"rubrik\":\"Basformationerna jämförda\",\"rader\":[[\"Formation\",\"Form\",\"Typisk längd\",\"Typiskt djup\",\"Pivot\"],[\"Cup with handle\",\"U-botten plus handtag\",\"7+ veckor, ofta 3–6 mån\",\"≤ 12–15 % (normal marknad)\",\"Handtagets topp\"],[\"Double bottom\",\"W, andra benet lägre\",\"Flera månader\",\"20–35 %\",\"mellantoppens högsta kurs\"],[\"Flat base\",\"Platt sidledes\",\"Minst 5 veckor\",\"≤ 15 %\",\"Formationens topp\"],[\"Saucer with handle\",\"Brett grunt bassin\",\"Många månader\",\"Grund\",\"Handtagets topp\"],[\"Ascending base\",\"Tre högre bottnar\",\"Veckor–månader\",\"15–20 % per steg\",\"Senare toppen\"]]}"
         },
         {
           "type": "insikt",
@@ -686,7 +686,7 @@
             "Den får inte vara lägre, det är ett brustet mönster"
           ],
           "ratt": 1,
-          "tips": "Tänk på vilka stopp som sitter placerade under den första botten — och vad som händer med de sista svaga ägarna om den nivån bruts."
+          "tips": "Tänk på vilka stopp som sitter placerade under den första botten — och vad som händer med de sista svaga ägarna om den nivån bryts."
         },
         {
           "q": "Hur känns en flat base igen, och var bildas den ofta?",
@@ -862,7 +862,7 @@
         },
         {
           "type": "text",
-          "content": "O'Neils djupare poäng är att misstagen inte är intellektuella utan känslomässiga: girighet (tips, billiga lotter), hopp (averaging down, break-even-väntan), stolthet ('jag har rätt, marknaden har fel') och rädsla (vågar inte köpa nya höjder, vågar inte realisera en förlust). Därför är lösningen strukturell, inte moralisk: skriv reglerna ned, förflytta besluten till rutinens ögonblick (när du är kall) och låt orderreglerna verkställa dem (stop-marknadsorder, pivot-köp). I AK1A:s filosofi är detta detsamma som reproducierbarhet: en portfölj som drivs av regler går att granska och förbättra — en portfölj som drivs av humör går bara att ångra. Ett enkelt självtest: kan du för varje position du har nu peka på vilken regel som gäller? Om inte — positionen drivs av känsla."
+          "content": "O'Neils djupare poäng är att misstagen inte är intellektuella utan känslomässiga: girighet (tips, billiga lotter), hopp (averaging down, break-even-väntan), stolthet ('jag har rätt, marknaden har fel') och rädsla (vågar inte köpa nya höjder, vågar inte realisera en förlust). Därför är lösningen strukturell, inte moralisk: skriv reglerna ned, förflytta besluten till rutinens ögonblick (när du är kall) och låt orderreglerna verkställa dem (stop-marknadsorder, pivot-köp). I AK1A:s filosofi är detta detsamma som reproducerbarhet: en portfölj som drivs av regler går att granska och förbättra — en portfölj som drivs av humör går bara att ångra. Ett enkelt självtest: kan du för varje position du har nu peka på vilken regel som gäller? Om inte — positionen drivs av känsla."
         },
         {
           "type": "insikt",
@@ -929,11 +929,11 @@
         },
         {
           "type": "text",
-          "content": "Short-seller-perspektivet är den bästa syntesen — och en påminnelse om att AK1A har en egen shortseller-agent. Läs O'Neils signaler baklänges: distributionskluster i index (M) och i en mogen aktie, climax-toppar, exhaustion gaps, upprepade splits sent i löpet, fallande RS hos en före detta ledare, utspädande emissioner i svaga bolag (S) — allt är tecken på att utbud håller på att överväga efterfrågan på platsen. Short-seller gör med dessa mönster vad CAN SLIM gör med baser: väntar på strukturen, definerar risk, och kräver bekräftelse i volym. Därmed säger båda skolorna samma sak om marknadens natur — pris styrs av utbud och efterfrågan, och beteenden lämnar fotavtryck — men skiljer sig om VAR det finns en mätbar kant: Graham i gap mellan pris och värde hos försummade bolag, O'Neil i momentum hos framtidens ledare. AK1A:s slutsats behöver inte välja: AKM1 mäter kvalitet och värdering, AK1TS mäter timing och tryck — CAN SLIM är bäst när båda pekar samma håll, och somliga av dess toppsignaler är som gjorda för shortsidan."
+          "content": "Short-seller-perspektivet är den bästa syntesen — och en påminnelse om att AK1A har en egen shortseller-agent. Läs O'Neils signaler baklänges: distributionskluster i index (M) och i en mogen aktie, climax-toppar, exhaustion gaps, upprepade splits sent i löpet, fallande RS hos en före detta ledare, utspädande emissioner i svaga bolag (S) — allt är tecken på att utbud håller på att överväga efterfrågan på platsen. Short-seller gör med dessa mönster vad CAN SLIM gör med baser: väntar på strukturen, definierar risk, och kräver bekräftelse i volym. Därmed säger båda skolorna samma sak om marknadens natur — pris styrs av utbud och efterfrågan, och beteenden lämnar fotavtryck — men skiljer sig om VAR det finns en mätbar kant: Graham i gap mellan pris och värde hos försummade bolag, O'Neil i momentum hos framtidens ledare. AK1A:s slutsats behöver inte välja: AKM1 mäter kvalitet och värdering, AK1TS mäter timing och tryck — CAN SLIM är bäst när båda pekar samma håll, och somliga av dess toppsignaler är som gjorda för shortsidan."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Skolorna mot varandra — och mötespunkten\",\"rader\":[[\"Fråga\",\"Graham\",\"O'Neil\"],[\"När köper vi?\",\"När pris < inneboende värde, gärna i depressionsstämning\",\"När tillväxt accelererar och aktien bryter ut ur en bas på volym\"],[\"Multipel-view\",\"Låg P/E är kärnan i säkerheten\",\"P/E-myten: vinnare köptes till snitt ~31 mot marknadens 12–15\"],[\"Riskkontroll\",\"Margin of safety + diversifiering\",\"-7/8 % stopp + säljregler per position\"],[\"Tidsvänsatt\",\"Långt, tålmodigt\",\"Trend bunden till kvartal och marknadsfas\"],[\"Svaghet (motpartens krita)\",\"Kan fastna i 'value traps'\",\"Survivorship bias, kräver timing, skatt/omslutning\"],[\"Short-signalerna\",\"(ej Grahams område)\",\"Distribution, climax, exhaust-gap, split — lästa baklänges\"]]}"
+          "content": "{\"rubrik\":\"Skolorna mot varandra — och mötespunkten\",\"rader\":[[\"Fråga\",\"Graham\",\"O'Neil\"],[\"När köper vi?\",\"När pris < inneboende värde, gärna i depressionsstämning\",\"När tillväxt accelererar och aktien bryter ut ur en bas på volym\"],[\"Multipel-view\",\"Låg P/E är kärnan i säkerheten\",\"P/E-myten: vinnare köptes till snitt ~31 mot marknadens 12–15\"],[\"Riskkontroll\",\"Margin of safety + diversifiering\",\"-7/8 % stopp + säljregler per position\"],[\"Tidshorisont\",\"Långt, tålmodigt\",\"Trend bunden till kvartal och marknadsfas\"],[\"Svaghet (motpartens kritik)\",\"Kan fastna i 'value traps'\",\"Survivorship bias, kräver timing, skatt/omslutning\"],[\"Short-signalerna\",\"(ej Grahams område)\",\"Distribution, climax, exhaust-gap, split — lästa baklänges\"]]}"
         },
         {
           "type": "insikt",

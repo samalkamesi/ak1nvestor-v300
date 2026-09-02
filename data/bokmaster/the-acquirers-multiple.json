@@ -5,7 +5,7 @@
   "chapterCount": 13,
   "totalMinutes": 160,
   "title": "The Acquirer's Multiple — Tobias Carlisle: KOMPLETT",
-  "summary": "Tobias Carlisle — australiensisk förvärvsjurist, förvaltare och medförfattare till Quantitative Value — publicerade 2018 The Acquirer's Multiple: How the Billionaire Contrarians of Deep Value Are Crushing the Market. Där Quantitative Value byggde en hel komposit av sex multiplar med kvalitetsfilter ovanpå, gör den här boken det motsatta: ett djupdyk i EN enda faktor — EV/EBIT, företagsvärde delat med rörelseresultat, multiplen som en förvärvare av HELA bolaget betalar. Kursen går igenom vad multiplen verkligen mäter och varför P/E ljuger om kapitalstrukturen, earnings yield och takeout-logiken som förklarar varför den fungerar, databasen och backtesten, deep value-mötet med QV och värdefällorna, bokens unika kortsidan — att korta börsens dyraste multiplicar — och CVI-indexet, marknadens värderingsbarometer, insiders och återköp (V20), björnmarknadernas historia, portföljbygget — och kontroversen: Fama-French värdefaktors längsta torka 2007–2020, value-spreadens kollaps, Novy-Marx psykologiska value och AK1A:s ärliga syntes: AKM1 poängsätter V04–V06 men viktat aldrig en enskild faktor tungt — med medgivandet att single-factor-strategier har långa träghetsperioder.",
+  "summary": "Tobias Carlisle — australiensisk förvärvsjurist, förvaltare och medförfattare till Quantitative Value — publicerade 2018 The Acquirer's Multiple: How the Billionaire Contrarians of Deep Value Are Crushing the Market. Där Quantitative Value byggde en hel komposit av sex multiplar med kvalitetsfilter ovanpå, gör den här boken det motsatta: ett djupdyk i EN enda faktor — EV/EBIT, företagsvärde delat med rörelseresultat, multiplen som en förvärvare av HELA bolaget betalar. Kursen går igenom vad multiplen verkligen mäter och varför P/E ljuger om kapitalstrukturen, earnings yield och takeout-logiken som förklarar varför den fungerar, databasen och backtesten, deep value-mötet med QV och värdefällorna, bokens unika kortsidan — att korta börsens dyraste multiplicer — och CVI-indexet, marknadens värderingsbarometer, insiders och återköp (V20), björnmarknadernas historia, portföljbygget — och kontroversen: Fama-French värdefaktors längsta torka 2007–2020, value-spreadens kollaps, Novy-Marx psykologiska value och AK1A:s ärliga syntes: AKM1 poängsätter V04–V06 men viktat aldrig en enskild faktor tungt — med medgivandet att single-factor-strategier har långa träghetsperioder.",
   "minutes": 12,
   "xp": 2000,
   "level": "",
@@ -51,7 +51,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Släktträdet — fyra generationer statistiskt värde\",\"rader\":[[\"Generation\",\"Bok och år\",\"Kärna\",\"AKM1-koppling\"],[\"1\",\"Graham, The Intelligent Investor (1949)\",\"enkla mekaniska regler, bredd, säkerhetsmarginal\",\"V04–V06:s urfadder\"],[\"2\",\"Greenblatt, The Little Book (2005)\",\"två rankningar: EBIT/EV + ROIC, topp 30\",\"V06-familjen + V09\"],[\"3\",\"Gray–Carlisle, Quantitative Value (2012)\",\"komposit VC1/VC2 + F-score; fann EBIT/EV ensam starkast\",\"V04–V06 + V07–V12\"],[\"4\",\"Carlisle, The Acquirer's Multiple (2018)\",\"djupdyk i EV/EBIT ensam + shortsidan + CVI\",\"V06-familjen djupstuderad\"]]}"
+          "content": "{\"rubrik\":\"Släktträdet — fyra generationer statistiskt värde\",\"rader\":[[\"Generation\",\"Bok och år\",\"Kärna\",\"AKM1-koppling\"],[\"1\",\"Graham, The Intelligent Investor (1949)\",\"enkla mekaniska regler, bredd, säkerhetsmarginal\",\"V04–V06:s urfäder\"],[\"2\",\"Greenblatt, The Little Book (2005)\",\"två rankningar: EBIT/EV + ROIC, topp 30\",\"V06-familjen + V09\"],[\"3\",\"Gray–Carlisle, Quantitative Value (2012)\",\"komposit VC1/VC2 + F-score; fann EBIT/EV ensam starkast\",\"V04–V06 + V07–V12\"],[\"4\",\"Carlisle, The Acquirer's Multiple (2018)\",\"djupdyk i EV/EBIT ensam + shortsidan + CVI\",\"V06-familjen djupstuderad\"]]}"
         },
         {
           "type": "utmaning",
@@ -252,7 +252,7 @@
         },
         {
           "type": "text",
-          "content": "Ben två: takeout-multipeln. Namnet är ingen metafor — det är bokstavligen multiplen som en strategisk köpare eller en kapitalist i Carl Icahn-facket räknar på när de värderar ett HELT bolag: vad kostar verksamheten (EV) i förhållande till vad den tjänar före finansiering (EBIT)? Förvärvare värderar på det sättet därför att de ska byta ut kapitalstrukturen, ta ut synerier eller styra om kassaflödet — räntor och skatt är deras beslut, inte givna. Konsekvensen för den lille investeraren: köper du under den multipl som förvärvare betalar för jämförbara verksamheter har du en inbyggd tredjepartsköpare — en tjockare säkerhetsmarginal än börsens eget humör. En aktie som handlas till acquirer's multiple 6 när branschens förvärv prissatts runt 9–10 är billig på ett sätt som inte beror på att börsen snart ska bli klok — den är billig mot en verklig budgivare."
+          "content": "Ben två: takeout-multipeln. Namnet är ingen metafor — det är bokstavligen multiplen som en strategisk köpare eller en kapitalist i Carl Icahn-facket räknar på när de värderar ett HELT bolag: vad kostar verksamheten (EV) i förhållande till vad den tjänar före finansiering (EBIT)? Förvärvare värderar på det sättet därför att de ska byta ut kapitalstrukturen, ta ut synergier eller styra om kassaflödet — räntor och skatt är deras beslut, inte givna. Konsekvensen för den lille investeraren: köper du under den multipl som förvärvare betalar för jämförbara verksamheter har du en inbyggd tredjepartsköpare — en tjockare säkerhetsmarginal än börsens eget humör. En aktie som handlas till acquirer's multiple 6 när branschens förvärv prissatts runt 9–10 är billig på ett sätt som inte beror på att börsen snart ska bli klok — den är billig mot en verklig budgivare."
         },
         {
           "type": "text",
@@ -390,7 +390,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Deep value-polen, som boken företräder: köp det statistiskt billigaste: cykliska verkstäder i nedgång, okända mellanbolag, förhatliga sektorer, bolag vars analytiker sagt upp bevakningen. Ingen story, ingen vuruhet för kvalitet: multiplerna pratar. Bokens svar på risken att enskilda bolag ruttnar är BREDD: en portfölj på tjugo till fyrtio positioner tål att några få dör — diversifiering, citerar Carlisle gärna, är finansens enda gratis lunch. Fördelen med renlärigheten är att man aldrig betalar premium för komfort: deep value har historiskt slagit quality-value-metoder i rå avkastning, till priset av djupare svängningar och en portfölj som ingen vill prata om på middagsbordet."
+          "content": "Deep value-polen, som boken företräder: köp det statistiskt billigaste: cykliska verkstäder i nedgång, okända mellanbolag, förhatliga sektorer, bolag vars analytiker sagt upp bevakningen. Ingen story, ingen vurighet för kvalitet: multiplerna pratar. Bokens svar på risken att enskilda bolag ruttnar är BREDD: en portfölj på tjugo till fyrtio positioner tål att några få dör — diversifiering, citerar Carlisle gärna, är finansens enda gratis lunch. Fördelen med renlärigheten är att man aldrig betalar premium för komfort: deep value har historiskt slagit quality-value-metoder i rå avkastning, till priset av djupare svängningar och en portfölj som ingen vill prata om på middagsbordet."
         },
         {
           "type": "text",
@@ -406,7 +406,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Deep value mot quality — tre sätt att äga billighet\",\"rader\":[[\"Ansats\",\"Urval\",\"Styrka\",\"Sårbarhet\"],[\"Ren deep value (boken)\",\"billigast på EV/EBIT, bredd 20–40 positioner\",\"högsta rå avkastning historiskt; enkel, regelstyrd\",\"djupa svängningar; vissa positioner dör — kräver mage och bredd\"],[\"Quality-value (QV)\",\"billig komposit + F-score + Z/M/CDS-rensr\",\"jämnare kurva; färre värdefällor\",\"filtret kostar kant i uppgångar; mer komplext\"],[\"AKM1:s balans\",\"V04–V06 styr, V07–V12 + V10/V11/V19 som TRÖSKEL (rens, inte ranking)\",\"behåller deep values geometri, rensar dödsrisk\",\"kräver disciplin att inte låta kvalitetspoängen bli ett nytt köpskäl\"]]}"
+          "content": "{\"rubrik\":\"Deep value mot quality — tre sätt att äga billighet\",\"rader\":[[\"Ansats\",\"Urval\",\"Styrka\",\"Sårbarhet\"],[\"Ren deep value (boken)\",\"billigast på EV/EBIT, bredd 20–40 positioner\",\"högsta rå avkastning historiskt; enkel, regelstyrd\",\"djupa svängningar; vissa positioner dör — kräver mage och bredd\"],[\"Quality-value (QV)\",\"billig komposit + F-score + Z/M/CDS-rens\",\"jämnare kurva; färre värdefällor\",\"filtret kostar kant i uppgångar; mer komplext\"],[\"AKM1:s balans\",\"V04–V06 styr, V07–V12 + V10/V11/V19 som TRÖSKEL (rens, inte ranking)\",\"behåller deep values geometri, rensar dödsrisk\",\"kräver disciplin att inte låta kvalitetspoängen bli ett nytt köpskäl\"]]}"
         },
         {
           "type": "utmaning",
@@ -424,7 +424,7 @@
             "Att bara köpa bolag med starka moats",
             "Att noggrant läsa alla prospekt innan köp",
             "Bredd — portföljer på 20–40 positioner tål att enstaka bolag dör; diversifiering är finansens enda gratis lunch",
-            "Att tajma ut- och instig vid röda bokslut"
+            "Att tajma ut- och insteg vid röda bokslut"
           ],
           "ratt": 2,
           "tips": "Vad gör en grupp av statistiska fynd mot ett enskilt haveri?"
@@ -503,7 +503,7 @@
         {
           "q": "Vilket är det praktiskt viktigaste skälet att kortsidan är svårare än långsidan?",
           "alternativ": [
-            "Kortförsäljning är olagigt i de flesta länder",
+            "Kortförsäljning är olagligt i de flesta länder",
             "Förlusten är obegränsad, du betalar låneränta, kan få aktierna återkallade — och dyra bolag kan bli dyrare i åratal",
             "Det finns inga dyra bolag att korta",
             "Blankare betalar dubbel skatt"
@@ -619,7 +619,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"V20-skalan i djupvärde-termer\",\"rader\":[[\"V20-poäng\",\"Återköpets karaktär\",\"Djupvärdes-läsning\"],[\"5\",\"fritt kassaflöde, kurs under P/B 1\",\"value som köper value — starkast möjliga korroboration på en djupvärdesaktie\"],[\"3\",\"skuldfinansierat men till rätt pris\",\"neutralagtigt — räkna på räntekänsligheten (V10)\"],[\"1\",\"skuldfinansierat, kurs över P/B 2\",\"EPS-dekoration — värde flyttas inte, det målas\"],[\"Spegel (V19)\",\"nyemission / kapitalförbränning\",\"utspädning — den mest robusta NEGATIVA signalen i forskningen\"],[\"Insider-röst\",\"opportunistiska klumpköp\",\"krydda: bekräftar billighet, skapar den inte\"]]}"
+          "content": "{\"rubrik\":\"V20-skalan i djupvärde-termer\",\"rader\":[[\"V20-poäng\",\"Återköpets karaktär\",\"Djupvärdes-läsning\"],[\"5\",\"fritt kassaflöde, kurs under P/B 1\",\"value som köper value — starkast möjliga korroboration på en djupvärdesaktie\"],[\"3\",\"skuldfinansierat men till rätt pris\",\"neutralt — räkna på räntekänsligheten (V10)\"],[\"1\",\"skuldfinansierat, kurs över P/B 2\",\"EPS-dekoration — värde flyttas inte, det målas\"],[\"Spegel (V19)\",\"nyemission / kapitalförbränning\",\"utspädning — den mest robusta NEGATIVA signalen i forskningen\"],[\"Insider-röst\",\"opportunistiska klumpköp\",\"krydda: bekräftar billighet, skapar den inte\"]]}"
         },
         {
           "type": "utmaning",
@@ -707,7 +707,7 @@
           "alternativ": [
             "De kom alltid efter krig",
             "De startade från hög värdering — tunn säkerhetsmarginal när något gick snett",
-            "De inträffade endast under guldmyntenstandarden",
+            "De inträffade endast under guldmyntstandarden",
             "De var omöjliga att förutse på något sätt"
           ],
           "ratt": 1,
@@ -753,7 +753,7 @@
         },
         {
           "type": "text",
-          "content": "Steg sex: förväntningshanteringen — dokumentet som gör resten möjligt. En ensamfaktorsstrategi på EV/EBIT kommer att underprestera index i perioder på flera år (kapitel 5:s förbehåll, kapitel 12:s kontrovers — det är dokumenterat, inte hypotetiskt). Skriv därför portföljpampen (QV-arvet): universumtröskel, maxvikt per aktie, köpregel (rank + tröskel), säljregler (rankfall, tröskelbrott, rebalansdatum), brasklappen från kontroverskapitlet (jag accepterar X års underprestering utan att överge systemet, därför att…), samt V20-röster och CVI-läge som kontextuella noteringar. Komplettera gärna med AKM1-poängsättning (V01–V20) av toppkandidaterna — inte som ett nytt köpskäl utan som dokumentation av varför de fick kapital. Pampen dateras, bokmärks och följas vid varje rebalansering. Process i papper, inte i humör."
+          "content": "Steg sex: förväntningshanteringen — dokumentet som gör resten möjligt. En ensamfaktorstrategi på EV/EBIT kommer att underprestera index i perioder på flera år (kapitel 5:s förbehåll, kapitel 12:s kontrovers — det är dokumenterat, inte hypotetiskt). Skriv därför portföljpampen (QV-arvet): universumtröskel, maxvikt per aktie, köpregel (rank + tröskel), säljregler (rankfall, tröskelbrott, rebalansdatum), brasklappen från kontroverskapitlet (jag accepterar X års underprestering utan att överge systemet, därför att…), samt V20-röster och CVI-läge som kontextuella noteringar. Komplettera gärna med AKM1-poängsättning (V01–V20) av toppkandidaterna — inte som ett nytt köpskäl utan som dokumentation av varför de fick kapital. Pampen dateras, bokmärks och följas vid varje rebalansering. Process i papper, inte i humör."
         },
         {
           "type": "insikt",
@@ -828,7 +828,7 @@
         },
         {
           "type": "insikt",
-          "content": "En faktor är inte död för att den förlorat i tretton år — och inte odödlig för att den vann 2021–2023. Den är en sannolikhetsfordel med väder: mekanismen (människors extrapolation) lever, men mätningen (vilka multiplar, vilken bokföring) och regimen (räntor, flöden) förändras. Frågan är inte tro eller otro — den är dimensionering: hur mycket av din framtid får vila på en enda multipl?"
+          "content": "En faktor är inte död för att den förlorat i tretton år — och inte odödlig för att den vann 2021–2023. Den är en sannolikhetsfördel med väder: mekanismen (människors extrapolation) lever, men mätningen (vilka multiplar, vilken bokföring) och regimen (räntor, flöden) förändras. Frågan är inte tro eller otro — den är dimensionering: hur mycket av din framtid får vila på en enda multipl?"
         },
         {
           "type": "tabell",
@@ -853,7 +853,7 @@
             "Den avskaffades formellt av Fama och French"
           ],
           "ratt": 2,
-          "tips": "FAANG-generationen mot gamla industrer — vem vann, och hur länge?"
+          "tips": "FAANG-generationen mot gamla industrier — vem vann, och hur länge?"
         },
         {
           "q": "Vad är huvudpoängen i Novy-Marx forskning om psykologiskt value?",
@@ -895,7 +895,7 @@
         },
         {
           "type": "text",
-          "content": "Porträttet av den djupa värdeinvesteraren, i sex drag. Ett: han eller hon köper det ingen vill berätta om på middagsbordet — tråkigt, cykliskt, förhatligt eller osynligt — därför att bristen på berättelse är rabattens källa. Två: hon mäter verksamheten och finansieringen var för sig — EV/EBIT mot P/E, kapitalstrukturens fallgropar alltid i bakhuvudet. Tre: han litar på bredd, inte briljans — tjugo till trettio positioner därför att sannolikhetsfördelen bara syns över många. Fyra: hon rensar dödsriskerna före kapitalet, inte efter — tröskeln är hennes hygien. Fem: han läser barometern men låter den dimensionera, aldrig diktera — CVI i riskmatrisen, inte i av/på-knappen. Sex: hon har skrivit brasklappen om träghet i förväg och bär den som försäkring — därför att hon vet att nästa torka kommer, att mekanismen (människors extrapolation) lever vidare och att hennes kant är en sannolikhetsfordel med väder, inte en lag. Det är undertitelns billionaires contrarians i portföljstorlek: disciplinerad, oglamourös, statistiskt obeveklig — och, när cykeln vänder, svår att slå."
+          "content": "Porträttet av den djupa värdeinvesteraren, i sex drag. Ett: han eller hon köper det ingen vill berätta om på middagsbordet — tråkigt, cykliskt, förhatligt eller osynligt — därför att bristen på berättelse är rabattens källa. Två: hon mäter verksamheten och finansieringen var för sig — EV/EBIT mot P/E, kapitalstrukturens fallgropar alltid i bakhuvudet. Tre: han litar på bredd, inte briljans — tjugo till trettio positioner därför att sannolikhetsfördelen bara syns över många. Fyra: hon rensar dödsriskerna före kapitalet, inte efter — tröskeln är hennes hygien. Fem: han läser barometern men låter den dimensionera, aldrig diktera — CVI i riskmatrisen, inte i av/på-knappen. Sex: hon har skrivit brasklappen om träghet i förväg och bär den som försäkring — därför att hon vet att nästa torka kommer, att mekanismen (människors extrapolation) lever vidare och att hennes kant är en sannolikhetsfördel med väder, inte en lag. Det är undertitelns billionaires contrarians i portföljstorlek: disciplinerad, oglamourös, statistiskt obeveklig — och, när cykeln vänder, svår att slå."
         },
         {
           "type": "insikt",

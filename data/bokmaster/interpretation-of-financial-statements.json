@@ -222,7 +222,7 @@
             "Ingen — hög omsättning kompenserar alltid låg täckning",
             "Att räntan är en fast kostnad mot en variabel inkomst, så ett normalår kan radera vinsten helt",
             "Att täckningen bör vara under 1 för att bolaget ska vara lönsamt",
-            "Att bolaget betalar för lite ränta och därmed saknar skattemyssno fördelar"
+            "Att bolaget betalar för lite ränta och därmed saknar skattemässiga fördelar"
           ],
           "ratt": 1,
           "tips": "Fråga dig vad som händer med täckningen när toppårets resultat blir ett normalårs — och sedan ett bottenårs."
@@ -311,7 +311,7 @@
             "Hög V11 garanterar automatiskt att kapitalförbrukningen upphör"
           ],
           "ratt": 1,
-          "tips": "Vad händer med ägandet när kassan siner men verksamheten kräver mer pengar än den producerar?"
+          "tips": "Vad händer med ägandet när kassan sinar men verksamheten kräver mer pengar än den producerar?"
         }
       ]
     },
@@ -485,7 +485,7 @@
         },
         {
           "type": "text",
-          "content": "Slutligen den viktigaste varningen: normalisering är inte prognos. Graham poängterade att den återkommande förtjänsten är ett utgångsläge — historiens vittnesmål om vad verksamheten kan producera under normala förhållanden — inte en försäkran om att nästa år blir normalt. När du i kapitel 13 sätter värdering mot normaliserad förtjänst och kräver marginal of safety, är det just gapet mellan historiens fakta och framtidens osäkerhet som marginalen betalar för. Därför är arbetet i detta kapitel kursens mest värdeskapande minuti: femton minuter med fem års resultaträkningar och en penna flyttar felaktiga köpbeslut oftare än vilken makroprognos som helst."
+          "content": "Slutligen den viktigaste varningen: normalisering är inte prognos. Graham poängterade att den återkommande förtjänsten är ett utgångsläge — historiens vittnesmål om vad verksamheten kan producera under normala förhållanden — inte en försäkran om att nästa år blir normalt. När du i kapitel 13 sätter värdering mot normaliserad förtjänst och kräver marginal of safety, är det just gapet mellan historiens fakta och framtidens osäkerhet som marginalen betalar för. Därför är arbetet i detta kapitel kursens mest värdeskapande minut: femton minuter med fem års resultaträkningar och en penna flyttar felaktiga köpbeslut oftare än vilken makroprognos som helst."
         },
         {
           "type": "insikt",
@@ -619,7 +619,7 @@
         },
         {
           "type": "text",
-          "content": "Balanserade vinstmedel (earned surplus) fungerar som utdelningspolitikkens reservoar. Ett bolag med stora balanserade vinstmedel kan hålla utdelningen jämn genom en tillfällig svacka — och Graham värderade den jämnheten högt, eftersom den bevisar att ledningen tänker på ägarna som mottagare av kontanter, inte bara som källa till kapital. Men reservoaren kan också missbrukas: en utdelning som i flera år överstiger den normaliserade vinsten tömmer reservoaren och avslöjar en ledning som köper aktieägars förtroende med bolagets substans. Räkna därför utdelningens andel av den ackumulerade balanserade vinsten under en femårsperiod: ligger den nära 100 procent av normaliserade vinster är politiken sund; ligger den över töms reservoaren och substansen krymper — V05:s substansvärde per aktie faller med varje obetald utdelning."
+          "content": "Balanserade vinstmedel (earned surplus) fungerar som utdelningspolitikens reservoar. Ett bolag med stora balanserade vinstmedel kan hålla utdelningen jämn genom en tillfällig svacka — och Graham värderade den jämnheten högt, eftersom den bevisar att ledningen tänker på ägarna som mottagare av kontanter, inte bara som källa till kapital. Men reservoaren kan också missbrukas: en utdelning som i flera år överstiger den normaliserade vinsten tömmer reservoaren och avslöjar en ledning som köper aktieägars förtroende med bolagets substans. Räkna därför utdelningens andel av den ackumulerade balanserade vinsten under en femårsperiod: ligger den nära 100 procent av normaliserade vinster är politiken sund; ligger den över töms reservoaren och substansen krymper — V05:s substansvärde per aktie faller med varje obetald utdelning."
         },
         {
           "type": "text",
@@ -686,7 +686,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Avskrivningar är maskinernas sätt att säga att de slits. I svenska årsredovisningar anges principerna i noten om redovisningsprinciper: linjär avskrivning (jämn årlig kostnad över nyttjandeperioden), degressiv (högre i början), komponentavskrivning (delade livslängder på delar av anläggningen) samt antagna restvärden och nyttjandeperioder. Graham skrev med 1920-talets kraftkoncerner i minnet — den tidens största redovisningsskandal var bolag som avskrev för lite, rapporterade för hög vinst och betalade ut pengar som egentligen behövdes för att byta ut utrustningen. När verkligheten kom i fatt återstod en gammal maskinpark och en skuld. Kontrollen är fortfarande densamma: jämför avskrivningskostnaden med underhålls- och servicekostnaden i noterna (i Sverige ofta hittad i noten om rörelsekostnader eller anläggningstillgångar). Under lång tid avskrivningar som understiger underhållet betyder att resultatet är köpt på bekostnad av framtiden — eller att anläggningen inte underhålls alls, vilket är värre."
+          "content": "Avskrivningar är maskinernas sätt att säga att de slits. I svenska årsredovisningar anges principerna i noten om redovisningsprinciper: linjär avskrivning (jämn årlig kostnad över nyttjandeperioden), degressiv (högre i början), komponentavskrivning (delade livslängder på delar av anläggningen) samt antagna restvärden och nyttjandeperioder. Graham skrev med 1920-talets kraftkoncerner i minnet — den tidens största redovisningsskandal var bolag som avskrev för lite, rapporterade för hög vinst och betalade ut pengar som egentligen behövdes för att byta ut utrustningen. När verkligheten kom ifatt återstod en gammal maskinpark och en skuld. Kontrollen är fortfarande densamma: jämför avskrivningskostnaden med underhålls- och servicekostnaden i noterna (i Sverige ofta hittad i noten om rörelsekostnader eller anläggningstillgångar). Under lång tid avskrivningar som understiger underhållet betyder att resultatet är köpt på bekostnad av framtiden — eller att anläggningen inte underhålls alls, vilket är värre."
         },
         {
           "type": "text",
@@ -694,7 +694,7 @@
         },
         {
           "type": "text",
-          "content": "Kapitalisering är konsten att flytta en kostnad från resultaträkningen till balansräkningen. Kostnaden blir en tillgång som avskrivs över flera år — dagens vinst stiger, framtida avskrivningar skapas. Klassiska svenska exempel: aktiverade utvecklingskostnader (i Sverige mer generöst tillåtet än i många länder — noten om immateriella tillgångar visar tillförda belopp, avskrivningar och restvärde), aktiverad ränta vid egenproduktion av anläggningar, aktiverade förvärvskostnader och prospekteringskostnader i gruv- och oljebolag (Grahams samtids store syndare: kapitaliserade borrhål som skulle visa sig vara torra). Kontrollfrågan att lägga på minnet: hur hade marginalerna sett ut om allt som kapitaliserats kostnadsförts? Om skillnaden är stor är bolagets redovisade lönsamhet delvis en redovisningsprodukt, och den verkliga kapitalförbrukningen (V19) är högre än resultatet antyder. En snabb hälsokontroll: avskrivningar och aktiveringar i förhållande till rörelseresultatet, fem år i rad — växande avskrivningar utan växande intäkter är en ränta som småningom betalas."
+          "content": "Kapitalisering är konsten att flytta en kostnad från resultaträkningen till balansräkningen. Kostnaden blir en tillgång som avskrivs över flera år — dagens vinst stiger, framtida avskrivningar skapas. Klassiska svenska exempel: aktiverade utvecklingskostnader (i Sverige mer generöst tillåtet än i många länder — noten om immateriella tillgångar visar tillförda belopp, avskrivningar och restvärde), aktiverad ränta vid egenproduktion av anläggningar, aktiverade förvärvskostnader och prospekteringskostnader i gruv- och oljebolag (Grahams samtids största syndare: kapitaliserade borrhål som skulle visa sig vara torra). Kontrollfrågan att lägga på minnet: hur hade marginalerna sett ut om allt som kapitaliserats kostnadsförts? Om skillnaden är stor är bolagets redovisade lönsamhet delvis en redovisningsprodukt, och den verkliga kapitalförbrukningen (V19) är högre än resultatet antyder. En snabb hälsokontroll: avskrivningar och aktiveringar i förhållande till rörelseresultatet, fem år i rad — växande avskrivningar utan växande intäkter är en ränta som småningom betalas."
         },
         {
           "type": "text",
@@ -773,7 +773,7 @@
         },
         {
           "type": "text",
-          "content": "V19-kopplingen: kapitalförbrukning och emissionsrisk blir påtaglig när tre mönster sammanfaller — kassaflödet från löpande verksamhet är negativt eller svagt, capex överstiger avskrivningarna kraftigt (verklig expansion betalas kontant medan resultatet bara märker av avskrivningen), och finansieringsdelen domineras av upprepad emission. Detta är ett bolag som konsumerer kapital för att växa — vilket kan vara en helt legitim strategi (bygg nu, tjäna sen), men som investerare betalar du för utfallet och äger risken: varje ny emission (kapitel 8) sänker din andel, och varje ny skuld (V10) höjer det fasta trycket. Grahams hållning till sådana situationer var rak: de kan vara goda spekulationer men de är inga investmentkvaliteter, för säkerhetsmarginalen (kapitel 13) saknar fäste i något som kan räknas. Vinnarbolagen i hans värld finansierar sin tillväxt internt: rörelsekassa större än capex, utdelningar täckta, aktieantal stabilt."
+          "content": "V19-kopplingen: kapitalförbrukning och emissionsrisk blir påtaglig när tre mönster sammanfaller — kassaflödet från löpande verksamhet är negativt eller svagt, capex överstiger avskrivningarna kraftigt (verklig expansion betalas kontant medan resultatet bara märker av avskrivningen), och finansieringsdelen domineras av upprepad emission. Detta är ett bolag som konsumerar kapital för att växa — vilket kan vara en helt legitim strategi (bygg nu, tjäna sen), men som investerare betalar du för utfallet och äger risken: varje ny emission (kapitel 8) sänker din andel, och varje ny skuld (V10) höjer det fasta trycket. Grahams hållning till sådana situationer var rak: de kan vara goda spekulationer men de är inga investmentkvaliteter, för säkerhetsmarginalen (kapitel 13) saknar fäste i något som kan räknas. Vinnarbolagen i hans värld finansierar sin tillväxt internt: rörelsekassa större än capex, utdelningar täckta, aktieantal stabilt."
         },
         {
           "type": "insikt",
@@ -832,7 +832,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Femårsgriden är kursens mest användbara artefakt: en tabell med ett år per rad och följande kolumner — nettoomsättning, bruttomarginal (V07), rörelsemarginal (V08), normaliserat resultat, antal aktier, EPS, utdelning per aktie, kassaflöde från löpande verksamhet och capex. I svenska årsredovisningar finns femårsöversikter ofta i slutet av årsredovisningen eller i bolagets faktabok; saknas den byggs griden av fem års rapporter — vilket i sig är den bästa investeringsutbildningen som finns. Exempel i klartext: intäkter 800, 860, 940, 990 och 1 070 — en årlig försäljningstillväxt (V01) på ungefär 7,5 procent; V07: 34, 35, 35, 34 och 33 procent; EPS: 1,60, 1,75, 1,90, 1,95 och 2,00. Tolkningen skriver sig nästan själv: prissättningsmakten är stabil men matt avslutande, EPS-tillväxten avtar — och nästa kontroll är given: växte antalet aktier under samma period (kapitel 8)? Om aktierna växte 3 procent per år är den verkliga tillväxten per aktie bara hälften av vad EPS-raden i absoluta tal antyder."
+          "content": "Femårsgriden är kursens mest användbara artefakt: en tabell med ett år per rad och följande kolumner — nettoomsättning, bruttomarginal (V07), rörelsemarginal (V08), normaliserat resultat, antal aktier, EPS, utdelning per aktie, kassaflöde från löpande verksamhet och capex. I svenska årsredovisningar finns femårsöversikter ofta i slutet av årsredovisningen eller i bolagets faktabok; saknas den byggs griden av fem års rapporter — vilket i sig är den bästa investeringsutbildningen som finns. Exempel i klartext: intäkter 800, 860, 940, 990 och 1 070 — en årlig försäljningstillväxt (V01) på ungefär 7,5 procent; V07: 34, 35, 35, 34 och 33 procent; EPS: 1,60, 1,75, 1,90, 1,95 och 2,00. Tolkningen skriver sig nästan själv: prissättningsmakten är stabil men matt mot slutet, EPS-tillväxten avtar — och nästa kontroll är given: växte antalet aktier under samma period (kapitel 8)? Om aktierna växte 3 procent per år är den verkliga tillväxten per aktie bara hälften av vad EPS-raden i absoluta tal antyder."
         },
         {
           "type": "text",

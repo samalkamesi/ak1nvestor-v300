@@ -1,0 +1,14 @@
+quantitative-value.json
+reminiscences-of-a-stock-operator.json
+security-analysis.json
+stocks-for-the-long-run.json
+tanka-snabbt-och-langsamt.json
+technical-analysis-financial-markets.json
+technical-analysis-of-stock-trends.json
+the-acquirers-multiple.json
+the-alchemy-of-finance.json
+the-art-of-short-selling.json
+the-big-short.json
+the-black-swan.json
+the-bogleheads-guide-to-investing.json
+the-dhandho-investor.json

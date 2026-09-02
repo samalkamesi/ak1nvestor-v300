@@ -115,7 +115,7 @@
    "blocks": [
     {
      "type": "text",
-     "content": "Dagens zoner, i Farleys läsning. Före öppningen omprissätts nattens nyheter — nivåerna flyttas innan marknaden ens öppnar, och aktören som lägger order i förhandshandeln handlar mot spret och tunn likviditet. Öppningens första kvart är känslornas auktion: breda skillnader mellan köp- och säljkurs, paniska stopp, överdrivna gap. Första timmen sätter tonläget — riktningen från öppningen till första timmens slut säger mer än de flesta indikatorer, och dagens genuina utbrott tenderar att deklarera sig här. Sedan lunchens döda zon: volymen sinar, rörelser blir falska, marknaden gör inte sina bästa beslut hungrig. Och den sista timmen: institutionerna positionerar, dagens förlorare kvitterar och dagens vinnare pressar — här avgörs dagens slutnivåer, som i sin tur är morgondagens referenspunkter. Efter handeln är allt tunnt och opålitligt."
+     "content": "Dagens zoner, i Farleys läsning. Före öppningen omprissätts nattens nyheter — nivåerna flyttas innan marknaden ens öppnar, och aktören som lägger order i förhandshandeln handlar mot sprid och tunn likviditet. Öppningens första kvart är känslornas auktion: breda skillnader mellan köp- och säljkurs, paniska stopp, överdrivna gap. Första timmen sätter tonläget — riktningen från öppningen till första timmens slut säger mer än de flesta indikatorer, och dagens genuina utbrott tenderar att deklarera sig här. Sedan lunchens döda zon: volymen sinar, rörelser blir falska, marknaden gör inte sina bästa beslut hungrig. Och den sista timmen: institutionerna positionerar, dagens förlorare kvitterar och dagens vinnare pressar — här avgörs dagens slutnivåer, som i sin tur är morgondagens referenspunkter. Efter handeln är allt tunnt och opålitligt."
     },
     {
      "type": "text",
@@ -135,7 +135,7 @@
     },
     {
      "type": "tabell",
-     "content": "{\"rubrik\":\"Handelsdagens tidszoner — svensk översättning (illustrativ)\",\"rader\":[[\"Tidszon\",\"Uppgift\",\"Svensk blick\",\"Hantverkarens regel\"],[\"Förhand\",\"Nattens nyheter omprissätts\",\"08:00 rapporter; order kan ej förlitas\",\"Inga order — uppdatera kartan\"],[\"Öppningens första kvart\",\"Känslornas auktion\",\"09:00–09:15 auktion och breda spärrar\",\"Läs — handla inte\"],[\"Första timmen\",\"Dagens tonläge sätts\",\"09:00–10:00\",\"Utbrott bevakas med bekräftelse\"],[\"Lunchens döda zon\",\"Tunn volym, falska rörelser\",\"12:00–14:00\",\"Inga nya beslut\"],[\"Sista timmen\",\"De stora pengarna positionerar\",\"16:30–17:30\",\"Trailing och stängningar avgörs\"],[\"Efterhandel\",\"Spret och tunn likviditet\",\"17:30–\",\"Aldrig stopp här\"]]}"
+     "content": "{\"rubrik\":\"Handelsdagens tidszoner — svensk översättning (illustrativ)\",\"rader\":[[\"Tidszon\",\"Uppgift\",\"Svensk blick\",\"Hantverkarens regel\"],[\"Förhand\",\"Nattens nyheter omprissätts\",\"08:00 rapporter; order kan ej förlitas\",\"Inga order — uppdatera kartan\"],[\"Öppningens första kvart\",\"Känslornas auktion\",\"09:00–09:15 auktion och breda spärrar\",\"Läs — handla inte\"],[\"Första timmen\",\"Dagens tonläge sätts\",\"09:00–10:00\",\"Utbrott bevakas med bekräftelse\"],[\"Lunchens döda zon\",\"Tunn volym, falska rörelser\",\"12:00–14:00\",\"Inga nya beslut\"],[\"Sista timmen\",\"De stora pengarna positionerar\",\"16:30–17:30\",\"Trailing och stängningar avgörs\"],[\"Efterhandel\",\"Sprid och tunn likviditet\",\"17:30–\",\"Aldrig stopp här\"]]}"
     },
     {
      "type": "utmaning",

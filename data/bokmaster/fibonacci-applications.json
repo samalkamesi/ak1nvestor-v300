@@ -9,8 +9,8 @@
   "minutes": 11,
   "xp": 2000,
   "level": "",
-  "learn": "Känna historien: Leonardo of Pisa, Liber Abaci 1202 och kaninproblemet som av misstag skapade världens mest beresta talserie · Behärska matematiken: rekursionen, kvoternas konvergens mot 1,618 och 0,618, och det gyllene snittets ekvationer — med räknade tabeller · Förstå VARFÖR just 38,2, 50 och 61,8 är retracement-nivåerna och varför 50-procenten är avslöjande · Arbeta igenom Fischer-metodiken: signalläge före nivå, entry-zon, stopp bakom nivån, risk-reward före order · Rita arcs och fans och förstå skillnaden mellan statiska och dynamiska nivåer · Lägga talserien på tidaxeln — 5, 8, 13, 21, 34, 55 dagar — och koppla till AK1TS Tid-dimension och Lucas-talen · Räkna price projections med 1,272 och 1,618 och veta varför Fib-tal gånger phi blir Fib-tal · Kombinera nivåer med trend, momentum och volym — och undvika pseudo-konfluens · Läsa bokens praktikfall med överlevnadsurvalselet på · Framföra Fibonacci-kritiken MAXIMALT: Malkiels numerologi-anklagelse, myntkastexperimentet, svag form-effektivitet, self-fulfilling, bevisbördan och p-hacking · Syntetisera till AK1A:s hållning: en av fem teorier, deterministiskt vägd, med ett tydligt medgivande — phi-frekvenser i naturen bevisar INTE börsfunktion.",
-  "why": "Denna kurs differentierar två saker som ofta blandas ihop. Å ena sidan verket: Fischers bok från 1993 är det renaste dokumentet av hur Fibonacci utvecklades inom teknisk analys — från Elliotts proportioner på 1930-talet till kompletta handelsregler med nivåer, linjer och stopp — och den läsens kapitel för kapitel här som utveckling av Fibonacci inom TA och dess tillämpningar. Å andra sidan flaggskeppet: AK1TS:s Fibonacci-rad är VÅR deterministiska användning — 52-veckorspositionen med trösklarna 0,38 och 0,62, identisk på alla fem horisonter och aldrig ensam signalkälla. Boken är källan och provoceraren; matrisen är vårt svar. Kontroversen är dessutom kursens tyngsta kapitel: Fibonacci är den mest spridda och mest ifrågasatta idén i teknisk analys, och den som inte kan framföra kritiken MAXIMALT — Malkiel, self-fulfilling, bevisbördan, p-hacking — har ingen rätt att använda nivåerna heller. Kursen slutar med den ärliga dom som gör skillnad mellan siffermystik och strukturerad nivåanalys.",
+  "learn": "Känna historien: Leonardo of Pisa, Liber Abaci 1202 och kaninproblemet som av misstag skapade världens mest beresta talserie · Behärska matematiken: rekursionen, kvoternas konvergens mot 1,618 och 0,618, och det gyllene snittets ekvationer — med räknade tabeller · Förstå VARFÖR just 38,2, 50 och 61,8 är retracement-nivåerna och varför 50-procenten är avslöjande · Arbeta igenom Fischer-metodiken: signalläge före nivå, entry-zon, stopp bakom nivån, risk-reward före order · Rita arcs och fans och förstå skillnaden mellan statiska och dynamiska nivåer · Lägga talserien på tidsaxeln — 5, 8, 13, 21, 34, 55 dagar — och koppla till AK1TS Tid-dimension och Lucas-talen · Räkna price projections med 1,272 och 1,618 och veta varför Fib-tal gånger phi blir Fib-tal · Kombinera nivåer med trend, momentum och volym — och undvika pseudo-konfluens · Läsa bokens praktikfall med överlevnadsurvalselet på · Framföra Fibonacci-kritiken MAXIMALT: Malkiels numerologi-anklagelse, myntkastexperimentet, svag form-effektivitet, self-fulfilling, bevisbördan och p-hacking · Syntetisera till AK1A:s hållning: en av fem teorier, deterministiskt vägd, med ett tydligt medgivande — phi-frekvenser i naturen bevisar INTE börsfunktion.",
+  "why": "Denna kurs differentierar två saker som ofta blandas ihop. Å ena sidan verket: Fischers bok från 1993 är det renaste dokumentet av hur Fibonacci utvecklades inom teknisk analys — från Elliotts proportioner på 1930-talet till kompletta handelsregler med nivåer, linjer och stopp — och den läses kapitel för kapitel här som utveckling av Fibonacci inom TA och dess tillämpningar. Å andra sidan flaggskeppet: AK1TS:s Fibonacci-rad är VÅR deterministiska användning — 52-veckorspositionen med trösklarna 0,38 och 0,62, identisk på alla fem horisonter och aldrig ensam signalkälla. Boken är källan och provoceraren; matrisen är vårt svar. Kontroversen är dessutom kursens tyngsta kapitel: Fibonacci är den mest spridda och mest ifrågasatta idén i teknisk analys, och den som inte kan framföra kritiken MAXIMALT — Malkiel, self-fulfilling, bevisbördan, p-hacking — har ingen rätt att använda nivåerna heller. Kursen slutar med den ärliga dom som gör skillnad mellan siffermystik och strukturerad nivåanalys.",
   "chapters_list": [
     "1. Pisa 1202 — handelsmannen, kaninerna och siffrorna som förändrade Europa",
     "2. Talserien — från kaniner till konvergens: matematiken grundligt",
@@ -186,7 +186,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Definitionen är geometrisk och gammal — Euclid kände den. Dela en sträcka så att hela förhåller sig till den större delen som den större till den mindre: hela/större = större/mindre. Löser man ekvationen får snittet exakt ett värde: phi = (1+√5)/2 = 1,6180339887... Talet har egenskaper som är unika i matematiken och som tabellen nedan räknar ut: phi i kvadrat är phi plus ett (2,618); ett delat med phi är phi minus ett (0,618); phi är det enda positiva tal vars reciprok subtraherat med ett ger sig självt. Och i Fibonacciserien dyker phi upp som gränsvärde — serien är det mest berömda sättet att generera det gyllene förhållandet med heltal. Ren matematik, vattenvärd, njutbart."
+          "content": "Definitionen är geometrisk och gammal — Euclid kände den. Dela en sträcka så att hela förhåller sig till den större delen som den större till den mindre: hela/större = större/mindre. Löser man ekvationen får snittet exakt ett värde: phi = (1+√5)/2 = 1,6180339887... Talet har egenskaper som är unika i matematiken och som tabellen nedan räknar ut: phi i kvadrat är phi plus ett (2,618); ett delat med phi är phi minus ett (0,618); phi är det enda positiva tal vars reciprok subtraherat med ett ger sig självt. Och i Fibonacciserien dyker phi upp som gränsvärde — serien är det mest berömda sättet att generera det gyllene förhållandet med heltal. Ren matematik, vattentät, njutbart."
         },
         {
           "type": "text",
@@ -273,7 +273,7 @@
         },
         {
           "type": "text",
-          "content": "AK1TS-brygga (Våg + Pris + Brytpunkt): Här möts två traditioner åt varsitt håll om samma insikt. Fischer: nivå först, bekräftelse sedan, handel till sist. AK1TS: deterministisk mätning först (pos52 med trösklarna 0,38/0,62 i Pris-dimensionen), sedan aggregering med fyra andra teorier i matrisen — Elliott, Gann, Lucas, Volym — och beslut först när Brytpunkt-dimensionen bekräftar. Skillnaden är valfriheten: Fischers analytiker väljer botten och toppen i en chart; vår motor beräknar 52-veckorsspännet och applicerar samma regel på allt. Fischer varifrån flaggskeppet hämtade idén; determinismen är vår tilläggnings. AKM1-brygga: metodik-principerna är universella för alla tjugo variabler — V19 (risk) kräver känt stopp även för fundamentalinvesteraren; skillnaden är att hans stopp heter 'tesen bröts', inte en kurs."
+          "content": "AK1TS-brygga (Våg + Pris + Brytpunkt): Här möts två traditioner åt varsitt håll om samma insikt. Fischer: nivå först, bekräftelse sedan, handel till sist. AK1TS: deterministisk mätning först (pos52 med trösklarna 0,38/0,62 i Pris-dimensionen), sedan aggregering med fyra andra teorier i matrisen — Elliott, Gann, Lucas, Volym — och beslut först när Brytpunkt-dimensionen bekräftar. Skillnaden är valfriheten: Fischers analytiker väljer botten och toppen i en chart; vår motor beräknar 52-veckorsspännet och applicerar samma regel på allt. Fischer varifrån flaggskeppet hämtade idén; determinismen är vårt tillägg. AKM1-brygga: metodik-principerna är universella för alla tjugo variabler — V19 (risk) kräver känt stopp även för fundamentalinvesteraren; skillnaden är att hans stopp heter 'tesen bröts', inte en kurs."
         },
         {
           "type": "insikt",
@@ -332,7 +332,7 @@
       "num": 5,
       "minutes": 12,
       "title": "Retracements — 38,2, 50 och 61,8: varför just de nivåerna?",
-      "intro": "Här är bokens kärnverktyg och hela genrens signum: retracement-nivåerna. Kapitlet definierar mätningen, härleder varje nivå ur serien, räknar en komplett nivåtabell på samma spann som AK1TS-motorn använder, och avslöjar den mest respekterade nivåens obekväma hemlighet — att den inte alls är ett Fibonaccital.",
+      "intro": "Här är bokens kärnverktyg och hela genrens signum: retracement-nivåerna. Kapitlet definierar mätningen, härleder varje nivå ur serien, räknar en komplett nivåtabell på samma spann som AK1TS-motorn använder, och avslöjar den mest respekterade nivåns obekväma hemlighet — att den inte alls är ett Fibonaccital.",
       "blocks": [
         {
           "type": "text",
@@ -352,7 +352,7 @@
         },
         {
           "type": "insikt",
-          "content": "Retracement-tankegångens mest värdefulla översättning är inte nivåerna utan andelslogiken: mät alltid en reaktion I FÖRHÅLLLANDE TILL SIN EGEN SVÄNG, inte i kronor eller procentenheter. 'Den föll 12 procent' betyder olika saker efter en sväng på 20 procent och en på 60. Andelen gör jämförelser mellan aktier — och mellan tidshorisonter — möjliga. Det är en mätdisciplin som överlever även om talen faller."
+          "content": "Retracement-tankegångens mest värdefulla översättning är inte nivåerna utan andelslogiken: mät alltid en reaktion I FÖRHÅLLANDE TILL SIN EGEN SVÄNG, inte i kronor eller procentenheter. 'Den föll 12 procent' betyder olika saker efter en sväng på 20 procent och en på 60. Andelen gör jämförelser mellan aktier — och mellan tidshorisonter — möjliga. Det är en mätdisciplin som överlever även om talen faller."
         },
         {
           "type": "utmaning",
@@ -411,7 +411,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "De fem stegen. (1) Definiera swingen: välj tydliga, signifikanta extrema — ett extremum som hela marknaden ser, inte ett intradag-spikhål. Fischer är tydlig: mängden av dåliga swingval är den vanligaste felkällan. (2) Vänta på signalläge: en oberoende indikation att svängen vänder eller pausar — momentum-förskjutning, trendlinje som bryts, en prvning av nivån som studsar. (3) Inträde vid reaktionen: när priset reagerar PÅ nivån — inte för att linjen rörts. Nivån är platsen där signalen blir handlingsbar. (4) Stopp bakom nivån: under 61,8-nivån eller under swinglygget — där hypotesen matematiskt är död. (5) Mål och risk-reward FÖRE order: mål beräknas ur nästa projection-nivå (kapitel 9), och kvoten målminus-entry delat med entry-minus-stopp måste stå ut. Tre, helst fyra, till ett."
+          "content": "De fem stegen. (1) Definiera swingen: välj tydliga, signifikanta extrema — ett extremum som hela marknaden ser, inte ett intradag-spikhål. Fischer är tydlig: mängden av dåliga swingval är den vanligaste felkällan. (2) Vänta på signalläge: en oberoende indikation att svängen vänder eller pausar — momentum-förskjutning, trendlinje som bryts, en prövning av nivån som studsar. (3) Inträde vid reaktionen: när priset reagerar PÅ nivån — inte för att linjen rörts. Nivån är platsen där signalen blir handlingsbar. (4) Stopp bakom nivån: under 61,8-nivån eller under swinglygget — där hypotesen matematiskt är död. (5) Mål och risk-reward FÖRE order: mål beräknas ur nästa projection-nivå (kapitel 9), och kvoten målminus-entry delat med entry-minus-stopp måste stå ut. Tre, helst fyra, till ett."
         },
         {
           "type": "text",
@@ -486,7 +486,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Fans — konstruktionen: drag först trendlinjen från signifikant botten till signifikant topp (95 till 150). Res en vertikal hjälplinje vid toppen och markera på den 38,2-, 50- och 61,8-procent av svängens höjd ned från toppen — alltså samma märken som kapitel 5 räknade: 128,99, 122,50 och 116,01. Dra slutligen tre strålar från bottnen (95) genom vartdera märket. De tre strålarna stiger genom tiden och fungerar som dynamiska stöd: där kursen ligger ovanför den tredje strålen är trenden intakt — i bokens exempelgrafer är det just detta som visas; genombrott NEDÅT genom en stråle är en tidig varning som den horisontella nivån aldrig kan ge, eftersom strålen flyttar på sig med kalendern. En fan-linje är alltså en retracement-nivå som åldras — igår stöd på 129 är nästa månad stöd på 134, om tid går och strålen reser sig."
+          "content": "Fans — konstruktionen: drag först trendlinjen från signifikant botten till signifikant topp (95 till 150). Res en vertikal hjälplinje vid toppen och markera på den 38,2-, 50- och 61,8-procent av svängens höjd ned från toppen — alltså samma märken som kapitel 5 räknade: 128,99, 122,50 och 116,01. Dra slutligen tre strålar från bottnen (95) genom vardera märket. De tre strålarna stiger genom tiden och fungerar som dynamiska stöd: där kursen ligger ovanför den tredje strålen är trenden intakt — i bokens exempelgrafer är det just detta som visas; genombrott NEDÅT genom en stråle är en tidig varning som den horisontella nivån aldrig kan ge, eftersom strålen flyttar på sig med kalendern. En fan-linje är alltså en retracement-nivå som åldras — igår stöd på 129 är nästa månad stöd på 134, om tid går och strålen reser sig."
         },
         {
           "type": "text",
@@ -524,7 +524,7 @@
             "Ingenting — det är samma linjer",
             "Fansen förflyttar sig med tiden och ger dynamiskt stöd; nivåerna ligger stilla",
             "Fans använder inte Fibonaccital",
-            "Fans fungerar bara på daggrafer"
+            "Fans fungerar bara på dagsgrafer"
           ],
           "ratt": 1,
           "tips": "En fan-linje är en retracement-nivå som åldras."
@@ -569,7 +569,7 @@
         },
         {
           "type": "text",
-          "content": "Den ärliga dom som kursen är skyldig sin kontroverssvit: time zones är Fibonacci-familjens svagaste verktyg. Tre skäl. (1) Startpunkten: varje vändpunkt ger en ny serie linjer; med tio kandidatbottnar har du hundra linjer i diagrammet — och någon 'träffar' alltid. (2) Toleransen: vad räknas som träff? ±1 dag? ±2? Med sju linjer och två dagars tolerans är nästan varje vändning 'signifikant'. (3) Asymmetrin: linjerna kan inte säga RIKNING, bara eventual vändning — de är inte ens en fullständig hypotes. Fischer-användare som handlar på tidszoner utan annat stöd har därför samma evidensläge som spådom med linjal. I AK1TS därför formuleringen som kursen citerar från våglärokursen: tiden används för att öppna och stänga UPPMÄRKSAMHET, aldrig för att handla."
+          "content": "Den ärliga dom som kursen är skyldig sin kontroverssvit: time zones är Fibonacci-familjens svagaste verktyg. Tre skäl. (1) Startpunkten: varje vändpunkt ger en ny serie linjer; med tio kandidatbottnar har du hundra linjer i diagrammet — och någon 'träffar' alltid. (2) Toleransen: vad räknas som träff? ±1 dag? ±2? Med sju linjer och två dagars tolerans är nästan varje vändning 'signifikant'. (3) Asymmetrin: linjerna kan inte säga RIKTNING, bara eventuell vändning — de är inte ens en fullständig hypotes. Fischer-användare som handlar på tidszoner utan annat stöd har därför samma evidensläge som spådom med linjal. I AK1TS därför formuleringen som kursen citerar från våglärokursen: tiden används för att öppna och stänga UPPMÄRKSAMHET, aldrig för att handla."
         },
         {
           "type": "text",
@@ -644,7 +644,7 @@
         },
         {
           "type": "text",
-          "content": "Identiteten — testa själv: 13 × 1,618 = 21,03. 21 × 1,618 = 33,98. 34 × 1,618 = 55,01. 55 × 1,618 = 88,99 ≈ 89. Fibonaccital gånger phi ger (nästan exakt) Fibonaccitalet två steg upp i serien — eftersom F(n+2) = phi × F(n) i gränsområdet. Konsekvensen är dubbel. Den vackra: serien är självlik under skalning — alla phi-mätningar av en Fibonaccisväng landar på andra Fibonaccital; det är DÄRFÖR talen verkar regna inombords varandra, och varför extensioner av retracear bädda in varandra så lätt. Den varnande: precis denna självekande struktur gör det lätt att hitta phi överallt EFTERÅT — talet beskriver sig själv, inte marknaden. Multiplar på en recoil är en hypotes om upprepning; marknaden är inte skyldig att upprepa något. Använd projektioner som utgångspunkter (där du tar vinst, flyttar stopp), aldrig som ursäkt att stanna kvar utan stopp."
+          "content": "Identiteten — testa själv: 13 × 1,618 = 21,03. 21 × 1,618 = 33,98. 34 × 1,618 = 55,01. 55 × 1,618 = 88,99 ≈ 89. Fibonaccital gånger phi ger (nästan exakt) Fibonaccitalet två steg upp i serien — eftersom F(n+2) = phi × F(n) i gränsområdet. Konsekvensen är dubbel. Den vackra: serien är självlik under skalning — alla phi-mätningar av en Fibonaccisväng landar på andra Fibonaccital; det är DÄRFÖR talen verkar regna inombords varandra, och varför extensioner av retracear bäddar in varandra så lätt. Den varnande: precis denna självekande struktur gör det lätt att hitta phi överallt EFTERÅT — talet beskriver sig själv, inte marknaden. Multiplar på en recoil är en hypotes om upprepning; marknaden är inte skyldig att upprepa något. Använd projektioner som utgångspunkter (där du tar vinst, flyttar stopp), aldrig som ursäkt att stanna kvar utan stopp."
         },
         {
           "type": "text",
@@ -731,7 +731,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Gör kluster-testet på ett eget innehåv: hitta en kursnivå där minst två oberoende konstruktioner möts — t.ex. 61,8-nivån från årets sväng och en månadsbotten från förra året, eller fib38 och en lång trendlinje. Klassificera varje element: är det en egen källa eller en omklädning av en annan? Hur många källor har ditt kluster VERKLIGEN? Ett äkta kluster med två källor är starkare än ett false kluster med sex indikatorer."
+          "content": "Gör kluster-testet på ett eget innehav: hitta en kursnivå där minst två oberoende konstruktioner möts — t.ex. 61,8-nivån från årets sväng och en månadsbotten från förra året, eller fib38 och en lång trendlinje. Klassificera varje element: är det en egen källa eller en omklädning av en annan? Hur många källor har ditt kluster VERKLIGEN? Ett äkta kluster med två källor är starkare än ett falskt kluster med sex indikatorer."
         },
         {
           "type": "tabell",
@@ -806,7 +806,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Bygg ditt eget Fischer-case på ett innehåv, med mallen från tabellen: swing (högst/lägsta 52v), nivåer (23,6–78,6), signalläge (vad bekräftade?), entry, stopp, mål (1,272/1,618), R/R, tidsfönster (antal dagar du ger affären), och — det viktiga — utgången SPARAD OAVSETT UTFALL. Kör affären på papper. Upprepa tio gånger. Du har nu en micro-databas med både vinnare och förlorare: början på evidens, inte anekdot."
+          "content": "Bygg ditt eget Fischer-case på ett innehav, med mallen från tabellen: swing (högst/lägsta 52v), nivåer (23,6–78,6), signalläge (vad bekräftade?), entry, stopp, mål (1,272/1,618), R/R, tidsfönster (antal dagar du ger affären), och — det viktiga — utgången SPARAD OAVSETT UTFALL. Kör affären på papper. Upprepa tio gånger. Du har nu en micro-databas med både vinnare och förlorare: början på evidens, inte anekdot."
         },
         {
           "type": "tabell",

@@ -316,7 +316,7 @@
       "num": 5,
       "minutes": 10,
       "title": "Misjudgment I — incitament, förnekelse, konsekvens och deprival",
-      "intro": "1995 höll Munger sitt mest kända föredrag: The Psychology of Human Misjudgment, en katalog över cirka tjugofem kognitiva tendenser som systematiskt vränger mänskligt omdöme. Vi börjar med de fyra som gör mest skada i affärslivet: incentiv bias, förnekelse, konsekvens/första-slutsats och deprival super-reaction.",
+      "intro": "1995 höll Munger sitt mest kända föredrag: The Psychology of Human Misjudgment, en katalog över cirka tjugofem kognitiva tendenser som systematiskt vränger mänskligt omdöme. Vi börjar med de fyra som gör mest skada i affärslivet: incitamentsbias, förnekelse, konsekvens/första-slutsats och deprival super-reaction.",
       "blocks": [
         {
           "type": "text",
@@ -332,11 +332,11 @@
         },
         {
           "type": "text",
-          "content": "Deprival super-reaction syndrome är Mungers namn på det vi i dag skulle kalla förlustaversion på steroider: när vi berövas något vi äger — eller nästan äger — reagerar vi disproportionerligt starkt. Därför eskalerar auktioner, därför blir arbetskonflikter våldsamma över små förmåner, och därför vägrar investerare sälja på förlust »tills det kommer tillbaka«. Köppriset blir en ägodel att försvara. Motgiftet är regler som inte är knutna till ditt ankarpris: varför du äger, till vilken sannolikhet, och vad som måste gälla för att du ska ha fel."
+          "content": "Deprival super-reaction syndrome är Mungers namn på det vi i dag skulle kalla förlustaversion på steroider: när vi berövas något vi äger — eller nästan äger — reagerar vi oproportionerligt starkt. Därför eskalerar auktioner, därför blir arbetskonflikter våldsamma över små förmåner, och därför vägrar investerare sälja på förlust »tills det kommer tillbaka«. Köppriset blir en ägodel att försvara. Motgiftet är regler som inte är knutna till ditt ankarpris: varför du äger, till vilken sannolikhet, och vad som måste gälla för att du ska ha fel."
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Tendens → mekanism → motgift\",\"rader\":[[\"Tendens\",\"Mekanism\",\"Motgift\"],[\"Incentiv bias\",\"Den som betalar styr slutsatsen\",\"Kartlägg vem som finansierar källan\"],[\"Förnekelse\",\"Smärtsam information filtreras bort\",\"Fördefinierade exit-villkor i lugnt läge\"],[\"Första slutsats / konsekvens\",\"Hjärnan låser sig vid slutsats nummer ett\",\"Skriv bästa motargumentet först\"],[\"Deprival super-reaktion\",\"Förlust av det egna känns överdrivet stor\",\"Regler utan anknytning till inköpspris\"]]}"
+          "content": "{\"rubrik\":\"Tendens → mekanism → motgift\",\"rader\":[[\"Tendens\",\"Mekanism\",\"Motgift\"],[\"Incitamentsbias\",\"Den som betalar styr slutsatsen\",\"Kartlägg vem som finansierar källan\"],[\"Förnekelse\",\"Smärtsam information filtreras bort\",\"Fördefinierade exit-villkor i lugnt läge\"],[\"Första slutsats / konsekvens\",\"Hjärnan låser sig vid slutsats nummer ett\",\"Skriv bästa motargumentet först\"],[\"Deprival super-reaktion\",\"Förlust av det egna känns överdrivet stor\",\"Regler utan anknytning till inköpspris\"]]}"
         },
         {
           "type": "insikt",
@@ -403,7 +403,7 @@
         },
         {
           "type": "text",
-          "content": "Authority-misinfluence tendency: Milgrams experiment visade att helt vanliga människor ger (det de tror är) farliga elektriska stötar när en person i labbrock instruerar dem att fortsätta. I finans heter rocken CFA-titel, »toppickad analytiker«, grundar-VD eller TV-studio. Kopplingen till AK1: den kognitiva profileringen via /profil mäter bland annat din benägenhet för social proof och auktoritetstro — ditt resultat visar var din personliga checklista måste börja. Och för Short-Sellern är auktoritet + social proof bränslet i nästan varje uppumpad historia: en beundrad talesman plus en stigande kurs är inte evidens, det är mekanik."
+          "content": "Authority-misinfluence tendency: Milgrams experiment visade att helt vanliga människor ger (det de tror är) farliga elektriska stötar när en person i labbrock instruerar dem att fortsätta. I finans heter rocken CFA-titel, »topprankad analytiker«, grundar-VD eller TV-studio. Kopplingen till AK1: den kognitiva profileringen via /profil mäter bland annat din benägenhet för social proof och auktoritetstro — ditt resultat visar var din personliga checklista måste börja. Och för Short-Sellern är auktoritet + social proof bränslet i nästan varje uppumpad historia: en beundrad talesman plus en stigande kurs är inte evidens, det är mekanik."
         },
         {
           "type": "insikt",
@@ -529,7 +529,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Excess self-regard tendency: Munger älskar studien där nittio procent av svenska bilförare ansåg sig köra bättre än medelföraren — matematiskt omöjligt, mänskligt helt normalt. I portföljen heter det att de flesta privata sparare och de flesta förvaltare tror sig slå index, och att varje analys man själv skriver känns objektiv. Motgiftet är brutalt enkelt: mät ditt utfal över hela cykler, räkna dina misstag, och kom ihåg Munger om grannen till föraren — alla kan inte vara bättre än medel, och sannolikheten att just du är undantaget kräver bevis, inte känsla."
+          "content": "Excess self-regard tendency: Munger älskar studien där nittio procent av svenska bilförare ansåg sig köra bättre än medelföraren — matematiskt omöjligt, mänskligt helt normalt. I portföljen heter det att de flesta privata sparare och de flesta förvaltare tror sig slå index, och att varje analys man själv skriver känns objektiv. Motgiftet är brutalt enkelt: mät ditt utfall över hela cykler, räkna dina misstag, och kom ihåg Munger om grannen till föraren — alla kan inte vara bättre än medel, och sannolikheten att just du är undantaget kräver bevis, inte känsla."
         },
         {
           "type": "text",
@@ -616,7 +616,7 @@
         },
         {
           "type": "text",
-          "content": "Och i omvänd riktning: Short-Sellerns dekomposition. När ett bolag har en beundrad grundare (auktoritet), sponsorad forskning och omtalare med intresse (reciprocation), stark kurs-trend (social proof), en berättelse som ger skäl (reason-respecting) och troende ägare som aldrig sålt (deprival + förnekelse), då är alla bitarna på plats för ett fall som blir djupare än någon enskild kraft motiverar. När trenden vänder verkar samma krafter nedåt: förnekelse blockerar exit, deprival håller kvar, tvångsförsäljningar accelererar. Manierna — tulpaner, dotcom 1999, tillväxt/premiär 2021 — är alla lollapalooza-mönster. Shorts-säljaren behöver sällan hitta ny information; det räcker att se konvergensen och ha tålamod."
+          "content": "Och i omvänd riktning: Short-Sellerns dekomposition. När ett bolag har en beundrad grundare (auktoritet), sponsorad forskning och förespråkare med intresse (reciprocation), stark kurs-trend (social proof), en berättelse som ger skäl (reason-respecting) och troende ägare som aldrig sålt (deprival + förnekelse), då är alla bitarna på plats för ett fall som blir djupare än någon enskild kraft motiverar. När trenden vänder verkar samma krafter nedåt: förnekelse blockerar exit, deprival håller kvar, tvångsförsäljningar accelererar. Manierna — tulpaner, dotcom 1999, tillväxt/premiär 2021 — är alla lollapalooza-mönster. Shorts-säljaren behöver sällan hitta ny information; det räcker att se konvergensen och ha tålamod."
         },
         {
           "type": "visuell",

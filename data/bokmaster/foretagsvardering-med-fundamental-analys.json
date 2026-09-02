@@ -10,7 +10,7 @@
   "xp": 2000,
   "level": "",
   "learn": "Efter kursen kan eleven läsa en svensk årsredovisning enligt K3/IFRS med kritiska ögon: plocka isär resultaträkning, balansräkning och kassaflödesanalys, beräkna justerat eget kapital (obeskattade reserver x (1 - skattesats)) och de svenska nyckeltalen soliditet, kassalikviditet och räntetäckningsgrad — mappade mot AKM1:s variabler V07-V12. Eleven kan härleda kapitalkostnaden med svensk riskpremie och beta mot Stockholmsbörsen, bygga WACC i SEK, genomföra en komplett DCF (FCFF, terminalvärde, känslighetsmatris), värdera med utdelningsmodellen, EV/EBIT-multipler mot peer-grupp samt EVA och substansvärde med holdingrabatt — och slutligen samla allt i ett strukturerat värderingsutlåtande med poängsättning istället för rekommendationer.",
-  "why": "Detta är värdering på svenska. Damodaran och Graham ger teorin, men Företagsvärdering: med fundamental analys ger praxis: K3 och IFRS, obeskattade reserver, A/B-aktier, svensk utdelningspolicy, bolagsskatten 20,6 procent och investmentbolagens holdingrabatter. Utan denna bok blir AKM1:s stabilitets- och lönsamhetsvariabler (V07-V12) översättningar av amerikanska förhållanden; med den blir de svenska bolagslivet som det faktiskt ser ut på Stockholmsbörsen.",
+  "why": "Detta är värdering på svenska. Damodaran och Graham ger teorin, men Företagsvärdering: med fundamental analys ger praxis: K3 och IFRS, obeskattade reserver, A/B-aktier, svensk utdelningspolicy, bolagsskatten 20,6 procent och investmentbolagens holdingrabatter. Utan denna bok blir AKM1:s stabilitets- och lönsamhetsvariabler (V07-V12) översättningar av amerikanska förhållanden; med den blir det svenska bolagslivet som det faktiskt ser ut på Stockholmsbörsen.",
   "chapters_list": [
     "1. Tre analyser blir en värdering — bokens svenska hantverk",
     "2. Årsredovisningen — K3, IFRS och de tre rapporterna",
@@ -45,7 +45,7 @@
         },
         {
           "type": "text",
-          "content": "Boken är också öppen med värderingens roll: ett värderingsutlåtande är en strukturerad, motiverad och reproducierbar bedömning av ett bolags värde — aldrig en sanning. Därför kräver den att varje antagande kan granskas och att osäkerheten hanteras med känslighetsanalys och intervall istället för en enda punktsiffra. Det är samma princip som AK1A:s krav på reproducerbarhet: varje slutsats har en källa, och varje siffra en härledning."
+          "content": "Boken är också öppen med värderingens roll: ett värderingsutlåtande är en strukturerad, motiverad och reproducerbar bedömning av ett bolags värde — aldrig en sanning. Därför kräver den att varje antagande kan granskas och att osäkerheten hanteras med känslighetsanalys och intervall istället för en enda punktsiffra. Det är samma princip som AK1A:s krav på reproducerbarhet: varje slutsats har en källa, och varje siffra en härledning."
         },
         {
           "type": "tabell",
@@ -65,7 +65,7 @@
           "q": "Vilken är grundprincipen i bokens värderingsprocess?",
           "alternativ": [
             "Börja alltid i DCF-modellen och arbeta baklänges",
-            "Strategisk, redovisningsmässig och finansiell analys ska läggga grunden innan värderingsmodellen körs",
+            "Strategisk, redovisningsmässig och finansiell analys ska lägga grunden innan värderingsmodellen körs",
             "Värdering är en känsla som tränas genom erfarenhet",
             "Multipler räcker alltid — djupare analys är onödig"
           ],
@@ -1007,7 +1007,7 @@
         },
         {
           "type": "text",
-          "content": "Sista punkten på checklistan är margin of safety — marginalen mellan beräknat värde och kurs. Kursens exempel [illustrativt]: DCF 16,50 kronor, multipel 12,50 kronor, kurs 13,00 kronor. Mittenvärde cirka 14,50 ger cirka 11 procents uppsida — tunn marginal; mot känslighetsmatrisens sämsta hörn (11,07) är nedsidan 15 procent. En AKM1-bedömning skulle parkera bolaget i 'FÖRSIKTIGT KÖP'-zonen och kräva antingen lägre kurs eller starkare katalysator (V16-V18) innan marginalen motiverar en högre poäng. Det är värderingens slutprodukt: inte sanningen om bolaget, utan en disciplinerad, reproducerbar och granskningsbar bedömning — med osäkerheten ärligt redovisad och marginalen som skydd mot den egna felbarheten. Det är också den svenska standardverkets sista läxa: värderingen är aldrig bättre än sin dokumentation."
+          "content": "Sista punkten på checklistan är margin of safety — marginalen mellan beräknat värde och kurs. Kursens exempel [illustrativt]: DCF 16,50 kronor, multipel 12,50 kronor, kurs 13,00 kronor. Mittenvärde cirka 14,50 ger cirka 11 procents uppsida — tunn marginal; mot känslighetsmatrisens sämsta hörn (11,07) är nedsidan 15 procent. En AKM1-bedömning skulle parkera bolaget i 'FÖRSIKTIGT KÖP'-zonen och kräva antingen lägre kurs eller starkare katalysator (V16-V18) innan marginalen motiverar en högre poäng. Det är värderingens slutprodukt: inte sanningen om bolaget, utan en disciplinerad, reproducerbar och granskningsbar bedömning — med osäkerheten ärligt redovisad och marginalen som skydd mot den egna felbarheten. Det är också det svenska standardverkets sista läxa: värderingen är aldrig bättre än sin dokumentation."
         },
         {
           "type": "tabell",

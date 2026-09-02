@@ -272,7 +272,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Startup kontra existerande bolag — Dhandho-perspektivet\",\"rader\":[[\"Fråga\",\"Startup\",\"Existerande bolag\"],[\"Kassaflöde\",\"Negativt — kapitalförbränning, V19 larmar\",\"Positivt och dokumenterat över cykler\"],[\"Vem tjänar på tillväxten?\",\"Nya ägare vid varje emission\",\"Befintliga ägare — ibland förstärkt av återköp, V20\"],[\"Historik att läsa\",\"Ingen — alla fel är osynliga\",\"År av V07, V08, V09 och V12 att studera\"],[\"Prisättning\",\"Premium för berättelsen\",\"Rabatt för tristessen eller krisen\"],[\"Typiskt utfall\",\"De fleste når inte lönsamhet\",\"Nedsida läsbar mot tillgångsvärden (V05)\"]]}"
+          "content": "{\"rubrik\":\"Startup kontra existerande bolag — Dhandho-perspektivet\",\"rader\":[[\"Fråga\",\"Startup\",\"Existerande bolag\"],[\"Kassaflöde\",\"Negativt — kapitalförbränning, V19 larmar\",\"Positivt och dokumenterat över cykler\"],[\"Vem tjänar på tillväxten?\",\"Nya ägare vid varje emission\",\"Befintliga ägare — ibland förstärkt av återköp, V20\"],[\"Historik att läsa\",\"Ingen — alla fel är osynliga\",\"År av V07, V08, V09 och V12 att studera\"],[\"Prisättning\",\"Premium för berättelsen\",\"Rabatt för tristessen eller krisen\"],[\"Typiskt utfall\",\"De flesta når inte lönsamhet\",\"Nedsida läsbar mot tillgångsvärden (V05)\"]]}"
         },
         {
           "type": "insikt",
@@ -422,7 +422,7 @@
         },
         {
           "type": "insikt",
-          "content": "Krisen är inte köpsignalen — den är startignalen för räkneverket. Du köper först när golvet är räknat i tillgångar, likviditet och bottenmultipel, aldrig för att fallen känns klar."
+          "content": "Krisen är inte köpsignalen — den är startsignalen för räkneverket. Du köper först när golvet är räknat i tillgångar, likviditet och bottenmultipel, aldrig för att fallen känns klar."
         },
         {
           "type": "utmaning",
@@ -560,7 +560,7 @@
         },
         {
           "type": "text",
-          "content": "Kopplingen till AKM1 är rak: efter att nedsida, värde och marginal är räknade återstår positionsstorleken, och det är en matematisk fråga — inte en känsla. Uppskatta p (sannolikheten att värdet realiseras inom din horisont), uppsatta b (uppsidan mot din maxförlust från nedsidakalkylen), räkna f* — och klipp sedan ner det, eftersom din p alltid är osäkrare än du tror. Detta ger också ett sunt språk för att jämföra idéer: en affär med sjuttio procens träffsäkerhet och trefaldig uppsida är matematiskt sett mer värd än tio små »kanske« — och förtjänar därför mer plats i portföljen. Som Pabrai sammanfattar det: satsa tungt när oddsen är överväldigande i din favör — och låt bli att spela annars."
+          "content": "Kopplingen till AKM1 är rak: efter att nedsida, värde och marginal är räknade återstår positionsstorleken, och det är en matematisk fråga — inte en känsla. Uppskatta p (sannolikheten att värdet realiseras inom din horisont), uppsatta b (uppsidan mot din maxförlust från nedsidakalkylen), räkna f* — och klipp sedan ner det, eftersom din p alltid är osäkrare än du tror. Detta ger också ett sunt språk för att jämföra idéer: en affär med sjuttio procents träffsäkerhet och trefaldig uppsida är matematiskt sett mer värd än tio små »kanske« — och förtjänar därför mer plats i portföljen. Som Pabrai sammanfattar det: satsa tungt när oddsen är överväldigande i din favör — och låt bli att spela annars."
         },
         {
           "type": "tabell",
@@ -769,11 +769,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Logiken är ren speltori, inte lathet. Om någon annan med bättre tänkande, längre historik och djupare resurser redan har löst en klass av problem — varför börja om från noll? Innovationspremien i investering är negativ: den som MÅSTE ha en egen idé betalar för originalitet med sämre utfall. Pabrai formulerar det som att han inte har en enda original tanke — och att det inte gör honom något. Buffetts brev, Mungers tal, Grahams böcker och Klarmans marginal är gratis forskningsavdelningar som öppnat sina labböcker för allmänheten. Den enda kostnaden är ödmjukheten att läsa dem noggrant nog att förstå mekanismen, inte bara slutsatsen."
+          "content": "Logiken är ren spelteori, inte lathet. Om någon annan med bättre tänkande, längre historik och djupare resurser redan har löst en klass av problem — varför börja om från noll? Innovationspremien i investering är negativ: den som MÅSTE ha en egen idé betalar för originalitet med sämre utfall. Pabrai formulerar det som att han inte har en enda original tanke — och att det inte gör honom något. Buffetts brev, Mungers tal, Grahams böcker och Klarmans marginal är gratis forskningsavdelningar som öppnat sina labböcker för allmänheten. Den enda kostnaden är ödmjukheten att läsa dem noggrant nog att förstå mekanismen, inte bara slutsatsen."
         },
         {
           "type": "text",
-          "content": "Skillnaden mellan kloning och cargo-kult är förståelsen av varför. Att se att Buffett köpte Washington Post 1973 och köpa nästa tidningsbolag är cargo-kult — det verkar, men det har ingen kraft. Att förstå affären är något annat: ett kvalitetsfranchise med starkt varumärke (V14) och stabila intäkter (V12), handlat till en bråkdel av både ersättningsvärde och beräknat värde (V05, marginal of safety), i en marknad som såg bara rubriker. American Express 1964 efter saladoolskandalen är samma mall: skandalen kostade aktien hälften, men beteendet — kundernas lojalitet till kortet — var intakt; varumärket överlevde nyheten. Det är dessa mekanismer du klonar: kris plus intakt kundbeteende plus moat plus bråkdel av värde. Aktien är bara namnskylten på en upprepbar situation."
+          "content": "Skillnaden mellan kloning och cargo-kult är förståelsen av varför. Att se att Buffett köpte Washington Post 1973 och köpa nästa tidningsbolag är cargo-kult — det verkar, men det har ingen kraft. Att förstå affären är något annat: ett kvalitetsfranchise med starkt varumärke (V14) och stabila intäkter (V12), handlat till en bråkdel av både ersättningsvärde och beräknat värde (V05, marginal of safety), i en marknad som såg bara rubriker. American Express 1964 efter saladoljeskandalen är samma mall: skandalen kostade aktien hälften, men beteendet — kundernas lojalitet till kortet — var intakt; varumärket överlevde nyheten. Det är dessa mekanismer du klonar: kris plus intakt kundbeteende plus moat plus bråkdel av värde. Aktien är bara namnskylten på en upprepbar situation."
         },
         {
           "type": "text",
@@ -900,7 +900,7 @@
             "Att man ska pantsätta boendet för att köpa mer under korrektioner",
             "Att långa holdingperioder alltid är bäst oavsett pris",
             "Att man ska vänta med att sälja tills aktien når dubbla",
-            "Att avkastningen skapas av få beslaks kompoundering över tid — aktivitet kostar courtage, skatt och uppmärksamhet"
+            "Att avkastningen skapas av få besluts kompoundering över tid — aktivitet kostar courtage, skatt och uppmärksamhet"
           ],
           "ratt": 3,
           "tips": "Vad kostar all aktivitet — i avgifter och i uppmärksamhet — jämfört med att bara hålla?"
@@ -931,7 +931,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Dhandho-checklistan i AKM1 — fråga, variabel, fällvärde\",\"rader\":[[\"Fråga\",\"AKM1-variabler\",\"Godkänt när...\"],[\"Finns bolaget — med historik?\",\"V07, V08, V09, V19\",\"Fem års läsbar historik; V19 grönt — ingen brinnande kassa\"],[\"Är branschen tråkig och stabil?\",\"V12, V03\",\"Måttlig svagning genom cykeln; intäkter utspridda på många kunder\"],[\"Finns moat — på en mening?\",\"V14, V13, V15\",\"Varumärke, IP eller nätverk som en kapitalstark konkurrent inte kopierar på fem år\"],[\"Är det kris — med golv?\",\"V05, V06, V11, V10\",\"EV nära begagnat- eller bokfört värde; likviditet och skulder bär 18+ månader\"],[\"Ger priset marginal?\",\"Marginal of safety\",\"Betydligt under värsta rimliga scenario\"],[\"Hur mycket?\",\"Kelly: f* = p − q/b\",\"Halv-Kelly som tak — vikt följer marginalen\"],[\"Ning händer — vem tjänar?\",\"V20, V09\",\"Återköp och ROE kompa under medan du väntar\"]]}"
+          "content": "{\"rubrik\":\"Dhandho-checklistan i AKM1 — fråga, variabel, fällvärde\",\"rader\":[[\"Fråga\",\"AKM1-variabler\",\"Godkänt när...\"],[\"Finns bolaget — med historik?\",\"V07, V08, V09, V19\",\"Fem års läsbar historik; V19 grönt — ingen brinnande kassa\"],[\"Är branschen tråkig och stabil?\",\"V12, V03\",\"Måttlig svagning genom cykeln; intäkter utspridda på många kunder\"],[\"Finns moat — på en mening?\",\"V14, V13, V15\",\"Varumärke, IP eller nätverk som en kapitalstark konkurrent inte kopierar på fem år\"],[\"Är det kris — med golv?\",\"V05, V06, V11, V10\",\"EV nära begagnat- eller bokfört värde; likviditet och skulder bär 18+ månader\"],[\"Ger priset marginal?\",\"Marginal of safety\",\"Betydligt under värsta rimliga scenario\"],[\"Hur mycket?\",\"Kelly: f* = p − q/b\",\"Halv-Kelly som tak — vikt följer marginalen\"],[\"Inget händer — vem tjänar?\",\"V20, V09\",\"Återköp och ROE kompa under medan du väntar\"]]}"
         },
         {
           "type": "insikt",

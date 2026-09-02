@@ -270,7 +270,7 @@
         },
         {
           "type": "text",
-          "content": "Talebs läromästare Benoît Mandelbrot erbjöd alternativet: skalbara fördelningar — kraftlagor där extrema händelser är sällsynta men inte omöjliga, och där variansen kan vara oändlig, vilket gör standardavvikelsen meningslös som riskmått. Små händelser förklarar lite, stora förklarar allt; kurvan har tjocka svansar och självlikformighet över skala — samma vildhet på minuters- som på årsbasis. Det är ingen exakt prognosmaskin och det gör inga punktsprognoser (det är Taleb ärlig med), men det är en ärligare geometri: den nekar inte att det oväntade finns. Skillnaden mot klockkurvan är inte precision utan ödmjukhet inför svansens existens."
+          "content": "Talebs läromästare Benoît Mandelbrot erbjöd alternativet: skalbara fördelningar — kraftlagar där extrema händelser är sällsynta men inte omöjliga, och där variansen kan vara oändlig, vilket gör standardavvikelsen meningslös som riskmått. Små händelser förklarar lite, stora förklarar allt; kurvan har tjocka svansar och självlikformighet över skala — samma vildhet på minuters- som på årsbasis. Det är ingen exakt prognosmaskin och det gör inga punktsprognoser (det är Taleb ärlig med), men det är en ärligare geometri: den nekar inte att det oväntade finns. Skillnaden mot klockkurvan är inte precision utan ödmjukhet inför svansens existens."
         },
         {
           "type": "text",
@@ -374,7 +374,7 @@
           "alternativ": [
             "Hög lön och trygg anställning",
             "Att det kräver lång utbildning",
-            "Arbetet görs en gång och kopieras i miljontal — utfallen följer kraftlagor, inte medelvärden",
+            "Arbetet görs en gång och kopieras i miljontal — utfallen följer kraftlagar, inte medelvärden",
             "Att det är statligt reglerat"
           ],
           "ratt": 2,
@@ -641,7 +641,7 @@
         },
         {
           "type": "text",
-          "content": "Finansvärldens variant är episkt dokumenterad: analyikers prismål med tolv månaders horisont, femårsplaner, tillväxtböcker. Här återanvänder Taleb sin seer-sucker-teori från Fooled by Randomness: eftersom det finns en sucker för varje seer kommer det alltid att finnas ett utbud av siare — efterfrågan på visshet skapar utbud av konfidens. Och mekanismen som gör det till en skandal i stället för en kuriositet: prognosmakaren betalas för att förutsäga men aldrig för att ha haft fel — ingen score-board, inget minne, inga konsekvenser. Den tomma kostymen (empty suit) är Talebs term för den som ser expertisen ut: en kostym är inte ett argument, men den är ofta en karriär."
+          "content": "Finansvärldens variant är episkt dokumenterad: analytikers prismål med tolv månaders horisont, femårsplaner, tillväxtböcker. Här återanvänder Taleb sin seer-sucker-teori från Fooled by Randomness: eftersom det finns en sucker för varje seer kommer det alltid att finnas ett utbud av siare — efterfrågan på visshet skapar utbud av konfidens. Och mekanismen som gör det till en skandal i stället för en kuriositet: prognosmakaren betalas för att förutsäga men aldrig för att ha haft fel — ingen score-board, inget minne, inga konsekvenser. Den tomma kostymen (empty suit) är Talebs term för den som ser expertisen ut: en kostym är inte ett argument, men den är ofta en karriär."
         },
         {
           "type": "text",
@@ -866,7 +866,7 @@
         },
         {
           "type": "text",
-          "content": "Det absorberande tillståndet är bärande begrepp: ett tillstånd man inte lämnar — konkurs, ruin, förlorat kapital. Multiplikativa processer antar att alla dragningar finns tillgängliga, men den som hamnat under barriären har inga fler dragningar, oavsett hur gynnsam fördelningen var. Därför är V19 Kapitalförbrukning & Emission-risk superanalysens hårdaste port: ett bolag med runway under tolv månader har inte en dålig framtidsprognos — det har ingen framtid att prognostisera utan en emission, och emissionen sker till kursens nackdel. V10 Skuldsättningsgrad och V11 Likviditet kompletterar: de är inte poäng bland poäng utan barriärkontroll — frågan varjedera svarar på är om bolaget garanterat får spela nästa år."
+          "content": "Det absorberande tillståndet är bärande begrepp: ett tillstånd man inte lämnar — konkurs, ruin, förlorat kapital. Multiplikativa processer antar att alla dragningar finns tillgängliga, men den som hamnat under barriären har inga fler dragningar, oavsett hur gynnsam fördelningen var. Därför är V19 Kapitalförbrukning & Emission-risk superanalysens hårdaste port: ett bolag med runway under tolv månader har inte en dålig framtidsprognos — det har ingen framtid att prognostisera utan en emission, och emissionen sker till kursens nackdel. V10 Skuldsättningsgrad och V11 Likviditet kompletterar: de är inte poäng bland poäng utan barriärkontroll — frågan var och en svarar på är om bolaget garanterat får spela nästa år."
         },
         {
           "type": "text",
@@ -937,7 +937,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Medicinen är bokens exempel: framstegen kom oftast inte av nya tillägg utan av borttaganden — när åderlåtningen upphörde slutade patienterna att dö i behandlingen. Negativ kunskap är robust: den degraderar inte med tiden som en tes kan. Att veta att det här dödar gäller medan det här botar kan visa sig gälla bara tills nästa studie. Taleb formulerar det som att det är kraftfullare att undvika okunnighet än att jaga kunskap — för det du subtraherat kan inte ifrågasättas av nästa överraskning. Översättningen till certitetsjakt: varje tes du lägger till ökar ytan som svansen kan slå; varje fel du tar bort minskar den. En portfölj blir inte bättre av att veta mer — den blir bättre av att exponeras för mindre dumhet."
+          "content": "Medicinen är bokens exempel: framstegen kom oftast inte av nya tillägg utan av borttaganden — när åderlåtningen upphörde slutade patienterna att dö i behandlingen. Negativ kunskap är robust: den degraderar inte med tiden som en tes kan. Att veta att det här dödar gäller medan det här botar kan visa sig gälla bara tills nästa studie. Taleb formulerar det som att det är kraftfullare att undvika okunnighet än att jaga kunskap — för det du subtraherat kan inte ifrågasättas av nästa överraskning. Översättningen till visshetsjakt: varje tes du lägger till ökar ytan som svansen kan slå; varje fel du tar bort minskar den. En portfölj blir inte bättre av att veta mer — den blir bättre av att exponeras för mindre dumhet."
         },
         {
           "type": "text",
@@ -1016,7 +1016,7 @@
         },
         {
           "type": "text",
-          "content": "Den 11 september 2001 kollapsade två torn och med dem idén att risk kan kalibreras på historisk volatilitet. Taleb behandlar dagen varsamt men strukturerat: det centrala är efterföljandets industri — utredningar, böcker och expertpaneler som i efterhand hittar signalerna som alla borde ha sett, medan samma experter dagen före skulle ha kallat scenariot fantasifullt. Efterhandsklokheten omfördelar aldrig kapital: den som burit försäkring mot det otänkbara kallades paranoid — tills han inte längre var det. Detta är det tredje kriterietets praktik: när förklaringsindustrin går igång vet du att du står i en svans som ingen positionerade sig för, och frågan att ställa är inte varför det hände utan varför ingen var exponerad för att det kunde hända."
+          "content": "Den 11 september 2001 kollapsade två torn och med dem idén att risk kan kalibreras på historisk volatilitet. Taleb behandlar dagen varsamt men strukturerat: det centrala är efterföljandets industri — utredningar, böcker och expertpaneler som i efterhand hittar signalerna som alla borde ha sett, medan samma experter dagen före skulle ha kallat scenariot fantasifullt. Efterhandsklokheten omfördelar aldrig kapital: den som burit försäkring mot det otänkbara kallades paranoid — tills han inte längre var det. Detta är det tredje kriteriets praktik: när förklaringsindustrin går igång vet du att du står i en svans som ingen positionerade sig för, och frågan att ställa är inte varför det hände utan varför ingen var exponerad för att det kunde hända."
         },
         {
           "type": "text",

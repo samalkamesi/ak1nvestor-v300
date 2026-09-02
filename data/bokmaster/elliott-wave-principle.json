@@ -394,7 +394,7 @@
             "Elliott beskrev självlikformiga mönster i prisdata årtionden innan Mandelbrot formaliserade fraktaler"
           ],
           "ratt": 3,
-          "tips": "Ordet kom senare än observationen — терминologin fick honom inte, datat gjorde."
+          "tips": "Ordet kom senare än observationen — terminologin fick honom inte, datat gjorde."
         }
       ]
     },
@@ -410,7 +410,7 @@
         },
         {
           "type": "text",
-          "content": "Regel två: våg 3 är aldrig den kortaste av vågorna 1, 3 och 5. Observera formuleringen exakt — våg 3 kan mycket väl vara kortare än våg 1, men endast om våg 5 är kortare än våg 3, så att treman ändå inte är den minsta. I praktiken är våg 3 oftast den längsta och kraftigaste vågen, och den mest benägna att extensioneras — att rusa iväg i en lång, nästan obruten rörelse. Konsekvensen: om din räkning ger en pyttesmal våg 3 medan 1 och 5 är långa, är den misstänkt. Ofta visar sig sanningen vara att det du märkt som 3-4 i själva verket är delar av en enda lång våg 3 vars inre delvågor ännu inte är synliga, eller att hela din placering av sekvensen är förskjuten ett steg."
+          "content": "Regel två: våg 3 är aldrig den kortaste av vågorna 1, 3 och 5. Observera formuleringen exakt — våg 3 kan mycket väl vara kortare än våg 1, men endast om våg 5 är kortare än våg 3, så att trean ändå inte är den minsta. I praktiken är våg 3 oftast den längsta och kraftigaste vågen, och den mest benägna att extensioneras — att rusa iväg i en lång, nästan obruten rörelse. Konsekvensen: om din räkning ger en pyttesmal våg 3 medan 1 och 5 är långa, är den misstänkt. Ofta visar sig sanningen vara att det du märkt som 3-4 i själva verket är delar av en enda lång våg 3 vars inre delvågor ännu inte är synliga, eller att hela din placering av sekvensen är förskjuten ett steg."
         },
         {
           "type": "text",
@@ -430,7 +430,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Återvänd till din vågritning från kapitel 3 — eller ta en ny dagschart med en tydlig trend. Märk din bästa gissning på 1-2-3-4-5 och pricka in de tre reglerna: streckrar våg 2 över våg 1:s start? Är våg 3 kortast av 1-3-5? Nådde våg 4 ned i våg 1:s priszón? Svara med ja eller nej per regel. Om någon regel bryts: skriv om märkningen tills alla tre håller — eller sluta dig till att strukturen är en korrigering, inte en impuls."
+          "content": "Återvänd till din vågritning från kapitel 3 — eller ta en ny dagschart med en tydlig trend. Märk din bästa gissning på 1-2-3-4-5 och pricka in de tre reglerna: streckrar våg 2 över våg 1:s start? Är våg 3 kortast av 1-3-5? Nådde våg 4 ned i våg 1:s priszonen? Svara med ja eller nej per regel. Om någon regel bryts: skriv om märkningen tills alla tre håller — eller sluta dig till att strukturen är en korrigering, inte en impuls."
         },
         {
           "type": "tabell",
@@ -505,7 +505,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Välj en känd bubbla eller boomen du minns — en aktie eller ett index med dramatisk topp. Gå tillbaka på charten och läs den som en pjäs i fem akter med efterföljande tre akers fall. Skriv en rad per våg: hur stämningen måste ha känts där, vilka rubriker som präglade den. Kontrollera sedan mekaniskt: fanns divergens vid våg 5? Var våg b:s rally volymsvagt? Du kommer att se att personligheterna inte är mystik — de är folkläran om girighet och rädsla, systematis."
+          "content": "Välj en känd bubbla eller boomen du minns — en aktie eller ett index med dramatisk topp. Gå tillbaka på charten och läs den som en pjäs i fem akter med efterföljande tre akters fall. Skriv en rad per våg: hur stämningen måste ha känts där, vilka rubriker som präglade den. Kontrollera sedan mekaniskt: fanns divergens vid våg 5? Var våg b:s rally volymsvagt? Du kommer att se att personligheterna inte är mystik — de är folkläran om girighet och rädsla, systematiserad."
         },
         {
           "type": "tabell",
@@ -572,7 +572,7 @@
         },
         {
           "type": "text",
-          "content": "Praktisk checklista för korrigeringar i realtid: räkna delningarna. Har första benet fem vågor väntar sannolikt ett zigzag (föreställ dig ett skarpt A och en lika skarp C). Har det tre väntar en flatfamilj (förbered dig på sideways eller en expanderad variant). Mät sedan retracements med Fibonacci — våg b mot våg a, våg c mot våg a — och lägg märke till var flera mättnivåer klustrar. AK1TS tillägger en deterministisk kontroll: volymen skall sinka genom hela korrigeringen och momentum skall ligga neutralt mot negative. En 'korrigering' på stigande volym med starkt positivt momentum är misstänkt — då är den ingen korrigering utan början på något annat."
+          "content": "Praktisk checklista för korrigeringar i realtid: räkna delningarna. Har första benet fem vågor väntar sannolikt ett zigzag (föreställ dig ett skarpt A och en lika skarp C). Har det tre väntar en flatfamilj (förbered dig på sideways eller en expanderad variant). Mät sedan retracements med Fibonacci — våg b mot våg a, våg c mot våg a — och lägg märke till var flera mättnivåer klustrar. AK1TS tillägger en deterministisk kontroll: volymen skall sjunka genom hela korrigeringen och momentum skall ligga neutralt mot negativt. En 'korrigering' på stigande volym med starkt positivt momentum är misstänkt — då är den ingen korrigering utan början på något annat."
         },
         {
           "type": "insikt",
@@ -647,11 +647,11 @@
         },
         {
           "type": "text",
-          "content": "Praktisk igenkänning: först delning — har benet fem steg (impuls/zigzag-a) eller tre (flat/triangel)? Sedan antal — är det tre ben (A-B-C), fem konvergerande ben (triangel) eller många ben med förbindare (kombination)? Kom ihåg att korrigeringar i en trend ofta blir djupare och mer komplexa ju längre den överordnande trenden varit igång — den gamla marknadsregeln om att korrigeringar fördjupas med åldern är våglärans kombinationslära i folkmun. AK1TS hanterar dessa situationer med tidsregler i stället för mönstergissningar: en sidledes struktur som varat längre än en definierad tröskel klassificeras som komplex korrigering oavsett exakt form, och handeln väntar på volymkonfluens och brytpunktsbekräftelse innan position tas."
+          "content": "Praktisk igenkänning: först delning — har benet fem steg (impuls/zigzag-a) eller tre (flat/triangel)? Sedan antal — är det tre ben (A-B-C), fem konvergerande ben (triangel) eller många ben med förbindare (kombination)? Kom ihåg att korrigeringar i en trend ofta blir djupare och mer komplexa ju längre den överordnade trenden varit igång — den gamla marknadsregeln om att korrigeringar fördjupas med åldern är våglärans kombinationslära i folkmun. AK1TS hanterar dessa situationer med tidsregler i stället för mönstergissningar: en sidledes struktur som varat längre än en definierad tröskel klassificeras som komplex korrigering oavsett exakt form, och handeln väntar på volymkonfluens och brytpunktsbekräftelse innan position tas."
         },
         {
           "type": "insikt",
-          "content": "Trianglar och kombinationar är samma idé i två tempon: energi komprimeras. Ju trängre formationen och ju svagare volymen inuti den, desto hårdare blir utbrottet — och trianglar berättar dessutom i vilken riktning det sista benet kommer, för de uppträder bara i position fyra eller B."
+          "content": "Trianglar och kombinationer är samma idé i två tempon: energi komprimeras. Ju trängre formationen och ju svagare volymen inuti den, desto hårdare blir utbrottet — och trianglar berättar dessutom i vilken riktning det sista benet kommer, för de uppträder bara i position fyra eller B."
         },
         {
           "type": "utmaning",
@@ -676,7 +676,7 @@
             "5-5-5-5-5"
           ],
           "ratt": 2,
-          "tips": "Trianglar är korrigerande rakt igenom — inget ben får drivekraften av en impuls."
+          "tips": "Trianglar är korrigerande rakt igenom — inget ben får drivkraften av en impuls."
         },
         {
           "q": "Var i den större strukturen uppträder trianglar?",
@@ -785,7 +785,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Fibonacci-följden är enkel att bygga: börja med 1 och 1, och låt varje tal vara summan av de två föregående — 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, och så vidare i all oändlighet. Dividera ett tal med nästa och kvoten går mot 0,618; dividera med föregående och den går mot 1,618 — det gyllene snittet, känt sedan antiken och återfunget i solrosors fröhallar, snäckskal, paradoxalt nog också i Elliotts vågantal: en hel cykel innehåller 21 små vågor i drivdelen och 13 i korrigeringen, tal ur följdens hjärta. Frost & Prechter citerar Elliotts egen slutsats: att talföljden inte är en tillfällighet utan uttryck för samma tillväxtprocess som styr alla naturliga system — inklusive mänskliga massors humörsvängningar."
+          "content": "Fibonacci-följden är enkel att bygga: börja med 1 och 1, och låt varje tal vara summan av de två föregående — 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, och så vidare i all oändlighet. Dividera ett tal med nästa och kvoten går mot 0,618; dividera med föregående och den går mot 1,618 — det gyllene snittet, känt sedan antiken och återfunnet i solrosors fröhallar, snäckskal, paradoxalt nog också i Elliotts vågantal: en hel cykel innehåller 21 små vågor i drivdelen och 13 i korrigeringen, tal ur följdens hjärta. Frost & Prechter citerar Elliotts egen slutsats: att talföljden inte är en tillfällighet utan uttryck för samma tillväxtprocess som styr alla naturliga system — inklusive mänskliga massors humörsvängningar."
         },
         {
           "type": "text",
@@ -935,7 +935,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Grundidén är lika enkel som retacement-idén, men i tidsaxeln: räkna kalender- eller handelsdagar, veckor eller månader mellan två betydelsefulla vändpunkter, och leta efter Fibonaccital — 8, 13, 21, 34, 55, 89, 144. Frost & Prechter visar exempel på marknadsvändningar som inträffat exakt 55 veckor eller 21 månader efter en föregångare, och på korrigeringar vars varaktighet förhåller sig till den föregående som 1,618. Även förhållanden mellan likartade punkter — topp till topp, botten till botten — sägs följa mönstret, och vissa räknare lägger till års-cyklar och årstidsberoende, men kärnan är talföljdens rytm i axeln framåt."
+          "content": "Grundidén är lika enkel som retracement-idén, men i tidsaxeln: räkna kalender- eller handelsdagar, veckor eller månader mellan två betydelsefulla vändpunkter, och leta efter Fibonaccital — 8, 13, 21, 34, 55, 89, 144. Frost & Prechter visar exempel på marknadsvändningar som inträffat exakt 55 veckor eller 21 månader efter en föregångare, och på korrigeringar vars varaktighet förhåller sig till den föregående som 1,618. Även förhållanden mellan likartade punkter — topp till topp, botten till botten — sägs följa mönstret, och vissa räknare lägger till års-cyklar och årstidsberoende, men kärnan är talföljdens rytm i axeln framåt."
         },
         {
           "type": "text",
@@ -972,7 +972,7 @@
           "alternativ": [
             "Primtal som 7, 11 och 13",
             "Fibonaccital som 8, 13, 21, 34, 55 och 89",
-            "Multipar av tio",
+            "multiplar av tio",
             "Kvartalsdatum"
           ],
           "ratt": 1,
@@ -1010,11 +1010,11 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Huvudregeln ärFew lines sammanfattad: volymen expanderar med impulser i riktning mot den överordnade trenden och kontraherar i korrigeringar mot den. I en frisk uppgång bärs stigningarna av tyngre handel än fallet — uppdagar är volymstarkare än neddagar, och varje ny hög-prisvåg rider på bredare deltagande. I en sund korrigering är det omvända sant: volymen sinar, intresset svalnar, formationen drivs av frånvaro av köpare snarare än av närvaro av säljare. Frost & Prechter drar den viktiga slutsatsen att volymen är en bekräftelsevariabel: i tveksamma situationer är det volymskillnaden mellan alternativ räkningar som avgör vilken som är rätt."
+          "content": "Huvudregeln är Few lines sammanfattad: volymen expanderar med impulser i riktning mot den överordnade trenden och kontraherar i korrigeringar mot den. I en frisk uppgång bärs stigningarna av tyngre handel än fallet — uppdagar är volymstarkare än neddagar, och varje ny hög-prisvåg rider på bredare deltagande. I en sund korrigering är det omvända sant: volymen sinar, intresset svalnar, formationen drivs av frånvaro av köpare snarare än av närvaro av säljare. Frost & Prechter drar den viktiga slutsatsen att volymen är en bekräftelsevariabel: i tveksamma situationer är det volymskillnaden mellan alternativ räkningar som avgör vilken som är rätt."
         },
         {
           "type": "text",
-          "content": "Volymens vågprofill är förunderligt konsekvent. Våg 1: måttlig volym på låg bas. Våg 2: sjunkande volym — beviset på att säljtrycket är uttömt. Våg 3: högst volym i hela sekvensen, ofta med tydliga volymsexpansioner vid varje delvågsuppgång. Våg 4: låg och uttunnad volym, i synnerhet i trianglar. Våg 5: här kommer varningen — volymen når sällan våg 3:s nivå. Priset gör nya rekord på svagare och svagare underlag, deltagandet smalnar av till ett fåtal ledare, och de breda indexen börjar eftersläpa huvudindexet. Frost & Prechter kallar detta fenomen intermarknadlig och bredddivergens, och det är femte vågens signatur: toppen i pris, men inte i kraft."
+          "content": "Volymens vågprofil är förunderligt konsekvent. Våg 1: måttlig volym på låg bas. Våg 2: sjunkande volym — beviset på att säljtrycket är uttömt. Våg 3: högst volym i hela sekvensen, ofta med tydliga volymsexpansioner vid varje delvågsuppgång. Våg 4: låg och uttunnad volym, i synnerhet i trianglar. Våg 5: här kommer varningen — volymen når sällan våg 3:s nivå. Priset gör nya rekord på svagare och svagare underlag, deltagandet smalnar av till ett fåtal ledare, och de breda indexen börjar eftersläpa huvudindexet. Frost & Prechter kallar detta fenomen intermarknadlig och bredddivergens, och det är femte vågens signatur: toppen i pris, men inte i kraft."
         },
         {
           "type": "text",
@@ -1097,7 +1097,7 @@
         },
         {
           "type": "text",
-          "content": "För AK1TS följer två konkreta hållningar ur socionomics. För det första: metoden att läsa humöret ur pris, volym och momentum är inte en nödlösning utan en konsekvens — om humöret är det primära är prisserien dess bästa mätinstrument, och teknisk analys dess naturliga språk. För det andra: ödmjukheten inför att ingen yttre händelse kan rädda en position som går emot vågen av tillräcklig grad — vilket manar till samma riskdisciplin som hela denna kurs byggt: definiera var tesen dör, mät konfluensen, storleksanpassa. Men observera också att Prechers tes har ett allvarligt problem — hon kan inte falsifieras på enkelt sätt, och den flyttar all förklaringsbörda till ett osynligt kollektivt humör — vilket är ett av ämnena i nästa kapitel, där kritiken får tala till punkt."
+          "content": "För AK1TS följer två konkreta hållningar ur socionomics. För det första: metoden att läsa humöret ur pris, volym och momentum är inte en nödlösning utan en konsekvens — om humöret är det primära är prisserien dess bästa mätinstrument, och teknisk analys dess naturliga språk. För det andra: ödmjukheten inför att ingen yttre händelse kan rädda en position som går emot vågen av tillräcklig grad — vilket manar till samma riskdisciplin som hela denna kurs byggt: definiera var tesen dör, mät konfluensen, storleksanpassa. Men observera också att Prechters tes har ett allvarligt problem — den kan inte falsifieras på enkelt sätt, och den flyttar all förklaringsbörda till ett osynligt kollektivt humör — vilket är ett av ämnena i nästa kapitel, där kritiken får tala till punkt."
         },
         {
           "type": "insikt",
@@ -1160,7 +1160,7 @@
       "blocks": [
         {
           "type": "text",
-          "content": "Burton Malkiels attack i 'A Random Walk Down Wall Street' är den mest kända och den bitrandeaste. Hans huvudpunkter: vågräkning är vag — samma chart ger olika räkningar beroende på vem som räknar och när; tolkningen sker i efterhand, när mönstret redan är klart, och prognosvärdet i realtid är eländigt; och det finns ingen dokumenterad, oberoende testad förmåga hos vågräknare att slå marknaden. Malkiel driver hem poängen med ett experiment av typen myntkast: han lät ett slumptal generera en prisserie som var omöjlig att skilja från en riktig aktiechart — komplett med trendlinjer, stöd, motstånd och vågliknande mönster. Slutsatsen: vad vågräknare ser är projekioner i brus. Hans mest-rynka-på-näsan formulering — att olika Elliott-analytiker vid samma tidpunkt hänför marknaden till olika vågpositioner och ändå alla kallar metoden vetenskap — har aldrig bemötts på ett övertygande sätt."
+          "content": "Burton Malkiels attack i 'A Random Walk Down Wall Street' är den mest kända och den bitrandeaste. Hans huvudpunkter: vågräkning är vag — samma chart ger olika räkningar beroende på vem som räknar och när; tolkningen sker i efterhand, när mönstret redan är klart, och prognosvärdet i realtid är eländigt; och det finns ingen dokumenterad, oberoende testad förmåga hos vågräknare att slå marknaden. Malkiel driver hem poängen med ett experiment av typen myntkast: han lät ett slumptal generera en prisserie som var omöjlig att skilja från en riktig aktiechart — komplett med trendlinjer, stöd, motstånd och vågliknande mönster. Slutsatsen: vad vågräknare ser är projektioner i brus. Hans mest-rynka-på-näsan formulering — att olika Elliott-analytiker vid samma tidpunkt hänför marknaden till olika vågpositioner och ändå alla kallar metoden vetenskap — har aldrig bemötts på ett övertygande sätt."
         },
         {
           "type": "text",
@@ -1180,7 +1180,7 @@
         },
         {
           "type": "insikt",
-          "content": "Vi tror inte på Elliott som profetia — vi anvår honom som grammatiker. Fem i trend, tre mot, regler som kan bryta och hierarkin som ordnar det hela: ett språk för att beskriva och ett regelverk för att överleva. Det är den ärliga versionen, och den räcker."
+          "content": "Vi tror inte på Elliott som profetia — vi använder honom som grammatiker. Fem i trend, tre mot, regler som kan bryta och hierarkin som ordnar det hela: ett språk för att beskriva och ett regelverk för att överleva. Det är den ärliga versionen, och den räcker."
         },
         {
           "type": "utmaning",
@@ -1247,7 +1247,7 @@
         },
         {
           "type": "text",
-          "content": "Arbetsordningen i fem steg, användbar på vilken tillgång som helst. Ett: välj horisont — den du faktiskt handlar på, inte den som passar din önskan. Två: fastställ överordnad riktning genom högre horisonters momentum och medelvärld — är de samstämmiga eller splittrade? Tre: läs din horisonts struktur med proxy-måtten — volymkonfluens 20 mot 90, momentumsvitlängd, medelvärtslutning — och placera den, på vågspråk, som impuls, korrigering eller vänding. Fyra: formulera tesen med invalidring och målband — var dör den, vilken zon pekar proportionerna mot, hur stor position medger avståndet till invalidringen? Fem: logga och utvärdera — träffade strukturen, fel på timing? Struktur rätt, tolkning fel? Detta är hela skillnaden mot klassisk vågräkning: varje steg är mätbart, jämförbart mellan två användare och möjligt att backtesta — vilket är den enda form av bevis AK1TS accepterar."
+          "content": "Arbetsordningen i fem steg, användbar på vilken tillgång som helst. Ett: välj horisont — den du faktiskt handlar på, inte den som passar din önskan. Två: fastställ överordnad riktning genom högre horisonters momentum och medelvärld — är de samstämmiga eller splittrade? Tre: läs din horisonts struktur med proxy-måtten — volymkonfluens 20 mot 90, momentumsvitlängd, medelvärtslutning — och placera den, på vågspråk, som impuls, korrigering eller vändning. Fyra: formulera tesen med invalidring och målband — var dör den, vilken zon pekar proportionerna mot, hur stor position medger avståndet till invalidringen? Fem: logga och utvärdera — träffade strukturen, fel på timing? Struktur rätt, tolkning fel? Detta är hela skillnaden mot klassisk vågräkning: varje steg är mätbart, jämförbart mellan två användare och möjligt att backtesta — vilket är den enda form av bevis AK1TS accepterar."
         },
         {
           "type": "text",
@@ -1255,7 +1255,7 @@
         },
         {
           "type": "insikt",
-          "content": "Elliott gav formen, Frost & Prechter gav boken, AK1TS ger måtten. När språket översatts till bestämda regler — horisont först, momentum och volym sedan, invalidring alltid — då har du våglärans användbara kärna utan dess mest kritiserade last."
+          "content": "Elliott gav formen, Frost & Prechter gav boken, AK1TS ger måtten. När språket översätts till bestämda regler — horisont först, momentum och volym sedan, invalidring alltid — då har du våglärans användbara kärna utan dess mest kritiserade last."
         },
         {
           "type": "utmaning",
@@ -1297,7 +1297,7 @@
           "q": "Vad är det första steget i kursens avslutande arbetsordning?",
           "alternativ": [
             "Räkna vågor på lägsta graden",
-            "Köpa enoptionsposition för hedgning",
+            "Köpa en optionsposition för hedgning",
             "Beräkna Fibonacci-mål",
             "Välja horisont — den du faktiskt handlar på"
           ],

@@ -5,7 +5,7 @@
   "chapterCount": 14,
   "totalMinutes": 150,
   "title": "Misbehaving — Thaler: KOMPLETT",
-  "summary": "Richard Thalers Misbehaving (2015) är beteendeekonomins historia berättad av dess uppstudsige grundare: från syndarens lista vid Cornell — vinet som inte fick säljas, lottsedeln som inte fick byta ägare, teaterbiljetten som tyngde mer än en tappad tiokol — via mental accounting, ägarskapseffekten (muggarna), ultimatumsspelet och mötet med Kahneman och Tversky i Stanford 1977–78, till anomalikolumnen som vägrade tro att januari-effekten var förbjuden, debatterna med Chicagoskolan, planerare-och-görare-modellen och nudge-eran med Save More Tomorrow. Kursen ägnar ett eget kapitel åt kontroversen där Chicagos invändningar tas på fullt allvar — Friedmans arbitrage-argument, Famas effektiva marknad, »if you're so smart why aren't you rich« — och besvaras med Shleifers limits of arbitrage och fallet 3Com/Palm. AKM1-kopplingarna dras hela vägen: V04 P/S och V05 P/B som överreaktionsfilter, V12 intäktsstabilitet som referenspunktsbalsam, V19 kapitalförbränning som sunk cost-fälla och marginal of safety som princip utan siffra.",
+  "summary": "Richard Thalers Misbehaving (2015) är beteendeekonomins historia berättad av dess uppstudsige grundare: från syndarens lista vid Cornell — vinet som inte fick säljas, lottsedeln som inte fick byta ägare, teaterbiljetten som tyngde mer än en tappad tiokrona — via mental accounting, ägarskapseffekten (muggarna), ultimatumsspelet och mötet med Kahneman och Tversky i Stanford 1977–78, till anomalikolumnen som vägrade tro att januari-effekten var förbjuden, debatterna med Chicagoskolan, planerare-och-görare-modellen och nudge-eran med Save More Tomorrow. Kursen ägnar ett eget kapitel åt kontroversen där Chicagos invändningar tas på fullt allvar — Friedmans arbitrage-argument, Famas effektiva marknad, »if you're so smart why aren't you rich« — och besvaras med Shleifers limits of arbitrage och fallet 3Com/Palm. AKM1-kopplingarna dras hela vägen: V04 P/S och V05 P/B som överreaktionsfilter, V12 intäktsstabilitet som referenspunktsbalsam, V19 kapitalförbränning som sunk cost-fälla och marginal of safety som princip utan siffra.",
   "minutes": 10,
   "xp": 2000,
   "level": "",
@@ -348,7 +348,7 @@
         },
         {
           "type": "text",
-          "content": "För egen del är kapitlets fråga var din egen marknadsmoral kostar pengar. Vill du vägra sälja för att budet känns förnedrande lågt? Vill du hålla ett innehav för att bolagets V17-avtal kändes tvekskt i tonen? Blanda inte värme och analys: låt rimlighet ingå i bedömningen av bolagets varumärke och regulatoriska risk — exakt där den har pris — och håll den borta från orderlugnet. Den mest kompakterade lärdomen i hela forskningsprogrammet: kunder förlåter dyrt, men aldrig fult; och marknaden som aggregat beter sig på samma sätt."
+          "content": "För egen del är kapitlets fråga var din egen marknadsmoral kostar pengar. Vill du vägra sälja för att budet känns förnedrande lågt? Vill du hålla ett innehav för att bolagets V17-avtal kändes tveksamt i tonen? Blanda inte värme och analys: låt rimlighet ingå i bedömningen av bolagets varumärke och regulatoriska risk — exakt där den har pris — och håll den borta från orderlugnet. Den mest kompakterade lärdomen i hela forskningsprogrammet: kunder förlåter dyrt, men aldrig fult; och marknaden som aggregat beter sig på samma sätt."
         },
         {
           "type": "visuell",
@@ -522,7 +522,7 @@
         {
           "q": "Vilka tre formella egenskaper hos värdefunktionen utgör kärnan i prospect theory?",
           "alternativ": [
-            "Linjaritet, symmetri och riskneutralitet",
+            "Linearitet, symmetri och riskneutralitet",
             "Referensberoende, förlustaversion och avtagande känslighet",
             "Fullständig information, transparens och stationaritet",
             "Konstant relativ riskaversion, arbitragefrihet och rationalitet"
@@ -570,7 +570,7 @@
         },
         {
           "type": "text",
-          "content": "Closed-end-fonderna bidrog med det mest visuella pusslet, löst av Charles Lee, Andrei Shleifer och Thaler 1991: fonder noterade till rabatt mot underliggande tillgångar — typiskt 10–20 procent — trots att det underliggande prissätts kontinuerligt. Pusslets fyra bitar: nya fonder noteras till premie (vem köper en förpackning av det som finns billigare utanför?), rabatten svänger i takt med småbolag och annan sentimentindikator, rabatten varierar över tid trots oförändrat innehav, och när fonden likvideras konvergerar priset mot nettovärdet. Allt pekar mot en gemensam faktor — investeringssentiment — vilket var precis vad effektiva-marknads-teorin inte hade plats för. Även vadslagning bidrog: favorit-långodds-bias (favorite-longshot bias) på hästbanor, där långoddsare spelas för mycket och favorer för lite, dokumenterad av Thaler och William Ziemba 1988 — mispricing utanför aktiemarknaden, där ingen kan skylla på riskjustering."
+          "content": "Closed-end-fonderna bidrog med det mest visuella pusslet, löst av Charles Lee, Andrei Shleifer och Thaler 1991: fonder noterade till rabatt mot underliggande tillgångar — typiskt 10–20 procent — trots att det underliggande prissätts kontinuerligt. Pusslets fyra bitar: nya fonder noteras till premie (vem köper en förpackning av det som finns billigare utanför?), rabatten svänger i takt med småbolag och annan sentimentindikator, rabatten varierar över tid trots oförändrat innehav, och när fonden likvideras konvergerar priset mot nettovärdet. Allt pekar mot en gemensam faktor — investeringssentiment — vilket var precis vad effektiva-marknads-teorin inte hade plats för. Även vadslagning bidrog: favorit-långodds-bias (favorite-longshot bias) på hästbanor, där långoddsare spelas för mycket och favoriter för lite, dokumenterad av Thaler och William Ziemba 1988 — mispricing utanför aktiemarknaden, där ingen kan skylla på riskjustering."
         },
         {
           "type": "text",
@@ -603,7 +603,7 @@
             "Att småbolag alltid slår storbolag oavsett period"
           ],
           "ratt": 1,
-          "tips": "Titeln innehåller svaget frågetecken — och korrigeringen gick baklänges i tiden."
+          "tips": "Titeln innehåller ett svagt frågetecken — och korrigeringen gick baklänges i tiden."
         },
         {
           "q": "Vad kännetecknar closed-end-fondernas pusslet?",
@@ -949,7 +949,7 @@
         },
         {
           "type": "text",
-          "content": "AKM1-tillämpningen är rak: behandla dig själv som en HR-avdelning. Bestäm månadssparandet som en automatik — inte som ett beslut som ska fattas om igen varje månad; koppla automatiska höjningar till löneökningar (priset märks aldrig, effekten compounderas); håll avgifter och emissionstålighet (V19) som policyvärden, inte förhandlingsposter i stunden. Och koppla mekanismen till kursens föregående kapitel: kapital som sätts in automatiskt vid varje löneutbetalning är burar byggda av planeraren — gjaren märker dem knappt, och de fungerar exakt därför. Ränta-på-ränta är i detta ljus inte en formel utan en personlighetsegenskap hos system: den belönar mekanisk envishet framför briljant timing."
+          "content": "AKM1-tillämpningen är rak: behandla dig själv som en HR-avdelning. Bestäm månadssparandet som en automatik — inte som ett beslut som ska fattas om igen varje månad; koppla automatiska höjningar till löneökningar (priset märks aldrig, effekten compounderas); håll avgifter och emissionstålighet (V19) som policyvärden, inte förhandlingsposter i stunden. Och koppla mekanismen till kursens föregående kapitel: kapital som sätts in automatiskt vid varje löneutbetalning är burar byggda av planeraren — göraren märker dem knappt, och de fungerar exakt därför. Ränta-på-ränta är i detta ljus inte en formel utan en personlighetsegenskap hos system: den belönar mekanisk envishet framför briljant timing."
         },
         {
           "type": "visuell",
@@ -1020,7 +1020,7 @@
         },
         {
           "type": "text",
-          "content": "Vidare: kvalitets- och riskblocket V09 ROE, V10 skuldsättningsgrad, V11 likviditet, V12 intäktsstabilitet lider av myopi och optimism — ROE läses utan hävstångsinblick (DuPont: marginal × omsättningshastighet × hävstång), balansräkningen tröttar läsaren när den är som viktigast; motgiftet är balansräkningsrutin före målkurs och premortem där tesens dödsorsak skrivs först. Vallblocket V13 patent & IP, V14 varumärke, V15 nätverkseffekter och V17 avtal & partnerskap lider av narrativt halo — bra berättelse blir bevis; motgiften är bevis på beständighet: kundretention, prissättnings- och omfördelningsdata, avtalens löptid och kraft. Katalysatorblocket V16 och V18 regulatoriska katalysatorer lider av tillgänglighet och sannolikhetsviktning — det nyliga och det dramatiska överdrivs; motgiftet är basfrekvenser på politiska processer och separerad sannolikhet från konsekvens. Kapitalallokeringsblocket V19 kapitalförbränning & emission-risk och V20 återköp lider av sunk cost respektive signal-tolkning — brinnande kassa rättfärdigas av det redan nedlagda, och återköp läses som styrka oavsett pris; motgiften är ex ante-kriterier och frågan om bolaget återköper aktier till ett pris under det värderade värdet — eller bara för att signala."
+          "content": "Vidare: kvalitets- och riskblocket V09 ROE, V10 skuldsättningsgrad, V11 likviditet, V12 intäktsstabilitet lider av myopi och optimism — ROE läses utan hävstångsinblick (DuPont: marginal × omsättningshastighet × hävstång), balansräkningen tröttar läsaren när den är som viktigast; motgiftet är balansräkningsrutin före målkurs och premortem där tesens dödsorsak skrivs först. Vallblocket V13 patent & IP, V14 varumärke, V15 nätverkseffekter och V17 avtal & partnerskap lider av narrativt halo — bra berättelse blir bevis; motgiften är bevis på beständighet: kundretention, prissättnings- och omfördelningsdata, avtalens löptid och kraft. Katalysatorblocket V16 och V18 regulatoriska katalysatorer lider av tillgänglighet och sannolikhetsviktning — det nyliga och det dramatiska överdrivs; motgiftet är basfrekvenser på politiska processer och separerad sannolikhet från konsekvens. Kapitalallokeringsblocket V19 kapitalförbränning & emission-risk och V20 återköp lider av sunk cost respektive signal-tolkning — brinnande kassa rättfärdigas av det redan nedlagda, och återköp läses som styrka oavsett pris; motgiften är ex ante-kriterier och frågan om bolaget återköper aktier till ett pris under det värderade värdet — eller bara för att signalera."
         },
         {
           "type": "text",

@@ -12,18 +12,66 @@
   "learn": "Efter kursen kan du: förklara varför en poängsatt variabel är en stillbild och vad tidsserietänket tillför; använda de fem horisontnamnen mikro, kort, medellång, lång och mega som begrepp — perspektiv från det närmaste nuet till hela tillgängliga historiken — utan att förväxla dem med kalenderrutor; skilja vågklasserna impulsvåg, korrigering och basbygge åt, känna deras psykologi och översätta en klass till mening per variabel (en impulsvåg i skulden är inte goda nyheter, en korrigering i värderingen är inte dåliga); behandla osatt som en styrka och en arbetsmarkering i stället för ett fel; läsa matrisen hierarkiskt — cell, variabel, kategori, helhet — och känna igen kluster, kontraster, väntrum och tomma fläckar; formulera divergensen mellan fundamental våg och prisvåg som en studieinbjudan, aldrig en signal; tänka portföljaggregering som viktad cellvis sammanläggning; redogöra för motståndarens argument — fundamental analys är nivåer, kvartalsdata är brusig, leverantörshistoriken är kort — tillsammans med våra medgivanden; granska AI:s cellciteringar mot protokollet; och köra ett komplett arbetsflöde på /vagfundament med journal och månadsrytm.",
   "why": "Efter AKM1 (den kontroversiella modellen) och AK1TS (våglärans hierarki) återstod en strukturell lucka i ekosystemet: fundamentals behandlades som ögonblicksbilder medan priset fick historia. Men en ROE på tjugo procent är bara ett tal — banan dit, med bruttomarginalen som breddar och skuldsättningen som smalnar, är en berättelse. Vågfundamentet bygger den berättelsen deterministiskt: samma data ger alltid samma vågklasser, och när data inte räcker visas osatt i stället för en gissning. Kursen behövs eftersom läsning av en matris med hundra celler är ett hantverk — hierarki, mönster, kontraster, divergens — och eftersom ärligheten kräver att motståndarens starkaste invändning (fundamental data kan inte ha vågor) formuleras bättre här än hos motståndaren själv. Konkret reglering: motorns exakta klassificeringsregler är intern know-how och nämns därför aldrig i kursen; det vi lär ut är hur man läser och tolkar vågklasserna.",
   "chapters_list": [
-    { "num": 1, "title": "Idén — indikatorer förblir inte längre statiska", "minutes": 12 },
-    { "num": 2, "title": "Tidsserietänket — varje AKM1-variabel har sin egen historia", "minutes": 12 },
-    { "num": 3, "title": "De fem horisonterna — från mikro till mega, som begrepp", "minutes": 12 },
-    { "num": 4, "title": "Vågklasserna — impulsvåg, korrigering, basbygge och deras psykologi", "minutes": 12 },
-    { "num": 5, "title": "Osatt — den mest missförstådda klassen", "minutes": 12 },
-    { "num": 6, "title": "Hierarkin — cell, variabel, kategori, helhet", "minutes": 12 },
-    { "num": 7, "title": "Att läsa matrisen — mönster, kluster, tomma fläckar", "minutes": 12 },
-    { "num": 8, "title": "Divergens — fundamental våg möter prisvåg", "minutes": 12 },
-    { "num": 9, "title": "Portföljen — från varje aktie för sig till helheten", "minutes": 12 },
-    { "num": 10, "title": "Kontroversen — fundamental data kan inte ha vågor", "minutes": 12 },
-    { "num": 11, "title": "AI-protokollet — hur vår AI läser matrisen", "minutes": 12 },
-    { "num": 12, "title": "Praktiken — använd Vågfundamentet och portföljsektionen", "minutes": 12 }
+    {
+      "num": 1,
+      "title": "Idén — indikatorer förblir inte längre statiska",
+      "minutes": 12
+    },
+    {
+      "num": 2,
+      "title": "Tidsserietänket — varje AKM1-variabel har sin egen historia",
+      "minutes": 12
+    },
+    {
+      "num": 3,
+      "title": "De fem horisonterna — från mikro till mega, som begrepp",
+      "minutes": 12
+    },
+    {
+      "num": 4,
+      "title": "Vågklasserna — impulsvåg, korrigering, basbygge och deras psykologi",
+      "minutes": 12
+    },
+    {
+      "num": 5,
+      "title": "Osatt — den mest missförstådda klassen",
+      "minutes": 12
+    },
+    {
+      "num": 6,
+      "title": "Hierarkin — cell, variabel, kategori, helhet",
+      "minutes": 12
+    },
+    {
+      "num": 7,
+      "title": "Att läsa matrisen — mönster, kluster, tomma fläckar",
+      "minutes": 12
+    },
+    {
+      "num": 8,
+      "title": "Divergens — fundamental våg möter prisvåg",
+      "minutes": 12
+    },
+    {
+      "num": 9,
+      "title": "Portföljen — från varje aktie för sig till helheten",
+      "minutes": 12
+    },
+    {
+      "num": 10,
+      "title": "Kontroversen — fundamental data kan inte ha vågor",
+      "minutes": 12
+    },
+    {
+      "num": 11,
+      "title": "AI-protokollet — hur vår AI läser matrisen",
+      "minutes": 12
+    },
+    {
+      "num": 12,
+      "title": "Praktiken — använd Vågfundamentet och portföljsektionen",
+      "minutes": 12
+    }
   ],
   "chapters": [
     {
@@ -760,7 +808,7 @@
         },
         {
           "type": "utmaning",
-          "content": "Testa protokollet i praktiken. Ställ en cellfråga och ett lockbete i samma samtal: först vad säger V09 på medellång? och sedan tror du vågen håller i sig? Betygssätt svaret på tre punkter: citerades cellen exakt, förblev osatt osatt, och vägrades extrapolationen? Ett svar som klarar alla tre har klarat provet — och du har precis granskat en AI bättre än de flesta någonsin gör."
+          "content": "Testa protokollet i praktiken. Ställ en cellfråga och ett lockbete i samma samtal: först vad säger V09 på medellång? och sedan tror du vågen håller i sig? Betygssätt svaret på tre punkter: citerades cellen exakt, förblev osatt, och vägrades extrapolationen? Ett svar som klarar alla tre har klarat provet — och du har precis granskat en AI bättre än de flesta någonsin gör."
         },
         {
           "type": "tabell",

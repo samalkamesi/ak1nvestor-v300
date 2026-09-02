@@ -32,7 +32,7 @@
    "num": 1,
    "minutes": 10,
    "title": "Bucket-shoppen — bandet blir hans universitet",
-   "intro": "Boston i början av 1890-talet. En fjortonårig pojke med huvudet fullt av siffror skriver av noteringarna på en mäklarfirms anslagstavla och upptäcker att han kan förutsäga prisrörelser. Innan Jesse Livermore — i boken kallad Larry Livingston — blir Wall Streets mest omsuskarade namn lär han sig sitt hantverk i bucket-shopparnas halvmörker. Där föds mönstertänkandet.",
+   "intro": "Boston i början av 1890-talet. En fjortonårig pojke med huvudet fullt av siffror skriver av noteringarna på en mäklarfirms anslagstavla och upptäcker att han kan förutsäga prisrörelser. Innan Jesse Livermore — i boken kallad Larry Livingston — blir Wall Streets mest omsusade namn lär han sig sitt hantverk i bucket-shopparnas halvmörker. Där föds mönstertänkandet.",
    "blocks": [
     {
      "type": "text",
@@ -316,7 +316,7 @@
    "num": 5,
    "minutes": 10,
    "title": "Marknaden har aldrig fel — åsikter har det",
-   "intro": "Livermores ödmjukhet var proceduran, inte personlighet: marknaden var den enda domare han accepterade. Kapitlet handlar om att äga åsikter utan att gifta sig med dem, och om historiens upprepning som grund för hela ämnet.",
+   "intro": "Livermores ödmjukhet var procedurell, inte personlighet: marknaden var den enda domare han accepterade. Kapitlet handlar om att äga åsikter utan att gifta sig med dem, och om historiens upprepning som grund för hela ämnet.",
    "blocks": [
     {
      "type": "text",
@@ -987,7 +987,7 @@
     },
     {
      "type": "utmaning",
-     "content": "Välj tre av de tio reglerna och implementera dem konkret i din nästa analys: skriv exakt var i din process de lever — i loggen, i mallen, i riskmatrisen, i sizningen? För varje regel, namnge också dess prövning: var kommer den att testas hårdast? Tre regler, tre platser, tre prövningar — det är skillnaden mellan att ha läst Livermore och att bruka honom."
+     "content": "Välj tre av de tio reglerna och implementera dem konkret i din nästa analys: skriv exakt var i din process de lever — i loggen, i mallen, i riskmatrisen, i sizingen? För varje regel, namnge också dess prövning: var kommer den att testas hårdast? Tre regler, tre platser, tre prövningar — det är skillnaden mellan att ha läst Livermore och att bruka honom."
     },
     {
      "type": "tabell",

@@ -229,7 +229,7 @@
           "alternativ": [
             "Marknaden steg kraftigt i protest",
             "Börsen stängdes i en vecka",
-            "Markniven föll på eftermiddagen och fallet döptes skrattande efter honom",
+            "Marknivån föll på eftermiddagen och fallet döptes skrattande efter honom",
             "Fed sänkte räntan till noll"
           ],
           "ratt": 2,
@@ -864,7 +864,7 @@
         },
         {
           "type": "tabell",
-          "content": "{\"rubrik\":\"Galbraiths fem faktorer — innehåll och AKM1-översättning\",\"rader\":[[\"Faktor\",\"Galbraiths innehåll\",\"AKM1-översättning\"],[\"1. Ojämn inkomstfördelning\",\"Efterfrågan bars av fås investeringar och de bredas kredit\",\"Makro-overlay: efterfrågans sårbarhet\"],[\"2. Dålig företagsstruktur\",\"Holdingpyramider; små avbrott fäller hela kedjor\",\"V10/V09: struktur framför substans\"],[\"3. Dålig bankstruktur\",\"Tusentals småbanker utan garanti; mekanik för banker\",\"V11: systemets likviditetsarkitektur\"],[\"4. Dåliga externa balanser\",\"Krigsskuld, reparationer och lån i ett skört kretslopp\",\"V18-makro: betalningsströmmar och politik\"],[\"5. Dålig ekonomisk intelligens\",\"De nästan vises råd förvärrade krisen\",\"Epistemisk ödmjukhet som variabel\"]]}"
+          "content": "{\"rubrik\":\"Galbraiths fem faktorer — innehåll och AKM1-översättning\",\"rader\":[[\"Faktor\",\"Galbraiths innehåll\",\"AKM1-översättning\"],[\"1. Ojämn inkomstfördelning\",\"Efterfrågan bars av de fås investeringar och de bredas kredit\",\"Makro-overlay: efterfrågans sårbarhet\"],[\"2. Dålig företagsstruktur\",\"Holdingpyramider; små avbrott fäller hela kedjor\",\"V10/V09: struktur framför substans\"],[\"3. Dålig bankstruktur\",\"Tusentals småbanker utan garanti; mekanik för banker\",\"V11: systemets likviditetsarkitektur\"],[\"4. Dåliga externa balanser\",\"Krigsskuld, reparationer och lån i ett skört kretslopp\",\"V18-makro: betalningsströmmar och politik\"],[\"5. Dålig ekonomisk intelligens\",\"De nästan vises råd förvärrade krisen\",\"Epistemisk ödmjukhet som variabel\"]]}"
         },
         {
           "type": "insikt",

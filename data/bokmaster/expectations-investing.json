@@ -201,7 +201,7 @@
         },
         {
           "type": "insikt",
-          "content": "Reverse-DCF:n ger dig inte sanningen om bolaget — den ger dig marknadens hypotes om bolaget. Värdet uppstår i jämförelsen: hypotesens krav mot verksamhetens realitet. Den som kan formulera marknadens hypotes exakt har redan vunnit halva analysen; den andra halven är att veta när hypotesen fel."
+          "content": "Reverse-DCF:n ger dig inte sanningen om bolaget — den ger dig marknadens hypotes om bolaget. Värdet uppstår i jämförelsen: hypotesens krav mot verksamhetens realitet. Den som kan formulera marknadens hypotes exakt har redan vunnit halva analysen; den andra halven är att veta när hypotesen är fel."
         },
         {
           "type": "utmaning",
@@ -585,7 +585,7 @@
             "Att mäta VD-löner mot prestation"
           ],
           "ratt": 2,
-          "tips": "Multipljämförelse utan innehåll är tom — vad ska priset översättas till?"
+          "tips": "Multipeljämförelse utan innehåll är tom — vad ska priset översättas till?"
         },
         {
           "q": "Berg handlas till EV/S 0,9 trots ROIC 15 procent och WACC 8 procent — jämvikten vid noll tillväxt är 1,25. Vad innehåller priset?",

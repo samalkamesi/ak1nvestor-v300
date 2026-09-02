@@ -44,11 +44,11 @@
         },
         {
           "type": "text",
-          "content": "Bokens filosofiska kärna är synen på marknadens rationalitet. Under perfekt rationalitet anpassas priset till värdet omedelbart och varje avvikelse arbritras bort — då återstår för värderaren bara att förklara varför priset är rätt. Damodaran intar den position han kallar praktisk rationalitet: marknaden har rätt det mesta av tiden, men den gör misstag — ibland stora, ibland på hela sektorer, och ibland länge. Det är i det mellanrummet en aktiv investerare lever. Notera också att värdering behövs även av dem som tror på effektiva marknader: vid IPO-prissättning, förvärv, plausibilitetsintyg, arv och beskattning måste någon sätta ett värde oavsett vad börsen säger för dagen."
+          "content": "Bokens filosofiska kärna är synen på marknadens rationalitet. Under perfekt rationalitet anpassas priset till värdet omedelbart och varje avvikelse arbitreras bort — då återstår för värderaren bara att förklara varför priset är rätt. Damodaran intar den position han kallar praktisk rationalitet: marknaden har rätt det mesta av tiden, men den gör misstag — ibland stora, ibland på hela sektorer, och ibland länge. Det är i det mellanrummet en aktiv investerare lever. Notera också att värdering behövs även av dem som tror på effektiva marknader: vid IPO-prissättning, förvärv, plausibilitetsintyg, arv och beskattning måste någon sätta ett värde oavsett vad börsen säger för dagen."
         },
         {
           "type": "text",
-          "content": "Damodaran skiljer på absoluta modeller (diskonterade kassaflöden — värde ur bolaget själv), relativa modeller (multipler — pris mot jämförbara) och optionella modeller (contingent claims). Och han varnar redan på första sidan för bias: värdering är inte en objektisk jakt på sanningen. Förutfattade meningar smyger in genom bakdörren — vi väljer de antaganden som ger den slutsats vi önskar. Hans motgift är konkret: värdera bolaget innan du tittar på kursen, och tvinga dig skriva historien som bärtalens siffror. Det är exakt disciplinen AKM1-ekosystemet tränar."
+          "content": "Damodaran skiljer på absoluta modeller (diskonterade kassaflöden — värde ur bolaget själv), relativa modeller (multipler — pris mot jämförbara) och optionella modeller (contingent claims). Och han varnar redan på första sidan för bias: värdering är inte en objektiv jakt på sanningen. Förutfattade meningar smyger in genom bakdörren — vi väljer de antaganden som ger den slutsats vi önskar. Hans motgift är konkret: värdera bolaget innan du tittar på kursen, och tvinga dig skriva historien som bärtalens siffror. Det är exakt disciplinen AKM1-ekosystemet tränar."
         },
         {
           "type": "tabell",
@@ -253,7 +253,7 @@
         },
         {
           "type": "text",
-          "content": "När är FCFE rätt val? När utdelningen avviker från förmågan — i bägge riktningar. FCFE överstiger utdelningen: bolaget samlar krut, värdet ligger i framtida utdelningar, återköp eller förvärv. FCFE understiger utdelningen: utdelningen är osund och håller på att äta kapital — en varning Graham hade släppt igenom med råge. FCFE diskonteras alltid med ke, aldrig WACC, eftersom flödet redan ligger efter räntor och skuldrörelser. I AKM1 är detta kassaflödesanalysen i värderingsform: frikt kassaflöde till ägarna, prissatt."
+          "content": "När är FCFE rätt val? När utdelningen avviker från förmågan — i bägge riktningar. FCFE överstiger utdelningen: bolaget samlar krut, värdet ligger i framtida utdelningar, återköp eller förvärv. FCFE understiger utdelningen: utdelningen är osund och håller på att äta kapital — en varning Graham hade släppt igenom med råge. FCFE diskonteras alltid med ke, aldrig WACC, eftersom flödet redan ligger efter räntor och skuldrörelser. I AKM1 är detta kassaflödesanalysen i värderingsform: fritt kassaflöde till ägarna, prissatt."
         },
         {
           "type": "tabell",
@@ -387,7 +387,7 @@
         },
         {
           "type": "text",
-          "content": "Arbetskapitalet är den tredje byggstenen: NWC = lagervärde + kundfordringar - leverantörsskulder. Exempel: år 1 är (500 + 400 - 300) = 600 och år 2 är (540 + 430 - 310) = 660; ökningen på 60 är kontanter som bundits i driften och dras av från FCF varje år. Capex används brutto i formeln (D&A läggs tillbaka separat) — att netta dem i flödet och samtidigt addera D&A är ett tredje klassiskt fel. Slutligen: skilj underhållscapex från tillväxtcapex i din analys, även om formlerna använder totalsiffran — det är underhållet som håller ROIC vid liv i terminal value."
+          "content": "Arbetskapitalet är den tredje byggstenen: NWC = lagervärde + kundfordringar - leverantörsskulder. Exempel: år 1 är (500 + 400 - 300) = 600 och år 2 är (540 + 430 - 310) = 660; ökningen på 60 är kontanter som bunds i driften och dras av från FCF varje år. Capex används brutto i formeln (D&A läggs tillbaka separat) — att netta dem i flödet och samtidigt addera D&A är ett tredje klassiskt fel. Slutligen: skilj underhållscapex från tillväxtcapex i din analys, även om formlerna använder totalsiffran — det är underhållet som håller ROIC vid liv i terminal value."
         },
         {
           "type": "tabell",
@@ -429,7 +429,7 @@
           "q": "Arbetskapitalet ökar med 60 under året. Vad händer med det fria kassaflödet?",
           "alternativ": [
             "Det ökar med 60 — mer kapital i driften är positivt",
-            "Det minskar med 60 — kontanter har bundits i lager och fordringar",
+            "Det minskar med 60 — kontanter har bunds i lager och fordringar",
             "Det påverkas inte — arbetskapital är en balansräkningsfråga",
             "Det minskar med 30 efter skatt"
           ],
@@ -441,12 +441,12 @@
     {
       "num": 7,
       "minutes": 11,
-      "title": "Tillväxt I — historien, analyikerna och deras bias",
+      "title": "Tillväxt I — historien, analytikerna och deras bias",
       "intro": "Tillväxt är DCF:ns mest känsliga indata och den där biasen gömmer sig som tjockast. Damodaran sorterar mellan historisk tillväxt, analytikerkonsensus och fundamentalt driven tillväxt — och visar varför de två första aldrig får användas okritiskt.",
       "blocks": [
         {
           "type": "text",
-          "content": "Historisk tillväxt verkar objektiv men är fulla av metoder och fallgropar. Geometriskt medelvärde fångar sammansatt tillväxt: intäkter 100 som efter två år (+21 procent, sedan 0 procent) står i 121 ger geometriskt √(121/100) - 1 = √1,21 - 1 = 10 procent, medan det aritmetiska medelvärdet (21 + 0)/2 = 10,5 procent överdriver eftersom det ignorerar kompositten. Damodaran: använd geometriskt för långa serier, helst med logaritmisk regression — men kom ihåg att standardfelet är enormt, särskilt på resultattillväxt. Tillväxt återgår mot medelvärdet: enskilda bolags tillväxt konvergerar mot ekonomin, inte tvärtom."
+          "content": "Historisk tillväxt verkar objektiv men är fulla av metoder och fallgropar. Geometriskt medelvärde fångar sammansatt tillväxt: intäkter 100 som efter två år (+21 procent, sedan 0 procent) står i 121 ger geometriskt √(121/100) - 1 = √1,21 - 1 = 10 procent, medan det aritmetiska medelvärdet (21 + 0)/2 = 10,5 procent överdriver eftersom det ignorerar ränta-på-ränta-effekten. Damodaran: använd geometriskt för långa serier, helst med logaritmisk regression — men kom ihåg att standardfelet är enormt, särskilt på resultattillväxt. Tillväxt återgår mot medelvärdet: enskilda bolags tillväxt konvergerar mot ekonomin, inte tvärtom."
         },
         {
           "type": "text",
@@ -700,7 +700,7 @@
         {
           "q": "Vilka tre krav ställer Damodaran på den riskfria räntan?",
           "alternativ": [
-            "Kort duration, hö avkastning, stabil valuta",
+            "Kort duration, hög avkastning, stabil valuta",
             "Ingen default-risk, matchande duration och rätt valuta",
             "Utdelningsbaserad, lokal och leveransfri",
             "Max 2 procent, dollar, daglig"
@@ -789,7 +789,7 @@
         },
         {
           "type": "text",
-          "content": "WACC = (E/V) × ke + (D/V) × kd × (1 - t), där V = E + D på marknadsvärden. Räkneexempel: E = 600, D = 400 (V = 1 000), ke = 10 procent, kd = 4 procent och t = 25 procent: WACC = 0,6 × 10 + 0,4 × 4 × 0,75 = 6,0 + 1,2 = 7,2 procent. Det är just denna ränta som diskonterade FCFF i kapitel 5 — nu ser du hela kretsen: ke från CAPM (kapitel 10-11), kd från spreaden, vikter från mål-kapitalstrukturen. Har målet en annan skuldkvot än historien ska framtida vikter användas, vilket skapar en cirkularitet (värdet påverkar vikterna som påverkar värdet) som Damodaran löser iterativt — ett par varvor räcker."
+          "content": "WACC = (E/V) × ke + (D/V) × kd × (1 - t), där V = E + D på marknadsvärden. Räkneexempel: E = 600, D = 400 (V = 1 000), ke = 10 procent, kd = 4 procent och t = 25 procent: WACC = 0,6 × 10 + 0,4 × 4 × 0,75 = 6,0 + 1,2 = 7,2 procent. Det är just denna ränta som diskonterade FCFF i kapitel 5 — nu ser du hela kretsen: ke från CAPM (kapitel 10-11), kd från spreaden, vikter från mål-kapitalstrukturen. Har målet en annan skuldkvot än historien ska framtida vikter användas, vilket skapar en cirkularitet (värdet påverkar vikterna som påverkar värdet) som Damodaran löser iterativt — ett par varv räcker."
         },
         {
           "type": "text",
@@ -1057,7 +1057,7 @@
       "num": 16,
       "minutes": 11,
       "title": "Unga bolag, nätverkseffekter och värdeförvandling — Amazon, Glaxo och Beckham",
-      "intro": "The Dark Side of Valuation, kallar Damodaran konsten att värdera bolag utan historia, utan resultat och ibland utan intäkter. Här finns Amazongåtan, överlevnadsviktningen, nätverkseffekternas lockbetten och värdeförvandlingen — när dolda tillgångar som forskning och varumärken blir synliga värden.",
+      "intro": "The Dark Side of Valuation, kallar Damodaran konsten att värdera bolag utan historia, utan resultat och ibland utan intäkter. Här finns Amazongåtan, överlevnadsviktningen, nätverkseffekternas lockbeten och värdeförvandlingen — när dolda tillgångar som forskning och varumärken blir synliga värden.",
       "blocks": [
         {
           "type": "text",
@@ -1108,7 +1108,7 @@
           "tips": "Vad gjorde han själv när hans värde (under 200) låg långt under kursen (över 350)?"
         },
         {
-          "q": "Vad är Damodaransskepsis mot nätverkseffekter som värderingsargument?",
+          "q": "Vad är Damodaran-skepsis mot nätverkseffekter som värderingsargument?",
           "alternativ": [
             "Nätverkseffekter existerar inte i verkligheten",
             "Effekten är ofta reell men redan prissatt långt fram i tiden — och monetarisering utan att döda tillväxten är flaskhalsen",
@@ -1203,7 +1203,7 @@
         },
         {
           "type": "text",
-          "content": "Appleförsäljningen är hans mest använda självexempel. 2011 köpte Damodaran Apple billigt — med dagens splitjusterade aktier motsvarande cirka 11-12 dollar — och sålde under 2012 när kursen nådde hans beräknade värde, runt 21-22 dollar splitjusterat. Affären var en god affär — och ändå en läromästare: Apple fortsatte mångdubbla, och orsaken var att hans berättelse frös medan bolagets förbättrades. Ekosystemets bindning, prisformningskraften och tjänsteintäkterna gjorde historien starkare än den han sålt på. Lärdomen, som han lär ut öppet: när kursen når ditt beräknade värde är frågan inte 'sälj?' utan 'har historien förändrats?'. En värdering är inte en engångsbedömning — den är en levande hypotes som ska uppdateras när berättelsen gör det, annars är det inte disciplin utan dogm."
+          "content": "Appleförsäljningen är hans mest använda självexempel. 2011 köpte Damodaran Apple billigt — med dagens splitjusterade aktier motsvarande cirka 11-12 dollar — och sålde under 2012 när kursen nådde hans beräknade värde, runt 21-22 dollar splitjusterat. Affären var en god affär — och ändå en läromästare: Apple fortsatte mångdubbla, och orsaken var att hans berättelse frös medan bolagets förbättrades. Ekosystemets bindning, prissättningskraften och tjänsteintäkterna gjorde historien starkare än den han sålt på. Lärdomen, som han lär ut öppet: när kursen når ditt beräknade värde är frågan inte 'sälj?' utan 'har historien förändrats?'. En värdering är inte en engångsbedömning — den är en levande hypotes som ska uppdateras när berättelsen gör det, annars är det inte disciplin utan dogm."
         },
         {
           "type": "text",

@@ -73,9 +73,10 @@ export function ShortSeller() {
 
   if (!visar) {
     return (
+      // Trigger-knapp — vertikalt staplad ovanför AI-mentorn (gap-3) med safe-area undertill, djupare röd identitet
       <button
         onClick={() => setVisar(true)}
-        className="fixed bottom-20 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full border-2 border-red-600 bg-paper text-2xl shadow-xl transition-transform hover:scale-105"
+        className="fixed bottom-[calc(5.25rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-red-800 bg-[#7A1F1F] text-2xl text-white shadow-xl transition-transform hover:scale-105"
         aria-label="Utmana mig — Short-Seller"
         title="Short-Seller: Sokratisk grillning"
       >
@@ -85,10 +86,18 @@ export function ShortSeller() {
   }
 
   return (
-    <div className="fixed bottom-20 right-4 z-50 flex h-[480px] w-[360px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border-2 border-red-600 bg-paper shadow-2xl">
-      <div className="flex items-center justify-between bg-red-600 px-4 py-3 text-white">
+    // Mobil: fullbredd bottom-sheet över safe-area; desktop: oförändrad hög låda
+    <div className="fixed inset-x-2 bottom-[calc(0.5rem_+_env(safe-area-inset-bottom))] z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-2xl border-2 border-[#7A1F1F] bg-paper shadow-2xl sm:bottom-20 sm:left-auto sm:right-4 sm:h-[480px] sm:max-h-none sm:w-[360px] sm:max-w-[calc(100vw-2rem)]">
+      {/* Paneltopp — djup röd identitet (avsiktligt varumärke) med tydlig stängningsknapp */}
+      <div className="flex items-center justify-between bg-[#7A1F1F] px-4 py-3 text-white">
         <span className="font-serif font-bold">🎯 The Short-Seller</span>
-        <button onClick={() => setVisar(false)} aria-label="Stäng" className="text-lg leading-none">×</button>
+        <button
+          onClick={() => setVisar(false)}
+          aria-label="Stäng Short-Sellern"
+          className="flex h-6 w-6 items-center justify-center rounded-full text-lg font-bold leading-none text-white transition-colors hover:bg-white/20"
+        >
+          ×
+        </button>
       </div>
 
       <div className="flex-1 overflow-y-auto p-4">

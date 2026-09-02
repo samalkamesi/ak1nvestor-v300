@@ -132,12 +132,12 @@ export function Kommandopalett() {
       <div className="absolute inset-0 bg-foreground/40 backdrop-blur-sm" onClick={() => setOppad(false)} />
 
       <div className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-gold/40 bg-card shadow-2xl">
-        {/* rubrikrad */}
-        <div className="flex items-center justify-between border-b border-gold/20 bg-gold/5 px-4 py-2">
-          <span className="font-serif text-xs font-bold tracking-widest text-gold">
+        {/* rubrikrad — institutionell marin signatur */}
+        <div className="marin-panel flex items-center justify-between border-b border-gold/30 px-4 py-2">
+          <span className="font-serif text-xs font-bold tracking-widest text-[#E8C766]">
             ⌘ KOMMANDOCENTRALEN
           </span>
-          <span className="text-[10px] text-muted-foreground">↑↓ bläddra · ↵ öppna · esc stäng</span>
+          <span className="text-[10px] text-[#EDE6D6]/70">↑↓ bläddra · ↵ öppna · esc stäng</span>
         </div>
 
         {/* sökfält */}

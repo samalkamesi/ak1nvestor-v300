@@ -51,17 +51,24 @@ const EXEMPEL: Record<string, { label: string; poang: Record<string, number>; no
 function bedom(total: number) {
   if (total >= 80) return { rec: "STARKT KÖP", tier: "STARK", farg: "text-green-700" };
   if (total >= 60) return { rec: "KÖP", tier: "MEDL-STARK", farg: "text-green-700" };
-  if (total >= 40) return { rec: "FÖRSIKTIGT KÖP", tier: "MEDEL", farg: "text-gold" };
+  if (total >= 40) return { rec: "FÖRSIKTIGT KÖP", tier: "MEDEL", farg: GULD_TEXT };
   if (total >= 25) return { rec: "MINSKA", tier: "SVAG-MEDL", farg: "text-orange-700" };
   return { rec: "SÄLJ", tier: "SVAG", farg: "text-red-700" };
 }
 
 // ── Numeriska beräknare: fält → mått → poäng enligt pedagogiska trösklar ────
 
+/**
+ * Mörkare guldton för löptext/etiketter — text-gold (#a8862a) ger bara ~3:1
+ * kontrast mot cream-bakgrund och håller inte WCAG för brödtext.
+ * I mörkt läge är --gold (#c9a84c) ljus nog som den är.
+ */
+const GULD_TEXT = "text-[#7a5f18] dark:text-gold";
+
 type Raknare = {
   id: string;
   namn: string;
-  falt: Array<{ key: string; label: string; enhet?: string }>;
+  falt: Array<{ key: string; label: string; enhet?: string; placeholder: string }>;
   formula: string;
   var: string;
   kalla: string;
@@ -87,8 +94,8 @@ export const RAKNARE: Raknare[] = [
     namn: "V01 · Försäljningstillväxt",
     var: "V01",
     falt: [
-      { key: "oms_iar", label: "Nettoomsättning i år", enhet: "MSEK" },
-      { key: "oms_far", label: "Nettoomsättning förra året", enhet: "MSEK" },
+      { key: "oms_iar", label: "Nettoomsättning i år", enhet: "MSEK", placeholder: "t.ex. 1200 (i år)" },
+      { key: "oms_far", label: "Nettoomsättning förra året", enhet: "MSEK", placeholder: "t.ex. 1000 (förra året)" },
     ],
     formula: "(Året − Förra) ÷ Förra × 100 %",
     kalla: "Årsredovisning/kvartalsrapport → Konsoliderad resultaträkning → raden 'Nettoomsättning'. Föregående års siffra står i kolumnen bredvid (eller i fjolårets rapport).",
@@ -107,8 +114,8 @@ export const RAKNARE: Raknare[] = [
     namn: "V04 · P/S (pris/omsättning)",
     var: "V04",
     falt: [
-      { key: "bv", label: "Börsvärde", enhet: "MSEK" },
-      { key: "oms", label: "Nettoomsättning (senaste 12 mån)", enhet: "MSEK" },
+      { key: "bv", label: "Börsvärde", enhet: "MSEK", placeholder: "t.ex. 6000" },
+      { key: "oms", label: "Nettoomsättning (senaste 12 mån)", enhet: "MSEK", placeholder: "t.ex. 3000 (rullande 12 mån)" },
     ],
     formula: "Börsvärde ÷ Nettoomsättning",
     kalla: "Börsvärde: aktiekurs × antal aktier (finns på t.ex. Avanza/Nordnet under 'Nyckeltal' eller 'Börsvärde'). Omsättning: resultaträkningen, rullande 12 månader om möjligt.",
@@ -127,8 +134,8 @@ export const RAKNARE: Raknare[] = [
     namn: "V05 · P/B (pris/eget kapital)",
     var: "V05",
     falt: [
-      { key: "bv", label: "Börsvärde", enhet: "MSEK" },
-      { key: "ek", label: "Eget kapital", enhet: "MSEK" },
+      { key: "bv", label: "Börsvärde", enhet: "MSEK", placeholder: "t.ex. 6000" },
+      { key: "ek", label: "Eget kapital", enhet: "MSEK", placeholder: "t.ex. 4000" },
     ],
     formula: "Börsvärde ÷ Eget kapital",
     kalla: "Eget kapital: balansräkningen → 'Eget kapital' (summan av moderbolag + minoriteter vid koncern). Jämför gärna med 5-årigt snitt i noterna.",
@@ -147,10 +154,10 @@ export const RAKNARE: Raknare[] = [
     namn: "V06 · EV/EBITDA",
     var: "V06",
     falt: [
-      { key: "bv", label: "Börsvärde", enhet: "MSEK" },
-      { key: "skuld", label: "Räntebärande skulder", enhet: "MSEK" },
-      { key: "kassa", label: "Kassa & bank", enhet: "MSEK" },
-      { key: "ebitda", label: "EBITDA (rullande 12 mån)", enhet: "MSEK" },
+      { key: "bv", label: "Börsvärde", enhet: "MSEK", placeholder: "t.ex. 6000" },
+      { key: "skuld", label: "Räntebärande skulder", enhet: "MSEK", placeholder: "t.ex. 1500" },
+      { key: "kassa", label: "Kassa & bank", enhet: "MSEK", placeholder: "t.ex. 500" },
+      { key: "ebitda", label: "EBITDA (rullande 12 mån)", enhet: "MSEK", placeholder: "t.ex. 1000" },
     ],
     formula: "(Börsvärde + Skulder − Kassa) ÷ EBITDA",
     kalla: "Räntebärande skulder + kassa: balansräkningen. EBITDA: rörelseresultat + avskrivningar (kassaflödesanalysen visar avskrivningarna).",
@@ -172,11 +179,11 @@ export const RAKNARE: Raknare[] = [
     namn: "V07 · Bruttomarginal",
     var: "V07",
     falt: [
-      { key: "oms", label: "Nettoomsättning", enhet: "MSEK" },
-      { key: "rkost", label: "Rörelsens kostnader (exkl. avskr.)", enhet: "MSEK" },
+      { key: "oms", label: "Nettoomsättning", enhet: "MSEK", placeholder: "t.ex. 1000" },
+      { key: "rkost", label: "Rörelsens kostnader (exkl. avskr.)", enhet: "MSEK", placeholder: "t.ex. 550" },
     ],
     formula: "(Omsättning − Rörelsens kostnader) ÷ Omsättning × 100 %",
-    kalla: "Resultaträkningen: 'Rörelsens kostnader' (vissa bolag redovisar bruttovinst direkt — använd den isåfall). OBS: vissa bolag inkluderar personalkostnader — jämör med 5-års historik.",
+    kalla: "Resultaträkningen: 'Rörelsens kostnader' (vissa bolag redovisar bruttovinst direkt — använd den isåfall). OBS: vissa bolag inkluderar personalkostnader — jämför med 5-års historik.",
     exempel: "Omsättning 1 000, kostnader 550 → bruttomarginal 45 % → poäng 4",
     rakna: (v) => {
       const oms = tal(v, "oms");
@@ -192,8 +199,8 @@ export const RAKNARE: Raknare[] = [
     namn: "V08 · EBITDA-marginal",
     var: "V08",
     falt: [
-      { key: "ebitda", label: "EBITDA", enhet: "MSEK" },
-      { key: "oms", label: "Nettoomsättning", enhet: "MSEK" },
+      { key: "ebitda", label: "EBITDA", enhet: "MSEK", placeholder: "t.ex. 180" },
+      { key: "oms", label: "Nettoomsättning", enhet: "MSEK", placeholder: "t.ex. 1000" },
     ],
     formula: "EBITDA ÷ Nettoomsättning × 100 %",
     kalla: "Rörelseresultat (EBIT) + avskrivningar (kassaflödesanalysen: 'Avskrivningar av materiella/immateriella tillgångar').",
@@ -212,9 +219,9 @@ export const RAKNARE: Raknare[] = [
     namn: "V09 · ROE (avkastning eget kapital)",
     var: "V09",
     falt: [
-      { key: "res", label: "Resultat efter skatt", enhet: "MSEK" },
-      { key: "ek_start", label: "Eget kapital, årets början", enhet: "MSEK" },
-      { key: "ek_slut", label: "Eget kapital, årets slut", enhet: "MSEK" },
+      { key: "res", label: "Resultat efter skatt", enhet: "MSEK", placeholder: "t.ex. 250" },
+      { key: "ek_start", label: "Eget kapital, årets början", enhet: "MSEK", placeholder: "t.ex. 1100" },
+      { key: "ek_slut", label: "Eget kapital, årets slut", enhet: "MSEK", placeholder: "t.ex. 1400" },
     ],
     formula: "Resultat ÷ snitt(Eget kapital början, slut) × 100 %",
     kalla: "Resultat: resultaträkningens nedersta rad 'Årets resultat'. Eget kapital: balansräkningen båda tidpunkterna (förra årets rapport har årets början).",
@@ -234,8 +241,8 @@ export const RAKNARE: Raknare[] = [
     namn: "V10 · Skuldsättningsgrad",
     var: "V10",
     falt: [
-      { key: "skulder", label: "Skulder och övriga förpliktelser", enhet: "MSEK" },
-      { key: "ek", label: "Eget kapital", enhet: "MSEK" },
+      { key: "skulder", label: "Skulder och övriga förpliktelser", enhet: "MSEK", placeholder: "t.ex. 1500" },
+      { key: "ek", label: "Eget kapital", enhet: "MSEK", placeholder: "t.ex. 4000" },
     ],
     formula: "Skulder ÷ Eget kapital",
     kalla: "Balansräkningen: hela posten 'Skulder och övriga förpliktelser' (både lång- och kortfristiga) ÷ 'Eget kapital'.",
@@ -254,8 +261,8 @@ export const RAKNARE: Raknare[] = [
     namn: "V19 · Kapitalförbränning",
     var: "V19",
     falt: [
-      { key: "fkf", label: "Kassaflöde från löpande verksamheten", enhet: "MSEK (negativ = förbränning)" },
-      { key: "kassa", label: "Kassa & bank", enhet: "MSEK" },
+      { key: "fkf", label: "Kassaflöde från löpande verksamheten", enhet: "MSEK (negativ = förbränning)", placeholder: "t.ex. -60 (minus = förbränning)" },
+      { key: "kassa", label: "Kassa & bank", enhet: "MSEK", placeholder: "t.ex. 300" },
     ],
     formula: "Kassa ÷ |årlig förbränning| → antal månader bolaget klarar sig",
     kalla: "Kassaflödesanalysen: 'Kassaflöde från den löpande verksamheten' (per år). Kassa: balansräkningens översta poster. Vinstdrivande bolag: FKF > 0 ger direkt poäng 5.",
@@ -309,14 +316,31 @@ export function Akm1Calculator() {
     <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
       <div>
         <Tabs defaultValue="rakna">
-          <TabsList className="flex-wrap">
-            <TabsTrigger value="rakna">🧮 Räkna med egna siffror</TabsTrigger>
-            <TabsTrigger value="manuellt">⌨️ Poängsätt manuellt</TabsTrigger>
-            <TabsTrigger value="guide">📖 Var hittar jag siffrorna?</TabsTrigger>
+          {/* Mobil: fullbredds vertikal stack (ingen överlappning/overflow) —
+              desktop (sm:): horisontell rad med flex-wrap. Ingen absolut positionering. */}
+          <TabsList className="flex h-auto w-full flex-col items-stretch justify-start gap-1 p-1 sm:inline-flex sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-2">
+            <TabsTrigger
+              value="rakna"
+              className="h-auto w-full flex-none justify-start whitespace-normal border-l-2 border-l-transparent px-3 py-2.5 text-left data-[state=active]:border-l-gold data-[state=active]:bg-gold/15 data-[state=active]:text-foreground dark:data-[state=active]:border-l-gold dark:data-[state=active]:bg-gold/15 sm:w-auto sm:justify-center sm:whitespace-nowrap"
+            >
+              🧮 Räkna med egna siffror
+            </TabsTrigger>
+            <TabsTrigger
+              value="manuellt"
+              className="h-auto w-full flex-none justify-start whitespace-normal border-l-2 border-l-transparent px-3 py-2.5 text-left data-[state=active]:border-l-gold data-[state=active]:bg-gold/15 data-[state=active]:text-foreground dark:data-[state=active]:border-l-gold dark:data-[state=active]:bg-gold/15 sm:w-auto sm:justify-center sm:whitespace-nowrap"
+            >
+              ⌨️ Poängsätt manuellt
+            </TabsTrigger>
+            <TabsTrigger
+              value="guide"
+              className="h-auto w-full flex-none justify-start whitespace-normal border-l-2 border-l-transparent px-3 py-2.5 text-left data-[state=active]:border-l-gold data-[state=active]:bg-gold/15 data-[state=active]:text-foreground dark:data-[state=active]:border-l-gold dark:data-[state=active]:bg-gold/15 sm:w-auto sm:justify-center sm:whitespace-nowrap"
+            >
+              📖 Var hittar jag siffrorna?
+            </TabsTrigger>
           </TabsList>
 
           {/* FLIK 1: räkna med egna siffror */}
-          <TabsContent value="rakna" className="mt-6 space-y-5">
+          <TabsContent value="rakna" className="mt-4 space-y-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
               Mata in siffror från bolagets årsredovisning eller kvartalsrapport — poängen
               beräknas automatiskt enligt pedagogiska trösklar och läggs in i din
@@ -324,16 +348,17 @@ export function Akm1Calculator() {
             </p>
             {RAKNARE.map((r) => {
               const v = siffror[r.id] || {};
+              // Komma → punkt, sedan riktiga tal (samma tolerans som tidigare: ogiltiga/0 → NaN/0 → tas om hand av tal()).
               const num = Object.fromEntries(
-                Object.entries(v).map(([k, s]) => [k, s.replace(",", ".")])
-              ) as Record<string, number>;
+                Object.entries(v).map(([k, s]) => [k, Number(s.replace(",", "."))])
+              );
               const resultat = r.rakna(num);
               return (
                 <div key={r.id} className="rounded-xl border border-gold/20 bg-card p-5">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="font-serif text-lg font-bold">{r.namn}</h3>
                     {resultat && (
-                      <span className="rounded-full bg-gold/15 px-3 py-1 text-sm font-bold text-gold">
+                      <span className={`rounded-full bg-gold/15 px-3 py-1 text-sm font-bold ${GULD_TEXT}`}>
                         {resultat.varde} {resultat.enhet} → poäng {resultat.poang}
                       </span>
                     )}
@@ -353,13 +378,13 @@ export function Akm1Calculator() {
                             }))
                           }
                           className="mt-1 h-9 text-sm"
-                          placeholder="t.ex. 1200"
+                          placeholder={f.placeholder}
                         />
                       </label>
                     ))}
                   </div>
                   <details className="mt-3">
-                    <summary className="cursor-pointer text-xs font-semibold text-gold">
+                    <summary className={`cursor-pointer text-xs font-semibold ${GULD_TEXT}`}>
                       Var hittar jag siffrorna? (klicka för att visa)
                     </summary>
                     <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{r.kalla}</p>
@@ -389,9 +414,9 @@ export function Akm1Calculator() {
           </TabsContent>
 
           {/* FLIK 2: manuellt */}
-          <TabsContent value="manuellt" className="mt-6 space-y-8">
+          <TabsContent value="manuellt" className="mt-4 space-y-6">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Alla 20 variabler som reglage — snabbt läge när du redan har bild av bolaget.
+              Alla 20 variabler som reglage — snabbt läge när du redan har en bild av bolaget.
               Varje variabelnamn länkar till hela kursen med förklaring och exempel.
             </p>
             {KATEGORIER.map((kat) => (
@@ -413,7 +438,7 @@ export function Akm1Calculator() {
                         >
                           {v.id} · {v.name}
                           {v.weight === "KRITISK" && (
-                            <span className="ml-2 rounded-full bg-gold/15 px-2 py-0.5 text-[10px] font-bold uppercase text-gold">
+                            <span className={`ml-2 rounded-full bg-gold/15 px-2 py-0.5 text-[10px] font-bold uppercase ${GULD_TEXT}`}>
                               kritisk
                             </span>
                           )}
@@ -438,7 +463,7 @@ export function Akm1Calculator() {
           </TabsContent>
 
           {/* FLIK 3: guide */}
-          <TabsContent value="guide" className="mt-6 space-y-6">
+          <TabsContent value="guide" className="mt-4 space-y-6">
             <div className="rounded-xl border border-gold/30 bg-card p-6">
               <h3 className="font-serif text-xl font-bold">Kartan över en svensk årsredovisning</h3>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -446,7 +471,7 @@ export function Akm1Calculator() {
               </p>
               <div className="mt-4 space-y-4 text-sm leading-relaxed">
                 <div>
-                  <p className="font-semibold text-gold">1. Konsoliderad resultaträkningen</p>
+                  <p className={`font-semibold ${GULD_TEXT}`}>1. Konsoliderad resultaträkningen</p>
                   <p className="text-muted-foreground">
                     Nettoomsättning (V01, V04, V07), rörelsens kostnader (V07),
                     rörelseresultat (V06, V08), årets resultat (V09). Föregående år står
@@ -454,7 +479,7 @@ export function Akm1Calculator() {
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gold">2. Konsoliderad balansräkningen</p>
+                  <p className={`font-semibold ${GULD_TEXT}`}>2. Konsoliderad balansräkningen</p>
                   <p className="text-muted-foreground">
                     Kassa och bank (V06, V19), omsättningstillgångar och kortfristiga
                     skulder (V11), eget kapital (V05, V09, V10), skulder och övriga
@@ -462,14 +487,14 @@ export function Akm1Calculator() {
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gold">3. Kassaflödesanalysen</p>
+                  <p className={`font-semibold ${GULD_TEXT}`}>3. Kassaflödesanalysen</p>
                   <p className="text-muted-foreground">
                     Kassaflöde från den löpande verksamheten (V19 — positivt eller
                     negativt?), avskrivningar (V06, V08 — för att räkna fram EBITDA).
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gold">4. Förvaltningsberättelsen</p>
+                  <p className={`font-semibold ${GULD_TEXT}`}>4. Förvaltningsberättelsen</p>
                   <p className="text-muted-foreground">
                     ARR och prenumerationsintäkter (V02), kundkoncentration (V03),
                     pipeline och lanseringar (V16), avtal (V17), risker (V18),
@@ -477,7 +502,7 @@ export function Akm1Calculator() {
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gold">5. Noterna (bakom rapporterna)</p>
+                  <p className={`font-semibold ${GULD_TEXT}`}>5. Noterna (bakom rapporterna)</p>
                   <p className="text-muted-foreground">
                     Segmentredovisning (V03), storkunder (V03), finansiella skulder (V06),
                     aktieägar- och insideruppgifter (V20).
@@ -491,12 +516,12 @@ export function Akm1Calculator() {
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
                 <li><strong>Kvartalsrapport</strong> (var 3:e månad): omsättning, rörelseresultat, kassa — men tunn balansräkning och sällan noter. Perfekt för V01-trenden.</li>
                 <li><strong>Årsredovisningen</strong> (en gång om året, publiceras på bolagets + börsens sajt): ALLT — noter, förvaltningsberättelse, risker. Hämta den som PDF från investor relations-sidan.</li>
-                <li><strong>Rule of thumb:</strong> kvartalet för snabb pulse, årsredovisningen för hela poängsättningen.</li>
+                <li><strong>Rule of thumb:</strong> kvartalet för snabb puls, årsredovisningen för hela poängsättningen.</li>
               </ul>
             </div>
 
             <div className="rounded-xl border border-gold/30 bg-card p-6">
-              <h3 className="font-serif text-xl font-bold">Gengått exempel: Räkna V09 (ROE) steg för steg</h3>
+              <h3 className="font-serif text-xl font-bold">Genomgång: Räkna V09 (ROE) steg för steg</h3>
               <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
                 <li>Öppna årsredovisningens <strong>resultaträkning</strong>: hitta "Årets resultat efter skatt" — säg <strong>250 MSEK</strong></li>
                 <li>Öppna <strong>balansräkningen</strong> i samma rapport: "Eget kapital" i år = <strong>1 400</strong></li>

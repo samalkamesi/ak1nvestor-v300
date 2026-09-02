@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import {
   Search,
   Share2,
@@ -12,9 +13,24 @@ import {
   ChevronDown,
   Sparkles,
   Zap,
+  Home,
+  Crosshair,
+  BarChart3,
+  TrendingUp,
+  GraduationCap,
+  FlaskConical,
+  Bot,
+  Crown,
+  Compass,
+  Users,
+  LogIn,
+  Calculator,
+  Briefcase,
+  Landmark,
+  BookOpen,
 } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useAk1aStore, levelLabel, type Level } from "@/lib/ak1a-store";
+import { useAk1aStore, levelLabel, type Level, type SectionId } from "@/lib/ak1a-store";
 import { NAV_SECTIONS, LEVELS, FOOTER_NAV } from "@/lib/ak1a/data";
 import { Ak1aLogo } from "./primitives";
 import { cn } from "@/lib/utils";
@@ -28,6 +44,45 @@ function levelFromXp(xp: number): { lvl: number; title: string } {
   if (xp >= 250) return { lvl: 2, title: "JUNIOR ANALYTIKER" };
   return { lvl: 1, title: "NYANALYTIKER" };
 }
+
+// Ikoner per SPA-sektion (mobil-drawerns stora tryckrader).
+const SEKTIONS_IKONER: Record<string, typeof Home> = {
+  hem: Home,
+  prec: Crosshair,
+  analyser: BarChart3,
+  aktier: TrendingUp,
+  kurser: GraduationCap,
+  labb: FlaskConical,
+  fas3: Bot,
+  styrelse: Crown,
+  strategi: Compass,
+  "om-oss": Users,
+  portal: LogIn,
+};
+
+// Kort beskrivning under varje sektionsetikett (samma röst som Mobilmenyn).
+const SEKTIONS_BESKRIVNINGAR: Record<string, string> = {
+  hem: "Startsidan — allt på ett ställe",
+  prec: "PREC-analysen, sektion för sektion",
+  analyser: "Fullständiga bolagsanalyser",
+  aktier: "Bevakning & aktieuniversum",
+  kurser: "200+ moduler · 4 flikar",
+  labb: "Case + faror + historia",
+  fas3: "AI-driven analys (Fas 3)",
+  styrelse: "Styrelsens interna vy",
+  strategi: "Strategi (#1 i världen)",
+  "om-oss": "Meta-system (organ + visioner)",
+  portal: "Logga in · Min portal",
+};
+
+// Riktiga routes (undersidor) — länkas med Link, ej SPA-sektioner.
+const FLER_SIDER: { text: string; href: string; beskrivning: string; ikon: typeof Home }[] = [
+  { text: "Kursbiblioteket", href: "/kurser", beskrivning: "Hela biblioteket med quiz", ikon: BookOpen },
+  { text: "AKM1-kalkylatorn", href: "/kalkylator", beskrivning: "20 fundamentalvariabler · V01–V20", ikon: Calculator },
+  { text: "Min portfölj", href: "/min-portfolj", beskrivning: "Innehav + djupanalys (5×5×4)", ikon: Briefcase },
+  { text: "Vågfundament", href: "/vagfundament", beskrivning: "Fundamentalvågorna per aktie", ikon: Landmark },
+  { text: "Dagens pass", href: "/dagens-pass", beskrivning: "5 minuters daglig marknadsträning", ikon: Zap },
+];
 
 export function Header() {
   const {
@@ -47,10 +102,46 @@ export function Header() {
   const [mounted, setMounted] = React.useState(false);
   const [moreOpen, setMoreOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [intrad, setIntrad] = React.useState(false); // för tonad drawer-entré
   React.useEffect(() => setMounted(true), []);
 
   // ⌘K sköts GLOBALT av Kommandopaletten (layout.tsx) — ingen lokal lyssnare här
   // (dubbla lyssnare race:togglear paletten stängd på startsidan)
+
+  // Tonad entré: vänd synlighet strax efter att drawern monterats så transitionen spelas.
+  React.useEffect(() => {
+    if (!mobileOpen) {
+      setIntrad(false);
+      return;
+    }
+    const t = setTimeout(() => setIntrad(true), 10);
+    return () => clearTimeout(t);
+  }, [mobileOpen]);
+
+  // Body-scroll-lås + Escape stänger (samma beteende som Mobilmenyn).
+  React.useEffect(() => {
+    if (!mobileOpen) return;
+    const fore = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const tangentslag = (e: KeyboardEvent) => e.key === "Escape" && setMobileOpen(false);
+    document.addEventListener("keydown", tangentslag);
+    return () => {
+      document.body.style.overflow = fore;
+      document.removeEventListener("keydown", tangentslag);
+    };
+  }, [mobileOpen]);
+
+  // Stäng drawern + öppna kommandopaletten (global lyssnare).
+  const oppnaSokOchStang = () => {
+    window.dispatchEvent(new CustomEvent("ak1a:oppna-sok"));
+    setMobileOpen(false);
+  };
+
+  // Välj SPA-sektion i drawern + stäng.
+  const valjSektion = (id: SectionId) => {
+    setSection(id);
+    setMobileOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/70 bg-background/85 backdrop-blur-md">
@@ -195,39 +286,182 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile nav */}
+      {/* Mobil drawer — fullskärm i samma design som Mobilmenyn (paper, guld, serif) */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-background px-4 py-3">
-          <nav className="flex flex-col gap-1">
-            {visibleNavSections.map((s) => (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Huvudmeny"
+          className={`paper-texture fixed inset-0 z-[60] bg-background/98 backdrop-blur-md transition-opacity duration-300 ${
+            intrad ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div
+            className={`mx-auto flex h-full max-w-lg flex-col overflow-y-auto px-5 pb-10 pt-4 transition-all duration-300 ${
+              intrad ? "translate-y-0" : "translate-y-3"
+            }`}
+          >
+            {/* Topprad: stäng-X + logotyp + XP/nivå/streak-chips */}
+            <div className="flex flex-wrap items-center gap-3">
               <button
-                key={s.id}
-                onClick={() => {
-                  setSection(s.id);
-                  setMobileOpen(false);
-                }}
-                className={cn(
-                  "text-left px-2 py-2 text-sm font-semibold uppercase tracking-wider rounded-sm",
-                  section === s.id ? "text-gold bg-muted" : "text-foreground/80"
-                )}
+                type="button"
+                onClick={() => setMobileOpen(false)}
+                aria-label="Stäng menyn"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-gold/20 text-muted-foreground transition-colors hover:border-gold/50 hover:text-foreground"
               >
-                {s.label}
+                <X className="h-4 w-4" />
               </button>
-            ))}
-          </nav>
-          <div className="mt-3 flex items-center gap-1 rounded-md border border-border bg-card/60 p-0.5">
-            {LEVELS.map((l) => (
+
+              <Ak1aLogo onClick={() => valjSektion("hem")} size="sm" />
+
+              <div className="ml-auto flex flex-wrap items-center gap-1.5">
+                <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold text-gold">
+                  {progress.xp} XP
+                </span>
+                <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold text-gold">
+                  Lvl {levelFromXp(progress.xp).lvl}
+                </span>
+                <span className="rounded-full border border-gold/30 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold text-gold">
+                  🔥 {progress.streak}
+                </span>
+              </div>
+            </div>
+
+            {/* Sökfält — öppnar kommandopaletten (global lyssnare) och stänger drawern */}
+            <div className="relative mt-5">
+              <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <input
+                type="text"
+                placeholder="Sök kurser, verktyg, sidor…"
+                onFocus={oppnaSokOchStang}
+                onKeyDown={(e) => e.key === "Enter" && oppnaSokOchStang()}
+                className="w-full rounded-xl border border-gold/20 bg-card py-2.5 pl-10 pr-4 text-sm text-foreground shadow-xl placeholder:text-muted-foreground focus:border-gold focus:outline-none"
+              />
+            </div>
+
+            {/* SPA-sektionerna — stora tryckrader med ikon + beskrivning, aktiv = guld */}
+            <nav className="mt-7 space-y-8" aria-label="Mobilnavigation">
+              <section>
+                <h2 className="font-serif text-xs font-bold uppercase tracking-wide text-gold">
+                  Sektioner
+                </h2>
+                <div className="mt-2">
+                  {visibleNavSections.map((s) => {
+                    const Ikon = SEKTIONS_IKONER[s.id] ?? Sparkles;
+                    const beskrivning = SEKTIONS_BESKRIVNINGAR[s.id];
+                    const aktiv = section === s.id;
+                    return (
+                      <button
+                        key={s.id}
+                        onClick={() => valjSektion(s.id)}
+                        className={`flex w-full items-start gap-3 border-b border-gold/10 py-3 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10 ${
+                          aktiv ? "bg-gold/5" : ""
+                        }`}
+                      >
+                        <Ikon
+                          className={`mt-0.5 h-5 w-5 shrink-0 ${
+                            aktiv ? "text-gold" : "text-muted-foreground"
+                          }`}
+                        />
+                        <span className="min-w-0">
+                          <span
+                            className={`block text-sm font-bold ${
+                              aktiv ? "text-gold" : "text-foreground"
+                            }`}
+                          >
+                            {s.label}
+                          </span>
+                          {beskrivning && (
+                            <span className="block text-xs leading-tight text-muted-foreground">
+                              {beskrivning}
+                            </span>
+                          )}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+
+              {/* MER — samma länkar som desktop-droppen, som mindre rader */}
+              <section>
+                <h2 className="font-serif text-xs font-bold uppercase tracking-wide text-gold">
+                  Mer
+                </h2>
+                <div className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
+                  {FOOTER_NAV.slice(0, 6).map((item) => (
+                    <button
+                      key={item.label}
+                      onClick={() => valjSektion(item.section)}
+                      className="rounded-md px-2 py-1.5 text-left text-xs text-muted-foreground transition-colors hover:bg-gold/5 hover:text-foreground"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </section>
+
+              {/* FLER SIDER — riktiga routes, länkas med Link */}
+              <section>
+                <h2 className="font-serif text-xs font-bold uppercase tracking-wide text-gold">
+                  Fler sider
+                </h2>
+                <div className="mt-2">
+                  {FLER_SIDER.map((sida) => (
+                    <Link
+                      key={sida.href}
+                      href={sida.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-start gap-3 border-b border-gold/10 py-3 text-left last:border-b-0 hover:bg-gold/5 active:bg-gold/10"
+                    >
+                      <sida.ikon className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
+                      <span className="min-w-0">
+                        <span className="block text-sm font-bold text-foreground">{sida.text}</span>
+                        <span className="block text-xs leading-tight text-muted-foreground">
+                          {sida.beskrivning}
+                        </span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            </nav>
+
+            {/* Nivåväljaren — kompakt rad inne i drawern */}
+            <div className="mt-6 flex items-center gap-1 rounded-md border border-border bg-card/60 p-0.5">
+              {LEVELS.map((l) => (
+                <button
+                  key={l.id}
+                  onClick={() => setLevel(l.id)}
+                  title={l.subtitle}
+                  className={cn(
+                    "flex-1 px-2 py-1.5 text-[10px] font-semibold uppercase tracking-wider rounded-sm transition-colors",
+                    level === l.id
+                      ? "bg-gold text-background"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Guld-CTA längst ner */}
+            <div className="mt-auto flex gap-3 pt-8">
               <button
-                key={l.id}
-                onClick={() => setLevel(l.id as Level)}
-                className={cn(
-                  "flex-1 px-2 py-1.5 text-[10px] font-semibold uppercase tracking-wider rounded-sm",
-                  level === l.id ? "bg-gold text-background" : "text-muted-foreground"
-                )}
+                onClick={() => valjSektion("portal")}
+                className="flex-1 rounded-xl bg-gold px-4 py-3 text-center text-sm font-bold text-primary-foreground shadow-xl transition-opacity hover:opacity-90"
               >
-                {l.label}
+                Logga in / Portal
               </button>
-            ))}
+              <Link
+                href="/fas2-ansok"
+                onClick={() => setMobileOpen(false)}
+                className="flex-1 rounded-xl border border-gold px-4 py-3 text-center text-sm font-bold text-gold transition-colors hover:bg-gold/10"
+              >
+                Fas 2-ansökan
+              </Link>
+            </div>
           </div>
         </div>
       )}

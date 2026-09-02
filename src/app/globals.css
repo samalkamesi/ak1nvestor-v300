@@ -62,6 +62,13 @@
   --bear: #b91c1c;             /* bearish red */
   --neutral-signal: #64748b;   /* neutral slate */
 
+  /* ── AK1A bläck-marin institutionell DNA (kirurgiskt tillägg) ── */
+  --djup-marin: #0E1B2E;           /* bläck-marin — institutionellt ankare */
+  --djup-marin-morkare: #081120;   /* djupaste marin för gradientdjup */
+  --koppar: #8C5A2B;               /* koppar/brons — data-accent */
+  --koppar-lys: #B07A3C;           /* ljusare koppar för text och markörer */
+  --guld-djup: #7A5E14;            /* mörkare guld — WCAG-löptext på cream */
+
   --background: #f5f1e8;
   --foreground: #0a0b0d;
   --card: #fffdf7;             /* slightly lighter than paper for cards */
@@ -103,6 +110,13 @@
   --bull: #34d399;
   --bear: #f87171;
   --neutral-signal: #94a3b8;
+
+  /* ── Marin-DNA i dark: LJUSARE marin-paneler, koppar oförändrad ── */
+  --djup-marin: #16263D;
+  --djup-marin-morkare: #0E1B2E;
+  --koppar: #8C5A2B;
+  --koppar-lys: #B07A3C;
+  --guld-djup: #c9a84c;            /* läsbart guld mot mörk botten */
 
   --background: #0c0b09;
   --foreground: #f5f1e8;
@@ -152,6 +166,51 @@
   h1, h2, h3, h4, .font-serif {
     font-family: var(--font-serif), Georgia, "Times New Roman", serif;
   }
+
+  /* Tryckt karaktär — hårfin marin-skugga under serif-rubriker (endast ljust läge) */
+  html:not(.dark) h1,
+  html:not(.dark) h2,
+  html:not(.dark) h3,
+  html:not(.dark) h4,
+  html:not(.dark) .font-serif {
+    text-shadow: 0 0.5px 0 rgba(14, 27, 46, 0.08);
+  }
+
+  /* Signaturdetailj — marin selection med guld text */
+  ::selection {
+    background: var(--djup-marin, #0E1B2E);
+    color: var(--gold-soft, #c9a84c);
+  }
+
+  /* Global signatur-scrollbar — smal marin-vän med guld-thumb (WebKit + Firefox) */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-soft, #c9a84c) var(--djup-marin-morkare, #081120);
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--djup-marin-morkare, #081120);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold-soft, #c9a84c);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gold, #a8862a);
+  }
+
+  /* Koppar focus-ring — institutionell precision på interaktiva element */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--koppar-lys, #B07A3C);
+    outline-offset: 2px;
+  }
 }
 
 /* Custom scrollbar for the institutional feel */
@@ -177,10 +236,11 @@
   .gold-rule {
     background-image: linear-gradient(to right, transparent, var(--gold-soft), transparent);
   }
-  /* Subtle paper texture via radial gradients */
+  /* Subtle paper texture via radial gradients + knappt synligt marin-vignette-lager */
   .paper-texture {
     background-color: var(--background);
     background-image:
+      radial-gradient(ellipse at 50% 50%, transparent 58%, rgba(14, 27, 46, 0.03) 100%),
       radial-gradient(circle at 20% 10%, rgba(168, 134, 42, 0.03), transparent 40%),
       radial-gradient(circle at 80% 90%, rgba(168, 134, 42, 0.03), transparent 40%);
   }
@@ -189,6 +249,18 @@
       radial-gradient(circle at 20% 10%, rgba(201, 168, 76, 0.05), transparent 40%),
       radial-gradient(circle at 80% 90%, rgba(201, 168, 76, 0.04), transparent 40%);
   }
+
+  /* ── AK1A bläck-marin signaturklasser (kirurgiska) ── */
+  .marin-panel {
+    background: linear-gradient(160deg, var(--djup-marin, #0E1B2E), var(--djup-marin-morkare, #081120));
+    color: #EDE6D6;
+  }
+  .dark .marin-panel {
+    background: linear-gradient(160deg, var(--djup-marin, #16263D), var(--djup-marin-morkare, #0E1B2E));
+    color: #EDE6D6;
+  }
+  .koppar-text { color: var(--koppar-lys, #B07A3C); }
+  .guld-djup-text { color: var(--guld-djup, #7A5E14); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

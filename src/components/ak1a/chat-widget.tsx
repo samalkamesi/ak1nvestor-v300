@@ -359,37 +359,48 @@ export function ChatWidget() {
 
   return (
     <>
+      {/* Chatt-panel — mobil: fullbredd bottom-sheet över safe-area; desktop: oförändrad hög låda */}
       {oppnad && (
-        <div className="fixed bottom-20 right-4 z-50 flex h-[520px] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border-2 border-gold bg-paper shadow-2xl">
-          {/* Header */}
-          <div className="flex items-center justify-between bg-gold px-4 py-3 text-primary-foreground">
-            <div className="flex items-center gap-2">
-              <span className="font-serif font-bold">AI-Mentor</span>
-              <span className="rounded-full bg-primary-foreground/20 px-2 py-0.5 text-[10px]">
-                Nivå {ctx.niva} · {ctx.xp} XP
-              </span>
-              {hydrerad && lasStreak().antal > 0 && (
-                <span
-                  className="rounded-full bg-primary-foreground/20 px-2 py-0.5 text-[10px] font-bold"
-                  title={`Daglig kedja: ${lasStreak().antal} dag${lasStreak().antal > 1 ? "ar" : ""} (bästa: ${lasStreak().basta})`}
-                >
-                  🔥 {lasStreak().antal}
+        <div className="fixed inset-x-2 bottom-[calc(0.5rem_+_env(safe-area-inset-bottom))] z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-2xl border-2 border-gold bg-paper shadow-2xl sm:bottom-20 sm:left-auto sm:right-4 sm:h-[520px] sm:max-h-none sm:w-[380px] sm:max-w-[calc(100vw-2rem)]">
+          {/* Paneltopp — marin med serif-rubrik, guldchips och guld-divider */}
+          <div className="bg-[#0E1B2E] px-4 py-3">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span className="font-serif font-bold text-gold">AI-Mentor</span>
+                <span className="rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[10px] font-bold text-gold">
+                  Nivå {ctx.niva} · {ctx.xp} XP
                 </span>
-              )}
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] opacity-80">{ctx.sidTyp}</span>
-              {hydrerad && srForfallna > 0 && (
+                {hydrerad && lasStreak().antal > 0 && (
+                  <span
+                    className="rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[10px] font-bold text-gold"
+                    title={`Daglig kedja: ${lasStreak().antal} dag${lasStreak().antal > 1 ? "ar" : ""} (bästa: ${lasStreak().basta})`}
+                  >
+                    🔥 {lasStreak().antal}
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] text-gold/70">{ctx.sidTyp}</span>
+                {hydrerad && srForfallna > 0 && (
+                  <button
+                    onClick={() => startaSR()}
+                    className="rounded-full border border-gold/40 bg-gold/15 px-2 py-0.5 text-[10px] font-bold text-gold hover:bg-gold/25"
+                    title={`${srForfallna} flashcards förfallna — repetera nu`}
+                  >
+                    🃏 {srForfallna} förfallna
+                  </button>
+                )}
                 <button
-                  onClick={() => startaSR()}
-                  className="rounded-full bg-primary-foreground/15 px-2 py-0.5 text-[10px] font-bold hover:bg-primary-foreground/25"
-                  title={`${srForfallna} flashcards förfallna — repetera nu`}
+                  onClick={() => setOppnad(false)}
+                  aria-label="Stäng AI-mentorn"
+                  className="flex h-6 w-6 items-center justify-center rounded-full text-lg font-bold leading-none text-gold transition-colors hover:bg-gold/20"
                 >
-                  🃏 {srForfallna} förfallna
+                  ×
                 </button>
-              )}
-              <button onClick={() => setOppnad(false)} aria-label="Stäng" className="text-lg leading-none">×</button>
+              </div>
             </div>
+            {/* Guld-divider under paneltoppen */}
+            <div className="mt-2.5 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" aria-hidden="true" />
           </div>
 
           {/* Snabbkommandon */}
@@ -560,10 +571,10 @@ export function ChatWidget() {
         </div>
       )}
 
-      {/* Trigger-knapp */}
+      {/* Trigger-knapp — nedre hörnet med safe-area (Short-Seller staplas ovanpå med gap-3), marin-guldidentitet */}
       <button
         onClick={() => setOppnad(!oppnad)}
-        className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full border-2 border-gold bg-paper text-2xl shadow-xl transition-transform hover:scale-105"
+        className="fixed bottom-[calc(1rem_+_env(safe-area-inset-bottom))] right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full border-2 border-gold bg-[#0E1B2E] text-2xl text-gold shadow-xl transition-transform hover:scale-105"
         aria-label="AI-Mentor"
         title="AI-Mentor — din personliga guide"
       >

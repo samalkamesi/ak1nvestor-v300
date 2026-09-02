@@ -92,22 +92,22 @@ export function Sidfooter() {
           ))}
         </div>
 
-        <div className="mt-10 border-t border-gold/20 pt-6 text-xs text-muted-foreground">
+        <div className="marin-panel mt-10 rounded-xl border border-gold/25 px-5 py-5 text-xs text-[#EDE6D6]">
           <p>
             AK1A Research Lab — pedagogisk finansanalys, inte investeringsråd.{" "}
-            <Link href="/privacy-policy" className="underline hover:text-foreground">
+            <Link href="/privacy-policy" className="underline hover:text-[#E8C766]">
               Integritetspolicy
             </Link>{" "}
             ·{" "}
-            <Link href="/terms" className="underline hover:text-foreground">
+            <Link href="/terms" className="underline hover:text-[#E8C766]">
               Villkor
             </Link>{" "}
             ·{" "}
-            <Link href="/finansiell-policy" className="underline hover:text-foreground">
+            <Link href="/finansiell-policy" className="underline hover:text-[#E8C766]">
               Finansiell policy
             </Link>
           </p>
-          <p className="mt-2 font-serif italic">Byggt med AKM1 + AK1TS</p>
+          <p className="mt-2 font-serif italic text-[#E8C766]">Byggt med AKM1 + AK1TS</p>
         </div>
       </div>
     </footer>

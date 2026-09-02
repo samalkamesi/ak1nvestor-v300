@@ -1,0 +1,1062 @@
+{
+  "slug": "distress-investing",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 170,
+  "title": "Distress Investing: Principles and Technique — Whitman & Diz: KOMPLETT",
+  "summary": "Martin J. Whitman — grundaren av Third Avenue Value Fund och mannen bakom safe and cheap — skrev 2009 tillsammans med Fernando Diz standardverket i distressed investing: konsten att köpa fordringar och värdepapper i bolag som anses döda. Kursen bygger bokens faktiska stomme: aggressive conservatism och resource conversion, kapitalstrukturens hierarki med de fem grundreglerna, Chapter 11-processen mot svensk rekonstruktion, värdering av krisbolagets enterprise value, trade claims och DIP-finansiering — med bokens egna fall Home Products International och Kmart, där Third Avenue själva var plan investor. Kursen tar vulture-kritiken på fullt allvar och landar i AK1A:s slutsats: distressed-läran och V19-emissionsrisken är samma läxa — förstå kapitalstrukturen före du köper NÅGOT — men själva hantverket är i praktiken inte för privatpersoner.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Distressed investerings fulla logik från långsidan av konkursvärlden: Whitmans aggressive conservatism — kreditvärdighet och balansräkning före resultaträkning, bolaget som stående enhet och kontrollens centrala betydelse — och resource conversion, idén att värde skapas inte bara i drift utan i omstruktureringshändelser (fusioner, återköp V20, rekapitaliseringar, konkurser); de fyra dödsorsakerna (förlorad tillgång till kapitalmarknaden V19, försämrad drift V07, försämrad GAAP-redovisning, off-balance-sheet-åtaganden) med Whitmans likviditetstest som närmaste verktyg: kan bolaget betala ränta och amortering i arton till tjugofyra månader utan marknadsaccess; kapitalstrukturens hierarki — superprioritet, säkerställda borgenärer, oprioriterade, efterställda, preferensaktier, vanliga aktier — den absoluta prioritetsregeln och allt som i praktiken bryter den (DIP-finansiering, critical vendor, blocking positions på en tredjedel av en klass, new value till gammalt eget kapital); bokens fem grundregler citerade öppet: ingen kan beröva en borgenär rätten till betalning utanför Chapter 11, konkursreglerna styr alla rekonstruktioner, värdepappers substantiva karaktär slår juridisk etikett, rekonstruktioner är kostsamma för borgenärer, och borgenärer har bara avtalsrättigheter — aldrig äganderätt till driften; Chapter 11-maskinen (automatic stay, debtor in possession, exclusivity, klassröstning, cramdown, BAPCPA 2005) mot svensk företagsrekonstruktion illustrativt: rekonstruktören, verkställighetsförbudet, kortare löptid, målvärdesdiskussionen om vem systemet ska skydda; kostnadernas ekonomi — advokater, rådgivare, KERP:er och management compensation också i fall; värdering i tre världar (strict going concern med V06 EV/EBITDA och V07 marginaler, resource conversion-värde, likvidationsvärde) och återbetalningstrappan: enterprise value fördelas nerifrån och upp, form of consideration mot amount of consideration, brytpunkten på en claims pris (tidsserien Brytpunkt); trade claims (preferensrisk, setoff, tvister) och DIP-finansiering som kontrollverktyg; teknikerna — long-only kreditfonder, distressed-for-control, co-invest, plan investing och kapitaltillskott 2008–2009; fallen Home Products International (prepack i liten skala) och Kmart (plan investors ESL och Third Avenue, cirka 140 miljoner dollar kontant, cirka 33 miljoner aktier i nya Kmart Holding, utslaget eget kapital, oprioriterade borgenärers aktier som återhämtade sig från 24 till 93 procent); den gode distressed-investeraren (juridisk kompetens, tålamod, balansräkningsblik, kontrollorientering, prisdisciplin) och Whitmans reformtankar för ett idealt rekonstruktionssystem; kontroversen vultures mot effektivitetsargumentet och AK1A:s svar — V19 och distressed är samma kapitalstruktur-läxa — plus det ärliga medgivandet: illikvida marknader och enorm informationsskillnad gör facket till en plats för professionella, och kursen till pedagogik i att läsa skuld före man köper aktier.",
+  "why": "Utan Whitman är din världsbild halv på ett annat sätt än utan Staley: Staley lär dig läsa skörhet hos friska berättelser — Whitman lär dig att konkursen är en fortsättning, inte ett slut, och att aktien du köper är en fordran sist i kön. De flesta investerare tänker aldrig på kapitalstrukturen förrän den exploderar: emissioner som diluerar (V19), skulder som löper ut, säkerheter som bestämmer vem som överlever rekonstruktionen. Distress Investing är den bok som gör hierarkin påtaglig — fem grundregler, en amerikansk konkursmaskin, två verkliga fall och en livslång utövares ödmjukhet inför juridiken. AK1A:s skäl att ha boken i kanon är inte att du ska köpa obeståndsfördringar: det är att förstå kapitalstrukturen FÖRE du köper något — därför att aktien är det yttersta lagret av en trappa där du står sist, och därför att V19-emissionsrisken och distressed-avkastningen är samma mekanism sedd från två ändar. Sedan kommer medgivandet, lika viktigt: det här är ett hantverk för dem med advokater, data och tid — för privatpersonen är värdet att läsa strukturen, inte att spela i den.",
+  "chapters_list": [
+    { "num": 1, "title": "Whitman och spegelvärlden — boken som köper där Staley kortar", "minutes": 12 },
+    { "num": 2, "title": "Teorin: aggressive conservatism — What market? What risk?", "minutes": 12 },
+    { "num": 3, "title": "Dödsorsakerna — varför friska bolag hamnar i nöd (V19)", "minutes": 12 },
+    { "num": 4, "title": "Kapitalstrukturens trappa — kön, pant och de fem grundreglerna", "minutes": 12 },
+    { "num": 5, "title": "Chapter 11-maskinen — och svensk rekonstruktion [illustrativt]", "minutes": 12 },
+    { "num": 6, "title": "Workout-rummet — frivilliga byten, holdouts och notan", "minutes": 12 },
+    { "num": 7, "title": "Värdera krisbolaget I: tre värderingsvärldar", "minutes": 12 },
+    { "num": 8, "title": "Värdera krisbolaget II: enterprise value och återbetalningstrappan (V06)", "minutes": 12 },
+    { "num": 9, "title": "Trade claims och DIP-finansiering — att köpa fordringar i pågående fall", "minutes": 12 },
+    { "num": 10, "title": "Teknikerna — kreditfonder, co-invest, control investing", "minutes": 12 },
+    { "num": 11, "title": "Fall: Home Products International — prepack i liten skala", "minutes": 12 },
+    { "num": 12, "title": "Fall: Kmart — plan investors och aktieutdelningen ingen räknade med", "minutes": 12 },
+    { "num": 13, "title": "Den gode distressed-investeraren — och det ideala systemet", "minutes": 13 },
+    { "num": 14, "title": "Kontroversen: vultures? — och kursens sammanfattning i AKM1", "minutes": 13 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Whitman och spegelvärlden — boken som köper där Staley kortar",
+      "intro": "Distress Investing: Principles and Technique (Wiley, 2009) skrevs av Martin J. Whitman, grundaren av Third Avenue Value Fund, tillsammans med Fernando Diz, professor vid Syracuse University — vars handelshögskola bär Whitmans namn efter hans donation. Detta kapitel placerar boken, mannen bakom safe and cheap, och kursens spegelrelation till Staley-kursen: hon söker skörhet hos friska berättelser; han köper värde i döda bolag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mannen. Martin Whitman (1924–2018) var inte akademiker som blev investerare utan kreditanalytiker och konkursexpert som blev legendar. Innan han startade Third Avenue Value Fund 1990 — och förvaltade den till högt ålder — hade han tillbringat decennier nära obestånd: värderingar, bolagsstyrning, tvångssituationer. Han formulerade sin filosofi redan 1979 i The Aggressive Conservative Investor och komprimerade den i två ord som blev hans varumärke: safe and cheap — kötuppen säkerhet i tillgångar och strukturell prioritet, inte i berättelser och tillväxtprognoser. Boken i kanon (bk-046) skrevs med Fernando Diz precis efter finanskollapsen 2007–2008, när den amerikanska högavkastningsmarknaden låg i spillror och distressed var det hetaste och mest förhatliga facket på en gång. Den är inte en motbok mot värdetraditionen — den är dess fullbordan på den plats där Graham-traditionen sällan vågar gå: in i konkursregistret."
+        },
+        {
+          "type": "text",
+          "content": "Spegeln mot Staley. Läs de två kanon-böckerna som varandras negativ. Staley kortar berättelser som marknaden älskar men balansräkningen hatar: hennes arbete är att hitta skörhet innan den erkänns. Whitman köper bolag som marknaden redan begravt: hans arbete är att prissätta vad som återstår när berättelsen är död. Stilets redskap är låna, sälja, täcka; Whitmans är senioritet, säkerhet och tålamod genom en rättsprocess. Men notera vad de delar, därför att det är kärnan i båda kurserna: båda läser samma dokument (balansräkning, fotnoter, kapitalstruktur), båda tror att priset är det sist intressanta, och båda vet att aktiemarknadens berättelse är den minst pålitliga informationen i systemet. Skillnaden är riktning på skepsisen — och att Whitman, till skillnad från shorten, har tiden på sin sida när han har rätt: en fordran på ett bolag i konkurs närmar sig sitt värde genom domstolens klocka, inte genom marknadens humör."
+        },
+        {
+          "type": "text",
+          "content": "Safe and cheap i distressed-tappning. I vanlig värdeinvestering betyder safe and cheap aktier till pris väsentligt under uppskattat inneboende värde. I Whitmans distressed-värld flyttas säkerheten från priset till positionen i kapitalstrukturen: safe är att stå rätt i kön — säkerställd skuld, senior fordran, dokumenterad pant — och cheap är att betala mindre för fordran än vad återbetalningen borde bli i en rekonstruktion eller likvidation. Aktier, som är sist i kön, är nästan aldrig safe i distressed-sammanhang; de kan bara vara cheap, och det är en helt annan och farligare kategori. Denna distinktion — pris under värde kan aldrig ersätta prioritet — är kursens första huvudläxa och hela förklaringen till varför boken heter Distress Investing och inte Distress Trading: marginalen ligger i strukturen, inte i timingen."
+        },
+        {
+          "type": "text",
+          "content": "Kursens karta efter bokens fyra delar. Del ett, landskapet: teorin (kapitel 2), dödsorsakerna (kapitel 3) och hierarkin (kapitel 4). Del två, omstruktureringen: Chapter 11-maskinen och workout-rummet (kapitel 5–6). Del tre, investeringsprocessen: värdering i tre världar, återbetalningstrappan, trade claims och teknikerna (kapitel 7–10). Del fyra, fallen och policyn: Home Products International, Kmart, den gode investeraren, kontroversen och sammanfattningen (kapitel 11–14). Bokens kapitelrubriker citeras öppet genom hela kursen — från The Five Basic Truths of Distress Investing till An Ideal Restructuring System — så att du alltid kan gå från kursen till källan. Kanonens AKM1-mappning är V06 EV/EBITDA, V07 bruttomarginal och V20 återköp; kursen drar dessutom V10, V11 och V19 som stödvariabler — kapitalstrukturens bokföring är inte valfri i denna värld."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Staley letar skörhet i det marknaden älskar; Whitman letar värde i det marknaden begravt. Säkerheten i distressed ligger inte i priset utan i positionen i kapitalstrukturens kö."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två klassiker, speglade — kursens positionering\",\"rader\":[[\"Dimension\",\"Staley (kortsidan)\",\"Whitman (distressed långsidan)\"],[\"Objekt\",\"Friska berättelser med skör balansräkning\",\"Begravda bolag med återstående värde\"],[\"Redskap\",\"Låna, sälja, täcka — kostnad per dag\",\"Senioritet, pant, domstolens klocka\"],[\"Fiende\",\"Squeeze och låneränta\",\"Tid, advokatnotor och prioritetsbrott\"],[\"AKM1-fokus\",\"V12, V19, V10\",\"V06, V07, V20\"],[\"Gemensam tro\",\"Balansräkningen talar sanning före resultaträkningen\",\"Samma\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Ta ett bolag du äger eller bevakar. Rita dess kapitalstruktur på ett papper: alla räntebärande lån med löptid, säkerheter, eventualiteter och — allra sist — aktien. Markera var i kön din aktie står. Spara bilden: kapitel 8 kommer att be dig räkna på exakt den trappan."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder safe and cheap i Whitmans distressed-tappning?",
+          "alternativ": [
+            "Billig aktie med spännande vändningsberättelse",
+            "Safe = rätt position i kapitalstrukturens kö; cheap = pris under förväntad återbetalning",
+            "Hög direktavkastning i nysläppta obligationer",
+            "Tekniskt stödnära aktier med lågt P/B"
+          ],
+          "ratt": 1,
+          "tips": "Fråga var säkerheten bor när bolaget kan gå i konkurs — i kursen eller i priset?"
+        },
+        {
+          "q": "Vilken är spegelrelationen mellan Staley-kursen och denna kurs?",
+          "alternativ": [
+            "Staley kortar berättelser som marknaden älskar; Whitman köper värde i bolag marknaden begravt",
+            "Båda kurserna lär ut kortförsäljning i krisbolag",
+            "Whitman är Staleys lärare och bygger vidare på hennes checklista",
+            "De behandlar samma bolag med samma instrument"
+          ],
+          "ratt": 0,
+          "tips": "Riktningen på skepsisen — mot det övervärderade eller mot det begravningsklara?"
+        },
+        {
+          "q": "Vad är skillnaden i tålamodets pris mellan en short och en distressed-position?",
+          "alternativ": [
+            "Ingen — båda betalar låneränta för att vänta",
+            "Distressed-positionen betalar alltid mer än shortsen",
+            "Shorten betalar för att vänta (ränta, recall); distressed-positionen har domstolens klocka som driver mot värde",
+            "Tålamod kostar ingenting för någon av dem"
+          ],
+          "ratt": 2,
+          "tips": "Vilken position har en process med deadlines — och vilken har en motpart som kan kräva tillbaka?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Teorin: aggressive conservatism — What market? What risk?",
+      "intro": "Bokens andra kapitel, The Theoretical Underpinning, är Whitmans krigsförklaring mot den akademiska finansieringen: det finns ingen enda marknad, risk är inte volatilitet, och bolaget är en stående enhet vars kreditvärdighet betyder mer än dess aktiekurs. Detta kapitel bygger grunden: aggressive conservatism, kontrollens betydelse och resource conversion.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "What market? Whitmans första slag ligger i rubriken på bokens första teoriavsnitt. Den akademiska modellen antar en effektiv marknad där alla priser hela tiden innehåller all information — men vilken marknad, frågar Whitman? Inte marknaden för obeståndsfördringar, som är tunn, opersonlig och prissatt av tvingade säljare. Inte marknaden för kontrollaffärer, där värdet bestäms av vad en köpare med resurser betalar för hela bolag. Aktiemarknadens minutpris är en marknad bland flera — och för den som tänker hålla en fordran genom en rekonstruktion på arton månader är dagskursen på underliggande aktie nästan irrelevant information. Detta är inte en hätsk fotnot utan kursens arbetsmodell: i distressed är pris och värde skilda inte av sentiment utan av process — och processen har en tidslinje man kan studera."
+        },
+        {
+          "type": "text",
+          "content": "What risk? Det andra slaget: risk är inte volatilitet. Whitman avfärdar varians som riskmått med en enkel iakttagelse från ett liv i obestånd: den som håller en säkerställd senior fordran genom en konkurs ser kurssvängningar som skulle få en modern riskmodell att svimma — men löper mindre faktisk risk än indexfondens ägare av en stabil aktie till extrem multipel. Verklig risk är permanent förlust av kapital: att fordran visar sig underordnad, panten värdelös,processen längre än kassan. Därför blir hans konservatism aggressiv: han koncentrerar, går in stort där strukturen skyddar, och struntar i prisrörelsens brus. AKM1:s översättning: detta är anledningen till att V10 skuldsättningsgrad och V11 likviditet poängsätts som stabilitetsmått — de mäter avståndet till den värld där aktieägaren förlorar allt och borgenären tar över."
+        },
+        {
+          "type": "text",
+          "content": "Bolaget som stående enhet — och kontrollens betydelse. Whitman analyserar bolag som going concerns vars värde ligger i kassaflöde och resurser, inte i börsens exit-pris. Därur växer tre praktiska konsekvenser. Ett: resultaträkningen är en ingång, men balansräkningen och kassaflödet är huset — kreditvärdighet (V07 bruttomarginal och V08 kassaflöde som driftens syre) slår earnings power när hävstången är hög. Två: värdet skapas på två ställen, i driften och i resource conversion — Whitmans samlingsnamn för händelser som omfördelar och frigör värde: fusioner, förvärv, återköp av egna aktier (V20 i AKM1 — notera ironin: samma variabel som poängsätter återköp i friska bolag är i Whitmans system en av de fyra krafterna i kapitalstrukturens biologi), rekapitaliseringar och konkurser. Tre: kontroll — den som kontrollerar besluten (aktieägare i friska bolag, seniora borgenärer i sjuka) spelar ett helt annat spel än den passiva minoriteten. Bokens avsnitt Control and Its Vital Importance är dess kärna: i distress flyttar kontrollen från aktien till fordran, och den som inte förstår den flyttningen förstår inte facket."
+        },
+        {
+          "type": "text",
+          "content": "Aggressive conservatism som helhet. Ordparet är ingen paradox utan en metodbeskrivning: conservatism i vad du köper (senioritet, säkerhet, balansräkning, dokumenterade rättigheter — det Whitman kallar substantiva karaktärer), aggressivitet i hur du köper (koncentration, stor position när marginalen är extra bred, hårt prissäkring under värde). Kontrasten mot både indexfonden (sprider, accepterar marknadspris, mäter risk i volatilitet) och hedgefondens leverage-spel (lånar i strukturen som redan är överbelånad) är total. För AKM1-eleverna är detta kapitel kursens teoretiska nav: V06 EV/EBITDA från kanon-mappningen är världens mest kapitalstruktur-medvetna multipel — den prissätter bolaget som en helhet och frågar sedan vem i kön som får vad."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ I distress flyttar kontrollen från aktien till fordran. Värde skapas inte bara i driften utan i resource conversion — och den som inte förstår kapitalstrukturens biologi ser aldrig den andra halva av spelet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Whitmans teoretiska revolt — fyra påståenden och deras praktik\",\"rader\":[[\"Påstående\",\"Mot akademisk finans\",\"Praktik för investeraren\"],[\"What market?\",\"Det finns inte en marknad utan många\",\"Prissätt fordran efter process och återbetalning — inte dagskurs\"],[\"Risk är inte volatilitet\",\"Verklig risk är permanent kapitalförlust\",\"Mät avståndet till noll, inte kurssvängningen\"],[\"Bolaget är en stående enhet\",\"Värde ligger i resurser och kassaflöde\",\"Balansräkning och coverage före multipel-trend\"],[\"Kontroll är avgörande\",\"Rättigheter följer ägande av kontroll\",\"Köp positioner som ger rättigheter — inte bara exponering\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Välj ett belånat bolag ur din bevakningslista. Skriv två analyser av samma bolag: en earnings-analys (multipel, tillväxt, börs-story) och en kreditanalys (V10 skuld, V11 likviditet, V07 marginal, räntetäckning, löptider). Vilken analys ändrar din bild mest — och vad säger det om vilken du normalt gör?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Whitman med frågan What market?",
+          "alternativ": [
+            "Att alla marknader är effektiva om man bara väntar",
+            "Att det finns många delmarknader med olika deltagare — aktiemarknadens dagspris är irrelevant för en fordran på arton månaders process",
+            "Att man alltid ska handla på den mest likvida marknaden",
+            "Att marknadspris och inneboende värde alltid sammanfaller i distress"
+          ],
+          "ratt": 1,
+          "tips": "Vilket pris är relevant för den som håller en fordran genom en rättsprocess — dagens aktiekurs eller återbetalningen i planen?"
+        },
+        {
+          "q": "Hur definierar Whitman verklig risk?",
+          "alternativ": [
+            "Avvikelsen mot ett index",
+            "Volatiliteten i det dagliga priset",
+            "Permanent förlust av kapital — fordran underordnad, pant värdelös, process längre än kassan",
+            "Valutarisken i amerikanska domstolsprocesser"
+          ],
+          "ratt": 2,
+          "tips": "Vad kan gå förlorat på ett sätt som aldrig kommer tillbaka — och vad mäter beta egentligen?"
+        },
+        {
+          "q": "Vad är resource conversion i Whitmans system?",
+          "alternativ": [
+            "Omvandling av aktier till ETF-andelar",
+            "Händelser som frigör och omfördelar värde — fusioner, återköp, rekapitaliseringar och konkurser",
+            "Teknisk analys av kursernas momentum",
+            "Omräkning av bokförda tillgångar till inflationsjusterade nivåer"
+          ],
+          "ratt": 1,
+          "tips": "Vilka händelser förändrar en kapitalstruktur — och vilken AKM1-variabel (V20) hör hemma i den listan?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Dödsorsakerna — varför friska bolag hamnar i nöd (V19)",
+      "intro": "Bokens tredje kapitel, The Causes of Financial Distress, katalogiserar varför bolag faktiskt hamnar i obestånd — och svaret är mer precist än dålig drift. Whitmans fyra dödsorsaker, med hans eget likviditetstest som pedagogiskt verktyg, kartläggs här mot AKM1:s riskvariabler: V19, V10, V11 och V07.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Dödsorsak ett: förlorad tillgång till kapitalmarknaden. Bolag dör oftare av refinansiering än av drift: skulden som löper ut när fönstret är stängt (2000, 2008, 2022) gör ett lönsamt bolag insolvent på ett kvartal. Detta är V19 kapitalförbränning och emission-risk sedd från andra hållet — Staley-kursen såg emissionsmaskinen som short-tes; Whitman ser refinansieringsväggen som distressed-läge. I bokens första kapitel, The Changed Environment, finns statistiken bakom: skuldtillväxten, junk-boomens och den syndikerade låne-marknadens byggande av hävstång fram till kollapsen 2007–2008. Whitmans test på denna risk är kanonens tredje läxa: likviditetstestet — kan bolaget betala ränta och amortering i arton till tjugofyra månader utan tillgång till kapitalmarknaden? Om svaret är nej är bolaget ett barn av finansieringscykeln, och dess aktie är i praktiken en option på att fönstret hålls öppet."
+        },
+        {
+          "type": "text",
+          "content": "Dödsorsak två: försämrad drift. Den klassiska: volym, marginaler eller båda faller medan de fasta kostnaderna och räntan står kvar. Här är V07 bruttomarginal en tidigare varning än resultaträkningen — bruttomarginalens trend visar prissättningsmakt och konkurrensläge före avskrivningar och finansiell poster begravit signalen. Whitmans poäng, som han delar med hela kredittraditionen: för en borgenär är inte tillväxten intressant utan täckningen — hur många gånger driftens kassa täcker räntan i det sämsta året, inte det bästa. Dödsorsak tre: försämrad GAAP-redovisning. Boken ägnar ett eget avsnitt åt hur resultatbilden kan försämras i redovisningen även när driften håller — nedskrivningar, impairements av goodwill, pensionsåtaganden, osäkra fordringar. Det är Staley- och Schilit-territorium från borgenärssidan: redovisningens kvalitet bestämmer hur tidigt kreditbilden kan lita på siffrorna (V12 som intäktskvalitet)."
+        },
+        {
+          "type": "text",
+          "content": "Dödsorsak fyra: stora eventualposter utanför balansräkningen. Whitmans specialitet och historically viktigaste: åtaganden som inte syns som skuld förrän de slår till — garantier, borgensåtaganden, asbestansvar, miljösanering, drag-along-åtaganden, leasing. Fallet som gjorde kategorien ökänd var massansvaren för asbest och tobak, men mekanismen är evig: bolaget ser solidt ut på nettoskuld men bär en option skriven mot sitt eget kapital som ingen prissatt. Kursens svenska läsning av denna kategori är bred: Räkna alltid balansräkningen på Whitman-manér — alla åtaganden, även de som bara står i noterna. AKM1:s V10 ska läsas med denna bredd: skuldsättningsgraden är inte räntebärande skuld dividerat med eget kapital, utan summan av alla krav som står före aktieägaren."
+        },
+        {
+          "type": "text",
+          "content": "Helheten: Whitmans dödsorsaker är inte fyra olyckor utan ett system — hävstång (V10) gör driftsproblem (V07) till solvensproblem när finansieringen (V19, V11) sinar, och dolda åtaganden är tändvätskan i varje steg. För den som sedan ska köpa something i spillrorna är dödsorsaksdiagnosen första frågan: bolag som dog av finansiering men har levande drift (temporary distress) är de köpbara; bolag vars drift dog och bara skulden lever (permanent distress) är värdefallen för aktieägaren och ofta även för borgenären. Denna åtskillnad — finansieringskris mot strukturfel — är distressed-fackets första sorteringsval, och kapitel 7 återkommer till den i värderingen."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Bolag dör sällan av dålig drift ensamma — de dör av hävstång mötande stängda finansieringsfönster. Likviditetstestet arton till tjugofyra månader är den fråga som skiljer bolag från finansieringscykler."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Whitmans fyra dödsorsaker — mekanism och AKM1-koppling\",\"rader\":[[\"Dödsorsak\",\"Mekanism\",\"AKM1-variabel\"],[\"Förlorad kapitalmarknadsaccess\",\"Refinansieringsvägg när fönstret stängs\",\"V19 emission-risk, V10 löptider\"],[\"Försämrad drift\",\"Marginaler och volym faller med fasta kostnader kvar\",\"V07 bruttomarginal, V01 tillväxt\"],[\"Försämrad GAAP-bild\",\"Nedskrivningar och osäkra fordringar slår igenom\",\"V12 intäktskvalitet\"],[\"Off-balance-sheet-åtaganden\",\"Eventualposter utanför balansräkningen träder i kraft\",\"V10 i bred tolkning, V11\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Kör Whitmans likviditetstest på ett belånat bolag: räkna ut ränta plus amortering för de närmaste tjugo fyra månaderna och ställ den mot kassa och fritt kassaflöde i ett medelår — utan någon ny emission. Skriv slutsatsen i en mening: klarar bolaget testet utan marknadsaccess?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den vanligaste direkta utlösaren av obestånd enligt boken?",
+          "alternativ": [
+            "Att aktiekursen faller mer än femtio procent",
+            "Förlorad tillgång till kapitalmarknaden — en refinansieringsvägg när fönstret stängs",
+            "Att bolaget byter revisor",
+            "Att direktavkastningen skärs ned"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en lönsam verksamhet den dag ett stort lån löper ut och ingen vill refinansiera det?"
+        },
+        {
+          "q": "Hur formuleras Whitmans likviditetstest?",
+          "alternativ": [
+            "Kan bolaget betala ränta och amortering i arton till tjugofyra månader utan tillgång till kapitalmarknaden?",
+            "Överstiger EBITDA fem procent av skuldstocken?",
+            "Har bolaget positivt resultat tre år i rad?",
+            "Ligger aktiekursen under bokfört eget kapital?"
+          ],
+          "ratt": 0,
+          "tips": "Testet mäter överlevnadstid i månader — utan att någon ny räddar bolaget."
+        },
+        {
+          "q": "Varför är eventualposter utanför balansräkningen en egen dödsorsak?",
+          "alternativ": [
+            "De syns inte som skuld förrän de träder i kraft — bolaget kan se solidt ut och ändå bära ett sprängt ansvar",
+            "De påverkar bara skatten",
+            "De är alltid små i förhållande till balansräkningen",
+            "De redovisas aldrig i noterna"
+          ],
+          "ratt": 0,
+          "tips": "Var i årsredovisningen bor det som kan spränga kapitalet utan att någonsin ha varit en skuldrad?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Kapitalstrukturens trappa — kön, pant och de fem grundreglerna",
+      "intro": "Bokens sjätte kapitel, The Five Basic Truths of Distress Investing, är dess ryggrad: fem regler om vad borgenärsrättigheter faktiskt är — och vad de inte är. Detta kapitel bygger kapitalstrukturens trappa med prioritetsexempel, den absoluta prioritetsregeln och allt som i praktiken bryter den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kön. En kapitalstruktur är ingen neutral förteckning utan en hierarki av rättigheter, och i kris läses den nedifrån och upp som en trappa där varje steg måste fyllas innan nästa får något. Längst ner: fordringar som uppstår i själva konkursprocessen — DIP-finansiering och administrativa kostnader (advokater, rådgivare) — som går före allt gammalt. Sedan de säkerställda borgenärerna, vars pant (fastigheter, maskiner, lager, fakturor) ger dem rätt till specifika tillgångar. Sedan de oprioriterade: obligationer, leverantörer, anställdas fordringar (med undantag). Sedan efterställd skuld, sedan preferensaktier — och allra sist, sist av allt, vanliga aktier. Den absoluta prioritetsregeln (absolute priority rule) är idéallet: ingen klass får något förrän klassen över är helt betald. Aktieägarens världsbild — att bolaget är deras — gäller juridiskt bara när alla över dem i kön är nöjda."
+        },
+        {
+          "type": "text",
+          "content": "De fem grundreglerna, citerade öppet ur bokens kapitelrubriker och översatta. Ett: ingen kan beröva en företagsborgenär rätten till en penningbetalning utanför Chapter 11 eller Chapter 7 — rätten till betalning är ihållande; det är därför köp av kraftigt nedsatta fordringar har en matematisk kärna. Två: Chapter 11:s regler påverkar alla rekonstruktioner — även förhandlingar utanför domstol sker i skuggan av vad som skulle hända i den; konkurslagen är förhandlingsramverket för hela ekonomin. Tre: värdepappers substantiva karaktärer — vad pappret faktiskt har rätt till i pengar och prioritet — slår dess juridiska etikett; ett lån som heter mezzanine men är strukturerat med pantsäkerhet beter sig som pant, inte som efterställt kapital. Fyra: rekonstruktioner är kostsamma för borgenärerna — advokatnotor, rådgivararvoden och tid äter av det värde som skulle delas ut (bokens fjärde kapitel Deal Expenses and Who Bears Them är helt ägnat åt detta). Fem: borgenärer har bara avtalsrättigheter — de äger inte bolaget, kan inte styra det och har ingen rätt till drifens avkastning utöver avtalets exakta löften. Deras makt föds först när bolaget inte betalar."
+        },
+        {
+          "type": "text",
+          "content": "Vad bryter den absoluta prioriteten? Idealbilden hålls aldrig rent, och kursen måste vara ärlig om brytena — bokens elfte kapitel Distress Investing Risks öppnar just med risker förknippade med ändrade prioriteter (Risks Associated with the Alteration of Priorities). De vanligaste: DIP-finansieringens superprioritet tränger sig före gamla borgenärer och nya pengar kräver ofta att gamla avstår rättigheter (creeping roll-up); critical vendor-ordningar betalar utvalda leverantörer i förtid för att hålla varuflödet levande; klassröstning gör att en minoritet kan blockera (blocking position) och sedan förhandla fram mer än sin andel — Kmart-kapitlet visar hur; förlikningar ger alla lite för att slippa rättslig osäkerhet, även när prioriteten sagt noll; och new value-försäljningar kan lämna kvar värde hos gamla ägare när ingen annan bjuder. Lärdomen är inte att regeln är utan värde utan att den är en utgångspunkt för förhandling — och att den som vill förstå en rekonstruktionsutfall läser processen, inte paragrafen."
+        },
+        {
+          "type": "text",
+          "content": "Kanonens första läxa är sammanfattningen av detta kapitel: i krisen gäller borgenärsrättigheter — säkerheter och täckning slår aktieägarvärde. För AKM1-eleverna blir detta en permanent omställning i läsningen av bolag: V05 P/B (aktiens bokvärde) är meningslöst när skulderna kan konvertera och äga bolaget; V06 EV/EBITDA är den multipel som talar hela bolagets språk, kapitalstrukturen inräknad. Tabellen nedan är kursens minnesbild — och kapitel 8 kommer att räkna numeriskt på exakt denna trappa."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Aktieägaren äger bolaget bara när alla ovanför i kön är nöjda. Kapitalstrukturen är en trappa som fylls nedifrån — och i varje rekonstruktion förhandlas trappan om."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kapitalstrukturens trappa — prioritetsexempel med belopp\",\"rader\":[[\"Plats i kön\",\"Instrument\",\"Exempelbelopp\",\"Typiskt skydd och återbetalning\"],[\"0. Processfordringar\",\"DIP-lån, advokat- och rådgivarnotor\",\"Ny under processen\",\"Superprioritet — betalas först, nästan alltid i sin helhet\"],[\"1. Säkerställda borgenärer\",\"Banklån med pant i fastighet och lager\",\"500\",\"Pantvärde först — täcks av tillgångarnas värde\"],[\"2. Oprioriterade borgenärer\",\"Obligationer, leverantörer, trade claims\",\"300\",\"Delar på det som återstår efter pant — ofta aktier i nytt bolag\"],[\"3. Efterställd skuld\",\"Mezzanine, efterställda obligationer\",\"150\",\"Får endast utslag när oprioriterade är helt täckta\"],[\"4. Preferensaktier\",\"Kumulativa preferensaktier\",\"50\",\"Sällan helt — kräver kraftigt överskott\"],[\"5. Vanliga aktier\",\"Aktien du köper på börsen\",\"Bokfört 200\",\"Sist — nästan alltid noll i rekonstruktion\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Bygg kapitel 1:s kapitalstrukturtrappa med siffror: hitta nettoskuld, alla räntebärande poster med löptider och eventualposter i noterna. Räkna sedan andelen av företagsvärdet som aktieägaren behåller om driftsvärdet faller tjugofem procent. Utgående fråga: vilken fordran skulle du vilja äga — och varför?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger den absoluta prioritetsregeln?",
+          "alternativ": [
+            "Alla borgenärer delar lika på tillgångarna",
+            "Ingen klass får någon utdelning förrän klassen ovanför är helt betald — aktier står sist",
+            "Aktieägarna röstar först eftersom de äger bolaget",
+            "Preferensaktier går alltid före säkerställd skuld"
+          ],
+          "ratt": 1,
+          "tips": "Tänk trappan: vilken nivå måste fyllas helt innan nästa får en droppe?"
+        },
+        {
+          "q": "Vilken av de fem grundreglerna handlar om att borgenärer inte äger bolaget?",
+          "alternativ": [
+            "Regeln om att rätten till penningbetalning inte kan berövas",
+            "Regeln om substantiva karaktärer",
+            "Regeln om att rekonstruktioner är kostsamma",
+            "Borgenärer har bara avtalsrättigheter — ingen rätt att styra driften eller till dess avkastning utöver avtalet"
+          ],
+          "ratt": 3,
+          "tips": "Vad äger en borgenär egentligen — bolaget, eller ett dokument med exakta löften?"
+        },
+        {
+          "q": "Vilket är ett konkret exempel på att den absoluta prioriteten bryts i praktiken?",
+          "alternativ": [
+            "Att ränta betalas i tid",
+            "Att en klass med en tredjedel av fordran blocking position förhandlar fram mer än sin prioritet skulle ge",
+            "Att aktieägarna röstar ner en plan",
+            "Att revisorn lämnar utförliga noter"
+          ],
+          "ratt": 1,
+          "tips": "Vem i klassröstningen kan säga nej till hela planen — och vad är den makten värd i förhandling?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Chapter 11-maskinen — och svensk rekonstruktion [illustrativt]",
+      "intro": "Bokens åttonde kapitel, A Brief Review of Chapter 11, beskriver den amerikanska rekonstruktionsmaskin som hela boken utspelas i — och Whitmans poäng att konkursen är en början, inte ett slut. Detta kapitel går igenom processen steg för steg och jämför principiellt med svensk företagsrekonstruktion, illustrativt och utan juridisk vägledning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Chapter 11 steg för steg, efter bokens kapitel. Inledning: frivillig petition (bolaget själv) eller ofrivillig (borgenärer). Ögonblicket därpå träder automatic stay in — all indrivning, alla stämningar, all utmätning fryses; detta är maskinens hjärta och hela förhandlingsutrymmets källa. Bolaget förblir i besittning (debtor in possession) och fortsätter driva verksamheten under domstolens överinseende. Parter: gäldenären, utskottet (committee) som företräder oprioriterade borgenärer, kreditgivarna med panträtt, förvaltaren (trustee vid misstroenden), domstolen. Tidslinjen: exclusivity — först gäldenären ensam rätt att föreslå plan; kreditgivarna kan begära avvisning av Fall som saknar utsikter; outtvistade fordringar betalas löpande (adequate protection för panthavare). Planen: klassindelning, rösta (ja från två tredjedelar av belopp och majoritet av antal i klassen), disclosure statement, bekräftelse — och vid nej från en klass: cramdown, där domstolen tvingar igenom planen om den är rättvis och genomförbar. Bokens första kapitel redogör även för 2005 års BAPCPA-reform: kortare exclusivity, hårdare KERP-regler, stramare tidsgränser för beslut om arrendeavtal (unexpired leases) — reformer som påverkade hela ekologin."
+        },
+        {
+          "type": "text",
+          "content": "Whitmans läsning av maskinen: konkurs är en början, inte ett slut. För aktiemarknaden är en Chapter 11-ansökan ofta dödsdomen — börsnoterade aktier avnoteras, aktiekursen mot noll. För Whitman är samma ansökan en värdeskapande händelse: verksamheten får andning (stoppad indrivning), DIP-finansiering betalar löpande drift, och en process med kända spelregler börjar omfördela ägandet — i praktiken från aktieägarna till borgenärerna, som ofta får det nya ägandet och sedan säljer det vidare (resource conversion i ren form). Kursens formulering av bokens hållning: konkurser skapar nya bolag — rekonstruktionsprocessen är en fabrik för nya kapitalstrukturer, och den som förstår maskinens klocka kan köpa delar av det nya bolaget till priser nära nollvärdering (kanonens andra läxa). Men — och detta är Whitmans egna varningar — fabriken är dyr (kapitel 6 i kursen) och långsam, och den som köper claims i processen köper samtidigt processens tid och kostnader."
+        },
+        {
+          "type": "text",
+          "content": "Svensk jämförelse [illustrativt — kursen ger principer, inte juridisk rådgivning]. Sveriges motsvarighet är företagsrekonstruktion enligt lagen (1996:764) om företagsrekonstruktion — en yngre, enklare och kortare maskin, inspirerad av Chapter 11 men med annan balans. En rekonstruktör utses (i praktiken ofta en revisor eller jurist) som granskar och övervakar medan företagsledningen som regel kvarstår; verkställighetsförbud (motsvarande stay) träder in för obeståndsskulder; förfarandet är kort — i princip tre månader med möjlighet till förlängning — mot Chapter 11:s år. Säkerställda borgenärer berörs i mindre utsträckning (panträtten kan i princip göras gällande separat), klassröstning och cramdown saknar den amerikanska mekanikens fulla utveckling, DIP-superprioritet finns inte i samma form, och exit sker oftast genom en förlikning (företagsrekonstruktionsplan) med borgenärerna. Återkommande svensk kritik — målvärdesdiskussionen — handlar om vad lagen ska skydda: företaget och jobben (germansk tradition, fortlevnadsintresse) eller borgenärernas värde (anglosaxisk tradition, äganderätt till fordran); reformarbeten pågår för att modernisera lagen. Kursens pedagogiska poäng med jämförelsen: mekanismen — stopp, andning, omförhandling, ny struktur — är universell, men detaljerna (vem som röstar, vem som går först, hur länge) bestämmer var värde hamnar, och det är detaljerna distress-investeraren måste lära sig per jurisdiktion."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-kopplingen för detta kapitel: V10 och V11 är variablerna som avgör om ett bolag ens hamnar i maskinen (avstånd till krisen), V06 är multipeln som prissätter vad som kommer ut (nya bolaget), och V20 påminner om att kapitalstruktur är ett levande beslutsområde — samma instrument som används för återköp i högkonjunktur (återköp, utdelning) är de som skärs eller konverteras i rekonstruktion. En kursregel: när du läser en aktie-analys, fråga alltid vad analysen antyder om konkurssituationen — vad skulle aktien få om bolaget söktes i dag? Svaret, nästan alltid ingenting, är marginal of safety för kreditör och varning för ägaren."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Konkursen är en fortsättning av affären med andra ägare — en fabrik för nya kapitalstrukturer. Ju mer du förstår maskinens klocka, desto mindre skrämmer rubriken och desto mer informativ blir processen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Chapter 11 mot svensk företagsrekonstruktion — illustrativt\",\"rader\":[[\"Moment\",\"USA Chapter 11\",\"Sverige [illustrativt]\"],[\"Instärt stopp\",\"Automatic stay för alla\",\"Verkställighetsförbud för obeståndsskulder\"],[\"Vem driver\",\"Gäldenären kvar som debtor in possession\",\"Företagsledning under rekonstruktörs överinseende\"],[\"Löptid\",\"Ofta ett till två år\",\"I princip tre månader, förlängningsbar\"],[\"Finansiering under process\",\"DIP-lån med superprioritet\",\"Begränsad tradition av prioriterad nyfinansiering\"],[\"Beslut\",\"Klassröstning, disclosure, cramdown\",\"Förlikning med borgenärer, domstols prövning\"],[\"Traditionens målvärde\",\"Borgenärsvärde och gående verksamhet\",\"Fortlevnad och jobb i spänningsfält med borgenärsskydd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Läs tre aktiva svensk rekonstruktioner eller nära misses (bolag i rekonstruktion rapporteras i media och i Bolagsverkets företagsrekonstruktörsregister). För varje bolag: vem utsågs till rekonstruktör, hur länge pågick förfarandet, och vad fick oprioriterade borgenärer ungefär? Notera skillnaden mot den amerikanska tidslinjen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är automatic stay i Chapter 11?",
+          "alternativ": [
+            "En automatisk avnotering från börsen",
+            "Ett förbud mot all indrivning och talan mot gäldenären från och med petitionen — maskinens hjärta",
+            "En rätt för aktieägare att stanna kvar som ägare",
+            "En domstols order om likvidation"
+          ],
+          "ratt": 1,
+          "tips": "Vad måste stoppas för att en verksamhet i kris ska få andning att förhandla?"
+        },
+        {
+          "q": "Vad menar Whitman med att konkursen är en början snarare än ett slut?",
+          "alternativ": [
+            "Att aktier i konkursbolag alltid stiger",
+            "Att processen skapar ett nytt bolag med ny kapitalstruktur — en början för verksamheten och dess nya ägare (ofta borgenärerna)",
+            "Att konkursen alltid leder till likvidation",
+            "Att domstolen tar över driften permanent"
+          ],
+          "ratt": 1,
+          "tips": "Vem äger bolaget när planen är genomförd — och vad har hänt med den gamla aktien?"
+        },
+        {
+          "q": "Vilken skillnad mellan svensk rekonstruktion och Chapter 11 är central [illustrativt]?",
+          "alternativ": [
+            "Sverige saknar helt möjlighet till rekonstruktion",
+            "Det svenska förfarandet är kortare och enklare, med rekonstruktör och förlikning — utan full klassröstning, cramdown och DIP-superprioritet",
+            "Svensk rekonstruktion gäller bara banker",
+            "I Sverige går aktieägarna alltid före borgenärerna"
+          ],
+          "ratt": 1,
+          "tips": "Jämför tidslinjen och besluts-mekaniken — vad saknar den svenska maskinen som den amerikanska har?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Workout-rummet — frivilliga byten, holdouts och notan",
+      "intro": "Bokens sjunde kapitel Voluntary Exchanges, fjärde kapitel Deal Expenses and Who Bears Them och femte kapitel om management compensation beskriver rummet utanför domstolen — och notan som någon alltid betalar. Detta kapitel bygger förhandlingsmekaniken och kostnadernas ekonomi.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Frivilliga byten. Innan domstol finns workout-rummet: bolaget erbjuder borgenärerna att byta gamla obligationer mot nya med längre löptid, lägre kupong eller mindre nominellt — ett frivilligt byte (voluntary exchange) som i lyckat fall räddar alla utan rättsprocess. Fördelarna är uppenbara (snabbare, diskretare, billigare), och boken ägnar ett kapitel åt problemen. Det största är holdout-problemet, som boken illustrerar konkret: om tillräckligt många bytar kan bolaget överleva — och de som höll ut, som inte bytte, sitter då med gamla papper i ett räddat bolag. Detta gör rationellt motstånd till varje utbytes dominant strategi: alla vill vara holdouts, ingen vill vara holdout i ett fallit bolag. Lösningarna är ökade incitament (premie till de som deltar), exit consents (deltagarna röstar samtidigt bort covenant-skydd i gamla papper, vilket gör holdout mindre attraktivt) — och hotet om Chapter 11, där ett nej kan sluta sämre. Kursens läsning: grundregel nummer två i praktik — Chapter 11:s regler påverkar alla rekonstruktioner, även de som aldrig kommer i närheten av en domstol."
+        },
+        {
+          "type": "text",
+          "content": "Notan. Bokens fjärde kapitel är kursens mest nedslående och nödvändiga: advokater och finansiella rådgivare betalas ur konkursboet med prioritet — de äter alltså av borgenärernas värde, inte av ledningens eller aktieägarnas. Whitman och Diz granskar arvodesstrukturerna (timarvoden, success fees, monthly retainers), vad som bestämmer nivåerna (fallens komplexitet, antal byråer, tid i process) och ställer den obekväma frågan rubriken antyder: Can Professional Costs Be Excessive? Svaret, med Kmart-kapitlet som bevis (Out-of-Control Professional Costs), är ja — i stort fall kan notorna bli så stora att de förändra återbetalningen för klasser längre ner. Boken kompletterar med tax and political disadvantages: amerikanska konkursboets skattemässiga nackdelar och den politiska risken (lagstiftning efter kriser förändrar spelregler i efterhand). För AKM1-eleven är detta kostnadsläran: varje analyse av en claim ska nettaräknas med processens tid och kostnad — en fordran värd sjuttio i planen kan vara värd fyrtio efter arton månaders advokatarvoden. Brytpunkten (tidsserien i kanon-mappningen) flyttas med kostnaderna."
+        },
+        {
+          "type": "text",
+          "content": "Management compensation and entrenchment. Bokens femte kapitel har kursens mest cyniska rubrik — och mest realistiska innehåll: ledningen som körde bolaget i diket kompenserar ofta sig själva under processen. KERP:er (Key Employee Retention Plans) skapades för att behålla nyckelpersoner genom fallet — och blev, före BAPCPA 2005, ett system för ledningar att betala sig själva bonusar för att stanna kvar på ett skepp de själva sänkt. Reformen 2005 begränsade KERP:erna (domstolens godkännande, tids- och nivårestriktioner) — och Kmart-kapitlet visar hur det såg ut före reformen. Whitmans bredare poäng om entrenchment: gäldenärens ledning kontrollerar processens information och tempo i debtor in possession-modellen; styrelsen som tillsattes av gamla aktieägare har inte automatiskt borgenärernas intressen. Kursens AKM1-översättning: i alla krisbolagsanalyser, fråga vem som får betalt för att stanna, vem som kontrollerar informationen och vilka incitament som styr processens tempo — svaret påverkar återbetalningen mer än många paragrafer."
+        },
+        {
+          "type": "text",
+          "content": "Helheten i workout-ekologin. Kursen har nu tre rum: domstolen (kapitel 5), förhandlingsrummet (detta kapitel) — och spillrorna av båda i priset på en claim (kapitel 7–8). Poängen med att lära sig alla tre: distressed-investerarens verklighet är inte ett fall utan ett spektrum — prepack (förhandlat på förhand, som Home Products i kapitel 11), free-fall (alla in i domstolen utan plan, som Kmart), out-of-court (som aldrig syns i registret) — och priset på fordran i varje rum speglarprocessens förväntade tid, kostnad och utfall. Den som kan läsa rummen kan prissätta felprissatta claims; den som inte kan det spelar mot dem som kan."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Advokaterna och rådgivarna betalas med borgenärernas pengar och deras prioritet — processens kostnad är inte overhead utan en jämnlytande part i varje återbetalningskalkyl."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Workout-rummet — aktörer, incitament och frågor\",\"rader\":[[\"Aktör\",\"Incitament\",\"Fråga att ställa\"],[\"Gäldenärens ledning\",\"Överleva, behåll kontroll, KERP\",\"Vem får betalt för att stanna — och hur mycket?\"],[\"Säkerställda borgenärer\",\"Pantens värde, adequate protection\",\"Vad händer med panten i driften under process?\"],[\"Oprioriterade borgenärer\",\"Maximal återbetalning, klassröstning\",\"Vem bygger blocking position — och till vilket pris?\"],[\"Advokater och rådgivare\",\"Timmar och framgång\",\"Vem borrar notan — och hur lång tid är planerad?\"],[\"Utskottet\",\"Företräda klassen kollektivt\",\"Är utskottet oberoende eller gäldenärens eget?\"],[\"Domstolen\",\"Process, inte affär\",\"Vilka frågor kan domstolen ens avgöra?\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Simulera ett frivilligt byte: antag att ett bolag erbjuder femtio cent på dollarn i nya papper med längre löptid. Skriv ner (1) varför du som obligationär kan tacka ja, (2) varför du som rationell holdout kan tacka nej, och (3) vilken mekanism som skulle få dig att ändå delta. Du har nu återskapat bokens holdout-dilemma."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är holdout-problemet vid frivilliga byten?",
+          "alternativ": [
+            "Att bolaget vägrar förhandla med borgenärer",
+            "Att de som inte deltar i bytet kan sitta kvar med gamla papper i ett räddat bolag — vilket gör väntan rationell och bytet svårt",
+            "Att domstolen stoppar frivilliga överenskommelser",
+            "Att obligationer inte får bytas mot aktier"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med den som tackar nej om tillräckligt många andra tackar ja?"
+        },
+        {
+          "q": "Vem betalar advokat- och rådgivarnotorna i en Chapter 11-process?",
+          "alternativ": [
+            "Aktieägarna, alltid",
+            "Statens konkursfond",
+            "Boets tillgångar med prioritet — alltså i praktiken borgenärernas värde",
+            "Endast den förlorande parten"
+          ],
+          "ratt": 2,
+          "tips": "De administrativa fordringarna går före gamla borgenärer — varifrån kommer pengarna?"
+        },
+        {
+          "q": "Vad var KERP:ernas problem före BAPCPA 2005?",
+          "alternativ": [
+            "De var för små för att locka någon",
+            "De kunde bli bonussystem för den ledning som själv lett bolaget i obestånd",
+            "De förbjöd ledningen att stanna kvar",
+            "De gällde bara banker"
+          ],
+          "ratt": 1,
+          "tips": "Vem belönas av ett system för att behålla nyckelpersoner — när nyckelpersonerna körde skeppet på grund?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Värdera krisbolaget I: tre värderingsvärldar",
+      "intro": "Bokens tionde kapitel, How to Analyze: Valuation, skiljer på tre sätt att värdera ett bolag i kris — strict going concern, resource conversion och liquidation — och ett due diligence-arbete som liknar juristens mer än analytikerns. Detta kapitel bygger de tre världarna och testet som avgör vilken som gäller.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Strict going concern. Första världen värderar bolaget som om det lever vidare i evighet: normaliserade marginaler (V07 — använd genomnittliga, inte bästa året, ty krisbolagets senaste resultaträkning är skev av engångsposter och nedskrivningar), normaliserat EBITDA, och därifrån företagsvärde med V06 EV/EBITDA mot jämförbara — med two disciplines som skiljer distressed-värderingen från vanlig aktieanalys. Ett: multipeln ska hämtas från branschens köpare, inte börsens sentiment — vad ett bolag i branschen säljs för i kontrollaffärer, inte vad aktien handlas till. Två: värderingen är alltid en spännvidd av scenarier (överlevnad, avmatning, nedmontering), aldrig en punkt — ty krisens värde ligger i fördelningen, inte i mittenvärdet. Going concern-värdet svarar på frågan: vad är driften värd för någon som fortsätter driva den?"
+        },
+        {
+          "type": "text",
+          "content": "Resource conversion. Andra världen är Whitmans eget bidrag till värderingslär an och kursens kärna: värdet av det som händer när strukturerna byts — bolaget delas, säljs, fusioneras, rekapitaliseras, konkursomvandlas. Resurskonverteringsvärdet frågar inte vad driften tjänar utan vad komponenterna är värda i en händelse: fastigheter till hyresvärde, varumärken till licensgivare, kundregister till konkurrenter, skattemässigaunderskott för den som kan använda dem. I distress är resource conversion inte teoretiskt utan operationaliserat av domstolen: bokens due diligence-avsnitt och fallen visar hur planen tvingar fram en värdering av hela bolaget (i Chapter 11 kallas det valuation i planen — going concern mot liquidation, vilket Home Products-kapitlet redovisar öppet). Den analitiska disciplinen: räkna alltid alla tre värden — driften, bitarna, likvidationen — ty kapitalstrukturen fördelas efter det högsta trovärdiga värdet, och den som bara räknar en värld missar både risk och möjlighet."
+        },
+        {
+          "type": "text",
+          "content": "Liquidation. Tredje världen: vad allt är värt om inget annat fungerar — tillgångarna sålda, skulderna betalade i prioritetsordning, resten noll. Whitman-Säkerheten i lång tradition: börja med nedre gränsen. Likvidationsvärdering är konstens tråkigaste och viktigaste: bokfört värde är en åsikt, återvinningsvärden är fakta — maskiner till auktion, lager till rabatt, fordringar till del av nominellt, fastigheter till värderingsmän med marginal. Bokens skiljelinje mellan orderly liquidation (ordnad nedmontering, högre värden) och forced liquidation (brådskande försäljning, kraftigt lägre) är praktiskt avgörande: samma bolag kan ha positivt likvidationsvärde i det första fallet och noll i det andra — och eftersom borgenärerna i praktiken ofta väljer (via planen) mellan going concern-utfall och likvidationsutfall blir skillnaden mellan de två likvidationsformerna en förhandlingsfråga värd miljoner."
+        },
+        {
+          "type": "text",
+          "content": "Due diligence för distressed — bokens arbetsprotokoll. Fjärde avsnittet i kapitlet: researchen liknar rättslig granskning mer än aktieanalys. Läs: domstolens handlingar (dockets) — petitionen, första-dag motions (DIP, critical vendor, cash collateral), planen och disclosure statement; indentures och kreditavtal — vad pappret faktiskt ger för rättigheter (grundregel tre: substantiva karaktärer); panträttsdokument och värderingsunderlag; fordringsregistret (claims agent); och — Whitmans klassiker — de skattemässiga aspekterna (förlustavdrag, eventualposter). Frågan som styr allt: vilken klass, vilken prioritet, vilket dokument? Kursens AKM1-koppling: hela denna disciplin är en vidareutveckling av fotnot-läsningen från Financial Shenanigans-traditionen — i distress ligger sanningen ännu djupare i bilagorna, och den som läser V12 intäktskvalitet lär sig samma blick: dokument före berättelse, alltid."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Räkna alltid alla tre värden — driften (going concern), bitarna (resource conversion) och likvidationen — ty kapitalstrukturen fördelas efter det högsta trovärdiga värdet, och envärdesanalysen är blind för båda övriga världarna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre värderingsvärldar — fråga, metod ochAKM1-koppling\",\"rader\":[[\"Värld\",\"Fråga\",\"Metod ochAKM1-koppling\"],[\"Strict going concern\",\"Vad är driften värd för den som fortsätter den?\",\"Normaliserad EBITDA (V07) på köparmultipel (V06), scenariospann\"],[\"Resource conversion\",\"Vad är bitarna värda i en strukturell händelse?\",\"Inköpsvärden per komponent: fastigheter, varumärke, kundregister, skatteposition\"],[\"Liquidation\",\"Vad återstår om allt säljs?\",\"Återvinningsvärden per tillgångsklass, orderly mot forced, prioritetsordning\"],[\"Due diligence\",\"Vilken klass, prioritet, dokument?\",\"Dockets, indentures, panter, claims-register — före resultaträkningen\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Värdera ett nedskrivet börsbolag i alla tre världarna: (1) going concern — normaliserad EBITDA snittat över fem år gången en köparmultipel; (2) resource conversion — vad är fasta tillgångar, varumärke och kundstock värda separerade; (3) likvidation — återvinningsvärden med trettio procents hårvatten på bokfört. Jämför mot börsvärdet: vilken värld prissätter marknaden?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skiljer distressed going concern-värderingen från vanlig aktieanalys?",
+          "alternativ": [
+            "Multipeln ska hämtas från kontrollaffärer och jämförbara köpare — och värdet är en scenariospann, inte en punkt",
+            "Man använder alltid senaste årets bästa kvartal",
+            "Resultaträkningen är mer pålitlig i krisbolag",
+            "Man ignorerar skulderna helt"
+          ],
+          "ratt": 0,
+          "tips": "Vem är den trovärdiga köparen av en verksamhet — börsens sentiment eller en industrideltagare i en kontrollaffär?"
+        },
+        {
+          "q": "Vad är resource conversion-värde?",
+          "alternativ": [
+            "Värdet av driften i evighet",
+            "Värdet av komponenterna i en strukturell händelse — försäljning, delning, fusion, rekonstruktion",
+            "Aktiekursen taget i femårsmedel",
+            "Värdet av bokfört eget kapital"
+          ],
+          "ratt": 1,
+          "tips": "Vad är varje del värd när strukturen som binder ihop dem löses upp?"
+        },
+        {
+          "q": "Varför skiljer boken på orderly och forced liquidation?",
+          "alternativ": [
+            "För att bokföringen kräver två värden",
+            "För att återvinningsvärdena skiljer sig kraftigt — och borgenärerna väljer mellan utfall vars värde beror på ordningen i nedmonteringen",
+            "För att domstolen alltid kräver both värden",
+            "Skillnaden är en ren definitionsfråga utan praktisk betydelse"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med auktionspriset när säljaren brådskar — och vem bestämmer brådskan?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Värdera krisbolaget II: enterprise value och återbetalningstrappan (V06)",
+      "intro": "Kapitel sju räknade bolagets värde i tre världar — detta kapitel fördelar värdet på kön. Enterprise value som finns att dela, trappan från kapitel fyra i siffror, form of consideration mot amount of consideration, och brytpunkten: det pris du kan betala för en claim och ändå tjäna på tiden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fördelningen. Distressed-värderingens andra steg: ta det enterprise value som kapitel sju producerade (i sina tre världar) och häll det i trappan — nedifrån och upp, klass för klass, tills det tar slut. Exemplet kursen använder genom hela kapitlet: rekonstruerat bolag med EV på 700. Först processfordringar (DIP och administrativa kostnader) 40 — återstår 660. Säkerställd skuld 500 med pant värda mer — betalas i sin helhet, återstår 160. Oprioriterade fordringar 300 — får 160, drygt femtiotre procent, vanligen i form av aktier eller nya obligationer i det nya bolaget. Efterställd skuld 150, preferensaktier 50 och vanliga aktier: noll. En enda EV-siffra har nu producerat tre olika investeringars öde — och det är därför V06 är kanonens huvudmultipel för denna bok: EV/EBITDA prissätter kakan innan den delas, och värdeinvesteringen ligger i att köpa en tårtbit (en klass av fordran) till pris under den andel av kakan som trappan ger den."
+        },
+        {
+          "type": "text",
+          "content": "Känsligheten. Återbetalningstrappans obevekliga matematik: små ändringar i EV flyttar gränsen mellan klasser dramatiskt. I exemplet ger EV 700 de oprioriterade femtiotre procent — men EV 660 ger fyrtio procent och EV 540 ger noll (efter att säkerställda tagit sina 500 och processen sina 40). Därför är distressed-prissättning alltid känslighetsanalys: räkna återbetalningen per klass vid tre EV (nedre, bas, övre) snarare än en forväntan. Det är också därför som köp av säkerställd skuld är safe och köp av oprioriterad är cheap — säkerställd överlever EV-svängningar (deras pant ligger under basscenariot), oprioriterad är en option på överskottet. Aktien, slutligen, är en option på optionen — det är därför Whitman nästan aldrig köpte aktien i pågående fall, och det är Kmart-fallets (kapitel tolv) lärdom om vad som krävs för att aktien ska vara köpbar: positionen som plan investor, med kontroll och dokumenterat underlag — inte kursgissning."
+        },
+        {
+          "type": "text",
+          "content": "Form of consideration versus amount of consideration. Bokens elfte kapitel slutar i en underskattad rubrik: du får inte bara ett belopp — du får det i en form. Oprioriterade borgenärer i amerikanska rekonstruktioner betalas nästan aldrig i kontant utan i det nya bolagets aktier, obligationer eller warrantser; förkortningen i facket är payment in kind. Konsekvensen är en andra värderingsfråga: vad är pappret värt på distributionsdagen? Nytt egenkapital i ett nyligen rekonstruerat bolag är notoriskt illikvidt, saknar analystäckning och dumpas av institutioner som inte får (eller vill) hålla småbolagsaktier — därför handlas det ofta kraftigt under något skälbart värde i månaderna efter distribution. Detta är en av distressed-fackets mest pålitliga källor till missprissättning: borgenären som bara vill ut (en leverantör med kassaflödesproblem) säljer sin andel av det nya bolaget till den som vågar värdera det — och skillnaden mellan dessa två aktörers tidspreferens är investerarens marginal. AKM1:s tidsserie Brytpunkt (kanon-mappningen) är exakt detta: priset på en claim mot dess återbetalningsvärde, över tiden, med likviditet och form inräknad."
+        },
+        {
+          "type": "text",
+          "content": "Brytpunkten. Samma matematik från köparsidan: om du betalar fyrtio för en claim som återbetalar femtiotre procent av nominellt i form av aktier i det nya bolaget — efter arton månader och processkostnader — är din grova årliga avkastning beroende av när du kan sälja distributionen. Räkna alltid baklänges: vad måste återbetalningen bli för att du ska få din avkastning efter tid, kostnad och form? Om claimen måste återbetala hundra procent för att du går med vinst — och trappan ger femtiotre i basscenariot — är inte köpet en investering utan ett hopp om att någon annans prioritet bryts. Kursens formulering av Whitmans marginal of safety i distress: marginalen är avståndet mellan priset och trappans utfall i ditt värsta trovärdiga scenario — netto kostnader, i rätt form, på rätt tid. Med den definitionen kan marginalen vara bred på en claim till fyrtio och obefintlig på en aktie till nollkomma-ett."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Enterprise value är kakan, kapitalstrukturen är nedskärningen och återbetalningstrappan är receptet. Missprissättningen finns där tidspreferenser möts: den tvingade säljaren av en claim mot den som vågar värdera distributionen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Återbetalningstrappan i siffror — exempel med EV 700\",\"rader\":[[\"Klass\",\"Fordran\",\"Fördelning av EV 700\",\"Återbetalning i procent\"],[\"Processfordringar (DIP, advokater)\",\"40\",\"40 — först\",\"100\"],[\"Säkerställd skuld med pant\",\"500\",\"500\",\"100\"],[\"Oprioriterade borgenärer\",\"300\",\"160 — resterar\",\"cirka 53\"],[\"Efterställd skuld\",\"150\",\"0\",\"0\"],[\"Preferensaktier\",\"50\",\"0\",\"0\"],[\"Vanliga aktier\",\"Bokfört 200\",\"0\",\"0\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Räkna om trappan från kapitel fyra med dina egna siffror: ta ett belånat bolags skulder, gör tre EV-scenarier (bas minus tjugofem procent, bas, bas plus tjugofem procent) och beräkna återbetalningen per klass i varje scenario. Vid vilket EV släcker skulderna aktieägarvärdet helt?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är V06 EV/EBITDA den naturliga huvudmultipeln i distress-sammanhang?",
+          "alternativ": [
+            "Därför att den är lättast att hitta i databaser",
+            "Därför att den prissätter hela bolaget — kakan innan den delas ut på kapitalstrukturens kön",
+            "Därför att den ignorerar skulder",
+            "Därför att EBITDA alltid är opåverkat av kriser"
+          ],
+          "ratt": 1,
+          "tips": "Vilken multipel talar om företagets totala värde — oavsett vem som äger vilket papper?"
+        },
+        {
+          "q": "I exempel-trappan (EV 700, process 40, säkerställd 500, oprioriterad 300): vad får de oprioriterade?",
+          "alternativ": [
+            "Hundra procent — prioriteten delar lika",
+            "160 av 300 — drygt femtiotre procent, ofta i form av papper i det nya bolaget",
+            "Noll — säkerställda tar allt",
+            "Fyrtio procent kontant vid bekräftelse"
+          ],
+          "ratt": 1,
+          "tips": "Räkna nedifrån: 700 minus 40 minus 500 — vad återstår att dela på 300?"
+        },
+        {
+          "q": "Vad menas med form of consideration versus amount of consideration?",
+          "alternativ": [
+            "Att beloppet alltid är viktigare än formen",
+            "Att återbetalningens form — kontant, aktier, obligationer i det nya bolaget — påverkar vad utdelningen faktiskt är värd, ofta kraftigt",
+            "Att domstolen väljer valuta på fordran",
+            "Att fordringar bara betalas i kontant"
+          ],
+          "ratt": 1,
+          "tips": "Vad är en aktie i ett nyligen rekonstruerat, illikvidt bolag värd på distributionsdagen — räknat i procent av teoretiskt värde?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Trade claims och DIP-finansiering — att köpa fordringar i pågående fall",
+      "intro": "Kmart-kapitlet har ett eget avsnitt som heter Buying Claims in Chapter 11 — att köpa fordringar i pågående process är ett eget hantverk med egna risker. Detta kapitel bygger trade claims, claims-handelns mekanik, blocking positions och DIP-finansieringen som ger superprioritet och kontroll.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vad är en trade claim? En leverantörs obetalda faktura på ett bolag i konkurs är en fordran — och fordran är en tillgång som kan säljas. I amerikanska processer handlas de öppet: en leverantör som behöver kontant (eller inte vågar riskera processen) säljer sin fordran på exempelvis sjuttio cent per dollar till en köpare som har tid, jurister och kapital att vänta ut planen. Försäljaren får kontant omedelbart; köparen köper återbetalningstrappans utfall med rabatt. Detta är distress-ekonomins mest rena likviditetstjänst — och samtidigt, som kontrovers-kapitlet återkommer till, dess mest kritiserade: gamarna som köper skulder av dem som behöver pengar nu. Whitmans försvar är konsekvent med hela boken: priset på en claim är förhandlad mellan två vuxna parter med olika tidspreferens, och utan köpare av claims skulle leverantörer stå med noll i stället för sjuttio."
+        },
+        {
+          "type": "text",
+          "content": "Riskerna med claims — varför priset är nedsatt. Köparen av en trade claim tar inte bara processrisk utan dokumentrisk. Tvister (disputed claims): gäldenären kan bestrida fordranens existens eller storlek — då blir du del i en rättsprocess innan du ens kommer till planen. Setoff: gäldenären kan ha motfordran som kvittas mot din. Preference exposure (preferensrätt): betalningar gäldenären gjorde till leverantören de nittio dagarna (ibland längre) före petitionen kan återkrävas av boet — den som köper en leverantörsfordran kan alltså i praktiken köpa en fordran som är negativ, ty boet kan kräva tillbaka det leverantören redan fått. Kursens minnesregel: claimens pris beror inte bara på vad den får i planen utan på om den överhuvudtaget får vara med — och det avgörs av dokument, inte av kurser. Här är Whitmans tredje grundregel i praktik: den substantiva karaktären (dokument, belopp, prioritet, preferensstatus) slår etiketten (claim, bond, aktie)."
+        },
+        {
+          "type": "text",
+          "content": "Blocking positions och kontroll utan aktier. Kmart-kapitlets avsnitt om blocking positions visar mekaniken som gör claims till kontrollverktyg: i Chapter 11 krävs för att en klass ska godkänna en plan ja från minst två tredjedelar av fordringsbeloppet — vilket betyder att den som kontrollerar mer än en tredjedel av en klass kan blockera planen. En blocking position är en option på förhandling: den som kan säga nej kan förhandla fram bättre villkor för sig själv (bättre återbetalning, garantier, fees) än prioritetsordningen ger. Det är här som den absoluta prioriteten (kapitel fyra) i praktiken böjs — inte genom brott mot lagen utan genom förhandlingstryck. För AKM1-eleverna: detta är den mest renodlade formen av det Short-Seller-kursen lär om incitament — information och position bestämmer makt, och makt bestämmer utfall. Skillnaden: här är makten dokumenterad (claimens storlek och klass), inte psykologisk."
+        },
+        {
+          "type": "text",
+          "content": "DIP-finansiering — att bli förste borgenär i pågående fall. Debtor-in-possession-finansiering är lån som ges till bolaget under själva konkursen för att betala drift och process; DIP-långivaren får superprioritet — före allt gammalt, inklusive panter (med adequate protection-ordningar) — och ofta warrants eller aktier i det nya bolaget. DIP är därmed distressed-världens säkraste position (high probability of full recovery) och dess mäktigaste: den som finansierar driften kontrollerar processens livslina och har förhandlingsläge mot alla. Kmart-kapitlet visar både sidorna: DIP-paketet höll verksamheten vid liv genom fallet — och strukturerna kring det blev en av planens mest förhandlade delar. Kursens översättning till vanliga investerares verklighet: DIP-logiken (bli först i kön genom att tillföra nytt kapital när ingen annan vill) är densamma som vid riktade emissioner i krisbolag på börsen — och det är därför gamla aktieägare nästan alltid förlorar även när bolaget räddas: räddaren kräver både prioritet och ägande (V19-emissionsrisk i dess renaste form)."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En claim är inte bara en förväntan på betalning — den är en position i en röstning. Den som kontrollerar en tredjedel av en klass kontrollerar planen, och dokumentet slår etiketten varje gång."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Instrument i ett pågående fall — position, skydd och risk\",\"rader\":[[\"Instrument\",\"Position\",\"Skydd\",\"Framför allt risk\"],[\"Trade claim\",\"Köpt leverantörsfordran\",\"Rätt till röstning och återbetalning i klassen\",\"Preferenskrav, tvist, setoff\"],[\"Säkerställd obligation\",\"Pant i tillgångar\",\"Pantvärde\",\"Undervärderad pant, adequate protection\"],[\"Oprioriterad obligation\",\"Option på EV-överskott\",\"Klassröstning\",\"Formen på utdelningen, tid\"],[\"DIP-lån\",\"Ny finansiering under process\",\"Superprioritet\",\"Utfallsrisk i driften under process\"],[\"Ny aktie (post-emergence)\",\"Ägare av det nya bolaget\",\"Ren exposition mot värde\",\"Illikviditet, saknar analystäckning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Pröva blocking-matematiken: antag en obligationsklass på totalt 300 miljoner dollar som ska rösta om en plan. Hur mycket måste du kontrollera för att blockera? Räkna sedan på två strategier: köpa säkerställd skuld till nittio mot oprioriterad till fyrtio — vad köper du i det ena fallet och i det andra?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en trade claim i distress-sammanhang?",
+          "alternativ": [
+            "En aktieoption på konkursbolaget",
+            "En köpt fordran — oftast en leverantörs obetalda faktura — med rätt till återbetalning och röstning i klassen",
+            "Ett lån till domstolen",
+            "En försäkring mot konkurser"
+          ],
+          "ratt": 1,
+          "tips": "Vad säljer leverantören som behöver kontant — och vad får köparen för pengarna?"
+        },
+        {
+          "q": "Vad är preference exposure vid köp av claims?",
+          "alternativ": [
+            "Risken att priset stiger före betalning",
+            "Risken att boet återkräver betalningar som gäldenären gjorde till leverantören före petitionen — den köpta fordran kan bli negativ",
+            "Risken för valutaförändringar",
+            "Risken att domstolen sänker räntan"
+          ],
+          "ratt": 1,
+          "tips": "Konkursrätten kan återkalla vissa betalningar gjorda strax före ansökan — åt vilket håll drabbar det köparen av fordran?"
+        },
+        {
+          "q": "Varför är DIP-finansiering den mäktigaste positionen i ett fall?",
+          "alternativ": [
+            "Därför att den ger högst ränta alltid",
+            "Därför att DIP-långivaren får superprioritet och kontrollerar driftsens livslina — med förhandlingsläge mot alla klasser",
+            "Därför att den automatiskt ger aktiemajoritet",
+            "Därför att den är skattefri"
+          ],
+          "ratt": 1,
+          "tips": "Vem kan bolaget inte klara sig utan under processen — och vad kan den parten kräva?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Teknikerna — kreditfonder, co-invest, control investing",
+      "intro": "Bokens tredje del och det inledande fall-kapitlet (Brief Case Studies of Distressed Securities, 2008–2009) visar hur distressed-pengar faktiskt investeras: long-only kreditfonder, distressed-for-control, co-invest och kapitaltillskott i systemkris. Detta kapitel kartlägger teknikerna och deras olika logik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Long-only kreditfonden — bokens mest försiktiga teknik. Den enklaste formen: en fond som köper nedprisade krediter (obligationer, lån) och håller dem till återbetalning eller utfall. Under 2008–2009 var detta fackets gyllene tillfälle: bokens fall-kapitel börjar med kategorin performing loans likely to remain performing loans — krediter som prissattes för kollaps men där bolaget skulle fortsätta betala. Poängen, som är hela Whitmans filosofi i miniatyr: när tvingade säljare (fonder som möter inlösen, banker som måste avlasta, index som måste utesluta fallen issuers) dumpar papper som inte är i default, då köper man inte konkursrisk utan likviditetspremie. Kursens svenska läsning av kategorin: samma mekanik som när en akti slängs ut ur ett index och tvingade passiva ägare säljer — bara att det på kreditmarknaden är vanligare, större och mer systematiskt, därför att kreditportföljer förvaltas mot förvaltningsmandat som förbjuder defaulted paper. När ett papper Nedgraderas tillfallen nivåer måste vissa hållare sälja — oavsett värde. Det är maskingeneraten bakom safe and cheap i praktiken."
+        },
+        {
+          "type": "text",
+          "content": "Distressed-for-control och co-invest. Den tyngre tekniken: aktörer som köper så mycket av en klass (eller flera klasser) att de kan påverka eller kontrollera planen — via blocking positions, utskottsplatser eller som plan investors. Kontrollspåret är Whitmans eget hemmaplan: Third Avenue var ingen passiv notvärdare utan en kontrollinriktad investerare som gick in i situationer där rättigheterna i pappren kunde omvandlas till ägande i det nya bolaget (Kmart-kapitlet är den fullständiga illustreringen). Co-invest är den praktiska organiseringen: en huvudinvesterare (sponsor) med juridik och analysbakgrund öppnar sin position för investerare som går med på samma villkor och ofta sida vid sida (side-by-side) med sponsors eget kapital. Skillnaden mot vanlig fondbyte: här köper du processkompetens — och den viktigaste due diligence-frågan till en co-invest-sponsor är därför inte deras avkastningshistorik utan deras konfliktstruktur: tar sponsor fees för att förvalta processen och samtidigt bära positionen? Vems advokat är egentligen advokaten?"
+        },
+        {
+          "type": "text",
+          "content": "Plan investing och kapitaltillskott i systemkris. Bokens fall-kapitel 2008–2009 har en kategori som heter Capital Infusions into Troubled Companies — att tillföra kapital till bolag i akut behov. I krisens initiala skede var det här de största möjligheterna fanns: bolag med fungerande drift men stängda finansieringsfönster, där nytt kapital kunde kräva villkor (kupong, convert, aktier) som i normala tider är omöjliga. Plan investing — att åta sig (backstop) en emission av aktier eller fordringar i det rekonstruerade bolaget i samband med att planen bekräftas — är samma teknik i rättsprocessens skepnad: Kmart-kapitlets plan investors (ESL och Third Avenue) är det historiska exemplet, med cirka 140 miljoner dollar kontant och cirka 33 miljoner aktier i det nya bolaget som resultat. Notera vad teknikerna har gemensamt: alla tre byter kapital mot strukturell fördel — prioritet, ränta, aktier eller kontroll — och ingen av dem byter kapital mot berättelser. Det är safe and cheap operationaliserat: pengar när pengarna är som dyrast, mot rättigheter när rättigheterna är som säkrast."
+        },
+        {
+          "type": "text",
+          "content": "Och för privatpersonen — kursens ärliga hållning. Ingen av dessa tekniker är i praktiken öppen för privatinvesterare: long-only kreditfonder för fack kräver commitment-nivåer och mandat; claims-handel kräver claims-agent-tilgång och jurist; co-invest kräver inbjudan; plan investing kräver att man är en institution som domstolen och gäldenären accepterar. Värdet för AKM1-eleven är därför inte deltagande utan förståelse: att känna igen när dessa krafter arbetar i en situation (vem köper, vem tvingas sälja, vem kontrollerar planen) och att förstå prismekaniken i krediter och obligationer — inklusive svenska företagsobligationer i pressade lägen. Kursens praktiska bro: när en svensk högavkastande obligation eller ett krisbolag diskuteras, ställ Whitman-frågorna: vilken klass, vilken prioritet, vilket dokument, vilken återbetalning i trappan? Om analysen inte kan svara på de fyra, är den inte en analys — det är en åsikt om kurs."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Alla distress-tekniker byter kapital mot strukturell fördel — prioritet, ränta, aktier eller kontroll — och inget av dem byter kapital mot berättelser. Pengar när pengarna är dyrast, mot rättigheter när rättigheterna är säkrast."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Distress-tekniker — vad, hur, för vem\",\"rader\":[[\"Teknik\",\"Hur\",\"Köparen får\"],[\"Long-only kreditfond\",\"Köpa nedprisade lån och obligationer\",\"Likviditetspremie hos tvingade säljare\"],[\"Distressed-for-control\",\"Bygga stora positioner i klasser\",\"Röstning, blocking position, kontroll av plan\"],[\"Co-invest\",\"Investera sida vid sida med sponsor\",\"Processkompetens utan egen juristavdelning\"],[\"Plan investing\",\"Backstop emission i nya bolaget\",\"Aktier i rekonstruerat bolag till premiss-villkor\"],[\"Kapitaltillskott i systemkris\",\"Tillföra kapital när fönstret är stängt\",\"Extrema villkor — ränta, konvertibel, ägande\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Leta upp tre svenska företagsobligationer eller krisbolagslån som handlas kraftigt under pari (eller nyligen gjort det). För varje: vilken klass och prioritet har pappret, vilka tvingade säljare kan finnas, och vilken återbetalning ger trappan i ett basscenario? Strökriteriet: om du inte kan besvara klass och prioritet — stryk."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängen med kategorin performing loans likely to remain performing?",
+          "alternativ": [
+            "Att köpa krediter som prissatts för kollaps men där betalningen sannolikt fortsätter — man köper likviditetspremie, inte konkursrisk",
+            "Att köpa indexfonder av obligationer",
+            "Att köpa aktier i bolag som betalar utdelning",
+            "Att korta krediter i kris"
+          ],
+          "ratt": 0,
+          "tips": "Vad heter fenomenet när hållare tvingas sälja papper som inte är i default — och vem betalar premien?"
+        },
+        {
+          "q": "Vad är den viktigaste due diligence-frågan till en co-invest-sponsor?",
+          "alternativ": [
+            "Vilken hävstång används?",
+            "Hur deras konfliktstruktur ser ut — vilka fees tas för att förhandla och samtidigt bära positionen",
+            "Vilken dator de använder",
+            "Hur många anställda fonden har"
+          ],
+          "ratt": 1,
+          "tips": "Sponsorn förhandlar med processen och med dig. Vems advokat är advokaten?"
+        },
+        {
+          "q": "Vad är plan investing?",
+          "alternativ": [
+            "Att skriva en affärsplan för gäldenären",
+            "Att backstoppa emissionen av aktier eller fordringar i det rekonstruerade bolaget i samband med planens bekräftelse",
+            "Att köpa index före planen",
+            "Att låna ut till domstolen"
+          ],
+          "ratt": 1,
+          "tips": "Kmart-planens investors åtog sig något i utbyte mot aktier — vad åtog de sig?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Fall: Home Products International — prepack i liten skala",
+      "intro": "Bokens första genomgripande fall är medvetet litet: Home Products International, ett hushållsvaruföretag som växte genom förvärv, överbelånades och härdades genom vad boken kallar en prepackaged Chapter 11. Detta kapitel följer fallet steg för steg och visar hur rekonstruktionen skapar ett nytt bolag till nära nollvärdering.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fallet, efter bokens egna avsnittsrubriker. The Early Years: ett hushållsvaruföretag i Chicago-trakten, tillverkning av enkla plast- och hushållsprodukter för dagligvaru- och dollarbutikshandeln — en tråkig, stabil bransch med låga marginaler. Growth by Acquisitions: bolaget växte genom förvärv, tog upp obligationer för att betala — och byggde steg för steg den kapitalstruktur som skulle bli dess öde (V10-läran från kapitel tre: hävstången gjorde driftens normala svängningar till solvensfrågor). Retail Industry Woes: när detaljhandeln försvagades föll marginalerna, täckningen sinade och refinansieringsväggen närmade sig — bokens dödsorsaker ett och två i samma bolag. The Fight for Control och Amendment of Indenture and Event of Default: strider mellan ägare och borgenärer om riktningen, förhandlingar om ändringar i lånevillkoren (indenture) och slutligen en event of default som formellt öppnade dörren till process. The Decision: Prepackaged Chapter 11 — bolaget valde en förhandlad konkurs: planen och rösterna säkrades hos borgenärerna före ansökan, så att processen blev kort och kontrollerad."
+        },
+        {
+          "type": "text",
+          "content": "Prepack-mekaniken — och varför litet är annorlunda. En prepack skiljer sig från free-fall-konkurs (som Kmart) på det avgörande sättet: förhandlingen sker före petitionen, medan bolaget fortfarande kontrollerar informationen och klockan; ansökan och bekräftelsen blir en formalitet i veckor i stället för år. Behovet av supermajoriteter tvingar fram verkliga förlikningar i förväg — vilket också innebär att kostnaderna (bokens kapitel om deal expenses) blir lägre och att driften slipper yrseln av en öppen process. Men det lilla fallets eget värde i boken är skala-läran: i små fall äter processkostnaderna och de mindre sofistikerade motparterna en proportionellt mycket större del av värdet — advokaterna är inte billigare för att boet är mindre, och leverantörerna i en dollarbutikskedja saknar resurser att förhandla som en stor obligationär. Small cases-drivningen i bokens fall-kapitel är densamma observation: distressed-logiken fungerar på alla storlekar, men marginalen för köparen är smalare när notorna är lika stora och kakan mindre."
+        },
+        {
+          "type": "text",
+          "content": "Det nya bolaget — kanonens andra läxa förklarad. Treatment of Impaired Classes under the Plan och Financial Means for Implementation of the Plan: bokens avsnitt visar kärnmekaniken. Klasser som får mindre än fullt belopp är impaired och röstar; klasser som får allt är unimpaired och röstar inte (de har inget att säga — deras rätt är opåverkad). I planen fördelas det nya bolagets värde: gamla borgenärer får nytt papper och aktier, gamla aktieägare får — som regel — ingenting eller symboliskt. Going-Concern and Liquidation Valuations: boken redovisar öppet de två värderingarna som planen vilar på (kapitel sju i kursen applicerat på riktigt), och därmed det nya bolagets värderingsunderlag. Kanonens andra läxa är exakt detta: rekonstruktionen skapar ett nytt bolag utan den gamla skuldens börda — till en värdering nära noll i book value (gamla skulder utplånade, nytt kapital emitterat till planens villkor) — men att komma in i det nya bolaget kräver juridisk kompetens, dokument och process: det nya bolaget tillhör dem som stod rätt i kön, inte dem som gissade på aktien."
+        },
+        {
+          "type": "text",
+          "content": "Läxor för AKM1. Ett: balansräkningens ålder spelar roll — bolag som byggt sin skuld genom förvärvsbossning har en förvärvsad åtgångsbok (goodwill, omstruktureringar) som gör GAAP-bilden vilseledande (V12). Två: prepack-kännetecken att känna igen — förhandlade villkorsändringar (indenture amendments) föregår ofta ansökan; den som ser en lyckad exchange-offer med hårt pressade villkor ser ett bolag som förhandlar med Chapter 11 som påtryckningsmedel (grundregel två). Tre: det nya bolaget saknar histories —— dess nyckeltal (V06, V07) är framtida, inte historiska, vilket gör värderingen både enklare (ingen skuld) och svårare (inget track record). Fyra: för den som senare läser rekonstruerade bolag på börsen — Fresh start accounting gör att bokvärden och resultat inte är jämförbara med det gamla bolaget; jämför aldrig rekonstruerat mot förkonkurs utan att förstå att det i praktiken är två olika företag."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Rekonstruktionen skapar ett nytt bolag till nära nollvärdering — men det nya bolaget tillhör dem som stod rätt i kön med dokument, inte dem som gissade på aktien. Och i små fall äter notorna proportionellt mest."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Home Products International — fallet steg för steg\",\"rader\":[[\"Fas\",\"Händelse\",\"Läxa\"],[\"Tillväxt genom förvärv\",\"Obligationer betalade expansionen\",\"Hävstång gör normala svängningar till solvensfrågor (V10)\"],[\"Detaljhandeln försvagas\",\"Marginaler och täckning faller\",\"Dödsorsak ett och två kombinerade\"],[\"Indenture-strider\",\"Villkorsändringar, event of default\",\"Förhandling med konkurs som påtryckning\"],[\"Prepack\",\"Plan förhandlad före ansökan\",\"Kort process, lägre notor, kräver majoriteter i förväg\"],[\"Nytt bolaget\",\"Borgenärer får nytt papper — aktier noll\",\"Nytt bolag nära nollvärdering; fresh start accounting\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Identifiera ett nyligen rekonstruerat bolag (valfri jurisdiktion, börslistat eller ej). Ta reda på: vilka klasser röstande, vad gamla aktieägare fick, hur det nya bolaget värderades i planen och vilka som fick det nya ägandet. Skriv svaret i fyra rader — bokens eget analysformat för ett fall."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en prepackaged Chapter 11?",
+          "alternativ": [
+            "Att planen förhandlas och rösterna säkras hos borgenärerna före ansökan — processen blir kort och kontrollerad",
+            "Att bolaget aldrig söker konkurs",
+            "Att aktieägarna röstar först",
+            "Att domstolen utser en trustee som tar över driften"
+          ],
+          "ratt": 0,
+          "tips": "Vad betyder det att komma överens innan man går till domstol — och vad krävs för att det ska fungera?"
+        },
+        {
+          "q": "Vad betyder impaired class i en rekonstruktionsplan?",
+          "alternativ": [
+            "En klass som får mindre än full återbetalning och därför röstar om planen",
+            "En klass som är skyldig pengar till boet",
+            "En klass av preferensaktier",
+            "En klass som automatiskt godkänner allt"
+          ],
+          "ratt": 0,
+          "tips": "Vem har something att förlora på planen — och därmed röst?"
+        },
+        {
+          "q": "Vad är fresh start accounting som läxa?",
+          "alternativ": [
+            "Att det nya bolaget saknar all redovisning",
+            "Att det rekonstruerade bolagets bokföring och historiska nyckeltal inte är jämförbara med det gamla — i praktiken två olika företag",
+            "Att revisorn startar om från noll varje år",
+            "Att bokföringen alltid görs om retroaktivt tio år"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med balansräkningen när skulderna utplånas och tillgångarna värderas om?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Fall: Kmart — plan investors och aktieutdelningen ingen räknade med",
+      "intro": "Bokens stora fall, A Large Reorganization Case: Kmart Corporation, är också Whitmans eget: Third Avenue Value Fund var en av två plan investors. Detta kapitel följer Kmart genom Chapter 11 — hyresvärdar, critical vendors, KERP:er, blocking positions, DIP — till planen som skapade ett nytt bolag och gjerte plan investors till dess största ägare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fallet i korthet. Kmart — en gång USA:s nästa största detaljhandelskedja — ansökte i januari 2002 om Chapter 11 efter år av tappad konkurrenskraft mot Walmart och Target och en akut likviditetskris. Free-fall-fallet var ett av tidens största: boken går igenom de klassiska stridsfrågorna som varje stort fall producerar. Landlords and Unexpired Leases: hundratals hyresavtal som skulle antas eller hävas — och hyresvärdarnas kamp om skadestånd. Vendors and Critical Vendor Motions: betalning till utvalda leverantörer i förtid för att hålla varuflödet levande — en prioriteringsbrytelse i realiteten, som boken redovisar utan krusiduller. Management and KERPs Pre-2005 BAPCPA: retention-bonusar till ledningen i det fallande bolaget. Fraudulent Transfers: boets försök att återkräva betalningar gjorda före petitionen. Subsidiary Guarantees and Substantive Consolidation: striden om moder- och dotterbolags skulder skulle behandlas som ett bo eller flera. Chapter 11 Committees and Out-of-Control Professional Costs: notorna — och deras storlek i förhållande till boet. Blocking Positions och Buying Claims: kampen om rösterna i klasserna. Debtor-in-Possession Financing: livslinan som finansierade driften och dess villkor. Allt kursen byggt i kapitel fyra till nio samlas i detta fall."
+        },
+        {
+          "type": "text",
+          "content": "Planen och plan investors. Kmart-kapitlets höjdpunkt är planens struktur: Kmart's Plan of Reorganization and Plan Investors. Vid utgången, i maj 2003, bekräftades en plan där skulderna konverterades till aktier i ett nytt bolag, Kmart Holding Corporation. Gamla preferens- och stamaktieägare fick ingenting — utslagna av prioritetsordningen. Oprioriterade borgenärer fick betalning i det nya bolagets aktier — papper som vid distributionen var illikvida och svårvärderade (form of consideration-kategorin från kapitel åtta) men som steg kraftigt i värde när det nya bolaget rev: med hänsyn till aktieuppgången landade återbetalningen för notehållarna på runt tjugofyra procent efter tre månader, fyrtiosju procent efter tolv och närmare nittiotre procent på längre horisont — bokens Investment Performance-avsnitt är en läxa i att utfallet av en rekonstruktion inte står i planen utan i tiden efter den. Plan investors — Eddie Lamperts ESL Investments och Martin Whitmans Third Avenue Value Fund — åtog sig att backstoppa emissionen av det nya bolagets aktier med cirka 140 miljoner dollar kontant och fick sammanlagt cirka 33 miljoner aktier i Kmart Holding. Det nya bolaget noterades, kursen mångfaldigades — och två år senare användes det som finansieringsbas när Kmart förvärvade Sears (2005) och bildade Sears Holdings."
+        },
+        {
+          "type": "text",
+          "content": "Vad är fallets läxa? Tre saker, alla kursens kärntematik. Ett: distressed är en fortsättning av kapitalstrukturen, inte en slutstation — från petition till börsnoterat nytt bolag på sexton månader, med borgenärer som ägare och plan investors som garant. Två: aktier i konkurs är inte en investering — de är en lågutdelningsklass sist i kön; men aktier i det nya bolaget, förvärvade genom dokumenterat åtagande (backstop), är något helt annat: kontroll-positionen från kapitel två. Whitmans lärdom är inte att gissa på stamlotsaktier i fall — den är att positionen avgör utfallet: samma händelse gav gamla aktieägare noll och plan investors en av tidens bästa avkastningar. Tre: det nya bolaget som värdeskapande maskin — utan den gamla skulden, med fastighets- och lease-värden som boken går igenom, blev Kmart Holding i praktiken ett real estate- och kapitalstrukturfall snarare än ett detaljhandelsfall: resource conversion i sin renaste form, köpt av dem som läste dokumenten. (Notera samtidigt kontrasten som kursen inte ska dölja: det nya bolagets fortsatta historia — Sears Holdings decennier av svikt — visar att rekonstruktionen löser kapitalstrukturen men inte nödvändigtvis driften.)"
+        },
+        {
+          "type": "text",
+          "content": "Kmart i AKM1: V10 i sin extrem (hävstången som dödade), V19 (finansieringskrisen som utlöste petitionen), V06 (det nya bolaget prissattes på EV och tillgångar, inte på trendvinst), V20 i Whitman-aktionärsversion — kapitalstrukturhändelsen (konkursen) som skapade det nya ägandet. Och en sista observation för eleven som läst Short-Seller-kursen: samma fall som gjorde kortarna rika på vägen ned (Kmart-aktien föll genom golvet innan petitionen) gjorde distressed-investerarna rika på vägen upp — två fack, samma dokument, olika riktning och olika position i kön. Det är kursens hela thesis i ett enda fall."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Samma händelse gav gamla aktieägare noll och plan investors en av tidens bästa avkastningar — skillnaden var inte insikt utan position: dokumenterad rättighet i det nya bolagets emission, inte en gissning på stamlotsaktien."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kmart 2002–2005 — tidslinje och läxor\",\"rader\":[[\"Datum\",\"Händelse\",\"Läxa\"],[\"Januari 2002\",\"Chapter 11-ansökan efter likviditetskris\",\"Finansieringsväggen dödar snabbare än dålig drift\"],[\"2002–2003\",\"Strider: hyresvärdar, critical vendors, KERP, claims\",\"Processens mekanik avgör fördelningen — inte enbart prioritet\"],[\"Maj 2003\",\"Plan bekräftad — skuld blir aktier i nya Kmart Holding\",\"Gamla aktier noll; borgenärer blir ägare\"],[\"Maj 2003\",\"Plan investors (ESL, Third Avenue) backstoppar emission — cirka 140 MUSD kontant, cirka 33 miljoner aktier\",\"Kontrollposition i nya bolaget — resource conversion\"],[\"2003–2005\",\"Nya bolaget stiger; borgenärernas återbetalning växer från cirka 24 mot cirka 93 procent\",\"Formen på utdelningen avgör utfallet över tid\"],[\"2005\",\"Kmart förvärvar Sears — Sears Holdings bildas\",\"Rekonstruktionen löser strukturen, inte driften\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Skriv Kmart-fallet som en fyra-raders tes: (1) vad dödade bolaget, (2) vad fick varje klass i planen, (3) varför vann plan investors, (4) vad som löstes inte av rekonstruktionen. Använd endast kapitel-två-logiken: position, rättighet, dokument."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med gamla stamaktier i Kmart vid rekonstruktionen 2003?",
+          "alternativ": [
+            "De byttes ett mot ett i det nya bolaget",
+            "De slöts ut — aktieägarna fick ingenting enligt prioritetsordningen",
+            "De blev preferensaktier",
+            "De löstes in av domstolen till bokvärde"
+          ],
+          "ratt": 1,
+          "tips": "Var stod aktieägarna i kön — och fanns det något kvar när deras tur kom?"
+        },
+        {
+          "q": "Vad var plan investors roll i Kmart-planen?",
+          "alternativ": [
+            "De backstoppade emissionen av det nya bolagets aktier — ESL och Third Avenue åtog sig cirka 140 miljoner dollar kontant och fick cirka 33 miljoner aktier",
+            "De köpte hela gamla skulden till pari",
+            "De lånade ut DIP-finansiering utan villkor",
+            "De stämde bolaget för skadestånd"
+          ],
+          "ratt": 0,
+          "tips": "Vad kräver en emission av ett nytt, ovisst bolag — vem garanterar att aktierna köps?"
+        },
+        {
+          "q": "Vad visar borgenärernas återbetalning i Kmart (från cirka 24 till cirka 93 procent)?",
+          "alternativ": [
+            "Att domstolen höjde utdelningen retroaktivt",
+            "Att formen på utdelningen — aktier i det nya bolaget — gjorde att det verkliga utfallet avgjordes av tiden efter planen",
+            "Att alla borgenärer alltid får hundra procent",
+            "Att aktier i konkursbolag är säkra"
+          ],
+          "ratt": 1,
+          "tips": "Utdelningen var inte kontant utan aktier — vad bestämmer deras värde?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 13,
+      "title": "Den gode distressed-investeraren — och det ideala systemet",
+      "intro": "Bokens näst sista kapitel, An Ideal Restructuring System, är Whitmans och Diz reform-program — och en indirekt porträtt av den som behövs för att spela spelet. Detta kapitel samlar egenskaperna hos den gode distressed-investeraren (kanonens hot shots-läxa), likviditetstestet och reformtankarna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Egenskaperna — vad krävs enligt boken? Först och främst juridisk kompetens: kanonens formulering är rakt — rekonstruktioner kräver juridisk kompetens. Distressed är det enda värdepappersfack där dokumentets paragrafer är själva kassflödet: den som inte läser indentures, kreditavtal och planer själv (eller betalar någon som gör det) spelar ett spel han inte känner reglerna i. Sedan tålamod med klocka: processer löper i månader och år, och kapitalet måste kunna stå stilla utan finansieringstryck — Whitman själv drev sina fonder utan hävstång, därför att den som är belånad kan tvingas sälja i exakt det ögonblick processen kräver ståsamhet. Sedan balansräkningsblicken: hela analysen börjar i skulder, säkerheter och prioritet — aktiekursen är ortogonal information. Sedan kontrollorientering: fackets bästa positioner är de som ger rättigheter (röstning, blocking, backstop) — inte bara exponering. Och slutligen prisdisciplin: köp endast under trappans värde i det värsta trovärdiga scenariot, netto notor och tid — Whitman-nivån av conservatism, med koncentration när marginalen är som bredast."
+        },
+        {
+          "type": "text",
+          "content": "Likviditetstestet — igen, därför att det är bokens mest portabla verktyg. Kan bolaget betala ränta och amortering i arton till tjugofyra månader utan tillgång till kapitalmarknaden? Frågan har tre användningar som kursen sammanfattar. Som undvikande: bolag som inte klarar testet är oberäkneliga att äga — V19-kärnan i AKM1. Som köpsignal: en obligation från ett bolag som klart klarar testet men handlas till nivåer som antyder default är kategorin performing loans likely to remain performing — likviditetspremien från kapitel tio. Och som förhandlingsklocka: antalet månader till väggen bestämmer gäldenärens och borgenärernas respektive förhandlingsstyrka — den som kan räkna tidsskillnaden mellan bolagets kassa och processens längd har en faktisk edge som inte kräver prognoser. Kursens anteckning: detta är den enskilda läxan från boken som fungerar oförändrad för privatpersonen — på vilket belånat bolag som helst, i vilken jurisdiktion som helst, med offentliga siffror."
+        },
+        {
+          "type": "text",
+          "content": "Det ideala rekonstruktionssystemet — bokens sista kapitel. Whitman och Diz avslutar med att fråga vad ett bra system ska åstadkomma, och deras svar är kursen värd: Good Enough Rather Than Ideal — ett pragmatiskt vägran att låta det bästa bli det godas fiende; system behöver inte vara perfekta, bara förmåga att återföra resurser till användning utan onödigt värdespill. Feasibility and Cash Bailouts — en varning för politiska räddningsaktioner: system som pumpar in offentligt eller politiskt kapital för att hålla gamla strukturerna vid liv (i stället för att låta rekonstruktionen bygga nya) förflyttar förluster från ägare till skattebetalare utan att åtgärda något. Highly Beneficial Elements in the U.S. Restructuring System — stay-institutet, DIP-finansieringen, klassröstningens förhandlingsteknik och en djup, specialiserad professionell infrastruktur (advokater, rådgivare, claims-agenter, domstolar med expertis): en ekologi, inte en lag. Suggested Reforms — framför allt kostnadskontroll (ett av bokens bärande irritationsmoment) och skydd mot processmissbruk. Läxan för AKM1: systemsyn — marknader är ekologier av regler, aktörer och incitament; den som vill förstå utfall läser systemet, inte bara aktörerna."
+        },
+        {
+          "type": "text",
+          "content": "Hot shots-sammanfattningen — den gode distressed-investeraren i en mening: en obelånad, juridiskt skolad, balansräkningsförst-kontrollinvesterare med kassa att vänta och disciplin att bara köpa under trappans värsta trovärdiga scenario. Notera hur många av egenskaperna som är karaktärsdrag snarare än talanger: tålamod, ödmjukhet inför dokument, vägran att låta finansieringstryck bestämma beslut. Och notera vilka som saknas: ingen nämnd av timing, ingen av kursprognoser, ingen av berättelser. Distressed är det fack där värdet lär ut sin egen läxa med tydlighet: det som betalar är position, dokument och tid — inte åsikter. Det är också därför boken, skriven av en man som gjorde detta i ett halvt sekel, andas så lite av det som känns igen från marknadshysterin: den är en hantverksbok, skriven av en hantverkare, om ett hantverk."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Den gode distressed-investeraren är en obelånad, juridiskt skolad balansräkningsläsare med kassa att vänta och disciplin att köpa endast under trappans värsta trovärdiga scenario — position, dokument och tid, aldrig åsikter."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den gode distressed-investeraren — egenskap, varför, AKM1-koppling\",\"rader\":[[\"Egenskap\",\"Varför\",\"AKM1-koppling\"],[\"Juridisk kompetens\",\"Dokumentets paragrafer är kassaflödet\",\"Noter och avtal före resultaträkning (V12-blick)\"],[\"Tålamod utan hävstång\",\"Processer löper i år — belånade tvingas sälja fel\",\"V19 omvänt: egen finansieringsrisk\"],[\"Balansräkningsblick\",\"Skuld, säkerhet, prioritet är analysen\",\"V10, V11, V06\"],[\"Kontrollorientering\",\"Rättigheter slår exponering\",\"V20 kapitalstruktur-händelser\"],[\"Prisdisciplin\",\"Marginalen är avstånd till värsta scenario netto notor\",\"Tidsserie Brytpunkt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Testa dig själv mot hot shots-profilen: rangordna de fem egenskaperna (juridik, tålamod, balansräkningsblick, kontroll, prisdisciplin) efter hur väl du uppfyller dem i dag. Vilken är svagast — och vilken av bokens verktyg (likviditetstestet, trappan, dokumentläsning) skulle stärka den mest?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken egenskap är mest särskiljande för distressed-investerare enligt boken?",
+          "alternativ": [
+            "Förmåga att förutsäga kortterminskurser",
+            "Juridisk kompetens — dokumentens paragrafer är själva kassaflödet",
+            "Hög portföljomsättning",
+            "Teknisk analys"
+          ],
+          "ratt": 1,
+          "tips": "I vilket fack är paragrafen i ett avtal direkt avgörande för utfallet av positionen?"
+        },
+        {
+          "q": "Varför drev Whitman sina fonder utan hävstång?",
+          "alternativ": [
+            "För att hävstång var förbjudet",
+            "Därför att belånade investerare kan tvingas sälja i exakt det ögonblick processen kräver tålamod",
+            "För att räntan alltid är negativ",
+            "För att han inte förstod hävstång"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en position som måste avslutas på tvång mitt i en artonmånaders process?"
+        },
+        {
+          "q": "Vad är bokens varning med Cash Bailouts i reformkapitlet?",
+          "alternativ": [
+            "Att politiskt kapital som håller gamla strukturer vid liv förflyttar förluster till skattebetalare utan att åtgärda problemet",
+            "Att banker aldrig ska få stöd",
+            "Att alla bolag ska räddas av staten",
+            "Att likvidation alltid är bäst"
+          ],
+          "ratt": 0,
+          "tips": "Vem betalar ultimately när gamla ägare och borgenärer skonas av politiska skäl?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 13,
+      "title": "Kontroversen: vultures? — och kursens sammanfattning i AKM1",
+      "intro": "Distressed-investerare kallas vultures — gamar som tjänar på bolag i nöd, på job som försvinner och på leverantörer som får nöja sig med smulor. Detta kapitel tar kritiken på fullt allvar i dess bästa version — den svenska målvärdesdiskussionen om rekonstruktioner inräknad — möter den med effektivitetsargumentet, formulerar AK1A:s svar med V19-kopplingen och slutar med kursens ärliga medgivande och sammanfattning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelserna, redovisade så starkt de kan formuleras. Ett: moralen — att tjäna på bolag i nöd känns fel på ett sätt som saknar motstycke; i kulturer som bygger tillsammans är den svenska rekonstruktionsdebattens kärna just detta: målvärdesdiskussionen om vem systemet ska skydda — företaget, jobben, leverantörerna eller borgenärernas rätt — och varje fall där en ny ägare går ur en rekonstruktion rik medan anställda och småkrävare tog notan bekräftar bilden av gamar. Två: processens kostnader — och här är kritiken inte bara moral utan sak, därför att Whitmans egen bok levererar beviset: advokat- och rådgivarnotorna betalas ur borgenärernas värde, KERPs kompenserade ledningar som själva orsakade fallet, och kostnaderna kan bli out of control — systemet självt äter dem det ska skydda. Tre: maktskillnaden — den som köper claims har jurister, data och kapital att vänta; den som säljer (en liten leverantör med löneutbetalning nästa fredag) har inte det: informationsskillnaden är enorm och förhandlingarna är inte jämlika. Fyra: kortterminslogik — vissa distressed-aktörer stryper driften för snabb exit (milk the corpse), vilket kan förstöra gående värden som en längre ägare hade bevarat. En kurs som inte redovisar detta vore ohederlig — och en bok som inte redovisar det vore inte Whitmans, ty han medger det mesta själv."
+        },
+        {
+          "type": "text",
+          "content": "Effektivitetsargumentet —_svaret från marknadens sida. Ett: likviditet till de som behöver den nu — claims-köparen är den enda parten som faktiskt betalar kontant till en leverantör i en proces som annars skulle ge den ingenting på arton månader; utan köparen vore alternativet ofta noll, inte hundra. Två: prissättning — köpare och säljare av fordringar producerar den prisbildning som gör att även de som inte säljer (banker, obligationärer) kan värdera sina positioner och att nya krediter kan prissättas; utan sekundärmarknad blir krediter dyra och otransparenta. Tre: kapitalåtervinning — rekonstruktionskapitalet är det kapital som gör att gående verksamheter kan fortsätta (DIP-finansieringen betalade Kmart:s hyror och leverantörer medan bolaget reste sig); någon måste stå redo att finansiera bolag när ingen annan vill — det är definitionen av kapitalismens marginal. Fyra: styrning — borgenärer som kan konvertera fordran till ägande avlägsnar ledningar som förstört kapital (en mekanism som aktieägare ofta är för splittrade för att genomföra). Fem: disciplin framför — själva existensen av en fungerande rekonstruktionsmarknad prissätter hävstång ex ante: den som lånar vet vad som händer i motgången. Kursens sammanfattning av svaret: gamarna utför likviditetstjänsten och värderingen som ingen annan aktör i systemet utför — frågan är inte om de ska finnas utan på vilka villkor processen sker, och det är där Whitmans reform-kapitel (kostnadskontroll, skydd mot missbruk) är det intellektuellt ärliga svaret från fackets eget håll."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s svar — två punkter och en pedagogik. Ett: V19-emissionsrisken och distressed-läran är samma läxa sedd från två ändar. Bolagets kapitalstruktur är en trappa: i goda tider betalar den dig (V20 återköp, utdelning) och i dåliga tar den ifrån dig (V19 emissioner, konverteringar, utslagna aktier). Den som förstår distressed — trappan, prioriteringen, vad som händer i botten — köper aldrig en aktie utan att ha räknat på vad som återstår om bolaget söks i dag. Det är pedagogiken i dess kärna: förstå kapitalstrukturen FÖRE du köper NÅGOT, därför att aktien är en fordran sist i kön, inte en identitet. Två: kunskapen är oberoende av deltagandet — likt kort-läran i Staley-kursen kan man bruka bokens frågor (vilken klass, vilken prioritet, vilket dokument, vilken återbetalning i trappan?) mot varje belånat bolag i vilken portfölj som helst, utan att någonsin köpa en claim. Och medgivandet, lika viktigt som svaret: i praktiken är detta inte ett fack för privatpersoner — marknaderna är illikvida, informationsskillnaden mot institutionerna enorm (dockets, claims-register, indentures, jurist), minsta positionerna höga och utfallen långsamma. AK1A:s hållning: läs boken som kapitalstruktur-pedagogik och riskmedvetenhet — lämna själva handlandet till dem med advokater och tid, och använd läran till att aldrig bli den som står sist i kön utan att veta om det."
+        },
+        {
+          "type": "text",
+          "content": "Kursens sammanfattning i AKM1 — den kompletta kopplingen. V06 EV/EBITDA: kakan som delas — priset på helheten före fördelningen; V07 bruttomarginal: driften som betalar trappan — normaliserat, i sämsta år, inte bästa; V20 återköp och kapitalstruktur: samma krafter som ger dig värde i goda tider som tar det i dåliga; V10, V11: avståndet till maskinen; V19: finansieringsväggen som utlöser den; V12: redovisningens kvalitet i det gamla och fresh start i det nya bolaget; V05 med varning: bokfört eget kapital är en åsikt när trappan kan äga bolaget. Två tidsserier ur kanon-mappningen: Pris (claims och papper mot återbetalningsvärde) och Brytpunkt (priset där du tjänar netto tid, kostnad och form). Boken i kanonens ekologi: där Staley lär fel-sökandet på utsidan och Schilit redovisningstricken, lär Whitman strukturens inre liv — de tre tillsammans gör eleven kapabel att läsa ett bolag upp-och-ner, in-och-ut: berättelsen, siffrorna och kön. Whitmans testamente, kursens sista mening: bolag är inte sina aktier — de är sina kapitalstrukturer, sina kassaflöden och sina resurser, och den som kan läsa hierarkin vet varför vissa aktier är värda noll och vissa fordringar är värda att vänta arton månader på."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ V19-emissionsrisken och distressed-avkastningen är samma mekanism sedd från två ändar av kapitalstrukturen. Förstå trappan före du köper något — aktien är en fordran sist i kön, inte en identitet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Anklagelse → mekanism → svar — vulture-debatten\",\"rader\":[[\"Anklagelse\",\"Mekanism\",\"Svar\"],[\"Moral: tjäna på nöd\",\"Målvärdesdiskussion — vem ska systemet skydda?\",\"Likviditetstjänsten till den som annars får noll på arton månader\"],[\"Processens kostnader\",\"Advokatnotor betalas av borgenärerna\",\"Whitmans eget reformkrav: kostnadskontroll — kritiken delas av boken\"],[\"Maktskillnad\",\"Informationsskillnad enorm mot småkrävare\",\"Därför är facket inte för privatpersoner — medges öppet\"],[\"Kortterminsstyrd nedmontering\",\"Milk the corpse istället för återhämtning\",\"Borgenärskontroll kan också avlägsna värdeförstörande ledningar\"],[\"Onödigt ont\",\"Systemet ska rädda bolag och jobb\",\"Kapitalåtervinning och prissättning — rekonstruktionen är början, inte slut\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Examen: välj det bolag i din portfölj med högst skuld. Besvara Whitmans fyra frågor: vilken klass äger du, vilken prioritet har du, vilket dokument styr din rätt, och vad får du i trappan om bolaget söks i dag? Om svaret på fråga fyra är noll — skriv en mening om vad det betyder för din marginal of safety."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den moraliska kärnan i den svenska målvärdesdiskussionen om rekonstruktioner?",
+          "alternativ": [
+            "Att räntan alltid ska vara hög",
+            "Vem systemet ska skydda — företaget och jobben eller borgenärernas rätt — särskilt när nya ägare går ur fallet rika medan anställda och småkrävare tog notan",
+            "Att alla bolag ska börsnoteras",
+            "Att konkurser alltid ska undvikas med statligt stöd"
+          ],
+          "ratt": 1,
+          "tips": "Vems intresse väger tyngst när verksamhet, jobb och fordringar konkurrerar om samma begränsade värde?"
+        },
+        {
+          "q": "Vad är det starkaste effektivitetsargumentet för claims-köpare?",
+          "alternativ": [
+            "Att de alltid betalar pari",
+            "Att de är den enda parten som betalar kontant till den som behöver det nu — alternativet för småkrävaren är ofta noll på arton månader",
+            "Att de eliminerar all risk i processen",
+            "Att de sänker räntan för alla"
+          ],
+          "ratt": 1,
+          "tips": "Vad skulle leverantören få i planen om ingen köpte fordran — och när?"
+        },
+        {
+          "q": "Hur formulerar AK1A sambandet mellan V19 och distressed-läran?",
+          "alternativ": [
+            "De är orelaterade områden",
+            "V19-emissionsrisken och distressed-avkastningen är samma mekanism från två ändar — förstå kapitalstrukturen före du köper något",
+            "V19 gäller bara banker",
+            "Distressed är en hedge mot V19"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med aktieägare i båda ändar — emissionen i krisen och utslaget i rekonstruktionen?"
+        }
+      ]
+    }
+  ]
+}

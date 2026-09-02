@@ -1,0 +1,1050 @@
+{
+  "slug": "the-warren-buffett-portfolio",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 160,
+  "title": "The Warren Buffett Portfolio — Hagstrom: KOMPLETT",
+  "summary": "Robert Hagstroms The Warren Buffett Portfolio (1999) är uppföljaren till The Warren Buffett Way — där Way lärde ut vilka bolag Buffett köper (principerna), lär Portfolio ut hur han äger dem: koncentrationens vetenskap. Kursen följer bokens faktiska kapitelstruktur: fokusinvesteringsprogrammet med tio till femton positioner och föregångarna Keynes, Ruane, Munger och Lou Simpson; kritiken av modern portföljteori och dess höga präster; superinvesterarna i Buffettville och myntkasten; ett bättre sätt att mäta resultat; verktygsbältet som förvandlar de tolv principerna till sannolikhetsuttalanden; matematiken med Pascal, Fermat och Bayes sannolikhetslära samt Kelly-formeln med fullständiga räkneexempel; psykologin på två plan — flocken och skönhetstävlingen, sedan de inre biases; komplexitetsteorin från Santa Fe-institutet med El Farol-baren, ökande avkastning och lock-in; och avslutningen med Ted Williams .400-disciplin. Kursens kontroverskapitel ställer Burton Malkiels random walk mot Hagstroms komplexitetssvar MAXIMALT starkt och formulerar AK1A:s egen syntes: AK1TS mäter vågor deterministiskt utan att påstå förutsägelser — mätning är inte profetia — och Kelly full insats är i praktiken ruinerande; därför alltid fractional Kelly. Kursen binder boken till ekosystemet: bayesskripten i ak1a-analys, position sizing i portfoljbyggaren och AKM1:s tjugo variabler.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för Robert Hagstroms andra bokprojekt — att ur fokusinvesteringsstrategin göra en vetenskaplig helhet: portföljstrukturen är lika viktig som aktievalet — och skilja den från syskonkursen Warren Buffett Way (principerna för vilka bolag som ska köpas) och Essays-kursen (källtexterna). Eleven behärskar fokusportföljens grundparametrar: tio till femton noggrant förstådda positioner, sannolikt aldrig fler än tjugo, låg omsättning, mätning i rullande flerårsfönster, och risk omdefinierad som permanent kapitalförlust i stället för samvariation. Eleven kan redovisa föregångarna — Keynes Chest Fund, Bill Ruane och Sequoia, Mungers Wheeler Munger och Lou Simpson på GEICO — och deras gemensamma mönster: koncentration fungerar i årtionden men kräver förmåga att ligga under index ibland kraftigt. Eleven kan argumentera mot och för modern portföljteori: Markowitz varians, Sharpes beta och Famas EMH, samt Hagstroms invändning att volatilitet mäter prisbrus och inte företagsrisk. Eleven kan återge Buffettville-argumentet med dess styrka (gemensamt ursprung i en metod) och dess ärliga svaghet (post hoc-selektion). Eleven kan översätta fundamental analys till matematik: subjektiva sannolikheter, väntevärde och bayesiansk uppdatering — med koppling till ak1a-analys-skickets bayesskript — samt bemästra Kelly-formeln i båda dess former, f stjärna lika med två p minus ett vid jämna odds och allmänt b gånger p minus q delat b, med räkneexempel och insikten att full Kelly är teoretiskt optimal men praktiskt ruinerande, varför halv Kelly eller lägre är professionell standard. Eleven kan redogöra för psykologin på två plan: socialt (Keynes skönhetstävling, Asch konformitet, karriärrisken att misslyckas konventionellt) och individuellt (förlustaversion, överdriven självsäkerhet, överreaktion, ankare) samt deras strukturella motgift. Eleven kan förklara marknaden som komplext adaptivt system: Santa Fe-institutet, Brian Arthurs El Farol-bar, ökande avkastning och lock-in, emergens och evig nyhet — och varför oförutsägbarhet inte är detsamma som slump. Eleven kan slutligen föra kontroversen mellan Malkiels random walk och Hagstroms fokusinvesterings svar på högsta nivå och formulera AK1A:s syntes — AK1TS mäter vågor deterministiskt utan att påstå förutsägelser: mätning är inte profetia — samt bygga och motivera en egen checklista för fokusinvesteraren kopplad till AKM1:s V01-V20 och portfoljbyggarens positionsstorlekar.",
+  "why": "The Warren Buffett Portfolio är kanonens enda bok som gör portföljbyggandet självt — hur många positioner, hur stora, hur länge, hur mätt — till ett vetenskapligt projekt: sannolikhetslära, Kelly-matematik, beteendepsykologi och komplexitetsteori i en enda argumentationskedja. För AK1A-ekosystemet fyller kursen luckan ovanför AKM1: Way-kursen och AKM1:s tjugo variabler avgör vilka bolag som är värda att äga; den här kursen avgör hur ägandet ska struktureras — och dess matematik är redan implementerad i våra egna verktyg: ak1a-analys-skickets bayesianska omviktning och Kelly-modul, Monte Carlo-scenarierna och positionstorlekarna i portfoljbyggaren. Kontroverskapitlet är obligatoriskt för varje elev som vill förstå var gränsen går mellan mätning och profetia — Burton Malkiel presenteras MAXIMALT starkt innan Hagstrom besvarar honom via komplexitetsteorin, och AK1A:s eget ståndpunkt (deterministisk vågmätning utan förutsägelseanspråk, alltid fractional Kelly) formuleras med sina medgivanden. Den som går Way-kursen utan den här kursen kan välja bolag men inte äga dem; den som går den här utan Way kan inte välja bolagen att koncentrera. Båda behövs — det är därför boken finns i kanon och kursen på spåret.",
+  "chapters_list": [
+    "1. Koncentrationens vetenskap — fokusinvesteringsprogrammet",
+    "2. Föregångarna — Keynes, Ruane, Munger och Simpson",
+    "3. De höga prästerna — modern portföljteori och beta-kritiken",
+    "4. Buffettville — superinvesterarna och myntkasten",
+    "5. Ett bättre sätt att mäta resultat",
+    "6. Verktygsbältet — från principer till sannolikheter",
+    "7. Sannolikhetsläran — Pascal, Fermat och Bayes",
+    "8. Kelly-formeln — position sizingens matematik",
+    "9. Psykologin I — flocken, skönhetstävlingen och karriärrisken",
+    "10. Psykologin II — förlustaversion, självsäkerhet och temperamentets arkitektur",
+    "11. Komplexitetsteorin — Santa Fe, El Farol och lock-in",
+    "12. Profetians gränser — Malkiel mot Hagstrom och AK1A:s syntes",
+    "13. .400-slagarna — Ted Williams, Gould och disciplinen",
+    "14. Checklistan — bygg din egen fokusportfölj"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Koncentrationens vetenskap — fokusinvesteringsprogrammet",
+      "intro": "Robert Hagstrom gav ut The Warren Buffett Way 1994 och fick en motfråga han inte kunde svara på i den boken: när man väl hittat de rätta bolagen — hur många ska man äga, hur stora ska positionerna vara och hur länge ska man hålla? The Warren Buffett Portfolio (1999) är svaret, och dess huvudtes är radikal: hur du strukturerar din portfölj är lika viktigt som vilka aktier du väljer. Detta kapitel presenterar fokusinvesteringsprogrammet och skiljer kursen från syskonkursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Way-kursen lärde ut principerna: cirkeln, moaten, owners earnings, säkerhetsmarginalen, de tolv frågorna i rätt ordning. Portfolio-boken börjar där Way slutade och konstaterar att alla tolv principerna är verkliga i en konventionell portfölj på hundra namn, och ändå är resultatet mediokert. Orsaken är inte valet av bolag utan portföljens arkitektur: kunskap som späds ut över hundra positioner ger inget kunskapsövertag. Hagstrom definierar fokusinvestering som processen att välja ett litet antal bolag — tio till femton, sannolikt aldrig fler än tjugo — som man kan övervaka på djupet, satsa betydande andelar av kapitalet i, och hålla genom både under- och överliggande perioder. Koncentrationen är inte våghet; den är konsekvensen av att ha gjort läxan."
+        },
+        {
+          "type": "text",
+          "content": "Bokens mest citerade stöd är Buffetts eget brev. I årsbrevet 1993 skrev Buffett, enligt Hagstroms återgivning: en politik av portföljkoncentration kan minska risken ändamålsenligt, om den — som den bör — höjer intensiteten i investerarens tänkande om både verksamheten och köppriset. Det är meningsutbytet hela boken bygger på: koncentration minskar risken, den ökar den inte, eftersom den tvingar fram djupare analys innan pengarna placeras. Buffett har också formulerat baksidan: diversifiering är ett skydd mot okunnighet, och det gör mycket lite mening för den som vet vad den gör. Way-kursen citerade meningen om principerna; här är den portföljteori."
+        },
+        {
+          "type": "text",
+          "content": "Bokens intellektuella byggnad har fyra ben, och kursen följer dem: sannolikhetsläran (kapitel sex i boken: Pascal, Fermat, Bayes — investeraren arbetar med omdömen, inte frekvenser), optimeringsmatematiken (Kelly-formeln: hur stort ska satsningen vara när sannolikheten är känd), psykologin (varför intelligenta människor saboterar koncentrationen) och komplexitetsteorin (vad marknaden faktiskt är för slags system, från Santa Fe-institutet). Ingen av de fyra handlar om att välja bättre bolag — alla fyra handlar om att äga dem rätt. Det är skillnaden mot Way, och det är därför den här kursen finns som separat helhet: Way = vilka, Portfolio = hur många, hur stora, hur länge."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A-ekosystemet landar boken ovanför AKM1. AKM1:s tjugo variabler (V01-V20, 0-5 poäng) avgör om ett bolag är värt att äga — det är Way-nivån, fundamentalnivån. Den här kursen bygger våningen ovanför: hur många AKM1-utvalda bolag portföljen ska rymma, hur vikterna ska sättas (Kelly-logik i portfoljbyggaren), hur omsättningen ska hållas nere och hur resultatet ska mätas (rullande fönster i stället för kvartalsjakt). Kursens återkommande kopplingar blir därför tre: bayesskripten i ak1a-analys (kapitel sju), position sizing i portfoljbyggaren (kapitel åtta) och AKM1-poängen som indata till allt (kapitel sex och fjorton)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Konventionell portfölj mot fokusportfölj\",\"rader\":[[\"Dimension\",\"Konventionell portfölj\",\"Fokusportfölj\"],[\"Antal positioner\",\"50-100+ namn\",\"10-15, sannolikt aldrig fler än 20\"],[\"Kunskapskrav\",\"grundläggande per namn\",\"djup per namn — inom cirkeln\"],[\"Omsättning\",\"hög; kvartalsdriven\",\"låg; årtiondehorisont\"],[\"Riskdefinition\",\"samvariation med marknaden (beta)\",\"permanent kapitalförlust; pris mot värde\"],[\"Mätning\",\"kvartal mot index\",\"rullande 3/5/10-årsfönster\"],[\"Konsekvens\",\"kunskapen späds ut\",\"belöningen samlas där kunskapen finns\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Antalet positioner i din portfölj är ett kunskapsuttalande, inte en risksiffra: tjugo namn betyder att du påstår dig förstå tjugo verksamheter på djupet — femtio namn betyder att du inte påstår dig förstå något av dem, och priset för det påståendet betalas i avkastning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din egen portföljs arkitektur: antal positioner, största positionens vikt i procent, och omsättningen det senaste året (antal byten delat på antal innehav). Sätt siffrorna mot tabellens två kolumner. Fråga sedan den enda fråga kapitlet vill att du ska ställa: för hur många av mina innehav kan jag på riktigt redogöra för affärsmodell, moat och owners earnings utan att slå upp det? Det talet — inte positionernas antal — är din verkliga portföljstorlek."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är huvudtesen i The Warren Buffett Portfolio?",
+          "alternativ": [
+            "Att aktievalet är allt; portföljstrukturen spelar underordnad roll",
+            "Att hur du strukturerar portföljen är lika viktigt som vilka aktier du väljer",
+            "Att indexfonder alltid slår aktiva förvaltare",
+            "Att teknisk analys ska kombineras med fundamental"
+          ],
+          "ratt": 1,
+          "tips": "Way lärde ut vilka bolag — Portfolio lär ut hur många, hur stora och hur länge."
+        },
+        {
+          "q": "Vilken riktlinje för antalet positioner ger bokens fokusinvesteringsprogram?",
+          "alternativ": [
+            "Minst femtio för att jämna ut risken",
+            "Exakt trettio oavsett kunskapsnivå",
+            "Tio till femton noggrant förstådda bolag, sannolikt aldrig fler än tjugo",
+            "Så många att varje position understiger en procent"
+          ],
+          "ratt": 2,
+          "tips": "Riktlinjen hänger på ett kunskapskrav: varje position ska kunna övervakas på djupet."
+        },
+        {
+          "q": "Vad skriver Buffett i årsbrevet 1993, som boken bygger på?",
+          "alternativ": [
+            "Att koncentration alltid ökar risken och kräver högre avkastningskrav",
+            "Att portföljkoncentration kan minska risken om den höjer intensiteten i tänkandet om verksamheten och köppriset",
+            "Att diversifiering är det enda skyddet mot okunnighet",
+            "Att beta bör användas som komplement till fundamental analys"
+          ],
+          "ratt": 1,
+          "tips": "Nyckeln är vad koncentrationen tvingar fram före köpet: djupare analys — alltså lägre verklig risk."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Föregångarna — Keynes, Ruane, Munger och Simpson",
+      "intro": "Innan Hagstrom argumenterar teoretiskt för koncentration redovisar han historien: fyra förvaltare som årtionden före indexdebatten visade att få, stora, långsiktiga positioner fungerar — och vad de kostar. Keynes Chest Fund, Bill Ruane och Sequoia, Charlie Mungers partnerfond och Lou Simpson på GEICO utgör bokens empiriska grundval.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den förste i kedjan är John Maynard Keynes — ekonomiteoretikern som också var förvaltare. Från 1927 till sina död förvaltade han King's College Chest Fund i Cambridge, och efter några katastrofala år av marknadstiming och råvaruspekulation bytte han metod: han gick från att gissa marknadens svängningar till att äga ett litet antal bolag han förstod, hållna genom kriser. Resultatet, som Hagstrom redovisar: grovt tretton procent per år under knappt två decennier, medan den brittiska marknaden i stort var stillastående. Keynes formulerade själv metodskiftet i ett brev 1934, citerat i boken: det är ett misstag att tro att man begränsar sin risk genom att sprida för mycket mellan företag man vet lite om — kunskapen och erfarenheten är definitiv och begränsad, och det är rationellt att koncentrera dem."
+        },
+        {
+          "type": "text",
+          "content": "Den andre är Bill Ruane. När Buffett upplöste sitt partnership 1969 rekommenderade han sina investerare en enda förvaltare: Ruane, Graham-elev som samma år startade Sequoia Fund. Fonden var enligt bokens redovisning koncentrerad från början — få namn, låg omsättning, djup förståelse — och slagit index över långa perioder, med Ruane som levande bevis på att Graham-disciplin och koncentration är förenliga. Sequoia är också bokens bro till nutiden: fonden existerar fortfarande och dess historia gör Chest Fund-mönstret reproducerbart — inte som en garanti, utan som en fyra gånger upprepad observation."
+        },
+        {
+          "type": "text",
+          "content": "Den tredje är Charlie Munger, vars Wheeler Munger-partnerskap 1962-1975 är bokens viktigaste varnande exempel och starkaste belägg på en gång. Fonden avkastade grovt tjugo procent per år mot Dow Jones strax över fem — men 1973 och 1974 föll den över trettio procent två år i rad, djupare än marknaden, när den koncentrerade portföljen träffades av bärmarknaden. Munger överlevde, investerarna som hoppade av i botten fick inte njuta av återhämtningen, och partnerskapet avslutades med att han gick samman med Buffett i Berkshire. Lärdomen, som Hagstrom drar och kursen understryker hårt: koncentrationens pris är rörelser som är värre än marknadens — den som inte tål det priset ska inte äga portföljen, oavsett hur god matematiken är."
+        },
+        {
+          "type": "text",
+          "content": "Den fjärde är Lou Simpson, GEICO:s investeringschef från 1979 och den ende Buffett offentligt utnämnt till alternativ till sig själv: om något hände Buffett skulle Simpsons hand ha Berkshires pengar. Simpsons portfölj innehöll sällan fler än tio aktier, omsättningen var låg, och resultatet — grovt tjugo procent per år under knappt två decennier mot marknadens kring fjorton — är enligt Hagstrom det renaste moderna beviset på att fokusinvesteringsresultat inte kräver vare sig geni eller en historisk epok av undervärderade medier: det kräver en process, ett mandat och ett temperament. Samma fyra namn återkommer i kapitel fyra i större sammanhang — superinvesterarna i Buffettville."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Koncentrationens föregångare — räkenskaperna\",\"rader\":[[\"Förvaltare\",\"Period\",\"Grovt årsresultat\",\"Jämförelse\",\"Portföljform\"],[\"John Maynard Keynes, Chest Fund\",\"1927-1945\",\"cirka 13 % per år\",\"brittiska marknaden i princip stillastående\",\"få positioner, hållna genom kriser\"],[\"Bill Ruane, Sequoia Fund\",\"från 1970\",\"slår index över långa perioder\",\"S&P 500\",\"koncentrerad, låg omsättning\"],[\"Charlie Munger, Wheeler Munger\",\"1962-1975\",\"cirka 20 % per år\",\"Dow cirka 5 %\",\"få namn; 1973-74 fall över 30 % två år i rad\"],[\"Lou Simpson, GEICO\",\"från 1979\",\"cirka 20 % per år\",\"marknaden kring 13-14 %\",\"sällan fler än tio aktier\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "De fyra föregångarna visar samma mönster i fyra årtionden och två länder: koncentration fungerar i långa serier och misslyckas i korta — utfallet äts alltid av den som ger upp under ett av portföljens oundvikliga dåliga år, inte av strategin själv."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör Munger-provet på dig själv: anta att din portfölj föll trettio procent två år i rad medan index föll hälften — skulle du behålla strategin, byta halva portföljen, eller sälja allt? Skriv ner svaret och datumet idag, eftersom svaret efteråt alltid påverkas av hur det gick. Vem i din omgivning skulle övertala dig att sälja? Det namnet är din verkliga riskfaktor — inte portföljens volatilitet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var nyckeln i Keynes metodskifte på Chest Fund?",
+          "alternativ": [
+            "Han började använda teknisk analys för timing",
+            "Han övergick från marknadstiming till få, djupt förstådda positioner som hölls genom kriser",
+            "Han breddade portföljen till över hundra namn",
+            "Han lade allt i statsobligationer efter 1929"
+          ],
+          "ratt": 1,
+          "tips": "Brevet 1934: det är ett misstag att tro att spridning begränsar risken mellan företag man vet lite om."
+        },
+        {
+          "q": "Vad gör Wheeler Munger-fonden till bokens viktigaste varnande exempel?",
+          "alternativ": [
+            "Fonden avkastade under Dow under hela sin existens",
+            "Fonden höll hundra positioner och ändå föll den",
+            "Fonden slog Index kraftigt men föll över trettio procent två år i rad — djupare än marknaden",
+            "Fonden förbjöds av regulatorn på grund av koncentrationen"
+          ],
+          "ratt": 2,
+          "tips": "Cirka tjugo procent per år i genomsnitt — och ändå en bärmarknad som var värre än marknadens."
+        },
+        {
+          "q": "Vad kännetecknar Lou Simpsons portfölj på GEICO enligt boken?",
+          "alternativ": [
+            "Sällan fler än tio aktier med resultat grovt tjugo procent per år mot marknadens kring fjorton",
+            "Hög omsättning för att fånga kvartalsrörelser",
+            "Ren indexförvaltning med små aktiva avvikelser",
+            "Bara försäkringsaktier i sektorneutral vikt"
+          ],
+          "ratt": 0,
+          "tips": "Simpson är Buffetts utpekade arvtagare — och portföljen är den renaste moderna fokusportföljen i boken."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "De höga prästerna — modern portföljteori och beta-kritiken",
+      "intro": "Bokens andra kapitel heter The High Priests of Modern Finance, och det är en stridsförklaring: innan fokusinvestering kan hävda sin vetenskaplighet måste den besvara den akademiska ortodoxin — random walk, efficient frontier, beta och den effektiva marknaden. Hagstrom presenterar teoribyggnaden noggrant och med respekt, innan han river dess grundval: definitionen av risk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Byggnaden Hagstrom beskriver har fyra stenar. Louis Bachelier visade redan 1900 i sin avhandling att prisförändringar kan beskrivas som oberoende slumpsteg — random walk. Harry Markowitz gav 1952 teorin sin modern form i Portfolio Selection: avkastning är gott, varians är ont, och kombinationer av tillgångar kan via korrelationen mellan dem placeras på en effektiv front, där risken är minsta möjliga för varje avkastningsnivå. William Sharpe formaliserade med CAPM och betan på sextiotalet: varje tillgångs risk är dess samvariation med marknaden. Eugene Fama sammanfattade 1965-1970 i den effektiva marknadshypotesen, i tre styrkegrader: svag (priset innehåller all historisk prisinformation — teknisk analys är värdelös), semi-stark (all offentlig information — fundamental analys ger inget övertag) och stark (även insiderinformation). Tillsammans: en komplett och vacker teori, med en praktisk slutsats som Bogle byggde en industri på — köp indexet."
+        },
+        {
+          "type": "text",
+          "content": "Hagstrom kallar akademikerna höga präster med avsikt: han menar att teorin på hans tid inte behandlades som en modell med antaganden utan som en trosbekännelse — den som ifrågasatte den var en kättare som snart fick höra att överavkastning är statistiskt omöjlig. Hans respekt är ändå äkta: Markowitz matematik är korrekt givet sina antaganden, Famas tester är hederliga, och slutsatsen — att de flesta aktiva förvaltare efter kostnader slår inte index — är dessutom sann. Kursen noterar att AK1A inte finner något att invända mot indexfundamentet: för den som inte kan eller vill göra jobbet är lågkostnadsindex den rationella standarden. Striden gäller något annat: om det är möjligt att ha ett övertag — och vad risk egentligen är."
+        },
+        {
+          "type": "text",
+          "content": "Beta-kritiken är bokens spets. MPT definierar risk som prisvariation: en aktie som svänger kraftigt är farlig, oavsett varför den svänger. Hagstrom — med Buffett i ryggen — definierar risk som sannolikheten för permanent kapitalförlust, och den sitter i två saker: verksamhetens kvalitet och priset du betalar, inte i kurskurvans formulär. En aktie som fallit hälften och nu handlas med sjuttiofem procents marginal till beräknat värde har hög risk enligt betan (den svänger) och nästan ingen risk enligt Buffett (att den underliggande verksamheten förstörs är osannolikt, och priset skyddar). Omvänt kan en stabil lågbeta-aktie köpt på toppmultipel vara en bomb. Risk, som kursen summerar Hagstrom: ett förhållande mellan dig, verksamheten och priset — inte en egenskap hos aktien. I AKM1:s språk: risken mäts i V10 skuldsättning, V11 likviditet, V19 emissionsrisk och i förhållandet mellan pris och modellerat värde — aldrig i varians."
+        },
+        {
+          "type": "text",
+          "content": "Till kritiken hör också sprickorna i muren, som Hagstrom redovisar från den akademiska litteraturen själv: anomalier — bolag med lågt pris mot bokfört värde som slagit marknaden, småbolagseffekten, januarieffekten, momentum-effekter — som inte ska kunna finnas i en semi-starkt effektiv marknad, och som fick Fama själv att utvidga modellen med faktorer. Hans poäng är inte att anomalin är en köprecept; den är att ortodoxin redan i sina egna tidskrifter varit tvungen att modifiera sig. Bokens strategi blir därför dubbel: acceptera att marknaden är svårförutsägbar och att kostnader äter övertag — och ändå visa, med sannolikhetslära, Kelly-matematik och komplexitetsteori, att oförutsägbarhet inte är samma sak som slump. Det arbetet fortsätter i hela resten av kursen och kulminerar i kontroverskapitlet (kapitel tolv) mot Burton Malkiel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den moderna teorins byggnad — och Hagstroms invändning\",\"rader\":[[\"Byggnadssten\",\"År\",\"Påstående\",\"Invändningen\"],[\"Louis Bachelier\",\"1900\",\"Prisförändringar är oberoende slumpsteg\",\"Oberoende är ett antagande, inte en observation\"],[\"Harry Markowitz\",\"1952\",\"Risk är varians; korrelation ger effektiv front\",\"Varians mäter prisbrus, inte företagsrisk\"],[\"William Sharpe\",\"1963-64\",\"Beta mäter systematisk risk (CAPM)\",\"Beta är ostadigt och mäter fel risk\"],[\"Eugene Fama\",\"1965-1970\",\"EMH: priser innehåller all information\",\"Anomalier och adapterande aktörer spricker mot ren effektivitet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Beta frågar vad aktien gör mot marknaden; Buffett frågar vad verksamheten gör mot priset — den som vill veta vilken fråga som spelar roll ska fråga sig vilken av dem som kan förklara en permanent förlust."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en aktie du äger och leta reda på dess beta hos en datakälla. Räkna sedan två gånger: hur mycket av risken försvinner om du (a) köpte med fyrtio procents marginal under beräknat värde och (b) håller fem år? Skriv en mening om varför betan inte förändrades fastän din risk gjorde det — den meningen är kapitlets hela poäng."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är de tre styrkegraderna i den effektiva marknadshypotesen?",
+          "alternativ": [
+            "Svag, semi-stark och stark — all historisk, all offentlig, respektive all information är prissatt",
+            "Mikro, mellan och makro",
+            "Privat, institutionell och statlig effektivitet",
+            "Pris-, volym- och volatilitetseffektivitet"
+          ],
+          "ratt": 0,
+          "tips": "Gradera handlar om vilken information marknaden redan har sväljt — från kurshistorik till insiderinformation."
+        },
+        {
+          "q": "Vad är kärnan i Hagstroms beta-kritik?",
+          "alternativ": [
+            "Beta är för svårt att beräkna utan datorer",
+            "Beta mäter prisvariation, inte risken för permanent kapitalförlust som sitter i verksamhet och pris",
+            "Beta fungerar bara för obligationer",
+            "Beta gäller enbart för amerikanska storbolag"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vad varians kan förklara: kurssvängningar — inte om företaget förstörs eller om priset skyddar."
+        },
+        {
+          "q": "Vilken hållning intar kursen till indexfonder?",
+          "alternativ": [
+            "Att de är en bluff eftersom marknaden kan besegras",
+            "Att de är den rationella standarden för den som inte gör jobbet — striden gäller möjligheten till övertag, inte indexens berättigande",
+            "Att de bara passar institutioner",
+            "Att de ska kombineras med hög omsättning för att fungera"
+          ],
+          "ratt": 1,
+          "tips": "Hagstrom accepterar att de flesta slår inte index efter kostnader — tesen är att övertag är möjligt, inte att det är lätt."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Buffettville — superinvesterarna och myntkasten",
+      "intro": "Bokens tredje kapitel bygger på Buffetts mest berömda motoffensiv: föreläsningen The Superinvestors of Graham-and-Doddsville, hållen i Columbia 1984 när EMH-akademien firade femtio år av Graham och Dodds Security Analysis. Buffett räknade mynt — och Hagstrom räknar vidare på vad Superinvestorerna hade gemensamt bortom avkastningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Myntkastsexperimentet, som boken återberättar: föreställ er landets alla investerare som en nationell myntkastningstävling — vid varje omgång kastar deltagarna mynt, och de som slår klave går vidare. Efter tjugo omgångar finns cirka 215 kvar av 225 miljoner, och varje överlevande tror nu uppriktigt att han är skicklig — han har ju kastat krona tjugo gånger i rad och har vänner som intygar hans metod. Men om fyrtio av de 215 kommer från en och samma liten by — Buffettville — är slutsatsen obehaglig för slumpförklaringen: det är inte mynten som är begåvade i den byn, det är metoden. Bybornas gemensamma ursprung var Graham och Dodd: köp andelar i verksamheter till pris under värde, med marginal."
+        },
+        {
+          "type": "text",
+          "content": "Rostret, från Buffetts egen redovisning med resultat som kursen återger som cirka-tal: Walter Schloss, knappt tre decennier runt tjugo procent årligen mot index under nio — den mest renlärige Graham-eleven, statistiskt värde utan moat-krav. Tom Knapp och Ed Anderson på Tweedy Browne, femton år kring tjugo mot sju. Bill Ruane och Rick Cunniff med Sequoia, fjorton år kring arton mot sjukommafem. Charlie Munger, tretton år kring tjugo mot fem — kvalitet till rimligt pris. Rick Guerin och Stan Perlmeter, båda kring tjugo mot åtta. Stilarna skiljer sig markant — den ene köper netto-nets, den andra franchisebolag — men beslutsprocessen är densamma, och det är poängen: metoden (margin of safety) är det gemensamma, inte aktievalen."
+        },
+        {
+          "type": "text",
+          "content": "Kursen är skyldig att redovisa argumentets ärliga svaghet, eftersom systerkapitlet i Way-kursen ägnade den en hel genomgång: argumentet är post hoc. Bland tusentals förvaltare och dussintals skolor kommer någon grupp att se ut som en möjstad av ren slump — och efteråt kan man alltid måla en bykarta runt vinnarna. Buffetts svar skulle vara sannolikhetsordningen: att vinnarna dessutom delar en specifik, formulerbar och motiverad process sänker slumpförklaringens trovärdighet — men det eliminerar den inte. Detta är inte en svaghet hos boken utan hos evidensläget: aktielångsiktiga kontrollgrupper finns inte. Bokens svar är därför att lägom till det bättre argumentet — och det kommer i nästa block."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms eget tillägg — och skälet till att kapitlet finns i just den här boken — är att superinvesterarna inte bara delade metod; de delade portföljform. De var koncentrerade: få positioner, låg omsättning, ofta egna pengar i fonden, personligt ansvar för varje beslut. Det är portföljstrukturen som gör metoden verkställbar: marginalen-säkerhets-metoden ger inget övertag om den tillämpas med hundranamars bred och kvartalsomsättning, eftersom kunskapen inte hinner bli djup nog att bli en sannolikhet. Och omvänt: institutionsvärldens karriärrisk — mätas kvartalsvis mot index — gör fokusportföljen strukturellt omöjlig för de flesta fonder, vilka som helst förvaltare. Detta är också länken till psykologikapitlen: den som vill koncentrera måste först lösa mätproblemet (kapitel fem) och flockproblemet (kapitel nio)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Buffettville-investerarna (Buffetts 1984-redovisning, cirka-tal)\",\"rader\":[[\"Namn\",\"Period i redovisningen\",\"Årsresultat\",\"Index\",\"Stil\"],[\"Walter Schloss\",\"1956-1984\",\"cirka 21 %\",\"cirka 8,5 %\",\"statistiskt värde, Graham-skolan\"],[\"Tom Knapp och Ed Anderson\",\"1968-1983\",\"cirka 20 %\",\"cirka 7 %\",\"Tweedy Browne, netto-nets\"],[\"Bill Ruane och Rick Cunniff\",\"1970-1984\",\"cirka 18 %\",\"cirka 7,5 %\",\"koncentrerat värde, Sequoia\"],[\"Charlie Munger\",\"1962-1975\",\"cirka 20 %\",\"cirka 5 %\",\"kvalitet till rimligt pris\"],[\"Rick Guerin\",\"1968-1983\",\"cirka 22 %\",\"cirka 8 %\",\"koncentrerade satsningar\"],[\"Stan Perlmeter\",\"1965-1983\",\"cirka 22 %\",\"cirka 8 %\",\"få, orelaterade positioner\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Byargumentet är oslagbart som förklaring och otillräckligt som bevis: det visar att en gemensam metod är en bättre berättelse än turen — men sanningen om skicklighet kan bara avgöras av den som kan formulera, mäta och reproducera metoden, vilket är precis vad resten av boken försöker."
+        },
+        {
+          "type": "utmaning",
+          "content": "Läs originalet — Superinvestors-föreläsningen, som finns i Essays-kursen — och för en lista över de gemensamma dragen som inte handlar om aktieval: portföljstorlek, omsättning, ansvar, mätfönster. Ranka dragen efter hur svåra de skulle vara för en vanlig fond att kopiera. Den högst rankade svårigheten är sannolikt inte analysen — utan organiseringen runt den."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängen med Buffetts myntkast-tävling i Superinvestors-föreläsningen?",
+          "alternativ": [
+            "Att mynt har minne och därför kan förutsägas",
+            "Att när en oproportionerlig andel vinnare kommer från samma by med samma metod, blir slump en dålig förklaring",
+            "Att alla som kastar mynt vinner på lång sikt",
+            "Att tjugo krona i rad är statistiskt omöjligt"
+          ],
+          "ratt": 1,
+          "tips": "Slumpen förutsäger att någon vinner — men inte att vinnarna ska klunga sig i en metodby."
+        },
+        {
+          "q": "Vad hade superinvesterarna enligt Hagstrom gemensamt utöver hög avkastning?",
+          "alternativ": [
+            "Samma aktieval och samma branscher",
+            "Formel för teknisk analys",
+            "Samma beslutsprocess (margin of safety) och samma portföljform: få positioner, låg omsättning, eget ansvar",
+            "Alla förvaltade pengar åt samma uppdragsgivare"
+          ],
+          "ratt": 2,
+          "tips": "Stilarna skilde sig — processen och portföljarkitekturen var det gemensamma."
+        },
+        {
+          "q": "Vilken svaghet i byargumentet är kursen skyldig att redovisa?",
+          "alternativ": [
+            "Att Schloss resultat var lägre än index",
+            "Att argumentet är post hoc — vinnargrupper kan målas upp efteråt bland tusentals skolor",
+            "Att föreläsningen aldrig hölls offentligt",
+            "Att Graham och Dodd inte fanns i Columbia"
+          ],
+          "ratt": 1,
+          "tips": "Kontrollgrupper saknas — därför är argumentet en förklaringsförbättring, inte ett bevis."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Ett bättre sätt att mäta resultat",
+      "intro": "Bokens fjärde kapitel, A Better Way to Measure Performance, angriper en tyst orsak till att koncentration misslyckas i praktiken: mätningen. Den som mäter en fokusportfölj kvartalsvis mot index har byggt ett system som bestraffar metoden den är avsedd att utvärdera — och Hagstrom, som själv förvaltade en fokusfond, redovisar öppet hur det känns.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Problemet börjar med mätinstrumentet. Standarden i branschen är kvartals- eller årsjämförelse mot index och stilfack: slog fonden sitt jämförelseindex det senaste året, och slog den sina stilskompisar? Ett sådant fönster premierar det som fungerar på tolv månader — vilket per definition inte är koncentrerat värdearbete utan aktivitet, timing och tur. Resultatet är köptvånget att alltid ligga nära index (synligt avvikelsedrag, tracking error) medan man samtidigt tar betalt för aktiv förvaltning: indexhuggning i aktiv förklädnad. Hagstrom utesluter inte heller det uppenbara: omsättningen har en direkt kostnad — courtage, spread och skatt — och den indirekta: varje onödigt byte är ett beslut där cirkelkunskapen sätts på spel. I AK1A:s språk: mätningen är en del av strategin, inte en rapport om den."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms alternativ har tre principer. För det första: rullande flerårsfönster — tre, fem och tio år, gärna över en hel konjunkturcykel — eftersom sannolikheten att en noga vald portfölj slår index stiger med holding perioden: på kort sikt dominerar brus, på lång sikt dominerar värdet. För det andra: mät först omsättningen som en kostnadspost, inte som aktivitetstecken — låg omsättning är i fokusinvesteringsvärlden ett kvalitetsmått. För det tredje: skilj på utfallets form och utfallets riktning — en fokusportfölj slår inte index jämnt och stadigt; den slår i klumpar, under år då en eller två positioner får sällskap av marknadens omvärdering, och den kan ligga under flera år i rad innan klumpen kommer. Den som inte kan beskriva den kurvan för sina uppdragsgivare i förväg har inte skyldighet att köra strategin."
+        },
+        {
+          "type": "text",
+          "content": "Bokens mest berörande parti är personligt: Hagstrom redovisar sitt eget förvaltarskap — Legg Mason Focus Trust — med kvartalsvis historik, inklusive perioder av kraftigt underläge mot index, och analysen av vad det gjorde med honom, fonden och investerarna. Poängen är dubbel. För det första ärligheten: författaren till boken om koncentration ligger själv under index vissa perioder — och skriver ut det. För det andra pedagogiken: mätproblemets lösning är inte starkare nerver utan rätt fönster; den som mäter sig själv kvartalsvis kommer att handla kvartalsvis, oavsett vad han svurit. Hagstroms formulering, återgiven i kursens översättning: det är inte nog att ha rätt — man måste också ha rätt på ett sätt som går att uthärda medan det pågår."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen är rak och praktisk. Våra analyser bär fem tidshorisonter och portföljbyggaren loggar utfall per beslut, inte per kvartal — vilket gör det möjligt att mäta processföljsamhet (följdes checklistan?) skilt från utfall (blev det rätt?), en distinktion som i kursen Tanka-snabbt-och-langssamt kallas process mot resultat. Kursens tumregel till eleven: skriv ner i förväg vilket fönster du kommer att döma dig själv med — och gör det innan du köper något. Ett dokumenterat fönster är den billigaste beteendeförbättring som finns: det räddar dig från att klassificera varje svacka som fel och varje klump som geni."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två sätt att mäta en förvaltare\",\"rader\":[[\"Fråga\",\"Konventionell mätning\",\"Fokusinvesterarens mätning\"],[\"Fönster?\",\"kvartal eller ett år\",\"rullande tre, fem, tio år\"],[\"Jämförelse?\",\"index och stilfack\",\"index över hela cykler\"],[\"Omsättning?\",\"accepterad, ibland uppmuntrad\",\"en kostnad som ska motiveras\"],[\"Godkänt när?\",\"slår ofta, lite\",\"slår sällan men stort och ihärdigt\"],[\"Konsekvens\",\"kort spelhorisont\",\"tålighet strukturellt belönad\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Hur du mäter bestämmer hur du handlar: den som mäter kvartalsvis kommer att handla kvartalsvis — mätningen är inte en beskrivning av strategin, mätningen är strategin."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ut din egen personliga holding period: hur många år behåller du ett innehav i genomsnitt? (En enkel approximation: hundra procent delat med din årliga omsättningshastighet.) Jämför sedan med det fönster du brukar motivera dina köp med — om motiveringen är femårig men omsättningen är åttio procent per år har du just dokumenterat gapet mellan din strategi och din mätning. Skriv ner vilket fönster du framöver kommer att döma dig själv med."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför stiger sannolikheten att en noga vald portfölj slår index med holding perioden?",
+          "alternativ": [
+            "För att aktier alltid stiger på lång sikt",
+            "För att bruset dominerar kort sikt och värdet dominerar lång sikt — tiden låter fundamentals tränga igenom",
+            "För att index byter sammansättning varje år",
+            "För att mäklaravgifterna sjunker med tiden"
+          ],
+          "ratt": 1,
+          "tips": "Kort horisont är ett myntkast om sentiment; lång horisont är ett viktat genomsnitt av verksamheternas kassaflöden."
+        },
+        {
+          "q": "Vad menas med indexhuggning i aktiv förklädnad?",
+          "alternativ": [
+            "En fond som köper indexfonden och tar högre avgift",
+            "En aktivt förvaltad fond som av karriärrisk håller sig så nära index att den varken kan slå det rejält eller avvika rejält",
+            "En fond som enbart handar indexoptioner",
+            "En fond som mäter sig mot fel index"
+          ],
+          "ratt": 1,
+          "tips": "Orsaken är mätningen: synlig avvikelse bestraffas kvartalsvis — så avvikelsen tas bort, och med den möjligheten till övertag."
+        },
+        {
+          "q": "Vilken form har en fokusportföljs överavkastning enligt boken?",
+          "alternativ": [
+            "Jämn och stabil varje kvartal",
+            "Endast under börsmarknadskrascher",
+            "I klumpar — underliggande perioder följs av år då få positioner driver utfallet",
+            "Exponentiellt ökande varje år"
+          ],
+          "ratt": 2,
+          "tips": "Koncentrationens natur: få stora satsningar ger få stora utfall — inte en slät kurva."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Verktygsbältet — från principer till sannolikheter",
+      "intro": "Bokens femte kapitel, The Warren Buffett Way Tool Belt, är bryggan mellan de två böckerna: de tolv principerna från Way återkommer — men inte som en repetition, utan som ett verktygsbälte vars egentliga uppgift är att omvandla kvalitativa omdömen till något matematiken kan arbeta med: sannolikheter och väntevärden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursen upprepar inte principerna här — det är Way-kursens arbete: tre företagsprinciper (cirkeln, den konsekventa historien, franchisen), tre ledningsprinciper (rationalitet, candor, det institutionella imperativet), fyra finansprinciper (ROE, owners earnings, marginaler, dollartestet) och två marknadsprinciper (intrinsic value, köp med marginal). Portfolio-bokens tilläggsfråga till varje princip är ny: vad blir kvar när du är klar? Svaret är inte en recension utan en siffra — hur sannolikt är det att detta bolag compoundingar sina owners earnings det nästa decenniet? Först när analysen kan skrivas om som sannolikhetsuttalanden är den, i bokens mening, färdig — och redo att mata kapitel sex och sju (sannolikhetsläran och Kelly)."
+        },
+        {
+          "type": "text",
+          "content": "Första verktyget i bältet är cirkeln, och dess roll är epistemisk: sannolikhetsskattningar från någon som inte förstår verksamheten är inte osäkra — de är meningslösa, dekorerade med decimaler. Kursen påminner om AKM1:s motsvarighet: att poängsätta V12 intäktsstabilitet eller V13-V15 moat kräver cirkelkunskap; utan den är poängen gissningar med formatskydd. Andra verktyget är owners earnings-serien — inte en ettårssiffra utan en tioårig serie, eftersom serien är det som motiverar antaganden om framtiden. Tredje verktyget är marginalen: avståndet mellan pris och värde är vad som gör ett positivt väntevärde troligt nog att agera på. Bältet är alltså inte tolv frågor — det är tre frågor (förstår jag? växer kassaflödet? är priset rätt?) som genererar en fjärde: hur sannolikt?"
+        },
+        {
+          "type": "text",
+          "content": "Därmed väntevärdet. Buffett formulerade aritmetiken i årsbrevet 1989 i samband med arbitrage, citerad i boken och här i kursens översättning: ta sannolikheten för förlust gånger den möjliga förlusten, och dra den från sannolikheten för vinst gånger den möjliga vinsten — det är väntevärdet. Kursens exempelräkning på ett vanligt fokusinvesteringsobjekt: tre scenarier med sannolikheter som summerar till ett — tjurscenario tjugofem procent sannolikhet med hundrafemtio procents uppsida, basscenario femtio procent med sextio procents uppsida, björnscenario tjugofem procent med minus trettio procent. Väntevärdet blir tjugofem gånger etthundrafemtio plus femtio gånger sextio minus tjugofem gånger trettio — plus sextio procent. Tabellen nedan är mallen; utmaningen låter eleven köra den själv."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s industrialisering av verktygsbältet är AKM1: tjugo variabler, noll till fem poäng, sammanvägt max hundra — en checklista som gör sannolikhetsbedömningen spårbar: hög AKM1-poäng med stor marginal motiverar en hög subjektiv sannolikhet i basscenariot, och varje poängsänkning ska gå att peka ut i underlaget. I ak1a-analys-skicket flödar bedömningen vidare: scenariotabellen blir indata till Monte Carlo, sannolikheterna omviktas bayesianskt när ny evidens anländer (kapitel sju), och positionstorleken tas ur Kelly-logiken (kapitel åtta). Verktygsbältet är därmed inte en metafor — det är en pipeline, och eleven sitter i första ledet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från analys till väntevärde — exempelräkningen\",\"rader\":[[\"Scenario\",\"Sannolikhet\",\"Kursutfall på 3 år\",\"Vägt bidrag\"],[\"Tjur: moaten breddas\",\"0,25\",\"+150 %\",\"+37,5 %\"],[\"Bas: moaten håller\",\"0,50\",\"+60 %\",\"+30 %\"],[\"Björn: vallgraven bryts\",\"0,25\",\"-30 %\",\"-7,5 %\"],[\"Väntevärde (EV)\",\"1,00\",\"—\",\"+60 %\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Analysen är inte klar när den är läst — den är klar när den kan skrivas som sannolikheter och utfall; dessförinnan är den en åsikt med fotnoter."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett bolag du känner väl — gärna ett från Way-kursens fall — och bygg scenariotabellen: tre scenarier, sannolikheter som summerar till ett, och ett utfall i procent per scenario. Räkna väntevärdet. Om du inte vågar sätta sannolikheter har du inte analyserat, bara läst — och om väntevärdet är klart positivt men positionen i din portfölj är minimal: vad är det som stoppar dig? (Svaret kommer i kapitel åtta och nio.)"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är verktygsbältets egentliga uppgift i Portfolio-boken?",
+          "alternativ": [
+            "Att ersätta de tolv principerna med tekniska nyckeltal",
+            "Att omvandla kvalitativa omdömen till sannolikheter och väntevärden som matematiken kan arbeta med",
+            "Att mäta portföljömsättningen",
+            "Att rangordna branscher efter beta"
+          ],
+          "ratt": 1,
+          "tips": "Way gav principerna; Portfolio kräver att de landar i en siffra — hur sannolikt?"
+        },
+        {
+          "q": "Hur formulerade Buffett väntevärdet i årsbrevet 1989?",
+          "alternativ": [
+            "Vinstsannolikheten gånger möjlig vinst minus förlustsannolikheten gånger möjlig förlust",
+            "Kursens volatilitet dividerad med riskfri ränta",
+            "Bokvärdet minus börsvärdet dividerat med antal aktier",
+            "Genomsnittet av de tre senaste årens vinsttillväxt"
+          ],
+          "ratt": 0,
+          "tips": "Formeln är enkel — svåra delen är sannolikheterna, och det är kapitel sju och åttas ämne."
+        },
+        {
+          "q": "Vad blir väntevärdet i kursens exempeltabell (0,25 × +150 %, 0,50 × +60 %, 0,25 × −30 %)?",
+          "alternativ": [
+            "+15 %",
+            "+60 %",
+            "+120 %",
+            "+30 %"
+          ],
+          "ratt": 1,
+          "tips": "37,5 + 30 − 7,5 = 60 — räkningen är aritmetik; sannolikheterna är hantverket."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Sannolikhetsläran — Pascal, Fermat och Bayes",
+      "intro": "Bokens sjätte kapitel — matematikens första halva — börjar år 1654 med två brev mellan Blaise Pascal och Pierre de Fermat, och slutar med en fråga som definierar investerarens hantverk: är sannolikhet en egenskap i världen eller ett omdöme i huvudet? Kursen kopplar hela vägen till bayesskripten i ak1a-analys.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Historien börjar med hasardspelaren Chevalier de Méré, som ställde två frågor till Pascal: hur ska insatserna delas rätt i ett avbrutet spel (the problem of points), och hur sannolikt är det att slå en sexa på fyra kast? Pascal och Fermats brevväxling 1654 om att fördela potten efter spelarnas framtida vinstchanser — inte efter vad som hänt — betraktas som sannolikhetslärans födelse: rättvisa skulle beräknas ur vad som kunde hända, vägt med sannolikhet. Kursen noterar genast kopplingen: att dividera en potter rätt är samma tankegång som väntevärdet i kapitel sex — och hela kursen Against the Gods (som finns i kanon) bygger vidare på denna historia; här tas bara det som Portfolio-boken behöver."
+        },
+        {
+          "type": "text",
+          "content": "Därefter skiljer boken två tolkningar — och valet är inte akademiskt utan bestämmer vad en investerare ens kan påstå. Frekventistisk skola: sannolikhet är den långsiktiga frekvensen i upprepbara försök — en tärning har en sjättedelschans eftersom frekvensen konvergerar mot den. Subjektiv-bayesianska skolan: sannolikhet är en grad av tro som uppdateras av evidens — från Thomas Bayes essä 1763 och Laplace vidareutveckling. Hagstroms argument, med Buffett i ryggen: börsens händelser är inte upprepbara identiska försök — Coca-Cola 1988 existerar exakt en gång — därför är investerarens sannolikhet oundvikligen subjektiv. Buffetts praktik, som boken återger i kursens översättning: vi arbetar med att tilldela sannolikheter och räkna på dem — hantverket är att göra omdömet disciplinerat, inte att låtsas att det är en frekvens."
+        },
+        {
+          "type": "text",
+          "content": "Den bayesianska maskinen har tre växlar: prior (utfallsbedömningen före ny evidens), likelihood (hur mycket mer sannolik evidensen är om hypotesen är sann än om den är falsk) och posterior (den uppdaterade tron). Kursens exempel med odds-formeln, som är lättast att räkna i huvudet: prior på att ett bolags moat överlever tio år sätts till ett mot ett (femtio procent). Evidens ett: bolaget höjer priset utan volymförlust — bedöms dubbelt så sannolik om moaten är äkta; oddset blir två mot ett, posterior cirka sextiosju procent. Evidens två: ny konkurrent med kapital backar — bedöms en och en halv gång mer sannolik om moaten är svag; oddset går tillbaka till ungefär fyra mot tre, posterior kring femtiosju procent. Poängen är inte siffrorna utan rörelsen: varje kvartalsrapport, prishöjning och konkurrenshändelse är evidens, och eleven som inte uppdaterar har inte en åsikt — den har en föråldrad sådan."
+        },
+        {
+          "type": "text",
+          "content": "Här landar kursen i ekosystemet: ak1a-analys-skicket kör exakt denna struktur i sina bayesskript — AKM1-poängen från senaste analysen är priorn, nya kvartalsdata (marginaler, orders, prishöjningar) och AK1TS-signaler är evidensen, och den bayesianska omviktningen producerar en posterior som styr viktningen vidare i Monte Carlo och Kelly-beräkningen. Skillnaden mot gurumodellen är fundamental: skripten tvingar fram skrivna sannolikheter, synliga likelihoodantaganden och en logg av uppdateringar — omdömet är fortfarande människans, men det är inte längre dolt. Det är också bokens budskap, femton år före vår tid: sannolikhetstänkandet är fokusinvesterarens kärnkompetens, och det kan tränas — inte för att man får rätt ofta, utan för att man vet hur fel man var och varför."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två sannolikhetskolor\",\"rader\":[[\"Fråga\",\"Frekventistisk skola\",\"Bayesianska skolan\"],[\"Vad är sannolikhet?\",\"långsiktig frekvens i upprepbara försök\",\"grad av tro, uppdaterad av evidens\"],[\"Kan sannolikheten för ett unikt utfall sägas?\",\"nej — bara frekvenser\",\"ja — som prior som blir posterior\"],[\"Hur hanteras ny information?\",\"ny data, ny frekvensberäkning\",\"Bayes: posterior är prior gånger likelihood, normaliserad\"],[\"Passar börsen?\",\"tärningen har inga minnen — men bolag är inte tärningar\",\"ja: analytikerns omdöme formaliserat och granskbart\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "På börsen finns inga identiska omkast: sannolikheten är inte en egenskap som upptäcks utan ett omdöme som uppdateras — den som inte kan säga vilken evidens som skulle ändra hennes siffra har ingen siffra, bara en hållning."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör en bayesiansk kedja för hand, som skripten gör automatiskt: välj ett bolag och sätt en prior (sannolikhet att owners earnings dubblas på fem år). Skriv ner tre kommande evidenser — en kvartalsrapport, en prishöjning, en konkurrenshändelse — och bedöm för varje hur mycket mer sannolik den är om hypotesen stämmer. Uppdatera oddsen steg för steg. Jämför din posterior med hur stor din position är: storleken ska följa sannolikheten, och gapet mellan dem är nästa kapitels ämne."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var problem of points som Pascal och Fermat löste 1654?",
+          "alternativ": [
+            "Hur man vinner på roulette med dubbling",
+            "Hur en avbruten spelomgångs pott ska delas rätt — efter framtida vinstchanser, inte historien",
+            "Hur man beräknar bokvärde per aktie",
+            "Hur många kast som krävs för att slå en sjättedel med säkerhet"
+          ],
+          "ratt": 1,
+          "tips": "Lösningen vägde vad som kunde hända med sannolikhet — väntevärdestänkandets födelse."
+        },
+        {
+          "q": "Varför hävdar boken att investerarens sannolikhet oundvikligen är subjektiv?",
+          "alternativ": [
+            "För att aktier inte har some historiska data",
+            "För att börsens händelser inte är upprepbara identiska försök — varje situation är unik",
+            "För att frekventistisk statistik är matematiskt fel",
+            "För att börser är stängda på natten"
+          ],
+          "ratt": 1,
+          "tips": "Frekvenser kräver upprepning under samma villkor — Coca-Cola 1988 existerar exakt en gång."
+        },
+        {
+          "q": "I kursens bayesexempel: prior ett mot ett, evidens dubbelt så sannolik om hypotesen stämmer — vad blir posterior?",
+          "alternativ": [
+            "Cirka 33 %",
+            "Cirka 50 %",
+            "Cirka 67 %",
+            "Cirka 95 %"
+          ],
+          "ratt": 2,
+          "tips": "Ett mot ett blir två mot ett efter oddsuppdatering — och två mot ett är cirka sextiosju procent."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Kelly-formeln — position sizingens matematik",
+      "intro": "Bokens sjätte kapitels andra halva är dess mest kända bidrag: Kelly-formeln, som besvarar frågan sannolikhetsläran ställer — givet att du kan skatta en sannolikhet, hur stor ska satsningen vara? Kursen går igenom formeln med fullständiga räkneexempel, dess historia från Bell Labs till blackjack-borden, och det medgivande som måste göras: full Kelly är i praktiken ruinerande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Historien: 1956 publicerade John Kelly vid Bell Labs en uppsats som kopplade Shannon informationsteori till hasardspel — om en spelare får brusiga tips om utfallet, hur stor andel av banken ska hon satsa per spel för att banken ska växa snabbast på lång sikt? Kellys svar är berömt: satsa andelen av banken som motsvarar ditt information övertag. Ed Thorp tog formeln till blackjack-borden i Beat the Dealer (1962), bevisade att kortleken kunde besegras med korträkning och Kelly-storlekar, och bar med sig samma matematik till Wall Street — historien som boken återberättar och som senare skildrats i Thorps memoarer A Man for All Markets (utanför boken). Buffetts koncentration, argumenterar Hagstrom, är Kelly-logik tillämpad utan formel: satsa mer där övertaget är störst — med Buffett-formuleringen från årsbreven i bakgrunden: diversifiering skyddar mot okunnighet men ger liten mening för den som vet vad den gör, alltså är koncentrationen motstycket."
+        },
+        {
+          "type": "text",
+          "content": "Formeln i två skepnader. Vid jämna odds (vinner eller förlorar insatsen): optimal andel f är två gånger vinstsannolikheten p minus ett — exempel: p sextio procent ger två gånger noll komma sex minus ett, tjugo procent av banken. Allmänt med odds b (vinner b kronor per satsad krona): f stjärna är b gånger p minus q delat med b, där q är förlustsannolikheten. Kursens exempel ett: vinstchans trettiofem procent, odds tre mot ett — tre gånger noll komma trettiofem minus noll komma sextiofem, delat med tre: ungefär tretton procent. Exempel två, från Buffetts arbitrage-typ i årsbrevet 1989: nittio procents vinstchans på en halv insats — väntevärdet är halva gånger noll komma nio minus noll komma en: plus noll komma trettiofem per krona; Kelly ger noll komma fyrtiofem delat med noll komma fem: sjuttio procent av banken. Teorin bjuder sjuttio procent — och därmed är vi framme vid kapitlets viktigaste läsning."
+        },
+        {
+          "type": "text",
+          "content": "Medgivandet, som kursen är skyldig att formulera lika starkt som boken varnar: full Kelly är ruinerande i praktiken. Tre skäl. För det första: formeln förutsätter att sannolikheten är känd — på börsen är den skattad, och skattningsfelet slår asymmetriskt, eftersom överskattad p ger överskattad storlek just när risken är störst. För det andra: full Kelly maximera den långsiktiga tillväxttakten till priset av väldiga svängningar — den som satsar fullt Kelly länge kommer statistiskt oundvikligen att se banken halveras, och de flesta människor slutar spela innan matematiken hinner gå i lås. För det tredje: börsens satsningar är inte oberoende — en portföljs bolag faller ofta tillsammans, vilket bryter Kellys antaganden. Professionell standard är därför halv Kelly eller lägre: med halv Kelly behåller man grovt tre fjärdedelar av tillväxttakten med hälften av svängningarna — det bästa riskavtalet som finns i matematiken, skriver Thorp-skolan, och det är standarden i AK1A:s egna Kelly-moduler."
+        },
+        {
+          "type": "text",
+          "content": "För ekosystemet är detta kapitlet som förenar boken med portfoljbyggaren: positionstorlekar i verktyget räknas fram ur väntevärde och konfidens enligt Kelly-logik med tak — aldrig full Kelly, alltid bråkdel, och maxpositioner oavsett hur övertygande sannolikheten känns (även Simpsons och Buffetts största positioner låg betydligt under fulla Kelly-nivåer — vilket i sig är beviset: världens främsta Kelly-tillämpare lät aldrig formeln bestämma ensam). Kursens tumregel till eleven, tre steg: en — skatta väntevärdet med scenariotabellen från kapitel sex; två — översätt konfidensen till Kelly-andel; tre — halvera den, och fråga dig sedan om du tål att positionen halveras i pris utan att du säljer. Om svaret är nej är positionen för stor — oavsett vad formeln säger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kelly-räkneexempel — tre fall\",\"rader\":[[\"Fall\",\"Odds b\",\"Vinstchans p\",\"Väntevärde per krona\",\"Full Kelly\",\"Halv Kelly\",\"Praktisk läsning\"],[\"Jämn bet med övertag\",\"1,0\",\"0,60\",\"+0,20\",\"2×0,60-1 = 0,20 → 20 %\",\"10 %\",\"Bokens standardexempel\"],[\"Ojämn bet, djupt värdefall\",\"3,0\",\"0,35\",\"3×0,35-0,65 = +0,40\",\"(1,05-0,65)/3 ≈ 0,133 → 13 %\",\"cirka 7 %\",\"högt utfall köper lägre sannolikhet\"],[\"Buffett-arbitrage 1989-typ\",\"0,5\",\"0,90\",\"0,5×0,90-0,10 = +0,35\",\"(0,45-0,10)/0,5 = 0,70 → 70 %\",\"35 %\",\"teorin bjuder 70 % — korrelerade, icke-binära, felbedömda sannolikheter gör att proffs satsar en bråkdel\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Kelly översätter inte säkerhet till sanning — den översätter övertag till storlek, och det är två olika yrken: den som bara kan det första slår index i beräkningar och förlorar i portföljen; frågan vid varje köp är alltid hur stort, aldrig bara hur bra."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör tre varianter i portfoljbyggaren på samma analysunderlag: full Kelly, halv Kelly och fjärdedels Kelly. Jämför den simulerade portföljens största svacka och slutvärde efter tio år. Skriv därefter en mening om vilken kurva du faktiskt skulle orka bo i — svaret på den frågan är din verkliga risktolerans, och den ska styra valet av bråkdel, inte tvärtom."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad blir full Kelly vid jämna odds med vinstchansen 55 procent?",
+          "alternativ": [
+            "5 procent av banken",
+            "10 procent av banken",
+            "55 procent av banken",
+            "45 procent av banken"
+          ],
+          "ratt": 1,
+          "tips": "Formeln är två p minus ett: två gånger noll komma femtiofem minus ett — tio procent."
+        },
+        {
+          "q": "Vilka tre skäl gör full Kelly ruinerande i praktiken enligt kursen?",
+          "alternativ": [
+            "Hög courtage, valutarisk och skatt",
+            "Skattningsfel i sannolikheten, enorma svängningar som tvingar spelaren sluta, och korrelerade satsningar",
+            "Att formeln kräver dator, gäller bara blackjack och är olaglig",
+            "Att börsen har öppettider, courtage och index"
+          ],
+          "ratt": 1,
+          "tips": "Känd sannolikhet, oberoende satsningar och järnnerv är antaganden — börsen uppfyller inget av dem."
+        },
+        {
+          "q": "Vad är förhållandet mellan tillväxttakt och svängning vid halv Kelly?",
+          "alternativ": [
+            "Halva tillväxttakten och dubbla svängningarna",
+            "Grovt tre fjärdedelar av tillväxttakten med hälften så stora svängningar",
+            "Samma tillväxttakt utan svängningar",
+            "Tio procent tillväxt oavsett övertag"
+          ],
+          "ratt": 1,
+          "tips": "Det är därför halv Kelly är professionell standard: man ger av lite tillväxt och får mycket lugn — och överlever skattningsfelet."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Psykologin I — flocken, skönhetstävlingen och karriärrisken",
+      "intro": "Bokens sjunde kapitel börjar utanför individen: i gruppen. Innan koncentration kan fungera måste förvaltaren förstå varför marknaden beter sig som en flock — Keynes skönhetstävling, Asch konformitetsexperiment och den karriärrisk som gör att proffs hellre misslyckas konventionellt än lyckas okonventionellt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Keynes beskrev i General Theory (1936) den professionella investerarens dilemma med en tidningstävling: läsarna ska välja de sex vackraste ansiktena ur ett urval, och priset går inte till den som väljer de vackraste — utan till den vars val ligger närmast genomsnittet av alla andras val. Därmed handlar det inte om att bedöma skönhet utan om att gissa genomsnittets uppfattning om genomsnittet — en kedja av speglingar. Börsen, menade Keynes, lider av samma struktur: den som handlar på vad hon tror att marknaden kommer att tro, har lämnat verksamheterna bakom sig och går in i en oändlig regress av åsikter om åsikter. Fokusinvesterarens svar är att vägra spela: bedöm bolaget, prissätt kassaflödet, låt spegelkedjan vara — det är därför cirkeln och owners earnings är socialt oberoende verktyg: de kräver ingen omgivningens bekräftelse."
+        },
+        {
+          "type": "text",
+          "content": "Flockens mekanik är experimentellt belagd, och boken hämtar från socialpsykologin. Solomon Asch linjeexperiment på femtiotalet: försökspersoner som öppet ser att en linje är längre nekar att se det när alla före dem i gruppen påstår motsatsen — konformiteten ändrar inte bara beteendet utan upplevelsen; människor börjar se med gruppens ögon. I marknadens översättning: konsensus är inte bara en social press utan en perceptuell — kurtor som alla faller ser farligare ut än de är, och berättelser som alla upprepar känns sannare än de är. Därtill kommer panikens och euforins kollektiva former — folkgalenskaper från tulpaner till dotcom, som kursen crossreferar till Extraordinary Popular Delusions och Manias, Panics and Crashes i kanon: gruppen förstärker sig själv tills brusset slår om."
+        },
+        {
+          "type": "text",
+          "content": "Nyckeln till varför proffs flockas trots att de borde veta bättre finns hos Keynes igen, citerad i boken: världslig visdom lär att det är bättre för ryktet att misslyckas konventionellt än att lyckas okonventionellt. En förvaltare som håller indexets aktier och förlorar har otur; en som höll en koncentrerad portfölj av noga valda bolag och underpresterade har fel — samma utfall, helt olika karriär. Detta är den institutionella mekanism bakom indexhuggningen i kapitel fem: det institutionella imperativet, som Way-kursen mötte på bolagsnivå, har en portföljnivå-tvilling. Konsekvensen för eleven är uppmuntrande och obekväm på en gång: den privata, långsiktiga investeraren med eget kapital har ett verkligt strukturellt övertag över proffsen — ingen benchmark, ingen karriär, ingen kund som ringer i botten — men bara om hon organiserar sig så att fördelen inte äts upp av de inre biases (kapitel tio)."
+        },
+        {
+          "type": "text",
+          "content": "Fokusinvesterings sociala problem är nämligen specifikt: den koncentrerade portföljen ser fel ut ensam, under långa perioder, utan flockens bekräftelse — och den som lämnas ensam med en underpresterande portfölj söker sällskap, och sällskapet köper det som går upp just då. Motgiften är strukturellt, inte moraliskt: en skriven investeringspolicy (vad jag äger och varför, på ett blad), ett på förhand dokumenterat mätfönster (kapitel fem), en beslutsjournal som visar att processen följdes även när det gjorde ont, och en miljö som belönar process och inte kvartal. I AK1A:s organisering är detta utbildnings- och kvalitetsorganens uppgift: granska processen, inte svängningarna i dagens kurslista — och i eleven privatliv: en vän som frågar följde du checklistan? i stället för vad köpte du?."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Flockens mekanismer och motgiften\",\"rader\":[[\"Mekanism\",\"Klassiskt belägg\",\"Marknadsyttring\",\"Strukturellt motgift\"],[\"Skönhetstävling\",\"Keynes tidningstävling, General Theory 1936\",\"handla på vad andra tror att andra tror\",\"värdera verksamheten, inte åsiktskedjan\"],[\"Konformitet\",\"Asch: linjer bedöms fel under grupptryck\",\"konsensusköp; det alla faller ser farligt ut\",\"skriftlig, egen analys\"],[\"Karriärrisk\",\"Keynes: bättre misslyckas konventionellt\",\"fonter jagar varandra och indexet\",\"lång privat horisont utan benchmark\"],[\"Panik och eufori\",\"Mackays folkgalenskaper\",\"bubblor och krascher\",\"förutbestämda korridorer och positionsregler\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Konformiteten är inte dumhet — den är karriärsäkerhet: därför är privatpersonens unika fördel inte information eller intelligens utan frånvaron av någon som kräver att hon ser ut som alla andra just detta kvartal."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner tre tillfällen då du köpt eller sålt något på grund av omgivningen — en rekommendation, en kursrörelse alla pratade om, en rädsla för att hamna utanför. Bedöm varje beslut mot vad en skriven policy (cirkel, marginal, AKM1-poäng) skulle ha sagt. Räkna sedan ut flockens pris: vad har de tre besluten kostat eller förtjänat? Siffran är din personliga budget för varför struktur lönar sig."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängen med Keynes skönhetstävling?",
+          "alternativ": [
+            "Att skönhet kan mätas objektivt",
+            "Att priset går till den som gisser genomsnittets uppfattning om genomsnittet — en spegelkedja av åsikter",
+            "Att tidningar påverkar kurser mer än fundamenta",
+            "Att tävlingar alltid har en vinnare"
+          ],
+          "ratt": 1,
+          "tips": "Börsens version: den som handlar på vad marknaden kommer att tro har lämnat verksamheterna — och det är spel, inte analys."
+        },
+        {
+          "q": "Vad visade Asch linjeexperiment?",
+          "alternativ": [
+            "Att människor ser bättre i grupp",
+            "Att gruppkonsensus kan få individen att förneka det hon öppet ser — konformiteten påverkar upplevelsen, inte bara beteendet",
+            "Att linjer är svåra att bedöma utan måttstock",
+            "Att investerare är rationella i enskildhet"
+          ],
+          "ratt": 1,
+          "tips": "Det farliga är inte att folk ljuger om vad de ser — utan att de börjar se med gruppens ögon."
+        },
+        {
+          "q": "Vad menar Keynes med att det är bättre att misslyckas konventionellt?",
+          "alternativ": [
+            "Att konventionella portföljer alltid går bättre",
+            "Att karriärrisken gör att proffs väljer att avvika så lite som möjligt — även om det eliminerar övertaget",
+            "Att okonventionella strategier är olagliga för fonder",
+            "Att index alltid slår aktiva förvaltare"
+          ],
+          "ratt": 1,
+          "tips": "Samma utfall, olika skuld: den som förlorar med indexet har otur — den som förlorar ensam med en övertygelseposition har fel."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Psykologin II — förlustaversion, självsäkerhet och temperamentets arkitektur",
+      "intro": "Efter flocken vänder boken blick mot individen: beteendefinansens fynd om förlustaversion, överdriven självsäkerhet, överreaktion och ankare — och slutsatsen att temperament inte är en personlighet utan en arkitektur: regler skrivna innan de behövs.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundfyndet är Kahneman och Tverskys prospect theory (1979): förluster väger ungefär dubbelt så tungt som lika stora vinster. Konsekvensen för portföljen är omedelbar: den som kontrollerar sina innehav dagligen upplever dubbelt så mycket smärta som glädje — och eftersom dagliga kurser är ungefär myntkast är känslomässiga budgeten strukturellt negativ, fastän portföljen kan växa fint. Fenomenet har ett namn, myopic loss aversion: kortsynt förlustaversion, frekvent kontroll av ett brusigt mått. Kursens recept låter banalt och är det svåraste i hela boken: titta mer sällan — kvartalsvis prisgranskning räcker för den som äger verksamheter, eftersom priset mellan rapporterna inte är information om bolaget utan om känslorna hos den som senast handlade."
+        },
+        {
+          "type": "text",
+          "content": "Därtill de övriga fynden boken sammanställer. Överdriven självsäkerhet: studierna av hushålls handel (Barber och Odean) visar att de mest aktiva kvartilerna avkastar sämst — aktivitet och kompetens har negativ korrelation när kostnader och timingluckor räknas in; övertron mäts i omsättning. Överreaktion: De Bondt och Thaler visade 1985 att förloraraktier i genomsnitt slår vinnaraktier under de följande åren — marknaden extrapolerar det senaste, och med cirka tjugofem procents utfallsdifferens över tre år är överreaktionen ett av de kraftigaste dokumenterade mönstren. Ankare: inköpspriset blir en mental referenspunkt som stör värderingen av framtida kassaflöden — aktien är varken billigare för att du köpte den dyrt eller dyrare för att du köpte billigt. Bekräftelse: efter köpet söker ögat det som rättfärdigar köpet. Mr Market, skriven 1949, var en beteendevetenskaplig apparat före beteendevetenskapen — kapitel två i Way-kursen var alltså psykologi."
+        },
+        {
+          "type": "text",
+          "content": "Temperamentet är strategy, vilket boken driver med två citat. Munger har formulerat det: den stora pengarna ligger inte i köpet och försäljningen utan i väntandet — inaktivitet är inte lättja utan en beslutsregel: varje onödig transaktion sätter cirkelkunskapen på spel. Buffett har sammanfattat mekanismen: aktiemarknaden är konstruerad för att flytta pengar från de aktiva till de tålmodiga. Tålighet är dock ingen karaktärsegenskap som vissa råkar ha — det är en fråga om design: hur många beslutstillfällen per år tillåter din process? vilka regler agerar på dina vägnar när system ett trycker på? AK1A:s översättning är riskmatrisen och scenarierna som skrivs före köpet: när björnscenariot inträffar — och det gör det — ska dokumentet från förra året berätta om det var den uträknade risken eller en ny sådan; det är skillnaden mellan att hålla och att hålla fast."
+        },
+        {
+          "type": "text",
+          "content": "Koncentrationens psykologiska skattning måste också göras ärligt: en fokusportfölj har bredare svängningar än en bred — Munger-fallet i kapitel två är kursens måttstock. Därför gäller omvänd logik: portföljens koncentration ska dimensioneras efter temperamentets bevisade, dokumenterade tålighet — inte efter önskad — och den som inte hunnit samla bevis börjar smalare. Det är också därför Kelly-kapitlet slutade med frågan orkar du bo i kurvan?: frågan var inte retorisk, den var dimensionerande. Bokens sista psykologiska ord är Buffett själv, som Hagstrom citerar: han lyckades inte för att han var smartare utan för att han var mer rationell — och rationalitet, i kursens lexikon, är struktur plus repetition, vilket är den bästa nyheten i hela boken: det går att träna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fem inre fiender och deras strukturella motgift\",\"rader\":[[\"Bias\",\"Yttring\",\"Strukturellt motgift\"],[\"Förlustaversion\",\"förluster väger dubbelt; sälja vinnare för tidigt, behålla förlorare\",\"förbestämda säljregler; beslutsjournal\"],[\"Kortsiktig smärta\",\"frekvent kontroll av brusigt mått\",\"kvartalsvis prisgranskning; dokumenterat fönster\"],[\"Överdriven självsäkerhet\",\"mest aktiva hushållen avkastar sämst\",\"omsättningsbudget per år\"],[\"Överreaktion\",\"förlorare slår vinnare cirka 25 % över tre år\",\"reversa checklistor vid panik och eufori\"],[\"Ankare och efterklokhet\",\"inköpspriset styr; allt var uppenbart efteråt\",\"scenariodokument skrivet före köpet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Temperament är ingen personlighet — det är arkitektur: reglerna du skriver innan du behöver dem är den enda viljestyrka som fungerar när kurvan pekar nedåt och telefonen gör detsamma."
+        },
+        {
+          "type": "utmaning",
+          "content": "Starta en beslutsjournal (om du inte redan har en): skriv för varje nytt köp — maximalt en halvsida — vad som skulle få dig att sälja, vilket scenario som spelats ut, och vilken vikt positionen har. Läs de tre senaste siderna efter nästa kvartalssvacka. Frågan journalen svarar på är den viktigaste i kapitlet: reagerar du på verksamheten eller på kursen?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kortsynt förlustaversion (myopic loss aversion)?",
+          "alternativ": [
+            "Att förluster är större än vinster i absoluta tal",
+            "Att frekvent kontroll av ett brusigt mått gör den känslomässiga budgeten strukturellt negativ, eftersom förluster väger dubbelt",
+            "Att investerare med dålig syn handlar sämre",
+            "Att långa horisonter alltid ger förlust"
+          ],
+          "ratt": 1,
+          "tips": "Priset mellan rapporterna handlar om känslor hos senaste handlaren — att kontrollera det ofta är att prenumerera på andras ångest."
+        },
+        {
+          "q": "Vad visade De Bondt och Thaler 1985?",
+          "alternativ": [
+            "Att vinnaraktier fortsätter vinna för alltid",
+            "Att marknaden överreagerar: förloraraktier slog i genomsnitt vinnaraktier med cirka 25 procent under följande tre år",
+            "Att dagens kurs innehåller all information",
+            "Att småbolag alltid är riskfyllda"
+          ],
+          "ratt": 1,
+          "tips": "Överreaktionen är ett av de kraftigast dokumenterade mönstren — och en direkt grund för värdestrategier."
+        },
+        {
+          "q": "Hur definierar kursen temperament i stället för karaktär?",
+          "alternativ": [
+            "Som en medfödd egenskap som vissa investerare råkar ha",
+            "Som arkitektur — antalet beslutstillfällen processen tillåter och reglerna som verkar när system ett trycker på",
+            "Som resultatet av hög IQ och lång utbildning",
+            "Som förmågan att aldrig känna oro"
+          ],
+          "ratt": 1,
+          "tips": "Inaktivitet är en beslutsregel, inte lättja — och regler skrivs innan de behövs."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Komplexitetsteorin — Santa Fe, El Farol och lock-in",
+      "intro": "Bokens åttonde kapitel byter vetenskapligt paradigm: från fysikens jämvikt till biologins ekologi. Med Santa Fe-institutet, Brian Arthurs El Farol-bar och teorin om komplexa adaptiva system ger Hagstrom marknaden en ny beskrivning — varken perfekt effektiv eller perfekt förutsägbar, utan ständigt adapterande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Santa Fe Institute grundades 1984 av Los Alamos-veteranen George Cowan med ett program: att studera komplexa system tvärvetenskapligt — fysik, biologi, ekonomi, datavetenskap under samma tak, utan ämnesfakulteternas silos. För ekonomins del blev Oktober 1987 katalysatorn: när Dow föll tjugotre procent på en dag utan nyhet som motiverade det, och ekonomutbildningens jämviktsmodeller inte hade en mekanism som ens kunde producera en sådan händelse, samlade institutet 1987 ekonomer och fysiker till det möte som öppnade forskningsfältet. Frågan som drogs var exakt den boken ställer: om marknaden är ett system av rationella aktörer i jämvikt — varför ser kurvorna ut som de gör? Bland deltagarna och senare centrala namn: John Holland (adaptiva agenter, genetiska algoritmer), Stuart Kauffman, Murray Gell-Mann — och ekonomerna W. Brian Arthur och Doyne Farmer."
+        },
+        {
+          "type": "text",
+          "content": "Forskningens svar är beskrivningen av komplexa adaptiva system (CAS), och Hagstrom listar deras kännetecken: många spridda agenter som interagerar; ingen central dirigerent; agenter som lär sig och ändrar strategi efter utfall; mönster som emergentar underifrån (trender, bubblor, paniker) utan att någon planerat dem; självorganisation som skapar ordning utan plan (priser, likviditet); system som hålls långt från jämvikt och aldrig vilar; och evig nyhet — reglerna ändras medan spelet pågår. Marknaden som CAS betyder att det inte finns en enda ratt någon vrider på: priset är en emergent egenskap hos en ekologi av strategier som konkurrerar, imiterar och dör — vilket är varför både perfekt-förutsägbarhetstron och total-slumptron är fel."
+        },
+        {
+          "type": "text",
+          "content": "Brian Arthur bidrog med två begrepp kursen måste förmedla rätt. Det första är ökande avkastning (increasing returns) och lock-in: i kunskapsekonomier kan den som kommit tidigt ta hem marknaden hela vägen — QWERTY-layouten som levde kvar trots bättre tangentbord, videobandspelarens VHS mot Betamax — eftersom varje ny användare gör tjänsten mer värd (nätverkseffektens ekonomiska historia; jfr AKM1:s V15). Mekanismen är Arthurs Polya-urna: en urna där varje dragd kula adderar fler kulor av samma färg — tidiga slumpdrag kan låsa in en hel marknad. Det andra är El Farol-baren (1994): hundra personer beslutar varje vecka om att gå till en bar med sextio platser; var och en har en uppsättning prediktionsmodeller (medelvärden, mönster) och stannar hemma om modellen spå fullt. Simulationens resultat: närvarandet fluktuerar kring sextio, ingen modell vinner permanent — det finns ingen korrekt modell, bara en ekologi av modeller där varje modells framgång skapar dess eget fall. Baren, skriver Arthur, är en miniatyr av aktiemarknaden."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen för investeraren är kursens och kapitel tolvsv bro. Om marknaden är ett CAS är slumpvandringen en beskrivning av våra begränsningar, inte en naturlag: systemet är svårförutsägbart därför att det beräkningsmässigt komplext och adapterande — inte därför att det är ett tärningskast. Samtidigt: mönster finns, men de är villkorade och föränderliga — en strategi som fungerar slutar fungera när tillräckligt många anammat den, vilket är El Farols kärna. AK1TS-placeringen, som kapitel tolv utvecklar till full syntes: att mäta vågor (Elliott, Fibonacci, Gann, Lucas, volym) är att beskriva emergenta mönster i ett CAS — mätningen kan vara deterministisk i sina räkneregler utan att därför vara en förutsägelse; det är distinktionen hela kursen slutar i."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Komplexa adaptiva system — egenskap för egenskap\",\"rader\":[[\"Egenskap\",\"Vad det betyder\",\"Marknadsöversättning\"],[\"Många spridda agenter\",\"interaktion utan central spelförare\",\"miljoner investerare, ingen dirigerent\"],[\"Adaptiv inlärning\",\"agenter ändrar strategi efter utfall\",\"stilar går in och ur modet\"],[\"Emergens\",\"mönster uppstår underifrån\",\"trender, bubblor, paniker\"],[\"Självorganisation\",\"ordning utan plan\",\"priser och likviditet\"],[\"Långt från jämvikt\",\"ingen vilande punkt\",\"1987, 2000, 2008\"],[\"Evig nyhet\",\"reglerna ändras under spelets gång\",\"ingen modell gäller för alltid\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "El Farol lär det obekväma: det finns ingen korrekt modell av marknaden — bara en ekologi av modeller där varje framgång sågar sin egen gren; därför är varje övertag evigt villkorat, och ödmjukheten är inte en dyg utan en modellföljd."
+        },
+        {
+          "type": "utmaning",
+          "content": "Identifiera en pågående lock-in i dagens marknad: en standard, plattform eller nätverk där varje ny användare förstärkar vinnaren (V15-logik). Skriv två rader: vad som låste in det — och vad som teoretiskt skulle kunna låsa upp det igen. Jämför sedan med bokens exempel QWERTY och VHS: är din kandidat av samma struktur eller bara stor? Skillnaden är moat mot mode."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför blev oktober 1987 en katalysator för Santa Fe-forskningen om ekonomin?",
+          "alternativ": [
+            "Dåreglerade myndigheterna hedgefonder",
+            "Eftersom jämviktsmodellerna saknade mekanism som ens kunde producera en tjugotre procents endagarsras — frågan om marknadens natur öppnades på nytt",
+            "Då infördes datorhandel på alla börser",
+            "Eftersom Dow då passerade S&P i värde"
+          ],
+          "ratt": 1,
+          "tips": "Modeller som inte kan producera en observerad händelse har ett förklaringsproblem, oavsett hur eleganta de är."
+        },
+        {
+          "q": "Vad är El Farol-problemets kärna?",
+          "alternativ": [
+            "Att baren alltid är full och därför ska undvikas",
+            "Att det inte finns någon korrekt prediktionsmodell — modellerna bildar en ekologi där varje modells framgång skapar dess fall",
+            "Att sextio platser är optimal kapacitet",
+            "Att människor alltid går dit alla andra går"
+          ],
+          "ratt": 1,
+          "tips": "Bar är en miniatyrmarknad: närvaro fluktuerar kring jämvikten, men inget individ går säkert — och modellerna lever och dör."
+        },
+        {
+          "q": "Vad menas med ökande avkastning och lock-in i Arthurs teori?",
+          "alternativ": [
+            "Att avkastningen stiger linjärt med insatsen",
+            "Att tidiga fördelar kan förstärkas genom nätverkseffekter tills marknaden är låst — som QWERTY och VHS",
+            "Att ränta-på-ränta alltid slår inflationen",
+            "Att större bolag alltid har lägre risk"
+          ],
+          "ratt": 1,
+          "tips": "Polya-urnan: varje kula av en färg adderar fler av samma färg — tidiga slumpdrag kan avgöra en hel marknad (jfr V15)."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Profetians gränser — Malkiel mot Hagstrom och AK1A:s syntes",
+      "intro": "Här möts kurserna och böckernas motsättning: Burton Malkiels random walk — en av finanshistoriens mest segerrika teser — mot Hagstroms fokusinvesterings svar via komplexitetsteorin. Direktivet för detta kapitel är dubbelriktat: Malkiel presenteras MAXIMALT starkt, Hagstroms bemötande lika ärligt — varefter AK1A formulerar sin egen syntes med sina medgivanden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Malkiels Random Walk Down Wall Street (1973) — som har sin egen kurs i kanonen — är motståndarens starkaste formulering, och kapitlet ger honom hela kraften. Tesen: prisförändringar är oberoende av historien; marknaden är åtminstone semi-starkt effektiv; teknisk analys är värdelös (kurser har inget minne) och fundamental analys ger inget bestående övertag, eftersom informationen redan är prissatt och analytikerkorpen drivs av samma flockmekanismer som alla andra. Malkiels mest berömda bild, citerad öppet: en förblindad schimpans som kastar pilar mot börssidorna kan komponera en portfölj som presterar lika bra som en omsorgsfullt vald av experterna. Bevisen: den stora majoriteten aktiva fonder slår inte index efter avgifter; varma händer blir inte varma i nästa period; och Buffettville-argumentet förklarar — slumpförklaringen säger att bland tusentals fonter och decennier måste extremanfall uppstå, och att vinnarna efteråt alltid har en berättelse. Slutsatsen är dessutom praktiskt befriad: eftersom timing och selektion inte lönar sig — köp brett, billigt och håll."
+        },
+        {
+          "type": "text",
+          "content": "Hagstroms bemötande — som han själv bygger i kapitel två och åtta — går via komplexitetsteorin, inte via att förneka svårigheten. Insatsen Malkiel gör och Hagstrom avvisar är oberoendet: marknaden är inte en tärning utan ett komplext adaptivt system (kapitel elva) där aktörerna lär sig, imiterar och reagerar på varandra — feedback, lock-in, emergens och strategiernas ekologi gör priserna svårförutsägbara utan att de därför är slumpmässiga. Slumpvandringen är en beskrivning av utifrån-sett symmetri, inte en mekanism inuti systemet: oförutsägbarhet är inte samma egenskap som slump. Dessutom har Malkiels egna dart-tester och anomalilitteraturen (lågt pris mot bokfört värde, momentum) visat mönster som ren slump inte ska producera; och EMH:s antagande om homogena rationella aktörer saknar mekanism som kan producera 1987 — medan CAS har det. Men — och kapitlet är skyldigt att säga det — Malkiel vinner mark: att mönster finns bevisar inte att de går att handla på efter kostnader, och massiv majoritet av aktiva förvaltare underpresterar. Uppgörelsen är därför inte vem som har rätt om allt, utan vad varje sida har rätt om."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — kursens eget ståndpunkt, som ekosystemet formulerat i hela sin stack: AK1TS mäter vågor deterministiskt utan att påstå förutsägelser — mätning är inte profetia. Elliott-räkningar, Fibonacci-förhållanden, Gann-strukturer, Lucas-serier och volymprofil över fem tidshorisonter är räkneregler som beskriver emergenta mönster i ett CAS; deras utfall är villkorade sannolikheter som uppdateras bayesianskt (kapitel sju), inte profetior med datum. Vågräkningen svarar på vad som är mätt — aldrig på vad som kommer att hända; beslutet drivs av AKM1:s fundamentalvärdering, marginalen och väntevärdet, och storleken av fractional Kelly. På så sätt intar AK1A en position mellan lägren: mot Malkiel håller vi att mönster existerar och kan beskrivas — mot prognosbranschen håller vi att beskrivning inte är förutsägelse, och att den som säljer säkerhet har missförstått både Kelly och komplexitet. Ärlighetsformuleringen är ekosystemets egen: vi kan ha fel, vi kan visa vårt räknesätt, och vi kan inte lova annat än dokumenterad process."
+        },
+        {
+          "type": "text",
+          "content": "Medgivandena — kapitlets och kursens, som direktivet kräver lika explicit. Ett: Kelly full insats är ruinerande i praktiken — kapitel åtta visade varför — alltid fractional. Två: superinvesterar-beviset är post hoc och kan inte bära ensamt; tyngden ligger på reproducerbar process, inte på legend. Tre: koncentration kräver perioder av underprestation och en mätning med rullande fönster; den som mäter kvartalsvis har redan förlorat argumentet. Fyra: Malkiel har rätt om kostnader, medelvärden och majoriteten av fonter — därför är index utgångsläget som allt övertag måste motiveras mot. Fem: AK1TS tolkningar är just tolkningar — deterministiska i sina räkneregler, villkorade i sina slutsatser; den som läser dem som profetior har läst fel. Syntesen blir därmed en definition: övertag är möjligt där processen är mätbar, sannolikheterna dokumenterade och storleken disciplinerad — allt annat är hasard med ordlista."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Drabbningen — Malkiel mot Hagstrom och AK1A:s syntes\",\"rader\":[[\"Fråga\",\"Malkiel och random walk\",\"Hagstrom och fokusinvesterings\",\"AK1A:s syntes\"],[\"Kan priser förutsägas?\",\"Nej — förändringar oberoende\",\"Inte deterministiskt — men mönster är villkorade\",\"Mätning är inte profetia\"],[\"Är teknisk analys?\",\"Värdelös — schimpansen med pilar\",\"Ett verktyg bland andra, felaktigt gudeligt\",\"AK1TS mäter deterministiskt, hävdar inte framtiden\"],[\"Varför slår Buffett?\",\"Slump bland tusentals fonter\",\"Process: cirkel, marginal, koncentration\",\"Delvis process, delvis outlier — mätbart per bolag\"],[\"Vad ska göras?\",\"breda, billiga index\",\"koncentrerad, tålig portfölj\",\"fractional Kelly, marginal, dokumenterad process\"],[\"Medgivande\",\"mönster kan finnas men inte handlas efter kostnad\",\"koncentration kräver underliggande perioder\",\"full Kelly ruinerar; beviset post hoc; index är utgångsläget\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Mätning är inte profetia: en deterministisk beskrivning av ett mönster är inget påstående om framtiden — den som blåser ihop de två har missförstått både Kelly och komplexitet, och den som skiljer dem kan äga både vågmätning och ödmjukhet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör syntes-provet själv: kör en AK1TS-vågräkning och en AKM1-analys på samma bolag och skriv två explicita rader — vad mätningen påstår (vi har räknat X, scenarierna väger Y) och vad den inte påstår (något om framtiden med säkerhet). Låt därefter en Malkiel-skeptiker läsa raderna: om han hittar en dold profetia har du skrivit fel; om inte har du formulerat kursens hela ståndpunkt."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den starkaste versionen av Malkiels argument, som kapitlet presenterar?",
+          "alternativ": [
+            "Att aktiemarknaden är för liten för att ge avkastning",
+            "Att prisförändringar är oberoende, information redan prissatt, majoriteten fonder slår inte index — och att schimpansens pil-portfölj gör expertvalet överflödigt",
+            "Att alla investerare är irrationella och därför borde spara i banken",
+            "Att fundamental analys bara fungerar på obligationer"
+          ],
+          "ratt": 1,
+          "tips": "Malkiel är stark: han har både teorin och majoriteten av fondstatistiken på sin sida — kapitlet gör motståndet äran genom att inte försvaga honom."
+        },
+        {
+          "q": "Hur bemöter Hagstrom random walk-teorian via komplexitetsteorin?",
+          "alternativ": [
+            "Genom att hävda att hans modeller är bättre på prognoser",
+            "Genom att visa att marknaden är ett komplext adaptivt system: svårförutsägbart pga feedback och adapterande strategier — vilket inte är samma sak som slump",
+            "Genom att förneka att fonderna underpresterar",
+            "Genom att peka på att teknisk analys vinner alla backtester"
+          ],
+          "ratt": 1,
+          "tips": "Distinktionen är oförutsägbarhet mot slumpmässighet — ett komplext system kan vara deterministiskt och ändå praktiskt oprognosticerbart."
+        },
+        {
+          "q": "Vad är AK1A:s ståndpunkt om AK1TS vågmätning?",
+          "alternativ": [
+            "Att den förutsäger kurser med hög träffsäkerhet",
+            "Att den är värdelös och ska avvecklas",
+            "Att den mäter vågor deterministiskt utan förutsägelseanspråk — mätning är inte profetia — med villkorade, bayesianskt uppdaterade sannolikheter",
+            "Att den ersätter AKM1 helt"
+          ],
+          "ratt": 2,
+          "tips": "Beskrivning av emergenta mönster i ett CAS: räknereglerna är deterministiska, slutsatserna villkorade — besluten drivs av marginal och väntevärde."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": ".400-slagarna — Ted Williams, Gould och disciplinen",
+      "intro": "Bokens avslutande kapitel heter Where Are the 400 Hitters? — och dess hjälte är inte en investerare utan basebollslagmannen Ted Williams, den siste som slog över fyra procent. Via Williams slagzonsdisciplin och Stephen Jay Goulds förklaring till varför .400-slagarna försvann sammanfattar Hagstrom hela boken: fältet är tuffare än någonsin — svaret är inte mer aktivitet utan hårdare selektion.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ted Williams slog fyra komma noll sex 1941 — och ingen har upprepat det. I The Science of Hitting (1971) delade han upp strike zone i sjuttiosju rutor och lärde att slagmannen måste känna sin egen träffzon: vissa rutger ger honom fyra hundra i träffsäkerhet, andra under tvåhundra — och skillnaden mellan en bra och en mediocre slagman är vilka kast han svingar på. Williams regel, citerad i boken och här i kursens översättning: för att bli en bra slagman måste du få ett bra kast att svinga på. Buffetts lärdom av Williams, som han berättat många gånger och boken gör till sitt avslut: investerarens unika fördel är att ingen tvingar honom att svinga — det finns inga strike-outs för passivitet, ingen domare som räknar tre passerade kast. Marknaden servar tusen kast i sekunden, och den som svänger på allt har förlorat fördelen; den som väntar på sitt eget sweet spot — bolag inom cirkeln, med moat, med marginal — har behållit den."
+        },
+        {
+          "type": "text",
+          "content": "Stephen Jay Goulds berömda svar på kapitelrubrikens fråga — varför slår ingen fyra hundra längre? — är inte att slagmännen blivit sämre: de är bättre än någonsin. Förklaringen är att spelet blivit jämnare — bättre pitchare, bättre fielding, bättre scouting — vilket komprimerat spridningen: medel halten har stigit och extremerna krympt (Goulds shrinking variance). Översättningen till investering är direkt: informationen är billigare, konkurrensen hårdare, datorerna fler — .400-säsongerna blir sällsyntare inte för att fokusinvesteringsmetoden blev sämre utan för att motståndet blev bättre. Konsekvensen är Gould-Hagstroms gemensamma: när fältet jämnas ut avgörs utfallet mer av disciplinen — att inte svinga utanför zonen — än av talangen. Buffett i bokens terminologi: det går inte att bli bättre på att välja bolag genom att välja fler bolag; det går bara att bli bättre på att välja bort."
+        },
+        {
+          "type": "text",
+          "content": "Kapitlet sammanfattar också bokens system som helhet — och kursen ställer upp det som fyra ben som bär varandra. Portföljstrukturen (få, stora satsningar — kapitel ett till tre) ger övertaget plats att verka; mätningen (rullande fönster, låg omsättning — kapitel fyra och fem) gör tåligheten möjlig; matematiken (sannolikheter, väntevärde, Kelly — kapitel sex) gör övertygelser till storlekar; psykologin och komplexitetsteorin (kapitel sju och åtta) håller systemet levande i en marknad som är både flock och ekologi. Ta bort ett ben och stolen faller: Kelly utan temperament är ruinerande; koncentration utan mätning är outhärdlig; matematik utan cirkelkunskap är dekorerade gissningar. Bokens slutpoäng är därför anspråkslös och krävande: fokusinvestering är inget knep — det är en helhet där varje del förutsätter de övriga, och där den svagaste länken är investeraren själv."
+        },
+        {
+          "type": "text",
+          "content": "Hagstrom avslutar — troget sin genre — med sig själv: han redovisar sin egen fokusportföljs svängningar och det arbete det kostar att hålla kursen, och konstaterar att framtiden tillhör dem som kombinerar disciplin med tålighet snarare än dem med bäst modeller. AK1A:s läsning av avslutningen är kursens sista koppling: hela boken är en maskin för att institutionalisera det Hagstrom fick göra manuellt — checklistor (AKM1), sannolikhetsmjukvara (bayesskripten), positionsstorlekar (portfoljbyggaren), mätning (rullande fönster i analyserna) och en gemenskap som belönar process. Williams visade var zonen finns; boken visar att zonen är mätbar; resten är träning — vilket är kursens egentliga examination."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken som system — fyra ben och vad som kollapsar utan dem\",\"rader\":[[\"Ben\",\"Bokens kapitel\",\"Kärna\",\"Kollapsar utan\"],[\"Portföljstruktur\",\"1-3\",\"få, stora satsningar\",\"god bolagsanalys späds ut i bredd\"],[\"Mätning\",\"4-5\",\"rullande fönster, låg omsättning\",\"kortisolstyrda beslut och indexhuggning\"],[\"Matematik\",\"6\",\"sannolikheter, väntevärde, Kelly\",\"magkänsla klädd som övertygelse\"],[\"Psykologi och komplexitet\",\"7-9\",\"flock, bias, tålamod, ekologi\",\"systemet känner inte sin marknad eller sig själv\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Buffett har en fördel ingen slagman har: ingen tvingar honom att svinga — det finns inga strike-outs för passivitet, och den som förstår att passhärvan är portföljens dolda tillgång har förstått hela boken."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna dina sving de senaste tolv månaderna: antal köp och sälj — och hur många av dem som var i ditt sweet spot (hög AKM1-poäng, betydande marginal, inom cirkeln). Räkna ut kvoten träffar per sving. Om svingantalet är högt och kvoten låg har du spelat Williams roll tvärtom: du har jämnat ut din träffsäkerhet genom att svinga på allt. Skriv därefter din egen sweet spot-definition i en mening — den meningen är din investeringsstrategis kärna."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Ted Williams disciplin enligt The Science of Hitting?",
+          "alternativ": [
+            "Att svinga på alla kast för att maximera antal chanser",
+            "Att känna sin egen träffzon — delad i sjuttiosju rutor — och bara svinga på kast i sitt sweet spot",
+            "Att träna mer än alla andra",
+            "Att byta slagteknik varje säsong"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden mellan bra och mediocre slagman är vilka kast han svingar på — inte hur hårt han svingar."
+        },
+        {
+          "q": "Hur förklarar Gould att .400-slagarna försvunnit?",
+          "alternativ": [
+            "Slagmännen blev sämre över generationerna",
+            "Basebollreglerna ändrades till nackdel för slagmän",
+            "Spelet jämnades ut — bättre pitching och fielding komprimerade spridningen, så extremanfallen krympte trots bättre slagmän",
+            "Utrustningen blev tyngre"
+          ],
+          "ratt": 2,
+          "tips": "Shrinking variance: nivån stiger, extremiteten krymper — och översättningen till aktiemarknaden är att konkurrensen hårdnat."
+        },
+        {
+          "q": "Vad är investerarens unika fördel jämfört med slagmannen, enligt Buffett?",
+          "alternativ": [
+            "Investeraaren får alltid två chanser per beslut",
+            "Ingen tvingar honom att svinga — det finns inga strike-outs för passivitet",
+            "Investeraaren kan välja domare",
+            "Marknaden stängs på natten"
+          ],
+          "ratt": 1,
+          "tips": "Marknaden servar tusen kast i sekunden — och den som svänger på allt har frivilligt gett bort sin största edge."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "Checklistan — bygg din egen fokusportfölj",
+      "intro": "Kursens sista kapitel för samman boken till ett arbetsverktyg: steg för steg, kontroll för kontroll, byggs den egna fokusportföljen — med AKM1 som fundamentalryggrad, bayesiansk uppdatering, fractional Kelly som positionslogik och en checklista om tio frågor som är kursens examination och examensbevis.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bygget i sju steg, i tur och ordning — ordningen är metoden. Steg ett: definiera cirkeln — tre områden där du kan förklara affärsmodell, prissättning och konkurrens utan att googla. Steg två: kör verktygsbältet — AKM1:s tjugo variabler, noll till fem poäng, sammanlagt max hundra; under cirka sjuttiofem poäng är bolaget inte ett fokusinvesteringsobjekt oavsett hur spännande storyn är. Steg tre: modellera värdet — owners earnings-serien, tvåstegsdiskontering, tre scenarier. Steg fyra: sätt sannolikheter — scenariotabellen blir väntevärde, och varje siffra ska ha en skriven motivering. Steg fem: uppdatera bayesianskt — kvartalsvis evidens mot priorn, i ak1a-analys-skripten eller för hand. Steg sex: storleksätt — fractional Kelly av väntevärdet och konfidensen, med positionstak, och halv Kelly som absolut maximala utförandet. Steg sju: mät — rullande tre, fem och tio år, dokumenterat fönster, beslutsjournal vid varje köp och sälj."
+        },
+        {
+          "type": "text",
+          "content": "Portföljnivåns riskkontroller speglar bolagsnivåns. Katastroftestet (V19): vad krävs för att hela portföljens värsta scenario — korrelerade fall — ska tvinga fram nyemission eller tvångsförsäljning? Koncentrationsgränsen: max femton positioner, sannolikt färre; största positionen har ett tak (halv Kelly är även ett tak, inte bara en rekommendation). Likviditet och belåning: fokusportföljen ska kunna falla fyrtio procent utan att något måste säljas — munger-provet från kapitel två är portföljprov. Kontanter: i fokusinvesteringsvärlden är kontanter inte dödsyta utan option — de möjliggör köp när sweet spot-pitchen kommer, eftersom servarna inte slutar komma. Slutligen dokumentationen: en portfölj som inte kan förklaras på ett blad — cirkel, positioner, vikter, varför — är inte en portfölj utan en historia; bladet är försvaret mot både flocken och de inre biasarna."
+        },
+        {
+          "type": "text",
+          "content": "I AK1A:s stack finns alla byggstenar redan, och kursen är deras bruksanvisning: AKM1-variablerna (V01-V20) är verktygsbältet; ak1a-analys-skicket kör Monte Carlo, bayesiansk omviktning och Kelly-modulen — bokens kapitel sex som mjukvara; portfoljbyggaren sätter storlekar och vikter med fractional Kelly-logik och tak; analyserna mäts i fem tidshorisonter; och kanon-triangeln håller kunskapen på plats — Way-kursen (vilka bolag), Essays-kursen (källtexterna) och den här kursen (hur ägandet struktureras). Eleven som gått alla tre har Buffett-triangeln som Hagstrom ritade den: legenden (Snöbollen), källtexterna (Essays) och metoden (Way) — plus det fjärde benet denna bok tillför: strukturen."
+        },
+        {
+          "type": "text",
+          "content": "Kursens avslutning är bokens: ingen garanti. Fokusinvestering är inte ett system som lovar avkastning — det är ett system som lovar att dina resultat kommer att återspegla din process, vad den nu är. Skillnaden mellan process och utfall, som varje kapitel återkommit till, är den vuxna slutsatsen: på kort sikt kan god process förlora och dålig vinna, och på lång sikt är det den dokumenterade, uppmätta, halverade Kelly-processen som samlas — inte för att matematiken är magisk utan för att den enda hållbara fördelen är disciplinen som överlever kurvorna. Bokens sista lärdom är därför kursens första mening igen: koncentration är inte våghet — det är konsekvensen av att ha gjort läxan. Gör läxan, satsa därefter, mät länge, och sväng bara på dess kast som ligger i din zon. Det är hela boken — och början på din egen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Checklistan för fokusinvesteraren — tio frågor\",\"rader\":[[\"Nr\",\"Fråga\",\"Verktyg\",\"Godkänt när\"],[\"1\",\"Ligger bolaget i min cirkel?\",\"cirkeldefinition i tre meningar\",\"utan att googla\"],[\"2\",\"Passar bolaget verktygsbältet?\",\"AKM1 V01-V20, 0-5 poäng\",\"grovt 75+ av 100\"],[\"3\",\"Finns betydande marginal?\",\"tvåstegsmodell, tre scenarier\",\"pris klart under basscenariot\"],[\"4\",\"Vad är väntevärdet?\",\"scenariotabell\",\"EV klart positivt\"],[\"5\",\"Hur sannolikt?\",\"subjektiv sannolikhet, bayeskedja\",\"uppdaterad av minst tre evidenser\"],[\"6\",\"Hur stor position?\",\"fractional Kelly med tak\",\"aldrig mer än halv Kelly\"],[\"7\",\"Hur många positioner?\",\"portföljregel\",\"max 15; aldrig över 20\"],[\"8\",\"Vad kräver katastrofen?\",\"V19-test och stress\",\"överlevnad utan emission eller tvångsförsäljning\"],[\"9\",\"Hur mäts jag?\",\"rullande 3/5/10 år\",\"fönstret dokumenterat före köpet\"],[\"10\",\"Vad gör att jag säljer?\",\"beslutsjournal\",\"skrivet före köpet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Den sista regeln är den första: koncentration är inte våghet utan konsekvensen av att ha gjort läxan — och den som kan redogöra för alla tio rader i checklistan för varje position äger sin portfölj i stället för att den äger honom."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ett portföljförslag i portfoljbyggaren enligt kursens regler: max femton positioner, varje position motiverad av AKM1-poäng och marginal, storlekar enligt halv Kelly eller lägre, och dokumenterat mätfönster. Skriv därefter en försvarsskrivelse — en mening per position om varför just den och varför just så stor. Om någon mening slutar vara matematik och blir retorik har du hittat nästa position att ta bort. Det är examinationen — och första rullande fönstret börjar nu."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta ordningen i kursens sju steg?",
+          "alternativ": [
+            "Köp först, analysera sedan, rätta till slut",
+            "Cirkel — verktygsbältet (AKM1) — värdering — sannolikheter — bayesiansk uppdatering — fractional Kelly-storlek — rullande mätning",
+            "Kelly först, sedan cirkel, sedan pris",
+            "Omsättning först, sedan selektion, sedan cirkel"
+          ],
+          "ratt": 1,
+          "tips": "Ordningen är metoden: storleken kommer efter övertaget, och mätningen bestäms före köpet."
+        },
+        {
+          "q": "Varför är kontanter en option i fokusinvesteringsvärlden?",
+          "alternativ": [
+            "För att kontanter alltid slår aktier på tio år",
+            "För att de möjliggör köp när sweet spot-pitchen kommer — servrarna upphör aldrig, och tålamodet behöver ammunition",
+            "För att räntan alltid är positiv",
+            "För att kontanter minskar beta"
+          ],
+          "ratt": 1,
+          "tips": "Williams-logik: väntan är bara värdefull om du kan svinga när komet kommer."
+        },
+        {
+          "q": "Vad är kursens sista påstående om fokusinvesteringslöftet?",
+          "alternativ": [
+            "Att det garanterar överavkastning den som följer checklistan",
+            "Att det lovar att resultaten återspeglar processen — god process kan förlora kort sikt, men den dokumenterade disciplinen samlas på lång sikt",
+            "Att det eliminerar risken för förlustår",
+            "Att index alltid slår den som koncentrerar"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden mellan process och utfall är den vuxna slutsatsen — systemet lovar sammanhang, inte seger."
+        }
+      ]
+    }
+  ]
+}

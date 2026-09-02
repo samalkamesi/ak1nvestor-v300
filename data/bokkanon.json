@@ -979,7 +979,7 @@
         "Minska omsättningen: varje affär kostar analys, skatt och fokus"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-041",
@@ -1100,7 +1100,7 @@
         "Marknaden kan ha fel länge: ha kapital och uthållighet att stå emot pressen"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-046",
@@ -1125,7 +1125,7 @@
         "Likviditetstestet: kan bolaget betala ränta och amortering i arton till tjugofyra månader"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-047",

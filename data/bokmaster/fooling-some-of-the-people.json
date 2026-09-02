@@ -1,0 +1,1218 @@
+{
+  "slug": "fooling-some-of-the-people",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 180,
+  "title": "Fooling Some of the People All of the Time — Einhorn: KOMPLETT",
+  "summary": "David Einhorns Fooling Some of the People All of the Time (Wiley 2008, undertitel A Long Short Story) är finanslitteraturens mest detaljerade fallstudie i att gräva i ETT bolag: sex års krig — 2002 till 2008 — mellan hans hedgefond Greenlight Capital och Allied Capital, den älskade utdelningsaktien och det äldsta BDC-bolaget i USA. Kursen följer fallet kronologiskt från upptäckten (utdelningen som inte täcktes av verkliga intäkter, non-accrual-lånen i dotterbolaget Business Loan Express) via grävandet (SEC-filingar, fotnoter, SBA-data, insider-transaktioner, incitamentsavtal) till kriget (Allieds motangrepp med privata utredare, journalisternas filter, regulatorernas passivitet — SEC började med att intressera sig för shortaren) och upplösningen (BLX erkände brott i federal domstol 2007, substanspremien försvann). Varje kapitel kopplas till eleven: så hade du kunnat upptäcka det — i konkreta bokslutssignaler, i AKM1:s variabler (V05 premie mot bokfört, V12 intäktskvalitet, V19 emissionsfinansierad utdelning, V17 avtalspartner, V18 regulatorisk katalysator) och i Creative Cash Flow-kursens tekniker. Kursen avslutas med kontroversen — attacker eller marknadens vakthundar? — med motståndarnas bästa argument, AK1A:s svar och ett ärligt medgivande om shortsäljarens egen intressekonflikt.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven berätta Allied Capital-fallet i sin rätta kronologi — den 15 maj 2002, när den 33-årige Einhorn vid Ira Sohn-konferensen offentligt kortade Allied Capital, ett 1958 grundat Business Development Company som handlades med betydande premie över substansvärdet och älskades för sin utdelning; tesens fem ben: premien till ett substansvärde som var uppblåst eftersom lån hölls till anskaffningsvärde, en utdelning som inte täcktes av verklig intjäning utan finansierades av emissioner till premie, dotterbolaget Business Loan Express där non-accrual-lån och gain-on-sale-bokföring på SBA-garanterade lån gömde riskerna, incitamentsavgifter som betalade för att inte skriva ned, samt en kultur som mötte granskning med attack; grävningsprocessen: 10-K och fotnoter före pressreleaser, Form 4 och insiderhänder, jämförelser mot SBA:s egna publika data, incitamentsavtal i styrrapporter — och vad varje källa faktiskt gav; kriget: Allieds motangrepp (personangrepp, privata utredare som kartlade Einhorn, analytiker som ställde sig bakom bolaget), journalisternas roll (klippbaserade artiklar mot grävande reportrar som läste dokumenten) och regulatorernas passivitet (den första myndighetsåtgärden riktades enligt boken mot shortaren, inte mot bolaget — tills justitiedepartementets Detroit-mål 2007 fick BLX att erkänna brott); slutsatserna om granskning, fusk och etik: mesta delen av fallet var laglig redovisning med dåliga antaganden — fusket satt i tekniken (kostnadsmarkering, gain-on-sale), strukturen (BDC-utdelningskontraktet plus premieemissioner) och kulturen (attackera kritikern); Einhorns metod: anomali först, primärdokument före andrahandskällor, omräkning av siffror, extern triangulering, incitamentskarta, offentlig publicering med namn och data, och position och kassa som tål sex års motstånd — mappad mot AKM1:s kvalitetsanalys (V05, V07-V09, V10-V12, V17, V18, V19) och Creative Cash Flow-kursens fråga vad som egentligen finansierar utdelningen; samt kontroversen om shortsäljarens roll — attacker eller marknadens vakthundar — med motståndarnas bästa argument (bear raids, manipulativa rapporter, vinst på andras olycka, regulatorisk skepsis, i Sverige FI:s varningar), Einhorns eget svar i titeln, AK1A:s hållning (en short-rapport är en tes, inte en sanning — granska den som en prospektus) och medgivandet: vissa shorts PR:ar positionen för egen vinning, och konflikten är strukturell.",
+  "why": "Big Short-kursen lär dig en maskin och Staley-kursen lär dig tekniken — men ingen av dem visar hur det ser ut när en analytiker river sönder ett enda bolags bokföring, bit för bit, under sex år, medan bolaget slår tillbaka. Det gör Einhorns bok, och därför är den AK1A:s kurs i grävandets hantverk: att läsa fotnoter innan rubriker, att räkna om det bolaget räknat, att följa incitamenten till där sanningen bor, och att stå för slutsatsen med namn och källor. Boken behövs också för sin obekväma halva: den som granskar offentligt blir själv granskad — av bolaget, av medierna och av reglerare — och eleven måste förstå både priset för att ha rätt och shortarens egen intressekonflikt. Utan det är din analys ett påstående; med det är den ett arbete som kan granskas, angripas och överleva.",
+  "chapters_list": [
+    {
+      "num": 1,
+      "title": "Prologen — Lincolns talesätt och sex år av grävande",
+      "minutes": 12
+    },
+    {
+      "num": 2,
+      "title": "Allied Capital — det äldsta BDC:n och aktien man ärvde",
+      "minutes": 12
+    },
+    {
+      "num": 3,
+      "title": "Utdelningsdilemmat — utdelning betald med nya aktier",
+      "minutes": 12
+    },
+    {
+      "num": 4,
+      "title": "Dotterbolaget BLX — SBA-maskinen och gain-on-sale",
+      "minutes": 12
+    },
+    {
+      "num": 5,
+      "title": "Non-accrual — lånen som slutade betala men inte fick finnas",
+      "minutes": 12
+    },
+    {
+      "num": 6,
+      "title": "Talet — 15 maj 2002: att korta ett bolag offentligt",
+      "minutes": 12
+    },
+    {
+      "num": 7,
+      "title": "Grävandet I: SEC-filerna — fotnoter som bevis",
+      "minutes": 12
+    },
+    {
+      "num": 8,
+      "title": "Grävandet II: incitament, insiders och den tysta revisionen",
+      "minutes": 12
+    },
+    {
+      "num": 9,
+      "title": "Kriget — Allieds motangrepp och de privata utredarna",
+      "minutes": 12
+    },
+    {
+      "num": 10,
+      "title": "Journalisterna — klippbaserat mot primärkällor",
+      "minutes": 12
+    },
+    {
+      "num": 11,
+      "title": "Regulatorerna — myndigheten som utredde shortaren (V18)",
+      "minutes": 12
+    },
+    {
+      "num": 12,
+      "title": "Upplösningen — BLX erkänner och premien försvinner",
+      "minutes": 12
+    },
+    {
+      "num": 13,
+      "title": "Einhorns metod — grävandets hantverk mot V05-V12 och Creative Cash Flow",
+      "minutes": 12
+    },
+    {
+      "num": 14,
+      "title": "Kontroversen — attacker eller marknadens vakthundar?",
+      "minutes": 12
+    },
+    {
+      "num": 15,
+      "title": "Arvet — granskning, fusk, etik och din egen checklista",
+      "minutes": 12
+    }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Prologen — Lincolns talesätt och sex år av grävande",
+      "intro": "David Einhorns Fooling Some of the People All of the Time (Wiley 2008, undertitel A Long Short Story) är finanslitteraturens längsta och mest detaljerade dokumentation av en enda aktieanalys: sex års krig mellan hedgefonden Greenlight Capital och Allied Capital. Detta kapitel placerar boken i AK1A:s kanon bredvid The Big Short och The Art of Short Selling — och ritar kursens karta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Titeln är ett lån. Abraham Lincolns talesätt — att man kan lura alla människor en stund och somliga människor hela tiden — är bokens tes i miniatyr: Allied Capital hölls uppe inte för att alla blev lurade, utan för att tillräckligt många blev lurade tillräckligt länge, medan marknadens övriga del såg en trygg utdelning och inte hade incitament att gräva. Einhorns undertitel, A Long Short Story, beskriver formen: en lång berättelse om en kort position. Boken publicerades av Wiley 2008 och gavs senare ut i en utökad upplaga — men kärnberättelsen är densamma: hur ett av USA:s äldsta och mest älskade investeringsbolag levande hölls av berättelsen om 40 år av utdelning, och vad det kostade att påvisa motsatsen offentligt."
+        },
+        {
+          "type": "text",
+          "content": "David Einhorn själv: född 1968, utbildad vid Cornell, med några år som värdepappersanalytiker i ryggen innan han startade Greenlight Capital. År 1996, vid 27 års ålder, öppnade fonden med cirka 900 000 dollar — huvudsakligen familjepengar, mest bekostat av hans föräldrar — och byggde den till en av världens mest respekterade value-fonder. Greenlights stil är Grahamsk fundamentalism med kort sida: köpa missprissatt kvalitet, korta missprissatt teater. Vid tiden för boken är fonden i miljardklassen och Einhorn är 33 år gammal när han kliver upp på Ira Sohn-scenen. Det är värt att minnas att Einhorn också är författaren bakom den berömda anteckningsboken han viftade med i pokerturneringar — mannen är metodisk även i förströelsen."
+        },
+        {
+          "type": "text",
+          "content": "Kursens differentiering, för AK1A läser tre böcker som en. The Big Short (vår kurs med samma namn) är en MASKIN: ett helt system av bolån, CDO:er och rating-byråer som föll samman — läxan är incitament och systemrisk. Kathryn Staleys The Art of Short Selling är TEKNIKEN: låna, sälja, täcka, checklistan, katalysatorn, klockan — läxan är fel-sökande som hantverk. Einhorns bok är DETALJGRANSKNINGEN: ett bolag, sex år, varenda relevant dokument — läxan är hur en balansräkning ljuger i detalj, hur ett dotterbolag kan bära hela bedrägeriet, och vad som händer när någon säger det högt. Behåll de tre i skilda fack: systemet, verktyget, grävarbetet."
+        },
+        {
+          "type": "text",
+          "content": "Historien i ett styck: den 15 maj 2002 presenterar Einhorn vid Ira Sohn Investment Research Conference i New York en offentlig korttes mot Allied Capital — ett Business Development Company grundat 1958, internt förvaltat, älskat av privatinvesterare för sin höga utdelning och handlat med betydande premie över substansvärdet. Tesen: substansvärdet är uppblåst eftersom lånen hålls till anskaffningsvärde; utdelningen täcks inte av verklig intjäning utan av nya emissioner till premie; dotterbolaget Business Loan Express (BLX) döljer non-accrual-lån och sminkas av gain-on-sale-vinster. Därefter: aktien faller, Allied svarar med krig — motangrepp, privata utredare, medier, och enligt boken en myndighet som börjar med att intressera sig för shortaren. Sex år senare erkänner BLX brott i federal domstol — och premien är borta. Vindikation utan ursäkt. Kursen citerar boken öppet: siffror som anges med cirka är bokens eget material och ibland bokens uppskattningar — det väsentliga är metoden, inte decimalen."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre böcker, tre läxor — hur Einhorn skiljer sig\",\"rader\":[[\"Kurs/Bok\",\"Objekt\",\"Kärnfråga\",\"Läxa för eleven\"],[\"The Big Short (Lewis)\",\"En hel marknadsmaskin av bolån och CDO:er\",\"Varför såg nästan bara outsiders krisen komma?\",\"Incitament — när alla tjänar på samma illusion finns ingen granskare\"],[\"The Art of Short Selling (Staley)\",\"Kortförsäljningens teknik och checklista\",\"Var dör bolaget — och vad kostar väntan?\",\"Fel-sökande som hantverk: katalysator, klocka, kassa\"],[\"Fooling Some of the People (Einhorn)\",\"Ett bolag — Allied Capital — under sex år\",\"Hur ljuger en balansräkning i detalj — och vad kostar det att bevisa det?\",\"Grävandet: fotnoter, omräkning, dotterbolag, offentlig publicering, uthållighet\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Skillnaden mellan en åsikt och en granskning är tiden: Einhorns tes tog en eftermiddag att formulera — och sex år att försvara. Boka in tiden innan du boken in din tes."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du går vidare: välj en aktie du äger eller överväger köpa som betalar utdelning. Skriv ner i en mening vad du tror finansierar den utdelningen — intjäning, realiserade vinster eller något annat. Spara svaret; kapitel 3 och 15 återvänder till exakt den frågan."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är bokens undertitel — och vad beskriver den?",
+          "alternativ": [
+            "A Long Short Story — en lång berättelse om en kort position",
+            "Inside the Doomsday Machine — en maskins inre",
+            "Uncovering Sustainable Financial Performance — kassaflödets kvalitet",
+            "Tales from the Bear Side — kortförsäljningens historia"
+          ],
+          "ratt": 0,
+          "tips": "Titeln leker med längd: berättelsen om kortet blev bokens längsta projekt."
+        },
+        {
+          "q": "Hur skiljer sig Einhorns bok från The Big Short och Staley?",
+          "alternativ": [
+            "Den handlar om en hel marknadsmaskin av strukturerade produkter",
+            "Den är en detaljerad granskning av ett enda bolags bokföring under sex år",
+            "Den är en teknisk handbok i att låna och täcka aktier",
+            "Den handlar om centralbankernas räddningsaktioner"
+          ],
+          "ratt": 1,
+          "tips": "Ett bolag, inte ett system; grävande, inte teknik."
+        },
+        {
+          "q": "Vad menar titeln med Lincolns talesätt?",
+          "alternativ": [
+            "Att alla blir lurade hela tiden i finansmarknaden",
+            "Att Lincoln investerade i järnvägsaktier",
+            "Att Allied hölls uppe av att tillräckligt många blev lurade tillräckligt länge",
+            "Att shortsäljare lurar varandra"
+          ],
+          "ratt": 2,
+          "tips": "Det räcker att somliga luras hela tiden — resten av marknaden lyssnar på utdelningen."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Allied Capital — det äldsta BDC:n och aktien man ärvde",
+      "intro": "Innan tesen kommer bolaget. Allied Capital var ett Business Development Company — en kongressskapad företagsform från 1980 — och ett av USA:s äldsta investeringsbolag, grundat 1958. Detta kapitel förklarar vad ett BDC är, varför aktien var en kärleksförklaring till utdelningen — och varför premien över substansvärdet var den första varningssignalen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vad är ett BDC? Business Development Company är en företagsform som kongressen skapade 1980 för att låta allmänheten investera i lån till små och medelstora amerikanska bolag — tillgångar som annars bara var tillgängliga för banker och private equity. Kärnan i konstruktionen: ett BDC är en investeringsfond i bolagskläder, med en avgörande skatteregel — den måste dela ut minst 90 procent av sin beskattningsbara inkomst för att slippa beskattas på bolagsnivå. Det förklarar Allied-kulturen: utdelningen är inte ett val, den är företagsformens själ. Allied Capital grundades 1958 och var vid tiden för talet ett av de äldsta och största BDC-bolagen, med en balansräkning i miljardklassen — i boken beskriven som cirka tre miljarder dollar — full av privata lån till småföretag."
+        },
+        {
+          "type": "text",
+          "content": "Aktien man ärvde. Allied var en klassisk inkomstplaceringsaktie: utdelning betald i decennier utan avbrott, högre direktavkastning än marknaden, och en berättelse om att man kunde lita på bolaget som man litit på sedan Eisenhower-eran. Ägarbilden: privatpersoner, inkomstfonder, arv och pensionärer — människor som inte köpte analys utan trygghet (V14 varumärke och kundlojalitet i sin renaste form: varumärket VAR utdelningens kontinuitet). Bolaget var internt förvaltat — ingen extern förvaltningsavgift, vilket lät rent — men med incitamentsavgifter till den interna ledningen kopplade till tillväxt i nettoresultat och substansvärde. Detaljen är kursens första mekaniska varning: incitamentsavgifter knutna till bokförd tillväxt betalar ledningen för att siffrorna växer — inte för att de är sanna (V09)."
+        },
+        {
+          "type": "text",
+          "content": "Premien — den första signalen, och V05. Ett bolag vars tillgångar är illikvida privata lån borde rimligen handlas TILL eller UNDER bokfört substansvärde: det är standardrabatten för fondliknande bolag (tänk investeringsbolag med omsättningsbara innehav — svenska läsare känner igen substansrabatten). Allied handlades istället med en betydande premie — i storleksordningen en tredjedel eller mer över substansvärdet vid tiden för talet, enligt bokens genomgång. Premien är ett påstående: marknaden tror att förvaltningen skapar värde utöver bokfört — eller att bokfört värde är undervärderat. Einhorns vändning: om det bokförda värdet istället är ÖVERVÄRDERAT är den verkliga premien mycket större än den ser ut — och den verkliga utdelningsavkastningen mycket lägre. Så hade du kunnat upptäcka det: ett fondliknande bolag i premie är inte per se fel — men det är ett påstående som kräver bevis, och bevisen bor i bokföringsprinciperna, inte i utdelningens historia."
+        },
+        {
+          "type": "text",
+          "content": "Bokföringen som bärande konstruktion. Allieds vitala organ: låneportföljen redovisades i princip till anskaffningsvärde — kostnadsmarkering — med värderingsantaganden bestämda internt (och godkända av en revisor som år efter år skrev under). Detta är den tekniska grunden för hela fallet: när tillgångarna inte markeras mot marknaden, blir substansvärdet en åsikt — och den som skriver ned skadar både sin bonus och sin berättelse. Kursens AKM1-lins sammanfattar bolaget: V05 (premie mot bokförd substans — påståendet), V12 (intäktskvalitet — ränteintäkter från låntagare som inte betalar, se kapitel 5), V19 (emissioner som finansieringskälla, se kapitel 3), V14 (förtroendevarumärket 40 år av utdelning), V17 (staten som avtalspart genom SBA-garantierna, se kapitel 4). Svensk parallell, illustrativ och namnlös: investeringsbolag och kreditförmedlare som handlas i premie till justerat substansvärde medan små andelar av portföljen handlas på börsen till betydligt lägre nivåer — samma fråga: vem har rätt, premien eller marknadspriset på innehavet?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Allied Capital — profilen som boken målar den\",\"rader\":[[\"Fält\",\"Värde/enligt boken\",\"Signal för eleven\"],[\"Grundad\",\"1958 — ett av USA:s äldsta BDC-bolag\",\"Lång historia skapar förtroende som inte är data (V14)\"],[\"Företagsform\",\"BDC — måste dela ut minst 90 procent av beskattningsbar inkomst\",\"Utdelningen är ett kontrakt, inte en framgång\"],[\"Storlek\",\"Balansräkning i miljardklassen (cirka 3 Mdr USD vid 2002)\",\"Illikvid privat låneportfölj\"],[\"Kurs mot substans\",\"Betydande premie — storleksordningen en tredjedel eller mer\",\"V05: premie till bokfört är ett påstående som kräver bevis\"],[\"Förvaltning\",\"Intern — med incitamentsavgifter kopplade till tillväxt i resultat och substansvärde\",\"Bonusen betalar för växande siffror, inte sanna siffror (V09)\"],[\"Bokföring\",\"Lån i princip till anskaffningsvärde — internt värderade\",\"Substansvärdet är en åsikt; nedskrivningar kostar på personligt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett bolag som handlas över sitt bokförda värde säljer berättelsen att bokföringen är försiktig. Fråga alltid vilka dokument som bär den berättelsen — historiens längd är inte ett bevis."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta upp ett fond- eller investeringsbolagsliknande bolag du känner till (i Sverige eller utomlands) som handlas i PREMIE till substansvärdet. Skriv två meningar: vad premien påstår om förvaltningen — och vilken rad i rapporten som skulle bevisa eller motbevisa påståendet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är ett BDC och vilken utdelningsregel gäller?",
+          "alternativ": [
+            "En bankform utan utdelningskrav",
+            "En kongressskapad företagsform 1980 som måste dela ut minst 90 procent av beskattningsbar inkomst",
+            "En hedgefond med lägre skatt",
+            "Ett statligt låneinstitut som inte får dela ut alls"
+          ],
+          "ratt": 1,
+          "tips": "Företagsformens själ är utdelningstvånget — kom ihåg det när du bedömer om utdelningen är en styrka."
+        },
+        {
+          "q": "Varför var Allied Capital-handeln i premie över substansvärdet en varningssignal?",
+          "alternativ": [
+            "Premier är alltid tecken på kommande krascher",
+            "För att premien gjorde utdelningsavkastningen högre",
+            "Eftersom fondliknande bolag med illikvida tillgångar normalt handlas till rabatt — premien var ett påstående att bokfört värde var undervärderat, och Einhorn vände på det: om bokföringen var uppblåst var verkliga premien större",
+            "För att BDC-bolag är förbjudna att handlas över substans"
+          ],
+          "ratt": 2,
+          "tips": "V05 — men inverterat: värdet av påståendet beror på om bokföringen är sann."
+        },
+        {
+          "q": "Vad var problemet med Allied Capital:s incitamentsavgifter?",
+          "alternativ": [
+            "De var för låga för att attrahera talanger",
+            "De betalades i aktier istället för kontanter",
+            "De gick till extern förvaltare utan insyn",
+            "De kopplades till tillväxt i bokfört resultat och substansvärde — vilket betalade ledningen för att siffrorna växer, inte för att de var sanna"
+          ],
+          "ratt": 3,
+          "tips": "Fråga vilken storhet bonusen triggar på — och vad en nedskrivning skulle göra med den."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Utdelningsdilemmat — utdelning betald med nya aktier",
+      "intro": "Einhorns väg in i fallet började med en enkel anomali: Allied betalade mer utdelning än dess verkliga intjäning täckte — och finansierade gapet med att ständigt ge ut nya aktier till premie över substansvärdet. Detta kapitel bygger mekaniken i det som kallas kursens utdelningsdilemma, kopplar den till V12 och V19 samt Creative Cash Flow-kursens kärnfråga: vad är utdelningen egentligen betald med?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anomalin först. Ett BDC lever av att låna ut pengar och dela ut ränteintäkterna. Allied redovisade nettoinvesteringsinkomst — NII, intäkten efter kostnader — och Einhorns genomgång visade att utdelningen per aktie regelbundet översteg vad verklig, kontant intjäning per aktie motiverade. Gapet fyllde bolaget med realiserade engångsvinster på försäljningar av innehav — och, avgörande, med att ge ut nya aktier. Eftersom aktien handlades i premie över substansvärdet ökade varje emission substansvärdet per aktie: bolaget sålade en kronas bokfört värde för mer än en krona och bokförde skillnaden som skapad substans. Vinsten blev verklig i den meningen att nya aktieägare betalade den — inte i den meningen att portföljen skapat den. Så hade du kunnat upptäcka det: jämför fem år i rad utdelning per aktie mot NII per aktie. Om gapet är positivt och återkommande — fråga vem som betalar."
+        },
+        {
+          "type": "text",
+          "content": "Mekanismen, steg för steg. Ett: utdelningen ligger över kontant intjäning. Två: gapet täcks av emissioner — aktieantalet växer, i boken synligt som en jämn ökning av utestående aktier år efter år. Tre: eftersom emissionen sker till premie över substansvärdet höjs substansvärdet per aktie för alla — den gamla aktieägaren ser sitt substansvärde stiga av att nya ägare betalat för mycket. Fyra: den höjda substansen och den ostörda utdelningen bekräftar berättelsen — som lockar nästa köpare till nästa emission. Einhorn beskriver strukturen i bokens termer som Ponzi-liknande drag: inget olagligt i sig — alla bitar är lagliga — men kretsloppet lever av att nya pengar kommer in till överpris, och dör den dagen premien dör. Det är utdelningsdilemmat: upphör emissionerna sjunker substansvärdestillväxten; upphör utdelningen sjunker aktien — modellen har ingen viloläge där den bara är lönsam."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-linsen: V12 intäktsstabilitet och V19 emission-risk — här i en ovanlig riktning. V19 handlar normalt om att emissioner SPÄDER ägare (risk för dig som äger). Allied är det inverterade fallet: bolaget tjänar på att emittera, eftersom marknaden betalar premie — men modellen blir därmed BEROENDE av fortsatt premie. Premie är ett marknadssläpp, inte en inkomstkälla; när sentimentet vänder samma vecka som finansieringen, kollapsar båda. V12: intäktskvaliteten — en utdelning täckt av emissioner har samma yta som en täckt av räntekassaflöde men motsatt ekonomisk natur. Och V09: det ROE Allied visade upp var i betydande grad en strukturprodukt — avkastning skapad av att sälja eget kapital dyrt, inte av att förvalta lån väl. Creative Cash Flow-kursen (Mulford & Comiskey) ger den exakta frågan: inte alla kassaflöden är skapade lika — klassificera utdelningens källa i driftens intjänning, realiserade engångsposter eller finansieringsverksamhet. Allieds utdelning bodde delvis i finansieringsverksamheten."
+        },
+        {
+          "type": "text",
+          "content": "Så hade du kunnat upptäcka det — den konkreta kontrollen, utan åsikter: öppna kassaflödesanalysen. Läs av tre rader fem år i rad: utdelning betald (finansieringsverksamheten), operativt kassaflöde (driften) och emissionsintäkter (finansieringsverksamheten). Räkna kvoten emissisonsintäkter/utdelning betald. Läs sedan aktieutvecklingen i förvaltningsberättelsen. Om aktieantalet växer medan utdelningen bibehålls och operativt kassaflöde inte växer i takt — då tittar du på en utdelningsfinansieringsstruktur, inte en utdelningsfond. Svensk parallell, illustrativ och namnlös: bolag och investmentförvaltare som betalar växande utdelning medan antalet aktier stadigt ökar och substansvärdet per aktje knappast rör sig — utan namn, men igenkännligt som mönster."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Utdelningens tre finansieringskällor — och vad de är värda\",\"rader\":[[\"Källa\",\"Ser ut som\",\"Ekonomisk natur\",\"Varningssignal\"],[\"Nettoinvesteringsinkomst (NII)\",\"Räntekassaflöde från låneportföljen\",\"Verklig intjäning — om lånen betalar\",\"Kontantränta lägre än bokförd ränteintäkt (non-accrual, kap 5)\"],[\"Realiserade engångsvinster\",\"Kapitalvinst vid försäljning av innehav\",\"Inte återkommande intjäning\",\"Engångsposter som återkommer varje år (Staley-kursens varning)\"],[\"Emissioner till premie\",\"Ny aktie emitterad över substansvärdet\",\"Överföring från nya ägare till gamla\",\"Aktieantalet växer medan utdelningen bibehålls — utdelning bor i finansieringsverksamheten\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte vad utdelningen ger dig — fråga vem som betalar den. Om svaret är nästa aktieägare är det inte avkastning utan en transferering med utdelningskvitto."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en utdelningsaktie du äger. Hämta fem års kassaflödesanalyser och räkna: utdelning betald, operativt kassaflöde och emissisonsintäkter per år. Om utdelningen överstiger driftens kassaflöde något år — notera vilket år och vad som täckte gapet. Spara tabellen till kapitel 15."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärnan i Allied Capitals utdelningsdilemma?",
+          "alternativ": [
+            "Utdelningen var för låg för att attrahera köpare",
+            "Bolaget vägrade dela ut på grund av skatteskäl",
+            "Utdelningen översteg verklig kontant intjäning och finansierades bland annat av emissioner till premie över substansvärdet",
+            "Utdelningen betalades uteslutande av räntekassaflödet"
+          ],
+          "ratt": 2,
+          "tips": "Följ gapet: utdelning minus NII — och läs vad som fyller det."
+        },
+        {
+          "q": "Varför kallar Einhorn strukturen Ponzi-LIKNANDE snarare än olaglig?",
+          "alternativ": [
+            "Eftersom Ponzi-scheman är lagliga i USA",
+            "Eftersom SEC godkänt modellen",
+            "Eftersom utdelningen betalades kontant",
+            "Eftersom alla delar var lagliga — men kretsloppet levde av att nya pengar kom in till överpris och skulle dö när premien dog"
+          ],
+          "ratt": 3,
+          "tips": "Laglighet och hållbarhet är två olika skalor — Einhorn kritiserade hållbarheten."
+        },
+        {
+          "q": "I vilken del av kassaflödesanalysen syns emissionsfinansierad utdelning tydligast?",
+          "alternativ": [
+            "I den finansierande verksamheten — emissionsintäkter och betald utdelning sida vid sida",
+            "I den löpande verksamheten som ränteintäkt",
+            "I den investerande verksamheten som capex",
+            "Den syns inte alls i kassaflödesanalysen"
+          ],
+          "ratt": 0,
+          "tips": "Creative Cash Flow-kursens läsordning: klassificera först, döm sedan."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Dotterbolaget BLX — SBA-maskinen och gain-on-sale",
+      "intro": "Bokens renaste bokföringsmaskin satt i dotterbolaget: Business Loan Express, som Einhorn beskriver som förvärvat av Allied 2001 och i princip helägt (cirka 95 procent). BLX lånade ut till småföretag med stöd av statliga SBA-garantier — och bokförde vinsten medan risken stannade. Detta kapitel bygger gain-on-sale-mekaniken, den mekanism som också drev långivarna i The Big Short.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Verktyget: SBA-garantierna. Small Business Administration — den amerikanska småföretagsmyndigheten — stödjer utlåning genom att garantera en stor del av kvalificerade lån i sitt 7(a)-program: ofta omkring tre fjärdedelar av lånet eller mer. Om låntagaren fallerar betalar staten den garanterade delen. BLX var en SBA-preferred lender — en betrodd status som lät bolaget godkänna lån internt utan att myndigheten granskade varje ansökan först. Nu ser konstruktionen: långivaren tar ut avgifter och ränta på att placera ut risk som slutligen bärs av skattebetalaren (V17 avtal och partnerskap — med en motpart vars incitament är volym, inte kvalitet). Det är inte per se fusk — det är en konstruktion där vinsten privatiseras och risken delvis nationaliseras, och där kvaliteten på underwritingen avgörs av långivarens egen disciplin."
+        },
+        {
+          "type": "text",
+          "content": "Maskinen: gain-on-sale. När BLX tecknade ett SBA-lån och sålde den garanterade delen vidare — en andel med i princip statskredkvalitet — uppstod en vinst direkt vid försäljningen: försäljningspris minus bokfört värde bokförs omgående, och den förväntade lönsamheten på hela affären kan därmed realiseras i resultaträkningen vid origination istället för under lånets liv. Samma mekanism som subprime-långivarna i The Big Short-kursen (kapitel 6 där: gain-on-sale visar vinster långt före sanningen) — och samma AKM1-variabel: V12 intäktsstabilitet i sin bräckligaste form. Vinsten är en uppskattning av framtiden; framtiden betalar notan när lån fallerar. Einhorns observation: BLX:s redovisade vinster växte med utlåningsvolymen — men volymens kvalitet kontrollerades av samma bolag som tjänade på volymen."
+        },
+        {
+          "type": "text",
+          "content": "Gåtan med resterna: den ogaranterade andelen. När den säkra, garanterade delen sålts behöll BLX den ogaranterade delen — andelen som tar hela förlusten om låntagaren inte betalar. Denna rest är ekonomiskt en första-förlust-tranch i en småföretagsportfölj: hög nominell ränta, hög verklig risk. Och här bor fallets kärna (kapitel 5 tar siffrorna): non-accrual-statistiken för de behållna resterna var en multipel högre än den Allied redovisade konsoliderat. Värderingen är också strukturfelet: resterna värderades internt, utan marknadspriser, i ett bolag där nedskrivningar kostade ledningen bonus. Så hade du kunnat upptäcka det: läs fotnoten om segmentet — vad redovisas som sålda garantidelar, vad behålls, till vilket värderingsunderlag? Om vinsten bokförs vid origination och risken saknar marknadspris — då vet du att resultaträkningen berättar om i dag och balansräkningen om en okänd framtid."
+        },
+        {
+          "type": "text",
+          "content": "Strukturerade lån — ränta betald med nya pengar. Einhorn beskriver BLX-lån där låntagaren kunde hålla sig aktuell genom nya drag på krediten: räntan betalas med nytt lånat kapital, inte med verksamhetens kassaflöde. På papperet är lånet aktuellt — i ekonomin är det dött, och skulden växer. Det är Creative Cash Flow-kursens ackumuleringsvarning i lånevärlden: intäkt bokförd (räntan in) medan kassaflödet är negativt (nya utbetalningar in till låntagaren). Svensk parallell, illustrativ och namnlös: kreditgivare vars kunder betalar gamla lån med nya krediter — kredithändelser som aldrig inträffar förrän de alla inträffar samtidigt. Mönstret är universellt: så länge nytt kapital flyter in ser portföljen lugn ut — därför är portföljens ålder och utlöpandeschema viktigare än dess senaste kvartal."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Gain-on-sale-maskinen — steg, bokföring, risk\",\"rader\":[[\"Steg\",\"Händelse\",\"Bokföring\",\"Var risken bor\"],[\"1\",\"Lån tecknas till småföretag med SBA-garanti\",\"Utlåning på balansräkningen\",\"Låntagarens betalningsförmåga oprövad\"],[\"2\",\"Garanterad andel (omkring 3/4 eller mer) säljs\",\"Försäljningsvinst bokförs direkt vid affären\",\"Ingen — approximativ statskredit såld\"],[\"3\",\"Ogaranterad rest behålls\",\"Intervärderad tillgång utan marknadspris\",\"Hela förlustrisken på svagaste låntagarna\"],[\"4\",\"Låntagare betalar ränta med nya drag\",\"Ränteintäkt bokförs — lånet ser aktuellt ut\",\"Skuld växer; dött lån maskeras\"],[\"5\",\"Lån fallerar\",\"Bokförd vinst från steg 2 har redan tagits — förlusten kommer senare\",\"Resultaträkningens dåtid mot balansräkningens framtid\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Gain-on-sale flyttar framtiden till nuet och risken till tystnaden: vinsten syns i resultaträkningen dagen det händer — risken bor i en fotnot tills den inte längre kan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Leta upp en långivare (i Sverige eller utomlands) som använder gain-on-sale eller motsvarande upfront-bokföring. Fråga tre saker till senaste rapporten: hur stora är utförsäkrade/vinster vid origination, vilka antaganden om framtida förluster ligger i dem — och när syns det i siffrorna om antagandena felar?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är SBA:s roll i BLX:s affärsmodell?",
+          "alternativ": [
+            "SBA köpte alla BLX-lån utan garantier",
+            "SBA förbjöd BLX att låna ut till småföretag",
+            "SBA satte BLX:s utdelning",
+            "SBA garanterade en stor del av kvalificerade lån — ofta omkring tre fjärdedelar — så att staten bar förlustrisken på den delen"
+          ],
+          "ratt": 3,
+          "tips": "V17-frågan: vem är motparten och vem bär risken när det går fel?"
+        },
+        {
+          "q": "Hur fungerar gain-on-sale-bokföring?",
+          "alternativ": [
+            "Vinsten realiseras i resultaträkningen redan när lånet tecknas och den garanterade delen säljs — baserat på antaganden om framtiden",
+            "Vinst bokförs successivt över lånets livstid",
+            "Förluster bokförs före vinster",
+            "Vinsten bokförs först när lånet betalats tillbaka helt"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på vad som krävs för att veta ett lånsvärde på förhand — antaganden."
+        },
+        {
+          "q": "Varför var de kvarbehållna ogaranterade resterna farligast?",
+          "alternativ": [
+            "De hade lägst ränta",
+            "De tog hela förlusten på de svagaste låntagarna — och värderades internt utan marknadspris",
+            "De bars av staten",
+            "De såldes alltid med förlust direkt"
+          ],
+          "ratt": 1,
+          "tips": "Vad är kvar när den säkra delen sålts? En första-förlust-position utan notering."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Non-accrual — lånen som slutade betala men inte fick finnas",
+      "intro": "Einhorns viktigaste enskilda sifferarbete gällde non-accrual-lån — lån där låntagaren slutat betala och ränteintäkten inte längre fick bokföras. Allieds redovisade bild och Einhorns genomräkning av dotterbolaget BLX skilde sig åt med multipler. Detta kapitel bygger non-accrual-radar: den mest replikerbara varningen i hela kursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen först, för den bär hela kapitlet. Ett lån försätts i non-accrual när betalningarna uteblir så länge att långivaren inte längre får bokföra ränteintäkt på det — redovisningens sätt att erkänna att intäkten inte kommer. För ett bolag som Allied, vars tillgångar hölls till anskaffningsvärde, blev non-accrual-statistiken den ENDA regelbundet synliga trippeln som avslöjade portföljens verkliga tillstånd: om non-accrual-andelen växer medan nedskrivningar är noll, då ljuger någon av de två kurvorna. Einhorns genomgång visade enligt boken att Allieds konsoliderade non-accrual-andel var liten och välordnad — medan den verkliga andelen non-accrual på BLX:s behållna, ogaranterade lånedelar var en multipel högre. Skillnaden bodde i definitioner och konsolidering: garanterade och ogaranterade delar blandades, och definitionen av betalningsavbrott var generös."
+        },
+        {
+          "type": "text",
+          "content": "Trixet med strukturen: lån som är aktuella på pappret. Kapitel 4:s mekanism fullföljs här — låntagare som betalade ränta med nya drag på krediten räknades inte som non-accrual, trots att deras ekonomiska verklighet var konkurs med rabatt. Addera uppskovs- och workout-kultur: lån som omförhandlades, förlängdes och kapitaliserades istället för att klassificeras. Resultatet är en portfölj av zombielån — tekniskt levande, ekonomiskt döda — som varje kvartal sträcker sig efter nästa omarbetning. Creative Cash Flow-kursens läsning: gapet mellan bokförd ränteintäkt och inbetald ränta är intäktskvalitetens sanning — V12. En långivare vars ränteintäkter växer medan de kontanta inbetalningarna står stilla bygger en fondbuffert av fiction."
+        },
+        {
+          "type": "text",
+          "content": "Einhorns räkneläger: att räkna om bolagets siffror. Metoden var inte magisk utan aritmetisk: hämta den konsoliderade non-accrual-statistiken; isolera BLX i segmentnoten; räkna bort de sålda garanterade delarna (som inte längre bar risk); beräkna non-accrual som andel av de riskbärande resterna; jämför med branschens erfarenhet av småföretagslån till svaga låntagare. Där fick enligt boken en bild fram som var flera gånger Allieds redovisade — och som växde över tid. Så hade du kunnat upptäcka det: non-accrual-trenden per kvartal är en femtonminuterskontroll i vilken långivarrapport som helst (Svensk motsvarighet: kreditförlustnivå och förhöjda riskfördelningar i redovisningen). Om kurvan är platt medan utlåningen växer kraftigt och branschens förluster inte är platta — då tittar du på antingen en extraordinär skicklighet eller en extraordinär definition. Kräv bevis för det första."
+        },
+        {
+          "type": "text",
+          "content": "V-mappning och parallellen till det svenska. V12 intäktsstabilitet är kärnvariabeln — men här ser du också varför AK1A räknar intäktskvalitet under STABILITET: en intäkt som inte kan utebli i teorin (fast ränta) men uteblir i praktiken (non-accrual) är definitionen av instabil kvalitet. V11 likviditet: varifrån kommer bolagets kontanta inbetalningar, inte dess bokförda intäkter? Svensk parallell, illustrativ och namnlös: bolag med kreditportföljer vars kreditförlustnivåer ligger under branschens i flera år medan tillväxten i utlåning är stark — varje sådan serie är antingen moat eller modell, och skiljelinjen är dokumenterad underwriting, inte presentation. Notera slutligen asymmetrin i tiden: non-accrual är en eftersläpande indikator — den syns efter att skadan skett. Därför kompletterar kursen med kapitel 4:s originationssignaler: volymens kvalitet avgörs vid utlåningen; non-accrual bara konstaterar den."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Non-accrual-radar — Allieds bild mot Einhorns genomräkning\",\"rader\":[[\"Signal\",\"Allied redovisad bild\",\"Einhorns genomräkning\",\"Din fråga till rapporten\"],[\"Non-accrual andel\",\"Liten och stabil\",\"En multipel högre på BLX behållna riskandelar\",\"Hur definieras non-accrual — och för vilken portfölj andelen anges?\"],[\"Nedskrivningar\",\"I princip noll\",\"Motiveras inte av räkneverket\",\"Kan en privat låneportfölj vara orörd när branschens förluster inte är det?\"],[\"Räntebetalningar\",\"Aktuella\",\"Delvis betalda med nya kreditdrag\",\"Hur stor del av räntan kommer från låntagarens verksamhet — inte nya lån?\"],[\"Segmentvis redovisning\",\"Konsoliderad, välordnad bild\",\"BLX:s riskandel isolerad\",\"Räcker konsolideringen till — eller döljer den dotterbolaget?\"],[\"Trend över tid\",\"Välordnad\",\"Växande gap\",\"Vad händer med non-accrual per kvartal när utlåningen vuxit?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett lånebok som aldrig skriver ned och en non-accrual-statistik som aldrig växer är inte disciplin — det är en modell som ännu inte fått möta verkligheten."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en långivare eller kreditförmedlare (i Sverige eller utomlands). Rita två kurvor för de senaste fem åren: non-accrual eller kreditförlustnivå, samt tillväxten i utlåningsvolym. Om förlustkurvan är platt medan volymen vuxit kraftigt — skriv ner tre möjliga förklaringar och vilken dokumentation som skulle krävas för varje."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder det att ett lån är i non-accrual?",
+          "alternativ": [
+            "Att betalningarna uteblir så att långivaren inte längre får bokföra ränteintäkt på lånet",
+            "Att lånet betalats tillbaka i förtid",
+            "Att räntan är rörlig",
+            "Att lånet är säkrat med pant"
+          ],
+          "ratt": 0,
+          "tips": "Ordet handlar om intäktsbokföringen — vad som inte längre får bokföras som intäkt."
+        },
+        {
+          "q": "Hur kunde BLX-lån vara aktuella på pappret men döda i ekonomin?",
+          "alternativ": [
+            "SBA betalade räntan åt låntagarna",
+            "Låntagarna betalade räntan med nya drag på krediten — ränta betald med nytt lånat kapital",
+            "Allied bokförde räntan utan att låntagaren existerade",
+            "Räntan var noll under hela lånets löptid"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 4:s strukturdrag fullbordas här: nya pengar in, gamla skulder kvar."
+        },
+        {
+          "q": "Vilken AKM1-variabel bäst fångar non-accrual-problematiken?",
+          "alternativ": [
+            "V16 produktlanseringar",
+            "V14 varumärke",
+            "V12 intäktsstabilitet — intäktens kvalitet och beständighet, med V11 likviditet som komplement",
+            "V04 P/S"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad bokförd ränteintäkt är värd om den inte blir kontant inbetalning."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Talet — 15 maj 2002: att korta ett bolag offentligt",
+      "intro": "Ett offentligt kortanförande är finansbranschens mest exponerade handling: namn, tes och data på en scen inför konkurrenter, journalister och tv-kameror. Detta kapitel går igenom vad Einhorn faktiskt sa vid Ira Sohn-konferensen den 15 maj 2002, hur Allied tog emot nyheten i förväg — och de första dagarnas marknadsreaktion.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Scenen. Ira Sohn Investment Research Conference i New York är branschens mest täta forskningsevenemang — till minnet av Ira Sohn, med vinsterna till barncancerforskning, och med en oskriven regel: presentera din bästa idé, öppet och med namn. Einhorn var 33 år, Greenlight förvaltade i miljardklassen, och fonden hade en kort position i Allied Capital byggd efter månaders research. Han valde alltså formatet med maximal öppenhet: ingen läckt rapport, inget anonymt memorandum — en presentation med hans namn på varje slide, i ett forum där varje påstående kan fotograferas, citeras och bestridas. Boken skildrar talet och dess material i detalj; i centrum stod inte retorik utan fotnoter: siffror hämtade från bolagets egna filingar."
+        },
+        {
+          "type": "text",
+          "content": "Tesen, som kursen sammanfattar i fem ben. Ett: Allied handlades med betydande premie över substansvärde — och premien var ett påstående som krävde bevis. Två: substansvärdet var uppblåst — lånen hölls till anskaffningsvärde med interna värderingsantaganden, nedskrivningarna obetydliga, non-accrual-bilden dekorativ. Tre: utdelningen täcktes inte av verklig intjäning — gapet fylldes av engångsvinster och emissioner till premie. Fyra: dotterbolaget BLX — gain-on-sale-vinster på SBA-lån, non-accrual på de behållna riskandelarna som var en multipel av den redovisade bilden, strukturerade lån där räntan betalades med nya drag. Fem: samspelet mellan incitament (avgifter kopplade till bokförd tillväxt) och redovisning (kostnadsmarkering) gjorde att siffrornas kvalitet var strukturellt dålig — inte slumpmässigt fel, utan fel åt samma håll, år efter år. Notera att varje ben hänvisar till ett dokument — det är det som skiljer en tes från en åsikt."
+        },
+        {
+          "type": "text",
+          "content": "Samtalet innan. Enligt boken ringde Einhorn Allied i förväg — professionell etikett: ge bolaget chansen att svara på det som kommer att sägas. Han nådde fram till IR-ansvarige Joan Sweeney (sedermera en av bolagets högsta chefer). Samtalet blev ingen diskussion om siffror utan, som Einhorn återger det, i praktiken frågan varför han gjorde detta mot dem — inte svar på frågorna. Det är en kurspunkt värd att minnas: hur ett bolag bemöter en analytiker som kommer med dokumenterade frågor är i sig information. Ett bolag med rena siffror har alla incitament att svara med siffror — kostnaden är låg, vinsten hög. Ett bolag vars siffror inte håller har ett strategiskt val mellan data och attack; kapitel 9 visar vilket Allied valde."
+        },
+        {
+          "type": "text",
+          "content": "Reaktionen och den första omröstningen. Aktien föll mer än tio procent på dagarna efter talet — för att sedan återhämta en stor del av fallet, allteftersom köpare steg in i det som framstod som ett tillfälle: en trygg utdelningsaktie på rea, attackerad av en kort som ju tjänar på fallet. Allieds pressrelease förkastade allt; VD och styrelseordförande Bill Walton förklarade offentligt att påståendena var osanna och riktade hård kritik mot Einhorn personligen. Marknadens första röst var alltså: berättelsen slår dokumenten. Einhorns slutsats — och kursens: en granskning är inte en händelse utan ett tryck som måste hålla i åratal. För eleven: vänta dig inte att en enda publicerad analys varaktigt flyttar en kärleksfullt ägd aktie; priset för att ha rätt är tålamod, och värdet av publiceringen ligger i att den KAN bestridas — öppenheten är integritetsbeviset, inte effektivitetsgarantin."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Talets fem ben — påstående, källa, vad som krävts för att vända\",\"rader\":[[\"Ben\",\"Påstående\",\"Var det syntes\",\"Vad som krävts för att vända det\"],[\"1\",\"Betydande premie över substansvärde\",\"Kursnotering mot redovisat substansvärde per aktie\",\"Bevisad underprissättning i portföljen — svårt när lånen är illikvida\"],[\"2\",\"Substansvärdet uppblåst\",\"Redovisningsprinciper: lån till anskaffningsvärde, närmast noll nedskrivningar\",\"Oberoende värdering som höll — eller kvartalsvisa nedskrivningar i linje med branschen\"],[\"3\",\"Utdelningen ej täckt av verklig intjäning\",\"NII mot utdelning per aktie; växande aktieantal\",\"NII som växer in över utdelningen utan emissioner\"],[\"4\",\"BLX: gain-on-sale och dolda non-accrual\",\"Segmentnoter, SBA-data, egen genomräkning\",\"Öppen lånnivådata som visade låg non-accrual på riskandelarna\"],[\"5\",\"Incitament betalade för att inte skriva ned\",\"Styrrapportens avgiftsformler\",\"Avgiftsstruktur utan beroende av bokförd tillväxt\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Att publicera tesen med namn och data är shortarens enda ärliga kort: Allied kunde kvittera med fakta — och valde att kvittera med attack. Det valet är i sig en bokslutspost."
+        },
+        {
+          "type": "utmaning",
+          "content": "Träning i offentlig argumentation, utan position: skriv en fem-punkters tes om ett bolag du är skeptisk till — varje punkt med hänvisning till en specifik rad i en offentlig rapport. Be en vän spela bolagets IR och bemöta dig. Notera vilken punkt som håller sämst — den är din nästa researchuppgift."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknade Einhorns presentation vid Ira Sohn 2002?",
+          "alternativ": [
+            "Den hölls anonymt via läckta dokument",
+            "Den var en offentlig tes med namn, data och fotnoter — öppen att citeras och bestridas",
+            "Den gällde subprime-bolån, inte Allied",
+            "Den hölls inför en sluten krets utan journalister"
+          ],
+          "ratt": 1,
+          "tips": "Formatets regel: bästa idén, öppet — det gör manipulationstankar svårare att hävda."
+        },
+        {
+          "q": "Hur mottog Allied Capital förvarningen enligt boken?",
+          "alternativ": [
+            "Med en inbjudan att gå igenom låneboken tillsammans",
+            "Med en omedelbar nedskrivning av portföljen",
+            "Med frågan i praktiken varför Einhorn gjorde detta mot dem — inte med svar på sifferfrågorna",
+            "Med tystnad"
+          ],
+          "ratt": 2,
+          "tips": "Ett bolag med rena siffror svarar med siffror. Vad svarade Allied med?"
+        },
+        {
+          "q": "Vad visade marknadens reaktion dagarna efter talet?",
+          "alternativ": [
+            "Att Einhorns tes omedelbart accepterades av marknaden",
+            "Att Allied stängdes för handel",
+            "Att utdelningen togs bort direkt",
+            "Att aktien föll mer än tio procent men återhämtade en stor del — köpare steg in på utdelningsberättelsen"
+          ],
+          "ratt": 3,
+          "tips": "Första omröstningen gäller sentimentet — inte bokföringen. Rätten kostar tid."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Grävandet I: SEC-filerna — fotnoter som bevis",
+      "intro": "Einhorns edge var inte tillgång till hemliga databaser utan ett arbetssätt: läsa primärdokumenten i rätt ordning och räkna om det bolaget räknat. Detta kapitel katalogiserar källorna — SEC-filingar, styrrapporter, Form 4 och myndighetsdata — och visar vad varje källa gav fallet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Arbetsordningen, som är kursens kanske mest replikerbara arv. Einhorn läste fotnoter före sammanfattningar, redovisningsprinciper före vd-brev, och filingar före analys. Det är samma ordning som Staley-kursen (fotnoter och nyckeltal först, pressreleaser allra sist) och Schilit-kursen (detektorns läsordning) — ingen tillfällighet: branschens bästa fel-sökare arbetar upp-och-ner mot hur rapporterna är designade att läsas. För Allied gav det konkret: i 10-K:s noter om redovisningsprinciper stod att lån i princip hölls till anskaffningsvärde; i segmentnoterna stod BLX:s siffror separerade nog att räkna om; i styrrapporten stod avgiftsformlernas exakta beroende av bokförd tillväxt; i noterna om utdelning stod skillnaden mellan utdelning, realiserade vinster och nettoinvesteringsinkomst. Summan av fotnoter målade en annan bild än förvaltningsberättelsen — och varje del var bolagets eget material, signerat av revisor."
+        },
+        {
+          "type": "text",
+          "content": "Form 4 och insiderhändena: vad ledningens plånbok sa. Einhorn följde enligt boken de registrerade insider-transaktionerna — i USA anmäls ledningens handel i aktier på Form 4, offentligt och snabbt. Frågan var enkel: om berättelsen om en underprisad utdelningsmaskin var sann — säljer då de som vet mest? Mönstret som boken skildrar är att ledningen under åren tjänade väl på sina positioner och incitament, samtidigt som presentationerna framställde substansvärdestillväxten som närmast en naturlag. Kursens varning är nyanserad: insiderförsäljning är inte automatiskt en fällare (diversifiering är legitimt) — men insiderhänder är den mjuka signal med högst hårdvaluta, som Staley-kursen formulerar det, eftersom den kostar pengar att fejka. Den som kombinerar Form 4-mönstret med avgiftsformler och redovisningsval får en incitamentskarta — och incitamentskartan bestämmer var sanningen bor."
+        },
+        {
+          "type": "text",
+          "content": "Den externa trianguleringen: SBA:s egna data. Einhorns smartaste grepp var att jämföra bolagets berättelse med en oberoende myndighetskälla: SBA publicerar statistik över sina garantiprogram, och bland offentligt material gick det att få fram bilder av utfall och problem i den värld BLX verkade i. Två oberoende källor — bolagets filingar och myndighetens data — är källkritikens grundkrav, och här kunde Einhorn testa Allieds bild av sig själv som en disciplinerad aktör i en sund modell. Svenska motsvarigheter finns: statistik från Finansinspektionen, Riksbankens kreditdata, Bolagsverkets registreringar, SCB:s konkursstatistik — offentliga register som varje analytiker kan ställa en kreditgivares berättelse mot. Så hade du kunnat upptäcka det: varje gång ett bolag påstår sig ligga i topp på kvalitet i en bransch där myndigheten mäter utfall — hämta mätningen."
+        },
+        {
+          "type": "text",
+          "content": "Elevens tiotimmarsversion. Einhorns krig tog sex år — men kärnkontrollerna går att köra på en eftermiddag. För ett utlånings- eller investmentbolag: (1) läs de tre senaste årsredovisningarnas redovisningsprinciper: hur värderas tillgångarna? (2) rita utdelning mot nettoinvesteringsinkomst fem år; (3) rita aktieantalet fem år; (4) läs avgiftsformlernas triggers i styrrapporten; (5) läs non-accrual- och kreditförlusttrenden; (6) hämta en myndighetsjämförelse. Sex kontroller — och en fråga som binder samman: vittnar dokumenten om samma bolag som presentationen? I Allied-fallet gjorde de inte det — och skillnaden behövde ingen insider för att ses, bara en läsare som började på rätt ställe: fotnoten."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Källkatalogen — dokument, vad det gav, din svenska motsvarighet\",\"rader\":[[\"Källa\",\"Vad den gav Einhorn\",\"Din motsvarighet\"],[\"10-K/årsredovisning, redovisningsprinciper\",\"Lån till anskaffningsvärde — internt värderade\",\"Noter om värdering av finansiella tillgångar\"],[\"Segmentnoter\",\"BLX isolerat — gain-on-sale och behållna riskandelar\",\"Segmentrapportering i not eller företagsinformation\"],[\"Styrrapport (DEF 14A)\",\"Avgiftsformler knutna till bokförd tillväxt\",\"Beslutsunderlag styrelse/ersättningskommitté\"],[\"Form 4\",\"Ledningens egna transaktioner över tid\",\"Insideranmälningar (ledning och närstående)\"],[\"SBA:s publika programdata\",\"Oberoende utfallsmått att triangulera mot\",\"FI/Riksbanken/SCB — kredit- och konkursstatistik\"],[\"Utdelnings- och kapitalnoter\",\"Utdelning mot intjäning och emissionsintäkter\",\"Kassaflödesanalys och förändringsanalys eget kapital\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Skillnaden mellan research och läsande av research är fotnoter: däruppe bor påståendena, därnere bor möjligheten att kontrollera dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag och läs enbart fotnoter i senaste årsredovisningen — inga sammanfattningar, inga analyser. Skriv ner tre saker ingen sammanfattning du läst har nämnt. Om en av dem förändrar din bild — notera varför du inte sett den förut."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Form 4 och varför är den användbar?",
+          "alternativ": [
+            "Ett verktyg för att korta aktier",
+            "En blankett för utdelningsbeslut",
+            "Offentlig anmälan av ledningens egen handel i bolagets aktier — en mjuk signal med hög hårdvaluta",
+            "En revisionsberättelse från Big Four"
+          ],
+          "ratt": 2,
+          "tips": "Följ ledningens plånbok — den är svår att fejka och lätt att läsa."
+        },
+        {
+          "q": "Vilken läsordning lär kursen ut från Einhorn (och Staley/Schilit)?",
+          "alternativ": [
+            "VD-brevet först, sedan fotnoter",
+            "Pressreleaser först och fotnoter bara vid tvivel",
+            "Analytiktrapporter först, dokument enbart för bekräftelse",
+            "Fotnoter och redovisningsprinciper först — pressreleaser och vd-brev allra sist"
+          ],
+          "ratt": 3,
+          "tips": "Rapporter är designade att läsas uppifrån; fel-sökaren läser nedifrån."
+        },
+        {
+          "q": "Vad menas med extern triangulering i Allied-fallet?",
+          "alternativ": [
+            "Att jämföra bolagets filingar med oberoende myndighetsdata — SBA:s publika programstatistik",
+            "Att låta en utländsk bank granska bolaget",
+            "Att triangelregistrera aktier",
+            "Att intervjua tre anställda"
+          ],
+          "ratt": 0,
+          "tips": "Källkritikens grundregel: två oberoende källor slår en vältalig rapport."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Grävandet II: incitament, insiders och den tysta revisionen",
+      "intro": "Ett bokslut är en maskin byggd av människor med lönecheckar. Detta kapitel gräver i Allied Capital:s incitamentsstruktur — avgifter som betalade för bokförd tillväxt — den interna kulturen, insidermönstret och den revisor som år efter år skrev under. Mjuka signaler med hårda konsekvenser, i Staley-kursens tredje lager.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Incitamentsarkitekturen. Allied var internt förvaltat — inga avgifter till en extern förvaltare, vilket i presentationen framstod som renhet. Men den interna ledningen hade enligt boken incitamentsavgifter kopplade till tillväxt i nettoresultat och i substansvärde — och det är avgörande: en substansvärdesökning som kommer av en ny emission till premie ökar värdet som bonusen beräknas på, utan att en enda dollar skapats i portföljen; en nedskrivning av ett lån minskar samma värde — och därmed bonusen. En struktur där det kostar ledningen personliga pengar att skriva ned och betalar att inte skriva ned kommer, även med hederliga människor, att producera för få nedskrivningar. Det är inte en konspiration — det är mekanik. AKM1:s V09-fråga blir konkret: är avkastningen på eget kapital skicklighet i utlåning, eller avkastning på att sälja eget kapital dyrt och låtsas att tillgångarna är värda anskaffningspriset?"
+        },
+        {
+          "type": "text",
+          "content": "Den tysta revisionen. En internt värderad balansräkning kräver en motpart som säger ifrån — revisorn. I Allied-fallet skrev revisionsbyrån enligt boken under år efter år på värderingar av illikvida privata lån som inget oberoende pris hade. Schilit-kursens mjuka signaler — revisorsbyte vid otid, CFO-avgångar, revisionsberättelser med växande förbehåll — saknades här i sin klassiska form: byråerna byttes inte, berättelserna var rena. Det är en egen läxa: frånvaron av klassiska varningar är inte ett renhetsbevis när hela konstruktionen vilar på interna värderingar — då är granskningsfrågan istället VEM betalar granskaren och VAD i rapporten är överhuvudtaget granskningsbart mot verkligheten. En revisor kan granska att en värdering följt en modell — men inte att modellen är sann. Elevens fråga till varje revisionsberättelse: är detta en attest av metod eller ett omdöme om värde?"
+        },
+        {
+          "type": "text",
+          "content": "Insidermönstret i kontext. Kapitel 7 etablerade verktyget (Form 4); här blir det tolkning. Mönstret var enligt boken att ledningen tjänade stadigt på incitament och optioner i en aktie som bolagets egen redovisning höll varm — inte att alla sålde i panik. För eleven: insiderdata blir starkast i kombination — ensam är en försäljning diversifiering; försäljning samtidigt som vinsten växer snabbare än kassan, avgifterna betalas på bokförd tillväxt, och nedskrivningarna är noll — är ett mönster. Staley-kursens regel: en varning är en motfråga, tre konvergerande lager är en tes. Allied-fallet vid tiden för talet: redovisningslager (kostnadsmarkering, gain-on-sale), finansieringslager (emissionsberoende utdelning) och incitamentslager (avgifter på bokförd tillväxt) — tre lager som pekade åt samma håll."
+        },
+        {
+          "type": "text",
+          "content": "Svensk parallell, illustrativ och namnlös: bolag där styrelsens ersättningsutskott betalar bonus på justerad EBITDA eller substansvärdestillväxt utan realisering, där en lång kedja av förvärv bokförs till optimistiska värden, och där revisionen attesterar metoder men aldrig priser. Kulturen runt Allied — ett ärat, gammalt bolag med politiska kontakter och donationer, enligt bokens redovisning av bolagets nätverk — är också en svensk igenkänning: ju mer ett bolag är en institution, desto dyrare blir det socialt att ifrågasätta det, och desto viktigare är att eleven skiljer institutionsrespekt från dokumentrespekt. Kultur bestämmer sifferkvalitet flera kvartal före siffrorna."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Incitamentskartan — vem tjänar på vad i Allied-modellen\",\"rader\":[[\"Part\",\"Tjänar på\",\"Kostar att erkänna sanningen\",\"Din fråga\"],[\"Intern ledning\",\"Incitamentsavgifter på bokförd tillväxt i resultat och substansvärde\",\"Nedskrivning minskar bonusunderlaget direkt\",\"Vilken exakt storhet triggar ersättningen?\"],[\"Revisor\",\"Arvode för att attestera metoden\",\"Att ifrågasätta interna värderingar kostar uppdrag\",\"Är detta en attest av metod — eller ett omdöme om värde?\"],[\"Förvaltare med Allied i portföljen\",\"Utdelningsavkastning och en trygg berättelse\",\"Att ifrågasätta ägandet är att erkänna fel\",\"Vem äger aktien — och vad köpte de egentligen?\"],[\"Nya aktieägare\",\"Berättelsen om 40 år av utdelning\",\"Ingenting ännu — de betalar premien\",\"Vad finansierar utdelningen de köper?\"],[\"Låntagare i BLX-portföljen\",\"Nya drag och uppskov\",\"Att konkursen kommer i kluster\",\"Hur gammal är portföljen — och när löper den ut?\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte vad ledningen säger — fråga vilken lönecheck som ändras om siffrorna ändras. Incitamentskartan förutsäger bokslutet bättre än presentationsmaterialet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Hitta incitamentsprogrammet för ett bolag du äger: vilken exakt storhet triggar bonusen — realiserat kassaflöde, EBITDA, substansvärde, EPS? Om den kan växa utan att kassan växer, skriv upp det och spara till kapitel 15:s checklista."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför var Allied Capital:s incitamentsavgifter strukturellt problematiska?",
+          "alternativ": [
+            "De var för låga för att motivera ledningen",
+            "De betalades ut i form av lån från bolaget",
+            "De var förbjudna enligt BDC-reglerna",
+            "De kopplades till tillväxt i bokfört resultat och substansvärde — nedskrivningar kostade ledningen pengar och emissioner till premie ökade bonusunderlaget"
+          ],
+          "ratt": 3,
+          "tips": "Följ bonusformeln: vad händer med den om ett lån skrivs ned — respektive om en emission görs till premie?"
+        },
+        {
+          "q": "Vad är den rätta skepsisen mot revisorns roll i Allied-fallet?",
+          "alternativ": [
+            "Att en revisor kan attestera att en värdering följt en modell — men inte att modellen är sann; frånvaron av revisionsvarningar är inget renhetsbevis när allt vilar på interna värderingar",
+            "Att revisorn borde ha förbjudit utdelningen",
+            "Att revisionsbyråer aldrig gör fel",
+            "Att revisorn borde ha kortat aktien"
+          ],
+          "ratt": 0,
+          "tips": "Vad kan granskas mot verkligheten i en portfölj utan marknadspriser?"
+        },
+        {
+          "q": "När blir insiderförsäljning en stark signal enligt kursen?",
+          "alternativ": [
+            "Alltid — varje försäljning är en varning",
+            "I kombination: försäljning samtidigt som vinst växer snabbare än kassa, avgifter betalas på bokförd tillväxt och nedskrivningar är noll — tre konvergerande lager",
+            "Aldrig — diversifiering är alltid legitimt",
+            "Bara om den sker samma dag som en kvartalsrapport"
+          ],
+          "ratt": 1,
+          "tips": "En varning är en motfråga; tre lager som pekar samma håll är en tes."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Kriget — Allieds motangrepp och de privata utredarna",
+      "intro": "Efter talet började inte en debatt utan ett krig. Allied Capital svarade med punktvisa bemötanden, personangrepp på Einhorn, och — enligt bokens skildring — privata utredare som kartlade honom och hans fonds medarbetare. Detta kapitel katalogiserar motangreppets verktyg och vad de lär om hur ett bolag svarar på granskning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första salvorna. Allied bemötte talet med pressreleaser och ett långt, punkt-för-punkt-försvar av sin redovisning och BLX-verksamheten; VD och styrelseordförande Bill Walton förklarade offentligt att Einhorns påståenden var osanna och målade upp honom som en kort som talade ned aktien för egen vinst. Konferenssamtal med analytiker arrangerades; fonder och analytiker fick bolagets berättelse om en attackerad amerikansk institution. Notera strukturen, som är typisk: motangreppet blandade (a) faktiska bemötanden — som borde ha välkomnat granskning genom att publicera låndata, (b) omtolkningar av Einhorns påståenden till karikatyrer, och (c) motiveringsangrepp: han tjänar på att ha rätt, alltså är han partisk. Kursens regel: (a) är legitimt och välkommet — det är så marknadsdebatt ska fungera; (b) och (c) är retoriska verktyg som inte rör sanningen i en enda fotnot."
+        },
+        {
+          "type": "text",
+          "content": "De privata utredarna — krigets mörka halva. Boken skildrar hur Allied anlitade utredningsföretag för att kartlägga Einhorn, Greenlight och medarbetare: kontakter granskades, uppgifter samlades in, och Einhorns omgivning utsattes för förfrågningar — allt för att finna material som kunde misskreditera budbäraren. Syftet med att granska granskaren är aldrig sifferdebatt utan persondestruktion: om publiken talar om VEM som har rätt istället för VAD som är rätt, har bolaget vunnit tids nog. Einhorns motdrag: full transparens om sin egen position, sin research och sina incitament — och att låta dokumenten stå för tesen. För eleven är detta en av kursens viktigaste distinktioner: attacken på kritikern är inte ett argument mot kritiken; den är en mjuk signal i Staley-checklistans mening — bolag med rena siffror publicerar data, bolag med smutsiga siffror publicerar känslor."
+        },
+        {
+          "type": "text",
+          "content": "Analyskåren och ägarna. Säljsidans analytiker ställde sig till stor del bakom Allied — av en blandning av övertygelse, bankrelationer och den mänskliga viljan att tro på en vuxen institution framför en 33-årig kort. Ägare skrev brev, köpte dippar och försvarade utdelningen. Einhorn lärde sig det Big Short-kursen också lär ut: att ha rätt är en minoritetsposition med social kostnad — och mot ett känslomässigt ägt innehav räcker inte fakta; det krävs att positionen, kassan och karaktären överlever processen (Staley-kursens klocka och kassa). AKM1-linsen: V14 varumärke igen — Allied VAR sin utdelning, och varje angrepp på bokföringen upplevdes av ägarna som ett angrepp på deras egen omdömesförmåga. Det är därför motangrepp fungerar: de köper tid hos dem som redan tror."
+        },
+        {
+          "type": "text",
+          "content": "Så läser eleven ett motangrepp — protokollet. När ett bolag du granskat (eller äger) bemöter kritik, sortera svaret i tre lådor. LÅDA ETT, data: nya siffror, lånedata, oberoende värderingar — bra, oavsett vem som har rätt. LÅDA TVÅ, metod: anklagelser om kritikerns motiv, historieskrivning, advokatspråk — notera, men vikta noll i sakfrågan. LÅDA TRE, eskalering: advokatbrev, utredare, hot om stämning — vikta negativt i sakfrågan, ty det signalerar att låda ett var tom. Allied-fallet illustrerar mönstret i ren form: ju mer som offentliggjordes om bolagets reaktioner — från bemötanden till personangrepp — desto tydligare blev det att låda ett aldrig fylldes med den typ av lånnivådata som hade avslutat debatten på en eftermiddag."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Motangreppets verktyg — syfte, mekanism, din motåtgärd\",\"rader\":[[\"Verktyg\",\"Syfte\",\"Din motåtgärd\"],[\"Punkt-för-punkt-bemötande med data\",\"Vinna sakdebatten\",\"Läs som en tes — granska som en prospektus\"],[\"Omtolkning av kritiken till karikatyr\",\"Flytta debatten till en stråman\",\"Citera den egna tesen exakt; ändra ingenting\"],[\"Motiveringsangrepp — han tjänar på att ha rätt\",\"Misskreditera budbäraren\",\"Kom ihåg: motiv är inte argument; positionen kan redovisas öppet\"],[\"Privata utredare mot kritikern\",\"Hitta smuts — persondestruktion\",\"Dokumentera allt; transparens om egen position och research\"],[\"Analytiker och ägare som försvarar\",\"Köpa tid och socialt kapital\",\"Skilj institutionsrespekt från dokumentrespekt\"],[\"Advokatbrev och stämningshot\",\"Eskalera kostnaden för att ha rätt\",\"Räkna med kostnaden i förväg — kassa och karaktär är positionen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett bolags svar på granskning är i sig en bokslutspost: data är kapital, känsloargument är kostnad, personangrepp är en skuld som en dag förfaller."
+        },
+        {
+          "type": "utmaning",
+          "content": "Samla tre verkliga bolagssvar på kritik (pressrelease, debattartikel eller transkript av frågestund). Räkna andelen argument som är siffror mot andelen som är känslor eller motiveringsangrepp. Kvoten är i sig ett analysresultat — spara den."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad använde Allied Capital privata utredare till, enligt boken?",
+          "alternativ": [
+            "Kartlägga Einhorn, Greenlight och medarbetare för att finna material som kunde misskreditera budbäraren",
+            "Granska sin egen låneportfölj",
+            "Utreda SBA:s garantiregler",
+            "Förbereda en försäljning av bolaget"
+          ],
+          "ratt": 0,
+          "tips": "Syftet med att granska granskaren är persondestruktion — inte sifferdebatt."
+        },
+        {
+          "q": "Vilket bemötande från ett granskat bolag är legitimt och välkommet?",
+          "alternativ": [
+            "Advokatbrev till kritikern",
+            "Punkt-för-punkt-bemötande med ny data och oberoende värderingar",
+            "Anklagelser om kritikerns ekonomiska motiv",
+            "Tystnad och nedlagd frågestund"
+          ],
+          "ratt": 1,
+          "tips": "Sortera svaret i tre lådor: data, metod, eskalering — bara den första rör sakfrågan."
+        },
+        {
+          "q": "Varför fungerar motangrepp på kritikern trots att de inte rör sakfrågan?",
+          "alternativ": [
+            "Eftersom de alltid är sanna",
+            "Eftersom de ändrar bokföringen",
+            "Eftersom ägare upplever angrepp på bolaget som angrepp på deras eget omdöme — motangreppet köper tid hos dem som redan tror",
+            "Eftersom regulatorer kräver dem"
+          ],
+          "ratt": 2,
+          "tips": "V14: bolaget VAR sin utdelning — och ägarna sin portfölj."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Journalisterna — klippbaserat mot primärkällor",
+      "intro": "Efter talet blev Einhorn en mediastory — och medias behandling av fallet blev en läxa i källkritik. Enligt boken skrev somliga journalister tidigt kritiskt om Einhorns motiv, medan andra grävde i dokumenten och kom fram till att det fanns ett fall att granska. Detta kapitel bygger elevens filter för finansiell journalistik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första vågen. Efter Ira Sohn-talet blev historien i många medier inte Allieds bokföring utan Einhorn: den unge korten som talade ned en ärade utdelningsaktie. Einhorn redogör i boken för hur ledande kolumner och reportage målade upp honom som partsintresserad — han hade ju en kort position, varför allt han sa kunde avfärdas som eget intresse — och hur Allieds berättelse återgavs i oförändrad form. Bland de tidiga kritikerna fanns enligt boken en välkänd kolumnist på New York Times, Joe Nocera, som ifrågasatte Einhorns motiv; kritiken var sin tids huvudfåra i den meningen att den följde den etablerade berättelsen, inte dokumenten. Skillnaden mellan journalisters arbetssätt — om de ringde källan, läste filingarna, bad om kommentar — bestämde i hög utsträckning om artikeln blev ny information eller omskriven PR."
+        },
+        {
+          "type": "text",
+          "content": "Den andra vågen — de som grävde. Efter hand publicerades reportage där journalister faktiskt följde dokumenten: boken skildrar bland annat en reporter på New York Post som grävde vidare i SBA-material och Allied-konstruktioner och fann att det fanns något att granska. Mönstret är kursens kärna: de som läste primärkällorna kom fram till att det fanns ett fall — oavsett om de gillade Einhorn eller ej; de som skrev av partsinlagor kom fram till att Einhorn var problemet. Samma filter gäller idag och i Sverige: finansiell journalistik med snäva deadlines bygger ofta på analytikerkommentarer och bolagets egna material; det är sällan fel — men det är sällan nytt. Elevens regel: en artikel om ett granskat bolag är en produkt med en källa — läs den som en partsinlaga och gå till dokumentet den hänvisar till (eller borde ha hänvisat till)."
+        },
+        {
+          "type": "text",
+          "content": "Einhorns mediekritik — och dess verkliga kärna. Einhorns poäng är inte att journalister ska tycka som honom; den är processuell: journalistik som inte läser dokumenten kan inte skilja tes från fakta, och blir då en förstärkare för den som har den bäst bearbetade berättelsen — vilket per definition är bolaget, med sin IR-avdelning och sitt varumärke. I Allied-fallet fick det konsekvenser: när medierna skrev storyn om en manipulativ kort köpte Allied tid; när grävande journalister skrev storyn om SBA-lån och redovisning började frågorna flytta sig. Sverige-parallellen: Finansinspektionen har vid upprepade tillfällen varnat allmänheten för att handla på kortrapporter och aktivistnotiser där rapportören har egen position — en sund varning, och den kompletteras av denna kursens dubbla källkritik: granska bolaget OCH granska granskaren. Det är inte motstridigt — det är samma disciplin, två gånger."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken för eleven — mediefiltret i fyra frågor. Ett: källhänvisning — hänvisar artikeln till ett dokument jag själv kan läsa: filing, domstolshandling, myndighetsdata? Två: två parter — har både bolaget och kritikern fått kommentera, med faktaspecifika frågor och inte bara uttalanden? Tre: intressen — redovisas skribentens och citerade rapportörers positioner, och om det är en short-rapport som citeras, rapportörens innehav? Fyra: uppföljning — skriver samma medie om ämnet flera gånger och ändrar bilden när nya dokument kommer, eller upprepar den ursprungliga storyn? Fyra ja är ovanligt; fyra nej betyder att artikeln är bakgrundsmaterial, inte bevis. Citera öppet själv: när du skriver egna analyser, länka dokumentet — det är den enda stilen som gör din analys granskningsbar, och det var exakt den stil Einhorn använde i talet."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mediefiltret — kriterium, bra gräv, klippbaserat\",\"rader\":[[\"Kriterium\",\"Bra gräv\",\"Klippbaserat\"],[\"Primärkälla\",\"Hänvisar till filing, domstol eller myndighet jag kan läsa\",\"Hänvisar till pressrelease eller annan artikel\"],[\"Kommentarsrätt\",\"Båda parter fått svara på faktaspecifika frågor\",\"Endast en part citerad — eller ingen\"],[\"Intressen\",\"Skribentens och citerade rapportörers positioner redovisade\",\"Positioner okända eller ogrundat förklarade\"],[\"Uppföljning\",\"Ny dokumentation förändrar bilden\",\"Samma story upprepas utan nytt material\"],[\"Tidspress-tecken\",\"Publicering väntat in svarstid\",\"Publicerad inom timmar utan faktakoll\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Media är marknadens distributionssystem för berättelser: den som läser dokumentet först får informationen före den som läser artikeln om dokumentet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett aktuellt granskningsämne i en bolagsaktie. Läs först själv den primärkälla som borde finnas (rapportnot, domstolshandling, myndighetsbeslut) — och läs sedan tre artiklar om ämnet. Lista vilka påståenden som förökats utan källa. Spara listan som ditt eget exempel på mediefiltret."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skilde de journalister som kom fram till att Allied-fallet förtjänade granskning?",
+          "alternativ": [
+            "De tyckte synd om Einhorn",
+            "De följde primärdokumenten — SBA-material och filingar — oavsett vad de tyckte om Einhorn",
+            "De hade kort positioner själva",
+            "De skrev av Allieds pressreleaser troget"
+          ],
+          "ratt": 1,
+          "tips": "Arbetssättet — dokumenten — bestämde slutsatsen, inte sympatin."
+        },
+        {
+          "q": "Hur bör enligt kursen en artikel om ett granskat bolag användas?",
+          "alternativ": [
+            "Som bevis på att granskningen är sann",
+            "Som bevis på att bolaget är oskyldigt",
+            "Som en partsinlaga och lead-generator — gå alltid till det dokument artikeln hänvisar till eller borde hänvisa till",
+            "Som investeringsråd att handla på direkt"
+          ],
+          "ratt": 2,
+          "tips": "Artikeln är en produkt med källor — läs källorna, inte bara rubriken."
+        },
+        {
+          "q": "Vad säger kursen om FI:s varningar för att agera på short-rapporter?",
+          "alternativ": [
+            "Att de är fel och short-rapporter alltid är sanna",
+            "Att FI ska förbjuda kortförsäljning",
+            "Att varningarna bara gäller utländska medier",
+            "Att de är en sund påminnelse om dubbel källkritik — granska bolaget OCH granskaren, eftersom rapportören kan ha egen position"
+          ],
+          "ratt": 3,
+          "tips": "Samma disciplin två gånger: dokumenten är ditt ansvar — oavsett vem som pekar på dem."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Regulatorerna — myndigheten som utredde shortaren (V18)",
+      "intro": "Bokens mest bittra kapitel handlar inte om Allied utan om staten. Enligt Einhorns skildring blev den första konkreta myndighetsåtgärden efter talet inte en granskning av Allieds redovisning — utan ett intresse för vad Greenlight hade gjort runt talet. Detta kapitel bygger V18-regulatoriska katalysatorer till en strukturläxa om myndigheters incitament.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vad som hände, enligt boken. Efter talet och Allieds klagomål började SEC enligt Einhorn med att granska korten: hade Greenlight positionerats så att fonden tjänade på talet, hade någon varnats i förväg, fanns det något att anmärka på publiceringen? Greenlight samarbetade, lämnade material — och något åtal eller anmärkning blev det inte. Samtidigt granskades inte Allieds redovisning på allvar i åratal: lån till anskaffningsvärde, non-accrual-gapet och BLX-konstruktionen fick förbli oproblematiska i tillsynens ögon tills brott i en dotterbolagsfilial tvingade fram ett annat sorts ansvar (kapitel 12). Einhorns vitsiga observation är bitter: systemet som skulle skydda investerare ägnade sina första resurser åt att kontrollera den som sagt att investerarna behövde skydd. Det är en läxa i institutionslogik, inte i ondska."
+        },
+        {
+          "type": "text",
+          "content": "Varför blir det så? Tre strukturella orsaker. För det första synlighet: att granska en känd kort är en billig, medialt begriplig åtgärd; att återöppna ett ärat bolags redovisning är dyrt, juridiskt riskabelt och politiskt obekvämt. För det andra beroende: SBA:s garantiprogram vilar på långivarnas egen rapportering — myndigheten som garanterar lånen är delvis samma myndighet vars program lever på att volymen är sund; incitamentet att granska sin egen pipeline är svagt. För det tredje politik: Allieds nätverk och donationer, som boken dokumenterar, gjorde bolaget till en institution man inte angriper lättvindigt. V18-regulatoriska katalysatorer blir här inte en förhoppning utan en analysvariabel: fråga inte VAD myndigheten borde göra — fråga vad dess incitament gör sannolikt, och när en katalysator faktiskt kommer (i detta fall: först när ett brott var enkelt att bevisa)."
+        },
+        {
+          "type": "text",
+          "content": "Läxan för eleven: granskning kan inte delegeras. Myndigheter granskar det som är enkelt, synligt och politiskt säkert; revisorer attesterar metoder; analytiker har banker som kunder. Den enda aktör vars incitament pekar mot att läsa fotnoterna i ett utdelningsbolag är den som kortar det — och eventuellt köparen som inte vill bli den sista som betalar premien. Det är den djupare grundvalen för Staley-kursens formulering att kortförsäljare gör läxan ingen annan gör, och den ska tas med ro: den som HAR rätt saknar makt; den som har makt saknar incitament. Einhorns sex år är priset för den skillnaden. Svensk parallell: FI varnar, revisorer attesterar, Ekobrottsmyndigheten utreder när brott är begångna — strukturerna är desamma, och elevens slutsats måste vara densamma: dokumenten är ditt eget ansvar."
+        },
+        {
+          "type": "text",
+          "content": "V18 som analysvariabel — praktiskt. I varje tes bör regleringsfrågan ha en egen rad: vilken myndighet övervakar detta bolag, vad övervakas konkret (redovisning, solvens, prospekt), vilka resurser och incitament har myndigheten, och vilken händelse skulle tvinga fram ingripande? I Allied-fallet var svaret: SEC övervakade redovisning men agerade inte; SBA övervakade garantiprogrammet men var beroende av långivarens rapportering; DOJ agerade när brottsliga handlingar i Detroit var enkelt bevisliga. Tre myndigheter, tre incitament, en katalysator — och den kom först år fem. Så hade du kunnat använda det: en tes som förlitar sig på att en myndighet gör något bör byggas om till en tes som inte förlitar sig på någon alls."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre myndigheter — tre reaktioner och deras strukturella orsaker\",\"rader\":[[\"Myndighet\",\"Medel\",\"Reaktion enligt boken\",\"Strukturell orsak\"],[\"SEC\",\"Tillsyn och enforcement av värdepappersmarknaden\",\"Första intresset riktades mot Greenlights agerande runt talet — Allieds redovisning granskades inte på allvar i åratal\",\"Synlighet och risk: en känd kort är billig att granska, ett arat bolag dyrt att angripa\"],[\"SBA\",\"Garantiprogrammet för småföretagslån\",\"Beroende av långivarnas egen rapportering — kontrollen av BLX svag\",\"Programmet lever på volym; myndigheten garanterar det den inte själv prövar\"],[\"DOJ (federal åklagare)\",\"Straffrätt\",\"Detroit-målet: BLX erkände brott 2007 — böter och skadestånd\",\"Enkla, bevisbara handlingar (falska uttalanden, otillåtna provisioner) passar straffprocessen\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Marknadens kvalitetskontroll kan inte outsourcas: myndigheter granskar det som är enkelt att granska. Dokumenten är ditt eget ansvar — oavsett vem som borde ha läst dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "För ett bolag i din bevakning: skriv regleringsraden — vilken myndighet, vad övervakas konkret, vilket incitament har myndigheten, vilken händelse skulle tvinga fram åtgärd? Om din tes kräver en myndighetsaktion — skriv om tesen så att den inte gör det."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad blev enligt boken den första konkreta myndighetsåtgärden efter Einhorns tal?",
+          "alternativ": [
+            "En revision av Allieds låneportfölj",
+            "Ett förbud mot kortförsäljning i Allied",
+            "Ett intresse från SEC för Greenlights agerande kring talet — medan Allieds redovisning lämnades i fred",
+            "En vite mot Allieds revisor"
+          ],
+          "ratt": 2,
+          "tips": "Vem fick brevet från staten — bolaget vars redovisning ifrågasattes, eller den som ifrågasatte?"
+        },
+        {
+          "q": "Varför kom straffrätten (DOJ) före redovisningstillsynen i praktiken?",
+          "alternativ": [
+            "Eftersom SEC saknade jurister",
+            "Eftersom Allied bad om det",
+            "Eftersom BDC-bolag är undantagna från SEC-tillsyn",
+            "Eftersom brottsliga handlingar i Detroit var enkelt bevisbara — medan interna värderingar av illikvida lån är svåra att angripa"
+          ],
+          "ratt": 3,
+          "tips": "Myndigheter granskar det som är enkelt: en falsk uttalande är bevisbar, en uppblåst värdering är en åsikt."
+        },
+        {
+          "q": "Vad är kursens slutsats om granskning och myndigheter?",
+          "alternativ": [
+            "Att granskning inte kan delegeras — myndigheters incitament gör dem osannolika aktörer, och dokumenten är eget ansvar",
+            "Att all granskning ska lämnas till tillsynsmyndigheter",
+            "Att korta aktier är det enda sättet att granska",
+            "Att FI och SEC alltid agerar snabbt vid klagomål"
+          ],
+          "ratt": 0,
+          "tips": "Den som har rätt saknar makt; den som har makt saknar incitament."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Upplösningen — BLX erkänner och premien försvinner",
+      "intro": "Vindikationen kom inte som en redovisningsdom utan som ett brottmål i en filial: sommaren 2007 erkände BLX sig skyldigt i federal domstol till falska uttalanden gentemot SBA och otillåtna provisioner i samband med lån i Detroit — med böter och skadestånd som följd. Detta kapitel räknar upp fallets tidslinje 2002-2008 och gör en ärlig resultatredovisning av shortet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Detroit-målet. Enligt boken kulminerade BLX-sagan i att dotterbolaget i federal domstol erkände sig skyldigt till brott kopplade till SBA-lån i Detroit — bland annat falska uttalanden gentemot myndigheten och betalningar av otillåtna provisioner i samband med lån — och dömdes till böter och skadestånd. Det är väsentligt att förstå vad som fälldes och vad som inte fälldes: en filial i ett dotterbolag fälldes för konkreta brottsliga handlingar; Allied Capital som moderbolag fälldes inte för sin redovisning — kostnadsmarkeringen, non-accrual-gapet och premieemissionerna förblev i bokens mening ostraffade. Tesens kärna (substansvärdet och utdelningen bar inte ihop) bekräftades av marknaden snarare än av domstol: premien försvann, aktien föll till rabatt mot substansvärdet, utdelningsberättelsen bröts, och Allied sedermera — efter boken, som efterordskunskap — uppgick i Ares Capital vid 2010 i en krisens skugga."
+        },
+        {
+          "type": "text",
+          "content": "Resultatredovisningen — det ärliga räkenskapet. Shortet blev i slutänden lönsamt för Greenlight, men kursen i siffror är nyktrare: sex års arbete; juridiska och reputationella kostnader; en motpart med utredare och advokater; medier som åratal skrev storyn om korten; en myndighet som började med att granska Einhorn. Einhorn har själv konstaterat att kampen kostade mer i tid och energi än många andra affärer gett — den berömda lärdomen är att P&L per arbetad timme i Allied var usel, även om slaget vanns. Detta är Staley-kursens klocka i verkligheten (kapitel 2 och 11 där): rätt tes, god kassa och sex års tålamod — utan kassan hade positionen tvingats upp innan vindikationen. Eleven ska inte läsa kapitlet som en segerhistoria utan som en kostnadsanalys: vad får det kosta att ha rätt, och vem har råd med det svaret?"
+        },
+        {
+          "type": "text",
+          "content": "Varför tog det sex år? Titeln igen: du kan lura somliga människor hela tiden. Köparna efter talet köpte berättelsen, inte filingarna; inkomstfonder köpte utdelningen mekaniskt; ägare som köpt aktien för decennier sedan hade smärtan av att erkänna fel emot sig — kognitiv dissonans är dyrare än en kursnedgång. Systemet saknade, som Big Short-kursen visade, aktörer med incitament att granska: obligationsmarknaden hade ingen analytikerarmé, aktiemarknaden hade en utdelningskultur. Först när brottsliga handlingar i Detroit var bevisbara och den externa verkligheten (2007-2008:s kreditkris, BDC-sektorns fall) tryckte på, löstes låsningen. Mönstret känns igen från Crazy Eddie (Staley-kursen): aktien kan vara fel i åratal — tiden mellan rätt och klarering är positionens verkliga risk."
+        },
+        {
+          "type": "text",
+          "content": "Tidslinjen med läxor — och den svenska parallellen. 2002: talet, fallet, återhämtningen — berättelsen slår dokumenten kort sikt. 2002-2003: motangrepp, utredare, SEC:s intresse för shortaren — attackerna köper tid. 2003-2005: grävandet fortsätter, media delar sig i klippbaserat och dokumentbaserat — informationen sipprar. 2007: BLX erkänner brott i Detroit; SBA-sanktioner och skadestånd följer — katalysatorn kommer från straffrätten, inte från redovisningstillsynen. 2007-2008: premien dör, aktien till rabatt, BDC-sektorns kris — marknaden avger domen bokföringen slapp. Svensk parallell, illustrativ och namnlös: granskningar av svenska bolag med tvivelaktiga förvärv, där dotterbolag skrivits ned sent och moderbolagets kurs levt kvar på berättelsen tills en extern chock tvingade fram omvärderingen — katalysatorn är sällan granskningen själv, nästan alltid något mer konkret."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fallets tidslinje 2002-2010 — med läxa per steg\",\"rader\":[[\"År\",\"Händelse\",\"Läxa för eleven\"],[\"2002 (15 maj)\",\"Ira Sohn-talet: offentlig korttes mot Allied\",\"Publicera med namn och data — öppenhet är integritetsbeviset\"],[\"2002\",\"Aktien faller över tio procent, återhämtar; Allieds motangrepp\",\"Berättelsen slår dokumenten på kort sikt\"],[\"2002-2003\",\"Privata utredare mot Einhorn; SEC intresserar sig för shortaren\",\"Attack på kritikern är en mjuk signal — inte ett argument\"],[\"2003-2005\",\"Fortsatt gräv; medier delar sig i klippbaserat och dokumentbaserat\",\"Primärkällor avgör vilka som får det rätt\"],[\"2007\",\"BLX erkänner brott i Detroit — böter och skadestånd\",\"Katalysatorn kom från straffrätten, inte redovisningstillsynen\"],[\"2007-2008\",\"Premien försvinner; aktien till rabatt mot substans\",\"Marknaden dömde det bokföringen slapp\"],[\"2010 (efter boken)\",\"Allied uppgår i Ares Capital\",\"Marknadens minne är kort — checklisten överlever\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Katalysatorn man väntar på är sällan den som kommer: Einhorn fick ingen redovisningsdom — bara en brottsdom i en filial och en försvinnande premie. Bygg tesen på dokument, inte på domar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen väntetidsbudget för en tes: hur många år får det ta, vad kostar varje år av väntan (avgifter, alternativavkastning, uppmärksamhet), och vid vilken konkret händelse överger du? Sätt datum. En tes utan väntetidsbudget är en åsikt utan klocka."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad erkände BLX sig skyldigt till 2007?",
+          "alternativ": [
+            "Insiderhandel i Allied-aktien",
+            "Manipulation av Greenlights telefonlistor",
+            "Skattebrott i Delaware",
+            "Falska uttalanden gentemot SBA och otillåtna provisioner i samband med lån i Detroit — med böter och skadestånd som följd"
+          ],
+          "ratt": 3,
+          "tips": "Fallet gällde konkreta handlingar i en filial — inte moderbolagets värderingsprinciper."
+        },
+        {
+          "q": "Vad hände med Allied Capital-premien över substansvärdet?",
+          "alternativ": [
+            "Den försvann — aktien handlades till rabatt, och marknaden dömde det som bokföringstillsynen inte dömde",
+            "Den ökade efter Detroit-målet",
+            "Den blev lagstadgad",
+            "Den låstes till noll av SEC"
+          ],
+          "ratt": 0,
+          "tips": "Tesens kärna bekräftades av marknadspriset — inte av domstol."
+        },
+        {
+          "q": "Vad är kursens ärliga resultatredovisning av shortet?",
+          "alternativ": [
+            "En billig och snabb vinst",
+            "Lönsamt i slutänden — men sex års arbete, juridiska och reputationella kostnader, och usel avkastning per arbetad timme",
+            "En förlust trots rätt tes",
+            "En vinst enbart tack vare SEC:s åtal"
+          ],
+          "ratt": 1,
+          "tips": "Staley-kursens klocka: skillnaden mellan rätt och klarering är tid — och tiden har ett pris."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Einhorns metod — grävandets hantverk mot V05-V12 och Creative Cash Flow",
+      "intro": "Nu systematiseras metodiken: anomali först, primärdokument före andrahandskällor, omräkning av bolagets egna siffror, extern triangulering, incitamentskarta, offentlig publicering och position som tål tid. Kapitlet mappar Einhorns praktik mot AKM1:s kvalitetsvariabler och Creative Cash Flow-kursens tekniker — och ger eleven sin tiotimmarsversion.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Metodens åtta steg, som de framträder i boken. Ett: börja i en anomali — något som inte stämmer vid ytan (här: utdelning som överstiger intjäning hos ett bolag i premie). Två: läs primärdokumenten i omvänd ordning mot hur de är designade — fotnoter, principer, segmentnoter före sammanfattningar. Tre: räkna om bolagets egna siffror — non-accrual på riskandelarna, NII mot utdelning, aktieantalets utveckling. Fyra: triangulera mot oberoende källor — SBA:s data, branschstatistik. Fem: kartlägg incitamenten — avgiftsformler, Form 4, revisorns roll. Sex: ge bolaget chansen att svara — dokumentera svaret (eller utebliven svar). Sju: publicera transparent — namn, data, källor; en tes som kan bestridas är en tes som kan kontrolleras. Åtta: bygg positionen för tiden, inte för övertygelsen — kassa och storlek som tål sex år. Notera hur steg ett till fem är replikerbara av eleven; steg sex till åtta kräver en institutions resurser."
+        },
+        {
+          "type": "text",
+          "content": "Mappningen mot AKM1:s kvalitetsanalys, V05 till V12. V05 P/B: Allied är fallen V05-inverterat — premie till bokfört värde som kräver granskning av bokföringen snarare än av multipeln; ett billigt P/B på internt värderade tillgångar är ingen marginal (Staley-kursens varning). V07/V08 marginaler: utlåningsresultat byggda på bokförd ränta snarare än inbetald ränta — marginalens kvalitet före marginalens nivå. V09 ROE: avkastning skapad av emissioner till premie, inte av förvaltningsskicklighet. V10/V11: kredithävstång och likviditet — en portfölj som betalar gamla lån med nya har en bankrusning inbyggd. V12 intäktsstabilitet: fallets kärnvariabel — gain-on-sale, non-accrual-gapet, engångsvinster som löpande intäkt. V17 avtal: SBA-garantierna — partnerskapet bär risken. V18: regulatorisk katalysator som incitamentsfråga. V19: utdelning finansierad av emissioner. Kartan är kursens viktigaste artefakt: den visar att AKM1:s variabler inte är poäng utan frågor."
+        },
+        {
+          "type": "text",
+          "content": "Mappningen mot Creative Cash Flow-kursen (Mulford & Comiskey). Deras huvudtes — att inte alla kassaflöden är skapade lika och att den hållbara prestationen kräver omräkning — passar Allied-fallet som handsken. Konkret: (1) klassificera utdelningens källa: driftens kassaflöde, realiserade engångsposter eller finansieringsverksamheten — Allied bodde delvis i den tredje asken; (2) securitization-analogin: BLX:s försäljning av garanterade lånedelar är samma monetariseringsmekanism som att sälja fordringar för att lyfta dagens kassaflöde på bekostnad av framtidens — med den skillnaden att garantin är statlig; (3) kapitaliseringsvarningen: ränta betald med nya drag är kostnadskapitalisering i lånevärldens skepnad. Elevens kombinerade detektor från de tre kurserna — Staley (checklistan), Schilit (shenanigans), Mulford/Comiskey (kassaflödets kvalitet) — finner i Einhorn sitt fulländade exempel: en vinstmaskin där resultaträkning, kassaflödesanalys och incitamentsstruktur tillsammans berättade att kejsaren var naken."
+        },
+        {
+          "type": "text",
+          "content": "Elevens tiotimmars-Einhorn — det praktiska protokollet. Timme ett-två: läs tre årsredovisningars fotnoter och redovisningsprinciper; notera värderingsprinciper. Timme tre-fyra: bygg två kurvor — utdelning mot nettoinvesteringsinkomst, och aktieantal — fem år. Timme fem: non-accrual eller kreditförluster mot utlåningsvolym. Timme sex: incitamentsprogrammets triggers och insideranmälningar. Timme sju: hämta en oberoende jämförelse (myndighetsstatistik, branschdata). Timme åtta: läs bolagets senaste bemötande av kritik — tre lådor-metoden. Timme nio: skriv en fem-punkters tes med källor. Timme tio: låt en skeptiker (eller Short-Seller-widgeten) attackera tesen — och notera vilken punkt som faller. Det är Einhorns metod i miniatyr: anomali, dokument, omräkning, triangulering, incitament, publicering, motstånd — skalad till en dag."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Metod-mappningen — Einhorn, AKM1, Creative Cash Flow\",\"rader\":[[\"Moment\",\"Einhorns praktik\",\"AKM1-variabel\",\"Creative Cash Flow-koppling\"],[\"Anomali\",\"Utdelning överstigande intjäning hos premiebolag\",\"V05, V19\",\"Klassificera utdelningens källa\"],[\"Primärläsning\",\"Fotnoter och principer före sammanfattningar\",\"V12\",\"Läs kassaflödesanalysens tre askor\"],[\"Omräkning\",\"Non-accrual på riskandelar; NII mot utdelning\",\"V12, V11\",\"Bokförd intäkt mot inbetald kassa\"],[\"Extern triangulering\",\"SBA:s programdata\",\"V18\",\"Oberoende utfallsmått\"],[\"Incitamentskarta\",\"Avgiftsformler, Form 4, revisorns roll\",\"V09\",\"Vems kassa bär berättelsen?\"],[\"Publicering\",\"Namn, data, källor — inbjudan till bemötande\",\"V14\",\"Transparens som granskningsbarhet\"],[\"Överlevnad\",\"Position och kassa byggd för sex år\",\"V19 (own side)\",\"Väntetidens kostnad i budget\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Einhorns metod är replikerbar i miniatyr: en eftermiddag med fotnoter räcker för att finna anomalin — sex år krävdes bara för att bevisa den. Boka anomalin i dag; beviset får ta tid."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör tiotimmars-Einhorn på ett utdelningsbolag i din bevakning: fyra kurvor (utdelning, NII, aktieantal, non-accrual/kreditförlust) plus incitamentsformeln — en sida. Om kurvorna inte talar samma språk som presentationen har du din anomali."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är steg ett i Einhorns metod enligt kursen?",
+          "alternativ": [
+            "Att börja i en anomali — något som inte stämmer vid ytan, som utdelning som överstiger intjäning",
+            "Att korta så snart multipeln känns hög",
+            "Att ringa bolagets IR för en känsla",
+            "Att läsa analystäckningen först"
+          ],
+          "ratt": 0,
+          "tips": "Före dokumenten finns frågan: vad är det som inte stämmer?"
+        },
+        {
+          "q": "Hur förhåller sig Allied-fallet till V05 P/B?",
+          "alternativ": [
+            "Det bekräftar att lågt P/B alltid är tryggt",
+            "Det inverterar V05 — premie till internt värderat bokfört värde kräver granskning av bokföringen, och billigt P/B på sådana tillgångar är ingen säkerhetsmarginal",
+            "P/B saknar betydelse i fallet",
+            "Det visar att P/B ska ignoreras för utdelningsbolag"
+          ],
+          "ratt": 1,
+          "tips": "Multipelens värde beror på nämnarens sanningshalt."
+        },
+        {
+          "q": "Vad tillför Creative Cash Flow-kursen Einhorn-fallet?",
+          "alternativ": [
+            "Frågan om multipeln är rimlig",
+            "En metod att beräkna beta",
+            "Klassificeringen av utdelningens källa — drift, engångsposter eller finansiering — och securitization-analogin till BLX:s försäljning av garanterade delar",
+            "Teknisk analys av volymen"
+          ],
+          "ratt": 2,
+          "tips": "Inte alla kassaflöden är skapade lika — var bodde utdelningen?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Kontroversen — attacker eller marknadens vakthundar?",
+      "intro": "Bokens tes är också en självförsvarslinje: shortsäljare kallas attackerare, och anklagelsen är inte absurd — en offentlig presentation rör priset, och presentanten har position. Detta kapitel ger motståndarnas bästa argument, Einhorns svar, AK1A:s hållning — och kursens ärliga medgivande om konflikten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelsen i sin bästa version. Kortförsäljning har anklagats sedan Holland förbjöd den 1610 (Staley-kursens historia): bear raids — medvetet koordinerade nedpressningar; berättelsemanipulation — att en tes sprids för att tjäna, inte för att informera; eliminatoriska angrepp — att bolag kan dödas av ett välgjort anfall även där anfallet bara är halvt sant; asocial vinst — att tjäna på andras olycka, i svensk kultur den extra laddade invändningen (un-Swedish). Regulatorisk skepsis finns dokumenterad både i USA:s historia (tillfälliga förbud vid kriser) och i Sverige: FI har vid upprepade tillfällen varnat allmänheten för att handla på short-rapporter där rapportören har egen position. I Allied-fallet: Einhorns tal sänkte aktien mer än tio procent på dagar — och han tjänade på fallet. Det är konflikten i en mening, och den ska inte förnekas: presentanten hade ekonomiskt intresse av presentationens effekt."
+        },
+        {
+          "type": "text",
+          "content": "Einhorns svar — som också är bokens. För det första öppenheten: talet hölls offentligt, med namn och fotnoter, i ett forum byggt för att presentationer ska kunna bemötas — det är motsatsen till den anonyma bear raid, vars kraft ligger just i att ingen kan kräva ansvar. För det andra inbjudan: Einhorn gav bolaget chansen att svara i förväg och uppmanade omvärlden att granska hans källor — en tes som kan bemötas är en tes som kan kontrolleras. För det tredje utfallet: BLX fälldes för brott, premien försvann — slutsatserna granskades av verkligheten, inte bara av marknaden. Och för det fjärde titeln: de som blev lurade blev lurade av Allieds berättelse, inte av Einhorns presentation — shorts var inte orsaken till lånen som inte betalades. Hans tes är att shortsäljare i praktiken fungerar som marknadens vakthundar: de gör läxan ingen annan gör (Staley) och publicerar den Big Short-kursen visade saknas i hela systemet — obligationsmarknadens enda kvalitetskontroll."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s hållning: en short-rapport är en tes, inte en sanning. Regeln är symmetrisk med allt annat i Ak1A:s källkritik: granska den som du granskar en prospektus. Tre kontroller: (1) källor — hänvisar rapporten till dokument jag kan läsa och stämmer citaten? (2) position och tidpunkt — redovisas innehavet, och är rapporten publicerad för maximal effekt? (3) motparten — hur svarar bolaget, i den första lådan (data) eller i den tredje (advokater)? En rapport som klarar (1) och (2) förtjänar att tas på allvar oavsett publicistisk form. En rapport som inte redovisar källor är retorik. Det är också därför AK1A:s Short-Seller-agent aldrig ger tips — bara motfrågor: samma skepticism ska vändas mot varje tes, inklusive kortens."
+        },
+        {
+          "type": "text",
+          "content": "Medgivandet — kursens ärliga medgivande. Vissa shortsäljare PR:ar positionen för egen vinning: rapporter släpps vid optimal tidpunkt, teser överdrivs, positionen tas ut i samband med publiciteten — och dessa rapporter skadar short-sidans trovärdighet som kollektiv. Konflikten är strukturell och går inte att argumentera bort: publicist och positionär är samma person, och incitamentet att dramatisera är verkligt. Allied-fallet skiljer sig i grad, inte i natur: Einhorn hade position, och den var ren — men det var just öppenheten (namn, data, sex års uthållighet) som skilde fallet från manipulationen. slutsatsen för eleven är därför inte tro eller misstro utan metod: döm inte shortaren efter yrket — döm rapporten efter källor, position och bemötande. Det är också det enda svaret som fungerar på båda sidor: samma filter hade skyddat Allieds köpare 2002 och skyddar dig mot en manipulativ rapport i dag."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — anklagelse, bästa version, svar, medgivande\",\"rader\":[[\"Anklagelse\",\"Bästa versionen\",\"Svaret (Einhorn/AK1A)\",\"Medgivandet\"],[\"Bear raids och manipulation\",\"Koordinerade nedpressningar har funnits sedan 1600-talet\",\"Einhorn publicerade offentligt med namn och fotnoter — ansvarstagandet är motsatsen till anonyma räder\",\"Andra shorts använder just anonymitet och timing för effekt\"],[\"Vinst på andras olycka\",\"Att tjäna när aktiefällor drabbar sparare — i Sverige un-Swedish\",\"Problemet är lögnerna i bokföringen, inte de som pekar på dem; köparna skadades av utdelningskonstruktionen\",\"Korta kan förstöra arbetstillfällen även där tesen bara är halvt sann\"],[\"Egen vinning på publicitet\",\"Presentanten har position och rörelsen kommer direkt\",\"Positionen kan redovisas öppet — och tesen bemötas: BLX fälldes, premien dog\",\"Vissa shorts PR:ar positionen vid optimal tidpunkt — konflikten är strukturell\"],[\"Regulatorisk skepsis\",\"FI och SEC har varnat och utrett; historiska förbud\",\"Reglering av mekanismen bestraffar också kvalitetskontrollen; döm rapporten, inte yrket\",\"Rapportkvaliteten varierar enormt — kontrollen är dokumenten\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är inte om shortaren tjänar på att ha rätt — utan om hen visade sitt arbete. Det är skillnaden mellan en tes och en räd."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör Short-Seller-widgeten i försvar-läget med tesen: Short-rapporter är manipulativa och borde förbjudas. Anteckna de tre motfrågor du inte kan besvara — och komplettera med det omvända testet på en verklig short-rapport: källor, position, bemötande. Tre kontroller, två håll."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Einhorns främsta svar på anklagelsen om manipulation?",
+          "alternativ": [
+            "Att han inte hade någon position",
+            "Att tesen publicerades offentligt med namn, data och fotnoter — ansvarstagande och inbjudan till bemötande, motsatsen till anonyma bear raids",
+            "Att SEC godkänt talet i förväg",
+            "Att Allied var utländskt bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad skiljer en offentlig, källhänvisande tes från en anonym räd?"
+        },
+        {
+          "q": "Vad är AK1A:s regel för att läsa short-rapporter?",
+          "alternativ": [
+            "De ska betraktas som sanning eftersom shorts gräver djupt",
+            "De ska förbjudas från publicering",
+            "De är en tes, inte en sanning — granska källor, redovisad position och tidpunkt, och hur bolaget bemöter (data eller advokater)",
+            "De ska bara läsas av professionella"
+          ],
+          "ratt": 2,
+          "tips": "Samma källkritik som för en prospektus — symmetrisk för alla parter."
+        },
+        {
+          "q": "Vad är kursens ärliga medgivande om shortsäljare?",
+          "alternativ": [
+            "Att alla shorts är manipulatörer",
+            "Att shorts aldrig har ekonomiska intressen",
+            "Att Einhorns fall var det enda shortfallet i historien",
+            "Att konflikten är strukturell — vissa shorts PR:ar positionen för egen vinning, släpper rapporter vid optimal tidpunkt och skadar kollektivets trovärdighet"
+          ],
+          "ratt": 3,
+          "tips": "Publicist och positionär är samma person — öppenheten skiljer fällen åt."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Arvet — granskning, fusk, etik och din egen checklista",
+      "intro": "Kursens sista kapitel samlar slutsatserna: vad Allied-fallet lär om fuskets tre lager, om etiken hos bolag, granskare och medier — och om eleven. Sedan levereras kursens praktiska arv: den tio frågor långa grävarchecklistan, att användas på varje bolag du äger eller överväger köpa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fuskets tre lager, som kursen sammanfattar Allied-fallet. Lager ett, tekniken: kostnadsmarkering av illikvida lån, gain-on-sale-vinster vid origination, generösa non-accrual-definitioner, engångsvinster som löpande utdelningsfinansiering — varje del laglig, varje del granskningsbar i fotnoter. Lager två, strukturen: BDC-formens utdelningstvång kombinerat med en aktie i premie gjorde emissioner till en affärsmodell — bolaget betalade ägarna med nya ägares pengar. Lager tre, kulturen: incitament som betalade för att inte skriva ned, en institution med politiska kontakter, en revisor som attesterade metoder, och ett beteende som mötte granskning med utredare. Lärdomen: fusk behöver inte vara brott — mesta delen av Allied-fallet var laglig redovisning med dåliga antaganden; brottet kom först i en filial i Detroit. Därför väntar inte eleven på brottmål: hon läser fotnoter."
+        },
+        {
+          "type": "text",
+          "content": "Etiken i fyra speglar. Einhorns etik: namn, data, källor, inbjudan till bemötande — och sex års uthållighet när det blev dyrt; standarden är visat arbete, inte yrke. Allieds etik: att svara granskning med attack på granskaren — och att låta incitament styra värderingsmodeller. Mediernas etik: primärkälla eller partsinlaga — skillnaden avgjorde vilka journalister som fick fallet rätt. Myndigheternas etik: att första resursen gick till att kontrollera den som larmade — en institutionslogik som skadar anmälningsbenägna granskare. Och elevens etik, som är kursens egentliga examination: citera öppet (länka dokumentet), redovisa antaganden (vilka kurvor bygger tesen), erkänn osäkerhet (siffror med cirka där underlaget är brett) — och presentera din analys så att den KAN bemötas. Det är Einhorns stil i miniatyr, och det är motsatsen till det Allied utpekade som fienden."
+        },
+        {
+          "type": "text",
+          "content": "Svenska paralleller, illustrativa och namnlösa. Granskningar av svenska bolag med tvivelaktiga förvärv: dotterbolag köpta dyrt, bokförda optimistiskt, nedskrivna sent — medan moderbolagets kurs levt på berättelsen; emissioner som finansierat utdelningar i investmentbolag med stillastående substans; kreditgivare vars förlustnivåer legat under branschens i åratal utan dokumenterad förklaring. Kursen namnger inte fall — mönstren är igenkännbara utan namn, och nyttan av dem ligger i metoden, inte i skulden. Svensk utdelningskultur gör dessutom Allied-frågan hemläxa: i en marknad där hög direktavkastning är en kärlekssak bör varje köpare kunna svara på en fråga — vad finansierar utdelningen? — med kassaflödesanalysen i hand."
+        },
+        {
+          "type": "text",
+          "content": "Kursens plats i AK1A och nästa steg. AKM1:s skärm (V01-V20) hittar kandidater; Einhorn-metoden bevisar eller falsifierar — djupgranskning av ett bolag är motpolen till screening, och båda behövs. Kursens syskon: Staley (kort som hantverk — checklistan), Schilit (redovisningens trick — detektorn), Mulford/Comiskey (kassaflödets kvalitet — askarna), Big Short (systemet och incitamenten). Nästa steg för eleven: kör tiotimmars-Einhorn (kapitel 13) på ett bolag i din portfölj, tio frågors checklistan nedan på ett till — och hämta fram svaren från kapitel 1 och 3:s utmaningar: vad trodde du finansierade utdelningen, och vad sa kassaflödesanalysen? Om svaren skiljer sig åt har kursen gjort sitt arbete: du läser nu fotnoter före rubriker, och du vet vad det kostar att ha rätt — och vad det kostar att låta bli."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Din grävarchecklista — tio frågor och var svaret finns\",\"rader\":[[\"Nr\",\"Fråga\",\"Var svaret finns\"],[\"1\",\"Vad finansierar utdelningen — drift, engångsposter eller emissioner?\",\"Kassaflödesanalys + aktieantal, fem år\"],[\"2\",\"Hur värderas tillgångarna — marknad eller intern modell?\",\"Not om redovisningsprinciper\"],[\"3\",\"Hur definieras non-accrual och kreditförlust — och viker kurvan?\",\"Fotnot + femårsserie\"],[\"4\",\"Vilken exakt storhet triggar ledningens bonus?\",\"Ersättningsutskottets beslutsunderlag\"],[\"5\",\"Vad gör ledningen med sina egna aktier?\",\"Insideranmälningar, mönster över tid\"],[\"6\",\"Finns en oberoende källa att triangulera mot?\",\"Myndighets- och branschstatistik\"],[\"7\",\"Vem betalar revisorn — och vad attesteras: metod eller värde?\",\"Revisionsberättelses lydelse\"],[\"8\",\"Vad händer med premien/multipeln om antagandena justeras?\",\"Eget räkneblad — känslighetstest\"],[\"9\",\"Hur svarar bolaget på kritik — data, advokater eller tystnad?\",\"Pressrum + frågestundtranskript\"],[\"10\",\"Orkar min tes och min kassa väntetiden — och när lägger jag ner?\",\"Väntetidsbudget med datum\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Einhorns arv är inte shortet — det är standarden: visa ditt arbete, citera öppet, och räkna med att det som är för bra för att vara sant har en fotnot."
+        },
+        {
+          "type": "utmaning",
+          "content": "Examen: kör checklistan på ett bolag du äger. Varje fråga utan svar är en lucka — markera de två största, fyll dem inom en månad, och avgör sedan om positionen förtjänar sitt pris. En portfölj som överlevt fotnoterna är värd mer än tio som aldrig mött dem."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka tre lager sammanfattar kursen Allied-fusk i?",
+          "alternativ": [
+            "Brottslighet, skatteflykt och insiderhandel",
+            "Marknadsmanipulation, penningtvätt och falska nyckeltal",
+            "Teknik (laglig redovisning med dåliga antaganden), struktur (utdelningstvång plus premieemissioner) och kultur (incitament och attacker på kritiker)",
+            "Konjunktur, ränta och valutor"
+          ],
+          "ratt": 2,
+          "tips": "Det mesta av fallet var lagligt — därför behövs fotnoter, inte åtal."
+        },
+        {
+          "q": "Hur formulerar kursen den svenska parallellen?",
+          "alternativ": [
+            "Med namngivna svenska bolag och årtal",
+            "Att inga svenska fall finns",
+            "Att svenska bolag är undantagna från granskning",
+            "Illustrativt och namnlöst — bolag med tvivelaktiga förvärv, sent nedskrivna dotterbolag och emissioner som finansierat utdelningar, som mönster att känna igen"
+          ],
+          "ratt": 3,
+          "tips": "Nyttan av ett mönster ligger i metoden — inte i skulden."
+        },
+        {
+          "q": "Vad är kursens faktiska examination av eleven?",
+          "alternativ": [
+            "Att eleven citerar öppet, redovisar antaganden och presenterar analysen så att den kan bemötas — och kör checklistan på egna innehav",
+            "Att minst en short position öppnas",
+            "Att memorera Allied-tidslinjen",
+            "Att läsa alla Einhorns böcker"
+          ],
+          "ratt": 0,
+          "tips": "Einhorns stil i miniatyr: visat arbete och granskningsbarhet."
+        }
+      ]
+    }
+  ]
+}

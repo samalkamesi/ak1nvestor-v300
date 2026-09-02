@@ -68,11 +68,11 @@ export function HomeSection() {
               {/* Statist-rad — hela labbet på en rad, tabelläge, inga kort */}
               <div className="mt-10 border-t border-[#E8C766]/20 pt-5">
                 <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm tabular-nums tracking-wide text-[#EDE6D6]/70">
-                  <span>285+ kurser</span>
+                  <span>307 kurser</span>
                   <span aria-hidden="true" className="text-[#E8C766]/60">·</span>
                   <span>6 600+ quiz</span>
                   <span aria-hidden="true" className="text-[#E8C766]/60">·</span>
-                  <span>67 böcker</span>
+                  <span>78 böcker</span>
                   <span aria-hidden="true" className="text-[#E8C766]/60">·</span>
                   <span>100 % gratis</span>
                 </p>
@@ -90,7 +90,7 @@ export function HomeSection() {
               value="200+"
               label="kurser"
               kind="matt"
-              caption="19 grundläggande AKM1 + 80 fördjupande + valfria tillägg."
+              caption="20 grundläggande AKM1 + 287 fördjupande."
             />
             <NumberStat
               value="99"
@@ -269,7 +269,7 @@ export function HomeSection() {
           </div>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <HonestyCard kind="matt" value="200+" label="KURSER PUBLICERADE" sub="19 grundläggande AKM1 + 80 fördjupande + valfria tillägg." />
+            <HonestyCard kind="matt" value="200+" label="KURSER PUBLICERADE" sub="20 grundläggande AKM1 + 287 fördjupande." />
             <HonestyCard kind="matt" value="99" label="SIDOR PER ANALYS" sub="Institutionsdjup. Varje siffra hyperlänkad till källa." />
             <HonestyCard kind="metodmal" value="5 / 8" label="AI-ORGAN I DRIFT" sub="Vi siktar på 8 synkrona organ. Idag är 5 live." />
             <HonestyCard kind="matt" value="0" label="PUSH-NOTISER OM PRISER" sub="Pro-metod. Du bestämmer när du tittar." />

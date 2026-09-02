@@ -8,7 +8,7 @@ import { srStatistik, type SRStatistik } from "@/lib/spaced-repetition";
 /**
  * DAGENS PASS — den dagliga 5-minutersritualen på RIKTIG marknadsdata.
  *
- * 4 steg: (1) Veckans aktie — gissa vågklass, jämör motorn. (2) Dagens fråga —
+ * 4 steg: (1) Veckans aktie — gissa vågklass, jämför motorn. (2) Dagens fråga —
  * våg-quiz + AKM1-fråga med XP. (3) Repetera — SR-statistik + AI-Mentorn.
  * (4) Streak — 🔥 och en uppmaning att komma tillbaka imorgon.
  *

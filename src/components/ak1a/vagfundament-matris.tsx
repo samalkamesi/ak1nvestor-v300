@@ -254,12 +254,16 @@ export function VagfundamentMatris({
         ) : null}
       </div>
 
-      {/* Värmematrisen */}
+      {/* Värmematrisen — mobil: svep sidled i scroll-wrappern; nivå- och V-kolumnen fryser vid vänsterkanten */}
+      <p className="text-[11px] italic text-muted-foreground sm:hidden">
+        Svep matrisen sidled — V-kolumnen följer med →
+      </p>
       <div className="overflow-x-auto scrollbar-ak1a">
         <div className="min-w-[640px]">
           <div className="grid grid-cols-[52px_190px_repeat(5,1fr)] gap-1">
-            <div />
-            <div />
+            {/* Mobilsäker matris: fryst hörn över nivå-kolumnen */}
+            <div className="sticky left-0 z-20 bg-card" />
+            <div className="sticky left-[52px] z-10 -ml-1 border-r border-border/60 bg-card" />
             {HORIZONTER.map((h) => (
               <div key={h.id} className="pb-1 text-center text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                 {h.namn}
@@ -270,7 +274,7 @@ export function VagfundamentMatris({
               return (
                 <React.Fragment key={rad.id}>
                   <div
-                    className="flex items-center justify-center"
+                    className="sticky left-0 z-20 flex items-center justify-center bg-card"
                     title={
                       ind?.nivaKalla === "beraknad"
                         ? `AKM1-nivå ${ind?.niva} av 5 (beräknad)`
@@ -288,7 +292,8 @@ export function VagfundamentMatris({
                       {ind?.niva == null ? "–" : ind.niva}
                     </span>
                   </div>
-                  <div className="flex items-center truncate pr-2 text-right text-xs" title={`${rad.id} ${rad.namn} · kategori ${KATEGORI_NAMN[rad.kategori]}`}>
+                  {/* Sticky V-kolumn: -ml-1 + pl-1 täcker grid-gapen så inget läcker igenom vid scroll */}
+                  <div className="sticky left-[52px] z-10 -ml-1 flex items-center truncate border-r border-border/60 bg-card pl-1 pr-2 text-right text-xs" title={`${rad.id} ${rad.namn} · kategori ${KATEGORI_NAMN[rad.kategori]}`}>
                     <span className="truncate">
                       <span className="font-bold">{rad.id}</span>{" "}
                       <span className="text-muted-foreground">{rad.namn}</span>
@@ -322,7 +327,8 @@ export function VagfundamentMatris({
         <span className="flex items-center gap-1.5"><span className="text-bear">▼</span> korrigering</span>
         <span className="flex items-center gap-1.5"><span className="text-gold">◼</span> basbygge</span>
         <span className="flex items-center gap-1.5"><span className="text-muted-foreground">·</span> osatt</span>
-        <span className="text-muted-foreground">Hovra över en cell för momentum och medel-bekräftelse</span>
+        {/* Hover-tips är pekaren-oberoende: döljs på mobil, svep-hint står vid matrisen */}
+        <span className="hidden text-muted-foreground sm:inline">Hovra över en cell för momentum och medel-bekräftelse</span>
       </div>
 
       {/* Kategorisammanfattning + totalrad (P4 hierarkin steg 3–4) */}
@@ -335,7 +341,8 @@ export function VagfundamentMatris({
             <table className="w-full min-w-[560px] text-sm">
               <thead>
                 <tr className="text-[10px] uppercase tracking-wider text-muted-foreground">
-                  <th className="pb-1 text-left font-semibold">Kategori</th>
+                  {/* Fryst kategorikolumn (mobil) — opak bg-card krävs för sticky */}
+                  <th className="sticky left-0 bg-card pb-1 text-left font-semibold">Kategori</th>
                   {HORIZONTER.map((h) => (
                     <th key={h.id} className="pb-1 text-center font-semibold">{h.namn}</th>
                   ))}
@@ -344,7 +351,7 @@ export function VagfundamentMatris({
               <tbody>
                 {Object.entries(KATEGORI_NAMN).map(([kid, namn]) => (
                   <tr key={kid} className="border-t border-border/60">
-                    <td className="py-1.5 pr-2 font-serif text-xs font-bold">{namn}</td>
+                    <td className="sticky left-0 bg-card py-1.5 pr-2 font-serif text-xs font-bold">{namn}</td>
                     {HORIZONTER.map((h) => {
                       const tal = data.kategorier?.[kid]?.[h.id];
                       return (
@@ -357,7 +364,7 @@ export function VagfundamentMatris({
                 ))}
                 {data.total ? (
                   <tr className="border-t-2 border-gold/40 bg-gold/5">
-                    <td className="py-2 pr-2 font-serif text-sm font-bold">AKM1-helhet</td>
+                    <td className="sticky left-0 bg-card py-2 pr-2 font-serif text-sm font-bold">AKM1-helhet</td>
                     {HORIZONTER.map((h) => {
                       const tal = data.total?.[h.id];
                       return (

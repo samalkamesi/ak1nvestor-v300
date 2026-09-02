@@ -23,8 +23,8 @@ const PANELER: MenyPanel[] = [
       { text: "Manifestet", lank: "/manifest", ikon: "🏛️", beskrivning: "Vår vision: världens bästa finansutbildning" },
       { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker" },
       { text: "Alla kurser", lank: "/kurser", ikon: "📚", beskrivning: "Hela biblioteket med quiz" },
-      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "28 böcker kapitel för kapitel + ekosystem-flaggskeppen" },
-      { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — 100 böcker mot AKM1/AK1TS" },
+      { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "78 böcker kapitel för kapitel + ekosystem-flaggskeppen" }, // Uppdaterad 2026-09-01: 78 BOKMASTER-kurser
+      { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — böcker mappade mot AKM1/AK1TS" },
       { text: "Certifikat", lank: "/certifikat", ikon: "🏅", beskrivning: "Ditt intyg på kompetens" },
     ],
   },
@@ -47,7 +47,7 @@ const PANELER: MenyPanel[] = [
       { text: "Min Sida", lank: "/min-sida", ikon: "🏠", beskrivning: "Din dashboard — allt på ett ställe" },
       { text: "Dagens Pass", lank: "/dagens-pass", ikon: "⚡", beskrivning: "5 minuters daglig marknadsträning" },
       { text: "Topplistan", lank: "/topplista", ikon: "🏆", beskrivning: "Eleverna rankade på XP" },
-      { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "28 troféer att förtjäna" },
+      { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "29 troféer att förtjäna" }, // Uppdaterad 2026-09-01: 29 badges i src/lib/badges.ts
       { text: "Fas 2-ansökan", lank: "/fas2-ansok", ikon: "✉️", beskrivning: "Utbildning med grundaren — ansök kostnadsfritt" },
       { text: "Repetera", lank: "/kurser", ikon: "🃏", beskrivning: "Flashcards med SM-2 (i AI-mentorn)" },
       { text: "Short-Seller", lank: "/kurser", ikon: "🔴", beskrivning: "Sokratisk grillning (röd widget)" },

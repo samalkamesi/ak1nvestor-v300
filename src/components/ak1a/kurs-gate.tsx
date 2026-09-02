@@ -40,7 +40,7 @@ export function KursGate({
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             Skapa ett kostnadsfritt konto så låser du upp <strong>hela "{titel}"</strong> —
-            och alla övriga 225 kurserna, för alltid. Fundamentalanalys är en rättighet.
+            och alla övriga 307 kurserna, för alltid. Fundamentalanalys är en rättighet. {/* Uppdaterad 2026-09-01: 307 kurser */}
           </p>
           <Link
             href="/logga-in"

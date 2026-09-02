@@ -1,1 +1,2430 @@
-null
+{
+  "version": 1,
+  "uppdaterad": "2026-09-01",
+  "beskrivning": "AK1A-bokkanon: 100 böcker för den oberoende aktieanalytikern",
+  "bocker": [
+    {
+      "id": "bk-001",
+      "titel": "The Intelligent Investor",
+      "author": "Benjamin Graham",
+      "year": 1949,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Grundboken som definierade värdeinvestering: Mr Market, defensiv vs företagsam investerare och marginal of safety är begrepp som hela kanon vilar på.",
+      "ak": [
+        "V09",
+        "V14",
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Mr Market erbjuder dig ett pris varje dag men bara du bestämmer när det är värt att lyssna på",
+        "Köp alltid med marginal of safety: skillnaden mellan värde och pris är ditt skydd mot egna misstag",
+        "Vet skillnaden mellan investering (analys och marginal) och spekulation (gissning om prisrörelse)"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-002",
+      "titel": "Security Analysis",
+      "author": "Benjamin Graham & David Dodd",
+      "year": 1934,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "Bibeln för den som vill värdera bolag uppifrån bokföringen, skriven mitt i efterdyningarna av 1929 och fortfarande kärnan i fundamental analystränning.",
+      "ak": [
+        "V05",
+        "V09",
+        "V14",
+        "V19"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Bokfört värde är utgångspunkt inte sanning: justera för vad tillgångarna faktiskt är värda i en kris",
+        "Ett stabilt överskott i rörelsekapital skyddar aktieägaren när konjunkturen vänder",
+        "Analysens slutsats är alltid ett intervall, aldrig ett exakt tal"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-003",
+      "titel": "One Up on Wall Street",
+      "author": "Peter Lynch",
+      "year": 1989,
+      "kat": "fundamental",
+      "niva": 2,
+      "why": "Lynch visar hur vanliga sparare hittar tillväxtbolag i vardagen och exakt vad som ska räknas på innan köp — grunden för AKM1:s katalysatortänk.",
+      "ak": [
+        "V01",
+        "V12",
+        "V16"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Investera i det du förstår och kan observera innan analytikerkåren upptäcker det",
+        "Räkna alltid P/E mot tillväxttakten (PEG) innan du betalar för en tillväxthistoria",
+        "Känn bolagets story: när storyn förändras ska positionen förändras"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-004",
+      "titel": "Common Stocks and Uncommon Profits",
+      "author": "Philip A. Fisher",
+      "year": 1958,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Fisher definierade kvalitetsinvesteringen: scuttlebutt-metoden och femton frågor om ledning, FoU och konkurrenskraft — komplementet till Grahams siffror.",
+      "ak": [
+        "V01",
+        "V13",
+        "V15",
+        "V16"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Är bolaget så bra att du kan behålla det i årtionden är köpbeslutet viktigare än timingen",
+        "Prata med kunder, konkurrenter och tidigare anställda: sanningen finns utanför pressreleasen",
+        "Försäljningstillväxt utan lönsamhetstillväxt är aktivitet, inte värdeskapande"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-005",
+      "titel": "The Interpretation of Financial Statements",
+      "author": "Benjamin Graham",
+      "year": 1937,
+      "kat": "fundamental",
+      "niva": 2,
+      "why": "Grahams kompakta handbok i att läsa resultaträkning och balansräkning rad för rad — snabbaste vägen från nybörjare till bokföringsläsare.",
+      "ak": [
+        "V05",
+        "V06",
+        "V07",
+        "V08"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Förhållandena mellan rader är budskapet: marginaler, kapitalomsättning och skuldsättning betyder mer än enskilda siffror",
+        "Jämför alltid minst fem år: ett år är väder, fem år är klimat",
+        "Noterna är där bolaget talar sannare om sina siffror än i resultaträkningen"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-006",
+      "titel": "Quality of Earnings",
+      "author": "Thornton O'Glove",
+      "year": 1987,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Den första systematiska handboken i resultatdetektiv: skillnaden mellan rapporterad vinst och verklig lönsamhet, rad för rad i årsredovisningen.",
+      "ak": [
+        "V05",
+        "V08",
+        "V15"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Följ kassaflödet mot resultatet: ett glidande gap varnar för redovisningskreativitet",
+        "Läs proforma-noter och ändrade bokföringsprinciper innan du litar på vinstsiffran",
+        "När lager och kundfordringar växer snabbare än försäljningen är något fel"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-007",
+      "titel": "Financial Shenanigans",
+      "author": "Howard M. Schilit",
+      "year": 1993,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Standardverket i redovisningstrick: kategorier av manipulation med verkliga fall — analytikerns immunförsvar mot vilseledande rapporter.",
+      "ak": [
+        "V05",
+        "V08",
+        "V15",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Följ pengarna: kassaflödesanalysen avslöjar det resultaträkningen gömmer",
+        "Var vaksam på oväntade one-offs, omklassificeringar och tillgångsförsäljningar som lyfter resultatet",
+        "Ett mönster av små avvikelsejusteringar är starkare varning än en enskild skandal"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-008",
+      "titel": "Investment Valuation",
+      "author": "Aswath Damodaran",
+      "year": 1996,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "Damodarans kompletta verktygslåda: DCF, multiplar, realoptioner och deras fallgropar — referensen för varje värderingsmodell i ekosystemet.",
+      "ak": [
+        "V10",
+        "V12",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "All värdering vilar på antaganden om tillväxt, risk och avkastningskrav: gör antagandena synliga",
+        "En multipel är en komprimerad DCF: använd den bara när du vet vad den komprimerar",
+        "Värdera felet: ett intervall med ärlig osäkerhet slår en falsk punktskattning"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-009",
+      "titel": "Valuation: Measuring and Managing the Value of Companies",
+      "author": "Tom Copeland, Tim Koller & Jack Murrin (McKinsey)",
+      "year": 1990,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "McKinseys standardverk som kopplar strategi, kapitalavkastning och värdeskapande — bryggan mellan bolagsstyrning och aktiemarknadens värderingslogik.",
+      "ak": [
+        "V05",
+        "V09",
+        "V10",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Värde skapas bara när avkastning på investerat kapital överstiger kapitalkostnaden: tillväxt utan räntemarginal förstör värde",
+        "Räkna på fritt kassaflöde och ekonomiskt kapital, inte redovisad vinst",
+        "Värdeskapande sker i verksamheten, inte i finansiell ingenjörskonst"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-010",
+      "titel": "Expectations Investing",
+      "author": "Alfred Rappaport & Michael J. Mauboussin",
+      "year": 2001,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Vänder på värderingen: läs av marknadens förväntningar i priset och bedöm om de är för låga — den mest praktiska metoden utan prognosmakeri.",
+      "ak": [
+        "V12",
+        "V14",
+        "V15"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Priset innehåller alltid förväntningar: analysera dem istället för att spå framtiden",
+        "Reverse-DCF visar vilken tillväxt och marginal marknaden redan betalar för",
+        "En bra aktie är en där förväntningarna är lättare att slå än marknadens"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-011",
+      "titel": "The Theory of Investment Value",
+      "author": "John Burr Williams",
+      "year": 1938,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "Boken som uppfann DCF: Williams bevisade att ett bolags värde är summan av diskonterade framtida kassaflöden — grunden för all modern värdering.",
+      "ak": [
+        "V10",
+        "V11",
+        "V12",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Ett bolags värde är alla framtida kassaflöden diskonterade till idag, inget annat",
+        "Räntefoten är värderingens gravitation: liten förändring ger stor effekt på värde",
+        "Om ingen aktie möter ditt avkastningskrav är kassan en position"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-012",
+      "titel": "Margin of Safety",
+      "author": "Seth A. Klarman",
+      "year": 1991,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Klarmans eftertraktade handbok om riskförst-investering: köp bara när oddsen är kraftigt i din favör, med fallstudier från verkliga kriser.",
+      "ak": [
+        "V14",
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Kapitalbevarande först och avkastning sedan: en förlust slår alltid en lika stor vinst",
+        "Särskilda situationer som spinnoffs, nyemissioner och kriser skapar felprisning som går att räkna på",
+        "Om marginalen saknas i priset är kassan rätt: att inte handla är ett aktivt beslut"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-013",
+      "titel": "The Dhandho Investor",
+      "author": "Mohnish Pabrai",
+      "year": 2007,
+      "kat": "fundamental",
+      "niva": 2,
+      "why": "Pabrai översätter värdeinvesteringens kärna till en handfull enkla regler: få stora satsningar, begränsad nedsida, obegränsad uppsida.",
+      "ak": [
+        "V13",
+        "V14",
+        "V19"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Kopiera de bästa gratis: klona tänkandet, inte bara portföljen",
+        "Satsa tungt bara när förlusten är begränsad och vinsten kan mångdubblas",
+        "Aktivitet är fienden: få affärer med hög träffsäkerhet slår ständig handel"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-014",
+      "titel": "Contrarian Investment Strategies: The Next Generation",
+      "author": "David Dreman",
+      "year": 1998,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Dreman dokumenterar att låga multiplar slår marknaden över tid och förklarar mekanismen: beteendemässiga fel gör billiga aktier systematiskt felprisade.",
+      "ak": [
+        "V14",
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Lågt P/E och lågt P/B har slagit marknaden över decennier: drivkraften är mänskliga bias, inte datafel",
+        "Undvik de hetaste aktierna: höga förväntningar ger liten marginal och stora fall",
+        "Diversifiera mellan kontrarianska positioner: felprisning kan bestå längre än du har tålamod"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-015",
+      "titel": "What Works on Wall Street",
+      "author": "James O'Shaughnessy",
+      "year": 1996,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Den stora faktastudien: decennier av amerikanska aktier testade mot multiplar och faktorer — bevisen för vilka strategier som faktiskt fungerar.",
+      "ak": [
+        "V01",
+        "V04",
+        "V09",
+        "V14"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Kombinationen låg värdering och stark momentum har historiskt gett bäst avkastning",
+        "Enskilda årsresultat betyder ingenting: testa alltid över hela konjunkturcykler",
+        "Följ en mekanisk strategi exakt: diskretionära undantag förstör oftast faktorernas edge"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-016",
+      "titel": "The Essays of Warren Buffett: Lessons for Corporate America",
+      "author": "Lawrence A. Cunningham (red.)",
+      "year": 1997,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Buffetts aktieägarbrev omorganiserade till lärobok: kapitalallokering, ägarstyrning och räkenskapslogik — den mest välskrivna källan i kanon.",
+      "ak": [
+        "V09",
+        "V10",
+        "V11",
+        "V15"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Look-through earnings: värdera din andel av bolagets resultat, inte bara utdelningen",
+        "Testa återinvesteringen: ska återhållen vinst skapa minst motsvarande marknadsavkastning",
+        "Läs ledningen som hyresgäst: köp bolag där ägare och ledning tänker som du"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-017",
+      "titel": "You Can Be a Stock Market Genius",
+      "author": "Joel Greenblatt",
+      "year": 1997,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Specialsituationernas handbok: spinnoffs, fusioner och rekonstruktioner — nischer där privatinvesterare har strukturella fördelar mot institutioner.",
+      "ak": [
+        "V12",
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Läs officiella dokument: informationen är offentlig men nästan ingen läser den",
+        "Spinnoffs skapar tvångsförsäljning och därmed felprisning: räkna på nyckeltalen före marknaden",
+        "Definiera katalysator och tidshorisont innan du går in i en specialsituation"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-018",
+      "titel": "The Little Book That Beats the Market",
+      "author": "Joel Greenblatt",
+      "year": 2005,
+      "kat": "fundamental",
+      "niva": 1,
+      "why": "Magic Formula på några timmars läsning: hög avkastning på kapital kombinerad med lågt pris — den enklaste systematiska aktiestrategin i kanon.",
+      "ak": [
+        "V05",
+        "V09",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Magic Formula är hög avkastning på kapital plus lågt värde, mekaniskt rankat och roterat",
+        "Strategin underpresterar marknaden i åratal i taget: uthålligheten är hela edgen",
+        "Enkel och disciplinerad slår komplex och känslomässig över tid"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-019",
+      "titel": "The Art of Short Selling",
+      "author": "Kathryn F. Staley",
+      "year": 1996,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Klassikern i att söka fel: Staley visar hur bokföringsvarningar, kapitalbruk och branschnedgångar avslöjar bolag före kraschen.",
+      "ak": [
+        "V05",
+        "V07",
+        "V08",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Shorting börjar i resultaträkningen: dolda belastningar, kapitaliserade kostnader och växande lager",
+        "Bra shorts har ofta svag likviditet och beroende av nytt kapital: följ kassaflödet",
+        "Timing och positionsstorlek är allt: rätt tes med fel timing kostar kapitalet"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-020",
+      "titel": "The Outsiders",
+      "author": "William N. Thorndike",
+      "year": 2012,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Åtta vd:ar som skapade enormt aktieägarvärde genom ovanlig kapitalallokering — handboken i att läsa ledning som investerare.",
+      "ak": [
+        "V09",
+        "V11",
+        "V15"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Vd:ns viktigaste uppgift är kapitalallokering: återköp, förvärv, utdelning eller återinvestering",
+        "Återköp är bara rätt när aktien handlar under inneboende värde, annars är det värdeförstörelse",
+        "Decentraliserad verksamhet med centraliserad kapitalallokering är ett bevisat framgångsmönster"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-021",
+      "titel": "Technical Analysis of the Financial Markets",
+      "author": "John J. Murphy",
+      "year": 1999,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "Standardverket i teknisk analys: trend, stöd och motstånd, volym och indikatorer i en sammanhängande metod — kurslitteraturen för AK1TS.",
+      "ak": [
+        "V12",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt",
+        "Tid"
+      ],
+      "lessons": [
+        "Trenden är din vän tills den bryts: handla med trenden, inte mot den",
+        "Volym bekräftar prisrörelser: en breakout utan volym är en varning",
+        "Stöd och motstånd är zoner inte linjer: flera tester gör nivån starkare"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-022",
+      "titel": "Technical Analysis of Stock Trends",
+      "author": "Robert D. Edwards & John Magee",
+      "year": 1948,
+      "kat": "teknisk",
+      "niva": 4,
+      "why": "Boken som kodifierade västerländsk chartanalys: huvud-axel-skuldra, trekanter och trendkanler härstammar från denna grundtext.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt",
+        "Tid"
+      ],
+      "lessons": [
+        "Klassiska formationer har mätregler för mål: använd dem för exit och stopp",
+        "En bruten trendlinje på hög volym är en signal, på svag volym bara brus",
+        "Marknader rör sig i trender tills de gör det inte: definiera i förväg vad som bryter trenden"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-023",
+      "titel": "Japanese Candlestick Charting Techniques",
+      "author": "Steve Nison",
+      "year": 1991,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "Nison introducerade japanska ljusstakar för väst: momentum, vändpunkter och psykologi i varje stapel — det visuella språket för prismönster.",
+      "ak": [
+        "V12"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Ljusstakar mäter sentiment i realtid: långa överkast betyder press och doji betyder tvekan",
+        "En formations signal gäller bara i rätt kontext: trend, nivå och volym avgör",
+        "Bekräfta vändningen med nästa stapel innan du agerar på ett enskilt mönster"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-024",
+      "titel": "Elliott Wave Principle",
+      "author": "A.J. Frost & Robert R. Prechter",
+      "year": 1978,
+      "kat": "teknisk",
+      "niva": 4,
+      "why": "Det systematiska verket om Elliottvågor: fem vågor med trenden och tre mot — ramverket bakom dimensionen Våg i AK1TS.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Tid"
+      ],
+      "lessons": [
+        "Marknader rör sig i vågor av optimism och pessimism: räkna vågor, inte bara prisnivåer",
+        "Alternativräkning är metodens kärna: ha alltid plan B om räkningen slår fel",
+        "Vågstrukturen är fraktal och finns i alla tidsskalor från minuter till århundraden"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-025",
+      "titel": "How to Make Money in Stocks",
+      "author": "William J. O'Neil",
+      "year": 1988,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "CANSLIM förenar fundamental tillväxt med teknisk timing: kvartalsvinst, nypresident, ledarskap och köp vid brytpunkt ur bas i en helhetsmetod.",
+      "ak": [
+        "V01",
+        "V12",
+        "V14"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt",
+        "Tid"
+      ],
+      "lessons": [
+        "Köp bara aktier med stark kvartalsvinsttilväxt som går mot nya höjder",
+        "Köp på brytpunkt ur en sund basformation på minst halvhögre volym",
+        "Klipp förlusten vid sju åtta procent: små förluster är systemets försäkringspremie"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-026",
+      "titel": "Trading for a Living",
+      "author": "Alexander Elder",
+      "year": 1993,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "Elder förenar tre verktyg: psykologi, metod och kapitalhantering — ett komplett system med triple screen som ramverk.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Triple screen: längre tidslig ram för trend, kortare för timing och en indikator för bekräftelse",
+        "Riskera aldrig mer än två procent av kapitalet i en enda position",
+        "Din största fiende sitter mellan öronen: handelsdagboken är verktyget"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-027",
+      "titel": "Encyclopedia of Chart Patterns",
+      "author": "Thomas N. Bulkowski",
+      "year": 2000,
+      "kat": "teknisk",
+      "niva": 4,
+      "why": "Statistiken bakom formationerna: Bulkowski mäter träffsäkerhet och pris mål på tusentals exempel — evidens istället för anekdoter.",
+      "ak": [
+        "V12"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Varje formation har en statistisk sannolikhet: handla mönster med bevisad träffsäkerhet",
+        "Prismålet räknas från formationshöjden: använd det för exit och riskbelöning",
+        "Fällor är vanligast vid raka uppbrott: volymbekräftelse skiljer guldet från gruset"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-028",
+      "titel": "Poor Charlie's Almanack",
+      "author": "Charles T. Munger",
+      "year": 2005,
+      "kat": "strategi",
+      "niva": 3,
+      "why": "Mungers mentala galler: tvärvetenskapligt tänkande, invertering och psykologi — den filosofiska ryggraden i analysdisciplinen.",
+      "ak": [
+        "V13",
+        "V15",
+        "V19"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Invertera alltid: fråga vad som säkert dödar bolaget och se till att undvika det",
+        "Bygg ett galler av mentala modeller från många discipliner: ekonomi räcker inte",
+        "Undvik dumhet istället för att jaga genialitet: de enkla felen är de dyraste"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-029",
+      "titel": "Zero to One",
+      "author": "Peter Thiel",
+      "year": 2014,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Thiels tes om monopol, defensibilitet och vertikal tillväxt — kärnan i hur moat och prissättningskraft bedöms hos tillväxtbolag.",
+      "ak": [
+        "V01",
+        "V02",
+        "V13"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Konkurrens är för förlorare: sök bolag med strukturell monopolkraft via nätverk, skala eller varumärke",
+        "Vertikal tillväxt från noll till ett är värdefullare än horisontell kopiering",
+        "En fördel utan defensibilitet är tillfällig: fråga om konkurrenten kan kopiera den"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-030",
+      "titel": "Blue Ocean Strategy",
+      "author": "W. Chan Kim & Renée Mauborgne",
+      "year": 2005,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Ramverket för värdeinnovation: skapa ny efterfrågan istället för att slåss om befintlig — strategiskt perspektiv på moat och marginal.",
+      "ak": [
+        "V03",
+        "V04",
+        "V13",
+        "V14"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Värdeinnovation höjer kundvärdet och sänker kostnaden samtidigt: undvik blodigt konkurrensstrider",
+        "Strategiprofilen avslöjar om bolaget äger en unik position eller kopierar",
+        "En blå ocean utan barriärer imiteras snabbt: bedöm hållbarheten innan du betalar för den"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-031",
+      "titel": "A Random Walk Down Wall Street",
+      "author": "Burton G. Malkiel",
+      "year": 1973,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Effektiva marknads-hypotesens klassiker: Malkiel tvingar varje analytiker att förklara varför marknaden skulle felprissatta just deras bolag.",
+      "ak": [
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Marknaden är mestadels effektiv: din edge måste vara specifik och dokumenterad",
+        "Kostnader och skatter äter avkastningen: långa horisonter och låga avgifter vinner",
+        "Bubblor återkommer genom historien från tulpaner till IT: att känna mekanismen är halva skyddet"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-032",
+      "titel": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "year": 2011,
+      "kat": "beteende",
+      "niva": 3,
+      "why": "Kahnemans sammanfattning av kognitionen: system ett och två, ankare och förlustaversion — den vetenskapliga grunden för all beteendefinans.",
+      "ak": [
+        "V14",
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Snabba automatiska tankeprocesser drar fel slutsatser under stress och komplexitet",
+        "Ankareffekten gör första siffran farligt viktig: räkna om värdet från grunden",
+        "Förlustaversion driver både för tidiga vinster och för länge hållna förlorare"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-033",
+      "titel": "The Psychology of Money",
+      "author": "Morgan Housel",
+      "year": 2020,
+      "kat": "beteende",
+      "niva": 1,
+      "why": "Housel flyttar fokus från beräkning till beteende: tålamod, tur och ränta på ränta — den mest tillgängliga ingången till finansdisciplin.",
+      "ak": [
+        "V11",
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Gör tillräckligt bra beskap under tillräckligt lång tid: tiden i marknaden slår timingen",
+        "Skilj på att gå bra och att gå i kris: överlevnad är första prioritet",
+        "Din personliga pengahistoria styr besluten mer än kalkylbladet"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-034",
+      "titel": "Reminiscences of a Stock Operator",
+      "author": "Edwin Lefèvre",
+      "year": 1923,
+      "kat": "beteende",
+      "niva": 2,
+      "why": "Jesse Livermores fiktiva biografi — fortfarande den skarpaste skildringen av spekulation, timing och marknadspsykologi som skrivits.",
+      "ak": [
+        "V12",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Marknaden lönar inte rätt utan rätt timing: tålamod är en position",
+        "Trendbrott på hög volym är information: handla på fakta, inte på hopp",
+        "Det finns tid att vara lång, tid att vara kort och tid att vänta: veta vilken tid det är"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-035",
+      "titel": "The Alchemy of Finance",
+      "author": "George Soros",
+      "year": 1987,
+      "kat": "makro",
+      "niva": 5,
+      "why": "Reflexivitetsteorin: priser påverkar grunderna som påverkar priserna — med Soros egen handelslogg från historiens största makrosatsning.",
+      "ak": [
+        "V12",
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Pris"
+      ],
+      "lessons": [
+        "Reflexivitet: marknadspriser förändrar fundamenten och feedbackslingor skapar bubbeldynamik",
+        "Satsa stort först när tesen är testad: börja smått och bygg upp vid bekräftelse",
+        "Överlevnad kräver att erkänna fel snabbt: det avgörs inte av om du har rätt utan när du inser att du har fel"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-036",
+      "titel": "The Most Important Thing",
+      "author": "Howard Marks",
+      "year": 2011,
+      "kat": "risk",
+      "niva": 2,
+      "why": "Marks memoer i bokform: andranivåtänkande, cykler och omätbar risk — den moderna handboken i risksamlande och cykeltänk.",
+      "ak": [
+        "V14",
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Andranivåtänkande: fråga alltid vad marknaden redan prissatt som du vet bättre",
+        "Cykler är finansens gravitationslag: kredit, sentiment och värdering svänger alltid tillbaka",
+        "Risk är mer än volatilitet: det är permanent kapitalförlust och marginalen är enda skyddet"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-037",
+      "titel": "Fooled by Randomness",
+      "author": "Nassim Nicholas Taleb",
+      "year": 2001,
+      "kat": "risk",
+      "niva": 3,
+      "why": "Taleb om tur som utger sig för att vara skicklighet: överlevnadsbias, sällsynta händelser och varför resultat inte är process.",
+      "ak": [
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Skilj process från resultat: ett bra beslut kan ge dåligt utfall och tvärtom",
+        "Asymmetri är allt: sök satsningar med begränsad nedsida och öppen uppsida",
+        "Berättelsen efteråt är nästan alltid en konstruerad narrative, inte förklaring"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-038",
+      "titel": "The Snowball",
+      "author": "Alice Schroeder",
+      "year": 2008,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Den mest detaljerade Buffett-biografin: hur en disciplinerad kapitalallokator byggdes steg för steg, med alla misstag med i beräkningen.",
+      "ak": [
+        "V09",
+        "V11",
+        "V15"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Ränta på ränta i kombination med koncentration och kapitalbevarande är det verkliga systemet",
+        "Personliga egenskaper som tålmodighet och oberoende är lika avgörande som analysteknik",
+        "Stora positioner över årtionden kräver att du förstår ägare och ledning på djupet"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-039",
+      "titel": "The Warren Buffett Way",
+      "author": "Robert G. Hagstrom",
+      "year": 1994,
+      "kat": "fundamental",
+      "niva": 2,
+      "why": "Den första strukturerade nedmonteringen av Buffetts metod: moat, äkta lönsamhet och köpkriterier i direkt tillämpningsbar form.",
+      "ak": [
+        "V09",
+        "V13",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Buffetts nyckeltal: förutsägbar intjäning, hög och stabil avkastning på eget kapital, låg skuld, trogen ledning",
+        "Äkta konsumentmonopol känns igen på hög avkastning utan stort kapitalbehov",
+        "Köp när marknaden är deprimerad och sitt stilla när den är euforisk"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-040",
+      "titel": "The Warren Buffett Portfolio",
+      "author": "Robert G. Hagstrom",
+      "year": 1999,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Uppföljaren om koncentration: varför fem till tio positioner räcker och varför beteendefinans förklarar att så få klarar det.",
+      "ak": [
+        "V09",
+        "V13",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Koncentration kräver djupare analys och starkare mage men ger bättre resultat för den som behärskar den",
+        "Känner du inte bolaget nog för en tioprocentposition ska du inte äga det alls",
+        "Minska omsättningen: varje affär kostar analys, skatt och fokus"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-041",
+      "titel": "Quantitative Value",
+      "author": "Tobias E. Carlisle & Wesley R. Gray",
+      "year": 2012,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "Systematiserar värdeinvesteringen: hur en kvantitativ värdestrategi byggs, testas och skyddas mot redovisningstrick.",
+      "ak": [
+        "V04",
+        "V09",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Kvalitet och värde tillsammans slår rent värde: filtrera bort manipulationssignaler och svag lönsamhet",
+        "Backtesting utan datasnooping är svårt: hantera urvalsbias och överlevnadsbias",
+        "En systematisk process skyddar mot de emotionella undantag som förstör strategin"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-042",
+      "titel": "The Acquirer's Multiple",
+      "author": "Tobias E. Carlisle",
+      "year": 2017,
+      "kat": "fundamental",
+      "niva": 2,
+      "why": "Deep value förenklat: hela bolagets pris mot driftsvinsten — cigarettfimp-logik möter aktivistisk köparsyn.",
+      "ak": [
+        "V05",
+        "V14",
+        "V19"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Acquirer's Multiple är företagsvärde delat med driftsvinst: vad kostar hela bolaget jämfört med vad det tjänar",
+        "Deep value fungerar bäst med spridning: enskilda billiga bolag kan förbli billiga",
+        "Medelvärdesåtergång är strategins motor: köp det hatade och undvik det älskade"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-043",
+      "titel": "Value Investing: From Graham to Buffett and Beyond",
+      "author": "Bruce C. Greenwald, Judd Kahn, Paul Sonkin & Michael van Biema",
+      "year": 2001,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Columbia-kursens lärobok: moderna verktyg för värdejakt inklusive moat-trädet och de tre källorna till konkurrensfördel.",
+      "ak": [
+        "V13",
+        "V14",
+        "V19"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Tre källor till edge: informations-, analys- eller beteendefördel: ha minst en och veta vilken",
+        "Bedöm med moat-trädet i vilket skede från tillväxt till mognad bolagets konkurrensskydd är",
+        "När marknaden är effektiv sök värde i svåra situationer där färre tittar"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-044",
+      "titel": "Creative Cash Flow Reporting",
+      "author": "Charles W. Mulford & Eugene E. Comiskey",
+      "year": 2005,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "Fördjupningen i kassaflödesdetektiv: hur rapporterade kassaflöden pytsas upp och hur de räknas om till äkta siffror.",
+      "ak": [
+        "V08",
+        "V10",
+        "V15"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Räkna om kassaflödet: ta bort sålda fordringar, kapitaliserade kostnader och engångsposter",
+        "Fritt kassaflöde från drift som överstiger rapporterad vinst är en kvalitetssignal",
+        "Jämför investeringar med avskrivningar över tid: ett växande gap kan dölja underinvestering"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-045",
+      "titel": "Fooling Some of the People All of the Time",
+      "author": "David Einhorn",
+      "year": 2008,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Einhorns realtidslogg från Allied Capital-shorten: hur en fundamental tes byggs, försvaras och vinns mot hela institutionella världen.",
+      "ak": [
+        "V05",
+        "V08",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "En korttes börjar i dokumenten: läs prospekt, ägarförändringar och redovisningsprinciper före marknadsröster",
+        "Kapitaliserade kostnader och interna värderingar avslöjar incitament",
+        "Marknaden kan ha fel länge: ha kapital och uthållighet att stå emot pressen"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-046",
+      "titel": "Distress Investing: Principles and Technique",
+      "author": "Martin J. Whitman & Fernando Diz",
+      "year": 2009,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "Whitmans livserfarenhet från obestånd och rekonstruktion: var borgenären har de bästa rättigheterna och hur krisbolag värderas.",
+      "ak": [
+        "V06",
+        "V07",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "I krisen gäller borgenärsrättigheter: säkerheter och täckning slår aktieägarvärde",
+        "Rekonstruktion skapar nya bolag till nära nollvärdering men kräver juridisk kompetens",
+        "Likviditetstestet: kan bolaget betala ränta och amortering i arton till tjugofyra månader"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-047",
+      "titel": "Financial Statement Analysis and Security Valuation",
+      "author": "Stephen H. Penman",
+      "year": 2001,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "Penman förenar redovisning och värdering: hur bokföringen bygger resultaträkningen och hur inneboende värde räknas ur den.",
+      "ak": [
+        "V05",
+        "V08",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Balansräkning och resultaträkning hänger ihop: restinkomstmodellen fångar kopplingen",
+        "Separera kärnrörelsens lönsamhet från finansieringens effekt",
+        "Värdefullt är upprepbart resultat från kärnrörelsen, inte engångseffekter"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-048",
+      "titel": "The Five Rules for Successful Stock Investing",
+      "author": "Pat Dorsey",
+      "year": 2003,
+      "kat": "fundamental",
+      "niva": 2,
+      "why": "Morningstar-analytikerns pedagogiska introduktion: moattyper, ekonomisk analys och säljregler — bästa bron innan standardverken.",
+      "ak": [
+        "V04",
+        "V13",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Fyra moattyper: immateriella tillgångar, ombyteskostnad, nätverk och skala: identifiera vilken och hur länge den håller",
+        "Läs femårssiffror för marginaler och avkastning: leta stabilitet inte toppår",
+        "Sälj när tesen bryts, priset överskrider värdet eller något bättre dyker upp, aldrig av rädsla"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-049",
+      "titel": "Företagsvärdering: med fundamental analys",
+      "author": "Henrik Nilsson, Anders Isaksson & Teppo Martikainen",
+      "year": 2002,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Det svenska standardverket i företagsvärdering: fundamental analys från svenska årsredovisningar till DCF och multiplar.",
+      "ak": [
+        "V05",
+        "V08",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Fundamental analys är enda försvaret mot systematiska felprisningar: metoden går att granska",
+        "Använd flera värderingsmetoder parallellt: DCF, multiplar och substansvärde",
+        "Sensitivitetsanalys är obligatorisk: visa hur värdet beror av tillväxt och diskonteringsränta"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-050",
+      "titel": "The Little Book of Value Investing",
+      "author": "Christopher H. Browne",
+      "year": 2006,
+      "kat": "fundamental",
+      "niva": 1,
+      "why": "Browne från Tweedy Browne sammanfattar värdeinvesterarens hantverk i pocketformat — den perfekta uppvärmaren före Graham.",
+      "ak": [
+        "V05",
+        "V14",
+        "V19"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Köp bolag till sextio procent av inneboende värde: det är kärnan i värdeinvestering",
+        "Stabil utdelning och stark balansräkning skyddar i nedgångar",
+        "Tålamod är värdeinvesterarens enda verkliga konkurrensmedel"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-051",
+      "titel": "Competition Demystified",
+      "author": "Bruce C. Greenwald & Judd Kahn",
+      "year": 2005,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Porters fem krafter förenklade till en enda: barriärer mot konkurrens — det renaste verktyget för att bedöma moat och prissättningsmakt.",
+      "ak": [
+        "V03",
+        "V04",
+        "V13"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "En kraft styr allt: barriärer mot inträde, och finns de är lönsamheten hållbar",
+        "En dominerande lokal position slår en medelstor global",
+        "Utan barriärer blir konkurrensen en priskamp: undvik bolag utan unik fördel"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-052",
+      "titel": "Common Sense on Mutual Funds",
+      "author": "John C. Bogle",
+      "year": 1999,
+      "kat": "strategi",
+      "niva": 3,
+      "why": "Indexfondens fader förklarar kostnadsrekenomen: avgifter, omsättning och medelvärdesåtergång gör att de flesta förlorar mot index.",
+      "ak": [
+        "V11",
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Varje krona i avgifter kommer direkt från din framtida avkastning",
+        "Medelvärdesåtergång gör de flesta stjärnförvaltare medelbra: lita inte på historik",
+        "Äg hela marknaden billigt: bredd och låg kostnad slår aktieplockning för de flesta"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-053",
+      "titel": "Winning the Loser's Game",
+      "author": "Charles D. Ellis",
+      "year": 1985,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Ellis visar att aktiv förvaltning är ett förlorarspel: institutionerna är marknaden och kostnaderna gör dig till förloraren.",
+      "ak": [
+        "V11",
+        "V20"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Att slå marknaden kräver en verklig fördel: saknar du den, äg marknaden",
+        "Aktivitet är fienden: handel kostar pengar, skatt och fokus",
+        "Bestäm din roll: vill du vara professionell eller klient, och bete dig därefter"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-054",
+      "titel": "The Intelligent Asset Allocator",
+      "author": "William J. Bernstein",
+      "year": 2000,
+      "kat": "strategi",
+      "niva": 4,
+      "why": "Bernstein förklarar portföljmatematiken historiskt: korrelation, varians och varför tillgångsfördelningen driver det mesta av resultatet.",
+      "ak": [
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Tillgångsfördelningen förklarar mer av portföljens risk än valet av enskilda aktier",
+        "Korrelationerna stiger i kriser: räkna med sämre spridning när du behöver den mest",
+        "Historisk avkastning är en dålig guide: använd försiktiga antaganden och återbalansera disciplinerat"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-055",
+      "titel": "All About Asset Allocation",
+      "author": "Richard A. Ferri",
+      "year": 2005,
+      "kat": "strategi",
+      "niva": 3,
+      "why": "Den praktiska handboken i tillgångsfördelning: hur en portfölj byggs, rebalanseras och stresstestas över hela cykler.",
+      "ak": [
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Återbalansering tvingar dig att köpa billigt och sälja dyrt: automatisk kontrarianism",
+        "Riskkapacitet och riskvilja är två olika mått: mät båda innan aktieandeln bestäms",
+        "Kostnad, skatteeffektivitet och enkelhet: en tråkig portfölj slår en spännande"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-056",
+      "titel": "The Innovator's Dilemma",
+      "author": "Clayton M. Christensen",
+      "year": 1997,
+      "kat": "strategi",
+      "niva": 3,
+      "why": "Christensen förklarar varför en moat plötsligt kan kollapsa: disruptiv innovation äter upp etablerade bolag underifrån.",
+      "ak": [
+        "V01",
+        "V13",
+        "V18"
+      ],
+      "ts": [
+        "Tid",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Att lyssna på befintliga kunder gör bolaget blind för disruption: de nya kunderna finns annorstädes",
+        "Utmanare med lägre marginaler växer i skydd tills de tar över prisbildningen",
+        "Varje moat har utgångsdatum: fråga inte om vallgraven fylls igen utan när"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-057",
+      "titel": "Come Into My Trading Room",
+      "author": "Alexander Elder",
+      "year": 2002,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "Uppföljaren till Trading for a Living: komplett handelsplan, risk per affär och psykologisk träning i arbetsboksform.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Skriv handelsplanen innan positionen öppnas: ingång, utgång, storlek och scenario",
+        "Riskera en procent eller mindre per affär och lägg aldrig till i en förlustposition",
+        "Dokumentera varje affär och utvärdera veckovis mot planen"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-058",
+      "titel": "The Visual Investor",
+      "author": "John J. Murphy",
+      "year": 1995,
+      "kat": "teknisk",
+      "niva": 2,
+      "why": "Murphys mjukaste introduktion till chartläsning: visuell analys för den som inte ska bli trader men vill förstå prisbeteende.",
+      "ak": [
+        "V12"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Enkelhet vinner: trendlinjer, stöd och motstånd samt volym räcker långt",
+        "Jämför alltid mot index: relativ styrka avslöjar vinnare och förlorare",
+        "Se diagrammet först och indikatorn sedan: indikatorn bekräftar men upptäcker inte"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-059",
+      "titel": "Intermarket Analysis",
+      "author": "John J. Murphy",
+      "year": 2004,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "Murphy kopplar samman aktier, räntor, valutor och råvaror: sektorrotering och makrolänkar i en visuell metod.",
+      "ak": [
+        "V12",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Räntemarknaden leder aktiemarknaden: följ obligationer för tidiga vändningar",
+        "Sektorroteringen följer konjunkturcykeln: energi, finans, teknik och konsument turas om",
+        "Dollar, råvaror och aktier hänger ihop i kedjor som syns direkt i diagrammen"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-060",
+      "titel": "Martin Pring on Market Momentum",
+      "author": "Martin J. Pring",
+      "year": 1993,
+      "kat": "teknisk",
+      "niva": 4,
+      "why": "Standardverket om momentumindikatorer: RSI, MACD och momentumets psykologi genom konjunkturcykeln.",
+      "ak": [
+        "V12"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Momentum mäter prisförändringens hastighet: divergens mot pris är den starkaste signalen",
+        "Använd momentum för timing och trenden för riktning, aldrig tvärtom",
+        "Översålda och överköpta nivåer betyder ingenting i en stark trend: kolla cykelpositionen först"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-061",
+      "titel": "The Master Swing Trader",
+      "author": "Alan S. Farley",
+      "year": 2000,
+      "kat": "teknisk",
+      "niva": 4,
+      "why": "Farleys detaljerade hantverksbok: setup, exekvering och riskhantering i korta till medellånga svängar med sjufakters-modellen.",
+      "ak": [
+        "V12",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt",
+        "Tid"
+      ],
+      "lessons": [
+        "En setup kräver flera bevis: mönster, trend, momentum, volym, struktur, tid och signal tillsammans",
+        "Planera exekveringen innan marknaden öppnar: inga improvisationer i fart",
+        "Dela positionen och ta delvinst: hantera affären aktivt efter prisbeteendet"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-062",
+      "titel": "Fibonacci Applications and Strategies for Traders",
+      "author": "Robert Fischer",
+      "year": 1993,
+      "kat": "teknisk",
+      "niva": 4,
+      "why": "Det praktiska Fibonacci-verket: retracements, extensions och tidscykler sammansatta i en handelsmodell.",
+      "ak": [
+        "V12"
+      ],
+      "ts": [
+        "Pris",
+        "Våg"
+      ],
+      "lessons": [
+        "Fibonaccinivåerna är stöd- och motståndszoner att övervaka, inte garantier",
+        "Kombinera prisretracement med tidscykler: båda måste bekräfta",
+        "Setups utanför en stark trend är meningslösa: Fibonacci fungerar med trenden"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-063",
+      "titel": "The New Science of Technical Analysis",
+      "author": "Thomas R. DeMark",
+      "year": 1994,
+      "kat": "teknisk",
+      "niva": 5,
+      "why": "DeMarks indikatorsystem med TD Sequential i fokus: objektiva räkneregler för att mäta utmattning i prisrörelser.",
+      "ak": [
+        "V12"
+      ],
+      "ts": [
+        "Pris",
+        "Tid",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Utmattning kan mätas objektivt: räkneverktyget kvantifierar när en rörelse når sitt slut",
+        "Regler utan skönsmässiga antaganden ger samma signal för alla användare varje gång",
+        "Setup, countdown och exit: systemet tvingar dig definiera risken före belöningen"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-064",
+      "titel": "Teknisk analys med Johnny Torssell",
+      "author": "Johnny Torssell",
+      "year": 1996,
+      "kat": "teknisk",
+      "niva": 2,
+      "why": "Den svenska standardboken i teknisk analys: Torssell, mångårig teknisk analytiker på Dagens industri, översätter chartläsning till svenska förhållanden.",
+      "ak": [
+        "V12"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt",
+        "Tid"
+      ],
+      "lessons": [
+        "Trend, volym och form tillsammans ger signalen: en svensk klassiker förenar chartanalys med disciplin",
+        "Handla aldrig mot huvudtrenden oavsett marknad",
+        "Riskera bara vad du har råd att förlora: stoplossen är inte förhandlingsbar"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-065",
+      "titel": "Way of the Turtle",
+      "author": "Curtis M. Faith",
+      "year": 2007,
+      "kat": "teknisk",
+      "niva": 2,
+      "why": "Berättelsen inifrån Turtle-experimentet: exakta trendföljningsregler, positionsstorlek och psyket bakom systemhandel.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Enkel trendföljning med utbrottsregler fungerar om systemet följs exakt",
+        "Anpassa positionsstorleken efter volatiliteten så att varje position bär lika mycket risk",
+        "Förlustserier är systemets bränsle: de flesta ger upp innan vinsterna kommer"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-066",
+      "titel": "The Complete TurtleTrader",
+      "author": "Michael W. Covel",
+      "year": 2007,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "Covels reportage om Turtles: vad Richard Dennis egentligen testade och varför psyket, inte reglerna, skilde vinnare från förlorare.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Samma regler gav olika resultat: skillnaden var disciplin och risktolerans",
+        "Trendföljning är ett sannolikhets spel: acceptera låg träffkvot mot stor genomsnittsvinst",
+        "Mekaniska system går att lära ut men inte alla kan följa dem"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-067",
+      "titel": "The Trend Following Bible",
+      "author": "Andrew Abraham",
+      "year": 2013,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "Abraham visar hur en privathandlare kan köra CTA-strategin: risk per affär, utveckling av ekviteten och tålamodets matematik.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Riskera en halv till en procent per position: överlevnaden är förutsättningen för avkastning",
+        "En trend följs tills den bryts: varken vinstmål eller magkänsla sätter exiten",
+        "Jämn ekvitetsutveckling kräver spridning över marknader och tid"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-068",
+      "titel": "Bollinger on Bollinger Bands",
+      "author": "John Bollinger",
+      "year": 2001,
+      "kat": "teknisk",
+      "niva": 3,
+      "why": "Skaparens egen bok: bandens logik av volatilitet och medelvärdesåtergång med exakta regler för setup och squeeze.",
+      "ak": [
+        "V12"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Banden mäter relativt höga och låga priser: statistisk kontext, inte köp- och säljsignaler i sig",
+        "Squeezen: låg volatilitet föregår ofta en stark rörelse, var beredd på utbrott",
+        "Bandfärd i stark trend är normalt: stäng inte positionen bara för att priset rör vid bandet"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-069",
+      "titel": "Trading in the Zone",
+      "author": "Mark Douglas",
+      "year": 2000,
+      "kat": "beteende",
+      "niva": 2,
+      "why": "Douglas om handelspsykologin: varför kunskap inte räcker och hur en disciplin byggd på sannolikhetstänkande installeras.",
+      "ak": [
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Varje affär är unik: släpp kopplingen till tidigare vinster och förluster",
+        "Tänk i sannolikheter inte säkerheter: en enskild affär betyder ingenting, serien betyder allt",
+        "Fördefinierad risk ger frihet: när förlusten är bestämd finns inget att frukta"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-070",
+      "titel": "Market Wizards",
+      "author": "Jack D. Schwager",
+      "year": 1989,
+      "kat": "beteende",
+      "niva": 2,
+      "why": "Intervjuerna med tidens största handlare: helt olika metoder men samma principer — risk, disciplin och kapitalbevarande.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Alla topphandlare delar en egenskap: de kapar förluster omedelbart",
+        "Det finns många vägar till framgång men ingen utan riskhantering",
+        "Känn din edge: handla bara setup du förstår och har testat"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-071",
+      "titel": "The Hour Between Dog and Wolf",
+      "author": "John Coates",
+      "year": 2012,
+      "kat": "beteende",
+      "niva": 3,
+      "why": "Neurovetenskapen om risktagande: Coates, före detta trader, visar hur kortisol och testosteron driver hela marknadssvängningar.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Kroppens stresskemikalier driver över- och underkonfidens: lär känna dina fysiologiska cykler",
+        "Lång segerville gör dig övermodig precis när risken ökar",
+        "Pausa vid utmattning: beslutskvaliteten faller innan du märker det"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-072",
+      "titel": "Market Mind Games",
+      "author": "Denise K. Shull",
+      "year": 2012,
+      "kat": "beteende",
+      "niva": 3,
+      "why": "Shull utmanar myten om den känslolöse handlaren: emotioner är information och att läsa dem rätt är en analytisk fördel.",
+      "ak": [
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Undertryckta känslor återvänder som impulshandel: acceptera dem istället",
+        "Fråga vad som driver beslutet: är det data eller obehag",
+        "Sann konfidens byggs på självkännedom, inte på att ha rätt"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-073",
+      "titel": "Irrational Exuberance",
+      "author": "Robert J. Shiller",
+      "year": 2000,
+      "kat": "beteende",
+      "niva": 3,
+      "why": "Shiller varnade för IT-bubblan månader före toppen: strukturella, kulturella och psykologiska bubbeldrivare dokumenterade.",
+      "ak": [
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Våg"
+      ],
+      "lessons": [
+        "Jämför alltid priset med långsiktiga genomsnitt som CAPE: extrema nivåer varnar",
+        "Bubblor drivs av feedbackslingor: stigande pris lockar köpare som höjer priset",
+        "Narrativet om en ny tid är bubbels bränsle: fråga vad som saknas i storyn"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-074",
+      "titel": "Misbehaving",
+      "author": "Richard H. Thaler",
+      "year": 2015,
+      "kat": "beteende",
+      "niva": 3,
+      "why": "Historien om beteendefinansen från en av dess pionjärer: hur nationalekonomin ignorerade psykologin och vad det betyder för analys.",
+      "ak": [
+        "V14",
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Mental bokföring: samma krona behandlas olika beroende på ursprung, använd portföljvy",
+        "Heuristikerna förklarar systematiska felprisningar som går att utnyttja",
+        "Små förändringar i beslutsdesign ger stora beteendeförändringar"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-075",
+      "titel": "Your Money and Your Brain",
+      "author": "Jason Zweig",
+      "year": 2007,
+      "kat": "beteende",
+      "niva": 2,
+      "why": "Zweig översätter neuroekonomin till praktik: vad som händer i hjärnan vid vinst, förlust och risk, med skyddsregler.",
+      "ak": [
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Belöningssystemet gör dig beroende av aktivitet: handla mindre",
+        "Förlusten gör dubbelt så ont som vinsten känns bra: anpassa positionsstorleken",
+        "Sov på beslutet: regler som bestämts i förväg neutraliserar hjärnans feltendenser"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-076",
+      "titel": "The Black Swan",
+      "author": "Nassim Nicholas Taleb",
+      "year": 2007,
+      "kat": "risk",
+      "niva": 3,
+      "why": "Taleb om extremhändelserna som styr både historien och portföljer: normalfördelade modeller missar det som verkligen spelar roll.",
+      "ak": [
+        "V19",
+        "V20"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Extrema händelser kan inte förutsägas men går att förbereda för: bygg robusthet",
+        "Modeller som antar normalfördelning underskattar svansrisken kraftigt",
+        "Skråpstrategin: maximal säkerhet kombinerat med små aggressiva satsningar, inget däremellan"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-077",
+      "titel": "When Genius Failed",
+      "author": "Roger Lowenstein",
+      "year": 2000,
+      "kat": "risk",
+      "niva": 3,
+      "why": "Berättelsen om LTCM:s kollaps: hur nobelprisbelönade modeller mötte verklighetens likviditet och hävstång.",
+      "ak": [
+        "V06",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Hävstång förvandlar tillfälliga svängningar till permanenta förluster",
+        "Korrelationen du räknade med gäller inte i krisen: likviditeten försvinner först",
+        "Modeller bygger på historisk data och blir farliga när en ny regime kommer"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-078",
+      "titel": "The Signal and the Noise",
+      "author": "Nate Silver",
+      "year": 2012,
+      "kat": "risk",
+      "niva": 3,
+      "why": "Silver om prognoser i allt från börs till väder: varför vi överskattar signalen och underskattar osäkerheten.",
+      "ak": [
+        "V12",
+        "V20"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Bra prognoser är probabilistiska och kalibrerade, aldrig punktformade säkerheter",
+        "Mer data ökar bruset lika snabbt som signalen: filtrera hänsynslöst",
+        "Jämför prognoser mot utfall regelbundet: kalibrering slår skärpa"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-079",
+      "titel": "Manias, Panics, and Crashes",
+      "author": "Charles P. Kindleberger",
+      "year": 1978,
+      "kat": "makro",
+      "niva": 4,
+      "why": "Den klassiska historiken om finansiella kriser: förskjutning, kreditexpansion, eufori och panik, cykel efter cykel.",
+      "ak": [
+        "V06",
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Tid"
+      ],
+      "lessons": [
+        "Kriser följer mönstret nyhet, överdrift, eufori, vinsttagning och panik",
+        "Kreditexpansionen är bränslet: följ skuldsättningen när du bedömer systemrisk",
+        "En slutgiltig utlåningsinstans avgör hur djup kraschen blir, inte om den kommer"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-080",
+      "titel": "This Time Is Different",
+      "author": "Carmen M. Reinhart & Kenneth S. Rogoff",
+      "year": 2009,
+      "kat": "makro",
+      "niva": 4,
+      "why": "Åtta århundraden av data: Reinhart och Rogoff visar att skuldkriser följer samma mönster trots löftet att allt nu är annorlunda.",
+      "ak": [
+        "V06",
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Tid"
+      ],
+      "lessons": [
+        "Hög statsskuld har historiskt saktat tillväxten: kolla skuldquotan i analysen",
+        "Finanskriser återhämtar sig långsammare än vanliga recessioner",
+        "Den farligaste meningen i finans är att denna gången är det annorlunda"
+      ],
+      "tier": 2,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-081",
+      "titel": "The Big Short",
+      "author": "Michael Lewis",
+      "year": 2010,
+      "kat": "makro",
+      "niva": 3,
+      "why": "Berättelsen om dem som såg subprime-kraschen komma: hur man läser dokumenten ingen annan läser och står emot i åratal.",
+      "ak": [
+        "V06",
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Brytpunkt"
+      ],
+      "lessons": [
+        "Läs de underliggande lånedokumenten: svaret låg offentligt tillgängligt hela tiden",
+        "En kontrariansk tes kräver kapital som tål mellanår av press",
+        "Systemets incitament skapar blindheter: följ pengaflödet"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-082",
+      "titel": "Stocks for the Long Run",
+      "author": "Jeremy J. Siegel",
+      "year": 1994,
+      "kat": "makro",
+      "niva": 3,
+      "why": "Två århundraden av data: aktier har slagit räntor och inflation över alla långa perioder — det statistiska argumentet för aktiesparande.",
+      "ak": [
+        "V11",
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "På tjugoårig sikt har aktier historiskt aldrig underpresterat obligationer i usa",
+        "Inflationen äter obligationer men inte aktier på lång sikt: äg produktiva tillgångar",
+        "Utdelningar och återinvestering står för majoriteten av långsiktig totalavkastning"
+      ],
+      "tier": 2,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-083",
+      "titel": "The Great Crash 1929",
+      "author": "John Kenneth Galbraith",
+      "year": 1955,
+      "kat": "makro",
+      "niva": 3,
+      "why": "Galbraiths skarpa krönika om 1929: marginalhandel, investment trusts och kollektiv självgodhet — läxan i hur eufori byggs.",
+      "ak": [
+        "V06",
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Tid"
+      ],
+      "lessons": [
+        "Hävstång hos privatpersoner förstorar både toppen och fallet",
+        "Investeringsbolag som äger varandra skapar illusion av spridning",
+        "Efter en börskrasch kommer ofta djup recession, inte en snabb v-formad återhämtning"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-084",
+      "titel": "Devil Take the Hindmost",
+      "author": "Edward Chancellor",
+      "year": 1999,
+      "kat": "makro",
+      "niva": 3,
+      "why": "Spekulationens kulturhistoria från tulpaner till derivat: mekanismen är alltid densamma, bara instrumenten skiljer sig åt.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Tid"
+      ],
+      "lessons": [
+        "Spekulation legitimeras alltid av en nyhet: teknik, globalisering eller krypto",
+        "När alla kan delta och belåna sig har cykeln nått sin topp",
+        "Lär dig historien: bubblor känns nya varje gång men följer gamla mönster"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-085",
+      "titel": "Liar's Poker",
+      "author": "Michael Lewis",
+      "year": 1989,
+      "kat": "makro",
+      "niva": 2,
+      "why": "Lewis reportage från Salomon Brothers på åttiotalet: incitament, kortsiktighet och hur institutionsvärldens signaler förvrids.",
+      "ak": [
+        "V15",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Följ incitamenten: mäklarens och bankens vinst är inte din",
+        "I ett spel där allt handlar om att sälja vidare är du oftast den siste",
+        "En kultur utan riskkontroll kan vända lönsamhet till förlust på en kvartal"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-086",
+      "titel": "Bull! A History of the Boom and Bust",
+      "author": "Maggie Mahar",
+      "year": 2003,
+      "kat": "makro",
+      "niva": 3,
+      "why": "Historien om superstiget 1982 till 2000: hur analytiker, media och pensionsfonder byggde den största bubblan och vilka varningar som ignorerades.",
+      "ak": [
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Tid"
+      ],
+      "lessons": [
+        "En lång uppgång övertygar alla om att den är permanent, precis när den är som mest sårbar",
+        "Analytikernas benchmark-tvång systematiserar optimistiska rekommendationer",
+        "När privatpersoner belånar sig för att köpa aktier är cykelns slut nära"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-087",
+      "titel": "Origins of the Crash",
+      "author": "Roger Lowenstein",
+      "year": 2004,
+      "kat": "makro",
+      "niva": 3,
+      "why": "Lowenstein granskar nittiotalets bubbla inifrån: aktieoptioner, redovisningstrick och den styrningskultur som gjorde extremvärdering acceptabel.",
+      "ak": [
+        "V05",
+        "V15",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Aktieoptioner driver kortsiktighet: granska utspädningen i noterna",
+        "Proforma-vinster och justerade nyckeltal varnar för verklighetsflykt",
+        "Styrelser som inte ifrågasätter vd:n är en del av problemet: kolla ägarstrukturen"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-088",
+      "titel": "Vår ekonomi: en introduktion till samhällsekonomin",
+      "author": "Klas Eklund",
+      "year": 1993,
+      "kat": "makro",
+      "niva": 2,
+      "why": "Sveriges mest spridda introduktion till samhällsekonomi: bnp, penningpolitik och konjunkturcykler på svenska — den grundmurade makrobasen.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Räntan är priset på pengar: hela ekonomin prissätts om när den ändras",
+        "Konjunkturcykler drivs av investeringar och förtroende: mät båda",
+        "Förstå politikens och centralbankens spelregler innan du tolkar marknadsreaktioner"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-089",
+      "titel": "Flash Boys",
+      "author": "Michael Lewis",
+      "year": 2014,
+      "kat": "risk",
+      "niva": 2,
+      "why": "Lewis gräver fram högfrekvenshandelns front-running: mikrosekundstrukturer som flyttar pengar från vanliga investerare.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Pris",
+        "Tid"
+      ],
+      "lessons": [
+        "Marknadsstrukturen påverkar ditt pris: mäklarval och orderhantering är del av strategin",
+        "Mörka pooler och betalning för orderflöde skapar intressekonflikter",
+        "Hastighet är en fördel du inte kan slå, men du kan vägra spela spelet"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-090",
+      "titel": "Extraordinary Popular Delusions and the Madness of Crowds",
+      "author": "Charles Mackay",
+      "year": 1841,
+      "kat": "beteende",
+      "niva": 3,
+      "why": "Den ursprungliga studien i masshysteri: tulpaner, Mississippi-bubblan och korståg — källan till all senare bubbellitteratur.",
+      "ak": [
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Pris"
+      ],
+      "lessons": [
+        "Människor agerar i flock även mot sina egna bevis, både 1841 och idag",
+        "Tillgångar utan kassaflöde är extra sårbara för narrativdriven värdering",
+        "Läs historien innan du antar att din tid är unik"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-091",
+      "titel": "The Money Game",
+      "author": "Adam Smith (George J.W. Goodman)",
+      "year": 1968,
+      "kat": "beteende",
+      "niva": 2,
+      "why": "Goodmans satir från guldålderns Wall Street: profiler, fonder och spelmentalitet — de skarpaste porträtten i kanon.",
+      "ak": [
+        "V14",
+        "V20"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Marknaden är ett spel och pengar är poängen: den som glömmer det förlorar",
+        "Image och identitet styr förvaltare och profiler mer än analys",
+        "Känn din roll som spelare eller sparare och blanda inte ihop dem"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-092",
+      "titel": "The Bogleheads' Guide to Investing",
+      "author": "Taylor Larimore, Mel Lindauer & Michael LeBoeuf",
+      "year": 2006,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Praktisk handbok byggd på Bogles principer: index, avgifter, skatt och beteende för den som vill ha det enkelt och billigt.",
+      "ak": [
+        "V11",
+        "V14"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Avgiften är den enda garanterat förutsägbara variabeln: minimera den",
+        "Automatisk månadsparande och återbalansering neutraliserar beteendefällor",
+        "Vänta inte på perfekt timing: tiden är den enkla portföljens bästa allierade"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-093",
+      "titel": "Charlie Munger: The Complete Investor",
+      "author": "Tren Griffin",
+      "year": 2015,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Griffin systematiserar Munger: fundamentaltänkande, väntan på felprisning och psykologin bakom dåliga investeringsbeslut.",
+      "ak": [
+        "V13",
+        "V15",
+        "V19"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Betala för kvalitet: bra bolag till rimligt pris slår medelbolag till lågt pris",
+        "Väntan är en strategi: de stora vinsterna kommer i få koncentrerade beslut",
+        "Invertera beslutet: lista allt som kan gå fel och se till att det inte gör det"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-094",
+      "titel": "Good to Great",
+      "author": "Jim Collins",
+      "year": 2001,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Collins datastudie av bolag som gick från medel till exceptionellt: nivåfem-ledarskap, igelkottsprincipen och flyghjulet.",
+      "ak": [
+        "V13",
+        "V15"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Nivåfem-ledare är ödmjuka och besatta av bolaget: leta efter det mönstret i ledningen",
+        "Igelkotten: vad kan bolaget bli bäst i världen på och vad driver resultatmätaren",
+        "Momentum byggs som ett flyghjul: hållbarhet och konsekvens slår snabblösningar"
+      ],
+      "tier": 3,
+      "status": "kurs"
+    },
+    {
+      "id": "bk-095",
+      "titel": "Made in America",
+      "author": "Sam Walton (med John Huey)",
+      "year": 1992,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Sam Waltons egen berättelse: hur en detaljhandelsjätte byggdes genom kostnadskontroll, skalning och kundbesatthet — ett moat-case från verkligheten.",
+      "ak": [
+        "V04",
+        "V13"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Skalfördelar bygger moat först när besparingarna når kunden",
+        "Kostnadskulturen måste ägas av ledningen: marginalerna bestäms i detaljerna",
+        "Konkurrera där ingen annan är: liten ort och stor volym var en blå ocean före teorin"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-096",
+      "titel": "Shoe Dog",
+      "author": "Phil Knight",
+      "year": 2016,
+      "kat": "strategi",
+      "niva": 1,
+      "why": "Nike-grundarens memoar: varumärkeskraft, kronisk kapitalbrist och uthållighet — den råaste läroboken i hur en moat växer ur desperat konkurrens.",
+      "ak": [
+        "V13",
+        "V16"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Ett varumärke byggs under årtionden av konsekvent positionering: räkna med den tiden",
+        "Kassabrist är den vanligaste dödsorsaken för tillväxtbolag: följ kapitalåtergången",
+        "Kontroll över distribution slår kontroll över produktion: äg kundrelationen"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-097",
+      "titel": "The Everything Store",
+      "author": "Brad Stone",
+      "year": 2013,
+      "kat": "strategi",
+      "niva": 2,
+      "why": "Amazons historia: marknadsplatslogik, molntjänster och nätverkseffekter i praktiken — fallstudien i modern moat-analys.",
+      "ak": [
+        "V02",
+        "V03",
+        "V13"
+      ],
+      "ts": [
+        "Tid"
+      ],
+      "lessons": [
+        "Marknadsplats och moln ger två nätverkseffekter i samma bolag: sök kombinerade moats",
+        "Pris- och kundbesatthet kan skala till strukturell fördel även med låga marginaler",
+        "Långsiktigt ägarskap gör okonventionell kapitalallokering möjlig"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-098",
+      "titel": "Of Permanent Value: The Story of Warren Buffett",
+      "author": "Andrew Kilpatrick",
+      "year": 1994,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Kilpatricks encyklopediska Buffett-dokumentation: affärerna, breven och metoderna i kronologisk ordning — referensverket.",
+      "ak": [
+        "V09",
+        "V11",
+        "V15"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Buffetts största affärer gjordes i kriser: ha kapital när andra saknar det",
+        "Bestående värde kommer från ägarorienterade bolag med återinvesteringskraft",
+        "Kronologin visar metodens utveckling från cigarettfimpar till kvalitetsbolag"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-099",
+      "titel": "Analysis for Financial Management",
+      "author": "Robert C. Higgins",
+      "year": 1983,
+      "kat": "fundamental",
+      "niva": 4,
+      "why": "Higgins förenar ekonomisk analys med praktisk finansiering: kapitalbudgetering, tillväxtens finansiering och den hållbara tillväxttakten.",
+      "ak": [
+        "V05",
+        "V08",
+        "V09"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Hållbar tillväxttakt är avkastning på eget kapital gånger bibehållen vinst: kan bolaget växa utan nytt kapital",
+        "Små förändringar i rörelsekapital slår stort på finansieringsbehovet",
+        "Räkna alltid kapitalkostnad och värdemått tillsammans: avkastning utan kostnad är meningslös"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-100",
+      "titel": "Principles of Corporate Finance",
+      "author": "Richard A. Brealey & Stewart C. Myers",
+      "year": 1981,
+      "kat": "fundamental",
+      "niva": 5,
+      "why": "Läroboksstandarden i företagsfinansiering: kassaflödesvärdering, risk, kapitalstruktur och optionsteori — referensbibeln bakom räntetalen.",
+      "ak": [
+        "V06",
+        "V10",
+        "V14"
+      ],
+      "ts": [
+        "Pris"
+      ],
+      "lessons": [
+        "Nettonuvärde är kung: diskontera alla beslut mot kapitalkostnaden",
+        "Kapitalstrukturen påverkar värdet via skatteeffekter och risk, inte via magi",
+        "Realoptioner har värde som en traditionell kassaflödesmodell missar"
+      ],
+      "tier": 3,
+      "status": "kanon"
+    },
+    {
+      "id": "bk-101",
+      "titel": "100 Baggers",
+      "author": "Christopher Mayer",
+      "year": 2015,
+      "kat": "fundamental",
+      "niva": 3,
+      "why": "Studien av de 365 aktier som gav 100x 1962-2014 — compounding, små startvärden och moats i ett bevisligt paket.",
+      "ak": [
+        "V01",
+        "V09",
+        "V13",
+        "V20"
+      ],
+      "ts": [
+        "Våg",
+        "Pris"
+      ],
+      "lessons": [
+        "100x kräver båda motorerna: EPS-tillväxt OCH multipel-expansion från låg startpunkt",
+        "Tid är strategin: ~25 år à 20 % — köp bolag som kan compounda, inte lotter",
+        "Aktieantalet avgör: utspädning äter avkastning, återköp (V20) adderar den"
+      ],
+      "tier": 1,
+      "status": "kurs"
+    }
+  ]
+}

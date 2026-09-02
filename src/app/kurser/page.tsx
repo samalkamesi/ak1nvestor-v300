@@ -10,9 +10,10 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = pageMetadata({
   path: "/kurser",
-  title: "Kurser i institutionell aktieanalys — 240 moduler | AK1A",
+  // Uppdaterad 2026-09-01: 307 kurser i public/deep-courses.json (antalet räknas dynamiskt i sidkroppen)
+  title: "Kurser i institutionell aktieanalys — 307 kurser | AK1A",
   description:
-    "Lär dig institutionell aktieanalys steg för steg. 225 kurser: AKM1:s 20 variabler, teknisk analys, riskhantering, portföljhantering och praktiska case. Pedagogisk finansanalys.",
+    "Lär dig institutionell aktieanalys steg för steg. 307 kurser: AKM1:s 20 variabler, teknisk analys, riskhantering, portföljhantering och praktiska case. Pedagogisk finansanalys.",
   keywords: [
     "aktieanalys kurser",
     "AKM1",
@@ -37,7 +38,7 @@ export default function KurserPage() {
       <JsonLd data={websiteJsonLd()} />
       <h1 className="font-serif text-4xl font-bold">Kurser i institutionell aktieanalys</h1>
       <p className="mt-4 text-muted-foreground leading-relaxed">
-        {courses.length} moduler som lär dig tänka som en analytiker — från AKM1:s 20
+        {courses.length} kurser som lär dig tänka som en analytiker — från AKM1:s 20
         fundamentalvariabler till teknisk analys, riskhantering och praktiska case.
         Varje kurs bygger på samma metodik som institutionerna använder, förklarad
         pedagogiskt för privatpersoner.

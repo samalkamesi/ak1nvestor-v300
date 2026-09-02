@@ -262,15 +262,17 @@ export function PortfolioSystem() {
           <p className="mt-1 text-xs text-muted-foreground">
             Samma e-post som du registrerade dig med i portalen.
           </p>
-          <div className="mt-4 flex gap-2">
+          {/* Mobil: stapla e-post + knapp; tryckyta ≥44 px */}
+          <div className="mt-4 flex flex-col gap-2 sm:flex-row">
             <Input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="din@epost.se"
               onKeyDown={(e) => e.key === "Enter" && hittaMedlem()}
+              className="min-h-[44px]"
             />
-            <Button className="btn-marin" onClick={hittaMedlem}>
+            <Button className="btn-marin min-h-[44px]" onClick={hittaMedlem}>
               Öppna
             </Button>
           </div>
@@ -295,25 +297,26 @@ export function PortfolioSystem() {
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           <Input value={portfoljNamn} onChange={(e) => setPortfoljNamn(e.target.value)} placeholder="Portföljns namn" />
           <Input value={kassa} onChange={(e) => setKassa(e.target.value)} inputMode="decimal" placeholder="Kassa (valfri, samma enhet)" />
-          <Button className="btn-marin" onClick={sparaPortfolj} disabled={busy}>
+          <Button className="btn-marin min-h-[44px]" onClick={sparaPortfolj} disabled={busy}>
             {busy ? "Sparar…" : "Spara & analysera"}
           </Button>
         </div>
 
         <div className="mt-4 space-y-2">
+          {/* Inmatningsrad: mobil = 2-kolumners stapel (smal "Sektor"-spalt är oanvändbar på 412px), ≥sm = en 12-kolumnsrad */}
           {rader.map((r, i) => (
-            <div key={i} className="grid grid-cols-12 gap-2">
-              <Input className="col-span-3" placeholder="Ticker (t.ex. PREC.ST)" value={r.ticker} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, ticker: e.target.value } : x)))} />
-              <Input className="col-span-3" placeholder="Bolag" value={r.bolag} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, bolag: e.target.value } : x)))} />
-              <Input className="col-span-2" placeholder="Antal aktier" inputMode="decimal" value={r.antal} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, antal: e.target.value } : x)))} />
-              <Input className="col-span-2" placeholder="Kurs/aktie" inputMode="decimal" value={r.pris} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, pris: e.target.value } : x)))} />
-              <Input className="col-span-1" placeholder="Sektor" value={r.sektor} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, sektor: e.target.value } : x)))} />
-              <Button variant="ghost" size="icon" className="col-span-1" onClick={() => setRader((p) => p.filter((_, j) => j !== i))} aria-label="Ta bort rad">
+            <div key={i} className="grid grid-cols-2 gap-2 sm:grid-cols-12">
+              <Input className="col-span-2 min-h-[44px] sm:col-span-3" placeholder="Ticker (t.ex. PREC.ST)" value={r.ticker} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, ticker: e.target.value } : x)))} />
+              <Input className="col-span-2 min-h-[44px] sm:col-span-3" placeholder="Bolag" value={r.bolag} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, bolag: e.target.value } : x)))} />
+              <Input className="col-span-1 min-h-[44px] sm:col-span-2" placeholder="Antal aktier" inputMode="decimal" value={r.antal} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, antal: e.target.value } : x)))} />
+              <Input className="col-span-1 min-h-[44px] sm:col-span-2" placeholder="Kurs/aktie" inputMode="decimal" value={r.pris} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, pris: e.target.value } : x)))} />
+              <Input className="col-span-1 min-h-[44px] sm:col-span-1" placeholder="Sektor" value={r.sektor} onChange={(e) => setRader((p) => p.map((x, j) => (j === i ? { ...x, sektor: e.target.value } : x)))} />
+              <Button variant="ghost" size="icon" className="col-span-1 h-11 w-full justify-self-stretch sm:w-11" onClick={() => setRader((p) => p.filter((_, j) => j !== i))} aria-label="Ta bort rad">
                 <Trash2 className="h-4 w-4" />
               </Button>
             </div>
           ))}
-          <Button variant="outline" size="sm" onClick={() => setRader((p) => [...p, { ticker: "", bolag: "", antal: "", pris: "", sektor: "" }])}>
+          <Button variant="outline" size="sm" className="min-h-[44px]" onClick={() => setRader((p) => [...p, { ticker: "", bolag: "", antal: "", pris: "", sektor: "" }])}>
             <Plus className="mr-1 h-3 w-3" /> Lägg till rad
           </Button>
         </div>
@@ -322,7 +325,7 @@ export function PortfolioSystem() {
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <span className="text-xs text-muted-foreground">Dina portföljer:</span>
             {portfoljer.map((p) => (
-              <Button key={p.id} variant={aktiv?.id === p.id ? "default" : "outline"} size="sm" className={aktiv?.id === p.id ? "bg-gold text-background" : ""} onClick={() => { setAktiv(p); hamtaRapport(p.id); }}>
+              <Button key={p.id} variant={aktiv?.id === p.id ? "default" : "outline"} size="sm" className={`min-h-[44px] ${aktiv?.id === p.id ? "bg-gold text-background" : ""}`} onClick={() => { setAktiv(p); hamtaRapport(p.id); }}>
                 {p.name}
               </Button>
             ))}
@@ -399,7 +402,7 @@ export function PortfolioSystem() {
                         <label key={hz} className="text-[10px] uppercase tracking-wide text-muted-foreground">
                           Våg · {etikett}
                           <Select value={h.vager[hz] || "osatt"} onValueChange={(v) => sparaVag(h.id, hz, v === "osatt" ? "" : v)}>
-                            <SelectTrigger className="mt-1 h-8 text-xs">
+                            <SelectTrigger className="mt-1 h-11 text-xs">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
@@ -452,7 +455,7 @@ export function PortfolioSystem() {
                   AKM1-variablerna som tidsserier — varje fundamentalvariabel har sin egen vågklass per tidshorizont (mikro/kort/medellång/lång/mega).
                 </p>
               </div>
-              <Button onClick={korVagfundament} disabled={vagfundamentBusy} className="btn-marin">
+              <Button onClick={korVagfundament} disabled={vagfundamentBusy} className="btn-marin min-h-[44px]">
                 {vagfundamentBusy ? "Analyserar fundamentalvågor…" : "Analysera fundamentalvågor"}
               </Button>
             </div>
@@ -512,7 +515,7 @@ export function PortfolioSystem() {
                   5 teorier per aktie → viktad portföljbild.
                 </p>
               </div>
-              <Button onClick={korDjupanalys} disabled={djupBusy} className="btn-marin">
+              <Button onClick={korDjupanalys} disabled={djupBusy} className="btn-marin min-h-[44px]">
                 {djupBusy ? "Analyserar (upp till 45 s)…" : "Kör djupanalys"}
               </Button>
             </div>
@@ -526,8 +529,9 @@ export function PortfolioSystem() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     Portföljens 25-cellers-matris (viktad) · täckning {djup.analysTackning}%
                   </p>
+                  {/* 25-cellersmatris: scroll-wrapper + min-bredd så cellerna aldrig kläms på mobil */}
                   <div className="mt-2 overflow-x-auto">
-                    <table className="text-[11px]">
+                    <table className="min-w-[280px] text-[11px]">
                       <thead>
                         <tr>
                           <th className="p-1"></th>
@@ -698,7 +702,7 @@ export function PortfolioSystem() {
                 value={begaran}
                 onChange={(e) => setBegaran(e.target.value)}
                 placeholder="Ticker eller bolagsnamn (t.ex. SAAB-B)"
-                className="max-w-xs"
+                className="max-w-xs min-h-[44px] flex-1"
               />
               <Button
                 variant="outline"
@@ -717,6 +721,7 @@ export function PortfolioSystem() {
                     setBegaranStatus("Nätverksfel");
                   }
                 }}
+                className="min-h-[44px]"
               >
                 Begär analys
               </Button>
@@ -731,9 +736,9 @@ export function PortfolioSystem() {
             <p className="mt-1 text-xs text-muted-foreground">
               Regelbaserad analys från DINA siffror — svarar på risk, vågor, AKM1, spridning.
             </p>
-            <div className="mt-3 flex gap-2">
-              <Input value={fraga} onChange={(e) => setFraga(e.target.value)} placeholder="t.ex. hur stor är risken?" />
-              <Button variant="outline">Fråga</Button>
+            <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+              <Input value={fraga} onChange={(e) => setFraga(e.target.value)} placeholder="t.ex. hur stor är risken?" className="min-h-[44px]" />
+              <Button variant="outline" className="min-h-[44px] shrink-0">Fråga</Button>
             </div>
             {svara && (
               <p className="mt-3 rounded-lg border border-gold/20 bg-paper p-3 text-sm leading-relaxed">{svara}</p>

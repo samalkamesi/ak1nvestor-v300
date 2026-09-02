@@ -27,7 +27,7 @@ import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
  * defaults + hydrerings-guard (skeleton under första renderingen).
  */
 
-const LAROPLAN_TOTAL = 280;
+const LAROPLAN_TOTAL = 307; // Uppdaterad 2026-09-01: totalt antal kurser i deep-courses.json
 
 /** De 8 nyckelkurserna — dashboardens fasta "nästa steg"-väg (prioriterad ordning). */
 const NYCKELKURSER = [
@@ -165,10 +165,10 @@ export function MinSida() {
   // ── VÄLKOMST-LÄGE: ej inloggad ────────────────────────────────────────────
   if (!medlem) {
     const VANTAR = [
-      { ikon: "🎓", titel: "280 kurser", text: "Från AKM1 och vågläran till hela bokkanon — kapitel för kapitel." },
+      { ikon: "🎓", titel: "307 kurser", text: "Från AKM1 och vågläran till hela bokkanon — kapitel för kapitel." }, // Uppdaterad 2026-09-01: 307 kurser i deep-courses.json
       { ikon: "🔥", titel: "XP, nivåer och streak", text: "Varje quiz, kurs och repetition räknas. Nivå 1–100 väntar." },
-      { ikon: "🃏", titel: "100 flashcards med SM-2", text: "Glömskekurvan arbetar åt dig — repetition när du behöver den." },
-      { ikon: "🎖️", titel: "28 badges", text: "Meriter att förtjäna — från första steget till hundraguldet." },
+      { ikon: "🃏", titel: "140 flashcards med SM-2", text: "Glömskekurvan arbetar åt dig — repetition när du behöver den." }, // Uppdaterad 2026-09-01: 140 kort
+      { ikon: "🎖️", titel: "29 badges", text: "Meriter att förtjäna — från första steget till hundraguldet." }, // Uppdaterad 2026-09-01: 29 badges
       { ikon: "🏅", titel: "Certifikat", text: "Ett delbart intyg på verklig kompetens, med betyg efter din nivå." },
       { ikon: "🧮", titel: "Analysverktygen", text: "Superanalysen, kalkylatorn och din egen portfölj — redo att öppnas." },
       { ikon: "🏆", titel: "Topplistan", text: "Se var du landar bland labbets elever — och klättra." },

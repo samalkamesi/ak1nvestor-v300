@@ -9,8 +9,9 @@ export const dynamic = "force-static";
 export const metadata: Metadata = pageMetadata({
   path: "/medlemskap",
   title: "Fas 1 gratis för alltid — Fas 2: utbildning med grundaren | AK1A",
+  // Uppdaterad 2026-09-01: 78 BOKMASTER-böcker (räknas dynamiskt nedan)
   description:
-    "Fas 1: alla kurser, 32 heltäckta böcker, AI-Mentorn, kalkylatorn och portföljsystemet — kostnadsfritt för alltid. Fas 2: personlig utbildning med grundaren, 90 dagars nöjdhetsgaranti, 9 999 kr. Ansökan krävs.",
+    "Fas 1: alla kurser, 78 heltäckta böcker, AI-Mentorn, kalkylatorn och portföljsystemet — kostnadsfritt för alltid. Fas 2: personlig utbildning med grundaren, 90 dagars nöjdhetsgaranti, 9 999 kr. Ansökan krävs.",
   keywords: [
     "gratis aktieutbildning",
     "fundamentalanalys gratis",
@@ -44,7 +45,7 @@ export default function MedlemskapPage() {
       <div className="mt-6 grid gap-3 sm:grid-cols-4">
         {[
           { tal: `${kurser}`, etikett: "kurser, alla gratis" },
-          { tal: `${bokmaster}`, etikett: "böcker komplettäckta, kapitel för kapitel" },
+          { tal: `${bokmaster}`, etikett: "heltäckta böcker, kapitel för kapitel" },
           { tal: `${quiz.toLocaleString("sv-SE")}`, etikett: "quizfrågor med +10 XP var" },
           { tal: `${flaggskepp}`, etikett: "ekosystem-flaggskepp (AKM1 + AK1TS superdjupt)" },
         ].map((s) => (
@@ -73,7 +74,7 @@ export default function MedlemskapPage() {
               "AI-Mentorn som känner dig + Short-Sellern som grillar dina teser",
               "140 flashcards med spaced repetition (Ebbinghaus/SM-2)",
               "AKM1-kalkylatorn + portföljsystemet med fundamentaldata per innehav",
-              "Biblioteket: 101 böcker mappade mot AKM1/AK1TS",
+              "Biblioteket: bokkanon mappad mot AKM1/AK1TS",
               "Certifikat, topplista, XP & nivåer 1–100",
               "Alla aktieanalyser och case studies i labbet",
               "Bli medlem med bara e-post — ingen betalning, någonsin",

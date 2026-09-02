@@ -104,7 +104,7 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
     case "blogg":
       forslag.push(
         { text: "Fortsätt lära", lank: "/laroplan", ikon: "🌱", beskrivning: "Strukturerad utbildning" },
-        { text: "Alla artiklar", lank: "/blogg", ikon: "✍️", beskrivning: "29 artiklar" },
+        { text: "Alla artiklar", lank: "/blogg", ikon: "✍️", beskrivning: "35 artiklar" }, // Uppdaterad 2026-09-01: 35 inlägg i data/blogg
       );
       break;
     default:
@@ -127,7 +127,7 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
   return forslag.slice(0, 4);
 }
 
-/** Blanda samtliga 100 kort (övning även när inget är förfallet) */
+/** Blanda samtliga kort (övning även när inget är förfallet) */
 function blandaKort(): SRKort[] {
   const ko = [...ALLA_KORT];
   for (let i = ko.length - 1; i > 0; i--) {
@@ -145,7 +145,7 @@ function halsning(ctx: elevContext): string {  const timme = new Date().getHours
     return `${tid}! 👋 Jag är din AI-mentor. Jag ser att du är på ${ctx.sidTyp === "start" ? "startsidan" : ctx.sidTyp + "-sidan"}. Logga in gratis så hjälper jag dig komma igång — eller klicka på någon av länkarna nedan.`;
   }
 
-  const klaraProcent = Math.round((ctx.klaraKurser / 227) * 100);
+  const klaraProcent = Math.round((ctx.klaraKurser / 307) * 100); // Uppdaterad 2026-09-01: 307 kurser i deep-courses.json
 
   switch (ctx.sidTyp) {
     case "kurs":
@@ -210,7 +210,7 @@ export function ChatWidget() {
         ikon: "🃏",
         text: `Inga kort förfallna idag — perfekt discipl! 🌟\n\nDin statistik: ${st.beharskade}/${st.totalt} behärskade (sitter i långt minne) · ${st.repetitionerTotalt} repetitioner totalt.\nNästa kort förfaller ${st.nastaNasta || "snart"}. Glömskekurvan jobbar för dig — kom tillbaka imorgon.`,
         handlings: [
-          { text: "Blanda samtliga 100 kort", lank: "sr:alla", ikon: "🎴", beskrivning: "Övning trots inga förfallna" },
+          { text: `Blanda samtliga ${ALLA_KORT.length} kort`, lank: "sr:alla", ikon: "🎴", beskrivning: "Övning trots inga förfallna" },
           { text: "Tillbaka till lärandet", lank: "/laroplan", ikon: "🗺️", beskrivning: "Nästa steg" },
         ],
       }]);

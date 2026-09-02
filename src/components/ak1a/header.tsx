@@ -66,7 +66,7 @@ const SEKTIONS_BESKRIVNINGAR: Record<string, string> = {
   prec: "PREC-analysen, sektion för sektion",
   analyser: "Fullständiga bolagsanalyser",
   aktier: "Bevakning & aktieuniversum",
-  kurser: "200+ moduler · 4 flikar",
+  kurser: "300+ moduler · sök & filter", // Uppdaterad 2026-09-01: 307 kurser, kurssektionen vidarebefordras till /kurser
   labb: "Case + faror + historia",
   "om-oss": "Meta-system (organ + visioner)",
   portal: "Logga in · Min portal",
@@ -96,7 +96,7 @@ const MEGA_PANELER: { titel: string; ikon: typeof Home; punkter: MegaPunkt[] }[]
     ikon: GraduationCap,
     punkter: [
       { typ: "sektion", text: "Hem", sektion: "hem", ikon: Home, beskrivning: "Startsidan — allt på ett ställe" },
-      { typ: "sektion", text: "Kurser", sektion: "kurser", ikon: GraduationCap, beskrivning: "200+ moduler · 4 flikar" },
+      { typ: "sektion", text: "Kurser", sektion: "kurser", ikon: GraduationCap, beskrivning: "300+ moduler · sök & filter" },
       { typ: "sektion", text: "Labb", sektion: "labb", ikon: FlaskConical, beskrivning: "Case + faror + historia" },
       { typ: "sektion", text: "Om oss", sektion: "om-oss", ikon: Users, beskrivning: "Meta-system (organ + visioner)" },
     ],

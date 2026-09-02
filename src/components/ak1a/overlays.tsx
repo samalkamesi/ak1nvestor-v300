@@ -127,9 +127,9 @@ export function SummaryDrawer() {
             offentligt — de proprietära metoderna bakom bevaras som know-how.
           </p>
           <div className="grid grid-cols-2 gap-3">
-            <Stat label="Kurser" value="200+" tag="matt" />
-            <Stat label="Sidror per analys" value="99" tag="matt" />
-            <Stat label="AKM1-variabler" value="19" tag="matt" />
+            <Stat label="Kurser" value="300+" tag="matt" /> {/* Uppdaterad 2026-09-01: 307 kurser */}
+            <Stat label="Sidor per analys" value="99" tag="matt" />
+            <Stat label="AKM1-variabler" value="20" tag="matt" /> {/* Uppdaterad 2026-09-01: V01–V20 = 20 variabler (stod tidigare 19) */}
             <Stat label="AK1TS-celler" value="25" tag="matt" />
             <Stat label="AI-organ aktiva" value="5 / 8" tag="metodmal" />
             <Stat label="Push-notiser" value="0" tag="matt" />

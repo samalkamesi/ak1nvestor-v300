@@ -7,7 +7,7 @@ import { besok } from "@/lib/navigationsminne";
 
 /**
  * HUVUDMENY — megamenu i AK1A-DNA: paper, guld, serif.
- * Desktop: hover-panels medFördröjning + ⌘K-sökning + personligt
+ * Desktop: hover-panels med fördröjning + ⌘K-sökning + personligt
  * "Fortsätt"-chip (mönsterigenkänning). Mobil: klicka för panel.
  */
 
@@ -23,7 +23,7 @@ const PANELER: MenyPanel[] = [
       { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer → oberoende analytiker" },
       { text: "Alla kurser", lank: "/kurser", ikon: "📚", beskrivning: "Hela biblioteket med quiz" },
       { text: "Bokmaster", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "Böckerna kapitel för kapitel + ekosystem-flaggskeppen" },
-      { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — 100 böcker mot AKM1/AK1TS" },
+      { text: "Biblioteket", lank: "/bibliotek", ikon: "📖", beskrivning: "Bokkanon — böcker mappade mot AKM1/AK1TS" }, // Uppdaterad 2026-09-01: kanon-datatum forskas fram, inget antal hävdas
       { text: "Certifikat", lank: "/certifikat", ikon: "🏅", beskrivning: "Ditt intyg på kompetens" },
     ],
   },
@@ -50,7 +50,7 @@ const PANELER: MenyPanel[] = [
       { text: "Dagens Pass", lank: "/dagens-pass", ikon: "⚡", beskrivning: "5 minuters daglig marknadsträning" },
       { text: "Topplistan", lank: "/topplista", ikon: "🏆", beskrivning: "Eleverna rankade på XP" },
       { text: "Badges & meriter", lank: "/badges", ikon: "🎖️", beskrivning: "29 troféer att förtjäna" },
-      { text: "Repetera", lank: "/min-sida", ikon: "🃏", beskrivning: "100 flashcards med SM-2" },
+      { text: "Repetera", lank: "/min-sida", ikon: "🃏", beskrivning: "140 flashcards med SM-2" }, // Uppdaterad 2026-09-01: 140 kort i data/spaced-repetition.json
       { text: "Fas 2-ansökan", lank: "/fas2-ansok", ikon: "✉️", beskrivning: "Utbildning med grundaren — ansök kostnadsfritt" },
       { text: "Blogg", lank: "/blogg", ikon: "✍️", beskrivning: "Guider + marknadskommentarer" },
       { text: "Medlemskap", lank: "/medlemskap", ikon: "💛", beskrivning: "Fas 1 gratis · Fas 2 · Fas 3" },

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getCourses } from "@/lib/content";
+import { getCourses, getBlogPosts } from "@/lib/content";
 import { lasMedlem, niva, lasXP, lasKlaraKurser } from "@/lib/member-local";
 import { zaiAktiv, zaiChat } from "@/lib/zai";
 
@@ -35,11 +35,15 @@ function byggKontext(sokvag: string): Record<string, unknown> {
 
 function navigera(fraga: string): Intent | null {
   const q = fraga.toLowerCase();
+  // Levande tal — Uppdaterad 2026-09-01: 307 kurser · 78 BOKMASTER-böcker · 35 blogginlägg
+  const antalKurser = Object.keys(getCourses()).length;
+  const antalBokmaster = Object.values(getCourses()).filter((c) => c.category === "BOKMASTER").length;
+  const antalBlogg = getBlogPosts().length;
 
   // NAVIGERING — eleven vill komma någonstans
   if (/vart|hur hittar|var finns|ta mig till|visa|gå till|navigera|klicka/.test(q)) {
     if (/kurser|utbild/.test(q)) return { typ: "navigering", handlings: [
-      { text: "Alla kurser (227 st)", lank: "/kurser", ikon: "📚" },
+      { text: `Alla kurser (${antalKurser} st)`, lank: "/kurser", ikon: "📚" },
       { text: "Läroplanen (5 nivåer)", lank: "/laroplan", ikon: "🗺️" },
       { text: "Graham komplett (21 kap)", lank: "/kurser/the-intelligent-investor", ikon: "🏛️" },
     ]};
@@ -53,8 +57,8 @@ function navigera(fraga: string): Intent | null {
       { text: "Logga in gratis", lank: "/logga-in", ikon: "🔑" },
     ]};
     if (/bibliotek|bok|böcker|bokkanon|läslista/.test(q)) return { typ: "navigering", handlings: [
-      { text: "Biblioteket 📖 (100 böcker)", lank: "/bibliotek", ikon: "📖", beskrivning: "Kanon kopplad till AKM1/AK1TS" },
-      { text: "Bokmaster-kurser", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "13 böcker kapitel för kapitel" },
+      { text: "Biblioteket 📖 (bokkanon)", lank: "/bibliotek", ikon: "📖", beskrivning: "Kanon kopplad till AKM1/AK1TS" },
+      { text: "Bokmaster-kurser", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: `${antalBokmaster} böcker kapitel för kapitel` },
     ]};
     if (/kalkylator|räkna|beräkna/.test(q)) return { typ: "navigering", handlings: [
       { text: "AKM1-kalkylatorn (20 variabler)", lank: "/kalkylator", ikon: "🧮" },
@@ -66,12 +70,12 @@ function navigera(fraga: string): Intent | null {
       { text: "Volvo Cars", lank: "/analyser/VOLCAR-B", ikon: "🚗" },
     ]};
     if (/blogg|artikel/.test(q)) return { typ: "navigering", handlings: [
-      { text: "Bloggen (29 artiklar)", lank: "/blogg", ikon: "✍️" },
+      { text: `Bloggen (${antalBlogg} artiklar)`, lank: "/blogg", ikon: "✍️" },
       { text: "Så läser du en årsredovisning", lank: "/blogg/sa-laser-du-en-svensk-arsredovisning", ikon: "📖" },
     ]};
     if (/profil|testa|diagnos/.test(q)) return { typ: "navigering", handlings: [
       { text: "Din finansiella personlighet", lank: "/profil", ikon: "🧠" },
-      { text: "Diagnostest (5 frågor)", lank: "/diagnos", ikon: "⚡" },
+      { text: "Analytikerprofilen (2 moduler)", lank: "/profil", ikon: "⚡" },
     ]};
     if (/logga in|konto|registrera/.test(q)) return { typ: "navigering", handlings: [
       { text: "Logga in / Skapa gratis konto", lank: "/logga-in", ikon: "🔑" },

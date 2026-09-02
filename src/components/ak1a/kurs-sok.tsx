@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 
 /**
- * KURSSÖK — sök + kategorifilter för kursbiblioteket (233 kurser).
+ * KURSSÖK — sök + kategorifilter för kursbiblioteket (307 kurser, Uppdaterad 2026-09-01).
  * Samma DNA som övriga sajten: kategorisektioner, guldkantade kort.
  */
 

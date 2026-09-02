@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getCourseList } from "@/lib/content";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 
 export const metadata: Metadata = {
@@ -10,6 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default function OmOssPage() {
+  // Levande tal — räknas från innehållslaget vid build
+  const kurserLista = getCourseList();
+  const antalKurser = kurserLista.length; // Uppdaterad 2026-09-01: 307 kurser
+  const antalBokmaster = kurserLista.filter((c) => c.category === "BOKMASTER").length; // 78 böcker
   return (
     <SeoPageShell wide breadcrumb={[{ name: "Om oss" }]}>
       <h1 className="font-serif text-4xl font-bold">
@@ -44,7 +49,7 @@ export default function OmOssPage() {
           <div className="text-2xl">🎓</div>
           <h2 className="mt-2 font-serif text-lg font-bold">Utbildning först</h2>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            240 kurser, 13 kompletta BOKMASTER-böcker, kalkylator, portföljsystem,
+            {antalKurser} kurser, {antalBokmaster} kompletta BOKMASTER-böcker, kalkylator, portföljsystem,
             AI-mentor och spaced repetition — allt sammanvävt i ett ekosystem.
           </p>
         </div>
@@ -94,9 +99,9 @@ export default function OmOssPage() {
             <Link href="/laroplan" className="font-semibold text-gold underline">
               läroplanen
             </Link>{" "}
-            i fem nivåer: grunderna (V01–V20), fördjupning, Bokmaster (13 böcker
+            i fem nivåer: grunderna (V01–V20), fördjupning, Bokmaster ({antalBokmaster} böcker
             kapitel för kapitel), praktik på riktiga bolag och din egen portfölj —
-            till målvetet: oberoende aktieanalytiker. Along the way förtjänar du XP,
+            till slutmålet: oberoende aktieanalytiker. På vägen förtjänar du XP,
             stjärnor och till sist{" "}
             <Link href="/certifikat" className="font-semibold text-gold underline">
               certifikat

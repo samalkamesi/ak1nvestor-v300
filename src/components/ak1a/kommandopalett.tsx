@@ -7,7 +7,7 @@ import { besok, registreraBesok, titelFranSida } from "@/lib/navigationsminne";
 
 /**
  * KOMMANDOPALETT — ⌘K / Ctrl+K.
- * Söker alla sidor, verktyg och 285 kurser. Visar senast besökta
+ * Söker alla sidor, verktyg och 307 kurser. Visar senast besökta
  * när fältet är tomt. Registrerar automatiskt navigation (mönsterigenkänning).
  * Öppnas även via window-event "ak1a:oppna-sok".
  */
@@ -207,7 +207,7 @@ export function Kommandopalett() {
 
         {/* bottentrad */}
         <div className="flex items-center justify-between border-t border-gold/20 bg-gold/5 px-4 py-1.5 text-[10px] text-muted-foreground">
-          <span>AK1A Research Lab · 285 kurser indexerade</span>
+          <span>AK1A Research Lab · 307 kurser indexerade</span> {/* Uppdaterad 2026-09-01: 307 kurser i deep-courses.json */}
           <span className="font-mono">esc</span>
         </div>
       </div>

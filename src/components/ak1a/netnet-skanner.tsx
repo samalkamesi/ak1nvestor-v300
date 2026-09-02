@@ -231,7 +231,7 @@ export function NetnetSkanner() {
         <button
           onClick={korSkanning}
           disabled={kör}
-          className="rounded-lg bg-gold px-4 py-2 text-xs font-bold text-primary-foreground hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          className="min-h-[44px] rounded-lg bg-gold px-4 py-2 text-xs font-bold text-primary-foreground hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {kör
             ? `Skannar… ${klara}/${UNIVERSUM.length}`
@@ -297,10 +297,68 @@ export function NetnetSkanner() {
         </div>
       )}
 
-      {/* Resultattabell */}
+      {/* Resultat — mobil: kort-lista (ingen sidled scroll behövs); ≥sm: full tabell */}
       {harResultat ? (
-        <div className="mt-4 overflow-x-auto rounded-xl border border-gold/30 bg-paper">
-          <table className="w-full min-w-[640px] text-left text-sm">
+        <>
+          {/* Mobil (412px): varje bolag som kort med samma siffror som tabellen */}
+          <div className="mt-4 space-y-2 sm:hidden">
+            {sorterade.map((r) => {
+              const stil = r.klass ? KLASS_STIL[r.klass] : null;
+              return (
+                <div
+                  key={r.ticker}
+                  className={`rounded-xl border border-gold/30 bg-paper p-3 ${r.fel ? "opacity-60" : ""}`}
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="min-w-0 truncate text-sm font-semibold">
+                      {r.ticker}
+                      {r.namn ? (
+                        <span className="ml-1.5 text-xs font-normal text-muted-foreground">{r.namn}</span>
+                      ) : null}
+                    </span>
+                    {r.fel ? (
+                      <span className="shrink-0 text-xs italic text-muted-foreground">ingen data</span>
+                    ) : stil ? (
+                      <span
+                        className="inline-block shrink-0 rounded px-2 py-0.5 text-[10px] font-bold tracking-wider"
+                        style={{ background: stil.bg, color: stil.text }}
+                      >
+                        {stil.etikett}
+                      </span>
+                    ) : null}
+                  </div>
+                  <div className="mt-2 grid grid-cols-3 gap-2 border-t border-gold/15 pt-2 text-center">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Kurs</p>
+                      <p className="font-mono text-sm font-bold">{r.fel ? "—" : talX(r.kurs)}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground">NCAV/aktie</p>
+                      <p className="font-mono text-sm font-bold">{r.fel ? "—" : talX(r.ncavPerAktie)}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Förhållande</p>
+                      <p className="font-mono text-sm font-bold">
+                        {r.fel ? "—" : r.forhallande !== null ? talX(r.forhallande, "×") : "neg. NCAV"}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-center">
+                    <p className="text-[11px] text-muted-foreground">
+                      P/E <span className="font-mono font-bold text-foreground">{talX(r.pe)}</span>
+                    </p>
+                    <p className="text-[11px] text-muted-foreground">
+                      P/B <span className="font-mono font-bold text-foreground">{talX(r.pb)}</span>
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* ≥sm: resultattabell med horisontell scroll-wrapper */}
+          <div className="mt-4 hidden overflow-x-auto rounded-xl border border-gold/30 bg-paper sm:block">
+            <table className="w-full min-w-[640px] text-left text-sm">
             <thead>
               <tr className="border-b border-gold/30 text-[11px] uppercase tracking-wider text-muted-foreground">
                 <th className="px-3 py-2 font-semibold">Bolag</th>
@@ -356,13 +414,15 @@ export function NetnetSkanner() {
               })}
             </tbody>
           </table>
-          <p className="border-t border-gold/30 px-3 py-2 text-[11px] italic text-muted-foreground">
+          </div>
+          {/* Gemensam förklaring — syns oavsett om kort-listan eller tabellen visas */}
+          <p className="mt-2 text-[11px] italic leading-relaxed text-muted-foreground">
             Förhållande = kurs ÷ NCAV per aktie. Grönt NET-NET = kurs under{" "}
             {GRAHAM_TROSKEL.toString().replace(".", ",")}× NCAV (Grahams 2/3-regel); guld NÄRA =
             under 1,0× NCAV; &quot;neg. NCAV&quot; = skulderna äter upp omsättningstillgångarna —
             det motsatta av ett net-net. P/E och P/B är bonuskolumner, inte krav i kriteriet.
           </p>
-        </div>
+        </>
       ) : (
         !kör && (
           <p className="mt-4 rounded-xl border border-dashed border-gold/30 bg-paper p-4 text-center text-xs italic text-muted-foreground">

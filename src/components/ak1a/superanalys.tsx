@@ -246,7 +246,8 @@ export function Superanalys() {
     <div className="space-y-6">
       {/* Progress-bar i guld — stegindikatorn med marin topp-rad (DNA) */}
       <div>
-        <div className="marin-panel flex items-baseline justify-between rounded-lg px-4 py-2.5 text-xs">
+        {/* Stegraden får wrappa på smala skärmar så sektionsnamnet aldrig klipps */}
+        <div className="marin-panel flex flex-wrap items-baseline justify-between gap-x-2 rounded-lg px-4 py-2.5 text-xs">
           <span className="font-bold uppercase tracking-widest text-gold">
             Steg {steg + 1} av {TOTAL_STEG} · {sektion}
           </span>
@@ -277,7 +278,7 @@ export function Superanalys() {
                 value={data.bolag}
                 onChange={(e) => setData((d) => ({ ...d, bolag: e.target.value }))}
                 placeholder="t.ex. Precise Biometrics"
-                className="mt-1.5 h-10 w-full rounded-lg border border-gold/30 bg-paper px-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
+                className="mt-1.5 h-11 w-full rounded-lg border border-gold/30 bg-paper px-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
               />
             </label>
             <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -286,7 +287,7 @@ export function Superanalys() {
                 value={data.ticker}
                 onChange={(e) => setData((d) => ({ ...d, ticker: e.target.value }))}
                 placeholder="t.ex. PREC"
-                className="mt-1.5 h-10 w-full rounded-lg border border-gold/30 bg-paper px-3 text-sm uppercase text-foreground placeholder:normal-case placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
+                className="mt-1.5 h-11 w-full rounded-lg border border-gold/30 bg-paper px-3 text-sm uppercase text-foreground placeholder:normal-case placeholder:text-muted-foreground/60 focus:border-gold focus:outline-none"
               />
             </label>
           </div>
@@ -326,13 +327,13 @@ export function Superanalys() {
                       {/* DNA: primär "Visa"-knapp i marin med guldtext */}
                       <button
                         onClick={() => oppnaSparad(d)}
-                        className="btn-marin px-3 py-1.5 text-xs"
+                        className="btn-marin min-h-[44px] px-3 py-1.5 text-xs"
                       >
                         Visa
                       </button>
                       <button
                         onClick={() => tabortSparad(d.id)}
-                        className="rounded-md px-2 py-1.5 text-xs text-muted-foreground hover:text-bear"
+                        className="min-h-[44px] rounded-md px-2 py-1.5 text-xs text-muted-foreground hover:text-bear"
                         aria-label={`Radera analysen för ${d.bolag}`}
                       >
                         Radera
@@ -487,13 +488,14 @@ export function Superanalys() {
                           <span className="font-bold text-gold">{v.id}</span> · {v.namn}
                         </p>
                       </div>
+                      {/* Justeringsknappar: 44 px tryckyta på mobil, kompaktare (28 px) från sm och upp */}
                       <div className="flex gap-1">
                         {[0, 1, 2, 3, 4, 5].map((p) => (
                           <button
                             key={p}
                             onClick={() => setData((d) => ({ ...d, poang: { ...d.poang, [v.id]: p } }))}
                             aria-label={`${v.id} ${p} poäng`}
-                            className={`h-7 w-7 rounded border text-xs font-bold transition-colors ${
+                            className={`h-11 w-11 rounded border text-sm font-bold transition-colors sm:h-7 sm:w-7 sm:text-xs ${
                               data.poang[v.id] === p
                                 ? "border-gold bg-gold text-primary-foreground"
                                 : "border-gold/25 bg-paper text-muted-foreground hover:border-gold"
@@ -599,7 +601,8 @@ export function Superanalys() {
                       const p = data.poang[v.id] ?? 0;
                       return (
                         <div key={v.id} className="flex items-center gap-3">
-                          <span className="w-44 shrink-0 truncate text-xs text-foreground" title={v.namn}>
+                          {/* Mobil: smalare etikett så stapeln får plats på 412 px */}
+                          <span className="w-32 shrink-0 truncate text-xs text-foreground sm:w-44" title={v.namn}>
                             <span className="font-bold">{v.id}</span> {v.namn}
                           </span>
                           <span className="h-2 flex-1 overflow-hidden rounded-full bg-gold/10">
@@ -644,25 +647,25 @@ export function Superanalys() {
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={spara}
-                className="btn-guld-signatur px-5 py-2.5 text-sm"
+                className="btn-guld-signatur min-h-[44px] px-5 py-2.5 text-sm"
               >
                 💾 Spara analysen
               </button>
               <button
                 onClick={dela}
-                className="rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-bold text-gold hover:bg-gold/10"
+                className="min-h-[44px] rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-bold text-gold hover:bg-gold/10"
               >
                 📤 Dela
               </button>
               <button
                 onClick={() => setSteg(STEG_GRANSKA)}
-                className="rounded-lg border border-gold/20 px-5 py-2.5 text-sm text-muted-foreground hover:border-gold/50 hover:text-foreground"
+                className="min-h-[44px] rounded-lg border border-gold/20 px-5 py-2.5 text-sm text-muted-foreground hover:border-gold/50 hover:text-foreground"
               >
                 Justera poängen
               </button>
               <button
                 onClick={borjaOm}
-                className="rounded-lg px-5 py-2.5 text-sm text-muted-foreground hover:text-foreground"
+                className="min-h-[44px] rounded-lg px-5 py-2.5 text-sm text-muted-foreground hover:text-foreground"
               >
                 Ny analys
               </button>
@@ -681,11 +684,11 @@ export function Superanalys() {
 
       {/* ── Navigation ── */}
       {steg < STEG_RESULTAT && (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-3">
           <button
             onClick={() => setSteg((s) => Math.max(0, s - 1))}
             disabled={steg === 0}
-            className="rounded-lg border border-gold/30 px-4 py-2 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:text-foreground disabled:opacity-30"
+            className="min-h-[44px] rounded-lg border border-gold/30 px-4 py-2 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:text-foreground disabled:opacity-30"
           >
             ← Föregående
           </button>
@@ -697,7 +700,7 @@ export function Superanalys() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             disabled={!kanFramat}
-            className={`${steg === STEG_GRANSKA ? "btn-guld-signatur" : "btn-marin"} px-5 py-2 text-sm disabled:opacity-40`}
+            className={`${steg === STEG_GRANSKA ? "btn-guld-signatur" : "btn-marin"} min-h-[44px] px-5 py-2 text-sm disabled:opacity-40`}
           >
             {steg === STEG_GRANSKA ? "Kör analysen →" : "Nästa →"}
           </button>

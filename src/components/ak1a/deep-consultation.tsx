@@ -48,7 +48,7 @@ const DEEP_QUESTIONS = [
   },
   {
     organ: "Θ",
-    q: "Vilka 10 nya kurser bör AK1A utveckla nästa kvartal för att komplettera de befintliga 225 kurserna? Fokusera på områden där svensk retail-investerare är svagast.",
+    q: "Vilka 10 nya kurser bör AK1A utveckla nästa kvartal för att komplettera de befintliga 307 kurserna? Fokusera på områden där svensk retail-investerare är svagast.", // Uppdaterad 2026-09-01: 307 kurser
   },
   {
     organ: "Μ",

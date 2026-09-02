@@ -1,0 +1,1194 @@
+{
+  "slug": "charlie-munger-complete-investor",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 170,
+  "title": "Charlie Munger: The Complete Investor — Griffin: KOMPLETT",
+  "summary": "Tren Griffins Charlie Munger: The Complete Investor (Columbia Business School Publishing, 2015) är inte en ny samling Munger-tal — det är det SYSTEMATISKA Munger-verket: investeringsmetoden organiserad kring Graham-systemet och BMP-triaden (affärskvalitet, ledningskvalitet, pris). Där Poor Charlie's Almanack ger rösten och aforismerna, ger Griffins struktur: inversionen (»All I want to know is where I'm going to die, so I'll never go there«), de sju variablerna, cirkeln av kompetens med tre-korgen (in, out, too hard), felmarginalen, moats, beteendeekonomin — Munger höll The Psychology of Human Misjudgment sexton år före Kahnemans Thinking, Fast and Slow — latticeworket av mentalmodeller, Berkshire-matematiken (»the big money is not in the buying and the selling, but in the waiting«), koncentrationslinjen, checklistorna — och kontroversen: kan Munger LÄRAS ut, eller var han en gångbegåvning vars få positioner betyder ondskefull varians för vanliga människor? Kursen avslutar med AK1A-syntesen: AKM1 är försöket göra Munger-metoden mätbar — V-poäng per kriterium — med det ärliga medgivandet att omdömeskvaliteten aldrig går helt att checklista.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Du lär dig skillnaden mellan Almanackans tal-samling och Griffins systematik — och varför den senare är operationsmanualen · Mungers inversionsmetod (Jacobi via Munger: »man muss immer umkehren«) som riskmatrisens filosofi · Graham-systemets byggstenar: aktien som andel av ett bolag, Mr Market, felmarginalen · BMP-triaden operationaliserad: affärskvalitet (V07, V09), ledningskvalitet (V20, incitament), pris som mispriced gamble (V04–V06) · Cirkeln av kompetens och tre-korgen in/out/too hard · Moat-källorna mappade mot V13–V15 — och erosionen som kapitalismens enda konstant · Munger som beteendeekonom avant la lettre: misjudgment-tendenserna före och med Kahneman · Latticeworket: 80–90 modeller från fysik, biologi, psykologi · Berkshire-matematiken: See's Candies och varför den stora pengen ligger i väntandet · Koncentration kontra diversifiering — Munger-Buffett-linjen med den ondskefulla variansen synliggjord · Checklistor och temperament: Mungers tio punkter · Kontroversen om replikerbarhet och AK1A-syntes: AKM1 = mätbar Munger, med omdömet som återstående konst.",
+  "why": "Poor Charlie's Almanack lärde dig TÄNKA som Munger; den här boken lär dig INVESTERA som Munger. Griffin — då verksam på Microsoft, bloggare på 25iq, senare medförfattare till Margin of Trust med Lawrence Cunningham — sammanställde fyra decennier av tal, brev, intervjuer och aktieägarbrev till den första sammanhängande beskrivningen av metoden: enkel nog för vanliga investerare, krävande nog att den tar ett liv att behärska. För AK1A är boken bryggan mellan kursen i Almanackan (tankemodellerna) och Quantitative Value (systematikens hårda version): BMP-triaden är precis den struktur AKM1:s variabler försöker mäta. Och kontroversen — kulten, gångbegåvningen, den ondskefulla variansen — är den ärlighetsövning varje Munger-lärjunge skylder sig själv.",
+  "chapters_list": [
+    "1. Griffin och den kompletta investeraren — systemet, inte talen",
+    "2. Invertera, alltid invertera — Munger-metoden",
+    "3. Graham-systemet — aktien är en andel av ett bolag",
+    "4. Triaden I — affärskvaliteten (B)",
+    "5. Triaden II — ledningskvaliteten (M)",
+    "6. Triaden III — priset (P) — en mispriced gamble",
+    "7. Cirkeln av kompetens — och korgen som är för svår",
+    "8. Margin of safety — felet måste få plats",
+    "9. Moats — vallgravar, erosion och pris (V13–V15)",
+    "10. Beteendeekonomi — Munger sexton år före Kahneman",
+    "11. Latticework — ämnesövergripande tänkande",
+    "12. Tålamod — the big money is in the waiting",
+    "13. Koncentration kontra diversifiering — Munger-Buffett-linjen",
+    "14. Checklistor och processer — temperamentet systematiseras",
+    "15. Kontroversen — kan Munger läras ut? Och AK1A-syntesen"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "Griffin och den kompletta investeraren — systemet, inte talen",
+      "intro": "2015 publicerade Tren Griffin Charlie Munger: The Complete Investor på Columbia Business School Publishing. Griffin — då verksam inom strategi på Microsoft, känd från bloggen 25iq, och senare medförfattare till Margin of Trust med Lawrence Cunningham — hade ett mål ingen före honom haft: att samla Mungers spridda tankar från fyra decennier av tal, intervjuer, skrifter och aktieägarbrev till en sammanhängande INVESTERINGSMETOD. Resultatet är det systematiska Munger-verket.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför ännu en Munger-bok? För att det redan fanns Poor Charlie's Almanack — men den är en samling: Peter Kaufman redigerade talen och essäerna till en almanacka, och AK1:s kurs i den täcker just tankemodellerna, aforismerna och rösten. Griffins bok är något annat: en pedagogisk ombyggnad. Han organiserar Mungers investing kring det han kallar Graham-systemet — bokens två första kapitel heter The Basics of the Graham Value Investing System och The Principles of the Graham Value Investing System — och fortsätter med Worldly Wisdom, The Psychology of Human Misjudgment, The Right Stuff (investerarens egenkvaliteter), The Seven Variables in the Graham Value Investing System och The Right Stuff in a Business, plus avsnitten Moats, Berkshire Math och Value Investing vs. Factor Investing."
+        },
+        {
+          "type": "text",
+          "content": "Kärnan i Griffins ramverk är triaden BMP: Business quality, Management quality, Price — affärskvalitet, ledningskvalitet och pris. Varje investeringsbeslut hos Munger är, i Griffins läsning, en vägning av dessa tre, och hela boken kan läsas som en utläggning av vad varje bokstav kräver i praktiken. Det är denna triad som gör boken till AK1A:s operationsmanual: där Almanackan lär dig tänka bättre, lär Griffin dig strukturera analysen — och AKM1:s tjugo variabler är just ett försök mäta det Griffin beskriver med ord."
+        },
+        {
+          "type": "text",
+          "content": "Bokens egen tes är dess klonbarhet. Griffin citerar Munger: »I believe in the discipline of mastering the best that other people have figured out. I don't believe in just sitting down and trying to dream it all up yourself.« — jag tror på disciplinen att bemästra det bästa andra har listat ut, inte på att sitta och drömma ihop allt själv. Det är en anti-genimytologiserande formulering: metoden är inte en gåva, den är en discipline — och discipler kan läras. Förlagets egen beskrivning lovar att systemet är »simple enough for everyday investors to use«. Huruvida det stämmer är kursens sista kapitels kontrovers — men Griffin vill åtminstone att det ska stämma."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-läsningen: den här kursen differentierar medvetet mot Almanack-kursen. Almanackan: talen, katalogen över tjugofem misjudgment-tendenser, Mungerisms. Griffin: systemet — BMP, variablerna, checklistorna, Berkshire-matematiken. Läs dem som två halvor: Almanackan för metaplanet (hur du tänker), Griffin för investeringsplanet (vad du gör). Kursen citerar Munger öppet och flitigt — Griffins bok är ju själv byggd av citat — men varje kapitel slutar med samma fråga: vad blir det mätbart i AKM1?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två Munger-böcker — två uppgifter\",\"rader\":[[\"Bok\",\"Grundmaterial\",\"Styrka\",\"AK1-kurs\"],[\"Poor Charlie's Almanack (Kaufman, 2005)\",\"Tal, essäer, Mungerisms\",\"Tankemodellerna och rösten\",\"poor-charlies-almanack\"],[\"Charlie Munger: The Complete Investor (Griffin, 2015)\",\"Systematisk syntes av fyra decennier\",\"Metoden organiserad kring BMP-triaden\",\"den här kursen\"],[\"Quantitative Value (Gray & Carlisle, 2012)\",\"Regler och backtester\",\"Systematikens mekaniska version\",\"quantitative-value\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "insikt",
+          "content": "Almanackan lär dig tänka som Munger. Griffin lär dig arbeta som Munger. Skillnaden mellan att imponeras av aforismer och att operationalisera dem är skillnaden mellan fan och förvaltare."
+        },
+        {
+          "type": "utmaning",
+          "content": "Innan du börjar: skriv ner de tre frågor du själv ställer (eller borde ställa) innan du köper en aktie. Spara pappret — i kapitel 6 ska du jämföra dem mot BMP-triaden, och i kapitel 14 mot Mungers checklista. Tre försök, tre versioner: mät hur din egen frågeburk förändras."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V01–V20: kursens röda tråd — varje Griffinkapitel översätts till AKM1-variabler. Kör /akm1 på ett bolag du tror att du förstår, och behåll resultatet som referens genom kursen. AK1TS: Mega-horisonten — Mungers spelplan mäts i årtionden; vågteorierna hjälper honom inte, och det är en läxa i sig."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vem skrev Charlie Munger: The Complete Investor (2015)?",
+          "alternativ": [
+            "Peter Kaufman, redaktören för Poor Charlie's Almanack",
+            "Tren Griffin",
+            "Peter Bevelin",
+            "Lawrence Cunningham, ensam"
+          ],
+          "ratt": 1,
+          "tips": "Författaren bloggade på 25iq och skrev senare Margin of Trust tillsammans med Cunningham."
+        },
+        {
+          "q": "Vad skiljer Griffins bok från Poor Charlie's Almanack?",
+          "alternativ": [
+            "Griffin samlar nya, tidigare opublicerade Munger-tal",
+            "Griffin organiserar Mungers metod systematiskt kring Graham-systemet och BMP-triaden",
+            "Griffin kritiserar Munger och förespråkar indexfonder",
+            "Griffin ersätter orden med kvantitativa backtester"
+          ],
+          "ratt": 1,
+          "tips": "Almanackan är samlingen; Griffin är strukturen — Business, Management, Price."
+        },
+        {
+          "q": "Vad är budskapet i citatet »I believe in the discipline of mastering the best that other people have figured out«?",
+          "alternativ": [
+            "Att originalitet är överskattat — kloning av beprövade system är en disciplin",
+            "Att man ska lita på experter i alla beslut",
+            "Att Munger tyckte att böcker var tidsödande",
+            "Att bara akademisk forskning är värd att läsa"
+          ],
+          "ratt": 0,
+          "tips": "Ordet discipline är nyckeln — det är en inlärningsmetod, inte en uppmaning till beundran."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Invertera, alltid invertera — Munger-metoden",
+      "intro": "Om Almanackan gav inversionen som livsfilosofi ger Griffin den som metodens första steg. Munger lånade av matematikern Carl Gustav Jacobi — »man muss immer umkehren«, man måste alltid invertera — och gjorde det till sitt kännetecken: fråga inte hur du lyckas. Fråga hur du garanterat misslyckas — och gå sedan den vägen förbi.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mungers mest beryktade formulering, som Griffin lyfter fram tidigt: »All I want to know is where I'm going to die, so I'll never go there.« — det enda jag vill veta är var jag kommer att dö, så att jag aldrig går dit. Skämtet allvar: eftersom ingen kan svara på frågan direkt, listar man i stället dödszonerna — och undviker dem. Inom investering: vad dödar kapital permanent? Att betala för mycket. Hävstång som tvingar försäljning i kris. Bedrägerier och dåliga partners. Kapitalförbränning som mynnar i utspädande emissioner. Glömd disruption. Listan behöver inte vara genial — den behöver vara ärlig och före beslutet."
+        },
+        {
+          "type": "text",
+          "content": "Och därmed den kanske mest underskattade meningen i hela Munger-korpusen, som Griffin återkommer till: »It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid, instead of trying to be very intelligent.« — det är anmärkningsvärt hur mycket långsiktig fördel folk som vi har fått genom att konsekvent försöka inte vara dumma i stället för att försöka vara mycket intelligenta. Det är inte falsk blygsamhet; det är aritmetik. Ett stort misstag raderar tio briljanta träffar, och dumheterna är koncentrerade till kända mönster — de går kategorisera, och därmed undvika."
+        },
+        {
+          "type": "text",
+          "content": "I Griffins systematik blir inversionen ingångsporten till Graham-systemet: innan du frågar om ett bolag är billigt eller bra, frågar du om det ens kan överleva din egen dödslista. AK1A:s spegel: riskmatrisen och scenariorummet är tillämpad inversion — kartlägg först vad som kan gå fel, prissätt sedan. Och V19 (kapitalförbränning och emissionsrisk) är bokstavligen dödszonesystematisering: ett bolag som måste emittera kan göra allt annat rätt och ändå ruidera aktieägaren. Mätbar inversion är bättre än citatbar inversion."
+        },
+        {
+          "type": "text",
+          "content": "Notera också vad inversion INTE är: pessimism. Munger var optimist om företag och om det egna lärandet — men pessimist på ett systematiskt sätt om sätten att förlora. Griffin beskriver honom som rationalist: målet är inte att ha rätt om framtiden utan att aldrig låta ett enkelt fel få bestämma den. »Take a simple idea and take it seriously« — ta en enkel idé och ta den på allvar — kunde vara inversionens valspråk."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "Munger blev inte rik på att förutsäga framtiden. Han blev rik på att kategorisera det förflutnas misstag — och vägra vara med när de upprepas. Systematiskt icke-dum är en strategi, inte en ursäkt."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din dödslista: fem mekanismer som permanent kan förstöra halva ditt kapital i ditt största innehav (tips: börja på V19 — kan bolaget tvingas emittera?). Om listan blir kort är det inte bolaget som är tryggt — det är analysen som är tunn."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V19 Kapitalförbränning & Emission-risk (vikt KRITISK): börja varje analys med dödszonen — inversionen mätbar. Komplettera med V10 skuldsättningsgrad och V11 likviditet. AK1TS: ingen vågkoppling — riskmatrisen ligger före varje vågräkning i AK1A:s flöde."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varifrån lånade Munger principen »Invert, always invert«?",
+          "alternativ": [
+            "Benjamin Grahams Security Analysis",
+            "Matematikern Carl Gustav Jacobi",
+            "Charles Darwins metodböcker",
+            "Benjamin Franklins almanacka"
+          ],
+          "ratt": 1,
+          "tips": "En tysk matematiker som löste problem genom att vända på dem."
+        },
+        {
+          "q": "Vad menar Munger med »consistently not stupid, instead of trying to be very intelligent«?",
+          "alternativ": [
+            "Att man ska undvika alla risker och hålla sig till kontanter",
+            "Att undvika stora, kategoriserbara misstag ger mer varaktig fördel än att jaga briljans",
+            "Att intelligens är oviktigt i finans",
+            "Att man ska koppla av och låta index arbeta"
+          ],
+          "ratt": 1,
+          "tips": "Räkna på vad ett enda stort misstag kostar mot tio smarta träffar."
+        },
+        {
+          "q": "Hur blir inversionen mätbar i AK1A?",
+          "alternativ": [
+            "Genom att vända på kursgrafen i AK1TS",
+            "Genom att korta allt man analyserar",
+            "Genom riskmatrisen och V19 — kapitalförbränning och emissionsrisk först",
+            "Genom att alltid sälja förlustpositioner"
+          ],
+          "ratt": 2,
+          "tips": "Dödslistan har en egen variabel — den med vikten KRITISK."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Graham-systemet — aktien är en andel av ett bolag",
+      "intro": "Griffins två första kapitel heter The Basics och The Principles of the Graham Value Investing System: för att förstå vad Munger ändrade måste man först förstå vad han utgick ifrån. Graham-systemet är inte en stockpicking-metod — det är en ontologi: vad en aktie ÄR, vad en kurs ÄR, och vad som därmed återstår att göra.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Byggsten ett: en aktie är en andel av ett företag. Munger har sammanfattat sitt arv från Graham som framför allt två idéer — att en aktie är en fractional ownership i en verksamhet, och Mr Market. Konsekvensen av den första är total: priset på skärmen är inte föremålet, bara en notering om föremålet. Analysen börjar därför alltid i verksamheten — intäkter, marginaler, kapital — och aldrig i kursgrafen. I AKM1:s värld är detta anledningen till att V01–V03 (tillväxt och diversifiering) och V07–V09 (lönsamhet) existerar överhuvudtaget: de mäter företaget, inte aktien."
+        },
+        {
+          "type": "text",
+          "content": "Byggsten två: Mr Market. Graham beskrev en manisk-partner-metafor: varje dag erbjuder Mr Market att köpa eller sälja din andel till ett pris som vilt svänger med hans humör — euphorisk en dag, depressiv den nästa. Du är fri att ignorera honom eller utnyttja honom, men hans citat är inte domar om värdet. Griffin betonar att Munger tog Mr Market på allvar trots att han själv var mindre intresserad av Grahams sifferdetaljer: Mr Market förklarar VARFÖR det finns felpriser — och därmed varför värdeinvesterandet alls kan fungera. Ordet har samma ursprung som den beteendeekonomi kapitel 10 återkommer till: humöret är inte dekoration, det är mekanik."
+        },
+        {
+          "type": "text",
+          "content": "Byggsten tre och fyra: felmarginalen och cirkeln — de får egna kapitel senare i kursen (kapitel 8 respektive 7). Griffins poäng i inledningen är systemkaraktären: Graham-systemet är inte fyra oberoende knep utan en helhet där ägarskapet definierar objektet, Mr Market definierar möjligheten, felmarginalen definierar kravet och cirkeln definierar spelplanen. BMP-triaden — affärskvalitet, ledningskvalitet, pris — är sedan variablerna man bedömer INOM systemet. Munger ärvde systemet och bytte ut innehållet: färre, bättre bolag; mer psykologi; mer tålamod."
+        },
+        {
+          "type": "text",
+          "content": "Munger-korrigeringen av Graham är kursens återkommande spänning: Griffin skiljer små skillnader. Läs Poor Charlie's Almanack-kursens kapitel om See's Candies för historien — Munger pressade Buffett från cigarrbuttar (rimliga bolag till underbara priser) till underbara bolag till rimliga priser. I Griffins terminologi: Graham-systemets variabler är desamma, men Mungers VIKTER är andra — affärskvaliteten får större roll, bokvärdet mindre. AKM1 speglar just det: V05 P/B är en av tjugo variabler, inte själva analysen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Graham-systemets byggstenar → AKM1-översättning\",\"rader\":[[\"Byggsten\",\"Innebörd\",\"AKM1-mått\"],[\"Aktien = andel av bolaget\",\"Priset är en notering, inte ett värde\",\"V01–V03, V07–V09\"],[\"Mr Market\",\"Tilbud och bud ur humör, inte domar\",\"V04–V06 (utnyttja gapen)\"],[\"Margin of safety\",\"Köp under beräknat värde med felmarginal\",\"V06 + kapitel 8\"],[\"Cirkel av kompetens\",\"Spelplanen slutar där förståelsen slutar\",\"V12 + kapitel 7\"],[\"BMP-triaden\",\"Affärskvalitet, ledningskvalitet, pris\",\"kapitel 4–6\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "insikt",
+          "content": "En aktie är en andel av ett företag; kursen är Mr Markets humör. Allt annat i värdeinvesterandet — felmarginal, moats, tålamod — är konsekvenser av dessa två meningar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ditt senaste köp. Skriv två kolumner: VAD JAG KÖPTE (verksamhet: intäkter, marginaler, kunder) och VAD JAG SÅG (kurs, diagram, rubrik). Vilken kolumn var längst? Om den högra var längre köpte du Mr Markets humör, inte en andel av ett bolag."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V04 P/S, V05 P/B, V06 EV/EBITDA: Mr Markets gap mäts i värderingsvariablerna — ett bolag kan vara bra (V07–V09) och ändå vara ett dåligt KÖP (V04–V06). AK1TS: Mr Markets svängningar är råmaterial, inte sanning — Elliott-vågor beskriver hans humör, aldrig bolagets värde."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka två idéer har Munger framhållit som sitt viktigaste arv från Graham?",
+          "alternativ": [
+            "Teknisk analys och momentum",
+            "Att en aktie är en andel av ett bolag — och Mr Market",
+            "Beta och diversifiering",
+            "Cigar butts och net-nets"
+          ],
+          "ratt": 1,
+          "tips": "Den ena definierar objektet, den andra definierar möjligheten."
+        },
+        {
+          "q": "Vad är Mr Market i Grahams metafor?",
+          "alternativ": [
+            "En marknadsmakare som garanterar likviditet",
+            "En manisk partner som dagligen noterar priser ur humör — fri att ignorera eller utnyttja",
+            "En regulator som sätter rättvis pris",
+            "Ett index som alla måste slå"
+          ],
+          "ratt": 1,
+          "tips": "Hans erbjudanden är tilbud, inte domar."
+        },
+        {
+          "q": "Vad var Mungers viktigaste korrigering av Graham-systemet, enligt Griffin?",
+          "alternativ": [
+            "Han ersatte variablerna med tekniska signaler",
+            "Han omviktade systemet — mer affärskvalitet, mindre bokvärdesjakt",
+            "Han avskaffade felmarginalen",
+            "Han lade till hög omsättningshastighet"
+          ],
+          "ratt": 1,
+          "tips": "Underbara bolag till rimliga priser — vad hände med P/B-talets roll?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Triaden I — affärskvaliteten (B)",
+      "intro": "Bokens kapitel The Right Stuff in a Business kretsar kring BMP:s första bokstav. Vad gör ett bolag underbart? Inte berättelsen, inte sektyrket — utan uthållig förmåga att tjäna hög avkastning på kapital utan hävstång, för att vallgraven håller konkurrenterna borta. Det är också här Griffin binder ihop affärskvalitet med bokens Moats-avsnitt (kursens kapitel 9).",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utgångspunkten är den berömda läxan Munger gav Buffett — sammanfattad av Buffett själv i en mening som Griffin citerar: »It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price.« — det är långt bättre att köpa ett underbart bolag till ett rimligt pris än ett rimligt bolag till ett underbart pris. Varför? För att ett underbart bolag compoundar: tjänar det hög avkastning på kapital kan vinster återinvesteras till hög ränta i årtionden. Ett medelbra bolag, hur billigt än, har en engångskick — då måste du sälja och börja om. Se Almanack-kursens kapitel 10 om See's Candies: 25 MUSD köpeskilling 1972, runt 32 MUSD i omsättning och blott cirka 1 MUSD rullande kapital — överskottet kunde lyftas ut och arbetade vidare i Berkshire."
+        },
+        {
+          "type": "text",
+          "content": "Hur mäts underbarhet? Griffin erbjuder inget hemligt nyckeltal — och det är poängen: affärskvalitet visar sig i mönster, inte i punkter. AKM1:s översättning är stabil bruttomarginal (V07) — prissättningsmakt som håller över tid syns i att bruttomarginalen inte kollapsar när konkurrens ökar — och hög ROE utan att balansräkningen är skuldställd (V09, kontrollerad mot V10). Ett bolag vars ROE bara finns tack vare hävstång äger inte sin avkastning — banken gör det. Affärskvalitet är alltså en triangel: marginal, avkastning, och avkastningens källa."
+        },
+        {
+          "type": "text",
+          "content": "Och källan är vallgraven. Griffin lyfter Munger-Buffett-traditionens hårda test: om en kompetent konkurrent med obegränsad kapital anföll bolaget, hur skulle affären se ut om tio år? Underbara bolag överlever testet (See's varumärke, Costcos kulturförankrade lågprismodell som Munger beundrat livslångt) — medelbra bolag görs till slantar. Munger har hela livet hållit Costco fram som exempel på affärskvalitet: kunden får obegripligt mycket värde per krona, och kulturen gör modellen svårkopierad. Men notera ordningen: kvalitet utan rimligt pris är fortfarande ett dåligt KÖP — det är priset (kapitel 6) som gör underbarheten till affär."
+        },
+        {
+          "type": "text",
+          "content": "Varningen är kvalitetsillusionen — Almanack-kursens varning värd att upprepa: ett medelbra bolag med snygg berättelse och hög multipl är ingen See's. Skillnaden syns i historiken (tio år marginaler), inte i presentationen. Griffins praktiska råd: börja med siffrorna, låt berättelsen förklara dem — aldrig omvänt."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "Ett underbart bolag till ett rimligt pris slår ett rimligt bolag till ett underbart pris — eftersom bara det förra lönar sig att behålla. Kvaliteten är inte känslan i rummet; den är marginalen och avkastningen över tio år."
+        },
+        {
+          "type": "utmaning",
+          "content": "Rangordna dina fem största innehav på V07 (bruttomarginal, tioårsserie) och V09 (ROE utan hävstång — kontrollera V10). Finns något innehav med god berättelse men svag triangel? Skriv en mening om varför du äger det — och en om vad som skulle få dig att inse att det var en kvalitetsillusion."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V07 Bruttomarginal (prissättningsmakten) + V09 ROE (compounding-motorn), kontrollerad mot V10 skuldsättningsgrad: affärskvalitet som triangel. AK1TS: Mega-horisonten — kvalitetsbolag bedöms i årtionden, och det är där AK1TS har minst att tillföra."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför slår ett underbart bolag till rimligt pris ett rimligt bolag till underbart pris?",
+          "alternativ": [
+            "Underbara bolag stiger alltid snabbast på kort sikt",
+            "Hög avkastning på kapital kan återinvesteras i årtionden — medelbra bolag ger bara en engångskick",
+            "Rimliga bolag går alltid i konkurs",
+            "Multiplen är lättare att beräkna för kvalitetsbolag"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden ligger i vad som händer EFTER köpet — återinvesteringens ränta."
+        },
+        {
+          "q": "Vilka AKM1-variabler bäst mäter affärskvalitet?",
+          "alternativ": [
+            "V16 och V17 — lanseringar och avtal",
+            "V04 och V05 — låga multiplar",
+            "V07 och V09 — stabil bruttomarginal och hög ROE utan hävstång",
+            "V11 och V20 — likviditet och återköp"
+          ],
+          "ratt": 2,
+          "tips": "Prissättningsmakt och avkastning på kapital — kontrollera också skulderna."
+        },
+        {
+          "q": "Vad är Munger-Buffett-traditionens hårda test på en moats hållbarhet?",
+          "alternativ": [
+            "Om bolagets P/E är lägre än branschens",
+            "Om en kompetent konkurrent med obegränsat kapital anföll — hur skulle affären se ut om tio år?",
+            "Om grundaren äger mer än tio procent",
+            "Om bolaget finns med i index"
+          ],
+          "ratt": 1,
+          "tips": "Tänk på vad som krävs för att förstöra affären — inte för att beskriva den."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Triaden II — ledningskvaliteten (M)",
+      "intro": "BMP:s andra bokstav: ledningen. Griffin ägnar M-variabeln stor uppmärksamhet eftersom Munger gör det — men med en twist som skiljer honom från management-böckerna: Munger bedömer chefer som KAPITALALLOKATÖRER och som människor, i den ordningen. Talang utan integritet är en belastning; integritet utan allokeringstalang är en trevlig bekantskap.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första verktyget är incitamentet. Mungers mest citerade radial: »Show me the incentive and I will show you the outcome.« — visa mig incitamentet så visar jag resultatet. Griffin tillämpar det på ledningsnivå: en VD som belönas för kvartals-EPS köper tillbaka aktier oavsett pris; en som belönas för volym subventionerar tillväxt; en som belönas för fri kassaflödesboom bygger moats. Innan du bedömer en enda siffra, läs styrelsens bonusprogram: vilka nyckeltig styr ersättningen, och går de att lura med hävstång eller engångsposter? Incitamentsstrukturen är bolagets operativsystem — resten är appar."
+        },
+        {
+          "type": "text",
+          "content": "Andra verktyget är integriteten. Munger igen, citerad öppet: »Remember that reputation and integrity are your most valuable assets — and can be lost in a heartbeat.« — kom ihåg att rykte och integritet är dina viktigaste tillgångar — de kan gå förlorade på en hjärtslag. Överfört till bolagsvärlden: en ledning som ljuger om smått ljuger om stort, och ett bokslut som sminkats en gång kommer sminkas igen. Griffins praktiska filter: jämför prognoserna med utfallet över fem år. Gapet mellan det utlovade och det levererade är den ärligaste ledningspoängen som finns — den kräver varje kontakt med bolaget och bara dess historia."
+        },
+        {
+          "type": "text",
+          "content": "Tredje verktyget är kapitalallokeringen — Mungers eget område som Buffetts partner. Varje balansräkningsslut är ett allokeringstest: återinvesteras överskottet i verksamheten till hög ränta, returneras det via utdelning, eller bränns det på diversifieringsköp (diworsification, som Peter Lynch myntade och Buffett-Munger-cirkeln gjorde till ett skällsord)? AKM1:s V20 gör allokeringen mätbar: återköp av egna aktier är en signal — men bara rätt prissatt. Munger-Buffett-principen: återköp under inneboende värde skapar värde per aktie; återköp över inneboende värde är välgörenhet åt säljarna. Samma logik gäller utdelning och förvärv: allokeringens kvalitet är en funktion av PRiset, alltid."
+        },
+        {
+          "type": "text",
+          "content": "Och den mjuka väggen mellan M och B: kultur. Griffin citerar traditionens hållning att man inte kan göra en bra affär med en dålig människa — och att en ärlig dåre är att föredra framför en genialisk psykopat utan integritet. AK1A-övningen är därför strukturerad: bedöm allokeringen i siffrorna (V20), integriteten i prognos-gapet, och incitamenten i bonusprogrammet — och vägra foga ihop de tre till en hjälteberättelse förrän samtliga tre står pall."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "Visa mig incitamentet så visar jag resultatet — och visa mig resultatet mot prognoserna så visar jag ledningen. Talang utan integritet är en belastning; integritet utan allokeringstalang är en trevlig bekantskap. Du behöver båda — och prismedvetenhet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gräv fram bonusprogrammet i din största positions senaste årsredovisning: vilka exakta nyckeltal styr VD:s ersättning? Skriv sedan ner bolagets femårsgap: utlovad mot levererad omsättning och vinst. Två listor — incitament och integritet — är mer ledningsanalys än de flesta analyser innehåller."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V20 Återköp av egna aktier (allokeringssignalen, prissatt) + V12 intäktsstabilitet (kan ledningen planera?): ledningskvalitet mätbar i besluten. AK1TS: ingen direkt vågkoppling — men kom ihåg kapitel 10: din bedömning av ledningen är själv biasbar."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mungers första verktyg för att bedöma en ledning?",
+          "alternativ": [
+            "Analystkonsensus om management-teamet",
+            "Incitamentstrukturen — vilka nyckeltal styr bonusen",
+            "Antalet år sedan börsnoteringen",
+            "VD:s medieframträdanden"
+          ],
+          "ratt": 1,
+          "tips": "Visa mig incitamentet …"
+        },
+        {
+          "q": "Vad är den ärligaste ledningspoängen enligt kursen?",
+          "alternativ": [
+            "Insynköpens storlek",
+            "Gapet mellan utlovade och levererade prognoser över fem år",
+            "Bolagets ranking i employer-branding-undersökningar",
+            "Antalet konferenser ledningen deltar i"
+          ],
+          "ratt": 1,
+          "tips": "Det kräver ingen kontakt med bolaget — bara dess historia."
+        },
+        {
+          "q": "När skapar återköp värde per aktie enligt Munger-Buffett-principen?",
+          "alternativ": [
+            "Alltid — färre aktier höjer EPS per definition",
+            "Bara när aktien köps tillbaka under inneboende värde",
+            "Bara när de är skuldfinansierade",
+            "Aldrig — kontanter är alltid bättre"
+          ],
+          "ratt": 1,
+          "tips": "Över betalt pris är återköp välgörenhet åt säljarna."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Triaden III — priset (P) — en mispriced gamble",
+      "intro": "BMP:s tredje bokstav: priset. Griffin kan sin saken — priset är variabeln som gör eller bryter varje investering, för det är bara i priset översättningen till avkastning sker. Munger formulerar hela hantverket i en mening: »You're looking for a mispriced gamble. That's what investing is. And you have to know enough to know whether the gamble is mispriced.« — du letar efter en feltippad satsning; det är vad investering är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det är värt att stanna vid ordet GAMBLE. Munger accepterar att varje investering är ett vad — osäkerheten är irreducibel. Skillnaden mot casinot är att marknaden ibland sätter fel odds, och att du kan vänta tills den gör det. Prisfrågan är därmed aldrig »är detta ett bra bolag?« utan »är oddset fel mot sannolikheten?« — förväntansvärdeslogik: sannolikhet gånger vinst minus risk gånger förlust. Ett magnifikt bolag till trippelt rättvist pris är ett dåligt vad; ett tråkigt bolag till en tredjedel av värdet kan vara ett utmärkt ett. Koppla till Graham-systemet: Mr Market levererar oddsen, du bedömer dem."
+        },
+        {
+          "type": "text",
+          "content": "Mungers odds-tänk i praktiken, citerat öppet: »The wise ones bet heavily when the world offers them that opportunity. They bet big when they have the odds. And the rest of the time, they don't. It's just that simple.« — de visa satsar tungt när världen erbjuder dem den möjligheten. De satsar stort när de har oddsen. Resten av tiden gör de inte det. Det är bara så enkelt. Griffin kopplar detta till Mungers andra kärnbegrepp: alternativkostnad. Munger ansåg alternativkostnaden det enda riktiga sättet att tänka på beslut — varje köp ska mätas mot det bästa alternativet du redan har, inte mot noll. Frågan är aldrig »bra?« utan »bättre än det jag redan förstår bäst?«"
+        },
+        {
+          "type": "text",
+          "content": "Priset mäts inte med en multipl utan med ett cluster — här möter Griffin-kursen Quantitative Value-kursen: AKM1:s V04 P/S, V05 P/B och V06 EV/EBITDA är tre vinklar på samma fråga, och ingen räcker ensam (V05 var nästan meningslöst för See's — bokvärdet fångar inte prissättningsmakten). Till det kommer förväntansvärdesramen: snittet av dina scenarier, inte ditt bästa fall. AK1A:s Monte Carlo-verktyg är precis denna disciplin systematiserad — priset är vad du betalar, fördelningen är vad du köper."
+        },
+        {
+          "type": "text",
+          "content": "Sista nyansen: tålamodet som prisverktyg. Eftersom mispriced gambles inte uppstår enligt schema — de uppstår när Mr Market panikerar eller blir euforisk — blir väntandet en del av prisdisciplinen: den som MÅSTE vara investerad just i dag betalar genomsnittliga odds. Munger-Buffett-linjen: pass är ett beslut. Tre-korgen (kapitel 7) och punches på hålkortet (kapitel 12) är samma tankes konstruktioner."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prisfrågan — sju sätt att ställa den\",\"rader\":[[\"Vinkel\",\"Fråga\",\"AKM1/verktyg\"],[\"Multipl-kluster\",\"Vad betalar jag per omsättningskrona, bokkrona, EBITDA-krona?\",\"V04, V05, V06\"],[\"Förväntansvärde\",\"Väger scenarierna mot priset — positivt eller negativt?\",\"Monte Carlo\"],[\"Alternativkostnad\",\"Slår detta mitt bästa befintliga alternativ?\",\"portföljämförelse\"],[\"Felmarginal\",\"Hur mycket får jag fel innan köpet blir dåligt?\",\"kapitel 8\"],[\"Oddset\",\"Vad måste marknaden ha fel — och varför?\",\"thesis på en rad\"],[\"Tid\",\"MÅSTE jag köpa i dag — eller väntar Mr Market ut mig?\",\"pass är ett beslut\"],[\"Historik\",\"Vad har bolaget historiskt betalat i multipl?\",\"tioårsserie\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "insikt",
+          "content": "Investerande är att leta efter en feltippad satsning. Bra bolag och bra affärer är olika saker — översättningen heter pris, och måttet heter förväntansvärde."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta din senaste köpide (eller sitt på händerna-position). Skriv en rad: VAD MÅSTE MARKNADEN HA FEL för att priset ska vara mig välvilligt? Kan du inte fylla raden har du en berättelse, inte ett feltippat vad — och då är det du som är Mr Markets kund."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V04–V06 multipl-klustret + förväntansvärde i Monte Carlo: priset operationaliserat. AK1TS: Kelly-steget — när oddsen är på ditt håll dimensioneras positionen efter övertag och osäkerhet, exakt som »bet heavily when you have the odds« fast mätbart."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Munger med att investering är en »mispriced gamble«?",
+          "alternativ": [
+            "Att investering alltid är hasard och lika bra som spel",
+            "Att leta efter satsningar där marknadens odds avviker från sannolikheten — och ha nog med kunskap att se det",
+            "Att man ska korta övervärda bolag",
+            "Att ta maximal risk för maximal avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden mot casinot: här kan odds ibland stå fel — och du kan vänta."
+        },
+        {
+          "q": "Vad innebär Mungers alternativkostnadsperspektiv på beslut?",
+          "alternativ": [
+            "Att varje köp ska mätas mot det bästa alternativet du redan har — inte mot noll",
+            "Att man ska räkna bort courtage innan beslut",
+            "Att gamla förluster ska vägas in i nya köp",
+            "Att index alltid är rätt jämförelse"
+          ],
+          "ratt": 0,
+          "tips": "Frågan är aldrig »bra?« utan »bättre än vad jag redan förstår bäst?«"
+        },
+        {
+          "q": "Varför räcker inte en enda multipl som prismått?",
+          "alternativ": [
+            "Därför att multiplar är olagliga i vissa länder",
+            "Därför att olika multiplar fångar olika verkligheter — P/B var nästan meningslöst för See's",
+            "Därför att de alltid är exakta",
+            "Därför att diagram säger mer"
+          ],
+          "ratt": 1,
+          "tips": "Bokvärdet fångar inte prissättningsmakten — klustret kompenserar."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Cirkeln av kompetens — och korgen som är för svår",
+      "intro": "Griffin ägnar ett av bokens mest praktiska kapitel åt cirkeln: områdena där din förståelse överstiger marknadens — och, avgörande, där cirkeln SLUTAR. Munger: »Knowing what you don't know is more useful than being brilliant.« — att veta vad man inte vet är nyttigare än att vara briljant.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Munger igen, citerat öppet: »You have to figure out what your own aptitudes are. If you play games where other people have the aptitudes and you don't, you're going to lose.« — du måste lista ut var dina egen förmågor ligger. Om du spelar spel där andra har fallenheterna och du inte har dem, kommer du att förlora. Cirkeln är alltså ingen ödmjuk retorik utan en kantanalys: var har du en äkta edge — yrkesliv, bransch, användarinsikt, otåligt intresse av investigative dignitet? Och lika viktigt: var LEVER du på andras kunskap och kallar det din?"
+        },
+        {
+          "type": "text",
+          "content": "Munger-Buffett-traditionens mest underskattade verktyg är tre-korgen. Munger: »We have three baskets: in, out and too hard.« — vi har tre korgar: in, ut och för svårt. Korgen TOO HARD är inte ett nederlag — den är en äreplats: teknikskiften med okända vinnare, bolag med förlagsliknande utfallsfördelningar, verksamheter vars nyckeltal du inte kan tolka bättre än säljaren. Att sortera dit är en kompetens, inte en brist. Jämför Almanack-kursens sit-on-your-ass-kapitel: cirkeln definierar var du ens har RÄTT att sitta still — förutsägbarheten (V12) är stolen du sitter på."
+        },
+        {
+          "type": "text",
+          "content": "Cirkeln kan växa — men långsamt, och genom arbete, inte genom entusiasm. Griffins råd i trad: expandera vid kanten där du redan har grund — en ingenjör förstår en tillverkare snabbare än en blockkedja, en sjuksköterska förstår vårdsekorn snabbare än halvledare. AK1A:s fem teorier och fem tidshorisonter ger en disciplinerad version: lägg den nya sektorn på den längsta horisonten och studera den ett år som observatör — utan kapital — innan första kronan. Cirkeln växer genom anteckningar, inte genom köp."
+        },
+        {
+          "type": "text",
+          "content": "Och cirkelns mörka spegel: diworsification utanför den. Många portföljer är just detta — exponeringar mot områden ägaren inte förstår, samlade för att det kändes modernt eller för att grannen tjänat på dem. Social proof utanför cirkeln är den dyraste kombon i privatkapitalismen (kapitel 10 knyter ihop det). Värdet av ERKÄNNANDET: varje »jag förstår inte detta« är kapital som räddats."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "insikt",
+          "content": "Korgarna är tre: in, out, too hard. Den som inte har en tung too hard-korg har inte en stor cirkel — bara en tunn arbetsdisciplin. Att veta var man inte vet är nyttigare än att vara briljant."
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv tre listor av dina innehav: IN (kan förklara moaten och värderingen utan anteckningar), OUT (förstår inte), TOO HARD (intressant men utfallsfördelningen slår mig). Flytta sedan INTE — men lägg en påminnelse om att varje OUT-position är kapital hos en slumpgenerator."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V12 intäktsstabilitet (är verksamheten ens bedömbar?) + V03 intäktsdiversifiering (beroenden inom cirkeln): cirkeln får sin mätbara proxy. AK1TS: Mikro- och Kort-signalerna utan fundamental cirkel är spel — lägg vågteorin där förståelsen bor, inte där diagrammet är snyggast."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den avgörande frågan för om ett bolag ligger inom din cirkel?",
+          "alternativ": [
+            "Om du hört talas om bolaget tidigare",
+            "Om din förståelse överstiger den som säljer aktien till dig — och du ser cirkelns kant",
+            "Om analytiker har köprekommendation",
+            "Om bolaget är stort och välkänt"
+          ],
+          "ratt": 1,
+          "tips": "Kändisstatus är inte förståelse — vem är motparten?"
+        },
+        {
+          "q": "Vad är syftet med korgen »too hard«?",
+          "alternativ": [
+            "Att bevara bolag till senare research",
+            "Att värdigt sortera bort det där utfallsfördelningen slår din förmåga — en kompetens, inte en brist",
+            "Att samla bolag som ska kortas",
+            "Att parkera bolag med dåliga nyckeltal"
+          ],
+          "ratt": 1,
+          "tips": "Tre korgar: in, out, too hard — vilken är störst hos dig?"
+        },
+        {
+          "q": "Hur växer cirkeln enligt kursen?",
+          "alternativ": [
+            "Genom att köpa sig exponering och lära på slag",
+            "Genom långsam expansion vid kanten där du redan har grund — observatör utan kapital först",
+            "Genom att följa fler analyser",
+            "Cirkeln är fast — den kan inte växa"
+          ],
+          "ratt": 1,
+          "tips": "Cirkeln växer genom anteckningar, inte genom köp."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 11,
+      "title": "Margin of safety — felet måste få plats",
+      "intro": "Grahams tredje byggsten, i Griffin-Mungers tappning: felmarginalen. Tanken är inte att köpa billigt — utan att köpa så att dina egna prognosfel, Mr Markets svängningar och livets oförutsedda får PLATS innan köpet blir dåligt. Munger skilde också skarpt på risk och volatilitet: akademikernas sätt att mäta risk med prisvariation ansåg han vara ren galenskap.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Griffins formulering av felmarginalen är operativ: säkerheten kommer från tre källor SAMTIDIGT — priset (en rabatt mot beräknat värde), kvaliteten (en verksamhet som tål missräkningar) och balansräkningen (ett bolag som överlever dåliga år utan att tvingas agera). En komplementär bild: kör bro med lasten specificerad — bygg så att vägen håller även när lasten är felräknad. AKM1:s V06 EV/EBITDA är den klassiska felmarginalsmätaren: en låg EV/EBITDA betyder att marknaden tar ut lite för framtiden — och därmed att framtiden får understiga förväntningarna utan att köpet går sönder."
+        },
+        {
+          "type": "text",
+          "content": "Mungers riskbegrepp. Griffin lyfter den djupa skillnaden mot akademisk finans: för Munger är risk möjligheten till PERMANENT kapitalförlust — inte variationen i pris. Att mäta risk med beta/prisvolatilitet kallade Munger för vansinne: ett underbart bolag som faller fyrtio procent på grund av en marknadschock är inte fyrtio procent riskigare — det kan till och med vara säkrare, om felmarginalen växt. Konsekvensen för AK1A: V10 skuldsättningsgrad och V11 likviditet mäter verklig krisrisk; V19 mäter utspädningsrisken — ingen av dem heter volatilitet. AK1TS-signaler mäter svängningar, och svängningar är inte risk; det är priserna på Mr Markets humör."
+        },
+        {
+          "type": "text",
+          "content": "Felmarginalens tre källor kan avlösa varandra — lite som en triangel: ett medelbra bolag kan köpas med så stor prisrabatt att marginalen finns i priset (Grahams cigar butts); ett underbart bolag kan köpas till rimligt pris där marginalen ligger i kvalitetens förutsägbarhet (Mungers See's). Det som INTE fungerar: varken rabatt eller kvalitet — då finns ingen marginal alls. Och det som ofta förväxlas med marginal: en bra berättelse. Berättelser ökar snarare kravet på marginalen, för de ökar risken för att du blåst dig själv (kapitel 10)."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken: scenarios. AK1A:s scenariorum är felmarginalen systematiserad — kör tre framtidar (dunkelt, plan, strålande), pröva köpet mot varje, och kräv att även det dunkla fallet lämnar dig hel med avkastning förnlåten. Felmarginalen är alltså inte en känsla av trygghet — den är avståndet mellan ditt inpris och det utfall där du ändå klarar dig. Munger-Buffett-traditionen: det är bättre att hoppa över tio bra möjligheter än att ta en utan marginal."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Felmarginalens tre källor — och deras AKM1-mått\",\"rader\":[[\"Källa\",\"Vad den skyddar mot\",\"AKM1-mått\"],[\"Pris (rabatt mot värde)\",\"Att du betalat för mycket för fel framtider\",\"V06 EV/EBITDA\"],[\"Kvalitet (förutsägbarhet)\",\"Att verksamheten själveroderar\",\"V07, V09, V12\"],[\"Balansräkning (uthållighet)\",\"Kriser som tvingar fel beslut\",\"V10, V11, V19\"],[\"Process (checklista)\",\"Att du blåser dig själv\",\"kapitel 14\"],[\"Scenariorum\",\"Enfaldiga prognoser\",\"Monte Carlo\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "insikt",
+          "content": "Risk är permanent förlust av kapital — inte volatilitet. Felmarginalen är avståndet mellan inpris och det utfall där du ändå klarar dig: bygg bron för den last du felräknade."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör tre scenarier på ditt största innehav: dunkelt (försäljning -20 %, multipl halverad), plan, strålande. Räkna ut portföljeffekten av varje. Om det dunkla scenariet kräver att du säljer något annat för att sova — saknar du felmarginal, oavsett hur bra bolaget är."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V06 EV/EBITDA (pris-marginalen) + V10 skuldsättningsgrad, V11 likviditet (kris-marginalen) + V19: felmarginalens tre ben mätbara. AK1TS: skilj systematiskt på svängning (vågteoriernas domän) och risk (AKM1:s domän) — att blanda ihop dem är det vanligaste felet i branschen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mungers (och Griffins) definition av risk?",
+          "alternativ": [
+            "Prisvolatilitet mätt i beta",
+            "Permanent förlust av kapital",
+            "Att underprestera index ett år",
+            "Likviditeten i aktien"
+          ],
+          "ratt": 1,
+          "tips": "Munger kallade volatilitetsmåttet för galenskap — varför?"
+        },
+        {
+          "q": "Vilka är felmarginalens tre källor enligt kursen?",
+          "alternativ": [
+            "Priset, kvaliteten och balansräkningen",
+            "Utdelningen, räntan och inflationen",
+            "Beta, alfa och sharpe-kvot",
+            "Diagram, trend och volym"
+          ],
+          "ratt": 0,
+          "tips": "Tre ben — ett av dem heter priset, ett heter något som tål missräkningar."
+        },
+        {
+          "q": "Vad betyder det att ett bolag handlas till låg EV/EBITDA (V06)?",
+          "alternativ": [
+            "Att bolaget garanterat stiger",
+            "Att marknaden tar ut litet för framtiden — framtiden får understiga förväntningar utan att köpet går sönder",
+            "Att bolaget saknar moat",
+            "Att bolaget är för litet för institutioner"
+          ],
+          "ratt": 1,
+          "tips": "Felmarginalen bor i gapet mellan pris och förväntan."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Moats — vallgravar, erosion och pris (V13–V15)",
+      "intro": "Bokens Moats-avsnitt är dess mest direkt mätbara kapitel för AKM1: här landar affärskvaliteten (kapitel 4) i konkreta försvarskällor — och i varningarna för deras förgänglighet. För Munger är vallgraven verklig men döende: kapitalismen fyller igen alla vallgravar, förr eller senare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Griffin räknar upp traditionens moat-källor och Munger-Buffett-hållningen till dem: immateriella rättigheter (patent, licenser, know-how — AKM1 V13), varumärke och kundlojalitet (V14), nätverkseffekter (V15), omställningskostnader och skalfördelar (som stödjer V07 och V12). Buffett-formulerade uppdraget kärnfullt: ledningens främsta uppgift är att VIDGA vallgraven — och Munger tillade det evolutionära perspektivet (se Almanack-kursens evolution-kapitel): vallgraven är en ekologisk fördel, inte en statisk vall, och selektionstrycket — konkurrens, teknik, vanor, regler — arbetar ständigt mot den."
+        },
+        {
+          "type": "text",
+          "content": "Varning nummer ett: EROSIONEN. Munger har beskrivit kapitalismen som brutal just i detta avseende — framgång bjuder in attacken, och de flesta vallgravar torkar på tio till femtio år. Tidningarnas vallgravar såg ointagliga ut; inom ett par decennier var de torra. Därför mäter AKM1 moats i FLYTANDE serier, inte i etiketter: en bruttomarginal (V07) som håller medan konkurrenter anfaller är ett vallgravsbevis; ett varumärke vars prissättningsmakt sinar syns i marginalen FÖRE det syns i berättelsen. Fråga aldrig bara hur djup vallgraven är — fråga i vilken takt den grundas."
+        },
+        {
+          "type": "text",
+          "content": "Varning nummer två: MOAT UTAN PRIS RÄCKER INTE. Här syr Griffin ihop Moats-avsnittet med BMP-triaden: en bred vallgrav till ett pris som redan prissatt hundra års erosion är ett dåligt vad — kapitel 6 igen. Och omvänt: ett smalare försvar till ett pris som antagit att försvaret redan fallit kan vara ett utmärkt ett. Moat är B-variabeln; priset är P-variabeln; avkastningen bor i kombinationen. Munger-Costco-exemplet igen: den svårkopierade kulturen (en moat av omoraliskt låga marginaler, som konkurrenter inte VÅGAR kopiera eftersom det kräver att de bränner sin egen vinstmaskin) kombinerad med köppriser som aldrig var billiga i multipl-termer — men där värde skapades per aktie genom tillväxt och återinvestering i årtionden."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-översättningen är trippeln V13–V15 plus stödmåtten: patenterbarheten (V13), varumärkesstyrkan mätt i prissättningsmakt (V14 via V07), nätverkets kritiska massa (V15 — håll isär nätverk av användare från nätverk av hopp; det senare är berättelse). Komplettera med V12: återkommande intäkter är vallgravens intäktsida — en moat som inte syns i kontrakterad intäktsbas är ofta en moat man önskar snarare än har."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Moat-källor → AKM1-mått\",\"rader\":[[\"Källa\",\"Exempel\",\"AKM1\"],[\"Patent & immateriella rättigheter\",\"Licenser, know-how, data\",\"V13\"],[\"Varumärke & kundlojalitet\",\"See's, prissättningsmakt\",\"V14 (+ V07 som bevis)\"],[\"Nätverkseffekter\",\"Betalningsnät, plattformar\",\"V15\"],[\"Omställningskostnader & skala\",\"Systemleverantörer, kostnadsläge\",\"V07, V12\"],[\"Reglering\",\"Tillträdesbarriärer — eller hot\",\"V18 (dubbelverkande)\"],[\"Erosionstakt\",\"Historisk marginalserie\",\"V07 tioårig serie\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "Kapitalismen fyller igen alla vallgravar. Moat är därför ett hastighetsmått, inte ett ja/nej: hur snabbt grundas din vallgrav — och vad kostar det att köpa den innan den syns i marginalerna?"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bedöm ditt största innehavs moat enligt trippeln: V13 (finns rättigheter?), V14 (prissättningsmakt — fem år bruttomarginalserie), V15 (verkligt nätverk eller berättelse?). Sätt sedan en erosionstakt i procent per år — och pröva om DAGENS multipl överlever den takten i tio år."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V13 Patent & immateriella, V14 Varumärke & kundlojalitet, V15 Nätverkseffekter — moats mätbara, med V07 som bevis-series och V12 som intäktssida. AK1TS: Mega-horisonten igen — moats bedöms i årtionden; vågsystem är vädret, vallgraven är klimatet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mungers evolutionära bidrag till moat-tänkandet?",
+          "alternativ": [
+            "Att vallgravar alltid är permanenta",
+            "Att vallgraven är en ekologisk fördel som selektionstrycket ständigt arbetar mot — erosionen är regeln",
+            "Att moats endast finns i teknikbolag",
+            "Att vallgravar bara mäts i bokvärde"
+          ],
+          "ratt": 1,
+          "tips": "Tidningarna såg ointagliga ut — vad hände?"
+        },
+        {
+          "q": "Varför räcker inte en bred moat i sig för ett bra köp?",
+          "alternativ": [
+            "Moats kan inte mätas",
+            "Ett pris som redan prissatt hundra års erosion gör det till ett dåligt vad — B och P ska kombineras",
+            "Moats ger alltid låg avkastning",
+            "Moats är olagliga enligt konkurrenslagen"
+          ],
+          "ratt": 1,
+          "tips": "Moat är B-variabeln; vad är P-variabeln?"
+        },
+        {
+          "q": "Vad är det mest pålitliga numeriska vallgravsbeviset enligt kursen?",
+          "alternativ": [
+            "Antalet omnämningar i media",
+            "En bruttomarginalserie som håller medan konkurrenter anfaller",
+            "VD:s ålder och erfarenhet",
+            "Aktiens Kurs/BA-tal"
+          ],
+          "ratt": 1,
+          "tips": "Prissättningsmakt som håller syns i marginalen före berättelsen."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Beteendeekonomi — Munger sexton år före Kahneman",
+      "intro": "Bokens fjärde kapitel bär samma namn som Mungers mest berömda föredrag: The Psychology of Human Misjudgment — Harvard, juni 1995. Sexton år innan Kahnemans Thinking, Fast and Slow (2011) katalogiserade en advokat i Omaha ett tjogtal kognitiva tendenser med mekanismer och motgifte. Griffin placerar föredraget i systemet: misjudgment är inte kuriosa — det är motorn bakom Mr Markets svängningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fakta först, för det är här bokens historiska poäng sitter: Mungers föredrag 1995 byggde på två decenniers egna anteckningar — inte på någon färdig akademisk litteratur, för den fanns knappast. Kahneman och Tverskys genombrott låg då mest i laboratorier och småcirkulationer; Nobelpriset till Kahneman kom 2002; den stora populärvågen kom 2011. Munger var så att säga beteendeekonomins amatör-förelöpare: han sökte inte publikationer utan mekanismer — varför smarta människor systematiskt fattar dumma beslut — och motgifte som fungerar i affärsliv, inte i labbet."
+        },
+        {
+          "type": "text",
+          "content": "Skillnaden mot akademisk beteendeekonomi är värd att minnas: Kahneman diagnostiserar (System 1/System 2, heuristiker och biaser), Munger PRESCRIBERAR (katalogen över tendenser med inbyggda motgifte: incitament att kartlägga, förnekelse att forcibly confront, första slutsatsen att jaga med motargument, auktoritetstro att byta till verifiering). Griffin lyfter detta som avgörande för investerare: att VETA om biasen räcker inte — kunskap är inte beteende (jämför Quantitative Value-kursens kapitel 1). Därför Mungers favoritlösning: SYSTEM som fångar felet — checklistor (kapitel 14), regler, processer, incitamentsdesign. Investeraren har inget laboratorium — men den som loggar sina beslut har ett."
+        },
+        {
+          "type": "text",
+          "content": "Och kopplingen till Marknadens mekanik: Mr Markets eufori bygger på social proof, reason-respecting-berättelser och auktoritetstro; hans depression på förlustaversion, deprival och tillgänglighet av dåliga nyheter. När flera tendenser samverkar i samma riktning uppstår det Munger kallade lollapalooza-effekter — extrema utfall som ingen enskild bias förklarar (se Almanack-kursens kapitel 9 för hela dekompositionen; Griffin-kursens version är kort: det är därför bubblor och kraschar blir DJUPARE än något rimligt motiv). Värdeinvesterarens edge kommer från andras misjudgment — och hotet kommer från ens eget. Samma mekanism, dubbel riktning."
+        },
+        {
+          "type": "text",
+          "content": "AK1A-läsningen: den kognitiva profileringen via /profil är Munger-användaren: vilka tendenser är dina, mätta? Kursens övning: innan du poängsätter en enda V-variabel — vems röst poängsätter? Din egen, eller den senaste presentationens? Griffins barmhärtigt enkla test: om din analys inte innehåller ett enda argument MOT köpet är den sannolikt skriven av dina tendenser, inte av dig."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "insikt",
+          "content": "Munger katalogiserade misjudgment sexton år före Kahneman — men skillnaden är informativ: Kahneman diagnostiserar, Munger förskriver. Kunskap om biasen botar inte biasen; systemen gör det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör /profil. Välj din högsta tendens (till exempel social proof eller deprival). Leta sedan reda på den senaste affär där den kan ha styrt — och skriv vad en checklista hade frågat innan du tryckte på köp. Håll den frågan till kapitel 14."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · samtliga V01–V20 poängsätts av en människa med tjugofem tendenser — varför /profil hör hemma före /akm1. AK1TS: Volym-teorin är social proof mätt — folkstampet som signal; läs den SOM beteendedata, inte som sanning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför sägs Munger vara »före sin tid« inom beteendeekonomin?",
+          "alternativ": [
+            "Han skrev den första akademiska artikeln om heuristiker",
+            "Han höll The Psychology of Human Misjudgment 1995 — med mekanismer och motgifte — sexton år före Thinking, Fast and Slow",
+            "Han samarbetade med Kahneman på 1980-talet",
+            "Han Nobelnominerades i psykologi"
+          ],
+          "ratt": 1,
+          "tips": "Harvard 1995 — räkna åren till 2011."
+        },
+        {
+          "q": "Vad skiljer Mungers angreppssätt från den akademiska beteendeekonomins?",
+          "alternativ": [
+            "Munger förskriver motgifte och system — inte bara diagnostiserar",
+            "Munger förnekar att biaser finns",
+            "Munger ansåg att bara institutioner har biaser",
+            "Ingen skillnad"
+          ],
+          "ratt": 0,
+          "tips": "Kunskap är inte beteende — vad krävs för att fånga felet?"
+        },
+        {
+          "q": "Hur kopplar Griffin misjudgment till Mr Market?",
+          "alternativ": [
+            "Mr Market är en metafor för Kahneman",
+            "Tendenserna är MOTORN i Mr Markets svängningar — eufori och depression är konvergensfenomen",
+            "Mr Market förklarar varför biaser inte spelar roll",
+            "Psykologi ersätter värdering"
+          ],
+          "ratt": 1,
+          "tips": "Varför blir bubblor djupare än något rimligt motiv?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 11,
+      "title": "Latticework — ämnesövergripande tänkande",
+      "intro": "Bokens tredje kapitel — Worldly Wisdom — bygger på Mungers USC-föredrag 1994. Kärnidén: kunskap utan struktur är värdelös. »You've got to have models in your head. And you've got to array your experience — both vicarious and direct — on this latticework of your models.« — du måste ha modeller i huvudet, och du måste ordna din erfarenhet — både förvärvad och egen — på detta fackverk av modeller.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mungers version av faran, citerad öppet: »To the man with only a hammer, every problem looks pretty much like a nail.« — för mannen med bara en hammare ser varje problem ganska mycket ut som en spik. Investerarens hammare heter multipl, diagram, KPI, macro-modell eller favoritsektor — och eftersom verktyget är det enda man har, tillämpas det överallt. Läkemedlet är bredd i djup, inte i ytlig terminologi: ungefär åttio till nittio kraftfulla modeller från skilda discipliner bär enligt Munger nästan hela lasten. Fler behövs inte — men de måste HÖRA IHOP."
+        },
+        {
+          "type": "text",
+          "content": "Vilka discipliner? Fysik (jämvikt, kritisk massa, back-up-system), biologi (evolution, utdöende, ekologi — moats som ekologiska fördelar, kapitel 9), psykologi (kapitel 10), matematik (sannolikhet, compounding — kapitel 12), historia (maniaer och mönster). Griffins bidrag är att visa HUR de används i en analys: fråga inte »vilken modell gäller?« utan »vad ser flera modeller SAMTIDIGT peka mot?« — konvergensen mellan en ekonomisk modell (skalfördelar), en biologisk (nätverkets kritiska massa) och en psykologisk (varumärkets association) är starkare evidens än någon ensam."
+        },
+        {
+          "type": "text",
+          "content": "AK1A är ett fackverk av samma slag: fem teorier (Elliott, Fibonacci, Gann, Lucas, Volym) × fem tidshorisonter är fem modeller på samma verklighet — och den bayesianska omviktningen är precis latticework-logik: varje ny kvartalsrapport flyttar vikterna lite, ingen modell får monopol. Skillnaden mot Munger-puristen: där Munger ogillade teknisk analys som modell, håller AK1A den i fackverket med LÅG vikt på de långa horisonterna och exkluderar den från värderingen (V04–V06 är fysikens och matematikens domän). Att veta vilken modell som svarar för vilken fråga är själva hantverket."
+        },
+        {
+          "type": "text",
+          "content": "Och latticeworkets vardagstest: kan du förklara varför du tjänar pengar på bolaget i tre meningar som använder MINST två olika modellers språk (till exempel ekonomi + psykologi)? Kan du det inte är sannolikheten hög att du har en hammare och en spik — och att spiken är en berättelse. Se Almanack-kursens kapitel 2 för modellkatalogen i detalj; Griffins version är samma idé placerad i Graham-systemet: modellerna finns för att bedöma BMP — inte för sin egen skull."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "insikt",
+          "content": "Mannen med hammaren ser spikar överallt. Fackverket ser samma verklighet från flera håll — och det som ser ut som en spik från ett håll visar sig vara en skruv från ett annat. Konvergensen mellan modeller är evidensen."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj din hammare: det verktyg du använder på ALLT (en multipl, en diagrammodell, en sektor?). Skriv ner den — och formulera sedan din nästa analysfråga med tvång från två andra discipliners ord (biologins nisch? psykologins incitament?). Notera vad som klarnar när hammaren får vila."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V01–V20 är ett mini-fackverk: tillväxt, värdering, lönsamhet, stabilitet, moat, katalysator, risk, kapitalstruktur — åtta kategorier, tjugo modeller, ingen ensam räcker. AK1TS: Elliott, Fibonacci, Gann, Lucas och Volym är ytterligare fem — viktade, inte avgudade."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Munger med latticework of mental models?",
+          "alternativ": [
+            "En checklista med aktiespecifika nyckeltal",
+            "Ett sammanhängande fackverk av modeller från många discipliner som erfarenheten organiseras på",
+            "En databas med historiska kurser",
+            "Ett AI-system som föreslår aktier"
+          ],
+          "ratt": 1,
+          "tips": "Ordet som bär är fackverk — något som håller samman flera delar samtidigt."
+        },
+        {
+          "q": "Ungefär hur många modeller anser Munger bära nästan hela lasten?",
+          "alternativ": [
+            "Endast en — grundläggande värdering",
+            "Ungefär 80–90 kraftfulla modeller från skilda discipliner",
+            "Minst tusen specialiserade",
+            "Inga — erfarenhet räcker"
+          ],
+          "ratt": 1,
+          "tips": "Ett hanterbart antal — men med bredd."
+        },
+        {
+          "q": "Hur hanterar AK1A förhållandet mellan fem vågteorier och Munger-föraktet för teknisk analys?",
+          "alternativ": [
+            "AK1A avskaffade vågteorierna 2026",
+            "Vågteorierna hålls i fackverket med låg vikt på långa horisonter och exkluderas från värderingen",
+            "AK1A låter Elliott ersätta V04–V06",
+            "Vågteorierna används bara på Mega-horisonten"
+          ],
+          "ratt": 1,
+          "tips": "Vilken modell svarar för vilken fråga — det är själva hantverket."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Tålamod — the big money is in the waiting",
+      "intro": "Bokens Berkshire Math-avsnitt är dess numeriskt mest njutbara: ränta-på-ränta-aritmetiken bakom See's Candies och tålamodets centrala roll. Mungers berömda formulering, som Griffin lyfter till devis: »The big money is not in the buying and the selling, but in the waiting.« — de stora pengarna ligger inte i köpet och försäljningen, utan i väntandet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Griffin placerar tålamodet i systemet: det är inte en karaktärsegenskap utan en KONSEKVENS av få-positioner-logiken (kapitel 13) och compounding-matematiken. Munger om den första regeln: »The first rule of compounding is to never interrupt it unnecessarily.« — den första regeln i ränte-på-ränte är att aldrig avbryta den i onödan. Och om början: »The first $100,000 is a bitch, but you gotta do it« — de första hundratusen är ett helvete, men de måste göras. Kurvan är trött i början, explosiv på slutet — därför undervärderar de flesta tid och jagar procentsatser i stället."
+        },
+        {
+          "type": "text",
+          "content": "Berkshire-matematiken i See's Candies (samma siffror som Almanack-kursens kapitel 10): 1972 köptes See's för 25 MUSD — med runt 32 MUSD i årsomsättning och blott cirka 1 MUSD rullande kapital. Vinsterna behövde inte återinvesteras i chokladtillverkning; de lyftes ut och återinvesterades i andra Berkshire-tillgångar. Fram till 2007 hade See's samlat på sig mer än 1,6 miljarder dollar i resultat före skatt — med bara drygt trettio miljoner dollar i tillskjutet kapital. Lärdomen, i Griffins framställning: köp inte bolag — köp compounding-MASKINER vars överskott kan flytta till nästa maskin. Det är därför affärskvalitet (kapitel 4) är en matematisk, inte en estetisk, fråga."
+        },
+        {
+          "type": "text",
+          "content": "Verktyget för att tålamodet ska bli möjligt är hålkortet: Buffetts bild — som Griffin återberättar — att livet som investerare är som ett hålkort med tjugo slag: tjugo investeringar, sedan är kortet fullt. Inte för att du FÅR göra bara tjugo — utan för att om du trodde det, skulle du välja mycket noggrannare. AK1A:s motsvarighet: transaktionsloggen. Räkna dina affärer de senaste tolv månaderna; varje affär som inte drevs av en genuint ny insikt bröt compounding-kedjan i onödan — och kostade inte bara courtage utan alternativkostnaden för det tålmodiga alternativet."
+        },
+        {
+          "type": "text",
+          "content": "Sista nyansen — tålamod är inte passivitet. Munger var ingen buy-and-forget-ideolog: han läste, uppdaterade och övergav teser när fakta förändrades. Skillnaden mellan tålamod och lättja är FORSKNINGEN: tålmodigheten gäller priset och tiden, inte okunnigheten. AK1A-övningen kopplar till V12: bara förutsägbara intäkter ger dig RÄTT att sitta still — för bolag vars affär förändras varje år är stillasittande inte tålamod utan förnekelse (kapitel 10)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Berkshire-matematiken — See's Candies 1972–2007\",\"rader\":[[\"Post\",\"Siffra\",\"Lärdom\"],[\"Köpeskilling 1972\",\"25 MUSD\",\"Tre gånger bokvärdet — otänkbart för Graham\"],[\"Årsomsättning\",\"~32 MUSD\",\"Varumärke med prissättningsmakt\"],[\"Rullande kapital\",\"~1 MUSD\",\"Överskottet behövde inte stanna i verksamheten\"],[\"Tillskjutet kapital till 2007\",\"~30+ MUSD\",\"Kapitalineffektiv choklad — kapitallokal effektiv\"],[\"Ackumulerat resultat före skatt\",\">1,6 Mdr USD\",\"Compounding genom ÅTERINVESTERING utanför bolaget\"],[\"Moral\",\"—\",\"Köp compounding-maskiner, inte produkter\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "insikt",
+          "content": "De stora pengarna ligger inte i köpet och försäljningen utan i väntandet. Se's matte är moralen: kvalitet utan kapitalbindning + tålmodig återinvestering = miljarder ur tjugofem miljoner."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din hålkorts-statistik: hur många av de senaste tolv månadernas affärar överlever testet »drevs av en genuint ny insikt«? Beräkna sedan CAGR på ditt längsta innehav — och den avbrutna compounding-kostnaden för din mest onödiga avslutning. Siffran är argumentet kapitel 13 behöver."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V09 ROE (återinvesteringsmotorn) + V12 intäktsstabilitet (rätten att sitta still) + V01 tillväxt (maskinens hastighet). AK1TS: Mega-horisonten är compoundingens hem — ingen annan horisont belönar väntandet."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Munger med att den stora pengen ligger i väntandet?",
+          "alternativ": [
+            "Att man ska vänta med att investera tills marknaden fallit",
+            "Att värdet skapas i att behålla rätt bolag medan compounding arbetar — inte i aktiv handel",
+            "Att daytrading lönar sig om man är tålmodig",
+            "Att utdelningar ska väntas in innan återinvestering"
+          ],
+          "ratt": 1,
+          "tips": "Väntandet gäller tiden EFTER köpet."
+        },
+        {
+          "q": "Vad är poängen med Buffetts hålkort med tjugo slag?",
+          "alternativ": [
+            "Att man bokstavligtigen bara får göra tjugo affärer i livet",
+            "Att en tro på färre affärer tvingar fram mycket noggrannare val",
+            "Att courtageavgifterna blir lägre",
+            "Att indexfonder slår aktivt sparande"
+          ],
+          "ratt": 1,
+          "tips": "Det är ett tankeexperiment om besluts kvalitet, inte en regel."
+        },
+        {
+          "q": "Vad gjorde See's Candies till en compounding-maskin för Berkshire?",
+          "alternativ": [
+            "Chokladförsäljningen växte med fyrtio procent per år",
+            "Litet rullande kapital gjorde att överskottet kunde lyftas ut och återinvesteras i andra tillgångar",
+            "Bolaget gick i konkurs och köptes billigt",
+            "Hög utdelningsavkastning från dag ett"
+          ],
+          "ratt": 1,
+          "tips": "Kapitallokal effektivitet — var skedde återinvesteringen?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Koncentration kontra diversifiering — Munger-Buffett-linjen",
+      "intro": "Griffin tar också hetaste stridsfrågan: portföljens bredd. Munger-Buffett-linjen är kompromisslös mot helgjuten diversifiering — men den bygger på en förutsättning som kursen måste granska öppet: att du faktiskt HAR ett edge. Munger, citerad: »Wide diversification, which necessarily includes investment in mediocre businesses, only guarantees ordinary results.« — bred diversifiering, som nödvändigtvis inkluderar investeringar i medelbra bolag, garanterar bara ordinära resultat.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Logiken bakom linjen är alternativkostnads-logiken (kapitel 6): om du funnit ett fåtal mispriced gambles inom din cirkel (kapitel 7) med felmarginal (kapitel 8), då är varje krona i det sjätte-bästa alternativet en krona som inte arbetar i det bästa. Munger själv körde Wheeler, Munger & Co. 1962–1975 med kring tjugo procent per år (se Almanack-kursens kapitel 1) — i en portfölj koncentrerad till ett fåtal positioner. Men — och här börjar den ondskefulla variansen — samma portfölj sjönk under 1973–74 års krasch i storleksordningen HALVAN. Femtioprocentiga svängningar är inget kosmetiskt problem; de är koncentrationens hyra."
+        },
+        {
+          "type": "text",
+          "content": "Detta är kursens varningens kärna: ondskefull varians för vanliga människor. Koncentration fungerar bara om följande tre är sanna SAMTIDIGT: du har ett äkta edge (annars är dina bästa idéer inte bättre än slumpen), du har tålamodets temperament (kapitel 12 — att inte ge upp i botten), och du har KAPITAL som tål att vara fel länge (inget hävstång, inga korta horisonter). Saknas något av de tre är diversifiering — eller index — inte feghet utan matematik. Munger själv har sagt att de flesta människor klarar sig bäst i billiga indexfonder: linjen är för dem med både edge och temperament. Det är inte blygsamhet; det är samma inversion som kapitel 2."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s upplösning av dilemmat är Kelly-logiken: positionens storlek ska vara en funktion av övertag och osäkerhet — inte av antalet aktier du äger. Koncentration med stort edge och liten osäkerhet; hållning utan edge; index utan tid eller intresse. Monte Carlo-simuleringen visar sedan utfallsfördelningen för varje val — inklusive de djupa svängningarna som Munger-partnerskapet levde igenom. Fem tidshorisonter hjälper till: koncentration hör hemma på den längsta ( där fel får tid att rättas), inte på den kortaste (där variansen är rent brus)."
+        },
+        {
+          "type": "text",
+          "content": "Och diworsification — Griffins förnumstiga påminnelse: diversifiering FÖR SIN EGEN SKULL är också ett misstag, för den tvingar in kapital i medelbra bolag (Munger-citatet ovan) och utanför cirkeln (kapitel 7). Målet är inte ett antal — det är en funktion: varje position ska bära sin alternativkostnad. Fem till tio välförstådda innehav kan vara perfekt diversifierade i RISK (olika moats, olika cykler); trettio slumpvis utvalda kan vara perfekt korrelerade i OKUNSKAP."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Koncentrationens ekvation — tre villkor och deras fallgropar\",\"rader\":[[\"Villkor\",\"Fråga\",\"Om det saknas\"],[\"Edge\",\"Förstår jag bolaget bättre än säljaren?\",\"Diversifiera — eller index\"],[\"Temperament\",\"Tål jag femtio procent nedgång utan att sälja?\",\"Diversifiera — variansen gör dig till sämsta säljaren\"],[\"Kapital & tid\",\"Kan kapitalet vara fel länge?\",\"Minska — hävstång och korta horisonter dödar koncentration\"],[\"Verktyg\",\"Kelly-dimensionering + Monte Carlo\",\"Gissa inte — simulera\"],[\"Cirkel\",\"Är positionen i IN-korgen?\",\"Ut ur portföljen — bredd är ingen ersättning för förståelse\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "insikt",
+          "content": "Bred diversifiering garanterar ordinära resultat; snäv koncentration utan edge garanterar ondskefull varians. Dimensionera efter övertag — Kelly gör Mungers visdom mätbar: bet heavily when you have the odds, och inte alls annars."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ärlighetstestet: föreställ dig din portfölj minus femtio procent — utan att något fundamentalt ändrats. Skriv ner vad du skulle göra (häftigt? sälja? sova gott?). Svaret avgör om koncentration är ditt instrument eller din fälla — och det är samma svar Munger-partnerskapet gav 1974."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · V03 intäktsdiversifiering (riskspridning i intäkterna — bolagsnivå) + Kelly-positionering (portföljnivå): diversifiering har två plan, förväxla dem inte. AK1TS: koncentration hör hemma på Mega, brus på Mikro — samma position på fel horisont är fel beslut."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är Munger-Buffett-linjen emot bred diversifiering?",
+          "alternativ": [
+            "Därför att den nödvändigtvis inkluderar medelbra bolag och därmed garanterar ordinära resultat",
+            "Därför att fler aktier alltid ökar risken",
+            "Därför att diversifiering är olaglig för privatpersoner",
+            "Därför att index aldrig slås"
+          ],
+          "ratt": 0,
+          "tips": "Munger-citatet: wide diversification … only guarantees ordinary results."
+        },
+        {
+          "q": "Vad hände Wheeler, Munger & Co. under 1973–74?",
+          "alternativ": [
+            "Partnerskapet föll i storleksordningen halvan — koncentrationens hyra",
+            "Partnerskapet gick i konkurs",
+            "Partnerskapet slog index med trettio procent",
+            "Partnerskapet stängdes av regulatorn"
+          ],
+          "ratt": 0,
+          "tips": "Koncentrerad portfölj, svår börs — vad är den aritmetiska konsekvensen?"
+        },
+        {
+          "q": "Vad är AK1A:s upplösning av koncentrations-dilemmat?",
+          "alternativ": [
+            "Alltid maximal koncentration för maximal avkastning",
+            "Kelly-logik — positionens storlek som funktion av övertag och osäkerhet, med Monte Carlo för utfallsrummet",
+            "Alltid trettio aktier för säkerhet",
+            "Kort portföljen vid svängningar"
+          ],
+          "ratt": 1,
+          "tips": "Bet heavily when you have the odds — mätt, inte gissat."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "Checklistor och processer — temperamentet systematiseras",
+      "intro": "Bokens kapitel The Right Stuff handlar om investerarens egenkvaliteter — och Munger-Buffett-traditionens svar på frågan hur temperamentet kan användas utan att vara beroende av det: checklistan. Munger: »A lot of people with high IQs are terrible investors because they've got terrible temperaments.« — massor av människor med höga IQ är usla investerare eftersom de har usla temperament.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mungers investeringschecklista — som Griffin återkommer till och som Almanackan bevarat — består av tio punkter: risk (alltid — hur? inte vad?), oberoende (tänk själv — kloning av PROCESSER, inte av åsikter), förberedelse (den enda vägen till vettig utfallsfördelning), intellektuell ödmjukhet (erkänn vad du inte kan), analytisk rigor (distinkta fakta, baklänges-reasoning, jämför ELSE), allokering (kapitalets möjlighetskostnad), tålamod (kapitel 12), beslutsamhet (när oddsen är riggade — kapitel 6), förändringsbenägenhet (erkänn och anpassa), fokus (det viktigaste först). Poängen är inte listan utan ORDNINGEN: risk först, fokus sist — inversionen (kapitel 2) inbakad i processen."
+        },
+        {
+          "type": "text",
+          "content": "Varför checklistor fungerar — flygplans-argumentet, som Griffin liksom Almanackan anlitar: flyget blev världens säkraste transportslag inte genom att rekrytera smartare piloter utan genom obligatoriska checklistor, simulatorer och redundans — SYSTEM som kuvar det mänskliga felet. Skillnaden mot piloten: piloten som hoppar över checklistan dör själv; investeraren överlever med biasen intakt och får barn om en månad. Därför behöver investeraren METRIA — en logg som gör misstagen synliga — snarare än bara en lista."
+        },
+        {
+          "type": "text",
+          "content": "Och den intellektuella ödmjukhetens märkliga verktyg, citerat öppet: »I'm not entitled to have an opinion unless I can state the arguments against my position better than the people who are in opposition.« — jag har inte rätt att ha en åsikt om jag inte kan framställa argumenten mot min position bättre än motståndarna. Detta är Darwins disciplin (se Almanack-kursens kapitel 5): jaga det egna misstaget innan någon annan gör det. AK1A:s översättning: i varje analys som lämnar skrivbordet ska det finnas en sektion som heter något så rent som BÄSTA ARGUMENTET MOT KÖPET — skriven innan kursdiagrammet tittades på."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s helhet är själv en checklista av Munger-typ: AKM1:s tjugo variabler tvingar fram konsekvens och bredd (samma hål varje gång — se Quantitative Value-kursen om varför det spelar roll), /profil tvingar fram kännedom om de egna tendenserna (kapitel 10), Kelly och Monte Carlo tvingar fram dimensionering och utfallsfördelning. Det systemet är nyckeln till nästa — sista — kapitels fråga: kan det hela LÄRAS ut? Om temperamentet kan byggas in i processer är svaret kanske; om det inte kan är Munger en gångbegåvning och vi alla hans publik."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mungers tio punkter → AK1A-översättning\",\"rader\":[[\"Punkt\",\"Kärna\",\"AK1A-verktyg\"],[\"Risk\",\"Hur — inte vad — kan det gå fel?\",\"Riskmatris, V19\"],[\"Oberoende\",\"Klona processer, inte åsikter\",\"egen analys före research\"],[\"Förberedelse\",\"Utfallsfördelning i förväg\",\"Monte Carlo\"],[\"Intellektuell ödmjukhet\",\"Bästa motargumentet — skrivet först\",\"AKM1-motargument-sektion\"],[\"Analytisk rigor\",\"Fakta distinkt och baklänges\",\"V01–V20 helhet\"],[\"Allokering\",\"Alternativkostnad i varje krona\",\"portföljämförelse\"],[\"Tålamod\",\"Compounding avbryts inte i onödan\",\"Mega-horisonten\"],[\"Beslutsamhet\",\"Bet heavily när oddsen är rätt\",\"Kelly\"],[\"Förändring & fokus\",\"Erkänn fel — viktigaste först\",\"transaktionslogg + /profil\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "insikt",
+          "content": "Högt IQ är ingen investeringsfördel — temperamentet är det, och temperamentet kan byggas in i processer. Checklistans ordning är budskapet: risk först, resten sedan."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din checklista NU — tre punkter från Mungers tio (välj risk, ödmjukhet, allokering som minimum), tre från din /profil, fyra från dina egna ärr. Testa den på nästa köp FÖRE kurskollationen — och revidera efter tre tillämpningar. Det är flygplans-disciplinen; utan METRI är den bara en träbit."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · samtliga V01–V20 som helhetsprocess: samma hål varje gång. AK1TS: process före signal — ingen vågräkning förrän AKM1 och checklistan är genomgångna."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är Mungers checklista ordnad med RISK först?",
+          "alternativ": [
+            "Därför att risk är den enda mätbara variabeln",
+            "Därför att inversionen är inbakad — eliminera dödszonerna innan du letar möjligheter",
+            "Därför att Graham gjorde så",
+            "Därför att risken är högst i början av en analys"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 2 igen: hur undviker man det som garanterat misslyckas?"
+        },
+        {
+          "q": "Vad menar Munger med rätten att ha en åsikt?",
+          "alternativ": [
+            "Att man måste kunna framställa argumenten MOT sin position bättre än motståndarna",
+            "Att man måste ha minst tio års erfarenhet",
+            "Att man måste ha högre examen",
+            "Att man måste äga aktien man uttalar sig om"
+          ],
+          "ratt": 0,
+          "tips": "Darwins disciplin — jaga ditt eget misstag först."
+        },
+        {
+          "q": "Vad är skillnaden mellan pilotens och investerarens behov av checklistor?",
+          "alternativ": [
+            "Piloter har bättre minne",
+            "Piloten som hoppar över checklistan dör själv — investeraren överlever med biasen intakt och behöver därför även METRI",
+            "Investerare har mer tid på sig",
+            "Det finns ingen skillnad"
+          ],
+          "ratt": 1,
+          "tips": "Vem betalar priset för felet — och när?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Kontroversen — kan Munger läras ut? Och AK1A-syntesen",
+      "intro": "Kursens sista kapitel är dess viktigaste: kritiken mot Munger-fenomenet. Tre invändningar — kulten, gångbegåvningen och den ondskefulla variansen — Griffins svar, och AK1A:s syntes med medgivanden. Munger själv hatade guru-tillbedjan; han skulle ha insett ironin i att bli ikon. Auktoritets-tendensen (kapitel 10) väntar vid dörren till varje Munger-kurs.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Invändning ett: MUNGER-KULTEN. Citaten hasplas som heliga skrifter, årsstämmorna besöks som pilgrimsfärder, och »Munger sa det« ersätter argumentet. Problemet är inte beundran utan mekaniken: auktoritets-tendensen + social proof + reason-respecting-berättelsen »vis man sa« är exakt den konvergens Munger själv varnade för (Almanack-kursens kapitel 6 och 9). En Munger-citat utan egen analys är Mr Markets kund med finare citatkedja. Griffin publicerar själv aforismer i bulk — men hans användning är systematisk, inte liturgisk: citaten ska illustrera variabler, inte ersätta dem."
+        },
+        {
+          "type": "text",
+          "content": "Invändning två: GÅNGBEGÅVNINGEN. Munger var fotografiskt minne, juristens argumentations-stringens, fyrtio års samarbete med historiens bästa kapitalallokator, och — av allt att döma — ett sällan skådat temperament. Kan DET replikeras? Invändning tre är den vassaste: ONDSKEFULL VARIANS FÖR VANLIGA. Koncentrationen (kapitel 13) gav Wheeler-Munger halveringen 1973–74; för en vanlig investerare utan Munger-temperament blir samma portfölj en maskin för att sälja i botten — beteendegapet äter kanten. studierna av beteendegapet — avgifter och kapitalflöden vid fel tidpunkter — är belägget; Munger själv sa att de flesta klarar sig bäst i billiga indexfonder. Om metoden kräver ett temperament som de flesta saknar, hur »complete investor« är den då?"
+        },
+        {
+          "type": "text",
+          "content": "Griffins svar — tre lager. Ett: systemet är KLOBART — Munger själv (kapitel 1): »I believe in the discipline of mastering the best that other people have figured out.« BMP, checklistan, inversionen är processer som kan läras, även om de tar år. Två: i bokens avsnitt Value Investing vs. Factor Investing skiljer Griffin systemet från faktor-modeller — systemet kräver omdöme, faktor-modellerna mekaniserar — men omdömet kan TRÄNAS genom besluts-regler, logg och återkoppling (jämför QV-kursens jedis kontra clones). Tre: temperamentet är delvis en process-fråga — checklistor, fördefinierade villkor och Kelly-dimensionering minskar utrymmet där temperamentet avgör. Griffins hållning: metoden är lärbar, mästarprovet är inte det."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — och medgivandena. Syntes: AKM1 är bokstavligen försöket göra Munger-metoden MÄTBAR — BMP-triaden översatt till V-poäng per kriterium (affärskvalitet V07/V09/V13–V15, ledningskvalitet V20 + prognos-gapet, pris V04–V06), med riskmatrisen som inversion, Monte Carlo som felmarginal och Kelly som bet heavily-when-you-have-the-odds. Medgivandena, lika bokstavligt: OMDÖMESKVALITETEN går inte helt att checklista. Cirkelns kant, känslan för när edge är äkta, modet i 1974 — det är konst kvar i hantverket, och den som påstår annat har ersatt Munger-kulten med modell-kult. Därför kompletterar /profil (dina tendenser), transaktionsloggen (dina verkliga utfall) och — i QV-kursens värld — strukturerad objektivitet mot strukturerad subjektivitet. Avståndet mellan din AKM1-poäng och modellens verdict är inte fel — det är där arbetet bor."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritik, Griffins svar, AK1A:s hållning\",\"rader\":[[\"Kritik\",\"Innebörd\",\"Griffins svar\",\"AK1A:s hållning\"],[\"Munger-kulten\",\"Auktoritetstro ersätter analys\",\"Citaten ska illustrera variabler — systematik, inte liturgi\",\"citera öppet, argumentera självt\"],[\"Gångbegåvningen\",\"Temperament + IQ + 40 år med Buffett — oreplicerbart\",\"Systemet är klonbart; mästarprovet är inte det\",\"AKM1 = mätbar Munger; övning + logg\"],[\"Ondskefull varians\",\"Koncentration utan temperament = sälja i botten\",\"Munger själv: de flesta bör ha index\",\"Kelly-dimensionering; Mega-horisont; fem villkor i kap 13\"],[\"Omdömes-resten\",\"Checklistor täcker inte judgment\",\"Medges — träning och återkoppling\",\"/profil + logg + QV som motvikt — avståndet är information\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        },
+        {
+          "type": "insikt",
+          "content": "Munger-metoden är lärbar som system och olärbar som mästarprov. AKM1 är försöket mäta det första — med ärligheten att det andra kräver tusen timmar, en logg och en spegel. Kulten bygger på att blanda ihop dem."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprovet i tre steg: ett — kör full AKM1 (V01–V20) på ett bolag i din IN-korg. Två — skriv BÄSTA ARGUMENTET MOT KÖPET utan att titta på din poänglista. Tre — låt en vecka passera; läs sedan båda och stryk allt som är auktoritetstro, social proof eller berättelseglädje. Det som är kvar är ditt omdöme — och det är det enda som är din."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga · AKM1 i sin helhet (V01–V20) = Munger-metoden operationaliserad: BMP mätbart, inversionen i riskmatrisen, tålamodet i Mega-horisonten, koncentrationen i Kelly. AK1TS: fem teorier × fem horisonter som fackverk — tålmodets tidsskala inbyggd i systemet, inte i humöret."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är problemet med Munger-kulten enligt kursen?",
+          "alternativ": [
+            "Att citaten är felaktiga",
+            "Att auktoritetstro + social proof ersätter egen analys — exakt den tendenskonvergens Munger varnade för",
+            "Att Munger var emot värdeinvesterande",
+            "Att böckerna är för dyra"
+          ],
+          "ratt": 1,
+          "tips": "Vilka tendenser aktiveras när »vis man sa« får ersätta argumentet?"
+        },
+        {
+          "q": "Hur svarar Griffin på invändningen om ondskefull varians?",
+          "alternativ": [
+            "Han förnekar att koncentration kan falla femtio procent",
+            "Systemet är klonbart och temperamentet delvis en process-fråga — men Munger själv sa att de flesta bör ha billiga indexfonder",
+            "Han rekommenderar hävstång för att jämna ut variansen",
+            "Han föreslår daytrading som komplement"
+          ],
+          "ratt": 1,
+          "tips": "Lärbarhet i två lager: systemet ja, mästarprovet nej — och vad sa Munger om de flesta människor?"
+        },
+        {
+          "q": "Vad är AK1A:s medgivande i syntesen?",
+          "alternativ": [
+            "Att AKM1 ersätter omdömet helt",
+            "Att omdömeskvaliteten — cirkelns kant, äkta edge, mod i kriser — inte går helt att checklista",
+            "Att Munger-metoden är föråldrad",
+            "Att value investing inte fungerar längre"
+          ],
+          "ratt": 1,
+          "tips": "Vad är kvar när checklistan är klar? Konsten, alltså."
+        }
+      ]
+    }
+  ]
+}

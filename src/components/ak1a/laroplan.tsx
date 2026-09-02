@@ -65,7 +65,7 @@ const NIVAER = [
   {
     id: 3,
     namn: "Bokmaster",
-    beskrivning: "Läs mästarna — 13 kompletta böckers visdom, kapitel för kapitel",
+    beskrivning: "Läs mästarna — 78 kompletta böckers visdom, kapitel för kapitel", // Uppdaterad 2026-09-01: 78 BOKMASTER-böcker (läroplanen listar urvalet)
     mal: "Du har böckernas visdom integrerad i ditt eget tänkande",
     badge: "🏛️",
     kurser: [

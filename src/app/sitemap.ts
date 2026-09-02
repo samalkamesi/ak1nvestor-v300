@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/finansiell-policy`, changeFrequency: "yearly", priority: 0.4 },
   ];
 
-  // 225 kurser
+  // 307 kurser (Uppdaterad 2026-09-01 — loopen är dynamisk)
   for (const slug of Object.keys(getCourses())) {
     entries.push({
       url: `${baseUrl}/kurser/${slug}`,

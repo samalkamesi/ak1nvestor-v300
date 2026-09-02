@@ -57,7 +57,7 @@ export default function manifest(): MetadataRoute.Manifest {
         name: "Repetera flashcards",
         short_name: "Repetera",
         url: "/?kalla=pwa#repetera",
-        description: "Spaced repetition — 100 kort",
+        description: "Spaced repetition — 140 kort", // Uppdaterad 2026-09-01: 140 kort i data/spaced-repetition.json
       },
     ],
   };

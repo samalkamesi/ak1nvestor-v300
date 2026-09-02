@@ -9,8 +9,9 @@ export const dynamic = "force-static";
 export const metadata: Metadata = pageMetadata({
   path: "/manifest",
   title: "Manifestet — världens bästa finansutbildning | AK1A Research Lab",
+  // Uppdaterad 2026-09-01: 307 kurser · 78 BOKMASTER · 7 089 quizfrågor (siffrorna nedan räknas dynamiskt)
   description:
-    "Vårt manifest: vi bygger världens bästa finansutbildning — 271 kurser, 44 böcker kapitel för kapitel och över 5 500 quizfrågor, gratis i Fas 1. Institutionell metodik, komplett ärlighet och generositet som affärsidé.",
+    "Vårt manifest: vi bygger världens bästa finansutbildning — 307 kurser, 78 böcker kapitel för kapitel och över 7 000 quizfrågor, gratis i Fas 1. Institutionell metodik, komplett ärlighet och generositet som affärsidé.",
   keywords: [
     "finansutbildning",
     "manifest",
@@ -25,9 +26,9 @@ export const metadata: Metadata = pageMetadata({
 export default function ManifestPage() {
   // Levande tal — räknas från innehållslager vid build. Statisk fallback om datan saknas.
   const kurserLista = getCourseList();
-  const kurser = kurserLista.length || 271;
+  const kurser = kurserLista.length || 307;
   const bokmaster =
-    kurserLista.filter((c) => c.category === "BOKMASTER").length || 44;
+    kurserLista.filter((c) => c.category === "BOKMASTER").length || 78;
   const quiz =
     kurserLista.reduce(
       (s, c) =>
@@ -37,7 +38,7 @@ export default function ManifestPage() {
           0
         ),
       0
-    ) || 5544;
+    ) || 7089;
 
   return (
     <SeoPageShell breadcrumb={[{ name: "Manifestet" }]} wide>
@@ -273,7 +274,7 @@ export default function ManifestPage() {
             },
             { tal: "140", etikett: "flashcards med spaced repetition (Ebbinghaus/SM-2)" },
             { tal: "10", etikett: "graf-typer i analysverktygen" },
-            { tal: "44/101", etikett: "bokkanon — 44 mappade av 101 titlar mot AKM1/AK1TS" },
+            { tal: "201", etikett: "case studies i labbet — framgångar och misslyckanden" },
           ].map((s) => (
             <div
               key={s.etikett}

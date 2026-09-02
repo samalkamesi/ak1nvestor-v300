@@ -147,17 +147,22 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
           <div className="min-w-0 flex-1">
             <p className="truncate font-serif text-xs font-semibold tracking-wide text-[#EDE6D6]">{kurs.title}</p>
             {/* Kapitel-dots: spår i porslin (#EDE6D6), fyllning i guld (#E8C766), klarade i grönt */}
+            {/* Kapitel-dots: strecket är 6px högt men knappen har vertikal padding — tryckytan blir fingertoppsvänlig på mobil */}
             <div className="mt-1 flex gap-1">
               {kurs.chapters.map((ch, i) => (
                 <button
                   key={ch.num}
                   onClick={() => { setSteg(i); setVisaQuiz(false); }}
-                  className={`h-1.5 flex-1 rounded-full transition-all ${
-                    i === steg ? "bg-[#E8C766]" : klaradeKap.has(ch.num) ? "bg-green-400" : i < steg ? "bg-[#E8C766]/40" : "bg-[#EDE6D6]/15"
-                  }`}
+                  className="flex flex-1 items-center py-2.5"
                   aria-label={`Kapitel ${ch.num}`}
                   title={ch.title}
-                />
+                >
+                  <span
+                    className={`block h-1.5 w-full rounded-full transition-all ${
+                      i === steg ? "bg-[#E8C766]" : klaradeKap.has(ch.num) ? "bg-green-400" : i < steg ? "bg-[#E8C766]/40" : "bg-[#EDE6D6]/15"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </div>
@@ -267,7 +272,7 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
                                 key={j}
                                 onClick={() => svaraQuiz(qi, j)}
                                 disabled={klarad}
-                                className={`w-full rounded-lg border px-4 py-2.5 text-left text-sm transition-all ${
+                                className={`min-h-[44px] w-full rounded-lg border px-4 py-2.5 text-left text-sm transition-all ${
                                   klarad && arRatt
                                     ? "border-green-500 bg-green-50 font-semibold"
                                     : vald && !arRatt
@@ -305,21 +310,21 @@ export function KursSteg({ kurs }: { kurs: Kurs }) {
             <button
               onClick={() => { if (steg > 0) { setSteg(steg - 1); setVisaQuiz(false); window.scrollTo({top:0,behavior:"smooth"}); } }}
               disabled={steg === 0}
-              className="rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:bg-gold/5 disabled:opacity-30"
+              className="min-h-[44px] rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-gold/60 hover:bg-gold/5 disabled:opacity-30"
             >
               ← Föregående
             </button>
             {steg < total - 1 ? (
               <button
                 onClick={naasta}
-                className="rounded-xl bg-[#E8C766] px-8 py-3 text-sm font-bold text-[#081120] shadow-lg transition-all hover:opacity-90 hover:shadow-[#E8C766]/30"
+                className="min-h-[44px] rounded-xl bg-[#E8C766] px-8 py-3 text-sm font-bold text-[#081120] shadow-lg transition-all hover:opacity-90 hover:shadow-[#E8C766]/30"
               >
                 Nästa kapitel →
               </button>
             ) : (
               <Link
                 href="/kurser"
-                className="rounded-xl bg-[#E8C766] px-8 py-3 text-sm font-bold text-[#081120] shadow-lg transition-all hover:opacity-90 hover:shadow-[#E8C766]/30"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-[#E8C766] px-8 py-3 text-sm font-bold text-[#081120] shadow-lg transition-all hover:opacity-90 hover:shadow-[#E8C766]/30"
               >
                 🏆 Kursen klar! →
               </Link>

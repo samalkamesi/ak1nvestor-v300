@@ -1,0 +1,1098 @@
+{
+  "slug": "the-bogleheads-guide-to-investing",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 180,
+  "title": "The Bogleheads' Guide to Investing — Larimore, Lindauer & LeBoeuf: KOMPLETT",
+  "summary": "Taylor Larimore, Mel Lindauer och Michael LeBoeuf — tre pelare i communityt som växte fram ur Morningstars Vanguard Diehards-forum — publicerade 2006 (andra upplagan 2014, med förord av John Bogle själv) den praktiska handboken: allt Bogle och Ellis argumenterat för, omvandlat till en steg-för-steg-plan för privatpersonen med devisen get rich slowly. Kursen följer bokens faktiska spår: filosofins pelare (lev under dina tillgångar, tiden i marknaden, diversifiering), skuldfrihet före sparande, ränta-på-ränta-tabellen i SEK (tio år tidigt slår trettio år sent), den ärliga riskprofilen, livförsäkring och villkor — med svensk anpassning [illustrativt]: premiepension, tjänstepension och ISK i stället för 401k/IRA — indexfonder i praktiken med avgifts-minusräkningen i SEK (518 600 kronor på trettio år), asset allocation och åldersregeln, rebalansering som mekanik, beteendet i paniken 2008, varningarna för allt aktivt och alla säljare, pension och arv med svensk ARV-skillnad [illustrativt] — och kontroversen: Bogleheads-konformitet mot aktiv värld, med Swensen- och Buffett-undantagen och torchet-på-snön-problemet (kapitalviktade index köper mest av det dyraste), avslutad med AK1A:s syntes: index som baseline, AKM1-förståelse för satelliterna — och medgivandet att de flesta, inklusive fas 1-eleverna som vill ha välfärd, gör helt rätt i bokens råd: bara index-spara.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Differentiera syskonen: Bogle = manifestet (produkten och kostnadsaritmetiken), Ellis = professionen (diagnosen av det aktiva spelet), Bogleheads = HANDBOKEN (ordningen på besluten för privatpersonen — get rich slowly) · Filosofins pelare: lev under dina tillgångar (pay yourself first), tiden i marknaden i stället för tajming, diversifiering som enda gratislunchen · Räkna på skulden som negativ ränta-på-ränta: att betala av 20-procentig kreditkortsränta är en garanterad, skattefri avkastning ingen fond kan matcha · Fylla i ränta-på-ränta-tabellen i SEK: 100 000 kronor blir 1 497 400 kronor på fyrtio år vid 7 procent; 1 000 kronor i månaden från 25 till 35 slår samma belopp från 35 till 65 · Sätta din riskprofil ärligt: villighet, förmåga och behov — och 2008-testet (tål du minus 40 procent utan att sälja?) · Skilja försäkring från investering: buy term and invest the difference, buffert före risk · Översätta 401k/IRA till svenska förhållanden [illustrativt]: premiepension, tjänstepension och ISK — skattefavrade konton före dyr aktiv förvaltning · Köpa indexfonder i praktiken: undvika prestationsjakt, stilglidning och avgiftsfällor med avgifts-minusräkningen i SEK — 0,2 mot 1,5 procent avgift är 518 600 kronor på trettio år · Sätta asset allocation efter åldersregeln och rebalansera mekaniskt (kalender, band, nytt sparkapital) · Överleva beteendet: paniken 2008 och stay the course — strukturen, inte viljestyrkan, är skyddet · Känna igen varningarna: aktiemaklare, tips, strukturerade produkter och Las Vegas-kontot som skadesminskning · Planera pension och arv i svenska former [illustrativt]: tre ben, 4-procentsregeln, testamente och förmånstagarförordnanden · Argumentera båda sidor i kontroversen Bogleheads-konformitet mot aktiv värld — med Swensen-/Buffett-undantagen och torchet-på-snön-problemet — och formulera AK1A:s syntes: index som baseline, AKM1-satelliter med tes, medgivandet att de flesta ska bara index-spara.",
+  "why": "Bogle-kursen gav dig manifestet — produkten och kostnads-determinismen. Ellis-kursen gav dig professionen — diagnosen av varför det aktiva spelet är förlorat i förväg. Bogleheads-boken ger det ingen av de andra har: HANDBOKEN, den praktiska ordningen för en människa med lön, skuld, barn och kalender — skulden före fonden, bufferten före risken, kontot före produkten, allokeringen före valet av aktier, policyn före paniken. Det är den mest nybörjarvänliga av alla BOKMASTER-kurser och därför den viktigaste för fas 1: eleven som vill ha välfärd — inte jaga alfa — gör helt rätt i att följa boken rakt av, och kontroverskapitlet är ärligt nog att medge det. För AK1A:s aktiva analytiker är handboken baslinjen varje satellit mäts mot: den som inte kan göra det boken beskriver billigt och disciplinerat har inget företag att plocka aktier heller.",
+  "chapters_list": [
+    "1. Handboken — Bogle gav manifestet, Ellis professionen, Bogleheads HANDBOKEN",
+    "2. Filosofins pelare — lev under tillgångarna, tiden i marknaden, diversifiering",
+    "3. Skuldfria först — den sämsta investering du äger",
+    "4. Starta tidigt — ränta-på-ränta-tabellen i SEK",
+    "5. Din riskprofil — ärligt",
+    "6. Livförsäkring och villkor — buy term and invest the difference",
+    "7. Kontot före fonden — svensk anpassning: premiepension och ISK i stället för 401k/IRA [illustrativt]",
+    "8. Indexfonden i praktiken — fondväljandets fallgropar och avgifts-minusräkningen i SEK",
+    "9. Asset allocation — åldersregeln och portföljens största beslut",
+    "10. Rebalansering — mekaniken som köper lågt och säljer högt",
+    "11. Beteendet — paniken 2008 och stay the course",
+    "12. Varningarna — aktiemaklare, tips och allt aktivt",
+    "13. Pension och arv — målet, testamentet och svensk ARV-skillnad [illustrativt]",
+    "14. KONTROVEREN: Bogleheads-konformitet mot aktiv värld — torchen på snön",
+    "15. Sammanfattning — get rich slowly (V01–V20 + AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Handboken — Bogle gav manifestet, Ellis professionen, Bogleheads HANDBOKEN",
+      "intro": "The Bogleheads' Guide to Investing (2006, andra upplagan 2014) skrevs av Taylor Larimore, Mel Lindauer och Michael LeBoeuf — med förord av John Bogle själv. Författarna var centrala i communityt som började som Vanguard Diehards på Morningstars forum och blev bogleheads.org: tiotusentals privatpersoner som översatte Bogles budskap till praktik, dag för dag. Kursen börjar med vad boken ÄR — och vad den inte är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Taylor Larimore — i communityt kallad Diehards-dekanen — började som pensionerad tjänsteman som svarade på nybörjarfrågor om indexfonder, och blev med tiden en av finanshistoriens mest inflytelserika amatörer: hans trådar på Morningstar samlade en skara som Bogle själv engagerade sig i, och ur den skaran växte forumet, wikin och så småningom boken. Medförfattarna Mel Lindauer och Michael LeBoeuf bidrog samma grundingrediens: erfarenhet av att faktiskt guida vanliga människor genom räkenskaperna, inte genom teorin. Bokens förord är skrivet av Bogle, och dess ton är forumets ton — öppen, konkret, tålmodig med nybörjarfrågor och ovanligt tålmodig med smarta människors dumma beteenden. Det är den enda BOKMASTER-bok som skrivits av lärare som själva står i klassrummet varje dag."
+        },
+        {
+          "type": "text",
+          "content": "Tesens differentiering är kursens ryggrad. Bogle (Common Sense on Mutual Funds) skrev MANIFESTET — produkten, kostnads-determinismen, konsumentens räkneverk. Ellis (Winning the Loser's Game) skrev PROFESSIONEN — diagnosen av varför det aktiva institutionella spelet är strukturellt förlorat. Larimore, Lindauer och LeBoeuf skrev HANDBOKEN — och handbokens genialitet är inte något nytt argument utan ORDNINGEN: först lev under dina tillgångar, sedan betala av skulden, sedan bygga bufferten, sedan försäkra katastroferna, sedan fylla de skattefavrade kontona, sedan köpa breda billiga indexfonder, sedan sätta allokeringen efter ålder och risk, sedan rebalansera mekaniskt, sedan stå kursen — och skriva ner allt i en policy innan det behövs. Bokens devis är titeln på allt den gör: get rich slowly. Inte snabbt, inte klurigt, inte spännande — sakta och i rätt ordning."
+        },
+        {
+          "type": "text",
+          "content": "Kursen följer bokens faktiska spår kapitel för kapitel, med en systematisk svensk anpassning där boken talar amerikanska (401k, IRA och estate planning blir premiepension, ISK och svenska arvsregler — överallt markerat [illustrativt], för detta är en kurs i översättningsprinciper, inte skatteråd). Och AKM1-bryggan, som varje kapitel avslutas med i kursens V/AK1TS-rad: handboken är den enda BOKMASTER-kurs där huvudpersonen inte är aktievalet utan balansräkningen — hushållets motsvarighet till AKM1:s V10 skuldsättningsgrad och V19 kapitalförbränning: en hushållsbalansräkning utan konsumtionsskuld och utan brinnande kassa är precis vad en bolagsanalys menar med V10 trygg och V19 ren; och bokens hela metod — tid, aldrig tajming — är AK1TS Mega-horisonten översatt till ett liv. Fas 1-elevens väg börjar här; fas 2-elevens baseline definieras här."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera skillnaden innan du går vidare: manifestet övertygar, professionen förklarar — handboken ORDNINGAR. En filosofi blir en plan först när besluten har en sekvens: skuld före fond, buffert före risk, konto före produkt, policy före panik. Bogleheads-bokens bidrag till finanslitteraturen är ordningen själv."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre böcker, tre roller — indextrilogin komplett\",\"rader\":[[\"Dimension\",\"Bogle — Common Sense\",\"Ellis — Loser's Game\",\"Bogleheads — Guide\"],[\"Vad den är\",\"manifestet\",\"professionen\",\"HANDBOKEN\"],[\"Huvudperson\",\"produkten (indexfonden)\",\"spelet (proffs mot proffs)\",\"människan (lön, skuld, kalender)\"],[\"Kärnbevis\",\"kostnads-determinismen\",\"förlorarspelets struktur\",\"ordningen på besluten\"],[\"Röst\",\"konsumentens advokat\",\"branschens läkare\",\"läraren i klassrummet\"],[\"Löfte\",\"billig marknadsavkastning\",\"sluta spela fel spel\",\"get rich slowly\"],[\"AK1A-koppling\",\"avgiften = enda säkra variabeln\",\"index = baseline\",\"V10 + V19 + AK1TS Mega = fas 1:s hela plan\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Placera dig själv i handbokens ordning innan den lär dig den: skriv ner de sex stationerna — (1) lever jag under mina tillgångar? (2) har jag konsumtionsskuld? (3) har jag en buffert på tre till sex månaders utgifter? (4) är katastroferna försäkrade? (5) fyller jag skattefavrade konton före övriga? (6) har jag en skriven allokering och policy? — och ringa in den första station där svaret är nej. Det är där boken börjar för DIG, oavsett vilket kapitel det är. Behåll listan: sista kapitlets slutprojekt fyller den med siffror."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Bogleheads-bokens distinkta bidrag jämfört med Bogle och Ellis?",
+          "alternativ": [
+            "Ett nytt bevis för att aktiv förvaltning förlorar",
+            "En ny prisningsmodell för aktier",
+            "HANDBOKEN — den praktiska ordningen på besluten för privatpersonen: skuld före fond, buffert före risk, policy före panik",
+            "En teori om marknadstajming"
+          ],
+          "ratt": 2,
+          "tips": "Manifestet övertygar, professionen förklarar — vad gör en handbok?"
+        },
+        {
+          "q": "Vad betyder devisen get rich slowly i bokens sammanhang?",
+          "alternativ": [
+            "Att rikedom kommer långsamt av sig själv utan sparande",
+            "Att man blir rik genom att hitta okända småbolag innan andra",
+            "Att man ska låna för att investera tidigare",
+            "Att metoden är enkel och långsiktig — lev under tillgångarna, köp billigt brett index, rebalansera, stå kursen — i stället för snabba klipp"
+          ],
+          "ratt": 3,
+          "tips": "Ordet slowly pekar på metoden, inte på tur — vad är det som tar tid?"
+        },
+        {
+          "q": "Vilken är den svenska anpassningens huvudprincip i kursen [illustrativt]?",
+          "alternativ": [
+            "Att svenska aktier alltid är billigare än amerikanska",
+            "Att översätta de amerikanska verktygen till svenska motsvarigheter — premiepension, tjänstepension och ISK i stället för 401k och IRA — inte kopiera dem rakt av",
+            "Att svenska regler gör indexfonder onödiga",
+            "Att man ska undvika all sparande i Sverige"
+          ],
+          "ratt": 1,
+          "tips": "Boken talar amerikanska — vad måste en svensk läsare översätta först?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Filosofins pelare — lev under tillgångarna, tiden i marknaden, diversifiering",
+      "intro": "Boken börjar inte med fonder utan med filosofin — tre pelare som allt senare vilar på. Kapitlet går igenom dem i bokens ordning: betala först dig själv, låt tiden i marknaden göra jobbet i stället för tajming, och diversifiera eftersom framtiden är okänd. Ingen av pelarna kräver att du har rätt om något.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pelare ett: lev under dina tillgångar — bokens första och minst glamourösa råd. Formeln är gammaldags: förmögenhet är inte vad du tjänar utan vad du behåller, och skillnaden mellan inkomst och utgift är den enda källan till investeringskapital som inte kräver rätt tajming. Bokens operativa trick är pay yourself first: automatisk överföring till sparkontot samma dag lönen kommer — sparandet sker innan konsumtionen hinner röra pengarna, inte efter. Det psykologiska vändet är underskattat: den som sparar automatiskt upplever inte sparandet som uppoffring utan som frånvaro av val. Tidigt i livet spelar sparkvoten dessutom större roll än avkastningen: de första åren byggs kapital genom insättning, inte genom ränta — därför står pelare ett först i boken, före allt om fonder."
+        },
+        {
+          "type": "text",
+          "content": "Pelare två: tiden i marknaden slår tajmingen av marknaden. Bokens argument är Ellis-kursens diagnos i praktisk tappning: den som väntar på rätt ögonblick missar deltagandet, och börsens bästa dagar kommer i klungor precis vid de tillfällen då den som väntar står utanför — tajming är inte bara svårt, det är beteendemässigt omöjligt för den som också är människa. Pelare tre: diversifiering — av Harry Markowitz kallad investerarens enda gratislunch: bred global exponering i aktier och obligationer sprider den enskilda bolagets, sektorns och landets risk bortom vad enskilda aktieval kan gottgöra. Bokens översättning är totalmarknadsindexfonden: äga allt, billigt, i stället för att gissa vad som ska bära. De tre pelarna binds samman av enkelhet — ju fler beslut en plan kräver, desto fler tillfällen att överge den."
+        },
+        {
+          "type": "text",
+          "content": "Pelarnas gemensamma signatur är att ingen kräver förutsägelse: sparkvoten styr du själv, tiden är mekanik inte prognos, bredden ersätter plockande. Det är också bryggan till kursens V/AK1TS-rad: hushållsbudgeten är V10-logik — skuldsättningsgraden avgör om livet tål en chock — och den som inte bränner kassa har hushållets V19-renhet: ingen kapitalförbränning, ingen utspädning av framtiden; AK1TS-systemets Långa och Mega-horisont är pelare två institutionaliserad: varje krona med tioårig kalender gör tiden till förbundsförvant istället för fiende. Fas 1-eleven kan stanna vid pelarna och ändå lyckas; fas 2-eleven måste kunna dem för att hans satelliter överhuvudtaget ska vara mätbara avvikelser."
+        },
+        {
+          "type": "insikt",
+          "content": "Alla tre pelarna har samma egenskap: de kräver att du har rätt om INGET. Sparkvoten är din, tiden är mekanik, bredden är matematik. Ju färre profetior en plan innehåller, desto fler år överlever den — det är handbokens första lag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Filosofins tre pelare — mekanism och översättning\",\"rader\":[[\"Pelare\",\"Mekanism\",\"Operativ översättning\",\"AK1A-koppling\"],[\"Lev under tillgångarna\",\"inkomst minus utgift = allt investeringskapital\",\"pay yourself first — automatiskt samma dag lönen kommer\",\"V10-logik: skuldfri balansräkning tål chocker\"],[\"Tiden i marknaden\",\"avkastning kräver deltagande; tajming missar de bästa dagarna\",\"automatiskt månadsparande, aldrig paus i panik\",\"AK1TS Lång/Mega — kalendern gör tiden till förbundsförvant\"],[\"Diversifiering\",\"bred exponering tar bort enskilda risker\",\"totalmarknadsindex: global aktie + ränta\",\"V12-stabilitet i portföljformat; ingen enskild bolagsrisk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din sparkvot nu: (nettoinkomst minus utgifter) delat med nettoinkomst, per månad — och skriv ner vilken del av den som sker AUTOMATISKT (överföring samma dag lönen kommer) respektive efteråt (det som blir kvar). Om sparkvoten är noll är bokens första kapitel skrivet för dig — och om automatgraden är noll är nästa steg inte mer kunskap utan en stående överföring på måndag."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför börjar boken med lev under dina tillgångar — före allt om fonder?",
+          "alternativ": [
+            "Därför att fonder är farliga",
+            "Därför att sparkvoten är den enda källan till investeringskapital som inte kräver rätt tajming — och tidigt i livet spelar den större roll än avkastningen",
+            "Därför att boken är skriven för fattiga",
+            "Därför att börsen är stängd vissa dagar"
+          ],
+          "ratt": 1,
+          "tips": "Vad är det enda i ekvationen du helt kontrollerar själv?"
+        },
+        {
+          "q": "Vad menas med pay yourself first?",
+          "alternativ": [
+            "Att unna sig något dyrt varje månad",
+            "Att betala räkningar först och spara det som blir kvar",
+            "Att automatiskt överföra till sparandet samma dag lönen kommer — innan konsumtionen hinner röra pengarna",
+            "Att ta ut pensionen i förtid"
+          ],
+          "ratt": 2,
+          "tips": "Nyckeln är automatiseringens tidpunkt — före eller efter konsumtionen?"
+        },
+        {
+          "q": "Vad är gemensamt för filosofins tre pelare?",
+          "alternativ": [
+            "De kräver att du har rätt om framtiden",
+            "De kräver att du har rätt om ingenting — sparkvot, tid och bredd ersätter profetior",
+            "De fungerar bara i USA",
+            "De förutsätter aktiv aktieanalys"
+          ],
+          "ratt": 1,
+          "tips": "Räkna profetiorna i varje pelare — hur många hittar du?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Skuldfria först — den sämsta investering du äger",
+      "intro": "Innan boken säger ett ord om aktier stoppar den läsaren vid skulden: högrentad konsumtionsskuld är den sämsta investering du äger — och att betala av den är den bästa placering du kan göra. Kapitlet går igenom skuldens aritmetik, ordningen skuld-buffert-sparande — och var bolånet skiljer sig.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Boken vänder räknesnurran upp och ned av ett skäl: att betala av en skuld på tjugo procents ränta [illustrativt: effektiv ränta på kreditkort och kontokrediter i Sverige ligger ofta kring femton till tjugofem procent] är en GARANTERAD och SKATTEFRI avkastning på tjugo procent — inget fondutbud, ingen aktieanalys och ingen förvaltare kan ens LOVA den siffran, och här får du den utan risk. 72-regeln gör mekanismen synlig: vid tjugo procents ränta fördubblas skulden av sig själv på cirka tre och ett halvt år (72 delat med 20) — ränta-på-räntan arbetar NU mot dig, med samma kraft den i nästa kapitel arbetar för dig. Bokens slutsats är därför radikal i sin enkelhet: konsumtionsskulden är inte ett problem att HANTERA bredvid sparandet — den är själva första sparandet. Den som har kreditkortsskuld och köper fonder har en kort position i sin egen aritmetik."
+        },
+        {
+          "type": "text",
+          "content": "Ordningen — bokens sekvens: ett, betala av högrentad konsumtionsskuld (allt annat är en sämre placering). Två, bygg bufferten: tre till sex månaders utgifter på sparkonto — syftet är inte avkastning utan att en trasig bil, en sjukperiod eller ett uppsagt jobb aldrig Tvingar dig att sälja aktier i en nedgång (bufferten är stay the courses första livförsäkring). Tre, först därefter börja det långsiktiga sparandet. Bolånet är en kategori för sig: säkerställt, förhandlingsbart och med ränta långt under konsumtionskrediten — boken skiljer principiellt på bostadsskuld och förbrukningsskuld; den högsta räntan går först, alltid. Amerikanska studentlåns särlogik översätts i Sverige till CSN:s inkomstrelaterade återbetalning [illustrativt] — låg ränta, mjuka villkor, sällan först i kön."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-bryggan är här nästan oroväckande exakt: V10 skuldsättningsgrad är i bolagsvärlden den variabel som skiljer de som överlever kriser från de som inte gör det — och hushållet är en balansräkning som vilken annan; skillnaden mellan sjutton och noll procents räntekänslighet är skillnaden mellan att sova och att vakna klockan fyra. V19 kapitalförbränning är hushållets motsvarighet till bolag som bränner kassa utan plan: ett hem med negativ månadsström och ingen buffert emitterar i praktiken nya skulder varje månad — utspädning av framtiden i hushållsformat. AK1TS-bryggan: skuld förkortar din tidshorisont TVINGAT — den som måste betala i morgon kan inte tänka i decennier; skuldfriheten är det som ger dig AK1TS Mega-horisonten som val."
+        },
+        {
+          "type": "insikt",
+          "content": "Invertera synen på skuld en gång för alla: högrentad skuld är inte en bunden post i budgeten — den är en kort position i din egen balansräkning, och amorteringen är täckningen. Frågan är aldrig vad du kan tjäna på börsen medan du bär den, utan varför du skulle spekulera med lånade tjugo procent i handen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skuldernas prioriteringsordning — högsta räntan först\",\"rader\":[[\"Skuld\",\"Typisk ränta [illustrativt]\",\"Karaktär\",\"Prioritet\"],[\"Kreditkort/kontokredit\",\"15–25 % effektiv\",\"förbrukningsskuld — den sämsta investering du äger\",\"1 — amortera som första sparande\"],[\"Privatlån/blancolån\",\"7–15 %\",\"förbrukningsskuld utan säkerhet\",\"2 — före allt sparande\"],[\"Bolån\",\"rånteläge, förhandlingsbart\",\"bostadsskuld, säkerställd\",\"3 — avvägt med sparande efter buffert\"],[\"CSN-studieskuld\",\"låg, inkomstbunden återbetalning\",\"mjuk skuld\",\"4 — sällan först i kön\"],[\"Buffert (ej skuld)\",\"3–6 månaders utgifter\",\"stay the courses livförsäkring\",\"byggs parallellt med amortering, före risk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör din skuldstack: lista alla lån med ränta och saldo, sortera fallande efter ränta. Räkna per lån ut den garanterade, skattefria avkastning som amorteringen ger (= räntan). Skriv sedan ner hur många månaders utgifter din nuvarande buffert täcker. Om den garanterade avkastningen på ditt dyraste lån överstiger den förväntade realavkastningen på din riskportfölj — vilket den nästan alltid gör — har du formuleringen på din nästa månad: betala lån, fyll buffert, sedan börsen."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallas högrentad konsumtionsskuld den sämsta investering du äger?",
+          "alternativ": [
+            "Därför att den kan sägas upp när som helst",
+            "Därför att den betalas i efterskott",
+            "Därför att amortering ger en garanterad, skattefri avkastning exakt lika med räntan — en siffra ingen fond ens kan lova",
+            "Därför att den syns i kreditupplysningen"
+          ],
+          "ratt": 2,
+          "tips": "Vad är den enda avkastningen i finans som är både garanterad och skattefri?"
+        },
+        {
+          "q": "Vad säger 72-regeln om en skuld på tjugo procents ränta?",
+          "alternativ": [
+            "Att den ska amorteras på 72 månader",
+            "Att den fördubblas av sig själv på cirka tre och ett halvt år",
+            "Att räntan sjunker med 72 procent",
+            "Att 72 procent av skulden är avgifter"
+          ],
+          "ratt": 1,
+          "tips": "72 delat med ränteprocenten ger fördubblingstiden — åt vilket håll arbetar räntan här?"
+        },
+        {
+          "q": "Vad är syftet med bufferten på tre till sex månaders utgifter?",
+          "alternativ": [
+            "Att maximera avkastningen på sparkapitalet",
+            "Att kunna ta chanser på börsen med säker marginal",
+            "Att ersätta livförsäkringen",
+            "Att en oförutsedd utgift aldrig tvingar dig att sälja aktier i en nedgång — bufferten är stay the courses första livförsäkring"
+          ],
+          "ratt": 3,
+          "tips": "Vad skyddar bufferten emot — avkastningens brist eller timingens tvång?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Starta tidigt — ränta-på-ränta-tabellen i SEK",
+      "intro": "Bokens mest sedda kapitel för en anledning: ränta-på-ränta-tabellerna. Kursen räknar dem i svenska kronor och nominell avkastning på sju procent [illustrativt: historisk global aktiemarknad före avgifter, ingen prognos] — och visar bokens klassiska poäng: tiden, inte beloppet, är den starkaste variabeln — och tio år tidigt slår trettio år sent.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tabell ett — engångsbeloppet. Hundra tusen kronor som får ligga kvar vid sju procent nominell avkastning [illustrativt] växer till cirka 196 700 kronor på tio år, 387 000 på tjugo, 761 200 på trettio — och 1 497 400 kronor på fyrtio år: nästan en femtondubbling utan en enda krona tillagd. Läs kurvans form: de sista tio åren (736 200 kronor i ökning) skapar mer än de första trettio tillsammans. Det är ränta-på-räntans viktigaste och mest motintuitiva egenskap: tillväxten är inte linjär utan accelererande — exponenten gör det sista decenniet till det viktigaste, vilket betyder att den som avbryter i förtid inte förlorar de svagaste åren utan de starkaste. Charlie Munger, citerad i bokens anda: den första regeln vid ränta-på-ränta är att aldrig onödigt avbryta den."
+        },
+        {
+          "type": "text",
+          "content": "Tabell två — Lisa och Kalle, bokens klassiska illustration i svensk tappning. Lisa sparar 1 000 kronor i månaden från 25 till 35 — tio år, 120 000 kronor insatta — och slutar sedan helt. Kalle väntar tills han är 35 och sparar sedan samma 1 000 kronor i månaden i trettio raka år — 360 000 kronor insatta, tre gånger mer. Vid 65: Lisa cirka 1 317 600 kronor, Kalle cirka 1 220 000 kronor. Lisa slutar RIKARE med en tredjedel av insatserna — hennes tidiga kronor har fått trettio år att arbeta medan Kalles sent anlända bara trettio års arbete startat sent: väntetiden är den avgörande insatsen, inte beloppet. Samma tabells baksida är väntekostnaden: att börja vid 35 i stället för 25 med 1 000 kronor i månaden kostar i slutvärde vid 65 (2 624 800 mot 1 220 000 kronor vid oförändrad avkastning) — mer än en halvering. Bokens slutsats är inte skuld utan brådska: tidigare är bättre, och näst bästa tid är nu."
+        },
+        {
+          "type": "text",
+          "content": "Vad kräver ränta-på-räntan för att fungera? Tre saker, och alla är senare kapitel: tid (så börja i dag), avkastning netto (så jaga inte avkastning med avgifter och skatter som äter den — kapitel 8) och framför allt INGA AVBROTT (så konstruera beteendet så att du inte säljer i den första svackan — kapitel 11). Ränta-på-räntan är motorn; resten av boken handlar om att hålla motorn igång. AKM1-brygga: bolagsvärldens motsvarighet är V20 återköp och utdelning som får arbeta orörda i compounding-maskiner — med V09 ROE som motor och V10-låg belåning som bränsledisciplin; V19 varnar för bolag som avbryter sin egen compounding genom emissioner — utspädning är ränta-på-räntan baklänges; och AK1TS-bryggan är total: en fyrtioårsplan är per definition en Mega-horisont — Lisa och Kalle är en AK1TS-illustration, kalendern är variabeln."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera kurvans form, inte siffrorna: ränta-på-räntan accelererar — de sista åren gör mest. Därför är de två dyraste felen i privat ekonomi att börja sent (förlorade exponentår i början) och avbryta i panik (förlorade exponentår i slutet). Båda felen är beteendefel, inte matematiska."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Ränta-på-ränta i SEK — två tabeller vid 7 % nominell avkastning [illustrativt]\",\"rader\":[[\"Tabell 1: engångsbelopp 100 000 kr\",\"värde\",\"multipel\",\"notering\"],[\"10 år\",\"196 700 kr\",\"2,0x\",\"första fördubblingen\"],[\"20 år\",\"387 000 kr\",\"3,9x\",\"räntan börjar överträffa kapitalet\"],[\"30 år\",\"761 200 kr\",\"7,6x\",\"—\"],[\"40 år\",\"1 497 400 kr\",\"15,0x\",\"de sista 10 åren skapar 736 200 kr — mer än de första 30 tillsammans\"],[\"Tabell 2: 1 000 kr/månad\",\"insatt kapital\",\"värde vid 65 [illustrativt]\",\"notering\"],[\"Lisa 25–35 (10 år), sedan passiv\",\"120 000 kr\",\"cirka 1 317 600 kr\",\"slutar rikare\"],[\"Kalle 35–65 (30 år)\",\"360 000 kr\",\"cirka 1 220 000 kr\",\"trots tre gånger större insats\"],[\"Oavbrutet 25–65 (40 år)\",\"480 000 kr\",\"cirka 2 624 800 kr\",\"väntekostnad 10 år: mer än halverat slutvärde\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ditt eget Lisa-och-Kalle-tal: nuvarande månadsparande, år kvar till 65, antagen nominell avkastning på 5–7 procent [illustrativt, ingen prognos]. Räkna sedan om med månadsbeloppet plus 500 kronor. Notera skillnaden i slutvärde — och notera den andra skillnaden: vad samma 500 kronor i månaden kostar i avstånden konsumtion i dag. Skriv ner båda siffrorna; den första är motorn, den andra är priset — när priset känns litet mot motorn har du hittat din sparkvotsnivå."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är ränta-på-räntans tillväxt accelererande snarare än linjär?",
+          "alternativ": [
+            "Därför att räntan stiger varje år",
+            "Därför att avkastningen beräknas på ett växande belopp — de sista åren arbetar på den största basen och skapar mest",
+            "Därför att inflationen ökar",
+            "Därför att banker bonusar långsiktiga kunder"
+          ],
+          "ratt": 1,
+          "tips": "Vad räknas avkastningen på år trettiofem — den ursprungliga insatsen eller hela det vuxna kapitalet?"
+        },
+        {
+          "q": "Vad visar Lisa-och-Kalle-exemplet?",
+          "alternativ": [
+            "Att kvinnor i genomsnitt sparar bättre än män",
+            "Att stora månatliga belopp alltid slår små",
+            "Att tio års tidigt sparande (120 000 kr insatta) slutar rikare än trettio års sent (360 000 kr insatta) — tiden är den avgörande insatsen",
+            "Att man ska sluta spara vid 35"
+          ],
+          "ratt": 2,
+          "tips": "Räkna insatt kapital mot slutvärde — vems kronor arbetade längst?"
+        },
+        {
+          "q": "Vad är den praktiska konsekvensen av att avbryta ränta-på-räntan i förtid?",
+          "alternativ": [
+            "Ingen — man kan alltid börja om med samma resultat",
+            "Man sparar bara avgifter",
+            "Man förlorar de svagaste åren, vilket är en fördel",
+            "Man förlorar de starkaste åren — de sista decenniernas accelererande tillväxt — vilket är anledningen till att boken ägnar ett helt kapitel åt beteendet"
+          ],
+          "ratt": 3,
+          "tips": "Om de sista tio åren skapar mest värde, vilka år tar den som säljer i panik på år tjugo ifrån sig?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Din riskprofil — ärligt",
+      "intro": "Bokens princip lyder: bära aldrig för mycket risk och aldrig för lite. Kapitlet skiljer på riskens tre ansikten — villighet, förmåga och behov — och ger det ärligaste testet av alla: 2008-testet. Målet är inte en siffra från ett formulär utan en allokering du kan hålla genom en halvering.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Riskens tre ansikten. VILLIGHET är psykologi: hur djup nedgång tål du innan du säljer — inte tror att du tål, utan faktiskt tål. FÖRMÅGA är ekonomi: tidshorisont och inkomstens stabilitet avgör hur länge du kan vänta ut en krasch utan att behöva sälja — kapital som behövs nästa år ska inte bära aktierisk alls. BEHOV är målmatematik: vilken avkastning kräver ditt mål — och här kommer bokens vändning, lik Ellis: den som inte kan nå målet med aktiers historiska avkastning [illustrativt] löser det inte med MER risk utan med MER sparande; spekulation är inte ett sparkvotsersättning. Den rätta risknivån ligger där de tre ansiktena möts — och den som aldrig mäter dem får sin risknivå utsatt av marknaden, vid värsta tänkbara tillfälle."
+        },
+        {
+          "type": "text",
+          "content": "2008-testet — det ärliga provet. Under finanskrisen föll S&P 500 med cirka 37 procent under år 2008, och Stockholmsbörsen föll från höstens topp 2007 till botten i mars 2009 med omkring hälften [illustrativt]. Frågan är inte hypotetisk: om din portfölj i morgon föll fyrtio procent — fyra av tio sparade kronor borta på papperet — vad gör du? Den som säljer har inte en riskprofil i 60/40 — den har en riskprofil som tål trettio procent, och allokeringen ska säga det. Bokens råd är att räkna BAKLÄNGES från sitt eget värsta: sätt aktieandelen så att den värsta historiska nedgången du kan tänka dig [illustrativt: globala aktier har historiskt fallit hälften eller mer vid flera tillfällen] fortfarande är en portfölj du behåller. För lite risk har dessutom ett pris som syns först decennier senare: målet missas — riktig risk är målmissen, inte svängningen (Ellis-kursens arv, här i handboksform)."
+        },
+        {
+          "type": "text",
+          "content": "Riskprofilens verktyg är allokeringen — kapitel 9 översätter profilen till aktie/obligation-fördelning, och rebalanseringen (kapitel 10) håller profilen ärlig när marknaden försöker förändra den åt dig. AKM1-brygga: V10 skuldsättningsgrad är riskens hävstång i bolagsvärlden — samma belåning som fördubblar uppgången fördubblar fallgropen, i hushållet som i bolaget; V19 varnar för den risk som aldrig syns i en nedgångssimulering: kapitalförbränning och emissioner gör att vissa bolag aldrig kommer tillbaka — deras fall är permanenta, inte svängningar; AK1TS-bryggan är den rent mekaniska: horisonten bestämmer riskförmågan — kapital på Mega-horisont tål svängningar som pensionärens nästa års boende aldrig tål, och samma människa kan alltså bära olika risk per krona: mät per horisont, inte per person."
+        },
+        {
+          "type": "insikt",
+          "content": "Formulärfrågan hur mycket risk är du villig att ta mäter självbild; marknadsfrågan vad gör du när portföljen fallit fyrtio procent mäter beteende. Sätt allokeringen efter det andra svaret — om du inte känner svaret, anta det värsta om dig själv och bygg därifrån: det är billigare att ångra en för försiktig portfölj än att sälja en för modig i botten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Riskens tre ansikten — frågor, källor och konsekvenser\",\"rader\":[[\"Ansikte\",\"Källa\",\"Fråga att besvara\",\"Fel att bara lyssna på det\"],[\"Villighet\",\"psykologi\",\"vad gör jag när portföljen fallit 40 %?\",\"säljer i botten när modet tar slut\"],[\"Förmåga\",\"ekonomi och horisont\",\"när behövs kapitalet — och hur stabil är inkomsten?\",\"tar aktierisk med pengar som behövs i nästa nedgång\"],[\"Behov\",\"målmatematik\",\"vilken avkastning kräver målet?\",\"ersätter otillräcklig sparkvot med spekulation — rätt svar är mer sparande\"],[\"Syntes\",\"alla tre\",\"aktieandel där värsta fallet är en portfölj jag behåller\",\"— utgångspunkten för kapitel 9:s allokering\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din siffra i kronor, inte i procent: hur många kronor får din portfölj falla innan du med säkerhet skulle sälja? Räkna sedan ut vilken aktieandel som motsvarar det fallet om aktier halveras och räntor står stilla [illustrativt: aktieandel = ditt tolererade portföljfall delat med 0,5]. Jämför med din faktiska aktieandel i dag. Om din faktiska andel överstiger den tåliga har du en beteendebomb, inte en portfölj — och om den understiger: räkna på vad målet kostar i förlorad tillväxt. Skriv ner båda siffrorna till kapitel 9."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket är skillnaden mellan riskvillighet och riskförmåga?",
+          "alternativ": [
+            "Ingen — båda mäter samma sak",
+            "Villighet är psykologi (hur djupt fall tål du), förmåga är ekonomi (horisont och inkomststabilitet — hur länge kan du vänta ut det)",
+            "Villighet gäller bara unga",
+            "Förmåga handlar om tur"
+          ],
+          "ratt": 1,
+          "tips": "Den ena bor i magen, den andra i kalendern och lönekontot."
+        },
+        {
+          "q": "Vad är bokens svar när målet inte kan nås med aktiers historiska avkastning?",
+          "alternativ": [
+            "Ta mer risk med derivat",
+            "Öka belåningen",
+            "Byt till hedgefonder",
+            "Lös det med MER sparande — spekulation är inte ett sparkvotsersättning"
+          ],
+          "ratt": 3,
+          "tips": "Vilken variabel i ekvationen kan du styra helt själv?"
+        },
+        {
+          "q": "Vad är 2008-testets funktion?",
+          "alternativ": [
+            "Att testa om 2008 kan upprepas exakt",
+            "Att beräkna portföljens beta",
+            "Att sätta allokeringen efter vad du faktiskt gör vid ett fyrtioprocentigt fall — inte vad ett formulär säger att du tål",
+            "Att avgöra när man ska sälja"
+          ],
+          "ratt": 2,
+          "tips": "Självbild eller beteende — vilket svar ska portföljen byggas på?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Livförsäkring och villkor — buy term and invest the difference",
+      "intro": "Boken är tydlig: försäkring är inte investering — den skyddar balansräkningen så att investeringen får leva. Kapitlet går igenom principen (försäkra katastrofer, självförsäkra det små), termlivförsäkringens logik och varningen för produkter som blandar skydd och sparande — plus de övriga skydden boken insisterar på.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Principen först: försäkra det du inte har råd att förlora, självförsäkra det du har råd att bära. Katastrofen i ett hushåll är att inkomstbäraren försvinner — därför är termlivförsäkring (risklivförsäkring) rätt verktyg OM någon är ekonomiskt beroende av din inkomst: barn, partner, lån som inte täcks av tillgångar. Behovet är inkomstbytesmatematik: årslön gånger antal år beroendet varar, avtrappat för att tillgångar och övriga skydd täcker delar — inte en känsla av trygghet utan en beräknad siffra med slutdatum: när barnen är självförsörjande och kapitalet vuxit är behovet noll och policyn upphör. Klassikern boken ansluter till är buy term and invest the difference: termförsäkring är ren skyddspremie utan sparande — prissatt per risk, inte per förmån — och mellanskillnaden mot en dyr blandprodukt är precis det som ska in i indexfonden i kapitel 8. Den som inte har beroenden behöver ingen livförsäkring alls — skydd som inte skyddar någon är bara kostnad."
+        },
+        {
+          "type": "text",
+          "content": "De andra skydden — boken går igenom dem i tur och ordning. Inkomstförsäkring och sjukpenning: din främsta tillgång de första decennierna är inte portföljen utan arbetsförmågan — förmågan att tjäna inkomst är den tillgång som ska försäkras, och i Sverige täcker den allmänna sjukförsäkringen en del medan privat eller via arbetsgivare [illustrativt] fyller gapet upp mot 75–90 procent av inkomsten. Bufferten från kapitel 3 är egentligen också försäkring — den självförsäkrade katastrofformen. Och varningarna: blandprodukter där premien delvis placeras i fonder med avgifter ovanpå avgifter, kapitalförsäkringar med höga avgifter säljda som sparande, och hela kategorin komplexa, rådgivardrivna produkter där kostnaden är osynlig just för att den är inbakad — samma mekanism som kapitel 12 listar. Håll isär: skydd köps billigt och rent, sparande köps som brett billigt index — produkten som lovar båda är sällan bra på någon."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga: försäkringens V-logik är densamma som bolagsvärldens — V10-låg skuldsättning gör katastrofer överlevbara, och det är precis vad en termpolicy gör för hushållet: den kapar svansrisken så att compoundingen från kapitel 4 inte behöver avbrytas av en tragedi; V19-logiken: hushållet utan skydd som drabbas tvingas till nödförsäljning — kapitalförbränning med mänsklig orsak; AK1TS-brygga: försäkringarnas hela syfte är att skydda Mega-horisonten — att ge varje kronas tioårsplan immunitet mot det året då livet slår. Svensk anpassning [illustrativt]: i Sverige finns kollektivavtalade grupplivförsäkringar via arbetsgivare ofta redan — räkna FÖRST med det som finns, köp bara luckan som saknas."
+        },
+        {
+          "type": "insikt",
+          "content": "Försäkring köper du med slutdatum och beräknat belopp — inte för livet och inte för trygghetskänslan. En bra policy kostar som ren skyddspremie och upphör samma år som beroendet. Blandprodukternas avgift är skatten på att vilja ha både skydd och avkastning i samma kuvert."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skyddshierarkin — vad, varför, var [illustrativt]\",\"rader\":[[\"Skydd\",\"Vad det skyddar mot\",\"Form\",\"AK1A-koppling\"],[\"Termliv (riskliv)\",\"inkomstbärarens död\",\"ren skyddspremie med slutdatum — buy term, invest the difference\",\"V10-logik: kapar svansrisken\"],[\"Inkomstförsäkring/sjukpenning\",\"arbetsförmågans bortfall\",\"den främsta tillgången de första decennierna är inkomsten\",\"V19-logik: skyddar mot tvungen kapitalförbränning\"],[\"Buffert 3–6 mån\",\"oförutsedda utgifter och arbetslöshet\",\"självförsäkring — stay the courses första livlina\",\"V11-likviditet i hushållsformat\"],[\"Gruppliv via arbete\",\"dödsfall (grundskydd)\",\"kollektivavtalat i Sverige [illustrativt] — räkna först med det som finns\",\"— köp bara gapet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ditt skyddsgap: vem är ekonomiskt beroende av din inkomst och hur många år till? Beräkna behovet som årslön gånger år, minus befintliga grupplivförsäkringar via arbetsgivare och befintligt kapital [illustrativt]. Skriv ner beloppet och slutåret. Kontrollera sedan vad du betalar i dag för försäkring med sparande inslag — om du har en sådan, räkna ut ren skyddskostnad för motsvarande termpolicy: skillnaden är kapitel 8:s månadsinsättning som redan finns i din budget."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär principen buy term and invest the difference?",
+          "alternativ": [
+            "Att man ska köpa så många försäkringar som möjligt",
+            "Att köpa ren term/risklivförsäkring till låg premie — och placera mellanskillnaden mot dyrare blandprodukter i långsiktigt sparande",
+            "Att försäkring och sparande ska köpas i samma produkt",
+            "Att man investerar i försäkringsbolagens aktier"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar rent skydd — och vart ska pengarna som den dyrare produkten tar i avgift ta vägen istället?"
+        },
+        {
+          "q": "Vem behöver enligt boken termlivförsäkring?",
+          "alternativ": [
+            "Alla vuxna alltid",
+            "Bara pensionärer",
+            "Den som har någon ekonomiskt beroende av sin inkomst — behovet beräknas och har ett slutdatum",
+            "Bara bolagsägare"
+          ],
+          "ratt": 2,
+          "tips": "Vad är det som försäkras — en känsla eller en beräknad inkomstström med slutår?"
+        },
+        {
+          "q": "Varför varnar boken för produkter som blandar försäkring och sparande?",
+          "alternativ": [
+            "Därför att de är olagliga",
+            "Därför att avkastningen alltid är negativ",
+            "Därför att avgifterna är inbakade och osynliga — skyddet blir dyrare och sparandet sämre än om de köpts var för sig",
+            "Därför att de inte kan kombineras med ISK"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med priset när två funktioner ska säljas i ett och samma kuvert?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Kontot före fonden — svensk anpassning: premiepension och ISK i stället för 401k/IRA [illustrativt]",
+      "intro": "Bokens amerikanska lager handlar 401k och IRA: fyll de skattefavrade kontona först — arbetsgivarens matchning är gratis pengar. Kapitlet översätter hela logiken till svenska förhållanden [illustrativt]: premiepension, tjänstepension och ISK — samma princip, andra verktyg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens ordning i amerikansk originalversion: ett — ta ARBETSGIVARENS MATCHNING i 401k-planen i sin helhet först: varje krona arbetsgivaren lägger till ditt pensionssparande är en omedelbar, riskfri avkastning som ingen fond kan matcha (vanligt 50–100 procent av dina insättningar upp till en nivå). Två — fyll sedan de egna skattefavrade rummen (IRA) där avkastningen får växa uppskjuten. Tre — först därefter obeskattat konto. Principen att lyfta ur amerikansk formulering: SKATTEFÖRDELEN FÖRE FÖRVALTNINGEN — innan du ens väljer fond ska kronan ha det bästa skalet runt sig, för skalet är gratis och förvaltaren tar betalt. Amerikanskt detaljregelverk (Roth mot traditionell, bidragsbegränsningar) översätts inte — principen gör det."
+        },
+        {
+          "type": "text",
+          "content": "Svensk översättning [illustrativt — kontrollera alltid aktuella regler]: matchningens svenska motsvarighet är TJÄNSTEPENSIONEN — avtalspensionen (ITP för tjänstemän, SAF-LO för arbetare) som arbetsgivaren betalar in utan att du gör något: se till att den inte ligger i dyra traditionella försäkringar med garantipremier utan i fondförsäkring med billigt index [illustrativt: traditionella alternativ kan kosta 0,5–1 procent, index under 0,3]. Premiepensionen — 2,5 procent av pensionsunderlaget som du själv väljer fonder inom (PPM) — är den svenska motsvarigheten till det egna skattefavrade rummet: välj breda lågavgiftsfonder eller stanna i förvaltningsalternativet AP7 Såfa, en billig livscykelindexfond [illustrativt: avgift i storleksordningen 0,1 procent]; avgifterna i PPM:s fondtorg varierar från under 0,2 till över 1 procent — på kapital som får arbeta i decennier är det avgifts-minusräkningens kapitel 8 om igen. ISK (investeringssparkonto) är skalfördelen för privat sparande utanför pensionen: schablonskatt i stället för realiseringsvinstskatt, ingen skatt vid försäljning och ombalansering — vilket gör det tekniskt perfekt för kapitel 10:s rebalansering — och KF (kapitalförsäkring) dess kusin med arvsfördelar [illustrativt]."
+        },
+        {
+          "type": "text",
+          "content": "Ordningsregeln i svensk tappning [illustrativt]: ett — tjänstepension: kontrollera att den ligger i billigt index (den finns redan; se till att den inte läcker). Två — premiepension: välj aktivt lågavgiftsbrett eller AP7 Såfa. Tre — ISK/KF för det övriga långsiktiga sparandet. Fyra — vanlig depå först därefter. AKM1-brygga: V10-logiken på kontonivå är kostnadernas och skalfördelarnas aritmetik — samma krona, olika skal, olika slutsiffra; V19-varningen: höga avgifter i pensionshallar är hushållets tysta emissioner — utspädning av framtiden utan att någon röstas om; AK1TS-brygga: pension är per definition Mega-horisont — premiepensionens kronor har ofta trettio till fyrtio år kvar till uttag, vilket gör avgiftsskillnader på tiondelar till stora belopp på aggregerad nivå [illustrativt]."
+        },
+        {
+          "type": "insikt",
+          "content": "Valet av KONTO är en engångsbeslutning med trettioårig verkan; valet av fond är ett återkommande frestelsebeslut. Ordna därför kontot först och en gång för alla: skalfördelen är gratis, garanterad och kräver ingen åsikt om marknaden — vilket fondval aldrig är."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Amerikanskt verktyg — svensk motsvarighet [illustrativt]\",\"rader\":[[\"Bokens USA\",\"Mekanism\",\"Svensk motsvarighet\",\"Notering\"],[\"401k-matchning\",\"arbetsgivarens matchning = gratis pengar — ta hela först\",\"tjänstepension (ITP/SAF-LO)\",\"finns redan — kontrollera att den ligger i billigt index, inte dyr traditional\"],[\"IRA\",\"skattefavrat eget rum, årlig gräns\",\"premiepension (PPM)\",\"2,5 % av underlaget — välj lågavgiftsbrett eller AP7 Såfa [illustrativt]\"],[\"Roth (beskattad krona, skattefri tillväxt)\",\"skatt nu, inte sedan\",\"ISK (schablonskatt)\",\"schablon i stället för vinstskatt — perfekt för rebalansering\"],[\"Taxable brokerage\",\"obeskattat konto — sist\",\"AF-depå/KF\",\"KF: ingen kapitalvinstskatt, förmånstagarmöjlighet [illustrativt]\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör din kontokarta [illustrativt]: lista varje krona långsiktigt sparande per SKAL — tjänstepension (vilken försäkring, vilka fonder, vilka avgifter?), premiepension (vilka fonder valde du — eller valde du aldrig?), ISK/KF, vanlig depå. Markera varje skal med dess avgiftsnivå och skattekaraktär. Identifiera den dyraste läckan och åtgärda den först — för de flesta är det en gammal PPM-portfölj eller en traditional-tjänstepension som aldrig granskats."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför ska arbetsgivarens matchning tas först enligt boken?",
+          "alternativ": [
+            "Därför att lagen kräver det",
+            "Därför att det är en omedelbar och riskfri avkastning på de insatta beloppen som ingen fond kan matcha",
+            "Därför att den är skattefri i alla länder",
+            "Därför att fonderna där är billigare"
+          ],
+          "ratt": 1,
+          "tips": "Vad kallar man en avkastning som betalas ut omedelbart av någon annan än marknaden?"
+        },
+        {
+          "q": "Vad är den svenska motsvarigheten till 401k-matchningen [illustrativt]?",
+          "alternativ": [
+            "ISK",
+            "Kapitalförsäkring",
+            "Tjänstepensionen — avtalspensionen arbetsgivaren betalar in; se till att den ligger i billigt index",
+            "Räntefonder"
+          ],
+          "ratt": 2,
+          "tips": "Vilket svenskt skal fylls av någon annan utan att du lyfter ett finger?"
+        },
+        {
+          "q": "Varför passar ISK särskilt bra för rebalansering [illustrativt]?",
+          "alternativ": [
+            "Därför att schablonskatten gör att försäljning och köp vid ombalansering inte utlöser någon realiseringsvinstskatt",
+            "Därför att avgifterna är noll",
+            "Därför att avkastningen är garanterad",
+            "Därför att insättningarna är avdragsgilla"
+          ],
+          "ratt": 0,
+          "tips": "Vad händer skattemässigt när du säljer vinnare och köper förlorare vid rebalansering — i en depå respektive på ett ISK?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Indexfonden i praktiken — fondväljandets fallgropar och avgifts-minusräkningen i SEK",
+      "intro": "Nu produkten. Kapitlet går igenom fallgroparna när en privatperson väljer fond — prestationsjakt, stjärnbetyg, stilglidning, avgiftsfällor — och räknar avgifts-minusräkningen i svenska kronor: 0,2 mot 1,5 procents avgift på 2 000 kronor i månaden är 518 600 kronor på trettio år.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför index alls — i en mening, med syskonkurserna som referens: Sharpes aritmetik (genomsnittet kan inte slå sig självt efter kostnader, se Bogle- och Ellis-kurserna) gör den breda indexfonden till default, och allt som avviker från den är en aktiv förväntan som ska kunna förklaras. Fallgroparna när fonden ska väljas — boken listar dem som ett galleri. PRESTATIONSJAKTEN: gårdagens vinnare är morgondagens medel — fonders resultat återgår mot medelvärde, och kapitalet strömmar in EFTER bra år (dumb money, Ellis-kursen). STJÄRNBETYG: bakåtblickande mått som säljer gårdagen. FÖRVALTARBYTE: den förvaltare du köpte är inte den som sköter fonden i dag. STILGLIDNING: fonden som lovade småbolag köper megabolag när premierna försvinner. FONDKOLOSS: framgång växer fonden tills den bara kan äga det största. FOKUSERADE INDEXPRODUKTER: smala index och temafonder är aktiva spel i indexförklädnad. Motgiftet är tråkigt och effektivt: brett totalmarknadsindex, låg avgift, stor och stabil förvaltare, hög tracking precision mot sitt index — och ingenting annat att välja."
+        },
+        {
+          "type": "text",
+          "content": "Avgifts-minusräkningen i SEK — bokens kärntabell i svensk tappning. Två tusen kronor i månaden i trettio år, bruttoavkastning sju procent nominell [illustrativt]. I en indexfond med 0,2 procents avgift (netto cirka 6,8 procent): slutvärde cirka 2 345 800 kronor. I en genomsnittlig aktiv fond med 1,5 procents avgift (netto cirka 5,5 procent) — svenska aktiefonders snittavgift ligger i den storleksordningen [illustrativt] — slutvärde cirka 1 827 200 kronor. Skillnaden: 518 600 kronor — tjugofem procent mindre slutkapital för exakt samma sparande, samma marknad, samma år. Eget insatt kapital: 720 000 kronor; indexfondens avgiftskostnad är alltså ingen detaljrad — avgiften äter mer av avkastningen än du själv satte in under de första många åren. Och det är trettioårsversionen: på fyrtio år förstärks exponentens effekt till skillnader i storleksordningen ett helt extra hus [illustrativt]. Bogles klassiker, som boken citerar i sin anda: i finans får du det du INTE betalar för."
+        },
+        {
+          "type": "text",
+          "content": "Urvalskriterierna i checklista: ett — bredhet: hela marknaden, inte ett urval (globalt totalindex; svensk komplettering för hemmarknadsrisk [illustrativt]). Två — avgift: under cirka 0,3 procent, hellre lägre [illustrativt]. Tre — tracking: fonden följer sitt index nära (tracking difference nära noll efter avgift). Fyra — storlek och stabilitet: fonden ska vara för stor för att behöva ta chanser och för etablerad för att försvinna. AKM1-brygga: avgiften är V04–V06-logik på portföljnivå — priset du betalar per intäktskrona, bokförd krona och kassaflöde, och den enda variabel i hela kedjan som är hundraprocentigt förutsägbar; V19-varningen i fondformat: avgifter är kapitalförbränning utan emission — kronor som brinner varje år oavsett utfall; V10-logik: fondens egna kostnadsstruktur är dess skuldsättningsgrad; AK1TS-brygga: avgiften är den enda fienden som blir STARKARE ju längre din horisont är — Mega-horisonten förutsätter låg avgift, annars arbetar exponenten åt avgiften."
+        },
+        {
+          "type": "insikt",
+          "content": "Avgiften är den enda variabeln i hela kursen som är känd i förväg med säkerhet — marknaden svänger, förvaltare byts, men avgiften betalas varje år i alla väder. En fondfråga är därför alltid tre frågor: vad kostar den, vad kostar den på trettio år, och vad förväntar jag mig få för mellanskillnaden — och det tredje svaret är nästan alltid tystnad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Avgifts-minusräkning i SEK — 2 000 kr/månad i 30 år, 7 % brutto [illustrativt]\",\"rader\":[[\"Alternativ\",\"Avgift\",\"Nettoavkastning\",\"Slutvärde\",\"Skillnad mot index\"],[\"Indexfond (bred global)\",\"0,2 %\",\"cirka 6,8 %\",\"cirka 2 345 800 kr\",\"—\"],[\"Blandfond/moderat aktiv\",\"0,8 %\",\"cirka 6,2 %\",\"cirka 2 087 600 kr\",\"cirka −258 200 kr\"],[\"Genomsnittlig aktiv fond\",\"1,5 %\",\"cirka 5,5 %\",\"cirka 1 827 200 kr\",\"−518 600 kr = 25 % mindre slutkapital\"],[\"Dyr aktiv + rådgivningsavgift\",\"2,0 %\",\"cirka 5,0 %\",\"cirka 1 664 500 kr\",\"−681 300 kr\"],[\"Eget insatt kapital\",\"—\",\"—\",\"720 000 kr\",\"avgiften äter mer än du satte in\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska din största fond: slå upp avgiften (TER/avgift per år) och räkna om kapitel 4:s ränta-på-ränta med din faktiska nettoavkastning mot en 0,2-procentsvariant. Skriv ner skillnaden i slutvärde på ditt faktiska saldo. Fråga dig sedan den enda legitima motfrågan: vilken dokumenterad förmåga att slå index efter avgifter förväntar jag mig av JUST denna förvaltare — och var finns beviset? Om svaret är tyst har du kapitel 8:s räkneverk och inget svar."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar avgifts-minusräkningen i SEK (2 000 kr/månad, 30 år, 7 % brutto)?",
+          "alternativ": [
+            "Att avgifterna inte spelar någon roll om avkastningen är hög",
+            "Att 0,2 mot 1,5 procents avgift är cirka 518 600 kronor — 25 procent mindre slutkapital för identiskt sparande",
+            "Att aktiva fonder alltid går back",
+            "Att indexfonder saknar avgifter"
+          ],
+          "ratt": 1,
+          "tips": "Samma insättningar, samma marknad, samma år — vad skiljer sig?"
+        },
+        {
+          "q": "Vilken av följande är INTE en av bokens fallgropar vid fondval?",
+          "alternativ": [
+            "Prestationsjakt — gårdagens vinnare köps efter det att segern redan inträffat",
+            "Förvaltarbyte — förvaltaren du köpte är inte den som sköter fonden nu",
+            "Att välja den bredaste och billigaste totalmarknadsindexfonden",
+            "Stilglidning — fonden lämnar sin utlovade stil när premierna försvinner"
+          ],
+          "ratt": 2,
+          "tips": "Tre av alternativen är fallgropar på vägen — ett är själva målet."
+        },
+        {
+          "q": "Varför kallas avgiften den enda hundraprocentigt förutsägbara variabeln?",
+          "alternativ": [
+            "Därför att den regleras av lag",
+            "Därför att marknaden alltid stiger",
+            "Därför att den sjunker med åren",
+            "Därför att den betalas varje år i alla väder — oavsett marknad, förvaltare eller utfall"
+          ],
+          "ratt": 3,
+          "tips": "Vilken siffra i din portfölj känner du säkert redan i januari?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Asset allocation — åldersregeln och portföljens största beslut",
+      "intro": "Bokens mest citerade beslut är inte fondvalet utan fördelningen mellan aktier och räntor. Kapitlet går igenom varför allokeringen dominerar, åldersregeln som utgångspunkt — och hur den justeras efter kapitel 5:s riskprofil.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför allokeringen är störst: portföljens svängningar styrs huvudsakligen av andelen aktier mot räntor — inte av vilka aktier du äger [illustrativt: studier i Brinson-traditionen har historiskt förklarat den större delen av portföljers riskskillnader genom allokeringen]. Aktierna är tillväxtmotorn (lång sikt: real köpkraftstillväxt), räntorna är stabilisatorn och — lika viktigt — motvikt: bufferten som gör att du orkar behålla aktierna när de faller. Bokens bild är psykologiskt klok: obligationerna är inte där för avkastningens skull, de är där för beteendets skull — de är det som får dig att inte sälja aktierna 2009. Fördelningen är också det mest personliga beslutet i hela boken: rätt allokering existerar inte generellt, bara för en viss riskprofil (kapitel 5), viss horisont (AK1TS) och ett visst mål."
+        },
+        {
+          "type": "text",
+          "content": "Åldersregeln — utgångspunkten som ges vid handen: andelen räntor ungefär lika med din ålder, resten aktier [bokens rå tumregel i Bogle-tradition, illustrativt]. Trettio år: 70/30 aktier/räntor. Fyrtio: 60/40. Femtio: 50/50. Sextiofem: 35/65. Varianten för den som vill bära mer risk (och vars 2008-test tillät det): ålder minus tio i räntor. Poängen med regeln är inte precision utan RIKTNING och mekanik: risken ska sjunka automatiskt allteftersom horisonten förkortas och människans förmåga att vänta ut krascher minskar — vid pensionsåldern är förmögenheten som störst och tiden att återhämta sig som kortast, och allokeringen ska spegla det. Implementeringen är sedan bokens tråkiga zen: två eller tre breda billiga fonder räcker — globalt aktieindex, ränteindex (och ev. svensk komplettering) [illustrativt] — den berömda trefondsportföljen; varje tillgång bortom den kräver en tes (och hör då hemma hos AKM1:s satelliter, kapitel 14)."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga: allokeringen är portföljens V10 — balansräkningen mellan tillväxtmaskin och stabilitet, exakt som bolagets förhållande mellan skulder och eget kapital avgör dess överlevnad i kris; V19-logik: en portfölj med hundra procent aktier och noll buffert har ingen återhämtningsmodul — den som tvingas sälja i en nedgång har bränt kapital permanent, portföljens version av kapitalförbränning; AK1TS-brygga är allokeringens egentliga variabel: horisonten bestämmer andelen — kapital med Mega-kalender (ungt pensionssparande) kan bära hög aktieandel, kapital med treårig kalender (husköp) hör hemma i ränta, och samma människa bör alltså köra flera allokeringar parallellt — en per horisont, inte en per person. Nästa kapitel ger mekaniken som håller allokeringen ärlig: rebalanseringen."
+        },
+        {
+          "type": "insikt",
+          "content": "Obligationerna är inte för avkastningens skull — de är för beteendets skull: det som gör att du behåller aktierna när de halveras. Åldersregeln är inte en siffra utan en lutning: risken ska sjunka automatiskt när horisonten förkortas. Och rätt allokering är alltid en persons, aldrig en malls."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Åldersregeln — utgångspunkter [illustrativt, justera efter kapitel 5]\",\"rader\":[[\"Ålder\",\"Aktier/räntor (huvudregel)\",\"Variant (ålder − 10 i räntor)\",\"Logik\"],[\"30\",\"70/30\",\"80/20\",\"lång horisont — tiden täcker svängningarna\"],[\"40\",\"60/40\",\"70/30\",\"—\"],[\"50\",\"50/50\",\"60/40\",\"förmögenheten som störst, återhämtningsåren färre\"],[\"65\",\"35/65\",\"45/55\",\"kort horisont, uttag nära — sekvensrisk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Sätt din allokering i siffror från tre ingångar: åldersregelns utgångspunkt, kapitel 5:s 2008-test (din tåliga nedgång delat med 0,5 som aktietak), och horisontskartan från kapitel 7 (per skal). Skriv ner en enda slutformel — X procent globalt aktieindex, Y procent ränteindex [illustrativt] — och datera den. Detta dokument är början på din policy; kapitel 10 skriver resten."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför säger boken att obligationerna finns där för beteendets skull?",
+          "alternativ": [
+            "Därför att de ger högst avkastning",
+            "Därför att de är skattefria",
+            "Därför att de är stabila och gör att investeraren orkar behålla aktierna genom krascher — de hindrar panikförsäljning",
+            "Därför att de alltid stiger när aktier faller"
+          ],
+          "ratt": 2,
+          "tips": "Vilken del av portföljen talar till dig i mars 2009?"
+        },
+        {
+          "q": "Vad säger åldersregeln som utgångspunkt [illustrativt]?",
+          "alternativ": [
+            "Andelen räntor ungefär lika med din ålder — risken sjunker automatiskt allteftersom horisonten förkortas",
+            "Hälften aktier oavsett ålder",
+            "Alltid 100 procent aktier till 65",
+            "Andelen aktier lika med din ålder"
+          ],
+          "ratt": 0,
+          "tips": "Vad händer med återhämtningsförmågan när pensionsåldern närmar sig?"
+        },
+        {
+          "q": "Vad är idén med den berömda trefondsportföljen?",
+          "alternativ": [
+            "Tre aktiva fonder i olika sektorer",
+            "Tre tjänster som adderar aktiv förvaltning",
+            "Tre dagshandelsstrategier som roterar",
+            "Bredd med maximal enkelhet — globalt aktieindex, ränteindex och ev. komplettering räcker för de flesta; allt därutöver kräver en tes"
+          ],
+          "ratt": 3,
+          "tips": "Hur många beslut per år kräver en portfölj med tre breda indexfonder?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Rebalansering — mekaniken som köper lågt och säljer högt",
+      "intro": "Allokeringen sattes i förra kapitlet; nu mekaniken som håller den sann. Rebalansering är kursens enda regelstyrda sätt att systematiskt köpa lågt och sälja högt — utan en enda prognos. Kapitlet går igenom de tre metoderna och 5/25-regeln.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen: marknaden förändrar din allokering åt dig — aktierna stiger (eller faller) och portföljen lämnar den fördelning du valde. Rebalanseringen återför den: sälj av det som vuxit sig för stort, köp det som krympt — vilket bokstavligen är att sälja högt och köpa lågt, som MEKANIK istället för prognos: ingen åsikt om vad som kommer, bara en regel om vad som hänt. Det psykologiska priset är att regeln alltid känns fel: rebalanseringen köper det som just föll (2009: aktier) och säljer det som just steg (1999: IT) — den kräver exakt det mod som saknas när det behövs, och därför ska den vara skriven i förväg och exekveras av regel, inte av humör. Frekvensfrågan har boken ett lakoniskt svar på: årligen räcker gott [illustrativt]; mer frekvent ger marginell fördel till högre kostnad."
+        },
+        {
+          "type": "text",
+          "content": "De tre metoderna. ETT — kalenderrebalansering: fast datum en gång om året; enkelt, mätbart, tillräckligt. TVÅ — bandrebalansering: den klassiska 5/25-regeln [illustrativt, i Swedroe-tradition som Bogleheads-communityt anammat]: rebalansera när en huvudklass (aktier, räntor) avviker mer än 5 procentenheter absolut från målet — eller när en mindre tillgång avviker mer än 25 procent relativt (en tillgång med 10-procentsmål säljs eller köps vid 12,5 respektive 7,5). TILLSAMMANS täcker reglerna de stora huvudklasserna och de små satelliterna. TRE — nytt sparkapital: ställ alla nya insättningar till den underviktade klassen; billigast (inga försäljningar, inga transaktioner utöver dem du ändå gör), skattemässigt renast [illustrativt: på ISK är realiseringen i alla fall skatteneutral — på depå undviker du realiserade vinster]. Valet mellan dem är mindre viktigt än att ETT av dem väljs och skrivs: portföljen utan skriven rebalanseringsregel rebalanseras av känsla — det vill säga nästan aldrig, och som mest i panikens felriktning."
+        },
+        {
+          "type": "text",
+          "content": "Rebalanseringens djupare funktion är beteendemässig: den omvandlar marknadens svängningar från hot till råmaterial — ju mer marknaden svänger, desto fler mekaniska kontrara köp gör regeln åt dig. 2008 är testfallet: aktierna föll, banden utlöstes på vägen ner, och den som följde sin regel köpte aktier i fallet — automatiskt, medan nyhetsflödet skrek sälj — och mars 2009:s återhämtning tillföll just de som köpt. AKM1-brygga: V10-logik — rebalanseringen är portföljens skuldkontroll, den mekaniska process som hindrar att framgång obemärkt höjer risknivån (bullens 90/10-portfölj är hög belåning i förklädnad: vinsten återinvesterad i vinnaren); V19-logik: den som aldrig rebalanserar bränner småningom diversifieringen — koncentrationsrisken är portföljens emission av risk; AK1TS-brygga: rebalanseringen är den regel som håller Mega-horisonten ärlig över tid — den låter kalendern, inte kalendariet av kriser, bestämma risken."
+        },
+        {
+          "type": "insikt",
+          "content": "Rebalanseringen är den enda mekanik i hela boken som garanterat köper lågt och säljer högt — till priset av att den alltid känns fel exakt när den är som mest rätt. Därför skrivs regeln i solsken: band, datum, och vem som gör vad. En oskriven rebalanseringsregel är en känsla — och känslor rebalanserar alltid åt fel håll."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre rebalanseringsmetoder i jämförelse\",\"rader\":[[\"Metod\",\"Trigger\",\"Fördel\",\"Svaghet\"],[\"Kalender (årligen)\",\"fast datum\",\"enkel, mätbar, tillräcklig\",\"kan reagera långsamt mitt i året\"],[\"Band (5/25-regeln)\",\"5 %-enheter absolut för huvudklasser; 25 % relativt för satelliter\",\"reagerar vid verkliga avvikelser\",\"kräver uppföljning\"],[\"Nytt sparkapital\",\"insättningar styrs till undervikt\",\"billigast — inga försäljningar, skatteneutralt\",\"kraftlös vid stor drift utan nytt sparande\"],[\"Kombination [illustrativt]\",\"band + årlig översyn + månadsinsättningar mot undervikt\",\"rekommenderad standard\",\"—\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din rebalanseringsparagraf på en mening, med siffror: mina band är X procentenheter för aktier/räntor och 25 procent relativt för mindre tillgångar; översyn sker fast datum ÅÅÅÅ-MM-DD; nya insättningar går först till undervikt. Simulera sedan tre lägen: aktier +20 procent, aktier −30 procent, och inget av delarna — vad säger din paragraf att du gör i varje? Om du inte kan svara på något av lägena är paragrafen inte klar."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallas rebalansering mekaniskt köp lågt, sälj högt?",
+          "alternativ": [
+            "Därför att den förutsäger marknadens vändpunkter",
+            "Därför att regeln säljer det som vuxit sig överviktigt och köper det som krympt — utan någon prognos alls",
+            "Därför att den alltid köper på måndagar",
+            "Därför att mäklare tipsar om nivåer"
+          ],
+          "ratt": 1,
+          "tips": "Vad talar regeln om för dig om framtiden — ingenting eller allt?"
+        },
+        {
+          "q": "Vad säger 5/25-regeln [illustrativt]?",
+          "alternativ": [
+            "Fem procents avgiftstak, 25 procents skatt",
+            "Rebalansera vid 5 procentenheters absolut avvikelse för huvudklasser och 25 procents relativ avvikelse för mindre tillgångar",
+            "Fem fonder, 25 procent per fond",
+            "Rebalansera var femte dag i 25 år"
+          ],
+          "ratt": 1,
+          "tips": "Absolut band för det stora, relativt band för det små."
+        },
+        {
+          "q": "Varför är metoden nytt sparkapital ofta billigast?",
+          "alternativ": [
+            "Därför att banken bjuder på avgiften",
+            "Därför att den bara innebär nya köp — inga försäljningar, inga realiserade vinster, inga extra transaktionskostnader",
+            "Därför att den ger högre avkastning",
+            "Därför att den automatiskt tajmar marknaden"
+          ],
+          "ratt": 1,
+          "tips": "Vilka transaktioner uppstår när du bara styr nya insättningar?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Beteendet — paniken 2008 och stay the course",
+      "intro": "Bokens viktigaste kapitel om verkligheten: hur man BETEER sig när kraschen kommer. 2008 är läroboken — och Bogles motto stay the course är sammanfattningen. Nyckeln är struktur, inte viljestyrka.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vad som hände [illustrativt]: under 2008 föll S&P 500 med cirka 37 procent; Stockholmsbörsen föll från höstens topp 2007 till mars 2009 med omkring hälften. Tre beteenden delade sedan spararna i tre grupper. GRUPP ETT — de som sålde i fallet: de förvandlade pappersförluster till verkliga, missade återhämtningen som inleddes inom månader, och många kom aldrig tillbaka — de köpte inte tillbaka förrän priset passerat där de sålde. GRUPP TVÅ — de som frös: gjorde ingenting, vilket i praktiken var att hålla kursen — deras portföljer återhämtade sig med marknaden. GRUPP TRE — de som följde sina regler: deras band utlöste köp av aktier på vägen ner, automatiskt kontrart, och mars 2009 tillhörde dem. Samma marknad, tre utfall — skillnaden var inte information, intelligens eller analys; den var struktur och beteende. Beteendegapet — att fondinvesterare i genomsnitt tjänar mindre än sina egna fonder, eftersom in- och utflödena hamnar fel i tiden [illustrativt, i Dalbar-traditionen] — är samma mekanism i siffror."
+        },
+        {
+          "type": "text",
+          "content": "Vad paniken gör med hjärnan och vad som botar den. Recency-effektens makt: gårdagens fall känns som morgondagens trend; rubriker förstorar: krascher säljer tidningar, återhämtningar gör det inte; och förlustaversionen gör att en nedgång psykologiskt väger ungefär dubbelt mot en lika stor uppgång — därför känns det RATIONELLT att sälja i botten. Botet är inte viljestyrka (ingen har tillräckligt) utan STRUKTUR, och bokens hela arkitektur visar sig vara ett enda långt beteendeförsvar: automatiska insättningar (pelare ett) gör att du köper utan att bestämma; allokeringen satt efter 2008-testet (kapitel 5) gör att portföljen redan är byggd för ditt värsta jag; rebalanseringsreglerna (kapitel 10) gör att det kontrara köpandet sker utan hjältedåd; och policyn — skriven i solsken, med vad du kommer att göra och inte göra — är brevet från ditt lugna jag till ditt paniska. Munger, igen: den första regeln vid ränta-på-ränta är att aldrig onödigt avbryta den — 2008 var precis ett sådant onödigt avbrott för gruppen som sålde."
+        },
+        {
+          "type": "text",
+          "content": "Stay the course — Bogles motto, bokens ledstång — betyder inte att aldrig ändra: det betyder att marknadens rörelser aldrig får vara SKÄLET till att ändra. Allokeringen ändras när livet ändrar horisonten (åldersregeln), inte när nyhetsflödet ändrar humöret. AKM1-brygga: beteendet är där AKM1:s V10- och V19-logik möter mänskligheten — bolag med V10-låg belåning och V19-ren kassa är just de som i en 2008 inte Tvingas göra dumheter (emission i botten, nödförsäljning av tillgångar), och samma egenskaper hos hushållet — buffert, skuldfrihet, policy — är det som skiljer grupp tre från grupp ett; AK1TS-brygga: 2008 var på Mega-horisonten en svängning bland svängningar — fyrtioårsplanen stod och föll inte på ett år, och den som HADE en fyrtioårsplan visste det; horisonten är det perspektiv paniken inte kan ta ifrån dig, förutsatt att du skrivit ner den."
+        },
+        {
+          "type": "insikt",
+          "content": "Stay the course betyder inte att aldrig ändra — det betyder att marknaden aldrig får vara skälet. Ändra allokeringen när livet ändrar horisonten, aldrig när nyhetsflödet ändrar humöret. Och bygg strukturen innan den behövs: automatisering, band, policy — för ingen har tillräcklig viljestyrka, men alla kan ha tillräcklig struktur."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"2008 — tre beteenden, tre utfall [illustrativt]\",\"rader\":[[\"Beteende\",\"Vad som gjordes\",\"Konsekvens\",\"Vad som krävdes\"],[\"Sålde i fallet\",\"pappersförlust blev verklig; återhämtning missades\",\"permanent förlust — många köpte aldrig tillbaka i tid\",\"endast struktur saknades: ingen policy\"],[\"Frös (gjorde ingenting)\",\"höll kvar enligt ursprunglig allokering\",\"portföljen följde marknadens återhämtning\",\"lite — och det räckte\"],[\"Följde reglerna\",\"band utlöste köp av aktier på vägen ner\",\"mekaniskt kontrart — mars 2009 tillhörde dem\",\"skriven rebalanseringsregel, exekverad utan hjältedåd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt panikbrev — från ditt lugna jag till ditt framtida paniska: tre stycken. Ett: vad som är sant om min plan (horisont, allokering, varför just den). Två: vad jag kommer att göra när portföljen faller fyrtio procent (ingenting, eller rebalansera enligt band — med siffror). Tre: vad jag INTE kommer att göra (sälja, läsa forum, kolla deponent varje dag). Datera, underteckna, lägg med policyn. Det brevet är kapitel 10:s regelverk klätt i personlighet — och det är mycket lättare att skriva i dag än att komponera i mars 2009."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skilde de tre grupperna åt under 2008 [illustrativt]?",
+          "alternativ": [
+            "Informationsnivå — de som sålde visste minst",
+            "Intelligens — de som höll kvar var smartast",
+            "Tur — återhämtningen träffade slumpmässigt",
+            "Struktur och beteende — samma marknad, men den med policy och band återhämtade sig och köpte kontrart, medan den som sålde låste förlusten"
+          ],
+          "ratt": 3,
+          "tips": "Vilken egenskap hos investeraren — inte hos marknaden — avgjorde utfallet?"
+        },
+        {
+          "q": "Vad är beteendegapet [illustrativt]?",
+          "alternativ": [
+            "Skillnaden mellan rik och fattig",
+            "Att fondinvesterare i genomsnitt tjänar mindre än sina egna fonder — in- och utflödena hamnar fel i tiden",
+            "Skillnaden mellan aktier och obligationer",
+            "Skillnaden mellan nominell och real avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Vem tjänar mindre — fonden eller fondens ägare — och varför?"
+        },
+        {
+          "q": "Vad betyder stay the course i bokens läsning?",
+          "alternativ": [
+            "Att aldrig ändra någonting i portföljen under några omständigheter",
+            "Att marknadens rörelser aldrig får vara skälet till att ändra — allokeringen ändras när livet ändrar horisonten, inte när nyhetsflödet ändrar humöret",
+            "Att man ska köpa mer ju mer det stiger",
+            "Att man ska ligga helt i kontanter mellan kriser"
+          ],
+          "ratt": 1,
+          "tips": "Vilka förändringar är legitima — livets eller marknadens?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Varningarna — aktiemaklare, tips och allt aktivt",
+      "intro": "Boken ägnar ett helt galleri åt allt som tar pengar från privatpersonen: mäklare och rådgivare med fel incitament, aktietips, marknadstajming, dagshandel och produkter som är byggda för att säljas, inte köpas. Och — viktigast — en nödutgång för den som ÄNDÅ vill spela.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mäklaren och incitamenten. Fred Schweds klassiska fråga från 1940 — Var är kundernas yacht? — sammanfattar hela problemet: berättelsen om finansmannen som visar upp bankirernas och mäklarnas lyxbåtar och frågar var kundernas är. Bokens översättning: din motpart tjänar på din AKTIVITET, inte på ditt resultat — mäklaren och rådgivaren med provision får betalt när du handlar och byter, inte när du tjänar; den som betalar för råd ska därför betala per timme eller fast arvode, aldrig per affär [illustrativt]. Tips-galleriet: aktietipset från grannen, kusinen och forumet (den som har ett vinnande tips har dessutom incitament att inte dela det — och om det delas är det redan prissatt); marknadstajmingen (pelare två, igen — den som väntar på köpläget missar de bästa dagarna som kommer i klungor); dagshandeln (ett nollsumspel före kostnader där du spelar mot algoritmer och proffs — Ellis-kursens diagnos i mikroformat); och nyfondshypen, temafonderna och strukturerade produkter vars avgifter och villkor är konstruerade för att vara svåra att förstå — komplexiteten är inte en bugg, det dolda priset är funktionen."
+        },
+        {
+          "type": "text",
+          "content": "Nödutgången — bokens mest älskade kompromiss: Las Vegas-kontot. Om du KÄNNER att du måste plocka aktier, tajma, spela — gör det med ett avgränsat konto på högst cirka fem procent av det investerbara kapitalet [illustrativt], kalla det underhållning, räkna kostnaden som underhållning, och LÄGG ALDRIG TILL när det tar slut. Syftet är inte att ge en plausibel chans till alfa — det är att skydda de nittiofem procenten från beteendet som annars läcker in i hela portföljen. Det är också kursens viktigaste ärlighetspunkt mot AK1A:s egen verksamhet: skillnaden mellan Las Vegas-kontot och en AKM1-satellit är inte storleken utan METODEN — satelliten har skriven tes, förstått bolag, riskgränser och mäts mot index; Vegas-kontot saknar alla delarna och är ärligt nog att kallas spel. Den som inte klarar den åtskillnaden i praktiken har inget spelkonto — han har en oskriven aktiv strategi, vilket är värre än båda."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga: varningslistan är V10- och V19-logik applicerad på mellanledet — den rådgivare eller produkt som tar betalt per affär är din motparts V19: kapitalförbränning med mäklarlicens; och komplexitet som prismärke är omvänd V04-logik: du betalar högre pris per krona exponering för att strukturen döljer multiplikatorn; AK1TS-brygga: alla varningarna har samma dolda drag — de förkortar din horisont (varje affär, varje bytt system, varje ny strategi nollställer exponenten från kapitel 4); Las Vegas-kontot är horisontskyddet: det ger speltrangen en bur med egen liten kalender, så att Mega-horisonten får leva orörd intill."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga alltid vem som betalar för yachten. Råd köps per timme, aldrig per affär — och en produkt du inte förstår har ett pris du inte ser. Om speltrangen finns: ge den fem procent, en bur och ett namn — underhållning. Skillnaden mot en verklig satellit är metoden, och den ska kunna skrivas ner på en rad: tes, bolag, risk, mätbarhet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Varningsgalleriet — vem betalar och varför det luktar\",\"rader\":[[\"Fälla\",\"Incitament\",\"Varningstecken\",\"Motgift\"],[\"Provisionsmaklare/rådgivare\",\"tjänar på din aktivitet, inte ditt resultat\",\"rådet låter alltid som en affär\",\"betala per timme eller fast arvode [illustrativt]\"],[\"Aktietips\",\"delas av dem som redan prissatt det\",\"känsla av exklusiv tillgång\",\"index; tips är inte analys\"],[\"Marknadstajming\",\"säljer trygghet i osäkerhet\",\"köpläge, läge, nu\",\"automatiskt sparande, pelare två\"],[\"Strukturerade produkter\",\"komplexitet döljer pris\",\"du kan inte förklara avgiften på en rad\",\"förklara eller avstå\"],[\"Las Vegas-konto\",\"speltrangen finns — ge den en bur\",\"högst cirka 5 %, aldrig fyll på [illustrativt]\",\"kalla det underhållning; AKM1-satellit = tes + metod, ej spel\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska dina senaste fem affärer eller produktköp mot varningstecknen: vem fick betalt, hur (provision, avgift, spread), och vad var källan till beslutet (analys, tips, känsla)? Klassificera varje som investering, nöje eller läcka. Om någon affär inte kan klassificeras har du hittat nästa att avveckla — och om speltrangen är verklig: öppna buren FORMELLT (eget konto, max fem procent, namngivet), så att den inte bor i huvudportföljen under falskt namn."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är poängen med Schweds fråga Var är kundernas yacht??",
+          "alternativ": [
+            "Att yacht är dåliga investeringar",
+            "Att bankirer och mäklare blir rika på kundernas aktivitet — inte på kundernas resultat",
+            "Att båtlån är särskilt fördelaktiga",
+            "Att alla kunder förr eller senare köper yacht"
+          ],
+          "ratt": 1,
+          "tips": "Vems båtar syns i hamnen — och vem betalade dem?"
+        },
+        {
+          "q": "Vad är syftet med Las Vegas-kontot?",
+          "alternativ": [
+            "Att ge en realistisk chans att slå index med fem procent av kapitalet",
+            "Att skydda resten av portföljen från speltrangen — en bur med egen kalender, räknad som underhållning",
+            "Att lära sig dagshandel professionellt",
+            "Att ha kapital redo när köpläget kommer"
+          ],
+          "ratt": 1,
+          "tips": "Kontot är inte en strategi — vad skyddar det?"
+        },
+        {
+          "q": "Hur skiljer sig en AKM1-satellit från Las Vegas-kontot enligt kursen?",
+          "alternativ": [
+            "Endast storleken — satelliten får vara större",
+            "Endast tiden — satelliten får vara kortare",
+            "Ingen skillnad — båda är spel",
+            "Metoden: satelliten har skriven tes, förstått bolag, riskgränser och mäts mot index — Vegas-kontot saknar alla delar och kallas ärligt spel"
+          ],
+          "ratt": 3,
+          "tips": "Vad finns i anteckningsboken om den ena och inte den andra?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Pension och arv — målet, testamentet och svensk ARV-skillnad [illustrativt]",
+      "intro": "Bokens sista planeringskapitel handlar om ändpunkten: pensionen — räknad baklänges från behovet — och arvet, som i amerikansk upplaga handlar om testamenten och förmånstagare. Kursen översätter båda till svenska förhållanden [illustrativt], där några regler skiljer sig fundamentalt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Pensionen räknas baklänges — Ellis-kursens måltänk i handboksform: börja med UTGIFTEN, inte med avkastningen. Hur mycket per månad behöver du för det liv du vill leva — och vilken kapitalstock kräver det? 4-procentsregeln [illustrativt, från Trinity-studiernas tradition: inflationjusterade uttag på fyra procent av kapitalet har historiskt överlevt trettio år i de allra flesta perioder med en balanserad portfölj] ger överslagsformen: årsutgift gånger tjugofem är målkapitalet — tre miljoner i behov är alltså 120 000 kronor per år. Tre spakar tar dig dit: sparkvoten (kapitel 2), tiden (kapitel 4:s exponent) och allokeringen (kapitel 9) — och av dem är sparkvoten den enda du helt styr. Svenska förhållanden [illustrativt]: pensionen vilar på tre ben — allmän pension (inklusive premiepensionen från kapitel 7), tjänstepension och privat sparande — och den offentliga prognosen är början, inte slutet; uttagsstrategin har dessutom en särskild risk: SEKVENSRISKEN — de första uttagsårens avkastning är avgörande, vilket gör kassabuffertar och en klok uttagsordning till pensionärens motvikt."
+        },
+        {
+          "type": "text",
+          "content": "Arvet — bokens amerikanska kapitel handlar om testamenten, förmånstagarval och estate planning; den svenska översättningen [illustrativt] skiljer sig på flera avgörande punkter. ETT: arvs- och gåvoskatten avskaffades i Sverige 2005 — bokens amerikanska skatteplanering översätts inte, bara dess ordningsprinciper. TVÅ: sambos ärver INTE varandra utan testamente — den kanske dyraste kunskapsluckan i svensk privat ekonomi: den sambo som inte skrivit testamente lämnas utanför arvet efter livskamraten om barn eller föräldrar finns. TRE: bröstarvingar — barn — har rätt till laglott och kan inte helt arvlåtas. FYRA: förmånstagarförordnanden på livförsäkring, tjänstepension och privat pension faller UTANFÖR kvarlåtenskapen [illustrativt] — de betalas direkt och kan styras omgående, vilket gör ordningen enkel och konkret: skriv testamentet, uppdatera förmånstagarvalen efter varje livsförändring, och håll en sammanställning över konton och skulder där arvingar kan hitta den. Bokens poäng står sig i alla jurisdiktioner: den största gåvan till de efterlevande är inte pengarna — det är ORDNINGEN."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga: målräkningen baklänges är V04–V06-logik tillämpad på ett liv — priset du betalar (sparkvoten) mot det du får (välfärdsströmmen), och sekvensrisken är V19-kapitalförbränningens pensionsformat: dåliga första uttagsår bränner stocken permanent eftersom uttaget förstärker nedgången — kassabufferten är pensionärens V10-skydd; AK1TS-brygga är här som mest bokstavlig: pensionssparandet ÄR Mega-horisonten definierad — och arvsplaneringen är Mega-horisontens sista förlängning: kapital som tjänar en generation till, med förmånstagare som uppdateras när livet förändras, är den enda planen som överlever planeraren."
+        },
+        {
+          "type": "insikt",
+          "content": "Räkna pensionen baklänges: behovet först, kapitalstocken därifrån (årsutgift gånger tjugofem vid 4-procentsregeln [illustrativt]), och därefter de tre spakarna — sparkvot, tid, allokering. Och arvet handlar inte om skatt i Sverige [illustrativt] — det handlar om testamente, förmånstagare och ordning: sambo utan testamente är inte romantik utan risk."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens USA mot svenska förhållanden — pension och arv [illustrativt]\",\"rader\":[[\"Verktyg\",\"Bokens USA\",\"Svensk motsvarighet\",\"Skillnaden\"],[\"Pensionssparande\",\"401k/IRA\",\"allmän pension + premiepension + tjänstepension + privat\",\"tre ben; offentlig prognos är början [illustrativt]\"],[\"Uttag\",\"4 %-regeln (Trinity)\",\"samma överslagsform\",\"sekvensrisk — kassabuffert skyddar\"],[\"Arvsskatt\",\"estate planning kring skatten\",\"avskaffad i Sverige 2005\",\"ordningsprinciperna översätts, inte skatteplanen\"],[\"Testamente\",\"wills och trusts\",\"testamente; SAMBOR ÄRVER INTE utan testamente\",\"den stora svenska fallgropen\"],[\"Förmånstagare\",\"beneficiary forms\",\"förmånstagarförordnande på pension/försäkring\",\"faller utanför kvarlåtenskapen [illustrativt]\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör din slutchecklista [illustrativt]: ett — beräkna målkapitalet: årsutgift i pensionslivet gånger tjugofem. Två — hämta din pensionsprognos och identifiera gapet. Tre — arvsordningen: testamente (särskilt vid samboförhållande), aktuella förmånstagarval på allt försäkrings- och pensionssparande, och en sammanställning över konton och skulder där någon annan kan hitta den. Bocka av det som är klart, datera det som saknas — och lägg en påminnelse för årlig översyn tillsammans med rebalanseringsdagen från kapitel 10."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär 4-procentsregeln [illustrativt]?",
+          "alternativ": [
+            "Att man ska spara fyra procent av lönen",
+            "Att fyra procent av portföljen kan tas ut årligen, inflationjusterat, och historiskt ha överlevt trettio år i de flesta perioder med balanserad portfölj",
+            "Att fyra procent av avkastningen ska gå till avgifter",
+            "Att aktieandelen ska vara fyra procent vid pension"
+          ],
+          "ratt": 1,
+          "tips": "Regeln handlar om UTTAG — vad säger den att kapitalet klarar?"
+        },
+        {
+          "q": "Vad är den stora svenska skillnaden i arvsfrågan [illustrativt]?",
+          "alternativ": [
+            "Svensk arvsskatt är världens högsta",
+            "Barn saknar arvsrätt i Sverige",
+            "Sambos ärver inte varandra utan testamente — och arvs- och gåvoskatten är avskaffad sedan 2005",
+            "Testamente är ogiltigt i Sverige"
+          ],
+          "ratt": 2,
+          "tips": "Vem ärver sambon utan papper — och vad hände med den svenska arvsskatten 2005?"
+        },
+        {
+          "q": "Vad är sekvensrisken?",
+          "alternativ": [
+            "Risken att aktier och obligationer sjunker samtidigt",
+            "Risken för fel ordning bland förmånstagare",
+            "Risken att dö för tidigt i pensionsuttagen",
+            "Risken att dåliga avkastningsår tidigt i uttagsfasen skadar kapitalstocken permanent — eftersom uttagen förstärker nedgången"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer om du tar ut pengar ur en portfölj som just fallit?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "KONTROVEREN: Bogleheads-konformitet mot aktiv värld — torchen på snön",
+      "intro": "Här står handbokens konformitet — indexa allt, håll kursen, plocka ingenting — mot den aktiva värld som AK1A:s egen kurskatalog till stor del bor i. Kursen redogör för båda sidor MAXIMALT starkt: Bogleheads-fallet, undantagen Buffett och Swensen — och torchet-på-snön-problemet med kapitalviktade index — och avslutar med AK1A:s syntes och ett öppet medgivande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bogleheads-fallet, så starkt det kan formuleras. ETT: aritmetiken — Sharpes ödmjuka sats: genomsnittet kan inte slå sig självt efter kostnader; den billiga indexfonden FÅR marknadens avkastning före (nästan) alla avgifter, och allt aktivt är ett nollsumspel minus kostnader (Bogle- och Ellis-kurserna). TVÅ: evidensen — stora majoriteten av aktiva fonder underpresterar sitt index över långa perioder, och gårdagens vinnare visar svag persistens (SPIVA-traditionen). TRE: beteendet — handbokens kärnpunkt: även OM en aktiv kant fanns kräver den att man håller regimen genom decennier av underpresterande, vilket är exakt det privatpersoner gör sämst (kapitel 11); indexets passiva struktur skyddar mot investeraren, vilket är det mest värdefulla skyddet av alla. FYRA — det starkaste av allt, konformitetens eget vittne: Warren Buffett, historiens mest framgångsrika aktieplockare, skrev i sitt aktieägarbrev 2013 rådet till förvaltaren av hans frus arv: tio procent i korta statsobligationer, nittio procent i en mycket billig S&P 500-indexfond. Världens bästa plockare säger till sina närmaste: köp index. Vad vet den aktiva skolan som Buffett inte vet?"
+        },
+        {
+          "type": "text",
+          "content": "Motargumenten — lika starkt, och kursen skyddar dem inte bort. UNDANTAG ETT — Buffett och de koncentrerade värdeinvesterarna: sextio års dokumenterat aktieplockande i Buffett-fallet; minoriteten existerar, dess bevis är offentliga (Essays-kursen). Svaret på det: undantagen identifieras pålitligt bara i efterhand, och deras struktur — kapital, kalender, temperament — är inte privatpersonens. UNDANTAG TVÅ — David Swensen: drev Yales donationskapital aktivt med cirka tretton procents årlig avkastning under decennier — men med strukturer privatpersoner saknar: evigt kapital, intern talang, tillgång till låsta alternativa marknader; och avgörande: Swensen rekommenderade i Unconventional Success (2005) privatpersoner just diversifierade billiga indexfonder — mannen som BEVISAR att aktivt kan vinna säger dig att DU inte kan. OCH SEDAN det ärligaste angreppet av alla — TORCHET-PÅ-SNÖN-PROBLEMET: det kapitalviktade indexet köper inte marknaden neutralt — det köper MEST av det som är störst, alltså av det som redan stigit mest: en dold momentum-strategi som premierar gårdagens vinnare, som Rob Arnott och Research Affiliates har argumenterat [illustrativt]. IT-bubblan är bevisfallet: vid millennieskiftet var S&P 500:s största vikter dess mest övervärderade teknikaktier, och i Sverige vägde Ericsson vid sin topp i storleksordningen en tredjedel av hela börsen [illustrativt] — indexköparen ägde automatiskt mest av de bubbelaktier som först sprack. Torchen som får gå först i djupsnön smälter sitt eget spår — ju mer en aktie stigit, desto mer av den äger indexet; fundamentalt viktade index och equal weight föreslås som bot — men varje sådan avvikelse från kapitalviktning är i sin tur ett AKTIVT val som kräver en tes."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — fyra punkter och ett medgivande. ETT: index är BASELINE FÖR ALLT kapital — kärnan indexeras enligt handboken, och allt som avviker mäts mot indexet i efterhand; en satellit som inte bär sin kostnad avvecklas. TVÅ: satelliterna drivs med METOD, inte med spel — AKM1-analys (V10-balansräkning, V19-rensning, V04–V06-pris, V12-stabilitet, moat i V13–V15), skriven tes per position, AK1TS Lång eller Mega-horisont, små andelar: det är skillnaden mot Las Vegas-kontot (kapitel 12). TRE: torchet-på-snön-problemet tas på allvar — det är ETT av de mest legitima skälen till satelliter överhuvudtaget: den som förstår varför kapitalviktningen köper dyrt kan göra medvetna, mätbara avvikelser från den — men avvikelserna är aktivt arbete, inte gratis förbättring. FYRA — MEDGIVANDET, öppet: majoriteten av privatpersoner, och det inkluderar fas 1-eleverna som vill ha välfärd och inte hobby, gör HELT RÄTT i att följa boken rakt av — bara index-spara, rebalansera, stå kursen; aktiv satellit är ett andra jobb som måste viljas för sitt eget skull, och den som inte vill det ska inte göra det. Boken och AK1A är inte motstridiga: boken beskriver baselinen, AKM1 beskriver det medvetna undantaget — och konformiteten är avvikelsens måttstock, inte dess fiende."
+        },
+        {
+          "type": "insikt",
+          "content": "Buffetts indexråd till sina närmaste och Swensens indexråd till allmänheten är kontroversens båda centrum: de män som BEVISAR att aktivt kan vinna rekommenderar index åt dem som inte gör aktivt till ett liv. Torchen på snön visar att index inte är neutralt — men varje avsteg från det är ett arbete som måste bära sin tes. Konformitet är därför inte feghet: det är baselinen varje avvikelse mäts mot."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — argument, motargument, AK1A:s syntes\",\"rader\":[[\"Fråga\",\"Bogleheads-fallet\",\"Aktiv värld\",\"AK1A:s syntes\"],[\"Aritmetik\",\"genomsnittet kan inte slå sig självt efter kostnader\",\"minoriteten spelar ett annat spel: ägarskap\",\"rätt: kärnan indexeras\"],[\"Bevis\",\"majoriteten underpresterar; svag persistens\",\"Buffett 60 år; Swensen cirka 13 %/år aktivt\",\"undantag existerar — men identifieras i efterhand\"],[\"Struktur\",\"passivt skyddar mot investeraren\",\"evigt kapital, intern talang, alternativa marknader\",\"satellit = metod + tes, aldrig spel\"],[\"Indexets neutralitet\",\"brett totalindex = marknaden\",\"torchen på snön: kapitalviktning köper mest av det dyraste (IT-bubblan; Ericsson cirka 1/3 av börsen [illustrativt])\",\"legitim anledning till mätbara avvikelser — som aktivt arbete\"],[\"Rådet till de flesta\",\"indexa allt, stå kursen\",\"—\",\"MEDGIVANDE: fas 1-elever gör rätt i boken rakt av; satelliten är ett frivilligt andra jobb\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt konformitetsprotokoll i tre spalter: ETT — hur stor andel av ditt kapital är i dag boglehead-rent (brett, billigt, policy-styrt)? Sätt mål: fas 1 ska kunna svara hundra procent. TVÅ — för varje avvikelse (enskild aktie, smal fond, tema): finns skriven tes, AKM1-analys, horisont och mätpunkt mot index? Det som saknar dokument är definitionsmässigt Las Vegas. TRE — ditt svar på torchen på snön: accepterar du kapitalviktningens mekanik (bra svar) eller motiverar du en avvikelse med metod (också bra svar) — det enda dåliga svaret är avvikelser utan medvetenhet."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är torchet-på-snön-problemet?",
+          "alternativ": [
+            "Att indexfonder smälter i finanskriser",
+            "Att kapitalviktade index köper mest av det största — alltså av det som redan stigit mest: en dold momentum-strategi som premierar gårdagens vinnare",
+            "Att snösmältning påverkar råvarupriser",
+            "Att index enbart innehåller vintertillgångar"
+          ],
+          "ratt": 1,
+          "tips": "Vad avgör en akties vikt i ett kapitalviktat index — dess fundamentals eller dess börsvärde?"
+        },
+        {
+          "q": "Vad är det starkaste konformistiska vittnesmålet i kontroversen?",
+          "alternativ": [
+            "Att indexfonder alltid stiger",
+            "Att aktiva fonder är förbjudna i flera länder",
+            "Att Buffett och Swensen — de män som bevisar att aktivt kan vinna — båda rekommenderar privatpersoner billiga breda indexfonder",
+            "Att mäklare inte får sälja indexfonder"
+          ],
+          "ratt": 2,
+          "tips": "Vem har minst att vinna på att ge det rådet — och vem lyder du annars på?"
+        },
+        {
+          "q": "Vad är AK1A:s medgivande i syntesen?",
+          "alternativ": [
+            "Att alla borde aktieplocka med AKM1",
+            "Att index är en nödlösning för dem som misslyckats",
+            "Att satelliter alltid slår index",
+            "Att de flesta — inklusive fas 1-elever som vill ha välfärd — gör helt rätt i bokens råd: bara index-spara; satelliten är ett frivilligt andra jobb som måste viljas"
+          ],
+          "ratt": 3,
+          "tips": "Vem är handboken skriven för — och vad kräver det att avvika från den på rätt sätt?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Sammanfattning — get rich slowly (V01–V20 + AK1TS)",
+      "intro": "Sista kapitlet sätter ihop handboken till en enda plan — tio steg, en policy, en V-mappning — och porträtterar personen kursen format mot: bogleheaden, som blir rik långsamt för att hon gjorde allt annat i rätt ordning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Handboken i tio steg, i ordning. ETT: lev under dina tillgångar — automatisera pay yourself first. TVÅ: betala av högrentad skuld — den garanterade avkastning ingen fond ger. TRE: bygg bufferten — tre till sex månaders utgifter. FYRA: försäkra katastroferna — term vid behov, buy term and invest the difference. FEM: fyll skattefavrade konton först — tjänstepension, premiepension, ISK [illustrativt]. SEX: köp breda billiga indexfonder — kapitel 8:s fyra kriterier. SJU: sätt allokeringen efter ålder, horisont och 2008-testet — åldersregeln som utgångspunkt. ÅTTA: rebalansera mekaniskt — band, kalender, nytt kapital. NIO: stå kursen — policyn och panikbrevet skrivna i förväg. TIO: räkna pensionen baklänges och ordna arvet — målet, testamentet, förmånstagarna [illustrativt]. Metodens signum är detsamma genom alla tio: inget steg kräver en prognos, och ingen prognos behövs — get rich slowly är inte en slogan utan en arkitektur: tiden gör jobbet, uppgiften är att inte sabotera den."
+        },
+        {
+          "type": "text",
+          "content": "V-mappningen — handbokens unika position i kurskatalogen: den enda BOKMASTER-kurs vars huvudperson inte är aktievalet. V10 skuldsättningsgrad är bokens hela första halva — hushållets och bolagets balansräkning är samma disciplin, och samma variabel skiljer överlevarna i kriser. V19 kapitalförbränning och emission-risk är dess spegelbild: undvik det som bränner kapital — högrentad skuld, höga avgifter, strukturellt dyra produkter, utspädningar. V04–V06 (pris) dyker upp som avgiften — priset per krona exponering, den enda kända siffran i förväg. V12 intäktsstabilitet är buffertens och obligationsdelens logik: strömmar som anländer utan dramatik. V20 är utdelningarnas och återköpens kapitel i förlängningen — pengar som återvänder till ägaren och får arbeta vidare. Och över allt: AK1TS — varje kapitel har varit en horisontövning; Lisa-och-Kalle är Mega-horisonten berättad som saga, 2008 är samma horisont prövad i verkligheten, och arvet är dess sista förlängning. Handboken är AK1TS-systemet utskrivet som livsplan."
+        },
+        {
+          "type": "text",
+          "content": "Porträttet — bogleheaden i sex drag. Ett: han lever under sina tillgångar och sparar automatiskt, inte restbundet. Två: hon är skuldfri (utom bolånet) och har en buffert som gör nedgångar till PRIS i stället för kris. Tre: hans portfölj är tre breda billiga fonder i en allokering satt efter hans eget 2008-test. Fyra: hon rebalanserar enligt skriven regel och äger ett panikbrev från sitt lugna jag. Fem: han spekulerar inte — eller gör det i en namngiven bur på max fem procent [illustrativt], räknad som underhållning. Sex: hon vet vad pengarna är till — en räknad välfärdspost baklänges, med testamente och förmånstagare i ordning. Fas-planen: fas 1-eleven kan sluta här — detta ÄR hela utbildningen för den som vill ha välfärd, och den räcker. Fas 2-eleven börjar här: kärnan enligt handboken, satelliterna med AKM1-metod, mätta mot indexet — för handboken är inte fienden till det aktiva arbetet, den är dess baseline och dess måttstock. Bogle gav oss manifestet, Ellis gav oss professionen — Larimore, Lindauer och LeBoeuf gav oss planen. Nu skriver du din."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista mening är bokens första: tiden gör jobbet — din uppgift är att inte sabotera den. Varje steg i handboken är ett sätt att skydda exponenten från dig själv: automatiseringen skyddar den från glömskan, bufferten från tvånget, policyn från paniken, avgiften från erosionen. Get rich slowly är ingen slogan — det är en arkitektur."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Handboken till AK1A — tio steg, V01–V20, AK1TS\",\"rader\":[[\"Steg\",\"Handbokens råd\",\"AK1A-koppling\"],[\"1. Lev under tillgångarna\",\"automatiskt sparande före konsumtion\",\"V10-logik — balansräkning som tål chocker\"],[\"2. Betala av skuld\",\"högsta räntan först — garanterad avkastning\",\"V10; V19 spegelvänt: bränn inte kapital\"],[\"3. Bygg buffert\",\"3–6 månaders utgifter\",\"V11-likviditet i hushållsformat\"],[\"4. Försäkra katastrofer\",\"term med slutdatum; buy term, invest the difference\",\"V10-kapning av svansrisk\"],[\"5. Fyll kontona\",\"tjänstepension, premiepension, ISK [illustrativt]\",\"V04–V06: priset per krona exponering — skalet är gratis\"],[\"6. Köp index\",\"brett, billigt (under cirka 0,3 % [illustrativt]), tracking, stabilitet\",\"V04–V06; avgiften = enda kända siffran\"],[\"7. Sätt allokering\",\"åldersregeln + 2008-testet\",\"V10; AK1TS: allokering per horisont\"],[\"8. Rebalansera\",\"band (5/25), kalender, nytt kapital\",\"mekaniskt kontrart — V19-diversifieringsskydd\"],[\"9. Stå kursen\",\"policy + panikbrev i förväg\",\"V12-stabilitetens psykologi; AK1TS Mega\"],[\"10. Räkna baklänges + ordna arvet\",\"4 %-överslag; testamente, förmånstagare [illustrativt]\",\"V19-sekvensrisk; Mega-horisontens sista förlängning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — skriv din plan på en sida och datera den: elva rader med siffror. Sparkvot (procent, automatiseringsgrad). Skuld (belopp, ränta, slutår). Buffert (månader). Skyddsgap (belopp, slutår). Konton (tjänstepension, premiepension, ISK [illustrativt] — med avgifter). Fonder (namn, avgift, andel). Allokering (aktier/räntor per horisont). Rebalanseringsregel (band, datum). Policy och panikbrev (var de ligger). Målkapital (årsutgift gånger tjugofem). Arvsordning (testamente, förmånstagare). Årlig översyn samma dag som rebalanseringen. Detta dokument — inte en enda aktiepick — är handbokens slutprodukt, och för de flesta är det allt som behövs för att bli rik, långsamt."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är gemensamt för handbokens alla tio steg?",
+          "alternativ": [
+            "De kräver aktieanalys för att fungera",
+            "De förutsätter hög inkomst",
+            "De gäller bara amerikaner",
+            "Inget steg kräver en prognos — tiden gör jobbet och uppgiften är att inte sabotera den"
+          ],
+          "ratt": 3,
+          "tips": "Räkna profetiorna i de tio stegen — hur många hittar du?"
+        },
+        {
+          "q": "Varför kallas handboken AK1TS-systemet utskrivet som livsplan?",
+          "alternativ": [
+            "Därför att den lär ut teknisk analys",
+            "Därför att den innehåller Fibonacci-nivåer",
+            "Därför att hela dess metod är horisonten: Lisa-och-Kalle, 2008 och arvet är Mega-horisonten berättad i olika skeden",
+            "Därför att den rekommenderar dagshandel på kort horisont"
+          ],
+          "ratt": 2,
+          "tips": "Vilken variabel genom kapitel 4, 11 och 13 är alltid huvudpersonen?"
+        },
+        {
+          "q": "Vad är handbokens relation till det aktiva arbetet (AKM1)?",
+          "alternativ": [
+            "Den är dess fiende — index och analys utesluter varandra",
+            "Den ersätter analysen med teknisk analys",
+            "Den bevisar att satelliter alltid slår index",
+            "Den är dess baseline och måttstock — kärnan indexeras, satelliterna mäts mot indexet och drivs med metod, inte spel"
+          ],
+          "ratt": 3,
+          "tips": "Vad mäter du dina aktiva beslut emot — och vad händer med en satellit som inte bär sin kostnad?"
+        }
+      ]
+    }
+  ]
+}

@@ -1639,7 +1639,7 @@ function RelatedCoursesSection({
         <div className="mt-6 flex items-center gap-2">
           <HonestyTag kind="matt" />
           <span className="text-xs text-muted-foreground">
-            Varje kurs är 6 kapitel · 15-25 min · Lynch + Graham + AK1 perspektiv
+            Varje kurs är 6–21 kapitel · 14–240 min · Lynch + Graham + AK1 perspektiv {/* Uppdaterad 2026-09-01: kapitel-/minutintervall enligt deep-courses.json */}
           </span>
         </div>
       </div>
@@ -1687,7 +1687,7 @@ function GoFurtherSection({
           <GoCard
             icon={<BookOpen className="h-5 w-5" />}
             title="Alla kurser"
-            sub="225 djupa moduler"
+            sub="307 djupa moduler" /* Uppdaterad 2026-09-01: 307 kurser */
             onClick={() => setSection("kurser")}
           />
           <GoCard

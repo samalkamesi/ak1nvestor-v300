@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { Bok } from "@/lib/content";
 
 /**
- * BIBLIOTEKET — AK1A-bokkanon (100 böcker) mot AKM1/AK1TS.
+ * BIBLIOTEKET — AK1A-bokkanon mot AKM1/AK1TS (antalet redovisas dynamiskt via bocker.length).
  * Sök + filtrera på kategori/tier/nivå/AKM1-variabel. Tier 1 = full BOKMASTER.
  * Design: institutionellt kort-kit — marin axel-rad ovanför rubriker,
  * kortstandard rounded-xl + gold/25, primärknapp i marin med guldstext.

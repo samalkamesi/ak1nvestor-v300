@@ -673,20 +673,6 @@ export default function AdminDashboard() {
                 innovation, kvalitet, marknad och utbildning. Denna sektion är endast för admin —
                 inte synlig för vanliga besökare.
               </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Button
-                  className="bg-gold text-background hover:bg-gold/90"
-                  onClick={() => setSection("styrelse")}
-                >
-                  Öppna AI-organ styrelse
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => setSection("strategi")}
-                >
-                  Se 48 mega-uppgifter
-                </Button>
-              </div>
             </Card>
 
             {/* Autonomt system — AI-organen bygger vidare kontinuerligt */}
@@ -700,9 +686,6 @@ export default function AdminDashboard() {
           </Button>
           <Button variant="outline" onClick={() => setSection("labb")}>
             Öppna Labbet
-          </Button>
-          <Button variant="outline" onClick={() => setSection("styrelse")}>
-            AI-organ Styrelse
           </Button>
         </div>
       </div>

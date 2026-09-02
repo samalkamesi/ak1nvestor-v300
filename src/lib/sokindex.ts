@@ -31,7 +31,7 @@ const STATISKA: SokPost[] = [
   { titel: "Superanalysen", lank: "/superanalys", kategori: "Verktyg", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS", nycklar: "wizard guide 24 steg analysflode" },
   { titel: "Min portfölj", lank: "/min-portfolj", kategori: "Verktyg", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)", nycklar: "portfolj innehav djupanalys matris" },
   { titel: "Analyser", lank: "/analyser", kategori: "Sida", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser", nycklar: "bolag aktie rapport" },
-  { titel: "AI-Diagnos", lank: "/diagnos", kategori: "Verktyg", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter", nycklar: "kognitiv profil bias riskaptit" },
+  { titel: "AI-Diagnos", lank: "/profil", kategori: "Verktyg", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter", nycklar: "kognitiv profil bias riskaptit" },
   { titel: "Kognitiv profil", lank: "/profil", kategori: "Verktyg", ikon: "🧠", beskrivning: "5 marknadsscenarier → din profil", nycklar: "profil scenarier beteende" },
   { titel: "Labbar", lank: "/labb", kategori: "Sida", ikon: "🧪", beskrivning: "Forskningsärenden", nycklar: "forskning labb case" },
   // — TRÄNA —

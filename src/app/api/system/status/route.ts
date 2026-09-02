@@ -65,7 +65,7 @@ export async function GET() {
 
   // 4. Courses
   try {
-    const raw = readFileSync(path.join(process.cwd(), "src/features/deep-courses/data/deep-courses.json"), "utf-8");
+    const raw = readFileSync(path.join(process.cwd(), "public/deep-courses.json"), "utf-8");
     const courses = JSON.parse(raw);
     let deep = 0, shallow = 0;
     for (const [slug, course] of Object.entries(courses) as [string, any][]) {

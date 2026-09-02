@@ -17,7 +17,7 @@ export const maxDuration = 60;
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), "src/features/deep-courses/data/deep-courses.json");
+    const filePath = path.join(process.cwd(), "public/deep-courses.json");
     const raw = readFileSync(filePath, "utf-8");
     const courses = JSON.parse(raw);
 

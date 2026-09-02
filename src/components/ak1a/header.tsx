@@ -4,10 +4,8 @@ import * as React from "react";
 import Link from "next/link";
 import {
   Search,
-  Share2,
   Moon,
   Sun,
-  ScrollText,
   Menu,
   X,
   Sparkles,
@@ -18,9 +16,6 @@ import {
   TrendingUp,
   GraduationCap,
   FlaskConical,
-  Bot,
-  Crown,
-  Compass,
   Users,
   LogIn,
   Calculator,
@@ -37,8 +32,8 @@ import {
   Trophy,
 } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useAk1aStore, levelLabel, type Level, type SectionId } from "@/lib/ak1a-store";
-import { NAV_SECTIONS, LEVELS, FOOTER_NAV } from "@/lib/ak1a/data";
+import { useAk1aStore, type SectionId } from "@/lib/ak1a-store";
+import { NAV_SECTIONS, FOOTER_NAV } from "@/lib/ak1a/data";
 import { Ak1aLogo } from "./primitives";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -60,9 +55,6 @@ const SEKTIONS_IKONER: Record<string, typeof Home> = {
   aktier: TrendingUp,
   kurser: GraduationCap,
   labb: FlaskConical,
-  fas3: Bot,
-  styrelse: Crown,
-  strategi: Compass,
   "om-oss": Users,
   portal: LogIn,
 };
@@ -75,9 +67,6 @@ const SEKTIONS_BESKRIVNINGAR: Record<string, string> = {
   aktier: "Bevakning & aktieuniversum",
   kurser: "200+ moduler · 4 flikar",
   labb: "Case + faror + historia",
-  fas3: "AI-driven analys (Fas 3)",
-  styrelse: "Styrelsens interna vy",
-  strategi: "Strategi (#1 i världen)",
   "om-oss": "Meta-system (organ + visioner)",
   portal: "Logga in · Min portal",
 };
@@ -137,19 +126,7 @@ const MEGA_PANELER: { titel: string; ikon: typeof Home; punkter: MegaPunkt[] }[]
 ];
 
 export function Header() {
-  const {
-    section,
-    setSection,
-    level,
-    setLevel,
-    setSummaryOpen,
-    setShareOpen,
-    progress,
-    isAdmin,
-  } = useAk1aStore();
-
-  // Filter nav sections — STYRELSE only visible to admin
-  const visibleNavSections = NAV_SECTIONS.filter((s) => s.id !== "styrelse" || isAdmin);
+  const { section, setSection, progress } = useAk1aStore();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
   const [oppad, setOppad] = React.useState<string | null>(null); // öppen megamenu-panel
@@ -331,25 +308,6 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-1.5">
-          {/* Level switcher */}
-          <div className="hidden md:flex items-center rounded-md border border-border bg-card/60 p-0.5">
-            {LEVELS.map((l) => (
-              <button
-                key={l.id}
-                onClick={() => setLevel(l.id as Level)}
-                title={l.subtitle}
-                className={cn(
-                  "px-2 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-sm transition-colors",
-                  level === l.id
-                    ? "bg-gold text-background"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {l.label}
-              </button>
-            ))}
-          </div>
-
           <Button
             variant="ghost"
             size="icon"
@@ -383,26 +341,6 @@ export function Header() {
             aria-label="Byt tema"
           >
             {mounted && theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </Button>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-8 w-8 hidden sm:inline-flex"
-            onClick={() => setShareOpen(true)}
-            aria-label="Dela"
-          >
-            <Share2 className="h-4 w-4" />
-          </Button>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-8 w-8 hidden sm:inline-flex"
-            onClick={() => setSummaryOpen(true)}
-            aria-label="Sammanfattning"
-          >
-            <ScrollText className="h-4 w-4" />
           </Button>
 
           <Button
@@ -477,7 +415,7 @@ export function Header() {
                   Sektioner
                 </h2>
                 <div className="mt-2">
-                  {visibleNavSections.map((s) => {
+                  {NAV_SECTIONS.map((s) => {
                     const Ikon = SEKTIONS_IKONER[s.id] ?? Sparkles;
                     const beskrivning = SEKTIONS_BESKRIVNINGAR[s.id];
                     const aktiv = section === s.id;
@@ -558,25 +496,6 @@ export function Header() {
               </section>
             </nav>
 
-            {/* Nivåväljaren — kompakt rad inne i drawern */}
-            <div className="mt-6 flex items-center gap-1 rounded-md border border-border bg-card/60 p-0.5">
-              {LEVELS.map((l) => (
-                <button
-                  key={l.id}
-                  onClick={() => setLevel(l.id)}
-                  title={l.subtitle}
-                  className={cn(
-                    "flex-1 px-2 py-1.5 text-[10px] font-semibold uppercase tracking-wider rounded-sm transition-colors",
-                    level === l.id
-                      ? "bg-gold text-background"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  {l.label}
-                </button>
-              ))}
-            </div>
-
             {/* Guld-CTA längst ner */}
             <div className="mt-auto flex gap-3 pt-8">
               <button
@@ -597,18 +516,6 @@ export function Header() {
         </div>
       )}
 
-      {/* Level context strip — institutionellt marin band med guldtext */}
-      <div className="marin-panel hidden h-[28px] items-center border-t border-gold/30 sm:flex">
-        <div className="mx-auto flex h-full w-full max-w-7xl items-center gap-2 px-4 sm:px-6">
-          <Sparkles className="h-3 w-3 shrink-0 text-[#E8C766]" />
-          <span className="text-[10px] uppercase tracking-wider text-[#EDE6D6]/70">
-            Nivå: <span className="font-semibold text-[#E8C766]">{levelLabel(level)}</span>
-          </span>
-          <span className="hidden text-[10px] text-[#EDE6D6]/60 md:inline">
-            · {LEVELS.find((l) => l.id === level)?.subtitle}
-          </span>
-        </div>
-      </div>
     </header>
   );
 }

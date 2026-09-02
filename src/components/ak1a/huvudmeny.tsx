@@ -38,7 +38,7 @@ const PANELER: MenyPanel[] = [
       { text: "Superanalysen", lank: "/superanalys", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
       { text: "Min portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)" },
       { text: "Analyser", lank: "/analyser", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser" },
-      { text: "AI-Diagnos", lank: "/diagnos", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter" },
+      { text: "AI-Diagnos", lank: "/profil", ikon: "🧠", beskrivning: "Kognitiv profil — 3 minuter" },
       { text: "Labbar", lank: "/labb", ikon: "🧪", beskrivning: "Forskningsärenden" },
     ],
   },

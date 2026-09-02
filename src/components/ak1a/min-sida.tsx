@@ -62,7 +62,7 @@ const VERKTYG = [
   },
   {
     text: "Dagens Pass",
-    lank: "/kurser",
+    lank: "/dagens-pass",
     ikon: "🎯",
     beskrivning: "Dagens repetition — håll streaken levande",
   },

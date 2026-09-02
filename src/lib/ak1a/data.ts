@@ -8,9 +8,6 @@ export const NAV_SECTIONS = [
   { id: "aktier", label: "AKTIER" },
   { id: "kurser", label: "KURSER" },
   { id: "labb", label: "LABB" },
-  { id: "fas3", label: "FAS 3 AI" },
-  { id: "styrelse", label: "STYRELSE" },
-  { id: "strategi", label: "STRATEGI" },
   { id: "om-oss", label: "OM OSS" },
   { id: "portal", label: "PORTAL" },
 ] as const;
@@ -20,7 +17,6 @@ export const FOOTER_NAV = [
   { label: "Hem · Huvudsida", section: "hem" as const },
   { label: "PREC-analysen (alla sektioner)", section: "prec" as const },
   { label: "Alla analyser", section: "analyser" as const },
-  { label: "Strategi (#1 i världen)", section: "strategi" as const },
   { label: "Kurser (200+ moduler · 4 flikar)", section: "kurser" as const },
   { label: "Labb (case + faror + historia)", section: "labb" as const },
   { label: "Meta-system (organ + visioner)", section: "om-oss" as const },

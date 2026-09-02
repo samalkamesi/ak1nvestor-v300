@@ -30,7 +30,7 @@ const KOLUMNER: FooterKolumn[] = [
       { text: "Superanalysen", lank: "/superanalys" },
       { text: "Min portfölj", lank: "/min-portfolj" },
       { text: "Analyser", lank: "/analyser" },
-      { text: "AI-Diagnos", lank: "/diagnos" },
+      { text: "AI-Diagnos", lank: "/profil" },
     ],
   },
   {

@@ -56,10 +56,12 @@ export function HomeSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  onClick={() => setSection("strategi")}
+                  onClick={() => {
+                    if (typeof window !== "undefined") window.location.href = "/manifest";
+                  }}
                   className="border-[#E8C766]/50 bg-transparent text-[#E8C766] hover:bg-[#E8C766]/10 hover:text-[#E8C766] dark:bg-transparent"
                 >
-                  Se hur vi tänker
+                  Så tänker vi
                 </Button>
               </div>
 

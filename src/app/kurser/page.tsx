@@ -4,6 +4,7 @@ import { pageMetadata, websiteJsonLd, JsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { FortsattPanel } from "@/components/ak1a/fortsatt-panel";
 import { KursSok } from "@/components/ak1a/kurs-sok";
+import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 
 export const dynamic = "force-static";
 
@@ -41,6 +42,11 @@ export default function KurserPage() {
         Varje kurs bygger på samma metodik som institutionerna använder, förklarad
         pedagogiskt för privatpersoner.
       </p>
+
+      {/* Tips för just dig — personligt, som ett tips aldrig ett tvång */}
+      <div className="mt-6">
+        <KurstipsKort antal={3} />
+      </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_260px]">
         <KursSok

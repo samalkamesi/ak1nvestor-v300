@@ -13,6 +13,9 @@ import {
 } from "@/lib/member-local";
 import { srStatistik, type SRStatistik } from "@/lib/spaced-repetition";
 import { badgeStatus, type BadgeStatus } from "@/lib/badges";
+import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
+import { ElevkarnaFormuljar } from "@/components/ak1a/elevkarna-formuljar";
+import { VeckoPlan } from "@/components/ak1a/vecko-plan";
 
 /**
  * MIN SIDA — medlemmens allt-i-ett-dashboard.
@@ -73,6 +76,31 @@ const SR_TOM: SRStatistik = {
   nastaNasta: null,
 };
 
+// ── Välfärdspanelen: hjälpvärden ─────────────────────────────────────────────
+
+/** Kalkylatorns 20 fundamentalvariabler (V01–V20) — varje klarad kurs grundlägger en. */
+const V_KURSER_TOTAL = 20;
+
+/** Välfärdskurvans kubiska bézier: start (6,74) → mål (190,10). Ger punkten vid t∈[0,1]. */
+function punktPaKurva(t: number): { x: number; y: number } {
+  const u = 1 - t;
+  const x = u ** 3 * 6 + 3 * u ** 2 * t * 58 + 3 * u * t ** 2 * 110 + t ** 3 * 190;
+  const y = u ** 3 * 74 + 3 * u ** 2 * t * 70 + 3 * u * t ** 2 * 42 + t ** 3 * 10;
+  return { x, y };
+}
+
+/**
+ * Vanans värme-färgskala: 0 → klarblå ("varje forskare börjar noll") →
+ * 7+ → djupgrön ("vanan sitter"). Aldrig röd/varning — alltid resan-börjar-ton.
+ */
+function vanFarg(dag: number): string {
+  if (dag <= 0) return "#7DD3FC"; // klarblå — början
+  if (dag <= 2) return "#67E8F9";
+  if (dag <= 4) return "#5EEAD4";
+  if (dag <= 6) return "#34D399";
+  return "#059669"; // djupgrön — vanan sitter
+}
+
 /** Öppnar den globalt monterade AI-mentorn (chatt-widgeten i layouten). */
 function oppnaMentorn() {
   const knapp = document.querySelector<HTMLButtonElement>('button[aria-label="AI-Mentor"]');
@@ -85,6 +113,7 @@ export function MinSida() {
   const [xp, setXp] = useState(0);
   const [stjarnor, setStjarnor] = useState(0);
   const [streak, setStreak] = useState(0);
+  const [streakBasta, setStreakBasta] = useState(0);
   const [klara, setKlara] = useState<string[]>([]);
   const [sr, setSr] = useState<SRStatistik>(SR_TOM);
   const [badges, setBadges] = useState<BadgeStatus[]>([]);
@@ -93,7 +122,9 @@ export function MinSida() {
     setMedlem(lasMedlem());
     setXp(lasXP());
     setStjarnor(lasStjarnor());
-    setStreak(lasStreak().antal);
+    const streakData = lasStreak();
+    setStreak(streakData.antal);
+    setStreakBasta(streakData.basta);
     setKlara(lasKlaraKurser());
     setSr(srStatistik());
     setBadges(badgeStatus());
@@ -107,6 +138,13 @@ export function MinSida() {
   const procent = Math.min(100, Math.round((klara.length / LAROPLAN_TOTAL) * 100));
   const nastaKurs = NYCKELKURSER.find((k) => !klara.includes(k.slug));
   const xpINivan = xp % 100;
+
+  // ── Välfärdspanelen: härledda värden ──
+  const kurvFramsteg = Math.min(1, klara.length / LAROPLAN_TOTAL);
+  const nulage = punktPaKurva(kurvFramsteg);
+  const grundlagda = Math.min(V_KURSER_TOTAL, klara.length);
+  const trygghetsProcent = Math.round((grundlagda / V_KURSER_TOTAL) * 100);
+  const ringOmfang = 2 * Math.PI * 30;
 
   // ── Skeleton under hydrering (deterministisk på server + klient) ──
   if (!hydrerad) {
@@ -148,8 +186,9 @@ export function MinSida() {
             Din utbildning — på ett ställe
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Min Sida samlar hela ditt arbete i labbet: framsteg, repetition, meriter
-            och analysverktyg. Allt som väntar dig:
+            Min Sida samlar hela ditt arbete på ett ställe — vi bygger detta för
+            dig. Framsteg, repetition, meriter och analysverktyg — allt som
+            väntar dig:
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -184,7 +223,8 @@ export function MinSida() {
         </div>
 
         <p className="relative mt-8 text-center text-xs text-muted-foreground">
-          Gratis att börja — dina framsteg sparas lokalt i din webbläsare.
+          Vi bygger detta för dig — kostnadsfritt, för alltid. Dina framsteg
+          sparas lokalt i din webbläsare.
         </p>
       </div>
     );
@@ -222,7 +262,7 @@ export function MinSida() {
           <div className="flex flex-wrap items-center gap-2">
             <span
               className="flex items-center gap-1.5 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-2 text-xs font-bold text-gold"
-              title={`Bästa streak: ${lasStreak().basta} dagar`}
+              title={`Bästa streak: ${streakBasta} dagar`}
             >
               🔥 {streak > 0 ? `${streak} dag${streak === 1 ? "" : "ar"} i rad` : "Starta streaken idag"}
             </span>
@@ -234,6 +274,190 @@ export function MinSida() {
             </span>
           </div>
         </div>
+      </section>
+
+      {/* (a2) VÄLFÄRDSPANLEN — utbildning → välmående → välfärd */}
+      <section className="marin-panel relative overflow-hidden rounded-2xl border border-gold/30 p-6 sm:p-8">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent" />
+        <div className="relative">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gold-soft">Välfärdspanelen</p>
+          <h2 className="mt-2 font-serif text-xl font-bold tracking-tight text-gold-soft sm:text-2xl">
+            Din resa mot det du vill uppnå
+          </h2>
+          <p className="mt-1.5 text-xs leading-relaxed text-[#EDE6D6]/70">
+            Utbildning är kärnan i välmående — varje kurs, varje repetition och varje
+            dag framåt blir välfärd som är din för alltid.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {/* Kort 1 · Kunskapsväxt — din punkt på kurvan just nu */}
+            <div className="flex flex-col rounded-xl border border-gold/30 bg-card p-5">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Kunskapsväxt</p>
+              <p className="mt-3 font-serif text-4xl font-black tracking-tight text-gold">
+                {klara.length}
+                <span className="ml-2 align-middle text-xs font-bold text-muted-foreground">
+                  {klara.length === 1 ? "kurs klarad" : "kurser klarade"}
+                </span>
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Nivå {elevNiva} · {xp.toLocaleString("sv-SE")} XP — och varje dag framåt
+              </p>
+
+              <div className="mt-auto pt-4">
+                <svg
+                  viewBox="0 0 200 84"
+                  className="w-full"
+                  role="img"
+                  aria-label={`Stigande kunskapskurva: ${klara.length} klarade kurser på väg mot målet Oberoende analytiker`}
+                >
+                  {/* Vägen framåt — mjuk stigande kurva som långsamt flyter mot målet */}
+                  <path
+                    d="M 6 74 C 58 70 110 42 190 10"
+                    fill="none"
+                    stroke="var(--gold)"
+                    strokeOpacity="0.45"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeDasharray="4 5"
+                  >
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      from="0"
+                      to="-18"
+                      dur="1.6s"
+                      repeatCount="indefinite"
+                    />
+                  </path>
+                  {/* Målpunkten med vimpel — Oberoende analytiker */}
+                  <circle cx="190" cy="10" r="3.5" fill="var(--gold)" />
+                  <path d="M 190 10 l 0 -8 l 8 3 l -8 3" fill="var(--gold)" opacity="0.9" />
+                  {/* Din punkt på kurvan — startpunkten, med andning */}
+                  <circle
+                    cx={nulage.x}
+                    cy={nulage.y}
+                    r="6"
+                    fill="var(--gold)"
+                    opacity="0.25"
+                    className="animate-pulse"
+                  />
+                  <circle cx={nulage.x} cy={nulage.y} r="3.5" fill="var(--gold)" />
+                </svg>
+                <div className="mt-1 flex items-center justify-between gap-2 text-[10px]">
+                  <span className="font-bold text-gold">Du är här</span>
+                  <span className="text-right text-muted-foreground">Målet: Oberoende analytiker</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Kort 2 · Vanan — streak med värme-färgskala */}
+            <div className="flex flex-col rounded-xl border border-gold/30 bg-card p-5">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Vanan</p>
+              <p
+                className="mt-3 font-serif text-4xl font-black tracking-tight"
+                style={{ color: vanFarg(streak) }}
+              >
+                {streak}
+                <span className="ml-2 align-middle text-xs font-bold text-muted-foreground">
+                  {streak === 1 ? "dag i rad" : "dagar i rad"}
+                </span>
+              </p>
+              <p className="mt-1 text-xs font-semibold" style={{ color: vanFarg(streak) }}>
+                {streak >= 7 ? "Vanan sitter" : streak >= 1 ? "Vanan växer" : "Varje forskare börjar noll"}
+              </p>
+              <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">
+                {streak >= 7
+                  ? `${streak} dagar i rad — närvaron som bygger välfärd.`
+                  : streak >= 1
+                    ? "En dag i taget — imorgon blir kedjan längre."
+                    : "Din första dag kan vara idag — ett pass räcker."}
+              </p>
+
+              <div className="mt-auto pt-4">
+                <div className="flex items-center gap-1.5" aria-hidden="true">
+                  {Array.from({ length: 7 }, (_, i) => {
+                    const tand = i < Math.min(streak, 7);
+                    const farg = vanFarg(i + 1);
+                    return (
+                      <span
+                        key={i}
+                        className="h-2.5 w-2.5 rounded-full border border-gold/20 bg-muted"
+                        style={
+                          tand
+                            ? { backgroundColor: farg, borderColor: farg, boxShadow: `0 0 7px ${farg}55` }
+                            : undefined
+                        }
+                      />
+                    );
+                  })}
+                </div>
+                <p className="mt-2 text-[10px] text-muted-foreground">
+                  Bästa streak: {streakBasta} {streakBasta === 1 ? "dag" : "dagar"}
+                </p>
+              </div>
+            </div>
+
+            {/* Kort 3 · Tryggheten — grundlagda variabler (V01–V20) */}
+            <div className="flex items-start gap-4 rounded-xl border border-gold/30 bg-card p-5">
+              <div className="relative shrink-0">
+                <svg
+                  viewBox="0 0 72 72"
+                  className="h-20 w-20 -rotate-90"
+                  role="img"
+                  aria-label={`${trygghetsProcent} procent av 20 grundlagda variabler`}
+                >
+                  <circle cx="36" cy="36" r="30" fill="none" stroke="var(--muted)" strokeWidth="7" />
+                  <circle
+                    cx="36"
+                    cy="36"
+                    r="30"
+                    fill="none"
+                    stroke="var(--gold)"
+                    strokeWidth="7"
+                    strokeLinecap="round"
+                    strokeDasharray={ringOmfang}
+                    strokeDashoffset={ringOmfang * (1 - trygghetsProcent / 100)}
+                  />
+                </svg>
+                <span className="absolute inset-0 flex items-center justify-center font-serif text-sm font-black text-gold">
+                  {trygghetsProcent}%
+                </span>
+              </div>
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Tryggheten</p>
+                <p className="mt-2 text-sm font-bold text-foreground">
+                  {grundlagda} av {V_KURSER_TOTAL} grundlagda variabler
+                </p>
+                <p className="mt-1 text-[11px] leading-snug text-muted-foreground">
+                  {grundlagda >= V_KURSER_TOTAL
+                    ? "Alla 20 variabler är lagda — du står på solid grund."
+                    : grundlagda > 0
+                      ? "Varje variabel = ett tryggare beslut i ditt liv."
+                      : "Resan börjar med första variabeln — varje grundläggning är ett tryggare beslut i ditt liv."}
+                </p>
+                <p className="mt-2 text-[10px] text-muted-foreground">V01–V20 · kalkylatorns fundament</p>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6 text-center text-[11px] italic text-[#EDE6D6]/60">
+            Vi är tacksamma för varje dag du väljer att lära dig — så byggs välfärd, ett beslut i taget.
+          </p>
+        </div>
+      </section>
+
+      {/* (a2) ELEVKÄRNAN — din 30-sekunders introduktion, välfärden först */}
+      <section className="mt-6">
+        <ElevkarnaFormuljar />
+      </section>
+
+      {/* (a3) VECKOPLANEN — automatiskt sammansatt, anpassar sig varje vecka */}
+      <section className="mt-6">
+        <VeckoPlan />
+      </section>
+
+      {/* (a4) KURSTIPS — rätt kurs som ett tips, aldrig ett tvång */}
+      <section className="mt-6">
+        <KurstipsKort antal={3} />
       </section>
 
       {/* (b) PROGRESS-VÄG */}

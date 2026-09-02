@@ -1,36 +1,76 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCourses, getBlogPosts } from "@/lib/content";
-import { lasMedlem, niva, lasXP, lasKlaraKurser } from "@/lib/member-local";
 import { zaiAktiv, zaiChat } from "@/lib/zai";
 
+import { getSupabaseRest } from "@/lib/supabase-rest";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
  * POST /api/chatbot — AI-Mentorn: superintelligent guide som:
  * 1. Känner eleven (nivå, XP, klarade kurser, plats på sajten)
- * 2. Förstår SAMMANHANG (var eleven befinner sig just nu)
- * 3. GER HANDLINGAR ("klicka här", "gör detta nu", "nästa steg")
- * 4. Följer AKM1/AK1TS-ekosystemet i ALLT
- * 5. Proaktiv: föreslår NÄSTA STEG innan eleven frågar
+ * 2. Förstår SAMMANHANG (var eleven befinner sig just nu — alla sidtyper)
+ * 3. REDIGERAR BEHOVET: tvetydiga frågor ("är Volvo bra?") möts med EN
+ *    klarliggande motfråga om tidshorisont och mål (svar-typ "klarande") —
+ *    mentorn gissar aldrig, den hjälper eleven formulera vad den vill veta
+ * 4. GER HANDLINGAR ("klicka här", "gör detta nu", "nästa steg")
+ * 5. Följer AKM1/AK1TS-ekosystemet i ALLT
+ * 6. RÅDGIVNINGS-GRÄNS: ALDRIG köp/sälj-rekommendationer — alltid disclaimer
+ *    ("pedagogisk analys — inte investeringsråd") vid värderingsnära frågor
+ * 7. Proaktiv: föreslår NÄSTA STEG innan eleven frågar
+ *
+ * Svars-typen "klarande" använder handlings-länkar på formen "fragor:<text>"
+ * (URL-kodad) — chat-widgeten skickar texten som en NY fråga, vilket gör
+ * motfrågan klickbart svarsbar.
  */
 
 type Intent = {
-  typ: "navigering" | "utbildning" | "analys" | "portfölj" | "inspiration" | "hjälp" | "system";
+  typ: "navigering" | "utbildning" | "analys" | "portfölj" | "inspiration" | "hjälp" | "system" | "klarande";
   handlings: Array<{ text: string; lank: string; ikon: string; beskrivning?: string }>;
 };
 
-function byggKontext(sokvag: string): Record<string, unknown> {
-  // Känner eleven
-  const medlem = lasMedlem();
-  const nivaV = typeof window !== "undefined" ? niva() : 1;
-  const xp = typeof window !== "undefined" ? lasXP() : 0;
-  const klara = typeof window !== "undefined" ? lasKlaraKurser() : [];
-
-  // Känner plats
-  const sida = sokvag.split("/").filter(Boolean);
-
-  return { medlem, niva: nivaV, xp, klaraKurser: klara.length, sida };
+/** Enkelt sidnamn ur sökvägen — för GLM-promptens platssinne (server-sida). */
+function sidKontextText(sokvag: string): string {
+  const p = String(sokvag || "/").toLowerCase();
+  const delar = p.split("/").filter(Boolean);
+  const rot = delar[0] || "";
+  const under = delar[1] || "";
+  const kart: Record<string, string> = {
+    kurser: under
+      ? `kurs-sidan /kurser/${under} — eleven läser just nu denna kurs kapitel för kapitel`
+      : "kursbiblioteket (307 kurser)",
+    analyser: under
+      ? `analysen av ${decodeURIComponent(under).toUpperCase()} — eleven fördjupar sig i ett enskilt bolag`
+      : "analysbanken — eleven bläddrar bland analyser",
+    kalkylator: "AKM1-kalkylatorn — eleven räknar på ett bolag just nu",
+    "min-portfolj": "portföljsystemet — eleven följer sina innehav",
+    portfoljbyggare: "portföljbyggaren — eleven bygger en tänkt portfölj rad för rad",
+    blogg: under ? `bloggartikeln "${decodeURIComponent(under)}"` : "bloggen",
+    labb: "Labbet (201 case studies)",
+    laroplan: "läroplanen — elevens 5-nivåers resa",
+    vagfundament: "Vågfundamentet — 20×5-matrisen med fundamentalvågor",
+    konfluens: "Konfluensradarn — värde möter vågor",
+    netnet: "Net-net-skannern — Grahams NCAV-screening",
+    rapporter: "redovisningsverkstan — eleven bygger rapport",
+    fas3: "Fas 3-sidan",
+    "fas2-ansok": "Fas 2-ansökan",
+    pro: "Pro-sidan (B2B)",
+    medlemskap: "medlemskapssidan (Fas 1/2/3)",
+    profil: "analytikerprofilen",
+    "dagens-pass": "dagens pass",
+    topplista: "topplistan",
+    badges: "meritväggen (badges)",
+    manifest: "manifestet",
+    bibliotek: "biblioteket — bokkanon + BOKMASTER",
+    certifikat: "certifikatssidan (betyg A–D)",
+    superanalys: "superanalysen",
+    "min-sida": "Min sida — elevens dashboard",
+    "logga-in": "inloggningssidan",
+    "om-oss": "Om oss-sidan",
+  };
+  if (kart[rot]) return kart[rot];
+  if (!rot) return "startsidan";
+  return `sidan ${p}`;
 }
 
 function navigera(fraga: string): Intent | null {
@@ -255,6 +295,289 @@ function akm1Svar(fraga: string): { svar: string; handlings: Array<{ text: strin
   return null;
 }
 
+// ── SID-DATA-INTENTS (nya 2026-09-01) ───────────────────────────────────────
+// Deterministiska svar på sajtens analys-verktyg — inspiration: dashfraga.ts.
+
+/** VÅGKON — den deterministiska vågkonen (percentilband ur historikens egen σ). */
+function vagkonSvar(fraga: string) {
+  const q = fraga.toLowerCase();
+  if (!/v[aå]gkon/.test(q)) return null;
+  return {
+    svar: `[VÅGKON] Vågkonen är den deterministiska vågkonen: ur en pris- eller fundamentalhistorik (t.ex. 24 månads-slutkurser) räknas percentilband per AK1TS-horisont — ren matematik ur seriens egen standardavvikelse, ingen slump, inga gissningar.
+Så läser du den:
+• Ligger kursen i konens nedre band är den lågt mot sin egen historia — i övre bandet högt.
+• Konen säger INTE vart kursen ska — den visar var den är, relativt sitt eget förflutna.
+Du ser grafen på Konfluens-sidan (demo: Volvo B) och kan hämta live-data via /api/vagkon?ticker=VOLV-B.ST&serie=pris.
+Pedagogiskt studieunderlag — inte investeringsråd.`,
+    handlings: [
+      { text: "Se vågkon-grafen →", lank: "/konfluens", ikon: "📈" },
+      { text: "Vågfundamentet (20×5) →", lank: "/vagfundament", ikon: "🌊" },
+      { text: "Ekosystem-kursen →", lank: "/kurser/portfolj-ekosystemet", ikon: "📊" },
+    ],
+    kalla: "Vågkonen (Fas C)",
+    typ: "utbildning" as const,
+  };
+}
+
+/** KONFLUENS (fördjupad) — radarns garanti och de fem dimensionerna. */
+function konfluensSvar(fraga: string) {
+  const q = fraga.toLowerCase();
+  if (!/konfluens/.test(q)) return null;
+  return {
+    svar: `[KONFLUENS] Radarns garanti: värde FÖRE vågor — först måste bolaget vara påstått billigt mot sina egna siffror, SEDAN letar vi vågor som vänder. Fem oberoende dimensioner måste tala samman:
+1. Värdegolv — NCAV-kvot + P/B + P/E (net-net + analysfundament). Värdepelaren väger tyngst — utan ett värdegolv spelar vågorna ingen roll.
+2. Kvalitet — AKM1-proxy: ROE, vinstmarginal och skuldsättningsgrad.
+3. Fundamental vågstart — andel impulsvågor på mikro+kort i vågfundamentets 20×5-matris.
+4. Prisvågläge — prisvåg fortfarande i basbygge/korrigering = vi är tidiga ute (högt); impulsvåg = tåget har gått.
+5. Divergens — fundamentet ▲ medan priset ▼ = vändande vågor (den femte, oberoende rösten).
+Allt vägs samman till EN deterministisk konfluenspoäng 0–100 (klass-gräns 70, pelar-gräns 50) — bedöms färre än två av de fem dimensionerna blir poängen osatt: ärlig utdata, aldrig påhittad.
+Klass-namnen är radarns eget språk: ett studieunderlag, aldrig en signal.`,
+    handlings: [
+      { text: "Öppna Konfluensradarn →", lank: "/konfluens", ikon: "🧭" },
+      { text: "Vågfundamentet (20×5) →", lank: "/vagfundament", ikon: "🌊" },
+      { text: "Net-net-skannern →", lank: "/netnet", ikon: "🎣" },
+    ],
+    kalla: "Konfluensmotorn — fem dimensioner",
+    typ: "utbildning" as const,
+  };
+}
+
+/** NET-NET / NCAV — Grahams extrema värdegolv. */
+function netnetSvar(fraga: string) {
+  const q = fraga.toLowerCase();
+  if (!/net[- ]?net|\bncav\b|cigar.?butt/.test(q)) return null;
+  return {
+    svar: `[NET-NET] Grahams mest extrema värdegolv: en net-net är ett bolag där kursen ligger under 2/3 av Net Current Asset Value (NCAV) — omsättningstillgångar minus totala skulder. Du köper alltså hela bolaget för mindre än dess rörelsekapital och får verksamheten "gratis".
+Cigar-butts kallas de för: som en fimpa du plockar upp på gatan — ett återstående bloss värde. De är sällsynta idag, och skannern visar var de finns: grön NET-NET-markering när kurs/NCAV ≤ 0,667, guld NÄRA strax över.
+Pedagogiskt verktyg — aldrig investeringsråd.`,
+    handlings: [
+      { text: "Öppna Net-net-skannern →", lank: "/netnet", ikon: "🎣" },
+      { text: "Konfluensradarn →", lank: "/konfluens", ikon: "🧭", beskrivning: "Värdegolvet är dimension 1" },
+      { text: "Graham: The Intelligent Investor →", lank: "/kurser/the-intelligent-investor", ikon: "🏛️" },
+    ],
+    kalla: "Net-net-motorn (Graham)",
+    typ: "utbildning" as const,
+  };
+}
+
+/** FAS 3 / CERTIFIERING — kraven och länkarna. */
+function fas3Svar(fraga: string) {
+  const q = fraga.toLowerCase();
+  if (!/fas\s?[123]|certifier|certifikat|intyg|medlemskap/.test(q)) return null;
+  return {
+    svar: `[FAS 3 & CERTIFIERING] Fas 3 (13 999 kr) representeras snart — Fas 2-medlemmar får tillgång först. Vägen dit byggs av din egen insats:
+• Fas 1 — hela biblioteket (307 kurser, kalkylatorn, portföljsystemet): gratis för alltid.
+• Fas 2 — coaching, gemenskap och representant-vägen; ansökan kostnadsfritt (2 min), nivå 25+ är en bra signal.
+• Certifikatet — betyg A–D styrs av din nivå, ditt XP och dina klarade kurser, och uppdateras live. Delbart på LinkedIn.
+Kraven växer alltså ur vad du faktiskt gör här i labbet — inte ur vad du betalar.`,
+    handlings: [
+      { text: "Se medlemskapet (Fas 1/2/3) →", lank: "/medlemskap", ikon: "💛" },
+      { text: "Ansök om Fas 2 (kostnadsfritt) →", lank: "/fas2-ansok", ikon: "🎓" },
+      { text: "Se ditt certifikat →", lank: "/certifikat", ikon: "📜" },
+    ],
+    kalla: "AK1A medlemskap",
+    typ: "hjälp" as const,
+  };
+}
+
+/** PRO / B2B — vägen för skolor, företag och institutioner. */
+function proSvar(fraga: string) {
+  const q = fraga.toLowerCase();
+  if (!/\bpro\b|\bb2b\b|företagspaket|skollicens|företagskonto/.test(q)) return null;
+  return {
+    svar: `[PRO / B2B] AK1A Pro är vägen för skolor, företag och institutioner som vill ge sina elever eller medarbetare hela ekosystemet — 307 kurser, AKM1-kalkylatorn (20 variabler), portföljsystemet (5×5×4) och AI-mentorn.
+Privata medlemmar hittar sina faser (Fas 1 gratis · Fas 2 coaching · Fas 3 snart) på medlemskapssidan.`,
+    handlings: [
+      { text: "AK1A Pro →", lank: "/pro", ikon: "🏢" },
+      { text: "Medlemskap & faser →", lank: "/medlemskap", ikon: "💛" },
+    ],
+    kalla: "AK1A Pro",
+    typ: "hjälp" as const,
+  };
+}
+
+/** RAPPORT / REDOVISNING — redovisningsverkstan. */
+function rapportSvar(fraga: string) {
+  const q = fraga.toLowerCase();
+  if (!/rapport|redovisn/.test(q)) return null;
+
+  // Portföljrapporten har sin egen guide (blogg) — träffa den först
+  if (/portföljrapport|portfoljrapport/.test(q)) {
+    return {
+      svar: `[RAPPORT] Så läser du din portföljrapport — guiden går steg för steg genom rapportens delar: AKM1-poängen per aktie, vågprofilen och riskmätningen. Verkstan där du BYGGER egna rapporter hittar du på /rapporter.`,
+      handlings: [
+        { text: "Läs guiden →", lank: "/blogg/sa-laser-du-din-portfoljrapport", ikon: "📖" },
+        { text: "Bygg en rapport →", lank: "/rapporter", ikon: "🖨️" },
+      ],
+      kalla: "AK1A rapportverkstad",
+      typ: "utbildning" as const,
+    };
+  }
+
+  return {
+    svar: `[RAPPORT] Redovisningsverkstan samlar dina analyser till en formatterad, utskriftsbar redovisningsrapport: marin omslagsband med AK1A-signering och din nivå, nyckeltal som tabellrader och metodiken bakom AKM1, AK1TS och Konfluens — med automatiska disclaimers. Allt sparas lokalt i din webbläsare. Skriv ut eller spara som PDF och dela med lärare, föräldrar eller framtida du.`,
+    handlings: [
+      { text: "Öppna redovisningsverkstan →", lank: "/rapporter", ikon: "🖨️" },
+      { text: "Välj analyser i analysbanken →", lank: "/analyser", ikon: "📊" },
+      { text: "Se ditt certifikat →", lank: "/certifikat", ikon: "📜" },
+    ],
+    kalla: "AK1A rapportverkstad",
+    typ: "utbildning" as const,
+  };
+}
+
+/** TIDSHORISONT — AK1TS fem horisonter (mikro → mega) + var eleven börjar värdera. */
+function tidshorisontSvar(fraga: string) {
+  const q = fraga.toLowerCase();
+  if (!/tidshorisont|\bkort sikt\b|\blång sikt\b|\blang sikt\b|kortsiktig|långsiktig/.test(q)) return null;
+  return {
+    svar: `[TIDSHORISONT] Din tidshorisont förändrar ALLT i analysen — därför har AK1TS fem horisonter: mikro, kort, medellång, lång och mega. Samma bolag kan vara en stark impulsvåg på mikro och ett moget basbygge på lång.
+För långsiktigt ägande (5 år+) börjar du med fundamentet: AKM1:s 20 variabler (V01–V20, 0–100 poäng) — lönsamheten (V09 ROE), moaten (V13–V15) och skulderna (V10) väger då tyngst.
+Räkna exakt i kalkylatorn — jag ger aldrig köp- eller säljrekommendationer, jag lär ut metoden.`,
+    handlings: [
+      { text: "Räkna på ett bolag →", lank: "/kalkylator", ikon: "🧮" },
+      { text: "V09: ROE (start här) →", lank: "/kurser/v09-roe", ikon: "📊" },
+      { text: "Ekosystem-kursen (5×5×4) →", lank: "/kurser/portfolj-ekosystemet", ikon: "🗺️" },
+    ],
+    kalla: "AK1TS — fem horisonter",
+    typ: "utbildning" as const,
+  };
+}
+
+// ── VÅGKARTA — intern hämtning av senaste autonoma vagscan ──────────────────
+
+/** Svar från /api/vagscan/senaste (cron/vagscan + vågkorta-kortet). */
+type VagscanSvar = {
+  saknas?: boolean;
+  genererad?: string;
+  universumSammanfattning?: { impulsvag: number; korrigering: number; basbygge: number; osatt: number };
+  topRorelse?: { variabel: string; namn: string; antalBolag: number; text: string }[];
+  botRorelse?: { variabel: string; namn: string; antalBolag: number; text: string }[];
+};
+
+/** Hämta senaste vågskanning — läser direkt ur Supabase (ingen loopback-fetch,
+ *  undviker SSRF-yta: samma datakälla som /api/vagscan/senaste läser ifrån). */
+async function hamtaSenasteVagscan(): Promise<VagscanSvar | null> {
+  const rest = getSupabaseRest();
+  if (!rest) return null;
+  try {
+    const res = await fetch(
+      rest.origin + "/rest/v1/system_events?type=eq.vagscan&select=details,created_at&order=created_at.desc&limit=1",
+      { headers: rest.headers, signal: AbortSignal.timeout(4000) }
+    );
+    if (!res.ok) return null;
+    const rader = await res.json();
+    if (!Array.isArray(rader) || rader.length === 0) return null;
+    const d = rader[0].details ?? rader[0];
+    return typeof d === "string" ? (JSON.parse(d) as VagscanSvar) : (d as VagscanSvar);
+  } catch {
+    return null;
+  }
+}
+
+
+
+/** VÅGKARTA — "vad säger vågkartan?" → senaste autonoma mätningen. */
+async function vagkartaSvar(fraga: string) {
+  const q = fraga.toLowerCase();
+  if (!/v[aå]gkarta|vagscan|vågmätning/.test(q)) return null;
+
+  const scan = await hamtaSenasteVagscan();
+  const u = scan?.universumSammanfattning;
+  if (!scan || scan.saknas === true || !u) {
+    return {
+      svar: `[VÅGKARTA] Ingen vågkarta har sparats ännu — den autonoma mätningen körs enligt schema, och nästa mätning fyller kartan automatiskt. Du kan alltid studera vågklasserna ▲▼◼ själv i Vågfundamentets 20×5-matris.`,
+      handlings: [
+        { text: "Vågfundamentet (20×5) →", lank: "/vagfundament", ikon: "🌊" },
+        { text: "Min sida (kartan) →", lank: "/min-sida", ikon: "🗺️" },
+      ],
+      kalla: "Vågkartan (autonom mätning)",
+      typ: "analys" as const,
+    };
+  }
+
+  const top = scan.topRorelse?.[0];
+  const bot = scan.botRorelse?.[0];
+  const delar: string[] = [];
+  if (top) delar.push(`starkast stigande: ${top.variabel} ${top.namn} (${top.antalBolag} bolag)`);
+  if (bot) delar.push(`starkast fallande: ${bot.variabel} ${bot.namn} (${bot.antalBolag} bolag)`);
+  const rorelser = delar.length > 0 ? `${delar.join(" · ")}.` : "Inga dominerande rörelser just nu.";
+  const genererad = scan.genererad ? ` (mätning: ${scan.genererad})` : "";
+
+  return {
+    svar: `[VÅGKARTA] Senaste vågmätningen${genererad}: ${u.impulsvag} impulsvågor ▲, ${u.korrigering} korrigeringar ▼, ${u.basbygge} basbyggen ◼ och ${u.osatt} osatta celler i universum. ${rorelser}
+Vågkartan är pedagogisk analys — inte investeringsråd.`,
+    handlings: [
+      { text: "Se hela vågkartan →", lank: "/min-sida", ikon: "🗺️" },
+      { text: "Vågfundamentet (20×5) →", lank: "/vagfundament", ikon: "🌊" },
+      { text: "Konfluensradarn →", lank: "/konfluens", ikon: "🧭" },
+    ],
+    kalla: "Vågkartan (autonom mätning)",
+    typ: "analys" as const,
+  };
+}
+
+// ── TVETYDIGHETS-DETEKTERING (redigering) ───────────────────────────────────
+
+/** Mönster på behovs-tvetydighet — mentorn REDIKERAR istället för att gissa.
+ *  OBS: \b fungerar inte med å/ä/ö i JS — svenska ordgränser hanteras med
+ *  lookarounds mot [a-z0-9åäö] i stället. */
+const SV = "a-z0-9åäö";
+const TVETYDIGA_MONSTER: RegExp[] = [
+  // "är volvo bra?", "är det ett bra köp?", "är aktien värd det?"
+  new RegExp(`(?<![${SV}])är(?![${SV}])[^?]{0,60}(?<![${SV}])(bra|dålig|dåligt|intressant|värt|köp)(?![${SV}])`),
+  // "ska jag köpa volvo?", "bör jag sälja nu?"
+  new RegExp(`(?<![${SV}])(ska|bör|skulle|kan)(?![${SV}])\\s+jag\\s+(?<![${SV}])(köpa|sälja|behålla|gå in|ta ut)(?![${SV}])`),
+  // "köpa nu", "sälja aktien", "köpa bolaget"
+  new RegExp(`(?<![${SV}])(köpa|sälja)(?![${SV}])\\s+(?<![${SV}])(nu|aktien|aktier|bolaget|den|det)(?![${SV}])`),
+  // "vad tycker du om volvo?"
+  new RegExp(`(?<![${SV}])vad\\s+tycker\\s+(du|ni)\\s+om(?![${SV}])`),
+  // "vilken aktie är bäst?"
+  new RegExp(`(?<![${SV}])vilken(?![${SV}])[^?]{0,30}(?<![${SV}])(aktie|bolag|portfölj)(?![${SV}])[^?]{0,20}(?<![${SV}])(bäst|bra)(?![${SV}])`),
+];
+
+function arTvetydig(fraga: string): boolean {
+  return TVETYDIGA_MONSTER.some((re) => re.test(fraga.toLowerCase()));
+}
+
+/**
+ * KLARANDE SVAR — EN motfråga om tidshorisont och mål, med klickbara
+ * svarsalternativ ("fragor:" skickas tillbaka som ny fråga av widgeten).
+ * Ton: pedagogik.ts — vi hjälper, vi dömer aldrig.
+ */
+function klarandeSvar(fraga: string) {
+  const fragaKort = fraga.trim().replace(/\s+/g, " ").slice(0, 60);
+  return {
+    svar: `Bra fråga — och precis här vill jag vara en riktig mentor istället för att gissa. "${fragaKort}${fraga.length > 60 ? "…" : ""}" beror helt på vad du vill uppnå: en aktie kan vara ett utmärkt långsiktigt innehav och ett dåligt korttidsläge — samtidigt.
+
+Hjälp mig förstå din tidshorisont och ditt mål, så tar jag dig exakt dit du vill:
+
+Jag ger aldrig köp- eller säljrekommendationer — jag lär ut metoden (AKM1: 20 variabler, 0–100 poäng) så att du kan döma själv. Pedagogisk analys — inte investeringsråd.`,
+    handlings: [
+      {
+        text: "Långsiktigt ägande (5 år+)",
+        lank: "fragor:" + encodeURIComponent("Jag tänker långsiktigt (5 år+) — visa hur jag värderar bolaget med AKM1"),
+        ikon: "🕰️",
+        beskrivning: "Fundamentet väger tyngst",
+      },
+      {
+        text: "Kort sikt (under 1 år)",
+        lank: "fragor:" + encodeURIComponent("Jag har kort tidshorisont — vad är viktigt att tänka på?"),
+        ikon: "⚡",
+        beskrivning: "Vågor och timing",
+      },
+      {
+        text: "Jag vill lära mig värdera själv",
+        lank: "fragor:" + encodeURIComponent("Lär mig värdera ett bolag från grunden med AKM1"),
+        ikon: "📚",
+        beskrivning: "Från noll till egen analys",
+      },
+    ],
+    typ: "klarande" as const,
+    kalla: "AI-Mentor — behovs-förståelse",
+  };
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { fraga, sokvag } = await req.json();
@@ -277,13 +600,43 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ...vf, kalla: "Vågfundamentet — P7-protokollet", typ: "utbildning" });
     }
 
-    // 2) AKM1-variabel svar — alltid deterministiskt (exakta formler, noll hallucination)
+    // 2) SID-DATA-INTENTS — deterministiska svar om verktygen på sajten
+    const vagkon = vagkonSvar(q);
+    if (vagkon) return NextResponse.json(vagkon);
+
+    const konfluens = konfluensSvar(q);
+    if (konfluens) return NextResponse.json(konfluens);
+
+    const netnet = netnetSvar(q);
+    if (netnet) return NextResponse.json(netnet);
+
+    const fas3 = fas3Svar(q);
+    if (fas3) return NextResponse.json(fas3);
+
+    const pro = proSvar(q);
+    if (pro) return NextResponse.json(pro);
+
+    const rapport = rapportSvar(q);
+    if (rapport) return NextResponse.json(rapport);
+
+    const horisont = tidshorisontSvar(q);
+    if (horisont) return NextResponse.json(horisont);
+
+    const vagkarta = await vagkartaSvar(q);
+    if (vagkarta) return NextResponse.json(vagkarta);
+
+    // 3) AKM1-variabel svar — alltid deterministiskt (exakta formler, noll hallucination)
     const akm1 = akm1Svar(q);
     if (akm1) {
       return NextResponse.json({ ...akm1, kalla: "AKM1-ekosystem", typ: "utbildning" });
     }
 
-    // 3) Navigering
+    // 4) TVETYDIGHET — mentorn redigerar: EN klarliggande motfråga istället för gissning
+    if (arTvetydig(q)) {
+      return NextResponse.json(klarandeSvar(q));
+    }
+
+    // 5) Navigering
     const nav = navigera(q);
     if (nav) {
       return NextResponse.json({
@@ -294,7 +647,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 4) Varumärke
+    // 6) Varumärke
     if (/vem är|vad är.*(sam|ak1|alkamesi|nvestor)/i.test(q)) {
       return NextResponse.json({
         svar: `Sam Alkamesi är grundaren av AK1nvestor.com. AK1A Research Lab (lab.ak1nvestor.com) är plattformen: ${Object.keys(getCourses()).length} kurser, analyser, portföljsystem och AI-mentor — allt bygger på AKM1 + AK1TS-ekosystemet. Fas 1 är alltid gratis.`,
@@ -307,7 +660,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 5) Proaktivt nästa steg
+    // 7) Proaktivt nästa steg
     const kurser = Object.values(getCourses());
     const ord = q.toLowerCase().split(/\s+/).map((w) => w.replace(/[^a-z0-9åäö\/\-]/g, "")).filter((w) => w.length > 2);
     const poang = new Map<string, number>();
@@ -324,7 +677,7 @@ export async function POST(req: NextRequest) {
     const topp = [...poang.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
     const relevanta = topp.map(([slug]) => kurser.find((k) => k.slug === slug)!).filter(Boolean);
 
-    // 5b) Z.ai GLM-läge — fritt formulerat pedagogiskt svar, GROUNDAT i kurserna
+    // 7b) Z.ai GLM-läge — fritt formulerat pedagogiskt svar, GROUNDAT i kurserna
     if (zaiAktiv()) {
       const kurserKontext = relevanta.length > 0
         ? relevanta.map((k) => `- /kurser/${k.slug} — ${k.title}: ${(k.learn || "").slice(0, 200)}`).join("\n")
@@ -340,8 +693,10 @@ REGELVERK:
 2. ALLT ekosystem: nämner du ett fundamentalbegrepp, koppla till AKM1-variabel med V-nummer (t.ex. "V09 ROE = resultat efter skatt / snitt eget kapital").
 3. HITTA PÅ ALDRIG formler eller siffror du inte är säker på — säg istället "räkna exakt i kalkylatorn".
 4. Avsluta med en konkret nästa handling (kurs, kalkylatorn, quiz eller portföljen).
-5. Eleven befinner sig nu på: ${sokvag || "/"} — anpassa svaret.
+5. Eleven befinner sig nu på: ${sidKontextText(sokvag)} — anpassa svaret till platsen.
 6. VÅGFUNDAMENT (fundamentalvågor/vågklass/våg för en V-variabel): källan är "Vågfundamentet — AKM1:s 20 variabler som tidsserier" — AKM1-variabeln är en tidsserie med en egen våg per horisont (mikro, kort, medellång, lång, mega) i 20×5-matrisen. Vågklasser: impulsvåg ▲ (fundamentalen förbättras), korrigering ▼ (försvagas), basbygge ◼ (samlar kraft), osatt · (för lite historik). P7-regler att följa: (a) citera celler exakt som de redovisas i matrisen; (b) extrapolera ALDRIG utanför osatta celler — osatt betyder osatt; (c) påtala divergens mellan fundamental våg och prisvåg när båda nämns (värde-signal att studera, aldrig köp/sälj); (d) avsluta alltid med disclaimern "pedagogisk analys — inte investeringsråd" och hänvisa till /vagfundament.
+7. RÅDGIVNINGS-GRÄNS: ge ALDRIG köp- eller säljrekommendationer för enskilda aktier eller bolag — du är pedagog, inte rådgivare. När frågan rör värdering av ett bolag, avsluta med "pedagogisk analys — inte investeringsråd".
+8. TVETYDIGA FRÅGOR ("är X bra?", "ska jag köpa X?"): gissa ALDRIG — ställ EN klarliggande motfråga om eleven tidshorisont och mål ("Bra för vad — som långsiktigt ägande eller kort sikt?") innan du svarar.
 
 KURSMATCHNINGAR (grounding — lär dig från dessa, länka dem):
 ${kurserKontext}`,
@@ -387,7 +742,7 @@ ${kurserKontext}`,
       });
     }
 
-    // 6) Fallback med proaktiva förslag
+    // 8) Fallback med proaktiva förslag
     return NextResponse.json({
       svar: "Jag kan hjälpa dig med allt på sajten. Här är nästa steg baserat på var du är:",
       handlings: [

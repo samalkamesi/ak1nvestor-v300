@@ -1,0 +1,68 @@
+{
+  "batch": "batch-3",
+  "datum": "2026-09-01",
+  "metod": "node-ordfrekvens (ascii-ord >=4 bokstaver ur textblock+intro+quiz+summary/learn/why, kumulativ korpus-allowlist) -> kontextlasning -> exakta strangersattningar -> JSON.parse-verifiering pre/post",
+  "notering": "Klassiska åäö-raderingar (frgan, 's ker', vag, stod som stöd) förekom INTE i batch 3; felen var i stället bokstavsrubbar, dansk/norska kontamination, ett dubbelord och saknade genitiv/bokstäver",
+  "filer": {
+    "intermarket-analysis.json": {
+      "antal": 16,
+      "exempel": ["KLSTRAR/klstrar -> KLUSTRAR/klustrar", "ALDRIB -> ALDRIG", "EN REGLE-REGEL -> ETT REGELVERK, INTE EN MASKIN"]
+    },
+    "interpretation-of-financial-statements.json": {
+      "antal": 8,
+      "exempel": ["kassan siner -> sinar", "skattemyssno fördelar -> skattemässiga fördelar", "Grahams samtids store syndare -> största syndare"]
+    },
+    "investment-valuation.json": {
+      "antal": 12,
+      "exempel": ["bundits -> bunds", "arbritras -> arbitreras", "analyikerna -> analytikerna (kapitelrubrik + chapters_list)"]
+    },
+    "irrational-exuberance.json": {
+      "antal": 13,
+      "exempel": ["Ponzi-skeema -> Ponzi-schema (3x)", "storleter -> storlekar", "någon reel förändring -> reell"]
+    },
+    "japanese-candlestick-charting.json": {
+      "antal": 12,
+      "exempel": ["dojiar -> dojier", "hammerens -> hammarens (danska)", "formletande -> formeltänkande"]
+    },
+    "konfluens-varde-moter-vagor.json": {
+      "antal": 6,
+      "exempel": ["databiaskens -> databiasets", "och viloplan kan visa sig vara viloplan -> och vändplan kan visa sig vara viloplan", "kvalitet är värde andra sida -> värdes andra sida (2x)"]
+    },
+    "liars-poker.json": {
+      "antal": 2,
+      "exempel": ["Citigroup-filia -> Citigroup-filial (titel + chapters_list)"]
+    },
+    "manias-panics-and-crashes.json": {
+      "antal": 1,
+      "exempel": ["ser ut som en nojabo -> en nojare"]
+    },
+    "margin-of-safety.json": {
+      "antal": 7,
+      "exempel": ["rampen motemot -> rampen mot dig (2x)", "krachen -> kraschen (2x, tyska/danska)", "oledade -> oledda"]
+    },
+    "market-wizards.json": {
+      "antal": 8,
+      "exempel": ["intervjustaden -> intervjuboken (2x)", "en snooande poäng -> en uppmuntrande poäng", "marknadsguruner -> marknadsguruer"]
+    },
+    "martin-pring-on-market-momentum.json": {
+      "antal": 18,
+      "exempel": ["Jagadeesh -> Jegadeesh (4x)", "husse -> hausse", "akademik -> akademi (3x)"]
+    },
+    "misbehaving.json": {
+      "antal": 7,
+      "exempel": ["kändes tvekskt -> tveksamt", "gjaren märker -> göraren märker (Planner-Doer)", "Linjaritet -> Linearitet"]
+    },
+    "poor-charlies-almanack.json": {
+      "antal": 6,
+      "exempel": ["incentiv bias -> incitamentsbias", "toppickad analytiker -> topprankad", "disproportionerligt -> oproportionerligt"]
+    },
+    "quality-of-earnings.json": {
+      "antal": 3,
+      "exempel": ["kassa som bundits -> bunds", "vinsten synker -> sjunker (norska)", "bruttomarginal komposterar -> kompounderar"]
+    }
+  },
+  "tabu-ord-verifierade-som-äkta": ["andra (=andra/senare)", "stod (=verb stod, 'stod på spel')", "spar- (=spar- och livbolag)", "saker", "grodor/grodan (=grodan i grytan)"],
+  "äkta-dubbelord-sparade": ["vänder vänder (anadiplos)", "var och en en av", "Frågan var var", "för för många beslut"],
+  "totaltErsättningar": 119,
+  "verifiering": "14/14 JSON.parse OK efter alla ändringar; specialtecken (→, ↔, −, ≤, Δ, √, é, ü, ◆/🎯-bullets) kontrollerade och avsiktliga"
+}

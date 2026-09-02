@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, type TouchEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { lasMedlem, niva, lasXP, lasKlaraKurser, lasStjarnor, addXP, lasStreak } from "@/lib/member-local";
 import { geBadge } from "@/lib/badges";
@@ -15,19 +15,66 @@ import {
 
 /**
  * AI-MENTOR PRO — Superintelligent guide som:
- * 
+ *
  * 1. KÄNNER ELEVEN: nivå, XP, klarade kurser, senaste aktivitet
- * 2. KÄNNER PLATSEN: var på sajten eleven befinner sig just nu
- * 3. GER HANDLINGAR: klickbara knappar som tar eleven exakt dit den behöver
- * 4. ANTICIPERAR: föreslår nästa steg INNAN eleven frågar
- * 5. FÖLJER AKM1/AK1TS: alla svar strukturerade efter ekosystemet
- * 6. ÄR PROAKTIV: "jag ser att du är på kurssidan — vill du testa dig?"
- * 7. HANTERAR SYSTEMET: kan navigera eleven till ALLT på sajten
- * 8. LÄR SIG: sparar elevens preferenser och anpassar sig
+ * 2. KÄNNER PLATSEN 100%: ALLA sidtyper på sajten detekteras (kurser, konfluens,
+ *    netnet, rapporter, vagfundament, portföljbyggaren, dagens pass …) och varje
+ *    sidtyp genererar en proaktiv kontext-mening ("Jag ser att du använder
+ *    Konfluensradarn — vill du förstå de fem dimensionerna?")
+ * 3. REDIGERAR BEHOVET: vid tvetydiga frågor ("är Volvo bra?") ställer mentorn
+ *    EN klarliggande motfråga om tidshorisont och mål — svaret är klickbart och
+ *    skickas som ny fråga ("fragor:"-konventionen nedan)
+ * 4. GER HANDLINGAR: klickbara knappar som tar eleven exakt dit den behöver
+ * 5. ANTICIPERAR: föreslår nästa steg INNAN eleven frågar
+ * 6. FÖLJER AKM1/AK1TS: alla svar strukturerade efter ekosystemet
+ * 7. ÄR RESPONSIV: tre pulserande guldprickar medan svaret laddas, Enter skickar
+ *    (Shift+Enter gör inget), smooth auto-scroll till senaste, swipe-ner-stäng på mobil
+ *
+ * LÄNK-KONVENTIONER i handlings-knappar:
+ *   "fragor:<text>" → texten skickas som en NY fråga till mentorn (redigering)
+ *   "sr:alla"       → starta spaced repetition med samtliga kort (blandat)
+ *   "#"             → starta spaced repetition i chatten
+ *   "#<sektion>"    → mjukscroll till sektion på samma sida
+ *   annars          → router.push(lank)
  */
 
 type Handling = { text: string; lank: string; ikon: string; beskrivning?: string };
 type Meddelande = { fran: "du" | "ai"; text: string; handlings?: Handling[]; ikon?: string };
+
+/** Alla sidtyper på sajten — detekteras från pathname. */
+type SidTyp =
+  | "start"
+  | "kurs"
+  | "kurslista"
+  | "analys"
+  | "analyslista"
+  | "kalkylator"
+  | "portfölj"
+  | "portföljbyggare"
+  | "blogg"
+  | "labb"
+  | "läroplan"
+  | "vagfundament"
+  | "konfluens"
+  | "netnet"
+  | "rapporter"
+  | "fas3"
+  | "fas2"
+  | "pro"
+  | "medlemskap"
+  | "profil"
+  | "dagens-pass"
+  | "topplistan"
+  | "badges"
+  | "manifest"
+  | "bibliotek"
+  | "certifikat"
+  | "superanalys"
+  | "min-sida"
+  | "logga-in"
+  | "om-oss"
+  | "admin"
+  | "annan";
 
 type elevContext = {
   niva: number;
@@ -36,35 +83,186 @@ type elevContext = {
   stjarnor: number;
   inloggad: boolean;
   aktuellSida: string;
-  sidTyp: "kurs" | "analys" | "kalkylator" | "portfölj" | "blogg" | "labb" | "läroplan" | "start" | "admin" | "annan";
+  sidTyp: SidTyp;
+  kursSlug?: string;
+  kursTitel?: string;
 };
 
-function analyseraSida(pathname: string): elevContext["sidTyp"] {
+/** Sidtyps-detektern — känner igen ALLA routes på sajten. */
+function analyseraSida(pathname: string): SidTyp {
   if (!pathname) return "start";
   if (pathname.startsWith("/kurser/")) return "kurs";
-  if (pathname.startsWith("/kurser")) return "kurs";
-  if (pathname.startsWith("/analyser")) return "analys";
+  if (pathname === "/kurser") return "kurslista";
+  if (pathname.startsWith("/analyser/")) return "analys";
+  if (pathname === "/analyser") return "analyslista";
   if (pathname.startsWith("/kalkylator")) return "kalkylator";
   if (pathname.startsWith("/min-portfolj")) return "portfölj";
+  if (pathname.startsWith("/portfoljbyggare")) return "portföljbyggare";
   if (pathname.startsWith("/blogg")) return "blogg";
   if (pathname.startsWith("/labb")) return "labb";
   if (pathname.startsWith("/laroplan")) return "läroplan";
+  if (pathname.startsWith("/vagfundament")) return "vagfundament";
+  if (pathname.startsWith("/konfluens")) return "konfluens";
+  if (pathname.startsWith("/netnet")) return "netnet";
+  if (pathname.startsWith("/rapporter")) return "rapporter";
+  if (pathname.startsWith("/fas3")) return "fas3";
+  if (pathname.startsWith("/fas2")) return "fas2";
+  if (pathname.startsWith("/pro")) return "pro";
+  if (pathname.startsWith("/medlemskap")) return "medlemskap";
+  if (pathname.startsWith("/profil")) return "profil";
+  if (pathname.startsWith("/dagens-pass")) return "dagens-pass";
+  if (pathname.startsWith("/topplista")) return "topplistan";
+  if (pathname.startsWith("/badges")) return "badges";
+  if (pathname.startsWith("/manifest")) return "manifest";
+  if (pathname.startsWith("/bibliotek")) return "bibliotek";
+  if (pathname.startsWith("/certifikat")) return "certifikat";
+  if (pathname.startsWith("/superanalys")) return "superanalys";
+  if (pathname.startsWith("/min-sida")) return "min-sida";
+  if (pathname.startsWith("/logga-in")) return "logga-in";
+  if (pathname.startsWith("/om-oss")) return "om-oss";
   if (pathname.startsWith("/admin")) return "admin";
   if (pathname === "/") return "start";
   return "annan";
 }
 
-/** Generera proaktiva förslag baserat på KONTEXT */
+/** Läsbart kursnamn ur slug ("v09-roe" → "V09 Roe") — content.ts är server-only. */
+function kursTitelFranSlug(slug: string): string {
+  return slug
+    .split("-")
+    .map((w) => {
+      const v = w.match(/^v(\d{2})$/);
+      if (v) return `V${v[1]}`;
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    })
+    .join(" ");
+}
+
+/** Kort visningsnamn per sidtyp (chatt-panelens kontext-chip). */
+const SID_NAMN: Record<SidTyp, string> = {
+  start: "start",
+  kurs: "kurs",
+  kurslista: "kurser",
+  analys: "analys",
+  analyslista: "analyser",
+  kalkylator: "kalkylatorn",
+  portfölj: "portföljen",
+  portföljbyggare: "portföljbyggaren",
+  blogg: "bloggen",
+  labb: "labbet",
+  läroplan: "läroplanen",
+  vagfundament: "vågfundamentet",
+  konfluens: "konfluensradarn",
+  netnet: "net-net-skannern",
+  rapporter: "redovisningsverkstan",
+  fas3: "fas 3",
+  fas2: "fas 2-ansökan",
+  pro: "pro",
+  medlemskap: "medlemskap",
+  profil: "profilen",
+  "dagens-pass": "dagens pass",
+  topplistan: "topplistan",
+  badges: "badges",
+  manifest: "manifestet",
+  bibliotek: "biblioteket",
+  certifikat: "certifikatet",
+  superanalys: "superanalysen",
+  "min-sida": "min sida",
+  "logga-in": "inloggning",
+  "om-oss": "om oss",
+  admin: "admin",
+  annan: "sidan",
+};
+
+/**
+ * Proaktiv kontext-meningsbyggnad per sidtyp — mentorn "ser" sidan eleven
+ * befinner sig på och bjuder in till nästa steg med en fråga (pedagogik-ton:
+ * vi tipsar, vi dömer aldrig).
+ */
+function sidKontextMening(ctx: elevContext): string {
+  const klaraProcent = Math.round((ctx.klaraKurser / 307) * 100); // 307 kurser i deep-courses.json
+  switch (ctx.sidTyp) {
+    case "kurs":
+      return `Jag ser att du läser kursen ${ctx.kursTitel ? `"${ctx.kursTitel}"` : ""} kapitel för kapitel — vill du testa dig med quiz:et (+10 XP per rätt svar) eller gå vidare till nästa steg?`;
+    case "kurslista":
+      return `Jag ser att du står i kursbiblioteket (307 kurser) — vill du ha ett personligt tips på rätt kurs för just dig?`;
+    case "analys":
+      return `Jag ser att du läser en analys — vill du lära dig verifiera siffrorna själv i kalkylatorn (AKM1: 20 variabler)?`;
+    case "analyslista":
+      return `Jag ser att du står i analysbanken — vill du lära dig läsa en analys som en institutionell analytiker?`;
+    case "kalkylator":
+      return `Redan i kalkylatorn — bra! Behöver du årsredovisningsguiden för att hitta siffrorna, eller ska jag förklara en variabel (V01–V20)?`;
+    case "portfölj":
+      return `Jag ser din portfölj — har du testat djupanalysen? Python-motorn hämtar live-data och ger dig en 25-cellers-matris.`;
+    case "portföljbyggare":
+      return `Jag ser att du bygger portfölj rad för rad — vill du förstå riskspridning, sektorskoncentration och vad 40%-varningen betyder?`;
+    case "blogg":
+      return `Jag ser att du läser bloggen — vill du ha den strukturerade vägen genom samma ämne via läroplanen?`;
+    case "labb":
+      return `Jag ser att du är i Labbet (201 case studies) — vill du öva på att resonera kring ett riktigt bolag?`;
+    case "läroplan":
+      return `Du har klarat ${ctx.klaraKurser} kurser (${klaraProcent}%) — din nästa utmaning väntar. Vill du se var du är på resan?`;
+    case "vagfundament":
+      return `Jag ser att du studerar Vågfundamentet — vill du förstå vågklasserna ▲ impulsvåg, ▼ korrigering, ◼ basbygge och 20×5-matrisen?`;
+    case "konfluens":
+      return `Jag ser att du använder Konfluensradarn — vill du förstå de fem dimensionerna som måste tala samman?`;
+    case "netnet":
+      return `Jag ser att du använder Net-net-skannern — vill du förstå Grahams NCAV-golv och varför cigar-butts är så sällsynta idag?`;
+    case "rapporter":
+      return `Jag ser att du är i redovisningsverkstan — vill du veta hur rapporten vävs samman (AKM1, AK1TS och Konfluens) och hur du delar den?`;
+    case "fas3":
+      return `Jag ser att du tittar på Fas 3 — representeras snart; Fas 2-medlemmar får tillgång först. Vill du se vad varje fas innehåller?`;
+    case "fas2":
+      return `Jag ser att du tittar på Fas 2-ansökan — coaching, gemenskap och representant-vägen (nivå 25+ är en bra signal). Vill du förstå kraven?`;
+    case "pro":
+      return `Jag ser att du tittar på Pro — vägen för skolor, företag och institutioner. Vill du se vad som ingår?`;
+    case "medlemskap":
+      return `Jag ser att du jämför faserna — kom ihåg: Fas 1 är hela biblioteket, gratis för alltid. Vill du se vad varje fas innehåller?`;
+    case "profil":
+      return `Jag ser att du utforskar analytikerprofilen — vill du förstå vad din kognitiva profil betyder för din analysstil?`;
+    case "dagens-pass":
+      return `Jag ser att du är på dagens pass — redo att förlänga streaken? Ett femminuterspass räcker.`;
+    case "topplistan":
+      return `Jag ser att du tittar på topplistan — varje quiz (+10 XP) och flashcard (+5 XP) flyttar dig uppåt. Vill du förtjäna XP nu?`;
+    case "badges":
+      return `Jag ser att du besökar meritväggen — vill du se vilken badge som är närmast att låsa upp?`;
+    case "manifest":
+      return `Jag ser att du läser manifestet — labbets löften om ärlighet, gratis kunskap och välfärd. Vill du se löftena i praktiken?`;
+    case "bibliotek":
+      return `Jag ser att du står i biblioteket — bokkanonen + 78 BOKMASTER-böcker kapitel för kapitel. Vill du ha en läsväg?`;
+    case "certifikat":
+      return `Jag ser att du tittar på ditt certifikat — betyget (A–D) styrs av nivå, XP och klarade kurser, och uppdateras live. Vill du höja det?`;
+    case "superanalys":
+      return `Jag ser att du förbereder Superanalysen — vill du repetera 25-cellers-matrisen och ekosystemet först?`;
+    case "min-sida":
+      return `Jag ser att du är på Min sida — din dashboard med streak, vågkarta och veckoplan. Vill du veta vad som är nästa steg?`;
+    case "logga-in":
+      return `Jag ser att du loggar in — 20 sekunder, ingen betalning, så låser du upp XP, progress och certifikatet.`;
+    case "om-oss":
+      return `Jag ser att du läser om oss — vill du förstå ekosystemet bakom AK1A (AKM1 + AK1TS)?`;
+    case "start":
+      return `Jag ser att du är på startsidan — vill du börja med läroplanen, testa din nivå eller räkna på en aktie?`;
+    default:
+      return `Här är nästa steg baserat på var du är:`;
+  }
+}
+
+/** Generera proaktiva förslag baserat på KONTEXT — alla sidtyper täckta. */
 function proaktivaForslag(ctx: elevContext): Handling[] {
   const forslag: Handling[] = [];
 
-  // Baserat på aktuell sida
   switch (ctx.sidTyp) {
     case "kurs":
       forslag.push(
         { text: "Testa dig (quiz)", lank: "#quiz", ikon: "🧠", beskrivning: "Visa quiz i denna kurs" },
         { text: "Räkna på en aktie", lank: "/kalkylator", ikon: "🧮", beskrivning: "Öppna kalkylatorn" },
         { text: "Nästa kurs i läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "Se var du är" },
+      );
+      break;
+    case "kurslista":
+      forslag.push(
+        { text: "Läroplanen (5 nivåer)", lank: "/laroplan", ikon: "🗺️", beskrivning: "Din väg genom spåret" },
+        { text: "BOKMASTER (78 böcker)", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "Klassikerna kapitel för kapitel" },
+        { text: "Repetera flashcards", lank: "#", ikon: "🃏", beskrivning: "Spaced repetition" },
       );
       break;
     case "kalkylator":
@@ -81,6 +279,13 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
         { text: "Läs din portföljrapport", lank: "/blogg/sa-laser-du-din-portfoljrapport", ikon: "📖", beskrivning: "Guiden" },
       );
       break;
+    case "portföljbyggare":
+      forslag.push(
+        { text: "Kursen om portfölj-ekosystemet", lank: "/kurser/portfolj-ekosystemet", ikon: "📊", beskrivning: "5×5×4 — riskspridning på riktigt" },
+        { text: "Min portfölj (riktiga innehav)", lank: "/min-portfolj", ikon: "💼", beskrivning: "Spåra aktierna" },
+        { text: "5 nybörjarmisstag", lank: "/blogg/5-vanliga-nyborjarmisstag-svenska-aktier", ikon: "⚠️", beskrivning: "Koncentration är vanligast" },
+      );
+      break;
     case "analys":
       forslag.push(
         { text: "Räkna själv i kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "Verifiera siffrorna" },
@@ -88,10 +293,131 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
         { text: "Lägg bolaget i din portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Spåra det" },
       );
       break;
+    case "analyslista":
+      forslag.push(
+        { text: "Institutionell aktieanalys", lank: "/blogg/vad-ar-institutionell-aktieanalys", ikon: "🏛️", beskrivning: "Så arbetar proffs" },
+        { text: "Räkna på ett bolag", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 variabler" },
+        { text: "Bygg portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Lägg in innehav" },
+      );
+      break;
     case "läroplan":
       forslag.push(
         { text: "Fortsätt där du slutade", lank: "/kurser", ikon: "▶️", beskrivning: "Din nästa kurs" },
         { text: "Testa din nivå", lank: "/profil", ikon: "🧠", beskrivning: "Kognitiv profil" },
+      );
+      break;
+    case "vagfundament":
+      forslag.push(
+        { text: "Fråga om en våg (t.ex. V09)", lank: "fragor:" + encodeURIComponent("vad är vågfundamentet för V09 på medellång horisont?"), ikon: "🌊", beskrivning: "Mentorn förklarar vågklassen" },
+        { text: "Vad säger vågkartan?", lank: "fragor:" + encodeURIComponent("vad säger vågkartan just nu?"), ikon: "🗺️", beskrivning: "Senaste autonoma mätningen" },
+        { text: "Ekosystem-kursen", lank: "/kurser/portfolj-ekosystemet", ikon: "📊", beskrivning: "20×5 i praktiken" },
+      );
+      break;
+    case "konfluens":
+      forslag.push(
+        { text: "Förklara de fem dimensionerna", lank: "fragor:" + encodeURIComponent("förklara konfluensradarns fem dimensioner"), ikon: "🧭", beskrivning: "Värde före vågor" },
+        { text: "Vad är en net-net?", lank: "fragor:" + encodeURIComponent("vad är en net-net och NCAV?"), ikon: "🎣", beskrivning: "Grahams värdegolv" },
+        { text: "Vågfundamentet (20×5)", lank: "/vagfundament", ikon: "🌊", beskrivning: "Variablerna som tidsserier" },
+      );
+      break;
+    case "netnet":
+      forslag.push(
+        { text: "Förklara NCAV & cigar-butts", lank: "fragor:" + encodeURIComponent("vad är en net-net och NCAV?"), ikon: "🎣", beskrivning: "Grahams extrema värdegolv" },
+        { text: "Konfluensradarn", lank: "/konfluens", ikon: "🧭", beskrivning: "Värde möter vågor" },
+        { text: "Graham: The Intelligent Investor", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "Boken bakom metoden" },
+      );
+      break;
+    case "rapporter":
+      forslag.push(
+        { text: "Välj analyser i analysbanken", lank: "/analyser", ikon: "📊", beskrivning: "Råmaterial till rapporten" },
+        { text: "Se ditt certifikat", lank: "/certifikat", ikon: "🎓", beskrivning: "Betyg A–D, delbart" },
+        { text: "Så läser du din portföljrapport", lank: "/blogg/sa-laser-du-din-portfoljrapport", ikon: "📖", beskrivning: "Guiden" },
+      );
+      break;
+    case "fas3":
+    case "fas2":
+    case "medlemskap":
+      forslag.push(
+        { text: "Se hela medlemskapet", lank: "/medlemskap", ikon: "💛", beskrivning: "Fas 1 gratis · Fas 2 coaching · Fas 3 snart" },
+        { text: "Ansök om Fas 2 (kostnadsfritt)", lank: "/fas2-ansok", ikon: "🎓", beskrivning: "2 minuter" },
+        { text: "Se ditt certifikat", lank: "/certifikat", ikon: "📜", beskrivning: "Betyg A–D" },
+      );
+      break;
+    case "pro":
+      forslag.push(
+        { text: "AK1A Pro", lank: "/pro", ikon: "🏢", beskrivning: "För skolor, företag och institutioner" },
+        { text: "Medlemskap & faser", lank: "/medlemskap", ikon: "💛", beskrivning: "Privata medlemskapen" },
+      );
+      break;
+    case "profil":
+      forslag.push(
+        { text: "V09: ROE — viktigaste variabeln", lank: "/kurser/v09-roe", ikon: "📊", beskrivning: "Passar alla profiler" },
+        { text: "Testa dig (quiz)", lank: "/kurser", ikon: "🧠", beskrivning: "+10 XP per rätt svar" },
+      );
+      break;
+    case "dagens-pass":
+      forslag.push(
+        { text: "Repetera flashcards", lank: "#", ikon: "🃏", beskrivning: "+5 XP per bra svar" },
+        { text: "Veckoplanen", lank: "/min-sida", ikon: "🗓️", beskrivning: "Se veckans steg" },
+        { text: "Vad säger vågkartan?", lank: "fragor:" + encodeURIComponent("vad säger vågkartan just nu?"), ikon: "🌊", beskrivning: "Senaste mätningen" },
+      );
+      break;
+    case "topplistan":
+      forslag.push(
+        { text: "Förtjäna XP: läs en kurs", lank: "/kurser", ikon: "📚", beskrivning: "Quiz: +10 XP per rätt" },
+        { text: "Testa dig (quiz)", lank: "/kurser/the-intelligent-investor", ikon: "🧠", beskrivning: "Snabbast vägen upp" },
+        { text: "Logga in gratis", lank: "/logga-in", ikon: "🔑", beskrivning: "Lås upp ställningen" },
+      );
+      break;
+    case "badges":
+      forslag.push(
+        { text: "Närmaste badge: gör ett pass", lank: "/dagens-pass", ikon: "🔥", beskrivning: "Streak-badges väntar" },
+        { text: "Förtjäna XP", lank: "/kurser", ikon: "📚", beskrivning: "Varje kurs räknas" },
+        { text: "Repetera flashcards", lank: "#", ikon: "🃏", beskrivning: "Första flashcard-badgen" },
+      );
+      break;
+    case "manifest":
+      forslag.push(
+        { text: "Läroplanen — löftena i praktiken", lank: "/laroplan", ikon: "🗺️", beskrivning: "5 nivåer till självständighet" },
+        { text: "Om oss", lank: "/om-oss", ikon: "🏛️", beskrivning: "Historien bakom" },
+      );
+      break;
+    case "bibliotek":
+      forslag.push(
+        { text: "BOKMASTER-kurser", lank: "/kurser/the-intelligent-investor", ikon: "🏛️", beskrivning: "78 böcker kapitel för kapitel" },
+        { text: "Läroplanen", lank: "/laroplan", ikon: "🗺️", beskrivning: "Börja med grunden" },
+      );
+      break;
+    case "certifikat":
+      forslag.push(
+        { text: "Höj betyget: nästa kurs", lank: "/laroplan", ikon: "📚", beskrivning: "Nivå + XP + kurser styr betyget" },
+        { text: "Testa dig (quiz)", lank: "/kurser", ikon: "🧠", beskrivning: "+10 XP per rätt svar" },
+      );
+      break;
+    case "superanalys":
+      forslag.push(
+        { text: "Repetera 25-cellers-matrisen", lank: "/kurser/ts-10-ak1ts-25cellers-matris", ikon: "🔢", beskrivning: "AK1TS-kärnan" },
+        { text: "Portfölj-ekosystemet", lank: "/kurser/portfolj-ekosystemet", ikon: "📊", beskrivning: "5×5×4 i praktiken" },
+        { text: "Repetera flashcards", lank: "#", ikon: "🃏", beskrivning: "Färska inför analysen" },
+      );
+      break;
+    case "min-sida":
+      forslag.push(
+        { text: "Vad är nästa kurs?", lank: "fragor:" + encodeURIComponent("vad är nästa kurs för mig?"), ikon: "🗺️", beskrivning: "Personligt kurstips" },
+        { text: "Vad säger vågkartan?", lank: "fragor:" + encodeURIComponent("vad säger vågkartan just nu?"), ikon: "🌊", beskrivning: "Senaste mätningen" },
+        { text: "Förläng streaken", lank: "/dagens-pass", ikon: "🔥", beskrivning: "Ett pass idag räcker" },
+      );
+      break;
+    case "logga-in":
+      forslag.push(
+        { text: "Skapa gratis konto", lank: "/logga-in", ikon: "🔑", beskrivning: "20 sek, ingen betalning" },
+        { text: "Vad får jag som medlem?", lank: "fragor:" + encodeURIComponent("vad ingår i medlemskapet?"), ikon: "💛", beskrivning: "Fas 1 är gratis" },
+      );
+      break;
+    case "om-oss":
+      forslag.push(
+        { text: "Ekosystem-kursen", lank: "/kurser/portfolj-ekosystemet", ikon: "📊", beskrivning: "AKM1 + AK1TS förklarat" },
+        { text: "Börja läroplanen", lank: "/laroplan", ikon: "🌱", beskrivning: "5 nivåer till självständighet" },
       );
       break;
     case "start":
@@ -104,7 +430,13 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
     case "blogg":
       forslag.push(
         { text: "Fortsätt lära", lank: "/laroplan", ikon: "🌱", beskrivning: "Strukturerad utbildning" },
-        { text: "Alla artiklar", lank: "/blogg", ikon: "✍️", beskrivning: "35 artiklar" }, // Uppdaterad 2026-09-01: 35 inlägg i data/blogg
+        { text: "Alla artiklar", lank: "/blogg", ikon: "✍️", beskrivning: "35 artiklar" },
+      );
+      break;
+    case "labb":
+      forslag.push(
+        { text: "Välj ett case", lank: "/labb", ikon: "🧪", beskrivning: "201 case studies" },
+        { text: "Räkna på bolaget", lank: "/kalkylator", ikon: "🧮", beskrivning: "Verifiera med AKM1" },
       );
       break;
     default:
@@ -116,8 +448,8 @@ function proaktivaForslag(ctx: elevContext): Handling[] {
   }
 
   // Baserat på elevens nivå
-  if (ctx.niva >= 25 && ctx.sidTyp !== "portfölj") {
-    forslag.push({ text: "🎓redo för Fas 2 — ansök", lank: "/medlemskap#fas2", ikon: "🎓", beskrivning: "Nivå 25+ uppnådd!" });
+  if (ctx.niva >= 25 && ctx.sidTyp !== "portfölj" && ctx.sidTyp !== "portföljbyggare") {
+    forslag.push({ text: "🎓redo för Fas 2 — ansök", lank: "/fas2-ansok", ikon: "🎓", beskrivning: "Nivå 25+ uppnådd!" });
   }
 
   if (!ctx.inloggad) {
@@ -137,28 +469,17 @@ function blandaKort(): SRKort[] {
   return ko.slice(0, 10);
 }
 
-/** Kontextmedveten hälsning */
-function halsning(ctx: elevContext): string {  const timme = new Date().getHours();
+/** Kontextmedveten hälsning — proaktiv meningsbyggnad per sidtyp. */
+function halsning(ctx: elevContext): string {
+  const timme = new Date().getHours();
   const tid = timme < 10 ? "God morgon" : timme < 13 ? "God dag" : timme < 18 ? "God eftermiddag" : "God kväll";
 
   if (!ctx.inloggad) {
-    return `${tid}! 👋 Jag är din AI-mentor. Jag ser att du är på ${ctx.sidTyp === "start" ? "startsidan" : ctx.sidTyp + "-sidan"}. Logga in gratis så hjälper jag dig komma igång — eller klicka på någon av länkarna nedan.`;
+    return `${tid}! 👋 Jag är din AI-mentor. Jag ser att du är på ${SID_NAMN[ctx.sidTyp]} — ${sidKontextMening(ctx)} Du kan också logga in gratis (20 sek) så följer jag din progress.`;
   }
 
-  const klaraProcent = Math.round((ctx.klaraKurser / 307) * 100); // Uppdaterad 2026-09-01: 307 kurser i deep-courses.json
-
-  switch (ctx.sidTyp) {
-    case "kurs":
-      return `${tid}, Nivå ${ctx.niva}! 📚 Jag ser att du läser en kurs. Quiz:et nedan kan ge dig +10 XP per rätt svar. Vill du att jag tar dig till nästa steg?`;
-    case "kalkylator":
-      return `${tid}! 🧮 Redan på kalkylatorn — bra! Om du behöver hjälp att hitta siffrorna, kolla årsredovisningsguiden. Annars är jag här.`;
-    case "portfölj":
-      return `${tid}, Nivå ${ctx.niva}! 💼 Jag ser din portfölj. Har du testat djupanalysen? Python-motorn hämtar live-data och ger dig en 25-cellers-matris.`;
-    case "läroplan":
-      return `${tid}! 🗺️ Du har klarat ${ctx.klaraKurser} kurser (${klaraProcent}%). Din nästa utmaning väntar — klicka på en kurs nedan.`;
-    default:
-      return `${tid}, Nivå ${ctx.niva}! ⭐ ${ctx.xp} XP · ${ctx.klaraKurser} kurser klarade. Vad vill du göra nu?`;
-  }
+  const nivaRad = `${tid}, Nivå ${ctx.niva}! ⭐ ${ctx.xp} XP · ${ctx.klaraKurser} kurser klarade.`;
+  return `${nivaRad}\n\n${sidKontextMening(ctx)}`;
 }
 
 export function ChatWidget() {
@@ -180,6 +501,9 @@ export function ChatWidget() {
   const router = useRouter();
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Swipe-ner-stäng (mobil): start-Y för beröring på paneltoppen
+  const tryckY = useRef<number | null>(null);
+
   // Bygg elev-kontext — ENDAST på klienten (localStorage kräver browser)
   const [ctx, setCtx] = useState<elevContext>({
     niva: 1, xp: 0, klaraKurser: 0, stjarnor: 0,
@@ -187,6 +511,8 @@ export function ChatWidget() {
   });
 
   useEffect(() => {
+    const sidTyp = analyseraSida(pathname || "/");
+    const kursSlug = sidTyp === "kurs" ? (pathname || "").split("/")[2] : undefined;
     setCtx({
       niva: niva(),
       xp: lasXP(),
@@ -194,7 +520,9 @@ export function ChatWidget() {
       stjarnor: lasStjarnor(),
       inloggad: Boolean(lasMedlem()),
       aktuellSida: pathname || "/",
-      sidTyp: analyseraSida(pathname || "/"),
+      sidTyp,
+      kursSlug,
+      kursTitel: kursSlug ? kursTitelFranSlug(kursSlug) : undefined,
     });
     setSrForfallna(forfallnaKort(1000).length);
     setHydrerad(true);
@@ -223,7 +551,7 @@ export function ChatWidget() {
     setSrAktiv(true);
   }, []);
 
-  // ── SR: betygsätt kort (SM-2: Svär=2, Bra=4, Lätt=5) ──
+  // ── SR: betygsätt kort (SM-2: Svår=2, Bra=4, Lätt=5) ──
   const bedom = useCallback((kvalitet: 2 | 4 | 5) => {
     const kort = srKo[srIndex];
     if (!kort) return;
@@ -281,22 +609,23 @@ export function ChatWidget() {
     }
   }, [oppnad, ctx]);
 
-  // Auto-scroll
+  // Auto-scroll till senaste meddelandet (även medan mentorn "tänker")
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      scrollRef.current.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
     }
-  }, [meddelanden, srIndex, srVisaSvar, srAktiv]);
+  }, [meddelanden, srIndex, srVisaSvar, srAktiv, busy]);
 
-  // Uppdatera vid sidbyte
+  // Uppdatera vid sidbyte — mentorn följer med och "ser" nya sidan
   useEffect(() => {
-    if (oppnad && meddelanden.length > 0) {
+    if (hydrerad && oppnad && meddelanden.length > 0) {
       setMeddelanden((p) => [...p.slice(-4), {
         fran: "ai",
-        text: `Jag följer med dig — vi är nu på ${ctx.sidTyp}-sidan. ${ctx.sidTyp === "kurs" ? "Vill du testa quiz:et?" : ctx.sidTyp === "kalkylator" ? "Behöver du årsredovisningsguiden?" : "Här är nästa steg:"}`,
+        text: `Jag följer med dig — vi är nu på ${SID_NAMN[ctx.sidTyp]}. ${sidKontextMening(ctx)}`,
         handlings: proaktivaForslag(ctx),
       }]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   const skicka = async (text?: string) => {
@@ -322,20 +651,29 @@ export function ChatWidget() {
       });
       const data = await res.json();
 
-      // Om svaret har en länk som inte börjar med # — navigera direkt
-      if (data.handlings?.length === 1 && !data.handlings[0].lank.startsWith("#")) {
+      // Klarande motfråga (redigering) → visa alltid som dialog, navigera aldrig
+      const arKlarande = data.typ === "klarande";
+      const endaLank = data.handlings?.length === 1 ? data.handlings[0].lank : null;
+      const farNavigera =
+        !arKlarande &&
+        endaLank !== null &&
+        !endaLank.startsWith("#") &&
+        !endaLank.startsWith("fragor:");
+
+      if (farNavigera && endaLank) {
         // Ett enda alternativ = navigera automatiskt
         setMeddelanden((p) => [...p, {
           fran: "ai",
           text: data.svar || "Tar dig dit...",
           handlings: data.handlings,
         }]);
-        setTimeout(() => router.push(data.handlings[0].lank), 800);
+        setTimeout(() => router.push(endaLank), 800);
       } else {
         setMeddelanden((p) => [...p, {
           fran: "ai",
           text: data.svar || "…",
           handlings: data.handlings,
+          ikon: arKlarande ? "🧭" : undefined,
         }]);
       }
     } catch {
@@ -352,18 +690,35 @@ export function ChatWidget() {
     { text: "Portfölj", ikon: "💼", fraga: "portfölj" },
     { text: "Testa mig", ikon: "🧠", fraga: "testa min nivå" },
     { text: "Repetera", ikon: "🃏", fraga: "repetera" },
+    { text: "Vågkarta", ikon: "🌊", fraga: "vad säger vågkartan?" },
     { text: "Nästa steg", ikon: "➡️", fraga: "vad är nästa steg för mig" },
   ];
 
   if (pathname?.startsWith("/admin")) return null;
+
+  // Swipe-ner-stäng (mobil): >80 px nedåt på paneltoppen stänger panelen
+  const tryckStart = (e: TouchEvent<HTMLElement>) => {
+    tryckY.current = e.touches[0].clientY;
+  };
+  const tryckSlut = (e: TouchEvent<HTMLElement>) => {
+    if (tryckY.current !== null) {
+      const dy = e.changedTouches[0].clientY - tryckY.current;
+      if (dy > 80) setOppnad(false);
+    }
+    tryckY.current = null;
+  };
 
   return (
     <>
       {/* Chatt-panel — mobil: fullbredd bottom-sheet över safe-area; desktop: oförändrad hög låda */}
       {oppnad && (
         <div className="fixed inset-x-2 bottom-[calc(0.5rem_+_env(safe-area-inset-bottom))] z-50 flex max-h-[70vh] flex-col overflow-hidden rounded-2xl border-2 border-gold bg-paper shadow-2xl sm:bottom-20 sm:left-auto sm:right-4 sm:h-[520px] sm:max-h-none sm:w-[380px] sm:max-w-[calc(100vw-2rem)]">
-          {/* Paneltopp — marin med serif-rubrik, guldchips och guld-divider */}
-          <div className="bg-[#0E1B2E] px-4 py-3">
+          {/* Paneltopp — marin med serif-rubrik, guldchips och guld-divider (swipe-ner stänger på mobil) */}
+          <div
+            className="bg-[#0E1B2E] px-4 py-3"
+            onTouchStart={tryckStart}
+            onTouchEnd={tryckSlut}
+          >
             <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <span className="font-serif font-bold text-gold">AI-Mentor</span>
@@ -380,7 +735,7 @@ export function ChatWidget() {
                 )}
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] text-gold/70">{ctx.sidTyp}</span>
+                <span className="text-[10px] text-gold/70">{SID_NAMN[ctx.sidTyp]}</span>
                 {hydrerad && srForfallna > 0 && (
                   <button
                     onClick={() => startaSR()}
@@ -403,13 +758,13 @@ export function ChatWidget() {
             <div className="mt-2.5 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" aria-hidden="true" />
           </div>
 
-          {/* Snabbkommandon */}
-          <div className="flex gap-1 border-b border-gold/20 bg-gold/5 px-2 py-2">
+          {/* Snabbkommandon — horisontellt skjutbara på mobil */}
+          <div className="flex gap-1 overflow-x-auto border-b border-gold/20 bg-gold/5 px-2 py-2">
             {snabbKommandon.map((k) => (
               <button
                 key={k.text}
                 onClick={() => skicka(k.fraga)}
-                className="flex-1 rounded-lg border border-gold/20 bg-paper px-1 py-1.5 text-[10px] font-medium hover:border-gold/50 hover:bg-gold/10"
+                className="shrink-0 rounded-lg border border-gold/20 bg-paper px-2 py-1.5 text-[10px] font-medium hover:border-gold/50 hover:bg-gold/10"
               >
                 {k.ikon} {k.text}
               </button>
@@ -500,6 +855,7 @@ export function ChatWidget() {
 
             {meddelanden.map((m, i) => (
               <div key={i}>
+                {m.ikon && <div className="mb-1 text-sm">{m.ikon}</div>}
                 <div
                   className={`max-w-[85%] whitespace-pre-line rounded-xl px-3 py-2.5 text-xs leading-relaxed ${
                     m.fran === "du"
@@ -509,14 +865,17 @@ export function ChatWidget() {
                 >
                   {m.text}
                 </div>
-                {/* Handlingsknappar */}
+                {/* Handlingsknappar — svarsalternativ (fragor:) skickas som ny fråga */}
                 {m.handlings && m.handlings.length > 0 && (
                   <div className="mt-2 space-y-1.5">
                     {m.handlings.map((h, j) => (
                       <button
                         key={j}
                         onClick={() => {
-                          if (h.lank === "sr:alla") {
+                          if (h.lank.startsWith("fragor:")) {
+                            // Redigering: alternativet skickas som ny fråga till mentorn
+                            skicka(decodeURIComponent(h.lank.slice("fragor:".length)));
+                          } else if (h.lank === "sr:alla") {
                             startaSR(true);
                           } else if (h.lank === "#") {
                             // Konvention: "#" = starta spaced repetition i chatten
@@ -537,26 +896,36 @@ export function ChatWidget() {
                             <div className="text-[10px] font-normal text-muted-foreground">{h.beskrivning}</div>
                           )}
                         </div>
-                        <span className="text-gold/40">→</span>
+                        <span className="text-gold/40">{h.lank.startsWith("fragor:") ? "↺" : "→"}</span>
                       </button>
                     ))}
                   </div>
                 )}
               </div>
             ))}
+
+            {/* Typing-indicator — tre pulserande guldprickar medan svaret laddas */}
             {busy && (
-              <div className="rounded-xl bg-card px-3 py-2 text-xs text-muted-foreground border border-gold/20">
-                <span className="animate-pulse">AI-mentorn tänker…</span>
+              <div className="flex w-fit items-center gap-1.5 rounded-xl border border-gold/20 bg-card px-3 py-3">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-gold" />
+                <span className="h-2 w-2 animate-pulse rounded-full bg-gold [animation-delay:150ms]" />
+                <span className="h-2 w-2 animate-pulse rounded-full bg-gold [animation-delay:300ms]" />
+                <span className="ml-1 text-[10px] text-muted-foreground">AI-mentorn tänker…</span>
               </div>
             )}
           </div>
 
-          {/* Input */}
+          {/* Input — Enter skickar (Shift+Enter gör inget) */}
           <div className="flex gap-2 border-t border-gold/20 p-2">
             <input
               value={fragor}
               onChange={(e) => setFraga(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && skicka()}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  skicka();
+                }
+              }}
               placeholder="Fråga mig vad som helst…"
               className="flex-1 rounded-lg border border-gold/30 bg-card px-3 py-2.5 text-xs outline-none focus:border-gold"
             />

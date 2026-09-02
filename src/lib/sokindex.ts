@@ -41,6 +41,7 @@ const STATISKA: SokPost[] = [
   { titel: "Topplistan", lank: "/topplista", kategori: "Träning", ikon: "🏆", beskrivning: "Eleverna rankade på XP", nycklar: "ranking tavalning xp" },
   { titel: "Badges & meriter", lank: "/badges", kategori: "Träning", ikon: "🎖️", beskrivning: "29 troféer att förtjäna", nycklar: "badge trofe meriten" },
   { titel: "Fas 2-ansökan", lank: "/fas2-ansok", kategori: "Sida", ikon: "✉️", beskrivning: "Utbildning med grundaren", nycklar: "ansok fas 2 kostnadsfritt" },
+  { titel: "Fas 3 — Certifiering", lank: "/fas3", kategori: "Sida", ikon: "🎓", beskrivning: "Certifierad AK1A-analytiker — praktikportfölj + etik", nycklar: "fas 3 certifiering certifierad analytiker praktikexamen portfolj etik examen betyg" },
   { titel: "Medlemskap", lank: "/medlemskap", kategori: "Sida", ikon: "💛", beskrivning: "Fas 1 gratis · Fas 2 · Fas 3", nycklar: "pris gratis fas" },
   { titel: "Bloggen", lank: "/blogg", kategori: "Sida", ikon: "✍️", beskrivning: "Guider + marknadskommentarer", nycklar: "guider inlagg kommentarer" },
   { titel: "Logga in", lank: "/logga-in", kategori: "Sida", ikon: "🔑", beskrivning: "Medlemsinloggning", nycklar: "login konto" },

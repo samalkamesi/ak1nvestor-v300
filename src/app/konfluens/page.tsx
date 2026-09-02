@@ -3,6 +3,7 @@ import Link from "next/link";
 import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { KonfluensTabell } from "@/components/ak1a/konfluens-tabell";
+import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
 
 export const dynamic = "force-static";
 
@@ -68,6 +69,16 @@ const LANKAR = [
 ] as const;
 
 /**
+ * DEMO-historik — 25 månads-slutkurser för Volvo B (statisk serie ur 2 års
+ * volatilitet). Vågkonen ritar sina percentilband ur seriens egen σ; live-data
+ * finns på /api/vagkon?ticker=VOLV-B.ST&serie=pris.
+ */
+const DEMO_VOLVO_B_PRIS = [
+  258, 263, 257, 266, 274, 281, 287, 283, 276, 285, 294, 302, 308, 297, 289, 296, 305, 314, 321,
+  315, 306, 312, 323, 332, 327,
+];
+
+/**
  * KONFLUENSRADARN — ytan där värde möter vågor. Server component med
  * statisk metadata; tabellen är en klientkomponent som fetchar
  * /api/konfluens (route — inte server action).
@@ -128,6 +139,17 @@ export default function KonfluensPage() {
       <div className="mt-10">
         <KonfluensTabell />
       </div>
+
+      {/* Vågkon — scenariot som växer ur historikens egen volatilitet (Fas C) */}
+      <section className="mt-10">
+        <h2 className="font-serif text-2xl font-bold">Vågkon</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          Vågkon — scenario för Volvo B:s pris (ur 2 års volatilitet).
+        </p>
+        <div className="mt-4">
+          <VagkonGraf historik={DEMO_VOLVO_B_PRIS} titel="VOLV-B.ST" enhet="SEK" />
+        </div>
+      </section>
 
       {/* Vidare i ekosystemet */}
       <section className="mt-10">

@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { Fragment, useCallback, useMemo, useRef, useState } from "react";
 import type { KonfluensRad } from "@/lib/konfluens-motor";
+import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
 
 // ═══════════════════════════════════════════════════════════
 // KONFLUENSRADARN — ytan där värde möter vågor. Radarn väger
@@ -136,6 +137,56 @@ function KallaChip({ antal, max = 3 }: { antal: number; max?: number }) {
     >
       {antal}/{max} källor
     </span>
+  );
+}
+
+// ── Vågkon-demo-serie — deterministiskt ur ticker-hash (Fas C) ────────────────
+// Ingen Math.random: ticker → FNV-1a-hash → 32-bit seed → linjär kongruens-
+// generator (Park–Miller/minstd). Samma ticker ger alltid bitidentisk serie.
+
+/** FNV-1a-stränghash → 32-bit seed. */
+function hashTicker(ticker: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < ticker.length; i++) {
+    h ^= ticker.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+/** Linjär kongruens-generator (minstd): slumptal i [0, 1) ur ett fast seed. */
+function lcg(seed: number): () => number {
+  let s = seed % 2147483647;
+  if (s <= 0) s += 2147483646;
+  return () => {
+    s = (s * 48271) % 2147483647;
+    return (s - 1) / 2147483646;
+  };
+}
+
+/** 25punkts DEMO-historik per ticker — slumpad men fullt reproducerbar. */
+function demoHistorik(ticker: string): number[] {
+  const slump = lcg(hashTicker(ticker));
+  const serie: number[] = [];
+  let v = 120 + slump() * 180; // startnivå 120–300 SEK
+  for (let i = 0; i < 25; i++) {
+    v *= 1 + (slump() - 0.5) * 0.08; // ±4 % per steg — månadslik volatilitet
+    serie.push(Math.round(v * 10) / 10);
+  }
+  return serie;
+}
+
+/** Expanderbar Vågkon-rad — details/summary utan JavaScript-krav. */
+function VagkonRad({ ticker }: { ticker: string }) {
+  return (
+    <details>
+      <summary className="cursor-pointer select-none text-[11px] font-bold uppercase tracking-widest text-gold">
+        Vågkon ▾
+      </summary>
+      <div className="mt-2">
+        <VagkonGraf historik={demoHistorik(ticker)} titel={`Scenario: ${ticker}`} enhet="SEK" />
+      </div>
+    </details>
   );
 }
 
@@ -320,6 +371,9 @@ export function KonfluensTabell() {
                   <div className="mt-2">
                     <KallaChip antal={typeof r.datakallor === "number" ? r.datakallor : 0} />
                   </div>
+                  <div className="mt-2 border-t border-gold/15 pt-2">
+                    <VagkonRad ticker={r.ticker} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -343,7 +397,8 @@ export function KonfluensTabell() {
                   {sorterade.map((r) => {
                     const stil = r.klass ? KLASS_STIL[r.klass] : null;
                     return (
-                      <tr key={r.ticker} className="border-b border-gold/15 last:border-0">
+                      <Fragment key={r.ticker}>
+                        <tr className="border-b border-gold/15">
                         <td className="px-3 py-2.5">
                           <span className="font-semibold">{r.ticker}</span>
                           {r.namn && (
@@ -391,7 +446,14 @@ export function KonfluensTabell() {
                         <td className="px-3 py-2.5">
                           <KallaChip antal={typeof r.datakallor === "number" ? r.datakallor : 0} />
                         </td>
-                      </tr>
+                        </tr>
+                        {/* Vågkon — expanderbar scenariorad per bolag (Fas C) */}
+                        <tr className="border-b border-gold/15 last:border-0">
+                          <td colSpan={8} className="px-3 py-2">
+                            <VagkonRad ticker={r.ticker} />
+                          </td>
+                        </tr>
+                      </Fragment>
                     );
                   })}
                 </tbody>

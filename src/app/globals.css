@@ -51,13 +51,44 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   LJUSA TEMAT — WCAG-korrekt 2026-09-02
+   Kontrast-val (relativ luminans enl. WCAG 2.1, krav: löptext ≥ 4.5:1,
+   UI-komponenter/kantlinjer ≥ 3:1):
+
+   • --gold: #a8862a → #785c13 (brons-guld, "8a6d1f-området" + marginal)
+     – text-gold mot --paper #f5f1e8 ........ 3.05:1 → 5.58:1  ✓ AA
+     – text-gold mot --secondary #efe9da ..... 5.49:1          ✓ AA
+     – text-gold mot --card #fffdf7 .......... 6.18:1          ✓ AA
+     – text-gold mot bg-gold/15-tint (chips) . 2.51:1 → 4.59:1 ✓ AA
+     – cream-text (#fffdf7) på bg-gold ....... 3.38:1 → 6.18:1 ✓ AA
+     – .dark behåller oförändrat ljusguld #c9a84c (mörk botten).
+   • --gold-text: #7A5E14 — explicit löptext-token (alias till --guld-djup):
+     5.42:1 mot paper; använd .gold-text/.guld-djup-text för löptext i guld.
+   • --koppar-lys: #B07A3C → #8C5A2B (bas-koppar) i LJUST läge:
+     2.8–3.3:1 → 5.16:1 mot paper ✓ (focus-ring + .koppar-text).
+     .dark behåller #B07A3C (5.0:1 mot marin natt).
+   • .marin-panel (ljus): text #EDE6D6 på #0E1B2E = 13.9:1; guld #E8C766 =
+     10.5:1 ✓. Inuti paneler flippar guldfamiljen till luminöst (se regel
+     nedan): text-gold → #c9a84c = 7.6:1 mot marin — annars skulle mörkare
+     --gold bli oläslig på marin botten.
+   • --ring/--sidebar-ring: #c9a84c → #785c13 (2.0:1 → 5.58:1 som focus-yta) ✓
+   • --accent/--sidebar-primary/--chart-1 följer --gold för palett-koherens;
+     accent-foreground #fffdf7 på #785c13 = 6.18:1 ✓ (var 3.4:1).
+   • ::selection: marin #0E1B2E + gold-soft #c9a84c = 7.6:1 ✓ (verifierad).
+   • Scrollbar: thumb gold-soft #c9a84c mot marin-vägg #081120 = 8.3:1 ✓;
+     hover-thumb #785c13 = 3.0:1 ✓ (UI-krav 3:1).
+   • .paper-texture vignette: rgba(14,27,46,0.03) ≤ 0.05 — försvinnande
+     svag, påverkar inte läsbarhet (gold-korn 0.03 dito).
+   ═══════════════════════════════════════════════════════════════════════════ */
 :root {
   --radius: 0.5rem;
   /* AK1A Research Lab — editorial / institutional research palette */
   --paper: #f5f1e8;            /* cream paper background */
   --ink: #0a0b0d;              /* near-black ink */
-  --gold: #a8862a;             /* primary brand gold/amber */
-  --gold-soft: #c9a84c;        /* lighter gold for accents/lines */
+  --gold: #785c13;             /* brons-guld — WCAG AA 5.6:1 på cream (2026-09-02) */
+  --gold-text: #7A5E14;        /* explicit löptext-token = --guld-djup (5.4:1) */
+  --gold-soft: #c9a84c;        /* lighter gold: linjer/dekor/scrollbar — INTE löptext på cream */
   --bull: #047857;             /* bullish green */
   --bear: #b91c1c;             /* bearish red */
   --neutral-signal: #64748b;   /* neutral slate */
@@ -66,7 +97,7 @@
   --djup-marin: #0E1B2E;           /* bläck-marin — institutionellt ankare */
   --djup-marin-morkare: #081120;   /* djupaste marin för gradientdjup */
   --koppar: #8C5A2B;               /* koppar/brons — data-accent */
-  --koppar-lys: #B07A3C;           /* ljusare koppar för text och markörer */
+  --koppar-lys: #8C5A2B;           /* ljus läge: bas-koppar 5.2:1 (UI-krav 3:1) — dark behåller #B07A3C */
   --guld-djup: #7A5E14;            /* mörkare guld — WCAG-löptext på cream */
 
   --background: #f5f1e8;
@@ -81,25 +112,25 @@
   --secondary-foreground: #2a2520;
   --muted: #efe9da;
   --muted-foreground: #5a5045; /* warm muted text */
-  --accent: #a8862a;
+  --accent: #785c13;
   --accent-foreground: #fffdf7;
   --destructive: #b91c1c;
   --border: #e0d8c4;           /* warm border */
   --input: #e0d8c4;
-  --ring: #c9a84c;
-  --chart-1: #a8862a;
+  --ring: #785c13;             /* focus-ring 5.6:1 mot paper (tidigare 2.0:1) */
+  --chart-1: #785c13;
   --chart-2: #047857;
   --chart-3: #b91c1c;
   --chart-4: #64748b;
   --chart-5: #c4972e;
   --sidebar: #f5f1e8;
   --sidebar-foreground: #0a0b0d;
-  --sidebar-primary: #a8862a;
+  --sidebar-primary: #785c13;
   --sidebar-primary-foreground: #fffdf7;
   --sidebar-accent: #efe9da;
   --sidebar-accent-foreground: #0a0b0d;
   --sidebar-border: #e0d8c4;
-  --sidebar-ring: #c9a84c;
+  --sidebar-ring: #785c13;
 }
 
 .dark {
@@ -111,6 +142,7 @@
   --ink: #f5f1e8;              /* cream-text behålls — bankirpapper i mörker */
   --gold: #c9a84c;
   --gold-soft: #d8b85e;
+  --gold-text: #c9a84c;    /* löptext-token i natt — speglar --guld-djup */
   --bull: #34d399;
   --bear: #f87171;
   --neutral-signal: #94a3b8;
@@ -180,13 +212,16 @@
     text-shadow: 0 0.5px 0 rgba(14, 27, 46, 0.08);
   }
 
-  /* Signaturdetailj — marin selection med guld text */
+  /* Signaturdetailj — marin selection med guld text
+     (WCAG 2026-09-02: #c9a84c på #0E1B2E = 7.6:1 ✓ i båda lägena) */
   ::selection {
     background: var(--djup-marin, #0E1B2E);
     color: var(--gold-soft, #c9a84c);
   }
 
-  /* Global signatur-scrollbar — smal marin-vän med guld-thumb (WebKit + Firefox) */
+  /* Global signatur-scrollbar — smal marin-vän med guld-thumb (WebKit + Firefox)
+     (WCAG 2026-09-02: thumb #c9a84c mot vägg #081120 = 8.3:1 ✓;
+      hover-thumb --gold = 3.0–6.7:1 ✓ beroende på läge) */
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--gold-soft, #c9a84c) var(--djup-marin-morkare, #081120);
@@ -203,7 +238,7 @@
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--gold, #a8862a);
+    background: var(--gold, #785c13);
   }
 
   /* Mörkt läge: djupare marin scrollbar-skena — nattdjup, ej varm sepia */
@@ -214,7 +249,9 @@
     scrollbar-color: var(--gold-soft, #c9a84c) #081020;
   }
 
-  /* Koppar focus-ring — institutionell precision på interaktiva element */
+  /* Koppar focus-ring — institutionell precision på interaktiva element
+     (WCAG 2026-09-02: ljust läge använder bas-koppar #8C5A2B = 5.2:1 mot
+      paper ✓; mörkt läge behåller #B07A3C = 5.0:1 mot marin natt ✓) */
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,
@@ -248,7 +285,9 @@
   .gold-rule {
     background-image: linear-gradient(to right, transparent, var(--gold-soft), transparent);
   }
-  /* Subtle paper texture via radial gradients + knappt synligt marin-vignette-lager */
+  /* Subtle paper texture via radial gradients + knappt synligt marin-vignette-lager
+     (WCAG 2026-09-02: vignette 0.03 ≤ 0.05-gränsen — verifierad försvinnande svag,
+      ingen påverkan på textskärpa; gold-korn 0.03 dito. Oförändrad.) */
   .paper-texture {
     background-color: var(--background);
     background-image:
@@ -269,6 +308,26 @@
     background: linear-gradient(160deg, var(--djup-marin, #0E1B2E), var(--djup-marin-morkare, #081120));
     color: #EDE6D6;
   }
+  /* LJUSA TEMAT (2026-09-02): Inuti en marin-panel är botten mörk — därför
+     flippar guldfamiljen till luminöst för hela panelens subträd. Utan denna
+     regel skulle nya mörka --gold (#785c13) ge text-gold ≈ 3.0:1 på marin.
+     Efter flip: text-gold #c9a84c = 7.6:1, .gold-text #E8C766 = 10.5:1 ✓.
+     Mörkt läge påverkas ej (har egna ljusa guldvärden). */
+  html:not(.dark) .marin-panel {
+    --gold: #c9a84c;
+    --gold-text: #E8C766;
+    --guld-djup: #E8C766;
+  }
+  /* LJUSA TEMAT (2026-09-02): Garanterad kant mot paper-botten — brons-
+     hårlinje #8a6d1f syns mot både paper (4.3:1) och marin (3.5:1) ✓,
+     plus lyft-skugga så panelen aldrig flyter ihop med pappret.
+     Kompletterar komponenternas border-gold/30–60 (merging till certifikatsram). */
+  html:not(.dark) .marin-panel {
+    box-shadow:
+      0 0 0 1px #8a6d1f,
+      0 10px 24px -12px rgba(8, 17, 32, 0.30),
+      0 20px 48px -16px rgba(8, 17, 32, 0.22);
+  }
   .dark .marin-panel {
     /* Kontrast verifierad 2026-09-01: guld #E8C766 på #16263D ≈ 9.3:1 och på
        #0E1B2E ≈ 10.5:1 — väl över WCAG AA 4.5:1 (text #EDE6D6 ännu högre).
@@ -277,7 +336,22 @@
     color: #EDE6D6;
   }
   .koppar-text { color: var(--koppar-lys, #B07A3C); }
+  .gold-text { color: var(--gold-text, #7A5E14); }
   .guld-djup-text { color: var(--guld-djup, #7A5E14); }
+}
+
+/* LJUSA TEMAT (2026-09-02) — knapp-räddning för solida bg-guld-ytor:
+   Mörkare --gold gör att text-primary-foreground (ink #0a0b0d) bara når
+   3.4:1 på bg-gold. Cream (#f5f1e8) på #785c13 = 5.6:1 ✓ AA.
+   Obs: reglerna är medvetet OLAGERADE — de ska vinna över Tailwinds
+   @layer utilities utan !important. */
+html:not(.dark) .bg-gold.text-primary-foreground {
+  color: var(--paper, #f5f1e8);
+}
+/* Inuti marin-panel flippar --gold till ljusguld #c9a84c — där är ink-text
+   rätt (8.6:1 ✓), så räddningen motverkas lokalt. */
+html:not(.dark) .marin-panel .bg-gold.text-primary-foreground {
+  color: var(--ink, #0a0b0d);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -576,12 +650,14 @@ h1, h2, h3, h4, h5, h6 {
 .ak1a-confidence-meter[data-status="MÄTT"] .ak1a-confidence-meter__fill { background: var(--gold, #a8862a); }
 .ak1a-confidence-meter[data-status="METODMÅL"] .ak1a-confidence-meter__fill { background: var(--bull, #047857); }
 
-/* 7. SOURCE-LINK — källhänvisningar som footnotes */
+/* 7. SOURCE-LINK — källhänvisningar som footnotes
+   (2026-09-02: bas --gold-text 5.4:1 ✓ för 0.65em småtext; hover gick tidigare
+    till odefinierad --gold-deep → nu reell token) */
 .ak1a-source-link {
   font-family: monospace;
   font-size: 0.65em;
   font-weight: 700;
-  color: var(--gold, #a8862a);
+  color: var(--gold-text, #7A5E14);
   vertical-align: super;
   line-height: 0;
   cursor: pointer;
@@ -589,7 +665,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 0.1em;
   transition: color 150ms ease-out;
 }
-.ak1a-source-link:hover { color: var(--gold-deep, #8a6b1f); text-decoration: underline; }
+.ak1a-source-link:hover { color: var(--ink, #0a0b0d); text-decoration: underline; }
 
 /* 8. INSTITUTIONAL-FRAME — ram med hörn-markörer + gold-divider i topp */
 .ak1a-institutional-frame {

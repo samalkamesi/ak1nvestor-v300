@@ -3,6 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { VagfundamentMatris } from "@/components/ak1a/vagfundament-matris";
 import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
+import { VagkonGraf } from "@/components/ak1a/vagkon-graf";
 
 export const metadata: Metadata = pageMetadata({
   path: "/vagfundament",
@@ -18,6 +19,16 @@ export const metadata: Metadata = pageMetadata({
     "Volvo B analys",
   ],
 });
+
+/**
+ * DEMO-historik — 25 månads-slutkurser för Volvo B (statisk serie ur 2 års
+ * volatilitet). Vågkonen ritar sina percentilband ur seriens egen σ; live-data
+ * finns på /api/vagkon?ticker=VOLV-B.ST&serie=pris.
+ */
+const DEMO_VOLVO_B_PRIS = [
+  258, 263, 257, 266, 274, 281, 287, 283, 276, 285, 294, 302, 308, 297, 289, 296, 305, 314, 321,
+  315, 306, 312, 323, 332, 327,
+];
 
 /**
  * VÅGFUNDAMENT — fundamentalvågornas ekosystem (pedagogisk ingång).
@@ -70,6 +81,17 @@ export default function VagfundamentPage() {
 
       <div className="mt-10">
         <VagfundamentMatris ticker="VOLV-B.ST" />
+      </div>
+
+      {/* Vågkon — scenariot som växer ur historikens egen volatilitet (Fas C) */}
+      <div className="mt-10">
+        <h2 className="font-serif text-2xl font-bold">Vågkon</h2>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          Vågkon — scenario för Volvo B:s pris (ur 2 års volatilitet).
+        </p>
+        <div className="mt-4">
+          <VagkonGraf historik={DEMO_VOLVO_B_PRIS} titel="VOLV-B.ST" enhet="SEK" />
+        </div>
       </div>
 
       {/* Dagens vågkarta — den autonoma morgonskanningen (Yahoo + MarketStack) */}

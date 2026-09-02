@@ -1,0 +1,1098 @@
+{
+  "slug": "winning-the-losers-game",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 180,
+  "title": "Winning the Loser's Game — Ellis: KOMPLETT",
+  "summary": "Charles D. Ellis publicerade 1975 artikeln The Loser's Game i Financial Analysts Journal — branschens obekvämaste diagnos, senare utbyggd till boken Winning the Loser's Game (6:e upplagan 2013): när professionella tog över marknaden blev investering ett förlorarspel, där poängen FÖRLORAS av den som gör misstag i stället för att VINNAS av den som slår briljanta slag. Med Simon Ramos tennis som metafor förklarar Ellis varför institutionell aktiv förvaltning strukturellt underpresterar — kostnads-minusräkningen, agentproblemet, tidshorisonternas tyranni — och varför marknadens effektivitet är en GÅVA från proffsen. Kursen går igenom indexet som strategisk slutsats, de aktiva undantagen Ellis själv medger, den riktiga risken (att missa målet — inte volatiliteten), policy statement, livsfaser, skatter och rådgivare — och kontroversen mot den aktiva skolan (vår Buffett/Graham-värld) med AK1A:s syntes: Ellis har rätt om trading-spelet; AKM1-ägarskapet är en annan aktivitet — och index är baseline för allt.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå loser's game-konceptet via Simon Ramos tennis — proffs vinner poäng, amatörer förlorar dem, och investering är amatör-tennis · Se varför institutionerna förlorar: kostnads-minusräkningen i SEK, agentproblemet (tänk som klienten misslyckas), tidshorisonternas tyranni · Förstå marknadens effektivitet som KONKURRENS — proffsens paradoxala gåva till alla andra · Sluta dig till indexet som strategisk default — inte produkt utan spelteoretisk slutsats · Känna de aktiva undantagen Ellis medger och villkoren för att tillhöra dem · Omdefiniera risk: riktig risk är att missa målet, inte volatilitet (V19 som permanent kapitalförlust) · Använda tidsdimensionen som den enskilda investerarens enda strukturella fördel (AK1TS Lång/Mega) · Skriva en policy statement och koppla den till livsfaser och välfärd · Räkna på skatter och välja rådgivare efter funktion — beteendecoaching, inte kurstips · Argumentera båda sidor i kontroversen Ellis mot den aktiva skolan och formulera AK1A:s syntes: index som baseline för alla, AKM1 som ägarskapets disciplin.",
+  "why": "Bogle-kursen (Common Sense on Mutual Funds) gav dig PRODUKTEN — indexfondens mekanik och kostnads-determinism från konsumentens sida. Ellis ger dig PROFESSIONEN: den institutionella, insiktsfulla förklaringen till VARFÖR aktiv förvaltning strukturellt förlorar — konkurrensen, kostnaderna, incitamenten och kalendariet — skriven av en man som tillbringade fyrtio år inne i branschens rum. Utan Ellis blir index ett budskap; med Ellis blir det en slutsats du själv kan härleda. För AK1A:s aktiva analytiker är Ellis dessutom det ärligaste kravet som ställs: om din aktiva position inte kan förklara varför den är en ANSAN aktivitet (ägarskap med lång horisont) i stället för trading — bör den vara en indexfond. Det är mot denna baslinje hela AKM1-disciplinen mäts.",
+  "chapters_list": [
+    "1. Ellis och förlorarspelet — boken, mannen och tesen",
+    "2. Simon Ramos tennis — vem förlorar poängen?",
+    "3. Effektiviteten är konkurrens — proffsens paradoxala gåva",
+    "4. Kostnads-minusräkningen — aritmetiken som inte förhandlar",
+    "5. Agentproblemet — tänk som klienten misslyckas",
+    "6. Tidshorisonternas tyranni — institutionens kalendarium mot ditt",
+    "7. Indexet som default — strategisk slutsats, inte produkt",
+    "8. De aktiva undantagen — minoriteten som faktiskt vinner",
+    "9. Riktig risk — att missa målet, inte volatiliteten",
+    "10. Tidsdimensionen — långsiktighetens kraft och pris",
+    "11. Policy statement — policyn som skrivs i solsken",
+    "12. Livsfaser och välfärd — vad pengarna är till för",
+    "13. Skatter och rådgivare — individens två dolda kostnader",
+    "14. KONTROVEREN: Ellis mot den aktiva skolan — och AK1A:s syntes",
+    "15. Sammanfattning — att vinna förlorarspelet (V01–V20)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Ellis och förlorarspelet — boken, mannen och tesen",
+      "intro": "I juli 1975 publicerade Financial Analysts Journal en artikel med titeln The Loser's Game, skriven av Charles D. Ellis — branschinsider, grundare av Greenwich Associates och senare ledamot av Yales investeringskommitté i sjutton år. Artikeln blev en av tidskriftens mest återtrytta någonsin och växte till boken Winning the Loser's Game (första bokupplagan 1998, sjätte upplagan 2013). Kursen börjar med mannen, tesen — och skillnaden mot Bogle.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Charles D. Ellis tillbringade sitt yrkesliv inuti den institutionella förvaltningsbransch han sedan diagnostiserade. Han forskade och undervisade (Harvard Business School och Yale), arbetade i investmentbank, grundade 1972 Greenwich Associates — som i decennier granskade hur pensionsskydd, banker och förvaltningsbolag faktiskt använde sina pengar — och skrev sedan sjutton böcker, däribland The Partnership om Goldman Sachs historia. Perspektivet är kursens första nyckel: Ellis skrev inte som produktens apostel utifrån, utan som branschens egen läkare inifrån. När han säger att aktiv institutionell förvaltning strukturellt underpresterar, säger han det om sina egna klienter och kollegor — med deras egen data i handen."
+        },
+        {
+          "type": "text",
+          "content": "Tesen i artikeln från 1975, citerad öppet: investeringsbranschen hade bytt karaktär. Fram till 1960-talet dominerades marknaden av amatörer — då kunde en skickig professionell vinna poäng på överlägsen information och analys. Men när institutionerna tog över handeln — Ellis räknade till över 70 procent av omsättningen på New York-börsen i början av 1970-talet, i senare upplagor över 90 procent — blev spelet proffs mot proffs. Den som köper är ett proff, den som säljer är ett proff, och proffens genomsnitt är per definition marknaden, före kostnader. Efter kostnader är genomsnittet en förlorare. Spelet hade blivit ett förlorarspel — och det är spelare som förlorar poängen som avgör matchen, inte spelare som vinner dem."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot index-kusinen är därför kursens ryggrad: Bogle (Common Sense on Mutual Funds-kursen) byggde PRODUKTEN — Vanguard, ägarstrukturen, TER-matematiken, konsumentens räkneverk. Ellis bygger DIAGNOSEN — en teori om varför PROFESSIONEN förlorar, härrörd ur konkurrensanalys, kostnadsdata och incitamentsgranskning. För Bogle är indexet lösningen på ett prisproblem; för Ellis är indexet en slutsats av spelteoretisk art: i ett spel där förloraren definieras av sina egna misstag är den vinnande strategin att inte spela spelet överhuvudtaget. Boken ger sedan individens väg: policy, livsfaser, skatter, rådgivare — allt samlat under devisen som Ellis formulerar i sjätte upplagan: investering handlar inte om att slå andra i deras spel, utan om att behärska dig själv i ditt eget. AKM1-brygga: V12 intäktsstabilitet och V19 kapitalförbränning är bolagsvärldens motsvarighet till Ellis-misstagen — stabila intäkter och ingen utspädning är helt enkelt felfria returer; AK1TS-lång-horisonten är spelets tredje dimension."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera skillnaden innan du går vidare: Bogle = produkten (bygg en billigare bil), Ellis = professionen (förklara varför racet är förlorat i förväg). Index är Bogles lösning men Ellis slutsats — och bara den andra kan härledas av vem som spelar spelet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bogle mot Ellis — två vägar till samma slutsats\",\"rader\":[[\"Dimension\",\"Bogle — Common Sense on Mutual Funds\",\"Ellis — Winning the Loser's Game\"],[\"Utgångspunkt\",\"konsumenten och produkten\",\"professionen och konkurrensen\"],[\"Huvudbevis\",\"kostnads-determinismens matematik\",\"spelstrukturen: proffs mot proffs är ett förlorarspel\"],[\"Indexet är\",\"en produkt som borde ägas av sina fondägare\",\"en strategisk slutsats: spela inte spelet\"],[\"Största bidraget\",\"indexfondens mekanik och ägarstruktur\",\" diagnosen: kostnader, agentproblem, tidshorisonter\"],[\"Röst\",\"utifrån — konsumentens advokat\",\"inifrån — branschens egen läkare\"],[\"AKM1-koppling\",\"kostnaden som enda förutsägbara variabel\",\"V12 intäktsstabilitet, V19 emission — misstag att undvika\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen spelardiagnos innan kursen lär dig mer: vilken andel av dina egna affärer gjordes mot en motpart med mer information, bättre system och mer tid än du? Uppskatta i procent. Skriv sedan ned tre misstag du upprepade i din investeringshistorik — inte tre dåliga aktier, utan tre upprepade BETEENDEN. Behåll listan: kapitel 2 kommer att visa att listan, inte aktievalen, är där förlorarspelet avgörs."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var kärntesen i Ellis artikel The Loser's Game från 1975?",
+          "alternativ": [
+            "Att indexfonder alltid är billigast",
+            "Att privatpersoner bör handla aktier oftare",
+            "Att teknisk analys slår fundamental",
+            "Att investering hade bytt karaktär när institutionerna tog över — spelet blev ett förlorarspel där misstagen, inte de briljanta slagen, avgör"
+          ],
+          "ratt": 3,
+          "tips": "Vem gör affärerna på börsen idag — och vad händer med genomsnittet när alla är proffs?"
+        },
+        {
+          "q": "Vad är den viktigaste differentieringen mot Bogle-kursen?",
+          "alternativ": [
+            "Ellis förespråkar aktiv handel med hävstång",
+            "Bogle skrev om professionen och Ellis om produkten",
+            "Bogle byggde produkten och kostnadsargumentet — Ellis diagnostiserade professionen och härledde index som slutsats",
+            "De båda böckerna argumenterar för motsatta saker"
+          ],
+          "ratt": 2,
+          "tips": "Vem står var och en i när de skriver — konsumentens advokat eller branschens läkare?"
+        },
+        {
+          "q": "Vilken roll hade Ellis själv i branschen han kritiserade?",
+          "alternativ": [
+            "Han var journalist utan branscherfarenhet",
+            "Han grundade Greenwich Associates, satt sjutton år i Yales investeringskommitté och skrev om Goldman Sachs — han var insider",
+            "Han drev Vanguard i konkurrens med Bogle",
+            "Han var regulator och förbjöd aktiva fonder"
+          ],
+          "ratt": 1,
+          "tips": "Diagnosens trovärdighet ligger i varifrån den är skriven — inifrån eller utifrån?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Simon Ramos tennis — vem förlorar poängen?",
+      "intro": "Ellis lånade sin centrala metafor från en forskare och tennisentusiast: Simon Ramo, medfounded av TRW, som i essän Extraordinary Tennis for the Ordinary Tennis Player skilde mellan två helt olika spel — proffstennis och amatörtennis. Skillnaden avgör hela kursen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ramos iakttagelse, citerad öppet: i proffstennis vinns cirka 80 procent av poängen av vinnaren — matchen avgörs av briljanta slag, perfekt placerade, som motståndaren inte kan returnera. I amatörtennis är mönstret spegelvänt: cirka 80 procent av poängen FÖRLORAS av förloraren — bollen sätts i nät, slås ut eller dubbelfelas. Matchen avgörs inte av att vinnaren gör något lysande utan av att den ena spelaren gör färre misstag. Detta är definitionen på ett förlorarspel: ett spel där resultatet bestäms av motståndarens — eller ens egna — fel, inte av ens egen briljans. Strategin i de två spelen är fundamentalt olika: i vinnarspelet ska du maximera dina vinnande slag; i förlorarspelet ska du minimera dina misstag — och låta motståndaren slå sig själv."
+        },
+        {
+          "type": "text",
+          "content": "Ellis tillämpning: investering var ett vinnarspel när marknaden dominerades av amatörer som sålde i panik och köpte i eufori — då kunde proffset vinna poäng på information, analys och temperament. Men när institutionerna blev marknaden blev investering amatör-tennis i Ramos mening: varje proff spelar mot en mur av andra proffs, och poängen förloras av den som gör misstag. Vilka misstag? Ellis katalogiserar dem: att spela utan kant alls, att handla för mycket (aktivitet är nästan alltid i overskott, konstaterar han), att försöka tajma marknaden, att jaga gårdagens vinnare, att betala aktiva avgifter för passivt innehav, att byta strategi precis när den är ur fas. Ingen av dessa kräver dumhet — bara ett vanligt mänskligt temperament i ett strukturellt förlorande spel."
+        },
+        {
+          "type": "text",
+          "content": "Beviset att investering är ett förlorarspel är empiriskt och brutalt: över längre perioder underpresterar en stor majoritet av de professionella förvaltarna sitt index — Ellis egna data från 1970-talet visade över 70 procent över ett decennium, och senare SPIVA-mätningar (S&P Indices Versus Active) landar på cirka 90 procent över femton år i USA. Det handlar inte om att förvaltarna är okunniga — de är den bäst utbildade, bäst finansierade, bäst utrustade generationen i finanshistorien. De förlorar ändå, av samma skäl som amatörtennisspelaren: motståndaren är lika bra som man själv. AKM1-brygga: förlorarspelets strategi — färre misstag — är bokstavligen AKM1-checklistans filosofi; V12 intäktsstabilitet (förutsägbara intäkter, färre negativa överraskningar) och V19 kapitalförbränning och emission-risk (undvik utspädning och permanent kapitalförlust) är de två renaste exemplen på misstag som kan screenas bort i förväg; AK1TS-lång-horisonten avgör om du ens befinner dig i rätt spel."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte hur jag vinner poäng? utan hur förlorar jag poäng?. I ett förlorarspel är den som gör färre misstag ohotad av genier — för det finns inga genier som kan vinna poäng åt sig själva när alla är proffs."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vinnarspel mot förlorarspel — Ramos struktur\",\"rader\":[[\"Drag\",\"Proffstennis (vinnarspel)\",\"Amatörtennis (förlorarspel)\",\"Investeringsparallell\"],[\"Cirka 80 % av poängen\",\"vinns av vinnarens slag\",\"förloras av förlorarens misstag\",\"förloras av avgifter, timing och aktivitet\"],[\"Vinnande strategi\",\"maximera briljansen\",\"minimera felen\",\"sluta jaga alfa — eliminera misstagen\"],[\"Motståndare\",\"slår tillbaka sämre\",\"slår tillbaka lika bra\",\"en mur av andra proffs\"],[\"Typiskt misstag\",\"att spela för försiktigt\",\"att överskatta sin kompetens — ta för många risker\",\"att handla trots frånvaro av kant\"],[\"AKM1-översättning\",\"—\",\"—\",\"V12 stabilitet och V19 emissionsdisciplin som misstagsfilter\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din egen felstatistik som tennisdomare: ta dina tjugo senaste affärer och sortera dem i två högar — de som avgjordes av en tes som gick fel (motståndaren var bättre) och de som avgjordes av ditt eget misstag (köpte utan analys, sålde i panik, handlade av tristess, betalade avgift utan att använda rådgivningen). Beräkna andelen i den andra högen. Ellis poäng: i ett förlorarspel är det bara den högen du kan träna bort — och den är nästan alltid större än du tror."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Simon Ramos iakttagelse om amatörtennis?",
+          "alternativ": [
+            "Cirka 80 procent av poängen i amatörtennis FÖRLORAS av spelarens misstag — inte vinns av motståndarens briljans",
+            "Amatörer slår hårdare än proffs",
+            "Amatörmatcher är kortare än proffsmatcher",
+            "Amatörer bör imitera proffsens teknik exakt"
+          ],
+          "ratt": 0,
+          "tips": "Vem orsakar punkten — den som vinner den eller den som misstar sig?"
+        },
+        {
+          "q": "Vad blir den rätta strategin i ett förlorarspel enligt Ellis?",
+          "alternativ": [
+            "Att maximera de briljanta slagen",
+            "Att öka omsättningen tills kanten visar sig",
+            "Att minimera de egna misstagen och låta motståndarna slå ut varandra",
+            "Att bara spela mot svagare motståndare"
+          ],
+          "ratt": 2,
+          "tips": "Om poängen förloras av misstag — vad är den enda variabel du fullt kontrollerar?"
+        },
+        {
+          "q": "Hur visar Ellis att investering har blivit ett förlorarspel?",
+          "alternativ": [
+            "Med att alla aktier ger samma avkastning",
+            "Med att en stor majoritet av professionella förvaltare underpresterar sitt index över längre perioder — cirka 70 procent på hans data, cirka 90 procent i senare SPIVA-mätningar",
+            "Med att institutioner aldrig gör vinster",
+            "Med att börsen alltid faller på lång sikt"
+          ],
+          "ratt": 1,
+          "tips": "Om spelarna är världens bästa och ändå förlorar — vad säger det om spelet?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Effektiviteten är konkurrens — proffsens paradoxala gåva",
+      "intro": "Ellis mest missförstådda kapitel: marknadens effektivitet är ingen naturlag från en formel — den är resultatet av den hätskaste konkurrens som finns. Och det är i grunden en BRA nyhet, även för den som aldrig slår marknaden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen, som Ellis beskriver den: tiotusentals analytiker, portföljförvaltare och handlare — de mest begåvade och bäst finansierade i sin generation — ägnar sina liv åt att hitta felet i varje pris. De forskar bolaget, grillar VD:n, modellerar marginalerna, tävlar om varje bråkdel av informationsfördel. När en av dem hittar en felprisättning slår hen till — och priset rättas. Resultatet: den enskilda aktien prissätts nästan alltid nära rätt, inte för att marknaden är klok utan för att den är full av konkurrenter som straffar varje misstag omedelbart. Ellis paradox, citerad i kursens formulering: ju hårdare proffsen arbetar för att slå marknaden, desto effektivare gör de marknaden — för alla andra. Det är som att spela tennis mot en osynlig mur som returnerar varje boll hårdare ju hårdare du slår."
+        },
+        {
+          "type": "text",
+          "content": "Bra nyhet först, som kursen betonar: proffsen utför ett gratis prisbildningsarbete för samhället och för indexinvesteraren. Du får korrekta priser, djup likviditet och omedelbar prisinformation — utan att betala för analystäcket som producerar den. Det är en av finanshistoriens mest generösa externa effekter: marknadseffektiviteten är en present från de som förlorar spelet. Därmed är Ellis effektivitetsargument inte EMH-tron att priserna alltid är rätt — Ellis är noga med att marknader inte är perfekt effektiva — utan ett konkurrensargument: priset är så hårt bevakat att en varaktig kant kräver strukturell fördel, inte bara IQ och ansträngning. Skillnaden mot Bogle-kursen: där var effektiviteten ett kostnadsargument, här är den en konkurrensanalys; och mot Bernstein-kursen (The Intelligent Asset Allocator): där var effektiviteten en förutsättning för rebalanseringsbonusen, här är den ett skäl till ödmjukhet."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvensen för spelaren: i ett vinnarspel är hårt arbete och talang nog; i ett förlorarspel är de bara inträdesbiljetten. Ellis jämför med att spela tennis mot en osynlig perfekt motståndare — varje ball du slår kommer tillbaka snabbare. Därför blir den rationella frågan aldrig hur smart är jag? utan har jag en strukturell kant som motståndaren saknar? — och för de allra flesta, inklusive de flesta institutioner, är svaret nej. Därav den kyliga slutsatsen: om du inte har en kant är varje slag du tar ett misstag som kostar energi, avgift och risk — att inte slå är i sig en poängvinst i förlorarspelets räkenskap. AKM1-brygga: i bolagsvärlden är den strukturella kanten just det AKM1 letar efter — moat i V13–V15 (patent, varumärke, nätverk), stabil efterfrågan i V12 intäktsstabilitet, och för den egna portföljen disciplinen i V19; AK1TS-lång-horisonten är dessutom en strukturell kant, eftersom majoriteten av motståndarna — proffsen med kvartalskalendern — tvingas spela kort."
+        },
+        {
+          "type": "insikt",
+          "content": "Effektiviteten är inte en fälla utan en tjänst: proffsen betalar analystäcket och du får priserna. Din fråga är bara om du ska betala samma täck för att delta i tävlingen de redan förlorar — eller tacka ja till gåvan och spela ett spel du kan vinna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Effektivitet som konkurrens — tre läsningar\",\"rader\":[[\"Aspekt\",\"Bogle-kursen\",\"Bernstein-kursen\",\"Ellis-kursen\"],[\"Effektiviteten är\",\"ett kostnadsargument\",\"en förutsättning för rebalansering\",\"ett konkurrensresultat — proffs straffar varje felpris\"],[\"Nyckelfråga\",\"vad kostar exponeringen?\",\"vilken premie ger otåligheten?\",\"har du en strukturell kant?\"],[\"Implikation\",\"köp marknaden billigt\",\"bygg portföljen och balansera om\",\"sluta spela om du saknar kant\"],[\"Gåvan\",\"låga avgifter\",\"prisrisk som belönas\",\"gratis prisbildning från de som förlorar\"],[\"AKM1-koppling\",\"kostnad som variabel\",\"V12 stabilitet i allokeringen\",\"V13–V15 moat som bolagets kant\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör kant-testet på din senaste aktiva affär: besvara skriftligt tre frågor — (1) vilken information eller analys använde jag som motparten (troligen ett proff) saknade? (2) vilken strukturell fördel hade jag — längre horisont, större tolerans för svängningar, mindre kapital att förvalta? (3) vad exakt kostade misstaget mig om tesen var fel? Om du inte kan svara på minst två av tre med konkreta belägg: var det ett vinnarspelsslag i ett förlorarspel — notera det."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är marknaden effektiv enligt Ellis?",
+          "alternativ": [
+            "Därför att alla investerare är rationella",
+            "Därför att tiotusentals proffs konkurrerar och straffar varje felpris — effektiviteten är ett konkurrensresultat",
+            "Därför att centralbankerna sätter priserna",
+            "Därför att priserna alltid är perfekta"
+          ],
+          "ratt": 1,
+          "tips": "Det är inte marknadens visdom utan marknadens tävlan som gör priserna träffsäkra."
+        },
+        {
+          "q": "Vad är den bra nyhet Ellis ser i proffens konkurrens?",
+          "alternativ": [
+            "Att proffsen delar med sig av sina alfa",
+            "Att konkurrensen gör priserna korrekta — indexinvesteraren får prisbildning, likviditet och information utan att betala analystäcket",
+            "Att alla får lika avkastning",
+            "Att börsen slutar svänga"
+          ],
+          "ratt": 1,
+          "tips": "Vem betalar för arbetet som gör priserna rätt — och vem får nytta av resultatet?"
+        },
+        {
+          "q": "Vad blir den rationella frågan i ett förlorarspel?",
+          "alternativ": [
+            "Har jag en strukturell kant som motståndaren saknar?",
+            "Hur smart är jag jämfört med genomsnittet?",
+            "Hur hårt ska jag arbeta med min analys?",
+            "Vilken aktie stiger mest nästa kvartal?"
+          ],
+          "ratt": 0,
+          "tips": "Om alla är duktiga räcker inte duktighet — vad återstår att konkurrera med?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Kostnads-minusräkningen — aritmetiken som inte förhandlar",
+      "intro": "Losers spelets mest bestämda spelare är kostnaden. Ellis ägnar hela resonemang åt vad institutionen och individen betalar för den aktiva jakten — förvaltningsavgift, transaktioner, marknadspåverkan, researchapparaten — och William Sharpes aritmetik (The Arithmetic of Active Management, 1991) gör räkningen hård: före kostnader måste den aktiva förvaltningens genomsnitt lika marknadens; efter kostnader förlorar den. Här kör vi den i svenska kronor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Komponenterna, i Ellis beskrivning: förvaltningsarvodet (det synliga priset), courtage och transaktionskostnader (osynliga men eviga), marknadspåverkan — en stor fond flyttar kursen mot sig själv när den köper och säljer — samt sökkostnaderna: researchavdelningen, databaserna, resorna, lönen till teamet som letar nästa idé. Ellis noterar att institutionerna länge försvarade allt detta med att superiör research skulle betala notan — och att räkenskaperna sedan decennier visar motsatsen: kostnaderna är SÄKRA, överavkastningen är det inte. Det är förlorarspelets första lag: du betalar garantierat för en osäker vinst. Sharpes formulering, citerad öppet: efter kostnader blir den aktiva förvaltningens genomsnittliga avkastning, varit i taget, lägre än marknadens genomsnitt — inte för att förvaltarna är dåliga utan för att de kollektivt ÄR marknaden och därför inte kan slå sig själva."
+        },
+        {
+          "type": "text",
+          "content": "Nu siffrorna i SEK — kostnads-minusräkningens tabell i detta kapitel räknar på en miljon kronor, bruttoavkastning 8 procent per år, 25 år. En aktiv fond med total kostnadsbörda om 2,0 procent per år (1,5 procent arvode plus cirka 0,5 procent transaktion och påverkan) nettoavkastar 6,0 procent — slutvärde cirka 4 290 000 kronor. En indexfond till 0,2 procent nettoavkastar 7,8 procent — cirka 6 540 000 kronor. Notan för den aktiva jakten: cirka 2 250 000 kronor av slutvärdet, ungefär en tredjedel av hela kapitalet, utan att någon garanterat presterat bättre — tvärtom är sannolikheten, enligt kapitel 2, cirka 70–90 procent att just din förvaltare underpresterar. Bogle-kursen formulerade samma lag i reala termer (2 procent avgift äter cirka 44 procent av den reala avkastningen på 30 år); Ellis tillför mekanismen: kostnaderna är inte bara stora — de är vad spelet avgör, eftersom de är den enda variabeln som är förutsägbar."
+        },
+        {
+          "type": "text",
+          "content": "Tillägg för den som trots allt vill spela aktivt — Ellis gör aldrig kostnadsargumentet till ett förbud: varje aktiv satsning måste bära sin kostnadsbörda OCH sin statistiska skuld innan den ens är i noll. En position som kostar 0,5 procent per år i arbete, courtage och spread måste alltså slå index med mer än 0,5 procent per år bara för att kvitta — och med kalkylräntan för den egna tiden inräknad betyder det i praktiken att halvhjärtade aktivitet är den dyraste av alla strategier. Antingen gör du arbetet som kräver en kant (kapitel 8 och 14) eller så spelar du inte — det är mellantingen, den tröga aktiviteten till aktivt pris, som är förlorarspelets exakta hemvist. AKM1-brygga: V19 kapitalförbränning och emission-risk är bolagets motsvarighet — ett bolag som bränner kapital eller späder ut dig betalar en garantierad kostnad för en osäker tillväxt; V12 intäktsstabilitet är det omvända: intäkter som anländer utan dramatik kräver ingen dyr aktivitet att behålla; AK1TS-lång-horisonten gör ränta-på-räntan till din vän och kostnaden till din fiende, år för år."
+        },
+        {
+          "type": "insikt",
+          "content": "Kostnaden är den enda variabel i din portfölj som är hundraprocentigt förutsägbar — det är därför Ellis kallar den förlorarspelets spelare. Du kan inte veta din avkastning, men du bestämmer din nota: varje krona du inte betalar är en krona som får arbeta i tjugofem år."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kostnads-minusräkningen i SEK — 1 000 000 kr, 8 % brutto, 25 år\",\"rader\":[[\"Rad\",\"Aktiv fond (2,0 % kostnad)\",\"Indexfond (0,2 % kostnad)\"],[\"Bruttoavkastning — marknaden ger\",\"+8,0 % per år\",\"+8,0 % per år\"],[\"Förvaltningsarvode\",\"−1,5 % per år\",\"−0,2 % per år\"],[\"Transaktion, påverkan, research\",\"−0,5 % per år\",\"cirka 0 %\"],[\"Nettoavkastning per år\",\"6,0 %\",\"7,8 %\"],[\"Slutvärde efter 25 år\",\"cirka 4 290 000 kr\",\"cirka 6 540 000 kr\"],[\"Kostnadens totala nota\",\"cirka 2 250 000 kr förlorat\",\"cirka 310 000 kr förlorat\"],[\"Sannolikhet att notan var värd det\",\"cirka 10–30 % enligt SPIVA\",\"— priset är redan betalt i avgiften\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör din egen kostnads-minusräkning: lägg ihop ALLA kostnader för din nuvarande portfölj under ett år — förvaltningsavgifter, courtage, spreadar (uppskatta 0,1–0,5 procent per affär), plattformsavgifter och eventuell rådgivningsavgift. Räkna ut totalen i kronor och i procent av kapitalet. Multiplicera sedan kronbeloppet med 25 och läs det högt. Frågan du ska skriva ned: vad exakt köpte jag för den summan — och kan jag bevisa att det var mer värt än en indexfond?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger William Sharpes aritmetik om aktiv förvaltning?",
+          "alternativ": [
+            "Att skickliga förvaltare kollektivt slår marknaden",
+            "Att den aktiva förvaltningens genomsnitt FÖRE kostnader är marknadens avkastning — och EFTER kostnader är den lägre",
+            "Att kostnader inte påverkar långsiktigt",
+            "Att index är ett nollsumspel efter kostnader"
+          ],
+          "ratt": 1,
+          "tips": "Om alla aktiva tillsammans ÄR marknaden — vad återstår efter att kostnaderna dragits?"
+        },
+        {
+          "q": "I kapitlets SEK-exempel (1 Mkr, 8 % brutto, 25 år) — vad blev notan för den aktiva fondens 2,0 procents kostnadsbörda jämfört med indexfondens 0,2 procent?",
+          "alternativ": [
+            "Cirka 50 000 kronor",
+            "Cirka 310 000 kronor",
+            "Cirka 2 250 000 kronor i förlorat slutvärde",
+            "Ingen skillnad — kostnaden betalas av avgiften"
+          ],
+          "ratt": 2,
+          "tips": "Skillnaden mellan 6,54 miljoner och 4,29 miljoner — vad är den i kronor?"
+        },
+        {
+          "q": "Vad menar Ellis med att kostnader är säkra men överavkastningen inte är det?",
+          "alternativ": [
+            "Att avgifter kan förhandlas ner i efterhand",
+            "Att överavkastning alltid är garanterad på 25 år",
+            "Att kostnader bara gäller indexfonder",
+            "Att kostnaden alltid dras — medan alfa är en statistisk osäkerhet; man betalar garanterat för en osäker vinst"
+          ],
+          "ratt": 3,
+          "tips": "Vilken av de två storheterna kan du skriva på avtal — och vilken lever i sannolikhetsvärlden?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Agentproblemet — tänk som klienten misslyckas",
+      "intro": "Varför förändrar inte institutionerna sitt spel när data är entydig? Ellis svar: agentproblemet. Förvaltaren som formellt arbetar åt klienten belönas och befordras efter kortsiktigt relativt resultat — och därför, skriver Ellis, tänker institutionerna inte som klienter utan som karriärer. Förlorarspelet har en organisationskarta.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Problemet i sin renodling: den som förvaltar ditt pensionssparande har en chef, en fondkategori och en benchmark — och en anställning som granskas varje kvartal. Formellt är uppdraget klientens långsiktiga förmögenhet; reellt är incitamenten spåravvikelse, karriärrisk och kvartalsrapporten. Ellis konstaterar: institutioner styrs av det som mäts, inte av det som borde mätas. Konsekvenserna är mätbara — förvaltare som avviker för mycket från index sparkas i genomsnitt efter några dåliga år, oavsett om tesen var långsiktigt rätt; därför håller sig majoriteten nära index (dolt indexsparande till aktivt pris, kapitel 4:s dyraste strategi), därför köper man det som gått bra senaste året och säljer det som gått dåligt, och därför herdar man mot konsensus. Keynes observation, som Ellis ansluter till: det är bättre att misslyckas konventionellt än att lyckas okonventionellt — för karriären, om inte för klienten."
+        },
+        {
+          "type": "text",
+          "content": "Även om en enskild förvaltare ville tänka som klienten misslyckas det av strukturella skäl — detta är kursens agent-kapitelkärna. Kunden kan byta förvaltare utan kostnad (eller tro att hen kan); förvaltarens kompetens granskas av en konsultbransch som i sin tur granskas för kvartalsutfall; bonusar betalas årsvis; portföljen ska aldrig avvika så mycket att ursäkten tar slut. Resultatet är en kedja av agenter — kapitalägare, fondbolag, förvaltare, konsulter — där varje länk rationellt skyddar sig själv och systemet kollektivt underpresterar. Ellis, som granskade branschens egna siffror via Greenwich Associates, sammanfattar: felet är inte individens, det är organisationens. Det är därför bokens titel är vad den är — även de bäst bemannade organisationerna, med alla resurser, förlorar: strukturen förlorar, inte personerna. (Växelkursen mot aktiva skolan återkommer i kapitel 14: där hävdas att FÅ, strukturoberoende ägare med lång horisont — Buffett-världen — undgår just denna mekanik.)"
+        },
+        {
+          "type": "text",
+          "content": "Vad gör man med insikten? Ellis tre motåtgärder: för det första — förläng utvärderingsperioden (anlita förvaltare på fem till tio år, inte kvartal, och skriv det i avtal); för det andra — kräv att incitamenten speglar uppdraget (arvoden som faller när spåravvikelsen inte betalat sig); för det tredje — indexera det som ändå inte ska ta aktiv risk, så att den aktiva andelen blir liten, medveten och ärlig. Eller, som kursen översatt det: om du inte kan ändra spelets regler — spel inte. AKM1-brygga: agentproblemet är anledningen till att AKM1-filosofin inte är en institutionell strategi — den enskilde ägaren med V12 intäktsstabilitet i fokus (köpa bolag vars intäkter inte kräver kvartalsräddningar), V19-disciplin (aldrig financing av bra story genom emission) och AK1TS-lång-horisont (ägandets kalender, inte kvartalets) är en struktur där agenten och principalen är samma person — förlorarspelets finurligaste spel."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga varje förvaltare — inklusive dig själv: när det senast var du gjorde någotinvesteringmässigt olikt alla andra, med verklig risk att stå ensam fel? Om svaret är aldrig — är du index med högre avgift. Äkta aktiv förvaltning kräver att agentens kalender är klientens kalender."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Agentproblemet — aktör, incitament, konsekvens\",\"rader\":[[\"Aktör\",\"Formellt uppdrag\",\"Reellt incitament\",\"Konsekvens för klienten\"],[\"Förvaltare\",\"maximera klientens långsiktiga förmögenhet\",\"kvartalsutfall, spåravvikelse, karriär\",\"herdar, dolt index, aktivt pris\"],[\"Fondbolag\",\"beta kanten\",\"samla förvaltat kapital\",\"produkter som säljer gårdagens prestation\"],[\"Konsult\",\"välja rätt förvaltare\",\"kunna försvara valet i efterhand\",\"byten efter 3 dåliga år — köp högt, sälj lågt\"],[\"Klientorganisationen\",\"vaka om pensionskapitalet\",\"undvika ansvar\",\"kortsiktiga utvärderingar som tvingar fram kortsiktighet\"],[\"AKM1-ägaren\",\"äga bolaget som delägare\",\"egen kalender, egen kapitalförvaltning\",\"V12, V19, AK1TS lång horisont — agent och principal i samma person\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska din egen förvaltningskedja — även om den bara består av dig: skriv ned (1) hur ofta du utvärderar din portfölj (kalendern), (2) vilket straff du tar för att avvika från index ett år (ditt ego, familjens frågor), (3) när du senast höll kvar en omodern position mot consensus. Bedöm sedan: är din struktur klientens eller agentens? En ändring att genomföra: skriv in en längre officiell utvärderingsperiod för dig själv — och håll den."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför misslyckas tänk som klienten enligt Ellis?",
+          "alternativ": [
+            "Därför att klienter inte vet vad de vill",
+            "Därför att förvaltarens karriär, bonus och anställning styrs av kortsiktig relativ prestation — incitamenten slår uppdraget",
+            "Därför att klienten aldrig kan byta förvaltare",
+            "Därför att alla förvaltare är oärliga"
+          ],
+          "ratt": 1,
+          "tips": "Vad mäts och bestraffas i praktiken — den långsiktiga förmögenheten eller kvartalsutfallet?"
+        },
+        {
+          "q": "Vad är dolt indexsparande till aktivt pris?",
+          "alternativ": [
+            "En billig indexfond med extra tjänster",
+            "En aktiv fond som av karriärrisk håller sig nära index men tar full arvode — den dyraste strategin enligt Ellis",
+            "Att kunden själv indexsparar",
+            "En fond som slår index varje år"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer om du betalar för aktivitet men får spåravvikelsen noll?"
+        },
+        {
+          "q": "Vilka är Ellis tre motåtgärder mot agentproblemet?",
+          "alternativ": [
+            "Förlängd utvärderingsperiod, incitament som speglar uppdraget — och indexering av det som inte ska ta aktiv risk",
+            "Mer övervakning, kortare avtal, hårdare kvartalskrav",
+            "Högre arvode för bättre folk, mer research, fler konsulter",
+            "Förbud mot aktiva fonder"
+          ],
+          "ratt": 0,
+          "tips": "Lösningen ligger i att ändra spelreglerna — tiden, priset och risken — inte att pressa människor att arbeta hårdare."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Tidshorisonternas tyranni — institutionens kalendarium mot ditt",
+      "intro": "Ellis lyfter tidshorisonten till en av bokens bärande idéer: institutionens kalender är kort — kvartal, år, kanske en chefstid — medan klientens verkliga behov ligger årtionden bort. Denna skiljelinje är också den enskilda investerarens enda strukturella fördel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tyrannin beskriven: institutionen utvärderas kvartalsvis, marknadsförs årsvis och byter förvaltare i genomsnitt efter några år. Varje beslut som betalar sig först om fem år — att köpa det omoderna, att hålla fast genom en nedgång, att låta en tes mogna — är ett besekt som kostar KARRIÄREN nu och belönar KLIENTEN sen, kanske när både förvaltare och klient lämnat platsen. Ellis slutsats: institutionerna spelar ett spel som är omöjligt att vinna eftersom kalendern är fel — deras tidshorisont är kortare än den tid värde behöver för att realiseras. Detta är den mekanism som gör att samma bolag kan vara felprissatt i åratal: de som ser felet kan inte vänta ut rättningen, och de som kan vänta ser inte felet. Fönstret mellan institutionernas kalender och verksamheternas verkliga rytm — det är dörren som värdeinvesteraren går in genom."
+        },
+        {
+          "type": "text",
+          "content": "Individens fördel — Ellis poäng, som kursen lyfter till huvudspår: den enskilda investeraren har ingen chef, ingen kvartalsrapport, ingen karriärrisk, ingen kund som flyttar kapitalet. Hen kan äga en position i tio år utan att någon frågar om mellantiden. Det är den enda strukturella kant en amatör har mot proffsen — och den är verklig: tålamod är inte en dygd i förlorarspelet, det är en KANT, eftersom majoriteten av motståndarna är tvungna att spela snabbare än spelet kräver. Men, skriver Ellis i sjätte upplagans beteendekapitel, individen slösar bort fördelen: priserna kollas dagligen, portföljen stökas om på semestern, nyheterna läser man i panik. Amatören har en strukturfördel i tid — och spelar som om hen hade tio sekunder. Kursens formulering: din tidshorisont är din enda strukturella fördel — använd den eller förlora den."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken: matcha varje krona med dess verkliga horisont. Pensionssparande hos en trettioåring har en trettioårig hävstång på tid — det kapitalet bör aldrig säljas på grund av något som händer på ett kvartal. Buffertkapitalet har en nollårig horisont — det hör inte ens hemma på börsen. Mellanliggande mål — hus, utbildning — har sina egna datums. När varje krona vet sin kalender blir marknadens svängningar vad de är för långsiktigheten: pris, inte omdöme. Det är exakt AK1TS-systemets avsikt: de fem horisonterna (mikro till mega) gör tidshorisonten till ett aktivt beslut i stället för ett humör. AKM1-brygga: V12 intäktsstabilitet är bolagets tidsdimension — stabila intäkter gör att tiden arbetar för bolaget (AK1TS-lång-horisont); V19 emissionsrisk är dess fiende, eftersom brinnande kassa tvingar bolaget (och dig) att handla på andras kalender; på portföljnivå är horisont-matchning den enskilda investerarens moat."
+        },
+        {
+          "type": "insikt",
+          "content": "Institutionens svaghet är dess kalender; din styrka är frånvaron av en. Äg som en institution inte FÅR äga: köp det som är felprissatt bara för att det är omodernt, och låt kalendern — inte kvartalet — avgöra när tesen är fel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tidshorisonter — vem spelar med vilken kalender\",\"rader\":[[\"Aktör\",\"Horisont som belönas\",\"Horisont som tjänar kapitalet\",\"Konsekvens\"],[\"Institutionell förvaltare\",\"kvartal till år\",\"årtionden\",\"tvingas spela snabbare än spelet kräver\"],[\"Hedgefond\",\"månader\",\"—\",\"karriärspelet, inte ägarspelet\"],[\"Konsult/styrelse\",\"nästa utvärdering\",\"—\",\"bytande som köper högt och säljer lågt\"],[\"Individens pensionskapital\",\"—\",\"20–40 år\",\"den enda strukturella kanten — om den används\"],[\"AKM1-ägaren\",\"AK1TS Lång/Mega\",\"bolagets livslängd\",\"V12-stabila bolag + V19-disciplin = tid som förbundsförvant\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din kapitalkalender: skriv ned hela ditt finansiella kapital i tre spalter — kapital, syfte, år till behov. Sätt en AK1TS-horisont per rad (mikro till mega). Beräkna sedan hur stor andel av börs_exponerat_kapital som har en horisont på tio år eller mer. Om andelen är hög och du ändå kollar kurser dagligen: du spelar med fel klocka — skriv ned EN regel som sänker din kontrollfrekvens (veckobrev, kvartalsdatum) och håll den i tre månader."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är institutionens tidshorisont ett strukturellt problem enligt Ellis?",
+          "alternativ": [
+            "Därför att institutioner aldrig kan köpa aktier",
+            "Därför att utvärdering varje kvartal gör att beslut som betalar sig på fem år kostar karriären nu — kalendern är kortare än värderingen",
+            "Därför att institutioner inte förstår fundamental analys",
+            "Därför att alla institutioner är korta blankare"
+          ],
+          "ratt": 1,
+          "tips": "Vem betalar priset och vem får belöningen när horisonten är kort?"
+        },
+        {
+          "q": "Vad är den enskilda investerarens enda strukturella fördel mot proffsen?",
+          "alternativ": [
+            "Bättre information genom sociala medier",
+            "Rätt att handla utan courtage",
+            "Tillgång till privatägda bolag",
+            "Den långa tidshorisonten — ingen chef, ingen kvartalsrapport, ingen karriärrisk"
+          ],
+          "ratt": 3,
+          "tips": "Vilken regel som gäller proffsen gäller inte dig — till din fördel?"
+        },
+        {
+          "q": "Hur slösar individer bort sin tidsfördel enligt Ellis?",
+          "alternativ": [
+            "Genom att aldrig läsa årsredovisningar",
+            "Genom att kolla kurser dagligen och stöka om portföljen på humör — spela som om horisonten vore tio sekunder",
+            "Genom att för mycket diversifiera mellan index",
+            "Genom att använda bankens rådgivare"
+          ],
+          "ratt": 1,
+          "tips": "Fördelen är tålmodigheten — vad gör daglig prisövervakning med den?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Indexet som default — strategisk slutsats, inte produkt",
+      "intro": "När diagnosen står klar — förlorarspelet, kostnaderna, agentproblemet, kalendern — är Ellis slutsats inte ett budskap utan en logisk följd: om du inte har en kant, spela inte det relativa spelet; indexera. Här skiljer sig Ellis-perspektivet från Bogle-perspektivet på det sätt kursen fastslagit: Bogle byggde produkten, Ellis härledde slutsatsen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Resonemanget i tre steg, som Ellis lägger det: ett — den aktiva förvaltningens genomsnitt är marknaden minus kostnader (Sharpe, kapitel 4); två — din sannolikhet att lyfta ut den förvaltare som lyckas nästa decennium är mycket låg, eftersom prestationens persistens är svag (kapitel 2 och Bogle-kursens RTM-kapitel); tre — därför är marknadens avkastning till låg kostnad inte en kompromiss utan det bästa realistiska utfallet för kapital utan kant. Indexet är default inte av askes utan av aritmetik: det är det enda svaret som inte kräver att du har rätt om framtiden. Ellis tillämpning i praktiken: han rådde institutioner att indexera stora, effektiva delar av portföljen (amerikanska storbolag) och koncentrera det aktiva mandatet till smalare, mindre effektiva delar — med rätt struktur och rätt incitament. Det som senare blev känt som kärna-satellit började som den här sortens kallsinniga portföljhygienen."
+        },
+        {
+          "type": "text",
+          "content": "Skillnaden mot Bogle-kursen, än en gång för tydlighet — båda landar i index men av olika skäl och med olika tonvikt: Bogle visar att kostnaden äter avkastningen och bygger en produktstruktur där fondägarna får överskottet (Vanguard-modellen, kurs kapitel 1); Ellis visar att SPELET är förlorat och att index är den strategiska exoden ur det — i praktiken: mät din portfölj mot index, och om den aktiva delen inte slagit indexet över en hel cykel, avveckla den utan sentiment. Ellis hårdhet här är värd att minnas: han menar att de flesta professionella inte borde försöka slå marknaden, och att de som gör det ändå borde veta exakt varför de är undantaget — kapitel 8 tar den frågan på allvar. För individen är indexet dessutom ett beteendeverktyg: en indexandel kan inte underprestera sig själv, den frigör tid från spårandet och gör det möjligt att skilja på långsiktigt sparande och genuint aktivt ägande."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s tillämpning — och här sätter kursen systemet: index är BASELINE för allt. Det betyder konkret tre saker. Ett: varje aktiv position i en AK1A-portfölj mäts mot indexet som alternativkostnad — om inte positionen, efter kostnader, har en dokumenterad tes som förklarar varför den ska slå index, är den en omväg. Två: kärnan indexeras — kapitalet som ska växa tryggt (AK1TS Mega-horisont, pension) ligger i bred, billig exponering och gör att den aktiva satelliten kan vara få, medvetna positioner (Fas 2-elevens väg, kapitel 14). Tre: indexet är skyddet mot självtillit — Ellis sanna gåva till den aktiva analytikern är inte att sluta analysera, utan att veta vad som händer om analysen inte längre bär. AKM1-brygga: baseline-tänket mappar direkt — V12 intäktsstabilitet är kravet på satellitbolagen (de ska inte behöva rattas om kvartal), V19 emissionsrisk är det som gör att indexets diversifiering ibland slår enskilda aktier, och AK1TS-lång-horisont definierar vilken del av kapitalet som ens FÅR vara aktiv."
+        },
+        {
+          "type": "insikt",
+          "content": "Indexet är inte frånvaro av beslut — det är beslutet att inte spela ett spel du inte kan vinna. Som baseline gör det dessutom varje aktiv position ärligare: den måste slå indexet, i efterräkning, för att motivera sin plats."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Index som default — vad som läggs ner och vad som vinns\",\"rader\":[[\"Fråga\",\"Aktivt spel\",\"Index som default\"],[\"Vem bär risken för kostnaden?\",\"du — via arvode\",\"indexavgiften, redan räknad\"],[\"Vad krävs av dig?\",\"en kant du kan bevisa\",\"inget rätt om framtiden\"],[\"Vad mäter du mot?\",\"grannar, index, feeling\",\"indexet — tydligt svar varje år\"],[\"Tid som frigörs\",\"—\",\" från spårning till policy och liv\"],[\"Aktiv plats kvar?\",\"allt är aktivt\",\"kärna index — satellit med tes (Fas 2)\"],[\"AKM1-roll\",\"—\",\"baseline: V12-stabila satelliter, V19-rensedisciplin, AK1TS Mega som kärnkalender\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör baseline-räkningen: räkna ut din portföljs avkastning efter kostnader de senaste fem åren och jämför med ett relevant index (SIX RX eller MSCI World, all-world). Skriv ned skillnaden i procentenheter per år. Om du inte kan mäta — börja mäta idag: det är ditt nya kvartalsblad. Fråga att besvara skriftligt: vad är min dokumenterade tes för varje avvikelse från index? Positioner utan tes är kandidater för att bytas mot kärnan."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallar kursen indexet för en strategisk slutsats snarare än en produkt?",
+          "alternativ": [
+            "Därför att Ellis uppfann indexfonden",
+            "Därför att slutsatsen följer av spelstrukturen — om genomsnittet förlorar efter kostnader är marknaden till låg kostnad det bästa realistiska utfallet utan kant",
+            "Därför att alla produkter är likadana",
+            "Därför att aktier är farliga"
+          ],
+          "ratt": 1,
+          "tips": "Härledningen: Sharpe + svag persistens + din osäkerhet = marknadsavkastning är nog."
+        },
+        {
+          "q": "Vad är kärna-satellit i Ellis anda?",
+          "alternativ": [
+            "Att allting ska köpas aktivt för säkerhets skull",
+            "Att indexera stora effektiva delar och koncentrera aktivt mandat till smalare delar med rätt struktur",
+            "Att växla mellan index och aktier varje kvartal",
+            "Att bara äga tekniktilläggsvärde"
+          ],
+          "ratt": 1,
+          "tips": "Vilka delar av marknaden är mest effektiva — och var kan en kant realistiskt sett finnas?"
+        },
+        {
+          "q": "Vad betyder index som baseline i AK1A:s tillämpning?",
+          "alternativ": [
+            "Att AKM1-analysen ska ersättas av index",
+            "Att varje aktiv position mäts mot indexet som alternativkostnad, kärnan indexeras och satelliten måste ha en dokumenterad tes",
+            "Att man ska ljuga för sig själv om utfallet",
+            "Att index och aktiv förvaltning ger samma avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Baseline = måttstock. Vad händer med en aktiv position som inte slår måttstocken?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "De aktiva undantagen — minoriteten som faktiskt vinner",
+      "intro": "Ellis är inte dogmatiker — boken medger uttryckligen att en liten minoritet vinner spelet på aktiva villkor. Frågan han ställer är inte OM någon kan slå marknaden utan VILKA VILLKOR som krävs — och kursen lägger till exempel från vår egen Buffett/Graham-värld.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ellis katalog av möjliga kanter, citerad i kursens ordning: information (att veta något andra saknar — i dag nästan omöjligt lagligt för publika marknader), analys (att tolka offentlig information bättre — möjligt men sällsynt, eftersom tiotusen andra granskar samma siffror), beteende (temperament: förmågan att handla mot strömmen och vänta längre än motståndarna — värdeskolans kant), struktur (kapital, mandat och incitament som tillåter det ovannämnda: Swensen-modellen). Hans test är enkelt att ställa och svårt att klara: kan du utpeka i förväg — inte i efterhand — VARFÖR du tillhör minoriteten? Om svaret är jag arbetar hårt är det inte en kant; alla arbetar hårt. Om svaret är mina incitament, min horisont och mitt temperament skiljer mig från motståndarna — då finns åtminstone en teori att pröva. Detta är den tes som värdeinvesteringskursen (Quantitative Value-kursen, the-essays-of-warren-buffett-kursen) kompletterar med sina långa bevis."
+        },
+        {
+          "type": "text",
+          "content": "Bevisen för att minoriteten existerar — de som kursens kontroverskapitel återkommer till: Warren Buffett och Charlie Munger, med sextio år av koncentrerat, långsiktigt ägande; Ben Grahams arvtagare som Ruane, Klarman och Greenblatt; David Swensen vid Yale, som Ellis personligen arbetade med i investeringskommittén i sjutton år och som med strukturella fördelar (evigt kapital, intern talang, alternativa marknader, lång horisont) drev ett kapitalförvaltning som under hans tid årligen avkastade i storleksordningen tretton procent — aktivt, disciplinerat, medvetet. Gemensamt för minoriteten: de spelar inte det relativa kvartalsspelet alls — de spelar ägarspelet på lång horisont; de är få i positionerna (koncentration, inte diversifiering av aktiva idéer); de har ett strukturellt övertag (kapital, mandat, temperament) snarare än en informationsoverlägsenhet. Ellis egen hållning till det här — som kursen vill lyfta fram som bokens ärlighet — är att dessa undantag bekräftar regeln: minoriteten vinner just därför att den spelar ett ANNAT spel än majoriteten, inte därför att den spelar samma spel bättre."
+        },
+        {
+          "type": "text",
+          "content": "För Fas 2-eleven — AK1A:s väg in i minoriteten — är villkoren därför konkreta och prövbara: en (1) kapitalets kalender är lång (AK1TS Mega), och positioner som kräver kvartalsrättighet är förbjudna; två (2) positionerna är få och förstådda — ägandet vilar på full AKM1-analys där moat-blocket V13–V15 (patent, varumärke, nätverk) förklarar varför bolaget förtjänar ett årtionde av ägande — inte varför kursen stiger imorgon; tre (3) V12 intäktsstabilitet är minimikrav — bolag vars intäkter inte kräver ständig räddning tål att ägas av någon med tålamod; fyra (4) V19-disciplinen är absolut — varje emission som späder ut ägaren utan motsvarande värdeskapande är ett tecken på att bolaget spelar på andras villkor; fem (5) varje position bär en skriftlig tes för varför den ska slå index — annars tillhör den inte satelliten. AKM1-brygga: V12 intäktsstabilitet, V13–V15 moat, V19 emissionsdisciplin, AK1TS-lång-horisont — minoritetens fyra pelare, prövade på varje kandidat före köp."
+        },
+        {
+          "type": "insikt",
+          "content": "Minoriteten vinner inte för att den spelar bättre utan för att den spelar ett annat spel: ägarskap mot kvartalens räkenskap. Villkoret för inträde är inte talang — det är struktur: din kalender, dina positioner, din tes."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kanter och deras villkor — minoritetens anatomi\",\"rader\":[[\"Kant\",\"Beskrivning\",\"Realistisk för individen?\",\"Exempel\"],[\"Information\",\"veta något andra saknar\",\"nästan aldrig — lagligen\",\"—\"],[\"Analys\",\"tolka offentlig data bättre\",\"sällan — men möjligt i smala nischer\",\"Småbolag med låg täckning\"],[\"Beteende\",\"temperament — köpa mot strömmen, vänta\",\"JA — värdeskolans kant\",\"Buffett, Klarman, Greenblatt\"],[\"Struktur\",\"evigt kapital, mandat, incitament\",\"delvis — eget kapital, egen kalender\",\"Swensen/Yale (Ellis satt i kommittén)\"],[\"AKM1-översättning\",\"moat V13–V15 + stabilitet V12 + V19-disciplin\",\"Fas 2-elevens väg\",\"AK1TS Mega-ägande\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt minoritets-testamente: en halv sida med tre rubriker — (1) Min struktur: hur lång är min kapitalkalender, hur många positioner orkar jag verkligen förstå djupt? (2) Mina kanter: beteende (kan jag hålla en omodern position i tre år?) och analys (finns en nisch jag känner bättre än marknaden — och kan jag bevisa det?). (3) Mina bevis: har jag en skriven tes per position som förutsäger varför den slår index? Om någon kolumn är tom — är kärnan-index (kapitel 7) ditt rätta svar just nu, och det är inte en skam utan en slutsats."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken av Ellis kanter är mest realistisk för den enskilda investeraren?",
+          "alternativ": [
+            "Information — att veta något före andra",
+            "Beteende — temperamentet: köpa mot strömmen och vänta längre än motståndarna",
+            "Snabbhet — att handla snabbare än algoritmerna",
+            "Hävstång — att låna för att förstora avkastningen"
+          ],
+          "ratt": 1,
+          "tips": "Vilken kant kräver inte att du slår proffsen på deras egen plan — information och snabbhet — utan på din?"
+        },
+        {
+          "q": "Vad kännetecknar minoriteten som faktiskt vinner aktivt?",
+          "alternativ": [
+            "De spelar samma spel som majoriteten men hårdare",
+            "De byter strategi ofta för att följa marknaden",
+            "De spelar ett annat spel — få positioner, lång horisont, strukturella fördelar snarare än informationsoverlägsenhet",
+            "De diversifierar brett över tusen aktier"
+          ],
+          "ratt": 2,
+          "tips": "Buffett, Swensen, Klarman — vad har deras struktur gemensam med varandra och inte med kvartalsförvaltarna?"
+        },
+        {
+          "q": "Vad var Ellis egen roll i relation till Yale och David Swensen?",
+          "alternativ": [
+            "Han satt i sjutton år i Yales investeringskommitté — han såg aktiv framgång med strukturella fördelar inifrån",
+            "Han kritiserade Yale offentligt för att vara aktiva",
+            "Han förvaltade Yales kapital själv",
+            "Han hade ingen koppling till Yale"
+          ],
+          "ratt": 0,
+          "tips": "Kom ihåg kapitel 1: Ellis var insider — även i minoritetens rum."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Riktig risk — att missa målet, inte volatiliteten",
+      "intro": "Ellis mest hårdnackade omdefinition i boken: riktig risk är inte prisfluktuationen — det är risken att MISSA SINA MÅL. Volatilitet är ett mätetal för statistiker; för en långsiktig investerare är den verkliga fienden inflationen, den otillräckliga sparanden och den permanenta kapitalförlusten.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Argumentet, som Ellis driver mot den akademiska riskdefinitionen (varians och standardavvikelse, se Bernstein-kursens volatilitetskapitel): för en investerare med en tjugoårig horisont är priset som citeras imorgon irrelevant — det är MÅLET om tjugo år som är verkligt. Om portföljen svänger 20 procent på vägen men når målet: ingen verklig skada. Om portföljen är jämnhäftig men missar målet med hälften: verklig katastrof — mätt med låg volatilitet hela vägen ner. Risk är alltså ett relationsbegrepp: det definieras av målet och horisonten, inte av kurvan. Ellis fyra frågor för att komma åt riktig risk, citerade i kursens parafras: vad är det värsta som kan hända? Kan jag bära det — ekonomiskt och känslomässigt? Hur sannolikt är det? Och vad gör jag om det inträffar? Frågorna flyttar risken från standardavvikelsen till livet."
+        },
+        {
+          "type": "text",
+          "content": "De tre verkliga riskerna för en långsiktig investerare enligt Ellis: ett — INFLATIONEN, den tysta skatten som över decennier äter köpkraften; den som håller allt för försiktigt i obligationer och kontanter har historiskt missat målet oftare än den som tog kurssvängningar. Två — OTILLRÄCKLIG AVKASTNING: att bära för hög kostnad, för dålig diversifiering eller för låg exponering för produktiva tillgångar. Tre — BETEENDET: att sälja i botten och köpa i topp — förlorarspelets misstag igen, nu i riskens kostym. Notera vad som SAKNAS i listan: prisfluktuationen. Eller, som kursen sammanfattar: volatilitet är priset på inträdet, inte risken för förlusten — och den som inte betalar priset (håller sig utanför aktiemarknaden av rädsla för svängningar) har istället köpt säkerligen undre avkastning. Följden för mätning: en portföljs risk ska mätas som sannolikhet att missa målet vid given horisont — det är exakt den struktur som Monte Carlo-simulering i AK1A:s analysverktyg bygger vidare på."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till värdeskolan och AKM1 är kursens ekipage: den enda volatilitet som är RIKTIG risk är den som blir permanent — kapital som inte kommer tillbaka. Graham kallade den permanent kapitalförlust; Ellis ramar in den som målmiss; AKM1 gör den mätbar: V19 kapitalförbränning och emission-risk (bolag som bränner kassa och späder ut ägaren tills återhämtningen kräver ett mirakel), V10 skuldsättningsgrad (bolaget som inte lever fram till nästa cykel) och V11 likviditet (bolaget — eller du själv — som inte kan bära kortfristiga åtaganden). Och tvärtom: V12 intäktsstabilitet minskar risken inte genom att jämna ut kursen utan genom att målmissen blir osannolikare — stabila intäkter betyder att bolaget lever i goda och dåliga tider, vilket är det som faktiskt skyddar en tjugoårig ägare. AK1TS-lång-horisonten fullbordar bilden: på Mega-horisonten blir korta svängningar till brus — och den som mäter sin risk på rätt horisont slutar frukta fel saker. AKM1-brygga: V19, V10, V11 = permanent förlust-risk; V12 = målmiss-risk reducerad; AK1TS-lång-horisont = rätt riskmått per kapital."
+        },
+        {
+          "type": "insikt",
+          "content": "Byt riskfråga: inte hur mycket svänger det? utan hur sannolikt är det att jag missar mitt mål — och vad gör jag om jag ändå gör det?. Volatilitet är inträdespriset till avkastning; målmiss är den enda kostnaden som inte återbetalas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Volatilitet mot riktig risk — Ellis omdefinition\",\"rader\":[[\"Fokus\",\"Volatilitetsdefinitionen\",\"Ellis: riktig risk\"],[\"Fråga\",\"hur mycket svinner kurvan?\",\"hur sannolikt är målmissen?\"],[\"Fiende\",\"svängningar i pris\",\"inflation, otillräcklig avkastning, beteende, permanent förlust\"],[\"Tidsram\",\"kvartal\",\"målets horisont\"],[\"Skydd\",\"låg aktieandel\",\"rätt aktieandel FÖR målet + kostnadsdisciplin + V19-rense\"],[\"AKM1-översättning\",\"—\",\"V19, V10, V11 = permanent förlust; V12 = färre målmissar; AK1TS Mega = rätt mätperiod\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör Ellis fyra riskfrågor på ditt eget längsta mål: skriv ned (1) ditt viktigaste finansiella mål och dess år, (2) det värsta som kan hända portföljen på vägen — ett konkret scenario, med siffror, (3) om det inträffar år tre av trettio: vad gör du, skrivet idag, (4) inflationen 2,5 procent per år — vad händer med målet i dagens penningvärde? Avsluta med en rad: är min portfölj byggd för att slå volatiliteten eller för att nå målet? Om svaret är det förra — omformulera riskmåttet i din policy (kapitel 11)."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är riktig risk enligt Ellis?",
+          "alternativ": [
+            "Prisfluktuationen mätt i standardavvikelse",
+            "Aktieandelens storlek",
+            "Valutarisken",
+            "Risken att missa sina verkliga långsiktiga mål — volatiliteten är bara priset på inträdet"
+          ],
+          "ratt": 3,
+          "tips": "Fråga vad som faktiskt kan skada dig om tjugo år — kurvan på vägen eller utfallet vid målet?"
+        },
+        {
+          "q": "Vilka är de tre verkliga riskerna för en långsiktig investerare enligt kapitlet?",
+          "alternativ": [
+            "Volatilitet, courtage, valutor",
+            "Inflation, otillräcklig avkastning och beteendet — att sälja i botten och köpa i topp",
+            "Räntor, oljepris, valutakrig",
+            "Aktieutdelningar, ränteutdelningar, guld"
+          ],
+          "ratt": 1,
+          "tips": "Vilka tre fiender arbetar tyst över decennier i stället för att synas på en kvartalsgraf?"
+        },
+        {
+          "q": "Hur översätter AKM1 permanent kapitalförlust till mätbara variabler?",
+          "alternativ": [
+            "Via kursgrafens svängningar (AK1TS mikro)",
+            "Via V19 kapitalförbränning och emission-risk, V10 skuldsättningsgrad och V11 likviditet — det som gör att kapital inte kommer tillbaka",
+            "Via P/E-multipeln",
+            "Via utdelningsfrekvensen"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan få en aktieposition att aldrig återhämta sig — svängning eller obestånd?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Tidsdimensionen — långsiktighetens kraft och pris",
+      "intro": "Ellis: den aktiva förvaltningens historia är en historia om korta sinnen — men den enskilda investerarens historia kan vara en historia om tid. Detta kapitel handlar om vad som händer när horisonten blir till en strategi: ränta-på-räntan, medelvärdesåtergång och priset man betalar för att stå ut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tidens aritmetik, som Ellis illustrerar med börsens långsikhthsdata (se även stocks-for-the-long-run-kursen): på ett år är aktieavkastningen i princip ett mynt — uppgång och nedgång lika sannolika, bruset dominerar. På tio år har fundamenta börjat visa sig; på tjugo till trettio år har den reala avkastningen historiskt konvergerat mot sitt långsiktiga spann — ungefär sex-sju procent realt per år för breda amerikanska index — medan risken för negativ totalavkastning krympt mot noll på långa horisonter i historiskt data. (Kursen noterar ärligt: historisk konvergens är inte en garanti — Japan efter 1989 är standardinvändningen — men det statistiska mönstret är entydigt riktat.) Tiden, konstaterar Ellis, gör inte investering säker — den gör den rimlig: svängningarna blir till brus kring en bärande trend, och den som får ränta-på-räntan att arbeta i trettio år har en allierad som proffsen med deras kvartalskalender inte kan anlita."
+        },
+        {
+          "type": "text",
+          "content": "Men tid har ett PRIS: mellantiden. Långsiktigheten är en serie korta termer du måste överleva — börsen faller cirka en av fyra kalenderår, ibland fyrtio procent, och den som behöver kapitalet fel år betalar utfallet oavsett långsikt trots allt. Därför är tidsdimensionen inte en positiv att hålla utan en planering att matcha: kapitalets horisont (kapitel 6) bestämmer hur mycket av svängningarna som är brus och hur mycket som är risk. Ellis andra varning är beteendemässig: den som kontrollerar korten varje dag och läser varje nedgång som ett besked upplever trettio år som trettio år av belägring — även om kurvan i efterhand ser ut som en rak linje. Därför hör policy (kapitel 11) hit: skriv reglerna i lugn, följ dem i storm — det är så tiden får arbeta ostört. Här möter vi åter Bogle-kursens tålamodets strategi och Bernstein-kursens rebalanseringsdisciplin: tiden är kraften, policyn är verktyget som håller kraften kopplad."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS-kopplingen — kursen gör den explicit eftersom Ellis tidsdimension är systemets ryggrad: de fem horisonterna (mikro, kort, medellång, lång, mega) är olika spel med olika regler; problemet hos både institutioner och individer är att spela mega-kapital med mikro-känslor. AK1TS lär oss separera: på mikro planerar ingen fundamental trend — där bor spekulanten; på lång och mega bor värdeinvesteraren och pensionsspararen; AKM1-analysen hör hemma där. Bolagets motsvarighet till tidsdimensionen är, än en gång, intäktsstabilitet: V12 — ett bolag vars intäkter är förutsägbara över konjunkturcykler gör mellantiden överlevbar för ÄGAREN (du behöver inte sälja i lågkonjunktur för att bolaget ska klara sig), medan V19-kapitalförbränning gör mellantiden dödlig (emissioner kommer just i nedgångar, när villkoren är sämst). AKM1-brygga: AK1TS-lång-horisont som strategisk princip; V12 intäktsstabilitet som bolagets egen långsiktighet; V19-disciplin som försäkring mot att tiden blir din fiende."
+        },
+        {
+          "type": "insikt",
+          "content": "Tid är inte passivitet — det är den enda kraft som arbetar utan att du behöver ha rätt om framtiden. Men den anställs bara av kapital vars kalender är ärlig: matcha horisonten, skriv policyn, och låt räntan-på-räntan göra det arbete proffsen betalar forskningsavdelningar för att försöka överträffa."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Horisontens makt — vad som styr avkastningen\",\"rader\":[[\"Horisont\",\"Vad som styr\",\"Brus mot signal\",\"Rätt spelare\"],[\"1 år\",\"slump och sentiment\",\"nästan allt brus\",\"daghandlare (förlorarspelet)\"],[\"5–10 år\",\"fundamenta börjar synas\",\"blandat\",\"AKM1-analys med tes\"],[\"20–30 år\",\"tillväxt, utdelning, ränta-på-ränta\",\"trend dominerar\",\"pensionssparare, index\"],[\"Mega (AK1TS)\",\"betalningsströmmar, kapitalismens långsiktiga produktion\",\"bruset är bara pris\",\"Fas 2-ägaren med V12-bolag\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna på mellantidens pris: ta din börsportfölj och multiplicera värdet med 0,6 — en normal svår nedgång. Skriv ned beloppet. Fråga sedan: (1) vilket år behöver jag det här kapitalet? (2) om nedgången kommer det året — vad säger min policy att jag gör? (3) hur stor del av portföljen har en AK1TS-horisont som tål en sådan nedgång utan försäljning? Om du inte kan svara på (2) är nästa kapitel — policy statement — skrivet för dig."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad händer med aktieavkastningens karaktär när horisonten förlängs?",
+          "alternativ": [
+            "Risken för förlust ökar dramatiskt",
+            "Bruset dominerar ännu mer",
+            "Slumpens andel krymper och fundamenta samt ränta-på-räntan kommer att dominera — på mycket långa horisonter har historisk real avkastning konvergerat mot sitt långsiktiga spann",
+            "Avkastningen blir noll"
+          ],
+          "ratt": 2,
+          "tips": "Vad återstår av ett myntkast om du får kasta trettio gånger i stället för en?"
+        },
+        {
+          "q": "Vad är mellantidens pris enligt kapitlet?",
+          "alternativ": [
+            "Courtageavgifternas summa",
+            "Att börsen faller ungefär vart fjärde kalenderår — och att den som behöver kapitalet fel år betalar utfallet trots långsiktig tro",
+            "Att utdelningarna beskattas",
+            "Att index byter bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar det att inte FÅ vara långsiktig — att tvingas sälja ett visst år?"
+        },
+        {
+          "q": "Hur kopplas V12 intäktsstabilitet till tidsdimensionen?",
+          "alternativ": [
+            "Ett bolag med förutsägbara intäkter gör mellantiden överlevbar för ägaren — du behöver inte sälja i lågkonjunktur för att bolaget ska klara sig",
+            "Stabila intäkter gör kurvan slät på kort sikt",
+            "V12 har ingen koppling till tid",
+            "Stabila intäkter ökar alltid utdelningen"
+          ],
+          "ratt": 0,
+          "tips": "Vem behöver egentligen överleva mellantiden — kursen eller ägarens psyke och likviditet?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Policy statement — policyn som skrivs i solsken",
+      "intro": "Ellis mest praktiska verktyg, lånat från institutionernas värld: den skrivna investeringspolicyn. En policy statement är ett kontrakt med dig själv, skrivet när du är klok, som styr när du inte är det — förlorarspelets misstag planeras bort i förväg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varför policyn behövs, i Ellis logik: förlorarspelet avgörs av misstag, misstegen görs under stress, och stress kan inte elimineras — bara planeras för. En policy statement skriver ner det som annars ska beslutas i stormen: målet och horisonten (vilket kapital, vilket år), avkastningskrav och risktolerans i siffror (bästa och värsta accepterade årsutfall), tillgångsfördelning med intervall (aktier 60 plus minus 10, resten obligationer och kontanter), rebalanseringsregler (när ett intervall bryts återställs det — mekaniskt), regler för den aktiva satelliten (max antal positioner, krav på skriven tes, säljregler), samt undantagen: vad som händer vid arbetslöshet, sjukdom, bubbla. Ellis erfarenhet från institutioner: de organisationer som överlevde kriser bäst hade INTE de smartaste förvaltare — de hade skrivna policyer som alla kände till innan krisen kom. Paniken, noterar han likgiltigt, är en dålig tid för formuleringsarbete."
+        },
+        {
+          "type": "text",
+          "content": "Policyns psykologi — och här knyter Ellis an till beteendekapitlet i sjätte upplagan: människan under stress har två tillgängliga inställningar, fight eller flight, och ingen av dem är köp-håll-rebalansera. Policyn är en ex ante-åtagande, ett Odysseus-kontrakt: du binder dig vid masten innan sirensången sjunger. Det är också därför policyn ska vara kort — en sida, inte tjugo — och skriven i konkreta, mätbara regler som en utomstående kan granska: aldrig mer än X, aldrig mindre än Y, sälj när Z. Detta är exakt samma mekanik som Quantitative Value-kursen gav för aktieval (reglerna slår karisman) — Ellis lyfter principen till portföljnivå: reglerna fattar inte besluten åt dig, de eliminerar de värsta besluten. Skillnaden mot känslostyrd förvaltning är också mätbar: återbalansering enligt policy köper lågt och säljer högt mekaniskt, medan den policylösa portföljen statistiskt gör tvärt om (dumb money-paradoxen i Bogle-kursen)."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s implementering — kursen formaliserar policyn i fem paragrafer med systemkoppling: 1. Kapital och kalender — varje krona får en AK1TS-horisont; kärnkapitalet (Mega) indexeras enligt kapitel 7. 2. Kärna-satellit — maximal andel aktivt kapital, maximalt antal positioner (få, enligt kapitel 8), varje med skriven tes och AKM1-poäng. 3. Krav på satellitbolag — V12 intäktsstabilitet som tröskel (bolaget ska tåla att ägas långt), V19 kapitalförbränning och emission-risk som stoppmall (bryt = avveckla, oavsett story), V10 och V11 som överlevnadskontroller. 4. Riskmått — Ellis fyra frågor (kapitel 9) besvarade skriftligt; risken definieras som målmiss, inte volatilitet. 5. Omprövning — policyn revideras en gång om året vid fast datum, eller vid förändrad livssituation — ALDRIG på grund av marknadsläge. AKM1-brygga: policyn är AKM1-checklistan på portföljnivå; V12 och V19 är dess hårdaste regler; AK1TS-lång-horisont är dess kalender."
+        },
+        {
+          "type": "insikt",
+          "content": "En policy som inte kan granskas av en utomstående är en avsiktsförklaring, inte en policy. Skriv regler med siffror: belopp, andelar, datum, brott. Panik kan inte läsa — men den kan följa en lista."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Policy statement — de fem paragraferna\",\"rader\":[[\"Paragraf\",\"Fråga den besvarar\",\"Exempel på regel\",\"AK1A-koppling\"],[\"1. Kapital och kalender\",\"vad ska kapitalet och när?\",\"pension 2045 — Mega-horisont\",\"AK1TS horisontmappning\"],[\"2. Kärna-satellit\",\"hur mycket aktivt?\",\"max 20 % aktivt, max 8 positioner, tes krav\",\"kapitel 7–8; Fas 2\"],[\"3. Satellitkrav\",\"vilka bolag tolereras?\",\"V12 som tröskel; V19-brott = avveckling\",\"AKM1 V10, V11, V12, V19\"],[\"4. Riskmått\",\"vad är risk?\",\"målmiss — fyra frågor besvarade\",\"Ellis riskomdefinition; Monte Carlo\"],[\"5. Omprövning\",\"när ändras policyn?\",\"årligt fast datum eller livshändelse — aldrig marknadsläge\",\"disciplin över känsla\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din policy på en sida — idag, inte efter nästa krasch: använd tabellens fem paragrafer. Tvinga fram siffror på varje rad (andeler, antal, datum). Datera och signera den. Testa sedan policyn mot historien: vad hade den sagt i mars 2020? I finanskrisen 2008? Om svaret är jag vet inte är policyn inte färdig — förbättra tills svaret är mekaniskt."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är syftet med en policy statement enligt Ellis?",
+          "alternativ": [
+            "Att förutsäga marknadens rörelser",
+            "Att skriva ner besluten när du är klok — så att de inte behöver fattas i stormen; misstagen planeras bort i förväg",
+            "Att maximera avkastningen varje år",
+            "Att dokumentera alla affärer för skattemyndigheten"
+          ],
+          "ratt": 1,
+          "tips": "Vilken tidpunkt är bäst för att fatta bra beslut — och hur ser kalendern ut när misstegen görs?"
+        },
+        {
+          "q": "Vilken typ av regler ska policyn innehålla?",
+          "alternativ": [
+            "Vaga intentioner om långsiktighet",
+            "Konkreta, mätbara regler med siffror — andelar, intervall, datum och brott — som en utomstående kan granska",
+            "En lista över favoritaktier",
+            "Prognoser för nästa års börs"
+          ],
+          "ratt": 1,
+          "tips": "Kan paniken läsa en avsiktsförklaring — eller behöver den en checklista?"
+        },
+        {
+          "q": "När revideras policyn enligt kursens femte paragraf?",
+          "alternativ": [
+            "Så snart marknaden faller tio procent",
+            "När man känner för det",
+            "En gång om året vid fast datum eller vid förändrad livssituation — aldrig på grund av marknadsläge",
+            "Aldrig — policyn är evig"
+          ],
+          "ratt": 2,
+          "tips": "Vad skulle hända med policyn om marknadsläge fick styra omprövningarna?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Livsfaser och välfärd — vad pengarna är till för",
+      "intro": "Sjätte upplagans varmaste kapitel handlar inte om att slå marknaden alls — det handlar om vad pengarna är TILL. Ellis placerar investeringen i livet: ansamlingsfasen, konsolideringen, utdelningsfasen, gåvofasen — och principen att välfärd, inte avkastning, är måttstocken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Livsfaserna, i Ellis beskrivning: ANSAMLING (tidig karriär — litet kapital, lång horisont, störst värde av sparande och aktieexponering; varje sparad krona har trettio år på sig att compounded); KONSOLIDERING (karriärens mitt och topp — större sparande, horisonten förkortas, fel som kostar kapital väger tyngre än missad avkastning); UTTAG (pensionen — portföljen ska betala ut, sekvensrisken blir fienden: en svår nedgång de första uttagsåren skadar mer än samma nedgång tjugo år senare); GÅVA (senare år — kapitalets syfte skiftar från eget behov till arv och donationer, horisonten blir åter längre — men för andra). Poängen med faserna är att de förändrar RÄTT beslut: samma portfölj kan vara klok i fas ett och dåraktig i fas tre. Den som inte vet vilken fas hen befinner sig i kan inte fatta rationella beslut — hen kan bara gissa."
+        },
+        {
+          "type": "text",
+          "content": "Välfärdsprincipen — Ellis etiska kärna i de senare upplagorna: investering är inte en tävling och avkastning är inte ett självändamål; pengarna är ett MEDEL för livet — trygghet, frihet, möjligheter för barn och barnbarn. Konsekvensen är omedelbart praktisk: när kapitalet räcker till målet — sluta ta marknadsrisk du inte behöver. Peter Bernstein berättade (i en av kursens favoritanekdoter från ämnet) om en vän som vid fyrtio års ålder gjort sin siffra, sålde allt och lade det i obligationer; vännerna skrattade — men, som Bernstein påpekade, vännen sov gott varje natt sedan dess. Ellis formulerar det försiktigare: matcha risken mot behovet, inte mot grannens portfölj. I välfärdslogiken finns också en omfördelning av uppmärksamheten: den största livsbeslutet är inte vilken fond — det är hur mycket som sparas, hur länge arbete och hälsa räcker och hur uttagen dimensioneras. En genomsnittlig avkastning med hög sparande slår en utmärkt avkastning med lågt."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s tillämpning — livsfaserna mappas mot systemets tre faser: Fas 1 (utbildning, litet kapital): här är den största risken inte marknaden utan att inte börja — brett index som kärna, AKM1-studier som kompetensbygge; misstag är billiga och lärandet dyrbart värt. Fas 2 (mogen aktivalevens väg): få, förstådda positioner med AKM1-kraven — V12 intäktsstabilitet (bolag som håller genom fasens svängningar), V13–V15 moat (varför bolaget förtjänar att ägas i årtionden), V19-disciplin — satellit över en indexerad kärna. Fas 3 (förvaltning och uttag): AK1TS Mega-horisont för kvarvarande kapital, uttagsregler i policyn, sekvensriskhantering genom basandel och kontantbuffert. AKM1-brygga: V12 intäktsstabilitet är den variabel som bäst förutsäger om ett bolag kan bära en portfölj GENOM faserna; V19 är den som avgör om uttagsfasen hotas av utspädningar; AK1TS-lång-horisont är själva livsfaslogiken i systemform."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte vad marknaden gör — fråga vad pengarna ska göra. När kapitalet räcker till målet är ytterligare marknadsrisk en kostnad utan behov. Välfärd är måttstocken; avkastning är bara verktyget."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Livsfaser — syfte, risk och AK1A-fokus\",\"rader\":[[\"Fas\",\"Kapitalets uppgift\",\"Risk som passar\",\"AK1A-fokus\"],[\"Ansamling\",\"växa länge\",\"hög aktieandel — horisonten skyddar\",\"Fas 1: indexkärna + AKM1-studier\"],[\"Konsolidering\",\"växa och skydda\",\"minskad svängningsexponering\",\"Fas 2: få AKM1-positioner; V12-tröskel\"],[\"Uttag (pension)\",\"betala ut jämnt\",\"sekvensrisk — kontantbuffert\",\"Fas 3: uttagsregler; AK1TS Mega för resten\"],[\"Gåva\",\"bestå och donera\",\" lång horisont — för andra\",\"V13–V15 moat-bolag att bära vidare\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör välfärdsmatematiken: uppskatta (1) vilket kapital som motsvarar DIN definition av räcker — skriv beloppet och vad det betalar för per år (till exempel 4 procent av kapitalet), (2) var du ligger idag, (3) vilken fas du befinner dig i enligt kapitlets fyra. Fråga sedan: bär min nuvarande portfölj rätt risk för DEN fasen? Om du redan passerat din siffra — skriv ned vad som skulle hända om du följde Bernsteins väns exempel: vad vore värdet av att sova gott, mätt i procent?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är välfärdsprincipen i sjätte upplagan?",
+          "alternativ": [
+            "Att välfärdsstaten ska förvalta pensionerna",
+            "Att pengarna är ett medel för livet — avkastning är inte ett självändamål, och när kapitalet räcker till målet ska man inte ta marknadsrisk man inte behöver",
+            "Att alla ska maximera avkastning oavsett mål",
+            "Att bara obligationer är moraliskt riktiga"
+          ],
+          "ratt": 1,
+          "tips": "Vad är verkligt slutmålet — siffran på kontot eller livet siffran betalar för?"
+        },
+        {
+          "q": "Vad är sekvensrisken i uttagsfasen?",
+          "alternativ": [
+            "Risken för att sekvenserna i boken trycks fel",
+            "Risken att en svår nedgång tidigt i uttagsperioden skadar portföljen mer än samma nedgång senare — eftersom uttagen låser förlusten",
+            "Risken att aktierna köps i fel ordning",
+            "Risken för högre skatt på utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer när du säljer i en botten — för att äta — i stället för att vänta ut den?"
+        },
+        {
+          "q": "Vad är den största risken i ansamlingsfasen enligt kursen?",
+          "alternativ": [
+            "Att aktiemarknaden faller",
+            "Att inte börja spara och lära sig alls — misstag är billiga när kapitalet är litet och horisonten lång",
+            "Att välva fel index",
+            "Att inflationen är två procent"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar ett misstag när kapitalet är litet — och vad kostar tio år av väntan?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Skatter och rådgivare — individens två dolda kostnader",
+      "intro": "För institutionen är skatten ofta ett fjärran problem; för individen är den den största controllable kostnaden av alla. Och rådgivaren — vad är den värd? Ellis svar skiljer på vad rådgivare SÄLJER (kursfinansiering) och vad de BORDE sälja (policy, beteende, struktur).",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Skatten som aktivitetens straff, i Ellis logik: varje försäljning med vinst är en skattepliktig händelse, och den som omsätter portföljen varje år betalar skatt på vinster som annars hade fått arbeta ränta-på-ränta. Matematiken är densamma som i kostnads-minusräkningen (kapitel 4), men med skatteverkets klang: på en vanlig svensk depå beskattas realiserade kapitalvinster med 30 procent; den som realiserar varje år betalar 30 procent av årets vinst — den som väntar tio år har lånat pengarna räntefritt från staten under tiden. Därtill kommer den svenska verktygslådan: på investeringssparkonto (ISK) och kapitalförsäkring beskattas hela kapitalunderlaget schablonmässigt (i princip statslåneräntan plus en marginal, årligen) i stället för realiserade vinster — vilket gör omsättning till en skattefråga utan kostnad och därför premierar just den låga omsättning som Ellis förespråkar. (Kursen påpekar: schablonskatten faller även utan vinst — verktygsvalet är sitt eget kapitel, kolla aktuella regler.) Huvudpunkten kvarstår: för individen är skatten ofta den största enskilda kostnaden efter avgiften — och den styrs helt av omsättning."
+        },
+        {
+          "type": "text",
+          "content": "Rådgivaren — Ellis fråga: vad betalar man för? Svaret han resonerar kring (och som senare forskning om rådgivares värde, bland annat Vanguards uppskattning av Advisor Alpha, bekräftat i samma riktning): inte kurstips — stockpicking är förlorarspelet igen — utan beteendecoaching (att inte sälja i botten), policyarbete (kapitel 11), tillgångsfördelning, skatteplanering och disciplin. En bra rådgivare är i Ellis värld en ANKARE, inte en profet. Valet av rådgivare styrs därför av tre frågor: hur betalas hen (arvode av dig — eller provision av produkter, som är kapitel 5:s agentproblem på nytt), vad mäts hen på (utdelad policy och hållna kunder — eller omsättning), och håller hen med om Ellis diagnos (index som default, aktiv del som medveten satellit)? En rådgivare som lovar att slå marknaden förutsätter att hen tillhör kapitel 8:s minoritet — bevisen bör då vara långa, verkliga och granskbara. Det är sällan de är."
+        },
+        {
+          "type": "text",
+          "content": "Den kompletta individ-minusräkningen, kursens sammanfattning av kapitel 4 och 13: din nettoavkastning = marknadens bruttoavkastning − förvaltningsavgift − transaktionskostnad − skatteeffekt − beteendekostnad (dumb money) + (eventuellt) aktiv kant. De fyra första posterna är mekaniskt reducerbara — det är Ellis konkreta agenda för individen — och den sista är statistiskt osannolik. I AK1A:s språk: kärnan (index, låg omsättning, ISK-liknandewrapper) minimera de fyra första; satelliten (AKM1-positioner, lång holdingtid) är den enda platsen där beteendekostnad får köpas mot en kant — och även där i minimal omsättning: ägandet ska vara i år, inte affärerna. AKM1-brygga: V12 intäktsstabilitet gör lång holdingtid möjlig (ett bolag som mår bra behöver inte säljas — därmed realiseras ingen vinst och ingen skatt), V19 emissioner är skattemässigt dubbla slag (utspädning utan kontantflöde), och AK1TS-lång-horisont är den bästa skatteplanen som finns: den som inte säljer skattar inte."
+        },
+        {
+          "type": "insikt",
+          "content": "Skatten är den enda stora kostnad du kan skjuta upp obegränsat — genom att inte sälja. Och rådgivarens verkliga produkt är inte kursgissningar utan att hindra dig från dig själv. Köp ankare, inte profet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Individens minusräkning — post för post\",\"rader\":[[\"Post\",\"Storlek (typisk)\",\"Minskas genom\",\"AK1A-verktyg\"],[\"Förvaltningsavgift\",\"0,1–1,5 % per år\",\"indexkärna\",\"kapitel 7\"],[\"Transaktion och spread\",\"0,1–0,5 % per affär\",\"få affärer\",\"AKM1-ägande i år\"],[\"Skatt på realiserad vinst\",\"30 % på depå — schablon på ISK\",\"låg omsättning; wrapper; uppskjuten realisering\",\"AK1TS-lång-horisont; V12-bolag\"],[\"Beteendekostnad\",\"ofta störst — köp högt, sälj lågt\",\"policy\",\"kapitel 11\"],[\"(Eventuell) aktiv kant\",\"statistiskt osannolik\",\"disciplin, struktur\",\"kapitel 8 och 14\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska din skatteprofil: (1) hur många realisationer gjorde du förra året och hur mycket skatt betalade du på dem? (2) Om du istället hade behållit vinnarna i tio år — vad hade skattekostnaden varit då, ungefär? (3) Vilken wrapper står dina aktier i (depå, ISK, kapitalförsäkring) och passar den din omsättning? Avsluta med rådgivar-testet från kapitlet: om du har en rådgivare — besvara de tre frågorna (hur betalas, vad mäts, vad lovas). Om svaret på tredje är att slå marknaden: be om bevisen — och räkna hur många kapitel 8-villkor de uppfyller."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är omsättning ett skatteproblem för individen?",
+          "alternativ": [
+            "Därför att alla affärer är förbjudna",
+            "Därför att varje realiserad vinst beskattas — medan uppskjuten vinst får arbeta ränta-på-ränta skattefritt tills realiseringen",
+            "Därför att courtage alltid är högre än skatt",
+            "Därför att indexfonder inte kan beskattas"
+          ],
+          "ratt": 1,
+          "tips": "Vem lånar av vem när vinsten får ligga kvar — du av staten eller tvärtom?"
+        },
+        {
+          "q": "Vad bör en rådgivare enligt Ellis (och senare forskning) egentligen sälja?",
+          "alternativ": [
+            "Kurstips och aktierekommendationer",
+            "Beteendecoaching, policyarbete, tillgångsfördelning och skatteplanering — att hindra kunden från att sälja i botten",
+            "Hävstångsprodukter",
+            "Garantier om att slå index"
+          ],
+          "ratt": 1,
+          "tips": "Om stockpicking är förlorarspelet — vad återstår som verkligt värde?"
+        },
+        {
+          "q": "Vilka tre frågor ska man ställa en blivande rådgivare enligt kapitlet?",
+          "alternativ": [
+            "Vilka aktier gillar du? Hur hög avkastning lovar du? Kan jag låna pengar?",
+            "Hur betalas du, vad mäts du på — och håller du med om att index är default och aktiv del är medveten satellit?",
+            "Vilken bank är störst? Vilken app är snyggast? Vilken fond vann förra året?",
+            "Har du läst Ellis bok? Kan du Elliott-vågor? Har du CFA?"
+          ],
+          "ratt": 1,
+          "tips": "Incitament, mått och filosofi — alltså agentproblemet och förlorarspelet i praktiken."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "KONTROVEREN: Ellis mot den aktiva skolan — och AK1A:s syntes",
+      "intro": "Här står två världar mot varandra: Ellis förlorarspels-diagnos mot vår egen Buffett/Graham-tradition — koncentrerade värdeinvesterare med årtionden av bevis. Kursen redogör för Ellis MAXIMALT starkt, motargumentet lika starkt — och slutar med AK1A:s syntes, där index är baseline för alla och AKM1 är en annan aktivitet än trading.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ellis fall, så starkt det kan formuleras — fyra ben. ETT: spelteorin. Efter kostnader är aktiv förvaltning ett negativsumspel; i ett negativsumspel är den dominerande strategin att lämna spelet — indexera. Det är inte en åsikt utan en spelteoretisk sats: den som stannar betalar avgiften för att delta i en lotteri med negativ väntevärde. TVÅ: kostnads-determinismen. Kostnaderna är säkra, alfa är osannolikt (kapitel 4:s SEK-räkning: 2,25 miljoner kronor på tjugofem år); varenda år som går dras notan oavsett utfall. TRE: det strukturella — inte individuella — misslyckandet. De förlorande förvaltarna är inte lata eller dumma: de är topputbildade, extremt hårt arbetande, bäst utrustade i finanshistorien — och de förlorar ändå, i decennier, i alla länder, i alla kategorier. Om skillnad i skicklighet bestämde utfallet skulle de bästa organisationerna vinna; de gör det inte — för det är SPELET, inte spelaren, som förlorar (agentproblemet, kapitel 5, och kalendern, kapitel 6, är mekanismerna). FYRA: evidensen. SPIVA-mätningar: cirka 90 procent av aktiva USA-fonder underpresterar sitt index över femton år; persistensen — att gårdagens vinnare vinner igen — är svag; och Buffetts offentliga vad 2008–2017 mot Protégé Partners fem fond-i-fonder: indexfonden cirka 126 procent, motståndarna i genomsnitt cirka 36 procent. Vad ska rimligtvis hända innan slutsatsen får gälla?"
+        },
+        {
+          "type": "text",
+          "content": "Motargumentet — den aktiva skolans (vår Buffett/Graham-värld): Ellis har rätt om det spel majoriteten spelar — men minoriteten spelar ett annat spel, och deras bevis är långa, offentliga och granskade. Buffett: sextio år av koncentrerat ägande, från partnerskapets 30-procents-år till Berkshire — dokumenterat i brev, utvärderbart årtionde för årtionde (the-essays-of-warren-buffett-kursen). Graham-Munger-traditionen: Ruane, Klarman, Greenblatt — olika stilar, samma struktur: få positioner, köp under inneboende värde med marginal, äga som delägare, vänta. Akademiskt: värdepremien i Fama–French-traditionen och beteendeförklaringarna till varför den finns — de fel som gör marknaden slåbar är mänskliga och bestående (Quantitative Value-kursens kapitel 1). Omvändningen mot Ellis eget liv: han tillbringade sjutton år i Yales investeringskommitté och hjälpte driva en av historiens mest framgångsrika AKTIVA portföljer — Swensens strukturella kant (evigt kapital, intern talang, alternativa marknader) visar att aktiv förvaltning kan vinna när strukturen är rätt. Aktiva skolans sammanfattning: Ellis bevisar att KORTSIKTIGT RELATIVT SPEL är förlorat — han bevisar inte att LÅNGSIKTIGT ÄGARSKAP är omöjligt; hans egen biografi är motbeviset."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — kursens ekipage, formulerat i fyra punkter. ETT: Ellis har rätt om TRADING-spelet — om din aktivitet består i att förutsäga korta kursrörelser, att slå index kvartalsvis, att jaga förvaltare och byta strategi: det är förlorarspelet, spela inte (index är default, kapitel 7). TVÅ: AKM1-ägarskapet är en ANNAN aktivitet — att förstå ett bolag som delägare med lång horisont (Fas 2-elevens väg): poängen är inte att slå någon på en månad utan att äga betalande verksamheter över konjunkturcykler; kraven är minoritetens (kapitel 8): V12-stabila intäkter, moat i V13–V15, V19-disciplin, AK1TS-lång-horisont, skriven tes per position. TRE: index är BASELINE FÖR ALLA — även för AKM1-eleven: kärnan indexeras, satelliten mäts mot indexet i efterräkning, och en satellit som inte bär sin kostnad avvecklas (kapitel 7:s regel). FYRA — medgivandet, öppet: majoriteten av aktiva förvaltare förlorar, och sannolikheten att en slumpmässig elev tillhör minoriteten är låg; just DÄRFÖR kräver AKM1-disciplinen arbete — hela AKM1-checklistan, hela Fas-2-utbildningen, hela policyarbetet existerar för att göra övergången från att SPELA till att ÄGA svår, medveten och prövbar. Den som inte vill betala det arbetet har fått sitt svar i kapitel 7 — och det är ett bra svar. Ellis och Buffett är inte motstridiga: de beskriver olika spel, och AK1A väljer medvetet vilket av dem som spelas med vilken andel av kapitalet."
+        },
+        {
+          "type": "insikt",
+          "content": "Ellis fråga till den aktiva skolan är inte varför tror du att du kan slå marknaden — utan vilket spel spelar du, med vems kalender, mot vilka motståndare?. Om svaret är ägarskap med tioårig horisont och skriven tes: välkommen till minoriteten. Om det är något annat: index."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — argument, motargument, AK1A:s syntes\",\"rader\":[[\"Fråga\",\"Ellis (passiva skolan)\",\"Aktiva skolan (Buffett/Graham)\",\"AK1A:s syntes\"],[\"Spelets natur\",\"negativsumspel — dominanta strategin är exit\",\"minoriteten spelar ett annat spel: ägarskap\",\"rätt: trading-spelet är förlorat\"],[\"Kostnader\",\"säkra; alfa osannolikt (2,25 Mkr/25 år)\",\"kanten betalar kostnaden när tesen är rätt\",\"kärnan billigt; satelliten med tes\"],[\"Bevisen\",\"SPIVA cirka 90 % underpresterar 15 år; Buffett-vadet 126 mot 36 %\",\"Buffett 60 år; Klarman; Greenblatt; Swensen 13 %/år aktivt\",\"båda har rätt — om olika spel\"],[\"Struktur\",\"felet är strukturellt, inte individuellt\",\"struktur är lösningen: evigt kapital, få positioner\",\"AKM1 = strukturerat ägarskap; index = baseline\"],[\"Villkor\",\"indexera\",\"V12, V13–V15, V19, AK1TS-lång-horisont\",\"medgivande: få klarar det — därför krävs arbetet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget kontroversprotokoll — en sida, tre spalter: (1) Ellis starkaste argument FÖR DIG (vilket av de fyra benen hotar din portfölj mest — kostnaden, kalendern, agentproblemet, evidensen?), (2) ditt motargument: vilken struktur gör dig till minoritet — och kan du bevisa den i dag?, (3) din syntes i siffror: hur stor andel index-kärna, hur många satellit-positioner med skriven tes, vilket datum mäts satelliten mot index? Om spalt tre inte har siffror är protokollet inte färdigt."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket är Ellis starkaste spelteoretiska argument?",
+          "alternativ": [
+            "Att indexfonder alltid stiger",
+            "Att aktiv förvaltning efter kostnader är ett negativsumspel — och att den dominerande strategin i ett sådant spel är att lämna det",
+            "Att alla aktieägare är amatörer",
+            "Att kostnaderna kan förhandlas bort"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör en rationell spelare i ett spel där varje omgång kostar och väntevärdet är negativt?"
+        },
+        {
+          "q": "Vad var utfallet av Buffetts vad 2008–2017 mot Protégé Partners?",
+          "alternativ": [
+            "Hedgefonderna vann med bred marginal",
+            "Oavgjort — båda cirka 80 procent",
+            "Vadet avbröts utan resultat",
+            "Indexfonden cirka 126 procent mot i genomsnitt cirka 36 procent för de fem fond-i-fond-förvaltarna"
+          ],
+          "ratt": 3,
+          "tips": "Tio år, fem professionella gissningar mot en billig indexfond — vem vann?"
+        },
+        {
+          "q": "Vad är AK1A:s syntes i kontroversen?",
+          "alternativ": [
+            "Ellis har fel och alla ska handla aktivt",
+            "Buffett har fel och AKM1 ska avvecklas",
+            "Ellis har rätt om trading-spelet; AKM1 är en annan aktivitet — ägarskap med lång horisont — och index är baseline för allt; medgivande: de flesta aktiva förlorar, därför kräver AKM1-disciplinen arbete",
+            "Man ska hälften index och hälften hedgefonder utan tes"
+          ],
+          "ratt": 2,
+          "tips": "Tre byggstenar: rätt om trading-spelet, ägarskap som annan aktivitet, index som baseline — plus medgivandet."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Sammanfattning — att vinna förlorarspelet (V01–V20)",
+      "intro": "Sista kapitlet sätter ihop hela systemet: Ellis diagnos (spelet, kostnaden, agenten, kalendern) och kur (index, policy, tid, välfärd) som en enda AK1A-process — och den personliga frågan kvar: vilket spel spelar du, med vilken del av kapitalet?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den kompletta Ellis-processen i sju steg, som din checklista. ETT — identifiera spelet: om du inte kan peka ut din kant (kapitel 8:s villkor) spelar du förlorarspelet; index är default. TVÅ — minimera de fyra notorna: avgift, transaktion, skatt, beteende (kapitel 4 och 13) — de är de enda variablerna du fullt kontrollerar. TRE — bygg kärna-satellit: kärnan indexeras på Mega-horisonten; satelliten är få positioner med skriven AKM1-tes och minoritetens struktur. FYRA — definiera risken som målmiss: Ellis fyra frågor, V19/V10/V11 som permanent-förlust-filter, V12 som målmiss-reducerare. FEM — skriv policyn på en sida: fem paragrafer med siffror, reviderad en gång om året vid fast datum. SEX — matcha livsfaserna: ansamling, konsolidering, uttag, gåva — risken bärs av behovet, inte av grannen. SJU — mät mot indexet i efterräkning: varje år, varje position, utan sentiment — och avveckla det som inte bär sin kostnad. Eller, med Ellis egen devis i sjätte upplagan: investering handlar inte om att slå andra i deras spel, utan om att behärska dig själv i ditt eget."
+        },
+        {
+          "type": "text",
+          "content": "Mappningen till AKM1:s alla tjugo variabler — kursens totala bro. Värderingsblocket V04–V06 (P/S, P/B, EV/EBITDA) är inköpspriset på satellit-positionerna: Ellis ger ingen värderingsmetod, men hans kostnads-logik kräver att du köper med marginal — annars betalar du aktivt pris för passiv exponering. Lönsamhetsblocket V07–V09 och stabilitetsblocket V10–V12 är minoritetens ask: V12 intäktsstabilitet är kapitlets hjälte — det är variabeln som gör tioårigt ägande möjligt och skatten uppskjuten. Moat-blocket V13–V15 är kantens innehåll: varför just detta bolag förtjänar att ägas när indexet äger allt. Katalysatorerna V16–V18 är INTE köpskäl — de är händelser som gör att marknadens korta kalender får se det långa ägandets värde (Deere-läran från Quantitative Value-kursen). V19 kapitalförbränning och emission-risk är förlorarspelets variabel i bolagsvärlden — utspädning är det misstag du kan screena bort i förväg. V20 återköp är den fina spegelbilden: ett bolag som KÖPER tillbaka sina aktier spelar på ägarens sida av spelet. V01–V03 (tillväxt, ARR, diversifiering) är kontexten som gör V04–V06 begripliga. Och över allt: AK1TS-lång-horisonten — femte dimensionen som avgör vilket spel varje krona spelar."
+        },
+        {
+          "type": "text",
+          "content": "Slutporträttet — den som vinner förlorarspelet, i sex drag. Ett: hen vet vilket spel hen spelar — och spelar inte spelet hen inte kan vinna. Två: hen betalar inte för att delta i ett lotteri med negativ väntevärde — notorna minimeras mekaniskt. Tre: hen har skrivit sin policy i solsken och följer den i regn. Fyra: hen mäter sig själv mot indexet varje år och avvecklar utan sentiment det som inte bär. Fem: om hen är aktiv — är hen det som ägare: få bolag, V12-stabila, moat-förstådda, V19-rensade, på AK1TS-lång-horisont, med skriven tes. Sex: hen vet vad pengarna är till — välfärden, inte siffran. Det är hela kursen: Bogle gav dig produkten, Ellis gav dig diagnosen — och AK1A ger dig verkstaden där diagnosen blir disciplin. AKM1-brygga (sista raden, som vanligt): V12 intäktsstabilitet, V19 emissionsdisciplin, AK1TS-lång-horisont — förlorarspelets tre motskador, i varje portfölj, för alltid."
+        },
+        {
+          "type": "insikt",
+          "content": "Att vinna förlorarspelet är inte att slå marknaden — det är att sluta förlora mot dig själv: kostnaden, kalendern, agenten, känslan. Ellis sista ord till den aktiva: om du spelar, spelar ägarskapets spel — och låt indexet bära resten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Winning the Loser's Game till AKM1 — översättningstabellen\",\"rader\":[[\"Bokens lära\",\"AKM1\",\"Roll\"],[\"Förlorarspelets diagnos\",\"— (systemnivå)\",\"index som default för kärnan\"],[\"Kostnads-minusräkningen\",\"alla kostnadsposter\",\"minimeras mekaniskt — kapitel 4, 13\"],[\"Minoritetens villkor\",\"V12, V13–V15, V19\",\"satellitens inträdeskrav\"],[\"Riktig risk = målmiss\",\"V19, V10, V11\",\"permanent-förlust-filtret\"],[\"Tidsdimensionen\",\"AK1TS Lång/Mega\",\"kalendern per krona\"],[\"Policy statement\",\"portföljnivåns checklista\",\"fem paragrafer, årlig omprövning\"],[\"Livsfaser och välfärd\",\"Fas 1–3\",\"risk efter behov — inte efter granne\"],[\"Ägarskap istället för trading\",\"V01–V20 helhet\",\"Fas 2-elevens väg — med index som baseline\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din Ellis-portfölj och dokumentera: (1) kärna: välj index och andel (Mega-kapitalet), (2) satellit: max åtta positioner, varje med en-raders tes och AKM1-poäng där V12 minst fyra av fem och V19 noll flaggor, (3) policy: en sida, fem paragrafer med siffror, daterad, (4) måttstocken: vilket index mäts satelliten mot och vid vilket datum varje år? Spara dokumentet — och boka omprövningen i kalendern om exakt ett år. Från och med nu spelar du medvetet: ägarskapets spel med satelliten, marknadens spel med kärnan — och inget förlorarspel alls."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta ordningen i den sjustegs-process kursen sammanfattar?",
+          "alternativ": [
+            "Köp aktier, skriv policy, minimera kostnader, indexera resten",
+            "Identifiera spelet — minimera notorna — kärna-satellit — risk som målmiss — policy — livsfaser — mät mot index",
+            "Indexera allt, glöm analysen, kontrollera priset dagligen",
+            "Välj förvaltare, byt vid underprestation, upprepa"
+          ],
+          "ratt": 1,
+          "tips": "Vad måste avgöras FÖRE allt annat — och vad mäts ALLTID i efterhand?"
+        },
+        {
+          "q": "Vilken roll spelar katalysatorerna V16–V18 i Ellis-världen?",
+          "alternativ": [
+            "De är viktigaste köpskälen",
+            "De ersätter värderingen när storyn är stark",
+            "De är INTE köpskäl — de är händelser som gör att marknadens korta kalender får se det långa ägandets värde",
+            "De gäller bara vid blankning"
+          ],
+          "ratt": 2,
+          "tips": "Vem har kortast kalender — och vad behöver den spelaren se för att betala rätt pris?"
+        },
+        {
+          "q": "Vad är slutporträttets kärna — den som vinner förlorarspelet?",
+          "alternativ": [
+            "Den som slår marknaden varje år med aktiv förvaltning",
+            "Den som slutar förlora mot sig själv — kostnader, kalender, agent, känsla — och spelar ägarskapets spel medvetet, med index som baseline",
+            "Den som handlar oftast och följer nyheterna",
+            "Den som alltid väljer gårdagens vinnarfonder"
+          ],
+          "ratt": 1,
+          "tips": "Eller devisen: inte slå andra i deras spel — behärska dig själv i ditt eget."
+        }
+      ]
+    }
+  ]
+}

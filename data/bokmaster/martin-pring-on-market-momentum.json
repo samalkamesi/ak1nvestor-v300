@@ -1,0 +1,1162 @@
+{
+  "slug": "martin-pring-on-market-momentum",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 180,
+  "title": "Martin Pring on Market Momentum — Pring: KOMPLETT",
+  "summary": "Martin J. Pring — teknisk analysens morallärare, författare till läroboken Technical Analysis Explained och i årtionden branschens samvete genom The Pring Report — skrev Martin Pring on Market Momentum (1993) som en hel bok om ETT enda begrepp: hastighet. Tesen är kursens räls: priset svarar på frågan VAR, momentum på frågan HUR SNABBT — och eftersom en rörelse förlorar fart innan den byter riktning, vänder momentumet före priset. Där Murphys The Visual Investor lär ut att läsa bilden (trend, stöd, volym, rotation) och Elders Come Into My Trading Room visar trading-rummet (system, psykologi, riskregler) äger den här boken själva BEGREPPET: hastighet, tid och rörelsemängd i tre tidsdimensioner. Kursen följer boken kapitel för kapitel — momentum-filosofin och fysikmetaforen, trenderna i tre tidsdimensioner (kopplade rakt in i AK1TS fem horisonter Mikro till Mega), ROC grundligt med räkneexempel, KST (Prings signatur-indikator: fyra tidsvägda momentum flätade till en kurva, genomgång med konstruktion och vikttabell), MACD som momentum, divergens-teorin kopplad till Vågfundamentets AK1TS-korsning, momentum och volym som rörelsemängdens massa, överköpt/översålt-MYTEN (vad som faktiskt fungerar), momentum på index, sektorer och aktier — och kontroversen med en rarity i bokmastern: här HAR teknisk analys akademiskt stöd, för Jagadeesh-Titman publicerade momentum-anomalins bevis 1993 — samma år som boken. AK1A:s syntes: AK1TS mäter momentum deterministiskt (5/63/252 dagar per horisont); därmed är momentum-kurserna inte önsketänkande utan empiriskt förankrade — med medgivandet öppet formulerat: timing av momentum-vändningar förblir svårt, och momentum-krascherna 2009 är beviset.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan du: skilja Prings projekt från grannkurserna — Murphy är grafens läsare, Elder är trading-rummet, Pring är BEGREPPET momentum · förklara fysiken: pris är läget, momentum är hastigheten, och rörelsemängd är massa (deltagande) gånger hastighet · stega upp Prings tre tidsdimensioner (kort, intermediär, lång) och koppla dem direkt till AK1TS fem horisonter — Mikro, Kort, Medellång, Lång, Mega · beräkna ROC för hand som kvot gånger hundra och veta varför Pring föredrar kvotformen framför differensen · tolka ROC med fem tekniker: extremzoner i trendkontext, nollinjekorsningar, divergens, momentum-trendlinjer och momentum-kurvans egna toppar och dalar · konstruera KST från fyra utjämnade ROC:er med vikterna ett-två-tre-fyra (dag- och månadsversion) och läsa dess signaler · läsa MACD som ett momentum-mått — skillnaden mellan två medelvärden är en hastighet, histogrammet en acceleration · använda divergensen som varning, aldrig order — och koppla den till Vågfundamentets AK1TS-korsning mellan fundamentalvåg och prisvåg · avliva överköpt/översålt-myten: samma oscillatorutslag betyder styrka tidigt i en trend, utmattning sent, och ingenting alls utan cykelposition · låta volymen fungera som rörelsemängdens massa och läsa de fyra kombinationerna av pris- och volym-momentum · välja momentum-intervall per nivå: index, sektor, aktie — med Prings konjunktursekvens obligationer-aktier-råvaror som rotationskarta · köra Prings arbetsordning (lång trend först, intermediärt momentum sedan, kort timing sist) som exakt motsvarar analys-motorns rader MA200, momentum 63 och momentum 5 · och redogöra för momentum-anomalins akademik — Jegadeesh-Titman, Carhart, Moskowitz-Ooi-Pedersen, Barroso-Santa-Clara, Daniel-Moskowitz — med AK1A:s slutsats: deterministiskt mätt momentum är empiriskt förankrat, men vändningstimingen förblir svår.",
+  "why": "Bokkanon-post bk-060 kallar boken standardverket om momentumindikatorer — momentumets psykologi genom konjunkturcykeln — och placerar den i kanon, tier 2, med ts-variablerna Pris och Tid och ak-variabeln V12 Intäktsstabilitet. Dess tre kanonlärdomar är kursens ryggrad: momentum mäter prisförändringens hastighet och divergensen mot pris är den starkaste signalen; momentum för timing och trenden för riktning, aldrig tvärtom; översålda och överköpta nivåer betyder ingenting i en stark trend — kolla cykelpositionen först. Differentieringen gör valet av kurs självklart: Murphy-kursen är dörren in till diagrammet, Elder-kursen är hantverksrummet för tradern — ingen av dem äger momentum-BEGREPPET på djupet. Den här boken gör det, och det i exakt tre tidsdimensioner som AK1TS-motorn redan räknar: fem horisonter, momentum-raderna 5/63/252 dagar, MA50 och MA200 som klassificerare. Prings bok är alltså inte bara en kurs i en indikatorfamilj — den är teorin bakom rader som redan finns i labbets kod. Och kontroverskapitlet är en rarity i bokmastern: medan de flesta TA-böcker står anklagade inför akademien har momentum-ämnet faktiskt belägg — Jagadeesh-Titman (1993) publicerade momentum-anomalins cirka en procent per månad samma år som boken kom, Fama själv kallade momentum den främsta anomalin, och Barroso-Santa-Clara samt Daniel-Moskowitz levererar det ärliga motargumentet: momentum krashar, brutalt, efter björnmarknader. AK1A:s syntes är rak: motorn mäter momentum deterministiskt — samma data, samma celler — därmed är momentum-kurserna inte önsketänkande utan empiriskt förankrade; men vändningstimingen förblir svår, och den som glömmer det har inte läst kapitel 14.",
+  "chapters_list": [
+    "1. Boken och idén — en hel bok om ett begrepp: hastighet",
+    "2. Momentum-filosofin — pris mot hastighet, rörelsemängdens fysik",
+    "3. Tre tidsdimensioner — Prings klockor och AK1TS fem horisonter",
+    "4. ROC — konstruktionen och räkneövningen",
+    "5. ROC — tolkningen: fem tekniker och trendens kontext",
+    "6. KST — konstruktionen: fyra tidsvägda momentum i en kurva",
+    "7. KST — tolkningen: signaler, nollinjan och ironin i namnet",
+    "8. MACD som momentum — skillnaden mellan två medelvärden",
+    "9. Divergensen — momentum vänder FÖRE pris",
+    "10. Överdrevet — överköpt/översålt-myten och vad som fungerar",
+    "11. Momentum och volym — rörelsemängdens massa",
+    "12. Momentum på index, sektorer och aktier — tre nivåer, tre klockor",
+    "13. Praktiken — Prings arbetsordning i analys-motorn",
+    "14. Kontroversen — anomalins akademik: bevis, nobel och krascher",
+    "15. Sammanfattning — momentum-analytikern (syntes AKM1 × AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Boken och idén — en hel bok om ett begrepp: hastighet",
+      "intro": "Martin J. Pring kallas teknikernas tekniker: författare till läroboken Technical Analysis Explained (första upplagan 1979, senare fem upplagor), utgivare av The Pring Report i decennier, grundare av Pring Turner Capital — och mannen som gjorde konjunkturcykeln till en del av teknisk analys. Martin Pring on Market Momentum (1993) är hans monografi om momentum: inte en bok om mönster, inte ett system — ett BEGREPP, genomarbetat. Kursen börjar med vad den här boken är, och vad den INTE är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De flesta tekniska böcker är verktygslådor: ett kapitel trend, ett stöd, ett indikatorer, ett mönster. Pring gjorde motsatsen 1993: han tog ETT verktyg — momentum — och skrev en hel bok om det. Varför? Därför att momentum inte är en indikator bland andra; det är en annan FRÅGA. Alla diagramverktyg besvarar i grunden två frågor: var är priset, och var är nivåerna? Momentumindikatorn ställer den tredje: hur snabbt rör sig priset — och är farten på väg att förändras? Prings påstående, som hela boken bygger på: en rörelse förlorar fart INNAN den byter riktning, som en bil som saktar in innan den svänger — och därmed vänder momentumserien före kursen. Det är hela bokens existensberättigande i en mening: momentumet är prisets tidigaste vittne."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen i labbet, öppet redigerad, redan från första kapitlet. Murphys The Visual Investor (egen kurs i katalogen) är GRAFENS bok: trend, stöd, volym, rotation, intermarket — lära sig SE. Elders Come Into My Trading Room (egen kurs) är RUMMETS bok: tre M:en, system, psykologi, 2- och 6-procentsreglerna — lära sig DISCIPLIN. Prings bok är BEGREPPETS bok: hastighet, tid, rörelsemängd, i tre tidsdimensioner — lära sig MÄTA fart. Konsekvensen för ekosystemet är konkret: där Murphy-kursen avslutar momentumet i ett enda kapitel, tillbringar den här kursen femton kapitel inne i fartmätaren — inklusive den indikator som bär Prings namn i världens chartprogram: KST."
+        },
+        {
+          "type": "text",
+          "content": "Och en ärlighetsrad direkt i öppningskapitlet, som kontroverskapitlet (14) sedan äger fullt ut: boken kom 1993 — samma år som Jagadeesh och Titman publicerade Returns to Buying Winners and Selling Losers i Journal of Finance, momentum-anomalins grundbevis. Pring kunde inte veta det; ändå står hans praktiska hantverk, årtionden gammalt när boken trycktes, plötsligt på akademisk grund. Det är en unik position i bokmastern: här behöver TA-folket inte försvara sig mot akademien — akademien bekräftade. Men samma forskning levererar också varningen: momentum krashar. Båda halvorna ska med från kapitel ett; kursen är inte en hyllningsföljetong utan en granskning."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01 Försäljningstillväxt — fundamentalens EGEN hastighetsmätare. Formeln i AKM1 är (Omsättning i år − Omsättning förra året) / Omsättning förra året — det är matematiskt en rate of change, samma kvot som kapitel 4 lär ut att räkna på priset. V01 är fundamentets momentum-rad; kursen lär dig läsa den som Pring läser en ROC-kurva: inte bara nivån utan SVÄNGNINGARNA. AK1TS-RAD: momentum-raderna — motorn mäter 5/63/252 dagar per horisont; Prings bok är teorin bakom de rader som redan finns i labbets kod."
+        },
+        {
+          "type": "insikt",
+          "content": "Pris frågar VAR. Momentum frågar HUR SNABBT. Hela Prings bok — och hela den här kursen — vilar på en enda fysisk iakttagelse: en rörelse tappar fart innan den byter riktning. Därför vänder mätaren före linjen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre grannkurser — och vad varje bok äger\",\"rader\":[[\"Kurs\",\"Boken ger\",\"Kärnfråga\",\"För vem\"],[\"The Visual Investor (Murphy)\",\"dörren in — läsa diagram med få verktyg\",\"vad visar bilden?\",\"icke-teknikern, fundamentalanalytikern\"],[\"Come Into My Trading Room (Elder)\",\"trading-rummet — system, psykologi, riskregler\",\"hur disciplineras ett hantverk?\",\"den som vill förstå timing och riskkontroll\"],[\"Martin Pring on Market Momentum\",\"begreppet — momentum i tre tidsdimensioner\",\"hur snabbt rör sig priset — och vänder farten?\",\"den som vill förstå indikatorn bakom alla indikatorer\"],[\"Läroböckerna (Murphy TAFM · Pring TAE)\",\"encyklopedierna\",\"allt om allt\",\"uppslagsverk, ej direktörer\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Hastighets-testet på trettio sekunder: öppna dagsgrafen för en aktie du känner väl. Täck kurvens senaste halvår med handen och avslöja en månad i taget — och fråga inte 'stiger den?' utan 'stiger den SNABBARE eller LÅNGSAMMARE än förra månaden?'. Skriv svaret som ett av tre ord: accelererar, jämn, avtar. Det är momentumfrågan — och du har nu ställt den utan en enda indikator. Resten av kursen handlar om att räkna den i stället för att gissa den."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skiljer Prings momentum-bok från de flesta tekniska böcker?",
+          "alternativ": [
+            "Den täcker fler indikatorer än någon annan",
+            "Den handlar bara om candlesticks",
+            "Den ägnar en hel bok åt ETT begrepp — hastighet — i stället för att surveya hela verktygslådan",
+            "Den ersätter fundamental analys"
+          ],
+          "ratt": 2,
+          "tips": "Verktygslådor surveyar; Pring borrar djupt på ett enda ställe."
+        },
+        {
+          "q": "Vad är bokens grundpåstående om momentum och pris?",
+          "alternativ": [
+            "Att momentum alltid bekräftar priset med fördröjning",
+            "Att momentum vänder FÖRE priset — en rörelse förlorar fart innan den byter riktning",
+            "Att pris och momentum är samma sak",
+            "Att momentum bara fungerar på råvaror"
+          ],
+          "ratt": 1,
+          "tips": "Bilen som saktar in före svängen: mätaren före linjen."
+        },
+        {
+          "q": "Vilken AKM1-variabel är fundamentalens egen rate of change?",
+          "alternativ": [
+            "V05 P/B",
+            "V13 Patent",
+            "V11 Likviditet",
+            "V01 Försäljningstillväxt — (omsättning i år − förra året) / förra året"
+          ],
+          "ratt": 3,
+          "tips": "Tillväxtformeln är en kvot av nu mot då — exakt ROC:s matematik."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Momentum-filosofin — pris mot hastighet, rörelsemängdens fysik",
+      "intro": "Innan en enda formel: filosofin. Pring bygger momentum-läran på en fysikmetafor — läge, hastighet, acceleration, rörelsemängd — och kursen tar den på allvar, för den förklarar VARFÖR indikatorn fungerar som den gör: varför den svänger kring en mittlinje, varför den vänder före priset, och varför volymen (kapitel 11) hör till samma historia. Pris mot hastighet: två olika frågor, två olika kurvor, en gemensam fysik.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fysiken, som Pring själv använder: priset är LÄGET — var bilen befinner sig på vägen. Momentum är HASTIGHETEN — hur snabbt den rör sig. Och förändringen i momentum är ACCELERATIONEN — gas eller broms. Av de tre är det bara läget som syns direkt på kursgrafen; hastigheten måste räknas (kapitel 4), men den innehåller information som läget saknar: en bil i 110 som saktat från 130 är en annan historia än en bil i 110 som accelererar från 90 — samma visning på hastighetsmätaren, helt olika nästa minut. Kursen 100 kan vara en topp eller en bas; hastigheten avgör vilket. Det är därför momentumserien förtjänar sitt eget fönster bredvid kursen."
+        },
+        {
+          "type": "text",
+          "content": "Rörelsemängden — fysikens p = massa × hastighet — är kursens tredje begrepp och förbinds med volymen i kapitel 11. På marknaden är MASSAN deltagandet: hur många aktörer, hur mycket kapital, hur många aktier som byter ägare. En kursrörelse på enorm volym har massa — den är svår att stoppa, trögheten är stor. Samma kursrörelse på tunn volym är nästan masslös: lätt att vända, värd lite som bevis. Pring använder inte termen själv — men hela hans verk om volymens bekräftelse bygger på intuitionen: hastighet utan massa är inte rörelsemängd. Notera att AKM1:s V12 Intäktsstabilitet är fundamentalens massmått — bokkanon-posten bk-060 länkar dem redan: stabila, förutsägbara intäkter är tröghet i verksamheten, och tröghet är vad som gör fundamentala trender hållbara nog att mätas."
+        },
+        {
+          "type": "text",
+          "content": "Och den praktiska kärnan, som kursen återkommer till i varje verktygskapitel: vändningens förlopp i tre steg. Ett — momentumet vänder (hastigheten avtar; bilen bromsar men rullar fortfarande framåt). Två — priset stannar och går sidledes (rallyt lever inte längre men motståndet räcker inte för vändning; basbygge eller toppformation byggs). Tre — priset vänder (läget följer till slut hastigheten). Konsekvensen för handeln är bokens viktigaste arbetsfördelning, rak från bokkanon-läxorna: MOMENTUM FÖR TIMING, TRENDEN FÖR RIKTNING — aldrig tvärtom. Momentumet säger NÄR kraften sinar; trenden (MA, trendlinjer) säger åt vilket håll man ska spela. Den som köper på lågt momentum utan trendstöd bakom sig köper ett fallande knivblad; den som säljer på högt momentum i stark upptrend säljer styrka."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet — bokkanons ak-variabel för den här boken: massan och trögheten i fundamentet. Ett bolag med stabila intäkter (hög V12) har en fundamental rörelse med massa — den accelererar långsamt och avtar långsamt, vilket gör momentum-läsningen meningsfull på kvartalsserier. Ett bolag med kastade intäkter har fundamentalt noll massa: varje momentumutslag är brus. AK1TS-RAD: Trend-dimensionen × fem horisonter — motorn läser hastigheten (momentum 5/63/252) och regimen (MA50/MA200) som två olika frågor, precis som Pring läser momentum och trend som två olika verktyg."
+        },
+        {
+          "type": "insikt",
+          "content": "Priset är läget, momentumet hastigheten, volymen massan. Ingen av de tre är viktigare än de andra — men de SKILJER sig i tiden: hastigheten vänder först, läget sist. Den som läser läget och inte hastigheten får vändningen serverad i efterhand."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Pris mot momentum — två frågor, två kurvor\",\"rader\":[[\"Egenskap\",\"Pris (läget)\",\"Momentum (hastigheten)\"],[\"Frågar\",\"VAR är kursen?\",\"HUR SNABBT rör den sig?\"],[\"Enhet\",\"nivå — kronor, punkter\",\"förändringstakt — kvot, procent\"],[\"Beteende\",\"trendar — följer sin egen väg\",\"oscillerar — svänger kring mittlinje\"],[\"Ledning\",\"—\",\"vänder i regel FÖRE priset\"],[\"Bäst för\",\"riktning, nivåer, stopp\",\"varning, timing, förändring\"],[\"Sämst för\",\"att säga när det är SLUT\",\"att säga VART det ska\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Trestegsobservationen: hitta i historiken en aktie som toppat och vänt ned för minst ett halvår sedan. Markera datumet för pristoppen. Gå tillbaka i grafen och fastställ när uppgången senast gjorde ett tydligt kortare steg per vecka (momentum-topp — eller lägg en enkel ROC om du redan kan: kurs nu delat med kurs för tio veckor sedan, ritad som kurva). Skriv de två datumen: hur många veckor skilde? Det är vändningens förlopp — steg ett före steg tre — och avståndet mellan dem är all tid momentum-läsaren köper sig."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad motsvarar MASSAN i rörelsemängdens fysik på marknaden?",
+          "alternativ": [
+            "Priset",
+            "Antal aktier i bolaget",
+            "Deltagandet — volym, kapital, bredd",
+            "Direktavkastningen"
+          ],
+          "ratt": 2,
+          "tips": "p = massa × hastighet; massan är det som ger tröghet — på marknaden är det de som faktiskt handlar."
+        },
+        {
+          "q": "Vad är vändningens förlopp i tre steg enligt momentum-filosofin?",
+          "alternativ": [
+            "Pris vänder, sedan momentum, sedan volym",
+            "Momentum vänder, priset stannar/sidledes, priset vänder",
+            "Volymen vänder sist av allt",
+            "Alla tre vänder samtidigt"
+          ],
+          "ratt": 1,
+          "tips": "Bilen bromsar (momentum), rullar ännu framåt (sidledes), och svänger till sist (pris)."
+        },
+        {
+          "q": "Hur lyder arbetsfördelningen momentum mot trend?",
+          "alternativ": [
+            "Trenden för timing, momentum för riktning",
+            "Båda för riktning, ingen för timing",
+            "Momentum för timing, trenden för riktning — aldrig tvärtom",
+            "Momentum ersätter trenden i starka marknader"
+          ],
+          "ratt": 2,
+          "tips": "Bokkanon-läxa nummer två, rakt ur bk-060."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Tre tidsdimensioner — Prings klockor och AK1TS fem horisonter",
+      "intro": "Prings kanske mest inflytelserika bidrag — den som gör momentumbegreppet hanterbart: varje prisserie lever i TRE tidslängder samtidigt, och varje trend är barn till nästa längre. Kapitlet går igenom de tre dimensionerna och kopplar dem, rakt av, till AK1TS fem horisonter — för Prings klockor är bokstavligen analys-motorns rader.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Prings tre nivåer, med hans egna typiska längder. KORTTERM: dagar till cirka tre veckor — reaktioner och rallyn, brusets yttersta lager. INTERMEDIÄR: cirka tre veckor till sex månader — cykelns arbetshäst, nivån där de flesta momentum-signaler faktiskt lever och dör. LÅNG (primär): sex månader till flera år — regimen, den som avgör om intermediära svängar ska handlas som köpläge eller som möjlighet att sälja. Och därutöver skiljer Pring på den SEKULÄRA nivån — årtiondenas supercykel, som avgör om primärtrenden är en korrigeringsvåg i något mycket större. Tre huvudklockor plus den sekulära bakgrunden: det är systemet."
+        },
+        {
+          "type": "text",
+          "content": "Nesting-principen — kursens namn för den är tre-tredjedels-modellen: varje trendnivå rullar ut i svängningar på nästa kortare nivå, grovt i tre ben — två i huvudriktningen, ett mot — och den kortare nivåns typiska längd är i storleksordningen en tredjedel av den längre. En intermediär uppgång är sällan en rak linje: den är två korta rallyn med en reaktion emellan. En primärupptrend är några intermediära vågor med nedgångar emellan. Två konsekvenser, båda Prings: för det första går INGEN vändning från noll till hundra — den korta nivån vänder först, därefter den intermediära, därefter den primära; momentumet på varje nivå är den tidigaste rökundan. För det andra är tumregeln TUMREGLER: tre ben är ett genomsnitt, inte ett urverk; när den fjärde korta svängen kommer är det ingen lag som brutits."
+        },
+        {
+          "type": "text",
+          "content": "Och nu kopplingen som gör det här kapitlet till kursens motorrum: AK1TS fem horisonter är Prings klockor, specificerade och deterministiskt räknade. Mikro och Kort täcker Prings kortterm (intradag till veckor); Medellång är hans intermediära nivå; Lång är hans primära trend; Mega är den sekulära bågen. Analys-motorn mäter momentum 5, 63 och 252 dagar och klassificerar vågen mot MA50 (Mikro, Kort) och MA200 (Medellång, Lång, Mega) — fem klockor, varje körning, samma svar. Prings regel att INTERMEDIÄRT momentum ska tolkas i ljuset av den PRIMÄRA trenden är alltså i motorn inte en rekommendation utan en arkitektur: de korta horisonternas celler läses alltid bredvid de längre horisonternas. Skillnaden: Pring ger tre klockor och en uppmaning; AK1TS ger fem och en matris."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · Vågfundamentet — varje V-variabel som tidsserie i fem horisonter. Precis som priset har V01 Försäljningstillväxt en Mikro-berättelse (kvartal mot kvartal), en Medellång (rullande år) och en Mega (decenniets tillväxtbana) — och poängen är densamma som för pris: en V08-marginal som 'vänder' på kvartalsnivå är bara en kort sväng om den Medellånga trenden är intakt. Tre-tredjedels-modellen gäller fundamentalen lika bokstavligt som kursen. AK1TS-RAD: hela horisonttrappan Mikro till Mega — fem klockor per teori per dimension; Prings tre nivåer är motorns fem, och den extra upplösningen är priset för determinism: inga nivåer får hoppas fram, alla räknas."
+        },
+        {
+          "type": "insikt",
+          "content": "Det finns inte EN trend — det finns minst tre igång samtidigt, och de kan peka olika håll utan att någon har fel: en kort reaktion i en intermediär uppgång i en primär nedtrend är tre sanningar på en och samma graf. Fråga alltid: vilken klocka läser jag — och vad säger klockan ovanför?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prings klockor × AK1TS horisonter\",\"rader\":[[\"Prings nivå\",\"Typisk längd\",\"Kännetecken\",\"AK1TS-horisont\",\"Motorns rader\"],[\"Kortterm\",\"dagar till ~3 veckor\",\"reaktioner och rallyn; brusets lager\",\"Mikro + Kort\",\"momentum 5 · MA50\"],[\"Intermediär\",\"~3 veckor till 6 månader\",\"cykelns arbetshäst; momentum-signaler lever här\",\"Medellång\",\"momentum 63 · MA50/MA200\"],[\"Lång (primär)\",\"6 månader till flera år\",\"regimen — hausse eller baisse\",\"Lång\",\"momentum 252 · MA200\"],[\"Sekulär\",\"årtionden\",\"den stora bågen; primära trendens tak\",\"Mega\",\"MA200 · Tid-dimensionen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Klockkupan: ta en aktie och skriv tre rader — Lång: priset mot MA200, stigande eller fallande linje? Medellång: priset mot MA50 och senaste kvartalets karaktär (impuls, korrigering eller bas)? Kort: senaste två-tre veckornas sväng. Skriv en enda mening av typen 'kort reaktion i medellångt basbygge under en lång nedtrend'. Jämför med en kollega på samma aktie: fick ni samma mening? Om inte — vilket steg i trappan läste ni på olika sätt?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Prings typiska längd på en intermediär trend?",
+          "alternativ": [
+            "Timmar till en dag",
+            "Cirka tre veckor till sex månader",
+            "Fem till tio år",
+            "Exakt ett år"
+          ],
+          "ratt": 1,
+          "tips": "Kort: dagar till tre veckor; intermediär: tre veckor till sex månader; primär: sex månader uppåt."
+        },
+        {
+          "q": "Vad innebär tre-tredjedels-modellen (nesting-principen)?",
+          "alternativ": [
+            "Att tre indikatorer alltid ska bekräfta varandra",
+            "Att en trend består av ungefär två veckor",
+            "Att varje trendnivå rullar ut i grovt tre svängningar på nästa kortare nivå — två i huvudriktningen, en mot",
+            "Att börsen bara är öppen en tredjedel av dygnet"
+          ],
+          "ratt": 2,
+          "tips": "Nivåerna nästlas i varandra; tre ben är tumregel, inte urverk."
+        },
+        {
+          "q": "Hur förhåller sig AK1TS fem horisonter till Prings tre nivåer?",
+          "alternativ": [
+            "De är något helt annat",
+            "Mikro/Kort = kortterm, Medellång = intermediär, Lång = primär, Mega = sekulär — samma klockor, deterministiskt räknade",
+            "AK1TS har bara en horisont",
+            "Prings nivåer gäller bara råvaror"
+          ],
+          "ratt": 1,
+          "tips": "Fem klockor i motorn motsvarar tre hos Pring plus den sekulära bågen — specificerade och räknade varje körning."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "ROC — konstruktionen och räkneövningen",
+      "intro": "Nu räkningen. Rate of change är momentummätningens atom: en enda division, förståelig på tio sekunder — och ändå rymmer den alla tolkningsfrågor kursen handlar om. Kapitlet bygger ROC från grunden, visar de två formerna (differens och kvot), förklarar varför Pring föredrar kvoten — och låter dig räkna för hand.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Två former, en idé. MOMENTUM i snäv bemärkelse: dagens kurs MINUS kursen för N perioder sedan — en differens i kronor eller punkter. ROC: dagens kurs DELAT med kursen för N perioder sedan, gånger hundra — en kvot. Båda mäter samma hastighet; skillnaden är jämförbarheten. En differens på plus 36 kronor är stor för en aktie på 50 och obetydlig för en aktie på 2 000; kvoten 130 (trettio procent på tolv perioder) betyder detsamma oavsett prisnivå. Pring föredrar därför ROC-kvoten, och kursen följer honom: det är den form analys-motorn och i princip alla chartprogram ritar. Intervallens längd väljs per tidsdimension: typiskt 10 till 14 dagar för korta, 10 till 15 veckor (tretton är vanligt) för intermediära, 12 till 24 månader för långa cykler — ju längre intervall, desto lugnare kurva och desto större det den säger något om."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"ROC-räkneexempel — tre fall, tolv perioders intervall\",\"rader\":[[\"Fall\",\"Kurs idag\",\"Kurs för 12 perioder sedan\",\"Momentum (differens)\",\"ROC (kvot × 100)\"],[\"A — stigande\",\"156\",\"120\",\"+36\",\"156/120 × 100 = 130\"],[\"B — fallande\",\"98\",\"140\",\"−42\",\"98/140 × 100 = 70\"],[\"C — i princip plant\",\"205\",\"200\",\"+5\",\"205/200 × 100 = 102,5\"]]}"
+        },
+        {
+          "type": "text",
+          "content": "Läs tabellen som tre diagnoser. Fall A: kvoten 130 — kursen rör sig uppåt med trettio procent på tolv perioder; hastigheten är positiv och kraftig. Fall B: kvoten 70 — trettio procent NED; mätaren ligger under sitt referenstal hundra, vilket är ROC:s sätt att säga nedtrend. Fall C: 102,5 — i princip plant; mätaren står på mittlinjen. Notera det strukturella: ROC-kvoten svänger runt 100 (inte 0 — det är differensens mittlinje), och samma prissteg i absoluta tal ger mindre utslag på kvoten när basen växt. DET är vad som gör ROC till en hastighetsmätare och inte bara en förändringssiffra: den relaterar rörelsen till sin egen bas."
+        },
+        {
+          "type": "text",
+          "content": "Två praktiska varningar innan tolkningskapitlet. Ett — valet av referensperiod avgör BUDSKAPET: en 5-dagars ROC svänger med bruset och säger något om dagar; en 63-dagars om kvartalet; en 252-dagars om regimens fart. Att läsa en kort ROC som om den vore en cykelsignal är kursens vanligaste nybörjarfel. Två — ROC jämför bara två punkter: idag och för N perioder sedan. Allt däremellan är osynligt för formeln; en tillfällig spike tolv perioder sedan kan måla om hela bilden. Därför utjämnar Pring ofta ROC med ett kort glidande medelvärde (det är också hela hemligheten bakom KST, kapitel 6). Kvotens matematik är trivial — tolkningen är allt, och den är nästa kapitel."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01 Försäljningstillväxt, igen — men nu från räkningssidan: sätt in omsättningen i år och förra året i tabellens formel och du har beräknat fundamentalens ROC, exakt som AKM1 gör. V02 ARR-tillväxt är samma beräkning på återkommande intäkter — en ROC på den del av intäkterna som har störst massa (V12-stabilitet). Fortsättningen: rita V01 för sex år som en kurva, inte som sex staplar — och läs den som Pring läser en ROC: toppar, dalar, mittlinje. AK1TS-RAD: momentum-raderna 5/63/252 — kort, intermediär och lång ROC på priset, deterministiskt; den här gången vet du EXAKT vad motorn räknar, för du har gjort det för hand."
+        },
+        {
+          "type": "insikt",
+          "content": "ROC är en division — men divisionen frågar något djupt: hur förhåller sig rörelsen till sin egen bas? Därför är kvotens mittlinje hundra, inte noll: helheten är referensen. Räkna den en gång för hand och du äger formeln; tolka den resten av livet."
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna en ROC-serie för hand: hämta en akties slutkurser för de senaste 26 veckorna. Beräkna för var och en av de senaste 14 veckorna kvoten (kurs nu / kurs för 12 veckor sedan) × 100 — fjorton divisioner, kalkylblad eller papper. Rita kurvan och markera: högsta värdet, lägsta, senaste korsningen av 100-linjen. Jämför med kursgrafen: kom ROC:s topp FÖRE kursens topp? Det är kapitel 9:s hela teori, nu i din egen handstil."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur beräknas ROC i den form Pring föredrar?",
+          "alternativ": [
+            "Dagens kurs minus 50-dagarsmedelvärdet",
+            "Dagens kurs delat med kursen för N perioder sedan, gånger hundra",
+            "Volymen delat med kursförändringen",
+            "Högsta minus lägsta under perioden"
+          ],
+          "ratt": 1,
+          "tips": "Kvotformen är jämförbar mellan aktier oavsett prisnivå — differensen är det inte."
+        },
+        {
+          "q": "Vad är mittlinjen för ROC-kvoten — och varför?",
+          "alternativ": [
+            "Noll, för att negativa tal inte finns",
+            "Femtio, eftersom skalan är 0–100",
+            "Hundra — kursen lika med kursen då; förändringen noll",
+            "Sjuttio, som RSI:s överköptgräns"
+          ],
+          "ratt": 2,
+          "tips": "X/X × 100 = 100: oförändrat pris läser av som hundralinjen."
+        },
+        {
+          "q": "Kursen är 98 och var 140 för tolv perioder sedan. Vad visar ROC?",
+          "alternativ": [
+            "70 — kursen fallit cirka trettio procent på intervallet",
+            "142",
+            "−42 i kvotform",
+            "98"
+          ],
+          "ratt": 0,
+          "tips": "98/140 × 100 = 70 — under hundralinjen: nedtrendens hastighet."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "ROC — tolkningen: fem tekniker och trendens kontext",
+      "intro": "Konstruktionen tog en division; tolkningen tar resten av boken. Prings momentum-tolkning är berömd för sin kontextberoende stringens: samma utslag betyder olika saker på olika ställen i cykeln. Kapitlet går igenom de fem teknikerna — och den regel som sticker ut: i en stark trend betyder extremzon STYRKA, inte vändning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Prings fem tolkningstekniker, i grov ordning efter nyttjande. ETT — extremzoner med trendkontext: ROC når högt över eller djupt under sitt normala svängningsområde; men utslaget tolkas olika beroende på var i cykeln det inträffar (tabellen nedan och kapitel 10 äger detta). TVÅ — nollinjekorsningar (hundralinjen i kvotform): ett rent trendföljande jobb; korsningar uppåt i en intermediär cykel vars längre trend pekar uppåt är lägen, korsningar nedåt varningar. TRE — divergensen: priset gör ny topp, ROC inte — bokens starkaste enskilda signal (kapitel 9 äger den helt). FYRA — momentum-trendlinjer: en trendlinje i ROC-kurvan bryts i regel FÖRE motsvarande linje i priset — den tidigaste vinkningen. FEM — momentum-kurvans egna toppar och dalar: stigande toppar i ROC under en uppgång bekräftar; FALLANDE toppar medan prisets stiger är divergensens tysta början."
+        },
+        {
+          "type": "text",
+          "content": "Den regel som förvånar mest och som bokkanon lyfter som egen läxa: extremzonens KONTEXT. Tidigt i en ny trend — precis efter en bottenvändning — är ett KRAFTIGT överköpt-utslag ett STYRKETECKEN: de första rörelserna i en ny trend är dess starkaste, och att sälja på utslaget är att sälja det bästa läget. Sent i en moden trend — efter många svängar, lång tid, stor procentuell utveckling — är samma utslag följt av en DIVERGENS ett utmattningstecken: kraften sinar. Och i en nedtrend är återkommande översålda utslag inga köpsignaler utan bevis på säljtryck. Uttaget: extremzonens betydelse avgörs av CYKELPOSITIONEN — hur länge och hur långt trenden gått — inte av utslaget självt. Bokkanon-läxa tre, ordagrant: översålda och överköpta nivåer betyder ingenting i en stark trend; kolla cykelpositionen först."
+        },
+        {
+          "type": "text",
+          "content": "Tredje tekniken förtjänar en egen urskiljning här eftersom den ofta förväxlas: nollinjekorsning är TRENDFÖLJANDE och därmed eftersläpande i vändningar men pålitlig i trend; divergensen är TIDIG men kräver bekräftelse. De kompletterar varandra: divergensen varnar, nollinjekorsningen (eller prisets eget trendlinjebrott) bekräftar. Prings praktiska rådgivning i en mening: låt varningar utan bekräftelse förbli varningar. Kursen formulerar det som tre-lag: VARNING (divergens), BEKRÄFTELSE (nollinje-/linjebrott), REGIM (MA200-läge) — och ingen av de tre ensam är en affär. Det är samma tålamodsstruktur som motorn bygger: en Mikro-varning utan Medellång-bekräftelse är just bara en rad i matrisen."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V08 EBITDA-marginal och V09 ROE — de två marginalvariabler vars SVÄNGNINGAR tolkas med exakt samma teknikregister: en marginaltopp på STIGANDE nivåer (fortfarande historiskt lågt) är styrka; en marginaltopp på REKORDNIVÅER efter års expansion är en utmaning för fortsättningen (medelreversion väntar). Cykelpositionen styr tolkningen på fundamentalen precis som på priset. AK1TS-RAD: Trend-dimensionens momentum-rader — motorn registrerar svängningar utan att döma dem; tolkningen sker i Brytpunkts-dimensionen och horisonttrappan, precis som Pring separerar mätning från läsning."
+        },
+        {
+          "type": "insikt",
+          "content": "En ROC-kurva är en tolkningsuppgift i två steg: VAD gör mätaren (extrem, korsning, divergens, linjebrott) och VAR i cykeln gör den det. Steg ett utan steg två är myntkast — det är där överköpt-myten föds och dör."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"ROC-tolkning — fem tekniker\",\"rader\":[[\"Teknik\",\"Vad du ser\",\"Tolkning\"],[\"Extremzon + kontext\",\"ROC utanför normalt område\",\"styrka tidigt i trend; utmattning sent med divergens (kap 10)\"],[\"Nollinjekorsning\",\"ROC korsar 100\",\"trendföljande signal — i huvudriktningens längre trend\"],[\"Divergens\",\"pris ny topp, ROC lägre\",\"starkaste VARNINGEN — kräver bekräftelse (kap 9)\"],[\"Momentum-trendlinje\",\"linje i ROC bryts\",\"tidigare än prislinjen — höj vaksamheten\"],[\"ROC:s egna toppar/dalar\",\"stigande eller fallande svängtoppar\",\"bekräftelse eller början till divergens\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Femteknik-övningen: ta den ROC-serie du räknade i kapitel 4 (eller räkna en ny på tolv veckor). Gå igenom de fem teknikerna systematiskt och skriv en rad per teknik: extremzoner (fanns? var i cykeln?), nollinjekorsningar (datum), divergens mot pris (ja/nej), momentum-trendlinje (bruten?), svängtoppar (stigande eller fallande?). Summera till en enda mening av typen 'varning utan bekräftelse i intakt upptrend'. Jämför med vad du AKTUELLT tycker om aktien — och notera var magkänslan och tekniken skiljer sig."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder ett kraftigt överköpt ROC-utslag precis efter en bottenvändning?",
+          "alternativ": [
+            "Sälj omedelbart — utslaget är för högt",
+            "STYRKA — de första rörelserna i en ny trend är dess starkaste",
+            "Ingenting — signaler gäller bara vid bottnar",
+            "Att bolaget snart betalar utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Kontexten cykelposition avgör: tidigt = styrka, sent med divergens = utmattning."
+        },
+        {
+          "q": "Vilken av de fem teknikerna är TRENDFÖLJANDE (och därmed eftersläpande men pålitlig)?",
+          "alternativ": [
+            "Divergensen",
+            "Momentum-trendlinjen",
+            "Extremzonen",
+            "Nollinjekorsningen (ROC korsar 100)"
+          ],
+          "ratt": 3,
+          "tips": "Korsningen sker efter att rörelsen redan ändrats — därför kompletteras den av divergensens tidiga varning."
+        },
+        {
+          "q": "Vad är relationen mellan VARNING och BEKRÄFTELSE i Prings läsning?",
+          "alternativ": [
+            "Varningen räcker som order",
+            "Bekräftelsen behövs aldrig om divergensen är tydlig",
+            "Varningen (t ex divergens) ska bekräftas (nollinje-/linjebrott) innan den blir handling",
+            "Bekräftelse gäller bara på veckograf"
+          ],
+          "ratt": 2,
+          "tips": "Tre-lag: varning, bekräftelse, regim — ingen ensam är en affär."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "KST — konstruktionen: fyra tidsvägda momentum i en kurva",
+      "intro": "Prings signatur. KST — Know Sure Thing — är hans eget svar på momentumets eviga dilemma: korta intervall ger tidiga men brusiga signaler, långa ger pålitliga men sena. Lösningen: fläta IHOP fyra ROC:er av olika längd till en enda tidsvägd kurva. Kapitlet bygger indikatorn steg för steg, vikttabellen inkluderad — det är kursens mest tekniska kapitel, och det belönas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Problemet den löser. En 10-dagars ROC svarar snabbt men pendlar med bruset; en 24-månaders ROC är majestätisk men upptäcker ettårsförändringar först när halva rörelsen gått. Valet mellan dem är en avvägning — och Pring vägrade välja: han tog fyra ROC:er som täcker spektrumet, utjämnade var och en med ett kort glidande medelvärde (det slätar enskilda spikes, jämför kapitel 4:s varning), och vägde ihop dem med stigande vikter: den kortaste komponenten väger lägst, den längsta högst. Resultatet är en kurva som beter sig som ett intermediärt momentum i kortsiktiga svängningar men vars stora vändningar är förankrade i längre tidsdimensioner — flera tiders säkerhet FLÄTAD till en enda kurva."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"KST-vikttabellen — standardversionerna\",\"rader\":[[\"Version\",\"Komponent\",\"ROC-period\",\"Utjämning (SMA)\",\"Vikt\"],[\"Kort (dag)\",\"1\",\"10 dagar\",\"10 dagar\",\"1\"],[\"Kort (dag)\",\"2\",\"15 dagar\",\"10 dagar\",\"2\"],[\"Kort (dag)\",\"3\",\"20 dagar\",\"10 dagar\",\"3\"],[\"Kort (dag)\",\"4\",\"30 dagar\",\"15 dagar\",\"4\"],[\"Lång (månad)\",\"1\",\"9 månader\",\"6 månader\",\"1\"],[\"Lång (månad)\",\"2\",\"12 månader\",\"6 månader\",\"2\"],[\"Lång (månad)\",\"3\",\"18 månader\",\"6 månader\",\"3\"],[\"Lång (månad)\",\"4\",\"24 månader\",\"9 månader\",\"4\"],[\"Båda\",\"signallinje\",\"9 perioders SMA av KST\",\"—\",\"—\"]]}"
+        },
+        {
+          "type": "text",
+          "content": "Konstruktionen steg för steg, månadsversionen som exempel: ett — beräkna fyra ROC:er för varje månad: 9, 12, 18 och 24 månaders kvoter (kapitel 4:s division). Två — utjämna varje ROC-serie: 9- och 12-månaders med ett 6-månaders SMA, 18-månaders med 6, 24-månaders med 9. Tre — multiplicera med vikterna: ett, två, tre, fyra — de längre perioderna dominerar summan (vikterna summerar till tio; de två längsta komponenterna bär sjutti procent). Fyra — addera: KST. Fem — beräkna en 9-månaders SMA av KST: signallinjen. Dagversionen följer samma arkitektur med 10/15/20/30 dagars-ROC:er. Notera DESIGNEN: vikterna gör KST till en tidsvägd röst — den korta termen får tala men inte bestämma, den långa får bestämma. Det är kapitel 3:s nesting-princip omgjord till aritmetik."
+        },
+        {
+          "type": "text",
+          "content": "Och nu den ekosystem-koppling som gör KST mer än en kuriositet: KST är i miniatyr exakt vad AK1TS-matrisen gör i full skala. Motorn väger inte ihop allt till EN siffra — den håller fem horisonter åtskilda i tjugofem celler, just för att olika beslut behöver olika klockor — men PRINCIPEN är densamma: flera tidslängder, tydlig hierarki, de längre dimensionerna som bas och de kortare som timing. Skillnaden är filosofisk och medveten: Pring komprimerar för att ögat ska se en linje; motorn separerar för att cellerna ska vara granskningsbara. Komprimering är pedagogik — separation är determinism."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V02 ARR-tillväxt + V12 Intäktsstabilitet — fundamentets tidsvägda röst: ARR-trenden (rullande, flera perioder) mot engångskvartalet är viktningstänket på fundamentalen; V12 är massan som gör den vikten meningsfull. AK1TS-RAD: hela horisonttrappan — KST i en kurva, matrisen i tjugofem celler, samma DNA."
+        },
+        {
+          "type": "insikt",
+          "content": "KST:s genialitet ligger inte i formlerna utan i VIKTERNAS budskap: den korta tiden får tala, den långa får bestämma. Alla beslut som blandar ihop den ordningen — som låter dagens brus styra årsbeslut — är en omvänd KST, och omvända KST:er förlorar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Pappers-KST: ta månadsdata (24+ månader) för ett index. Räkna för de senaste sex månaderna de fyra ROC-kvoterna (9/12/18/24 månader), utjämna grovt genom att använda tre-månaders genomsnitt av varje ROC, vikta 1-2-3-4 och addera. Du har nu sex KST-värden — rita dem och en enkel signallinje (tre-månaders medel av KST). Enklare än Prings exakta recept, men du har byggt en tidsvägd momentum-kurva med egna händer — och nästa kapitels signaler blir dina."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken komponent väger TYNGST i KST?",
+          "alternativ": [
+            "Den kortaste ROC-perioden",
+            "Den längsta ROC-perioden",
+            "Alla väger lika",
+            "Signallinjen"
+          ],
+          "ratt": 1,
+          "tips": "Vikterna 1-2-3-4: den längsta tiden får bestämma, den kortaste får tala."
+        },
+        {
+          "q": "Vilka ROC-perioder ingår i den LÅNGA (månads-) versionen av KST?",
+          "alternativ": [
+            "9, 12, 18 och 24 månader",
+            "10, 15, 20 och 30 dagar",
+            "5, 20 och 200 dagar",
+            "3, 6 och 12 veckor"
+          ],
+          "ratt": 0,
+          "tips": "Dagversionen har 10/15/20/30; månadsversionen 9/12/18/24 — tabellen i kapitlet."
+        },
+        {
+          "q": "Vad är relationen mellan KST och AK1TS-matrisen?",
+          "alternativ": [
+            "Ingen — de mäter olika saker",
+            "KST komprimerar flera tidslängder till en kurva; matrisen håller dem åtskilda i celler — samma princip, olika filosofi (öga mot granskning)",
+            "AK1TS är en förenkling av KST",
+            "KST ersätter matrisen i motorn"
+          ],
+          "ratt": 1,
+          "tips": "Komprimering är pedagogik; separation är determinism — DNA:t är dock detsamma: tidsvägd hierarki."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "KST — tolkningen: signaler, nollinjan och ironin i namnet",
+      "intro": "Indikatorn byggd i förra kapitlet levereras nu: hur läses den? KST tolkas i huvudsak som vilken momentumkurva som helst — korsningar, nolllinje, divergens — men med en egen personlighet: den är långsammare och stabilare än sina komponenter, och just därför bäst på att bekräfta cykelvändningar snarare än att pricka dem. Och namnet: Know Sure Thing är ett SKÄMT — det är halva visdomen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Signalerna, i stigande vikt. ETT — KST korsar sin signallinje: den kortaste signalen, en timing-vändning; användbar men i sig svag, särskilt i sidledes marknad där även utjämnade kurvor piskar. TVÅ — KST korsar nollinjen: mittfyndet; när en tidsvägd summa av fyra ROC:er passerar noll betyder det att rörelsens TYNGDPUNKT skiftat — en trendföljande signal av kvalitet, i synnerhet när den sammanfaller med längre trendens riktning. TRE — divergens mot pris vid extremzoner: starkast; när priset gör ny topp men KST (som bär 24-månaderstyngden!) gör lägre topp har flera tidsdimensioner SAMTIDIGT tappat fart — det är en cykelvarning, inte en dagsvarning. Månads-KST:ns vändningar hör hemma på månader och kvartal; den som handlar dem på dagar har läst fel klocka."
+        },
+        {
+          "type": "text",
+          "content": "Namnet förtjänar sin plats. KST står för Know Sure Thing — vet säkert — och Pring, en av branschens torraste humorister, valde namnet med riktad ironi: INGET är en sure thing. Indikatorn är byggd för att ge högre träffsäkerhet än en ensam ROC (därför vet), men den misslyckas fortfarande — särskilt i två miljöer: starka trender (där KST kan ligga över noll i åratal och varje kort korsning neråt är brus) och plötsliga volatilitetschocker (där alla fyra komponenter vräks samtidigt och den utjämnade kurvan blir sen). Prings egen användning är därför blygsam: KST bekräftar cykelposition och varnar vid vändningar — den ersätter inte trendanalys, volym eller — i hans eget arbete — konjunkturcykeln. Bokens läxa två igen, i KST-utförande: momentumet för timing, trenden för riktning."
+        },
+        {
+          "type": "text",
+          "content": "Varför då använda den överhuvudtaget? För stabiliteten. Fyra utjämnade komponenter gör att KST:ns SVÄNGNINGAR är pålitligare än en ensam ROC:s: färre falska nollinjekorsningar, tydligare divergenser, och — praktiskt nog — en kurva som fungerar UTMARKTAT på index och sektorer (kapitel 12), där underliggande brus redan slätats av hundratals kurser. Det är ingen slump att månads-KST på ett brett index är en av de mest citerade diagrambilderna i Prings publicerade arbete: den ryms i en bild och berättar en kvartalshistoria. I AK1TS-vokabulär: KST är en utmärkt Mikro-till-Medellång ÖGON-sammanfattning — men motorn litar inte till sammanfattningar; den räknar rader, varje körning, och skriver osatt när underlaget tryter."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V16 Produktlanseringar och V17 Avtal & Partnerskap — katalysatorernas timing-våning: en fundamental katalysator (lansering, avtal) är i momentum-termer en HASTIGHETSÖKNING på V01 — den som inträffar tidigt i en fundamental basbyggesfas (KST-logik: kort tidslängd vänder först) är en annan historia än samma katalysator sent i en moden expansion. Viktningen av tidslängd gäller katalysatorn också. AK1TS-RAD: Trend-dimensionens momentum-rader + Brytpunkt — KST-korsningar är brytpunkter i momentumrymden; motorn fångar deras ingredienser (5/63/252) som separata celler och lämnar summeringen till läsaren."
+        },
+        {
+          "type": "insikt",
+          "content": "Know Sure Thing är ett namn valt i ironi — och ironin är indikatorns bruksanvisning: KST höjer sannolikheten, den tar inte bort osäkerheten. Läs den som cykelpositionsvisare, aldrig som order."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"KST-signaler — tre nivåer\",\"rader\":[[\"Signal\",\"Vad den säger\",\"Styrka\"],[\"KST korsar signallinjen\",\"korts timing-vändning inom cykeln\",\"svag–medel; piskar i range\"],[\"KST korsar nollinjen\",\"flera tidsdimensioners tyngdpunkt skiftat\",\"medel–stark; trendföljande\"],[\"Extremzon + divergens mot pris\",\"lång cykel tappar fart — flera tidsnivåer samtidigt\",\"starkast — men en VARNING som kräver bekräftelse\"],[\"KST fastnar ena sidan noll\",\"regim — gränser och korsningar betyder mindre\",\"information om trendstyrka, ej signal\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ironi-testet: ta din pappers-KST från kapitel 6 (eller ritad i ett chartprogram) på ett index, senaste fem åren om möjligt. Räkna: hur många signallinjekorsningar? Hur många av dem följdes av en rörelse värd namnet? Hur många nollinjekorsningar, och deras träff? Skriv KST:s träffprocent per signalnivå för just det intervallet — din egen empiri av namnets ironi. Spara siffrorna: kontroverskapitlet (14) kommer att fråga efter dem."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder det när KST korsar NOLLINJEN?",
+          "alternativ": [
+            "Ingenting — nollan saknar betydelse i KST",
+            "Att den kortaste ROC-perioden vänt",
+            "Att rörelsens tyngdpunkt skiftat — de tidsvägda komponenternas summa bytte sida",
+            "Att bolaget gått med vinst"
+          ],
+          "ratt": 2,
+          "tips": "Fyra komponenters viktade summa passerar noll: ett skift av tyngdpunkt, inte dagsbrus."
+        },
+        {
+          "q": "Varför är namnet Know Sure Thing ironiskt?",
+          "alternativ": [
+            "Därför att KST aldrig ritas",
+            "Därför att inget är en sure thing — indikatorn höjer sannolikheten men tar inte bort osäkerheten",
+            "Därför att Pring ogillade indikatorn",
+            "Därför att namnet är en förkortning för nio andra ord"
+          ],
+          "ratt": 1,
+          "tips": "Pring valde namnet med riktad humor — ironin är bruksanvisningen."
+        },
+        {
+          "q": "I vilka miljöer misslyckas KST mest?",
+          "alternativ": [
+            "I starka trender (fastnar ena sidan noll) och i plötsliga volatilitetschocker (alla komponenter vräks samtidigt)",
+            "På månadsdata",
+            "På index",
+            "När den kombineras med trendanalys"
+          ],
+          "ratt": 0,
+          "tips": "Utjämning är ett löfte om lugn — och ett löfte som blir dyrt när chocken kommer."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "MACD som momentum — skillnaden mellan två medelvärden",
+      "intro": "Boken äger inte MACD — Gerald Appel skapade den i slutet av 1970-talet — men Pring äger dess LÄSNING som momentumindikator, och den läsningen är kursens bästa chans att förstå varför världens mest använda indikator överhuvudtaget fungerar: skillnaden mellan två medelvärden är en hastighet. Kapitlet bygger bron från ROC till MACD, och därifrån till verktygsjämförelsen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen i en mening: MACD-linjen är det korta exponentiella medelvärdet (standard tolv perioder) MINUS det långa (tjugosex). Fundera på vad den subtraktionen gör: två medelvärden följer priset med olika eftersläpning; när trenden accelererar drar det korta ifrån det långa och skillnaden VÄXER; när trenden avtar krymper skillnaden — även medan priset fortfarande stiger. Skillnaden mellan två medelvärden är alltså en avståndsmätare som växer och krymper med prisets fart: en hastighetsmätare i förklädnad. Appel lade till signallinjen — ett nio-perioders EMA av MACD — vars korsningar ger timing; och histogrammet — MACD minus signal — som visar förändringen I hastighetsmätaren: accelerationen. Pris, hastighet, acceleration: hela kapitel 2:s fysik i en enda standardindikator."
+        },
+        {
+          "type": "text",
+          "content": "Prings läsning, tre regler. Ett — nollinjen är trendgränsen: MACD över noll betyder korta medelvärdet över det långa, alltså hausse-regim lokalt; korsningar av noll är de trendföljande signalerna (exakt KST:s noll-logik — båda mäter om tyngdpunkten bytt sida). Två — signallinjekorsningarna är TIMING, och de är som bäst när de sker på RÄTT sida om noll: en korsning uppåt UNDER noll (djupt i negativt territorium) är ofta bara en reaktion i nedtrend; samma korsning ÖVER noll är en trendbekräftad signal. Tre — histogrammets toppar och dalar vänder före MACD:s: konvergens mellan histogram och pris är bokens divergens-teknik (kapitel 9) applicerad en derivata djupare — accelerationen varnar före hastigheten, hastigheten före läget. Tre våningar av samma varningstorn."
+        },
+        {
+          "type": "text",
+          "content": "Jämförelsen som kursen vill att du kan utantill (tabellen). ROC: rå hastighet — snabbast, brusigast, ingen utjämning alls. MACD: utjämnad hastighet via två EMA — stabilare, eftersläpande, pålitligast i trender. KST: FLERA utjämnade hastigheter, tidsvägda — den enda som bär flera tidslängder i sig. Pring presenterar dem i den ordningen i boken, och ordningen är en progression: varje steg köper stabilitet till priset av fördröjning. Ingen av dem är bättre i absolut — de är olika punkter på samma skala mellan tidighet och pålitlighet. Valet mellan dem är en beslutsfråga (vad handlar du, på vilken klocka?) — och motorn svarar som alltid med separation: alla tre finns som rader, ingen behöver väljas bort."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V07 Bruttomarginal — marginalserien som EMA-objekt: kvartalsbrus jämnas av rullande medelvärden, och förändringen I marginaltrenden (växer den allt snabbare? avtar tillväxten?) är fundamentets MACD-fråga. Vågfundamentet gör exakt det: impulsvåg/korrigering/basbygge på V07-serien är hastighetsläsning på fundamentalen. AK1TS-RAD: Trend-dimensionen — MA50/MA200-klyftan (priset mot medelvärdena, medelvärdena mot varandra) är motorns släkting till MACD; momentum-raderna 5/63 är hastighetsmätning i två tidslängder, deterministiskt."
+        },
+        {
+          "type": "insikt",
+          "content": "MACD är inte en mysterieindikator — det är aritmetikens tredje fråga: två medelvärden håller avstånd efter fart, och avståndet ÄR hastigheten. Histogrammet är farten hos farten. Förstår du den kedjan äger du världens mest använda indikator i stället för att låna den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre momentum-verktyg — progressionen tidighet mot pålitlighet\",\"rader\":[[\"Verktyg\",\"Grund\",\"Karaktär\",\"Bäst / sämst\"],[\"ROC\",\"rå kvot — kurs mot kurs\",\"snabbast, brusigast, mest tidig\",\"tidiga varningar / falska signaler i brus\"],[\"MACD\",\"skillnad två EMA (12/26) + signal 9\",\"utjämnad hastighet; eftersläpande\",\"trender / piskar i sidledes\"],[\"KST\",\"fyra utjämnade ROC:er, vikter 1-2-3-4\",\"flera tidslängder i en kurva\",\"cykelposition på index/sektorer / långsam vid snabba kast\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Trappstegsläsningen: ta en aktie med etablerad trend och mät TRE våningar för hand: ett — läget (kurs mot MA50: över/under). Två — hastigheten (MA5 minus MA20, eller ROC 10, för senaste tio dagarna: växer eller krymper klyftan?). Tre — accelerationen (har klyftans TILLVÄXT avtagit de senaste tre dagarna?). Skriv en mening: 'läge upp, hastighet upp, acceleration avtar' — och avgör: bekräftelse, varning eller inget? Det är MACD-läsning utan MACD — och beviset att du förstår indikatorn, inte bara hittar den i menyn."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är skillnaden mellan två glidande medelvärden ett hastighetsmått?",
+          "alternativ": [
+            "Därför att medelvärden alltid stiger",
+            "Därför att avståndet mellan dem växer när trenden accelererar och krymper när den avtar — även medan priset fortfarande stiger",
+            "Därför att subtraktionen eliminerar brus helt",
+            "Därför att EMA är samma sak som ROC"
+          ],
+          "ratt": 1,
+          "tips": "Två eftersläpande kurvor: deras avstånd pulserar med prisets fart."
+        },
+        {
+          "q": "Vad visar MACD-histogrammet?",
+          "alternativ": [
+            "Volymen per period",
+            "Skillnaden MACD minus signallinje — förändringen i hastighetsmätaren: accelerationen",
+            "Kursen mot MA200",
+            "Antal affärer"
+          ],
+          "ratt": 1,
+          "tips": "Derivatan av derivatan: farten hos farten — varnar före hastigheten, som varnar före läget."
+        },
+        {
+          "q": "Vilken ordning stiger pålitlighet (och fördröjning) i verktygsprogressionen?",
+          "alternativ": [
+            "KST, MACD, ROC",
+            "ROC, MACD, KST — rå, utjämnad, tidsvägt",
+            "Alla tre lika",
+            "MACD, ROC, KST"
+          ],
+          "ratt": 1,
+          "tips": "Varje steg köper stabilitet till priset av fördröjning: kvot, differens av medelvärden, viktad summa av utjämnade kvoter."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Divergensen — momentum vänder FÖRE pris",
+      "intro": "Bokens starkaste signal, bokkanon-läxa nummer ett: momentum mäter prisförändringens hastighet, och divergensen mot pris är den starkaste signalen. Kapitlet bygger divergens-teorin i full bredd — definitioner, förlopp, fällor — och kopplar den rakt in i Vågfundamentet, där samma idé bor en våning upp: fundamentalvåg mot prisvåg, AK1TS-korsningen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionerna, precist. BEARISK divergens: priset gör en NY TOPP, momentumindikatorn (ROC, MACD, KST — alla fungerar) gör en LÄGRE topp vid samma tillfälle. BUDSKAP: uppgången gör nya höjder med avtagande inre kraft — massan pressar priset högre med allt mindre tryck. BULLISK divergens är spegelbilden: priset ny botten eller jämn låg nivå, indikatorn HÖGRE botten — nedgången orkar mindre för varje försök. Pring påpekar detaljen som skiljer honom från ytliga beskrivningar: divergensen gäller SVÄNGNINGAR, inte enstaka stängningar — det är topparna (och dalarna) i momentum som jämförs mellan pristoppars tidpunkter, och de ska vara tydligt separerade i tid; två toppar med en vecka emellan är brus, inte divergens."
+        },
+        {
+          "type": "text",
+          "content": "Förloppet — varför den fungerar — är kapitel 2:s trestegssteg i slow motion. Steg ett: momentumet vänder (indikatorns topp; hastigheten avtar) medan priset fortfarande stiger eller står stilla. Steg två: priset planar ut, svagt sidledes — ofta med en sista, knappt högre pristopp som retar ut tålamodet. Steg tre: priset bryter ned (den tekniska bekräftelsen — trendlinje, stöd, nollinjekorsning hos indikatorn). Affärsimplicationen är sträng: divergensen är en VARNING, inte en order. Att sälja eller handla på divergensen ensam är att gissa steget tre; den som väntar på bekräftelsen (kapitel 5:s tre-lag: varning, bekräftelse, regim) ger avstånd till signalen men köper signifikans. Prings egna exempel i boken: de största vändningarna i marknadshistorien har nästan uteslutande föregåtts av divergenser — men de flesta divergenser har INTE följts av de största vändningarna. Asymmetrin är teorins ärliga kärna."
+        },
+        {
+          "type": "text",
+          "content": "Och nu våningen upp — kursens djupaste koppling. Prings divergens är INTERN: båda serierna bor i prisystemet (kurs och kursens derivata). Vågfundamentet definierar en divergens MELLAN system: fundamentalvågen (V-variablernas gemensamma riktning — marginaler, tillväxt, balansräkning) mot prisvågen. AK1TS-korsningen: priset gör nya toppar men V08 EBITDA-marginal och V09 ROE inte — priset har sprungit ifrån verksamheten (bearisk fundamental divergens). Omvänt: fundamental impulsvåg (förbättrande V07/V08, fallande V10-skuld) medan priset bygger bas — underprissatt; den konstellation värdeinvesterare lever för. Två våningar, en fysik: system som ska bekräfta varandra slutar bekräfta — och den starkaste signalen i hela kursverket är när BÅDA våningarna larmar samtidigt: momentum mot pris OCH pris mot fundamental. Då krävs arbete, inte bekräftelse."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V08 EBITDA-marginal, V09 ROE — divergensens fundamentala motparter, rakt ur Vågfundamentets konstruktion; V01 Försäljningstillväxt som tredje röst: pristoppar på avtagande tillväxt är en dubbel varning (multipel och tillväxt samtidigt). AK1TS-RAD: momentum-raderna (5/63/252) per horisont ger cellkonflikt — Mikro varnar medan Medellång bekräftar är matrisens interna divergens, en av dess viktigaste utläsningar; Brytpunkt-dimensionen ställer bekräftelsekravet; AK1TS-korsningen är våningen ovanför. Tre våningar, tabellen nedan — lär dig trappan."
+        },
+        {
+          "type": "insikt",
+          "content": "Divergensen är teknikens ärligaste verktyg: den säger inte 'vänd nu' — den säger 'det du ser är inte längre det du får'. Pris nya toppar, momentum inte: kraften sinar. Pris nya toppar, marginalerna inte: verksamheten sinar. Farten går före vändningen — och vändningen kräver fortfarande sin bekräftelse."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Divergensens tre våningar\",\"rader\":[[\"Våning\",\"Mätare mot mätare\",\"Signalerar\",\"AK1A-namn\"],[\"1 — inre\",\"momentum mot pris (samma system)\",\"trenden tappar fart inifrån\",\"Pring-divergens (kap 5, 9)\"],[\"2 — mellan\",\"prisvåg mot fundamentalvåg (två system)\",\"priset sprungit ifrån verksamheten — eller tvärtom\",\"AK1TS-korsningen (Vågfundamentet)\"],[\"3 — marknad\",\"index mot bredd (A/D, nya toppar)\",\"rallyt bär på få axlar\",\"marknadsdivergens (Murphy-kursen kap 10)\"],[\"Max — alla\",\"våning 1 + 2 (ev + 3) samtidigt\",\"cykelutmaning av sällsynt vikt\",\"arbetstillfälle — aldrig rutin\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Dubbelvånings-testet: välj en aktie som gjort ny 52-veckostopp eller ny månadstopp nyligen. Våning ett: läs momentum (ROC 10 eller MACD) vid förra toppen och vid den nya — divergens? Våning två: hämta V08 (EBITDA-marginal) och V09 (ROE) för motsvarande två perioder — divergens där? Om båda våningarna: skriv en halvsidas analys; det är den starkaste varningskonstellationen i hela kursverket. Om ingen: ännu intressantare — skriv varför toppen är bekräftad och vad som skulle kunna ändra det."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en BEARISK divergens?",
+          "alternativ": [
+            "Priset och indikatorn faller tillsammans",
+            "Priset gör ny topp men momentumindikatorn gör en lägre topp — uppgången tappar inre kraft",
+            "Indikatorn stiger medan volymen faller",
+            "Två indikatorer korsar varandra"
+          ],
+          "ratt": 1,
+          "tips": "Det som borde bekräfta slutar bekräfta — svängtoppar jämförs, inte enstaka stängningar."
+        },
+        {
+          "q": "Vad är skillnaden mellan Prings divergens och AK1TS-korsningen?",
+          "alternativ": [
+            "Ingen — exakt samma mått",
+            "Prings är intern (momentum mot pris inom pris-systemet); korsningen är mellan system (prisvåg mot fundamentalvåg)",
+            "Korsningen gäller bara index",
+            "Prings gäller bara fundamental data"
+          ],
+          "ratt": 1,
+          "tips": "Två våningar i samma varningstorn: derivatan mot läget, och system mot system."
+        },
+        {
+          "q": "Vad är asymmetrin i divergens-teorin?",
+          "alternativ": [
+            "Divergenser fungerar bara uppåt",
+            "De största vändningarna har nästan alltid föregåtts av divergenser — men de flesta divergenser följs inte av de största vändningarna",
+            "Divergenser och vändningar korrelerar perfekt",
+            "Divergenser upphörde att fungera efter 2000"
+          ],
+          "ratt": 1,
+          "tips": "Nödvändig men inte tillräcklig — därför varning, aldrig order."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Överdrevet — överköpt/översålt-myten och vad som fungerar",
+      "intro": "Momentum-kursernas mest missbrukade ord: överköpt och översålt. Myten säger att hög indikator = sälj och låg = köp. Pring ägnar bokens kanske mest nyttiga avsnitt åt att avliva den — och ersätta den med något bättre: cykelpositionen. Det här är kapitlet som skiljer den som LÄST Pring från den som hittat en oscillator i menyn.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Myten först, i sin vanligaste form: RSI över sjuttio är överköpt, alltså sälj; under trettio översålt, alltså köp. Prings motbevis är empiriskt och beteendevetenskapligt i ett: i en STARK trend kan oscillatorn stanna i extremzonen i veckor eller månader — och de största, längsta prisrörelserna sker just medan indikatorn är 'för hög'. Att sälja på utslaget är att sälja styrka; att köpa på det låga är att fånga ett fallande knivblad. Myten lever ändå därför att den är halvt sann: i SIDLEDES marknad fungerar faktiskt gränserna — det är oscillatorns hemmaplan, där svängningar mellan överköpt och översålt är själva kurvans mening. Felet är inte gränserna utan att flytta dem till trendens arenor. Verktyg efter regim — samma läxa som Murphy-kursens medelvärdeskapitel, nu från andra hållet."
+        },
+        {
+          "type": "text",
+          "content": "Vad fungerar då? Prings trio. Ett — CYKELPOSITION FÖRST (bokkanon-läxa tre, ordagrant): innan ett utslag tolkas, avgör hur länge och hur långt trenden gått. Extrem tidigt i ny trend = styrka (kapitel 5); extrem sent i moden trend + divergens = utmattning. Samma utslag, olika världar. Två — DIVERGENSEN I STÄLLET FÖR NIVÅN: i trender är det inte GRÄNSEN som bär information utan förhållandet mellan indikatorns svängtoppar och prisets — gränsläsning är rangeverktyg, divergensläsning är trendverktyg. Tre — SVÄNGNINGSRÄKNINGENS KARAKTÄR: den första överköpt-läsningen efter en bottenvändning är oftast början på något, inte slutet; den tredje eller fjärde utan nya momentumtoppar är oftast slutet på något. Övningen är enkel och ögonöppnande: räkna svängningar, inte gränser."
+        },
+        {
+          "type": "text",
+          "content": "Tillämpningen på brett index — för den som undrar varför boken heter MARKET momentum: extremzoner på indexnivå har annat innehåll än på aktier. Ett brett index som når historiskt översålt (tillsammans med panikvolym och maximalt negativt sentiment) är en statistisk konstellation med annat informationsinnehåll än en enskild akties översålt-läsning: index mean-reverterar, enskilda aktier kan gå till noll. Därmed kapitel 12:s bro. Och i AK1TS-termer översätts hela kapitlet till arkitektur: motorn har INGA överköpt/översålt-celler — inte av okunskap utan av PRINCIP, exakt kapitel 5:s läsning: utslag utan cykelposition är utan betydelse, och cykelposition är vad horisonttrappan och Brytpunkts-dimensionen mäter. Nivå-myten är determinismens motsats: en tröskel som låtsas vara en slutsats."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V04 P/S och V05 P/B — värderingens överdrev: 'dyrt' och 'billigt' i multipel-världen är exakt samma typ av nivåpåstående som 'överköpt' i oscillator-världen — och lyder under samma lag: en hög multipel i tidig, stark V01-tillväxt är STYRKA (marknaden betalar för accelererande fundamental); en hög multipel på avtagande tillväxt är UTMATTNING (värdeinvesterarens momentum-fälla). Multipeln utan fundamental cykelposition är lika tom som RSI utan trendkontext. AK1TS-RAD: inga tröskel-celler — Brytpunkt + horisonter + momentum-rader tillsammans definierar regim; nivåer får ALDRIG agera ensamma."
+        },
+        {
+          "type": "insikt",
+          "content": "Överköpt och översålt är inte signaler — de är tillstånd, och tillstånd får betydelse först genom position: tidigt i cykeln är extremen styrka, sent med divergens är den utmattning, i range är den en kant. Räkna svängningar, inte gränser."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Samma utslag — fyra cykelpositioner, fyra tolkningar\",\"rader\":[[\"Läge i cykeln\",\"Samma oscillator-utslag\",\"Tolkning\"],[\"Tidigt — ny trend just vänd\",\"kraftig extrem\",\"STYRKA — första rörelserna är de starkaste; sälj inte\"],[\"Mitt i — trend etablerad\",\"återkommande sväng mot extrem\",\"normal puls — trenden lever sitt liv\"],[\"Sent — lång trend, flera svängar\",\"extrem + DIVERGENS\",\"UTMATTNING — kräv prisbrott för vändning\"],[\"Ingen trend — sidledes\",\"gränsövergång\",\"range-regler: köp lågt/sälj högt fungerar HÄR\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Myt-testet på historien: välj en aktie som stigit minst etthundra procent under något sexmånadersperiod de senaste tio åren. Räkna hur många VECKOR en vanlig oscillator (RSI 14 eller ROC 10) låg över sin överköpt-gräns under den perioden. Varje vecka ovanför gränsen var en 'säljsignal' enligt myten — räkna ihop vilken avkastning den som följde myten missade. Skriv siffran. Den siffran är kapitlets hela innehåll i ett tal."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är överköpt INTE en säljsignal i stark trend?",
+          "alternativ": [
+            "Därför att indikatorn är trasig i trender",
+            "Därför att oscillatorn kan fastna i extremzonen i veckor medan de största rörelserna sker — extremen är styrka",
+            "Därför att trender aldrig är starka",
+            "Därför att RSI bara fungerar på obligationer"
+          ],
+          "ratt": 1,
+          "tips": "Bokkanon-läxa tre: översålda och överköpta nivåer betyder ingenting i en stark trend."
+        },
+        {
+          "q": "I vilken marknadsregim FUNGERAR överköpt/översålt-gränserna?",
+          "alternativ": [
+            "I starka trender",
+            "I sidledes range — oscillatorns hemmaplan",
+            "Aldrig",
+            "Bara på månadsdata"
+          ],
+          "ratt": 1,
+          "tips": "Verktyg efter regim: svängningar mellan kanter är kurvans mening bara när priset svänger mellan kanter."
+        },
+        {
+          "q": "Vad är den bättre frågan än 'är indikatorn överköpt?'",
+          "alternativ": [
+            "'Vilket nummer i programmet?'",
+            "'Vilken multipel har aktien?'",
+            "'Var i cykeln är utslaget — tidigt, mitt i, sent, eller ingen trend — och finns divergens?'",
+            "'Hur gammal är indikatorn?'"
+          ],
+          "ratt": 2,
+          "tips": "Cykelpositionen först: samma utslag, fyra tolkningar."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Momentum och volym — rörelsemängdens massa",
+      "intro": "Kapitel två lovade: volymen är rörelsemängdens massa. Nu infrias löftet. Pring behandlar volymen som momentum-fråga — inte bara 'hur mycket' utan 'ökar eller avtar deltagandet i rörelsen?' — och den behandlingen är den direkta förlagan till AK1TS Volym-teori. Kursen bygger volym-momentum, läs-grammatiken och kopplingen till motorns vol20/vol90-kvot.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Volym-momentum definieras som frågan: har deltagandet i rörelsen STIGANDE eller AVTAGANDE fart? Prings konkreta verktyg är volumetriska: volymens ROC (samma division som kapitel fyra, på volymserien i stället för prisserien), eller en volym-oscillator — skillnaden mellan ett kort och ett längre glidande medelvärde av volymen (till exempel tjugodagars mot nittiodagars): stigande klyfta = volymen andas in (ökande aktivitet), fallande = andas ut. Poängen är inte nivån utan RIKTNINGEN, exakt som för pris-momentum: fråga inte 'hur mycket handlas?' utan 'handlas det MER än nyss — i rörelsens riktning?'. En upptrend på stigande volym-momentum har massa bakom sig; samma upptrend på sviktande volym-momentum är hastighet utan massa — och rörelsemängden p = m × v krymper två gånger om när hastigheten också avtar."
+        },
+        {
+          "type": "text",
+          "content": "Läs-grammatiken är fyrfältstabellen nedan, värd att memoreras. Pris-momentum upp + volym-momentum upp: bekräftad trend — massa och hastighet åt samma håll; de starkaste rörelserna ser ut så. Pris-momentum upp + volym-momentum svagt: TOMGÅNG — rörelse utan deltagare; misstänk utmattning eller smalt rally (på indexnivå: Murphy-kursens A/D-divergens). Pris-momentum ned + volym-momentum upp: panik eller distribution — viktiga pengar rörs; i bottnar ofta klimaxfasen (volymmaximum), i toppar den tysta utförsel som Granville-skolan kallade distribution. Pris platt + volym-momentum upp: ACKUMULERING — någon samlar i tysthet; kursen har inte hunnit tala men volymen redan röstat. Notera att endast två av fyra fält är argument i sig — de andra två är FRÅGOR som pekar var nästa information borde sökas."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS-översättningen är den mest bokstavliga i hela kursen: motorn räknar vol20/vol90 — senaste tjugo dagarnas volym mot nittio — som en deterministisk kvot per horisont. Det är Prings volym-oscillator reducerad till en division, utan tolkningsutrymme: samma data ger samma kvot, varje körning. Och kopplingen till momentum-raderna (5/63/252) är fyrfältstabellen i matrisform: Volym-teorin och Trend-teorin läses TILLSAMMANS — cellerna bredvid varandra i 25-cellersmatrisen är kursens fyrfältstabell, horisont för horisont. Pring ges ögon-grammatiken; motorn får cell-svarheten."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V11 Likviditet och V20 Återköp av egna aktier — massans fundamentala ansikten. V11: daglig omsättning i pengar är handlingsbarhetens massa — en aktie utan volym är inte ett momentum-objekt överhuvudtaget (indikatorerna räknas men betyder mindre; samma läxa som Quantitative Value-kursens universumtröskel). V20: bolagets återköp är köpsida i volymen — företaget självt som den mest uthållige köparen, 'insiderns OBV' som Murphy-kursen formulerade det; återköp pågående under pris-momentum-svaghet är en intressant fyrfältare: hastigheten avtar men en fundamental masskälla tillför stöd. AK1TS-RAD: Volym-teorin — vol20/vol90 per horisont; läs den ALDRIG utan momentum-raderna bredvid: massa först blir mening med hastigheten."
+        },
+        {
+          "type": "insikt",
+          "content": "Hastighet utan massa är inte rörelsemängd: en rörelse utan deltagare är en åsikt med kursgraf. Volymen är momentum-frågans andra led — 'ökar eller avtar deltagandet?' — och först när hastighet och massa läses tillsammans vet du om trenden är en bil eller en ballong."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Pris-momentum × volym-momentum — fyrfältaren\",\"rader\":[[\"Pris-momentum\",\"Volym-momentum\",\"Diagnos\",\"Åtgärd\"],[\"upp\",\"upp\",\"bekräftad trend — massa och hastighet tillsammans\",\"trend-logik\"],[\"upp\",\"svag/fallande\",\"tomgång — rörelse utan deltagare\",\"misstänk utmattning eller smalt rally\"],[\"ned\",\"upp\",\"panik eller distribution — viktiga pengar rörs\",\"klimax- eller varningsläsning\"],[\"platt\",\"upp\",\"ackumulering — någon samlar i tysthet\",\"övervaka; kursen följer ofta volymen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Fyrfältaren på eget material: välj ett innehav. Mät pris-momentum (ROC 10 eller klyftan MA5 minus MA20: växer/krymper?) och volym-momentum (genomsnittlig volym senaste 20 dagarna mot föregående 20: högre/lägre?). Placera in dig i fyrfältaren och skriv diagnosen. Gör om samma mätning på indexet. Om din aktie och indexet ligger i OLIKA fält: skriv en mening om vad skillnaden betyder för hur länge du ska ge positionen tid — massa, inte magkänsla, som argument."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad frågar volym-momentum om?",
+          "alternativ": [
+            "Hur många aktier som finns totalt",
+            "Om deltagandet i rörelsen har stigande eller avtagande fart — volymens egen riktning",
+            "Vad direktavkastningen är",
+            "Hur många ägare bolaget har"
+          ],
+          "ratt": 1,
+          "tips": "Inte nivån utan riktningen — samma vändning som från pris till hastighet, nu på volymen."
+        },
+        {
+          "q": "Vad kallas konstellationen pris-momentum upp men volym-momentum svagt?",
+          "alternativ": [
+            "Ackumulering",
+            "Klimax",
+            "Tomgång — rörelse utan deltagare",
+            "Distribution"
+          ],
+          "ratt": 2,
+          "tips": "Hastighet utan massa: ballongen är luftig — misstänk utmattning eller smalt rally."
+        },
+        {
+          "q": "Hur mäter AK1TS-motern volym-momentum?",
+          "alternativ": [
+            "Genom att räkna OBV för hand varje gång",
+            "Inte alls — volym ingår inte",
+            "Genom en sentimentenkät",
+            "vol20/vol90 — en deterministisk kvot, senaste tjugo dagarnas volym mot nittio, per horisont"
+          ],
+          "ratt": 3,
+          "tips": "Prings volym-oscillator reducerad till en division: samma data, samma kvot, varje körning."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Momentum på index, sektorer och aktier — tre nivåer, tre klockor",
+      "intro": "Bokens tillämpningshalva: momentum är inte ett verktyg som ser likadant ut överallt. Index, sektorer och enskilda aktier har olika karaktär — slät, cykelstyrd, brusig — och kräver olika intervall och olika respekt. Kapitlet ger trappan, och Prings eget signatursammanhang: konjunkturcykeln, där obligationer, aktier och råvaror vänder i sekvens.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Indexet är momentumets lugnaste hemvist: hundratals kurser blandas till en genomsnittlig rörelse, enskilda nyheters brus slätas ut, och svängningarna blir bredare, långsammare och mer betydelsebärande. Därför: långa intervall och tidsvägda verktyg — månads-KST och 12–24 månaders ROC är hemmaarenan; en femdagars-ROC på ett index är närmast meningslös. Sektorn ligger mitt emellan: cykelstyrd (grupper av bolag som svarar på samma konjunkturvariabler), tillräckligt många kurser för stabilitet, tillräckligt få för karaktär — vecko- och månads-ROC fungerar, och den viktiga läsningen är RELATIVT momentum mot indexet: sektorns kurslinje delat med indexets, ritad som trend (Murphy-kursens RS-linje, här med momentum-tillägg). Aktien, slutligen, är brusigast: enskilda nyheter, tunn volym i smala bolag, vilda spike-utslag — där gäller längre intervall eller kraftigare utjämning, och ödmjukhet."
+        },
+        {
+          "type": "text",
+          "content": "Prings signatursammanhang — konjunkturcykeln och sekvensen i den. Hans sex-stegsmodell (främst i The All-Season Investor, men löpande genom hela författarskapet) beskriver hur ekonomin vänder i tur och ordning: obligationer först (när centralbanken kapitulerar och räntan bottnar), aktier därefter (marknaden diskonterar vändningen i vinster), råvaror sist (när efterfrågan faktiskt återhämtat sig). Varje led har sitt eget momentum-hav — obligationsmomentum, aktiemomentum, råvarumomentum — och sekvensen ger sektorsrotationen dess klocka: tidig cykel gynnar räntekänsliga och defensiva tillväxtbolag, sen cykel energi och material (Murphy-kursens rotationstabell är den visuella versionen av samma modell). Poängen för momentum-läsaren: en sektors momentum-vändning är MER trovärdig när konjunktursteget pekar åt samma håll — cykeln är momentumets kontext på den längsta av kursens klockor."
+        },
+        {
+          "type": "text",
+          "content": "Och fallgroparna per nivå, öppet. Index: att tro att index-momentum gäller enskilda aktier — den vanligaste överföringen; ett index i impulsvåg kan bära en portfölj av aktier i korrigering, och omvänt. Sektor: att ignorera konjunktursteget — momentum utan cykelkontext är halvläst (kapitel 10:s läxa en nivå upp); en energisektors RS-vändning mitt i ett sent cykelsteg är en annan historia än samma vändning i tidig cykel. Aktie: att läsa kort ROC som cykelsignal — nyhetsbrus i en tunn aktie kan måla om en tiiodagarskurva helt; där krävs längre bas eller deterministisk mätning. AK1TS-arkitekturen svarar igen med horisonttrappan: motorn håller nivåerna isär automatiskt — indexceller, sektorceller, aktieceller, var och en i fem horisonter — och överföringen mellan dem är läsarbeslut, aldrig automatik."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01 Försäljningstillväxt, V03 Intäktsdiversifiering, V04 P/S — rotationsläsningens fundamentala tre: en sektor vars relativa momentum vänder upp medan V04 för sektorn slutar komprimera (multipeln slutar falla) är marknadens första röstning på V01-vändning — ofta månader före rapporterna; V03 avgör hur mycket massa rörelsen har (bred bas = massa). Prings konjunktursekvens sätter taket: obligationernas momentum före aktiernas — i AK1TS: Mega/Lång-horisonten läses före Medellång. AK1TS-RAD: Lång/Mega-celler först (cykel och index-regim), Medellång för sektorns relativa momentum, Kort/Mikro endast för exekvering — trappan, alltid uppifrån och ner."
+        },
+        {
+          "type": "insikt",
+          "content": "Samma verktyg, tre arenor: indexet är det slätade (långsamt, betydelsebärande), sektorn är cykeln (styrd av något större), aktien är bruset (kräver mest respekt). Välj klocka efter arena — och läs betydelse uppifrån och ner: en aktievändning är en notis, en sektorvändning en trendkandidat, en indexvändning en världsbild."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Momentum per nivå — karaktär, verktyg, fallgrop\",\"rader\":[[\"Nivå\",\"Karaktär\",\"Lämpliga verktyg\",\"Fallgrop\"],[\"Index\",\"slätt — många kurser blandas\",\"månads-KST · ROC 12–24 mån\",\"att överföra index-momentum till enskilda aktier\"],[\"Sektor\",\"cykelstyrd — grupp med samma variabler\",\"vecko-/månads-ROC · relativ momentum mot index\",\"att läsa utan konjunktursteget (obligationer → aktier → råvaror)\"],[\"Aktie\",\"brusig — nyheter och tunn volym\",\"längre ROC eller kraftig utjämning · horisonttrappan\",\"att läsa kort ROC som cykelsignal\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Trappan live: mät momentum på tre nivåer för ditt universum: indexets (ROC 63: plus eller minus?), din bästa sektors relativa linje mot indexet (stigande eller fallande tremånaders?), och dina tre största innehavs ROC 20. Skriv trappan som tre rader och bedöm: pekar de samma håll? Om indexet är neutralt, sektorn stark och aktierna svaga — vad betyder det för positionsstorlek? Omvänt? Trappan, inte magkänslan, ska ge svaret — och om du inte kan formulera skillnaden i en mening har du inte mätt klart."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är långa momentum-intervall lämpligast på index?",
+          "alternativ": [
+            "Därför att index är mer brusiga",
+            "Därför att många kurver blandas — svängningarna blir bredare och långsammare och bär mer betydelse",
+            "Därför att korta intervall är förbjudna",
+            "Därför att index saknar volym"
+          ],
+          "ratt": 1,
+          "tips": "Ensemble-effekten: individers brus slätas, cykler återstår."
+        },
+        {
+          "q": "Vad är Prings sekvens i konjunkturcykeln?",
+          "alternativ": [
+            "Råvaror, aktier, obligationer",
+            "Aktier, räntor, valutor",
+            "Obligationer först, aktier därefter, råvaror sist",
+            "Alla vänder samtidigt"
+          ],
+          "ratt": 2,
+          "tips": "Räntan bottnar när centralbanken kapitulerar; aktier diskonterar vinstvändning; råvaror väntar på faktisk efterfrågan."
+        },
+        {
+          "q": "Vad är den vanligaste fallgropen med index-momentum?",
+          "alternativ": [
+            "Att det kräver för mycket data",
+            "Att överföra det till enskilda aktier — ett index i impulsvåg kan bära en portfölj i korrigering, och omvänt",
+            "Att det bara fungerar på månadsdata i mars",
+            "Att index saknar historik"
+          ],
+          "ratt": 1,
+          "tips": "Nivåerna hålls isär i motorn av en anledning: överföringen är läsarbeslut, aldrig automatik."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Praktiken — Prings arbetsordning i analys-motorn",
+      "intro": "Boken slutar i praktik, och kursen med den: hur sätts momentums-tanken till arbete utan att bli indikator-karussell? Svaret är en arbetsordning — Prings tre steg — som visar sig vara exakt analys-motorns trappa. Kapitlet är kursens verkstad: här blir bokens hantverk rader i kod.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Prings arbetsordning, tre steg. STEG ETT — etablera den LÅNGA trenden: husse eller baisse? MA200-läge, primärtrendens riktning, den sekulära bakgrunden; allt annat tolkas i dess ljus (kapitel 3). STEG TVÅ — läs det INTERMEDIÄRA momentumet: var i cykeln befinner vi oss — tidigt, mitt i, sent? ROC 10–15 veckor eller KST-tänket; divergenser noteras som varningar, inte order (kapitel 5, 7, 9). STEG TRE — det KORTA momentumet för timing: när inom ramen — dagar, veckor? ROC 10–14 dagar, momentum-trendlinjer, volymen som fjärde röst (kapitel 11). Ordningen är hierarkisk och obruten: timing utan cykelposition är spel, cykelposition utan regim är halvläst. Momentum för timing, trenden för riktning — hela boken i en arbetsdag."
+        },
+        {
+          "type": "text",
+          "content": "Och nu speglingen i kod. AK1TS analys-motor (src/lib/analys-motor.ts) räknar Prings trappa deterministiskt: MA50 klassificerar Mikro- och Kort-horisonten, MA200 klassificerar Medellång, Lång och Mega (steg ett — regimen); momentum 63 dagar fångar den intermediära cykeln (steg två); momentum 5 dagar den korta timingen (steg tre); vol20/vol90 är den fjärde rösten (volymen). Femton kapitel teori, fyra rader kod — och skillnaden mot Pring är endast den väsentliga: motorn ger samma svar på samma data varje gång, medan Prings läsare är en människa med hopp och humör. Cellkonflikt-läsningen är trappans direkta översättning: Mikro-cell bull + Medellång-cell bear = 'kort rally i nedåttrampad marknad' — information, inte kontradiktion. Matrisen TVINGAR dig att se alla klockor samtidigt; ögat väljer gärna den som passar humöret."
+        },
+        {
+          "type": "text",
+          "content": "Fallgroparna i praktiken, tre stycken från bokens egen tålamodslära. ETT — att handla momentum-signaler MOT regimen: en Mikro-köpsignal i Mega-motvind har matematiken emot sig; trappan läses uppifrån, annars inte alls. TVÅ — indikatorstockholming: fem momentum-mätare i samma diagram säger samma sak fem gånger och skapar illusorisk bekräftelse (Elders max-fem-regel i grannkursen är samma läxa); motorns svar är separationen — en cell per fråga, inte fem kurvor per hopp. TRE — att glömma att momentum mäter FART, inte hälsa: ett bolag kan ha perfekt momentum och balansräkning i brand — V19 Kapitalförbrukning & Emission-risk kan explodera oavsett ROC-läge; momentum är timingens vetenskap, inte verksamhetens. Därför AKM1 vid sidan av AK1TS — alltid."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V19 Kapitalförbrukning & Emission-risk — momentum-läsningens gränsvillkor: en aktie i momentumnedtrend med V19-alarm är en kandidat där timing-frågan är akademisk och överlevnadsfrågan är allt; V10 Skuldsättningsgrad som regimesförstorare — belåning förstorar momentum åt båda hållen, och i Mega-korrigeringar är det V10 som avgör vilka momentum-vändningar som blir återhämtningar och vilka som blir permanenta. AK1TS-RAD: hela trappan i matrisen — Trend (MA50/MA200 + momentum 5/63/252), Volym (vol20/vol90), Brytpunkt; fem horisonter, fem teorier, samma svar varje körning."
+        },
+        {
+          "type": "insikt",
+          "content": "Prings tre steg och motorns fyra rader är samma arbetsordning: regim först (MA200), cykel sedan (momentum 63), timing sist (momentum 5), volym som vittne (vol20/vol90). Trappan läses uppifrån — den som börjar på nedersta steget har inte en analys, han har en känsla."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prings arbetsordning × analys-motorn\",\"rader\":[[\"Prings steg\",\"Fråga\",\"Motorns rad\"],[\"1 — etablera långa trenden\",\"hausse eller baisse?\",\"MA200 klassificerar Medellång/Lång/Mega\"],[\"2 — intermediärt momentum\",\"var i cykeln — tidigt, mitt i, sent?\",\"momentum 63 dagar · MA50 på Mikro/Kort\"],[\"3 — kort momentum för timing\",\"när — dagar, veckor?\",\"momentum 5 dagar · Mikro-raderna\"],[\"4 — volymen\",\"bekräftar deltagandet?\",\"vol20/vol90\"],[\"Alltid\",\"samma data — samma svar?\",\"determinism: samma in, samma celler, varje körning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Trapp-passet: kör Prings arbetsordning på ett innehav, fyra rader på papper: regim (kurs mot MA200 — över/under, linjens riktning?), cykel (ROC 63 eller kvartlets karaktär — tidigt/mitt i/sent?), timing (ROC 5 eller två veckors sväng), volym (20 mot 90 dagar). Skriv en slutsatsmening per steg och en helhetsmening. Om du har tillgång till motorn: jämför med dess celler. Överens? Om inte — är det ögat eller matrisen som avviker, och varför just där?"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är det första steget i Prings arbetsordning?",
+          "alternativ": [
+            "Läsa det korta momentumet för timing",
+            "Etablera den LÅNGA trenden — regimen som allt annat tolkas i",
+            "Räkna KST",
+            "Kolla volymen"
+          ],
+          "ratt": 1,
+          "tips": "Regim först, cykel sedan, timing sist — trappan läses uppifrån."
+        },
+        {
+          "q": "Vad är en cellkonflikt i AK1TS (t ex Mikro bull + Medellång bear)?",
+          "alternativ": [
+            "Ett fel i motorn som ska rättas",
+            "Ett skäl att avstå från analys",
+            "Information — 'kort rally i svag marknad' — trappan tvingar dig se alla klockor samtidigt",
+            "En automatisk köpsignal"
+          ],
+          "ratt": 2,
+          "tips": "Olika klockor får peka olika håll — det är inte kontradiktion utan struktur."
+        },
+        {
+          "q": "Varför räcker inte momentum-analys för ett bolagsval?",
+          "alternativ": [
+            "Därför att momentum aldrig fungerar",
+            "Därför att momentum mäter fart, inte hälsa — V19-kapitalförbrukning kan explodera oavsett ROC-läge",
+            "Därför att det är olagligt",
+            "Därför att motorn gör det onödigt"
+          ],
+          "ratt": 1,
+          "tips": "Momentum är timingens vetenskap, inte verksamhetens — därav AKM1 vid sidan av AK1TS."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Kontroversen — anomalins akademik: bevis, nobel och krascher",
+      "intro": "I bokmasterns kontroverskapitel står TA-folket vanligen anklagade. Här är tvärtom: momentum — teknikens äldsta hantverksbegrepp — är en av finansekonomin mest robusta anomalier, belagd av samma akademi som brukar åberopas mot chartisterna. Men beviset kommer med en brutal motvikt: momentum KRASCHAR. Kapitlet ger båda sidor full talarstol och landar i AK1A:s syntes med medgivandet oskrivet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelsen först, som vanligt: EMH:s svaga form (Bachelier 1900, Fama 1970; Malkiels Random Walk med egen kurs i katalogen) — all information i prishistorien är redan diskonterad; att räkna ROC och KST på det förflutna är enligt doktrinen att läsa gårdagens tidning som spådom. Murphy-kursens kontroverskapitel äger hela det argumentet — här räcker konstaterandet: momentum-indikatorer är formellt sett exakt den typ av prishistorik-läsning EMH avfärdar. Och ändå. Samma år som Prings bok publicerades — 1993 — publicerade Narasimhan Jegadeesh och Sheridan Titman i Journal of Finance 'Returns to Buying Winners and Selling Losers': strategier som köpte de senaste 3–12 månaders vinnare och sålde förlorarna genererade cirka en procent per månad, signifikant, i amerikanska aktier 1965–1989. MOMENTUM FUNGERAR — mätt, granskat, publicerat i akademins finaste tidskrift. Chartisten hade fått vittring på något reellt med hundra års försprång."
+        },
+        {
+          "type": "text",
+          "content": "Och det var ingen engångsföreteelse — anomalins CV. Mark Carhart (1997) gjorde momentum till den fjärde faktorn i den klassiska modellen (vid sidan av marknad, storlek och värde) — den som förklarar ömsesidiga fonders prestanda bättre än trefaktorsmodellen. Fama och French — EMH:s egna arkitekter — kallade i sin anomali-genomgång momentum för den främsta anomalin: den som överlever deras faktormodeller. Moskowitz, Ooi och Pedersen (2012) visade time series momentum i 58 instrument och tillgångsklasser över fyra decennier — inte bara aktier: valutor, råvaror, obligationer. Asness, Moskowitz och Pedersen (2013) fann 'value and momentum everywhere' — momentum i åtta marknader och tillgångsklasser, dessutom negativt korrelerat med värde (tvillingarna som tar slut på varandras svansar). Och 2013 delades Nobelpriset i ekonomi mellan Eugene Fama, Robert Shiller och Lars Peter Hansen — effektivitet och anomalier på samma podium: akademins eget erkännande av att marknader både är effektiva och cykel-beteende, beroende på var i tiden du tittar."
+        },
+        {
+          "type": "text",
+          "content": "Nu motvikten, lika akademisk: momentum KRASCHAR. Daniel och Moskowitz ('Momentum Crashes', 2016) dokumenterade att vinnare-minus-förlorare-strategin brutalt kollapsar efter långa baissemarknader — de klassiska krascherna 1932 och 2009: när marknaden vänder efter en björnmark exploderar de tidigare förlorarna (i mars–maj 2009: bankerna och högbelåtade cykliska) medan de senaste vinnarna (defensiva) lämnas kvar; momentum-strategin förlorade i storleksordningen hälften till tre fjärdedelar på några månader — just när en köpare av 'vinnare' minst tål det. Barroso och Santa-Clara ('Momentum Has Its Moments', 2015) visade att krascherna är förutsägbara av momentumets egen volatilitet: enkel volatilitetsskalning — mindre exponering när momentumets varians är hög — halverar krascherna och höjer Sharpe-kvoten markant. Slutsatsen, rationellt spännande: anomalin är robust, men den är inte gratis — den levereras med en fet svans som betalar ut exakt närskapitalet gör mest ont. Betende-förklaringarna (underréaktion på nyheter, sedan överdrift och jakt på trenden) pekar dessutom mot att momentum är en MÄNSKLIG mekanism — den kan försvagas när den arbitreras, men den återföds så länge människor reagerar som människor."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — med medgivandena först. Medgivande ett: timing av momentum-VÄNDNINGAR förblir svårt; kraschlitteraturen bevisar att exakt vid regimskiften är momentum som sämst, och Prings egna verktyg (divergens, KST) är varningar med bekräftelsekrav — inte orakel. Medgivande två: momentum-arbetet kräver riskdimensionering — Barroso-Santa-Claras volatilitetsskalning är samma läxa som labbets riskmatris och Monte Carlo: anomalin dimensioneras, den hälsas inte. Stödet sedan: AK1TS mäter momentum DETERMINISTISKT — momentum-raderna 5/63/252 är i praktiken tids-serie-momentum per horisont — och därmed är momentum-kurserna INTE önsketänkande utan empiriskt förankrade: Jagadeesh-Titman och Moskowitz-Ooi-Pedersen står bakom rader som redan finns i koden. Pring 1993 och artikeln 1993 — hantverk och evidens möttes samma år, utan att veta om varandra."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · ingen enskild variabel — men samtliga tjugo tjänar på att priset läses med empiriskt grundade mått; V10 Skuldsättningsgrad och V19 Kapitalförbrukning & Emission-risk som kraschförstorare: belåning och kassabränning gör momentum-svansarna farligare, regim-vis. AK1TS-RAD: Trend-dimensionens momentum-rader — belagda; med kapitel 10:s kontextkrav, kapitel 11:s volymbekräftelse och riskmatrisens dimensionering som villkor."
+        },
+        {
+          "type": "insikt",
+          "content": "Momentum är TA-hantverkets enda nobelbelagda huspost: anomalin är robust, reproducerad i decennier och över tillgångsklasser — och den kraschar brutalt vid regimskiften, just när den senaste vinnaren är mest säker. Empiri och ödmjukhet i samma andetag: mät deterministiskt, dimensionera efter svansen, och hoppas aldrig på att pricka vändningen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Momentum-forskningens CV — och AK1A-läsningen\",\"rader\":[[\"Studie\",\"Fann\",\"AK1A-läsning\"],[\"Jegadeesh-Titman 1993\",\"vinnare (3–12 mån) slår förlorare med ~1 %/mån — samma år som Prings bok\",\"momentum är inte chartist-önsketänkande\"],[\"Carhart 1997\",\"momentum som fjärde faktor\",\"radera för den — annars döljs avkastningskällor\"],[\"Moskowitz-Ooi-Pedersen 2012\",\"trend i 58 instrument, 4 decennier\",\"motorns momentum-rader är tids-serie-momentum\"],[\"Barroso-Santa-Clara 2015\",\"krascher förutsägbara av momentumets volatilitet; skalning halverar dem\",\"riskdimensionera — även den bästa anomalin\"],[\"Daniel-Moskowitz 2016\",\"krascher 1932/2009: −50 till −75 % på månader efter björnmarknader\",\"medgivandet: vändningstiming förblir svår\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Krach-läsningen: studera 2009 i ditt huvud eller en graf — mars till maj. Vem var 'vinnarna' från 2008 (defensiva, lågvolatila) och vem var 'förlorarna' (banker, högbelåtade cykliska)? Vad hände med dem i rebounden? Skriv tre rader om vad ett momentum-baserat system gjort just då — och tre rader om hur du skyddar ett sådant system (ledning: volatilitetsskalning, regim-filter via MA200, positionslimiter). Spara bladet: det är momentum-anomalins prislapp."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad fann Jegadeesh och Titman (1993)?",
+          "alternativ": [
+            "Att vinnare de senaste 3–12 månaderna slår förlorare med cirka en procent per månad — signifikant",
+            "Att momentum bara fungerar på råvaror",
+            "Att all teknisk analys är slump",
+            "Att värde slår momentum alltid"
+          ],
+          "ratt": 0,
+          "tips": "Publicerat i Journal of Finance — samma år som Prings bok kom."
+        },
+        {
+          "q": "Vad kännetecknar momentum-krascherna (Daniel-Moskowitz 2016)?",
+          "alternativ": [
+            "De sker vid marknadstopp",
+            "De inträffar vid extrema Hausse-toppar",
+            "De kommer efter björnmarknader — när de tidigare förlorarna exploderar i rebounden och vinnar-portföljen halkar efter med 50–75 % på månader",
+            "De inträffar aldrig i verkligheten"
+          ],
+          "ratt": 2,
+          "tips": "Mars–maj 2009: bankerna (förlorarna) studsade; de 'säkra' vinnarna lämnades kvar."
+        },
+        {
+          "q": "Vad är AK1A:s medgivande i momentum-kontroversen?",
+          "alternativ": [
+            "Att momentum inte går att mäta",
+            "Att anomalin bara gäller USA",
+            "Att AK1TS borde sluta räkna momentum",
+            "Att timing av momentum-VÄNDNINGAR förblir svårt — anomalin är robust men levereras med svans, och dimensioneras genom riskmatrisen"
+          ],
+          "ratt": 3,
+          "tips": "Stöd och medgivande i samma syntes: mät deterministiskt, dimensionera efter svansen."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Sammanfattning — momentum-analytikern (syntes AKM1 × AK1TS)",
+      "intro": "Sista kapitlet sätter ihop hela boken till en enda person och ett enda flöde: momentum-analytikern, som frågar hur snabbt före var och läser tre klockor i rätt ordning — och som aldrig förväxlar hastighet med riktning. Plus översättningstabellen Pring → AKM1 → AK1TS och kursens slutprojekt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Porträttet i sex drag, kursens avslutande karaktär. Ett: hon frågar HUR SNABBT före VAR — momentumfrågan före platsfrågan, i varje diagram. Två: hon läser tre klockor och frågar alltid vad klockan ovanför säger — kort reaktion i intermediär våg i primär trend, aldrig bara en graf. Tre: momentum för timing, trenden för riktning — aldrig tvärtom. Fyra: hon läser divergenser som VARNINGAR med bekräftelsekrav — och vet att de flesta divergenser inte blir de största vändningarna, men att de största vändningarna nästan alltid haft dem. Fem: hon räknar volymen som massan — hastighet utan deltagare är en ballong. Sex: hon litar aldrig på trösklar — överköpt och dyrt är tillstånd, inte signaler; cykelpositionen avgör. Sex drag, tre böckers differentiering: Murphy lär se, Elder lär disciplin, Pring lär mäta fart."
+        },
+        {
+          "type": "text",
+          "content": "Hela metoden på en sida — momentum-analytikerns flöde: ett — REGIMEN: priset mot MA200 och Mega/Lång-cellerna (steg ett, kapitel 3 och 13). Två — CYKELPOSITIONEN: intermediärt momentum (63 dagar, KST-tänket) — tidigt, mitt i, sent? (kapitel 5–7). Tre — VARNINGARNA: divergenser mot pris, fundamentalvåg mot prisvåg — AK1TS-korsningen en våning upp (kapitel 9). Fyra — MASSAN: fyrfältaren pris-momentum × volym-momentum, vol20/vol90 (kapitel 11). Fem — NIVÅN: index, sektor, aktie — trappan uppifrån och ner, konjunktursekvensen som tak (kapitel 12). Sex — DOMEN: AKM1:s tjugo variabler bredvid matrisen; ingen affär där momentum och fundament säger emot varandra utan skriftlig förklaring (kapitel 13–14). Sex steg, femton kapitel, en A4 — och determinismen som skiljevägg: ögat pekar, motorn räknar, modellen dömer."
+        },
+        {
+          "type": "text",
+          "content": "Spåret vidare i katalogen, redigerat: Prings egen lärobok Technical Analysis Explained för hela hantverket i bredare version; Murphy-kurserna (The Visual Investor för grafen, Technical Analysis of the Financial Markets för encyklopedin) för verktygsmiljön momentumet lever i; Elder-kursen för riskreglerna som momentum-arbetet kräver; Vågfundamentets två kurser för variabler-som-tidsserier; Random Walk-kursen för motståndarens klassiska argument — och kontroverskapitlet här som svar på just den frågan. Bokkanon-post bk-060, tier 2, kanon — med ts-variablerna Pris och Tid och ak-variabeln V12: boken som gjorde ETT begrepp till ett helt verk. Kursens slutformulering, värd att skriva i verkstaden: MOMENTUM FÖR TIMING, TRENDEN FÖR RIKTNING, VOLYMEN FÖR MASSAN, MOTORN FÖR MÄTNINGEN — OCH AKM1 FÖR DOMEN."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01–V20 — hela modellen: V01 och V02 är fundamentalens egna ROC:er, V12 massan som gör dem läsbara, V04/V05 värderingens överdrev, V08/V09/V07 divergensens motparter, V10/V19 kraschförstorarna, V11/V20 massans fundamentala ansikten, V16/V17 katalysatorernas hastighetsökningar. AK1TS-RAD: hela matrisen — fem horisonter × fem teorier × fyra dimensioner; Prings tre klockor är motorns fem, KST:s vikter är matrisens hierarki, divergensen är AK1TS-korsningen, volymen är Volym-teorin. Bokens idé finns redan i kod — kursen har visat var."
+        },
+        {
+          "type": "insikt",
+          "content": "Pring lär dig mäta fart; ekosystemet lär dig räkna den deterministiskt och döma den fundamental. Momentum-analytikern slutar aldrig fråga hur snabbt — men slutar aldrig tro att hastigheten ensam säger vart. Farten vänder före läget; motorn vänder aldrig sig mot dig; domen är alltid din."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Översättningstabellen — Pring → AKM1 → AK1TS\",\"rader\":[[\"Prings verktyg\",\"AKM1\",\"AK1TS-rad\"],[\"Tre tidsdimensioner\",\"Vågfundamentet: varje V som tidsserie\",\"fem horisonter Mikro–Mega\"],[\"ROC (kvot × 100)\",\"V01/V02 — fundamentalens egna ROC:er\",\"momentum 5/63/252\"],[\"KST (tidsvigta ROC:er)\",\"V02 ARR + V12 stabilitet\",\"horisonthierarkin i matrisen\"],[\"MACD som momentum\",\"V07 — marginalseriens trend\",\"MA50/MA200-klyftan\"],[\"Divergensen\",\"V08, V09 (ev V01) mot priset\",\"AK1TS-korsningen\"],[\"Overbought/oversold-myten\",\"V04/V05 — värderingens trösklar\",\"inga tröskel-celler; regim + cykelposition\"],[\"Volym-momentum\",\"V11 likviditet, V20 återköp\",\"Volym-teorin vol20/vol90\"],[\"Index/sektor/aktie-trappan\",\"V01/V03/V04 rotation\",\"Lång/Mega → Medellång → Kort\"],[\"Konjunktursekvensen\",\"V10 (ränta), V07 (inputpriser)\",\"Mega/Lång + Tid-dimensionen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — momentum-journalen: välj tre innehav. Per bolag, en A4 med sex rader: regim (kurs mot MA200), cykelposition (ROC 63: tidigt/mitt i/sent?), varningar (momentum-divergens? V08/V09-divergens?), massan (fyrfältaren pris × volym), nivå (aktie mot sektor mot index), domen (AKM1-total bredvid — överens?). Datera. Upprepa om en månad — notera vad som förändrats och vad motorn sagt båda gångerna. Det dokumentet, hållet levande, är Prings bok förvandlad från läromedel till process: det är så momentum-analytikern faktiskt lever."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är momentum-analytikerns arbetsordning?",
+          "alternativ": [
+            "Aktie, sektor, index",
+            "Timing först, regim sist",
+            "Regim (MA200) → cykelposition (momentum 63) → varningar (divergenser) → massa (volym) → nivå (trappan) → domen (AKM1)",
+            "Slumpad — ordningen saknar betydelse"
+          ],
+          "ratt": 2,
+          "tips": "Trappan läses uppifrån och ner, och avslutas alltid med den fundamentala domen."
+        },
+        {
+          "q": "Vad får momentumet ALDRIG göra i AK1A:s system?",
+          "alternativ": [
+            "Mäta hastighet",
+            "Varna genom divergens",
+            "Bestämma riktning ensamt — momentum för timing, trenden för riktning, AKM1 för domen",
+            "Användas på index"
+          ],
+          "ratt": 2,
+          "tips": "Hastighet säger hur snabbt, inte vart — riktning är trendens och domen är modellens."
+        },
+        {
+          "q": "Vad är kursens slutformulering?",
+          "alternativ": [
+            "Momentum ersätter all analys",
+            "Momentum för timing, trenden för riktning, volymen för massan, motorn för mätningen — och AKM1 för domen",
+            "Köp lågt, sälj högt",
+            "Ögat pekar, gissningen avgör"
+          ],
+          "ratt": 1,
+          "tips": "Fem roller, fem verktyg — och ansvaret alltid hos modellen och människan, aldrig hos indikatorn."
+        }
+      ]
+    }
+  ]
+}

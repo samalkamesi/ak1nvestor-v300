@@ -1,0 +1,1234 @@
+{
+  "slug": "intermarket-analysis",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 16,
+  "totalMinutes": 180,
+  "title": "Intermarket Analysis — Murphy: KOMPLETT",
+  "summary": "John J. Murphy — teknisk analysens främste popularisatör och den som myntade intermarket-analysen som disciplin — publicerade 2004 (Wiley) syntesen av tjugo års arbete: de fyra tillgångsslagen — obligationer, aktier, råvaror och valutor — är inte fyra marknader utan ETT system. Kursen följer bokens faktiska spår: 1980-talets intermarket-revolution (det decennium då allt började hänga ihop), 1987-kraschen som det första stora intermarket-fallet, obligationer kontra aktier (räntans roll — normalförhållandet och när det bryts), råvaror kontra obligationer (inflationens länk), CRB-index och guld, dollarn som kedjans motor, helhetskedjan från valuta till sektorsrotationens fyra konjunkturfaser (murphy-grafen), de globala marknaderna med Japan som deflationsexempel — och tekniken att mäta samspelet: relativa styrka och korrelationens bruk OCH missbruk. Kursen differentierar öppet mot The Visual Investor (grafen för nybörjaren — detta är samspelet mellan tillgångsslagen), lägger till en svensk vinkling [illustrativt]: Riksbankens ränta och bostadssektorn — och kröner allt med kontroverskapitlet: korrelationsinstabiliteten (2008 då allt korrelerade till 1) och EMH-kritiken, med intermarket-analysens svar (regime-medvetenhet) och AK1A:s hårda syntes: AK1TS läser samspel DETERMINISTiskt per horisont — inga flytande magiska samband; intermarket-signaler utan regelverk blir story-telling.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan du: förklara Murphys tes — de fyra tillgångsslagen utgör ett system och varje marknad måste läsas i de andras ljus — och skilja den här boken från The Visual Investor (grafläsning för nybörjare) och läroboken Technical Analysis of the Financial Markets (verktygslådan) · se 1980-talet som intermarket-revolutionen: globalisering, finansiella terminer och programhandel gjorde marknaderna sammankopplade · läsa 1987-kraschen som intermarket-fall — råvaror upp, obligationer ned, aktiernas utdelningsavkastning mot obligationsräntan, och varna i efterhand för nackdelarna med efterklokhet · behärska normalförhållandet obligationer–aktier och veta när det bryts (flight to quality, deflation) · förklara inflationens länk råvaror–obligationer och läsa CRB-index och guld (guldets dubbelroll som råvara och valutaspegel) · använda dollarn som kedjans motor — stark dollar/falla råvaror/stiga obligationer och spegelvänt · köra helhetskedjan dollar → råvaror → obligationer → aktier på normalregimens korrelationsmatris · rotera sektorer genom konjunkturens fyra faser (murphy-grafen) med relativa styrka-linjer, mappat mot V01 (konjunkturkänslig tillväxt) och V12 (stabil intäkt i defensiv fas) · läsa globala marknader och Japan-exemplet: deflation vänder normalförhållandet · tillämpa den svenska vinklingen [illustrativt]: Riksbankens ränta → bostadssektor och banker · mäta samspelet rätt: relativa styrka-formeln och korrelationens bruk (bekräftelse i rullande fönster, på förändringar inte nivåer) och missbruk (helkorrelation, trendserier, samband utan mekanism) · redogöra för kontroversen — korrelationskluster som flippar (2008: allt mot 1) och EMH (samkörningen är prissatt) — med intermarket-analysens regime-svar och AK1A:s determinismkrav · och syntetisera: intermarket är väderprognosen till varje AKM1-analys — ögat pekar, motorn räknar, regimen först.",
+  "why": "Bokkanon-spåret kallar boken intermarket-analysens kanoniska text — Murphy skapade själva disciplinen och har egen kurs här i katalogen för båda sina andra verk (The Visual Investor är dörren till grafläsning, Technical Analysis of the Financial Markets är encyklopedin); den här boken är det tredje hörnet: samspelet mellan de fyra tillgångsslagen. För ekosystemet fyller den en funktion ingen annan kurs gör: den ger AKM1-analysen ett MAKRO-VÄDER — räntans riktning är V10:s kontext, råvarorna är V07:s inputpris, konjunkturfasen avgör om V01:s tillväxt eller V12:s stabilitet ska premieras — och den ger AK1TS-motorn dess toppskikt: intermarket-regimen är sammanhanget som de 25 cellerna (fem horisonter × fem teorier) läses i. Sektorsrotationstabellen är bokstavligen en allokeringsmotor. Och kontroverskapitlet tar disciplinens två hårdaste angrepp på fullt allvar — att korrelationer är instabilar och att EMH redan prissatt samkörningen — och landar i den slutsats som gör AK1A ärligt: samband utan regelverk är story-telling, därför läser AK1TS samspelet deterministiskt per horisont, och när underlaget inte räcker skrivs osatt — aldrig gissning.",
+  "chapters_list": [
+    "1. Boken och revolutionen — 1980-talet då allt började hänga ihop",
+    "2. 1987 — kraschen som intermarket-fall",
+    "3. Obligationer kontra aktier — räntans roll och normalförhållandet",
+    "4. När normalen bryts — flight to quality och deflationens värld",
+    "5. Råvaror kontra obligationer — inflationens länk",
+    "6. CRB-index och guld — råvarufrontens mätare",
+    "7. Dollarn — valutan som motorn i kedjan",
+    "8. Helhetskedjan — dollar → råvaror → obligationer → aktier",
+    "9. Sektorsrotation — konjunkturens fyra faser (murphy-grafen)",
+    "10. Rotation i praktiken — relativa styrka-linjer per fas",
+    "11. Globala marknader — intermarket i världen och Japan-exemplet",
+    "12. Svensk vinkling — Riksbanken, räntan och bostadssektorn [illustrativt]",
+    "13. Tekniken att mäta — relativ styrka",
+    "14. Korrelation — bruk och missbruk",
+    "15. Kontroversen — instabila korrelationer och EMH",
+    "16. Sammanfattning — väderprognosen till varje analys (syntes AK1TS × AKM1)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Boken och revolutionen — 1980-talet då allt började hänga ihop",
+      "intro": "John J. Murphy var ingen teoretiker i ett torn — han var analytiker i branschen under just det decennium som förändrade allt. Intermarket Analysis: Profiting from Global Market Relationships (Wiley, 2004) är syntesen av tjugo års praktik: tesen att obligationer, aktier, råvaror och valutor inte är fyra marknader utan ett enda system. Kursen börjar där boken börjar: med 1980-talet och frågan varför allt började hänga ihop.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden först, citerad öppet. Murphy — först analytiker i TV, senare grundare av MurphyMorris och småningom chefsanalytiker på StockCharts — hade skrivit The Visual Investor (1995) för nybörjaren och läroboken Technical Analysis of the Financial Markets (1999) för den blivande teknikern (båda har egna kurser här i katalogen). Intermarket Analysis (2004) blev det tredje hörnet: boken om hur tillgångsslagen talar med varandra. Grannkurserna är dörren och encyklopedin — den här kursen är självaste samspelet, och den differentieringen är kursens räls: i The Visual Investor lärde du dig läsa EN graf; här lär du dig läsa fyra samtidigt."
+        },
+        {
+          "type": "text",
+          "content": "1980-talet var intermarket-revolutionen, och Murphy anger mekanismerna utan omsvep. Ett: globaliseringen — världens marknader öppnades och kapitalet började röra sig över gränser i realtid. Två: de finansiella terminsmarknaderna — index-, ränte- och valutaterminer gjorde varje tillgångsslag kortbart och därmed genuint tvåsidigt. Tre: programhandeln och datorerna — arbitrage mellan relaterade instrument blev automatisk. Fyra: informationsflödet — satellit-TV och skärmar gjorde att en ränterörelse i Tokyo syntes i Chicago samma sekund. Konsekvensen: den analytiker som fortsatte studera aktiemarknaden i isolering studerade en bild med tre fjärdedelar utanför ramen."
+        },
+        {
+          "type": "text",
+          "content": "1980-talets egna spår blev bokens bevis. Decenniets intermarket-kedja, som Murphy rekonstruerar: en fallande dollar (med Plaza-avtalet 1985 som acceleratör) → stigande råvarupriser (inflationen kommer tillbaka) → stigande räntor och fallande obligationspriser → en aktiemarknad som kämpade trots ekonomisk tillväxt — och som kraschade i oktober 1987. Notera ordningen: problemet syntes I OBLIGATIONERNA OCH RÅVARORNA först, i aktierna senast. Det är hela boken i en mening: den som bara tittar på aktiemarknaden ser slutet av historien — och ser det sist."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01 Försäljningstillväxt och V12 Intäktsstabilitet — konjunkturfasen avgör vilken som lönar sig. Ingen bolagsanalys sker i vakuum: samma V01-tillväxt är guld i tidig återhämtning och misstänkt överhettning i sen expansion; samma V12-stabilitet är tråkig i fas två och livsförsäkring i fas fyra. AK1TS-RAD: Regime-dimensionen — intermarket-regimen (dollar, råvaror, ränta) är sammanhanget som varje horisont i 25-cellersmatrisen (Mikro till Mega) läses i; motorn räknar MA50/MA200 och momentum 5/63/252 på varje instrument deterministiskt, men läsningen av cellerna börjar med frågan: vilken är väderlek?"
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera bokens grundtes innan du går vidare: de fyra tillgångsslagen — obligationer, aktier, råvaror, valutor — är ett system, inte fyra marknader. Varje pris är en kommentar till de tre andra. Den som handlar aktier utan att ha tittat på räntan, dollarn och råvarorna läser en sida ur en bok och tror att den är boken."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1980-talet — fyra krafter som kopplade samman marknaderna\",\"rader\":[[\"Kraft\",\"Mekanism\",\"Effekt på samspelet\",\"Ser du den i dag?\"],[\"Globalisering\",\"kapital rör sig över gränser i realtid\",\"en regions kris sprids till alla\",\"ja — 1997, 2008, 2020\"],[\"Finansiella terminer\",\"index-, ränte- och valutaterminer\",\"varje tillgångsslag blir kortbart — tvåsidigt\",\"ja — futures och ETF:er\"],[\"Programhandel och arbitrage\",\"datorer handelar skillnader mellan instrument\",\"sambanden hålls åtstramade men är spända\",\"ja — ännu snabbare\"],[\"Informationsflödet\",\"satellit, skärmar, nät\",\"alla ser allt samtidigt — och reagerar flockvis\",\"ja — och förstärkt av sociala media\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör system-testet på dig själv: öppna fyra grafer — obligationer (långa statslänet), brett aktieindex, ett råvaruindex och dollarindexet — på veckografen, sex månaders fönster. Skriv en mening per graf om riktningen. Fråga sedan: pekar de fyra ihop sig till något sammanhängande väder, eller blandas signaler? Du har just gjort din första intermarket-läsning — och upptäckt varför boken behövs: fyra grafer ger sexton möjliga kombinationer, och resten av kursen handlar om vilka som är normala."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bokens grundtes?",
+          "alternativ": [
+            "Att teknisk analys bör ersättas av fundamental",
+            "Att obligationer, aktier, råvaror och valutor är ett ENDA system — varje marknad måste läsas i de andras ljus",
+            "Att bara dollarn spelar roll för avkastningen",
+            "Att marknaderna är oberoende av varandra"
+          ],
+          "ratt": 1,
+          "tips": "Fyra marknader — hur många böcker? Murphy säger: en."
+        },
+        {
+          "q": "Vilken av följande var INTE en av de krafter Murphy anger bakom 1980-talets sammankoppling?",
+          "alternativ": [
+            "Globaliseringen av kapitalflödena",
+            "De finansiella terminsmarknaderna",
+            "Programhandel och arbitrage",
+            "Införandet av guldmyntfoten"
+          ],
+          "ratt": 3,
+          "tips": "En av de fyra krafterna är en historisk fotnot från ett tidigare sekel."
+        },
+        {
+          "q": "Hur differentierar sig den här boken mot The Visual Investor?",
+          "alternativ": [
+            "Den är en förenkling av grafläsningen för nybörjare",
+            "The Visual Investor lär ut att läsa EN graf — Intermarket Analysis lär ut att läsa fyra tillgångsslagers samspel",
+            "De behandlar exakt samma innehåll",
+            "Intermarket Analysis handlar bara om candlesticks"
+          ],
+          "ratt": 1,
+          "tips": "Dörren, encyklopedin, samspelet — tre Murphy-verk, tre roller."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "1987 — kraschen som intermarket-fall",
+      "intro": "Murphys mest berömda fallstudie: måndagen den 19 oktober 1987, då Dow föll 22,6 procent på en dag. Bokens poäng är inte kraschen i sig — utan att den var ett INTERMARKET-fall: en kedja av varningar i råvaror, obligationer och valuta som aktiemarknaden ignorerade till det sista. Kursen rekonstruerar händelseförloppet — och lägger till varje ärlig analys viktigaste varning: efterklokhetens snara.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Förloppet, som Murphy själv levde igenom som analytiker och rekonstruerar kapitel för kapitel. Våren 1987: råvarumarknaden — med CRB-index i spetsen — bröt kraftigt uppåt; inflationen, som trotsats besegrad, väcktes till liv. Samtidigt vände obligationsmarknaden nedåt: räntorna steg, obligationspriset föll, och räntetoppar byggdes om efter om. Dollarn hade fallit kraftigt sedan Plaza-avtalet 1985 och fortsatte svagt — en klassisk 1980-talsinflationstriangulering: svag valuta, stigande råvaror, stigande räntor. Och i den miljön steg aktiemarknaden — först kraftigt, under vårens programdrivna rally, och mot en vägg av försämrade yttre villkor."
+        },
+        {
+          "type": "text",
+          "content": "Den avgörande signalen var den relativa: aktiernas utdelningsavkastning. Allt eftersom räntorna steg och aktiekurserna steg steg också aktiernas utdelningsavkastning — mot statsobligationsräntan — tills avståndet mellan dem i princip var borta: för första gången på mycket länge växte det fram en värderingsgap där obligationer betalade lika med eller mer än aktier utan aktiernas risk. Murphy läsning: när obligationsavkastningen når parity med aktiernas totalavkastningsförväntan tappar aktierna sitt viktigaste argument — och de pengar som flyttar först flyttar till obligationer. I oktober bröt obligationsmarknaden ny mark nedåt, och den 19 oktober kollapsade aktierna. Kraschen var världsomspännande — ytterligare ett bevis på att systemet nu var ett system."
+        },
+        {
+          "type": "text",
+          "content": "Kursens egen tilläggs-varning, öppet redigerad: NACKDELARNA MED EFTERKLOKHET. I efterhand ser kedjan självklar ut — råvaror upp, obligationer ned, krasch — men i realtid hade varje enskild signal alternativa förklaringar: råvaruuppgången kunde vara tillfällig, ränteuppgången teknisk, utdelningsgapet strukturellt. Det är precis därför som kursens slutprodukt inte är minnet av 1987 utan en regelverk: intermarket-signaler utan regler blir berättelser — och kontroverskapitlet (kapitel 15) visar vad som händer med dem i nästa kris. Murphy byggde regler; minnet av hans krasch utan regler är bara story-telling."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V10 Skuldsättningsgrad — 1987 i bolagsskala. Belåning är räntans hävstång: när obligationsmarknaden faller pressas högt belåtade bolag (V10 låg poäng) dubbelt — refinansieringsränta upp, diskonteringsränta upp. AK1TS-RAD: Brytpunkt-dimensionen — kraschdagar visar varför motorn INTE extrapolerar: momentum 5/63/252 kan vara grönt in i fallet; därför kompletteras varje horisont med volym- och brytpunktslogik (stöd, MA200-avstånd), och när underlaget är motstridigt skrivs cellen osatt — aldrig gissning."
+        },
+        {
+          "type": "insikt",
+          "content": "1987:s läxa är inte att aktier kan falla 22 procent på en dag — det vet alla. Läxan är ORDNINGEN: råvarorna och obligationerna berättade historien först, aktiemarknaden levererade slutsatsen sist. Fråga alltid: vilka marknader har redan röstat — och om aktiemarknaden är den sista att rösta, varför skulle den slippa räkna?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"1987 — intermarket-fallet steg för steg\",\"rader\":[[\"Tid\",\"Marknad\",\"Händelse\",\"Intermarket-roll\"],[\"1985–86\",\"Dollar\",\"Plaza-avtalet: koordinerad försvagning\",\"motor — svag valuta = import-erad inflation\"],[\"Våren 1987\",\"Råvaror (CRB)\",\"kraftig uppbrytning uppåt\",\"inflationen är tillbaka — tidigaste varningen\"],[\"Våren–hösten 1987\",\"Obligationer\",\"fallande pris, stigande ränta, nya räntetoppar\",\"kapitalkostnaden stiger — aktiernas argument eroderar\"],[\"Oktober 1987\",\"Aktier\",\"utdelningsavkastningen når obligationsräntan; 19/10: Dow −22,6 %\",\"slutledet — historiens dyraste eftersläpning\"],[\"Oktober 1987\",\"Världen\",\"kraschen global på timmar\",\"bevis: systemet är ett system\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen 1987-checklista: skriv ned de fyra förvarningarna — råvaruuppgång, obligationsnedgång, svag valuta, utdelnings-/räntegap — som fyra rader med ett mätbart villkor vardera (till exempel: CRB över 52-veckors högsta? 10-årig ränta över 52-veckors högsta? utdelningsavkastning inom X procentenheter av obligationsräntan?). Testa checklistan mot en nutida veckografer. Fråga: hur många av de fyra lyser i dag — och vad säger det om din risknivå?"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken ordning hade 1987 års intermarket-varningar enligt Murphy?",
+          "alternativ": [
+            "Aktier föll först, sedan obligationer, sedan råvaror",
+            "Alla marknader föll exakt samtidigt utan förvarning",
+            "Råvaror och obligationer varnade först — aktiemarknaden reagerade sist",
+            "Dollarn stärktes först och varnade ensam"
+          ],
+          "ratt": 2,
+          "tips": "Vem talar först i kedjan — och vem levererar slutsatsen?"
+        },
+        {
+          "q": "Vad var den avgörande RELATIVA signalen hösten 1987?",
+          "alternativ": [
+            "Att aktiernas utdelningsavkastning närmade sig/nådde obligationsräntan — aktiernas risk premie försvann",
+            "Att guld blev billigare än silver",
+            "Att P/B på Dow blev under 1",
+            "Att-optionsvolatiliteten var noll"
+          ],
+          "ratt": 0,
+          "tips": "Vilken avkastning erbjuder obligationer utan aktiernas risk — och vad händer när skillnaden försvinner?"
+        },
+        {
+          "q": "Vilken tilläggs-varning lägger kursen öppet till 1987-fallstudien?",
+          "alternativ": [
+            "Att kraschen var unik och aldrig kan upprepas",
+            "Att boken innehåller faktafel om Dow-index",
+            "Nackdelarna med efterklokhet — i realtid hade varje signal alternativa förklaringar, därför krävs regler, inte minnen",
+            "Att råvaror alltid är farliga"
+          ],
+          "ratt": 2,
+          "tips": "Hur självklar ser kedjan ut i efterhand — och hur självklar var den i september 1987?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Obligationer kontra aktier — räntans roll och normalförhållandet",
+      "intro": "Bokens ryggradsrelation: obligationer och aktier. Det NORMALA är att obligationspriser och aktiekurser rör sig tillsammans — båda är tillgångar som diskonterar tillväxt och inflation, och räntan är gemensam nämnare. Kursen går igenom normalförhållandets fyra transmissionskanaler — och varför obligationen ofta är den som vänder först.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Normalförhållandet: obligationer och aktier korrelerar POSITIVT. Mekanismen är dubbel och enkel. Fallande räntor → framtida kassaflöden diskonteras lägre → aktiernas fundamentalvärde stiger (diskonteringskanalen). Fallande räntor → kredit blir billigare → konsumtion och investeringar stimuleras → vinster stiger (konjunkturkanalen). Uppåt går samma hiss i reverse: stigande räntor pressar värderingar och bromsar ekonomin. Därtill konkurreringskanalen — obligationens avkastning är aktiens alternativkostnad; när räntan stiger kräver investerarna högre avkastning även av aktier, vilket pressar deras värdering — och kreditkanalen: räntan är priset på balansräkningens andra sida, så dess rörelse omfördelar vinsten mellan bolag och borgenärer. Murphy tillägger en iakttagelse från decennier av grafer: obligationsmarknaden vänder ofta FÖRE aktiemarknaden — inte för att obligationshandlare är klokare, utan för att obligationen är den renaste inflationsoch tillväxtmätaren: ingen vinstförväntan, ingen story, bara ränta."
+        },
+        {
+          "type": "text",
+          "content": "1990-talet blev normalförhållandets paradfall, och boken ägnar det öppet rum: desinflation — fallande råvarupriser, stark dollar — sjönk räntorna i en mångårig trend, och obligationer och aktier steg tillsammans i historiens längsta parrede. Det är kursens första stora allokeringsläxa: i en desinflationsregime är det NORMALA läget lång aktie OCH lång obligation — balanseringen mellan dem handlar om risk, inte om riktning. Murphy använde relationen aktivt: aktie/obligation-ratiot (aktieindex delat med obligationspris) som ett mått på vilken tillgång som leder — ett verktyg kapitel 13 återkommer till i detalj."
+        },
+        {
+          "type": "text",
+          "content": "Men — och det är kursens varning på varje sida — normalförhållandet är en REGIME-egenskap, inte en lag. När inflation driver räntorna är samspelet invikt negativt för aktier (1980-talet); när panik slår till flyr kapitalet till statspapper och relationen vänder tecken (flight to quality); när deflation härjar går de båda varsina vägar (Japan — kapitel 11). Därför är frågan ALDRIG vad är korrelationen mellan obligationer och aktier — utan: vilken regime är vi i, och vad är korrelationen i den regimen? Kapitel 4 ägnas helt åt brytningarna; här etableras normen som allt annat mäts mot."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V10 Skuldsättningsgrad och V12 Intäktsstabilitet — räntans två bolagsöversättningar. V10 avgör hur mycket ett bolag känslar av räntetrappan (räntekänslighet via balansräkningen); V12 avgör hur mycket intäkterna kännas av konjunkturkanalen (cykliskt = känsligt, ARR/kontrakt = okänsligt). AK1TS-RAD: Trend-dimensionen — obligations trend per horisont (MA200 på långa länet som Lång/Mega-kontext; momentum 63/252 som medellång) är den rad i toppskiktet som alla aktie-cellerna läses mot."
+        },
+        {
+          "type": "insikt",
+          "content": "Räntan är aktiernas hyra — betald i tre valutor: diskonteringsräntan på framtida kassaflöden, alternativkostnaden mot obligationens säkra avkastning och kreditkostnaden på balansräkningen. När obligationsmarknaden faller stiger alla tre hyrorna samtidigt. Fråga därför aldrig är aktiemarknaden dyr — fråga: dyr mot vad? Svaret bor i obligationsgrafen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Normalförhållandet — fyra transmissionskanaler\",\"rader\":[[\"Kanal\",\"Mekanism\",\"Vem känsligast\",\"AKM1-koppling\"],[\"Diskonteringskanalen\",\"lägre ränta → högre nutidsvärde av framtida kassaflöden\",\"långvästa tillväxtbolag (lägre V01-poäng nu, allt i framtiden)\",\"V04–V06 värderingskontext\"],[\"Konkurreringskanalen\",\"obligationsavkastning = alternativkostnad\",\"utdelningsaktier och yield-liknande aktier\",\"V20 Återköp/utdelning\"],[\"Konjunkturkanalen\",\"kredit billigare/dyrare → efterfrågan → vinster\",\"cykliska bolag\",\"V01 Försäljningstillväxt\"],[\"Kreditkanalen\",\"räntan prissätter balansräkningens risk\",\"högt belåtade bolag\",\"V10 Skuldsättningsgrad\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Mät din egen räntekänslighet: tag fem bolag ur din bevakningslista och poängsätt dem 1–5 på två skalor — V10 (låg belåning = 5) och V12 (hög intäktsstabilitet = 5). Räkna ut summan per bolag. Öppna sedan veckografen på långa statsobligationer och notera trenden (upp/ned/sidledes). Fråga: vilka av dina fem bolag har den sämsta summan — och vad händer med dem om obligations trend är nedåt? Du har just översatt en makrograf till fem bolagsrader."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är NORMAL-förhållandet mellan obligationer och aktier?",
+          "alternativ": [
+            "Obligationer och aktier korrelerar negativt — alltid",
+            "Obligationer och aktier rör sig i princip tillsammans — räntan är deras gemensamma nämnare",
+            "De har ingen som helst relation",
+            "Aktier leder alltid obligationerna med två år"
+          ],
+          "ratt": 1,
+          "tips": "Vilken enda siffra sitter i både diskonteringsformeln och i alternativkostnaden?"
+        },
+        {
+          "q": "Varför vänder obligationsmarknaden ofta före aktiemarknaden enligt Murphy?",
+          "alternativ": [
+            "Därför att obligationer handlas bara en gång per vecka",
+            "Därför att obligationshandlare tjänar mer pengar",
+            "Därför att obligationen är den renaste inflationsoch tillväxtmätaren — ingen story, bara ränta",
+            "Därför att centralbanker köper aktier"
+          ],
+          "ratt": 2,
+          "tips": "Vilket instrument prissätter framtiden utan berättelser?"
+        },
+        {
+          "q": "Vad blev 1990-talet för normalförhållandet?",
+          "alternativ": [
+            "Ett paradfall — desinflation föll räntorna och obligationer och aktier steg tillsammans i en mångårig gemensam uppgång",
+            "Ett totalt brott — de rörde sig motsatt hela decenniet",
+            "Ett decennium utan ränteförändringar",
+            "Ett bevis för att relationen är en lag som aldrig kan brytas"
+          ],
+          "ratt": 0,
+          "tips": "Stark dollar, fallande råvaror, fallande räntor — vilket väder för båda tillgångsslagen?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "När normalen bryts — flight to quality och deflationens värld",
+      "intro": "Normalförhållandet har två klassiska brytningar, och Murphy varnar för båda: flight to quality — när paniken slår till och obligationer och aktier vänder tecken mot varandra — och deflationsregimen, där fallande räntor INTE räddar aktiemarknaden. Detta kapitel är kursernas regime-lessons kärna: samma signal betyder olika saker i olika regimer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Brytning ett: FLIGHT TO QUALITY. I akut kris säljs risk tillgångar — aktier, kredit, emerging markets — och kapitalet söker säkerst trygga statspapper. Då stiger obligationer medan aktier faller: den positiva normalkorrelationen byter tecken just när investeraren behöver den som mest. Murphys praktiska konsekvens: i krislägen är obligationsgrafen inte en bekräftelse utan en MÄTARE på panikens intensitet — en aktienedgång SOM LÖSES AV stigande obligationer är en annan historia än en aktienedgång MED fallande obligationer; det sena betyder inflation eller kreditmisstro även i flykten, vilket är ett djupare fel. 1987 var just ett sådant fall: obligationer VÄGRADE rallya under kraschen — signalen att det som bröt inte bara var aktiernas nervositet."
+        },
+        {
+          "type": "text",
+          "content": "Brytning två: DEFLATION. I en deflationsregimen — Japans 1990-tal är bokens eget huvudexempel, och kapitel 11 ägnas det ett helt kapitel — gäller omvänd logik: fallande räntor och stigande obligationspriser är ett SYMTOM på fallande efterfrågan och priser, inte en stimulans. Aktiemarknaden faller med fallande vinster medan obligationer stiger; den som mekaniskt läser fallande räntor som aktiepositivt köper symtom och kallar det analys. Murphy observers vidare att KREDIT inom obligationsfamiljen skiljer ut sig i deflation: företagsobligationer med risk spricker mot statspapperet — spreaden blir den känsligare indikatorn än räntenivån själv (en signal AK1A:s grannkurs Quantitative Value använder som värdefälle-radar på bolagsnivå)."
+        },
+        {
+          "type": "text",
+          "content": "Verktyget mot båda brytningarna är detsamma: REGIME-MEDVETENHET — att först klassificera vilken värld man är i (inflation, desinflation, deflation, kris) och först sedan läsa signalerna. Murphy gör det i praktiken genom att alltid visa de fyra marknadernas grafer sida vid sida: regimen syns i KOMBINATIONEN — stigande råvaror + fallande obligationer = inflationstryck; fallande råvaror + stigande obligationer = desinflation eller deflation; kris = tvära kast i båda. Kursen formaliserar det i tabellen nedan, och det är samma bord som kontroverskapitlet kommer att försvara mot korrelationskritiken: korrelationer är regime-beroende — därför är regime-klassifikation det första steget, inte en eftertanke."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet — deflationstestet. I deflation är intäktsSTABILITET och prissättningsmakt (V14) det som skiljer överlevare från prisoffer: fallande allmän prisläge pressar V01-tillväxt till närmast negativ medan ARR-/kontraktsintäkter håller. AK1TS-RAD: Regime-dimensionen — när aktie- och obligationsceller pekar mot varje annat skrivs tolkningen OSATT tills regimen är klassificerad; motorn vågar skriva osatt — det är dess ärlighet mot story-telling."
+        },
+        {
+          "type": "insikt",
+          "content": "Samma signal, olika värld: fallande räntor är gott i desinflation (aktiernas hiss upp), neutralt i kris (panikmätare) och dystert i deflation (symtom på fallande efterfrågan). Innan du tolkar EN enda intermarket-signal — klassificera regimen. Signal utan regime är statistik utan kontext: sann, men meningslös."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Obligationer–aktier i fyra regimer\",\"rader\":[[\"Regime\",\"Råvaror\",\"Obligationer\",\"Aktier\",\"Fallande ränta betyder\"],[\"Inflation\",\"stigande\",\"fallande\",\"pressad\",\"högre hyra — negativt\"],[\"Desinflation (1990-tal)\",\"fallande\",\"stigande\",\"stigande\",\"stimulans — positivt\"],[\"Kris (flight to quality)\",\"kollaps/stigande\",\"stigande (flykt)\",\"fallande\",\"panikmätare — neutral information\"],[\"Deflation (Japan 1990-tal)\",\"fallande\",\"stigande\",\"fallande\",\"symtom — negativt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör regime-klassifikationen på nutiden: notera riktningen (12-månaders) för råvaruindex, långa statsobligationer och brett aktieindex. Slå upp tabellen ovan och klassificera i vilken av de fyra rutorna kombinationen hamnar — eller om den ligger mellan rutor (skriv mellan-x och mellan-y). Upprepa för tolv månader sedan. Notera: bytte regimen ruta? Om ja — vilka av dina aktieslag borde ha bytt husdjurstatus (cykliska ↔ defensiva) vid det tillfället?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är flight to quality?",
+          "alternativ": [
+            "Att investerare köper mer aktier i kris",
+            "Att kapitalet i panik flyr risk tillgångar till säkra statspapper — obligationer stiger när aktier faller och normalkorrelationen byter tecken",
+            "En metod att värdera bolag med högre kvalitet",
+            "Att centralbanken höjer styräntan"
+          ],
+          "ratt": 1,
+          "tips": "Vart flyttar pengarna när allt känns farligt — och vad gör det med statspapperspriset?"
+        },
+        {
+          "q": "Varför är fallande räntor NEGATIVT för aktier i deflation?",
+          "alternativ": [
+            "Därför att centralbanken alltid gör fel",
+            "Därför att fallande räntor då är ett symtom på fallande efterfrågan och priser — inte en stimulans",
+            "Därför att räntor aldrig får falla",
+            "Därför att aktier alltid stiger då"
+          ],
+          "ratt": 1,
+          "tips": "Vad är orsak och vad är verkan i deflation — stimulans eller symtom?"
+        },
+        {
+          "q": "Vad blev 1987 års särskilda obligationsignal under själva kraschen?",
+          "alternativ": [
+            "Obligationer rallyade kraftigt — allt var normalt",
+            "Räntorna föll till noll",
+            "Obligationer och aktier steg tillsammans",
+            "Obligationer vägrade stiga under aktiefallet — signal om djupare fel än aktiernas nervositet"
+          ],
+          "ratt": 3,
+          "tips": "Murphy tolkar obligationsgrafens frånvaro av flykt som information — varför?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Råvaror kontra obligationer — inflationens länk",
+      "intro": "Bokens viktigaste INVERSE relation: råvaror och obligationer rör sig normalt motsatt varandra. Orsaken är inflationen — obligationsmarknaden handlar inflationSFÖRVÄNTNINGAR, och råvarumarknaden är den tidigaste verkliga mätaren på trycket. Detta kapitel går igenom länken steg för steg, från råvarukostnad till räntenivå — och dess bolagsöversättning i V07:s bruttomarginal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Relationen: råvarupriser UPP → obligationspriser NED (räntor upp); råvaror NED → obligationer UPP. Mekanismen är en kedja med eftersläpning på varje steg, och Murphy betonar just eftersläpningen — det är där informationsinnehållet bor. Steg ett: råvarukostnaden — energi, metaller, jordbruksprodukter — stiger på råvarumarknaden, omedelbart synlig i terminskurserna. Steg två: producentpriser — tillverkarnas inköpspriser stiger med fördröjning (lager, kontrakt). Steg tre: konsumentpriser — KPI pressas upp när kostnaderna trillar igenom. Steg fyra: inflationSFÖRVÄNTNINGAR — obligationsmarknaden, som prissätter framtida köpkraft, krämer högre avkastning. Steg fem: räntenivån stiger, obligationspriset faller. Kedjan tar månader från ett till fem — vilket är hela poängen: RÅVARUMARKNADEN ÄR TIDIGAST, OBLIGATIONSMARKNADEN är bekräftelsen, och aktiemarknaden är sist i kön."
+        },
+        {
+          "type": "text",
+          "content": "Murphys bevis är 1980-talet och 1990-talet som spegelbilder. 1980-talet: dollarn föll, råvarorna steg (CRB i kraftig upptrend), inflationen steg, obligationerna föll — och aktiemarknaden levde farligt. 1990-talet: dollarn stärktes, råvarorna föll i en nästan decennielång nedtrend, obligationerna steg i en av historiens längsta börs-trends — och aktiemarknaden med dem. Samma relation, två riktningar, ett och samma budskap: RÅVARUTRENDEN ÄR REGIMENS TERMOMETER, OBLIGATIONSTRENDEN ÄR FEBERMÄTAREN. Bokens operationalisering: håll CRB-grafen bredvid obligationsgrafen — när båda pekar samma håll (båda upp eller båda ned) är något onormalt på väg (kapitel 8:s 2002-anomali och kapitel 14:s korrelations-varning)."
+        },
+        {
+          "type": "text",
+          "content": "Bolagsöversättningen — och här möter boken AKM1 på ett konkret sätt. Råvaruuppgång är inte bara makro: den är V07 BRUTTOMARGINALS fiende. För ett tillverkningsbolag är råvaran den första kostnadsposten; när inputpriserna stiger snabbare än outputpriserna kläms marginalen — om inte bolaget har prissättningsmakt (V14 Varumärke och kundlojalitet) att föra kostnaden vidare. 1980-talets inflation och 2002-talets råvaruboom skiljde därför ut VINNARE (producenter av råvaror och bolag med pris makt) från FÖRLORARE (pris-tagar-konsumenter av råvaror) — och det är exakt det som sektorsrotationens fas tre (kapitel 9) handlar om: i råvaruuppgång leder energi- och materialsektorn, medan lågmargin-tillverkare pressas."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V07 Bruttomarginal — råvarans första offer. Följ V07 som tidsserie (Vågfundamentets princip: varje variabel är en våg) och sätt den bredvid råvaruindexets trend: sjunkande V07 under stigande råvaror = bolaget betalar regimen; stabil V07 under stigande råvaror = pris makt (V14 bekräftas). AK1TS-RAD: Regime-dimensionen — råvarutrenden (MA200 på CRB, momentum 252) är inputmatrisens första rad: den klassificerar inflationstrycket som alla V07- och V04–V06-läsningar vägs mot."
+        },
+        {
+          "type": "insikt",
+          "content": "Obligationsmarknaden handlar inte ränta — den handlar inflationSFÖRVÄNTNINGAR. Därför är råvarumarknaden obligationens tidigaste fiende-vän: när råvarorna vänder vänder inflationsförväntningarna, och när förväntningarna vänder vänder räntan — månader innan KPI gör det. Den som vill veta vad obligationsmarknaden kommer att säga imorgon läser råvarorna i dag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Inflationens länk — från råvara till ränta (med eftersläpning)\",\"rader\":[[\"Steg\",\"Marknad/mätare\",\"Fördröjning\",\"Kommentar\"],[\"1. Råvarukostnad\",\"CRB, energi-, metall- och jordbrukspriser\",\"ingen — terminer reagerar direkt\",\"TIDIGASTE signalen; prisad framtid, inte historik\"],[\"2. Producentpriser\",\"PPI/inköpspriser\",\"månader\",\"lager och kontrakt bromsar\"],[\"3. Konsumentpriser\",\"KPI\",\"kvartal\",\"det folkligt kallas inflation — sist av alla\"],[\"4. Förväntningar\",\"obligationsmarknadens prissättning\",\"realtid på ny data\",\"det som faktiskt flyttar räntan\"],[\"5. Ränta/obligationspris\",\"statsobligationsgrafen\",\"—\",\"bekräftelsen — och aktiemarknadens nästa problem\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör V07-regime-testet: välj tre tillverkande bolag ur ditt universum. Notera deras bruttomarginal utveckling de senaste tre åren (V07 som tidsserie). Notera samtidigt råvaruindexets trend samma period. Klassificera varje bolag: BETALAR (V07 nedåt under råvaruuppgång), HÅLLER (V07 stabil) eller TAR PRIS (V07 uppåt). Vilka bolag har prissättningsmakt — och vad i deras V14-profil (varumärke, kundlojalitet) förklarar det? Skriv en mening per bolag."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den normala relationen mellan råvaror och obligationer?",
+          "alternativ": [
+            "Positiv — de stiger alltid tillsammans",
+            "INVERSE — råvaror upp betyder obligationspriser ned, via inflationen",
+            "Ingen relation alls",
+            "Beror enbart på dollarns rörelse oavsett riktning"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör stigande råvarupriser med obligationsköparens krav på framtida köpkraft?"
+        },
+        {
+          "q": "Varför kallas råvarumarknaden kedjans TIDIGASTE signal?",
+          "alternativ": [
+            "Därför att den är minst likvid",
+            "Därför att råvaror bara handlas på natten",
+            "Därför att terminspriser reagerar omedelbart medan PPI, KPI och förväntningar släpar efter med månader",
+            "Därför att centralbanker styra den direkt"
+          ],
+          "ratt": 2,
+          "tips": "Räkna stegen i kedjan — var finns fördröjningarna?"
+        },
+        {
+          "q": "Hur översätts en råvaruuppgång till bolagsnivå i AKM1?",
+          "alternativ": [
+            "Som förbättrad V01 för alla bolag automatiskt",
+            "Som press på V07 bruttomarginal för råvaru-konsumenter — om de saknar prissättningsmakt (V14)",
+            "Som minskad belåning (V10)",
+            "Som förbättrad intäktsstabilitet (V12)"
+          ],
+          "ratt": 1,
+          "tips": "Vilken kostnadspost stiger först för ett tillverkningsbolag — och vem får betala den?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "CRB-index och guld — råvarufrontens mätare",
+      "intro": "För att läsa råvarufronten behövs instrument: CRB-indexet — råvarubörsens äldida och mest bevakade sammanlagda mätare — och guldet, råvaran som samtidigt är valuta och inflationsskydd. Murphy använder båda genom hela boken; kursen går igenom deras konstruktion, deras signalvärde och deras skillnad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "CRB-indexet — Commodity Research Bureaus futuresindex — skapades 1957 och var under bokens hela epok världens mest citerade råvarubarometer: sjutton råvaror — energi, metaller, jordbruksvaror — sammansatta till en enda kurva, med energi som tyngsta grupp (råolja, naturgas och eldningsolja — energigruppen har varit tyngst genom historien). Varför ETT index? Av samma skäl som man inte läser aktiemarknaden genom en enda aktie: enskilda råvaror brusar (skördar, karteller, väder), men bredden i ett index visar den underliggande prisTRÖNden — det Murphy faktiskt handlar på. CRB:s roll i intermarket-modellen är dubbel: inflationens termometer (kapitel 5) och regimen klassificerare (tillsammans med dollarn och obligationerna)."
+        },
+        {
+          "type": "text",
+          "content": "Guldet spelar en egen roll som ingen annan råvara gör — Murphy ägnar det öppet egna analyser. Ett: GULD ÄR VALUTA. Det mäts i dollar och är i praktiken dollarns spegel — när dollarn försvagas stiger guldpriset mekaniskt och vice versa (den inverse dollarrelationen är starkast just för guld). Två: GULD ÄR INFLATIONSFÖRSÄKRING — det är tillgången folk köper när de tror att pappersvalutan kommer att förlora värde, oavsett om råvarubredet gått upp eller inte. Tre — historien under bokens epok: guldet bottnade kring 252 dollar per uns sommaren 1999, och i september 1999 kom Washington-agreementet, där ett antal centralbanker kommitterade att begränsa sin guldutlåning och försäljning — guldet vände uppåt, spikeade kraftigt, och Murphy såg det som ett tidigt tecken på att 1990-talets desinflationsslög var på väg att brytas. Guldet VÄNDER ofta före breda CRB — det är råvarufrontens ledarindikator, precis som obligationen leder aktierna."
+        },
+        {
+          "type": "text",
+          "content": "Tillsammans ger CRB och guld råvarufrontens kompletta läsning, och Murphy använder dem som par: stigande guld + fallande CRB = valutasignal (dollarn svag) utan bred inflation; stigande guld + stigande CRB = bred inflationstryck (regimen som dödar obligationer); fallande båda = desinflation/deflation (regimen som älskar obligationer). 2002–2004, bokens sista kapitel, var just ett sådant paradfall: dollarn föll, guldet bröt uppåt mot 400 dollar, och CRB steg till nya högsta på sedan början av 1980-talet — Murphy drog slutsatsen öppet: inflationen var på väg tillbaka, 1990-talets desinflationsregime höll på att ta slut. Historien gav honom rätt — och metoden, inte minnet av den, är vad kursen vill att du tar med."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V18 Regulatoriska katalysatorer — Washington-agreementets läxa. Den enskilde analytikern kan inte förutsäga centralbanks-överenskommelser, men kan REAGERA på dem när de syns i priset: guldets vändning 1999 var en regulatorisk katalysator på råvaru-marknads nivå. AK1TS-RAD: Trend-dimensionen — guld- och CRB-trender på Lång horisont (MA200/momentum 252) är de två rader i toppskiktet som klassificerar inflationstryck; volymteorin (volymraden) bekräftar breakoutens allvar."
+        },
+        {
+          "type": "insikt",
+          "content": "CRB mäter inflationen; guld mäter valutans trovärdighet. När de pekar samma håll — båda upp — är budskapet regimebyte: inflationen är tillbaka, obligationerna är i fara. När de pekar isär pekar de på dollarn. Två grafer, tre möjliga budskap — hela råvarufronten på en kvart."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CRB och guld — råvarufrontens sex kombinationer\",\"rader\":[[\"Guld\",\"CRB\",\"Budskap\",\"Regime-tag\"],[\"Upp\",\"Upp\",\"bred inflation\",\"obligationer farliga — aktier pressade\"],[\"Upp\",\"Ned\",\"dollarn svag — valutasignal utan bred inflation\",\"valuta-läge; sektor-effekter via export/import\"],[\"Ned\",\"Upp\",\"bred men icke-monetär uppgång\",\"energi/material-läge — sektorspel\"],[\"Ned\",\"Ned\",\"desinflation eller deflation\",\"obligationer gynnas — Japan-logik\"],[\"Bas/sidledes\",\"Upp\",\"tidig bred uppgång\",\"tidig inflationssignal — bekräfta med obligationsfall\"],[\"Upp\",\"Bas/sidledes\",\"tidig valutavändning\",\"dollarns trend är nästa fråga\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör guld-CRB-diagnostiken på nutiden: hämta 12-månadstrenden för guldpris och ett brett råvaruindex. Slå upp vilken av de sex kombinationerna i tabellen som gäller. Skriv sedan tre rader: vad säger det om obligationer, om din sektor-viktning (energi/material vs långväxt), och om V07-läget för råvaru-konsumenter i ditt universum? Avsluta med: vilken kombinationsskifte skulle få dig att ändra dig — och vad skulle det heta?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är CRB-indexet?",
+          "alternativ": [
+            "Ett index över amerikanska bolåneräntor",
+            "Commodity Research Bureaus futuresindex — sedan 1957, sjutton råvaror sammansatta med energi som tyngsta grupp",
+            "En eurokurs",
+            "Ett bolags kvalitetsmått"
+          ],
+          "ratt": 1,
+          "tips": "Vilken bransch väger tyngst i världens äldsta råvarubarometer?"
+        },
+        {
+          "q": "Vilken DUBBEL roll har guld i intermarket-modellen?",
+          "alternativ": [
+            "Valuta (dollarns spegel) OCH inflationssäkring — därför vänder det ofta före breda CRB",
+            "Bara smyckesråvara utan signalvärde",
+            "Endast industriell metall som koppar",
+            "Centralbanksreserv utan prissamband"
+          ],
+          "ratt": 0,
+          "tips": "Vad köper den som inte litar på pappersvalutan — och i vilken valuta mäts det?"
+        },
+        {
+          "q": "Vad var Washington-agreementet (1999) i kursens läsning?",
+          "alternativ": [
+            "Ett handelsavtal om spannmål",
+            "En överenskommelse där centralbanker begränsade guldutlåning/försäljning — guldet vände efter bottnen kring 252 dollar",
+            "En ny beräkningsmetod för CRB",
+            "Plaza-avtalets officiella namn"
+          ],
+          "ratt": 1,
+          "tips": "Vem äger mest guld i världen — och vad händer när de lovar sluta sälja?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Dollarn — valutan som motorn i kedjan",
+      "intro": "Längst fram i kedjan sitter valutan. Dollarn — världens reservvaluta och prisenheten för världens råvaror — är Murphys motor: dess trend bestämmer råvarornas riktning, som bestämmer inflationstrycket, som bestämmer obligationerna, som bestämmer aktierna. Detta kapitel går igenom dollarns mekanik och bokens King Dollar-epos.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den första mekanismen är ren bokföring: RÅVAROR PRISÄTTS I DOLLAR. När dollarn faller mot andra valutor blir råvarorna dyrare för alla som inte håller dollar — och terminsmarknaderna prissätter det omedelbart: svag dollar → stigande råvarupriser → inflationstryck → fallande obligationer. Stark dollar → spegelvänt. (Orden och undantagen — en fysisk leveransstörning kan driva olja upp även mot stark dollar — hör hemma i kapitel 14 om missbruk; grunden är prisenheten.) Den andra mekanismen är kapitalflödet: en stark dollar under 1990-talet speglade kapital som strömmade IN i amerikanska tillgångar — vilket höll både obligationer och aktier uppe; en svag dollar är kapital som lämnar, med motsatt verkan. Murphy kallar frågan kedjans första: dollarns trend är den första grafen han slår upp."
+        },
+        {
+          "type": "text",
+          "content": "Bokens eget epos: KING DOLLAR. Efter en svag-dollar-era med Plaza-avtalet (1985) vände dollarn kraftigt uppåt från mitten av 1990-talet — 1995 förklarade dåvarande finansministern Robert Rubin en politik för en stark dollar, och dollarn steg i nästan sju år. Effekten genom hela kedjan, exakt som modellen spår: fallande råvarupriser (CRB i mångårig nedtrend), fallande inflation, sjunkande räntor, stigande obligationer — och den amerikanska aktiemarknadens episka booma. Det är intermarket-modellen på sin höjdpunkt: EN valutatrend, tre följder, en aktiemarknadsepok. Murphy sammanfattar 1990-talet i en mening: kung Dollar skapade desinflationen, desinflationen skapade obligationernas och aktiernas tillsammans-uppgång."
+        },
+        {
+          "type": "text",
+          "content": "Och vändningen, som boken följer lika noggrant: från början av 2002 föll dollarn — budget- och handelsunderskott, lägre räntor än omvärldens, divergerande konjunkturer — och kedjan svepte igenom: guld och råvaror bröt uppåt, inflationen återkom, obligationerna fick sin första riktiga press på årtionden (med det anomala undantaget kapitel 8 ägnar en egen passage). Kursens läxa är att dollarn är ENDA variabeln i kedjan som kan förändras av POLITISKA beslut och flödesbalanser snarare än av marknadsprocesser ensamma — därför är den också den svåraste att förutsäga och den lättaste att läsa EFTER faktiskt: du behöver inte förutsäga kungens död — du behöver bara läsa grafen när han ligger."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V03 Intäktsdiversifiering — valutarisken i intäktsbasen. Ett exportbolag med helt dollardenominerade intäkter lever farligt när hemvalutan stärks; V03:s bredd (kunder, marknader, valutor) är bolagets egen valuta-hantering. AK1TS-RAD: Trend-dimensionen — dollarindexets MA200 och 252-dagars momentum är motorns första rad: ingen cell i aktie-matrisen läses utan att denna rad först är klassad (upp/ned/sidledes)."
+        },
+        {
+          "type": "insikt",
+          "content": "Dollarn är kedjans tändning: den ändrar inte motorn — den bestämmer dess riktning. Råvarorna prissätts i den, kapitalet flyter efter den, obligationerna diskonterar den. Slå därför ALDRIG upp en aktiegraf först — slå upp dollarindexet. Fem sekunder som bestämmer hur du ska tolka nästa fem grafer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dollarn i två riktningar — kedjans spegelvärldar\",\"rader\":[[\"Led\",\"Stark dollar (King Dollar, 1995–2002)\",\"Svag dollar (Plaza 1985; 2002–)\",\"AKM1/AK1TS-tag\"],[\"Råvaror\",\"fallande (desinflation)\",\"stigande (inflation återkom)\",\"V07-input; CRB MA200\"],[\"Obligationer\",\"stigande pris, fallande ränta\",\"pressad; räntor upp (med undantag — anomali kap 8)\",\"V10-kontext\"],[\"Aktier\",\"desinflations-boom — aktier och obligationer tillsammans\",\"inflationstryck — aktier slitna; råvaruproducenter vinner\",\"V01/V12-väljare\"],[\"Sektorspel\",\"långväxt tillväxt (fallande input-kostnad)\",\"energi, material, guld; exportörer beroende på hemvaluta\",\"fas 2 vs fas 3 i rotationen\"],[\"Kapitalflöde\",\"inflöde till USA-tillgångar\",\"utflöde — sök avkastning utanför\",\"regime-klassifikation\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör kung-testet: notera dollarindexets 12-månadstrend (upp/ned/sidledes). Följ sedan kedjan i tabellen: vad IMPLICERAR den trenden för råvaror, obligationer, aktier och sektorer? Kontrollera sedan varje led mot verkligheten (graferna). Skriv ned varje avvikelse: led där kedjan INTE följdes. Varje avvikelse är antingen en anomali värd att förstå (kapitel 8) eller ett statistiskt skim (kapitel 14) — notera skillnaden."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför sitter dollarn längst fram i intermarket-kedjan?",
+          "alternativ": [
+            "Därför att den är störst i fysisk storlek",
+            "Därför att aktiemarknaden bara handlas i dollar",
+            "Därför att alla centralbanker förbjudit andra valutor",
+            "Därför att råvaror prissätts i dollar och kapitalflöden följer valutans trend — dess riktning styr resten av kedjan"
+          ],
+          "ratt": 3,
+          "tips": "Vad händer med råvarans pris för icke-dollar-köpare när dollarn faller?"
+        },
+        {
+          "q": "Vad kännetecknade King Dollar-eran 1995–2002 i kedjan?",
+          "alternativ": [
+            "Stark dollar → fallande råvaror → desinflation → stigande obligationer och aktieboom",
+            "Stark dollar → stigande råvaror → inflation → krasch",
+            "Svag dollar → fallande råvaror",
+            "Ingen effekt alls på övriga marknader"
+          ],
+          "ratt": 0,
+          "tips": "Vilken aktiemarknadsepok följde — och vilket råvaruklimat rådde under den?"
+        },
+        {
+          "q": "Vad är kursens hållning till att FÖRUTSÄGA dollarn?",
+          "alternativ": [
+            "Att det är enkelt och alltid möjligt med teknisk analys",
+            "Att dollarn påverkas av politiska beslut och flödesbalanser och därför är svårast att förutsäga — men enkel att LÄSA efter faktiskt via grafen",
+            "Att dollarn är oläslig och oviktig",
+            "Att bara centralbanken vet och ska frågas"
+          ],
+          "ratt": 1,
+          "tips": "Kungen kan dö när som helst — vad krävs för att veta att han ligger?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Helhetskedjan — dollar → råvaror → obligationer → aktier",
+      "intro": "Nu sätts systemet ihop: de fyra relationerna till EN kedja, i normalregimens ordning. Kursen går igenom kedjan i båda riktningarna (1980-talets inflationstriangulering och 1990-talets desinflationsepos), Murphys use av den för asset allocation — och den anomala period i bokens slut (2002–2003) som lär lika mycket som normalfallet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kedjan i normalregimen, ordning för ordning. Steg ett — VALUTAN: dollarns trend sätter prisenheten. Steg två — RÅVARORNA: priset på det verkliga — energi, metaller, mat — svarar på valutan med månads-fördröjning. Steg tre — OBLIGATIONERNA: räntemarknaden diskonterar råvarufrontens inflationstryck och konjunkturen. Steg fyra — AKTIERNA: sist i kön, eftersom de diskonterar allt det andra PLUS sina egna vinster. Ordningsföljden är informational: från mest direkt prissatt (valutan) till mest sammansatt (aktien). 1980-talet negativa variant: svag dollar → stigande råvaror → fallande obligationer → slitna aktier. 1990-talet positiva variant: stark dollar → fallande råvaror → stigande obligationer → stigande aktier. SAMMA kedja, spegelvända världar — och därför samma analysinstrument."
+        },
+        {
+          "type": "text",
+          "content": "Murphys andra användning av kedjan: ASSET ALLOCATION. Om de fyra tillgångsslagen hänger ihop kan ingen fördela kapital mellan dem i isolering — intermarket-analysen är allokeringens karta. Bokens principer, som kursen formaliserar: jämför alltid TILLGÅNGSSLAGEN sinsemellan med relativa styrka-tal (aktier/obligationer, aktier/råvaror) i stället för att gissa på absolut avkastning; luta portföljen mot det tillgångsslag vars intermarket-vind håller i (desinflation: aktier+obligationer; inflation: råvaror och råvaruproducerande aktier; deflation: obligationer och kontantflödes-stabila aktier); och använd pengarna — kontant — som fjärde tillgång när ingen kombination ger grönt. Det är bokens bidrag till den eviga allocation-frågan: slumpa inte vikterna — läs regimen först."
+        },
+        {
+          "type": "text",
+          "content": "Och anomalin, som Murphy själv lyfter fram utan att ducka: 2002–2003. Dollarn föll kraftigt, råvarorna och guldet bröt uppåt, inflationen var på väg tillbaka — men obligationerna STEG ändå, till räntenivåer som var de lägsta på en människoålder. Orsakerna (efter hands): en desinflations-chock från Kinas inträde i världshandeln, flykt efter IT-kraschen, och centralbankernas extremstimulans. Lärdomen är kursens hårdaste: KEDJAN ÄR EN REGLE-REGEL, INTE EN MASKIN — när två led pekar motsatt (råvaror upp, obligationer upp) är systemet i ett övergångsläge, och intermarket-analytikerns uppgift är att MARKERA övergången, inte att tvinga kedjan till lydnad. (Att enkel mekanisk extrapolation av kedjan hade misslyckats 2002–2003 är just det kontroverskapitlet tar som utgångspunkt.)"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01–V12-paret — kedjans bolagsöversättning. Kedjans riktning avgör om V01 Försäljningstillväxt (cyklisk tillväxt, fas 2-belöning) eller V12 Intäktsstabilitet (defensiv stabilitet, fas 4-belöning) är den variabel som marknaden just då betalar för. AK1TS-RAD: Matris-hierarkin — regimen (dollar/råvaror/ränta) klassas på Lång/Mega-horisont först; först därefter läses Kort/Mikro-cellerna på enskilda aktier. Topp ned, alltid — men deterministiskt: fem horisonter, fem teorier, samma data, samma svar."
+        },
+        {
+          "type": "insikt",
+          "content": "Kedjan är en väderprognos, inte en spådom: den berättar vilken vind som blåser — inte exakt när det regnar. Använd den för att välja segel (tillgångsslag och sektorer), inte för att tajma varje vindby. Och när två led i kedjan säger emot varandra — stanna och klassificera regimen, tvinga aldrig kedjan att stämma."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Normal-regimens korrelationsmatris (illustrativa värden, Murphy-modellen)\",\"rader\":[[\"Par\",\"Normal-tecken\",\"Logik\",\"Typisk brytning\"],[\"Obligationer–aktier\",\"positiv (+0,3 till +0,6)\",\"gemensam diskontering av tillväxt och inflation\",\"flight to quality; deflation — teckenvändning\"],[\"Råvaror–obligationer\",\"negativ (−0,5 till −0,7)\",\"inflation trycker räntor upp, obligationspris ned\",\"deflationsskräck: båda kan röra sig 'upp' 2002–03\"],[\"Dollar–råvaror\",\"negativ (−0,4 till −0,6)\",\"råvaror prissätts i dollar\",\"leveransstörningar; Kina-chocken 2002\"],[\"Dollar–USA-aktier\",\"positiv på 1990-talet\",\"kapitalinflöde lyfter båda\",\"kan vända vid exportördominerad börs\"],[\"Guld–dollar\",\"negativ (starkast i klassen)\",\"guld som valutaspegel\",\"systemkris: båda stiger i flykt\"],[\"Aktier–råvaror\",\"svagt positiv\",\"gemensam tillväxt-driv\",\"oljechock: stigande råvaror, fallande aktier\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen fyra-marknads-panel: skapa ett vy-rutnät med dollarindex, råvaruindex, lång statsobligation och brett aktieindex — veckograf, två års fönster. Klassificera varje graf (upp/ned/sidledes) och para med korrelationsmatrisens förväntade tecken. Skriv en sammanfattande regime-diagnos på max tre meningar. Upprepa övningen första söndagen varje månad i tre månader — notera när din diagnos byter och vilken kedjepartner som vände först."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är kedjans normala ordning?",
+          "alternativ": [
+            "Dollar → råvaror → obligationer → aktier — från mest direkt prissatt till mest sammansatt",
+            "Aktier → obligationer → råvaror → valuta",
+            "Råvaror → aktier → dollar → obligationer",
+            "Ordningen är slumpmässig"
+          ],
+          "ratt": 0,
+          "tips": "Vem reagerar snabbast på ny information — och vem diskonterar mest?"
+        },
+        {
+          "q": "Hur använder Murphy kedjan för asset allocation?",
+          "alternativ": [
+            "Genom att alltid köpa aktier oavsett regimen",
+            "Genom relativa styrka-tal mellan tillgångsslagen och lutning mot det tillgångsslag vars intermarket-vind håller i — kontant som fjärde val",
+            "Genom slumptal",
+            "Genom att alltid ha 25 procent i varje tillgång"
+          ],
+          "ratt": 1,
+          "tips": "Om tillgångsslagen hänger ihop — vad bör bestämma vikterna dem emellan?"
+        },
+        {
+          "q": "Vad lär anomalin 2002–2003 (råvaror och obligationer steg tillsammans)?",
+          "alternativ": [
+            "Att kedjan alltid stämmer mekaniskt",
+            "Att kedjan är en regime-regel, inte en maskin — vid motstridiga led ska övergångsläget MARKERAS, inte tvingas till lydnad",
+            "Att råvaror aldrig stiger",
+            "Att obligationer alltid faller när råvaror stiger"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör en ärlig analytiker när två led i kedjan säger emot varandra?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Sektorsrotation — konjunkturens fyra faser (murphy-grafen)",
+      "intro": "Bokens mest citerade bidrag utanför intermarket-kärnan: kopplingen mellan konjunkturcykeln och aktiemarknadens sektors-rotation — murphy-grafen, hjuldiagrammet som för varje konjunkturfaser visar vilka sektorer som leder och vilka som släpar. Kursen går igenom de fyra faserna och deras signaler i kedjan — och mappar rotationen mot V01 och V12.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Idén, som Murphy populariserade (med rötter i rotation-studier från Merrill och S&P:s Sam Stovall, citerat öppet): marknaden SPELAR inte konjunkturen som den är — den spelar VÄNTADE FÖRÄNDRINGAR. Därför roterar sektor-ledarskapet förutsägbart genom cykeln: aktiemarknaden köper botten i konjunkturen när räntorna fortfarande faller och säljer toppen när vinsterna fortfarande växer. Murphy-bygget sammanför intermarket-kedjan (ränta, råvaror) med sektor-ledarna i fyra faser — och kopplar diagrammet till de nyckelmarknader du nu behärskar: OBLIGATIONERNA vänder först (botten i fas 1), AKTIERNA i botten av fas 1/2, RÅVARORNA sist upp (toppen av fas 2/3) — och allt sedan i reverse i nästa cykel. Rotationen är kedjan förlängd IN i aktiemarknaden."
+        },
+        {
+          "type": "text",
+          "content": "De fyra faserna, som kursen formaliserar i tabellen nedan. FAS 1 — tidig återhämtning (recessionens slutspel): räntor faller, obligationer stiger; ledare: RÄNTEKÄNSLIGA — banker och finans (fallande kreditförluster, brant kurva), fastigheter och bygghandel (bolåneräntan faller), utilities (avkastningsattraktiva när räntan faller) och tidiga konsumentcykliska (bilar, detaljhandel — räntekänslig efterfrågan). FAS 2 — expansion: ekonomin återhämtar sig, VINST-förväntningarna tar över som drivkraft; ledare: kapitalvaror, teknik, industri, transport och bredare konsumentcykliska. FAS 3 — sen expansion/överhettning: RÅVARORNA stiger, räntorna med; ledare: ENERGI, basmaterial/metaller och guld — inflationens vinnare; samtidigt pressas lågmargin-bolag (V07 igen) och lågmargin-konsumenter. FAS 4 — contraction/recession: obligationer toppar, kredit spricker, aktierna faller; ledare: DEFENSIVA — konsumentstaples, hälso- och sjukvård, livsmedel och (i tidiga fas 1) åter utilities och finans — hjulet börjar om."
+        },
+        {
+          "type": "text",
+          "content": "AK1TS/AKM1-mappningen är kursens kärna och därför tät: ROTATIONEN ÄR EN FRÅGA OM VILKEN VARIABEL MARKNADEN PREMIERAR. Fas 1–2: V01 FÖRSÄLJNINGSTILLVÄXT är kung — cyklisk tillväxt prisas när återhämtningen diskonteras (bankernas V10-frigörelse, byggbolagens V10-vinst). Fas 3: V07 BRUTTOMARGINAL och V14 PRISÄTTNINGSMAKT är kung — bolag som kan föra råvarukostnaden vidare behåller marginalen medan pris-tagar-konsumenterna kläms. Fas 4: V12 INTÄKTSSTABILITET är kung — ARR, kontrakt och stapelskonsumtion håller intäkterna när cykeln vänder. Samma tjugo variabler — olika växel per fas. Det är bokstavligen vad murphy-grafen säger på AKM1:s språk."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01/V12-växeln (repeterad som kapitlets kärnbrygga): för varje AKM1-analys, skriv först nuvarande fas-nummer på pappret — det avgör hur mycket vikt V01 vs V12 ska ha i din sammanvägning. AK1TS-RAD: Rotationshastighet — rotationen är en LÅNG-horisontsförlopp (månader-kvartal): MA200-baserade sektors-klassningar och 252-dagars momentum på sektors-index är motorns naturliga rotations-rad; Mikro-celler på sektorer är brus."
+        },
+        {
+          "type": "insikt",
+          "content": "Marknaden betalar aldrig för konjunkturen — den betalar för TÄNKT FÖRÄNDRING. Därför leder finans och bygghandel i recessionens mörkaste timme (de diskonterar fallande räntor) och energi när konjunkturen känns starkast (den diskonterar kommande inflationstryck). Sektorn med de sämsta nyheterna just nu är ofta köpet — och den med de bästa är ofta säljen. Hjulet, inte linjen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Murphy-grafen — sektorsrotation i fyra konjunkturfaser\",\"rader\":[[\"Fas\",\"Kedje-signal\",\"Konjunktur\",\"Ledar-sektorer\",\"AKM1-variabel som premieras\"],[\"1. Tidig återhämtning\",\"fallande råvaror + fallande räntor; obligationer stiger\",\"recessionens slutspel\",\"finans/banker, fastigheter & bygghandel, utilities, tidiga konsumentcykliska\",\"V10-frigörelse (lägre räntekostnad)\"],[\"2. Expansion\",\"aktier i botten → upptrend; kredit-spreads näver\",\"återhämtning blir boom\",\"kapitalvaror, teknik, industri, transport, bredare konsumentcykliska\",\"V01 Försäljningstillväxt\"],[\"3. Sen expansion\",\"stigande råvaror + stigande räntor\",\"överhettning; inflation\",\"energi, basmaterial/metaller, guld och råvaruproducenter\",\"V07 Bruttomarginal + V14 prissättningsmakt\"],[\"4. Contraction\",\"obligationer toppar; kredit spricker; aktier faller\",\"recession närmast\",\"konsumentstaples, hälso- och sjukvård, livsmedel — defensiva\",\"V12 Intäktsstabilitet (+ V20 återköp som stöd)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör fas-diagnosen på din börs: notera (12-månaders) råvaru-trend, obligations-trend och brett aktieindex trend. Slå upp tabellen och para in nuvarande fas — eller skriv mellan-läge (till exempel fas 2–3). Lista sedan de tre sektorer tabellen säger bör leda — och kontrollera vilka som FAKTISKT lett senaste halvåret (tidskrift, index-tabell). Avvikelsen är antingen en anomali att förklara eller ett tecken på att din fas-klassning är fel. Notera vilken V-variabel (V01, V07, V12) din portfölj är mest exponerad mot — och om den matchar fasen."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför roterar sektor-ledarskapet genom konjunkturcykeln?",
+          "alternativ": [
+            "Därför att sektorer turas om enligt lag",
+            "Därför att marknaden diskonterar VÄNTADE förändringar — inte konjunkturen som den är — och olika sektorer gynnas av olika kommande förändringar",
+            "Därför att politiker byter sektor-stöd varje år",
+            "Det gör de inte — ledarskapet är konstant"
+          ],
+          "ratt": 1,
+          "tips": "Vem köper marknaden i recessionens botten — och vad diskonterar det köpet?"
+        },
+        {
+          "q": "Vilka sektorer leder typiskt i FAS 1 (tidig återhämtning)?",
+          "alternativ": [
+            "Energi och guld",
+            "Konsumentstaples och sjukvård",
+            "Räntekänsliga — finans, fastigheter/bygghandel, utilities, tidiga konsumentcykliska",
+            "Ingen sektor leder då"
+          ],
+          "ratt": 2,
+          "tips": "Vad gör fallande räntor för kreditförluster, bolån och avkastningsattraktivitet?"
+        },
+        {
+          "q": "Vilken AKM1-variabel premierar marknaden typiskt i FAS 4 (contraction)?",
+          "alternativ": [
+            "V01 Försäljningstillväxt — maximal cyklisk tillväxt",
+            "V12 Intäktsstabilitet — ARR, kontrakt och stapelskonsumtion håller intäkterna",
+            "V16 Produktlanseringar",
+            "V13 Patent"
+          ],
+          "ratt": 1,
+          "tips": "Vad är värt mest när cykeln vänder ned — tillväxtlöften eller intäkter som inte försvinner?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Rotation i praktiken — relativa styrka-linjer per fas",
+      "intro": "Teorin blir praktik genom ett verktyg: den relativa styrka-linjen — kvoten mellan en sektors index och brett marknedsindex. Murphy använde den genom hela boken (och de nya sektor-ETF:erna, som han var tidig ute med, gjorde den handlingsbar). Kursen går igenom hur man bygger, läser och bekräftar RS-linjer — och hur rotationen ser ut i grafen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bygget: RS-LINJEN = SEKTORINDEX DELAT MED MARKNADSINDEX. Räknat varje dag, plottat som en linje. Stigande linje = sektorn slår marknaden (outperformance); fallande = sektorn släpar; platt = sektorn går med marknaden. Två saker förstås ofta fel, och Murphy är tydlig med båda. Ett: RS-linjen säger inget om sektorn STIGER i absoluta tal — en sektor kan falla och ändå ha stigande RS (den faller mindre än marknaden); därför ska RS-linjen ALWAYS paras med sektorns egen graf: Bästa läget = stigande absolut trend + stigande RS (äg); sämsta = fallande + fallande RS (undvik); blanda-lägena kräver omdöme. Två: RS är en TREND-mätare, inte en oscillator — den visar inte överköpt/översålt utan vem som leder, och den kan gå högt och stanna högt länge (kraftfulla ledare håller i åratal)."
+        },
+        {
+          "type": "text",
+          "content": "Murphys praktiska rotation-läsning, steg för steg. Ett: brett index mot allt — börja med aktie/obligation-ratiot: stiger det, är aktier rätt tillgångsslag; faller det, är det obligationernas väder (kapitel 3–4 i praktik). Två: sektorer mot index — ranka tio-tolv sektors RS-linjer (med sektors-ETF:er blev det banalt enkelt; Murphy är öppet entusiastisk — ETF:en är intermarket-analysens naturaliga verktyg eftersom den LÅTER dig agera på det du ser). Tre: bekräfta med ledare i toppen — i varje ledande sektor, är även de tyngsta bolagen i stigande RS? (Bredden bekräftar rotationens allvar.) Fyra: tolka HELA bilden mot murphy-grafens fyra faser — en kollektiv vändning av finans + utilities-RS uppåt medan energi-RS vänder ned är en fas 1-klassning i realtid; det omvända är fas 3-påstående."
+        },
+        {
+          "type": "text",
+          "content": "Varningarna, öppet. RS-rotation är LÅNGSAM information: sektors-trend byte kvartals-vis, inte dag-vis — dagliga RS-fluktuationer är brus (AK1TS:Mikro-celler är helt enkelt fel verktyg för rotations-läsning). RS-linjer straight-line extrapolerar dåligt vid regime-skiften: när en ny fas börjar kan gamla ledare fortsätta se starka ut i månader (momentum-crash är en känd anomalikategori — grannkursen What Works behandlar den på faktor-nivå). Och RS säger inget om VÄRERING: en sektor i stark RS kan vara objektivt dyr (V04–V06 kontext behövs alltid) — Murphy själv kombinerar därför RS med diagram, aldrig RS ensam."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01/V12-exekveringen — RS-linjen är växeln mellan dem i praktik: när din fas-diagnos (kapitel 9) säger fas 2, SKAPA en bevakningslista med högst V01-poäng bland sektorer med stigande RS; fas 4 — högst V12 bland sektorer med stigande RS. Variabeln och sektorn måste bekräfta varandra. AK1TS-RAD: Momentum-dimensionen — RS-kvotens 63- och 252-dagars momentum är motorns naturliga RS-mått (deterministiskt, omräknat varje dag); 5-dagars versionen är brus och används inte till rotations-beslut."
+        },
+        {
+          "type": "insikt",
+          "content": "RS-linjen är rankingens graf: den visar inte VAD som är bra — bara vad som är BÄTTRE. Därför är den intermarket-analysens mest ödmjuka verktyg: den tvingar dig att jämföra i stället för att drömma. Och den viktigaste rankingen av alla görs först: aktier mot obligationer — innan du väljer sektor, välj tillgångsslag."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"RS-läge-diagnostik — fyra kvadranter\",\"rader\":[[\"Absolut trend\",\"RS-linje\",\"Betydelse\",\"Åtgärd\"],[\"Stigande\",\"Stigande\",\"sektorn leder uppgången\",\"äg helhjärtat — fasens motor\"],[\"Stigande\",\"Fallande\",\"sektorn stiger men släpar marknaden\",\"behåll/trimma — kassako, inte ledare\"],[\"Fallande\",\"Stigande\",\"sektorn faller mindre än marknaden\",\"kandidat i botten-fasen — tidig ackumulering\"],[\"Fallande\",\"Fallande\",\"sektorn leder nedgången\",\"undvik — eller blanka i nedtrend-regime\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din rotations-panel: välj sex sektors-ETF:er (minst: finans, utilities, energi, teknik, staples, industri). Beräkna eller plotta varje sektors RS-linje mot brett index (12-månadersvy). Placera varje sektor i en av tabellens fyra kvadranter. Slå ihop med din fas-diagnos från kapitel 9: vilka kvadranter-bor sektorer som tabellen i kapitel 9 förutspår ledare — ligger de i övre vänster? Skriv avvikelserna. Upprepa månadsvis; rotations-påståenden som håller tre månader i rad får kapital."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar en stigande RS-linje för en sektor?",
+          "alternativ": [
+            "Att sektorn stiger i absoluta tal",
+            "Att sektorn slår marknaden — den kan till och med falla och ändå ha stigande RS",
+            "Att sektorn är överköpt",
+            "Att sektorns P/E är lågt"
+          ],
+          "ratt": 1,
+          "tips": "RS är en kvot — vad säger kvoten om de två grafernas inbördes hastighet?"
+        },
+        {
+          "q": "Varför ska RS-linjen ALWAYS paras med sektorns egen graf?",
+          "alternativ": [
+            "Därför att RS-linjen är oläslig ensam",
+            "Därför att RS inte säger något om absolut rörelse — stigande RS på fallande sektor är ett botten-kandidat-läge, inte ett köp",
+            "Därför att Murphy förbjuder RS ensam",
+            "Därför att grafer kostar mer"
+          ],
+          "ratt": 1,
+          "tips": "Bäst = stigande + stigande; vad är fallande + stigande?"
+        },
+        {
+          "q": "Vilken är den viktigaste rankingen av alla enligt Murphy — före sektors-RS?",
+          "alternativ": [
+            "Guld mot silver",
+            "Stor bolag mot små",
+            "Olja mot naturgas",
+            "Aktier mot obligationer — tillgångsslags-valet kommer före sektor-valet"
+          ],
+          "ratt": 3,
+          "tips": "Vad är den största possible 'sektorn' av alla — och vad är dess naturliga konkurrent?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 11,
+      "title": "Globala marknader — intermarket i världen och Japan-exemplet",
+      "intro": "Kedjan slutar inte vid den amerikanska kusten. Murphy ägnar bokens globala kapitel åt hur världens börser hänger ihop — hur en regions kris sprider sig till alla — och åt det viktigaste enstaka exemplet i boken: Japan, världshistoriens största deflations-laboratorium. Kursen går igenom den globala väven och Japans mot-bevis mot enkelhet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den globala väven: marknaderna rör sig TILLSAMMANS. Uppgångerna är globala och nedgångarna är globala — korrelationen mellan världens börser tenderar att vara positiv och STIGA i kriser (ett faktum som ska komma ihåg till kontroverskapitlet: diversifiering mellan länder försvinner exakt när den behövs). Murphy använder relationer mellan världsindex som intermarket-verktyg: relativ styrka mellan den amerikanska marknaden och omvärlden (exempelvis via en EFA/SPX-kvot i senare praktik) visar var den globala cykeln är starkast — och omvärlds-marknadernas vändningar bekräftar eller ifrågasätter den amerikanska bildningen. De stora globala vattenfallen under bokens epok: Asien-krisen 1997 (thai bahtens fall → regionell kris → råvaror nedåt → desinflationstryck som föregick), Ryssland/LTCM 1998 (kredit-chock som tvingade Federal Reserve att vända och sänka — boken beskriver 1998 som en vattendelare mot en deflation-oro-värld) och IT-kraschen 2000 (global, eftersom It-bubblan var global)."
+        },
+        {
+          "type": "text",
+          "content": "JAPAN — bokens stora mot-exempel och kanske viktigaste enskilda fallstudie. Nikkei-indexet toppade på 38 957 den 29 december 1989 — och föll därefter i över ett decennium, som mest runt 80 procent, medan JAPANS STATSOBLIGATIONER STEG och räntan sjönk mot NOLL. Här bröts normalförhållandet obligationer–aktier fullständigt: fallande räntor räddade INTE aktiemarknaden, för räntefallet var SYMTOMET (fallande efterfrågan, fallande priser, bank-kris) och inte en stimulans. Murphy drar den hårda slutsatsen kursen gjort till sitt kapitel 4: I DEFLATION VÄNDER NORMAL-FÖRHÅLLANDET TECKEN — desinflationens spelregel (fallande räntor = aktie-boom) är lag i en värld, inte i alla. Yen-läget gjorde Japan till ett ytterligare intermarket-exempel: en STIGANDE yen (flykt-valuta + handelsöverskott) pressade export och inflation — spegelvänd mot den amerikanska dollarns roll."
+        },
+        {
+          "type": "text",
+          "content": "Och vändningen, som Murphy följer med intresse i bokens slutkapitel: 2003 — när världen återinflerade (Kina-kommoditets-cykeln, fallande dollar, stigande CRB) — vände även Nikkei uppåt från sina botten-nivåer runt 7 600 (april 2003). Japan behövde inte tillväxt i Japan — det behövde en GLOBAL reflation för att aktiemarknaden skulle vända. Det är intermarket-analysens yttersta konsekvens: enskilda länders marknader ärREGIME-FUNKTIONER av den globala kedjan — ingen börser är en ö. Japans deflations-årtionde blev därmed samtidigt varnings-exemplet (normal-förhållandet är regime-relativt) och löftes-exemplet (den som läste den globala kedjan såg Japans botten komma)."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V03 Intäktsdiversifiering — land-risk är en form av koncentration. En portfölj där alla bolag säljer i samma valuta- och konjunktur-zon är inte diversifierad oavsett antal aktier; V03:s marknads-bredden är land-risk-mätare. AK1TS-RAD: Regime-dimensionen — Japans läxa formulerad som regel: när obligations-trend och aktie-trend pekar MOT varandra i ett land, klassa regimen (deflation?) innan någon cell läses som köp-signal; motorn skriver osatt tills regimen är klar."
+        },
+        {
+          "type": "insikt",
+          "content": "Japans årtionde är bokens mörkaste och viktigaste kapitel: normalförhållandet mellan ränta och aktier är en DESINFLATION-produkt. I deflation är fallande räntor ett dödsruno över efterfrågan — och aktier faller medan obligationer stiger. Innan du importerar en amerikansk spelregel till vilken marknad som helst — fråga: Vilken inflation-regime rådde när regeln byggdes?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två världar — amerikansk desinflation mot japansk deflation\",\"rader\":[[\"Drag\",\"USA 1990-tal (desinflation)\",\"Japan 1990-tal (deflation)\",\"Läxa\"],[\"Ränta\",\"fallande\",\"fallande — mot noll\",\"samma signal, olika värld\"],[\"Obligationer\",\"stigande\",\"stigande\",\"bekräftelse i båda — men olika orsak\"],[\"Aktier\",\"stigande\",\"fallande (−80 % från toppen)\",\"normal-förhållandet är regime-relativt\"],[\"Råvaror\",\"fallande\",\"fallande\",\"båda 'kalla' — men Japan kallare\"],[\"Valuta\",\"stark dollar\",\"stigande yen (flykt + överskott)\",\"spegelvärldar i valuta-motor\"],[\"Vändpunkten\",\"2000: IT-kraschen\",\"2003: global reflation (Kina, dollar-ned, CRB-uppgång)\",\"ingen börser är en ö — regimen är global\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör Japan-provet på en nutida marknad du är exponerad mot: fråga de fyra Japan-frågorna — faller räntan? stiger obligationer? faller aktier ändå? faller råvaror/bred efterfrågan? Fyra ja = deflations-mönster: din desinflations-spelregel (fallande räntor = köp aktier) är OGILTIG där tills mönstret bryts. Skriv sedan vilken global signal som skulle behövas för vändning (exempel: global reflation, valuta-vändning) — Japans eget svar 2003 är mallen."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med relationen obligationer–aktier i Japan under 1990-talet?",
+          "alternativ": [
+            "De steg tillsammans som i USA",
+            "Normal-förhållandet bröts: obligationer steg och räntan föll mot noll medan aktier föll omkring 80 procent — deflation vänder tecknet",
+            "Båda föll kraftigt",
+            "Aktier steg och obligationer föll"
+          ],
+          "ratt": 1,
+          "tips": "Vad är fallande ränta i deflation — stimulans eller symtom?"
+        },
+        {
+          "q": "Vad kännetecknar globala aktiemarknader enligt Murphy?",
+          "alternativ": [
+            "De är fullständigt oberoende",
+            "De rör sig tillsammans — och korrelationen tenderar att STIGA i kriser, just när diversifiering behövs",
+            "De handlas bara av amerikaner",
+            "De är omöjliga att jämföra"
+          ],
+          "ratt": 1,
+          "tips": "Vad hände i 1997, 1998 och 2000 — i hur många länder samtidigt?"
+        },
+        {
+          "q": "Vad vände Japans aktiemarknad 2003 enligt bokens läsning?",
+          "alternativ": [
+            "Inrikes konsumtionsdata",
+            "En ny japansk regering ensam",
+            "Global reflation — Kinas råvaru-cykel, fallande dollar, stigande CRB — ingen börser är en ö",
+            "Slumpen"
+          ],
+          "ratt": 2,
+          "tips": "Vilken större väderändring behövdes för att Japans segel skulle fyllas?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Svensk vinkling — Riksbanken, räntan och bostadssektorn [illustrativt]",
+      "intro": "Boken är amerikansk — men modellen är överförbar, och kursen gör överföringen själv, öppet märkt ILLUSTRATIVT: detta är AK1A:s tillämpning av Murphys ram, inte Murphys egna exempel. Sverige är ett litet, öppet, industritungt land med en centralbank (Riksbanken) vars styrränta slår hårt mot just de sektorer murphy-grafens fas 1 pekar ut: bostäder, bygge och banker.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Sveriges intermarket-förutsättningar, illustrativt uppradade. Ett: LITET ÖPPET LAND — svensk export (industri, verkstad, råvaru-kopplade produkter) gör börsen cykliskt tung; OMX-andelen industri- och materiabolag är hög, vilket betyder att V01-känsligheten är stor och fas 2–3-effekterna starka. Två: VALUTAN — kronan är en risk-känslig liten valuta: i global risk-aversion försvagas SEK (flykt till dollar), vilket import-erar inflation via dyrare import och pressar Riksbanken mellan två mål; Riksbankens reaktion blir då en kedja i kedjan. Tre: BOSTADS- OCH BELÅNINGSTRUKTUREN — hög andel bolån med rörlig eller kort bunden ränta gör den svenska konsumenten ovanligt räntekänslig: Riksbankens styrränta slår direkt i hushållens månadskostnad inom tolv till arton månader. Därmed är bostadssektorn, bygghandeln och bankerna Sveriges eget fas 1-instrument — murphy-grafens räntekänsliga led, i svensk förstoring."
+        },
+        {
+          "type": "text",
+          "content": "Den svenska kedjan, illustrativt formulerad efter Murphys mönster: RIKSBANKENS RÄNTA → bolåneräntor → bostadspriser och byggnads-volym → bygg- och fastighetsbolagens resultat (V01) och bankernas kreditförluster (V10/V11) → deras aktiers RS-linjer mot OMX → bredare konsumentcykliskt (detaljhandel, bilar, hem-inredning) med hushållens reala disponibla inkomst som mellanled. Uppåt-vänd: fallande styrränta → lägre månadskostnader → högre bostadspriser → bygge och banker leder (fas 1-logik). Nedåt: stigande styrränta → bostads-priser pressas → fastighetsbolag med hög belåning (låg V10-poäng) kläms dubbelt — avkastningskravet stiger samtidigt som underliggande tillgång faller. Historiska nutida exempel, öppet som efterhands-illustrationer (bokens 2004-perspektiv): 2015-talets negativa styrränta och bostads-boomen; 2022-talets snabba höjningar från noll till fyra procent och fastighets-bolagens kraftiga nedvärderingar. Ingen av dem står i boken — båda följer dess mönster."
+        },
+        {
+          "type": "text",
+          "content": "Och gränsen för överföringen — lika öppen. Sverige är JAPAN-varnings-exemplets motsats i miniatyr vid vissa tillfällen och dess likhet vid andra: en liten öppen ekonomi har ingen egenPenning-politisk frihet världen förbi (kronans värde påverkar inflations-målet, globala räntor sätter taket och golvet för Riksbankens handlings-utrymme) — den svenska kedjan är alltså en UNDERKEDJA till den globala Murphy-kedjan, inte en fristående maskin. Därför ska den svenska läsningen ALLTID börja globalt (dollar, råvaror, global tillväxt) och först därefter nationellt (Riksbank, bostad, SEK). Lilla landets intermarket är den stora kedjan sedd genom en lins — förstorande på vissa ställen (bostad, banker), försvagande på andra (ingen egen reservvaluta)."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V10/V11-parat i svensk förstoring — fastighets- och byggbolag är det svenska testfallet för Skuldsättningsgrad och Likviditet: när Riksbankens graf pekar uppåt är låg V10-poäng inte en stadig-varning utan en tidssid-klocka. AK1TS-RAD: Regime-dimensionen, nationellt skikt — Riksbankens styrränta-trend (riktning, inte nivå) och 10-årig svensk statsränta MA200 klassas före svenska aktie-celler; SEK-indexets trend är den nationella valuta-raden."
+        },
+        {
+          "type": "insikt",
+          "content": "Sveriges Murfy-översättning i en mening: Riksbankens ränta är den svenska aktiemarknadens vatten-kran — bostadssektorn är ledningen, bankerna trycket och bygghandeln duschen. När räntan vänder vänder duschen sist — men ledningen först. Läs styrräntans riktning INNAN du läser en enda svensk fastighets- eller bank-aktie — det är murphy-grafens fas 1 på svenska [illustrativt]."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Svensk vinkling [illustrativt] — Riksbankens kedja\",\"rader\":[[\"Riksbanks-läge\",\"Kedja (illustrativ)\",\"Sektor-signal (murphy-graf fas 1-logik)\",\"AKM1-fokus\"],[\"Sänker (fallande trend)\",\"bolån ↓ → bostadspriser ↑ → bygge ↑ → kreditförluster ↓\",\"positiv fastigheter, bygghandel, banker — tidiga konsumentcykliska\",\"V10-vinst; V01 vändning upp\"],[\"Höjer (stigande trend)\",\"bolån ↑ → bostadspriser pressas → bygge ↓ → kreditförlust-risk ↑\",\"negativ högBelåtade fastighetsbolag; staples/sjukvård mer intressanta\",\"V10/V11-varning; V12-premie\"],[\"Håller (platt)\",\"kedjan vilande — globala led tar över\",\"sektorskillnader styrs av export/cykel (fas 2–3-logik)\",\"V07/V14 vid råvaru-läge\"],[\"Global kontext\",\"dollar, råvaror, global ränta sätter ramen — SEK som mellanled\",\"den svenska kedjan är UNDERKEDJA till den globala\",\"regime-klass först\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg den svenska panelen [illustrativt]: fyra grafer — Riksbankens styrränta (eller 2-årig svensk ränta som proxy), bostadsprisindex, fastighets-/byggbolags-index RS mot OMX och bank-index RS mot OMX. Klassificera varje (upp/ned/sidledes, 12 månader). Skriv din svenska fas-diagnos i murphy-grafens termer. Testa sedan mot tabellen: stämmer kedjan RÄNTA → BOSTAD → SEKTOR-RS i dagsläget? Notera avvikelser och minns: detta är en illustration av metoden, inte en handelssignal."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den svenska vinklingens status i kursen?",
+          "alternativ": [
+            "Ett av bokens original-exempel",
+            "ILLUSTRATIV — en AK1A-tillämpning av Murphys ram på svenska förhållanden, inte Murphys eget material",
+            "Ett akademiskt studie-resultat",
+            "En official Riksbanks-prognos"
+          ],
+          "ratt": 1,
+          "tips": "Vad står hakparentesen [illustrativt] för i kapitelrubriken?"
+        },
+        {
+          "q": "Varför slår Riksbankens ränta ovanligt hårt i svenska aktiemarknaden enligt den illustrativa kedjan?",
+          "alternativ": [
+            "Därför att Sverige saknar aktiemarknad",
+            "Därför att Riksbanken köper aktier",
+            "Hög andel rörliga/kort bundna bolån gör hushållen mycket räntekänsliga — bostad, bygge och banker blir fas 1-instrument i förstoring",
+            "Därför att kronan är en reservvaluta"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med hushållens månadskostnad tolv–arton månader efter en styrränte-höjning?"
+        },
+        {
+          "q": "Hur förhåller sig den svenska kedjan till den globala Murphy-kedjan?",
+          "alternativ": [
+            "Den är en fristående maskin",
+            "Den är en UNDERKEDJA — globala räntor, dollar och råvaror sätter ramen; läsningen börjar globalt",
+            "De är inkompatibla",
+            "Sverige påverkar dollarn direkt"
+          ],
+          "ratt": 1,
+          "tips": "Hur mycket eget penningpolitiskt handlingsutrymme har ett litet öppet land?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Tekniken att mäta — relativ styrka",
+      "intro": "Intermarket-analysens hantverks-kapitel: hur MÄTER man samspelet? Murphys svar är kvoterna — relativa styrka-tal mellan par av tillgångar och sektorer. Kursen går igenom formulerna, tolknings-reglerna och de vanligaste misstagen — och kopplar RS till AK1TS:s momentum-rader.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formulerna, en gång för alla. RELATIV STYRKA (RS) = PRIS(A) / PRIS(B) — exempelvis sektorsindex/OMX eller SPX/obligationspris; en stigande kvot betyder att A slår B. RÄNTESPREAD = avkastning(x-årig) − avkastning(y-årig) — kurvans form (brant/kort) och riktningen på spreads är bankernas och kredit-marknadens väder. RÅVARU-/AKTIE-KVOT = råvaruindex/aktieindex — regimen i en enda linje (stigande = inflations-vind). Alla tre är KVOTER — och det är hela poängen med tekniken: en kvot eliminerar den gemensamma trenden (pengarnas värde, allmän risk-appetit) och visar det RELATIVA valet marknaden gör. Murphys praktiska råd: plotta kvoten som en vanlig graf och använd vanlig trend-analys på DEN — toppar, bottnar, trendlinjer, MA50/MA200 — verktygen från The Visual Investor-kursen tillämpas på kvot-diagrammet."
+        },
+        {
+          "type": "text",
+          "content": "Tolknings-reglerna. Ett: KVOTENS TREND ÄR BUDSKAPET — inte dess nivå; en hög kvot som stiger betyder fortsatt ledarskap, oavsett hur 'dyrt' det ser ut (RS har inget överköpt — minns kapitel 10). Två: VÄNDNINGAR I KVOTER ÄR REGIME-SIGNALER — när SPX/obligation-kvoten vänder ned efter en lång upptrend har tillgångsslags-väder bytt; när energi/OMX vänder upp medan finans/OMX vänder ned har fas-skiftet mot fas 3 börjat. Tre: BEKRÄFTA MED ABSOLUTA GRAFERNA — en kvot-vändning utan motsvarande vändning i underliggande grafer är statistiskt skim (kapitel 14). Fyra: TIDSHORISONTEN STYR ANVÄNDNINGEN — på vecko-/månadsupplösning är RS rotation-information; på dags-upplösning är det mesta brus. Murphy arbetar i boken nästan uteslutande med långa grafer — det är en bok om vindar, inte byar."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till AK1TS är rak och kursens tekniska kärna: RS ÄR CROSS-ASSET-MOMENTUM. AK1TS-motorn mäter momentum deterministiskt — 5/63/252 dagar på varje instrument — och en RS-kvot är bara momentum mätt MELLAN två instrument i stället för mot tiden. Därmed gäller samma determinism-krav: en RS-läsning ska gå att återberäkna av vem som helst från samma data och ge samma svar — inga 'den ser stark ut' utan 'kvotens 252-dagars-momentum är positivt, MA200 stigande'. När underlaget är motstridigt (kvoten upp, absoluta grafen ned) skrivs osatt — Murphys egen metod är i grunden denna: han VISAR graferna och låter dem rösta, utan att Decorera rösterna med storys. Det är också gränsen mot granne-ämnet: momentum som FAKTOR (What Works-kursens 3/6/12-månaders) är ett pris-mått; RS är ett FÖRHÅLLANDE-mått — de kompletterar, ersätter ej."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01/V12-växeln behöver RS-talet — kapitel 9:s fas-diagnos blir operational först när den får ett mätbartläge: 'fas 2-kandidater' = hög V01-poäng OCH positiv 63-dagars RS mot index; 'fas 4-kandidater' = hög V12-poäng OCH positiv RS. AK1TS-RAD: Momentum-dimensionen, cross-asset — kör 63/252-dagars momentum på kvoterna aktie/obligation, råvara/aktie och sektor/index; dessa tre rader är toppskiktet som alla enskilda aktie-analyser läses mot."
+        },
+        {
+          "type": "insikt",
+          "content": "Kvoten är intermarket-analysens meningsyta: två priser säger inget — förhållandet mellan dem säger allt. Om du bara får behålla tre linjer från den här kursen: aktier/obligationer (tillgångsslags-väder), råvaror/aktier (inflations-vind) och din sektors/index (ditt eget läge). Tre kvoter, hela systemet — räknat om varje dag, utan åsikt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mätinstrumenten — formler och tolkningar\",\"rader\":[[\"Instrument\",\"Formel\",\"Stigande betyder\",\"Används till\"],[\"Relativ styrka\",\"pris(A) / pris(B)\",\"A slår B\",\"tillgångsslags-val, sektor-rotation\"],[\"Aktie/obligation-kvot\",\"aktieindex / obligationspris\",\"aktier är rätt tillgångsslag\",\"regime-klass (risk-on/off)\"],[\"Råvara/aktie-kvot\",\"råvaruindex / aktieindex\",\"inflations-vind — råvaru-läge\",\"fas 3-varning; V07-kontext\"],[\"Sektor/index-kvot\",\"sektorsindex / marknadsindex\",\"sektorn leder\",\"rotations-panelen (kap 10)\"],[\"Räntespread\",\"avk(lång) − avk(kort)\",\"kurvan brantar — tillväxt- eller inflations-förväntan\",\"bank-V10-kontext; kredit-klimat\"],[\"Cross-asset momentum\",\"63/252 d momentum på kvoten\",\"det deterministiska RS-måttet\",\"AK1TS toppskikt — omräknat utan omdöme\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Beräkna dina tre kvoter: hämta slutkurser för brett aktieindex, långa statsobligationer (eller obligations-ETF som proxy) och råvaruindex — beräkna de tre kvoterna aktie/obligation, råvara/aktie och din största sektor-exponering/index. Plotta tolv månader (kalkylblad räcker). Notera varje kvots riktning och eventuell vändning de senaste tre månaderna. Vilket tillgångsslag leder? Vilken inflation-vind? Vilken sektor? Du har nu en hel intermarket-läsning i tre tal — utan en enda adjektiv."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad ELIMINERAR en RS-kvot enligt kursen?",
+          "alternativ": [
+            "Den gemensamma trenden — pengarnas värde och allmän risk-appetit — och visar det RELATIVA valet marknaden gör",
+            "Alla transaktionskostnader",
+            "Behovet av grafer",
+            "Valutarisken helt"
+          ],
+          "ratt": 0,
+          "tips": "Två priser stiger båda — vad återstår att säga när du dividerar dem?"
+        },
+        {
+          "q": "Hur förhåller sig RS till AK1TS:s momentum?",
+          "alternativ": [
+            "RS är motsatsen till momentum",
+            "RS är cross-asset-momentum — momentum mätt mellan två instrument i stället för mot tiden; samma determinism-krav gäller",
+            "De är identiska mått",
+            "RS ersätter fundamental analys"
+          ],
+          "ratt": 1,
+          "tips": "Vad är nämnaren i vanligt momentum — och vad är den i RS?"
+        },
+        {
+          "q": "Vad är kursens regel när kvot och absolut graf säger emot varandra?",
+          "alternativ": [
+            "Tro alltid på kvoten",
+            "Tro alltid på absoluta grafen",
+            "Skriv OSATT — en vändning utan bekräftelse i underliggande grafer är statistiskt skim",
+            "Slumpa ett svar"
+          ],
+          "ratt": 2,
+          "tips": "Murphy visar alltid graferna sida vid sida — varför?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "Korrelation — bruk och missbruk",
+      "intro": "Intermarket-analysens mest missbrukade tal: korrelationskoefficienten. Använd rätt — som bekräftelse på ekonomisk logik i rullande fönster, på förändringar — är den ett kraftfullt styrke-mått på samspelet. Använd fel — som helkorrelation på nivåer, utan mekanism, utan regime — blir den datamining i kostym. Kursen går igenom båda sidorna, med bokens egna anomalier som varningsexempel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "RÄTT BRUK. Ett: KORRELATION SOM BEKRÄFTELSE, ALDRIB SOM ORSAK — först ekonomisk logik (varför SKA råvaror och obligationer hänga ihop? — kapitel 5:s kedja), sedan korrelationen som styrke-mått: är sambandet starkt just nu eller svagt? Två: RULLANDE FÖNSTER — räkna korrelationen i ett fönster som rör sig (60–120 handelsdagar är brukligt) och STUDERA SERIEN: en stabil serie kring ett tecken är information; en serie som pendlar runt noll är frånvaro av information; en serie som FLIPPAR tecken är regime-information (kapitel 15 gör flips till sin huvudfråga). Tre: FÖRÄNDRINGAR, INTE NIVÅER — korrelera dags-förändringar eller vecko-förändringar, inte prisNIVÅER: två serier som båda trendar uppåt får automatiskt hög korrelation utan annat samband än gemensam trend (den klassiska spurious correlation-fällan — isglass-försäljning och drunkningsolyckor korrelerar också, av samma skäl: sommaren). Murphy gör i praktiken samma sak — hans bevis är GRAFER i förändring och kvot, inte nivå-korrelationer."
+        },
+        {
+          "type": "text",
+          "content": "MISSBRUK — katalogen, delvis hämtad från bokens egna anomalier. Ett: HELKORRELATION — en enda koefficient över tjugo år döljer att 1980-talet, 1990-talet och 2002+ hade olika tecken; medelvärdet av olika världar är ingen värld. Två: NIVÅ-KORRELATION PÅ TRENDSERIER — se ovan; nästan alltid nära +1 och nästan alltid meningslös. Tre: SAMBAND UTAN MEKANISM — testa tillräckligt många par och något alltid 'signifikant' dyker upp (datamining); motgiftet är mekanism-frågan: kan du berätta kausal-kedjan i fullständiga meningar? Om inte — kassera. Fyra: BÅDE-UPP-ANOMALIN LÄST SOM FEL — när råvaror och obligationer steg tillsammans 2002–2003 var korrelations-tecknet 'fel' enligt normal-modellen; missbruket vore att BORTSE från anomalien eller mekaniskt handla normal-modellen vidare — korrekt bruk är att MARKERA regime-skiftet (Kina-desinflations-chock + flykt) och omklassificera. Fem: BAKÅTBLICKANDE FÖRHÄRSKARLIG — korrelationen mäter vad som HÄNT; den säger inget om nästa flip — därför är den bekräftelse och aldrig ensam signal."
+        },
+        {
+          "type": "text",
+          "content": "Kursens syntes av kapitlet — och bron till kontroversen: KORRELATION ÄR ETT REGIME-MÅTT. Tecknet och styrkan på sambanden är EGENSKAPER hos den värld som råder — inflation, desinflation, deflation, kris — inte konstanter i en evig modell. Därför är rätt arbetsordning alltid: klassificera regimen FÖRST (med kedjan och kvoterna från kapitel 8 och 13), använd SEDAN korrelationen som konsistens-kontroll (stämmer styrkan med vad regimens logik förutsäger?), och betrakta varje flip som ett REGIME-LARM som förtjänar ett eget beslut — inte som brus att filtrera bort. Det är den ordningen som är intermarket-analysens svar på kritiken i nästa kapitel — och det är exakt AK1TS:s arkitektur: deterministiska mått, lästa i kontext, med osatt som ärligt svar när underlaget räcker inte."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet som korrelations-analog på bolagsnivå — stabila intäkter = låg korrelation med konjunktur-cykeln; V12 är bolagets egen 'korrelations-koefficient' mot makro. AK1TS-RAD: Konsistens-kontrollen — motorns fem teorier (elliott, fibonacci, gann, lucas, volym) ska ge SAMstämmiga cell-signaler i en given regimen; när teorierna splittras (som när korrelationer flippar) är det en osatt-markering, inte en majoritetsröstning."
+        },
+        {
+          "type": "insikt",
+          "content": "Korrelationen är ett mätinstrument, inte en mekanism: den mäter sambandets STYRKA — aldrig dess ORSAK. Fråga därför alltid i denna ordning: VILKEN mekanism? VILKEN regimen? VAD säger det rullande fönstret om styrkan just nu? Ett svar på den tredje frågan utan de två första är datamining med siffror."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Korrelationens bruk och missbruk\",\"rader\":[[\"Bruk\",\"Missbruk\",\"Varför\"],[\"mekanism först — sedan korrelation som styrke-mått\",\"samband utan mekanism — testa par tills något sticker ut\",\"tillräckligt många par ger sken-samband (datamining)\"],[\"rullande fönster (60–120 dagar) — studera SERIEN\",\"helkorrelation över tjugo år\",\"medelvärdet av olika världar är ingen värld\"],[\"korrelera FÖRÄNDRINGAR\",\"korrelera prisNIVÅER\",\"trendande serier får sken-hög korrelation (isglassen och drunkningarna)\"],[\"flip = regime-larm — omklassificera\",\"flip = brus att filtrera bort\",\"flippen är information, inte fel\"],[\"bekräftelse i kedjan av kvoter och absolua grafer\",\"korrelation som ensam signal\",\"måttet är bakåt-seende; kedjan är kontexten\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör fönster-testet själv: hämta dagliga förändringar (12 månader) för råvaruindex och långa obligationer. Beräkna korrelationen i tre fönster — första kvartalet, mitten, sista kvartalet (kalkylbladens KORREL räcker). Notera tecken och styrka per fönster. Fråga: stabil serie, pendling runt noll — eller flip? Om flip: vilken mekanism kan förklara den (ange i fullständiga meningar)? Om du inte kan — kassera slutsatsen och notera det som en osatt-markering. Du har just använt hela kapitlet på en egen beräkning."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den RÄTTA arbetsordningen för korrelation i intermarket-sammanhang?",
+          "alternativ": [
+            "Räkna korrelationen först, leta mekanism senare",
+            "Klassificera regimen först, använd korrelationen som konsistens-kontroll — och läs varje flip som regime-larm",
+            "Använd bara helkorrelationer över långa perioder",
+            "Korrelation ska alltid ligga över 0,8 för att gälla"
+          ],
+          "ratt": 1,
+          "tips": "Vad mäter korrelationen — och vad måste komma från dig?"
+        },
+        {
+          "q": "Varför ska man korrelera FÖRÄNDRINGAR och inte prisnivåer?",
+          "alternativ": [
+            "Därför att förändringar är lättare att räkna",
+            "Därför att två trendande nivåserier får sken-hög korrelation utan annat samband än den gemensamma trenden",
+            "Därför att nivåer inte existerar",
+            "Därför att centralbanker förbjuder det"
+          ],
+          "ratt": 1,
+          "tips": "Vad har isglass-försäljning och drunkningsolyckor gemensamt med prisnivåer?"
+        },
+        {
+          "q": "Hur borde anomalin 2002–2003 (råvaror och obligationer upp tillsammans) hanteras?",
+          "alternativ": [
+            "Som ett bevis på att modellen är värdelös",
+            "Som brus att filtrera bort med längre fönster",
+            "Som ett regime-larm: markera övergångsläget och omklassificera — inte mekanisk vidhandel av normal-modellen",
+            "Genom att byta råvaruindex"
+          ],
+          "ratt": 2,
+          "tips": "Vad är information i en flip — felet eller världens förändring?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Kontroversen — instabila korrelationer och EMH",
+      "intro": "Kursens viktigaste kapitel. Två angrepp riktar sig mot intermarket-analysens kärna: att korrelationer är INSTABILA — de klustrar, flippar och försvinner just när de behövs (2008: allt korrelerade till 1) — och att EMH-skolan anser att samkörningen redan är prissatt och därför oanvändbar. Kursen låter båda tala färdigt, ger Murphys och intermarket-traditionens svar (regime-medvetenhet), och landar i AK1A:s syntes med sina medgivanden öppna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Angrepp ett: KORRELATIONSINSTABILITET — delvis post-bokens erfarenhet, citerat öppet. Kritiken: intermarket-sambanden beskrivs ofta som nästan mekaniska (dollarn ned → råvaror upp → obligationer ned → aktier pressade), men empirin visar att korrelationer inte är konstanter utan KLSTRAR och FLIPPAR: obligation/aktie-korrelationen var positiv under decennier, blev negativ efter 2000-talets centralbanks-era (kvantitativa lättnader knöt obligationer till aktier via realekonomiska chocker i stället för penningpolitiska), och i finanskrisen 2008 gick korrelationen mellan risk tillgångar mot ETT — 'everything correlated to 1' — då diversifiering och normal-samband kollapsade samtidigt. Slutsatsen kritikerna drar: den som bygger allokering på historiska intermarket-korrelationer bygger på is. Styrkan i kritiken ska erkännas fullt: den är RÄTT om målet är en evig, mekanisk korrelations-tabell."
+        },
+        {
+          "type": "text",
+          "content": "Intermarket-analysens svar: REGIME-MEDVETENHET — och det är Murphys metod även om ordet är senare. Bokens eget arbete är redan regime-relativt: Murphy beskriver ALDRIG normal-förhållandet som en lag — han VISAR hur det såg olika ut i 1980-talets inflation, 1990-talets desinflation, Japans deflation och 2002:s övergångsläge, och bygger sin metod på att KLASSA världen före läsningen. Svaret till kritiker blir därför: korrelationsinstabiliteten är inte modellens FEL utan modellens OBJEKT — flips ÄR signalerna (kapitel 14), och den som läser regimen via kedjan och kvoterna hade 2008-typiska förvarningar i just de led som behövdes (obligationer som flykt fungerade; spreads som kredit-mätare fungerade). Medgivandet som hör hemma här, öppet: i krisens akuta fas gäller INGEN normal-modell — korrelations-kollapsen är ett faktum — och den ärliga slutsatsen är risk-hantering (positioner som tål att allt faller samtidigt), inte ännu finare sambands-modeller."
+        },
+        {
+          "type": "text",
+          "content": "Angrepp två: EMH — samkörningen är redan prissatt. Argumentet, från Famas effektiva marknads-hypotes (1970) och random walk-traditionen (Malkiel — egen grannkurs i katalogen): om sambanden mellan tillgångsslagen är kända och billiga att handla arbitreras informationen bort omedelbart; räntans effekt på aktier är textbook-kunskap sedan decennier och ska alltså redan sitta i priserna — intermarket-analys som alfa-källa är då en illusion. Murphys svar, som kursen formulerar det: marknaderna diskonterar, men DELTAGARNA är specialiserade och KAPITALET rör sig ojämnt — aktie-förvaltare tittar sällan på råvaror, ränte-handlare sällan på sektors-rotation; informationen är tillgänglig men betraktas av olika folk vid olika tidpunkt, vilket lämnar EFTERSLÄPNING i överföringen mellan slagen (kedjans turordning — kapitel 8 — är just den eftersläpningen). Därtill: EMH:s egen starkaste form förutsätter gratis information och oändlig arbitrage —empirin om bubblor och krascher (boken är FULL av dem) gör den starka formen till en idealisering. Det ärliga medgivandet: EMH har RÄTT om att de ENKELASTE sambanden ger liten kant — därför är intermarket-analysens värde inte snabb-arbitrage utan REGIME-FÖRSTÅELSE: att veta vilken värld man är i, långsamt och strukturellt, medan andra tittar på sitt eget spann."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · KONTROVERSEN — AK1A:S SYNTHES OCH MEDGIVANDEN. Medgivandet först, utan krumbukter: INTERMARKET-SIGNALER UTAN REGELVERK BLIR STORY-TELLING — fyra grafer kan berättas till vilken slutsats som helst i efterhand, och nackdelarna med efterklokhet (kapitel 2) gäller varje intermarket-narrativ. Syntesen därefter, kursens kärnformulering: AK1TS LÄSER SAMSPELET DETERMINISTISKT PER HORIZONT — inga flytande 'magiska samband': varje relation (aktie/obligation, råvara/aktie, sektor/index) mäts med omräkningsbara mått (kvot, momentum 63/252, MA200), klassas per horisont, och när underlaget är motstridigt skrivs OSATT — aldrig gissning. Det deterministiska kravet är vad som gör intermarket-analysen FALSBAR: eftersom beräkningen är fast kan den VISA sig ha fel, vilket är skillnaden mellan analys och berättelse. AKM1 gör därintill det komplementära arbetet: V10/V07/V12/V01 översätter regimen till bolags-rader med poäng — strukturerad subjektivitet möter strukturerad mätning. Båda kräver samma sak av dig: regler före grafer, regimen före signalen, osatt i stället för story."
+        },
+        {
+          "type": "insikt",
+          "content": "Kontroversens lösning är inte att välja sida utan att byta fråga. Frågan 'VILKET samband gäller för alltid?' är fel — inget gör det. Frågan 'VILKEN regimen gäller nu, hur mäter jag den deterministiskt, och vad gör jag när måtten flippar?' är rätt — och den kan besvaras varje dag, omräknat av vem som helst. Korrelationer är instabila därför att världar byts: läs världen, inte tabellen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritik, svar och AK1A:s hållning\",\"rader\":[[\"Kritik\",\"Innebörd\",\"Intermarket-analysens svar\",\"AK1A:s hållning\"],[\"Korrelationsinstabilitet\",\"sambanden klstrar och flippar; 2008 gick allt mot korrelation 1\",\"regime-medvetenhet — flips är signaler, inte fel; krisens akuta fas har ingen normal-modell\",\"deterministiska mått per horisont; osatt vid motstridighet; risk-hantering före finare modeller\"],[\"EMH — samkörningen prissatt\",\"kända samband arbitreras bort; ingen kant i kedjan\",\"specialiserade deltagare + ojämnt rörligt kapital = eftersläpning mellan slagen; EMH:s starka form är en idealisering\",\"intermarket som regime-förståelse, inte snabb-arbitrage; V-mappning översätter regimen\"],[\"Story-telling-risken\",\"fyra grafer kan berättas till allt i efterhand\",\"Murphy visar grafer och låter dem rösta — metod, inte minnen\",\"regelverk före grafer: kvot, momentum, MA — omräkningsbart och falsbart\"],[\"Efterklokhet\",\"1987 ser självklar ut i backspegeln\",\"regel-formulerade förvarningar (kap 2:s checklista)\",\"regeln skriven i lugn — prövad i storm; brott noteras\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör falsbarhets-provet på din egen intermarket-läsning: skriv ned (a) din nuvarande regime-hypotes i en mening, (b) de tre kvot-mått (kapitel 13) som stödjer den med tal, och (c) FÖRHAND vilka mått-förändringar som skulle VÄGRA hypotesen — konkreta nivåer eller tecken-flips. Datera dokumentet. Om (c) saknas har du en story, inte en analys — och om måtten senare vänder utan att du överger hypotesen har du upptäckt något viktigare om dig själv än om marknaden."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är huvudinnehållet i kritiken om korrelationsinstabilitet?",
+          "alternativ": [
+            "Att korrelationer alltid är exakt 1",
+            "Att sambanden klstrrar och flippar mellan regimer — i 2008 gick korrelationen mellan risk tillgångar mot ett, då diversifieringen kollapsade",
+            "Att korrelationer är olagliga",
+            "Att bara aktier har korrelationer"
+          ],
+          "ratt": 1,
+          "tips": "Vad hände med alla risk-tillgångars inbördes samband i september–oktober 2008?"
+        },
+        {
+          "q": "Vad är intermarket-analysens svar på instabilitetskritiken?",
+          "alternativ": [
+            "Att använda ännu längre helkorrelationer",
+            "Att ignorera flips som brus",
+            "Regime-medvetenhet — klassa världen först; flips är signaler om regime-skifte, och i krisens akuta fas gäller ingen normal-modell",
+            "Att byta till fundamental analys enbart"
+          ],
+          "ratt": 2,
+          "tips": "Är instabiliteten modellens fel — eller modellens objekt?"
+        },
+        {
+          "q": "Vad är AK1A:s kärn-syntes i kontroversen?",
+          "alternativ": [
+            "Att intermarket-signaler är fria från regelverk",
+            "Att AK1TS läser samspelet DETERMINISTiskt per horisont — inga flytande magiska samband; utan regelverk blir signalerna story-telling",
+            "Att EMH bevisats helt rätt och böcker som denna är värdefria",
+            "Att korrelationer ska maximeras"
+          ],
+          "ratt": 1,
+          "tips": "Vad krävs för att en intermarket-läsning ska kunna VISA sig ha fel?"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 12,
+      "title": "Sammanfattning — väderprognosen till varje analys (syntes AK1TS × AKM1)",
+      "intro": "Sista kapitlet sätter ihop allt: intermarket-modellen som en enda checklista från dollar till sektor — regimen först, kvoterna andra, graferna tredje — och översättningen till AK1TS-motorns rader och AKM1:s variabler. Kursen slutar där boken började: marknaden är ett system, och systemet kan läsas med regler.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Processen i sju steg, som din egen checklista. Ett — DOLLARN: klassa dollarindexets trend (MA200, momentum 252): den sätter prisenheten. Två — RÅVARORNA: CRB och guld; guld/CRB-kombinationen ger valuta- eller inflations-budskap (kapitel 6:s sex rutor). Tre — OBLIGATIONERNA: långa statspapperets trend; tillsammans med råvarorna: desinflation, inflation, kris eller deflation (kapitel 4:s fyra rutor). Fyra — REGIMEN: skriv ned vilken av de fyra världarna som gäller — eller osatt. Fem — AKTIERNA: aktie/obligation-kvoten — är aktier rätt tillgångsslag just nu? Sex — SEKTORERNA: murphy-grafens fyra faser mot din regime-klassning; RS-panelen (kapitel 10) bekräftar vilka sektorer som faktiskt leder. Sju — ÖVERSÄTTNINGEN: AKM1-variablerna som premieras (V01 i fas 2, V07/V14 i fas 3, V12 i fas 4, V10-frigörelse i fas 1) — och de bolag i ditt universum som matchar. Sjutton minuter, en gång i månaden — det är hela systemet."
+        },
+        {
+          "type": "text",
+          "content": "Översättningstabellen, formaliserad. Kedjans led blir motor-rader och V-variabler: dollarns trend → regime-klassifikation på Lång/Mega (motor-rad ett) och V03 (valuta-risk i intäktsbasen); råvaru-trenden → V07 (input-pris) och V14 (pris-makt); obligations-trenden → V10 (räntekänslighet via belåning) och ränte-kontexten för V04–V06 (värderingens diskonterings-underlag); aktie-marknadens fas → växeln V01/V12 (vilken slags tillväxt som betalas just nu) och rotations-panelens sektors-RS; kredit-spreads → V11/V19-varningar på bolags-nivå; och hela regimen → V12 som bolagets egen korrelations-koefficient mot makro. Tjugo variabler och fem horisonter — men EN väder-prognos som sätter ordningen mellan dem. Det är kursens bud om hierarkin: fundamentet är seglen, intermarket är vinden — och AK1TS är instrumentpanelen som mäter båda."
+        },
+        {
+          "type": "text",
+          "content": "Den kompletta analytikern, porträtterad i sex drag. Ett: han eller hon slår ALDRIG upp en aktiegraf först — regimen klassas före bolaget, alltid. Två: hon mäter samspelet med kvoter och momentum — omräkningsbart av vem som helst, utan adjektiv. Tre: han vet att normal-förhållandena är regim-egenskaper — och att flips är information, inte fel. Fyra: hon rotar sektorer genom konjunkturens fyra faser och låter V01/V12-växeln följa fasen. Fem: han bär medgivandena öppet: korrelationer klustrar och kollapsar, enkelheter är prissatta, och i krisens mitt gäller ingen normal-modell — därför dimensionerar han positioner som tål att allt faller samtidigt. Sex: hon skriver reglerna i lugnet — checklista, kvot-mått, förhands-deklarerade flips — och prövar dem i stormen; när underlaget inte räcker skriver hon OSATT i stället för en story. Det är Murphys arv i AK1A:s tappning: systemet är ett — och det läses med regler."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · HELA KORTLEKEN — kapitel för kapitel har varje brygga byggt denna sista tabell: V01/V12-växeln (fas 2 mot fas 4), V07/V14 (inflationens tryck), V10/V11 (räntans belånings-hävstång), V03 (valuta-risk), V19 (kapitalförbränning i kredit-vändningar), V20 (återköp som stöd i defensiv fas). AK1TS-RAD: HELA MATRISEN i regime-ram — fem horisonter (Mikro till Mega) × fem teorier (elliott, fibonacci, gann, lucas, volym), varje cell omräknad deterministiskt, varje cell LÄST i sitt intermarket-väder. Ögonblicket av samlad klarhet: när motor-panelen och intermarket-panelen säger samma sak — och när de inte gör det är avståndet mellan dem själva informationen."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista mening är bokens första, omformulerat till metod: marknaden är ett system — och system läses inte med berättelser utan med instrument. Varje kvot du beräknar är en röst mot din egen övertygelse; varje regime-klassning du skriver ner är ett beslut du slipper fatta i stormen. Intermarket-analysen är väderprognosen — AKM1 är seglet — och den som seglar utan prognos läser bara historiens sista sida först."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Intermarket till AK1TS × AKM1 — översättningstabellen\",\"rader\":[[\"Intermarket-element\",\"AK1TS-rad\",\"AKM1-variabler\",\"Fråga att ställa månadsvis\"],[\"Dollarns trend\",\"regime-klass Lång/Mega; första motor-raden\",\"V03\",\"pekar prisenheten upp, ned eller sidledes?\"],[\"CRB och guld\",\"trend + momentum 252 på råvaru-fronten\",\"V07, V14\",\"bred inflation eller bara valuta-signal?\"],[\"Obligationer (pris/ränta)\",\"MA200 på långa länet; trend-raden\",\"V10, V11; V04–V06-kontext\",\"desinflation, inflation, kris eller deflation?\"],[\"Aktie/obligation-kvot\",\"cross-asset momentum 63/252\",\"tillgångsslags-valet\",\"är aktier rätt tillgångsslag nu?\"],[\"Murphy-grafens fyra faser\",\"sektors-MA200 + rotations-panel\",\"V01/V12-växeln (V07/V14 i fas 3; V10 i fas 1; V20 stöd i fas 4)\",\"vilken variabel premieras — och ledar mina sektorer?\"],[\"Kredit-spreads\",\"volym-radens varnings-skikt\",\"V19, V11\",\"prisar marknaden stress bakom ryggen på börsen?\"],[\"Regime-sammanfattning\",\"osatt-mekanismen — motstridiga celler\",\"hela AKM1-läsningen i kontext\",\"stämmer celler och regimen — och om inte: vad är informationen?\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din månatliga intermarket-panel: ett dokument med sju rader (dollarn, råvaror, guld, obligationer, aktie/obligation-kvot, sektors-RS-panel, kredit-spread), där varje rad får en klassning (upp/ned/sidledes/osatt) med mätetal (MA200, momentum 252, kvot). Avsluta med tre rader: regime-diagnos, murphy-fas och vilka V-variabler (V01/V12-växeln med flera) som ska väga tyngst i kommande månads AKM1-analyser. Datera. Upprepa första söndagen varje månad — först efter tre paneler i rad börjar mönstren tala. Från och med nu har dina bolags-analyser ett väder."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta ordningen i den sjustegs-process kursen sammanfattar?",
+          "alternativ": [
+            "Bolag först, sektor sedan, regimen sist vid behov",
+            "Dollar → råvaror → obligationer → regime → aktie/obligation-kvot → sektors-rotation → V-översättning",
+            "Sektorer → dollar → bolag → råvaror",
+            "Regime hoppas över — den går inte att klassa"
+          ],
+          "ratt": 1,
+          "tips": "Vad sätter prisenheten — och vad kommer allra sist i kedjan?"
+        },
+        {
+          "q": "Vad betyder V01/V12-växeln i praktiken?",
+          "alternativ": [
+            "Att konjunkturfasen avgör vilken variabel marknaden premierar — V01-tillväxt i fas 2, V12-stabilitet i fas 4 — och att AKM1-vikten ska följa fasen",
+            "Att V01 och V12 alltid poängsätts lika",
+            "Att V12 ska strykas ur AKM1",
+            "Att V01 endast gäller banker"
+          ],
+          "ratt": 0,
+          "tips": "Vad betalar marknaden i en ung expansion — och vad betalar den när cykeln vänder?"
+        },
+        {
+          "q": "Vad är kursens sista bild av den kompletta analytikern?",
+          "alternativ": [
+            "En person som handlar på magkänsla bekräftad av grafer i efterhand",
+            "En som läser systemet med instrument — regler före grafer, regimen före bolaget, osatt i stället för story — och positioner som tål att allt faller samtidigt",
+            "En som undviker all teknisk analys",
+            "En som bara följer centralbankernas beslut"
+          ],
+          "ratt": 1,
+          "tips": "Vad skriver den ärliga analytikern när underlaget inte räcker?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1174 @@
+{
+ "slug": "come-into-my-trading-room",
+ "category": "BOKMASTER",
+ "weight": "KRITISK",
+ "chapterCount": 15,
+ "totalMinutes": 170,
+ "title": "Come Into My Trading Room — Elder: KOMPLETT",
+ "summary": "Alexander Elders Come Into My Trading Room (2002) är uppföljaren till Trading for a Living — och skillnaden är hela kursens idé: där den första boken lär ut varför (psykologi, massan, de tre M), bjuder den här in läsaren in i rummet och visar hur. Kursen följer bokens faktiska struktur: först den diskretionära zonen (investera, tradea eller spela?), sedan verktyget (datorn och internet — dagens mobil och data), Method med maximalt fem indikatorer i diagrammet, kanaler med japanska ljus, Elder-ray och Force Index på djupet, de nya verktygen Impulse System och Marknadstermometern, tre skärmar 2.0 med utgångar, riskkärnan med 2-procentsregeln (skyddet mot hajen) och 6-procentsregeln (skyddet mot pirayorna), den organiserade traderns kalkylblad och dagbok, nivåerna nybörjare–semipro–pro — och bokens centrala del: tre månader av Elders egen live-dagbok med riktiga affärer, betyg och känslor. Kursen avslutas med kontroversen (Barber & Odean, Taiwan, Brasilien och svenska CFD-uppgifter: den stora majoriteten förlorar) och AK1A:s syntes: detta lärs ut som timing-förståelse för fundamentalanalytikern — aldrig som uppmaning att tradea.",
+ "minutes": 11,
+ "xp": 2000,
+ "level": "",
+ "learn": "Efter kursen kan eleven redogöra för Come Into My Trading Rooms plats i Elders författarskap — grunderna i Trading for a Living, den praktiska resan här — och för bokens tre deler: Financial Trading for Babes in the Woods, The Three M:s of Successful Trading och Come Into My Trading Room. Eleven kan återge Elders tre roller (den intelligente investeraren, tradern och spelaren) och den diskretionära zonen mellan mekaniskt system och magkänsla, samt översätta den till AK1A:s vinkling: fundamentalanalytikern som lär sig timing. Eleven kan förklara verktygslådan: regeln om maximalt fem indikatorer i diagrammet, kanaler kring medelvärdet med japanska ljus som mikro-bekräftelse, Elder-ray (tjur- och björnkraft mot konsensus, kopplad till analys-motorns momentum-lager), Force Index (volym gånger prisförändring, 2- och 13-dagars), Impulse System (tröghet plus momentum som färgad stapel) och Marknadstermometern (volatilitet som styr positionsstorlek). Eleven kan tillämpa riskkärnan i dess klassiska formulering: businessman's risk mot verklig förlust, 2-procentsregeln som skydd mot hajen med positionsstorlek räknad baklänges från stoppavståndet, 6-procentsregeln som skydd mot pirayorna med månadsbudget och total öppen risk, och koppla båda till AK1TS Brytpunkt och V19 Kapitalförbrukning & Emission-risk. Eleven kan bygga den organiserade traderns arkiv — kalkylblad, ekvitetskurva, dagbok, handlingsplan — som AK1A:s analys-dagbok, redogöra för nivåerna nybörjare, semipro och pro och kapitalaritmetiken bakom frågan har du tiden?, samt för bokens centrala del: tre månader live-dagbok där Elder visar riktiga affärer med betyg, förluster och känslor. Eleven kan slutligen redogöra för kontroversen — Barber & Odean (cirka 80 procent av frekventa dagshandlare förlorar), Taiwan (färre än en procent förutsägbart lönsamma), Brasilien (97 procent av de uthålliga) och svenska mäklars uppgifter om CFD-konton (cirka tre av fyra förlorar) — för Elders svar (han argumenterar för swing- och positionshandel med regler, inte för daghandel) och för AK1A:s syntes: kursen är timing-förståelse för fundamentalanalytikern, med det öppna medgivandet att de flesta privatpersoner gör bäst i att inte tradea aktivt.",
+ "why": "Trading for a Living lärde ut varför marknaden slår de flesta; Come Into My Trading Room visar hur ett hantverksrum ser ett inifrån — och just därför är den självklar i bokmastern. För AK1A har den tre värden som syskonboken inte täcker. Det första är de nya verktygen: Impulse System och Marknadstermometern operationaliserar momentum och volatilitet på ett sätt som låter sig implementeras direkt i analys-motorn — Elder-ray och Force Index kopplas till tidsserie-lagret i våra fundamentalmodeller. Det andra är riskkärnan i sin klassiska formulering: 2-procentsregeln som skydd mot hajen och 6-procentsregeln som skydd mot pirayorna föddes i sin renaste form här, och de är den direkta förlagan till AK1TS Brytpunkts-logik och till riskmatrisens princip att definiera kostnaden för att ha fel före fördelen med att ha rätt — med V19 Kapitalförbrukning & Emission-risk som den fundamentala kretsbrytaren. Det tredje är bevisformen: boken slutar inte med argument utan med tre månader av författarens egen trading-dagbok — riktiga affärer, betyg, tvekan och förluster — vilket gör den till den mest pedagogiska demonstrationen av dokumenterad process som finns i genren. Samtidigt kräver den kontroversiell ärlighet: forskningen om frekvent handel är brutal, Sverige saknar motsvarande registerstudier men svenska mäklare måste enligt lag redovisa att cirka tre av fyra CFD-konton förlorar pengar, och AK1A:s position är därför dubbel: vi lär ut timing-förståelse och beslutsramar för fundamentalanalytiker — vi ger aldrig handelstips, vi uppmuntrar inte daghandel, och vi medger öppet att de flesta privatpersoner gör bäst i att inte tradea aktivt.",
+ "chapters_list": [
+  "1. Rummet och resan — från grunderna till praktiken",
+  "2. Individen — investera, tradea eller spela?",
+  "3. Verktyget — datorn, internet och dagens mobil",
+  "4. Method — fem skott i magasinet",
+  "5. Kanaler och japanska ljus — prisets andningslåda",
+  "6. Elder-ray på djupet — momentum i analys-motorn",
+  "7. Force Index — volymen vittnar",
+  "8. Impulse System och Marknadstermometern",
+  "9. Tre skärmar 2.0 — uppdateringen och utgångarna",
+  "10. 2-procentsregeln — skyddet mot hajen",
+  "11. 6-procentsregeln — skyddet mot pirayorna",
+  "12. Den organiserade tradern — kalkylblad, ekvitetskurva, dagbok",
+  "13. Nybörjare, semipro, pro — att leva på trading?",
+  "14. Kom in i mitt trading-rum — tre månader live",
+  "15. Kontroversen och syntesen — timing-förståelse, inte uppmaning"
+ ],
+ "chapters": [
+  {
+   "num": 1,
+   "minutes": 11,
+   "title": "Rummet och resan — från grunderna till praktiken",
+   "intro": "Nio år efter Trading for a Living publicerade Alexander Elder uppföljaren Come Into My Trading Room (2002). Titeln är programförklaring: den första boken förklarade marknaden från utsidan — den här bjuder in läsaren in i rummet och visar arbetet på plats, ända fram till tre månader av författarens egen trading-dagbok. Detta kapitel introducerar boken, dess tre delar och kursens kritiska läsning.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Trading for a Living (1993) var en bok om varför: varför massan slår den enskilde, varför psykologin kommer före diagrammen, varför de tre M — Mind, Method, Money — alla krävs. Come Into My Trading Room är en bok om hur: hur du väljer roll, väljer marknad, väljer verktyg, räknar storlek, för dagbok och till sist går in i rummet där arbetet görs. Elder skrev den efter nästan ett decennium av föreläsningar, brev från läsare och egen mognad som förvaltare — och tonen är annorlunda: mindre patos, mer verkstad. Boken delar sig i tre deler med talande titlar: Financial Trading for Babes in the Woods (grunderna för nybörjaren), The Three M:s of Successful Trading (psyke, metod, pengar — nu med formler) och Come Into My Trading Room (den berömda live-delen)."
+    },
+    {
+     "type": "text",
+     "content": "Kursen och syskonkursen delar arbetet mellan sig, och differentieringen är medveten. Trading for a Living äger djupet: individ- och masspsykologin, Le Bon, fällkatalogen, journalens filosofi, de tre M:s idéhistoria. Trading Room äger resan: bokens faktiska struktur från rollvalet till dagboken, de nya verktygen (Impulse System, Marknadstermometern, regeln om fem indikatorer), riskformlerna i sin klassiska gestalt — 2-procentsregeln som skydd mot hajen, 6-procentsregeln som skydd mot pirayorna — och framför allt: beviset. Där T4AL argumenterade, visar den här boken. En författare som publicerar sina egna affärer, med förluster och betyg, gör något nästan unikt i genren: han låter processen granskas istället för att lova med den."
+    },
+    {
+     "type": "text",
+     "content": "Elder öppnar boken med tre saker läsaren måste veta innan han eller hon läser vidare — och kursen upprepar dem som sina egna förhandsvarningar. För det första: trading är inte snabba pengar utan ett hantverk som tar år att lära. För det andra: den som inte har tålamod att dokumentera och öva har inget i rummet att göra. För det tredje: marknaden behöver förlorare, och den som inte vet varför han eller hon kan bli en av dem kommer att bli det. AK1A håller med om alla tre — och lägger till en fjärde, som kursens sista kapitel driver till sin spets: forskningens dom om frekvent handel. Vi citerar boken öppet, vi citerar studierna öppet, och vi tvingar dem att mötas."
+    },
+    {
+     "type": "text",
+     "content": "För AK1A-eleven är den här kursen den praktiska andra halvan av Elder-metodiken. Grundboken gav beteendeläran till /profil och riskfilosofin till Brytpunkten; den här ger verktygen som kan implementeras: momentum-lagret (Elder-ray, Force Index, Impulse) till analys-motorn, volatilitetsmåttet (termometern) till riskdimensioneringen, och arkivet (kalkylblad, ekvitetskurva, dagbok) till elevens egen analys-dagbok. Vinklingen är konsekvent svensk och fundamental: vi lär ut timing-förståelse för den som redan kan läsa ett bokslut — inte en uppmaning att lämna boksluten för terminalen."
+    },
+    {
+     "type": "insikt",
+     "content": "Trading for a Living svarade på varför. Come Into My Trading Room svarar på hur — och bevisar det med öppna böcker. Syskonkurserna tillsammans täcker metodiken: den ena är teorin, den andra är verkstaden."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Syskonkursernas arbetsfördelning\",\"rader\":[[\"Fråga\",\"Trading for a Living\",\"Come Into My Trading Room\"],[\"Vad är marknaden?\",\"Folkmassan — Le Bon, masspsykologi på djupet\",\"Praktisk tillämpning i verktyg och affärer\"],[\"Psykologin\",\"Hopp, fruktan, fällkatalogen — bokens kärna\",\"Kort repetition: den mogne tradern\"],[\"Verktygen\",\"MA, MACD, Force Index, Elder-ray, triple screen introduceras\",\"Uppdateras: fem skott, Impulse, termometer, utgångar\"],[\"Risken\",\"2- och 6-procentsreglerna presenteras\",\"Formlerna: hajen, pirayorna, steg för steg\"],[\"Beviset\",\"Argument och logik\",\"Tre månader live-dagbok med riktiga affärer\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "tidslinje"
+    },
+    {
+     "type": "utmaning",
+     "content": "Skriv ner din förväntan på boken innan du går vidare: vad hoppas du få ut av en kurs om en traders verkstad? Spara svaret — kapitel 15 kommer att ställa dig mot väggen med frågan om förväntan var förståelse eller frekvens, det vill säga om du ville lära dig läsa timing eller börja tradea."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V01–V20 som helhet — denna kurs läser Elder vid sidan av fundamentalmodellen, och varje kapitel slutar med en explicit brygga. AK1TS-koppling: de fem tidshorisonterna; den här kursen bidrar med det korta horisont-lagret som betjänar det långa."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är den grundläggande skillnaden mellan Trading for a Living och Come Into My Trading Room?",
+     "alternativ": [
+      "Den första är om aktier, den andra om råvaror",
+      "Den första lär ut varför — den andra visar hur, ända in i författarens eget rum",
+      "De är i praktiken samma bok med nya exempel",
+      "Den andra boken är skriven av en annan författare"
+     ],
+     "ratt": 1,
+     "tips": "Titeln är en inbjudan — till vad?"
+    },
+    {
+     "q": "Vilka är bokens tre deler?",
+     "alternativ": [
+      "Babes in the Woods, The Three M:s, Come Into My Trading Room",
+      "Mind, Method, Money",
+      "Aktier, terminer, optioner",
+      "Journal, risk, utgångar"
+     ],
+     "ratt": 0,
+     "tips": "Först grunderna, sedan metodiken, sedan rummet."
+    },
+    {
+     "q": "Vilket bevisformen är unikt för den här boken jämfört med de flesta tradingböcker?",
+     "alternativ": [
+      "Långa mattebevis",
+      "Backtester på hundra år",
+      "Författarens egen live-dagbok med riktiga affärer, betyg och förluster",
+      "Intervjuer med hedgefondchefer"
+     ],
+     "ratt": 2,
+     "tips": "Vad gör en författare som inte bara lovar med processen utan visar den?"
+    }
+   ]
+  },
+  {
+   "num": 2,
+   "minutes": 11,
+   "title": "Individen — investera, tradea eller spela?",
+   "intro": "Bokens första kapitel heter Invest? Trade? Gamble? — och frågan är allvarligare menad än den låter. Elder sorterar läsaren i tre roller: den intelligente investeraren, den intelligente tradern och den intelligente spelaren. Däremellan ligger den diskretionära zonen där omdöme och regler samarbetar — och där AK1A placerar sin elev: fundamentalanalytikern som lär sig timing.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Den intelligente investeraren, skriver Elder, köper värde i ett företag och väntar — horisonten är år, besluten få, källan är fundamental analys. Graham-namnet ligger nära: investeraren tjänar på bolagets tillväxt och kassaflöde, inte på andras misstag. Den intelligente tradern gör tvärtom affärer på kortare serier: horisonten är dagar till månader, kanten ligger i att köpa av otåliga säljare och sälja till otåliga köpare — att ta betalt för likviditet och tålamod som andra saknar. Och den intelligente spelaren? Elder är ovanligt tydlig: spelaren söker spänningen, satsar på låg sannolikhet med hög utdelning — som optionsköpare — och majoriteten av dem som börjar där slutar där kasinots matematik bestämt. Rollen är valbar; konsekvenserna av felval är det inte."
+    },
+    {
+     "type": "text",
+     "content": "Mellan mekaniskt system och ren magkänsla ligger det Elder kallar den diskretionära zonen: handlandet med regler och omdöme. Det är där hans eget arbete bedrivs — tre skärmar, 2-procentregeln, dagboken som ramverk, men läsningen av varje enskilt läge gjort av en människa med erfarenhet. Han varnar för båda ytterligheterna: det mekaniska systemet lindrar psyket men dör när marknadsregimen byter, och den fria magkänslan är en juvenil fas som kapitalet överlever sällan. Zonen är målet — och den kräver att båda halvorna tränas: regler som är hårda, omdöme som är dokumenterat."
+    },
+    {
+     "type": "text",
+     "content": "Här gör AK1A sin viktigaste översättning av hela boken: eleven vi utbildar är inte en blivande daytrader utan en fundamentalanalytiker som förstår timing. AKM1 levererar tesen — tillväxt, moat, värdering, risk i tjugo variabler — och Elder-metodiken levererar när-lagret: när massan driver en fundamental tes för långt (topp i kanalen, sjunkande tjurkraft, euforisk volym) och när den missprissätter den (botten, maximal misstro, törn vid stöd). Timing-förståelse är inte en inbjudan att handla oftare; det är en försäkring mot att köpa och sälja vid exakt de tillfällen masspsykologin gör dyrast. Det är också vad som skiljer den här läsningen från syskonbokens: där psykologin var ämnet, är den här verktygets användare."
+    },
+    {
+     "type": "text",
+     "content": "Psykologin behandlas kort i den här boken — en sortering, inte en terapi. Elder talar om sömngångaren som handlar utan att veta varför och den mogne tradern som tagit ansvar för varje resultat; om botemedlet mot självdestruktivitet: regler som skrivits kallt, journal som tvingar minnet att böja sig för dokumentet. För djupet läser eleven om i Trading for a Living-kursens kapitel 2–4 — i den här kursen nöjer vi oss med mognadsdiagnosen och går vidare till verktygen. Boken börjar, liksom kursen, med att sortera dig — inte att skrämma dig."
+    },
+    {
+     "type": "insikt",
+     "content": "Frågan är inte om trading är bättre än investing. Frågan är vilken roll dina verktyg, din tid och ditt psyke faktiskt stödjer — och mellan svaret investerare och svaret spelare ligger hela den diskretionära zonen, där timing-förståelsen bor."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Tre roller — tre ekonomier\",\"rader\":[[\"Roll\",\"Horisont\",\"Antal beslut\",\"Var vinsten kommer ifrån\",\"AK1A-vinkling\"],[\"Investera\",\"År\",\"Få per år\",\"Bolagets kassaflöde och tillväxt\",\"AKM1-kärnan: V01–V09\"],[\"Tradea (swing)\",\"Dagar–månader\",\"Några per månad\",\"Otåligas misstag: köpa av panik, sälja till eufori\",\"Timing-lagret: AK1TS\"],[\"Spela\",\"Minuter–dagar\",\"Många per dag\",\"Turen — minus kostnader som alltid äter\",\"AK1A varnar: ingen kurs här\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Placera dig ärligt i tabellens tre roller utifrån det senaste året — inte utifrån vad du skulle vilja vara. Räkna dina faktiska beslut per månad. Skriv en mening: vad behöver jag lära mig för att min roll ska bära sitt eget kapital? Spara svaret till kapitel 13, som ställer frågan har du tiden?"
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V01 Försäljningstillväxt och V02 ARR-tillväxt är investerarens bränsle; timing-lagret avgör när marknaden prissatt dem dyrt eller billigt. AK1TS-koppling: Tiden — horisonten väljer verktyget, inte tvärtom."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vilka tre roller sorterar Elder läsaren in i i bokens första kapitel?",
+     "alternativ": [
+      "Analytiker, portföljförvaltare, rådgivare",
+      "Den intelligente investeraren, den intelligente tradern, den intelligente spelaren",
+      "Nybörjare, semipro, pro",
+      "Fundamentalist, tekniker, kvant"
+     ],
+     "ratt": 1,
+     "tips": "Frågan är bokens första rubrik."
+    },
+    {
+     "q": "Vad är den diskretionära zonen enligt kursens läsning?",
+     "alternativ": [
+      "Ett område i diagrammet mellan stöd och motstånd",
+      "Handlandet med regler och dokumenterat omdöme — mellan mekaniskt system och magkänsla",
+      "Tiden då marknaden är öppen",
+      "En zon där mäklaren tar betalt"
+     ],
+     "ratt": 1,
+     "tips": "Båda ytterlighetarna förlorar — vad ligger mellan dem?"
+    },
+    {
+     "q": "Hur översätter AK1A boken till sin egen elev?",
+     "alternativ": [
+      "Som en kurs i daghandel för snabba händer",
+      "Som timing-förståelse för fundamentalanalytikern — inte som uppmaning att tradea",
+      "Som en ersättning för fundamental analys",
+      "Som en kurs i optionsstrategier"
+     ],
+     "ratt": 1,
+     "tips": "Vad har eleven redan i form av AKM1 — och vad saknas?"
+    }
+   ]
+  },
+  {
+   "num": 3,
+   "minutes": 11,
+   "title": "Verktyget — datorn, internet och dagens mobil",
+   "intro": "Bokens andra och tredje kapitel handlar om marknadsval och den första utrustningen: What Markets to Trade? och The First Steps — med sektionen Getting Your Gear. Elder skrev 2002 om datorer, internet och data. Kursen läser det som en återkommande fråga: vad är verktyget värt när alla har det — och vad kostar det?",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Getting Your Gear, 2002: en dator, en internetuppkoppling, ett diagramprogram, en datakälla och en mäklare med online-access. Elder poäng är dubbel. För det första hade verktyget demokratiserats: det som krävde en bankterminal och tusentals dollar i dataavgifter på åttiotalet fanns nu för en spottstyver på ett skrivbord. För det andra — och det är poängen som överlever — är verktyget den billiga delen: att köpa verktyget är en dags utgift, att lära sig använda det med disciplin är års arbete. Branschens trick är att sälja det första och tiga om det andra. Han går igenom marknaderna med samma ärlighet: aktier är den vänligaste arenan för den som börjar (bolag man kan förstå, fundamenta att läsa, inget nollsummespel), terminer är hävstångens och nollsummans värld (din vinst är någons förlust, kostnaden av att ha fel obegränsad om man är vårdslös), och optioner är till största delen en maskin som maler tid till noll för köparna."
+    },
+    {
+     "type": "text",
+     "content": "The External Barriers to Success heter en sektion — och den handlar om att branschen lever på aktivitet. Nyhetsbrev, signal-tjänster, seminarier, mäklare som tjänar på omsättning: hela ekonomin runt handel är byggd för att få dig att handla mer, inte bättre. Översätt till 2026: appar designade som kasinon — push-notiser, konfetti vid köp, hävstång ett klick bort, influencer-signalgrupper, garantier om finansfrihet. Den yttre barriären har inte rivits sedan 2002 — den har byggts ut och lagts i fickan på dig. Elders motverktyg är lika enkel nu som då: bestämma i förväg vad verktygen får göra (data och analys) och inte göra (beslut och aktivitet)."
+    },
+    {
+     "type": "text",
+     "content": "AK1A:s läsning: vårt ekosystem är elevens Getting Your Gear — analys-motorn, datakällorna, riskmatrisen, dagboken. Skillnaden mot 2002 är att dagens eleven bär verkstaden i mobilen; likheten är att verktyget fortfarande inte kan ge det verktyget inte innehåller: tålamod, process och en tes värd att vänta på. De praktiska barriärerna lever också kvar oförändrade i sin aritmetik: spread, courtage, slippage och skatt är en skatt på frekvens — och den skatten betalas före varje kant du tror dig ha. Räkna alltid med den: en strategi med en procents förväntan per affär och tio affärer i månaden dör om kostnaden per affär är en halv procent."
+    },
+    {
+     "type": "text",
+     "content": "Ett särskilt svenskt verktygskrav: likviditet. En aktie på en smal börs med några tusen aktiers omsättning har ingen verklig marknad i marknadsstörningar — stoppet du skriver i journalen exekveras inte där du skrev det. Väljer du marknad väljer du samtidigt hur ärliga dina stopp kan vara. Det är inte en teknisk detalj; det är en förutsättning för hela riskapparaten i kapitel 10 och 11."
+    },
+    {
+     "type": "insikt",
+     "content": "Verktyget har aldrig varit billigare och disciplinen har aldrig varit dyrare. 2002 byggdes barriärerna av nyhetsbrev; 2026 läggs de i fickan på dig, med konfetti."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Verktygslådan 2002 mot 2026\",\"rader\":[[\"Funktion\",\"2002\",\"2026\",\"Risken som inte försvann\"],[\"Data\",\"Dyr datafeed\",\"Gratis i mobilen\",\"Överflöd ersätter avsaknad som fiende\"],[\"Order\",\"Online-mäklare\",\"App med svep\",\"Casinomekanik driver frekvens\"],[\"Analys\",\"Diagramprogram\",\"Analys-motor och AI\",\"Falsk trygghet i fler indikatorer\"],[\"Utbildning\",\"Böcker, seminarier\",\"Kurser, sociala medier\",\"Signal-säljare tjänar på din aktivitet\"],[\"Kostnad\",\"Courtage och spread\",\"Courtage och spread\",\"Aritmetiken äter korta affärer fortfarande\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Granska din egen apparatur i femton minuter: räkna hur många appar och kanaler som kan trigga dig att köpa eller sälja idag — notiser, feeds, grupper. Stäng av dem som inte levererar data du faktiskt använder i beslut. Antalet du stänger av är ett mått på hur mycket av din verkstad som ägs av branschens aktivitetsmaskin."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V11 Likviditet — handla bara det som verkligen går att handla; V19 Kapitalförbrukning & Emission-risk — samma princip på bolagssidan: bolaget som behöver marknadens gunst varje kvartal. AK1TS-koppling: datakvaliteten sätter taket för verktygens ärlighet."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är Elders huvudpoäng om verktyget (Getting Your Gear)?",
+     "alternativ": [
+      "Att dyra verktyg garanterar bättre resultat",
+      "Att verktyget är billigt — det dyra är att lära sig använda det med disciplin",
+      "Att man inte behöver någon dator",
+      "Att verktyget måste bytas varje år"
+     ],
+     "ratt": 1,
+     "tips": "Vad kostar en dator mot vad disciplinen kostar i tid?"
+    },
+    {
+     "q": "Vilken marknad rekommenderar Elder den som börjar?",
+     "alternativ": [
+      "Aktier — de går att förstå fundamentalt och är ingen nollsumma",
+      "Terminer — hävstången ger snabb inlärning",
+      "Optioner — tidsvärdet skyddar",
+      "Valutor — öppna dygnet runt"
+     ],
+     "ratt": 0,
+     "tips": "Vilken arena är vänligast mot den som fortfarande lär sig?"
+    },
+    {
+     "q": "Vad menar kursen med att de yttre barriärerna (External Barriers) lagts i fickan på oss?",
+     "alternativ": [
+      "Att mäklarna är stängda på nätterna",
+      "Att dagens appar och sociala medier är designade för att trigga aktivitet — branschens gamla nyhetsbrevsekonomi, nu i mobilen",
+      "Att man inte kan handla utan bank-ID",
+      "Att verktygen är för dyra för privatpersoner"
+     ],
+     "ratt": 1,
+     "tips": "Vilken ekonomi tjänar på att du handlar mer?"
+    }
+   ]
+  },
+  {
+   "num": 4,
+   "minutes": 11,
+   "title": "Method — fem skott i magasinet",
+   "intro": "Bokens femte kapitel heter Method — Technical Analysis, med Basic Charting och en sektion med rubriken fem skott per magasin: fler indikatorer i diagrammet är inte mer kunskap utan mindre. Detta kapitel går igenom Elders indikatorbudget, hans grundläsning av diagrammet — och kursens avgränsning mot Murphy- och Nison-kurserna.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Fem skott per magasin — five bullets to a clip — är bokens mest praktiska metodbudskap: ett diagram bör inte bära fler indikatorer än att de alla får plats i en enda snabb blick, ungefär som ett magasin rymmer fem patroner. Varje indikator utöver de första ger snävare nyans men också fler falska signaler, fler tolkningar och fler sätt att charmas av diagrammet i stället för att läsa det. Elders egen magasinlåda genom boken är lagom tydlig: ett medelvärde (trend och konsensus), MACD-histogrammet (momentum och acceleration), Elder-ray (tjur- och björnkraft mot konsensus), Force Index (volymens drivkraft) och kanalerna med ljusen (prisets ytterligheter i relation till det normala). Fem skott, fem olika frågor — inga dubbelträffar."
+    },
+    {
+     "type": "text",
+     "content": "Basic Charting är grundhantverket: staplar och ljus, volym under diagrammet, trendlinjer, stöd och motstånd, tidsramarnas hierarki. Kursen avgränsar sig medvetet här: mönsterkatalogerna — huvud-och-skuldra, trianglar, gap, ljusmönster på djupet — ägs av Murphy-kursen (Teknisk analys av finansiella marknader) och Nison-kursen (Japanese Candlestick Charting). Här lärs diagrammet som Elder använder det: inte som en samling figurer att känna igen utan som ett beslutsunderlag med tre kolumner — pris, volym, indikator — där varje verktyg ska svara på exakt en fråga. Om ett verktyg inte kan besvara sin fråga i tio sekunder hör det inte hemma i diagrammet."
+    },
+    {
+     "type": "text",
+     "content": "Method i den här boken är dessutom medvetet komprimerad: grunderna lärdes ut i Trading for a Living, och det nya ligger i förfiningarna — Impulse System (kapitel 8 i kursen), Marknadstermometern och utgångstekniken (kapitel 9). Elder tillägger också kravet system testing: vilken metod du än väljer ska den testas — på historik, på papper, i mikroskopiska storlekar — innan den får röra kapital. Det är samma evidenskrav AK1A ställer på allt: en regel som inte testats är en åsikt. För fundamentalanalytikern är det dubbelt relevant: AKM1 poängsätts av dig — men gör det då varje gång enligt samma mall, annars är inte resultatet mätbart."
+    },
+    {
+     "type": "text",
+     "content": "Notera slutligen vad Method inte är: den är ett av tre M. Boken är mån om att metodiken inte förväxlas med hela verksamheten — verktygen är billigare, snabbare att byta och mindre värdefulla än de två andra. En användbar minnesregel för eleven: om din analys innehåller fem indikatorer men ingen brytpunkt och ingen journal — alltså Method utan Money och Mind — har du byggt en bil utan bromsar och utan förare."
+    },
+    {
+     "type": "insikt",
+     "content": "Fem skott är en ammunitionsbudget: varje indikator du lägger till kostar klarhet. Diagrammet är en frågesport med fem frågor — inte en tavla att tyda."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Elders fem skott — vad varje verktyg svarar på\",\"rader\":[[\"Verktyg\",\"Fråga den besvarar\",\"Plats i systemet\"],[\"Medelvärde (EMA)\",\"Vart pekar konsensus?\",\"Trend och referens — skärm ett\"],[\"MACD-histogram\",\"Ökar eller sinar drivkraften?\",\"Momentum och acceleration\"],[\"Elder-ray\",\"Hur hårt pressar tjurar och björnar?\",\"Krafter mot konsensus — skärm två\"],[\"Force Index\",\"Hur starkt engagerar volymen sig?\",\"Volymviktad drivkraft\"],[\"Kanal med ljus\",\"Hur långt från normala är priset?\",\"Ytterligheter och timing\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Öppna det diagram du använder oftast och räkna indikatorerna. Klipp till fem enligt bokens budget — och skriv vid varje kvarvarande vilken exakt fråga den svarar på. Om du inte kan formulera frågan på tio sekunder: klipp också den. Notera hur beslutet att ta bort påverkar din lust att agera — det är hela poängen."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V07–V09 (bruttomarginal, EBITDA-marginal, ROE) är den fundamentala lönsamhetens Method-motpart — bokens regel är budget: fem variabler i blick, tjugo i modellen, ingen i onödan. AK1TS-koppling: Vågen — den högre tidshorisontens referens, diagrammets EMA i fundamental tappning."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad innebär regeln fem skott per magasin?",
+     "alternativ": [
+      "Att man gör maximalt fem affärer per månad",
+      "Att diagrammet inte bör bära fler än fem indikatorer — var och en med en tydlig fråga",
+      "Att man testar systemet i fem år",
+      "Att man har fem aktier i portföljen"
+     ],
+     "ratt": 1,
+     "tips": "Vad rymmer ett magasin — och vad blir det för många?"
+    },
+    {
+     "q": "Varför avgränsar kursen sig mot Murphy- och Nison-kurserna?",
+     "alternativ": [
+      "Eftersom Elder motsätter sig mönsteranalys",
+      "Mönsterkatalogerna på djupet ägs av syskonkurserna — här används diagrammet som beslutsunderlag med en fråga per verktyg",
+      "Eftersom Elder bara använder fundamental analys",
+      "Murphy och Nison är föråldrade"
+     ],
+     "ratt": 1,
+     "tips": "Vem ägar huvud-och-skuldra? Vem äger verktygsfrågorna?"
+    },
+    {
+     "q": "Vad kräver Elder innan en metod får röra kapital?",
+     "alternativ": [
+      "Att den känns rätt i magen",
+      "Att den testats — på historik, på papper, i små storlekar",
+      "Att en mäklare godkänt den",
+      "Att den använder minst tio indikatorer"
+     ],
+     "ratt": 1,
+     "tips": "Vad är en regel som inte testats?"
+    }
+   ]
+  },
+  {
+   "num": 5,
+   "minutes": 12,
+   "title": "Kanaler och japanska ljus — prisets andningslåda",
+   "intro": "I Basic Charting bygger Elder sitt sätt att rama in prisets rörelse: kanaler — band ovanför och under medelvärdet — och de japanska ljusen som mikro-läsning av varje enskild strid. Tillsammans blir det prisets andningslåda: golvet där säljarna töms, taket där köparna får nog. Detta kapitel går igenom kanallogiken och ljusens roll som bekräftelse — inte som spådom.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "En kanal är ett band några procent över och under ett medelvärde — prisets normala andning runt sitt konsensus. Elder läsning av kanalen är regimberoende. I en ung trend, där medelvärdet nyss vänt uppåt och optimismen fortfarande är mild, är styrka vid kanalens överkant ett löfte: fortsättning, och den som väntar på återgång till medelvärdet väntar länge. I en mogen trend, där kursen gått länge och massan hunnit bli bekväm, är samma överkant en varning: uttjäning, och den närmaste resan går mot kanalens golv. Samma linje, två budskap — avgjort av trendens ålder och massans humör, inte av linjen själv. Det är därför kanaler och masspsykologi (syskonbokens kapitel 3) hör ihop: kanalen är massans andningslåda uppritad."
+    },
+    {
+     "type": "text",
+     "content": "De praktiska reglerna blir då: i en upptrend köps närmare kanalens golv — dippen som massan överdriver — och inte vid taket, där den senaste köparen just betalt högst pris för minst tålamod. I en nedtrend shorts närmare taket, där rallyt tröttnar. Sidledes marknad: kanalen är hela spelet — köp vid golv, sälj vid tak, och ingen trendhandel alls. Ljusen kommer in som kvittot: ett ljus med lång nedre skugga vid kanalgolvet i en upptrend visar att säljarna fått ut sin panik och köparna stängt sessionen högt — dippen som slutade falla. En lång övre skugga vid taket visar spegelbilden: euforin som inte bjöds kvar. Nison-kursen äger hela mönsterkatalogen; här använder vi ljusen bara som mikrobekräftelse på var kanalen just nu är nära att tala."
+    },
+    {
+     "type": "text",
+     "content": "Kanalens viktigaste tjänst är dock inte signalen utan måttet: bredden. En bred kanal betyder hög volatilitet — stora avstånd från konsensus är normala — och därmed krävs bredare stopp och mindre positioner. En smal kanal tillåter tätare stopp och större storlek vid samma kronrisk. Det är en direkt förberedelse för kapitel 10 och 11: kanalbredden är stoppavståndets faktagrund, och stoppavståndet är 2-procentsregelns nämnare. Verktygen hänger ihop baklänges: utgången definierar storleken, och kanalen definierar utgången."
+    },
+    {
+     "type": "text",
+     "content": "AK1A-översättningen: för fundamentalanalytikern är kanalen värderingens tidevattenmätare. V04–V06 (P/S, P/B, EV/EBITDA) säger vad du betalar i multipel; kanalen och medelvärdet säger var massan just nu driver priset inom sitt normala band. En aktie du värderat som köpvärd vid kanalens golv i en ung trend är en fundamentals med margin; samma aktie köpt vid taket i en mogen trend är samma tes med sämre pris och sämre läge — timing-förståelsens första praktiska regel."
+    },
+    {
+     "type": "insikt",
+     "content": "Kanalen är massans andningslåda: golvet där paniken tömmer sig, taket där euforin prickat. Ljusen är pulsmätningen — kvitto, aldrig spådom."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Kanalläsning efter regimen\",\"rader\":[[\"Regim\",\"Köp närmare\",\"Sälj eller short närmare\",\"Varningstecknet\"],[\"Ung upptrend\",\"Botten av dippen (medelvärdet eller lägre)\",\"— (håll kvar)\",\"Ingen — styrka vid taket är ett löfte\"],[\"Mogen upptrend\",\"Kanalens golv med bekräftelseljus\",\"Kanalens tak; uttjänningstecken\",\"Bortfall från taket mot medelvärdet\"],[\"Sidledes\",\"Kanalens golv\",\"Kanalens tak\",\"Utbrott som inte bekräftas av volym\"],[\"Nedtrend\",\"— (avstå eller kort täckt)\",\"Kanalens tak\",\"Tunn volym på rallyn\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Rita ett medelvärde och en kanal (några procent över och under) på en aktie du känner fundamentalt. Märk ut de tre senaste gångerna kursen nått taket respektive golvet — och vilket ljus som stängde där. Var det ungt eller moget läge? Skriv en rad om huruvida din senaste köp- eller säljidé låg vid golv eller tak."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V04 P/S, V05 P/B och V06 EV/EBITDA — multipeln avgör regimen på lång sikt, kanalen på kort. AK1TS-koppling: Priset — en av de fyra dimensionerna, bokstavligen ritad som band."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad betyder samma överkant i en kanal i en ung respektive en mogen trend?",
+     "alternativ": [
+      "Samma sak — linjen är alltid signalen",
+      "Ung trend: styrka och löfte om fortsättning. Mogen trend: uttjänning och varning",
+      "Ung trend: sälj alltid. Mogen trend: köp alltid",
+      "Kanaler fungerar bara i sidledes marknad"
+     ],
+     "ratt": 1,
+     "tips": "Vem har hunnit bli bekväm — och vad betyder det för taket?"
+    },
+    {
+     "q": "Vilken roll spelar de japanska ljusen i den här kursen?",
+     "alternativ": [
+      "Som en komplett mönsterkatalog för prognoser",
+      "Som mikrobekräftelse — till exempel lång nedre skugga vid kanalgolvet som kvitto på att dippen slutar falla",
+      "Som ersättning för medelvärden",
+      "De används bara på dagsdata för daghandel"
+     ],
+     "ratt": 1,
+     "tips": "Vem äger katalogen — och vad återstår för den här kursen?"
+    },
+    {
+     "q": "Vad är kanalbreddens viktigaste funktion i kursens vidare bygge?",
+     "alternativ": [
+      "Den anger trendriktningen",
+      "Den är stoppavståndets faktagrund — bred kanal kräver bredare stopp och mindre position",
+      "Den mäter volymen",
+      "Den bestämmer antalet indikatorer"
+     ],
+     "ratt": 1,
+     "tips": "Vilken nämnare behöver 2-procentsregeln i kapitel 10?"
+    }
+   ]
+  },
+  {
+   "num": 6,
+   "minutes": 11,
+   "title": "Elder-ray på djupet — momentum i analys-motorn",
+   "intro": "Elder-ray presenterades i Trading for a Living; här förs den in i den praktiska verkstaden och i kursens analys-motor. Tjurkraft och björnkraft — dagens ytterligheter mot massans genomsnitt — blir det lager i en fundamental analys som svarar på när marknaden börjat tro på tesen, respektive tröttnat på den.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Konstruktionen i korthet, som repetition från syskonboken: ta ett trettondagars exponentiellt medelvärde — konsensus — och mät dagens ytterligheter mot det. Tjurkraft är dagens högsta kurs minus medelvärdet: hur högt tjurarna lyfte över massans genomsnitt. Björnkraft är dagens lägsta kurs minus medelvärdet: hur djupt björnarna pressade under. Två histogram kring en nollinje, ofta båda samma dag — en handelsdag innehåller nästan alltid båda faserna. Det viktiga är inte värdenas nivå utan deras beteende över tid: blir topparna och dalarna starkare eller svagare?"
+    },
+    {
+     "type": "text",
+     "content": "De fina nyanserna — det den här boken tillför läsningen — ligger i kombinationen med trend och kanal. Den klassiska long-setupen: upptrend (medelvärdet stiger) och björnkraft negativ men stigande — dippen blir grundare, björnarna tappar greppet medan regimen är tjurarnas; köp när björnkraften vänder uppåt under noll. Den klassiska short-setuppen: nedtrend och tjurkraft som faller från rally till rally — motgångarna orkar mindre. Divergensen är den tredje signalen: nya pristoppar med sjunkande tjurkraft — massan pressar priset högre med allt mindre inre tryck. Notera samverkan med kapitel 5: björnkraft som vänder vid kanalgolvet är en starkare läsning än samma signal mitt i ingenstans."
+    },
+    {
+     "type": "text",
+     "content": "Nu implementationen, som kursens direktiv: koppla Elder-ray till analys-motorns momentum-lager. I AK1A:s ekosystem är en fundamentaltes (AKM1, V01–V20) långsam — den lever i kvartal och år — medan marknadens tro på den lever i dagar och veckor. Elder-ray är den billigaste operationaliseringen av det lagret: för varje aktie i universum beräkna tjurkraftens trend (stigande eller fallande över till exempel tjugoen dagar) och björnkraftens beteende under dippar (grundare eller djupare). Resultatet blir en momentumflagga per aktie: bekräftar (stigande tjurkraft på köpidéer), varnar (fallande tjurkraft på köpidéer — katalysatorn kanske redan prissatt) eller neutral. Det är inte en signal — det är ett lägesmått som får fundamentaltesen att veta när den är tidig, lagom eller sen."
+    },
+    {
+     "type": "text",
+     "content": "Den ärliga deklarationen från syskonboken upprepas här: Elder-ray ser inget genom ytan — den packar om information som redan finns i diagrammet (avståndet mellan dagens ytterligheter och ett medelvärde). Värdet ligger i att den formulerar en enda fråga — vem pressar hårdast mot konsensus just nu? — och ger ett mätbart svar, vilket gör den idealisk som flagga i en motor men värdelös som spåkvinna. Kirurgen är mer än skalpellen; analys-motorn är mer än dess momentum-lager."
+    },
+    {
+     "type": "insikt",
+     "content": "Fundamentaltesen svarar på varför. Elder-ray svarar på när massan börjat tro på den — och, ännu viktigare, när den börjat tröttna. Bekräftelse eller varning; aldrig köpsignal."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Elder-ray-signaler och tes-status\",\"rader\":[[\"Signal\",\"Läsning\",\"Vad den säger om din fundamentaltes\"],[\"Stigande tjurkraft\",\"Tjurarna trycker hårdare över konsensus\",\"Bekräftelse — marknaden börjar tro\"],[\"Fallande tjurkraft vid nya pristoppar\",\"Divergens: priset upp, kraften ner\",\"Varning — katalysatorn kan vara prissatt\"],[\"Björnkraft negativ men grundare\",\"Dipparna tappar djup i upptrend\",\"Bra läge — tesen håller, massan får panikskalor\"],[\"Tjurkraft sviktar i rally\",\"Rallyn orkar mindre i nedtrend\",\"Varning för att bli tidig long\"],[\"Båda krafterna nära noll\",\"Priset klistrat vid konsensus\",\"Neutral — ingen åtgärd\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Välj en aktie du nyligen poängsatt i AKM1. Beräkna grovt Elder-ray i ett kalkylblad (EMA13, dagens högsta och lägsta) för de senaste trettio dagarna. Ställ en enda fråga: stigande eller fallande tjurkraft under perioden — och vad betyder det för timingen av din tes? Skriv svaret som en rad i din analys-dagbok."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V16 Produktlanseringar, V17 Avtal & Partnerskap och V18 Regulatoriska katalysatorer — katalysatorerna behöver timing; Elder-ray är deras klocka. AK1TS-koppling: momentum-lagret i analys-motorn, implementerbart med grundskolans matematik."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är den klassiska long-setupen i Elder-ray?",
+     "alternativ": [
+      "Upptrend och björnkraft negativ men stigande",
+      "Nedtrend och positiv tjurkraft",
+      "Platt medelvärde och nollkrafter",
+      "Fallande tjurkraft vid nya toppar"
+     ],
+     "ratt": 0,
+     "tips": "Trenden äger riktningen — vad händer med dipparnas djup?"
+    },
+    {
+     "q": "Vad betyder nya pristoppar med sjunkande tjurkraft för en köpides fundamentaltes?",
+     "alternativ": [
+      "Att tesen bevisats extra stark",
+      "En varning — katalysatorn kan redan vara prissatt",
+      "Att bolaget har höjt utdelningen",
+      "Att multipeln är lägre än väntat"
+     ],
+     "ratt": 1,
+     "tips": "Priset upp, kraften ner — vad saknas bakom toppen?"
+    },
+    {
+     "q": "Hur föreslår kursen att Elder-ray implementeras i AK1A:s analys-motor?",
+     "alternativ": [
+      "Som en automatisk köp- och säljsignal",
+      "Som en momentumflagga per aktie — bekräftar, varnar eller neutral i förhållande till fundamentaltesen",
+      "Som ersättning för V01–V20",
+      "Som mått på bolagets skuldsättning"
+     ],
+     "ratt": 1,
+     "tips": "Flagga eller signal — vilken är den som inte kräver att du lyder?"
+    }
+   ]
+  },
+  {
+   "num": 7,
+   "minutes": 11,
+   "title": "Force Index — volymen vittnar",
+   "intro": "Force Index är Elders egen volymviktade drivkraftsindikator: riktning, styrka och massans röststyrka i en enda produkt. Grundkonstruktionen lärdes ut i syskonboken; här förs den in i praktiken och i analys-motorn som volymlagret — sanningsmätaren på om marknaden menar allvar med en rörelse.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Force Index multiplicerar dagens prisförändring med dagens volym: en kraftig rörelse på tung volym ger ett högt index, en lika kraftig rörelse på tunn volym ger ett lågt. Filosofin är masspsykologins: priset är massans humör, volymen dess röststyrka — och först när båda är höga har massan lagt pengar bakom sitt humör. En stigande kurs utan volym är en kulisshow; ett fall utan volym är snarare frånvaro av köpare än närvaro av säljare. Indikatorn gör denna intuition mätbar: två exponentiella medelvärden av indexet — två dagar för timing av korta svängar, tretton dagar för den underliggande kraften i trenden."
+    },
+    {
+     "type": "text",
+     "content": "De praktiska läsningarna. Korta Force Index (två dagar) dippar under noll i en upptrend: en motgång i massans engagemang — klassisk köpmöjlighet för swing, eftersom den korta indikatorn reagerar på paniken medan den långa bevarar trenden. Långa Force Index (tretton dagar) faller mot noll eller under: allvarligare — engagemanget sinar i hela trenden. Divergensen igen: kursen nya toppar, Force Index svagare toppar — massan tröttnar, samma utmattelsebudskap som Elder-ray men med volymen inbakad. Och spegelregeln: en negativ dag på rekordvolym i en nedtrend är nästan aldrig köptillfället — volymen vittnar om att någon verkligen vill ut."
+    },
+    {
+     "type": "text",
+     "content": "Analys-motor-kopplingen, på samma sätt som för Elder-ray: volymlagret. Fundamentalteser får sin hårdaste prövning på rapportdagen och katalysatordagar — och precis där är volymen som mest talande. Implementera: vid varje större fundamental händelse (rapport, avtal enligt V17, regulatoriskt beslut enligt V18) logga volymen mot genomsnittet och riktningen. En breakout uppåt efter en bra rapport på dubbel volym: marknaden röstar med pengar på dina V01-siffror. Samma rapport på halverad volym: artig applåd, ingen övertygelse — var försiktig med att addera. Volymen blir fundamentalinformationens gramvikt: den talar om hur tungt marknaden väger dina siffror."
+    },
+    {
+     "type": "text",
+     "content": "Begränsningarna, ärligt: volymdata varierar mellan källor (konsoliderade flöden, dubbelräkningar, olika marknadsplatser), och på vissa instrument — vissa fonder, smala listor — är volymen illa definierad eller ointressant. Force Index är också stojig på kort tidslinje: den skapades att vägas med medelvärden, inte att läsas rå. Som allt i den här boken: indikatorn är ett av fem skott — aldrig hela magasinet."
+    },
+    {
+     "type": "insikt",
+     "content": "Priset föreslår; volymen bestämmer. Force Index är deras produkt — drivkraft i en enda siffra, med massans röststyrka inbakad."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Force Index — lägen och läsningar\",\"rader\":[[\"Läge\",\"Betydelse\",\"Typisk handling\"],[\"Kort FI dippar under noll i upptrend\",\"Motgång i engagemanget — panikskala\",\"Köpläge för swing med stopp under senare dal\"],[\"Långt FI faller mot noll\",\"Trendens engagemang sinar\",\"Strama stopp; ta inte nya tidiga positioner\"],[\"Ny pristopp, svagare FI-topp\",\"Divergens — massan tröttnar\",\"Varning; lås in vinster enligt plan\"],[\"Negativ dag på rekordvolym\",\"Någon vill verkligen ut\",\"Leta inte bottnar; vänta på uttömning\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Jämför volymen vid de två senaste rapporterna för en aktie du följer: var marknadens röststyrka högst, och vad gjorde kursen efter? Skriv en rad om huruvida volymen bekräftade eller dementerade din läsning av siffrorna — det är analys-motorns volymlager, byggt för hand."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V01 Försäljningstillväxt — volymen väger hur tungt marknaden tar emot just dina tillväxtsiffror; V12 Intäktsstabilitet för helheten. AK1TS-koppling: volymlagret i analys-motorn, systerflagga till Elder-ray."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad multiplicerar Force Index?",
+     "alternativ": [
+      "Högsta och lägsta kurs",
+      "Prisförändringen och volymen",
+      "EMA och MACD",
+      "Vinst och bokvärde"
+     ],
+     "ratt": 1,
+     "tips": "Humör gånger röststyrka."
+    },
+    {
+     "q": "Vad betyder det när den korta Force Index (2 dagar) dippar under noll i en upptrend?",
+     "alternativ": [
+      "Att trenden brutits",
+      "En motgång i engagemanget — ofta ett köpläge för swing medan den långa kvarstår",
+      "Att man omedelbart bör shorta",
+      "Att volymdata är fel"
+     ],
+     "ratt": 1,
+     "tips": "Kort indikator reagerar, lång bevarar — vad gör du?"
+    },
+    {
+     "q": "Hur används volymen i analys-motorns fundamentalhändelser?",
+     "alternativ": [
+      "Som gramvikt — hur tungt marknaden väger rapportens eller katalysatorns siffror",
+      "Som prognos för nästa kvartal",
+      "Den spelar ingen roll",
+      "Som mått på utdelningen"
+     ],
+     "ratt": 0,
+     "tips": "Breakout på dubbel volym eller på tunn — vad är skillnaden?"
+    }
+   ]
+  },
+  {
+   "num": 8,
+   "minutes": 12,
+   "title": "Impulse System och Marknadstermometern",
+   "intro": "Bokens kapitel sex, Trading, innehåller de verkligt nya verktygen: Impulse System — som kombinerar tröghet och momentum till en enda färgad stapel — och Marknadstermometern, som mäter hur hett marknaden är. Där finns också sektionen Day-Trading, där Elder är som mest ärlig. Detta kapitel går igenom båda verktygen och kursens kanske viktigaste implementation.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Impulse System är bokens eleganta duo. Trögheten: om ett trettondagars exponentiellt medelvärde lutar uppåt bär marknaden med sig uppåtriktat seg moment — som en tung vagn i rullning. Drivkraften: om MACD-histogrammet stiger ökar påtryckningen. När båda pekar uppåt målas stapeln grön: köp och håll tillåtet, inga nya shorts. När båda pekar nedåt målas stapeln röd: sälj och short tillåtet, inga nya longs. När de säger emot varandra är stapeln neutral — och det är bara i neutrala zoner som nya affärer ska initieras. Regeln är så enkel att den verkar banal, och det är dess styrka: den avlägsnar beslutet från känslan och lägger det i en färg. En grön stapelserie säger: sitt still. En röd säger: korta inte mot den. Psyket får en signal den inte kan argumentera med."
+    },
+    {
+     "type": "text",
+     "content": "Marknadstermometern mäter hur långt dagens ytterligheter sticker ut utanför gårdagens: hur mycket högre högsta kursen och hur mycket lägre lägsta. Sticker de ut mycket är marknaden het — volatiliteten är hög, rörelserna stora, stämningen febrig. Elder använde termometern främst som ett positionsstorleksverktyg, inte som en signal: när temperaturen stiger ska antingen stoppen vidgas (vilket genom 2-procentsregeln automatiskt minskar positionen) eller affärerna avstås tills marknaden svalnat. Het marknad betalar de flesta förluster — särskilt åt den som har storleken kvar från den lugna marknaden. Det är kursens första möte med riskdimensionering som funktion av volatilitet, och den fullbordas i kapitel 10 och 11."
+    },
+    {
+     "type": "text",
+     "content": "Sektionen Day-Trading i samma kapitel förtjänar sitt eget stycke, eftersom den är kursens motsvarighet till ett av genrens största missförstånd. Elder skriver om daghandel utan försköningskrav: den blev populär i bullmarknadens eufori, den är den svåraste nivån av handel — blott sekunder till beslut, kostnaderna äter korta affärer, och den som lyckas är en ytterst liten minoritet. Hans eget arbete, som visas i bokens sista del, är swing- och positionshandel med dagars till veckors horisont — affärer som går att tänka igenom, dokumentera och granska. Han argumenterar alltså inte för daghandel; han argumenterar för diskretionär, regelstyrd handel med längre andning. Detta är viktigt att minnas när kapitel 15 ställer frågan vad en utbildare ska göra med en tradingbok: svaret är redan hos Elder — frekvensen är inte budskapet, processen är det."
+    },
+    {
+     "type": "text",
+     "content": "Implementationen i analys-motorn är den mest direkt genomförbara i hela boken. Impulse-lagret: för varje aktie, beräkna EMA-lutning (uppåt, nedåt eller plant) och MACD-histogrammets riktning; kombinera till grönt, rött eller neutralt — en trafikljusflagga i screenern. Termometer-lagret: dagens range mot gårdagens; om temperaturen är hög, flagga positioner som behöver omstorlekas eller stopp som behöver bredas. Två kolumner i en tabell, en eftermiddags programmering, och Elder-metodikens kärna sitter i motorn — inte som signalsäljare utan som lägesmätare på den egna tesen."
+    },
+    {
+     "type": "insikt",
+     "content": "Impulse frågar två saker i en färg: vart pekar trögheten, och ökar drivkraften? Termometern frågar: hur hett är det? Tillsammans: vad du får göra — och hur stort du får göra det."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Impulse-färger och tillåtna handlingar\",\"rader\":[[\"Färg\",\"EMA-lutning\",\"MACD-histogram\",\"Tillåtet\"],[\"Grön\",\"Uppåt\",\"Stigande\",\"Håll och köp — inga shorts\"],[\"Röd\",\"Nedåt\",\"Fallande\",\"Sälj och short — inga nya longs\"],[\"Neutral\",\"Säger emot varandra\",\"Säger emot varandra\",\"Nya affärer initieras endast här\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "termometer"
+    },
+    {
+     "type": "utmaning",
+     "content": "Färglägg för hand tjugo handelsdagar i en aktie: EMA-lutning uppåt eller nedåt (tretton dagar), histogram riktning uppåt eller nedåt, grön, röd eller neutral stapel. Räkna andelen neutrala dagar — dagarna då nya beslut överhuvudtaget är på tal. Jämför med hur många dagar du faktiskt kände lust att agera. Skillnaden är impulssystemets hela värde."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V19 Kapitalförbrukning & Emission-risk — en het marknad är kapitalförbrukningens accelerationsrum; termometern är riskflaggans volatilitetshalva. AK1TS-koppling: trafikljus- och temperatur-lagren i analys-motorn, implementerbara i två kolumner."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vilka två komponenter kombineras i Impulse System?",
+     "alternativ": [
+      "Volym och pris",
+      "Tröghet (EMA-lutning) och drivkraft (MACD-histogrammets riktning)",
+      "P/E och P/B",
+      "Stöd och motstånd"
+     ],
+     "ratt": 1,
+     "tips": "En tung vagn och dess påtryckning."
+    },
+    {
+     "q": "När initieras nya affärer enligt Impulse System?",
+     "alternativ": [
+      "På gröna staplar",
+      "På röda staplar",
+      "I neutrala zoner — när tröghet och drivkraft säger emot varandra",
+      "Vid varje volymspik"
+     ],
+     "ratt": 2,
+     "tips": "Grön säger sitt still — var får tanken börja?"
+    },
+    {
+     "q": "Vad är Elders hållning till daghandel i boken?",
+     "alternativ": [
+      "Han rekommenderar den för den som vill lära sig snabbt",
+      "Han är skeptisk — den svåraste nivån, en ytterst liten minoritet lyckas; hans eget arbete är swing och position",
+      "Han utvecklar ett system för daghandel",
+      "Han menar att daghandel är säkrare än långsiktigt sparande"
+     ],
+     "ratt": 1,
+     "tips": "Vilken horisont har hans egna affärer i bokens sista del?"
+    }
+   ]
+  },
+  {
+   "num": 9,
+   "minutes": 11,
+   "title": "Tre skärmar 2.0 — uppdateringen och utgångarna",
+   "intro": "Triple Screen Update heter sektionen i bokens sjätte kapitel: vad som förändrats sedan grunderna lärdes ut 1993. Svaret är inte en ny indikator utan mer flexibla tidsramskombinationer och hårdare fokus på det de flesta fuskar bort: utgångarna. Detta kapitel uppdaterar systemet och kopplar det till Brytpunkten.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Rekapitulationen först, i korthet från syskonboken: skärm ett — den högre tidsramen — väljer sida (endast long eller endast short); skärm två — den lägre tidsramens oscillator — väljer tillfället (en motgång inom trenden); skärm tre — utförandet med limit-order, stopp och trailing. Uppdateringen i den här boken öppnar verktygslådan: skärm ett kan läsas med MACD-histogrammets lutning eller med Impulse-färgen på högre tidsram; skärm två kan fyllas av Force Index (två dagar), en stochastic eller Elder-ray — fem skott, tre skärmar, inga dubbelträffar. Tidsramskombinationerna blir också friare: vecka och dag för den som har annat att göra, dag och timme för den som vill vara närmare, med samma faktor-fem-hierarki mellan ramarna."
+    },
+    {
+     "type": "text",
+     "content": "Sektionen Exiting Trades är bokens mest underskattade stycke, för den behandlar det som genren helst tiger om: hur affären tar slut. Elder delar utgången i två kontrakt som skrivs vid ingången. Det första är stoppet — där tesen är fel, tekniskt definierat som avstånd till senaste dal (för long) plus ett stycke brus; hans stopptechnik lägger stoppet bakom den normala marknadsrörelsens omfång snarare än vid en siffra som känns bekväm. Det andra är målet — motstånd, kanaltak eller förväntad rörelse, valt så att belöningen rimligtvis överstiger risken; utan ett scenario där vinsten betalar flera förluster är setupen inte värd namnet. Däremellan trailing: stoppet flyttas i vinstriktning allteftersom affären utvecklas — aldrig i förlustriktning, det är syskonbokens fjärde fälla och förblir förbjuden."
+    },
+    {
+     "type": "text",
+     "content": "Choosing What to Trade avslutar kapitlet med urvalet: handla bara det du förstår, det som är likvidt nog för ärliga stopp, och det vars volatilitet du har råd med. Det är här AK1A-bryggan blir som tydligast: för vår elev är urvalet inte tekniskt utan fundamental — teknikerna tillämpas på bolag man redan poängsatt i AKM1, där man vet varför man är intresserad, vad som driver intäkterna (V01–V03) och var risken sitter (V19). En setup på ett bolag man inte förstår är inte en affär; den är ett lotteri med diagram."
+    },
+    {
+     "type": "text",
+     "content": "System Testing-sektionen förtjänar en sista påminnelse: vilken kombination du än landar i — veckodag med Force Index, dagtimme med Elder-ray — ska den testas på historik och provas på papper innan kapital. Bokens krav är ödmjukt: ingen kombination är helig, men varje kombination måste bevisa sig innan den får lysa grönt i din skärm. Det är samma evidensprincip som AKM1:s skalor: regler utan belägg är åsikter."
+    },
+    {
+     "type": "insikt",
+     "content": "Ingångarna är val; utgångarna är kontrakt. Tre skärmar kan uppdateras i oändlighet — hierarkin är evig: regim, motgång, utförande, med utgångarna skrivna innan dörren öppnas."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Tre skärmar 2.0 — från sida till exit\",\"rader\":[[\"Skärm\",\"Fråga\",\"Verktyg (valfria)\",\"Exit-koppling\"],[\"1 — Högre tidsram\",\"Vilken sida är tillåten?\",\"MACD-histogrammets lutning eller Impulse-färg\",\"Beställer riktning på stopp och mål\"],[\"2 — Lägre tidsram\",\"När är tillfället?\",\"Force Index 2 dgr, stochastic, Elder-ray\",\"Ger ingångsnivån som stoppet mäts från\"],[\"3 — Utförande\",\"Vad exakt och hur stort?\",\"Limit-order vid stöd; storlek från stoppavstånd\",\"Stopp bakom senaste dal plus brus; mål vid motstånd; trailing i vinstriktning\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Skriv en fullständig exit-plan för en hypotetisk position i en aktie du kan: stopp (var är tesen fel, i kronor), första mål (varför just där), trailing-regel (när flyttas stoppet och vart) och storlek (2-procentsregeln med ditt stoppavstånd). En sida. Utan den sidan har du inget system — bara ingångar."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V19 Kapitalförbrukning & Emission-risk — den fundamentala stoppmotorn: emissionen eller kassaflödesbrottet dödar tesen oavsett diagram; V11 Likviditet — urvalets villkor. AK1TS-koppling: Brytpunkten — stoppet är en teknisk översättning av den fundamentala brytpunkten."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är huvudinnehållet i Triple Screen-uppdateringen i den här boken?",
+     "alternativ": [
+      "En ny indikator ersätter de gamla",
+      "Flexiblare tidsramskombinationer och valfria verktyg per skärm — hierarkin oförändrad",
+      "Systemet kompletteras med fundamental analys",
+      "Tre skärmar blir fyra"
+     ],
+     "ratt": 1,
+     "tips": "Vad förändras — verktygen eller ordningen?"
+    },
+    {
+     "q": "Vilka två utgångskontrakt ska skrivas vid ingången enligt boken?",
+     "alternativ": [
+      "Vinstmål och utdelning",
+      "Stoppet (där tesen är fel) och målet (där belöningen tagits ut)",
+      "Köpkurs och säljkurs samma dag",
+      "Ingen — utgångar bestäms i efterhand"
+     ],
+     "ratt": 1,
+     "tips": "Ett kontrakt för fel, ett för rätt."
+    },
+    {
+     "q": "Hur bör AK1A-eleven välja vad som handlas enligt kursen?",
+     "alternativ": [
+      "Det som rör sig mest idag",
+      "Bolag man redan poängsatt fundamentalt i AKM1 — teknikerna tillämpas på en känd tes",
+      "Det som rekommenderas i grupper",
+      "Bara index"
+     ],
+     "ratt": 1,
+     "tips": "Vad är skillnaden mellan en affär och ett lotteri med diagram?"
+    }
+   ]
+  },
+  {
+   "num": 10,
+   "minutes": 12,
+   "title": "2-procentsregeln — skyddet mot hajen",
+   "intro": "Bokens sjunde kapitel, Money Management Formulas, inleds med en distinktion: businessman's risk mot verklig förlust — och formulerar sedan regeln i sin klassiska form: The 2% Solution — Protection from Sharks. Hajen är den enskilda förlusten som äter en lem i en tugga. Detta kapitel bygger regeln, räkneexemplen och bryggan till Brytpunkten.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Distinktionen först, citerad i sin struktur: en affärsmans risk är en förlust som verksamheten bär utan att den hotas — en kostnad för att få vara med, budgeterad och överlevbar. En verklig förlust är en som förändrar verksamheten: tvingar fram nya beslut, kapitalanskaffning eller upphörande. Tradingens hela riskhantering är konsten att hålla varje förlust i den första kategorin. Formeln: risken i en affär är avståndet från ingång till stopp gånger antalet aktier — och denna summa får aldrig överstiga två procent av kontots ekvitet. Ordningen är hela poängen: först stoppet (var tesen är fel), sedan risken i kronor (två procent), sist antalet aktier (risk delat med stoppavstånd). Utgången definierar ingången — inte tvärtom."
+    },
+    {
+     "type": "text",
+     "content": "Räkneexemplet i tabellform, med ett svenskt konto på 200 000 kronor: stoppavståndet fyra kronor ger maxrisk 4 000 kronor och alltså 1 000 aktier; åtta kronor ger 500 aktier; tjugo kronor ger 200. Observera tre saker. Kronrisken är densamma i alla rader — det är stoppavståndet som ändrar storleken, inte modet. Tätt stopp ger många aktier men också större risk att stängas ut av brus; brett stopp ger få aktier men tål bruset. Och regeln är antimartingal i praktiken: kontot växer, positionerna växer; kontot krymper, positionerna krymper — automatiskt, utan karaktär."
+    },
+    {
+     "type": "text",
+     "content": "Varför just två procent? Aritmetiken för överlevnad: tio förluster i rad vid två procents risk kostar omkring arton procent av kontot — smärtsamt men återvinningsbart; vid tio procent kostar de nästan två tredjedelar, och återvinningens asymmetri tar över (fall tjugo procent kräver +25, fall femtio kräver +100). Men minns också kapitel 8: stoppavståndet bestäms av kanalbredd och temperatur, inte av bekvämlighet — och därför är det ärliga tillämpningen att använda två procent som absolut tak, inte som standard. Glapp, slippage och handelsstopp gör att verklig förlust ibland överstiger den planerade; den som räknar ärligt håller sig under taket med marginal, särskilt i het marknad."
+    },
+    {
+     "type": "text",
+     "content": "Bryggan till AK1TS och V19 är kursens viktigaste översättning: i vårt ekosystem heter stoppet Brytpunkt — och brytpunkten finns i två väsenskilda versioner. Den fundamentala: emissionen som utspäddar, kassaflödet som brister, den stora kunden som försvinner — V19 Kapitalförbrukning & Emission-risk är tesens dödsorsak nummer ett, och den skrivs först. Den tekniska: prisnivån som gör att marknaden dömer omgivningen fel (under senaste dal, under kanalgolvet). Den djupare av de två styr; den ytligare sätter exekveringen. När båda är skrivna är 2-procentsregeln ren aritmetik — och AKM1-analysen har blivit en affär med definierad kostnad för att ha fel."
+    },
+    {
+     "type": "insikt",
+     "content": "Hajen kommer sällan — men den kommer en gång, och då äter den allt om den får. 2-procentsregeln är hajgallret: skrivet vid ingången, obevekligt vid utgången."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"2-procentsregeln — konto 200 000 kronor\",\"rader\":[[\"Ingång\",\"Stopp\",\"Stoppavstånd\",\"Maxrisk 2 %\",\"Antal aktier\"],[\"104 kr\",\"100 kr\",\"4 kr\",\"4 000 kr\",\"1 000\"],[\"104 kr\",\"96 kr\",\"8 kr\",\"4 000 kr\",\"500\"],[\"104 kr\",\"84 kr\",\"20 kr\",\"4 000 kr\",\"200\"],[\"104 kr\",\"74 kr\",\"30 kr\",\"4 000 kr\",\"133 (avrundat nedåt)\"],[\"Notera\",\"—\",\"Brett stopp = het kanal\",\"Kronrisken konstant\",\"Stoppet bestämmer storleken\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "skala"
+    },
+    {
+     "type": "utmaning",
+     "content": "Räkna tre hypotetiska affärer på ett 200 000-konto: ett tätt stopp (3 kr), ett normalt (8 kr) och ett brett (25 kr) — antal aktier i varje fall, och vilken av de tre du skulle känna dig mest bekväm i. Känslan av komforthör hemma i kanalbredden, inte i storleken. Räkna sedan baklänges på din senaste faktiska position: vad var risken i procent av ditt kapital? Siffran överraskar de flesta."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V19 Kapitalförbrukning & Emission-risk — den fundamentala brytpunkten skrivs först och sätter stoppets djup. AK1TS-koppling: Brytpunkten är 2-procentsregelns nämnare; utan den är regeln oanvändbar."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vilken är den korrekta ordningen när en affär dimensioneras?",
+     "alternativ": [
+      "Först antal aktier, sedan stopp, sist risk",
+      "Först stoppet (brytpunkten), sedan maxrisk i kronor, sist antal aktier",
+      "Först mål, sedan stopp, sist ingång",
+      "Ordningen saknar betydelse"
+     ],
+     "ratt": 1,
+     "tips": "Vad definierar utgången — och vad blir aritmetik?"
+    },
+    {
+     "q": "Konto 200 000 kronor, stoppavstånd 8 kronor. Hur många aktier som mest?",
+     "alternativ": [
+      "250",
+      "500",
+      "800",
+      "1 000"
+     ],
+     "ratt": 1,
+     "tips": "4 000 kronor i risk delat med avståndet."
+    },
+    {
+     "q": "Varför är 2 procent ett tak snarare än en standard enligt kursen?",
+     "alternativ": [
+      "För att mäklare förbjuder mer",
+      "För att glapp, slippage och handelsstopp kan göra den verkliga förlusten större än den planerade — räkna med marginal",
+      "För att två procent aldrig räcker för vinst",
+      "För att regeln bara gäller terminer"
+     ],
+     "ratt": 1,
+     "tips": "Vad händer med stoppet vid ett gapande öppningskurs?"
+    }
+   ]
+  },
+  {
+   "num": 11,
+   "minutes": 11,
+   "title": "6-procentsregeln — skyddet mot pirayorna",
+   "intro": "Hajen dödar en gång; pirayorna dödar med tusenbett. Bokens andra formulering — The 6% Rule: Protection from Piranhas — skyddar mot det vanligare sättet att förstöra ett konto: serien av till synes oskyldiga små förluster som tillsammans äter månaden. Detta kapitel bygger månadsbudgeten, positionsstorleken och kretsbrytaren — och knyter riskkärnan till AK1TS och V19.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Regeln har två ansikten, båda från boken. Det första är månadsstoppet: när kontot fallit sex procent från månadens startekvitet upphör handeln för månaden — inte minskas, upphör. Resten av månaden tillhör journalen: vad gick fel, var det metod eller disciplin, vad ändras? Det andra är total öppen risk: summan av alla öppna positioners risk (avstånd till stopp gånger storlek) får inte överstiga sex procent — tre positioner med full två procent fyller taket exakt, och en fjärde bra idé betyder att något gammalt stängs eller att det nya avstås. Det andra ansiktet är också en korrektionsregel för korrelation: tre positioner i samma sektor med samma tes är inte tre risker — de är en risk med tre namn, och taket tvingar dig att räkna dem som det."
+    },
+    {
+     "type": "text",
+     "content": "Månadsbudgeten fungerar som en dryckesbudget vid middagen: varje förlust drar ner månadens återstående riskutrymme. Exempel från tabellen: månadens start 200 000 kronor, max månadsrisk 12 000. Affär A stoppad: minus 2 procent (4 000). Affär B stoppad: minus 2 procent. Affär C stoppad: minus 1,5 procent. Summa: 5,5 procent — återstående riskbudget för månaden: 0,5 procent, det vill säga mikropositioner eller inga nya affärer alls. Notera mekanismen: regeln stryper automatiskt aktiviteten efter en dålig start — exakt när hämnd-instinkten (syskonbokens katalog) vill öka den. Och vid nästa månadsöppning nollställs budgeten: kretsbrytaren är avsedd att bryta spiraler, inte att straffa."
+    },
+    {
+     "type": "text",
+     "content": "Bokens Money Management Steps sammanfattar hela kedjan: ett — skaffa en hälsoförklaring över dig själv (vet du var dina fällor bor?); två — bestäm maxrisk per affär (2 procent); tre — räkna stoppavståndet ur diagrammet (kanal, dal, brytpunkt); fyra — räkna antalet aktier (risk delat med avstånd); fem — räkna ihop total öppen risk och månadsbudget (6 procent); sex — dokumentera allt och granska veckovis. Sex steg, tio minuter — och de flesta förluster i genren skulle aldrig ha fått ske om steget två till fem gjorts innan order lagts. Formlernas budskap: riskhantering är inte en känsla för läget utan aritmetik som kan checkas av."
+    },
+    {
+     "type": "text",
+     "content": "AK1TS-återkopplingen, som kursens direktiv: risk-dimensionen i AK1TS är byggs i två våningar — den undre (per beslut) är 2-procentsregeln från förra kapitlet, den övre (per period) är 6-procentsregeln; och den fundamentala kretsbrytaren av alla är V19: kapitalförbrukning och emission-risk. Ett bolag som blöder kassa och emitterar tappar inte två procent — det tappar tesen, och då är rätt åtgärd inte mindre storlek utan utgång. Här möts den tekniska och den fundamentala riskhanteringen: 2- och 6-procentsreglerna dimensionerar vad du kan förlora innan du har fel; V19 avgör när du faktiskt har fel. Riskmatrisen i AK1A följer samma ordning: kostnaden för att ha fel definieras före fördelen av att ha rätt."
+    },
+    {
+     "type": "insikt",
+     "content": "Pirayorna är farligare än hajen eftersom varje bett känns förlåtligt. Månadsstoppet är kalenderns kretsbrytare: den frågar inte hur du känner, bara hur månaden ser ut — och stänger dörren."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"6-procentsregeln — en månads logg, konto 200 000 kr\",\"rader\":[[\"Händelse\",\"Risk\",\"Resultat\",\"Månadens ackumulerade förlust\",\"Återstående budget\"],[\"Månadsstart\",\"—\",\"—\",\"0 %\",\"6,0 %\"],[\"Affär A (stoppad)\",\"2 %\",\"−4 000 kr\",\"2,0 %\",\"4,0 %\"],[\"Affär B (stoppad)\",\"2 %\",\"−4 000 kr\",\"4,0 %\",\"2,0 %\"],[\"Affär C (stoppad)\",\"1,5 %\",\"−3 000 kr\",\"5,5 %\",\"0,5 %\"],[\"Nya affärer\",\"max 0,5 %\",\"mikropositioner eller avstå\",\"—\",\"—\"],[\"Ytterligare förlust −0,5 %\",\"\",\"−1 000 kr\",\"6,0 %\",\"0 % — handeln stängs för månaden\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Simulera en dålig månad på pappret: fem affärer i följd, alla med två procents risk och alla stoppade. Rita ekvitetskurvan dag för dag och markera exakt var 6-procentslinjen nås. Skriv sedan instruktionen till dig själv — daterad och undertecknad — för vad du gör med resten av den månaden. Det är kretsbrytarens hela poäng: beslutet fattas nu, inte då."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V19 Kapitalförbrukning & Emission-risk som den fundamentala kretsbrytaren; V10 Skuldsättningsgrad och V11 Likviditet som balansräkningens tidiga varningar — samma två våningar som 2- och 6-reglerna. AK1TS-koppling: risk-dimensionens periodtak."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är 6-procentsregeln?",
+     "alternativ": [
+      "Max sex procent av kapitalet i en enda aktie",
+      "Handeln upphör för månaden när kontot fallit sex procent — och total öppen risk hålls under sex procent",
+      "Sex procent ränta på marginalen",
+      "Sex affärer per månad som max"
+     ],
+     "ratt": 1,
+     "tips": "Två ansikten: månadsstopp och summan av öppen risk."
+    },
+    {
+     "q": "Du har tre öppna positioner med två procents risk vardera. Vad gäller för en fjärde bra setup?",
+     "alternativ": [
+      "Den tas — bra setups ska inte avstås",
+      "Total öppen risk är sex procent; den fjärde avstås eller något gammalt stängs",
+      "Den tas med dubbel storlek",
+      "Regeln gäller bara vid förlust"
+     ],
+     "ratt": 1,
+     "tips": "Räkna ihop riskerna — vad blir summan?"
+    },
+    {
+     "q": "Vilken roll spelar V19 i kursens riskbygge?",
+     "alternativ": [
+      "Den mäter volatiliteten i diagrammet",
+      "Den är den fundamentala kretsbrytaren: emission och kapitalförbrukning avgör när tesen är fel — inte bara mindre storlek",
+      "Den sätter månadens budget",
+      "Den räknar antalet aktier"
+     ],
+     "ratt": 1,
+     "tips": "Vad gör du när förlusten inte är två procent utan hela tesen?"
+    }
+   ]
+  },
+  {
+   "num": 12,
+   "minutes": 11,
+   "title": "Den organiserade tradern — kalkylblad, ekvitetskurva, dagbok",
+   "intro": "Bokens åttonde kapitel, The Organized Trader, är den mest osexiga och kanske mest värdefulla: Trader's Spreadsheet, The Equity Curve, Trading Diary och Action Plan. Här bygger Elder arkivet — och här gör AK1A sin tydligaste översättning: analys-dagboken som elevverktyg.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Kalkylbladet är affärsbokens ryggrad: en rad per affär med datum, instrument, in- och utgångspris, stopp, storlek, resultat i kronor och procent — och därtill det som gör det till ett Elder-blad: tesen (varför togs affären), betyget på processen (följdes planen?) och en rad för lärdomen. Resultatkolumnen är den minst intressanta; den kommer gratis av de övriga. Elder poäng, som blir statistisk med några månaders rader: träffprocent, genomsnittlig vinst och förlust, förväntan per affär — ditt eget lilla forskningslabb om dig själv. Uten rader finns ingen statistik, bara minnen — och minnet är den mest självgoda datakällan som finns."
+    },
+    {
+     "type": "text",
+     "content": "Ekvitetskurvan är kalkylbladets andra kontrakt: kontots värde uppriktat dag för dag, gärna med ett glidande medelvärde av kurvan själv. Elders råd är proffsigt hårdfört: när ekvitetskurvan faller under sitt eget medelvärde — när du statistiskt är på väg nedåt — minskas storlekarna tills kurvan vänder; öka inte för att ta igen. Det är 6-procentsregeln som graf: samma antimartingala logik, nu som en linje du kan se istället för en känsla du måste minnas. Många bankers riskavdelningar gör exakt detta med sina traders positioner — Elder föreslår att du gör det med dig själv."
+    },
+    {
+     "type": "text",
+     "content": "Dagboken är djupare än kalkylbladet: diagrammet vid beslutstillfället, anteckningen om varför, känslan, tvivlen, och efteråt utfallet och vad du skulle göra annorlunda. Två nivåer av granskning: veckovis (vad hände, följdes planen) och månadsvis (mönster — klustrar felen vid vissa marknadslägen eller humör?). AK1A:s vinkling är kursens egen: kalla den analys-dagbok och använd den som elevverktyg även om du aldrig lägger en enda affär. Tes (AKM1-poäng i klartext), brytpunkt (fundamental och teknisk), känslotal, betyg på processen, utfall efter kvartal, lärdom i en mening. Tre rader per analys — och efter ett halvår har eleven något som ingen kurs kan ge: en statistik över sitt eget omdöme."
+    },
+    {
+     "type": "text",
+     "content": "Action Plan avslutar kapitlet med månadsplanen — och Elder är tydlig med att målen ska vara processmål, inte resultatmål: varje affär dokumenterad, varje stopp skrivet före ingång, journal granskad varje söndag, max antal affärer. Inte: tjäna tio procent. Resultatet är en konsekvens av processen, och den som mäter processen kan förbättra den; den som mäter bara resultatet kan bara hoppas. Det är också bryggan till labbet: AK1A:s analyser, rapporter och uppföljningar är i grunden en gemensam Action Plan — dokumenterade beslut med tes, brytpunkt och efterhand. Boken ger mallen; systemet ger arkivet."
+    },
+    {
+     "type": "insikt",
+     "content": "Affären slutar inte vid exit — den slutar när den är dokumenterad och granskad. Den organiserade skiljer sig från den oorganiserade inte genom talang utan genom arkiv."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Arkivet — kolumner och AK1A-analog\",\"rader\":[[\"Kolumn hos Elder\",\"Exempel\",\"Analys-dagbokens analog\"],[\"Instrument och datum\",\"XYZ 2026-09-01\",\"Bolag och datum för analys\"],[\"Ingång, stopp, storlek\",\"104 / 96 / 500 aktier\",\"Rekommendation och brytpunkt (V19)\"],[\"Tes\",\"Veckotrend upp; dippen i FI2\",\"AKM1-poäng och katalysator (V16–V18)\"],[\"Känslotal 1–5\",\"3 — revanschlust\",\"Samma — psykedatans plats\"],[\"Processbetyg A–E\",\"B — stoppet flyttades inte\",\"Följdes analysramen?\"],[\"Exit, lärdom\",\"Stoppad; storleken var rätt\",\"Utfall efter kvartal; en mening\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Starta din analys-dagbok idag: tre rader per beslut under en månad — tes, känslotal, processbetyg — med tesen skriven före agerandet, även för beslut att inte köpa. Efter månaden: räkna andelen beslut som följde ramen, och notera vilket känsloläge som dominerade avvikelserna. Det är kapitel 13 och 14 i praktik: din egen lilla dagboksundersökning."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V01–V20 som dokumenterad poäng — en AKM1-analys utan dagbok är en åsikt; med dagbok en mätbar process. AK1TS-koppling: hela ekosystemet är analys-dagbokens systematiserade form."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är den viktigaste kolumnen i Elders kalkylblad utöver siffrorna?",
+     "alternativ": [
+      "Mäklarens namn",
+      "Processbetyget — följdes planen?",
+      "Aktiens P/E",
+      "Vädret"
+     ],
+     "ratt": 1,
+     "tips": "Vad är det enda du har full kontroll över?"
+    },
+    {
+     "q": "Vad råder Elder när ekvitetskurvan faller under sitt eget medelvärde?",
+     "alternativ": [
+      "Öka storlekarna för att ta igen",
+      "Minska storlekarna tills kurvan vänder",
+      "Byta strategi direkt",
+      "Sluta föra journal"
+     ],
+     "ratt": 1,
+     "tips": "Antimartingal — vad följer kapitalet?"
+    },
+    {
+     "q": "Hur bör målen i Action Plan formuleras?",
+     "alternativ": [
+      "Som resultatmål i procent",
+      "Som processmål — dokumentation, stopp före ingång, granskningar",
+      "Som absoluta kronbelopp",
+      "Som jämförelse med kompisar"
+     ],
+     "ratt": 1,
+     "tips": "Vad kan du faktiskt styra?"
+    }
+   ]
+  },
+  {
+   "num": 13,
+   "minutes": 11,
+   "title": "Nybörjare, semipro, pro — att leva på trading?",
+   "intro": "Bokens näst sista kapitel bär genrens tyngsta titel: Trading for a Living. Disciplin och ödmjukhet, frågan har du tiden?, ett beslutsfattande träd, och nivåerna Beginner, Semipro, Pro och Going Pro. Detta kapitel tar titeln på allvar — med aritmetiken som domare.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Nivåerna är bokens egna och ärliga. Nybörjaren: handlar papper och mikropositioner, år ett och två, och har som enda mål att överleva med kapital och journal intakt — inte att tjäna. Semipro:n: har dokumenterade månader bakom sig, vissa vinster, handlar deltid vid sidan av annat och vet sina egna fällor. Pro:n: lever av handeln — och Elder är konkret om vad det kräver: kapital nog för att tvåprocentsregelns affärer kan bära en lön. Räkna baklänges: för att realistiskt ta ut en månadslön på 40 000 kronor utan att riva i kapitalet behövs ett konto där normala månadsresultat — inte drömresultat — overstiger det; vid realistiska bruttoresultat på en till två procent per månad handlar det om miljoner i kapital. Svaret på frågan kan jag leva på trading är inte ett ja eller nej — det är en multiplikation."
+    },
+    {
+     "type": "text",
+     "content": "Have You Got the Time? är kapitlets kortaste och viktigaste sektion. Handeln som hantverk kräver sin tid: datahantering, granskning, journal, förberedelse inför dagen och veckan — Elder räknar med timmar varje dag, och den som har ett heltidsjobb har helt enkelt inte dem, i varje fall inte till daghandelns priser. Swing-handel på veckodata med daglig avstämning är den realistiska hybrid som återstår — och det är också precis den nivå Elder själv demonstrerar i bokens sista del. Kursen noterar sambandet med kapitel 8: daghandeln är inte bara statistiskt hopplös för de flesta, den är också tidsmässigt omöjlig för den som har ett vanligt liv — och att inse det är inte nederlag utan planering."
+    },
+    {
+     "type": "text",
+     "content": "Beslutsfattandets träd är kapitlets praktiska redskap: en fast ordning av frågor före varje affär — regime (trenden på högre tidsramen), tillfälle (motgången), definition (stopp, mål, storlek), utförande, dokumentation — där varje nej grenar sig till avstå tills vidare. Trädets värde är inte dess innehåll (det är triple screen i dragning) utan dess envishet: samma frågor, samma ordning, varje gång — vilket gör beslutet mätbart och felet adresserbart. AK1A-översättningen: ekosystemets flöden är ett beslutsträd — AKM1 (tes och poäng), risk (brytpunkt och storlek), timing (marknadsläge), dokumentation. Eleven som följer ett träd kan förbättras; den som improviserar kan bara förklara."
+    },
+    {
+     "type": "text",
+     "content": "Discipline and Humility ramar in kapitlet: disciplin utan ödmjukhet blir stelhet; ödmjukhet utan disciplin blir vankelmod. Pro:n vet att marknaden skriver lönebeskedet och att den inte läst boken om hur bra du blivit. Going Pro slutar med företagarperspektivet: bokföring, skatt, kapitalanskaffning, planering — trading som verksamhet, inte som äventyr. Kursens slutsats av kapitlet är densamma som kapitel 15 kommer att driva: för de allra flesta läsare är svaret på titelns fråga nej — och det är ett fullgott svar. Det kanske bästa svaret; se vad forskningen säger."
+    },
+    {
+     "type": "insikt",
+     "content": "Kan jag leva på trading besvaras inte av mod utan av två siffror: kapitalet och den realistiska procenten. Multiplikationen sköter sig själv — och den har inget emot att säga nej."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Nivåerna — kapital, tid, mål\",\"rader\":[[\"Nivå\",\"Kapital\",\"Tid\",\"Mål\"],[\"Nybörjare\",\"Mikropositioner; papper\",\"Deltid; studier\",\"Överleva med journal och kapital intakta\"],[\"Semipro\",\"Betydande; risktaket respekteras\",\"Deltid vid sidan av\",\"Databärda månader; känna sina fällor\"],[\"Pro\",\"Miljontal — lön kräver kapitalbas\",\"Heltid; timmar dagligen\",\"Konsistent process som bär utgifterna\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Gör multiplikationen själv: vilken månadslön skulle trading behöva bära, och vilket kapital krävs vid en till två procent realistisk månadsavkastning innan uttag? Skriv ned talet — och jämför med ditt faktiska. Skriv sedan en rad om vad den siffran betyder för din roll i kapitel 2:s tabell."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V19 — samma baklängesräkning som bolagets kassa: hur länge bär verksamheten sina kostnader utan nytt kapital? AK1TS-koppling: Tiden — horisonten avgör om yrket ens är möjligt."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är nybörjarens enda rimliga mål enligt bokens nivåer?",
+     "alternativ": [
+      "Att dubbla kontot första året",
+      "Att överleva med kapital och journal intakta",
+      "Att gå pro inom två år",
+      "Att hitta en perfekt indikator"
+     ],
+     "ratt": 1,
+     "tips": "Vad är förutsättningen för allt lärande i senare kapitel?"
+    },
+    {
+     "q": "Vad är svaret på frågan har du tiden?",
+     "alternativ": [
+      "Alla har tid om de bara prioriterar",
+      "Hantverket kräver timmar dagligen — daghandel är orealistisk för den med heltidsjobb; swing på veckodata är hybridlösningen",
+      "Tid spelar ingen roll med rätt app",
+      "Bara helger behövs"
+     ],
+     "ratt": 1,
+     "tips": "Vilken nivå demonstrerar Elder själv i bokens sista del?"
+    },
+    {
+     "q": "Vad menar kursen att titelfrågan kan jag leva på trading besvaras med?",
+     "alternativ": [
+      "Med mod och beslutsamhet",
+      "Med en multiplikation: kapitalet gånger den realistiska procenten — och för de flesta är svaret nej",
+      "Med rätt mäklare",
+      "Med mer hävstång"
+     ],
+     "ratt": 1,
+     "tips": "Vilken aritmetik står mot löftet?"
+    }
+   ]
+  },
+  {
+   "num": 14,
+   "minutes": 12,
+   "title": "Kom in i mitt trading-rum — tre månader live",
+   "intro": "Bokens sista och mest berömda del bär dess titel: Come Into My Trading Room, med sektionerna Excerpts From the Diary och Your Next Trade. Elder öppnar dörren till sitt eget rum och visar tre månader av verklig handel — diagram, resonemang, stopp, utgångar, känslor och betyg. Detta är bokens bevis, och kursen läser det med både respekt och statistisk försiktighet.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Vad läsaren får se följer bokens faktiska struktur: utdrag ur den egna dagboken — affär för affär, med diagrammet vid beslutet, tesen, stoppet, storleken och utgången — och det som gör det unikt: betyget på varje affär och känslorna runt den. Elder visar inte bara vinnarna. Förlusterna, de för tidiga utgångarna, affärerna han borde tagit och inte tog, tröttheten och tvivlen — allt finns med, dokumenterat på samma villkor som det som gick bra. Affärerna är, som kapitel 8 och 13 förutsäger, swing- och positionshandel med dagars till veckors horisont: ingen daghandel, ingen kasinofart — utan en medelålders yrkesmans metodiska arbete med regelverk han själv skrivit. Det är just därför rummet är värt att besöka: det visar hantverket i dess normala, tråkiga, mänskliga skick."
+    },
+    {
+     "type": "text",
+     "content": "Vad lär då rummet? Tre saker, som kursen lyfter fram. För det första: misstagen är kända i förväg — för tidiga utgångar, missade setups, stopp som satt fel — eftersom betygsystemet och journalen fångar dem medan de sker; skillnaden mellan proffs och amatör är inte felfrihet utan felregistrering. För det andra: affärerna är små i förhållande till kapitalet — 2-procentsregeln syns i praktiken som en rad i varje resonemang — och ingen enskild affär, vinst eller förlust, får någon dramatik i berättelsen. För det tredje: processen är oordnad ändå. Han ändrar sig, avstår, rättar, funderar — dokumenterat. Det är kanske bokens mest befriande budskap: reglerna gör inte dig till en maskin; de gör dig till en mätbar människa."
+    },
+    {
+     "type": "text",
+     "content": "Your Next Trade avslutar boken med att vända sig från författarens bord till läsarens: nästa affär är din, med samma verktyg — tre skärmar, stopp, två och sex procent, journal — och samma arkivkrav. AK1A översätter det sista uppmaningen till elevens värld: nästa analys är din. Skriv tesen (AKM1), brytpunkten (fundamental och teknisk), känslan, processbetyget — och kom tillbaka till den efter kvartalet. Rummet du bjuds in i behöver inte innehålla en enda order; det behöver innehålla dokumentation. Det är också därför kursen slutar där den började: boken är en resa in i ett hantverksrum — inte en inbjudan till terminalen."
+    },
+    {
+     "type": "text",
+     "content": "Den statistiska försiktigheten, citerad öppet som kursens kritiska läsning: detta är en mästares utvalda utdrag — survivorship-urval i sin renaste form. Vi ser den som klarade det och valde att publicera det; vi ser inte de tusentals som läste boken och förlorade ändå. Ett utdrag kan visa hur en process ser ut — det kan inte bevisa att processen är lönsam i genomsnitt. Beviset vilar fortfarande någon annanstans: i den forskning kapitel 15 tar upp, och i elevens egen journaldata. Med det förbehållet läst är rummet dock osannolikt pedagogiskt: sällan har en tradingbok visat sina förluster med samma öppenhet som sina vinster."
+    },
+    {
+     "type": "insikt",
+     "content": "Bokens bevis är inte att trading är lönsamt. Beviset är att en professionell process ser ut som ett hantverk: regelstyrt, dokumenterat, mänskligt felbart — och smått i varje enskild affär."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Vad dagboken innehåller — och AK1A-analogen\",\"rader\":[[\"Element\",\"I Elders rum\",\"I ditt labb\"],[\"Diagram vid beslutet\",\"Affärens graf med nivåer\",\"Analysens dataunderlag (V01–V20)\"],[\"Tes\",\"Varför affären togs\",\"AKM1-poäng och katalysator\"],[\"Stopp och storlek\",\"Skrivet före ingång; 2 %\",\"Brytpunkt (fundamental och teknisk)\"],[\"Känsla\",\"Trötthet, tvivel, lättnad\",\"Känslotalet i analys-dagboken\"],[\"Betyg\",\"Processen A–E\",\"Följdes ramen?\"],[\"Granskning\",\"Efterhand i dagboken\",\"Kvartalsuppföljning\"]]}"
+    },
+    {
+     "type": "visuell",
+     "content": "cykel"
+    },
+    {
+     "type": "utmaning",
+     "content": "Skriv din egen excerpt: en aktuell analys (eller affär) i dagboksform — diagramreferens, tes, brytpunkt, känslotal, och ett processbetyg du skulle ge dig själv om tre månader. Formatera den som om den skulle publiceras i en bok med ditt namn på omslaget. Det känns obehagligt? Det är poängen: dokumentation är lättast att skjuta upp och viktigast att göra."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V01–V20 i klartext — dagboken är där fundamentalmodellen blir ett dokumenterat beslut; /profil är där mönstren i betygen blir profildata. AK1TS-koppling: analys-dagboken som ekosystemets hjärtslag — samma princip, längre horisont."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad är det unika med bokens sista del?",
+     "alternativ": [
+      "En samling övningar utan svar",
+      "Författarens egna affärer under tre månader — med diagram, betyg, känslor och förluster öppet visade",
+      "En lista över indikatorer",
+      "Intervjuer med andra traders"
+     ],
+     "ratt": 1,
+     "tips": "Vad heter sektionen — Excerpts From?"
+    },
+    {
+     "q": "Vilken typ av affärer visar Elder i rummet?",
+     "alternativ": [
+      "Daghandel med hög frekvens",
+      "Swing- och positionsaffärer med dagars till veckors horisont",
+      "Långsiktiga buy-and-hold",
+      "Optionsstrategier"
+     ],
+     "ratt": 1,
+     "tips": "Vilken nivå sa kapitel 13 att hans schema och tid tillät?"
+    },
+    {
+     "q": "Vilken kritisk invändning gör kursen mot dagboken som bevis?",
+     "alternativ": [
+      "Att den är skriven på svenska",
+      "Att den är survivorship-urval: en mästares utvalda utdrag visar processen men bevisar inte genomsnittlig lönsamhet",
+      "Att diagrammen är för gamla för att användas",
+      "Att affärerna var för lönsamma"
+     ],
+     "ratt": 1,
+     "tips": "Vem ser vi — och vem ser vi inte?"
+    }
+   ]
+  },
+  {
+   "num": 15,
+   "minutes": 12,
+   "title": "Kontroversen och syntesen — timing-förståelse, inte uppmaning",
+   "intro": "Kursens sista kapitel är dess viktigaste: forskningens dom om frekvent handel, Elders faktiska svar, och AK1A:s syntes. Kurserna i bokmastern håller samma linje: vi citerar boken öppet, vi citerar forskningen öppet — och vi bestämmer oss för vad en utbildare ska göra med skillnaden.",
+   "blocks": [
+    {
+     "type": "text",
+     "content": "Forskningens dom, utan schabloner. Brad Barber och Terrance Odean studerade 66 465 amerikanska hushåll och fann att de som handlade mest tjänade sämst — kostnader, dåliga tidspunkter och jakten på sensationsaktier åt upp kanten; den andel aktiva handlare som förlorar efter alla kostnader uppskattas i litteraturen grovt till omkring 80 procent. I Taiwan, där komplett dagshandelsdata finns, visade samma forskargrupp att färre än en procent av dagshandlarna kunde visa förutsägbart lönsamma resultat netto över tid. I Brasilien — studien med den träffande titeln Day Trading for a Living — förlorade 97 procent av dem som höll ut mer än 300 dagar. Sverige saknar motsvarande registerstudier, men svenska mäklare måste enligt lag redovisa andelen förlorande konton i CFD-handel — och siffrorna ligger runt tre av fyra. Mönstret är enhetligt över marknader och decennier: frekvent handel med kostnader och ofta hävstång är en aktivitet där den stora majoriteten förlorar pengar."
+    },
+    {
+     "type": "text",
+     "content": "Elders svar — och notera vad det faktiskt innehåller, för det är vanligare att felcitera honom. Elder argumenterar inte för daghandel: i bokens daghandelssektion varnar han uttryckligen, och hans eget visade arbete är swing och position med regler, journal och liten risk per affär. Hans svar till statistiken vore: de 80–97 procenten som förlorar gör det exakt av de skäl boken botar — inga stopp, ingen journal, överbelåning, hämnd, frekvens utan kant; de flesta som förlorar behandlar handel som hasard och inte som kirurgi. Det är ett rimligt svar om mekanismen — men det saknar bevis på utfallet: ingen har mätt en grupp som följt alla regler under år och jämfört med en kontrollgrupp. Anekdoterna — inklusive de tre månaderna i rummet — är survivorship-urval. Ärligheten kräver båda sanningarna samtidigt: mekanismen kan vara rätt även om grundfrekvensen förblir brutal."
+    },
+    {
+     "type": "text",
+     "content": "AK1A:s syntes, som är kursens hela existensberättigande: Elder-metodiken lärs ut som timing-förståelse för fundamentalanalytikern — aldrig som uppmaning att tradea. Konkret: AKM1 levererar tesen och värdet (V01–V09), Elder-verktygen levererar när-lagret (Elder-ray, Force Index och Impulse som momentumflaggor i analys-motorn; kanaler och medelvärden som lägesmätare; termometern som riskdimensionering), och riskkärnan (2 procent, 6 procent, Brytpunkten, V19) levererar överlevnaden. En fundamentalanalytiker som kan läsa när marknaden euforiskt prissatt en katalysator, och när den paniskt sålt en tillfällighet, köper och säljer bättre — utan att handla oftare. Det är samma linje som i syskonkursen, nu skärpt: vi utbildar analys och beslutsramar, vi ger aldrig handelstips, vi uppmuntrar inte daghandel."
+    },
+    {
+     "type": "text",
+     "content": "Medgivandet, som kursen är skyldig att skriva ut med egna ord: de allra flesta privatpersoner gör bäst i att inte tradea aktivt alls. Långsiktigt, brett, billigt sparande — index i grundplånen — slår den stora majoriteten av aktiva privatportföljer efter kostnader, och forskningen bakom det är stabil. Värdet av Elder-metodiken för den som ändå sparar långsiktigt är verkligt men blygsamt: förståelse för timing, ett bandspråk för risk, en dagboksvana, och immunitet mot aktivitetsmaskinens locktoner. Om kursen endast gav det sista — förmågan att se konfetti-knappen och inte trycka — har den betalat sig själv. Resten är för de få som av dokumenterade skäl (journaldata, testade regler, kapital, tid) har ärliga skäl att gå vidare i den diskretionära zonen."
+    },
+    {
+     "type": "insikt",
+     "content": "Elder lär ut hantverket; forskningen mäter genomsnittet av dem som aldrig lärde sig det. Kursens slutsats: använd hantverket för att förstå timing — och lämna frekvensen ifred."
+    },
+    {
+     "type": "tabell",
+     "content": "{\"rubrik\":\"Bevisläget och syntesen\",\"rader\":[[\"Källa\",\"FYND\",\"Kursens läsning\"],[\"Barber & Odean (66 465 hushåll)\",\"De mest aktiva underpresterar; grovt cirka 80 procent av aktiva förlorar efter kostnader\",\"Frekvens och kostnader äter kanten\"],[\"Taiwan-studierna\",\"Färre än 1 procent förutsägbart lönsamma dagshandlare\",\"Färdighet finns — extremt sällsynt\"],[\"Brasilien (Day Trading for a Living)\",\"97 procent av uthålliga dagshandlare förlorade\",\"Uthållighet utan kant räcker inte\"],[\"Svenska CFD-uppgifter (lagen om uppgiftsskyldighet)\",\"Cirka tre av fyra konton förlorar\",\"Hävstång förstorar psykets svagheter\"],[\"Elders tre månader i rummet\",\"En dokumenterad professionell process\",\"Mekanismens bevis — inte utfallets\"]]}"
+    },
+    {
+     "type": "utmaning",
+     "content": "Skriv en halv sida med rubriken: Vad är Elder-metodiken för mig? Krav: varje påstående ska placera dig antingen i rollen långsiktig sparare (och då säga vad timing-förståelsen tillför) eller i den diskretionära zonen (och då belägga det med journaldata och testade regler). Om du hamnar i zonen utan belägg — skriv det. Det är den viktigaste raden i kursen."
+    },
+    {
+     "type": "text",
+     "content": "AKM1-brygga: V19 Kapitalförbrukning & Emission-risk som kursens riskkärna, V04–V06 som timingens fundamentala motpart, V01–V20-helheten som det som gör timing till förståelse i stället för frekvens. AK1TS-koppling: momentum-, volym- och temperatur-lagren i analys-motorn; analys-dagboken som elevens rum. Kursen är slut — dagboken börjar."
+    }
+   ],
+   "quiz": [
+    {
+     "q": "Vad visar Barber & Odean och efterföljande studier om frekvent handel?",
+     "alternativ": [
+      "Att de mest aktiva handlarna slår marknaden",
+      "Att de mest aktiva underpresterar — grovt cirka 80 procent av aktiva förlorar, och färre än en procent av dagshandlare är förutsägbart lönsamma",
+      "Att kostnader saknar betydelse",
+      "Att daghandel är lönsammare än långsiktigt sparande"
+     ],
+     "ratt": 1,
+     "tips": "Vad äter kanten — och hur många har en dokumenterad sådan?"
+    },
+    {
+     "q": "Vad är Elders faktiska svar på statistiken?",
+     "alternativ": [
+      "Att statistiken är fel",
+      "Att de som förlorar saknar det boken lär — och att han argumenterar för regelstyrd swing, inte för daghandel",
+      "Att alla borde daytrade med hävstång",
+      "Att journal är overksamt"
+     ],
+     "ratt": 1,
+     "tips": "Vilken handelsform demonstrerar han i bokens eget rum?"
+    },
+    {
+     "q": "Hur lär AK1A ut den här boken?",
+     "alternativ": [
+      "Som timing-förståelse för fundamentalanalytikern — med det öppna medgivandet att de flesta gör bäst i att inte tradea aktivt",
+      "Som en uppmaning att börja daytrade med små belopp",
+      "Som en signal-tjänst",
+      "Som en ersättning för AKM1"
+     ],
+     "ratt": 0,
+     "tips": "Vad är en utbildares ärliga position mellan hantverk och statistik?"
+    }
+   ]
+  }
+ ]
+}

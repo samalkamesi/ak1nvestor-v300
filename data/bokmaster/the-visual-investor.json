@@ -1,0 +1,1154 @@
+{
+  "slug": "the-visual-investor",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 170,
+  "title": "The Visual Investor — Murphy: KOMPLETT",
+  "summary": "John J. Murphy — teknisk analysens främste popularisatör, årtionden som analytiker i TV och chefsanalytiker på StockCharts — skrev The Visual Investor (1995; andra upplagan 2009) för dem som aldrig ska bli traders men ändå vill förstå vad priset säger: den fundamentalanalytiker som är trött på att ha rätt för tidigt, fondspararen, icke-teknikern. Tesen är radikal i sin enkelhet: diagrammet är marknadens mest komprimerade information — du behöver inte räkna, du behöver SE. Där Murphys lärobok Technical Analysis of the Financial Markets är ett helt kursverk är den här boken dörren in: tre kärnverktyg (trend, stöd/motstånd, volym) plus två sammanhang som ingen annan introbok ger — sektorsrotation med relativ styrka och intermarket-kedjan dollar–råvaror–räntor–aktier. Kursen går igenom boken kapitel för kapitel och mappar varje verktyg mot AK1TS-motorn (där MA50/MA200, volymtrend och momentum är rader i 25-cellersmatrisen) och AKM1:s variabler — 200-dagarskungslinjen är bokstavligen analys-motorns klassificerare, och divergensen mellan pris och oscillator är Vågfundamentets AK1TS-korsning en våning ner. Kontroverskapitlet ger EMH-skolan (Bachelier, Fama, Malkiel) och Lo:s adaptive markets sina röster — och AK1A:s syntes är hård: grafen är en datayta, inte spådom; mönsterläsning utan regler är subjektiv — därför kräver AK1TS determinism.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan du: förklara Murphys tes — priset är den viktigaste informationen och diagrammet är dess naturliga språk — och skilja den här boken från hans lärobok · läsa vilket diagram som helst med de tre första frågorna: riktning, nivå, bränsle · identifiera trender (högre toppar och lågpunkter), stöd- och motståndszoner och trendlinjer — och veta varför de håller (minne, ankraj, inlåsta positioner) · använda 200-dagarsmedelvärdet som kungslinje och veta exakt var AK1TS-motorn använder MA50 och MA200 i vågklassificeringen · läsa volym och OBV som trendens bränsle och skilja ackumulering från distribution · tolka momentum, RSI och framför allt divergensen — prisets tidigaste varning, kopplad till Vågfundamentets fundamentalvåg · använda candlesticks för timing inom ramen för den större bilden · läsa marknadsbredd, advance/decline-linjen och värmekartor · rotera sektorer med relativa styrka-linjer kopplade till konjunkturcykeln · läsa intermarket-kedjan obligationer–dollar–rävaror–aktier och koppla räntan till V10 och inputpriser till V07 · köra Murphys fulla checklista top-down på egna innehav med grafen som AK1TS-tola · och redogöra för EMH-kritiken, Lo:s medling och AK1A:s determinismkrav — ögat pekar, motorn räknar.",
+  "why": "Bokkanon-post bk-058 kallar boken Murphys mjukaste introduktion till chartläsning — visuell analys för den som inte ska bli trader men vill förstå prisbeteende — och det är exakt den roll hon spelar i ekosystemet: den tillgängliga dörren in till AK1TS för fundamentalanalytikern. Labbets Murphy-lärobokskurs (Technical Analysis of the Financial Markets, 20 kapitel) är encyklopedin; den här kursen är bron — färre verktyg, men de två kapitel som gör boken unik bland introböcker: sektorsrotation och intermarket-analys, som är väderprognosen till varje AKM1-analys. Dessutom är kopplingen till motorn konkret som få: analys-motorn klassificerar vågor med MA50 (Mikro/Kort) och MA200 (Medellång/Lång/Mega), mäter volymtrend med 20/90 dagar och momentum med 5/63/252 — Murphys kungslinje är bokstavligen en rad i labbets kod. Och kontroverskapitlet tar teknikens äldsta angreppspunkt — att mönster är illusioner i brus — på fullt allvar, med Fama, Malkiel och Lo, och landar i den slutsats som gör AK1TS ärligt: samma data ska alltid ge samma celler, och när underlaget inte räcker skrivs osatt — aldrig gissning.",
+  "chapters_list": [
+    "1. Boken och idén — grafer före formler, priset först",
+    "2. Trenden — den första frågan till varje diagram",
+    "3. Stöd och motstånd — prisets minne",
+    "4. Trendlinjer och kanaler — trenden blir en linje",
+    "5. Diagrammönster — toppar, bottnar och pauser (kort)",
+    "6. Glidande medelvärden — 200-dagarskungslinjen och analys-motorn",
+    "7. Volym och OBV — bränslet i prisrörelsen",
+    "8. Momentum, RSI och divergensen — farten före vändningen",
+    "9. Candlesticks — att läsa en sessions ljus (kort)",
+    "10. Marknadsdiagram — index, bredd och marknadens hälsa",
+    "11. Relativ styrka och sektorsrotation — var pengarna står",
+    "12. Intermarket — obligationer, dollar, råvaror, aktier",
+    "13. Diagram-praktik för fundamentalanalytikern — grafen som AK1TS-tola",
+    "14. Kontroversen — brusets mönster? EMH, random walk och Murphys svar",
+    "15. Sammanfattning — den visuella investeraren (syntes AKM1 × AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Boken och idén — grafer före formler, priset först",
+      "intro": "John J. Murphy är teknisk analysens främste popularisatör: författare till läroboken Technical Analysis of the Financial Markets, pionjär för intermarket-analysen och i årtionden ansiktet utåt — först som analytiker i TV (CNBC:s Tech Talk), senare som chefsanalytiker på StockCharts. The Visual Investor (1995, andra upplagan 2009) skrevs för dem han mötte där: tittare och fundamentalanalytiker som aldrig ska bli traders men som tröttnat på att ha rätt för tidigt. Kursen börjar med bokens tes — och med vad den INTE är.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens födelse är dess budskap. Murphy hade tillbringat år i televisionen och försökt förklara marknaden för vanliga tittare — och noterat vad som fungerade: inte formler, inte ekvationer, utan bilden. En graf säger på tre sekunder vad en tabell säger på tre minuter. The Visual Investor (första upplagan 1995) är den insikten omsatt till bok: teknisk analys utan tyngre matematik än en division, för den som vill förstå prisbeteende utan att bli tekniker. Andra upplagan (2009) uppdaterade boken för en ny värld: ETF:er som gör index- och sektornivåer handlingsbara, candlestick-diagram som standard, och intermarket-kapitlet omskrivet efter finanskrisen 2008 — som Murphy själv hade analyserat kapitel för kapitel i realtid."
+        },
+        {
+          "type": "text",
+          "content": "Tesens kärna: priset är den viktigaste enskilda informationen om en tillgång — och diagrammet är dess naturliga språk. Ur Dow-traditionen (Charles Dow, vidareförd av William Hamilton och Robert Rhea) ärvs antagandet att priset diskonterar allt känt: all information, all förväntan, all rädsla och all girighet hos tusentals deltagare komprimeras till en enda linje. För fundamentalanalytikern är konsekvensen omedelbar och nykter: diagrammet är inte en ersättare för årsredovisningen — det är marknadens KOMMENTAR till årsredovisningen. Du kan ha räknat rätt på varje V-variabel och ändå förlora i åratal om marknaden inte håller med; grafen är det tidigaste stället där marknadens mening syns. Murphy formulerar prioriteten som kursens räls: först priset, sedan allt annat."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen i labbet, öppet redigerad: Murphys lärobok Technical Analysis of the Financial Markets (med egen 20-kapitelskurs här i katalogen) är encyklopedin — Elliott, Fibonacci, cykler, hela verktygslådan. The Visual Investor är dörren: tre kärnverktyg (trend, stöd/motstånd, volym), ett bekräftelseskikt (momentum), en timing-primer (candlesticks) och de två kapitel som gör boken unik bland introduktioner — sektorsrotation och intermarket. Murphys enkelhetsprincip genljuder genom hela boken: syns det inte utan förklaring, finns det inte. Men kursen lägger till varje ärlig baksida, redan från start: ögat är evolutionens bästa mönsterdetektor OCH dess mest suggestibla — vi ser ansikten i moln. Pareidolia är teknikens urskuld och dess fallgrop; den spänningen löser kapitel 14, och AK1TS svar är redan känt: ögat pekar, motorn räknar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V04 P/S, V05 P/B, V06 EV/EBITDA — grafen är täljarens historia. Varje värderingsmultipel du poängsätter i AKM1 har priset i täljaren; kurslinjen du lär dig läsa i den här boken ÄR den täljaren, med historia. Ett P/S på 0,8 är en mening; en kurs under ett fallande 200-dagarsmedelvärde är en berättelse. AK1TS-RAD: Pris-dimensionen — samma graf, fem tidslinjer (dags-, vecko-, månadsupplösning mot Mikro till Mega). Bokens första läxa till AKM1-analytikern: titta på täljaren innan du dömer kvoten."
+        },
+        {
+          "type": "insikt",
+          "content": "Innan du räknar — titta. Diagrammet är marknadens kommentar till din analys, inte dess ersättning: priset komprimerar allt tusen delagare vet och fruktar till en linje. Den kompletta investeraren läser både kommentaren och årsredovisningen — och vägrar förväxla dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Murphys tre verk — och labbets grannkurser\",\"rader\":[[\"Verk\",\"År\",\"Roll\",\"Lämplig för\"],[\"The Visual Investor\",\"1995/2009\",\"den tillgängliga dörren — se för att förstå\",\"icke-tekniker, fundamentalanalytiker\"],[\"Technical Analysis of the Financial Markets\",\"1999\",\"läroboken — hela verktygslådan\",\"den som ska djupdyka (20-kapitelskurs finns)\"],[\"Intermarket Analysis\",\"2004\",\"intermarket-djupet\",\"den som vill vidare från kapitel 12\"],[\"Grannar i katalogen\",\"—\",\"Nison (candles), Bulkowski (mönsterstatistik), Edwards & Magee (anatomi)\",\"fördjupning per verktyg\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Öga-testet: öppna dagsgrafen för en aktie du redan har en AKM1-bedömning på. Titta i trettio sekunder UTAN att läsa en enda siffra och skriv ner tre ord om bilden. Jämför sedan med din senaste V-poäng: pekar bilden och poängen samma håll? Där de skiljer sig har du hittat arbetspunkten för kapitel 13 — och en första känsla för vad Murphys bok tillför som bokslutet inte kan."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skiljer The Visual Investor från Murphys eget lärobokswerk?",
+          "alternativ": [
+            "Den innehåller mer matematik och flera formler",
+            "Den vänder sig till icke-tekniker — grafer före formler — med sektorsrotation och intermarket som extra spår",
+            "Den handlar bara om daytrading",
+            "Den ersätter fundamental analys helt"
+          ],
+          "ratt": 1,
+          "tips": "Bokens födelse i TV-studion bestämde dess form: bilden före ekvationen."
+        },
+        {
+          "q": "Vad är Murphys grundtes om priset?",
+          "alternativ": [
+            "Att priset är slumpmässigt och därför ointressant",
+            "Att priset bara speglar gårdagens nyheter",
+            "Att priset är den viktigaste enskilda informationen — diagrammet komprimerar marknadens samlade bedömning",
+            "Att priset alltid följer fundamentals direkt"
+          ],
+          "ratt": 2,
+          "tips": "Dow-traditionens diskontering: vad vet linjen som tabellen inte visar?"
+        },
+        {
+          "q": "Vad lade 2009 års andra upplaga till?",
+          "alternativ": [
+            "Nya optionsstrategier och korta räntor",
+            "ETF:er, candlestick-diagram och intermarket-analys omskriven efter krisen 2008",
+            "En genomgång av kvartalsredovisningar",
+            "En DCF-modell i bilaga"
+          ],
+          "ratt": 1,
+          "tips": "Tre tillägg, alla synliga i bokens titelvärld: handlingsbara instrument, ny standardgraf och den kris som skrev om alla samband."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Trenden — den första frågan till varje diagram",
+      "intro": "Bokens andra kapitel är dess hjärta: trenden. Murphy är omväxlande kategorisk och ödmjuk — trenden är den första frågan, den viktigaste frågan och ibland den enda frågan. Kursen läser kapitlet som en träning i att SE riktning innan man mäter den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen är visuell och exakt. Upptrend: en sekvens av högre toppar och högre lågpunkter. Nedtrend: lägre toppar och lägre lågpunkter. Sidledes: ingen av delarna — priserna pendlar mellan en grov över- och undergräns. Murphys husregel, ärvd från hela branschen: trenden är din vän — arbeta MED den, inte mot den. Det låter som en klyscha tills man noterar vad den förbjuder: att plocka vändningar, att köpa i nedtrender för att det är billigt, att sälja i upptrender för att det känns högt. Trendfrågan kommer FÖRE värderingsfrågan i tid, även om den kommer efter den i AKM1:s ordning."
+        },
+        {
+          "type": "text",
+          "content": "Trender lever inuti varandra. En upptrend på veckografen kan bära en rejäl korrigering på dagsgrafen; en månadskurva ger veckografens sammanhang. Murphys råd till den som tvekar: ta ett steg tillbaka — bokstavligen. Om trenden inte syns på avstånd, med kisade ögon, utan att du letar efter den, är den inte där. Det är kis-testet, och det är mer metod än skämt: det avskalar önsketänkandet. I AK1TS-mappningen är det här Murphys informella idé redan systematiserad: fem tidshorisonter — Mikro, Kort, Medellång, Lång, Mega — samma prisserie, fem svar. Murphy säger titta på flera tidsramar; AK1TS räknar dem alla, varje gång."
+        },
+        {
+          "type": "text",
+          "content": "Trendens ålder: Dow-traditionens tre faser. Ackumulering — de tidiga köparna (best informerade, oftast mot konsensus) samlar position i en nedslaktad eller ignorerad aktie. Publik medverkan — trenden blir synlig, folket ansluter, rörelsen är som starkast och längst. Distribution — nyhetarna är som bäst, historia som skrivs, och de tidiga köparna säljer till de sena. Fas tre är kursens varning till AKM1-analytikern: det är precis då fundamentalen ser bäst ut som kursen slutar lyssna — V-poängens topp sammanfaller ofta med distributionsfasen. Diagrammönstren i kapitel 5 är distributionens och ackumuleringens ansikten."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01 Försäljningstillväxt — fundamentets egen trend. Vågfundamentet behandlar varje V-variabel som tidsserie med egen riktning (impulsvåg, korrigering, basbygge): pris-trend utan fundamental trend är misstänkt, och fundamental trend som priset vägrar belöna är en fråga. AK1TS-RAD: Trend-dimensionen — motorn räknar momentum 5/63/252 dagar och klassificerar vågen mot MA50/MA200; fem horisonter, fem trender, en aktie. Första kopplingen att memorera: kursens riktning och V01:s riktning ska helst peka samma håll — eller ha en förklaring."
+        },
+        {
+          "type": "insikt",
+          "content": "Den första frågan till varje diagram är alltid densamma: åt vilket håll? Alla andra verktyg i boken — stöd, linjer, medelvärden, volym, momentum — är sätt att mäta, bekräfta eller ifrågasätta svaret på den frågan. Värdering utan trend är bara en åsikt om nivå; trenden är marknadens faktiska svar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre riktningar — och deras spelregler\",\"rader\":[[\"Riktning\",\"Definition\",\"Spelregel\",\"Varning\"],[\"Upptrend\",\"högre toppar + högre lågpunkter\",\"köp retracements inom trenden; äg\",\"lägre lågpunkt bryts — trenden ifrågasatt\"],[\"Nedtrend\",\"lägre toppar + lägre lågpunkter\",\"håll dig borta (eller blanka med stopp)\",\"högre topp slås — basbygge kan börja\"],[\"Sidledes\",\"pendling mellan grova gränser\",\"handla kanterna eller stå över\",\"whipsaw-zon — trendverktyg piskar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kis-testet på fem aktier: öppna veckografen, kis, skriv upp riktningen (upp/ned/sidledes) på trettio sekunder per aktie. Slå sedan upp V01 Försäljningstillväxt för samma bolag och skriv dess riktning. Räkna överensstämmelser. Där kurs och omsättningstillväxt pekar olika: en mening om vilken som har rätt — och vilken som är tidig."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad definierar en upptrend enligt Murphy?",
+            "alternativ": [
+            "Kursen över 100-dagarsmedelvärdet",
+            "Tre dagar i rad med stigande kurser",
+            "En sekvens av högre toppar och högre lågpunkter",
+            "Att RSI är under 30"
+          ],
+          "ratt": 2,
+          "tips": "Det är sekvensen av toppar OCH bottnar — inte en enskild indikator."
+        },
+        {
+          "q": "Vad är kis-testet (steget tillbaka) till för?",
+          "alternativ": [
+            "Att hitta dolda mönster som syns bara nära",
+            "Att avgöra om trenden är synlig utan att man letar efter den — avskalar önsketänkandet",
+            "Att mäta volymen mer exakt",
+            "Att kalibrera RSI-gränserna"
+          ],
+          "ratt": 1,
+          "tips": "Om du måste förklara bilden finns den troligen inte — enkelhetsprincipen i praktiken."
+        },
+        {
+          "q": "Vad kännetecknar distributionsfasen i Dow-traditionens tre faser?",
+          "alternativ": [
+            "Nyhetarna är som bäst och de tidiga köparna säljer till de sena",
+            "Ingen handlar alls i aktien",
+            "Volymen är noll och kursen platt",
+            "Endast insiders får köpa"
+          ],
+          "ratt": 0,
+          "tips": "Notera ironin: fundamentalen ser ofta som bäst ut i fas tre — det är hela varningen till AKM1-analytikern."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Stöd och motstånd — prisets minne",
+      "intro": "Varför stannar kurser på vissa nivåer — och varför gång på gång på SAMMA nivåer? Murphys svar är psykologiskt: marknaden har minne. Kapitlet ger grafen dess geografi: nivåerna dit priset återvänder för att gamla beslut bor där.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Stöd är en nivå där köpkraft tidigare överväldigat säljtryck — en botten som höll. Motstånd är spegelbilden: en topp där säljare vänt. Källmaterialet är prisets egen historia: förra toppen, förra bottnen, nivån där kursen vände senast. Och mekanismen är beteendevetenskaplig, öppet kopplad till Kahneman–Tversky-traditionen: ankraj. Den som köpte vid 80 och såg kursen falla till 60 drömmer om att komma ut helt — vid 80 igen finns en säljare (därav motstånd). Den som övervägde köp vid 60 men tvekade ångrar sig när kursen återvänder — vid 60 igen finns en köpare (därav stöd). Boken kallar det minne; laboratoriet kallar det inlåsta positioner och ånger; grafen kallar det nivåer."
+        },
+        {
+          "type": "text",
+          "content": "Tre praktiska regler ger kapitlet sin skärpa. Ett: nivåer är ZONER, inte linjer — kursen får tåla att sticka igenom en bit; det är STÄNGNINGAR utanför som räknas. Två: roll-byte — ett brutet motstånd blir nytt stöd (och omvänt); varje nivå som faller byter sida i kriget, därför att de som köpte utbrottet försvarar sitt köp. Tre: ju fler gånger en nivå testats, ju längre tid den hållits och ju mer volym som handlats kring den — desto starkare är den. Runda tal (10, 50, 100) fungerar som svaga extra-nivåer av samma psykologiska skäl: de är ankare vi alla delar."
+        },
+        {
+          "type": "text",
+          "content": "Fundamentalanalytikerns varning och gåva i samma stycke. Varningen: blanda inte ihop grafens stöd med värdets golv — att bokvärdet säger 60 betyder inte att marknadens minne gör det; två olika mekanismer, två olika nivåer. Gåvan: när de SAMMANFALLER — när V05:s bokvärdesnivå ligger i grafens stödzon — har du två oberoende skäl att tro på golvet, ett fundamentalt och ett beteendemässigt. Det är dubbel botten på två språk, och det är bland det starkaste en AKM1-analytiker kan hitta: värde som marknaden samtidigt minns att den försvarat."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V05 P/B — bokvärdet som fundamentalt golv i multipel-språk, grafens stöd som beteendegolv i pris-språk; ovanstående dubbelgolv är kopplingen. AK1TS-RAD: Brytpunkt-dimensionen — motorn räknar fib38/fib62 (38- och 62-procent av 52-veckorsspannet från toppen) som deterministika zoner ur exakt samma idé: marknaden respekterar förutsägbara djup. Medellång-horisonten. Lärdomen: nivåer ska helst vara överbestämda — två källor (prisminne + fibonacci, eller stöd + V05) är starkare än en."
+        },
+        {
+          "type": "insikt",
+          "content": "Stöd och motstånd är prisets minne: nivåer där marknaden tidigare ångrade sig. De är zoner, inte linjer; de förtjänar respekt först när stängning OCH volym bekräftar brottet — och de är som starkast när en fundamental nivå ligger i samma zon."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sex källor till stöd och motstånd\",\"rader\":[[\"Källa\",\"Exempel\",\"Kapitel\"],[\"Förra toppar och bottnar\",\"förra års höjdpunkt\",\"denna\"],[\"Trendlinjer\",\"diagonal gräns under upptrend\",\"4\"],[\"Glidande medelvärden\",\"50-dagars som dynamiskt stöd\",\"6\"],[\"Fibonacci-retracements\",\"38/62 procent av senaste sväng (motorn: fib38/fib62)\",\"—\"],[\"Runda tal\",\"100-kronorsnivån\",\"denna\"],[\"Brett sidledes-område\",\"ju längre och mer handlat, desto starkare\",\"denna\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Nivåkartan: markera på en akties dagsgraf tre stödzoner och tre motståndszoner (som ZONER — cirklar, inte linjer). Räkna för varje zon hur många av de sex källorna i tabellen som sammanfaller där. Ranka zonerna efter antal källor. Notera närmsta pris och markera den zon som är starkast — det är din bild av var nästa beslut bor, innan du ens öppnat en multipel."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är roll-byte (role reversal) för något?",
+          "alternativ": [
+            "Att indikatorer byter funktion i nedtrend",
+            "Att ett brutet motstånd blir nytt stöd — och omvänt",
+            "Att stöd och motstånd byter graf",
+            "Att säljare blir köpare en gång per kvartal"
+          ],
+          "ratt": 1,
+          "tips": "De som köpte utbrottet försvarar sitt köp när kursen återvänder — nivån byter sida."
+        },
+        {
+          "q": "Varför fungerar rundatal som svaga nivåer?",
+          "alternativ": [
+            "Därför att börser stänger vid jämna tal",
+            "Därför att de är gemensamma ankare — många deltagare tänker i dem",
+            "Därför att algoritmer bara handlar vid 100",
+            "Därför att utdelningar alltid är jämna"
+          ],
+          "ratt": 1,
+          "tips": "Ankraj behöver inte vara rationella — bara delade."
+        },
+        {
+          "q": "Vad menas med att nivåer är zoner, inte linjer?",
+          "alternativ": [
+            "Att kurser aldrig rör exakt nivån — stängningar utanför zonen är det som räknas",
+            "Att man ska rita nivåerna med tjock penna",
+            "Att zoner bara gäller på veckograf",
+            "Att nivåer flyttar sig varje dag"
+          ],
+          "ratt": 0,
+          "tips": "Intradag-utstick är brus; det är stängningen utanför som är händelsen."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Trendlinjer och kanaler — trenden blir en linje",
+      "intro": "Kapitel tre gav nivåerna; kapitel fyra ger riktningen en kropp. Trendlinjen är trenden gjord synlig — och därmed mätbar, testbar och brytbar. Det är också kursens första riktiga brytpunkts-verktyg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen är nästan barnsligt enkel — det är poängen. I en upptrend: dra en rak linje genom de stigande lågpunkterna. Två punkter är ett förslag; TRE bekräftar. Ju fler rörelser linjen fått (varje rörelse = en nypunkt den bevisats mot), ju längre tid den lever och ju mer volym som handlats vid rörelserna — desto viktigare är den. Och Murphys egen hederliga varning, enkelhetsprincipen igen: en trendlinje som måste böjas, justeras eller förklarings för att passa — finns inte. Om linjen inte faller sig naturligt ur punkterna är trenden en annan än du vill att den ska vara."
+        },
+        {
+          "type": "text",
+          "content": "Kanalen: spegla trendlinjen genom motståndspunkterna och du får en korridor där priset pendlar mellan två paralleller — en kanal. Kanalen ger tre gåvor: projektion (nästa vändning förväntas nära kanalens kant), avläsning av hälsa (en trend som börjar stänga sig mot övre kanten i upptrend är starkare än en som knappar på underkanten) och förvarning (brantare och brantare linjer — acceleration — är ofta en trend i stress: rörelserna som inte får ordentlig retracement är tecken på desperation, inte hälsa). Flackare och flackare linjer kallas fan-principen: tre linjer med allt flackare lutning är en trend som tappar kraft — vändningen är på gång innan någon nacklinje brutits."
+        },
+        {
+          "type": "text",
+          "content": "Trendlinjebrottet är bokens tidigaste VISUELLA trendvarning — tidigare än mönster, tidigare än stödbrott, eftersom linjen lutar: den möter priset FÖRE det horisontella stödet. Men bekräftelse krävs, alltid: stängning utanför, helst med volym (kapitel 7), och det fina testet — retracement som faller tillbaka GENOM den brutna linjen (det gamla stödet som nu blivit motstånd). Skilj också budskapen åt: trendlinjebrottet säger trenden tröttas; stödbrottet (kapitel 3) säger en specifik nivå föll. Båda samma vecka är en av de starkaste visuella kombinationerna i hela boken."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet — fundamentets kanal. Ett bolag med stabila, förutsägbara intäkter ritar en smal fundamental kanal i sina egna tidsserier; Vågfundamentet läser den (impulsvåg/korrigering/basbygge per variabel). När prisets kanal och intäkternas kanal bryts samtidigt har du ett dubbelbrott — grafiskt OCH fundamentalt. AK1TS-RAD: Brytpunkt-dimensionen + Tid-dimensionen — linjens signifikans växer med antal rörelser och tidslängd, exakt som Tid-raden mäter struktur i långa serier; fan-principen är en tidsplot-trötthet som motorn fångar som svagande momentum."
+        },
+        {
+          "type": "insikt",
+          "content": "En trendlinje är trenden gjord mätbar. När den bryts har marknaden inte talat om vart den SKA — bara att den inte längre är där den VAR. Den tidigaste visuella varningen är fortfarande en fråga, inte ett svar: bekräfta med volym, stängning och retest."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Trendlinjens signifikans — fyra faktorer\",\"rader\":[[\"Faktor\",\"Mer signifikant när\",\"Mindre\"],[\"Antal rörelser\",\"3+ nypunkter\",\"2 (bara ett förslag)\"],[\"Tidslängd\",\"veckor–månader\",\"dagar\"],[\"Volym vid nypunkterna\",\"hög — nivån är verklig\",\"låg\"],[\"Lutning\",\"måttlig (hållbar)\",\"mycket brant (stressad, fragil)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Linjeövningen: välj en aktie som stigit i minst sex månader. Rita den korrekta upptrendlinjen (minst tre lågpunkter), räkna nypunkter, notera om den brutits. Om den brutits: följ priset tjugo dagar framåt i historiken — kom retesten? Fick du samma linje som en kollega? Skillnaden mellan era linjer är kapitel 14:s ämne i miniatyr: ögats frihet är både teknikens styrka och dess dom."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur många nypunkter bekräftar en trendlinje?",
+          "alternativ": [
+            "En — linjen dras från första punkten",
+            "Två är ett förslag; tre (eller fler) bekräftar",
+            "Minst tio",
+            "Antalet spelar ingen roll"
+          ],
+          "ratt": 1,
+          "tips": "Två punkter bestämmer en linje — men tre punkter PROVAR den."
+        },
+        {
+          "q": "Vad betyder ett trendlinjebrott?",
+          "alternativ": [
+            "Att kursen garanterat vänder ned och stiger aldrig igen",
+            "Att trenden tröttas — en varning som kräver bekräftelse (stängning, volym, retest)",
+            "Att bolaget går i konkurs",
+            "Att indikatorerna ska raderas"
+          ],
+          "ratt": 1,
+          "tips": "Budskapet är trötthet, inte vändning — bekräftelsen avgör."
+        },
+        {
+          "q": "Vad signalerar fan-principen — tre allt flackare trendlinjer?",
+          "alternativ": [
+            "En trend som blir starkare och starkare",
+            "En trend som tappar kraft — vändning på gång innan något horisontellt brutits",
+            "Att man ritar fel",
+            "Att volymen ökat kraftigt"
+          ],
+          "ratt": 1,
+          "tips": "Lutningen ÄR trendens hälsa: flackare och flackare är trötthet, inte konsolidering."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Diagrammönster — toppar, bottnar och pauser (kort)",
+      "intro": "Här håller kursen sig medvetligt kort — av två skäl. För det första är Murphys kapitel om mönster en överblick, inte bokens kärna (trend, stöd, volym är kärnan). För det andra äger labbet redan specialkurserna: Bulkowskis mönsterstatistik och Edwards & Magees anatomi. Det här kapitlet ger det visuella minimum — och den avgörande AK1A-poängen: mönster är teknikens mest subjektiva hörn, och just därför räknar motorn dem inte.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Två familjer, en grammatik. Vändningsmönster markerar att en trend byter riktning: dubbeltopp och dubbelbotten (två test av samma nivå, det andra misslyckas), huvud-och-skuldror (tre toppar där mittentoppen är högst och volymen avtar genom formationen — nacklinjen är brytpunkten) och V-svängar. Fortsättningsmönster markerar att trenden pausar för att fortsätta: trianglar (stigande: horisontellt motstånd + stigande stöd — ofta upplösning uppåt; symmetrisk: båda sidor konvergerar), flaggor och kilar. Mätregeln är gemensam och grov: formationshöjden projiceras från brottet — ett prisobjekt, inte en profetia. Murphys egen varning: ett mönster som måste förklaras är inte ett mönster — syns det inte, finns det inte."
+        },
+        {
+          "type": "text",
+          "content": "Volymen är mönstrets samvete. Huvud-och-skuldror utan avtagande volym är tre slumpvisa toppar; utbrott ur en bas utan volymökning är ett misstänkt utbrott (kapitel 7 prövar det ordentligt); och vid dubbelbottnar är det den andra bottnens LÄGRE volym som säger att säljarna gett upp. Bulkowskis uppslagsverk — med egen kurs i katalogen — har siffrorna för varje mönster: felfrekvenser, throwback-andel, prestanda. Här nöjer vi oss med Murphys version: formationen är en beskrivning av vad som redan hände; informationen uppstår först vid brottet, och beviset är volymen. Ingen av delarna är valfri."
+        },
+        {
+          "type": "text",
+          "content": "Och nu AK1A:s öppna hållning, som resten av kursen bygger vidare på: mönsterigenkänning är den MEST subjektiva delen av visuell analys. Två erfarna chartister som ritar linjer i samma graf hittar ofta två olika formationer — paradexemplet är bördan från kontroverskapitlet: ögat ser vad det förväntas se (pareidolia). Därför räknar AK1TS-motern INTE formationer. Motorn mäter det som går att mäta deterministiskt — trend (MA50/MA200), momentum (5/63/252), volymtrend (20/90), fib-zoner, Lucas-fönster — och lämnar mönster-namnen åt ögat som HYPOTESER. Ett huvud-och-skuldror du ser är en fråga du ställer till motorn: vad säger dina rader? Brottet på volym bevarar ögat; beviset levereras bara av talen."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V16 Produktlanseringar och V18 Regulatoriska katalysatorer — de fundamentala brytpunkterna. En klar utbruten formation är prisets egen katalysator: något ÄNDRADES som fick marknaden att röra sig. I AKM1-anda är frågan alltid: vilken fundamental händelse (V16/V17/V18) kan ligga bakom utbrottet — och syns den i någon V-variabels tidsserie än, eller bara i priset? AK1TS-RAD: Brytpunkt-dimensionen — utbrottet är en brytpunkt; men formationen som sådan har ingen cell, medvetet. Ögat pekar, motorn räknar."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett mönster är inte en förutsägelse — det är det förflutna packat i en form. Formen blir information först när brottet kommer på volym; innan dess är det en tuschteckning. Och i AK1A: formationer är hypoteser åt motorn, aldrig bevis."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sex formationer — familj, budskap, mätregel\",\"rader\":[[\"Formation\",\"Familj\",\"Budskap\",\"Mätregel\"],[\"Dubbeltopp\",\"vändning\",\"säljarna vinner andra testet\",\"höjden projiceras nedåt\"],[\"Dubbelbotten\",\"vändning\",\"andra botten på lägre volym — säljarna tröttnar\",\"höjden projiceras uppåt\"],[\"Huvud-och-skuldror\",\"vändning\",\"volymen avtar genom axlarna\",\"nacklinje + höjd nedåt\"],[\"Stigande triangel\",\"fortsättning\",\"köparna aggressivare — platt tak, stigande golv\",\"basens bredd uppåt\"],[\"Symmetrisk triangel\",\"fortsättning\",\"båda sidor väntar — utbrott i trendriktning\",\"triangelns höjd\"],[\"Flagga\",\"fortsättning\",\"kort vilopaus i snabb trend\",\"flaggstångens längd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bas-testet: hitta en aktie som brutit ur en minst tre månader lång sidledesbas under det senaste halvåret. Kontrollera tre saker: volymen på utbrottsdagen (högre än genomsnittet?), retracementet tillbaka till zonerna (kom det?), och vad motorn hade kallat basen (Vågfundamentets vågklass 'basbygge' är exakt det). Skriv en mening: var brottet bevisat eller bara målat?"
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skiljer en stigande triangel från en dubbeltopp?",
+            "alternativ": [
+            "Ingenting — båda är vändningsmönster",
+            "Triangeln gäller bara råvaror; dubbeltoppen bara aktier",
+            "Dubbeltoppen kräver tre toppar; triangeln ett",
+            "Triangeln är ett fortsättningsmönster (platt tak, stigande golv); dubbeltoppen är ett vändningsmönster"
+          ],
+          "ratt": 3,
+          "tips": "Familjen avgörs av vad formationen gör mot TRENDEN: pausar eller bryter den."
+        },
+        {
+          "q": "Vilken volymprofil hör till huvud-och-skuldror?",
+          "alternativ": [
+            "Volymen ökar genom hela formationen",
+            "Volymen avtar genom formationen — särskilt mot höger axel",
+            "Volymen är konstant",
+            "Volymen spelar ingen roll"
+          ],
+          "ratt": 1,
+          "tips": "Vändning handlar om trötthet — och trötthet syns i avtagande deltagande."
+        },
+        {
+          "q": "Varför räknar inte AK1TS-motern formationer?",
+          "alternativ": [
+            "Därför att formationer aldrig fungerar",
+            "Därför att formationer kräver dyr data",
+            "Därför att mönsterigenkänning är subjektiv — motorn mäter bara deterministiskt (MA, momentum, volym, fib) och låter ögat formulera hypoteser",
+            "Därför att motorn saknar grafer"
+          ],
+          "ratt": 2,
+          "tips": "Samma graf — två läsare — två formationer. Motorn kräver att samma data alltid ger samma celler."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Glidande medelvärden — 200-dagarskungslinjen och analys-motorn",
+      "intro": "Om boken har ett enda kapitel som AK1A-användaren ska kunna utantill är det det här — för det är kapitlet där Murphys kanske berömda verktyg, 200-dagarsmedelvärdet, möter labbets analys-motor. Kungslinjen är inte metafor i det här ekosystemet: den är en rad i koden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett glidande medelvärde är genomsnittet av de senaste N stängningarna, omräknat varje dag. Effekten: bruset slätas ut, trenden framträder — till priset av fördröjning. Och Murphy är ovanligt tydlig med att fördröjningen är DESIGN, inte defekt: medelvärdet är en eftersläpande indikator som svarar på frågan vilken trend som råder — den prognostiserar inte. Det finns ingen formeltyngd här: att dela en summa med 200 klarar alla — boken är trots sitt namn visuell, och medelvärdet är bara kurvan som förblir kvar när dagens brus strukits."
+        },
+        {
+          "type": "text",
+          "content": "200-dagarsmedelvärdet är kungslinjen — börsens mest övervakade enskilda kurva. Regelverket, som Murphy delar med nästan hela yrkeskåren: pris ÖVER ett STIGANDE 200-dagars = hausse-regim; pris UNDER ett FALLANDE = baisse; korsningar däremellan är övergångszoner. 50-dagarsmedelvärdet fångar den medellånga trenden och fungerar som dynamiskt stöd i friska upptrender (kapitel 3:s nivå som rör på sig); 20-dagars är det korta filtret; på veckografen motsvarar 10 och 40 veckor ungefär 50 respektive 200 dagar. Golden cross — 50 korsar över 200 — och death cross — spegelbilden — är de berömda kombinationssignalerna. Murphys paroll påminner om verktygets väsen: medelvärden definierar, de gissar inte."
+        },
+        {
+          "type": "text",
+          "content": "Och nu kopplingen som gör det här kapitlet till kursens motorrum. AK1TS analys-motor (src/lib/analys-motor.ts) klassificerar vågorna på exakt Murphys linjer: för Mikro- och Kort-horisonten används MA50, för Medellång, Lång och Mega används MA200 — pris över medelvärdet väger in som vågklass impulsvåg, under som korrigering, omkring som basbygge-material. Motorn mäter också momentum (5, 63, 252 dagar), volymtrend (20/90 dagar) och fib38/fib62 ur 52-veckorsspannet. Konsekvensen är värd att stanna vid: Murphys kungslinje är i det här labbet inte en åsikt på en graf utan en deterministisk regel — samma prisserie ger alltid samma vågklass, varje körning. Det är kapitel 14:s hela kontrovers löst i en enda implementation: verktyget från 1900-talets chartläsning, omräknat till samma data in, samma celler ut."
+        },
+        {
+          "type": "text",
+          "content": "Verktygets gränser, lika öppet: i sidledes marknad piskar medelvärdena fram och tillbaka — whipsaw — och små förluster ackumuleras till stora. Medelvärden är trendverktyg och ska användas i trender; i range övertar oscillatorerna (kapitel 8). Verktyg efter regime, inte efter smak. AKM1-BRYGGAN · V01 Försäljningstillväxt — medelvärdestänket på fundamentet: en kvartalssiffras brus jämnas bäst av trenden i flera kvartal; Vågfundamentet gör samma släpning på varje variabel. AK1TS-RAD: Trend- och Pris-dimensionerna — MA50 klassificerar Mikro/Kort, MA200 klassificerar Medellång/Lång/Mega; fem klockor, en regel. Kungslinjen är motorns."
+        },
+        {
+          "type": "insikt",
+          "content": "200-dagarslinjen är inte magisk — den är mekanisk. Dess gåva är inte prognosen utan definitionen: den tvingar varje diagram att svara ja eller nej på trendfrågan, utan åsikt. I AK1TS-motorn är svaret dessutom alltid detsamma för samma data — det är definitionens definitiva version."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"MA per horisont — Murphy × analys-motorn\",\"rader\":[[\"Medelvärde\",\"Graf\",\"Murphys roll\",\"Motorns roll\"],[\"MA 20\",\"dagsgraf\",\"kort filter\",\"—\"],[\"MA 50\",\"dagsgraf\",\"medellång trend; dynamiskt stöd\",\"klassificerar Mikro och Kort\"],[\"MA 200\",\"dagsgraf\",\"kungslinjen — hausse/baisse-regim\",\"klassificerar Medellång, Lång och Mega\"],[\"MA 10/40 veckor\",\"veckograf\",\"Lång/Mega-sammanhang\",\"samma logik på veckodata\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Motortestet: för en aktie, notera dagens pris mot MA50 och MA200 (räkna grovt i kalkylblad om du saknar diagram: medel av senaste 50 respektive 200 stängningar). Skriv vågklassen per horisont som motorn skulle ge: över stigande = impulsvåg, under fallande = korrigering, omkring = basbygge. Räkna om en vecka. Om du fick samma svar båda gångerna på oförändrad data har du sett determinismen — samma in, samma ut — som är hela skillnaden mellan öga och motor."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är regelverket kring 200-dagarsmedelvärdet?",
+          "alternativ": [
+            "Pris över stigande MA200 = hausse-regim; pris under fallande = baisse",
+            "Korsa alltid MA200 för vinst",
+            "MA200 gäller bara månadsgraf",
+            "MA200 ska alltid kombineras med RSI innan handel"
+          ],
+          "ratt": 0,
+          "tips": "Två villkor: var priset ligger OCH vad linjen själv gör."
+        },
+        {
+          "q": "Hur använder AK1TS analys-motor medelvärden?",
+          "alternativ": [
+            "MA50 för Mikro/Kort och MA200 för Medellång/Lång/Mega i vågklassificeringen",
+            "Endast MA200 för alla horisonter",
+            "Inga medelvärden — motorn räknar formationer",
+            "MA20 för Mega-horisonten"
+          ],
+          "ratt": 0,
+          "tips": "Kapitlets motorrum: kungslinjen klassificerar de tre längsta horisonterna, MA50 de två kortaste."
+        },
+        {
+          "q": "Varför är medelvärden dåliga i sidledes marknad?",
+          "alternativ": [
+            "Därför att volymen alltid är hög i range",
+            "Därför att korsningarna piskar fram och tillbaka — whipsaw — och små förluster växer",
+            "Därför att medelvärden slutar beräknas",
+            "Därför att oscillatorer är förbjudna i range"
+          ],
+          "ratt": 1,
+          "tips": "Trendverktyg i trendlös marknad: vad händer med en linje som följer när inget följs?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Volym och OBV — bränslet i prisrörelsen",
+      "intro": "Priset är vart; volymen är hur många som verkligen tryckte. Murphy ägnar volymen ett eget kapitel — och ett eget ackumuleringsmått: On-Balance Volume, Joe Granvilles berömda konstruktion från 1963. Det är också kursens första möte med AK1TS femte teori: Volym.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundregeln är en enda mening: volym bekräftar trenden. Utbrott ur en bas på dubbel volym är ett beslut; samma utbrott på halverad volym är ett skräp — sannolikt ett falskt utbrott som drar tillbaka. Upptrend på stigande volym har folk som ansluter; upptrend på AVTAGANDE volym har bara priset kvar, inte deltagarna — trenden bär på tomgång. Volymen är också klimaxmätare: panikbottnar och euforitoppar känns igen på extrem volym — det sista som säljer möter det första som köper, och omvänt. Priset är en åsikt; pris på volym är en transaktion."
+        },
+        {
+          "type": "text",
+          "content": "OBV — On-Balance Volume — är Joe Granvilles bidrag (Granvilles New Key to Stock Market Profits, 1963) och hela idén med ackumuleringsmätning: räkna ihop en löpande summa där HELA dagens volym adderas när kursen stänger upp och subtraheras när den stänger ned. Kursen platt, OBV stigande = någon samlar diskret (ackumulering). Kursen platt eller toppig, OBV fallande = någon distribuerar. Granvilles slagord — volym föregår pris — ska förstås exakt så: inte som profetia, utan som att de stora positionerna lämnar spår i volymstatistiken innan de syns i pris. OBV är alltså prisets tidiga vittne: att döma av bokens exempel varnar divergensen mellan OBV och kurs ofta veckor före mönstret."
+        },
+        {
+          "type": "text",
+          "content": "I AK1TS är Volym en av de fem teorierna — den enda som mäter DELTAGANDE i stället för pris. Motorn räknar vol20/vol90 (senaste tjugo dagarnas volym mot nittio): stigande kvot = ökande intresse, fallande = avtagande. Det är OBV-andan reducerad till en deterministisk kvot — samma data, samma tal, varje gång. Och i Vågfundamentet blir volymtanken en fråga per variabel: när en fundamental serie vänder — V08-marginalen växer, V09 vänder upp — gör den det med bekräftelse i flera kvartal (volymens fundamentala motsvarighet) eller på ett enskilt, kanske tillfälligt, utslag?"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V11 Likviditet och V20 Återköp av egna aktier. V11: daglig handelsvolym i pengar är handlingsbarhet — en aktie som inte kan handlas utan att flytta kursen är inte ett objekt för analys utan ett förvar (samma läxa som Quantitative Value-kursens universumtröskel). V20: bolagets återköp är köpsida i volymen — när företaget självt är den store köparen syns det i volymstatistiken som ett fundamentalt bränsle ingen annan säljare kan erbjuda; 'insiderns OBV'. AK1TS-RAD: Volym-teorin — voltrend-raden (20/90) i motorn; OBV för ögat, kvoten för cellen."
+        },
+        {
+          "type": "insikt",
+          "content": "Pris utan volym är en åsikt; pris med volym är ett beslut. Granvilles slagord — volym föregår pris — betyder inte att volymen förutsäger: det betyder att de stora positionerna lämnar spår innan de talat. Läs spåret."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Volymens vittnesmål — fem situationer\",\"rader\":[[\"Situation\",\"Volym\",\"Tolkning\"],[\"Utbrott ur bas\",\"hög\",\"bekräftat beslut — handla med det\"],[\"Utbrott ur bas\",\"låg\",\"misstänkt — falskt utbrott troligt\"],[\"Upptrend\",\"avtagande\",\"trötthet — trenden bär på tomgång\"],[\"Platt kurs\",\"OBV stigande\",\"ackumulering — någon samlar\"],[\"Platt/toppig kurs\",\"OBV fallande\",\"distribution — någon lämnar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "OBV i miniatyr, för hand: ta tio dagars stängning och volym för en aktie. Räkna en löpande OBV: addera hela dagens volym vid upp-stängning, subtrahera vid ned-stängning. Rita kurvan bredvid priset. Divergerar de? Om OBV stigit medan priset varit platt: skriv hypotesen 'ackumulering' — och låt den ligga till kapitel 8, där du får lägga momentum ovanpå."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur beräknas OBV?",
+            "alternativ": [
+            "Genomsnittet av dagens volym över tio dagar",
+            "Dagens volym delat med kursförändringen",
+            "Endast köpvolymen räknas",
+            "Löpande summa: hela dagens volym adderas vid upp-stängning, subtraheras vid ned-stängning"
+          ],
+          "ratt": 3,
+          "tips": "Granville 1963: en enda kumulativ serie som låter volymen rösta med kursens riktning."
+        },
+        {
+          "q": "Vad är signaturen på ackumulering?",
+          "alternativ": [
+            "Kursen stiger kraftigt på hög volym",
+            "Kursen platt medan OBV stiger — någon samlar diskret",
+            "Kursen faller på låg volym",
+            "OBV och kurs faller tillsammans"
+          ],
+          "ratt": 1,
+          "tips": "Ackumulering är avsiktligt osynlig — utom i volymen."
+        },
+        {
+          "q": "Varför är ett utbrott på svag volym misstänkt?",
+          "alternativ": [
+            "Därför att volym alltid måste vara rekordhög",
+            "Därför att få deltagare backar rörelsen — den bär inte, och pullback är vanligt",
+            "Därför att börsen förbjuder det",
+            "Därför att indikatorer slutar fungera"
+          ],
+          "ratt": 1,
+          "tips": "Bekräftelse = deltagande. Ett beslut utan väljare är inget beslut."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Momentum, RSI och divergensen — farten före vändningen",
+      "intro": "Trenden säger riktning; momentumet säger fart — och förlorad fart är vändningens tidigaste budbärare. Det här är kursens viktigaste indikatorkapitel, och det slutar i den koppling som bär hela AK1A: Murphys visuella divergens möter Vågfundamentets fundamentalvåg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Momentum är prisets förändringstakt — slå ihop dagens kurs med kursen för N perioder sedan och du har det enklaste av alla oscillator-mått. RSI, Relative Strength Index, är branschens klassiker: J. Welles Wilder, New Concepts in Technical Trading Systems (1978), standardfjorton perioder, skala 0–100. Konventionen säger över 70 = överköpt, under 30 = översålt — men Murphys tillägg är avgörande och ofta försummad: I EN STARK TREND KAN RSI FASTNA. En bra upptrend håller RSI över 70 i veckor; att sälja bara för att måttet är högt är att sälja styrka. Överköpt är inte säljsignal — det är bevis på kraft. Gränserna betyder något i range; i trend är det DIVERGENSEN som betyder något."
+        },
+        {
+          "type": "text",
+          "content": "Verktygslådan bredvid: MACD — Gerald Appel, slutet av 1970-talet — skillnaden mellan två exponentiella medelvärden (standard 12 och 26) med en signallinje (9); korsningar under och över nollinjen ger trendföljande signaler. Stokastiken — George Lane — jämför stängningen mot det senaste intervallets högsta och lägsta och är snabbare, mer lättdresserad. Murphys regime-registering från kapitel 6 upprepas här i spegel: medelvärden är trendverktyg, oscillatorer är range- och toppbottningsverktyg; fel verktyg i fel marknad är inte neutrala — de är aktivt skadliga."
+        },
+        {
+          "type": "text",
+          "content": "Divergensen — kapitlets och bokens viktigaste momentum-lära. Bearisk divergens: kursen gör en NY TOPP, oscillatorn gör en LÄGRE topp — upptrenden tappar fart inifrån; vad du ser är inte vad du får. Bullisk divergens vid bottnar är spegelbilden: ny prislågpunkt, högre oscillatorlägpunkt. Divergensen är den tidigaste visuella varningen — den kommer ofta FÖRE mönstret, FÖRE nyheten, FÖRE stödbrottet — men den är en VARNING, inte en order: den ska bekräftas (linje- eller nivåbrott på volym, kapitel 4 och 7) innan den blir handling. I AK1TS-motorn finns momentum som rader (5/63/252 dagar) per horisont; konflikt mellan celler — Mikro-kort, Medellång-långt — är matrisens interna divergens och en av dess viktigaste utläsningar."
+        },
+        {
+          "type": "text",
+          "content": "Och nu kursens näst djupaste koppling (efter kungslinjen): Vågfundamentet definierar divergens mellan fundamentalvåg och prisvåg — AK1TS-korsningen. Kursen gör nya toppar men V08-marginalerna och V09 ROE inte: bearisk FUNDAMENTAL divergens, priset har sprungit ifrån verksamheten. Omvänt: fundamentalt impulsvåg (förbättrande marginaler, fallande skuld) medan priset korrigering eller basbygge: underprissatt — den konstellation värdeinvesterare lever för. Murphys visuella divergens är pris-INTERN (kurs mot oscillator); Vågfundamentets är mellan SYSTEM (pris mot fundamental). Två våningar av samma varningstorn — och den starkaste signalen i hela kursverket är när båda våningarna larmar samtidigt: pris mot oscillator OCH pris mot fundamental. Då är det arbete, inte bekräftelse som krävs. AKM1-BRYGGAN · V08 EBITDA-marginal, V09 ROE — divergensens fundamentala motparter. AK1TS-RAD: momentum-raderna (5/63/252) + Vågfundamentets AK1TS-korsning; Volym-teorin som tredje röst."
+        },
+        {
+          "type": "insikt",
+          "content": "Divergensen är teknikens ärligaste verktyg: den säger inte 'vänd nu' — den säger 'det du ser är inte längre det du får'. Pris nya toppar, oscillatorn inte: kraften sinar. Pris nya toppar, marginalerna inte: verksamheten sinar. Två mätare, en läxa — farten går före vändningen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"RSI 14 — tre regimer, tre läsätt\",\"rader\":[[\"Regim\",\"RSI-beteende\",\"Läsätt\"],[\"Stark trend\",\"fastnar över 70 (eller under 30)\",\"överköpt är styrka — läs divergens, inte gränser\"],[\"Sidledes range\",\"svänger 30–70\",\"gränserna är vändvarningar — oscillatorns hemmaplan\"],[\"Brytpunkt\",\"divergens + linjebrott + volym\",\"trippel-bekräftelse — kapitel 4 + 7 + 8 i en\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Dubbel-divergens-testet: välj en aktie som gjort ny 52-veckostopp eller ny månads topp nyligen. Läs RSI 14 vid förra toppen och vid den nya — divergens? Hämta sedan V08 (EBITDA-marginal) och V09 (ROE) för samma två perioder — divergens där också? Om båda: skriv en halvsidas analys — det är den starkaste varningskonstellationen i hela kursen, och övningen är kapitel 13:s rutin i förhand."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder RSI över 70 i en stark upptrend?",
+          "alternativ": [
+            "Sälj omedelbart — överköpt är alltid en säljsignal",
+            "Det är bevis på styrka — måttet kan fastna högt; läs divergensen i stället för gränsen",
+            "RSI är trasigt och ska bytas ut",
+            "Att trenden garanterat fortsätter i ett år"
+          ],
+          "ratt": 1,
+          "tips": "Överköpt i trend är som hög temperatur hos atleten — tecken på prestation, inte sjukdom."
+        },
+        {
+          "q": "Vad är en bearisk divergens?",
+            "alternativ": [
+            "Kursen och oscillatorn stiger tillsammans",
+            "Kursen faller och oscillatorn faller",
+            "Kursen gör ny topp men oscillatorn en lägre topp — trenden tappar fart inifrån",
+            "Volymen stiger medan kursen är platt"
+          ],
+          "ratt": 2,
+          "tips": "Ordet divergens: det som borde bekräfta slutar bekräfta."
+        },
+        {
+          "q": "Vad är AK1TS-korsningen i Vågfundamentet?",
+          "alternativ": [
+            "Korsningen mellan MA50 och MA200",
+            "Divergensen mellan fundamentalvåg och prisvåg — när systemen säger emot varandra",
+            "När RSI korsar 50",
+            "Kursens korsning av bokvärdet"
+          ],
+          "ratt": 1,
+          "tips": "Murphys divergens är kurs mot oscillator — Vågfundamentets är kurs mot fundamentalvågen: en våning upp i samma varningstorn."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 10,
+      "title": "Candlesticks — att läsa en sessions ljus (kort)",
+      "intro": "Andra upplagans mest synliga tillskott: candlestickdiagrammet som standardgraf. Murphy ägnar kapitlet åt det nödvändiga — anatomin och en handfull mönster — och kursen håller samma disciplin: Nison-kursen i katalogen är uppslagsverket; det här är primern som gör att du kan läsa grafen alla nu ritar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anatomin tar trettio sekunder att lära och är ovärderlig. En candle komprimerar sessionens hela dragkamp i fyra tal: öppning, högsta, lägsta, stängning. Kroppen är avståndet mellan öppning och stängning (fylld/omfärgad vid nedstängning, tom/grön vid uppstängning); skuggorna (veken) är avstånden ut till dagens ytterligheter. Lång grön kropp = köparna ägde dagen från öppning till stängning; lång röd = säljarna gjorde det; liten kropp med långa skuggor = krig utan segrare. Ursprunget är Japans rishandel på 1700-talet — legenden heter Munehisa Homma i Sakata — och väst fick lära sig det genom Steve Nison (Japanese Candlestick Charting Techniques, 1991), vars egen kurs ligger sida vid sida med den här i katalogen."
+        },
+        {
+          "type": "text",
+          "content": "Kärnmönstren, fyra styck för den här kursens behov. Doji — öppning och stängning nästan identiska: obeslutsamhet; dagens fråga lämnades öppen. Hammare — liten kropp i toppen, lång under-skugga: säljarna tryckte ner priset och köparna tog tillbaka allt; men BARA giltig VID STÖD — samma hammare mitt i tomrummet betyder ingenting. Englobande (engulfing) — dagens kropp sväljer gårdagens hela: den ena sidan körde över den andra. Shooting star — liten kropp i botten, lång över-skugga vid motstånd: uppgången köptes upp och såldes av. Mönstret är grammatiken, kontexten är meningen: stöd och motstånd från kapitel 3 avgör vad ljuset betyder. Murphys placering av candles är bokens klokaste pedagogik: för TIMING — på inträdet — när veckotrenden (kapitel 2), nivåerna (kapitel 3) och volymen (kapitel 7) redan sagt sitt."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetsraden, och den är viktig: candles läser Mikro-horisonten — dagar, sessioner, timmar. AKM1:s upplösning är kvartal och år: det FINNS ingen AKM1-cell för en doji. Det är ingen brist; det är arbetsfördelning. Den candle-tolkande fundamentalanalytikern som börjar köpa bolag på hammare har bytt yrke utan att märka det. Candles hör hemma i det sista lagret av beslutet — NÄR inom nivån — aldrig i det första — OM. AK1TS placerar dem precis där: Mikro-horisonten, Pris-dimensionen, verktyget för den som vill finslipa ett inträde som alla andra lager redan godkänt."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · ingen V-variabel — och det är hela poängen med kapitlets brygga: candles ligger under AKM1:s upplösning; det här är AK1TS-mark (Mikro-horisonten, Pris-dimensionens atom, som Nison-kursen formulerar det). AK1TS-RAD: Mikro × Pris — candle = tolens minutorgan i kapitel 13:s praktik; inträdes-timing sedan regi-trend (MA50 i motorn på Mikro/Kort), nivå och volym sagt sitt. Grafer före formler — men aldrig grafer före nivåer."
+        },
+        {
+          "type": "insikt",
+          "content": "Candles gör timing — aldrig riktning. Riktningen bestäms av trenden, nivån av stödet, bränslet av volymen; ljuset är bara tändstuben som avgör DAGEN du agerar. En hammare utan stöd under är bara en pinne."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra candles och deras budskap\",\"rader\":[[\"Candle\",\"Utseende\",\"Budskap — i rätt kontext\"],[\"Doji\",\"öppning = stängning, skuggor åt båda hållen\",\"obeslutsamhet — dagen lämnade frågan öppen; vänta bekräftelse\"],[\"Hammare\",\"liten kropp i topp, lång under-skugga\",\"säljarna förlorade dagen — giltig bara VID STÖD\"],[\"Englobande\",\"dagens kropp slukar gårdagens\",\"den ena sidan körde över den andra — vänd-impuls\"],[\"Shooting star\",\"liten kropp i botten, lång över-skugga\",\"uppgången såldes av — vid MOTSTÅND\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kontexträkningen: markera alla doji och hammare på en akties dagsgraf de senaste tre månaderna. Sortera efter var de inträffade: vid stöd/motstånd (kapitel 3:s zoner) eller mitt i rörelsen. Räkna andelen som låg VID en nivå. Jämför sedan hur många av nivå-candles som följdes av en vändning mot hur många mitt-i-candles som gjorde det. Skillnaden Är kontextens bevis — dokumentera den."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är candlekroppen respektive skuggorna?",
+          "alternativ": [
+            "Kroppen = dagens extrema; skuggorna = öppning/stängning",
+            "Kroppen = avståndet öppning–stängning; skuggorna = ut till dagens högsta och lägsta",
+            "Kroppen = veckans medelvärde; skuggorna = volymen",
+            "Kroppen = bokvärdet; skuggorna = spreaden"
+          ],
+          "ratt": 1,
+          "tips": "Fyra tal: öppning, topp, botten, stängning — kroppen håller två, skuggorna de andra."
+        },
+        {
+          "q": "När är en hammare ett giltig köp-signaler?",
+            "alternativ": [
+            "Bara vid en betydande stödzon — kontexten gör ljuset",
+            "Alltid när den dyker upp",
+            "Bara på månadsgraf",
+            "Bara om RSI samtidigt är över 70"
+          ],
+          "ratt": 0,
+          "tips": "Samma candle betyder olika vid stöd och mitt i tomrummet — det är kapitel 3:s läxa igen."
+        },
+        {
+          "q": "Vem förde candlesticks till väst?",
+          "alternativ": [
+            "John Murphy 1995",
+            "Joe Granville 1963",
+            "Steve Nison 1991",
+            "Welles Wilder 1978"
+          ],
+          "ratt": 2,
+          "tips": "Ursprunget är japanskt (1700-talets rishandel) — och väst lärde sig så sent som 1991."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Marknadsdiagram — index, bredd och marknadens hälsa",
+      "intro": "Ingen aktie är en ö. Murphys boks genomgående arbetsordning är top-down: marknaden först, sektorn sedan, aktien sist — och det här är marknads-kapitlet: index, bredd och den berömda marknadsbreden som avslöjar hur många som egentligen deltar i rallyt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grunden ärvs från Dow (och labbets Murphy-lärobokskurs kapitel 2): genomsnotten diskonterar allt — indexet är marknadens sammanfattande dom, och trendfrågan från kapitel 2 ställs DÄR först. Dow-teorins bekräftelsekrav lever kvar som praktisk tumregel: industri- och transportindexen ska dra åt samma håll; transportsvaghet i ett industrirally är den gamla skolans tidigaste skepsis — varorna når inte köparna. Murphys ordning är därför programmet: innan du frågar vad en aktie gör, fråga vad MARKNADEN gör. Kursens formulering: en aktie kan överlista sitt index i veckor, men nästan aldrig i kvartal — motståndet ovanifrån är det tyngsta av alla."
+        },
+        {
+          "type": "text",
+          "content": "Bredd — marknadens deltagande. Advance/decline-linjen: en löpande summa av (antal stigande aktier minus antal fallande) per dag. Ett index kan stiga på ett fåtal jättar — men A/D-linjen som inte följer med avslöjar det: smalt rally — få aktier, stor risk. Och spegelbilden är kapitel 8:s lära en nivå upp: när indexet gör nya toppar men A/D-linjen inte — bearisk divergens på MARKNADSNIVÅ — varar upptrenden på lånat folk. Bredd är till indexet vad volymen är till aktien: beviset på att deltagarna faktiskt är med på tåget. Nya toppar/bottnar per dag (new highs/new lows) är den andra klassiska breddmätaren: toppar med svagt nyttotillskott av nya högstanivåer är mönster av trötthet."
+        },
+        {
+          "type": "text",
+          "content": "Den mest visual-investor-av-alla-moderna verktyg: värmekartan — hela börsens sektorer i rött och grönt på en enda skärm; en blick = dagens marknadsbudskap. Murphys andra-upplaga-tillägg gör nivåerna handlingsbara: ETF:er på index och sektorer (SPDR-familjen, från sena 1990-talet) betyder att marknads- och sektornivån kan handlas utan att välja en enda aktie — det gör top-down till praktik, inte bara teori. I AK1A-termer: värmekartan är marknadens V04-karta — den visar var marknaden betalar upp — och bredden är marknadens V03, diversifieringen av deltagandet."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V03 Intäktsdiversifiering — bredd är marknadens diversifiering: smal ledning = koncentration, och koncentration är risk på marknadsnivå av exakt samma skäl som på bolagsnivå (en kund, en produkt → ett index som bär på tio jättar). AK1TS-RAD: Trend-dimensionen på Lång/Mega (indexets vågklass mot MA200) och Brytpunkt-dimensionen (A/D-divergens = varning vid brytpunkt); i portföljbygget används index-regimen som tak för aggressivitet. Order är regeln: indexet först — aktien aldrig mot det."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte vad din aktie gör — fråga vad marknaden gör, vad sektorn gör och vad aktien gör MED dem. Tre frågor, i den ordningen: det är hela top-down-traditionen i Murphy-utförande, och A/D-linjen är indexets samvete."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Top-down — tre nivåer, tre frågor, tre verktyg\",\"rader\":[[\"Nivå\",\"Fråga\",\"Verktyg\"],[\"Marknaden\",\"trend? pris mot MA200? deltar bredden?\",\"index + A/D-linje + nya toppar/bottnar\"],[\"Sektorn\",\"slår sektorn indexet?\",\"relativ styrka-linje + värmekarta (kapitel 11)\"],[\"Aktien\",\"trend, stöd, volym, momentum?\",\"kapitel 2–9:s verktyg + RS mot sektorn\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Breddtestet: för ditt index (t ex OMXS30 eller S&P 500), notera A/D-linjens treårstrend mot indexets. Ny topp i indexet — ny topp i A/D? Räkna sedan hur många av dina innehav som slår indexet senaste kvartalet. Om indexet stiger, A/D faller och dina aktier ligger under indexet: skriv en mening om vilket våningsskal du befinner dig på — och var du borde börja åtgärda."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är top-down-ordningen marknad–sektor–aktie?",
+          "alternativ": [
+            "Därför att aktier alltid följer indexet exakt",
+            "Därför att en aktie kan överlista sitt index i veckor men nästan aldrig i kvartal — motståndet ovanifrån är tyngst",
+            "Därför att sektorer inte påverkar aktier",
+            "Därför att börsen kräver den ordningen"
+          ],
+          "ratt": 1,
+          "tips": "Tre våningar av motstånd och stöd — vilken är tyngst?"
+        },
+        {
+          "q": "Vad varnar en bearisk divergens mellan index och A/D-linje för?",
+            "alternativ": [
+            "Att räntorna snart faller",
+            "Att volymen ökat kraftigt",
+            "Att indexet är underprisat",
+            "Att rallyt är smalt — indexet stiger på få jättar och breda marknaden deltar inte"
+          ],
+          "ratt": 3,
+          "tips": "Bredd är deltagande: vad betyder det när priset går upp utan folket?"
+        },
+        {
+          "q": "Vad lade ETF:erna (andra upplagans tillägg) till praktiken?",
+          "alternativ": [
+            "Nya indikatorer",
+            "Handlingsbarhet på marknads- och sektornivå — top-down utan att välja aktier",
+            "Djupare fundamental analys",
+            "Garanterad avkastning"
+          ],
+          "ratt": 1,
+          "tips": "ETF:er gör varje nivå i top-down-trappan till ett handelsbart objekt."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Relativ styrka och sektorsrotation — var pengarna står",
+      "intro": "Nu bokens första unika kapitel — det som skiljer The Visual Investor från nästan varannan introduktionsbok i teknik. Relativ styrka-linjen och sektorsrotationen är Murphys specialité (hela boken Intermarket Analysis växte ur den): sluta fråga 'stiger aktien?' — fråga 'stiger den MER än alternativet?'",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Relativ styrka (RS) är teknikens mest underskattade verktyg därför att det inte mäter pris utan PRESTANDA. Konstruktionen: dividera aktien med indexet och rita kvoten som egen linje. Stigande RS-linje = aktien slår indexet — även på en nedgångsdag som faller MINDE. Fallande RS-linje = aktien släpar. Murphys användning är tredelad och kompromisslös: jämför sektorn med indexet; jämför aktien med sektorn; jämför aktien med indexet. Tre linjer, en trappa. I en baisse behöver du inte blanka — du roterar till sektorer vars RS-linjer fortfarande stiger (eller till de defensiva); i en hausse köper du de starkaste RS-sektorerna, inte de billigaste berättelserna. Linjens RIKTNING är informationen; nivån är det inte."
+        },
+        {
+          "type": "text",
+          "content": "Rotationens logik är konjunkturcykeln — och nyckeln är att marknaden prissätter NÄSTA fas, inte den nuvarande. Den klassiska modellen (från S&P-skolan, främjad av Sam Stovall, av Murphy gjord visuell) i korthet: tidig cykel — räntor låga, konjunkturen vänder: diskretionär konsumtion, finans, kapitalvaror, teknik leder; sen cykel — inflation och räntor stiger: energi och material tar stafettpinnen; avmattning — defensiva sektorer (stapelvaror, hälsovård, utilities) med stabila kassaflöden. Andra upplagans ETF-värld gör rotationen exekverbar: sektor-ETF:er (SPDR-familjen) låter dig äga ROTATIONEN utan att plocka enskilda aktier i den. Murphys varning består: rotationen är en karta, inte ett urverk — sektorns RS-linje är det tidiga tecknet, cykelmodellen är förklaringen EFTERÅT."
+        },
+        {
+          "type": "text",
+          "content": "För AKM1-analytikern är det här kapitlet en översättningstabell: marknaden röstar om V01 Försäljningstillväxt I FÖRVÄG. En sektor vars RS börjar stiga medan V04 (P/S) för sektorn expanderar är en sektor där marknaden börjar betala för kommande tillväxt — ofta månader innan intäktsaccelerationen syns i rapporterna. Värmekartan plus RS-ranking är därför fundamentalanalytikerns marknadskarta: VAR betalar marknaden upp? Vilka sektorer får multipelutvidgning med V07-stöd (bättrande bruttomarginaler)? Sektorsbyten — när pengarna flyttar familjer — är de största och långsammaste flödena i börsens ekologi, och de syns i volymen först (kapitel 7) och i kurserna sedan. AKM1-BRYGGAN · V01 tillväxt + V04 P/S — rotationen är V01-röstning i förväg; rotera mot sektorer där V04 expanderar med V07-stöd. AK1TS-RAD: Medellång/Lång-horisonterna; Volym-teorin som bekräftelse (pengarna röstar med volym); Brytpunkt då en sektors RS-linje vänder."
+        },
+        {
+          "type": "insikt",
+          "content": "Relativ styrka är inte en kurs — det är en kurs JÄMFÖRD. Frågan är aldrig 'stiger aktien?' utan 'stiger den mer än alternativet?'. Det är den frågan varje portfölj egentligen svarar på, varje dag, oavsett om analytikern ställer den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Rotationscykeln — tre faser och deras sektorer\",\"rader\":[[\"Fas\",\"Konjunkturläge\",\"Ledar-sektorer\"],[\"Tidig cykel\",\"räntor låga, aktiviteten vänder\",\"diskretionär konsumtion, finans, kapitalvaror, teknik\"],[\"Sen cykel\",\"inflation och räntor stiger\",\"energi, material\"],[\"Avmattning\",\"tillväxten mattas\",\"stapelvaror, hälsovård, utilities (defensiva)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "RS-trappan: gör en tabell med dina fem innehav. Kolumn ett: aktie ÷ index, tre månaders trend (stigande/fallande RS). Kolumn två: sektorns ÷ indexet samma period. Kolumn tre: aktie ÷ sektor. Diagnosen enligt trappan: aktie under sektor under index = dubbelt problem; aktie över sektor under index = sektorproblem; aktie över sektor över index = rätt hus. Skriv ett påstående per innehav om vad trappan säger — och jämför med din AKM1-total."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar en stigande RS-linje?",
+            "alternativ": [
+            "Att aktien stigit mer än något fast tal",
+            "Att aktien har hög direktavkastning",
+            "Att aktien slår indexet — stiger mer, eller faller mindre",
+            "Att volymen ökat"
+          ],
+          "ratt": 2,
+          "tips": "RS är en kvot mot indexet — det mäter prestanda, inte prisnivå."
+        },
+        {
+          "q": "Vad är rotationsprincipens kärna?",
+          "alternativ": [
+            "Att marknaden prissätter den NÄSTA konjunkturfasen — inte den nuvarande",
+            "Att alla sektorer alltid rör sig tillsammans",
+            "Att man ska äga den billigaste sektorn",
+            "Att rotation sker exakt varje fjärde år"
+          ],
+          "ratt": 0,
+          "tips": "Därför leder diskretionär konsumtion när det fortfarande känns som recessionsbotten — marknaden lever i förväg."
+        },
+        {
+          "q": "Vilka sektorer klassas som defensiva i rotationsmodellen?",
+          "alternativ": [
+            "Teknik och finans",
+            "Energi och material",
+            "Stapelvaror, hälsovård och utilities",
+            "Diskretionär konsumtion och kapitalvaror"
+          ],
+          "ratt": 2,
+          "tips": "Defensivt = efterfrågan som inte skjuts upp när hushållen drar åt: mat, hälsa, el."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Intermarket — obligationer, dollar, råvaror, aktier",
+      "intro": "Bokens andra unika kapitel — och det som Murphy senare skulle ägna en hel bok (Intermarket Analysis, 2004). Fyra marknader, en kedja, och en kris som skrev om sambanden: dollar, råvaror, obligationer, aktier. För AKM1-analytikern är detta väderprognosen till varje analys: räntan är V10:s kostnadssida, råvarorna är V07:s inputsida.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den normala kedjan, inflationens berättelse: fallande dollar → stigande råvaror (de är prissatta i dollar — svag dollar gör dem dyrare för alla) → stigande inflationtryck → fallande obligationspriser (stigande räntor) → press på aktiernas P/E (högre diskonteringsränta och osäkerhet). Varje led reagerar på föregående med fördröjning; Murphys verktyg är inte ekvationer utan GRAFER: rita dollarindex, råvaruindex (CRB), obligationskurvor och aktieindex under varandra och KEDJAN SYNs. Det är bokens titel förtjänt: intermarket-analys i Murphys tappning är visuell — fyra linjer, en berättelse, inga formler."
+        },
+        {
+          "type": "text",
+          "content": "Men samband är inte lagar — de byter regime, och Murphy var först med att dokumentera det största skiftet. Före 1997 rörde sig aktier och obligationer POSITIVT korrelerade (gemensam fiende: inflationen). Efter den asiatiska krisen 1997–98 — Ryssland, LTCM — vaknade deflationsrisken, och samspelet vände: obligationsrally blev ofta en flykt som betydde DÅLIGA nyheter för aktier; korrelationen blev negativ. Murphy följde upp med Intermarket Analysis (2004). Lärdomen för AK1A: intermarket-kedjans tecken är variabler, inte konstanter — identifiera regimen (inflation eller deflation som hot) före du läser kedjan. Det är samma lärdom som regimeskiften i AK1TS: verktyget är konstant, tolkningen är regimeskörd."
+        },
+        {
+          "type": "text",
+          "content": "2008 — krisen som skrev om andra upplagan. Sommaren 2008: oljan vid 147 dollar, råvarueufori. December 2008: olja under 35 dollar. Aktier föll över hela linjen (S&P 500 tappade cirka 57 procent från oktober 2007 till mars 2009), råvaror föll, krediter föll — och som steg? Dollarn och amerikanska statsobligationer: den klassiska deflationschocken, där alla risktillgångar säljs mot säkerhet och valutan. Murphys poäng är dubbel: oljan är intermarket-termometern (stigande olja = skatt på konsumenten; transport och flyg lidande, energi gynnat) — och i en riktig kris går korrelationerna mot ett: diversifiering inom risktillgångar är en illusion precis när den behövs som mest. För labbets olje-analys: terminkurvan (contango — framtida priser över spot, överflöd; backwardation — framtida under, knapphet) är råvarumarknadens EGEN text, den intermarket-rad som kompletterar spotgrafen och som Murphy-skolans råvaruläsning alltid lägger bredvid den."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V10 Skuldsättningsgrad — räntan är V10:s kostnadssida: obligationsmarknaden prissätter den, och belåade bolag (låg V10-poäng) är de första att känna en ränteomvändning. V07 Bruttomarginal — dollar och råvaror är inputpriserna: svag dollar + stigande råvaror pressar V07 i råvaruköpende bolag LÅNGT före det syns i kvartalssiffrorna. AK1TS-RAD: Mega/Lång-horisonterna + Tid-dimensionen — kedjorna rullar i sekvens och varje led har fördröjning; i portföljsammanhang är intermarket-vädret taket för risktagande (kapitel 10). Ingen aktie är en ö — och ingen marknad heller."
+        },
+        {
+          "type": "insikt",
+          "content": "Dollarn rör råvarorna, råvarorna rör räntan, räntan rör multinivån på din aktie. Du behöver inte handla alla led — men du måste veta vilka som blåser. Och kom ihåg: sambanden byter tecken med regimen: inflation och deflation är två olika filmer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Normala intermarket-samband — och vad som hände 2008\",\"rader\":[[\"Samband (normalregim)\",\"Mekanism\",\"2008 (deflationschock)\"],[\"Fallande dollar → stigande råvaror\",\"råvaror prissatta i dollar\",\"dollarn STEG — råvaror föll (inversen höll)\"],[\"Stigande råvaror → fallande obligationer\",\"inflation → räntor upp\",\"råvaror föll med allt annat\"],[\"Fallande obligationer → press på aktie-P/E\",\"diskonteringsräntan\",\"obligationer STEG — flykten; aktier föll ändå\"],[\"Aktier och obligationer\",\"positivt före 1997; ofta negativt efter (deflationsregim)\",\"båda: flykten till säkerhet — obligationer upp, aktier utför\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Dagens intermarket-koll: ta tre månaders trend för dollarindex, oljepris, tioårig statslåneränta och ditt aktieindex. Rita fyra pilar (upp/ner/platt). Stämmer den normala kedjan, eller ser du ett regimebrott? Skriv två meningar: en om vad väderstämmingen betyder för V10 (skuldkänsliga bolag i din lista) och en för V07 (råvarukänsliga). Upprepa en gång i månaden — det är den visuella investerarens väderjournal."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den normala kedjan fallande dollar → ...?",
+          "alternativ": [
+            "Fallande råvaror → fallande inflation → stigande aktier",
+            "Stigande råvaror → stigande inflation → fallande obligationer → press på aktie-P/E",
+            "Fallande räntor direkt",
+            "Ingen kedja — marknaderna är oberoende"
+          ],
+          "ratt": 1,
+          "tips": "Råvaror prissatta i dollar; inflation är obligationsmarknadens fiende; P/E andas med räntan."
+        },
+        {
+          "q": "Varför bytte samspelet aktier–obligationer efter 1997–98?",
+          "alternativ": [
+            "Därför att börsen stängde ett kvartal",
+            "Deflationsrisken vaknade (asiatiska krisen) — obligationsrally blev en flyktsignal, korrelationen vände negativ",
+            "Därför att obligationer avskaffades",
+            "Därför att dollarn blev guldmyntfot"
+          ],
+          "ratt": 1,
+          "tips": "För 1997 var gemensam fiende inflation; efter blev hotet deflation — två olika filmer."
+        },
+        {
+          "q": "Vad kännetecknade deflationschocken 2008?",
+          "alternativ": [
+            "Oljan vid 147 dollar sommaren; allt av risktillgångar föll tillsammans hösten; dollar och statsobligationer steg",
+            "Aktier steg medan råvaror föll",
+            "Dollarn föll och obligationer föll",
+            "Ingenting hände på tvärsmarknaderna"
+          ],
+          "ratt": 0,
+          "tips": "Krisens signatur: korrelationerna går mot ett — alla säljer allt mot säkerhet."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Diagram-praktik för fundamentalanalytikern — grafen som AK1TS-tola",
+      "intro": "Bokens sista del sätter ihop allt — och kursen översätter den till AK1A:s vardag: grafen som tola, tullstationen som varje affär passerar. Här möts Murphys checklista, AKM1:s tjugo variabler, AK1TS-motorn och Vågfundamentet i en enda arbetsordning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tola-bilden, formulerad för labbet: en tola är en tullstation — ett port genom vilket allt måste passera och betala sin tull i form av svar. Grafen är aktieanalysens tola: varje affärsidé, varje AKM1-beräkning, varje katalysatorhypotes ska passera diagrammet och svara på sju frågor innan den blir en position. Murphys egen checklista (från bokens avslutande kapitel) i AK1A-översättning: ett — trendriktning på veckograf (kapitel 2). Två — pris mot 200-dagarskungslinjen: regim (kapitel 6). Tre — närmaste stöd- och motståndszoner (kapitel 3). Fyra — volymkaraktär: bekräftar eller dementerar (kapitel 7). Fem — momentum och divergens (kapitel 8). Sex — relativ styrka mot sektor och index (kapitel 11). Sju — intermarket-vädret (kapitel 12). Svar JA på de tre första är MINIMUM för en lång position; de fyra sista graderar och varnar."
+        },
+        {
+          "type": "text",
+          "content": "Arbetsfördelningen, ärligt formulerad — kursens viktigaste tabell är principen, inte verktygen: AKM1 säger VAD (värde, kvalitet, risk — tjugo variabler, noll till fem, en människas strukturerade omdöme). Grafen säger NÄR och VAR NÄRA (regim, nivåer, stopp, tidigast möjliga varning). AK1TS säger HUR MÄTT (samma data → samma 25 celler, deterministiskt). Vågfundamentet säger HUR JÄMFÖRT (fundamentalvåg mot prisvåg — AK1TS-korsningen). Ingen av de fyra kan ersätta de andra: chartisten utan fundamentala siffror är kosmetik, fundamentalisten utan graf är blind på timing och stopp — han som har rätt på år men ruinerad på kvartal har tekniskt sett haft fel hela vägen. Grafens största gåva till AKM1-analytikern är just det bokslutet inte kan ge: en definierad plats där analysen är FEL — stoppet."
+        },
+        {
+          "type": "text",
+          "content": "Praktikrutinen, fem minuter per aktie, presenteras som kursens standardverktyg: ett — veckografen: trendriktning och Lång-horisontens sammanhang. Två — dagsgrafen: MA50/MA200-läget (regim), stöd/motståndzonerna (nivåerna). Tre — volym och OBV-trend: bränslet (bekräftar eller varnar). Fyra — RSI mot senaste toppar: divergens (varningen). Fem — RS-linjen mot sektor och index: huset och gatan. Inträdet: bas vid stöd i upptrend, gärna med candlestick-bekräftelse (kapitel 9) — för den som vill finslipa. Utträdet, skrivet vid köpet: trendlinje FÖRLORAD + stödzon FÖRLORAD + MA50 BRUTEN = tre triggers; en ensam trigger varnar, två aktiverar granskning, tre avslutar. Stopp i pris är grafens unika bidrag — AKM1 mäter risken i fundamentals, grafen gör den mätbar i kronor."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01–V20 — ALLA tjugo passerar tolan; den affärsidé som inte vågar diagrammet är inte en affärsidé utan en förhoppning. AK1TS-RAD: hela 25-cellersmatrisen — fem horisonter, fem teorier; tolan läser cellerna, inte känslor. Kursens formulering att memorera: AKM1 är VAD, grafen är NÄR, AK1TS är HUR MÄTT, Vågfundamentet är JÄMFÖRELSEN — och ingen affär där öga och motor säger emot varandra utan skriftlig förklaring."
+        },
+        {
+          "type": "insikt",
+          "content": "Fundamentalisten frågar vad något är värt; chartisten frågar vad marknaden gör åt det. Den kompletta investeraren ställer båda — och låter grafen sätta stoppet som siffrorna inte kan. En rätt analys utan exit-definition är en halv analys: det är tolan som gör den hel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den visuella checklistan — sju frågor före varje affär\",\"rader\":[[\"Nr\",\"Fråga\",\"Verktyg\",\"Kapitel\"],[\"1\",\"Vilken riktning på veckografen?\",\"trend — högre toppar/lågpunkter\",\"2\"],[\"2\",\"Pris över stigande 200-dagars?\",\"kungslinjen (motorn: MA200)\",\"6\"],[\"3\",\"Var är närmaste stöd- och motståndszon?\",\"nivåkarta\",\"3\"],[\"4\",\"Bekräftar volymen bilden?\",\"OBV, vol20/vol90\",\"7\"],[\"5\",\"Finns momentum-divergens?\",\"RSI mot toppar\",\"8\"],[\"6\",\"Slår aktien sin sektor? Slår sektorn indexet?\",\"RS-linjer\",\"11\"],[\"7\",\"Vad säger intermarket-vädret?\",\"dollar, räntor, råvaror\",\"12\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Tola-passet: kör de sju frågorna på ett befintligt innehav — ja/nej per rad, med nivåer angivna. Om du fick mer än två nej: skriv en halvsida om vad du egentligen äger. Kör detsamma på din nästa köpkandidat och lägg AKM1-totalen bredvid: där AKM1-poängen är hög men tolan säger nej har du den mest värdefulla konflikt kursen kan producera — dokumentera den och avgör med skälen på bordet."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder bilden grafen som tola?",
+          "alternativ": [
+            "Att grafen ska förutsäga kursen",
+            "Att varje affärsidé måste passera diagrammet och svara på checklistans frågor innan den blir en position",
+            "Att AKM1 ska ersättas av diagram",
+            "Att tolan är en indikator"
+          ],
+          "ratt": 1,
+          "tips": "Tola = tullstation: allt passerar, allt betalar — i form av svar."
+        },
+        {
+          "q": "Vad är arbetsfördelningen AKM1 mot grafen?",
+          "alternativ": [
+            "AKM1 säger NÄR, grafen säger VAD",
+            "AKM1 säger VAD (värde och kvalitet); grafen säger NÄR och VAR NÄRA (regim, nivåer, stopp)",
+            "Båda säger samma sak",
+            "Grafen gör AKM1 onödig"
+          ],
+          "ratt": 1,
+          "tips": "Den som har rätt på år men ruinerad på kvartal har tekniskt haft fel hela vägen — VAD och NÄR är olika frågor."
+        },
+        {
+          "q": "Vad är grafens unika bidrag som bokslutet inte kan ge?",
+            "alternativ": [
+            "Värderingsmultiplar",
+            "Utdelningshistorik",
+            "En definierad plats där analysen är fel — stoppet i pris",
+            "Konkurrentanalys"
+          ],
+          "ratt": 2,
+          "tips": "AKM1 mäter risk i fundamentals; grafen gör risken mätbar i kronor — vid en specifik kursnivå."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Kontroversen — brusets mönster? EMH, random walk och Murphys svar",
+      "intro": "Teknikens äldsta och hårdaste angrepp: att mönstren är illusioner, att prishistorien är diskonterad och att allt du lärt i kapitel 2 till 12 är ansikten i moln. Kursen ger motståndarna hela talarstolen — Bachelier, Fama, Malkiel — låter Andrew Lo medla — och landar i den slutsats som gör AK1TS möjligt: grafen är en datayta, inte spådom; därför determinism.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelsen, med sina bästa advokater. Louis Bachelier (1900) visade matematiskt att prisförändringar kan beskrivas som en random walk — slumpens steg. Eugene Famas Efficient Market Hypothesis (Efficient Capital Markets, 1970) gav doktrinen sin form, och för teknikern är det SVAGA formen som är spetsen: all information i prisHISTORIEN är redan diskonterad i priset — att studera det förflutna är att läsa gårdagens Newspaper. Burton Malkiel (A Random Walk Down Wall Street, 1973 — med egen kurs i den här katalogen, som äger argumentet fullt ut) levererade bilderna som fastnat: chartistens mönster är perceptioner i molnen, blotsprojektioner av ögat; och det teoretiska dödshugget: OM ett enkelt mönster verkligen förutsade, skulle alla se det, alla handla det — och därmed ARBITRERA BORT det i samma sekund det syntes. Teknikens popularitet är i det perspektivet inte bevis utan baksida: ju fler som ritar samma huvud-och-skuldror, desto mindre kan det vara värt."
+        },
+        {
+          "type": "text",
+          "content": "Medlaren heter Andrew Lo, och hans bidrag är dubbelt. Adaptiva marknadshypotesen (artikel 2004; boken Adaptive Markets 2017): marknader är inte ekvationer utan EKOLOGIER — aktörer med begränsad rationalitet, heuristiker som fungerar i vissa miljöer och sviker i andra; effektivitet är GRADVIS och SITUATIONSBEROENDE. Rädsla och girighet cyklar, och under cykeln kan mönster FÖREKOMMA — upptäckas, utnyttjas, arbitreras bort, återfödas. Det är en mellanställning som tar båda skolorna på allvar: EMH har rätt om att kanten eroderar; teknikerna har rätt om att kanten kan finnas. Och avgörande nog empiriskt: Lo, Mamaysky och Wang (Foundations of Technical Analysis, Journal of Finance, 2000) lät formella mönsterigenkänningsalgoritmer (immuna mot mänsklig suggestion) löpa över amerikanska aktier och fann STATISTISKT SIGNIFIKANT informationsinnehåll i flera klassiska formationer — information, inte profetia, men definitivt inte rent brus. (Senare korroboration, efter Murphys bok: Moskowitz, Ooi och Pedersen, Time Series Momentum, 2012 — trender i 58 marknader över fyra decennier: prishistoriken bär signal, systematiskt.)"
+        },
+        {
+          "type": "text",
+          "content": "Murphys svar är praktikerns, inte akademikerns — och det är starkare än det låter. Ett: han pekar på grafen. 1982–2000, 2003–2007, 2009 — upptrender som varje öga ser, åratal långa, över hela världens marknader; en random walk av den längden är inte omöjlig men inte heller det mest sparsamma förklaringsalternativet. Två: verktygen är ENKLA, GAMLA och PUBLICERADE — trendlinjer och 200-dagarsmedelvärdet har funnits i årtionden, öppet, i varje lärobok; det finns inget hemligt att arbitrera bort, och ändå lever de. Tre: priset är handling, inte åsikt — varje transaktion är ett beslut med pengar bakom; att informationen SKULLE vara utan innehåll är en starkare påstående än att den innehåller brus. Fyra, och för kursen viktigast: RISKKONTROLLEN. Grafen ger exit-definition — även en prognos med svag träffsäkerhet och bra exits slår en prognos med god träffsäkerhet och inga. Murphy skriver inte motartiklar till Fama; hans motargument är det fungerande yrket och stoppet under linjen."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — med medgivandena först, utan krumbukter. Medgivande ett: mönsterläsning UTAN regler är subjektiv — två chartister, två formationer, och ögat ser vad det förväntas se (pareidolia; kapitel 5:s experiment). Medgivande två: det mesta av teknikens litteratur är anekdoter utan kontrollgrupper, och enskilda mönster i enskilda grafer är precis den typ av bevisning EMH-kritiken avfärdar med rätta. Därför syntesen, kursens kärna: vi mäter DETERMINISTISKT. AK1TS-motorn räknar samma data till samma celler varje gång — MA50/MA200, momentum 5/63/252, volymtrend 20/90, fib-zoner, Lucas-fönster — och när underlaget inte räcker skrivs OSA TT, aldrig gissning. Grafen är en DATAYTA — marknadens komprimerade historik — inte en spådom. Vi använder det visuella där det är starkt (regim, riktning, relativ styrka, nivåer, varningar) och vägrar det där det är svagast (frihandsformationer som profetia). Ögat pekar; motorn räknar; AKM1 dömer. Det är den treled som gör Murphys bok läsvärd i ett EMH-århundrade. AKM1-BRYGGAN · ingen enskild variabel — men alla tjugo tjänar på att priset läses deterministiskt. AK1TS-RAD: determinismkravet självt — motorns konstitution: samma in, samma ut; osatt hellre än gissat."
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är inte om grafer fungerar — frågan är vad du tillåter dem att göra. Som spådom är de brus; som datayta är de marknadens komprimerade historik. Ögat pekar, motorn räknar, modellen dömer — och där det inte finns underlag skrivs osatt, aldrig gissning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre skolor — och AK1A:s rad\",\"rader\":[[\"Skola\",\"Kärna\",\"Belägg\",\"Svaghet\"],[\"EMH (Bachelier 1900, Fama 1970, Malkiel 1973)\",\"prishistorien är diskonterad; mönster är brus\",\"teoretisk elegans; arbitreringens logik\",\"förutsätter perfekt anpassning — ignorerar beteendecykler\"],[\"Adaptiva marknader (Lo 2004/2017)\",\"effektivitet är gradvis; mönster uppstår, utnyttjas, försvinner\",\"Lo–Mamaysky–Wang 2000: formationer har statistiskt innehåll\",\"förutsäger inte VILKA mönster eller hur länge\"],[\"Murphys praktik\",\"trender syns; enkla publicerade verktyg; exits definierar risken\",\"årtionden av yrkesutövning; synliga trender\",\"anekdotisk bevisning; subjektiv mönsterläsning\"],[\"AK1A:s rad\",\"grafen = datayta; deterministisk mätning; osatt hellre än gissning\",\"motorn: samma data → samma celler\",\"ödmjukhet om kantens storlek — dimensionera därefter\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Determinism-testet, kontroversen som experiment: ge en kollega (eller dig själv, med en annan dag) en okänd akties graf och be om 'mönstret' — skriv ner. Gör detsamma på en annan aktie med en annan person. Sammanföll formationerna? Kör sedan samma aktier genom motorns rader (MA50/MA200-läge, vol20/vol90, momentum 5/63/252): fick alla samma svar? Skillnaden mellan öga och motor — olika formationer, identiska celler — är hela kapitlet i ett experiment. Skriv tre rader om vad DU vill lägga beslutet på."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger EMH:s svaga form?",
+          "alternativ": [
+            "Att alla insiderinformation är offentlig",
+            "Att all information i prisHISTORIEN redan är diskonterad i priset — teknisk analys är meningslös",
+            "Att kurser alltid stiger långsiktigt",
+            "Att fundamental analys är förbjuden"
+          ],
+          "ratt": 1,
+          "tips": "Tre former: svag (prishistoria), halvstark (offentlig info), stark (all info) — vilken träffar teknikern?"
+        },
+        {
+          "q": "Vad fann Lo, Mamaysky och Wang (2000)?",
+          "alternativ": [
+            "Att alla formationer är slump",
+            "Att algoritmiskt igenkända klassiska formationer bar statistiskt signifikant information — inte rent brus",
+            "Att moving averages är olagliga",
+            "Att EMH gäller alla tre former"
+          ],
+          "ratt": 1,
+          "tips": "Algoritmerna kan inte se ansikten i moln — och hittade ändå innehåll."
+        },
+        {
+          "q": "Vad är AK1A:s svar på mönsterläsningens subjektivitet?",
+            "alternativ": [
+            "Att förbjuda diagram",
+            "Att lita på erfarna chartisters öga",
+            "Att bara använda candlesticks",
+            "Att mäta deterministiskt — samma data ger alltid samma celler, och osatt skrivs när underlaget inte räcker"
+          ],
+          "ratt": 3,
+          "tips": "Motorn har inget suggestibelt undermedvetet: samma in, samma ut — och tystnad hellre än gissning."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Sammanfattning — den visuella investeraren (syntes AKM1 × AK1TS)",
+      "intro": "Sista kapitlet sätter ihop hela boken till en enda person och ett enda flöde: den visuella investeraren, som ser först och räknar sedan — och aldrig förväxlar bild med bevis. Plus översättningstabellen Murphy → AKM1 → AK1TS och kursens slutprojekt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hela metoden på en sida — den visuella investerarens flöde: ett — VÄDRET: intermarket-kedjan (dollar, råvaror, räntor, aktier; kapitel 12). Två — MARKNADEN: indexets trend och MA200-regim plus bredden (A/D-linjen; kapitel 6 och 10). Tre — SEKTORN: värmekartan och RS-linjen mot indexet (kapitel 11). Fyra — AKTIEN: den sjufrågechecklistan (kapitel 13): trend, kungslinje, nivåer, volym, momentum, RS, intermarket. Fem — KORSMATCHNINGEN: AKM1-totalen (tjugo variabler) och AK1TS-matrisen (tjugofem celler) bredvid — och ingen affär där öga och motor säger emot varandra utan en skriftlig förklaring. Det är hela boken — fem steg, femton kapitel, en A4."
+        },
+        {
+          "type": "text",
+          "content": "Porträttet i sex drag, kursens avslutande karaktär. Ett: hon ser RIKTNING först — trendfrågan före värderingsfrågan, alltid. Två: hon kräver bränsle — en rörelse utan volym är en åsikt. Tre: hon respekterar kungslinjen — 200-dagarsmedelvärdet är hennes regimdefinition, och i labbet motorns. Fyra: hon roterar med relativ styrka — hon äger hus vars gata står sig, inte berättelser vars gata glömmer dem. Fem: hon kollar vädret varje vecka — intermarket före index, index före sektor, sektor före aktie. Sex: hon byter ALDRIG bild mot aritmetik — grafen öppnar frågan, motorn räknar svaret, AKM1 dömer värdet; ögat pekar, formlerna bestämmer, modellen bär ansvaret. Murphy lär ut att se; ekosystemet lär ut att inte behöva lita på blotta ögat."
+        },
+        {
+          "type": "text",
+          "content": "Spåret vidare i katalogen, redigerat: Murphys lärobok Technical Analysis of the Financial Markets (20 kapitel — encyklopedin) för den som vill hela verktygslådan; Nisons Japanese Candlestick Charting för ljusens uppslagsverk; Bulkowskis Encyclopedia of Chart Patterns för mönsterstatistiken; Edwards & Magee för anatomin; Random Walk-kursen för motståndarens fulla argument; Vågfundamentet för syntesen variabler-som-tidsserier; och AKM1-kursen för domen. Murphys bok är dörren in — de andra är rummen. Och den sista formuleringen, värd att skriva på väggen i verkstaden: GRAFER FÖRE FORMLER — men formler före gissningar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01–V20 — hela modellen: grafen är täljarens historia (V04–V06), volymens golv (V11, V20) och riskens pris (V10, V19 via ränta och emission); de fundamentala variablerna är det innehåll grafen kommenterar. AK1TS-RAD: hela matrisen — fem horisonter, fem teorier, fyra dimensioner; Murphy-kolumnen är Trend (momentum, MA), Pris (nivåer, fib), Tid (Lucas-fönster, linjers längd) och Brytpunkt (linje- och nivåbrott) — bokens fyra frågor är motorns fyra dimensioner. Sista raden, kursens: grafen är tolan, motorn är måttbandet, AKM1 är domen."
+        },
+        {
+          "type": "insikt",
+          "content": "Murphys bok lär dig se; AK1A lär dig räkna det du ser. Den visuella investeraren slutar aldrig titta — men slutar aldrig tro på blotta ögat heller: ögat pekar, motorn mäter, modellen dömer. Grafer före formler — formler före gissningar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Översättningstabellen — Murphy → AKM1 → AK1TS\",\"rader\":[[\"Murphys verktyg\",\"AKM1\",\"AK1TS-rad\"],[\"Trend (högre toppar/lågpunkter)\",\"V01, V12\",\"Trend-dimensionen — momentum 5/63/252\"],[\"200-dagarskungslinjen\",\"V01-trendens motor-version\",\"MA50 klassificerar Mikro/Kort; MA200 Medellång/Lång/Mega\"],[\"Volym och OBV\",\"V11 Likviditet, V20 Återköp\",\"Volym-teorin — vol20/vol90\"],[\"RSI och divergens\",\"V08, V09 — marginalerna som motpart\",\"momentum-raderna + AK1TS-korsningen (Vågfundamentet)\"],[\"Relativ styrka och rotation\",\"V03, V04, V01\",\"Medellång/Lång — sektorns celler\"],[\"Intermarket\",\"V10 (ränta), V07 (inputpriser)\",\"Mega/Lång + Tid-dimensionen\"],[\"Candlesticks\",\"ingen — under AKM1:s upplösning\",\"Mikro × Pris\"],[\"Mönster (formationer)\",\"V16/V18-karaktär\",\"Brytpunkt — ögat pekar, motorn räknar inte formationer\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — den visuella investerarens rullande bokföring: välj tre innehav. Per bolag, en A4: intermarket-pilar (dollar/olja/ränta/index, tre månader), indexets MA200-regim och A/D-trend, sektorns RS mot index, aktiens sjufrågechecklista med nivåer, AKM1-total, AK1TS-cellkontroll (minst Mikro/Medellång/Lång). Datera. Upprepa om en månad — notera vad som förändrats och vad motorn sa båda gångerna. Det dokumentet, hållet levande, är Murphys bok förvandlad från läromedel till process: det är så den visuella investeraren faktiskt lever."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den visuella investerarens arbetsordning?",
+          "alternativ": [
+            "Aktie, sektor, marknad, väder",
+            "Väder (intermarket) → marknad → sektor → aktie → korsmatchning AKM1/AK1TS",
+            "Värdering först, diagram sist",
+            "Slumpad — det spelar ingen roll"
+          ],
+          "ratt": 1,
+          "tips": "Top-down hela vägen: från valuta och ränta ner till cellerna i matrisen."
+        },
+        {
+          "q": "Vad får grafen ALDRIG göra i AK1A:s system?",
+          "alternativ": [
+            "Visa nivåer och stopp",
+            "Definiera regimen via MA200",
+            "Ersätta aritmetiken — ögat pekar, motorn räknar, AKM1 dömer",
+            "Varna genom divergens"
+          ],
+          "ratt": 2,
+          "tips": "Bild öppnar frågan; tal besvarar den; modellen bär ansvaret."
+        },
+        {
+          "q": "Vad gör du när ögat och motorn säger emot varandra?",
+          "alternativ": [
+            "Handla alltid på ögat — det ser helheten",
+            "Handla alltid på motorn — ögat är värdelöst",
+            "Ingen affär utan en skriftlig förklaring av konflikten — avståndet är arbetspunkten",
+            "Vänta tills de stämmer — vilket de alltid gör"
+          ],
+          "ratt": 2,
+          "tips": "Konflikten mellan bild och cell är inte fel — det är platsen där arbetet börjar."
+        }
+      ]
+    }
+  ]
+}

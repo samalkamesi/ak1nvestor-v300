@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blogg`, changeFrequency: "daily", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/kalkylator`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/vagfundament`, changeFrequency: "weekly", priority: 0.9, lastModified: now },
+    { url: `${baseUrl}/portfoljbyggare`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
+    { url: `${baseUrl}/netnet`, changeFrequency: "monthly", priority: 0.8, lastModified: now },
     { url: `${baseUrl}/laroplan`, changeFrequency: "weekly", priority: 1, lastModified: now },
     { url: `${baseUrl}/profil`, changeFrequency: "monthly", priority: 0.9, lastModified: now },
     { url: `${baseUrl}/certifikat`, changeFrequency: "monthly", priority: 0.8, lastModified: now },

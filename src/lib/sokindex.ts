@@ -27,6 +27,7 @@ const STATISKA: SokPost[] = [
   { titel: "AKM1-kalkylatorn", lank: "/kalkylator", kategori: "Verktyg", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20", nycklar: "V01 V02 V03 fundamental variabler kalkylera" },
   { titel: "Vågfundamentet", lank: "/vagfundament", kategori: "Verktyg", ikon: "🌊", beskrivning: "Fundamentalvågor — 20×5-matris per aktie & portfölj", nycklar: "vagfundament fundamentalvagor vagklass indikatorer tidsserie matris impulsvag korrigering basbygge" },
   { titel: "Portföljbyggaren", lank: "/portfoljbyggare", kategori: "Verktyg", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live", nycklar: "portfolj bygg allokering sektor spridning koncentration risk donut" },
+  { titel: "Net-net-skannern", lank: "/netnet", kategori: "Verktyg", ikon: "🔍", beskrivning: "Grahams cigar-butts — NCAV-screening live", nycklar: "netnet ncav cigar butt screening graham billigt under bokvardt" },
   { titel: "Superanalysen", lank: "/superanalys", kategori: "Verktyg", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS", nycklar: "wizard guide 24 steg analysflode" },
   { titel: "Min portfölj", lank: "/min-portfolj", kategori: "Verktyg", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)", nycklar: "portfolj innehav djupanalys matris" },
   { titel: "Analyser", lank: "/analyser", kategori: "Sida", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser", nycklar: "bolag aktie rapport" },

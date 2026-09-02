@@ -1,0 +1,954 @@
+{
+  "slug": "the-acquirers-multiple",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 160,
+  "title": "The Acquirer's Multiple — Tobias Carlisle: KOMPLETT",
+  "summary": "Tobias Carlisle — australiensisk förvärvsjurist, förvaltare och medförfattare till Quantitative Value — publicerade 2018 The Acquirer's Multiple: How the Billionaire Contrarians of Deep Value Are Crushing the Market. Där Quantitative Value byggde en hel komposit av sex multiplar med kvalitetsfilter ovanpå, gör den här boken det motsatta: ett djupdyk i EN enda faktor — EV/EBIT, företagsvärde delat med rörelseresultat, multiplen som en förvärvare av HELA bolaget betalar. Kursen går igenom vad multiplen verkligen mäter och varför P/E ljuger om kapitalstrukturen, earnings yield och takeout-logiken som förklarar varför den fungerar, databasen och backtesten, deep value-mötet med QV och värdefällorna, bokens unika kortsidan — att korta börsens dyraste multiplicar — och CVI-indexet, marknadens värderingsbarometer, insiders och återköp (V20), björnmarknadernas historia, portföljbygget — och kontroversen: Fama-French värdefaktors längsta torka 2007–2020, value-spreadens kollaps, Novy-Marx psykologiska value och AK1A:s ärliga syntes: AKM1 poängsätter V04–V06 men viktat aldrig en enskild faktor tungt — med medgivandet att single-factor-strategier har långa träghetsperioder.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå arvet från Graham via Greenblatts magiska formel till Carlisles djupvärde-tradition — och hur EN multipl blev en hel bok · Räkna ut EV (börsvärde plus skuld minus kassa) och EBIT steg för steg och mappa EV/EBIT mot V06-familjen med förklaring · Se kapitalstrukturens fallgropar i P/E — varför två identiska bolag kan ha P/E 7,9 och 14,3 vid samma EV/EBIT · Förklara varför multiplen fungerar: earnings yield, takeout-logiken och mean reversion (LSV 1994, Fama-French 1995) · Läsa databasen och backtesten — det monotona decilmönstret med ärliga förbehåll · Skilja deep value från quality — när billigt är billigt av en anledning och hur QV:s F-score-rens möter värdefällorna · Korta börsens dyraste aktier i tanken — och förstå varför kortsidan praktiskt är svårare än långsidan · Läsa CVI-indexet som marknadens värderingsbarometer — besläktad med Shillers CAPE och lika farlig som timer · Koppla insiders och återköp till V20 — återköp under låg multipl är value plus katalysator i ett · Placera björnmarknadernas historia och värderingscykeln i en riskmatris · Konstruera portföljen: universumtröskel, rankning, bredd, mekanisk rebalansering · Redogöra ärligt för värdefaktorns död 2007–2020 — value-spreadens kollaps, intangibles-kritiken, Novy-Marx psykologiska value — och bära AK1A:s syntes och medgivande · Syntetisera hela boken till den djupa värdeinvesterarens process i AKM1:s tjugo variabler.",
+  "why": "Det här är djupdyket som Quantitative Value-kursen lovade men inte hann med: där QV breddade sig till sex multiplar och ett kvalitetsfilter, gräver Carlisle 2018 ner sig i den enskilda faktor som QV:s egen forskning fann starkast — EBIT/EV, acquirer's multiple — tills varje pixel är förklarad: vad den mäter, varför den fungerar, när den sviker och vad som händer på den dyra spegelsidan. Kursen är V06-familjens anatomi och samtidigt bokkatalogens enda fullständiga behandling av kortsidan (dyra multiplar, CVI-indexet) och björnmarknadshistorien — och kontroverskapitlet är den ärligaste som finns: värdefaktorns längsta torka i historien inträffade efter bokens publicering, och den som ska lita på en faktor måste först ha räknat med de tretton år den kan förlora. Utan den här boken är EV/EBIT en rad i en screen — med den är den en hel investeringsfilosofi.",
+  "chapters_list": [
+    "1. Little Book-arvet — från Graham via Greenblatt till Carlisle",
+    "2. Vad är acquirer's multiple — EV/EBIT steg för steg (V06)",
+    "3. EV/EBIT mot P/E — kapitalstrukturens fallgropar",
+    "4. Varför den fungerar — earnings yield och takeout-multipeln",
+    "5. Databasen och backtesten — det mekaniska sållar",
+    "6. Deep value mot quality — när billigt är billigt av en anledning",
+    "7. Shortsidan — korta börsens dyraste aktier",
+    "8. CVI-indexet — marknadens värderingsbarometer",
+    "9. Insiders och återköp — kapitalisternas röster (V20)",
+    "10. Bull och bear — värderingscykeln och björnmarknadshistorien",
+    "11. Konstruera portföljen — från screen till trettio positioner",
+    "12. Kontroversen — är värdefaktorn död? (2007–2020)",
+    "13. Sammanfattning — den djupa värdeinvesteraren (V01–V20)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Little Book-arvet — från Graham via Greenblatt till Carlisle",
+      "intro": "Tobias Carlisle är aktieanalytikerns osannolika hjälte: australiensisk förvärvs- och tvistelösningsadvokat som läste Grahams Security Analysis vid rättsbiblioteket, lämnade juristkarriären och grundade Acquirers Funds i Menlo Park. Före The Acquirer's Multiple (2018) skrev han Deep Value (2014) och var medförfattare till Quantitative Value (2012) tillsammans med Wesley Gray. Kursen börjar med arvet som födde multiplens enmansföretag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Släktträdet, citerat öppet. Benjamin Graham lärde ut det statistiska fyndet: köp grupper av bolag som är billiga på enkla mått — net-nets under likvidationsvärde, P/E under tio — och lät bredden, inte briljansen, bära resultatet. Joel Greenblatt tog arvet in i dataåldern med The Little Book That Beats the Market (2005): rangordna hela börsen på två mått — billighet (EBIT/EV) och kvalitet (ROIC) — köp de trettio bästa, håll ett år, upprepa. När Gray och Carlisle i Quantitative Value backtestade magiska formeln mot sina egna byggstenar kom ett av den moderna värdeforskningens viktigaste resultat: den ensamma billighetsrankningen EBIT/EV presterade i linje med eller bättre än hela formeln — kvalitetsbenet bidrog mindre än väntat. Billigheten, inte kombinationen, var motorn."
+        },
+        {
+          "type": "text",
+          "content": "The Acquirer's Multiple är den logiska uppföljningen: en hel bok om EN faktor. Undertiteln — How the Billionaire Contrarians of Deep Value Are Crushing the Market — lovar programmet: multiplen är samma som förvärvare, korporatörer och kapitalister i Carl Icahn-facket använder när de prissätter hela bolag, inte små andelar av dem. Boken definierar multiplen, bevisar varför den fungerar (earnings yield, takeout-logik, mean reversion), testar den i databasen — och gör sedan något de flesta värdeböcker aldrig gör: vänder på spegeln och studerar den dyraste sidan, kortsidan, plus marknadens värderingscykel genom historiens björnmarknader."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot grannkursen är kursens kartbild. Quantitative Value FRÅGAR vilken kombination av sex multiplar plus F-score som bära en portfölj — bredd. The Acquirer's Multiple FRÅGAR vad en enda multipl verkligen mäter, varför den fungerar och när den sviker — djup. Båda böckerna är av samma hus (Carlisle skrev dem båda), men de är komplementära instrument: QV är portföljens orkester, AM är solisten. I AK1A:s värld: QV-kursen byggde V04–V06-kompositen; den här kursen dissekerar den mest robusta medlemmen av V06-familjen — EV/EBIT — tills den inte längre är en skärmsrad utan en filosofi."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera differentieringen innan du går vidare: QV = bredd (sex multiplar i komposit + kvalitetsfilter ovanpå); AM = djup (EN multipl — EV/EBIT — genomljudad inklusive shortsidan och björnmarknadshistorien). QV frågar vilken portfölj som är billigast; AM frågar vad billighet i driftsresultat verkligen betyder."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Släktträdet — fyra generationer statistiskt värde\",\"rader\":[[\"Generation\",\"Bok och år\",\"Kärna\",\"AKM1-koppling\"],[\"1\",\"Graham, The Intelligent Investor (1949)\",\"enkla mekaniska regler, bredd, säkerhetsmarginal\",\"V04–V06:s urfadder\"],[\"2\",\"Greenblatt, The Little Book (2005)\",\"två rankningar: EBIT/EV + ROIC, topp 30\",\"V06-familjen + V09\"],[\"3\",\"Gray–Carlisle, Quantitative Value (2012)\",\"komposit VC1/VC2 + F-score; fann EBIT/EV ensam starkast\",\"V04–V06 + V07–V12\"],[\"4\",\"Carlisle, The Acquirer's Multiple (2018)\",\"djupdyk i EV/EBIT ensam + shortsidan + CVI\",\"V06-familjen djupstuderad\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Granska din egen multipl-hygien: skriv ned vilka värderingsmått du faktiskt använder i din analys i dag — alla, från P/E till EV/EBITDA. Ranka dem efter hur ofta de avgör ditt beslut. Fråga sedan: kan du förklara för en utomstående VAD varje mått mäter och VAD det inte mäter (till exempel vad P/E gör med belåningen)? Varje mått du inte kan förklara på en minut är en mått du använder som trollformel — och den listan är precis vad den här kursen är skriven för att tömma."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken multipl är acquirer's multiple?",
+          "alternativ": [
+            "P/E",
+            "EV/EBIT — företagsvärde delat med rörelseresultat",
+            "P/B",
+            "Direktavkastningen"
+          ],
+          "ratt": 1,
+          "tips": "Namnet kommer från vad en förvärvare av hela bolaget betalar — vilket mått ignorerar kapitalstrukturen?"
+        },
+        {
+          "q": "Vad fann Gray och Carlisles forskning i Quantitative Value om Greenblatts magiska formel?",
+          "alternativ": [
+            "Att formeln var omöjlig att backtesta",
+            "Att kvalitetsbenet ROIC var den starkaste delen",
+            "Att den ensamma billighetsrankningen EBIT/EV presterade i linje med eller bättre än hela formeln",
+            "Att formeln enbart fungerade på banker"
+          ],
+          "ratt": 2,
+          "tips": "Vilket av formelns två ben bar resultatet — billigheten eller kombinationen?"
+        },
+        {
+          "q": "Vad skiljer The Acquirer's Multiple från Quantitative Value som kurser?",
+          "alternativ": [
+            "AM förkastar kvantitativ metod helt",
+            "AM bygger en bredare komposit med fler multiplar",
+            "AM behandlar bara amerikanska mikrobolag",
+            "AM djupdyker i EN faktor — EV/EBIT — och tillägger kortsidan och björnmarknadshistorien som QV-kursen inte behandlar"
+          ],
+          "ratt": 3,
+          "tips": "Bredd mot djup — vilken bok gör vilken sak?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Vad är acquirer's multiple — EV/EBIT steg för steg (V06)",
+      "intro": "Innan något kan förklaras måste det räknas. Det här kapitlet bygger multiplen från grunden: EV — priset på HELA bolaget — och EBIT — rörelseresultatet före finansiering och skatt. Och det gör AKM1-mappningen explicit: V06 heter EV/EBITDA, men EV/EBIT tillhör samma familj — med en avgörande skillnad i behandlingen av avskrivningar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Enterprise value, steg för steg. Börja med börsvärdet — aktiekurs gånger antal aktier, priset på allt eget kapital. Lägg till räntebärande skulder — det kapital som förfaller före aktieägarna. Lägg till preferensaktier och minoritetsintressen om de finns. Dra ifrån kassa och likvida medel — pengar som ligger stilla och som en köpare får som växel direkt vid tillträdet. Summan är EV: det totala priset för att äga hela verksamheten, skulder och allt. Formulerat som en affär: du köper hela bolaget till EV, tar över alla skulder — och får stoppa kassan i fickan. Det är därför multiplen heter acquirer's multiple: det är priset en köpare av HELA bolaget betalar, inte priset på en liten andel av ekviteten."
+        },
+        {
+          "type": "text",
+          "content": "EBIT — earnings before interest and taxes — är rörelseresultatet: vad verksamheten tjänar innan finansieringskostnader och skatt dras av. Tänk på vad som är bortrensat: räntor (kapitalstrukturen — den som köper hela bolaget kan refinansiera hur som helst, alltså ska multiplen vara neutral till hur NUVARANDE ägare finansierat det) och skatt (skattesystemet och jurisdiktionen — samma fabrik i två länder med olika skatteregler ska inte se olika dyr ut). Räkneexempel: bolag med börsvärde 900, skulder 200, kassa 100 → EV = 900 + 200 − 100 = 1000. Rörelseresultatet EBIT är 100. Acquirer's multiple = 1000 / 100 = 10. Lägre är billigare; multiplen inverterad — EBIT/EV = 100/1000 = 10 procent — är earnings yield, kursens kapitel 4."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-mappningen, öppet och exakt. V06 i AKM1:s variabellista är EV/EBITDA — företagsvärde delat med rörelseresultat FÖRE avskrivningar. Bokens EV/EBIT mappas in i V06-FAMILJEN (där QV-kursen redan placerade EV/EBIT, EV/EBITDA, P/E och P/FCF som ömsesidigt bekräftande företags- och ekvitetsmultiplar), med förklaringen som är värd att memorera: EV/EBITDA lägger avskrivningar och nedskrivningar TILLBAKA i resultatet och gör därmed att kapitalintensiva bolag (stål, shipping, telekom) ser billigare ut än de är; EV/EBIT låter avskrivningarna — den grova proxyn för underhållskapitalbehovet — kosta. EV/EBIT är den konservativare systern. Praktisk regel för AKM1-operatören: poängsätt V06 på EV/EBITDA enligt skalan (5 = under 6x, 3 = 8–12x, 1 = över 20x), men läs EV/EBIT bredvid och låt skillnaden mellan dem mäta kapitalintensiteten — stor glipa betyder tunga avskrivningar och kräver en extra blick på om avskrivningarna är ärliga."
+        },
+        {
+          "type": "insikt",
+          "content": "EV/EBIT är den enda multipl som behandlar köparen som en vuxen: den frågar inte vad marknaden betalar per aktie utan vad en köpare av hela verksamheten betalar per enhet driftsresultat — med kapitalstrukturen och skattesystemet utslagna. När du mappar den mot V06: EV/EBITDA för nivån, EV/EBIT för kapitalärligheten, gapet mellan dem för kapitalintensiteten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Räkneexempel — EV/EBIT steg för steg\",\"rader\":[[\"Rad\",\"Poster\",\"Exempel\"],[\"Börsvärde\",\"aktiekurs × antal aktier\",\"900\"],[\"+ Räntebärande skulder\",\"lån, obligationer\",\"200\"],[\"+ Preferens och minoritet\",\"om de finns\",\"0\"],[\"− Kassa och likvida medel\",\"den köpares växel\",\"−100\"],[\"= Enterprise value (EV)\",\"priset på HELA bolaget\",\"1000\"],[\"EBIT\",\"rörelseresultat före ränta och skatt\",\"100\"],[\"Acquirer's multiple\",\"EV / EBIT\",\"10,0\"],[\"Earnings yield\",\"EBIT / EV\",\"10 %\"],[\"AKM1 V06 (jämför)\",\"EV/EBITDA på samma bolag — gapet mäter kapitalintensitet\",\"läses bredvid\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna tre gånger i kväll: välj tre bolag ur ditt bevakningsuniversum — gärna ett med mycket skuld, ett skuldfritt och ett kapitalintensivt. Plocka fram senaste rapporten och räkna EV (börsvärde + räntebärande skuld − kassa), EBIT och EV/EBIT. Räkna sedan P/E och EV/EBITDA på samma tre bolag. Notera i en tabell var måtten mest skiljer sig åt — och formulera i en mening PER BOLAG vilket mått som verkar mest rättvist mot verksamhetens struktur. Det är V06-familjen i praktiken."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur beräknas enterprise value (EV)?",
+          "alternativ": [
+            "Aktiekurs × antal aktier — inget mer",
+            "Börsvärde + räntebärande skulder + preferensaktier/minoritetsintressen − kassa",
+            "Omsättning + EBITDA",
+            "Bokfört eget kapital + kassa"
+          ],
+          "ratt": 1,
+          "tips": "EV är priset för HELA bolaget — vad lägger en köpare till och vad får den tillbaka direkt?"
+        },
+        {
+          "q": "Varför är EBIT — och inte nettoresultatet — rätt täljare för en multipl enligt boken?",
+          "alternativ": [
+            "Därför att EBIT alltid är högre och ser billigare ut",
+            "Därför att nettoresultat är olagligt att använda i USA",
+            "Därför att EBIT ligger före ränta (kapitalstruktur) och skatt (skattesystem) — det mäter verksamheten, inte finansieringen",
+            "Därför att EBIT innehåller utdelningen"
+          ],
+          "ratt": 2,
+          "tips": "Vad ska en köpare av hela verksamheten kunna refinansiera och vad beror på landets skatteregler?"
+        },
+        {
+          "q": "EV/EBIT mappas till AKM1:s V06 trots att V06 heter EV/EBITDA — vad är förklaringen?",
+          "alternativ": [
+            "De är identiska mått med olika namn",
+            "EV/EBIT hör hemma i V04 tillsammans med P/S",
+            "Båda är företagsvärdesmultiplar på driftsresultat i V06-familjen — skillnaden är att EV/EBIT låter avskrivningarna kosta och därmed är konservativare mot kapitalintensiva bolag",
+            "V06 används bara för banker och EV/EBIT för övriga"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med ett stålverk på EV/EBITDA jämfört med EV/EBIT — och vilken av systerna är försiktigast?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "EV/EBIT mot P/E — kapitalstrukturens fallgropar",
+      "intro": "Här är bokens centrala demonstration: varför P/E kan göra ett kraftigt belånat bolag billigt som inte alls är billigt — och tvärtom. Kapitlet bygger den aritmetiska fallgropen med siffror du kan kontrollera på ett papper. Det är kursens viktigaste enskilda lektion i att läsa multiplar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Experimentet: två bolag, A och B, med IDENTISK verksamhet — samma fabrik, samma kunder, samma EBIT på 100. Börsen prissätter dem lika dyrt på verksamhetsnivå: EV 1000, alltså acquirer's multiple 10 för båda. Skillnaden är enbart kapitalstrukturen. A är skuldfritt: hela EV är ekvitet, börsvärde 1000. B är belånat: skuld 800 (åt åtta procent, ränta 64), så ekviteten bara 200. Räkna P/E med trettio procents skatt: A — resultat före skatt 100, netto 70, P/E = 1000/70 = 14,3. B — resultat före skatt = 100 − 64 = 36, netto 25,2, P/E = 200/25,2 = 7,9. Läs det igen: IDENTISKA verksamheter, IDENTISK acquirer's multiple — men P/E uppger B som nästan hälften så billigt."
+        },
+        {
+          "type": "text",
+          "content": "Var är fällan? Belåningen tillverkar P/E-rabatten. B:s läga P/E är inte billighet — det är hävstång: ägarna i B äger en smal, riskfylld remsa överpå en lika stor skuld. Bevisa det med en enda stressfråga: vad händer om EBIT faller fyrtio procent, till 60? A: fortfarande 60 i resultat — väder, inte kris. B: räntan 64 slår ihop hela resultatet — EBT blir minus fyra, aktien är i praktiken utplånad och fordringsägarna tar över. Samma operativa chock: A får en rispa, B dör. P/E såg ingen av denna skillnad — P/E tittar bara på resultat efter ränta, alltså EFTER den hävstång som skapat siffran. Omvänd fällan gäller förresten också: ett skuldfritt bolag med hög P/E kan operativt sett vara billigt — frånvaron av belåning tillverkar ingen rabatt som döljer det."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvenserna för AKM1-operatören, i tre regler. Ett: läs ekvitetens mått (P/E, P/B, direktavkastning) och verksamhetens mått (EV/EBIT, EV/EBITDA) SIDO VID SIDO — gapet dem emellan berättar om kapitalstrukturen, och kapitalstrukturen är V10:s (skuldsättningsgrad) och V11:s (likviditet) bord, inte värderingens. Två: jämför aldrig P/E mellan bolag med olika belåning — det är att jämföra verksamhetens pris med finansieringens hävstång i samma andetag. Tre: aktsamhet med EV/EBITDA-motsatsen: eftersom EV/EBIT låter avskrivningarna kosta är den P/E:s motsats som är som mest rättvis — kapitalstrukturellt neutral (som alla EV-mått) men kapitalintensitetsärlig (till skillnad från EV/EBITDA). Bokens hela poäng i en mening: mät verksamheten och finansieringen var för sig — P/E blånder ihop dem till en siffra som ser ut som billighet."
+        },
+        {
+          "type": "insikt",
+          "content": "P/E är en ekvitetsprodukt; acquirer's multiple är en verksamhetsprodukt. En låg P/E kan vara tre saker — billig verksamhet, kraftig belåning eller båda — och du kan inte avgöra vilken från P/E itself. EV/EBIT rensar bort det ena; V10 får ansvara för det andra."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två identiska bolag — P/E:s blinda öga\",\"rader\":[[\"Rad\",\"Bolag A\",\"Bolag B\"],[\"EBIT\",\"100\",\"100\"],[\"EV\",\"1000\",\"1000\"],[\"Skuld\",\"0\",\"800 à 8 % = ränta 64\"],[\"Börsvärde (ekvitet)\",\"1000\",\"200\"],[\"Resultat före skatt\",\"100\",\"36\"],[\"Nettoresultat (skatt 30 %)\",\"70\",\"25,2\"],[\"P/E\",\"14,3\",\"7,9 — ser nästan hälften så billigt ut\"],[\"Acquirer's multiple\",\"10,0\",\"10,0 — identisk\"],[\"EBIT −40 % (till 60)\",\"överlever med god marginal\",\"ränta 64 slår ihop resultatet — aktien i praktiken utplånad\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kapitalstruktur-jakten: välj en sektor du känner (bygg, retail, telekom — något med blandad belåning). Hitta två bolag med ungefär samma EBIT-marginal men olika skuldsättningsgrad (V10). Räkna deras P/E och EV/EBIT. Fråga: vilket ser billigast på P/E — och försvinner rabatten när du byter till EV/EBIT? Notera slutligen deras V10-poäng. Om P/E-rabatten bodde i belåningen har du just sett kapitlets fallgrop i vilt tillstånd — skriv ner den som en varningsanekdot till ditt framtida jag."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "I kapitlets exempel — två bolag med EBIT 100 och EV 1000, där B har skuld 800 till 8 procent — vad blir P/E för A respektive B (skatt 30 procent)?",
+          "alternativ": [
+            "Båda cirka 10",
+            "A cirka 14,3 och B cirka 7,9 — B ser billigare ut trots identisk verksamhet och identisk EV/EBIT",
+            "A cirka 7,9 och B cirka 14,3",
+            "P/E kan inte beräknas för belåtna bolag"
+          ],
+          "ratt": 1,
+          "tips": "Räkna nettoresultatet först: A får 70, B får 25,2 — och ekviteterna är 1000 respektive 200."
+        },
+        {
+          "q": "Vad händer med bolag B om EBIT faller fyrtio procent?",
+          "alternativ": [
+            "Ingenting — skulden är irrelevant för aktieägarna",
+            "Aktien stiger därför att P/E sjunker",
+            "Räntekostnaden på 64 slår ihop hela resultatet — EBT blir negativt och aktien är i praktiken utplånad",
+            "Bolaget betalar mer utdelning"
+          ],
+          "ratt": 2,
+          "tips": "EBIT 60 mot en fast ränta på 64 — räkna diffen."
+        },
+        {
+          "q": "Vad är kursens huvudregel kring P/E?",
+          "alternativ": [
+            "P/E ska aldrig användas av någon",
+            "P/E ska alltid användas ensamt för att hålla det enkelt",
+            "P/E och EV-mått ska läsas sidovid sida — gapet mellan dem berättar om kapitalstrukturen, som är V10:s och V11:s bord",
+            "P/E fungerar bara på finansbolag"
+          ],
+          "ratt": 2,
+          "tips": "Vem i AKM1 ansvarar för skuldsättning — och vad händer om värderingsmåttet blandar in den?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 13,
+      "title": "Varför den fungerar — earnings yield och takeout-multipeln",
+      "intro": "Att ett mått historiskt korrelerar med avkastning är inte en förklaring — det är ett mönster. Boken ger multiplen tre ben att stå på: earnings yield (avkastningslogiken), takeout-multipeln (förvärvsarvet) och mean reversion (beteendemaskineriet). Tillsammans är de svaret på varför en enkel multipl kan bära en hel strategi.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ben ett: earnings yield. Vänd multiplen upp och ned: EBIT delat med EV är vad verksamheten tjänar per år i förhållande till priset på allt kapital — en avkastning före ränta och skatt. Acquirer's multiple 10 motsvarar earnings yield på tio procent; multiple 8 motsvarar tolv och ett halvt procent. Jämför med alternativkostnaden — en statsobligation eller en investeringsgradig obligation — och marginalen framträder: att köpa en verksamhet till tio procents företagsavkastning när den riskfria räntan är två eller tre procent är att köpa en bred driftsmässig säkerhetsmarginal. Ju högre yield, desto mer måste gå fel innan köpet blir dåligt. Det är Grahams säkerhetsmarginal omräknad i en enda division — och anledningen till att AKM1:s V06-skala är just en multipel-trappa (5 = under 6x): låg multipl är hög marginal."
+        },
+        {
+          "type": "text",
+          "content": "Ben två: takeout-multipeln. Namnet är ingen metafor — det är bokstavligen multiplen som en strategisk köpare eller en kapitalist i Carl Icahn-facket räknar på när de värderar ett HELT bolag: vad kostar verksamheten (EV) i förhållande till vad den tjänar före finansiering (EBIT)? Förvärvare värderar på det sättet därför att de ska byta ut kapitalstrukturen, ta ut synerier eller styra om kassaflödet — räntor och skatt är deras beslut, inte givna. Konsekvensen för den lille investeraren: köper du under den multipl som förvärvare betalar för jämförbara verksamheter har du en inbyggd tredjepartsköpare — en tjockare säkerhetsmarginal än börsens eget humör. En aktie som handlas till acquirer's multiple 6 när branschens förvärv prissatts runt 9–10 är billig på ett sätt som inte beror på att börsen snart ska bli klok — den är billig mot en verklig budgivare."
+        },
+        {
+          "type": "text",
+          "content": "Ben tre: mean reversion — beteendemaskineriet, med forskningen öppet citerad. Lakonishok, Shleifer och Vishny (Contrarian Investment, Extrapolation, and Risk, 1994) visade att marknaden extrapolerar: billiga bolag prissätts som om deras dåliga år ska fortsätta för alltid, dyra som om deras goda år ska fortsätta för alltid — och att båda förväntningarna systematiskt slår fel. Billiga bolags EBIT återhämtar; Fama och French (1995) beskrev mekanismen: billiga bolag är ofta temporärt distressed, och det är just återhämtningen som betalar premien. Varför försvinner inte kanten? Därför att den beteendemässiga mekanismen är mänsklig och strukturell: att äga framtidslösa, cykliska, förhatliga bolag är karriärriskigt för institutioner och tråkigt för alla — extrapolationsfelet har en social kostnad som inte armeras ur av att en artikel skrivs om den. Det är samma argument som QV-kursen byggde kompositens legitimitet på; här bärs det av en enda multipl."
+        },
+        {
+          "type": "insikt",
+          "content": "Byt fråga. Fråga inte kommer aktien att stiga? — fråga vad en köpare av HELA bolaget skulle betala, och vad börsen tar idag. Om svaret är en takeout-multiple på 9 mot börsens 6, plus en earnings yield på tolv procent, plus en marknad som extrapolerar bolagets sämsta år i evighet — då har du tre oberoende skäl, och inget av dem heter magkänsla."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre ben — varför EV/EBIT fungerar\",\"rader\":[[\"Ben\",\"Mekanism\",\"Forskning/tradition\",\"AKM1-koppling\"],[\"Earnings yield\",\"EBIT/EV = avkastning på hela kapitalet; högre yield = bredare marginal mot alternativkostnaden\",\"Grahams säkerhetsmarginal omräknad\",\"V06-skalan: 5 = under 6x\"],[\"Takeout-multipel\",\"multiplen en köpare av HELA bolaget betalar; köpa under takeout-nivå = inbyggd tredjepartsköpare\",\"förvärvs- och LBO-traditionen, Icahn-typens kapitalister\",\"V06 + V18-karaktär (bud/katalysator)\"],[\"Mean reversion\",\"marknaden extrapolerar — billiga bolags EBIT återhämtar, dyra misslyckas att leverera\",\"LSV 1994; Fama-French 1995\",\"V07–V12 (riktning i bokslutet) bekräftar återhämtningen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Tre-frågeprovet: välj din mest misstänkta billigaktie (den som känns smutsig). Räkna dess earnings yield (100 delat med acquirer's multiple). Sök upp de senaste tre förvärven i branschen — vilka EV/EBIT-multiprar betalades? Läs de senaste två årens EBIT-utveckling: faller, planar eller vänder? Skriv domen i tre rader: yield mot alternativkostnad, pris mot takeout-nivå, fundament mot extrapolation. Två gröna ben av tre krävs för att aktien ska få stanna på din köplista till kapitel 11."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är earnings yield för ett bolag med acquirer's multiple 8?",
+          "alternativ": [
+            "8 procent",
+            "12,5 procent — EBIT/EV, alltså 100 delat med 8",
+            "80 procent",
+            "0,8 procent"
+          ],
+          "ratt": 1,
+          "tips": "Vänd multiplen: EBIT delat med EV — det är samma tal upp-och-ned."
+        },
+        {
+          "q": "Varför kallas multiplen just acquirer's multiple?",
+          "alternativ": [
+            "Därför att den uppfanns av en bank vid namn Acquirer",
+            "Därför att den mäter hur många förvärv ett bolag gjort",
+            "Därför att det är multiplen en köpare av HELA bolaget räknar på — EV för hela verksamheten, EBIT före den kapitalstruktur köparen själv väljer",
+            "Därför att den bara gäller vid budbud"
+          ],
+          "ratt": 2,
+          "tips": "Vem värderar hela bolag och inte små andelar — och vilka mått är den personen intresserad av att slå ut?"
+        },
+        {
+          "q": "Vad är den beteendemässiga mekanismen bakom mean reversion enligt kursens citerade forskning (LSV 1994)?",
+          "alternativ": [
+            "Att centralbanker garantierar återhämtning",
+            "Att marknaden extrapolerar — billiga bolag prissätts som om dåliga år fortsätter för alltid, och dyra som om goda år fortsätter för alltid",
+            "Att bokslut alltid är felaktiga",
+            "Att små bolag alltid slår stora"
+          ],
+          "ratt": 1,
+          "tips": "Vilket mänskligt fel gör att gårdagens resultat projiceras rakt in i evigheten?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Databasen och backtesten — det mekaniska sållar",
+      "intro": "Nu beviset. Boken kör multiplen genom databasen: ranka hela börsen på EV/EBIT, dela in i deciler, följ avkastningen årtionde efter årtionde. Mönstret som trillar fram är det mest robusta i hela den kvantitativa värdeforskningen — och det ska läsas med QV-kursens båda händerna på bordet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Metoden, som den ärvs från Quantitative Value och uppdateras i boken: universum är hela amerikanska börsen (finansbolag och utilities exkluderas — deras bokföring och balansräkningar bryter jämförbarheten, samma exclusion som QV-kursen lärde), ADR:er rensas bort, minimikrav på storlek och likviditet sätts för genomförbarhet (V11). Sedan rankas varje aktie på acquirer's multiple och delas in i deciler — de tio procent billigaste till de tio procent dyraste — och portföljerna följs år för år. I QV:s test 1976–2011 gav den ensamma EBIT/EV-rankningen på den billigaste decilen grovt runt sexton procent per år mot cirka elva för S&P 500 — redan bättre än Greenblatts magiska formel på cirka fjorton i samma jämförelse — och bokens uppdaterade tester genom 2010-talet bekräftar mönstret."
+        },
+        {
+          "type": "text",
+          "content": "Det viktigaste resultatet är inte procentsatsen utan MONOTONIN: avkastningen faller decil för decil ju dyrare multiplarna blir — billigast vinner, näst billigast tvåa, och så vidare ända ned till den dyraste decilen, som historiskt underpresterat marknaden kraftigt (grund för kapitel 7). Ett monotont mönster över deciler är ett starkare bevis än en ensam vinnardecil, därför att det visar en sammanhängande relation — pris mot utfall — och inte ett lyckat hörnfynd. Obs också vad databasen säger om normalisering (ärvt från QV): att jämna ut EBIT över flera år förbättrade INTE resultatet — ettåriga, råa mått fungerade utmärkt. Enkelheten är, återigen, inte begränsningen utan kanten."
+        },
+        {
+          "type": "text",
+          "content": "Förbehållen, samma revisorsfrågor som QV-kursen krävde: testen är före avgifter, transaktionskostnader och skatt; datan är amerikansk; strategin krävde järndisciplin under träghetsperioder — värde underpresterade som mest under IT-bubblans sista år när allt utom glansaktier förklarades döda, och kom tillbaka starkt efteråt. En ensamfaktor som backtestar bra på trettiofem år kan förlora mot index i fem år i sträck — det är inte en fotnot, det är kapitel 12:s hela ämne. Men notera också det starka indirekta försvaret (QV-arvet): multiplen var känd och publicerad decennier före och under stora delar av testperioden — p-hacking letar hemliga mönster bakåt, och EV/EBIT var aldrig någon hemlighet."
+        },
+        {
+          "type": "insikt",
+          "content": "Läs backtesten som en trappa, inte en siffra: det monotona fallet decil för decil — billigast vinner, dyrast förlorar, allt där emellan i ordning — är budskapet. En ensam vinnardecil kan vara tur; en trappa genom fyra decennier är en relation mellan pris och utfall."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Backtesten i sammandrag — amerikansk data, före kostnader (grovt, ur QV-testet 1976–2011, i boken uppdaterat)\",\"rader\":[[\"Strategi\",\"Avkastning per år (ca)\",\"Notering\"],[\"Billigaste decilen på EBIT/EV\",\"cirka 16 %\",\"ensamrankning — slog magiska formeln\"],[\"Greenblatts magiska formel\",\"cirka 14 %\",\"billighet + ROIC\"],[\"S&P 500 totalavkastning\",\"cirka 11 %\",\"baseline genom alla väder\"],[\"Dyraste decilen\",\"klart under marknaden\",\"historiskt kraftig underprestering — kapitel 7:s ämne\"],[\"Mönstret\",\"monotont\",\"avkastningen faller decil för decil uppåt i multipl\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Mini-sållar: ta tjugo aktier ur ditt universum (exkludera banker och kraftbolag — notera varför). Ranka dem på acquirer's multiple från kapitel 2. Dela in i fyra kvintiler... nej, fyra grupper om fem. Skriv för varje grupp en rad: vilken typ av bolag hamnar där — bransch, känsla, story? Tittar du på din billigaste grupp: kan du för varje bolag formulera VARFÖR det är billigt i en mening utan att använda ordet tillfälligt? Om inte — bra. Det är precis de bolag vars historia ingen längre orkar berätta som boken köper."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken decil vinner historiskt i bokens och QV:s tester av EV/EBIT-rankningen?",
+          "alternativ": [
+            "Den dyraste — hög multipl signalerar kvalitet",
+            "Den mittersta — säkrast",
+            "Den billigaste — med cirka sexton procent per år i QV:s test 1976–2011 mot cirka elva för index",
+            "Alla deciler ger samma avkastning"
+          ],
+          "ratt": 2,
+          "tips": "Vilken decil köper mest verksamhet per krona EV?"
+        },
+        {
+          "q": "Vad menas med att mönstret är MONOTONT?",
+          "alternativ": [
+            "Att avkastningen är samma i alla deciler",
+            "Att endast en decil slår marknaden och övriga är slump",
+            "Att endast den dyraste decilen är förutsägbar",
+            "Att avkastningen faller jämnt decil för decil uppåt i multipl — billigast vinner, dyrast förlorar, allt där emellan i ordning"
+          ],
+          "ratt": 3,
+          "tips": "En trappa genom decilerna är ett starkare bevis än ett ensamt hörnfynd — varför?"
+        },
+        {
+          "q": "Vilket förbehåll är viktigast att bära med sig från backtestkapitlet?",
+          "alternativ": [
+            "Att testerna endast gällde svenska bolag",
+            "Att testen är före avgifter och kostnader, amerikanskt, och kräver järndisciplin — en ensamfaktor kan underprestera i många år i sträck",
+            "Att EV/EBIT är förbjudet utanför USA",
+            "Att multiplarna normaliserades över tio år i boken"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar en strategi i verkliga livet som inte syns i simuleringen — i kronor och i psyke?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Deep value mot quality — när billigt är billigt av en anledning",
+      "intro": "Här möts kursens två världar: den rena deep value-skärmen som boken representerar och kvalitetsfiltreret som Quantitative Value byggde ovanpå samma data. Frågan är kursens mest praktiska: är billigt nog — eller är billigt ibland bara en dödsnotis till rabatt?",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Deep value-polen, som boken företräder: köp det statistiskt billigaste: cykliska verkstäder i nedgång, okända mellanbolag, förhatliga sektorer, bolag vars analytiker sagt upp bevakningen. Ingen story, ingen vuruhet för kvalitet: multiplerna pratar. Bokens svar på risken att enskilda bolag ruttnar är BREDD: en portfölj på tjugo till fyrtio positioner tål att några få dör — diversifiering, citerar Carlisle gärna, är finansens enda gratis lunch. Fördelen med renlärigheten är att man aldrig betalar premium för komfort: deep value har historiskt slagit quality-value-metoder i rå avkastning, till priset av djupare svängningar och en portfölj som ingen vill prata om på middagsbordet."
+        },
+        {
+          "type": "text",
+          "content": "QV-mötet — när billigt är billigt av en anledning. Quantitative Value lärde (QV-kursen, kapitel 6–8): bland billiga bolag är några på drift nedåt mot konkurs eller strukturell irrelevans — värdefällor. Deras motgift var Piotroskis F-score (nio bokslutskontroller: lönsamhet, kassaflöde, belåning, emissioner, marginaler), Altman Z för konkursrisk, CDS-spreaden och blankarnas positioner för realtidssignaler. Och QV:s test visade att F-score-filtret ovanpå billigheten höjde avkastningen mätbart. Kontrasten i filosofi är därmed skarp: AM-boken säger att billigheten är kanten och att bredden hanterar ruttnet; QV säger att billigheten är kandidaterna och att bokslutets riktning avgör vilka som är värda att äga. Båda har data på sin sida — på olika frågor: AM:s data svarar på varför billigast vinner; QV:s data svarar på vilka av de billiga som överlever att vinna."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-operatörens balansgång — och kursens rekommendation, öppet formulerad. Låt V04–V06 (värderingsblocket, med EV/EBIT i V06-familjen) STYRA urvalet: billighet är motorn, precis som boken lär — kvalitetsfiltret som gör priset dyrt försämrar kantens geometri. Men låt V07–V12 (lönsamhet, kassaflöde, stabilitet) och V10/V11/V19 (skuld, likviditet, emissionrisk) RENSA bort dödsriskerna innan kapital binds: en F-score under fem av nio, en Z-varning eller en förbränningskurva som pekar på emission är inte otillräcklig billighet — det är en annan kategori av aktie. Skillnaden mot QV är att filtret hos AKM1 är en TRÖSKEL, inte en andra rankning: bolaget ska inte vara bäst på kvalitet — det ska inte vara döende. Formulerat i en mening: AM lär var kanten bor; QV lär var den dör; AKM1 äger båda kunskaperna och applicerar den andra först vid tröskeln, inte som ranking."
+        },
+        {
+          "type": "insikt",
+          "content": "En värdefälla är inte en aktie som fallit — det är en aktie som är billig därför att FUNDAMENTET ruttnar medan priset hinner ikapp. Skillnaden syns inte i kursgrafen utan i bokslutets RIKTNING: marginaler, kassaflöde, belåning, aktieantal. Deep value utan den läsningen är lotteri; kvalitet utan billighet är dyrt. Ordningen är icke förhandlingsbar: billighet först, tröskel sedan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Deep value mot quality — tre sätt att äga billighet\",\"rader\":[[\"Ansats\",\"Urval\",\"Styrka\",\"Sårbarhet\"],[\"Ren deep value (boken)\",\"billigast på EV/EBIT, bredd 20–40 positioner\",\"högsta rå avkastning historiskt; enkel, regelstyrd\",\"djupa svängningar; vissa positioner dör — kräver mage och bredd\"],[\"Quality-value (QV)\",\"billig komposit + F-score + Z/M/CDS-rensr\",\"jämnare kurva; färre värdefällor\",\"filtret kostar kant i uppgångar; mer komplext\"],[\"AKM1:s balans\",\"V04–V06 styr, V07–V12 + V10/V11/V19 som TRÖSKEL (rens, inte ranking)\",\"behåller deep values geometri, rensar dödsrisk\",\"kräver disciplin att inte låta kvalitetspoängen bli ett nytt köpskäl\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Fälltestet på ditt sållar: ta de tre billigaste aktierna från kapitel 5:s övning. För varje: plocka fram de två senaste årsredovisningarna och besvara grovt fem F-score-kontroller — positiv ROA? positivt operativt kassaflöde? stigande eller fallande belåning? emitterat aktier? stigande eller fallande brutomarginal? Döm: friskt billigt (majoriteten gröna) eller fälla (majoriteten röda)? Skriv per aktie en mening: om jag äger den här i tre år — vad måste hända för att billigheten ska realiseras, och vad tyder bokslutet på att det håller på att hända?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bokens (deep value-polens) svar på risken att enskilda billiga bolag ruttnar?",
+          "alternativ": [
+            "Att bara köpa bolag med starka moats",
+            "Att noggrant läsa alla prospekt innan köp",
+            "Bredd — portföljer på 20–40 positioner tål att enstaka bolag dör; diversifiering är finansens enda gratis lunch",
+            "Att tajma ut- och instig vid röda bokslut"
+          ],
+          "ratt": 2,
+          "tips": "Vad gör en grupp av statistiska fynd mot ett enskilt haveri?"
+        },
+        {
+          "q": "Vad är en värdefälla enligt kursens definition?",
+          "alternativ": [
+            "En aktie som fallit mer än marknaden",
+            "En aktie med hög direktavkastning",
+            "En aktie som är billig därför att fundamentet ruttnar — bokslutets riktning sjunker medan priset hinner ikapp",
+            "En aktie som saknar analytiker"
+          ],
+          "ratt": 2,
+          "tips": "Var bor skillnaden mellan tillfälligt och permanent billig — i kursen eller i bokslutet?"
+        },
+        {
+          "q": "Hur rekommenderar kursen att AKM1-operatören kombinerar AM och QV?",
+          "alternativ": [
+            "Låt kvalitetspoängen styra urvalet och billigheten bekräfta",
+            "Låt V04–V06 styra urvalet (billighet är motorn) och V07–V12 + V10/V11/V19 verka som en TRÖSKEL som rensar dödsrisker — inte som en andra ranking",
+            "Använd endast deep value och hoppas på bäst",
+            "Vänta tills kvalitet och billighet sammanfaller perfekt i samma bolag"
+          ],
+          "ratt": 1,
+          "tips": "AM lär var kanten bor; QV lär var den dör — vilken logisk ordning ger det?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Shortsidan — korta börsens dyraste aktier",
+      "intro": "Här gör boken det som nästan ingen värdebok gör: tar den dyraste sidan av databasen på fullt allvar. Om den billigaste decilen vinner monotont, vad ska vi göra med kunskapen att den dyraste förlorar? Svaret är inte så enkelt som det låter — och själva svårigheten är kapitlets viktigaste läxa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Faktum först: dyraste decilen på multipl-rankningen underpresterar historiskt marknaden kraftigt — i QV:s och bokens tester inte marginellt utan med bred marginal, ofta med endast enstaka procentsatser i årlig avkastning eller sämre över längre perioder. Mekanismen är spegelbilden av kapitel 4: dyra multiplar är inbakade astronomiska förväntningar — marknaden har extrapolerat bolagets bästa år in i evigheten — och när EBIT också bara återgår till normalen slår misslyckandet hårt mot aktien. Multiplen mäter förväntningar; dyrast = högst förväntningar = längst att falla. Det är samma beteendefel (extrapolationen, LSV 1994) som gör billigast billigt — bara spegelvänt."
+        },
+        {
+          "type": "text",
+          "content": "Men att veta att något underpresterar är inte samma sak som att kunna tjäna på det. Kortsidans praktiska hinder är brutala och boken behandlar dem ärligt: förlusten är OBEGRAÄNSAD (en lång aktie kan som mest gå till noll; en kort kan stiga oändligt), du betalar låneränta och kan få positionen återkallad när den är som mest obekväm, dyra storybolag kan bli dyrare i åratal innan de faller — marknaden, som Keynes varnade, kan förbli irrationell längre än du förblir solvent — och trånga kortpositioner är squeezarnas favoritbyte. Därför är slutsatsen praktisk och nykter: den mest konsekventa användningen av kortsideforskningen är som VARNINGSLISTA och MÅTSTOCK för den som är lång — Carlisles egen förvaltning (Acquirers Fund, i USA noterad med ticker ZIG) är i grunden en långsidig djupvärdesfond byggd på multiplen."
+        },
+        {
+          "type": "text",
+          "content": "Vad lär då kortsidan den som aldrig blankar? Tre saker. Ett: den dyra sidan är måttstocken som gör value spread läsbar — gapet mellan billigaste och dyraste decilens multipl är den premie marknaden betalar för berättelser, och när spreaden är som bredast är den statistiska marginalen på köpsidan som störst (kapitel 8 och 12 bygger vidare på detta). Två: portföljhygien — varje lång position i en aktie med akterligt dyr multipl är ett tyst kortläge i garderoben; vet du om dina egna innehav bor i övre decilerna? Tre: ödmjukhet — den som förstår VARFÖR dyra aktier förlorar (extrapolation, berättelser, karriärrisk) förstår också varför hans egna favoritstorys är farliga. Spegelneurologin i en enda multipl."
+        },
+        {
+          "type": "insikt",
+          "content": "Du behöver aldrig blanka en aktie för att tjäna på kortsideforskningen — men du behöver den för att se hela spelet. Den dyra decilen är inte bara en grupp förlorare: den är måttstocken som gör den billiga mätbar. Fråga varje månad: var bor mina egna innehav på multipl-trappan — och i vilken decil bor den senaste aktien jag blev kär i?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kortsidans hinder — och vad varje hinder lär den som är lång\",\"rader\":[[\"Hinder\",\"Mekanism\",\"Lärdom för långsidan\"],[\"Obegränsad förlust\",\"aktien kan stiga oändligt; endast fallande kurser skyddar\",\"positionsstorlek och stop är överlevnadsfrågor på kortsidan\"],[\"Lånekostnad och recall\",\"du betalar för att låna och kan tvingas återlämna när som helst\",\"kort är en hyrd position, inte en ägd — aldrig en långsiktig tro\"],[\"Timing och squeeze\",\"dyrt kan bli dyrare i åratal; trånga kort är squeeze-magneter\",\"att ha rätt i tid är inte detsamma som att ha rätt alls\"],[\"Användning AK1A\",\"kortlistan som varningslista och måttstock\",\"högsta decilens multipl gör value spread läsbar — och dina egna innehavs decil synlig\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Måtstocksövningen: identifiera de tre dyraste aktierna på EV/EBIT i ditt universum (färdigräknat från kapitel 5). För varje: skriv i en mening VILKEN FÖRVÄNTAN multiplen inbakar — vad måste bolaget leverera i tillväxt eller marginaler i tio år för att motivera priset? Om du inte kan formulera förväntningen är du inte ensam — det är extrapolationens hela poäng. Notera sedan gapet mellan ditt billigaste och dyraste aktie: det är din egen value spread, och den är grunden för kapitel 8."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar bokens och QV:s data om den dyraste decilen på multipl-rankningen?",
+          "alternativ": [
+            "Att den historiskt slår marknaden tydligt",
+            "Att den avkastar exakt som index",
+            "Att den historiskt underpresterar marknaden kraftigt — ofta blott enstaka procent per år eller sämre",
+            "Att datan inte räcker för någon slutsats"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med en aktie vars pris inbakar extrapolerade bästa år — när EBIT återgår till normalen?"
+        },
+        {
+          "q": "Vilket är det praktiskt viktigaste skälet att kortsidan är svårare än långsidan?",
+          "alternativ": [
+            "Kortförsäljning är olagigt i de flesta länder",
+            "Förlusten är obegränsad, du betalar låneränta, kan få aktierna återkallade — och dyra bolag kan bli dyrare i åratal",
+            "Det finns inga dyra bolag att korta",
+            "Blankare betalar dubbel skatt"
+          ],
+          "ratt": 1,
+          "tips": "Vad är den värsta möjliga utfallet för en lång — och för en kort?"
+        },
+        {
+          "q": "Hur använder kursen (och i praktiken Carlisle själv) kortsideforskningen?",
+          "alternativ": [
+            "Som en portfölj med tio korta positioner vid varje rebalansering",
+            "Som varningslista och måttstock för långsidan — den dyra decilen gör value spread läsbar; Carlisles egen fond är i grunden lång",
+            "Som en timer för när värde återvänder",
+            "Som bevis på att alla storyaktier är bedrägerier"
+          ],
+          "ratt": 1,
+          "tips": "Vad är den mest konsekventa användningen av kunskapen att dyra aktier förlorar?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "CVI-indexet — marknadens värderingsbarometer",
+      "intro": "Boken zoomar ut från enskilda aktier till hela marknaden med CVI — Carlisles värderingsindex på marknadsnivå, i släktskap med Shillers cykliskt justerade CAPE. Det är kursens barometerkapitel: hur man läser var i värderingscykeln marknaden befinner sig — och hur man INTE ska använda verktyget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vad CVI är, funktionellt beskrivet: ett sammanvägt värderingsmått för HELA marknaden — besläktat med Robert Shillers CAPE (cyclically adjusted price/earnings, Nobelprisbelönt forskning där dagens pris ställs mot ett långt genomsnitt av reella vinster för att jämna ut konjunkturcykeln) men beräknat och presenterat i Carlisles version i boken. Tanken är densamma som i enskilda aktier, fast upp och ned i skala: istället för att fråga är DENNA aktie billig på EV/EBIT frågar CVI är HELA marknaden dyr eller billig mot sin egen historia? Precis som CAPE gör det genom att mäta pris mot ett cykliskt urvattnat resultatsnitt — så att ett toppkonjunktursår inte ska förklara hela börsen billig eller ett bottenår dyr."
+        },
+        {
+          "type": "text",
+          "content": "Användningen är lång horisont — och det är hela poängen. Högt CVI (marknaden dyr mot historien) har historiskt haft sällskap av LÄGRE förväntad avkastning de följande åren; lågt CVI har föregått högre. Mekanismen är samma earnings yield-logik som i enskilda aktier: köper du hela börsen när den genomsnittliga företagsavkastningen är låg är din marginal tunn vad som än händer med humöret. CVI kopplar också direkt till kapitel 7:s value spread: i krascher och paniker spricker gapet mellan billiga och dyra aktier upp — value spreads widens — och efterkrigstid har historiskt varit deep value-strategins bästa jaktmark, därför att den billigaste decilen då är billigast både absolut och relativt. För en EV/EBIT-förvaltare är CVI alltså inte ett främmande instrument: det är multiplens egna logik tillämpad på indexnivå."
+        },
+        {
+          "type": "text",
+          "content": "Varningen — och den är central i kursen. Värderingsbarometrar som CAPE och CVI har ett ökänt rykte för att ha prognostiserat fem av de senaste tre krascherna: de var dyra under större delen av 1990-talets uppgång medan börsen steg vidare, och de har varit höga i åratal utan att björnen kom. De är inte timrar och de är inte av/på-knappar — deras statistik gäller långa genomsnitt över många år, inte nästa kvartal. AK1A:s användning är därför strukturerad: läs CVI/CAPE-nivån som en ingång i RISKMATRISEN och scenarioanalysen (ak1a-analys-ramverket: fem tidshorisonter, scenarier, bayesiansk omviktning) — högt läge: stramare positionsstorlekar, högre krav på marginal, mer torrt krut; lågt läge: gradvis högre exponering. Vad CVI aldrig får göra är att fungera som ursäkt för att vara helt ur marknaden eller helt i den — det är dimensionering, inte dikotomi."
+        },
+        {
+          "type": "insikt",
+          "content": "CVI är barometer, inte spådom: den talar om VAR i värderingscykeln vi står — aldrig NÄR vädret vänder. Skillnaden mellan att använda den som dimensionering (hur stor risk ska jag ta?) och som timing (ska jag vara med eller ej?) är skillnaden mellan ett instrument och ett hasardspel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"CVI som riskmatris-ingång — fyra lägen\",\"rader\":[[\"CVI-läge\",\"Historisk läsning\",\"AK1A-åtgärd\"],[\"Högt (marknaden dyr mot historien)\",\"lägre förväntad flerårsavkastning; tunn marginal\",\"stramare storlekar, högre marginalkrav, mer torrt krut\"],[\"Över medel\",\"fortfarande positivt men smalare\",\"normal exponering, bredd bär\"],[\"Under medel\",\"bredare marginal, bättre odds\",\"gradvis högre exponering\"],[\"Lågt (krasch- eller efterkrigsläge)\",\"value spreads spruckna; deep values historiskt bästa jaktmark\",\"fullt allokerad enligt plan — mod, inte magkänsla\"],[\"Aldrig\",\"timing av/på\",\"CVI dimensionerar — det dikotomerar inte\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Barometer-övningen: slå upp aktuell CAPE-nivå för den amerikanska börsen (Shiller-data publiceras fritt) och, om du hittar den, motsvarande långsiktig multipl för din hemmamarknad (genomsnittlig P/E eller EV/EBIT på indexnivå mot tioårigt snitt). Placera läget i en av tabellens fyra rader. Bygg sedan tre scenarier i AK1A:s scenario-modul — björn, bas, tjur — där du nu sannolikhetsväger utifrån värderingsläget (inte din magkänsla). Skriv ned vad du skulle göra med positionsstorlekar i respektive scenario. Det dokumentet är CVI:s enda legitima roll i ditt system."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad mäter CVI?",
+          "alternativ": [
+            "Volatiliteten på optionsmarknaden",
+            "Marknadens totala värdering mot sin egen historia — besläktat med Shillers cykliskt justerade CAPE",
+            "Antalet blankerade aktier på börsen",
+            "Centralbankernas balansräkningsstorlek"
+          ],
+          "ratt": 1,
+          "tips": "Det är en multipl-logik — fast applicerad på vilken nivå?"
+        },
+        {
+          "q": "Vad är den historiska relationen mellan högt CVI/CAPE och framtida avkastning?",
+          "alternativ": [
+            "Högt värde har följts av högre framtida avkastning",
+            "Inget samband alls",
+            "Högt värde har historiskt haft sällskap av lägre förväntad flerårsavkastning — tunn marginal",
+            "Högt värde förutsäger krasch inom sex månader"
+          ],
+          "ratt": 2,
+          "tips": "Köp hela börsen när genomsnittlig företagsavkastning är låg — hur tjock blir marginalen?"
+        },
+        {
+          "q": "Hur ska CVI användas enligt AK1A:s syntes?",
+          "alternativ": [
+            "Som en exakt timingsignal för att gå in och ur marknaden",
+            "Som ingång i riskmatris och scenarioanalys — dimensionering av risk, aldrig av/på-knapp",
+            "Som ersättning för aktieval",
+            "Som prognosverktyg för nästa kvartals BNP"
+          ],
+          "ratt": 1,
+          "tips": "Barometern talar om var cykeln står — inte när vädret vänder. Vad blir den praktiska konsekvensen?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Insiders och återköp — kapitalisternas röster (V20)",
+      "intro": "När en aktie är statistiskt billig återstår en sista fråga: vad gör de som känner bolaget bäst? Djupvärde-traditionen — från Grahams återköpsanalyser till Carlisles forskning om aktivister i Deep Value (2014) — ger två röster med prislappar: insiders som köper och bolag som återköper. Det här är kapitlet där bokens värld och AKM1:s V20 möts rakt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Återköp i djupvärde-termer är value plus katalysator i ett enda instrument. Mekanismen är ren aritmetik: när bolaget återköper aktier till ett pris UNDER inneboende värde överförs värde från säljare till kvarvarande ägare — varje återköpt aktie gör din andel av framtida kassaflöden större utan att du betalar en krona. AKM1:s V20 fångar det med en skala byggd för just denna analys: fem poäng = återköp finansierade av fritt kassaflöde till kurs under P/B 1 (äkta djupvärde-återköp); ett poäng = skuldfinansierade återköp till kurs över P/B 2 (EPS-dekoration). Skillnaden mellan en femma och en etta är skillnaden mellan en kapitalist som köper value och en ledning som lappar nyckeltal inför bonusutdelningen."
+        },
+        {
+          "type": "text",
+          "content": "Carlisles arv från Deep Value (2014): aktivisterna — Icahn-typens kapitalister som köper en betydande post i ett billigt bolag och tvingar fram värde — har återköp och spin-offs som vanligaste verktyg. Aktivisten är djupvärdesstrategins katalysator-motor: den kortsiktigt omvandlar statistisk billighet till realiserat pris. För den som inte har Icahns kapital är insiders och återköp den lilla investerarens version av samma information: någon med full insyn i kassan, ordningen och framtiden sätter sina eller bolagets pengar mot att aktien är undervärderad. Forskningstraditionen (gående tillbaka via LSV och Lakonishok-Lee-studierna om insiderhandel, genom QV-kursens kapitel 9) är konsekvent: opportunistiska, klumpvisa, stora insiderköp och netto-minskande aktieantal förknippas med överavkastning; emissioner — spegeln — med underavkastning. Det är V19 och V20 i samma andetag: kapital som flödar till ägarna är en röst; kapital som bränns eller späds ut är den motsatta."
+        },
+        {
+          "type": "text",
+          "content": "Fallgroparna, lika viktiga som signalerna. Ett: EPS-fällan — återköp kan höja vinst per aktie utan att skapa värde om aktien är dyr eller om återköpet är skuldfinansierat vid stigande ränta; räkna alltid på V20-skalan, inte på pressreleasen. Två: storlek och uthållighet — ett symboliskt återköpsprogram som aldrig verkställs (annonsera och glöm) är noll information; leta efter minskat UTESTÅENDE aktieantal i rapporterna, inte löften. Tre: insiders kan ha fel — korroboration är krydda, aldrig huvudrätt (QV-kursens regel gäller oförändrad): V20 poängsätter en aktie som redan klippt V04–V06 och tröskeln i V07–V12/V10/V11/V19. En dyr aktie med entusiastiska insiders är fortfarande en dyr aktie. Och en billig aktie utan en enda röst från insiders kan mycket väl vara färdig att köpa — frånvaro av signal är inte signal."
+        },
+        {
+          "type": "insikt",
+          "content": "Återköp är bolagets eget bud på sina aktier — och budet har ett pris. Frågan som gör V20 användbar är aldrig har de återköpt? utan till VILKEN multipl? Återköp under P/B 1 med fritt kassaflöde är value som köper value; återköp över P/B 2 på lånad peng är value som säljer ut dig med stil."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V20-skalan i djupvärde-termer\",\"rader\":[[\"V20-poäng\",\"Återköpets karaktär\",\"Djupvärdes-läsning\"],[\"5\",\"fritt kassaflöde, kurs under P/B 1\",\"value som köper value — starkast möjliga korroboration på en djupvärdesaktie\"],[\"3\",\"skuldfinansierat men till rätt pris\",\"neutralagtigt — räkna på räntekänsligheten (V10)\"],[\"1\",\"skuldfinansierat, kurs över P/B 2\",\"EPS-dekoration — värde flyttas inte, det målas\"],[\"Spegel (V19)\",\"nyemission / kapitalförbränning\",\"utspädning — den mest robusta NEGATIVA signalen i forskningen\"],[\"Insider-röst\",\"opportunistiska klumpköp\",\"krydda: bekräftar billighet, skapar den inte\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Röstgenomgång: ta de tre billigaste aktierna från ditt sållar (kapitel 5) som klarade tröskeln (kapitel 6). För varje: har det utestående aktieantalet MINSKAT de senaste två åren (räkna på rapporterna, inte på pressreleaser)? Har någon insider köpt opportunistiskt — klumpvis, stort, upprepat? Finns en aktivist eller stor ägare som byggt position? Ge varje aktie en V20-poäng 1–5 enligt skalan. Slutsats per aktie: billighet PLUS röst, eller billighet i tystnad — och är tystnaden ett problem eller bara ett faktum?"
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar ett återköp som ger fem poäng på AKM1:s V20-skala?",
+          "alternativ": [
+            "Att bolaget tillkännager det största programmet i sin historia",
+            "Att det är skuldfinansierat men stort",
+            "Att det finansieras med fritt kassaflöde till en kurs under P/B 1",
+            "Att det sker efter att aktien stigit femtio procent"
+          ],
+          "ratt": 2,
+          "tips": "Vad är den starkaste kombinationen av källan till pengarna och priset som betalas?"
+        },
+        {
+          "q": "Vad är aktivisternas roll i djupvärde-traditionen enligt Carlisles Deep Value-forskning?",
+          "alternativ": [
+            "De håller marknaden effektiv genom att sälja dyra aktier kort",
+            "De tvingar fram realisering av statistisk billighet — med återköp och spin-offs som vanligaste verktyg",
+            "De tillhandahåller obligationstillgångar",
+            "De ersätter behovet av värdering"
+          ],
+          "ratt": 1,
+          "tips": "Vad omvandlar en rabatt till ett pris — mekanismen eller bara tiden?"
+        },
+        {
+          "q": "Vad är den viktigaste fallgropen med återköp som signal?",
+          "alternativ": [
+            "Att återköp alltid är olagliga",
+            "Att de kan höja EPS utan att skapa värde — vid dyr kurs eller skuldfinansiering; räkna på minskat utestående aktieantal och V20-skalan, inte pressreleaser",
+            "Att insiders aldrig får sälja efter återköp",
+            "Att återköp enbart gäller amerikanska bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad är skillnaden mellan ett tillkännagivande och ett verkställt, värdeskapande återköp?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Bull och bear — värderingscykeln och björnmarknadshistorien",
+      "intro": "Bokens historiska stora komplement till multiplerna: studien av björnmarknaderna. Varför de kommer, vad de har gemensamt — och hur en djupvärdesportfölj historiskt betett sig i dem. Det är kapitlet som gör strategin till en helcykelstrategi i stället för en bullmarkslek.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Björnmarknadernas historia, som boken går igenom (med de stora amerikanska exemplen öppet citerade: 1929–1932, 1973–1974, 2000–2002, 2007–2009): de är varken sällsynta eller oförklarliga. De kommer regelbundet — räkna i fåtalsår mellan dem, inte årtionden — de är djupa (trettio till åttio procents fall är normalfördelat, inte extrema) och deras gemensamma nämnare är att de STARTAR från hög värdering: det är när CVI/CAPE-nivåerna är som högst, när marginalen är som tunnast och extrapolationen som självklaraste, som marknaden har som mest att falla ifrån. Orsakerna varierar (krig, oljechocker, tech-bubblor, kreditkrascher) — värderingsläget vid start är det återkommande. Det är Graham-Dodd-traditionens kärna omformulerad: björnmarknader är inte naturkatastrofer utan priset på tunn säkerhetsmarginal när något går snett."
+        },
+        {
+          "type": "text",
+          "content": "Hur beter sig djupvärde i fallet? Ärligt: det faller också — en lång aktieportfölj är en lång aktieportfölj när systemrisken slår till, och acquirer's multiple är ingen försäkring mot betavågen. Men historiken visar två mönster. För det första: djupvärdesstrategier har historiskt återhämtat sig snabbare och starkare efter krascher, därför att paniker spricker value spreads upp — den billigaste decilen blir billigast både absolut och relativt, och återhämtningen i priset på räddning och ruiner är brantast (kapitel 8:s koppling). För det andra: just därför är efterkrigstiden — när alla andra svär av aktier för alltid — historiskt djupvärdesstrategins bästa jaktmark. Bokens lärdom är alltså paradoxal men logisk: den bästa tiden att köpa djupvärde är när det känns sämst, och den bästa förberedelsen på en björnmarknad är att köpa med tjock marginal medan tjuren fortfarande går."
+        },
+        {
+          "type": "text",
+          "content": "Det praktiska för AK1A-användaren: dimensionera FÖRE fallet. Verktygen finns i ak1a-analys-ramverket: riskmatrisen (vad händer med portföljen vid −30, −50 procents scenariofall?), scenariomodulen med bayesiansk omviktning (vikta sannolikheterna efter värderingsläget — CVI-kapitlets fyra rader), och Kelly-storlekningslogiken (riskera inte mer än vad ruin-ekvationen tillåter). Tre konkreta regler. Ett: räkna portföljens aggregerade earnings yield — den är din approximativa marginal och ditt argument i fallet. Två: bestäm VID LUGN vilket beteende du ska ha vid −30 (köpa mer, ingenting, rebalansera mekaniskt) — och skriv det i portföljpampen (QV-kursens kapitel 12-arv). Tre: ha alltid lite torrt krut vid högt CVI — inte för att tajma, utan för att ha ammunition när value spreads spricker. Bredd, marginal och torrt krut: björnmarknadens trevapen."
+        },
+        {
+          "type": "insikt",
+          "content": "En strategi som bara fungerar i upplag är ingen strategi — den är en onlygsperiod med bra smink. Björnmarknader är inte anomala avbrott utan marknadens hjärtslag: den som dimensionerar för dem FÖRE de kommer äger sin risk; den som inte gjorde det ägs av den."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra björnmarknader — mönstret\",\"rader\":[[\"Period\",\"Fall (ca)\",\"Vad som föregick\",\"Djupvärdes-läget efteråt\"],[\"1929–1932\",\"cirka −89 %\",\"speculationsbubbla, extrem värdering\",\"födelsen av Grahams säkerhetsmarginal\"],[\"1973–1974\",\"cirka −48 %\",\"Nifty Fifty — dyra kvalitetsaktier\",\"startskottet för djupvärdesforskningen (Basu 1977; Grahams The Renaissance of Value 1975)\"],[\"2000–2002\",\"cirka −49 %\",\"IT-bubblan — extrapolerad tillväxt\",\"värdes historiskt starka år efteråt\"],[\"2007–2009\",\"cirka −57 %\",\"kreditbubbla, hög värdering\",\"value spreads sprack upp — efterkrigsjaktmark\"],[\"Gemensamt\",\"\",\"start från hög värdering (högt CVI/CAPE)\",\"efter krasch: bredast marginal, bäst odds\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Stresstestet: räkna din portföljs viktade genomsnittliga earnings yield (100 delat med acquirer's multiple per innehav, viktat). Antag sedan ett scenario där alla priser faller 35 procent men EBIT är oförändrat: vad blir den nya genomsnittliga yielden? Skriv ned tre rader: ett — vad säger den nya yielden om din marginal? två — vad gör du mekaniskt vid −35 (och står det redan i en pamp)? tre — har du torrt krut, och hur mycket i procent av portföljen? Om svaret på två är vet inte eller beror på hur det känns — då har du precis hittat kapitlets viktigaste arbetsuppgift."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den gemensamma nämnaren för historiens stora björnmarknader enligt boken?",
+          "alternativ": [
+            "De kom alltid efter krig",
+            "De startade från hög värdering — tunn säkerhetsmarginal när något gick snett",
+            "De inträffade endast under guldmyntenstandarden",
+            "De var omöjliga att förutse på något sätt"
+          ],
+          "ratt": 1,
+          "tips": "Vad har 1929, 1973, 2000 och 2007 gemensamt i värderingstermer vid starten?"
+        },
+        {
+          "q": "Hur har djupvärde historiskt betett sig i och efter björnmarknader?",
+          "alternativ": [
+            "Det är immun mot fall — multiplarna skyddar",
+            "Det faller aldrig men stiger heller aldrig",
+            "Det faller med marknaden, men har historiskt återhämtat snabbare och starkare — value spreads spricker upp i paniker och efterkrigstiden är djupvärdes bästa jaktmark",
+            "Det faller dubbelt så mycket som marknaden och återhämtar aldrig"
+          ],
+          "ratt": 2,
+          "tips": "Vad händer med den billigaste decilens multipl när alla säljer allt?"
+        },
+        {
+          "q": "Vilka tre konkreta förberedelser rekommenderar kapitlet inför nästa björnmarknad?",
+          "alternativ": [
+            "Gå ur marknaden vid första signalsflaggan",
+            "Räkna portföljens earnings yield, bestämma mekaniskt beteende vid −30 i förväg (i portföljpampen), och hålla torrt krut vid högt CVI",
+            "Köpa säljoptioner på hela portföljen",
+            "Lita till att insiderna varnar i tid"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan bestämmas i lugn och dokumenteras — innan känslorna kostar pengar?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 13,
+      "title": "Konstruera portföljen — från screen till trettio positioner",
+      "intro": "Från insikt till instrument: kapitlet bygger den fungerande portföljen av multiplen, QV-tröskeln, bredden och de mekaniska reglerna. Allt samlas i ett dokument på ett A4 — för att beslutet ska slippas fattas i stormen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Steg ett: universumtröskeln (V11 — genomförbarhet före allt). Exkludera finansbolag (bankers balansräkningar är verktyg, inte skulder att räkna som bolagens) och utilities (reglerade, belåningsdrivna kassflöden), exkludera ADR:er om du inte har dubbel kompetens, sätt minimistorlek och minimiomsättning efter DITT kapital: en position du inte kan bygga och lämna utan att själv flytta kursen är ett förvar, inte en investering. Steg två: ranka allt som är kvar på acquirer's multiple — billigast får rang ett. Steg tre: kör tröskeln från kapitel 6 på de bästa: F-score-grovgång (majoriteten gröna av nio kontroller), V10/V11 (skuld och likviditet), V19 (emissionrisk/kapitalförbränning) — röda flaggor avlägsnar, inte omtalar. Steg fyra: välj de tjugo till trettio högsta rankade som överlevde — bokens egna skärmar (som Acquirer's Multiple Deep Value Screen) är byggda i exakt denna anda."
+        },
+        {
+          "type": "text",
+          "content": "Steg fem: vikter och rebalansering. Likavikt är standard i djupvärdestraditionen — dels för att ingen enskild aktie ska avgöra utfallet (bredd bär sannolikhetsfördelen, QV-kursens kapitel 12-lärdom: en kant på några procentenheter per år visar sig bara över många positioner och många år), dels för att likavikt är den enda vikten som kräver noll åsikt. Säljreglerna är rankbaserade och mekaniska: en aktie säljs när den lämnar toppen av ranken — för att multiplen stigit (den blev dyr) eller för att tröskeln brann (F-score, V10, V19). Rebalansera vid fasta datum (kvartalsvis eller halvårsvis brukar balansera träghet mot transaktionskostnad). Vad reglerna ALDRIG innehåller: en åsikt om bolagets framtid, en känsla för det, eller hopp om återhämtning. Köpet var en regel — säljet är en regel."
+        },
+        {
+          "type": "text",
+          "content": "Steg sex: förväntningshanteringen — dokumentet som gör resten möjligt. En ensamfaktorsstrategi på EV/EBIT kommer att underprestera index i perioder på flera år (kapitel 5:s förbehåll, kapitel 12:s kontrovers — det är dokumenterat, inte hypotetiskt). Skriv därför portföljpampen (QV-arvet): universumtröskel, maxvikt per aktie, köpregel (rank + tröskel), säljregler (rankfall, tröskelbrott, rebalansdatum), brasklappen från kontroverskapitlet (jag accepterar X års underprestering utan att överge systemet, därför att…), samt V20-röster och CVI-läge som kontextuella noteringar. Komplettera gärna med AKM1-poängsättning (V01–V20) av toppkandidaterna — inte som ett nytt köpskäl utan som dokumentation av varför de fick kapital. Pampen dateras, bokmärks och följas vid varje rebalansering. Process i papper, inte i humör."
+        },
+        {
+          "type": "insikt",
+          "content": "Screenen ger kandidater; portföljreglerna ger överlevnad. Den mest undervärderade raden i hela bygget är brasklappen — beslutet FÖRE underpresteringen om hur många år du accepterar den. Den som skriver den i solsken behöver inte fatta den i regn."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Byggstegen — från börs till portfölj\",\"rader\":[[\"Steg\",\"Åtgärd\",\"AKM1-koppling\"],[\"1. Universum\",\"exkludera finans, utilities, ADR; minimistorlek och omsättning efter ditt kapital\",\"V11\"],[\"2. Rankning\",\"ranka på acquirer's multiple, billigast först\",\"V06-familjen\"],[\"3. Tröskel\",\"F-score-grovgång, V10/V11, V19 — röda flaggor avlägsnar\",\"V07–V12, V19\"],[\"4. Urval\",\"20–30 högsta rankade som klarade tröskeln\",\"bredd\"],[\"5. Vikter\",\"likavikt eller tak per position — noll åsikt\",\"riskmatris\"],[\"6. Säljregler\",\"lämnar topp-ranken eller bränner tröskeln; rebalans vid fasta datum\",\"mekanik\"],[\"7. Pamp\",\"dokument + brasklapp om accepterad träghet + V20/CVI-noteringar\",\"AKM1-dokumentation\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg miniversionen i kväll: ta ditt sållar från kapitel 5 (tjugo aktier, rankade på EV/EBIT), rensa med tröskeln från kapitel 6 och V20-läsningen från kapitel 9. Välj ut tio som överlever. Likavikta dem till hundra procent på papper. Skriv portföljpampen: maxvikt, säljregler, rebalansdatum (välj ett datum om sex månader — sätt det i kalendern nu), och brasklappen: hur många års underpresterande mot index accepterar jag mekaniskt? Datera och spara. Det är slutprojektets utkastsversion — kapitel 13 gör den fullständig."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför exkluderas finansbolag och utilities ur skärmen?",
+          "alternativ": [
+            "Därför att de aldrig är billiga",
+            "Därför att deras bokföring och balansräkningar bryter jämförbarheten — en banks skulder är verktyg, inte en belastning att räkna som andra bolags",
+            "Därför att de är förvånansvärt lönsamma",
+            "Därför att lagen förbjuder det"
+          ],
+          "ratt": 1,
+          "tips": "Vad kräver multipljämförelser av räkenskaperna — och vilka branscher bryter det kravet?"
+        },
+        {
+          "q": "Vad är den rankbaserade säljregeln?",
+          "alternativ": [
+            "Sälj när aktien stigit tio procent",
+            "Sälj när magen säger att det räcker",
+            "Sälj när aktien lämnar toppen av ranken — multiplen blivit för hög eller tröskeln brunnit — samt rebalans vid fasta datum",
+            "Sälj aldrig — djupvärde är för alltid"
+          ],
+          "ratt": 2,
+          "tips": "Samma mått som tog aktien in ska kunna ta ut den. Vilket var det?"
+        },
+        {
+          "q": "Varför är brasklappen (accepterad träghet) portföljpampens viktigaste rad?",
+          "alternativ": [
+            "Därför att den garanterar avkastning",
+            "Därför att ensamfaktorstrategier dokumenterat underpresterar index i flerårsperioder — beslutet om uthållighet måste fattas FÖRE underpresteringen",
+            "Därför att den ersätter behovet av rebalansering",
+            "Därför att den höjer Sharpe-kvoten automatiskt"
+          ],
+          "ratt": 1,
+          "tips": "Vilket beslut är omöjligt att fatta rationellt mitt i det — och därför måste fattas i förväg?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Kontroversen — är värdefaktorn död? (2007–2020)",
+      "intro": "Kursens viktigaste kapitel. Boken utkom 2018 — mitt i värdefaktorns längsta torka sedan mätningarna började. Åren efter publiceringen blev torkan värre innan den bröts. Det här kapitlet redogör ärligt för dödsförklaringarna, bokens svar och AK1A:s syntes — med ett uttryckligt medgivande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fakta först, utan sminkning. Fama-French värdefaktor HML (high minus low, bokvärde-baserad värdepremie från 1992 års banbrytande forskning) hade från 2007 till 2020 sin längsta negativa period i historien: i över ett decennium förlorade billig mot dyr, driven av en extrem koncentration till tillväxtjättar (FAANG-generationen) vars multiplar steg medan värdebolagens stod stilla eller föll. Samtidigt kollapsade value spreaden i termer av UTFALL — gapet mellan vad man köpte billigt och vad man fick behålla av avkastning. Men notera paradoxen som är debattens kärna: value spreaden i TERMER AV VÄRDERING — hur många procent billigare den billigaste kvintilen var än den dyraste, mätt i multiplar — var under samma period vid eller nära historiska bredder. Allt blev billigare relativt, och ändå förlorade value. Det är den råa motsägelsen som gjorde frågan is value dead? till finansvärldens hetaste debatt under 2018–2020."
+        },
+        {
+          "type": "text",
+          "content": "Förklaringslinjerna, öppet redovisade. Första linjen — Cliff Asness och AQR (i uppmärksammade essäer och forskning omkring 2020): value är cykliskt, inte dött; historiskt har de bredaste värderingsspreadarna föregått värdets bästa perioder, och mekanismen — beteendemässig extrapolation — är intakt. Andra linjen — bokföringskritiken (forskning av Feng, Zhang med flera): värdefaktorn är inte död utan FELMÄTT; när ekonomin blev immateriell (mjukvara, varumärken, R&D) bröts räkenskaperna som måtten bygger på — bokföringsmässigt utgifterade R&D-investeringar gör tillväxtbolag artificiellt dyra och gamla industrier artificiellt billiga, varför P/B-baserade mått (som HML) strukturmässigt missleder. Tredje linjen — Robert Novy-Marx psykologiska value: hans forskning visar att billighet också kan mätas mot psykologiska ankare — till exempel kursens förhållande till 52-veckors högsta notering — och att sådana mått fångar värde som bokföringsmultiplar missar; poängen för oss: HUR värde mäts avgör om det verkar dött. Fjärde linjen — strukturella flöden: passiva index, benchmark-tyranni och räntans nolläge höjde priset på berättelse och duration. Och femte — den ödmjuka: tretton år är statistiskt sett en kort period för att döma ut en faktor med decennielånga cykler."
+        },
+        {
+          "type": "text",
+          "content": "Bokens svar — och facit. Carlisle stod 2018 på Asness-linjen med eget tillskott: mean reversion i EBIT och multiplar är strategins motor, de bredaste spreadarna på decennier är såddens tid, och björnmarknadshistorien (kapitel 10) visar att värde köps som bäst just när det känns värst. Facit, ärligt redovisat mot dagens datum (2026): från november 2020 och genom 2022–2023 vände värde kraftigt — vaccinrotationen 2020, sedan räntechocken 2022 då billigt krossade dyrt — och bokens tes fick en vers. Men kursen måste vara tydlig: vändningen BEVISAR inte värdes odödlighet; den bekräftar cykligheten som också kritikerna medger, och nästa torka kommer med statistisk säkerhet. AK1A:s syntes och medgivande, rakt ut: AKM1 poängsätter V04–V06 (sex procent vardera — arton procent tillsammans) men VIKTAR aldrig en enskild faktor tungt: värderingsblocket är en av åtta kategorier, kompletterad av tillväxt, lönsamhet, stabilitet, moat, katalysator och risk, med bayesiansk omviktning och scenarioanalys när evidensläget förändras. Medgivandet: single-factor-strategier — som den rena acquirer's multiple — HAR dokumenterat långa träghetsperioder; den som kör en ensamfaktor måste vara beredd på flerårig underprestering (därav kapitel 11:s brasklapp). Slutsatsen är inte att välja sida utan att äga geometrin: läs multiplen som en röst i kompositen — aldrig som hela kören."
+        },
+        {
+          "type": "insikt",
+          "content": "En faktor är inte död för att den förlorat i tretton år — och inte odödlig för att den vann 2021–2023. Den är en sannolikhetsfordel med väder: mekanismen (människors extrapolation) lever, men mätningen (vilka multiplar, vilken bokföring) och regimen (räntor, flöden) förändras. Frågan är inte tro eller otro — den är dimensionering: hur mycket av din framtid får vila på en enda multipl?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dödsförklaringarna — och svaren\",\"rader\":[[\"Linje\",\"Påstående\",\"Svar\",\"AK1A:s hållning\"],[\"Cyklister (Asness/AQR)\",\"bredaste spreadarna på decennier föregår värdes bästa perioder\",\"vändningen 2020–2023 gav tesen rätt — men bevisar inte odödlighet\",\"värde är cykliskt: dimensionera, idolisera inte\"],[\"Bokföringskritik (Feng-Zhang m fl)\",\"immateriell ekonomi bryter P/B-baserade mått — value felmätt, inte dött\",\"AKM1:s V06-familj (EV/EBIT, EV/EBITDA) mindre bokvärdesberoende än HML\",\"mät värde med flera multiplar — aldrig en\"],[\"Novy-Marx psykologiskt value\",\"billighet mot psykologiska ankare (52-veckors höjden) fångar värde bokföringen missar\",\"hur värde mäts avgör om det verkar dött\",\"måttet är en parameter, inte en sanning\"],[\"Strukturella flöden\",\"passivt, benchmark-tyranni, nollräntor höjde berättelsens pris\",\"flöden är regimer — de svänger\",\"scenarioanalys och bayesiansk omviktning\"],[\"Ödmjukheten\",\"tretton år är kort för faktor med decenniecykler\",\"torkor är normalfördelade\",\"medgivande: single-factor har långa träghetsperioder — brasklapp krävs\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Dödsprovet på din egen tro: skriv tre starkaste skälen FÖR att value är strukturellt dött (steel-manna: bokföringen, flödena, koncentrationen) — och tre MOT (mekanismen, cyklerna, mätningsproblem). Bedöm vilken sida som har starkare MEKANISM snarare än starkare åsikt. Skriv sedan din personliga slutsats i två meningar och klistra in den som brasklapp i portföljpampen från kapitel 11: hur mycket av min portfölj får vila på V04–V06-logiken — och hur många års träghet accepterar jag mekaniskt? De två raderna är hela kontroverskapitlet omvandlat till riskhantering."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad hände med Fama-French värdefaktor HML under 2007–2020?",
+          "alternativ": [
+            "Den hade sin starkaste period någonsin",
+            "Den var oförändrad mot historien",
+            "Den hade sin längsta negativa period i historien — billigt förlorade mot dyrt i över ett decennium",
+            "Den avskaffades formellt av Fama och French"
+          ],
+          "ratt": 2,
+          "tips": "FAANG-generationen mot gamla industrer — vem vann, och hur länge?"
+        },
+        {
+          "q": "Vad är huvudpoängen i Novy-Marx forskning om psykologiskt value?",
+          "alternativ": [
+            "Att värde endast kan mätas på bokvärde",
+            "Att billighet också kan mätas mot psykologiska ankare — som kursens förhållande till 52-veckors högsta notering — och att hur värde mäts avgör om det verkar dött",
+            "Att all värdeforskning är pseudovetenskap",
+            "Att investerare alltid är rationella"
+          ],
+          "ratt": 1,
+          "tips": "Vad är ett ankare i det psykologiska rummet som priser fastnar vid?"
+        },
+        {
+          "q": "Vad är AK1A:s syntes och uttryckliga medgivande i kontroversen?",
+          "alternativ": [
+            "Att AKM1 ska slopa V04–V06 eftersom value är dött",
+            "Att AKM1 ska läggas ned och ersättas av ren EV/EBIT-skärm",
+            "Att value är odödligt och frågan är avgjord",
+            "Att AKM1 poängsätter V04–V06 (sex procent vardera) men aldrig viktat en enskild faktor tungt — med medgivandet att single-factor-strategier dokumenterat har långa träghetsperioder, varför multiplerna är en röst i kompositen, inte hela kören"
+          ],
+          "ratt": 3,
+          "tips": "Hur stor del av AKM1:s tjugo variabler är värdering — och vad är det ärliga priset för en ensamfaktor?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 13,
+      "title": "Sammanfattning — den djupa värdeinvesteraren (V01–V20)",
+      "intro": "Sista kapitlet sätter ihop allt: multiplen, tröskeln, bredden, barometern och brasklappen till en enda fungerande process i AKM1:s tjugo variabler — och porträtterar personen i undertitelns löfte: den kontrarianske djupvärdeinvesteraren.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hela boken i en enda process, som din checklista. Ett: universumtröskeln — V11 avgör vad du kan handla; exkludera finans och utilities. Två: ranka på acquirer's multiple — EV (börsvärde + skuld − kassa) delat med EBIT, mappad till V06-familjen där EV/EBITDA ger nivån och EV/EBIT kapitalärligheten. Tre: tröskeln — F-score-riktning, V10/V11 (skuld, likviditet) och V19 (emissionrisk) rensar döende billiga; billigheten styr, tröskeln avlägsnar. Fyra: V20-rösterna — återköp under låg multipl och opportunistiska insiderköp korroberar (krydda, aldrig huvudrätt). Fem: bredd — tjugo till trettio likaviktade positioner, mekanisk rebalansering, rankbaserade säljregler. Sex: barometern — CVI/CAPE-läget i riskmatrisen och scenarierna; dimensionera efter marginal, tajma aldrig. Sju: brasklappen — accepterad träghet skriven i förväg, därför att ensamfaktorstrategier svänger. Sju steg, ett A4, noll åsikter i stormen."
+        },
+        {
+          "type": "text",
+          "content": "Översättningstabellen till AKM1:s alla tjugo variabler. V04–V06 är multiplens hem — med denna kursens fördjupning: EV/EBIT är V06-familjens konservativa syster som straffar kapitalintensitet. V07–V12 är tröskelns bokslutskontroller (riktning i marginaler, kassaflöde, lönsamhet, stabilitet). V13–V15 (patent, varumärke, nätverk) och V16–V18 (lanseringar, avtal, regulatorik) är — i djupvärdesfilosofin — rankning bland aktier som redan är billiga och rensade: de är aldrig köpskäl (Deere-läran från QV-kursen gäller oförändrad; det var traktorer, inte berättelser, som betalade). V19 är emissionrisken — spegeln till V20:s återköp. V01–V03 (tillväxt och diversifiering) är kontexten: tillväxt är värdefull till rätt pris, och bokens hela bidrag till det arvet är att priset ALLTID går först. Differentieringen mot grannkurserna, sista gången: What Works rangordnar faktorer i deciler, QV bygger komposit plus kvalitet, Little Book kombinerar två rankningar — The Acquirer's Multiple djupdyker i en enda och visar hela spelet inklusive spegelsidan och historien."
+        },
+        {
+          "type": "text",
+          "content": "Porträttet av den djupa värdeinvesteraren, i sex drag. Ett: han eller hon köper det ingen vill berätta om på middagsbordet — tråkigt, cykliskt, förhatligt eller osynligt — därför att bristen på berättelse är rabattens källa. Två: hon mäter verksamheten och finansieringen var för sig — EV/EBIT mot P/E, kapitalstrukturens fallgropar alltid i bakhuvudet. Tre: han litar på bredd, inte briljans — tjugo till trettio positioner därför att sannolikhetsfördelen bara syns över många. Fyra: hon rensar dödsriskerna före kapitalet, inte efter — tröskeln är hennes hygien. Fem: han läser barometern men låter den dimensionera, aldrig diktera — CVI i riskmatrisen, inte i av/på-knappen. Sex: hon har skrivit brasklappen om träghet i förväg och bär den som försäkring — därför att hon vet att nästa torka kommer, att mekanismen (människors extrapolation) lever vidare och att hennes kant är en sannolikhetsfordel med väder, inte en lag. Det är undertitelns billionaires contrarians i portföljstorlek: disciplinerad, oglamourös, statistiskt obeveklig — och, när cykeln vänder, svår att slå."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista mening är bokens första princip: mät hela bolaget, inte andelen av det. EV/EBIT är en enda division — men den tvingar dig att tänka som en köpare av verksamheter, inte en samlare av andelar, och det är hela skillnaden mellan att spekulera i kurser och att förvärva kassaflöden till rabatt."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"The Acquirer's Multiple till AKM1 — översättningstabellen\",\"rader\":[[\"Bokens byggsten\",\"AKM1\",\"Roll\"],[\"Acquirer's multiple (EV/EBIT)\",\"V06-familjen (EV/EBITDA för nivå, EV/EBIT för kapitalärlighet)\",\"värderingsmotor — aldrig ensam\"],[\"P/E-kritiken (kapitalstruktur)\",\"V10, V11\",\"skuld och likviditet läses separat från värdering\"],[\"Tröskeln mot värdefällor\",\"V07–V12, V19\",\"rensar döende billiga — tröskel, inte ranking\"],[\"Kortsidan och value spread\",\"Short-Sellern-perspektivet\",\"måttstock och varningslista\"],[\"CVI / värderingsbarometer\",\"riskmatris, scenarier\",\"dimensionering, aldrig timing\"],[\"Återköp och insiders\",\"V20 (5 = FCF under P/B 1)\",\"korroboration — krydda, aldrig huvudrätt\"],[\"Björnmarknadshistoria\",\"riskmatris, Kelly, torrt krut\",\"dimensionera FÖRE fallet\"],[\"Bredd, likavikt, mekaniskt\",\"portföljregler + brasklapp\",\"överlevnad och uthållighet\"],[\"Tillväxt och story\",\"V01–V03, V13–V18\",\"kontext och rankning — aldrig köpskäl\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — den fullständiga djupvärdesportföljen: bygg vidare på kapitel 11:s miniversion till tjugo positioner. Krav: ett — rankat universum med V11-tröskel dokumenterad. Två — EV/EBIT och EV/EBITDA beräknade per innehav (V06-familjen med gapnotering). Tre — tröskellogg per innehav (F-score-grovgång, V10, V19 — godkänt/underkänt med siffror). Fyra — V20-poäng per innehav. Fem — portföljpamp med maxvikter, säljregler, rebalansdatum och brasklapp från kapitel 12. Sex — aktuellt CAPE/CVI-läge noterat med tre scenarioscenarier. Spara allt med datum i AK1A och bokmärk för nästa mekaniska rebalansering. Från och med nu har du inte en åsikt om billighet — du har en process som producerar den."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är acquirer's multiple och varför heter den så?",
+          "alternativ": [
+            "P/E justerat för tillväxt — döpt efter analysbyrån Acquirer",
+            "EV/EBIT — priset på HELA bolaget per enhet rörelseresultat, multiplen en köpare av hela verksamheten betalar",
+            "Direktavkastningen dividerat med tillväxten",
+            "Bokvärdet minus goodwill delat med EBITDA"
+          ],
+          "ratt": 1,
+          "tips": "Vem värderar hela bolag — och vilka två poster slår den köparen ut ur täljaren och nämnaren?"
+        },
+        {
+          "q": "Vad är den viktigaste skillnaden i praktisk filosofi mellan AM-bokens och QV:s ansats?",
+          "alternativ": [
+            "AM kräver aktivister i varje position; QV förbjuder dem",
+            "AM köper bara teknikbolag; QV bara industrin",
+            "AM lutar sig mot ren billighet med bredd som riskskydd; QV lägger kvalitetsfiltret (F-score m m) som en aktiv andra rankning ovanpå billigheten",
+            "Det finns ingen skillnad — böckerna är identiska"
+          ],
+          "ratt": 2,
+          "tips": "Vad hanterar ruttna billiga bolag — bredd eller filter — och hur tungt sitter filtret i respektive bok?"
+        },
+        {
+          "q": "Vilket är den djupa värdeinvesterarens främsta karaktärsdrag enligt kursens porträtt?",
+          "alternativ": [
+            "Förmågan att hitta nästa story före marknaden",
+            "Övertygelsen att värde är odödligt",
+            "Rädslan för björnmarknader och undvikande av dem",
+            "Disciplinen att äga det oglamorösa — bredd, tröskel, mekanik och en förhandsskriven brasklapp för träghetsperioderna"
+          ],
+          "ratt": 3,
+          "tips": "Vad kostar strategin i psyke — och vad skrev investeraren på FÖRE kostnaden?"
+        }
+      ]
+    }
+  ]
+}

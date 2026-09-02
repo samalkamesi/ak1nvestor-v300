@@ -34,6 +34,7 @@ const PANELER: MenyPanel[] = [
       { text: "AKM1-kalkylatorn", lank: "/kalkylator", ikon: "🧮", beskrivning: "20 fundamentalvariabler · V01–V20" },
       { text: "Vågfundamentet", lank: "/vagfundament", ikon: "🌊", beskrivning: "Fundamentalvågor · 20×5-matris per aktie & portfölj" },
       { text: "Portföljbyggaren", lank: "/portfoljbyggare", ikon: "🧩", beskrivning: "Bygg visuellt — se risk & spridning live" },
+      { text: "Net-net-skannern", lank: "/netnet", ikon: "🔍", beskrivning: "Grahams cigar-butts — NCAV-screening live" },
       { text: "Superanalysen", lank: "/superanalys", ikon: "🏅", beskrivning: "Guidad analys i 24 steg · AKM1 + AK1TS" },
       { text: "Min portfölj", lank: "/min-portfolj", ikon: "💼", beskrivning: "Innehav + djupanalys (5×5×4)" },
       { text: "Analyser", lank: "/analyser", ikon: "📊", beskrivning: "Fullständiga bolagsanalyser" },

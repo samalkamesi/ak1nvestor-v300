@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { VagfundamentMatris } from "@/components/ak1a/vagfundament-matris";
+import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
 
 export const metadata: Metadata = pageMetadata({
   path: "/vagfundament",
@@ -69,6 +70,11 @@ export default function VagfundamentPage() {
 
       <div className="mt-10">
         <VagfundamentMatris ticker="VOLV-B.ST" />
+      </div>
+
+      {/* Dagens vågkarta — den autonoma morgonskanningen (Yahoo + MarketStack) */}
+      <div className="mt-10">
+        <VagkartaKort />
       </div>
 
       <div className="mt-10 rounded-lg border border-gold/20 bg-gold/5 p-5">

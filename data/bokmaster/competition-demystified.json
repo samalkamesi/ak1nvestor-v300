@@ -1,0 +1,1146 @@
+{
+  "slug": "competition-demystified",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 16,
+  "totalMinutes": 185,
+  "title": "Competition Demystified — Greenwald & Kahn: KOMPLETT",
+  "summary": "Bruce Greenwald och Judd Kahn — samma författarpar som bakom Value Investing: From Graham to Buffett and Beyond (BOKMASTER-kursen om VÄRDERINGSPROCESSEN) — publicerade 2005 Competition Demystified: A Radically Simplified Approach to Business Strategy. Där den förra boken lärde ut trappan kassa → NCAV → EPV → tillväxtvärde, svarar den här på den fråga som bara skissades där: VARFÖR överlever vissa bolags överavkastning konkurrensen — och varför gör de flesta inte det? Det är MOAT-VETENSKAPEN: konkurrensbarriärer i nio steg. Greenwald reducerar Porter radikalt: fyra av fem krafter är biverkningar av EN kraft — incumbency-fördelen, barriären mot inträde. Kursen går igenom det strategiska landskapet (de flesta marknader saknar moat), kommoditetshelvetet där konkurrensen stakar ut värdet till noll [illustrativ svensk verkstadssamling], moat-källorna i tur och ordning — produktionsskalfördelar med lokal nischdominans (Walmart-metoden), nätverkseffekter (V15), varumärke och när varumärke INTE är en moat (V14, cola-krigen), patent och reglering (V13, V18) — sedan moat-TESTET: marknadsandelars stabilitet och ROE-uthållighet (V09), moat + tillväxt (Walmart bygger, Coors spränger), moat-erodering (Kiwi, inträdeskrig, teknikskiften — V16) och bokens branschcase: läkemedel, mikroprocessorer och avfallshantering (Waste Management). Dorsey-kursen gav moat-listan — den här boken ger moat-LOGIKEN: marknadsdefinitionen, fallet utan moat och tillväxtens dubbla natur. Kursen avslutas med kontroversen Porter mot Greenwald och AKM1-syntesen: moat mäts som tre variabler (V13–V15) plus uthållighetsgraden i V09-serien — mätbart över anekdoter, med ärligt medgivande att ex ante-identifieringen förblir osäker.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Skilja de två böckerna åt: VIG-kursen är värderingsprocessen (EPV-trappan), Competition Demystified är moat-vetenskapen — barriärernas logik och testning i nio steg · Redogöra för strategitänkandets historia och för Greenwalds Porter-kritik: fyra av fem krafter är biverkningar av EN kraft — inträdesbarriären, incumbency-fördelen · Känna igen kommoditetshelvetet: marknader utan moat där priset pressas mot marginalkostnaden och expansionens värde stakas ut till noll [illustrativt: svensk verkstadsindustri utan skydd] (V07–V09, V12, V19) · Behärska moat-källorna i ordning: produktionsskalfördelar med lokal nischdominans (Walmart-metoden, V03, V07–V08), nätverkseffekter med tipptendens och felfall (V15), varumärke som vana — och när varumärke INTE är moat (V14, cola-krigen), patent och reglering som vallgravar med inbyggd klocka (V13, V18) · Köra moat-TESTET: marknadsdefinition, andelsstabilitet och ROE-uthållighet över cykeln (V09, V03) — nio-stegschecklistan som tabell · Förstå moat och tillväxtens dubbla natur: Walmart byggde vallgraven region för region, Coors sprängde sin genom nationell expansion (V01–V03) · Övervaka moat-erodering: inträdeskrig (Kiwi), teknikskiften och substitut (V16) · Tillämpa bokens branschcase: läkemedel (patent, klasser, detaljering), mikroprocessorer (Intels fyralagersstack mot AMD) och avfall (Waste Management, rutttäthet) · Redogöra rättvist för kontroversen: Porter femkrafts-bredd mot Greenwalds reduktion — och AK1A:s syntes med medgivanden.",
+  "why": "Det här är den bok som AKM1:s hela Moat-kategori egentligen står på. Dorsey-kursen (The Five Rules) gav fyra moatkällor som LISTA och testet vad stoppar en välfinansierad konkurrent; den här boken härleder barriärerna ur EN kraft, tvingar fram marknadsdefinitionen innan något mått betyder något, och — djupare än någon annan — beskriver tillståndet UTAN moat: kommoditetshelvetet, där tillväxt inte är värde utan inbjudan. Greenwald och Kahn är dessutom samma författarpar som VIG-kursen: där Value Investing sa att tillväxtvärde bara får betalas bakom bevisade hinder, levererar Competition Demystified själva beviskravet — andelsstabilitet, ROE-uthållighet (V09), källanalys. Utan den här boken är V13–V15 tre påståenden; med den är de ett testbart system med felfall, klockor och erosionsradar. Att kursen dessutom tvingar dig genom Porter-kontroversen — med Porter rättvist framställd — gör moat-tänkandet till vetenskap snarare än tro.",
+  "chapters_list": [
+    "1. Strategins historia — från Porters fem krafter till Greenwalds enda kraft",
+    "2. Det strategiska landskapet — de flesta marknader saknar moat",
+    "3. Kommoditetshelvetet — när konkurrensen stakar ut värdet till noll [illustrativt]",
+    "4. Den enda kraften — incumbency-fördelen och inträdesbarriären",
+    "5. Moat I: Produktionsskalfördelar och lokal nischdominans — Walmart-metoden",
+    "6. Moat II: Fångad efterfrågan — vana, omställningskostnad, sökkostnad (V14, V12)",
+    "7. Moat III: Nätverkseffekter — positiv återkoppling och vinnaren som tar allt (V15)",
+    "8. Moat IV: Varumärke — när varumärke INTE är en moat (V14)",
+    "9. Moat V: Patent och reglering — vallgravar med inbyggd klocka (V13, V18)",
+    "10. Moat-testet — nio steg: marknadsandelar, ROE-uthållighet och källan (V09)",
+    "11. Moat och tillväxt — Walmart bygger, Coors spränger",
+    "12. Moat-erodering — utmanare, inträdeskrig och teknikskiften (V16)",
+    "13. Branschcase: Läkemedel — patent, terapeutiska klasser och detaljeringens skala",
+    "14. Branschcase: Mikroprocessorer — Intel, AMD och skalans tvingande logik",
+    "15. Branschcase: Avfall och återvinning — Waste Management och täthetens ekonomi",
+    "16. Kontroversen och syntesen — Porter mot Greenwald, moat-blocket till AKM1"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Strategins historia — från Porters fem krafter till Greenwalds enda kraft",
+      "intro": "Competition Demystified (2005) av Bruce Greenwald och Judd Kahn är en frontal reaktion på trettio år av strategilitteratur. För att förstå hur radikal boken är måste du först veta vad den reagerar mot — och ingen väger tyngre där än Michael Porter. Kapitel 1 lägger historien på bordet och presenterar reduktionen som hela kursen bygger på.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Historiken först, citerad öppet. Strategi som ämne föddes på 1960-talet i strategiska planeringsavdelningar och konsultbyråer — BCG:s erfarenhetskurvor, portföljmatriser, långsiktiga planer. Genombrottet kom med Michael Porter vid Harvard: artikeln How Competitive Forces Shape Strategy (Harvard Business Review, 1979) och boken Competitive Strategy (1980). Porters poäng var strukturell: ett bolags lönsamhet bestäms inte främst av dess chefer eller produkter utan av branschens struktur, och strukturen analyseras i fem krafter — hotet från nya etablerare, hotet från substitut, rivaliteten mellan befintliga konkurrenter, leverantörernas förhandlingsstyrka och köparnas förhandlingsstyrka. Femkraftsmodellen blev världens mest använda branschanalys-ramverk, och med goda skäl: den tvingar analytikern att se bortom bolaget själv."
+        },
+        {
+          "type": "text",
+          "content": "Greenwald och Kahns reduktion, återgiven rättvist. Bokens utgångspunkt är empirisk: konkurrens är allestädes närvarande och de allra flesta bolag tjänar ingen överavkastning över huvud taget. När författarna sedan frågar vilken av Porters fem krafter som faktiskt bär lönsamheten blir svaret: EN. Inträdesbarriärerna — det de kallar incumbency-fördelen, den etablerade aktörens företräde. De fyra övriga krafterna är i praktiken biverkningar. Utan barriärer: rivaliteten blir obönhörlig (jämlika konkurrenter slår ut varandras överskott), köparna och leverantörerna fångar resterna och substituten sätter tak. Med barriärer: incumbenten skyddas, konkurrenterna få inte in, och därmed dämpas rivalitet, köpar- och leverantörsmakt automatiskt. Strategianalysens första och avgörande fråga är därför inte vilka fem krafter som gäller — utan den enda: finns det en barriär mot inträde, eller inte?"
+        },
+        {
+          "type": "text",
+          "content": "Ärligheten åt båda hållen, som kursen håller fast genom hela vägen till kontroverskapitlet. Porter-lägrets styrka är bredden: femkrafts-analysen — en flotta av krafter snarare än ett enda slag — synliggör hela ekosystemet: leverantörskedjor, köparkonsolidering, komplement (som Porter själv senare tillförde diskussionen). I branscher där köparmakten regerar — läkemedelens prispressande payers, kapitel 13 — spelar krafter utöver inträdet verklig egen roll. Greenwalds svar är fokuserbarheten (en fråga du kan ställa först, till allt) och testbarheten (barriärer läses av i mätbara serier: marknadsandelar och avkastning — kapitel 10). Kursens position i AK1A-arken: VIG-kursen är värderingsprocessen (EPV-trappan), Dorsey-kursen är moat-listan — den här boken är MOAT-VETENSKAPEN, barriärerna i nio steg. AKM1-brygga: V13 Patent och immateriella rättigheter, V14 Varumärke och kundlojalitet, V15 Nätverkseffekter — hela moat-trion — med uthållighetstestet i V09 ROE-serien och marknadsdefinitionen i V03."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte vilka av fem krafter som gäller — fråga först: kan en välfinansierad utmanare replikera det här bolagets position? Om svaret är ja är de fyra övriga krafterna redan på väg att bita. Om svaret är nej har du en moat — och då spelar krafterna bara sekundroller."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Porters fem krafter — och Greenwalds reduktion\",\"rader\":[[\"Kraft\",\"Porters roll\",\"Greenwalds läsning\",\"AKM1-spår\"],[\"Nya etablerare (inträde)\",\"en av fem krafter\",\"DEN ENDA KRAFTEN — incumbency-fördelens barriär\",\"V13–V15\"],[\"Rivalitet\",\"strukturens drivkraft\",\"biverkan: utan barriär blir rivaliteten obönhörlig; med barriär hanterbar\",\"V07–V09, V12\"],[\"Köparmakt\",\"förhandlingsstyrka\",\"biverkan: fångad efterfrågan sätter tak för köparmakt\",\"V14, V12\"],[\"Leverantörsmakt\",\"förhandlingsstyrka\",\"biverkan: kostnadsfördelar (skala, läge) neutraliserar\",\"V07–V08\"],[\"Substitut\",\"pris-tak utifrån\",\"biverkan: substitut biter bara där barriären saknar djup\",\"V16\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett bolag du äger och gör en klassisk femkrafts-analys på ett papper: en rad per kraft. Gör sedan reduktionstestet: vilka av de fem krafterna är OBEROENDE av frågan om en utmanare kan träda in och replikera positionen? Markera de krafter som kvarstår som verkligt självständiga. Om det bara är en — inträdesbarriären — har du just upplevt Greenwalds poäng i praktiken. Spara pappret till kontroverskapitlet (kapitel 16)."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket verk satade standarden för modern branschanalys enligt kapitlets historik?",
+          "alternativ": [
+            "Michael Porters Competitive Strategy (1980) med femkraftsmodellen",
+            "Grahams och Dodds Security Analysis (1934)",
+            "BCG:s erfarenhetskurvor från 1960-talet",
+            "Buffetts årsbrev till aktieägare"
+          ],
+          "ratt": 0,
+          "tips": "Strategifältet föddes med planeringsavdelningar och konsulter — men femkraftsmodellen kom från Harvard 1979–1980."
+        },
+        {
+          "q": "Vad är Greenwald och Kahns huvudpåstående om femkraftsmodellen?",
+          "alternativ": [
+            "Att den är helt felaktig och ska kastas",
+            "Att fyra av de fem krafterna i praktiken är biverkningar av EN kraft — inträdesbarriärerna, incumbency-fördelen",
+            "Att krafterna bara gäller i USA",
+            "Att leverantörsmakten är den starkaste kraften"
+          ],
+          "ratt": 1,
+          "tips": "Reducera: vilken kraft styr de övrigas beteende när den finns — och släpper in dem alla när den saknas?"
+        },
+        {
+          "q": "Vilken kraft behåller Greenwald som den enda verkligt oberoende?",
+          "alternativ": [
+            "Rivaliteten mellan befintliga konkurrenter",
+            "Köparnas förhandlingsstyrka",
+            "Hotet från substitut",
+            "Hotet om nya etableringar — barriärerna mot inträde"
+          ],
+          "ratt": 3,
+          "tips": "Incumbency-fördelen: den som redan är inne och skyddad."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Det strategiska landskapet — de flesta marknader saknar moat",
+      "intro": "Innan boken lär ut vad en konkurrensfördel är lär den ut hur sällsynt den är. Kapitel 2 ritar det strategiska landskapet: två typer av terräng — jämna plan utan fördelar och snedplan där incumbenter skyddas — och regeln att varje analys börjar med att lokalisera bolaget på kartan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Boken öppnar, citerat öppet, med en nedslående sanning: konkurrens är regel och fördel är undantag. På de allra flesta marknader har inget bolag varaktiga fördelar — produkterna är utbytbara, kunderna söker, kapitalet rör sig fritt — och då gäller plain competition: avkastningen pressas till kapitalkostnaden. Strategi definieras i fri översättning som en plan för att hantera konkurrensen, och den första strategiska handlingen är därför inte att välja vapen utan att läsa terrängen: står mitt bolag på ett jämnt plan, där ingen har fördelar och enda uppgiften är kostnadseffektivitet — eller på ett snedplan, där en incumbent är skyddad av barriärer och utmanare står utanför? Två helt olika spel, två helt olika strategier, och den som blandar ihop dem betalar franchise-pris för kommodit-inkomster."
+        },
+        {
+          "type": "text",
+          "content": "Landskapets viktigaste lag: konkurrensfördelar är alltid LOKALA. En fördel existerar aldrig i allmänhet — bara inom en definierad marknad, det vill säga en produkt i en geografi. Microsoft var nästan globalt oangripligt i operativsystem för persondatorer — och helt utan fördel i tandkräm. Detaljhandeln är i grunden lokal; cement och ballast regionala eftersom transportkostnaden bär skyddet; läkemedel globala per molekyl men klassvisa och landvisa i sitt prismaktsspel. Marknadsdefinitionen är därmed inte pappersarbete utan den siffra som avgör allt: Walmarts moat mättes i regional marknadsandel, inte i national — och Coors gick under på just den skillnaden (kapitel 11). I AKM1 är detta V03 Intäktsdiversifiering och segmenttänkandet: vilka kunder, vilken produkt, vilken geografi — och vilka fem till femton bolag konkurrerar faktiskt om just de kunderna?"
+        },
+        {
+          "type": "text",
+          "content": "Bokens källtaxonomi, som kursens kapitel 5–9 följer i tur och ordning: tre äkta källor — utbud (leverera billigare: process, resurs, läge), efterfrågan (fångade kunder: vana, omställningskostnad, sökkostnad, nätverk) och skalekonomier (störst i den relevanta marknaden, eftersom fasta kostnader sprids) — plus regleringen som statligt skapad fjärde barriär (patent, licenser, tillstånd). Allt annat — bra produkter, stor marknadsandel, duktiga chefer, effektiv exekvering — är i bokens mening INTE konkurrensfördelar utan antingen väder eller hygien. Dorsey-kursen stannade vid listan över källor; Greenwald härleder dem ur en kraft och lägger till det Dorsey saknade: marknadsdefinitionen och fallet utan moat. AKM1-brygga: V03 (vilken marknad mäter vi i), V13–V15 (källorna) och V09 (avkastningsserien som avgör vilken terräng bolaget faktiskt står i)."
+        },
+        {
+          "type": "insikt",
+          "content": "En moat finns aldrig i allmänhet — bara inom en definierad marknad. Fråga alltid: vilken produkt, vilken geografi, vilka faktiska konkurrenter? Bolaget som är etta i Norden i sin nisch kan vara en anonym pris-taker på den europeiska marknaden — och det är marknadsdefinitionen, inte marknadsföringen, som avgör vilken andel som är den rätta siffran."
+        },
+        {
+          "type": "utmaning",
+          "content": "Definiera den relevanta marknaden för ett av dina innehav, i tre steg: en — produkten ur kundens perspektiv (vad är den faktiska ersättningen?); två — geografin (var levereras och köps den?); tre — listan på de fem till femton bolag som faktiskt konkurrurerar om samma kunder i samma område. Räkna sedan bolagets andel i DEN marknaden — inte i branschstatistikens totalmarknad. Jämför de två andelarna. Skillnaden är ofta skillnaden mellan franchise och kommodit."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur ser bokens strategiska landskap ut för de flesta marknader?",
+          "alternativ": [
+            "De flesta marknader domineras av en incumbent med stark moat",
+            "De flesta marknader saknar konkurrensfördelar — avkastningen stakas ut till kapitalkostnaden",
+            "De flesta marknader har två till tre moat-bolag",
+            "Marknader utan fördelar är omöjliga att tjäna pengar i ens temporärt"
+          ],
+          "ratt": 1,
+          "tips": "Bokens nedslående utgångspunkt: konkurrens är regel, fördel undantag."
+        },
+        {
+          "q": "Vad menas med att konkurrensfördelar alltid är lokala?",
+          "alternativ": [
+            "Att de bara finns i småbolag",
+            "Att de bara gäller lokala företag i kommunal regi",
+            "Att en fördel existerar bara inom en definierad marknad — produkt plus geografi; global i ett skift, noll i ett annat",
+            "Att fördelar aldrig kan mätas"
+          ],
+          "ratt": 2,
+          "tips": "Microsoft i operativsystem kontra Microsoft i tandkräm — marknadsdefinitionen avgör."
+        },
+        {
+          "q": "Vilka är bokens tre äkta källor till konkurrensfördelar — plus tillägget?",
+          "alternativ": [
+            "Tillväxt, lönsamhet och värdering",
+            "Utbud (billigare produktion), efterfrågan (fångade kunder) och skalekonomier — plus reglering/licenser som statligt tillägg",
+            "Produkt, pris och distribution",
+            "Ledning, kultur och teknik"
+          ],
+          "ratt": 1,
+          "tips": "Kursens kapitel 5–9 följer källorna i exakt den ordningen."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Kommoditetshelvetet — när konkurrensen stakar ut värdet till noll [illustrativt]",
+      "intro": "Det här är kapitlet som skiljer Greenwald från Dorsey: tillståndet UTAN moat. Dorsey-kursen listar moatkällor; Greenwald beskriver utfallet när ingen finns — marknaden där konkurrensen stakar ut värdet till noll, där tillväxt är inbjudan och effektivitet är hygien. Kursen fyller på med en illustrativ svensk exempelsamling från verkstadsindustrin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen, citerad öppet. På en marknad utan barriärer — jämlik tillgång till kunder, teknik och kapital — konkurrerar identiska erbjudanden bort varandras överskott: priset pressas mot marginalkostnaden och avkastningen mot kapitalkostnaden. Det finns inget stabilt överskott att skydda, för varje överskott omedelbart lockar in kapacitet som äter det. Bokens svar på frågan vad gör man då är bistert: kostnadseffektivitet. Men notera skillnaden — effektivitet är HYGIEN, inte moat: en kostnadsfördel alla kan kopiera ger inget skydd, bara en inbjudan till nästa rationaliseringsrunda. Strategilitteraturens mest översålda ord — konkurrenskraftig genom effektivitet — betyder i Greenwalds värld: utan fördel, överlever på arbetsinsats. För investeraren följer den viktigaste konsekvensen av alla: på en marknad utan barriärer är TILLVÄXT inte värde. Ny efterfrågan lockar in matchande kapacitet, och expansionsvinsten stakas ut — värderat till noll."
+        },
+        {
+          "type": "text",
+          "content": "Bokens renaste exempel: flygbranschen. Symmetriska flottor, pris-transparent efterfrågan (kunden söker på pris i en jämförelsetjänst), ingen fångad kund, täthetsfördelar som inte räcker för varaktigt överskott — resultatet är en bransch som i decennier tjänat kring eller under sin kapitalkostnad genom konjunktur efter konjunktur, trots att alla förstår mekanismen. Kapitel 12 återkommer till flyget inifrån: Kiwi Airlines, utmanaren som trodde att den kunde vinna ett priskrig utan fördel. Poängen för AK1A: branschens kollektiva V09-serie (ROE genom hela cykeln) avslöjar terrängen snabbare än någon berättelse — bolag för bolag, år för år, kring åtta till tolv procent utan bestånd."
+        },
+        {
+          "type": "text",
+          "content": "Svensk exempelsamling [illustrativt, i bokens anda]. Tänk dig Svensk Verkstad AB [illustrativt]: tillverkare av kundritade standardkomponenter till nordisk verkstadsindustri. Produkten specificeras av kunden i ritningen — det finns inget att differentiera. Upphandlingarna sker på pris, bytet av leverantör kostar kunden nästan inget, och i cykelns toppår lockar goda marginaler in ny kapacitet — nya verktygsverkstäder, omlokaliserad europeisk och asiatisk produktion — som i nästa nedgång stakar ut marginalerna till noll igen. ROE genom cykeln landar kring kapitalkostnaden (V09), marginalgapet mot konkurrenterna jämnas ut (V07–V08), intäkterna är prisdrivna och konjunkturstyrda (V12), och belånad expansion i toppår blir en V19-risk när vändningen kommer. Samma mönster [illustrativt] i skog, massa och papper — en globalt identisk vara — och i byggståls- och byggnadsmaterialexport utan differentiering. Det är kommoditetshelvetet: inte konkurs, men värdets långsamma utstakning. AKM1-brygga: V07–V08 (frånvarande marginalgap), V09 (ROE kring kapitalkostnad), V12 (prisdriven instabilitet) och V19 (belåning + emission-risk i toppcykeln)."
+        },
+        {
+          "type": "insikt",
+          "content": "I kommoditetshelvetet är tillväxt inte värde — det är inbjudan. Fråga till varje verkstads- och råvarubolag: vad heter barriären? Om svaret är effektivitet eller global storskalighet som alla kan uppnå — då finns ingen, och bolaget ska värderas som cykel, aldrig som franchise. Brygga till VIG-kursen: i EPV-diagnostiken ligger EPV ungefär vid återgångsvärdet på tillgångarna — råvaruproduktion utan moat."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kommoditetshelvetets kännetecken — svensk exempelsamling [illustrativt]\",\"rader\":[[\"Kännetecken\",\"Mekanism\",\"Illustrativt svenskt exempel\",\"AKM1-spår\"],[\"Pris som enda vapen\",\"identisk produkt, transparent upphandling\",\"verkstadskomponenter till kundritning\",\"V07 litet marginalgap\"],[\"Avkastning kring kapitalkostnad\",\"konkurrensen stakar ut överskottet\",\"skog, massa och papper genom cykeln\",\"V09 utan bestånd kring 8–12 %\"],[\"Ingen fångad efterfrågan\",\"bytet kostar kunden inget\",\"byggmaterial med identiska normer\",\"V12 engångs- och prisdrivet\"],[\"Cykeln äter expansionen\",\"ny kapacitet matchar efterfrågan\",\"kapacitetsutbyggnader i toppår\",\"V19 belåning och emission-risk\"],[\"Effektivitet kopieras\",\"kostnadsfördel utan barriär är hygien, inte moat\",\"lean-program hos alla aktörer\",\"V07–V08 jämnade över tid\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Klassificera tre av dina industriinnehav mot tabellen ovan: ett streck per kännetecken som passar. Räkna sedan V09-genomsnittet (ROE) över tio år för varje bolag och ställ det mot en antagen kapitalkostnad på åtta till tio procent. Bolag med fler än tre streck och tioårs-ROE kring kapitalkostnaden tillhör kommoditetshelvetet — skriv upp dem och värdera dem hädanefter som cyklar: normaliserad EPV med tillgångsvärde som golv, och aldrig ett krona för tillväxt."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad händer med lönsamheten på en marknad utan barriärer?",
+          "alternativ": [
+            "Den höjs eftersom alla effektiviseras",
+            "Priset pressas mot marginalkostnaden och avkastningen mot kapitalkostnaden",
+            "Den blir slumpmässigt fördelad mellan aktörerna",
+            "Inget — lönsamheten styrs bara av konjunkturen"
+          ],
+          "ratt": 1,
+          "tips": "Utan skydd äter konkurrensen varje överskott — det är hela landskapets första lag."
+        },
+        {
+          "q": "Varför skapar tillväxt inget värde i kommoditetshelvetet?",
+          "alternativ": [
+            "Därför att tillväxt alltid är farligt",
+            "Därför att kunderna inte vill ha mer av produkten",
+            "Därför att ny efterfrågan lockar in matchande kapacitet som stakar ut expansionsvinsten",
+            "Därför att räntan äter upp vinsten"
+          ],
+          "ratt": 2,
+          "tips": "Värdet stakas ut till noll: det överskott expansionen skapar äts av den kapacitet som följer efter."
+        },
+        {
+          "q": "Vad är den enda strategin utan konkurrensfördelar enligt boken — och varför räcker den inte som moat?",
+          "alternativ": [
+            "Innovation — nya produkter skyddar alltid",
+            "Kostnadseffektivitet — men den kopieras, den är hygien inte barriär",
+            "Diversifiering — sprida risken över branscher",
+            "Prispress — slå ut konkurrenterna en gång för alla"
+          ],
+          "ratt": 1,
+          "tips": "En fördel alla kan kopiera ger inget skydd — bara nästa rationaliseringsrunda."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Den enda kraften — incumbency-fördelen och inträdesbarriären",
+      "intro": "Nu den enda kraften på djupet: incumbency-fördelen, det etablerade bolagets företräde. Greenwald och Kahn skärper begreppet långt bortom vaga ord om konkurrenskraft — en verklig fördel är något konkurrenten INTE kan göra, oavsett pengar — och visar varför barriärer alltid tillfaller den som redan är inne.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen, i fri översättning från boken: en verklig konkurrensfördel är något en konkurrent INTE kan göra — inte något den bara gör sämre idag. Skillnaden är avgörande. Att vara tjugo procent effektivare är ingen fördel om konkurrenten med kapital kan komma ikapp; att äga den enda fyndigheten, det enda nätverket, den fångade kundbasen eller den lokala dominansen är en fördel just för att pengar inte köper en kopia. Följdregel ett: fördelar tillfaller incumbents. Barriären skyddar den som redan är inne på marknaden; utmanaren står utanför och ser samma kunder, samma teknik, samma kapitalmarknad — men kan inte nå lönsamhet eftersom incumbenten strukturmässigt hamnar före. Följdregel två: eftersom varje inträde kräver att rycka kunder från någon annan, blir inträdet utan egen barriär ett långt krig med subventionerade priser — ett krig som incumbenten, med djupare ficka och låsta kunder, kan förlänga betydligt längre än utmanaren (kapitel 12 bevisar det med Kiwi)."
+        },
+        {
+          "type": "text",
+          "content": "Reduktionen i praktiken, det vill säga varför de fyra övriga krafterna är betingade. Med barriär: konkurrenterna kommer inte in, och därmed dämpas rivaliteten (få, olika starka aktörer med stabila andelar kan hålla prisedisciplin), köparmakten sätts tak av fångenskapen (den som vill byta betalar omställning eller sökkostnad), leverantörsmakten neutraliseras av incumbentens alternativ och volym, och substitut biter bara i kanten. Utan barriär: allt biter samtidigt. Strategianalysen kollapsar därmed till en beslutsträd med två grenar — barriär eller inte — och varje gren har sin egen strategi. Med barriär: försvara andelen, hantera rivaliteten, avskräcka inträden, prissätt inom fångenskapens gränser (kapitel 10 och 11). Utan barriär: kostnadseffektivitet och pristagande — och för investeraren värdering som cykel, inte franchise (kapitel 3)."
+        },
+        {
+          "type": "text",
+          "content": "Källkartan, som kursen följer kapitel 5–9: utbud (leverera billigare — process, resurs, läge; kapitel 5 tar dess starkaste form, produktionsskalan), efterfrågan (fångade kunder — vana, omställningskostnad, sökkostnad; kapitel 6; och dess starkaste form nätverk; kapitel 7), skalekonomier i den relevanta marknaden (kapitel 5), reglering och patent (kapitel 9) — och testerna som avgör vilken källa som faktisk gäller (kapitel 10: andelsstabilitet plus ROE-uthållighet). AKM1-brygga: V13 Patent och immateriella rättigheter, V14 Varumärke och kundlojalitet, V15 Nätverkseffekter — källorna; V09 ROE — beviset; V03 — marknadsdefinitionen som avgör var barriären alls kan finnas."
+        },
+        {
+          "type": "insikt",
+          "content": "En konkurrensfördel är per definition exklusiv: om konkurrenten kan köpa sig till samma sak är det ingen fördel — det är en utgift. Testa varje påstående om konkurrenskraft med pengafrågan: hur mycket kapital som helst — kan de replikera det? Ja = ingen moat. Nej = nu kan analysen börja."
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna senaste årsredovisning för ett bolag du äger och leta upp styrelsens eller ledningens lista över konkurrensfördelar (de finns nästan alltid i affärsbeskrivningen). Pengafråga-testa varje punkt: kan en välfinansierad utmanare replikera detta med kapital och tid? Sortera listan i två kolumner: replikerbart och icke-replikerbart. Oftast återstår efter testet noll till en punkt — och det är den punkt som hela bolagets värde som franchise vilar på, om någon."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definierar boken en verklig konkurrensfördel?",
+          "alternativ": [
+            "Något bolaget gör tjugo procent bättre än konkurrenterna",
+            "Något en konkurrent INTE kan göra oavsett kapital — inte något den bara gör sämre idag",
+            "En stor marknadsandel",
+            "En hög aktiekursutveckling över fem år"
+          ],
+          "ratt": 1,
+          "tips": "Pengafrågan: kan de replikera det? Verklig fördel är exklusiv av struktur, inte av grad."
+        },
+        {
+          "q": "Till vem tillfaller barriärernas fördelar?",
+          "alternativ": [
+            "Den som är på väg in — utmanaren med färskt kapital",
+            "Leverantörerna i värdekedjan",
+            "De etablerade aktörerna — incumbents; moaten skyddar den som redan är inne",
+            "Kunderna, genom lägre priser"
+          ],
+          "ratt": 2,
+          "tips": "Barriären är ett företräde: den som står innanför murarna."
+        },
+        {
+          "q": "Varför misslyckas de flesta inträden utan egen barriär?",
+          "alternativ": [
+            "Därför att inträden är olagliga utan tillstånd",
+            "Därför att nya bolag alltid har sämre produkter",
+            "Därför att banker vägrar finansiera utmanare",
+            "Därför att att rycka kunder kräver år av subventionerade priser — ett krig incumbenten har djupare ficka att förlänga"
+          ],
+          "ratt": 3,
+          "tips": "Kapitel 12 visar det i praktiken: Kiwi Airlines förklarade krig utan fördel — och förlorade allt."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Moat I: Produktionsskalfördelar och lokal nischdominans — Walmart-metoden",
+      "intro": "Den första stora moat-källan i bokens tur och ordning: skalekonomier i produktion och distribution — kostnaden per enhet som faller med volymen i den relevanta marknaden. Bokens paradexempel är Walmart, och den viktigaste lärdomen är geografisk: dominera varje region innan nästa. Lokal nischdominans är skalekonomins vardagsform — och ofta dess starkaste.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen, citerad öppet. Skalekonomier uppstår när kostnaden per enhet faller med volymen — och det gör den när fasta kostnader dominerar: distribution, reklam, forskning, anläggning. Tre nyanser gör bokens version skarpare än lärobokens. För det första är skalan alltid relativ en marknad: fördelen gäller bara mot konkurrenter i SAMMA marknad — att vara stort i Europa är irrelevant om konkurrensen utkämpas per region. För det andra är den kritiska frågan marknadens storlek i förhållande till den minsta effektiva skalan: ju mindre damm i förhållande till de fasta kostnaderna, desto lättare för en enskild aktör att dominera den — dominans i små dammar är systematiskt underskattat. För det tredje sätter skalan inget tak på priset — den ger ett GOLV av kostnadsöverläge: ledaren kan prisa ut varje utmanare som måste bära samma fasta kostnader på mindre volym. Skalens motorer i boken: distributionens täthet, reklamen (skapandet av en kampanj är en fast kostnad — volymen som sprider den är variabel), forskningen (ett FoU-program kostar detsamma oavsett om det bärs av tiotals eller tusentals miljoner i försäljning) och anläggningsutnyttjandet."
+        },
+        {
+          "type": "text",
+          "content": "Walmart-fallet, i bokens egen genomgång [öppen citation i sammanfattning]. Walmart expanderade inte nationellt — det expanderade koncentriskt. Från Arkansas och utåt, ring för ring: ett distributionscenter i mitten, butiker inom en dags köravstånd, tät täckning av varje region FÖRE steget till nästa. Följden: i varje region uppnådde Walmart den dominerande andel som ger skalafördelar i just distribution (täta rutter, fulla lastbilar) och reklam (samma kampanj når hela regionens kunder) — medan de nationella konkurrenterna bar sina fasta kostnader utspridda över tunn täckning. Walmarts moat var aldrig nationell — den var regional, multiplicerad. Det är Walmart-metoden: tillväxt som följer barriärens geografi i stället för att springa ifrån den. Kapitel 11 återkommer till fallet och ställer det mot Coors, där samma verktyg — expansion — sprängde barriären."
+        },
+        {
+          "type": "text",
+          "content": "Lokal nischdominans — skalekonomins vardagsform och ofta starkaste skepnad. Transportekonomin skyddar cement, grus och ballast: kostnaden per ton per kilometer gör att den lokala domineraren är i praktiken oangriplbar inom sin radie, medan samma bolag är en pris-taker utanför. Regionala dagstidningar (förr annonsmarknadens lokala monopol), detaljhandelns geografi (Home Depot och andra klusterbutiker för att dominera varje lokalt upptagningsområde) och avfallshanteringens rutter (kapitel 15) följer samma lag: marknaden är mindre än den ser ut, och därför räcker en andel som ser blygsam ut nationellt men är massiv lokalt. Fällan är symmetrisk: så snart ledningen omdefinierar marknaden större — nationell expansion, global satsning — späds andelen ut och de fasta kostnaderna skalas mot större rivaler. AKM1-brygga: V07–V08 (marginalgapet mot den marginella konkurrenten — skalan syns i marginalerna), V03 (geografisk marknadsdefinition), V09 (uthålligheten som skiljer skala från cykel), V13–V15 (moat-kategorin som helhet)."
+        },
+        {
+          "type": "insikt",
+          "content": "Skala är relativ marknaden: trettio procent av den nordiska marknaden kan vara en fästning, tre procent av den globala är ett bortnummer. När en VD säger störst i Europa — fråga: störst i vilken marknad, mätt hur? Det är marknadsdefinitionen som avgör om skalan är en vallgrav eller en siffra."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Skalens motorer — fasta kostnader som blir vallgrav\",\"rader\":[[\"Motor\",\"Fast kostnad som sprids\",\"Bokens exempel\",\"AKM1-spår\"],[\"Distribution och täthet\",\"lager, terminaler, rutter\",\"Walmarts distributionscentra; Waste Managements rutter\",\"V07–V08, V03\"],[\"Reklam\",\"skapandet av kampanjen är fast\",\"P&G; Intel Inside\",\"V14 + V07\"],[\"Forskning och utveckling\",\"programmet kostar detsamma vid stor volym\",\"läkemedel; mikroprocessorer\",\"V13, V16\"],[\"Anläggning och inköp\",\"stora beställningar; utnyttjande av kapacitet\",\"kapitalintensiv tillverkning\",\"V07–V08\"],[\"Fälla: omdefinierad marknad\",\"nationell expansion späder regional andel\",\"Coors (kapitel 11)\",\"V01, V03-varning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna två aktieandelar — av marknaden — för ett av dina innehav: en med bolagets egen marknadsdefinition (ur prospekt eller IR-material, ofta den smickrande globala) och en med en geografiskt snävare, geografiskt ärlig definition (det område där omsättningen faktiskt finns och konkurrenterna faktiskt möts). Ställ de två andelarna bredvid varandra och skriv en mening: i vilken av de två marknaderna är andelen stor nog att bära bolagets fasta kostnader ensam? Svaret avgör om V13–V15 över huvud taget kan poängsättas högt."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är Walmart bokens paradexempel på skalekonomier?",
+          "alternativ": [
+            "Därför att Walmart var först med lågprisbutiker i USA",
+            "Därför att expansionen skedde koncentriskt — dominera varje region innan nästa, så att distribution och reklam förblev regionala fasta kostnader",
+            "Därför att Walmart hade flest anställda",
+            "Därför att Walmart exporterade till Europa"
+          ],
+          "ratt": 1,
+          "tips": "Moaten var aldrig nationell — den var regional, multiplicerad ring för ring."
+        },
+        {
+          "q": "När är skalekonomier starkast enligt boken?",
+          "alternativ": [
+            "När marknaden är global och obegränsad",
+            "När produkten är mest tekniskt avancerad",
+            "När marknaden är liten i förhållande till de fasta kostnaderna — dominans i en liten dam räcker långt",
+            "När räntan är låg"
+          ],
+          "ratt": 2,
+          "tips": "Den kritiska frågan är marknadens storlek mot minsta effektiva skala — små dammar är lätta att dominera."
+        },
+        {
+          "q": "Vad är fällan med produktionsskala och lokal dominans?",
+          "alternativ": [
+            "Att skala alltid kräver låg personalomsättning",
+            "Att fasta kostnader alltid är för små",
+            "Att skala bara fungerar i tjänstesektorn",
+            "Att om marknaden omdefinieras större — nationell eller global expansion — späds andelen ut och fasta kostnader skalas mot större rivaler: Coors-fallet"
+          ],
+          "ratt": 3,
+          "tips": "Kapitel 11: samma verktyg (expansion) som byggde Walmart sprängde Coors barriär."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Moat II: Fångad efterfrågan — vana, omställningskostnad, sökkostnad (V14, V12)",
+      "intro": "Den andra källan är inte större efterfrågan — utan fångad efterfrågan: kunder som stannar trots jämförbara erbjudanden. Boken delar upp fångenskapen i tre mekanismer — vana, omställningskostnad och sökkostnad — och dess renaste trippel-exempel är Bloomberg-terminalen. Här bor V14 och V12 på köpsidan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre mekanismer, citerade öppet. VANA: kunden återköper utan att aktivt välja — upprepat köp av samma märke stänger sökandet av; det är efterfråge-fångenskapens starkaste form och bygs under decennier av repeterad exponering (kapitel 8 ägnas helt åt den, för vana är varumärkets ekonomiska kärna). OMSTÄLLNINGSKOSTNAD: att byta kostar pengar, arbete eller risk — bankkontot med alla autogiron, företagets affärssystem, kirurgens tränade hand på en viss instrumentplattform; kunden är inte kär, den är fångad, och det är lika effektivt. SÖKKOSTNAD: att hitta och utvärdera alternativ kostar ansträngning — Amazon och Walmarts roll som standarddestination är i bokens läsning en sökkostnads-fångenskap: kunden återvänder därför att sökandet efter något billigare är dyrare i tid än skillnaden i pris. Gemensamt för alla tre: kunden stannar utan att aktivt välja varje gång — fångenskapen är icke-medveten."
+        },
+        {
+          "type": "text",
+          "content": "Bloomberg-fallet, bokens renaste demonstration [öppen citation i sammanfattning]. Terminalen som dominerade finansdata i decennier var trippellt låst: vana (användarens hela arbetsflöde och specialtangentbord byggt för terminalen — muskelminnet är en tillgång som inte följer med till en konkurrent), omställningskostnad (terminalen är integrerad i kundens processer, rapporter, prissättning — bytet är ett organisationsprojekt, inte ett inköp) och nätverk (meddelandefunktionen mellan terminalanvändare: värdet växer med alla andra som redan sitter där — en preview av kapitel 7). Följden: Bloomberg behöll extrem prissättningskraft i årtionden mot tekniskt likvärdiga utmanare. Och gränserna, också de bokens: fångenskapen slits av generationsväxlingar (nya användare utan gamla vanor), av standardisering och öppna format (omställningskostnaden faller), och av incumbentens egen girighet — ett pris som överstiger omställningskostnaden aktiverar bytet som vallgraven trodde varomöjligt."
+        },
+        {
+          "type": "text",
+          "content": "Mätningen — där AK1A skiljer sig från anekdoten. Fångenskap mäts i beteende, inte i attityd: retention och kundöverlevnad (hur många kunder är kvar efter ett, tre, fem år?), köpfrekvens och andel återkommande inköp, prisökningar utan volymfall (det direktesta beviset: bolaget höjer priset och kunderna stannar — Dorsey-kursens tio-procentstest är specialfallet av samma princip), och andelen kontrakts- och prenumerationsintäkter. I AKM1-syntax: V14 Varumärke och kundlojalitet poängsätts på prisvilja och retention, V12 Intäktsstabilitet på återkommande andel, V02 ARR-tillväxt på prenumerationsformens volym. Nöjdhetsindex och varumärkesbarometrar används aldrig som huvudbevis — de mäter attityd, inte beteende. AKM1-brygga: V14, V12, V02 — och nästa kapitel tar fångenskapens starkaste form: nätverket (V15)."
+        },
+        {
+          "type": "insikt",
+          "content": "Vanans, omställningskostnadens och sökkostnadens gemensamma namn är icke-medvetenhet: kunden stannar utan att aktivt välja. Mät därför fångenskap i beteende — retention, köpfrekvens, prisökningar utan volymfall (V14/V12/V02) — aldrig i nöjdhetsundersökningar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag i din portfölj med företagskunder. Dela upp kundbasen i två till tre grupper och ställ för varje: vilken mekanism fångar den här gruppen — vana, omställningskostnad eller sökkostnad? Sätt sedan ett kronbelopp på bytet: vad skulle det kosta en genomsnittlig kund att byta leverantör i morgon (tid, implementation, risk)? Jämför det beloppet med bolagets genomsnittliga årliga intäkt per kund. Om bytkostnaden är flera årsintäkter är fångenskapen påvisad i pengar — inte i ord."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka tre mekanismer skapar fångad efterfrågan i boken?",
+          "alternativ": [
+            "Pris, kvalitet och service",
+            "Vana, omställningskostnader och sökkostnader",
+            "Reklam, försäljning och distribution",
+            "Licenser, patent och varumärke"
+          ],
+          "ratt": 1,
+          "tips": "Alla tre har samma signatur: kunden stannar utan att aktivt välja."
+        },
+        {
+          "q": "Varför är Bloomberg-terminalen bokens renaste demonstrationsfall?",
+          "alternativ": [
+            "Därför att terminalen var tekniskt överlägsen allt konkurrenterna gjorde",
+            "Därför att terminalen var billigast",
+            "Därför att den var trippellt låst: vana (arbetsflöde och tangentbord), omställningskostnad (integrerad i kundens processer) och nätverk (meddelanden mellan användare) — vilket gav prissättningskraft i decennier",
+            "Därför att Bloomberg saknade konkurrenter helt"
+          ],
+          "ratt": 2,
+          "tips": "Tre mekanismer i samma produkt — och ändå gränser: generationsväxling, standardisering, överprissättning."
+        },
+        {
+          "q": "Hur mäts efterfråge-fångenskap bäst i AKM1?",
+          "alternativ": [
+            "Genom varumärkesbarometrar och kännedom",
+            "Genom beteendedata — retention, köpfrekvens, prisökningar utan volymfall (V14, V12, V02)",
+            "Genom antalet anställda i kundtjänst",
+            "Genom nöjdhetsindex"
+          ],
+          "ratt": 1,
+          "tips": "Attityd är inte beteende — vallgraven syns i att kunderna stannar och tål prisökningar."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Moat III: Nätverkseffekter — positiv återkoppling och vinnaren som tar allt (V15)",
+      "intro": "Den tredje källan är den starkaste barriär boken känner: nätverkseffekter — där produktens värde för varje användare växer med det totala antalet användare. Efterfrågeskala och utbudsskala förstärker varandra, marknader tippar mot en vinnare, och inträdet ställs inför hönan-och-ägget-problemet. Det här är V15:s hemkapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekaniken, citerad öppet. En nätverkseffekt föreligger när varje ny användare gör produkten mer värd för de befintliga — värdekedjan mellan användarna är själva produkten. Detta är efterfrågesidans skalekonomi, och dess unika egenskap är att den FÖRSTÄRKER utbudsskalorna: fler användare ger både lägre kostnad per enhet och högre värde per enhet, samtidigt. Följden är tipptendens — små tidiga försprång blir självförstärkande tills en aktör tagit nästan hela marknaden, inte därför att den är bäst utan därför att den är störst — och hönan-och-ägget-problemet för varje utmanare: nätverkets värde kräver att båda sidor (köpare och säljare, utvecklare och användare, förare och passagerare) finns samtidigt, och utmanaren börjar med noll på båda. Bokens standardkrig — operativsystem, format, kompatibilitetsnät — är alla variationer på samma matematik: vinnaren låser standarden, standarden låser vinnaren."
+        },
+        {
+          "type": "text",
+          "content": "Microsoft-fallet, i bokens nätverks-genomgång [öppen citation i sammanfattning]. Microsoft licensierade DOS och Windows till SAMTLIGA persondatorstillverkare i stället för att själv bygga maskinvara — och byggde därmed ett nät på båda sidor: ju fler maskiner med Windows, desto fler utvecklare skrev program till Windows; ju fler program, desto mer värdefull varje maskin med Windows — positiv återkoppling på både efterfråge- och utbudssidan. Apple, med sitt closed-integrationsupplägg, erbjöd i många avseenden bättre maskinvara och mjukvara — men nätverkets matematik straffar integritet: Apples andel av standarden räckte aldrig för att tippa utvecklarnätet. Till det kommer komplementariteten: Intel och Microsofts allians — maskinen och operativsystemet som ömsesidiga förstärkare — stabiliserade standarden ytterligare (kapitel 14 dissekerar Wintel-stacken). Nätverkets kraft är alltså inte produktöverlägsenhet utan låsning: filformat, installerad bas, utvecklarkunskap och vanor gör att bytet kostar mer än någon enskild funktion är värd."
+        },
+        {
+          "type": "text",
+          "content": "Felfallen — för nätverk är starka men inte odödliga, och boken är tydlig med att barriären är paradigmbunden. För det första: paradigmskiften. Ett nytt teknikt skikt kan bygga ett nytt nätverk på det gamlas bekostnad — de proprietära datanätverk som var fästen på åttiotalet blev värdelösa när internet standardiserade kommunikationen; nätverket är starkt INOM sitt skikt, inte mot nya skikt. För det andra: sammankoppling och öppna standarder — när nätverk kopplas samman (e-post, filformat) upplöses exklusiviteten: värdet av att sitta i just DET nätverket försvinner när alla nät når varandra. Kursen lägger från Dorsey-kursen till en tredje bevakning: multi-homing och negativ skala (användare enkelt aktiva på flera nätverk; trängsel och spam som sänker värdet per användare när nätverket växer). Mätregeln för AKM1: riktning över nivå — växer nätverket på BÅDA sidorna just nu, och växer engagemanget per användare? Totala användarantal är en eftersläpande indikator som kan stå kvar länge efter att moaten börjat dö. AKM1-brygga: V15 Nätverkseffekter (kärnan), V14 (låsningen av användarna), V16 (teknikskiftet som dödsorsak), V03 (nätverkets faktiska täckningsområde)."
+        },
+        {
+          "type": "insikt",
+          "content": "Nätverkets moat är den enda där produkten kan vara medelmåttig och vallgraven ändå blir djupare för varje år — men också den enda som kan försvinna genom ett paradigmskifte snarare än genom långsam erosion. Bevaka riktningen (växer båda sidorna, växer engagemanget per användare?) — nivån (totala användare genom historien) ljuger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Nätverkseffekter — mekanik, styrka, felfall\",\"rader\":[[\"Aspekt\",\"Innebörd\",\"Bokens exempel\",\"AKM1-spår\"],[\"Positiv återkoppling\",\"varje användare höjer värdet för alla\",\"Windows-installerad bas; Bloomberg-meddelanden\",\"V15\"],[\"Tipptendens\",\"små tidiga försprång blir total dominans\",\"standardkrig: operativsystem och format\",\"V15, V14\"],[\"Hönan-och-ägget-inträde\",\"utmanaren behöver båda sidor samtidigt\",\"utmanare mot etablerade standardnät\",\"V15\"],[\"Komplementära allianser\",\"parten som gör standarden starkare\",\"Intel + Microsoft (Wintel)\",\"V15, V17\"],[\"Felfall: paradigmskifte\",\"nytt skikt gör nätverket irrelevant\",\"proprietära datanät mot internet\",\"V16\"],[\"Felfall: sammankoppling\",\"öppna standarder upplöser exklusiviteten\",\"e-post; öppna filformat\",\"V15-varning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett nätverksbolag du känner (betalnät, marknadsplats, plattform). Mät de tre riktningsspåren för V15: en — växer båda sidorna av nätverket de senaste fyra kvartalen (säljare och köpare, utgivare och läsare)? två — är take rate eller motsvarande prismätare per transaktion stabil eller stigande? tre — växer eller faller engagemanget per användare (transaktioner, tid, volym per person)? Skriv domen: växande nätverkseffekt, stillastående nätverk som tagit ut sin tippning, eller eroderande. Jämför med bolagets egen moat-beskrivning i årsredovisningen."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad gör nätverkseffekter till den starkaste barriären enligt boken?",
+          "alternativ": [
+            "Att nätverksbolag alltid har lägst kostnader",
+            "Att efterfråge- och utbudsskala förstärker varandra — varje användare höjer värdet för alla och tippar marknaden mot en vinnare",
+            "Att nätverk bara finns i teknikbranscher",
+            "Att nätverk är omöjliga att kopiera tekniskt"
+          ],
+          "ratt": 1,
+          "tips": "Två skalor som förstärker varandra — och en tipptendens som gör att vinnaren tar nästan allt."
+        },
+        {
+          "q": "Vad byggde Microsofts nätverks-maskineri i bokens genomgång?",
+          "alternativ": [
+            "Licensiering till alla tillverkare plus utvecklarnät och kompatibilitetslåsning — med Intel som komplementär allians",
+            "Att Microsoft byggde själva datorerna med högre kvalitet",
+            "Att Microsoft hade lägst pris på licenserna",
+            "Att Microsoft ägde hela distributionskedjan"
+          ],
+          "ratt": 0,
+          "tips": "Öppet licensierande spred standarden; utvecklarna och filformaten låste den — Apple höll integriteten och förlorade tippen."
+        },
+        {
+          "q": "Vilka två klassiska dödsorsaker nämner kapitlet för nätverks-moats?",
+          "alternativ": [
+            "Inflation och räntor",
+            "Personalflykt och ledningsbyten",
+            "Paradigmskiften som gör nätverket irrelevant, och sammankoppling eller öppna standarder som upplöser exklusiviteten",
+            "Konjunkturedgångar och valutarisk"
+          ],
+          "ratt": 2,
+          "tips": "Nätverket är starkt inom sitt skikt — inte mot nya skikt, och inte när alla nät når varandra."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 11,
+      "title": "Moat IV: Varumärke — när varumärke INTE är en moat (V14)",
+      "intro": "Bokens efterfråge-kapitel skärper varumärkesbegreppet långt bortom marknadsföringsläroboken: varumärke är bara en moat när det skapar vana — återköp utan sökande. Kännedom utan prisvilja är en reklamsedel. Cola-krigen — Pepsi Challenge och New Coke — är beviset, och P&G visar reklamskalan som fasta kostnader. Det här är V14:s hemkapitel, med anti-exemplen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den skärpta definitionen, i fri översättning: ett varumärke är en konkurrensfördel endast i den mån det skapar lojal vana — upprepade köp utan att kunden aktivt söker alternativ. Allt annat är kännedom, och kännedom är inte fångenskap: den medvetna kunden som överväger alternativ vid varje köp måste vinnas om igen — och kan vinnas av konkurrenten med bättre produkt eller lägre pris. Hierarkin blir brutal: varumärke med vana och bestående prispremium är moat (V14 högt); varumärke med kännedom men utan prisvilja är en återkommande kostnadspost (reklambudgeten) utan motsvarande barriär; och varumärke aktivt utspätt — överlicensierat, utsträckt över allt — är en anti-moat som förbrukar förtroendekapital. Dorsey-kursens tio-procentstest (kan bolaget höja priset tio procent utan volymfall?) är fortfarande bra — men Greenwald går ett steg djupare: testet är vad som händer MEDVETET (prisresponsen), medan vanan är vad som händer ICKE-MEDVETET (köpet sker utan att alternativet ens övervägs)."
+        },
+        {
+          "type": "text",
+          "content": "Cola-krigen, bokens paradexempel [öppen citation i sammanfattning]. Pepsi Challenge: i blindtester under seventiotalet föredrog allmänt flera testpersoner Pepsis smak — och Pepsi vann uppmärksamhet och andel bland unga. Men Coca-Colas kärna höll: vanan satt i märket, inte i smaklökarna. Beviset levererades 1985 av Coca-Cola självt: företaget bytte formulan till New Coke — som PRESTERADE BÄTTRE i blindtester — och möttes av kundrevolt; företaget tvingades tillbaka till den gamla formulan inom månader. Lärdomen, bokens och kursens: lojaliteten bodde i varumärkes-vanan (den omedvetna återupprepningen), inte i den medvetna smaken — och det är exakt därför som smakvinster i blindtester inte omkullkastar moat-ordningen. P&G-fallet visar byggnadsmekanismen: Tide och andra repeterade köps-varumärken byggdes av årtionden av sammanhängande reklam — och därmed den andra halvan av varumärkes-ekonomin: reklamen är en FAS kostnad som sprids över volymen, så varumärkesbyggande är också skalekonomi — de stora volymerna kan bära den reklam som bygger vanan som behåller volymerna. Cirkeln sluts."
+        },
+        {
+          "type": "text",
+          "content": "När varumärke INTE är moat — anti-exemplen, som kursen lärt dig att leta efter. Ett: kännedom i kommoditetskategorier — starkt känt märke i en kategori där kunden ändå handlar på pris ger ingen varaktig premie. Två: mode utan vana — lojaliteten dör med säsongen; mode-varumärken måste återuppfinna sin fångenskap varje kollektion. Tre: översträckt lyx — bokens klassiska varning (Pierre Cardin): när namnet licensieras ut på allt från skjortor till väckarklockor förbrukas exklusiviteten; varumärket töms på sin knapphet. Fyra: premium som äts av private label — där detaljhandeln byggt egna märken med samma prestanda pressas premien systematiskt. Bevisregeln för AKM1: V14 poängsätts på prispremien och vanans uthållighet — bruttomarginalgap mot branschgenomsnitt som består över cykler (V07), prisökningar i linje med eller över inflation utan volymfall — aldrig på kännedomsandel eller reklambudgetens storlek. AKM1-brygga: V14 (kärnan), V07 (premien syns i marginalgapet), V09 (premiens uthållighet över cykeln), V16 (varumärkesutsträckning som riskkatalysator)."
+        },
+        {
+          "type": "insikt",
+          "content": "Testet på ett varumärke är inte kännedom utan återköp utan sökande: köper kunden produkten som reflex? Varumärket som bara är ett medvetet val måste vinnas på nytt vid varje köp — och då är det en reklamsedel, inte en vallgrav. New Coke är beviset: smaken kunde bytas ut, vanan inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Varumärke — moat eller reklamsedel?\",\"rader\":[[\"Situation\",\"Mekanism\",\"Exempel (boken)\",\"Dom\"],[\"Vana + repeterat köp\",\"omedveten återupprepning utan sökande\",\"Coca-Cola; P&G:s Tide\",\"moat (V14)\"],[\"Prispremium som består\",\"kunden betalar mer år efter år, cykel efter cykel\",\"Coke mot butiksmärken\",\"moat (V14 + V07)\"],[\"Kännedom utan prisvilja\",\"medvetet val — kopieras av konkurrenter\",\"kända märken i kommoditetskategorier\",\"reklamsedel\"],[\"Mode utan vana\",\"lojaliteten dör med cykeln\",\"modesäsonger\",\"ingen moat\"],[\"Översträckt varumärke\",\"licensiering och utsträckning utspäder knappheten\",\"Pierre Cardin (bokens varning)\",\"anti-moat\"],[\"Premium mot private label\",\"detaljhandeln äter premien med egna märken\",\"dagligvaror utan vanestyrska\",\"eroderande (V07-trend)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör varumärkes-inkvisitionen på ett innehav du tror har varumärkes-moat. Tre bevis: en — har bolaget de senaste tio åren höjt priser i linje med eller över inflation utan volymfall? två — har bruttomarginalgapet mot närmaste konkurrent (V07) bestått genom minst en nedgång? tre — är kategorin repeterat köp där vanan kan byggas, eller engångs/mod där den inte kan? Svikter något av de tre har du sannolikt en reklamsedel — notera det i din AKM1-bedömning av V14 och sänk poängen."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visade Pepsi Challenge och New Coke-kraschen enligt boken?",
+          "alternativ": [
+            "Att smak alltid avgör marknadsandelarna",
+            "Att Pepsi saknade distributionskapacitet",
+            "Att Coca-Colas ledning var inkompetent",
+            "Att lojaliteten satt i varumärkes-vanan, inte i smaken — blindtester kunde vinnas, vanan inte"
+          ],
+          "ratt": 3,
+          "tips": "New Coke vann blindtester och mötte revolt — moaten bodde i det omedvetna återköpet."
+        },
+        {
+          "q": "När är ett varumärke INTE en moat?",
+          "alternativ": [
+            "När det bara skapar kännedom utan vana eller prisvilja — då är det en reklamsedel",
+            "När det är för gammalt",
+            "När det säljs i utlandet",
+            "När reklambudgeten är stor"
+          ],
+          "ratt": 0,
+          "tips": "Kännedom är inte fångenskap: den medvetna kunden kan vinnas av konkurrenten vid varje köp."
+        },
+        {
+          "q": "Hur hänger reklam och skalekonomi ihop i bokens varumärkes-ekonomi?",
+          "alternativ": [
+            "Reklam är rent slöseri som alltid förstör värde",
+            "Reklam förbjuds i kommoditetskategorier",
+            "Reklamen är en fast kostnad som sprids över volymen — stora volymer kan bära mer reklam, så varumärkesbyggande blir en skalmotor (P&G, Intel Inside)",
+            "Reklam fungerar bara i modebranschen"
+          ],
+          "ratt": 2,
+          "tips": "Cirkeln sluts: volym bär reklamen, reklamen bygger vanan, vanan behåller volymen."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Moat V: Patent och reglering — vallgravar med inbyggd klocka (V13, V18)",
+      "intro": "Den fjärde källan är skapad av staten: patent, licenser, tillstånd och reglering. Greenwald och Kahn placerar regeringen bland barriärbyggarna — men alla dess vallgravar har klockor: patentet löper ut, licensen kan ändras av samma politik som gav den. Här bor V13 och V18 tillsammans.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Patentet, citerat öppet: ett tidsbestämt monopol per produkt eller process — bokens läkemedels-kapitel (kapitel 13) är dess naturliga hem. Tre egenskaper gör patentet till en särskild sorts moat. Det är verkligt: under skyddstiden är prissättningsmakten nästan ren, och det är detta som bär läkemedelsindustrins historiska överavkastning (V09-serien för de stora patentportföljerna). Det är attackerbart: konkurrenter designar runt patent, utmanar dem i domstol och bygger tjocka egna portföljer som korslicensieras. Och framför allt: det har en klocka — skyddet löper ut, och dagen det gör kollapsar priset mot marginalkostnaden när kopior träder in (läkemedelens generika-klippa, kapitel 13). Därför är patentet i kursens terminologi en ARRENDELEG, inte ett ägande: värdet av ett patentbolag är värdet av kassaflödena under skyddet plus värdet av pipelinen som förnyar arrendet — aldrig det eviga franchise-värdet."
+        },
+        {
+          "type": "text",
+          "content": "Licensen och regleringen — statens andra vallgrav. Bank-, försäkrings- och elnätskoncessioner, frekvenstillstånd, taxi- och apotekstillstånd, deponi- och utsläppstillstånd: alla gör att konkurrens inte får inträda även där den vill, och flertalet är hållbarare än patent eftersom lagen patrullerar vallgraven. Men de bär en spekulär risk som boken är tydlig med: vallgrav byggd av politik kan rivas av politik. Svenska illustrationer [illustrativt, i bokens anda]: apoteksmonopolet som omdanades till oligopol vid omregleringen 2009 — över en natt förändrades en hel branschs barriärstruktur av ett riksdagsbeslut; taximarknadens avregleringar som tryckte ner ett skydd som ansetts permanent. Därför är V18 Regulatoriska katalysatorer patent- och licensmoatens tvillingvariabel i AKM1: V13 poängsätter skyddets varaktighet och bredd, V18 sannolikheten och riktningen hos regeländringen — och de två ska alltid läsas tillsammans, eftersom den ena är den andras klocka."
+        },
+        {
+          "type": "text",
+          "content": "Bokens placering och kursens sammanfattning av källkartan. Regleringen behandlas i boken som en självständig barriärkälla vid sidan av utbud, efterfrågan och skala — med tillståndstunga branscher (avfallshantering, kapitel 15; kraftnät, finansinfrastruktur) som exempel på licens som förstärker andra fördelar: Waste Managements deponitillstånd förstärker rutttätheten; ett betalnätverks koncession förstärker nätverkseffekten. Med det här kapitlet är källkartan komplett — fem skepnader: produktionsskala med lokal dominans (kapitel 5), fångad efterfrågan (kapitel 6), nätverk (kapitel 7), varumärke-vana (kapitel 8), patent och reglering (det här kapitlet) — och nästa fråga blir den avgörande: hur TESTAR man vilken som gäller, och om någon alls gör det? Det är kapitel 10. AKM1-brygga: V13 (skyddet: patentkalender, licensbredd), V18 (regeländringsrisken), V16 (pipelinen som förnyelse), V12 (intäktsstabiliteten under skyddet)."
+        },
+        {
+          "type": "insikt",
+          "content": "Patent är en arrendeleg, inte ett ägande: räkna alltid ut när skyddet löper ut och vad pipelinen räcker till efter det. Och licensen är en moat byggd av politik — samma hand som byggde den kan riva den. V13 och V18 är därför ett par: skyddets varaktighet och politikens riktning, alltid lästa tillsammans."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en klockmatris för ett innehav med skydd: en — patent- eller licenstidslinjen (när löper de viktigaste skydden ut? vilka tillstånd förnyas och när?); två — regelrisken (vilka politiska beslut de kommande fem åren kan förstärka eller riva barriären?); tre — förnyelsen (V16: vad finns i pipelinen eller i tillståndsansökningarna som ersätter det som löper ut?). Skriv en rad om vad bolaget är värt OM klockan står still — och en om vad det är värt om den springer."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kallas patentet i kursen för en arrendeleg?",
+          "alternativ": [
+            "Därför att patent måste förnyas varje år hos myndigheten",
+            "Därför att skyddet är tidsbegränsat — klockan löper, och vid utgången kollapsar priset mot marginalkostnaden när kopior träder in",
+            "Därför att patent bara gäller i ett land i taget",
+            "Därför att patent aldrig ger överavkastning"
+          ],
+          "ratt": 1,
+          "tips": "Värdet är kassaflödena under skyddet plus pipelinen — inte ett evigt franchise-värde."
+        },
+        {
+          "q": "Vad är den inbyggda risken i en licens- eller regleringsmoat?",
+          "alternativ": [
+            "Att licenser alltid är kortvariga",
+            "Att licenser bara finns i Sverige",
+            "Att licenser aldrig ger prissättningskraft",
+            "Att den är skapad av politik och därmed kan ändras eller rivas av politik — apoteks- och taxiomregleringarna som illustration"
+          ],
+          "ratt": 3,
+          "tips": "Vallgrav byggd av politik kan rivas av politik — därför är V18 tvillingvariabeln till V13."
+        },
+        {
+          "q": "Vilka AKM1-variabler parar kursen patent- och licensmoaten med?",
+          "alternativ": [
+            "V04–V06 värderingsmultiplarna",
+            "V10–V11 soliditeten",
+            "V13 (skyddet) + V16 (pipelinen) + V18 (regeländringen) + V12 (stabiliteten under skyddet)",
+            "V19–V20 risk och återköp"
+          ],
+          "ratt": 2,
+          "tips": "Skyddet, förnyelsen, klockan och stabiliteten — fyra variabler som en arrendeleg kräver."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 13,
+      "title": "Moat-testet — nio steg: marknadsandelar, ROE-uthållighet och källan (V09)",
+      "intro": "Nu kurser kärna: hur man TESTAR en moat. Bokens heuristik är empirisk och blygsam — identifiera marknaden, läs av andelsstabiliteten och avkastningens uthållighet, och först därefter leta källan. Kursen kondenserar allt till nio steg, och checklisten är kapitlets — och en av kursens — viktigaste tabell.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens heuristik, citerad öppet. Steg ett: definiera marknaden — vilka bolag konkurrerar faktiskt om vilka kunder, i vilken geografi? Inte branschstatistikens totalmarknad utan de faktiska konkurrenterna: samma produkt, samma område. Steg två och tre är de två empiriska testen. ANDLESSTABILITETEN: om marknadsandelarna och deras inbördes ordning varit stabila i fem till tio år — få inträden, få utfällningar, ingen som rycker andel från någon annan — då finns barriärer; om andelarna gungar och byter ordning finns inga skydd värd namnet. AVKASTNINGENS UTHÅLLIGHET: om bolaget genom en hel konjunkturcykel och fler håller avkastningen på kapital (ROE/ROIC) tydligt över kapitalkostnaden — i AKM1 V09-serien, gärna mot tröskeln tolv procent som i Dorsey-kursen — då har någon struktur skyddat överskottet; hög avkastning i ett enskilt år kan vara cykel, hävstång eller tur. Först när de tre stegen gett svar på OM en barriär finns frågas VILKEN källa som förklarar den — utbud, efterfrågan, skala eller reglering — och om förklaringen håller."
+        },
+        {
+          "type": "text",
+          "content": "Kursens nio steg — kursens kondensation av boken till en operationaliserbar checklista som mätarbetar varje påstående: ett, marknadsdefinitionen (V03); två, andelsstabiliteten (V03, V09); tre, inträdes- och utträdesfrekvensen (V16); fyra, avkastningens uthållighet (V09 — kursens kanske viktigaste enskilda variabel); fem, utbudskällan (V07–V08); sex, efterfrågekällan (V14, V12, V02); sju, skal- och regleringskällan (V13, V15, V18); åtta, tillväxttestet — förstärker eller späder kommande expansion barriären (V01–V02 mot V13–V15, Walmart mot Coors, kapitel 11); nio, erosionsvakten — teknikskiften, utmanare, substitut, politik (V16, V18, V07-trenden). Notera ordningen, som är bokens djupaste pedagogiska poäng: de empiriska testen FÖRE källanalysen. Om andelarna gungar och avkastningen är intermittent spelar det ingen roll hur vackert bolaget berättar om sin varumärkesstyrka — siffrorna har redan röstat."
+        },
+        {
+          "type": "text",
+          "content": "Domen och dess två konsekvenser. Faller testen — ingen stabil andelsordning, ingen uthållig överavkastning — är domen kommodit (kapitel 3): bolaget värderas som cykel med normaliserad EPV och tillgångsvärde som golv, och betalar aldrig för tillväxt; det är också bryggan till VIG-kursens EPV-diagnostik, där EPV ungefär lika med återgångsvärdet är just råvaruproduktionen. Genår testen — stabil ordning, uthållig överavkastning — är frågan vilken källa, hur djup, och vad som kan fylla vallgraven: bolaget hanterar rivalitet och prissättning, investeraren betalar moat-pris med marginal och aktiverar erosionsradarn (kapitel 12). I båda fallen är checksumman densamma: moat-påståendet ska kunna slås fel av en tidsserie — annars är det tro. AKM1-brygga: V09 (uthålligheten — testets pelare), V03 (marknadsdefinitionen), V13–V15 (källorna), V07–V08 och V12 (marginalgap och stabilitet som källbevis), V16 och V18 (erosionsbevakningen)."
+        },
+        {
+          "type": "insikt",
+          "content": "Testen före berättelsen: andelsstabilitet och ROE-uthållighet är moat-påståendets domstol, och källanalysen är förhöret som kommer efteråt. Ett bolag vars andelar gungat i tio år har redan berättat att det saknar moat — oavsett vad varumärkesavdelningen säger."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"MOAT-TESTCHECKLISTAN — nio steg (kapitlets kärna)\",\"rader\":[[\"Steg\",\"Fråga\",\"Bevis som krävs\",\"AKM1\",\"Röd flagga\"],[\"1. Marknadsdefinition\",\"vilken produkt + geografi är den faktiska marknaden?\",\"lista på faktiska konkurrenter, fem till femton\",\"V03\",\"bolaget talar bara om totalmarknaden\"],[\"2. Andelsstabilitet\",\"har andelarna och deras ordning varit stabila fem till tio år?\",\"andelsserie över tiden\",\"V03, V09\",\"andelar som gungar och byter ordning\"],[\"3. Inträdesfrekvens\",\"kommer nya och försvinner gamla sällan?\",\"nyetableringar, utfällningar\",\"V16\",\"ständigt nya utmanare\"],[\"4. Avkastningens uthållighet\",\"ROE/ROIC över kapitalkostnad, cykel efter cykel?\",\"fem- till tioårsserie mot tröskel\",\"V09\",\"enskilda glansår utan bestånd\"],[\"5. Utbudskälla\",\"kan bolaget leverera billigare — process, resurs, läge?\",\"kostnad per enhet mot marginell konkurrent\",\"V07–V08\",\"kostnadsfördel alla kan kopiera\"],[\"6. Efterfrågekälla\",\"är kunderna fångade — vana, omställning, sök?\",\"retention, köpfrekvens, prisökning utan volymfall\",\"V14, V12, V02\",\"nöjdhetsindex utan beteendedata\"],[\"7. Skala- och regleringskälla\",\"dominerar bolaget en marknad liten nog för att fasta kostnader ska räknas? tillstånd?\",\"lokal/regional andel; licens- och patentkalender\",\"V13, V15, V18\",\"störst globalt — men på en jättemarknad\"],[\"8. Tillväxttestet\",\"förstärker kommande tillväxt barriären — eller späder den?\",\"expansionens geografi mot barriärens\",\"V01–V02, V03\",\"tillväxt som omdefinierar marknaden (Coors)\"],[\"9. Erosionsvakten\",\"vad kan fylla vallgraven — teknikskifte, utmanare, substitut, politik?\",\"bevakningsmätetal per kvartal\",\"V16, V18, V07-trend\",\"ingen bevakning — moaten antas evig\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör alla nio stegen på ett innehav, ett blad var. Avsluta med domen i exakt tre utfall: MOAT (vilken källa, vilken styrka — och vilket steg som var starkaste beviset), INGEN MOAT (värdera som kommodit, epitetet franchise är förbjudet) eller OSÄKER (kräv extra marginal och halvera positionsstorleken). Spara protokollet med datum — kapitel 16:s diplomuppgift bygger på det."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka två empiriska test betonar boken för att avgöra om barriärer finns?",
+          "alternativ": [
+            "Reklambudgetens storlek och produktens kvalitet",
+            "Marknadsandelarnas stabilitet över tid och avkastningens uthållighet över kapitalkostnaden",
+            "VD:s erfarenhet och ägarkoncentrationen",
+            "Aktiens kursutveckling och direktavkastningen"
+          ],
+          "ratt": 1,
+          "tips": "Två tidsserier — andlar och avkastning — är moat-påståendets domstol (V09)."
+        },
+        {
+          "q": "Varför står marknadsdefinitionen först i checklistan?",
+          "alternativ": [
+            "Därför att den är lättast att ta reda på",
+            "Därför att alla efterföljande mått — andel, avkastning, källor — är meningslösa i fel damm",
+            "Därför att boken kräver det juridiskt",
+            "Därför att konkurrenterna annars stämmer"
+          ],
+          "ratt": 1,
+          "tips": "Walmarts moat fanns i den regionala andelen — mätt nationellt var den osynlig."
+        },
+        {
+          "q": "Vad är den rätta konsekvensen om bolaget faller testen — gungande andelar, intermittent avkastning?",
+          "alternativ": [
+            "Att sänka kraven och köpa ändå med liten marginal",
+            "Att leta hårdare efter en moat i berättelsen",
+            "Att värdera bolaget som kommodit och cykel — normaliserad EPV, tillgångsvärde som golv, och aldrig betala för tillväxt",
+            "Att alltid utesluta bolaget från universum för alltid"
+          ],
+          "ratt": 2,
+          "tips": "Ingen moat betyder inte inget värde — det betyder franchise-pris är förbjudet (kapitel 3 och VIG-kursens EPV-diagnostik)."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Moat och tillväxt — Walmart bygger, Coors spränger",
+      "intro": "Bokens mest undervisande motsatspar: två bolag med samma verktyg — expansion — och motsatta utfall. Walmart växte innanför barriärens geografi och förstärkte den för varje steg; Coors national-expanderade bortom sin och sprängde den. Det här är kapitlet som kopplar V01–V02 till V13–V15 och ger VIG-kursens tillväxtvärde dess beviskrav.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Principen först, citerad öppet: tillväxtens värde är betingat av barriären. Inneför barriären förstärker tillväxt moaten — mer volym i SAMMA marknad sprider de fasta kostnaderna längre, tätheten ökar, kostnadsgapet mot utmanare växer. Utanför barriären späder tillväxten moaten — expansion in i en större marknad innebär att andelen mäts mot större och bättre finansierade rivaler, medan de fasta kostnaderna skalas upp till den nya marknadens nivå. Därför är frågan till varje tillväxtplan inte hur snabb utan VART: förstärker expansionen barriären (mer av samma, i samma damm) eller omdefinierar den marknaden (samma bolag, ny damm)? Det är i sin tur exakt varför VIG-kursen vägrar prissätta tillväxt utan moat-bevis: tillväxt utanför barriären är inte bara värdelös — den kan vara värdeförstörande, därför att den konsumerar kapital för att riva sin egen vallgrav."
+        },
+        {
+          "type": "text",
+          "content": "Walmart-fallet, fortsättning från kapitel 5 [öppen citation i sammanfattning]. Varje ny ring av butiker kring ett befintligt distributionscenter ökade tätheten i redan dominerade regioner — tillväxten FÖLJDE barriären. Följden: de fasta kostnaderna (distribution, reklam, regional ledning) bars av allt större regional volym, kostnadsgapet växte, och avkastningen på det inkrementella kapitalet hölls hög långt in i expansionen. Kontraktet med Coors började i praktiken vid linjen där Walmarts logik slutade: när den amerikanska marknaden mättades och expansionen inte längre kunde förlöpa inåt, i täthet, utan bara utåt, i nya dammar med etablerade dominanter — då tunnades logiken ut även för Walmart, precis som boken varnar. Tillväxtens kvalitet avgörs alltså av dess GEOGRAFI i förhållande till barriärens."
+        },
+        {
+          "type": "text",
+          "content": "Coors-fallet, bokens varnande exempel [öppen citation i sammanfattning]. Coors var en regional storbryggare med massiv andel i sitt kärnområde i bergsstaterna, stark lokal lojalitet och en enda mycket stor bryggerianläggning — en skalekonomi mätt i DEN regionala ölmarknaden. Under sjuttiotalet national-expanderade Coors — och omdefinierade därmed omedvetet sin relevanta marknad från regional till nationell. På den nationella marknaden var Coors andel plötsligt liten; annonsering, distribution och varumärkesbyggande blev nationella fasta kostnader att bära mot Anheuser-Busch och andra som redan var stora I DEN marknaden. Skalfördelen förångades — inte därför att bryggeriet krympte, utan därför att DAMMEN växte. Marginalerna kollapsade och återkom aldrig helt. Lärdomen, kursens formulerad: andelen är en funktion av marknadsdefinitionen, och tillväxt som omdefinierar marknaden kan mörda moaten den var tänkt att finansiera. AKM1-brygga: V01–V02 (tillväxtens volym), V03 (tillväxtens geografi — omdefinieras marknaden?), V13–V15 (barriären som tillväxten ska passera genom), V09 (uthålligheten som avgör vilken av de två historierna som är sann)."
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan till varje tillväxtplan är inte hur snabb utan vart: in i tätheten i en redan dominerad damm — eller ut i en större damm där andelen är liten och de fasta kostnaderna ska bäras mot större rivaler? Walmart byggde på det första svaret, Coors dog på det andra."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Walmart mot Coors — samma verktyg, motsatta utfall\",\"rader\":[[\"Variabel\",\"Walmart\",\"Coors\"],[\"Marknad som definierade moaten\",\"regional detaljhandel, ring för ring\",\"regional ölmarknad i bergsstaterna\"],[\"Tillväxtens geografi\",\"koncentrisk — innanför barriärens räckvidd\",\"national — omdefinierade marknaden\"],[\"Fasta kostnader\",\"distribution och reklam förblev regionala\",\"reklam och distribution blev nationella\"],[\"Andel i sin verkliga marknad\",\"dominerande i varje region\",\"liten andel på den nationella marknaden\"],[\"Utfall\",\"skalan växte in i vallgraven\",\"skalan späddes ut — moaten dog\"],[\"AKM1-lektion\",\"V01–V02 och V03 i samma riktning som V13–V15\",\"V01 utan V13–V15 är värdeförstörande\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Granskning av tillväxtplanen: ta ett bolag i din portfölj som expanderar (ny geografi, ny kategori, ny kundgrupp) och besvara tre frågor: en — i vilken marknad mäts bolagets andel EFTER expansionen (V03)? två — blir bolaget större eller mindre i den nya dammen, och vilka fasta kostnader skalas upp? tre — finns det en Walmart-logik (expansion in i angränsande täthet som förstärker befintlig dominans) eller en Coors-logik (hopp till en större marknad med etablerade dominanter)? Skriv domen och justera V01–V02:s tolkning efter den."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför förstärkte Walmarts tillväxt dess moat?",
+          "alternativ": [
+            "Därför att tillväxt alltid förstärker moats",
+            "Därför att tillväxten skedde innanför barriärens geografi — tätare regioner spred samma fasta kostnader på mer volym i samma marknad",
+            "Därför att Walmart höjde priserna samtidigt",
+            "Därför att Walmart diversifierade utanför detaljhandeln"
+          ],
+          "ratt": 1,
+          "tips": "Tillväxt som följer barriärens geografi — inte som springer ifrån den."
+        },
+        {
+          "q": "Vad dödade Coors fördel enligt boken?",
+          "alternativ": [
+            "Att bryggeriet var för litet",
+            "Att ölen blev sämre",
+            "Att importen av öl förbjöds",
+            "Att den nationella expansionen omdefinierade marknaden — andelen blev liten nationellt och de fasta kostnaderna skulle bäras mot större bryggare"
+          ],
+          "ratt": 3,
+          "tips": "Dammen växte: skalfördelen är alltid relativ marknaden som räknas."
+        },
+        {
+          "q": "Vilken regel för moat och tillväxt följer kursen (med brygga till VIG-kursen)?",
+          "alternativ": [
+            "Tillväxtvärde kan betalas alltid — moat eller inte",
+            "Tillväxtvärde bara när expansionen förstärker barriären; annars späder den moaten och kan förstöra värde",
+            "Tillväxt ska alltid undvikas i moat-bolag",
+            "Tillväxt och moat är oberoende av varandra"
+          ],
+          "ratt": 1,
+          "tips": "VIG-kursen vägrade prissätta tillväxt utan moat-bevis — det här kapitlet är beviskravets innehåll."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Moat-erodering — utmanare, inträdeskrig och teknikskiften (V16)",
+      "intro": "Ingen vallgrav grävs för evighet. Bokens andra del handlar om spelet kring barriärerna: hur utmanare ska (och inte ska) gå in, varför priskrig gynnar incumbenter, när samarbete kan stabilisera en oligopol — och hur teknikskiften kan hoppa över hela vallgravar. Detta är erosionsradarns kapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Inträdeskrigens logik, citerad öppet. Ett inträde utan egen barriär är ett anfall mot en incumbent som är strukturellt starkare — och bokens spelteoretiska råd till utmanaren är därför kontraintuitivt: gå in LITET och tyst, begränsa volymen, provocera inte till priskrig (Cournot-logiken: varje aktör som ökar volym pressar priset för alla, och den som pressar mest bjuder sig själv på kriget). Beviset i negativ: Kiwi Airlines, bokens fallstudie — en liten lågprisflygare som gick in med priskrig mot incumbents, i tron att deras kostnadsstruktur inte tillät matchning. De matchade. Incumbenterna med djupare fickor och överlevande kunder höll priserna nede tills utmanaren var konkurs — och priserna återgick. Lärdomen priserad: priskrig är barriärens beprövade test; utmanaren utan fördel kan inte vinna ett krig som incumbenten kan förlänga längre. För investeraren: när en kapitalstark utmanare förklarar krig mot en incumbent med BEVISAD barriär (kapitel 10:s tester passerade), är marknadens panik ofta ett köptillfälle på incumbenten — storyn om priskrigets vinnare är nästan alltid fel."
+        },
+        {
+          "type": "text",
+          "content": "Samarbetets villkor — bokens EDS-fall [öppen citation i sammanfattning]. När få, ungefär jämlika aktörer möts om och om igen — som upphandlingar, budgivningar, kontrakt som återkommer — kan samarbete (även informellt) stabilisera prissättningen: ingen vinner på att förstöra vinsten för alla i ett upprepat spel. EDS, Ross Perots databolag, användes i boken för att visa hur kooperativa upplägg i upphandlingar kan fungera — och varför de är sköra (nya aktörer, asymmetrier, girighet bryter samarbetet). För moat-analytikern är lärdomen dubbel: en oligopol med stabila andelar och återkommande interaktion kan hålla lönsamheten över kapitalkostnaden länge (V09-serien), men samarbetet är en institution, inte en barriär — den syns inte i nio-stegschecklistan och kan försvinna över en natt, medan en äkta barriär (skala, fångenskap, nätverk, licens) överlever fientlighet. Skilj alltså på lönsamhet som ägs av struktur och lönsamhet som ägs av etablerad ordning."
+        },
+        {
+          "type": "text",
+          "content": "Erosionskrafterna — vad som fyller vallgraven även utan krig. Teknikskiften hoppar över barriärer i stället för att gräva igenom dem: nätverks-moats dör av paradigmskiften (kapitel 7), varumärkes-vanor dör av generationsväxling, skal-moats dödas av standardisering som sänker inträdeskostnaden, patent och licenser har sina klockor (kapitel 9). Substitut och köparkonsolidering flyttar maktbalansen: när kunderna blir färre och större växer köparmakten — Greenwalds egen reduktion i handling, ty köparmakten biter där barriären är svag. Övervakningen — kursens erosionsradar, fyra mätetal per kvartal: andelstrenden (vaggar den första av allt), bruttomarginalen i normala tider (V07), retention och prisförslags-acceptans (V14/V12), och årsfrågan: vilket teknik- eller regeländringsskikt kan hoppa över vallgraven helt (V16, V18)? Nio-stegstesterna från kapitel 10 ska alltså köras OM, årligen — moat är en förnyelsebar bedömning, inte en examen. AKM1-brygga: V16 (teknikskiftet och lanseringarna som hoppar över barriären), V09 och V07 (trenderna som avslöjar erosionen först), V12 (stabilitet som lossnar), V18 (regeländringen)."
+        },
+        {
+          "type": "insikt",
+          "content": "Priskrig är barriärens beprövade test: utmanaren utan fördel kan inte vinna ett krig som incumbenten kan förlänga. Och erosionen kommer sällan genom frontalanfall — den kommer genom andelsvagga, fallande marginaler i normala tider och ett skifte som hoppar över vallgraven i stället för att gräva igenom den."
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg erosionsradarn för ett moat-innehav: fyra mätetal per kvartal (marknadsandelstrend, bruttomarginal, retention eller motsvarande, priserna mot inflation) i en enkel tabell med rött-gult-grönt. Lägg till årsfrågorna: vilket teknikskikt kan hoppa över vallgraven? Vilken regeländring kan riva den? Konsoliderar kunderna? Schemalägg omkörning av nio-stegstestet (kapitel 10) var tolfte månad — och skriv in datumet i kalendern nu."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Kiwi Airlines-lärdomen från boken?",
+          "alternativ": [
+            "Att lågprisflyg alltid vinner mot etablerade bolag",
+            "Att priskrig fungerar om utmanaren är liten och snabb",
+            "Att starta priskrig mot incumbents utan egen barriär är självmord — de matchade priserna tills utmanaren dog, varefter priserna återgick",
+            "Att flygbranschen har starka moats"
+          ],
+          "ratt": 2,
+          "tips": "Priskrig är barriärens test — och incumbenten med djupare ficka kan förlänga kriget längst."
+        },
+        {
+          "q": "Hur bör en utmanare utan egen fördel gå in enligt bokens spellogik?",
+          "alternativ": [
+            "I stor skala och med maximalt pristryck för att chocka marknaden",
+            "I liten skala och utan att provocera — begränsa inträdesvolymen så priskriget inte utlöses",
+            "Genom att köpa upp incumbentens leverantörer",
+            "Genom att söka statligt stöd för att förbjuda incumbenten"
+          ],
+          "ratt": 1,
+          "tips": "Cournot-logiken: den som ökar volym mest pressar priset för alla — och bjuder sig själv på kriget."
+        },
+        {
+          "q": "Var syns moat-erosion enligt kapitlet ALLRA först?",
+          "alternativ": [
+            "I VD-ordet i årsredovisningen",
+            "I aktiekursen, som alltid leder utvecklingen",
+            "I andelsvagga och därefter i marginal- och avkastningstrender (V07/V09) — därför ska nio-stegstesterna köras om årligen",
+            "I utdelningskolumnen"
+          ],
+          "ratt": 2,
+          "tips": "Vallgraven dör sällan med ett dån — den dör i en serie: först andelar, sedan marginaler, sedan avkastning."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Branschcase: Läkemedel — patent, terapeutiska klasser och detaljeringens skala",
+      "intro": "Bokens branschcase visar moat-vetenskapen i full skala. Läkemedel: patentmonopol per molekyl — men konkurrens inom terapeutiska klasser; detaljeringens fasta kostnader som skalmotor; patentklippor och växande köparmakt. Här möts V13, V16, V18 och V09 i ett och samma branschcase.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Strukturen, citerad öppet [öppen citation i sammanfattning av bokens läkemedels-kapitel]. Patentet ger varje molekyl ett eget tidsbestämt monopol — men konkurrensen i branschen är organiserad INOM terapeutiska klasser: flera statiner, flera syrahämmare, flera blodtrycksmedel verkar mot samma indikation och konkurrerar om samma förskrivare. Följden är en tvåbottnad marknad: mot generika är det patentets klocka som styr (V13); inom klassen gäller klassisk moat-konkurrens — varumärkes-vana hos förskrivare och patienter (V14), detaljeringens skala (säljkåren är en fast kostnad som sprids över portföljen: de stora bolagen kan bära mer läkarbesök per produkt), forskningsskalan (ett FoU-program kostar detsamma oavsett om det bär en eller tjugo molekyler — V13, V16) och den globala regelapparaten som inträdesbarriär (godkännandeprocesser — V18). Det är därför de patentportföljbärande jättarna uppvisar just det mönster nio-stegstestet letar efter: stabila aggreaterade andelar och uthållig överavkastning genom decennier (V09)."
+        },
+        {
+          "type": "text",
+          "content": "Klockorna och köparmakten — branschens båda erosionssidor. Klockan: när patentet löper ut kollapsar priset mot marginalkostnaden i takt med att generika träder in — klippan — och bolagets enda skydd är pipelinens förmåga att ersätta förlorade intäkter (V16); därför värderas läkemedelsbolag alltid som en portfölj av dyrbara arrenden med utgångsdatum, aldrig som eviga franchiser. Köparmakten: när köparna konsoliderar — statliga prisnämnder, försäkringsbolag, apotekskedjor och i den amerikanska modellen PBM-förmedlare — växer pressen på priserna, i synnerhet där substitut och generika finns. Greenwalds egen reduktion syns här i praktiken: köparmakten biter hårdast på molekyler UTAN skydd (generica, äldre preparat med substitut) och hämmas där varumärkes-vanan och klasspositionen är djup — barriären sätter taket för köparmakt, precis som kapitel 1 förutsade."
+        },
+        {
+          "type": "text",
+          "content": "Moat-testet applicerat — nio steg på en bransch. Marknadsdefinition: global per molekyl, nationell per prisförhandling, klassvis per konkurrens (V03 — och notera hur alla tre nivåerna behövs samtidigt). Andelsstabilitet: ja på bolagsnivå för portfölj-jättarna, nej på produktnivå där lanseringar rycker andelar —skillnaden är viktig. Avkastning: uthållig överkapitalavkastning i decennier för de diversifierade (V09). Källor: patent (V13), varumärkes-vana hos förskrivare och patienter (V14), detaljerings- och forskningsskala (V07–V08, V13), reglering (V18). Tillväxttestet: expansion in i nya indikationer och klasser förstärker portföljen — förvärv av pipelines är dyr koppling. Erosion: klippor, payer-konsolidering, patentutmaningar, och bioteknik-paradigmet som förskjuter metoderna. Svensk brygga [illustrativt]: små liftebolag med ett enda ledningskandidat-patent är ett arrende utan portfölj — V16-pipelinen är hela värdet, och VIG-kursens EPV med realoptions-tillägg är rätt värderingsverktyg, inte franchise-multipeln. AKM1-brygga: V13 (patentportföljens bredd och klockor), V16 (pipelinen), V18 (godkännanden och prisreglering), V14 (klass-vana), V09 (portföljens uthållighet), V03 (tre marknadsnivåer)."
+        },
+        {
+          "type": "insikt",
+          "content": "Läkemedelsbolaget är inte ett företag utan en portfölj av arrenden med utgångsdatum: patentet ger prissättningsmakt under klockan, pipelinen förnyar arrendet, detaljeringsskalan håller klasspositionen. Värdera portföljen och klockorna — aldrig det eviga franchise-värdet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Läkemedel — moat-källor med klockor\",\"rader\":[[\"Källa\",\"Styrka\",\"Klocka\",\"AKM1\"],[\"Patent per molekyl\",\"nästan ren prissättningsmakt under skyddet\",\"utlöpande — klippan mot generika\",\"V13\"],[\"Klass-vana hos förskrivare och patienter\",\"fångad efterfrågan inom terapeutisk klass\",\"nya klassmedlemmar; payer-listor\",\"V14, V12\"],[\"Detaljeringens skala\",\"säljkåren fast kostnad sprids över portföljen\",\"digitala kanaler sänker inträdet\",\"V07–V08\"],[\"Forskningsskalan\",\"programmet kostar detsamma vid stor volym\",\"pipeline-tömning; paradigm-skiften\",\"V13, V16\"],[\"Reglering och godkännande\",\"inträdesbarriär i sig\",\"regeländring; prisreglering; köparkonsolidering\",\"V18\"],[\"Generika efter patent\",\"—\",\"priset kollapsar mot marginalkostnaden\",\"V07-varning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita patentklippan för ett läkemedelsbolag: lista andelen av dagens intäkter som patentmässigt löper ut inom tre, fem och tio år (prospekt eller licensrapport räcker). Ställ klippan mot pipelinen: vad i V16 (kandidater i fas II–III) kan realistiskt ersätta — och när? Skriv domen på en rad: arrendeportfölj i balans, eller klippa utanför beläggning. Jämför sedan med bolagets V09-serie: har överavkastningen bestått genom tidigare klippor? Det är det bästa enskilda beviset på portfölj-logikens hållbarhet."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur är konkurrensen organiserad i läkemedelsbranschen enligt boken?",
+          "alternativ": [
+            "Som en enda stor commodity-marknad",
+            "Som patentmonopol per molekyl — men med konkurrens inom terapeutiska klasser, där flera liknande preparat konkurrerar om samma förskrivare",
+            "Utan konkurrens över huvud taget",
+            "Endast mellan generika-tillverkare"
+          ],
+          "ratt": 1,
+          "tips": "Två bottnar: klockan mot generika, moat-kampen inom klassen."
+        },
+        {
+          "q": "Varför är detaljeringen en skalbarriär?",
+          "alternativ": [
+            "Därför att läkare kräver personliga besök enligt lag",
+            "Därför att säljkåren är en fast kostnad som sprids över portföljen — de stora kan bära mer besök per produkt och klass",
+            "Därför att detaljering är gratis för små bolag",
+            "Därför att säljkåren är anställd av myndigheterna"
+          ],
+          "ratt": 1,
+          "tips": "Fast kostnad plus volym är skalekonomins signatur — även i vitrockan."
+        },
+        {
+          "q": "Vad händer vid patentklippan?",
+          "alternativ": [
+            "Priset höjs eftersom varumärket är etablerat",
+            "Ingenting — patentet förnyas automatiskt",
+            "Generika träder in och priset pressas mot marginalkostnaden — pipelinen (V16) måste ersätta intäkterna",
+            "Bolaget förbjuds sälja preparatet"
+          ],
+          "ratt": 2,
+          "tips": "Arrendet löper ut: klockan är hela branschens ryggrad."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "Branschcase: Mikroprocessorer — Intel, AMD och skalans tvingande logik",
+      "intro": "Bokens mikroprocessor-case visar den sammansatta moaten i sin renaste form: Intel bar fyra lager samtidigt — forsknings- och tillverkningsskala, arkitekturens låsning, Wintel-nätverket och varumärket — och AMD, den kapabla eviga-tvåan, visar varför partiella fördelar bara hyr andelar. Ett paradigmbundet skydd, värt att bevaka med V16.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Stacken, citerad öppet [öppen citation i sammanfattning av bokens mikroprocessor-kapitel]. Intels moat var inte en källa utan fyra, var och en förstärkande de övriga. SkalAN: forskning och framför allt tillverkning (fabrikerna) är enorma fasta kostnader som bara bärs av enorm volym — kostnaden per krets faller brant med utnyttjande, och endast de största kan finansiera nästa generation anläggning. LÅSNINGEN: x86-arkitekturens kompatibilitet — hela mjukvaru- och utvecklarvärlden byggd för instruktionsuppsättningen gör att bytet för kunder och utvecklare kostar mer än någon prestandavinst är värd (omställningskostnaden från kapitel 6, i industriell skala). NÄTVERKET: Wintel-alliansen — maskinvara och operativsystem som ömsesidiga komplement stabiliserade standarden (kapitel 7:s mekanik i praktik). VARUMÄRKET: Intel Inside — och notera kopplingen till kapitel 8: kampanjen var en FAS kostnad som bara volymen kunde bära, det vill säga varumärket byggdes av samma skala som det förstärkte. Fyra lager, en stack — och stackens dramatik är att den var svår att angripa lager för lager: utmanaren måste bära alla fyra samtidigt."
+        },
+        {
+          "type": "text",
+          "content": "AMD-fallet — den kapabla eviga-tvåan. AMD under perioder med bättare processer och konkurrenskraftiga produkter (bokens genomgång sträcker sig till tvåtusentalets början; Athlon-eran är det klassiska samtida exemplet) visar mönstret: partiella fördelar — process, prestanda, pris — kan HYRA andelar under en produktcykel eller två, men utan full stack (egen fullskalig tillverkningsekonomi, kontroll över arkitektur-standarden, komplementär-allians, varumärke med volym) återgår andelarna när Intels skal-cykel rullar vidare. Moat-testet bekräftar: andelsordningen var extremt stabil i decennier (steg två), och Intels avkastning uthöll överkapitalavkastning cykel efter cykel (steg fyra, V09) — de två empiriska testen säger moat, och källanalysen förklarar varför. Det är kursens renaste illustration av att moat är fråga om STRUKTUR och inte produktprestanda: bättre produkter förlorar regelbundet mot bättre strukturer."
+        },
+        {
+          "type": "text",
+          "content": "Gränsen — och kursens efterhandslektion, ärligt etiketterad. Boken kom 2005, före mobilens genombrott, och dess ramverk förutsäger sin egen gräns: plattformsmoaten är PARADIGMBUNDEN. ARM-arkitekturen erövrade mobilerna — inte genom att angripa x86 i persondatorernas damm, utan genom att bygga en ny damm där Intels stack inte gällde: ny instruktionsuppsättning, ny mjukvaruekosystem, nya kostnadskrav (batteri, pris). Det är exakt kapitel 12:s erosionsmekanik: tekniken HOPPAR över vallgraven i stället för att gräva igenom den. Lärdomen för AKM1: en sammansatt plattforms-moat poängsätts högt på V13 (arkitektur-IP), V15 (ekosystemnätet) och V14 (varumärket) — men V16-bevakningen är obligationsbelagd: frågan är inte om utmanaren är bättre INOM skiktet, utan om ett nytt skikt kan byggd där hela stacken blir irrelevant. AKM1-brygga: V13 (x86-IP:t), V15 (ekosystemet och Wintel-alliansen), V07–V09 (skalans marginal- och avkastningsspår), V16 (paradigmskiftet som hoppade över stacken)."
+        },
+        {
+          "type": "insikt",
+          "content": "Plattforms-moaten är sammansatt: skala, låsning, nätverk och varumärke, vardera förstärkande — och därför måste den angripas i alla lager samtidigt, vilket är dyrare än något enskilt lager är värt. Men kompositen är paradigmbunden: testet är inte om utmanaren är bättre inom skiktet, utan om ett nytt skikt gör hela stapeln irrelevant."
+        },
+        {
+          "type": "utmaning",
+          "content": "Stack-analys av en plattformsaktör i din närhet (operativsystem, betalnät, marknadsplats, databas, spelkonsol): lista de fyra lagren — skala (vilka fasta kostnader sprids på vilken volym?), låsning (vad kostar bytet för kund och utvecklare?), nätverk (vilka två sidor förstärker varandra?) och varumärke (vilken fast kampanjkostnad byggde det?) — och betygsätt varje lager bevisat eller påstått. Svagaste lagret avgör stacken, och V16-frågan — vilket nya skikt kan hoppa över alltihop — ska skrivas ned med datum."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka fyra lager byggde Intels moat i bokens genomgång?",
+          "alternativ": [
+            "Pris, kvalitet, service och distribution",
+            "Forskning- och tillverkningsskala, x86-arkitekturens låsning, Wintel-nätverket och varumärket (Intel Inside)",
+            "Statligt stöd, tullar, licenser och patent",
+            "Enbart låga lönekostnader"
+          ],
+          "ratt": 1,
+          "tips": "Fyra lager, en stack — och utmanaren måste bära alla fyra samtidigt."
+        },
+        {
+          "q": "Varför kunde AMD enligt kapitlet bara HYRA andelar?",
+          "alternativ": [
+            "Därför att AMD saknade teknisk kompetens",
+            "Därför att AMD var förbundet med Intel genom avtal",
+            "Därför att partiella fördelar — process, prestanda, pris — räcker en produktcykel, men utan full stack återgår andelarna när skal-cykeln rullar",
+            "Därför att AMD bara sålde i Asien"
+          ],
+          "ratt": 2,
+          "tips": "Bättre produkter förlorar regelbundet mot bättre strukturer — strukturen är stacken, inte kretsen."
+        },
+        {
+          "q": "Vad tillför kursen — med ärlig efterhandsetikett — om mobilskiftet?",
+          "alternativ": [
+            "Att ARM intog persondatorernas damm och besegrade x86 direkt",
+            "Att Intel vann mobilerna tack vare sitt varumärke",
+            "Att mikroprocessorer saknar moats i alla skepnader",
+            "Att ARM byggde en NY damm — ny arkitektur och ekosystem — där Intels stack inte gällde: tekniken hoppade över vallgraven i stället för att gräva igenom den (V16)"
+          ],
+          "ratt": 3,
+          "tips": "Erosionsmekaniken från kapitel 12 i aktion: nya skikt, inte frontalanfall."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Branschcase: Avfall och återvinning — Waste Management och täthetens ekonomi",
+      "intro": "Bokens avfalls-case är moat-vetenskapens motsats till glansbranscherna: en tråkig bransch med hårda, mätbara vallgravar — rutttäthet som lokal skalekonomi, deponitillstånd som reglerad knapphet, vertikal integration som förstärkare. Samma ekonomi styr svensk avfallshantering och återvinning [illustrativt].",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kärnbarriären, citerad öppet [öppen citation i sammanfaggning av bokens case]. Avfallsinsamling ser ut som en commodity — samma sopor, samma lastbil — men kostnadsstrukturen är genomsyrad av en fast kostnad: RUTTEN. Kostnaden per upp hämtning faller med tätheten: samma bil, samma körsträcka, fler stopp. Den som har flest kunder per kilometer i ett område har lägst kostnad per kund — och kan prisa ut varje utmanare som måste köra samma gator med fler tomma kilometer. Det är produktionsskala från kapitel 5 i sin renaste geografiska form: en lokal skalekonomi där marknaden är varje upptagningsområde. Waste Management växte — citerat öppet — genom att förvärva lokala åkare och öka tätheten område för område: exakt samma koncentriska logik som Walmart, i en bransch ingen glamorös. Och det är mönstret värt att minnas: moats samlas i tråkiga branscher med tung logistik och lokala strukturer — inte i branscher som alla vill äga."
+        },
+        {
+          "type": "text",
+          "content": "Den andra barriären: deponin. Avfallsdeponier och förbränningsanläggningar är knappheter av reglering — tillstånd, miljöprövning, platsbrist och NIMBY-motstånd gör att nya sällan byggs (V18: politiken som barriärsbyggare). Den vertikala kedjan — insamling (lokal täthet), mellanlager och transport (regional skala), deponi och förbränning (reglerad knapphet) — förstärker sig själv: den som äger slutleden kan stänga ute konkurrenters avfall och mata sin egen anläggning med densitet från insamlingen. Moat-testet på branschen: andelsordningen per område är extremt stabil (steg två), de konsoliderade ledarnas avkastning har hållit över kapitalkostnaden cykel efter cykel (steg fyra, V09), källorna är skala-plus-reglering (steg sju, V07–V08 plus V13/V18) — och köparmakten är svag: hushåll oorganiserade, kommunala kontrakt återkommande och relationsburna (V12)."
+        },
+        {
+          "type": "text",
+          "content": "Svensk brygga [illustrativt, i bokens anda]. Samma ekonomi styr svensk avfallshantering och återvinning: kommunala renhållningsansvar och upphandlade avtal (återkommande intäkter, V12), förbränningsanläggningar med lång tillståndskö (reglerad knapphet), återvinningscentraler och sorteringskapacitet med regional skala, och rutttäthet som kostnadens ryggrad i varje kommun. Skillnaden mot det amerikanska caset är graden av offentlig styrning — vilket i AKM1-syntaxen höjer V18:s vikt: både risken (omreglering, kommunala sopavgifter, EU:s cirkulärmål som förändrar volymerna) och barriären (tillståndskön) sitter i politiken. Kursens läxa från hela branschcaset: tråkiga branscher med lokalt skydd och tung logistik — avfall, ballast, eltjänster, vatten — slår spännande branscher utan skydd, och deras moats är lättare att läsa i siffror (V07–V09) än någon nätverksberättelse. AKM1-brygga: V13/V18 (tillstånd och reglerad knapphet), V07–V08 (kostnad per stopp — marginalgapet mot tunnare konkurrenter), V03 (marknaden är lokal per upptagningsområde), V09 (uthålligheten), V12 (återkommande avtal)."
+        },
+        {
+          "type": "insikt",
+          "content": "Vallgravar behöver inte vara sevärda: täthet, ruttlängd och deponitillstånd är lika hårda barriärer som nätverkseffekter — och oftast lättare att bevisa i siffror. Och frågan är alltid geografisk: landets bästa avfallskontrakt är ointressant två kommuner bort, därför att marknaden — och därmed moaten — slutar där ruttens ekonomi slutar."
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta en tråkig lokal verksamhet i din närhet — avfall, grus, ellinjer, vatten, facility management — och kör steg 1, 4 och 7 i nio-stegschecklistan: en — vad är den faktiska marknaden (vilket område, vilka kunder, vilka tre till fem faktiska konkurrenter)? två — har bolagets ROE hållit över kapitalkostnaden i tio år (V09)? tre — vad är barriären: täthet, tillstånd, avtal — och vad skulle det kosta en utmanare att replikera den? Tre rader per steg; du har just moat-analyserat en bransch ingen analyserar — och där konkurrensen därför är som svagast."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Waste Managements kärnbarriär i bokens case?",
+          "alternativ": [
+            "Varumärket på soptunnorna",
+            "Rutttätheten — rutten är en fast kostnad som sprids på fler hämtningar: lokal skalekonomi per upptagningsområde",
+            "Låga löner i branschen",
+            "Statliga subventioner"
+          ],
+          "ratt": 1,
+          "tips": "Samma bil, samma kilometer, fler stopp — kostnaden per kund faller med tätheten."
+        },
+        {
+          "q": "Varför utgör deponier och förbränningsanläggningar en andra barriär?",
+          "alternativ": [
+            "Därför att de är lönsamma utan tillstånd",
+            "Därför att de är billiga att bygga",
+            "Därför att de bara finns i USA",
+            "Därför att tillstånd, miljöprövning och platsbrist gör dem till reglerade knappheter — politiken bygger vallgraven (V18)"
+          ],
+          "ratt": 3,
+          "tips": "Knapphet skapad av reglering — och den vertikala kedjan förstärker: den som äger slutleden stänger ute konkurrenters avfall."
+        },
+        {
+          "q": "Vad är marknadsdefinitionen i avfallsbranschen?",
+          "alternativ": [
+            "Global — sopor är likadana överallt",
+            "Nationell per land",
+            "Insamling är lokal per upptagningsområde, mellanlager regional, deponering en reglerad knapphet — flera marknader med olika moat-grad",
+            "Odefinierbar"
+          ],
+          "ratt": 2,
+          "tips": "Tre led, tre dammar, tre olika grader av skydd — och ruttens ekonomi slutar där tätheten slutar."
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 12,
+      "title": "Kontroversen och syntesen — Porter mot Greenwald, moat-blocket till AKM1",
+      "intro": "Kursens sista kapitel ställer striden på sin spets: fem krafter mot en kraft. Porter återges rättvist — bredden som styrka — Greenwalds svar redovisas — fokus och testbarhet — och AK1A syntetiserar: moat mäts som tre variabler (V13–V15) plus uthållighetsgraden (V09), mätbart över anekdoter, med ett ärligt medgivande kvar. Sluttabellen översätter hela boken till AKM1.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Porter-lägret, framställt så starkt som det går. Femkraftsmodellens styrka är BREDDEN: en flotta av krafter som synliggör hela konkurrensekosystemet — leverantörskedjor och deras konsolidering, köparnas förhandlingsmakt och strukturella förändringar i den, substitutens pris-tak, rivalitetens dynamik — och (i Porters senare bearbetningar) komplementens roll. Diagnosrikedomen är verklig: i läkemedel (kapitel 13) regerar köparmakten när patenten löper ut; i fordonsindustrin organiserar leverantörsmakten hela värdekedjan; i flyget slår rivalitet, köparmakt och substitut SIMULTANT — krafter som i Greenwalds läsning alla är biverkningar visar sig där göra verklig oberoende skillnad, och en analys som bara frågar efter inträdesbarriärer kan missa hur lönsamheten FÖRFLYTTAS inom en värdekedja även där barriärer finns. Femkrafts-analysen är också, objektivt, branschanalysens lingua franca — den ramverk där konkurrensdiskussioner förs i styrelserum världen över, med fyra decenniers förfining. Det är inte ett läger att avfärda."
+        },
+        {
+          "type": "text",
+          "content": "Greenwald-lägrets svar, också det på sin spets. Reduktionen är inte förnekelse utan PRIORITERING: krafterna är betingade på barriären, och därför är den enda fråga som måste besvaras FÖRST om en finns. Utan barriär spelar det ingen roll vilka övriga krafter som tillfälligt gynnar — jämlika konkurrenter och fritt kapital stakar ut överskottet ändå (kapitel 3); med barriär dämpas rivalitet, köpar- och leverantörsmakt av strukturen själv. Och avgörande för AK1A: Greenwalds fråga är TESTBAR. Andelsstabilitet och avkastningsuthållighet (V09) är tidsserier som vem som helst kan hämta och som antingen bekräftar eller dödar moat-påståendet — medan femkrafts-domar ofta blir kvalitativa helhetsintryck, rika men svåra att falsifiera. Bokens egen drivkraft är dessutom praktisk: den Strategi som ur en femkrafts-flotta gör en beslutsträd med två grenar — barriär eller inte — är en strategi som en investerare faktiskt hinner köra per bolag, och som en kurs faktiskt kan poängsätta. Fokuserbarhet och testbarhet — det är svaret."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — med medgivanden. Syntesen är inte vem som har rätt utan vad som är mätbart: i AKM1 mäts moat som tre VARIABLER — V13 Patent och immateriella rättigheter, V14 Varumärke och kundlojalitet, V15 Nätverkseffekter — plus uthållighetsgraden i V09 ROE-serien (med marginalgap V07–V08 och stabilitet V12 som källbevis), operationaliserade genom nio-stegschecklistan (kapitel 10) och erosionsradarn (kapitel 12). Det är mätbart över anekdoter: varje påstående är en tidsserie som kan slås fel — vilket är precis ex ante-kritikens krav, och kurserna Dorsey och VIG har förberett marken (Dorseys fejk-moats, VIG:s EPV-gap som moatens kronvärde). Medgivandena, lika ärliga: ETT — moat-identifiering ex ante förblir osäker; lönsamhetens återgång mot medel är stark nog att varje moat-dom kan visa sig fel, och källklassificeringen kräver omdöme. TVÅ — därför får moat aldrig vara enda köpgrunden: V13–V15 rankar bland bolag som passerat värderings- och riskfilter (V04–V06, V10, V19), och säkerhetsmarginalen är försäkringen mot hantverksfelet. TRE — Porter-lägrets poäng om krafternas oberoende i vissa branscher tas på allvar genom V18 (regulatoriska katalysatorer) och V03 (värdekedjans och kundbasens struktur). Differentieringen i arkivet: VIG = värderingsprocessen, Dorsey = moat-listan, Competition Demystified = moat-VETENSKAPEN — barriärernas logik, testning, tillväxtens dubbla natur och fallet utan moat: kommoditetshelvetet. AKM1-brygga: V13–V15 (moat-trion) + V09 (uthålligheten) + V03/V12 (marknad och stabilitet) + V16/V18 (erosion och politik) — och utgången av hela kalkylen, som alltid: marginalen."
+        },
+        {
+          "type": "insikt",
+          "content": "Kontroversens avgörs inte av vem som har den vackraste modellen utan av vad som kan slås fel: andelsstabilitet och ROE-uthållighet är en domstol, fem kvalitativa krafter är ett intryck. Men behåll Porters flotta i bakfickan — när moaten väl är bevisad avgör de övriga krafterna VART i värdekedjan vinsten landar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — fem krafter mot en kraft, med AK1A:s position\",\"rader\":[[\"Fråga\",\"Porter-lägret\",\"Greenwald-lägret\",\"AK1A:s position\"],[\"Vad förklarar lönsamhet?\",\"branschstruktur i fem krafter\",\"en kraft: inträdesbarriären\",\"V13–V15 + V09-serien\"],[\"Styrka\",\"bredd — hela ekosystemet syns; krafter kan vara oberoende\",\"fokus (en fråga först) och testbarhet (två tidsserier)\",\"mätbarhet väger tyngst\"],[\"Svaghet\",\"fem krafter, oklara vikter — svårfalsifierat\",\"kan underskatta köpar-/leverantörsmakt där den är oberoende\",\"kompletteras av V12, V03, V18\"],[\"Praktisk regel\",\"analysera alla krafter\",\"ställ barriärfrågan först\",\"nio steg, nio mätetal\"],[\"Medgivande\",\"—\",\"—\",\"ex ante osäkerhet kvarstår — moat aldrig enda köpgrund; marginalen är försäkringen\"]]}"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Competition Demystified till AKM1 — hela översätningstabellen\",\"rader\":[[\"Bokens byggsten\",\"AKM1\",\"Roll i processen\"],[\"Inträdesbarriär / incumbency-fördelen\",\"V13–V15\",\"moat-trion — den enda kraftens tre variabler\"],[\"Marknadsdefinition (produkt + geografi)\",\"V03\",\"alla moat-mått gäller bara i rätt damm\"],[\"Produktionsskala + lokal nischdominans\",\"V07–V08, V03\",\"kostnadsgapet mot den marginella konkurrenten\"],[\"Fångad efterfrågan (vana, omställning, sök)\",\"V14, V12, V02\",\"beteendedata, inte attityd\"],[\"Nätverkseffekter\",\"V15\",\"riktning över nivå; paradigmbunden\"],[\"Varumärke som vana (och anti-exemplen)\",\"V14 + V07\",\"prispremium som består — annars reklamsedel\"],[\"Patent och reglering\",\"V13, V18\",\"arrenden med klockor — kalender och politik\"],[\"Andelsstabilitet + ROE-uthållighet\",\"V09 (+ V03, V12)\",\"moat-testets två empiriska pelare\"],[\"Tillväxt med/utan barriär (Walmart/Coors)\",\"V01–V02 mot V13–V15\",\"tillväxtvärde bara när expansionen förstärker barriären\"],[\"Erosion: utmanare, teknikskiften, politik\",\"V16, V07-trend, V18\",\"erosionsradarn — omkör nio-stegstestet årligen\"],[\"Kommoditetshelvetet\",\"V07–V09, V12, V19\",\"värdera som cykel — aldrig franchise\"],[\"Säkerhetsmarginalen\",\"utgången av alla 20\",\"försäkringen mot moat-domens osäkerhet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Diplomet: producera en fullständig moat-promemoria på ett verkligt innehav — kapitel 10:s nio steg som stomme, källdom med V13–V15-poäng, tillväxttestet (Walmart- eller Coors-logik?), erosionsradar med fyra mätetal, kontrovers-raden (vad skulle Porter-lägret tillägga om köpar- och leverantörsmakt?) och slutsatsen: moat, ingen moat eller osäker — med konsekvensen för värderingen (VIG-kursens EPV-golv och -tak) och positionsstorlek. Datera, spara, boka återbesök om tolv månader. Återbesöket — inte promemorian — är kursens examen: där syns om du är moat-analytiker eller berättelseförfattare."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Porter-lägrets starkaste invändning mot Greenwalds reduktion, framställt rättvist i kursen?",
+          "alternativ": [
+            "Att Greenwald missförstått ekonomin helt",
+            "Att bredden i femkrafts-flottan synliggör hela ekosystemet — och att krafter som köpar- och leverantörsmakt i vissa branscher gör oberoende skillnad, exempelvis läkemedelens payers",
+            "Att inträdesbarriärer inte existerar",
+            "Att strategi inte kan analyseras alls"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 13 och 16 visar båda: när patenten löper ut regerar köparmakten — en kraft som är mer än en biverkan."
+        },
+        {
+          "q": "Vad är Greenwald-lägrets svar i kontroversen?",
+          "alternativ": [
+            "Att Porters krafter är omöjliga att förstå",
+            "Att alla branscher ska analyseras lika",
+            "Fokuserbarhet och testbarhet — en fråga först (barriär?) och två mätbara tidsserier (andelsstabilitet, avkastningsuthållighet) som kan falsifiera påståendet",
+            "Att bara utbudsfördelar räknas"
+          ],
+          "ratt": 2,
+          "tips": "En beslutsträd med två grenar som en investerare hinner köra per bolag — och som kan slås fel."
+        },
+        {
+          "q": "Vad är AK1A:s medgivande i den avslutande syntesen?",
+          "alternativ": [
+            "Att moat-identifiering ex ante förblir osäker — därför mäts moat som variabler (V13–V15 plus V09-serien) som kan slås fel, och moat får aldrig vara enda köpgrunden: marginalen är försäkringen",
+            "Att moats är bevisat eviga",
+            "Att Porter-modellen ska användas ensam",
+            "Att V09 är det enda som behövs"
+          ],
+          "ratt": 0,
+          "tips": "Mätbarhet plus ödmjukhet: tidsserier i stället för berättelser, rabatt i stället för visshet."
+        }
+      ]
+    }
+  ]
+}

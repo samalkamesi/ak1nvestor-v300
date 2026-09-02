@@ -16,6 +16,7 @@ import { badgeStatus, type BadgeStatus } from "@/lib/badges";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { ElevkarnaFormuljar } from "@/components/ak1a/elevkarna-formuljar";
 import { VeckoPlan } from "@/components/ak1a/vecko-plan";
+import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
 
 /**
  * MIN SIDA — medlemmens allt-i-ett-dashboard.
@@ -453,6 +454,11 @@ export function MinSida() {
       {/* (a3) VECKOPLANEN — automatiskt sammansatt, anpassar sig varje vecka */}
       <section className="mt-6">
         <VeckoPlan />
+      </section>
+
+      {/* (a5) DAGENS VÅGKARTA — autonom mätning av fundamentalvågorna */}
+      <section className="mt-6">
+        <VagkartaKort />
       </section>
 
       {/* (a4) KURSTIPS — rätt kurs som ett tips, aldrig ett tvång */}

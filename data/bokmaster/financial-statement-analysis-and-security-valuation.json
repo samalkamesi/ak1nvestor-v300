@@ -1,0 +1,1242 @@
+{
+  "slug": "financial-statement-analysis-and-security-valuation",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 17,
+  "totalMinutes": 200,
+  "title": "Financial Statement Analysis and Security Valuation — Stephen Penman: KOMPLETT",
+  "summary": "Financial Statement Analysis and Security Valuation (Stephen Penman, professor i redovisning vid Columbia Business School; femte upplagan, McGraw-Hill 2013) är värderingslärans lärobok — det mest fullständiga system som skrivits för att gå från bokslut till inneboende värde med redovisningen som motor. Kursen bygger boken kapitel för kapitel runt dess kärnspår: skillnaden mellan värde och pris (fundamentalanalysens hela uppdrag), bokslutet som berättelse (balansräkningen är ett fotografi, resultaträkningen en film), böckernas ekvation — värde = bokfört eget kapital plus nuvärdet av förväntade övervinster — och konsten att restera bort marknadens pris ur bokslutet för att läsa marknadens implicita prognos. Därpå det djupaste kapitlet: RNOA, avkastning på netto-driftstillgångar, där ROE rensas för finansierings-hävstång genom omstrukturering av balans- och resultaträkningen i drift och finansiering. Sedan multiplarnas inre liv: P/B som funktion av ROCE mot avkastningskravet och tillväxten, P/E-dekomposition i trailing och forward — med två fullständiga räkneexempel i SEK (RNOA-dekomposition och P/E-dekomposition). Därpå vinstens kvalitet i två kapitel (accruals, core-resultat, redovisningsrisk), Penmans fundamentala risk utan beta, värderingsarbetet med försiktig hållning till WACC, bokens verkliga fall (P&G, Cisco, GM:s pensioner, Starbucks) — och kontroversen där Penman möter CAPM- och WACC-skolan med sina fundamental-risk-mått earnings-to-price och debt-to-price, med AK1A:s egen syntes: AKM1 poängsätter risk operativt snarare än med beta-tuning.",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Skilja pris från värde — fundamentalanalysens uppdrag enligt Penman och varför den spekulativa ansatsen analyserar marknaden medan den fundamentala analyserar verksamheten · Läsa bokslutet som berättelse: balansräkningen som ögonblicksbild, resultaträkningen som film och kassaflödesanalysen som kontrollinstans · Behärska böckernas ekvation: värde = bokfört eget kapital + nuvärdet av förväntade övervinster (residual earnings) · Restera bort priset: reverse engineering av marknadens implicita prognos ur P, B och avkastningskravet · Omstrukturera bokslutet i drift och finansiering — NOA, NFO, CSE och den rensade balansräkningen · Räkna och dekomponera RNOA — V09:s djup: ROE rensat för finansierings-hävstång · Reformatera resultaträkningen: kärnrörelseresultat, totalresultat och hållbart resultat · Hävstångens aritmetik: ROE = RNOA + FLEV × spread — när lån skapar värde och när de förstör det · Bedöma tillväxt: hållbar tillväxt g = retention × ROE och när expansion skapar eller förstör värde · Tolka multiplar inifrån: motiverad P/B som funktion av ROCE och tillväxt samt P/E-dekomposition i trailing, forward och normal multipl · Räkna i SEK: fullständig RNOA-dekomposition och P/E-dekomposition med svenska kronor · Bedöma vinstens kvalitet: accruals, kassaflöde mot bokförd vinst, core-resultat och redovisningsrisk · Mäta fundamentala risk utan beta — earnings-to-price, debt-to-price och Penmans kritik av CAPM · Genomföra värderingsarbetet med WACC-försiktighet: aktienivå framför företagsnivå · Tillämpa helheten på bokens fall: P&G, Cisco år 2000, GM:s pensioner och Starbucks · Syntetisera Penman med AKM1:s tjugo variabler och syskonkursen i svensk praxis.",
+  "why": "Det här är TEORIKURSEN bakom hela bokslutsbaserad värdering. Syskonkursen Företagsvärdering: med fundamental analys (Hjelström, Isaksson och Nilsson) lär ut svensk praxis — K3, IFRS, svenska nyckeltal, WACC i SEK och värderingsutlåtandet — och Damodarans Investment Valuation bygger modeller. Penman ger det tredje skiktet: DEN DJUPA TEORIN om varför bokslutet alls kan mäta värde. Tre idéer gör boken unika i katalogen. För det första böckernas ekvation — värde = bokfört eget kapital plus nuvärdet av förväntade övervinster — som förankrar varje värdering i något mätbart (bokfört EK) i stället för fria kassaflödesgissningar. För det andra RNOA-analysen: uppdelningen av bolaget i drift och finansiering som rensar ROE för hävstångens illusioner — det är V09:s teoretiska djup. För det tredje Penmans risk-kapitel: en sammanhängande värderingsekonomi UTAN beta, där risk mäts i fundamentals och i prisets own riskpremie (earnings-to-price, debt-to-price) — kontroversen hela kursen byggt mot. Utan Penman vet du HUR man räknar värdering i svensk praxis; med Penman vet du vad siffrorna betyder.",
+  "chapters_list": [
+    "1. Värde kontra pris — fundamentalanalysens uppdrag",
+    "2. Bokslutet som berättelse — balansräkningen är foto, resultaträkningen är film",
+    "3. Penmans ekvation — värde = bokfört EK + väntade övervinster",
+    "4. Att restera bort priset — reverse engineering av marknadens prognos",
+    "5. Drift kontra finansiering — omstrukturera balansräkningen (NOA, NFO, CSE)",
+    "6. RNOA — avkastning på netto-driftstillgångar (V09:s djup, räkneexempel i SEK)",
+    "7. Omstrukturera resultaträkningen — kärnrörelseresultat och totalresultat",
+    "8. Hävstångens aritmetik — ROE = RNOA + FLEV × spread",
+    "9. Tillväxt och hållbar tillväxt — när skapar expansion värde?",
+    "10. P/B som funktion av ROCE och tillväxt — multiplens inre liv",
+    "11. P/E-dekomposition — trailing, forward och normal multipl (räkneexempel i SEK)",
+    "12. Vinstens kvalitet I — accruals: kassa mot bokförd vinst",
+    "13. Vinstens kvalitet II — core-resultat, redovisningsrisk och återkommande engångsposter",
+    "14. Risk utan beta — Penmans fundamentala risk (V10–V12, V19)",
+    "15. Analysen av bolagets värde — WACC med försiktighet",
+    "16. Fallstudier — P&G, Cisco, GM:s pensioner och Starbucks",
+    "17. Kontrovers och syntes — Penman mot CAPM-skolan"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Värde kontra pris — fundamentalanalysens uppdrag",
+      "intro": "Stephen Penman, professor i redovisning vid Columbia Business School och tidigare chefredaktör för Review of Accounting Studies, öppnar sin lärobok med finansens kanske äldsta och viktigaste distinktion: priset är vad du betalar, värdet är vad du får. Kursen börjar där boken börjar — med frågan vad fundamentalanalys överhuvudtaget är för ett uppdrag.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens första kapitel skiljer två sätt att närma sig en aktie. Den spekulativa ansatsen analyserar MARKNADEN: vad kommer priset att göra, hur kommer andra att reagera, vad är nästa våg av sentiment? Den fundamentala ansatsen analyserar VERKSAMHETEN: vad är det här bolaget värt, vilka kassaflöden kan det producera, och vad säger bokslutet om det? Penman anlitar metaforen från Keynes skönhetstävling: den spekulativa investeraren väljer inte det ansikte han själv finner vackrast, utan det som genomsnittet av de andra deltagarna kommer att tro att genomsnittet finner vackrast — en prognos om andras prognoser, i oändlighet. Fundamentalisten står utanför tävlingen och frågar i stället: vad är detta bolag värt i sig? Skillnaden låter akademisk men är allt: den spekulativa ansatsens fel är att den aldrig rör vid underliggande värde, den fundamentala ansatsens kraft är att den kan ha RÄTT mot marknaden."
+        },
+        {
+          "type": "text",
+          "content": "Men fundamentalanalysens uppdrag finns bara om priset ibland skiljer sig från värdet — det är bokens öppning på allvar. På en fullt effektiv marknad är analysen meningslös: priset innehåller redan all information och då är köp av index det enda rationella. Penmans hållning, i Graham och Dodd-traditionen från Security Analysis (1934), är mittengången som hela boken vilar på: marknader är GENSNITTLIGT kloka men PERIODVIS tokiga — dot-com-bubblan år 1999 till 2000, då bolag utan vinst prissattes som framtidsrikens segrare, är bokens återkommande bevis. Om priset kan ligga fel länge och ibland mycket fel, då är frågan inte OM fundamentalanalys kan löna sig utan HUR den ska bedrivas så att den mäter värde i stället för att gissa pris. Svaret är bokens hela konstruktion: värde mäts i kassaflöden som redovisningen dokumenterar, inte i kurser som historien rapporterar."
+        },
+        {
+          "type": "text",
+          "content": "Boken är ett lärobokssystem — delar som går från uppdraget (värde kontra pris), via bokslutens anatomi och omstrukturering, till lönsamhetsanalys (RNOA), prognoser och värdering, risk och till sist fullständig analys av verkliga bolag. Kursen följer samma spår kapitel för kapitel och adderar det som gör den här genomgången unik i AK1A:s katalog: differentieringen mot syskonkursen. Hjelström, Isaksson och Nilsson lär ut SVENSK PRAXIS — hur ett värderingsutlåtande skrivs enligt K3 och IFRS med WACC i SEK. Penman lär ut TEORIN under praxis: varför bokslutet alls kan bära värdeinformation, vad som händer när man rensar ROE för finansierings-hävstång (RNOA), och hur multiplar översätts till marknadens implicita prognoser. Syskonboken är körkortet; Penman är motorkunskapen. AKM1-brygga: hela AKM1 vilar på kapitel 1:s premiss — att pris skiljer sig från värde går att mäta — och V04–V06 fångar prissidan medan resten av de tjugo variablerna mäter värdets byggstenar."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera kursens första lag: priset är en åsikt, värdet är en beräkning. Den spekulativa frågan är vad marknaden kommer att tro; den fundamentala frågan är vad verksamheten är värd oavsett vad marknaden tror. Varje gång du hör dig själv resonera om en aktie i termer av vad andra kommer att göra — stanna och översätt till Penmans fråga: vad måste bokslutet visa för att motivera det här priset?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två ansatser — bokens öppningsdistinktion\",\"rader\":[[\"Ansats\",\"Fråga\",\"Analyserar\",\"Verktyg\",\"Fallgropen\"],[\"Spekulativ\",\"Vad kommer priset att göra?\",\"marknadens förväntningar om förväntningar\",\"kurser, sentiment, momentum\",\"rör aldrig underliggande värde\"],[\"Fundamental\",\"Vad är verksamheten värt?\",\"bolagets kassaflödesförmåga\",\"bokslut, omstrukturering, överpris-ekvationen\",\"kan ha fel — men kan också ha rätt\"],[\"Effektiv marknad (nollhypotes)\",\"Behövs analys alls?\",\"ingenting — priset innehåller allt\",\"indexköp\",\"utesluter systematiska felprissättningar\"],[\"Penmans mitteställning\",\"Är priset ibland fel?\",\"gensnittligt kloka, periodvis tokiga marknader\",\"fundamental kontrarian koll\",\"värde mäts i bokslutet, inte i kursen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör priset-kontra-värde-testet på din egen portfölj: ta tre innehav och skriv för varje ned en mening om VARFÖR du äger det. Sortera sedan meningarna i två högar — de som handlar om priset (den har stigit, den har fallit, den är populär, chartbrott) och de som handlar om värdet (vinst, marginaler, kassaflöde, balansräkning). Om prishögen är större än värdehögen har du kört Keynes skönhetstävling utan att veta om det — och det är exakt den vanan den här kursen byter ut mot Penmans fråga: vad säger bokslutet?"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är bokens grundläggande distinktion i första kapitlet?",
+          "alternativ": [
+            "Skillnaden mellan teknisk och kvantitativ analys",
+            "Skillnaden mellan den spekulativa ansatsen (analyserar marknaden och prisrörelser) och den fundamentala ansatsen (analyserar verksamheten och dess värde)",
+            "Skillnaden mellan aktier och obligationer",
+            "Skillnaden mellan tillväxtbolag och värdebolag"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad den ena ansatsen studerar som den andra aldrig rör vid — underliggande värde."
+        },
+        {
+          "q": "Vad beskriver Keynes skönhetstävling, som Penman anlitar?",
+          "alternativ": [
+            "Att vackra bolag alltid slår fula i avkastning",
+            "Att skönhet är ett bra värderingsmått",
+            "Att den spekulativa investeraren förutsäger vad genomsnittet tror att genomsnittet kommer att tycka — en prognos om andras prognoser",
+            "Att man ska köpa det bolag som flest analytiker gillar"
+          ],
+          "ratt": 2,
+          "tips": "Räkna antalet led av prognoser i metaforen — din bedömning av andras bedömning av andras bedömning."
+        },
+        {
+          "q": "Vilken är Penmans hållning till marknadseffektivitet?",
+          "alternativ": [
+            "Marknaden är alltid effektiv — analys är meningslös",
+            "Marknaden är alltid ineffektiv — analys garanterar vinst",
+            "Marknader är gensnittligt kloka men periodvis tokiga — därför mäter fundamentalanalys värde i stället för att gissa pris",
+            "Effektivitet spelar ingen roll för värdering"
+          ],
+          "ratt": 2,
+          "tips": "Dot-com-bubblan är bokens bevis — vad säger den om när marknaden kan ha fel?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Bokslutet som berättelse — balansräkningen är foto, resultaträkningen är film",
+      "intro": "Bokens andra kapitel är en guidad tur genom de fyra rapporterna — och kursen tar Penmans egen bild på allvar: balansräkningen är ett fotografi av förmögenheten vid ett tillfälle, resultaträkningen är filmen av vad som hände mellan fotografierna. Först när du ser hur fotona och filmen hänger ihop kan bokslutet berätta en värdeberättelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fyra rapporter, fyra uppdrag. Balansräkningen är en BESTÅNDSMÄTNING — en ögonblicksbild som visar vad bolaget äger, vad det är skyldigt och därmed nettoförmögenheten — det bokförda egna kapitalet — vid ett givet datum. Resultaträkningen är en FLÖDESMÄTNING — filmen som visar hur mycket värde verksamheten skapat under perioden, mätt som intäkter minus kostnader. Kassaflödesanalysen är en andra film, men strikt i kontanter: var kassan faktiskt kom ifrån och gick. Eget kapital-stegringen (statementet) är slutligen klistermetoden — den stegar upp det egna kapitalet från förra fotot till detta: börskapat kapital plus totalresultat minus utdelningar och återköp. Penmans poäng, som hela boken bygger vidare på: balansräkningen MÄTER nettoförmögenhet (bokfört EK) och resultaträkningen MÄTER värdetillkomsten — bokslutet är alltså inte administration, det är två sätt att mäta samma sak, värde, vid olika tidpunkter."
+        },
+        {
+          "type": "text",
+          "content": "Bindningen mellan fotografierna kallas clean surplus-relationen och är kursens viktigaste ekvationsbyggnad efter Penmans huvudekvation: EK vid periodens slut = EK vid periodens början + totalresultat − utdelningar (och återköp). Om du vet det bokförda egna kapitalet i dag och kan prognostisera hur mycket resultat som läggs till år för år, kan du stega fram det framtida egna kapitalet — och det är den mekanism som gör värderingen förankrad i något mätbart. Men notera ordet TOTALresultat: den moderna redovisningen (IFRS som svensk K3 bygger på) stoppar också omvärderingar — valutakursdifferenser, versäkringsmatematik, nedskrivningar som går direkt mot EK — i resultatet vid sidan av resultaträkningen. Penman är skoningslös på punkten: allt som påverkar ägarnas förmögenhet måste räknas, annars är filmen klippt. Smutsiga överskott (dirty surplus) är en av de vanligaste gömmorna för svag vinstkvalitet — kapitel 13 återkommer till dem."
+        },
+        {
+          "type": "text",
+          "content": "Den tredje textblocket-läran: bokslutet mäter med fel. Historiska anskaffningsvärden, avskrivningsscheman, avsättningar, verkligt värde på utvalda poster — redovisningen är full av mätval, och det är därför bokens senare delar handlar om vinstens KVALITET, inte bara dess nivå. Här differentieras kursen mot syskonkursen: Hjelström, Isaksson och Nilsson lär ut K3- och IFRS-reglerna och de svenska nyckeltalen (soliditet, kassalikviditet, räntetäckningsgrad) — PRAXIS. Penman frågar ett steg djupare: VAD BETYDER mätningen för värde — hur bra mäter balansräkningen nettoförmögenhet, hur bra mäter resultaträkningen värdetillkomst, och hur rättar man systematiska mätfel? Båda behövs: praxis utan teori blir mallfyllning, teori utan praxis blir verklighetsfrånvänd. AKM1-brygga: V05 (P/B) kräver ett trovärdigt bokfört EK ur fotografierna, V09 (ROE) är exakt kvoten mellan film och foto — resultatet delat med det egna kapitalet — och V12 (intäktsstabilitet) läses som filmens jämnhet över år."
+        },
+        {
+          "type": "insikt",
+          "content": "Se bokslutet som två kameror på samma verklighet: balansräkningen fotograferar förmögenheten, resultaträkningen filmar förändringen. Om filmen och fotografierna säger olika saker om bolaget — vinsten stiger men det egna kapitalet gör det inte — är det inte bilder som felar utan redovisningen som gömmer något. Börja varje bolagsanalys med att kontrollera att filmen landar i fotot."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De fyra rapporterna — foto, film och kontroll\",\"rader\":[[\"Rapport\",\"Typ\",\"Mäter\",\"Penmans roll\",\"AKM1\"],[\"Balansräkning\",\"ögonblicksbild (bestånd)\",\"nettoförmögenhet — bokfört eget kapital\",\"mäter värde vid en tidpunkt\",\"V05, V10\"],[\"Resultaträkning\",\"film (flöde)\",\"värdetillkomst under perioden\",\"mäter value added\",\"V07–V09\"],[\"Kassaflödesanalys\",\"film i kontanter\",\"kontanta flöden — kontroll av filmen\",\"kontrollerar vinstens kvalitet\",\"V08, V12, V19\"],[\"Eget kapital-stegring\",\"klistermetoden\",\"EK förra fotot + totalresultat − utdelning/återköp\",\"clean surplus — binder ihop fotona\",\"V20\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Fotografi-och-film-övningen: öppna senaste årsredovisningen för ett bolag i din bevakningslista. Läs först de två fotografierna (balansräkningen förra året och i år) och notera förändringen i eget kapital. Läs sedan filmen (resultaträkningen och totalresultatet) plus utdelningar och återköp. Stämmer stegringen — alltså EK i år = EK förra året + totalresultat − utdelning − återköp? Om inte: vilken post förklarar skillnaden, och är den en omvärdering som gått utanför resultaträkningen? Du har just gjort din första clean surplus-kontroll — den röda tråden genom hela resten av kursen."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Penmans bild av balansräkningen respektive resultaträkningen?",
+          "alternativ": [
+            "Balansräkningen är en film, resultaträkningen ett foto",
+            "Balansräkningen är ett fotografi (ögonblicksbild av nettoförmögenhet), resultaträkningen är filmen (värdetillkomsten under perioden)",
+            "Båda är fotografier vid olika tidpunkter",
+            "Båda är filmer med olika längd"
+          ],
+          "ratt": 1,
+          "tips": "Bestånd mot flöde — vilken rapport mäter vid en punkt och vilken mäter mellan två punkter?"
+        },
+        {
+          "q": "Vad säger clean surplus-relationen?",
+          "alternativ": [
+            "Att utdelning alltid ska vara hälften av resultatet",
+            "Att EK vid periodens slut = EK vid början + totalresultat − utdelningar och återköp",
+            "Att balansräkningen alltid stämmer bättre än resultaträkningen",
+            "Att alla omvärderingar ska bokföras som intäkter"
+          ],
+          "ratt": 1,
+          "tips": "Det är klistermetoden som binder samman fotografierna genom filmen."
+        },
+        {
+          "q": "Varför insisterar Penman på TOTALresultatet (comprehensive income) i stället för enbart resultaträkningens bottennivå?",
+          "alternativ": [
+            "Eftersom bottennivån alltid är felaktig",
+            "Eftersom omvärderingar utanför resultaträkningen (smutsiga överskott) påverkar ägarnas förmögenhet och annars gömmer svag vinstkvalitet",
+            "Eftersom IFRS förbjuder resultaträkningar",
+            "Eftersom utdelningar inte räknas annars"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad som kan förändra det egna kapitalet utan att passera resultaträkningens sista rad."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Penmans ekvation — värde = bokfört EK + väntade övervinster",
+      "intro": "Här är bokens och kursens hjärta: den ekvation som kallas böckernas ekvation — värde = bokfört eget kapital plus nuvärdet av förväntade övervinster. Med den blir varje värdering förankrad i bokslutets mätning i stället för att börja i tomma luften, och varje multipl blir en läsbar prognos.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Vägen till ekvationen börjar hos den klassiska utdelningsmodellen: värde är nutiden av alla framtida utdelningar. Penman kritiserar den inte för att den är fel — den är definitionsmässigt rätt — utan för att den är VILSELEDANDE i praktiken. Argumentet bygger på Miller och Modiglianis berömda sats från 1961 (utdelningens irrelevans): utdelningen är inte det som SKAPAR värde — den är en DISTRIBUTION av redan skapat värde. Ett bolag som behåller vinsten och återinvesterar lönsamt är inte mindre värdefullt för att utdelningen är noll; ett bolag som betalar stor utdelning genom att hävstånga sig eller äta upp sitt kapital har inte blivit mer värt. Utdelningsprognoser är därför prognoser om finansieringspolitik, inte om värdeskapande — och att diskontera dem ger ett värde som svänger med utdelningsbeslut i stället med substansen. Penman citerar öppet hela residual income-traditionen — Preinreich, Edwards och Bell (1961) och framför allt James Ohlsons artikel från 1995 (Earnings, Book Values, and Dividends in Equity Valuation) — som gav ekvationen det moderna teoretiska fundamentet."
+        },
+        {
+          "type": "text",
+          "content": "Så ekvationen. Ekvitetsvärdet vid tid noll: V = B(0) + summan av nuvärdena av förväntade övervinster (residual earnings), där övervinsten för år t = resultat(t) − r × B(t−1). Läs den långsamt: börja med det bokförda eget kapitalet — det mätvärde balansräkningen redan levererar — och lägg sedan till det som krävs för att motivera ETT PRIS ÖVER BOKFÖRT VÄRDE: nämligen att bolaget tjänar MER på sitt kapital än ägarnas alternativa kostnad r. Övervinsten är alltså vinsten efter ett kapitalkostnadspåslag på bokfört EK. Ett miniräkneexempel i SEK för intuition: bokfört EK är 100 kronor per aktie, avkastningskravet 10 procent och nästa års vinst 15 kronor — övervinsten blir 15 − 10 procent × 100 = 5 kronor. Om övervinsten antas bestå för alltid blir värdet 100 + 5/0,10 = 150 kronor, alltså ett motiverat P/B på 1,5. Om vinsten i stället är exakt 10 — bolaget tjänar precis sitt avkastningskrav — är övervinsten noll och värdet är det bokförda: P/B = 1. Detta är ekvationens djupaste budskap: multiplar är inte sentiment, de är matematiska konsekvenser av lönsamhet mot avkastningskrav."
+        },
+        {
+          "type": "text",
+          "content": "Varför är den här ekvationen bokens ryggrad och inte en kuriosa? Tre skäl. För det första FÖANKRINGEN: värderingen börjar i en mätning (bokfört EK) i stället för i en fri kassaflödesprognos där felet multipliceras i ett terminalvärde — prognosjobbet gäller bara ÖVERVIKSTEN, den (ofta lilla) skillnad mellan värde och bokförd storhet. För det andra FELDIAGNOSEN: eftersom bokföringen systematiskt underskattar eller överskattar värde (konservativ redovisning kapitaliserar inte varumärken; aggressiv redovisning kapitaliserar för mycket) visar ekvationen exakt VAR priset och bokslutet skiljer sig — och kapitel 4 lär dig läsa den skillnaden baklänges. För det tredje MÅNGFALDEN: samma ekvation kan skrivas som P/B = 1 + PV(övervinster)/B, vilket är hela teorin bakom multiplarnas rörelser — kursens kapitel 10 och 11 bygger direkt på den formen. AKM1-brygga: ekvationen är den teoretiska motorn bakom AKM1:s kombination av V05 (P/B — priset mot bokförd förankring) och V09 (ROE — övervinstens källa): billighet utan lönsamhet är värdefälla, lönsamhet utan billighet är betalt pris — värdet ligger i samspel mellan dem."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera ekvationen i en mening: värdet är det bokförda kapitalet PLUS allt extra som lönsamheten över kapitalkostnaden kan byggas upp till. Om ROE för alltid är lika med avkastningskravet är det rätta P/B exakt 1 — varje avvikelse från 1 är en påstående om över- eller undervinster. Fråga dig därför alltid när du ser ett P/B: är avvikelsen från 1 matematiskt motiverad av framtida övervinster?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Böckernas ekvation — bit för bit\",\"rader\":[[\"Komponent\",\"Definition\",\"Innebörd\"],[\"B(0)\",\"bokfört eget kapital per aktie vid värderingstidpunkten\",\"balansräkningens fotografi — förankringen\"],[\"r × B(t−1)\",\"kapitalkostnadspålaget på bokfört EK\",\" vad ägarna kräver för insatt kapital\"],[\"Övervinst (RE)\",\"resultat(t) − r × B(t−1)\",\"vinsten utöver kapitalkostnaden — värdets motor\"],[\"V = B + Σ PV(RE)\",\"bokfört + nuvärdet av alla framtida övervinster\",\"ekvitetsvärdet\"],[\"P/B = 1 + PV(RE)/B\",\"samma ekvation i multiplform\",\"multiplens teori\"],[\"Om ROE = r för alltid\",\"övervinsten är noll\",\"motiverat P/B = exakt 1\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna en första övervinst i SEK: välj ett bolag ur din bevakningslista och hämta bokfört eget kapital per aktie (B) och senaste rullande vinst per aktie (E) ur årsredovisningen. Sätt avkastningskravet till 10 procent som grov anchor. Beräkna övervinsten: E − 0,10 × B. Antag sedan två enkla scenarier — övervinsten består för alltid (V = B + RE/0,10) och övervinsten är noll (V = B) — och jämför spannet mot dagens pris. Du har just byggt din första Penman-värdering: grov, men förankrad i bokslutet och inte i känslan."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kritiserar Penman utdelningsmodellen som praktiskt värderingsverktyg?",
+          "alternativ": [
+            "Eftersom utdelningar inte ska beskattas",
+            "Eftersom Miller–Modigliani visade att utdelningen är en distribution av redan skapat värde — prognosen gäller finansieringspolitik, inte värdeskapande",
+            "Eftersom utdelningar alltid är oförutsägbara",
+            "Eftersom utdelningsmodellen kräver beta"
+          ],
+          "ratt": 1,
+          "tips": "Fråga dig vad en utdelning SKAPAR — och vad den bara FLYTTAR från bolaget till ägaren."
+        },
+        {
+          "q": "Hur definieras övervinsten (residual earnings) i Penmans ekvation?",
+          "alternativ": [
+            "Resultat minus utdelning",
+            "Resultat minus kapitalkostnadspålaget på bokfört eget kapital: E − r × B",
+            "Resultat minus räntekostnader",
+            "Resultat gånger P/B"
+          ],
+          "ratt": 1,
+          "tips": "Pålaget gäller det EGET kapital som står i balansräkningen — inte skulderna."
+        },
+        {
+          "q": "Vad är det motiverade P/B för ett bolag som för alltid tjänar exakt sitt avkastningskrav på eget kapital?",
+          "alternativ": [
+            "Exakt 1 — övervinsten är noll så värdet är det bokförda kapitalet",
+            "2 eftersom marknaden betalar för stabilitet",
+            "0,5 eftersom lönsamheten är låg",
+            "Det går inte att veta utan beta"
+          ],
+          "ratt": 0,
+          "tips": "Sätt in ROE = r i ekvationen och se vad som återstår av övervinsterna."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Att restera bort priset — reverse engineering av marknadens prognos",
+      "intro": "Penmans mest praktiskt revolutionära drag: använd ekvationen baklänges. Mata in priset, det bokförda kapitalet och avkastningskravet — och lös ut vilken prognos marknaden implicit har gjort. Fundamentalisten behöver inte gissa vad marknaden tror; marknaden har skrivit sin prognos i priset, och den kan läsas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Idén är elegant. Priset är inte åsikt i magisk mening — det är en sammanvägning av förväntningar, och ekvationen från kapitel 3 kan vändas: P = B + PV(förväntade övervinster) säger att varje pris IMPLICERAR en prognos om framtida övervinster. Restera bort det bokförda kapitalet från priset och det som återstår — överpriset — är nuvärdet av den prognos som köparna gjort. Om vi för enkelhets skull antar att övervinsten växer med en fast grad g för alltid kan den implicita tillväxten lösas ut algebraiskt: P − B = RE(1)/(r − g), vilket ger g = r − RE(1)/(P − B). Med det kan du ställa den fundamentalistiskt korrekta frågan inte vad är aktien värd? utan VAD MÅSTE BOLAGET PRESTERA för att motivera priset — och är den prestationen sannolik?"
+        },
+        {
+          "type": "text",
+          "content": "Ett räkneexempel i SEK. Bolaget har bokfört EK på 100 kronor per aktie, nästa års prognostiserade vinst 14 kronor och avkastningskravet sätts till 8 procent. Övervinsten blir 14 − 8 = 6 kronor. Aktien handlas till 200 kronor. Restera: överpriset är 200 − 100 = 100 kronor, och 100 = 6/(0,08 − g) ger 0,08 − g = 0,06, alltså implicit tillväxt g = 2 procent per år i övervinsten för alltid. Låter det modest? Jämför med vad bolaget KAN: om ROE är 14 procent och återinvesteringskvoten (1 − utdelningskvoten) är exempelvis 20 procent är den hållbara tillväxten (kapitel 9) cirka 0,20 × 14 = 2,8 procent per år — priset är då nära försvarbart. Men om återinvesteringskvoten är noll (allt delas ut) är hållbar tillväxt noll och priset kräver 2 procents övervinsttillväxt som intäkterna inte kan finansiera — ett tyst krav om nyemission eller hävstång som ingen nämnt. Skillnaden mellan implicit krav och förmåga är hela skillnaden mellan köp och pass."
+        },
+        {
+          "type": "text",
+          "content": "Penman gör manövern systematisk i sina tabeller över vad som är diskonterat i priset — kontrarianens läsning (priset är för lågt för att vara sant, värdera och jämför) och den framåtblickande läsningen (priset innehåller en prognos — läs den och döm den). Kursen förenar båda: först översätt multiplarna till prognoser, döm sedan prognosernas realism mot hållbar tillväxt, moat (AKM1 V13–V15) och branschens struktur. Det är också här kursen skiljer sig från skärmkurserna i katalogen (Quantitative Value, What Works on Wall Street): där RANKAS multiplar billigast till dyrast och regeln fattar beslutet; hos Penman ÖVERSÄTTS multiplar till förväntade fundamentala prestationer och omdömet dömer. Screening utan översättning kan köpa bolag vars billighet bara speglar en korrekt låg förväntan; reverse engineering skiljer billighet som kommer av felaktig pessimism från billighet som kommer av korrekt dödsmässig prognos. AKM1-brygga: V04–V06 (P/S, P/B, EV/EBITDA) är inte köpsignaler utan MARKNADENS UTGÅNGSLÄGE — restera bort det och fråga vilken V07–V09-prestation som krävs; din AKM1-bedömning av V13–V15 (moat) avgör om den prestationen är trovärdig."
+        },
+        {
+          "type": "insikt",
+          "content": "Byt fråga. I stället för är aktien billig? fråga: vilken framtid är redan prissatt? Ett P/B under 1 betyder att marknaden prissatt beständiga UNDERVINSTER — och då är den relevanta frågan om det finns en realistisk väg tillbaka till övervinst. Multiplar är inte svar; de är marknadens ifyllda enkät — din uppgift är att granska svaren."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från multipl till implicit prognos — restera bort priset\",\"rader\":[[\"Observation\",\"SEK-exempel\",\"Översättning\",\"Fråga att döma\"],[\"Pris P\",\"200\",\"innehåller marknadens prognos\",\"—\"],[\"Bokfört EK per aktie B\",\"100\",\"förankringen\",\"—\"],[\"Överpris P − B\",\"100\",\"nuvärde av förväntade övervinster\",\"är det stort i förhållande till B?\"],[\"Nästa års vinst E(1)\",\"14\",\"—\",\"—\"],[\"Avkastningskrav r\",\"8 %\",\"—\",\"känsligt? se kapitel 15\"],[\"Övervinst RE(1) = E(1) − r×B\",\"6\",\"årets övervinst\",\"—\"],[\"Implicit g = r − RE(1)/(P − B)\",\"2 % per år\",\"marknadens prognos\",\"kan bolaget växa så utan att späda ut (V19)?\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör restera-övningen på ett bolag du tror är BILLIGT: hämta B (bokfört EK per aktie), nästa års konsensusprognos för vinst per aktie och dagens pris. Sätt r = 9 procent. Beräkna RE(1) = E(1) − 0,09 × B, lös ut implicit g = 0,09 − RE(1)/(P − B) och jämför med bolagets hållbara tillväxt (återinvesteringskvot × ROE). Skriv en mening: vad kräver priset — och är det kravet realistiskt eller optimistiskt? Om du inte kan skriva meningen är din billighetskänsla inte en analys ännu."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad innebär reverse engineering enligt Penman?",
+          "alternativ": [
+            "Att bygga en värderingsmodell baklänges i kalkylprogrammet",
+            "Att ur pris, bokfört EK och avkastningskrav lösa ut den prognos om framtida övervinster som priset implicit innehåller",
+            "Att handla emot analytikernas rekommendationer",
+            "Att beräkna betas historiska värden"
+          ],
+          "ratt": 1,
+          "tips": "Priset är marknadens ifyllda prognos — ekvationen kan vändas och lösas på g."
+        },
+        {
+          "q": "I exemplet med P = 200, B = 100, r = 8 procent och vinst 14 — vad är den implicita tillväxten i övervinst?",
+          "alternativ": [
+            "14 procent per år",
+            "8 procent per år",
+            "2 procent per år",
+            "0 procent per år"
+          ],
+          "ratt": 2,
+          "tips": "Överpris 100; RE = 6; lös 100 = 6/(0,08 − g)."
+        },
+        {
+          "q": "Vad är den avgörande frågan när den implicita tillväxten lösts ut?",
+          "alternativ": [
+            "Om den implicita tillväxten är högre eller lägre än den hållbara tillväxten (återinvesteringskvot × ROE) och därmed realistisk för bolaget",
+            "Om betan är under 1",
+            "Om bolaget har hög omsättning i aktien",
+            "Om P/E är lägre än branschens"
+          ],
+          "ratt": 0,
+          "tips": "Ett krav som inte kan finansieras utan utspädning eller hävstång är ett tyst riskpåslag — jämför med vad bolaget själv kan bygga."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Drift kontra finansiering — omstrukturera balansräkningen (NOA, NFO, CSE)",
+      "intro": "Innan lönsamheten kan mätas rent måste boksluet kirurgiskt delas: vad är verksamheten, och vad är finansieringen? Penmans omstrukturerade balansräkning — netto-driftstillgångar (NOA), nettoskulder (NFO) och bokfört eget kapital (CSE) — är förutsättningen för RNOA-kapitlet som följer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Problemet med råa nyckeltal är att de blandar ihop två olika bolag inom bolaget: DRIFTEN (den verksamhet som skapar vinsten — fabriker, varumärke, kundfordringar, lager) och FINANSIERINGEN (lån, kassa, ränteflöden — den sida som bara distribuerar och prissätter risk). ROE som bottennivå-nyckeltal är den värsta blandaren: ett högt ROE kan komma från en briljant drift, från aggressiv belåning — eller från båda, och siffran tiger om skillnaden trots att risken är helt olika. Penmans lösning är den omstrukturerade (reformulerade) balansräkningen: gruppera alla driftsposter på ena sidan och alla finansieringsposter på den andra. Driftstillgångar (operating assets) minus driftsskulder (operating liabilities — levererade skulder, obetalda löner och skatter, avsättningar för verksamheten) ger netto-driftstillgångar NOA. Finansskulder minus finansiella tillgångar (obligationer, kassa) ger nettoskulder NFO — eller nettofinansiella tillgångar om kassan överstiger skulderna. Och identiteten som gör konstruktionen lufttät: NOA = NFO + CSE, där CSE är det bokförda eget kapitalet. Driften finansieras antingen av låntagare eller av ägare — det finns ingen tredje källa."
+        },
+        {
+          "type": "text",
+          "content": "Konkret på svenska poster. Till DRIFTEN hör: kundfordringar, lager, förskott till leverantörer, maskiner och inventarier, byggnader, goodwill och immateriella tillgångar (patent, varumärke, utvecklingskostnader) — allt som behövs för att producera intäkter. Även driftsskulderna hör hemma här, med tecken minus: leverantörsskulder (gratis finansiering från leverantörerna!), obetalda sociala avgifter och skatter, avsättningar för garantiåtaganden och pensioner i löpande verksamhet. Till FINANSIERINGEN hör: obligations- och banklån, leasing (i modern redovisning), räntebärande skulder — minus kassa och kortplaceringar. Resultatet av omstruktureringen syns direkt i tre mätvärden istället för ett: hur stor kapitalstock driften binder (NOA), hur mycket av den som långivare finansierar (NFO) och hur mycket ägarna äger (CSE). Skillnaden mot syskonkursen är liksom tidigare illustrativ: svensk praxis (Hjelström med flera) lär soliditet och skuldsättningsgrad på den omodifierade balansräkningen — användbart men blandat; Penman lär uppdelningen som gör att lönsamhet kan mätas PÅ DRIFTEN ALLENA, utan att finansieringsvalet sminkar siffran."
+        },
+        {
+          "type": "text",
+          "content": "Två varningar innan RNOA-kapitlet. Den första: poster som tycks ligga mellan stolarna — pensionsskulder (drift i grunden, den är ju förtjänad arbetskraft; Penman behandlar dem i bokens case om General Motors), uppskovskattfordrar (finansiering), räntebärande andelar i dotterbolag (finansiering) — Penman går igenom gränsdragen post för post, och principen är alltid ekonomisk funktion före redovisningsteknisk form. Den andra: nettoföra ALDRIG bort substans. Omstruktureringen ändrar inte totala balansomslutningens information — den omarrangerar den så att lönsamhet och risk kan mätas var för sig. Ett bolag med stor NFO och litet CSE (hög FLEV — kapitel 8) har samma NOA men en helt annan riskprofil än ett som finansieras av ägarna. AKM1-brygga: V10 (skuldsättningsgrad) ska mätas på FINANSIERINGSSIDAN (NFO mot CSE) — det är den verkliga belåningen, inte leverantörsskulder som döljer billig driftsfinansiering; V11 (likviditet) och V19 (kapitalförbränning) läses ur driftposternas rörelser; och V08–V09:s marginaler blir rena först när driften losses från räntorna — det är hela poängen med nästa kapitel."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig identiteten utantill: NOA = NFO + CSE. Driften finansieras antingen av långivare eller av ägare. När du ser ett bolag med imponerande ROE, ställ omedelbart frågan: hur mycket av det sitter i DRIFTEN och hur mycket sitter i BALANSEN? Omstruktureringen är inte bokföringsnit — det är frågan som skiljer värdeskapande från värdeflyttning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Omstrukturera balansräkningen — svenska poster på rätt sida\",\"rader\":[[\"Post\",\"Sida\",\"Grupp\",\"Anmärkning\"],[\"Kundfordringar, lager\",\"drift\",\"driftstillgångar\",\"binder kapital i verksamheten\"],[\"Maskiner, byggnader\",\"drift\",\"driftstillgångar\",\"—\"],[\"Goodwill, patent, varumärke\",\"drift\",\"driftstillgångar\",\"moat-kapital — V13–V15\"],[\"Leverantörsskulder\",\"drift\",\"driftsskuld (minus)\",\"gratis finansiering — ökar effektiviteten\"],[\"Obetalda löner, skatter, avsättningar\",\"drift\",\"driftsskuld (minus)\",\"—\"],[\"Bank- och obligationslån, leasing\",\"finansiering\",\"finansskuld\",\"NFO — hemvist för V10\"],[\"Kassa, kortplaceringar\",\"finansiering\",\"finansiell tillgång (minus)\",\"räntebärande\"],[\"Summa: NOA = drifttillgångar − driftsskulder\",\"—\",\"= NFO + CSE\",\"identiteten som gör RNOA möjlig\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Omstrukturera ett bokslut för hand: ta en årsredovisning (helst ett industribolag, ej bank) och bygg tre kolumner — driftstillgångar, driftsskulder, finansiering — ur balansräkningen. Beräkna NOA, NFO och CSE och kontrollera att NOA = NFO + CSE (avvikelse betyder en post på fel sida — hitta den). Notera sedan förhållandet NFO/CSE: är driften mest långivarn eller ägarn? Övningen tar tjugo minuter första gången och är den enda vägen att verkligen lära sig kapitel 6."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är identiteten i den omstrukturerade balansräkningen?",
+          "alternativ": [
+            "Tillgångar = Skulder + Eget kapital (orörd)",
+            "NOA = NFO + CSE — netto-driftstillgångar finansieras av nettoskulder och bokfört eget kapital",
+            "Driftstillgångar = driftsskulder",
+            "NFO = NOA − driftsskulder"
+          ],
+          "ratt": 1,
+          "tips": "Driften finansieras antingen av långivare eller ägare — det finns ingen tredje källa."
+        },
+        {
+          "q": "Var hör leverantörsskulder hemma enligt Penman?",
+          "alternativ": [
+            "Finansieringssidan — de är skulder",
+            "Driftssidan som driftsskuld (minuspost) — de är billig finansiering som ingår i verksamheten",
+            "De ska delas hälften-hälften",
+            "De raderas vid omstrukturering"
+          ],
+          "ratt": 1,
+          "tips": "Fråga vad posten gör ekonomiskt: finansierar den driften utan ränta, eller är den ett räntebärande lån?"
+        },
+        {
+          "q": "Varför är ROE som mått otillräckligt enligt boken?",
+          "alternativ": [
+            "Eftersom det är för lätt att räkna",
+            "Eftersom det blandar driftens lönsamhet med finansieringens hävstång — samma ROE kan dölja helt olika risk",
+            "Eftersom det inte finns i svenska årsredovisningar",
+            "Eftersom ägarna inte bryr sig om avkastning"
+          ],
+          "ratt": 1,
+          "tips": "Två bolag med samma ROE: ett utan lån, ett tungt belånat — vilket sover bättre nattetid?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "RNOA — avkastning på netto-driftstillgångar (V09:s djup, räkneexempel i SEK)",
+      "intro": "Kursens kärnkapitel. Med den omstrukturerade balansräkningen i hand kan lönsamheten mätas på driften allena: RNOA — avkastning på netto-driftstillgångar. Detta är V09:s teoretiska djup: ROE rensat för finansierings-hävstång. Och vi räknar hela dekompositionen i SEK, steg för steg.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen först. RNOA = kärnrörelseresultat EFTER SKATT dividerat med netto-driftstillgångar (NOA, medel av ingång och utgång). Täljaren är drifens vinst — rörelseresultatet justerat för engångsposter (kapitel 7) och skattat som om bolaget vore obelånat — eftersom räntan ju är en finansieringskostnad, inte en driftskostnad, och skattevärdet av ränteavdraget hör hemma i lånekostnaden. Nämnaren är det kapital driften binder. Varför är detta mått överlägset ROE? Därför att det svarar på den enda fråga som skiljer bra bolag från bra balanser: hur väl FÖRVANDLAR verksamheten sitt kapital till vinst? Två bolag kan visa identisk ROE på 19 procent — det ena genom enastående drift, det andra genom middelmåttig drift lastad med lån. RNOA skiljer dem: 13–14 procent i det första fallet, 4–5 i det andra. Penman visar i boken att RNOA också är det mått som förutsäger framtida resultat bäst — driften är hållbar, finansieringsvinster är inlåsta risker."
+        },
+        {
+          "type": "text",
+          "content": "Nu räkneexemplet — fullständig RNOA-dekomposition i SEK, fiktiva Norr Industri AB (miljoner kronor). Steg ett, omstrukturera: netto-driftstillgångar NOA är 10 000 i medeltal under året; nettoskulder NFO är 4 000; bokfört eget kapital CSE är 6 000 — kontroll: NOA = NFO + CSE, det stämmer (10 000 = 4 000 + 6 000). Steg två, driften: omsättningen är 20 000 och kärnrörelseresultatet före skatt är 1 800; med 25 procents skattesats blir kärnrörelseresultatet efter skatt (NOPAT) 1 800 × 0,75 = 1 350. RNOA = 1 350 / 10 000 = 13,5 procent. Steg tre, finansieringen: räntenettokostnaden efter skatt är 200 på NFO 4 000 — nettolånekostnaden NBC = 200 / 4 000 = 5,0 procent. Steg fyra, resultatet: nettoresultatet = 1 350 − 200 = 1 150 på CSE 6 000 — ROE = 19,2 procent. Steg fem, dekompositionen: hävstången FLEV = NFO/CSE = 4 000/6 000 = 0,67; spreaden = RNOA − NBC = 13,5 − 5,0 = 8,5 procentenheter; hävstångsbonusen = 0,67 × 8,5 = 5,7 procentenheter. Och där är hela sanningen: ROE 19,2 = RNOA 13,5 + 5,7. Tretton och en halv procent är VERKSAMHETEN; fem komma sju procent är BANKERNAS pengar som arbetar åt ägarna."
+        },
+        {
+          "type": "text",
+          "content": "RNOA kan i sin tur dekomponeras — DuPont rensad: RNOA = vinstmarginal × kapitalomsättningshastighet = (NOPAT/omsättning) × (omsättning/NOA). I exemplet: (1 350/20 000) × (20 000/10 000) = 6,75 procent × 2,0 gånger = 13,5 procent. Två vägar till samma RNOA: tjäna mycket per krona omsättning med långsam omsättning (exklusiva varumärken — hög marginal, låg ATO) eller tjäna lite men snurrar kapital snabbt (handel — låg marginal, hög ATO). Penman poäng: strategin avgör kombinationen, men INGEN strategi slipper kravet att RNOA överstiger kapitalkostnaden — kapitel 8 visar vad som händer annars. Giftexemplet i samma konstruktion: om RNOA i stället vore 4,0 procent — under lånekostnaden 5,0 — skulle hävstången ÄTA: ROE = 4,0 + 0,67 × (4,0 − 5,0) = 3,3 procent. Samma bolag, samma lån, motsatt effekt: hävstången förstorar AVSTÅNDET till kapitalkostnaden, i båda riktningarna. AKM1-brygga: detta är V09:s djup — ROE (V09) poängsätts i AKM1 först när den rensats: läs RNOA-marginalen ur V07 (bruttomarginal) och V08 (EBITDA-marginal), läs hävstången ur V10 (skuldsättningsgrad = NFO-sidan), och spridmåttet RNOA mot kapitalkostnad är det som gör V09 till värderingsvariabel i stället för dekorationsnyckeltal."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig uppdelningen utantill: ROE = RNOA + FLEV × (RNOA − NBC). Verksamheten levererar RNOA; balansen levererar hävstångsbonusen — men bara om spreaden är positiv. När du ser ett ROE, ställ Penmans fråga: hur mycket av detta är driften värd, och hur mycket är lånet att skylla?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"RNOA-dekomposition i SEK — Norr Industri AB (mkr)\",\"rader\":[[\"Rad\",\"Beräkning\",\"Värde\",\"Tolkning\"],[\"Omsättning\",\"—\",\"20 000\",\"—\"],[\"NOA (medel)\",\"driftstillgångar − driftsskulder\",\"10 000\",\"driften binder kapital\"],[\"NFO (medel)\",\"finansskulder − kassa\",\"4 000\",\"långivarnas andel\"],[\"CSE (medel)\",\"NOA − NFO\",\"6 000\",\"ägarnas andel\"],[\"Kärnrörelseresultat f skatt\",\"—\",\"1 800\",\"rensat för engångsposter\"],[\"NOPAT (efter skatt)\",\"1 800 × 0,75\",\"1 350\",\"obelåten driftsvinst\"],[\"RNOA\",\"1 350 / 10 000\",\"13,5 %\",\"V09 renspodd — driften\"],[\"RNOA = marginal × omsättning\",\"6,75 % × 2,0\",\"13,5 %\",\"DuPont rensad\"],[\"NBC\",\"200 / 4 000\",\"5,0 %\",\"lånekostnad efter skatt\"],[\"Nettoresultat\",\"1 350 − 200\",\"1 150\",\"—\"],[\"ROE\",\"1 150 / 6 000\",\"19,2 %\",\"—\"],[\"Dekomposition\",\"13,5 + 0,67 × (13,5 − 5,0)\",\"13,5 + 5,7 = 19,2\",\"drift + hävstång\"],[\"Giftfallet (RNOA 4 %)\",\"4,0 + 0,67 × (4,0 − 5,0)\",\"3,3 %\",\"spread under noll — hävstången äter\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din egen dekomposition: ta kapitel 5:s omstrukturerade bokslut (eller gör den nu) och fyll i mallen — NOA, NFO, CSE, kärnrörelseresultat före skatt, skattesats 25 procent (slå på hela skatten, ignorera ränteavdraget först), NOPAT, RNOA, NBC, ROE. Kontrollera att ROE = RNOA + FLEV × spread stämmer på decimalsiffran. Fråga sedan: hur stor del av bolagets ROE är drift och hur stor är hävstång? Om hävstångsdelen överstiger en tredjedel — vad händer med ROE om räntan stiger två procentenheter? Du har just gjort den analys som få svenska privatinvesterare gör och som Penman menar är kärnan i all lönsamhetsanalys."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras RNOA?",
+          "alternativ": [
+            "Nettoresultat / eget kapital",
+            "Kärnrörelseresultat efter skatt dividerat med netto-driftstillgångar (NOA) i medeltal",
+            "Rörelseresultat före skatt / balansomslutning",
+            "Kassaflöde från drift / NFO"
+          ],
+          "ratt": 1,
+          "tips": "Täljaren ska vara obelåten driftsvinst och nämnaren det kapital driften binder."
+        },
+        {
+          "q": "I räkneexemplet: vad är hävstångsbonusen i ROE?",
+          "alternativ": [
+            "13,5 procentenheter — hela driften",
+            "5,7 procentenheter — FLEV 0,67 gånger spreaden 8,5",
+            "19,2 procentenheter — hela ROE",
+            "Noll — bolaget är obelåtet"
+          ],
+          "ratt": 1,
+          "tips": "ROE 19,2 = RNOA 13,5 + resten — hur beräknas resten?"
+        },
+        {
+          "q": "Vad händer om RNOA understiger nettolånekostnaden NBC?",
+          "alternativ": [
+            "Hävstången höjer ändå ROE eftersom lånet är billigt",
+            "Hävstången ÄTER av ROE — ROE blir lägre än RNOA (i exemplet: 4,0 procent RNOA ger ROE 3,3 procent)",
+            "ROE blir exakt lika med RNOA",
+            "Bolaget kan inte redovisa resultat alls"
+          ],
+          "ratt": 1,
+          "tips": "Spreaden blir negativ — vilket tecken får hävstångstermen då?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Omstrukturera resultaträkningen — kärnrörelseresultat och totalresultat",
+      "intro": "Balansräkningen omstrukturerad — nu resultaträkningens tur. Penmans reformaterade resultaträkning delar filmen i driftens berättelse och finansieringens räkenskap, och skiljer det HÅLLBARA resultatet från bruset. Utan detta kapitel blir RNOA-täljaren fel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den omstrukturerade resultaträkningen börjar där den råa slutar: med TOTALRESULTATET — resultaträkningens bottennivå PLUS de omvärderingar som gått direkt mot eget kapital (valutadifferenser, försäkringsmatematik, återförda nedskrivningar). Penmans regel: allt som påverkar ägarnas förmögenhet är vinst — att gömma en förlust under resultaträkningen gör den inte ogjord. Därpå delas totalresultatet i två berättelser: DRIFTEN (kärnrörelseresultatet — intäkter minus driftskostnader, skattat som obelåtet bolag) och FINANSIERINGEN (räntenetto efter skatt, med ränteavdragets skattevärde inräknat i lånekostnaden). Avskrivningar och amorteringar redovisas som driftskostnader — de är priset för att hålla driftstillgångarna vid liv — medan Penman med eftertryck räknar utdelningar och återköp till FINANSIERINGEN: de är distribution, inte kostnad. Resultatet är exakt den täljare och den räntepost som RNOA-ekvationen i kapitel 6 kräver."
+        },
+        {
+          "type": "text",
+          "content": "Sedan kvalitetssållningen — kapitlets andra hälft. Kärnrörelseresultatet (core operating income) är den del av drifens resultat som kan förväntas UPPREPA sig: normalförsäljning minus normala kostnader. Därifrån separeras AVVIKANDE poster: omstruktureringskostnader, vinst och förlust på tillgångsförsäljningar (fastigheter, dotterbolag), nedskrivningar av goodwill, valutaeffekter på driften, försäkringsmatematik på pensioner, effekter av rättsprocesser och skatteändringar. Listan kan förefalla teknisk — tills man ser mönstret i verkligheten: bolag som varje år har en unik engångsförelust är som förlorare som varje år har en unik ursäkt. Penmans test är upprepning: en post som återkommer tre år i rad är inte avvikande, den är KÄRNA — och kärnresultatet ska justeras ned i stället för att engångsposten justeras bort. På samma sätt gäller det omvända fallet: tillgångsförsäljningsvinster ger ingen grund för högre värdering eftersom de inte upprepas. Hållbart resultat är prognosens råmaterial; det är hållbarbart resultat som ska in i RNOA-täljaren och därifrån i övervinst-ekvationen."
+        },
+        {
+          "type": "text",
+          "content": "Här differentierar kursen mot syskonkursen tredje gången: Hjelström, Isaksson och Nilsson ägnar kapitel åt resultatanalys och engångspostens svenska praxis (jämförelsestorleken osv.) — i svenskars praxis; Penman ger SYSTEMET: omstrukturera, separera kärna, separera finansiering, och bygga vidare till RNOA och hållbar tillväxt. Kursen lägger också en korsreferens till katalogens Financial Shenigans-kurs (Schilit): där lär du dig bolagens medvetna knep — här lär du dig Penmans oskyldiga-fel-version: LAGLIG redovisning som ändå missleder när engångsposter återkommer eller omvärderingar ställs utanför filmen. Skillnaden är åtgärden: Schilit lär dig upptäcka fiffel; Penman lär dig bygga en berättelse som är IMMUN mot både fiffel och naivitet — genom att fråga vilket resultat som kommer tillbaka nästa år. AKM1-brygga: V08 (EBITDA-marginal) ska poängsättas på KÄRNrörelseresultatet — annars straffas eller belönas bolaget för engångsposter som inte upprepas; V12 (intäktsstabilitet) är i praktiken kärnresultatets andel och jämnhet; och V19 (kapitalförbränning) avslöjas ofta just av återkommande omstruktureringskostnader som förkläds till avvikelser."
+        },
+        {
+          "type": "insikt",
+          "content": "Penmans upprepningstest är den enskilt mest användbara vanan i resultatanalys: innan du accepterar en vinstsiffra, markera varje post som inte kommer tillbaka nästa år — och varje år, räkna om TRE ÅRS engångsposter. Tre unika år av unika poster är inte tre avvikelser; det är en kostnadsnivå. Kärnan är det som är kvar när ursäkter och berättelser plockats bort."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den omstrukturerade resultaträkningen — rad för rad\",\"rader\":[[\"Rad\",\"Klassning\",\"Kommentar\"],[\"Intäkter\",\"drift\",\"kärna — normalförsäljning\"],[\"Råvaror, löner, övriga driftskostnader\",\"drift (minus)\",\"kärna\"],[\"Avskrivningar och amorteringar\",\"drift (minus)\",\"priset för att hålla driften vid liv\"],[\"Omstruktureringskostnader\",\"drift, AVVIKANDE\",\"testa upprepning!\"],[\"Vinst/förlust tillgångsförsäljning\",\"drift, AVVIKANDE\",\"upprepas inte\"],[\"Nedskrivning goodwill\",\"drift, AVVIKANDE\",\"—\"],[\"= Kärnrörelseresultat före skatt\",\"DRIFT\",\"RNOA-täljarens bas\"],[\"Skatt på driftsresultat\",\"drift (minus)\",\"som obelåtet bolag\"],[\"Räntenetto\",\"finansiering\",\"med skattevärdet av avdraget\"],[\"Vinster/förluster på nettoskulder (valuta, instrument)\",\"finansiering\",\"—\"],[\"Utdelning, återköp\",\"finansiering (distribution)\",\"INTE kostnad — V20\"],[\"Omvärderingar mot EK (OCI)\",\"totalresultat\",\"smutsiga överskott — räkna med!\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en treårig kärnresultatsanalys: hämta de tre senaste resultaträkningarna för ett bolag. Markera för varje år alla poster som kan klassas som avvikande (omstrukturering, försäljningsvinster, nedskrivningar, valutaeffekter). Räkna sedan upp hur många poster som upprepats — två eller tre år i rad? Justera kärnrörelseresultatet ned för varje upprepad AVVIKANDEL och räkna om RNOA från kapitel 6 med den rensade täljaren. Hur mycket sjönk RNOA? Om mer än en procentenhet har du hittat en lönsamhet som berodde på berättelser, inte på verksamhet."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför börjar den omstrukturerade resultaträkningen med TOTALRESULTATET?",
+          "alternativ": [
+            "Eftersom IFRS kräver det i Sverige",
+            "Eftersom omvärderingar utanför resultaträkningen (smutsiga överskott) påverkar ägarnas förmögenhet och annars gömmer svag kvalitet",
+            "Eftersom utdelningar är en kostnad",
+            "Eftersom skatten alltid ska räknas först"
+          ],
+          "ratt": 1,
+          "tips": "Vad är vinst? Allt som ökar ägarnas förmögenhet — oavsett vilken rapport raden hamnar i."
+        },
+        {
+          "q": "Vad är Penmans upprepningstest?",
+          "alternativ": [
+            "Att samma resultat ska kunna upprepas i nästa års bokslut",
+            "Att en post som återkommer flera år i rad inte är avvikande utan kärna — och kärnresultatet ska justeras för den",
+            "Att utdelningen ska upprepas varje år",
+            "Att bokslutet ska upprepas kvartalsvis"
+          ],
+          "ratt": 1,
+          "tips": "Tre år av unika engångsposter är inte tre avvikelser — det är en kostnadspost."
+        },
+        {
+          "q": "Var hör utdelningar och återköp hemma i den omstrukturerade resultaträkningen?",
+          "alternativ": [
+            "Som driftskostnad",
+            "Som avvikande post",
+            "Som finansiering — de är distribution av skapat värde, inte kostnad för att skapa det",
+            "De tas bort helt"
+          ],
+          "ratt": 2,
+          "tips": "Kom ihåg Miller–Modigliani: utdelningen flyttar värde, den skapar det inte — V20:s territorium."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Hävstångens aritmetik — ROE = RNOA + FLEV × spread",
+      "intro": "Kapitel 6 gav formeln; det här kapitlet utforskar den. Hävstångens aritmetik visar exakt när lån skapar värde för ägarna, när de bara flyttar värde — och när de förstör det. Dessutom Penmans specialfynd: driftsskuldernas dolda hävstång.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln i klartext: ROE = RNOA + FLEV × (RNOA − NBC), där FLEV = NFO/CSE är finansiell hävstång och spreaden är avståndet mellan drifens avkastning och lånens kostnad. Med siffrorna från kapitel 6: 19,2 = 13,5 + 0,67 × 8,5. Läs formeln som en värdeskapandeberättelse: ägarna tjänar först vad DRIFTEN avkastar (RNOA), och därefter skillnaden mellan drifens avkastning och lånkostnaden på varje lånen krona som arbetar i driften åt deras räkning. Villkoret är spridvillkoret: spreaden måste vara positiv. Hävstång är därför aldrig ett tecken på kvalitet — den är en FÖRSTÄRKARE. Förstärkaren kan vridas upp medan spreaden är god (konjunkturtoppen) och slå tillbaka när spreaden slår om (krisen) — detta är den mekanism som gör högskuldsatta konjunkturbolag till hävstångsfällor, och Penman ägnar bokens risk-kapitel åt just den dynamiken."
+        },
+        {
+          "type": "text",
+          "content": "Tre distinktioner gör Penmans analys djupare än standard-DuPont. För det första VÄRDESKAPANDE kontra VÄRDEFLYTTNING: hävstångsbonusen skapar inget nytt värde i ekonomin — den flyttar värde från långivarna verksamheten till ägarna, givet att driften förräntar sig bättre än lånet kostar. Ägarna får mer, men mot högre risk — köparen av aktien har redan betalt för bonusen i priset om den är beständig. För det andra PENMANS specialkoncept OPERATING LIABILITY LEVERAGE (OLSE = driftsskulder/NOA): driftsskulderna — leverantörskulder, obetald personal, avsättningar — är gratis eller nästan gratis finansiering INOM driften. Ett bolag som förhandlar sig till sextio dagars betaltid flyttar kapitalkostnad till leverantörerna utan att röra en bank; samma RNOA kan därför vara mer värdefull i ett bolag med hög OLSE eftersom driftskulden binder mindre eget kapital. Driftsskuld-hävstången är den godartade sorten — flexibel, räntefri, växer med verksamheten — medan den finansiella är kontraktsenlig och hårda. För det tredje RISKNYANSEN: finansiell hävstång kan aldrig läsas av ROE — bara av FLEV och spreaden tillsammans. Ett bolag med ROE 20, RNOA 21 och obetydlig belåning är ett säkrare bolag än ett med ROE 20, RNOA 11 och tunga lån, trots identisk bottennivå."
+        },
+        {
+          "type": "text",
+          "content": "Bankerna är bokens demonstrationsexempel — och kursens varning. En banks ROE kan se ut som ett industriföretags, men bankens DRIFT är att förvalta finansieringsrisk: NOA består mestadels av utlåning, NFO av inlåning, och spreaden är bankens kärna. Penmans poäng i bokens behandling av finansiella bolag: för banker blir gränsdragen drift/finansiering svårare och hela analysen måste bytas mot spread-analys (räntenetto, kreditförluster, riskvägd avkastning) — vilket är SKÄLET till att quantkurserna (Quantitative Value) utesluter banker ur universum och varför AKM1 bör hantera finansbolag med särskild försiktighet. För alla andra bolag gäller huvudregeln: mät hävstången med FLEV, sprida med spreaden, och kräv positivt spridrum med marginal — räntan förändras, konjunkturen förändras, och hävstången som var en bonus i uppgången blir en bödel i nedgången. AKM1-brygga: detta är samspelskapitlet mellan V09 (ROE) och V10 (skuldsättningsgrad) — AKM1:s design poängsätter dem separat JUST för att hävstångens illusion inte ska kunna köpa lönsamhetspoäng: ett belånat bolag med imponerande ROE men svag RNOA/max fyra i V09 och max tre i V10 är i Penmans optik ett dåligt bolag med en bra balansräkning, inte tvärtom."
+        },
+        {
+          "type": "insikt",
+          "content": "Hävstångsglaset: FLEV × spread är inte vinst — det är LÅNAT VÄRDE med räntedatum. Fråga vid varje högt ROE: vad är RNOA? Om spreaden är smal är bolagets verkliga prestation belåningskonst, och belåningskonsten slutar fungera exakt när den behövs som mest. Driftsskulderna är undantaget — gratis finansiering som inte kraschar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre hävstångar — och deras värde och risk\",\"rader\":[[\"Hävstång\",\"Mått\",\"Källa\",\"Skapar värde när\",\"Risk\"],[\"Finansiell (FLEV)\",\"NFO / CSE\",\"banklån, obligationer, leasing\",\"spreaden RNOA − NBC är positiv med marginal\",\"kontraktsenlig — slår tillbaka i kris\"],[\"Driftsskuld (OLSE)\",\"driftsskulder / NOA\",\"leverantörer, obetalda löner, avsättningar\",\"alltid nästan — räntefri finansiering\",\"växer med verksamheten, godartad\"],[\"Operativ (kostnadsstruktur)\",\"fixa kostnader / totala\",\"maskiner, personal, hyror\",\"uppgångar förstärker resultatet\",\"resultatsvängar i nedgång\"],[\"Bankspecialfall\",\"—\",\"utlåning finansierad av inlåning\",\"spread efter kreditförluster\",\"hela affären ÄR finansieringsrisk\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Känslighetstesta ditt bolags hävstång: använd kapitel 6:s dekomposition och räkna tre scenarier — räntan oförändrad (NBC 5 procent), räntan plus två procentenheter (NBC 7) och konjunkturnedgång som pressar RNOA med fyra procentenheter. Vad händer med ROE i varje scenario? Räkna sedan ut BREAK-EVEN-RNOA — den RNOA där ROE blir exakt lika med noll. Hur stort är avståndet mellan dagens RNOA och break-even? Det avståndet är bolagets operativa kudde — och den är mer värd att veta än varje prognosrapport."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är villkoret för att finansiell hävstång ska ÖKA ROE över RNOA?",
+          "alternativ": [
+            "Att FLEV är under 1",
+            "Att spreaden RNOA − NBC är positiv",
+            "Att bolaget betalar utdelning",
+            "Att räntan är skattefri"
+          ],
+          "ratt": 1,
+          "tips": "Formelns andra term har tecknet av spreaden — vad krävs för ett plus?"
+        },
+        {
+          "q": "Vad är driftsskuldshävstång (OLSE) enligt Penman?",
+          "alternativ": [
+            "Banklån som bokförts som leverantörsskuld",
+            "Den gratis eller nästan gratis finansiering driften får genom driftsskulder — leverantörer, obetalda löner, avsättningar",
+            "Hävstång skapad av maskininvesteringar",
+            "En form av finansiell hävstång med längre löptid"
+          ],
+          "ratt": 1,
+          "tips": "Vilken skuld växer automatiskt med verksamheten utan ränta?"
+        },
+        {
+          "q": "Varför utesluter många kvantstrategier banker, med Penmans analys som skäl?",
+          "alternativ": [
+            "Banker redovisar alltid fel",
+            "Eftersom gränsen drift/finansiering upplöses — bankens drift ÄR finansieringsrisk och hela analysen måste bytas mot spread-analys",
+            "Banker har alltid för hög beta",
+            "Banker har inget bokfört eget kapital"
+          ],
+          "ratt": 1,
+          "tips": "Vad består en banks NOA och NFO av — och vad blir då RNOA-berättelsen?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Tillväxt och hållbar tillväxt — när skapar expansion värde?",
+      "intro": "Tillväxt är finansvärldens älsklingsord och Penmans mest systematiska demolitionobjekt. Kursens tillväxtkapitel visar varför tillväxt bara är värd sitt namn när den växer ÖVERVINSTER — och räknar på den hållbara gränsen där expansionen finansierar sig själv.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Penmans tillväxtlag lyder: bara tillväxt i ÖVERVINSTER skapar värde — tillväxt i omsättning, tillgångar eller till och med vinst är i sig värdelös om kapitalavkastningen inte överstiger kapitalkostnaden. Argumentet är ekvationens från kapitel 3 omvänt: eftersom värde = bokfört + PV(övervinster) kan omsättningen dubbleras utan att värdet stiger en krona — om expansionen förräntas till exakt r. Värre: om bolaget återinvesterar i projekt som ger UNDER r minskar övervinsterna och värdet sjunker medan omsättningen stiger. Detta är den klassiska kapitalförstörartillväxten — konglomeratens förvärvsjakt, detaljhandlarens butiksexpansion i mättade köpcentra, techbolagets köp av kunder till negativ marginal. Penmans ord i boken är kärva: growth is not value — tillväxt är en INGREDIENT som bara blir värde i kombination med lönsamhet. AKM1 har hela tiden rätt här: V01–V03 (tillväxt) poängsätts separat från V09 (ROE) just för att ingen av dem ensam är något värd."
+        },
+        {
+          "type": "text",
+          "content": "Hållbar tillväxt är tillväxt som VERKSAMHETEN kan finansiera själv utan att emittera aktier eller öka belåningen: g = återinvesteringskvot × ROE, där återinvesteringskvoten är 1 minus utdelningskvoten (med återköp inräknade som utdelning). Räkneexempel i SEK på Norr Industri från kapitel 6: ROE 19,2 procent; om bolaget delar ut hälften (återinvesteringskvot 0,5) är hållbar tillväxt 0,5 × 19,2 = 9,6 procent per år — imponerande självfinansierad expansion. Om utdelningskvoten är 80 procent blir g = 0,2 × 19,2 = 3,8 procent; delar bolaget ut allt blir g = 0. Notera dynamiken: utdelning och tillväxt är SAMMA knapps två lägen — varje utdelad krona är en krona som inte kan återinvesteras till ROE, och varje återinvestrad krona är en krona ägarna inte får i handen. Miller–Modiglianis sats om utdelningens irrelevans återkommer här i praktisk skepnad: värdet påverkas inte av KNAPPEN utan av AVKASTNINGEN på det kapital som behålls — låg utdelning är klok endast om ROE överstiger r; annars är den kapitalförstörelse i slow motion. Återköpen (V20) följer samma lag: ett återköp skapar bara värde om aktien köps under inneboende värde, annars är det utdelning till fel pris."
+        },
+        {
+          "type": "text",
+          "content": "Tillväxtens prissättning är kapitlets sista och viktigaste lära — och förberedelsen för Cisco-fallet i kapitel 16. Marknaden betalar i förskott för tillväxt: ett högt P/B innehåller en prognos om växande övervinster (kapitel 10 visar matematiken). När tillväxt prognostiseras över den hållbara nivån kräver priset tyst något av tre: höj ROE (nya moats — svårt, sällan varaktigt), sänk utdelningen (möjligt en gång, inte för alltid) eller emittera aktier (utspädning — V19:s varning). Ingen av de tre är en evighetsmaskin. Penmans hållbara-tillväxt-beräkning är därför värderingsanalysens verklighetskontroll: varje implicit prognos (kapitel 4) som överstiger g = återinvesteringskvot × ROE med råge är ett KRAV bolaget inte kan leva upp till utan finansieringsakrobatik. I värsta fall är det just skillnaden mellan implicit och hållbar tillväxt som mäter hur mycket av priset som vilar på tro och hopp — dot-com-bolagen år 1999 var denna lag i sin renodlade form: omsättningstillväxt 80 procent, ROE negativ, övervinst noll, pris astronomisk. AKM1-brygga: V01–V03 (tillväxt) och V09 (ROE) ska alltid tolkas tillsammans — hög V01 utan V09 över avkastningskravet är värdeförstöring i Penmans lag; V19 (emission-risk) är tredje hörnet: tillväxt över hållbar nivå med emissioner är utspädning av ditt ägande; och V20 (återköp) är utdelningsknappens tredje läge — rätt pris skapar värde, fel pris förstör det."
+        },
+        {
+          "type": "insikt",
+          "content": "Tillväxtlagen på en rad: värde växer bara när NYTILLSKOTTET av kapital förtjänar mer än det kostar — alltså när övervinster växer. Räkna alltid hållbar tillväxt (återinvesteringskvot × ROE) som verklighetskontroll mot varje tillväxtstory och varje implicit prognos ur priset. Omsättningstillväxt utan övervinsttillväxt är bara volym."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillväxtens tre fall — vad händer med värdet?\",\"rader\":[[\"Läge\",\"Villkor\",\"Effekt på övervinst\",\"Effekt på värde\"],[\"Värdeskapande tillväxt\",\"RNOA och ROE över r\",\"övervinster växer\",\"värde stiger mer än bokfört\"],[\"Neutral tillväxt\",\"avkastning exakt = r\",\"övervinsten oförändrad (noll)\",\"värde = bokfört, oavsett tempo\"],[\"Värdeförstörande tillväxt\",\"avkastning under r\",\"övervinster minskar\",\"värde sjunker medan omsättningen stiger\"],[\"Hållbar gräns\",\"g = återinvesteringskvot × ROE\",\"—\",\"tillväxt utan emission eller mer skuld\"],[\"Över hållbar gräns\",\"implicit tillväxt > g\",\"—\",\"kräver höjd ROE, lägre utdelning eller utspädning (V19)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Testa en tillväxtstory mot lagen: ta ett tillväxtbolag ur din bevakningslista (gärna ett du gillar). Hämta ROE, utdelningskvot och återköp för senaste året. Beräkna hållbar tillväxt = (1 − utdelningskvot) × ROE. Hämta sedan konsensusprognos för vinsttillväxten de kommande tre åren och kapitel 4:s implicita g ur priset. Skriv tre rader: hållbar tillväxt X procent, konsensus Y procent, implicit Z procent. Om Y och Z ligger stadigt över X — VILKEN av de tre vägarna (höjd ROE, sänkt utdelning, emission) tar bolaget, och vad säger V19 om den vägen?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Penmans tillväxtlag?",
+          "alternativ": [
+            "Att hög omsättningstillväxt alltid skapar värde",
+            "Att bara tillväxt i övervinster (resultat utöver kapitalkostnad på bokfört EK) skapar värde — tillväxt under kapitalkostnaden förstör det",
+            "Att tillväxt och värde är samma sak",
+            "Att tillväxt bara skapas av utdelningar"
+          ],
+          "ratt": 1,
+          "tips": "Sätt in tillväxt i ekvationen från kapitel 3 — vilken term växer egentligen?"
+        },
+        {
+          "q": "Hur beräknas hållbar tillväxt?",
+          "alternativ": [
+            "g = utdelningskvot × r",
+            "g = återinvesteringskvot × ROE",
+            "g = omsättningstillväxt × P/E",
+            "g = beta × riskpremien"
+          ],
+          "ratt": 1,
+          "tips": "Vad kan verksamheten bygga med det kapital som behålls?"
+        },
+        {
+          "q": "Ett bolag med ROE 16 procent delar ut 75 procent av resultatet. Priset implicerar 8 procents övervinsttillväxt för alltid. Vad säger Penmans verklighetskontroll?",
+          "alternativ": [
+            "Allt stämmer — 8 procent är modest",
+            "Hållbar tillväxt är 0,25 × 16 = 4 procent — priset kräver det dubbla, alltså höjd ROE, sänkt utdelning eller utspädning",
+            "Hållbar tillväxt är 12 procent — priset är konservativt",
+            "Frågan kan inte besvaras utan beta"
+          ],
+          "ratt": 1,
+          "tips": "Räkna g först — och jämför med den implicita prognosen."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "P/B som funktion av ROCE och tillväxt — multiplens inre liv",
+      "intro": "Nu översätts ekvationen till multiplarnas språk. P/B är inte sentiment — det är en matematisk funktion av framtida ROCE mot avkastningskravet och tillväxten i bokfört kapital. Kapitlet bygger motiverad P/B tabell för tabell och lär dig se igenom både värdefällor och kvalitetsfällor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Teorin först, rakt ur kapitel 3:s ekvation i multiplform: P/B = 1 + nuvärdet av framtida övervinster dividerat med dagens bokförda EK. Två krafter driver multiplen över 1: hur MYCKET övervinsten blir (ROE över r, brutet mot bokföringsbasen) och hur LÄNGE den pågår (tillväxten i bokfört EK som bärande övervinst). För det stabiliserade fallet — ROE beständig, bokfört kapital växer med g, avkastningskrav r — kan det hela komprimeras till motiverat P/B = (ROE − g)/(r − g). Tabellen nedan räknar den formeln ut för r = 9 procent och visar multiplens hela anatomi: vid ROE exakt = r är motiverat P/B = 1 OBEROENDE av tillväxten (raden 9 procent — se den!), och däremot stiger multiplen både med ROE och med g. En enda siffra, P/B, visar sig innehålla en hel prognos — vilket är kapitel 4:s restera-logik i tabellform: du kan läsa AV marknadens tro på ROE och g ur multiplen, och jämföra med vad bolaget realistiskt kan."
+        },
+        {
+          "type": "text",
+          "content": "Tabellens tre praktiska läsningar. Låg P/B-kolumnen (P/B under 1): marknaden prissatt BESTÄNDIGA UNDERSVINSTER — bokföringskapitalet förtjänar under r för alltid. Det är bara en köpchans om det finns en TRIGGER som vänder ROE över r: ny förvaltning, omstrukturering, cykelvändning i en träffad bransch, eller tillgångar som är felredovisade (fastigheter till gamla värden). Utan trigger är lågt P/B Penmansvärdefälla: billigt för att det är korrekt prissatt som värdeförstörare — exakt det Financial Shenigans- och värdefälle-kapitlen i katalogen varnar för. Hög P/B-kolumnen (P/B 2,5+): marknaden prissatt långvariga övervinster — och det är MOTIVERAT endast när moaten är varaktig (AKM1 V13–V15: patent, varumärke, nätverk) och återinvesteringsutrymmet störst. Köpa högt P/B är att köpa en lång krona av övervinster som måste levereras i årtionden — det kan vara rätt (Penman visar att kvalitetsbolag med varaktig ROE över 20 procent MOTIVERAR P/B över 3 enligt formeln) men det är köpet av en löfteskedja, inte av en rabatt. Mittraden (P/B omkring 1): marknaden tror på vare sig över- eller undervinster — där finns den tysta vinnarutan: stabil ROE kring 12–15 procent med P/B kring 1–1,5 är strukturellt underpris mot formeln."
+        },
+        {
+          "type": "text",
+          "content": "Och nu den viktigaste nyansen, som skiljer Penman från både naiv värdeinvesteringslitteratur och naiv kvalitetslitteratur: P/B kan inte bedömas isolerat — det är en funktion VARS ARGUMENT du måste bedöma. Ett P/B på 0,7 för ett bolag med beständigt ROE 8 procent och r 9 procent är motiverat neutralt (värdet 1,0 — PASS, köp inte); samma P/B för ett bolag vars ROE historiskt cyklat mellan 3 och 18 procent är en cykelrelaterad underprisbillighet om köpet sker vid bottnen av ROE-cykeln. Ett P/B på 3,5 för ett bolag med ROE 24 procent och moat är motiverat (formeln ger 3,5 vid g 3); samma P/B för ett bolag med ROE 14 procent är en bubbel. AKM1:s skala för V05 (5 poäng under P/B 1, 1 poäng över 5) är därför bara STARTPISTEN — Penman lär dig komplettera: V05-poäng multipliceras i praktiken med V09 (ROE-nivå), V13–V15 (moatens varaktighet) och V01 (tillväxtutrymme). AKM1-brygga: detta kapitel är instruktionen till V05 — poängsätt P/B MOT ROCE och tillväxt enligt tabellen, aldrig som ensamstående siffra; det är också kärnan i hur AKM1 undviker både värdefällan (lågt P/B utan vändning) och kvalitetsfällan (högt P/B utan varaktig moat)."
+        },
+        {
+          "type": "insikt",
+          "content": "Se P/B som en ekvation med tre obekanta — ROE, g och r — där marknadens multipl är den kända produkten. Formeln motiverat P/B = (ROE − g)/(r − g) ger tre övningar på varje aktie: vad motiverar FAKTISKA fundamenta (ditt P/B), vad implicerar MARKNADENS multipl (kapitel 4), och vad krävs för att bro över gapet? P/B = 1 är nollinjen — varje avvikelse är en påstående om över- eller undervinster som DU ska döma, inte lyda."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Motiverad P/B vid avkastningskrav 9 procent — formeln (ROE − g)/(r − g)\",\"rader\":[[\"ROE ↓ / tillväxt g →\",\"g = 0 %\",\"g = 3 %\",\"g = 6 %\"],[\"6 %\",\"0,67\",\"0,50\",\"0,00\"],[\"9 % (= r)\",\"1,00\",\"1,00\",\"1,00\"],[\"12 %\",\"1,33\",\"1,50\",\"2,00\"],[\"16 %\",\"1,78\",\"2,17\",\"3,33\"],[\"20 %\",\"2,22\",\"2,83\",\"4,67\"],[\"24 %\",\"2,67\",\"3,50\",\"6,00\"],[\"Läsning\",\"P/B = 1 när ROE = r, oberoende av g\",\"högre g höjer multiplen\",\"högre ROE höjer multiplen — moat betalas\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen motiverad P/B-tabell för ett bolag: använd din egen uppskattning av r (välj 8, 9 eller 10 procent — kapitel 15 diskuterar valet). Skatta beständig ROE i tre scenarier (nedside, bas, uppsida) och g i samma tre. Beräkna motiverat P/B per scenario med (ROE − g)/(r − g). Jämför med faktiskt P/B: i vilket scenario är aktien rätt prissatt, och vilket scenario marknaden implicit köper? Om marknaden köper ditt UPPSIDE-scenario har du hittat en aktie där Penmans metod säger PASS — oavsett hur vackra storyn är."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är det motiverade P/B för ett bolag vars ROE för alltid är exakt lika med avkastningskravet?",
+          "alternativ": [
+            "Exakt 1 — oberoende av tillväxttakten",
+            "0 — bolaget är värdelöst",
+            "2 — tillväxten kompenserar",
+            "Det beror på betan"
+          ],
+          "ratt": 0,
+          "tips": "Sätt ROE = r i (ROE − g)/(r − g) — täljaren blir lika med nämnaren."
+        },
+        {
+          "q": "Vad innebär ett P/B under 1 enligt Penman?",
+          "alternativ": [
+            "Alltid en köpsignal — billigt är billigt",
+            "Att marknaden prissatt beständiga undersvinster — bara ett köp om det finns en trovärdig trigger som vänder ROE över r",
+            "Att bokföringen är felaktig",
+            "Att bolaget kommer att emittera aktier"
+          ],
+          "ratt": 1,
+          "tips": "Värdefällan: billighet utan vändningsmekanism är korrekt prissatt värdeförstörelse."
+        },
+        {
+          "q": "När är ett högt P/B (över 3) motiverat enligt formeln?",
+          "alternativ": [
+            "Aldrig — höga multipler är alltid bubblor",
+            "När ROE är varaktigt hög (t.ex. 24 procent) med moat och återinvesteringsutrymme — formeln ger P/B 3,5 vid g 3 procent och r 9",
+            "När omsättningen växer snabbt, oavsett lönsamhet",
+            "När beta är låg"
+          ],
+          "ratt": 1,
+          "tips": "Vilka argument i formeln kan bära en hög multipl — och vad gör dem trovärdiga (V13–V15)?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "P/E-dekomposition — trailing, forward och normal multipl (räkneexempel i SEK)",
+      "intro": "Kursens andra stora räkneexempel. P/E är inte en känsla — det är en dekomponerbar produkt av P/B och ROE, med en normalnivå given av avkastningskravet. Vi räknar hela kedjan i SEK: från bokfört EK och vinst per aktie till marknadens implicita övervinsttillväxt — och jämför med vad bolaget hållbart kan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundidentiteten först — den som gör P/E till en dekompositionsprodukt: P/E = (P/B) delat med ROE. Prövning: priset 250 kronor, bokfört EK 100 kronor per aktie och trailingvinst 12 kronor ger P/B = 2,5, ROE = 12 procent och trailing P/E = 250/12 = 20,8 — och kontrollen (P/B)/ROE = 2,5/0,12 = 20,8 stämmer. Identiteten lär tre saker omedelbart. För det första att en LÅG P/E kan betyda två helt olika saker: ett billigt P/B (underpris) eller ett HÖGT ROE (stor lönsamhet på liten bokförd bas) — och bara det första är köpargument. För det andra att en HÖG P/E kan komma från högt P/B (kvalitet prissatt) eller lågt ROE just nu (tillfälligt deprimerad vinst — som vid cykelbotten eller en engångsnedskrivning, där forward P/E plötsligt ser rimlig ut). För det tredje att P/E och P/B hänger ihop via ROE — och därför ALDRIG ska tolkas var för sig. Penman dekomponerar därför alltid: först P/B mot ROE, sedan P/E mot övervinst-tillväxten."
+        },
+        {
+          "type": "text",
+          "content": "Sedan normalmultiplen och forward. Om ett bolag för alltid tjänar exakt r på bokfört EK är det rätta P/E = 1/r (detsamma som P/B = 1 delat med ROE = r) — vid r 9 procent alltså en normal forward-P/E på cirka 11. Allt däröver prissätter övervinsttillväxt. Nu det fullständiga räkneexemplet i SEK, bolag Svensk Export AB. Kända data: bokfört EK per aktie B = 100 kronor; trailingvinst E = 12 kronor (ROE 12 procent); pris P = 250 kronor; avkastningskrav r = 9 procent; nästa års prognos E(1) = 12,6 kronor (efter återinvestering); utdelningskvot 60 procent. Steg ett — multiplar: trailing P/E = 250/12 = 20,8; forward P/E = 250/12,6 = 19,8; P/B = 2,5. Steg två — övervinsten: RE(1) = E(1) − r × B = 12,6 − 9 = 3,6 kronor. Steg tre — reverse engineering (kapitel 4): 250 = 100 + 3,6/(0,09 − g) ger 150 = 3,6/(0,09 − g), alltså 0,09 − g = 0,024 och implicit g = 6,6 procent per år i övervinst, för alltid. Steg fyra — verklighetskontrollen (kapitel 9): hållbar tillväxt = återinvesteringskvot × ROE = 0,40 × 12 = 4,8 procent. Priset kräver 6,6 — nästan två procentenheter mer än bolaget kan producera utan att ändra spelplanen. Steg fem — värdering vid hållbar tillväxt: V = 100 + 3,6/(0,09 − 0,048) = 100 + 86 = 186 kronor, att jämföra med marknadens 250 — aktien handlas cirka 35 procent över värdet i basfallet. Sammanfattande läsning: P/E 20,8 mot normal 11 visar att marknaden betalar kraftigt för övervinsttillväxt; dekompositionen visar EXAKT hur mycket tillväxt som betalas (6,6 procent) och att den ligger över hållbar nivå (4,8) — ett mätbart, argumenterbart överpris, inte en magkänsla."
+        },
+        {
+          "type": "text",
+          "content": "Och nu felen som P/E-användare gör — Penmans tre klassiska varningar, samt en fjärde från kursen. Ett: ENGÅNGSPOSTER I E — en nedskrivning eller försäljningsvinst i trailingvinsten förvränger multiplen; alltid räkna P/E på KÄRNvinst (kapitel 7) — annars jämför du äpplen med ursäkter. Två: NEGATIV E — P/E saknar mening när vinsten är negativ, och då är P/B eller P/S (AKM1 V04) enda framkomliga väg; värderingslitteraturens P/E- rankingar (What Works, O'Shaughnessy) löser detta mekaniskt med E/P och negativa hanterade som slask — Penman löser det genom att ALDRIG börja i multiplen utan i ekvationen. Tre: ÅTERKÖPENS FÖRVRÄNGNING (V20-koppling) — återköp minskar aktieantalet och höjer E per aktie MEKANISKT utan att verksamheten förbättrats; forward P/E ser lägre ut, men endast distributionen har förändrats — jämför med aktieägaravkastning i stället. Fyra, kursens eget tillägg: multiplens PERIODICITET — trailing P/E speglar gårdagens cykelläge, forward P/E konsensusens nästa år; vid cykelbotten är trailing missvisande hög (E deprimerad) och vid cykeltopp missvisande låg — normalisera E över en konjunkturcykel (fem år) innan du dekomponerar. AKM1-brygga: detta kapitel är V04–V06-familjens bruksanvisning — V04 (P/S) för bolag utan meningsfull E, V05 (P/B) mot ROCE enligt kapitel 10, V06-familjen (P/E, EV/EBIT) dekomponerad enligt ovan; och V20 (återköp) är variabeln som lär dig läsa E-mekaniken utan att förväxla distribution med prestation."
+        },
+        {
+          "type": "insikt",
+          "content": "P/E-dekompositionens kärna på en rad: P/E = (P/B)/ROE, med normalnivån 1/r — och allt däröver är betald övervinsttillväxt. Räkna alltid de fyra stegen: multiplar, övervinst, implicit g (restera), hållbar g (verklighetskontroll). Köp bara multiplens berättelse om implicit g understiger hållbar — annars köper du konsensus hopp, inte bolagets kapacitet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"P/E-dekomposition i SEK — Svensk Export AB\",\"rader\":[[\"Rad\",\"Beräkning\",\"Värde\",\"Kommentar\"],[\"Pris P\",\"—\",\"250 kr\",\"—\"],[\"Bokfört EK per aktie B\",\"—\",\"100 kr\",\"—\"],[\"Trailingvinst E\",\"—\",\"12 kr\",\"ROE 12 %\"],[\"Trailing P/E\",\"250 / 12\",\"20,8\",\"(P/B)/ROE = 2,5/0,12 ✓\"],[\"Forward P/E\",\"250 / 12,6\",\"19,8\",\"—\"],[\"Normal P/E\",\"1 / r = 1 / 0,09\",\"11,1\",\"allt över = betald tillväxt\"],[\"Övervinst RE(1)\",\"12,6 − 0,09 × 100\",\"3,6 kr\",\"ekvationens motor\"],[\"Implicit g\",\"0,09 − 3,6/(250 − 100)\",\"6,6 %\",\"marknadens prognos\"],[\"Hållbar g\",\"0,40 × 12\",\"4,8 %\",\"återinvesteringskvot × ROE\"],[\"Värde vid hållbar g\",\"100 + 3,6/(0,09 − 0,048)\",\"186 kr\",\"~35 % under marknadspris\"],[\"Dom\",\"—\",\"överpris\",\"implicit g > hållbar g — PASS i basfallet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör hela kedjan själv på ett bolag med positiv vinst: hämta P, B, trailing E, nästaårsprognos och utdelningskvot. Räkna trailing och forward P/E, P/B, kontrollera identiteten P/E = (P/B)/ROE. Sätt r = 9 procent, beräkna RE(1), lös implicit g och jämför med hållbar g. Slutligen värdevärde vid hållbar g och avståndet till priset i procent. Skriv hela analysen som fyra rader — multiplar, restera, verklighetskontroll, dom. Det är den mest värdefulla tjugominutersövningen i hela kursen: den gör om varje P/E-siffra du någonsin kommer se till en granskningsbar prognos."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är identiteten som dekomponerar P/E?",
+          "alternativ": [
+            "P/E = P/S × marginal",
+            "P/E = (P/B) / ROE",
+            "P/E = utdelningskvot / r",
+            "P/E = beta × riskpremie"
+          ],
+          "ratt": 1,
+          "tips": "Priset per vinst = (pris per bokförd krona) / (vinst per bokförd krona)."
+        },
+        {
+          "q": "I räkneexemplet: vad är marknadens implicita övervinsttillväxt och vad är den hållbara?",
+          "alternativ": [
+            "Implicit 6,6 procent mot hållbar 4,8 procent — priset kräver mer än bolaget kan producera självt",
+            "Implicit 4,8 procent mot hållbar 6,6 procent — aktien är undervärderad",
+            "Implicit 12 procent mot hållbar 12 procent — perfekt balans",
+            "Implicit 9 procent mot hållbar 0 procent"
+          ],
+          "ratt": 0,
+          "tips": "Restera: 150 = 3,6/(0,09 − g). Verklighetskontroll: 0,40 × 12."
+        },
+        {
+          "q": "Varför kan en låg P/E vara missledande?",
+          "alternativ": [
+            "Eftersom låga multipler alltid är bubblor",
+            "Eftersom den kan komma från högt ROE (bra lönsamhet på liten bokförd bas) snarare än lågt P/B — eller från en tillfälligt uppblåst E vid cykeltopp",
+            "Eftersom P/E inte finns i svenska bokslut",
+            "Eftersom den ignorerar omsättningen"
+          ],
+          "ratt": 1,
+          "tips": "Dekomponera: P/E = (P/B)/ROE — vilken av de två kan falla utan att köpet blir bättre?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Vinstens kvalitet I — accruals: kassa mot bokförd vinst",
+      "intro": "Bokens kapitel om vinstens kvalitet inleds med redovisningens äldsta sanning: vinst är en åsikt, kassaflöde är ett faktum. Kursens första kvalitetskapitel bygger Penmans accruals-analys — och kopplar den till V12, Sloan-forskningen och katalogens tidigare kurser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Redovisningens grunddilemma: resultatet (income) och kassaflödet (cash flow) mäter samma period men på olika sätt — resultatet matchar intäkter och kostnader mot varandra (accrualprincipen) medan kassaflödet följer kontanterna. Skillnaden mellan dem kallas ACCRUALS — periodiseringar — och den är inte ett fel utan redovisningens hela poäng: en intäkt som är intjänad men inte betald SKA räknas, en kostnad som är förbrukad men inte betald SKA dras av. Men samma mekanism är också manipuleringens och självbedragets öppna dörr: en vinst som aldrig blir kassa är en berättelse utan belägg. Penman citerar öppet forskningens klassiker på området — Richard Sloans artikel från 1996 om hur aktiepriserna inte fullt ut reflekterar informationen i accruals: bolag med höga accruals (vinst långt över kassaflöde) tenderar att ge sämre framtida avkastning, eftersom deras vinst är av lägre kvalitet och mean-reverterar nedåt. Slutsatsen för analytikern är rak: VINSTENS KVALITET är dess grad av kassabevisning — och den kan mätas, inte kännas."
+        },
+        {
+          "type": "text",
+          "content": "Penmans eget diagnosverktyg bygger på den omstrukturerade världen från kapitel 5–7: jämför KÄRNRORELSERESULTATET med drifens FRIA KASSAFLÖDE, definierat som kassaflöde från driften minus ökningen i netto-driftstillgångar (investeringar i NOA). Identiteten är bokens egna: drifens fria kassaflöde används till att betala ränta, amortera, utdelningar och återköp — pengen lämnar verksamheten och distribueras på finansieringssidan. Tre mönster att läsa. Om kärnresultat överstiger fritt kassaflöde ÅR UTÖVER ÅR: bolaget kapitaliserar — antingen växer det (NOA växer snabbt — farligt bara om RNOA på nytt kapital är svag) eller så bygger det upp intäkter utan kassa (kassakollapsen kommer förr eller senare — däri ligger värdefällan). Om fritt kassaflöde överstiger kärnresultatet: bolaget moget — tjänar utan att behöva återinvestera; det är kvalitet om hållbart, men varning för stoppad underhålls- och utvecklingskostnad som INTE bokförts (ett klassiskt knep i Schilit-kursens värld: skjut upp underhållet, plocka kassan, kalla det effektivisering). Om båda är stabilt nära varandra: bokföringen är kassaförankrad — hög kvalitet, V12 femma."
+        },
+        {
+          "type": "text",
+          "content": "Konkreta diagnosrader — kursens checklista för svenska årsredovisningar. En: kundfordringarnas tillväxt mot omsättningstillväxt — om fordringarna växer påtagligt snabbare än försäljningen säljer bolaget till kunder som inte betalar (aggressiv intäktsredovisning eller dålig kredithantering). Två: lagrets tillväxt mot omsättningen — ett lager som växer snabbare än efterfrågan är framtida nedskrivningar i lagerhyllformat. Tre: kapitaliserade kostnader (utveckling, ränta under byggtid) — bolag som flyttar kostnader från resultaträkningen till balansräkningen genom IFRS-utrymmet; jämför med konkurrenternas praxis. Fyra: övriga fordringar och interna transaktioner — den klassiska gömman. Fem: räntan och skatten i kassaflödesanalysen mot resultaträkningen — avvikelser avslöjar icke-kontanta resultatdelar. Korsreferens till katalogen: det här är exakt logiken i Piotroski F-scorens fjärde kontroll (kassaflöde överstiger ROA) från Quantitative Value-kursen — Penman ger teorin, Piotroski gav den binära formen, Sloan gav forskningsbeviset, och AKM1 ger poängsättningen. AKM1-brygga: V12 (intäktsstabilitet) är i Penmans optik TRE saker samtidigt — intäkternas jämnhet, kärnresultatets andel (kapitel 7) och kassabevisningen (det här kapitlet); V08 (EBITDA-marginal) ska alltid granskas mot motsvarande kassaflöde; och V19 (kapitalförbränning) är ultimata accruals-testet — ett bolag med fin vinst och brinnande kassa är definitionen på vinst utan kvalitet."
+        },
+        {
+          "type": "insikt",
+          "content": "Penmans kvalitetsprov i en mening: bra vinst blir kassa — sämre vinst förblir berättelse. Jämför alltid kärnresultat med fritt kassaflöde över minst tre år, och minns Sloans fynd: marknaden betalar för höga accruals som om de vore beständiga, och straffas när de visar sig tillfälliga. Vinst utan kassa är inte vinst — det är en förskottsbetalad förhoppning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Accruals — fem diagnosrader\",\"rader\":[[\"Signal\",\"Jämförelse\",\"Varning när\",\"AKM1\"],[\"Kundfordringar\",\"fordringstillväxt mot omsättningstillväxt\",\"fordringarna växer snabbare än försäljningen\",\"V12\"],[\"Lager\",\"lagertillväxt mot omsättningstillväxt\",\"lagret springer ifrån efterfrågan\",\"V12, V19\"],[\"Kapitaliserade kostnader\",\"utveckling/byggränta på balansräkningen\",\"kapitalisering långt över konkurrenternas praxis\",\"V08, V19\"],[\"Kärnresultat mot fritt kassaflöde\",\"NOPAT mot CFO − investering i NOA\",\"vinsten överstiger kassan år utöver år\",\"V08, V12, V19\"],[\"Ränta och skatt i kassaflödet\",\"bokförd mot betald\",\"stora ständiga avvikelser\",\"V12\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en treårig accruals-granskning: hämta tre års data för ett bolag du äger eller bevakar — kärnrörelseresultat (kapitel 7), kassaflöde från driften och förändringen i driftstillgångar minus driftsskulder. Beräkna fritt kassaflöde per år och accrualsgapet (kärnresultat minus fritt kassaflöde). Fyll i de fem diagnosraderna i tabellen ovan med JA/NEJ. Summera: hur många röda flaggor? Ett bolag med noll flaggor och positivt gap som FÖLJER vinsten förtjänar V12 femma; tre eller fler flaggor med växande gap förtjänar en V19-varning — och en ny genomläsning av noterna innan du köper mer."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är accruals?",
+          "alternativ": [
+            "Skillnaden mellan bokförd vinst och kassaflöde — redovisningens periodiseringar",
+            "En form av utdelning",
+            "Bolagets amorteringar av lån",
+            "Skillnaden mellan P/B och P/E"
+          ],
+          "ratt": 0,
+          "tips": "Vinst är en åsikt, kassa ett faktum — vad kallas gapet?"
+        },
+        {
+          "q": "Vad fann Sloan (1996), som Penman citerar?",
+          "alternativ": [
+            "Att bolag med höga accruals tenderar att ge sämre framtida avkastning eftersom vinsten är av lägre kvalitet",
+            "Att kassaflödesanalysen ska avskaffas",
+            "Att höga accruals alltid är bedrägeri",
+            "Att accruals enbart beror på inflationen"
+          ],
+          "ratt": 0,
+          "tips": "Marknaden betalar för höga accruals som vore de beständiga — vad händer när de mean-reverterar?"
+        },
+        {
+          "q": "Vad är Penmans definition av drifens fria kassaflöde?",
+          "alternativ": [
+            "Utdelning plus återköp",
+            "Kassaflöde från driften minus investeringar i netto-driftstillgångar (ökningen i NOA)",
+            "Rörelseresultat minus skatt",
+            "Kassan på bank till periodens slut"
+          ],
+          "ratt": 1,
+          "tips": "Frihet = det som lämnar verksamheten och kan distribueras — räkna bort det kapital driften binder."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Vinstens kvalitet II — core-resultat, redovisningsrisk och återkommande engångsposter",
+      "intro": "Kvalitetsarbetet fortsätter djupare: från kassa mot vinst till redovisningens mörkare hörn — smutsiga överskott, pensionsgömmor, nedskrivningsrytmer och det IFRS-utrymme som gör att två identiska bolag kan visa olika vinst. Penmansredovisningsrisk är detta kapitels ämne — och GM-fallet förbereds.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Penmans andra kvalitetsdimension: HÅLLBARHETEN — vilket resultat kommer tillbaka nästa år, och om tio år? Kapitel 7 separerade kärnan från avvikelserna; det här kapitlet jagar de poster som ständigt smyger mellan kärna och avvikelse. En rad exempel från bokens genomgångar: omstruktureringskostnader som återkommer med två års mellanrum (kärna i förklädnad); nedskrivningar av goodwill som bokförs i klump efter att moaten tyst eroderat i fem år (historiens efterhandsfaktura — den verkliga kostnaden betalades år för år i form av sjunkande RNOA, men syns först i nedskrivningsåret); tillgångsförsäljningar som klär upp resultatet (fastighetsbolag som säljer fastigheter med stor latent vinst och kallar resultatet normalt); valutaeffekter och räntedelar som vibrerar med marknaden (finansiering, inte drift). Testet är alltid detsamma: VILDELAR resultaten och KOMMER DET TILLBAKA? Ett bolag vars kärnresultat är 80 procent av bottennivåresultatet och stabilt har hög kvalitet; ett bolag vars kärnresultat varierar mellan 50 och 120 procent av rapporterat resultat har ingen hållbar nivå alls — och därmed ingen meningsfull bas för övervinst-ekvationen."
+        },
+        {
+          "type": "text",
+          "content": "Sedan smutsiga överskott och balansräkningens gömmor — den postsort som aldrig passerar resultaträkningen men ändå förändrar ägarnas förmögenhet (kapitel 2:s clean surplus-lära i praktiken). I svensk IFRS-redovisning heter de övrigt totalresultat: omvärderingsreserver, pensionsavsättningars försäkringsmatematik, valutakursdifferenser på utländska verksamheter, kassationsvinster på egna instrument. En förlust på tio kronor per aktie som bokförs direkt mot EK ser inte ut som en vinstförsämring i resultaträkningen — men den är en verklig förmögenhetsförlust, och Penman kräver att den ingår i TOTALRESULTATET innan någon kvalitetsbedömning görs. Den klassiska gömman är pensioner: bokens genomgång av General Motors visar hur pensionsåtaganden och liknande förmåner (OPEB) kan förvandla ett till synes stabilt industribolag till ett pensionsfond med biltillverkning på sidan av —avsättningarnas antaganden (diskonteringsränta, löneökningstakt, avkastning på tillgångar) är redovisningsval som kan flytta miljarder mellan år utan att en enda bil mer sålts. GM-fallet — pensionerna som växte tills de ägde bolaget — är kapitel 16:s huvudcase, och läran är generell: räkna ALLTID fram pensionsnotens antaganden och kör en känslighetsräkning på diskonteringsräntan."
+        },
+        {
+          "type": "text",
+          "content": "Tredje delen: redovisningsrisk i vidare mening — risken att IFRS-utrymmet gör bolag svåra att jämföra. Två bolag i samma bransch kan visa olika RNOA enbart för att det ena kapitaliserar utvecklingskostnader och det andra expenserar dem; det ena tillämpar låg diskonteringsränta i pensionerna och det andra hög; det ena har verkligt värde på instrument och det andra historisk kostnad. Penmans botemedel är ARBETET: läs noterna, normalisera redovisningen (lägg tillbaka kapitaliserade kostnader i båda bolagens resultaträkning och balansräkning), och jämför först därefter. Det är tråkigt, det är bokens tyngsta kapitel — och det är skillnaden mellan en AKM1-analys som förtjänar sitt namn och en multipeljakt. Korsreferenser i katalogen: Quality of Earnings-kursen (Thornton O'Glove) ger den amerikanska praktiska traditionen; Financial Shenigans (Schilit) ger bedrägerikatalogen; syskonkursen ger K3-noterna på svenska; Penman ger rama som gör att ingen av listorna behövs som checklista — nämligen frågan: VAD KOMMER TILLBAKA, BEVISAT AV KASSA, REDOVISAT I TOTALRESULTATET? AKM1-brygga: detta kapitel är V12:s djup — intäktsstabilitet poängsätts rätt först när kärnresultatet är rensat (kapitel 7), kassabevisat (kapitel 12) och totalresultatskorrigerat (det här kapitlet); och det matar V19 direkt — bolag med återkommande engångsposter, svajiga pensionsantaganden och kapitaliseringsiver är samma bolag som slutligen emitterar aktier för att fylla hålen."
+        },
+        {
+          "type": "insikt",
+          "content": "Kvalitetsformeln i tre led: rensa (kärna), bevisa (kassa), komplettera (totalresultat). Först då har du ett resultat som förtjänar att heta hållbart — och ett hållbart resultat är det enda som får matas in i ekvationen från kapitel 3. Varje procentenhet kvalitets osäkerhet i E multipliceras tusenfalt i värderingen, eftersom E:s tillväxt är vad priset betalar för."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Penmans kvalitetsfrågor — fyra prov\",\"rader\":[[\"Fråga\",\"Prov\",\"Röd flagga\"],[\"Kommer resultatet tillbaka?\",\"kärnresultatets andel av rapporterat, tre år\",\"kärnandelen under 70 % eller svajig\"],[\"Backas det av kassa?\",\"kärnresultat mot fritt kassaflöde\",\"bestående positivt gap utan tillväxt i NOA\"],[\"Ingår allt i totalresultatet?\",\"resultaträkning + OCI\",\"stora förluster som bara syns i EK\"],[\"Är redovisningen jämförbar?\",\"noter: kapitalisering, pensioner, verkligt värde\",\"avvikande policy mot branschen utan förklaring\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Granskning av en årsredovisnings två mest läsvärda sidor: öppna noterna för pensioner och för redovisningsprinciper i ett börsbolags senaste årsredovisning. Notera tre saker: diskonteringsräntan i pensionsavsättningarna, om bolaget kapitaliserar utvecklingskostnader (och hur mycket), och de tre största posterna i övrigt totalresultat. Räkna sedan ut vad pensionsavsättningen hade förändrats med om diskonteringsräntan låg en procentenhet lägre (som grov regel ökar skulden kring 10–20 procent per procentenhet). Skriv en mening om hur mycket av bolagets EK och resultat som vilar på antaganden i stället för transaktioner — och justera din V12-bedömning därefter."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är smutsiga överskott (dirty surplus)?",
+          "alternativ": [
+            "Vinster från oljeutvinning",
+            "Omvärderingar och förluster som bokförs direkt mot eget kapital utanför resultaträkningen men som ändå förändrar ägarnas förmögenhet",
+            "Vinster som inte beskattas",
+            "Resultat från dotterbolag"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg kapitel 2: allt som påverkar nettoförmögenheten ska in i totalresultatet — vad göms utanför?"
+        },
+        {
+          "q": "Varför är nedskrivningar av goodwill en kvalitetsfråga enligt Penman?",
+          "alternativ": [
+            "Eftersom de alltid är bedrägeri",
+            "Eftersom den verkliga kostnaden betalades år för år som sjunkande RNOA — nedskrivningen är bara historiens efterhandsfaktura som klumpar ihop förlusten",
+            "Eftersom de inte påverkar EK",
+            "Eftersom IFRS förbjuder dem"
+          ],
+          "ratt": 1,
+          "tips": "Moaten eroderar gradvis — när syns det i resultaträkningen, och vad hände med RNOA åren före?"
+        },
+        {
+          "q": "Vad är Penmans botemedel mot redovisningsrisk mellan bolag?",
+          "alternativ": [
+            "Att bara använda konsensussiffror",
+            "Att läsa noterna och normalisera redovisningen — lägga tillbaka kapitaliserade kostnader, justera pensionsantaganden — innan jämförelse",
+            "Att undvika alla bolag med noter",
+            "Att använda betajusterade multiplar"
+          ],
+          "ratt": 1,
+          "tips": "Två bolag, två redovisningspolicy — vad krävs för att göra dem jämförbara?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Risk utan beta — Penmans fundamentala risk (V10–V12, V19)",
+      "intro": "Bokens risk-kapitel är kursens förberedelse för kontroversen. Penman skiljer PRISRISK (kursernas svängningar) från FUNDAMENTAL RISK (risken att de prognostiserade kassaflödena uteblir) — och menar att bara det senare kan analyseras från bokslutet. Beta har inget hem i hans riskrum.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Utgångspunkten är en insikt som förefaller självklar men som den moderna finansens huvudfåra har övergivit: det finns två sätt att förlora pengar på en aktie. Det ena är PRISRISKEN — kursen svänger ned och du tvingas sälja i en nedgång; den mäts i volatilitet och beta, och den försvinner för den som inte måste sälja. Det andra är FUNDAMENTAL RISKEN — verksamheten misslyckas med att leverera de prognostiserade kassaflödena; den mäts i bokslutet, och den försvinner ALDRIG, hur tålmodig du än är. Penmans hållning, som han argumenterar genom hela bokens riskdel: fundamentalisten bryr sig om den andra sorten, därför att värderingen bygger på fundamentals — och betan, som mäter samrörelsen mellan en akties pris och marknadens pris, inte säger någonting alls om huruvida bolagets rörelsekapital, hävstång och kassaflöde tål en recession. Hans komprimerade dom: beta risk is price risk, not fundamental risk — en aktie kan ha låg beta och vara fundamentalt dödsdömd, eller hög beta och fundamentalt solid."
+        },
+        {
+          "type": "text",
+          "content": "Vad mäter då fundamental risk? Penman ger fyra bokslutsbaserade mått. Ett: HÄVSTÅNG — FLEV från kapitel 8; hög nettoskuld mot CSE gör resultatet skört eftersom räntekostnaden är kontraktssluten medan intäkterna inte är det; spreadens svängningar blir ROE:s svängningar förstärkta. Två: LIKVIDITET — kan bolaget betala sina närmaste förpliktelser utan att nödemittera eller brandsälja (AKM1 V11); en kassakollaps är den snabbaste vägen från vinst till vrak. Tre: RESULTATETS SVÄNGBREDD — volatiliteten i kärn-RNOA över en konjunkturcykel; ett bolag vars RNOA cyklat mellan 3 och 25 procent har en annan risk än ett som legat fast vid 13–16, även om snittet sammanfaller (detta är V12:s djupare läsning: stabilitet i PENMANS mening är prognosbarhet, inte avsaknad av nedgångar). Fyra: KAPITALFÖRBRÄNNING — hur länge räcker kassan och utdelningsutrymmet om driftens kassaflöde försvinner ett år (V19). Dessutom finner Penman att marknaden själv PRISSÄTTER fundamental risk i multiplarna: riskfyllda bolag handlas med högre förväntad avkastning — synlig som högre E/P (earnings-to-price) och D/P (debt-to-price, nettoskuld mot börsvärde) — vilket är hans svar på hur risk ska hanteras i värderingen: inte genom att addera en beta-justerad riskpremie till diskonteringsräntan, utan genom att KRAVA RABATT i priset mot värde — säkerhetsmarginalen — för bolag med hög fundamental risk."
+        },
+        {
+          "type": "text",
+          "content": "Här ligger en av kursens vackraste spänningar, öppet redovisad: den akademiska finansens genombrott — Fama och French — har visat att just billiga bolag (högt E/P och P/B) i genomsnitt ger högre framtida avkastning, och tolkat det som RISKPREMIE (värdebolagen är riskfyllda och betalas därefter); beteendeskolan (inklusive katalogens Quantitative Value och What Works-kurser) tolkar samma mönster som SYSTEMATISKT FELPRISSÄTTNING (överreaktion som mean-reverterar). Penman står med ett ben i varje läger: han accepterar att marknaden betalar en riskpremie genom priset — men han insisterar på att PREMIEN SKA GRUNDAS I FUNDAMENTALEN, inte i kursstatistik; ett bolag med högt E/P, obetydlig skuld, stabil RNOA och kassaförankrad vinst är inte riskfyllt bara för att det är billigt — tvärtom är det den omvända kombinationen (högt E/P till följd av tung NFO, svajig RNOA och brinnande kassa) som förtjänar namnet riskfyllt värde. Skillnaden är avgörande för praktiken: screenar du bara på multiplar köper du både sorterna (värdefällan); screenar du på multiplar plus Penmans fundamentala riskmått köper du bara den goda sorten. AKM1-brygga: detta är riskblockets teorikapitel — V10 (skuldsättningsgrad = FLEV i Penmans språk), V11 (likviditet = nödutrymme), V12 (intäktsstabilitet = prognosbarhet i kärn-RNOA) och V19 (kapitalförbränning = överlevnad) är precis de fyra mått Penman listar som fundamental risk; AKM1 poängsätter alltså risk OPERATIVT — från bokslutet — snarare än via beta-tuning av en diskonteringsränta, och säkerhetsmarginalen i priset (V04–V06 billighet) är den premie som krävs för att bära risken."
+        },
+        {
+          "type": "insikt",
+          "content": "Penmans riskprov: fråga inte hur aktien svänger — fråga hur BOKSLUTET svänger. FLEV, likviditet, kärn-RNOA:s spännvidd och kassans brinntid är de fyra svaren, och priset på dem heter säkerhetsmarginal. Beta talar om vad marknaden GJORT; fundamental risk talar om vad verksamheten KAN GÖRA — det är bara det senare som kan analyseras och det är bara det senare som kan förhandlas till ett lägre pris."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Prisrisk kontra fundamental risk — och AKM1:s fyra mått\",\"rader\":[[\"Dimension\",\"Prisrisk\",\"Fundamental risk\",\"AKM1\"],[\"Fråga\",\"hur svänger kursen mot marknaden?\",\"levererar verksamheten prognosen?\",\"—\"],[\"Mått\",\"beta, volatilitet\",\"FLEV, likviditet, RNOA-sväng, kassans brinntid\",\"V10, V11, V12, V19\"],[\"Källa\",\"kurshistorik\",\"bokslutet\",\"bokslutet\"],[\"Hantering\",\"diversifiering, hedging\",\"rabatt mot värde — säkerhetsmarginal\",\"V04–V06 billighet + riskpoäng\"],[\"Marknadens premie\",\"CAPM: beta x riskpremie i r\",\"syns i priset som högt E/P och D/P\",\"screena multipl + fundament\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en fundamental riskprofil för ett bolag: hämta fem års data och räkna — FLEV (NFO/CSE) senaste året; kvickkvot (V11); kärn-RNOA:s högsta och lägsta värde under perioden (spännvidden i procentenheter); och hur länge kassan plus eventuell kreditutrymme räcker om driftens kassaflöde nollas (uppskattning räcker). Poängsätt V10, V11, V12 och V19 enligt AKM1. Fråga sedan: motiverar riskprofilen den billighet V04–V06 visar — eller är aktien billig PRECIS så mycket som risken kräver? Om det senare är det Penmans svar: pass, oavsett multiplarnas lockelse."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Penmans skiljelinje mellan prisrisk och fundamental risk?",
+          "alternativ": [
+            "Prisrisk gäller aktier, fundamental risk obligationer",
+            "Prisrisk är kursens svängningar (som försvinner för den som inte måste sälja); fundamental risk är risken att de prognostiserade kassaflödena uteblir — och den försvinner aldrig",
+            "De är samma risk mätt olika",
+            "Fundamental risk gäller bara banker"
+          ],
+          "ratt": 1,
+          "tips": "Vilken av de två kan ett bokslut säga något om — och vilken kan tålmodighet bota?"
+        },
+        {
+          "q": "Hur menar Penman att marknaden prissätter fundamental risk?",
+          "alternativ": [
+            "Genom betan, som stiger med risken",
+            "Genom priset — riskfyllda bolag handlas med högre förväntad avkastning, synlig som högre E/P och D/P",
+            "Genom utdelningsutdelningar",
+            "Fundamental risk kan inte prissättas"
+          ],
+          "ratt": 1,
+          "tips": "Earnings-to-price och debt-to-price — vad säger ett högt värde på dem om marknadens krav?"
+        },
+        {
+          "q": "Hur hanterar fundamentalisten fundamental risk i praktiken enligt Penman?",
+          "alternativ": [
+            "Genom att addera en beta-justerad riskpremie till diskonteringsräntan",
+            "Genom att kräva rabatt i priset mot värde — säkerhetsmarginal — för bolag med hög fundamental risk",
+            "Genom att bara köpa lågbetabolag",
+            "Genom att korta alla riskfyllda bolag"
+          ],
+          "ratt": 1,
+          "tips": "Graham-traditionens ord för priset på osäkerhet — vad heter det?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Analysen av bolagets värde — WACC med försiktighet",
+      "intro": "Med analysen i hand återstår arbetet: prognos, värdering och dom. Penmans värderingsdel går igenom pro forma-prognoser, scenarier och aktieägarvärde — och hans mest kända praktiska råd: håll WACC på armlängds avstånd och värdera på aktienivå när du kan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Penmans prognosmetodik är förankrad i allt kursen byggt: enbart KÄRNRESULTATET (kapitel 7) prognostiseras, med RNOA (kapitel 6) som bärare av lönsamheten och hållbar tillväxt (kapitel 9) som verklighetskontroll, stegat genom clean surplus-relationen (kapitel 2) till framtida bokförda EK och övervinster — och värdet ges av ekvationen (kapitel 3). Prognoshorisonten är ödmjuk: fullständig pro forma bara för åren då du har ORSAK att tro dig veta något (produktpipeline, orderstock, kontrakt — AKM1:s V16–V18), och därefter ett terminalvillkor som bygger på ekonomisk logik i stället för extrapolerat hopp: konkurrensen urholkar övervinster (RNOA mot kapitalkostnad), tillväxten mot hållbar nivå, och P/B därmed mot 1 eller mot motiverad nivå enligt kapitel 10. Penmans regel, värd att skriva på väggen: TERMINALVÄRDETS ANTAGANDE är värderingen — nästan allting som skiljer en DCF från en annan sitter där, och ju kortare den motiverade prognoshorisonten är, desto tyngre blir terminalantagandet. Därför: motivera terminalen med moatens varaktighet (V13–V15), inte med ett tal som ger önskat utfall."
+        },
+        {
+          "type": "text",
+          "content": "Diskonteringsräntan — kursens mest försiktiga kapitel, och här differentierar kursen mot syskonboken som tydligast. Företagsvärdering enligt svensk praxis (Hjelström, Isaksson och Nilsson) lär ut WACC-metodiken i SEK steg för steg: riskfri ränta plus svensk riskpremie, beta genom regression, kostnad för eget kapital via CAPM, efter- och förränteskatteskalor, företagsvärde minus nettoskuld blir aktievärde. Det är en hel, brukbar praxis — och kursens hållning är att Penman inte förnekar den utan manar till försiktighet: tre problem gör WACC farlig i fel händer. Ett: BETAN — regressioner på femtioåriga kurser (kapitel 14 och 17) mäter prissamrörelse, inte verksamhetsrisk, och ger ett falskt precisionssken med decimaler som ingen kan försvara. Två: CIRKULARITETEN — WACC innehåller kapitalstrukturens MARKNADSVÄRDEVIKTER, vilket betyder att värderingen förutsätter... värderingen; i praktiken låser man gamla vikter och förmedlar en struktur som kanske inte ska bestå. Tre: SKATTEKOMPLEXITETEN — ränteskatteavdraget, förändringar i skulden och betavikning av skuld mot eget kapital skapar en modell med många rörliga delar vars sammanlagda känslighet sällan granskas. Penmans lösning är berömd: VÄRDERA PÅ AKTIENIVÅ när det är möjligt — övervinst-ekvationen (kapitel 3) diskonterar ägarnas flöden vid KRAVET PÅ EGET KAPITAL ALLDELES, och behöver aldrig WACC, cirkularitet eller skattevikningar. Företagsvärdet (för ev/EBIT-bruk och förvärv) kan alltid härledas i efterhand genom att lägga till nettoskulden."
+        },
+        {
+          "type": "text",
+          "content": "Praktisk hållning — kursens sammanfattning i tre råd. Ett: håll r ENKEL och känslighetstesta grovt — Penman rör sig i bokens exempel kring avkastningskrav på runt 8–10 procent för eget kapital, och rekommenderar känslighet över ett intervall i stället för falsk precision i en decimal; ett värde som bara ser bra ut vid r 7,0 men inte 8,5 är ingen marginal utan en räntesats-gissning. Två: använd SCENARIER i stället för punktskattningar — bas, nedside, uppsida, var och en med ekvationen och sin egen terminallogik; AK1A:s Monte Carlo och riskmatris är exakt den strukturen systematiserad (många dragna framtider mot bokslutets förankringar i stället för en enda räta linje). Tre: skilj VÄRDE från PRIS även i sista steget — värdet är en intervallbedömning med osäkerhet, priset är marknadens enpunkt; AKM1-poängen blir meningsfull först jämförd mot priset med krav på marginal (större marginal för högre fundamentalarisk, enligt kapitel 14). AKM1-brygga: AKM1:s tjugo variabler innehåller INGEN diskonteringsränta — medvetet: poängen tröskelvärdesätts (V04–V06 billighet, V09 lönsamhet) medan PENMANS ekvation används i AK1A:s verktyg för att ÖVERSÄTTA poängen till kronintervall vid enkla, känslighetstestade r; V06-familjens multiplar och V20:s utdelningsutrymme kompletterar — och nettolånesidan (V10) är just det som gör aktienivå-värderingen säkrare än WACC-vägen."
+        },
+        {
+          "type": "insikt",
+          "content": "Värderingens gyllene återhållsamhet: varje decimal i diskonteringsräntan köper falsk trygghet. Penmans alternativ — aktienivå, enkel r, scenarier, motiverad terminal — flyttar ansträngningen från räntefinetuning till det enda som kan granskas: ANTAGANDENA OM VERKSAMHETEN. En värdering du kan försvara i en mening per antagande är bättre än en modell du inte kan försvara alls."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två vägar till aktievärde — aktienivå kontra WACC\",\"rader\":[[\"Steg\",\"Aktienivå (Penmans ekvation)\",\"Företagsnivå (WACC/DCF)\"],[\"1\",\"bokfört EK per aktie (B)\",\"prognos FCFF (fritt kassaflöde före ränta)\"],[\"2\",\"prognos övervinster: RE = E − r × B\",\"diskontera vid WACC\"],[\"3\",\"diskontera vid krav på EGET kapital — ingen WACC\",\"WACC: kapitalstrukturvikter, betor, skatteavdrag\"],[\"4\",\"V = B + Σ PV(RE)\",\"företagsvärde − nettoskuld = aktievärde\"],[\"Fallgropar\",\"terminalantagandets logik\",\"beta, cirkularitet, skattekomplexitet\"],[\"Styrka\",\"förankrad i bokslutet, slipper WACC\",\"brukbar för EV-multiplar och förvärv\"],[\"Praxis-koppling\",\"—\",\"syskonkursen lär ut hela metoden i SEK\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör en trescenarievärdering med känslighet: använd kapitel 11:s bolagsdata (eller egna). Bygg tre scenarier — nedside (RE minskar 20 procent, g = 0), bas (kapitel 11:s värde), uppsida (RE växer till hållbar gräns) — och värdera varje scenario vid r 8, 9 och 10 procent. NIOTABELL: nio värden. Räkna sedan ut vad marknadspriset implicerar: i hur många av de nio rutorna ligger priset över värdet? Om priset ligger över i sex eller fler rutor är aktien förutsättningsrikt köpt — omvänt är marginalen mätbart verklig. Spara tabellen; den är den ärligaste värderingsdokumentet du kan äga."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Penmans huvudråd för att undvika WACC-problemen?",
+          "alternativ": [
+            "Att alltid använda lägre WACC",
+            "Att värdera på aktienivå — övervinst-ekvationen kräver bara kravet på eget kapital och slipper WACC, cirkularitet och skattevikningar",
+            "Att låsa betan i fem år",
+            "Att använda kommunala räntor"
+          ],
+          "ratt": 1,
+          "tips": "Vilken nivå — ekvitets eller företags — diskonterar ägarnas flöden direkt?"
+        },
+        {
+          "q": "Vad menas med WACC:s cirkularitet?",
+          "alternativ": [
+            "Att WACC alltid är för hög",
+            "Att WACC bygger på marknadsvikter av skuld och eget kapital — värderingen förutsätter alltså det värde den ska producera",
+            "Att räntan förändras varje år",
+            "Att skatten beräknas dubbelt"
+          ],
+          "ratt": 1,
+          "tips": "Vad vägs ihop i WACC — och varifrån kommer vikterna?"
+        },
+        {
+          "q": "Vad bör terminalantagandet motiveras av enligt Penman?",
+          "alternativ": [
+            "Av önskad slutvärdesnivå",
+            "Av ekonomisk logik — konkurrensens urholkning av övervinster och moatens varaktighet",
+            "Av historisk tillväxttakt extrapolerad i all evighet",
+            "Av betans utveckling"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med övervinster i en bransch utan varaktig moat — och hur länge lever en moat (V13–V15)?"
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 12,
+      "title": "Fallstudier — P&G, Cisco, GM:s pensioner och Starbucks",
+      "intro": "Bokens styrka är dess verkliga bolag. Kursens fallstudiekapitel plockar fyra genomgångar som var och en bär en distinkt lärdom: det löpande fallet Procter & Gamble (hantverket), Cisco år 2000 (tillväxtens pris), General Motors pensioner (balansens gömmor) och Starbucks (värderingen från början till slut).",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Det löpande fallet. Penman driver i den femte upplagan ett genomgående case — Procter & Gamble — genom bokens alla moment: omstrukturering av balans- och resultaträkning, RNOA-analys, hävstång, prognos och värdering. Läran av just P&G är HANTVERKETS normalfallet: ett moget konsumentvarumärke med stabil kärn-RNOA på en nivå som varaktiga varumärken ger, tydlig driftsskuldshävstång (leverantörerna finansierar en förvånansvärt stor del av en varumärkesverksamhet) och en värdering som visar hur liten del av priset som vilar på dramatik — hos mogna bolag med stabil kärna är värderingen en fråga om varaktighet, inte om genombrott. För AK1A är P&G-fallet prototypen på en analys som V07–V12 (marginaler, stabilitet) bär och V13–V14 (varumärke) förklarar — och den återkommande övningen är densamma: gör om caset på ett svenskt motsvarighetsbolag och se om din hantverksskicklighet bär."
+        },
+        {
+          "type": "text",
+          "content": "Cisco-fallet — bokens skarpaste varningsdemo från dot-com-eran. Penman går igenom Ciscos värdering kring år 2000, då bolaget handlades i hundratals miljarder dollar på tillväxttro. Manövern är kursens kapitel 4 i full skala: restera bort priset — lös ut den implicita övervinsttillväxt som marknadens multiplar krävde — och jämför med hållbar tillväxt. Slutsatsen är bedövande: priset krävde en mångaårig övervinsttillväxt som överskred vad själva världens dominanta nätverksleverantör realistiskt kunde producera, med kapitalkostnad räknad och konkurrensens urholkning inräknad — och när tillväxten sedan normaliserades föll aktien med över åttio procent. Läran är inte att tillväxtbolag är dåliga — utan att DET ALDRIG ÄR FRÅGA OM TRO, utan om aritmetik: varje pris implicerar en prognos, och prognosen kan dömas med kapitel 9:s hållbara tillväxt och kapitel 10:s motiverade multiplar. Cisco år 2000 är för Penman-metoden vad en brinnande höstack är för brandutbildning: fallen som gör metoden muskelminne."
+        },
+        {
+          "type": "text",
+          "content": "GM-fallet — pensionerna som ägde bolaget. Penmans genomgång av General Motors visar balansanalysens mörka hörn: ett företag vars PENSIONER och övriga förmåner (OPEB) växte till dimensioner som konkurrerade med själva verksamheten, med avsättningar vilande på antaganden (diskonteringsränta, avkastning på pensions tillgångar, livslängder) som varje år kunde flytta resultat och EK mer än bilförsäljningen gjorde. Tre lärdomar: en — avsättningar är SKULDER (finansieringssidan, kapitel 5), och deras antaganden är redovisningsval som kan normaliseras; två — smutsiga överskott (kapitel 13) gömde förluster utanför resultaträkningen; tre — ett bolag kan se billigt ut (lågt P/B) samtidigt som dess verkliga EK är svagt när pensionernas realvärde räknas fram — värdefällan hade aldrig sett så respektabel ut. Starbucks-fallet, slutligen, är bokens värderingsdemo från början till slut: omstrukturering, kärnresultat, RNOA, hållbar tillväxt, scenario-värdering med känslighet — en mall du kan köra på vilket bolag som helst. Tillsammans visar de fyra fallen Penman-metodens TRE avgörande egenskaper: den är REPLICHERBAR (samma steg, varje bolag — precis AKM1:s designlogik), den är DOMBAR (implicit prognos mot hållbar prestation ger köp, pass eller varning — inte en känsla) och den är VILLKORLIGT ÖDMJUK (värde är intervall och scenarier, aldrig en enda siffra med fyra decimaler). AKM1-brygga: fallstudierna är protokollen för hur AK1A:s bolagsanalyser ska gå till — omstrukturera (kapitel 5–7), mät (kapitel 6, 8, 12–13), värdera (kapitel 10–11, 15), döm (kapitel 4, 9) — och varje analys i AK1A:s rapportarkitektur kan spåras till just de här fyra fallen: P&G (normalfallet), Cisco (tillväxtens pris), GM (gömmorna), Starbucks (hela kedjan)."
+        },
+        {
+          "type": "insikt",
+          "content": "Fallens gemensamma grammatik: RESTERA (vad implicerar priset?), VIKTA (vad är kärna och vad är berättelse?), KONTROLLERA (vad säger kassa och totalresultat?), DÖM (är implicit prognos mot hållbar prestation?). Fyra steg, fyra fall, alla bolag. När du en gång har sprungit Cisco-övningen på ett dagens favorittillväxtbolag ser du börsens prislappar annorlunda för alltid."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens fyra fall — och deras läror\",\"rader\":[[\"Fall\",\"Ämne\",\"Kärnlära\",\"AKM1-koppling\"],[\"Procter & Gamble\",\"löpande case genom hela boken\",\"hantverket: mogen kärna, driftsskuldshävstång, varaktighetens värde\",\"V07–V14 prototyp\"],[\"Cisco år 2000\",\"tillväxtens pris i bubblan\",\"restera priset — implicit tillväxt vida över hållbar — och dom: aritmetik, inte tro\",\"V01–V03 mot V09; V19\"],[\"General Motors\",\"pensioner och gömda åtaganden\",\"avsättningar är skulder; antaganden flyttar EK; lågt P/B kan dölja svagt verkligt kapital\",\"V05, V10, V12, V19\"],[\"Starbucks\",\"värdering från början till slut\",\"helkedjan: omstrukturering → kärn-RNOA → hållbar tillväxt → scenariovärde\",\"V01–V20 helhet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör ditt eget Cisco-test: välj dagens mest omsusade tillväxtbolag (ett som DU tycker är spännande — det är då testet gör ont). Hämta B, nästaårsprognos, pris och utdelningspolicy. Räkna implicit g (kapitel 4) och hållbar g (kapitel 9). Jämför mot motiverad P/B enligt kapitel 10:s tabell. Skriv domen i Cisco-format: vilken mångårig övervinsttillväxt kräver priset — och vad händer med värdet om tillväxten normaliseras till hållbar nivå? Om svaret obehagligt — bra; det är precis så Penman-metoden ska kännas när den används på egna favoriter."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnläran av Penmans genomgång av Cisco kring år 2000?",
+          "alternativ": [
+            "Att teknikbolag aldrig ska köpas",
+            "Att priset implicerade en övervinsttillväxt vida över vad bolaget hållbart kunde producera — dom kräver aritmetik (restera mot hållbar tillväxt), inte tro",
+            "Att Cisco gick i konkurs",
+            "Att beta var för hög"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 4:s restera-övning och kapitel 9:s verklighetskontroll — vad hittar de hos ett bubbelpris?"
+        },
+        {
+          "q": "Vad visar GM-fallet om pensioner?",
+          "alternativ": [
+            "Att pensioner inte påverkar värderingen",
+            "Att avsättningar är skulder vars antaganden kan flytta EK och resultat mer än verksamheten — och att lågt P/B kan dölja svagt verkligt kapital",
+            "Att GM var välconsoliderat hela tiden",
+            "Att pensioner ska klassas som driftskulder"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 13:s pensionskänslighet plus kapitel 10:s P/B-lära — vad kan ett fotografi gömma?"
+        },
+        {
+          "q": "Vad kännetecknar Penman-metoden som fallstudierna visar den?",
+          "alternativ": [
+            "Att den bara fungerar på amerikanska bolag",
+            "Att den är replikerbar (samma steg varje bolag), dombar (implicit prognos mot hållbar prestation) och villkorligt ödmjuk (intervall och scenarier)",
+            "Att den ger exakta punkt värden med fyra decimaler",
+            "Att den kräver insiderinformation"
+          ],
+          "ratt": 1,
+          "tips": "Vilka egenskaper gör att en metod kan användas av vem som helst, om och om igen, med ärlig osäkerhet?"
+        }
+      ]
+    },
+    {
+      "num": 17,
+      "minutes": 12,
+      "title": "Kontrovers och syntes — Penman mot CAPM-skolan",
+      "intro": "Kursens sista och största kontrovers: Penmans frontalangrepp mot beta och CAPM som grund för ekvitetsvärdering. Här redovisas CAPM-skolans sida ordentligt, Penmans svar via fundamental risk — och AK1A:s egen syntes med ett öppet medgivande: utan diskonteringsränta går inget DCF.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först CAPM-skolan, redovisad med den respekt den förtjänar — den är modern finans teoretiska kärna. Sharpe (1964) och Lintner (1965) byggde på Markowitz diverifieringslogik: idiosynkratisk risk kan avlägsnas genom att äga marknadsportföljen, alltså betalar marknaden bara för den risk som inte kan diverifieras bort — SAMRÖRELSEN med marknaden, betan. CAPM ger därmed ett koherent, falsifierbart svar på finansens svåraste fråga: vad ska avkastningskravet vara? WACC (med Modigliani–Miller-satsen om att kapitalstruktur inte förändrar totalt värde som grund) utökar logiken till företagsnivå. Användarna är legio: kapitalmarknadsanalytiker, Swedish-praxis-kursens WACC i SEK, Damodarans hela modelbygge — och försvaret är reellt: betan mäter exponering mot systematiska faktorer (konjunktur, diskonteringsräntor, riskaptit) som verkligen slår mot alla aktier samtidigt; diversifiering är den enda gratis lunchen; och när Fama och French summerar fyrtio år av evidens (The CAPM: Theory and Evidence, 2004) är domen nyanserad — modellen underpresterar empiriskt, men den förblir standard eftersom inget sammanhängande substitut etablerats. Även Penmans inom-fackkritiker — och Fischer Black ifrågasatte betans mätbarhet redan på nittiotalet — har vittnat om att alterna riskmodeller (Fama–Frenchs faktormodeller, APT) behåller CAPM:s grundtanke: prissätt risk via kovarians med systematiska faktorer."
+        },
+        {
+          "type": "text",
+          "content": "Sedan Penmans angrepp, i tre steg. Steg ett — KATEGORIFELET: beta mäter prissamrörelse, men värderarens risk är att FUNDAMENTALEN uteblir; en aktie kan ha låg beta och vara kapitalförstörare (många lågbeta-kriserbolag) eller hög beta och vara fundamentalt solid. Kursens kapitel 14 räknade måtten Penman föredrar: hävstång, likviditet, resultat svängbredd, kassans brinntid — PLUS marknadens egen riskprissättning i multiplarna: earnings-to-price (högt E/P = marknadens riskpremie) och debt-to-price (D/P = skuldbörda mot börsvärde). Steg två — FALLET MOT TUNING: att justera diskonteringsräntan uppåt med beta straffar framtida kassaflöden likformigt, medan verklig fundamental risk är OJÄMN (den slår i dåliga år, i konkurs, i emissioner) — därför är Penmans hantering att köpa med RABATT (säkerhetsmarginal) och kräva balansstruktur som tål det sämsta året, inte att knö in en extra procentenhet i r. Steg tre — EMPIRIEN: Penman pekar på att beta-värden är instabila (fem års historik säger föga om nästa fem), att låg-beta-anomalin (Frazzini och Pedersen, Betting Against Beta, 2014) visar att lågbetabolag presterat BÄTTRE än CAPM förutsäger — mekanismer som hävstångsbegränsningar — och att risken i praktiken bättre förutsägs av boksluet än av kursen. Hans samlade dom är kursens mest citerade rad: beta risk is not fundamental risk."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — med medgivanden i båda riktningar. MEDGIVANDET till CAPM-skolan först — det är kursens ärlighetspunkt: UTAN DISKONTERINGSRÄNTA GÅR INGET DCF — Penman själv använder ett krav på eget kapital (i bokens exempel grovt kring 8–10 procent), och det kravet är i slutänden förankrat i samma verklighet som CAPM försöker mäta: marknadens historiska riskpremie. Skillnaden är inte RÄNTA mot INGEN ränta — den är ENKEL, känslighetstestad r mot finjusterad beta-tuning. MEDGIVANDET till Penman därefter: AKM1:s hela konstruktion instämmer i att risk ska poängsättas OPERATIVT — V10 (skuldsättningsgrad), V11 (likviditet), V12 (stabilitet), V19 (kapitalförbränning) plus riskmatrisen och Monte Carlo-scenarierna — det vill säga från bokslutets fundamentals, inte från beta-tuning. Syntesen i tre punkter. Ett: ANVÄND en enkel r med känslighetsintervall (AK1A:s verktyg gör det automatiskt) — och lägg ARBETET på prognoserna och terminalantagandena i stället på decimalerna i r. Två: HANTERA risk med Penmans tvåhandsgrepp — operativ riskpoängsättning (V10–V12, V19) plus priset (V04–V06 billighet som säkerhetsmarginal; högt E/P och D/P lästa som marknadens riskpremie) — och kom ihåg Fama-French-varningen: billighet som kompensationspremie är inte gratis, bara när fundamentals bekräftar överlevnad. Tre: BEHÅLL WACC i verktygslådan för företagsvärden (EV-multiplar, förvärv) med dess brasklappar — men som ANDRA väg, efter aktienivå-ekvationen. Slutsumman för kursen: Penman gav oss ekvationen (värde = bokfört + övervinster), rensningsverktyget (RNOA), multiplarnas grammatik (P/B och P/E dekomponerade) och riskens fundamentala hem (bokslutet, inte kursstatistiken); CAPM-skolan gav oss diverifieringslogiken och påminnelsen att risk KOSTAR; AKM1 förenar dem genom att poängsätta fundamentat och hålla r enkel — och varje kapitel i den här kursen har byggt ett V-nummer i det systemet. AKM1-brygga: detta är slutdestinationen för hela V-kartan — värderingsblocket V04–V06 är priset mot värdet, lönsamhetsblocket V07–V09 är övervinstens motor (RNOA), stabilitetsblocket V10–V12 och risken V19 är den fundamentala risken, moatblocket V13–V15 är övervinstens varaktighet, katalysatorerna V16–V18 är prognoshorisontens motiveringar, V20 är distributionen — tjugo variabler, en Penman-ekvation: ditt betyg på bolaget är din prognos av dess övervinster, och priset är marknadens; analysens hela konst är skillnaden mellan dem."
+        },
+        {
+          "type": "insikt",
+          "content": "Kontroversens praktiska slutpunkt: beta-tuning ger skenbar precision — ett avkastningskrav med två decimaler byggt på instabila regressioner; Penman-ansatsen ger verklig disciplin — ett enkelt r i ett intervall, risk poängsatt från bokslutet, och marginalen i priset som den enda riskpremie du kan verifiera. Nästa gång någon frågar vilken diskonteringsränta du använde, svara med intervall och motivering — och visa i stället din riskprofil ur V10–V12 och V19. Det är hela skillnaden mellan att låna finansens modeller och att äga dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — tre positioner\",\"rader\":[[\"Fråga\",\"CAPM/WACC-skolan\",\"Penman\",\"AK1A:s syntes\"],[\"Vad är risk?\",\"kovarians med marknaden — beta\",\"fundamental risk: hävstång, likviditet, svängningar, kassans brinntid\",\"operativ riskpoäng V10–V12, V19 + riskmatris\"],[\"Var mäts den?\",\"kurshistorik, regression\",\"bokslutet — plus marknadens premie i E/P och D/P\",\"bokslutet + scenarier (Monte Carlo)\"],[\"Hur hanteras den?\",\"höj r med beta x riskpremie\",\"köp med rabatt (säkerhetsmarginal) mot värde\",\"enkelt r i intervall + marginal i priset\"],[\"Diskonteringsräntan?\",\"CAPM-baserad, WACC på företagsnivå\",\"enkelt krav på eget kapital, aktienivå hellre än WACC\",\"medgivande: utan r går inget DCF — håll den enkel och känslighetstesta\"],[\"Bästa försvar\",\"diversifieringslogik, koherent, industristandard\",\"beta mäter fel dimension; instabila betor; låg-beta-anomalin\",\"båda behövs: CAPM:s logik om priset på risk, Penmans om riskens hem\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen position i kontroversen — i 300 ord: för ett bolag du analyserat under kursen, beskriv först CAPM-vägen (beta, krav på eget kapital, WACC om relevant) och dessutom Penman-vägen (fundamental riskprofil ur V10–V12 och V19, säkerhetsmarginal i priset). Vilken väg ger dig mest disciplin — och var känns den falskt precis? Avsluta med en regel för ditt eget framtida värderingsarbete: hur sätter du r, och hur hanterar du risk? Spara texten — den är ditt teoretiska testamente från den här kursen, och nästa BOKMASTER-kurs kommer att pröva den."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är CAPM-skolans starkaste försvar enligt kursen?",
+          "alternativ": [
+            "Att beta alltid förutsäger avkastning exakt",
+            "Diversifieringslogiken — bara icke-diverifierbar risk betalas — plus att modellen är koherent, falsifierbar och industristandard trots svag empiri",
+            "Att WACC är lag i alla länder",
+            "Att Penman inte förstår statistik"
+          ],
+          "ratt": 1,
+          "tips": "Fama–French 2004: empiriskt svag men standard — varför lever den vidare?"
+        },
+        {
+          "q": "Vad är Penmans tre steg mot beta-tuning?",
+          "alternativ": [
+            "Högre utdelning, lägre skatt, fler faktorer",
+            "Kategorifelet (beta mäter prissamrörelse inte fundamental risk), hanteringen (rabatt i priset i stället för höjd r) och empirin (instabila betor, låg-beta-anomalin)",
+            "Att förbjuda DCF, förbjuda WACC, förbjuda regression",
+            "Att använda P/S i stället för P/E"
+          ],
+          "ratt": 1,
+          "tips": "Kom ihåg kapitel 14:s mått och Frazzini–Pedersens fynd om lågbetabolag."
+        },
+        {
+          "q": "Vad är AK1A:s medgivande och syntes i kontroversen?",
+          "alternativ": [
+            "Att CAPM har rätt och Penman fel — använd beta",
+            "Att Penman har rätt och CAPM ska avskaffas helt",
+            "Medgivandet: utan diskonteringsränta går inget DCF — därför enkel r i intervall med känslighetstest; syntesen: risk poängsättas operativt (V10–V12, V19) och marginalen bärs av priset",
+            "Att båda är ointressanta för praktiken"
+          ],
+          "ratt": 2,
+          "tips": "Vilken del av värderingen kan ingen fundamentalist undvika — och var lägger AKM1 sitt arbete i stället?"
+        }
+      ]
+    }
+  ]
+}

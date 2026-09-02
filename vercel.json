@@ -9,6 +9,10 @@
       "schedule": "0 0 * * *"
     },
     {
+      "path": "/api/cron/vagscan",
+      "schedule": "0 5 * * *"
+    },
+    {
       "path": "/api/cron/expand-courses",
       "schedule": "0 12 * * *"
     },

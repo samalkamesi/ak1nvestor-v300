@@ -244,7 +244,8 @@ export function DagensPass() {
 
   const hero = (
     <div className="relative overflow-hidden rounded-2xl border border-gold/40 bg-card p-6 text-center sm:p-8">
-      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-gold/0 via-gold to-gold/0" />
+      {/* DNA: marin topp-rad som panel-aksent — guldbandet nedtill får sällskap */}
+      <div className="marin-panel absolute inset-x-0 top-0 h-1" />
       <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-gold">
         Daglig ritual · 5 minuter · Riktig marknadsdata
       </p>
@@ -461,10 +462,11 @@ export function DagensPass() {
             {pass.dagensFraga.alternativ.map((alt, j) => {
               const vald = vagVal === j;
               const arRatt = j === pass.dagensFraga.rattIndex;
+              // DNA: aktivt val = marin signaturknapp; rätt svar avslöjas i grönt
               const styl = vagKlar && arRatt
                 ? "border-bull bg-bull/10 font-bold text-bull"
                 : vald && !arRatt
-                  ? "border-bear bg-bear/10 text-bear"
+                  ? "btn-marin"
                   : "border-gold/20 bg-card hover:border-gold/50";
               return (
                 <button
@@ -499,10 +501,11 @@ export function DagensPass() {
             {pass.akm1Fraga.alternativ.map((alt, j) => {
               const vald = akm1Val === j;
               const arRatt = j === pass.akm1Fraga.ratt;
+              // DNA: aktivt val = marin signaturknapp; rätt svar avslöjas i grönt
               const styl = akm1Klar && arRatt
                 ? "border-bull bg-bull/10 font-bold text-bull"
                 : vald && !arRatt
-                  ? "border-bear bg-bear/10 text-bear"
+                  ? "btn-marin"
                   : "border-gold/20 bg-card hover:border-gold/50";
               return (
                 <button
@@ -558,9 +561,10 @@ export function DagensPass() {
                   ? `${sr.forfallna} kort väntar på dig idag — varje "Bra"-svar förtjänar +5 XP.`
                   : "Inga kort förfallna idag — perfekt discipl. Nästa kort förfaller " + (sr.nastaNasta || "snart") + "."}
               </p>
+              {/* DNA: primär knapp i marin med guldtext */}
               <button
                 onClick={oppnaMentorn}
-                className="mt-3 inline-flex items-center gap-2 rounded-lg border border-gold/50 bg-gold/10 px-4 py-2 text-xs font-bold text-gold transition-colors hover:bg-gold/20"
+                className="btn-marin mt-3 inline-flex items-center gap-2 px-4 py-2 text-xs"
               >
                 Fortsätt i AI-Mentorn <span aria-hidden>→</span>
               </button>
@@ -580,7 +584,10 @@ export function DagensPass() {
           {hydrerad ? (
             <>
               <div className="text-6xl leading-none" aria-hidden>🔥</div>
-              <p className="mt-3 font-serif text-5xl font-bold text-gold">{streak.antal}</p>
+              {/* DNA: streak-chip — guldsiffror på marin */}
+              <div className="marin-panel mx-auto mt-3 w-fit rounded-full px-6 py-1">
+                <p className="font-serif text-5xl font-bold text-gold">{streak.antal}</p>
+              </div>
               <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">dagar i rad</p>
               <p className="mx-auto mt-3 max-w-sm text-xs leading-relaxed text-muted-foreground">
                 Bästa streak: {streak.basta} dagar. Gör dagens pass imorgon också — streaken lever så länge du gör.

@@ -391,10 +391,11 @@ export function Akm1Calculator() {
                     <p className="mt-1 text-xs italic text-muted-foreground">💡 {r.exempel}</p>
                   </details>
                   {resultat && (
+                    /* DNA: primär "Använd poäng"-knapp i marin med guldtext */
                     <Button
                       size="sm"
                       variant="outline"
-                      className="mt-3"
+                      className="btn-marin mt-3"
                       onClick={() => {
                         setPoang((p) => ({ ...p, [r.var]: resultat.poang }));
                         setNot(null);
@@ -421,12 +422,14 @@ export function Akm1Calculator() {
             </p>
             {KATEGORIER.map((kat) => (
               <section key={kat}>
-                <h2 className="flex items-baseline gap-2 border-b border-gold/30 pb-1 font-serif text-lg font-bold">
+                {/* DNA: rubrikaxel med guld-hårlinje under; koppar-accent på snittet */}
+                <h2 className="flex items-baseline gap-2 font-serif text-lg font-bold">
                   {kat}
-                  <span className="text-xs font-normal text-muted-foreground">
+                  <span className="text-xs font-normal koppar-text">
                     snitt {katMedel[kat].toFixed(1)} / 5
                   </span>
                 </h2>
+                <div className="hjarlinje mt-1" />
                 <div className="mt-3 space-y-4">
                   {VARIABLER.filter((v) => v.category === kat).map((v) => (
                     <div key={v.id} className="flex items-center gap-4">

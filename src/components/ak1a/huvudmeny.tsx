@@ -114,7 +114,7 @@ export function Huvudmeny() {
 
           {oppad === p.titel && (
             <div
-              className="absolute left-0 top-full z-50 mt-1 w-72 overflow-hidden rounded-xl border border-gold/30 bg-card shadow-xl"
+              className="absolute left-0 top-full z-50 mt-1 max-h-[70vh] w-72 overflow-y-auto rounded-xl border border-gold/30 bg-card shadow-xl"
               onMouseEnter={() => stallning.current && clearTimeout(stallning.current)}
             >
               <div className="marin-panel border-b border-gold/30 px-3 py-2 font-serif text-xs font-bold tracking-wide text-[#E8C766]">

@@ -41,7 +41,7 @@ export function HomeSection() {
               </h1>
 
               <p className="mt-5 max-w-2xl font-serif text-lg italic leading-relaxed text-[#E8C766] sm:text-xl">
-                Djupare än en blogg. Ärligare än en bank. Snabbare än en
+                Djupare än en blogg. Tydligare än en bank. Snabbare än en
                 utbildning.
               </p>
 

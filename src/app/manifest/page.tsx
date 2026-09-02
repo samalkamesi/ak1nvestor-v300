@@ -406,7 +406,7 @@ export default function ManifestPage() {
       <p className="mt-12 border-t border-gold/30 pt-8 text-center font-serif text-lg font-bold leading-relaxed">
         AK1A Research Lab
         <span className="mt-1 block text-sm font-medium italic text-muted-foreground">
-          Djupare än en blogg. Ärligare än en bank. Snabbare än en utbildning.
+          Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning.
         </span>
       </p>
     </SeoPageShell>

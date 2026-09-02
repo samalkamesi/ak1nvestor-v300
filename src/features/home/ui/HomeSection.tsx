@@ -48,7 +48,7 @@ export function HomeSection() {
               <span className="text-gold"> byggd för privatpersoner.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Djupare än en blogg. Ärligare än en bank. Snabbare än en utbildning.
+              Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button

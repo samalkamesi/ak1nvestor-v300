@@ -70,7 +70,7 @@ export default function OmOssPage() {
               Allt på plattformen är utbildning. Vi ger inga tips om vad du ska köpa.
             </li>
             <li>
-              <strong className="text-foreground">Djupare än en blogg. Ärligare än en bank. Snabbare än en utbildning.</strong>{" "}
+              <strong className="text-foreground">Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning.</strong>{" "}
               Institutionell metodik, förklarad för privatpersoner — utan att dölja
               teoriernas begränsningar.
             </li>

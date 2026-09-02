@@ -103,8 +103,12 @@
 }
 
 .dark {
-  --paper: #0c0b09;
-  --ink: #f5f1e8;
+  /* ── 2026-09-01 MARIN NATT-PALETT (buggfix) ──
+     Botten var varm sepia (#0c0b09-familjen) som lästes cream-aktig bakom
+     marin-paneler; nu äkta marin natt (nära #0A101C) med aning varmare ton
+     för läsbarhet — samma bläck-marin DNA som det ljusa läget. */
+  --paper: #0b1321;            /* marin natt — samma botten som background */
+  --ink: #f5f1e8;              /* cream-text behålls — bankirpapper i mörker */
   --gold: #c9a84c;
   --gold-soft: #d8b85e;
   --bull: #34d399;
@@ -118,36 +122,36 @@
   --koppar-lys: #B07A3C;
   --guld-djup: #c9a84c;            /* läsbart guld mot mörk botten */
 
-  --background: #0c0b09;
+  --background: #0b1321;           /* marin natt — roten till fixen */
   --foreground: #f5f1e8;
-  --card: #15130f;
+  --card: #101b2b;                 /* lager-på-lager marin: kortet lyfter över botten */
   --card-foreground: #f5f1e8;
-  --popover: #15130f;
+  --popover: #101b2b;
   --popover-foreground: #f5f1e8;
   --primary: #f5f1e8;
-  --primary-foreground: #0c0b09;
-  --secondary: #1c1915;
+  --primary-foreground: #0b1321;   /* marin-svart text på cream signaturyta */
+  --secondary: #152236;            /* marin sekundär yta (tidigare varm #1c1915) */
   --secondary-foreground: #f5f1e8;
-  --muted: #1c1915;
-  --muted-foreground: #a89a82;
+  --muted: #152236;
+  --muted-foreground: #9db0c7;     /* marin-silver — varm beige-grå blev disig mot marin */
   --accent: #c9a84c;
-  --accent-foreground: #0c0b09;
+  --accent-foreground: #0b1321;
   --destructive: #f87171;
-  --border: #2a261f;
-  --input: #2a261f;
+  --border: #26364f;               /* marin-kant (tidigare varm #2a261f) */
+  --input: #26364f;
   --ring: #c9a84c;
   --chart-1: #c9a84c;
   --chart-2: #34d399;
   --chart-3: #f87171;
   --chart-4: #94a3b8;
   --chart-5: #d8b85e;
-  --sidebar: #0c0b09;
+  --sidebar: #0b1321;
   --sidebar-foreground: #f5f1e8;
   --sidebar-primary: #c9a84c;
-  --sidebar-primary-foreground: #0c0b09;
-  --sidebar-accent: #1c1915;
+  --sidebar-primary-foreground: #0b1321;
+  --sidebar-accent: #152236;
   --sidebar-accent-foreground: #f5f1e8;
-  --sidebar-border: #2a261f;
+  --sidebar-border: #26364f;
   --sidebar-ring: #c9a84c;
 }
 
@@ -202,6 +206,14 @@
     background: var(--gold, #a8862a);
   }
 
+  /* Mörkt läge: djupare marin scrollbar-skena — nattdjup, ej varm sepia */
+  .dark ::-webkit-scrollbar-track {
+    background: #081020;
+  }
+  .dark * {
+    scrollbar-color: var(--gold-soft, #c9a84c) #081020;
+  }
+
   /* Koppar focus-ring — institutionell precision på interaktiva element */
   a:focus-visible,
   button:focus-visible,
@@ -245,7 +257,9 @@
       radial-gradient(circle at 80% 90%, rgba(168, 134, 42, 0.03), transparent 40%);
   }
   .dark .paper-texture {
+    /* Marin natt-textur: djup marin-vignette + guld-korn — ingen cream får lysa igenom */
     background-image:
+      radial-gradient(ellipse at 50% 50%, transparent 58%, rgba(8, 17, 32, 0.55) 100%),
       radial-gradient(circle at 20% 10%, rgba(201, 168, 76, 0.05), transparent 40%),
       radial-gradient(circle at 80% 90%, rgba(201, 168, 76, 0.04), transparent 40%);
   }
@@ -256,6 +270,9 @@
     color: #EDE6D6;
   }
   .dark .marin-panel {
+    /* Kontrast verifierad 2026-09-01: guld #E8C766 på #16263D ≈ 9.3:1 och på
+       #0E1B2E ≈ 10.5:1 — väl över WCAG AA 4.5:1 (text #EDE6D6 ännu högre).
+       Värden oförändrade; panelen ligger fortfarande ljusare över natt-botten. */
     background: linear-gradient(160deg, var(--djup-marin, #16263D), var(--djup-marin-morkare, #0E1B2E));
     color: #EDE6D6;
   }
@@ -449,6 +466,10 @@ h1, h2, h3, h4, h5, h6 {
 .ak1a-verify-stamp[data-status="MÄTT"] { border-color: var(--gold, #a8862a); }
 .ak1a-verify-stamp[data-status="METODMÅL"] { border-color: var(--bull, #047857); color: var(--bull, #047857); }
 .ak1a-verify-stamp[data-status="PRELIMINÄR"] { border-color: var(--neutral-signal, #64748b); color: var(--neutral-signal, #64748b); }
+.dark .ak1a-verify-stamp {
+  /* Mjukad insetring i natt — cream-ram 0.8 blev ett hårt vitt streck mot marin */
+  box-shadow: 0 0 0 1px rgba(245, 241, 232, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.4);
+}
 
 /* 2. GOLD-DIVIDER — våg-mönster avdelare (representerar AK1TS vågar) */
 .ak1a-gold-divider {
@@ -518,8 +539,9 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 1.5rem;
 }
 .dark .ak1a-paper-card {
-  background: rgba(245,241,232,0.04);
-  border-color: rgba(245,241,232,0.12);
+  /* Marin-svart yta (tidigare cream-tint 245,241,232) — DNA-konsistens i natt */
+  background: rgba(16, 27, 46, 0.55);
+  border-color: rgba(197, 165, 114, 0.22);
 }
 
 /* 6. CONFIDENCE-METER — MÄTT/METODMÅL visuell mätare */
@@ -601,7 +623,8 @@ h1, h2, h3, h4, h5, h6 {
 .ak1a-institutional-frame__corner--bl { bottom: 5px; left: 5px; border-right: none; border-top: none; }
 .ak1a-institutional-frame__corner--br { bottom: 5px; right: 5px; border-left: none; border-top: none; }
 .dark .ak1a-institutional-frame {
-  background: rgba(12,11,9,0.6);
+  /* Marin-svart ram-botten (tidigare varm 12,11,9) — harmoni med natt-paletten */
+  background: rgba(10, 16, 28, 0.65);
   border-color: rgba(197,165,114,0.4);
 }
 
@@ -686,4 +709,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 .dark .btn-guld-signatur {
   color: #081120;
+}
+
+/* ── Gravör-kit i mörkt läge (2026-09-01) — guld-hårlinjer ska glöda mot marin natt ── */
+.dark .btn-marin {
+  /* Bakgrund via variabler = ljusare marin #16263D; guldtext #E8C766 ≈ 9.3:1.
+     Starkare guld-kant för synlighet mot natt-botten. */
+  border-color: rgba(232, 199, 102, 0.5);
+}
+.dark .btn-marin:hover {
+  /* I mörkt läge lyser knappen UPP vid hover (ljusare marin) — inte mörkare */
+  background: #1c3049;
+}
+.dark .gravor-ram {
+  /* Certifikatsram: högre guld-luminans i mörker för synlighet mot marin */
+  border-color: rgba(197, 165, 114, 0.55);
+  box-shadow: inset 0 0 0 1px rgba(232, 199, 102, 0.18);
+}
+.dark .gravor-ram::after {
+  /* Inre hårlinje: aning starkare guld i natt */
+  border-color: rgba(232, 199, 102, 0.26);
+}
+.dark .hjarlinje {
+  /* Guld-hårlinje med högre luminans — gravörglöd mot marin natt */
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(197, 165, 114, 0.65) 20%,
+    rgba(232, 199, 102, 0.9) 50%,
+    rgba(197, 165, 114, 0.65) 80%,
+    transparent 100%
+  );
 }

@@ -33,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f5f1e8" },
-    { media: "(prefers-color-scheme: dark)", color: "#0c0b09" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b1321" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "AK1A Research Lab — Från utbildning till inkomst | Ak1 Apex Nexus",
   description:
-    "Sveriges enda institutionella metodik, byggd för privatpersoner. Djupare än en blogg. Ärligare än en bank. Snabbare än en utbildning. Pedagogisk finansanalys — inte investeringsråd.",
+    "Sveriges enda institutionella metodik, byggd för privatpersoner. Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning. Pedagogisk finansanalys — inte investeringsråd.",
   keywords: [
     "AK1A Research Lab",
     "AKM1",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AK1A Research Lab — Sveriges enda institutionella metodik för privatpersoner",
     description:
-      "Djupare än en blogg. Ärligare än en bank. Snabbare än en utbildning. Håll know-how — redovisa generöst.",
+      "Djupare än en blogg. Tydligare än en bank. Snabbare än en utbildning. Håll know-how — redovisa generöst.",
     url: "https://ak1nvestor.com",
     siteName: "AK1A Research Lab",
     type: "website",

@@ -29,7 +29,7 @@ export function SeoPageShell({
           >
             AK1<span className="text-gold">A</span> Research Lab
           </Link>
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <Huvudmeny />
           </div>
           <Mobilmeny />

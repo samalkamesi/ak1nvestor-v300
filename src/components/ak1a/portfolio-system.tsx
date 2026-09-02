@@ -270,7 +270,7 @@ export function PortfolioSystem() {
               placeholder="din@epost.se"
               onKeyDown={(e) => e.key === "Enter" && hittaMedlem()}
             />
-            <Button className="bg-gold text-background hover:bg-gold/90" onClick={hittaMedlem}>
+            <Button className="btn-marin" onClick={hittaMedlem}>
               Öppna
             </Button>
           </div>
@@ -284,16 +284,18 @@ export function PortfolioSystem() {
     <div className="space-y-8">
       {/* Steg 2: bygg portfölj */}
       <section className="rounded-xl border border-gold/30 bg-card p-6">
+        {/* DNA: rubrikaxel med guld-hårlinje under */}
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="font-serif text-xl font-bold">Bygg din portfölj</h2>
           <span className="text-xs text-muted-foreground">
             Inloggad: {medlem.email}
           </span>
         </div>
+        <div className="hjarlinje mt-2" />
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           <Input value={portfoljNamn} onChange={(e) => setPortfoljNamn(e.target.value)} placeholder="Portföljns namn" />
           <Input value={kassa} onChange={(e) => setKassa(e.target.value)} inputMode="decimal" placeholder="Kassa (valfri, samma enhet)" />
-          <Button className="bg-gold text-background hover:bg-gold/90" onClick={sparaPortfolj} disabled={busy}>
+          <Button className="btn-marin" onClick={sparaPortfolj} disabled={busy}>
             {busy ? "Sparar…" : "Spara & analysera"}
           </Button>
         </div>
@@ -331,6 +333,8 @@ export function PortfolioSystem() {
       {/* Steg 3: rapporten */}
       {rapport && (
         <>
+          {/* DNA: tunn marin topp-rad — resultatpanelen börjar här */}
+          <div className="marin-panel h-1.5 rounded-full" aria-hidden />
           <section className="grid gap-3 sm:grid-cols-4">
             <div className="rounded-xl border border-gold/20 bg-card p-4">
               <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Portföljvärde</p>
@@ -343,7 +347,8 @@ export function PortfolioSystem() {
             </div>
             <div className="rounded-xl border border-gold/20 bg-card p-4">
               <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Största innehav</p>
-              <p className="font-serif text-2xl font-bold text-gold">{rapport.aggregat.koncentration} %</p>
+              {/* DNA: koppar som sparsam data-accent på risktalet */}
+              <p className="font-serif text-2xl font-bold koppar-text">{rapport.aggregat.koncentration} %</p>
             </div>
             <div className="rounded-xl border border-gold/20 bg-card p-4">
               <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Antal innehav</p>
@@ -359,6 +364,7 @@ export function PortfolioSystem() {
           {/* Innehav med analys + vågor */}
           <section>
             <h3 className="font-serif text-xl font-bold">Innehav — analys per aktie</h3>
+            <div className="hjarlinje mt-1.5" />
             <div className="mt-3 space-y-3">
               {rapport.innehav.map((h) => (
                 <div key={h.id} className="rounded-xl border border-gold/20 bg-card p-4">
@@ -415,6 +421,7 @@ export function PortfolioSystem() {
           {/* Vågprofil */}
           <section className="rounded-xl border border-gold/20 bg-card p-5">
             <h3 className="font-serif text-xl font-bold">Vågprofil per horisont</h3>
+            <div className="hjarlinje mt-1.5" />
             <p className="mt-1 text-xs text-muted-foreground">
               Portföljens samlade vågbild (viktad per innehav). Sätt vågor per innehav i kurserna V16+ — idag visas portföljnivå.
             </p>
@@ -445,10 +452,11 @@ export function PortfolioSystem() {
                   AKM1-variablerna som tidsserier — varje fundamentalvariabel har sin egen vågklass per tidshorizont (mikro/kort/medellång/lång/mega).
                 </p>
               </div>
-              <Button onClick={korVagfundament} disabled={vagfundamentBusy} className="bg-gold text-background hover:bg-gold/90">
+              <Button onClick={korVagfundament} disabled={vagfundamentBusy} className="btn-marin">
                 {vagfundamentBusy ? "Analyserar fundamentalvågor…" : "Analysera fundamentalvågor"}
               </Button>
             </div>
+            <div className="hjarlinje mt-3" />
 
             {vagfundamentFel && <p className="mt-3 text-sm text-red-600">{vagfundamentFel}</p>}
 
@@ -504,10 +512,11 @@ export function PortfolioSystem() {
                   5 teorier per aktie → viktad portföljbild.
                 </p>
               </div>
-              <Button onClick={korDjupanalys} disabled={djupBusy} className="bg-gold text-background hover:bg-gold/90">
+              <Button onClick={korDjupanalys} disabled={djupBusy} className="btn-marin">
                 {djupBusy ? "Analyserar (upp till 45 s)…" : "Kör djupanalys"}
               </Button>
             </div>
+            <div className="hjarlinje mt-3" />
 
             {djup?.fel && <p className="mt-3 text-sm text-red-600">{djup.fel}</p>}
 
@@ -667,6 +676,7 @@ export function PortfolioSystem() {
           {/* Tips */}
           <section className="rounded-xl border border-gold/40 bg-paper p-5">
             <h3 className="font-serif text-xl font-bold">Tips & tankar</h3>
+            <div className="hjarlinje mt-1.5" />
             <ul className="mt-3 space-y-2">
               {rapport.tips.map((t, i) => (
                 <li key={i} className="flex gap-2 text-sm leading-relaxed">
@@ -717,6 +727,7 @@ export function PortfolioSystem() {
           {/* Fråga portföljen */}
           <section className="rounded-xl border border-gold/20 bg-card p-5">
             <h3 className="font-serif text-xl font-bold">Fråga portföljen</h3>
+            <div className="hjarlinje mt-1.5" />
             <p className="mt-1 text-xs text-muted-foreground">
               Regelbaserad analys från DINA siffror — svarar på risk, vågor, AKM1, spridning.
             </p>

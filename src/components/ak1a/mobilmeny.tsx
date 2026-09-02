@@ -107,7 +107,7 @@ export function Mobilmeny() {
         onClick={() => setOppad(true)}
         aria-label="Öppna menyn"
         aria-expanded={oppad}
-        className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-md text-foreground transition-colors hover:text-gold md:hidden"
+        className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-md text-foreground transition-colors hover:text-gold lg:hidden"
       >
         <span
           className={`h-0.5 w-5 rounded-full bg-current transition-transform duration-300 ${

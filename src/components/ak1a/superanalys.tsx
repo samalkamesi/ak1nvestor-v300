@@ -244,13 +244,13 @@ export function Superanalys() {
 
   return (
     <div className="space-y-6">
-      {/* Progress-bar i guld */}
+      {/* Progress-bar i guld — stegindikatorn med marin topp-rad (DNA) */}
       <div>
-        <div className="flex items-baseline justify-between text-xs">
+        <div className="marin-panel flex items-baseline justify-between rounded-lg px-4 py-2.5 text-xs">
           <span className="font-bold uppercase tracking-widest text-gold">
             Steg {steg + 1} av {TOTAL_STEG} · {sektion}
           </span>
-          <span className="text-muted-foreground">{Math.round(procent)} %</span>
+          <span className="opacity-75">{Math.round(procent)} %</span>
         </div>
         <div className="mt-2 h-1.5 w-full rounded-full bg-gold/15">
           <div
@@ -323,9 +323,10 @@ export function Superanalys() {
                           {d.datum} · <span className="font-bold text-gold">{pr(t)}/100</span> · {b.etikett}
                         </p>
                       </div>
+                      {/* DNA: primär "Visa"-knapp i marin med guldtext */}
                       <button
                         onClick={() => oppnaSparad(d)}
-                        className="rounded-md border border-gold/40 px-3 py-1.5 text-xs font-bold text-gold hover:bg-gold/10"
+                        className="btn-marin px-3 py-1.5 text-xs"
                       >
                         Visa
                       </button>
@@ -460,7 +461,8 @@ export function Superanalys() {
       {/* ── STEG 23: Granskning ── */}
       {steg === STEG_GRANSKA && (
         <section className="space-y-5">
-          <div className="rounded-xl border border-gold/30 bg-card p-6 sm:p-8">
+          {/* DNA: gravör-ram runt sammanfattningen av poängen */}
+          <div className="gravor-ram rounded-xl border border-gold/30 bg-card p-6 sm:p-8">
             <h2 className="font-serif text-2xl font-bold">Granska dina {pr(total)} poäng</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Sista chansen att justera innan resultatet. Deklarerad viktning: Tillväxt 15 % ·
@@ -642,7 +644,7 @@ export function Superanalys() {
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={spara}
-                className="rounded-lg bg-gold px-5 py-2.5 text-sm font-bold text-primary-foreground hover:opacity-90"
+                className="btn-guld-signatur px-5 py-2.5 text-sm"
               >
                 💾 Spara analysen
               </button>
@@ -687,6 +689,7 @@ export function Superanalys() {
           >
             ← Föregående
           </button>
+          {/* DNA: primär stegknapp i marin — sista "Kör analysen" blir guld-signatur-CTA */}
           <button
             onClick={() => {
               if (timer.current) clearTimeout(timer.current);
@@ -694,7 +697,7 @@ export function Superanalys() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             disabled={!kanFramat}
-            className="rounded-lg bg-gold px-5 py-2 text-sm font-bold text-primary-foreground hover:opacity-90 disabled:opacity-40"
+            className={`${steg === STEG_GRANSKA ? "btn-guld-signatur" : "btn-marin"} px-5 py-2 text-sm disabled:opacity-40`}
           >
             {steg === STEG_GRANSKA ? "Kör analysen →" : "Nästa →"}
           </button>

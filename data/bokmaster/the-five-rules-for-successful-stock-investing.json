@@ -1,0 +1,1250 @@
+{
+  "slug": "the-five-rules-for-successful-stock-investing",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 17,
+  "totalMinutes": 206,
+  "title": "The Five Rules for Successful Stock Investing — Pat Dorsey: KOMPLETT",
+  "summary": "Pat Dorsey är mannen som gjorde Warren Buffetts vallgravs-metafor till ett system. Som chef för Morningstars aktieanalys skrev han 2003 den mest kompletta praktiska handboken i fundamental aktieanalys: gör din hemläxa, hitta bolag med ekonomiska vallgravar, kräv säkerhetsmarginal, håll långsiktigt och handla sällan. Kursen går igenom boken kapitel för kapitel — de fyra moatkällorna (immateriella tillgångar, omställningskostnader, nätverkseffekter, kostnadsfördelar) mappade djupt mot AKM1:s V13–V15, de tre finansiella rapporterna med fullständig svensk-engelsk terminologi, Dorseys varningsflaggor mot V19, femårsanalyser med scenario-tänk, Morningstars diskonterade kassaflödesvärdering steg för steg med räkneexempel i svenska kronor — och den ärliga redovisningen av moat-kontroversen: hur mätbara är vallgravar egentligen, ex ante?",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Skilja en äkta ekonomisk vallgrav (struktur) från en fejkad (produkt, marknadsandel, lysande VD) med Dorseyfyra moatkällor som kartläggning · Mappa Morningstars fyra moatkällor mot AKM1:s V13 Patent, V14 Varumärke och V15 Nätverkseffekter och poängsätta dem på mätbara indikatorer — inte berättelser · Läsa resultaträkning, balansräkning och kassaflödesanalys med fullständig svensk-engelsk terminologi och veta var du gräver · Upptäcka Dorseys varningsflaggor — kundfordringar som växer snabbare än försäljningen, pensionsfusk och serieförvärvare — och koppla dem till V19 Kapitalförbränning och Emission-risk · Bygga en femårsanalys med scenario-tänk och katalysatorer (V16–V18) som direkt input till värderingen · Räkna en Morningstar-DCF steg för steg i svenska kronor — explicit prognos, diskonteringsränta, perpetuitet, kännlighet — och sätta en köppris med säkerhetsmarginal · Tillämpa handelsdisciplinen: köp- och säljregler, horisont och tiominutarestetet · Köra branschgenomgångarna för banker, läkemedel och teknik i kortad men korrekt form",
+  "why": "Detta är moat-arkitekturens ursprungsdokument. Dorsey byggde det ramverk som Morningstar använt för att klassificera tusentals bolag sedan början av 2000-talet — och som AK1A:s hela Moat-kategori (V13–V15) är en direkt arvtagare till. Utan den här boken är V13–V15 ett ifrågasatt påfund; med den är de ett operativsystem med definierade källor, mätvärden och felfall. Boken innehåller dessutom den renaste introduktionen som finns till att läsa de tre finansiella rapporterna som en detektiv — och kursen lägger till det som boken själv inte kan ge: en ärlig redogörelse för moat-kontroversen (hindsight bias, Morningstars egna mediokra fondresultat) och AK1A:s svar på den.",
+  "chapters_list": [
+    "1. Kartan — Dorsey, Morningstar och de fem reglerna",
+    "2. Ekonomiska vallgravar — varför vissa bolag tjänar pengar i decennier",
+    "3. Moatkälla 1: Immateriella tillgångar — varumärke, patent, licenser (V13–V14)",
+    "4. Moatkälla 2: Omställningskostnader — kundens osynliga handbojor (V14, V12)",
+    "5. Moatkälla 3: Nätverkseffekter — värdet som växer med varje användare (V15)",
+    "6. Moatkälla 4: Kostnadsfördelar — process, läge och skala (V07–V08)",
+    "7. Mistaken Moats — fejkade vallgravar och moat-kontroversen",
+    "8. Eroding Moats — när vallgraven börjar fyllas igen",
+    "9. Finding Moats — var vallgravarna samlas (V09)",
+    "10. Resultaträkningen — från omsättning till vinst per aktie",
+    "11. Balansräkningen — soliditet, goodwill och pensionsgömmor",
+    "12. Kassaflödesanalysen — vinst är en åsikt, kassa är ett faktum",
+    "13. Dorseys varningsflaggor — red flags och V19",
+    "14. Femårsanalyser — tillväxt, lönsamhet och scenario-tänk (V16–V18)",
+    "15. Värdera med DCF — Morningstars metod steg för steg i SEK",
+    "16. Osäkerhet och säkerhetsmarginal — köp med rabatt (regel 3)",
+    "17. Handelsdisciplin, tiominutarestetet och branschernas anatomi — boken till AKM1"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 10,
+      "title": "Kartan — Dorsey, Morningstar och de fem reglerna",
+      "intro": "Pat Dorsey var chef för Morningstars aktieanalys när han skrev den här boken 2003 — och han är mannen som förvandlade Warren Buffetts bild av vallgraven från en metafor till ett klassificeringssystem. Först år 2014 lämnade han Morningstar; under hans tid blev moat-begreppet bolagsanalysens ryggrad. Den här kursen går igenom boken kapitel för kapitel, men först kartan: de fem reglerna.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fem reglerna, i bokens egen ordning och i fri översättning. Ett: gör din hemläxa — en aktie är en andel av ett företag, inte en lottsedel, och du måste förstå verksamheten, dess ekonomi och dess konkurrenskraft innan du köper. Två: hitta bolag med ekonomiska vallgravar — strukturella fördelar som skyddar lönsamheten mot konkurrenter under lång tid. Tre: kräv en säkerhetsmarginal — betala tydligt mindre än bolaget är värt, eftersom din värdering alltid är osäker. Fyra: håll långsiktigt — tiden är moat-innehavarens vän och kostnadernas fiende. Fem: handla sällan — varje köp och sälj kostar courtage, spread och skatt, och ju oftare du handlar desto mer betalar du för aktivitet istället för värde."
+        },
+        {
+          "type": "text",
+          "content": "Bokens struktur är pedagogiskt rak. Först moat-läran: fyra kapitel som definierar vad en vallgrav är, vilka fyra källor den kan springa ur, vilka som bara ser ut som vallgravar (Mistaken Moats), hur vallgraveroderar och var de finns. Sedan ekonomi-101: ett kapitel var för resultaträkningen, balansräkningen och kassaflödesanalysen — hur man läser dem och var man gräver. Därefter analysen av bolaget över fem år och värderingen med Morningstars diskonterade kassaflödesmodell, med osäkerhet och säkerhetsmarginal. Sist en lång del med branschgenomgångar — banker, förvaltare och försäkring, läkemedel, konsumenttjänster, mjukvara, hårdvara, media och fler — där Dorsey visar hur moat-logiken ser ut i varje branschs egna nyckeltal."
+        },
+        {
+          "type": "text",
+          "content": "För AK1A är den här boken något så enkelt som V13–V15:s ursprungsdokument. När AKM1 poängsätter Patent och immateriella rättigheter (V13), Varumärke och kundlojalitet (V14) och Nätverkseffekter (V15) är det Dorseys fyra moatkällor som ligger i botten — med ett AK1A-tillägg som kursen återkommer till flera gånger: poängen ska sättas på mätbara indikatorer, inte på berättelser. Och redan här, på kursens första kapitel, ska ärligheten på bordet: moat-begreppet är omstritt. Akademiker ifrågasätter huruvida vallgravar går att identifiera i förväg, och Morningstars egna moat-fonder har periodvis presterat mediokert. Kapitel 7 ägnas åt hela kontroversen — boken förtjänar en kurs som också vågar granska den."
+        },
+        {
+          "type": "insikt",
+          "content": "Dorseys fem regler är en enda regel i fem skepnader: köp bra företag billigt och låt tiden jobba. Allt annat — moat-läran, rapportläsningen, DCF:n — är hantverket för att veta vad bra och billigt betyder. Om du bara minns en sak från kursen: en aktie är en andel av ett företag, och företag skiljer sig åt i hur länge de kan behålla sin lönsamhet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"De fem reglerna mappade mot kursen och AKM1\",\"rader\":[[\"Regel\",\"Innebörd\",\"Kursens kapitel\",\"AKM1-koppling\"],[\"1. Gör din hemläxa\",\"förstå bolaget innan du köper\",\"2–14\",\"hela AKM1 är hemläxan\"],[\"2. Hitta ekonomiska vallgravar\",\"struktur som skyddar lönsamheten\",\"2–9\",\"V13–V15 (Moat) + V09\"],[\"3. Kräv säkerhetsmarginal\",\"betala under innersta värdet\",\"15–16\",\"V04–V06 (värdering)\"],[\"4. Håll långsiktigt\",\"tid är moatens vän\",\"17\",\"tålamodets premie\"],[\"5. Handla sällan\",\"kostnader och skatt äter avkastning\",\"17\",\"V19- och V20-disciplin\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ner dina egna fem regler — inte Dorseys, dina. Vad är din faktiska process idag? Jämför sedan listan med bokens fem. Var matchar de, var skiljer de? Notera särskilt om du har någon regel alls för när du ska SÄLJA — de flesta privatpersoner har regler för köp och inga för utförsäljning. Förvara listan; i kapitel 17 får du Dorseys säljregler att jämföra med."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken av bokens fem regler handlar om att betala mindre än bolaget är värt?",
+          "alternativ": [
+            "Regel 3 — kräv en säkerhetsmarginal",
+            "Regel 1 — gör din hemläxa",
+            "Regel 4 — håll långsiktigt",
+            "Regel 5 — handla sällan"
+          ],
+          "ratt": 0,
+          "tips": "Tre regler handlar om vad du köper, en om vad du betalar, en om hur länge du behåller."
+        },
+        {
+          "q": "Vad är Pat Dorseys historiska betydelse för aktieanalysen?",
+          "alternativ": [
+            "Han grundade världsborsernas första indexfond",
+            "Han gjorde vallgravs-metaforn till ett systematiskt klassificeringsramverk på Morningstar",
+            "Han uppfann P/E-talet",
+            "Han var Warren Buffetts första partner"
+          ],
+          "ratt": 1,
+          "tips": "Metaforen är Buffetts — systemet, med fyra moatkällor och bolagsklassificering, är Dorseys arbete på Morningstar."
+        },
+        {
+          "q": "Vad är kursens förhållningssätt till moat-begreppet?",
+          "alternativ": [
+            "Moats är vetenskapligt bevisat i alla lägen",
+            "Moats är en ren myt som ska avfärdas",
+            "Moats är användbara men omstridda — kontroversen redovisas ärligt i kapitel 7 med AK1A:s svar och medgivanden",
+            "Moats gäller bara för teknikbolag"
+          ],
+          "ratt": 2,
+          "tips": "En kurs som lär ut moat-läran utan kritiken vore propaganda — kapitel 7 gräver i både kritiken och svaret."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Ekonomiska vallgravar — varför vissa bolag tjänar pengar i decennier",
+      "intro": "Kapacitetens grymma logik: i en fri konkurrens pressas avkastningen på kapital ned mot kapitalkostnaden, för varje överavkastning lockar konkurrenter som äter upp den. Dorsey börjar sitt moat-kapitel med denna ekonomiska grund sanning — och definierar sedan vallgraven som det som stoppar den processen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen, i fri översättning från bokens kapitel Economic Moats: en ekonomisk vallgrav är en strukturell egenskap hos verksamheten som gör att bolaget kan generera överavkastning på kapital — det vill säga mer än kapitalet kostar — under lång tid. Ordet strukturell är hela skillnaden. En bra kvartalsiffra, en het produkt eller en duktig VD är inte struktur; det är väder. Vallgraven är det i bolagets arkitektur som hindrer välfinansierade konkurrenter från att ta ifrån det lönsamheten, även när de försöker. Buffetts bild: slottet är verksamheten, vallgraven det som skyddar den — och den bästa investeringen är ett slott med en bred, vattenfylld och krokodilfylld vallgrav."
+        },
+        {
+          "type": "text",
+          "content": "Hur mäter du då om en vallgrav finns? Dorseys svar är brutalt praktiskt: titta på avkastningen på kapital — ROE, och ännu hellre ROIC — över tid. Ett bolag som år efter år ligger tydligt över sitt kapitalkostnadsläge har något strukturellt; ett bolag med vildsint bra år och förlustår har sannolikt bara tur, hävstång eller cykler. Fritt kassaflöde i förhållande till omsättningen är systermåttet: moat-bolag konverterar intäkter till kassa i marginaler som består. I AKM1 är detta V09 ROE som persistensmått och V07–V08 marginalerna som nivåmått — vallgraven visar sig i att båda förblir höga när konjunkturen svänger."
+        },
+        {
+          "type": "text",
+          "content": "Morningstars fyra moatkällor — som hela resten av bokens första del och hela AKM1:s Moat-kategori bygger på — är: immateriella tillgångar (varumärken, patent och regulatoriska licenser), omställningskostnader (det kostar kunden mer att byta än att stanna), nätverkseffekter (produktens värde växer med antalet användare) och kostnadsfördelar (varaktigt lägre kostnad per enhet — genom process, läge eller skala). Notera att Dorsey i senare skrifter kom att sammanfatta tre av dem som okränkbara immateriella tillgångar, men boken arbetar med de fyra källorna och så gör kursen. Kapitel 3–6 går igenom varje källa på djupet med V-mappning."
+        },
+        {
+          "type": "insikt",
+          "content": "Byt fråga. Fråga inte är detta ett bra bolag? — utan: hur länge kan det behålla överavkastningen på kapital, och vad exakt stoppar konkurrenterna från att äta den? Om du inte kan svara på den andra frågan med en struktur — inte en berättelse — har du ingen vallgrav, du har en hypotes."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Morningstars fyra moatkällor — översikt med AKM1-mappning\",\"rader\":[[\"Källa\",\"Kärnmekanism\",\"Mätbar indikator\",\"AKM1\"],[\"Immateriella tillgångar\",\"juridiskt eller psykologiskt skydd — patent, varumärke, licens\",\"prispremium och bruttomarginal över tid; patent- och licenskalender\",\"V13, V14\"],[\"Omställningskostnader\",\"dyrt, krångligt eller riskabelt att byta leverantör\",\"retention och churn; andel återkommande intäkter; prisökningar utan volymfall\",\"V14, V12, V02\"],[\"Nätverkseffekter\",\"värdet växer med antalet användare\",\"användartillväxt, take rate, likviditetsandel på båda sidor\",\"V15\"],[\"Kostnadsfördelar\",\"varaktigt lägre kostnad per enhet via process, läge eller skala\",\"marginalgap mot branschens genomsnitt som består över cykeln\",\"V07, V08\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett bolag du äger eller känner väl. Plocka fram ROE och rörelsemarginal för de senaste tio åren (årssiffror räcker). Har avkastningen legat stabilt över, säg, tolv procent ROE genom både toppar och dalar? Om ja: vilken av de fyra källorna är den troligaste förklaringen — skriv ner ditt svar med en mening. Om nej: du äger möjligen ett cyclical-bolag utan moat, och det är också värt att veta. Spara svaret till kapitel 9 där du får testa det mot branschens moat-täthet."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en ekonomisk vallgrav enligt Dorseys definition?",
+          "alternativ": [
+            "En hög aktiekursutveckling under fem år",
+            "Ett bolag med många anställda",
+            "En stor marknadsandel mätt i procent",
+            "En strukturell egenskap som låter bolaget generera överavkastning på kapital under lång tid"
+          ],
+          "ratt": 3,
+          "tips": "Nyckelordet är strukturell — det som sitter i verksamhetens arkitektur, inte i årets resultat."
+        },
+        {
+          "q": "Varför är avkastning på kapital (ROE/ROIC) över tid Dorseys måttstock för moats?",
+          "alternativ": [
+            "Därför att konkurrens i fria marknader annars pressar avkastningen mot kapitalkostnaden — beständig överavkastning kräver en struktur som stoppar den processen",
+            "Därför att ROE alltid är lätt att räkna ut",
+            "Därför att aktiemarknaden bara belönar högt ROE",
+            "Därför att lågt ROE är förbjudet enligt börsreglerna"
+          ],
+          "ratt": 0,
+          "tips": "Vallgraven definieras av vad den stoppar — och det den stoppar är konkurrensens utjämning av överavkastningar."
+        },
+        {
+          "q": "Vilka är Morningstars fyra moatkällor?",
+          "alternativ": [
+            "Tillväxt, värdering, momentum och kvalitet",
+            "Immateriella tillgångar, omställningskostnader, nätverkseffekter och kostnadsfördelar",
+            "Utdelning, återköp, emissioner och skulder",
+            "Produkt, pris, place och promotion"
+          ],
+          "ratt": 1,
+          "tips": "De fyra svaren mappas i kursen mot V13–V15 samt V07–V08 — memorera dem, de är bokens kärna."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Moatkälla 1: Immateriella tillgångar — varumärke, patent, licenser (V13–V14)",
+      "intro": "Den första moatkällan är skydd som inte syns i balansräkningen men som kostar för konkurrenten att kringgå: varumärken som gör kunder villiga att betala mer, patent som ger tidsbestämt monopol, och regulatoriska licenser där lagen själv begränsar konkurrensen. Här bor V13 och V14.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Varumärke som moat handlar inte om kännedom — det handlar om prisvilja. Dorsey är tydlig: ett berömt varumärke som inte kan ta högre pris än konkurrenternas är ingen vallgrav, bara en dyr marknadsföringsmaskin. Testet är brutalt enkelt: kan bolaget höja priset tio procent utan att kunderna överger det? Om ja har varumärket ekonomisk kraft (V14); om nej är det dekoration. Det mätbara spåret finns i bruttomarginalen (V07): varumärkesmoats visar sig som varaktiga marginalgap mot branschens genomsnitt. Se upp för omvända fallet också — varumärken som sträcker sig nedåt i pris eller licensieras ut i all evighet tunnar sin egen vallgrav."
+        },
+        {
+          "type": "text",
+          "content": "Patent och immateriella rättigheter är juridiska vallgravar — men med inbyggd klocka. Ett läkemedelspatent ger i princip monopol på en molekyl tills det löper ut; den dagen står generika redo och intäkterna kan falla brant. V13 Poängsätts därför aldrig bara på antal patent utan på kalendern: när löper de viktigaste patenten ut och vad finns i pipelinen som ersätter dem (V16)? Breda patentportföljer med olika utlöpandedatum, kombinerat med process-know-how som är svår att reverse-engineera, är starkare än ett enstaka nyckelpatent. Samma logik gäller upphovsrätt och licensiering i media och mjukvara: skyddet är verkligt men tidsbegränsat och piratkopierbart i kanterna."
+        },
+        {
+          "type": "text",
+          "content": "Regulatoriska licenser — den tredje undertypen — är moat genom lag. Bank-, försäkrings- och elnätskoncessioner, frekvenslicenser, ursprungsbeteckningar och kreditvärderingsinstituts regelverksskydd gör att konkurrensen inte får inträda även om den vill. Detta är ofta de mest hållbara immateriella skydden eftersom staten patrullerar vallgraven — men de bär en inbyggd spekulativ risk åt andra hållet: eftersom vallgraven är skapad av politik kan den också ändras av politik. I AKM1 är detta V18 Regulatoriska katalysatorer: en licensmoat måste alltid poängsättas med frågan vad händer om reglerna ändras? kompletterad av V13 för själva skyddets varaktighet."
+        },
+        {
+          "type": "insikt",
+          "content": "Immateriella tillgångar har tre sorters klockor: varumärket slits av inkonsekvens, patentet av kalendern, licensen av politiken. När du poängsätter V13 och V14 ska du därför alltid skriva ner vad som avslutar skyddet — och när. En vallgrav utan slutdatum i din analys är en berättelse, inte en bedömning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Immateriella tillgångar — tre undertyper, tre mätbara test\",\"rader\":[[\"Undertyp\",\"Exempel\",\"Det mätbara testet\",\"AKM1\"],[\"Varumärke med prisvilja\",\"konsumentvarumärken med prispremium\",\"kan bolaget höja pris 10 % utan volymfall? bruttomarginalgap som består över cykeln\",\"V14 + V07\"],[\"Patent och rättigheter\",\"läkemedel, specialkemikalier, medieinnehåll\",\"patentkalender: när löper nyckelpatent ut? bredd i portföljen; pipeline som ersätter\",\"V13 + V16\"],[\"Regulatorisk licens\",\"bank-, elnäts- och frekvenslicenser\",\"hur svårt är det lagligt för en konkurrent att komma in? vilka regeländringar skulle öppna vallgraven?\",\"V13 + V18\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett bolag i din närhet som du tror har varumärkesmoat. Testa det med Dorseys fråga: har bolaget under de senaste tio åren kunnat höja sina priser ungefär i takt med eller över inflationen — utan att volymerna fallit? Plocka fram bruttomarginalen (V07) för treårsperioder och jämför med närmaste konkurrent. Skriv en rad: prisvilja bevisad eller bara berömmelse? Om du hittar ett bolag med starkt varumärke men fallande bruttomarginal har du dessutom hittat en eroderande moat — kapitel 8:s ämne."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Dorseys test på om ett varumärke är en äkta moat?",
+          "alternativ": [
+            "Att varumärket är känt av nästan alla",
+            "Att bolaget lägger mest i branschen på reklam",
+            "Att bolaget kan höja priset cirka tio procent utan att förlora kunder",
+            "Att logotypen är registrerad hos Patent- och registreringsverket"
+          ],
+          "ratt": 2,
+          "tips": "Kändisskap är inte prisvilja — moaten sitter i marginalen, inte i erkännandet."
+        },
+        {
+          "q": "Varför ska en patentmoat (V13) alltid poängsättas med en kalender?",
+          "alternativ": [
+            "Därför att patent bara gäller i ett land i taget",
+            "Därför att boken förbjuder patentinvesteringar",
+            "Därför att patent är gratis att förnya varje år",
+            "Därför att patent ger tidsbestämt skydd — dagen det löper ut kan intäkterna falla brant när generika eller kopior kommer"
+          ],
+          "ratt": 3,
+          "tips": "Patentet är en vallgrav med byggd i nedräkningsklocka — pipelinen (V16) är nästa fråga."
+        },
+        {
+          "q": "Vad är den inbyggda risken i en regulatorisk licens-moat?",
+          "alternativ": [
+            "Att den är skapad av politik och därmed också kan ändras eller tas bort av politik",
+            "Att den bara gäller för utländska bolag",
+            "Att den aldrig ger överavkastning",
+            "Att licenser alltid är gratis"
+          ],
+          "ratt": 0,
+          "tips": "När staten patrullerar vallgraven kan en ny regering flytta på krokodilerna — V18 är variabeln."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Moatkälla 2: Omställningskostnader — kundens osynliga handbojor (V14, V12)",
+      "intro": "Den andra moatkällan är den mest underskattade: det kostar kunden mer att byta än att stanna. Inte i teorin utan i pengar, krångel och risk. Dorsey pekar på att de starkaste omställningskostnaderna finns i företagsmarknaden — där kunden är låst, inte nödvändigtvis kär.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen: när kostnaden — i pengar, arbete, inlärning eller risk — för att lämna en leverantör överstiger nyttan av att byta, blir kunden kvar även när priset höjs och konkurrenterna ropar. Klassiska exempel i bokens anda: bankkonton (krånglet med autogiron och löneutbetalning gör att de flesta stannar i åratal), företagsprogram som ERP- och banksystem (att byta system är miljonprojekt med driftstopp — köparen betalar hellre högre avgift varje år), medicintekniska produkter där kirurger är tränade på en viss produkt, och databearbetning där kundens egna arbetsflöden är byggda runt leverantörens format. Notera att kunden i dessa fall inte är lojal — den är fångad. Dorseys poäng, i fri översättning: de bästa moats gör att kunden stannar av egenintresse, inte av kärlek."
+        },
+        {
+          "type": "text",
+          "content": "Omställningskostnader är också den moatkälla som allra tydligast visar sig i AKM1:s stabilitets- och tillväxtblock. Ett bolag vars kunder är dyra att lämna har låg churn och hög retention — alltså förutsägbara intäkter (V12 Intäktsstabilitet). Har affären prenumerations- eller kontraktsform syns det direkt i ARR (V02) och i net revenue retention: kan bolaget höja priser tolv procent per år på befintliga kunder och ändå behålla dem är omställningskostnaden påvisad i siffror, inte i ord. Det är precis den typen av mätbara indikatorer AK1A poängsätter V14 på — inte på hur varmt kundundersökningen låter."
+        },
+        {
+          "type": "text",
+          "content": "Tänk också på när omställningskostnader sviker. För det första: konsumentmarknaden har svagare handbojor än företagsmarknaden — privatekonomisk hassle är irriterande men överkomligt, och nya plattformar (digital onboarding, kontobytar-tjänster) har systematiskt rivit gamla byråkratiska vallgravar. För det andra: standardisering dödar handbojor — när dataformat och gränssnitt blir öppna blir bytet billigare. För det tredje: om priset stiger tillräckligt högt blir även en enorm omställningskostnad värd att betala — vallgraven skyddar mot konkurrens, inte mot girighet. En ledning som pressar prissättningen för hårt kan tvinga fram bytet den trodde var omöjligt."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga en kund inte vad den tycker om leverantören utan vad som händer dagen den vill byta: hur många timmar, hur många system, hur stor risk? Om svaret får kunden att rygga är omställningskostnaden moaten — och den mäts i retention (V12) och prisökningar utan volymfall (V14), aldrig i nöjdhetsindex."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Omställningskostnader — var de finns och hur de mäts\",\"rader\":[[\"Var handbojorna sitter\",\"Typexempel\",\"Mätbar indikator\",\"AKM1\"],[\"Administrativa system\",\"bank, löne- och ERP-system\",\"kundsammanhängande retention; andel intäkter per kontraktsår\",\"V14, V12\"],[\"Inlärning och träning\",\"medicinteknik, analysinstrument, designverktyg\",\"utbildningskostnad per ny kund; kundens eget bytarbete\",\"V14\"],[\"Data och arbetsflöden\",\"databaser, mjukvaruplattformar, bokföring\",\"exportkostnad och driftstopp vid byte; net revenue retention\",\"V02, V12\"],[\"Prenumerationer och kontrakt\",\"SaaS, serviceavtal, leasing\",\"ARR-andel av intäkterna; prisökningar utan churnökning\",\"V02, V12\"],[\"Svaga zoner\",\"konsumentmarknad, öppna standarder, extrempressade priser\",\"churn som stiger när priset höjs — handbojorna släpper\",\"V12-varning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ring — på riktigt eller i tanken — tre kunder till ett företag du analyserar (eller dig själv som kund till tre tjänster du betalar för). Ställ Dorseys fråga: vad skulle det kosta dig i tid, pengar och risk att byta i morgon? Gradera varje svar från handbojor till öppen dörr. Räkna sedan ut för bolaget: andel intäkter som är återkommande (V02/V12) och hur mycket priserna stegtt senaste året utan att kundantal fallit. Överensstämmer din känsla med siffrorna?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är omställningskostnader ofta starkare på företagsmarknaden än på konsumentmarknaden?",
+          "alternativ": [
+            "Därför att företag alltid är lojala av princip",
+            "Därför att bytet för ett företag innebär stora kostnader, projekt och driftstopp — medan konsumentbytet oftare är bara krångligt",
+            "Därför att konsumenter aldrig byter leverantör",
+            "Därför att företag inte får byta leverantör enligt lag"
+          ],
+          "ratt": 1,
+          "tips": "Handbojans styrka står i proportion till vad bytet kostar — och på företagssidan mäts det i miljoner, inte i kvällar."
+        },
+        {
+          "q": "Vilka AKM1-variabler fångar omställningskostnader mätbart?",
+          "alternativ": [
+            "V04 P/S och V05 P/B",
+            "V16 Produktlanseringar och V18 Regulatoriska katalysatorer",
+            "V14 kundlojalitet tillsammans med V12 intäktsstabilitet och V02 ARR — retention och prisökningar utan volymfall",
+            "V10 Skuldsättningsgrad och V11 Likviditet"
+          ],
+          "ratt": 2,
+          "tips": "Handbojorna syns i att intäkterna stannar och tål prisökningar — det är stabilitet och återkommande intäkter."
+        },
+        {
+          "q": "När sviker omställningskostnadsmoats enligt kapitlet?",
+          "alternativ": [
+            "Aldrig — handbojor är eviga",
+            "När räntan stiger",
+            "Bara under recessioner",
+            "När konsumentplattformar och standardiserade format gör bytet billigare, och när prissättningen pressas så långt att även en stor bytkostnad blir värd att betala"
+          ],
+          "ratt": 3,
+          "tips": "Vallgraven skyddar mot konkurrenter — inte mot standardisering som sänker byggkostnaden eller mot girighet som höjer priset över smärtgränsen."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Moatkälla 3: Nätverkseffekter — värdet som växer med varje användare (V15)",
+      "intro": "Den tredje källan är den yngsta och i digitala erans marknader den mäktigaste: nätverkseffekter. När produktens värde för varje användare ökar med antalet användare skapas en cirkel där vinnaren tenderar att ta nästan allt — inte för att den är bäst, utan för att den är störst.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen: en produkt eller tjänst har en nätverkseffekt när varje ny användare gör tjänsten mer värdefull för de befintliga användarna. Börsen och auktionshuset är de klassiska analoga fallen — ju fler säljare, desto fler köpare, desto bättre priser, desto fler säljare. Kortnätverk (köpare och handlare på varsin sida), marknadsplatser och uppgiftsplattformar följer samma mönster i två sidor. I AKM1 är detta V15 Nätverkseffekter: den av de tre moat-variablerna som har den tydligaste matematiken — värdet växer ungefär med kvadraten på antalet kopplingar, medan kostnaden växer linjärt med användarna."
+        },
+        {
+          "type": "text",
+          "content": "Dorsey skiljer — och kursen med honom — på starka och svaga, breda och smala nätverk. Ett brett nätverk (transaktionsnätverk där alla kan handla med alla) är starkare än ett nätverk som bara gäller i en nisch — men ett dominerande nätverk i en tillräckligt liten damm kan vara en utmärkt moat ändå: störst i sin litenhet slår ofta minst i storheten. Det viktigaste mätbara spåret är dubbelriktat likviditetsoverskott: finns det tillräckligt många på båda sidor (köpare/säljare, utgivare/läsare, förare/passagerare) och växer båda sidor tillsammans? Take rate — provisionen nätverket kan ta ut per transaktion utan att transaktionerna flyr — är den direktesta prismätaren på nätverkets makt."
+        },
+        {
+          "type": "text",
+          "content": "Nätverkseffekter är starka men inte odödliga, och tre svagheter ska du vaka över. Multi-homing: när användare enkelt kan vara aktiva på flera nätverk samtidigt (byta mellan kommunikationsappar, listas på flera plattformar) urholkas exklusiviteten. Teknologiskift: ett nytt paradigm kan bygga ett nytt nätverk på kostnad av det gamla — nätverket är starkt inom sitt skikt, inte mot nya skikt. Och nätverkseffekter med negativ skala: när nätverket blir för stort kan värdet per användare falla (trängsel, spam, otrygghet) — då vänder spiralen. Poängsätt därför V15 på användartillväxt och engagemang per användare i trend, inte på totala användarantal i absolut nivå."
+        },
+        {
+          "type": "insikt",
+          "content": "Nätverkseffekter är den enda moatkälla där storlek i sig skapar strukturen — vinnaren behöver inte vara bäst, bara störst, för att bli svår att rubba. Men exakt därför är V15 den variabel där du måste mäta riktningen (växer nätverket fortfarande på båda sidor?) och aldrig nivån (hur många användare det någonsin varit). Ett nätverk i krympning har kvar sina användarsiffror länge efter att moaten försvann."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Nätverkseffekter — former, mätetal och felfall\",\"rader\":[[\"Form\",\"Typexempel\",\"Mätetal\",\"AKM1\"],[\"Transaktionsnätverk\",\"börser, kortnätverk, betalningar\",\"transaktionsvolym, take rate, andel av branschvolym\",\"V15\"],[\"Tvåsidiga marknadsplatser\",\"auktioner, utgivnings- och uppgiftsplattformar\",\"tillväxt på båda sidor; likviditetstid; spread\",\"V15 + V03\"],[\"Standard- och ekosystemnät\",\"filformat, operativsystem, utvecklarplattformar\",\"andel av formatet/ekosystemet; utvecklar- och komplementtillväxt\",\"V15 + V14\"],[\"Felfall: multi-homing\",\"användaren är enkelt aktiv på flera nätverk\",\"dalmande exklusivitet, prispress på take rate\",\"V15-varning\"],[\"Felfall: negativ skala\",\"trängsel, spam, fallande förtroende vid storlek\",\"engagemang per användare i fallande trend\",\"V15-varning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj ett nätverksbolag du känner (betaltjänst, marknadsplats eller plattform). Mät de tre V15-frågorna: växer båda sidorna av nätverket de senaste fyra kvartalen? Har take rate — eller annan prismätare per transaktion — varit stabil eller stigande? Och sjunker engagemanget per användare (transaktioner, tid, volym per person)? Skriv ett omdöme: äkta och växande nätverkseffekt, mätt nätverk som står still, eller eroderande. Jämför med hur bolaget självt beskriver sin moat i senaste årsredovisning — lika eller olika bild?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en nätverkseffekt?",
+          "alternativ": [
+            "Att produktens värde för varje användare ökar när fler använder den",
+            "Att bolaget har flest anställda i branschen",
+            "Att produkten är billigast på marknaden",
+            "Att bolaget äger sina fabriker"
+          ],
+          "ratt": 0,
+          "tips": "Fråga inte hur bra produkten är utan vad varje ny användare tillför de befintliga."
+        },
+        {
+          "q": "Vad är take rate och varför är det en bra V15-indikator?",
+          "alternativ": [
+            "Bolagets vinstmarginal efter skatt",
+            "Den provision nätverket kan ta ut per transaktion utan att transaktionerna flyr — en direkt prismätare på nätverkets makt",
+            "Antalet nya användare per kvartal",
+            "Aktiens prisutveckling sedan noteringen"
+          ],
+          "ratt": 1,
+          "tips": "Om nätverket kan höja sin andel av transaktionen utan att förlora volym är moaten påvisad i pengar."
+        },
+        {
+          "q": "Vilket är kapitlets huvudvarning vid poängsättning av V15?",
+          "alternativ": [
+            "Nätverkseffekter fungerar bara i detaljhandeln",
+            "Nätverkseffekter är förbjudna inom EU",
+            "Mät riktningen — växer nätverket på båda sidor och per användare — inte de totala användarantal som kan stå kvar länge efter att moaten eroderat",
+            "V15 ska alltid ge maximal poäng"
+          ],
+          "ratt": 2,
+          "tips": "Multi-homing, teknologiskift och negativ skala kan alla urholka nätverket medan användarsiffrorna fortfarande ser imponerande ut."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Moatkälla 4: Kostnadsfördelar — process, läge och skala (V07–V08)",
+      "intro": "Den fjärde moatkällan är den äldsta i ekonomin: att kunna producera billigare än konkurrenterna — varaktigt. Dorsey delar upp kostnadsfördelen i tre ursprung: bättre process, bättre läge och skala. Den som kan leverera samma vara till lägre kostnad kan prisa konkurrenter ur marknaden och behålla normal vinst när andra blöder.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Processfördelar — ett smartare sätt att producera — är den kortlivade av de tre. Ett nytt tillverkningsupplägg, en effektivare logistik eller ett bättre distributionsknep ger en verklig tidsfördel, men utan patentskydd eller hemlig know-how kopieras det förr eller senare. Dorseys varning, i fri översättning: processmoats ska man lita på bara så länge de är svåra att observera eller efterapa. Historiens läxa är entydig — de flesta processexperter förlorade sin fördel när konkurrenterna studerat dem. I AKM1 poängsätts processfördelar därför lågt på V07/V08 om de inte är bevisade mot konkurrenterna under minst en hel cykel."
+        },
+        {
+          "type": "text",
+          "content": "Läge och fysiska tillgångar ger de mest hållbara kostnadsfördelarna — av ett enkelt skäl: de går inte att flytta. Ett grustag, en cementfabrik eller ett rörnät är värdefulla bara inom en viss radie (transportkostnaden är skyddet), och den som äger den bästa fyndigheten, den enda hamnen eller det kortaste rören vinner varje priskrig i sitt område. Detta är Dorseys favoritexempel på moat i råvarintensiva branscher: varan är identisk men kostnaden per ton skiljer sig åt beroende på var man står. För AKM1 blir det mätbara testet igen marginalgapet (V07/V08) — men nu med geometrisk logik: hur stort är avståndet i kostnad per enhet mellan bolaget och branschens marginella producent?"
+        },
+        {
+          "type": "text",
+          "content": "Skalfördelar — det tredje ursprunget — handlar om att sprida fasta kostnader över fler enheter än konkurrenterna. Den största producenten i en bransch med höga fasta kostnader har per definition lägst kostnad per enhet, och kan därför prisa aggressivt i svåra tider och tjäna mer i goda. En viktig Dorsey-nyans är skalans damm: att vara störst i en liten, udda nisch (ett specialkemiskt ämne, en regional marknad) är ofta en starkare moat än att vara liten aktör i en enorm bransch. Också här gäller: skalfördelen är bara verklig om den syns i marginalerna — och om den håller när branschen får överkapacitet. Ett företag som är störst men inte har högst marginal är inte lågkostnadare, bara stort."
+        },
+        {
+          "type": "insikt",
+          "content": "Kostnadsmoats bevisas i dåliga tider. Vem som helst kan visa marginalgap när efterfrågan är stark — frågan är vem som fortfarande tjänar pengar när branschpriset faller till den marginella producentens nivå. Kör därför V07/V08 som tidsserier genom den senaste nedgången: gapet som består där är vallgraven, gapet som försvann var konjunkturen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kostnadsfördelar — tre ursprung och deras hållbarhet\",\"rader\":[[\"Ursprung\",\"Mekanism\",\"Hållbarhet\",\"Mätbart test (AKM1)\"],[\"Process\",\"smartare produktion eller distribution\",\"kort — kopieras utan skydd\",\"marginalgap som består minst en hel cykel (V07/V08)\"],[\"Läge och fysiska tillgångar\",\"transportekonomi skyddar lokal dominans; bästa fyndigheten\",\"mycket hög — går inte att flytta\",\"kostnad per enhet vs branschens marginella producent; marginal genom nedgångar\"],[\"Skala\",\"fasta kostnader sprids på flest enheter\",\"hög men kräver nyans\",\"högst marginaler i branschen även i överkapacitet; storlek i en dam räcker\"],[\"Felfall\",\"störst men inte billigast\",\"—\",\"störst i bransch utan marginalgap = ingen kostnadsmoat, bara volym\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Välj en bransch med råvar- eller transportlogik — grus, cement, stål, shipping eller livsmedel. Plocka fram bruttomarginal (V07) och EBITDA-marginal (V08) för de tre största aktörerna under det senaste nedgångsåret och det senaste toppåret. Vilket bolag behöll det största marginalgapet genom nedgången? Skriv en rad om varför: fyndighet, läge, skala — eller bara turbulens. Det är din första kostnadsmoat-analys på riktigt."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är processfördelar den kortlivade formen av kostnadsmoat?",
+          "alternativ": [
+            "Därför att processer är olagliga att använda",
+            "Därför att de bara fungerar i tjänstesektorn",
+            "Därför att processer alltid är dyra",
+            "Därför att ett smartare produktionssätt utan patent- eller know-how-skydd förr eller senare kopieras av konkurrenterna"
+          ],
+          "ratt": 3,
+          "tips": "Frågan är alltid: vad stoppar en välfinansierad konkurrent från att ta ifrån oss fördelen? För en oskyddad process är svaret ingenting."
+        },
+        {
+          "q": "Varför ger läge och fysiska tillgångar (grustag, rörnät, hamnar) så hållbara kostnadsfördelar?",
+          "alternativ": [
+            "Därför att transportekonomin skyddar dem — konkurrenten kan inte flytta sin fyndighet eller sitt nät till din plats",
+            "Därför att de bara finns i Sverige",
+            "Därför att de är värda mest på börsen",
+            "Därför att staten alltid subventionerar dem"
+          ],
+          "ratt": 0,
+          "tips": "Vallgraven är geografin själv: kostnaden per ton per kilometer är svaret på varför inte alla bygger där du står."
+        },
+        {
+          "q": "Vad menas med skalans damm (big fish in small pond)?",
+          "alternativ": [
+            "Att bolaget odlar fisk som sidoverksamhet",
+            "Att det är bättre att dominera en liten nisch med skalfördelar än att vara liten aktör i en enorm bransch",
+            "Att stora bolag alltid slår små",
+            "Att nischbolag aldrig kan gå med vinst"
+          ],
+          "ratt": 1,
+          "tips": "Skalfördelen är relativ till sin marknad — störst i en tillräckligt liten dam är en verklig moat."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Mistaken Moats — fejkade vallgravar och moat-kontroversen",
+      "intro": "Dorseys kapitel Mistaken Moats är bokens mest värdefulla varning: fyra saker som ser ut som vallgravar men inte är det — fantastiska produkter, stor marknadsandel, lysande ledning och lysande exekvering. Här lägger kursen också hela moat-kontroversen på bordet: akademikernas kritik och Morningstars egna mellantida resultat — och AK1A:s svar med medgivanden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fyra fejk-moats, i bokens ordning. Ett: en fantastisk produkt är ingen moat. En produkt som är bättre än andras lockar kapital och konkurrenter tills dess överlägsenhet är matched eller slagen — utan ett strukturellt skydd (patent, omställningskostnad, nätverk, kostnadsläge) är produkten bara en inbjudan. Två: stor marknadsandel är ingen moat. Andel utan prissättningsskraft eroderar — historien är full av dominanter som tappade allt när fördelen som skapade andelen försvann (bil- och teknikbranscherna fulla av exempel). Tre: en lysande ledning är ingen moat. Chefer byts, kopieras och åldras; en moat måste sitta i strukturen, inte i personen. Fyra: lysande exekvering är ingen moat — effektivitet kan imiteras av varje konkurrent med kapital och vilja. Samma test genom allt: vad stoppar en välfinansierad konkurrent från att ta ifrån oss det här? Svaret måste vara en struktur."
+        },
+        {
+          "type": "text",
+          "content": "Och nu kontroversen, fullt ut. Kritik ett — hindsight bias: när moat-klassificeringar görs på historier om framgångsrika bolag ser vi vallgravar i efterhand, och samma analysmetod missade de dominerande bolag som sedan föll. Moat-etiketter i efterhand är nästan tautologiska — bolaget vann alltså hade det en moat. Det verkliga testet, ex ante — kan en analytiker vid tidpunkten t identifiera vilka bolag som behåller överavkastningen t+10? — är svårare, och akademisk forskning om lönsamhets mean reversion (konkurrens pressar tillbaka överavkastningar mot genomsnittet) visar att den bästa enskilda förutsägaren ofta är enkelt mätbar lönsamhet, inte berättelsen om strukturen. Kritik två — Morningstars egna resultat: bolagets wide-moat-fonder och index har periodvis presterat i nivå med eller under breda index, och Morningstar har genom åren omklassificerat moat-status på bolag — vilket i sig bevisar att bedömningarna revideras, det vill säga att de var osäkra. En ramverk-ägare vars egna produkter inte tydligt slår marknaden ger kritikerna bränsle."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s svar — med medgivanden. Svar ett: V13–V15 poängsätts aldrig på berättelsen utan på mätbara indikatorer — marginalgap mot bransch som består över cykler (V07/V08), retention och prisökningar utan volymfall (V14/V12), patent- och licenskalender (V13), tillväxt och take rate på båda nätverkssidorna (V15). Det gör moat-bedömningen falsifierbar: varje påstående är en tidsserie som kan slås fel, inte en historia som kan berättas om igen. Det är precis vad ex ante-kritiken kräver. Medgivande ett: moat-bedömning förblir delvis hantverk — källklassificeringen (vilken av de fyra?) kräver omdöme, och gränsfall finns. Medgivande två: därför får moat aldrig vara enda köpgrunden — V13–V15 rankar bland bolag som redan passerat pris- och riskfilter (V04–V06, V10, V19), och säkerhetsmarginalen (regel 3) är försäkringen mot hantverksfelet. Kontroversen bemöts alltså inte med bättre berättelser utan med mätbarhet, viktdisciplin och rabatt."
+        },
+        {
+          "type": "insikt",
+          "content": "Fejk-moats testas alla med samma fråga: vad stoppar en välfinansierad konkument från att ta det här ifrån oss? Kan du inte skriva svaret som en struktur — patent, handbojor, nätverk, kostnadsläge — då äger du ingen moat, bara en tillfällig fördel. Och kontroversens läxa: varje moat-påstående du formulerar ska kunna slås fel av en tidsserie — annars är det tro, inte analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fejk-moats — och de mätbara testen som avslöjar dem\",\"rader\":[[\"Fejk-moat\",\"Varför den brinner\",\"Det mätbara testet\"],[\"Fantastisk produkt\",\"kopieras utan strukturellt skydd\",\"har marginalgapet bestått efter att konkurrenter lanserat svar? (V07/V08)\"],[\"Stor marknadsandel\",\"andel utan prissättningsskraft eroderar\",\"kan bolaget höja pris utan volymfall? (V14) — annars är andelen hyrd, inte ägd\"],[\"Lysande ledning\",\"chefer byts, kopieras, åldras\",\"finns fördelen kvar vid ledningsbyte? moat sitter i strukturen, inte personen\"],[\"Lysande exekvering\",\"effektivitet imiteras av kapitalstarka konkurrenter\",\"marginalgap mot liknande exekverare; hållbart läge i kostnad per enhet? (V07/V08)\"],[\"Moat-kontroversen\",\"hindsight bias; ex-ante svårighet; Morningstars mediokra fondperioder\",\"AK1A: V13–V15 på mätbara indikatorer + medgivande: delvis hantverk, därför aldrig enda köpgrund\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en moat-inkvisition på din egen portfölj. För varje innehav: skriv ner vilken moat du tror att bolaget har — och utsätt den sedan för de fyra fejk-testen och en tidsserie: har bruttomarginalen bestått (V07)? Kan bolaget höja priser (V14)? Växer nätverket på båda sidor (V15)? Läste du en struktur eller en berättelse? Var ärlig: hur många av dina innehav har en moat-hypotes du kan falsifiera — och hur många köpte du på känsla? Spara protokollet; det är den svåraste övningen i kursen."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket är Dorseys huvudtest för att skilja en äkta moat från en fejkad?",
+          "alternativ": [
+            "Om aktien stigit mycket är moaten äkta",
+            "Om VD:n är känd är moaten äkta",
+            "Vad stoppar en välfinansierad konkurrent från att ta ifrån oss fördelen? — svaret måste vara en struktur",
+            "Om bolaget haft en stark produkt är moaten bevisad"
+          ],
+          "ratt": 2,
+          "tips": "Produkt, andel, ledning och exekvering brinner alla i samma eld — de saknar strukturellt skydd."
+        },
+        {
+          "q": "Vad innebär kritiken om hindsight bias mot moat-klassificering?",
+          "alternativ": [
+            "Att moat-analytiker fuskar med fakta",
+            "Att alla moats försvinner efter tio år",
+            "Att moats bara finns i USA",
+            "Att vallgravar identifieras i efterhand — bolaget vann alltså hade det en moat — medan den verkliga frågan är om moats kan identifieras i förväg, ex ante"
+          ],
+          "ratt": 3,
+          "tips": "Kritiken gäller inte om vallgravar existerar utan om de går att se innanåt, inte bara bakåt."
+        },
+        {
+          "q": "Hur svarar AK1A på moat-kontroversen?",
+          "alternativ": [
+            "Med att V13–V15 poängsätts på mätbara indikatorer som kan falsifieras — och med medgivandet att moat-bedömning förblir delvis hantverk, därför får moat aldrig vara enda köpgrunden och säkerhetsmarginalen är försäkringen",
+            "Med att moats är vetenskapligt lösta och kritikerna har fel i allt",
+            "Med att moats inte ska användas alls",
+            "Med att bara Morningstars egna klassificeringar ska följas"
+          ],
+          "ratt": 0,
+          "tips": "Svaret är mätbarhet plus ödmjukhet: tidsserier i stället för berättelser, rabatt i stället för visshet."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Eroding Moats — när vallgraven börjar fyllas igen",
+      "intro": "Ingen vallgrav är evig. Dorseys kapitel om eroderande moats handlar om krafterna som fyller vallgraven igen — och om konsten att se det hända i siffrorna innan marknaden prissatt det. För AK1A är detta kapitlet som gör V07, V08, V09 och V12 till ett övervakningssystem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre huvudkrafter eroderar vallgravar. Teknologiska skift: när ett nytt paradigm gör gamla fördelan irrelevanta — det analoga nät som var en moat värd miljarder blev en kostnad när världen digitaliserades; process- och produktmoats är särskilt utsatta eftersom tekniken kan hoppa över dem. Strukturella förändringar i branschen: när kunderna konsolideras (fem stora inköpare i stället för hundra små) växer köparmakten och prispressen — en moat byggd på informationsöverläge mot fragmenterade kunder kan tömmas på några år; samma sak när en bransch går från fragmenterad till koncentrerad konkurrens. Och destruktiv tillväxt — Dorseys kanske mest originella poäng: när bolaget växer utanför sin vallgrav, genom att expadera in i marknader där dess fördel inte gäller, späder det ut sin egen moat. Varumärket som sträcker sig nedåt i pris, nätverket som breddas utanför sin kärna, lågkostnadaren som köper sig in på högkostnadsmarknader — alla gräver de sin egen vallgrav igen, med tillväxt som spade."
+        },
+        {
+          "type": "text",
+          "content": "Hur ser du erosionen innan det är för sent? Svaret är trenden i moatens egna mätetal. Fallande bruttomarginal (V07) i normala tider — inte i kris, i normala tider — är den tidigaste och vanligaste signalen: prissättningsskraften håller på att försvinna. EBITDA-marginal (V08) som pressas medan omsättningen växer betyder att tillväxten köps med rabatter. Stigande churn eller fallande net revenue retention (V12/V02) betyder att handbojorna lossnar. ROE-trend (V09) som bryter nedåt genom en konjunktur betyder att överavkastningen strukturellt krymper. Och priserna: ett bolag som plötsligt inte längre kan höja priser i linje med inflationen — men konkurrenterna kan — har berättat något om sin vallgrav som ingen pressrelease gör."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken blir en vallgravsdashbord per innehav: fyra kvartalsvärden — bruttomarginal, EBITDA-marginal, retention eller churn, och prisutveckling relaterat till konkurrenterna — plus en årlig strukturfråga: har något av de tre erosionsskenarierna (teknologiskift, kundkonsolidering, tillväxt utanför moaten) kommit närmare? Dorseys råd i bokens anda är att moat-tänkandet är en pågående övervakning, inte en engångsklassificering — Morningstar själva omklassificerar bolag löpande. Kursens koppling till kapitel 7:s kontrovers är direkt: eftersom moat-bedömning är delvis hantverk är det systematiska vallgravsdashbordet som förvandlar hantverket till process — du mäter dina egna bedömningars haltid och reviderar när tidsserierna slår dig fel."
+        },
+        {
+          "type": "insikt",
+          "content": "Vallgraven dör sällan med ett dån — den dör i en marginalserie. Fallande bruttomarginal i normala tider, retention som sjunker, priser som inte längre följer inflationen: varje enskild ruta kan förklaras bort, men serien ljuger inte. Övervaka moatens mätetal lika noggrant som du en gång övervägde köpet — erosion är den vanligaste orsaken till att en moat-investerare blir en värdefälla-ägare."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Vallgravsdashbordet — erosionssignaler och deras mätetal\",\"rader\":[[\"Erosionskraft\",\"Tidig signal\",\"AKM1-mätetal\"],[\"Prissättningsskraft försvagas\",\"fallande bruttomarginal i normala tider; priser efter inflationslinjen\",\"V07 (+ V14-test)\"],[\"Handbojor lossnar\",\"stigande churn; fallande net revenue retention\",\"V12, V02\"],[\"Kostnadsläge tappar\",\"EBITDA-marginal pressad medan omsättningen växer\",\"V08\"],[\"Överavkastning krymper\",\"ROE-trend bryter nedåt genom en hel konjunktur\",\"V09\"],[\"Teknologiskift\",\"komplement och standarder flyttar; engagemang per användare faller\",\"V15 + V16-bevakning\"],[\"Destruktiv tillväxt\",\"expansion in i segment utan marginalgap; goodwill växer snabbare än organisk tillväxt\",\"V01-kvalitet + V19\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg vallgravsdashbordet för ett av dina innehav. Plocka fram åtta kvartal av bruttomarginal (V07), EBITDA-marginal (V08) och — om bolaget rapporterar det — retention eller churn (V12/V02). Platta gärna siffrorna i en enkel tabell. Markera varje kvartal grönt, gult eller rött mot trenden. Avsluta med strukturfrågan: har bolaget under perioden expanderat in i en marknad där sin moat inte gäller — och i så fall hur stor andel av vinsten kommer nu från den? Du har just byggt den viktigaste overvakningsrutinen i hela kursen."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar Dorsey med destruktiv tillväxt som erosionskraft?",
+          "alternativ": [
+            "Att bolaget växer för långsamt",
+            "Att bolaget genom att expandera in i marknader där dess moat inte gäller späder ut sin egen vallgrav",
+            "Att bolaget inte växer alls",
+            "Att bolaget betalar för hög utdelning"
+          ],
+          "ratt": 1,
+          "tips": "Tillväxt är inte alltid moatens vän — varumärket som sträcker sig nedåt gräver med tillväxten som spade."
+        },
+        {
+          "q": "Vilken tidiga signal är enligt kapitlet den vanligaste på moat-erosion?",
+          "alternativ": [
+            "Att VD-bytet genomförs",
+            "Att aktien fallit tio procent",
+            "Fallande bruttomarginal i normala tider — prissättningsskraften håller på att försvinna",
+            "Att utdelningen höjs"
+          ],
+          "ratt": 2,
+          "tips": "Marginalen i normala tider — inte i kris — är moatens temperaturmätare."
+        },
+        {
+          "q": "Hur kopplas kapitlet till moat-kontroversen från kapitel 7?",
+          "alternativ": [
+            "Det gör det inte — erosion har inget med kontroversen att göra",
+            "Dashbordet ersätter behovet av säkerhetsmarginal",
+            "Erosion bevisar att moats är omöjliga att använda",
+            "Eftersom moat-bedömning är delvis hantverk är det systematiska vallgravsdashbordet som förvandlar hantverket till process — mätetalen avslöjar när den egna bedömningen håller på att slå fel"
+          ],
+          "ratt": 3,
+          "tips": "Övervakningstidserien är hantverkarets självkontroll — och därför AK1A:s svar på ex-ante-kritiken i praktiken."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Finding Moats — var vallgravarna samlas (V09)",
+      "intro": "Vallgravar är inte jämnt fördelade i ekonomin. Dorseys kapitel Finding Moats kartlägger var moats är vanliga och var de är sällsynta — och ger dig screeningmetoden: leta inte efter berättelser, leta efter beständig överavkastning och läs av strukturen bakom den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Branschernas moat-täthet skiljer sig dramatiskt. Moat-rika områden i bokens genomgång: läkemedel och medicinteknik (patent, omställningskostnader), starka konsumentvarumärken i dagligvaror (prisvilja), förvaltnings- och kapitalförvaltning (nya pengar tillför marginalintäkter till befintlig plattform), börs­och finansiella infrastrukturer samt data- och kreditvärderingstjänster (nätverk och licenser), mjukvaror (omställningskostnader), samt råvaror och byggnadsmaterial med geografiskt skydd (läge). Moat-fattiga områden: flyg, bil- och delkomponenttillverkning, halvledarkomponenter och annan hårdvara utan ekosystem, restauranger och detaljhandel med öppen konkurrens på pris, samt råvaror där produkten är globalt identisk och transportbar (olja, metaller). Mönstret: moats kräver antingen skydd (juridiskt, psykologiskt, strukturellt) eller återkommande intäkter med handbojor — saknas båda konkurreras överavkastningen bort."
+        },
+        {
+          "type": "text",
+          "content": "Screeningen i praktiken — Dorseys ordning: börja med avkastningen, inte med storyn. Filtrera först fram bolag med beständig överavkastning på kapital: ROE över kapitalkostnad (som tumregel tydligt över tolv procent) under en hel cykel, och fritt kassaflöde i förhållande till omsättningen som håller måttet år ut och år in. Det urvalet är din moat-kandidatlista — först då frågar du vilken källa (kapitel 3–6) som förklarar siffrorna, och om förklaringen håller mot fejk-testen (kapitel 7). Omvänt gäller: en lysande berättelse utan överavkastning i siffrorna är inte en moat som ännu inte upptäckts — det är en moat som inte finns. I AKM1 blir detta V09 ROE som primärscreen, kompletterad med V07/V08-marginalernas beständighet och V12-stabilitet."
+        },
+        {
+          "type": "text",
+          "content": "Dorsey understryker också nyansen att vallgraven är en spektrumfråga: Morningstars egen terminologi — ingen smal, bred — fångar att moats kommer i grader. Ett bolag kan ha en smal men real vallgrav (ett bra läge i en liten damm) som räcker för beständig, om än inte spektakulär, överavkastning. För portföljen är det användbart: smala moats till rätt pris (regel 3!) kan vara utmärkta investeringar — breda moats till fel pris är det inte. Moat och värdering är två separata bedömningar som aldrig får blandas ihop; att bolaget är underbart betyder inte att aktien är ett köp. Det är först kapitel 15–16 som får säga något om priset."
+        },
+        {
+          "type": "insikt",
+          "content": "Jaga inte moats i moat-fattiga branscher — och jaga inte berättelser utanför siffrorna. Ordningen är omvänd mot de flestas intuition: först överavkastningen (V09 med V07/V08 som beständighetsbevis), sedan källan, sedan priset. En moat utan överavkastning är en teori; överavkastning utan moat-förklaring är en cykel — du vill äga en struktur som förklarar siffrorna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Branschernas moat-täthet — enligt bokens genomgång\",\"rader\":[[\"Moat-rik bransch\",\"Typisk källa\",\"AKM1-spår\"],[\"Läkemedel och medicinteknik\",\"patent + omställningskostnader\",\"V13, V14, V16\"],[\"Dagligvaror med starka varumärken\",\"prisvilja\",\"V14 + V07\"],[\"Kapitalförvaltning\",\"skalfördelar på plattform; nya medel ökar marginalintäkter\",\"V07, V09\"],[\"Börser, betalningsnät och data-/värdetjänster\",\"nätverk + licens\",\"V15, V13\"],[\"Företagsmjukvara\",\"omställningskostnader, återkommande intäkter\",\"V14, V02, V12\"],[\"Grus, cement, rör och nät\",\"läge och transportekonomi\",\"V07/V08-gap\"],[\"Moat-fattigt: flyg, bilar, komponenter, prisdriven detaljhandel, portabla råvaror\",\"ingen struktur — konkurrens äter avkastningen\",\"V09 under kapitalkostnad cykel efter cykel\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör Dorseys screening på din börs. Filtrera alla bolag på ROE över tolv procent de senaste fem sammanlagda åren (V09) och fritt kassaflöde över fem procent av omsättningen. Sortera listan per bransch. Fråga sedan: vilka branscher dominerar listan — stämmer det med bokens moat-täthet? Ta de tre bolag du inte kan förklara moat-källan till och kör dem genom kapitel 3–6:s frågor. Har du nu hittat en moat-kandidat som marknadens berättelse missat — eller en cykel som snart vänder?"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den korrekta ordningen i Dorseys moat-screening?",
+          "alternativ": [
+            "Beständig överavkastning på kapital först, sedan moat-källan som förklaring, sedan priset",
+            "Berättelse först — hitta spännande bolag, verifiera sedan siffrorna",
+            "Priset först — köp billigt oavsett moat",
+            "Teknisk analys först, moat sedan"
+          ],
+          "ratt": 0,
+          "tips": "Siffrorna före storyn, strukturen före priset — tre separata bedömningar i rätt ordning."
+        },
+        {
+          "q": "Varför listar kapitlet flyg, bilar och prisdriven detaljhandel som moat-fattigt?",
+          "alternativ": [
+            "Därför att branscherna är nya och omogna",
+            "Därför att de saknar struktur — varken juridiskt skydd, handbojor eller nätverk stoppar konkurrensen från att äta överavkastningen",
+            "Därför att de är för lönsamma",
+            "Därför att de är för små för Morningstar"
+          ],
+          "ratt": 1,
+          "tips": "Kapitalismens grind slår hårdast där ingen vallgrav stoppar den — cykel efter cykel."
+        },
+        {
+          "q": "Vad är relationen mellan moat och värdering enligt Dorsey?",
+          "alternativ": [
+            "En bred moat rättfärdigar vilket pris som helst",
+            "Värdering är oviktig om moaten är stark",
+            "Moat och värdering är två separata bedömningar — ett underbart bolag till fel pris är inte ett köp",
+            "Moat beräknas med P/E"
+          ],
+          "ratt": 2,
+          "tips": "Regel 2 (moat) och regel 3 (säkerhetsmarginal) är två regler, inte en — det är kapitel 15–16:s hela poäng."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Resultaträkningen — från omsättning till vinst per aktie",
+      "intro": "Bokens ekonomidel börjar där bolaget börjar: resultaträkningen. Dorsey går igenom varje rad — vad den heter, vad den betyder, var den kan masseras och hur du gräver i den. Kursen lägger till det svenska fackspråket rad för rad, så att du kan läsa både en amerikansk 10-K och en svensk årsredovisning.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Resultaträkningens logik är en trappa. Överst omsättningen (revenue) — allt bolaget sålt under perioden. Dra ifrån kostnad för sålda varor (cost of goods sold, COGS) och du får bruttovinsten (gross profit) — det som blir kvar efter att betala för det sålda; bruttomarginalen är din V07. Dra ifrån försäljnings- och administrationskostnader (SG&A) samt forskning och utveckling (R&D) och avskrivningar (depreciation and amortization) och du står vid rörelseresultatet (operating income, EBIT). Lägg till räntenettot (interest expense minus ränteintäkter), dra av skatten och du har nettoresultatet (net income), som dividerat med antalet utspädda aktier (diluted shares) ger vinst per aktie (EPS). Dorsey går igenom trappan rad för rad — och varnar för varje steg där bokföringskonstnären kan stryka dit."
+        },
+        {
+          "type": "text",
+          "content": "Hur man gräver — tre frågor som Dorsey lär ut. Fråga ett: vad driver tillväxten? Dela upp omsättningstillväxten i volym, pris och förvärv (V01-kvalitet). Organisk tillväxt genom volym eller (moat-bevisat) pris är kvalitet; tillväxt genom förvärv döljer ofta att kärnverksamheten stått stilla — och är förövaren till kapitel 13:s serieförvärvare-flagga. Fråga två: är marginaltrenden äkta? Stigande bruttomarginal (V07) ska gå att koppla till en moat-källa — prisvilja eller kostnadsläge — annars är den cykel, inte struktur. Fråga tre: vad är engångsposter (non-recurring items) och vad är drift? Restruktureringskostnader, kapitalvinster och nedskrivningar kan flyttas runt i trappan; dränera dem och räkna en normaliserad rörelsemarginal (V08) innan du jämför bolag. Jämförelse sker alltid mot bolagets egen historia och branschens — aldrig mot en ensam toppnotering."
+        },
+        {
+          "type": "text",
+          "content": "Tre massagerader att känna igen. Avskrivningar: kortare avskrivningstid på anläggningar höjer kostnaden nu men ger utrymme senare — omvänt ger onaturligt långa avskrivningstider (flygplan, rikstäckande nät) falskt höga resultat år efter år tills dagen kommer. Pensioner: pensionskostnaden beror på antaganden om framtida avkastning — för optimistiska antaganden blåser upp resultatet (mer i kapitel 11 och 13). Aktiebaserad ersättning (stock-based compensation): syns knappt i resultaträkningen men späder ut aktieägarna — kosta upp den genom att alltid läsa utspädd EPS och hålla koll på aktieantalets utveckling (V19/V20-koppling). Resultaträkningen berättar en historia — din uppgift är att höra vad som inte sägs."
+        },
+        {
+          "type": "insikt",
+          "content": "Resultaträkningen är en trappa och varje steg kan strykas dit — men bruttomarginalen är det trappsteg som är svårast att fejka och därför ditt V07-fönster mot moaten. Lär dig läsa omsättningstillväxtens kvalitet (volym? pris? förvärv?) före du trott på någon vinstsiffra — vinsten är en åsikt, intäkternas kvalitet är fakta."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Resultaträkningen — engelska termer med svensk översättning\",\"rader\":[[\"Engelska\",\"Svenska\",\"Notering\"],[\"Revenue / Sales\",\"Omsättning / Intäkter\",\"volym + pris + förvärv = gräv här (V01)\"],[\"Cost of goods sold (COGS)\",\"Kostnad för sålda varor (KSV)\",\"direkt kostnad för det sålda\"],[\"Gross profit / Gross margin\",\"Bruttovinst / Bruttomarginal\",\"V07 — moatens tidigaste spår\"],[\"SG&A\",\"Försäljnings- och administrationskostnader\",\"skala och disciplineskoll\"],[\"R&D\",\"Forskning och utveckling (FoU)\",\"moat-underhåll eller moat-bygge?\"],[\"Depreciation and amortization\",\"Avskrivningar (materiella och immateriella)\",\"antaganden kan massageras\"],[\"Operating income (EBIT)\",\"Rörelseresultat\",\"normalisera engångsposter\"],[\"Interest expense / income\",\"Räntekostnad / ränteintäckt\",\"koppla till V10-belåning\"],[\"Pre-tax income / Net income\",\"Resultat före skatt / Årets resultat\",\"—\"],[\"Diluted EPS\",\"Utspädd vinst per aktie\",\"inkluderar optioner och convertibles — läs alltid denna\"],[\"Non-recurring items\",\"Engångsposter\",\"restruktureringar, kapitalvinster — dränera dem\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Plocka fram senaste årsredovisningen för ett bolag du äger och gå resultattrappan rad för rad: omsättning, bruttovinst (räkna ut bruttomarginalen, V07), SG&A, FoU, rörelseresultat (V08), räntenetto, nettoresultat, utspädd EPS. Besvara sedan de tre grävfrågorna: hur mycket av tillväxten var volym, pris respektive förvärv? Är marginaltrenden kopplad till en moat-källa eller till konjunkturen? Vilka poster är engångs? Avsluta med att normalisera rörelsemarginalen och jämföra med föregående år och närmaste konkurrent."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är bruttomarginalen (V07) trappans mest moat-avslöjande steg?",
+          "alternativ": [
+            "Därför att bokslut inte innehåller den",
+            "Därför att den alltid är högst av alla marginaler",
+            "Därför att den exkluderar skatten",
+            "Därför att den är svårast att massera med bokföringsval och direkt mäter prissättningsskraft mot kostnad — moatens två ytterändar"
+          ],
+          "ratt": 3,
+          "tips": "Före avskrivningsval, före engångsposter — bruttovinsten är vad kunderna faktiskt betalar över det direkta kostnadsläget."
+        },
+        {
+          "q": "Vad menas med att alltid läsa utspädd EPS (diluted EPS)?",
+          "alternativ": [
+            "Att vinsten per aktie räknas inklusive optioner, convertibles och warrant — så att aktieägarutspädning via exempelvis aktiebaserad ersättning syns",
+            "Att man ska gissa nästa års vinst",
+            "Att EPS bara gäller för banker",
+            "Att man ska dividera vinsten med bokvärdet"
+          ],
+          "ratt": 0,
+          "tips": "Aktieantalet är en lika viktig del av EPS som vinsten — utspädd variant räknar med fler aktier."
+        },
+        {
+          "q": "Hur delar du upp omsättningstillväxten i kvalitetsdelar enligt Dorsey?",
+          "alternativ": [
+            "I kvartal och helår",
+            "I volym, pris och förvärv — organisk volym- och pristillväxt är kvalitet, förvärvstillväxt kan dölja stillastående kärna",
+            "I inrikes och utrikes",
+            "I kontanta och fakturerade intäkter"
+          ],
+          "ratt": 1,
+          "tips": "Samma tolv procents tillväxt är två olika bolag beroende på om den köpts eller skapats — V01-kvalitet."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Balansräkningen — soliditet, goodwill och pensionsgömmor",
+      "intro": "Resultaträkningen berättar vad som hände under året; balansräkningen berättar vem bolaget är — vad det äger, vad det är skyldigt och vad som blir över till aktieägarna. Dorsey går igenom rapporten med ett särskilt öga för gömmorna: goodwill, pensioner och den hävstång som kan förvandla en moat till ett drama.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Balansräkningens ekvation är enkel: tillgångar (assets) = skulder (liabilities) + eget kapital (shareholders' equity). Tillgångarna delas i omsättningstillgångar (current assets) — likvida medel (cash), kundfordringar (accounts receivable) och lager (inventory) som rullar inom ett år — och anläggningstillgångar (non-current assets): materiella anläggningstillgångar (property, plant and equipment), immateriella tillgångar och goodwill från förvärv, samt finansiella placeringar. Skulderna delas på samma sätt i kortfristiga (current liabilities — leverantörsskulder, korta lån) och långfristiga (long-term debt, pensionsåtaganden, uppskjuten skatt). Eget kapital är resten — aktiekapital, överkursfond och balanserad vinst (retained earnings). Dorseys första råd: börja med soliditeten — eget kapital i förhållande till balansräkningen — och med skuldbördan, för det är här bolaget antingen sover gott eller lever på lånad tid."
+        },
+        {
+          "type": "text",
+          "content": "Tre grävplatser som Dorsey lyfter fram. Goodwill och immateriella tillgångar: uppkommer när bolaget betalat mer än redovisat värde vid förvärv — i sig inte fel, men goodwill som växer år efter år och utgör en växande andel av tillgångarna är serieförvärvarens spår (kapitel 13), och nedskrivningar av goodwill är det bakåtblickande erkännandet att betalat pris var fel. Pensioner: pensionsåtagandet (pension liability) beror på antaganden — förväntad avkastning på pensionsmedel, diskonteringsränta, longevity — och optimistiska antaganden gör att pensionskostnaden i resultaträkningen kan bli för låg medan skulden i balansräkningen är större än den syns. Jämför bolagets antagande om framtida avkastning med vad en rimlig portfölj faktiskt kan förväntas ge. Och kassa kontra skuld: nettoskulden (skuld minus kassa) i förhållande till EBITDA är den praktiska skuldmätaren (V10) — tumregler i bokens anda är att tydligt under, säg, två till tre EBITDA är hanterbart för ett moat-bolag med stabila kassaflöden, medan över det börjar hävstången äta moatens marginal."
+        },
+        {
+          "type": "text",
+          "content": "Koppla till AKM1:s riskblock. V10 Skuldsättningsgrad är balansräkningens hälsovårdsmätare — räkna den alltid på räntebärande skulder, inte på totala skulder, och ställ den mot kassaflödets stabilitet: samma skuldsättning är ofarlig för ett bolag med förutsägbara intäkter (V12) och livsfarlig för ett cykelbolag. V11 Likviditet (kvickkvoten) fångar den korta utkanten: kan bolaget betala sina kortfristiga åtaganden utan att ta nya lån? Och V19 Kapitalförbränning och Emission-risk läses i balansräkningen som historia: har eget kapital byggts med vinst eller spätts ut med emissioner? Ett bolag vars aktieantal växit kraftigt år efter år har berättat att någon annan än aktieägarna fick betala för tillväxten."
+        },
+        {
+          "type": "insikt",
+          "content": "Balansräkningen är moatens försäkring eller dess bane: en bred vallgrav med netto kassa kan köpa sig igenom nästan vilken storm som helst, en smal vallgrav med hög skuld kan tvingas sälja sin egen moat i det värsta laget av cykeln. Läs soliditet, nettoskuld per EBITDA och goodwill-andel före du tittar på en enda resultatsiffra — det är prioriteringen som överlever kriser."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Balansräkningen — engelska termer med svensk översättning\",\"rader\":[[\"Engelska\",\"Svenska\",\"Notering / AKM1\"],[\"Assets\",\"Tillgångar\",\"—\"],[\"Current assets\",\"Omsättningstillgångar\",\"kassa, fordningar, lager\"],[\"Cash and equivalents\",\"Likvida medel\",\"jämför med skulderna — nettokassa eller nettoskuld?\"],[\"Accounts receivable\",\"Kundfordringar\",\"växer snabbare än försäljningen? flagga (kap 13)\"],[\"Inventory\",\"Lager\",\"växer snabbare än försäljningen? flagga\"],[\"Property, plant and equipment\",\"Materiella anläggningstillgångar\",\"kapitaltäthet och avskrivningsantaganden\"],[\"Goodwill / Intangibles\",\"Goodwill / Immateriella tillgångar\",\"serieförvärvare-spår; andel av tillgångarna\"],[\"Liabilities\",\"Skulder\",\"—\"],[\"Current liabilities\",\"Kortfristiga skulder\",\"V11 kvickkvot\"],[\"Long-term debt\",\"Långfristiga räntebärande skulder\",\"nettoskuld/EBITDA — V10\"],[\"Pension liabilities\",\"Pensionsåtaganden\",\"gransk antagandena!\"],[\"Shareholders' equity\",\"Eget kapital\",\"soliditet; emissionshistoria — V19\"],[\"Retained earnings\",\"Balanserad vinst\",\"vinstbyggt eller utspätt kapital?\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en balansräkningskoll på ett bolag: räkna ut soliditeten (eget kapital / balansräkningens summa), nettoskuld per EBITDA (V10), goodwill som andel av totala tillgångarna och kvickkvoten (V11). Granska sedan pensionsnoten: vilken förväntad avkastning på pensionsmedel använder bolaget — och vad skulle pensionskostnaden bli om antagandet sänktes en procentenhet? Avsluta med frågan: om konjunkturen halverar EBITDA i morgon — överlever bolaget utan att emittera? Skriv ja eller nej med motivering."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger växande goodwill som andel av tillgångarna enligt kapitlet?",
+          "alternativ": [
+            "Att bolaget blivit mer lönsamt organiskt",
+            "Att bolaget minskat sin skuld",
+            "Att bolaget betalat över bokfört värde vid upprepade förvärv — serieförvärvare-spåret, med nedskrivningar som det bakåtblickande erkännandet",
+            "Att utdelningen är tryggad"
+          ],
+          "ratt": 2,
+          "tips": "Goodwill är priset på förväntad framgång — fråga alltid vad som händer med den när förväntningarna infrias sämre."
+        },
+        {
+          "q": "Varför ska man granska pensionsantagandena i en balansräkning?",
+          "alternativ": [
+            "Pensioner är alltid helt ofarliga",
+            "Pensioner påverkar bara offentlig sektor",
+            "Därför att pensioner är skattefria",
+            "Eftersom pensionsåtagandets storlek och pensionskostnaden beror på antaganden — optimistisk förväntad avkastning kan gömma både större skuld och lägre kostnad"
+          ],
+          "ratt": 3,
+          "tips": "Antagandet om framtida avkastning är ett antagande — och antaganden kan ställas till fördel för resultatet."
+        },
+        {
+          "q": "Hur bör skuldsättning bedömas enligt kapitlet?",
+          "alternativ": [
+            "Som netto­skuld i förhållande till EBITDA (V10) — och alltid mot kassaflödets stabilitet: samma belåning är ofarlig vid förutsägbara intäkter och livsfarlig för ett cykelbolag",
+            "All skuld är alltid farlig oavsett verksamhet",
+            "Skuld spelar ingen roll om moaten är bred",
+            "Bara kortfristig skuld behöver granskas"
+          ],
+          "ratt": 0,
+          "tips": "Hävstången ska matchas mot kassaflödets rytm — det är kombinationen skuld och instabilitet som dödar."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Kassaflödesanalysen — vinst är en åsikt, kassa är ett faktum",
+      "intro": "Bokens tredje ekonomi-kapitel handlar om rapporten som är svårast att fejka: kassaflödesanalysen. Dorsey kallar den det viktigaste verktyget för att förstå ett bolag — här syns om resultaträkningens vinst är riktig, om bolaget faktiskt genererar överskott, och om tillväxten kostar mer än den smakar.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kassaflödesanalysen har tre sektioner. Löpande verksamhet (operating activities): kassa från driften — nettoresultat justerat för avskrivningar, förändringar i arbetskapital (working capital: fordringar, lager, leverantörsskulder) och andra icke-kontanta poster. Investeringsverksamheten (investing activities): kapitalutgifter (capital expenditures, capex) och förvärv — pengar som köper framtida intäkter. Finansieringsverksamheten (financing activities): utdelning, återköp, emissioner och nya lån — pengarna mellan bolaget och kapitalmarknaden. Dorseys nyckeltal bildas mellan sektionerna: fritt kassaflöde (free cash flow) = kassaflöde från löpande verksamhet minus capex — det som verkligen blir över till ägarna. Ett moat-bolag känns igen på att FCF i förhållande till omsättningen håller en hög och stabil nivå år efter år."
+        },
+        {
+          "type": "text",
+          "content": "Vinstens sanningshalt testas med en enda division: kassaflöde från löpande verksamhet delat med nettoresultat. Ligger kvoten kring ett eller högre över flera år är vinsten i princip kontant — bolaget tjänar det det säger att det tjänar. Ligger kvoten stadigt under, åtminstone utan tydlig arbetskapitalförklaring (ett växande bolag binder naturligt kassa i fordringar och lager), är vinsten delvis en bokföringsprodukt: intäkter som bokförts men inte inkasserats, kostnader som skjutits framåt. Detta är kapitel 13:s varningsflagga nummer ett — och det mätbara sambandet är precis därför AK1A alltid läser V12 Intäktsstabilitet tillsammans med kassaflödeskvoten: återkommande, inkasserade intäkter är det enda fundament som räknas."
+        },
+        {
+          "type": "text",
+          "content": "Kassaflödesanalysen svarar också på tillväxtens pris. Ett bolag kan växa omsättningen femton procent om året i evighet — men om varje tillväxtkrona kräver mer kapitalutgift än den genererar i driftskassa skapas inget ägarvärde; bolaget är en kassa­maskin upp-och-ner som emitterar eller låner för att växa (V19-varning). Aktiebaserad ersättning (stock-based compensation) syns här med full tydlighet: den adderas tillbaka i löpande verksamhet eftersom den inte är kontant — men utspädningen syns i finansieringsverksamheten och i det växande aktieantalet. Dorseys praktiska råd i bokens anda: följ alltid kapitalutgifter och aktieantal vid sidan av vinsten — de tre tillsammans avslöjar om vinsten blev kassa och om kassan blev din."
+        },
+        {
+          "type": "insikt",
+          "content": "Räknekonsten att minnas: Fritt kassaflöde = kassaflöde från löpande verksamhet − kapitalutgifter. Vinsten kan masseras, marginaler kan målas — men kassa som inte kom in i banken går inte att fejkas i längden. Låt kvoten löpande kassaflöde per nettoresultat vara ditt lögndetektor-test på varje årsredovisning — och FCF per omsättning din moat-kvot."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kassaflödesanalysen — termer, formler och tester\",\"rader\":[[\"Engelska\",\"Svenska\",\"Formel / test\"],[\"Operating cash flow (OCF)\",\"Kassaflöde från löpande verksamhet\",\"resultat + avskrivningar ± arbetskapitalförändring\"],[\"Capital expenditures (capex)\",\"Kapitalutgifter / investeringar i anläggningstillgångar\",\"—\"],[\"Free cash flow (FCF)\",\"Fritt kassaflöde\",\"OCF − capex — ägarnas verkliga överskott\"],[\"Working capital\",\"Arbetskapital / rörelsekapital\",\"kundfordringar + lager − leverantörsskulder\"],[\"OCF / Net income\",\"Löpande kassaflöde / nettoresultat\",\"≈1 eller högre = äkta vinst; stadigt under = varning (kap 13)\"],[\"FCF margin\",\"FCF-marginal\",\"FCF / omsättning — moat-kvot, hög och stabil = struktur\"],[\"Stock-based compensation\",\"Aktiebaserad ersättning\",\"icke-kontant — men utspädar: följ aktieantalet (V19/V20)\"],[\"Financing activities\",\"Finansieringsverksamheten\",\"utdelning, återköp, emissioner — vem som betalat för tillväxten\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Plocka fram fem års kassaflödesanalyser för ett bolag. Räkna årligen: FCF (OCF − capex), FCF-marginal och kvoten OCF/nettoresultat. Platta serien. Svara på tre frågor: är vinsten kontant (kvoten)? är moaten verklig (stabil FCF-marginal)? och vem har finansierat tillväxten — driftens överskott eller finansieringsverksamheten (netto emissioner eller låneökningar)? Om kvoten OCF/nettoresultat legat under noll komma åtta i flera år har du hittat en kandidat för kapitel 13:s varningsflaggor."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur räknas fritt kassaflöde (FCF)?",
+          "alternativ": [
+            "Nettoresultat + utdelning",
+            "Kassaflöde från löpande verksamhet minus kapitalutgifter",
+            "Omsättning minus rörelsekostnader",
+            "Eget kapital minus skulder"
+          ],
+          "ratt": 1,
+          "tips": "Det fria är det som blir över efter att driften fått behålla vad den behöver för att underhålla och växa."
+        },
+        {
+          "q": "Vad betyder det om kvoten löpande kassaflöde per nettoresultat stadigt ligger väl under ett?",
+          "alternativ": [
+            "Att bolaget är extra lönsamt",
+            "Att bolaget betalar för hög utdelning",
+            "Att vinsten delvis är en bokföringsprodukt — intäkter bokförda men inte inkasserade, eller kostnader skjutna framåt — en varningsflagga",
+            "Att räntan är hög"
+          ],
+          "ratt": 2,
+          "tips": "Ett växande bolag binder naturligt kassa i arbetskapital — men en stadigt låg kvot utan den förklaringen är kapitel 13:s område."
+        },
+        {
+          "q": "Varför syns aktiebaserad ersättning (SBC) med full tydlighet just i kassaflödesanalysen?",
+          "alternativ": [
+            "Därför att den är förbjuden",
+            "Därför att den alltid betalas i kontanter",
+            "Därför att den bara finns i banker",
+            "Därför att den läggs tillbaka i löpande verksamhet eftersom den inte är kontant — medan utspädningen syns i det växande aktieantalet och finansieringsverksamheten"
+          ],
+          "ratt": 3,
+          "tips": "Kostnaden är verklig men inte kontant — den betalas av dig som aktieägare genom utspädning. Följ aktieantalet."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Dorseys varningsflaggor — red flags och V19",
+      "intro": "I bokens analysdel ger Dorrey sin lista över varningsflaggor — tecken i rapporterna som ska få dig att backa, ställa frågor eller gå vidare till nästa bolag. De flesta handlar om samma sak: gap mellan den berättade lönsamheten och kassans verklighet. Här möter listan AKM1:s V19 Kapitalförbränning och Emission-risk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Flaggorna, en för en. Kundfordringar som växer snabbare än försäljningen (receivables growing faster than sales): bolaget kan pumpa intäkter genom att släppa in kunder på kredit eller kanalfylla — försäljningen bokförs, kassan kommer aldrig. Lager som växer snabbare än försäljningen: produktionen ligger före efterfrågan — nästa steg är ofta rabatter och nedskrivningar. Serieförvärvare (serial acquirers): bolag som växer genom upprepade förvärv kan dölja att organiska verksamheten stått stilla, samla goodwill som en snöboll och rapportera justerade siffror där varje misstag bärs ut som engångspost — spåret syns i goodwill-andelen och i att förvärvstillväxten betalats med utspäddning eller skuld. Pensionsfusk: för optimistiska antaganden om avkastning på pensionsmedel pressar ned pensionskostnaden och lyfter resultatet, medan den verkliga skulden ligger gömd i balansräkningen. Återkommande engångsposter: om omstruktureringskostnader återkommer år efter år är de inte engångs — de är drift. Klyftan mellan vinst och kassaflöde (kapitel 12:s kvot) är flaggornas gemensamma nämnare. Och den mjuka flaggan som Dorsey också nämner: när finanschefer och revisorer lämnar bolag i otid — lyssna."
+        },
+        {
+          "type": "text",
+          "content": "Kopplingen till V19 Kapitalförbränning och Emission-risk är mekanisk. Bolag som rapporterar vinst men inte genererar kassa förbränner kapital — och kapitalförbränning har bara tre slut: bolaget emitterar (du späds ut), bolaget lånar (V10 stiger), eller bolaget säljer tillgångar (moaten monteras ned). Därför är red flags och V19 i praktiken samma övervakning sedd från två håll: flaggorna är symtomen i bokföringen, kapitalförbränning och utspädning är priset i balansräkningen. I AKM1 poängsätts V19 på det mätbara: fritt kassaflöde i minus år efter år, gränsande till tom kassa, aktieantal som växer, nyemissioner eller riktade emissioner i historiken. Serieförvärvare-flaggan fångas av goodwill-tillväxt mot organisk intäktstillväxt (V01-kvalitet) — växer goodwill femton procent och organiken två procent vet du vad du äger: en förvärvsmaskin, inte en moat."
+        },
+        {
+          "type": "text",
+          "content": "Vad gör du när en flagga hissas? Dorseys praktiska hållning: flaggor är orsaker att gräva djupare, inte automatdomar — men de flyttar bevisbördan. Ett moat-bolag med liten flagga och perfekt förklaring kan överleva granskningen; ett bolag med flera flaggor samtidigt — stigande fordringar, återkommande engångsposter och vinst långt över kassa — ska inte köpas på story, oavsett hur vacker moat-berättelsen är. Kom ihåg kapitel 7: moat-bedömning är delvis hantverk — och varningflaggorna är precis det systematiska motgift som inte kräver hantverkskänsla: de är mekaniska, mätbara och kan räknas av vem som helst. AK1A:s regel: tre samtidiga flaggor = ingen investering oavsett övriga poäng; en flagga = skriftlig förklaring i analysen innan köp."
+        },
+        {
+          "type": "insikt",
+          "content": "Alla flaggor vajar i samma blåst: gapet mellan berättad lönsamhet och kassans verklighet. Kundfordringar, lager, goodwill, pensioner, engångsposter — var och en kan förklaras bort en gång, men tillsammans är de en rapportkultur. Och kom ihåg mekaniken: rapporterad vinst utan kassa slutar alltid i emission, skuld eller nedmonterad moat — det är V19:s hela budskap."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Dorseys varningsflaggor — vad de döljer och var du hittar dem\",\"rader\":[[\"Flagga\",\"Vad den kan dölja\",\"Var du hittar den\",\"AKM1\"],[\"Kundfordringar växer snabbare än försäljningen\",\"kreditpumpning, canalfyllning — intäkter utan kassa\",\"not kundfordringar vs omsättningstillväxt\",\"V12, V19\"],[\"Lager växer snabbare än försäljningen\",\"överproduktion — kommande rabatter och nedskrivningar\",\"not lager vs omsättningstillväxt\",\"V12\"],[\"Serieförvärvare\",\"organisk stillastående, goodwill-snöboll, engångspost-kultur\",\"goodwill-tillväxt vs organisk tillväxt (V01-kvalitet)\",\"V19, V01\"],[\"Pensionsfusk\",\"för låg pensionskostnad, för liten synlig skuld\",\"antaganden i pensionsnoten\",\"V18-bevakning\"],[\"Återkommande engångsposter\",\"kostnader förpackade som undantag\",\"not engångsposter, flera år i rad\",\"V08-normalisering\"],[\"Vinst utan kassa\",\"bokföringsvinst utan kontanter\",\"OCF / nettoresultat-kvoten (kap 12)\",\"V19\"],[\"CFO eller revisor lämnar\",\"rapportkulturen ifrågasatt internt\",\"nyhetsflödet, styrelseprotokoll\",\"mjuk flagga\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör flaggjakt på tre bolag i din bevakningslista. För varje bolag: räkna kundfordringarnas tillväxt mot försäljningens, lagrets mot samma, goodwill-tillväxten mot organisk intäktstillväxt, OCF/nettoresultat-kvoten för fem år, och leta i noterna efter pensionsantaganden och återkommande engångsposter. Ge varje bolag en flaggpoäng enligt AK1A-regeln: tre flaggor = avskrivet, en flagga = skriftlig förklaring krävs. Hur många överlever? Jämför med hur många du hade köpt innan övningen — skillnaden är utbildning."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är kundfordringar som växer snabbare än försäljningen en varningsflagga?",
+          "alternativ": [
+            "Därför att det kan betyda att intäkter bokförts utan att kassan kommit — kreditpumpning eller canalfyllning",
+            "Därför att fordringar alltid är farliga",
+            "Därför att kunderna betalar för tidigt",
+            "Därför att bolaget har för få kunder"
+          ],
+          "ratt": 0,
+          "tips": "Försäljningen kan bokföras vid leverans — kassan kommer först när fakturan betalas. Gapet mellan dem är berättelsen."
+        },
+        {
+          "q": "Hur kopplas red flags till V19 Kapitalförbränning och Emission-risk?",
+          "alternativ": [
+            "De har ingen koppling — flaggor gäller bara bokslut",
+            "Flaggorna är symtomen i bokföringen; kapitalförbränning och utspädning är priset — rapporterad vinst utan kassa slutar alltid i emission, skuld eller nedmonterad moat",
+            "V19 används bara för banker",
+            "Flaggor och V19 är samma variabel"
+          ],
+          "ratt": 1,
+          "tips": "Vinst utan kassa har tre möjliga slut — och ingen av dem gynnar dig som redan ägare."
+        },
+        {
+          "q": "Vad är AK1A:s regel när flera flaggor hissas samtidigt?",
+          "alternativ": [
+            "Köp — flaggor betyder att aktien är billig",
+            "Vänta alltid exakt ett år",
+            "Tre samtidiga flaggor = ingen investering oavsett övriga poäng; en flagga = skriftlig förklaring i analysen innan köp",
+            "Fråga bolagets investeraransvarige och lita på svaret"
+          ],
+          "ratt": 2,
+          "tips": "Flaggor flyttar bevisbördan — moat-berättelsen ska överleva granskningen, inte ersätta den."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Femårsanalyser — tillväxt, lönsamhet och scenario-tänk (V16–V18)",
+      "intro": "Bokens tredje regel-del: analysera bolaget över fem år — inte bakåt, framåt. Hur snabbt kan det växa, varifrån kommer tillväxten, vartåt går marginalerna — och vad kan hända som gör att allt slår fel? Det är här femårsprognosen byggs som sen blir input till DCF:n i nästa kapitel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tillväxtens kvalitetsstege. Dorsey skiljer på varifrån tillväxten kommer, och rankingen är lika enkel som underskattad: bäst är organisk volymtillväxt (fler kunder, mer sålt per kund) — den bygger på verklig efterfrågan och förstärks av moats; näst är prishöjningar (prisvilja är moat-bevisat — kapitel 3–4); sedan nya marknader och produkter — kraftfulla men osäkra; och sämst av allt: förvärv — det är andras tillväxt, köpt till fullt pris, och historien visar att serieförvärv skapar mindre värde än marknaden tror. Fråga för varje bolag: hur mycket av de kommande fem årens tillväxt är volym, hur mycket pris, hur mycket förvärv? I AKM1 är detta V01 Försäljningstillväxt med kvalitetstämpel — samma tolv procent är olika bra beroende på varifrån den kommer."
+        },
+        {
+          "type": "text",
+          "content": "Lönsamhetens motstånd: hållbar tillväxt utan kapitaltillskott har en hård gräns — den sanna tillväxttakten är ungefär avkastningen på eget kapital multiplicerat med andelen vinster som behålls i bolaget (retention). Ett bolag med tjugo procent ROE som behåller hälften av vinsten kan växa sitt eget kapital — och i sträck vinster — med ungefär tio procent om året utan att emittera; vill det växa snabbare måste det låna eller be aktieägarna om mer (V19). Därför är kombinationen hög ROE (V09) och lågt kapitalbehov moatens ekonomiska signatur — och bristen på den kombinationen den säkraste indikatorn på att femårsprognosen med elva procents tillväxt kräver emissioner. Marginalerna (V07/V08) prognostiseras inte isolerat: de är en funktion av moatens riktning — växer gapet mot konkurrenterna eller krymper det (kapitel 8)?"
+        },
+        {
+          "type": "text",
+          "content": "Scenario-tänket och katalysatorerna. En femårsprognos är inte en siffra — det är tre: optimism, bas och pessimism, där skillnaden mellan dem mäter hur mycket som måste gå rätt. Katalysatorerna gör scenarierna konkreta och är i AKM1 tre variabler: V16 Produktlanseringar — pipelinen som ska förnya intäkterna (för läkemedel hela affären, kapitel 17); V17 Avtal och partnerskap — orderstock, ramavtal och distribution som gör framtida intäkter synliga; V18 Regulatoriska katalysatorer — godkännanden, patentutfall, regeländringar som kan slå åt båda hållen. Bygg matrisen: varje katalysator skrivs med sannolikhet, tidpunkt och effekten på intäkt och marginal i varje scenario. Omgångens poäng, i bokens anda: om ditt basfall kräver att allt går rätt har du inte ett basfall — du har ett optimistfall med fel etikett, och säkerhetsmarginalen (regel 3) är enda skyddet."
+        },
+        {
+          "type": "insikt",
+          "content": "Sann tillväxttakt = ROE × andel behållen vinst — ekvationen som avgör om femårsdrömmen betalas av driften eller av dig. Och varje femårsprognos som inte innehåller ett pessimismsscenario med katalysatorer (V16–V18) är inte en analys utan en önskan. Tre scenarier, katalysatorer med sannolikhet — det är minsta acceptabla underlaget för DCF:n i nästa kapitel."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Femårsanalysens byggblock\",\"rader\":[[\"Block\",\"Fråga\",\"Mätbarhet\",\"AKM1\"],[\"Tillväxtkälla\",\"volym, pris, ny marknad eller förvärv?\",\"bryt ner prognosen i delar\",\"V01 (+ V02 för ARR-bolag)\"],[\"Hållbar takten\",\"ROE × behållen vinst — kan driften finansiera tillväxten?\",\"räkna ekvationen\",\"V09 + V19\"],[\"Marginalban\",\"vidgas eller krymper moat-gapet?\",\"V07/V08-trend mot konkurrenterna\",\"V07, V08\"],[\"Katalysatorer\",\"vad måste hända — och vad kan gå fel?\",\"sannolikhet × verkan per katalysator\",\"V16, V17, V18\"],[\"Scenarier\",\"optimism, bas, pessimism\",\"tre FCF-banor till DCF\",\"input till kap 15\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg en femårsanalys för ett bolag du följt länge. Steg ett: skriv tillväxtprognosen per källa (volym/procent, pris/procent, förvärv/procent). Steg två: räkna sann tillväxttakt (ROE × retention) — kan bolaget växa som du tror utan emissioner? Steg tre: lista katalysatorerna (V16 lanseringar, V17 avtal, V18 regulatorik) med sannolikhet och tidpunkt. Steg fyra: bygg tre FCF-scenarier för fem år framåt — optimism, bas, pessimism. Spara tabellen; den är direktinput till DCF-övningen i kapitel 15."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur rankar Dorsey tillväxtens källor efter kvalitet?",
+          "alternativ": [
+            "Förvärv först — köpt tillväxt är säkrast",
+            "Prishöjningar är alltid farliga",
+            "Alla tillväxtkällor är likvärdiga",
+            "Organisk volymtillväxt och prishöjningar högst; nya marknader osäkrare; förvärv sämst — andras tillväxt köpt till fullt pris"
+          ],
+          "ratt": 3,
+          "tips": "Fråga vem som betalade för tillväxten och hur säker den är — organiska volym och moat-bevisat pris vinner."
+        },
+        {
+          "q": "Vad är sann tillväxttakt (sustainable growth rate)?",
+          "alternativ": [
+            "Ungefär ROE multiplicerat med andelen vinst som behålls i bolaget — takten för tillväxt utan nytt kapital",
+            "Analystkonsensus för nästa år",
+            "Omsättningstillväxten senaste fem åren",
+            "Utdelningsstillväxten"
+          ],
+          "ratt": 0,
+          "tips": "Driften kan återinvestera sina egna vinster — ekvationen säger hur långt de räcker."
+        },
+        {
+          "q": "Vad är poängen med tre scenarier och katalysatorer (V16–V18) i femårsanalyser?",
+          "alternativ": [
+            "Att förlänga analysen så den ser seriös ut",
+            "Att synliggöra vad som måste gå rätt — om basfallet kräver att allt lyckas är det ett optimistfall med fel etikett, och osäkerheten ska prissättas via säkerhetsmarginalen",
+            "Att slippa göra en DCF",
+            "Att alla tre scenarierna ska ge samma svar"
+          ],
+          "ratt": 1,
+          "tips": "Skillnaden mellan scenario fallen är måttet på risken — och den skillnaden bärs fram till värderingen."
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 16,
+      "title": "Värdera med DCF — Morningstars metod steg för steg i SEK",
+      "intro": "Bokens värderingskapitel: en akties innersta värde är summan av allt fritt kassaflöde bolaget kommer generera, diskonterat till idag. Morningstars DCF-modell är inget mysterium — den är fem steg och fyra rader matematik. Här körs hela exemplet i svenska kronor, med kännlighetstabell och med den viktigaste varningen av alla: perpetuitetens dominans.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Metoden i fem steg. Ett: prognosticera det fria kassaflödet (FCF = kassaflöde från löpande verksamhet minus kapitalutgifter) för de kommande fem åren — med tillväxttakt som falnar mot det rimliga långsiktiga (kapitel 14:s scenarier är input). Två: välj diskonteringsränta — kostnaden för eget kapital. Boken arbetar med förenklade riskklasser snarare än beta-formler: ett stabilt moat-bolag diskonteringsränta kring nio till tio procent, ett normalbolag kring tio till elva, ett osäkert cykel- eller utvecklingsbolag betydligt högre. Tre: räkna slutvärdet (perpetuiteten) — FCF det sista prognosåret växer för all framtid med en försiktig g, kring två till tre procent (ungefär nominell BNP-tillväxt), kapitaliserad med (ränta minus g). Fyra: diskontera allt — prognosåren och slutvärdet — till idag och summera: det är aktiens innersta värde. Fem: jämför med kursen och kräv rabatt (regel 3, kapitel 16). Formeln för slutvärdet: V = FCF × (1+g) / (r − g)."
+        },
+        {
+          "type": "text",
+          "content": "Exemplet: Må Industri AB (fiktivt moat-bolag). Antaganden: årets FCF är 1 000 miljoner kronor. Femårsprognosen från kapitel 14:s basfall: tillväxt 12, 11, 10, 9 och 8 procent (falnande — för att ärligt erkänna att tillväxt sällan är evig). Diskonteringsränta 9,5 procent (stabilt moat-bolag, låg skuld). Perpetuitetstillväxt g = 3 procent. Räkningen: FCF år 1–5 blir 1 120,0 / 1 243,2 / 1 367,5 / 1 490,6 / 1 609,9 miljoner. Diskonterade till idag vid 9,5 procent: 1 022,8 + 1 036,8 + 1 041,6 + 1 036,7 + 1 022,6 = 5 160,6 miljoner. Slutvärdet: 1 609,9 × 1,03 / (0,095 − 0,03) = 1 658,2 / 0,065 = 25 510 miljoner år fem — diskonterat till idag: 25 510 / 1,095^5 = 16 206 miljoner. Totalt innerst värde: 5 161 + 16 206 = 21 367 miljoner kronor. Med 1 000 miljoner aktier: 21,4 kronor per aktie. Köpmålet enligt regel 3 med trettio procents säkerhetsmarginal: under cirka 15 kronor."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"DCF-exempel Må Industri AB — basfallet i miljoner kronor\",\"rader\":[[\"År\",\"Tillväxt\",\"FCF\",\"Disk.faktor 9,5 %\",\"Nuvärde\"],[\"1\",\"12 %\",\"1 120,0\",\"0,913\",\"1 022,8\"],[\"2\",\"11 %\",\"1 243,2\",\"0,834\",\"1 036,8\"],[\"3\",\"10 %\",\"1 367,5\",\"0,762\",\"1 041,6\"],[\"4\",\"9 %\",\"1 490,6\",\"0,696\",\"1 036,7\"],[\"5\",\"8 %\",\"1 609,9\",\"0,635\",\"1 022,6\"],[\"Summa prognosår\",\"—\",\"—\",\"—\",\"5 160,6\"],[\"Slutvärde (perpetuitet)\",\"g = 3 %\",\"1 609,9 × 1,03 / (0,095 − 0,03) = 25 510\",\"0,635\",\"16 206\"],[\"Innersta värde totalt\",\"—\",\"—\",\"—\",\"21 367\"],[\"Per aktie (1 000 M aktier)\",\"—\",\"—\",\"—\",\"21,4 kr\"],[\"Köpmål 30 % rabatt\",\"—\",\"—\",\"—\",\"under cirka 15 kr\"]]}"
+        },
+        {
+          "type": "text",
+          "content": "Kännlighetstabellen — den minst gimmickfria delen av hela värderingskonsten. Hela DCF:ens resultat ryms i tre antaganden: tillväxt, diskonteringsränta och perpetuitets-g. Räkna alltid om med rimliga variationer. För Må Industri: höjs diskonteringsräntan från 9,5 till 11 procent faller värdet till cirka 17,3 kronor per aktie (minus nitton procent); sänks perpetuitets-g från 3 till 2 procent faller det till cirka 19,1 kronor (minus elva). Två enskilda procents förändringar i antaganden flyttar alltså köpmålet med flera kronor — det är inte ett argument mot DCF, det är argumentet FÖR säkerhetsmarginal (regel 3). Notera också den viktigaste insikten: slutvärdet utgör 16 206 av 21 367 — över tre fjärdedelar av värdet ligger bortom prognoshorisonten. All DCF-konst handlar därför om att vara ödmjuk inför perpetuiteten: håll g lågt, välj r ärligt och låt tillväxten falna."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kännlighet — innersta värde per aktie (kr) vid olika antaganden\",\"rader\":[[\"Scenario\",\"Ändring\",\"Värde/aktie\",\"Effekt\"],[\"Bas\",\"r 9,5 %, g 3 %\",\"21,4\",\"—\"],[\"Högre ränta\",\"r 11 %\",\"17,3\",\"−19 %\"],[\"Lägre perpetuitet\",\"g 2 %\",\"19,1\",\"−11 %\"],[\"Inlärning\",\"—\",\"—\",\"två antagningsprocent = flera kronor i köpmål\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Tre regler för ärlig DCF: låt tillväxten falna (ingen elva procents växtare i evighet), håll perpetuitets-g vid två till tre procent (BNP-takt, inte bolagets drömtakt) — och kom ihåg att över tre fjärdedelar av värdet ligger i slutvärdet, så precisionen i år ett är brus. DCF:en ger dig inte sanningen om värdet — den ger dig en disciplinerad modell av dina antaganden, och därför ett ärligt köpmål när du kräver rabatt mot det."
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör DCF:n själv. Ta femårsprognosen från kapitel 14:s utmaning (tre scenarier) och räkna basfallet: FCF nu, fem falande tillväxtår, diskonteringsränta efter riskklass (9–15 procent), perpetuitet med g på 2–3 procent. Räkna också optimism- och pessimistfallet och notera hur mycket det innersta värdet skiljer sig mellan dem — det är bolagets osäkerhetsgrad, kapitel 16:s ämne. Jämför sedan med dagens kurs: hur många procent rabatt eller påslag handlas aktien till mot ditt basfall? Skriv ner både värdet och osäkerheten."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken formel används för slutvärdet (perpetuiteten) i Morningstars DCF?",
+          "alternativ": [
+            "Omsättning × marginal",
+            "FCF × P/E",
+            "FCF × (1+g) / (r − g)",
+            "Eget kapital + skulder"
+          ],
+          "ratt": 2,
+          "tips": "Slutvärdet är en evighetsannuitet av sista årets kassaflöde, växande med g, avkastningskrav r — och g måste alltid vara mindre än r."
+        },
+        {
+          "q": "I exemplet Må Industri — vad blev det innersta värdet per aktie med 1 000 miljoner aktier?",
+          "alternativ": [
+            "Cirka 5,2 kronor — enbart prognosårens nuvärde",
+            "Cirka 100 kronor",
+            "Cirka 25,5 kronor — slutvärdet före diskontering",
+            "Cirka 21,4 kronor — prognosåren plus diskonterat slutvärde, sammanlagt 21 367 miljoner"
+          ],
+          "ratt": 3,
+          "tips": "Prognosåren bidrog 5 161 miljoner och slutvärdet 16 206 — totalt 21 367 miljoner på 1 000 miljoner aktier."
+        },
+        {
+          "q": "Vad är den viktigaste varningen om DCF som modell?",
+          "alternativ": [
+            "Att över tre fjärdedelar av värdet vanligtvis ligger i slutvärdet — små ändringar i diskonteringsränta och g flyttar hela köpmålet, därför krävs säkerhetsmarginal",
+            "Att den bara fungerar för banker",
+            "Att den kräver betalt program",
+            "Att den inte får användas i Sverige"
+          ],
+          "ratt": 0,
+          "tips": "I exemplet flyttade en och en halv procents ränta värdet nitton procent — det är inte brist, det är modellens natur."
+        }
+      ]
+    },
+    {
+      "num": 16,
+      "minutes": 12,
+      "title": "Osäkerhet och säkerhetsmarginal — köp med rabatt (regel 3)",
+      "intro": "DCF:n ger en siffra — men Dorsey insisterar på att siffran aldrig är punkt utan intervall. Det är här Morningstars tänkande om fair value-ossäkerhet kommer in: ju bredare spannet av rimliga utfall, desto större rabatt måste du kräva. Säkerhetsmarginalen är inte vidskepelse — den är matematiskt svar på dina egna prognosfel.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Logiken är rak: eftersom varje värdering vilar på antaganden om en framtid ingen sett, är det ärliga svaret på vad är bolaget värt? ett intervall, inte en siffra. Bredden på intervallet drivs av förutsägbarheten i kassaflödet. Ett varumärkesstarkt dagligvarubolag eller ett reglerat elnät har trånga intervall — intäkterna varken exploderar eller försvinner. Ett cykelbolag, ett råvarubolag eller ett bolag vars hela framtid hänger på en produktgodkännelse har vida intervall — samma bolag kan vara värt det dubbla eller hälften beroende på utfallet. I Morningstars terminologi kallas detta fair value-uncertainty — graden av osäkerhet i det rättvisa värdet — och det är en dimension vid sidan av moat: ett smalmoat-bolag kan ha låg osäkerhet och ett bredmoat-bolag hög."
+        },
+        {
+          "type": "text",
+          "content": "Säkerhetsmarginalen är verktyget som förvandlar osäkerhet till köppris. Principen, i bokens anda: kräv en rabatt mot det innersta värdet som växer med osäkerheten. AK1A:s operationalisering av Dorseys princip: låg osäkerhet — stabila, förutsägbara kassaflöden — kräver cirka tio till femton procents rabatt; medel — de flesta moat-bolag — cirka tjugo till trettio; hög — cykel, råvara, pipeline-beroende — fyrtio procents rabatt eller mer, eller inget köp alls. Tillämpat på kapitel 15:s exempel: Må Industris basfall 21,4 kronor ger köpmål 15 kronor vid medel osäkerhet (trettio procent rabatt), men endast cirka 12,8 kronor om kassaflödet bedöms ha hög osäkerhet. Samma bolag, samma DCF — olika köppris beroende på hur säker du kan vara. Det är den mest förbisedda skillnaden mellan amatör och proffs: amatören har ett målpris, proffs har ett målpris med felmarginal."
+        },
+        {
+          "type": "text",
+          "content": "Och här knyts kontroversen från kapitel 7 ihop med värderingen. Medgivandet — moat-bedömning förblir delvis hantverk — betyder att även din bästa moat-analys kan slå fel: strukturen du trodde på kan erodera snabbare än väntat (kapitel 8). Säkerhetsmarginalen är därför moat-investerarens försäkring mot det egna hantverkets fel: om du betalar sjuttio procent av värdet och moaten visar sig svagare än bedömt har du fortfarande marginal; betalar du nittiofem procent kräver din analys att vara perfekt — och den är den inte. Dorseys bottenregel, i fri översättning: det är bättre att missa en bra investering än att köpa en dålig — en aktie som stiger förbi ditt köpmål är inte ett misslyckande, den är en avvikelse. Det finns alltid en ny möjlighet; det finns inte alltid nytt kapital efter en värdefälla."
+        },
+        {
+          "type": "insikt",
+          "content": "Skriv köppriser, inte målkurser: 21,4 kronor i rättvärde är meningslöst utan en osäkerhetsgrad och en rabatt. Frågan vid varje köp är inte vad bolaget är värt — utan vad jag betalar med marginal för att jag kan ha fel. Tio till femton procents rabatt för trånga intervall, tjugo till trettio för medel, fyrtio eller ingenting för vida — det är regel 3 operationaliserad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Osäkerhetsgrad — och kravet på rabatt\",\"rader\":[[\"Osäkerhet\",\"Typexempel\",\"Kännetecken\",\"Krav på rabatt (AK1A)\"],[\"Låg\",\"starka dagligvarumärken, reglerade nät\",\"intäkter stabila genom cykler (V12 hög)\",\"cirka 10–15 %\"],[\"Medel\",\"de flesta moat-bolag\",\"god moat men normal konjunkturkänslighet\",\"cirka 20–30 %\"],[\"Hög\",\"cykel, råvara, pipeline-beroende, ny teknik\",\"intervall mellan scenarierna brett (kap 14)\",\"cirka 40 % eller avstå\"],[\"Exempel\",\"Må Industri: 21,4 kr\",\"medel: köp under 15 kr — hög: under 12,8 kr\",\"samma DCF, olika köppris\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta DCF-resultaten från kapitel 15: bas, optimism och pessimism. Räkna ut hur många procent pessimistfallet ligger under basfallet — det är din grova osäkerhetsmätare. Sätt sedan köppris enligt tabellen: vilken rabatt kräver osäkerheten? Jämför köppriset med dagens kurs och skriv en av tre slutsatser: köp, bevakning eller avstå — med siffrorna som motivering. Gör övningen för två bolag med olika osäkerhet och se hur samma regel ger olika krav: det är säkerhetsmarginalens hela poäng."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är det ärliga svaret på vad ett bolag är värt ett intervall och inte en siffra?",
+          "alternativ": [
+            "Därför att börsen stänger på helger",
+            "Därför att varje värdering vilar på antaganden om en framtid ingen sett — och bredden på rimliga utfall drivs av kassaflödets förutsägbarhet",
+            "Därför att analytiker inte kan räkna",
+            "Därför att valutor flyttar sig"
+          ],
+          "ratt": 1,
+          "tips": "Osäkerheten sitter i verksamhetens förutsägbarhet — dagligvarumärke och pipelining-bolag är olika världar."
+        },
+        {
+          "q": "Hur förhåller sig osäkerhetsgraden till moat-bredd enligt kapitlet?",
+          "alternativ": [
+            "De är samma sak — bred moat betyder alltid hög osäkerhet",
+            "Osäkerhet gäller bara banker",
+            "De är två separata dimensioner — ett smalmoat-bolag kan ha låg osäkerhet och ett bredmoat-bolag hög",
+            "Moat bestämmer osäkerheten via P/E"
+          ],
+          "ratt": 2,
+          "tips": "Fråga två olika frågor: hur stark är strukturen, och hur förutsägbart är kassaflödet?"
+        },
+        {
+          "q": "Varför kallas säkerhetsmarginalen moat-investerarens försäkring?",
+          "alternativ": [
+            "Därför att den garanterar vinst",
+            "Därför att den höjer utdelningen",
+            "Därför att den ersätter DCF-modellen",
+            "Därför att moat-bedömning förblir delvis hantverk — rabatten skyddar när den egna analysen slår fel"
+          ],
+          "ratt": 3,
+          "tips": "Kapitel 7:s medgivande får här sitt pris: betalar du med marginal tål din analys fel — betalar du nära rättvärde måste den vara perfekt."
+        }
+      ]
+    },
+    {
+      "num": 17,
+      "minutes": 12,
+      "title": "Handelsdisciplin, tiominutarestetet och branschernas anatomi — boken till AKM1",
+      "intro": "Sista kapitlet samlar reglerna fyra och fem — håll långsiktigt, handla sällan — med konkreta säljregler, Dorseys tiominutarestetet för snabb sortering av aktier, och de kortade men korrekta branschguiderna för banker, läkemedel och teknik. Och slutmappningen: bokens hela system översatt till AKM1:s V01–V20.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Säljreglerna — Dorseys fyra legitima skäl att sälja, i fri översättning. Ett: du gjorde ett misstag — tesen var fel från början; sälj oavsett om du står med förlust eller vinst, felet fördjupas inte av att du väntar ut det. Två: aktien stiger långt över ditt innersta värde — vallgraven är densamma men priset gör framtida avkastning dålig; övervärdering är ett skäl, inte ett sentiment. Tre: en bättre möjlighet dyker upp — billigare, säkrare eller båda; kapital är begränsat och ska hela tiden sitta där marginalen är störst. Fyra: moaten eroderar — strukturen du köpte finns inte längre (kapitel 8:s dashbord slår larm), och då är det nya priset för motiverat hur billigt det än ser ut mot gamla siffror. Och lika viktigt — vad som INTE är skäl att sälja: att aktien fallit (priset i sig säger inget om tesen), att den stigit måttligt, eller att marknaden har ett dåligt år. Handelsdisciplinens kärna (regel 5): varje onödig affär kostar courtage, spread och skatt — och undersökningar visar att privatpersoners aktivitet i genomsnitt förvärrar avkastningen. Köp med långsiktighet, övervaka kvartalsvis, handla sällan."
+        },
+        {
+          "type": "text",
+          "content": "Tiominutarestetet — Dorseys snabbsortering för att sålla bort bolag innan djupanalys. Frågorna, i bokens anda, med AKM1-koppling: genererar bolaget fritt kassaflöde — FCF över ungefär fem procent av omsättningen (kap 12)? Har resultatet varit stabilt positivt genom konjunkturen (V12)? Ligger ROE tydligt över tolv procent över en hel cykel (V09)? Är belåningen hanterbar — eget kapital i förhållande till tillgångar och nettoskuld per EBITDA (V10)? Är aktieantalet oförändrat eller fallande — eller späds du ut (V19/V20)? Växer kundfordringar och lager i takt med försäljningen (kap 13)? Finns en moat-källa du kan peka ut — eller bara en bra produkt (kap 3–7)? Tre minuter per fråga — ett bolag som inte passerar flest av rutorna sorteras bort innan du lägger tio timmar på dess årsredovisningar. Testet sparar inte bara tid: det skyddar mot det farligaste av alla bias — att du efter långa analysinsatser faller för ditt eget arbete och köper ändå."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tiominutarestetet — snabbguiden med AKM1-koppling\",\"rader\":[[\"Fråga\",\"Godkännandekrav\",\"AKM1\"],[\"Fritt kassaflöde\",\"FCF över ca 5 % av omsättningen\",\"V07/V08, kap 12\"],[\"Resultatstabilitet\",\"positivt genom konjunkturen\",\"V12\"],[\"Avkastning på kapital\",\"ROE klart över ca 12 % över en cykel\",\"V09\"],[\"Belåning\",\"hanterbar soliditet och nettoskuld/EBITDA\",\"V10\"],[\"Aktieantal\",\"oförändrat eller fallande — ingen utspädning\",\"V19, V20\"],[\"Fordringar och lager\",\"växer i takt med försäljningen\",\"kap 13\"],[\"Moat-källa\",\"struktur pekas ut — inte bara bra produkt\",\"V13–V15\"]]}"
+        },
+        {
+          "type": "text",
+          "content": "Branschguiderna, kortade men korrekta. Banker: belåningsmaskiner — kärnkapitalrelationen (eget kapital per balansräkning) är överlevnadsmåttet, räntenettomarginalen intäktsmotorn, kreditförlusterna riskposten och kostnadsgraden (kostnader per intäkt) effektivitetsmåttet; moats är framför allt billiga inlåningsmedel (kostnadsfördel!) och byråkratiska omställningskostnader (V14/V12) — varning för kreditbooms som visar sig i snabb låntillväxt. Läkemedel: patentmoat med kalender (V13) — intäkter faller när nyckelpatent löper ut, pipeline (V16) är hela framtidens ersättning; bruttomarginaler bland de högsta i ekonomin (V07), lågt kapitalbehov, kassastarka balansräkningar; prissättningsrisk via politik (V18). Teknik: mjukvaror är moat-tätast — omställningskostnader och återkommande licens- och supportintäkter (V14, V02/V12) med bruttomarginaler över åttio procent (V07), men granska aktiebaserad ersättning och utspädning (V19/V20); hårdvara är cykel- och kostnadsdriven — granska lager och fordringar (kap 13) och leta efter ekosystem-låsning och kostnadsskala snarare än produktövertag; media lever på innehålls- och varumärkesmoats (V13/V14) och nätverk (V15)."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Boken till AKM1 — slutmappningen\",\"rader\":[[\"Bokens koncept\",\"AKM1\",\"Roll\"],[\"Ekonomisk moat — fyra källor\",\"V13, V14, V15\",\"Moat-blocket: poängsatt på mätbara indikatorer\"],[\"Kostnadsfördelar och marginalgap\",\"V07, V08\",\"moat-bevis i marginaler\"],[\"Beständig överavkastning (Finding Moats)\",\"V09\",\"primärscreen\"],[\"Omvänd moat-logik — erosion\",\"V01-kvalitet, V12\",\"vallgravsdashbord\"],[\"Resultaträkning, balansräkning, kassaflöde\",\"V07–V12, V19\",\"ekonomi-blocket med svensk terminologi\"],[\"Red flags (fordringar, pension, serieförvärv)\",\"V19 (+ V10)\",\"riskrens före varje köp\"],[\"Femårsanalys och katalysatorer\",\"V01, V02, V16, V17, V18\",\"prognosmodul till DCF\"],[\"DCF — fem steg\",\"V04–V06-kontext\",\"värderingskärnan i SEK\"],[\"Osäkerhet och säkerhetsmarginal\",\"V04–V06\",\"köppris = rättvärde minus rabatt\"],[\"Handelsdisciplin, säljregler, tiominutarestetet\",\"V19, V20 + processen\",\"regler 4–5\"],[\"Kontroversen: hindsight bias, ex-ante\",\"—\",\"svaret: mätbarhet + medgivande om hantverk\"]]}"
+        },
+        {
+          "type": "insikt",
+          "content": "Bokens system i en mening: äg strukturer som behåller överavkastning, betala under deras värde med marginal, och låt tiden och disciplinen göra resten. AK1A:s bidrag till arvet är att varje steg är en variabel med tidsserie: moats mäts (V13–V15 bakom V07–V09:s bevis), erosionen övervakas (V12-dashbord), risken rensas (V10, V19), prognosen byggs i scenarier (V16–V18) och priset sätts med DCF minus rabatt (V04–V06). Dorsey gav hantverket — AKM1 gör det mätbart."
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutövningen — kör hela kedjan på ett bolag. Tiominutarestetet först: passerar det flest rutor? Sedan moat-källan med mätbara indikatorer (V13–V15 + V07–V09), vallgravsdashbordet (V12), flaggjakt (V19, V10), femårsprognos med katalysatorer (V01, V16–V18), DCF i kronor och köppris med osäkerhetsanpassad rabatt. Avsluta med att skriva Dorseys fyra säljregler med ditt bolags namn insatt: under vilka exakta omständigheter säljer du? Du har nu kört bokens fem regler från pärm till pärm — på ett verkligt bolag."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket av följande är INTE ett av Dorseys fyra legitima skäl att sälja?",
+          "alternativ": [
+            "Aktien har fallit i pris sedan köpet",
+            "Tesen var fel från början — du gjorde ett misstag",
+            "Aktien har stigit långt över det innersta värdet",
+            "Moaten har eroderat — strukturen du köpte finns inte längre"
+          ],
+          "ratt": 0,
+          "tips": "Priset i sig säger inget om tesen — fallande kurs är varken bevis på fel eller skäl att sälja."
+        },
+        {
+          "q": "Vad är syftet med tiominutarestetet?",
+          "alternativ": [
+            "Att ersätta fullständig analys av bolag du köper",
+            "Att snabbt sålla bort bolag som inte klarar grundkraven — innan du lägger timmar på djupanalys och faller för ditt eget arbete",
+            "Att hitta korttidssignaler",
+            "Att räkna ut rättvärde exakt"
+          ],
+          "ratt": 1,
+          "tips": "Testet är ett förfilter: FCF, stabilitet, ROE, belåning, aktieantal — och dörren ut för bolag som brister."
+        },
+        {
+          "q": "Vad är enligt branschguiden moaten i en bank, framför allt?",
+          "alternativ": [
+            "Att banker alltid har högst utdelning",
+            "Att banker saknar konkurrenter",
+            "Billiga inlåningsmedel — en kostnadsfördel — plus byråkratiska omställningskostnader för kunden",
+            "Att kärnkapitalrelationen alltid är hög"
+          ],
+          "ratt": 2,
+          "tips": "En bank med låg inlåningskostnad har råd att prisa ut konkurrenter — och kontobytet är krångligt nog att behålla kunder."
+        }
+      ]
+    }
+  ]
+}

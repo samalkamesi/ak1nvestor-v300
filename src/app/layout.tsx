@@ -8,6 +8,7 @@ import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { ChatWidget } from "@/components/ak1a/chat-widget";
 import { ShortSeller } from "@/components/ak1a/short-seller";
 import { PwaRegistrerare } from "@/components/ak1a/pwa-registrerare";
+import { TracerMount } from "@/components/ak1a/tracer-mount";
 import { Kommandopalett } from "@/components/ak1a/kommandopalett";
 
 const inter = Inter({
@@ -172,6 +173,7 @@ export default function RootLayout({
             <ChatWidget />
             <ShortSeller />
             <PwaRegistrerare />
+            <TracerMount />
             <Kommandopalett />
           </Ak1aStoreProvider>
         </ThemeProvider>

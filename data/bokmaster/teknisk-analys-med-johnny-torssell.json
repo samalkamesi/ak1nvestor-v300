@@ -1,0 +1,1106 @@
+{
+  "slug": "teknisk-analys-med-johnny-torssell",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 190,
+  "title": "Teknisk analys med Johnny Torssell — SVENSKT STANDARDVERK: KOMPLETT",
+  "summary": "Johnny Torssell — född 1961, teknisk analytiker sedan decennier, sedan 2004 hos Carnegie Private Banking och i svenska medier kallad Grafgurun — är den svenska börsens mest etablerade röst i teknisk analys. Hans bokfamilj från Boken om trading (1998) och Boken om teknisk analys (2000) till Teknisk analys med Johnny Torssell (2015, med Peter Nilsson) har lärt generationer svenska aktiehandlare att läsa charts: trenden, trendlinjerna, stöd och motstånd, huvud-och-skuldror, trianglar och flaggor, glidande medelvärden med 13-veckorslinjan, RSI och MACD, volymen och de japanska ljusen — och inte minst metodiken: hur man bygger ett analysramverk och tillämpar det på svenska bolag. Kursen går bokens spår kapitel för kapitel, översätter varje verktyg till AKM1:s variabler och AK1TS:s fem horisonter — och tar kontroversen på allvar: Malkiels slumpvandring, Park–Irwins forskningsöversikt och Lo–Mamaysky–Wangs fynd om att vissa mönster faktiskt bär information, praktikerns svar — och AK1A:s syntes med medgivandet att många mönster är svåra att handla på i praktiken.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå vad teknisk analys är och förväntas göra — tre premisser, timing och risk, inte spådom · Läsa trenden enligt definitionen: högre toppar och lågpunkter, tre trendtyper, tre faser och deras AK1TS-horisonter · Dra trendlinjer och kanaler som överlever kontakt med verkligheten — bekräftelse, brott, retest · Arbeta med stöd och motstånd som zoner: tidigare vändpunkter, jämna tal, gaps och rollbyte · Känna igen vändformationer (huvud-och-skuldror, dubbeltoppar) och fortsättningsformationer (trianglar, flaggor, vimplar) med bekräftelse och mätregler · Använda glidande medelvärden — Torssells 13-veckorslinja och 200-dagarskungslinjen — som regimdefinition · Läsa momentum och oscillatorer: RSI (Wilder), MACD (Appel), divergensen och överköpt-fällan · Bekräfta rörelser med volym — utbrott, OBV och volymens fyra regler · Tyda japanska candlesticks i västerländsk kontext — anatomien, de viktigaste mönstren och deras begränsning · Bygga ett analysramverk: index före sektor före aktie, checklista, stopp och risk först · Tillämpa helheten på svenska grafer — OMX-fallet, svenska storbolag och tunna småbolag · Väga kontroversen: Malkiel, Park–Irwin, Lo med flera — och Torssells praktikersvar · Syntetisera AKM1 (fundamentet väljer huset) med AK1TS (tekniken väljer dörren) till en hel process.",
+  "why": "Det här är den svenska standardkursen i teknisk analys. Murphy, Edwards & Magee och Bulkowski lär ut ämnet på amerikanska grafer med amerikanska exempel — Torssell gör det på svenska bolag, med svenska nivåer, svensk likviditet och trettio års yrkespraktik på just Stockholmsbörsen. Därför är hans böcker det naturliga första steget för en svensk analytiker: samma klassiska verktyg, men hemma. För AK1A är kursen teknikens svenska ryggrad — den levererar precisionsdelarna till AK1TS-motorn (trend, prisnivåer, tid, brytpunkt, volym) och bryggan tillbaka till AKM1:s variabler. Och kontroverskapitlet är kursens intellektuella samvete: teknisk analys är finanshistoriens mest kritiserade metod, och den som inte kan redogöra för både Malkiels attack och forskningens nyanserade svar har ingen rätt att lita på en enda trendlinje. Torssell är praktiker, inte professor — och kursen är ärlig med det: hans auktoritet är trettio års svenska grafer, inte en avhandling. Det är också dess styrka.",
+  "chapters_list": [
+    "1. Boken och grafgurun — trettio år i svenska grafer",
+    "2. Vad teknisk analys är — och vad den förväntas göra",
+    "3. Trendbegreppet — definition, tre typer, tre faser",
+    "4. Trendlinjer och kanaler — trenden blir en linje",
+    "5. Stöd och motstånd — prisets minne",
+    "6. Vändformationer — huvud-axlar och dubbeltoppar",
+    "7. Fortsättningsformationer — trianglar, flaggor, vimplar",
+    "8. Glidande medelvärden — 13-veckorslinjan och kungslinjen",
+    "9. Momentum och oscillatorer — RSI, MACD och divergensen",
+    "10. Volymanalys — bränslet i prisrörelsen",
+    "11. Japanska candlesticks — ljusen i svenska grafer",
+    "12. Metodiken — att bygga ett analysramverk",
+    "13. Fallstudier på svenska bolag — graferna hemma",
+    "14. Kontroversen — slumpvandringens akademi och praktikerns svar",
+    "15. Sammanfattning — grafläsaren (syntes AKM1 × AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Boken och grafgurun — trettio år i svenska grafer",
+      "intro": "Teknisk analys med Johnny Torssell — undertiteln ljuder tjäna pengar på börsen genom att läsa charts som ett proffs — publicerades 2015 av en man som då ägnat cirka trettio år åt att läsa diagram professionellt, sedan 2004 som teknisk analytiker på Carnegie Private Banking. I svensk media har han ett smeknamn som säger allt om hans ställning: Grafgurun. Kursen börjar med mannen, bokfamiljen och varför detta är det svenska standardverket.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokfamiljen, citerad öppet. Boken om trading — tillämpad teknisk analys (1998, med Peter Nilsson, Börsinsikt) var den första heltäckande svenska boken i ämnet. Boken om teknisk analys — teori, grunder och tillämpning (2000, samma par) blev den som användes i utbildningar och som många svenska analytiker växte upp med — undertiteln är hela programmet: teori, grunder OCH tillämpning. Därpå följde Tradinghandboken (2003), Edge — lyft din aktiehandel till en ny nivå (2007) och Bli börsproffs på ett par timmar (2007), innan huvudverket 2015 samlade en livslängds mest framgångsrika tekniker. Boken 2015 är alltså inte en första bok — den är ett yrkeslivs sammanfattning, skriven av en man som fortfarande, vecka ut och vecka in, publicerar tekniska analyser av Stockholmsbörsen och svenska bolag via Carnegie."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot bokmasterns övriga tekniska hylla är kursens legitima urskiljning. Murphy (Technical Analysis of the Financial Markets, kursen med 20 kapitel) är den amerikanska encyklopedin — bredast, tyngst, utan hemmaplan. Edwards & Magee (1948) är anatomin — mönstrens ursprungliga beskrivning. Elliott-kursen är vågräkningen, Bulkowski är mönsterstatistiken, Nison är ljusens uppslagsverk, Pring är momentumfilosofin. Torssell är INGET av detta — Torssell är översättningen: klassisk chartanalys applicerad på svenska grafer, svenska bolag, svenska nivåer och svensk likviditet, berättad på svenska av en man som gjort det i tre decennier. Där Murphy visar S&P 500 visar Torssell Stockholmsbörsen. Det är därför boken blivit standardverket hemma — och det är därför AK1A:s kurskatalog behövt just den här bryggan: innan du handlar amerikanska mönster på svenska aktier måste du veta hur svenska grafer beter sig."
+        },
+        {
+          "type": "text",
+          "content": "Ärlighetsdeklarationen, öppen och viktig. Torssell är inte akademiker — ingen professor, ingen avhandling — utan praktiker: hans auktoritet är yrkeslivet, inte universitetet. Det är kursens utgångspunkt, inte svaghet: boken är ett hantverksmanifest, skrivet av någon som varje vecka måste LEVERERA analys till kunder med riktiga pengar — och därmed aldrig har råd att älska ett verktyg mer än dess träffsäkerhet. Kapitel 14 återkommer till vad det betyder när akademins kritik möter praktikens svar. Kursen följer bokens spår: grunderna först (vad teknisk analys är och förväntas göra), sedan trenden, linjerna, nivåerna, formationerna, indikatorerna, medelvärdena, volymen, ljusen — och till sist metodiken, de svenska fallstudierna, kontroversen och syntesen."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · Översikten: i AK1A:s ekosystem är fundamentet AKM1:s tjugo variabler (V01–V20) och tekniken AK1TS-motorn — fem teorier (Elliott, Fibonacci, Gann, Lucas, Volym) × fem horisonter (Mikro, Kort, Medellång, Lång, Mega) × fyra dimensioner (Trend, Pris, Tid, Brytpunkt). Torssells bok är den svenska handboken i precis de byggstenar motorn räknar på. Varje kapitel i den här kursen avslutas därför med en V/AK1TS-rad — lär dig läsa den, den är bron mellan boken och verkstaden. AK1TS-RAD: fem teorier (Elliott, Fibonacci, Gann, Lucas, Volym) × fem horisonter (Mikro, Kort, Medellång, Lång, Mega) × fyra dimensioner (Trend, Pris, Tid, Brytpunkt) — kursen börjar vid motorritningen och slutar i motorrummet."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera skillnaden innan du går vidare: de amerikanska klassikerna lär ut teknisk analys som LÄRA — Torssell lär ut den som HANTVERK. Ett hantverk bedöms inte efter hur vackert teorin låter utan efter hur många affärer verktygen betalat för. Håll den mätstocken mot varje kapitel som följer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Torssells bokfamilj 1998–2015\",\"rader\":[[\"År\",\"Bok\",\"Roll\"],[\"1998\",\"Boken om trading — tillämpad teknisk analys (med P. Nilsson)\",\"första svenska helheten\"],[\"2000\",\"Boken om teknisk analys — teori, grunder och tillämpning\",\"standardverket som utbildningslitteratur\"],[\"2003\",\"Tradinghandboken\",\"handboken för det dagliga arbetet\"],[\"2007\",\"Edge — lyft din aktiehandel till en ny nivå\",\"fördjupning av kanten\"],[\"2007\",\"Bli börsproffs på ett par timmar\",\"regler för nybörjaren\"],[\"2015\",\"Teknisk analys med Johnny Torssell (med P. Nilsson)\",\"yrkeslivets sammanfattning — kursens bok\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör praktikerns eget urval: sök upp Torssells tekniska analyser på Carnegies webbsida (kategorin Teknisk analys — han publicerar löpande, med rubriker av typen Börsen översåld efter sju dagars kursfall). Läs tre av dem. Notera för varje: vilka verktyg använder han — trendlinjer, nivåer, RSI, medelvärden? Hur formulerar han osäkerhet? Och vad han INTE gör: ingen spådom utan villkor, ingen retorik utan målnivåer. Skriv en mening om vad som skiljer hans ton från forumets."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Johnny Torssells bakgrund och position i svensk finans?",
+          "alternativ": [
+            "Teknisk analytiker sedan decennier — sedan 2004 hos Carnegie Private Banking, i media kallad Grafgurun",
+            "Centralbankschef med inriktning på penningpolitik",
+            "Universitetsprofessor i finansiell ekonometri",
+            "Amerikansk hedgefondförvaltare verksam i Sverige"
+          ],
+          "ratt": 0,
+          "tips": "Han är praktikern som läser svenska grafer för kunder med riktiga pengar — inte akademikern."
+        },
+        {
+          "q": "Vilken bok var den första heltäckande svenska boken i teknisk analys av Torssell?",
+          "alternativ": [
+            "Edge (2007)",
+            "Boken om trading — tillämpad teknisk analys (1998, med Peter Nilsson)",
+            "Tradinghandboken (2003)",
+            "Teknisk analys med Johnny Torssell (2015)"
+          ],
+          "ratt": 1,
+          "tips": "Undertiteln tillämpad är nyckeln — praktiken kom före teorin i boktitlarnas ordning."
+        },
+        {
+          "q": "Vad skiljer Torssells bok från Murphys och Edwards & Magees enligt kursen?",
+          "alternativ": [
+            "Torssell ersätter klassisk chartanalys med kvantitativa modeller",
+            "Edwards & Magee skrev först om candlesticks",
+            "Torssell är den svenska översättningen — klassiska verktyg på svenska grafer, bolag och likviditet",
+            "Murphy fokuserar bara på svenska bolag"
+          ],
+          "ratt": 2,
+          "tips": "Samma verktyg — men vems börs? Vems jämna nivåer och vems tunna handel?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Vad teknisk analys är — och vad den förväntas göra",
+      "intro": "Bokens grundkapitel är en definitionsfråga: vad är teknisk analys, vad förväntas den åstadkomma — och vad är den inte? Svaret vilar på tre premisser ärvda från Dow-traditionen, och på Torssells hantverksståndpunkt: verktygen är sannolikhetsmaskiner, inte spådomskulor.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre premisser, citerade öppet från den klassiska läran som Torssell för vidare. Ett: kursen diskonterar allt — allt marknaden vet och känner redan sitter i priset, varför studiet AV PRISET räcker som informationskälla. Två: priser rör sig i trender — marknaden glider inte slumpvis utan i strömningar som varar, och vinsten ligger i att röra sig MED strömmen. Tre: historien upprepar sig — eftersom marknaden drivs av människor reagerar människor likartat på liknande situationer, varför gamla mönster får nytt liv. Ur premisserna följer metodens anspråk: teknisk analys är studiet av utbud och efterfrågan i kursgrafens form — grafen är bara marknadens journal, och chartläsaren en läkare som läser journalen i stället för att gissa."
+        },
+        {
+          "type": "text",
+          "content": "Vad teknisk analys FÖRVÄNTAS göra — och här är Torssell konkret och ärlig. Ett: TIMING — fundamentala analytiker kan ha rätt i sak och ändå förlora på timing; tekniken skärper när ryggen ska köpas och lämnas. Torssells arbetsgivare är en private banking-avdelning — hans kunder äger aktier, och hans uppdrag är inte att hitta bolag utan att hitta ögonblick: köpa svaghet i en frisk trend, inte jakten på nästa story. Två: RISK — varje analys byggs med en definierad nivå där teorin dör; stop-lossen är teknisk analysens viktigaste uppfinning, för den gör fel till små och rätt till stora. Tre: SANNOLIKHETER — inget verktyg i boken rätt mer än ofta; kanten ligger i att betala fel billigt och rätt dyrt, hundratals gånger. Vad teknisk analys INTE är: spådom, rikedomsknapp eller ersättning för omdöme — den som läser boken för att få kursmål på nästa rekord kommer att bli besviken, och det är meningen."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V04–V06 (värderingen) är svaret på VAD som är värt att äga — teknisk analys är svaret på När. De två analysformerna är komplementer, inte konkurrenter: fundamentet utan teknik är en bra handling med dålig koreografi; teknik utan fundament är dans utan partner. Torssells egen position är den praktiska mittpositionen: tekniken kompletterar den fundamentala analysen — han levererar tidsperspektivet till kunder som redan bestämt vad de vill äga. AK1TS-RAD: hela motorn — fem teorier, fem horisonter, fyra dimensioner — är den deterministiska versionen av just det uppdraget: för varje aktie, varje gång, räkna trend, nivå, tid, brytpunkt och volym. Ingen magkänsla ska behöva delta."
+        },
+        {
+          "type": "insikt",
+          "content": "Skilj på analysens två frågor och besvara dem i rätt ordning: VAD (fundamentet, AKM1, V01–V20) förr eller senare — NÄR och till VILKEN RISK (tekniken, AK1TS) förr eller senare. Den som svarar När-först utan Vad äger timing i bolag som inte förtjänar den; den som svarar Vad-först utan När äger rätt bolag till fel pris och fel tålamod."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre premisser — och vad de ger metoden\",\"rader\":[[\"Premiss\",\"Innehåll\",\"Konsekvens för metoden\"],[\"Kursen diskonterar allt\",\"all information sitter redan i priset\",\"studera priset — grafen räcker som källa\"],[\"Priser rör sig i trender\",\"strömningar varar och kan ridas\",\"identifiera riktning FÖRE verktyg och signaler\"],[\"Historien upprepar sig\",\"mänsklig psykologi återkommer i mönster\",\"mönster, nivåer och formationer har betydelse\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Två-frågeprovet på din egen senaste affär: skriv ner ditt senaste köp. Fråga ett — VAD: vilka fundamentala skäl (AKM1-variabler, V01–V20) fanns för att äga just det bolaget? Fråga två — NÄR: vilka tekniska skäl fanns för att köpa just DEN DAGEN — trend, nivå, stopp? Om du bara kan svara på den första frågan var du fundamentalist med osynkade klockor; bara på den andra — tekniker utan hus; på ingen — det var ingen analys alls. Notera vilken fråga som saknades och bära den med dig genom kursen."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är teknisk analysens tre klassiska premisser?",
+          "alternativ": [
+            "Utdelning, återköp och emissioner driver allt",
+            "Vinsten växer, räntan sjunker, multipeln expanderar",
+            "Centralbanken styr, bolagen ljuger, grafen lurar",
+            "Kursen diskonterar allt, priser rör sig i trender, historien upprepar sig"
+          ],
+          "ratt": 3,
+          "tips": "Tre påståenden om priset — alla handlar om vad grafen redan innehåller."
+        },
+        {
+          "q": "Vad förväntas teknisk analys göra enligt bokens praktiska ansats?",
+          "alternativ": [
+            "Skärpa timing, definiera risk med stoppnivåer och hantera sannolikheter — inte spå",
+            "Ersätta den fundamentala analysen helt",
+            "Förutsäga exakta kursmål tolv månader framåt",
+            "Garanttera vinst genom att följa 13-veckorslinjan mekaniskt"
+          ],
+          "ratt": 0,
+          "tips": "Tre leveranser: när, till vilken risk, med vilka sannolikheter — aldrig självklarheter."
+        },
+        {
+          "q": "Hur förhåller sig teknisk och fundamental analys till varandra i Torssells praktik?",
+          "alternativ": [
+            "De är konkurrenter och bara en kan ha rätt",
+            "Tekniken kompletterar fundamentet — Vad-frågan först, När-frågan därefter",
+            "Fundamentet behövs bara vid blankning",
+            "Tekniken gäller bara för index, fundamentet för aktier"
+          ],
+          "ratt": 1,
+          "tips": "Hans kunder på private banking har redan valt hus — Torssell väljer dörren."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 13,
+      "title": "Trendbegreppet — definition, tre typer, tre faser",
+      "intro": "Allt i teknisk analys börjar med trenden — riktningen. Bokens trendkapitel är arvet från Dow-teorin översatt till svenska grafer: definitionen, de tre trendtyperna, de tre faserna och tidsramarnas hierarki. Det är också det första kapitlet där AK1TS:s fem horisonter klickar in i bokens språk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen, exakt och visuell: en upptrend är en sekvens av HÖGRE TOPPAR och HÖGRE LÅGPLUNKTER; en nedtrend av LÄGRE TOPPAR och lägre lågpunkter; sidledes är resten — pendling utan beslut. Det låter trivialt tills man noterar hur mycket som följer av det: trenden är inte en linje utan en SEKVENS, den definieras av svängarna, och den ifrågasätts först när sekvensen bryts — när en tidigare lågpunkt slås i en upptrend har marknaden levererat sitt första tekniska vittnesmål om att någonting ändrats. Husregeln, ärvd genom hela traditionen och Torssells eget arbetssätt: trenden är din vän — arbeta med den, inte mot den. Regeln förbjuder exakt det som förlorar mest pengar på börsen: att köpa i nedtrender för att det känns billigt och sälja i upptrender för att det känns högt."
+        },
+        {
+          "type": "text",
+          "content": "Tre trendtyper, direkt ur Dow-traditionen (Hamilton och Rhea systematiserade den) och vidareförda i boken: den PRIMÄRA trenden — huvudrörelsen, ett år eller längre, marknadens verkliga hälsotillstånd; den SEKUNDÄRA trenden — korrigeringar inom primärtrenden, tre veckor till tre månader, ofta en tredjedel till två tredjedelar av föregående rörelse; och de TERTIÄRA svängarna — dagliga till veckovisa svängar, bruset som handlare njuter av och investerare filtrerar bort. Och tre faser: ACKUMULERING — de tidiga, bäst informerade köparna samlar position medan nyheterna fortfarande är dåliga; MEDVERKAN — trenden blir synlig, allmänheten ansluter, rörelsen är som starkast; DISTRIBUTION — nyheterna är som bäst, berättelsen som mest självklar, och de tidiga köparna säljer till de sena. Det är teknisk analys djupaste varning till fundamentalisten: som bäst ser grundläget ut är grafen ofta i fas tre — toppens V-poäng och distributionsfasen sammanfaller gång på gång."
+        },
+        {
+          "type": "text",
+          "content": "Tidsramarna och Torssells svenska tillämpning. En och samma aktie har alltid flera trender samtidigt: en uppvecka i en nedmånad i ett uppkvartal i ett nedår. Bokens råd är den klassiska hierarkin: börja med den längsta ram som är relevant för din investeringshorisont och arbeta nedåt — månadsgrafen visar klimatet, veckografen vädret, dagsgrafen timmarna. Och i AK1TS-mappningen blir det här systematiskt: Mikro (5 dagar), Kort (63 dagar), Medellång (252 dagar), Lång (150 veckor), Mega (hela historiken) — fem horisonter, fem svar, varje gång. AKM1-BRYGGAN · V01 Försäljningstillväxt är fundamentets egen trend: en aktie i prisupptrend utan omsättningstillväxt är misstänkt — grafen springer före fundamentet eller något annat än tillväxt driver priset; en aktie med stark tillväxt som priset vägrar belöna har en fråga att besvara. Vågfundamentet behandlar varje V-variabel som tidsserie med egen riktning — divergens mellan fundamentalvåg och prisvåg är information, inte brus. AK1TS-RAD: Trend-dimensionen — momentum 5/63/252 dagar klassificerat mot MA50/MA200; fem horisonter, en aktie, fem trender."
+        },
+        {
+          "type": "insikt",
+          "content": "Trendfrågan är alltid den första och ibland den enda: åt vilket håll? Alla verktyg i resten av boken — linjer, nivåer, formationer, indikatorer, volym, ljus — är sätt att mäta, bekräfta eller ifrågasätta svaret på den frågan. Värdering utan trend är bara en åsikt om nivå; trenden är marknadens faktiska svar, till dess att sekvensen av toppar och lågpunkter säger annat."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre trendtyper — och deras AK1TS-horisonter\",\"rader\":[[\"Typ\",\"Längd\",\"Karaktär\",\"AK1TS-mappning\"],[\"Primär\",\"ett år eller längre\",\"huvudrörelsen — marknadens hälsa\",\"Medellång, Lång, Mega\"],[\"Sekundär\",\"tre veckor till tre månader\",\"korrigering inom primärtrenden\",\"Kort (63 dagar)\"],[\"Tertiär\",\"dagar till veckor\",\"brus — handlarnas svängar\",\"Mikro (5 dagar)\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Sekvens-övningen på svenska blue chips: ta tre bolag från OMX Stockholm 30. Markera för hand (på utskrift eller i huvudet) de senaste fyra topparna och fyra lågpunkterna på veckografen. Klassificera sekvensen: högre eller lägre? Skriv slutsatsen per bolag — upptrend, nedtrend eller sidledes. Kontrollera sedan mot faserna: om bolaget är i upptrend — ackumulering, medverkan eller distribution? Motivera med en mening varför. Räkna slutligen hur många av tre bolag där din trendklass och din fasbedömning tillsammans säger köp, och varför de övriga inte gör det."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras en upptrend exakt?",
+          "alternativ": [
+            "Kursen över 200-dagars medelvärdet",
+            "Tolv veckors stigande volym",
+            "En sekvens av högre toppar och högre lågpunkter",
+            "RSI över 50 i tre månader"
+          ],
+          "ratt": 2,
+          "tips": "Inte en linje och inte en indikator — en SEKVENS av svängar."
+        },
+        {
+          "q": "Vilken är den sekundära trenden enligt Dow-traditionen?",
+          "alternativ": [
+            "Sekular trend över decennier",
+            "Huvudrörelsen över ett år eller längre",
+            "Dagliga svängningar och brus",
+            "Korrigering inom primärtrenden — tre veckor till tre månader"
+          ],
+          "ratt": 3,
+          "tips": "Primären är klimatet — vad är vädret inom klimatet?"
+        },
+        {
+          "q": "Varför är distributionsfasen en särskild varning för den fundamentalorienterade?",
+          "alternativ": [
+            "Därför att nyheterna och grundläget ofta ser som bäst ut när de tidiga köparna säljer — V-poängens topp sammanfaller ofta med distribution",
+            "Därför att volymen alltid är låg då",
+            "Därför att utdelningar då alltid höjs",
+            "Därför att bolag då emitterar nya aktier"
+          ],
+          "ratt": 0,
+          "tips": "När berättelsen är som självklarast — vem lämnar lokalen?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 13,
+      "title": "Trendlinjer och kanaler — trenden blir en linje",
+      "intro": "Sekvensen av toppar och lågpunkter kan bli en linje — och därmed ett verktyg. Bokens kapitel om trendlinjer och kanaler är klassisk hantverkslärdom: hur linjen dras, hur den bekräftas, när den är bruten och vad kanalen tillför. Även: konsten att inte lura sig själv med en linje som inte finns.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen: en stigande trendlinje dras genom de viktigaste LÅGPLUNKTERNA i en upptrend — minst två för att dra, en tredje som RESPEKTERAR linjen för att den ska räknas som bekräftad och handlingsbar. En fallande linje dras genom topparna på samma sätt. Torssells hantverksregler är ärvda från hela traditionen: dra linjen så att den rör vid så många verkliga svängpunkter som möjligt — varje extra berörd punkt ökar linjens betydelse; dra från en verklig vändpunkt, inte från ett intradag-spik om linjens arbetsram är dagar (och tvärtom — matcha linjen mot grafens skala); små penetrationer är en del av livet — priset piper igenom en linje med någon procent utan att linjen dör, och vissa låter därför linjen gälla stängningsnivåer i stället för intradag. Linjen är en ZON av utbud och efterfrågan, inte en brasiliansk gräns."
+        },
+        {
+          "type": "text",
+          "content": "Brottet och dess betydelse. En trendlinje bryts definitivt när en STÄNGNING kommer klart på fel sida — med filter: en procentregel (vanligt två till tre procent) eller en tidsregel (två på varandra följande stängningar). Vad brottet BETYDER är viktigare än att det sker: ett brott uppåt ur en FALLANDE linje är ofta början på något nytt (basbygge), medan ett broott NEDÅT ur en stigande linje oftast bara inleder en djupare korrigering inom en intakt primärtrend — linjens död är inte trendens död, sekvensen av toppar och lågpunkter (kapitel 3) avgör. Efter ett brott följer ofta en OMPRÖVNING — retest — där priset vänder tillbaka till den brutna linjen från andra sidan och den gamla linjen byter roll: stöd blir motstånd och motstånd blir stöd. Retestet är handlarens bästa andra chans och kursens mest praktiska diagramläxa. KANALEN tillför allt detta en överdel: en parallell linje genom topparna ger trendens bana — köp vid underlinjan, realisera vid överlinjan, och när priset inte längre når överlinjen sviktar trendens bränsle (deceleration), när det spränger den accelererar trenden och linjedragningen måste omprövas."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V10 Skuldsättningsgrad och V11 Likviditet är fundamentets egna trendlinjer: en balansräkning som hållit en stadig kurs i åratal och plötsligt börjar stiga i belåning har brutit sin linje — och precis som i grafen är det BRYTPUNKTEN, inte nivån, som bär budskapet. Vågfundamentet läser varje variabel som tidsserie: en bruten trendlinje i en fundamental variabel är en tidig väckarklocka långt före grafen. AK1TS-RAD: Brytpunkt-dimensionen — motorn registrerar linje- och nivåbrott på alla fem horisonter; ett 13-veckorslinjebrott på Kort-horisonten väger inte lika tungt som ett MA200-brott på Medellång, men båda ska synas. Fem horisonter, fem linjer, ett beslut."
+        },
+        {
+          "type": "insikt",
+          "content": "Trendlinjens etikett är dess värde: en linje med tre beröringar och bekräftad respekt är ett verktyg; en linje dragen genom två slumpvis utvalda punkter för att den stödjer din åsikt är en önskebajer. Fråga alltid innan du litar på en linje: hur många verkliga svängpunkter respekterar den — och vad exakt skulle FÖRSTÖRA den? Kan du inte svara har du ingen linje, bara en krita."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Trendlinjens livscykel — sex steg\",\"rader\":[[\"Steg\",\"Vad som sker\",\"Regel\"],[\"Dra\",\"två svängpunkter\",\"lågpunkter i upptrend, toppar i nedtrend\"],[\"Bekräfta\",\"tredje punkt respekterar\",\"först nu är linjen handlingsbar\"],[\"Handla\",\"köp mot linjen i intakt trend\",\"stopp strax under linjen\"],[\"Brott\",\"stängning klart på fel sida\",\"filter två–tre procent eller två stängningar\"],[\"Retest\",\"priset återvänder till brutna linjen\",\"gamla stöd blir motstånd — och omvänt\"],[\"Omvärdera\",\"ny sekvens av toppar och låg\",\"linjens död är inte trendens död\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Linje-audit på din egen grafpraktik: öppna veckografen för en aktie du äger eller bevakar. Dra den stigande eller fallande trendlinje som har flest verkliga beröringar. Skriv ner: antal beröringar, senaste retestet, och exakt vilken stängningsnivå som skulle bryta linjen. Jämför sedan med hur du faktiskt resonerat om aktien — har du handlat MED linjen eller bara haft en åsikt om bolaget? Avsluta med att sätta stoppet dit linjen säger — inte dit magen."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad krävs för att en trendlinje ska anses bekräftad och handlingsbar?",
+          "alternativ": [
+            "Att en analystidning ritat den först",
+            "Att en tredje svängpunkt respekterar linjen",
+            "Att den rör två svängpunkter",
+            "Att RSI bekräftar linjen"
+          ],
+          "ratt": 1,
+          "tips": "Två punkter räcker för att RITA — vad krävs för att LITA?"
+        },
+        {
+          "q": "Vad innebär en omprövning (retest) efter ett linjebrott?",
+          "alternativ": [
+            "Att priset aldrig återvänder till linjen",
+            "Att volymen alltid dubblas",
+            "Att priset vänder tillbaka till den brutna linjen från andra sidan — och linjen byter roll, stöd blir motstånd och omvänt",
+            "Att indikatorerna räknas om"
+          ],
+          "ratt": 2,
+          "tips": "Gamla gränser blir nya gränser — på motsatt sida."
+        },
+        {
+          "q": "Vad betyder det när priset i en upptrend inte längre når upp till kanalens överlinje?",
+          "alternativ": [
+            "Ingenting alls — överlinjen är dekoration",
+            "Trenden har accelererat",
+            "Kanalen ska vidgas automatiskt",
+            "Deceleration — trendens bränsle sviktar och linjedragningen bör omprövas"
+          ],
+          "ratt": 3,
+          "tips": "Varje gång en ny topp når kortare än den förra har någonting förändrats — vad?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "Stöd och motstånd — prisets minne",
+      "intro": "Varför stannar kurser vid vissa tal — om och om igen? Bokens svar är stöd och motstånd: marknadens kollektiva minne av var affärerna gjordes. Här finns teknikens mest användbara och mest missbrukade begrepp, och Torssells svenska tillämpning har en tydlig hemmaplan: jämna kronor, jämna tiotal, rekordnivåer.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen genom handeln: MOTSTÅND är en nivå där försäljare (utbud) tidigare överväldigat köpare — priset vänder ned där det vänt ned förut; STÖD är en nivå där köpare (efterfrågan) tidigare överväldigat försäljare — priset vänder upp där det vänt upp förut. Psykologin är minne: människor som köpte vid en nivå och ångrat sig vill UT utan förlust när priset återvänder (de skapar motstånd); de som sålde vid botten och ångrade sig vill IN när priset återvänder (de skapar stöd); och de som aldrig kom in vågar inte köpa förrän priset bevisat något. Summan av ånger, rädsla och hämnd blir nivåer. Bokens första hantverksregel: nivåer är ZONER, inte linjer — marknaden har inte läst din ritning, och att avfärda en nivå för att priset stängde två kronor under den är att missförstå vad en nivå är: ett område där utbud och efterfrågan möttes."
+        },
+        {
+          "type": "text",
+          "content": "Styrkan i en nivå bedöms med fyra frågor. Ett — HUR MÅNGA gånger har nivån provats? Varje prov utan brott gör nästa prov tyngre. Två — hur NYLIGT var senaste prov? Nivåers kraft avtar med tiden; ett motstånd från fem år sedan är svagare än ett från förra månaden. Tre — hur VOLYMRIK handel skedde vid nivån? En topp bildad under rekordomsättning är ett starkare motstånd än en tunn spik. Fyra — hur STORT avstånd till nästa nivå? Nivåer som ligger tätt blir ett moln; nivåer med luft mellan sig ger rörelserna utrymme. Därtill två klassiska specialfall: ROLLYTRE — ett brutet motstånd blir nytt stöd och omvänt (samma mekanism som retestet i kapitel 4, nu horisontellt), och GAP — hål i kurslinjen där inget handlades, som lämnar oskyddade zoner som priset ofta återvänder till för att FYLLA. Och de svenska jämna talen: hela tiokronors- och hundralappsnivåer fungerar som magneter och väggar — människor placerar sina ordrar vid jämna tal, och orden blir därför självuppfyllande. Rekordnoteringar är den starkaste nivåfamiljen av alla: ovanför rekord finns inget minne, bara nya ockupationer — och det är därför utbrott till all-time-high ofta får så våldsam bränsle."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V04 P/S, V05 P/B och V06 EV/EBITDA är fundamentalens nivåer — inte kursens. Men de möts i praktiken: en aktie som närmar sig historiskt lågt P/B närmar sig ofta ett långsiktigt kursstöd, för samma mekanism (värdesökande köpare) verkar i båda världarna. Skillnaden är avgörande och kursens nyckel: fundamentalt stöd är en ÅSIKT om värde (kan flyttas av en varning), tekniskt stöd är ett FAKTUM om handel (syns i grafen). Köp tekniskt stöd ENDAST om fundamentet håller — annars är stödet en fälla av typen värdefälla. AK1TS-RAD: Pris-dimensionen — motorn registrerar historiska toppar, bottnar, jämna nivåer och 52-veckorsspännet per horisont; konfluens mellan teknisk nivå och fundamental värdering (låg multipel vid stödet) är den starkaste kombinationen."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte var din stopplats är bekväm — fråga var teorin dör. Stopp hör hemma strax UNDER ett tekniskt betydelsefullt stöd, aldrig strax över: om stödet håller har du ingen affär att oroa dig för, och om det bryts vill du UT, inte stå kvar och argumentera. Nivåer utan stopp är kartor utan utgångar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra källor till nivåer — och deras styrka\",\"rader\":[[\"Källa\",\"Exempel\",\"Styrka\"],[\"Tidigare vändpunkter\",\"gamla toppar och bottnar\",\"starkast — flest ångrade sig där\"],[\"Jämna tal\",\"runda kronor, tiotal, hundralappar; rekordnivåer\",\"magnet och vägg — orderhavena bygger väggen\"],[\"Gaps\",\"hål i kurslinjen utan handel\",\"oskyddad zon — fylls ofta och blir sedan nivå\"],[\"Trendlinjer och medelvärden\",\"kanalens under- och överlinje; 13v/40v\",\"rörliga nivåer — växer i styrka med antal beröringar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Nivåkarta för ett svenskt bolag: välj en aktie och öppna veckografen med minst tre års historik. Markera de tre tyngsta motstånden och de tre tyngsta stöden — bedömt med de fyra styrkefrågorna (antal prov, recens, volym, avstånd). Skriv jämna-tal-magneter och eventuella gaps på kartan. Bestäm sedan: var är teorins död för en köpare — vilket stöd måste hålla? Sätt ditt hypotetiska stopp där och mät avståndet till köpnivån. Avståndet är din risk — och det är DET talet, inte kursmålet, som avgör om affären är värd att göra."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad skapar ett motstånd enligt bokens psykologi?",
+          "alternativ": [
+            "Minnet av var utbud tidigare överväldigat efterfrågan — försäljare vill ut utan förlust när priset återvänder",
+            "Optionernas strike-priser enbart",
+            "Centralbankens interventionsnivå",
+            "Aktieägars amarotes utdelningar"
+          ],
+          "ratt": 0,
+          "tips": "Ånger, rädsla och hämnd — vilka grupper vill sälja var, och varför just där?"
+        },
+        {
+          "q": "Vilka fyra frågor avgör en nivås styrka?",
+          "alternativ": [
+            "Analytikertäckning, P/E, direktavkastning och börsvärde",
+            "Antal prov, aktualitet, volym vid nivån och avstånd till nästa nivå",
+            "Antal anställda, omsättning, marginal och tillväxt",
+            "RSI, MACD, stokastik och ADX"
+          ],
+          "ratt": 1,
+          "tips": "Tre frågor om nivåns historia — och en om geografin omkring den."
+        },
+        {
+          "q": "Vad kännetecknar utbrott till nya rekordnoteringar?",
+          "alternativ": [
+            "De är alltid falska och bör kortas",
+            "De inträffar bara vid låg ränta",
+            "De möter som regel inget gammalt motstånd — ovanför rekord finns inget minne, vilket ofta ger kraftfulla rörelser",
+            "De kräver dubbel bekräftelse i månadsgrafen"
+          ],
+          "ratt": 2,
+          "tips": "Motstånd är minne — vad finns ovanför historiens högsta punkt?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Vändformationer — huvud-axlar och dubbeltoppar",
+      "intro": "När trenden dör lämnar den sällan rummet utan att säga hej då. Bokens formationslära börjar med vändningarna: huvud-och-skuldror — kungamönstret, på svenska ofta kallat huvud-axlar — dubbeltoppar och dubbelbottnar, rundningar och V-svängar. Fokus ligger som alltid hos Torssell på bekräftelsen: en formation är inte en signal förrän den är FÄRDIG.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Huvud-och-skuldror (på svenska i bokens tradition: huvud-axlar) är teknikens mest berömda toppformation. Anatomin: en VÄNSTER AXEL (topp), ett HUVUD (högre topp), en HÖGER AXEL (lägre topp än huvudet) — förenade av en HALSLINJE dragen genom de två mellanliggande bottnarna. Volymens vittnesmål är en del av anatomin: ofta kraftigast i vänster axel och upp mot huvudet, avtagande i höger axel — bränslet sinar medan priset fortfarande gör en högre topp, vilket är hela formationens psykologi i ett: apparaten ser starkare ut än motorn. SIGNALERAN är inte huvudet utan BROTTET av halslinjen, gärna med ökad volym; MÄTREGELN är formationens höjd (huvudet ner till halslinjen) projicerad ned från brottspunkten — en regel som säger hur långt rörelsen ofta når, inte hur länge. Och spegelbilden fungerar uppåt: en INVERTERAD huvud-axel är en bottenformation med samma anatomi spegelvänt. Ett fel är vanligare än alla andra: att handlaformationen FÖRE halslinjebrottet. Höger axel är en hypotes; brottet är beviset."
+        },
+        {
+          "type": "text",
+          "content": "Dubbeltoppen och dubbelbotten. En dubbeltopp är två toppar på ungefär samma nivå, åtskilda av ett mellanliggande dal-stöd — och där ligger nyckeln som missas oftast: utan en definierad mellanliggande reaktion FINNS ingen dubbeltopp, bara ett platåområde. Signalen är brottet av dalbottennivån; volymen ofta lägre på den andra toppen (misslyckad nyrekrytering av köpare). Dubbelbotten är spegelbilden — två bottnar vid samma stöd, signal vid brottet av mellanliggande topp, ofta med retest av den brutna nivån som tredje och bäst bekräftelse. Därtill de två tempotyperna kort: RUNDNINGAR — långsamma vändningar där utbud/efterfrågan gradvis skiftar, vanliga i större bolag med tålmodiga ägare; och V-SVÄNGAR — våldsamma vändningar driven av utlösande händelser och tvingad återköp av blanka positioner, vanliga i volatila och tunna svenska småbolag. Notera hantverksregeln: ju LÄNGRE en formation byggs, desto STÖRRE rörelse kräver den sedan — tid och höjd hänger ihop."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V18 Regulatoriska katalysatorer och V16–V17 (lanseringar och avtal) är ofta det FUNDAMENTALA innehållet i en teknisk vändning: en dubbelbotten som bildas samtidigt som ett avgörande avtal tecknas är två språk om samma sak — och katalysatorn förklarar varför stödet höll. Tvärtom: en toppformation utan fundamental förklaring är ren psykologi och kan ändå fungera — marknaden prissatte förväntan, inte händelse. Distribution och ackumulering (kapitel 3) är formationernas inre liv: huvud-axeln ÄR distributionen som fått en silhuett. AK1TS-RAD: Trend-dimensionen (momentum fallande på ny topp — divergens, se kapitel 9) plus Brytpunkt (halslinjen/dalbottnen); i vågtermer liknar toppen ett våg-fem-skepp med sviktande drivkraft — Elliott-kolumnen registrerar det som avtagande impulser. Fem horisonter: en formation i veckografen vägs mot dags- och månadsbilden innan den får tala."
+        },
+        {
+          "type": "insikt",
+          "content": "Formationens budskap ligger i vad som MISSLYCKAS, inte i vad som syns: höger axel är en lägre topp — köparna ORKADE inte mer; andra toppen i en dubbeltopp når inte förbi den första — samma budskap. Lär dig läsa formationer som berättelser om utmattning, inte som emblem — och kräv alltid brottet som bekräftelse innan du handlar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre vändformationer — krav, signal, mätregel\",\"rader\":[[\"Formation\",\"Anatomi\",\"Signal\",\"Mätregel\",\"Vanligaste felet\"],[\"Huvud-axlar topp\",\"vänster axel, högre huvud, lägre höger axel, halslinje\",\"brott av halslinjen med volym\",\"formationens höjd ned från brottet\",\"handla före halslinjebrottet\"],[\"Dubbeltopp\",\"två toppar vid samma motstånd + mellanliggande dal\",\"brott av dalbottens stöd\",\"höjd (topp minus dal) ned från brottet\",\"glömma att dalen måste definieras\"],[\"Dubbelbotten\",\"två bottnar vid samma stöd + mellanliggande topp\",\"brott av toppnivån, gärna efter retest\",\"höjd upp från brottet\",\"köpa andra botten utan bekräftelse\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Formation-jakt med bekräftelsedisiplin: hitta i veckografen på en svensk storbolagsaktie en misstänkt topp- eller bottenformation under de senaste tre åren. Rita anatomin: axlar/huvud eller toppar/dalar, halslinje eller mellanliggande nivå, volymutvecklingen per ben. Avgör: bröts bekräftelsenivån — och stämde mätregeln grovt? Skriv dom: handlade du (eller skulle du ha handlat) vid brottet eller vid huvudet/andra toppen? Skillnaden mellan de två svaren, mätt i procent, är bekräftelsens pris — anteckna det som en permanent siffra i ditt hantverksminne."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den avgörande signalen i en huvud-axlar-topp?",
+          "alternativ": [
+            "Huvudet bildas",
+            "Höger axeln sjunker",
+            "RSI når 70",
+            "Brottet av halslinjen, gärna med ökad volym"
+          ],
+          "ratt": 3,
+          "tips": "Axlarna är anatomin — vad är beviset?"
+        },
+        {
+          "q": "Vad är volymens klassiska vittnesmål i en huvud-axlar-topp?",
+          "alternativ": [
+            "Kraftigast kring vänster axel och huvudet, avtagande i höger axeln — bränslet sinar medan priset fortfarande gör en högre topp",
+            "Högst i höger axel",
+            "Jämn genom hela formationen",
+            "Orelevant i vändformationer"
+          ],
+          "ratt": 0,
+          "tips": "Motorn hostar medan karossen ännu glänser — var syns det först?"
+        },
+        {
+          "q": "Vilket krav missas oftast när en dubbeltopp deklareras?",
+          "alternativ": [
+            "Att volymen är rekordhög på båda topparna",
+            "Att en mellanliggande dal/reaktion finns och definierar nivån som sedan bryts",
+            "Att RSI är överköpt",
+            "Att formationen varat minst ett år"
+          ],
+          "ratt": 1,
+          "tips": "Två toppar utan dal är bara ett platå — vad fattas för att det ska bli ett M?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 13,
+      "title": "Fortsättningsformationer — trianglar, flaggor, vimplar",
+      "intro": "De flesta formationer vänder inte trenden — de GER DEN PAUS. Bokens fortsättningsmönster är trianglarna, flaggorna, vimplarna och rektanglarna: korrigeringarnas anatomi, deras mätregler och deras tidsgränser. Här finns teknikens mest pålitliga familj — och dess mest missbrukade (den stigande triangeln som alla ser för tidigt).",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Trianglarna i tre arter. Den SYMMETRISKA triangeln: fallande toppar och stigande bottnar — utbud och efterfrågan drar åt samma håll, marknaden komprimeras, och utbrottet kan komma åt båda håll (statistiskt oftast i TIDIGARE TRENDs riktning, det vill säga fortsättning — det som gör den till fortsättningsmönster). Den STIGANDE triangeln: platt topp (motstånd) och stigande bottnar — köparna blir allt ivrigare vid en fast vägg, klassiskt bullish utbrott uppåt. Den FALLANDE triangeln: platt botten och fallande toppar — spegelbilden, klassiskt bearish. Mätregeln för alla tre: formationens bredaste del (basen) projiceras i utbrottets riktning från brottspunkten. Bekräftelsens regler: utbrott med VOLYM, helst på två tredjedelar av vägen genom formationens tidsdjup — ett utbrott som kommer för sent (vid triangelspetsen) har förlorat sin energi och blir opålitligt, och då helst inget utbrott alls. Trianglar har dessutom en inbyggd klocka: de är korta mönster — veckor, inte månader — och ju längre de drar ut på tiden, desto mer blir de något annat (ett distributionstråg)."
+        },
+        {
+          "type": "text",
+          "content": "Flaggan och vimplen — prestationens elit. En FLAGGA byggs efter en brant, nästan vertikal prisrörelse (stången): en KORT, TÄT motreaktion som svagt mot trenden, ofta i form av ett litet parallellt band — inte en korrigering utan en ANDNING, vanligen en till tre veckor. En VIMPEL är samma mönster men med små triangelvinklar i stället för parallella linjer. Volymen torkar ut under formationen och EXPLODERAR vid utbrottet — det är den renaste volymsignaturen i hela böckerna om mönster, och mätregeln är flaggstångens längd projicerad från utbrottet. Båda är trendens starkaste kvitto: en trend som orkar konsolidera på hög volym-torka och sedan fortsätta är en trend med hälsan intakt. REKTANGELN slutligen: en sidledes korridorbildning av stöd och motstånd, handlad genom att köpa botten och realize toppen tills korridoren bryts — en fortsättningsbildning i trendriktningen, men med tålamodspriset att WHIPSAW:er hör hemma där (se kapitel 8:s varning om medelvärden i sidledes marknad)."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet är fundamentets egen konsolidering: en aktie vars intäkter växt stadigt i åratal och som prismässigt bygger ett långt sidledesbord är en flagga i FUNDAMENTAL mening — bolaget andas, inte blöder. Tvärtom: en formation byggd på eroderande intäkter (V01 negativ) är ingen flagga utan en basering inför något värre — eller i bästa fall ett vändmomento som kräver katalysator (V16–V18). AK1TS-RAD: i Elliott-kolumnen är flaggor och vimplar korrigeringens (våg fyra) klassiska skepnad, och impulsen efter utbrottet liknar våg fem; Tid-dimensionen (Lucas-fönster) registrerar formationens längd — en korrigering som överlever sin normala tidsrymd utan utbrott byter klass till osatt. Brytpunkt-dimensionen levererar brottet. Samma graf, fem ögon, ingen tolkning."
+        },
+        {
+          "type": "insikt",
+          "content": "Fortsättningsformationernas budskap är PAUS, inte vändning — och deras viktigaste egenskap är BESKEDEN: volym torkar, formationen håller tidsgränsen, utbrottet kommer med kraft. Missar något av de tre beskeden är det inte en flagga — det är en trend som håller på att avlida i tysthet. Handla aldrig formationen; handla utbrottet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fortsättningsformationer — form, krav, mätregel\",\"rader\":[[\"Formation\",\"Form\",\"Kännetecken\",\"Mätregel\"],[\"Stigande triangel\",\"platt topp, stigande bottnar\",\"klassiskt bullish; utbrott med volym på två tredjedelar in\",\"basens höjd upp från brottet\"],[\"Fallande triangel\",\"platt botten, fallande toppar\",\"klassiskt bearish\",\"basens höjd ned från brottet\"],[\"Symmetrisk triangel\",\"fallande toppar, stigande bottnar\",\"utbrott oftast i tidigare trends riktning\",\"basens höjd i utbrottsriktning\"],[\"Flagga\",\"kort tät motreaktion efter brant stav\",\"en–tre veckor; volym torkar ut\",\"stångens längd från utbrottet\"],[\"Vimpel\",\"små trianglar efter brant stav\",\"samma som flaggan\",\"stångens längd från utbrottet\"],[\"Rektangel\",\"sidledes korridor\",\"stöd och motstånd; whipsaw-risk\",\"korridorens höjd vid brottet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Utbrott-journalen: följ en svensk aktie i två till fyra veckor och journal för varje vecka: riktning, volym, och om en konsolidering växer fram — vilken typ (triangel/flagga/rektangel)? Skriv din hypotes med BEVISKRAV: vilken nivå måste brytas, med vilken volym, inom vilken tid? Betrakta sedan utfallet — antingen hypotesen höll eller sprack. Notera särskilt om du frestades handla INNAN beviset — och vad det skulle ha kostat. En formationjournal bygger den vana som skiljer hantverkaren från mönsterjägaren."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad kännetecknar en flagga bland fortsättningsformationerna?",
+          "alternativ": [
+            "En lång sidledes korridor under ett halvår",
+            "En dubbeltopp med hög volym",
+            "En kort, tät motreaktion — en till tre veckor — efter en brant prisrörelse, med volym som torkar ut",
+            "En formation med fallande toppar och stigande bottnar över månader"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på stången och tyget — hur länge hinner tyget fladdra?"
+        },
+        {
+          "q": "Vad händer med ett triangelttbrott som kommer mycket sent — nära spetsen?",
+          "alternativ": [
+            "Trianglar saknar tidsaspekt",
+            "Det är extra kraftfullt eftersom kompressionen är som störst",
+            "Det gäller bara i månadsgrafen",
+            "Det har förlorat sin energi och blir opålitligt — ofta bäst att avstå"
+          ],
+          "ratt": 3,
+          "tips": "Kompressionens kraft är som en fjäder — vad händer med en fjäder som hålls ihop för länge?"
+        },
+        {
+          "q": "Vad är volymsignaturen vid ett äkta utbrott ur flaggor och trianglar?",
+          "alternativ": [
+            "Volymen torkar ut under formationen och ökar tydligt VID utbrottet",
+            "Volymen är högst mitt i formationen",
+            "Volymen är oregelbunden och låg",
+            "Volym saknar betydelse i fortsättningsmönster"
+          ],
+          "ratt": 0,
+          "tips": "Tystnad före, bekännelse efter — som i alla ärliga berättelser."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "Glidande medelvärden — 13-veckorslinjan och kungslinjen",
+      "intro": "Trenden, sekvensen och linjerna kan alla sammanfattas i en enda rörlig kurva: det glidande medelvärdet. Torssells signatur i svenska grafer är 13-veckorslinjan — kvartalets medelvärde — och den internationella kungslinjen 200 dagar. Här möter tekniken sitt mest objektiva verktyg och sin vanligaste fälla.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Konstruktionen i en mening: ett glidande medelvärde är medeltalet av de senaste N dagarnas (eller veckors) stängningar, omräknat varje dag — en utjämning som filtar bort bruset och lämnar trendens ryggrad. Valet av period är en avvägning: korta medelvärden (t.ex. 13 veckor) följer trenden nära och ger tidiga signaler men många falska; långa (t.ex. 40 veckor eller 200 dagar) är tröga och sena men sällan fel omkring regimfrågan. Torssells svenska praktik, citerad öppen: 13-veckorslinjan — ett helt kvartals handel — som arbetslinje för mellantidsperspektivet i svenska aktier; den fungerar som RÖRLIGT STÖD i en intakt upptrend (köpare väntar vid linjan) och som skiljelinje mellan hälsa och sjukdom när den bryts. Därutöver arvet från den bredare traditionen: 200-dagarsmedelvärdet som kungslinje och REGIMDEFINITION — kursen över linjan är bullregim, under linjan bearregim — och kombinationer där kort medelvärde korsar långt (golden cross och death cross) som trendskiftes-signaler, kraftfullast när de sker efter en lång och tydlig föregående trend."
+        },
+        {
+          "type": "text",
+          "content": "Tre användningsregler och en fälla. Regel ett — LUTNINGEN: ett medelvärde som stiger och vars kurva successivt planar ut varnar före kurserna gör det; lutningen är trendens temperatur. Regel två — AVSTÅNDET: när priset springer långt ifrån sitt medelvärde är det sträckt (gummibandet) och tenderar att ÅTERVÄNDA till det — antingen genom korrigering (priset faller till linjan) eller genom att linjan stiger mot priset; extrema avstånd är därför inte köp- utan vilsignal. Regel tre — BEKRÄFTELSE: medelvärdet kombineras helst med volym och nivåer från tidigare kapitel — linjan som stöd SAMTIDIGT som ett horisontellt stöd är konfluens, och konfluens är starkare än någon enskild linje. FÄLLAN: i SIDLEDES marknad piskar medelvärden (whipsaw) — priset korsar linjan fram och tillbaka, golden cross dör vid nästa död kors, och den som följer dem mekaniskt i en trading range blir uppäten av falska signaler. Medelvärden är TRENDverktyg: först fråga en av kapitel 3 — är det alls en trend? — annars är verktyget fel."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet är fundamentets medelvärde: bolag vars intäkter löper som ett utjämnat band genom kvartalen (V12 hög poäng) motsvarar grafens finaste trender — och en aktie över en stigande 13-veckorslinja MED stabil intäktsmotor är den kombination långsiktiga ägare söker; en aktie över linjan med V12-svikt (intäkter pendlar våldsamt) är en teknisk bild utan fundamentalt bränsle. AK1TS-RAD: Trend-dimensionen är BOKSTAVERLIGEN byggd på detta — motorn klassificerar varje horisont mot MA50 och MA200 och räknar momentum över 5, 63 och 252 dagar; 13 veckor ≈ 63 handelsdagar, vilket betyder att Torssells signaturlinje och AK1TS Kort-horisont är SAMMA klocka. Fem horisonter är fem medelvärden — boken lär ut en, motorn kör alla fem varje gång."
+        },
+        {
+          "type": "insikt",
+          "content": "Medelvärdets fråga är alltid regimfrågan och aldrig tajmfrågan: över eller under kungslinjen avgör hur resten av verktygslådan ska tolkas — oscillatorer gälla i trend, nivåer väger tyngst i sidledes. Lär dig hierarkin: TRENDEN avgör vilka verktyg som ens ska släppas in i rummet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre linjer — period, roll, signal\",\"rader\":[[\"Linje\",\"Period\",\"Roll\",\"Klassisk signal\"],[\"Torssells arbetslinje\",\"13 veckor (≈ 63 handelsdagar)\",\"rörligt stöd i svensk akties mellantidsperspektiv\",\"stängning under linjan = hälsokontroll\"],[\"Kungslinjen\",\"200 dagar (≈ 40 veckor)\",\"regimdefinition — bull eller bear\",\"kurs över/under linjan avgör tolkningsregelverket\"],[\"Korsningar\",\"kort mot långt (t.ex. 50/200)\",\"trendskifte efter etablerad trend\",\"golden cross och death cross — starkast efter lång trend\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Regimtest på fem svenska aktier: rita 13-veckorslinjan (eller 63 dagar) och 200-dagarslinjen på veckografen. Klassificera varje aktie: bullregim (kurs över båda, linjorna stiger), bearregim (under båda, fallande), eller rehabilitering (återerövrat korta men inte långa). Markera senaste giltiga korsning och räkna: hur många procent från signalen till i dag? Räkna också FALSKA korsningar under perioden — linjer som bröts utan fortsättning. Skillnaden mellan de två räkenskaperna är medelvärdens ärliga prislapp i just ditt universum."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Torssells signatur-medelvärde i svenska aktier?",
+          "alternativ": [
+            "5-dagarsmedelvärdet",
+            "13-veckorslinjan — kvartalets medelvärde, som rörligt stöd",
+            "200-veckorslinjen",
+            "Timvis viktat medelvärde"
+          ],
+          "ratt": 1,
+          "tips": "Ett helt kvartals handel — vilken klocka slår det i AK1TS?"
+        },
+        {
+          "q": "Vad innebär gummibandseffekten — stora avstånd till medelvärdet?",
+          "alternativ": [
+            "Att medelvärdet måste räknas om",
+            "Att trenden är extra stark och bör ridas utan stopp",
+            "Att priset är utsträckt och tenderar återvända mot medelvärdet — vilsignal snarare än köpsignal",
+            "Att bolaget snart rapporterar vinst"
+          ],
+          "ratt": 2,
+          "tips": "Hur långt kan ett gummiband sträckas innan fysiken tar över?"
+        },
+        {
+          "q": "När är glidande medelvärden som sämst?",
+          "alternativ": [
+            "I långa stadiga upptrender",
+            "I fallande volatila marknader",
+            "Vid rekordhöga direktavkastningar",
+            "I sidledes marknad — de piskar (whipsaw) med falska korsningar"
+          ],
+          "ratt": 3,
+          "tips": "Verktyget är trendmätare — vad händer när det inte finns någon trend att mäta?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "Momentum och oscillatorer — RSI, MACD och divergensen",
+      "intro": "Priset säger VAR — momentum säger HUR SNABBT och med VILKEN KRAFT. Bokens indikatorkapitel tillhör de mest citerade i svensk praktik: RSI, Torssells eget signaturverktyg i Carnegie-analyserna, MACD och divergensen — oscillatorernas drottning. Här finns också teknikens mest missförståda signal: överköpt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Momentum är hastighetsmåttet: hur snabbt och med vilken kraft rör sig priset? Ett trendverktyg som reagerar FÖRE prisnivåerna — fordonet som säger att motorn tappat varv innan kurvan syns vika. RSI, Relative Strength Index, konstruerades av J. Welles Wilder (New Concepts in Technical Trading Systems, 1978) och mäter förhållandet mellan uppgångarnas och nedgångarnas storlek under en period — klassiskt fjorton dagar — till ett index mellan noll och hundra. Traditionellt läsning: över 70 ÖVERKÖPT, under 30 ÖVERSÅLT. Och här kommer den viktiga nyansen, rakt från Torssells egen praktik: i en STARK upptrend kan RSI stanna överköpt i veckor — överköpt är inte säljsignal, det är STYRKEKVITTO; signalen ligger i vändningar och framför allt i DIVERGENSEN. Carnegie-analysen med rubriken Börsen översåld efter sju dagars kursfall är hela idén i praktiken: ett index i intakt upptrend som efter en kort seriös nedgång når översålt RSI — det är inte ett dödsbud utan ett KÖPLÄGE, för regimens riktning avgör hur oscillatorn ska tolkas. Översålt i upptrend = köp svaghet; översålt i nedtrend = paus, inte vändning."
+        },
+        {
+          "type": "text",
+          "content": "DIVERGENSEN är oscillatorernas starkaste signal: priset gör en NY TOPP men RSI gör en LÄGRE — bränslet orkar inte längre driva priset till nya höjder, och priset springer på tomgång (speglingen vid bottnar: ny lägre låg, HÖGRE RSI — säljtrycket sinar). Divergens är en VARNING, inte en signal — den säger att trenden är sjuk, inte att den är död; den som säljer på varje divergens lämnar varje lång trend för tidigt, den som ignorerar varje divergens missar varje verklig vändning. Arbetsregeln: divergens + teknisk bekräftelse (nivåbrott, linjebrott, kapitel 4–6) = handling; divergens ensam = beredskap. MACD, Moving Average Convergence/Divergence (Gerald Appel, slutet av 1970-talet), är momentum i linjeform: skillnaden mellan ett kort (12) och ett långt (26) exponentiellt medelvärde, med en signallinje (9) vars korsningar ger köp- och säljsignaler, och nollinjan som skiljer positiv från negativ drift. MACD är TRÖGARE än RSI men tydligare: signal-kors under nollinjan i en upptrend är ofta den renaste köpsignalen trenden ger (korrigeringen tar slut), medan kors över nollinjan bekräftar regim. Stokastiken (%K/%D, George Lane) är den tredje klassikern — känsligast, bäst i sidledes marknader, farligast i trender."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01 Försäljningstillväxt och V09 ROE är fundamentets momentum: tillväxttakt och avkastning som TAL är nivåer — men deras ANDRING mellan åren är fundamentets hastighet. Ett bolag med fortsatt hög men SJUNKANDE tillväxttillväxt visar fundamental divergens — priset gör ny topp på gammal kraft; det är samma varning som RSI-divergensen, en våning ner. Vågfundamentet formaliserar det: fundamentalvåg och prisvåg ska jämföras — divergens mellan dem är information. AK1TS-RAD: Trend-dimensionen räknar momentum 5/63/252 dagar per horisont — fördelningen av tecken över de fem horisonterna ÄR en divergensmatris: Lång positiv med Kort negativ är en korrigering inom trend (viktning: tålamod); Lång svikande med Kort stark är en varning (rehab sunder test). Ingen oscillator läses någonsin ensam — motorn väger fem, boken lär dig läsa en."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera oscillatorernas hierarki: REGIMEN (över/under kungslinjen, kapitel 8) avgör hur RSI ska tolkas — översålt i upptrend är köpläge, överköpt i nedtrend är skeppsbrott. Divergensen är den enda oscillator-signal som är stark nog att övervägas ENSAM — men handleds bäst med teknisk bekräftelse. Och glöm aldrig Wilders egen ärlighet: RSI är ett mått på hur ensidigt marknaden handlat — inte på vad den kommer att göra."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre oscillatorer — konstruktion, signal, fälla\",\"rader\":[[\"Indikator\",\"Konstruktion\",\"Starkaste signal\",\"Fälla\"],[\"RSI (Wilder 1978)\",\"förhållande upp-/nedgångar, 14 perioder, 0–100\",\"divergens; översålt i upptrend = köp svaghet\",\"överköpt är INTE säljsignal i stark trend\"],[\"MACD (Appel)\",\"12–26 exponentiella medelvärden + signallinje 9\",\"signal-kors i trendriktningen; nollinje-regim\",\"trög — sen i snabba vändningar\"],[\"Stokastik (Lane)\",\"var kursen ligger i sitt senaste spann, %K/%D\",\"köp/sälj-signaler i sidledes marknader\",\"farligast i starka trender — piskar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Divergensjakten med regimen som domare: ta OMX Stockholm 30 eller en svensk aktie och markera de två senaste betydande topparna. Notera RSI (14 dagar) vid varje topp. Fanns divergens? Kontrollera sedan regimen vid varje översåld-läsning (under 30): skedde de i upptrend eller nedtrend — och vad hände efteråt? Sammanställ tre rader: datum, RSI, regimen, utfall efter tio handelsdagar. Tabellen är din personliga sannolikhetsmaskin för RSI-signaler i svenska grafer — bygg den innan du litar på någon annans regelverk."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad betyder RSI över 70 i en stark upptrend?",
+          "alternativ": [
+            "Styrkekvitto — överköpt är inte säljsignal; i starka trender kan RSI stanna över 70 länge",
+            "Att bolaget snart emitterar aktier",
+            "Att indikatorn är trasig",
+            "Omedelbar säljsignal"
+          ],
+          "ratt": 0,
+          "tips": "Vem bestämmer hur en oscillator ska tolkas — siffran eller regimen?"
+        },
+        {
+          "q": "Vad är en bearish divergens?",
+          "alternativ": [
+            "RSI stiger medan priset faller långsamt",
+            "Priset gör en ny topp men RSI gör en lägre — bränslet orkar inte längre",
+            "MACD korsar nolllinjen nedåt",
+            "Volymen stiger på nedgångar"
+          ],
+          "ratt": 1,
+          "tips": "Priset säger ny styrka — vad säger hastighetsmätaren?"
+        },
+        {
+          "q": "Hur bygger MACD sina signaler?",
+          "alternativ": [
+            "Genom förhållandet mellan uppgångar och nedgångar till ett index 0–100",
+            "Genom att mäta volymens ackumulerade flöde",
+            "Genom skillnaden mellan ett kort och ett långt exponentiellt medelvärde med en signallinje vars korsningar ger signaler",
+            "Genom Fibonacci-retracements"
+          ],
+          "ratt": 2,
+          "tips": "Convergence/divergence — mellan vad?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 13,
+      "title": "Volymanalys — bränslet i prisrörelsen",
+      "intro": "Priset kan ljuga — volymen har svårare för det. Bokens volymlära är Dows arv i ren form: volymen bekräftar trenden. Antalet aktier som byter ägare är rörelsens massa, och hos Torssell — som analyserar både omsatta index och tunna svenska småbolag — är volymdiskursen särskilt svensk: likviditetens betydelse hemma.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundlagen, citerad öppet från Dow-traditionen: i en INTAKT trend bekräftar volymen riktningen — uppgångar på ökande volym (fler vill köpa till högre priser: hälsosamt), nedgångar inom en upptrend på avtagande volym (korrigering: ingen panik, bara lösvuxna ägare lämnar). Varningen ligger i spegelbilden: uppgångar på SJUNKANDE volym är en trend som springer på tomgång (nya köpare rekryteras inte), och nedgångar på ÖKANDE volym är distribution — storskaliga ägare som lämnar och måste sälja i djupet. En av teknikens äldsta tumregler är också en av de bästa: VOLUMEN KOMMER FÖRE PRISET — volymökningar i en motreaktion föregår ofta en vändning, volymökningar i huvudriktningen föregår ofta ett utbrott. Vid formationer (kapitel 6–7) är volymen bekräftelsens kärna: ett utbrott ur en triangel eller flagga UTAN volym är ett av teknikens mest klassiska falsksignaler; med volym är det bland de mest pålitliga."
+        },
+        {
+          "type": "text",
+          "content": "Volymens mätinstrument. OBV, On-Balance Volume (Joe Granville, 1963), var den första ackumulerade volymlinjen: all dagens volym läggs till det ackumulerade värdet om dagen stängde upp, dras bort om den stängde ned — en kurva som visar VAR volymen arbetat, oavsett prisets sväng. Läsningen: OBV som stiger medan priset stiger är kvitto; OBV som stiger medan priset ligger stilla (tyst ackumulering — någon köper utan att flytta kursen) eller OBV som faller medan priset stiger (distribution) är divergens — samma varningslogik som RSI-divergensen, nu med massan inkluderad. Därtill de svenska omständigheterna som Torssells praktik hanterar dagligen: tunna aktier med liten omsättning har volatila volymmönster (en enda stor order färgar hela veckan), jul- och semestertider har strukturellt låg volym (jämför med normalvolym, inte med rekord), och utbrott i tunna bolag måste dömas hårdare: utan volym är de ofta bara en spik. Volymanalys är massans vittnesmål — men massan måste vara representativ."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V11 Likviditet (kvickkvoten) är den fundamental syster till aktiens handelsvolym: bolagets förmåga att betala kortfristiga skulder motsvarar aktiens förmåga att bära handel utan kurskollaps — två sidor av samma idé, att RÖRELSE utan massa är farlig. V20 Återköp av egna aktier: institutionell handel (insiders, återköpsprogram) lämnar volymspår — misstänk tyst ackumulering i grafer är precis det fält där fundamental och teknisk analys möts: OBV-divergens plus insiderköp (V20) är en av de starkaste konfluenserna i hela verkstaden. AK1TS-RAD: Volym är EN AV FEM TEORIER i motorn — Volym-kolumnen registrerar bekräftelse, divergens och utbrottskvalitet per horisont; en trend utan volymstöd degraderas, ett utbrott med volymstöd premieras. Boken lär dig läsa volym — motorn väger den i varje cell."
+        },
+        {
+          "type": "insikt",
+          "content": "Volymens lag i en mening: PRIS SÄGER NIVÅ, VOLYM SÄGER ÖVERTYGELSE. En rörelse som ingen handlar i är en åsikt; en rörelse som halva marknaden deltar i är ett beslut. Fråga alltid vid varje signal: stiger eller faller volymen — och varför just nu? Svaret avgör om du ser en trend, en distribution eller en sommarvecka."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Volymens fyra regler\",\"rader\":[[\"Situation\",\"Volym\",\"Tolkning\"],[\"Uppgång i upptrend\",\"ökande\",\"bekräftad trend — hälsosam\"],[\"Uppgång i upptrend\",\"avtagande\",\"tomgång — nya köpare rekryteras inte\"],[\"Nedgång i upptrend\",\"avtagande\",\"normal korrigering\"],[\"Nedgång i upptrend\",\"ökande\",\"distribution — varning, storskaliga säljer\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Volym-räkenskap för ett ägt innehav: ta en aktie i din portfölj och granska de senaste tolv månaderna. Markera de fem största volymdagarna. Skriv per dag: datum, prisrörelse, och vad som hände efteråt (tio handelsdagar). Klassificera varje volymutbrott: ackumulering, distribution eller utbrott. Avsluta med frågan som volymanalysen existerar för: vid den senaste betydande prisrörelsen — fanns massan där? Om svaret är nej har du just hittat din portföljs första tekniska review-punkt."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är volymens grundlag enligt Dow-traditionen?",
+          "alternativ": [
+            "Volymen förutsäger alltid prisvändningar tre dagar i förväg",
+            "Volym är ointressant för teknisk analys",
+            "Hög volym betyder alltid köpläge",
+            "Volymen bekräftar trenden — uppgångar på ökande volym är hälsosamma, nedgångar på ökande volym i upptrend är distribution"
+          ],
+          "ratt": 3,
+          "tips": "Bekräfta eller varna — vilken riktning bär massan?"
+        },
+        {
+          "q": "Vad mäter OBV — On-Balance Volume?",
+          "alternativ": [
+            "En ackumulerad volymlinje som visar var volymen arbetat — dagens volym läggs till vid upp-stängning, dras av vid ned-stängning",
+            "Antalet analyser som täcker bolaget",
+            "Bolagets eget aktieägarantal",
+            "Skillnaden mellan köpt och sålt optioner"
+          ],
+          "ratt": 0,
+          "tips": "Priset avgör tecknet, volymen storleken — vad bygger deras summa?"
+        },
+        {
+          "q": "Hur ska utbrott ur formationer bedömas med volym?",
+          "alternativ": [
+            "Utbrott utan volym är de starkaste",
+            "Utbrott MED volym är bland de mest pålitliga signalerna — utan volym är ett klassiskt falsk-signals scenario",
+            "Volym spelar ingen roll vid utbrott",
+            "Volym ska alltid vara lägre vid utbrott än innan"
+          ],
+          "ratt": 1,
+          "tips": "Ett beslut som fattas av hela marknaden eller av en ensam prisrörelse — vilket litar du på?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 13,
+      "title": "Japanska candlesticks — ljusen i svenska grafer",
+      "intro": "Från Osaka-rishandeln till Stockholmsbörsen: de japanska candlesticks är diagrammets mest informationsrika enhet — kropp, skuggor och färg i ett enda ljus. Boken införlivar ljusen i den klassiska verktygslådan, och kursen gör det med den ärlighet som krävs: ljus är KORTSIKTIGA och ska aldrig läsas utan kontext.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anatomin först (traditionen fördes västerut av Steve Nison, Japanese Candlestick Charting Techniques, 1991): varje ljus visar en periods öppning, högsta, lägsta och stängning — KROPPEN mellan öppning och stängning (fylld/rod vid nedgång, tom/grön vid uppgång beroende på färgsättning), och SKUGGORNA (vekar) ut till periodens ytterligheter. Lång kropp = övertygelse, liten kropp = obeslutsamhet, långa skuggor = slag som förlorades efteråt. Familjerna att kunna: DOJI — kroppen nästan noll, öppning lika stängning: jämvikt, osäkerhet, och vid rätt ställe (efter lång trend vid motstånd) ett varningsljus; HAMMER och HANGING MAN — liten kropp i ljusets överdel respektive underdel med lång nedre skugga: marknaden sålde av allt och köparna tog tillbaka allt — samma form, olika budskap beroende på VAR den dyker upp (botten kontra topp); ENGULFING — ett ljus som fullständigt slukar det föregåendes kropp: initiativbytet i en enda session; MORGENSTJÄRNA och KVÄLLSSTJÄRNAN — treaktersvändningar med litet mittljus som gapar: vändningens dramaturgi i tre bilder (lång kropps rörelse, tvekan, bekräftelse i motsatt riktning)."
+        },
+        {
+          "type": "text",
+          "content": "Kontextens lag — ljusläsningens heliga regel, och den som skiljer bokens hantverk från internetlistorna: ett ljus betyder INGET utan PLATS. En hammer vid ett testat stöd i upptrend är en köpsignal; samma hammer mitt i ett tomrum utan nivå är ett utfyllnadsljus utan betydelse; en doji efter fem starka dagar vid motstånd är en varning — samma doji på en sömnig sommardag är brus. Ljusen är TRIGGAR, inte analyser: de kräver NIVÅ (kapitel 5) för plats, VOLYM (kapitel 10) för bekräftelse och TREND (kapitel 3) för riktning — ljus + nivå + volym är hantverkarens treklanger, ljus ensamma är kortspådom. Och ärligheten, som kursen är skyldig kontroverskapitlet: den akademiska litteraturen är ljusen inte vänlig — studier av candlestick-mönster på amerikanska index (bland annat Marshall, Young och Rose, som testade mönstren på Dow Jones) har i stor utsträckning HITTAT INGEN varaktig prediktiv kraft utöver slumpen. Ljusen behåller sitt värde som BESKRIVNINGSSPRÅK för korta strider mellan köpare och säljare — men den som bygger en hel strategi på enstaka ljusmönster bygger på sand."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V08 EBITDA-marginal och V07 Bruttomarginal är fundamentalens kropp och skuggor: marginalen (kroppen) visar huvudbudskapet, och skillnaden mellan brutto- och EBITDA-marginal (skuggorna) visar hur mycket som äts på vägen — en bolagsbild med bred kropp och korta skuggor är fundamentalt frisk, och dess aktiegrafer får sällan långa nedre vekar. AK1TS-RAD: ljus tillhör Mikro- och Kort-horisonterna — motorn låter dem väga lätt där och aldrig i Medellång/Lång; Brytpunkt-dimensionen använder ljusen som TRIGGER: en bekräftande stängning (t.ex. engulferande ljus GENOM en brutten halslinje) är den rena definitionen av Brytpunkt i motorns språk. Fem horisonter väger — ett ljus väger aldrig mer än sin egen session."
+        },
+        {
+          "type": "insikt",
+          "content": "Lär dig ljusens grammatik i stället för lexikonet: KROPP = övertygelse, SKUGGA = slag som förkastades, FÄRG = initiativ. Med den grammatiken kan du läsa mönster du aldrig memorerat — och du inser omedelbart varför samma ljus betyder olika saker på olika platser. Ett ljus är en mening; grafen är artikeln; nivån och volymen är tidningen den publiceras i."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Sex ljusmönster — budskap och kontextkrav\",\"rader\":[[\"Mönster\",\"Form\",\"Budskap\",\"Kräver kontext\"],[\"Doji\",\"öppning ≈ stängning\",\"jämvikt, obeslutsamhet\",\"efter lång trend vid nivå — annars brus\"],[\"Hammer\",\"liten kropp, lång NEDRE skugga\",\"säljtryck uppslukat — bottenljus\",\"vid testat stöd i nedtrend/korrigering\"],[\"Hanging Man\",\"samma form vid topp\",\"säljtryck spårat — varning\",\"vid motstånd efter uppgång\"],[\"Bullish Engulfing\",\"grönt ljus slukar röd kropp\",\"initiativbytet nedåt→upp\",\"vid stöd; gärna med volym\"],[\"Bearish Engulfing\",\"rött ljus slukar grön kropp\",\"initiativbytet upp→ned\",\"vid motstånd; gärna med volym\"],[\"Morgonstjärna\",\"tre akter med litet mittljus\",\"vändning upp — dramaturgi\",\"bekräftelseljuset ska stänga upp ordentligt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Treackordsövningen: hitta i en svensk akties dagsgraf de tre senaste tillfällena då ett tydligt ljusmönster (hammer, doji eller engulfing) uppstått EXAKT vid en nivå från din kapitel 5-nivåkarta. För varje: noterade du volymen? Stängde nästa session med bekräftelse? Räkna andelen tillfällen där ljus + nivå + volym tillsammans fick rätt mot ljus ensamma. Skillnaden är kontextens värde — och förklaringen till varför ljuslistor på internet känns magiska i efterhand och tomma i förväg."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad visar en candles KROPP respektive SKUGGOR?",
+          "alternativ": [
+            "Kroppen visar volymen, skuggorna öppning och stängning",
+            "Kroppen visar utdelningen, skuggorna courtaget",
+            "Kroppen visar spannet öppning–stängning, skuggorna periodens högsta och lägsta",
+            "Kroppen visar dagsmedelvärdet, skuggorna standardavvikelsen"
+          ],
+          "ratt": 2,
+          "tips": "Fyra priser i ett ljus — vilka två syns i kroppen och vilka två i vekarna?"
+        },
+        {
+          "q": "Vad är kontextens lag för ljusläsning?",
+          "alternativ": [
+            "Färgen på ljuset är den enda relevanta informationen",
+            "Ljusmönster gäller alltid oavsett var de dyker upp",
+            "Ljus ska endast läsas i månadsgrafen",
+            "Ett ljus betyder inget utan plats — det kräver nivå för plats, volym för bekräftelse och trend för riktning"
+          ],
+          "ratt": 3,
+          "tips": "Treackordet: ljus, nivå, volym — vad saknas om du bara spelar ett?"
+        },
+        {
+          "q": "Vad säger den akademiska forskningen om candlestick-mönster som enskilda signaler?",
+          "alternativ": [
+            "Studier på bland annat Dow Jones (Marshall, Young, Rose) har i stor utsträckning inte funnit varaktig prediktiv kraft utöver slumpen",
+            "Forskningen har bevisat att morgonstjärnan är den starkaste signalen",
+            "Alla mönster är statistiskt säkerställda",
+            "Akademin har aldrig studerat candlesticks"
+          ],
+          "ratt": 0,
+          "tips": "Kursen är skyldig ärligheten — vad hittar forskarna när mönstren testas mekaniskt?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 13,
+      "title": "Metodiken — att bygga ett analysramverk",
+      "intro": "Verktyg är inte metod. Bokens viktigaste kapitel för en svensk praktiker handlar om att BYGGA ett analysramverk: en arbetsordning som gör att femton verktyg blir ETT beslut. Torssells metodik är top-down, regeldriven och risk-first — och den är nästan ordagrant blåkopian för hur en teknisk analys borde skrivas.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Arbetsordningen — top-down. Ett: MARKNADEN först — Stockholmsbörsens primärtrend, regim kring kungslinjen, och (i Torssells egna analyser) ofta blicken utanför: USA, räntor och ibland guld som sentimentbarometer. Det är meningslöst att köpa bra tekniska kopior i en indexkropp: tre fjärdedelar av en akties rörelse förklaras ofta av marknaden och sektorn. Två: SEKTORN — riktning och relativ styrka, var i rotationen står branschen. Tre: AKTIEN — först då verktygslådan från kapitel 3–11: trend (riktning), linjer och nivåer (plats), formationer (paus eller vändning), medelvärden (regim), oscillatorer (kännedom om bränsle), volym (bekräftelse), ljus (trigger). Metodikens poäng är ORDNINGEN: varje verktyg svarar på en fråga och frågorna ska ställas i rätt sekvens — riktning före plats, plats före signal, signal före trigger. Den som börjar med ljusen har läst en deckare från sista sidan."
+        },
+        {
+          "type": "text",
+          "content": "Reglerna kring beslutet. Tre R: REGEL — varje affär formuleras som en hypotes med beviskrav: jag köper OM stödet håller och 13-veckorslinjan stiger, stopp under stödet, mål vid kanalens överlinje — skrivet FÖRE affären. RISK — positionens storlek sätts av avståndet till stoppet, inte av övertygelsens styrka: hur mycket jag kan förlora på affären bestämmer hur många aktier jag har råd att ta fel på (ett riskförsta-tänk som modern position sizing delar). RITUAL — en fast rutin: samma checklista, samma tidsramar, samma dag i veckan för genomgång; granskning av förra veckans signaler mot utfallet — en teknisk analysjournal som gör att metoden kan förbättras, för utan journal är varje bedömning bara ett minne som smickrar sig självt. Torssells egna Carnegie-analyser är modellen: korta, villkorade, med nivåer och alternativ — en analys som aldrig säger DETTA KOMMER ATT HÄNDA utan OMFALL X GÖR Y, ANNARS Z. Det är hantverkets diskursform — och den enda som kan granskas i efterhand."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · hela modellen V01–V20 är Vad-frågan som ska vara BESVARAD innan När-frågan ens får ställas: metodikens största skillnad mot internets tekniska analys är att den inleds med ett beslut om BOLAGETS kvalitet — och först sedan frågar om tidpunkten. I AK1A:s praktik: AKM1 först (V01–V20, helst med Vågfundamentets tidsserier), AK1TS därefter (fem horisonter, fem teorier, fyra dimensioner), sedan konfluens-testet — minst tre oberoende källor måste peka samma håll (fundamental värdering, teknisk nivå, momentum) innan en affär är ett beslut och inte en impuls. AK1TS-RAD: hela matrisen — femton celler vägs, ingen enskild signal bär; precis som bokens metodik men mekaniskt, varje gång, för varje aktie. Det är definitionen av ett analysramverk: samma frågor, samma ordning, samma beviskrav — varje gång."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett analysramverk är en checklista med beviskrav, och dess värsta fiende är dess bästa verktyg: MINNET. Skriv varje affärshypotes med villkor FÖRE köpet — OM stödet håller, NÄR linjan stiger, STOPP här, MÅL dit — och granska utfallet varje månad. Analys som inte skrivs ner kan inte vara fel; analys som inte kan vara fel är ingen analys."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Arbetsordningen — sju steg från marknad till affär\",\"rader\":[[\"Steg\",\"Fråga\",\"Verktyg\"],[\"1. Marknad\",\"vilken regim råder — OMX över/under kungslinjen?\",\"index, MA200, bredd\"],[\"2. Sektor\",\"var i rotationen står branschen?\",\"relativ styrka\"],[\"3. Trend\",\"åt vilket håll går aktien?\",\"sekvenser av toppar/låg, MA\"],[\"4. Plats\",\"var är de betydelsefulla nivåerna?\",\"stöd/motstånd, trendlinjer, kanaler\"],[\"5. Läge\",\"paus eller vändning?\",\"formationer, oscillatorer, divergens\"],[\"6. Bekräftelse\",\"finns massan och triggern?\",\"volym, OBV, ljus\"],[\"7. Beslut\",\"vad är hypotesen — stopp, mål, storlek?\",\"regler skrivna före affären, risk först\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din egen analys-pamp i bokens anda — ett dokument med fem rubriker: MARKNADEN (min regimdefinition, exakt), SEKTORN (hur jag mäter rotation), AKTIEN (min checklista i ordning: trend→plats→läge→bekräftelse), BEVISKRAV (vad som måste gälla FÖRE köp — minimum konfluens) och RITUALEN (när jag granskar, var journalen finns). Skriv klart dokumentet och tillämpa det på EN svensk aktie i kväll. Datera och spara. Om pampen saknar någon av de fem rubrikerna saknar din metodik en vägg — och den rasar först i nästa korrigering."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför börjar arbetsordningen med marknaden och sektorn?",
+          "alternativ": [
+            "Därför att index alltid stiger på sikt",
+            "Därför att en stor del av en akties rörelse ofta förklaras av marknaden och sektorn — bra kopior drunknar i en indexkropp",
+            "Därför att sektorer alltid slår index",
+            "Det spelar ingen roll i vilken ordning verktygen används"
+          ],
+          "ratt": 1,
+          "tips": "Tre fjärdedelar av rörelsen kommer utifrån bolaget — var börjar sökandet?"
+        },
+        {
+          "q": "Vad kännetecknar en regelstyrd affärshypotes enligt bokens metodik?",
+          "alternativ": [
+            "Den innehåller aldrig stopp utan bara mål",
+            "Den formuleras efter utfallet för att läras av misstag",
+            "Den skrivs FÖRE affären med villkor: köp OM, stopp VID, mål TILL",
+            "Den baseras enbart på ljusmönster"
+          ],
+          "ratt": 2,
+          "tips": "Vad krävs för att en bedömning ska kunna granskas — och befinnas fel — i efterhand?"
+        },
+        {
+          "q": "Vad är AK1A:s konfluens-test i kursens översättning?",
+          "alternativ": [
+            "Att fem tekniska indikatorer samtidigt är överköpta",
+            "Att AKM1-poängen överstiger 80 av 100",
+            "Att aktien följt 13-veckorslinjan i ett år",
+            "Att minst tre oberoende källor — fundamental värdering, teknisk nivå, momentum — pekar samma håll innan en affär är ett beslut"
+          ],
+          "ratt": 3,
+          "tips": "En signal är en impuls — vad krävs för ett beslut?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 13,
+      "title": "Fallstudier på svenska bolag — graferna hemma",
+      "intro": "Boken och Torssells löpande analysarbete förankrar verktygen i svenska grafer. Detta kapitel läser fyra typfall — delvis illustrativa, ärligt märkta — och ett dokumenterat riktigt: hans Carnegie-analys av Stockholmsbörsen efter sju dagars kursfall. Poängen är densamma i alla: verktygen är översatta, principerna hemma.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "FALL ETT — det dokumenterade: indexfallet och den översålda börsen. Carnegies publicerade analys med rubriken Torssell: Börsen översåld efter sju dagars kursfall (augusti, efter nya rekordnoteringar följda av en veckas nedgång) är bokens hela metodik i en enda mening: börsen hade backat från rekordnivåer, RSI på index nått översålda nivåer, och slutsatsen var inte spådom utan VILLKOR: en trött upptrend som nått översålt är ett köpläge för den som tror på primärtrenden — med definierade nivåer för när antagandet dör. Notera arbetsformen: kort, nivåbaserad, regimedriven — index före aktie, regimen före signalen, signalen före retoriken. Det är kapitel 12:s metodik, publicerad i verkligheten."
+        },
+        {
+          "type": "text",
+          "content": "FALL TVÅ, TRE OCH FYRA — tre svenska typfall, ILLUSTRATIVA (konstruerade för kursen, med svenska bolagstyper som förlagor; konkreta bolagnamn och årtal i bokens egna fallstudier kan du slå upp i boken själv): en SVENSK STORBANK med kärlek till jämna nivåer — tjocka zoner kring jämna tiotal, långsamma rundningar, 13-veckorslinjan som arbetslinje och jämna 100-kronorsnivåer som väggar: lärdomen är att stora svenska bolag med tät ägarbas rör sig LÅNGSAMT och respekterar nivåer länge — formationsbyggen i månadsgraf fungerar, intradag-signaler är brus. Ett CYKLISKT INDUSTRIBOLAG (Ericsson-fallen genom historien är den svenska läroboken): årslånga basbyggen under fallande trendlinje, dubbelbottnar vid stöd som testats i omgångar, och utbrott som kommer med VOLYM när fundamentet vänder (V01 vänder positiva, V16 katalysatorer i form av avtal): lärdomen — i cykliska bolag är formationens LÄNGD proportionell mot rörelsens STORLEK, och teknisk bild utan fundamental vändning är en fälla. Och ett TUNNT SVENSKT SMÅBOLAG: spikar, gaps som fylls, utbrott utan volym som dör inom dagar, och V11-likviditetens hårda gräns — här visar Torssells disciplin sin mest praktiska sida: i tunna aktier är nivån inte en zon utan ett HÅL, och volymen är inte ett bevis utan en förutsättning för att ens kunna lämna positionen."
+        },
+        {
+          "type": "text",
+          "content": "FALLFYRANS SAMMANFATTNING — de svenska förhållandena är bokens tysta kunskap. Likviditeten är tunnare än i USA: strategyerna för stora universum gäller inte mekaniskt, tunna aktier straffar brus-handel hårdare, och sommartider (allt från midsommar till juli) har strukturellt låg volym som FÅR INTE läsas som distribution. De svenska jämna nivåerna (tiokronors- och hundralappsnivåer i en aktie på 50–500 kronor) väger tyngre än amerikanska decimaler gör i en aktie på 47 dollar. Och den svenska institutionella ägarbasen gör rundningar vanligare och V-svängar ovanligare än i detaljägda amerikanska småbolag — utom i just de mest historielösa småbolagen. AKM1-BRYGGAN · varje fall är en AKM1-historia: storbanken — V14 varumärke och V12 stabilitet bär de långsamma rundningarna; cyklisten — V01 tillväxtens vändning är själva utbrottet; småbolaget — V19 kapitalförbränning är det som gör gaps till gravar. Ingen teknisk bild är fullständig utan sitt fundamentala kapitel. AK1TS-RAD: motorn kör samma fyra fall på fem horisonter — storbankens bild lever på Lång, småbolagets på Mikro, och skillnaden i horisonteringsviktning ÄR ägarskiktets tidsmässiga signatur. Samma regler, olika klockor — det är den svenska grafens viktigaste läxa."
+        },
+        {
+          "type": "insikt",
+          "content": "Fallstudiernas gemensamma tråd: verktygen är UNIVERSALLA men deras VIKT är lokal — jämna nivåer väger tyngre i Sverige, likviditet väger tyngre i Sverige, tålamod väger tyngre i institutionellt ägda bolag, brus väger dödligare i tunna. En metodik som inte översätter verktygens vikter till sin egen börs är en importmetod — och importmetoder misslyckas exakt där hemmaplanen skiljer sig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra svenska typfall — nivå, verktyg, lärdom\",\"rader\":[[\"Fall\",\"Typisk nivåstruktur\",\"Aktiva verktyg\",\"Lärdom\"],[\"OMX efter sju dagars fall (dokumenterat)\",\"översålt RSI i intakt upptrend\",\"regim + RSI + nivåer\",\"köp svaghet i trend — villkorat, aldrig spående\"],[\"Svensk storbank [illustrativt]\",\"jämna tiotal och 100-kronorsväggar\",\"13v-linje, nivåer, månadsformationer\",\"långa klockor — tålmodiga ägare gör rundningar\"],[\"Cykliskt industritolag [illustrativt]\",\"årsvisa basbyggen under fallande linje\",\"dubbelbottnar, volymutbrott\",\"formationens längd ∝ rörelsens storlek — V01-vändningen är bränslet\"],[\"Tunt småbolag [illustrativt]\",\"gaps och spikar i ett tunnt blad\",\"V11-likviditet som förutsättning\",\"utan volym är nivån ett hål — inte en zon\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget svenska fall: välj en aktie från din portfölj eller bevakningslista och skriv analysen i Carnegies arbetsform — max en halv sida med följande struktur: MARKNADEN (OMX-regimen just nu), SEKTORN (riktning), AKTIEN (trend, viktigaste nivåerna, aktiv formation om någon), KÄNSLA FÖR BRÄNSLE (volym och momentum), SLUTSATS på villkorform: jag köper/säljer/avvaktar OM X inträffar, med stopp och mål. Datera den och lås den. Om du om ett halvår kan läsa den utan att rodna — eller lära något av varför den rodar — har du byggt fallstudie nummer fem."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i Torssells dokumenterade indexanalys — börsen översåld efter sju dagars kursfall?",
+          "alternativ": [
+            "Att ett översålt RSI-läge i en intakt upptrend är ett villkorat köpläge — med nivåer som definierar när antagandet dör",
+            "Att rekordnoteringar alltid följs av korrigeringar på tio procent",
+            "Att teknisk analys bara fungerar på index",
+            "Att börsen snart kraschar och bör blankas"
+          ],
+          "ratt": 0,
+          "tips": "Regimen avgör tolkningen av översålt — och slutsatsen är villkorad, inte spående."
+        },
+        {
+          "q": "Vad utmärker teknisk analys i svenska storbanker enligt kapitlets illustrativa typfall?",
+          "alternativ": [
+            "V-svängar och gaps dominerar helt",
+            "Långa klockor — jämna nivåer, långsamma rundningar och 13-veckorslinjan som arbetslinje",
+            "Intraday-signaler är mest pålitliga",
+            "Volymen är alltid rekordhög"
+          ],
+          "ratt": 1,
+          "tips": "Tät institutionell ägarbas och stort börsvärde — vilken takt föder det?"
+        },
+        {
+          "q": "Varför är likviditet (V11) en särskild fråga i svenska småbolagsgrafer?",
+          "alternativ": [
+            "Därför att småbolag alltid stiger mer",
+            "Därför att svenska småbolag saknar bokslut",
+            "Därför att tunn handel gör nivåer till hål och utbrott utan volym opålitliga — volymen är förutsättning för att ens kunna lämna en position",
+            "Likviditet spelar ingen roll för teknisk analys"
+          ],
+          "ratt": 2,
+          "tips": "En position du inte kan lämna utan att själv flytta kursen — är det en position?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 13,
+      "title": "Kontroversen — slumpvandringens akademi och praktikerns svar",
+      "intro": "Teknisk analys är finanshistoriens mest kritiserade metod. Kursens viktigaste kapitel ställer kritikerna mot boken och mot forskningen — Malkiels slumpvandring, Park–Irwins forskningsöversikt, Lo–Mamaysky–Wangs mönsterfynd — och formulerar AK1A:s syntes med ett öppet medgivande: många mönster är i praktiken svåra att handla på.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kritiken, citerad öppet. Eugene Famas effektiva marknadshypotes och slumpvandring (Random Walk, 1965-artiklarna om aktiekursrörelser): om priserna reflekterar all tillgänglig information är morgondagens rörelse oförutsägbar utifrån dagens — tekniska mönster som förutsäger den borde inte kunna existera. Burton Malkiel, A Random Walk Down Wall Street (första upplagan 1973), levererade den klassiska nedlåtelsen: teknisk analys är den akademiska världens anathema — han skämtade bittert om att chartister förtjänar samma respekt som astrologer, och hans djupare argument är allvarligare: tekniska regler är självförstörande — OM ett mönster verkligen förutsäger en rörelse kommer alla som ser det handla FÖRE det, och därmed förstöra själva rörelsen. Malkiel testade själv formationerna och fann dem statistiskt sterila. Till det kommer det moderna metodangreppet, samma som Quantitative Value-kursens kontrovers: multipel testning av samma data producerar skenbart signifikanta fynd (data snooping) — och teknisk analys har testats i ett oändligt antal specifikationer, vilket gör varje enskilt fynd misstänkt."
+        },
+        {
+          "type": "text",
+          "content": "Forskningens nyanser — kritiken är alltså inte hela historien. Cheol-Ho Park och Scott Irwins much-citerade översikt The Profitability of Technical Analysis (arbeten 2004 och 2007, Journal of Economic Surveys) kartlade 95 studier publicerade 1988–2004: 56 av dem fann positivt resultat för tekniska handelsregler, 20 negativt och 19 blandat — med de starkaste beläggen för medelvärdes-korsningar och kanalregler på valutamarknader fram till mitten av 1980-talet, och med den ärliga brasklappen att datagranskning och kostnadsbehandling gör många fynd sköra. Andrew Lo, Harry Mamaysky och Jiang Wang (Foundations of Technical Analysis, Journal of Finance, 2000) gjorde det kanske elegantaste testet: de lät en dator (kernel-regression) hitta automatiskt i prisdata utan mänsklig mönsterjakt — och fann att flera klassiska formationer, DÄRIBLAND huvud-och-skuldror, innehåller statistiskt signifikant information om framtida volatilitet och avkastning: mönstren är INTE rena illusioner. Men — och detta är den ärliga läsningen — informationsinnehåll är inte samma sak som handelsbar vinst efter transaktionskostnader, och effekterna tenderar att försvagas när de blir kända (samma dynamik som McLean–Pontiff visade för fundamentala faktorer)."
+        },
+        {
+          "type": "text",
+          "content": "Praktikerns svar — Torssells position, formulerad av kursen men trogen bokens anda. För det första: Torssell är PRAKTIKER, inte professor (det är kursens ärliga premiss från kapitel 1, och den spelar roll här) — hans försvar är inte en studie utan en arbetsform: trettio år av att tillämpa verktygen på svenska grafer HAR SORTERAT dem — de verktyg boken ägnar kapitel åt (trend, nivåer, volym, medelvärden, RSI) är de som överlevt; de som inte gjorde det (utsvävande mönster-mystik) får inga kapitel. För det andra: TA:s verkliga produkt är inte prognos utan RISKHANTERING — stop-lossen, positionsstorleken och regimdefinitionen gör att teknikern kan ha FEL ofta och ändå överleva; kritikerna testar signaler, praktiken lever av asymmetrin. För det tredje: det självförstörande argumentet (Malkiel) gäller ineffektiviteter som kräver publicering för att försvinna — men de beteendemässiga mekanismer bakom nivåer och trender (ånger, rädsla, hämnd — kapitel 5) försvinner inte för att de är kända; kunskapen om felen botar dem inte (Montiers ord i Quantitative Value-kursen). Och för det fjärde, ödmjukheten: Park–Irwin visar att effekterna AVTAGER — praktikerns svar är inte förnekelse utan anpassning: verktygen är sannolikhetsverktyg med halveringsbar kant, och den som slutar granska sina signaler mot utfall har slutat äga en metod. AK1A:S SYNTES OCH MEDGIVANDE, rakt ut: AK1TS mäter DETERMINISTISKT — motorn räknar samma fem horisonter, fem teorier och fyra dimensioner på varje aktie utan tolkning, och därmed utan chartanalystens största svaghet: subjektiviteten i linjedragning och mönsterigenkänning (två analytiker drar olika trendlinjer i samma graf — motorn drar samma). MEDGIVANDET: många mönster är i praktiken svåra att handla på — subjektiva att identifiera i realtid, dyra att handla efter kostnader, med kant som avtar — och därför är AK1A:s hållning strikt: teknisk analys används som SÅLL och RISKVERKTYG (regim, nivåer, stopp), ALDRIG som ensam prognosmaskin; fundamentet (AKM1) väljer huset, tekniken (AK1TS) väljer dörren — och ingen dörr öppnas utan ett hus värt att gå in i."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · kontroversens praktiska översättning: varje V-variabel som när som helst kan dömas av marknaden (V04–V06 värderingens nivåer, V19 risk) behöver en teknisk prismäktare — och varje teknisk signal behöver ett fundamentalt hus. AK1TS-RAD: determinismen ÄR kontroversens svar — motorn kör samma femton celler på varje aktie och journalerar signal mot utfall, vilket är det enda sättet en praktiker kan veta om kanten fortfarande lever; när den dör syns det i statistiken, inte i retoriken. Fem horisonter väger — och vägningen granskas."
+        },
+        {
+          "type": "insikt",
+          "content": "Använd kontroversen som kalibreringsinstrument: varje teknisk verktyg du äger ska kunna svara på tre frågor — vilken mekanism gör att det fungerar (beteende, struktur, kostnad), hur starkt är belägget (Park–Irwin-översikten: medelvärden och momentum bättre belagda än exotiska mönster), och hur försvinner kanten (när alla ser det, torkar det). Verktyg utan svar på fråga ett är dekoration; utan svar på fråga tre är det en tidsinställd bomb."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritik, forskning, praktik — och AK1A:s hållning\",\"rader\":[[\"Röst\",\"Påstående\",\"Nyans/Svar\",\"AK1A:s hållning\"],[\"Fama/Malkiel — EMH och slumpvandring\",\"mönster kan inte förutsäga; tekniska regler är självförstörande\",\"Park–Irwin: 56 av 95 studier positiva; Lo–Mamaysky–Wang: flera mönster bär information\",\"regim och nivåer som såll — aldrig prognosmaskin\"],[\"Metodkritik — data snooping\",\"oändlig testning producerar skenfynd\",\"medges öppet; kräv mekanism och utom-sampel\",\"deterministisk mätning; journal mot utfall\"],[\"Praktikern (Torssell)\",\"30 år har sorterat verktygen; TA:s produkt är riskhantering\",\"kanten kan halveras — anpassning, inte förnekelse\",\"stopp och storlek före signaler\"],[\"AK1TS:s determinism\",\"två analytiker drar olika linjer\",\"motorn drar samma — varje gång\",\"fem horisonter väger, ingen cell bär ensam\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör kontroversens tre frågor på din egen tekniska verktygslåda: lista de tre tekniska verktyg du använder mest (trendlinjer, RSI, nivåer — vad de nu är). Besvara per verktyg: ETT — vilken mekanism gör att det fungerar (vilket beteende eller vilken struktur betalar för det?)? TVÅ — hur starkt är belägget (är det i Park–Irwins bättre belagda familj: medelvärden, momentum, nivåer — eller i den svagare: exotiska mönster)? TRE — hur försvinner kanten och vad är ditt tidiga tecken på det? Verktyg som inte klarar alla tre frågor ska degraderas till observation — och det är själva poängen med övningen."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är huvudargumentet i Malkiels kritik av teknisk analys?",
+          "alternativ": [
+            "Att grafer är för dyra att rita",
+            "Att volymdata inte existerar för aktier",
+            "Att teknisk analys bara fungerar i Japan",
+            "Att tekniska regler är självförstörande — om ett mönster förutsäger en rörelse handlar alla på det före och förstör rörelsen; mönster är dessutom akademins anathema"
+          ],
+          "ratt": 3,
+          "tips": "Om alla ser samma brott och handlar på det — vad händer med brottet?"
+        },
+        {
+          "q": "Vad fann Park och Irwin i sin översikt av 95 studier?",
+          "alternativ": [
+            "56 studier fann positivt resultat för tekniska handelsregler, 20 negativt och 19 blandat — starkast för medelvärdeskorsningar och kanalregler, med förbehåll för datagranskning",
+            "Alla studier visade negativa resultat",
+            "Endast candlesticks fungerade",
+            "Översikten avfärdade all tidigare forskning som felaktig"
+          ],
+          "ratt": 0,
+          "tips": "Svaret är nyanserat — majoriteten positiv, betydande minoritet negativ, och metodvarningar."
+        },
+        {
+          "q": "Vad är AK1A:s syntes och medgivande i kontroversen?",
+          "alternativ": [
+            "Att teknisk analys är bevisat overksam och ska förbjudas",
+            "Att AK1TS mäter deterministiskt (samma linje varje gång) men med medgivandet att många mönster är svåra att handla på — därför teknik som såll och riskverktyg, aldrig ensam prognosmaskin; AKM1 väljer huset, AK1TS väljer dörren",
+            "Att AKM1 ska ersättas av ren teknisk analys",
+            "Att kontroversen är ointressant för praktiken"
+          ],
+          "ratt": 1,
+          "tips": "Determinism är svaret mot subjektiviteten — vad är medgivandet mot handelsbarheten?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 13,
+      "title": "Sammanfattning — grafläsaren (syntes AKM1 × AK1TS)",
+      "intro": "Sista kapitlet sätter ihop hela boken till en enda person och ett enda flöde: grafläsaren — som ser riktning före hastighet, nivåer före signaler och risk före prognos. Plus översättningstabellen Torssell → AKM1 → AK1TS och kursens slutprojekt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hela metoden på en sida — grafläsarens flöde. Ett — FUNDAMENTET FÖRST: AKM1:s tjugo variabler (V01–V20) besvarar Vad-frågan; ingen graf läses för en aktie som inte klarat fundamentets golv (V19 kapitalförbränning och V11 likviditet som hårda filter). Två — REGIMEN: marknaden (OMX) och sektorn före aktien; kungslinjen avgör tolkningsreglerna. Tre — AKTIENS FYRA FRÅGOR i ordning: riktning (trend, sekvenser, MA), plats (nivåer, linjer, kanaler), läge (formation, divergens) och bekräftelse (volym, ljus). Fyra — BEVISKRAVET: konfluens — minst tre oberoende källor (fundamental, nivå, momentum/volym) pekar samma håll, annars är det en impuls. Fem — BESLUTET: regler skrivna före affären — köp OM, stopp VID, mål TILL, storlek efter risken. Sex — RITUALEN: journal, granskning, justering — verktyg som inte håller måttet degraderas. Det är hela boken — femton kapitel, sex steg, en A4."
+        },
+        {
+          "type": "text",
+          "content": "Porträttet i sex drag — grafläsaren. Ett: hon frågar RIKTNING först — åt vilket håll, på vilka klockor, i vilken regim. Två: hon respekterar PLATS — affärer görs vid nivåer, aldrig i tomrum; stoppet ligger där teorin dör. Tre: hon kräver BEKRÄFTELSE — formationer handlas vid brottet, signaler med volym, ljus med kontext. Fyra: hon äger RISK före prognos — stopp och storlek är affärens fastare del än målet; fel får kosta litet och rätt får kosta stort. Fem: hon skriver VILLKOR, inte spådomar — OMfall X gör Y, annars Z; varje analys kan dömas i efterhand. Sex: hon vet GRÄNSEN — kontroversen är hennes väggtidning: mönster bär ibland information, kanten avtar, många mönster är svåra att handla på — därför är tekniken hennes såll och dörrväljare, medan fundamentet (AKM1) väljer hus. Det är hela personen: inte en spåman med linjal, utan en hantverkare med checklista."
+        },
+        {
+          "type": "text",
+          "content": "Spåret vidare i katalogen, redigerat: Murphys Technical Analysis of the Financial Markets för hela den amerikanska encyklopedin; Edwards & Magee för formationsanatomin; Elliott Wave-kursen för vågräkningen; Bulkowski för mönsterstatistiken; Nison för ljusens uppslagsverk; Pring för momentumfilosofin; Random Walk-kursen för motståndarens fulla argument; Vågfundamentet för variablerna som tidsserier; Konfluens-kursen för sammansatt-metod-logiken; och AKM1-kursen för domen. Torssells bok är den svenska dörren in — de andra är rummen. Och den sista formuleringen, värd att skriva i verkstaden: GRAFEN ÖPPNAR FRÅGAN — FUNDAMENTET DÖMER SVARET, OCH RISKEN HAR SISTA ORDET. AKM1-BRYGGAN · V01–V20: hela modellen — värderingen (V04–V06) finns i nivåerna, stabiliteten (V10–V12) i regimens hållbarhet, katalysatorerna (V16–V18) i formationernas bränsle, risken (V19) i gapsens gravar, och ägarkärleken (V20) i volymens tysta ackumulering. AK1TS-RAD: hela matrisen — fem teorier, fem horisonter, fyra dimensioner, tjugofem celler per aktie; Torssell lär ut att LÄSA en graf, motorn räknar ALLA grafer — och grafläsaren vet att båda behövs: ögat pekar, formlerna bestämmer, fundamentet bär ansvaret."
+        },
+        {
+          "type": "insikt",
+          "content": "Kursens sista mening är bokens första svenska bidrag: teknisk analys är ett HANTVERK — det döms efter affärernas utfall, inte efter teorins skönhet. Bygg verktygslådan (kapitel 3–11), bygg ramverket (kapitel 12), översätt till din börs (kapitel 13), håll kontroversen levande (kapitel 14) — och låt aldrig grafen bestämma ensam vad fundamentet ska få säga."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Torssell till AKM1 till AK1TS — översättningstabellen\",\"rader\":[[\"Torssells verktyg\",\"AKM1-koppling\",\"AK1TS-rad\"],[\"Trend och tre faser\",\"V01 tillväxt, V12 stabilitet\",\"Trend-dimensionen; fem horisonter\"],[\"Trendlinjer och kanaler\",\"V10–V11 balansräkningens linjer\",\"Brytpunkt — linjebrott per horisont\"],[\"Stöd och motstånd\",\"V04–V06 värderingens nivåer\",\"Pris-dimensionen; 52-veckorsspännet\"],[\"Vänd- och fortsättningsformationer\",\"V16–V18 katalysatorer\",\"Elliott-kolumnen; Tid (Lucas-fönster)\"],[\"Glidande medelvärden (13v, 200d)\",\"V12 intäktsstabilitet\",\"MA50/MA200-regim; momentum 5/63/252\"],[\"RSI, MACD, divergens\",\"V01/V09 fundamental momentum\",\"Trend-dimensionen; divergensmatris\"],[\"Volym och OBV\",\"V11 likviditet, V20 ägarkärlek\",\"Volym-teorin — en av fem\"],[\"Candlesticks\",\"V07–V08 marginaler (kropp och skugga)\",\"Mikro/Kort-triggers; Brytpunkt\"],[\"Metodiken top-down\",\"V01–V20 helhet; konfluens\",\"hela matrisen vägs — ingen cell bär ensam\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — den svenska grafbläddringen: välj TRE svenska aktier (en storbank, ett cykliskt industritolag, ett tunnare småbolag). Kör hela flödet per aktie: AKM1-snurr (åtminstone V01, V04–V06, V10–V12, V19), sedan den tekniska checklistan (regim, trend, plats, läge, bekräftelse), skriv en villkorad slutsats med stopp och mål, och kör — om du har tillgång — AK1TS-matrisen eller dess fem frågor: vad säger Mikro, Kort, Medellång, Lång och Mega? Spara allt daterat. Om sex månader: räkna träffsäkerheten per verktyg. Det dokumentet är inte en övning — det är början på din egen trettioåriga grafpraktik."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta ordningen i grafläsarens flöde?",
+          "alternativ": [
+            "Candlesticks, formationer, indikatorer, trend, fundament",
+            "Regim, köp, fundament, journal",
+            "Fundamentets golv (AKM1) → regim (marknad/sektor) → aktiens fyra frågor (riktning, plats, läge, bekräftelse) → konfluens → regler med stopp och storlek",
+            "Köp på magkänsla, kontrollera fundamentet efteråt, avsluta på ljus"
+          ],
+          "ratt": 2,
+          "tips": "Vad avgör OM en aktie alls är värd att läsa — och vad kommer allra sist i beslutet?"
+        },
+        {
+          "q": "Vad är grafläsarens förhållning till prognos och risk?",
+          "alternativ": [
+            "Hon slipper journal eftersom hon har erfarenhet",
+            "Prognosen är allt — risken sköter sig själv",
+            "Hon använder aldrig stopp utan bara gupp",
+            "Risk före prognos: stopp och storlek är affärens fastare del än målet — fel får kosta litet, rätt får kosta stort"
+          ],
+          "ratt": 3,
+          "tips": "Vad i affären bestämmer du själv FÖRE utfallet — målet eller avståndet till stoppet?"
+        },
+        {
+          "q": "Vad är kursens slutformulering om förhållandet graf, fundament och risk?",
+          "alternativ": [
+            "Grafen öppnar frågan, fundamentet dömer svaret — och risken har sista ordet",
+            "Fundamentet ersätter teknisk analys helt",
+            "Grafen bestämmer allt — fundamentet är dekoration",
+            "Risk, fundament och graf är oberoende av varandra"
+          ],
+          "ratt": 0,
+          "tips": "Tre röster i en bestämd ordning — vilken talar först, vilken dömer, och vem har sista ordet?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { körAnalysMotor, type TickerAnalys as Analys } from "@/lib/analys-motor";
+import { lasEllerHamta } from "@/lib/datacache";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -189,6 +190,11 @@ const AKM1_FRAGOR: ReadonlyArray<{ fraga: string; alternativ: string[]; ratt: nu
   },
 ];
 
+/** Max-ålder på cacherad analysdata: 1 h (60 min) — prisdata hålls färskare än
+ * fundamentalvågorna. En motor-rad utan analyserbar data cachas aldrig, så ett
+ * tillfälligt Yahoo-fel aldrig fryser dagens pass en timme. */
+const CACHE_MAX_ALDER_MIN = 60;
+
 /** GET /api/dagens-pass — dagens aktie + våg-fråga + AKM1-fråga på riktig motor-data. */
 export async function GET() {
   try {
@@ -196,8 +202,18 @@ export async function GET() {
     const ticker = ROTATION[datumHash(datum, 1) % ROTATION.length];
     const akm1 = AKM1_FRAGOR[datumHash(datum, 2) % AKM1_FRAGOR.length];
 
-    const svar = await körAnalysMotor({ tickers: [ticker] });
-    const analys: Analys | undefined = svar.tickers[0];
+    // Cachen FÖRE nätverket: lasEllerHamta cachar motor-raden per ticker i
+    // samma format som cron-fyllningen (data/cache/analys-{ticker}.json) och
+    // anropar motorn bara vid cache-miss eller utgången fönster.
+    const { data: analys, franCache } = await lasEllerHamta<Analys | null>(
+      ticker,
+      "analys",
+      async () => {
+        const rad = (await körAnalysMotor({ tickers: [ticker] })).tickers[0] ?? null;
+        return rad && !rad.fel && rad.data ? rad : null;
+      },
+      CACHE_MAX_ALDER_MIN,
+    );
 
     if (!analys || analys.fel || !analys.data) {
       return NextResponse.json(
@@ -231,6 +247,7 @@ export async function GET() {
       sammanfattning: analys.sammanfattning ?? null,
       fundament: analys.fundament ?? null,
       senaste,
+      franCache,
       kallor: analys.kallor ?? null,
       dagensFraga: {
         fraga: `Vilken vågklass visar motorn på KORT horisont för ${namn}?`,

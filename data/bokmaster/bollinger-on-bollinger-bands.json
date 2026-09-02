@@ -1,0 +1,1086 @@
+{
+  "slug": "bollinger-on-bollinger-bands",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 170,
+  "title": "Bollinger on Bollinger Bands — Bollinger: KOMPLETT",
+  "summary": "John Bollinger — CFA, CMT och 1980-talets chefsmarknadsanalytiker på Financial News Network — skapade i början av 1980-talet världens mest använda volatilitetsverktyg: tre linjer som gör högt och lågt RELATIVT. Boken Bollinger on Bollinger Bands (2001) är den enda där verktygets skapare själv förklarar konstruktionen — och dess gränser. Tesen är radikal i sin enkelhet: hög och låg är inte kronnivåer utan avstånd från volatilitetens mitt; band med fast bredd ljuger därför både vid lugn och storm. Kursen går igenom boken kapitel för kapitel: historien (banden föddes ur procentsbandens misslyckande), konstruktionen (20 dagars medelvärde ± 2 standardavvikelser — matematiken med fullständigt räkneexempel), den relativa definitionen, %b (indikatorn i indikatorn), BandWidth (volatilitetens ekg), The Squeeze (kompression föder utbrott — kopplad rakt till AK1TS Brytpunkt-dimension), walking the bands (trendens gång), W-bottnar och M-toppar i %b-språk, volymbekräftelsen (Bostians Intraday Intensity och Williams Accumulation Distribution), systembyggandet med Bollingers egna regler som checklista — och kontroversen: är ±2σ magi? Malkiel, overfitting och Bollingers ovanligt självrannsakande svar. AK1A:s syntes är ärlig: motorn räknar inte band — den använder bandens IDÉER i Brytpunkt-dimensionen, med medgivandet att enskilda indikatorer är svaga. Ögat pekar, motorn räknar, AKM1 dömer.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan du: berätta historien om varför adaptiva band behövde uppfinnas — och exakt varför fasta procentsband felar · konstruera banden från grunden: 20-dagars enkelt medelvärde ± 2 standardavvikelser, med population mot urvalsvarianten och ett fullständigt räkneexempel du kan köra i kalkylblad · redogöra för föregångarna — procentsband, Hurst envelopes, Keltner, Donchian — och deras respektive svaghet · förklara den relativa definitionen av högt och lågt och dess släktskap med z-score och normaliserade mått · beräkna och läsa %b — indikatorn i indikatorn — inklusive att lägga band på andra indikatorer · beräkna BandWidth och använda den som volatilitetens ekg: Squeeze och Bulge · känna igen The Squeeze och dess livscykel — och koppla den till AK1TS Brytpunkt-dimensionen (fib38/fib62-zoner, stängningsbaserade utbrott) · skilja walking the bands från överextension — och veta varför en bandtagg aldrig är en signal · läsa W-bottnar och M-toppar i %b-språk, inklusive three pushes to a high · använda Intraday Intensity och Accumulation Distribution som volymröst — II% och AD% med 21-dagars normalisering · bygga system enligt Bollingers regler: checklistan och de två testersystemen med inträde, bekräftelse, exit och stopp · redogöra för kontroversen — ±2σ:s pseudovetenskap, Malkiels arbitrering, overfitting — och för Bollingers plattå-svar · och syntetisera: bandens idé i AK1TS-motorn, bandens andning i AKM1:s variabler — volatilitet är en variabel, inte en konstant.",
+  "why": "Det här är volatilitetskursen i katalogen: där Murphys kurser lär ut att LÄSA diagrammet lär den här boken ut att MÄTA det — volatiliteten som variabel, kompression som förelöpare till rörelse, och normalisering som princip för alla jämförelser. Tre skäl gör den KRITISK för ekosystemet. Ett: bandens kärnidé — kompression föder brytning — är bokstavligen logiken i AK1TS Brytpunkt-dimension (fib38/fib62-zoner ur 52-veckorsspannet, stängningsbaserade utbrott); kursen är den teoretiska biografin till en rad i analys-motorn. Två: boken är metodologiskt hederlig på ett sätt få tekniktitlar är — skaparen själv varnar för statistiskt missbruk av hans eget verktyg, visar parametrarnas platå i stället för toppar och dokumenterar sina exempelsystem öppet; det är samma intellektuella ärlighet som QV-kursens backtest-metodik. Tre: kontroverskapitlet tar teknikens närmaste grannämne — överoptimering — på fullt allvar och landar i motorns konstitution: få parametrar, determinism, osatt hellre än gissat. Volatilitet är den variabel den döda skolan glömde; banden gjorde den synlig, motorn gör den mätbar, AKM1 gör den begriplig.",
+  "chapters_list": [
+    "1. Boken och mannen — varför adaptiva band behövde uppfinnas",
+    "2. Konstruktionen — medelvärde, standardavvikelse och räkneexemplet",
+    "3. Föregångarna — procentsband, Hurst, Keltner, Donchian och deras fel",
+    "4. Relativa mot absoluta band — normaliseringens genombrott",
+    "5. %b — indikatorn i indikatorn",
+    "6. BandWidth — volatilitetens ekg",
+    "7. The Squeeze — kompression föder utbrott (AK1TS Brytpunkt)",
+    "8. Walking the bands — trendmarknadens gång",
+    "9. W-bottnar och M-toppar — klassiska mönster i %b-språk",
+    "10. Volymens röst — Intraday Intensity och Accumulation Distribution",
+    "11. System-byggandet — regler, checklista och två testersystem",
+    "12. Kontroversen — är ±2σ magi? Malkiel, overfitting och svaret",
+    "13. AK1A-syntesen — bandens idé i Brytpunkt-dimensionen",
+    "14. Sammanfattning — den bandläsande analytikern (syntes AKM1 × AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Boken och mannen — varför adaptiva band behövde uppfinnas",
+      "intro": "John Bollinger är en av teknisk analysens få verktygsskapare som själv fick skriva den definitiva boken om sitt eget verktyg. CFA och CMT, chefsmarknadsanalytiker på Financial News Network i början av 1980-talet — och sitt bands skapare. Kursen börjar där banden började: med ett praktiskt problem som ingen dåvarande verktyg kunde lösa.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Födelseplatsen var en TV-studio. Bollinger arbetade i början av 1980-talet som chefsmarknadsanalytiker på Financial News Network, FNN, och måste varje dag ha ett svar klart på ALLT: aktier, index, råvaror, valutor. Dåtidens standardverktyg var procentsbanden — ett glidande medelvärde med en fast procentbredd ovanför och nedanför — och Bollinger använde dem som alla andra, med David Bostians Intraday Intensity som tilläggsröst för utbud och efterfrågan. Han har själv berättat det, citerat öppet: vi använde procentsband och jämförde prisets läge i bandet med verktyg som Bostians Intraday Intensity. Problemet var att banden inte höll måttet: samma bredd som passade en sömnig storföretagsaktie var ett skämt för en volatil småbolagsaktie — och samma aktie bytte volatilitetsregim mellan rapportvecka och semestervecka, mellan bubbla och kris. Verktyget behövde ANDAS."
+        },
+        {
+          "type": "text",
+          "content": "Det var här mikrodatorn steg in — och med den möjligheten att räkna standardavvikelser per aktie, per dag, i stor skala. Bollinger testade systematiskt kombinationer av perioder och multiplikatorer över breda urval av aktier, och resultatet blev Bollinger Bands: ett 20-dagars enkelt medelvärde omgivet av band på medelvärdet plus och minus två standardavvikelser. Poängen — och det är bokens hela tes, värd att memorera innan kapitel två — är inte siffrorna utan definitionen: banden ger en RELATIV definition av högt och lågt. Priset är högt vid det övre bandet och lågt vid det nedre, oavsett om kursen är 15 eller 15 000 kronor, oavsett om marknaden är spänd eller sömnig. Boken som dokumenterar allt detta kom först 2001 — Bollinger on Bollinger Bands, McGraw-Hill — efter nästan två decennier av att verktyget redan använts över hela världen. Det är den enda boken om banden som skrivits av bandens upphovsman, och den kursen följer kapitel för kapitel."
+        },
+        {
+          "type": "text",
+          "content": "Bokens arkitektur i korthet: först historien och konstruktionen (föregångarna, matematiken, parametrarna), sedan verktygen (%b, BandWidth, volymindikatorer, mönster i bandens språk) och till sist systembyggandet med två dokumenterade exempelsystem. Differentieringen mot grannkurserna, öppet redigerad: Edwards & Magee och Murphy-kurserna äger chartläsningens grammatik, Bulkowski äger mönsterstatistiken — men bara den här boken förklarar hur ett verktyg KONSTRUERAS och testas, av den som gjorde det. Det gör den till katalogens metodkurs i indikatorbygge: den som förstår varför 20/2 valdes förstår hur man bedömer varje annan indikators parametrar — och deras frestelser."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet — volatilitet finns i fundamentet också: bolag med stabila, förutsägbara intäkter har i regel lugnare kursvolatilitet än bolag med svängande intäkter; bandens andning är delvis V12:s skugga i priset. AK1TS-RAD: Brytpunkt-dimensionen — kursens räls: bandens grundidé, kompression föder brytning, lever i motorn som zoner och utbrott, och den kopplingen byggs ut ordentligt i kapitel 7 och 13."
+        },
+        {
+          "type": "insikt",
+          "content": "Högt och lågt är inte en kronnivå — det är ett avstånd från volatilitetens mitt. Banden är den definitionen ritad: innan du kan avgöra om priset är högt måste du veta hur mycket marknaden just nu rör sig. Behovet födde verktyget."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Från procentsband till Bollinger Bands — utvecklingslinjen\",\"rader\":[[\"Era\",\"Verktyg\",\"Bredd satt av\",\"Problem som kvarstod\"],[\"1960–70-tal\",\"procentband runt 10–20-dagars MA\",\"fast ±3–7 %\",\"samma bredd på allt; dött vid volatilitetsbyte\"],[\"1970\",\"Hurst envelopes (cykelteori)\",\"beräknade cykelkurvor\",\"eleganta men komplexa och datakrävande\"],[\"1960-tal\",\"Keltner-band\",\"medeldagsspannet H−L\",\"datadrivet men sent reagerande, formblint\"],[\"1960-tal\",\"Donchian-kanaler\",\"högsta/lägsta på N dagar\",\"ren trendföljning, inget volatilitetsmått\"],[\"tidigt 1980-tal\",\"Bollinger Bands\",\"standardavvikelsen σ på N stängningar\",\"adaptivt och normaliserat — kräver disciplin: taggar är inte signaler\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Andningsövningen: öppna dagsgrafen för en trög storbolagsaktie och en volatil småbolagsaktie, båda med Bollinger Bands 20/2 synliga. Titta i en minut på hur banden vidgar och smalnar. Föreställ dig sedan fasta ±5-procentsband ritade på båda — räkna grovt hur ofta de skulle ligga helt fel (pris långt utanför eller aldrig i närheten). Skriv en mening om varför bredden måste komma från datan, inte från dig."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var huvudproblemet med de procentsband Bollinger använde på FNN-tiden?",
+          "alternativ": [
+            "De var för dyra att räkna för hand",
+            "De gav endast köpsignaler, aldrig säljsignaler",
+            "Den fasta bredden passade inte olika aktier — och inte samma aktie när volatiliteten bytte regim",
+            "De fungerade bara på råvaror"
+          ],
+          "ratt": 2,
+          "tips": "Fråga dig: kan ett mått i kronor svara på en fråga om svängningar?"
+        },
+        {
+          "q": "Var och när föddes Bollinger Bands?",
+          "alternativ": [
+            "På ett universitet på 1990-talet, i samband med boken",
+            "I Bollingers arbete som chefsmarknadsanalytiker på Financial News Network i början av 1980-talet",
+            "Av en databanken på 2000-talet",
+            "Hos Dow och Hamilton på 1920-talet"
+          ],
+          "ratt": 1,
+          "tips": "Verktyget föddes i praktikens vardag — och boken kom först sjutton år senare."
+        },
+        {
+          "q": "Vad är bokens tes — bandens kärndefinition?",
+          "alternativ": [
+            "Att priset alltid återgår till medelvärdet",
+            "Att 20 dagar är den optimala perioden för alla marknader",
+            "Att priset vid övre bandet alltid är övervärderat",
+            "Att banden ger en relativ definition av högt och lågt — högt vid övre bandet oavsett prisnivå"
+          ],
+          "ratt": 3,
+          "tips": "Nyckelordet är relativ: definitionen följer volatiliteten, inte kronorna."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Konstruktionen — medelvärde, standardavvikelse och räkneexemplet",
+      "intro": "Nu matematiken, grundligt och utan genvägar — först därefter har man rätt att kalla banden enkla. Konstruktionen är tre rader: ett medelvärde, en spridning, en multiplikator. Kursen går varje steg med ett fullständigt räkneexempel som du kan köra i kalkylblad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Banden består av tre linjer beräknade på samma N stängningar, standard N = 20. Mittbandet: det ENKLA glidande medelvärdet — summan av de senaste tjugo stängningarna delat med tjugo (Bollinger väljer enkelt framför exponentiellt medvetet: enkelhet och transparens). Övre bandet: mittbandet plus multiplikatorn gånger standardavvikelsen. Nedre bandet: mittbandet minus samma produkt. Standard N = 20, multiplikator = 2. En teknisk detalj som boken tar på allvar: det finns två versioner av standardavvikelsen — populationen (dividera med n) och urvalet (dividera med n − 1). Bollinger själv använder populationsversionen; skillnaden vid tjugo perioder är en bråkdel av en procent men den finns, och den förklarar varför olika diagramtjänster kan visa mikroskopiskt olika band. Vet vilken din tjänst använder — men strid inte om siffran."
+        },
+        {
+          "type": "text",
+          "content": "Standardavvikelsen steg för steg, i klartext. Steg ett: beräkna medelvärdet av de N senaste stängningarna. Steg två: beräkna varje dags avvikelse från medelvärdet (stängning minus medelvärde). Steg tre: kvadrera varje avvikelse — det gör alla avvikelser positiva och straffar stora hårdare. Steg fyra: summera kvadraterna och dividera med N — det är variansen. Steg fem: dra roten — det är standardavvikelsen σ, spridningen kring medelvärdet i samma enhet som kursen. Banden är alltså medelvärdet plus och minus multiplikatorn gånger spridningen: när priserna ligger tätt samlade blir σ liten och banden smala; när de svävar blir σ stor och banden vidga. σ är bandens lungor — det är hela hemligheten i varför de andas."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexemplet, komplett och kontrollerbart — med fem dagar i stället för tjugo, ty aritmetiken är identisk och bara längre. Stängningar: 100, 102, 101, 103, 104. Medelvärde: 510 / 5 = 102. Avvikelser: −2, 0, −1, +1, +2. Kvadrater: 4, 0, 1, 1, 4 — summa 10. Varians (population): 10 / 5 = 2. Standardavvikelse: roten ur 2 ≈ 1,41. Övre band: 102 + 2 × 1,41 = 104,83. Nedre band: 102 − 2 × 1,41 = 99,17. Med urvalsvarianten hade variansen blivit 10 / 4 = 2,5 och σ ≈ 1,58 — banden 105,17 och 98,83: synlig men liten skillnad. På riktigt, med tjugo dagar, görs exakt samma fem steg — tabellen nedan är hela konstruktionen i miniatyr. Parametrarna: 20 och 2 är DEFAULT, inte magi, och boken ger sina enda rekommenderade alternativ: kortare medelvärde kräver lägre multiplikator — 10 dagar med 1,9 σ; längre kräver högre — 50 dagar med 2,1 σ. Och Bollingers egen varning, citerad ordagrant i anda: gör INTE statistiska antaganden från beräkningen — pris är inte normalfördelat, och banden är inga konfidensintervall (kontroversen återkommer i kapitel 12)."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V04 P/S, V05 P/B, V06 EV/EBITDA — multiplarna är också eftersläpande medelvärden i förklädnad: ett P/B under sitt eget femårsgenomsnitt är %b-tänk tillämpat på värderingen — var i sitt band handlar multipeln? Vågfundamentet ställer den frågan per variabel. AK1TS-RAD: Trend-dimensionen — MA50 och MA200 i motorn är samma verktygsfamilj som mittbandet; motorn klassificerar vågor (impulsvåg, korrigering, basbygge) medan banden mäter avståndet till medelvärdet. Konstruktionen är släkt, användningen skild."
+        },
+        {
+          "type": "insikt",
+          "content": "Banden är tre tal om dagen: medelvärdet, spridningen, avståndet. Den som kan räkna σ för hand förstår varför banden smalnar före stora rörelser — kompression i data BOKSTAVLIGEN blir smalare band. Verktyget är enkelt; insikten är att volatiliteten är datan, inte kurvan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Räkneexemplet — fem dagar, band för band\",\"rader\":[[\"Dag / steg\",\"Stängning / tal\",\"Avvikelse mot MA 102\",\"Avvikelse i kvadrat\"],[\"1\",\"100\",\"−2\",\"4\"],[\"2\",\"102\",\"0\",\"0\"],[\"3\",\"101\",\"−1\",\"1\"],[\"4\",\"103\",\"+1\",\"1\"],[\"5\",\"104\",\"+2\",\"4\"],[\"Summa kvadrater\",\"—\",\"—\",\"10\"],[\"Varians (population)\",\"10 / 5\",\"—\",\"2,00\"],[\"σ = roten ur variansen\",\"—\",\"—\",\"1,41\"],[\"Övre band = 102 + 2 × 1,41\",\"—\",\"—\",\"104,83\"],[\"Nedre band = 102 − 2 × 1,41\",\"—\",\"—\",\"99,17\"],[\"Jämförelse: σ (urval, n − 1)\",\"10 / 4 = 2,5\",\"—\",\"1,58\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kalkylbladsövningen: hämta tjugo stängningar för valfri aktie. Beräkna i en kolumn medelvärdet, i nästa varje dags avvikelse, i tredje kvadraterna, i fjärde variansen och σ, och sist båda banden. Jämför med din diagramtjänst. Stämmer det — eller skiljer banden en aning? I så fall beror det nästan säkert på population mot urval: kontrollera vilken version tjänsten använder. Du har nu byggt världens mest använda indikator för hand."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket medelvärde används i mittbandet, och vilka är standardparametrarna?",
+          "alternativ": [
+            "Enkelt 20-dagars medelvärde med multiplikatorn 2",
+            "Exponentiellt 50-dagars medelvärde med 3 σ",
+            "Viktat 200-dagars medelvärde med 1 σ",
+            "Medianen av 10 stängningar med 2,5 σ"
+          ],
+          "ratt": 0,
+          "tips": "Enkelhet är design: tre rader matematik som alla kan kontrollera."
+        },
+        {
+          "q": "I räkneexemplet med stängningarna 100, 102, 101, 103, 104 — vad blir σ (populationsversionen)?",
+          "alternativ": [
+            "2,00",
+            "1,41",
+            "2,83",
+            "0,50"
+          ],
+          "ratt": 1,
+          "tips": "Kvadraterna summerar till 10; dividera med 5 och dra roten."
+        },
+        {
+          "q": "Vad är Bollingers rekommenderade alternativ om man vill korta medelvärdet till 10 dagar?",
+          "alternativ": [
+            "Höj multiplikatorn till 2,1",
+            "Behåll 2 σ exakt",
+            "Sänk multiplikatorn till 1,9",
+            "Byt till exponentiellt medelvärde med 3 σ"
+          ],
+          "ratt": 2,
+          "tips": "Kortare fönster ger klenare σ — banden kompenseras med lägre multiplikator; 50 dagar kräver tvärtom 2,1."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Föregångarna — procentsband, Hurst, Keltner, Donchian och deras fel",
+      "intro": "Boken börjar med historien, och kursen läser den som en felanalys: varje generation av band löste en del av problemet och lämnade resten. Att förstå varför de gamla felade är att första varför σ var svaret.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Procentsbanden var den första standardlösningen: ett 10- eller 20-dagars medelvärde med en fast procentbredd — typiskt tre till sju procent — ovanför och nedanför. De fungerade så länge marknaden var normal, av två skäl som båda är strukturella. För det första: olika aktier har olika volatilitet — fyra procents band på en sömnig teleoperatör är en bred motorväg, på ett spekulativt biotechbolag ett hinderlopp; samma verktyg kan inte mäta båda. För det andra: samma aktie byter volatilitetsregim — runt rapportdagen, i sektorkriser, i bubblor sväller svängningarna; bandet som passade i september ljuger i oktober. Och med tiden växer dessutom prisnivåerna: fyra procent av en tjusing är inte fyra procent av en hundralapp. Fast bredd är en mätstock som krymper och växer godtyckligt."
+        },
+        {
+          "type": "text",
+          "content": "Föregångarna i bokens egen genealogi. J M Hurst (The Profit Magic of Stock Transaction Timing, 1970) ritade kurvade envelopes baserade på cykelteori — vackra, teoritätta och i praktiken komplexa att beräkna och validera. Chester Keltner (How to Make Money in Commodities, 1960) tog bredden från data: banden sattes till medelvärdet plus och minus ett medelvärde av dagens spann (högsta minus lägsta) — ett ärligt försök till datadriven bredd som dock reagerar sent och är blind för distributionens FORM: tre jämna dagar och en vild dag med samma medelspann ger samma band. Richard Donchians kanaler (1960-talet) — högsta högsta och lägsta lägsta över ett fast fönster, berömda genom fyraveckorsregeln — är ren trendföljning och lever vidare i all breakout-tradition, men de mäter var priset VAR, inte hur mycket det svänger. Alla tre delar felet: bredd som inte är en funktion av prisdatans faktiska spridning, just nu."
+        },
+        {
+          "type": "text",
+          "content": "Bollingers svar var att låta bredden beräknas ur samma fönster som medelvärdet: standardavvikelsen på de tjugo senaste stängningarna. Därmed blev banden en funktion av datan — de vidgar när spridningen växer och smalnar när den krymper, per instrument, per dag, utan handpåläggning. Och platsen i parameterlandet valdes inte som en spetsig optimum utan som en PLATTÅ: när Bollinger testade kombinationer systematiskt fann han ett brett, stabilt område där resultaten var i princip likvärdiga — 20 dagar med 2 σ ligger mitt på platån, inte på en tunn topp. Det är en av bokens viktigaste metodiska bidrag, och det är först helt begripligt i kapitel 12: en platå är robusthet — en topp är overfitting. Samma test, två olika sätt att läsa resultatet, hela skillnaden mellan verktyg och leksak."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V08 EBITDA-marginal — branschernas olika marginalsvängrum är volatilitet i fundamentet: en fast regel som 'marginal över tjugo procent är bra' felar på samma sätt som fasta band — tjugo procent är en ocean för en biltillverkare och en trång gränd för mjukvarubolag. V08 läses alltid mot branschnormal, aldrig mot ett fast tal. AK1TS-RAD: Pris-dimensionen — motorn svarar på samma problem med proportioner i stället för procent: fib38 och fib62 är fasta ANDELAR av 52-veckorsspannet, inte fasta kronnivåer — skalan dividieras bort, precis som σ gör i banden."
+        },
+        {
+          "type": "insikt",
+          "content": "Fasta band felar därför att de frågar 'hur många kronor?' när rätt fråga är 'hur många standardavvikelser?'. Volatilitet är valutan; kursen är bara beloppet. Det är den insikt som skiljer band från band."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra föregångare — och Bollingers svar\",\"rader\":[[\"Verktyg\",\"Bredd satt av\",\"Styrka\",\"Svaghet\"],[\"Procentsband\",\"fast ±3–7 % runt medelvärdet\",\"enkelt, intuitivt\",\"samma bredd på allt; dör vid regimbyte\"],[\"Hurst envelopes\",\"cykelberäknade kurvor\",\"teoritätt, adaptivt på pappret\",\"komplexa, svårtestade, datakrävande\"],[\"Keltner-band\",\"medelvärdet av dagsspannet H−L\",\"datadrivet\",\"reagerar sent; blind för spridningens form\"],[\"Donchian-kanaler\",\"högsta/lägsta över N dagar\",\"ren trendföljning, lever vidare\",\"mäter extremvärden, inte volatilitet\"],[\"Bollinger Bands\",\"σ på samma fönster som medelvärdet\",\"adaptivt, normaliserat, platåvalda parametrar\",\"kräver disciplin — bandtaggar är inte signaler\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Feltalsräkningen: välj en högvolatil och en lågvolatil aktie. Räkna ut deras genomsnittliga dagsspann i procent (H − L / stängning, tio dagar). Rita sedan mentalprocentband med det spannet på båda — och räkna i grafen: hur många dagar i månaden hamnar priserna utanför banden på respektive aktie? Skillnaden i feltal mellan de två är hela procentsbandens obituarium."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är de två strukturella skälen till att fasta procentsband felar?",
+          "alternativ": [
+            "De är olagliga på vissa börser och kräver dyra data",
+            "Olika aktier har olika volatilitet — och samma aktie byter volatilitetsregim över tid",
+            "De fungerar bara på veckograf och endast i hausse",
+            "De kräver för många parametrar för att räkna för hand"
+          ],
+          "ratt": 1,
+          "tips": "Två dimensioner: mellan instrument och över tid. Fasta mått klarar ingen av dem."
+        },
+        {
+          "q": "Hur sätts bredden i Donchian-kanaler?",
+          "alternativ": [
+            "Högsta högsta och lägsta lägsta över ett fast antal dagar",
+            "Standardavvikelsen på tjugo stängningar",
+            "En fast procent på medelvärdet",
+            "Medelvärdet av dagsspannet plus en multiplikator"
+          ],
+          "ratt": 0,
+          "tips": "Donchian mäter extremvärden i ett fönster — urfadern till all breakout-tradition."
+        },
+        {
+          "q": "Vad menas med att 20/2 valdes på en platå och inte på en topp?",
+          "alternativ": [
+            "Att 20/2 ger exakt högsta avkastning i varje backtest",
+            "Att plattåer är en statistisk illusion",
+            "Att parametrarna aldrig fick ändras efter publicering",
+            "Att en bred grupp grannparametrar ger i princip likvärdigt resultat — robusthet hellre än spetsighet"
+          ],
+          "ratt": 3,
+          "tips": "En tunn optimum dör vid första regimbyte; en platå överlever — det är skillnaden verktyg mot leksak."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Relativa mot absoluta band — normaliseringens genombrott",
+      "intro": "Bandens djupaste bidrag är inte linjerna utan idén: att definitionen av högt och lågt måste vara relativ för att vara meningsfull. Detta kapitel är bokens filosofiska kärna — och kursens bro till allt normaliserat tänkande i AK1A.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Ett absolut påstående: 'kursen 150 är hög'. I förhållande till vad? Till gårdagen, till förra året, till volatiliteten, till sektorn, till valutan? Utan referens är meningen tom. Ett relativt påstående: '%b ligger på 0,9' — priset är i den övre delen av sitt eget nuvarande volatilitetsspann. Det är mätbart, jämförbart och sant oavsett om kursen är 15 eller 15 000, i kronor eller yen, på en sömnig telekom eller en vild krypto. Banden normaliserar längs tre axlar samtidigt: över TID (samma aktie i lugn och storm — banden vidgas och smalnar, definitionen förblir sann), över INSTRUMENT (aktier, index, råvaror, valutor — boken visar band på allt), och över TIDSSKALA (dagsgrafens band mot veckografens). Det är samma operation som en z-score: (pris − medel) / σ — banden är z-scoren ritad i prisrummet i stället för i enheter. Kursnivån 104,83 i kapitel 2:s exempel är alltså exakt z = +2."
+        },
+        {
+          "type": "text",
+          "content": "Konsekvenserna är praktiska. Screening: frågan 'vilka aktier handlas vid det övre bandet just nu?' är möjlig att ställa maskinellt — 'vilka aktier är höga?' är det inte. Jämförelse: ett index kan jämföras med ett annat i spänning, inte i poäng. Regimer: samma mått kan följa en aktie genom bubbla och kris utan att tappa sittning. Det är inte unikt för banden — Sharpe-kvoten normaliserar avkastning mot risk, V-poängen normaliserar fundamental mot skala — men banden var bland de första som gjorde normaliseringen till huvudnumret i detaljhandeln. Mycket av modern volatilitetsnormaliserad analys — z-scoreer, volatilitetsjusterade signaler, riskparity — springer ur samma krav: divisera bort skalan, behåll informationen."
+        },
+        {
+          "type": "text",
+          "content": "Och nu gränsen, lika viktig: normalisering raderar också. En aktie kan ligga vid %b = 1,0 — överkurs i sin egen bubbla — medan MITTBANDET självt faller: relativt högt läge i ett sjunkande hus. Relativt hög är inte köpvärt; relativt låg är inte billigt. Banden svarar på LÄGE, aldrig på VÄRDE eller RIKNING — därför kräver boken hela tiden samspel med oberoende röster: indikatorer (kapitel 5 och 10), regimläsning (kapitel 6 och 8) och i AK1A:s översättning fundamentet (AKM1). Relativiteten är en halv sanning som blir hel först i sällskap — den som glömmer det har fått ett mått och tappat en mening."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V05 P/B — hela multipeltänket är bandens kusin på fundamental sidan: P/B 0,8 säger ingenting utan referens (mot eget historik, mot sektorn, mot börsen); AKM1:s V04–V06 fungerar bara därför att de läses relativt. Vågfundamentet fullbordar med tidsserievyn: var i sitt eget band rör sig variabeln? AK1TS-RAD: cellerna är klasser, inte kurser — vågklassificeringen impulsvåg, korrigering, basbygge är en relativ definition av styrka, exakt bandens grammatik; samma data ger alltid samma celler."
+        },
+        {
+          "type": "insikt",
+          "content": "Bandens geni är frågan de gör mätbar: 'är priset högt?' — utan att nämna en enda krona. Men relativt läge är inte riktning och inte värde: normaliseringen gör talet jämförbart, inte sant. Halva svaret, aldrig hela."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Absoluta mot relativa band — tre testfrågor\",\"rader\":[[\"Fråga\",\"Absoluta band (fast bredd)\",\"Bollinger Bands (σ-bredd)\"],[\"Samma bredd på alla aktier?\",\"nej — hög- och lågvolatila behandlas lika\",\"ja — σ beräknas per instrument\"],[\"Anpassar sig vid regimbyte?\",\"nej — bandet står stilla medan marknaden svänger\",\"ja — banden andas med spridningen\"],[\"Jämförelse aktier emellan?\",\"omöjlig — kronnivåer är ej jämförbara\",\"möjlig — %b och BandWidth är skalfria\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Normaliserings-övningen: lista fem innehav. Notera dagens %b för alla (de flesta tjänster visar det; annars kör formeln från kapitel 5). Ranka listan efter %b. Hämta sedan din AKM1-rangordning av samma fem. Där %b-rankningen och AKM1-rankningen säger emot varandra — mest tekniskt spänt men fundamentalt svagast, eller tvärtom — har du exakt den konflikt kursen handlar om: skriv en mening om vilken du litar på och varför."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den relativa definitionen av högt och lågt?",
+          "alternativ": [
+            "Att priset är högt när det stigit mer än tio procent",
+            "Att högt och lågt definieras av priset i förhållande till sin egen volatilitet — högt vid övre bandet",
+            "Att högt och lågt bestäms av analytikerns target pris",
+            "Att indexet alltid definierar vad som är högt"
+          ],
+          "ratt": 1,
+          "tips": "Referensen är banden — och banden beräknas ur prisets egen spridning."
+        },
+        {
+          "q": "Vad är bandens släktskap med z-score?",
+          "alternativ": [
+            "Banden är i praktiken z-scoren ritad i prisrummet: övre bandet motsvarar z = +2",
+            "Inget — z-score är en fundamental multipel",
+            "z-score används bara på volymdata",
+            "Banden ersätter z-score i statistiken"
+          ],
+          "ratt": 0,
+          "tips": "(pris − medel) / σ — banden är samma beräkning uttryckt i kronor."
+        },
+        {
+          "q": "Vad är normaliseringens stora begränsning?",
+          "alternativ": [
+            "Den fungerar bara på aktier under 100 kronor",
+            "Den raderar kontext — relativt högt läge kan ligga i ett fallande medelvärde; läge är inte värde eller riktning",
+            "Den kräver att alla instrument har samma pris",
+            "Den gäller endast på veckograf"
+          ],
+          "ratt": 1,
+          "tips": "Ett hus kan vara det varmaste på gatan i en stad som fryser."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "%b — indikatorn i indikatorn",
+      "intro": "Bokens första derivata: %b förvandlar bandläget till ett enda tal mellan noll och ett — jämförbart, backtestbart och, viktigast av allt, möjligt att mata in i andra indikatorer. Det är här banden slutar vara ett diagram och blir ett språk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln: %b = (pris − nedre bandet) / (övre bandet − nedre bandet). Vid övre bandet blir värdet exakt 1,0; vid mittbandet 0,5; vid nedre bandet 0,0; över respektive under bandet större än ett och mindre än noll — %b är inte inlåst i intervallet, vilket är en feature: +1,15 är STARKARE än +1,00, synligt direkt i talet. Räkneexempel, för hand: nedre band 99, övre 105, pris 101 → (101 − 99) / (105 − 99) = 2 / 6 ≈ 0,33 — priset en tredjedels väg upp genom bandet. Notera vad %b EGENTLIGEN är: hela diagrammets volatilitetsrum komprimerat till ett tal, en oscillator utan egna parametrar — den harvats direkt ur banden och kräver inte en enda extra inställning. Det är bokens elegance: ett verktyg, tre avläsningar (bandläge, %b, BandWidth), noll extra knappar."
+        },
+        {
+          "type": "text",
+          "content": "Och nu bokens mest underbelysta trick — indikatorn i indikatorn. Eftersom %b bara är en formel för läge-i-spannet kan den appliceras på VILKET serie som helst, inte bara priset: lägg band på en RSI-serie och uttryck RSI:s läge i %b — ett %b på 0,8 på RSI:en betyder att oscillatorn ligger högt i SIN egen volatilitet, enhetligt mätt över alla instrument. Fast prize-trösklar (RSI 70/30 från Murphy-kursen) normaliseras på samma sätt som fasta band normaliserades i kapitel 3: tröskelns innebörd blir oberoende av instrumentets temperament. Samma operation fungerar på vilken indikator som helst — momentum, volymoscillatorer, till och med på AKM1-variabler i Vågfundamentet. %b är alltså inte en indikator utan en NORMALIZERINGSOPERATION — boken lär ut metoden, inte bara måttet."
+        },
+        {
+          "type": "text",
+          "content": "Läsreglerna, med varningarna. %b över 0,8 = starkt läge; under 0,2 = svagt. MEN: i en trend kan %b fastna över 0,8 i veckor — kapitel 8 walking the bands — och att sälja blott för att talet är högt är nybörjarens klassiska misstag. Kombinationerna är där %b levererar: %b högt med stigande volymindikator (kapitel 10) = bekräftad styrka; %b högt med fallande = tomgång; %b korsar 0 eller 1 = bandbrott, en händelse av brytpunktskaraktär (kapitel 7); %b vänder från extremerna UTAN att priset gjort nytt extremvärde = kraftdivergens (kapitel 9:s W och M). %b talar aldrig om VARFÖR — det är ett läge, inte en dom, och det är designat att para sig med oberoende röster."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V09 ROE — %b på V09: var i sitt eget femårsband ligger lönsamheten? ROE femton procent nära toppen av sitt band är en annan mening än femton procent på botten — nivån ensam ljuger, läget talar. Vågfundamentet gör denna läsningen per variabel, automatiskt. AK1TS-RAD: momentum-raderna (5/63/252 dagar) — samma idé: läget i spannet, inte den absoluta nivån; plus Brytpunkt-dimensionen när %b korsar noll eller ett (bandbrott som deterministisk händelse i motorns anda: stängningsbaserat)."
+        },
+        {
+          "type": "insikt",
+          "content": "%b är bandet-andas-i: var i volatilitetens rum befinner sig priset, som ett enda tal. 0,5 är jämvikt — inte en signal. 1,0 är ett faktum som kräver kontext. Talet pekar; regim (kapitel 6), trend (kapitel 8) och volym (kapitel 10) dömer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"%b — fem lägen och deras betydelse\",\"rader\":[[\"Värde\",\"Läge\",\"Tolkning\",\"Klassiskt misstag\"],[\"över 1,0\",\"ovanför övre bandet\",\"extrem styrka eller utbrott\",\"att sälja automatiskt — i trend rider priset bandet\"],[\"0,8–1,0\",\"nära övre bandet\",\"starkt läge\",\"att glömma att starka aktier kan bli starkare\"],[\"omkring 0,5\",\"vid mittbandet\",\"jämvikt, referenspunkt\",\"att behandla mittbandet som en signal\"],[\"0,0–0,2\",\"nära nedre bandet\",\"svagt läge\",\"att köpa automatiskt — 'översålt' är inte en anledning\"],[\"under 0,0\",\"under nedre bandet\",\"panik eller nedåtsutbrott\",\"att anta återgång alltid — kolla mittbandets riktning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "%b-journalen: välj ett innehav. Hämta bandvärdena (nedre, övre, pris) och beräkna %b för hand en gång i veckan i fyra veckor — skriv upp datum, tal och vad som hände efteråt. Efter en månad: hur många gånger var %b över 0,8 — och hur många av dem följdes av fortsatt uppgång respektive återgång? Din egen lilla frekvenstabell är ett bättre svar på 'är hög %b en säljsignal?' än någon åsikt."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är formeln för %b?",
+          "alternativ": [
+            "(pris − medelvärde) / standardavvikelsen",
+            "(pris − nedre bandet) / (övre bandet − nedre bandet)",
+            "(övre bandet − nedre bandet) / medelvärdet",
+            "pris / övre bandet"
+          ],
+          "ratt": 1,
+          "tips": "Det är läget i bandets spann — den tredje formeln är BandWidth, den första är z-score."
+        },
+        {
+          "q": "Pris 101, nedre band 99, övre band 105 — vad är %b?",
+          "alternativ": [
+            "0,33",
+            "0,50",
+            "0,67",
+            "1,01"
+          ],
+          "ratt": 0,
+          "tips": "(101 − 99) = 2; bandens avstånd är 6; två sjättedelar."
+        },
+        {
+          "q": "Vad menas med 'indikatorn i indikatorn'?",
+          "alternativ": [
+            "Att %b ersätter alla andra indikatorer",
+            "Att RSI alltid är bättre än band",
+            "Att man ritar två uppsättningar band i samma diagram",
+            "Att man lägger band och %b på en annan indikators serie — t ex RSI — och får en enhetlig, normaliserad skala"
+          ],
+          "ratt": 3,
+          "tips": "%b är en operation, inte bara ett mått — den fungerar på vilken serie som helst, AKM1-variabler inkluderade."
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "BandWidth — volatilitetens ekg",
+      "intro": "Bandens tredje tal är deras mest förbisedda och kanske viktigaste: bredden. BandWidth förvandlar volatiliteten till en egen linje — och där den linjen når sina extremer föds bokens två stora mönster: The Squeeze och The Bulge.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln: BandWidth = (övre bandet − nedre bandet) / mittbandet × 100. Räkneexempel, för hand: övre 105, nedre 99, mitt 102 → (105 − 99) / 102 ≈ 5,9 — banden är knappt sex procent av priset breda. Det är samma information som avståndet mellan banden i en graph, men uttryckt som ETT tal: jämförbart över tid (har aktien varit smalare än så förr?), mellan instrument (är indexet spändare än sektorn?) och mot historiken (var står dagens bredd mot ett år av bredder?). BandWidth är volatilitetens ekg — en linje som visar marknadens andning: fallande bredd = inandning (kontraktion), stigande = utandning (expansion)."
+        },
+        {
+          "type": "text",
+          "content": "Volatilitetens två lagar, i bokens anda citerade öppet. Första: volatilitet är mean-reverting — extrema nivåer återgår; evig storm finns inte, evigt lugn heller inte. Andra — och den som ger bokens berömdaste mönster dess logik: låg volatilitet FÖREGÅR hög volatilitet. När banden pressas samman kokar marknaden ihop sig — The Squeeze, kapitel 7 — och när utbrottet kommer exploderar bredden. Spegelbilden är The Bulge: extremt HÖG BandWidth, ofta efter en lång rörelse, när utmattningen trycker ut den sista volatiliteten — en trend som brinner av. Notera precisionen i vad dessa mönster säger: Squeeze lovar ATT något ska hända (inte vad), Bulge varnar för ATT en rörelse mattas (inte när den vänder). BandWidth är prognosens förvandling till meteorologi — tryck, inte väderprognos."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken: markera BandWidth:s minimum över ett halvår (Squeeze-kandidat, nästa kapitel) och maximum (Bulge); följ linjens riktning som regimindikator — fallande bredd betyder väntan, stigande betyder rörelse. Boken kommer delvis från optionsvärlden, och BandWidth är den direkta släkten till implied volatility: smala band = billig premie (gynnar köpare av volatilitet), breda band = dyr (gynnar säljare) — boken påpekar själva kopplingen, och den ger BandWidth ett andra liv för den som handlar optioner. För aktieanalytikern räcker ekg-bilden: andas marknaden in eller ut JUST NU — det är frågan som dimensionerar allt annat."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V12 Intäktsstabilitet — kursvolatilitetens fundamentala spegel: bolag med jämna, förutsägbara intäkter får i regel smalare band än bolag med rapportberoende ojämna intäkter; V12-poängen förutsäger delvis bandens vila. En V12-toppning som ändå svänger vilt i kursen är antingen ett likviditets- (V11) eller ett berättelseproblem — noterbart. AK1TS-RAD: Tid-dimensionen och Volym-teorin — vol20/vol90-kvoten är BandWidth:s syskon (deltagande i stället för svängning; de två läses ihop: smala band på fallande volym är den tystaste squeeze:n), Lucas-fönstren mäter tidsmönster i samma serier."
+        },
+        {
+          "type": "insikt",
+          "content": "%b säger var PRiset är; BandWidth säger vilken MARKNAD det är. Bredden är prognosens ärliga form: den lovar att något ska hända — aldrig vad. Och volatilitetens lagar ger löftet ryggrad: lugn föder storm, storm föder lugn; evigt finns inte."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"BandWidth — fem nivåer, fem lägen\",\"rader\":[[\"BandWidth\",\"Marknadsläge\",\"Historisk tendens\",\"Praktisk hållning\"],[\"extremt lågt (halvårsmaterial)\",\"Squeeze — kompression\",\"utbrott nära förestående, riktning osäker\",\"beredskap: sätt nivåer, vänta brytning (kapitel 7)\"],[\"lågt och fallande\",\"kontraktion\",\"—\",\"neutral; ingen ny position på återgång\"],[\"normalt\",\"mixat\",\"—\",\"lägesmått: %b och trend avgör\"],[\"högt och stigande\",\"expansion\",\"utbrott pågår\",\"handla med rörelsens riktning\"],[\"extremt högt efter lång rally (Bulge)\",\"utmattning\",\"konsolidering eller vändning\",\"strama stopp, jaga inte sent\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ekg-journalen: för ditt huvudindex, notera BandWidth en gång i veckan i en månad (de flesta tjänster visar den som indikator 'Bandwidth' — annars räknar du den för hand ur bandvärdena). Markera halvårets minimum och maximum. Vilka händelser följde förra gången linjen låg på botten — och på topp? Avsluta med en mening: är marknaden just nu i inandning eller utandning?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är formeln för BandWidth?",
+          "alternativ": [
+            "(övre band − nedre band) / mittbandet × 100",
+            "(pris − nedre band) / (övre band − nedre band)",
+            "standardavvikelsen / medelvärdet × 100",
+            "(övre band − nedre band) / priset"
+          ],
+          "ratt": 0,
+          "tips": "Bredd som andel av mittbandet — procent av priset, inte av spannet."
+        },
+        {
+          "q": "Vad är volatilitetens andra lag enligt boken?",
+          "alternativ": [
+            "Att hög volatilitet varar för alltid",
+            "Att låg volatilitet föregår hög volatilitet — kompression föder expansion",
+            "Att volatiliteten bara beror av räntan",
+            "Att volatilitet och volym alltid är samma sak"
+          ],
+          "ratt": 1,
+          "tips": "Det är mekanismen bakom The Squeeze — och därför bandens mest använda mönster har logik, inte bara historia."
+        },
+        {
+          "q": "Vad är The Bulge?",
+          "alternativ": [
+            "Ett annat namn på The Squeeze",
+            "När priset bryter igenom mittbandet",
+            "En volymindikator från boken",
+            "Extremt hög BandWidth — ofta efter en lång rörelse, tecken på utmattning"
+          ],
+          "ratt": 3,
+          "tips": "Spegelbilden till Squeeze: maximal utandning i stället för maximal inandning."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "The Squeeze — kompression föder utbrott (AK1TS Brytpunkt)",
+      "intro": "Bokens berömdaste mönster: banden smalnar till ett halvårsminimum, marknaden laddar — och snart skjuter priset iväg. Detta är också kursens varmaste koppling till AK1TS: squeeze-logiken är bokstavligen Brytpunkt-dimensionens idébiografi.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anatomin, fas för fas. Kontraktion: BandWidth faller, banden pressas samman, priset rör sig allt trängre — ofta på avtagande volym. Squeeze: BandWidth når sitt minimum över exempelvis sex månader — bokens operationalisering av 'låg volatilitet föder hög'. Firing: priset stänger UTANFÖR ett band, BandWidth vidgas kraftigt och första etappen av en ny rörelse börjar. Expansion: banden spricker isär, priset går på bandet (kapitel 8) och BandWidth stiger mot det som senare kan bli en Bulge. Bilden är en pressad fjäder: ju längre och hårdare kompression, desto kraftigare utbrott — inte en naturlag, men ett återkommande mönster med mekanism: när alla som vill handla har väntat ut väntan finns bara riktningen kvar att slåss om, och den första som rycker drar med sig resten."
+        },
+        {
+          "type": "text",
+          "content": "Reglerna kring squeeze:n, citerade öppet ur bokens regelverk. En: Squeeze är INTE en köp- eller säljsignal — den är en VARNING om att en rörelse är på väg; riktningen är okänd till brytningen sker. Två: handla MED brytningen, aldrig mot — den första stängningen utanför bandet definierar riktningen, och falska brytningar (head fakes) är vanliga nog för att kräva respekt. Tre: en squeeze på HÖGRE tidsram väger tyngre — veckografens squeeze är starkare information än timgrafens. Fyra: bekräfta med volym (kapitel 10) — ett utbrott ur squeeze utan volymökning är ett misstänkt utbrott, precis som Murphy-kursen lärde om baser. Fem: brytningen definieras av STÄNGNING utanför bandet, inte av intraday-tagg — samma determinismkrav som motorn."
+        },
+        {
+          "type": "text",
+          "content": "Och nu AK1TS-KOPPLINGEN, kursens räls. Analys-motorn (src/lib/analys-motor.ts) räknar inte Bollinger-band — men Brytpunkt-dimensionen är bandens idé i deterministisk form: fib38- och fib62-zonerna (38 och 62 procent av 52-veckorsspannet från toppen) är platser där pris KOMPRIMERAS och bryter, och utbrotts- och konsolideringsklasserna ställs mot stängningsdata, aldrig intraday-brus. Motorns squeeze-analog: priset konvergerar mot en Brytpunkt-zon SAMTIDIGT som volymtrenden (vol20/vol90) faller — kompression i två oberoende serier. Skillnaden är medveten: motorn har inga fria bandparametrar att justera (kapitel 12:s försäkring), bara fasta proportioner; bandens IDÉ — att kompression föder brytning — bor i raden, bandens SIFFROR gör det inte. I 25-cellersmatrisen blir det dessutom horisontmedvetande: en squeeze på timgraf är en Mikro-händelse, på månadsgraf en Mega-händelse — samma mönster, fem våningar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V16 Produktlanseringar, V17 Avtal och partnerskap, V18 Regulatoriska katalysatorer — squeeze:n är marknadens sätt att VÄNTA: priset komprimerar därför att marknaden inte vet, och den som ger svar (en V16-lansering, en V17-signatur, ett V18-beslut) är fjädern som sparkas. Bokens teknik ser ATT marknaden väntar; AKM1:s katalysatorvariabler svarar PÅ VAD. Tillsammans: squeeze + identifierbar katalysator = den mest handlingsbara konstellationen i hela kursen. AK1TS-RAD: Brytpunkt-dimensionen, rakt av — zoner, utbrott, stängningsbaserat, fem horisonter."
+        },
+        {
+          "type": "insikt",
+          "content": "The Squeeze säger inte VART marknaden ska — bara att den snart ska. Riktning är en fråga till brytningen och volymen; tålamod är en del av signalen. Kompression föder rörelse: det är bokens enda naturlag, och den är en tendens, inte en garanti."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Squeezens livscykel — fyra faser\",\"rader\":[[\"Fas\",\"Signum\",\"Vad du ser\",\"Hållning\"],[\"1. Kontraktion\",\"BandWidth faller\",\"banden parallellt smalare; pris allt trängre; volym ofta avtagande\",\"ingen position; beredskap\"],[\"2. Squeeze\",\"BandWidth på halvårsmaterial\",\"minimum nått; marknaden andas in\",\"notera brytningsnivåer (bandkanter, senaste topp/botten); skriv planen\"],[\"3. Firing / brytning\",\"stängning utanför bandet\",\"BandWidth vidgas snabbt\",\"handla med riktningen; bekräfta med volym; stopp inuti bandet\"],[\"4. Expansion\",\"BandWidth hög och stigande\",\"priset går på bandet (kapitel 8)\",\"trendhantering — inga sena inträden\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Squeeze-jakten: skanna ditt bevakningsuniversum efter aktier vars BandWidth ligger på eller nära halvårets minimum. Välj tre. För varje: vilken fundamental katalysator — V16 lansering, V17 avtal, V18 beslut — kan vara fjädern? Skriv din brytningsplan FÖRE något händer: nivåer för upp- och nedbrytning, volymkrav, stopp. Datera papperet och låt det ligga. När brytningen kommer — eller uteblir — är det din första squeeze-journalpost, och den är mer värd än tio bakåtblickande exempel."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är operationaliseringen av The Squeeze?",
+          "alternativ": [
+            "När priset stänger över mittbandet",
+            "När BandWidth når sitt minimum över en period, typiskt sex månader",
+            "När RSI korsar 50",
+            "När volymen dubblaras"
+          ],
+          "ratt": 1,
+          "tips": "Squeeze är ett BandWidth-faktum — inte ett prisfaktum."
+        },
+        {
+          "q": "Är en squeeze en köpsignal?",
+          "alternativ": [
+            "Ja — kompression betyder alltid uppgång",
+            "Ja — om priset är nära nedre bandet",
+            "Nej — den varnar att en rörelse är på väg; riktningen definieras först av brytningen",
+            "Nej — squeeze ska alltid handlas med optioner"
+          ],
+          "ratt": 2,
+          "tips": "Fjädern kan skjuta åt båda håll — handla med brytningen, aldrig mot (och aldrig på gissning)."
+        },
+        {
+          "q": "Hur lever bandens idé vidare i AK1TS-motorn?",
+          "alternativ": [
+            "Motorn beräknar Bollinger Bands med 20/2 och lägger till som sjätte teori",
+            "Motorn räknar formationer inklusive squeeze:n och ger dem egna celler",
+            "I Brytpunkt-dimensionen — kompressionszoner (fib38/fib62) och stängningsbaserade utbrott, utan fria bandparametrar",
+            "Motorn använder %b som huvudsignal i alla horisonter"
+          ],
+          "ratt": 2,
+          "tips": "IDÉN bor i raden, SIFFRORNA gör det inte — determinism utan frihetsgrader är hela skillnaden."
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Walking the bands — trendmarknadens gång",
+      "intro": "Nybörjarens dyraste misstag med band: att sälja därför att priset rör övre bandet. I en stark trend RIDER priset bandet — dag efter dag. Bokens mest läkande kapitel handlar om att skilja hälsa från överextension.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen: i en stark trend skapar varje ny push också nya extrema värden i förhållande till medelvärdet — σ dras uppåt av rörelsens egen kraft, och priset stänger nära eller över det övre bandet (i upptrend) respektive under det nedre (i nedtrend), dag ut och dag in. Det kallas walking the bands. Bokens regel är kategorisk och dubbel, citerad: en TAGG av bandet är i sig inte en signal — vare sig köp eller sälj; och STÄNGNINGAR utanför bandet är i trend FORTSÄTTNINGSSIGNALER, inte vändningssignaler. Läs det igen: det som ser ut som 'överköpt' är trendens sätt att gå. Spegelbilden gäller i nedtrend — priset som går på nedre bandet är svaghet, inte rea."
+        },
+        {
+          "type": "text",
+          "content": "Hur skiljer man walking från överextension? Tre tester. Ett: MITTBANDETS RIKTNING — walking sker över ett STIGANDE mittband (MA20 som pekar upp); ett överskott mot ett fallande mittband är en annan varelse. Två: PULLBACKENS DJUP — i en frisk upptrend stannar återgångar vid MITTBANDET, inte vid det nedre; kontinuerliga taggar av mittbandet med studs uppåt är trendens hjärtslag (bokens enklaste trendregel är också dess bästa: i upptrend köper man vid mittbandet, och utträdet signaleras när MITTBANDET bryts nedåt). Tre: BANDENS FORM — parallella, vidgande band är trendhälsa; band som konvergerar eller vrider sig avslöjar trötthet. Tillsammans med kapitel 6:s BandWidth har du regimindikatorn: smala band = range-läge (handla kanter), breda stigande band = trendläge (rid)."
+        },
+        {
+          "type": "text",
+          "content": "Regimernas grammatik, sammanfattad: i RANGE pendlar priset band-till-band, %b svänger mellan noll och ett, medelvärdesåtergång är spelet — köp vid nedre, sälj vid övre, med bekräftelse. I TREND fastnar %b högt (eller lågt), återgångar stannar vid MITTEN, och vartenda 'sälj överköpt'-instinkt förlorar pengar. Det är samma läxa som Murphy-kursens RSI-kapitel — starka aktier kan vara överköpta i veckor — och den har samma rot: verktyg efter regim, inte efter smak. Den som vet vilken regim som råder vet vilken bandstrategi som gäller; BandWidth och mittbandets lutning svarar före affären."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01 Försäljningstillväxt — walking är prisets impulsvåg; V01:s trend är fundamentets. När kursen går på övre bandet MEDAN omsättningstillväxten accelererar är det den friskaste konstellationen — rörelsen har bränsle bakom sig. Kurs på övre bandet UTAN V01-tillväxt är berättelsedrivet: momentum utan fundament, och det är exakt där bandens walking-läger ska läsas med AKM1:s glasögon. AK1TS-RAD: Trend-dimensionen — motorns vågklass impulsvåg (pris över MA50/MA200) ÄR walking, klassificerad; momentumraderna 5/63/252 mäter farten; walking på veckografen = impulsvåg i de långa horisonternas celler."
+        },
+        {
+          "type": "insikt",
+          "content": "I range är banden ett rum att handla i; i trend är de ett band att rida. Frågan före varje bandsignal är därför aldrig 'var är priset?' utan 'vilken regim råder?' — BandWidth och mittbandets lutning svarar först, och först därefter får %b tala."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre regimer — bandens spelregler\",\"rader\":[[\"Regim\",\"Prisbeteende\",\"%b-mönster\",\"Rätt läsning\",\"Klassiskt fel\"],[\"Sidledes\",\"pendlar band-till-band\",\"svänger 0 → 1 → 0\",\"medelvärdesåtergång: kanter med bekräftelse\",\"jaga utbrott sent i rangen\"],[\"Upptrend\",\"stiger längs övre bandet\",\"fastnar över 0,8\",\"köp retracement till mittbandet; rid\",\"sälja 'överköpt' — taggen är inte en signal\"],[\"Nedtrend\",\"faller längs nedre bandet\",\"fastnar under 0,2\",\"stå över eller blanka mot mittbandet\",\"köpa 'översålt' i fallande trend\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Walking-räknaren: hitta en aktie som stigit i minst tre månader. Markera alla stängningar över det övre bandet — hur många, och hur många i rad? Markera sedan pullbackerna under perioden: stannade de vid MITTBANDET? Kör till sist bokens enklaste regel mentalt bakåt: köp vid mittbandets studs, exit när mittbandet bryts ned — hur hade den klarat sig mot 'sälj vid varje övre tagg'? Skriv en mening om vilken strategi din aktie faktiskt belönade."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad säger bokens regel om bandtaggar?",
+          "alternativ": [
+            "Att en tagg av övre bandet är en säljsignal",
+            "Att en tagg av nedre bandet är en köpsignal",
+            "Att en tagg i sig inte är någon signal alls — varken köp eller sälj",
+            "Att taggar bara gäller på veckograf"
+          ],
+          "ratt": 2,
+          "tips": "Taggen är ett faktum om läget; signalen kräver regim, bekräftelse och kontext."
+        },
+        {
+          "q": "Var stannar friska pullbacks i en stark upptrend enligt boken?",
+          "alternativ": [
+            "Vid det nedre bandet",
+            "Vid mittbandet — det är trendens dynamiska stöd",
+            "De kommer aldrig tillbaka in i banden",
+            "Vid fib38-zonen, aldrig vid medelvärdet"
+          ],
+          "ratt": 1,
+          "tips": "Köp-mittbandet-regeln är bokens enklaste trendregel — exit när mittbandet bryts ned."
+        },
+        {
+          "q": "Vad betyder stängningar UTANFÖR bandet i en rådande trend?",
+          "alternativ": [
+            "Vändningssignal — ta hem vinsten",
+            "Ingenting — stängningar utanför förekommer inte",
+            "Att bandens parametrar måste bytas",
+            "Fortsättningssignal — trenden lever"
+          ],
+          "ratt": 3,
+          "tips": "Bokens regel: utanför är continuation, inte reversal — det är walking ytterligare en våning upp."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "W-bottnar och M-toppar — klassiska mönster i %b-språk",
+      "intro": "Klassisk mönsteranalys, översatt till bandens språk: formen i pris PLUS formen i %b. Det är bokens sätt att göra tvetydiga formationer mätbara — och kursens möte med AK1A:s skeptiska hållning till mönster.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "W-botten med band. Första botten: priset faller till eller under det nedre bandet — %b nära noll, säljarna har bestämt. Reaktion: priset stiger mot mittbandet. ANDRA botten — den kritiska punkten: priset gör en lika eller till och med LÄGRE notering, men %b är HÖGRE — priset håller sig över det nedre bandet (t ex 0,05 mot 0,35). Vad betyder det? Att säljtrycket inte orkar ner igen: bandet har sjunkit eller breddats, men priset vägrar följa med ned — köparna har tagit över initiativet under ytan av samma gamla bottennivå. Klassisk W plus högre %b på botten två är bokens bevisade styrkesignatur; bekräftelsen är brytningen över reaktionstoppen mellan bottnarna — först då är W:n mer än en teckning."
+        },
+        {
+          "type": "text",
+          "content": "M-toppar — svårare, och boken är ärlig med det: toppar är PROCESSER, bottnar är HÄNDELSER; en botten slammar igen, en topp smyger. Två varianter. Klassisk M: första toppen når övre bandet (%b kring 1,0); reaktion; andra toppen gör lika eller HÖGRE pristopp — men %b är LÄGRE, priset når inte upp till övre bandet. Samma mekanism som W:n, spegelvänd: köpkraften sinar medan priset fortfarande maskeras av nominellt höga toppar. Bokens favoritvariant — och den vanligaste: THREE PUSHES TO A HIGH: tre successivt högre pristoppar, varje med svagare %b. Euforin lever i pris, kraften dör i %b — formationen är den mest förrädiska i hela boken, ty den ser ut som det starkaste som finns: ständigt nya högstanivåer."
+        },
+        {
+          "type": "text",
+          "content": "Varför %b gör mönster mindre subjektiva: två chartister kan tvista i evighet om huruvida den andra botten var 'lägre' i pris — men %b 0,05 mot 0,35 är två tal, mätta på samma skala. Banden kvantifierar det som annars var ögonmått. ÄNDÅ gäller AK1A:s hållning från Murphy-kursen kapitel 5, oförändrad: mönsterförslag kommer från ögat, motorn räknar inte formationer; ett W eller en M är en HYPOTES som kräver bekräftelse — volymens röst (kapitel 10: botten två på positiv II%? topp tre på fallande AD%?) och brytningen (kapitel 7:s stängningslogik). Formationer är frågor; volym och brytning är svaren."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V08 EBITDA-marginal och V09 ROE — den fundamentala W:n: marginalerna gör sin andra botten HÖGRE (testar djupet och håller) är ett moat-bevis — verksamheten tål en nedgång utan att förblöda; den fundamentala M:n: nya pristoppar på plana V08 är priset som sprungit ifrån verksamheten — Vågfundamentets AK1TS-korsning i sin renaste form. Bandens W och M är alltså kursens mönster, Vågfundamentets korsning är dess fundamentalasyster. AK1TS-RAD: Brytpunkt-dimensionen (bekräftelsebrottet, stängningsbaserat) plus Vågfundamentets AK1TS-korsning — två våningar av samma varning, precis som divergenskapitlet i Murphy-kursen."
+        },
+        {
+          "type": "insikt",
+          "content": "Mönster i pris är form; mönster i %b är kraft. W:n som håller ovanför det nedre bandet på botten två är säljarnas kapitulation i siffra — och tre pushes med sinande %b är euforins sista andetag. Läs alltid båda lagren: vad priset GÖR och vad kraften ORKAR."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre mönster i %b-språk\",\"rader\":[[\"Mönster\",\"Prisform\",\"%b-signatur\",\"Dom\"],[\"W-botten\",\"två bottnar; andra lika eller lägre i pris\",\"botten ett nära 0; botten två klart högre\",\"styrka — köp vid brott över reaktionstoppen\"],[\"M-klassisk\",\"två toppar; andra lika eller högre i pris\",\"topp ett nära 1,0; topp två lägre\",\"svaghet — exit vid nacklinjebrott\"],[\"Three pushes to a high\",\"tre successivt högre toppar\",\"tre successivt lägre %b\",\"toppprocess — strama stopp; bokens vanligaste topp\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Mönsterarkivet: hitta en historisk W-botten och en historisk M-topp (valfri aktie, valfri period). Notera %b vid varje extrempunkt (de flesta tjänster visar %b som indikator). Fanns samtidigt en volymdivergens — II% eller AD%? Skriv tre rader: vad såg %b som priset dolde — och vad hade bekräftat mönstret från hypotes till beslut?"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den kritiska punkten i en W-botten med band?",
+          "alternativ": [
+            "Att andra botten är exakt lika låg som den första",
+            "Att andra botten gör lika eller lägre pris men med HÖGRE %b — priset håller sig över nedre bandet",
+            "Att volymen är högre på andra botten",
+            "Att mittbandet pekar uppåt under hela formationen"
+          ],
+          "ratt": 1,
+          "tips": "Samma nominell botten, mindre kraft bakom — säljarna orkar inte ner igen."
+        },
+        {
+          "q": "Vad är 'three pushes to a high'?",
+          "alternativ": [
+            "Tre successivt högre pristoppar med successivt svagare %b — bokens vanligaste toppformation",
+            "En fortsättningsformation med tre lika höga toppar",
+            "En W-botten med tre ben",
+            "En volymindikator med tre perioder"
+          ],
+          "ratt": 0,
+          "tips": "Eufori i pris, utmattning i %b — den mest förrädiska av alla: den ser starkast ut."
+        },
+        {
+          "q": "Varför säger boken att toppar är svårare än bottnar?",
+          "alternativ": [
+            "Toppar förekommer mer sällan",
+            "Bottnar är händelser som slammar igen; toppar är processer som smyger och drar ut på tiden",
+            "Banden fungerar inte ovanför mittbandet",
+            "%b kan inte mätas vid toppar"
+          ],
+          "ratt": 1,
+          "tips": "Panik är kort, eufori är lång — därför är W:n skarp och M:n diffus."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Volymens röst — Intraday Intensity och Accumulation Distribution",
+      "intro": "Banden mäter pris; bekräftelsen måste komma utifrån priset. Boken väljer volymindikatorer som väger dagens volym efter var STÄNGNINGEN hamnar i dagens spann — marknadens fingeravtryck på dagens sista trade.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första röst: Intraday Intensity, utvecklad av David Bostian — det verktyg Bollinger använde redan på FNN-tiden, citerat öppet som hans utbud-och-efterfrågan-mätare. Formeln: II = (2 × stängning − högsta − lägsta) / (högsta − lägsta) × volym. Logiken är vacker: var i dagens spann stängde marknaden? Stänger aktien nära dagens högsta blir koefficienten nära +1 — hela dagens volym räknas som köptryck; stänger den nära lägsta nära −1; stänger mitt på dagen blir koefficienten noll — volymen var slagsmål utan segrare, den röstar inte. Det är slutauktionen som avgör: den som KONTROLLERAR stängningen lägger budet på var morgondagen börjar. Institutioner som måste handla stora positioner avslutar nära stängning — deras spår syns här."
+        },
+        {
+          "type": "text",
+          "content": "Andra röst: Accumulation Distribution i bokens open-close-form: AD = (stängning − öppning) / (högsta − lägsta) × volym. Den väger stängningen mot ÖPPNINGEN i stället för mot dagens extrema: en grön kropp som spänner hela spannet ger koefficient +1, en röd som gör detsamma −1, en doji — öppning lika stängning — ger noll oavsett hur vild dagen varit. Larry Williams har själv berättat att det var Bostians index som gav honom idén att referera öppningspriset; boken för både arvet och formlerna vidare. Normaliseringen — för II och AD likadant: summera indikatorn över 21 dagar och dividera med 21 dagars sammanlagda volym × 100 → II% och AD%, skalfria oscillatorer som fungerar på vilken aktie som helst. Jämför OBV från Murphy-kursen (Granville 1963): hela dagens volym adderas eller subtraheras — allting-eller-inget-röstning; II och AD är nyanserade, de väger volymen efter SAMMA logik som bandens %b: läget i spannet."
+        },
+        {
+          "type": "text",
+          "content": "Användningen med band — bokens egna kombinationer. Ett: utbrott ur squeeze med POSITIV och stigande II% är bekräftat utbrott; utan volymrörelse är det head fake-misstanke. Två: W-botten där botten två bär positiv II% — köparna köper redan svagheten — är en starkare W. Tre: walking the bands med SJUNKANDE II% är trend på tomgång — kapitel 8:s varning levererad av volymen. Fyra: divergensen — priset nya toppar, II% eller AD% lägre toppar — är bokens tidigaste varning, kapitel 9:s M-toppar bevisade i andra serien. Regeln i en mening: banden ställer frågan, volymindikatorn röstar, affären kräver båda."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V11 Likviditet och V20 Återköp — V11 är golvet: band och II behöver omsättning för att betyda något, en aktie utan volym har inget fingeravtryck att läsa (samma läxa som QV-kursens universumtröskel); V20 är den fundamentala köpsidan — bolaget som återköper aktier är volymens mest uthålliga köpare, 'insiderns II%', och en squeeze med bolagset återköpsprogram i ryggen har en förutsägbar köpsida. AK1TS-RAD: Volym-teorin — vol20/vol90-kvoten är II%-andens deterministiska kusin: samma fråga (deltar någon?) utan fria parametrar; i motorn läses den alltid tillsammans med Brytpunkt-cellen, precis som boken parar band med volym."
+        },
+        {
+          "type": "insikt",
+          "content": "Priset säger vad; stängningens läge i spannet PÅ VOLYM säger vem. II och AD är marknadens fingeravtryck på dagens sista trade — banden utan dem är halva dialogen: en fråga utan röstning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre volymindikatorer — formler och röster\",\"rader\":[[\"Indikator\",\"Formel\",\"Läser\",\"Normalisering\"],[\"Intraday Intensity (Bostian)\",\"(2C − H − L) / (H − L) × V\",\"stängningens läge i dagens spann\",\"II% = sum21(II) / sum21(V) × 100\"],[\"Accumulation Distribution (Williams)\",\"(C − O) / (H − L) × V\",\"stängning mot öppning — dagens kropp\",\"AD% = sum21(AD) / sum21(V) × 100\"],[\"On-Balance Volume (Granville)\",\"± hela V vid upp/nedstängning\",\"riktningen på dagen, nyanslös\",\"kumulativ summa — ingen procentform\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna II för hand: ta fem dagar av H, L, C och volym för en aktie. Beräkna koefficienten (2C − H − L) / (H − L) per dag — notera hur den rör sig mellan +1 och −1 — multiplicera med volymen och summera. Är summan positiv? Jämför med vad kursen gjorde de fem dagarna. Utöka sedan till 21 dagar i kalkylblad och dividera med den sammanlagda volymen: du har byggt II%, bokens bekräftelseröst, från grunden."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är formeln för Intraday Intensity?",
+          "alternativ": [
+            "(C − O) / (H − L) × V",
+            "(2C − H − L) / (H − L) × V",
+            "(C − L) / (H − L)",
+            "summa av volym vid uppstängningar minus vid nedstängningar"
+          ],
+          "ratt": 1,
+          "tips": "Dubbelvikt stängning minus spannets ändar — koefficienten är stängningens läge, gånger volymen."
+        },
+        {
+          "q": "Vad läser Accumulation Distribution i bokens version, (C − O) / (H − L) × V?",
+          "alternativ": [
+            "Stängningens läge mot dagens extrema",
+            "Stängningen mot öppningen — dagens kropp, grön eller röd",
+            "Dagens volym mot 90-dagarsmedelvolymen",
+            "Veckans högsta och lägsta"
+          ],
+          "ratt": 1,
+          "tips": "Williams idé, inspirerad av Bostian: referera öppningen i stället för spannets ändar."
+        },
+        {
+          "q": "Hur normaliseras II och AD till skalfria oscillatorer?",
+          "alternativ": [
+            "Genom att dividera med priset",
+            "Genom att dra medelvärdet av 200 dagar",
+            "Genom att multiplicera med BandWidth",
+            "Genom att summera indikatorn över 21 dagar och dividera med 21 dagars sammanlagda volym × 100"
+          ],
+          "ratt": 3,
+          "tips": "II% och AD% — procent av volymen, jämförbara mellan aktier, samma normaliseringsanda som %b."
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 14,
+      "title": "System-byggandet — regler, checklista och två testersystem",
+      "intro": "Bokens sista del förvandlar verktyg till system: regler definierade före handeln, bekräftelser som röstar, exiter som är skrivna när inträdet görs. Här finns Bollingers egen regellista — och två exempelsystem som boken dokumenterar med alla sina siffrors ärlighet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bollingers metodregler, destillerade ur bokens regellista och citerade öppet. Ett: banden ger en relativ definition av högt och lågt — jämför prisens läge med INDIKATORERS läge, aldrig med magkänsla; definitionen blir strikt först i sällskap. Två: 20 perioder och 2 σ är defaults — och de enda alternativ han rekommenderar är 10 med 1,9 och 50 med 2,1, små steg på platån, aldrig finkalibrering per aktie. Tre: gör inga statistiska antaganden från σ-beräkningen. Fyra: taggar är inte signaler. Fem: stängningar utanför bandet är i trend fortsättningssignaler. Sex: använd %b till att normalisera indikatorer — fasta trösklar avskaffas. Sju: använd BandWidth till att hitta Squeeze. Åtta: squeeze på högre tidsram väger tyngre. Nio: handla inte en brytning ur squeeze MOT rådande trend — head fake-risken är som störst då. Tio: banden ger SETUPS med odds, inte kontinuerliga rekommendationer — verktyget pekar ut situationer där oddsen kan gynna dig; vinsten kommer från riskhanteringen av dem."
+        },
+        {
+          "type": "text",
+          "content": "De två exempelsystemen, som boken presenterar med full öppenhet — inte som rekommendationer utan som METOD: så här ser regler ut. SYSTEM ETT — Squeeze-utbrott (trendföljande): förutsättning BandWidth på halvårsminimum; inträde när priset STÄNGER över övre bandet; bekräftelse II% (eller AD%) positiv; exit vid MITTBANDET; stopp strax innanför bandet som brutits. SYSTEM TVÅ — medelvärdesåtergång (range): förutsättning sidledes marknad med plant mittband (aldrig fallande); inträde när %b stiger UR extremt låga nivåer (t ex under 0,05) med VOLYM-bekräftelse — positiv II% på svagheten: köparna köper redan; exit vid mittbandet; stopp under senaste botten. Notera spegelstrukturen: system ett köper STYRKA som börjar, system två köper SVAGHET som slutar — och båda exiterar vid samma plats, mittbandet, därför att medelvärdet är återgångens mål och trendens dynamiska referens. Båda systemen illustrerar också vad ett system ÄR: frihetsgrader borttagna — inträde, bekräftelse, exit och stopp definierade INNAN handeln."
+        },
+        {
+          "type": "text",
+          "content": "Backtest-metodiken i bokens anda, tre huvudregler. Testa utanför optimeringsperioden: parametrar valda på en datamängd ska prövas på en annan — platån är det du letar efter, inte toppen. Räkna med verkligheten: transaktionskostnader, glidmedel (slippage) och survivorship — en backtest som bara lever på perfekt exekvering är en teckning. Och dimensionera risken ex ante: stoppet definieras vid inträdet (bokens system gör det — innanför bandet, under botten), positionens storlek efter hur mycket stoppet får kosta. AK1A lägger till sitt eget krav, samma som QV-kursens: varje justering av en regel efter att du sett resultatet är en ny frihetsgrad — notera den som skuld, inte som förbättring."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V19 Kapitalförbränning och Emission-risk — systemmoralens fundamental: definiera EX ANTE var du har fel; V19 är den fundamentala exiten (ett bolag som emitterar i en squeeze har fjädrat åt fel håll — utspädning är värdeinvesterarens head fake), stoppet är prisets. V10 Skuldsättningsgrad dimensionerar hur mycket en falsk brytning får kosta innan den blir farlig. AK1TS-RAD: hela 25-cellersmatrisen SOM system — motorn är en regelsamling där samma data alltid ger samma celler; Bollingers regel 'setups, inte kontinuerliga rekommendationer' är motorns konstitution i en mening; determinismen är systembyggandet."
+        },
+        {
+          "type": "insikt",
+          "content": "Ett system är verktyg minus frihetsgrader: inträde, bekräftelse, exit och stopp — banden levererar alla fyra (bandet, volymrösten, mittbandet, motsatta sidan). Oddskant, inte sanning; regler, inte intuition. Det är hela skillnaden mellan att använda band och att bli använd av dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bollingers regler — checklistan\",\"rader\":[[\"Nr\",\"Regel\",\"Varför\"],[\"1\",\"Relativ definition: jämför pris med indikatorer, inte med magen\",\"strikt beslut kräver oberoende röst\"],[\"2\",\"20/2 default; endast alternativ: 10 med 1,9 och 50 med 2,1\",\"platå-tänk — små steg, aldrig finkalibrering\"],[\"3\",\"Gör inga statistiska antaganden från σ\",\"pris är ej normalfördelat; banden är inte konfidensintervall\"],[\"4\",\"Tagg av bandet är inte en signal\",\"regimen avgör — walking eller range\"],[\"5\",\"Stängning utanför bandet i trend = fortsättning\",\"trendens sätt att gå\"],[\"6\",\"%b normaliserar indikatorer\",\"fasta trösklar avskaffas\"],[\"7\",\"BandWidth hittar Squeeze\",\"kompression föder rörelse\"],[\"8\",\"Squeeze på högre tidsram väger tyngre\",\"veckografen slår timgrafen\"],[\"9\",\"Handla inte brytning mot trenden ur squeeze\",\"head fake-risken som störst\"],[\"10\",\"Banden ger setups med odds — inte kontinuerlig rådgivning\",\"vinsten kommer från riskhanteringen\"]]}"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Två testersystem — reglerna rad för rad\",\"rader\":[[\"Rad\",\"System 1: Squeeze-utbrott\",\"System 2: Återgången\"],[\"Karaktär\",\"trendföljande\",\"mean reversion\"],[\"Regim\",\"squeeze → brytning\",\"sidledes, plant eller stigande mittband\"],[\"Inträde\",\"stängning över övre bandet när BandWidth på halvårsminimum\",\"%b under 0,05 som börjar stiga\"],[\"Bekräftelse\",\"II% (eller AD%) positiv\",\"II% positiv på svagheten — köparna köper\"],[\"Exit\",\"mittbandet\",\"mittbandet\"],[\"Stopp\",\"strax innanför brutet band\",\"under senaste botten\"],[\"Främsta risk\",\"head fake — falsk brytning\",\"fallande knivar i nedtrend — därför trendfiltret\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget band-system på ett kort: tre rader — inträde med bekräftelse, exit, stopp — plus en rad regimfilter (BandWidth-läge och mittbandets riktning). Backtesta sedan mentalt på tio historiska squeeze:er i ditt universum: hur många följdes av en rörelse i brytningsriktningen som nådde mittbandets exit? Dokumentera resultatet UTAN att justera parametrar efteråt — varje justering du frestas av är kapitel 12:s ämne, och den tillhör nästa iteration, inte den här backtestens."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilka är de enda parameteralternativ Bollinger själv rekommenderar vid sidan av 20/2?",
+          "alternativ": [
+            "5 med 3 σ och 200 med 1 σ",
+            "10 perioder med 1,9 σ och 50 perioder med 2,1 σ",
+            "Bara 20/2 — alla andra är förbjudna",
+            "30 med 2,5 σ och 100 med 1,5 σ"
+          ],
+          "ratt": 1,
+          "tips": "Små steg på platån: kortare fönster — lägre multiplikator; längre — högre."
+        },
+        {
+          "q": "Varför exiterar båda exempelsystemen vid mittbandet?",
+          "alternativ": [
+            "Därför att mittbandet alltid är högsta sannolika vinstnivå",
+            "Därför att medelvärdet är återgångens mål och trendens dynamiska referens — en naturlig, regelbaserad exit",
+            "Därför att stopp inte behövs vid mittbandet",
+            "Därför att boken inte vågar rekommendera band-exiter"
+          ],
+          "ratt": 1,
+          "tips": "Båda systemen köper olika saker — men båda säljer vid samma, deterministiska plats."
+        },
+        {
+          "q": "Vad är en head fake i bokens språk?",
+          "alternativ": [
+            "Ett falskt utbrott — brytning som dras tillbaka, störst risk mot rådande trend ur squeeze",
+            "En volymindikator som misslyckas",
+            "En squeeze som varar mer än sex månader",
+            "Ett statistiskt antagande om σ"
+          ],
+          "ratt": 0,
+          "tips": "Därav regeln: handla aldrig brytningen mot trenden — och kräv volymens röst."
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Kontroversen — är ±2σ magi? Malkiel, overfitting och svaret",
+      "intro": "Varför skulle 20 dagar och två standardavvikelser vara magiskt? Frågan förtjänar sitt eget kapitel — och Bollinger är ovanligt nog sin egen bästa kritiker. Kursen låter anklagelserna tala fritt, hämtar Malkiel från Random Walk-kursen, lägger overfitting-anklagelsen bredvid — och landar i AK1A:s determinism.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelsen, tre delar. ETT — PSEUDOVETENSKAP: banden SER statistiska ut. σ! Normalfördelning! Nittiofem procent! Men prisförändringar är inte normalfördelade — fördelningarna har feta svansar och volatiliteten klustrar; priset ligger utanför banden betydligt oftare än fem procent av dagarna, och att läsa banden som konfidensintervall är statistisk kosmetika på en grund som inte bär. TVÅ — MALKIEL IGEN (A Random Walk Down Wall Street, 1973, med egen kurs i katalogen som äger argumentet fullt ut): mönster är perceptioner i molnen, och arbitreringens logik är dödshugget — fungerade en enkel signal, skulle alla se den, alla handla den och därmed eliminera den i samma sekund den syntes; att banden är världens mest använda verktyg är i det perspektivet inte bevis utan baksida. TRE — OVERFITTING: en tillämpare som optimerar period, multiplikator och regler tills backtesterna sjunger har inte hittat en kant utan målat det förflutna — varje frihetsgrad förvandlar brus till mönster, samma mekanism som Harvey–Liu–Zhu-anden varnade för i QV-kursens datamining-kapitel. Tre anklagelser, tre olika riktningar: mot verktygets matematik, mot dess källa och mot dess användare."
+        },
+        {
+          "type": "text",
+          "content": "Bollingers svar — noterbart nog mer självrannsakan än försvar. Ett: han SÄGER SJÄLV, som regel: gör inga statistiska antaganden — banden är RELATIVA definitionsverktyg, inte sannolikhetsintervall; den första anklagelsen träffar missbruket, inte verktyget, och upphovsmannen var först med att skriva den. Två: 20/2 valdes som mitt på en PLATTÅ — när testerna visade att en hel grupp grannparametrar ger i princip likvärdigt resultat, faller overfitting-anklagelsens spets: det finns ingen spetsig optimum att ha fittat mot; och hans rekommenderade alternativ (10/1,9; 50/2,1) är grannar på samma platå, inte kurvor. Tre: ADAPTIVITETEN HAR LOGIK OBEROENDE AV SIFFRORNA: volatilitetskluster är ett av finans mest robusta faktum — Mandelbrot dokumenterade feta svansar och klungor på 1960-talet, Engles ARCH-modeller för volatilitetskluster belönades med Nobelpriset 2003 — band som andas med spridningen följer ett verkligt fenomen; squeeze-signalen bygger på 'låg volatilitet föder hög', en mekanism, inte en talismang. Fyra: Malkiels arbitrering gäller SIGNALER — men banden är som använda här en RAM, en definition av högt och lågt som kombineras med oberoende röster (volym, fundament); definitioner arbitrerar inte bort, signaler gör det — och 20/2 har varit publik i decennier utan att ramen tappat funktion."
+        },
+        {
+          "type": "text",
+          "content": "Och här står AK1A:s syntes, med medgivandena först. MEDGIVANDE ETT: enskilda indikatorer är svaga — banden profeterar inget; de som förlorar på band förlorar oftast på att tro att en tagg är en signal. MEDGIVANDE TVÅ: fria parametrar är drog — därför räknar motorn INTE band utan bandens IDÉER: fasta proportioner (fib38/fib62), stängningsbaserade klasser, noll justerbara multiplikatorer; samma data ger alltid samma celler, och när underlaget inte räcker skrivs OSA TT. MEDGIVANDE TRE: ARBITRERING är ett argument mot hemliga kanter, inte mot publika ramar — det som eroderar är signaler, inte definitioner; därför lever 20/2 som definition medan varje generation av finjusterade signaler dör. Slutsatsen, kursens hållning: banden är en LINS — magiska blir de först när användaren tror att linsen ser framtiden. Linsen definierar, volymen bekräftar, motorn determinerar, AKM1 dömer; inget av leden profeterar."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V07 Bruttomarginal — samma kontrovers i fundamentet: en multipelgräns utan bransch- och historikenormal är pseudoprecision; 'bra marginal' är en RELATIV dom precis som 'högt pris'. Bandens normaliseringsläxa appliceras rakledes på V04–V09: nivån får mening först mot eget spann och branschens. AK1TS-RAD: determinismkravet självt — Bollingers plattå-tänk är motorns väg: få parametrar, bred robusthet, noll fria grader efter att resultatet setts; osatt hellre än gissat."
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är fel ställd: 20/2 är inte magi — det är en bra lins. Magin uppstår i användaren, inte i verktyget: den som läser banden som konfidensintervall eller signaler har tagit en definition för en profetia. Definiera, bekräfta, determinera, döm — och låt vara att ingen del ser framtiden."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre röster i kontroversen — och AK1A:s rad\",\"rader\":[[\"Röst\",\"Påstående\",\"Bästa belägg\",\"Hållning\"],[\"Pseudovetenskaps-kritiken\",\"±2σ ser ut som statistik men pris är ej normalfördelat\",\"feta svansar; volatilitetskluster\",\"håller mot MISSBRUK — banden är relativ ram, ej konfidensintervall (Bollingers egen regel)\"],[\"Malkiel och EMH\",\"mönster är brus; fungerande signaler arbitreras bort\",\"arbitreringens logik\",\"gäller SIGNALER — ramar och definitioner arbitrerar inte; 20/2 publikt i decennier\"],[\"Overfitting-kritiken\",\"optimerade parametrar är datamining\",\"fria grader målar det förflutna\",\"plattå-tänk: få, grannaktiga parametrar; motorn: noll justerbara\"],[\"Bollinger själv\",\"inga statistiska antaganden; 20/2 = platå; volkluster är reellt\",\"regel nr 3; ARCH/Nobel 2003\",\"verktyget som definition — bekräftat av volym, determinerat av motor\"],[\"AK1A:s rad\",\"band-IDÉER i Brytpunkt-dimensionen; enskilda indikatorer svaga\",\"motorn: samma data → samma celler\",\"lins, inte spåkula; medgivandena är priset för ärlighet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Overfitting-experimentet på dig själv: ta ett beslut du överväger (band-parametrar, indikatorval, exit-regel). Justera parametrarna BAKLÄNGES — ett steg i taget — tills en historisk graf ser perfekt ut. Notera hur många justeringar som krävdes. Gör sedan räkenskapen: hur många av justeringarna har en MEKANISK förklaring (som 10 dagar → 1,9 σ)? Varje justering utan mekanism är en frihetsgrad, och varje frihetsgrad är skuld i nästa regimbyte. Skriv ditt eget plattå-test: vilka grannparametrar ger samma bild?"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken Bollinger-regel möter '95-procents'-missbruket av banden?",
+          "alternativ": [
+            "Regeln om att taggar inte är signaler",
+            "Regeln att inte göra statistiska antaganden från standardavvikelsen",
+            "Regeln om exit vid mittbandet",
+            "Regeln om volymbekräftelse"
+          ],
+          "ratt": 1,
+          "tips": "Upphovsmannen själv skrev ner varningen innan kritikerna hann — pris är inte normalfördelat."
+        },
+        {
+          "q": "Vad är bokens främsta svar mot overfitting-anklagelsen?",
+          "alternativ": [
+            "Att backtesterna var hemliga och därmed säkra",
+            "Att parametrarna bör optimeras per aktie",
+            "Att standardavvikelsen garanterar fördelningen",
+            "Att 20/2 ligger på en platå där många grannparametrar ger likvärdigt resultat — robusthet hellre än spetsighet"
+          ],
+          "ratt": 3,
+          "tips": "Man kan inte fitta mot en optimum som inte är en spets — bara mot ett brett, stabilt område."
+        },
+        {
+          "q": "Vilket verkliga fenomen ger bandens adaptivitet logik?",
+          "alternativ": [
+            "Att kurser alltid återgår till medelvärdet",
+            "Att räntan styr bandens bredd",
+            "Att volym alltid leder pris med exakt 21 dagar",
+            "Volatilitetskluster — feta svansar och klungor, dokumenterat av Mandelbrot och modellerat av Engle (Nobel 2003)"
+          ],
+          "ratt": 3,
+          "tips": "Banden andas därför att volatiliteten verkligen sväller och drar ihop sig — mekanism, inte talisman."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "AK1A-syntesen — bandens idé i Brytpunkt-dimensionen",
+      "intro": "Hur använder labbet Bollinger utan att bli beroende av honom? Svaret är kursens emblem: bandens IDÉER bor i motorn — framför allt i Brytpunkt-dimensionen — medan bandens SIFFROR medvetet lämnas utanför. Detta kapitel bygger bron i detalj, med medgivandena synliga.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Tre band-IDÉER lever i motorn, rakt av. ETT — KOMPRESSION FÖDER BRYTNING: Brytpunkt-dimensionen (fib38- och fib62-zonerna, 38 och 62 procent av 52-veckorsspannet från toppen, plus utbrotts- och konsolideringsklasser) är squeeze-logikens deterministiska kusin: när priset konvergerar mot en zon och volymtrenden (vol20/vol90) FALLER samtidigt — kompression i två oberoende serier — är motorns squeeze-analog närvarande, utan en enda justerbar multiplikator. TVÅ — STÄNGNINGSDATERMINISM: Bollingers krav att brytningar definieras av stängningar, inte intraday-tagg, är exakt motorns konstitution: samma data in, samma celler ut, varje körning. TRE — RELATIV NORMALISERING: celler per horisont i stället för absoluta kurser; fem tidshorisonter — Mikro, Kort, Medellång, Lång, Mega — är fem upplösningar av samma fråga: var i spannet rör sig priset, relativt."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken — 25-cellersmatrisen som band-ersättning. Varje horisonts Trend-cell (vågklass mot MA50 för Mikro/Kort och MA200 för Medellång/Lång/Mega — impulsvåg är motorns walking, basbygge är motorns range) läses TILLSAMMANS med horisontens Brytpunkt-cell och Volym-cell: tre röster som tillsammans levererar %b-andan utan %b-tal. Konflikt mellan celler — Mikro visar utbrott men Lång visar korrigering — är matrisens head fake-varning, kapitel 11:s värsta fiende fångad som information. Arbetsordningen i tre steg: squeeze-hypotes från ögat (banden eller zonerna) → motor-kontroll (cellerna: bekräftar eller dementerar) → AKM1-dom (finns en katalysator i V16–V18? vad tillåter risken i V10/V19?). Ögat pekar, motorn räknar, AKM1 dömer — och ingen affär där öga och motor säger emot varandra utan skriftlig förklaring."
+        },
+        {
+          "type": "text",
+          "content": "Medgivandena, rakt upp, för de är priset för ärlighet: motorn räknar inte Bollinger-band DÄRFÖR ATT enskilda indikatorer är svaga (kapitel 12) — varje tillagd parameter vore en frihetsgrad, och varje frihetsgrad är skuld i nästa regimbyte; det motorn behåller är idéerna med noll frihetsgrader. Bandens största gåva till AKM1-analytikern är därför inte signaler utan FRÅGEBÄTTRE: 'är volatiliteten hög eller låg just nu?' — den frågan dimensionerar positionen (smala band tål större position, breda kräver mindre vid samma risk), horisonten (squeeze = vänta utbrott; bulge = vänta utmattning) och förväntan (i kompression kommer rörelse; i expansion kommer trötthet). Den som ställer den frågan före varje beslut har fått ut boken även utan ett enda band ritat."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01–V20 — alla tjugo tjänar på relativ läsning: var i SITT band rör sig variabeln (Vågfundamentets impulsvåg, korrigering, basbygge per V); V16–V18 ger squeeze:n sin fjäder; V10 och V19 dimensionerar vad en head fake får kosta; V11 och V20 är volymrösternas fundamentala släkt. Banden är pulsen, AKM1 är domen. AK1TS-RAD: Brytpunkt-dimensionen × fem horisonter — kursens emblem: bandens barn bor i Brytpunkt-raden, med Trend-raden som walking-översättning och Volym-teorin som II%-översättning."
+        },
+        {
+          "type": "insikt",
+          "content": "AK1A behöver inte Bollingers linjer — bara hans insikt: volatilitet är en variabel, inte en konstant. Brytpunkt-raden är band-idén determinerad; %b-andan lever i cellernas relativitet; och medgivandet — enskilda indikatorer är svaga — är inte en svaghet utan hela försäkringen: hellre svag och ärlig än magisk och fittrad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bandens idé → AK1TS-rad — översättningen\",\"rader\":[[\"Bandverktyg\",\"Idé\",\"AK1TS-rad\",\"Notering\"],[\"The Squeeze\",\"kompression föder brytning\",\"Brytpunkt — zoner (fib38/fib62) + utbrott\",\"stängningsbaserat; vol20/vol90 som tredje röst\"],[\"%b\",\"relativt läge i spannet\",\"Trend- och Pris-celler per horisont\",\"inga absoluta kurser — klasser\"],[\"BandWidth\",\"volatilitetens nivå\",\"Volym-teorin (vol20/vol90) + Tid\",\"deltagande och svängning läses ihop\"],[\"Walking the bands\",\"trend rider sitt band\",\"Trend — impulsvåg mot MA50/MA200\",\"momentum 5/63/252 mäter farten\"],[\"W- och M-mönster\",\"kraftdivergens\",\"Vågfundamentets AK1TS-korsning\",\"fundamentalvåg mot prisvåg\"],[\"II% och AD%\",\"volymens röst\",\"Volym-teorin\",\"deterministisk kusin utan parametrar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Körkortet: kör en full AK1TS-analys på ett innehav. Läs Brytpunkt-cellen per horisont: konvergerar priset mot en zon — och vad säger Volym-cellen (vol20/vol90) om deltagandet? Skriv din squeeze-bedömning: är marknadens fjäder spänd? Lägg sedan AKM1:s V16–V18 bredvid: finns en identifierbar katalysator i pipeline? Avsluta med tre rader — hypotes (ögat), kontroll (motorn), dom (AKM1) — och datera. Det tre-raders-formatet är syntesens hela praktik."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför räknar inte AK1TS-motern Bollinger-band?",
+          "alternativ": [
+            "Därför att banden är felaktiga",
+            "Därför att banden kräver för dyr data",
+            "Därför att varje bandparameter vore en frihetsgrad — motorn behåller bandens idéer med noll justerbara parametrar",
+            "Därför att motorn saknar kursdata"
+          ],
+          "ratt": 2,
+          "tips": "Determinism och få parametrar är samma krav — band-IDÉER i stället för band-SIFFROR."
+        },
+        {
+          "q": "Vad är motorns squeeze-analog?",
+          "alternativ": [
+            "Priset över MA200 på fallande volym",
+            "Priset konvergerar mot en Brytpunkt-zon samtidigt som volymtrenden vol20/vol90 faller — kompression i två oberoende serier",
+            "RSI under 30 i tre veckor",
+            "BandWidth under fem procent"
+          ],
+          "ratt": 1,
+          "tips": "Två röster säger samma sak: pris packas, deltagandet sinar — sedan väntas brytning, stängningsbaserat."
+        },
+        {
+          "q": "Vad gör du när cellerna säger emot varandra — Mikro utbrott men Lång korrigering?",
+          "alternativ": [
+            "Handla alltid på Mikro — den är snabbast",
+            "Handla alltid på Lång — den är viktigast",
+            "Läs konflikten som matrisens head fake-varning — ingen affär utan skriftlig förklaring",
+            "Slå av motorn och rita band för hand"
+          ],
+          "ratt": 2,
+          "tips": "Konflikt mellan horisonter är inte fel — det är information, och informationen heter risk."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Sammanfattning — den bandläsande analytikern (syntes AKM1 × AK1TS)",
+      "intro": "Sista kapitlet sätter ihop hela boken till en person, ett flöde och en tabell: den bandläsande analytikern — som mäter volatiliteten före hon dömer om värde, och som aldrig förväxlar en definition med en profetia. Plus slutprojektet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hela metoden på en sida — den bandläsande analytikerns flöde, fem steg. ETT — REGIMEN: BandWidth och mittbandets riktning: andas marknaden in (squeeze-läge), ut (expansion) eller mitt i (range)? Två — LÄGET: %b: var i bandet står priset — och är det walking eller pendling? TRE — HÄNDELSEN: squeeze → stängningsbaserad brytning med volymbekräftelse (II%/AD%), eller range → kanter med bekräftelse; W och M läses i %b och kräver bekräftelsebrott. FYRA — BEKRÄFTELSEN: volymens röst plus AK1TS-cellerna (Trend, Brytpunkt, Volym per horisont) — öga och motor får inte säga emot varandra utan förklaring. FEM — DOMEN: AKM1 — vad är katalysatorn (V16–V18), vad tillåter risken (V10, V19), vad är värdet (V04–V06)? Ingen affär där steg ett till fyra och steg fem säger emot varandra utan en skriftlig förklaring. Fem steg, fjorton kapitel, en A4."
+        },
+        {
+          "type": "text",
+          "content": "Porträttet i sex drag, kursens avslutande karaktär. Ett: hon frågar REGIM före signal — BandWidth först, %b sedan. Två: hon behandlar 20/2 som default, aldrig som dogm — och justerar bara med mekanism (10/1,9; 50/2,1), aldrig med önskan. Tre: hon köper aldrig en tagg — hon köper brytningar med röster och lägen med bekräftelse. Fyra: hon kräver volymens röst — ett utbrott utan II%/AD% är en åsikt. Fem: hon rider walking och handlar range — och vet skillnaden på BandWidth-nivån innan första positionen. Sex: hon skriver exit och stopp FÖRE inträdet — mittbandet, botten, bandets insida — och läser kontroverskapitlet en gång om året som vaccination mot överoptimeringens feber."
+        },
+        {
+          "type": "text",
+          "content": "Spåret vidare i katalogen, redigerat: Murphy-kurserna (The Visual Investor och läroboken) för chartläsningens hela ram; Bulkowski för mönsterstatistiken; Elliott- och Fibonacci-kurserna för proportionernas teori; Random Walk-kursen för motståndaren som förtjänar sitt eget kapitel; Quantitative Value för backtest-metodik och datamining-vakt; AKM1- och AK1TS-kurserna och Vågfundamentet för motorn och syntesen. Bollingers plats bland dem är särskild av ett skäl: det är den enda boken i hyllan där verktygets SKAPARE själv förklarar konstruktionen, varnar för missbruket och visar parametrarnas platå — en lärobok i HEDERLIGHET lika mycket som i volatilitet. Därför är den BOKMASTER-värdig trots att den är tunnare än grannarna: den lär ut inte bara hur man använder ett verktyg, utan hur man tänker om alla verktyg."
+        },
+        {
+          "type": "text",
+          "content": "AKM1-BRYGGAN · V01–V20 — finalraden: banden är täljarens andning (V04–V06: var handlar multipeln i sitt band?), marginalernas ekg (V07–V09), katalysatorns ur (V16–V18) och riskens mått (V10, V19); AKM1 är domen, banden är pulsen. AK1TS-RAD: hela matrisen — Trend, Pris, Brytpunkt och Tid × Mikro till Mega; Bollinger-kolumnen är framför allt BRYTPUNKT: kompression föder brytning, determinerat. Sista formuleringen, värd att skriva i verkstaden: volatiliteten är variabeln som den döda skolan glömde — banden gjorde den synlig, motorn gör den mätbar, AKM1 gör den begriplig."
+        },
+        {
+          "type": "insikt",
+          "content": "Banden definierar, volymen bekräftar, motorn determinerar, AKM1 dömer — och ingenting profeterar. Den bandläsande analytikern vet skillnaden mellan en lins och en spåkula. Det är hela kursen på en rad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Översättningstabellen — Bollinger → AKM1 → AK1TS\",\"rader\":[[\"Bollinger\",\"AKM1\",\"AK1TS-rad\"],[\"The Squeeze\",\"V16–V18 katalysatorer\",\"Brytpunkt — zoner + utbrott, stängningsbaserat\"],[\"%b\",\"V04–V06 — multipeln i sitt band\",\"Trend- och Pris-celler per horisont\"],[\"BandWidth\",\"V12 intäktsstabilitet\",\"Volym (vol20/vol90) + Tid\"],[\"Walking the bands\",\"V01 försäljningstillväxt\",\"Trend — impulsvåg mot MA50/MA200\"],[\"W- och M-mönster\",\"V08, V09 — marginalernas våg\",\"Vågfundamentets AK1TS-korsning\"],[\"II% och AD%\",\"V11 likviditet, V20 återköp\",\"Volym-teorin\"],[\"Parametrar 20/2 (platå)\",\"multiplarnas normalisering\",\"determinism — få grader, osatt hellre än gissat\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bandjournalen: välj tre innehav. Per aktie, en A4: BandWidth-regim (halvårets min och max — inandning eller utandning?), dagens %b och mittbandets riktning, squeeze eller ej (och i så fall brytningsplan), II%/AD%-trend, AK1TS Brytpunkt-celler för Mikro, Medellång och Lång, AKM1-katalysator (V16–V18) samt skrivna exit- och stoppnivåer. Datera. Upprepa månatligen i ett kvartal — och jämför varje månad vad fjädern sa mot vad marknaden gjorde. Det dokumentet, hållet levande, är boken förvandlad från läromedel till process: så lever den bandläsande analytikern."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den bandläsande analytikerns arbetsordning?",
+          "alternativ": [
+            "Värdering först, volym sist",
+            "Regim (BandWidth) → läge (%b) → händelse (brytning/återgång) → bekräftelse (volym + celler) → AKM1-dom",
+            "Köp taggen, sälj mittbandet, alltid",
+            "Aktie först, marknad sist"
+          ],
+          "ratt": 1,
+          "tips": "Volatiliteten dimensionerar allt annat — därför står regimfrågan först, precis som toppen-ned-ordningen i Murphy-kursen."
+        },
+        {
+          "q": "Vad är bandens största gåva till AKM1-analytikern enligt syntesen?",
+          "alternativ": [
+            "Exakta köp- och säljsignaler",
+            "En prognosmodell för kursmål",
+            "Frågebättret: är volatiliteten hög eller låg just nu — dimensionerar position, horisont och förväntan",
+            "En ersättning för fundamental analys"
+          ],
+          "ratt": 2,
+          "tips": "Inte signaler utan synsätt: kompression väntar rörelse, expansion väntar trötthet — det dimensionerar beslutet."
+        },
+        {
+          "q": "Vad gör den bandläsande analytikern ALDRIG?",
+          "alternativ": [
+            "Använder mittbandet som exit",
+            "Läser BandWidth och %b tillsammans",
+            "Köper en bandtagg som signal — eller litar på en enda indikator utan bekräftelse och dom",
+            "Skriver stopp före inträde"
+          ],
+          "ratt": 2,
+          "tips": "Taggen är ett faktum om läget; beslutet kräver regim, röster och dom — hela kedjan, varje gång."
+        }
+      ]
+    }
+  ]
+}

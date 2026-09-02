@@ -1,0 +1,1090 @@
+{
+  "slug": "way-of-the-turtle",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 14,
+  "totalMinutes": 170,
+  "title": "Way of the Turtle — Faith: KOMPLETT",
+  "summary": "Curtis Faith var 19 år när han svarade på en annons i Wall Street Journal: Richard Dennis — mannen som byggt en av Chicagos största förmögenheter i råvaruterminerna — sökte lärlingar att lära upp till traders. Way of the Turtle (2007) är Faiths inrikesrapport från världshistoriens mest berömda trading-experiment: Dennis satsning med partnern William Eckhardt om att trading kan läras ut till vem som helst. Två klasser, två veckors undervisning, riktiga miljonkonton — och ett komplett regelverk: Donchian-utbrott på 20 och 55 dagar, N-baserad positionsstorlek där 1N är 1 procent av kontot, 2N-stopp, pyramidering per halv N och hårda enhetstak. Kursen går igenom systemet steg för steg med checklistor och räkneexempel i svenska kronor — och experimentets verkliga fynd: med SAMMA regler blev vissa Turtles miljonärer medan andra sparkades. Där finns edge-matematiken (E-värdet), stoppen och exiterna, tålamodet, det mekaniska mot det diskretionära, eftermälet (stjärn-CTA:er, Dennis egna förluster, systemens förfall när alla handlar samma signal) — och kontroversen: var experimentet replikerbart, eller var det tur, Dennis själv och retroaktiv överlevnads-selektion?",
+  "minutes": 12,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven redogöra för Turtle-experimentets upplägg och satsning — Richard Dennis påstående att trading kan läras ut till vem som helst mot William Eckhardts invändning om medfödd fallenhet · beskriva urvalet: annonsen i Wall Street Journal, över tusen sökande, två klasser 1983 och 1984, och sammansättningen — revisorer, programmerare och nyutexaminerade utan terminserfarenhet · återge Turtle-systemet KOMPLETT som checklista: likviditetsuniversum, System 1 (20-dagars Donchian-utbrott med vinst/förlust-filter och 10-dagarsexit), System 2 (55-dagars utbrott utan filter med 20-dagarsexit), 2N-stopp, pyramidering per halv N och enhetstaken 4/6/10/12 · räkna N (20-dagars ATR) och enhetsstorleken — formeln 1 procent av kontot per N — med räkneexempel i svenska kronor, inklusive stopprisk 2 procent och hur enheten automatiskt krymper när volatiliteten stiger · beräkna E-värdet (förväntan per affär) och förklara varför ett system med 35 procent träffkvot kan vara en pengamaskin medan 70 procent kan vara en ruin · förklara experimentets kärnfynd: samma regler gav miljonärer och avstängda — skillnaden var disciplin, inte intelligens eller metod · skilja mekanisk från diskretionär handel och redogöra för Dennis berömda slutsats att reglerna kan publiceras i tidningen utan att någon följer dem · beskriva eftermälet: Eckhardts mekaniska CTA, Dennis egna förluster 1987–1988, Faiths egen väg och systemens förfall när alla handlar samma signal (Morton-Davis-mekanismen) · värdera kontroversen: urvalsskevning, Dennis roll, trendföljningens guldålder och retroaktiv överlevnads-selektion mot Park & Irwin och Sullivan–Timmermann–Whites forskning · samt syntetisera AK1TS:s determinism som Turtle-tänk för vågor — pedagogiskt, aldrig som trading-system — med medgivandet att de flesta som försöker mekanisk trading underpresterar på grund av disciplin, kopplat till V19 Kapitalförbränning & Emission-risk och AK1TS Brytpunkt.",
+  "why": "Market Wizards-kursen gav intervjuerna; Way of the Turtle ger experimentet — det enda i finanshistorien där en grupp nybörjare fick identiska regler, riktiga pengar och mätbara utfall. För AK1A-ekosystemet är boken kritisk av fyra skäl: den levererar det kompletta regelverk (Donchian, N, 2N, enhetstak) som AK1TS:s determinism är en pedagogisk klon av; den bevisar med kontrollerad praxis att reglerna är den minsta delen och disciplinen den avgörande — samma slutsats som Quantitative Value-kursens jedis kontra clones; den ger elevens första riktiga risk-matematik i kronor (storlek från stoppavstånd, volatilitetsnormalisering); och kontroverskapitlet tvingar fram den intellektuella ärligheten — replikerbarhet, överlevnads-selektion och systemförfall — som annars gör varje regelbok till en trosfråga. Utan den här boken är AKM1:s V19-risk bara en variabel; med den är den ett stopp man antingen äger eller förhandlar bort.",
+  "chapters_list": [
+    "1. Experimentet — Dennis satsning: vi kan lära vem som helst",
+    "2. Urvalet — annonsen, testet och två klasser",
+    "3. Regelverket I — System 1: Donchian-kanalen och 20-dagars utbrottet",
+    "4. Regelverket II — System 2, universum och enhetstaken",
+    "5. Psykologin — samma regler, olika miljonärer",
+    "6. Edge-tänkande — E-värdet: vad gör ett system positivt",
+    "7. Risk-storlek — N, enheten och positionsstorleks-matematiken i SEK",
+    "8. Exits och stopp — hur Turtles hanterade förluster",
+    "9. Tålamod — att sitta stilla i månader är systemet",
+    "10. Mekaniskt mot diskretionärt — experimentets slutsats",
+    "11. Efter Turtle — Faiths väg, stjärnorna och systemens förfall",
+    "12. Kontroversen — tur, Dennis eller selektion?",
+    "13. Syntesen — AK1TS är Turtle-tänk för vågor, pedagogiskt aldrig trading-system",
+    "14. Sammanfattning — hela Turtle-systemet på ett A4 (V19 + AK1TS)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 12,
+      "title": "Experimentet — Dennis satsning: vi kan lära vem som helst",
+      "intro": "Curtis Faith var 19 år — yngst i klassen — när han togs in i det som skulle kallas Turtle-experimentet. Hans bok Way of the Turtle (2007) är experimentets inrikesrapport, skriven av en insider som själv gjorde tiotals miljoner dollar och sedan bröt mot sina egna regler. Kursen börjar där allt började: med en satsning mellan två partners i Chicago.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bakgrunden är nästan osannolik. Richard Dennis hade som ung lånat småpengar av sin familj och förvandlat några hundra dollar till en av Chicagos största förmögenheter i råvaruterminerna — en avkastning som mätts i tiotusentals procent under ett drygt decennium. Hans partner och barndomsvän William Eckhardt var matematiker. Vid deras återkommande frukostsamtal vändes samma fråga: VARFÖR lyckas Dennis? Dennis själv hävdade att hans framgång var en metod — en uppsättning regler som gick att lära ut till vem som helst med normal begåvning och vilja. Eckhardt trodde motsatsen: att Dennis ägde en medfödd fallenhet, något i sinnet som inte gick att skriva ned och lära bort. Diskussionen var så återkommande att den till slut blev en satsning — och satsningen blev ett experiment."
+        },
+        {
+          "type": "text",
+          "content": "Påståendet Dennis lade på bordet var maximalt — kursen kallar det bagging-påståendet: inte »vissa kan läras« utan i princip »vem som helst kan läras«. För att pröva det behövdes kontroll: rekrytera noviser från gatan, inte från handelsgolvet; lära ut ett komplett regelverk på två veckor; ge dem riktiga pengar att handla med — Dennis pengar — med andel av vinsterna som incitament. Namnet föddes ur Dennis infall på en resa: han hade sett en sköldpaddsfarm i Singapore och sade till Eckhardt något i stil med »we're going to raise traders like they raise turtles in Singapore« — vi ska odla traders som man odlar sköldpaddor. Turtles var ett faktum: klass ett i december 1983, klass två 1984, sammanlagt drygt tjugo personer."
+        },
+        {
+          "type": "text",
+          "content": "Utfallet, i grova drag och enligt Faiths egna siffror: gruppen tjänade över 150 miljoner dollar på knappt fem år. Flera Turtles blev förmögna för livet och senare förvaltare i egen rätt; Faith själv gör gällande att han oavkortat tjänade över 30 miljoner dollar åt Dennis. Men — och det är bokens verkliga ämne — inte alla lyckades. Några av dem med exakt samma regler, exakt samma lärare och exakt samma kapital underpresterade eller hoppade av; minst en lämnade programmet i förtid. Dennis egen summering har blivit en av finanshistoriens mest citerade rader: »You could publish my trading rules in the newspaper and no one would follow them. The key is consistency and discipline.« Kursens uppgift är att förstå BÅDA halvorna av den meningen: reglerna (kapitel 3, 4, 7, 8) och efterlevnaden (kapitel 5, 9, 10)."
+        },
+        {
+          "type": "insikt",
+          "content": "Turtle-experimentets fråga var inte om Dennis regler var bra — utan om människor som fått reglerna kan följa dem. Historiens svar: reglerna kan publiceras i tidningen; disciplinen kan inte tryckas."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Satsningen — Dennis mot Eckhardt\",\"rader\":[[\"Stridsfråga\",\"Richard Dennis\",\"William Eckhardt\"],[\"Trading är...\",\"en metod som kan läras ut till vem som helst med normal begåvning och vilja att följa regler\",\"en fallenhet som få äger och som inte går att skriva ned\"],[\"Beviset de pekar på\",\"sin egen historia — från lånat startkapital till hundratals miljoner dollar\",\"att Dennis själv är undantaget som bekräftar regeln\"],[\"Satsningen\",\"odla traders från gatan: två veckors undervisning, riktiga pengar, andel av vinsten\",\"med på villkoret att experimentet får avgöra — och att reglerna hålls identiska för alla\"],[\"Namnet\",\"sköldpaddsfarmen i Singapore — vi odlar traders som man odlar sköldpaddor\",\"det namngivna vadet blev finanshistoriens mest omtalade experiment\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Dennis test, hemmaversionen: antag att du imorgon fick Turtles regelverk, två veckors utbildning och en miljon kronor av någon annans pengar. Skriv ned exakt när du skulle börja suddgumiera: efter hur många raka förluster? Efter hur stor nedgång i procent? När en signal »kändes« fel tredje dagen i rad? Siffrorna är din personliga bristningsgräns — experimentet handlar, i praktiken, om exakt den siffran."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — V19 Kapitalförbränning & Emission-risk är AKM1:s inbyggda 2N-stopp: variabeln frågar hur snabbt ett bolag bränner det kapital som gör att tesen hinner slå in. AK1TS lägger till utgången: varje affär behöver en Brytpunkt — nivån där tesen är fel — skriven innan du köper. Experimentets första läxa är förhållandet mellan dem: reglerna är lätta att skriva, svåra att äga."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad handlade satsningen mellan Richard Dennis och William Eckhardt om?",
+          "alternativ": [
+            "Om vilka råvaror som skulle stiga mest under 1980-talet",
+            "Om trading kan läras ut till vem som helst eller om det kräver medfödd fallenhet",
+            "Om fundamental eller teknisk analys är mest vetenskaplig",
+            "Om råvarubörserna borde avregleras"
+          ],
+          "ratt": 1,
+          "tips": "En av dem trodde på metoden, den andre på sinnet — vem trodde på vad?"
+        },
+        {
+          "q": "Varifrån kommer namnet Turtles?",
+          "alternativ": [
+            "Från en sköldpaddsfarm i Singapore som Dennis sett — vi odlar traders som man odlar sköldpaddor",
+            "Från en serie tecknade figurer som Eckhardt gillade",
+            "Från en långsam men uthållig handelsstil som liknar sköldpaddans gång",
+            "Från Chicagos gatunamn för terminshandlare"
+          ],
+          "ratt": 0,
+          "tips": "Namnet föddes ur ett infall — på en resa Dennis gjort."
+        },
+        {
+          "q": "Vad blev det samlade resultatet enligt Faiths egna siffror?",
+          "alternativ": [
+            "Alla Turtles förlorade och experimentet avbröts i förtid",
+            "Gruppen tjänade över 150 miljoner dollar på knappt fem år — men några misslyckades trots identiska regler",
+            "Resultatet var exakt noll efter kostnader",
+            "Endast Dennis själv tjänade pengar; lärlingarna förlorade"
+          ],
+          "ratt": 1,
+          "tips": "Det dramatiska är inte totalsiffran utan SPRIDNINGEN mellan deltagarna."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 12,
+      "title": "Urvalet — annonsen, testet och två klasser",
+      "intro": "Ett experiment är bara så starkt som sitt urval. Kapitlet gräver i vem som faktiskt sökte, hur Dennis och Eckhardt gallrade — och vad sammansättningen bevisar och inte bevisar om bagging-påståendet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hösten 1983 publicerades en annons i Wall Street Journal: Richard Dennis av C&D Commodities sökte lärlingar att träna upp till traders. Inga avgifter — tvärtom: utbildning och sedan riktiga pengar att handla med. Reaktionen blev enorm: över tusen sökande. Efter gallring — frågeformulär och intervjuer — stannade cirka fyrtio personer till samtal, och ett drygt dussin utvaldes till första klassen som började i december 1983. En andra klass rekryterades 1984. Sammanlagt blev det drygt tjugo Turtles. Faith var med från start: 19 år, den yngste, utan finansbakgrund men med programmering och spelteori i bagaget."
+        },
+        {
+          "type": "text",
+          "content": "Så vem togs? Här är experimentets mest underskattade fynd — sammansättningen. De utvalda var INTE handelsgolvets veteraner eller ekonomie studenter med toppbetyg: det var bland annat blivande revisorer, programmerare, ingenjörer och nyutexaminerade — de flesta utan praktisk erfarenhet av terminshandel. Intervjuerna och testet sökte inte finansiell kunskap utan något annat: förhållande till risk, till förluster och till regler. Dennis och Eckhardt gallrade psykologiskt — de letade, i praktiken, efter människor som kunde följa ett regelverk under press. Två veckors utbildning senare fick klassen egna konton att handla med — konton i storleksordningen en miljon dollar stycket (vissa mindre i andra klassen) — och en andel av vinsterna som ersättning. Ingen skolövning: riktiga pengar, verklig press."
+        },
+        {
+          "type": "text",
+          "content": "Men läs sammansättningen två gånger — den är både experimentets styrka och dess första spricka. Styrkan: om revisorer och programmerare utan erfarenhet kan läras handla regelstyrt och lönsamt, då är metoden lärbart — precis som Dennis påstod. Sprickan: de utvalda var inte »vem som helst«. De var (a) självutvalda — över tusen personer som svarat på en annons i Wall Street Journal var redan ovanligt motiverade; och (b) aktivt gallrade på just förmågan att följa regler. Kontroverskapitlet återkommer till detta: påståendet »vi kan lära vem som helst« bevisades aldrig fullt ut — bevisat blev »vi kan lära dem som klarar vårt urval«. Det är en viktig skillnad, och ärligheten kring den är skillnaden mellan lärobok och marknadsföring."
+        },
+        {
+          "type": "insikt",
+          "content": "Experimentets bravad var inte att lära ut reglerna — utan att välja bort alla för vilka regler är en börda. Vem som helst? Nej: vem som helst som klarar urvalet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Urvalet — två klasser i siffror (cirka, enligt Faith)\",\"rader\":[[\"Fråga\",\"Svar\"],[\"Annons\",\"Wall Street Journal, hösten 1983 — gratis utbildning, riktiga pengar, inga avgifter\"],[\"Sökande\",\"över 1 000\"],[\"Till intervju\",\"cirka 40\"],[\"Klass 1 (december 1983)\",\"ett drygt dussin utvalda — däribland Curtis Faith, 19 år\"],[\"Klass 2 (1984)\",\"cirka tio ytterligare\"],[\"Bakgrunder\",\"revisorer, programmerare, ingenjörer, nyutexaminerade — de flesta utan terminserfarenhet\"],[\"Gallringskriterium\",\"inte finansiell kunskap utan förhållande till risk, förluster och regler\"],[\"Kapital\",\"egna konton från omkring en miljon dollar per person (vissa mindre), plus andel av vinsterna\"],[\"Samlat resultat\",\"över 150 miljoner dollar i vinst på knappt fem år — med stor spridning mellan deltagarna\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Designa ditt eget urval: anta att du ska anställa den som framöver förvaltar dina pengar — nämligen du själv. Lista fem egenskaper du skulle gallrat på (till exempel: följer skriftliga regler, hanterar förluster utan hämnd, kan vänta, dokumenterar beslut, söker motsägande information). Poängsätt dig själv 1–5 på varje. De två lägsta poängen är din personliga träningplan — exakt den gallring Dennis och Eckhardt gjorde, men riktad inåt."
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — urvalet påminner om AKM1:s ödmjukaste sanning: vem som helst kan lära sig fylla i V01–V20, men verklig gallring sker i V19-risk (kapitalförbränning dödar tålamodets tidsplan) och i AK1TS Våg-läsningen: handlas tesen överhuvudtaget i en regim där den får chans? Innan du poängsätter ett bolag — gallra dig själv: har du bukförmågan att äga svaret?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var mest utmärkande för sammansättningen av de utvalda Turtles?",
+          "alternativ": [
+            "Alla var erfarna traders från handelsgolvet",
+            "Alla hade ekonomie kandidatexamen från toppuniversitet",
+            "Blandade bakgrunder — revisorer, programmerare, ingenjörer — de flesta utan terminserfarenhet",
+            "Alla var rekryterade från Dennis egen familj"
+          ],
+          "ratt": 2,
+          "tips": "Tänk på vad annonsen ställde för krav — och vad den INTE ställde."
+        },
+        {
+          "q": "Vad gallrade Dennis och Eckhardt främst efter i intervjuer och test?",
+          "alternativ": [
+            "Avancerad kunskap i derivatprissättning",
+            "Förhållande till risk, förluster och förmåga att följa regler",
+            "Snabbhet i huvudräkning",
+            "Nätverk inom råvarubranschen"
+          ],
+          "ratt": 1,
+          "tips": "De trodde inte att kunskap var flaskhalsen — vad var det då?"
+        },
+        {
+          "q": "Vilken svaghet i bagging-påståendet syns redan i urvalet?",
+          "alternativ": [
+            "Att alla sökande var kvinnor",
+            "Att de utvalda var självvalda och aktivt gallrade på just regel-följning — alltså inte »vem som helst«",
+            "Att annonsen var för dyr",
+            "Att klasserna var för stora för att lära ut något"
+          ],
+          "ratt": 1,
+          "tips": "Vem svarar på en annons i Wall Street Journal — och vem gallras vidare av psykologiska intervjuer?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Regelverket I — System 1: Donchian-kanalen och 20-dagars utbrottet",
+      "intro": "Nu regelverket — komplett, som Turtles fick det och som Faith senare publicerade gratis. Först grunden: marknadsuniversum, Donchian-kanalen och System 1: 20-dagars utbrottet, dess filter och dess exit. Allt som checklista.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Första regeln rörde inte signaler utan universum: Turtles skulle endast handla likvida marknader — amerikanska futures på råvaror (sojabönor, majs, vete, socker, kaffe, bomull, guld, silver, koppar, olja), valutor (dollar mot yen, D-mark, schweizerfranc och flera), ränteprodukter (statsobligationer, statsväxlar, eurodollar) och aktieindex. Skälet var praktiskt och principiellt på samma gång: på en likvid marknad kan du gå in och ut i storlek utan att själv flytta priset — en regel som är lika giltig för en svensk småsparare på tunt handlade mikrobolag som för en CTA i oljan. Likviditet är genomförbarhet, och genomförbarhet är villkoret för att ALLT annat i systemet ska fungera. I AKM1:s språk: V11 Likviditet kommer före varje köpregel."
+        },
+        {
+          "type": "text",
+          "content": "Signalen byggde på Richard Donchians kanaler — trendföljandets urfader. System 1 köper när priset stiger över det högsta som noterats de senaste 20 handelsdagarna, och säljer kort när priset faller under de senaste 20 dagarnas lägsta. Därutöver ett raffinerat filter mot pisksnärt: om det FÖREGÅENDE 20-dagars utbrottet i samma riktning hade varit lönsamt — hoppa över detta utbrott; var det förlorande — handla. Logiken, som Faith förklarar den: efter en lyckad utbrottshandel tenderar nästa utbrott i samma riktning att oftare misslyckas. Filtret kostar vissa trender men sparar en förödelse av falska signaler i trendlösa marknader. Och missas en stor trend av filtret fångar System 2:s 55-dagars utbrott (nästa kapitel) den ändå. Exit för System 1: när priset gör ett 10-dagarsslut emot positionen (lägsta på tio dagar för en lång position) — exiten är en regel, aldrig en känsla, och aldrig ett vinstmål."
+        },
+        {
+          "type": "text",
+          "content": "Känn igen det beteendemässiga mothugget, för det är hela poängen: att köpa när priset är som dyrast på en månad och sälja när det är som billigast på tio dagar känns FEL för de flesta människor. Det är precis därför det fungerar som signal — marknaden underreagerar på ny information, trender föds långsamt, och den som väntar på att det ska kännas bekvämt köper sent eller aldrig. Turtle-reglerna är skrivna för att eliminera det omdömet: ingen signal bedöms, ingen avvägs, ingen filtreras efter magkänsla — 20-dagars hoget är ett faktum, inte en åsikt. Faith poängterar att inträdesreglerna är systemets minst magiska del (kapitel 6 visar varför i matematik) — men de är den del som flest försöker förbättra, och den del vars förbättring oftast förstör."
+        },
+        {
+          "type": "insikt",
+          "content": "Utbrottet är trendens födelsebevis: priset har gjort något det inte gjort på tjugo dagar. Din uppgift är inte att förutsäga — utan att infinna dig när beviset presenteras, och att lämna när det dementeras."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"System 1 — Donchian 20-dagar: checklista steg för steg\",\"rader\":[[\"Steg\",\"Regel\",\"Syfte\"],[\"1. Universum\",\"endast likvida terminer — råvaror, valutor, räntor, index\",\"kunna gå in och ut i storlek utan att flytta marknaden\"],[\"2. Inträde lång\",\"kurs stiger över 20-dagars högstahögsta\",\"följa trenden från dess födelse — köp styrka, inte svaghet\"],[\"3. Inträde kort\",\"kurs faller under 20-dagars lägsta\",\"samma logik spegelvänt\"],[\"4. Filtret\",\"var föregående 20-dagars utbrott i samma riktning en vinst — hoppa över; var det en förlust — handla\",\"undvika pisksnärt i trendlösa marknader\"],[\"5. Exit\",\"lång: 10-dagars lägsta; kort: 10-dagars högsta\",\"lämna när trenden bryts — ingen känsla, inget vinstmål\"],[\"6. Stopp\",\"2N från ingången (kapitel 7–8)\",\"risken bestäms FÖRE affären\"],[\"7. Pyramid\",\"lägg till 1 unit per halv N medgång; max 4 units per marknad\",\"öka bara på det som går din väg\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör Donchian-övningen: välj en svensk aktie du kan tänkas äga. Rita (för hand eller i kalkylblad) 20-dagars högsta och lägsta för de senaste sex månaderna. Markera var System 1 köpt, var 10-dagarsexiten sålt, och räkna ut R för varje affär (R = kronor vid 2N-stopp; uppskatta N som genomsnittlig daglig svängning i kronor). Hur många affärer? Hur många förluster? Som störst vinst? Du har just kört trendföljningens anatomi — och känt obehaget vid köp på toppen av kanalen."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — System 1:s första rad är V11 Likviditet: Turtles handlade bara marknader de kunde lämna, precis som AKM1:s tålamod kräver bolag du kan lämna utan att bjuda ut dig själv — och V19-risk (kapitalförbränning, emission) är den fundamentala likviditetens fiende: bolag som bränner kassa tvingas ut i dåliga emissioner. AK1TS Brytpunkt är utbrottets spegel: inträdet definieras av var priset bevisar trenden — och stoppet 2N under definierar var den dementeras. Köp på bevis, exit på dementi, och aldrig ett ord om känslor."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är System 1:s inträdesregel?",
+          "alternativ": [
+            "Köp när RSI faller under 30",
+            "Köp när kursen stiger över de senaste 20 dagarnas högsta; kort när den faller under 20 dagarnas lägsta",
+            "Köp när P/E understiger 10",
+            "Köp vid varje 50-dagars glidande medelvärdes kryss"
+          ],
+          "ratt": 1,
+          "tips": "Donchian-kanalen — vad har priset gjort som det inte gjort på en månad?"
+        },
+        {
+          "q": "Vad gör System 1:s filter?",
+          "alternativ": [
+            "Hoppar över utbrottet om föregående 20-dagars utbrott i samma riktning var lönsamt; handlar om det var förlorande",
+            "Dubblar positionen efter varje vinst",
+            "Handlar bara på måndagar",
+            "Förbjuder kortförsäljning"
+          ],
+          "ratt": 0,
+          "tips": "Filtret jobbar mot upprepade falska utbrott — när tenderar nästa utbrott att slå fel?"
+        },
+        {
+          "q": "Varför handlade Turtles endast likvida marknader?",
+          "alternativ": [
+            "Därför att oliquida marknader var förbjudna i USA",
+            "Därför att Dennis ägde börsen",
+            "Därför att illikviditet gör att du själv flyttar priset — både vid inträde och exit",
+            "Därför att likvida marknader alltid trender mer"
+          ],
+          "ratt": 2,
+          "tips": "Fråga vad som händer med din utgång när du måste sälja i en tunn marknad under stress."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 12,
+      "title": "Regelverket II — System 2, universum och enhetstaken",
+      "intro": "System 1 fångar kortare trender men kräver ett filter. System 2 är den enklare, tålmodigare storebrodern: 55-dagars utbrott, inget filter, 20-dagarsexit. Och ovanpå båda: enhetstaken — riskgränserna som gjorde att ett dussin samtidiga positioner aldrig kunde sänka skeppet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "System 2 i sin helhet: köp när priset stiger över de senaste 55 dagarnas högsta; kort när det faller under 55 dagarnas lägsta. Inget filter — varje signal handlas. Exit: när priset gör ett 20-dagarsslut emot positionen. Skillnaden mot System 1 är inte karaktär hos reglerna utan hos tiden: 55-dagarssystemet går in senare, lämnar senare och filtrerar inte — det tål mer brus och färre bedömningar. Faith berättar att många Turtles valde System 2 som huvudsystem av just det skälet: det är enklare att följa, och varje borttagen bedömning är en borttagen frestelse. Det är en djupt underskattad designprincip: mellan två system med liknande förväntan väljer den som ska LEVA med systemet det enklare — reglernas komplexitet betalas i disciplin."
+        },
+        {
+          "type": "text",
+          "content": "Men regelverkets verkliga skeppskropp var riskgränserna — enhetstaken, räknade i units (nästa kapitel definierar enheten i kronor): högst 4 enheter per enskild marknad; högst 6 enheter i samma riktning över nära korrelerade marknader; högst 10 enheter i löst korrelerade; och högst 12 enheter totalt i en och samma riktning. Syftet är korrelationens dolda sanning: guld och silver, råolja och bensin, eller dollar-yen och dollar-mark är i praktiken EN position i förklädning — fyra separata stopp dödar dig inte men fyra korrelerade förluster på samma nyhet gör det. Turtles lärdes tänka i exponering, inte i kontrakt: systemet frågade aldrig hur många instrument du äger, bara hur mycket risk du bär och hur mycket av den som rör sig tillsammans."
+        },
+        {
+          "type": "text",
+          "content": "Lägg märke till vad regelverket som helhet INTE innehåller: ingen prognos om råvarupriser, ingen makroanalys, ingen åsikt om vad som är »rimligt« pris, inga undantag för nyheter och ingen katastrofvecka då reglerna pausas. De två systemen kompletterar varandra — System 1 med filter fångar kortare trenden, System 2 utan filter ser till att de stora vinnarna aldrig missas — och valet mellan dem var i sig en regel: Turtles instruerades, fick välja huvudsystem, och höll sedan valet. Faith betonar att denna totala avsaknad av diskretion inte var lättja i konstruktionen — den var poängen. En regelbok som tillåter undantag är ingen regelbok; den är en rekommendation med utgång."
+        },
+        {
+          "type": "insikt",
+          "content": "Enheter är risk, inte aktier. Fyra enheter i en marknad, sex i korrelerade, tolv totalt — Turtles räknade aldrig kontrakt. De räknade exponering."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"System 2 — 55-dagar: checklista\",\"rader\":[[\"Komponent\",\"Regel\",\"Skillnad mot System 1\"],[\"Inträde lång\",\"kurs stiger över 55-dagars högsta\",\"senare ingång — färre falska signaler\"],[\"Inträde kort\",\"kurs faller under 55-dagars lägsta\",\"samma logik spegelvänt\"],[\"Filter\",\"inget — alla signaler handlas\",\"ingen bedömning alls är enklare att följa\"],[\"Exit\",\"lång: 20-dagars lägsta; kort: 20-dagars högsta\",\"lämnar senare — tål mer brus, låter vinnarna springa\"],[\"Roll\",\"många Turtles använde System 2 som huvudsystem\",\"det enkla systemet är det som överlever ägaren\"]]}"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Enhetstaken — riskgränserna som skeppskropp\",\"rader\":[[\"Riskgräns\",\"Tak\",\"Syfte\"],[\"Per enskild marknad\",\"4 enheter\",\"ingen enskild marknad får döda kontot\"],[\"Nära korrelerade marknader\",\"6 enheter\",\"guld och silver är i praktiken EN position\"],[\"Löst korrelerade marknader\",\"10 enheter\",\"gruppexponeringen begränsas\"],[\"Totalt i en riktning\",\"12 enheter\",\"portföljens samlade risktak — oavsett hur många instrument\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Korrelationsgranskning: lista dina fem största innehav. Markera vilka som i verkligheten är samma position i förklädning — samma råvara, samma konsumentcykel, samma räntkänslighet, samma valuta. Räkna sedan din »riktningstotal«: om varje innehav väger 1 procent av kapitalet i risk — hur många enheter åt samma håll bär du? Turtles tak var 12. Ditt?"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — enhetstaken 4/6/10/12 är V03 Intäktsdiversifiering i riskformat: korrelation är dold koncentration, och det är V19-risk (Kapitalförbränning & Emission-risk) som straffar den som glömmer det — belånade samverkande bolag kan alla behöva nyemission samtidigt. AK1TS aggregerar vågor till portföljnivå av samma skäl: tio samtidiga utbrott är EN våg, och tolv enheter åt samma håll är ETT bets."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den största skillnaden mellan System 1 och System 2?",
+          "alternativ": [
+            "System 2 handlar 55-dagars utbrott utan filter och exitar på 20-dagars motbrott — senare in, senare ut",
+            "System 2 använder fundamentala data i stället för pris",
+            "System 1 är bara för aktier och System 2 bara för valutor",
+            "System 2 saknar stopp"
+          ],
+          "ratt": 0,
+          "tips": "Tänk på både inträde, filter och exit — System 2 är den tålmodigare storebrodern."
+        },
+        {
+          "q": "Varför finns taket om sex enheter i nära korrelerade marknader?",
+          "alternativ": [
+            "För att spara courtage",
+            "För att korrelerade marknader — guld och silver — i praktiken är EN position som kan stoppas samtidigt",
+            "För att börsen kräver det i regelverket",
+            "För att Dennis gillade talet sex"
+          ],
+          "ratt": 1,
+          "tips": "Fyra separata stopp skadar dig inte — vad gör fyra korrelerade förluster på samma nyhet?"
+        },
+        {
+          "q": "Vad saknas helt i Turtle-regelverket?",
+          "alternativ": [
+            "Inträdesregler",
+            "Riskgränser",
+            "Diskretion — prognoser, makroåsikter, undantag för nyheter och katastrofveckor",
+            "Exitregler"
+          ],
+          "ratt": 2,
+          "tips": "En regelbok som tillåter undantag är ingen regelbok — den är en rekommendation med utgång."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 12,
+      "title": "Psykologin — samma regler, olika miljonärer",
+      "intro": "Experimentets kärnfynd står här: med identiska regler, identisk utbildning och identiskt kapital blev vissa Turtles miljonärer — och andra underpresterade, hoppade av eller kördes ut. Faith kan förklara skillnaden i ett ord: disciplin. Det här kapitlet visar exakt vad ordet betydde, i beteenden.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Faith är osentimental när han skiljer på sina klasskamrater: vid samma bord, med samma regelbok, gick somliga mot tiotals miljoner dollar medan andra backade. Skillnaden syntes inte i intelligens, inte i bakgrund, inte i hur väl de kunde reglerna — alla kunde reglerna. Skillnaden syntes i BETEENDET: tog de nästa signal efter en förlustserie, eller drog de sig undan? Satt de kvar i vinnaren till exitregeln, eller tog de vinsten i förtid — att, som Faith formulerar det, räkna pengar de ännu inte tjänat? Handlade de signalen som kändes fel, eller filtrerade de bort den? Höll de enhetstaken, eller såg de olja och guld som två positioner när det passade? Varje avvikelse var liten och förståelig. Tillsammans skilde de miljonärer från resten."
+        },
+        {
+          "type": "text",
+          "content": "Faiths egen dyraste läxa är kapitlets centrum — för han bröt själv. Som yngst och mest framgångsrik började han lita på sitt omdöme mer än på reglerna, och vid ett tillfälle, trött efter en förlustserie, vågade han inte trycka av på nästa signal: en av årets största trender gick honom förbi medan han satt med händerna i fickan. Kostnaden mättes i miljoner. Hans slutsats, kursens kanske viktigaste mening: systemet skyddar dig inte från dig. Reglerna är ett skydd mot in-the-moment-psykologi — men bara om de följs i exakt det ögonblick varje instinkt skriker nej. Enligt Faith var det också denna typ av avvikelser som fick en del konton att dra ned eller dras in — i värsta fall lämnade en Turtle programmet i förtid efter att ha ignorerat riskgränserna."
+        },
+        {
+          "type": "text",
+          "content": "Faith förankrar beteendet i beteendeekonomin, citerad öppet: Kahneman och Tverskys förlustaversion — förluster gör dubbelt så ont som vinster gör gott — förklarar varför den som just tagit tre stopp i rad inte orkar ta det fjärde (fast det fjärde är hela systemets affär); sunk cost-fallån förklarar varför förlorare hålls kvar; utfallsbiasen förklarar varför en bra affär som följde reglerna men förlorade känns som ett misstag, och ett brott som gick bra känns som klokhet. Reglernas funktion är att flytta beslutet från det ögonblick då hjärnan är som sämst — mitt i positionen, mitt i känslan — till ett papper skrivet i lugn. Därmed är Turtle-reglerna i grunden ett psykologiskt verktyg med finansiell adress: de eliminerar inte risken, de eliminerar dig från beslutet."
+        },
+        {
+          "type": "insikt",
+          "content": "Samma regler, olika människor, olika utfall — alltså bär inte reglerna resultatet. Reglerna är en karta; disciplinen är benen. Och Faith läxa till sig själv gäller oss: systemet skyddar dig inte från dig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Samma regler — två beteenden, två utfall\",\"rader\":[[\"Situation\",\"Regelföljaren\",\"Regelbrytaren\"],[\"Efter en förlustserie\",\"tar nästa signal orubbligt — det är där systemet lever\",\"drar sig undan; vågar inte trycka av på det som blir årets affär\"],[\"Vinnande position\",\"sitter kvar till exitregeln\",\"tar vinsten i förtid — räknar pengar som inte är hans\"],[\"Signal som känns fel\",\"handlar ändå — regeln är regeln\",\"filtrerar bort den efter magkänsla\"],[\"Korrelerade marknader\",\"räknar dem som en position — håller taken\",\"ser olja och guld som två olika affärer när det passar\"],[\"Efter ett brott som gick bra\",\"erkänner att utfall inte är metod\",\"upphöjer undantaget till strategi\"],[\"Utfall enligt Faith\",\"de som gjorde tiotals miljoner dollar\",\"underpresterande konton — i värsta fall avstängda eller avlägsnade ur programmet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Sortera dina senaste tio avslut i två högar: affärer där en skriven regel följdes, och affärer där du bröt mot dig själv (flyttat mål, hoppat över signal, tagit vinst i förtid, adderat på förlorare). För varje brott: skriv ned KÄNSLAN som bröt regeln — rädsla, trötthet, leda, hämnd. Vilken känsla dominerar? Det är din personliga motståndare, och den är mer värd att känna än vilket bolag som helst."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — psykologikapitlet är skälet till att AKM1 har V19-risk som KRITISK variabel: den som inte hanterar ett bolags kapitalförbränning förlorar positionen innan tesen hinner slå in — exakt som Turtle som överlever den första förlustserien. AK1TS Brytpunkt är psykologins kontrakt: regeln skrivs av dig i lugn och åt dig i storm — och utan den är varje analys en önskan med kursrisk."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den avgörande skillnaden mellan Turtles som blev miljonärer och de som misslyckades?",
+          "alternativ": [
+            "De miljonära hade tidigare trading-erfarenhet",
+            "De hade högre IQ och bättre utbildning",
+            "De följde reglerna medan de andra avvek — efter förluster, vid förtida vinsttagning och vid riskgränser",
+            "De handlade bara i olja och guld"
+          ],
+          "ratt": 2,
+          "tips": "Alla hade samma regler, samma lärare, samma kapital — vad återstår?"
+        },
+        {
+          "q": "Vad var Faith egen dyraste misstag enligt boken?",
+          "alternativ": [
+            "Att handla för stor position i en enskild marknad",
+            "Att han efter förlustserier vågade inte ta nästa signal — och en av årets största trender gick honom förbi",
+            "Att han glömde att sätta stopp på en kortposition",
+            "Att han missade första kursdagen"
+          ],
+          "ratt": 1,
+          "tips": "Misstaget var inte en affär han tog — utan en han inte tog."
+        },
+        {
+          "q": "Vad menar Faith att reglernas egentliga funktion är?",
+          "alternativ": [
+            "Att maximera avkastningen per affär",
+            "Att flytta beslutet från ögonblicket då hjärnan är som sämst till ett papper skrivet i lugn",
+            "Att eliminera risken helt",
+            "Att göra handeln snabbare"
+          ],
+          "ratt": 1,
+          "tips": "Förlustaversion, sunk cost och utfallsbias — var i tiden fattas besluten som de förstör?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 12,
+      "title": "Edge-tänkande — E-värdet: vad gör ett system positivt",
+      "intro": "Faith formaliserar kanten som E-värdet — förväntan per affär. Det är kursens matematiska hjärta: en enda formel som förklarar varför trendföljare kan förlora sju av tio affärer och ändå tjäna, och varför en hög träffkvot kan ruinera dig långsamt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln, i Faiths tappning: E-värdet är sannolikheten för vinst gånger snittvinsten, minus sannolikheten för förlust gånger snittförlusten. Räkna gärna i R — Risk-enheter, alltså antalet gånger din fördefinierade risk per affär (Turtles: 2N-stoppets kronbelopp). Ett system med E över noll har en kant; ett system med E under noll är en långsam — eller snabb — maskin för att göra av med kapital. Exempel i klartext: träffkvot 35 procent, snittvinst +4,0R, snittförlust −1,0R. E = 0,35 × 4,0 − 0,65 × 1,0 = 1,40 − 0,65 = +0,75R. Vid 10 000 kronor i risk per affär är förväntan alltså 7 500 kronor PER AFFÄR — trots att systemet förlorar nästan två av tre. Detta är det svåraste mentala vändandet i kursen: frekvensen av förluster säger ingenting om lönsamheten. Storleken på förlusterna och vinsterna, i relation till varandra, säger allt."
+        },
+        {
+          "type": "text",
+          "content": "Trendföljningens profil är därmed extrem och ostraffligt pedagogisk: låg träffkvot (ofta 30–40 procent), många små förluster, få mycket stora vinster. Faith vänder på kasinobilden: kasinot vinner på rouletten med någon procents kant över tiotusentals spel — Turtles var kasinot, inte spelaren, och lagen om stora tal var deras vän. Men det förutsätter SERIER: en kant på under ett R per affär är osynlig i tio affärer och meningslös i hundra — den kräver hundratals till tusentals affärer för att visa sig. Ur följer en obehaglig sanning för alla som utvärderar strategier (eller sig själva) efter en kvartalsrapport eller tjugo trades: urvalet är för litet att säga någonting alls. Minns Quantitative Value-kursens varning — de små talens lag: två bra kvartal är ingen trend, och tjugo affärer är inget system."
+        },
+        {
+          "type": "text",
+          "content": "Faiths mest provocerande poäng: inträdet är systemets mest överskattade komponent. Faith driver tankeexperimentet — byt inträdet mot slantsingling, men behåll 2N-stoppet, exiterna och den N-baserade storleksmatematiken, och strukturen (hur du lämnar förlorare, hur du låter vinnare löpa, hur stor du är) kan i trendrika data fortfarande producera positiv förväntan. Kanten bor alltså inte i den perfekta köpsignalen — den bor i exiten och i riskstorleken. Det är därför Turtle-reglerna kunde vara så enkla att de ryms på ett A4: ingen del av systemet försöker vara smart om framtiden; varje del försöker vara strukturerad om FÖRLUSTEN och tålmodig med VINSTEN. Edge-tänkande i en mening: sluta jaga bättre inträden — bygg bättre utgångar och jämnare risk, så att ett medelmåttigt inträde räcker."
+        },
+        {
+          "type": "insikt",
+          "content": "Fråga inte hur ofta systemet har rätt — fråga vad det väntas ge per affär. 35 procent träff kan vara en pengamaskin; 70 procent kan vara en ruin. E-värdet, inte träffkvoten, är sanningen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"E-värdet — fyra system jämförda (risk 10 000 kr = 1R per affär)\",\"rader\":[[\"System\",\"Träffkvot\",\"Snittvinst\",\"Snittförlust\",\"E-värde per affär\"],[\"A — Turtle-format\",\"35 %\",\"+4,0R (+40 000 kr)\",\"−1,0R (−10 000 kr)\",\"0,35×4,0 − 0,65×1,0 = +0,75R = +7 500 kr\"],[\"B — hög träff, blodiga stopp\",\"70 %\",\"+0,5R (+5 000 kr)\",\"−3,0R (−30 000 kr)\",\"0,70×0,5 − 0,30×3,0 = −0,55R = −5 500 kr\"],[\"C — slumphandel\",\"50 %\",\"+1,0R\",\"−1,0R\",\"exakt 0 kr — kant saknas\"],[\"D — kasinokant\",\"52 %\",\"+1,0R\",\"−1,0R\",\"+0,04R = +400 kr — liten kant som kräver många affärer\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna ditt eget E-värde: ta dina senaste tjugo avslut. Definiera R som din faktiska eller tänkta risk per affär (om du saknade stopp — räkna 20 procent av insatt kapital som skattad risk och notera det som fynd). Omvandla varje resultat till R-multipel. Beräkna träffkvot, snittvinst, snittförlust och E. Om E är negativt: beror det på inträden (fel affärer), exits (klippta vinnare, pumpade förlorare) eller sizing (för stor risk)? Svaret avgör vad du ska träna — och det är nästan aldrig inträden."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — E-värdet är anledningen till att AKM1:s tålamod är designat: V19-riskfasta bolag (ingen kapitalförbränning, ingen emission vid horisonten) köper tid åt V01–V03:s tillväxt att komponeras — de är den fundamentala versionen av små förluster som låter vinnarna löpa. AK1TS Tid-dimensionen är samma matematik: en våg med positiv förväntan behöver sekvenser, inte enskilda signaler — och den som dömer vågen efter en vecka har inte testa vågen, bara bruset."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur beräknas E-värdet?",
+          "alternativ": [
+            "Sannolikheten för vinst gånger snittvinst minus sannolikheten för förlust gånger snittförlust",
+            "Träffkvoten gånger antal affärer",
+            "Årsavkastning delat med volatilitet",
+            "Snittet av de tio senaste affärerna"
+          ],
+          "ratt": 0,
+          "tips": "Två sannolikheter, två storlekar — vad väger dem mot varandra?"
+        },
+        {
+          "q": "Vad kännetecknar trendföljning som System 2 enligt kapitlet?",
+          "alternativ": [
+            "Hög träffkvot och många små vinster",
+            "Låg träffkvot, många små förluster och få mycket stora vinster — positiv E tack vare asymmetrin",
+            "Femtio procent träff med symmetriska utfall",
+            "Inga förluster tack vare breda stopp"
+          ],
+          "ratt": 1,
+          "tips": "Minns system A i tabellen — vad bär det positiva E-värdet?"
+        },
+        {
+          "q": "Vad menar Faith om inträdets betydelse?",
+          "alternativ": [
+            "Inträdet är allt — utan perfekt köpsignal finns ingen kant",
+            "Inträdet är den mest överskattade delen: exiten och riskstorleken bär kanten",
+            "Inträdet spelar roll bara på aktiemarknaden",
+            "Inträdet bör avgöras av makroanalys"
+          ],
+          "ratt": 1,
+          "tips": "Byt inträdet mot slantsingling — vad återstår att bära förväntan?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 12,
+      "title": "Risk-storlek — N, enheten och positionsstorleks-matematiken i SEK",
+      "intro": "Här är systemets motorrum: N — den underliggande marknadens genomsnittliga dagliga rörelse — och enhetsformeln som gör 1N till exakt 1 procent av kontot. Kapitlet räknar hela kedjan i svenska kronor, steg för steg, inklusive pyramideringen och termostaten som krymper positionen när volatiliteten stiger.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definiera N först, exakt: N är ett 20-dagars exponentiellt glidande medelvärde av det dagliga True Range — grovt sagt den genomsnittliga dagliga rörelsen i kronor, med hänsyn till gap. N är marknadens andning: en stabil storbolagsaktie kanske andas 1,25 kronor om dagen, en volatil tillväxtaktie 5 kronor. Turtle-idén var att normalisera ALLT efter andningen: en enhet (unit) i en marknad beräknas så att en rörelse på exakt 1N ändrar kontovärdet med 1 procent av kontot. Formeln: antal aktier per enhet = (1 procent av kontot) delat med N. På så vis blir en enhet guld, en enhet kaffe och en enhet socker exakt samma risk — 1 procent av kontot per N — volatilitetsnormalisering, årtionden innan uttrycket risk parity myntades. Risken görs jämförbar mellan marknader som i övrigt inte är jämförbara alls."
+        },
+        {
+          "type": "text",
+          "content": "Nu hela kedjan i svenska kronor, som checklista: konto 1 000 000 kronor; aktien handlas i 125 kronor; N = 2,50 kronor. En enhet = 10 000 kronor (1 procent av kontot) delat med 2,50 kronor = 4 000 aktier. Stopp sätts 2N under ingången: 125,00 − 5,00 = 120,00 kronor. Förlusten vid stopp = 4 000 aktier × 5,00 kronor = 20 000 kronor = exakt 2 procent av kontot. (Observera för ärlighetens skull: Turtles handlade terminer med marginal — i aktier utan hävstång skulle positionen motsvara 500 000 kronor; exemplet visar riskaritmetiken, inte belåning.) Pyramidering: för varje halv N (1,25 kronor) medgång läggs en ny enhet till — 126,25, 127,50, 128,75 — och hela positionens stopp lyfts en halv N per tillskott. Vid full pyramid om fyra enheter är snittkursen 126,88 och stoppet 123,75; den sammanlagda risken vid stopp är då omkring 50 000 kronor = cirka 5 procent av kontot. Det är priset för att få vara maximalt med i en full trend — och taket på vad en enda marknad får kosta."
+        },
+        {
+          "type": "text",
+          "content": "Och nu termostaten — matematikens finaste detalj: när volatiliteten stiger krymper positionen AUTOMATISKT. Dubbleras N från 2,50 till 5,00 kronor halveras enheten från 4 000 till 2 000 aktier. Ingen beslutande hand, ingen känsla, ingen förhandling — formeln gör det åt dig. Detta är position-sizing-matematikens kärna och kursens direktöversättning till varje investerares vardag: storlek är inte en åsikt utan en division — risk i kronor dividerat med avståndet till stoppet (AK1TS Brytpunkts-aritmetik). Den som köper 100 000 kronor av varje aktie oavsett volatilitet och stoppavstånd har ingen positionsstorlek — bara en vana. Skillnaden visar sig exakt den dag två positioner blir tre, eller noll."
+        },
+        {
+          "type": "insikt",
+          "content": "Positionens storlek är inte en åsikt — det är division: risk i kronor dividerat med avståndet till stoppet. Volatiliteten sätter nämnaren, och därmed hela positionen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Unit-matematiken i SEK — steg för steg\",\"rader\":[[\"Steg\",\"Beräkning\",\"Resultat\"],[\"Konto\",\"—\",\"1 000 000 kr\"],[\"N (20-dagars ATR på aktien)\",\"genomsnittlig daglig rörelse\",\"2,50 kr per aktie\"],[\"1 unit = 1 % av kontot per N\",\"10 000 kr / 2,50 kr\",\"4 000 aktier\"],[\"Ingång (20-dagars utbrott)\",\"kurs 125,00 kr\",\"position motsvarar 500 000 kr (Turtles handlade terminer med marginal — exemplet visar risken, inte belåningen)\"],[\"Stopp\",\"2N under ingång: 125,00 − 5,00\",\"120,00 kr\"],[\"Risk per unit\",\"4 000 × 5,00 kr\",\"20 000 kr = exakt 2 % av kontot\"],[\"Pyramid 1\",\"kurs +½N: 126,25 → +4 000 aktier\",\"8 000 aktier; hela stoppet lyfts till 121,25\"],[\"Pyramid 2\",\"127,50 → 12 000 aktier\",\"stopp 122,50\"],[\"Full pyramid (4 units)\",\"128,75 → 16 000 aktier\",\"snittkurs 126,88; stopp 123,75; risk ca 50 000 kr = ca 5 % av kontot\"]]}"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"N-termostaten — när volatiliteten stiger krymper enheten\",\"rader\":[[\"N (daglig andning)\",\"Unit vid konto 1 000 000 kr\",\"Kommentar\"],[\"1,25 kr\",\"10 000 / 1,25 = 8 000 aktier\",\"lugn marknad — större enhet\"],[\"2,50 kr\",\"4 000 aktier\",\"normalvolatilitet\"],[\"5,00 kr\",\"2 000 aktier\",\"dubblerad andning — automatiskt halverad enhet, ingen förhandling\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna din egen unit: ta kontots värde och välj 1 procent i riskbudget. Välj en aktie du gillar; uppskatta N grovt som genomsnittet av de senaste tjugo dagarnas högsta-minus-lägsta (eller dagens sväng om du ska göra det enkelt). Beräkna antalet aktier per unit och var ett 2N-stopp landar. Jämför med den position du faktiskt har i aktien — om den: hur många procent av kontot riskerar du till ditt faktiska (eller saknade) stopp? Siffran är din positionsstorlek sanning, och den är nästan alltid större än man trodde."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — N-matematiken översätts rakt in i AK1TS risk-first-aritmetik: storlek = (risk i kronor) / (avstånd till Brytpunkten). I AKM1 är V19-risk din volatilitetsjustering: ju närmare kapitalförbränning och emissionsrisken ett bolag står, desto bredare är dess »N« i osäkerhet — och desto mindre bör din enhet vara. Samma division, två adresser."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras N i Turtle-systemet?",
+          "alternativ": [
+            "Som 20-dagars glidande medelvärde av slutkurser",
+            "Som ett 20-dagars exponentiellt medelvärde av True Range — marknadens genomsnittliga dagliga rörelse",
+            "Som årets högsta kurs minus lägsta",
+            "Som aktiens direktavkastning"
+          ],
+          "ratt": 1,
+          "tips": "N är marknadens andning — vad mäter andning hos en aktie?"
+        },
+        {
+          "q": "Konto 1 000 000 kr, N = 2,50 kr. Hur stor är en unit?",
+          "alternativ": [
+            "4 000 aktier — 10 000 kr delat med 2,50 kr",
+            "2 500 aktier",
+            "10 000 aktier",
+            "400 aktier"
+          ],
+          "ratt": 0,
+          "tips": "Enheten = 1 procent av kontot delat med N."
+        },
+        {
+          "q": "Vad händer med enhetsstorleken när volatiliteten (N) fördubblas?",
+          "alternativ": [
+            "Enheten dubbleras — mer rörelse är mer möjlighet",
+            "Inget — enheten är alltid fast i antal aktier",
+            "Enheten halveras automatiskt enligt formeln",
+            "Systemet slutar handla marknaden"
+          ],
+          "ratt": 2,
+          "tips": "Kom ihåg termostaten — vad gör den när det blåser?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 12,
+      "title": "Exits och stopp — hur Turtles hanterade förluster",
+      "intro": "Enheterna definierade risken; stoppen och exiterna förvaltade den. Kapitlet går igenom 2N-stoppets kalibrering, Faith varning för synliga stoppnivåer, och varför System 1 och 2 aldrig använde vinstmål.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Regeln var kort: varje position fick ett initialt stopp på exakt 2N från ingången — och eftersom en enhet är konstruerad så att 1N är 1 procent av kontot, innebar 2N-stoppet en risk på exakt 2 procent per enhet. Varför just 2N? Kalibreringen är en avvägning mellan två dödsätt: ett för snävt stopp dör av tusen pisksnärt — stoppas ut om och om igen av normalt brus innan trenden ens börjar; ett för brett stopp gör varje förlust förödande och tvingar fram för små enheter. Dennis kalibrering — dubbla marknadens genomsnittliga dagliga andning — var en kompromiss hårt raglad över decennier av empiri: brett nog att överleva bruset, snävt nog att förlusten förblir en avgift och inte en amputation. Och regel nummer ett kring stoppet: det flyttas ALDRIG åt fel håll. Ett stopp som flyttas bortåt är inte ett stopp — det är en förhandling med dig själv."
+        },
+        {
+          "type": "text",
+          "content": "Faiths appendix innehåller en oväntad praktisk varning: placera inte stoppet exakt där alla andra placerar sina. Nivåer som är självklara för alla — exakt 2N, exakt 20-dagarsbotten, runda tal — blir till mål för andra handlare som jagar stopp för att utlösa kaskader och sedan vrida marknaden (whipsaw). Turtles uppmuntrades därför att variera placeringen — ett och en halv N eller två och en halv N i stället för exakt två — så länge den totala riskbudgeten per position hölls. Lärdomen generaliserar långt utanför terminsmarknaden: din exitregel ska vara mekanisk för DIG, men inte självklart läsbar för alla andra. Och ytterligare en praktisk detalj i samma anda: flera Turtles höll stoppen hos sig själva i stället för som vila order hos mäklaren — regeln är en disciplin, inte en offentlig skylt."
+        },
+        {
+          "type": "text",
+          "content": "Så utgångarna — och här avgörs systemet, enligt Faith själv. System 1 exitar vid 10-dagars motbrott, System 2 vid 20-dagars; INGET av systemen använde vinstmål. Skälet är E-värdets anatomi från kapitel 6: trendföljarens lönsamhet bor i de få extremvinnare som får löpa — ett vinstmål på exempelvis +3R kapar exakt de affärer som betalar hela systemet. Håll isär de två utgångarna: stoppet hanterar FEL (tesen dementerad — ut omedelbart, utan tanke); exiten hanterar TRÖTTHET (trenden har brutits — ut enligt regel, tack för svängen). Den svåraste frestelsen är inte stoppet utan vinsten: att ta +2R som »räcker för idag« är förlustaversionen omvänd — man räknar in icke inkasserade pengar och säljer rätten till de stora trenderna. I praktiken, notera det, är det också här de flesta privata investerare förstör sina E-värden: inte genom att köpa fel, utan genom att sälja rätt för tidigt."
+        },
+        {
+          "type": "insikt",
+          "content": "Stoppet är inte en bekännelse av fel — det är hyran för att få vara med när trenden kommer. Betala den mekaniskt. Och exiten är inte ett misslyckande — den är kontraktets slutpunkt, skriven före köpet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Stopp- och exitregler — checklistan\",\"rader\":[[\"Situation\",\"Regel\",\"Varför\"],[\"Initialt stopp\",\"2N från ingången = 2 % risk per enhet; flyttas ALDRIG åt fel håll\",\"risken bestäms före affären — inte under den\"],[\"Synliga nivåer\",\"placera inte stoppet exakt där alla andra ligger (exakt 2N, runda tal) — variera medan riskbudgeten hålls\",\"andra handlare jagar uppenbara stopp (whipsaw)\"],[\"Pyramidering\",\"hela positionens stopp lyfts ½N per tillagd enhet\",\"stoppet släpar aldrig efter risken\"],[\"Vinstutgång\",\"System 1: 10-dagars motbrott; System 2: 20-dagars\",\"trender behöver rum — inga vinstmål\"],[\"Vinstmål\",\"finns inte\",\"ett mål kapar de extremvinnare som betalar hela systemet\"],[\"Katastrofregel\",\"ingen position utan stopp — någonsin\",\"en position utan stopp är en önskan, inte en affär\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Stoppinventering: gå igenom dina nuvarande positioner. Har var och en ett stopp — i siffror, skrivet, med datum? För varje position som saknar stopp: skriv Brytpunkten NU (nivån som bevisar tesen fel) och notera det inre motstånd du känner medan du skriver. Det motståndet — inte kurserna — är kursens kärna: det är ljudet av en förhandling som pågår."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — 2N-regeln är AK1TS Brytpunkt i sin renaste form: exakt 2 procent, bestämd före ingången, aldrig förhandlad efteråt. AKM1:s V19-risk är den fundamentala motsvarigheten: emissionsrisken är bolagets eget stopp — kapitalförbränningen definerar nivån där tesen om tillväxt dementeras av kassaflödet. Den som flyttar ett stopp äger en önskan; den som ignorerar V19 äger den fast varianten."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur stort var det initiala stoppet och vad innebar det i risk?",
+          "alternativ": [
+            "1N — 1 procent av kontot per enhet",
+            "2N — exakt 2 procent av kontot per enhet",
+            "5N — 5 procent av kontot per enhet",
+            "10 procent oavsett volatilitet"
+          ],
+          "ratt": 1,
+          "tips": "Enheten är byggd på 1N = 1 procent — vad ger dubbla avståndet?"
+        },
+        {
+          "q": "Varför varnar Faith för att sätta stoppet exakt på uppenbara nivåer?",
+          "alternativ": [
+            "Därför att mäklaren kan glömma order på jämna tal",
+            "Därför att synliga stoppnivåer jagas av andra handlare som utlöser dem och vrider marknaden — whipsaw",
+            "Därför att stopp är olagliga på vissa börser",
+            "Därför att det påverkar skatten"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer om alla i rummet har sitt stopp på samma utpräglade nivå?"
+        },
+        {
+          "q": "Varför använde Turtles aldrig vinstmål?",
+          "alternativ": [
+            "Därför att de alltid handlade utan vinstförväntan",
+            "Därför att ett vinstmål kapar exakt de extremvinnare som betalar hela systemets E-värde",
+            "Därför att det var förbjudet i kontraktet",
+            "Därför att vinster beskattades hårdare"
+          ],
+          "ratt": 1,
+          "tips": "Minns E-värdets anatomi: vad bär lönsamheten hos en 35-procentare?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Tålamod — att sitta stilla i månader är systemet",
+      "intro": "Trendföljarens kalender är absurd: månader utan en enda signal, månader av förlustserier, och sedan en enda trend som betalar allt. Kapitlet visar matematiken bakom stillheten — och varför den svåraste regeln är att inte göra något.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Så här såg ett Turtle-år i verkligheten ut — inte i marknadsföringen: flera affärer stoppades ut i rad; stora delar av året gav inga signaler alls (20-dagars utbrott är i fundamentala marknader sällsynta); och under den tiden steg andras portföljer, andras berättelser och andras nyhetsflöden. Faith är tydlig med att tristessen är STRUKTURELL, inte ett tecken på att systemet gått sönder: verkliga trender är sällsynta. Marknader trendar en bråkdel av tiden och vischar resten — ett system som köper utbrott betalar för det med långa perioder av stillhet och små blödningar. Tristessen är alltså inte priset FÖR systemet; den är systemet. Att sitta stilla i två månader är inte en paus mellan att köra Turtle-systemet — det är att köra det."
+        },
+        {
+          "type": "text",
+          "content": "Matematiken som gör stillheten uthärdlig — och obligatorisk — kan visas med tio affärer. Rätt R = 20 000 kronor (2 procent av vårt miljonkonto från kapitel 7). Sex affärer stoppas: −120 000 kronor. Två slutar platt: noll. En ger +2R: +40 000. En enda trendvinnare ger +9R: +180 000. Summa: +100 000 kronor — en vinnande svit av tio affärer — med 30 procents träffkvot, där sju av tio affärer var nollor eller förluster. Läs tabellen nedan långsamt och notera vad som händer om den stora vinnaren saknas: summan blir −80 000 kronor. Årets resultat avgjordes alltså av EN affär — och den affären gick inte att identifierera i förväg, bara att VARA med i genom att ta varje signal. Den som hoppade över tre affärer i tristess hoppade statistiskt sett av just den som betalade."
+        },
+        {
+          "type": "text",
+          "content": "Faiths recept mot tålamodets kollaps är inte moralisk uppbyggnad utan KÄNNEDOM OM FÖRDELNINGEN: den som vet att systemet historiskt visat tio raka förluster, kvartalslånga svackor och drawdowns på tjugo procents storleksordning blir inte överraskad när de kommer — och överraskning är det som får människor att överge fungerande system i botten av svackan (Ed Seykotas varning i Market Wizards-kursen: systemet måste passa psyket). Kursen formaliserar det som tålamodsplanen: skriv ned FÖRE du börjar hur många raka förluster du väntar dig, hur djup svacka du accepterar och hur länge du låter systemet visa vad det förmår — datera det, och låt sedan dokumentet, inte humöret, avgöra när utvärderingen sker. Utvärderingen av ett system får inte ske i dess svacka; det är som att säga upp livförsäkringen på vägen in på akuten."
+        },
+        {
+          "type": "insikt",
+          "content": "Trendföljarens år lönas inte av aktivitet utan av närvaro. Att sitta stilla i månader är inte pausen före systemet — det ÄR systemet, och den som kräver underhållning av sin strategi betalar för den i avkastning."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tio affärer — hur ett trendföljarår ser ut (R = 20 000 kr)\",\"rader\":[[\"Affär\",\"Utfall\",\"Resultat\"],[\"1–6\",\"stoppade på 2N\",\"−6R = −120 000 kr\"],[\"7–8\",\"platta utgångar\",\"±0 kr\"],[\"9\",\"mindre vinst +2R\",\"+40 000 kr\"],[\"10\",\"trendvinnare +9R\",\"+180 000 kr\"],[\"Summa\",\"träffkvot 30 %\",\"+5R = +100 000 kr\"],[\"Utan affär 10\",\"om trendvinnaren hoppas över\",\"−6R + 0 + 2R = −4R = −80 000 kr\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din tålamodsplan, med siffror: hur många månader av underprestation mot omvärlden tål du innan du byter strategi? Hur många raka förluster? Hur djup svacka i procent? Datera dokumentet — och jämför sedan med hur länge din nuvarande strategi faktiskt fått chans att visa vad den förmår. Om siffrorna i dokumentet är mindre än verkligheten har du just förklarat varför du byter strategier i botten av svackor."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — tålamodet är varför V19 Kapitalförbränning & Emission-risk väger tyngst i AKM1: bolag som bränner kassa har inte råd att din tes har fel i två år — emissionen kommer och utspädar dig innan vändningen. AK1TS Tid-dimensionen ställer samma fråga till vågen: hur länge förtjänar den ditt tålamod — och vad kostar det, i alternativavkastning, att sitta still? Tålamod utan V19-koll är inte tålamod; det är hopp."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den strukturella orsaken till trendföljarens långa perioder av stillhet?",
+          "alternativ": [
+            "Att mäklarna har stängt på sommaren",
+            "Att verkliga trender är sällsynta — marknader trendar en bråkdel av tiden och vischar resten",
+            "Att 20-dagars utbrott bara kan ske på måndagar",
+            "Att systemet kräver manuell godkännande per affär"
+          ],
+          "ratt": 1,
+          "tips": "Stillheten är inte ett fel i systemet — den är en egenskap hos marknader."
+        },
+        {
+          "q": "I exemplet med tio affärer — vad avgjorde årets resultat?",
+          "alternativ": [
+            "Den höga träffkvoten",
+            "Att genomsnittet av alla affärer var positivt",
+            "En enda trendvinnare på +9R — utan den blir summan negativ",
+            "Att förlusterna var små tack vare luckan mellan stopp"
+          ],
+          "ratt": 2,
+          "tips": "Räkna om tabellen utan affär 10 — vad händer med summan?"
+        },
+        {
+          "q": "Vad är Faith recept mot att överge systemet i svackan?",
+          "alternativ": [
+            "Att handla mindre under svackor för att hålla humöret uppe",
+            "Att känna systemets historiska fördelning — raka förluster, svackors längd och djup — så att inget överraskar",
+            "Att byta system var sjätte månad",
+            "Att låsa kontot hos mäklaren"
+          ],
+          "ratt": 1,
+          "tips": "Överraskning är det som knäcker disciplinen — vad tar bort överraskningen?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Mekaniskt mot diskretionärt — experimentets slutsats",
+      "intro": "Experimentet var designat som en duell mellan två hypoteser om varifrån framgång kommer: metoden eller människan. Slutsatsen, citerad öppet, är Dennis egen: reglerna kan publiceras i tidningen — det som saknas är konsekvens och disciplin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formellt var experimentet ett internt A/B-test av renodlat slag: en grupp, ett regelverk, identiska villkor — och utfall som spretade. Om metoden bar resultatet borde alla som följde reglerna nå samma utfall; gjorde de inte — och det gjorde de inte: vissa blev miljonärer medan andra kördes ut — då är den aktiva komponenten inte reglerna utan något i människan som kör dem — disciplin, konsekvens, förmågan att trycka av efter en förlust. Dennis egen sammanfattning av experimentet, återgiven i bokens inledning och sedan en av finanslitteraturens mest citerade rader: »You could publish my trading rules in the newspaper and no one would follow them. The key is consistency and discipline.« Översatt och förstorat: informationen är inte flaskhalsen. Afterlevnaden är. Det är en djupt obekväm slutsats i en informationsbransch — och den förklarar varför en hel industri kan sälja signaler, kurser och skärmar utan att marknaden blir effektivare: att VETA reglerna är gratis; att köra dem kostar psykologi."
+        },
+        {
+          "type": "text",
+          "content": "Vad köper det mekaniska, konkret? Tre saker. Detsamma varje dag: samma data ger samma signal — ingen trötthet, ingen rädsla, ingen vecka då magen får veto. Ingen förhandling: stoppet existerar oberoende av hur du mår; exitregeln oberoende av hur lockande +2R känns. Och mätbarhet: ett mekaniskt system kan backtestas, dess svackor kan kännas i förväg (kapitel 9), dess E-värde kan beräknas (kapitel 6). Priset är precis lika verkligt: systemet kommer att förlora i perioder UTAN förklaring, och du måste sitta still — något den mänskliga hjärnan är byggd att vägra. Det diskretionära är spegelvänt: charmigt när det fungerar, flexibelt när marknaden förändras — och som störst risk exakt när frestelsen är som störst, i svackor och bubblor. Quantitative Value-kursen kom till samma slutsats från värdesidan (jedis kontra clones: reglerna slår karisman); Turtle-experimentet är dess experimentella bevis från traderssidan."
+        },
+        {
+          "type": "text",
+          "content": "Och sedan det ultimata testet, som ingen annan regelbok utsatts för: 2003 publicerade Faith hela Turtle-regelverket gratis på nätet — det ursprungliga regelverket som PDF, alla detaljer, med argumentet att sekretessavtalet spelat ut sin roll. Vad hände? Ingenting. Marknaderna kollapsade inte; ingen armé av hemma-Turtles tömde trenderna. De flesta som laddade ned följde inte reglerna — de förlorade tålamodet, förbättrade bort kärnan, eller valde bort affärerna som kändes fel. Faiths egen poäng och kursens: Dennis citat hade alltså bevisats framför ögonen på alla — informationen var fri och förblev värdelös utan efterlevnad. För eleven är det befriande: du saknar inte tillgång till fungerande regler; du saknar (än så länge) det Dennis byggde: en miljö av sanktioner, coaching och kamratskap. Det går att bygga egen — med portföljpamp, journal och DATERADE regler — men ingen ska tro att ett nedladdat regelverk är detsamma som att leva det."
+        },
+        {
+          "type": "insikt",
+          "content": "Du kan inte kopiera Turtles avkastning — du kan bara kopiera deras regelhet. Informationen har varit gratis sedan 2003; efterlevnaden är fortfarande marknadens dyraste råvara."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mekaniskt mot diskretionärt — experimentets facit\",\"rader\":[[\"Fråga\",\"Mekaniskt (Turtle)\",\"Diskretionärt\"],[\"Vem fattar beslutet\",\"regeln — samma svar varje dag, oavsett humör\",\"magen — svaret skiftar med sömn, press och senaste affären\"],[\"Vad det köper\",\"ingen förhandling; mätbara svackor; beräkneligt E-värde\",\"flexibilitet; självbild; känsla av kontroll\"],[\"Vad det kostar\",\"att sitta still genom oförklarliga förlustperioder\",\"som farligast exakt när frestelsen är som störst — i svackor och bubblor\"],[\"Felrisk\",\"att överge systemet i botten av svackan\",\"att övertyga sig om undantag tills undantaget är strategin\"],[\"Experimentets bevis\",\"samma regler — olika disciplin — olika utfall\",\"Dennis egna senare förluster efter 1987 (offentligt rapporterat) är varningsexaempel\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ett mekaniskt löfte som du KAN hålla i tolv månader — litet nog för att överleva din sämsta månad: till exempel månadssparning med fasta datum, halvårsvis rebalansering, eller granskningsdatum för varje innehav (V19-koll). Definiera i förväg vad som får bryta löftet (livsförändring — inte marknadsläge) och skriv undantagsregeln FÖRE du börjar. Datera. Om tolv månader: följde du det? Svaret är en mätning av din mekaniska kapacitet — inte av strategin."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — här är ekosystemets eget A/B: AKM1 är strukturerad subjektivitet (du poängsätter V01–V20; V19-risk är gardet mot att subjektivet överdriver), AK1TS är strukturerad objektivitet (samma data ger alltid samma svar). Turtle-experimentet bevisar att avståndet mellan de två heter disciplin — läs avståndet mellan din AKM1-poäng och din faktiska portfölj som information, så har du börjat mäta rätt sak."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var experimentets formella slutsats enligt Dennis eget sammanfattande citat?",
+          "alternativ": [
+            "Att reglerna var så hemliga att de måste skyddas",
+            "Att reglerna kan publiceras i tidningen och ändå följer ingen dem — nyckeln är konsekvens och disciplin",
+            "Att diskretionär handel alltid är bäst",
+            "Att bara människor med medfödd fallenhet kan handla"
+          ],
+          "ratt": 1,
+          "tips": "Vad är flaskhalsen enligt Dennis — informationen eller efterlevnaden?"
+        },
+        {
+          "q": "Vad hände när Faith publicerade reglerna gratis 2003?",
+          "alternativ": [
+            "Marknaderna kollapsade av hemma-Turtles",
+            "Alla som laddade ned blev miljonärer",
+            "Ingenting särskilt — de flesta som försökte följde inte reglerna, vilket bevisade Dennis poäng",
+            "Reglerna visade sig inte fungera längre"
+          ],
+          "ratt": 2,
+          "tips": "Vad säger det att fri information inte förändrade marknaden?"
+        },
+        {
+          "q": "Vad är det mekaniska systemets främsta KOSTNAD enligt kapitlet?",
+          "alternativ": [
+            "Höga courtagekostnader",
+            "Att det kräver dyr utrustning",
+            "Att det förlorar i perioder UTEN förklaring — och du måste ändå sitta still",
+            "Att det inte får backtestas"
+          ],
+          "ratt": 2,
+          "tips": "Vad är det svåraste en människa gör med ett system som inte förklarar sig?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Efter Turtle — Faiths väg, stjärnorna och systemens förfall",
+      "intro": "Vad hände med människorna — och med reglerna — när experimentet tog slut? Kapitlet följer Dennis, Eckhardt, Faith och stjärn-eleverna in i 1990- och 2000-talet, och visar mekanismen som får publicerade system att förfalla när alla handlar samma signal.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Programmet drogs så småningom ned kring 1988, i slutet av en period som varit brutal för Dennis själv. Offentligt rapporterade siffror och minnen tecknar en berättelse med ironisk symmetri: Dennis — arkitekten bakom de mekaniska reglerna — sårades svårt av sina egna diskretionära överskridanden och ett tungt risktagande i kölvattnet av 1987 års krasch, drog sig tillbaka från att förvalta klientkapital och gjorde senare comeback-försök med blandade resultat. Eckhardt — skeptikern som tappat vadet — fortsatte att handla just mekaniskt trendföljande genom Eckhardt Trading Company och förblev, enligt offentlig CTA-statistik under decennier, en stabil förvaltare. Läraren bröt mot sitt eget regelverk; eleven som behöll maskinen trampade vidare. Hela kontroversen om experimentet kan sammanfattas i den asymmetrin — och hela sanningen är att båda hade rätt om olika halvor: reglerna fungerar; människan framför reglerna är risken."
+        },
+        {
+          "type": "text",
+          "content": "Eleverna? Experimentet alstrade i praktiken en bransch. Jerry Parker byggde Chesapeake Capital till en av USA:s största trendföljande CTA-förvaltare. Liz Cheval grundade EMC Capital Management; Paul Rabar byggde Rabar Market Research; Howard Seidler grundade Saxon Investment — flera självständiga trendföljare ur samma klassrum, med samma regelverk och olika karriärer. Det är den starkaste replikationen experimentet åstadkom: klass 2 replikerade klass 1, och eleverna replikerade systemet i egna bolag under decennier. Faith tog en annan väg: han lämnade handeln, arbetade med mjukvara och programmering i Kalifornien, och återkom i den offentliga debatten 2003 när han publicerade Turtle-reglerna gratis — en gest som retade en del klasskamrater som ansåg reglerna vara deras levebröd, och som föregrep den udda duellen 2007: två böcker om samma experiment — Michael Covels The Complete TurtleTrader (utifrån, med intervjuer) och Faiths egen Way of the Turtle (inifrån) — publicerades samma år."
+        },
+        {
+          "type": "text",
+          "content": "Återstår frågan som griper in i kontroversen: lever systemet? Svaret har två delar. Mekanismen lever: trendföljning utnyttjar djupt mänskliga drag — underreaktion, förankring, flockbeteende, förlustaversion — som inte slutar existera för att en strategi publiceras (jämför Quantitative Value-kursens argument: kunskap om beteendefel botar dem inte). Men PREMIEN krymper: när tillräckligt många handlar samma signaler blir utbrotten trängre, stoppen jagas (falska utbrott och decoys är legio på 2010-talets marknader) och CTA-indexens trendföljaravkastning har, offentligt rapporterat, mattats av sedan guldåldern. Kursen kallar det Morton-Davis-mekanismen, efter spelteori-traditionens insikt: en strategis kant är en resurs — ju fler som utvinner den, desto snabbare urholkas den. Systemförfall är prisets sida av kanten själv: om kanten vore falsk lockade den inget kapital; att den urholkas är beviset på att den var reell. Slutsats för eleven: räkna med att varje publicerad kant — inklusive den här kursens regler — har ett bäst-före-datum, och planera för förfallet i stället för att förneka det."
+        },
+        {
+          "type": "insikt",
+          "content": "Regler utan ägare förfaller; ägare utan regler exploderar. Eckhardts maskin trampade vidare medan Dennis egna kompass tappade nord — och det är experimentets andra halva, eftermälet, som visar bägge."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Efter Turtle — huvudpersonernas vägar\",\"rader\":[[\"Huvudperson\",\"Vägen efter experimentet (offentligt rapporterat)\",\"Läxa\"],[\"Richard Dennis\",\"tunga förluster 1987–1988; lade ned förvaltning av klientkapital; senare comeback-försök med blandat resultat\",\"skaparen av reglerna sårades av sin egen diskretion\"],[\"William Eckhardt\",\"Eckhardt Trading Company — mekanisk trendföljning i decennier\",\"maskinen trampar vidare\"],[\"Curtis Faith\",\"lämnade handeln; mjukvaruentreprenad; publicerade reglerna gratis 2003; boken 2007\",\"yngste Turtle blev reglernas historiker — och deras varnare\"],[\"Jerry Parker\",\"Chesapeake Capital — en av USA:s största trendföljande CTA:er\",\"disciplinen skalas till en bransch\"],[\"Liz Cheval, Paul Rabar, Howard Seidler\",\"egna CTA-bolag (EMC Capital, Rabar Market Research, Saxon)\",\"experimentet replikerade sig i självständiga bolag\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Morton-Davis-testet i din egen databas: hitta tre strategier eller skärmar som var hypade för tio år sedan (i forum, media eller kurser). Vad har hänt med deras rapporterade avkastning sedan de blev välkända? Skriv ned mönstret i en mening. Om du inte hittar uppföljningar alls — notera även det: frånvaron av ärlig uppföljning är del av mekanismen."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — systemförfallet är skälet till att AKM1:s värderingsblock (V04–V06) kontanttestas mot V19-risk och aldrig antas gälla för evigt: kanter har utgångsdatum och emissioner har startdatum. AK1TS hanterar samma ödmjukhet med datering — varje våg-läsning tillhör ett tillfälle och ifrågasätts vid nästa — och din portföljpamp bör innehålla en rad för när en regel PENS-ut: datumet den utvärderas, inte känslan."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken ironisk asymmeti visar eftermälet på Dennis och Eckhardt?",
+          "alternativ": [
+            "Dennis fortsatte mekaniskt medan Eckhardt blev diskretionär",
+            "Dennis sårades av egna diskretionära risker efter 1987 — Eckhardt fortsatte mekaniskt genom Eckhardt Trading Company",
+            "Båda slutade handla samma år",
+            "Eckhardt förlorade allt och Dennis fortsatte"
+          ],
+          "ratt": 1,
+          "tips": "Vem behöll maskinen — och vem red på egen kompass?"
+        },
+        {
+          "q": "Vad hände med flera av Turtle-eleverna efter experimentet?",
+          "alternativ": [
+            "De lämnade finansmarknaden helt",
+            "De grundade egna framgångsrika CTA-bolag — Chesapeake, EMC Capital, Rabar — och replikerade systemet i decennier",
+            "De stämde Dennis alla",
+            "De bytte till fundamental aktieanalys"
+          ],
+          "ratt": 1,
+          "tips": "En hel bransch växte ur ett klassrum — vilken?"
+        },
+        {
+          "q": "Vad är Morton-Davis-mekanismen i kursens användning?",
+          "alternativ": [
+            "Att publicerade strategiers kant urholkas när tillräckligt många utvinner den — kant är en resurs",
+            "Att mekaniska system alltid förbättras med tiden",
+            "Att trendföljning bara fungerar på råvaror",
+            "Att böcker om trading säljer bättre än böcker om värde"
+          ],
+          "ratt": 0,
+          "tips": "Vad händer med en guldådra när alla gräver i den?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 12,
+      "title": "Kontroversen — tur, Dennis eller selektion?",
+      "intro": "Nu kursens viktigaste kapitel: var Turtle-experimentet replikerbart — eller var det tur, Dennis egen kraft och retroaktiv överlevnads-selektion? Forskningen om mekaniska system förfall vägs mot försvaret, och AK1A:s syntes och medgivande står öppet sist.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kritiken, fyra ben. ETT — urvalet var inte slumpmässigt: över tusen självvalda sökande gallrades aktivt på psykologi; »vem som helst« blev i praktiken »vem som helst som klarar ett urval designat av två av världens bästa traders«. TVÅ — Dennis kan ha varit en del av kanten: kapital, coaching, sanktionen att kontot drogs tillbaka och den gemensamma övertygelse som höll klassen kvar i systemet under svackorna är en miljö som inte följer med ett nedladdat PDF-dokument; kanske var miljön — inte reglerna — det som replikerades. TRE — tidsåldern: 1983 till 1987 var trendföljningens guldålder, med Volckers desinflation, dollartrenden och 1987 års krasch; en strategi testad bara i sin bästa epok är en strategi otestad. FYRA — retroaktiv överlevnads-selektion: vi minns Parkers och Faith; boken om experimentet är skriven av en av stjärnorna, med egna siffror som saknar extern revision. Att drygt tjugo människor — gallrade, i rätt epok, med coaching — gav flera stjärnor är anmärkningsvärt — men det är inte ett bevis för att vem som helst kan."
+        },
+        {
+          "type": "text",
+          "content": "Forskningen om mekaniska system, citerad öppet och i linje med AK1TS-kursens genomgång: Park och Irwins uppmärksammade översikt från 2007 (What Do We Really Know About the Profitability of Technical Analysis?) sammanväger cirka 95 studier och finner blandade resultat — tidiga data, särskilt före 1987, visar ofta lönsamma tekniska regler, medan senare studier på nyare data finner svagare eller inga resultat efter transaktionskostnader. Sullivan, Timmermann och White (1999) visade att den historiskt bästa regeln på S&P 500 förlorade det mesta av sin kraft när man korrigerade för data-snooping — att man testat hundratals regler på samma data och behållit vinnaren. Och på faktorsidan visar McLean och Pontiff (2016) att publicerade anormala avkastningar klingar av kraftigt efter publicering. Mönstret är detsamma som Morton-Davis-mekanismen från förra kapitlet, nu med ekonometri: kända kanter krymper — av urvalseffekter före publicering och av konkurrens efter den. Turtle-systemet är inget undantag i princip: det var som bäst när det var som okändast."
+        },
+        {
+          "type": "text",
+          "content": "Försvaret — och det är ärligt starkare än det låter. ETT: replikation INTERNT — klass 2 replikerade klass 1:s mönster, och flera elever byggde självständiga decennielånga karriärer på samma regelverk (kapitel 11); det är fler oberoende replikeringar än de flesta handelsstrategier kan uppvisa. TVÅ: spridningen av utfall bevisar inte att systemet var slump — den bevisar att systemet kräver efterlevnad, vilket är en testbar och testad mekanism (samma regler, olika disciplin, olika resultat). TRE: publiceringen 2003 skadade inte systemet — det som hände var att folk inte följde det, vilket är konsistent med att kanten sitter i BETEENDET snarare än i signalerna; en signal som kräver en sällsynt karaktär urholkas långsammare än en som bara kräver en formel. AK1A:s hållning, utan skyddslinjer: det mest replikerbara fyndet i Turtle-experimentet är inte avkastningen utan mönstret — samma regler ger olika utfall beroende på vem som kör dem; det är en psykologisk lag, inte en finansiell. Medgivandet som kursen kräver att du bär med dig: de allra flesta som försöker mekanisk trading underpresterar — inte för att reglerna är hemliga utan för att disciplinen är sällsynt; och därför är reglerna i AK1A ett pedagogiskt studium och ett besluts-hygien-verktyg — aldrig ett trading-system (nästa kapitel)."
+        },
+        {
+          "type": "insikt",
+          "content": "Det mest replikerbara i Turtle-experimentet är inte avkastningen — det är mönstret att samma regler ger olika utfall beroende på vem som kör dem. Det är en psykologisk lag, inte en finansiell."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kritik, svar och AK1A:s hållning\",\"rader\":[[\"Kritik\",\"Innebörd\",\"Svaret\",\"AK1A:s hållning\"],[\"Urvalsskevhet\",\"självvalda sökande + aktiv gallring — inte »vem som helst«\",\"sant; men klass 2 replikerade klass 1 internt\",\"två klasser är svagt bevis — behåll ödmjukheten\"],[\"Dennis som kanten\",\"kapital, coaching och sanktion följer inte ett PDF-dokument\",\"miljön bar disciplinen — det är i sig ett fynd\",\"bygg din egen miljö: pamp, journal, datum\"],[\"Trendföljningens guldålder\",\"1983–1987 var en exceptionell trendepok\",\"Park & Irwin (2007): tidiga data ger starkare teknisk lönsamhet; senare svagare\",\"förvänta avklingning — dimensionera därefter\"],[\"Data-snooping och publiceringseffekt\",\"bästa historiska regel förlorar kraft efter korrigering (Sullivan m.fl. 1999; McLean–Pontiff 2016)\",\"Turtle-reglerna testades i flera decennier, inte bara en backtest\",\"kräv lång historia och utgångsdatum för varje kant\"],[\"Retroaktiv överlevnads-selektion\",\"boken skrevs av en stjärna med egna siffror\",\"medges öppet — siffrorna är Faiths\",\"kräv oberoende källor före tro\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör replikeringsribban på Turtle-experimentet själv — fyra frågor, fyra ärliga svar: Mekanism (vilket beteende betalar för utbrottshandeln — och varför försvinner det inte av att vara känt?)? Enkelhet (ryms reglerna på ett A4?)? Förkunskap (var de testade i decennier — och publicerade sedan?)? Replikbarhet utanför originalmiljön (fungerar de utan Dennis kapital, coaching och sanktioner — vad säger folk som försökt)? Skriv ned svaren — de fyra utgör din personliga evidensgrad för hela kursen."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — kontroversen är AK1A:s skäl att kräva oberoende belägg för allt som låter som kant: V19-risk räddar dig inte om en hel sektors kapitalförbränning normaliserats av ränteläget, och en värderingskomposit är inte evig bara för att den var stark 1976–2011. AK1TS Brytpunkt definierar vad som bevisar dig fel — och utan en sådan definition är replikerbarhet en åsikt, inte en egenskap."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilket är det starkaste av de fyra kritiska argumenten mot experimentets replikerbarhet?",
+          "alternativ": [
+            "Att reglerna var för enkla för att fungera",
+            "Att urvalet var självvalt och aktivt gallrat — alltså inte testades på »vem som helst«",
+            "Att Turtles handlade för lite",
+            "Att 1980-talet saknade trender"
+          ],
+          "ratt": 1,
+          "tips": "Vem var det som faktiskt testades — en slumpmässig grupp eller ett gallrat urval?"
+        },
+        {
+          "q": "Vad fann Park och Irwins översikt från 2007?",
+          "alternativ": [
+            "Att tekniska regler alltid är lönsamma",
+            "Att tekniska regler aldrig varit lönsamma",
+            "Blandade resultat — tidiga data visar ofta lönsamhet, nyare data svagare eller inga resultat efter kostnader",
+            "Att bara trendföljning på aktier fungerar"
+          ],
+          "ratt": 2,
+          "tips": "Riktningen över tid är fyndet — vad händer med resultaten när data blir modern?"
+        },
+        {
+          "q": "Vad är AK1A:s eget medgivande i kontroversen?",
+          "alternativ": [
+            "Att mekanisk trading är den bästa vägen för alla",
+            "Att Turtle-reglerna borde hemlighållas",
+            "Att de flesta som försöker mekanisk trading underpresterar på grund av disciplin — därför är reglerna i AK1A pedagogik och besluts-hygien, aldrig ett trading-system",
+            "Att kontroversen saknar intresse"
+          ],
+          "ratt": 2,
+          "tips": "Vad är skillnaden mellan att studera en pengamaskin och att äga en?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Syntesen — AK1TS är Turtle-tänk för vågor, pedagogiskt aldrig trading-system",
+      "intro": "Kursens sista stora stycke: vad AK1A gör med allt detta. Svaret är en syntes i tre led — determinism som grammatik, N-risk som matematik, tålamod som karaktär — och en tydlig gräns: vågmotorn är pedagogik, inte pengamaskin.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Säg det rakt: AK1TS:s determinism är Turtle-tänket för vågor. Släktträdet är tydligt — determinism: samma data ger alltid samma svar, med samma oböjliga avsaknad av tolkning som ett Donchian-utbrott (vågmotorn i kursen AK1TS — Våglärans hierarki definierar kontraktet: division, subtraktion, jämförelse med tröskel); risk i enheter: trösklar och vikter är volatilitets- och momentumjusterade på samma sätt som N normaliserade Turtle-positioner; och beslutet flyttat från stunden till papperet: en vågklass är en signal att STUDERA, aldrig en känsla att följa. Men — och här är gränsen som kursen aldrig får sudda ut — AK1TS är PEDAGOGISKT: det är ett studieobjekt och en besluts-hygien för hur man läser struktur i priser, ALDRIG ett trading-system. Kursen om våglärans hierarki säger det själv i sitt avslut: determinism, struktur och riskhantering — inte allvetande prognos. Turtle-tänket tränar grammatiken; det skriver inte dina affärer."
+        },
+        {
+          "type": "text",
+          "content": "Och medgivandet, utan krumbukter, för det är syntesens andra hälft: de allra flesta som försöker mekanisk trading underpresterar — Faiths egna klasskamrater är beviset, och de hade Dennis coaching. För en svensk aktie-elev är därför Turtle-arvet inte en strategi att kopiera utan TRE verktyg att äga. ETT: Brytpunkt före köp — i AK1TS:s språk exakt den dimension där risken bor (Market Wizards-kursen visade samma sak: Kovner, Dennis och Turtles definierar alla stoppet före ingången). TVÅ: storlek från stopp — divisionen risk dividerat med avstånd, alltså N-matematiken i småskaligt format; V19 Kapitalförbränning & Emission-risk är den fundamentala varianten: ett bolag som bränner kassa har sitt eget 2N, och emissionen är dess stopp — när den löper har din tes dementerats av kassaflödet, inte av kursen. TRE: tålamod som design — dokumenterade utvärderingsdatum, portföljpamp, journal: miljön som Dennis byggde åt Turtles, hembyggd."
+        },
+        {
+          "type": "text",
+          "content": "Syntesen, samlad i triangeln: AKM1 är strukturerad subjektivitet — tjugo variabler, poängsatta av en människa, med V19-risk som gardet; AK1TS är strukturerad objektivitet för vågor — samma data, samma svar, pedagogiskt; Turtlarna är beviset att avståndet mellan struktur och resultat heter disciplin. Van Tharps fördelning från Market Wizards-kursen — 60 psykologi, 30 positionsstorlek, 10 system — är hela triangeln i siffror, och Turtle-experimentet är dess experimentella underlag: systemet (10 procent) var identiskt för alla; psykologin (60) skilde miljonärerna från de avstängda; positionsstorleken (30) var reglerna som psykologin antingen ägde eller förhandlade bort. Kursens sista ord till eleven som vill bära arvet vidare: kopiera inte deras affärer — kopiera deras stränghet. Skriv ett stopp idag. Räkna en enhet idag. Datera en utvärdering idag. Det är hela skillnaden mellan att ha läst om experimentet och att ha lärt av det."
+        },
+        {
+          "type": "insikt",
+          "content": "AK1TS lär ut Turtle-tänket som grammatik — determinism tränar besluts-hygienen, N-tänket tränar risk-matematiken, tålamodet tränar karaktären. Sedan lämnar den vågarna ifred: pedagogik, aldrig pengamaskin."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Turtle-tänket i AK1A — tre verktyg, ett syfte\",\"rader\":[[\"Bygge\",\"Hos Turtles\",\"I AK1A\",\"Varningen\"],[\"Determinism\",\"samma signal — samma svar, varje dag\",\"AK1TS-motorn: samma data ger samma vågklass\",\"pedagogiskt verktyg — aldrig trading-system\"],[\"Risk i enheter\",\"1N = 1 % av kontot; stopp 2N\",\"Brytpunkt → storlek; V19-risk som bolagets eget stopp\",\"storlek utan stopp är gissning\"],[\"Tålamod\",\"sitta stilla i månader; kännedom om fördelningen\",\"Tid-dimensionen + daterade utvärderingar i portföljpampen\",\"tålamod utan V19-koll är hopp\"],[\"Miljö\",\"Dennis coaching, sanktion, gemensam tro\",\"egen pamp, journal, granskningsdatum\",\"utan miljö faller disciplinen — bygg den medvetet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din AK1TS-användningsplan på fem rader: 1) vad du använder vågmotorn TILL (studium, kontrakt-koll, strukturträning); 2) när den Får påverka beslut (som en röst bland flera — aldrig ensam signal); 3) vilken V19-granskning (kapitalförbränning, emissionsrisk) som måste vara klar före varje köp; 4) var din Brytpunkt finns för varje befintligt innehav; 5) datumet för nästa utvärdering. Datera och spara — detta dokument är din hembyggda Dennis-miljö."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — syntesen i en rad: AK1TS använder Turtle-tänket (determinism, N-risk, regler före magkänsla) för att läsa vågor — pedagogiskt, aldrig som trading-system; AKM1:s V19-risk är den fundamentala spärren som hindrar vågleken från att bli tro; och medgivandet står kvar: de flesta som försöker mekanisk trading underpresterar — därför är reglerna här ett karaktärsämne, inte en pengamaskin."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är förhållandet mellan AK1TS och Turtle-tänket?",
+          "alternativ": [
+            "AK1TS är en vidareutveckling av Turtle-systemet som trading-system",
+            "AK1TS:s determinism är Turtle-tänk för vågor — men pedagogiskt, aldrig ett trading-system",
+            "AK1TS och Turtle-systemet är helt orelaterade",
+            "AK1TS ersätter Turtles regler helt"
+          ],
+          "ratt": 1,
+          "tips": "Grammatik eller pengamaskin — vad är vågmotorn för AK1A?"
+        },
+        {
+          "q": "Hur används V19 Kapitalförbränning & Emission-risk i syntesen?",
+          "alternativ": [
+            "Som en multipel i värderingsblocket",
+            "Som bolagets eget 2N-stopp — emissionen dementerar tillväxttesen när kassan tar slut",
+            "Som ett mått på direktavkastning",
+            "Som en katalysator för kursrörelser"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med din tes när bolaget måste emittera för att betala räkningarna?"
+        },
+        {
+          "q": "Vad är kursens slutgiltiga råd till eleven som vill bära Turtle-arvet vidare?",
+          "alternativ": [
+            "Kopiera deras affärer i amerikanska terminer",
+            "Ladda ned reglerna och följa dem exakt",
+            "Kopiera deras stränghet: skriv ett stopp, räkna en enhet, datera en utvärdering — idag",
+            "Vänta på nästa trendföljnings-boom"
+          ],
+          "ratt": 2,
+          "tips": "Vad går att kopiera från experimentet — utfallen eller beteendena?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Sammanfattning — hela Turtle-systemet på ett A4 (V19 + AK1TS)",
+      "intro": "Sista kapitlet sätter ihop allt: hela Turtle-systemet som en checklista på ett A4, översättningen till AKM1:s variabler och AK1TS:s dimensioner — och porträttet av den elev kursen har formats mot: den som äger regler i stället för övertygelser.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Systemet, i sin helhet, som din checklista. ETT — universum: endast likvida marknader (V11-logik: genomförbarhet före signal). TVÅ — System 1: köp 20-dagars utbrott med vinst/förlust-filtret, exit vid 10-dagars motbrott. TRE — System 2: köp 55-dagars utbrott utan filter, exit vid 20-dagars motbrott. FYRA — enhet: 1 procent av kontot per N, där N är 20-dagars ATR; stopp 2N = 2 procent per enhet; pyramid per halv N till max fyra enheter per marknad. FEM — tak: 4 per marknad, 6 nära korrelerat, 10 löst korrelerat, 12 totalt per riktning. SEX — psykologin: varje signal tas, varje stopp hedras, varje utvärdering är daterad. Där — på ett enda A4 — finns hela regelverket som världens mest omtalade handelsexperiment byggde tiotals miljoner dollar på. Inte en rad av det är hemlig. Allt av det är svårt."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till ditt ekosystem, rad för rad. Universum är V11 Likviditet — och därutöver AK1TS Våg: handlas tesen i en regim där den ens får chans? Enheten är AK1TS Brytpunkts-aritmetik: storlek = risk dividerat med avstånd till nivån där tesen är fel; och det är V19 Kapitalförbränning & Emission-risk som sätter bolagets eget stopp — emissionen är det fundamentala 2N. Exiterna är AK1TS Tid och portföljpampens säljregler: skrivna i solsken, hedrade i regn. Taken är V03 Intäktsdiversifiering i riskformat: korrelation är dold koncentration. Och psykologin — sextio procent av allt enligt Tharp — är den miljö du bygger själv: journal, pamp, datum. AKM1 avgör VAD (tjugo variabler, poängsatt, med V19 som KRITISKT gard); AK1TS avgör NÄR och VAR FEL (våg, tid, Brytpunkt); Turtle-experimentet avgör OM — om du är den människa som följer det du skrivit. Tre verktyg, en investerare."
+        },
+        {
+          "type": "text",
+          "content": "Slutporträttet — den regelbundne eleven, i sex drag. ETT: han eller hon vet att information är gratis och efterlevnad är råvaran (Dennis citat som arbetsbeskrivning). TVÅ: hon räknar E-värden i stället för att räkna träffar — sju förluster av tio är inte ett argument mot ett system med asymmetri. TRE: han sätter stoppet före köpet och flyttar det aldrig åt fel håll — Brytpunkten är en del av tesen (V19 på fundamental sidan). FYRA: hon dimensionerar genom division, inte genom mod — och termostaten krymper positionen när andningen stiger. FEM: han skriver tålamodsplanen med siffror och daterar varje utvärdering — tristessen är systemet. SEX: hon vet att varje kant har ett bäst-före-datum och välkomnar förfallet som information, inte som hot. Reglerna publicerades — först i Faiths PDF 2003, sedan i Dennis tidning som tankeexperiment, och nu i den här kursen. Fortfarande är det enda som skiljer dig från Turtles inte informationen utan efterlevnaden — och den börjar med ett stopp, skrivet idag."
+        },
+        {
+          "type": "insikt",
+          "content": "Way of the Turtle i en mening: det som kan läras ut är reglerna — det som måste erövras är dagen efter förlusten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Turtle-reglerna till AK1A — översättningstabellen\",\"rader\":[[\"Turtle-bygge\",\"AKM1\",\"AK1TS\",\"Läxa\"],[\"Universum: endast likvida marknader\",\"V11 Likviditet\",\"Våg — får tesen ens en chans?\",\"genomförbarhet före signal\"],[\"Enhet: 1 % av kontot per N\",\"riskbudget i portföljpampen\",\"Brytpunkt → storlek\",\"storleken kommer från stoppet\"],[\"Stopp 2N = 2 % per enhet\",\"V19 Kapitalförbränning & Emission-risk (KRITISK)\",\"Brytpunkten\",\"tesens fel-nivå bestäms före köp\"],[\"Exit 10/20-dagars motbrott\",\"säljregler skrivna i förväg\",\"Tid — hur länge förtjänar vågen tro\",\"utgången är en regel, inte en känsla\"],[\"Enhetstak 4/6/10/12\",\"V03 Intäktsdiversifiering\",\"portfölj-aggregerade vågor\",\"korrelation är dold koncentration\"],[\"E-värde och tålamod\",\"V12 stabilitet som tidsserie-underlag\",\"Tid + daterade utvärderingar\",\"kanten lever i sekvensen, inte i affären\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Slutprojektet — bygg din Turtle-spegel i AK1A och dokumentera den: 1) välj ett befintligt innehav; 2) skriv dess Brytpunkt i kronor (AK1TS) — nivån som bevisar tesen fel; 3) räkna enhetsstorleken från 1-procentsregeln och stoppavståndet; jämför med din faktiska position; 4) kör V19-granskningen (kapitalförbränning, emissionsrisk inom tolv månader); 5) skriv exitregeln i ord — vad som gör att du säljer, pris eller fundament, ej känsla; 6) datera dokumentet och boka nästa granskning. Spara. Om ett år är dokumentet antingen en spegel eller ett alibi — valet är gjort nu."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "text",
+          "content": "AKM1-brygga — slutraderna: V19-risk är ditt 2N, AK1TS Brytpunkt ditt stopp, Tid din exit och Våg din regim. Reglerna är publicerade — i Faiths PDF, i Dennis tidning och i den här kursen — och fortfarande är förmågan att följa dem allt som skiljer miljonärerna från de avstängda. Skriv stoppet idag."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta komprimerade ordningen i Turtle-systemets checklista?",
+          "alternativ": [
+            "Prognostisera makro, välj aktier, köp på känsla, sälj på känsla",
+            "Likviditetsuniversum → System 1/2-utbrott → enhet per N → 2N-stopp → pyramidering → enhetstak",
+            "Värdering först, trend sedan, stopp sist",
+            "Köp dippar, addera på förlorare, sälj vid vinstmål"
+          ],
+          "ratt": 1,
+          "tips": "Börja med var du får handla alls — och sluta med hur mycket risk du totalt bär."
+        },
+        {
+          "q": "Vilken AKM1-variabel fungerar som bolagets eget 2N-stopp i översättningstabellen?",
+          "alternativ": [
+            "V04 P/S",
+            "V14 Varumärke & Kundlojalitet",
+            "V19 Kapitalförbränning & Emission-risk",
+            "V16 Produktlanseringar"
+          ],
+          "ratt": 2,
+          "tips": "Vilken variabel dementerar tillväxttesen när kassan tar slut och emissionen tvingas fram?"
+        },
+        {
+          "q": "Vad är den regelbundne elevens förhållning till kanten?",
+          "alternativ": [
+            "Att en sann kant gäller för evigt",
+            "Att kanter aldrig finns",
+            "Att varje kant har ett bäst-före-datum — förfallet välkomnas som information, inte hot",
+            "Att kanter bara finns i råvaror"
+          ],
+          "ratt": 2,
+          "tips": "Morton-Davis-mekanismen ur förra kapitlen — vad gör en mogen elev med den kunskapen?"
+        }
+      ]
+    }
+  ]
+}

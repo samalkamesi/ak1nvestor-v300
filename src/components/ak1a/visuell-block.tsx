@@ -14,10 +14,13 @@ import {
   RiskTermometer,
   KonvergensKort,
 } from "@/components/ak1a/visuellt-bibliotek-2";
+import { SankeyPortfolj } from "@/components/ak1a/sankey-portfolj";
+import { SasongsGrid } from "@/components/ak1a/sasongs-grid";
 
 /**
  * VISUELL BLOCK-RENDERER — väcker kursdata:ns `visuell`-block till liv.
- * Typer: skala | compound | cykel | donut | bro | radar
+ * Typer: skala | compound | cykel | donut | bro | radar | tidslinje | bubbel |
+ * termometer | konvergens | sankey | sasongs
  * Alla interaktiva (sliders/drag) — pedagogiken: se sambandet, inte bara läsa det.
  */
 
@@ -71,6 +74,36 @@ const EXEMPEL_SEKTORER = [
   { namn: "Finans", procent: 10, farg: "#b91c1c" },
 ];
 
+/** Standardpositioner för Sankeyn: donutens exempelportfölj som flöde (Σ 100 %) */
+const EXEMPEL_POSITIONER = [
+  { namn: "Atlas Copco", sektor: "Industri", vikt: 14 },
+  { namn: "Sandvik", sektor: "Industri", vikt: 10 },
+  { namn: "Volvo B", sektor: "Industri", vikt: 8 },
+  { namn: "AstraZeneca", sektor: "Hälsovård", vikt: 16 },
+  { namn: "Getinge", sektor: "Hälsovård", vikt: 6 },
+  { namn: "Ericsson", sektor: "Teknik", vikt: 12 },
+  { namn: "Hexagon", sektor: "Teknik", vikt: 8 },
+  { namn: "H&M", sektor: "Konsument", vikt: 9 },
+  { namn: "Evolution", sektor: "Konsument", vikt: 5 },
+  { namn: "Handelsbanken", sektor: "Finans", vikt: 12 },
+];
+
+/** Standardprofil för säsongsgriden: exempelår mot månadernas långtidsmedel */
+const EXEMPEL_SASONG = [
+  { manad: "januari", varde: 2.1, medel: 1.0 },
+  { manad: "februari", varde: -0.8, medel: 0.3 },
+  { manad: "mars", varde: 1.9, medel: 1.1 },
+  { manad: "april", varde: 2.6, medel: 1.3 },
+  { manad: "maj", varde: -1.2, medel: 0.5 },
+  { manad: "juni", varde: 0.9, medel: 0.6 },
+  { manad: "juli", varde: 1.4, medel: 0.9 },
+  { manad: "augusti", varde: -2.1, medel: 0.4 },
+  { manad: "september", varde: -1.5, medel: -0.6 },
+  { manad: "oktober", varde: 1.1, medel: 0.9 },
+  { manad: "november", varde: 2.8, medel: 1.7 },
+  { manad: "december", varde: 1.7, medel: 1.2 },
+];
+
 export function VisuellBlock({ typ }: { typ: string }) {
   const innehall = (() => {
     switch (typ) {
@@ -94,6 +127,10 @@ export function VisuellBlock({ typ }: { typ: string }) {
         return <RiskTermometer />;
       case "konvergens":
         return <KonvergensKort />;
+      case "sankey":
+        return <SankeyPortfolj positioner={EXEMPEL_POSITIONER} />;
+      case "sasongs":
+        return <SasongsGrid manadsData={EXEMPEL_SASONG} ar={2025} />;
       default:
         return (
           <p className="text-xs text-muted-foreground">

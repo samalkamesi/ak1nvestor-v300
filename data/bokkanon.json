@@ -1293,7 +1293,7 @@
         "Bestäm din roll: vill du vara professionell eller klient, och bete dig därefter"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-054",
@@ -1389,7 +1389,7 @@
         "Dokumentera varje affär och utvärdera veckovis mot planen"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-058",
@@ -1412,7 +1412,7 @@
         "Se diagrammet först och indikatorn sedan: indikatorn bekräftar men upptäcker inte"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-059",
@@ -1555,7 +1555,7 @@
         "Riskera bara vad du har råd att förlora: stoplossen är inte förhandlingsbar"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-065",
@@ -1578,7 +1578,7 @@
         "Förlustserier är systemets bränsle: de flesta ger upp innan vinsterna kommer"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-066",
@@ -1647,7 +1647,7 @@
         "Bandfärd i stark trend är normalt: stäng inte positionen bara för att priset rör vid bandet"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-069",

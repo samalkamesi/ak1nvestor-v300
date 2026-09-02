@@ -26,6 +26,7 @@ import { AdminAnalysisManager } from "@/components/ak1a/admin-analysis-manager";
 import { MembersManager } from "@/components/ak1a/admin/members-manager";
 import { TrafficStatsPanel } from "@/components/ak1a/admin/traffic-stats-panel";
 import { CustomerEcosystem } from "@/components/ak1a/admin/customer-ecosystem";
+import { EkosystemPanel } from "@/components/ak1a/admin/ekosystem-panel";
 import { AutonomOrganPanel } from "@/components/ak1a/autonom-organ-panel";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -336,6 +337,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="overview" className="px-3 py-1.5 text-xs sm:text-sm">Översikt</TabsTrigger>
             <TabsTrigger value="members" className="px-3 py-1.5 text-xs sm:text-sm">Medlemmar</TabsTrigger>
             <TabsTrigger value="kundekosystem" className="px-3 py-1.5 text-xs sm:text-sm">Kundekosystem</TabsTrigger>
+            <TabsTrigger value="ekosystem" className="px-3 py-1.5 text-xs sm:text-sm">Ekosystem</TabsTrigger>
             <TabsTrigger value="activity" className="px-3 py-1.5 text-xs sm:text-sm">Aktivitetslogg</TabsTrigger>
             <TabsTrigger value="portfolios" className="px-3 py-1.5 text-xs sm:text-sm">Klientportföljer</TabsTrigger>
             <TabsTrigger value="analysis-upload" className="px-3 py-1.5 text-xs sm:text-sm">Analys-uppladdning</TabsTrigger>
@@ -443,6 +445,12 @@ export default function AdminDashboard() {
           <TabsContent value="kundekosystem" className="mt-6">
             <Card className="p-5">
               <CustomerEcosystem />
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="ekosystem" className="mt-6">
+            <Card className="p-5">
+              <EkosystemPanel />
             </Card>
           </TabsContent>
 

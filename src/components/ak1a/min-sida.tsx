@@ -13,6 +13,8 @@ import {
 } from "@/lib/member-local";
 import { srStatistik, type SRStatistik } from "@/lib/spaced-repetition";
 import { badgeStatus, type BadgeStatus } from "@/lib/badges";
+import { lasBeteende, lasInsikter, lasToppIntresse, type Insikt } from "@/lib/tracer";
+import { useToast } from "@/hooks/use-toast";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { DashFragaKort } from "@/components/ak1a/dashfraga-kort";
 import { KroppsvyKort } from "@/components/ak1a/kroppsvy-kort";
@@ -122,6 +124,17 @@ export function MinSida() {
   const [sr, setSr] = useState<SRStatistik>(SR_TOM);
   const [badges, setBadges] = useState<BadgeStatus[]>([]);
 
+  // ── Din spegel (Beteendetracern) — hydration-säkert: lasInsikter läses
+  // ENDAST i useEffect (localStorage), aldrig under render. ──
+  const [insikter, setInsikter] = useState<Insikt[]>([]);
+  const [delningOppen, setDelningOppen] = useState(false);
+  const [delar, setDelar] = useState(false);
+  const [sammanfattning, setSammanfattning] = useState<{ aktivTid: number; toppIntresse: string | null }>({
+    aktivTid: 0,
+    toppIntresse: null,
+  });
+  const { toast } = useToast();
+
   useEffect(() => {
     setMedlem(lasMedlem());
     setXp(lasXP());
@@ -132,6 +145,10 @@ export function MinSida() {
     setKlara(lasKlaraKurser());
     setSr(srStatistik());
     setBadges(badgeStatus());
+    // Tracern: insikter + den sammanfattning som EVENTUELLT delas frivilligt.
+    setInsikter(lasInsikter());
+    const profil = lasBeteende();
+    setSammanfattning({ aktivTid: profil.aktivTid, toppIntresse: lasToppIntresse(profil) });
     setHydrerad(true);
   }, []);
 
@@ -235,6 +252,37 @@ export function MinSida() {
   }
 
   // ── INLOGGAD: dashboard ───────────────────────────────────────────────────
+
+  /**
+   * Frivillig delning av studiemönster till /api/tracer. ENDAST en
+   * sammanfattning (aktiv tid + toppintresse) lämnar eleven — aldrig
+   * råa sökvägar eller quiz-svar. Anropas bara via knappen på Din spegel.
+   */
+  async function delaInsikter() {
+    if (delar || !medlem) return;
+    setDelar(true);
+    try {
+      await fetch("/api/tracer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          elevId: medlem.id,
+          samtycke: true,
+          sammanfattning,
+        }),
+      });
+      toast({ title: "Tack — din input gör utbildningen bättre." });
+    } catch {
+      toast({
+        title: "Delningen nådde inte fram just nu",
+        description: "Dina insikter stannar lokalt hos dig — du kan prova igen när du vill.",
+      });
+    } finally {
+      setDelar(false);
+      setDelningOppen(false);
+    }
+  }
+
   const dag = new Date()
     .toLocaleDateString("sv-SE", { weekday: "long" })
     .replace(/^./, (c) => c.toUpperCase());
@@ -469,6 +517,52 @@ export function MinSida() {
         <ElevkarnaFormuljar />
       </section>
 
+      {/* (a2b) DIN SPEGEL — Beteendetracerns insikter blir synligt pedagogiskt:
+          vad tracern sett i elevens lärande, ALWAYS uppmuntrande (texterna
+          kommer från lasInsikter som följer pedagogiken). Visas först när
+          insikterna lästs klient-side (hydration-säkert). */}
+      {insikter.length > 0 && (
+        <section className="marin-panel mt-6 rounded-2xl border border-gold/30 p-6 sm:p-8">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gold-soft">Beteendetracern</p>
+          <h2 className="mt-2 font-serif text-xl font-bold tracking-tight text-gold sm:text-2xl">
+            Din spegel — vad vi ser i ditt lärande
+          </h2>
+          <p className="mt-1.5 text-xs leading-relaxed text-[#EDE6D6]/70">
+            Under ytan lyssnar tracern tyst på hur du rör dig genom labbet — och
+            vänder dina mönster till dörrar som står öppna. Inga pekfingrar, bara
+            din resa sedd med vänliga ögon.
+          </p>
+
+          <div className="mt-4 divide-y divide-gold/10">
+            {insikter.map((insikt) => (
+              <div key={insikt.rubrik} className="flex items-start gap-3 py-3">
+                <span className="mt-0.5 shrink-0 text-xl" aria-hidden="true">
+                  {insikt.ikon}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-[#EDE6D6]">{insikt.rubrik}</p>
+                  <p className="mt-0.5 text-xs leading-relaxed text-[#EDE6D6]/75">{insikt.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 flex flex-wrap items-center gap-4 border-t border-gold/10 pt-4">
+            <button
+              type="button"
+              onClick={() => setDelningOppen(true)}
+              className="btn-marin px-4 py-2 text-xs"
+            >
+              Dela insikter
+            </button>
+            <p className="min-w-0 flex-1 text-[11px] leading-snug text-[#EDE6D6]/60">
+              Allt sparas lokalt i din webbläsare. Delning sker endast när du
+              själv väljer det — och du kan ångra när som helst.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* (a3) VECKOPLANEN — automatiskt sammansatt, anpassar sig varje vecka */}
       <section className="mt-6">
         <VeckoPlan />
@@ -659,6 +753,54 @@ export function MinSida() {
           Se topplistan →
         </Link>
       </section>
+
+      {/* DIN SPEGEL — samtyckes-modal: frivillig delning av studiemönster.
+          Öppnas bara av eleven via knappen; stängs med Nej tack eller bakgrund. */}
+      {delningOppen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="spegel-samtycke-rubrik"
+          onClick={() => !delar && setDelningOppen(false)}
+        >
+          <div
+            className="w-full max-w-md rounded-2xl border border-gold/30 bg-card p-6 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p className="text-[10px] uppercase tracking-[0.3em] text-gold">Din spegel</p>
+            <h3 id="spegel-samtycke-rubrik" className="mt-2 font-serif text-lg font-bold text-gold">
+              Dela dina studiemönster?
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-foreground">
+              Vill du dela dina studiemönster med AK1A för bättre anpassning?
+              Allt är frivilligt — du kan ångra när som helst.
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+              Vi tar bara emot en sammanfattning (aktiv tid och ditt toppintresse)
+              — dina sökvägar och quiz-svar lämnar aldrig din webbläsare.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setDelningOppen(false)}
+                disabled={delar}
+                className="rounded-lg border border-gold/40 px-5 py-2.5 text-sm font-semibold text-gold transition-colors hover:bg-gold/10 disabled:opacity-60"
+              >
+                Nej tack
+              </button>
+              <button
+                type="button"
+                onClick={delaInsikter}
+                disabled={delar}
+                className="btn-marin px-5 py-2.5 text-sm disabled:opacity-60"
+              >
+                {delar ? "Delar…" : "Ja, dela"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

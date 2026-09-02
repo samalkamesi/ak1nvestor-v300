@@ -1671,7 +1671,7 @@
         "Fördefinierad risk ger frihet: när förlusten är bestämd finns inget att frukta"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-070",
@@ -1717,7 +1717,7 @@
         "Pausa vid utmattning: beslutskvaliteten faller innan du märker det"
       ],
       "tier": 2,
-      "status": "kanon"
+      "status": "kurs"
     },
     {
       "id": "bk-072",

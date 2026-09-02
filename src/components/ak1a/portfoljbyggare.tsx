@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+import { SankeyPortfolj } from "@/components/ak1a/sankey-portfolj";
+
 // ═══════════════════════════════════════════════════════════
 // MEGA PLAN A4: PORTFÖLJBYGGAREN — interaktiv, direkt i kursen
 // Eleven komponerar en tänkt portfölj rad för rad och SER
@@ -571,6 +573,21 @@ export function Portfoljbyggare() {
               </div>
             )}
           </div>
+
+          {/* Kapitalflöde — Sankey (visas först när portföljen har minst två rader) */}
+          {rader.length >= 2 && (
+            <div className="mt-3">
+              <h4 className="font-serif text-base font-bold text-gold">
+                Kapitalflödet — från helhet till positioner
+              </h4>
+              <div className="hjarlinje mt-1" aria-hidden="true" />
+              <div className="mt-2">
+                <SankeyPortfolj
+                  positioner={rader.map((r) => ({ namn: r.namn, sektor: r.sektor, vikt: r.vikt }))}
+                />
+              </div>
+            </div>
+          )}
 
           {/* Vagt AKM1 */}
           <div className="mt-3 rounded-xl border border-gold/30 bg-paper p-4">

@@ -1,0 +1,1138 @@
+{
+  "slug": "creative-cash-flow-reporting",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 170,
+  "title": "Creative Cash Flow Reporting — Mulford & Comiskey: KOMPLETT",
+  "summary": "Charles W. Mulford och Eugene E. Comiskey — redovisningsprofessorerna vid Georgia Tech som i skuggan av Enron och WorldCom skrev kassaflödesanalysens motsvarighet till Financial Shenanigans. Kursen går igenom deras metod: att kassaflödesanalysen är en härledd, konstruerad rapport — inte ett bankutdrag — och att det operativa kassaflödet kan skrulas upp genom securitization av fordringar, utsträckta leverantörsbetalningar, engångsposter och klassificeringsflyttar mellan löpande, investerande och finansierande verksamhet. Med fri kassaflödes alla definitioner, svultet capex som FCF-tillväxtens genväg, bokens checklista för anpassad FCF-analys och ett kontrollprogram kopplat till V19 kapitalförbränning.",
+  "minutes": 10,
+  "xp": 2000,
+  "level": "",
+  "learn": "Efter kursen kan eleven förklara Charles Mulfords och Eugene Comiskeys huvudtes från Creative Cash Flow Reporting — att inte alla kassaflöden är skapade lika, och att den hållbara finansiella prestationen (bokens undertitel: Uncovering Sustainable Financial Performance) bara framträder när kassaflödesanalysen räknas om — samt skilja denna tes från Schilits bredare vinstkvalitetskatalog och O'Gloves resultaträkningshantverk. Eleven kan läsa kassaflödesanalysens tre fack (IAS 7 och K3), förstå den indirekta metoden som gör det operativa kassaflödet till en härledd storhet, och identifiera de fem dörrar där kassaflödet ändå ljuger: definitionsval, working capital-knip, engångsposter, klassificeringsflyttar och svultet capex. Eleven kan beräkna fri kassaflöde i flera varianter (OCF minus capex, underhållsnivå, tillväxtjusterad) och visa med räkneexempel hur FCF-tillväxt fabriceras genom att capex svälts (klassiskt exempel: capex 100 till 25 Mkr ger FCF 40 till 115 Mkr medan maskinparken förfaller), hur fakturaförsäljning på 150 Mkr till 98,5 procent lyfter OCF med cirka 148 Mkr en enda period, och hur DPO-förlängning från 30 till 60 dagar vid 2 400 Mkr inköp ger en engångsboost på cirka 197 Mkr. Eleven kan vidare känna igen engångsposter i det operativa kassaflödet (skatteåterbäringar, tvisteförlikningar, pension holidays), genomföra klassificeringsanalysen (aktiverade utvecklingskostnader, WorldCom-mekaniken, securitization-inflöden i löpande facket), och tillämpa svenska fall [illustrativt]: fakturaförsäljande tillväxtbolag och IFRS 16:s mekaniska OCF-lyft när leasingbetalningar flyttas till finansieringsfacket. Eleven kan köra bokens checklista för anpassad FCF-analys — omklassificera, rensa engångsposter, normalisera capex, beräkna hållbart OCF och hållbar FCF — sammanställa hela red flags-systemet, och köra kontrollprogrammet mot V19 (kapitalförbränning och emissionrisk): operativt kassaflöde, capex och emissioner lästa tillsammans, aldrig en enskild rad. Eleven kan slutligen redogöra för kontroversen — myten att kassaflödet inte kan manipuleras och marknadens rop på FCF som universalbotemedel — inklusive medgivandet att detektering kräver noter och kvartalsdata, jobbigt men nödvändigt.",
+  "why": "Creative Cash Flow Reporting (Wiley; undertiteln Uncovering Sustainable Financial Performance) är skriven av Charles W. Mulford och Eugene E. Comiskey, två redovisningsprofessorer vid Georgia Institute of Technology som ledde universitetets Financial Analysis Lab och dessförinnan skrivit Financial Warnings (1996) och The Financial Numbers Game (2002) — boken kom i skuggan av Enron och WorldCom, där WorldCom:s kapitaliserade driftkostnader är historiens största exempel på att det operativa kassaflödet kan skrulas upp genom ren klassificering. För AKM1-ekosystemet fyller boken det tomrum som varken O'Glove (resultaträkningens hantverk, 1987) eller Schilit (vinstschablonernas katalog, 1993) fyller: manipulationen av KASSAFLÖDESET som eget systematiskt fält. Bokens första kapitel heter Seeking Sustainable Cash Flow — hela AKM1:s V19 (kapitalförbränning och emissionrisk, vikt KRITISK) är i praktiken en driftsäker version av samma fråga: hur mycket av kassaflödet upprepas nästa år, och vem finansierar gapet? Bokens genomgående bidrag är tre: (1) demonstrationen att FCF är en konstruktion vars värde styrs av definitionsval, klassificering och capex-beslut; (2) katalogen över knep — securitization, stretched payables, engångsposter, klassificeringsflyttar — med amerikanska fall och räknelogik som eleven här översätter till svenska förhållanden med K3, IAS 7, IFRS 16 och noter; (3) checklistan som gör omräkningen till hantverk: omklassificera, rensa, normalisera, beräkna hållbar FCF. Kursen citerar och återges öppet; tillsammans med Quality of Earnings-kursen (vinstens kvalitet) och Financial Shenanigans (schablonerna) bildar den AKM1:s fulla redovisningskällkritik — och dess kontrovers (kapitel 14) är kursens hjärta: marknadens 'titta på FCF istället' är halvsanning, och V19:s tre-raders-disciplin är svaret.",
+  "chapters_list": [
+    { "num": 1, "title": "Mulford & Comiskey — professorerna som jäktade det hållbara kassaflödet", "minutes": 11 },
+    { "num": 2, "title": "Kassaflödesanalysens anatomi — tre fack och en härledd sanning", "minutes": 11 },
+    { "num": 3, "title": "Varför kassaflödet ljuger mindre än vinsten — och när det ändå ljuger", "minutes": 11 },
+    { "num": 4, "title": "Free cash flow-definitionerna — OCF minus capex och traktandets konst", "minutes": 11 },
+    { "num": 5, "title": "Fabricerad FCF-tillväxt via svultet capex — starvationens aritmetik", "minutes": 11 },
+    { "num": 6, "title": "Working capital-knep I — securitization och fakturaförsäljning", "minutes": 11 },
+    { "num": 7, "title": "Working capital-knep II — stretched payables och leverantörskrediten som kusk", "minutes": 11 },
+    { "num": 8, "title": "Engångsposter i det operativa kassaflödet — one-offs som inte är one", "minutes": 11 },
+    { "num": 9, "title": "Klassificeringsmanipulering — att flytta poster mellan facken", "minutes": 11 },
+    { "num": 10, "title": "Svenska fall [illustrativt] — fakturaklipp och IFRS 16:s mekaniska OCF-lyft", "minutes": 11 },
+    { "num": 11, "title": "Bokens checklista — den anpassade FCF-analysen steg för steg", "minutes": 11 },
+    { "num": 12, "title": "Red flags — det kompletta varningssystemet", "minutes": 11 },
+    { "num": 13, "title": "Kontrollprogrammet — V19 kapitalförbränning och tre-raders-disciplinen", "minutes": 11 },
+    { "num": 14, "title": "Kontroversen — myten att kassaflödet inte kan manipuleras", "minutes": 11 },
+    { "num": 15, "title": "Slutsats — den tre-raders-edsvurne analytikern", "minutes": 11 }
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "Mulford & Comiskey — professorerna som jäktade det hållbara kassaflödet",
+      "intro": "Charles W. Mulford och Eugene E. Comiskey var redovisningsprofessorer vid Georgia Institute of Technology i Atlanta, och deras författarskap är en enda lång jakt på samma villebråd: den redovisning som ser bättre ut än verkligheten. Detta kapitel placerar boken i dess era, i kanon och i AKM1:s ekosystem.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Lär känna författarna innan du lär dig metoden, för bakgrunden förklarar frågan. Charles W. Mulford och Eugene E. Comiskey var professorer i redovisning vid Georgia Institute of Technology och drev dessutom universitetets Financial Analysis Lab — en forskningsmiljö som systematiskt granskade hur amerikanska bolag presenterade sina finansiella rapporter. Tillsammans skrev de Financial Warnings (1996) om tidiga signaler före finansiella misslyckanden, och The Financial Numbers Game (2002) — en katalog över kreativ redovisning i allmänhet. Deras kassaflödesbok, Creative Cash Flow Reporting med undertiteln Uncovering Sustainable Financial Performance (Wiley), är den logiska tredje gestalten: efter att ha katalogiserat vinstens trick vänder de blicken mot den rapport som marknaden trotts allt ansåg vara sann — kassaflödesanalysen. Bokens allra första kapitel heter Seeking Sustainable Cash Flow, och där ligger hela programmet: inte hur stort kassaflödet är, utan hur mycket av det som upprepas nästa år."
+        },
+        {
+          "type": "text",
+          "content": "Tiden formar boken. Enron föll 2001, WorldCom 2002 — och WorldCom är denna kursens stamfall, av ett mycket specifikt skäl. WorldCom bedrog inte främst genom påhittade intäkter utan genom klassificering: driftskostnader för nätet (line costs) kapitaliserades som investeringar i stället för att belasta löpande verksamhet. Effekten var dubbel — vinsten blåstes upp OCH det operativa kassaflödet blåstes upp, eftersom utgifterna flyttades till investeringsavsnittet. Miljontals investerare som stolt 'kollade kassaflödet i stället för vinsten' blev lurade på båda raderna samtidigt. Det är mot denna bakgrund Mulford och Comiskey skriver: marknadens nyvunna tro på kassaflödesanalysen som universalbotemedel var halvt förtjänt och halvt farlig — förtjänt därför att kontanter är svårare att förfalska än periodiseringar, farlig därför att kassaflödesanalysen är en konstruerad rapport med klassificeringsval, tidspel och definitionsval på varje rad."
+        },
+        {
+          "type": "text",
+          "content": "Placera boken i kanon, för differentieringen är kursens grund. Thornton O'Glove (Quality of Earnings, 1987) lärde läsaren resultaträkningens hantverk: aldrig läsa vinsten utan kassaflöde och noter. Howard Schilit (Financial Shenanigans, 1993) katalogiserade vinstmanipuleringens samtliga schabloner — inflödet av intäkter, kostnadslekar, engångsposter. Mulford och Comiskey ställer en tredje fråga som de andra bara rör vid i förbigåenden: är KASSAN äkta? Deras unika bidrag är att behandla det operativa kassaflödet som ett manipulerbart objekt i egen rätt: fordringar som säljs i stället för betalas, leverantörer som betalas sent i stället för rätt, engångsposter som landar i löpande facket, kostnader som kapitaliseras ut ur det, och capex som svälts för att fri kassa flöda. En enda mening sammanfattar skillnaden: Schilit frågar hur vinsten målades, Mulford och Comiskey frågar hur kassaflödet målades."
+        },
+        {
+          "type": "text",
+          "content": "Bokens metod i komprimering — den blir kursens ryggrad. Steg ett: läs kassaflödesanalysens struktur och förstå att den är härledd (kapitel 2). Steg två: identifiera det som inte är löpande — engångsposter, securitizationseffekter, klassificeringsflyttar (kapitel 6-9). Steg tre: räkna om — omklassificera inkonsekvent klassade poster, rensa engångsposter, normalisera capex till underhållsnivå (kapitel 11). Steg fyra: beräkna det hållbara kassaflödet och den hållbara fria kassan, och ställ den mot utdelning, skuld och emissionsbehov (kapitel 13). För AKM1 är steget till ekosystemet kort: V19 — kapitalförbränning och emissionrisk, den variabel som bär vikten KRITISK — är i praktiken denna metod omvandlad till variabel. Den som behärskar denna bok behärskar V19:s underlag; den som bara tittar på en OCF-rad behärskar ingenting."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Mulford och Comiskeys bidrag var att flytta misstanken: en generation lärt sig att lita på kassan och tvivla på vinsten — boken lär dig att tvivla på båda, men med olika verktyg, för kassaflödet ljuger inte med antaganden utan med klassificering och timing."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fältets tre pelare — differentieringen\",\"rader\":[[\"Pelare\",\"Kärnfråga\",\"Manipuleringens objekt\",\"Bästa vapen\",\"AKM1-koppling\"],[\"O'Glove 1987\",\"Är vinsten vad den utger sig för?\",\"Resultaträkningens periodiseringar\",\"DSO, lager, marginaltrender, noter\",\"V01, V07, V08\"],[\"Schilit 1993-\",\"Vilken schablon används?\",\"Intäkter, kostnader, engångsposter, information\",\"Schablonkatalogen och dess varianter\",\"V12, red flags\"],[\"Mulford & Comiskey\",\"Är KASSAN vad den utger sig för?\",\"Kassaflödets klassificering, timing och definitioner\",\"Omräkning: omklassificera, rensa, normalisera\",\"V19 (KRITISK), V10, V11\"],[\"AKM1:s syntes\",\"Backas tillväxt, marginal och värde av äkta kassa?\",\"Alla tre rapporterna + emissioner\",\"Triangulering och tre-raders-disciplin\",\"Alla 20 variabler\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: hämta senaste årsredovisningen för ett svenskt bolag du äger eller bevakar (årsredovisningar.se, gratis). Bläddra fram kassaflödesanalysen — bara för att lära känna den som fysiskt dokument. Notera tre saker: (1) använder bolaget indirekt metod (startar i resultatet) eller direkt? (2) var i dokumentet ligger noterna om finansiella åtaganden, leasing och eventuell fakturering/factoring? (3) skriv upp tre rader: kassaflöde från löpande verksamhet, investeringar i anläggningstillgångar (capex), och årets nya räntebärande skuld eller emission. Spara lappen — den är prototypen till V19-protokollet i kapitel 13."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Mulford och Comiskeys huvudtes i Creative Cash Flow Reporting?",
+          "alternativ": [
+            "Att kassaflödesanalysen är den enda rapport som är helt immun mot manipulation och bör ersätta alla andra",
+            "Att inte alla kassaflöden är skapade lika — det operativa kassaflödet kan skrulas upp, och den hållbara prestationen kräver omräkning av rapporten",
+            "Att vinst är ett bättre mått än kassaflöde i alla situationer",
+            "Att alla bolag bör redovisa direkt metod i kassaflödesanalysen"
+          ],
+          "ratt": 1,
+          "tips": "Bokens första kapitel heter Seeking Sustainable Cash Flow — vad letar de efter?"
+        },
+        {
+          "q": "Varför är WorldCom denna boks naturliga stamfall?",
+          "alternativ": [
+            "Därför att WorldCom redovisade för hög utdelning",
+            "Därför att WorldCom förfalskade intäkterna med fakturor som aldrig fanns",
+            "Därför att WorldCom kapitaliserade driftskostnader som investeringar — vilket blåste upp både vinst OCH operativt kassaflöde samtidigt",
+            "Därför att WorldCom var första bolaget som använde securitization"
+          ],
+          "ratt": 2,
+          "tips": "Vilken mekanik flyttar en utgift ur både resultaträkningen och det löpande kassaflödet på en gång?"
+        },
+        {
+          "q": "Hur skiljer sig Mulford och Comiskeys fråga från Schilits?",
+          "alternativ": [
+            "Schilit frågar hur vinsten målades; Mulford och Comiskey frågar hur kassaflödet målades",
+            "De ställer exakt samma fråga med olika ord",
+            "Schilit fokuserar enbart på kassaflöde; Mulford och Comiskey på vinst",
+            "Mulford och Comiskey avfärdar noter som ointressanta"
+          ],
+          "ratt": 0,
+          "tips": "Schilit = vinstkvalitet brett; denna bok = kassaflödets manipulering specifikt."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 11,
+      "title": "Kassaflödesanalysens anatomi — tre fack och en härledd sanning",
+      "intro": "Innan du kan avslöja manipulation i kassaflödesanalysen måste du förstå hur rapporten är byggd — och därför varför den är en konstruktion snarare än ett bankutdrag. Detta kapitel går igenom de tre facken, den indirekta metoden och de valfriheter som IAS 7 ger bolagen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kassaflödesanalysen delar alla penningsrörelser i tre fack: kassaflöde från den löpande verksamheten (OCF — det som kärnaffären alstrar), från investeringsverksamheten (köp och försäljning av tillgångar, förvärv) och från finansieringsverksamheten (lån, amorteringar, emissioner, utdelningar, återköp). I svenska koncerner styrs indelningen av IAS 7, i enskilda bolag av K3 — och själva idén är förstås att läsaren ska kunna se hur verksamheten finansieras och vad som återstår till ägarna. Men observera det avgörande: fälten är inte naturgivna. Samma fysiska penningsrörelse kan i många fall redovisas i mer än ett fack beroende på bedömningar och val — och varje gränsdragning är en plats där en skicklig revisor eller en viljestark finanschef kan flytta miljoner. Bokens tredje kapitel ägnas åt exakt denna gränsfråga — Is It Operating or Investing Cash Flow? — och svaret är ofta: det avgör bolaget, inom regelverkets ramar."
+        },
+        {
+          "type": "text",
+          "content": "Svenska bolag använder nästan uteslutande den indirekta metoden: kassaflödesanalysen börjar i årets resultat, lägger tillbaka icke-kontanta poster (avskrivningar, nedskrivningar, realisationsvinster och förluster justeras ut), och justerar sedan för förändringar i rörelsekapital — kundfordringar, lager, leverantörsskulder och övriga poster. Först därefter står kassaflödet från den löpande verksamheten. Detta är den viktigaste enskilda insikten i kapitlet: OCF-raden är inte bankkontot — den är en beräkning som börjar i den manipulerbara vinsten och ärvs sedan genom lika tolkningsbara rörelsekapitalrader. Vinsten kan pyntas uppåt (Schilit) och då ärvs pyntet in i kassaflödesberäkningens startpunkt. Rörelsekapitalraderna kan pyntas i tid (kapitel 6-7) utan att en enda krona är fel. Kontantflödet som FAKTUM existerar bara i dess helhet — de tre fackens summa — medan fördelningen mellan facken är redovisningspolitik."
+        },
+        {
+          "type": "text",
+          "content": "IAS 7 innehåller dessutom öppna valfriheter, och två av dem rör svenska noterade bolag direkt. Ränta BETALAD får redovisas antingen i löpande verksamhet eller i finansieringsverksamheten. Ränta MOTTAGEN samma sak. Två i övrigt identiska bolag kan därmed redovisa olika operativt kassaflöde enbart beroende på principval — och bolag som byter princip mellan år kan förställa sin OCF-trend utan att något hänt i verksamheten. Betald skatt ska huvudregeln placera i löpande verksamhet, men fördelningen mellan poster kan vara svåröverskådlig. Räkneexempel som visar mekaniken: bolag med räntekostnad 40 Mkr; bolag A klassar den i finansieringen (OCF opåverkad), bolag B i löpande verksamhet (OCF minus 40 Mkr). Vems OCF är 'rätt'? Bådas — och ingen av dem är jämförbara utan justering. Praktisk regel: leta alltid reda på var bolaget klassar räntan (not 1 eller kassaflödesnoten) och normalisera till samma princip innan du jämför bolag eller år."
+        },
+        {
+          "type": "text",
+          "content": "Bygg nu läsningens grunddisciplin — att läsa en kassaflödesanalys i sex steg, uppifrån och ner. (1) Startpunkten: är det resultat efter skatt, och innehåller det jämförelsestörande poster som ska rensas (kapitel 8)? (2) Tillbakaläggningsposterna: avskrivningar — stämmer de med noten om anläggningstillgångar? (3) Rörelsekapitalraderna: förändring kundfordringar, lager, leverantörsskulder — växer de i takt med omsättningen (V01), och finns tecken på fakturaförsäljning eller betalningssträckning? (4) Capex i investeringsfacket: hur stor del är underhåll och hur stor tillväxt? (5) Finansieringsfacket: emissioner, ny skuld, utdelning — vem har finansierat årets kassa? (6) Kontrollen: summera de tre facken och stäm mot förändringen i likvida medel — stämmer inte det, fortsätt läsa tills du förstår varför. Sex steg, femton minuter — och du har kartan över varje manipulationsdörr som resten av kursen öppnar."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Kassaflödesanalysen är den enda rapport som låter dig välja din egen sanning på förhand: summan av de tre facken är ett faktum, men fördelningen dem emellan är politik — och den som läser bara ett fack läser bara politik."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre fack — vad hör hemma var och var gränsen flyttas\",\"rader\":[[\"Fack\",\"Ska innehålla\",\"Vanliga flyttningar\",\"Detektivfråga\"],[\"Löpande verksamhet (OCF)\",\"Kärnaffärens inbetalningar och utbetalningar\",\"Engångsposter, securitizationsinflöden, för tidigt tagna poster\",\"Skulle denna krona kommit nästa år också?\"],[\"Investeringsverksamhet\",\"Capex, försäljning av tillgångar, förvärv\",\"Kapitaliserade driftkostnader (hit), underhåll som borde vara drift\",\"Är detta en tillgång eller en förskjuten kostnad?\"],[\"Finansieringsverksamhet\",\"Lån, amortering, emissioner, utdelning, återköp\",\"Leasingamortering (IFRS 16), ränta enligt val, reverse factoring\",\"Är detta kapital eller en dold leverantörsskuld?\"],[\"Summa = likvida medels förändring\",\"Faktum\",\"Kan inte förvrängas — bara fördelas\",\"Stämmer summan? Läs facken därefter\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: ta kassaflödesanalysen från kapitel 1 och läs den i de sex stegen. Skriv upp: startresultat, avskrivningar, årets rörelsekapitalförändring totalt, capex, samt alla poster i finansieringsfacket. Leta sedan i not 1 (eller kassaflödesnoten): var klassar bolaget betald ränta — löpande eller finansiering? Har principen ändrats mellan åren? Avsluta med kontrollen: stämmer de tre fackens summa mot förändringen i likvida medel? Du har nu läst kassaflödesanalysen som en detektiv — inte som en turist."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är det operativa kassaflödet en 'härledd' storhet snarare än ett faktum?",
+          "alternativ": [
+            "Därför att den indirekta metoden börjar i resultatet och justerar för rörelsekapital — vinstens och bedömningars fel ärvs in i beräkningen",
+            "Därför att bankerna aldrig redovisar riktiga saldon",
+            "Därför att OCF alltid redovisas i dollar även i Sverige",
+            "Därför att revisorn räknar fram den i efterhand utan bolagets inblandning"
+          ],
+          "ratt": 0,
+          "tips": "Följ beräkningens startpunkt: vems siffra står först?"
+        },
+        {
+          "q": "Två i övrigt identiska bolag har räntekostnad 40 Mkr. Bolag A klassar den i finansieringen, bolag B i löpande verksamhet. Vad gäller?",
+          "alternativ": [
+            "Bolag B bryter mot IAS 7",
+            "Båda följer reglerna — IAS 7 tillåter båda valen, och deras OCF är inte jämförbara utan justering",
+            "Bolag A måste ändra sig eftersom ränta alltid hör hemma i löpande verksamhet",
+            "Skillnaden är alltid obetydlig och kan ignoreras"
+          ],
+          "ratt": 1,
+          "tips": "Vilken öppen valfrihet ger IAS 7 just för betald ränta?"
+        },
+        {
+          "q": "Vad är den enda del av kassaflödesanalysen som är ett rent faktum och inte kan förvrängas?",
+          "alternativ": [
+            "Det operativa kassaflödet",
+            "Investeringarna",
+            "Utdelningen",
+            "Summan av de tre facken — den totala förändringen av likvida medel"
+          ],
+          "ratt": 3,
+          "tips": "Du kan flytta en krona mellan facken — kan du flytta den ut ur banken?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 11,
+      "title": "Varför kassaflödet ljuger mindre än vinsten — och när det ändå ljuger",
+      "intro": "Marknadens favoritrop — 'vinst är en åsikt, kassa är ett faktum' — är halvsanningskursens kärna. Detta kapitel förklarar först varför ropet är förtjänt, sedan de fem dörrar genom vilka kassaflödet ändå ljuger — dörrarna som resten av kursen öppnar en i taget.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först det förtjänta. Vinsten bygger på periodisering och antaganden: när en intäkt är tjänad, hur länge en maskin lever, hur stor en avsättning ska vara, hur en goodwill ska prövas — hundratals bedömningar, var och en valmöjlighet för en ledning som vill berätta en vacker historia. Kassan har ingen sån grammatik. En utdelning på 50 Mkr kräver att 50 Mkr lämnar bankontot; en leverantör som inte betalas slutar leverera; en räntebetäckning kan inte fotnotas bort. Därför ljuger kassaflödet mindre — det är svårare att förfalska en krona än ett påstående om en krona. Därför också O'Gloves och efterföljarnas paradigm: läs vinsten mot kassan, och misstro alltid vinst som inte backas av kassa år efter år. Detta förhållningssätt är kursens utgångspunkt, inte dess slutsats."
+        },
+        {
+          "type": "text",
+          "content": "Sedan det falska. Påståendet 'kassan är ett faktum' gäller bankKONTOt — inte OCF-raden. Skillnaden är avgörande och bärs av tre mekanismer. För det första: klassificering — en och samma utgift kan i många fall bokföras som löpande eller investerande (kapitel 9), vilket flyttar miljoner mellan facken utan att summan av bankrörelserna förändras en krona. För det andra: timing — en krona som skulle betalats i januari kan pressas in i december genom att kunder uppmanas betala tidigt och leverantörer sent (kapitel 6-7), vilket lyfter årets OCF på nästa års bekostnad. För det tredje: engångsposter — skatteåterbäringar, tvisteförlikningar och försäkringsersättningar är kassa, absolut, men inte återkommande kärnkassa (kapitel 8). Tre mekanismer, ingen av dem kräver brott — alla tre kräver bara att du som läsare inte gör omräkningen."
+        },
+        {
+          "type": "text",
+          "content": "Ett räkneexempel på hur vändningen av perspektivet ser ut. Du känner igen det klassiska mönstret från Quality of Earnings-kursen: vinst stiger, kassa faller — År 1: vinst 50, OCF 48. År 2: vinst 62, OCF 41. År 3: vinst 74, OCF 33. Avvikelsen växer; fordringar och lager slukar kassan; varning. Men vänd nu på bladet och titta på spegelfallet, som bara denna bok fångar systematiskt: År 1: vinst 40, OCF 95 — imponerande kassa! Men i noterna: 60 Mkr av OCF är engångsskatteåterbäring och 25 Mkr kommer från sålda fakturor som nästa år måste säljas igen för att hålla nivån. Hållbart OCF: 10 Mkr — under vinsten, inte över. Båda mönstren är avvikelser mellan vinst och kassa; det första visar dålig kassa, det andra visar målad kassa. Marknaden ropar varning vid det första och applåderar vid det andra — Mulford och Comiskey ropar varning vid båda."
+        },
+        {
+          "type": "text",
+          "content": "Sammanfatta kursens karta: de fem dörrar genom vilka kassaflödet ljuger. Dörr ett — definitionsval: 'fri kassa flöde' är inte en standardrad utan en konstruktion, och bolaget väljer den mest smickrande varianten (kapitel 4). Dörr två — svultet capex: FCF = OCF minus capex, och capex är den post ledningen helt styr; skär den och FCF stiger medan verksamheten förfalls (kapitel 5). Dörr tre — working capital-knip: fakturaförsäljning och betalningssträckning flyttar fram kassan i tiden (kapitel 6-7). Dörr fyra — engångsposter: kassa som inte upprepas (kapitel 8). Dörr fem — klassificeringsflyttar: poster som byter fack (kapitel 9). Fem dörrar, en gemensam nyckel: omräkningen. Ingen av dem låses med en multipel eller en enskild rad — alla låses med notläsning och bokens checklista (kapitel 11). Det är därför kursen heter Creative Cash Flow REPORTING: manipulationen sitter i redovisningen, inte i banken."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Vinst är en åsikt och kassa är ett faktum — men OCF-raden är en tredje sak: en beräknad fördelning av fakta, gjord av samma ledning vars åsikt du försökte komma förbi."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"När kassaflödet ljuger — de fem dörrarna\",\"rader\":[[\"Dörr\",\"Mekanism\",\"Kapitel\",\"Fråga som låser dörren\"],[\"Definitionsval\",\"FCF beräknas på det smickrande sättet\",\"Kap 4\",\"Vilken definition, förändrad mellan år?\"],[\"Svultet capex\",\"Capex skärs under underhållsnivå — FCF stiger mekaniskt\",\"Kap 5\",\"Vad är underhållscapex och hur ligger faktiskt capex mot det?\"],[\"Working capital-knip\",\"Fakturor säljs, leverantörer betalas sent\",\"Kap 6-7\",\"Upprepas detta nästa år — och till vilket pris?\"],[\"Engångsposter\",\"Skatteåterbäring, tvist, försäkring i OCF\",\"Kap 8\",\"Vilken del av OCF upprepas nästa år?\"],[\"Klassificeringsflyttar\",\"Kostnader kapitaliseras, inflöden klassas om\",\"Kap 9\",\"Är detta verkligen en tillgång — är detta verkligen löpande?\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: ta bolaget från kapitel 1-2 och ställ bokens grundfråga till årets OCF: vilken del av detta belopp upprepas nästa år? Gå igenom OCF-radens beståndsdelar och stryk (1) poster med orden återbäring, förlikning, ersättning eller engångs, (2) effekt av sålda fordringar om fakturering nämns i noter, (3) effekten av kraftigt ökade leverantörsskulder. Skriv upp ditt estimerade hållbara OCF vid sidan av det redovisade. Skillnaden mellan siffrorna är det nummer marknaden inte tittar på — och kursens hela anledning att finnas."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är sant påståendet 'kassan är ett faktum'?",
+          "alternativ": [
+            "Det gäller varje rad i kassaflödesanalysen, inklusive OCF",
+            "Det gäller bara den totala förändringen av likvida medel — fördelningen mellan facken är redovisningspolitik",
+            "Det gäller utdelningen men inte capex",
+            "Det är en myt — kassa är alltid lika manipulerbar som vinst"
+          ],
+          "ratt": 1,
+          "tips": "Du kan inte förflytta en krona ur banken med en fotnot — men var kan du flytta den?"
+        },
+        {
+          "q": "Vinst 40 Mkr, OCF 95 Mkr. I noterna: 60 Mkr skatteåterbäring och 25 Mkr från sålda fakturor som måste upprepas nästa år. Vad är hållbart OCF?",
+          "alternativ": [
+            "95 Mkr — kassa är kassa",
+            "40 Mkr — vinsten är alltid taket",
+            "10 Mkr — OCF minus engångsposter och fakturaförsäljning",
+            "120 Mkr — posterna ska läggas till"
+          ],
+          "ratt": 2,
+          "tips": "Dra ifrån det som inte upprepas: 95 − 60 − 25."
+        },
+        {
+          "q": "Vilken av följande är INTE en av kursens fem dörrar genom vilka kassaflödet ljuger?",
+          "alternativ": [
+            "Svultet capex som lyfter FCF",
+            "Klassificeringsflyttar mellan facken",
+            "Ökade avskrivningar som sänker vinsten",
+            "Fakturaförsäljning och betalningssträckning"
+          ],
+          "ratt": 2,
+          "tips": "Fyra dörrar handlar om att försköna kassaflödet — vilket alternativ handlar om att försvaga resultatet?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "Free cash flow-definitionerna — OCF minus capex och traktandets konst",
+      "intro": "Fri kassa är den mest citerade och minst standardiserade siffran i finans. Detta kapitel går igenom definitionerna — OCF minus capex och dess släktingar — och visar hur val av definition kan förvandla samma bolag från kassamaskin till kassabrännare och tillbaka.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grunddefinitionen är enkel och bra: fri kassa (FCF) = kassaflöde från löpande verksamhet minus investeringar i anläggningstillgångar (capex). Tanken: så mycket alstrar kärnverksamheten efter att nödvändigt kapitalbytesarbete betalats — det är detta som kan gå till utdelning, återköp (V20), avbetalning av skuld eller tillväxt. Men observera vad definitionen gör vid varje tillfälle: den SUBTRAHERAR capex och ingenting annat. Följden är aritmetisk och omedelbar: varje krona capex som undantas, definieras bort eller skjuts till ett annat fack ökar FCF krona för krona. Definitionens enkelhet är dess manipulerbarhet. Mulford och Comiskeys påminnelse: FCF är inte en rad i rapporten — det är en BERÄKNING som någon gör på rapporten, och den som gör beräkningen väljer också sanningen."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel som visar definitionens makt — ett och samma bolag, samma år. OCF: 140 Mkr. Capex totalt: 90 Mkr, varav underhåll av befintlig verksamhet cirka 70 och tillväxtinvesteringar 20. Vidare: 25 Mkr av årets kostnader har aktiverats som utvecklingsutgifter och sitter därför INTE i OCF (kapitel 9) utan i investeringsfacket. Tre beräkningar: FCF enligt grunddefinitionen = 140 − 90 = 50 Mkr. FCF med bara underhållscapex (tillväxt separerad) = 140 − 70 = 70 Mkr — detta är det tal som bäst mäter vad bolaget kan dela ut utan att krympa. FCF med aktiveringarna utrensade (de 25 Mkr är i praktiken driftkostnader och borde dras av) = 140 − 25 − 90 = 25 Mkr. Samma bolag: 50, 70 eller 25 Mkr fri kassa — skillnaden är 180 procent mellan högsta och lägsta, och samtliga tre kan tryckas i samma pressmeddelande med rättslig samvetsro. Frågan är inte vilket talet är rätt utan vem valde talet och varför."
+        },
+        {
+          "type": "text",
+          "content": "Katalogen över vanliga definitionsval. (1) Capex-definitionen: bara tangibla anläggningstillgångar, eller även kapitaliserade utvecklingskostnader, leasingtillskott och förvärv? Ett bolag med stor aktivering och stort förvärvstempo kan visa smickrande FCF på en snäv definition. (2) Räntan: före eller efter betald ränta — påminn dig om IAS 7-valet från kapitel 2, som här blir en FCF-fråga. (3) Leasing: efter IFRS 16 är hyresbetalningar i praktiken skuldamortering och ränta (kapitel 10) — den som beräknar FCF utan att dra av leasingåterbetalningarna överskattar fri kassa för hyresintensiva bolag. (4) Förvärv: 'FCF exklusive förvärv' är vanligt och ibland rimligt (engångsförvärv), men för ett bolag som växer genom att köpa är förvärv ett återkommande capex. (5) Bolagets egna 'justerade' FCF-presentationer: älska dem inte — kontrollera alltid mot rårapporten. Svensk tumregel: räkna alltid FCF på minst två sätt (med allt, och med underhållscapex) och visa båda — ärligheten sitter i att visa spridningen, inte ett tal."
+        },
+        {
+          "type": "text",
+          "content": "Använd FCF rätt i värderingen (V04-V06-territorium). FCF-yield — fri kassa delat med börsvärde — är en av de bästa grov värderingsmätarna, men bara på en granskad nämnare och en konsekvent definition: fem års serie, samma beräkningssätt alla år, justerad för engångsposter (kapitel 8) och för aktiveringskonst (kapitel 9). Två klassiska fel att undvika. Fel ett: att räkna direkt på bolagets fabulerade FCF — bolagets egen presentation rakt av i din DCF eller yield-beräkning; det är att låta den tilltalade skriva sitt eget omdöme. Fel två: definitionsskifte mitt i serien — bolaget byter FCF-definition år 3, presentationen visar femårig 'FCF-tillväxt', och ingen noteras förändringen; läs alltid fotnoter i investerarpresentationer och jämför med rådata. FCF är kursens mest användbara verktyg — och dess mest ansvarslöst använda. Bokens bidrag är just disciplinen: en definition, konsekvent, granskad, omräknad."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ FCF är den enda berömda finansiella siffra som inte finns i rapporten alls — den skapas i beräkningen efteråt, och därför börjar varje FCF-analys med frågan: vem räknade, vad subtraherade han, och vad lät han vara kvar?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"FCF-definitioner — variant, beräkning, när den lurar\",\"rader\":[[\"Variant\",\"Beräkning\",\"När den lurar\"],[\"Grund-FCF\",\"OCF − hela capex\",\"När capex svultits (kap 5) eller innehåller engångsförvärv\"],[\"Underhålls-FCF\",\"OCF − underhållscapex\",\"När underhållsnivån är översiktligt lowbollad\"],[\"Aktiveringsrensad FCF\",\"OCF − aktiverade kostnader − capex\",\"Kräver notgranskning — men är enda ärliga tal vid stor aktivering\"],[\"Lease-justerad FCF\",\"FCF − leasingbetalningar\",\"Obligatorisk jämförelse för hyresintensiva bolag (IFRS 16, kap 10)\"],[\"Bolagets 'justerade' FCF\",\"Presentationens egen\",\"Kontrollera alltid mot rårapporten — definitionsskifte mellan år är vanligt\"],[\"FCF-yield\",\"FCF / börsvärde\",\"Bara meningsfull på konsekvent, granskad femårsserie\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: beräkna FCF för ditt bolag på tre sätt från samma årsredovisning: (1) OCF minus hela capex; (2) OCF minus ditt estimerade underhållscapex (använd avskrivningarna eller genomsnittet av fem års capex som utgångspunkt och justera); (3) samma som (1) men dra också av kapitaliserade utvecklingskostnader och ev leasingbetalningar. Skriv upp alla tre siffrorna bredvid bolagets egen FCF-presentation om den finns. Hur stor är spridningen? En spridning på över 50 procent mellan högsta och lägsta tal är i sig en diagnos — av bolaget eller av presentationen."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "OCF 140 Mkr, capex 90 Mkr (varav underhåll 70), aktiverade utvecklingskostnader 25 Mkr. Vad är aktiveringsrensad FCF?",
+          "alternativ": [
+            "50 Mkr",
+            "70 Mkr",
+            "25 Mkr",
+            "115 Mkr"
+          ],
+          "ratt": 2,
+          "tips": "140 − 25 − 90 = 25 — aktiveringarna ska dras av som den driftkostnad de är."
+        },
+        {
+          "q": "Varför är FCF extra manipulerbart jämfört med rapportens egna rader?",
+          "alternativ": [
+            "Därför att FCF inte är en rad i rapporten utan en beräkning gjord efteråt — den som väljer definition väljer också resultatet",
+            "Därför att revisorer aldrig granskar FCF",
+            "Därför att FCF alltid redovisas i euro",
+            "Därför att FCF bara gäller banker"
+          ],
+          "ratt": 0,
+          "tips": "Vem bestämmer vad som subtraheras?"
+        },
+        {
+          "q": "Vad är den viktigaste kontrollen när ett bolag presenterar en femårig 'FCF-tillväxt' i sin investerarpresentation?",
+          "alternativ": [
+            "Att diagrammet har fina färger",
+            "Att FCF-definitionen är densamma alla fem år och att serien stämmer mot rårapporterna — definitionsskifte mitt i serien är vanligt",
+            "Att bolaget också redovisar EBITDA",
+            "Att presentationen är granskad av revisorn"
+          ],
+          "ratt": 1,
+          "tips": "En tillväxtserie är bara en serie om mätinstrumentet är detsamma varje år."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 11,
+      "title": "Fabricerad FCF-tillväxt via svultet capex — starvationens aritmetik",
+      "intro": "Eftersom FCF = OCF minus capex är capex den enda stora posten i formeln som ledningen helt styr från år till år. Detta kapitel visar hur FCF-tillväxt fabriceras genom att underhållet skjuts framför sig — bokens mest undervärderade varning och det klassiska sättet att 'vinna' en FCF-trend på tre års sikt.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen är ren aritmetik och kräver ingen bokföringskonst alls — därför är den så farlig. FCF = OCF minus capex. Capex är beslut, inte bokföringspost: ledningen kan skjuta upp underhållet, låta maskiner köras längre, skjuta renoveringar och butiksrenoveringar framför sig — och varje sparad capexkrona landar direkt i FCF som 'förbättring'. Under en period av tre till fem år kan ett bolag måla en nästan perfekt FCF-tillväxtkurva genom att kontinuerligt svälta kapitalbasen. Inget är olagligt, inget strider mot regler, ingen not avslöjar det direkt — och ändå är det en av de mest värdeförstörande manipulationer som finns, för den äter bolagets framtid. Mulford och Comiskeys poäng: den som använder FCF utan att fråga vad capex BORDE vara, har gett ledningen ett fritt instrument att skriva sin egen tillväxthistoria."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel — starvationens aritmetik i en femårsserie. Ett moget bolag med OCF stabilt 140 Mkr per år och ett verkligt underhållsbehov på cirka 100 Mkr. År 1: capex 100, FCF 40. År 2: capex 100, FCF 40. År 3: pressen ökar — ledningen skär till 60, FCF 80, plus 100 procent, presentationen talar om 'dubblad fri kassa'. År 4: skär till 25, FCF 115, ytterligare 44 procent, och nu ropar marknaden på 'FCF-tillväxt' och värderar bolaget högre. År 5: maskinparken, butikerna och systemen kräver sitt — upprustning 180 Mkr (uppskjutet underhåll är inte borta, bara försenat och ofta dyrare) — FCF plötsligt minus 40. Den som extrapolerade år 4 köpte en illusion tillverkad av fyra beslut om att inte reparera. Titta på serien igen: OCF var 140 varenda år — verksamheten förbättrades aldrig; enda variabeln var capex-beslutet. FCF-tillväxt UTAN OCF-tillväxt är alltid en fråga om kapitalstrukturen i tiden — och ofta ett svältekärl."
+        },
+        {
+          "type": "text",
+          "content": "Klassiska mönster ur bokens tidsanda och eftervärldens bekräftelser [illustrativt]: amerikanska telecombolag som efter kraschen 2000-2002 skar capex drastiskt — med rätta, överskottskapacitet fanns — men vars 'FCF-vändning' delvis var nedmontering av framtid; detaljhandelskedjor som år efter år sköt butiksunderhåll framför sig medan kundflödena långsamt vittrade; tidnings- och mediabolag vars FCF-blomstring under 2000-talets mitt var kapitalbasens långsamma avveckling. Fallet är alltid detsamma och lätt att känna igen i efterhand: en förklaringslös FCF-tillväxt hos ett bolag med platt eller fallande OCF och en åldrande kapitalbas. I svenska klimatet: verkstäder med gamla maskiner, fastighetsbolag med uppskjutet underhåll, infrastrukturtunga verksamheter — men också tvärtom: tillväxtbolag som med rätta investerar stort. Skillnaden mellan svält och tillväxt är inte capex-nivån utan vad capex GER — och det syns i avkastningen på investerat kapital och i OCF-tillväxten två-tre år senare."
+        },
+        {
+          "type": "text",
+          "content": "Detektionen — fyra detektorer som tillsammans fångar svältning. (1) Capex mot avskrivningar över tid (verktyget du känner från Quality of Earnings-kursen): avskrivningarna mäter det som slits, capex det som ersätts; ligger capex under avskrivningar tre-fem år i rad byggs en uppskjuten bördan. (2) Capex mot omsättning och mot peers: om branschen investerar 6 procent av omsättningen och ditt bolag 2,5 procent utan strukturförklaring — fråga. (3) Underhållskostnadens trend i resultaträkningen: nödstopp, ökade driftstörningar och höga reparationskostnader är svältningens räkenskap. (4) OCF-tillväxt mot FCF-tillväxt: om FCF växer medan OCF står stilla är förklaren nästan alltid capex-beslutet — och frågan är om det är effektivisering eller svält. Kör de fyra på fem års data och du skiljer den äkta kassamaskinen från den svultna varje gång. Komplettera med kapitel 4:s underhålls-FCF: räkna om FCF med normaliserat capex — det är den siffran som ska in i din värdering (V04-V06), inte den svultna."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Vinst kan målas med antaganden och kassaflöde med klassificering — men FCF kan målas med enbart frånvaro: varje krona underhåll som inte genomförs är en vinstkrona i dag och en förlustkrona i morgon, och ingen rad i rapporten visar den kesen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Svultet capex — detektor, normal, avvikelse, åtgärd\",\"rader\":[[\"Detektor\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"Capex / avskrivningar\",\"Nära 1 över en konjunkturcykel\",\"Under 0,7 tre-fem år i rad\",\"Beräkna uppskjuten bördan; normalisera FCF\"],[\"Capex / omsättning\",\"I nivå med peers och historik\",\"Klart under peers utan strukturförklaring\",\"Begär förklaring; jämför två-tre konkurrenter\"],[\"Underhållskostnad i resultat\",\"Stabil andel av omsättningen\",\"Stigande stopp, reparation, driftstörning\",\"Tecken på att svältningen hämnas\"],[\"FCF-tillväxt mot OCF-tillväxt\",\"FCF växer för att OCF växer\",\"FCF växer medan OCF står stilla\",\"Misstänk capex-beslutet — granskning av kapitalbas\"],[\"Alder på anläggningstillgångar\",\"Jämn fördelning\",\"Växande andel gamla tillgångar\",\"Normalisera capex till underhållsnivå (kap 4)\"],[\"Räntabilitet på nyinvesteringar\",\"Investeringar följs av OCF-tillväxt\",\"Stora investeringar utan avkastning\",\"Skilj svält från slöseri — båda dödar FCF i nästa steg\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: ta fem års data för ditt bolag. Räkna per år: capex / avskrivningar och capex / omsättning. Hämta samma två kvoter för två konkurrenter. Rita alla tre bolag i samma tabell. Fråga sedan: växer bolagets FCF snabbare än dess OCF? Om ja — hur mycket av förklaringen är capex-beslut? Avsluta med att beräkna normaliserad FCF: OCF minus det capex som genomsnittet av avskrivningar och peers säger är underhållsnivå. Skillnaden mellan redovisad och normaliserad FCF är svältningens pris — eller avsaknaden av det."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "OCF är stabil 140 Mkr. Capex går 100 → 100 → 60 → 25. Vad händer med FCF?",
+          "alternativ": [
+            "FCF faller eftersom bolaget investerar mindre",
+            "FCF stiger mekaniskt 40 → 80 → 115 Mkr — en fabricerad tillväxt som inte speglar bättre verksamhet",
+            "FCF är oförändrat eftersom OCF är oförändrat",
+            "FCF kan inte beräknas utan räntekostnaden"
+          ],
+          "ratt": 1,
+          "tips": "FCF = OCF − capex: vad gör enkel subtraktion med formeln när ena termen skärs?"
+        },
+        {
+          "q": "Vilken kombination är starkast varning för svultet capex?",
+          "alternativ": [
+            "Capex över avskrivningar samtidigt som OCF faller",
+            "Capex under avskrivningar flera år i rad, FCF växer medan OCF står stilla, och capex-andelen av omsättningen ligger klart under peers",
+            "Bolaget investerar i en ny fabrik",
+            "Utdelningen höjs"
+          ],
+          "ratt": 1,
+          "tips": "Tre detektorer pekar samma håll: ersättningen släpar, tillväxten sitter i subtraktionen, och nivån avviker från branschen."
+        },
+        {
+          "q": "Varför är svultet capex svårare att upptäcka än andra knep i kursen?",
+          "alternativ": [
+            "Därför att det är olagligt och därför döljs noggrant",
+            "Därför att det inte kräver någon bokföringsmanipulation alls — det är frånvaron av beslut, synlig bara som avvikelse mot avskrivningar, peers och kapitalbasens ålder",
+            "Därför att capex aldrig redovisas i svenska rapporter",
+            "Därför att det bara förekommer i USA"
+          ],
+          "ratt": 1,
+          "tips": "Vad lämnar inga spår i rapporten: en bokförd post eller ett beslut som inte togs?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Working capital-knep I — securitization och fakturaförsäljning",
+      "intro": "Det mest eleganta sättet att lyfta det operativa kassaflödet utan att röra verksamheten: sälj dina kundfordringar. Detta kapitel går igenom factoring och securitization, räkneexemplet som visar engångsstrukturen, och detektionen i svenska noter.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen. Ett bolag har kundfordringar — pengar som kunderna kommer betala om trettio till sextio dagar. I stället för att vänta säljer bolaget fakturorna till en bank eller en factoringaktör och får pengarna direkt. Om försäljningen är utan regress (non-recourse) — köparen bär risken för att kunden inte betalar — försvinner fordringarna ur balansräkningen och kassan kommer in nu. Effekten i kassaflödesanalysen: förändringen i kundfordringar blir mer positiv (fordringarna krymper), och OCF stiger. Effekten i nyckeltalen: DSO faller och bolaget ser ut att ha snabbare betalande kunder än det har. Verksamheten har inte förändrats en millimeter — kunderna betalar lika långsamt som förr — men kassaflödet och fordringsbilden är målade. Mulford och Comiskey ägnar securitization stort utrymme: det var tidens mest populära sätt att mekaniskt lyfta OCF, från finansiella bolag till tillverkare."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel — engångsstrukturen i siffror. Bolag med kundfordringar 300 Mkr säljer under fjärde kvartalet fakturor med nominellt värde 150 Mkr till 98,5 procent av värdet. Inbetalning: 147,75 Mkr — omedelbart i OCF. Årets DSO faller från 55 till 38 dagar; presentationen talar om 'förbättrat kassaflöde och effektivare kapitalbindning'. Men betrakta strukturen: varje kvartal därefter måste NYA fakturor säljas för att upprätthålla den lyfta nivån — programmet är en pump, inte en förbättring. Slutar bolaget sälja faller OCF tillbaka med cirka 148 Mkr i ett slag och DSO hoppar upp. Rabatten på 1,5 procent är dessutom en verklig kostnad — 2,25 Mkr på transaktionen — som bor i OCF som en permanent prislapp på att få pengarna tidigt. Fakturaförsäljning är därmed varken fult eller olagligt — det är finansiering, ibland klok sådan — men i OCF-radens händer är det förklädnad: ekonomiskt är det närme nog ett lån som återbetalt via rabatten, bokföringsmässigt är det en förbättring av löpande verksamhet."
+        },
+        {
+          "type": "text",
+          "content": "Bokens finare distinktioner — tre varianter med olika giftighet. (1) Non-recourse utan vidare åtaganden: renast fallet — men engångsstrukturen kvarstår; jämförbarheten mot föregående år och mot peers bryts. (2) Recourse (med regress): bolaget behåller kreditrisken — ekonomiskt är detta ett lån med fordringen som säkerhet, och OCF-lyftet är ren kosmetika; i amerikanska fall konstruerades program med 'continuing involvement' som höll riskerna kvar hos säljaren medan kassan såg ut som sålda fordringar. (3) Securitization-program med tilläggsavgifter och spread-konton: komplicerade strukturer där en del av vinsten på sålda fordringar bokfördes som intäkt — vinst på egen fordringsdistribution. Den svenska vardagsversionen heter factoring och reverse factoring (kapitel 7) — och noten att läsa heter oftast 'finansiella åtaganden', 'fordringar' eller 'upplysningar om factoring'. Bokens fråga till varje variant: är kassan BETALD av kunderna eller FÖRSKOTTAD av ett finansinstitut? Den senare upprepas bara så länge programmet upprepas."
+        },
+        {
+          "type": "text",
+          "content": "Detektionen — fem steg i en svensk årsredovisning. (1) Sök i hela dokumentet efter orden factoring, factoringavtal, försäljning av kundfordringar, securitization och reverse factoring — i noter, VD-brev och riskavsnitt. (2) Jämför DSO-utvecklingen med två-tre peers: fallande DSO i ett bolag med stigande bransch-DSO är en anomali som kräver förklaring. (3) Läs kassaflödesanalysens rad 'förändring kundfordringar': mycket positiv förändring samtidigt som omsättningen växer kan vara program-pump. (4) Fråga motfrågan: vore DSO och OCF normala UTAN programmet? Räkna om året som fordringarna legat kvar — det är bokens omräkning i miniatyr. (5) Kontrollera klassningen: ligger försäljningen i löpande facket (vanligt) och borde den — med regress — ha varit finansiering? Notera svaret i ditt V19-underlag: ett programberoende OCF är ett OCF med startpunkt vid nästa cliff."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En såld faktura är inte en betald kund — det är en kund som bytts mot en bank, och skillnaden syns inte i årets kassaflöde utan i det år programmet slutar: pumpen släcker när den stängs, inte när kassan är slut."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fakturaförsäljnings-detektorn\",\"rader\":[[\"Signal\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"Ordet factoring/securitization i rapporten\",\"Saknas eller obetydligt belopp\",\"Stora volymer i noter eller VD-brev\",\"Räkna om OCF utan programmet\"],[\"DSO mot peers\",\"Följer branschen\",\"Fallande DSO medan branschen stiger\",\"Misstänk sålda — inte betalda — fordringar\"],[\"Förändring kundfordringar i OCF\",\"Svänger med tillväxten\",\"Stort positivt värde med växande omsättning\",\"Kontrollera om det är program-pump\"],[\"Recourse/regress i noten\",\"Non-recourse\",\"Med regress — ekonomiskt ett lån\",\"Räkna om OCF: flytta till finansiering\"],[\"Programmets stabilitet\",\"Säsongsvis, litet\",\"Permanent stort program som täcker stor del av fordringarna\",\"Hållbart OCF = OCF minus programberoendet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: sök i din årsredovisning (hela dokumentet, inte bara notförteckningen) efter factoring, fordringsförsäljning och securitization. Finns ett program: notera volym, om det är med eller utan regress, och var i kassaflödesanalysen inbetalningarna landar. Beräkna sedan DSO (kundfordringar / omsättning × 365) för året och året innan, och hämta samma kvot för en konkurrent. Räkna slutligen om OCF som fordringarna legat kvar i balansräkningen: OCF justerat = OCF minus programmets effekt. Hur stor andel av årets OCF var program? Över 30 procent är en diagnos."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Bolaget säljer fakturor med nominellt värde 150 Mkr till 98,5 procent. Vad landar i OCF denna period?",
+          "alternativ": [
+            "150 Mkr — hela det nominella värdet",
+            "147,75 Mkr — en engångsboost som måste upprepas nästa period för att hållas",
+            "2,25 Mkr — bara rabatten",
+            "Inget — fakturaförsäljning redovisas alltid i finansieringen"
+          ],
+          "ratt": 1,
+          "tips": "150 × 0,985 = 147,75 — och vad händer nästa kvartal om ingen ny faktura säljs?"
+        },
+        {
+          "q": "Vad är skillnaden ekonomiskt mellan factoring med och utan regress?",
+          "alternativ": [
+            "Ingen skillnad alls i redovisningen",
+            "Med regress behåller säljaren kreditrisken — transaktionen är i praktiken ett lån, och OCF-lyftet är kosmetika",
+            "Utan regress behåller säljaren kreditrisken",
+            "Med regress betalar kunden aldrig fakturan"
+          ],
+          "ratt": 1,
+          "tips": "Vem står för förlusten om kunden inte betalar — och vad kallas det när någon annans pengar används mot framtida betalning?"
+        },
+        {
+          "q": "Bolagets DSO faller från 55 till 38 dagar samtidigt som konkurrenternas DSO stiger. Vad är den första detektivfrågan?",
+          "alternativ": [
+            "Har kunderna verkligen börjat betala snabbare — eller har fakturor sålts till ett finansinstitut?",
+            "Har bolaget höjt priserna?",
+            "Har avskrivningarna förlängts?",
+            "Har bolaget ökat lagret?"
+          ],
+          "ratt": 0,
+          "tips": "Branschavvikelse i DSO utan affärsförklaring pekar mot fordringsstrukturen, inte kundbeteendet."
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 11,
+      "title": "Working capital-knep II — stretched payables och leverantörskrediten som kusk",
+      "intro": "Det andra stora working capital-knepet: betala dina leverantörer senare. Mekanismen är lika enkel som fakturaförsäljningens, men rollerna är omvända — och biverkningarna farligare. Med räkneexempel och detektion av reverse factoring.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mekanismen. När ett bolag betalar sina leverantörer växer leverantörsskulderna — och i kassaflödesanalysens indirekta metod är en ökning av leverantörsskulder en POSITIV justering av OCF: pengar som stannat kvar i bolaget. Sträcker bolaget betalningstiden från trettio till sextio dagar frigörs kassa en gång — och hela beloppet landar i årets OCF. Ingen intäkt är påhittad, ingen kostnad är fel — enda som hänt är att bolaget lånat av sina leverantörer. Mulford och Comiskeys varning är strukturell: detta är en engångsboost. Nästa år ger samma betalningstid ingen ytterligare förbättring — till det krävs ytterligare förlängning, från sextio till nittio dagar, och så vidare tills leverantörerna säger ifrån. Ett bolag som 'förbättrar' OCF kvartal efter kvartal via betalningssträckning är som en bil som accelererar genom att bränna reservdelen — hastigheten är verklig, tills den plötsligt är det inte."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel — engångsboostens storlek. Bolag med årliga inköp 2 400 Mkr (ungefär 6,6 Mkr per dag). Betaltid till leverantörer (DPO) år 1: 30 dagar — leverantörsskuld i snitt cirka 197 Mkr. År 2: ledningen beslutar sträcka till 60 dagar — leverantörsskuld cirka 394 Mkr. Skillnaden: (60 − 30)/365 × 2 400 ≈ 197 Mkr extra kassa, i sin helhet i år 2:s OCF. Femton procent av omsättningen, vunnet utan en enda såld enhet till. År 3: DPO fortfarande 60 — ingen ny boost; OCF återgår till normal nivå, och presentationen från år 2 ('rekordstarkt kassaflöde') blir en svår förklaring. Biverkningar som inte syns i OCF: tidigbetalningsrabatter går förlorade (ofta 1-2 procent av inköpen — 24-48 Mkr per år i exemplet), leverantörer som prissätter in krälet i nästa avtalsrunda, priority vid kortsiktig varubrist — leverantören skickar först till kunden som betalar i tid. Sträckning är därmed ibland helt rationell (stor stark kedja mot fragmenterade leverantörer — kapitel 6 i Quality of Earnings-kursen om negativ kassacykel) — men alltid en engångseffekt vid FÖRLÄNGNING, aldrig en återkommande kraftkälla."
+        },
+        {
+          "type": "text",
+          "content": "Det moderna svenska temat: reverse factoring och supply chain finance. Konstruktionen: en bank betalar bolagets leverantörer direkt och snabbt (ofta med rabatt), medan bolaget betalar banken senare — 90 till 150 dagar. I balansräkningen ser det ut som en vanlig leverantörsskuld (handelsskuld), i kassaflödesanalysen som en förlängning av betalningstid, men ekonomiskt är det en riktad bankkredit med leverantörskedjan som kanal. Poängen med konstruktionen är just klassificeringen: skulden undgår räntebärande-posten och därmed skuldsättningsgraden (V10), och den döljer att bolaget i praktiken lånat för att lyfta OCF. Europeiska detaljhandels- och byggfall under 2010-talet — där leverantörsfinansiering avslöjades i efterhand av kriser — visar mönstret [illustrativt]. IFRS och K3 skärper kraven på upplysningar, men detektionen är fortfarande din: noterna om finansiella åtaganden, orden supply chain finance, reverse factoring och leverantörsfinansiering, samt DPO-trenden mot peers."
+        },
+        {
+          "type": "text",
+          "content": "Detektionen — fyra detektorer plus en kombinationsregel. (1) DPO-trenden: leverantörsskulder / inköp (eller omsättning) × 365, fem år, jämfört med två peers; en kraftig engångshoppning följt av plateå är signaturen. (2) Noterna: sök supply chain finance, reverse factoring, leverantörsfinansiering, omstrukturerade betalningsvillkor. (3) Bruttmarginalen (V07): försvinner tidigbetalningsrabatter och prissätts krälet in, sjunker marginalen efter sträckningen — en eftersläpande bekännelse. (4) Kassacykeln (DSO + lagerdagar − DPO): förkortad cykel driv ENBART av DPO är finansiering, inte effektivitet — jämför med peers för att skilja. Kombinationsregeln, kursens egen: stigande DPO samtidigt med fakturaförsäljning (kapitel 6) är den klassiska dubbelknepen — fordrorna säljs OCH leverantörerna sträcks — och tillsammans kan de två lyfta ett helt års OCF från mediokert till strålande utan en enda affärsförbättring. Hittar du båda: räkna om året utan båda, och det är det talet som gäller för V19."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Leverantörskrediten är gratis kapital bara i den meningen att räntan inte heter ränta — den heter förlorad rabatt, prissatt förbittring och leveransprioritet hos den som betalar i tid, och den betalas alltid med någon annan räkning än kassaflödets."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Stretched payables-detektorn\",\"rader\":[[\"Signal\",\"Normal\",\"Avvikelse\",\"Åtgärd\"],[\"DPO-trend\",\"Stabil kring branschnormal\",\"Engångshopp plus-minus 15+ dagar, sedan plateå\",\"Beräkna engångsboosten; räkna om OCF\"],[\"Not om supply chain finance\",\"Saknas\",\"Reverse factoring / leverantörsfinansiering nämns\",\"Behandla som räntebärande skuld i V10; justera OCF\"],[\"Bruttomarginal (V07)\",\"Stabil efter sträckning\",\"Sjunker när rabatter försvinner och priser höjs\",\"Sträckningens eftersläpande kostnad — kvantifiera\"],[\"Kassacykelns sammansättning\",\"Förkortas via DSO och lager\",\"Förkortas endast via DPO\",\"Klassa som finansiering, inte effektivitet\"],[\"Dubbelknepet\",\"—\",\"Stigande DPO + fakturaförsäljning samma år\",\"Räkna om OCF utan båda; test av V19-underlag\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: beräkna DPO för ditt bolag fem år tillbaka (leverantörsskulder / inköp × 365 — använd omsättningen om inköpen inte redovisas, samma nämnare alla år). Rita trenden och hämta en konkurrents DPO. Skedde ett hopp? Beräkna i så fall boostens storlek: (DPO år 2 − DPO år 1)/365 × inköp. Sök sedan i noterna efter leverantörsfinansiering och reverse factoring. Avsluta med att ställa kursens kombinationsfråga: fanns samtidigt fakturaförsäljning? Om ja — beräkna OCF utan båda och skriv det som en tredje kolumn i ditt V19-underlagsblad."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Inköp 2 400 Mkr per år. DPO går från 30 till 60 dagar. Hur stor blir engångs-boosten av OCF?",
+          "alternativ": [
+            "Cirka 197 Mkr — (60−30)/365 × 2 400, en engångseffekt som inte upprepas nästa år",
+            "2 400 Mkr — hela inköpsvolymen",
+            "60 Mkr — en krona per dag",
+            "Ingen boost — leverantörsskulder påverkar inte OCF"
+          ],
+          "ratt": 0,
+          "tips": "Hur många dagars inköp motsvarar förlängningen — och vad blir det i kronor?"
+        },
+        {
+          "q": "Vad är det ekonomiska innehållet i reverse factoring (supply chain finance)?",
+          "alternativ": [
+            "En form av kundfinansiering där kunderna betalar tidigare",
+            "En riktad bankkredit via leverantörskedjan som ser ut som handelsskuld — den lyfter OCF och håller skulden utanför räntebärande posten i V10",
+            "En sorts kapitalförsäkring för leverantörer",
+            "En centralbanksekonom stimulansåtgärd"
+          ],
+          "ratt": 1,
+          "tips": "Vem betalar vem och när — och hur klassas skulden i balansräkningen?"
+        },
+        {
+          "q": "Vad kännetecknar den klassiska 'dubbelknepen' från detta kapitel?",
+          "alternativ": [
+            "Fakturor säljs SAMTIDTIGT som leverantörer betalas senare — båda working capital-knepen samma år",
+            "Utdelning höjs samtidigt som återköp sker",
+            "Avskrivningar förlängs samtidigt som capex ökar",
+            "Vinsten skrivs ner medan kassan stiger"
+          ],
+          "ratt": 0,
+          "tips": "Kapitel 6 och 7 i samma verkningsgrad — vad kallades de två mekanismerna?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 11,
+      "title": "Engångsposter i det operativa kassaflödet — one-offs som inte är one",
+      "intro": "Bokens första kapitel heter Seeking Sustainable Cash Flow — och engångsposterna är den råaste materialfrågan: kassa som är fullt verklig men inte återkommande. Detta kapitel bygger begreppet hållbart OCF och katalogen över one-offs.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Parallellen till vinstens värld är slående och gör ämnet lätt att minnas. I resultaträkningen lärde O'Glove och Schilit oss att 'engångsposter' som återkommer år efter år är driftkostnader klädda som tillfälligheter — och att kärnvinsten kräver att de justeras. Exakt samma logik gäller i kassaflödesanalysen, bara med ombytta tecken: där vinstens engångsposter oftast är KOSTNADER som bolaget vill lägga tillbaka, är kassaflödets engångsposter INFLÖDEN som bolaget vill att du ska tro är löpande. En skatteåterbäring på 90 Mkr är lika verklig kassa som en kundinbetalning — men den upprepas inte nästa år, och värderar du bolaget på årets OCF har du värderat en engångshändelse som om den vore en affärsmodell. Bokens ihärdiga fråga till varje OCF-rad: vilken del av detta upprepas nästa år? Svaret är en egen siffra — hållbart OCF — och den ska aldrig förväxlas med den redovisade."
+        },
+        {
+          "type": "text",
+          "content": "Katalogen över vanliga engångsposter i det löpande facket. (1) Skatteåterbäringar och omprövningar — klassiskt: en större retroaktiv skatteeffekt landar i OCF detta år. (2) Förlikningar och försäkringsersättningar — uppgjorda tvister, ersättning för skada eller avbrott. (3) Uppskjutna betalningar som plötsligt kommer in — gamla osäkra fordringar som betalas, ofta efter nedskrivningar. (4) Pension: arbetsgivares contributions holiday — perioder då pensionsinbetalningar vilar ger OCF-lyft som är ren uppskjuten kostnad (påminnelse från Quality of Earnings-kursens pensionskapitel). (5) Förskottsbetalningar från kunder — kontant och välkommet, men om det är en extraordinär förskottsorder och inte en ny återkommande struktur ska det inte extrapoleras. (6) 'Övrigt' — det löpande fackets mest undanskymda rad, värd en egen granskning varje gång den är stor. Räkneexempel: redovisat OCF 260 Mkr, varav skatteåterbäring 90 och tvisteförlikning 40 — hållbart OCF 130 Mkr. Om vinsten är 110 Mkr är förhållandet hållbart OCF/vinst 1,2 — friskt; det redovisade 2,4 var dekoration, och hela skillnaden sitter i två rader du bara hittar i noter och kvartalsdata."
+        },
+        {
+          "type": "text",
+          "content": "Varför kvartalsdata är nödvändigt — kursens första möte med detektivens tidsdisziplin. Engångsposter har en tendens att landa i det fjärde kvartalet, där årsberättelsen skrivs och där jämförelsen mot nästa år bekvämt försvinner i samlingsposterna. En årsredovisning visar summan; kvartalsrapporterna visar VÄGEN — att tre kvartal var svaga och att fjärde kvartalens 'styrka' bestod av en återbäring och en tvist är en helt annan berättelse än 'starkt år'. Svenska noterade bolag rapporterar kvartalsvis med kassaflödesavsnitt (minst ackumulerat) — bygg därför rutinen: följ OCF per kvartal, inte bara per år, och notera varje kvartal de poster ledningen själva kallar engångsposter eller jämförelsestörande i kassaflödet. Detta är också bokens metodiska arv till V19: kapitalförbränning är en VELOCITY — kronor per månad — och velocity syns bara i kvartalsdata. Medgivandet är ärligt: kvartalsdata och noter är det jobbiga hörnet av analysen; det är också hela skillnaden mellan att läsa en berättelse och att läsa en siffra."
+        },
+        {
+          "type": "text",
+          "content": "Bygg nu hållbart OCF som egen rad i ditt underlag — arbetsgången i fyra steg. (1) Strukturera: skriv upp OCF för fem år och kvartalsvis för de senaste två-tre åren. (2) Strök: markera för varje år de poster som är icke-återkommande — i noter, i interimrapporters förklaringsrader och i din egen bedömning (återbäring, tvist, förskottsorder, pensionsvila). (3) Summera det strukna per år: en serie med många strykningar år efter år är i sig ett fynd — 'engångsposter' som återkommer är definitionsmässigt återkommande kassaflödesbrus, och då ska medelvärdet dras av i stället för enskilda år (samma regel som för vinstens kärnvinst). (4) Beräkna hållbart OCF = redovisat OCF minus engångsposter (eller minus deras genomsnitt vid återkomst), och ställ det mot vinsten: hållbart OCF/vinst under 1 tre år i rad är samma varning som i Quality of Earnings — bara att du nu vet att också OMVÄNDET (hållbart OCF långt över vinsten tack vare one-offs) är en varning: nämligen om nästa års OCF."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Vinstens engångsposter vill bolaget lägga tillbaka; kassaflödets engångsposter vill bolaget låta ligga kvar — din uppgift är densamma i båda riktningarna: fråga frekvensen, inte ordet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Engångsposter i OCF — post, tecken, hållbarhetsbedömning\",\"rader\":[[\"Post\",\"Typiskt tecken\",\"Bedömning\"],[\"Skatteåterbäring / omprövning\",\"Stor positiv post i not eller kvartal 4\",\"Stryk — upprepas inte\"],[\"Förlikning / försäkringsersättning\",\"Förklaras i interimrapport\",\"Stryk — engångs i bägge riktningar\"],[\"Inbetald gammal osäker fordran\",\"Nedskrivna fordringar återbetalas\",\"Stryk — ingen ny kassaflow-modell\"],[\"Pensionsvila (contribution holiday)\",\"Pensionsinbetalningar vilar\",\"Stryk OCH flagga framtida kostnad (QoE kap 10)\"],[\"Extraordinär förskottsorder\",\"Kund betalar i förskott en gång\",\"Stryk ur trenden; behåll om strukturen är ny och permanent\"],[\"'Övrigt' i löpande facket\",\"Stor, oförklarad rad\",\"Begär uppdelning — svaret är diagnosen\"],[\"Återkommande 'engångsposter'\",\"Samma typ flera år\",\"Dra av medelvärdet — frekvensen dementerar ordet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: hämta de fyra senaste kvartalsrapporterna och senaste årsredovisningen för ditt bolag. Skriv OCF per kvartal (beräkna från ackumulerade tal om nödvändigt). Markera för varje kvartal de poster ledningen kallar engångsposter, jämförelsestörande eller icke återkommande i kassaflödet. Beräkna hållbart OCF för det senaste året och skriv förhållandet hållbart OCF / redovisat resultat. Landade posterna i kvartal fyra? I så fall skriv en mening om vad årsberättelsen hade berättat utan kvartalsdata — den meningen är hela argumentet för detektivens tidsdisciplin."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Redovisat OCF är 260 Mkr, varav 90 Mkr skatteåterbäring och 40 Mkr tvisteförlikning. Vad är hållbart OCF?",
+          "alternativ": [
+            "260 Mkr — kassa är kassa",
+            "190 Mkr",
+            "130 Mkr — redovisat minus de två engångsposterna",
+            "390 Mkr"
+          ],
+          "ratt": 2,
+          "tips": "260 − 90 − 40 = 130 — vad upprepas nästa år?"
+        },
+        {
+          "q": "Vad är den viktigaste skillnaden mellan vinstens och kassaflödets engångsposter?",
+          "alternativ": [
+            "Vinstens är alltid större",
+            "Vinstens engångsposter är kostnader bolaget vill lägga tillbaka; kassaflödets är inflöden bolaget vill att du tror är löpande",
+            "Kassaflödets engångsposter är alltid olagliga",
+            "Det finns inga engångsposter i kassaflödet"
+          ],
+          "ratt": 1,
+          "tips": "Riktningen på önskan: i vilken riktning vill ledningen att din blick ska flytta posten?"
+        },
+        {
+          "q": "Varför kräver engångspostsanalysen kvartalsdata?",
+          "alternativ": [
+            "Därför att engångsposter ofta landar i kvartal fyra där årsberättelsen skrivs — kvartalsvägen avslöjar vad årssumman döljer",
+            "Därför att årsredovisningar är svåra att hitta",
+            "Därför att kvartalsdata alltid är mer exakta",
+            "Därför att revisorer bara granskar kvartal"
+          ],
+          "ratt": 0,
+          "tips": "Vad visar fyra kvartal som en årssiffra aldrig kan visa?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 11,
+      "title": "Klassificeringsmanipulering — att flytta poster mellan facken",
+      "intro": "Bokens tredje kapitel ställer frågan rakt: Is It Operating or Investing Cash Flow? Detta är manipulationens kärna — att flytta poster mellan facken. Med WorldCom som stamfall, aktiveringens mekanik och detektionen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grundprincipen först: klassificeringsflyttar utnyttjar att gränserna mellan de tre facken är bedömningsfrågor. En och samma utgift kan i många fall bokföras som driftkostnad (belastar OCF) eller som investering (belastar investeringsfacket och kapitaliseras som tillgång); ett och samma inflöde kan bokföras som investeringsrealisation eller som löpande inbetalning. Konsekvensen är att ett bolag kan höja sitt operativa kassaflöde utan att röra en enda affär — bara genom att flytta utgifter ur det löpande facket, eller inflöden in i det. Detta är kursens mest fundamentala mekanik, och ingen illustrerar den bättre än WorldCom: driftskostnader för nätet ('line costs') kapitaliserades som investeringar i balansräkningen. Effekten var dubbelt fördelaktig — kostnaderna försvann ur resultaträkningen (vinsten steg) OCH ur det löpande kassaflödet (OCF steg) — och bolagets OCF såg strålande ut ända till kollapsen. Historiens dyraste klassificeringsflytt, och skälet till att denna bok skrevs."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken i svensk vardag — aktiveringens två riktningar. Riktning ett: driftskostnad kapitaliseras. Ett bolag lägger 80 Mkr på utveckling av ett nytt system. Kostnadsförs: OCF minus 80, vinsten minus 80. Aktiveras (IAS 38 tillåter aktiviering av utveckling som uppfyller kriterier): utgiften landar i investeringsfacket, OCF plus 80, vinsten plus 80 i år — belastningen amorteras i stället över exempelvis fem år. Femårig vinsteffekt: +80 år ett, sedan minus 16 per år. Räkneexemplet visar kraften: samma bolag, samma pengar, OCF-skillnad på 160 Mkr mellan två tillåtna redovisningar — och en marginalbild (V07/V08) som inte är jämförbar med konkurrenten som kostnadsför. Riktning två: investeringsutgift klassas som drift — ovanligare och sällan fördelaktigt, men förekommer när bolag vill 'dölja' kapacitet eller sminka investeringstakten. Den viktiga riktningen att bevaka är aktivering — ju större andel av kostnadsmassan som aktiveras (utveckling, ränta i projekt, exploration, utbyggnadskostnader), desto större gap mellan redovisat OCF och ekonomisk verklighet."
+        },
+        {
+          "type": "text",
+          "content": "Den omvända klassen: inflöden som flyttas in i det löpande facket. (1) Securitization- och factoringinflöden — i amerikansk praxis kunde försäljning av fordringar redovisas som löpande kassaflöde (kapitel 6); detta var en av bokens centralaste kritiker och en drivkraft bakom senare regeländringar. (2) Försäljning av tillgångar med vinst — realisationsdelen hör hemma i investeringsfacket; hamnar den i löpande facket är OCF uppblåst. (3) Förvärv som OCF-lyft: förvärvar bolaget ett bolag med stora kundfordringar eller förskott kan kombinationseffekten se ut som löpande kassa. (4) Ränta och utdelning mottagen — IAS 7:s valfrihet (kapitel 2) kan systematiskt lyfta OCF hos bolag med stora finansiella placeringar. Räkneexempel: bolag som redovisar OCF 200, varav 60 är ränta mottagen (klassad löpande enligt bolagets val) och 35 är fordringsförsäljning: omräknat löpande kärnkassaflöde 105 — och när konjunkturen vänder och räntan faller sjunker 'OCF' utan att affären förändrats. Klassificeringsknepen är alltid osynliga i presentationen och alltid synliga i noterna — det är därför boken är en bok om att läsa noter."
+        },
+        {
+          "type": "text",
+          "content": "Detektionen — klassificeringsgranskningens fyra steg. (1) Kapitaliseringsgraden: hur stor andel av kostnadsmassan aktiveras (utvecklingskostnader i noten om immateriella tillgångar, aktiverad ränta i projektnoter) — och hur förändras graden mellan år? Ökande aktivering vid resultattopp är bokens klassiska timing-varning. (2) Avstämningsprovet: stäm capex i kassaflödesanalysen mot noterna om anläggningstillgångar och immateriella tillgångar (tillkomst, omklassificeringar, avyttringar) — stora omklassificeringsrader är rörelser mellan fack i ren form. (3) Inflödesprovet: gå igenom det löpande fackets beståndsdelar och fråga för varje större post: är detta kärnaffär? (ränta mottagen, fordringsförsäljning, realisationer hör inte hemma). (4) Jämförelseprovet: samma prov hos en peer med annan redovisningspolitik — skillnaden i aktiveringsgrad mellan två bolag är en direkt mätare på hur missvisande deras inbördes OCF-jämförelse är. Kursens tumregel att skriva på kortet: om ett bolag högaktiverar, räkna om dess OCF genom att dra ifrån årets aktiveringar — den siffran är det enda jämförbara med en kostnadsförande konkurrent."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Klassificering är kassaflödets motsvarighet till intäktsredovisningens tidpunktval: samma pengar, samma affär — men genom att välja FACK väljer ledningen vilken sanning som ska berättas, och noterna är enda platsen där valet står kvar att läsa."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Klassificeringsflyttar — flytt, effekt, exempel, detektor\",\"rader\":[[\"Flytt\",\"Effekt\",\"Exempel\",\"Detektor\"],[\"Driftskostnad → aktivering\",\"OCF upp, vinst upp\",\"WorldCom line costs; aktiverad utveckling (IAS 38); aktiverad projektränta\",\"Kapitaliseringsgrad; not immateriella; timing vid resultattopp\"],[\"Fordringsförsäljning → löpande\",\"OCF upp\",\"Factoring/securitization-inflöden i löpande facket\",\"Not om factoring; DPO/DSO-anomalier (kap 6)\"],[\"Realisationsvinst → löpande\",\"OCF upp\",\"Tillgångsförsäljning bokförd som löpande inflöde\",\"Avstämning mot investeringsfacket\"],[\"Ränta mottagen → löpande\",\"OCF upp, men konjunkturkänsligt\",\"IAS 7-valet hos placeringsrika bolag\",\"Not om princip; normalisera mellan bolag\"],[\"Leasingbetalning → finansiering\",\"OCF upp mekaniskt\",\"IFRS 16 (kap 10)\",\"Leasingamortering i finansieringsfacket\"],[\"Underhåll → investering\",\"OCF upp, capex upp\",\"Renovering bokförd som tillbyggnad\",\"Not anläggningstillgångar; gränsdragningspolicy\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: öppna noten om immateriella anläggningstillgångar och noten om anläggningstillgångar i din årsredovisning. Tre uppgifter: (1) hur stora var årets tillkommande utvecklingskostnader (aktiveringar)? (2) finns aktiverad ränta eller omklassificeringar mellan poster? (3) hur stor var årets avskrivning och amortering av aktiverade belopp? Beräkna därefter om OCF: redovisat OCF minus årets aktiveringar. Jämför med en konkurrent som kostnadsför motsvarande. Skriv en mening: hur många procent av bolagets OCF var klassificeringsbeslut snarare än affär?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Bolaget aktiverar 80 Mkr utveckningskostnader i stället för att kostnadsföra dem. Effekt detta år?",
+          "alternativ": [
+            "OCF minskar med 80 Mkr",
+            "OCF ökar med 80 Mkr och vinsten ökar med 80 Mkr — utgiften sitter i investeringsfacket och amorteras senare",
+            "Ingen effekt alls — aktivering är bara en teknisk detalj",
+            "Vinsten minskar men kassaflödet ökar"
+          ],
+          "ratt": 1,
+          "tips": "Vilket fack hamnar utgiften i — och vilka fack påverkas alls?"
+        },
+        {
+          "q": "Varför är WorldCom den perfekta illustrationen av klassificeringsmanipulering?",
+          "alternativ": [
+            "Därför att bolaget förfalskade kundfakturor",
+            "Därför att det höjde utdelningen trott förluster",
+            "Därför att driftskostnader kapitaliserades som investeringar — vilket blåste upp vinst OCH operativt kassaflöde samtidigt",
+            "Därför att det använde securitization av lager"
+          ],
+          "ratt": 2,
+          "tips": "En enda flytt av en kostnad — vilka två rapporter påverkades?"
+        },
+        {
+          "q": "Bolag A högaktiverar utvecklingskostnader, konkurrent B kostnadsför samma typ av kostnader. Vad gör du före jämförelse av deras OCF och marginaler?",
+          "alternativ": [
+            "Jämför direkt — redovisningen är alltid jämförbar",
+            "Räkna om A:s OCF och resultat genom att dra ifrån årets aktiveringar (och lägga tillbaka amorteringar) — först då är de jämförbara",
+            "Multiplicerar B:s OCF med två",
+            "Använder EBITDA enbart och struntar i kassaflödet"
+          ],
+          "ratt": 1,
+          "tips": "Vilken av de två redovisningarna ligger närmast de faktiska penningsrörelserna i verksamheten?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 11,
+      "title": "Svenska fall [illustrativt] — fakturaklipp och IFRS 16:s mekaniska OCF-lyft",
+      "intro": "Bokens mekanismer i svensk dräkt [illustrativt]: tillväxtbolaget som säljer fakturor för att visa positivt kassaflöde, och IFRS 16 — det regelverk som 2019 mekaniskt höjde det operativa kassaflödet för varenda hyresintensiv verksamhet utan att en enda affär förändrades.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fall A [illustrativt] — tillväxtbolaget och fakturaflödet. Tänk dig ett svenskt tillväxtbolag: SaaS eller e-handel, växer 40 procent per år, redovisar förlust — men kommunicerar stolt 'positivt kassaflöde från löpande verksamheten'. Källan? Ett fakturering- och factoringavtal som löpande omsätter kundfordringar till kontanter: fordringarna belånas i praktiken, OCF hålls precis på plus-sidan, och förlustens kassabränning döljs av finansieringsflödet som låter som verksamhet. Sedan kommer konverterbara lån eller riktade emissioner som fyller på — och i presentationen berättas en berättelse om 'självfinansierad tillväxt'. Bokens tre frågor spränger berättelsen på femton minuter: (1) Hur stort var OCF utan fakturaprogrammet? (2) Vad är kapitalförbränningen per kvartal — vinst minus OCF minus capex? (3) Vilka poster i finansieringsfacket är återkommande snarare än engångsfinansiering? Tre frågor, tre svar — och V19 (emissionrisken) står plötsligt i centrum av analysen i stället för i dess fotnoter. Detta är hela konsten: att låta finansieringsfacket tala om vad löpande facket försöker dölja."
+        },
+        {
+          "type": "text",
+          "content": "Fall B [illustrativt] — IFRS 16 och det mekaniska OCF-lyftet. Från 2019 kapitaliserades leasingavtal i balansräkningen: hyresavtalet blev en tillgång (nyttjad rättighet) och en skuld (leasingförbindelse), och hyrbetalningen delades i två komponenter — amortering av leasingförbindelsen (finansieringsverksamhet) och ränta (finansiering ELLER löpande, enligt bolagets IAS 7-val — de flesta svenska bolag valde finansiering). Nettoeffekten för hyresintensiva bolag — detaljhandel, gym, restauranger, logistik, flyg — var ett mekaniskt lyft av OCF. Räkneexempel: bolag med hyror 300 Mkr per år. Före IFRS 16: minus 300 i OCF (hyror är drift). Efter: cirka 240 i amortering i finansieringen plus 60 i ränta (också finansiering enligt valet) — OCF stiger med cirka 300 Mkr, hela beloppet, utan att hyresavtal, butiker eller kunder förändrats en millimeter. Alla som jämförde 2019 med 2018 i OCF såg en 'förbättring' som var hundra procent regelverksprodukt — och fleråriga OCF-trendserier bröts vid sömmen."
+        },
+        {
+          "type": "text",
+          "content": "IFRS 16 är inte ett manipulationsbrott — det är en regeländring — men den illustrerar kursens kärna bättre än något annat: OCF-raden är en funktion av klassificeringsregler, och när reglerna ändras ändras 'sanningen' utan att verkligheten gör det. Följproblemen är tre och praktiskt viktiga i svenska analyser i dag. (1) Jämförbarhet: bolag som redovisar 'sommaren med' IFRS 16 och de som inte gör det (enskilda bolag enligt K3 redovisar hyror som driftkostnad) är inte jämförbara i OCF utan omräkning. (2) FCF-mätning: fri kassa definierad som OCF minus capex drar inte längre av hyreskostnaderna automatiskt — leasing är inte capex; den som inte lägger till leasingbetalningarna i sin FCF-beräkning överskattar hyresintensiva bolags fria kassa (kapitel 4:s lease-justerade FCF är obligatorisk kurva här). (3) Skuldbilden: leasingförbindelsen är skuld (V10 bör inkludera den) men amorteringen bor i finansieringen — vilseledande om man läser skuldminskning som frivillig avskuldning. Räkneexempel: samma detaljhandelsbolag ovan — lease-justerad FCF = OCF minus capex minus leasingbetalningar 300 = tillbaka till den ekonomiska verkligheten före 2019. Regelverket bytte kläder på kassaflödet; din omräkning klär av det."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken — en svensk IFRS 16-checklista på fyra steg. (1) Hitta leasingförbindelsens rörelse i finansieringsfacket: 'amortering av leasingförbindelser' — det är den post som BEVARAR hyrans kontanta verklighet, bara i annat fack. (2) Räkna fram årets totala leasingbetalningar: amortering plus ränta på leasing (not om leasing; komplettera med kortfristiga hyror för korta avtal som inte kapitaliseras). (3) Bygg två FCF-rader: redovisad FCF (OCF minus capex) och lease-justerad FCF (därutöver minus leasingbetalningar) — för hyresintensiva bolag är skillnaden mellan raderna hela skillnaden mellan en kassamaskin och en skenande en. (4) Jämför rätt: mot tidsserier som är homogena (efter 2019) eller omräknade, och mot peers med samma principer — läs i not 1 hur räntan på leasing klassas (finansiering eller löpande) innan du jämför OCF mellan två svenska bolag. Samma fyra steg hanterar bokens amerikanska arv: varje stor regeländring (securitization-regler, leasing, intäktsstandarder) flyttar kassaflödets fördelning — detektivens uppgift är densamma: håll den ekonomiska verkligheten stabil och låt inte regelverket skriva om berättelsen."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ IFRS 16 är kursens renaste experiment: samma bolag, samma hyror, samma kunder — och OCF steg med hyressumman solely för att en post bytte fack; den som förstår detta experiment förstår hela boken utan att läsa ett kapitel till."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Svenska fallen [illustrativt] — mekanism, fråga, omräkning\",\"rader\":[[\"Fall\",\"Mekanism\",\"Detektivfråga\",\"Omräkning\"],[\"Tillväxtbolaget med factoring\",\"Fordringar omsätts till kontanter via program\",\"Vad var OCF utan programmet?\",\"OCF minus programmets effekt; bränning per kvartal\"],[\"Tillväxtbolaget med konvertibler\",\"Finansiering låter som verifierad affär\",\"Vilka finansieringsposter är återkommande?\",\"Separera kärnkassa från kapitaltillförsel (V19)\"],[\"IFRS 16-lyftet\",\"Hyror delas i amortering + ränta i finansieringen\",\"Vad hände med OCF 2019 mot 2018?\",\"Dra av leasingbetalningar: lease-justerad FCF\"],[\"Ränteklassning efter IFRS 16\",\"Ränta på leasing i finansiering eller löpande\",\"Var klassar BOLAGET räntan?\",\"Normalisera till samma princip före jämförelse\"],[\"K3-bolag mot IFRS-bolag\",\"K3 hyror kvar i OCF; IFRS kapitaliserade\",\"Är jämförelsen homogen?\",\"Räkna om ena sidan till samma basis\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: välj ett hyresintensivt svenskt noterat bolag (detaljhandel, gym, restaurang, logistik). Ur senaste årsredovisning: hitta amortering av leasingförbindelser och ränta på leasing i finansieringsfacket, samt kortfristiga hyror i noten om leasing. Beräkna totala leasingbetalningar. Räkna därefter två FCF: redovisad (OCF − capex) och lease-justerad (därutöver − leasingbetalningar). Hur stor är skillnaden i procent? Om du hittar en äldre rapport från före 2019: jämför OCF-nivån före och efter IFRS 16 och uppskatta det mekaniska lyftet — siffran du hittar är regelverkets fingeravtryck, inte bolagets förtjänst."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var den mekaniska effekten av IFRS 16 på det operativa kassaflödet för hyresintensiva bolag?",
+          "alternativ": [
+            "OCF sjönk därför att hyrorna blev en skuld",
+            "OCF steg med i princip hela hyressumman — hyrbetalningarna delades i amortering och ränta som redovisas i finansieringsfacket",
+            "Ingen effekt alls — IFRS 16 gällde bara balansräkningen",
+            "OCF blev mer volatilt men oförändrat i nivå"
+          ],
+          "ratt": 1,
+          "tips": "Var hamnade hyrbetalningarna — och vilket fack tömdes?"
+        },
+        {
+          "q": "Bolag med hyror 300 Mkr per år efter IFRS 16. Hur beräknas lease-justerad FCF?",
+          "alternativ": [
+            "OCF minus capex — hyrorna är redan borta ur OCF och ska inte dras av igen",
+            "OCF minus capex minus totala leasingbetalningar (cirka 300 Mkr) — annars överskattas fri kassa",
+            "OCF plus 300 Mkr",
+            "OCF minus avskrivningar"
+          ],
+          "ratt": 1,
+          "tips": "Vilken kontant utgift återstår att återföra för att spegla den ekonomiska verkligheten?"
+        },
+        {
+          "q": "Ett svenskt tillväxtbolag visar 'positivt kassaflöde' men växer med förlust och har löpande factoring samt återkommande konverterbara emissioner. Vad är bokens första fråga?",
+          "alternativ": [
+            "Hur snabbt växer omsättningen (V01)?",
+            "Vad var OCF utan fakturaprogrammet — och hur stor är kapitalförbränningen som finansieringsfacket döljer?",
+            "Vilken multipel handlas bolaget till?",
+            "Hur många anställda har bolaget?"
+          ],
+          "ratt": 1,
+          "tips": "Vilket fack håller den verkliga berättelsen i det här fallet?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 11,
+      "title": "Bokens checklista — den anpassade FCF-analysen steg för steg",
+      "intro": "Nu samlas allt till bokens metod: att RÄKNA OM kassaflödesanalysen — omklassificera, rensa, normalisera — tills den hållbara finansiella prestationen framträder. Detta kapitel är kursens hantverkskapitel, med en komplett genomräkning från redovisat till hållbart.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bokens metod är inte att läsa kassaflödesanalysen kritiskt — det är att bygga en egen. Kallad recast eller anpassad analys: utgå från den redovisade kassaflödesanalysen och omforma den steg för steg till en jämförbar och ärlig version. Steg ett: OMKLASSIFICERA — flytta poster som klassats inkonsekvent eller vilseledande: fordringsförsäljning med regress från löpande till finansiering, ränta mottagen till samma princip som peers, leasingbetalningar tillbaka in i din FCF-beräkning (kapitel 2, 6, 9, 10). Steg två: RENSA — stryk engångsposter ur OCF: återbäringar, förlikningar, pensionsvilor, extraordinära förskott (kapitel 8). Steg tre: NORMALISERA — byt faktiskt capex mot underhållsnivån: normaliserat capex = max(faktiskt capex, estimerat underhållscapex från avskrivningar, femårsgenomsnitt och peers) (kapitel 4-5). Steg fyra: BERÄKNA — hållbart OCF och hållbar FCF på den omräknade basen. Steg fem: PRÖVA — ställ den hållbara FCF mot utdelning, återköp (V20), skuldbetalning och emissionsbehov (V19). Fem steg, en eftermiddag per bolag — och efteråt äger du en kassaflödesbild som är din, inte bolagets."
+        },
+        {
+          "type": "text",
+          "content": "Komplett genomräkning — ett nummerrett exempel från redovisat till hållbart. Utgångsläge, redovisat år: OCF 310 Mkr; capex 55 Mkr; redovisad FCF (bolagets presentation) 255 Mkr; utdelning 40 Mkr. Steg ett, omklassificera: noterna visar fakturaförsäljning med begränsad regress 150 Mkr och ränta mottagen 15 Mkr klassad löpande — omräkning: OCF 310 − 150 − 15 = 145 Mkr. Steg två, rensa: kvartal fyra innehöll skatteåterbäring 60 Mkr — OCF 145 − 60 = 85 Mkr. Steg tre, normalisera: avskrivningar är 80 Mkr och femårsmedelcapex 95 Mkr — underhållsnivå satt till 95; faktiskt capex 55 betyder svältning: normaliserat capex 95. Steg fyra, beräkna: hållbart OCF 85 Mkr; hållbar FCF = 85 − 95 = MINUS 10 Mkr. Steg fem, pröva: utdelning 40 Mkr mot hållbar FCF minus 10 — utdelningen och en del av driftens underhåll finansieras av engångsposter och fakturaklippen; nästa år, utan återbäring och med nödvändigt underhåll, är strukturen en emissionsfråga (V19). Serien redovisad FCF 255 mot hållbar FCF minus 10 är inte en analysnyans — det är 265 miljoner skillnad i vad du tror bolaget är."
+        },
+        {
+          "type": "text",
+          "content": "Presentationens disciplin — hur den anpassade analysen ska föras för att inte själv bli manipulation. Tre regler. (1) Två kolumner, aldrig en: redovisat och justerat sida vid sida, varje justering med rad och motivering (vilken not, vilket kapitel i kursen) — det som inte tål att skrivas med källa ska inte justeras alls. (2) Konsekvent metod mellan år och bolag: samma omklassificeringsregler, samma underhållscapex-metod, samma engångsposter-definition — annars bygger du bara en egen sminkvariant; håll metodbladet levande dokument och datera det. (3) Asymmetrisk conservatism: när du är osäker, välj det försämnande alternativet för kassaflödet (räkna engångsposten som återkommande kostnad, underhållet högt) — anledningen är matematisk: dina felkostnader är asymmetriska, ett köp på fabricerad FCF förlorar mer än ett missat köp på för försiktigt FCF-tal förlorar i uppgång. Detta är marginal of safety-principen tillämpad på kassaflödeshantverket: priset på fel är högre på ena sidan, luta dit."
+        },
+        {
+          "type": "text",
+          "content": "Kvalitetsmåtten på den omräknade basen — två nyckeltal som bokens analys mynnar ut i. (1) Hållbart OCF / resultat: mäter hur väl vinsten backas av RENSAAD, omklassificerad kassa; under 1 tre år i rad är den klassiska varningen (vinst utan kassa); systematiskt över 1,5-2 utan kapitalintensiv förklaring är den omvända varningen (kassa utan vinst — engångsposter, nedmontering eller working capital-knip enligt kapitel 5-8). (2) Hållbar FCF-yield: hållbar FCF / börsvärde, fem årsserie med konsekvent metod — värderingens (V04-V06) ärligaste komplement, därför att båda leden nu är granskade. Komplettera med trenden i hållbar FCF per aktie: en vinnande verksamhet visar stigande hållbar FCF per aktie medan antalet aktier är oförändrat eller fallande (V20-koppling) — och en verksamhet som bara visar stigande redovisad FCF håller på att skriva sitt eget avslöjande. Dessa två mått är bokens testamente: när alla justeringar är gjorda återstår siffror som är tråkiga — och tråkiga siffror är redovisningens högsta kvalitetsstämpel."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Den anpassade FCF-analysen slutar aldrig i en siffra — den slutar i två kolumner: vad bolaget säger och vad som återstår när du tagit bort allt som inte upprepas; avståndet mellan kolumnerna är ledningens berättarkonst, mätt i kronor."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Den anpassade FCF-analysen — steg, åtgärd, kurskapitel\",\"rader\":[[\"Steg\",\"Åtgärd\",\"Källa i kursen\"],[\"1. Omklassificera\",\"Flytta regress-factoring, ränta, leasing till jämförbar basis\",\"Kap 2, 6, 9, 10\"],[\"2. Rensa\",\"Stryk engångsposter ur OCF (återbäring, tvist, pensionsvila)\",\"Kap 8\"],[\"3. Normalisera\",\"Byt faktiskt capex mot underhållsnivå (max av faktiskt, avskrivningar, 5-årsmedel, peers)\",\"Kap 4-5\"],[\"4. Beräkna\",\"Hållbart OCF och hållbar FCF på omräknad bas\",\"Kap 3-11\"],[\"5. Pröva\",\"Hållbar FCF mot utdelning, återköp, skuld, emissionsbehov\",\"Kap 13 (V19)\"],[\"Presentation\",\"Två kolumner med källor; konsekvent metod; asymmetrisk conservatism\",\"Kap 11\"],[\"Nyckeltal\",\"Hållbart OCF/resultat och hållbar FCF-yield, fem år\",\"Kap 11 + V04-V06\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: genomför den fullständiga anpassade FCF-analysen för ditt bolag. Bygg en tabell med två kolumner — redovisat och justerat — och fem steg: omklassificera (factoring, ränta, leasing), rensa (engångsposter), normalisera (underhållscapex), beräkna (hållbart OCF och hållbar FCF), pröva (mot utdelning och emissionsbehov). Skriv vid varje justering vilken not eller vilket kvartal som är källa. Avsluta med de två nyckeltalen: hållbart OCF / resultat och hållbar FCF-yield. Spara arket — det är ditt V19-underlag och kursens slutexaminations material."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Redovisat OCF 310, fakturaförsäljning 150, ränta mottagen i löpande 15, skatteåterbäring 60, normaliserat capex 95. Vad är hållbar FCF?",
+          "alternativ": [
+            "255 Mkr",
+            "145 Mkr",
+            "Minus 10 Mkr — 310 − 150 − 15 − 60 − 95",
+            "85 Mkr"
+          ],
+          "ratt": 2,
+          "tips": "Räkna stegvis: OCF 85 efter steg 1-2, minus normaliserat capex 95."
+        },
+        {
+          "q": "Vad är den korrekta presentationsdisciplinen för den anpassade FCF-analysen?",
+          "alternativ": [
+            "Visa bara de justerade talen — de redovisade förvirrar",
+            "Två kolumner (redovisat och justerat) med källa för varje justering, konsekvent metod mellan år och asymmetrisk conservatism vid osäkerhet",
+            "Byt metod varje år så att analysen förblir flexibel",
+            "Visa bara de redovisade talen med en varningswidget"
+          ],
+          "ratt": 1,
+          "tips": "Vilken princip hindrar DIN omräkning från att bli nästa kapitel i manipulationens historia?"
+        },
+        {
+          "q": "Hållbart OCF / resultat ligger systematiskt över 2 utan kapitalintensiv förklaring. Vad är det för varning?",
+          "alternativ": [
+            "Ingen — högt är alltid bra",
+            "Den klassiska vinst-varningen: vinst utan kassa",
+            "Den omvända: kassa utan vinst — engångsposter, working capital-knip eller nedmontering enligt kapitel 5-8",
+            "Att bolaget betalar för hög skatt"
+          ],
+          "ratt": 2,
+          "tips": "Vad måste fylla gapet när kassan överträffar vinsten så kraftigt — och upprepas det?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Red flags — det kompletta varningssystemet",
+      "intro": "Kapitel 3 öppnade fem dörrar; kapitlen 4-10 visade vad som bor bakom varje. Nu samlas allt i ett varningssystem: tretton red flags, deras detektorer och prioritetsordningen — från enskild flagg till mönster som avslutar en analys.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Först principen för avläsning: en flagga är en fråga, ett mönster är en dom. Enstaka red flags har oskyldiga förklaringar nästan lika ofta som skyldiga — ett stort engångsposter kan vara en brandförlust, ett DPO-hopp kan vara en omförhandlad avtalstryck med rimlig motprestation, ett capex-fall kan vara en avslutad investeringscykel. Det är KOMBINATIONER som bär bevisstyrka: stigande DPO samtidigt med fakturaförsäljning (kapitel 7:s dubbelknep), engångsposter i OCF samtidigt med stigande aktiveringsgrad (kapitel 8-9), FCF-tillväxt samtidigt med capex under avskrivningar (kapitel 5). Kursens tumregel, hämtad ur bokens anda: en flagga = läs noten; två flaggor i samma funktion (till exempel båda working capital) = räkna om året; tre flaggar i olika funktioner = avsluta analysen tills förklaring finns — inte för att bolaget nödvändigtvis är ohederligt, utan för att priset på att ta reda på det är högre än värdet av positionen."
+        },
+        {
+          "type": "text",
+          "content": "Läsordningen — hur varningssystemet körs på ett bolag på en eftermiddag. (1) Kvartalsdata före årsdata: fyra kvartal avslöjar tidspel (kapitel 8). (2) Noter före presentationer: not 1 (principval och ändringar), factoring-noten, leasing-noten, noten om immateriella (aktiveringar), eventualförpliktelser (reverse factoring). (3) Tre beräkningar: hållbart OCF (kapitel 8), normaliserat capex (kapitel 5), hållbar FCF (kapitel 11). (4) Två jämförelser: DSO/DPO och capex-andel mot två-tre peers (kapitel 6-7), och OCF-jämförelse endast på omräknad basis (kapitel 10:s IFRS 16-varning). (5) En prövning: hållbar FCF mot utdelning, skuld och emissioner (kapitel 13). Ordningen är avsatt tidsmässigt omvänt mot dess värde: kvartalsdata och noterna — det jobbigaste — är också det mest givande; presentationerna — det lätta — är det minsta värd. Detta är bokens metodiska kvarlåtenskap i praktisk form: övertaget sitter i det arbete andra inte gör."
+        },
+        {
+          "type": "text",
+          "content": "De falska positiva — tre vanliga missförstånd som systemet måste hantera för att inte bli ett brusmaskineri. (1) Säsongsbolag: butikskedjor bygger lager och leverantörsskulder före högsäsong — DPO och lagerdagar rör sig med årstiden; jämför alltid samma kvartal år mot år (verktyget från Quality of Earnings-kursen). (2) Tillväxtens kapitalbehov: ett bolag som växer snabbt har legitimt negativ working capital-förändring och högt capex — skillnaden mot svältning (kapitel 5) är att investeringarna FÖLJS av OCF-tillväxt två-tre år senare; kör provet på historien, inte på nivån. (3) Regelförändringar: IFRS 16 (kapitel 10) och tidigare securitization-regler flyttar kassaflödet utan att bolaget manipulerat — kännetecknet är att HELA branschen hoppar samtidigt; anomalin mot branschen är flaggan, inte förändringen mot föregående år. Den gemensamma nämnaren: varje flagga kontrolleras mot branschnormal, årstidsnormal och regelverksnormal — avvikelsen är informationen, nivån är bara bakgrund."
+        },
+        {
+          "type": "text",
+          "content": "Systemet i AKM1-kedjan — hur red flags-systemet koplas till ekosystemets övriga variabler. Flaggsystemets utgång är inte en lista utan en BEDÖMNING av underlagens kvalitet för varje variabel: V01 (försäljningstillväxt) är bara tillväxt om intäkterna konverteras till kassa — kontrollera mot DSO och fakturering (kapitel 6); V07/V08 (marginaler) är bara lönsamhet om underhållet görs (kapitel 5) och aktiveringarna är rensade (kapitel 9); V10 (skuldsättningsgrad) är bara en skuldbild om reverse factoring och leasingförbindelser räknas in (kapitel 7, 10); V19 (kapitalförbränning) bygger i sin helhet på det hållbara OCF och den hållbara FCF som kapitel 11 producerar; V20 (återköp) prövas mot hållbar FCF — återköp över hållbar FCF är omfördelning, inte överskott. Och den överordnade principen — marginal of safety — är förklaringen till varför systemet överhuvudtaget finns: priset med marginal mot konservativt räknat värde är det enda skydd som fungerar även den dagen en flagga missbedömts. Systemet skyddar variablerna; marginalen skyddar dig."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ En red flag är aldrig en anklagelse — den är en fråga med kostnadskalkyl: vad kostar det att få veta, vad kostar det att inte veta, och vad kostar det att redan ha investerat på ett svar man inte har?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Red flags-master — flagga, detektor, gräns, åtgärd\",\"rader\":[[\"Flagga\",\"Detektor\",\"Varningsgräns\",\"Åtgärd\"],[\"FCF-tillväxt utan OCF-tillväxt\",\"Kap 5\",\"FCF växer, OCF platt\",\"Normalisera capex; granska kapitalbas\"],[\"Capex under avskrivningar\",\"Capex/avskrivningar, 5 år\",\"Under 0,7 tre år i rad\",\"Beräkna uppskjuten bördan\"],[\"Fakturaförsäljning i löpande\",\"Sök factoring/securitization\",\"Program täcker stor del av fordringar\",\"Räkna om OCF utan program\"],[\"DPO-hopp\",\"DPO mot peers\",\"Engångshopp 15+ dagar sedan plateå\",\"Beräkna boosten; läs noter om SCF\"],[\"Engångsposter i OCF\",\"Kvartalsdata + noter\",\"Mer än en post samma år\",\"Hållbart OCF; frekvensbedömning\"],[\"Ökande aktiveringsgrad\",\"Not immateriella; kapitaliseringsandel\",\"Stigande vid resultattopp\",\"Räkna om OCF: dra av aktiveringar\"],[\"OCF långt över vinst\",\"Hållbart OCF/resultat\",\"Över 2 utan förklaring\",\"Rensa; misstänk one-offs och knep\"],[\"IFRS 16-jämförelse felaktig\",\"Finansieringsfacket: leasingamortering\",\"OCF-hop 2019 mot 2018\",\"Lease-justerad FCF\"],[\"Ränteklassning byts\",\"Not 1; årsjämförelse\",\"Principändring utan omräkning\",\"Normalisera hela serien\"],[\"'Övrigt' stort i löpande facket\",\"Kassaflödesanalysens rader\",\"Stor oförklarad post\",\"Begär uppdelning\"],[\"Utdelning över hållbar FCF\",\"Kap 11 + 13\",\"Positiv utdelning, negativ hållbar FCF\",\"V19-larm; emissionsprognoss\"],[\"Dubbelknepet\",\"DSO faller + DPO stiger samma år\",\"Båda samtidigt\",\"Räkna om året utan båda\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: kör hela red flags-mastern på ditt bolag — tretton flaggor, en eftermiddag. Notera för varje flagga: grön (inget fynd), gul (fynd med oskyldig möjlig förklaring — skriv den) eller röd (fynd utan förklaring). Räkna antal gula och röda. Tillämpa tumregeln: en röd = läs noten igen; två i samma funktion = räkna om året; tre i olika funktioner = avsluta tills förklaring finns. Skriv en slutmening: hur många flaggor, vilken är starkast, och vad skulle den enklaste förklaringen vara — och vad kostar det dig om den enklaste förklaringen är fel?"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är skillnaden i bevisvärde mellan en red flag och ett mönster?",
+          "alternativ": [
+            "Ingen — varje flagga är en anklagelse",
+            "En flagga är en fråga med ofta oskyldig förklaring; mönster — flera flaggor i kombination — bär bevisstyrka och kan avsluta en analys",
+            "Mönster är alltid oskyldiga",
+            "Flaggor gäller bara amerikanska bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad ändrar sig när DPO-hoppet OCKSÅ sammanfaller med fakturaförsäljning och engångsposter?"
+        },
+        {
+          "q": "Vad är den korrekta läsordningen enligt kapitlet?",
+          "alternativ": [
+            "Presentationer först (lättast), noter om tid finns, kvartalsdata aldrig",
+            "Kvartalsdata före årsdata, noter före presentationer, tre beräkningar, två jämförelser, en prövning",
+            "Räkna FCF först, läs sedan allt i slumpordning",
+            "Läs bara VD-brevet"
+          ],
+          "ratt": 1,
+          "tips": "Vilket material är jobbigast — och vad sa kapitlet om var övertaget sitter?"
+        },
+        {
+          "q": "HELA branschens OCF hoppar samtidigt ett år (till exempel vid IFRS 16). Vad är den korrekta tolkningen?",
+          "alternativ": [
+            "Alla bolag manipulerar samtidigt",
+            "En regelverksförändring — flaggan är avvikelsen MOT branschen, inte förändringen mot föregående år",
+            "Branschdata är alltid felaktiga",
+            "Det är en slump och ska ignoreras"
+          ],
+          "ratt": 1,
+          "tips": "Vad är information: nivån mot normalen eller förändringen mot igår?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Kontrollprogrammet — V19 kapitalförbränning och tre-raders-disciplinen",
+      "intro": "Bokens metod blir AKM1-variabel: V19 — kapitalförbränning och emissionrisk, vikten KRITISK. Detta kapitel bygger kontrollprogrammet: tre rader som alltid läses tillsammans, bränntakt och runway i siffror, och det kvartalsvisa protokollet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "AKM1:s syntes av boken kan formuleras i en enda regel, och den är kursens kanske viktigaste mening: V19 kräver operativt kassaflöde, capex och emissioner tillsammans — aldrig en enskild rad. Varför just de tre? Därför att bokens samtliga knep verkar på minst en av dem och bara syns i samspelet: OCF kan lyftas (kapitel 6-9), capex kan svältas (kapitel 5), och gapet kan fyllas av emissioner och ny skuld som inte syns alls om du inte läser finansieringsfacket (kapitel 10). En analys som tittar på OCF ensam köper berättelsen; en som tittar på FCF ensam köper definitionen; bara de tre raderna tillsammans visar systemets sanning: alstrar verksamheten kassa, vad underhållet kostar, och vem som betalar resten. Detta är också kursens svar på kontroversen i nästa kapitel: eftersom varje enskild rad går att skrula upp, är den enda försäkringen att aldrig läsa en enskild rad."
+        },
+        {
+          "type": "text",
+          "content": "Bränntakt och runway — räkneläran i V19. Kapitalförbränning per år = hållbart OCF minus normaliserat capex (negativt tal = förbränning). Räkneexempel: ungt bolag med OCF minus 60 Mkr, capex minus 35 Mkr (varav bedömt underhåll minus 20) — förbränning cirka minus 95 Mkr per år; kassa 120 Mkr plus outnyttjad kredit 60 Mkr = 180 Mkr tillgängligt; runway = 180/95 ≈ 1,9 år, ungefär 22 månader — och varje kvartal med oförändrad bränntakt äter drygt 24 Mkr. Frågan som V19 ställer är sedan empirisk, inte spekulativ: vad händer vid månad 22? Tre möjligheter — lönsamhetsvändning (kraftigt minskande bränn i kvartalsdata: döm sannolikheten mot historiken hos liknande bolag), emission (utspädning: beräkna effekten på ditt ägande om 180 Mkr tas in på dagens kurs — ofta 15-30 procent utspädning), eller tvångsåtgärd (försäljning, nedskärning, konkurs). V19:s kärna: emissionrisken är en PRISFRÅGA på din position — du äger en option på framtidens kapitalstruktur, och dess värde räknas i månader av runway."
+        },
+        {
+          "type": "text",
+          "content": "Det kvartalsvisa protokollet — kontrollprogrammets praktiska form. Ett kalkylblad, sex kolumner, en rad per kvartal: (1) OCF ackumulerat och rullande tolv månader; (2) engångsposter identifierade i kvartalet (kapitel 8:s katalog); (3) capex och normaliserat capex; (4) förändring i fakturering/factoring-användning och DPO (kapitel 6-7); (5) finansieringsfacket: emissioner, konvertibler, ny räntebärande skuld, reverse factoring (kapitel 7, 10); (6) kassa och outnyttjade kreditramar. Tre läsningsregler: trenden i rullande tolv månader väger tyngre än något enskilt kvartal; kassan VISAR framtiden bara om bränntaket är stabilt — ett kvartal med extra emission utan minskad bränntakt är en diagnos i sig; och varje flagga i kapitel 12:s master som tänder i protokollet får en rad med förklaring eller utan åtgärd att vänta. Protokollets filosofi är bokens: kapitalförbränning är en HASTIGHET, och hastigheter kan bara mätas upprepat — en årlig läsning är en fotografi av en rörelse."
+        },
+        {
+          "type": "text",
+          "content": "Scoring och beslut — hur kontrollprogrammet mynnar i positionen. Bygg en enkel poängskala för V19-bedömningen i kursens anda: grön (hållbar FCF positiv tre år i rad, kassa växer, emissioner obetydliga, inga flaggor i kapitel 12:s master), gul (hållbar FCF runt noll eller negativ med tydlig förbättringstrend i kvartalsprotokollet, runway över 24 månader, enskilda flaggor med förklaring), röd (negativ hållbar FCF utan trendförbättring, runway under 18 månader, återkommande emissioner eller flera samverkande flaggor). Koppla till portföljlogiken: gröna bolag kan värderas (V04-V06) på vanligt sätt; gula kräver premie på avkastningskravet och marginal of safety mot konservativt värde; röda är inte köpobjekt oavsett multipel — en låg multipel på en emission i vardande är inte en rabatt utan en notering om vad emissionen kommer kosta. Och kom ihåg kursens hela poäng i en mening: V19 heter kapitalförbränning, men den mäter i grunden TROVÄRDIGHET — ett bolag vars kassaflödesberättelse håller för omräkning är värt mer än dess multipel säger, och ett bolag vars berättelse bara håller för presentationen är värt mindre."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ V19 är tre rader därför att varje enskild rad kan målas — OCF av knep, capex av svält, emissioner av tystnad; först tillsammans bildar de en figur som inte kan fotnotas bort: sanningen om vem som betalar för tillväxten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V19-kontrollprogrammet — rad, fråga, källa, röd gräns\",\"rader\":[[\"Rad\",\"Fråga\",\"Källa\",\"Röd gräns\"],[\"1. OCF (hållbart)\",\"Alstrar verksamheten kassa efter rensning?\",\"Kvartals- och årsdata + noter (kap 8)\",\"Negativt eller fallande trenden\"],[\"2. Capex (normaliserat)\",\"Görs underhållet?\",\"Capex mot avskrivningar och peers (kap 5)\",\"Kronisk svält under 0,7\"],[\"3. Emissioner och ny skuld\",\"Vem fyller gapet — och hur ofta?\",\"Finansieringsfacket, konvertibler, SCF (kap 7, 10)\",\"Återkommande emissioner utan minskad bränning\"],[\"Bränntakt\",\"Hållbart OCF − normaliserat capex\",\"Eget protokoll\",\"Minus utan förbättringstrend\"],[\"Runway\",\"(Kassa + outnyttjad kredit) / bränntakt\",\"Balansräkning + protokoll\",\"Under 18 månader\"],[\"Utdelningsprövning\",\"Backas utdelning av hållbar FCF?\",\"Kap 11\",\"Utdelning över hållbar FCF\"],[\"Flaggor\",\"Hur många i kap 12:s master?\",\"Red flags-mastern\",\"Tre eller fler i olika funktioner\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: bygg V19-protokollet klart: sex kolumner, åtta kvartal bakåt, för ditt bolag (eller ett tillväxtbolag du är nyfiken på). Beräkna bränntakt per kvartal och rullande tolv månader, runway i månader, och utspädningseffekten om gapet måste fyllas med en emission på dagens kurs. Sätt slutligen V19-bedömning: grön, gul eller röd — med en motivering per rad i tabellen ovan. Detta arket är kursens slutprodukt: en kapitalförbränningsdiagnos som skulle godkännas av professorerna själva."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kräver V19 tre rader — OCF, capex och emissioner — tillsammans?",
+          "alternativ": [
+            "Därför att tre rader ser mer professionellt ut i rapporten",
+            "Därför att bokens samtliga knep verkar på minst en av raderna och bara syns i samspelet — en enskild rad kan alltid skrulas upp",
+            "Därför att emissioner bestämmer aktiekursen",
+            "Därför att capex och OCF alltid är lika stora"
+          ],
+          "ratt": 1,
+          "tips": "Vilken enskild rad i kursen har visat sig omöjlig att måla?"
+        },
+        {
+          "q": "Hållbart OCF minus 60 Mkr, normaliserat capex minus 35 Mkr, kassa 120 Mkr, outnyttjad kredit 60 Mkr. Ungefär hur lång är runway?",
+          "alternativ": [
+            "Cirka 22 månader — (120 + 60) / 95 ≈ 1,9 år",
+            "Cirka 5 år",
+            "Oändlig — bolaget har kredit kvar",
+            "Cirka 2 månader"
+          ],
+          "ratt": 0,
+          "tips": "Bränntakt = 60 + 35 = 95 per år; tillgängligt = 180."
+        },
+        {
+          "q": "Ett bolag med negativ hållbar FCF, runway under 18 månader och återkommande emissioner handlas till mycket låg multipel. Vad säger V19-logiken?",
+          "alternativ": [
+            "Låg multipel = köp — kursen har redan prissatt problemet",
+            "Låg multipel är inte en rabatt utan en notering om vad nästa emission kommer kosta — röda bolag är inte köpobjekt oavsett multipel",
+            "Multipeln är irrelevant eftersom bolaget snart vänder",
+            "Man ska köpa och korta samtidigt"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med ditt ägande när gapet fylls med nyemission på dagens kurs?"
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 11,
+      "title": "Kontroversen — myten att kassaflödet inte kan manipuleras",
+      "intro": "Kursens hjärta: den mest spridda sanningen i modern aktieanalys — 'vinst är en åsikt, kassa är ett faktum, titta på FCF istället' — är en halvsanning med en farlig andra hälft. Detta kapitel för kontroversen på båda sidor och slutar med medgivandet.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Myten först, och den förtjänar respekt. Efter vinstbluffarnas era — Enron, WorldCom, hela 2000-talets första hälft — lärde en hel generation investerare sig mantrat: räkna inte på vinsten, räkna på kassan. 'Vinst är en åsikt, kassa är ett faktum.' Ropet spreds av värdeinvesterare, kortsförsäljare, finansiell press och i dag av i princip varje aktiepodcast: 'titta på FCF istället' framställs som universalbotemedel — den ende sanningssägaren i årsredovisningen. Och mantrat är HALVT sant, och den halvan är viktig: kontanter är svårare att förfalska än antaganden, utdelning kan inte fotnotas, och OCF-kravet har avslöjat fler bluffar än någon annan enskild regel. Problemet är inte att mantrat är falskt — problemet är att det är tillräckligt sant för att köpa tilltro till sin falska halva: att kassaflödesANALYSEN, som redovisad och som FCF-beräkning, vore ett faktum i stället för en konstruktion."
+        },
+        {
+          "type": "text",
+          "content": "Bokens whole point — och hela denna kurs — är den andra halvan: FCF är också konstruerat, på fyra oberoende sätt. (1) Definitionen: FCF finns inte i rapporten; det är en beräkning där val av capex-definition, räntebehandling och leasingbehandling bestämmer resultatet (kapitel 4). (2) OCF-raden: klassificering, engångsposter och timing kan lyfta den utan affärsförändring (kapitel 6-9). (3) Nämnaren i subtraktionen: capex är ledningens beslut — svultet underhåll förvandlar FCF-trend till fiktion (kapitel 5). (4) Regelverken: IFRS 16 höjde OCF mekaniskt för en hel bransch (kapitel 10) — beviset på att 'sanningen' i rapporten är en funktion av skrivna regler, inte av verklighet. Den som byter vinsttron mot FCF-tron utan omräkning har därför inte bytt manipulation mot sanning — han har bytt en manipulerbar siffra mot en annan, och värre: mot en han tror är immun, vilket gör honom lättare att lura, inte svårare. Detta är också kursens svar på varför mantrat överlever: det är bekvämt. Omräkningen — noter, kvartalsdata, peers — är jobbig; mantrat är gratis."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — varför ekosystemet löser kontroversen med struktur i stället för mantra. Eftersom varje enskild rad går att måla, ger AKM1 ingen enskild rad förtroende: V19 läser OCF, capex och emissioner TILLSAMMANS (kapitel 13), med V10 (skuldsättning) och V11 (likviditet) som kontroll av finansieringsfacket och V12 (intäktsstabilitet) som kontroll av intäkternas konverterbarhet till kassa. Strukturen är immun mot mantratets svaghet av samma skäl som en triangel är stabilare än en stapel: varje rad kontrolleras av de andra. OCF kan lyftas — men då avslöjas det av capex-svält eller av finansieringsfackets emissioner; FCF kan definieras smickrande — men då kräver V19 normaliserat capex; emissioner kan tigga tyst — men bara om du inte läser finansieringsfacket, vilket protokollet alltid gör. Filosofin är bokens egen, hårdare formulerad: FÖRTROENDE ska ges åt metoder, inte åt mått. Måttet 'FCF' är en produkt; metoden — omklassificera, rensa, normalisera, pröva — är det enda som producerar en siffra värd att lita på."
+        },
+        {
+          "type": "text",
+          "content": "Medgivandet — kursens ärlighet mot sig själv, och det är viktigt. Detektering av kassaflödesmanipulation har ett pris, och priset är arbete: det kräver noter (inte presentationer), kvartalsdata (inte årsdata), peer-jämförelser (inte isolerade tal) och omräkning (inte läsning) — det är jobbigt, och det förblir jobbigt; det finns ingen genväg, ingen enkel screener, ingen enskild nyckeltal som ersätter arbetet. Vidare: även metoden har gränser — vissa knep (svultet capex under en kort period, väl undangömd reverse factoring) kan missas även av den flitigaste detektiv, och därför är marginal of safety inte dekoration utan nödvändighet: priset med marginal mot konservativt räknat värde är det enda skydd som fungerar även när detektiven haft fel. Medgivandet avslutar kontroversen ärligt: mantrat 'titta på FCF' är billig trygghet; bokens metod är dyr sanning; och den enskilde investerarens val är enkelt att beskriva och svårt att utföra — betala priset för sanningen eller köp marginalen som försäkring. Helst båda. Det är inte en bekväm slutsats, och det är avsiktligt."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ 'Vinst är en åsikt, kassa är ett faktum' — men FCF är en produkt med produktionskostnad: notläsning, kvartalsdata, peers och omräkning; den som inte betalar kostnaden köper inte fakta — han köper förpackningen."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — myt mot verklighet\",\"rader\":[[\"Mantrat\",\"Verkligheten\",\"Kurskapitel\"],[\"Kassa kan inte förfalskas\",\"Bankrörelsen inte — men FÖRDELNINGEN mellan facken är politik\",\"Kap 2, 9\"],[\"Titta på FCF istället\",\"FCF är en beräkning — definitionen väljer resultatet\",\"Kap 4\"],[\"OCF visar verksamheten\",\"OCF kan lyftas av factoring, sträckning, engångsposter\",\"Kap 6-8\"],[\"Stigande FCF = förbättring\",\"Kan vara svultet capex — verksamheten förfaller\",\"Kap 5\"],[\"En bra multipel på FCF räcker\",\"Nämnaren kräver granskning och omräkning — annars multiplicerar du en berättelse\",\"Kap 11-12\"],[\"Det finns en genväg\",\"Detektering kräver noter, kvartalsdata, peers, omräkning — jobbigt men nödvändigt; marginal of safety som säkerhetsnät\",\"Kap 14\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Detektivövning: testa mantrat på dig själv. Sök upp två aktieanalyser eller poddavsnitt om bolag du känner och notera var 'titta på FCF' eller 'kassa är kassa' används som SLUTARGUMENT (alltså utan omräkning). Fråga sedan de tre motfrågorna: vilken FCF-definition, vilket capex, och vilka emissioner? Skriv en kort notis om vad svaret skulle kunna förändra i slutsatsen. Övningens poäng är blygsamt och viktig: du ska inte sluta använda FCF — du ska sluta använda det obeväpnat."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är 'myten' enligt kapitlet?",
+          "alternativ": [
+            "Att vinst är en åsikt",
+            "Att kassaflödet inte kan manipuleras och att 'titta på FCF istället' är ett universalbotemedel — FCF också är en konstruktion av definitioner, klassificeringar och capex-beslut",
+            "Att utdelning kräver kassa",
+            "Att bolag kan gå i konkurs"
+          ],
+          "ratt": 1,
+          "tips": "Halvsanningens farliga halva handlar om vilken status FCF-siffran tillskrivs."
+        },
+        {
+          "q": "Varför gör mantrats halvsanning det farligare än en ren lögn?",
+          "alternativ": [
+            "Därför att den är svår att förstå",
+            "Därför att dess sanna halva köper tilltro till den falska — investeraren tror FCF-siffran är immun och slutar granska den, vilket gör honom lättare att lura",
+            "Därför att den bara gäller i USA",
+            "Därför att den sprids via sociala medier"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med vaksamheten hos den som tror att han redan har den oförfalskbara siffran?"
+        },
+        {
+          "q": "Vad är kursens medgivande i kontroversen?",
+          "alternativ": [
+            "Att FCF ändå är bättre än allt annat och ingen omräkning behövs",
+            "Att detektering kräver noter och kvartalsdata — jobbigt men nödvändigt — och att även den bästa metod kan missa, varför marginal of safety är nödvändig",
+            "Att kontroversen är irrelevant för praktisk analys",
+            "Att man ska undvika bolag med kassaflödesanalys"
+          ],
+          "ratt": 1,
+          "tips": "Vad erkänns om både arbetsbördan och metodens gränser?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 11,
+      "title": "Slutsats — den tre-raders-edsvurne analytikern",
+      "intro": "Kursens sista kapitel samlar femton kapitels detektion till en identitet: analytikern som aldrig litar på en enskild rad, som betalar detektivarbetets pris och som skyddar sig med marginal. Med masterprogrammet och slutexaminationen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Kursen i en mening — och den är värd att memorera ordagrant: inte alla kassaflöden är skapade lika, och därför är frågan till varje kassaflödessiffra inte 'hur stor?' utan 'vilken sorts krona?'. En betalande kunds krona, en banks förskott på en såld faktura, en återhållen leverantörsbetalning, en skattemyndighets återbäring, en outnyttjad underhållsbudget — fem sorters kronor, alla redovisade i samma rad, med fem helt olika framtidser. Mulford och Comiskeys bok är den systematiska utredningen av den frågan, skriven av två professorer som sett WorldCom-erans kassaflödesillussioner inifrån amerikansk redovisningsforskning; AKM1:s V19 är frågan förvandlad till variabel med vikten KRITISK. Den som ställer frågan 'vilken sorts krona?' varje gång en kassaflödessiffra presenteras — för sig själv, sin portfölj, sin podd — har förstått kursen; den som dessutom kan räkna om svaret har behärskat den."
+        },
+        {
+          "type": "text",
+          "content": "Trianguleringen komplett — kursens plats bredvid syskonkurserna. Du har nu AKM1:s fulla redovisningskällkritik i tre böcker: Quality of Earnings (O'Glove) lärde vinstens hantverk — DSO, lager, marginaler, engångsposter, avskrivningar; Financial Shenanigans (Schilit) katalogiserade manipulationens schabloner och varianter; Creative Cash Flow Reporting (Mulford & Comiskey) tar den rapport som de andra betraktade som domstol och visar att också den är ett vittne med intressen. Tillsammans: vinsten ifrågasatt, schablonerna katalogiserade, kassan omräknad — och det hela avslutat med noter, kvartalsdata och peers. Metodiskt är släktskapen cirkulärt: O'Gloves tre rapporter (vinst, kassa, noter) är fortfarande ramverket; Schilit ger vinstens frågor; denna kurs ger kassans frågor; noterna är bådas bevismaterial. AKM1:s ekosystem låser cirkeln i praktiken: V01-V09 prövas mot vinstens kvalitet, V19 mot kassans hållbarhet, och marginal of safety — principen utan V-nummer — skyddar helheten mot det fall där båda detektorssystemen ändå missade."
+        },
+        {
+          "type": "text",
+          "content": "Masterprogrammet — den årliga och kvartalsvisa rutinen, samlad. Kvartals (en timme per bolag): uppdatera V19-protokollets sex kolumner (kapitel 13); notera engångsposter och förändringar i fakturering/DPO; kontrollera finansieringsfacket mot emissioner och reverse factoring. Årligen (en eftermiddag per bolag): kör kapitel 12:s red flags-master — tretton flaggor; genomför kapitel 11:s anpassade FCF-analys i två kolumner med källor; beräkna hållbart OCF/resultat och hållbar FCF-yield; pröva utdelning och återköp mot hållbar FCF (V20); jämför DSO, DPO, capex-andel och aktiveringsgrad mot minst två peers. Vid varje regeländring (IFRS, K3-revisioner, nya klassningspraxis): läs not 1 först och omräkna serien bakåt — regelverkets fingeravtryck ska aldrig läsas som bolagets förtjänst. Programmet är avsiktligt repetitivt: detsamma varje kvartal, varje år, varje bolag — därför att detektivens styrka inte är genialitet utan rutinens täckning."
+        },
+        {
+          "type": "text",
+          "content": "Slutexaminationen och avskedet. Kursens slutuppgift är kapitel 13:s utmaning fullföljt och utvidgad: ett bolag, valt av dig, genom hela verktygsboken — red flags-master, anpassad FCF-analys, V19-protokoll med runway och utspädningsberäkning, peer-jämförelser — dokumenterat i två kolumner (redovisat mot justerat) med källa vid varje rad. Bedömningen är enkel: om en utomstående med kursen i hand kan följa dina justeringar och komma fram till samma hållbara FCF har du utfört arbetet; om inte, saknar en justering källa och ska bort. Avsluta med minnesregeln från kapitel 1, nu i dess slutgiltiga form: kassaflödet ljuger mindre än vinsten — och den som vet NÄR det ändå ljuger, VAD som kan göras åt det och VAD det kostar i arbete, äger den mest underskattade edge som finns i aktieanalys: att läsa den rapport alla andra tittar på men ingen faktiskt läser. Boken citeras och återges öppet i kursen — professorernas arbete förtjänar det, och din analys förtjänar grundvalen."
+        },
+        {
+          "type": "insikt",
+          "content": "◆ Kassaflödesanalysen är årsredovisningens mest lästa och minst lästa sida — mest tittad på, minst granskad; den analytiker som bygger sin omräkning med källor äger den enda versionen av rapporten som inte är skriven av bolaget."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Masterprogrammet — frekvens, moment, kurskapitel\",\"rader\":[[\"Frekvens\",\"Moment\",\"Kapitel\"],[\"Kvartals\",\"V19-protokoll: sex kolumner, bränntakt, runway\",\"Kap 13\"],[\"Kvartals\",\"Engångsposter, fakturering, DPO, finansieringsfacket\",\"Kap 6-8, 10\"],[\"Årsvis\",\"Red flags-master — tretton flaggor mot peers\",\"Kap 12\"],[\"Årsvis\",\"Anpassad FCF-analys i två kolumner med källor\",\"Kap 11\"],[\"Årsvis\",\"Nyckeltal: hållbart OCF/resultat, hållbar FCF-yield\",\"Kap 11\"],[\"Årsvis\",\"Utdelning och återköp mot hållbar FCF (V20)\",\"Kap 11, 13\"],[\"Vid regeländring\",\"Not 1 först; omräkning av serien bakåt\",\"Kap 10, 14\"],[\"Alltid\",\"Tre rader tillsammans — aldrig en enskild rad; marginal of safety som säkerhetsnät\",\"Kap 13-15\"]]}"
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        },
+        {
+          "type": "utmaning",
+          "content": "🎯 Slutexamination: välj ett bolag och kör hela kursen på det — från kapitel 2:s anatomi till kapitel 13:s V19-protokoll. Leverera: (1) tvåkolumnsanalysen från kapitel 11 med källa vid varje rad; (2) red flags-mastern från kapitel 12 med grön/gul/röd per flagga; (3) V19-protokollet med bränntakt, runway och utspädningsberäkning; (4) en slutmening som börjar 'vilken sorts krona...' och svarar på den frågan för bolagets senaste OCF-siffra. Om du kan försvara varje rad inför en skeptiker med kursen i handen har du inte bara läst Creative Cash Flow Reporting — du kan det. 2000 XP senare är professorernas metod din."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kursens sammanfattande fråga till varje kassaflödessiffra?",
+          "alternativ": [
+            "Hur stor är siffran?",
+            "Vilken sorts krona — en betalande kunds, en banks förskott, en återhållen leverantörsbetalning, en återbäring eller en outnyttjad underhållsbudget?",
+            "Vilket år publicerades rapporten?",
+            "Vilken multipel handlas bolaget till?"
+          ],
+          "ratt": 1,
+          "tips": "Fem sorters kronor, en rad — vad skiljer dem åt?"
+        },
+        {
+          "q": "Hur förhåller sig denna kurs till Quality of Earnings och Financial Shenanigans?",
+          "alternativ": [
+            "De tre motsäger varandra och man måste välja en",
+            "O'Glove gav ramverket (tre rapporter), Schilit katalogiserade vinstschablonerna, och denna kurs visar att kassaflödesanalysen — rapporten de andra betraktade som domstol — också är ett vittne med intressen",
+            "Schilit och Mulford skrev boken tillsammans",
+            "Kurserna behandlar samma fråga med identiska verktyg"
+          ],
+          "ratt": 1,
+          "tips": "Vem ifrågasatte vittnet — och vilket vittne var det?"
+        },
+        {
+          "q": "Vad är slutexaminationens kvalitetskriterium för den anpassade FCF-analysen?",
+          "alternativ": [
+            "Att den ger den högsta FCF-siffran",
+            "Att en utomstående med kursen i hand kan följa varje justering till dess källa och nå samma hållbara FCF — annars saknar justeringen källa och ska bort",
+            "Att den matchar bolagets egen presentation",
+            "Att den ryms på en sida"
+          ],
+          "ratt": 1,
+          "tips": "Vad skiljer en analys från en åsikt — och vad krävs för att en annan ska kunna reproducera den?"
+        }
+      ]
+    }
+  ]
+}

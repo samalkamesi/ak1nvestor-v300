@@ -156,13 +156,61 @@ function klassificera(forhallande: number | null, ncavPerAktie: number | null): 
   return "ej";
 }
 
-/** Hämta balansräkning + pris + nyckeltal för EN ticker och räkna NCAV. Kastar aldrig. */
+/** Hämta balansräkning + pris + nyckeltal för EN ticker och räkna NCAV. Kastar aldrig.
+ *
+ * Balansdata: fundamentals-timeseries på query2 (Yahoo pensionerade både
+ * balanceSheetData och balanceSheetHistory i quoteSummary). Totala skulder
+ * approximeras som rörelseskulder + långfristig skuld — pensioner/leasing
+ * utanför dessa debiteras ej (dokumenterad approximation, konservativ är den
+ * inte — men Graham-skolans 2/3-marginal absorberar det).
+ */
 async function hamtaNetnet(ticker: string): Promise<NetnetRad> {
   const tom: NetnetRad = { ticker, kurs: null, ncavPerAktie: null, forhallande: null, klass: null };
   try {
     if (!TICKER_RE.test(ticker)) {
       return { ...tom, fel: "ogiltig ticker" };
     }
+
+    // ── 1) Balansposter via fundamentals-timeseries (ingen crumb krävs) ──
+    const tsTyper = [
+      "annualCurrentAssets",
+      "annualCurrentLiabilities",
+      "annualLongTermDebt",
+      "annualShareIssued",
+    ].join(",");
+    const nu = Math.floor(Date.now() / 1000);
+    // OBS: Yahoo timeseries returnerar tomma serier om period1 fönstras —
+    // hela historik (period1=0) är det enda mönster som levererar data.
+    const tsUrl =
+      `https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/` +
+      `${urlKoda(ticker)}?type=${tsTyper}&period1=0&period2=${nu}&merge=false`;
+    const tsRes = await fetch(tsUrl, {
+      headers: { "User-Agent": "Mozilla/5.0 (AK1A)" },
+      redirect: "error",
+      cache: "no-store",
+      signal: AbortSignal.timeout(8000),
+    });
+    const tsJson: any = await tsRes.json();
+    const tsResultat: Array<Record<string, any>> = tsJson?.timeseries?.result ?? [];
+    const sistaVardet = (typ: string): number | null => {
+      // OBS: meta.type levereras som ARRAY (["annualX"]) — läs första elementet
+      const serie = tsResultat.find((x) => String(x?.meta?.type?.[0] ?? x?.meta?.type ?? "") === typ);
+      const punkter = serie?.[typ];
+      if (!Array.isArray(punkter)) return null;
+      for (let i = punkter.length - 1; i >= 0; i--) {
+        const rå = punkter[i]?.reportedValue?.raw;
+        if (typeof rå === "number" && Number.isFinite(rå)) return rå;
+      }
+      return null;
+    };
+    const omsattningstillgangar = sistaVardet("annualCurrentAssets");
+    const rorelseskulder = sistaVardet("annualCurrentLiabilities");
+    const langfristigSkuld = sistaVardet("annualLongTermDebt");
+    const aktierUrSerie = sistaVardet("annualShareIssued");
+    const totalaSkulder =
+      rorelseskulder !== null ? rorelseskulder + (langfristigSkuld ?? 0) : null;
+
+    // ── 2) Kurs + namn + bonusnyckeltal via quoteSummary (crumb) ──
     const par = await yahooCrumb();
     if (!par) {
       return { ...tom, fel: "ingen data (cookie/crumb)" };
@@ -171,7 +219,7 @@ async function hamtaNetnet(ticker: string): Promise<NetnetRad> {
     await kontrolleraHost(host);
     const url =
       `https://${host}/v10/finance/quoteSummary/${urlKoda(ticker)}` +
-      `?modules=balanceSheetData,defaultKeyStatistics,financialData,price&crumb=${urlKoda(crumb)}`;
+      `?modules=defaultKeyStatistics,financialData,price&crumb=${urlKoda(crumb)}`;
     const r = await fetch(url, {
       headers: { "User-Agent": "Mozilla/5.0 (AK1A)", Cookie: cookie },
       redirect: "error",
@@ -179,7 +227,6 @@ async function hamtaNetnet(ticker: string): Promise<NetnetRad> {
       signal: AbortSignal.timeout(8000),
     });
     const resultat = ((JSON.parse(await r.text())["quoteSummary"] ?? {})["result"] ?? []) as Array<{
-      balanceSheetData?: Record<string, unknown>;
       defaultKeyStatistics?: Record<string, unknown>;
       financialData?: Record<string, unknown>;
       price?: Record<string, unknown>;
@@ -187,20 +234,17 @@ async function hamtaNetnet(ticker: string): Promise<NetnetRad> {
     if (resultat.length === 0) {
       return { ...tom, fel: "ingen data (Yahoo)" };
     }
-    const bs = resultat[0].balanceSheetData ?? {};
     const k = resultat[0].defaultKeyStatistics ?? {};
     const f = resultat[0].financialData ?? {};
     const p = resultat[0].price ?? {};
 
     // Balansräkningens två hörnstenar
-    const omsattningstillgangar = tal(bs, "totalCurrentAssets");
-    const totalaSkulder = tal(bs, "totalLiabilities");
-
     // Kurs: price-modulens regularMarketPrice, fallback financialData.currentPrice
     const kurs = tal(p, "regularMarketPrice") ?? tal(f, "currentPrice");
 
-    // Aktieantal: sharesOutstanding, fallback marketCap ÷ kurs
-    let aktier = tal(k, "sharesOutstanding");
+    // Aktieantal: balansseriens annualShareIssued, fallback sharesOutstanding/marketCap
+    let aktier = aktierUrSerie;
+    if (aktier === null || aktier <= 0) aktier = tal(k, "sharesOutstanding");
     if (aktier === null || aktier <= 0) {
       const marketCap = tal(p, "marketCap");
       if (marketCap !== null && kurs !== null && kurs > 0) {

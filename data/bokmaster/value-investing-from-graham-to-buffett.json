@@ -1,0 +1,1098 @@
+{
+  "slug": "value-investing-from-graham-to-buffett",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 15,
+  "totalMinutes": 190,
+  "title": "Value Investing: From Graham to Buffett and Beyond — Greenwald: KOMPLETT",
+  "summary": "Bruce Greenwald — professor vid Columbia Business School, där Benjamin Graham skapade ämnet 1928 — samlade 2001, tillsammans med Judd Kahn, Paul Sonkin och Michael van Biema, den moderna värdeinvesteringsläran i en enda bok: value fungerar för att marknaden systematiskt överreagerar, och felprissättningarna går att söka fram, värdera och kontrollera. Kursen går igenom hela hantverket: Grahams arv (Mr Market, säkerhetsmarginal, net-net), tre-stegsprocessen (sök i billiga universum — kopplat till AK1A:s Net-net-skanner /netnet — värdera med TREA metoder: balansräkningsvärde stegrat från kassa via NCAV till återgångsvärde, inkomstvärde som Greenwalds signatur Earnings Power Value: kapitalisera normaliserad vinst UTAN tillväxt, och tillväxtvärde som bara existerar med moat), EPV genomgången med fullständigt räkneexempel, moat- och strategikapitlen (tillväxt utan moat är värdelöst), åtta mästare-porträtt från Buffett till Schloss — och kontroversen där EMH-lägret (Fama-French: value = distress-risk) möter behavioristerna (Greenwald lutar beteende). Kursen kräver att du kan båda lägren — och förstår varför säkerhetsmarginalen fungerar under båda.",
+  "minutes": 13,
+  "xp": 2000,
+  "level": "",
+  "learn": "Förstå varför value fungerar — De Bondt–Thalers överreaktion, LSV:s extrapolering och karriärrisken som gör proffs till tvångssäljare · Behärska Grahams arv: Mr Market, säkerhetsmarginal, net-net och cigarbuttar — och koppla NCAV-delen till Net-net-skannern på /netnet · Köra tre-stegsprocessen: sök, värdera, titta på framtiden · Bygga balansräkningsvärde som stege: kassa → NCAV → återgångsvärde av tillgångar (V05, V10, V11) · Räkna Earnings Power Value — Greenwalds signatur: normaliserad vinst kapitaliserad utan tillränta tillväxt — med fullständigt räkneexempel i tabell (V07–V09, V12) · Förstå varför tillväxt utan moat är värdelöst eller värdeförstörande — och bara betala för tillväxt bakom bevisade hinder (V13–V15) · Mäta moats: leveranskostnad, kundfångenskap, lokala skaltekonomier, nätverkseffekter — plus kapitalfördelning som förstärkare (V20) · Analysera branschstruktur och värdekedja: var sitter vinstpoolen? (V03, V16–V18) · Redogöra för kontroversen: Fama-French riskbaserad förklaring mot behavioristerna — och AK1A:s syntes med medgivanden · Känna de åtta porträtten — Buffett, Gabelli, Greenberg, Heilbrunn, Klarman, Price, Walter och Edwin Schloss — och välja din egen plats i spektrat · Syntetisera Greenwalds hantverk (strukturerad värdering) med Quantitative Value (strukturerad objektivitet) och AKM1 (strukturerad subjektivitet).",
+  "why": "Det här är värdeinvesteringskursens kärnfysik: där Security Analysis är traditionen och Quantitative Value är automatiseringen, är Greenwalds bok HANTVERKET — den enda text som steg för steg lär ut hur man värderar ett bolag med tre metoder i pålitlighetsordning. EPV-metoden (kapitalisera normaliserad vinst utan tillväxt) är kursens signatur och AKM1:s värderingsblock V04–V06 får här sitt fundamental-underlag: en aktie är inte billig för att multiplarna är låga utan för att priset ligger under den mest pålitliga värderingen med marginal. Moat-kapitlen ger V13–V15 deras beviskrav — tillväxt utan moat ska aldrig betalas — och kontroverskapitlet om EMH kontra beteende ger den intellektuella ärligheten: om du inte kan redogöra för båda förklaringarna till value-premien vet du inte vad du blir betald för. Utan den här boken är värdeinvesterandet slogan — med den är det en ingenjörsdisciplin.",
+  "chapters_list": [
+    "1. Bokens kärna — Columbia, Greenwald och sökandet efter value",
+    "2. Varför value fungerar — beteendeförklaringarna",
+    "3. Graham-traditionen — Mr Market, säkerhetsmarginal och cigarbuttar",
+    "4. Tre-stegsprocessen — sök, värdera, titta på framtiden",
+    "5. Steg 1: Sök — billiga universum och Net-net-skannern (/netnet)",
+    "6. Steg 2a: Balansräkningsvärde — steget kassa → NCAV → återgångsvärde",
+    "7. Steg 2b: Earnings Power Value — kapitalisera normaliserad vinst UTAN tillväxt",
+    "8. EPV i siffror — det fullständiga räkneexemplet [illustrativt]",
+    "9. Steg 2c: Tillväxtvärde — tillväxt utan moat är värdelöst (V13–V15)",
+    "10. Mätbara moats — fyra hinder och kapitalfördelningen som förstärkare (V20)",
+    "11. Strategisk analys — branschstruktur och värdekedjan",
+    "12. Kontroversen — EMH slår tillbaka: distress-risk kontra beteende",
+    "13. Åtta porträtt — från Buffett till Schloss",
+    "14. Fallstudien — tre steg på två svenska bolag [illustrativt]",
+    "15. Sammanfattning — värderingens hierarki och V01–V20"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 13,
+      "title": "Bokens kärna — Columbia, Greenwald och sökandet efter value",
+      "intro": "Value Investing: From Graham to Buffett and Beyond publicerades 2001 av Bruce Greenwald, Judd Kahn, Paul Sonkin och Michael van Biema. Men boken är egentligen en institution: Columbia Business Schools value-kurs, där Benjamin Graham grundade ämnet 1928 och där Greenwald på 1990-talet tog stafetten i den Graham–Dodd-tradition som kursen fortfarande bär. Boken skrevs för att överbrygga två världar som sällan möts: akademins forskning om varför value fungerar och utövarnas hantverk för hur det görs.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Stamtavlan först, för den är en del av innehållet. Benjamin Graham undervisade värdeinvesteringsläran vid Columbia från 1928; efter kraschen 1929 skrev han med David Dodd Security Analysis (1934) och sedan The Intelligent Investor (1949) — böcker som kursen BOKMASTER behandlar var för sig. Traditionen fördes vidare av Roger Murray och sedan av Bruce Greenwald, som byggde om kursen till det den är idag: den mest sökta på hela skolan. När Robert Heilbrunn — en av Grahams tidigare medhjälpare som förvaltat pengar sedan 1920-talet — skänkte medel till Columbia grundades år 2001 Heilbrunn Center for Graham and Dodd Investing. Samma år utkom boken. De fyra författarna representerar spännvidden: Greenwald (professor i ekonomi och finansiell teori), Kahn (historiker och analytiker), Sonkin (förvaltare av Hummingbird Value Funds — små, illikvida, försummade bolag) och van Biema (forskare och senare förvaltare). Teori och praktik i samma rum."
+        },
+        {
+          "type": "text",
+          "content": "Bokens grundtes är dubbel. För det första: marknaden är inte perfekt effektiv — felprissättningar uppstår systematiskt, går att identifiera i förväg och ligger inte jämnt utspridda över börsen utan koncentreras där informationen är tunn, analysen är svår eller beteendet är tvunget. Boken öppnar med att ta akademins eget bevis på allvar: forskningen om value-premien (som kapitel 2 och 12 går igenom i detalj) visar att billiga aktier slagit dyra under hela den studerade historiken — och Greenwald menar att premien är ett utnyttjande, inte en riskpremie. För det andra: för att utnyttja felprissättningen krävs ett hantverk — en process. Bokens kärna är tre-stegsprocessen (sök, värdera, titta på framtiden) med tre värderingsmetoder i pålitlighetsordning: balansräkningsvärde, inkomstvärde och tillväxtvärde. Det är den ordningen — från det säkraste beviset till det osäkraste — som skiljer Greenwald från både skärm-akvareller och berättelseinvesterare."
+        },
+        {
+          "type": "text",
+          "content": "Bokens arkitektur, som kursen följer kapitel för kapitel. Del ett: sökandet efter value — varför felprissättningar uppstår och var de bor (kapitel 2 i kursen). Del två: tre-stegsprocessen och de tre värderingsmetoderna — balansräkningsvärde, Earnings Power Value (EPV) och tillväxtvärde med moat-bevis (kapitel 4–9). Del tre: strategin — konkurrensfördelar, branschstruktur och värdekedja, det vill säga moat-läran som gör tillväxt värdefull (kapitel 10–11). Del fyra: åtta porträtt av värdeinvesterare som var och en bevisar en egen inställning av samma metod (kapitel 13). För AK1A är den här boken BOKMASTER-arkens fundamentala pelare: Quantitative Value lär ut att RANKA, Greenwald lär ut att VÄRDERA, och AKM1:s tjugo variabler är checklista över allt som ska passeras på vägen. Kursen avslutas med kontroversen — EMH-anhängarnas riskförklaring mot behavioristernas — eftersom Greenwald själv lutar beteende och därför måste konfronteras med sina bästa kritiker."
+        },
+        {
+          "type": "insikt",
+          "content": "Memorera bokens röda tråd innan du går vidare: en investering är köp under mest pålitliga värdering med marginal — och pålitligheten är en trappa: balansräkningen ljuger minst, normaliserad vinst näst minst, tillväxten mest. I AK1A:s språk: V04–V06 får sin mening först när det finns en värdering under multiplarna, inte bara en rankning bland dem."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Bokens arkitektur — från sökande till porträtt\",\"rader\":[[\"Del\",\"Fråga\",\"Verktyg\",\"Kurs-kapitel\",\"AKM1-koppling\"],[\"I. Sökandet\",\"Varför finns felprissättningar?\",\"beteende- och institutionella förklaringar\",\"2\",\"helhet\"],[\"II. Tre steg\",\"Vad är bolaget värt?\",\"tillgångsvärde, EPV, tillväxtvärde\",\"4–9\",\"V04–V09, V12, V13–V15\"],[\"III. Strategi\",\"Varför skulle värdet bestå?\",\"moats, branschstruktur, värdekedja\",\"10–11\",\"V03, V13–V18\"],[\"IV. Porträtt\",\"Vem har bevisat metoden?\",\"åtta utövare från Schloss till Buffett\",\"13\",\"portföljdesign\"],[\"Grahams arv\",\"Vad är kärnan sedan 1934?\",\"Mr Market, säkerhetsmarginal, net-net\",\"3, 5\",\"V05, V10, V11\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv din egen definition av värdeinvesterande på tre meningar INNAN du går vidare — utan att titta i boken eller kursen. Spara texten med datum. Efter kapitel 15 skriver du definitionen igen och jämför: vad har förändrats — orden, beviskraven eller hela strukturen? Skillnaden mellan de två texterna är kursens faktiska utbyte, mätt på det enda sätt som spelar roll: hur du tänker."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken institutionell tradition står boken i?",
+          "alternativ": [
+            "Chicago-skolans effektivitetsforskning",
+            "Columbia Business Schools value-kurs, grundad av Benjamin Graham 1928 och senare ledd av Greenwald",
+            "Milton Friedmans makrolaboratorium",
+            "MIT:s kvantitativa handelsprogram"
+          ],
+          "ratt": 1,
+          "tips": "Bokens undertitel råder ingen tvekan: from Graham to Buffett — var började ämnet?"
+        },
+        {
+          "q": "Vad är bokens grundtes om felprissättningar?",
+          "alternativ": [
+            "Att de är slumpmässigt utspridda och inte går att söka fram",
+            "Att de inte existerar eftersom marknaden är effektiv",
+            "Att de uppstår systematiskt och koncentreras där information är tunn, analys svår eller beteende tvunget",
+            "Att de bara uppstår i mikrobolag"
+          ],
+          "ratt": 2,
+          "tips": "Sökandet efter value är inte ett slumpfiske — det är en jakt på strukturerade mönster."
+        },
+        {
+          "q": "Vilken ordning står de tre värderingsmetoderna i pålitlighetstrappan?",
+          "alternativ": [
+            "Tillväxtvärde, inkomstvärde, balansräkningsvärde — tillväxten är säkrast",
+            "Balansräkningsvärde, inkomstvärde (EPV), tillväxtvärde — från säkrast till osäkrast",
+            "Inkomstvärde, balansräkningsvärde, tillväxtvärde",
+            "Alla tre är lika pålitliga och kan väljas fritt"
+          ],
+          "ratt": 1,
+          "tips": "Vad ljuger minst — en kassa, en normaliserad vinst eller en tillväxtprognos?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 13,
+      "title": "Varför value fungerar — beteendeförklaringarna",
+      "intro": "Bokens första kapitel — sökandet efter value — börjar med den akademiska utgångspunkten: om effektiva marknader vore hela sanningen skulle värdeinvesterandet vara meningslöst. Greenwald går igenom bevisen för att marknaden misslyckas systematiskt, och förklarar misslyckandena med beteende och institutionella mekanismer — inte med risk. Det är kursens beteendekapitel, och det är medvetet enhälligt: riskmotargumenten får sin egen, rättvis behandling i kapitel 12.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Bevisen, citerade öppet. De Bondt och Thaler (1985), Does the Stock Market Overreact?: de sämsta aktierna under de föregående tre åren (förlorarna) slog de bästa (vinnarna) med i storleksordningen tjugofem procent sammanlagt under de följande tre åren — marknaden pressar förlorare för långt ned och hyllar vinnare för högt, och båda felaktigheterna rättas sedan med kraft. Lakonishok, Shleifer och Vishny (1994), Contrarian Investment, Extrapolation, and Risk: värdeportföljer (billiga på P/B, P/E och P/CF) slog glansportföljer med grovt tio procent per år mätt över femårsperioder — och förklaringen som artikeln främst stödjer är extrapolering: marknaden projicerar glansbolagens tidigare tillväxt och marginaler alldeles för långt in i framtiden och besviks, medan den dömer ut tråkiga bolag alldeles för definitivt. Mönstret är beteende, inte slump: systematisk överreaktion på båda sidor."
+        },
+        {
+          "type": "text",
+          "content": "De psykologiska mekanismerna bakom, ur bokens och forskningens gemensamma arsenal. Anknytning (anchoring): gamla kurser och gamla berättelser vägs för tungt när ny information kommer. Förlustaversion (Kahneman och Tverskys prospektteori): förluster känns ungefär dubbelt så starkt som vinster, vilket gör att ägare av fallande aktier säljer i botten eller vägrar realization — och att köparen av en nedgången aktie kräver en osedvanligt stor rabatt för att ens delta. Flockbeteende och berättelser: det är socialt tryggt att äga det alla andra äger och socialt farligt att ensamt äga det alla överger. Och den kanske viktigaste för en värdeinvesterare: emergence av institutionella tvång. Bokens genomgång av hur proffsägandet är organiserat pekar på karriärrisken — en förvaltare som äger det som är omodernt och underpresterar i arton månader är arbetslös långt innan hon hade rätt — tidsproblemet (kvartalsutvärdering mot fluktuationer som tar år), och index- och mandatregler som tvingar försäljning av exakt det som blivit billigt. Tvångssäljaren är inte irrationell — han är insnörd. Rabatten han lämnar efter sig är strukturell, och den försvinner inte för att den är känd."
+        },
+        {
+          "type": "text",
+          "content": "Boken sammanfattar källorna till felprissättning i tre grupper, och den indelningen är sökandets karta. Ett — information: bolag som är små, oanalysrade, utan institutionell uppmärksamhet; ju färre som tittar, desto större chans att priset är slarvigt. Två — analys: bolag som är svåra att räkna på — pågående tvister, omposteringar, konkursutfårdor, avknoppningar, konstig bokföring — där det krävs arbete som inte lönar sig för en stor förvaltare med kort tidshorisont. Tre — beteende: prispåtryckningar som inte har med värde att göra — tvångsförsäljningar, indexförändringar, fonder som tappar mandat, panik. Konsekvensen är strategisk och blir kursens steg ett: sök där felprissättningarna bor — i billiga, försummade, svåra och tvångsdrabbade universum — inte i genomsnittet av börsen. AKM1-kopplingen är dubbel: din AI-Diagnos-profil talar om vilka av de tre källorna du är bäst lämpad att jaga (tolerans för tristess, för komplexitet, för ensamhet) — och nästa kapitel visar att hela idén är äldre än akademin: den är Grahams."
+        },
+        {
+          "type": "insikt",
+          "content": "Din mest pålitliga motpart är den som MÅSTE sälja — tvångssäljaren betalar dig i rabatt för att han inte kan vänta. Skilj därför alltid på pris och värdeorsak: fråga inte bara är aktien billig, utan VEM tvingades nyss handla den, och varför just då."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra beteendemekanismer och deras rabatter\",\"rader\":[[\"Mekanism\",\"Vad den gör med priset\",\"Var du hittar rabatten\"],[\"Överreaktion och extrapolering\",\"förlorare pressas under värde, glansbolag över\",\"djupt nedvärderade mot 3–5-årssnitt\"],[\"Förlustaversion\",\"bottenförsäljning och vägran att förverkliga\",\"aktier under gamla ankarpunkter, låg P/B\"],[\"Anknytning\",\"gamla kurser vägs för tungt, nyhet vägs för lätt\",\"bolag med förbättrad fundamenta men fallen kurs\"],[\"Karriärrisk och tvång\",\"institutionell försäljning utan värdegrund\",\"index uteslutna, mandat­förluster, avknoppningar, panikdagar\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör din tvångskarta: gå igenom dina senaste fem affärer och klassificera motparten — vem sålde till dig och varför? Tvång, tristess, panik eller analys? Räkna sedan ut hur många av dina bästa affärer som kom från någon annans tvång. Om siffran är hög har du bekräftat bokens tes praktiskt: din kant är inte smartare än marknaden — den är tålmodigare än marknadens mest stressade deltagare."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var huvudfyndet i De Bondt och Thalers överreaktionsstudie från 1985?",
+          "alternativ": [
+            "Att vinnaraktier fortsätter vinna för alltid",
+            "Att förloraraktierna från de föregående tre åren slog vinnaraktierna med grovt 25 procent under de följande tre",
+            "Att marknaden alltid prissätter allt korrekt",
+            "Att små bolag alltid är riskfyllda"
+          ],
+          "ratt": 1,
+          "tips": "Överreaktion betyder att båda ändar av spektrat rättas — vilken ände är köpvärd?"
+        },
+        {
+          "q": "Vilken förklaring till value-premien stödjer LSV-studien från 1994 främst?",
+          "alternativ": [
+            "Att premien är riskkompensation för konkursrisk",
+            "Att marknaden extrapolerar glansbolagens förflutna för långt och dömer ut tråkiga bolag för definitivt — ett beteendefel",
+            "Att value bara fungerar i USA",
+            "Att value beror på räntenivån"
+          ],
+          "ratt": 1,
+          "tips": "Studiens titel innehåller svaret: extrapolation."
+        },
+        {
+          "q": "Varför är institutionella tvång en strukturell källa till felprissättning?",
+          "alternativ": [
+            "Därför att institutioner saknar data",
+            "Därför att förvaltare med karriärrisk och kvartalsutvärdering tvingas sälja det som är omodernt — snett innan det kan visa sig vara billigt",
+            "Därför att tvångsförsäljningar är olagliga",
+            "Därför att index alltid är övervärderade"
+          ],
+          "ratt": 1,
+          "tips": "Fråga inte om säljaren var rationell — fråga om han hade råd att vänta."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 13,
+      "title": "Graham-traditionen — Mr Market, säkerhetsmarginal och cigarbuttar",
+      "intro": "Innan tre-stegsprocessen kommer traditionen den växer ur. Benjamin Graham — författare, professor och förvaltare — gav värdeinvesterandet dess tre eviga verktyg: Mr Market, säkerhetsmarginalen och net-net-kriteriet. Greenwald behåller alla tre men bygger om underlaget: marginalen ska beräknas mot moderna värderingar, inte bara mot bokfört kapital. Det här kapitlet går igenom arvet — och öppnar AK1A:s egen Net-net-skanner på /netnet, som är NCAV-idéns direkta ättling.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Grahams två allegorier är traditionens fundament, citerade öppet. Mr Market: föreställ dig att du delar ägarskap i ett bolag med en partner vid namn Mr Market — en manisk-depressiv person som varje dag erbjuder dig att köpa eller sälja andelar till ett pris som hans humör dikterar. Ibland är han euforisk och priserna absurt höga; ibland förtvivlad och priserna absurt låga. Du är aldrig tvungen att handla med honom — men ju mer han låter humöret styra, desto mer lönar det sig att utnyttja honom. Hansbudskapet är dubbelriktat och kursens kanske viktigaste: marknadens kurs är en tjänst, inte en dom — och den som låter Mr Markets humör definiera sin förmögenhet har bytt roll från ägare till passagerare. Säkerhetsmarginalen: skillnaden mellan värde och pris, inköpt tillräckligt stor för att ala fel i analysen, olyckor i verksamheten och misslyckanden i omdömet ska utplåna marginalen innan de utplånar kapitalet. Marginalen är inte en siffra utan en försäkring — den köper dig rätten att ha fel och ändå klara dig."
+        },
+        {
+          "type": "text",
+          "content": "Grahams operativa arv på balansräkningssidan är net-net-kriteriet, och det förtjänar precision. Net Current Asset Value (NCAV) definieras som omsättningstillgångar minus ALLA skulder — inte bara de kortfristiga — det vill säga allt rörelsekapital som återstår när samtliga fordringsägare betalats, med anläggningstillgångar och verksamhet som gratis tillägg. Grahams köpregel: betala max två tredjedelar av NCAV, sprid över minst ett tiotal bolag, sälj på femtio procents uppgång eller efter två år — vilket som kommer först. Bolagen kallades cigarbuttar: slängda cigarretter med ett sista bloss kvar, plockade gratis från gatan. I Grahams era var de vanliga; idag är de ytterst sällsynta i stora likvida universum — och därmed är kursens första AK1A-länk given: på /netnet kör AK1A:s Net-net-skanner ett fast universum av tjugofem svenska och nordiska bolag mot senaste balansräkning och markerar grönt NET-NET när kursen är under två tredjedelar av NCAV och guld NÄRA när den närmar sig. Skannern är ett pedagogiskt verktyg, inte en köplista — kom ihåg vad kapitel 2 lärde: billigt på pappret är ofta billigt av en strukturell anledning (kapitalförbränning, V19; krympande bransch) — och steg två, värderingen, måste alltid följa steg ett, sökandet."
+        },
+        {
+          "type": "text",
+          "content": "Från Graham till boken: Buffett — Grahams mest berömde elev och medarbetare — höll 1984 ett berömt anförande vid Columbia, The Superinvestors of Graham-and-Doddsville, i vilket han räknade upp en rad värdeinvesterare med gemensam utbildning men helt olika aktieurval som alla slagit marknaden i decennier — ett direkt angrepp på hypotesen att marknaden är effektiv och att resultaten var slump. Buffetts egen bana flyttade metoden från balansräkning till franchise (kapitel 13 återkommer till detta). Greenwalds bok står mitt på linan och är ärlig med båda arven: NCAV och säkerhetsmarginal behålls, men värderingsunderlaget moderniseras — bokfört värde byts mot återgångsvärde (kapitel 6), och Grahams vinstregler ersätts av EPV (kapitel 7). AKM1-mappningen för arvet: V05 (P/B under 1 som Grahams direktaättling), V10 (skuldsättningsgrad — fordringsägarnas täckning), V11 (kvickkvoten — NCAV-beräkningens byggsten) och hela temperamentdisiplinen i Mr Market. Säkerhetsmarginalen själv finns inte som variabel — den är utgången av hela kalkylen."
+        },
+        {
+          "type": "insikt",
+          "content": "Säkerhetsmarginalen är en hierarki, inte en procentsats: ju säkrare värderingsunderlaget — kassa, NCAV, normaliserad EPV, tillväxt med moat — desto mindre marginal kan motiveras, och ju längre ut på osäkerhetstrappan du betalar, desto större marginal krävs. Den som kräver samma marginal mot en kassa som mot en tillväxtprognos har inte förstått trappan."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Grahams verktygslåda — arvet i AKM1\",\"rader\":[[\"Verktyg\",\"Innebörd\",\"AKM1-koppling\"],[\"Mr Market\",\"kursen är en tjänst, inte en dom — handla bara när det gynnar dig\",\"temperamentet bakom alla 20 variabler\"],[\"Säkerhetsmarginal\",\"köp under värde med marginal för fel\",\"utgången av hela AKM1-kalkylen\"],[\"Net-net / NCAV\",\"omsättningstillgångar minus alla skulder; köp under 2/3\",\"V11 kvickkvot, V05 P/B, /netnet-skannern\"],[\"Diversifiering 10–30 bolag\",\"begränsa enskida fiaskons vikt\",\"portföljregeln\"],[\"Säljregel 50 % eller 2 år\",\"tvinga kapitalet vidare till ny billighet\",\"mekanisk exitsdisiplin\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Öppna /netnet i AK1A och kör en skanning av hela universum. Notera hur många gröna NET-NET och hur många gyllene NÄRA som dyker upp. Välj det billigaste icke-finansiella bolaget och ställ tre frågor från kapitel 2: vem är tvungen att sälja det här — eller varför har ingen velat äga det? Brinner bolaget kapital (V19)? Är branschen krympande? Skriv en mening per fråga. Du har nu utfört steg ett korrekt: du har sökt — och förpostat steg två."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur definieras NCAV — Net Current Asset Value — i Grahams net-net-tradition?",
+          "alternativ": [
+            "Omsättningstillgångar minus kortfristiga skulder",
+            "Omsättningstillgångar minus SAMTLIGA skulder — fordringsägarna betalade, anläggningen gratis",
+            "Eget kapital minus immateriella tillgångar",
+            "Börsvärde minus nettoskuld"
+          ],
+          "ratt": 1,
+          "tips": "Graham drog ett hårdare stråk än kvickkvoten — vilka skulle få något om bolaget lades ned?"
+        },
+        {
+          "q": "Vad är poängen med Mr Market-allegorin?",
+          "alternativ": [
+            "Att marknaden alltid har rätt om man bara lyssnar",
+            "Att kurserna styrs av humör och att ägaren aldrig är tvungen att handla — han ska utnyttja humöret, inte följa det",
+            "Att man ska handla så ofta som möjligt",
+            "Att partnerrelationer i bolag är farliga"
+          ],
+          "ratt": 1,
+          "tips": "Vem bjuder och vem bestämmer i allegorin — och vilken roll ska DU ha?"
+        },
+        {
+          "q": "Vad var syftet med Buffetts anförande The Superinvestors of Graham-and-Doddsville (1984)?",
+          "alternativ": [
+            "Att hylla effektiva marknadshypotesen",
+            "Att lansera ett nytt index",
+            "Att visa att flera gemensamt skolade men olika investerare slagit marknaden i decennier — ett angrepp på tanken att marknaden är effektiv",
+            "Att förklara att hans resultat var slump"
+          ],
+          "ratt": 2,
+          "tips": "Anförandet hölls vid ett jubileum — och dess mål fanns i samtiden: akademins effektivitetslära."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 13,
+      "title": "Tre-stegsprocessen — sök, värdera, titta på framtiden",
+      "intro": "Bokens metodiska ryggrad är en process i tre steg: sök där felprissättningarna bor, värdera med metoderna i pålitlighetsordning, och titta på framtiden som sista kontroll — inte första frestelse. Det här kapitlet ger överblicken; kapitel 5–9 fyller varje steg i detalj. Lägg ordningen på minnet: den är bokens mest medvetna designval.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Steg ett — sökandet (kapitel 5): börja inte i genomsnittet av börsen utan i de universum där base rates är bästa: statistiskt billiga aktier, net-nets, avknoppningar, tvångsförsäljningar, försummade småbolag. Poängen är aritmetisk: om den billigaste decilen historiskt slagit den dyraste, börjar den som söker i den billigaste med en medvind — sökandet är en sannolikhetsförstärkare, ingen garanti. Steg två — värderingen (kapitel 6–9): tre metoder, alltid i samma ordning. Balansräkningsvärde: vad är tillgångarna värda, stegrat från kassa till NCAV till återgångsvärde? Inkomstvärde (EPV): vad är den normaliserade vinsten värd kapitaliserad utan tillväxt? Tillväxtvärde: vad är tillväxten värd — men bara om moat-bevis föreligger. Tre — titta på framtiden: strategisk analys av branschstruktur, värdekedja och moat-hot — kapitel 10–11 — plus katalysatorer och kapitalfördelning. Framtiden modifierar och gallrar; den prissätts aldrig först."
+        },
+        {
+          "type": "text",
+          "content": "Varför den ordningen? För att metoderna skiljer sig i beviskraft. Balansräkningen är en redovisad, reviderad, på en dag determinerad storhet — kassa och skulder kan inte analyseras bort (även om återgångsvärdet kräver omdöme). Normaliserad vinst kräver fler bedömningar — cykelns läge, engångsposter, underhållskostnader — men bygger fortfarande på historisk verklighet. Tillväxten är en förmodan om det som inte hänt, och konkurrensens hela historia är att förhoppningar rinner genom fingrarna — därför placeras tillväxten sist, och dess pris regleras av moat-beviset. Metodhierarkin avgör också vilken metod som ska dominera för vilket bolag: finansbolag och kraftbolag värderas främst på balansräkningen (tillgångarna är verksamheten), råvarubolag och cykliska tillverkare på tillgångsvärde som golv plus normaliserad EPV, och franchisebolag på EPV plus moat-bevisad tillväxt. Ett av bokens viktigaste praktiska råd: identifiera vilken typ av bolag du tittar på FÖRE du väljer värderingsmetod — annars hanterar du en råvaruproducent som en franchise och betalar moat-pris för commodity-inkomster."
+        },
+        {
+          "type": "text",
+          "content": "Processen förenar de tre stegen till en beslutsregel: köp när priset ligger under den MEST PÅLITLIGA värderingen med marginal som står i proportion till osäkerheten i just den värderingen. Samma regel rymmer hela det praktiska spektrum som kapitel 13 porträtterar: Schloss stannar på trappans nedersta steg — balansräkningen — och kräver där en måttlig marginal; Buffett går till toppen — franchise — och betalar mer, men bara efter bevis och med moat-marginal mot fel. Båda är värdeinvesterare, båda följer tre-stegsprocessen — de väljer olika punkter på samma pålitlighetsaxel. AKM1-mappningen: söket är V04–V06 (skärmen) plus V11 (genomförbarhet), värderingen är V05–V12 med EPV som beräknande kärna, framtiden är V13–V18 (moat och katalysatorer), riskgrinden är V19, och kapitalstrukturen är V20. Ordningen i din analys ska vara densamma som i boken: skärm först, värdering därefter, berättelse sist — aldrig tvärtom."
+        },
+        {
+          "type": "insikt",
+          "content": "Tre-stegsprocessens disciplin ligger i ordningen, inte i verktygen: sök först (sannolikheten), värdera sedan (beviset), framtiden sist (modifieringen). Varje gång du börjar med framtiden och letar värdering som stöd har du byggt en berättelse — och berättelser prissätts av Mr Market, inte av dig."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre steg — fråga, verktyg, pålitlighet\",\"rader\":[[\"Steg\",\"Fråga\",\"Verktyg\",\"Pålitlighet\",\"AKM1\"],[\"1. Sök\",\"Var bor felprissättningarna?\",\"billiga universum, /netnet, tvångsförsäljningar\",\"base rates — statistisk medvind\",\"V04–V06, V11\"],[\"2a. Tillgångsvärde\",\"Vad är tillgångarna värda?\",\"kassa → NCAV → återgångsvärde\",\"högst — reviderad balansräkning\",\"V05, V10, V11\"],[\"2b. EPV\",\"Vad är verksamheten värd utan tillväxt?\",\"normaliserad vinst ÷ kapitalränta\",\"hög — bygger på historik\",\"V07–V09, V12\"],[\"2c. Tillväxt\",\"Vad är tillväxten värdbar?\",\"moat-bevis, kapitaliserad tillväxt\",\"lägst — en förmodan\",\"V13–V15\"],[\"3. Framtiden\",\"Vad kan förstöra eller förstärka?\",\"branschstruktur, värdekedja, katalysatorer\",\"modifiering — aldrig prisgrund\",\"V03, V16–V18, V19\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Klassificera dina nuvarande innehav enligt trappan: för vilket av dem är balansräkning, EPV respektive tillväxt den dominerande värderingsgrunden — och var i paret pris-mot-värdering köpte du in dig? Skriv per innehav: dominerande metod, marginal vid köp, och om marginalen stod i proportion till metodens osäkerhet. Innehav utan dominerande metod är inte värderade — de är förklarade."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta ordningen i tre-stegsprocessen?",
+          "alternativ": [
+            "Värdera, sök, titta på framtiden",
+            "Sök i billiga universum, värdera med metoder i pålitlighetsordning, titta på framtiden sist",
+            "Titta på framtiden, sök, värdera",
+            "Sök, titta på framtiden, hoppa över värderingen"
+          ],
+          "ratt": 1,
+          "tips": "Vad ska komma först — sannolikheten, beviset eller förhoppningen?"
+        },
+        {
+          "q": "Varför står tillväxtvärde sist i pålitlighetstrappan?",
+          "alternativ": [
+            "Därför att tillväxt alltid är falsk",
+            "Därför att tillväxt är en förmodan om det som inte hänt och konkurrens historiskt sett rinner genom fingrarna — den kräver moat-bevis",
+            "Därför att börsen förbjuder tillväxtvärdering",
+            "Därför att tillväxt bara finns i tekniktjänstebolag"
+          ],
+          "ratt": 1,
+          "tips": "Beviskraft: vad är redan reviderat, vad är historiskt normaliserat, vad är framtidsförhoppning?"
+        },
+        {
+          "q": "Vilken värderingsmetod bör dominera för ett råvaru- eller cykliskt tillverkningsbolag enligt boken?",
+          "alternativ": [
+            "Tillväxtvärde — cykler driver tillväxten",
+            "Bara multipeln på toppvinsten",
+            "Tillgångsvärde som golv plus normaliserad EPV — aldrig moat-pris på commodity-inkomster",
+            "Direktavkastningsmodellen"
+          ],
+          "ratt": 2,
+          "tips": "Vad skyddar dig i botten av cykeln — en berättelse eller balansräkningen?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 13,
+      "title": "Steg 1: Sök — billiga universum och Net-net-skannern (/netnet)",
+      "intro": "Fiska där fisken finns. Bokens söksteg är inte en uppmaning till öppen visdom utan en regel: börja i de universum där felprissättningarna historiskt koncentrerats — statistiskt billiga aktier, net-nets, avknoppningar, tvångssituationer. Kapitlet går igenom universumen, fördjupar NCAV-idén och kopplar den till AK1A:s Net-net-skanner på /netnet — kursens mest direkt operativa länk.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Söklogiken, igenom räknad. Det finns tusentals bolag och din analys tid är ändlig — varje timme på ett slumpvist valt bolag är en timme bort från där base rates är bäst. Bokens sökuniversum, med kapitel 2:s tre felprissättningskällor som kartläggning: ett — statistisk billighet: låg P/B (V05), lågt P/E och EV/EBIT (V04–V06), lågt kurs/kassaflöde; här bor överreaktionens förlorare och tristessens rabatter. Två — balansräkningsextremer: net-nets — kurs under två tredjedelar av NCAV — Grahams cigarbuttar; sällsynta, men där de finns är logiken ren: du betalar mindre än rörelsekapitalet och får resten av bolaget gratis. Tre — strukturella situationer: avknoppningar (spinoffs) där institutioner tvingas sälja av det avknoppade namnet oavsett värde, konkursutfårdor och omstruktureringar där analysen är krånglig, indexförändringar och mandat­förluster där tvånget är rent mekaniskt. Fyra — beteendesignnaler: insiderköp och återköp (V20) där de som känner bolaget bäst köper med pengar. Alla fyra universum har samma egenskap: säljarna skäl behöver inte vara värdegrundade — och därmed kan priset vara det."
+        },
+        {
+          "type": "text",
+          "content": "NCAV-fördjupningen, med AK1A-verktyget. Net-net-skannern på /netnet kör ett fast universum av tjugofem välkända svenska och nordiska bolag mot senaste balansräkning: NCAV beräknas som omsättningstillgångar minus samtliga skulder, tabellen sorteras på kurs/NCAV, grönt NET-NET markeras under Grahams två-tredjedels-tröskel och guld NÄRA strax över. Kör den nu — och läs resultatet som kursen lär: för det första är riktiga net-nets nästan alltid antingen små, illikvida (V11-varning), finansiellt pressade (V19-varning) eller i krympande branscher — det är just därför de är billiga; cigarbutten är slängd PÅ riktigt, inte av misstag. För det andra är skannern steg ETT av tre: den höjer sannolikheten för fynd, men varje kandidat måste vidare till steg två — värdera tillgångarna (kapitel 6), räkna EPV (kapitel 7–8), kontrollera kapitalförbränning och emission-risk (V19) — innan ett köp ens är en kandidat. Grahams egen regel — bred spridning, tiotals bolag, mekanisk säljdisciplin — var hans sätt att hantera att enskilda cigarbutter faktiskt dör: diversifieringen är en del av metoden, inte en svaghet i den."
+        },
+        {
+          "type": "text",
+          "content": "Sökstegets AV1A-syntax, sammanfattad. Skärmen: börja i billiga universum — V04 (P/S), V05 (P/B under 1 är Grahams direkta arv), V06 (EV/EBITDA-familjen) — plus /netnet för balansräkningsextremerna, och stäng av universum som inte är genomförbart för ditt kapital (V11: kan du bygga och lämna positionen utan att själv flytta kursen?). Prioriteringen: bland de billiga, föredrag de som också har en identifierbar tvångs- eller tristessorsak — prisfallet har då en förklaring som är icke-värdegrundad, och det är där bokens tes är starkast. Tålåden: skärmen levererar kandidater, aldrig beslut — varje kandidat går vidare till trappan i kapitel 6–9. Och minns gränsen mot Quantitative Value-kursen: QV:n gör detta sök steg mekaniskt och håller sig där — den rankar och köper; Greenwald gör söket till förspel och lägger hantverket efter. AK1A använder båda: skärm från QV, värdering från Greenwald, poängsättning i AKM1."
+        },
+        {
+          "type": "insikt",
+          "content": "En bra skärm gör bara halva jobbet: den höjer sannolikheten att det du tittar på är billigt — men billigt är en observation, fynd är en värdering. Regeln: skärmen får aldrig motivera ett köp, bara ett arbete."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fem sökuniversum — var felprissättningarna bor\",\"rader\":[[\"Universum\",\"Definition\",\"Felprissättningskälla\",\"Varning\",\"AKM1\"],[\"Lågt P/B\",\"börsvärde under bokfört eget kapital\",\"överreaktion, tristess\",\"värdefälla om avkastningen dör\",\"V05\"],[\"Net-net / NCAV\",\"kurs under 2/3 av omsättningstillgångar minus alla skulder\",\"extremt prisfall\",\"illikviditet, kapitalförbränning\",\"/netnet, V11, V19\"],[\"Låg EV/EBIT-familj\",\"billig på driftresultatet, skuldjusterat\",\"tristess, cykelbottnar\",\"cykeltoppens billighet är inbillad\",\"V06, V08\"],[\"Avknoppningar och utfårdor\",\"nya, tvångssålda eller krångliga namn\",\"tvång och analyskomplexitet\",\"kräver riktig jobb -- situationsanalys\",\"V16–V18-karaktär\"],[\"Insiderköp och återköp\",\"de som vet köper med pengar\",\"stigning i värdering utan grund\",\"bekräftelse — aldrig huvudskäl\",\"V20\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg din sökportfölj: kombinera /netnet med en enkel screen på P/B under 1 och EV/EBITDA under 6 (V05, V06) i ditt universum. Notera de tio billigaste. Markera för varje kandidat vilken av kapitel 2:s tre felprissättningskällor som är mest trolig förklaring — information, analys eller tvång. De kandidater där du inte kan hitta NÅGON icke-värdegrundad förklaring till billigheten är dina första arbeten: där kan nämligen resten av marknaden ha rätt, och det är steg twås uppgift att avgöra."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är syftet med att söka i statistiskt billiga universum innan man värderar?",
+          "alternativ": [
+            "Att slippa värdera enskilda bolag",
+            "Att börja där base rates är bäst — sannolikheten för fynd är högre där felprissättningarna koncentreras",
+            "Att undvika all analys",
+            "Att garantera vinst"
+          ],
+          "ratt": 1,
+          "tips": "Sökandet förstärker sannolikheten — det ersätter aldrig beviset."
+        },
+        {
+          "q": "Vad gör AK1A:s Net-net-skanner på /netnet?",
+          "alternativ": [
+            "Rankar hela börsen på sex multiplar",
+            "Skannar ett fast universum av svenska och nordiska bolag mot NCAV och markerar NET-NET under Grahams två-tredjedelströskel samt NÄRA strax över",
+            "Blanchar aktier efter momentum",
+            "Räknar ut DCF-modeller automatiskt"
+          ],
+          "ratt": 1,
+          "tips": "Skannern är Grahams cigarbutt-kriterium i mjukvara — grön och guld."
+        },
+        {
+          "q": "Varför diversifierade Graham net-net-investeringarna över tiotals bolag?",
+          "alternativ": [
+            "För att han var osäker på sin metod",
+            "För att enskilda cigarbutter faktiskt dör — spridningen är en del av metoden, inte en svaghet",
+            "För att lagen krävde det",
+            "För att han ville följa index"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en portfölj av bolag prissatta för undergång när några verkligen går under?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 13,
+      "title": "Steg 2a: Balansräkningsvärde — steget kassa → NCAV → återgångsvärde",
+      "intro": "Den första värderingsmetoden är balansräkningen — men inte som rå bokföring. Greenwald bygger en stege av allt säkrare påståenden: kassan och de placerade tillgångarna, NCAV, och sedan bokens signaturgrepp på tillgångssidan: återgångsvärde — vad skulle det kosta att ÅTERSKAPA det här bolaget? Det är skillnaden mellan vad tillgångarna kostade och vad de är värda idag som gömmer moat-flingan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Stegran från botten och upp. Noll: kassa och placerade tillgångar — de mest säkra värdena på hela börsen: de kan prickas av mot bankutdrag och kurslista, och ingen normaliserings bedömning behövs. Ett: NCAV — omsättningstillgångar minus samtliga skulder: kundfordringar (med nedskrivning för tvivelaktiga), lager (till återgångs- eller realisationsvärde, inte fullt bokfört), kassa — minus allt som fordringsägarna har rätt till. Återstår rörelsekapitalet som en ren slutvärdessiffra: exakt det Net-net-skannern på /netnet räknar. Två: återgångsvärde av tillgångarna (reproduction value) — Greenwalds nyckelgrepp och den vanligaste missförstådda idén i boken: frågan är inte vad tillgångarna KOSTADE historiskt (det bokföringen svarar på) utan vad en konkurrent skulle behöva betala för att bygga upp samma verksamhet IDAG: maskiner till dagens priser, anläggning med dagens byggkostnad, distribution, organisation, ett varumärkes minimala uppbyggnadskostnad, rekrytering och inlärning. Tre: återgångsvärdet inklusive immateriella tillgångar — kundrelationer, system, varumärke — som bara tillgodoräknas om de verkligen måste byggas för att återställa verksamheten."
+        },
+        {
+          "type": "text",
+          "content": "Tre metodsvar, ordnade efter hur de används. För det första: återgångsvärdet är den ekonomiska tolkningen av bokfört värde — justera upp eller ned: avskrivna men fullt fungerande maskiner (verkligt värde över bokfört), inflationsuppvärderad fastighet och lager, men också nedskrivningar: goodwill från tidigare förvärv är oftast inte ett återgångsvärde alls (den som bygger om verksamheten behöver inte köpa det gamla överpriset igen). För det andra: metoden dominerar värderingen av finansbolag och kraftbolag — där är tillgångarna (kreditportföljen, kraftverket) själva verksamheten, och vinstströmmar är i grunden en avkastning på balansräkningen. För det tredje: tillgångsvärdet är golvet i cykler — för råvaru- och tillverkningsbolag som i botten av cykeln knappt tjänar något är frågan inte vad vinsten är värd utan vad anläggningen skulle kosta att ersätta; kurs under återgångsvärde med förlustbringande drift betyder att marknaden prisar att kapacitet måste ut ur branschen — en avsiktligt dyster men testbar tes (kapitel 11 om branschstruktur)."
+        },
+        {
+          "type": "text",
+          "content": "Diagnostiken som stegran möjliggör — och som är hela poängen med att värdera tillgångarna överhuvudtaget. Jämför återgångsvärdet med kursen och med EPV (kapitel 7): kurs under återgångsvärde betyder antingen köp under inträdeskostnad — eller att branschen har för mycket kapacitet och någon måste försvinna; återgångsvärde över kursen med vinstbringande drift är den klassiska Graham-situationen. Och notera den viktiga kopplingen framåt: om EPV ligger UNDER återgångsvärdet lider branschen av överkapacitet eller ledningen förstör värde — om EPV ligger ÖVER är det ett moat-bevis (kapitel 10): någon skulle tjäna på att återuppbygga bolaget, men gör det inte — hindret är moaten. AKM1-mappningen: V05 (P/B) är den råa skärmen, V10 (skuldsättningsgrad) och V11 (kvickkvoten) bygger NCAV-sikten, och V07–V09 marginalerna är råvaran för nästa kapitels fråga: vad är DRIFTEN värd? Balansräkningen svarar aldrig på den frågan — den svarar på vad som återstår om driften upphör."
+        },
+        {
+          "type": "insikt",
+          "content": "Byt fråga när du läser en balansräkning: fråga inte vad tillgångarna KOSTADE — fråga vad de kostar att ÅTERSKAPA. Skillnaden mellan de två svaren är återgångsvärdet, och det är bara där som balansräkningen kan säga något om framtiden: vad ett välfinansierat byte av konkurrent skulle behöva betala för att ta din marknad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Balansräkningsvärde — stegran från säkert till bedömt\",\"rader\":[[\"Nivå\",\"Definition\",\"Säkerhet\",\"Används främst för\"],[\"Kassa och placerade tillgångar\",\"bankkonton och noterade värdepapper\",\"högst — verifierbara\",\"extremnetter, holdingbolag\"],[\"NCAV\",\"omsättningstillgångar minus samtliga skulder\",\"hög — små nedskrivningar\",\"net-net (/netnet), situationer under press\"],[\"Återgångsvärde, täckta tillgångar\",\"vad ett återuppbygge av verksamheten kostar idag\",\"medel — kräver justeringar\",\"cykliska bolag, finans, kraft, industrier\"],[\"Återgångsvärde inklusive immateriella\",\"plus varumärke, system, kundrelationer som måste byggas\",\"lägst — mest omdöme\",\"franchise-mognadsbedömning, moat-test\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ta ett industriellt bolag ur ditt sökresultat från kapitel 5. Bygg stegran i fyra rader: en — kassa plus placerade tillgångar; två — NCAV (justera fordringar med tio procent och lager till försiktigt värde); tre — grovt återgångsvärde (börja med bokfört anläggningsvärde och justera för ålder och inflation); fyra — börsvärde. Skriv en mening: handlas bolaget under återgångsvärdet — och isåfall: köp under inträdeskostnad eller bransch med döende kapacitet? Spara räkningen: den blir golvet i kapitel 8:s falltabell."
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är återgångsvärde (reproduction value) i Greenwalds mening?",
+          "alternativ": [
+            "Det bokförda värdet av tillgångarna efter avskrivningar",
+            "Vad en konkurrent skulle behöva betala för att återuppbygga samma verksamhet idag",
+            "Börsvärdet vid senaste emissionskurs",
+            "Det värde tillgångarna har vid realisation"
+          ],
+          "ratt": 1,
+          "tips": "Framtiden ligger i frågan: vad kostar det att komma IN — inte vad kostade det att komma hit?"
+        },
+        {
+          "q": "Varför dominerar balansräkningsvärde värderingen av finans- och kraftbolag?",
+          "alternativ": [
+            "Därför att de saknar intäkter",
+            "Därför att tillgångarna — kreditportföljen, kraftverket — är själva verksamheten och vinsten är en avkastning på dem",
+            "Därför att de aldrig har skulder",
+            "Därför att lagen föreskriver det"
+          ],
+          "ratt": 1,
+          "tips": "Vad är verksamheten i ett kraftbolag — en berättelse eller en anläggning?"
+        },
+        {
+          "q": "Vad betyder det om kursen ligger under återgångsvärdet för ett bolag som går med förlust?",
+          "alternativ": [
+            "Alltid ett köp",
+            "Att marknaden prisar att kapacitet måste ut ur branschen — antingen köp under inträdeskostnad eller krympande bransch, avgörandes i strategianalysen",
+            "Att bolaget går i konkurs inom ett år",
+            "Att återgångsvärdet är felräknat"
+          ],
+          "ratt": 1,
+          "tips": "Vad måste hända i en bransch där ingen tjänar sitt kapitalkostnad — och vad kostar det att bygga den kapacitet som någon kanske ändå byggt sist?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 13,
+      "title": "Steg 2b: Earnings Power Value — kapitalisera normaliserad vinst UTAN tillväxt",
+      "intro": "Här kommer Greenwalds signaturmetod: Earnings Power Value, EPV. Tanken är radikalt konservativ: räkna fram vad verksamheten tjänar i normaliserad, hållbar vinst — och kapitalisera den UTAN tillväxt. Vad bolaget hoppas få bli har inget att göra i siffran. Tillväxten får komma in genom ett enda dörr: moat-beviset i kapitel 9. Det här kapitlet bygger metoden; nästa räknar den i siffror.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Formeln är en rad: EPV är lika med normaliserat, justerat resultat delat med kapitaliseringsräntan. Allt hantverket sitter i täljaren och nämnaren. Täljaren — den normaliserade vinsten — svarar på frågan: vad tjänar den här verksamheten i ett genomsnittligt läge, med hyfsad drift, utan tur och utan katastrof? Nämnaren — kapitaliseringsräntan — är kostnaden för det kapital som krävs för att äga verksamheten i stället för något annat (i praktiken WACC, viktat av ränta och eget kapital; för en stabil solid verksamhet räcker ofta en prövotänta runt åtta till tolv procent). Notera vad som MEDVETET saknas: tillväxt. Ingen Gordon-tillväxtterm, inga prognosår, ingen diskonteringskalkyl med antaganden om antaganden. Greenwalds argument är dubbelt: för det första är tillväxt den minst pålitliga ingrediensen i all värdering — den förtjänar inte plats i basfallet; för det andra kan tillväxtens värde hanteras separat och hårdare (kapitel 9) — bara med moat. EPV är värdet av bolaget SOM DET ÄR, en gång för alla: vad skulle du betala för en evig, oförändrad kopia av dagens normaliserade vinstström?"
+        },
+        {
+          "type": "text",
+          "content": "Normaliseringschecklistan — täljarens hantverk, steg för steg. Ett: ta ett flerårigt genomsnitt av driftsresultatet (EBIT) över en hel konjunkturcykel — fem till tio år för en cyklisk tillverkare; toppår och bottennår ska båda finnas med, annars normaliserar du inte utan plockar. Två: rensa engångsposter — omstruktureringar, avyttringsvinster och -förluster, tvistelösningar, nedskrivningar som inte återkommer — och lägg tillbaka dem om de belastat snittet. Tre: justera ägarlön och styrelsearvoden till marknadsmässiga nivåer i löpande driftsbolag. Fyra: kontrollera att avskrivningarna speglar underhållsbehovet — avskrivning över verkligt underhåll överdriver kostnaden (lägg tillbaka skillnaden), underdrivna avskrivningar överdriver vinsten (dra av). Fem: skatta skatt — multiplicera normaliserat EBIT med (ett minus skattesatsen) för att få normaliserat resultat efter skatt. Sex: dela med kapitaliseringsräntan; dra sedan bort nettoskuld för att få kvar det som tillhör aktieägarna. Var ärlig med nämnarens makt: mellan åtta och tio procent kapitalränta ligger tjugofem procents skillnad i EPV — räkna alltid ett intervall, inte en punkt (kapitel 8 gör det)."
+        },
+        {
+          "type": "text",
+          "content": "EPV:s största gåva är inte siffran utan diagnostiken den ger tillsammans med tillgångsvärdet från kapitel 6 — Greenwalds kärnverktyg, tre förhållanden att läsa. EPV under återgångsvärdet: verksamheten tjänar mindre än den kostar att bygga — bransch i överkapacitet eller ledning som förstör värde; tillgångsvärdet är golvet, och frågan är om driftens värde kan återhämta sig mot det. EPV ungefär lika med återgångsvärdet: den klassiska råvaruproducenten — konkurrensen pressar avkastningen exakt till kapitalkostnaden; inget moat, tillväxt värdelös (kapitel 9), värdera på tillgångar och normaliserad EPV och köp bara med marginal. EPV över återgångsvärdet: bolaget tjänar mer än återuppbyggnadskostnaden — någon borde vilja bygga en konkurrent, men ingen gör det: det är moat-beviset, och gapet mellan EPV och återgångsvärde är moatens storlek i kronor. Kursen mot EPV ger sedan marginalen. AKM1-mappningen: V07–V09 (marginaler och avkastning) och V12 (intäktsstabilitet) är råvarorna som avgör hur säkert täljaren är — hög stabilitet och stabil marginal ger en trovärdigare normalisering, och därmed en smalare osäkerhet runt EPV."
+        },
+        {
+          "type": "insikt",
+          "content": "EPV:s disciplin är förvägringen: metoden värderar bolaget som det är — inte som det hoppas. Skriv alltid EPV-siffran bredvid marknadens pris och beräkna andelen av priset som betalas för hopp: den andelen är din exponering mot det du inte kan veta, och den ska vara liten och medveten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"EPV-diagnostiken — tre lägen, tre slutsatser\",\"rader\":[[\"Förhållande\",\"Diagnos\",\"Konsekvens för värderingen\"],[\"EPV under återgångsvärde\",\"överkapacitet eller värdeförstörande ledning\",\"tillgångsvärdet är golvet — fråga om driften kan återhämta sig\"],[\"EPV ungefär lika med återgångsvärde\",\"råvaruproduktion utan moat — avkastning lika med kapitalkostnad\",\"värdera på tillgångar och EPV; betala aldrig för tillväxt\"],[\"EPV över återgångsvärde\",\"moat-bevis: återuppbygge lönar sig inte för konkurrenter\",\"gapet är moatens kronvärde — tillväxt kan prissättas försiktigt (kap 9)\"],[\"Kurs under EPV\",\"rabatt mot normaliserad intjänande\",\"säkerhetsmarginal mot EPV — storleken avgör beslutet\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Räkna en grov EPV på en kandidat från kapitel 5:s söklista: femårs-snitt EBIT (ur årsredovisningarna), minus uppenbara engångsposter, gånger (ett minus 0,22), delat med 0,10 — dra sedan nettoskuld och dela med antal aktier. Jämför med kursen. Upprepa med kapitalräntan 0,08 och 0,12. Skriv intervallet och marginalen mot kursen vid varje ränta: är slutsatsen robust i hela intervallet, eller lever den på nämnarens val? Det är den frågan nästa kapitel gör till hela sin tabell."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är definitionen av Earnings Power Value?",
+          "alternativ": [
+            "Normaliserad och justerad vinst kapitaliserad med kapitalkostnaden — utan någon tillväxtterm",
+            "Nästa års vinst gånger tio",
+            "Bokfört eget kapital minus skulder",
+            "Framtida fria kassaflöden diskonterade med prognoserad tillväxt"
+          ],
+          "ratt": 0,
+          "tips": "En rad, en nämnare — och ett medvetet utan PET: tillväxten."
+        },
+        {
+          "q": "Varför utesluter Greenwald tillväxten ur EPV?",
+          "alternativ": [
+            "Därför att tillväxt inte påverkar värde",
+            "Därför att tillväxt är den minst pålitliga ingrediensen och förtjänar ett eget, hårdare beviskrav — moat — innan den prissätts",
+            "Därför att tillväxt är förbjuden i värderingslära",
+            "Därför att räntan gör tillväxt omöjlig"
+          ],
+          "ratt": 1,
+          "tips": "Tillväxten utesluts inte — den VISAS IN genom ett eget dörr i kapitel 9."
+        },
+        {
+          "q": "Vad betyder det om EPV ligger klart över återgångsvärdet på tillgångarna?",
+          "alternativ": [
+            "Att bolaget är på väg att gå i konkurs",
+            "Att intjänandet överstiger återuppbyggnadskostnaden — ett moat-bevis, eftersom ingen ny konkurrent bygger sig in och konkurrerar bort överskottet",
+            "Att EPV är felräknad",
+            "Att bolaget måste vara ett finansbolag"
+          ],
+          "ratt": 1,
+          "tips": "Om återuppbygge lönar sig men inte sker — vad hindrar?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 13,
+      "title": "EPV i siffror — det fullständiga räkneexemplet [illustrativt]",
+      "intro": "Nu räknar vi — hela vägen, rad för rad, i tabell. Fallet är Nordisk Verktyg AB [illustrativt]: ett fiktivt men realistiskt svenskt industritolag med cyklisk intjäning, byggt för att visa varje steg i EPV-hantverket, känsligheten i nämnaren och mötet med tillgångsvärdet från kapitel 6. Siffrorna är uppvisade så att du kan kontrollräkna varje rad.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fallet och täljarens bygge [illustrativt]. Nordisk Verktyg AB: industriverktyg för nordisk verkstadsindustri, börsnoterat, femtio miljoner aktier, kurs tjugo kronor — alltså börsvärde ett miljarder kronor. EBIT de senaste fem åren, cykelns svängningar inkluderade: 160, 210, 240, 300 och 290 miljoner — femårsnitt 240 miljoner. I snittet ligger en engångspost: en omstrukturering om tolv miljoner som inte återkommer — lägg tillbaka den. Normaliserat EBIT: 252 miljoner. Skatt: 22 procent — normaliserat resultat efter skatt: 252 gånger 0,78, det vill säga cirka 197 miljoner. Underhållsbehovet: avskrivningarna har historiskt legat i nivå med verkligt underhåll — ingen justering. Ägarlön: börsbolag med marknadsmässig ledarlön — ingen justering. Täljaren är klar: 197 miljoner i normaliserad vinst."
+        },
+        {
+          "type": "text",
+          "content": "Nämnaren, EPV och marginalen [illustrativt]. Kapitaliseringsränta: bolaget är cykliskt men solitt — elva procent kapitalränta vore strängt, nio generöst; basfallet tio procent. EPV: 197 delat med 0,10, det vill säga ett miljarder niohundra sjuttio miljoner. Nettoskuld: trehundra miljoner — EPV för det egna kapitalet: ett miljarder sexhundra sjuttio miljoner. Per aktie: trettioen komma fyra kronor (1 670 delat med 50). Kursen: tjugo kronor — kurs/EPV: noll komma sextio. Säkerhetsmarginalen: fyrtio procent. Känsligheten, som alltid är nämnarens: vid åtta procent kapitalränta blir EPV per aktie cirka fyrtiotre kronor, vid tolv procent cirka tjugoåtta kronor — slutsatsen köp under EPV med marginal håller i hela det rimliga ränteintervallet, och det är ROBUSTHETEN i intervallet som är den verkliga slutsatsen, inte punktsiffran. Och mötet med kapitel 6: återgångsvärdet av tillgångarna beräknades till ett miljarder femhundra miljoner — trettio kronor per aktie. EPV på trettioen komma fyra ligger klart nära återgångsvärdet: diagnostiken säger råvaruproduktion utan moat — värdera på tillgångsvärde som golv (trettio) och EPV som tak (trettioen), köp med marginal, betala ingenting för tillväxt. Kursen tjugo ligger under golvet — och därmed är frågan från kapitel 5 aktuell igen: VARFÖR är det så billigt? Det är steg tre, framtiden, som ska svara."
+        },
+        {
+          "type": "text",
+          "content": "Motfallet och misstagen [illustrativt]. Glansbolaget AB: kurs fyrtio kronor, normaliserat resultat efter skatt trettio komma åtta per aktie — EPV tjugoåtta kronor (30,8/1,1) — och en tillväxtprognos som marknaden älskar. Marknaden betalar fyrtio för en verksamhet vars bevisade intjänande är värt tjugoåtta: arton kronor per aktie — fyrtiofem procent av priset — betalas för tillväxt. Utan moat-bevis (kapitel 9-10) är den betalningen inte en investering utan en donation till framtiden. Och de tre klassiska EPV-felen, värda att skriva på väggen: ett — normalisera på ett toppår (cykeltoppens EBIT som bas ger en EPV som aldrig existerade); två — glödda avskrivningar mot verkligt underhåll (kapitaltunga bolag kan visa vinst som egentligen är återinvesterat underhåll); tre — bara en nämnare (en punktskattning utan intervall foreger en säkerhet som metoden inte har). AKM1-syntaxen: den här tabellen är underlaget som gör V04–V06 meningsfulla — P/S och P/B blir gröna först när de står mot ett golv (tillgångsvärde) och ett tak (EPV), inte mot varandra."
+        },
+        {
+          "type": "insikt",
+          "content": "Räkna alltid EPV som ett intervall, aldrig en punkt: nämnarens makt — tjugofem procents värdeskillnad mellan åtta och tio procents ränta — är större än de flesta analytikers unika insikter. Slutsatsen som får styra beslutet är inte punktsiffran utan huruvida marginalen överlever hela det rimliga intervallet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"EPV-räkneexempel — Nordisk Verktyg AB [illustrativt]\",\"rader\":[[\"Rad\",\"Beräkning\",\"Belopp\"],[\"Femårsnitt EBIT (160+210+240+300+290)\",\"cykelnormaliserat\",\"240 Mkr\"],[\"Engångspost omstrukturering\",\"läggs tillbaka\",\"+12 Mkr\"],[\"Normaliserat EBIT\",\"\",\"252 Mkr\"],[\"Skatt 22 %\",\"252 × 0,22\",\"−55 Mkr\"],[\"Normaliserat resultat efter skatt\",\"252 × 0,78\",\"197 Mkr\"],[\"Kapitaliseringsränta (basfall)\",\"\",\"10 %\"],[\"EPV (verksamheten)\",\"197 / 0,10\",\"1 970 Mkr\"],[\"Nettoskuld\",\"dras av\",\"−300 Mkr\"],[\"EPV eget kapital\",\"\",\"1 670 Mkr\"],[\"Antal aktier\",\"\",\"50 M\"],[\"EPV per aktie\",\"1 670 / 50\",\"31,4 kr\"],[\"Känslighet: ränta 8 % / 12 %\",\"2457−300 resp 1633−300 delat på 50\",\"cirka 43 / 28 kr\"],[\"Aktiekurs\",\"\",\"20,0 kr\"],[\"Kurs/EPV\",\"20 / 31,4\",\"0,60\"],[\"Säkerhetsmarginal mot EPV\",\"\",\"40 %\"],[\"Återgångsvärde tillgångar (kap 6)\",\"golv\",\"30,0 kr/aktie\"],[\"Diagnos\",\"EPV ≈ återgångsvärde\",\"råvaruproduktion — inget moat, ingen tillväxtbetalning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kopiera tabellen på ditt eget bolag: hämta femårs-EBIT ur senaste fem årsredovisningarna (Multiqs finansiella nyckeltal räcker), rensa största engångsposten, multiplicera med 0,78, dela med 0,10 — och med 0,08 och 0,12. Dra nettoskuld, dela med antal aktier, sätt kursen mot intervallet. Skriv tre rader: EPV-intervall, marginal vid varje ränta, och domedagsfrågan — vilket enskilt antagande måste slå fel för att slutsatsen ska vända? Spara dokumentet: det är kapitel 14:s fallstudiebygge."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "I räkneexemplet: vad blir EPV per aktie för eget kapital vid tio procents kapitaliseringsränta?",
+          "alternativ": [
+            "Cirka 25 kronor",
+            "Cirka 31 kronor — (240+12)×0,78/0,10 = 1 970; minus nettoskuld 300; delat på 50 miljoner aktier",
+            "Cirka 40 kronor",
+            "Cirka 19 kronor"
+          ],
+          "ratt": 1,
+          "tips": "Räkna i ordning: normaliserat EBIT, skatt, ränta, nettoskuld, aktier."
+        },
+        {
+          "q": "Vad händer med EPV om kapitaliseringsräntan sjunker från tio till åtta procent?",
+          "alternativ": [
+            "EPV minskar med tjugo procent",
+            "EPV förblir oförändrad",
+            "EPV ökar med tjugofem procent — 1/0,08 mot 1/0,10 — vilket visar nämnarens makt",
+            "EPV blir noll"
+          ],
+          "ratt": 2,
+          "tips": "Jämför en delad med 0,10 med en delad med 0,08 — och dra slutsatsen om intervall."
+        },
+        {
+          "q": "Vilket av följande är INTE ett av kapitlets tre klassiska EPV-fel?",
+          "alternativ": [
+            "Att normalisera på ett cykeltoppår",
+            "Att låta avskrivningarna avvika från verkligt underhållsbehov",
+            "Att enbart redovisa en punktskattning utan ränteintervall",
+            "Att dra bort nettoskuld från verksamhetens värde"
+          ],
+          "ratt": 3,
+          "tips": "Tre av alternativen överdriver eller förtäcker vinsten — ett är tvärtom korrekt hantverk."
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 13,
+      "title": "Steg 2c: Tillväxtvärde — tillväxt utan moat är värdelöst (V13–V15)",
+      "intro": "Tredje värderingsmetoden är tillväxtvärdet — och bokens hårdaste läxa: tillväxt har bara värde bakom konkurrensfördelar. Utan moat är tillväxt inte bara värdelös — den kan förstöra värde, eftersom den kräver kapital som konkurrensen ändå tar ifrån dig. Det här kapitlet kopplar tillväxten till moat-beviset och till AKM1:s V13–V15.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Principen, driven med logik. Tillväxt skapar värde endast när avkastningen på det återinvesterade kapitalet överstiger kapitalkostnaden — och det kan bara bestå om något hindrar konkurrenter från att komma in och konkurrera bort överskottet. Det hindret är moaten: patent och immateriella rättigheter (V13), varumärke och kundlojalitet (V14), nätverkseffekter (V15) — kapitel 10 mäter dem. Utan moat gäller råvarufallet: varje attraktiv avkastning attraherar entréer, entréer pressar priser och marginaler tills avkastningen är kapitalkostnad — och då är tillväxtens netto-nuvärde noll, oavsett hur imponerande tillväxttakten är. Värre: eftersom tillväxt kräver kapital — anläggning, lager, kundförvärv, utveckling — är tillväxt UTAN moat en investering i exakt noll avkastning med risk: bolaget lägger ut kapital för att bygga något som konkurrensen ändå tar ifrån det. Greenwalds formuleras i kursen som regeln: tillväxt utan konkurrensfördel är inte bara värdelös — den kan förstöra värde. Utbyggnaden av råvarukapacitet vid cykeltoppen är arketypen: bolaget växer, och aktieägarna betalar för privilegiet att förlora."
+        },
+        {
+          "type": "text",
+          "content": "Räkneläran för dem med moat — bokens tillväxtformel som övre gräns. Med bevisad franchise gäller: tillväxtvärdets övre gräns är normaliserat resultat gånger tillväxttakt, delat med kapitalräntan gånger (kapitalräntan minus tillväxttakten) — det vill säga E × g / (r × (r − g)). Övre gränsen nås bara när tillväxten nästan inte kräver kapital — verklig tillväxt kräver investeringar, och då krymper värdet. Räkna på kapitel 8:s fall [illustrativt]: E = 197 miljoner, g = 5 procent, r = 10 procent: tillväxtvärdet blir 197 × 0,05 / (0,10 × 0,05) = 1 970 miljoner — lika stort som hela EPV. Lektionen i den symmetrin: vid g lika med halva räntan kan tillväxt med moat FÖRDUBBLA värdet — och därför är moat-beviset värt att arbeta för. Men observera symmetriskt vad formeln kräver: moat som SKYDDAR återinvesteringsavkastningen över r — annars är formeln en analog aktiemaklares dröm. Och notera matematikens varning: när g närmar sig r exploderar uttrycket — det är därifrån bubbelvärderingar kommer, och därför ska g alltid hållas väl under r i dina egna räkningar."
+        },
+        {
+          "type": "text",
+          "content": "Praktikens tre frågor — tillväxtbudgeten. När du står med en tillväxtaktie, räkna baklänges: ett — hur stor del av priset betalas för tillväxt? (Glansbolaget i kapitel 8: arton av fyrtio kronor — fyrtiofem procent.) Två — finns moat-bevis som håller för den betalningen? EPV-gap över återgångsvärde, stabila marginaler över cykeln (V07–V09), stabil marknadsandel, dokumenterade hinder (V13–V15) — kapitel 10 ger checklistan. Tre — vad kostar tillväxten? Återinvesteringsandelen av vinsten och dess avkastning: växer bolaget åtta procent per år genom att återinvestera hela vinsten till tolv procents avkastning är det värdefullt (12 > r); växer det åtta procent genom att återinvestera allt till nio procents avkastning vid tio procents kapitalkostnad är det värdeförstörande (9 < r) — trots att tillväxten är densamma. AKM1:s regel blir: V13–V15 är biljetten till att ens FÅ poängsätta tillväxt (V01–V02) som värde — utan moat-poäng är tillväxten neutrality eller belastning, aldrig värdeskapare. Det är kursens mest motkulturella sanning i en tillväxtfixrad epok: tillväxt är en kostnadspost tills moaten bevisar motsatsen."
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan är aldrig hur mycket bolaget växer utan VAD tillväxten kostar och VEM som skyddar avkastningen när den skapats. V13–V15 är biljetten; utan dem är tillväxten en siffra du betalar för och konkurrenterna inkasserar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tillväxtens tre fall — värde eller destruktion\",\"rader\":[[\"Situation\",\"Värde av tillväxt\",\"Exempel-logik\"],[\"Moat + återinvesteringsavkastning över kapitalkostnad\",\"positivt — kan FÖRDUBBLA värdet vid g = r/2\",\"franchise som växer inom skyddade nischer\"],[\"Moat + kapitalfattig tillväxt\",\"maxvärde — nära formelns övre gräns\",\"varumärkes- eller nätverkstillväxt utan stora investeringar\"],[\"Ingen moat — råvarufall\",\"noll eller NEGATIVT\",\"tillväxt kräver kapital; konkurrens tar överskottet\"],[\"Tillväxt genom förvärv utan moat\",\"ofta värdeförstörande\",\"betalt goodwill-pris för tillväxt utan hinder att behålla det\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Gör en tillväxtbudget på ditt mest tillväxtorienterade innehav: en — uppskatta normaliserat resultat per aktie och EPV (kapitel 8:s mall); två — sätt kursen mot EPV och räkna ut hur många kronor per aktie som betalas för tillväxt; tre — lista moat-bevisen (V13–V15) med en siffra per bevis (marginalhistorik, andelshistorik, EPV-gap). Får tillväxten PLATS i din budget, eller lever bolaget på hopp? Skriv svaret i en mening — och behåll den till kapitel 14."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför är tillväxt utan moat värdelöst — eller värre?",
+          "alternativ": [
+            "Därför att tillväxt alltid är farlig",
+            "Därför att konkurrenter utan hinder konkurrerar bort avkastningen till kapitalkostnaden — och tillväxten kräver kapital som då investeras till noll eller negativ avkastning",
+            "Därför att kunder ogillar växande bolag",
+            "Därför att tillväxt inte kan mätas"
+          ],
+          "ratt": 1,
+          "tips": "Två ingredienser: vad händer med avkastningen utan hinder — och vad kostar det att växa?"
+        },
+        {
+          "q": "Vad anger formeln E × g / (r × (r − g))?",
+          "alternativ": [
+            "Den undre gränsen för tillväxtens värde i alla bolag",
+            "Tillväxtvärdets ÖVRE gräns med moat — nås bara när tillväxten nästan inte kräver kapital",
+            "En omsättningsmultiplikator",
+            "Konkursrisken i tillväxtbolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad krävs för att tillväxt verkligen ska fördubbla värdet — och vad saknas i formeln som verkligheten ändå kräver?"
+        },
+        {
+          "q": "Ett bolag växer åtta procent per år genom att återinvestera hela vinsten till nio procents avkastning vid tio procents kapitalkostnad. Vad säger kursens logik?",
+          "alternativ": [
+            "Tillväxten är värdefull eftersom åtta procent är hög tillväxt",
+            "Tillväxten är värdeförstörande — avkastningen på återinvesteringen understiger kapitalkostnaden",
+            "Det spelar ingen roll vad återinvesteringen avkastar",
+            "Bolaget borde växa tolv procent istället"
+          ],
+          "ratt": 1,
+          "tips": "Jämför nio med tio — och fråga vem som betalar mellanskillnaden."
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 12,
+      "title": "Mätbara moats — fyra hinder och kapitalfördelningen som förstärkare (V20)",
+      "intro": "Moat-kapitlen är bokens strategiska hjärta: en franchise definieras som förmågan att varaktigt tjäna mer än kapitalkostnaden — och den förmågan vilar på konkurrenshinder som går att IDENTIFIERA och MÄTA. Kapitlet går igenom de fyra hinderen, moat-mätaren i siffror och kapitalfördelningens roll som förstärkare. En moat som inte kan visas i siffror är en berättelse.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De fyra hinder enligt bokens strategidel. Ett — leveranssidans kostnadsfördelar: proprietär process eller teknik, privilegierad tillgång till råvara, geografiskt oslagbar logistik; konkurrenten kan helt enkelt inte producera lika billigt. Två — efterfrågesidans kundfångenskap: vanor (kundens inköpsreflex), byteskostnader (att byta leverantör kostar mer än vinsten), sökkostnader (att ens hitta alternativet är arbete); kunden stannar inte av kärlek utan av friktion. Tre — skaltekonomier relativt MARKNADENS storlek: den som är stor i sin marknad fördelar fasta kostnader på fler enheter och kan inte slås på pris — och bokens viktiga förfining: skaltekonomier är oftast LOKALA; en regional dominerare med fyrtio procents andel i Norden kan vara ett starkare franchise än en global fyra med tio procent överallt, eftersom hindret gäller per geografisk marknad. Fyra — nätverkseffekter: produktens värde växer med antalet användare, vilket gör varje inträde dyrare ju etablerat nätverket är (V15) — kundfångenskap och skaltekonomi i förstärkt form. Alla fyra svarar på samma fråga: vad skulle en välfinansierad konkurrent behöva betala — i kapital och tid — för att matcha bolaget, och vad hindrar den från att ändå göra det?"
+        },
+        {
+          "type": "text",
+          "content": "Moat-mätaren — hindren i siffror, tre steg. Ett: EPV-gapet mot återgångsvärdet (kapitel 6–7): gapet är moatens kronvärde — utan gap, ingen moat, hur vackra berättelserna än är. Två: marginalernas och avkastningens stabilitet över en hel cykel (V07–V09): en riktig franchise visar bruttomarginal och ROE som håller eller växer genom nedgångar; råvaruproducenter svänger med cykeln. Tre: marknadsandelens historia: stabil eller växande andel i SIN definierade marknad — där marknaden definieras smalt nog (lokal, nisch, segment) att dominansen är verklig. Komplettera med inträdestestet: om en konkurrent med obegränsat kapital gick in IMORGON — vad skulle kostnaden bli (återgångsvärdet är utgångspunkten) och hur länge skulle det ta innan den matchat pris, produkt och distribution? Svaret är hindret mätt i kronor och år. Och kom ihåg kapitel 9:s grind: först när moat-mätaren visar grönt får tillväxtvärde ens existera i din kalkyl."
+        },
+        {
+          "type": "text",
+          "content": "Ledningen och kapitalfördelningen — förstärkaren, inte källan. Boken behandlar, särskilt genom strategi- och porträttdelarna, management-kvalitet på tre plan: driftsförmåga (operationell historik — marginaler och avkastning mot konkurrenter), kapitalfördelning (vart vinsterna går: återinvestering i skyddade nischer, återköp när aktien är under värde — V20 — utdelning, eller förvärv som拆 det kosta mer än det ger) och ärlighet (redovisningens tydlighet, löftens historia mot utfallet). Nyckelpoängen, ärligt formulerad: en bra ledning kan häva ett EPV-gap mot tillgångsvärdet (driva verksamheten mot sin potential) men kan inte skapa en moat ur intet — hindret ligger i marknadsstrukturen, inte i karisma. Och mätningen av ledning är metodens mjukaste del: historik kan granskas, men framtida kapitaldisciplin är en förmodan — behandla alla löften om kapitalallokering med den skepsis en värdeinvesterare borde visa allting som inte står i balansräkningen. AKM1: V20 poängsätter återköp enligt sin skala (bäst: fritt kassaflöde under P/B ett) — det är kapitalfördelning omvandlad till en mätbar poäng, exakt enligt detta kapitels krav."
+        },
+        {
+          "type": "insikt",
+          "content": "En moat som inte kan visas i siffror — EPV-gap, marginalstabilitet, andelsstabilitet — är en berättelse. V13–V15 måste översättas till minst ett mätbart bevis var, annars är poängen noll och tillväxtbudgeten stängd."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra moat-källor och deras bevis\",\"rader\":[[\"Källa\",\"Mekanism\",\"Bevis i siffror\",\"AKM1\"],[\"Leveranskostnad\",\"produktion eller distribution oslagbart billig\",\"kostnadsläge mot konkurrenter i procent\",\"V13 (teknik), V08\"],[\"Kundfångenskap\",\"vanor, byteskostnader, sökkostnader\",\"kvarhållningsgrad, churn, prissättningsmakt — marginalstabilitet\",\"V14\"],[\"Skaltekonomier (lokala)\",\"fasta kostnader fördelade på dominant lokal andel\",\"marknadsandel per definierad marknad, ROE över r genom cykeln\",\"V09, V07\"],[\"Nätverkseffekter\",\"värdet växer med antalet användare\",\"andrars tillväxt, användarnas overlap, andelsoktroj\",\"V15\"],[\"Kapitalfördelning (förstärkare)\",\"ledning kan häva gap men inte skapa moat\",\"återköpspris-logik, förvärvshistorik, V20-skala\",\"V20\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör moat-mätaren på ett bolag du TROR har franchise: ett — räkna EPV-gapet mot återgångsvärdet; två — plotta bruttomarginal och ROE fem år bakåt (V07, V09): stabila eller svängande? tre — marknadsandel i en smalt definierad marknad: stabil? fyra — vilket av de fyra hindren gäller, och vad skulle en inträdare behöva betala? Fem rader, fem siffror — avsluta med domen: franchise eller råvaruproducent. Jämför domen med dina V13–V15-poäng: stämmer de överens?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad menar boken med att skaltekonomier oftast är lokala?",
+          "alternativ": [
+            "Att de bara gäller i små städer",
+            "Att fördelen gäller per definierad marknad — en regional dominerare kan vara ett starkare franchise än en global fyra, eftersom hindret verkar inom marknaden",
+            "Att globala bolag saknar skalfördelar",
+            "Att skaltekonomier alltid är olagliga utanför hemlandet"
+          ],
+          "ratt": 1,
+          "tips": "Var verkar pris- och kostnadskonkurrensen — i världen eller i kundens valmöjligheter?"
+        },
+        {
+          "q": "Vad är moat-mätarens första och viktigaste siffra?",
+          "alternativ": [
+            "Antal anställda",
+            "EPV-gapet mot återgångsvärdet på tillgångarna",
+            "Direktavkastningen",
+            "Aktieantalets utveckling"
+          ],
+          "ratt": 1,
+          "tips": "Vad moaten producerar i kronor: skillnaden mellan vad verksamheten tjänar och vad den kostar att bygga."
+        },
+        {
+          "q": "Vilken roll tilldelas ledningen enligt kapitlet?",
+          "alternativ": [
+            "Ledningen kan skapa moats genom karisma och vision",
+            "Ledningen är irrelevant för värdet",
+            "Ledningen kan häva gapet mellan EPV och tillgångsvärde men inte skapa moat ur intet — hindret ligger i marknadsstrukturen",
+            "Ledningen ska alltid maximerar tillväxten oavsett avkastning"
+          ],
+          "ratt": 2,
+          "tips": "Vem kan driva verksamheten mot sin potential — och vem äger marknadsstrukturen?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Strategisk analys — branschstruktur och värdekedjan",
+      "intro": "Steg tre — titta på framtiden — är i Greenwalds version mest strategi: branschstruktur, konkurrensdynamik och värdekedja. Varför tjänar råvarubranscher ingenting i jämvikt? Var i kedjan samlas vinstpoolen? Och vad kan förstöra moaten på fem till tio år? Det här kapitlet gör framtiden till en strukturanalys i stället för en prognos.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Branschstrukturen som öde. I branscher utan inträdeshinder gäller den hårdaste lagen i näringslivet: varje avkastning över kapitalkostnaden attraherar entréer (ny kapacitet, nya aktörer), entréer pressar priser och marginaler, och processen slutar först när avkastningen är kapitalkostnaden — i jämvikt tjänar råvarubranschen ingenting på sitt kapital, oavsett hur nödvändiga dess produkter är. Utridningen är dessutom trög: kapacitet som redan investerats drivs vidare så länge driftskostnaderna täcks, vilket förlänger överkapacitetens lidande — det är detta kapitel 6:s fall (kurs under återgångsvärde med förlust) handlar om. Frågorna för en råvarubransch är därför alltid: kostnadsläge (vem överlever priskrig?), kapacitetsdisciplin (byggs det vidare i toppen?), och utträdestakt (lämnar den dyraste produktionen?). För en franchisebransch är frågorna omvänt: hur bred och hur varaktig är kundfångenskapen, och varifrån skulle en inträdare komma? Bokens praktiska råd: identifiera bolagets branschstruktur FÖRE värderingsmetoden — samma siffror betyder olika saker i de två världarna, och kapitel 4:s metodval följer direkt av detta."
+        },
+        {
+          "type": "text",
+          "content": "Värdekedjan — vinstpoolens karta. Rita kedjan från råvara till slutkund: leverantörer — produktion — distribution — kund, med din portfölj i mitten. Fråga per länk: vem har förhandlingsmakt och vem har hinder? Makten kommer från koncentration (få säljare eller få köpare), byteskostnader, differentiering och alternativkostnad — och vinstpoolen samlas där makt och hinder möts. Svenskt exempel-logik [illustrativt]: i en kedja råvara-skogsprodukt-förädling-bygghandel-skolkund kan vinsten samlas hos råvaruägaren (om tillgången är den knappa), hos förädlaren (om varumärket styr kundens val), eller hos handeln (om den äger kundrelationen) — samma produkt, tre helt olika investeringsfall. Analysfrågorna till ditt bolag: sitter det i kedjans vinstlänk eller i en länk som pressas från båda håll? Är kundbasen diversifierad eller koncentrerad (V03: en kund med fyrtio procent av intäkterna är inte kund utan arbetsgivare)? Finns avtal som låser kedjan (V17) eller reglering som skyddar eller hotar (V18)? Värdekedjan är därmed V03, V17 och V18:s naturliga hem: katalysatorer och risker sitter i kedjans maktstruktur, inte i produktens egenskaper."
+        },
+        {
+          "type": "text",
+          "content": "Framtidsfrågorna — steg tre som gallring, inte generositet. Bokens tredje steg är designat för att DÖDA idéer, inte för att berika dem: teknologiskift som raderar kundfångenskapen (digitalisering som tar bort sökkostnader, ny process som raderar leveransfördelen), regleringsförändringar som river hinder (patent som löper ut — V13:s klocka; öppna marknader som avregleras — V18), och kedjekraft som flyttar vinstpoolen (en dominant kund som integrerar bakåt). Gör övningen som scenario-checklista: lista de tre händelser som skulle förstöra moaten inom tio år, uppskatta sannolikhet och tidshorisont grovt — och kräv att säkerhetsmarginalen från kapitel 7–8 täcker dem. Det är så V16–V18 ska användas i AKM1: som gallrande risk- och katalysatorvariabler efter värderingen, aldrig som skäl att betala över den. Och notera skillnaden mot growth-investeraren: denne köper framtiden; värdeinvesteraren KÖPER NUTIDEN och accepterar framtiden gratis — strategianalysen är vad som hindrar honom från att köpa en nutid som är på väg att försvinna."
+        },
+        {
+          "type": "insikt",
+          "content": "Frågan vem tar vinsten i kedjan är värd mer än tio års analys av slutprodukten: vinstpoolen sitter där makt och hinder möts — och det är dit både moat-frågan och riskfrågan hör hemma. Rita kedjan innan du tror på produkten."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Branschstruktur — förväntad lönsamhet och värderingsmetod\",\"rader\":[[\"Struktur\",\"Förväntad lönsamhet\",\"Dominerande värdering\",\"Varning\"],[\"Råvarubransch utan hinder\",\"kapitalkostnad i jämvikt\",\"tillgångsvärde som golv + normaliserad EPV\",\"aldrig moat-pris\"],[\"Råvarubransch med höga utträdeskostnader\",\"svåra perioder, trög anpassning\",\"cykelnivå och kapacitetsutträde\",\"köp i botten när kapacitet lämnar\"],[\"Lokalt franchise\",\"varaktigt över kapitalkostnad\",\"EPV + moat-bevisad tillväxt\",\"mistänk lokal dominans som är global svaghet\"],[\"Kedja med stark kund eller mellanled\",\"vinstpoolen hos andra\",\"struktur analys före pris\",\"en kund med stor andel — V03-varning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Rita värdekedjan för ditt största innehav på ett A4: leverantörer, bolaget, distributörer, kunder — med cirka andel av intäkterna per kundkategori (V03). Markera vilken länk som har prisättande makt och varför. Avsluta med tre framtidsfrågor: de tre händelser som inom tio år kan flytta vinstpoolen bort från ditt bolag — och en rad om huruvida din inköpsmarginal täcker dem. Om ingen rad går att skriva var marginalen för liten."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför tjänar råvarubranscher i jämvikt inte mer än kapitalkostnaden?",
+          "alternativ": [
+            "Därför att deras produkter är onödiga",
+            "Därför att avkastning över kapitalkostnad utan inträdeshinder attraherar entréer som konkurrerar bort överskottet — tills avkastningen är kapitalkostnaden",
+            "Därför att råvaror är reglerade",
+            "Därför att alla råvarubranscher är statligt ägda"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med en attraktiv avkastning som ingen skyddar?"
+        },
+        {
+          "q": "Vad är syftet med värdekedjeanalysen?",
+          "alternativ": [
+            "Att hitta den billigaste leverantören",
+            "Att kartlägga var i kedjan — från råvara till slutkund — som makt och hinder samlar vinstpoolen, och om bolaget sitter där",
+            "Att räkna bolagets kassaflöde",
+            "Att mäta logistikkostnader"
+          ],
+          "ratt": 1,
+          "tips": "Vinstpoolen har en adress — vem äger den och varför?"
+        },
+        {
+          "q": "Hur ska steg tre — titta på framtiden — användas enligt kursen?",
+          "alternativ": [
+            "Som grund för att betala extra för spännande framtidsutsikter",
+            "Som gallring: identifiera vad som kan förstöra moaten och kräv att säkerhetsmarginalen täcker det — köp nutiden, acceptera framtiden gratis",
+            "Som ursäkt att hoppa över värderingen",
+            "Som prognosverktyg för nästa kvartal"
+          ],
+          "ratt": 1,
+          "tips": "Vad ska hända med en investeringsidé som inte överlever framtidsfrågorna?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 13,
+      "title": "Kontroversen — EMH slår tillbaka: distress-risk kontra beteende",
+      "intro": "Greenwald lutar beteende: value-premien är, enligt boken, ett utnyttjande av systematiska mänskliga och institutionella fel — inte en riskpremie. Men EMH-lägerns svar är den starkaste motståndaren i ämnet: Fama och French har sedan 1992 hävdat att value-aktiers överavkastning är kompensation för verklig distress-risk, och de står fast. Det här kapitlet redogör för båda lägren på deras egna villkor — och ger AK1A:s syntes med medgivanden. Kursens krav: du ska kunna båda förklaringarna, för annars vet du inte vad du blir betald för.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "EMH-lägrets fall, framfört så starkt som det kan framföras. Grundproblemet är det gemensamma hypotesproblemet, formulerat av Eugene Fama (1970): varje test av marknadseffektivitet är samtidigt ett test av en modell för normalavkastning — hittas en anomali kan marknaden vara ineffektiv ELLER modellen fel; man kan inte avgöra vilken. Fama och French (1992–1993) visade att beta inte förklarar tvärsnittet av avkastningar, och byggde tresfaktormodellen: marknad, storlek (SMB) och värdet (HML — hög minus låg P/B); värdefaktorn hade enorm förklaringskraft, och deras tolkning var riskbaserad: bolag med högt bokförda värde mot kursen är ofta finansiellt trängda — value är stressad kapitalism, och premien är kompensation för att bära den risken. Fama (1998), Market Efficiency, Long-Term Returns, and Behavioral Finance, besvarade behavioristerna: långsiktiga anomalier är extremt känsliga för metodval och avkastningsmodell; de flesta försvinner eller försvagas vid rimliga justeringar; och behavioristisk finans åberopar samtidigt underreaktion (momentum) och överreaktion (value) — två felriktningar som åtminstone en av dem måste vara metodartefakt. Fama och French (1995) kompletterade: lågt P/B hänger samman med ihållande svaga resultat — valuebolag är kroniskt pressade bolag. I den här läsningen är värdeinvesteraren inte en gratisamlare utan en försäkringsgivare: hon får betalt för att hålla bolag som gör ont i dåliga tider — exakt när hon själv gör ont. Fama-French står fast: premien är risk."
+        },
+        {
+          "type": "text",
+          "content": "Behavioristernas fall — och Greenwalds lutning. Lakonishok, Shleifer och Vishny (1994) testade just riskförklaringen och fann den svag: värdeportföljerna underpresterade INTE i dåliga tillstånd — glansstrategierna var minst lika drabbade i krascher och svaga marknader; om value vore distress-risk borde den straffa hårdare just när allt faller, och det gjorde den inte i deras data. Daniel och Titman (1997) gick längre: premien följer karaktären (högt bokvärde-mot-kurs) — inte faktor-exponeringen — vilket är svårt att förena med en riskstory. Och Shleifer och Vishny (1997), The Limits of Arbitrage, förklarade det som riskberättelsen saknar: varför premien FÅR bestå — arbitragörer som ska rätta felprissättningar är själva kapitalbegränsade och karriärriskiga, och tvingas överge sina positioner som mest felaktiga; därför kan felprissättningar leva kvar i årtionden utan att ätas upp. Boken (och Greenwalds undervisning) lutar beteende: källorna är identifierbara — överreaktion, extrapolering, karriärrisk, tvång — och kan iakttas på mikroplanet (kapitel 2), inte bara härledas ur en regression; dessutom pekar boken på att samma investerare, lärda och oberoende av varandra, systematiskt utnyttjat premien i decennier (Buffetts Superinvestors-argument) — vilket ser ut som hantverk, inte som riskplock. Greenwalds slutsats, kursens återgivning: felprissättningarna är verkliga, beteendemässigt grundade och sökbara — värdeinvesterandet är kant, inte kompensation."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — och medgivandena, utan krumbukter. Syntesen: de två förklaringarna är inte ömsesidigt uteslutande, och HML mäter sannolikt en BLANDNING — en riskkomponent (valuebolag är ofta cykliskt och finansiellt trängda; Quantitative Value-kursens Z- och CDS-varningar finns av ett skäl) och en beteendekomponent (tvång, överreaktion, extrapolering). Praktiken följer av båda: om premien delvis är risk ska du kräva STÖRRE marginal i trängda bolag och rensa döende billiga (värdefällan är riskhistoriens bevis) — och om premien delvis är beteende ska du sörja för att själv inte bli tvångssäljaren (QV-kursens regelbyggda temperament). Säkerhetsmarginalen är det praktiska svaret på kontroversen just för att den fungerar under BÅDA förklaringarna: den betalar dig för risken om risklägret har rätt, och den skyddar dig mot ditt eget fel om beteendelägret har rätt. Medgivandena: value-premien har varit svag under långa perioder (inte minst 2017–2020 då billigt systematiskt underpresterade dyrt — en behavioral-förklaring hjälper inte den som lämnade strategin mellan); akademiskt publicerade premier tenderar att klinga av efter publicering; beteendeteorierna är också svåra att falsifiera — allt kan förklaras med bihaser, vilket är deras egen svaghet; datan är amerikansk och svensk småbolagshistorik bär survivorship- och likviditetsproblem (V11); och kursen medger att Greenwalds lutning är en lutning — inte ett avgörande bevis. Kontroversen är levande; det ärliga svaret är processdesign som skyddar mot båda utfallen."
+        },
+        {
+          "type": "insikt",
+          "content": "Du behöver inte avgöra tvisten för att agera — men du måste kunna redogöra för båda lägren. Säkerhetsmarginalen är kontroversens praktiska lösning: den betalar dig om premien är risk, och den skyddar dig om premien är beteende. Den som bara kan en förklaring vet inte vad han blir betald för — eller vad han riskerar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — två skolor, fem frågor\",\"rader\":[[\"Fråga\",\"EMH: Fama-French — risk\",\"Behaviorister och Greenwald — beteende\"],[\"Varför finns value-premien?\",\"kompensation för distress- och cykelrisk\",\"systematisk överreaktion, extrapolering, tvång\"],[\"Vad mäter HML?\",\"en riskfaktor — trängda bolag\",\"en kombination — men kärnan är felprissättning\"],[\"Varför består premien?\",\"den måste bestå — risk prissätts alltid\",\"arbitragens gränser: kapital- och karriärrisk hos de som ska rätta felet\"],[\"Starkaste beviset\",\"HML:s förklaringskraft; svaga resultat hos valuebolag; metod­känsligheten i anomalier\",\"value slår inte sämre i dåliga tillstånd (LSV); karaktär inte faktor (Daniel-Titman); utövarnas decennier\"],[\"Praktisk konsekvens\",\"kräv större marginal i trängda bolag; rensa värdefällor\",\"bygg regler som hindrar dig att bli tvångssäljaren; sök där tvånget bor\"],[\"AK1A:s hållning\",\"båda delvis rätt — säkerhetsmarginal fungerar under båda; medge svaga perioder och publiceringsavklingning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv kontroversen på ditt eget bolag: en värdeposition du har — förklara dess billighet på RISKGROUNDM i tre meningar (vilken distress? vilken cykel- eller finansiell risk bär du?) och på BETEENDEGRUND i tre meningar (vems tvång eller överreaktion? vad vet du som priset missar?). Avsluta med: vilket bevis skulle få dig att byta förklaring — och vad heter det beviset i nästa rapport? Det är falsifierbarhetsträning, och den skiljer analys från tro."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Fama-French tresfaktormodells förklaring till value-premien?",
+          "alternativ": [
+            "Att den är en ren anomali som ska försvinna",
+            "Att den är kompensation för risk — valuebolag är finansiellt och cykliskt trängda, och HML mäter den distress-risken",
+            "Att den beror på centralbankernas politik",
+            "Att premien bara finns i småbolag"
+          ],
+          "ratt": 1,
+          "tips": "I riskläsningen är värdeinvesteraren försäkringsgivare — mot vem?"
+        },
+        {
+          "q": "Vilket fynd utmanade riskförklaringen enligt LSV (1994)?",
+          "alternativ": [
+            "Att valueportföljer underpresterade kraftigt i krascher",
+            "Att värdestrategierna INTE underpresterade i dåliga tillstånd — som en distress-riskförklaring skulle kräva",
+            "Att value bara fungerade på måndagar",
+            "Att premien var större i glansbolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad SKULLE riskhistorien förutsäga i dåliga tider — och vad visade datan?"
+        },
+        {
+          "q": "Vad är AK1A:s praktiska svar på kontroversen?",
+          "alternativ": [
+            "Avgöra tvisten till behavioristernas fördel och gå vidare",
+            "Undvika value eftersom tvisten är olöst",
+            "Säkerhetsmarginal — den betalar dig om premien är risk och skyddar dig om premien är beteende; dessutom rensas värdefällor och regler hindrar egen tvångsförsäljning",
+            "Köpa både value- och growthfonder för att neutralisera risken"
+          ],
+          "ratt": 2,
+          "tips": "Vilken enskild praktik fungerar oavsett vilken förklaring som är sann?"
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 12,
+      "title": "Åtta porträtt — från Buffett till Schloss",
+      "intro": "Bokens sista del är åtta porträtt av värdeinvesterare — inte hjältedikter utan inställningar av samma metod. Med Graham som nollpunkt spänner de från balansräkningens renodlade ände (Schloss) till franchisens ände (Buffett), och var och en bevisar att en annan del av kartan fungerar. Kursen håller porträtten korta och ärliga — inklusive det som var och en KRAV av processen.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Nollpunkten och franchisens ände. Graham — traditionens urfader, behandlad i kapitel 3: Mr Market, säkerhetsmarginal, net-net; hans eget användande var statistiskt, diversifierat och balansräkningsbundet. Warren Buffett — Grahams elev och medarbetare vid Graham-Newman — började i samma ände: cigarbutter och statistisk billighet. Vändningen kom med köpet av See's Candies 1972: ett varumärke med prissättningsmakt som visade värdet av att betala för kvalitet med moat — och hans formulering blev metodens mest citerade regel: det är bättre att köpa ett underbart bolag till ett rimligt pris än ett rimligt bolag till ett underbart pris. Buffett-karaktären: koncentration (få positioner som förstås djupt), ägarhorisont i princip permanent, försäkringsfloat som kapitalkälla, och kravet på kapitalfördelning i varje beslut. Porträttets ärliga baksida, som boken medger indirekt genom sin egen metodlära: den är svårast att kopiera — den kräver moat-bedömning (trappans osäkraste steg) och unik kapitaltillgång — och därmed högre beviskrav hos den som försöker."
+        },
+        {
+          "type": "text",
+          "content": "Mitten och balansräkningens ände — de övriga sju, korta och ärliga. Mario Gabelli — Private Market Value (PMV): vad skulle en kunnig industriell köpare betala för hela bolaget? — plus krav på KATALYSATORER som stänger gapet mellan kurs och PMV (AKM1:s V16–V18 i sin renaste form). Glenn Greenberg — koncentrerad portfölj på åtta till tolv namn, djup grundläggande analys, dominanta bolag till rimliga priser; färre affärer, mer läsning per affär. Robert Heilbrunn — den tyste långdistanslöparen: förvaltade pengar enligt värdeprinciper från 1920-talet, genomlevde depressionen och donerade så medlen att Columbia kunde grunda Heilbrunn Center år 2001 — karriärens längd är själva beviset. Seth Klarman — säkerhetsmarginalens absolutist: bokens egen Margin of Safety är slutsåld och säljs begagnat för multipla av originalpriset; hans metod: kassan är en position när inget är billigt, specialsituationer (avknoppningar, konkursutfårdor, tvångsförsäljningar) och ett absolutavkastningstänk — mät mot noll, inte mot index. Michael Price — djup value under stress: köpte där andra tvingades sälja, i tidigt 1990-tals bankkris bland annat, med balansräkningen och katalysatorer som ledstång. Walter och Edwin Schloss — far och son, Graham-Newman-alumner, och metodens balansräkningsände i renodling: obemannat litet kontor, cirka hundra positioner, inga moat-analyser, ingen kontakt med ledningar — enbart statistisk billighet mot balansräkningen; Walter Schloss räknade i decennier upp runt femton procents årlig avkastning mot index elva — ett halvsekel bevis att trappans nedersta steg, mekaniskt och diversifierat, fungerar utan ett enda besök hos ett enda bolag."
+        },
+        {
+          "type": "text",
+          "content": "Vad förenar och delar dem — och vad det betyder för dig. Förenar: säkerhetsmarginalen (alla köper under värde, aldrig över), Mr Market-disciplinen (alla utnyttjar humör istället för att följa det), och ödmjukheten inför prognoser (ingen av dem tjänar sina pengar på att förutsäga makro eller kurser). Delar: diversifieringsgraden (Schloss hundra mot Greenberg åtta-tvålv — båda har bevisat sin ände); katalysatorkravet (Gabelli och Price vill veta VAD som stänger gapet; Schloss väntar tålmodigt); kassans roll (Klarman håller kassa som position; Buffett låter koncentrationen bära); och analysdjupet per namn (Greenberg läser allt; Schloss läser balansräkningar i antal). Bokens poäng, och kursens: det finns inte EN värdeinvesterare — det finns en metod med en inställningsratt, och porträtten är de åtta bevisade inställningarna. För AKM1 betyder det ett designtvång: din process måste VÄLJA var på axlarna du står — diversifiering, katalysatorer, kashållning, analysdjup — och valet ska stå i din portföljpamp, inte uppstå av slump. Det går inte att halva Schloss och halva Buffett: kanterna kräver varsin helhet."
+        },
+        {
+          "type": "insikt",
+          "content": "Porträtten är inte åtta hjältar utan åtta giltiga inställningar av samma metod: balansräkningen + bredd (Schloss) eller franchise + koncentration (Buffett) — båda är värde, båda är bevisade, och de utesluter varandra. Välj din ände medvetet; dina portföljregler är inställningens Evidence."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Åtta porträtt — metoden i åtta inställningar\",\"rader\":[[\"Investerare\",\"Kännetecken\",\"Diversifiering\",\"Kant och krav\"],[\"Graham (nollpunkten)\",\"Mr Market, säkerhetsmarginal, net-net\",\"hög — tiotals bolag\",\"statistisk billighet mot balansräkningen\"],[\"Warren Buffett\",\"franchise efter See's 1972; underbart bolag till rimligt pris\",\"låg — koncentration\",\"moat-bevis, kapitalfördelning, permanent ägarhorisont\"],[\"Mario Gabelli\",\"Private Market Value — vad betalar en köpare?\",\"medel\",\"katalysator som stänger gapet (V16–V18)\"],[\"Glenn Greenberg\",\"få namn, djup analys\",\"mycket låg — 8–12\",\"dominanta bolag, enorm läsning per affär\"],[\"Robert Heilbrunn\",\"värde från 1920-talet, genom depressionen\",\"medel\",\"karriärens längd som bevis; donerade Heilbrunn Center\"],[\"Seth Klarman\",\"Margin of Safety; kassa som position\",\"medel\",\"specialsituationer; absolutavkastning mot noll\"],[\"Michael Price\",\"djup value under stress\",\"medel-hög\",\"tvångssäljare och katalysatorer; balansräkningen\"],[\"Walter & Edwin Schloss\",\"statistisk billighet utan moat-analys\",\"mycket hög — cirka 100\",\"mekaniskt, obemannat, ett halvsekel bevis\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget porträtt — en sida, tre beslut: diversifieringsgrad (med antal positioner), katalysatorkrav (köper du utan VAD som stänger gapet?), och kashållning (är kassa en position eller over prestation?). Motivera varje val med ett av de åtta porträtten. Jämför sedan med din faktiska portfölj: var stämmer design och verklighet, och var är glappen? Varje gap är ett oskrivet beslut som slump fattar åt dig."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad utmärker Walter och Edwin Schloss metod?",
+          "alternativ": [
+            "Koncentration på åtta moat-bolag med djup analys",
+            "Statistisk billighet mot balansräkningar med cirka hundra positioner — utan moat-analys eller bolagsbesök",
+            "Daytrading på momentum",
+            "Enbart investeringar i bankers tidsskrifter"
+          ],
+          "ratt": 1,
+          "tips": "Trappans nedersta steg, mekaniskt och diversifierat — ett halvsekel bevis."
+        },
+        {
+          "q": "Vad är Mario Gabellis signaturbegrepp?",
+          "alternativ": [
+            "Private Market Value — vad en kunnig köpare betalar för hela bolaget — kombinerat med krav på katalysatorer",
+            "Earnings Power Value",
+            "Net Current Asset Value",
+            "The Magic Formula"
+          ],
+          "ratt": 0,
+          "tips": "Värderingens utgångspunkt är en industriell köpare — inte börsen."
+        },
+        {
+          "q": "Vilken gemensam nämnare delar samtliga åtta?",
+          "alternativ": [
+            "Koncentration i få aktier",
+            "Prognoser av konjunkturen",
+            "Säkerhetsmarginalen och Mr Market-disciplinen — köp under värde, utnyttja humöret, förutsäg inte",
+            "Krav på direktavkastning"
+          ],
+          "ratt": 2,
+          "tips": "Skilj på vad de delar (grundprincipen) och vad de skiljer sig åt (inställningen)."
+        }
+      ]
+    },
+    {
+      "num": 14,
+      "minutes": 12,
+      "title": "Fallstudien — tre steg på två svenska bolag [illustrativt]",
+      "intro": "Nu hela processen på två konstruerade svenska fall [illustrativt]: Nordisk Verktyg AB — råvaruproducenten som var billigt — och Skandinavisk Specialkem AB — franchisen som var lagom. Två bolag, två olika slutsatser, båda korrekta. Det är här kursens alla verktyg monteras ihop till ett beslut.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fall A — Nordisk Verktyg AB [illustrativt], summerat genom alla tre stegen. Sök: hittad via lågt P/B-screen och en tvångsorsak — en stor ägare avyttrade sin post efter en fondnedläggning (kapitel 2:s källa tre). Steg 2a: återgångsvärdet ett miljarder femhundra miljoner — trettio kronor per aktie (kapitel 6); NCAV strax under femton kronor — golvet under golvet. Steg 2b: EPV trettioen komma fyra kronor per aktie (kapitel 8:s fullständiga tabell). Steg 2c: ingen moat — EPV ligger i nivå med återgångsvärdet; tillväxtvärde noll. Steg 3: branschstruktur — verktygsindustrin är råvarupräglad med överkapacitet i toppar, men kapacitet lämnar i botten; teknologiskift saknas, kedjan är fragmenterad utan dominerande kund (V03 godkänt). Kurs tjugo kronor: under tillgångsvärdet med trettiofem procents marginal och under EPV med fyrtio. Beslut: KÖP — men Schloss-villkor: positionsstorlek efter balansräkningskaraktär, bredd i portföljen, mekanisk säljregel (femtio procent upp eller två år) — Grahams regler för Grahams fall. AKM1-rader: V04–V06 gröna mot golv och tak, V07–V09 medelmåttiga men stabila, V10–V12 pass, V13–V15 noll (och beaktade som noll i priset), V19 pass (ingen kapitalförbränning — fritt kassaflöde positivt i normalår), V20 neutral."
+        },
+        {
+          "type": "text",
+          "content": "Fall B — Skandinavisk Specialkem AB [illustrativt]. Sök: EJ hittad i billiga universum — den dyker upp i kvalitetssök, inte värdesök: P/S 3,1 (V04 röd), P/B 6,0 (V05 röd). Verksamheten: dominant i Norden — fyrtiofem procent andel i sin nisch — med byteskostnader (kundens process godkänns certifierat mot just denna kemi) och teknisk service som gör omställningen dyr: kundfångenskap i kombination med lokal skaltekonomi. Moat-mätaren: bruttomarginal fyrtiofem procent och ROE tjugotvå procent, stabila genom två cykler (V07, V09 gröna); EPV beräknad till tjugosex kronor per aktie mot återgångsvärde tolv kronor — gapet fjorton kronor per aktie är moatens kronvärde: bevisad franchise. Tillväxt: historiskt sex procent per år genom återinvestering till arton procents avkastning — moat-skyddat och värdefullt (kapitel 9:s formel ger ett tillväxtvärde i storleksordningen EPV:s hälft vid försiktiga antaganden). Totalt värde: cirka fyrtio kronor per aktie. Kursen: trettiofem. Marginalen: fjorton procent — för smal. Beslut: VÄNTA — en bevisad franchise till nästan fullt pris är en bra verksamhet men en dålig affär; notera kursen i bevakningen och vänta på Mr Markets nästa humörsvängning (i ett franchise-fall är tålamodet extra betalt: kapitel 9 visar att rätt moat med tiden FÖRDELAR värdet). Detta är kapitlets haltande punkt och dess viktigaste läxa: fallet B är den bättre bolaget och den sämre affären — och värdeinvesteraren köper AFFÄREN."
+        },
+        {
+          "type": "text",
+          "content": "Efterräkningens ärlighet — och mallen. Där är analysen som mest sårbar, rakt uppriott: i fall A — nämnarens val (trettioen kronor vid tio procents ränta blir tjugofem vid tolv) och normaliseringsfönstret (fem år räcker om cykeln fångas, ljuger om den inte gör det); i fall B — moatens varaktighet (byteskostnader kan urbaniseras bort av standardisering — kapitel 11:s framtidsfrågor) och tillväxtvärdesräntans känslighet. Därför skrivs tesen FÖRE utfallet och dateras: en sida med sökorsak, golv (tillgångsvärde), tak (EPV), moat-dom, marginal, beslut, positionsstorlek och säljregel — och en rad om vad som ska göra tesen fel. Svenska fallen är kursens [illustrativa] konstruktioner — boken arbetar med generiska exempel och sina porträtts verkliga affärer — men metoden är densamma på riktiga årsredovisningar: hämta fem år, normalisera, stegra, mät gapet, fråga kedjan, kräv marginal. Nästa steg i AK1A: kör processen på ett verkligt svenskt börsbolag i helgen — och ladda resultatet i din AKM1-kalkyl."
+        },
+        {
+          "type": "insikt",
+          "content": "Fallet lär mallen: samma tre steg, två bolag, två olika beslut — och båda rätt. Det avgörande är inte bolagets kvalitet utan relationen mellan pris och den mest pålitliga värderingen. Fall B är den bättre bolaget och den sämre affären — värdeinvesteraren köper affären."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fall A mot fall B — tre steg, två beslut [illustrativt]\",\"rader\":[[\"Rad\",\"Nordisk Verktyg (råvara)\",\"Skandinavisk Specialkem (franchise)\"],[\"Sökorsak\",\"tvångsförsäljning + lågt P/B\",\"kvalitetssök — ej billig\"],[\"Återgångsvärde / aktie\",\"30,0 kr (golv)\",\"12,0 kr\"],[\"EPV / aktie\",\"31,4 kr (tak)\",\"26,0 kr\"],[\"Moat (EPV-gap)\",\"nej — gap nära noll\",\"ja — 14 kr per aktie\"],[\"Tillväxtvärde\",\"noll — utan moat\",\"positivt — moat-skyddad återinvestering\"],[\"Totalt värde / aktie\",\"cirka 31 kr\",\"cirka 40 kr\"],[\"Kurs\",\"20 kr\",\"35 kr\"],[\"Marginal\",\"cirka 35 % mot golv\",\"cirka 14 % — för smal\"],[\"Beslut\",\"KÖP — Schloss-villkor: bredd, 50 %/2 år-säljregel\",\"VÄNTA — bevakning; bra bolag är inte en bra affär\"],[\"AKM1-färg\",\"V04–V06 grön; V13–V15 noll och prisad som noll\",\"V07–V09, V13–V15 grön; V04–V05 röd\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg ditt eget dubbla fall: ett billigt råvarubolag och en lagomprisad franchise ur ditt universum. Fyll tabellen ovan — sökorsak, golv, EPV, moat-dom, totalvärde, kurs, marginal, beslut med positionsstorlek och säljregel. Datera dokumentet, skriv tesen-fel-raden och ladda båda genom AKM1. Om båda fallen slutar KÖP har du antingen en extrem marknad eller för generösa marginaler — kontrollera vilken."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför blev beslutet VÄNTA i fall B trots bevisad franchise?",
+          "alternativ": [
+            "Därför att franchisen var svag",
+            "Därför att franchisebolag aldrig ska köpas",
+            "Därför att marginalen mellan kurs och mest pålitligt totalvärde var för smal — bra bolag till nästan fullt pris är en dålig affär",
+            "Därför att moat-gapet var negativt"
+          ],
+          "ratt": 2,
+          "tips": "Vad köper du — bolagets kvalitet eller marginalen mot värde?"
+        },
+        {
+          "q": "Vilka säljvillkor passade fall A (råvarubolaget)?",
+          "alternativ": [
+            "Buffett-modellen: aldrig sälja",
+            "Grahams mekanik — femtio procent uppgång eller två år, whichever first — med bredd i portföljen",
+            "Inga regler — sälj på känsla",
+            "Stop loss på tio procent"
+          ],
+          "ratt": 1,
+          "tips": "Vilket porträtt matchar trappans nedersta steg?"
+        },
+        {
+          "q": "Vad är den mest sårbara punkten i fall B:s analys?",
+          "alternativ": [
+            "Beräkningen av nettoskuld",
+            "Moatens varaktighet — byteskostnader kan standardiseras bort — och tillväxtvärdets känslighet för räntan",
+            "Antalet aktier",
+            "Skattesatsen"
+          ],
+          "ratt": 1,
+          "tips": "Vilken del av analysen köper du när du köper en franchise — och vad är dess fiende i kapitel 11?"
+        }
+      ]
+    },
+    {
+      "num": 15,
+      "minutes": 12,
+      "title": "Sammanfattning — värderingens hierarki och V01–V20",
+      "intro": "Sista kapitlet sätter ihop hela kursen till en enda hierarki — från sökandets universum till säkerhetsmarginalens beslut — och översätter Greenwalds bok till AKM1:s alla tjugo variabler. Därmed står BOKMASTER-arken klar: QV rankar, Greenwald värderar, AKM1 poängsätter — och marginalen avgör.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hierarkin som en enda sekvens, från börs till beslut. Ett — sök: börja i billiga universum (V04–V06-skärm, /netnet för balansräkningsextremer), stäng för det som inte är genomförbart (V11) och prioritera kandidater med identifierbar icke-värdegrundad orsak till billigheten. Två — sätt golvet: stegra balansräkningen från kassa via NCAV till återgångsvärde (V05, V10, V11). Tre — sätt taket: EPV på normaliserad vinst utan tillväxt, räknad som intervall (V07–V09, V12). Fyra — mät moaten: EPV-gapet, marginalernas och andelens stabilitet, de fyra hindren (V13–V15); bara med bevisad moat får tillväxtvärde finnas (V01–V02). Fem — gallra framtiden: branschstruktur, värdekedja, de tre händelser som kan förstöra moaten; katalysatorer rankar men motiverar aldrig pris (V03, V16–V18). Sex — stäng riskgrindarna: kapitalförbränning och emission-risk stoppar (V19), likviditet stoppar (V11). Sju — kapitalfördelning och ledning som förstärkare (V20). Åtta — besluta: marginal mellan kurs och den MEST PÅLITLIGA värderingen, storlek efter portföljdesign (kapitel 13:s val), säljregler skrivna före köp. Ordningen är metoden: varje steg skyddar nästa."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till AKM1:s tjugo variabler, hela vägen runt. V01–V02 (tillväxt): prisvärda ENDAST med moat-bevis — annars neutrala eller belastande (kapitel 9). V03 (diversifiering): värdekedjans och kundkoncentrationens variabel (kapitel 11). V04–V06 (värdering): meningsfulla först mot golv och tak från kapitel 6–8 — multiplar utan värdering är rankning, inte analys. V07–V09 (lönsamhet): EPV:s råvara och moat-mätarens stabilitetsbevis. V10–V12 (stabilitet): NCAV-stegran och normaliseringens trovärdighet. V13–V15 (moat): biljetten till tillväxtvärde — fyra hinder, ett mätbart bevis var. V16–V18 (katalysatorer): Gabelli-traditionens gap-stängare och kapitel 11:s riskgallring — rankning bland billiga, aldrig köpskäl. V19 (risk): den hårdaste grinden — cigarbutten som brinner kapital är en värdefälla, inte ett fynd. V20 (kapitalstruktur): kapitalfördelningens poäng. Och utöver variablerna: säkerhetsmarginalen — inte en variabel utan utgången av alla tjugoen. Kursens placering i BOKMASTER-arken: Security Analysis gav traditionen, What Works och Quantitative Value gav systematiken, Greenwald ger HANTVERKET — den enda boken som lär räkna fram golvet, taket och moat-gapet. AKM1:s användning: skärmen kommer från QV-logik, värderingen från Greenwald-logik, poängsättningen är din — strukturerad subjektivitet på strukturerad objektivitets underlag."
+        },
+        {
+          "type": "text",
+          "content": "Avslutningen — pessimismens ingenjörskonst. Greenwalds kurs har överlevt vid Columbia i årtionden för att den är FALSLIFIERBAR per bolag: varje år kan varje tes prövas mot det EPV som faktiskt levererades — och det är den egenskapen, inte fromheten för traditionen, som gör den till ingenjörskonst. Metodens själ är tre medvetna pessimismer: värdera utan tillväxt tills moaten bevisar den; värdera tillgångarna till återgångskostnad, inte till historisk kostnad; och kräv marginal mot det tråkigaste fallet, inte det troligaste. Hämta nu tillbaka din definition från kapitel 1 och jämför — och genomför sedan kursens diplom: en EPV-promemoria på ett A4, ett verkligt bolag, fem års normalisering, golv, tak, moat-dom, marginal, beslut med positionsstorlek och säljregel, daterad och sparad för återbesök om tolv månader. Greenwald skrev boken för att hantverket kan läras — men det lärs bara genom att göras. Gör det i veckan som kommer."
+        },
+        {
+          "type": "insikt",
+          "content": "Hela kursen i en mening: betala för det som är bevisat, marginal för det som är osäkert, ingenting för det som bara är hopp. Det är värderingens hierarki — och den fungerar lika bra under Famas värld som under Greenwalds."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Greenwald till AKM1 — hela översättningstabellen\",\"rader\":[[\"Bokens byggsten\",\"AKM1\",\"Roll i processen\"],[\"Sök i billiga universum; net-net\",\"V04–V06, V11, /netnet\",\"sannolikhetsförstärkare — skärmen får aldrig motivera köp\"],[\"Kassa → NCAV → återgångsvärde\",\"V05, V10, V11\",\"golvet — tillgångsvärdet i stegrat bevis\"],[\"EPV utan tillväxt\",\"V07–V09, V12\",\"taket — normaliserad intjänande kapitaliserad\"],[\"Moat-mätaren: EPV-gap, fyra hinder\",\"V13–V15\",\"biljetten till tillväxtvärde\"],[\"Tillväxtvärde endast med moat\",\"V01–V02\",\"prisvärda bara bakom bevisade hinder\"],[\"Branschstruktur och värdekedja\",\"V03, V16–V18\",\"framtids gallring — rankning, aldrig köpskäl\"],[\"Värdefälla och kapitalförbränning\",\"V19\",\"hårdaste grinden — cigarbutten som brinner är en fälla\"],[\"Kapitalfördelning och ledning\",\"V20\",\"förstärkare — kan häva gap, inte skapa moat\"],[\"Säkerhetsmarginalen\",\"utgången av alla 20\",\"marginal mot mest pålitlig värdering — fungerar under både risk- och beteendeförklaringen\"],[\"Porträttenas inställningar\",\"portföljdesign\",\"diversifiering, katalysatorer, kassa — skrivet i portföljpampen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Diplomet: producera din första fullständiga EPV-promemoria — ett A4 på ett verkligt bolag: sökorsak, NCAV och återgångsvärde (golv), EPV med ränteintervall (tak), moat-dom med fyra hinder, marginal, AKM1-poäng, beslut med positionsstorlek och säljregel, samt en rad om vad som gör tesen fel. Datera den, spara den, och boka ett återbesök om tolv månader. Återbesöket — inte promemorian — är kursens examen: där visas om du är analytiker eller berättelseförfattare."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är den korrekta ordningen i kursens slutsekvens?",
+          "alternativ": [
+            "Moat, sök, marginal, värdering, gallring",
+            "Sök i billiga universum, golv via balansräkningen, tak via EPV, moat-mätning, framtids gallring, riskgrindar, kapitalfördelning, marginalbeslut",
+            "Marginal först, värdering sedan, sök sist",
+            "Katalysatorer, tillväxt, moat, sök"
+          ],
+          "ratt": 1,
+          "tips": "Varje steg skyddar nästa: sannolikhet, golv, tak, bevis, gallring, grindar — beslutet sist."
+        },
+        {
+          "q": "Vilken roll ska V16–V18 (katalysatorer) och V01–V02 (tillväxt) ha enligt kursen?",
+          "alternativ": [
+            "De kan motivera att betala över EPV när berättelsen är stark",
+            "De rankar bland redan billiga kandidater — tillväxt prisvärds bara med moat-bevis, katalysatorer stänger gap men skapar det inte",
+            "De ska alltid ge maximal poäng i AKM1",
+            "De ersätter balansräkningsanalysen"
+          ],
+          "ratt": 1,
+          "tips": "Minns fall B: bra bolag är inte en bra affär — vad fick och fick inte påverka priset?"
+        },
+        {
+          "q": "Varför kallas kursens metod pessimismens ingenjörskonst?",
+          "alternativ": [
+            "Därför att den förutsäger krascher",
+            "Därför att den värderar utan tillväxt tills moat bevisar den, värderar tillgångar till återgångskostnad och kräver marginal mot det tråkigaste fallet — falsifierbar per bolag och per år",
+            "Därför att den endast köper konkursbo",
+            "Därför att den förbjuder tillväxtbolag för alltid"
+          ],
+          "ratt": 1,
+          "tips": "Tre medvetna pessimismer — och en examen som heter återbesök."
+        }
+      ]
+    }
+  ]
+}

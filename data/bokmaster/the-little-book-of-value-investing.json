@@ -1,0 +1,954 @@
+{
+  "slug": "the-little-book-of-value-investing",
+  "category": "BOKMASTER",
+  "weight": "KRITISK",
+  "chapterCount": 13,
+  "totalMinutes": 141,
+  "title": "The Little Book of Value Investing — Christopher Browne: KOMPLETT",
+  "summary": "Christopher Browne — fyrtio år på Tweedy, Browne, firman som grundades 1920, handlade Benjamin Grahams aktier i decennier och alltså förvaltade själve Grahams pengar — sammanfattade 2006 hela den klassiska värdeinvesterings hantverk i The Little Book of Value Investing: köp aktier som du köper matvaror (pris mot kvalitet, aldrig story), leta bolag under sin kassa (net-nets, direkt kopplad till vår Net-net-skannern på /netnet), läs P/B som den statistiska ryggraden (V05), jakt över hela världen (Japan under nettokassan i slutet av 1990-talet), value-trappan och trösklarna mot falleredet, tålamodets matematik (varför value fungerar långsamt och kommer i utbrott), Mr Market-psykologin, portföljbygget med bred spridning på 30–60 bolag i rak kontrast mot Buffetts koncentration (kopplad till Portföljbyggaren på /portfoljbyggare), frågan varför inte alla gör detta — och kontroversen: Bogle-skolan och indexförvaltarna (value-aktier är bara beta-exponering; köp indexet, det är billigare; de flesta aktiva förvaltare underpresterar) mot Browne/Tweedys nittiotvååriga forskningshistorik — med AK1A:s syntes (index som baseline, aktiva positioner som kunskapsapplikation enligt vår Bogle-kurs) och ett uttryckligt medgivande. Coda: Browne dog i december 2009, tre år efter boken — den är hans testamente, och kursen behandlar den som ett sådant.",
+  "minutes": 11,
+  "xp": 2000,
+  "level": "",
+  "learn": "Tillämpa matvarumentaliteten — betala matvarupris per enhet värde, aldrig parfymeriens berättelsepris · Känna arvet: hur firman Tweedy, Browne växte ur mäklarbud på Wall Street till förvaltare av Benjamin Grahams egna pengar och vad den blodslinjen betyder för metodens trovärdighet · Räkna net-nets steg för steg — NCAV = omsättningstillgångar minus totala skulder, Grahams tvåtredjedelströskel — och koppla direkt till AK1A:s Net-net-skanner på /netnet · Läsa P/B som statistisk ryggrad med Fama-French (1992) öppet citerad och mappa mot V05 (5 = under 1x) · Jaga värde globalt — home bias, försummade marknader, Japan under nettokassan, Sverige-nära småbolagsterräng — med samma checklista i alla tidszoner · Diagnostisera value-trappor: balansräkning först (V10, V11, V19), cykliskt mot strukturellt, tvångsförsäljning mot förfall · Förklara varför value fungerar långsamt: tröghetsperioder, premiens våldsamma utbrott, brasklappen som förhandsbeslut · Bruka Mr Market (Graham, The Intelligent Investor kapitel 8) — pris är ett anbud, inte ett orakel · Bygga portföljen i Browne-tappning: 30–60 positioner, tak per aktie, mekanisk rebalansering — mot Buffetts koncentration — i Portföljbyggaren på /portfoljbyggare · Besvara varför inte alla gör detta (karriärrisk, tristess, Grossman-Stiglitz-paradoxen) · Föra kontroversens argument på båda sidor: Bogle/SPIVA/EMH/faktor-zoo mot Tweedys nittiotvå år och beteendemekanismen — plus AK1A:s syntes och medgivande · Minnas codan: Browne dog 2009, boken är hans testamente · Syntetisera hela boken till AKM1:s tjugo variabler och ett slutprojekt med skannern och Portföljbyggaren.",
+  "why": "Det här är den klassiska värdeinvesterings hantverk i pocketformat — skriven av en man som inte skriver OM traditionen utan INNIFRÅN den: Christopher Browne satt på firman som handlat för Graham och hans bolag sedan 1920-talet, förvaltade globala värdefonder i sexton år och kallades av Morgan Stanleys Barton Biggs för en av världens bästa värdeinvesterare. Där grannkurserna specialiserar (Greenblatts två rankningar, Carlisles ensamma multipl) ger Browne HELA hantverket: matvarupris-tänkandet, net-nets, P/B, den globala jakten, trapp-varningen, psykologin, portföljbredden — och ärligheten i frågan varför inte alla gör detta. Kursen är också bokkatalogens mest direkta verktygskoppling: net-net-kapitlet kör mot vår egen Net-net-skannern på /netnet och portföljkapitlet mot Portföljbyggaren på /portfoljbyggare. Och kontroverskapitleet tar indexfrågan på fullt allvar: Bogle-skolan har siffrorna på sin sida (SPIVA: omkring nio av tio aktiva fonder slår inte indexet på femton år) — AK1A:s svar är därför inte retorik utan en syntes med medgivande: index är baseline, aktivt kapital ska förtjänas genom AKM1-disciplin, aldrig genom stockpicking på känsla. Slutligen: boken är Brownes testamente — han dog 2009, och att läsa den som ett sådant är den bästa vägen att förstå varför enkelhet och djup inte är motsatser.",
+  "chapters_list": [
+    "1. Köp aktier som du köper mjölk — matvarumentaliteten (pris mot kvalitet)",
+    "2. Arvet från Graham — firman som förvaltade Grahams pengar",
+    "3. Net-nets — köp bolag under dess kassa (Net-net-skannern /netnet)",
+    "4. P/B-tanken — priset per krona ägarkapital (V05)",
+    "5. Världen som jaktmark — globalt värdesökande",
+    "6. Value-trappan — när billigt är billigt av en anledning",
+    "7. Tålamodets matematik — varför value fungerar långsamt",
+    "8. Mr Market — psykologin som betalar din avkastning",
+    "9. Portföljen i praktiken — 30–60 bolag mot Buffetts koncentration (Portföljbyggaren /portfoljbyggare)",
+    "10. Hej — varför gör inte alla detta?",
+    "11. Kontroversen — Bogle-skolan: value är bara beta, köp indexet istället",
+    "12. Codan — Browne dog 2009, boken är hans testamente",
+    "13. Sammanfattning — värdeinvesterarens checklista (V01–V20)"
+  ],
+  "chapters": [
+    {
+      "num": 1,
+      "minutes": 11,
+      "title": "Köp aktier som du köper mjölk — matvarumentaliteten (pris mot kvalitet)",
+      "intro": "Browne öppnar boken med traditionens mest välbekanta bild, ärvd från Graham: köp dina aktier som du köper dina matvaror — inte som du köper din parfym. Kursens första kapitel bygger den mentala modellen som hela boken vilar på: att pris och kvalitet är två olika frågor, och att bara den ena går att läsa av i kurban.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Matvarujämförelsen, tagen på allvar. När du står i affären med mjölk och kaffe tittar du på enhetspriset: kronor per liter, kronor per kilo — och när paketet är på rea köper du två i stället för ett. Ingen prisjämförelse i livsmedelsbutiken påverkas av hur många andra som just nu står och tittar på paketet. På börsen är det omvända normen: en stigande kurs tas som bekräftelse på kvalitet och en fallande som varning — parfymeriets logik, där priset är en del av berättelsen och berättelsen är varan. Grahams maxime, som Browne gör till bokens första sida, är att aktiemarknaden är den enda butik där kunden rusar ut ur affären när priserna sänks. Matvarumentaliteten flyttar hela beslutet från hur känns det? till vad kostar det per enhet?"
+        },
+        {
+          "type": "text",
+          "content": "Två separata frågor — och AKM1:s karta över dem. Browne skiljer ovillkorligen: hur BRA är bolaget (kvaliteten — marginaler, varumärke, förutsägbarhet) och hur DYR är aktien (priset — vad du betalar per enhet av det bolaget). Ett utmärkt bolag kan vara en usel aktie vid fel pris, och ett medelmåttigt bolag en utmärkt aktie vid rätt pris. I AKM1:s variabellista bor kvaliteten i V07–V15 (bruttomarginal, EBITDA-marginal, ROE, moat-blocket) och priset i V04–V06 (P/S, P/B, EV/EBITDA) — poängsatta var för sig, aldrig ihopblandade. Matvarumentaliteten är alltså inte en metafor utan kursens hela arkitektur: enhetspriset först (V04–V06), kvaliteten efteråt som tröskel och kontext. Det är också exakt omvändningen av hur de flesta väljer aktier: story först, pris kanske."
+        },
+        {
+          "type": "text",
+          "content": "Enhetspriser i praktiken — tre mått, tre enheter. P/B (V05): vad betalar du per krona av ägarnas bokförda kapital? EV/EBIT-familjen (V06): vad betalar du per krona driftsresultat för HELA bolaget — måttet som en köpare av hela verksamheten räknar på (grannkursen The Acquirer's Multiple dissekerar det). P/S (V04): vad betalar du per krona omsättning? Browne använder dem som matare ställer ut varor: hylla för hylla, pris per enhet. Och den matvarumentala konsekvensen som psykologiskt är svårast: när priset faller och inget i verksamheten har förändrats ska du köpa MER — som kaffet på rea. Kapitel 8 (Mr Market) förklarar varför det ändå känns felaktigt varje gång; det är meningen. Bokens hela program i en mening: lär dig betala matvarupris för kassaflöden — och acceptera att butiken ligger ödelagd just när rean är som bäst."
+        },
+        {
+          "type": "insikt",
+          "content": "Pris och kvalitet är två frågor med två olika svar — och bara den ena syns i kursgrafen. Kvaliteten bor i bokslutet (V07–V15), priset i multiplarna (V04–V06). Matvaruköparen blandar aldrig ihop dem: älska bolaget om du vill — men betala efter enhetspriset."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Matvaruköparen mot parfymeraren — två sätt att handla aktier\",\"rader\":[[\"Fråga\",\"Matvaruköparen\",\"Parfymeraren\"],[\"Vad styr köpet?\",\"enhetspris per enhet värde (P/B, EV/EBIT, P/S)\",\"berättelsen, trenden, hur många andra som köper\"],[\"Prisfall på oförändrad vara\",\"köp mer — kaffet på rea\",\"sälj — något måste vara fel\"],[\"Kursstegring\",\"inget nytt köpskäl — enhetspriset blev sämre\",\"bekräftelse — köp mer\"],[\"Tidsdimension\",\"inte relevant\",\"allt: kursen är budskapet\"],[\"AKM1-översättning\",\"V04–V06 som motor, V07–V15 som tröskel\",\"V16–V18-storyn som köpskäl — kursens förbjudna väg\"],[\"Källa\",\"Grahams maxime via Browne, Little Book (2006), sid 1\",\"bokens diagnos av marknadens default-läge\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Enhetspris-kollen i kväll: lista dina tre största aktieinnehav. Räkna P/B och EV/EBITDA (eller EV/EBIT om du har räkenskaperna) för varje — notera enhetspriset per krona ägarkapital och per krona driftsresultat. Svara sedan ärligt: när något av dem föll tjugo procent — köpte jag mer, höll jag, eller sålde jag? Och styrdes det beslutet av enhetspriset eller av känslan i magen? Skriv tre rader: ett per innehav, med siffrorna intill. Om svaret blir köpte inte mer fast multiplarna föll och fundamentet stod still — då har du hittat kapitel 8:s arbetsuppgift i förväg."
+        },
+        {
+          "type": "visuell",
+          "content": "skala"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är kärnan i matvarumentaliteten enligt bokens öppning?",
+          "alternativ": [
+            "Att köpa dyrare när kvaliteten är hög, oavsett pris",
+            "Att betala efter enhetspris per enhet värde — som mjölk och kaffe på rea — och aldrig efter berättelsens lockelse",
+            "Att bara köpa aktier i bolag som säljer matvaror",
+            "Att handla aktier så ofta som möjligt för att få volymrabatt"
+          ],
+          "ratt": 1,
+          "tips": "Vad tittar en matvaruköpare på i hyllan — och vad gör denne när priset sänks på oförändrad vara?"
+        },
+        {
+          "q": "Browne skiljer på två frågor som måste hållas isär. Vilka?",
+          "alternativ": [
+            "Kommer räntan upp eller ned, och vem vinner valet",
+            "Hur bra är bolaget (kvalitet) och hur dyr är aktien (pris) — ett utmärkt bolag kan vara en usel aktie vid fel pris",
+            "Vad säger chartisten och vad säger fundamentalisten",
+            "Hur hög direktavkastningen är och hur stor utdelningen varit historiskt"
+          ],
+          "ratt": 1,
+          "tips": "Vilka två block i AKM1 svarar på frågorna — V07–V15 respektive V04–V06?"
+        },
+        {
+          "q": "Var i AKM1 bor prisfrågan — alltså enhetspriset?",
+          "alternativ": [
+            "I V13–V15 (moat-blocket)",
+            "I V16–V18 (katalysatorerna)",
+            "I V04–V06 (P/S, P/B, EV/EBITDA)",
+            "I V20 (återköpen)"
+          ],
+          "ratt": 2,
+          "tips": "Tre multiplar mäter pris per enhet omsättning, ägarkapital och driftsresultat — vilka variabler är det?"
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "minutes": 10,
+      "title": "Arvet från Graham — firman som förvaltade Grahams pengar",
+      "intro": "Värdeinvesterings mest levande institutionella släktdrag: firman Tweedy, Browne — grundad 1920, bosatt på Wall Street i Graham-kretsarnas närhet, i decennier mäklare och förvaltare åt Benjamin Graham själv. Kapitlet berättar blodslinjen från Graham till bokens författare — och varför en metods bästa bevis är att den överlevde sin upphovsman.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Firman, öppet citerad historia. Forrest Tweedy grundar 1920 en liten mäklarfirma på Wall Street; sonen Bill Tweedy gör sig känd som mäklarnas mäklare — en jägare av okända, smala och onoterade aktier i en tid utan skärmar, när att hitta ett pris kunde kräva telefonsamtal till bolaget. Howard Browne — Christophers far — ansluter 1928. Firman kom att ligga i samma kvarter som Benjamin Grahams verksamhet, och relationen blev mer än geografisk: under årtionden handlade Tweedy aktier för Grahams räkning och för Graham-Newman-bolaget, och Graham höll egna pengar hos firman. När Browne i boken skriver om Graham är det alltså inte en lärjungen som citerar en gurus bok — det är arvingen i firman som förvaltade mannens pengar. Buffetts fondsverksamhet på femtiotalet handlades genom samma firma."
+        },
+        {
+          "type": "text",
+          "content": "Efter Graham — traditionen som institution. När Graham lade ned sin verksamhet 1956 vidareutvecklade firman hantverket: Tom Knapp och partners, med Graham-metodiken i ryggen, tog steget från mäklare till förvaltare — och behöll den gamla vanan att läsa årsredovisningar ingen annan läste. Christopher Browne, nyexaminerad från University of Pennsylvania 1969, anställs samma år — och stannar i fyrtio år, till slut som managing director och medförvaltare av Tweedy, Browne Global Value Fund från 1993. En avgörande extern bekräftelse på traditionens hållbarhet: i Warren Buffetts berömda uppsats The Superinvestors of Graham-and-Doddsville (1984) — skriven som svar på effektiv-marknads-läran — är Tweedy, Browne en av de utpekade exemplen: en samling förvaltare med gemensam träning och goda resultat, inte en slumpens lottovinnare. Firmans interna forskningssamling What Has Worked in Investing — studier av låg P/E, lågt P/B, net-nets, insiderköp och återköp som i senare upplagor spänner över över nittio år av marknadshistoria — blev bokens empiriska ryggrad."
+        },
+        {
+          "type": "text",
+          "content": "Vad blodslinjen betyder för dig som AKM1-operatör. Tre saker. Ett: värdeinvestering är ett hantverk som överförts genom lärlingsskap — Grahams principer till firman, firmans fyrtioåriga praktik till boken, boken till den här kursen; Browne skrev sitt testamente (kapitel 12) just därför att lärandet skrevs ned. Två: metoden är statistisk, inte genialisk — firman vann inte genom en ensam briljant selektionsråga utan genom att mekaniskt och länge tillämpa enkla mått på många bolag; det är därför AKM1 är variabelstyrt och inte magkänslstyrt. Tre: trovärdighetskravet — den som hävdar att en metod fungerar måste kunna peka på att den fungerade EFTER att upphovsmannen slutade, genom flera bubblor och krascher. Tweedy-firman är det levande beviset; nästa kapitel går rakt på metodens mest extrema ytterpunkt — net-nets — och kapitel 11 återvänder till firman nittiotvååriga data i kontroversen mot index-skolan."
+        },
+        {
+          "type": "insikt",
+          "content": "En metods starkaste bevis är inte dess resultat hos upphovsmannen utan dess resultat hos arvtagarna. Graham slutade 1956 — firman som förvaltade hans pengar fortsatte i fyrtio år till och skrev 2006 ner hela hantverket i en fickbok. Det är skillnaden mellan en persons tur och en institutions trad."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Blodslinjen — från Graham till boken (öppet citerad kronologi)\",\"rader\":[[\"År\",\"Händelse\",\"Betydelse\"],[\"1920\",\"Forrest Tweedy grundar firman på Wall Street\",\"starten för mäklarnas mäklare i okända aktier\"],[\"1928\",\"Howard Browne (Christophers far) ansluter\",\"familjens inträde i traditionen\"],[\"1930–50-tal\",\"firman handlar för Benjamin Graham och Graham-Newman; Graham förvaltar egna pengar hos firman\",\"den direkta blodslinjen — bokens legitimitetsanspråk\"],[\"1956\",\"Graham lägger ned; firman utvecklar mäklarverksamheten mot förvaltning i Graham-anda\",\"metoden överlever sin upphovsman\"],[\"1969\",\"Christopher Browne (Penn 1969) anställs — stannar 40 år\",\"bokens författare går in i traditionen\"],[\"1984\",\"Buffetts uppsats The Superinvestors of Graham-and-Doddsville pektradar ut firman bland bevisen\",\"externt erkännande mot effektiv-marknads-läran\"],[\"1993\",\"Browne blir medförvaltare av Tweedy, Browne Global Value Fund\",\"den globala värdejakten (kapitel 5)\"],[\"2006\",\"The Little Book of Value Investing utkommer\",\"fyrtio år komprimerat till fickbok\"],[\"2009\",\"Browne dör 13 december — boken blir hans testamente (kapitel 12)\",\"codan\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Lärdomsprovet: läs (eller skumläs) Buffetts uppsats The Superinvestors of Graham-and-Doddsville från 1984 — den finns fritt publicerad. Notera hur argumentet är byggt: gemensam TRÄNING (Graham-Dodd), olika personer, olika portföljer, alla med goda resultat mot marknaden. Skriv därefter tre meningar: ett — varför är ett kluster av oberoende lärlingar ett starkare bevis än en ensam stjärna? två — vad betyder det för hur DU ska lära dig (vilken är din gemensamma träning — kurs här?)? tre — vad händer med din trovärdighet som analytiker om din metod bara fungerar när en viss person kör den? Spara svaren — de blir referens i kontroverskapitlet."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är den historiska kopplingen mellan Tweedy, Browne och Benjamin Graham?",
+          "alternativ": [
+            "Graham köpte upp firman 1935 och bytte namn på den",
+            "Firman handlade i decennier aktier för Graham och hans bolag — och Graham förvaltade egna pengar hos firman",
+            "De konkurrerade om samma kunder på Wall Street",
+            "Graham och Browne skrev boken tillsammans"
+          ],
+          "ratt": 1,
+          "tips": "Bokens legitimitetsanspråk — vilken relation hade firman till Grahams eget kapital?"
+        },
+        {
+          "q": "Vad hävdar Buffetts uppsats The Superinvestors of Graham-and-Doddsville (1984)?",
+          "alternativ": [
+            "Att marknaden alltid är effektiv och slagning bara är tur",
+            "Att ett kluster av oberoende förvaltare med gemensam Graham-träning uppvisade goda resultat — troligare trad än tur",
+            "Att bara Buffett själv slog marknaden",
+            "Att värdeinvestering slutade fungera efter 1956"
+          ],
+          "ratt": 1,
+          "tips": "Vad är ett kluster av lärlingar från samma skola ett argument emot?"
+        },
+        {
+          "q": "Vad är What Has Worked in Investing?",
+          "alternativ": [
+            "Brownes självbiografi från 2009",
+            "Firmans interna forskningssamling — studier av låg P/E, lågt P/B, net-nets, insiderköp — som i senare upplagor spänner över över nittio år",
+            "En bok av Bogle om indexfonder",
+            "En amerikansk lag om fondavgifter"
+          ],
+          "ratt": 1,
+          "tips": "Vilken empirisk samling blev bokens ryggrad — och hur lång är dess historik?"
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "minutes": 12,
+      "title": "Net-nets — köp bolag under dess kassa (Net-net-skannern /netnet)",
+      "intro": "Metodens mest extrema ytterpunkt: köp bolag för mindre än deras kassa minus alla skulder — Grahams net-nets, cigarrettipparna, bolagen under likvidationsvärdet. Och kursens mest direkta verktygskoppling: AK1A:s Net-net-skannern på /netnet kör exakt Grahams tröskel, live.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Definitionen, brutalt konservativ. NCAV — net current asset value, nettotillgångar i rörelsen — räknas som omsättningstillgångar (kassa, kundfordringar, lager) minus TOTALA skulder. Notera vad som är utelämnat: ALLA fasta tillgångar — byggnader, maskiner, varumärken, hela den pågående verksamheten räknas som noll. NCAV är alltså en likvidationsuppskattning av värsta fall: vad som blir kvar om bolaget stängs imorgon och allt säljs. Grahams köpregel från The Intelligent Investor: köp bara när kursen är under två tredjedelar av NCAV per aktie — högst sextiosex cent per dollar. Browne och firman ärftade detta som cigarrettipps-skolan: aktien är fimpen på gatan, och sista blosset är gratis. Bokens mest klassiska kapitel handlar om dessa fynd: bolag som säljer sin kassa med rabatt."
+        },
+        {
+          "type": "text",
+          "content": "Räkneexempel på ett papper. Ett bolag: kassa 150, kundfordringar 200, lager 150 — omsättningstillgångar totalt 500. Totala skulder: 200. NCAV = 500 − 200 = 300. Bolaget har 100 miljoner aktier: NCAV per aktie = 3. Grahams tröskel: köp under 2/3 × 3 = 2 kronor. Säljer aktien för 1,80 betalar du alltså 180 miljoner för en likvidationskassa på 300 miljoner — säkerhetsmarginalen är aritmetik, inte åsikt. Varför existerar sådant? Därför att säljare i panik inte räknar likvidationsvärden — och därför att net-nets sällan är vackra: de är små, okända, ofta i krisbranscher, exakt de bolag vars berättelse ingen längre orkar berätta (kapitel 1:s parfym-logik omvänd). De uppträder i kluster när marknaden fallit ordentligt — Japan i slutet av 1990-talet (bolag under netto-KASSA, alltså ännu extremare än net-net), 2002–2003, 2008–2009. Firman var där och köpte, och Browne återberättar episoden som beviset på att Grahams aritmetik inte är nationell eller epokal."
+        },
+        {
+          "type": "text",
+          "content": "KOPPLA TILL VERKTYGET — Net-net-skannern på /netnet. AK1A:s Net-net-skanner kör exakt den här matematiken: den hämtar balansräkningar, räknar NCAV per aktie (omsättningstillgångar minus totala skulder), dividerar med kursen och flaggar allt under 0,667 — Grahams tvåtredjedelströskel — med klassificering. Öppna /netnet (skriv sökvägen i adressfältet eller sök Net-net-skannern i sökrutan) och kör en scan. Tre användningsregler. Ett: skannern är START-skärm, inte köplista — net-nets är skräptyngda; kör tröskeln från kapitel 6 (V10 skuld, V11 likviditet, V19 kapitalförbränning) innan kapital binds. Två: bredd — Graham själv ägde net-nets i korgar (kapitel 9:s logik); ett enskilt likvidationsfynd kan rinna iväg, en korg sällan. Tre: tystnad är information — när skannern är tyst i en dyr marknad säger den samma sak som en värderingsbarometer (grannkursens CVI-kapitel): marginalerna är tunna, vänta. När den skriker i en panik är det rean i matvaruaffären — kapitel 1 återbetalt."
+        },
+        {
+          "type": "insikt",
+          "content": "Net-net är matvarumentaliteten skälpt till sin spets: du betalar inte ens för verksamheten — bara för kassan, med rabatt, och får allt annat gratis. Men i moderna marker är skannern på /netnet lika mycket barometer som jägare: tyst i euforin, larm i paniken — och larmet är köpsignalen ingen annan vågar följa."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Net-net steg för steg — och kopplingen till /netnet\",\"rader\":[[\"Rad\",\"Post\",\"Exempel\"],[\"Kassa\",\"kontantbanken\",\"150\"],[\"+ Kundfordringar\",\"skulder till bolaget\",\"200\"],[\"+ Lager\",\"varor på lager\",\"150\"],[\"= Omsättningstillgångar\",\"summa\",\"500\"],[\"− Totala skulder\",\"ALLA skulder, korta som långa\",\"−200\"],[\"= NCAV\",\"likvidationsvärde, fasta tillgångar = 0\",\"300\"],[\"Per aktie\",\"100 miljoner aktier\",\"3,00\"],[\"Grahams tröskel\",\"2/3 × NCAV per aktie\",\"köp under 2,00\"],[\"Exempelkurs\",\"\",\"1,80 — 60 cent per dollar\"],[\"Verktyget\",\"Net-net-skannern på /netnet räknar kurs/NCAV och flaggar allt under 0,667\",\"live screening\"],[\"Tröskel efteråt\",\"V10, V11, V19 — bredd i korg (kapitel 6 och 9)\",\"rensa skräpet, behåll korgen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör skannern ikväll: öppna /netnet och scanna ditt universum (eller exempellistan). Notera TRE saker: ett — hur många träffar under 0,667, och vad säger det om marknadens nuvarande humör (tystnad eller larm)? två — välj de tre billigaste träffarna och kör tröskeln: V10 (skuldsättningsgrad), V11 (kvickkvot), V19 (bränner bolaget kassa — behöver det emittera?). Skriv en rad per bolag: överlever tröskeln? tre — för varje överlevare: varför är den här billigt i en mening UTAN ordet tillfälligt? Sparar du listan med datum har du börjat bygga kapitel 13:s slutprojekt."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur räknas NCAV — nettotillgångar i rörelsen?",
+          "alternativ": [
+            "Eget kapital plus goodwill",
+            "Omsättningstillgångar (kassa, fordringar, lager) minus TOTALA skulder — fasta tillgångar räknas som noll",
+            "Börsvärde minus räntebärande skuld",
+            "EBITDA minus kapitalutgifter"
+          ],
+          "ratt": 1,
+          "tips": "Vad blir kvar om bolaget likvideras imorgon — och vilka tillgångar räknas då som noll?"
+        },
+        {
+          "q": "Vad är Grahams köptröskel för net-nets?",
+          "alternativ": [
+            "Kurs under 2/3 av NCAV per aktie — högst 66 cent per dollar",
+            "Kurs under tio års vinster",
+            "Kurs under hälften av omsättningen",
+            "Kurs under bokvärdet av fasta tillgångar"
+          ],
+          "ratt": 0,
+          "tips": "Vilken bråkdel av likvidationskassan får aktien kosta?"
+        },
+        {
+          "q": "Vad gör AK1A:s Net-net-skannern på /netnet?",
+          "alternativ": [
+            "Den ger köprekommendationer på svenska storbanker",
+            "Den räknar kurs/NCAV per aktie och flaggar alla bolag under 0,667 — Grahams tröskel — som live screening; den är startskärm, inte köplista",
+            "Den förutspår kurser med AI",
+            "Den mäter P/E på hela index"
+          ],
+          "ratt": 1,
+          "tips": "Vad för matematik kan en skärm köra — och vad måste du lägga ovanpå (tröskel, bredd)?"
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "minutes": 11,
+      "title": "P/B-tanken — priset per krona ägarkapital (V05)",
+      "intro": "Net-nets är ytterligheten; vardagsverktyget i Browne-traditionen är P/B — priset per krona av ägarnas bokförda kapital. Kapitlet bygger måttet, citerar forskningen som gjorde det berömt (Fama-French 1992) och mappar det rakt mot AKM1:s V05 — med ärligheten om när bokvärdet ljuger.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Måttet. Bokfört värde — eget kapital — är balansräkningens svar på vad ägarna formellt sett har kvar: tillgångar minus skulder. Dividera börsvärdet med det egna kapitalet och du får P/B: vad du betalar per krona ägarkapital. P/B 0,7 betyder att du köper sjuttio öre per krona i bokfört kapital — matvarumentaliteten (kapitel 1) i dess renaste form: enhetspriset på själva ägarkapitalet. Browne och firman använde lågt P/B som den statistiska ryggraden i vardagsskärmar: det är grovkornigare än NCAV (bokvärdet inkluderar fasta tillgångar) men bredare tillämpbart — och forskningen bakom det är bland den mest citerade i hela finansvetenskapen."
+        },
+        {
+          "type": "text",
+          "content": "Forskningen, öppet citerad. Eugene Fama och Kenneth French, The Cross-Section of Expected Stock Returns (1992): på amerikansk data 1963–1990 visade de att aktier med högt bokvärde mot pris (alltså lågt P/B — värdeaktier) systematiskt avkastade högre än aktier med lågt bokvärde mot pris (tillväxt-/glansaktier), med betastyrning inräknad. Det är den moderna finansvetenskapens dörröppning till hela värdefaktor-världen — och precis vad Grahams och firmans praktik hade sagt i decennier; firmans What Has Worked-samling pekade samma väg tillbaka mot 1920- och 30-talens data. AKM1-mappningen är given: V05 heter P/B med skalan 5 = under 1x (köp under bokfört värde), 3 = 1–2x, 1 = över 5x. Browne-traditionens vardagsdiskiplin: lågt P/B i kombination med lagom skuld och vettig rörelse — inte som ensam brytare (det kommer nu)."
+        },
+        {
+          "type": "text",
+          "content": "Ärligheten om bokvärdets blinda öga. P/B har tre kända felkällor. Ett: den immateriella ekonomin — mjukvara, varumärken, FoU bokförs som kostnader, inte tillgångar; ett moderna tjänstebolag kan vara strukturellt dyrare på P/B än dess verkliga ekonomi motiverar, och en gammal industri strukturellt billigare (kapitel 11:s kritik mot bokvärdesbaserad värdefaktor bygger exakt på detta). Två: återköp och utdelning krymper det egna kapitalet och kan dekorera både P/B och ROE utan värdeskapande (V20:s skala finns just för att skilja på kapitalister och EPS-målare). Tre: bokvärdet är en bokföringsprodukt — i banker är det fullt av uppskattningar, i konkursnära bolag kan det vara fantasifoster. Praktisk AKM1-regel: läs V05 SIDO VID SIDO med V06-familjen (EV/EBITDA och EV/EBIT); när P/B och EV-måtten är oense pekar det på tillgångsstrukturen — reala tillgångar (fastigheter, industri, finans) gör P/B trovärdigt, lättviktsverksamheter gör det missvisande. Ingen ensam multipl är någon sanning — kören eller inget."
+        },
+        {
+          "type": "insikt",
+          "content": "P/B är värdeinvesterings äldsta vardagsmått: enkelt, bakåtblickande, statistiskt kraftfullt — och bokföringens fånge. Läs V05 som en röst i V04–V06-kören: under bokfört värde är en stark röst, men när P/B och EV-måtten grälar ska du lyssna på tillgångsstrukturen innan du dömer."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"V05-skalan — P/B i Browne-traditionens läsning\",\"rader\":[[\"P/B\",\"AKM1-poäng\",\"Bokens läsning\",\"Bäst lämpat för\"],[\"Under 1x\",\"5\",\"köp under bokfört värde — den statistiskt starkaste zonen i What Has Worked-studierna\",\"tillgångstunga bolag: industri, fastighet, finans\"],[\"1–2x\",\"3\",\"normalbilligt — kräver stöd av V06-familjen\",\"de flesta bolag\"],[\"Över 5x\",\"1\",\"dyrt på ägarkapital — berättelsepris\",\"undantag om V06 säger annat\"],[\"Särskilt fall\",\"net-net\",\"P/B under 1 är kusinen till NCAV under 2/3 — ännu strängare (kapitel 3)\",\"kris- och panikmarker\"],[\"Varning\",\"bokvärdets blinda öga\",\"immateriella ekonomin, återköpsdekoration, bokföringsuppskattningar\",\"kombinera alltid med V06\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Kör-testen: ta fem bolag ur ditt universum — gärna ett finansbolag, ett industriföretag, ett fastighetsbolag, ett mjukvarubolag och ett konsultbolag. Räkna P/B och EV/EBIT (eller EV/EBITDA) för alla fem. I vilka bolag säger P/B och EV-måtten samma sak — och var grälar de? Förklara grälet med en mening per bolag: tillgångsstruktur (real kapital mot lättvikt). Avsluta med domen: för vilka av de fem är V05 en trovärdig röst — och för vilka måste V06-familjen bära värderingen ensam?"
+        },
+        {
+          "type": "visuell",
+          "content": "donut"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är P/B — och vad mäter det?",
+          "alternativ": [
+            "Priset per krona omsättning",
+            "Börsvärde delat med eget kapital — vad du betalar per krona av ägarnas bokförda kapital",
+            "Företagsvärde delat med EBITDA",
+            "Utdelning delat med vinsten"
+          ],
+          "ratt": 1,
+          "tips": "Bok = bokfört eget kapital. Vad står det i täljaren och nämnaren?"
+        },
+        {
+          "q": "Vad fann Fama och French (The Cross-Section of Expected Stock Returns, 1992)?",
+          "alternativ": [
+            "Att lågt P/B (högt bokvärde mot pris) systematiskt avkastade högre än högt P/B — med betastyrning inräknad",
+            "Att P/B saknar betydelse för avkastningen",
+            "Att högt P/B alltid är bäst därför att kvalitet kostar",
+            "Att värdepremien endast fanns före 1950"
+          ],
+          "ratt": 0,
+          "tips": "Vilken sida av bokvärdes-skalan vann — och var det bara en riskhistoria?"
+        },
+        {
+          "q": "Vad är kursens huvudvarning med P/B?",
+          "alternativ": [
+            "Att P/B är förbjudet i Sverige",
+            "Att bokvärdet är bokföringens produkt: den immateriella ekonomin, återköpsdekoration och uppskattningar kan missleda — läs V05 vid sidan av V06-familjen",
+            "Att P/B bara fungerar på nystartade bolag",
+            "Att P/B och P/E alltid visar samma sak"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med bokförda tillgångar när verksamhetens värde sitter i mjukvara och varumärken?"
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "minutes": 10,
+      "title": "Världen som jaktmark — globalt värdesökande",
+      "intro": "Browne reste världen med Grahams aritmetik i väskan: en kassa som är värd tre i Osaka är inte värd mindre än tre för att bolaget ligger i Japan. Kapitlet behandlar den globala värdejakten — varför rabatterna är djupare bortom hemmaplan, Japan-episoden under nettokassan, och vad ett Sverige-nära perspektiv innebär.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Den globala vändningen. När Christopher Browne 1993 blev medförvaltare av Tweedy, Browne Global Value Fund formaliserades något firman länge praktiserat: Grahams matematik har inget pass. En krona kassa, en fabrik, ett kassaflöde kan vara lika billigt överprövat eller rabatterat i vilken jurisdiktion som helst — och eftersom de flesta investerare inte reser är rabatterna ofta djupare utomlands. Browne berättar i boken om resorna och bolagsbesöken: det telefonbesked eller årsredovisning ingen analytiker läst, det börsnoterade bolaget vars VD tog emot själv därför att ingen annan kom. Den mest berömda episoden i firmans globala historia är Japan i slutet av 1990-talet: efter det att den japanska bubblan spruckit handlades en mängd japanska småbolag under sin netto-KASSA — inte bara under NCAV utan under kontantbanken minus alla skulder — och firman dokumenterade i sina brev hur de köpte korgar av dem. Grahams extremaste fyndkategori, i ett modernt högtecknologiskt land, tjugo år efter mästaren slutat."
+        },
+        {
+          "type": "text",
+          "content": "Varför rabatterna är djupare bortom hemmaplan — neglect-mekanikerna. Home bias: investerare i alla länder överbetalar det bekanta — hemlandsbolag får mer uppmärksamhet, mer analys, högre multiplar. Utländska småbolag drar på sig neglectens fulla vikt: noll analytäckning, låg omsättning, inget indexförbehåll, språk- och tidszonsfriction — exakt de mekanismer som skapar matvarureor (kapitel 1) och tysta skärmar (kapitel 3). Sverige-nära perspektiv: Stockholmsbörsens mindre bolag — familjekontrollerade, tungt handlade, med sparsam analytäckning — är historiskt just den typ av territorium Browne-traditionen jagar; det nordiska småbolagsrummet har sedan länge sin egen värdekultur, och för en svensk läsare är poängen dubbel: din hemmamarknad är någon annans exotiska fyndmarknad — och vice versa. Mr Market talar alla språk men är lika emotionell överallt."
+        },
+        {
+          "type": "text",
+          "content": "Riskerna — och checklista som pass. Global jakt är inte gratis: valutarisk (resultat i yen ändrar sig även om bolaget står stilla), bokföringsstandarder (IFRS mot US GAAP mot lokala varianter), minoritetsstyrning och A/B-aktier (ordnar majoritetshållare kan ignorera minoritetsvärde i praktiken — vanligt just i familjekontrollerade småbolag), politisk risk. Browne-traditionens svar är inte att stanna hemma utan att applicera SAMMA krav överallt: därför är AKM1:s tjugo variabler checklista och pass — V03 (intäktsdiversifiering, här även geografisk spridning), V10/V11 (skuld och likviditet, lästa efter lokal standard), V19 (emissionsrisk), V04–V06 (enhetspriserna, jämförbara bara om du räknat själv). Dessutom bredd (kapitel 9): landsexponering ska spridas som allt annat. Den globala värdejägaren är inte modigare än hemmainvesteraren — bara mer systematisk."
+        },
+        {
+          "type": "insikt",
+          "content": "Värdeinvesterarens karta färgas av neglect, inte av BNP: de bästa jaktmarkerna är där flyget sällan landar och analytiker aldrig kom. Home bias är marknadens mest beständiga rea-skylt — monterad av psykologi, underhållen av bekvämlighet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Global neglect — fyra källor till rabatt och motåtgärden\",\"rader\":[[\"Neglect-källa\",\"Mekanism\",\"AKM1-motåtgärd\"],[\"Home bias\",\"bekanta bolag överbetalas; främmande rabatteras\",\"jaga där du har edge men räkna själv: V04–V06 utan hemblindhet\"],[\"Saknad analytäckning\",\"ingen story cirkulerar — ingen vågar köpa\",\"läs årsredovisningen själv; tröskel V07–V12 för riktning\"],[\"Låg omsättning/indexfrånvaro\",\"fonder kan inte äga; kursen släpar fundamentet\",\"lång horisont + bredd (kapitel 7 och 9); V11 för genomförbarhet\"],[\"Valuta/styrning/bokföring\",\"A/B-aktier, IFRS-skillnader, politisk risk\",\"V03 geografisk spridning; V10/V11/V19; aldrig ensamlands­exponering i stor vikt\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Home bias-testet: räkna ut hur många procent av din portfölj som ligger i bolag noterade i ditt hemland — och hur stor andel av världsmarknadens börsvärde det landet utgör (ungefärliga siffror räcker). Om gapet är stort har du neglect maskerad som trygghet. Välj därefter ETT litet utländskt bolag från en marknad du inte känner — gärna från ett grannland — och kör AKM1:s V04–V06 och tröskeln (V10, V11, V19). Notera vad som skilde sig mot att analysera ett hemlandsbolag: bokföring? styrning? tillgång till rapporter? En halvsida, daterad — det är din första globala jaktrapport."
+        },
+        {
+          "type": "visuell",
+          "content": "bubbel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad var det mest kända exemplet på globala net-nets i firmans historia?",
+          "alternativ": [
+            "Svenska bankers kris 1992",
+            "Japanska småbolag i slutet av 1990-talet som handlades under sin netto-KASSA — firman köpte korgar av dem",
+            "Tyska biltillverkare 2015",
+            "Amerikanska techbolag 1999"
+          ],
+          "ratt": 1,
+          "tips": "Vilken modern högteknologisk nation hade småbolag under kontantbanken minus skulder — och när?"
+        },
+        {
+          "q": "Varför är värderabatterna ofta djupare utanför hemmamarknaden?",
+          "alternativ": [
+            "Därför att utländska bolag alltid är sämre",
+            "Home bias och neglect: saknad analytäckning, låg omsättning, indexfrånvaro och språkfriction — samma mekanismer som skapar reor, monterade geografiskt",
+            "Därför att utländska börs är stängda för utlänningar",
+            "Därför att valutor alltid stiger"
+          ],
+          "ratt": 1,
+          "tips": "Vad gör att en köpare inte vågar — och vad kallas det när alla hemmainvesterare gör det samtidigt?"
+        },
+        {
+          "q": "Vad är den globala värdejägarens viktigaste skydd mot valuta-, bokförings- och styrningsrisk?",
+          "alternativ": [
+            "Att bara köpa bolag i länder med samma tidszon",
+            "Att spekulera i valutor parallellt",
+            "Samma checklista överallt — V04–V06 räknade själv, V03 geografisk spridning, V10/V11/V19 — plus bredd i portföljen",
+            "Att låta en fondförvaltare i landet bestämma allt"
+          ],
+          "ratt": 2,
+          "tips": "Vad är det som ska vara identiskt oavsett land — variablerna eller känslan?"
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "minutes": 11,
+      "title": "Value-trappan — när billigt är billigt av en anledning",
+      "intro": "All billighet är inte rea: vissa aktier är billiga därför att fundamentet ruttnar medan priset hinner ikapp. Browne ägnar bokens praktiska kapitel åt att skilja fallknivar från fynd — kursen bygger trapp-diagnostiken i tre frågor med AKM1:s tröskelvariabler.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Fällan definierad. En value-trappa är en aktie som är statistiskt billig på EFTERSLEPEN — lågt P/B, lågt P/E — medan fundamentet (marginaler, kassaflöde, balansräkning) håller på att lösa upp sig. Fyra klassiska ruttningsmekanismer: strukturell nedgång (sista skrivmaskinsfabriken är billig varje år — och billigare nästa), balansrättsröta (skulder som äter kassan före aktieägarna), ren ohederlighet (bokföringsskönmåleri — grannkursen Financial Shenanigans ämne) och serieutspädning (bolag som lever på att emittera nytt kapital). Skillnaden mot fyndet syns inte i kursgrafen och inte i multiplen — den syns i bokslutets RIKTNING. P/B 0,4 på ett bolag som bränner kassa är ingen rabatt utan en nedräkning."
+        },
+        {
+          "type": "text",
+          "content": "Brownes försvarslinjer — och AKM1-tröskeln. Första linjen är alltid balansräkningen, därför att överlevnad är förutsättning för all värdeförverkligande: V10 (skuldsättningsgrad — överlever bolaget en intäktssvacka utan nytt kapital?), V11 (likviditet/kvickkvot — kan det betala sina kortfristiga skulder?), V19 (kapitalförbränning och emissionsrisk — det mest robusta NEGATIVA måttet; en blivande emission utspäddar just de ägare som köpte billigt). Andra linjen är resultatriktningen: V07 (bruttomarginal) och V08 (EBITDA-marginal) — stiger eller faller de? Systematikerns redskap här är Piotroskis F-score (nio bokslutskontroller — grannkurserna QV/AM behandlar den): majoriteten gröna kontroller = levande fundament. Tredje linjen är bredden (kapitel 9): vissa trappor är osynliga även för den flitige — korgen är det sista nätet. OBS ordningen, som är Browne-traditionens: trappsignalerna AVLÄGSNAR kandidater, de rankar aldrig om dem. En aktie med röda flaggor är inte en billigare fynd — den är en annan kategori."
+        },
+        {
+          "type": "text",
+          "content": "Diagnostiken i tre frågor. Ett: Överlever balansräkningen utan nytt eget kapital? (V10, V11, V19 — om svaret är nej är diskussionen slut oavsett multipl.) Två: Är nedgången cyklisk eller strukturell? Testet är jämförelsen med branschen: faller ALLAS intäkter samtidigt är det cykel (bra jaktmark); faller bara VÅR bolags medan branschens håller är det struktur (fallkniv). Tre: Vem säljer och varför? Tvångsförsäljning — fondlikvidation, indexuteslutning, arvsskatt — är mekanisk och skapar reor (kapitel 1); insiderförsäljning i klump är information; insiderKÖP i klump är den starkaste bekräftelsen (firmans What Has Worked-studier om insiderhandel; AKM1:s V20). Tre frågor, femton minuter per kandidat — och den viktigaste disciplinen: svaret vet inte är ett NEJ tills du vet bättre. Tröskelrens går före rankning, alltid."
+        },
+        {
+          "type": "insikt",
+          "content": "En värdefälla är en aktie där fundamentet krymper snabbare än priset — och den syns inte i multiplar utan i riktning: marginaler, kassaflöde, belåning, aktieantal. Billighet styr urvalet; tröskeln avlivar falleredet. Ordningen är icke förhandlingsbar."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Trapp-diagnostik — signal mot signal\",\"rader\":[[\"Signal\",\"Värdefälla-indikator\",\"Tillfällig billighet-indikator\"],[\"Intäktskurva\",\"bara vårt bolag faller — strukturell\",\"hela branschen faller samtidigt — cykel\"],[\"Balansräkning\",\"V10 röd, V11 under 1, V19: emission på väg\",\"V10 grönt, kassa täcker nedgång\"],[\"Marginaler (V07/V08)\",\"faller flera år i rad utan botten\",\"planar/vänder med branschen\"],[\"Aktieantal\",\"växer genom emissioner\",\"stabilt eller minskande (V20 återköp)\"],[\"Insiders\",\"säljer i klump\",\"köper opportunistiskt i klump\"],[\"Säljare\",\"fundamentorienterade ägare med insyn\",\"tvångssäljare: fondlikvidation, indexuteslutning\"],[\"Åtgärd\",\"AVLÄGSNA — aldrig re-ranka\",\"kandidat vidare till rankning\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Trappjakt på skannerns utkast: ta de tre billigaste träffarna från kapitel 3:s /netnet-scan (eller tre aktier du själv misstänker är billiga). Kör tre-frågeprovet per bolag: balansräkningen (V10, V11, V19 — siffror ur senaste rapporten), cykel-testet (branschens intäkter mot bolagets, två år), säljarna (vem sålde senaste halvåret och varför — tvång eller insyn?). Döm varje bolag: fälla, friskt billigt, eller vet inte — och kom ihåg att vet inte är ett nej. Skriv en rad per bolag: vad måste hända för att billigheten ska förverkligas, och tyder bokslutet på att det håller på att hända?"
+        },
+        {
+          "type": "visuell",
+          "content": "radar"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är en value-trappa enligt kursens definition?",
+          "alternativ": [
+            "En aktie som fallit mer än marknaden",
+            "En aktie som är statistiskt billig på efterslepen medan fundamentet ruttnar — multiplen ser ut som rea men är en nedräkning",
+            "En aktie med hög direktavkastning",
+            "En aktie utan analytiker"
+          ],
+          "ratt": 1,
+          "tips": "Var bor skillnaden mellan rea och rutten vara — i kursen eller i bokslutets riktning?"
+        },
+        {
+          "q": "Vad är den FÖRSTA försvarslinjen mot trappor enligt Browne-traditionen?",
+          "alternativ": [
+            "Att läsa alla pressreleaser noggrant",
+            "Att köpa ändå men med mindre position",
+            "Balansräkningen: V10 skuld, V11 likviditet, V19 emissionsrisk — överlevnad är förutsättning för all värdeförverkligande",
+            "Att invänta stigande kurs som bekräftelse"
+          ],
+          "ratt": 2,
+          "tips": "Vad måste gälla innan någon rabatt alls kan betalas ut?"
+        },
+        {
+          "q": "Hur skiljer du cyklisk nedgång från strukturell?",
+          "alternativ": [
+            "Genom att kolla bolagets P/E-mål",
+            "Genom att jämföra med branschen: faller allas intäkter samtidigt är det cykel; faller bara vårt bolags är det strukturell",
+            "Genom att fråga bolagets VD",
+            "Cykliska bolag faller aldrig"
+          ],
+          "ratt": 1,
+          "tips": "Vilken jämförelse skiljer väder från klimat?"
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "minutes": 10,
+      "title": "Tålamodets matematik — varför value fungerar långsamt",
+      "intro": "Värdeinvesterings kant är några procentenheter per år — och den anländer inte jämnt utan i våldsamma utbrott efter långa torkor. Kapitlet förklarar varför trögheten är strukturell, inte ett fel, och vad det kräver av den som ska bära den.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "De långa torkorna, historien öppet redovisad. Value har förlorat mot glansaktier i multiårsperioder, upprepade gånger. Tidigt 1970-tal: Nifty Fifty-erans hyllade kvalitetsbolag krossade billiga aktier — tills de inte gjorde det (1973–74 och årtiondet som följde gick värdesidan ifatt ikapp och förbi). 1995–1999: IT-bubblan — value underpresterade i fem år i sträck, firman Tweedy höll ut och breven från eran sammanfattade att disciplinen graderades just där; 2000–2002 betalades tålamodet tillbaka med ränta. 2007–2020: den längsta torkan i den moderna faktordatan (HML negativ i över ett decennium — grannkursen The Acquirer's Multiple ägnar sitt kontroverskapitel åt den), avslutad med vaccinrotationen 2020 och räntechocken 2022 då billigt krossade dyrt. Brownes svar i boken är tidsdimensionen: sköldpaddan, inte haren — kanten är en flerårs-fördel som bara syns i årtiondeskala."
+        },
+        {
+          "type": "text",
+          "content": "Varför trögheten är strukturell, inte ett fel. Tre skäl. Ett: mean reversion har ingen kalender — en missprisning måste först vidgas (av att alla flyr) och sedan slutas (av att fundamenten återhämtar eller en köpare träder in); ingen av stegen har ett datum. Två: premien anländer KONCENTRERAD i korta våldsamma fönster — år som 2000–2002, 2009, 2022 — och missar du återhämtningsåren (därför att du tröttnat och gått ur) är hela decenniets kant borta; närvaro, inte briljans, är strategins active ingredient. Tre: den institutionella mekaniken — karriärrisken (kapitel 8) gör att proffs överger value när den underpresterar, vilket VIDGAR missprisningen innan den sluts; torkan är alltså delvis den mekanism som skapar nästa utfall. Detta är också sanningen bakom det slarviga uttrycket value fungerar inte: fem år av underprestering är inom statistikens normalfördelning för en strategi med decenniecykler (kapitel 11:s ödmjukhetslinje)."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken: förhandsbeslutet. Eftersom trögheten är säker är den enda hanterbar om beslutet fattas FÖRE den. Brasklappen (grannkursernas portföljpamps-rad): skriv ned, i solsken, hur många års underprestering du accepterar mekaniskt utan att överge systemet — och varför (mekanismen, historien, din horisont). Därtill: räkna fram din egen tidshorisont — kapital du behöver inom fem år hör inte hemma i värdeaktiestrategier; mät framsteg årsvis, aldrig månadsvis (AK1A:s långa tidshorisonter är byggda för detta); och låt bredden (kapitel 9) bära det enskilda bolagets fördröjning. Browne själv är beviset: fyrtio år på samma firma, genom varje torka, samma metodik. Närvaro över prediktion — det är hela kapitlet."
+        },
+        {
+          "type": "insikt",
+          "content": "Värdes kant är osynlig i kvartalsskala och uppenbar i decennieskala — strategins största kostnad är inte avgiften utan tristessen. Torkan är inte tecknet på att det slutat fungera; den är mekanismen som betalar nästa utbrott. Beslutet att bära den fattas i förväg eller inte alls."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre torkor — och vad som följde\",\"rader\":[[\"Torka\",\"Vad som hände\",\"Efteråt\"],[\"Tidigt 1970-tal (Nifty Fifty)\",\"bevakade kvalitetsbolag krossade billiga aktier\",\"1973–74-kraschen och därefter: värdesidans årtionde (värdeforskningens genombrott — Basu 1977)\"],[\"1995–1999 (IT-bubblan)\",\"fem års value-underprestering; disciplinen förklarades död\",\"2000–2002: värdes historiskt starka år — tålamodet betalt med ränta\"],[\"2007–2020 (den längsta)\",\"HML negativ i över ett decennium; koncentrationen till tillväxtjättar\",\"2020 rotation och 2022 räntechock: billigt krossade dyrt\"],[\"Mönster\",\"\",\"premien kommer i korta våldsamma fönster — närvaro är active ingredient\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Horisont- och brasklappsprovet: skriv först ned när du behöver pengarna — riktigt, med årtal. Om någon större andel behövs inom fem år: markera att värdeaktiestrategier är fel verktyg för den delen och notera vad den delen ska ligga i istället ( vår Bogle-kurs har svaret). Om horisonten är tio år eller mer: skriv din brasklapp HÄR, nu — jag accepterar ___ års underprestering mot index utan att överge systemet, därför att ___ (mekanism/historia/horisont). Datera den och lägg den i portföljpampen från kapitel 9. Den raden är skillnaden mellan att ha en strategi och att ha en åsikt."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varför kommer värdepremien i korta våldsamma utbrott?",
+          "alternativ": [
+            "Därför att centralbanker styrt det",
+            "Därför att mean reversion saknar kalender och missprisningen först vidgas (alla flyr) innan den sluts — missar du återhämtningsåren försvinner decenniets kant",
+            "Därför att value-aktier bara stiger på fredagar",
+            "Därför att optionslördagar koncentrerar volymen"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med strategins kant om du går ur under torkan och missar återhämtningsfönstret?"
+        },
+        {
+          "q": "Vad är en brasklapp i kursens mening?",
+          "alternativ": [
+            "En varningstext från bolagsstyrelsen",
+            "Ett förhandsskrivet beslut om hur många års underprestering du accepterar mekaniskt utan att överge systemet — fattat i solsken, inte i regn",
+            "En kupong i årsredovisningen",
+            "En kort rapport till Skatteverket"
+          ],
+          "ratt": 1,
+          "tips": "Vilket beslut är omöjligt att fatta rationellt mitt i — och därför måste fattas innan?"
+        },
+        {
+          "q": "Hur ofta bör en värdeinvesterare enligt kapitlet mäta sina framsteg?",
+          "alternativ": [
+            "Dagligen — kursen är information",
+            "Veckovis med teknisk analys",
+            "Årsvis — aldrig månadsvis; kanten är en decenniefördel och mätning i fel skala producerar fel beslut",
+            "Aldrig — mätning är förbjudet"
+          ],
+          "ratt": 2,
+          "tips": "I vilken skala är kanten överhuvudtaget synlig?"
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "minutes": 10,
+      "title": "Mr Market — psykologin som betalar din avkastning",
+      "intro": "Grahams mest berömda parabel — ur The Intelligent Investor (1949), kapitel 8 — är värdeinvesterings psykologiska kärna: marknaden som en mani-depressiv partner som dagligen ropar pris, och som du är helt fri att ignorera. Browne låter Mr Market genomsyra boken; kursen bygger bruket av honom.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Parabeln, citerad öppet. Föreställ dig att du äger en mindre andel av ett framgångsrikt familjebolag. Varje dag kommer en partner — Mr Market — med ett pris på din andel. Hans egenart är att han är emotionellt ostabil: vissa dagar är han euforisk och betalar nästan vad som helst; andra dagar är han deprimerad och säljer för spänn. Han har en avgörande egenskap till: han aldrig tar illa upp. Du kan neka hans erbjudande idag och acceptera hans nästa — om en minut — utan att han blir förnärmad. Grahams slutsats är hela värdeinvesterings psykologi: priset är ett ANBUD, inte ett orakel. Kursen och kassaflödetavgör värdet; Mr Market avgör bara när du får köpa eller sälja det. GAPET mellan anbud och värde — säkerhetsmarginalen — är hela din affär."
+        },
+        {
+          "type": "text",
+          "content": "Browne-traditionens Mr Market-erfarenheter. De stora köptillfällena ser aldrig ut som köptillfällen när de pågår — de ser ut som världens undergång. Hösten 2008: skannerns net-nets genomgick (kapitel 3:s logik i realtid), hela marknaden var Mr Market på sitt mest depressiva humör, och tidningarna förklarade kapitalismen död; 2009-års återhämtning var bland de kraftigaste i historien — den som köpte paniken köpte decenniets rea. Denna marknadsstämning är inte privat — den är institutionaliserad: Keynes redan 1936 (General Theory): världslig visdom lär att det är bättre för ryktet att misslyckas konventionellt än att lyckas okonventionellt — därför flyr professionella det okända i exakt samma ögonblick som rean öppnas. Din psykologiska edge är just att du inte har en chef som granskar dig kvartalsvis: du kan köpa det karriärriskiga — billigt, hatat, tyst — utan att bli fråntagen ditt arbete. Det är en strukturell fördel den lille har över proffset; Browne hade den inte — han var proffset som ändå gjorde det."
+        },
+        {
+          "type": "text",
+          "content": "Praktiken: bruka Mr Market — var aldrig honom. Reglerna. Ett: besluten fattas i lugn — sätt prisnivåer i förväg (köp vid multipl X enligt V05/V06, försäljning vid multipl Y) och låt larm göra bevakningen; förhandla aldrig med ditt eget adrenalin. Två: hantera informationen strukturerat — läs rapporter, inte ticker; Mr Market ropar varje sekund, bolaget rapporterar fyra gånger om året, och värdet bor i det senare. Tre: ha en skriven motsats till varje köp — varför säljer motparten, och vad vet den som jag inte vet? (kapitel 6:s tredje fråga). Fyra: citera honom själv — när du känner tvång att handla, stå still i tjugofyra timmar; Mr Market kommer tillbaka imorgon, han gör alltid det. AKM1:s roll i detta: variablerna estimerar VÄRDET (V04–V15), Mr Market levererar PRISET — affären görs bara när gapet är säkerhetsmarginalen brett. Psykologi och aritmetik i varsitt fack, aldrig i samma."
+        },
+        {
+          "type": "insikt",
+          "content": "Mr Market tjänar dig — aldrig tvärtom. Du kan inte lära honom värdera, men du kan vägra låta honom prissätta ditt beslut: priset är ett anbud, värdet bor i rapporterna, och gapet dem emellan är din ersättning. Den som förhandlar med sitt eget adrenalin har bytt sida."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Mr Markets två humör — symptom och ditt drag\",\"rader\":[[\"Läge\",\"Symptom\",\"Ditt drag\"],[\"Eufori\",\"allt stiger; nyemissioner tecknas över natten; 'den här gången är annorlunda'; dina billiga aktier utskällda som värdefällor\",\"sälj mekaniskt vid multipl-mål (kapitel 6:s tröskel räknas i säljriktning); emittera inte egna idéer\"],[\"Depression\",\"skannern larmar (/netnet); tidningar förklarar systemet dött; 'den här gången är det slut för alltid'; ingen vill ha aktier alls\",\"köp mekaniskt vid multipl-mål — med bredd (kapitel 9) och tröskel (kapitel 6)\"],[\"Normal (mitten)\",\"tristess; inget händer; månadsvis tvivel på strategin\",\"gör INGENTING — läs rapporter, uppdatera AKM1, mät årsvis (kapitel 7)\"],[\"Källa\",\"Graham, The Intelligent Investor (1949), kapitel 8 — via Browne\",\"reglerna skrivna i lugn, verkställda av larm\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Mr Market-hygien: välj dina tre viktigaste bevakningsobjekt (innehav eller kandidater). Skriv för varje: ett — värdet ungefärligt, uttryckt i multipl-termer (V05/V06: vid vilken P/B eller EV/EBIT är det rea? vid vilken är det berättelsepris?). Två — två larm: köp-nivå och sälj-nivå, satta nu, i lugn. Tre — en rad med dagens marknadshumör ETT ord (eufori/mitten/depression) — utan att se på din portfölj först. Låt sedan larmen arbeta och handla bara vid dem. Om du within en månad handlar utan larm — notera vad det var som drev dig: det är din Mr Market-sida, och den ska tränas (kapitel 10)."
+        },
+        {
+          "type": "visuell",
+          "content": "bro"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Varifrån kommer Mr Market-parabeln?",
+          "alternativ": [
+            "Från Keynes General Theory",
+            "Från Grahams The Intelligent Investor (1949), kapitel 8 — den mani-depressive partnern som dagligen ropar pris",
+            "Från Brownes firmabrev 1993",
+            "Från Buffetts brev till aktieägare"
+          ],
+          "ratt": 1,
+          "tips": "Vilken bok, vilket kapitel — och vem är partnern?"
+        },
+        {
+          "q": "Vad är den centrala lärdomen av Mr Market?",
+          "alternativ": [
+            "Att följa marknadens humör men med stop-loss",
+            "Att priset är ett anbud, inte ett orakel — värdet bor i verksamheten och gapet mot priset är säkerhetsmarginalen",
+            "Att alltid köpa på euforiska dagar",
+            "Att marknaden alltid har rätt på lång sikt"
+          ],
+          "ratt": 1,
+          "tips": "Vad får man göra med ett anbud som man inte får göra med ett orakel?"
+        },
+        {
+          "q": "Vad menar Keynes-citatet (General Theory, 1936) om konventionellt misslyckande — och vad betyder det för dig?",
+          "alternativ": [
+            "Att alla ska köpa index",
+            "Att professionella flyr det okonventionella därför att karriärrisken sitter i avvikelsen — den lille investerarens strukturella fördel är just friheten att köpa det hatade billiga utan chef",
+            "Att man ska shorta konventionella bolag",
+            "Att börskrascher är omöjliga"
+          ],
+          "ratt": 1,
+          "tips": "Vem bestraffas för att göra det alla andra flyr ifrån — och vem gör inte det?"
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "minutes": 12,
+      "title": "Portföljen i praktiken — 30–60 bolag mot Buffetts koncentration (Portföljbyggaren /portfoljbyggare)",
+      "intro": "Browne-bygget är bredast i hela bokkatalogen: en korg på ungefaret trettio till sextio likaviktade värdepositioner — i rak kontrast mot Buffetts koncentration. Kapitlet bygger portföljen och kopplar direkt till Portföljbyggaren på /portfoljbyggare.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Brownes praktik: bredd som system. Tweedy-fonderna höll många tiotal innehav — Global Value Fund vid Brownes tid förvaltade en korg av bolag spridda över länder, sektorer och valutor — och bokens råd till den private investeraren ligger i samma riktning: ungefär trettio till sextio aktier, ingen ensam story tillsatt att dominera. Logiken är den statistiska från kapitel 3 och 6: varje enskild billig aktie är OSÄKER — den kan bli trappen, den kan dröja ett decennium — men KORGEN är inte osäker, därför att kanten (matvarupriset, mean reversion, neglect) sitter på gruppnivå och bara syns över många positioner och många år. Några innehav kommer dö — det är inprissatt; några kommer tiodubbla; ingen av dem ska kunna avgöra ditt totala resultat. Det är Graham-traditionens ursprungliga form: bredd som bärande princip, inte som ursäkt."
+        },
+        {
+          "type": "text",
+          "content": "Kontrasten — Buffett, och vad den betyder. Warren Buffett, samma Graham-skola men annat temperament: koncentration — ett fåtal stora positioner i bolag man förstår djupt; hans berömda formulering är att bred diversifiering bara behövs när investeraren inte förstår vad den gör (Superinvestors-uppsatsen och breven). Ärligt framställt är de två hållningarna inte motstridiga utan olika lösningar på samma problem: osäkerhet. Buffett löser den med KUNSKAP-bredd (få bolag, djupt kända — han kan bära koncentrationen därför att han kan analysera verksamheten på djupet och har magen att hålla kvar vid −50); Browne löser den med POSITION-bredd (många bolag, mekaniskt utvalda — ingen enskild kunskap behöver vara perfekt). För deltidsläsaren med en checklista (AKM1) är Browns väg den ENKLARE disciplinen: den kräver uthållighet och regelverk, inte livstidsstudier av få bolag. AK1A hedrar båda: Portföljbyggaren på /portfoljbyggare låter dig bygga visuellt och se risk och spridning live — bygg Browne-korgen där, och låt koncentration bara bli aktuellt om du själv fyller Buffetts kunskaps- och magkriterier (det gör de flesta inte — och det är okej)."
+        },
+        {
+          "type": "text",
+          "content": "Mekaniken, steg för steg. Ett: urval — skannern (/netnet) och multipl-skärmar (V05 under 1, EV/EBIT-familjen) ger kandidaterna; kapitel 6:s tröskel (V10, V11, V19, marginalriktning) avlivar trapporna. Två: bredd och tak — cirka 30–60 positioner (den mindre portföljen kan börja vid 20), tak per aktie vid köp (till exempel 3–5 procent — det gör varje enskild aktie icke-avgörande), spridning över sektorer och länder (V03-logik; kapitel 5). Tre: rebalansering — mekanisk, vid fasta datum (halvårs- eller årsvis), inte vid humör: sälj som lämnat multipl-målet, köp mer av det som fallit UTAN fundamentförändring (kapitel 1:s matvarurea). Fyra: dokument — portföljpampen: regler, tak, rebalansdatum, brasklappen (kapitel 7), Mr Market-larmen (kapitel 8). Notera kontrasten mot grannkursen The Acquirer's Multiple:s 20–30 positioner: Browne är bredare ännu — samma gren av traden, bredare korg. Portföljen — inte aktien — är analysenheten: /portfoljbyggare visar den som helhet, och det är helheten som bär kanten."
+        },
+        {
+          "type": "insikt",
+          "content": "Bredd i Browne-tappning är inte okunskapens skydd utan statistikens verktyg: kanten sitter i korgen, inte i de enskilda bolagen. Koncentration är en heltidskompetens; bredd med checklista är en deltidsdisciplin — och den är nog för de flesta."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Tre portföljarkitekturer — Buffett, Browne, index\",\"rader\":[[\"Arkitektur\",\"Antal positioner\",\"Kunskapskrav\",\"Sårbarhet\",\"Vem passar den?\"],[\"Buffett (koncentration)\",\"få, stora\",\"extrem — bolaget förstås på djupet; mag att hålla vid −50 %\",\"ett enskilt misstag avgör utfallet\",\"heltidsinvesteraren med ärligt känd kompetenscirkel\"],[\"Browne (bred korg)\",\"cirka 30–60, tak per aktie\",\"checklistadisciplin — AKM1:s 20 variabler + tröskel\",\"tristess; kräver tålamod (kapitel 7) och regler\",\"deltidsinvesteraren — kursens rekommendation\"],[\"Index (Bogle)\",\"hela marknaden\",\"nästan inget\",\"levererar marknadens avkastning — inte mer\",\"baseline (kapitel 11)\"],[\"Verktyg\",\"—\",\"—\",\"—\",\"bygg Browne-korgen i Portföljbyggaren på /portfoljbyggare\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Bygg Browne-miniversionen: öppna Portföljbyggaren på /portfoljbyggare (skriv sökvägen i adressfältet eller sök Portföljbyggaren). Ta kandidaterna från kapitel 3:s skanning som överlevde kapitel 6:s tröskel — komplettera vid behov med multipl-skärmade bolag (V05 under 1, V06familjen låg) tills du har tjugo. Likavikta eller sätt tak på 5 procent per aktie i verktyget; kontrollera sektor- och landspridningen i riskvyn. Jämför sedan med din faktiska portfölj: hur många positioner har du, och vad väger den tyngsta? Skriv domen: är du Browne (bred), Buffett (koncentrerad med kunskap) eller omedvetet koncentrerad (utan kunskap)? Endast den tredje är ett problem."
+        },
+        {
+          "type": "visuell",
+          "content": "konvergens"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Hur många positioner rekommenderar Browne-traditionen i princip?",
+          "alternativ": [
+            "En till tre — koncentration är allt",
+            "Cirka trettio till sextio — en bred korg där kanten sitter på gruppnivå",
+            "Högst sju — magiskt antal",
+            "Bara indexfonder"
+          ],
+          "ratt": 1,
+          "tips": "Vad säger kapitlet om var kanten sitter — i de enskilda bolagen eller i korgen?"
+        },
+        {
+          "q": "Vad är den ärliga skillnaden mellan Buffetts och Brownes lösning på osäkerhet?",
+          "alternativ": [
+            "Det finns ingen skillnad — samma metod",
+            "Buffett löser osäkerheten med kunskapsdjup i få bolag; Browne med positionsbredd i många — för deltidsläsaren med checklista är bredd den enklare disciplinen",
+            "Buffett diversifierar alltid; Browne koncentrerar",
+            "Browne köper bara japanska bolag"
+          ],
+          "ratt": 1,
+          "tips": "Vad kräver koncentration av innehavaren — och vad kräver bredd?"
+        },
+        {
+          "q": "Vad är syftet med tak per aktie (till exempel 3–5 procent) i Browne-bygget?",
+          "alternativ": [
+            "Att öka avkastningen genom att satsa mer på favoriter",
+            "Att göra varje enskild aktie icke-avgörande för det totala resultatet — ingen position ska kunna avgöra resultatet",
+            "Att undvika skatt",
+            "Att indexfonden ska kunna efterapas"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med korgens statistik om en enda position väger tjugofem procent och dör?"
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "minutes": 10,
+      "title": "Hej — varför gör inte alla detta?",
+      "intro": "Boken ställer den uppenbara frågan själv: om det nu är så enkelt — köp billigt, var tålmodig — varför fortsätter pengarna att jaga berättelser? Svaret är strategins bästa försvar: hindren är psykologiska, och de kommer inte att röjas undan.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Brownes svar på den uppenbara invändningen. Om matvarupris-logiken är så enkel, varför är den inte utarbetad? Boken pekar på fyra barriärer. Ett: det är TRÅKIGT — värdeaktier saknar berättelse; ingen imponerar på middagsbordet med ett skrivmaskinsbolag i Osaka eller en okänd småbolagsaktie i Stockholm; köpa det som saknar story är socialt (och professionellt) färglöst. Två: det är LÅNGSAMMT — kapitel 7:s torkor bevisar att belöningen kan dröja i åratal, och människor (och karriärer) mäts kvartalsvis. Tre: det är KÄNSLOMÄSSIGT BRUTALT — att köpa det som fallit och hatats kräver att man agerar mot både instinkt och socialt tryck (kapitel 8: Mr Market på riktigt). Fyra: det är KARRIÄRRISKIGT för proffsen — Keynes-mekanismen: den som underpresterar konventionellt överlever; den som köper det okonventionella och har fel blir avskedad — därför systematiskt underbetjänas det billiga. Värdeinvestering säljer alltså obehag — och obehav köper inte folk frivilligt."
+        },
+        {
+          "type": "text",
+          "content": "Paradoxen som räddar kanten — öppet redovisad ekonomi. Om alla insåg det här och gjorde det skulle reorna försvinna och kanten med dem — men det gör de inte, och det FINNS ett teoretiskt skäl till att de aldrig kommer göra det fullt ut: Grossman och Stiglitz (On the Impossibility of Informationally Efficient Markets, 1980) — om marknaden vore perfekt effektiv skulle ingen ha skäl att göra research, men utan research blir den inte effektiv; jämvikten lämnar medvetet utrymme för dem som betalar kostnaden för arbetet. Vad Has Worked-studierna och beteendeforskningen (LSV 1994: extrapolationsfelet) tillägger är att kostnaden inte bara är information utan temperament: så länge människor extrapolerar (billigt = farligt, dyrt = säkert) och institutioner straffar avvikelse kommer Mr Market att fortsätta göra dumma anbud. Kantens bränsle är alltså inte en hemlighet utan ett beteende som de flesta inte vill eller vågar utföra — och det förnyas med varje generation som lär sig samma läxa på samma sätt."
+        },
+        {
+          "type": "text",
+          "content": "Vad detta betyder för AK1A — hela utbildningsidén i ett stycke. Värdeinvesteringens vall är psykologisk, inte informationsmässig: vem som helst kan lära sig formlerna (det är vad bokmaster-kurserna gör — NCAV, P/B, trösklar, bredd), men få kan utföra dem i åratal (det är vad AKM1-disciplinen, brasklappen, larmen och Portföljbyggaren är till för). Din konkurrens är alltså inte smartare människor — det är ditt eget tålamod. Därför är den här frågan (varför gör inte alla detta?) inte en retorisk fråga utan kursens realismtest: svaret förutsäger att nästa bubbla kommer, att nästa torka kommer, att de flesta kommer göra som de alltid gjort — och att din uppgift bara är att vara kvar, med regler, när det händer. Kapitel 11 tar den sista, allvarligaste formen av invändningen — köp indexet istället — på fullt allvar."
+        },
+        {
+          "type": "insikt",
+          "content": "Värdeinvesterings kant är ingen hemlighet — den är ett beteende de flesta inte vill utföra och proffsen inte vågar. Det är därför den överlever: den kan inte arbitreras bort, bara tröttnas bort. Din enda verkliga konkurrent är din egen uthållighet."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Fyra barriärer — varför alla inte gör detta\",\"rader\":[[\"Barriär\",\"Mekanism\",\"Vad den ger dig\"],[\"Tristess\",\"inget story att berätta; socialt färglöst\",\"neglect — rean som ingen pratar om\"],[\"Långsamhet\",\"belöningen dröjer åratal; kvartalsmätning straffar tålamod\",\"torkor vidgar missprisningen innan den sluts (kapitel 7)\"],[\"Obehag\",\"köpa det hatade och fallande — mot instinkt och socialt tryck\",\"Mr Markets dummaste anbud (kapitel 8)\"],[\"Karriärrisk\",\"proffsen straffas för okonventionella misstag — Keynes\",\"institutionell underbetjäning av det billiga; den littles strukturella fördel\"],[\"Teori\",\"Grossman-Stiglitz (1980): perfekt effektivitet är omöjlig — research måste betalas\",\"kanten kan inte arbitreras bort — bara tröttnas bort\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Ärlighetstestet: vilken av de fyra barriärerna är DIN? Skriv en halvsida om senaste gången du antingen (a) köpte något som fallit och hatades — hur kändes det, vad hände sedan? eller (b) sålde/undvek i panik och ångrade det. Ringa in vilket av orden tristess, längtan, obehag, rädsla som bäst beskriver ditt mönster — och skriv en träningsspecifik motåtgärd (larm och regler för obehag; årsvis mätning för längtan; bredd för rädsla). Denna sida är mer värd än resten av kursen om den används: kantens verkliga fiende står i spegeln."
+        },
+        {
+          "type": "visuell",
+          "content": "cykel"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vilken är Browne-bokens huvudförklaring till att alla inte värdeinvesterar?",
+          "alternativ": [
+            "Att metoden är förbjuden utanför USA",
+            "Att den är tråkig, långsam, känslomässigt brutal och karriärriskig — den säljer obehag, och obehav köps inte frivilligt",
+            "Att ingen har tillgång till årsredovisningar",
+            "Att den kräver miljarder i kapital"
+          ],
+          "ratt": 1,
+          "tips": "Vad kostar metoden i socialt och psykologiskt valuta — och vem bland proffsen har råd att betala det?"
+        },
+        {
+          "q": "Vad säger Grossman-Stiglitz (1980) om marknadens effektivitet?",
+          "alternativ": [
+            "Att marknader alltid är perfekt effektiva",
+            "Att perfekt informationell effektivitet är omöjlig — om priserna alltid speglade all information skulle ingen betala för research, men utan research blir marknaden inte effektiv",
+            "Att all research är slöseri",
+            "Att bara indexinvestering är laglig"
+          ],
+          "ratt": 1,
+          "tips": "Vad händer med researchens ekonomi om marknaden redan vet allt?"
+        },
+        {
+          "q": "Vad är kursens slutsats om kantens bästa skydd?",
+          "alternativ": [
+            "Hemlighållande av metoden",
+            "Patent på NCAV-formeln",
+            "Att kanten är psykologisk, inte informationsmässig — den kan inte arbitreras bort, bara tröttnas bort; din konkurrent är din egen uthållighet",
+            "Att bara använda datorer"
+          ],
+          "ratt": 2,
+          "tips": "Vad förnyar sig med varje generation — informationen eller beteendet?"
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "minutes": 12,
+      "title": "Kontroversen — Bogle-skolan: value är bara beta, köp indexet istället",
+      "intro": "Kursens viktigaste kapitel. Invändningen i dess starkaste form: value-aktier är bara en beta-faktor-exponering; den kan köpas billigare som (smart beta-)index; de flesta aktiva förvaltare underpresterar ändå. Här förs argumentet på båda sidor — Browne/Tweedys nittiotvååriga historik emot — och AK1A:s syntes med uttryckligt medgivande.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Anklagelsen, framställd så starkt den kan framställas. Index-skolan — John Bogle (Common Sense on Mutual Funds, 1999 — vår Bogle-kurs behandlar den; sök common-sense-on-mutual-funds bland kurserna) och effektiv-marknads-traditionen — för tre argument. Ett: KOSTNADERNA. Bogle: avgifter, handelskostnader och skatt äter längre tid, större andel av avkastningen än nästan någon variabel du styr — och SPIVA-mätningarna (S&P Indices Versus Active) visar att omkring nio av tio aktiva storbolagsfonder underpresterar sitt index över femton år; aktiv värdeförvaltning är en kostnadsgenererande lotteri. Två: EMH — Famas effektiv-marknads-hypotes (1970): priserna återspeglar tillgänglig information; vad som ser ut som värdepremie är inte fri peng utan RISKKOMPENSATION — beta — för att bära distress, cykliska svackor och oglamourös risk; och i så fall kan du köpa exponeringen mekaniskt (value-lutade eller smarta beta-index) för en bråkdel av en aktiv förvaltares avgift. Tre: FAKTOR-ZOO (John Cochrane): hundra publicerade faktorer är mest data mining; det ärliga testet är efter publicering, efter kostnader — och värdefaktorns torka 2007–2020 (kapitel 7) är precis vad efterhandsgrävda datamönster gör efter att alla känt till dem."
+        },
+        {
+          "type": "text",
+          "content": "Brownes och firmans bemötande — empiri och mekanism. Ett: firman nittiotvååriga data — What Has Worked in Investing-samlingens studier av låg P/E, lågt P/B, net-nets, insiderköp och återköp, från 1920-tal till 2000-tal: vad som än är med i priset har dessa mått överlevt depressioner, krig, valutasystemens fall och avregleringar — data mining dör inte så länge. Två: beteendemekanismen — Lakonishok, Shleifer och Vishny (Contrarian Investment, Extrapolation, and Risk, 1994): värdepremien drivs av människors extrapolation (kapitel 1:s parfym-logik formaliserad), och mekanismer som är mänskliga och strukturella (karriärrisk — kapitel 10) förfaller inte som hemliga datamönster gör. Tre: Grossman-Stiglitz väger också åt Browns håll — om alla köper index vem gör då researchen som håller priserna ärliga? passivt kapital är fripassagerare på den aktives arbete. Fyra: rekordet — firman förvaltade verkliga pengar på metoden i decennier (Browne medförvaltare 1993–2009) och Buffetts Superinvestors-argument (1984) står: metodens utövare klustrade i samma träning. Fem: etiketten spelar mindre roll än disciplinen — om premien är riskkompensation är säkerhetsmarginalen sättet att bära risken medvetet; om den är misprisning är skannern sättet att skörda den. Båda vägarna leder till samma praktik."
+        },
+        {
+          "type": "text",
+          "content": "AK1A:s syntes — och det uttryckliga medgivandet. Syntesen (i linje med vår Bogle-kurs positionsstämning): INDEX ÄR BASELINE. Nollhypotesen för varje krona är index — kostnadernas aritmetik är oantastlig (Bogle har rätt om medelförvaltaren) — och aktivt kapital är en HYPOTES som ska förtjäna sin plats genom dokumenterad process, aldrig genom önskan. I praktiken: kärnan index (eller breda billiga fonder), runtom en AKM1-driven värdekorg — skannern, tröskeln, bredden i Portföljbyggaren, brasklappen — där varje aktiv position är en kunskapsapplikation: du äger den därför att du RÄKNAT (V01–V20) och dokumenterat, inte därför att du känner. MEDGIVANDET, lika uttryckligt: de flesta aktiva investerare underpresterar — därför är stockpicking på känsla förbjuden i AK1A; aktivt kapital är genom processen förtjänad, och misslyckas processen (regelverk, tålamod, dokumentation) är index svaret. Detta är ingen vag kompromiss utan en portföljarkitektur: baseline som golv, kunskap som extrakt — och storleken på det aktiva stycket bestämmer du själv i kapitlets utmaning."
+        },
+        {
+          "type": "insikt",
+          "content": "Index är nollhypotesen och aktiv förvaltning är en hypotes som ska förtjäna sitt kapital — aldrig tvärtom. Value-premiens etikett (beta eller misprisning) ändrar inte disciplinen: säkerhetsmarginal bär risken medvetet, skannern skördar misprisningen. Båda vägarna kräver AKM1 — ingen av dem fungerar på känsla."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Kontroversen — argument mot argument\",\"rader\":[[\"Argument\",\"Bogle-skolan\",\"Browne/Tweedy-svar\",\"AK1A-hållning\"],[\"Kostnader\",\"avgifter äter avkastningen; SPIVA: ~9 av 10 slår inte index på 15 år\",\"metoden är lågomsatt (köp-håll korg), kostnaden är disciplin inte handel\",\"index som baseline — aktivt kapital ska förtjäna sin plats\"],[\"EMH / beta\",\"värdepremie = riskkompensation — köp den som index, billigare\",\"92 års What Has Worked-data; LSV 1994: beteendemekanism; Grossman-Stiglitz: någon måste göra jobbet\",\"etiketten oviktig: marginal bär risken, skannern skördar misprisningen\"],[\"Faktor-zoo\",\"publicerade faktorer = data mining; torkan 2007–2020 är beviset\",\"mekanismer som är mänskliga och strukturella förfaller inte som hemliga mönster; Superinvestors-klustret\"],[\"Rekord\",\"medelförvaltaren underpresterar\",\"firman förvaltade verkligt kapital 1993–2009 på metoden\",\"MEDGIVANDE: därför krävs AKM1-process — inte stockpicking på känsla\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Baseline-beslutet, skrivet: räkna först din kostnadsgrad — avgifter, courtage, skatt, och din tid per år i timmar; vad kostnar din aktivitet egentligen? Besluta därefter i procent: hur stor andel av ditt totala kapital är INDEX-BASELINE — och hur stor är AKM1-aktiv värdekorg? Motivera den aktiva andelen med PROCESS, inte hopp: vilka regler (skannern, tröskeln, tak, rebalansdatum, brasklapp) gäller, och vad utlöser att du minskar den aktiva andelen (processbrott, ej resultat)? Skriv under och datera. Det dokumentet är kontroverskapitlet omvandlat till arkitektur — och det är kursens viktigaste enskilda artefakt."
+        },
+        {
+          "type": "visuell",
+          "content": "termometer"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är Bogle-skolans huvudargument mot aktiv värdeförvaltning?",
+          "alternativ": [
+            "Att värdeaktier alltid är dåliga bolag",
+            "Att kostnader styr långsiktig avkastning och de flesta aktiva fonder slår inte index (SPIVA ~9 av 10 på 15 år) — och att värdeexponering i så fall kan köpas billigare som index",
+            "Att aktier är för riskabla för alla",
+            "Att value-premien är skattad bort"
+          ],
+          "ratt": 1,
+          "tips": "Vad äter avkastningen över trettio år — och vad kan köpas mekaniskt istället för dyrt?"
+        },
+        {
+          "q": "Vad utgör kärnan i Browne/Tweedys bemötande?",
+          "alternativ": [
+            "Att Bogle aldrig förtjänat sin plats i debatten",
+            "Firmans över nittioåriga data-samling (What Has Worked), beteendemekanismen (LSV 1994), Grossman-Stiglitz-paradoxen och firmans eget förvaltningsrekord",
+            "Att indexfonder är olagliga",
+            "Att EMH aldrig formulerats"
+          ],
+          "ratt": 1,
+          "tips": "Vilka tre sorters bevis finns — datans längd, mekanismens natur, och vad gjorde firman själv med verkliga pengar?"
+        },
+        {
+          "q": "Vad är AK1A:s syntes och medgivande i kontroversen?",
+          "alternativ": [
+            "Att alla ska värdeinvesterar aktivt med hela portföljen",
+            "Att index är humbug och ska undvikas",
+            "Att index är baseline och aktivt kapital en hypotes som förtjänar sin plats genom dokumenterad AKM1-process — med medgivandet att de flesta aktiva underpresterar, därför är stockpicking på känsla förbjuden",
+            "Att man ska växla mellan index och aktier efter magkänsla"
+          ],
+          "ratt": 2,
+          "tips": "Vad är nollhypotesen — och vad ska förtjäna avvikelsen från den?"
+        }
+      ]
+    },
+    {
+      "num": 12,
+      "minutes": 11,
+      "title": "Codan — Browne dog 2009, boken är hans testamente",
+      "intro": "Christopher Browne dog den 13 december 2009, sextiotvå år gammal, tre år efter boken utkom — och månader efter den krasch han skrivit om hade spelats ut på riktigt. Kapitlet läser boken som vad den blev: ett testamente från fyrtio år i värdeinvesterings tjänst.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Mannen och slutet, öppet citerat. Christopher Browne föddes 1946, examinerades från University of Pennsylvania 1969 och anställdes samma år på Tweedy, Browne — firman där hans far Howard varit partner sedan 1928. Fyrtio år senare var han managing director, medförvaltare av Tweedy, Browne Global Value Fund sedan 1993 och en av traditionens mest respekterade röster; Barton Biggs på Morgan Stanley kallade honom en av världens bästa värdeinvesterare. The Little Book of Value Investing utkom 2006 — tre år före hans död. Den 13 december 2009 avled han i en hjärtinfarkt, sextiotvå år gammal. Timingens ironi är nästan litterär: 2008–09 spelades bokens klimax ut på riktigt — den värsta kraschen sedan trettiotalet, net-nets som skannern fångar (kapitel 3) överallt, Mr Market på sitt mest depressiva humör (kapitel 8) — följt av en av historiens kraftigaste återhämtningar, just den mekanism boken ägnar sina tålamodskapitel åt (kapitel 7). Browne hann se sitt livs tes bevisad en sista gång — och gick sedan. Boken blev kvar som vad den nu är: ett testamente."
+        },
+        {
+          "type": "text",
+          "content": "Vad ett testamente innehåller — bokens sista lärdomar. Det anmärkningsvärda med The Little Book of Value Investing är vad den INTE innehåller: ingen hemlig formel, ingen avancerad modell, inget löfte om snabba rikedomar — från en man som HADE fyrtioåriga resultat att skylta med. Browne skriver i motsatt riktning: enkelhetens djup. Köp som i matvaruaffären (kapitel 1). Läs balansräkningen före du litar på någon aktie (kapitel 6). Acceptera att det tar tid (kapitel 7). Lita på bredd, inte briljans (kapitel 9). Låt Mr Market arbeta åt dig (kapitel 8). Återkomsten till det uppenbara är poängen: en man på toppen av sitt yrkesliv insisterar på att hantverket kan skrivas på fickboksformat — därför att svårigheten aldrig satt i formlerna, den sitter i utförandet, år ut och år in. Det är också formatets poäng: Little Book-serien (där Greenblatts och Carlisles böcker är grannar — och våra kurser om dem) tvingar bort all dekor, och det som återstår är traden i ren form."
+        },
+        {
+          "type": "text",
+          "content": "Arvet lever — och vad du gör åt det. Tweedy, Browne fortsätter som förvaltare; boken fortsätter att läsas; och i AK1A:s värld lever metoden som mjukvara: Net-net-skannern på /netnet kör Grahams exakta tvåtredjedelströskel som Browne ärvt (kapitel 3), Portföljbyggaren på /portfoljbyggare bygger korgar med Browne-bredd (kapitel 9), och AKM1:s tjugo variabler är hans hantverk översatt till checklista. Det bästa minnesmärket över en lärare är inte läsning utan utförande: nästa gång marknaden blöder och skannern larmar kommer någon att handla efter de här sidorna — och det, skriver Browne-traditionen mellan raderna, är hela idén med att skriva ned ett hantverk: att det överlever handen som skrev det. Kapitel 2 öppnade med att en metods bästa bevis är dess arvtagare; codan ställer frågan tillbaka på dig: vem bär traden vidare — och med vilka regler?"
+        },
+        {
+          "type": "insikt",
+          "content": "Bokens sista lektion är boken själv: en man med fyrtioåriga resultat skrev hundra små sidor och vägrade låtsas att det var svårare än det är. Svårigheten sitter i att GÖRA det — i åratal, genom torkor, mot socialt tryck. Testamente-tanken gör om läsningen till ansvar: traden är nu i dina händer, och dess nästa bevis är ditt utförande."
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"Christopher Browne — en livstidslinje\",\"rader\":[[\"År\",\"Händelse\"],[\"1946\",\"född\"],[\"1969\",\"examen University of Pennsylvania; anställs på Tweedy, Browne — firman där fadern Howard var partner sedan 1928\"],[\"1969–2009\",\"fyrtio år på firman; senare managing director\"],[\"1993\",\"medförvaltare av Tweedy, Browne Global Value Fund — den globala värdejakten (kapitel 5)\"],[\"2006\",\"The Little Book of Value Investing utkommer — fyrtio år komprimerat till fickbok\"],[\"2008–09\",\"bokens klimax på riktigt: kraschen, net-nets överallt, återhämtningen\"],[\"2009\",\"dör 13 december, 62 år, i hjärtinfarkt — boken blir hans testamente\"],[\"Efter\",\"metoden lever: firman fortsätter; /netnet kör tröskeln; /portfoljbyggare bygger korgarna; kursen du läser är arvet i undervisningsform\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "Skriv ditt eget testamente — en paragraph, inte mer: vad vill du att din fyrtioåriga investeringsrekord ska säga om dig när den skrivs? Vilka regler (från kursen: enhetspriser, tröskel, bredd, brasklapp, index-baseline) ska den vila på — och vad ska den INTE innehålla (formler på känsla, stories, tajmning)? Lägg paragraphen tillsammans med brasklappen från kapitel 7 och baseline-beslutet från kapitel 11 i ett dokument: portföljpampen. Datera den. Det är det mest Browneska du kan göra: bestämma principerna medan du lever, så att de kan bära dig när det gäller."
+        },
+        {
+          "type": "visuell",
+          "content": "tidslinje"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "När dog Christopher Browne — och vad är timingens betydelse?",
+          "alternativ": [
+            "2001, mitt i IT-kraschen",
+            "13 december 2009, 62 år — tre år efter boken och månader efter 2008–09:s krasch och återhämtning: bokens tes spelades ut på riktigt precis innan han dog",
+            "2018, efter att ha skrivit tre böcker",
+            "1996, vid firmans 75-årsjubileum"
+          ],
+          "ratt": 1,
+          "tips": "Vilken krasch och återhämtning ligger alldeles före december 2009 — och vad handlade boken om?"
+        },
+        {
+          "q": "Vad är det anmärkningsvärda med bokens innehåll — eller avsaknad av innehåll?",
+          "alternativ": [
+            "Att den innehåller en hemlig formel som firman gömt i 80 år",
+            "Att den trots författarens fyrtioåriga resultat inte innehåller någon hemlighet alls — enkelhetens djup: svårigheten sitter i utförandet, inte i formlerna",
+            "Att den enbart handlar om optioner",
+            "Att den förutsätter tillgång till Bloomberg-terminaler"
+          ],
+          "ratt": 1,
+          "tips": "Vad VÄGRAR en man med fyrtioåriga resultat att låtsas om?"
+        },
+        {
+          "q": "Vilket AK1A-verktyg kör Graham-tröskeln som Browne ärvt — och vilket bygger hans bredd?",
+          "alternativ": [
+            "AKM1-kalkylatorn och dagens pass",
+            "Net-net-skannern på /netnet (NCAV under 0,667) — och Portföljbyggaren på /portfoljbyggare för korgarna",
+            "Topplistan och bloggen",
+            "Kognitiv profil-testet"
+          ],
+          "ratt": 1,
+          "tips": "Ett verktyg jagar bolag under kassan — ett bygger portföljer med spridning."
+        }
+      ]
+    },
+    {
+      "num": 13,
+      "minutes": 11,
+      "title": "Sammanfattning — värdeinvesterarens checklista (V01–V20)",
+      "intro": "Sista kapitlet sätter ihop allt — matvarupris, net-nets, P/B, den globala jakten, trapp-varningen, psykologin, bredden, kontroversen och codan — till en enda fungerande checklista i AKM1:s tjugo variabler, plus slutprojektet som kör hela boken i praktiken.",
+      "blocks": [
+        {
+          "type": "text",
+          "content": "Hela boken som ett enda checkpass. Ett: MATVARUFRÅGAN — räkna enhetspriser (V04 P/S, V05 P/B, V06-familjen EV/EBITDA/EV/EBIT) innan du ens tittar på berättelsen; ingen aktie köps utan pris per enhet värde. Två: EXTREMJAKTEN — kör Net-net-skannern på /netnet (NCAV under 0,667) och notera om den är tyst (barometer: dyrt) eller larmar (rea). Tre: RYGGRADEN — lågt P/B (V05 5-poäng under 1x) som statistisk bas, läst vid sidan av V06-familjen för tillgångsstrukturens ärlighet. Fyra: DEN GLOBALA LENSEN — home bias-testa dig själv; jaga neglect där du orkar räkna själv (V03 som geografisk spridning). Fem: TRAPPVAKTEN — tröskeln: V10 skuld, V11 likviditet, V19 emissionsrisk, marginalriktning V07/V08; röda flaggor avlägsnar kandidater, de rankar aldrig. Sex: PSYKOLOGIN — Mr Market-larm satta i lugn (köp- och säljmultiplar); aldrig handla utan larm. Sju: BREDDEN — 30–60 positioner (mindre portfölj: börja vid 20), tak per aktie, mekanisk rebalansering — i Portföljbyggaren på /portfoljbyggare. Åtta: BASELINE-BESLUTET — index som nollhypotes, den aktiva korgen som förtjänt hypotes, medgivandet om de flesta underpresterar i fickan. Nio: TIDLIGHETEN — brasklapp, årsvis mätning, decenniehorisont. Nio steg, ett A4, noll åsikter i stormen."
+        },
+        {
+          "type": "text",
+          "content": "Översättningen till AKM1:s alla tjugo variabler — hela kartan. V01–V03 (tillväxt och intäktsdiversifiering): kontexten — Browne köper inte tillväxt men läser den; tillväxt är värdefull till rätt pris, och V03 bär den geografiska spridningen från kapitel 5. V04–V06 (värdering): MOTORN — bokens kärna; enhetspriserna styr urvalet, med V05:s P/B som statistisk ryggrad och NCAV-tröskeln som extremjakt. V07–V09 (lönsamhet): trapp-vaktens riktningssignaler — marginaler och ROE ska inte blöda när du köper. V10–V11 (stabilitet): överlevnadsparet — balansräkningen först, alltid. V12 (intäktsstabilitet): cykel-mot-struktur-testets data. V13–V15 (moat): rankning bland redan billiga och rensade kandidater — aldrig köpskäl i Browne-traditionen (berättelsen får inte bestämma priset — kapitel 1). V16–V18 (katalysatorer): närvarande men underordnade — en katalysator förkortar väntan, den skapar inte billighet. V19 (emissionsrisk): spegeln — den mest robusta NEGATIVA signalen. V20 (återköp och insiders): rösterna — firmans What Has Worked-insiderstudier bekräftar; krydda, aldrig huvudrätt. Och tvärtom: bokens kapitel motsvarar variablerna — matvaru-kapitlet = V04–V06:s filosofi, net-net = V05/V11 i extremform, trappan = V07–V12/V19, bredden = portföljreglerna, psykologin = processens pris."
+        },
+        {
+          "type": "text",
+          "content": "Differentieringen mot grannkurserna — sista gången, och slutprojektet. The Intelligent Investor-kursen (security-traditionen) ger filosofin Browne ärver; The Little Book That Beats the Market (Greenblatt) komprimerar till två rankningar; The Acquirer's Multiple (Carlisle) djupdyker i en multipl och lägger till kortsidan; den här kursen är det HELA klassiska hantverket i pocketformat: matvarupris, net-nets, P/B, global jakt, trappor, psykologi, bredd — och ett testamente. Slutprojektet, kursens sista arbete: kör /netnet-scannern och plocka kandidaterna; kör trapp-tröskeln (V10, V11, V19, marginalriktning) tills du har tjugo överlevare; räkna V05 och V06-familjen per överlevare; ge varje bolag en V20-röst (insiderköp/återköp — utestående aktieantal i rapporterna); bygg korgen med tak i /portfoljbyggare; skriv portföljpampen — regler, tak, rebalansdatum, brasklapp (kapitel 7), baseline-beslut (kapitel 11), ditt testamente (kapitel 12). Datera allt. Från och med nu har du inte en åsikt om billighet — du har en process som producerar den. Det var det Browne ville: att traden ska överleva handen som skrev den."
+        },
+        {
+          "type": "insikt",
+          "content": "Hela boken, hela traditionen, hela kursen i en mening: betala matvarupris för kassaflöden — och låt tiden göra resten. Alla tjugo variabler är hjälpfrågor till den enda frågan: vad kostar det, per enhet, och vad får jag?"
+        },
+        {
+          "type": "tabell",
+          "content": "{\"rubrik\":\"The Little Book of Value Investing till AKM1 — hela översättningstabellen\",\"rader\":[[\"Bokens byggsten\",\"AKM1\",\"Roll\"],[\"Matvarumentaliteten (kap 1)\",\"V04–V06\",\"motor — enhetspriset styr urvalet\"],[\"Net-nets / NCAV under 2/3 (kap 3)\",\"V05 + V11, skannern /netnet\",\"extremjakt — köp under kassan\"],[\"P/B-ryggraden (kap 4)\",\"V05 (5 = under 1x)\",\"statistisk bas, läst med V06-familjen\"],[\"Global jakt / home bias (kap 5)\",\"V03 (geografisk spridning), V10/V11/V19\",\"same checklist, any time zone\"],[\"Value-trappan (kap 6)\",\"V07–V12 + V19\",\"tröskel — röda flaggor avlägsnar, rankar aldrig\"],[\"Tålamod / torkor (kap 7)\",\"brasklapp + årsvis mätning\",\"uthållighetens dokument\"],[\"Mr Market (kap 8)\",\"multipl-baserade larm\",\"priset är anbud — värdet bor i rapporterna\"],[\"Bredd 30–60 / portfölj (kap 9)\",\"portföljregler i /portfoljbyggare\",\"korgen — inte aktien — är analysenheten\"],[\"Varför alla inte gör det (kap 10)\",\"utbildning + disciplin\",\"kanten är psykologisk, inte informationsmässig\"],[\"Kontroversen (kap 11)\",\"index-baseline + AKM1-process\",\"nollhypotes och förtjänt hypotes, med medgivande\"],[\"Codan (kap 12)\",\"dokumentationen\",\"traden överlever handen\"]]}"
+        },
+        {
+          "type": "utmaning",
+          "content": "SLUTPROJEKT — den fullständiga Browne-portföljen: ett — kör /netnet, dokumentera antal träffar och marknadshumör (tyst eller larm). Två — plocka kandidater och kör trapp-tröskeln (V10, V11, V19, marginalriktning V07/V08) tills tjugo överlever; logga per bolag: godkänt/underkänt med siffror. Tre — räkna V05 och V06-familjen (EV/EBITDA och EV/EBIT) per överlevare; notera gapet (tillgångsstruktur). Fyra — V20-röst per bolag (minskat utestående aktieantal? insiderköp?). Fem — bygg korgen i /portfoljbyggare med tak per aktie och kontrollera sektor-/landspridning. Sex — skriv portföljpampen: regler, tak, rebalansdatum (sätt i kalendern), brasklappen, baseline-beslutet, testamentet. Datera allt och spara i AK1A. När du är klar har du utfört hela boken — från matvarupris till testamente — och det är precis vad Browne hoppades att någon skulle göra med hans sista bok."
+        },
+        {
+          "type": "visuell",
+          "content": "compound"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Vad är bokens hela program i kursens sammanfattande mening?",
+          "alternativ": [
+            "Spekulera i timing med teknisk analys",
+            "Betala matvarupris för kassaflöden — och låt tiden göra resten; alla tjugo variabler är hjälpfrågor till vad kostar det per enhet och vad får jag",
+            "Köpa bara tillväxtaktier med starka stories",
+            "Låna pengar och köpa net-nets med hävstång"
+          ],
+          "ratt": 1,
+          "tips": "Kapitel 1:s bild, bokens sida ett — vad är den i en mening?"
+        },
+        {
+          "q": "Hur hanteras V13–V15 (moat) och V16–V18 (katalysatorer) i Browne-traditionens översättning?",
+          "alternativ": [
+            "Som huvudsakliga köpskäl — berättelsen är allt",
+            "De används inte alls i AKM1",
+            "Som rankning bland redan billiga och rensade kandidater och som underordnade förkortare av väntan — aldrig som köpskäl",
+            "Bara för banker"
+          ],
+          "ratt": 2,
+          "tips": "Vad fick bestämma priset i kapitel 1 — och vad förkortar bara väntan?"
+        },
+        {
+          "q": "Vilka två verktyg utgör slutprojektets arbetsbord?",
+          "alternativ": [
+            "Elliott-vågräknaren och Fibonacci-verktyget",
+            "Net-net-skannern på /netnet (kandidaterna) och Portföljbyggaren på /portfoljbyggare (korgen) — plus portföljpampen med brasklapp",
+            "Kognitiva profilen och topplistan",
+            "Bloggen och nyhetsflödet"
+          ],
+          "ratt": 1,
+          "tips": "Ett verktyg sållar fram kandidater under kassan — ett bygger portföljen med spridning."
+        }
+      ]
+    }
+  ]
+}

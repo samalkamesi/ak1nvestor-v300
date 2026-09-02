@@ -14,6 +14,7 @@ import {
 import { srStatistik, type SRStatistik } from "@/lib/spaced-repetition";
 import { badgeStatus, type BadgeStatus } from "@/lib/badges";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
+import { DashFragaKort } from "@/components/ak1a/dashfraga-kort";
 import { ElevkarnaFormuljar } from "@/components/ak1a/elevkarna-formuljar";
 import { VeckoPlan } from "@/components/ak1a/vecko-plan";
 import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
@@ -444,6 +445,11 @@ export function MinSida() {
             Vi är tacksamma för varje dag du väljer att lära dig — så byggs välfärd, ett beslut i taget.
           </p>
         </div>
+      </section>
+
+      {/* FRÅGA DIN DASHBOARD — natural-language-frågor mot elevens egna data, deterministiskt */}
+      <section className="mt-6">
+        <DashFragaKort />
       </section>
 
       {/* (a2) ELEVKÄRNAN — din 30-sekunders introduktion, välfärden först */}

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { pageMetadata, JsonLd, websiteJsonLd } from "@/lib/seo";
 import { SeoPageShell } from "@/components/ak1a/seo-page-shell";
 import { NetnetSkanner } from "@/components/ak1a/netnet-skanner";
-import { skannaNetnet, type NetnetRad } from "@/lib/netnet-motor";
 
 export const dynamic = "force-static";
 
@@ -25,15 +24,10 @@ export const metadata: Metadata = pageMetadata({
 });
 
 /**
- * Server action — datamotorn körs på servern (Yahoos cookie+crumb-flöde
- * kräver Node + SSRF-kontroll via dns). Klientkomponenten anropar den
- * per batch (max 15 tickers) och får NetnetRad[] i retur.
+ * Dataväg: klientkomponenten fetchar /api/netnet (route — samma
+ * exekveringskontext som övriga analys-API:er; server actions levererade
+ * inte timeseries-data).
  */
-async function skannaAction(tickers: string[]): Promise<NetnetRad[]> {
-  "use server";
-  return skannaNetnet(tickers);
-}
-
 export default function NetnetPage() {
   return (
     <SeoPageShell breadcrumb={[{ name: "Net-net-skannern" }]} wide>
@@ -48,7 +42,7 @@ export default function NetnetPage() {
         riktiga net-net idag är värdefällor lika ofta som fynd.
       </p>
       <div className="mt-10">
-        <NetnetSkanner skanna={skannaAction} />
+        <NetnetSkanner />
       </div>
     </SeoPageShell>
   );

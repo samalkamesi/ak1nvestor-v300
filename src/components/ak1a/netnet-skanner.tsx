@@ -94,7 +94,17 @@ function lasCache(): { sparad: number; rader: NetnetRad[] } | null {
   }
 }
 
-export function NetnetSkanner({ skanna }: { skanna: SkannaFn }) {
+/** Skanna en batch via /api/netnet (route — inte server action). */
+async function skannaBatch(tickers: string[]): Promise<NetnetRad[]> {
+  const r = await fetch(`/api/netnet?tickers=${encodeURIComponent(tickers.join(","))}`, {
+    cache: "no-store",
+  });
+  if (!r.ok) throw new Error(`Skanningen misslyckades (${r.status})`);
+  const d = (await r.json()) as { rader?: NetnetRad[] };
+  return d.rader ?? [];
+}
+
+export function NetnetSkanner() {
   const [rader, setRader] = useState<NetnetRad[]>([]);
   const [kör, setKör] = useState(false);
   const [klara, setKlara] = useState(0);
@@ -124,7 +134,7 @@ export function NetnetSkanner({ skanna }: { skanna: SkannaFn }) {
       const alla: NetnetRad[] = [];
       for (let start = 0; start < UNIVERSUM.length; start += BATCH) {
         const batch = UNIVERSUM.slice(start, start + BATCH);
-        const svar = await skanna(batch);
+        const svar = await skannaBatch(batch);
         alla.push(...svar);
         setKlara(Math.min(alla.length, UNIVERSUM.length));
       }
@@ -140,7 +150,7 @@ export function NetnetSkanner({ skanna }: { skanna: SkannaFn }) {
       setKör(false);
       igångRef.current = false;
     }
-  }, [skanna]);
+  }, []);
 
   // ── Sortering: lägst förhållande först; utan data sist ───────────────────
   const sorterade = useMemo(() => {

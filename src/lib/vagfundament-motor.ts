@@ -1062,3 +1062,17 @@ export async function hamtaBalansPoster(
     valuta,
   };
 }
+
+/**
+ * HELA årsserien för en fundamental variabel (t.ex. "TotalRevenue" → V01) via
+ * samma timeseries-flöde som motorn — för externa verktyg som behöver en
+ * värdehistorik, inte bara senaste värdet (t.ex. vågkonens √t-kon).
+ * Returnerar årliga värden i stigande ordning, eller null/[] när ingen serie finns.
+ */
+export async function hamtaArsserie(ticker: string, typ: string): Promise<number[] | null> {
+  if (typeof typ !== "string" || !TS_TYPER.includes("annual" + typ)) return null; // endast hämtade årsvariabler
+  const [data] = await hamtaFundament(ticker);
+  if (!data) return null;
+  const serie = _ar(data, typ);
+  return serie.length > 0 ? serie : null;
+}

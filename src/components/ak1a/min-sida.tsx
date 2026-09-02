@@ -15,9 +15,11 @@ import { srStatistik, type SRStatistik } from "@/lib/spaced-repetition";
 import { badgeStatus, type BadgeStatus } from "@/lib/badges";
 import { KurstipsKort } from "@/components/ak1a/kurstips-kort";
 import { DashFragaKort } from "@/components/ak1a/dashfraga-kort";
+import { KroppsvyKort } from "@/components/ak1a/kroppsvy-kort";
 import { ElevkarnaFormuljar } from "@/components/ak1a/elevkarna-formuljar";
 import { VeckoPlan } from "@/components/ak1a/vecko-plan";
 import { VagkartaKort } from "@/components/ak1a/vagkarta-kort";
+import { MorgonBriefing } from "@/components/ak1a/morgon-briefing";
 
 /**
  * MIN SIDA — medlemmens allt-i-ett-dashboard.
@@ -242,6 +244,11 @@ export function MinSida() {
 
   return (
     <div className="space-y-6">
+      {/* MORGON-BRIEFINGEN — Kommandocentralens första kaffe (Fas A4).
+          Det första eleven ser: vågkartan, passet, kursen och elden i ett
+          marin-panel-tidningskort, före hero-raden. */}
+      <MorgonBriefing />
+
       {/* (a) HERO-RAD */}
       <section className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card p-6 sm:p-8">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent" />
@@ -450,6 +457,11 @@ export function MinSida() {
       {/* FRÅGA DIN DASHBOARD — natural-language-frågor mot elevens egna data, deterministiskt */}
       <section className="mt-6">
         <DashFragaKort />
+      </section>
+
+      {/* KROPPSVYN — ekosystemets puls: alla organs senaste signaler på ett steg */}
+      <section className="mt-6">
+        <KroppsvyKort />
       </section>
 
       {/* (a2) ELEVKÄRNAN — din 30-sekunders introduktion, välfärden först */}

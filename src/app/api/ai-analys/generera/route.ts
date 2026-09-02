@@ -2,8 +2,23 @@ import { NextRequest, NextResponse } from "next/server";
 
 import ZAI from "z-ai-web-dev-sdk";
 
+import { getSupabaseRest } from "@/lib/supabase-rest";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+/** JSONB-kolumnen details kommer som objekt från PostgREST — äldre rader kan vara strängar. */
+function parseDetails(v: unknown): any {
+  if (v && typeof v === "object") return v;
+  if (typeof v === "string") {
+    try {
+      return JSON.parse(v);
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
 
 /**
  * POST /api/ai-analys/generera
@@ -93,22 +108,30 @@ Detta är METODMÅL — AI-genererad, kräver MÄTT-validering innan publicering
       };
     });
 
-    // Spara som SystemEvent
-    await db.systemEvent.create({
-      data: {
-        type: "ai_analys_genererad",
-        severity: "info",
-        message: `AI genererade ${analyses.length} analyser för ${ticker} (METODMÅL)`,
-        details: JSON.stringify({
-          ticker,
-          lengths,
-          bias: waveData?.bias,
-          confidence: waveData?.confidence,
-          summary: waveData?.summary,
-        }),
-        source: "ai-analys-api",
-      },
-    });
+    // Spara som system_events (valfritt utan Supabase)
+    const rest = getSupabaseRest();
+    if (rest) {
+      try {
+        await fetch(`${rest.origin}/rest/v1/system_events`, {
+          method: "POST",
+          headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+          body: JSON.stringify({
+            type: "ai_analys_genererad",
+            severity: "info",
+            message: `AI genererade ${analyses.length} analyser för ${ticker} (METODMÅL)`,
+            details: {
+              ticker,
+              lengths,
+              bias: waveData?.bias,
+              confidence: waveData?.confidence,
+              summary: waveData?.summary,
+            },
+            source: "ai-analys-api",
+          }),
+          signal: AbortSignal.timeout(10000),
+        });
+      } catch {}
+    }
 
     return NextResponse.json({
       ticker,
@@ -128,27 +151,25 @@ Detta är METODMÅL — AI-genererad, kräver MÄTT-validering innan publicering
 
 /** GET — hämta senaste AI-analyser */
 export async function GET() {
-  try {
-    const events = await db.systemEvent.findMany({
-      where: { type: "ai_analys_genererad" },
-      orderBy: { createdAt: "desc" },
-      take: 20,
-    });
+  const rest = getSupabaseRest();
+  if (!rest) return NextResponse.json({ analyses: [] });
 
-    const analyses = events.map((e) => {
-      try {
-        return {
-          eventId: e.id,
-          createdAt: e.createdAt,
-          ...JSON.parse(e.details || "{}"),
-        };
-      } catch {
-        return null;
-      }
-    }).filter(Boolean);
+  try {
+    const res = await fetch(
+      `${rest.origin}/rest/v1/system_events?type=eq.ai_analys_genererad&select=id,created_at,details&order=created_at.desc&limit=20`,
+      { headers: rest.headers, signal: AbortSignal.timeout(10000) }
+    );
+    if (!res.ok) return NextResponse.json({ analyses: [] });
+
+    const events = await res.json();
+    const analyses = (events || []).map((e: any) => ({
+      eventId: e.id,
+      createdAt: e.created_at,
+      ...parseDetails(e.details),
+    }));
 
     return NextResponse.json({ analyses });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message }, { status: 500 });
+  } catch {
+    return NextResponse.json({ analyses: [] });
   }
 }

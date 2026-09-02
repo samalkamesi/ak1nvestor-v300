@@ -2,8 +2,23 @@ import { NextRequest, NextResponse } from "next/server";
 
 import ZAI from "z-ai-web-dev-sdk";
 
+import { getSupabaseRest } from "@/lib/supabase-rest";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+/** JSONB-kolumnen details kommer som objekt från PostgREST — äldre rader kan vara strängar. */
+function parseDetails(v: unknown): any {
+  if (v && typeof v === "object") return v;
+  if (typeof v === "string") {
+    try {
+      return JSON.parse(v);
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
 
 /**
  * POST /api/styrelse/marknadsforing
@@ -97,21 +112,29 @@ Skapa kampanjen i EXAKT detta JSON-format:
       // fallback
     }
 
-    // Spara som SystemEvent
-    await db.systemEvent.create({
-      data: {
-        type: "marknadsforing_kampanj",
-        severity: "info",
-        message: `AI-organ skapade ${campaign}-kampanj för ${channel} (${audience}) — confidence: ${parsed?.organConfidence || "?"}`,
-        details: JSON.stringify({
-          campaign,
-          channel,
-          audience,
-          campaignData: parsed,
-        }),
-        source: "marknadsforing-api",
-      },
-    });
+    // Spara som system_events (valfritt utan Supabase)
+    const rest = getSupabaseRest();
+    if (rest) {
+      try {
+        await fetch(`${rest.origin}/rest/v1/system_events`, {
+          method: "POST",
+          headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+          body: JSON.stringify({
+            type: "marknadsforing_kampanj",
+            severity: "info",
+            message: `AI-organ skapade ${campaign}-kampanj för ${channel} (${audience}) — confidence: ${parsed?.organConfidence || "?"}`,
+            details: {
+              campaign,
+              channel,
+              audience,
+              campaignData: parsed,
+            },
+            source: "marknadsforing-api",
+          }),
+          signal: AbortSignal.timeout(10000),
+        });
+      } catch {}
+    }
 
     return NextResponse.json({
       campaign,
@@ -130,27 +153,25 @@ Skapa kampanjen i EXAKT detta JSON-format:
 
 /** GET — hämta senaste marknadsföringskampanjer */
 export async function GET() {
-  try {
-    const events = await db.systemEvent.findMany({
-      where: { type: "marknadsforing_kampanj" },
-      orderBy: { createdAt: "desc" },
-      take: 20,
-    });
+  const rest = getSupabaseRest();
+  if (!rest) return NextResponse.json({ campaigns: [] });
 
-    const campaigns = events.map((e) => {
-      try {
-        return {
-          eventId: e.id,
-          createdAt: e.createdAt,
-          ...JSON.parse(e.details || "{}"),
-        };
-      } catch {
-        return null;
-      }
-    }).filter(Boolean);
+  try {
+    const res = await fetch(
+      `${rest.origin}/rest/v1/system_events?type=eq.marknadsforing_kampanj&select=id,created_at,details&order=created_at.desc&limit=20`,
+      { headers: rest.headers, signal: AbortSignal.timeout(10000) }
+    );
+    if (!res.ok) return NextResponse.json({ campaigns: [] });
+
+    const events = await res.json();
+    const campaigns = (events || []).map((e: any) => ({
+      eventId: e.id,
+      createdAt: e.created_at,
+      ...parseDetails(e.details),
+    }));
 
     return NextResponse.json({ campaigns });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message }, { status: 500 });
+  } catch {
+    return NextResponse.json({ campaigns: [] });
   }
 }

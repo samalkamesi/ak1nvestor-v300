@@ -12,7 +12,7 @@ export async function GET() {
     const entries = await fs.readdir(STOCKS_DIR, { withFileTypes: true });
     const tickers = entries.filter((e) => e.isDirectory()).map((e) => e.name);
 
-    const result = [];
+    const result: Array<{ ticker: string; updatedAt: string | null; company: string }> = [];
     for (const ticker of tickers) {
       const tickerDir = join(STOCKS_DIR, ticker);
       let updatedAt: string | null = null;

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import { join } from "path";
 
+import { getSupabaseRest } from "@/lib/supabase-rest";
+
 
 export const runtime = "nodejs";
 
@@ -82,15 +84,21 @@ export async function PUT(
     await fs.writeFile(join(tickerDir, "updatedAt.txt"), updatedAt, "utf-8");
 
     try {
-      await db.systemEvent.create({
-        data: {
-          type: "stock_data_updated",
-          severity: "info",
-          message: `Aktiedata uppdaterad: ${tickerNorm} / ${file}`,
-          details: JSON.stringify({ ticker: tickerNorm, file }),
-          source: "admin",
-        },
-      });
+      const rest = getSupabaseRest();
+      if (rest) {
+        await fetch(`${rest.origin}/rest/v1/system_events`, {
+          method: "POST",
+          headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+          body: JSON.stringify({
+            type: "stock_data_updated",
+            severity: "info",
+            message: `Aktiedata uppdaterad: ${tickerNorm} / ${file}`,
+            details: { ticker: tickerNorm, file },
+            source: "admin",
+          }),
+          signal: AbortSignal.timeout(10000),
+        });
+      }
     } catch {}
 
     return NextResponse.json({ ok: true, ticker: tickerNorm, file, updatedAt });

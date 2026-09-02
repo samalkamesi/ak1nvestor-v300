@@ -2,33 +2,56 @@ import { NextRequest, NextResponse } from "next/server";
 
 import ZAI from "z-ai-web-dev-sdk";
 
+import { getSupabaseRest } from "@/lib/supabase-rest";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+/** JSONB-kolumnen details kommer som objekt från PostgREST — äldre rader kan vara strängar. */
+function parseDetails(v: unknown): any {
+  if (v && typeof v === "object") return v;
+  if (typeof v === "string") {
+    try {
+      return JSON.parse(v);
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
 
 /**
  * POST /api/styrelse/autonom
  *
  * AI-organen autonomt föreslår förbättringar av kundupplevelsen.
  * Detta är den autonoma loopen:
- * 1. Hämta senaste kundaktivitet från UserActivity
+ * 1. Hämta senaste kundaktivitet från user_activities
  * 2. Identifiera svaga punkter (långa sessioner utan konvertering, bounce)
  * 3. Låt AI-organen föreslå konkreta förbättringar
- * 4. Spara som SystemEvent + returnera förslag
+ * 4. Spara som system_events + returnera förslag
  *
  * Körs av cron-regelbundet (se scripts/autonom-loop.sh).
+ * Supabase är VALFRITT: utan konfig körs loopen på tom data (inga krascher).
  */
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json().catch(() => ({}));
     const focus = body.focus || "kundupplevelse"; // kundupplevelse | branding | marketing | innehåll
 
-    // 1. Hämta senaste kundaktivitet (senaste 24h)
+    const rest = getSupabaseRest();
+
+    // 1. Hämta senaste kundaktivitet (senaste 24h) — valfritt utan Supabase
     const since = new Date(Date.now() - 24 * 60 * 60 * 1000);
-    const activities = await db.userActivity.findMany({
-      where: { createdAt: { gte: since } },
-      take: 100,
-      orderBy: { createdAt: "desc" },
-    });
+    let activities: { session_id: string | null; action: string | null; section: string | null }[] = [];
+    if (rest) {
+      try {
+        const res = await fetch(
+          `${rest.origin}/rest/v1/user_activities?created_at=gte.${since.toISOString()}&select=session_id,action,section&order=created_at.desc&limit=100`,
+          { headers: rest.headers, signal: AbortSignal.timeout(10000) }
+        );
+        if (res.ok) activities = await res.json();
+      } catch {}
+    }
 
     // 2. Analysera — räkna section_visits, course_opens, etc.
     const sectionCounts: Record<string, number> = {};
@@ -38,7 +61,7 @@ export async function POST(req: NextRequest) {
       if (a.action) actionCounts[a.action] = (actionCounts[a.action] || 0) + 1;
     }
 
-    const totalSessions = new Set(activities.map((a) => a.sessionId)).size;
+    const totalSessions = new Set(activities.map((a) => a.session_id)).size;
     const totalActivities = activities.length;
     const topSections = Object.entries(sectionCounts)
       .sort((a, b) => b[1] - a[1])
@@ -98,24 +121,36 @@ Fokusera på att attrahera fler kunder genom tydligare, mer kundvänliga ord —
       // fallback
     }
 
-    // 4. Spara som SystemEvent
-    const event = await db.systemEvent.create({
-      data: {
-        type: "ai_organ_autonom_proposal",
-        severity: "info",
-        message: `AI-organ ${parsed?.organ || "?"} föreslog ${parsed?.proposals?.length || 0} förbättringar (fokus: ${focus})`,
-        details: JSON.stringify({
-          focus,
-          dataSnapshot: { totalSessions, totalActivities, topSections, actionCounts },
-          proposal: parsed,
-          rawContent: content.substring(0, 2000),
-        }),
-        source: "autonom-loop",
-      },
-    });
+    // 4. Spara som system_events (valfritt utan Supabase — eventId blir null)
+    let eventId: string | null = null;
+    if (rest) {
+      try {
+        const res = await fetch(`${rest.origin}/rest/v1/system_events`, {
+          method: "POST",
+          headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=representation" },
+          body: JSON.stringify({
+            type: "ai_organ_autonom_proposal",
+            severity: "info",
+            message: `AI-organ ${parsed?.organ || "?"} föreslog ${parsed?.proposals?.length || 0} förbättringar (fokus: ${focus})`,
+            details: {
+              focus,
+              dataSnapshot: { totalSessions, totalActivities, topSections, actionCounts },
+              proposal: parsed,
+              rawContent: content.substring(0, 2000),
+            },
+            source: "autonom-loop",
+          }),
+          signal: AbortSignal.timeout(10000),
+        });
+        if (res.ok) {
+          const rows = await res.json();
+          eventId = rows?.[0]?.id ?? null;
+        }
+      } catch {}
+    }
 
     return NextResponse.json({
-      eventId: event.id,
+      eventId,
       focus,
       dataSnapshot: { totalSessions, totalActivities, topSections, actionCounts },
       proposal: parsed,
@@ -132,31 +167,31 @@ Fokusera på att attrahera fler kunder genom tydligare, mer kundvänliga ord —
 
 /** GET — hämta senaste autonoma förslag */
 export async function GET() {
+  const rest = getSupabaseRest();
+  if (!rest) return NextResponse.json({ proposals: [] });
+
   try {
-    const events = await db.systemEvent.findMany({
-      where: { type: "ai_organ_autonom_proposal" },
-      orderBy: { createdAt: "desc" },
-      take: 10,
+    const res = await fetch(
+      `${rest.origin}/rest/v1/system_events?type=eq.ai_organ_autonom_proposal&select=id,created_at,details&order=created_at.desc&limit=10`,
+      { headers: rest.headers, signal: AbortSignal.timeout(10000) }
+    );
+    if (!res.ok) return NextResponse.json({ proposals: [] });
+
+    const events = await res.json();
+    const proposals = (events || []).map((e: any) => {
+      const details = parseDetails(e.details);
+      return {
+        eventId: e.id,
+        createdAt: e.created_at,
+        focus: details.focus,
+        organ: details.proposal?.organ,
+        proposals: details.proposal?.proposals || [],
+        dataSnapshot: details.dataSnapshot,
+      };
     });
 
-    const proposals = events.map((e) => {
-      try {
-        const details = JSON.parse(e.details || "{}");
-        return {
-          eventId: e.id,
-          createdAt: e.createdAt,
-          focus: details.focus,
-          organ: details.proposal?.organ,
-          proposals: details.proposal?.proposals || [],
-          dataSnapshot: details.dataSnapshot,
-        };
-      } catch {
-        return null;
-      }
-    }).filter(Boolean);
-
     return NextResponse.json({ proposals });
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message }, { status: 500 });
+  } catch {
+    return NextResponse.json({ proposals: [] });
   }
 }

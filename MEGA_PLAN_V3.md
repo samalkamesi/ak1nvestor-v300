@@ -52,4 +52,5 @@ AK1A Research Lab blir en levande organism: varje del av plattformen är ett org
 - **Bokstavligt korrekt**: åäö-sanering vid varje leverans (v250-lärdomen).
 
 ## STATUS-LOGG
-- 2026-09-02: Plan skapad. 5 forskningsagenter (organ-arkitektur, dashboard, B2B, visualisering, Fas 3) + organbygge A1 (Fråga dashboarden) igång.
+- 2026-09-02 #1: Plan skapad. 5 forskningsagenter landade (organ-arkitektur w OrganEvent v1 + fyndet om trasiga Prisma-organ; dashboard w NLQ-linjen; visualisering w vågkon-√t; Fas 3 w certifieringsstrukturen A-F). **Fas A1 LEVERERAD (71da1aa): Fråga din dashboard — 11 intents, 7/7 PASS.**
+- 2026-09-02 #2 (pågår): Fas A2-A4 + C1 + B1 — fem agenter: organkirurgi (Prisma→Supabase: styrelse/autonom+kommunikation), nervsystemet (/api/kropp + organ-event.ts + KroppsvyKort), morgon-briefingen, vågkonen (fan chart, √t-band, P8-ärlighetstext), rapportbyggaren steg 1 (analysbank + utskriftsbar certifikatsrapport, /rapporter). B2B-forskning landar separat.

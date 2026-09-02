@@ -2,15 +2,19 @@ import { NextRequest, NextResponse } from "next/server";
 
 import ZAI from "z-ai-web-dev-sdk";
 
+import { getSupabaseRest } from "@/lib/supabase-rest";
+
 export const runtime = "nodejs";
 
 /**
  * POST /api/styrelse/djup
- * 
+ *
  * Djupare konsultation av AI-organen om specifika strategiska frågor.
- * Loggar både fråga och svar till OrganConsultation-tabellen.
- * 
+ * Loggar både fråga och svar till organ_consultations-tabellen.
+ *
  * Body: { sessionId, organ, question, context, depth }
+ *
+ * Supabase är VALFRITT: utan konfig körs konsultationen ändå (utan loggning).
  */
 
 const ORGAN_PROFILES: Record<string, { name: string; role: string; mantra: string; symbol: string }> = {
@@ -44,23 +48,49 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Skapa consultation-record (status: pending)
-    const consultation = await db.organConsultation.create({
-      data: {
-        sessionId,
-        organ,
-        question,
-        context: context ? JSON.stringify(context) : null,
-        depth,
-        response: null,
-        confidence: null,
-      },
-    });
+    const rest = getSupabaseRest();
+
+    // Skapa consultation-record (status: pending) — utan Supabase körs ändå
+    let consultationId: string | null = null;
+    if (rest) {
+      try {
+        const res = await fetch(`${rest.origin}/rest/v1/organ_consultations`, {
+          method: "POST",
+          headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=representation" },
+          body: JSON.stringify({
+            session_id: sessionId,
+            organ,
+            question,
+            context: context ?? null,
+            depth,
+            response: null,
+            confidence: null,
+          }),
+          signal: AbortSignal.timeout(10000),
+        });
+        if (res.ok) {
+          const rows = await res.json();
+          consultationId = rows?.[0]?.id ?? null;
+        }
+      } catch {}
+    }
+
+    const saveResponse = async (response: unknown, confidence: string | null) => {
+      if (!rest || !consultationId) return;
+      try {
+        await fetch(`${rest.origin}/rest/v1/organ_consultations?id=eq.${consultationId}`, {
+          method: "PATCH",
+          headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+          body: JSON.stringify({ response, confidence }),
+          signal: AbortSignal.timeout(10000),
+        });
+      } catch {}
+    };
 
     // Försök anropa LLM
     try {
       const zai = await ZAI.create();
-      const depthInstruction = depth === "mega" 
+      const depthInstruction = depth === "mega"
         ? "Svara extremt djupt — 500+ ord, med konkreta exempel, siffror, och historiska paralleller."
         : depth === "deep"
         ? "Svara djupt — 300+ ord, med exempel och resonemang."
@@ -95,46 +125,41 @@ Kontext: ${context ? JSON.stringify(context) : "Ingen ytterligare kontext."}`;
         confidence = "LÅG";
       }
 
-      const updated = await db.organConsultation.update({
-        where: { id: consultation.id },
-        data: {
-          response: JSON.stringify({ text: response, organ: profile.name, symbol: profile.symbol }),
-          confidence,
-        },
-      });
+      await saveResponse({ text: response, organ: profile.name, symbol: profile.symbol }, confidence);
 
       return NextResponse.json({
         ok: true,
-        consultationId: consultation.id,
+        consultationId,
         organ: profile,
         response,
         confidence,
       });
     } catch (llmErr: any) {
       // LLM misslyckades (t.ex. rate limit) — spara felet men returnera
-      await db.organConsultation.update({
-        where: { id: consultation.id },
-        data: {
-          response: JSON.stringify({ error: llmErr.message?.slice(0, 200) }),
-          confidence: "LÅG",
-        },
-      });
+      await saveResponse({ error: llmErr.message?.slice(0, 200) }, "LÅG");
 
       // Logga system event
-      await db.systemEvent.create({
-        data: {
-          type: "api_error",
-          severity: "warning",
-          message: `AI-organ ${organ} kunde inte svara: ${llmErr.message?.slice(0, 100)}`,
-          details: JSON.stringify({ consultationId: consultation.id, question: question.slice(0, 100) }),
-          source: "api",
-        },
-      });
+      if (rest) {
+        try {
+          await fetch(`${rest.origin}/rest/v1/system_events`, {
+            method: "POST",
+            headers: { ...rest.headers, "Content-Type": "application/json", Prefer: "return=minimal" },
+            body: JSON.stringify({
+              type: "api_error",
+              severity: "warning",
+              message: `AI-organ ${organ} kunde inte svara: ${llmErr.message?.slice(0, 100)}`,
+              details: { consultationId, question: question.slice(0, 100) },
+              source: "api",
+            }),
+            signal: AbortSignal.timeout(10000),
+          });
+        } catch {}
+      }
 
       return NextResponse.json({
         ok: false,
         error: "AI-organet kunde inte svara just nu (rate-limit eller API-fel). Frågan har loggats och kommer att besvaras senare.",
-        consultationId: consultation.id,
+        consultationId,
         retryAfter: 3600,
       }, { status: 503 });
     }
@@ -148,23 +173,42 @@ Kontext: ${context ? JSON.stringify(context) : "Ingen ytterligare kontext."}`;
 
 /** GET /api/styrelse/djup?sessionId=xxx — lista användarens djupa konsultationer. */
 export async function GET(req: NextRequest) {
+  const url = new URL(req.url);
+  const sessionId = url.searchParams.get("sessionId");
+  const organ = url.searchParams.get("organ");
+
+  const rest = getSupabaseRest();
+  if (!rest) return NextResponse.json({ consultations: [] });
+
   try {
-    const url = new URL(req.url);
-    const sessionId = url.searchParams.get("sessionId");
-    const organ = url.searchParams.get("organ");
+    const params = new URLSearchParams({ select: "*", order: "created_at.desc", limit: "50" });
+    if (sessionId) params.set("session_id", `eq.${sessionId}`);
+    if (organ) params.set("organ", `eq.${organ}`);
 
-    const where: any = {};
-    if (sessionId) where.sessionId = sessionId;
-    if (organ) where.organ = organ;
-
-    const consultations = await db.organConsultation.findMany({
-      where,
-      orderBy: { createdAt: "desc" },
-      take: 50,
+    const res = await fetch(`${rest.origin}/rest/v1/organ_consultations?${params}`, {
+      headers: rest.headers,
+      signal: AbortSignal.timeout(10000),
     });
+    if (!res.ok) return NextResponse.json({ consultations: [] });
+
+    const rows = await res.json();
+
+    // Mappa tillbaka till camelCase + JSON-strängar (samma form som tidigare API-kontrakt)
+    const consultations = (rows || []).map((r: any) => ({
+      id: r.id,
+      sessionId: r.session_id,
+      organ: r.organ,
+      question: r.question,
+      context: r.context != null ? JSON.stringify(r.context) : null,
+      response: r.response != null ? JSON.stringify(r.response) : null,
+      meetingId: r.meeting_id ?? null,
+      depth: r.depth,
+      confidence: r.confidence,
+      createdAt: r.created_at,
+    }));
 
     return NextResponse.json({ consultations });
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+  } catch {
+    return NextResponse.json({ consultations: [] });
   }
 }
